@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><h1 — Microeconomia II</title>
+<title>Pré-Aula 20 — Maximização de Lucro I — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,193 +17,139 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1
-id="pré-aula-20-políticas-públicas-e-peso-morto-no-brasil-prática">Pré-Aula
-20 — Políticas Públicas e Peso Morto no Brasil (Prática)</h1>
+<h1 id="pré-aula-20-maximização-de-lucro-i">Pré-Aula 20 — Maximização de
+Lucro I</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 12, Seções 12.6–12.8</strong> + material complementar
-sobre políticas brasileiras | Tempo estimado: <strong>45
-min</strong></p>
+<p><strong>Cap. 12, Seções 12.1–12.3</strong> do livro interativo |
+Tempo estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 12, Seções 12.6–12.8** + material complementar sobre políticas brasileiras | Tempo estimado: **45 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Analisar os efeitos de impostos (específicos e <em>ad valorem</em>),
-subsídios, preços-teto e preços-piso sobre equilíbrio, excedentes e peso
-morto</li>
-<li>Aplicar o princípio da incidência tributária e sua relação com
-elasticidades</li>
-<li>Avaliar criticamente quatro políticas públicas brasileiras usando o
-arcabouço de bem-estar</li>
+<li>Derivar a condição de maximização de lucro <span
+class="math inline">\(P = CMg\)</span> para uma firma tomadora de preços
+e verificar a condição de segunda ordem</li>
+<li>Explicar a relação <span class="math inline">\(VPMg = w\)</span> e
+sua interpretação como demanda por fatores</li>
+<li>Enunciar as propriedades da função lucro, o Lema de Hotelling e a
+lei da oferta</li>
 </ol>
 <hr />
-<h2 id="impostos-específico-vs.-ad-valorem">1. Impostos: específico
-vs. <em>ad valorem</em></h2>
-<h3 id="imposto-específico">Imposto específico</h3>
-<p>Um imposto de <span class="math inline">\(t\)</span> reais por
-unidade cria uma cunha entre o preço pago pelo consumidor (<span
-class="math inline">\(P_C\)</span>) e o recebido pelo produtor (<span
-class="math inline">\(P_P\)</span>):</p>
-<p><span class="math display">\[P_C = P_P + t\]</span></p>
-<p>No equilíbrio: <span class="math inline">\(Q^D(P_C) = Q^S(P_P) =
-Q^S(P_C - t)\)</span></p>
-<h3 id="imposto-ad-valorem">Imposto <em>ad valorem</em></h3>
-<p>Um imposto de alíquota <span class="math inline">\(\tau\)</span>
-sobre o preço:</p>
-<span class="math display">\[P_C = (1 + \tau) P_P\]</span>
-<div class="admonition example">
+<h2 id="a-firma-tomadora-de-preços">1. A firma tomadora de preços</h2>
+<p>Uma firma <strong>competitiva</strong> (tomadora de preço, ou
+<em>price taker</em>) não consegue influenciar o preço de mercado. Ela
+pode vender qualquer quantidade ao preço <span
+class="math inline">\(P\)</span> vigente. Sua receita total é:</p>
+<p><span class="math display">\[RT(q) = Pq\]</span></p>
+<p>e a receita marginal é simplesmente <span class="math inline">\(RMg =
+P\)</span>. O <strong>lucro econômico</strong> é:</p>
+<p><span class="math display">\[\pi(q) = Pq - C(q)\]</span></p>
+<p>onde <span class="math inline">\(C(q)\)</span> inclui todos os custos
+de oportunidade.</p>
+<hr />
+<h2 id="condições-de-ótimo">2. Condições de ótimo</h2>
+<h3 id="cpo-condição-de-primeira-ordem">CPO (Condição de Primeira
+Ordem)</h3>
+<p><span class="math display">\[\frac{d\pi}{dq} = P - CMg(q) = 0
+\implies \boxed{P = CMg(q^*)}\]</span></p>
+<h3 id="cso-condição-de-segunda-ordem">CSO (Condição de Segunda
+Ordem)</h3>
+<p><span class="math display">\[\frac{d^2\pi}{dq^2} = -\frac{dCMg}{dq}
+&lt; 0 \implies \frac{dCMg}{dq} &gt; 0\]</span></p>
+<p>O custo marginal deve ser <strong>crescente</strong> no ponto ótimo.
+Se o CMg fosse decrescente, teríamos um mínimo de lucro, não um
+máximo.</p>
+<div class="admonition note">
 <div class="admonition-title">
-Exemplo: imposto específico
+Intuição Econômica
 </div>
-<p>Demanda: <span class="math inline">\(Q^D = 100 - 2P_C\)</span>.
-Oferta: <span class="math inline">\(Q^S = 3P_P - 25\)</span>. Imposto:
-<span class="math inline">\(t = 5\)</span>.</p>
-<p><span class="math inline">\(P_C = P_P + 5\)</span>. Substituindo:
-<span class="math inline">\(100 - 2(P_P + 5) = 3P_P - 25\)</span></p>
-<p><span class="math inline">\(90 - 2P_P = 3P_P - 25 \implies P_P =
-23\)</span>, <span class="math inline">\(P_C = 28\)</span></p>
-<p><span class="math inline">\(Q_t = 100 - 56 = 44\)</span></p>
-<p>Sem imposto: <span class="math inline">\(P^* = 25\)</span>, <span
-class="math inline">\(Q^* = 50\)</span> (da Aula 19).</p>
-<p>O consumidor paga <span class="math inline">\(3\)</span> a mais; o
-produtor recebe <span class="math inline">\(2\)</span> a menos.</p>
+<p><strong>O preço é o sinal, o custo marginal é a resposta.</strong> Se
+<span class="math inline">\(P &gt; CMg\)</span>, a última unidade gera
+mais receita do que custa — vale produzir mais. Se <span
+class="math inline">\(P &lt; CMg\)</span>, a última unidade custa mais
+do que rende — é melhor produzir menos. O equilíbrio <span
+class="math inline">\(P = CMg\)</span> é o ponto em que a firma esgota
+todas as oportunidades de lucro marginal positivo.</p>
 </div>
-<pre><code>Demanda: $Q^D = 100 - 2P_C$. Oferta: $Q^S = 3P_P - 25$. Imposto: $t = 5$.
-
-$P_C = P_P + 5$. Substituindo: $100 - 2(P_P + 5) = 3P_P - 25$
-
-$90 - 2P_P = 3P_P - 25 \implies P_P = 23$, $P_C = 28$
-
-$Q_t = 100 - 56 = 44$
-
-Sem imposto: $P^* = 25$, $Q^* = 50$ (da Aula 19).
-
-O consumidor paga $3$ a mais; o produtor recebe $2$ a menos.</code></pre>
 <hr />
-<h2 id="incidência-tributária-e-elasticidade">2. Incidência tributária e
-elasticidade</h2>
-<p>Quem “paga” o imposto não depende de sobre quem ele é legalmente
-cobrado, mas das <strong>elasticidades</strong>:</p>
-<p><span class="math display">\[\frac{\Delta P_C}{\Delta P_P} =
-\frac{|\varepsilon_S|}{|\varepsilon_D|}\]</span></p>
-<p><strong>Regra geral:</strong> o lado mais <strong>inelástico</strong>
-do mercado absorve a maior parcela do imposto.</p>
-<ul>
-<li>Se <span class="math inline">\(|\varepsilon_D| &lt;
-|\varepsilon_S|\)</span>: consumidores pagam mais</li>
-<li>Se <span class="math inline">\(|\varepsilon_D| &gt;
-|\varepsilon_S|\)</span>: produtores pagam mais</li>
-</ul>
-<h3 id="peso-morto-do-imposto">Peso morto do imposto</h3>
-<p><span class="math display">\[DWL = \frac{1}{2} t (Q^* -
-Q_t)\]</span></p>
-<p>O peso morto cresce com o quadrado da alíquota — dobrar o imposto
-quadruplica o peso morto.</p>
+<h2 id="vpmg-e-a-demanda-por-fatores">3. VPMg e a demanda por
+fatores</h2>
+<p>No problema de maximização de lucro com um fator variável
+(trabalho):</p>
+<p><span class="math display">\[\max_L \; Pf(L,\bar{K}) - wL -
+v\bar{K}\]</span></p>
+<p><strong>CPO:</strong></p>
+<p><span class="math display">\[P \cdot PMg_L = w \implies \boxed{VPMg_L
+= w}\]</span></p>
+<p>O <strong>valor do produto marginal</strong> (<span
+class="math inline">\(VPMg = P \cdot PMg\)</span>) é o que vale para a
+firma a última unidade de trabalho contratada. A firma contrata até o
+ponto em que <span class="math inline">\(VPMg = w\)</span>.</p>
+<p>Com dois fatores variáveis:</p>
+<p><span class="math display">\[VPMg_L = w \quad \text{e} \quad VPMg_K =
+v\]</span></p>
+<p>Dividindo: <span class="math inline">\(PMg_L/PMg_K = w/v\)</span>,
+que recupera a condição de minimização de custos.</p>
 <hr />
-<h2 id="preços-teto-e-preços-piso">3. Preços-teto e preços-piso</h2>
-<h3 id="preço-teto-barp-p">Preço-teto (<span
-class="math inline">\(\bar{P} &lt; P^*\)</span>)</h3>
-<p>Gera <strong>escassez</strong>: <span
-class="math inline">\(Q^D(\bar{P}) &gt; Q^S(\bar{P})\)</span>.
-Consequências: filas, mercado negro, deterioração da qualidade.</p>
-<p><span class="math display">\[DWL = \frac{1}{2}\big[P^D(Q_S) -
-\bar{P}\big](Q^* - Q_S)\]</span></p>
-<h3 id="preço-piso-underlinep-p">Preço-piso (<span
-class="math inline">\(\underline{P} &gt; P^*\)</span>)</h3>
-<p>Gera <strong>excedente</strong>: <span
-class="math inline">\(Q^S(\underline{P}) &gt;
-Q^D(\underline{P})\)</span>. Consequências: estoques não vendidos,
-desperdício.</p>
+<h2 id="a-função-lucro-e-suas-propriedades">4. A função lucro e suas
+propriedades</h2>
+<p>A <strong>função lucro</strong> <span class="math inline">\(\pi^*(P,
+w, v)\)</span> dá o lucro máximo como função dos preços:</p>
+<p><span class="math display">\[\pi^*(P, w, v) = \max_q \big[Pq -
+C(w,v,q)\big]\]</span></p>
+<p><strong>Propriedades:</strong></p>
+<ol type="1">
+<li><strong>Não decrescente em <span
+class="math inline">\(P\)</span></strong> e <strong>não crescente em
+<span class="math inline">\(w\)</span>, <span
+class="math inline">\(v\)</span></strong></li>
+<li><strong>Homogênea de grau 1</strong> em <span
+class="math inline">\((P, w, v)\)</span>: dobrar todos os preços dobra o
+lucro nominal</li>
+<li><strong>Convexa em <span class="math inline">\(P\)</span></strong>:
+a firma responde mais do que proporcionalmente a aumentos de preço</li>
+<li><strong>Convexa em <span
+class="math inline">\((w,v)\)</span></strong>: idem para preços dos
+fatores</li>
+</ol>
+<h3 id="lema-de-hotelling">Lema de Hotelling</h3>
+<p><span class="math display">\[q^*(P) = \frac{\partial \pi^*}{\partial
+P}, \quad L^* = -\frac{\partial \pi^*}{\partial w}, \quad K^* =
+-\frac{\partial \pi^*}{\partial v}\]</span></p>
+<p>A oferta e as demandas de fatores são obtidas por simples
+diferenciação da função lucro.</p>
 <hr />
-<h2 id="subsídios">4. Subsídios</h2>
-<p>Um subsídio de <span class="math inline">\(s\)</span> por unidade é
-um “imposto negativo”:</p>
-<p><span class="math display">\[P_C = P_P - s\]</span></p>
-<p>Efeito: preço ao consumidor cai, preço ao produtor sobe, quantidade
-aumenta para além do equilíbrio. Há peso morto porque unidades com custo
-marginal superior ao benefício marginal são produzidas.</p>
-<p><span class="math display">\[DWL_{\text{subsídio}} = \frac{1}{2} s
-(Q_s - Q^*)\]</span></p>
-<hr />
-<h2 id="quatro-casos-brasileiros">5. Quatro casos brasileiros</h2>
-<h3 id="caso-1-tributação-de-combustíveis-cide-icms">Caso 1: Tributação
-de combustíveis (CIDE + ICMS)</h3>
-<p>O preço da gasolina no Brasil embute CIDE (imposto federal
-específico) e ICMS (imposto estadual <em>ad valorem</em>). A demanda por
-combustível é relativamente <strong>inelástica</strong> no curto prazo
-(as pessoas precisam se deslocar).</p>
-<ul>
-<li><strong>Incidência</strong>: maior parcela recai sobre o
-consumidor</li>
-<li><strong>Peso morto</strong>: relativamente pequeno (demanda
-inelástica) mas significativo em escala</li>
-<li><strong>Debate</strong>: redução da CIDE em 2022 — quem se
-beneficiou?</li>
-</ul>
-<h3 id="caso-2-controle-de-aluguéis">Caso 2: Controle de aluguéis</h3>
-<p>Historicamente, o Brasil adotou políticas de congelamento de aluguéis
-(Lei do Inquilinato de 1991 flexibilizou). Um preço-teto no mercado de
-aluguel:</p>
-<ul>
-<li><strong>Efeito</strong>: escassez habitacional, deterioração dos
-imóveis, mercado informal</li>
-<li><strong>Quem é prejudicado?</strong> Inquilinos que não conseguem
-encontrar imóvel; proprietários que reduzem manutenção</li>
-<li><strong>Peso morto</strong>: transações habitacionais que deixam de
-ocorrer</li>
-</ul>
-<h3 id="caso-3-preço-mínimo-agrícola-pgpm">Caso 3: Preço mínimo agrícola
-(PGPM)</h3>
-<p>A Política de Garantia de Preços Mínimos garante aos agricultores um
-preço-piso para produtos como milho, arroz e feijão:</p>
-<p><span class="math display">\[\underline{P}_{\text{PGPM}} &gt;
-P^*_{\text{mercado}} \implies \text{excedente de produção}\]</span></p>
-<ul>
-<li><strong>Efeito</strong>: governo compra o excedente (estoques
-reguladores) ou paga a diferença de preços</li>
-<li><strong>Custo fiscal</strong>: manutenção de estoques, perdas por
-deterioração</li>
-<li><strong>Peso morto</strong>: superproduçao além do socialmente
-eficiente</li>
-</ul>
-<h3 id="caso-4-subsídio-ao-transporte-público">Caso 4: Subsídio ao
-transporte público</h3>
-<p>Cidades brasileiras subsidiam tarifas de ônibus e metrô para manter
-preços acessíveis:</p>
-<ul>
-<li><strong>Objetivo</strong>: garantir mobilidade urbana, reduzir
-desigualdade</li>
-<li><strong>Efeito</strong>: <span class="math inline">\(P_C &lt;
-CMg\)</span> para o usuário <span class="math inline">\(\to\)</span>
-quantidade demandada acima do ótimo privado</li>
-<li><strong>Justificativa econômica</strong>: se há
-<strong>externalidade positiva</strong> (menos carros, menos poluição),
-o subsídio pode ser eficiente — corrige uma falha de mercado</li>
-<li><strong>Peso morto</strong>: depende se o subsídio corrige ou excede
-a externalidade
-<div class="admonition tip">
+<h2 id="convexidade-e-lei-da-oferta">5. Convexidade e lei da oferta</h2>
+<p>A convexidade de <span class="math inline">\(\pi^*\)</span> em <span
+class="math inline">\(P\)</span> implica que:</p>
+<p><span class="math display">\[\frac{\partial^2 \pi^*}{\partial P^2} =
+\frac{\partial q^*}{\partial P} \geq 0\]</span></p>
+<p>Isso é a <strong>lei da oferta</strong>: a quantidade ofertada é não
+decrescente no preço. Um aumento de preço nunca reduz a produção ótima
+da firma.</p>
+<p>Analogamente, a convexidade em <span class="math inline">\(w\)</span>
+implica <span class="math inline">\(\partial L^*/\partial w \leq
+0\)</span>: a demanda (incondicional) por trabalho é não crescente no
+salário.</p>
+<div class="admonition note">
 <div class="admonition-title">
-Lições dos casos
+Intuição Econômica
 </div>
-</div></li>
-</ul>
-<p>Nenhuma política é universalmente boa ou ruim. A análise de bem-estar
-(excedentes + peso morto) nos dá uma linguagem precisa para avaliar
-<em>trade-offs</em>. O subsídio ao transporte pode ser eficiente se
-corrige externalidades; o controle de aluguéis gera ineficiência se o
-preço-teto está muito abaixo do equilíbrio.</p>
+<p><strong>A convexidade da função lucro reflete a flexibilidade da
+firma.</strong> Se o preço sobe, a firma pode ajustar a produção para
+cima e capturar mais lucro; se cai, pode reduzir a produção e limitar
+perdas. Essa capacidade de ajuste é o que torna o lucro convexo — os
+ganhos com preços altos superam as perdas com preços baixos.</p>
 </div>
-<pre><code>Nenhuma política é universalmente boa ou ruim. A análise de bem-estar (excedentes + peso morto) nos dá uma linguagem precisa para avaliar *trade-offs*. O subsídio ao transporte pode ser eficiente se corrige externalidades; o controle de aluguéis gera ineficiência se o preço-teto está muito abaixo do equilíbrio.</code></pre>
 <hr />
-<h2 id="gráfico-interativo-incidência-tributária">Gráfico interativo:
-incidência tributária</h2>
-<div id="graph-imposto" style="min-height: 450px;">
-<iframe src="../../graficos/cap12/imposto-incidencia.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+<h2 id="gráfico-interativo-maximização-de-lucro">Gráfico interativo:
+maximização de lucro</h2>
+<div id="graph-max-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html">
 </iframe>
 </div>
 <div class="admonition tip">
@@ -211,190 +157,97 @@ incidência tributária</h2>
 Explore o gráfico
 </div>
 <ul>
-<li>Altere o valor do imposto e observe a cunha entre <span
-class="math inline">\(P_C\)</span> e <span
-class="math inline">\(P_P\)</span></li>
-<li>Mude as elasticidades de oferta e demanda para ver quem absorve mais
-o imposto</li>
-<li>Note como o triângulo de peso morto cresce com o imposto</li>
+<li>Varie o preço <span class="math inline">\(P\)</span> e observe como
+<span class="math inline">\(q^*\)</span> se ajusta ao longo da curva de
+CMg</li>
+<li>Note a área de lucro (retângulo entre <span
+class="math inline">\(P\)</span> e CMe no ponto <span
+class="math inline">\(q^*\)</span>)</li>
+<li>Verifique que a CSO exige CMg crescente no ótimo</li>
 </ul>
 </div>
-<pre><code>- Altere o valor do imposto e observe a cunha entre $P_C$ e $P_P$
-- Mude as elasticidades de oferta e demanda para ver quem absorve mais o imposto
-- Note como o triângulo de peso morto cresce com o imposto</code></pre>
 <hr />
-<h2 id="box-a-armadilha-do-pensamento-parcial">Box: A armadilha do
-pensamento parcial</h2>
-<div class="admonition note">
+<h2 id="gráfico-interativo-lucro-máximo-como-função-do-preço">Gráfico
+interativo: lucro máximo como função do preço</h2>
+<div id="graph-funcao-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/lucro-maximo.html">
+</iframe>
+</div>
+<div class="admonition tip">
 <div class="admonition-title">
-Intuição Econômica
+Explore o gráfico
 </div>
-<p><strong>Por que a análise de equilíbrio geral importa para políticas
-públicas?</strong></p>
-<p>Quando o governo reduz o ICMS da gasolina, o efeito direto é claro:
-preço menor na bomba. Mas a análise parcial esconde efeitos indiretos —
-menor arrecadação estadual significa menos investimento em saúde e
-educação, e o preço menor incentiva mais consumo de combustível fóssil.
-A microeconomia nos ensina que toda intervenção tem custos (peso morto)
-e benefícios (correção de falhas), e a boa política pública é aquela em
-que os benefícios superam os custos. O triângulo de Harberger é uma
-ferramenta simples mas poderosa para essa contabilidade.</p>
+<ul>
+<li>Observe a convexidade de <span
+class="math inline">\(\pi^*(P)\)</span> — a curva “abre para cima”</li>
+<li>A inclinação em cada ponto é <span
+class="math inline">\(q^*(P)\)</span> (Lema de Hotelling)</li>
+<li>Note que <span class="math inline">\(\pi^*\)</span> nunca fica
+abaixo de zero para preços suficientemente altos</li>
+</ul>
 </div>
-<pre><code>**Por que a análise de equilíbrio geral importa para políticas públicas?**
-
-Quando o governo reduz o ICMS da gasolina, o efeito direto é claro: preço menor na bomba. Mas a análise parcial esconde efeitos indiretos — menor arrecadação estadual significa menos investimento em saúde e educação, e o preço menor incentiva mais consumo de combustível fóssil. A microeconomia nos ensina que toda intervenção tem custos (peso morto) e benefícios (correção de falhas), e a boa política pública é aquela em que os benefícios superam os custos. O triângulo de Harberger é uma ferramenta simples mas poderosa para essa contabilidade.</code></pre>
-<hr />
-<h2 id="preparação-para-a-atividade-prática">Preparação para a atividade
-prática</h2>
-<div class="admonition warning">
-<div class="admonition-title">
-Atividade na Aula 20
-</div>
-<p>Na aula, cada grupo receberá um dos 4 casos brasileiros e deverá:</p>
-<ol type="1">
-<li>Modelar o mercado com curvas de oferta e demanda (valores
-simulados)</li>
-<li>Calcular o equilíbrio sem intervenção</li>
-<li>Aplicar a política pública e calcular o novo equilíbrio</li>
-<li>Mensurar mudanças em EC, EP, receita fiscal e peso morto</li>
-<li>Apresentar recomendação: manter, reformar ou eliminar a
-política?</li>
-</ol>
-<p><strong>Prepare-se:</strong> revise o cálculo de áreas de excedentes
-e peso morto. Pense em argumentos a favor e contra cada política.</p>
-</div>
-<pre><code>Na aula, cada grupo receberá um dos 4 casos brasileiros e deverá:
-
-1. Modelar o mercado com curvas de oferta e demanda (valores simulados)
-2. Calcular o equilíbrio sem intervenção
-3. Aplicar a política pública e calcular o novo equilíbrio
-4. Mensurar mudanças em EC, EP, receita fiscal e peso morto
-5. Apresentar recomendação: manter, reformar ou eliminar a política?
-
-**Prepare-se:** revise o cálculo de áreas de excedentes e peso morto. Pense em argumentos a favor e contra cada política.</code></pre>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Um mercado tem demanda <span
-class="math inline">\(Q^D = 80 - P\)</span> e oferta <span
-class="math inline">\(Q^S = 2P - 10\)</span>. O governo impõe um imposto
-de <span class="math inline">\(t = 6\)</span> por unidade. Encontre: (a)
-equilíbrio sem imposto, (b) equilíbrio com imposto (<span
-class="math inline">\(P_C\)</span>, <span
-class="math inline">\(P_P\)</span>, <span
-class="math inline">\(Q_t\)</span>), (c) receita fiscal, (d) peso morto.
+<p><strong>Exercício 1.</strong> Uma firma competitiva tem <span
+class="math inline">\(C(q) = 2q^2 + 4q + 18\)</span>. O preço é <span
+class="math inline">\(P = 20\)</span>. Encontre <span
+class="math inline">\(q^*\)</span>, o lucro e verifique a CSO.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<ol type="a">
-<li><p>Sem imposto: <span class="math inline">\(80 - P = 2P - 10
-\implies 3P = 90 \implies P^* = 30\)</span>, <span
-class="math inline">\(Q^* = 50\)</span>.</p></li>
-<li><p>Com imposto: <span class="math inline">\(P_C = P_P +
-6\)</span>.</p></li>
-</ol>
-<p><span class="math inline">\(80 - (P_P + 6) = 2P_P - 10 \implies 84 =
-3P_P \implies P_P = 28\)</span>, <span class="math inline">\(P_C =
-34\)</span>.</p>
-<p><span class="math inline">\(Q_t = 80 - 34 = 46\)</span>.</p>
-<ol start="3" type="a">
-<li><p>Receita fiscal: <span class="math inline">\(R = t \cdot Q_t = 6
-\times 46 = 276\)</span>.</p></li>
-<li><p><span class="math inline">\(DWL = \frac{1}{2} \times 6 \times (50
-- 46) = \frac{1}{2} \times 6 \times 4 = 12\)</span>.</p></li>
-</ol>
-<p>Parcela paga pelo consumidor: <span class="math inline">\(34 - 30 =
-4\)</span> (2/3 do imposto).</p>
-<p>Parcela paga pelo produtor: <span class="math inline">\(30 - 28 =
-2\)</span> (1/3 do imposto).</p>
-<p>Isso é consistente: demanda tem elasticidade <span
-class="math inline">\(|\varepsilon_D| = 30/50 = 0{,}6\)</span>; oferta
-tem <span class="math inline">\(\varepsilon_S = 60/50 = 1{,}2\)</span>.
-Demanda mais inelástica absorve mais.</p>
+<p><span class="math inline">\(CMg = 4q + 4\)</span>. CPO: <span
+class="math inline">\(20 = 4q + 4 \implies q^* = 4\)</span>.</p>
+<p>CSO: <span class="math inline">\(dCMg/dq = 4 &gt; 0\)</span> (CMg
+crescente no ótimo).</p>
+<p><span class="math inline">\(\pi = 20(4) - [2(16) + 4(4) + 18] = 80 -
+[32 + 16 + 18] = 80 - 66 = 14\)</span>.</p>
 </div>
 </details>
-<pre><code>(a) Sem imposto: $80 - P = 2P - 10 \implies 3P = 90 \implies P^* = 30$, $Q^* = 50$.
-
-(b) Com imposto: $P_C = P_P + 6$.
-
-$80 - (P_P + 6) = 2P_P - 10 \implies 84 = 3P_P \implies P_P = 28$, $P_C = 34$.
-
-$Q_t = 80 - 34 = 46$.
-
-(c) Receita fiscal: $R = t \cdot Q_t = 6 \times 46 = 276$.
-
-(d) $DWL = \frac{1}{2} \times 6 \times (50 - 46) = \frac{1}{2} \times 6 \times 4 = 12$.
-
-Parcela paga pelo consumidor: $34 - 30 = 4$ (2/3 do imposto).
-
-Parcela paga pelo produtor: $30 - 28 = 2$ (1/3 do imposto).
-
-Isso é consistente: demanda tem elasticidade $|\varepsilon_D| = 30/50 = 0{,}6$; oferta tem $\varepsilon_S = 60/50 = 1{,}2$. Demanda mais inelástica absorve mais.</code></pre>
-<strong>Exercício 2.</strong> No mesmo mercado, suponha que o governo
-imponha um preço-teto de <span class="math inline">\(\bar{P} =
-24\)</span>. Calcule a escassez e o peso morto.
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(f(L) =
+10L^{1/2}\)</span> com <span class="math inline">\(P = 5\)</span> e
+<span class="math inline">\(w = 2\)</span>, encontre a quantidade ótima
+de trabalho.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(Q^D(24) = 80 - 24 = 56\)</span></p>
-<p><span class="math inline">\(Q^S(24) = 2(24) - 10 = 38\)</span></p>
-<p>Escassez: <span class="math inline">\(56 - 38 = 18\)</span>
-unidades.</p>
-<p>Quantidade transacionada: <span class="math inline">\(Q = 38\)</span>
-(lado curto).</p>
-<p><span class="math inline">\(P^D(38) = 80 - 38 = 42\)</span>
-(disposição a pagar pela última unidade transacionada).</p>
-<p><span class="math inline">\(DWL = \frac{1}{2}(42 - 24)(50 - 38) =
-\frac{1}{2}(18)(12) = 108\)</span></p>
-<p>Note que o peso morto do preço-teto (<span
-class="math inline">\(108\)</span>) é muito maior que o do imposto
-(<span class="math inline">\(12\)</span>), porque a distorção é mais
-severa.</p>
+<p><span class="math inline">\(PMg_L = 5L^{-1/2}\)</span>. Condição
+<span class="math inline">\(VPMg_L = w\)</span>:</p>
+<p><span class="math inline">\(5 \times 5L^{-1/2} = 2 \implies
+25L^{-1/2} = 2 \implies L^{-1/2} = 2/25\)</span></p>
+<p><span class="math inline">\(L^{1/2} = 25/2 \implies L^* =
+156{,}25\)</span></p>
+<p>Verificação: <span class="math inline">\(VPMg_L(156{,}25) = 25/12{,}5
+= 2 = w\)</span>.</p>
 </div>
 </details>
-<pre><code>$Q^D(24) = 80 - 24 = 56$
-
-$Q^S(24) = 2(24) - 10 = 38$
-
-Escassez: $56 - 38 = 18$ unidades.
-
-Quantidade transacionada: $Q = 38$ (lado curto).
-
-$P^D(38) = 80 - 38 = 42$ (disposição a pagar pela última unidade transacionada).
-
-$DWL = \frac{1}{2}(42 - 24)(50 - 38) = \frac{1}{2}(18)(12) = 108$
-
-Note que o peso morto do preço-teto ($108$) é muito maior que o do imposto ($12$), porque a distorção é mais severa.</code></pre>
-<strong>Exercício 3.</strong> Um subsídio pode ser eficiente? Dê um
-exemplo e explique a condição para que o subsídio aumente o bem-estar
-total.
+<p><strong>Exercício 3.</strong> Mostre que a função lucro é homogênea
+de grau 1 em <span class="math inline">\((P,w,v)\)</span>. O que isso
+significa economicamente?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Um subsídio pode ser eficiente quando corrige uma
-<strong>externalidade positiva</strong> — quando o benefício social
-marginal excede o benefício privado marginal.</p>
-<p>Exemplo: vacinação. O benefício privado de se vacinar inclui apenas a
-proteção individual. O benefício social inclui também a proteção dos
-outros (imunidade de rebanho). Sem subsídio, o mercado gera quantidade
-abaixo do ótimo social.</p>
-<p>Condição: o subsídio deve ser igual à externalidade marginal no ótimo
-social: <span class="math inline">\(s = BMg_{\text{social}} -
-BMg_{\text{privado}}\)</span>. Se o subsídio exceder a externalidade, há
-peso morto por superprodução. O subsídio eficiente internaliza a
-externalidade, movendo a quantidade de mercado para o ótimo social.</p>
+<p>Se multiplicamos <span class="math inline">\(P\)</span>, <span
+class="math inline">\(w\)</span> e <span
+class="math inline">\(v\)</span> por <span class="math inline">\(t &gt;
+0\)</span>:</p>
+<p><span class="math inline">\(\pi^*(tP, tw, tv) = \max_q [tPq - C(tw,
+tv, q)]\)</span></p>
+<p>Como <span class="math inline">\(C\)</span> é homogênea de grau 1 em
+<span class="math inline">\((w,v)\)</span>: <span
+class="math inline">\(C(tw, tv, q) = tC(w, v, q)\)</span>.</p>
+<p><span class="math inline">\(\pi^*(tP, tw, tv) = \max_q\, t[Pq -
+C(w,v,q)] = t\,\pi^*(P, w, v)\)</span></p>
+<p>Economicamente: o lucro é medido em unidades monetárias. Uma inflação
+uniforme (todos os preços dobram) dobra o lucro nominal sem alterar
+decisões reais. A firma não sofre de “ilusão monetária”.</p>
 </div>
 </details>
-<pre><code>Um subsídio pode ser eficiente quando corrige uma **externalidade positiva** — quando o benefício social marginal excede o benefício privado marginal.
-
-Exemplo: vacinação. O benefício privado de se vacinar inclui apenas a proteção individual. O benefício social inclui também a proteção dos outros (imunidade de rebanho). Sem subsídio, o mercado gera quantidade abaixo do ótimo social.
-
-Condição: o subsídio deve ser igual à externalidade marginal no ótimo social: $s = BMg_{\text{social}} - BMg_{\text{privado}}$. Se o subsídio exceder a externalidade, há peso morto por superprodução. O subsídio eficiente internaliza a externalidade, movendo a quantidade de mercado para o ótimo social.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -404,213 +257,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 <div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. A incidência econômica de um imposto depende de:
+<div class="q-text">Q1. A condição de maximização de lucro para uma firma competitiva é:</div>
+<div class="quiz-option" data-value="a">(a) $RMg = CMe$</div>
+<div class="quiz-option" data-value="b">(b) $P = CMg$ com CMg crescente</div>
+<div class="quiz-option" data-value="c">(c) $P = CMe$</div>
+<div class="quiz-option" data-value="d">(d) $CMg = CVMe$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. A condição $VPMg_L = w$ significa que a firma contrata trabalho até:</div>
+<div class="quiz-option" data-value="a">(a) O produto marginal ser zero</div>
+<div class="quiz-option" data-value="b">(b) O salário igualar o custo médio</div>
+<div class="quiz-option" data-value="c">(c) O valor monetário da produção adicional igualar o salário</div>
+<div class="quiz-option" data-value="d">(d) O produto total ser máximo</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Pelo Lema de Hotelling, a oferta da firma é:</div>
+<div class="quiz-option" data-value="a">(a) $q^* = \partial\pi^*/\partial P$</div>
+<div class="quiz-option" data-value="b">(b) $q^* = -\partial\pi^*/\partial P$</div>
+<div class="quiz-option" data-value="c">(c) $q^* = \partial C/\partial P$</div>
+<div class="quiz-option" data-value="d">(d) $q^* = \pi^*/P$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Sobre quem o imposto é legalmente cobrado
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. A lei da oferta decorre de qual propriedade da função lucro?</div>
+<div class="quiz-option" data-value="a">(a) Homogeneidade de grau 1</div>
+<div class="quiz-option" data-value="b">(b) Convexidade em $P$</div>
+<div class="quiz-option" data-value="c">(c) Concavidade em $P$</div>
+<div class="quiz-option" data-value="d">(d) Monotonicidade em $w$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Das elasticidades relativas de oferta e demanda
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. Se todos os preços (produto e fatores) dobram, o lucro máximo:</div>
+<div class="quiz-option" data-value="a">(a) Dobra (homogeneidade de grau 1)</div>
+<div class="quiz-option" data-value="b">(b) Quadruplica</div>
+<div class="quiz-option" data-value="c">(c) Não se altera</div>
+<div class="quiz-option" data-value="d">(d) Cai pela metade</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Do tamanho do mercado
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Da receita fiscal arrecadada
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. O peso morto de um imposto cresce com:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O valor absoluto do imposto, linearmente
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O quadrado do imposto (dobrar <span class="math inline">\(t\)</span>
-quadruplica DWL)
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>A receita fiscal, proporcionalmente
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O número de firmas no mercado
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. Um preço-teto abaixo do equilíbrio gera:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Excesso de oferta
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Excesso de demanda (escassez)
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Nenhum efeito se bem administrado
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Aumento do excedente total
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="a">
-<div class="q-text">
-Q4. No caso do PGPM brasileiro, o preço-piso agrícola gera:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Excesso de oferta que o governo precisa absorver
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Escassez de produtos agrícolas
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Redução no excedente do produtor
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Eliminação do peso morto
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “Um subsídio ao transporte público sempre gera peso morto e
-é, portanto, sempre ineficiente.”
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — se há externalidade positiva (menos poluição, menos
-congestionamento), o subsídio pode corrigir uma falha de mercado e
-aumentar a eficiência
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-20')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 20</strong>: Atividade prática — análise de políticas
-públicas brasileiras com cálculo de excedentes e peso morto. Traga
-calculadora e prepare seus argumentos!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 20**: Atividade prática — análise de políticas públicas brasileiras com cálculo de excedentes e peso morto. Traga calculadora e prepare seus argumentos!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 21</strong>: Maximização de lucro II — receita marginal,
+decisão de fechamento, curva de oferta e excedente do produtor. Revise a
+relação entre CMg e CVMe!</p>
 </div>
 
 </div>
@@ -621,7 +320,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-20');
 MicroQuiz.init('aula-20');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

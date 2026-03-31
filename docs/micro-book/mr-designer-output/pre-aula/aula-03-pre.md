@@ -1,145 +1,135 @@
-# Pré-Aula 03 — Preferências, Axiomas e Utilidade
+# Pré-Aula 03 — Preferências e Axiomas
 
 !!! info "Leitura obrigatória"
-    **Cap. 3, Seções 3.1–3.3** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 3, Seções 3.1–3.3** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Enunciar e interpretar os 4 axiomas de preferência racional
-2. Explicar por que curvas de indiferença não se cruzam
-3. Calcular a TMS para funções utilidade clássicas
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Enunciar e interpretar os axiomas fundamentais das preferências (completude, transitividade, continuidade, monotonicidade, convexidade)
+2. Explicar o Teorema de Debreu e a representação de preferências por funções de utilidade
+3. Desenhar e interpretar curvas de indiferença, compreendendo que utilidade é ordinal
 
 ---
 
-## 1. O ponto de partida: preferências
+## 1. Relações de preferência
 
-Antes de falar em "utilidade" ou "demanda", precisamos de uma base: como o consumidor **compara** cestas de bens?
+O consumidor compara cestas de bens usando uma **relação de preferência** $\succsim$ ("pelo menos tão boa quanto"). A partir dela, derivamos:
 
-Dado duas cestas $A = (x_A, y_A)$ e $B = (x_B, y_B)$:
+- **Preferência estrita**: $x \succ y \iff x \succsim y$ e não $y \succsim x$
+- **Indiferença**: $x \sim y \iff x \succsim y$ e $y \succsim x$
 
-- $A \succ B$: "prefere $A$ estritamente a $B$"
-- $A \sim B$: "indiferente entre $A$ e $B$"
-- $A \succeq B$: "prefere $A$ ou é indiferente"
+A questão central é: sob quais condições podemos representar $\succsim$ por uma função $u(\cdot)$ tal que $x \succsim y \iff u(x) \geq u(y)$?
 
 ---
 
-## 2. Os axiomas de racionalidade
+## 2. Axiomas das preferências
 
-Para que preferências gerem comportamento previsível, assumimos:
+### 2.1 Completude
 
-| Axioma | Significado | Consequência |
-|:---|:---|:---|
-| **Completude** | Para quaisquer $A, B$: ou $A \succeq B$ ou $B \succeq A$ (ou ambos) | Sempre consegue comparar |
-| **Transitividade** | Se $A \succeq B$ e $B \succeq C$, então $A \succeq C$ | Sem ciclos de preferência |
-| **Continuidade** | Pequenas mudanças na cesta não causam "saltos" de preferência | Garante utilidade contínua |
-| **Monotonicidade** | Se $A$ tem mais de tudo que $B$, então $A \succ B$ | "Mais é melhor" |
+Para quaisquer cestas $x$ e $y$: $x \succsim y$ ou $y \succsim x$ (ou ambos).
+
+O consumidor sempre consegue comparar duas cestas. Não há "não sei" — ele sabe se prefere $x$, se prefere $y$, ou se é indiferente.
+
+### 2.2 Transitividade
+
+Se $x \succsim y$ e $y \succsim z$, então $x \succsim z$.
 
 !!! note "Intuição Econômica"
-    **Por que transitividade importa?**
+    A transitividade garante coerência nas escolhas. Sem ela, um agente poderia ser explorado em trocas circulares: paga para trocar $z$ por $y$, depois $y$ por $x$, depois $x$ por $z$ — voltando ao início mais pobre. Isso é chamado de *money pump*.
 
-    Sem ela, alguém poderia preferir A a B, B a C, e C a A. Um vendedor esperto cobraria para "trocar" entre as opções infinitamente — o consumidor perderia dinheiro sem ganhar nada. A transitividade impede esse tipo de exploração.
+### 2.3 Continuidade
+
+Para todo $x$, os conjuntos $\{y : y \succsim x\}$ (pelo menos tão bom) e $\{y : x \succsim y\}$ (no máximo tão bom) são **fechados**.
+
+Intuitivamente: se uma sequência de cestas $y_n \succsim x$ converge para $y$, então $y \succsim x$. Não há "saltos" abruptos nas preferências.
+
+### 2.4 Monotonicidade (não-saciedade local)
+
+Se $x$ tem pelo menos tanto de cada bem quanto $y$ e mais de pelo menos um, então $x \succ y$. Formalmente: $x \geq y$ e $x \neq y \implies x \succ y$.
+
+Consequência: o consumidor sempre prefere mais a menos. As curvas de indiferença têm inclinação **negativa**.
+
+### 2.5 Convexidade
+
+Para quaisquer $x \sim y$ e $\lambda \in (0,1)$: $\lambda x + (1-\lambda)y \succsim x$.
+
+O consumidor prefere misturas a extremos. Conjuntos "pelo menos tão bom quanto" são **convexos**.
+
+!!! note "Intuição Econômica"
+    A convexidade reflete o gosto por diversificação. Um consumidor com 10 cafés e 0 chás (ou 0 cafés e 10 chás) ficaria mais satisfeito com 5 de cada — a mistura é pelo menos tão boa quanto os extremos.
 
 ---
 
-## 3. De preferências a utilidade
+## 3. Teorema de Debreu
 
-**Teorema de Debreu (1954):** Se $\succeq$ satisfaz completude, transitividade e continuidade, existe uma função contínua $U: \mathbb{R}^n_+ \to \mathbb{R}$ tal que:
+**Teorema (Debreu, 1954):** Se $\succsim$ é completa, transitiva e contínua, então existe uma função contínua $u: \mathbb{R}^n_+ \to \mathbb{R}$ que representa $\succsim$:
 
-$$x \succeq y \iff U(x) \geq U(y)$$
+$$x \succsim y \iff u(x) \geq u(y)$$
 
-A utilidade é **ordinal** (não cardinal): se $U$ representa $\succeq$, qualquer transformação monotônica $V = f(U)$ (com $f' > 0$) também representa.
-
-> $U = xy$ e $V = \ln x + \ln y$ representam as **mesmas preferências**.
+Além disso, se $v = f \circ u$ com $f$ estritamente crescente, então $v$ também representa $\succsim$. A utilidade é **ordinal**: apenas a ordenação importa, não os valores numéricos.
 
 ---
 
 ## 4. Curvas de indiferença
 
-Uma curva de indiferença é o conjunto de cestas que dão a **mesma utilidade**:
+Uma **curva de indiferença** é o conjunto de cestas que proporcionam o mesmo nível de utilidade:
 
-$$\{(x, y) : U(x,y) = \bar{U}\}$$
+$$\{(x_1, x_2) : u(x_1, x_2) = \bar{u}\}$$
 
-### Propriedades
+Propriedades fundamentais (dados os axiomas acima):
 
-1. **Preenchem todo o espaço** (completude)
-2. **Não se cruzam** (transitividade)
-3. **Decrescentes** (monotonicidade)
-4. **Convexas** (preferências convexas — diversificação é boa)
+1. **Curvas mais altas = maior utilidade** (monotonicidade)
+2. **Curvas não se cruzam** (transitividade)
+3. **Inclinação negativa** (monotonicidade)
+4. **Convexas em relação à origem** (convexidade)
 
----
+## Gráfico interativo: Curvas de Indiferença
 
-## Gráfico interativo: mapa de curvas de indiferença
-
-<div id="graph-indifference" style="min-height: 450px;">
-<iframe src="../../graficos/cap03/curvas-indiferenca.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap03/curvas-indiferenca.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Mude os parâmetros $a$ e $\rho$ com os sliders
-    - Observe como as curvas mudam de retas (substitutos) para L's (complementares)
-    - Arraste um ponto ao longo da curva e observe a TMS mudar
+    Movimente o cursor sobre diferentes cestas para ver o nível de utilidade. Observe como curvas mais afastadas da origem representam níveis superiores de satisfação.
 
 ---
 
-## 5. Taxa Marginal de Substituição (TMS)
+## 5. Tipos de preferências
 
-$$\text{TMS}_{x,y} = -\frac{dy}{dx}\bigg|_{\bar{U}} = \frac{UMg_x}{UMg_y} = \frac{\partial U / \partial x}{\partial U / \partial y}$$
+Diferentes formas funcionais capturam diferentes padrões de preferência:
 
-> "Quanto de $y$ o consumidor aceita **perder** por 1 unidade a mais de $x$, mantendo utilidade constante."
+| Tipo | Curvas de indiferença | Propriedade-chave |
+|------|----------------------|-------------------|
+| Substitutos perfeitos | Retas paralelas | TMS constante |
+| Complementos perfeitos | L invertido | Consumo em proporção fixa |
+| Cobb-Douglas | Hipérboles convexas | TMS decrescente, suave |
+| Quase-linear | Translações verticais | Sem efeito renda para um bem |
 
-A TMS é **decrescente** ao longo da curva (para preferências convexas): quanto mais $x$ já tem, menos $y$ aceita trocar.
+## Gráfico interativo: Tipos de Preferências
 
-!!! example "Cálculo da TMS"
-    Para $U(x,y) = x \cdot y$:
+<iframe src="graficos/cap03/tipos-preferencias.html"></iframe>
 
-    $UMg_x = y$, $UMg_y = x$
-
-    $\text{TMS} = \frac{y}{x}$
-
-    No ponto $(4, 2)$: TMS $= 2/4 = 0{,}5$
-
-    "Aceita perder 0,5 unidades de $y$ por 1 unidade a mais de $x$."
-
----
-
-## 6. As funções utilidade clássicas
-
-| Função | Forma | TMS | Curvas | Exemplo |
-|:---|:---|:---|:---|:---|
-| **Linear** | $\alpha x + \beta y$ | $\alpha/\beta$ (constante) | Retas | Marcas de arroz |
-| **Leontief** | $\min\{\alpha x, \beta y\}$ | 0 ou ∞ | L | Sapato E/D |
-| **Cobb-Douglas** | $x^a y^{1-a}$ | $\frac{ay}{(1-a)x}$ | Hipérboles | Caso geral |
-| **CES** | $(x^\rho + y^\rho)^{1/\rho}$ | $(y/x)^{1-\rho}$ | Variável | Generaliza tudo |
-
----
-
-## Box: Preferências reveladas — o que suas compras dizem sobre você
-
-!!! note "Intuição Econômica"
-    Na prática, não observamos preferências diretamente — observamos **escolhas**. O economista Paul Samuelson mostrou que, sob certas condições, as escolhas observadas **revelam** as preferências subjacentes.
-
-    Se João escolheu a cesta $A$ quando $B$ estava disponível e custava menos, podemos inferir que $A \succeq B$.
-
-    Essa ideia é a base da **teoria das preferências reveladas** — extraímos preferências a partir de dados de consumo, sem perguntar nada ao consumidor.
+!!! tip "Explore o gráfico"
+    Alterne entre os diferentes tipos de preferência e observe como a forma das curvas de indiferença muda. Compare substitutos perfeitos (retas) com complementos perfeitos (ângulos retos).
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Se um consumidor prefere A a B e B a C, mas prefere C a A, qual axioma é violado?
+**Exercício 1.** Um consumidor diz: "Prefiro café a chá, chá a suco, e suco a café." Qual axioma é violado? Explique por que essa violação é problemática.
 
 ??? success "Solução"
-    **Transitividade.** $A \succ B$ e $B \succ C$ deveriam implicar $A \succ C$, mas temos $C \succ A$.
+    A **transitividade** é violada. Se café $\succ$ chá e chá $\succ$ suco, a transitividade exige café $\succ$ suco. Mas o consumidor afirma suco $\succ$ café, gerando um ciclo. Isso permite uma *money pump*: alguém poderia cobrar para trocar suco por chá, chá por café, e café por suco, extraindo dinheiro infinitamente.
 
-**Exercício 2.** Prove que curvas de indiferença não podem se cruzar.
-
-??? success "Solução"
-    Suponha cruzamento no ponto $C$. Então $C \in CI_A$ e $C \in CI_B$, logo $U(C) = U(A)$ e $U(C) = U(B)$, o que implica $U(A) = U(B)$. Mas $A$ e $B$ estão em curvas diferentes (por hipótese). Contradição com a definição.
-
-**Exercício 3.** Calcule a TMS para $U(x,y) = x^{0.3} y^{0.7}$ no ponto $(10, 5)$.
+**Exercício 2.** Mostre que curvas de indiferença não podem se cruzar. (Dica: use monotonicidade e transitividade.)
 
 ??? success "Solução"
-    $\text{TMS} = \frac{0{,}3 \cdot y}{0{,}7 \cdot x} = \frac{0{,}3(5)}{0{,}7(10)} = \frac{1{,}5}{7} \approx 0{,}214$
+    Suponha que duas curvas, $\bar{u}_1$ e $\bar{u}_2$ com $\bar{u}_2 > \bar{u}_1$, se cruzem no ponto $A$. Então $A$ está em ambas as curvas, logo $u(A) = \bar{u}_1$ e $u(A) = \bar{u}_2$. Mas $\bar{u}_2 > \bar{u}_1$ implica $u(A) > u(A)$, uma contradição. Alternativamente: tome $B$ na curva superior (não no cruzamento). Temos $B \sim A$ (mesma curva) e $A \sim C$ onde $C$ está na curva inferior. Transitividade dá $B \sim C$, mas monotonicidade exige $B \succ C$ (pois $B$ tem mais de algum bem). Contradição. $\blacksquare$
+
+**Exercício 3.** Um consumidor tem preferências representadas por $u(x_1,x_2) = x_1 x_2$. A transformação $v(x_1,x_2) = \ln(x_1) + \ln(x_2)$ representa as mesmas preferências? E $w(x_1,x_2) = -x_1 x_2$?
+
+??? success "Solução"
+    $v = \ln(x_1 x_2) = \ln \circ \, u$, e $\ln$ é estritamente crescente. Logo $v$ representa as mesmas preferências. Já $w = -u$ é uma transformação estritamente **decrescente**, portanto inverte a ordenação: $w$ **não** representa as mesmas preferências.
 
 ---
 
@@ -150,44 +140,44 @@ A TMS é **decrescente** ao longo da curva (para preferências convexas): quanto
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O que o axioma de completude garante?
+**Q1.** O axioma que garante que o consumidor pode sempre comparar duas cestas é:
 
-- [x] (a) O consumidor sempre consegue comparar duas cestas
-- [ ] (b) O consumidor sempre prefere mais a menos
-- [ ] (c) As preferências são contínuas
-- [ ] (d) Não existem ciclos de preferência
-
-**Q2.** Se $A \succ B$ e $B \succ C$, mas $C \succ A$, qual axioma é violado?
-
-- [ ] (a) Completude
-- [x] (b) Transitividade
+- [x] (a) Completude
+- [ ] (b) Transitividade
 - [ ] (c) Continuidade
 - [ ] (d) Monotonicidade
 
-**Q3.** Curvas de indiferença de um consumidor racional podem se cruzar?
+**Q2.** Se $u(x_1,x_2) = x_1^2 x_2^2$, qual das seguintes também representa as mesmas preferências?
 
-- [ ] (a) Sim, se as preferências são convexas
-- [x] (b) Não — violaria transitividade
-- [ ] (c) Sim, no ponto de saciedade
-- [ ] (d) Depende da função utilidade
+- [ ] (a) $v = -x_1^2 x_2^2$
+- [x] (b) $v = \ln(x_1) + \ln(x_2)$
+- [ ] (c) $v = x_1 + x_2$
+- [ ] (d) $v = 1/(x_1 x_2)$
 
-**Q4.** O que a TMS mede?
+**Q3.** A convexidade das preferências implica que:
 
-- [ ] (a) A inclinação da restrição orçamentária
-- [x] (b) A taxa à qual o consumidor troca $y$ por $x$ mantendo utilidade constante
-- [ ] (c) A utilidade marginal de $x$
-- [ ] (d) O preço relativo dos bens
+- [ ] (a) Curvas de indiferença são retas
+- [ ] (b) O consumidor prefere extremos a misturas
+- [x] (c) Misturas de cestas indiferentes são pelo menos tão boas quanto as cestas originais
+- [ ] (d) A utilidade é cardinal
 
-**Q5.** Se $U(x,y) = x \cdot y$, qual é a TMS no ponto $(4, 2)$?
+**Q4.** Pelo Teorema de Debreu, para que exista uma função utilidade contínua, as preferências devem ser:
 
-- [ ] (a) 2
-- [x] (b) 0,5
-- [ ] (c) 8
-- [ ] (d) 1
+- [ ] (a) Completas e convexas
+- [ ] (b) Completas, transitivas e monotônicas
+- [x] (c) Completas, transitivas e contínuas
+- [ ] (d) Completas, transitivas, contínuas e convexas
+
+**Q5.** Curvas de indiferença com formato de "L" (ângulo reto) representam:
+
+- [ ] (a) Substitutos perfeitos
+- [x] (b) Complementos perfeitos
+- [ ] (c) Preferências Cobb-Douglas
+- [ ] (d) Preferências quase-lineares
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 03**: Mini-lecture sobre axiomas e utilidade + 3 questões de Peer Instruction sobre propriedades de preferências.
+    **Aula 04**: Utilidade e Curvas de Indiferença — TMS, funções Cobb-Douglas, CES e quase-linear em detalhe.

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--
+  Estática Comparativa do Monopólio — Efeito de Imposto Unitário
+  Library: JSXGraph  |  Chapter 15
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estática Comparativa — Imposto sobre o Monopólio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .info-box .section-title { font-weight: 700; color: #1565c0; margin-top: 0.4rem; }
+    .info-box .section-title:first-child { margin-top: 0; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Parâmetros</h3>
+    <div class="slider-group">
+      <label>Intercepto da demanda \(a\): <span class="val" id="val-a">80</span></label>
+      <input type="range" id="slider-a" min="50" max="120" step="1" value="80">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+      <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Custo marginal \(c\): <span class="val" id="val-c">10</span></label>
+      <input type="range" id="slider-c" min="0" max="40" step="1" value="10">
+    </div>
+    <div class="slider-group">
+      <label>Imposto unitário \(t\): <span class="val" id="val-t">0</span></label>
+      <input type="range" id="slider-t" min="0" max="30" step="1" value="0">
+    </div>
+    <div class="info-box" id="info"></div>
+    <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+      <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+    </label>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // Global parameters (updated by sliders)
+  var a = 80, b = 1, c = 10, t = 0;
+
+  var board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-18, 140, 130, -80],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  // Axes
+  board.create('axis', [[0,0],[1,0]], {
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
+    name: '', withLabel: false
+  });
+  board.create('text', [65, -12, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board.create('axis', [[0,0],[0,1]], {
+    ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+    name: '', withLabel: false
+  });
+  board.create('text', [-13, 65, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+
+  // --- Helper functions ---
+  function qm0() { return (a - c) / (2 * b); }
+  function pm0() { return (a + c) / 2; }
+  function qmt() { return Math.max(0, (a - c - t) / (2 * b)); }
+  function pmt() { return (a + c + t) / 2; }
+
+  // --- Shaded areas (drawn first) ---
+
+  // Tax revenue rectangle
+  board.create('polygon', [
+    [0, function(){ return c; }],
+    [function(){ return qmt(); }, function(){ return c; }],
+    [function(){ return qmt(); }, function(){ return c + t; }],
+    [0, function(){ return c + t; }]
+  ], {
+    fillColor: '#ff9800', fillOpacity: 0.15,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false,
+    visible: function(){ return t > 0; }
+  });
+
+  // DWL triangle
+  board.create('polygon', [
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [function(){ return Math.max(0, (a - c - t) / b); }, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return c + t; }]
+  ], {
+    fillColor: '#ff9800', fillOpacity: 0.25,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+  });
+
+  // Profit rectangle
+  board.create('polygon', [
+    [0, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return c + t; }],
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [0, function(){ return pmt(); }]
+  ], {
+    fillColor: '#00897b', fillOpacity: 0.18,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+  });
+
+  // CS triangle
+  board.create('polygon', [
+    [0, function(){ return a; }],
+    [0, function(){ return pmt(); }],
+    [function(){ return qmt(); }, function(){ return pmt(); }]
+  ], {
+    fillColor: '#1565c0', fillOpacity: 0.18,
+    borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+  });
+
+  // --- Curves ---
+
+  // Demand (1st quadrant)
+  board.create('functiongraph', [function(q) {
+    if (q < 0) return NaN;
+    var v = a - b * q;
+    return v >= 0 ? v : NaN;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // MR (q >= 0)
+  board.create('functiongraph', [function(q) {
+    if (q < 0) return NaN;
+    return a - 2 * b * q;
+  }], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
+
+  // CMg (q >= 0)
+  board.create('functiongraph', [function(q) {
+    return q >= 0 ? c : NaN;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5 });
+
+  // CMg + t (dashed, only when t > 0)
+  board.create('functiongraph', [function(q) {
+    return (q >= 0 && t > 0) ? c + t : NaN;
+  }], { strokeColor: '#ff9800', strokeWidth: 2, dash: 3 });
+
+  // --- Curve labels (to the right of each curve's end) ---
+  board.create('text', [function(){ return a / b + 3; }, 3, '<i>D</i>'], {
+    fontSize: 13, color: '#1565c0', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return a / (2 * b) + 3; }, 3, '<i>RMg</i>'], {
+    fontSize: 13, color: '#C8102E', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return a / b + 3; }, function(){ return c + 4; }, '<i>CMg</i>'], {
+    fontSize: 13, color: '#00897b', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return a / b + 3; }, function(){ return c + t + 4; }, '<i>CMg + t</i>'], {
+    fontSize: 12, color: '#ff9800', fixed: true, highlight: false,
+    visible: function(){ return t > 0; }
+  });
+
+  // --- Equilibrium points ---
+
+  // Before-tax (ghost, only when t > 0)
+  board.create('point', [
+    function(){ return qm0(); }, function(){ return pm0(); }
+  ], { name: '', size: 3, strokeColor: '#999', fillColor: '#999', strokeOpacity: 0.5, fillOpacity: 0.5,
+       fixed: true, visible: function(){ return t > 0; } });
+
+  // After-tax (or current if t=0)
+  board.create('point', [
+    function(){ return qmt(); }, function(){ return pmt(); }
+  ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E', fixed: true });
+
+  // --- Dashed projection lines ---
+  board.create('segment', [
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [0, function(){ return pmt(); }]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+  board.create('segment', [
+    [function(){ return qmt(); }, function(){ return pmt(); }],
+    [function(){ return qmt(); }, 0]
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+  // --- Axis annotations ---
+  board.create('text', [-3, function(){ return pmt(); }, '<i>P<sup>m</sup></i>'], {
+    fontSize: 11, color: '#C8102E', anchorX: 'right', fixed: true, highlight: false
+  });
+  board.create('text', [function(){ return qmt(); }, -7, '<i>Q<sup>m</sup></i>'], {
+    fontSize: 11, color: '#C8102E', anchorX: 'middle', fixed: true, highlight: false
+  });
+
+  // --- Area labels ---
+  board.create('text', [
+    function(){ return qmt() / 2; },
+    function(){ return pmt() + (a - pmt()) / 3; },
+    'EC'
+  ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+  board.create('text', [
+    function(){ return qmt() / 2; },
+    function(){ return (c + t) + (pmt() - c - t) / 2; },
+    '<i>π</i>'
+  ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+  board.create('text', [
+    function(){ return qmt() / 2; },
+    function(){ return c + t / 2; },
+    'Receita fiscal'
+  ], { fontSize: 10, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false,
+       visible: function(){ return t > 3; } });
+
+  board.create('text', [
+    function(){ var qc = Math.max(0, (a - c - t) / b); return qmt() + (qc - qmt()) * 0.4; },
+    function(){ return (c + t) + (pmt() - c - t) * 0.3; },
+    'PPM'
+  ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+  // --- Info panel ---
+  function update() {
+    a = parseFloat(document.getElementById('slider-a').value);
+    b = parseFloat(document.getElementById('slider-b').value);
+    c = parseFloat(document.getElementById('slider-c').value);
+    t = parseFloat(document.getElementById('slider-t').value);
+
+    document.getElementById('val-a').textContent = a.toFixed(0);
+    document.getElementById('val-b').textContent = b.toFixed(1);
+    document.getElementById('val-c').textContent = c.toFixed(0);
+    document.getElementById('val-t').textContent = t.toFixed(0);
+
+    var _qm0 = qm0(), _pm0 = pm0();
+    var _qmt = qmt(), _pmt = pmt();
+    var profit = (_pmt - c - t) * _qmt;
+    var cs = 0.5 * (a - _pmt) * _qmt;
+    var taxRev = t * _qmt;
+    var lerner = _pmt > 0 ? (_pmt - c - t) / _pmt : 0;
+    var passThrough = t > 0 ? (_pmt - _pm0) / t : 0;
+
+    var html = '<div class="section-title">Curvas</div>';
+    html += '\\(P = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + '\\,Q\\) &ensp;(Demanda)<br>';
+    html += '\\(CMg = ' + c.toFixed(0) + '\\)';
+    if (t > 0) {
+      html += ', &ensp;\\(CMg + t = ' + (c + t).toFixed(0) + '\\)';
+    }
+
+    if (t > 0) {
+      html += '<div class="section-title">Antes do imposto</div>';
+      html += '\\(Q^m = ' + _qm0.toFixed(1) + '\\), \\(P^m = ' + _pm0.toFixed(1) + '\\)<br>';
+      html += '\\(\\pi = ' + ((_pm0 - c) * _qm0).toFixed(1) + '\\)';
+      html += '<div class="section-title">Com imposto (\\(t = ' + t.toFixed(0) + '\\))</div>';
+    } else {
+      html += '<div class="section-title">Monopólio</div>';
+    }
+    html += '\\(Q^m = ' + _qmt.toFixed(1) + '\\), \\(P^m = ' + _pmt.toFixed(1) + '\\)<br>';
+    html += '\\(\\pi = ' + profit.toFixed(1) + '\\), \\(EC = ' + cs.toFixed(1) + '\\)<br>';
+    html += '\\(L = ' + lerner.toFixed(3) + '\\)';
+    if (t > 0) {
+      html += '<div class="section-title">Incidência</div>';
+      html += 'Receita fiscal: \\(' + taxRev.toFixed(1) + '\\)<br>';
+      html += 'Repasse: \\(\\Delta P / t = ' + passThrough.toFixed(2) + '\\) (' + (passThrough * 100).toFixed(0) + '%)<br>';
+      html += '\\(\\Delta Q = ' + (_qmt - _qm0).toFixed(1) + '\\)';
+    }
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-a').value = 80;
+    document.getElementById('slider-b').value = 1;
+    document.getElementById('slider-c').value = 10;
+    document.getElementById('slider-t').value = 0;
+    update();
+  }
+
+  ['slider-a','slider-b','slider-c','slider-t'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+
+  function toggleLabels() {
+    var show = document.getElementById('chk-labels').checked;
+    var objs = board.objectsList;
+    for (var i = 0; i < objs.length; i++) {
+      if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+        objs[i].setProperty({visible: show});
+      }
+    }
+    board.update();
+  }
+</script>
+</body>
+</html>

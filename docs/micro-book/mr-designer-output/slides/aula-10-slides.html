@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-10-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-10-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-10-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-10-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-10-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,20 +143,16 @@ Insper
 </div>
 
 </section>
-<section id="salário-de-reserva" class="slide level2">
-<h2>Salário de Reserva</h2>
-<p>O <strong>salário de reserva</strong> <span class="math inline">\(w^*\)</span> é o menor salário pelo qual o trabalhador aceita ofertar trabalho.</p>
+<section id="revisão-o-modelo-trabalho-lazer" class="slide level2">
+<h2>Revisão: O Modelo Trabalho-Lazer</h2>
+<p>O consumidor maximiza <span class="math inline">\(U(c, R)\)</span> sujeito à restrição orçamentária com dotação de tempo:</p>
+<p><span class="math display">\[c + wR = m_0 + wT\]</span></p>
 <div class="fragment">
-<p>Formalmente, é o salário tal que <span class="math inline">\(L^*(w^*) = 0\)</span>, ou seja:</p>
-<p><span class="math display">\[\text{TMS}_{\ell, C}\Big|_{\ell = \bar{T}} = w^*\]</span></p>
+<p>onde <span class="math inline">\(c\)</span> é consumo, <span class="math inline">\(R\)</span> é lazer, <span class="math inline">\(w\)</span> é salário, <span class="math inline">\(m_0\)</span> é renda não-salarial e <span class="math inline">\(T\)</span> é dotação de tempo.</p>
 </div>
 <div class="fragment">
-<p><strong>Determinantes do salário de reserva:</strong></p>
-<ul>
-<li>Renda não-salarial <span class="math inline">\(V\)</span> (quanto maior, maior <span class="math inline">\(w^*\)</span>)</li>
-<li>Preferências por lazer</li>
-<li>Programas de transferência de renda (elevam <span class="math inline">\(V\)</span> efetivo)</li>
-</ul>
+<p><strong>Condição de ótimo:</strong></p>
+<p><span class="math display">\[\text{TMS}_{R,c} = \frac{U_R}{U_c} = w\]</span></p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -167,194 +165,292 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>O salário de reserva é o custo de oportunidade da <em>primeira</em> hora de trabalho: quanto vale aquela última hora de lazer.</p>
+<p>O preço do lazer é o salário — cada hora de descanso “custa” <span class="math inline">\(w\)</span> em consumo perdido. No ótimo, o valor subjetivo da última hora de lazer iguala exatamente esse custo.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="demanda-por-trabalho-demanda-derivada" class="slide level2">
-<h2>Demanda por Trabalho — Demanda Derivada</h2>
-<p>A firma maximizadora de lucro contrata trabalho até:</p>
-<p><span class="math display">\[w = p \cdot PM_L = VPM_L\]</span></p>
+<section id="curva-de-oferta-de-trabalho-backward-bending" class="slide level2">
+<h2>Curva de Oferta de Trabalho Backward-Bending</h2>
+<p>Definindo oferta de trabalho <span class="math inline">\(L(w) = T - R(w)\)</span>, aplicamos Slutsky com dotações:</p>
 <div class="fragment">
-<p>onde <span class="math inline">\(VPM_L\)</span> é o <strong>valor do produto marginal do trabalho</strong>.</p>
+<p><span class="math display">\[\frac{\partial L}{\partial w} = \underbrace{-\frac{\partial h_R}{\partial w}}_{\text{ES} &gt; 0} + \underbrace{L \cdot \frac{\partial R}{\partial m}}_{\text{ER: depende do sinal}}\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Propriedades:</strong></p>
-<ul>
-<li>Inclinação negativa (PMg decrescente)</li>
-<li>Desloca-se com preço do produto <span class="math inline">\(p\)</span>, tecnologia, e quantidade de capital <span class="math inline">\(K\)</span></li>
-<li>É uma <strong>demanda derivada</strong>: depende do mercado do produto final</li>
-</ul>
-</div>
-</section>
-<section id="equilíbrio-competitivo-no-mercado-de-trabalho" class="slide level2">
-<h2>Equilíbrio Competitivo no Mercado de Trabalho</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p>No equilíbrio:</p>
-<p><span class="math display">\[L^S(w^*) = L^D(w^*)\]</span></p>
-<p>. . .</p>
-<p><strong>Características:</strong></p>
-<ul>
-<li>Salário igual ao <span class="math inline">\(VPM_L\)</span></li>
-<li>Trabalhadores e firmas são tomadores de preço</li>
-<li>Sem desemprego involuntário</li>
-</ul>
-<p>. . .</p>
-<blockquote>
-<p>Na prática, fricções, informação imperfeita e poder de mercado geram desvios.</p>
-</blockquote>
-</div><div class="column" style="width:50%;">
-<p><strong>Estática comparativa:</strong></p>
+<p><strong>Estática comparativa sobre <span class="math inline">\(w\)</span>:</strong></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Choque</th>
-<th style="text-align: center;">Efeito em <span class="math inline">\(w^*\)</span></th>
-<th style="text-align: center;">Efeito em <span class="math inline">\(L^*\)</span></th>
+<th style="text-align: left;">Efeito</th>
+<th style="text-align: center;">Direção</th>
+<th style="text-align: left;">Mecanismo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">↑ produtividade</td>
-<td style="text-align: center;">↑</td>
-<td style="text-align: center;">↑</td>
+<td style="text-align: left;">Substituição (ES)</td>
+<td style="text-align: center;"><span class="math inline">\(L \uparrow\)</span></td>
+<td style="text-align: left;">Lazer fica mais caro</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">↑ oferta de trabalho</td>
-<td style="text-align: center;">↓</td>
-<td style="text-align: center;">↑</td>
+<td style="text-align: left;">Renda (ER)</td>
+<td style="text-align: center;"><span class="math inline">\(L \downarrow\)</span></td>
+<td style="text-align: left;">Trabalhador mais rico consome mais lazer</td>
 </tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Quando <span class="math inline">\(w\)</span> é alto e <span class="math inline">\(L\)</span> é grande, o ER domina o ES <span class="math inline">\(\implies \frac{\partial L}{\partial w} &lt; 0\)</span>: a curva se inclina para trás (<strong>backward-bending</strong>).</p>
+</blockquote>
+</div>
+</section>
+<section id="evidência-empírica-brasil" class="slide level2">
+<h2>Evidência Empírica: Brasil</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Margem extensiva</strong> (participar ou não):</p>
+<ul>
+<li>Elasticidade alta para mulheres casadas (<span class="math inline">\(\approx 0{,}5\)</span> a <span class="math inline">\(0{,}8\)</span>)</li>
+<li>Elasticidade baixa para homens prime-age (<span class="math inline">\(\approx 0{,}1\)</span>)</li>
+<li>Programas de transferência (Bolsa Família) reduzem participação marginalmente</li>
+</ul>
+<p>. . .</p>
+<p><strong>Margem intensiva</strong> (horas trabalhadas):</p>
+<ul>
+<li>Elasticidades menores (<span class="math inline">\(\approx 0{,}1\)</span> a <span class="math inline">\(0{,}3\)</span>)</li>
+<li>Evidência de backward-bending em faixas de alta renda</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Fatos estilizados (PNAD/IBGE):</strong></p>
+<ul>
+<li>Jornada média caiu de 44h para 39h/semana (2001–2023)</li>
+<li>Consistente com ER dominando à medida que renda real cresceu</li>
+<li>Mulheres: participação crescente (margem extensiva domina)</li>
+</ul>
+<p>. . .</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>No Brasil, a evidência sugere que o efeito renda domina para homens em faixas salariais altas, enquanto para mulheres a margem extensiva (entrar no mercado) ainda é o canal principal.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="oferta-de-trabalho-com-impostos" class="slide level2">
+<h2>Oferta de Trabalho com Impostos</h2>
+<p>Um imposto proporcional <span class="math inline">\(\tau\)</span> sobre o salário cria uma cunha fiscal: o trabalhador recebe <span class="math inline">\(w(1-\tau)\)</span>, mas a firma paga <span class="math inline">\(w\)</span>.</p>
+<div id="graph-a10-tax" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>τ: <span id="val-a10-tau">0.20</span></label> <input type="range" id="sl-a10-tau" min="0" max="0.50" step="0.02" value="0.20" oninput="window.updateA10Tax(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a10-tax', {
+    boundingbox: [-0.5, 350, 17, -20],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Lazer (R)', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'Consumo (c)', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var w = 20, T = 16, m0 = 50;
+  var tau = 0.20;
+
+  // Budget constraint without tax
+  var bcNoTax = board.create('line', [
+    [0, m0 + w * T], [T, m0]
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false,
+       fixed: true });
+
+  var labelNoTax = board.create('text', [1, m0 + w * T - 15, 'Sem imposto'],
+    { fontSize: 11, color: '#1565c0', fixed: true });
+
+  // Budget constraint with tax
+  var bcTax = board.create('line', [
+    function() { return [0, m0 + w * (1 - tau) * T]; },
+    function() { return [T, m0]; }
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5, dash: 2, straightFirst: false, straightLast: false,
+       fixed: true });
+
+  var labelTax = board.create('text', [1, function() { return m0 + w * (1 - tau) * T - 15; },
+    function() { return 'Com \u03C4 = ' + tau.toFixed(2); }],
+    { fontSize: 11, color: '#C8102E', fixed: true });
+
+  // Endowment point
+  board.create('point', [T, m0], {
+    name: 'Dotação (T, m\u2080)', size: 4, color: '#388e3c', strokeColor: '#388e3c',
+    fillColor: '#388e3c', fixed: true, label: { offset: [-30, -15], fontSize: 11 }
+  });
+
+  // Shaded wedge area
+  var wedge = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var cNoTax = m0 + w * (T - t);
+      var cTax = m0 + w * (1 - tau) * (T - t);
+      return cNoTax - cTax;
+    },
+    0, T
+  ], { strokeColor: '#ff9800', strokeWidth: 0, visible: false });
+
+  window.updateA10Tax = function(val) {
+    tau = parseFloat(val);
+    document.getElementById('val-a10-tau').textContent = tau.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="escolha-intertemporal-poupança-ótima" class="slide level2">
+<h2>Escolha Intertemporal: Poupança Ótima</h2>
+<p>O consumidor vive dois períodos com rendas <span class="math inline">\((m_1, m_2)\)</span>, taxa de juros <span class="math inline">\(r\)</span> e fator de desconto <span class="math inline">\(\beta \in (0,1)\)</span>.</p>
+<div class="fragment">
+<p><strong>Problema:</strong></p>
+<p><span class="math display">\[\max_{c_1, c_2} \; U(c_1) + \beta U(c_2) \quad \text{s.a.} \quad c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Equação de Euler (condição de ótimo):</strong></p>
+<p><span class="math display">\[\boxed{U'(c_1) = (1+r)\,\beta\, U'(c_2)}\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A equação de Euler diz que o consumidor ajusta consumo até que a utilidade marginal de R$1 hoje iguale o retorno de poupar esse R$1 (multiplicado pelo desconto temporal). Se <span class="math inline">\(U'(c_1) &gt; (1+r)\beta U'(c_2)\)</span>, ele deveria consumir mais hoje.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="efeito-da-taxa-de-juros-sobre-poupança" class="slide level2">
+<h2>Efeito da Taxa de Juros sobre Poupança</h2>
+<p>Um aumento em <span class="math inline">\(r\)</span> afeta a poupança <span class="math inline">\(s = m_1 - c_1\)</span> por dois canais:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Efeito Substituição:</strong></p>
+<ul>
+<li>Consumo futuro fica mais “barato”</li>
+<li><span class="math inline">\(c_1 \downarrow\)</span>, <span class="math inline">\(c_2 \uparrow\)</span></li>
+<li><strong>Poupa mais</strong></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Efeito Renda:</strong> depende da posição</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;"><span class="math inline">\(r \uparrow\)</span> torna…</th>
+<th style="text-align: center;">ER sobre <span class="math inline">\(c_1\)</span></th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
-<td style="text-align: left;">↑ preço do produto</td>
-<td style="text-align: center;">↑</td>
-<td style="text-align: center;">↑</td>
+<td style="text-align: left;">Poupador (<span class="math inline">\(c_1 &lt; m_1\)</span>)</td>
+<td style="text-align: left;">Mais rico</td>
+<td style="text-align: center;"><span class="math inline">\(c_1 \uparrow\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">↑ renda não-salarial</td>
-<td style="text-align: center;">↑</td>
-<td style="text-align: center;">↓</td>
+<td style="text-align: left;">Devedor (<span class="math inline">\(c_1 &gt; m_1\)</span>)</td>
+<td style="text-align: left;">Mais pobre</td>
+<td style="text-align: center;"><span class="math inline">\(c_1 \downarrow\)</span></td>
 </tr>
 </tbody>
 </table>
 </div></div>
-</section>
-<section id="diferenciais-salariais" class="slide level2">
-<h2>Diferenciais Salariais</h2>
-<p>Por que salários diferem entre trabalhadores e setores?</p>
-<div class="fragment">
-<p><strong>Teoria dos diferenciais compensatórios (Adam Smith):</strong></p>
-<p><span class="math display">\[w_{\text{perigo}} - w_{\text{seguro}} = \text{compensação pelo risco}\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Outros fatores:</strong></p>
+<p><strong>Resultado líquido:</strong></p>
 <ul>
-<li>Capital humano (educação, experiência)</li>
-<li>Barreiras à entrada (licenças, sindicatos)</li>
-<li>Discriminação estatística</li>
-<li>Eficiência salarial (salário acima do equilíbrio para incentivar esforço)</li>
+<li><strong>Poupador:</strong> ES diz poupar mais, ER diz poupar menos → <strong>ambíguo</strong></li>
+<li><strong>Devedor:</strong> ES e ER alinham-se → <span class="math inline">\(c_1 \downarrow\)</span> inequivocamente → <strong>poupa mais (ou deve menos)</strong></li>
 </ul>
 </div>
 </section>
-<section id="poder-de-monopsônio" class="slide level2">
-<h2>Poder de Monopsônio</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>Um <strong>monopsonista</strong> é o único comprador de trabalho.</p>
-<p>. . .</p>
-<p>Enfrenta oferta <span class="math inline">\(w(L)\)</span> crescente:</p>
-<p><span class="math display">\[CMg_L = w(L) + w'(L) \cdot L &gt; w(L)\]</span></p>
-<p>. . .</p>
-<p><strong>Resultado:</strong></p>
+<section id="escolha-intertemporal-com-inflação" class="slide level2">
+<h2>Escolha Intertemporal com Inflação</h2>
+<p>Com inflação <span class="math inline">\(\pi\)</span>, a taxa de juros <strong>nominal</strong> <span class="math inline">\(r_{\text{nom}}\)</span> não reflete o retorno real.</p>
+<div class="fragment">
+<p><strong>Taxa de juros real:</strong></p>
+<p><span class="math display">\[1 + r_{\text{real}} = \frac{1 + r_{\text{nom}}}{1 + \pi}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Aproximação de Fisher</strong> (para <span class="math inline">\(\pi\)</span> pequeno):</p>
+<p><span class="math display">\[\boxed{r_{\text{real}} \approx r_{\text{nom}} - \pi}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Implicações para a poupança:</strong></p>
 <ul>
-<li>Contrata onde <span class="math inline">\(VPM_L = CMg_L\)</span></li>
-<li>Paga <span class="math inline">\(w(L^M) &lt; VPM_L\)</span></li>
-<li>Emprego menor que no competitivo</li>
+<li>Se <span class="math inline">\(r_{\text{nom}} = 12\%\)</span> e <span class="math inline">\(\pi = 10\%\)</span>, então <span class="math inline">\(r_{\text{real}} \approx 2\%\)</span></li>
+<li>O consumidor deve avaliar o retorno <strong>real</strong>, não o nominal</li>
+<li>Ilusão monetária: agentes que olham <span class="math inline">\(r_{\text{nom}}\)</span> tomam decisões subótimas</li>
 </ul>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap17/oferta-trabalho.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
-<div title="Intuição Econômica">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
 </div>
-<p><strong>Intuição Econômica</strong></p>
-</div>
-<div class="callout-content">
-<p>O monopsonista sabe que, para contratar mais um trabalhador, precisa elevar o salário de <em>todos</em> — por isso o custo marginal do trabalho excede o salário.</p>
-</div>
-</div>
-</div>
+<div class="fragment">
+<blockquote>
+<p>No Brasil, a distinção é crucial: períodos de inflação alta (pré-Real) corroíam completamente o retorno nominal da poupança.</p>
+</blockquote>
 </div>
 </section>
-<section id="salário-mínimo-efeitos-ambíguos" class="slide level2">
-<h2>Salário Mínimo — Efeitos Ambíguos</h2>
+<section id="mercado-de-crédito-restrições" class="slide level2">
+<h2>Mercado de Crédito: Restrições</h2>
+<p>Na prática, nem todos conseguem tomar empréstimo livremente. Uma <strong>restrição de liquidez</strong> limita:</p>
+<p><span class="math display">\[c_1 \leq m_1 \quad \text{(não pode tomar emprestado)}\]</span></p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Mercado competitivo:</strong></p>
+<p><strong>Sem restrição:</strong></p>
 <ul>
-<li>Se <span class="math inline">\(w_{\min} &gt; w^*\)</span> → desemprego</li>
-<li>Perda de peso morto</li>
+<li>Escolha ótima: <span class="math inline">\(c_1^*\)</span> pode exceder <span class="math inline">\(m_1\)</span></li>
+<li>Suavização perfeita do consumo</li>
 </ul>
 <p>. . .</p>
-<p><strong>Monopsônio:</strong></p>
+<p><strong>Com restrição:</strong></p>
 <ul>
-<li>Se <span class="math inline">\(w_{\min} \in (w^M, w^*)\)</span> → <strong>aumenta emprego e salário</strong></li>
-<li>Efeito positivo possível!</li>
+<li>Se <span class="math inline">\(c_1^* &gt; m_1\)</span>: agente é <strong>restrito</strong> → <span class="math inline">\(c_1 = m_1\)</span></li>
+<li>Se <span class="math inline">\(c_1^* \leq m_1\)</span>: restrição não é ativa (é poupador)</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <p>. . .</p>
-<p><strong>Evidência empírica (Card &amp; Krueger, 1994):</strong></p>
+<p><strong>Consequências:</strong></p>
 <ul>
-<li>Aumento do salário mínimo em New Jersey não reduziu emprego em fast-food</li>
-<li>Consistente com modelo de monopsônio</li>
+<li>Consumo não é suavizado → responde mais a choques de renda corrente</li>
+<li>Equação de Euler pode ser violada: <span class="math inline">\(U'(c_1) &gt; (1+r)\beta U'(c_2)\)</span></li>
+<li>Afeta principalmente jovens, trabalhadores informais, famílias de baixa renda</li>
 </ul>
 <p>. . .</p>
-<blockquote>
-<p>Debate continua: depende da magnitude do aumento e do grau de poder de monopsônio.</p>
-</blockquote>
-</div></div>
-</section>
-<section id="backward-bending-derivação-formal" class="slide level2">
-<h2>Backward-Bending — Derivação Formal</h2>
-<p>Para <span class="math inline">\(U(C, \ell)\)</span>, a oferta de trabalho <span class="math inline">\(L(w) = \bar{T} - \ell(w)\)</span>.</p>
-<div class="fragment">
-<p>Aplicando Slutsky com dotações (<span class="math inline">\(\omega_\ell = \bar{T}\)</span>):</p>
-<p><span class="math display">\[\frac{\partial \ell}{\partial w} = \underbrace{\frac{\partial h_\ell}{\partial w}}_{&lt; 0 \text{ (ES)}} + \underbrace{L \cdot \frac{\partial \ell}{\partial m}}_{&gt; 0 \text{ se lazer normal (ER)}}\]</span></p>
-</div>
-<div class="fragment">
-<p>Portanto:</p>
-<p><span class="math display">\[\frac{\partial L}{\partial w} = -\frac{\partial \ell}{\partial w} = \underbrace{|ES|}_{&gt; 0} - \underbrace{L \cdot \frac{\partial \ell}{\partial m}}_{&gt; 0}\]</span></p>
-</div>
-<div class="fragment">
-<blockquote>
-<p>Quando <span class="math inline">\(L\)</span> é grande (salário alto), o ER domina → <span class="math inline">\(\frac{\partial L}{\partial w} &lt; 0\)</span> → <strong>backward-bending</strong>.</p>
-</blockquote>
-<iframe src="../../graficos/cap17/trabalho-lazer.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div>
-</section>
-<section id="fies-e-escolha-intertemporal" class="slide level2">
-<h2>FIES e Escolha Intertemporal</h2>
-<p>O <strong>FIES</strong> é um empréstimo subsidiado para estudantes universitários.</p>
-<div class="fragment">
-<p>No modelo de Fisher com investimento em capital humano:</p>
-<ul>
-<li><strong>Sem FIES:</strong> restrição de crédito → <span class="math inline">\(c_1\)</span> limitado, não investe em educação</li>
-<li><strong>Com FIES:</strong> relaxa restrição → pode investir hoje, pagando com renda futura maior</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\text{VPL da educação} = -\text{custo} + \sum_{t=1}^{T} \frac{\Delta m_t}{(1+r)^t} &gt; 0\]</span></p>
-</div>
-<div class="fragment">
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -365,26 +461,27 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>O FIES funciona como um “mercado de capitais para capital humano” — permite que o estudante suavize consumo e invista na própria produtividade futura.</p>
+<p>A restrição de liquidez impede o agente de “trazer” renda futura para o presente. Ele gostaria de consumir mais hoje e menos amanhã, mas o mercado de crédito não permite.</p>
 </div>
 </div>
 </div>
 </div>
+</div></div>
 </div>
 </section>
-<section id="role-play-negociação-salarial" class="slide level2">
-<h2>Role-Play — Negociação Salarial</h2>
-<div title="Exercício em duplas">
+<section id="simulação-instruções" class="slide level2">
+<h2>Simulação: Instruções</h2>
+<div title="Atividade em Equipes">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Exercício em duplas</strong></p>
+<p><strong>Atividade em Equipes</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Tempo:</strong> 15 minutos | <strong>Formato:</strong> Simulação em pares</p>
+<p><strong>Tempo:</strong> 25 minutos | <strong>Formato:</strong> Equipes de 4–5 alunos</p>
 </div>
 </div>
 </div>
@@ -392,73 +489,292 @@ Insper
 <div class="fragment">
 <p><strong>Regras:</strong></p>
 <ol type="1">
-<li><strong>Metade da turma = Firmas</strong> (recebem cartão com <span class="math inline">\(VPM_L\)</span> e número de vagas)</li>
-<li><strong>Metade = Trabalhadores</strong> (recebem cartão com salário de reserva <span class="math inline">\(w^*\)</span>)</li>
-<li>Negociação livre por 5 minutos</li>
-<li>Registre o salário acordado (ou “não contratado”)</li>
+<li>Cada equipe representa uma <strong>família</strong> que decide quantas horas trabalhar</li>
+<li>Objetivo: maximizar utilidade <span class="math inline">\(U(c, R) = c^{0{,}5} \cdot R^{0{,}5}\)</span> (Cobb-Douglas)</li>
+<li>Decisão: escolher horas de trabalho <span class="math inline">\(L \in [0, T]\)</span></li>
+<li>Consumo: <span class="math inline">\(c = wL + m_0\)</span></li>
+<li>Lazer: <span class="math inline">\(R = T - L\)</span></li>
 </ol>
 </div>
 <div class="fragment">
-<p><strong>Rodada 2:</strong> Introduza salário mínimo de R$ 1.800. Compare os resultados.</p>
-<p><strong>Rodada 3:</strong> Reduza o número de firmas para 1 (monopsônio). O que acontece?</p>
+<p><strong>Três rodadas:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Rodada</th>
+<th style="text-align: left;">Cenário</th>
+<th style="text-align: left;">Parâmetros</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">Base</td>
+<td style="text-align: left;"><span class="math inline">\(w=20\)</span>, <span class="math inline">\(T=16\)</span>, <span class="math inline">\(m_0=50\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Choque salarial</td>
+<td style="text-align: left;"><span class="math inline">\(w=40\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Imposto</td>
+<td style="text-align: left;"><span class="math inline">\(w=40\)</span>, <span class="math inline">\(\tau=30\%\)</span></td>
+</tr>
+</tbody>
+</table>
 </div>
 </section>
-<section id="think-pair-share-bolsa-família-e-oferta-de-trabalho" class="slide level2">
-<h2>Think-Pair-Share — Bolsa Família e Oferta de Trabalho</h2>
-<div title="Think-Pair-Share">
+<section id="simulação-cenário-base" class="slide level2">
+<h2>Simulação: Cenário Base</h2>
+<p><strong>Parâmetros da Rodada 1:</strong></p>
+<ul>
+<li>Salário: <span class="math inline">\(w = 20\)</span>/hora</li>
+<li>Dotação de tempo: <span class="math inline">\(T = 16\)</span> horas</li>
+<li>Renda não-salarial: <span class="math inline">\(m_0 = 50\)</span></li>
+</ul>
+<div class="fragment">
+<p><strong>Restrição orçamentária:</strong></p>
+<p><span class="math display">\[c = 20L + 50, \quad R = 16 - L\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Tarefa:</strong> Calcule a escolha ótima de <span class="math inline">\(L^*\)</span> para <span class="math inline">\(U = c^{0{,}5} R^{0{,}5}\)</span>.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Think-Pair-Share</strong></p>
+<p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Tempo:</strong> 8 minutos | Pense (2 min) → Discuta (3 min) → Compartilhe (3 min)</p>
+<p>Com Cobb-Douglas, a solução ótima implica gastar metade da “renda total” (<span class="math inline">\(wT + m_0 = 370\)</span>) em cada “bem”. Logo <span class="math inline">\(c^* = 185\)</span> e <span class="math inline">\(wR^* = 185\)</span>, de modo que <span class="math inline">\(R^* = 9{,}25\)</span>h e <span class="math inline">\(L^* = 6{,}75\)</span>h.</p>
 </div>
 </div>
 </div>
+</div>
+</div>
+</section>
+<section id="simulação-choque-de-salário" class="slide level2">
+<h2>Simulação: Choque de Salário</h2>
+<p><strong>Rodada 2:</strong> O salário dobra para <span class="math inline">\(w = 40\)</span>/hora. Tudo o mais constante.</p>
+<div class="fragment">
+<p><strong>Nova renda total:</strong> <span class="math inline">\(wT + m_0 = 40 \times 16 + 50 = 690\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Previsões teóricas:</strong></p>
+<ul>
+<li><span class="math inline">\(c^* = 345\)</span>, <span class="math inline">\(R^* = 345/40 = 8{,}625\)</span>h, <span class="math inline">\(L^* = 7{,}375\)</span>h</li>
+<li>Horas de trabalho <strong>aumentaram</strong> de 6,75 para 7,375 (+9,3%)</li>
+<li>Mas o aumento é <strong>menos que proporcional</strong> ao dobro do salário</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Decomposição:</strong></p>
+<ul>
+<li><strong>ES:</strong> lazer mais caro → trabalha mais</li>
+<li><strong>ER:</strong> renda total quase dobrou → consome mais lazer (trabalha menos)</li>
+<li>Resultado líquido: ES domina levemente nesta faixa</li>
+</ul>
 </div>
 <div class="fragment">
 <blockquote>
-<p>O Bolsa Família aumenta a renda não-salarial <span class="math inline">\(V\)</span> das famílias beneficiárias. Usando o modelo trabalho-lazer:</p>
+<p>Pergunte à turma: se <span class="math inline">\(w\)</span> continuasse subindo (80, 160…), o que aconteceria com <span class="math inline">\(L\)</span>?</p>
 </blockquote>
 </div>
+</section>
+<section id="simulação-introdução-de-imposto" class="slide level2">
+<h2>Simulação: Introdução de Imposto</h2>
+<p><strong>Rodada 3:</strong> Mantemos <span class="math inline">\(w = 40\)</span>, mas agora há imposto <span class="math inline">\(\tau = 30\%\)</span>. Salário líquido: <span class="math inline">\(w(1-\tau) = 28\)</span>/hora.</p>
 <div class="fragment">
-<p><strong>(a)</strong> Represente graficamente o efeito do programa sobre a restrição orçamentária.</p>
-<p><strong>(b)</strong> O programa necessariamente reduz a oferta de trabalho? Discuta as condições.</p>
-<p><strong>(c)</strong> Se o programa é condicionado à frequência escolar dos filhos, como isso altera sua análise?</p>
+<p><strong>Nova renda total:</strong> <span class="math inline">\(28 \times 16 + 50 = 498\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Previsões:</strong></p>
+<ul>
+<li><span class="math inline">\(c^* = 249\)</span>, <span class="math inline">\(R^* = 249/28 = 8{,}89\)</span>h, <span class="math inline">\(L^* = 7{,}11\)</span>h</li>
+<li>Comparando com Rodada 2 (sem imposto): <span class="math inline">\(L\)</span> caiu de 7,375 para 7,11h</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Análise:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Comparação</th>
+<th style="text-align: center;"><span class="math inline">\(L^*\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(c^*\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R^*\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Rodada 1 (<span class="math inline">\(w=20\)</span>, sem imposto)</td>
+<td style="text-align: center;">6,75</td>
+<td style="text-align: center;">185</td>
+<td style="text-align: center;">9,25</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Rodada 2 (<span class="math inline">\(w=40\)</span>, sem imposto)</td>
+<td style="text-align: center;">7,38</td>
+<td style="text-align: center;">345</td>
+<td style="text-align: center;">8,63</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Rodada 3 (<span class="math inline">\(w=40\)</span>, <span class="math inline">\(\tau=30\%\)</span>)</td>
+<td style="text-align: center;">7,11</td>
+<td style="text-align: center;">249</td>
+<td style="text-align: center;">8,89</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O imposto reduz a oferta de trabalho ao diminuir o salário efetivo — criando peso morto no mercado de trabalho.</p>
+</blockquote>
 </div>
 </section>
-<section id="case-o-fies-do-universitário" class="slide level2">
-<h2>Case — O FIES do Universitário</h2>
-<div title="Peer Instruction">
+<section id="equilíbrio-de-mercado-de-trabalho" class="slide level2">
+<h2>Equilíbrio de Mercado de Trabalho</h2>
+<p>Oferta backward-bending encontra demanda decrescente. Use o slider para deslocar a demanda:</p>
+<div id="graph-a10-market" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Deslocamento da Demanda: <span id="val-a10-demand">0</span></label> <input type="range" id="sl-a10-demand" min="-5" max="5" step="0.5" value="0" oninput="window.updateA10Market(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a10-market', {
+    boundingbox: [-1, 55, 18, -3],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Trabalho (L)', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'Salário (w)', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var dShift = 0;
+
+  // Backward-bending supply: parametric (L(w), w)
+  // Model: L = a*w - b*w^2 (rises then falls)
+  var a = 0.8, b = 0.008;
+  var supCurve = board.create('curve', [
+    function(t) {
+      var L = a * t - b * t * t;
+      return L < 0 ? NaN : L;
+    },
+    function(t) { return t; },
+    0, 52
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var labelS = board.create('text', [
+    function() { var w = 48; return a * w - b * w * w + 0.5; },
+    49, 'S'
+  ], { fontSize: 14, color: '#1565c0', fixed: true });
+
+  // Demand curve: L = 16 + dShift - 0.3*w (downward sloping)
+  var demCurve = board.create('curve', [
+    function(t) { return 16 + dShift - 0.3 * t; },
+    function(t) { return t; },
+    0, 52
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  var labelD = board.create('text', [
+    function() { return 16 + dShift - 0.3 * 5 + 0.5; },
+    6, 'D'
+  ], { fontSize: 14, color: '#C8102E', fixed: true });
+
+  // Equilibrium point — find intersection numerically
+  var eqPt = board.create('point', [
+    function() {
+      // Supply: L_s = a*w - b*w^2; Demand: L_d = 16 + dShift - 0.3*w
+      // Equate: a*w - b*w^2 = 16 + dShift - 0.3*w
+      // b*w^2 - (a+0.3)*w + (16+dShift) = 0
+      var A = b, B = -(a + 0.3), C = 16 + dShift;
+      var disc = B * B - 4 * A * C;
+      if (disc < 0) return NaN;
+      var w1 = (-B - Math.sqrt(disc)) / (2 * A);
+      var Leq = 16 + dShift - 0.3 * w1;
+      return Leq;
+    },
+    function() {
+      var A = b, B = -(a + 0.3), C = 16 + dShift;
+      var disc = B * B - 4 * A * C;
+      if (disc < 0) return NaN;
+      var w1 = (-B - Math.sqrt(disc)) / (2 * A);
+      return w1;
+    }
+  ], { name: '', size: 5, color: '#388e3c', strokeColor: '#388e3c', fillColor: '#388e3c', fixed: true });
+
+  // Equilibrium label
+  board.create('text', [
+    function() { return eqPt.X() + 0.8; },
+    function() { return eqPt.Y() + 2; },
+    function() {
+      return 'w* = ' + eqPt.Y().toFixed(1) + ', L* = ' + eqPt.X().toFixed(1);
+    }
+  ], { fontSize: 12, color: '#388e3c', fixed: true });
+
+  // Dashed lines to axes
+  board.create('segment', [
+    function() { return [eqPt.X(), 0]; },
+    function() { return [eqPt.X(), eqPt.Y()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1, fixed: true });
+
+  board.create('segment', [
+    function() { return [0, eqPt.Y()]; },
+    function() { return [eqPt.X(), eqPt.Y()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1, fixed: true });
+
+  window.updateA10Market = function(val) {
+    dShift = parseFloat(val);
+    document.getElementById('val-a10-demand').textContent = dShift.toFixed(1);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="discussão-e-resultados" class="slide level2">
+<h2>Discussão e Resultados</h2>
+<div title="Debrief — 10 minutos">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Peer Instruction</strong></p>
+<p><strong>Debrief — 10 minutos</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Tempo:</strong> 10 minutos | <strong>Formato:</strong> Grupos de 3–4 alunos</p>
+<p>Compare os resultados da sua equipe com as previsões teóricas.</p>
 </div>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Cenário:</strong> Ana tem renda <span class="math inline">\(m_1 = 30.000\)</span>/ano (estágio) e espera <span class="math inline">\(m_2 = 120.000\)</span>/ano após a graduação. A taxa de juros de mercado é <span class="math inline">\(r = 10\%\)</span>/ano, mas o FIES cobra <span class="math inline">\(r_{FIES} = 3\%\)</span>/ano.</p>
-</div>
-<div class="fragment">
-<p><strong>Tarefas:</strong></p>
+<p><strong>Perguntas para discussão:</strong></p>
 <ol type="1">
-<li>Desenhe a restrição intertemporal <strong>sem</strong> e <strong>com</strong> FIES</li>
-<li>Calcule o valor presente da riqueza em cada caso</li>
-<li>Ana é poupadora ou devedora? Justifique</li>
-<li>Discuta: o subsídio do FIES beneficia mais quem tem renda alta ou baixa no período 1?</li>
+<li>Os resultados da simulação confirmaram a teoria? Onde houve desvios?</li>
+<li>Na Rodada 2, a oferta de trabalho aumentou menos que proporcionalmente ao salário. Por quê?</li>
+<li>Na Rodada 3, o imposto reduziu <span class="math inline">\(L\)</span>. Quem “paga” esse imposto — trabalhador, firma, ou ambos?</li>
 </ol>
+</div>
+<div class="fragment">
+<p><strong>Lições principais:</strong></p>
+<ul>
+<li>O modelo trabalho-lazer prevê respostas <strong>qualitativas</strong> corretas</li>
+<li>A decomposição ES/ER explica por que a resposta ao salário é ambígua</li>
+<li>Impostos sobre trabalho criam distorções: reduzem a oferta e geram peso morto</li>
+<li>A evidência empírica brasileira é consistente com elasticidades modestas na margem intensiva</li>
+</ul>
 </div>
 </section>
 <section id="próxima-aula" class="slide level2">

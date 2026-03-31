@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-01-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-01-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-01-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-01-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-01-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -200,6 +202,40 @@ Insper
 </div>
 </div>
 </section>
+<section id="otimização-em-uma-variável-interativo" class="slide level2">
+<h2>Otimização em Uma Variável — Interativo</h2>
+<p>Mova o ponto sobre a curva e ajuste os parâmetros para ver como o ótimo se desloca:</p>
+<div id="graph-a01-optim1var" style="width:700px;height:380px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Centro <span class="math inline">\(a\)</span>: <input type="range" id="sl-a01-a" min="-2" max="6" value="3" step="0.2" oninput="updA01Opt()"> <span id="val-a01-a">3.0</span></label> <label>Curvatura <span class="math inline">\(b\)</span>: <input type="range" id="sl-a01-b" min="0.2" max="3" value="1" step="0.1" oninput="updA01Opt()"> <span id="val-a01-b">1.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-optim1var',{
+    boundingbox:[-2,9,9,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  var pA=3, pB=1;
+  function f(x){return -pB*(x-pA)*(x-pA)+pA*pB+3;}
+  function fp(x){return -2*pB*(x-pA);}
+  var curve = brd.create('functiongraph',[f,-5,12],{strokeColor:'#1565c0',strokeWidth:3});
+  var maxPt = brd.create('point',[function(){return pA;},function(){return f(pA);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'x*',label:{fontSize:14,offset:[10,10]}});
+  var dashV = brd.create('segment',[function(){return [pA,0];},function(){return [pA,f(pA)];}],
+    {strokeColor:'#C8102E',dash:2,strokeWidth:1.5});
+  var glider = brd.create('glider',[1,f(1),curve],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:''});
+  var tang = brd.create('tangent',[glider],{strokeColor:'#ff9800',dash:2,strokeWidth:2});
+  window.updA01Opt = function(){
+    pA = parseFloat(document.getElementById('sl-a01-a').value);
+    pB = parseFloat(document.getElementById('sl-a01-b').value);
+    document.getElementById('val-a01-a').textContent = pA.toFixed(1);
+    document.getElementById('val-a01-b').textContent = pB.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+</section>
 <section id="otimização-multivariável-e-gradiente" class="slide level2">
 <h2>Otimização Multivariável e Gradiente</h2>
 <p>Com <span class="math inline">\(n\)</span> variáveis de escolha: <span class="math inline">\(\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n)\)</span></p>
@@ -218,6 +254,44 @@ Insper
 <p><span class="math display">\[H = \begin{bmatrix} f_{11} &amp; f_{12} \\ f_{21} &amp; f_{22} \end{bmatrix}\]</span></p>
 </div></div>
 </div>
+</section>
+<section id="visualizando-o-gradiente" class="slide level2">
+<h2>Visualizando o Gradiente</h2>
+<p>Arraste o ponto sobre o mapa de contorno. A seta mostra a direção do gradiente <span class="math inline">\(\nabla f\)</span>.</p>
+<div id="graph-a01-gradient" style="width:700px;height:380px;margin:0 auto;">
+
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-gradient',{
+    boundingbox:[-1,10,10,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  // f(x,y) = -(x-5)^2 -(y-5)^2 + 50  (paraboloid, max at (5,5))
+  function fval(x,y){return -(x-5)*(x-5)-(y-5)*(y-5)+50;}
+  // Contour lines f=k
+  var levels = [10,20,30,35,40,45,48,50];
+  for(var i=0;i<levels.length;i++){
+    var r = Math.sqrt(50-levels[i]);
+    if(r>0){
+      brd.create('circle',[[5,5],r],{strokeColor:'#1565c0',strokeWidth:1.5,
+        strokeOpacity:0.3+0.07*i,dash:2,fixed:true,highlight:false});
+    } else {
+      brd.create('point',[5,5],{size:3,fillColor:'#00897b',strokeColor:'#00897b',
+        name:'máx',label:{fontSize:14,offset:[10,5]}});
+    }
+  }
+  var P = brd.create('point',[3,7],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:'P',
+    label:{fontSize:14,offset:[10,10]}});
+  var sc = 0.3;
+  var arr = brd.create('arrow',
+    [function(){return [P.X(),P.Y()];},
+     function(){var gx=-2*(P.X()-5),gy=-2*(P.Y()-5);return [P.X()+sc*gx,P.Y()+sc*gy];}],
+    {strokeColor:'#C8102E',strokeWidth:3,lastArrow:{type:2,size:8}});
+  brd.create('text',[function(){return P.X()+0.3;},function(){return P.Y()-0.8;},
+    function(){return '∇f = ('+(-2*(P.X()-5)).toFixed(1)+', '+(-2*(P.Y()-5)).toFixed(1)+')';}],
+    {fontSize:13,color:'#C8102E'});
+})();
+</script>
 </section>
 <section id="por-que-precisamos-do-lagrangeano" class="slide level2">
 <h2>Por que Precisamos do Lagrangeano?</h2>
@@ -297,6 +371,56 @@ Insper
 </blockquote>
 </div>
 </section>
+<section id="o-lagrangeano-em-ação-interativo" class="slide level2">
+<h2>O Lagrangeano em Ação — Interativo</h2>
+<p><span class="math inline">\(\max_{x,y} \; U = xy \quad \text{s.a.} \quad x + y = c\)</span>. Mova o slider para alterar a restrição:</p>
+<div id="graph-a01-lagrange" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Restrição <span class="math inline">\(c\)</span>: <input type="range" id="sl-a01-c" min="2" max="18" value="10" step="0.5" oninput="updA01Lag()"> <span id="val-a01-c">10.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-lagrange',{
+    boundingbox:[-1,16,16,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var cVal=10;
+  // Contour curves U=k (hyperbolas y=k/x)
+  var contours=[], conLevels=[4,9,16,25];
+  function drawAll(){
+    brd.suspendUpdate();
+    // Remove old
+    while(brd.objectsList.length>2) brd.removeObject(brd.objectsList[brd.objectsList.length-1]);
+    var optX=cVal/2, optY=cVal/2, optU=optX*optY;
+    // Contour levels
+    var levels=[optU*0.2,optU*0.4,optU*0.6,optU*0.8,optU];
+    for(var i=0;i<levels.length;i++){
+      var k=levels[i];
+      var op = i<4?0.3:0.9;
+      var col = i<4?'#1565c0':'#00897b';
+      var d = i<4?2:0;
+      var w = i<4?1.5:2.5;
+      brd.create('functiongraph',[function(kk){return function(x){return x>0.1?kk/x:NaN;};}(k),0.1,18],
+        {strokeColor:col,strokeWidth:w,strokeOpacity:op,dash:d,highlight:false});
+    }
+    // Constraint line
+    brd.create('line',[[cVal,0],[0,cVal]],{strokeColor:'#C8102E',strokeWidth:2.5,straightFirst:false,straightLast:false,
+      point1:{visible:false},point2:{visible:false}});
+    // Optimal point
+    brd.create('point',[optX,optY],{size:6,fillColor:'#00897b',strokeColor:'#00897b',
+      name:'('+optX.toFixed(1)+', '+optY.toFixed(1)+')',label:{fontSize:13,offset:[10,10]}});
+    brd.unsuspendUpdate();
+  }
+  drawAll();
+  window.updA01Lag = function(){
+    cVal = parseFloat(document.getElementById('sl-a01-c').value);
+    document.getElementById('val-a01-c').textContent = cVal.toFixed(1);
+    drawAll();
+  };
+})();
+</script>
+</section>
 <section id="o-multiplicador-lambda-e-o-teorema-do-envelope" class="slide level2">
 <h2>O Multiplicador <span class="math inline">\(\lambda\)</span> e o Teorema do Envelope</h2>
 <p><strong>Interpretação de <span class="math inline">\(\lambda\)</span>:</strong></p>
@@ -325,27 +449,27 @@ Insper
 <p><strong>Teorema do Envelope:</strong> no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo depende <strong>apenas</strong> do efeito direto, não do reajuste das variáveis de escolha.</p>
 </div>
 </section>
-<section id="exemplo-interativo-o-lagrangeano-em-ação" class="slide level2">
-<h2>Exemplo Interativo: O Lagrangeano em Ação</h2>
-<p>Considere o problema:</p>
-<p><span class="math display">\[\max_{x,y} \; U(x,y) = x^{0{,}5} y^{0{,}5} \quad \text{s.a.} \quad 2x + 3y = 120\]</span></p>
-<div class="fragment">
-<p>Explore o gráfico abaixo — mova os controles para ver como a solução ótima se ajusta:</p>
-<iframe src="../../graficos/cap02/lagrangeano.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div>
-</section>
-<section id="estática-comparativa-e-otimização-em-uma-variável" class="slide level2">
-<h2>Estática Comparativa e Otimização em Uma Variável</h2>
+<section id="estática-comparativa" class="slide level2">
+<h2>Estática Comparativa</h2>
 <p><strong>Estática comparativa:</strong> como <span class="math inline">\(x^*\)</span> muda quando um parâmetro <span class="math inline">\(\alpha\)</span> se altera?</p>
 <div class="fragment">
 <p>Da CPO <span class="math inline">\(f_x(x^*, \alpha) = 0\)</span>, pelo Teorema da Função Implícita:</p>
 <p><span class="math display">\[\frac{dx^*}{d\alpha} = -\frac{f_{x\alpha}}{f_{xx}}\]</span></p>
 </div>
 <div class="fragment">
-<p>Explore a otimização em uma variável e veja como o ótimo se desloca:</p>
-<iframe src="../../graficos/cap02/otimizacao-1var.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Sinal de <span class="math inline">\(f_{xx}\)</span>:</strong></p>
+<p>CSO garante <span class="math inline">\(f_{xx} &lt; 0\)</span> (máximo)</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Sinal de <span class="math inline">\(f_{x\alpha}\)</span>:</strong></p>
+<p>Determina a <strong>direção</strong> do deslocamento de <span class="math inline">\(x^*\)</span></p>
+</div></div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A estática comparativa transforma derivadas cruzadas em <strong>previsões econômicas</strong>.</p>
+</blockquote>
 </div>
 </section>
 <section id="elasticidade-e-funções-homogêneas" class="slide level2">
@@ -367,24 +491,56 @@ Insper
 </div></div>
 </div>
 </section>
+<section id="aplicação-cobb-douglas-e-homogeneidade" class="slide level2">
+<h2>Aplicação: Cobb-Douglas e Homogeneidade</h2>
+<p>Considere <span class="math inline">\(f(K,L) = K^{0{,}3} L^{0{,}7}\)</span> — homogênea de grau 1.</p>
+<div class="fragment">
+<p><strong>Pelo Teorema de Euler:</strong></p>
+<p><span class="math display">\[K \cdot \frac{\partial f}{\partial K} + L \cdot \frac{\partial f}{\partial L} = 1 \cdot f(K,L)\]</span></p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[K \cdot 0{,}3 \frac{f}{K} + L \cdot 0{,}7 \frac{f}{L} = f\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Se a função de produção tem retornos constantes de escala (<span class="math inline">\(k=1\)</span>), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o <strong>Teorema da Exaustão</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="mapa-do-curso-de-ferramentas-a-mercados" class="slide level2">
 <h2>Mapa do Curso: De Ferramentas a Mercados</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Bloco 1 — Consumidor</strong></p>
+<p><strong>Bloco 1 — Consumidor</strong> (Aulas 1–12)</p>
 <ol type="1">
 <li>Ferramentas matemáticas</li>
 <li>Preferências e utilidade</li>
-<li>Escolha ótima</li>
-<li>Demanda e bem-estar</li>
+<li>Escolha ótima e dualidade</li>
+<li>Efeitos renda e substituição</li>
+<li>Dotações e trabalho</li>
+<li>Incerteza e seguros</li>
 </ol>
 </div><div class="column" style="width:50%;">
-<p><strong>Bloco 2 — Firma e Mercados</strong></p>
-<ol start="5" type="1">
-<li>Produção e custos</li>
-<li>Concorrência perfeita</li>
-<li>Monopólio e oligopólio</li>
-<li>Equilíbrio geral</li>
+<p><strong>Bloco 2 — Firma e Mercados</strong> (Aulas 13–24)</p>
+<ol start="7" type="1">
+<li>Produção e tecnologia</li>
+<li>Custos</li>
+<li>Lucro e oferta</li>
+<li>Equilíbrio competitivo</li>
+<li>Monopólio e discriminação</li>
+<li>Oligopólio</li>
 </ol>
 </div></div>
 <div class="fragment">

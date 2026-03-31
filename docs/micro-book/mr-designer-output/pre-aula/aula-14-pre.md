@@ -1,191 +1,125 @@
-# Pré-Aula 14 — Lab: Isoquantas e Rendimentos de Escala (Prática)
+# Pré-Aula 14 — Escolha sob Incerteza II: Seguros e Informação
 
 !!! info "Leitura obrigatória"
-    **Cap. 9, Seções 9.5–9.7** do livro interativo | Tempo estimado: **40 min**
+    **Cap. 7, Seções 7.4–7.6** do livro-texto | Tempo estimado: **~45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Definir e calcular a elasticidade de substituição $\sigma$ para diferentes funções de produção
-2. Explicar como o progresso técnico desloca isoquantas e suas implicações para a demanda de insumos
-3. Preparar a "ficha técnica" de uma função de produção para o Jigsaw da próxima aula
+1. Calcular e interpretar as medidas de aversão ao risco de Arrow-Pratt (ARA e RRA).
+2. Determinar a cobertura ótima de seguro sob prêmio justo e com carregamento.
+3. Aplicar o conceito de diversificação para redução de risco.
 
 ---
 
-## 1. Elasticidade de substituição $\sigma$
+## 1. Medidas de Aversão ao Risco de Arrow-Pratt
 
-A TMST nos diz **a taxa** de substituição entre insumos. Mas quão **fácil** é substituir? A **elasticidade de substituição** $\sigma$ mede isso:
+Para comparar a intensidade da aversão ao risco entre agentes ou ao longo da riqueza, usamos:
 
-$$\sigma = \frac{d\ln(K/L)}{d\ln(\text{TMST})}$$
+**Aversão absoluta ao risco (ARA):**
 
-Em termos mais intuitivos:
+$$A(W) = -\frac{u''(W)}{u'(W)}$$
 
-> "Se a TMST muda 1%, em quanto (%) muda a razão capital/trabalho?"
+**Aversão relativa ao risco (RRA):**
 
-$\sigma$ alto: fácil substituir (isoquantas mais "achatadas")
-
-$\sigma$ baixo: difícil substituir (isoquantas mais "angulosas")
-
-| Função | $\sigma$ | Interpretação |
-|:---|:---|:---|
-| **Linear** | $\infty$ | Substituição perfeita |
-| **Cobb-Douglas** | $1$ | Substituição intermediária |
-| **CES** | $\frac{1}{1-\rho}$ | Variável |
-| **Leontief** | $0$ | Sem substituição |
-
----
-
-## 2. A família CES como unificadora
-
-A função **CES** (Constant Elasticity of Substitution) generaliza todas as funções clássicas:
-
-$$f(L, K) = A\big[\alpha L^\rho + (1-\alpha) K^\rho\big]^{1/\rho}$$
-
-onde $\rho \in (-\infty, 1]$ e $\sigma = \frac{1}{1-\rho}$.
-
-| Limite | $\rho$ | $\sigma$ | Função |
-|:---|:---|:---|:---|
-| $\rho \to 1$ | 1 | $\infty$ | Linear |
-| $\rho \to 0$ | 0 | 1 | Cobb-Douglas |
-| $\rho \to -\infty$ | $-\infty$ | 0 | Leontief |
-
-!!! example "Verificação: CES para $\\rho \\to 0$ gera Cobb-Douglas"
-    Tome $\ln f = \frac{1}{\rho}\ln[\alpha L^\rho + (1-\alpha)K^\rho]$.
-
-    Usando L'Hôpital quando $\rho \to 0$:
-
-    $\ln f \to \alpha \ln L + (1-\alpha) \ln K + \ln A$
-
-    $f \to A L^\alpha K^{1-\alpha}$
-
-    Que é a Cobb-Douglas!
-
----
-
-## 3. Progresso técnico
-
-O progresso técnico permite produzir **mais com os mesmos insumos**. Graficamente, as isoquantas se deslocam **para a origem**.
-
-Tipos de progresso técnico:
-
-### 3.1 Progresso neutro de Hicks
-
-$$f(L, K, t) = A(t) \cdot g(L, K)$$
-
-Todas as isoquantas se contraem proporcionalmente. A TMST em qualquer ponto $(K/L)$ permanece inalterada.
-
-### 3.2 Progresso poupador de trabalho (labor-saving)
-
-$$f(L, K, t) = g(L, B(t) \cdot K)$$
-
-O progresso torna o capital mais eficiente. As isoquantas se "achatam" — a firma precisa de relativamente menos trabalho.
-
-### 3.3 Progresso poupador de capital (capital-saving)
-
-$$f(L, K, t) = g(A(t) \cdot L, K)$$
-
-O progresso torna o trabalho mais eficiente. As isoquantas se "inclinam" — a firma precisa de relativamente menos capital.
+$$R(W) = -\frac{W \cdot u''(W)}{u'(W)} = W \cdot A(W)$$
 
 !!! note "Intuição Econômica"
-    **Automação e a elasticidade de substituição**
-
-    O debate sobre automação e emprego depende crucialmente de $\sigma$. Se $\sigma$ é alto (como na função linear), robôs substituem trabalhadores facilmente — e a automação pode reduzir dramaticamente o emprego. Se $\sigma$ é baixo (como na Leontief), homens e máquinas são complementares — mais robôs exigem mais trabalhadores qualificados para operá-los.
-
-    Empiricamente, $\sigma$ varia entre setores: na manufatura, a automação avança rápido ($\sigma$ moderado a alto). Em serviços pessoais (saúde, educação), $\sigma$ é baixo — a tecnologia complementa, não substitui.
-
-    Entender $\sigma$ é, portanto, essencial para prever o impacto da inteligência artificial no mercado de trabalho.
+    A ARA mede quanto aversão ao risco você tem para uma aposta de **valor absoluto fixo** (ex.: apostar R\$ 100). A RRA mede a aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA muito diferentes.
 
 ---
 
-## Gráfico interativo: funções de produção
+## 2. CARA vs. CRRA
 
-<div id="graph-production-functions" style="min-height: 450px;">
-<iframe src="../../graficos/cap09/funcoes-producao.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+Duas famílias de funções utilidade são especialmente importantes:
+
+**CARA** (Constant Absolute Risk Aversion): $u(W) = -e^{-aW}$, com $A(W) = a$ constante.
+
+- O prêmio de risco **não depende** da riqueza inicial.
+- Pouco realista: um bilionário pagaria o mesmo que um estudante para evitar a mesma aposta.
+
+**CRRA** (Constant Relative Risk Aversion): $u(W) = \frac{W^{1-\gamma}}{1-\gamma}$ para $\gamma \neq 1$, ou $u(W) = \ln W$ para $\gamma = 1$.
+
+- $R(W) = \gamma$ constante; $A(W) = \gamma/W$ decrescente.
+- Mais realista: à medida que enriquece, o agente aceita apostas maiores em termos absolutos, mas mantém a proporção.
+
+$$\text{CRRA:} \quad A(W) = \frac{\gamma}{W} \downarrow, \quad R(W) = \gamma = \text{const.}$$
+
+!!! note "Intuição Econômica"
+    Evidências empíricas sugerem que a aversão absoluta é decrescente na riqueza (DARA) e a aversão relativa é aproximadamente constante (CRRA com $\gamma$ entre 1 e 4). Isso justifica o uso frequente de $u(W) = \ln W$ em modelos aplicados.
+
+---
+
+## 3. Prêmio de Risco e Equivalente Certo
+
+Para uma aposta pequena $\tilde{\varepsilon}$ com $E[\tilde{\varepsilon}] = 0$ e $\text{Var}(\tilde{\varepsilon}) = \sigma^2$, a **aproximação de Arrow-Pratt** fornece:
+
+$$\pi \approx \frac{1}{2} A(W) \sigma^2$$
+
+O **equivalente certo** é:
+
+$$CE = E[W] - \pi \approx E[W] - \frac{1}{2}A(W)\sigma^2$$
+
+<iframe src="graficos/cap07/premio-risco.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Varie o parâmetro $\rho$ e observe a transição entre Linear, Cobb-Douglas e Leontief
-    - Compare como a razão $K/L$ muda ao longo da isoquanta para diferentes $\sigma$
-    - Ative o progresso técnico e veja as isoquantas se deslocarem
+    Aumente a variância da loteria e observe como o prêmio de risco cresce. Depois altere a concavidade da função utilidade e veja o impacto direto no tamanho de $\pi$.
 
 ---
 
-## 4. Preparação para o Jigsaw: fichas técnicas
+## 4. Cobertura Ótima de Seguros
 
-Na próxima aula, faremos um **Jigsaw** sobre funções de produção. Cada grupo será especialista em uma função e depois ensinará aos outros.
+Um agente com riqueza $W_0$ enfrenta perda $L$ com probabilidade $p$. Ele pode comprar cobertura $q$ pagando prêmio $\gamma q$, onde $\gamma$ é o preço por unidade de cobertura.
 
-### Sua tarefa: preparar a "ficha técnica"
+**Riquezas nos dois estados:**
 
-Para a função que lhe foi atribuída (veja no LMS), preencha:
+$$W_{\text{sem sinistro}} = W_0 - \gamma q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q$$
 
-| Item | O que calcular |
-|:---|:---|
-| 1. Forma funcional | Escrever $f(L, K)$ |
-| 2. Produto marginal | $PMgL$ e $PMgK$ |
-| 3. TMST | $f_L / f_K$ (simplificar) |
-| 4. Rendimentos de escala | Calcular $f(tL, tK)$ vs. $t \cdot f(L,K)$ |
-| 5. Elasticidade de substituição | Valor de $\sigma$ |
-| 6. Formato das isoquantas | Desenho esquemático |
-| 7. Exemplo real | Setor/indústria onde essa função se aplica |
+**Prêmio atuarialmente justo**: $\gamma = p$. Neste caso, a CPO implica igualdade de utilidades marginais nos dois estados:
 
-!!! warning "Importante"
-    Cada membro do grupo deve ter a ficha pronta **antes** da aula. No Jigsaw, você será o "especialista" que ensina sua função aos colegas de outros grupos.
+$$q^* = L \quad \text{(cobertura total)}$$
+
+**Com carregamento** ($\gamma > p$): $q^* < L$ (cobertura parcial). O agente retém parte do risco porque o seguro é caro demais.
+
+<iframe src="graficos/cap07/seguro.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Ajuste o carregamento do prêmio (diferença entre $\gamma$ e $p$) e observe como a cobertura ótima se reduz. Com prêmio justo, o ponto ótimo está sobre a linha de certeza (45°).
 
 ---
 
-## 5. Resumo comparativo
+## 5. Diversificação
 
-Para facilitar sua preparação, a tabela abaixo compara as quatro funções:
+Se o agente pode dividir a riqueza entre $n$ ativos independentes, cada um com risco $\sigma^2$, o risco total cai:
 
-| Propriedade | Linear | Cobb-Douglas | CES ($\rho = -1$) | Leontief |
-|:---|:---|:---|:---|:---|
-| Forma | $aL + bK$ | $AL^a K^b$ | $A(\alpha L^{-1} + (1-\alpha)K^{-1})^{-1}$ | $\min\{aL, bK\}$ |
-| $\sigma$ | $\infty$ | $1$ | $0{,}5$ | $0$ |
-| Isoquantas | Retas | Hipérboles | Curvas suaves | Ângulos retos |
-| Substituição | Perfeita | Parcial | Limitada | Impossível |
-| Exemplo | Energia (gás vs. elétrica) | Manufatura geral | Indústria química | Montagem (parafusos + porcas) |
+$$\text{Var}\left(\frac{1}{n}\sum_{i=1}^n \tilde{R}_i\right) = \frac{\sigma^2}{n}$$
+
+!!! note "Intuição Econômica"
+    "Não coloque todos os ovos na mesma cesta." A diversificação elimina o risco idiossincrático sem custo. No entanto, o risco sistemático (que afeta todos os ativos simultaneamente) não pode ser diversificado.
 
 ---
 
-## Exercícios de preparação
+## Exercícios Preparatórios
 
-**Exercício 1.** Para a função CES com $\rho = -1$, $\alpha = 0{,}5$ e $A = 1$: (a) escreva a função explicitamente; (b) calcule $f(4, 4)$ e $f(8, 8)$; (c) verifique os rendimentos de escala.
-
-??? success "Solução"
-    (a) $f(L,K) = (0{,}5 L^{-1} + 0{,}5 K^{-1})^{-1} = \frac{LK}{0{,}5K + 0{,}5L} = \frac{2LK}{L+K}$
-
-    (b) $f(4,4) = \frac{2 \cdot 4 \cdot 4}{4 + 4} = \frac{32}{8} = 4$
-
-    $f(8,8) = \frac{2 \cdot 8 \cdot 8}{8 + 8} = \frac{128}{16} = 8$
-
-    (c) $f(8,8) = 8 = 2 \cdot f(4,4)$. Dobramos os insumos e a produção dobrou: **rendimentos constantes de escala**.
-
-    Formalmente: $f(tL, tK) = \frac{2(tL)(tK)}{tL + tK} = t \cdot \frac{2LK}{L+K} = t \cdot f(L,K)$. Homogênea de grau 1.
-
-**Exercício 2.** Calcule a elasticidade de substituição para $f(L,K) = L^{0{,}3}K^{0{,}7}$ e interprete.
+**Exercício 1.** Calcule ARA e RRA para $u(W) = \ln W$ e para $u(W) = -e^{-2W}$.
 
 ??? success "Solução"
-    A Cobb-Douglas sempre tem $\sigma = 1$.
+    Para $u(W) = \ln W$: $u' = 1/W$, $u'' = -1/W^2$.  
+    $A(W) = -(-1/W^2)/(1/W) = 1/W$ (DARA). $R(W) = W/W = 1$ (CRRA com $\gamma = 1$).  
+    Para $u(W) = -e^{-2W}$: $u' = 2e^{-2W}$, $u'' = -4e^{-2W}$.  
+    $A(W) = 4e^{-2W}/(2e^{-2W}) = 2$ (CARA). $R(W) = 2W$ (RRA crescente).
 
-    Verificação: $\text{TMST} = \frac{0{,}3 K}{0{,}7 L} = \frac{3K}{7L}$
-
-    Seja $k = K/L$. Então $\text{TMST} = \frac{3k}{7}$, logo $k = \frac{7}{3}\text{TMST}$.
-
-    $\sigma = \frac{d\ln k}{d\ln \text{TMST}} = 1$.
-
-    Interpretação: uma mudança de 1% na TMST (= preço relativo dos insumos) gera exatamente 1% de mudança na razão $K/L$. A substituição é "unitária" — nem rígida demais, nem fácil demais.
-
-**Exercício 3.** Classifique o tipo de progresso técnico: uma nova máquina permite que cada unidade de capital produza o equivalente a 1,5 unidade da máquina anterior, sem afetar a produtividade do trabalho.
+**Exercício 2.** Um agente com $u(W) = \sqrt{W}$, $W_0 = 10000$, perda $L = 6000$ com $p = 0{,}2$, prêmio justo $\gamma = p = 0{,}2$. Qual a cobertura ótima?
 
 ??? success "Solução"
-    A nova tecnologia aumenta a eficiência do capital: $K_{\text{efetivo}} = 1{,}5K$.
+    Com prêmio justo, sabemos que $q^* = L = 6000$ (cobertura total).  
+    Verificação: prêmio pago = $0{,}2 \times 6000 = 1200$. Riqueza certa = $10000 - 1200 = 8800$ em ambos os estados.
 
-    $f(L, K, t) = g(L, 1{,}5K)$
+**Exercício 3.** Se o carregamento faz $\gamma = 0{,}30$ (50% acima do justo), o agente do Exercício 2 comprará mais ou menos cobertura? Justifique qualitativamente.
 
-    Isso é **progresso poupador de trabalho** (labor-saving), ou equivalentemente, **aumento da eficiência do capital** (capital-augmenting).
-
-    A firma pode produzir o mesmo usando menos trabalho relativo ao capital. As isoquantas se "achatam" na direção do eixo $L$.
+??? success "Solução"
+    Comprará **menos** cobertura ($q^* < 6000$). Com $\gamma > p$, a CPO exige $u'(W_{\text{sem}}) < u'(W_{\text{sin}})$, ou seja, $W_{\text{sem}} > W_{\text{sin}}$. O agente retém parte do risco porque o custo marginal do seguro excede o benefício marginal atuarial. Quanto maior o carregamento, menor a cobertura ótima.
 
 ---
 
@@ -196,44 +130,44 @@ Para facilitar sua preparação, a tabela abaixo compara as quatro funções:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A elasticidade de substituição $\sigma$ mede:
+**Q1.** A medida de Arrow-Pratt que é constante para $u(W) = \ln W$ é:
 
-- [ ] (a) A taxa na qual um insumo substitui outro
-- [x] (b) A facilidade com que a firma substitui um insumo por outro
-- [ ] (c) Os rendimentos de escala
-- [ ] (d) O produto marginal
+- [ ] (a) ARA
+- [x] (b) RRA
+- [ ] (c) Ambas
+- [ ] (d) Nenhuma
 
-**Q2.** Para a função Cobb-Douglas, $\sigma$ é sempre igual a:
+**Q2.** Com prêmio atuarialmente justo, um averso ao risco escolhe:
 
-- [ ] (a) 0
-- [x] (b) 1
-- [ ] (c) $\infty$
-- [ ] (d) Depende dos expoentes
+- [x] (a) Cobertura total ($q^* = L$)
+- [ ] (b) Cobertura parcial ($q^* < L$)
+- [ ] (c) Nenhuma cobertura
+- [ ] (d) Mais que cobertura total
 
-**Q3.** Quando $\rho \to -\infty$ na CES, a função converge para:
+**Q3.** A aproximação de Arrow-Pratt para o prêmio de risco é:
 
-- [ ] (a) Linear
-- [ ] (b) Cobb-Douglas
-- [x] (c) Leontief
-- [ ] (d) Quadrática
+- [ ] (a) $\pi \approx A(W) \sigma$
+- [x] (b) $\pi \approx \frac{1}{2} A(W) \sigma^2$
+- [ ] (c) $\pi \approx R(W) \sigma^2$
+- [ ] (d) $\pi \approx A(W)^2 \sigma$
 
-**Q4.** O progresso técnico neutro de Hicks:
+**Q4.** DARA (Decreasing Absolute Risk Aversion) significa que:
 
-- [ ] (a) Altera a TMST
-- [x] (b) Contrai as isoquantas proporcionalmente sem alterar a TMST
-- [ ] (c) Beneficia apenas o fator trabalho
-- [ ] (d) Reduz a produção
+- [x] (a) O agente aceita apostas absolutas maiores à medida que enriquece
+- [ ] (b) O agente fica mais averso ao risco quando enriquece
+- [ ] (c) A aversão relativa é constante
+- [ ] (d) O prêmio de risco é constante
 
-**Q5.** Se $\sigma$ é muito alto em um setor, a automação tende a:
+**Q5.** A diversificação elimina:
 
-- [x] (a) Substituir trabalho por capital com facilidade
-- [ ] (b) Aumentar a demanda por trabalho
-- [ ] (c) Não ter efeito sobre a razão $K/L$
-- [ ] (d) Reduzir a eficiência do capital
+- [ ] (a) Todo o risco
+- [x] (b) O risco idiossincrático (não sistemático)
+- [ ] (c) O risco sistemático
+- [ ] (d) O risco apenas se os ativos forem correlacionados
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 14**: Jigsaw sobre funções de produção — cada grupo apresenta a ficha técnica de sua função e depois ensina aos colegas. Traga sua ficha preenchida!
+    Na **Aula 15**, estudaremos os paradoxos de Allais e Ellsberg, que violam a teoria da utilidade esperada, e a Teoria dos Prospectos de Kahneman e Tversky como alternativa comportamental.

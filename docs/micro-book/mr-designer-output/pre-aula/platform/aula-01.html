@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 01 — — Microeconomia II</title>
+<title>Pré-Aula 01 — Introdução à Microeconomia II — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,244 +17,207 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-01-ferramentas-matemáticas-do-economista">Pré-Aula 01 —
-Ferramentas Matemáticas do Economista</h1>
+<h1 id="pré-aula-01-introdução-à-microeconomia-ii">Pré-Aula 01 —
+Introdução à Microeconomia II</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 2, Seções 2.1–2.4</strong> do livro interativo | Tempo
-estimado: <strong>50 min</strong></p>
+<p><strong>Cap. 1, Seções 1.1–1.4</strong> do livro interativo | Tempo
+estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 2, Seções 2.1–2.4** do livro interativo | Tempo estimado: **50 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Resolver problemas de otimização sem restrição (CPO e CSO)</li>
-<li>Calcular derivadas parciais e montar o gradiente</li>
-<li>Formular o Lagrangiano para problemas com restrição de
-igualdade</li>
+<li>Distinguir análise econômica positiva de normativa e aplicar a
+cláusula <em>ceteris paribus</em></li>
+<li>Descrever o modelo de oferta e demanda e identificar o equilíbrio de
+mercado</li>
+<li>Realizar exercícios de estática comparativa simples (deslocamentos
+de curvas)</li>
 </ol>
 <hr />
-<h2 id="por-que-otimização">1. Por que otimização?</h2>
-<p>Quase todo problema em Microeconomia se reduz a uma forma:</p>
-<p><span class="math display">\[\max_{x} f(x) \quad \text{sujeito a}
-\quad g(x) \leq c\]</span></p>
-<p>O consumidor maximiza <strong>utilidade</strong> sujeito ao
-orçamento. A firma minimiza <strong>custos</strong> sujeita a uma meta
-de produção. O monopolista maximiza <strong>lucro</strong> escolhendo
-preço ou quantidade.</p>
-<p>As ferramentas desta aula são o motor matemático de todo o curso.</p>
-<hr />
-<h2 id="otimização-univariada-revisão">2. Otimização univariada —
-revisão</h2>
-<p>Dada <span class="math inline">\(f(x)\)</span>, queremos encontrar
-<span class="math inline">\(x^*\)</span> que maximiza (ou minimiza)
-<span class="math inline">\(f\)</span>.</p>
-<p><strong>Condição de Primeira Ordem (CPO):</strong></p>
-<p><span class="math display">\[f&#39;(x^*) = 0\]</span></p>
-<p>A CPO identifica os <strong>candidatos</strong> — pontos onde a
-inclinação é zero.</p>
-<p><strong>Condição de Segunda Ordem (CSO):</strong></p>
-<span class="math display">\[f&#39;&#39;(x^*) &lt; 0 \implies
-\text{máximo local}\]</span> <span
-class="math display">\[f&#39;&#39;(x^*) &gt; 0 \implies \text{mínimo
-local}\]</span>
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo rápido
-</div>
-<p><span class="math inline">\(f(x) = -2x^2 + 12x - 10\)</span></p>
-<p>CPO: <span class="math inline">\(f&#39;(x) = -4x + 12 = 0 \implies
-x^* = 3\)</span></p>
-<p>CSO: <span class="math inline">\(f&#39;&#39;(x) = -4 &lt; 0\)</span>
-✓ É máximo.</p>
-<p><span class="math inline">\(f(3) = -18 + 36 - 10 = 8\)</span></p>
-</div>
-<pre><code>$f(x) = -2x^2 + 12x - 10$
-
-CPO: $f&#39;(x) = -4x + 12 = 0 \implies x^* = 3$
-
-CSO: $f&#39;&#39;(x) = -4 &lt; 0$ ✓ É máximo.
-
-$f(3) = -18 + 36 - 10 = 8$</code></pre>
-<hr />
-<h2 id="funções-multivariáveis">3. Funções multivariáveis</h2>
-<p>Quando a função depende de mais de uma variável — <span
-class="math inline">\(f(x, y)\)</span> — usamos <strong>derivadas
-parciais</strong>:</p>
-<p><span class="math display">\[\frac{\partial f}{\partial x} \quad
-\text{(derivada em relação a } x \text{, mantendo } y \text{
-constante)}\]</span></p>
-<p>O <strong>gradiente</strong> é o vetor de todas as parciais:</p>
-<p><span class="math display">\[\nabla f = \left(\frac{\partial
-f}{\partial x}, \frac{\partial f}{\partial y}\right)\]</span></p>
-<p>A <strong>Hessiana</strong> é a matriz de derivadas segundas:</p>
-<p><span class="math display">\[H = \begin{pmatrix} f_{xx} &amp; f_{xy}
-\\ f_{yx} &amp; f_{yy} \end{pmatrix}\]</span></p>
-<p>Para um máximo sem restrição: <span class="math inline">\(\nabla f =
-\mathbf{0}\)</span> e <span class="math inline">\(H\)</span> definida
-negativa.</p>
-<hr />
-<h2 id="o-lagrangiano-a-ferramenta-central">4. O Lagrangiano — a
-ferramenta central</h2>
-<p>Quando há uma <strong>restrição</strong> (por exemplo, orçamento
-limitado), não podemos simplesmente fazer <span
-class="math inline">\(\nabla f = 0\)</span>. Precisamos incorporar a
-restrição.</p>
-<p><strong>O método</strong>: criar uma nova função que combina o
-objetivo com a restrição:</p>
-<p><span class="math display">\[\mathcal{L}(x, y, \lambda) = f(x, y) +
-\lambda \big[ c - g(x, y) \big]\]</span></p>
-<p>Onde <span class="math inline">\(\lambda\)</span> é o
-<strong>multiplicador de Lagrange</strong>.</p>
-<p><strong>As CPOs</strong> (3 equações, 3 incógnitas — <span
-class="math inline">\(x, y, \lambda\)</span>):</p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial x}
-= f_x - \lambda g_x = 0\]</span></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial y}
-= f_y - \lambda g_y = 0\]</span></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial
-\lambda} = c - g(x,y) = 0\]</span></p>
-<p>Das duas primeiras equações: <span
-class="math inline">\(\frac{f_x}{f_y} = \frac{g_x}{g_y}\)</span> —
-<strong>condição de tangência</strong>.</p>
-<hr />
-<h2 id="gráfico-interativo-otimização-com-restrição">Gráfico interativo:
-otimização com restrição</h2>
-<div id="graph-lagrange" style="min-height: 450px;">
-<iframe src="../../graficos/cap02/lagrangiano.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
-</iframe>
-</div>
-<div class="admonition tip">
-<div class="admonition-title">
-Explore o gráfico
-</div>
-<ul>
-<li>Mova os sliders de preço (<span class="math inline">\(p_x\)</span>,
-<span class="math inline">\(p_y\)</span>) e renda (<span
-class="math inline">\(I\)</span>)</li>
-<li>Observe como a restrição orçamentária rotaciona e desloca</li>
-<li>Note que o ponto ótimo está sempre na
-<strong>tangência</strong></li>
-</ul>
-</div>
-<pre><code>- Mova os sliders de preço ($p_x$, $p_y$) e renda ($I$)
-- Observe como a restrição orçamentária rotaciona e desloca
-- Note que o ponto ótimo está sempre na **tangência**</code></pre>
-<hr />
-<h2 id="interpretação-de-lambda">5. Interpretação de <span
-class="math inline">\(\lambda\)</span></h2>
-<p>O multiplicador <span class="math inline">\(\lambda^*\)</span> tem
-uma interpretação econômica poderosa:</p>
-<p><span class="math display">\[\lambda^* = \frac{\partial f^*}{\partial
-c}\]</span></p>
-<blockquote>
-<p><strong><span class="math inline">\(\lambda^*\)</span> mede quanto o
-valor ótimo melhora se a restrição relaxar em 1 unidade.</strong></p>
-</blockquote>
-<p>No problema do consumidor: <span class="math inline">\(\lambda^* =
-\frac{\partial U^*}{\partial I}\)</span> — a <strong>utilidade marginal
-da renda</strong>.</p>
-<p>Se <span class="math inline">\(\lambda^* = 0{,}05\)</span> e a renda
-sobe de <span class="math inline">\(100\)</span> para <span
-class="math inline">\(101\)</span>: a utilidade sobe aproximadamente
-<span class="math inline">\(0{,}05\)</span>.</p>
-<hr />
-<h2 id="box-o-lagrangiano-na-prática">Box: O Lagrangiano na prática</h2>
+<h2 id="o-que-é-um-modelo-econômico">1. O que é um modelo
+econômico?</h2>
+<p>A Microeconomia estuda como agentes individuais — consumidores,
+firmas, governos — tomam decisões quando os recursos são escassos. Para
+isso, utilizamos <strong>modelos</strong>: representações simplificadas
+da realidade que isolam os mecanismos essenciais.</p>
+<p>Um bom modelo não precisa ser realista em todos os detalhes. Precisa
+ser <strong>útil</strong>: gerar previsões testáveis e ajudar a
+organizar o raciocínio.</p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Por que o Lagrangiano funciona?</strong></p>
-<p>Geometricamente, o ótimo com restrição ocorre onde as curvas de nível
-de <span class="math inline">\(f\)</span> são <strong>tangentes</strong>
-à curva de restrição. Nesse ponto, os gradientes de <span
-class="math inline">\(f\)</span> e <span
-class="math inline">\(g\)</span> são paralelos:</p>
-<p><span class="math display">\[\nabla f = \lambda \nabla g\]</span></p>
-<p>O <span class="math inline">\(\lambda\)</span> é o “fator de
-proporcionalidade” entre os gradientes. Economicamente, ele nos diz o
-<strong>preço-sombra</strong> da restrição — quanto pagaríamos para
-relaxá-la.</p>
+<p>Pense no mapa de uma cidade: ele omite prédios, árvores e pessoas,
+mas é extremamente útil para encontrar caminhos. Modelos econômicos
+funcionam da mesma forma — simplificam para iluminar.</p>
 </div>
-<pre><code>**Por que o Lagrangiano funciona?**
-
-Geometricamente, o ótimo com restrição ocorre onde as curvas de nível de $f$ são **tangentes** à curva de restrição. Nesse ponto, os gradientes de $f$ e $g$ são paralelos:
-
-$$\nabla f = \lambda \nabla g$$
-
-O $\lambda$ é o &quot;fator de proporcionalidade&quot; entre os gradientes. Economicamente, ele nos diz o **preço-sombra** da restrição — quanto pagaríamos para relaxá-la.</code></pre>
+<h3 id="ceteris-paribus">1.1 Ceteris paribus</h3>
+<p>A expressão latina <em>ceteris paribus</em> (“tudo o mais constante”)
+é a principal ferramenta lógica do economista. Quando dizemos “se o
+preço sobe, a quantidade demandada cai”, estamos supondo que renda,
+preferências e preços de outros bens permanecem fixos.</p>
+<p>Formalmente, se a quantidade demandada é <span
+class="math inline">\(Q^d = D(p, I, \mathbf{p}_{-})\)</span>, a análise
+<em>ceteris paribus</em> examina:</p>
+<p><span class="math display">\[\frac{\partial Q^d}{\partial p}
+\bigg|_{I, \mathbf{p}_{-} \text{ fixos}} &lt; 0\]</span></p>
+<h3 id="positivo-vs.-normativo">1.2 Positivo vs. normativo</h3>
+<ul>
+<li><strong>Análise positiva</strong>: descreve <em>o que é</em>. “Um
+imposto de R$2 sobre cigarros reduz o consumo em 15%.”</li>
+<li><strong>Análise normativa</strong>: prescreve <em>o que deveria
+ser</em>. “O governo deveria tributar cigarros para melhorar a saúde
+pública.”</li>
+</ul>
+<p>A Microeconomia II foca primariamente na análise positiva, mas
+fornece ferramentas (como excedente e bem-estar) que informam juízos
+normativos.</p>
+<hr />
+<h2 id="oferta-demanda-e-equilíbrio">2. Oferta, demanda e
+equilíbrio</h2>
+<p>O modelo de oferta e demanda é o ponto de partida de toda a análise
+microeconômica.</p>
+<h3 id="a-curva-de-demanda">2.1 A curva de demanda</h3>
+<p>A demanda de mercado relaciona preço e quantidade que os consumidores
+desejam comprar:</p>
+<p><span class="math display">\[Q^d = D(p) \quad \text{com} \quad
+D&#39;(p) &lt; 0\]</span></p>
+<p>A inclinação negativa reflete a <strong>Lei da Demanda</strong>:
+quanto maior o preço, menor a quantidade demandada (<em>ceteris
+paribus</em>).</p>
+<h3 id="a-curva-de-oferta">2.2 A curva de oferta</h3>
+<p>A oferta de mercado relaciona preço e quantidade que os produtores
+desejam vender:</p>
+<p><span class="math display">\[Q^s = S(p) \quad \text{com} \quad
+S&#39;(p) &gt; 0\]</span></p>
+<p>Preços mais altos tornam a produção mais lucrativa, incentivando
+maior oferta.</p>
+<h3 id="equilíbrio-de-mercado">2.3 Equilíbrio de mercado</h3>
+<p>O equilíbrio ocorre quando oferta iguala demanda:</p>
+<p><span class="math display">\[D(p^*) = S(p^*) \implies Q^* = D(p^*) =
+S(p^*)\]</span></p>
+<p>No preço de equilíbrio <span class="math inline">\(p^*\)</span>, não
+há excesso de oferta nem de demanda. O mercado se “limpa”.</p>
+<h2 id="gráfico-interativo-oferta-e-demanda">Gráfico interativo: Oferta
+e Demanda</h2>
+<iframe src="graficos/cap01/oferta-demanda.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Desloque as curvas de oferta e demanda usando os controles
+deslizantes. Observe como o ponto de equilíbrio (<span
+class="math inline">\(p^*\)</span>, <span
+class="math inline">\(Q^*\)</span>) se move quando os determinantes
+mudam.</p>
+</div>
+<hr />
+<h2 id="estática-comparativa">3. Estática comparativa</h2>
+<p>Estática comparativa compara dois equilíbrios: o inicial e o novo,
+após a mudança de um parâmetro exógeno. Não descreve a transição —
+apenas o “antes” e o “depois”.</p>
+<h3 id="exemplo-aumento-de-renda">Exemplo: aumento de renda</h3>
+<p>Se a renda dos consumidores aumenta e o bem é
+<strong>normal</strong>, a curva de demanda se desloca para a
+direita:</p>
+<p><span class="math display">\[D(p; I_1) \to D(p; I_2) \quad \text{com
+} I_2 &gt; I_1\]</span></p>
+<p>Resultado: <span class="math inline">\(p^*\)</span> sobe e <span
+class="math inline">\(Q^*\)</span> sobe.</p>
+<h3 id="exemplo-avanço-tecnológico">Exemplo: avanço tecnológico</h3>
+<p>Se uma inovação reduz custos de produção, a curva de oferta se
+desloca para a direita:</p>
+<p><span class="math display">\[S(p; c_1) \to S(p; c_2) \quad \text{com
+} c_2 &lt; c_1\]</span></p>
+<p>Resultado: <span class="math inline">\(p^*\)</span> cai e <span
+class="math inline">\(Q^*\)</span> sobe.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A estática comparativa é a principal forma de gerar previsões em
+economia. A pergunta sempre é: “o que acontece com preço e quantidade
+quando X muda?”</p>
+</div>
+<hr />
+<h2 id="o-fluxo-circular-da-economia">4. O fluxo circular da
+economia</h2>
+<p>O modelo de fluxo circular ilustra como famílias e firmas interagem
+em dois mercados: o de bens e serviços e o de fatores de produção.
+Famílias ofertam trabalho e capital; firmas ofertam bens. O dinheiro
+circula em sentido oposto aos bens.</p>
+<h2 id="gráfico-interativo-fluxo-circular">Gráfico interativo: Fluxo
+Circular</h2>
+<iframe src="graficos/cap01/fluxo-circular.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Identifique os dois mercados (bens e fatores) e observe como renda e
+despesa se conectam. Clique nos fluxos para ver as descrições
+detalhadas.</p>
+</div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Encontre o máximo de <span
-class="math inline">\(f(x) = -x^2 + 8x - 12\)</span>.
+<p><strong>Exercício 1.</strong> O preço do café sobe de R$10 para R$12
+por quilo. A quantidade demandada cai de 100 para 80 kg/semana. Calcule
+a variação percentual do preço e da quantidade. Esse comportamento é
+consistente com a Lei da Demanda?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(f&#39;(x) = -2x + 8 = 0 \implies x^* =
-4\)</span></p>
-<p><span class="math inline">\(f&#39;&#39;(x) = -2 &lt; 0\)</span> ✓
-Máximo.</p>
-<p><span class="math inline">\(f(4) = -16 + 32 - 12 = 4\)</span></p>
+<p>Variação percentual do preço: <span class="math inline">\(\Delta p/p
+= (12-10)/10 = 20\%\)</span>. Variação percentual da quantidade: <span
+class="math inline">\(\Delta Q/Q = (80-100)/100 = -20\%\)</span>. Sim, é
+consistente com a Lei da Demanda: preço subiu e quantidade caiu.</p>
 </div>
 </details>
-<pre><code>$f&#39;(x) = -2x + 8 = 0 \implies x^* = 4$
-
-$f&#39;&#39;(x) = -2 &lt; 0$ ✓ Máximo.
-
-$f(4) = -16 + 32 - 12 = 4$</code></pre>
-<strong>Exercício 2.</strong> Para <span class="math inline">\(f(x,y) =
-x^2 y + xy^2\)</span>, calcule <span
-class="math inline">\(\frac{\partial f}{\partial x}\)</span> e <span
-class="math inline">\(\frac{\partial f}{\partial y}\)</span>.
+<p><strong>Exercício 2.</strong> Em um mercado, <span
+class="math inline">\(Q^d = 200 - 4p\)</span> e <span
+class="math inline">\(Q^s = -40 + 2p\)</span>. Encontre o equilíbrio
+<span class="math inline">\((p^*, Q^*)\)</span>. Se o governo fixa um
+preço máximo <span class="math inline">\(\bar{p} = 30\)</span>, há
+excesso de oferta ou de demanda? De quanto?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(f_x = 2xy + y^2\)</span></p>
-<p><span class="math inline">\(f_y = x^2 + 2xy\)</span></p>
+<p>Equilíbrio: <span class="math inline">\(200 - 4p = -40 + 2p \implies
+6p = 240 \implies p^* = 40\)</span> e <span class="math inline">\(Q^* =
+200 - 4(40) = 40\)</span>. Com <span class="math inline">\(\bar{p} =
+30\)</span>: <span class="math inline">\(Q^d = 200 - 4(30) = 80\)</span>
+e <span class="math inline">\(Q^s = -40 + 2(30) = 20\)</span>. Há
+<strong>excesso de demanda</strong> de <span class="math inline">\(80 -
+20 = 60\)</span> unidades.</p>
 </div>
 </details>
-<pre><code>$f_x = 2xy + y^2$
-
-$f_y = x^2 + 2xy$</code></pre>
-<strong>Exercício 3.</strong> Maximize <span class="math inline">\(U =
-x^{1/2} y^{1/2}\)</span> sujeito a <span class="math inline">\(2x + 4y =
-100\)</span>. Encontre <span class="math inline">\(x^*\)</span>, <span
-class="math inline">\(y^*\)</span> e <span
-class="math inline">\(\lambda^*\)</span>.
+<p><strong>Exercício 3.</strong> Classifique como análise positiva (P)
+ou normativa (N): (a) “Um salário mínimo acima do equilíbrio gera
+desemprego.” (b) “O governo deveria aumentar o salário mínimo para
+reduzir a desigualdade.” (c) “A elasticidade-preço da demanda por
+gasolina é -0,3 no curto prazo.”</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\mathcal{L} = x^{1/2}y^{1/2} +
-\lambda(100 - 2x - 4y)\)</span></p>
-<p>CPOs: <span class="math inline">\(\frac{1}{2}x^{-1/2}y^{1/2} =
-2\lambda\)</span> e <span
-class="math inline">\(\frac{1}{2}x^{1/2}y^{-1/2} = 4\lambda\)</span></p>
-<p>Dividindo: <span class="math inline">\(y/x = 1/2 \implies x =
-2y\)</span></p>
-<p>Substituindo: <span class="math inline">\(4y + 4y = 100 \implies y^*
-= 12{,}5\)</span>, <span class="math inline">\(x^* = 25\)</span></p>
-<p><span class="math inline">\(U^* = 5\sqrt{5} \approx 11{,}18\)</span>;
-<span class="math inline">\(\lambda^* \approx 0{,}056\)</span></p>
+<ol type="a">
+<li><strong>P</strong> — é uma previsão do modelo de oferta e demanda.
+(b) <strong>N</strong> — envolve juízo de valor sobre o que o governo
+<em>deveria</em> fazer. (c) <strong>P</strong> — é uma estimativa
+empírica, sem juízo de valor.</li>
+</ol>
 </div>
 </details>
-<pre><code>$\mathcal{L} = x^{1/2}y^{1/2} + \lambda(100 - 2x - 4y)$
-
-CPOs: $\frac{1}{2}x^{-1/2}y^{1/2} = 2\lambda$ e $\frac{1}{2}x^{1/2}y^{-1/2} = 4\lambda$
-
-Dividindo: $y/x = 1/2 \implies x = 2y$
-
-Substituindo: $4y + 4y = 100 \implies y^* = 12{,}5$, $x^* = 25$
-
-$U^* = 5\sqrt{5} \approx 11{,}18$; $\lambda^* \approx 0{,}056$</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -264,214 +227,58 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. A cláusula *ceteris paribus* significa:</div>
+<div class="quiz-option" data-value="a">(a) Que todos os agentes são racionais</div>
+<div class="quiz-option" data-value="b">(b) Que o mercado está em equilíbrio</div>
+<div class="quiz-option" data-value="c">(c) Que todas as demais variáveis são mantidas constantes</div>
+<div class="quiz-option" data-value="d">(d) Que a análise é normativa</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">Q2. Se o preço de equilíbrio de um bem sobe após um aumento de renda dos consumidores, o bem é provavelmente:</div>
+<div class="quiz-option" data-value="a">(a) Normal</div>
+<div class="quiz-option" data-value="b">(b) Inferior</div>
+<div class="quiz-option" data-value="c">(c) De Giffen</div>
+<div class="quiz-option" data-value="d">(d) Complementar</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. Dada <span class="math inline">\(f(x) = 3x^2 - 12x + 5\)</span>,
-qual é o ponto crítico e é máximo ou mínimo?
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3. No equilíbrio de mercado:</div>
+<div class="quiz-option" data-value="a">(a) A quantidade ofertada é maior que a demandada</div>
+<div class="quiz-option" data-value="b">(b) O preço está no nível mais baixo possível</div>
+<div class="quiz-option" data-value="c">(c) A quantidade ofertada iguala a quantidade demandada</div>
+<div class="quiz-option" data-value="d">(d) Não há transações</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(x = 2\)</span>, máximo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(x = 2\)</span>, mínimo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(x = 4\)</span>, máximo
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(x = 4\)</span>, mínimo
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. Para <span class="math inline">\(f(x,y) = x^2 y + xy^2\)</span>,
-qual é <span class="math inline">\(\frac{\partial f}{\partial
-x}\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(2x + y^2\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(2xy + y^2\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(x^2 + 2xy\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(2xy + 2y\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. O que significa a CSO <span class="math inline">\(f&#39;&#39;(x^*)
-&lt; 0\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O ponto é um mínimo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O ponto é um máximo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O ponto é um ponto de inflexão
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A função é côncava em todo domínio
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="c">
-<div class="q-text">
-Q4. No Lagrangiano, o que o multiplicador <span
-class="math inline">\(\lambda\)</span> representa?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O valor ótimo da função objetivo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>A inclinação da restrição
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>A sensibilidade do ótimo a mudanças na restrição
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O número de variáveis do problema
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. Um avanço tecnológico que reduz custos de produção desloca:</div>
+<div class="quiz-option" data-value="a">(a) A curva de demanda para a direita</div>
+<div class="quiz-option" data-value="b">(b) A curva de oferta para a direita</div>
+<div class="quiz-option" data-value="c">(c) A curva de oferta para a esquerda</div>
+<div class="quiz-option" data-value="d">(d) Ambas as curvas para a direita</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “Se a CPO é satisfeita, o ponto é necessariamente um
-máximo.”
+<div class="q-text">Q5. A afirmação "o governo deveria subsidiar energia solar" é um exemplo de análise:</div>
+<div class="quiz-option" data-value="a">(a) Positiva</div>
+<div class="quiz-option" data-value="b">(b) Normativa</div>
+<div class="quiz-option" data-value="c">(c) Ceteris paribus</div>
+<div class="quiz-option" data-value="d">(d) De equilíbrio parcial</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — a CPO é condição necessária, não suficiente
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-01')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 01</strong>: Mini-lecture sobre otimização + Lagrangiano
-com exercícios guiados. Traga calculadora!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 01**: Mini-lecture sobre otimização + Lagrangiano com exercícios guiados. Traga calculadora!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 02</strong>: Restrição Orçamentária — como a renda e os
+preços limitam as escolhas do consumidor.</p>
 </div>
 
 </div>
@@ -482,7 +289,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-01');
 MicroQuiz.init('aula-01');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

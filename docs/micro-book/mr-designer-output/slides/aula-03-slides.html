@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-03-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-03-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-03-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-03-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-03-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,15 +143,15 @@ Insper
 </div>
 
 </section>
-<section id="por-que-precisamos-de-axiomas" class="slide level2">
-<h2>Por que Precisamos de Axiomas?</h2>
-<p>Queremos modelar <strong>escolhas</strong> de consumidores. Mas como transformar preferências subjetivas em matemática?</p>
+<section id="escolha-sob-escassez-a-questão-fundamental" class="slide level2">
+<h2>Escolha sob Escassez: A Questão Fundamental</h2>
+<p>O consumidor enfrenta recursos <strong>finitos</strong> e alternativas <strong>ilimitadas</strong>. Como ele decide?</p>
 <div class="fragment">
-<p><strong>Estratégia:</strong></p>
+<p><strong>Precisamos de um modelo que:</strong></p>
 <ol type="1">
-<li>Postular axiomas “razoáveis” sobre preferências <span class="math inline">\(\succsim\)</span></li>
-<li>Provar que existe uma função <span class="math inline">\(U\)</span> que representa <span class="math inline">\(\succsim\)</span></li>
-<li>Usar <span class="math inline">\(U\)</span> para resolver problemas de otimização</li>
+<li>Descreva preferências de forma <strong>consistente</strong></li>
+<li>Permita <strong>comparar</strong> qualquer par de alternativas</li>
+<li>Traduza preferências em uma <strong>função matemática</strong> otimizável</li>
 </ol>
 </div>
 <div class="fragment">
@@ -163,37 +165,96 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Os axiomas não dizem <em>o que</em> o consumidor prefere — dizem que ele é <strong>consistente</strong> o suficiente para que possamos representar suas preferências com números.</p>
+<p>Estudar preferências não é dizer <em>o que</em> o consumidor gosta — é garantir que suas escolhas sejam <strong>coerentes</strong> o suficiente para prevermos seu comportamento.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="os-quatro-axiomas-fundamentais" class="slide level2">
-<h2>Os Quatro Axiomas Fundamentais</h2>
+<section id="cestas-de-consumo-e-relações-de-preferência" class="slide level2">
+<h2>Cestas de Consumo e Relações de Preferência</h2>
+<p>Uma <strong>cesta de consumo</strong> é um vetor <span class="math inline">\(X = (x_1, x_2) \in \mathbb{R}^2_+\)</span> indicando as quantidades de cada bem.</p>
+<div class="fragment">
+<p><strong>Três relações fundamentais:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Símbolo</th>
+<th style="text-align: left;">Leitura</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X \succsim Y\)</span></td>
+<td style="text-align: left;">“<span class="math inline">\(X\)</span> é pelo menos tão bom quanto <span class="math inline">\(Y\)</span>”</td>
+<td style="text-align: left;">Preferência fraca</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(X \succ Y\)</span></td>
+<td style="text-align: left;">“<span class="math inline">\(X\)</span> é estritamente preferido a <span class="math inline">\(Y\)</span>”</td>
+<td style="text-align: left;"><span class="math inline">\(X \succsim Y\)</span> e não <span class="math inline">\(Y \succsim X\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(X \sim Y\)</span></td>
+<td style="text-align: left;">“<span class="math inline">\(X\)</span> é indiferente a <span class="math inline">\(Y\)</span>”</td>
+<td style="text-align: left;"><span class="math inline">\(X \succsim Y\)</span> e <span class="math inline">\(Y \succsim X\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>A relação <span class="math inline">\(\succsim\)</span> é a primitiva do modelo — dela derivamos <span class="math inline">\(\succ\)</span> e <span class="math inline">\(\sim\)</span>.</p>
+</div>
+</section>
+<section id="axiomas-das-preferências" class="slide level2">
+<h2>Axiomas das Preferências</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>1. Completude</strong></p>
-<p>Para quaisquer cestas <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span>:</p>
-<p><span class="math display">\[A \succsim B \;\text{ ou }\; B \succsim A \;\text{ (ou ambos)}\]</span></p>
+<p><span class="math display">\[\forall\, A, B: \; A \succsim B \;\text{ ou }\; B \succsim A\]</span></p>
 <p>O consumidor sempre consegue comparar.</p>
 <p>. . .</p>
 <p><strong>2. Transitividade</strong></p>
 <p><span class="math display">\[A \succsim B \;\text{ e }\; B \succsim C \implies A \succsim C\]</span></p>
-<p>Preferências não são “circulares”.</p>
-</div><div class="column" style="width:50%;">
-<p><strong>3. Continuidade</strong></p>
-<p>Os conjuntos <span class="math inline">\(\{x : x \succsim A\}\)</span> e <span class="math inline">\(\{x : A \succsim x\}\)</span> são fechados.</p>
-<p>Pequenas mudanças nas cestas não causam “saltos” nas preferências.</p>
+<p>Preferências não são circulares.</p>
 <p>. . .</p>
-<p><strong>4. Monotonicidade (não saciedade)</strong></p>
+<p><strong>3. Continuidade</strong></p>
+<p>Os conjuntos <span class="math inline">\(\{x : x \succsim A\}\)</span> e <span class="math inline">\(\{x : A \succsim x\}\)</span> são fechados. Pequenas mudanças não causam “saltos”.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>4. Monotonicidade</strong></p>
 <p><span class="math display">\[x \geq y \;\text{ e }\; x \neq y \implies x \succ y\]</span></p>
-<p>Mais é melhor (pelo menos fracamente).</p>
+<p>Mais é (pelo menos fracamente) melhor.</p>
+<p>. . .</p>
+<p><strong>5. Convexidade</strong></p>
+<p><span class="math display">\[A \sim B \implies \lambda A + (1-\lambda)B \succsim A, \;\; \lambda \in (0,1)\]</span></p>
+<p>Médias são preferidas a extremos.</p>
+<p>. . .</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Convexidade captura a ideia de <strong>diversificação</strong>: o consumidor prefere um pouco de cada bem a muito de um só.</p>
+</div>
+</div>
+</div>
+</div>
 </div></div>
 </section>
-<section id="teorema-de-debreu-e-utilidade-ordinal" class="slide level2">
-<h2>Teorema de Debreu e Utilidade Ordinal</h2>
+<section id="representação-por-função-utilidade" class="slide level2">
+<h2>Representação por Função Utilidade</h2>
 <div title="Teorema de Debreu (1954)">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -204,73 +265,107 @@ Insper
 <p><strong>Teorema de Debreu (1954)</strong></p>
 </div>
 <div class="callout-content">
-<p>Se <span class="math inline">\(\succsim\)</span> satisfaz completude, transitividade e continuidade, então <strong>existe</strong> uma função contínua <span class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> tal que:</p>
+<p>Se <span class="math inline">\(\succsim\)</span> satisfaz <strong>completude</strong>, <strong>transitividade</strong> e <strong>continuidade</strong>, então existe uma função contínua <span class="math inline">\(U: \mathbb{R}^n_+ \to \mathbb{R}\)</span> tal que:</p>
 <p><span class="math display">\[A \succsim B \iff U(A) \geq U(B)\]</span></p>
 </div>
 </div>
 </div>
 </div>
 <div class="fragment">
-<p><strong>Utilidade é ordinal, não cardinal:</strong></p>
+<p><strong>Por que isso importa?</strong></p>
 <ul>
-<li><span class="math inline">\(U(A) = 10\)</span> e <span class="math inline">\(U(B) = 5\)</span> <strong>não</strong> significa que <span class="math inline">\(A\)</span> é “duas vezes melhor”</li>
-<li>Qualquer transformação monotônica crescente <span class="math inline">\(V = \phi(U)\)</span> representa as mesmas preferências</li>
-<li>Exemplo: <span class="math inline">\(U = xy\)</span> e <span class="math inline">\(V = \ln x + \ln y\)</span> são equivalentes</li>
+<li>Transforma um problema de <strong>ordenação</strong> (preferências) em um problema de <strong>otimização</strong> (maximizar <span class="math inline">\(U\)</span>)</li>
+<li>Podemos usar cálculo, Lagrangeano, estática comparativa…</li>
 </ul>
 </div>
+<div class="fragment">
+<p><strong>Atenção:</strong> a função <span class="math inline">\(U\)</span> não é única — qualquer transformação monotônica crescente <span class="math inline">\(V = \phi(U)\)</span> com <span class="math inline">\(\phi' &gt; 0\)</span> representa as mesmas preferências.</p>
+</div>
 </section>
-<section id="curvas-de-indiferença-propriedades" class="slide level2">
-<h2>Curvas de Indiferença: Propriedades</h2>
-<p><strong>Definição:</strong> curva de indiferença é o conjunto <span class="math inline">\(\{(x_1, x_2) : U(x_1, x_2) = \bar{u}\}\)</span>.</p>
+<section id="curvas-de-indiferença" class="slide level2">
+<h2>Curvas de Indiferença</h2>
+<p><strong>Definição:</strong> <span class="math inline">\(\{(x_1, x_2) : U(x_1, x_2) = \bar{u}\}\)</span> — conjunto de cestas que geram a mesma utilidade.</p>
 <div class="fragment">
 <p><strong>Propriedades fundamentais:</strong></p>
 <ol type="1">
-<li><strong>Preenchem o espaço</strong> — por completude, todo ponto pertence a alguma curva</li>
-<li><strong>Inclinação negativa</strong> — por monotonicidade (se <span class="math inline">\(x_1 \uparrow\)</span>, precisa <span class="math inline">\(x_2 \downarrow\)</span> para manter <span class="math inline">\(\bar{u}\)</span>)</li>
-<li><strong>Não se cruzam</strong> — consequência da transitividade</li>
-<li><strong>Convexas</strong> — preferências convexas <span class="math inline">\(\implies\)</span> médias são preferidas a extremos</li>
+<li><strong>Preenchem o espaço</strong> — por completude</li>
+<li><strong>Inclinação negativa</strong> — por monotonicidade</li>
+<li><strong>Não se cruzam</strong> — por transitividade</li>
+<li><strong>Convexas</strong> — por convexidade das preferências</li>
 </ol>
 </div>
 <div class="fragment">
-<p>Curvas “mais ao nordeste” representam utilidades maiores.</p>
+<p>Explore como o parâmetro <span class="math inline">\(\alpha\)</span> altera as curvas Cobb-Douglas <span class="math inline">\(U = x^{\alpha} y^{1-\alpha}\)</span>:</p>
+<div id="graph-a03-ic" style="width:700px;height:370px;margin:0 auto;">
+
 </div>
-</section>
-<section id="por-que-curvas-de-indiferença-não-se-cruzam" class="slide level2">
-<h2>Por que Curvas de Indiferença Não se Cruzam?</h2>
-<p><strong>Prova por contradição:</strong></p>
-<div class="fragment">
-<p>Suponha que duas curvas (<span class="math inline">\(\bar{u}_1 \neq \bar{u}_2\)</span>) se cruzam no ponto <span class="math inline">\(P\)</span>.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<ul>
-<li>Ponto <span class="math inline">\(A\)</span> está na curva <span class="math inline">\(\bar{u}_1\)</span>: <span class="math inline">\(A \sim P\)</span></li>
-<li>Ponto <span class="math inline">\(B\)</span> está na curva <span class="math inline">\(\bar{u}_2\)</span>: <span class="math inline">\(B \sim P\)</span></li>
-<li>Por transitividade: <span class="math inline">\(A \sim B\)</span></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<ul>
-<li>Mas <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> estão em curvas diferentes!</li>
-<li>Se <span class="math inline">\(\bar{u}_1 &gt; \bar{u}_2\)</span>: <span class="math inline">\(A \succ B\)</span></li>
-<li><strong>Contradição</strong> com <span class="math inline">\(A \sim B\)</span></li>
-</ul>
-</div></div>
+<div class="graph-slider-row">
+<p><label>α: <span id="val-a03-alpha">0.50</span></label> <input type="range" id="sl-a03-alpha" min="0.10" max="0.90" step="0.05" value="0.50" oninput="window.updateA03IC(this.value)"></p>
 </div>
-<div class="fragment">
-<div title="Intuição Econômica">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Intuição Econômica</strong></p>
-</div>
-<div class="callout-content">
-<p>Se as curvas se cruzassem, o consumidor seria “inconsistente” — violaria a transitividade.</p>
-</div>
-</div>
-</div>
-</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-ic', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var alpha = 0.5;
+  var uLevels = [2, 3, 4, 5, 6];
+  var colors = ['#1565c0', '#1565c0', '#1565c0', '#1565c0', '#1565c0'];
+  var curves = [];
+
+  function makeIC(uBar) {
+    return board.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var val = Math.pow(uBar / Math.pow(t, alpha), 1 / (1 - alpha));
+        return (val > 10 || val < 0 || isNaN(val)) ? NaN : val;
+      },
+      0.05, 9.5
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+  }
+
+  for (var i = 0; i < uLevels.length; i++) {
+    curves.push(makeIC(uLevels[i]));
+  }
+
+  // Labels
+  var labels = [];
+  for (var i = 0; i < uLevels.length; i++) {
+    var tx = 8;
+    var tyVal = Math.pow(uLevels[i] / Math.pow(tx, alpha), 1 / (1 - alpha));
+    labels.push(board.create('text', [tx + 0.3, tyVal + 0.3, 'U=' + uLevels[i]], {
+      fontSize: 11, color: '#1565c0', fixed: true
+    }));
+  }
+
+  window.updateA03IC = function(val) {
+    alpha = parseFloat(val);
+    document.getElementById('val-a03-alpha').textContent = alpha.toFixed(2);
+    for (var i = 0; i < curves.length; i++) {
+      var uBar = uLevels[i];
+      curves[i].Y = (function(u, a) {
+        return function(t) {
+          var v = Math.pow(u / Math.pow(t, a), 1 / (1 - a));
+          return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+        };
+      })(uBar, alpha);
+    }
+    for (var i = 0; i < labels.length; i++) {
+      var tx = 8;
+      var tyVal = Math.pow(uLevels[i] / Math.pow(tx, alpha), 1 / (1 - alpha));
+      labels[i].setCoords(JXG.COORDS_BY_USER, [tx + 0.3, tyVal + 0.3]);
+    }
+    board.update();
+  };
+})();
+</script>
 </div>
 </section>
 <section id="taxa-marginal-de-substituição-tms" class="slide level2">
@@ -278,30 +373,98 @@ Insper
 <p>A TMS mede a <strong>disposição a trocar</strong> <span class="math inline">\(x_2\)</span> por <span class="math inline">\(x_1\)</span> mantendo a utilidade constante.</p>
 <div class="fragment">
 <p><strong>Definição formal:</strong> ao longo de uma curva de indiferença (<span class="math inline">\(dU = 0\)</span>):</p>
-<p><span class="math display">\[TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{U = \bar{u}} = \frac{U_1}{U_2} = \frac{\partial U / \partial x_1}{\partial U / \partial x_2}\]</span></p>
+<p><span class="math display">\[TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{U = \bar{u}} = \frac{UMg_1}{UMg_2} = \frac{\partial U / \partial x_1}{\partial U / \partial x_2}\]</span></p>
 </div>
 <div class="fragment">
-<p>Explore a TMS em diferentes pontos da curva de indiferença:</p>
-<iframe src="../../graficos/cap03/tms-ponto.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div>
-</section>
-<section id="calculando-a-tms-exemplos" class="slide level2">
-<h2>Calculando a TMS — Exemplos</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Cobb-Douglas:</strong> <span class="math inline">\(U = x_1^\alpha x_2^\beta\)</span></p>
-<p><span class="math display">\[TMS = \frac{\alpha x_2}{\beta x_1}\]</span></p>
-<p>. . .</p>
-<p>TMS decrescente: curvas “bem comportadas”.</p>
+<p><strong>Interpretação geométrica:</strong></p>
+<ul>
+<li>Inclinação (em valor absoluto) da tangente à curva de indiferença</li>
+<li>Preço relativo <strong>subjetivo</strong> do bem 1 em unidades do bem 2</li>
+</ul>
 </div><div class="column" style="width:50%;">
-<p><strong>CES:</strong> <span class="math inline">\(U = (x_1^\rho + x_2^\rho)^{1/\rho}\)</span></p>
-<p><span class="math display">\[TMS = \left(\frac{x_2}{x_1}\right)^{1-\rho}\]</span></p>
-<p>. . .</p>
-<p>O parâmetro <span class="math inline">\(\rho\)</span> controla a curvatura.</p>
+<p><strong>Exemplo Cobb-Douglas:</strong> <span class="math inline">\(U = x_1^\alpha x_2^{1-\alpha}\)</span></p>
+<p><span class="math display">\[TMS = \frac{\alpha}{1 - \alpha} \cdot \frac{x_2}{x_1}\]</span></p>
 </div></div>
+</div>
+</section>
+<section id="tms-interativa" class="slide level2">
+<h2>TMS Interativa</h2>
+<p>Arraste o ponto ao longo da curva de indiferença e observe como a TMS (inclinação da reta tangente) varia:</p>
+<div id="graph-a03-tms" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-tms', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var alpha = 0.5;
+  var uBar = 4;
+
+  // Indifference curve
+  board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var v = Math.pow(uBar / Math.pow(t, alpha), 1 / (1 - alpha));
+      return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+    },
+    0.2, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Draggable point on IC
+  var px0 = 2.5;
+  var py0 = Math.pow(uBar / Math.pow(px0, alpha), 1 / (1 - alpha));
+  var pt = board.create('point', [px0, py0], {
+    name: '',
+    size: 5,
+    color: '#C8102E',
+    strokeColor: '#C8102E',
+    fillColor: '#C8102E'
+  });
+
+  // Constrain point to IC
+  pt.on('drag', function() {
+    var x = pt.X();
+    if (x < 0.2) x = 0.2;
+    if (x > 9.5) x = 9.5;
+    var y = Math.pow(uBar / Math.pow(x, alpha), 1 / (1 - alpha));
+    if (y > 10) { x = Math.pow(uBar / Math.pow(10, 1 - alpha), 1 / alpha); y = 10; }
+    pt.moveTo([x, y]);
+  });
+
+  // Tangent line
+  var tangent = board.create('line', [
+    function() {
+      var x = pt.X(), y = pt.Y();
+      var mrs = (alpha / (1 - alpha)) * (y / x);
+      return [y + mrs * x, -mrs, 1];
+    }
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  // MRS label
+  board.create('text', [0.5, 9, function() {
+    var x = pt.X(), y = pt.Y();
+    var mrs = (alpha / (1 - alpha)) * (y / x);
+    return 'TMS = ' + mrs.toFixed(2);
+  }], { fontSize: 16, color: '#C8102E', fixed: true });
+
+  // Point coordinates label
+  board.create('text', [0.5, 8.2, function() {
+    return '(' + pt.X().toFixed(2) + ', ' + pt.Y().toFixed(2) + ')';
+  }], { fontSize: 13, color: '#555', fixed: true });
+})();
+</script>
 <div class="fragment">
-<p><strong>TMS decrescente</strong> <span class="math inline">\(\implies\)</span> preferências convexas <span class="math inline">\(\implies\)</span> curvas de indiferença convexas.</p>
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -312,140 +475,115 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Quanto mais <span class="math inline">\(x_1\)</span> você já tem, menos <span class="math inline">\(x_2\)</span> está disposto a abrir mão por mais uma unidade de <span class="math inline">\(x_1\)</span>.</p>
+<p>Quanto mais <span class="math inline">\(x_1\)</span> o consumidor já possui, menor a TMS: ele valoriza cada unidade adicional de <span class="math inline">\(x_1\)</span> menos em termos de <span class="math inline">\(x_2\)</span>. Isso e a <strong>TMS decrescente</strong>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="menu-de-funções-de-utilidade" class="slide level2">
-<h2>Menu de Funções de Utilidade</h2>
+<section id="tms-decrescente-e-convexidade-estrita" class="slide level2">
+<h2>TMS Decrescente e Convexidade Estrita</h2>
+<p><strong>Por que a TMS diminui ao longo da curva de indiferença?</strong></p>
+<div class="fragment">
+<p>Quando o consumidor tem <strong>muito</strong> <span class="math inline">\(x_1\)</span> e <strong>pouco</strong> <span class="math inline">\(x_2\)</span>:</p>
+<ul>
+<li>A utilidade marginal de <span class="math inline">\(x_1\)</span> é baixa (abundante)</li>
+<li>A utilidade marginal de <span class="math inline">\(x_2\)</span> e alta (escasso)</li>
+<li>Logo, <span class="math inline">\(TMS = \frac{UMg_1}{UMg_2}\)</span> e <strong>pequena</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Equivalencia formal:</strong></p>
+<p><span class="math display">\[\text{TMS decrescente} \iff \text{Preferencias estritamente convexas} \iff \text{Curvas de indiferenca estritamente convexas}\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>TMS decrescente e o reflexo matematico da ideia de que <strong>variedade e preferida a especialização</strong> — o consumidor resiste cada vez mais a abrir mão do bem que ja e escasso.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="utilidade-ordinal-vs-cardinal" class="slide level2">
+<h2>Utilidade Ordinal vs Cardinal</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Utilidade ordinal</strong> (usamos esta):</p>
+<ul>
+<li>Apenas a <strong>ordem</strong> importa</li>
+<li><span class="math inline">\(U(A) = 10, U(B) = 5\)</span> significa <span class="math inline">\(A \succ B\)</span>, nada mais</li>
+<li>Não podemos dizer “<span class="math inline">\(A\)</span> e duas vezes melhor que <span class="math inline">\(B\)</span>”</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Transformações monotônicas:</strong></p>
+<p>Se <span class="math inline">\(V = \phi(U)\)</span> com <span class="math inline">\(\phi' &gt; 0\)</span>:</p>
+<p><span class="math display">\[U(A) \geq U(B) \iff V(A) \geq V(B)\]</span></p>
+</div></div>
+<div class="fragment">
+<p><strong>Exemplo:</strong> estas funções representam as <strong>mesmas</strong> preferencias:</p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Função</th>
 <th style="text-align: left;">Fórmula</th>
-<th style="text-align: left;">Características</th>
+<th style="text-align: left;">TMS</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Linear</td>
-<td style="text-align: left;"><span class="math inline">\(U = ax_1 + bx_2\)</span></td>
-<td style="text-align: left;">Substitutos perfeitos, <span class="math inline">\(TMS = a/b\)</span> constante</td>
+<td style="text-align: left;"><span class="math inline">\(U\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_1 \cdot x_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_2 / x_1\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Leontief</td>
-<td style="text-align: left;"><span class="math inline">\(U = \min\{ax_1, bx_2\}\)</span></td>
-<td style="text-align: left;">Complementares perfeitos, curvas em L</td>
+<td style="text-align: left;"><span class="math inline">\(V = \ln U\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\ln x_1 + \ln x_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_2 / x_1\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Cobb-Douglas</td>
-<td style="text-align: left;"><span class="math inline">\(U = x_1^\alpha x_2^\beta\)</span></td>
-<td style="text-align: left;">Caso intermediário, curvas suaves</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">CES</td>
-<td style="text-align: left;"><span class="math inline">\(U = (ax_1^\rho + bx_2^\rho)^{1/\rho}\)</span></td>
-<td style="text-align: left;">Generaliza todos os anteriores</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Quase-linear</td>
-<td style="text-align: left;"><span class="math inline">\(U = v(x_1) + x_2\)</span></td>
-<td style="text-align: left;">Sem efeito renda para <span class="math inline">\(x_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(W = U^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_1^2 x_2^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_2 / x_1\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="fragment">
+<p>A TMS e <strong>invariante</strong> a transformações monotônicas — confirma que e uma propriedade ordinal.</p>
+</div>
 </section>
-<section id="substitutos-perfeitos-e-complementares-perfeitos" class="slide level2">
-<h2>Substitutos Perfeitos e Complementares Perfeitos</h2>
+<section id="substitutos-perfeitos" class="slide level2">
+<h2>Substitutos Perfeitos</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Linear (Substitutos Perfeitos)</strong></p>
+<p><strong>Função de utilidade:</strong></p>
 <p><span class="math display">\[U = ax_1 + bx_2\]</span></p>
-<ul>
-<li>Curvas de indiferença: <strong>retas</strong> com inclinação <span class="math inline">\(-a/b\)</span></li>
-<li>TMS constante: o consumidor troca a uma taxa fixa</li>
-<li>Exemplos: café marca A vs.&nbsp;marca B, notas de R$10 vs.&nbsp;R$5</li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Leontief (Complementares Perfeitos)</strong></p>
-<p><span class="math display">\[U = \min\{ax_1, bx_2\}\]</span></p>
-<ul>
-<li>Curvas de indiferença: <strong>L</strong> com vértice em <span class="math inline">\(ax_1 = bx_2\)</span></li>
-<li>TMS: 0 ou <span class="math inline">\(\infty\)</span> (indefinida no vértice)</li>
-<li>Exemplos: sapato esquerdo e direito, café e açúcar (proporção fixa)</li>
-</ul>
-</div></div>
-<div class="fragment">
-<blockquote>
-<p>Esses são os casos polares — a realidade geralmente está no meio.</p>
-</blockquote>
-</div>
-</section>
-<section id="cobb-douglas-e-curvas-de-indiferença" class="slide level2">
-<h2>Cobb-Douglas e Curvas de Indiferença</h2>
-<p><span class="math display">\[U = x_1^\alpha x_2^\beta \quad (\alpha, \beta &gt; 0)\]</span></p>
-<div class="fragment">
 <p><strong>Propriedades:</strong></p>
 <ul>
-<li>TMS = <span class="math inline">\(\frac{\alpha x_2}{\beta x_1}\)</span> — decrescente ao longo da curva</li>
-<li>Parcelas de gasto constantes: <span class="math inline">\(\frac{p_1 x_1}{m} = \frac{\alpha}{\alpha + \beta}\)</span></li>
-<li>Homogênea de grau <span class="math inline">\(\alpha + \beta\)</span></li>
+<li>Curvas de indiferença: <strong>retas</strong> com inclinação <span class="math inline">\(-a/b\)</span></li>
+<li><span class="math inline">\(TMS = a/b\)</span> — <strong>constante</strong></li>
+<li>O consumidor troca a uma taxa fixa</li>
+<li>Solução de canto se <span class="math inline">\(TMS \neq p_1/p_2\)</span></li>
 </ul>
-</div>
-<div class="fragment">
-<p>Explore diferentes combinações de <span class="math inline">\(\alpha\)</span> e <span class="math inline">\(\beta\)</span>:</p>
-<iframe src="../../graficos/cap03/curvas-indiferenca.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div>
-</section>
-<section id="ces-a-função-que-generaliza-tudo" class="slide level2">
-<h2>CES: A Função que Generaliza Tudo</h2>
-<p><span class="math display">\[U = \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}, \quad \rho \leq 1\]</span></p>
-<div class="fragment">
-<p><strong>Elasticidade de substituição:</strong> <span class="math inline">\(\sigma = \frac{1}{1 - \rho}\)</span></p>
-</div>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"><span class="math inline">\(\rho\)</span></th>
-<th style="text-align: left;"><span class="math inline">\(\sigma\)</span></th>
-<th style="text-align: left;">Caso especial</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\rho \to 1\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma \to \infty\)</span></td>
-<td style="text-align: left;">Substitutos perfeitos (linear)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\rho \to 0\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma \to 1\)</span></td>
-<td style="text-align: left;">Cobb-Douglas</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\rho \to -\infty\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma \to 0\)</span></td>
-<td style="text-align: left;">Complementares perfeitos (Leontief)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
+</div><div class="column" style="width:50%;">
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Notas de R$10 vs.&nbsp;duas de R$5</li>
+<li>Cafe marca A vs.&nbsp;marca B (se identicos)</li>
+<li>Gasolina comum vs.&nbsp;aditivada (por litro)</li>
+</ul>
+<p>. . .</p>
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -456,11 +594,219 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math inline">\(\sigma\)</span> mede quão fácil é substituir um bem pelo outro. Quanto maior <span class="math inline">\(\sigma\)</span>, mais “substituíveis” são os bens.</p>
+<p>Se dois bens são substitutos perfeitos, o consumidor so se importa com a <strong>quantidade total ponderada</strong> — a composição da cesta e irrelevante.</p>
 </div>
 </div>
 </div>
 </div>
+</div></div>
+</section>
+<section id="complementares-perfeitos" class="slide level2">
+<h2>Complementares Perfeitos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Função de utilidade:</strong></p>
+<p><span class="math display">\[U = \min\left\{\frac{x_1}{a}, \frac{x_2}{b}\right\}\]</span></p>
+<p><strong>Propriedades:</strong></p>
+<ul>
+<li>Curvas de indiferença: <strong>L</strong> com vertice em <span class="math inline">\(x_1/a = x_2/b\)</span></li>
+<li>TMS: <span class="math inline">\(0\)</span> ou <span class="math inline">\(\infty\)</span> (indefinida no vertice)</li>
+<li>Consumo sempre na proporção <span class="math inline">\(x_1/x_2 = a/b\)</span></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Sapato esquerdo e sapato direito (<span class="math inline">\(a = b = 1\)</span>)</li>
+<li>Café e açucar em proporção fixa</li>
+<li>Processador e placa-mãe (compativel)</li>
+</ul>
+<p>. . .</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com complementares perfeitos, ter mais de um bem <strong>sem</strong> o outro não aumenta a utilidade — o “gargalo” e sempre o bem mais escasso na proporção.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="tipos-de-preferências-interativo" class="slide level2">
+<h2>Tipos de Preferências — Interativo</h2>
+<p>Use o controle para alternar entre os três tipos classicos de preferências:</p>
+<div id="graph-a03-types" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Tipo: <span id="val-a03-type">Cobb-Douglas</span></label> <input type="range" id="sl-a03-type" min="0" max="2" step="1" value="0" oninput="window.updateA03Types(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-types', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var curves = [];
+  var typeNames = ['Cobb-Douglas', 'Substitutos Perfeitos', 'Complementares Perfeitos'];
+  var currentType = 0;
+
+  function clearCurves() {
+    for (var i = 0; i < curves.length; i++) {
+      board.removeObject(curves[i]);
+    }
+    curves = [];
+  }
+
+  function drawCobbDouglas() {
+    var uLevels = [2, 3, 4, 5, 6];
+    var a = 0.5;
+    for (var i = 0; i < uLevels.length; i++) {
+      var u = uLevels[i];
+      curves.push(board.create('curve', [
+        function(t) { return t; },
+        (function(uv) {
+          return function(t) {
+            var v = Math.pow(uv / Math.pow(t, a), 1 / (1 - a));
+            return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+          };
+        })(u),
+        0.1, 9.5
+      ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+    }
+  }
+
+  function drawPerfectSubs() {
+    var uLevels = [2, 4, 6, 8, 10];
+    for (var i = 0; i < uLevels.length; i++) {
+      var u = uLevels[i];
+      curves.push(board.create('line', [
+        [u, 0], [0, u]
+      ], { strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false }));
+    }
+  }
+
+  function drawPerfectComps() {
+    var uLevels = [1, 2, 3, 4, 5];
+    for (var i = 0; i < uLevels.length; i++) {
+      (function(u) {
+        // Vertical part
+        curves.push(board.create('curve', [
+          function() { return u; },
+          function(t) { return t; },
+          u, 9.5
+        ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        // Horizontal part
+        curves.push(board.create('curve', [
+          function(t) { return t; },
+          function() { return u; },
+          u, 9.5
+        ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        // Corner point
+        curves.push(board.create('point', [u, u], {
+          size: 3, color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+          name: '', fixed: true
+        }));
+      })(uLevels[i]);
+    }
+  }
+
+  function drawType(type) {
+    clearCurves();
+    if (type === 0) drawCobbDouglas();
+    else if (type === 1) drawPerfectSubs();
+    else drawPerfectComps();
+    board.update();
+  }
+
+  drawType(0);
+
+  window.updateA03Types = function(val) {
+    currentType = parseInt(val);
+    document.getElementById('val-a03-type').textContent = typeNames[currentType];
+    drawType(currentType);
+  };
+})();
+</script>
+</section>
+<section id="preferências-quase-lineares-e-homotéticas" class="slide level2">
+<h2>Preferências Quase-Lineares e Homotéticas</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Quase-lineares:</strong></p>
+<p><span class="math display">\[U = v(x_1) + x_2, \quad v' &gt; 0, \; v'' &lt; 0\]</span></p>
+<ul>
+<li>Curvas de indiferença: deslocamentos <strong>verticais</strong> de uma mesma forma</li>
+<li><span class="math inline">\(TMS = v'(x_1)\)</span> — depende apenas de <span class="math inline">\(x_1\)</span></li>
+<li>Sem efeito renda para <span class="math inline">\(x_2\)</span></li>
+<li>Util para modelar um bem “especial” (<span class="math inline">\(x_1\)</span>) vs.&nbsp;dinheiro (<span class="math inline">\(x_2\)</span>)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Homotéticas:</strong></p>
+<p><span class="math display">\[U = f(x_1, x_2) \text{ homogênea de grau } k\]</span></p>
+<ul>
+<li>Curvas de indiferença são <strong>expansões radiais</strong> umas das outras</li>
+<li><span class="math inline">\(TMS\)</span> depende apenas da <strong>razão</strong> <span class="math inline">\(x_2/x_1\)</span></li>
+<li>Parcelas de gasto constantes (Cobb-Douglas e CES)</li>
+</ul>
+<p>. . .</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com preferencias homoteticas, ricos e pobres escolhem a mesma <strong>proporção</strong> de bens — so a escala muda. Preferencias quase-lineares quebram isso: a demanda por <span class="math inline">\(x_1\)</span> independe da renda (apos um minimo).</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="restrição-orçamentária-introdução" class="slide level2">
+<h2>Restrição Orçamentária — Introdução</h2>
+<p>O consumidor quer maximizar <span class="math inline">\(U\)</span>, mas enfrenta a <strong>restrição orçamentária</strong>:</p>
+<p><span class="math display">\[p_1 x_1 + p_2 x_2 \leq m\]</span></p>
+<div class="fragment">
+<p><strong>Conjunto orçamentário:</strong> todas as cestas acessiveis (triangulo abaixo da reta).</p>
+<p><strong>Reta orçamentária:</strong> <span class="math inline">\(x_2 = \frac{m}{p_2} - \frac{p_1}{p_2} x_1\)</span></p>
+</div>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><strong>Intercepto vertical:</strong> <span class="math inline">\(m/p_2\)</span> (gasta tudo em <span class="math inline">\(x_2\)</span>)</li>
+<li><strong>Intercepto horizontal:</strong> <span class="math inline">\(m/p_1\)</span> (gasta tudo em <span class="math inline">\(x_1\)</span>)</li>
+<li><strong>Inclinação:</strong> <span class="math inline">\(-p_1/p_2\)</span> (custo de oportunidade)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Deslocamentos:</strong></p>
+<ul>
+<li><span class="math inline">\(m \uparrow\)</span>: reta desloca para fora (paralela)</li>
+<li><span class="math inline">\(p_1 \uparrow\)</span>: reta gira para dentro (intercepto horizontal cai)</li>
+<li><span class="math inline">\(p_1 \downarrow\)</span>: reta gira para fora</li>
+</ul>
+</div></div>
+</div>
+<div class="fragment">
+<p>Na proxima aula, juntaremos preferencias com a restrição para encontrar a <strong>escolha otima</strong>.</p>
 </div>
 </section>
 <section id="próxima-aula" class="slide level2">
@@ -468,10 +814,10 @@ Insper
 <p><strong>Aula 04 — Lab Curvas de Indiferença</strong></p>
 <div class="fragment">
 <ul>
+<li>Atividade pratica com funções de utilidade (Jigsaw)</li>
 <li>Quase-concavidade e por que ela importa</li>
 <li>Elasticidade de substituição <span class="math inline">\(\sigma\)</span> em detalhe</li>
-<li>Transformações monotônicas: por que <span class="math inline">\(\ln U\)</span> é tão útil</li>
-<li><strong>Atividade prática:</strong> Jigsaw com funções de utilidade</li>
+<li>Transformações monotônicas: por que <span class="math inline">\(\ln U\)</span> e tão util</li>
 </ul>
 </div>
 <div class="fragment">
@@ -485,7 +831,7 @@ Insper
 <p><strong>Preparação</strong></p>
 </div>
 <div class="callout-content">
-<p>Traga calculadora e revise os casos especiais da CES — você vai precisar identificá-los rapidamente na atividade.</p>
+<p>Traga calculadora e revise os casos especiais (Cobb-Douglas, Linear, Leontief) — voce vai precisar identifica-los rapidamente na atividade.</p>
 </div>
 </div>
 </div>

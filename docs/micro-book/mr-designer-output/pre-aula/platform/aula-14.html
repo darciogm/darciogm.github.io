@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title><h1 — Microeconomia II</title>
+<title>Pré-Aula 14 — Escolha sob Incerteza II: Seguros e Informação — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -18,459 +18,217 @@
 </div>
 <div class="content-wrapper">
 <h1
-id="pré-aula-14-lab-isoquantas-e-rendimentos-de-escala-prática">Pré-Aula
-14 — Lab: Isoquantas e Rendimentos de Escala (Prática)</h1>
+id="pré-aula-14-escolha-sob-incerteza-ii-seguros-e-informação">Pré-Aula
+14 — Escolha sob Incerteza II: Seguros e Informação</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 9, Seções 9.5–9.7</strong> do livro interativo | Tempo
-estimado: <strong>40 min</strong></p>
+<p><strong>Cap. 7, Seções 7.4–7.6</strong> do livro-texto | Tempo
+estimado: <strong>~45 min</strong></p>
 </div>
-<pre><code>**Cap. 9, Seções 9.5–9.7** do livro interativo | Tempo estimado: **40 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Definir e calcular a elasticidade de substituição <span
-class="math inline">\(\sigma\)</span> para diferentes funções de
-produção</li>
-<li>Explicar como o progresso técnico desloca isoquantas e suas
-implicações para a demanda de insumos</li>
-<li>Preparar a “ficha técnica” de uma função de produção para o Jigsaw
-da próxima aula</li>
+<li>Calcular e interpretar as medidas de aversão ao risco de Arrow-Pratt
+(ARA e RRA).</li>
+<li>Determinar a cobertura ótima de seguro sob prêmio justo e com
+carregamento.</li>
+<li>Aplicar o conceito de diversificação para redução de risco.</li>
 </ol>
 <hr />
-<h2 id="elasticidade-de-substituição-sigma">1. Elasticidade de
-substituição <span class="math inline">\(\sigma\)</span></h2>
-<p>A TMST nos diz <strong>a taxa</strong> de substituição entre insumos.
-Mas quão <strong>fácil</strong> é substituir? A <strong>elasticidade de
-substituição</strong> <span class="math inline">\(\sigma\)</span> mede
-isso:</p>
-<p><span class="math display">\[\sigma =
-\frac{d\ln(K/L)}{d\ln(\text{TMST})}\]</span></p>
-<p>Em termos mais intuitivos:</p>
-<blockquote>
-<p>“Se a TMST muda 1%, em quanto (%) muda a razão capital/trabalho?”</p>
-</blockquote>
-<p><span class="math inline">\(\sigma\)</span> alto: fácil substituir
-(isoquantas mais “achatadas”)</p>
-<p><span class="math inline">\(\sigma\)</span> baixo: difícil substituir
-(isoquantas mais “angulosas”)</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Função</th>
-<th style="text-align: left;"><span
-class="math inline">\(\sigma\)</span></th>
-<th style="text-align: left;">Interpretação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Linear</strong></td>
-<td style="text-align: left;"><span
-class="math inline">\(\infty\)</span></td>
-<td style="text-align: left;">Substituição perfeita</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Cobb-Douglas</strong></td>
-<td style="text-align: left;"><span
-class="math inline">\(1\)</span></td>
-<td style="text-align: left;">Substituição intermediária</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>CES</strong></td>
-<td style="text-align: left;"><span
-class="math inline">\(\frac{1}{1-\rho}\)</span></td>
-<td style="text-align: left;">Variável</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Leontief</strong></td>
-<td style="text-align: left;"><span
-class="math inline">\(0\)</span></td>
-<td style="text-align: left;">Sem substituição</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="a-família-ces-como-unificadora">2. A família CES como
-unificadora</h2>
-<p>A função <strong>CES</strong> (Constant Elasticity of Substitution)
-generaliza todas as funções clássicas:</p>
-<p><span class="math display">\[f(L, K) = A\big[\alpha L^\rho +
-(1-\alpha) K^\rho\big]^{1/\rho}\]</span></p>
-<p>onde <span class="math inline">\(\rho \in (-\infty, 1]\)</span> e
-<span class="math inline">\(\sigma = \frac{1}{1-\rho}\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Limite</th>
-<th style="text-align: left;"><span
-class="math inline">\(\rho\)</span></th>
-<th style="text-align: left;"><span
-class="math inline">\(\sigma\)</span></th>
-<th style="text-align: left;">Função</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
-1\)</span></td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;"><span
-class="math inline">\(\infty\)</span></td>
-<td style="text-align: left;">Linear</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
-0\)</span></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">1</td>
-<td style="text-align: left;">Cobb-Douglas</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
--\infty\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(-\infty\)</span></td>
-<td style="text-align: left;">0</td>
-<td style="text-align: left;">Leontief</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition example">
-<div class="admonition-title">
-Verificação: CES para <span class="math inline">\(\\rho \\to 0\)</span>
-gera Cobb-Douglas
-</div>
-<p>Tome <span class="math inline">\(\ln f = \frac{1}{\rho}\ln[\alpha
-L^\rho + (1-\alpha)K^\rho]\)</span>.</p>
-<p>Usando L’Hôpital quando <span class="math inline">\(\rho \to
-0\)</span>:</p>
-<p><span class="math inline">\(\ln f \to \alpha \ln L + (1-\alpha) \ln K
-+ \ln A\)</span></p>
-<p><span class="math inline">\(f \to A L^\alpha
-K^{1-\alpha}\)</span></p>
-<p>Que é a Cobb-Douglas!</p>
-</div>
-<pre><code>Tome $\ln f = \frac{1}{\rho}\ln[\alpha L^\rho + (1-\alpha)K^\rho]$.
-
-Usando L&#39;Hôpital quando $\rho \to 0$:
-
-$\ln f \to \alpha \ln L + (1-\alpha) \ln K + \ln A$
-
-$f \to A L^\alpha K^{1-\alpha}$
-
-Que é a Cobb-Douglas!</code></pre>
-<hr />
-<h2 id="progresso-técnico">3. Progresso técnico</h2>
-<p>O progresso técnico permite produzir <strong>mais com os mesmos
-insumos</strong>. Graficamente, as isoquantas se deslocam <strong>para a
-origem</strong>.</p>
-<p>Tipos de progresso técnico:</p>
-<h3 id="progresso-neutro-de-hicks">3.1 Progresso neutro de Hicks</h3>
-<p><span class="math display">\[f(L, K, t) = A(t) \cdot g(L,
-K)\]</span></p>
-<p>Todas as isoquantas se contraem proporcionalmente. A TMST em qualquer
-ponto <span class="math inline">\((K/L)\)</span> permanece
-inalterada.</p>
-<h3 id="progresso-poupador-de-trabalho-labor-saving">3.2 Progresso
-poupador de trabalho (labor-saving)</h3>
-<p><span class="math display">\[f(L, K, t) = g(L, B(t) \cdot
-K)\]</span></p>
-<p>O progresso torna o capital mais eficiente. As isoquantas se
-“achatam” — a firma precisa de relativamente menos trabalho.</p>
-<h3 id="progresso-poupador-de-capital-capital-saving">3.3 Progresso
-poupador de capital (capital-saving)</h3>
-<p><span class="math display">\[f(L, K, t) = g(A(t) \cdot L,
-K)\]</span></p>
-O progresso torna o trabalho mais eficiente. As isoquantas se “inclinam”
-— a firma precisa de relativamente menos capital.
+<h2 id="medidas-de-aversão-ao-risco-de-arrow-pratt">1. Medidas de
+Aversão ao Risco de Arrow-Pratt</h2>
+<p>Para comparar a intensidade da aversão ao risco entre agentes ou ao
+longo da riqueza, usamos:</p>
+<p><strong>Aversão absoluta ao risco (ARA):</strong></p>
+<p><span class="math display">\[A(W) =
+-\frac{u&#39;&#39;(W)}{u&#39;(W)}\]</span></p>
+<p><strong>Aversão relativa ao risco (RRA):</strong></p>
+<p><span class="math display">\[R(W) = -\frac{W \cdot
+u&#39;&#39;(W)}{u&#39;(W)} = W \cdot A(W)\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Automação e a elasticidade de substituição</strong></p>
-<p>O debate sobre automação e emprego depende crucialmente de <span
-class="math inline">\(\sigma\)</span>. Se <span
-class="math inline">\(\sigma\)</span> é alto (como na função linear),
-robôs substituem trabalhadores facilmente — e a automação pode reduzir
-dramaticamente o emprego. Se <span class="math inline">\(\sigma\)</span>
-é baixo (como na Leontief), homens e máquinas são complementares — mais
-robôs exigem mais trabalhadores qualificados para operá-los.</p>
-<p>Empiricamente, <span class="math inline">\(\sigma\)</span> varia
-entre setores: na manufatura, a automação avança rápido (<span
-class="math inline">\(\sigma\)</span> moderado a alto). Em serviços
-pessoais (saúde, educação), <span class="math inline">\(\sigma\)</span>
-é baixo — a tecnologia complementa, não substitui.</p>
-<p>Entender <span class="math inline">\(\sigma\)</span> é, portanto,
-essencial para prever o impacto da inteligência artificial no mercado de
-trabalho.</p>
+<p>A ARA mede quanto aversão ao risco você tem para uma aposta de
+<strong>valor absoluto fixo</strong> (ex.: apostar R$ 100). A RRA mede a
+aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da
+riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA
+muito diferentes.</p>
 </div>
-<pre><code>**Automação e a elasticidade de substituição**
-
-O debate sobre automação e emprego depende crucialmente de $\sigma$. Se $\sigma$ é alto (como na função linear), robôs substituem trabalhadores facilmente — e a automação pode reduzir dramaticamente o emprego. Se $\sigma$ é baixo (como na Leontief), homens e máquinas são complementares — mais robôs exigem mais trabalhadores qualificados para operá-los.
-
-Empiricamente, $\sigma$ varia entre setores: na manufatura, a automação avança rápido ($\sigma$ moderado a alto). Em serviços pessoais (saúde, educação), $\sigma$ é baixo — a tecnologia complementa, não substitui.
-
-Entender $\sigma$ é, portanto, essencial para prever o impacto da inteligência artificial no mercado de trabalho.</code></pre>
 <hr />
-<h2 id="gráfico-interativo-funções-de-produção">Gráfico interativo:
-funções de produção</h2>
-<div id="graph-production-functions" style="min-height: 450px;">
-<iframe src="../../graficos/cap09/funcoes-producao.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
-</iframe>
+<h2 id="cara-vs.-crra">2. CARA vs. CRRA</h2>
+<p>Duas famílias de funções utilidade são especialmente importantes:</p>
+<p><strong>CARA</strong> (Constant Absolute Risk Aversion): <span
+class="math inline">\(u(W) = -e^{-aW}\)</span>, com <span
+class="math inline">\(A(W) = a\)</span> constante.</p>
+<ul>
+<li>O prêmio de risco <strong>não depende</strong> da riqueza
+inicial.</li>
+<li>Pouco realista: um bilionário pagaria o mesmo que um estudante para
+evitar a mesma aposta.</li>
+</ul>
+<p><strong>CRRA</strong> (Constant Relative Risk Aversion): <span
+class="math inline">\(u(W) = \frac{W^{1-\gamma}}{1-\gamma}\)</span> para
+<span class="math inline">\(\gamma \neq 1\)</span>, ou <span
+class="math inline">\(u(W) = \ln W\)</span> para <span
+class="math inline">\(\gamma = 1\)</span>.</p>
+<ul>
+<li><span class="math inline">\(R(W) = \gamma\)</span> constante; <span
+class="math inline">\(A(W) = \gamma/W\)</span> decrescente.</li>
+<li>Mais realista: à medida que enriquece, o agente aceita apostas
+maiores em termos absolutos, mas mantém a proporção.</li>
+</ul>
+<p><span class="math display">\[\text{CRRA:} \quad A(W) =
+\frac{\gamma}{W} \downarrow, \quad R(W) = \gamma =
+\text{const.}\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
 </div>
+<p>Evidências empíricas sugerem que a aversão absoluta é decrescente na
+riqueza (DARA) e a aversão relativa é aproximadamente constante (CRRA
+com <span class="math inline">\(\gamma\)</span> entre 1 e 4). Isso
+justifica o uso frequente de <span class="math inline">\(u(W) = \ln
+W\)</span> em modelos aplicados.</p>
+</div>
+<hr />
+<h2 id="prêmio-de-risco-e-equivalente-certo">3. Prêmio de Risco e
+Equivalente Certo</h2>
+<p>Para uma aposta pequena <span
+class="math inline">\(\tilde{\varepsilon}\)</span> com <span
+class="math inline">\(E[\tilde{\varepsilon}] = 0\)</span> e <span
+class="math inline">\(\text{Var}(\tilde{\varepsilon}) =
+\sigma^2\)</span>, a <strong>aproximação de Arrow-Pratt</strong>
+fornece:</p>
+<p><span class="math display">\[\pi \approx \frac{1}{2} A(W)
+\sigma^2\]</span></p>
+<p>O <strong>equivalente certo</strong> é:</p>
+<p><span class="math display">\[CE = E[W] - \pi \approx E[W] -
+\frac{1}{2}A(W)\sigma^2\]</span></p>
+<iframe src="graficos/cap07/premio-risco.html">
+</iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<ul>
-<li>Varie o parâmetro <span class="math inline">\(\rho\)</span> e
-observe a transição entre Linear, Cobb-Douglas e Leontief</li>
-<li>Compare como a razão <span class="math inline">\(K/L\)</span> muda
-ao longo da isoquanta para diferentes <span
-class="math inline">\(\sigma\)</span></li>
-<li>Ative o progresso técnico e veja as isoquantas se deslocarem</li>
-</ul>
+<p>Aumente a variância da loteria e observe como o prêmio de risco
+cresce. Depois altere a concavidade da função utilidade e veja o impacto
+direto no tamanho de <span class="math inline">\(\pi\)</span>.</p>
 </div>
-<pre><code>- Varie o parâmetro $\rho$ e observe a transição entre Linear, Cobb-Douglas e Leontief
-- Compare como a razão $K/L$ muda ao longo da isoquanta para diferentes $\sigma$
-- Ative o progresso técnico e veja as isoquantas se deslocarem</code></pre>
 <hr />
-<h2 id="preparação-para-o-jigsaw-fichas-técnicas">4. Preparação para o
-Jigsaw: fichas técnicas</h2>
-<p>Na próxima aula, faremos um <strong>Jigsaw</strong> sobre funções de
-produção. Cada grupo será especialista em uma função e depois ensinará
-aos outros.</p>
-<h3 id="sua-tarefa-preparar-a-ficha-técnica">Sua tarefa: preparar a
-“ficha técnica”</h3>
-<p>Para a função que lhe foi atribuída (veja no LMS), preencha:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Item</th>
-<th style="text-align: left;">O que calcular</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">1. Forma funcional</td>
-<td style="text-align: left;">Escrever <span class="math inline">\(f(L,
-K)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">2. Produto marginal</td>
-<td style="text-align: left;"><span class="math inline">\(PMgL\)</span>
-e <span class="math inline">\(PMgK\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">3. TMST</td>
-<td style="text-align: left;"><span class="math inline">\(f_L /
-f_K\)</span> (simplificar)</td>
-</tr>
-<tr>
-<td style="text-align: left;">4. Rendimentos de escala</td>
-<td style="text-align: left;">Calcular <span class="math inline">\(f(tL,
-tK)\)</span> vs. <span class="math inline">\(t \cdot
-f(L,K)\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">5. Elasticidade de substituição</td>
-<td style="text-align: left;">Valor de <span
-class="math inline">\(\sigma\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">6. Formato das isoquantas</td>
-<td style="text-align: left;">Desenho esquemático</td>
-</tr>
-<tr>
-<td style="text-align: left;">7. Exemplo real</td>
-<td style="text-align: left;">Setor/indústria onde essa função se
-aplica</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
+<h2 id="cobertura-ótima-de-seguros">4. Cobertura Ótima de Seguros</h2>
+<p>Um agente com riqueza <span class="math inline">\(W_0\)</span>
+enfrenta perda <span class="math inline">\(L\)</span> com probabilidade
+<span class="math inline">\(p\)</span>. Ele pode comprar cobertura <span
+class="math inline">\(q\)</span> pagando prêmio <span
+class="math inline">\(\gamma q\)</span>, onde <span
+class="math inline">\(\gamma\)</span> é o preço por unidade de
+cobertura.</p>
+<p><strong>Riquezas nos dois estados:</strong></p>
+<p><span class="math display">\[W_{\text{sem sinistro}} = W_0 - \gamma
+q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q\]</span></p>
+<p><strong>Prêmio atuarialmente justo</strong>: <span
+class="math inline">\(\gamma = p\)</span>. Neste caso, a CPO implica
+igualdade de utilidades marginais nos dois estados:</p>
+<p><span class="math display">\[q^* = L \quad \text{(cobertura
+total)}\]</span></p>
+<p><strong>Com carregamento</strong> (<span class="math inline">\(\gamma
+&gt; p\)</span>): <span class="math inline">\(q^* &lt; L\)</span>
+(cobertura parcial). O agente retém parte do risco porque o seguro é
+caro demais.</p>
+<iframe src="graficos/cap07/seguro.html">
+</iframe>
+<div class="admonition tip">
 <div class="admonition-title">
-Importante
+Explore o gráfico
 </div>
-<p>Cada membro do grupo deve ter a ficha pronta <strong>antes</strong>
-da aula. No Jigsaw, você será o “especialista” que ensina sua função aos
-colegas de outros grupos.</p>
+<p>Ajuste o carregamento do prêmio (diferença entre <span
+class="math inline">\(\gamma\)</span> e <span
+class="math inline">\(p\)</span>) e observe como a cobertura ótima se
+reduz. Com prêmio justo, o ponto ótimo está sobre a linha de certeza
+(45°).</p>
 </div>
-<pre><code>Cada membro do grupo deve ter a ficha pronta **antes** da aula. No Jigsaw, você será o &quot;especialista&quot; que ensina sua função aos colegas de outros grupos.</code></pre>
 <hr />
-<h2 id="resumo-comparativo">5. Resumo comparativo</h2>
-<p>Para facilitar sua preparação, a tabela abaixo compara as quatro
-funções:</p>
-<table>
-<colgroup>
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-<col style="width: 20%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Propriedade</th>
-<th style="text-align: left;">Linear</th>
-<th style="text-align: left;">Cobb-Douglas</th>
-<th style="text-align: left;">CES (<span class="math inline">\(\rho =
--1\)</span>)</th>
-<th style="text-align: left;">Leontief</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Forma</td>
-<td style="text-align: left;"><span class="math inline">\(aL +
-bK\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(AL^a
-K^b\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(A(\alpha
-L^{-1} + (1-\alpha)K^{-1})^{-1}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\min\{aL,
-bK\}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">\(\sigma\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(\infty\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(1\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(0{,}5\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(0\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;">Isoquantas</td>
-<td style="text-align: left;">Retas</td>
-<td style="text-align: left;">Hipérboles</td>
-<td style="text-align: left;">Curvas suaves</td>
-<td style="text-align: left;">Ângulos retos</td>
-</tr>
-<tr>
-<td style="text-align: left;">Substituição</td>
-<td style="text-align: left;">Perfeita</td>
-<td style="text-align: left;">Parcial</td>
-<td style="text-align: left;">Limitada</td>
-<td style="text-align: left;">Impossível</td>
-</tr>
-<tr>
-<td style="text-align: left;">Exemplo</td>
-<td style="text-align: left;">Energia (gás vs. elétrica)</td>
-<td style="text-align: left;">Manufatura geral</td>
-<td style="text-align: left;">Indústria química</td>
-<td style="text-align: left;">Montagem (parafusos + porcas)</td>
-</tr>
-</tbody>
-</table>
+<h2 id="diversificação">5. Diversificação</h2>
+<p>Se o agente pode dividir a riqueza entre <span
+class="math inline">\(n\)</span> ativos independentes, cada um com risco
+<span class="math inline">\(\sigma^2\)</span>, o risco total cai:</p>
+<p><span class="math display">\[\text{Var}\left(\frac{1}{n}\sum_{i=1}^n
+\tilde{R}_i\right) = \frac{\sigma^2}{n}\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>“Não coloque todos os ovos na mesma cesta.” A diversificação elimina
+o risco idiossincrático sem custo. No entanto, o risco sistemático (que
+afeta todos os ativos simultaneamente) não pode ser diversificado.</p>
+</div>
 <hr />
-<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Para a função CES com <span
-class="math inline">\(\rho = -1\)</span>, <span
-class="math inline">\(\alpha = 0{,}5\)</span> e <span
-class="math inline">\(A = 1\)</span>: (a) escreva a função
-explicitamente; (b) calcule <span class="math inline">\(f(4, 4)\)</span>
-e <span class="math inline">\(f(8, 8)\)</span>; (c) verifique os
-rendimentos de escala.
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Calcule ARA e RRA para <span
+class="math inline">\(u(W) = \ln W\)</span> e para <span
+class="math inline">\(u(W) = -e^{-2W}\)</span>.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<ol type="a">
-<li><p><span class="math inline">\(f(L,K) = (0{,}5 L^{-1} + 0{,}5
-K^{-1})^{-1} = \frac{LK}{0{,}5K + 0{,}5L} =
-\frac{2LK}{L+K}\)</span></p></li>
-<li><p><span class="math inline">\(f(4,4) = \frac{2 \cdot 4 \cdot 4}{4 +
-4} = \frac{32}{8} = 4\)</span></p></li>
-</ol>
-<p><span class="math inline">\(f(8,8) = \frac{2 \cdot 8 \cdot 8}{8 + 8}
-= \frac{128}{16} = 8\)</span></p>
-<ol start="3" type="a">
-<li><span class="math inline">\(f(8,8) = 8 = 2 \cdot f(4,4)\)</span>.
-Dobramos os insumos e a produção dobrou: <strong>rendimentos constantes
-de escala</strong>.</li>
-</ol>
-<p>Formalmente: <span class="math inline">\(f(tL, tK) =
-\frac{2(tL)(tK)}{tL + tK} = t \cdot \frac{2LK}{L+K} = t \cdot
-f(L,K)\)</span>. Homogênea de grau 1.</p>
+<p>Para <span class="math inline">\(u(W) = \ln W\)</span>: <span
+class="math inline">\(u&#39; = 1/W\)</span>, <span
+class="math inline">\(u&#39;&#39; = -1/W^2\)</span>.<br />
+<span class="math inline">\(A(W) = -(-1/W^2)/(1/W) = 1/W\)</span>
+(DARA). <span class="math inline">\(R(W) = W/W = 1\)</span> (CRRA com
+<span class="math inline">\(\gamma = 1\)</span>).<br />
+Para <span class="math inline">\(u(W) = -e^{-2W}\)</span>: <span
+class="math inline">\(u&#39; = 2e^{-2W}\)</span>, <span
+class="math inline">\(u&#39;&#39; = -4e^{-2W}\)</span>.<br />
+<span class="math inline">\(A(W) = 4e^{-2W}/(2e^{-2W}) = 2\)</span>
+(CARA). <span class="math inline">\(R(W) = 2W\)</span> (RRA
+crescente).</p>
 </div>
 </details>
-<pre><code>(a) $f(L,K) = (0{,}5 L^{-1} + 0{,}5 K^{-1})^{-1} = \frac{LK}{0{,}5K + 0{,}5L} = \frac{2LK}{L+K}$
-
-(b) $f(4,4) = \frac{2 \cdot 4 \cdot 4}{4 + 4} = \frac{32}{8} = 4$
-
-$f(8,8) = \frac{2 \cdot 8 \cdot 8}{8 + 8} = \frac{128}{16} = 8$
-
-(c) $f(8,8) = 8 = 2 \cdot f(4,4)$. Dobramos os insumos e a produção dobrou: **rendimentos constantes de escala**.
-
-Formalmente: $f(tL, tK) = \frac{2(tL)(tK)}{tL + tK} = t \cdot \frac{2LK}{L+K} = t \cdot f(L,K)$. Homogênea de grau 1.</code></pre>
-<strong>Exercício 2.</strong> Calcule a elasticidade de substituição
-para <span class="math inline">\(f(L,K) = L^{0{,}3}K^{0{,}7}\)</span> e
-interprete.
+<p><strong>Exercício 2.</strong> Um agente com <span
+class="math inline">\(u(W) = \sqrt{W}\)</span>, <span
+class="math inline">\(W_0 = 10000\)</span>, perda <span
+class="math inline">\(L = 6000\)</span> com <span
+class="math inline">\(p = 0{,}2\)</span>, prêmio justo <span
+class="math inline">\(\gamma = p = 0{,}2\)</span>. Qual a cobertura
+ótima?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>A Cobb-Douglas sempre tem <span class="math inline">\(\sigma =
-1\)</span>.</p>
-<p>Verificação: <span class="math inline">\(\text{TMST} = \frac{0{,}3
-K}{0{,}7 L} = \frac{3K}{7L}\)</span></p>
-<p>Seja <span class="math inline">\(k = K/L\)</span>. Então <span
-class="math inline">\(\text{TMST} = \frac{3k}{7}\)</span>, logo <span
-class="math inline">\(k = \frac{7}{3}\text{TMST}\)</span>.</p>
-<p><span class="math inline">\(\sigma = \frac{d\ln k}{d\ln \text{TMST}}
-= 1\)</span>.</p>
-<p>Interpretação: uma mudança de 1% na TMST (= preço relativo dos
-insumos) gera exatamente 1% de mudança na razão <span
-class="math inline">\(K/L\)</span>. A substituição é “unitária” — nem
-rígida demais, nem fácil demais.</p>
+<p>Com prêmio justo, sabemos que <span class="math inline">\(q^* = L =
+6000\)</span> (cobertura total).<br />
+Verificação: prêmio pago = <span class="math inline">\(0{,}2 \times 6000
+= 1200\)</span>. Riqueza certa = <span class="math inline">\(10000 -
+1200 = 8800\)</span> em ambos os estados.</p>
 </div>
 </details>
-<pre><code>A Cobb-Douglas sempre tem $\sigma = 1$.
-
-Verificação: $\text{TMST} = \frac{0{,}3 K}{0{,}7 L} = \frac{3K}{7L}$
-
-Seja $k = K/L$. Então $\text{TMST} = \frac{3k}{7}$, logo $k = \frac{7}{3}\text{TMST}$.
-
-$\sigma = \frac{d\ln k}{d\ln \text{TMST}} = 1$.
-
-Interpretação: uma mudança de 1% na TMST (= preço relativo dos insumos) gera exatamente 1% de mudança na razão $K/L$. A substituição é &quot;unitária&quot; — nem rígida demais, nem fácil demais.</code></pre>
-<strong>Exercício 3.</strong> Classifique o tipo de progresso técnico:
-uma nova máquina permite que cada unidade de capital produza o
-equivalente a 1,5 unidade da máquina anterior, sem afetar a
-produtividade do trabalho.
+<p><strong>Exercício 3.</strong> Se o carregamento faz <span
+class="math inline">\(\gamma = 0{,}30\)</span> (50% acima do justo), o
+agente do Exercício 2 comprará mais ou menos cobertura? Justifique
+qualitativamente.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>A nova tecnologia aumenta a eficiência do capital: <span
-class="math inline">\(K_{\text{efetivo}} = 1{,}5K\)</span>.</p>
-<p><span class="math inline">\(f(L, K, t) = g(L, 1{,}5K)\)</span></p>
-<p>Isso é <strong>progresso poupador de trabalho</strong>
-(labor-saving), ou equivalentemente, <strong>aumento da eficiência do
-capital</strong> (capital-augmenting).</p>
-<p>A firma pode produzir o mesmo usando menos trabalho relativo ao
-capital. As isoquantas se “achatam” na direção do eixo <span
-class="math inline">\(L\)</span>.</p>
+<p>Comprará <strong>menos</strong> cobertura (<span
+class="math inline">\(q^* &lt; 6000\)</span>). Com <span
+class="math inline">\(\gamma &gt; p\)</span>, a CPO exige <span
+class="math inline">\(u&#39;(W_{\text{sem}}) &lt;
+u&#39;(W_{\text{sin}})\)</span>, ou seja, <span
+class="math inline">\(W_{\text{sem}} &gt; W_{\text{sin}}\)</span>. O
+agente retém parte do risco porque o custo marginal do seguro excede o
+benefício marginal atuarial. Quanto maior o carregamento, menor a
+cobertura ótima.</p>
 </div>
 </details>
-<pre><code>A nova tecnologia aumenta a eficiência do capital: $K_{\text{efetivo}} = 1{,}5K$.
-
-$f(L, K, t) = g(L, 1{,}5K)$
-
-Isso é **progresso poupador de trabalho** (labor-saving), ou equivalentemente, **aumento da eficiência do capital** (capital-augmenting).
-
-A firma pode produzir o mesmo usando menos trabalho relativo ao capital. As isoquantas se &quot;achatam&quot; na direção do eixo $L$.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -480,226 +238,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 <div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. A elasticidade de substituição <span
-class="math inline">\(\sigma\)</span> mede:
+<div class="q-text">Q1. A medida de Arrow-Pratt que é constante para $u(W) = \ln W$ é:</div>
+<div class="quiz-option" data-value="a">(a) ARA</div>
+<div class="quiz-option" data-value="b">(b) RRA</div>
+<div class="quiz-option" data-value="c">(c) Ambas</div>
+<div class="quiz-option" data-value="d">(d) Nenhuma</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">Q2. Com prêmio atuarialmente justo, um averso ao risco escolhe:</div>
+<div class="quiz-option" data-value="a">(a) Cobertura total ($q^* = L$)</div>
+<div class="quiz-option" data-value="b">(b) Cobertura parcial ($q^* < L$)</div>
+<div class="quiz-option" data-value="c">(c) Nenhuma cobertura</div>
+<div class="quiz-option" data-value="d">(d) Mais que cobertura total</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. A aproximação de Arrow-Pratt para o prêmio de risco é:</div>
+<div class="quiz-option" data-value="a">(a) $\pi \approx A(W) \sigma$</div>
+<div class="quiz-option" data-value="b">(b) $\pi \approx \frac{1}{2} A(W) \sigma^2$</div>
+<div class="quiz-option" data-value="c">(c) $\pi \approx R(W) \sigma^2$</div>
+<div class="quiz-option" data-value="d">(d) $\pi \approx A(W)^2 \sigma$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>A taxa na qual um insumo substitui outro
+<div class="quiz-question" data-question="q4" data-correct="a">
+<div class="q-text">Q4. DARA (Decreasing Absolute Risk Aversion) significa que:</div>
+<div class="quiz-option" data-value="a">(a) O agente aceita apostas absolutas maiores à medida que enriquece</div>
+<div class="quiz-option" data-value="b">(b) O agente fica mais averso ao risco quando enriquece</div>
+<div class="quiz-option" data-value="c">(c) A aversão relativa é constante</div>
+<div class="quiz-option" data-value="d">(d) O prêmio de risco é constante</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>A facilidade com que a firma substitui um insumo por outro
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. A diversificação elimina:</div>
+<div class="quiz-option" data-value="a">(a) Todo o risco</div>
+<div class="quiz-option" data-value="b">(b) O risco idiossincrático (não sistemático)</div>
+<div class="quiz-option" data-value="c">(c) O risco sistemático</div>
+<div class="quiz-option" data-value="d">(d) O risco apenas se os ativos forem correlacionados</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Os rendimentos de escala
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O produto marginal
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. Para a função Cobb-Douglas, <span
-class="math inline">\(\sigma\)</span> é sempre igual a:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>0
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>1
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(\infty\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Depende dos expoentes
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="c">
-<div class="q-text">
-Q3. Quando <span class="math inline">\(\rho \to -\infty\)</span> na CES,
-a função converge para:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Linear
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Cobb-Douglas
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Leontief
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Quadrática
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="b">
-<div class="q-text">
-Q4. O progresso técnico neutro de Hicks:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Altera a TMST
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Contrai as isoquantas proporcionalmente sem alterar a TMST
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Beneficia apenas o fator trabalho
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Reduz a produção
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="a">
-<div class="q-text">
-Q5. Se <span class="math inline">\(\sigma\)</span> é muito alto em um
-setor, a automação tende a:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Substituir trabalho por capital com facilidade
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Aumentar a demanda por trabalho
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Não ter efeito sobre a razão <span
-class="math inline">\(K/L\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Reduzir a eficiência do capital
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-14')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 14</strong>: Jigsaw sobre funções de produção — cada grupo
-apresenta a ficha técnica de sua função e depois ensina aos colegas.
-Traga sua ficha preenchida!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 14**: Jigsaw sobre funções de produção — cada grupo apresenta a ficha técnica de sua função e depois ensina aos colegas. Traga sua ficha preenchida!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p>Na <strong>Aula 15</strong>, estudaremos os paradoxos de Allais e
+Ellsberg, que violam a teoria da utilidade esperada, e a Teoria dos
+Prospectos de Kahneman e Tversky como alternativa comportamental.</p>
 </div>
 
 </div>
@@ -710,7 +301,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-14');
 MicroQuiz.init('aula-14');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

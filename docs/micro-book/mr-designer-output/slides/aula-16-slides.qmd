@@ -11,104 +11,362 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
-## Custos Fixos e Variáveis no Curto Prazo
+## Curto Prazo: Capital Fixo
 
-No curto prazo ($K = \bar{K}$):
-
-$$CT_{CP}(q) = \underbrace{v\bar{K}}_{CF} + \underbrace{wL(q)}_{CV(q)}$$
+No **curto prazo**, o capital é fixo em $K = \bar{K}$. Apenas o trabalho $L$ varia.
 
 . . .
 
-**Custos médios:**
+**Custo total de curto prazo:**
 
-$$CMe = \frac{CT}{q} = \underbrace{\frac{CF}{q}}_{CFMe} + \underbrace{\frac{CV}{q}}_{CVMe}$$
-
-. . .
-
-**Observações:**
-
-- $CFMe$ é decrescente em $q$ (diluição dos fixos)
-- $CVMe$ eventualmente cresce (rendimentos decrescentes)
-- $CMe$ tem formato de **U**
-
-## Curvas de Custo Médio e Marginal no CP
-
-**Relações fundamentais:**
-
-$$CMg = \frac{dCT}{dq} = \frac{dCV}{dq} = \frac{w}{PMg_L}$$
+$$CT_{CP}(q;\bar{K}) = \underbrace{r\bar{K}}_{\text{Custo Fixo}} + \underbrace{wL(q,\bar{K})}_{\text{Custo Variável}}$$
 
 . . .
 
-**O CMg cruza no mínimo:**
+**Consequências:**
 
-1. $CMg$ cruza $CVMe$ no mínimo de $CVMe$
-2. $CMg$ cruza $CMe$ no mínimo de $CMe$
-3. O mínimo de $CMe$ ocorre à **direita** do mínimo de $CVMe$
-
-. . .
-
-> **Por quê?** Quando $CMg = CVMe$, os custos fixos ainda diluem — o $CMe$ continua caindo por mais um trecho.
-
-## CMg cruza CMe no mínimo: demonstração
-
-$$\frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{q \cdot CMg - CT}{q^2} = \frac{CMg - CMe}{q}$$
+- O custo fixo $r\bar{K}$ não depende de $q$ — é pago mesmo com $q=0$
+- O custo variável $wL(q,\bar{K})$ cresce com $q$ (mais produto exige mais trabalho)
+- No CP, a firma só pode ajustar $L$; no LP, ajusta $K$ e $L$ simultaneamente
 
 . . .
 
-**Logo:**
+:::{.callout-tip title="Intuição Econômica"}
+A firma "herda" sua planta $\bar{K}$ — pode estar grande demais ou pequena demais para a produção desejada. Só no longo prazo ela pode corrigir.
+:::
 
-- $CMg < CMe \Rightarrow \frac{dCMe}{dq} < 0$ (CMe cai)
-- $CMg = CMe \Rightarrow \frac{dCMe}{dq} = 0$ (CMe mínimo)
-- $CMg > CMe \Rightarrow \frac{dCMe}{dq} > 0$ (CMe sobe)
+## Custo Total de CP vs LP
+
+**Resultado fundamental:**
+
+$$CT_{CP}(q;\bar{K}) \geq CT_{LP}(q) \quad \forall\, q$$
 
 . . .
 
-**Relação dual com a produção:**
+**Por quê?** No LP a firma otimiza **ambos** os insumos; no CP, está restrita a $\bar{K}$.
 
-$$CMg = \frac{w}{PMg_L} \quad \text{e} \quad CVMe = \frac{w}{PMe_L}$$
+. . .
 
-$PMg_L$ máximo $\Leftrightarrow$ $CMg$ mínimo; $PMe_L$ máximo $\Leftrightarrow$ $CVMe$ mínimo.
+**Tangência:** igualdade ocorre no nível $q^*(\bar{K})$ para o qual $\bar{K}$ é ótimo:
 
-## A Envoltória de Longo Prazo
+$$CT_{CP}(q^*;\bar{K}) = CT_{LP}(q^*)$$
 
-Para cada nível de capital $\bar{K}$, existe uma curva $CMe_{CP}(\bar{K})$.
+. . .
 
-A curva de $CMe_{LP}$ é a **envoltória** de todas as curvas de $CMe_{CP}$:
+Nesse ponto de tangência:
+
+- As duas curvas se tocam (mesmo nível de custo)
+- Têm a mesma inclinação ($CMg_{CP} = CMg_{LP}$)
+- A curva de CP é **convexa** em relação à de LP (tangente por cima)
+
+## Envoltória de Custo Total
+
+A curva de $CT_{LP}$ é a **envoltória inferior** das curvas de $CT_{CP}$ para diferentes $\bar{K}$:
+
+<div id="graph-a16-envelope" style="width:720px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Destacar planta K&#x0304;: <span id="val-a16-k">3</span></label>
+  <input type="range" id="sl-a16-k" min="1" max="5" step="1" value="3" oninput="window.updateA16Envelope(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a16-envelope', {
+    boundingbox: [-0.5, 110, 12, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'CT', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  // Parameters: Cobb-Douglas q = K^0.5 L^0.5, w=4, r=1
+  // SR: L(q,K) = q^2/K, so STC(q,K) = K + 4*q^2/K
+  // LR: C(q) = 2*q*sqrt(4*1) = 4q (CRS)
+  var w = 4, r = 1;
+  var Kvals = [1, 2, 3, 4, 5];
+  var colors = ['#90a4ae', '#90a4ae', '#90a4ae', '#90a4ae', '#90a4ae'];
+  var highlightK = 3;
+
+  function stc(q, K) {
+    return r * K + w * q * q / K;
+  }
+
+  function ltc(q) {
+    return 2 * q * Math.sqrt(w * r);
+  }
+
+  // Draw 5 STC curves
+  var stcCurves = [];
+  for (var i = 0; i < 5; i++) {
+    (function(idx) {
+      var K = Kvals[idx];
+      stcCurves.push(board.create('functiongraph', [
+        function(q) { return stc(q, Kvals[idx]); },
+        0.01, 11
+      ], {
+        strokeColor: '#90a4ae',
+        strokeWidth: 1.5,
+        dash: 2,
+        highlight: false
+      }));
+    })(i);
+  }
+
+  // Highlighted STC curve
+  var highlightCurve = board.create('functiongraph', [
+    function(q) { return stc(q, highlightK); },
+    0.01, 11
+  ], {
+    strokeColor: '#C8102E',
+    strokeWidth: 3,
+    highlight: false
+  });
+
+  // LR TC envelope
+  var lrCurve = board.create('functiongraph', [
+    function(q) { return ltc(q); },
+    0, 11
+  ], {
+    strokeColor: '#1565c0',
+    strokeWidth: 3,
+    highlight: false
+  });
+
+  // Tangent point for highlighted K: q* where STC touches LTC
+  // STC = K + 4q^2/K, LTC = 4q. Tangency: dSTC/dq = dLTC/dq => 8q/K = 4 => q = K/2
+  var tangentPt = board.create('point', [
+    function() { return highlightK / 2; },
+    function() { return ltc(highlightK / 2); }
+  ], {
+    name: '', size: 4, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  // Labels
+  board.create('text', [9, function() { return ltc(9) + 5; }, 'CT_{LP}'], {
+    fontSize: 13, color: '#1565c0', fixed: true
+  });
+
+  for (var j = 0; j < 5; j++) {
+    (function(idx) {
+      board.create('text', [
+        10.5,
+        function() { return stc(10.5, Kvals[idx]); },
+        function() { return 'K\u0304=' + Kvals[idx]; }
+      ], { fontSize: 10, color: '#777', fixed: true });
+    })(j);
+  }
+
+  window.updateA16Envelope = function(val) {
+    highlightK = parseInt(val);
+    document.getElementById('val-a16-k').textContent = highlightK;
+    highlightCurve.Y = function(q) { return stc(q, highlightK); };
+    highlightCurve.updateCurve();
+    board.update();
+  };
+})();
+</script>
+
+## CMeCP vs CMeLP
+
+Para cada planta $\bar{K}$, a curva de $CMe_{CP}$ é tangente à de $CMe_{LP}$ **por cima**:
 
 $$CMe_{LP}(q) = \min_{\bar{K}} CMe_{CP}(q, \bar{K})$$
 
-<iframe src="../../graficos/cap11/envoltoria-custo-total.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+. . .
+
+**Propriedades da envoltória de custo médio:**
+
+- Cada $CMe_{CP}(\bar{K})$ toca $CMe_{LP}$ em **exatamente um ponto**
+- No ponto de tangência: $CMe_{CP} = CMe_{LP}$ e $\frac{dCMe_{CP}}{dq} = \frac{dCMe_{LP}}{dq}$
+- O mínimo de $CMe_{CP}$ **não** coincide com o ponto de tangência (exceto na EME)
+
+. . .
+
+| Região | Tangência ocorre... | $CMe_{CP}$ mínimo está... |
+|:--|:--|:--|
+| $q < q_{EME}$ | No ramo descendente de $CMe_{CP}$ | À direita da tangência |
+| $q = q_{EME}$ | No mínimo de $CMe_{CP}$ | Coincide |
+| $q > q_{EME}$ | No ramo ascendente de $CMe_{CP}$ | À esquerda da tangência |
+
+## Curto vs Longo Prazo Interativo
+
+Compare as curvas de custo médio e marginal nos dois horizontes:
+
+<div id="graph-a16-srlr" style="width:720px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Planta K&#x0304;: <span id="val-a16-k2">3</span></label>
+  <input type="range" id="sl-a16-k2" min="1" max="6" step="0.5" value="3" oninput="window.updateA16SRLR(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a16-srlr', {
+    boundingbox: [-0.3, 18, 10, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'R$/unid', withLabel: true, label: { position: 'rt', offset: [-40, 0] } }
+    }
+  });
+
+  // Model: q = K^0.4 L^0.6, w=4, r=1
+  // This gives IRS (alpha+beta=1 but we use different exponents for U-shaped LR curves)
+  // Use a simpler model for U-shaped curves:
+  // LR: C(q) = q^3 - 6q^2 + 15q  (gives U-shaped AC)
+  // LRAC = q^2 - 6q + 15, LRMC = 3q^2 - 12q + 15
+  // SR: STC(q,K) = K + (q^3)/(3K) + 2q  (parametric)
+  // SRAC = K/q + q^2/(3K) + 2, SRMC = q^2/K + 2
+
+  var Kbar = 3;
+
+  function lrac(q) { return q * q - 6 * q + 15; }
+  function lrmc(q) { return 3 * q * q - 12 * q + 15; }
+  function srac(q, K) { return K / q + q * q / (3 * K) + 2; }
+  function srmc(q, K) { return q * q / K + 2; }
+
+  // LRAC
+  var lracCurve = board.create('functiongraph', [
+    function(q) { return lrac(q); },
+    0.3, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 3, highlight: false });
+
+  // LRMC
+  var lrmcCurve = board.create('functiongraph', [
+    function(q) { return lrmc(q); },
+    0.3, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, highlight: false });
+
+  // SRAC
+  var sracCurve = board.create('functiongraph', [
+    function(q) { return srac(q, Kbar); },
+    0.3, 9.5
+  ], { strokeColor: '#C8102E', strokeWidth: 3, highlight: false });
+
+  // SRMC
+  var srmcCurve = board.create('functiongraph', [
+    function(q) { return srmc(q, Kbar); },
+    0.3, 9.5
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 3, highlight: false });
+
+  // Find tangent point numerically (where SRAC ≈ LRAC)
+  var tangentPt = board.create('point', [
+    function() {
+      var bestQ = 1, bestDiff = 999;
+      for (var q = 0.5; q <= 9; q += 0.05) {
+        var diff = Math.abs(srac(q, Kbar) - lrac(q));
+        if (diff < bestDiff) { bestDiff = diff; bestQ = q; }
+      }
+      return bestQ;
+    },
+    function() {
+      var bestQ = 1, bestDiff = 999;
+      for (var q = 0.5; q <= 9; q += 0.05) {
+        var diff = Math.abs(srac(q, Kbar) - lrac(q));
+        if (diff < bestDiff) { bestDiff = diff; bestQ = q; }
+      }
+      return lrac(bestQ);
+    }
+  ], {
+    name: 'tangência', size: 4, fixed: true,
+    color: '#00897b', strokeColor: '#00897b', fillColor: '#00897b',
+    label: { fontSize: 11, offset: [8, 8] }
+  });
+
+  // Legend
+  board.create('text', [6.5, 17, 'LRAC'], { fontSize: 12, color: '#1565c0', fixed: true });
+  board.create('text', [6.5, 15.8, 'LRMC'], { fontSize: 12, color: '#1565c0', fixed: true });
+  board.create('text', [8, 17, 'SRAC'], { fontSize: 12, color: '#C8102E', fixed: true });
+  board.create('text', [8, 15.8, 'SRMC'], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  window.updateA16SRLR = function(val) {
+    Kbar = parseFloat(val);
+    document.getElementById('val-a16-k2').textContent = Kbar.toFixed(1);
+    sracCurve.Y = function(q) { return srac(q, Kbar); };
+    sracCurve.updateCurve();
+    srmcCurve.Y = function(q) { return srmc(q, Kbar); };
+    srmcCurve.updateCurve();
+    board.update();
+  };
+})();
+</script>
+
+## Lema de Shephard na Prática
+
+O **Lema de Shephard** permite derivar demandas condicionais a partir da função custo:
+
+$$L^c = \frac{\partial C}{\partial w} \qquad K^c = \frac{\partial C}{\partial r}$$
+
+. . .
+
+**Exemplo numérico:** $f(K,L) = K^{1/2}L^{1/2}$, $w=4$, $r=1$.
+
+. . .
+
+**Passo 1:** Função custo (já derivada): $C(w,r,q) = 2q\sqrt{wr}$
+
+. . .
+
+**Passo 2:** Aplicar Shephard:
+
+$$L^c = \frac{\partial C}{\partial w} = 2q \cdot \frac{1}{2}\sqrt{\frac{r}{w}} = q\sqrt{\frac{r}{w}} = q\sqrt{\frac{1}{4}} = \frac{q}{2}$$
+
+$$K^c = \frac{\partial C}{\partial r} = 2q \cdot \frac{1}{2}\sqrt{\frac{w}{r}} = q\sqrt{\frac{w}{r}} = q\sqrt{\frac{4}{1}} = 2q$$
+
+. . .
+
+**Verificação:** $C = wL^c + rK^c = 4 \cdot \frac{q}{2} + 1 \cdot 2q = 2q + 2q = 4q = 2q\sqrt{4} \;\checkmark$
 
 ## Economias e Deseconomias de Escala
 
-**Economias de escala:** $CMe_{LP}$ decrescente
+**Economias de escala:** $CMe_{LP}$ decrescente — produzir mais reduz o custo unitário.
 
-$$S(q) = \frac{CMe_{LP}(q)}{CMg_{LP}(q)} > 1$$
-
-. . .
-
-**Deseconomias de escala:** $CMe_{LP}$ crescente ($S < 1$)
+$$S(q) = \frac{CMe_{LP}(q)}{CMg_{LP}(q)} > 1 \implies \text{economias de escala}$$
 
 . . .
 
-**Fontes de economias de escala:**
+:::: {.columns}
+::: {.column width="50%"}
+**Fontes de economias:**
 
-- Indivisibilidades (custos fixos de setup)
+- Indivisibilidades (setup, P&D)
 - Especialização do trabalho
 - Regra dos dois terços (engenharia)
-
+- Compras em volume (descontos)
+:::
+::: {.column width="50%"}
 **Fontes de deseconomias:**
 
 - Custos de coordenação e burocracia
 - Congestionamento de recursos
-- Problemas de agência
+- Problemas de agência (incentivos)
+- Limites gerenciais (span of control)
+:::
+::::
 
-## Escala Mínima Eficiente (EME)
+. . .
 
-A **EME** é o menor nível de produção para o qual $CMe_{LP}$ atinge seu mínimo:
+| $S(q)$ | Retornos de escala | $CMe_{LP}$ |
+|:--|:--|:--|
+| $S > 1$ | Crescentes | Decrescente |
+| $S = 1$ | Constantes | Constante |
+| $S < 1$ | Decrescentes | Crescente |
+
+## Escala Mínima Eficiente
+
+A **EME** (Escala Mínima Eficiente) é o menor $q$ em que $CMe_{LP}$ atinge seu mínimo:
 
 $$q_{EME} = \arg\min_q CMe_{LP}(q)$$
 
@@ -116,94 +374,196 @@ $$q_{EME} = \arg\min_q CMe_{LP}(q)$$
 
 **Implicações para a estrutura de mercado:**
 
-| $q_{EME}$ relativo ao mercado | Estrutura provável |
-|---|---|
-| Muito pequeno | Concorrência perfeita |
-| Moderado | Oligopólio |
-| Próximo da demanda total | Monopólio natural |
+| $q_{EME}$ relativo ao mercado | Estrutura provável | Exemplo |
+|:--|:--|:--|
+| Muito pequeno | Concorrência perfeita | Restaurantes |
+| Moderado | Oligopólio | Automóveis |
+| Próximo da demanda total | Monopólio natural | Distribuição de água |
 
 . . .
 
-> A EME ajuda a prever **quantas firmas** cabem no mercado.
+:::{.callout-tip title="Intuição Econômica"}
+A EME determina **quantas firmas cabem** no mercado de forma eficiente. Se a EME é grande relativa à demanda, poucas firmas conseguem operar no mínimo do custo médio.
+:::
 
-## Custos de Curto vs. Longo Prazo — Interativo
+## Curvas de Custo: Resumo Visual
 
-Compare as curvas de custo nos dois horizontes:
-
-<iframe src="../../graficos/cap11/curto-longo-prazo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-Observe: a curva de LP é sempre **igual ou inferior** à de CP para qualquer $q$.
-
-## Lema de Shephard: Verificação
-
-O **Lema de Shephard** afirma que as demandas condicionais são as derivadas da função custo:
-
-$$L^*(w, v, q) = \frac{\partial C(w, v, q)}{\partial w} \qquad K^*(w, v, q) = \frac{\partial C(w, v, q)}{\partial v}$$
+**Todas as curvas de custo e suas relações:**
 
 . . .
 
-**Verificação Cobb-Douglas** ($q = K^{1/2}L^{1/2}$):
-
-$$C(w,v,q) = 2q\sqrt{wv}$$
-
-$$\frac{\partial C}{\partial w} = q\sqrt{\frac{v}{w}} = L^* \quad \checkmark \qquad \frac{\partial C}{\partial v} = q\sqrt{\frac{w}{v}} = K^* \quad \checkmark$$
-
-## Atividade: Construindo a Envoltória
-
-**Instruções (15 min):**
-
-1. Cada grupo recebe **3 plantas** com $\bar{K}_1 < \bar{K}_2 < \bar{K}_3$
-2. Para cada planta, calcule $CMe_{CP}(q)$ em $q \in \{10, 20, 30, 40, 50\}$
+| Curva | Fórmula | Comportamento |
+|:--|:--|:--|
+| $CT(q)$ | $CF + CV(q)$ | Cresce; parte de $CF > 0$ |
+| $CMe(q)$ | $CT/q$ | Formato U; min onde $CMg = CMe$ |
+| $CVMe(q)$ | $CV/q$ | Formato U; min onde $CMg = CVMe$ |
+| $CFMe(q)$ | $CF/q$ | Sempre decrescente |
+| $CMg(q)$ | $dCT/dq$ | Cruza $CVMe$ e $CMe$ nos mínimos |
 
 . . .
 
-3. No papel milimetrado:
-   - Trace as 3 curvas de $CMe_{CP}$
-   - Identifique a **envoltória** (menor CMe para cada $q$)
-   - Marque a **EME**
+**Relações-chave:**
+
+- $CMe = CVMe + CFMe$ (custo médio = variável médio + fixo médio)
+- $CMg$ cruza $CVMe$ no mínimo de $CVMe$ (primeiro)
+- $CMg$ cruza $CMe$ no mínimo de $CMe$ (depois, à direita)
+- Mín de $CMe$ ocorre à direita do mín de $CVMe$ (efeito de diluição dos fixos)
+
+## Funções de Custo e Elasticidade de Produção
+
+A **elasticidade custo-produto** mede como o custo total responde a variações na produção:
+
+$$\varepsilon_{C,q} = \frac{dCT}{dq} \cdot \frac{q}{CT} = \frac{CMg}{CMe}$$
 
 . . .
 
-4. **Pergunta-guia:** Para $q = 25$, qual planta a firma escolheria no LP? E se já tivesse $\bar{K}_1$ instalado?
+**Relação com retornos de escala:**
 
-## Problema das Estações
-
-**Estação 1:** Dado $CT(q) = 100 + 10q + q^2$, encontre $CMe$, $CVMe$, $CMg$ e os mínimos.
-
-**Estação 2:** Dada função de produção $q = K^{1/3}L^{2/3}$ com $w = 8$ e $v = 2$, derive $C(q)$.
-
-**Estação 3:** Explique graficamente por que $CT_{LP} \leq CT_{CP}$ usando o conceito de otimização restrita vs. irrestrita em $K$.
+$$\varepsilon_{C,q} = \frac{1}{S(q)} = \frac{1}{\text{grau de economias de escala}}$$
 
 . . .
 
-> **Tempo:** 5 minutos por estação. Rodem ao sinal do professor.
+| $\varepsilon_{C,q}$ | Significado | Retornos |
+|:--|:--|:--|
+| $< 1$ | CT cresce menos que $q$ | Crescentes |
+| $= 1$ | CT cresce na mesma proporção | Constantes |
+| $> 1$ | CT cresce mais que $q$ | Decrescentes |
 
-## Peer Instruction: CMg < CMe implica CMe decrescente?
+. . .
 
-> **Questão:** "Se o custo marginal é menor que o custo médio, então o custo médio está necessariamente decrescendo."
+:::{.callout-tip title="Intuição Econômica"}
+A elasticidade custo-produto é o inverso do índice de economias de escala. Se duplicar a produção menos que duplica o custo ($\varepsilon < 1$), há economias de escala.
+:::
 
-**Vote:**
+## Aplicação: Custos na Indústria Brasileira
 
-- **(A)** Verdadeiro — segue diretamente da fórmula $\frac{dCMe}{dq} = \frac{CMg - CMe}{q}$
-- **(B)** Falso — depende se estamos no curto ou longo prazo
-- **(C)** Falso — só vale para custos variáveis médios
-- **(D)** Verdadeiro — mas apenas para a função Cobb-Douglas
+**Caso: Siderurgia — economias de escala e competitividade**
+
+. . .
+
+- A produção de aço tem **fortes economias de escala** (altos-fornos, laminação)
+- EME estimada: ~3 milhões de toneladas/ano
+- Brasil: CSN, Usiminas e Gerdau operam próximo ou acima da EME
+
+. . .
+
+**Contraste com pequenas empresas:**
+
+- Padarias, salões de beleza: EME muito baixa
+- Milhares de firmas coexistem no mercado
+- Deseconomias de escala surgem rapidamente (gestão, espaço)
+
+. . .
+
+**Pergunta para reflexão:**
+
+> Por que o Brasil tem poucas siderúrgicas mas milhares de padarias? A resposta está na relação entre EME e tamanho do mercado.
+
+## Exercício Numérico Completo
+
+**Dados:** $f(K,L) = K^{0.5}L^{0.5}$, $w = 4$, $r = 1$.
+
+. . .
+
+**1. Demandas condicionais** (tangência + isoquanta):
+
+$$TMST = \frac{0.5K}{0.5L} = \frac{K}{L} = \frac{w}{r} = 4 \implies K = 4L$$
+
+$$q = (4L)^{0.5}L^{0.5} = 2L \implies L^c = \frac{q}{2}, \quad K^c = 2q$$
+
+. . .
+
+**2. Função custo:**
+
+$$C(q) = wL^c + rK^c = 4\cdot\frac{q}{2} + 1\cdot 2q = 4q$$
+
+. . .
+
+**3. CMe e CMg:**
+
+$$CMe = \frac{4q}{q} = 4 \qquad CMg = \frac{dC}{dq} = 4$$
+
+. . .
+
+**4. Custo de CP** ($\bar{K} = 8$): $L = q^2/\bar{K} = q^2/8$
+
+$$CT_{CP} = 1\cdot 8 + 4\cdot\frac{q^2}{8} = 8 + \frac{q^2}{2} \qquad CMe_{CP} = \frac{8}{q} + \frac{q}{2}$$
+
+Tangência com LP em $q^* = 4$: $CT_{CP}(4) = 8 + 8 = 16 = 4\cdot 4 = CT_{LP}(4)$ $\checkmark$
+
+## Multiproduto: Economias de Escopo
+
+Quando a firma produz **mais de um bem**, surgem **economias de escopo**:
+
+$$C(q_1, q_2) < C(q_1, 0) + C(0, q_2)$$
+
+. . .
+
+**Grau de economias de escopo:**
+
+$$SC = \frac{C(q_1, 0) + C(0, q_2) - C(q_1, q_2)}{C(q_1, q_2)}$$
+
+Se $SC > 0$: há economia de escopo (produção conjunta é mais barata).
+
+. . .
+
+**Fontes:**
+
+- Insumos compartilhados (mesma fábrica, mesma equipe)
+- Subprodutos aproveitados (petroquímica)
+- Conhecimento transferível (P&D)
+
+. . .
+
+**Exemplo:** Uma montadora que produz carros e caminhões na mesma planta — compartilha chassis, pintura, logística.
+
+> **Atenção:** economias de escala $\neq$ economias de escopo. A primeira refere-se a um produto; a segunda, à produção conjunta.
+
+## Peer Instruction: Custos
+
+> **Questão:** A firma tem $CT_{CP}(q) = 50 + 2q^2$. Qual afirmação é **correta**?
+
+. . .
+
+**(A)** O custo fixo é 50 e o $CMg = 4q$, logo $CMg$ cruza $CMe$ em $q = 5$.
+
+**(B)** O custo fixo é 50 e o $CMg = 4q$, logo $CMg$ cruza $CVMe$ em $q = 0$.
+
+**(C)** O $CMe_{CP}$ mínimo ocorre onde $CMg = CMe$, isto é, em $q = 5$.
+
+**(D)** O $CVMe$ é constante e igual a $2q$.
 
 . . .
 
 **Discuta com seu vizinho por 2 minutos e vote novamente.**
 
+. . .
+
+:::{.callout-note title="Resolução"}
+$CMe = 50/q + 2q$, $CMg = 4q$. No mínimo: $4q = 50/q + 2q \Rightarrow 2q = 50/q \Rightarrow q^2 = 25 \Rightarrow q = 5$. $CMe(5) = 10 + 10 = 20 = CMg(5)$. **Resposta: (A) e (C) são corretas.**
+:::
+
 ## Próxima Aula: Maximização de Lucro
 
 **Aula 17 — Maximização de Lucro e Oferta**
 
-- Da minimização de custos à maximização de lucro
+. . .
+
+- Da minimização de custos à **maximização de lucro**
 - Condição $P = CMg$ e decisão de operação
 - Curva de oferta da firma competitiva
+- Excedente do produtor e lucro econômico
 
 . . .
 
 **Preparação:**
 
 - Ler capítulo 12 (lucro e oferta)
-- Pensar: por que a firma competitiva não escolhe o preço?
+- Revisar as relações $CMg$–$CMe$ desta aula
+- Pensar: por que a firma competitiva **não escolhe o preço**?
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A firma price-taker aceita o preço do mercado como dado. Sua única decisão é **quanto** produzir — e a resposta está na curva de custo marginal.
+:::

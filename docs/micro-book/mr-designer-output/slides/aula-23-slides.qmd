@@ -11,10 +11,14 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
-## Gol vs. Azul: como duas empresas decidem o preço da passagem?
+## Gol vs Azul: Interdependência Estratégica
 
 > Em janeiro de 2024, a passagem SP–RJ custava R\$350 na Gol e R\$360 na Azul. Coincidência?
 
@@ -56,7 +60,7 @@ Formalizar os três modelos de oligopólio e comparar seus resultados de equilí
 No monopólio, a firma ignora rivais (não há). Na competição perfeita, ignora rivais (são irrelevantes). No oligopólio, **a reação do rival é a variável central**.
 :::
 
-## Bertrand: Competição em Preços e o Paradoxo
+## Bertrand: Competição em Preços
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -75,22 +79,95 @@ $$P_1^* = P_2^* = c$$
 
 . . .
 
-**Paradoxo de Bertrand:** apenas 2 firmas e já temos o resultado **competitivo**!
+**Lucro:** $\pi_1 = \pi_2 = 0$
 
-$$\pi_1 = \pi_2 = 0$$
+Arraste o slider para alterar o custo marginal e observe o equilíbrio se mover ao longo da diagonal.
 
 :::
 ::: {.column width="55%"}
 
-<iframe src="../../graficos/cap16/bertrand.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+<div id="graph-a23-bertrand" style="width:520px;height:400px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$c$: <input type="range" id="sl-a23-mc" min="2" max="8" value="4" step="0.5" oninput="updA23Bertrand()"> <span id="val-a23-mc">4.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-bertrand',{
+    boundingbox:[-1,12,12,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[11,0.6,'P₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[0.4,11.2,'P₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var mcVal = 4;
+
+  // 45-degree line (diagonal)
+  brd.create('line',[[0,0],[1,1]],{
+    strokeColor:'#999',strokeWidth:1,dash:2,
+    straightFirst:true,straightLast:true,fixed:true
+  });
+
+  // Best response firm 1: P1 = P2 - eps, shown as segment on/just below diagonal
+  var br1 = brd.create('functiongraph',[function(p2){
+    // BR1: match rival's price down to MC
+    if(p2 <= mcVal) return mcVal;
+    return p2 - 0.05;
+  }, mcVal, 11],{strokeColor:'#1565c0',strokeWidth:2.5});
+
+  // Best response firm 2: P2 = P1 - eps, shown as segment on/just left of diagonal
+  var br2 = brd.create('functiongraph',[function(p1){
+    if(p1 <= mcVal) return mcVal;
+    return p1 - 0.05;
+  }, mcVal, 11],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // Equilibrium point
+  var eqPt = brd.create('point',[function(){return mcVal;},function(){return mcVal;}],{
+    name:'', size:5, strokeColor:'#000', fillColor:'#ff9800',fixed:true
+  });
+  var eqLabel = brd.create('text',[function(){return mcVal+0.4;},function(){return mcVal+0.5;},
+    function(){return 'NE ('+mcVal.toFixed(1)+', '+mcVal.toFixed(1)+')';}],{
+    fontSize:12,cssStyle:'font-weight:bold;color:#ff9800;'
+  });
+
+  brd.create('text',[8.5,9.5,'BR₁'],{fontSize:12,cssStyle:'font-weight:bold;color:#1565c0;'});
+  brd.create('text',[9.5,8.5,'BR₂'],{fontSize:12,cssStyle:'font-weight:bold;color:#C8102E;'});
+
+  window.updA23Bertrand = function(){
+    mcVal = parseFloat(document.getElementById('sl-a23-mc').value);
+    document.getElementById('val-a23-mc').textContent = mcVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
 
 :::
 ::::
 
+## Paradoxo de Bertrand
+
+**Com apenas 2 firmas, obtemos o resultado competitivo!**
+
+$$P_1^* = P_2^* = c, \quad \pi_1 = \pi_2 = 0$$
+
 . . .
 
-:::{.callout-note}
-O paradoxo se resolve com: diferenciação de produto, restrições de capacidade, ou interação repetida.
+**Por que é surpreendente?**
+
+- No monopólio, 1 firma $\implies$ $P \gg c$ e lucro econômico positivo
+- No oligopólio de Cournot, 2 firmas $\implies$ $P > c$
+- Em Bertrand, 2 firmas já bastam para **eliminar todo o lucro**
+
+. . .
+
+**Lógica do equilíbrio:**
+
+1. Se $P_1 > P_2 > c$: firma 1 perde todos os clientes
+2. Se $P_1 = P_2 > c$: firma 1 pode desviar para $P_1 - \epsilon$ e capturar todo o mercado
+3. O único equilíbrio estável: $P_1 = P_2 = c$
+
+. . .
+
+:::{.callout-warning}
+A competição em preços com produto homogêneo é **brutal** — basta um rival para destruir o poder de mercado.
 :::
 
 ## Resolvendo o Paradoxo de Bertrand
@@ -101,7 +178,7 @@ Por que o resultado $P = c$ com apenas 2 firmas parece irrealista?
 
 | Extensão | Mecanismo | Resultado |
 |:--|:--|:--|
-| Diferenciação de produto | Consumidores têm preferências → demanda não migra 100% | $P > c$, lucro positivo |
+| Diferenciação de produto | Consumidores têm preferências $\implies$ demanda não migra 100% | $P > c$, lucro positivo |
 | Restrições de capacidade (Edgeworth) | Firma não consegue atender todo o mercado | Resultado próximo a Cournot |
 | Custos assimétricos ($c_1 \neq c_2$) | Firma eficiente cobra $P = c_2 - \epsilon$ | Vencedor leva tudo |
 | Jogos repetidos | Ameaça de guerra de preços sustenta colusão | $P > c$ se $\delta$ alto |
@@ -112,7 +189,7 @@ Por que o resultado $P = c$ com apenas 2 firmas parece irrealista?
 O modelo de Bertrand puro é um *benchmark* teórico. Mercados reais combinam elementos de Bertrand (preço como variável) com restrições que elevam o preço acima do custo.
 :::
 
-## Cournot: Competição em Quantidades — Setup
+## Cournot: Competição em Quantidades
 
 **Hipóteses:**
 
@@ -148,9 +225,7 @@ Por simetria, $q_2^*(q_1) = \frac{a-c}{2b} - \frac{q_1}{2}$.
 
 $$q^C = \frac{a - c}{3b}$$
 
-$$Q^C = 2q^C = \frac{2(a-c)}{3b}$$
-
-$$P^C = \frac{a + 2c}{3}$$
+$$Q^C = \frac{2(a-c)}{3b}, \quad P^C = \frac{a + 2c}{3}$$
 
 . . .
 
@@ -158,42 +233,112 @@ $$P^C = \frac{a + 2c}{3}$$
 
 $$\pi^C = \frac{(a-c)^2}{9b}$$
 
+Arraste $a$ para ver como o intercepto da demanda desloca as funções de melhor resposta.
+
 :::
 ::: {.column width="55%"}
 
-<iframe src="../../graficos/cap16/cournot.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+<div id="graph-a23-cournot" style="width:520px;height:400px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$a$: <input type="range" id="sl-a23-a" min="20" max="50" value="30" step="1" oninput="updA23Cournot()"> <span id="val-a23-a">30</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-cournot',{
+    boundingbox:[-2,28,28,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[26,1,'q₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1,26.5,'q₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var aVal = 30, bVal = 1, cVal = 6;
+
+  // BR1: q1*(q2) = (a-c)/(2b) - q2/2  =>  q2 = (a-c)/b - 2*q1
+  // BR2: q2*(q1) = (a-c)/(2b) - q1/2
+  var br1 = brd.create('functiongraph',[function(q1){
+    // This plots q2 as function of q1 for BR1: q2 = (a-c)/b - 2*q1
+    var intercept = (aVal - cVal)/bVal;
+    return intercept - 2*q1;
+  }, 0, function(){return (aVal-cVal)/(2*bVal);}],{strokeColor:'#1565c0',strokeWidth:2.5});
+
+  var br2 = brd.create('functiongraph',[function(q1){
+    // BR2: q2 = (a-c)/(2b) - q1/2
+    return (aVal - cVal)/(2*bVal) - q1/2;
+  }, 0, function(){return (aVal-cVal)/bVal;}],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // Cournot NE
+  var nePoint = brd.create('point',[
+    function(){return (aVal-cVal)/(3*bVal);},
+    function(){return (aVal-cVal)/(3*bVal);}
+  ],{name:'',size:5,strokeColor:'#000',fillColor:'#ff9800',fixed:true});
+
+  brd.create('text',[function(){return (aVal-cVal)/(3*bVal)+0.8;},
+    function(){return (aVal-cVal)/(3*bVal)+1.2;},
+    function(){
+      var qc = ((aVal-cVal)/(3*bVal)).toFixed(1);
+      return 'Cournot NE ('+qc+', '+qc+')';
+    }],{fontSize:11,cssStyle:'font-weight:bold;color:#ff9800;'});
+
+  // Monopoly point (split equally)
+  var monPoint = brd.create('point',[
+    function(){return (aVal-cVal)/(4*bVal);},
+    function(){return (aVal-cVal)/(4*bVal);}
+  ],{name:'',size:4,strokeColor:'#000',fillColor:'#9c27b0',fixed:true});
+
+  brd.create('text',[function(){return (aVal-cVal)/(4*bVal)+0.8;},
+    function(){return (aVal-cVal)/(4*bVal)-1;},
+    function(){
+      var qm = ((aVal-cVal)/(4*bVal)).toFixed(1);
+      return 'Monopólio ('+qm+', '+qm+')';
+    }],{fontSize:10,cssStyle:'color:#9c27b0;'});
+
+  // Competitive point
+  var cpPoint = brd.create('point',[
+    function(){return (aVal-cVal)/(2*bVal);},
+    function(){return 0;}
+  ],{name:'',size:4,strokeColor:'#000',fillColor:'#4caf50',fixed:true,visible:false});
+
+  brd.create('text',[2,function(){return (aVal-cVal)/(2*bVal)+1.2;},'BR₁ (firma 1)'],{fontSize:11,cssStyle:'font-weight:bold;color:#1565c0;'});
+  brd.create('text',[function(){return (aVal-cVal)/bVal - 4;},2,'BR₂ (firma 2)'],{fontSize:11,cssStyle:'font-weight:bold;color:#C8102E;'});
+
+  window.updA23Cournot = function(){
+    aVal = parseFloat(document.getElementById('sl-a23-a').value);
+    document.getElementById('val-a23-a').textContent = aVal;
+    brd.update();
+  };
+})();
+</script>
 
 :::
 ::::
 
-. . .
+## Exemplo Numérico Cournot
 
-:::{.callout-note}
-As curvas de melhor resposta se cruzam no equilíbrio de Nash — nenhuma firma quer desviar unilateralmente.
-:::
-
-## Exemplo Numérico: $P = 100 - Q$, $c = 10$
-
-**Dados:** $a = 100$, $b = 1$, $c = 10$.
+**Dados:** $P = 30 - Q$, $MC_1 = MC_2 = 6$ (ou seja, $a=30$, $b=1$, $c=6$).
 
 . . .
 
 | Variável | Fórmula | Valor |
 |:--|:--|:--:|
-| $q^C$ | $\frac{a-c}{3b}$ | $30$ |
-| $Q^C$ | $\frac{2(a-c)}{3b}$ | $60$ |
-| $P^C$ | $\frac{a+2c}{3}$ | $40$ |
-| $\pi_i$ | $\frac{(a-c)^2}{9b}$ | $900$ |
-| $\pi_{\text{total}}$ | $2 \times 900$ | $1800$ |
+| $q^C$ | $\frac{a-c}{3b} = \frac{24}{3}$ | $8$ |
+| $Q^C$ | $2 \times 8$ | $16$ |
+| $P^C$ | $30 - 16$ | $14$ |
+| $\pi_i$ | $(14 - 6) \times 8$ | $64$ |
+| $\pi_{\text{total}}$ | $2 \times 64$ | $128$ |
 
 . . .
 
-**Compare com monopólio:** $Q^M = 45$, $P^M = 55$, $\pi^M = 2025$.
+**Compare com os benchmarks:**
+
+| Modelo | $Q$ | $P$ | $\pi_{\text{total}}$ |
+|:--|:--:|:--:|:--:|
+| Monopólio | 12 | 18 | 144 |
+| **Cournot** | **16** | **14** | **128** |
+| Conc. Perfeita | 24 | 6 | 0 |
 
 . . .
 
 :::{.callout-tip}
-O Cournot produz **mais** e cobra **menos** que o monopólio, mas ainda está longe da concorrência perfeita ($Q^{CP} = 90$, $P^{CP} = 10$).
+O Cournot produz **mais** e cobra **menos** que o monopólio, mas ainda está longe da concorrência perfeita.
 :::
 
 ## Stackelberg: Líder e Seguidora
@@ -207,57 +352,142 @@ O Cournot produz **mais** e cobra **menos** que o monopólio, mas ainda está lo
 
 **Indução retroativa:**
 
-1. Firma 2 usa sua melhor resposta: $q_2^*(q_1)$
-2. Firma 1 substitui na sua função lucro e maximiza
+1. Firma 2 usa BR: $q_2^*(q_1) = \frac{a-c}{2b} - \frac{q_1}{2}$
+2. Firma 1 substitui e maximiza
 
 . . .
 
-**Resultado ($a=100$, $b=1$, $c=10$):**
+**Resultado ($a=30$, $b=1$, $c=6$):**
 
-$$q_1^S = \frac{a-c}{2b} = 45, \quad q_2^S = \frac{a-c}{4b} = 22{,}5$$
-
-$$Q^S = 67{,}5, \quad P^S = 32{,}5$$
+$$q_1^S = \frac{a-c}{2b} = 12$$
+$$q_2^S = \frac{a-c}{4b} = 6$$
+$$Q^S = 18, \quad P^S = 12$$
 
 . . .
 
-**Vantagem do primeiro movimento:** o líder lucra mais que no Cournot.
+**Vantagem do primeiro movimento:** o líder lucra $\pi_1 = 72 > 64 = \pi^C$.
 
 :::
 ::: {.column width="55%"}
 
-<iframe src="../../graficos/cap16/stackelberg.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+<div id="graph-a23-stackelberg" style="width:520px;height:400px;margin:0 auto;"></div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-stackelberg',{
+    boundingbox:[-2,28,28,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[26,1,'q₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1,26.5,'q₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var a=30, b=1, c=6;
+  var qcn = (a-c)/(3*b);  // 8
+  var qs1 = (a-c)/(2*b);  // 12
+  var qs2 = (a-c)/(4*b);  // 6
+
+  // BR2: q2 = (a-c)/(2b) - q1/2
+  brd.create('functiongraph',[function(q1){
+    return (a-c)/(2*b) - q1/2;
+  }, 0, (a-c)/b],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // BR1 (for reference)
+  brd.create('functiongraph',[function(q1){
+    return (a-c)/b - 2*q1;
+  }, 0, (a-c)/(2*b)],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+
+  // Iso-profit curves of leader (tangent to BR2 at Stackelberg eq)
+  // pi1 = (a - b(q1+q2) - c)*q1 = const
+  // q2 = (a-c)/b - q1 - pi1/(b*q1)
+  var piStack = (a - b*(qs1+qs2) - c)*qs1; // 72
+  brd.create('functiongraph',[function(q1){
+    if(q1 <= 0.3) return -99;
+    return (a-c)/b - q1 - piStack/(b*q1);
+  }, 0.5, 23],{strokeColor:'#00897b',strokeWidth:2,dash:2});
+
+  // A higher iso-profit (through Cournot NE)
+  var piCournot = (a - b*(qcn+qcn) - c)*qcn; // 64
+  brd.create('functiongraph',[function(q1){
+    if(q1 <= 0.3) return -99;
+    return (a-c)/b - q1 - piCournot/(b*q1);
+  }, 0.5, 23],{strokeColor:'#00897b',strokeWidth:1.5,dash:4});
+
+  // Stackelberg equilibrium
+  brd.create('point',[qs1, qs2],{
+    name:'',size:5,strokeColor:'#000',fillColor:'#ff9800',fixed:true
+  });
+  brd.create('text',[qs1+0.6, qs2+1.2, 'Stackelberg (12, 6)'],{
+    fontSize:11,cssStyle:'font-weight:bold;color:#ff9800;'
+  });
+
+  // Cournot NE for comparison
+  brd.create('point',[qcn, qcn],{
+    name:'',size:4,strokeColor:'#000',fillColor:'#9c27b0',fixed:true
+  });
+  brd.create('text',[qcn+0.6, qcn+1.2, 'Cournot (8, 8)'],{
+    fontSize:10,cssStyle:'color:#9c27b0;'
+  });
+
+  brd.create('text',[18,3,'BR₂'],{fontSize:12,cssStyle:'font-weight:bold;color:#C8102E;'});
+  brd.create('text',[3,18,'BR₁'],{fontSize:11,cssStyle:'color:#1565c0;'});
+  brd.create('text',[16,8,'isoprofit líder'],{fontSize:10,cssStyle:'color:#00897b;'});
+})();
+</script>
 
 :::
 ::::
 
-## Comparação: Todos os Modelos ($P = 100 - Q$, $c = 10$)
+## Comparação: Todos os Modelos ($P = 30 - Q$, $c = 6$)
 
-:::: {.columns}
-::: {.column width="50%"}
-
-| Modelo | $Q$ | $P$ | $\pi_{\text{total}}$ | DWL |
-|:--|:--:|:--:|:--:|:--:|
-| Monopólio | 45 | 55 | 2025 | 1012,5 |
-| Cournot | 60 | 40 | 1800 | 450 |
-| Stackelberg | 67,5 | 32,5 | 1518,75 | 253,1 |
-| Bertrand | 90 | 10 | 0 | 0 |
-| Conc. Perfeita | 90 | 10 | 0 | 0 |
+| Modelo | $Q$ | $P$ | $\pi_1$ | $\pi_2$ | $\pi_{\text{total}}$ | DWL |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|
+| Monopólio | 12 | 18 | 144 | — | 144 | 72 |
+| Cournot | 16 | 14 | 64 | 64 | 128 | 32 |
+| Stackelberg | 18 | 12 | 72 | 36 | 108 | 18 |
+| Bertrand | 24 | 6 | 0 | 0 | 0 | 0 |
+| Conc. Perfeita | 24 | 6 | 0 | 0 | 0 | 0 |
 
 . . .
 
-**Ordenação por bem-estar:**
+**Ordenação por quantidade (bem-estar crescente):**
 
-$$W_{CP} = W_{Bert} > W_{Stack} > W_{Cournot} > W_{Mon}$$
+$$Q_{Mon} < Q_{Cournot} < Q_{Stack} < Q_{Bert} = Q_{CP}$$
 
+. . .
+
+:::{.callout-important}
+Mais competição $\implies$ mais quantidade, menor preço, menor DWL. O Stackelberg fica entre Cournot e Bertrand porque a liderança "compromete" a firma 1 com produção alta.
 :::
-::: {.column width="50%"}
 
-<iframe src="../../graficos/cap16/comparacao-oligopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+## Comparação Visual dos Modelos
 
+:::{.callout-note title="Resumo das estruturas de mercado"}
 :::
-::::
 
-## Cournot com $N$ Firmas: Convergência à Competição
+```
+Quantidade total (Q)
+│
+│  CP/Bert ████████████████████████  24
+│  Stack   ██████████████████        18
+│  Cournot ████████████████          16
+│  Monop.  ████████████              12
+│          ─────────────────────────── Q
+│
+│ Preço (P)
+│  Monop.  ██████████████████        18
+│  Cournot ██████████████            14
+│  Stack   ████████████              12
+│  CP/Bert ██████                     6
+│          ─────────────────────────── P
+```
+
+. . .
+
+**Padrão geral:**
+
+- **Mais firmas** ou **mais agressividade** $\implies$ convergência ao resultado competitivo
+- **Bertrand** é o caso extremo: 2 firmas bastam para $P = c$
+- **Stackelberg** > Cournot em $Q$ porque o líder se compromete com produção alta
+
+## Cournot com $N$ Firmas: Convergência
 
 Generalizando para $N$ firmas simétricas:
 
@@ -271,40 +501,46 @@ $$Q^* \to \frac{a-c}{b} = Q^{CP}, \quad P^* \to c = P^{CP}$$
 
 . . .
 
-| $N$ | $Q$ | $P$ | $\pi_i$ | Lerner |
-|:--:|:--:|:--:|:--:|:--:|
-| 1 | 45 | 55 | 2025 | 0,82 |
-| 2 | 60 | 40 | 900 | 0,75 |
-| 5 | 75 | 25 | 225 | 0,60 |
-| 10 | 81,8 | 18,2 | 67,4 | 0,45 |
-| $\infty$ | 90 | 10 | 0 | 0 |
+| $N$ | $q_i$ | $Q$ | $P$ | $\pi_i$ | Markup |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 | 12 | 12 | 18 | 144 | 200% |
+| 2 | 8 | 16 | 14 | 64 | 133% |
+| 5 | 4 | 20 | 10 | 16 | 67% |
+| 10 | 2,18 | 21,8 | 8,18 | 4,76 | 36% |
+| $\infty$ | $\to 0$ | 24 | 6 | 0 | 0% |
+
+. . .
+
+:::{.callout-tip}
+O modelo de Cournot conecta monopólio e concorrência perfeita: à medida que $N$ cresce, o poder de mercado **desaparece continuamente**.
+:::
 
 ## Colusão e o Dilema do Prisioneiro
 
 **Se as firmas cooperam** (cartel), produzem a quantidade de monopólio e dividem:
 
-$$q_i^{cartel} = \frac{Q^M}{2} = 22{,}5, \quad \pi_i^{cartel} = \frac{\pi^M}{2} = 1012{,}5$$
+$$q_i^{cartel} = \frac{Q^M}{2} = 6, \quad \pi_i^{cartel} = \frac{\pi^M}{2} = 72$$
 
 . . .
 
 **Mas cada firma tem incentivo a desviar!** Se firma 1 desvia enquanto firma 2 coopera:
 
-$$q_1^{desvio} = BR_1(22{,}5) = 33{,}75 \implies \pi_1^{desvio} = 1139{,}06 > 1012{,}5$$
+$$q_1^{desvio} = BR_1(6) = \frac{30-6}{2} - \frac{6}{2} = 9 \implies \pi_1^{desvio} = (30 - 15 - 6) \times 9 = 81$$
 
 . . .
 
-|  | Firma 2: Coopera | Firma 2: Desvia |
+|  | Firma 2: Coopera ($q=6$) | Firma 2: Desvia ($q=9$) |
 |:--|:--:|:--:|
-| **Firma 1: Coopera** | (1012,5 ; 1012,5) | (759,4 ; 1139,1) |
-| **Firma 1: Desvia** | (1139,1 ; 759,4) | (900 ; 900) |
+| **Firma 1: Coopera** ($q=6$) | (72 ; 72) | (48 ; 81) |
+| **Firma 1: Desvia** ($q=9$) | (81 ; 48) | (64 ; 64) |
 
 . . .
 
 :::{.callout-important}
-Equilíbrio de Nash: **(Desvia, Desvia)** = Cournot. O cartel é **instável** em jogo de uma rodada.
+Equilíbrio de Nash: **(Desvia, Desvia)** = Cournot. O cartel é **instável** em jogo de uma rodada — estrutura idêntica ao Dilema do Prisioneiro.
 :::
 
-## Peer Instruction + Próxima Aula
+## Peer Instruction: Qual Modelo?
 
 **Vote individualmente:**
 
@@ -313,7 +549,7 @@ Equilíbrio de Nash: **(Desvia, Desvia)** = Cournot. O cartel é **instável** e
 . . .
 
 - (A) Ambev: Bertrand; Petrobras: Cournot
-- (B) Ambev: Cournot (capacidade importa); Petrobras: Stackelberg (líder)
+- (B) Ambev: Cournot (capacidade importa); Petrobras: Stackelberg (líder de mercado)
 - (C) Ambos Cournot — quantidade é a variável estratégica em ambos
 - (D) Ambev: Bertrand diferenciado; Petrobras: Stackelberg
 
@@ -323,6 +559,34 @@ Equilíbrio de Nash: **(Desvia, Desvia)** = Cournot. O cartel é **instável** e
 
 . . .
 
-:::{.callout-tip title="Próxima Aula (24): Torneio de Oligopólio"}
-Jogos repetidos, colusão tácita, folk theorem — e um **torneio em sala** onde vocês serão as firmas! Leia as seções 16.5–16.7.
+:::{.callout-note title="Dica para reflexão"}
+Pergunte-se: (1) a variável estratégica é preço ou quantidade? (2) Há líder claro? (3) Os produtos são homogêneos ou diferenciados?
 :::
+
+## Próxima Aula
+
+:::{.callout-tip title="Aula 24: Torneio de Oligopólio"}
+Jogos repetidos, colusão tácita, folk theorem — e um **torneio em sala** onde vocês serão as firmas!
+:::
+
+. . .
+
+**Preparação:**
+
+- Leia as seções 16.5–16.7 (jogos repetidos e colusão)
+- Revise a lógica das funções de melhor resposta
+- Pense: **o que muda quando o jogo se repete?**
+
+. . .
+
+**Resumo de hoje:**
+
+| Modelo | Variável | Timing | Resultado |
+|:--|:--|:--|:--|
+| Bertrand | Preço | Simultâneo | $P = c$ (paradoxo) |
+| Cournot | Quantidade | Simultâneo | $P > c$, lucro positivo |
+| Stackelberg | Quantidade | Sequencial | Líder lucra mais |
+
+. . .
+
+> **Mensagem-chave:** a estrutura do jogo (variável, timing, informação) determina o equilíbrio — pequenas diferenças nas hipóteses geram grandes diferenças nos resultados.

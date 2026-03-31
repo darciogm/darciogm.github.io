@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-20-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-20-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-20-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-20-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-20-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,41 +143,72 @@ Insper
 </div>
 
 </section>
-<section id="imposto-específico-vs.-ad-valorem" class="slide level2">
-<h2>Imposto Específico vs.&nbsp;Ad Valorem</h2>
-<p><strong>Imposto específico:</strong> valor fixo por unidade (<span class="math inline">\(t\)</span> reais por unidade).</p>
-<p><span class="math display">\[P_C = P_P + t\]</span></p>
+<section id="quando-o-governo-intervém" class="slide level2">
+<h2>Quando o Governo Intervém</h2>
+<p>Por que o governo interfere nos mercados?</p>
 <div class="fragment">
-<p><strong>Imposto <em>ad valorem</em>:</strong> percentual sobre o preço (<span class="math inline">\(\tau\%\)</span>).</p>
-<p><span class="math display">\[P_C = P_P(1 + \tau)\]</span></p>
-</div>
-<div class="fragment">
+<p><strong>Três grandes categorias de intervenção:</strong></p>
 <table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Critério</th>
-<th style="text-align: left;">Específico</th>
-<th style="text-align: left;"><em>Ad valorem</em></th>
+<th style="text-align: left;">Instrumento</th>
+<th style="text-align: left;">Mecanismo</th>
+<th style="text-align: left;">Exemplo brasileiro</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Receita com inflação</td>
-<td style="text-align: left;">Cai em termos reais</td>
-<td style="text-align: left;">Acompanha preços</td>
+<td style="text-align: left;"><strong>Impostos</strong></td>
+<td style="text-align: left;">Cunha entre preço pago e recebido</td>
+<td style="text-align: left;">ICMS, IPI, ISS</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Qualidade do produto</td>
-<td style="text-align: left;">Incentiva baixa qualidade</td>
-<td style="text-align: left;">Neutro</td>
+<td style="text-align: left;"><strong>Controles de preços</strong></td>
+<td style="text-align: left;">Teto ou piso obrigatório</td>
+<td style="text-align: left;">Salário mínimo, tabelamento</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Exemplo BR</td>
-<td style="text-align: left;">IPI sobre cigarros (fixo/maço)</td>
-<td style="text-align: left;">ICMS (% sobre preço)</td>
+<td style="text-align: left;"><strong>Política comercial</strong></td>
+<td style="text-align: left;">Tarifas e quotas sobre importação</td>
+<td style="text-align: left;">TEC do Mercosul</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="fragment">
+<div title="Questão central">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Questão central</strong></p>
+</div>
+<div class="callout-content">
+<p>Toda intervenção redistribui bem-estar — mas também <strong>destrói</strong> parte dele. O peso morto (DWL) é o custo inevitável da distorção.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="imposto-específico-incidência" class="slide level2">
+<h2>Imposto Específico: Incidência</h2>
+<p>Quem <strong>realmente</strong> paga o imposto? A incidência legal difere da econômica.</p>
+<div class="fragment">
+<p>Com um imposto específico <span class="math inline">\(t\)</span> por unidade:</p>
+<p><strong>Preço pago pelo comprador:</strong></p>
+<p><span class="math display">\[P_b = P^* + t \cdot \frac{\varepsilon_S}{\varepsilon_S - \varepsilon_D}\]</span></p>
+<p><strong>Preço recebido pelo vendedor:</strong></p>
+<p><span class="math display">\[P_s = P^* - t \cdot \frac{\varepsilon_D}{\varepsilon_S - \varepsilon_D}\]</span></p>
+</div>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -185,43 +218,401 @@ Insper
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>No Brasil, a maioria dos tributos sobre consumo é <em>ad valorem</em> (ICMS, PIS, COFINS).</p>
+<p>Note que <span class="math inline">\(\varepsilon_D &lt; 0\)</span>, então <span class="math inline">\(\varepsilon_S - \varepsilon_D &gt; 0\)</span>. A cunha total é <span class="math inline">\(P_b - P_s = t\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="incidência-tributária-quem-realmente-paga" class="slide level2">
-<h2>Incidência Tributária: Quem Realmente Paga?</h2>
+<section id="incidência-tributária-interativa" class="slide level2 smaller">
+<h2>Incidência Tributária Interativa</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
-<p>A incidência <strong>legal</strong> (quem recolhe) difere da incidência <strong>econômica</strong> (quem arca).</p>
-<p>. . .</p>
-<p><strong>Resultado central:</strong></p>
-<p><span class="math display">\[\frac{\text{Parcela do consumidor}}{\text{Parcela do produtor}} = \frac{\varepsilon_S}{|\varepsilon_D|}\]</span></p>
-<p>. . .</p>
+<div class="column" style="width:55%;">
+<div class="graph-slider-row">
+<div id="graph-a20-tax" style="width:620px;height:420px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a20-tax', {
+    boundingbox: [-1, 16, 16, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slT = brd.create('slider', [[2, 15], [7, 15], [0, 3, 8]], {
+    name: 't',
+    snapWidth: 0.5,
+    id: 'sl-a20-t'
+  });
+
+  // Demand: P = 14 - Q  =>  Q = 14 - P
+  // Supply: P = 2 + Q    =>  Q = P - 2
+  // Equilibrium: 14 - Q = 2 + Q => Q*=6, P*=8
+
+  // Demand curve
+  brd.create('functiongraph', [function(Q) {
+    return 14 - Q;
+  }, 0, 14], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 2, 'D'], { fontSize: 13, color: '#1565c0' });
+
+  // Supply curve (original)
+  brd.create('functiongraph', [function(Q) {
+    return 2 + Q;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 14.8, 'S'], { fontSize: 13, color: '#C8102E' });
+
+  // Supply curve shifted up by t (effective supply with tax)
+  brd.create('functiongraph', [function(Q) {
+    var t = slT.Value();
+    return 2 + Q + t;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+  // Qt after tax: 14 - Q = 2 + Q + t => 2Q = 12 - t => Q = (12-t)/2
+  // Pb = 14 - Qt = 14 - (12-t)/2 = (16+t)/2 = 8 + t/2
+  // Ps = 2 + Qt = 2 + (12-t)/2 = (16-t)/2 = 8 - t/2
+
+  // Tax revenue rectangle
+  brd.create('polygon', [
+    [function() { return 0; }, function() { return 8 - slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 - slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 + slT.Value()/2; }],
+    [function() { return 0; }, function() { return 8 + slT.Value()/2; }]
+  ], {
+    fillColor: '#4caf50', fillOpacity: 0.2,
+    borders: { strokeColor: '#4caf50', strokeWidth: 1 },
+    vertices: { visible: false }
+  });
+
+  // DWL triangle
+  brd.create('polygon', [
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 + slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 - slT.Value()/2; }],
+    [6, 8]
+  ], {
+    fillColor: '#f44336', fillOpacity: 0.3,
+    borders: { strokeColor: '#f44336', strokeWidth: 1.5 },
+    vertices: { visible: false }
+  });
+
+  // Pb line
+  brd.create('line', [[0, function() { return 8 + slT.Value()/2; }],
+                       [1, function() { return 8 + slT.Value()/2; }]], {
+    strokeColor: '#1565c0', strokeWidth: 1, dash: 3,
+    straightFirst: false, straightLast: true, fixed: true
+  });
+
+  // Ps line
+  brd.create('line', [[0, function() { return 8 - slT.Value()/2; }],
+                       [1, function() { return 8 - slT.Value()/2; }]], {
+    strokeColor: '#C8102E', strokeWidth: 1, dash: 3,
+    straightFirst: false, straightLast: true, fixed: true
+  });
+
+  // Labels
+  brd.create('text', [-0.8, function() { return 8 + slT.Value()/2 + 0.3; }, function() {
+    return 'P_b=' + (8 + slT.Value()/2).toFixed(1);
+  }], { fontSize: 11, color: '#1565c0' });
+
+  brd.create('text', [-0.8, function() { return 8 - slT.Value()/2 - 0.5; }, function() {
+    return 'P_s=' + (8 - slT.Value()/2).toFixed(1);
+  }], { fontSize: 11, color: '#C8102E' });
+
+  brd.create('text', [2, 8, function() {
+    var t = slT.Value();
+    var Qt = (12 - t) / 2;
+    return 'Receita=' + (t * Qt).toFixed(1);
+  }], { fontSize: 11, color: '#4caf50' });
+
+  brd.create('text', [function() { return (12 - slT.Value())/2 + 0.3; }, 8, function() {
+    var t = slT.Value();
+    var dQ = 6 - (12 - t) / 2;
+    return 'DWL=' + (0.5 * t * dQ).toFixed(1);
+  }], { fontSize: 11, color: '#f44336' });
+
+  // Equilibrium point
+  brd.create('point', [6, 8], {
+    name: 'E*', size: 3, color: '#333',
+    label: { offset: [8, 8], fontSize: 12 }
+  });
+})();
+</script>
+</div><div class="column" style="width:45%;">
+<p><strong>Mova o slider</strong> <span class="math inline">\(t\)</span> para observar:</p>
 <ul>
-<li>Demanda inelástica → consumidor paga mais</li>
-<li>Oferta inelástica → produtor paga mais</li>
+<li>A cunha tributária entre <span class="math inline">\(P_b\)</span> e <span class="math inline">\(P_s\)</span></li>
+<li>O retângulo verde = <strong>receita tributária</strong></li>
+<li>O triângulo vermelho = <strong>peso morto (DWL)</strong></li>
 </ul>
-<p><strong>Exemplo:</strong> gasolina no Brasil — demanda inelástica (<span class="math inline">\(|\varepsilon_D| \approx 0{,}3\)</span>), logo o consumidor arca com ~77% do imposto.</p>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap13/incidencia-tributaria.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<p>. . .</p>
+<p>Com elasticidades simétricas (oferta e demanda lineares), o imposto é dividido igualmente.</p>
 </div></div>
 </section>
-<section id="teto-de-preços-consequências" class="slide level2">
-<h2>Teto de Preços: Consequências</h2>
+<section id="peso-morto-do-imposto" class="slide level2">
+<h2>Peso Morto do Imposto</h2>
+<p>O peso morto mede as transações mutuamente benéficas que <strong>deixam de acontecer</strong>:</p>
+<p><span class="math display">\[DWL = \frac{1}{2} \cdot t \cdot \Delta Q\]</span></p>
+<div class="fragment">
+<p><strong>Resultado crucial — DWL cresce com o quadrado do imposto:</strong></p>
+<p><span class="math display">\[DWL = \frac{t^2}{2} \cdot \frac{\varepsilon_S \cdot |\varepsilon_D|}{(\varepsilon_S + |\varepsilon_D|)} \cdot \frac{Q^*}{P^*}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Se <span class="math inline">\(t\)</span> dobra…</th>
+<th style="text-align: center;">Receita</th>
+<th style="text-align: center;">DWL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Cresce</td>
+<td style="text-align: center;"><span class="math inline">\(\approx 2\times\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\approx 4\times\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Implicação: muitos impostos pequenos geram <strong>menos</strong> DWL total do que poucos impostos altos para a mesma arrecadação.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="incidência-e-elasticidades" class="slide level2">
+<h2>Incidência e Elasticidades</h2>
+<p>O lado <strong>mais inelástico</strong> do mercado arca com a maior parcela do imposto.</p>
+<div class="fragment">
+<p><span class="math display">\[\frac{\text{Parcela do consumidor}}{\text{Parcela do produtor}} = \frac{\varepsilon_S}{|\varepsilon_D|}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Cenário</th>
+<th style="text-align: center;"><span class="math inline">\(|\varepsilon_D|\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\varepsilon_S\)</span></th>
+<th style="text-align: left;">Quem paga mais?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Gasolina (CP)</td>
+<td style="text-align: center;">0,3</td>
+<td style="text-align: center;">0,5</td>
+<td style="text-align: left;">Consumidor (62%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Restaurantes</td>
+<td style="text-align: center;">2,0</td>
+<td style="text-align: center;">1,0</td>
+<td style="text-align: left;">Produtor (67%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Cigarro</td>
+<td style="text-align: center;">0,4</td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;">Consumidor (~100%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Oferta fixa (terra)</td>
+<td style="text-align: center;">1,0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: left;">Produtor (100%)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Quem tem menos alternativas (mais inelástico) não consegue “escapar” do imposto — acaba absorvendo a maior parte da cunha.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="preço-máximo-teto" class="slide level2 smaller">
+<h2>Preço Máximo (Teto)</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:55%;">
+<div class="graph-slider-row">
+<div id="graph-a20-ceiling" style="width:620px;height:420px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a20-ceiling', {
+    boundingbox: [-1, 16, 16, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slCeil = brd.create('slider', [[2, 15], [7, 15], [2, 5, 12]], {
+    name: 'P_{teto}',
+    snapWidth: 0.5,
+    id: 'sl-a20-ceil'
+  });
+
+  // Demand: P = 14 - Q  =>  Qd = 14 - P
+  // Supply: P = 2 + Q   =>  Qs = P - 2
+  // Equilibrium: Q*=6, P*=8
+
+  // Demand curve
+  brd.create('functiongraph', [function(Q) {
+    return 14 - Q;
+  }, 0, 14], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 2, 'D'], { fontSize: 13, color: '#1565c0' });
+
+  // Supply curve
+  brd.create('functiongraph', [function(Q) {
+    return 2 + Q;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 14.8, 'S'], { fontSize: 13, color: '#C8102E' });
+
+  // Price ceiling line
+  brd.create('functiongraph', [function(Q) {
+    return slCeil.Value();
+  }, 0, 15], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  brd.create('text', [13, function() { return slCeil.Value() + 0.5; }, 'Teto'], {
+    fontSize: 12, color: '#ff9800'
+  });
+
+  // Qs at ceiling = max(0, Pceil - 2)
+  // Qd at ceiling = max(0, 14 - Pceil)
+  // Shortage = Qd - Qs (when ceiling < P*)
+
+  // DWL triangle (when binding): area between D and S from Qs to Q*
+  brd.create('polygon', [
+    [function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 6;
+      return Math.max(0, pc - 2);
+    }, function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 8;
+      return pc;
+    }],
+    [6, 8],
+    [function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 6;
+      return Math.max(0, pc - 2);
+    }, function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 8;
+      var Qs = Math.max(0, pc - 2);
+      return 14 - Qs;
+    }]
+  ], {
+    fillColor: '#f44336', fillOpacity: 0.25,
+    borders: { strokeColor: '#f44336', strokeWidth: 1.5 },
+    vertices: { visible: false }
+  });
+
+  // Shortage arrow
+  brd.create('arrow', [
+    [function() { var pc = slCeil.Value(); return Math.max(0, pc - 2); },
+     function() { return slCeil.Value() - 0.6; }],
+    [function() { var pc = slCeil.Value(); return 14 - pc; },
+     function() { return slCeil.Value() - 0.6; }]
+  ], {
+    strokeColor: '#9c27b0', strokeWidth: 2,
+    visible: function() { return slCeil.Value() < 8; }
+  });
+
+  brd.create('text', [
+    function() {
+      var pc = slCeil.Value();
+      var Qs = Math.max(0, pc - 2);
+      var Qd = 14 - pc;
+      return (Qs + Qd) / 2;
+    },
+    function() { return slCeil.Value() - 1.2; },
+    function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return '';
+      var Qs = Math.max(0, pc - 2);
+      var Qd = 14 - pc;
+      return 'Escassez=' + (Qd - Qs).toFixed(1);
+    }
+  ], { fontSize: 11, color: '#9c27b0' });
+
+  // Equilibrium point
+  brd.create('point', [6, 8], {
+    name: 'E*', size: 3, color: '#333',
+    label: { offset: [8, 8], fontSize: 12 }
+  });
+
+  // DWL label
+  brd.create('text', [
+    function() {
+      var pc = slCeil.Value();
+      var Qs = Math.max(0, pc - 2);
+      return Qs + 1.5;
+    },
+    function() {
+      var pc = slCeil.Value();
+      return pc + 2;
+    },
+    function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return '';
+      var Qs = Math.max(0, pc - 2);
+      var dQ = 6 - Qs;
+      var dP = 8 - pc;
+      return 'DWL';
+    }
+  ], { fontSize: 12, color: '#f44336' });
+})();
+</script>
+</div><div class="column" style="width:45%;">
 <p>Um <strong>teto de preço</strong> <span class="math inline">\(\bar{P} &lt; P^*\)</span> gera:</p>
-<p>. . .</p>
 <ol type="1">
 <li><strong>Escassez:</strong> <span class="math inline">\(Q^D(\bar{P}) &gt; Q^S(\bar{P})\)</span></li>
 <li><strong>Filas e racionamento</strong> não baseado em preço</li>
-<li><strong>Mercado negro</strong> a preços superiores a <span class="math inline">\(P^*\)</span></li>
-<li><strong>Perda de peso morto</strong></li>
+<li><strong>Mercado negro</strong> a preços acima de <span class="math inline">\(P^*\)</span></li>
+<li><strong>Perda de peso morto</strong> (triângulo vermelho)</li>
 </ol>
+<p>. . .</p>
+<p>Mova o slider para <span class="math inline">\(P_{\text{teto}} &lt; 8\)</span> e observe a escassez crescer.</p>
 <p>. . .</p>
 <div title="Caso brasileiro">
 <div class="callout callout-warning callout-titled callout-style-default">
@@ -233,24 +624,23 @@ Insper
 <p><strong>Caso brasileiro</strong></p>
 </div>
 <div class="callout-content">
-<p>Tabelamento da gasolina (1980s): filas nos postos, adulteração, mercado paralelo.</p>
+<p>Tabelamento da gasolina nos anos 1980: filas nos postos, adulteração e mercado paralelo.</p>
 </div>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap13/controles-precos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
 </div></div>
 </section>
-<section id="piso-de-preços-consequências" class="slide level2">
-<h2>Piso de Preços: Consequências</h2>
-<p>Um <strong>piso de preço</strong> <span class="math inline">\(\underline{P} &gt; P^*\)</span> gera:</p>
+<section id="preço-mínimo-piso" class="slide level2">
+<h2>Preço Mínimo (Piso)</h2>
+<p>Um <strong>piso de preço</strong> <span class="math inline">\(\underline{P} &gt; P^*\)</span> gera <strong>excedente de oferta</strong>:</p>
+<p><span class="math display">\[Q^S(\underline{P}) &gt; Q^D(\underline{P})\]</span></p>
 <div class="fragment">
+<p><strong>Consequências:</strong></p>
 <ol type="1">
-<li><strong>Excedente de oferta:</strong> <span class="math inline">\(Q^S(\underline{P}) &gt; Q^D(\underline{P})\)</span></li>
-<li>Governo precisa <strong>comprar o excesso</strong> ou restringir oferta</li>
-<li><strong>Perda de peso morto</strong> + custo fiscal</li>
+<li>O governo precisa <strong>comprar o excesso</strong> ou restringir oferta</li>
+<li>Gera peso morto + custo fiscal</li>
+<li>Beneficia produtores intramarginais às custas dos consumidores</li>
 </ol>
 </div>
 <div class="fragment">
@@ -265,19 +655,19 @@ Insper
 <tr class="header">
 <th style="text-align: left;">Política</th>
 <th style="text-align: left;">Mecanismo</th>
-<th style="text-align: left;">Efeito</th>
+<th style="text-align: left;">Efeito colateral</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Salário mínimo</td>
+<td style="text-align: left;"><strong>Salário mínimo</strong></td>
 <td style="text-align: left;">Piso no mercado de trabalho</td>
 <td style="text-align: left;">Desemprego entre menos qualificados</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Preço mínimo agrícola (PGPM)</td>
+<td style="text-align: left;"><strong>PGPM agrícola</strong></td>
 <td style="text-align: left;">Governo compra excedente</td>
-<td style="text-align: left;">Estoque público, custo fiscal</td>
+<td style="text-align: left;">Estoques públicos, custo fiscal</td>
 </tr>
 </tbody>
 </table>
@@ -292,26 +682,29 @@ Insper
 <p><strong>Dica</strong></p>
 </div>
 <div class="callout-content">
-<p>O efeito do salário mínimo depende de quão acima do equilíbrio ele está — em mercados onde o piso não é <em>binding</em>, o efeito é neutro.</p>
+<p>O efeito do salário mínimo depende de quão acima do equilíbrio ele está. Onde o piso não é <em>binding</em>, o efeito é neutro.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="subsídios-imagem-espelhada-do-imposto" class="slide level2">
-<h2>Subsídios: Imagem Espelhada do Imposto</h2>
+<section id="subsídio-espelho-do-imposto" class="slide level2">
+<h2>Subsídio: Espelho do Imposto</h2>
 <p>Um subsídio de <span class="math inline">\(s\)</span> reais por unidade é um “imposto negativo”:</p>
-<p><span class="math display">\[P_C = P_P - s\]</span></p>
+<p><span class="math display">\[P_b = P_s - s\]</span></p>
 <div class="fragment">
-<p><strong>Efeitos:</strong></p>
+<p>O governo paga <span class="math inline">\(s\)</span> por unidade, deslocando efetivamente a oferta <strong>para baixo</strong>:</p>
 <ul>
-<li>Quantidade transacionada <strong>aumenta</strong> acima do ótimo social</li>
-<li>Gera <strong>peso morto</strong> (sobreconsumo / sobreprodução)</li>
+<li>Quantidade transacionada <strong>aumenta</strong> acima de <span class="math inline">\(Q^*\)</span></li>
+<li>Gera <strong>sobreconsumo</strong> (ou sobreprodução)</li>
+<li>Peso morto: <span class="math inline">\(DWL = \frac{1}{2} \cdot s \cdot \Delta Q\)</span></li>
 <li>Custo fiscal: <span class="math inline">\(s \times Q_{\text{subsidiado}}\)</span></li>
 </ul>
 </div>
 <div class="fragment">
 <p><strong>Incidência do subsídio:</strong> segue a mesma lógica — o lado mais inelástico captura maior parcela do benefício.</p>
+</div>
+<div class="fragment">
 <div title="Exemplo">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -322,270 +715,29 @@ Insper
 <p><strong>Exemplo</strong></p>
 </div>
 <div class="callout-content">
-<p>Subsídio à energia elétrica residencial: consumidores capturam a maior parte quando a demanda é inelástica — o subsídio vira “desconto”, não aumento de consumo.</p>
+<p>Subsídio à energia elétrica residencial: com demanda inelástica, o subsídio vira “desconto” para o consumidor, sem grande aumento de consumo.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="princípio-de-ramsey-tributação-ótima" class="slide level2">
-<h2>Princípio de Ramsey: Tributação Ótima</h2>
-<blockquote>
-<p>“Se o governo precisa arrecadar <span class="math inline">\(R\)</span>, como minimizar o peso morto total?”</p>
-</blockquote>
+<section id="tarifa-de-importação" class="slide level2">
+<h2>Tarifa de Importação</h2>
+<p><strong>Modelo de país pequeno:</strong> o preço doméstico é determinado pelo preço mundial.</p>
+<p><span class="math display">\[P_{\text{dom}} = P_w + \tau\]</span></p>
 <div class="fragment">
-<p><strong>Regra de Ramsey (taxa inversa de elasticidade):</strong></p>
-<p><span class="math display">\[\frac{t_i}{P_i} \propto \frac{1}{|\varepsilon_D^i|}\]</span></p>
-<p>Taxe mais os bens com demanda <strong>mais inelástica</strong> — menor distorção.</p>
-</div>
-<div class="fragment">
-<p><strong>Problema de equidade:</strong> bens inelásticos (alimentos, energia, transporte) pesam mais no orçamento dos pobres.</p>
-</div>
-<div class="fragment">
-<div title="Trade-off eficiência vs. equidade">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Trade-off eficiência vs.&nbsp;equidade</strong></p>
-</div>
-<div class="callout-content">
-<p>Ramsey é ótimo em eficiência, mas pode ser <strong>regressivo</strong>. Por isso, na prática, combinamos com transferências diretas (Bolsa Família, NIT).</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="comparação-de-bem-estar-tabela-resumo" class="slide level2">
-<h2>Comparação de Bem-Estar: Tabela Resumo</h2>
-<table class="caption-top">
-<colgroup>
-<col style="width: 9%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-<col style="width: 12%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Intervenção</th>
-<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P_C\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P_P\)</span></th>
-<th style="text-align: center;">EC</th>
-<th style="text-align: center;">EP</th>
-<th style="text-align: center;">Receita Gov.</th>
-<th style="text-align: center;">DWL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Livre mercado</td>
-<td style="text-align: center;"><span class="math inline">\(Q^*\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P^*\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(P^*\)</span></td>
-<td style="text-align: center;">Máx</td>
-<td style="text-align: center;">Máx</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Imposto <span class="math inline">\(t\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Teto <span class="math inline">\(\bar{P}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;">Ambíguo</td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Piso <span class="math inline">\(\underline{P}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;">Ambíguo</td>
-<td style="text-align: center;">0 ou custo</td>
-<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Subsídio <span class="math inline">\(s\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(&lt;0\)</span> (custo)</td>
-<td style="text-align: center;"><span class="math inline">\(&gt;0\)</span></td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Importante</strong></p>
-</div>
-<div class="callout-content">
-<p>Em <strong>todos</strong> os casos de intervenção, <span class="math inline">\(ET = EC + EP + \text{Receita líquida}\)</span> cai — o DWL é sempre positivo.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="dados-reais-tributação-sobre-combustíveis-no-brasil" class="slide level2">
-<h2>Dados Reais: Tributação sobre Combustíveis no Brasil</h2>
-<p><strong>Composição do preço da gasolina (ANP, 2024):</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Componente</th>
-<th style="text-align: center;">Parcela</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Preço na refinaria (Petrobras)</td>
-<td style="text-align: center;">~34%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">ICMS</td>
-<td style="text-align: center;">~28%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">CIDE + PIS/COFINS</td>
-<td style="text-align: center;">~14%</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Custo de distribuição e revenda</td>
-<td style="text-align: center;">~12%</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Custo do etanol anidro</td>
-<td style="text-align: center;">~12%</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p><strong>Carga tributária total:</strong> ~42% do preço final.</p>
-</div>
-<div class="fragment">
-<div title="Reflexão">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Reflexão</strong></p>
-</div>
-<div class="callout-content">
-<p>Com <span class="math inline">\(|\varepsilon_D| \approx 0{,}3\)</span> para gasolina, o DWL por real arrecadado é relativamente baixo — coerente com Ramsey. Mas o imposto é <strong>regressivo</strong> (pesa mais na renda dos mais pobres).</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="atividade-em-grupo-debate-de-políticas-públicas" class="slide level2 smaller">
-<h2>Atividade em Grupo: Debate de Políticas Públicas</h2>
-<div title="Instruções — 4 grupos, 4 políticas">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Instruções — 4 grupos, 4 políticas</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-</div>
-<table class="caption-top">
-<colgroup>
-<col style="width: 40%">
-<col style="width: 30%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Grupo</th>
-<th style="text-align: left;">Política</th>
-<th style="text-align: left;">Tarefa</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">1</td>
-<td style="text-align: left;">Teto no preço do aluguel em SP</td>
-<td style="text-align: left;">Analisar EC, EP, DWL, efeitos distributivos</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2</td>
-<td style="text-align: left;">Piso salarial para motoristas de app</td>
-<td style="text-align: left;">Comparar com salário mínimo tradicional</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">Imposto sobre bebidas açucaradas</td>
-<td style="text-align: left;">Calcular incidência e DWL com dados fictícios</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">4</td>
-<td style="text-align: left;">Subsídio à energia solar residencial</td>
-<td style="text-align: left;">Quem captura o subsídio? Há sobreconsumo?</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<p><strong>Cada grupo recebe:</strong></p>
+<p><strong>Efeitos da tarifa <span class="math inline">\(\tau\)</span>:</strong></p>
 <ul>
-<li>Curvas de oferta e demanda (lineares, com parâmetros)</li>
-<li>15 minutos para análise + cálculo de DWL</li>
-<li>5 minutos para apresentação com gráfico no quadro</li>
+<li>Produção doméstica <span class="math inline">\(\uparrow\)</span> (ineficiente)</li>
+<li>Consumo doméstico <span class="math inline">\(\downarrow\)</span></li>
+<li>Importações <span class="math inline">\(\downarrow\)</span></li>
+<li>Receita do governo: <span class="math inline">\(\tau \times M\)</span> (onde <span class="math inline">\(M\)</span> = importações)</li>
 </ul>
 </div>
-</section>
-<section id="regras-de-apresentação-e-avaliação" class="slide level2">
-<h2>Regras de Apresentação e Avaliação</h2>
-<p><strong>Formato da apresentação (5 min/grupo):</strong></p>
-<ol type="1">
-<li>Descreva a política e identifique o tipo de intervenção</li>
-<li>Desenhe o gráfico com as áreas de EC, EP e DWL</li>
-<li>Calcule numericamente o DWL</li>
-<li>Argumente: a política é justificável mesmo com DWL?</li>
-</ol>
 <div class="fragment">
-<p><strong>Critérios de avaliação (peer review):</strong></p>
-<ul>
-<li>Correção técnica da análise (40%)</li>
-<li>Qualidade da argumentação (30%)</li>
-<li>Clareza da apresentação gráfica (30%)</li>
-</ul>
+<p><strong>Peso morto:</strong> dois triângulos — um de <strong>ineficiência produtiva</strong> (produtores marginais que não deveriam produzir) e outro de <strong>perda de consumo</strong>.</p>
+<p><span class="math display">\[DWL = \frac{1}{2}\tau(\Delta Q^S + \Delta Q^D)\]</span></p>
 </div>
 <div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
@@ -597,39 +749,260 @@ Insper
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Após todas as apresentações, votação: <strong>qual política tem a melhor relação benefício/DWL?</strong></p>
+<p>No Brasil, a TEC (Tarifa Externa Comum) do Mercosul impõe tarifas significativas sobre bens de capital — encarecendo o investimento.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="votação-melhor-política-pública" class="slide level2">
-<h2>Votação: Melhor Política Pública</h2>
-<p><strong>Após as 4 apresentações:</strong></p>
+<section id="quota-de-importação" class="slide level2">
+<h2>Quota de Importação</h2>
+<p>Uma <strong>quota</strong> limita a quantidade importada a <span class="math inline">\(\bar{M}\)</span> unidades.</p>
 <div class="fragment">
-<p>Cada aluno vota na política que considera <strong>mais justificável</strong> do ponto de vista de bem-estar social, considerando:</p>
+<p><strong>Diferença crucial em relação à tarifa:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Aspecto</th>
+<th style="text-align: left;">Tarifa</th>
+<th style="text-align: left;">Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Preço doméstico</td>
+<td style="text-align: left;"><span class="math inline">\(P_w + \tau\)</span></td>
+<td style="text-align: left;">$P_w + $ “tarifa implícita”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Receita</td>
+<td style="text-align: left;">Governo arrecada <span class="math inline">\(\tau \times M\)</span></td>
+<td style="text-align: left;"><strong>Renda da quota</strong> vai para importadores licenciados</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Ajuste automático</td>
+<td style="text-align: left;">Se <span class="math inline">\(P_w\)</span> cai, importações <span class="math inline">\(\uparrow\)</span></td>
+<td style="text-align: left;">Quota fixa — sem ajuste</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p>A quota é <strong>equivalente em bem-estar</strong> a uma tarifa somente se a renda da quota for capturada pelo governo (via leilão de licenças).</p>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Quotas são geralmente <strong>piores</strong> que tarifas: a renda da quota frequentemente vira <em>rent-seeking</em>, com custo social adicional.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="comparação-imposto-vs-quota-vs-tarifa" class="slide level2">
+<h2>Comparação: Imposto vs Quota vs Tarifa</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Critério</th>
+<th style="text-align: center;">Imposto doméstico</th>
+<th style="text-align: center;">Tarifa</th>
+<th style="text-align: center;">Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Receita para o governo</td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: center;">Não (renda da quota)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ajuste a choques de oferta</td>
+<td style="text-align: center;">Automático</td>
+<td style="text-align: center;">Automático</td>
+<td style="text-align: center;">Rígida</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Transparência</td>
+<td style="text-align: center;">Alta</td>
+<td style="text-align: center;">Alta</td>
+<td style="text-align: center;">Baixa</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">DWL</td>
+<td style="text-align: center;">1 triângulo</td>
+<td style="text-align: center;">2 triângulos</td>
+<td style="text-align: center;">2 triângulos + rent-seeking</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Favorece produtores domésticos</td>
+<td style="text-align: center;">Não diretamente</td>
+<td style="text-align: center;">Sim</td>
+<td style="text-align: center;">Sim</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div title="Hierarquia de eficiência">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Hierarquia de eficiência</strong></p>
+</div>
+<div class="callout-content">
+<p>Livre comércio <span class="math inline">\(&gt;\)</span> Tarifa <span class="math inline">\(&gt;\)</span> Quota (sem leilão). Se o objetivo é proteger o produtor doméstico, a tarifa é o <strong>mal menor</strong> em termos de bem-estar.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="caso-brasil-icms-e-distorções" class="slide level2 smaller">
+<h2>Caso Brasil: ICMS e Distorções</h2>
+<p>O <strong>ICMS</strong> (Imposto sobre Circulação de Mercadorias e Serviços) é o principal tributo estadual brasileiro.</p>
+<div class="fragment">
+<p><strong>Problemas estruturais:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Distorção</th>
+<th style="text-align: left;">Mecanismo</th>
+<th style="text-align: left;">Consequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Cumulatividade parcial</strong></td>
+<td style="text-align: left;">Créditos incompletos na cadeia</td>
+<td style="text-align: left;">Incentivo à verticalização</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Guerra fiscal</strong></td>
+<td style="text-align: left;">Estados competem com alíquotas menores</td>
+<td style="text-align: left;">Ineficiência locacional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Alíquotas interestaduais</strong></td>
+<td style="text-align: left;">7% ou 12% conforme destino</td>
+<td style="text-align: left;">Complexidade e litígio</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Substituição tributária</strong></td>
+<td style="text-align: left;">Imposto antecipado com MVA</td>
+<td style="text-align: left;">Distorção de preços relativos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><strong>Reforma Tributária (EC 132/2023):</strong></p>
 <ul>
-<li>Magnitude do DWL vs.&nbsp;benefício social</li>
-<li>Efeitos distributivos</li>
-<li>Viabilidade de implementação</li>
+<li>Substitui ICMS + ISS pelo <strong>IBS</strong> (Imposto sobre Bens e Serviços)</li>
+<li>Princípio do destino (fim da guerra fiscal)</li>
+<li>Não cumulatividade plena</li>
+<li>Transição: 2026–2033</li>
 </ul>
 </div>
 <div class="fragment">
-<p>:::{.callout-warning title=“Não existe resposta”certa”“} O objetivo é exercitar a análise de trade-offs — toda política tem custos e benefícios. :::</p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="fragment">
-<p><strong>Resultado da votação:</strong> discussão coletiva sobre os critérios usados.</p>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>A reforma busca reduzir o peso morto do sistema tributário brasileiro, estimado em até <strong>4,8% do PIB</strong> (Banco Mundial, 2021).</p>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="próxima-aula-monopólio-e-discriminação-de-preços" class="slide level2">
-<h2>Próxima Aula: Monopólio e Discriminação de Preços</h2>
+<section id="exercício-calculando-dwl" class="slide level2 smaller">
+<h2>Exercício: Calculando DWL</h2>
+<p><strong>Dados:</strong></p>
+<ul>
+<li>Demanda: <span class="math inline">\(Q = 100 - 2P\)</span></li>
+<li>Oferta: <span class="math inline">\(Q = 3P - 20\)</span></li>
+<li>Imposto: <span class="math inline">\(t = 5\)</span> por unidade</li>
+</ul>
+<div class="fragment">
+<p><strong>Passo 1 — Equilíbrio sem imposto:</strong></p>
+<p><span class="math display">\[100 - 2P = 3P - 20 \implies 5P = 120 \implies P^* = 24, \quad Q^* = 52\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 2 — Equilíbrio com imposto</strong> (cunha: <span class="math inline">\(P_b = P_s + 5\)</span>):</p>
+<p><span class="math display">\[100 - 2P_b = 3(P_b - 5) - 20 \implies 100 - 2P_b = 3P_b - 35 \implies 5P_b = 135 \implies P_b = 27\]</span></p>
+<p><span class="math display">\[P_s = 22, \quad Q_t = 100 - 2(27) = 46\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 3 — Receita e DWL:</strong></p>
+<p><span class="math display">\[\text{Receita} = t \times Q_t = 5 \times 46 = 230\]</span></p>
+<p><span class="math display">\[DWL = \frac{1}{2} \times t \times \Delta Q = \frac{1}{2} \times 5 \times (52 - 46) = 15\]</span></p>
+</div>
+</section>
+<section id="peer-instruction-quem-paga-o-imposto" class="slide level2">
+<h2>Peer Instruction: Quem Paga o Imposto?</h2>
+<blockquote>
+<p>Um imposto de R$10 é aplicado sobre um bem. A demanda é muito inelástica (<span class="math inline">\(|\varepsilon_D| = 0{,}2\)</span>) e a oferta é muito elástica (<span class="math inline">\(\varepsilon_S = 5{,}0\)</span>). Qual é aproximadamente a parcela do imposto paga pelo <strong>consumidor</strong>?</p>
+</blockquote>
+<div class="fragment">
+<p><strong>(A)</strong> 20% — o consumidor é inelástico, logo paga pouco</p>
+<p><strong>(B)</strong> 50% — o imposto é dividido igualmente</p>
+<p><strong>(C)</strong> 80% — a oferta é elástica, logo o consumidor absorve mais</p>
+<p><strong>(D)</strong> 96% — o lado inelástico arca com quase tudo</p>
+</div>
+<div class="fragment">
+<div title="Resolução">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resolução</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math display">\[\frac{\text{Parcela do consumidor}}{1} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|} = \frac{5{,}0}{5{,}0 + 0{,}2} = \frac{5{,}0}{5{,}2} \approx 0{,}96 = 96\%\]</span></p>
+<p><strong>Resposta: (D).</strong> A demanda extremamente inelástica faz o consumidor absorver quase toda a cunha tributária.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="próxima-aula-monopólio" class="slide level2">
+<h2>Próxima Aula: Monopólio</h2>
 <p><strong>Saímos da concorrência perfeita!</strong></p>
 <div class="fragment">
-<p>Na Aula 21, veremos:</p>
+<p>Na <strong>Aula 21 — Monopólio</strong>, veremos:</p>
 <ul>
-<li>Por que o monopolista produz menos e cobra mais?</li>
-<li>Como a discriminação de preços pode aumentar o bem-estar?</li>
-<li>Uber, Spotify e a precificação algorítmica</li>
+<li>Por que o monopolista produz <strong>menos</strong> e cobra <strong>mais</strong> que o mercado competitivo?</li>
+<li>Receita marginal: <span class="math inline">\(RMg = P\left(1 + \frac{1}{\varepsilon_D}\right)\)</span></li>
+<li>Poder de mercado e o índice de Lerner</li>
+<li>DWL do monopólio: comparação com o imposto</li>
 </ul>
 </div>
 <div class="fragment">
@@ -644,14 +1017,19 @@ Insper
 </div>
 <div class="callout-content">
 <ol type="1">
-<li>Complete os exercícios do Capítulo 13 (itens 6–10)</li>
-<li>Pesquise: quanto o consumidor paga de imposto no seu produto favorito? (use calculadora do IBPT)</li>
-<li>Leia a Seção 15.1 (Monopólio: definição e fontes de poder de mercado)</li>
+<li>Resolva os exercícios do Capítulo 13 (itens 6–10)</li>
+<li>Pesquise: quanto o consumidor paga de imposto no seu produto favorito? (use a calculadora do IBPT)</li>
+<li>Leia a Seção 15.1 — Monopólio: definição e fontes de poder de mercado</li>
 </ol>
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="fragment">
+<blockquote>
+<p>“O sistema tributário ideal é aquele que arrecada o necessário causando o mínimo de distorção nas decisões privadas.” — A. C. Pigou</p>
+</blockquote>
 
 </div>
 </section>

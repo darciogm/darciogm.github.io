@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# build.sh — Converte os 24 pré-aula .md em HTML com tracking
+# build.sh — Converte os 25 pré-aula .md em HTML com tracking
 # Uso: bash build.sh
 
 set -e
@@ -14,7 +14,7 @@ echo "Source: $SRC_DIR"
 echo "Output: $OUT_DIR"
 echo ""
 
-for i in $(seq -w 1 24); do
+for i in $(seq -w 1 25); do
   SRC="$SRC_DIR/aula-${i}-pre.md"
   OUT="$OUT_DIR/aula-${i}.html"
   PAGEID="aula-${i}"
@@ -26,134 +26,198 @@ for i in $(seq -w 1 24); do
 
   echo -n "  aula-${i}-pre.md → aula-${i}.html ... "
 
-  # Step 1: Pre-process MkDocs admonitions → HTML
-  python3 -c "
-import re, sys
+  # Full preprocessing + pandoc + template injection in one Python script
+  python3 - "$SRC" "$OUT" "$TEMPLATE" "$PAGEID" << 'PYEOF'
+import re, sys, subprocess, tempfile, os
 
-text = open('$SRC', 'r').read()
+src_path = sys.argv[1]
+out_path = sys.argv[2]
+template_path = sys.argv[3]
+pageid = sys.argv[4]
 
-# Convert !!! admonitions to HTML
-def convert_admonition(match):
-    indent = match.group(1)
-    atype = match.group(2).lower()
-    title = match.group(3).strip().strip('\"') if match.group(3) else atype.capitalize()
-    # Find the indented content block
-    content_lines = []
-    remaining = text[match.end():]
-    for line in remaining.split('\n'):
-        if line.startswith('    ') or line.strip() == '':
-            content_lines.append(line[4:] if line.startswith('    ') else '')
+with open(src_path, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+
+# ── Pass 1: Convert MkDocs syntax to HTML, line by line ──
+output = []
+saved_blocks = {}  # blocks protected from Pandoc
+idx = 0
+
+def consume_indented_block(start_idx):
+    """Read all lines indented by 4 spaces after an admonition/collapsible."""
+    block = []
+    j = start_idx
+    while j < len(lines):
+        line = lines[j]
+        if line.startswith('    '):
+            block.append(line[4:])
+            j += 1
+        elif line.strip() == '':
+            block.append('\n')
+            j += 1
         else:
             break
-    content = '\n'.join(content_lines).strip()
-    return f'<div class=\"admonition {atype}\"><div class=\"admonition-title\">{title}</div>\n\n{content}\n\n</div>'
+    # Remove trailing empty lines
+    while block and block[-1].strip() == '':
+        block.pop()
+    return ''.join(block).strip(), j
 
-# Convert ??? collapsible to HTML details
-def convert_collapsible(match):
-    atype = match.group(1).lower()
-    title = match.group(2).strip().strip('\"') if match.group(2) else atype.capitalize()
-    content_lines = []
-    remaining = text[match.end():]
-    for line in remaining.split('\n'):
-        if line.startswith('    ') or line.strip() == '':
-            content_lines.append(line[4:] if line.startswith('    ') else '')
-        else:
-            break
-    content = '\n'.join(content_lines).strip()
-    return f'<details><summary>{title}</summary><div class=\"solution-body\">\n\n{content}\n\n</div></details>'
+while idx < len(lines):
+    line = lines[idx]
+    stripped = line.strip()
 
-# Process collapsibles first (??? before !!!)
-text = re.sub(r'^(\s*)\?\?\?\+?\s+(\w+)\s*(.*?)$', convert_collapsible, text, flags=re.MULTILINE)
-text = re.sub(r'^(\s*)\!\!\!\s+(\w+)\s*(.*?)$', convert_admonition, text, flags=re.MULTILINE)
+    # ── Admonitions: !!! type "Title" ──
+    m_adm = re.match(r'^!!!\s+(\w+)\s*("([^"]*)")?', stripped)
+    if m_adm:
+        atype = m_adm.group(1).lower()
+        title = m_adm.group(3) if m_adm.group(3) else atype.capitalize()
+        content, idx = consume_indented_block(idx + 1)
+        output.append(f'<div class="admonition {atype}">\n')
+        output.append(f'<div class="admonition-title">{title}</div>\n\n')
+        output.append(f'{content}\n\n')
+        output.append(f'</div>\n\n')
+        continue
 
-# Convert quiz checkboxes to interactive quiz HTML
-def convert_quiz_block(text):
-    # Find quiz containers
-    lines = text.split('\n')
-    in_quiz = False
-    quiz_lines = []
-    other_lines = []
-    q_count = 0
+    # ── Collapsible: ??? type "Title" ──
+    m_col = re.match(r'^\?\?\?\+?\s+(\w+)\s*("([^"]*)")?', stripped)
+    if m_col:
+        ctype = m_col.group(1).lower()
+        title = m_col.group(3) if m_col.group(3) else ctype.capitalize()
+        content, idx = consume_indented_block(idx + 1)
+        output.append(f'<details>\n<summary>{title}</summary>\n')
+        output.append(f'<div class="solution-body">\n\n{content}\n\n</div>\n')
+        output.append(f'</details>\n\n')
+        continue
 
-    for line in lines:
-        if '<div class=\"quiz-container\"' in line:
-            in_quiz = True
-            other_lines.append('<div class=\"quiz-container\"><div class=\"quiz-header\"><h3>Quiz Pre-Aula</h3><div class=\"quiz-score\">Pontuacao: <span id=\"quiz-score\">0/0</span></div></div>')
-            continue
-        if in_quiz and '</div>' in line and 'quiz-container' not in line:
-            # Check if this closes the quiz
-            pass
+    # ── Quiz container: convert checkbox format ──
+    if '<div class="quiz-container"' in stripped:
+        # Read until closing </div> of quiz container
+        quiz_lines = []
+        idx += 1
+        depth = 1
+        while idx < len(lines):
+            ql = lines[idx].rstrip('\n')
+            if '</div>' in ql:
+                depth -= 1
+                if depth <= 0:
+                    break
+            if '<div' in ql:
+                depth += 1
+            quiz_lines.append(ql)
+            idx += 1
+        idx += 1  # skip closing </div>
 
-        if in_quiz:
-            # Convert **Q1.** text to quiz question
-            m = re.match(r'\*\*Q(\d+)\.\*\*\s*(.*)', line)
-            if m:
-                q_count += 1
-                qid = 'q' + m.group(1)
-                # Find correct answer in next lines
-                other_lines.append(f'<div class=\"quiz-question\" data-question=\"{qid}\" data-correct=\"\">')
-                other_lines.append(f'<div class=\"q-text\">Q{m.group(1)}. {m.group(2)}</div>')
+        # Parse questions and options
+        quiz_html = []
+        quiz_html.append('<div class="quiz-container">')
+        quiz_html.append('<div class="quiz-header"><h3>Quiz Pré-Aula</h3>')
+        quiz_html.append('<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>')
+
+        current_q = None
+        current_correct = None
+        questions = []
+        options_buf = []
+
+        for ql in quiz_lines:
+            ql_s = ql.strip()
+            m_q = re.match(r'\*\*Q(\d+)\.\*\*\s*(.*)', ql_s)
+            if m_q:
+                if current_q is not None:
+                    questions.append((current_q, current_correct, options_buf))
+                current_q = (m_q.group(1), m_q.group(2))
+                current_correct = None
+                options_buf = []
                 continue
-            # Convert - [x] or - [ ] to options
-            m_opt = re.match(r'- \[([ x])\]\s*\(([a-e])\)\s*(.*)', line)
+
+            m_opt = re.match(r'-\s+\[([ xX])\]\s+\(([a-e])\)\s*(.*)', ql_s)
             if m_opt:
-                is_correct = m_opt.group(1) == 'x'
+                is_correct = m_opt.group(1).lower() == 'x'
                 val = m_opt.group(2)
                 txt = m_opt.group(3)
                 if is_correct:
-                    # Update data-correct on parent
-                    for j in range(len(other_lines)-1, -1, -1):
-                        if 'data-correct=\"\"' in other_lines[j]:
-                            other_lines[j] = other_lines[j].replace('data-correct=\"\"', f'data-correct=\"{val}\"')
-                            break
-                other_lines.append(f'<div class=\"quiz-option\" data-value=\"{val}\">({val}) {txt}</div>')
-                continue
-            if line.strip() == '' and q_count > 0:
-                other_lines.append('<div class=\"quiz-feedback\"></div></div>')
+                    current_correct = val
+                options_buf.append((val, txt))
                 continue
 
-        other_lines.append(line)
+        if current_q is not None:
+            questions.append((current_q, current_correct, options_buf))
 
-    # Close last question if needed
-    result = '\n'.join(other_lines)
-    # Add submit button before closing quiz div
-    result = result.replace('</div>\n\n---', '<div class=\"quiz-feedback\"></div></div><div class=\"quiz-submit\"><button class=\"btn btn-primary\" id=\"quiz-submit\" onclick=\"MicroQuiz.submit(\\'{}\\')\">Enviar Quiz</button></div></div>\n\n---'.format('PAGEID'))
-    return result
+        for (qnum, qtext), correct, opts in questions:
+            correct = correct or 'a'
+            quiz_html.append(f'<div class="quiz-question" data-question="q{qnum}" data-correct="{correct}">')
+            quiz_html.append(f'<div class="q-text">Q{qnum}. {qtext}</div>')
+            for val, txt in opts:
+                quiz_html.append(f'<div class="quiz-option" data-value="{val}">({val}) {txt}</div>')
+            quiz_html.append('<div class="quiz-feedback"></div>')
+            quiz_html.append('</div>')
 
-text = convert_quiz_block(text)
+        quiz_html.append(f'<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit(\'{pageid}\')">Enviar Quiz</button></div>')
+        quiz_html.append('</div>')
 
-print(text)
-" > /tmp/pre_${i}.md
+        # Store quiz and emit placeholder (Pandoc won't touch it)
+        quiz_key = f'QUIZPLACEHOLDER{len(saved_blocks)}'
+        saved_blocks[quiz_key] = '\n'.join(quiz_html)
+        output.append(f'\n\n{quiz_key}\n\n')
+        continue
 
-  # Step 2: Pandoc convert to HTML body
-  pandoc /tmp/pre_${i}.md \
-    --from markdown+tex_math_dollars+raw_html \
-    --to html5 \
-    --mathjax \
-    --no-highlight \
-    -o /tmp/body_${i}.html 2>/dev/null || pandoc /tmp/pre_${i}.md --from markdown --to html5 -o /tmp/body_${i}.html
+    # ── Regular line ──
+    output.append(line)
+    idx += 1
 
-  # Step 3: Extract title from first H1
-  TITLE=$(grep -m1 '<h1' /tmp/body_${i}.html | sed 's/<[^>]*>//g' | head -1)
-  [ -z "$TITLE" ] && TITLE="Aula ${i}"
+preprocessed = ''.join(output)
 
-  # Step 4: Inject into template
-  sed -e "s|\\\$title\\\$|${TITLE}|g" \
-      -e "s|\\\$pageid\\\$|${PAGEID}|g" \
-      "$TEMPLATE" | \
-  python3 -c "
-import sys
-template = sys.stdin.read()
-body = open('/tmp/body_${i}.html').read()
-# Replace \$body\$ placeholder
-result = template.replace('\$body\$', body)
-# Fix quiz submit page ID
-result = result.replace(\"PAGEID\", \"${PAGEID}\")
-print(result)
-" > "$OUT"
+# ── Pass 2: Pandoc conversion ──
+with tempfile.NamedTemporaryFile(mode='w', suffix='.md', delete=False, encoding='utf-8') as tmp:
+    tmp.write(preprocessed)
+    tmp_path = tmp.name
+
+try:
+    result = subprocess.run(
+        ['pandoc', tmp_path,
+         '--from', 'markdown+tex_math_dollars+raw_html',
+         '--to', 'html5',
+         '--mathjax',
+         '--no-highlight'],
+        capture_output=True, text=True, timeout=30
+    )
+    body = result.stdout
+    if result.returncode != 0:
+        result2 = subprocess.run(
+            ['pandoc', tmp_path, '--from', 'markdown+raw_html', '--to', 'html5'],
+            capture_output=True, text=True, timeout=30
+        )
+        body = result2.stdout
+finally:
+    os.unlink(tmp_path)
+
+# ── Pass 2b: Re-insert protected blocks ──
+for key, block_html in saved_blocks.items():
+    # Pandoc may have wrapped the placeholder in <p> tags
+    body = body.replace(f'<p>{key}</p>', block_html)
+    body = body.replace(key, block_html)
+
+# ── Pass 3: Extract title ──
+m_title = re.search(r'<h1[^>]*>(.*?)</h1>', body, re.DOTALL)
+if m_title:
+    title = re.sub(r'<[^>]+>', '', m_title.group(1))
+    title = ' '.join(title.split())  # normalize whitespace from multiline h1
+else:
+    title = f"Aula {pageid.split('-')[1]}"
+
+# ── Pass 4: Inject into template ──
+with open(template_path, 'r', encoding='utf-8') as f:
+    template = f.read()
+
+html = template.replace('$title$', title)
+html = html.replace('$pageid$', pageid)
+html = html.replace('$body$', body)
+
+with open(out_path, 'w', encoding='utf-8') as f:
+    f.write(html)
+
+PYEOF
 
   echo "OK"
-  rm -f /tmp/pre_${i}.md /tmp/body_${i}.html
 done
 
 echo ""

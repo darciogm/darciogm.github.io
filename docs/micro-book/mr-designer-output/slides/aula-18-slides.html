@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-18-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-18-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-18-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-18-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-18-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,288 +143,647 @@ Insper
 </div>
 
 </section>
-<section id="coase-e-a-natureza-da-firma" class="slide level2">
-<h2>Coase e a Natureza da Firma</h2>
-<blockquote>
-<p>“Por que existem firmas?” — Ronald Coase, <em>The Nature of the Firm</em> (1937)</p>
-</blockquote>
+<section id="revisão-oferta-da-firma" class="slide level2">
+<h2>Revisão: Oferta da Firma</h2>
+<p>A <strong>curva de oferta</strong> da firma competitiva no curto prazo é o trecho do CMg acima do CVMe mínimo:</p>
+<p><span class="math display">\[q^S(P) = \begin{cases} CMg^{-1}(P) &amp; \text{se } P \geq \min CVMe \\ 0 &amp; \text{se } P &lt; \min CVMe \end{cases}\]</span></p>
 <div class="fragment">
-<p><strong>Resposta:</strong> o mercado tem <strong>custos de transação</strong></p>
-<ul>
-<li>Busca de parceiros comerciais</li>
-<li>Negociação e elaboração de contratos</li>
-<li>Monitoramento e enforcement</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>A firma existe quando:</strong></p>
-<p><span class="math display">\[C_{\text{transação no mercado}} &gt; C_{\text{coordenação interna}}\]</span></p>
-<blockquote>
-<p>A fronteira da firma é determinada pelo <strong>trade-off</strong> entre custos de transação e custos de coordenação.</p>
-</blockquote>
-</div>
-</section>
-<section id="custos-de-transação-e-fronteira-da-firma" class="slide level2">
-<h2>Custos de Transação e Fronteira da Firma</h2>
-<p><strong>Tipos de custos de transação (Williamson):</strong></p>
+<p><strong>Condições para produzir <span class="math inline">\(q^* &gt; 0\)</span>:</strong></p>
 <ol type="1">
-<li><strong>Racionalidade limitada:</strong> contratos incompletos</li>
-<li><strong>Oportunismo:</strong> risco de hold-up</li>
-<li><strong>Especificidade de ativos:</strong> investimentos não-redeployáveis</li>
+<li><span class="math inline">\(P = CMg(q^*)\)</span> — condição de primeira ordem</li>
+<li><span class="math inline">\(CMg\)</span> crescente em <span class="math inline">\(q^*\)</span> — condição de segunda ordem</li>
+<li><span class="math inline">\(P \geq CVMe(q^*)\)</span> — melhor produzir que fechar</li>
 </ol>
-<div class="fragment">
-<p><strong>Decisão make-or-buy:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Fator</th>
-<th>Favorece “make”</th>
-<th>Favorece “buy”</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Especificidade</td>
-<td>Alta</td>
-<td>Baixa</td>
-</tr>
-<tr class="even">
-<td>Frequência</td>
-<td>Alta</td>
-<td>Baixa</td>
-</tr>
-<tr class="odd">
-<td>Incerteza</td>
-<td>Alta</td>
-<td>Baixa</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="fragment">
-<blockquote>
-<p><strong>Exemplo:</strong> Por que a Apple projeta chips mas terceiriza montagem?</p>
-</blockquote>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O ponto de encerramento é o mínimo do CVMe. Abaixo desse preço, a firma perde mais operando do que simplesmente pagando os custos fixos e produzindo zero.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="oferta-de-mercado-agregação" class="slide level2">
-<h2>Oferta de Mercado: Agregação</h2>
-<p>A <strong>oferta de mercado</strong> é a soma horizontal das ofertas individuais:</p>
-<p><span class="math display">\[Q^S(P) = \sum_{i=1}^{n} q_i^S(P)\]</span></p>
+<section id="excedente-do-produtor-e-lucro" class="slide level2">
+<h2>Excedente do Produtor e Lucro</h2>
+<p>O <strong>excedente do produtor</strong> (EP) mede o ganho acima dos custos variáveis:</p>
+<p><span class="math display">\[EP = RT - CV = \int_0^{q^*} [P - CMg(q)] \, dq\]</span></p>
 <div class="fragment">
-<p><strong>Com <span class="math inline">\(n\)</span> firmas idênticas:</strong></p>
-<p><span class="math display">\[Q^S(P) = n \cdot q^S(P)\]</span></p>
+<p><strong>Relação EP–Lucro no curto prazo:</strong></p>
+<p><span class="math display">\[EP = \pi + CF\]</span></p>
+<p>pois <span class="math inline">\(\pi = RT - CV - CF = EP - CF\)</span>.</p>
 </div>
 <div class="fragment">
-<p><strong>Propriedades:</strong></p>
-<ul>
-<li>Mais elástica que a oferta individual (mais opções de ajuste)</li>
-<li>Inclinação positiva: <span class="math inline">\(P\)</span> maior <span class="math inline">\(\Rightarrow\)</span> cada firma produz mais <strong>e</strong> mais firmas operam</li>
-<li>No LP: elasticidade depende das condições de entrada</li>
-</ul>
+<p><strong>No longo prazo</strong> (sem custos fixos):</p>
+<p><span class="math display">\[EP = \pi\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O EP inclui a recuperação dos custos fixos. Mesmo com lucro zero (<span class="math inline">\(\pi = 0\)</span>), a firma ainda tem <span class="math inline">\(EP = CF &gt; 0\)</span> — ela cobre exatamente seus custos fixos.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="equilíbrio-de-longo-prazo-p-cme-mínimo" class="slide level2">
-<h2>Equilíbrio de Longo Prazo: P = CMe mínimo</h2>
-<p><strong>Livre entrada e saída</strong> garante lucro zero no equilíbrio:</p>
-<p><span class="math display">\[P^* = \min_q CMe_{LP}(q) = CMg_{LP}(q^*_{EME})\]</span></p>
+<section id="excedente-do-produtor-interativo" class="slide level2">
+<h2>Excedente do Produtor Interativo</h2>
+<p>Use o slider para alterar o preço de mercado e observe como o EP (área sombreada) varia. Custo: <span class="math inline">\(C(q) = 0{,}5q^2 + q + 8\)</span>.</p>
+<div id="graph-a18-ps" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Preço (P): <span id="val-a18-p">8.0</span></label> <input type="range" id="sl-a18-p" min="3" max="15" step="0.5" value="8" oninput="window.updateA18PS(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a18-ps', {
+    boundingbox: [-1, 18, 16, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'R$/unid.', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var pVal = 8;
+
+  // MC(q) = q + 1 (derivative of 0.5q^2 + q + 8)
+  var mcCurve = board.create('functiongraph', [
+    function(q) { return q + 1; }, 0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var labelMC = board.create('text', [13.5, 15.5, 'CMg'],
+    { fontSize: 13, color: '#1565c0', fixed: true });
+
+  // AVC(q) = 0.5q + 1 (CV = 0.5q^2 + q, so AVC = 0.5q + 1)
+  var avcCurve = board.create('functiongraph', [
+    function(q) { return 0.5 * q + 1; }, 0.01, 15
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  var labelAVC = board.create('text', [13.5, 8.8, 'CVMe'],
+    { fontSize: 12, color: '#ff9800', fixed: true });
+
+  // Price line
+  var priceLine = board.create('functiongraph', [
+    function(q) { return pVal; }, 0, 15
+  ], { strokeColor: '#C8102E', strokeWidth: 2 });
+
+  var labelP = board.create('text', [
+    14.2, function() { return pVal + 0.6; },
+    function() { return 'P = ' + pVal.toFixed(1); }
+  ], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  // Optimal quantity: P = MC => P = q + 1 => q* = P - 1
+  // Shade EP area between price and MC from 0 to q*
+  var epArea = board.create('curve', [[], []], {
+    strokeWidth: 0, fillColor: '#388e3c', fillOpacity: 0.3, fixed: true
+  });
+
+  function updateEPArea() {
+    var qStar = Math.max(pVal - 1, 0);
+    var xCoords = [0];
+    var yCoords = [pVal];
+    var steps = 50;
+    for (var i = 0; i <= steps; i++) {
+      var q = (qStar * i) / steps;
+      xCoords.push(q);
+      yCoords.push(pVal);
+    }
+    for (var i = steps; i >= 0; i--) {
+      var q = (qStar * i) / steps;
+      xCoords.push(q);
+      yCoords.push(q + 1);
+    }
+    xCoords.push(0);
+    yCoords.push(pVal);
+    epArea.dataX = xCoords;
+    epArea.dataY = yCoords;
+  }
+
+  updateEPArea();
+
+  // q* point
+  var qStarPt = board.create('point', [
+    function() { return Math.max(pVal - 1, 0); },
+    function() { return pVal; }
+  ], { name: '', size: 4, color: '#388e3c', strokeColor: '#388e3c',
+       fillColor: '#388e3c', fixed: true });
+
+  // EP label
+  board.create('text', [
+    function() { return Math.max(pVal - 1, 0) / 2 - 0.5; },
+    function() { return pVal - 0.8; },
+    function() {
+      var qStar = Math.max(pVal - 1, 0);
+      var ep = 0.5 * (pVal - 1) * qStar;
+      return 'EP = ' + ep.toFixed(1);
+    }
+  ], { fontSize: 13, color: '#388e3c', fixed: true });
+
+  // q* label
+  board.create('text', [
+    function() { return Math.max(pVal - 1, 0) + 0.3; },
+    function() { return pVal + 0.6; },
+    function() { return 'q* = ' + Math.max(pVal - 1, 0).toFixed(1); }
+  ], { fontSize: 12, color: '#388e3c', fixed: true });
+
+  // Dashed line from q* to x-axis
+  board.create('segment', [
+    function() { return [Math.max(pVal - 1, 0), 0]; },
+    function() { return [Math.max(pVal - 1, 0), pVal]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1, fixed: true });
+
+  window.updateA18PS = function(val) {
+    pVal = parseFloat(val);
+    document.getElementById('val-a18-p').textContent = pVal.toFixed(1);
+    updateEPArea();
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="decomposição-via-insumos" class="slide level2">
+<h2>Decomposição via Insumos</h2>
+<p>Pelo <strong>Lema de Hotelling</strong>, a função lucro <span class="math inline">\(\pi^*(P, w, v)\)</span> gera as demandas ótimas de insumos:</p>
+<p><span class="math display">\[\frac{\partial \pi^*}{\partial w} = -L^*(P, w, v)\]</span></p>
+<div class="fragment">
+<p><strong>Estática comparativa sobre o preço do trabalho:</strong></p>
+<p><span class="math display">\[\frac{\partial L^*}{\partial w} = -\frac{\partial^2 \pi^*}{\partial w^2} \leq 0\]</span></p>
+<p>pois <span class="math inline">\(\pi^*\)</span> é convexa em <span class="math inline">\((w, v)\)</span>, logo <span class="math inline">\(\frac{\partial^2 \pi^*}{\partial w^2} \geq 0\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Resultado:</strong> a demanda condicional de trabalho é decrescente no salário — quando <span class="math inline">\(w\)</span> sobe, a firma usa menos trabalho.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A convexidade da função lucro nos preços dos insumos garante que a firma sempre reduz o uso de um insumo quando seu preço sobe — é a “lei da demanda” aplicada aos fatores de produção.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="decisão-de-entrada-e-saída-no-lp" class="slide level2">
+<h2>Decisão de Entrada e Saída no LP</h2>
+<p><strong>Livre entrada e saída</strong> garante lucro econômico zero no equilíbrio de longo prazo:</p>
+<p><span class="math display">\[P^* = \min_q CMe_{LP}(q) \qquad \pi^* = 0\]</span></p>
 <div class="fragment">
 <p><strong>Dinâmica de ajuste:</strong></p>
-<ol type="1">
-<li><strong>Curto prazo:</strong> <span class="math inline">\(P &gt; CMe_{LP}^{\min}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\pi &gt; 0\)</span> <span class="math inline">\(\Rightarrow\)</span> entrada de firmas</li>
-<li><strong>Transição:</strong> oferta se desloca para a direita, <span class="math inline">\(P\)</span> cai</li>
-<li><strong>Longo prazo:</strong> <span class="math inline">\(P = CMe_{LP}^{\min}\)</span>, <span class="math inline">\(\pi = 0\)</span>, <span class="math inline">\(n^*\)</span> firmas no mercado</li>
-</ol>
-</div>
-<div class="fragment">
-<p><span class="math display">\[n^* = \frac{Q^D(P^*)}{q^*_{EME}}\]</span></p>
-</div>
-</section>
-<section id="curvas-de-oferta-da-indústria-no-lp" class="slide level2">
-<h2>Curvas de Oferta da Indústria no LP</h2>
-<p>A inclinação da oferta de LP depende de como os custos mudam com a entrada:</p>
-<div class="fragment">
 <table class="caption-top">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 30%">
+<col style="width: 40%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Tipo</th>
-<th>Preços dos insumos</th>
-<th>Oferta LP</th>
+<th style="text-align: left;">Situação</th>
+<th style="text-align: center;">Sinal</th>
+<th style="text-align: left;">Consequência</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Custos constantes</strong></td>
-<td>Não mudam com <span class="math inline">\(n\)</span></td>
-<td>Horizontal (<span class="math inline">\(P = CMe^{\min}\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(P &gt; \min CMe_{LP}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi &gt; 0\)</span></td>
+<td style="text-align: left;">Novas firmas entram</td>
 </tr>
 <tr class="even">
-<td><strong>Custos crescentes</strong></td>
-<td>Sobem com <span class="math inline">\(n\)</span></td>
-<td>Positivamente inclinada</td>
+<td style="text-align: left;"><span class="math inline">\(P &lt; \min CMe_{LP}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi &lt; 0\)</span></td>
+<td style="text-align: left;">Firmas existentes saem</td>
 </tr>
 <tr class="odd">
-<td><strong>Custos decrescentes</strong></td>
-<td>Caem com <span class="math inline">\(n\)</span></td>
-<td>Negativamente inclinada</td>
+<td style="text-align: left;"><span class="math inline">\(P = \min CMe_{LP}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi = 0\)</span></td>
+<td style="text-align: left;">Equilíbrio — sem incentivo para entrar ou sair</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
-<p><strong>Custos crescentes</strong> (caso mais comum): entrada de firmas pressiona preços de insumos especializados.</p>
-<p><strong>Custos decrescentes</strong> (raro): economias externas — mais firmas <span class="math inline">\(\Rightarrow\)</span> melhor infraestrutura, fornecedores especializados.</p>
+<p><strong>Número de firmas no equilíbrio:</strong></p>
+<p><span class="math display">\[n^* = \frac{Q^D(P^*)}{q^*_{EME}}\]</span></p>
 </div>
-</section>
-<section id="receita-marginal-conceitos" class="slide level2">
-<h2>Receita Marginal: Conceitos</h2>
-<p>Para uma firma com <strong>algum poder de mercado</strong> (antecipando monopólio):</p>
-<p><span class="math display">\[RMg = \frac{dRT}{dq} = P + q\frac{dP}{dq} = P\left(1 + \frac{1}{\varepsilon_D}\right)\]</span></p>
 <div class="fragment">
-<p><strong>Casos:</strong></p>
-<ul>
-<li>Firma competitiva: <span class="math inline">\(\varepsilon_D \to -\infty \Rightarrow RMg = P\)</span></li>
-<li>Monopolista: <span class="math inline">\(RMg &lt; P\)</span> (para vender mais, reduz o preço de todas as unidades)</li>
-</ul>
-<iframe src="../../graficos/cap12/receita-marginal.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<blockquote>
+<p>A condição de lucro zero não significa que o empresário não ganha nada — o custo econômico já inclui o retorno normal do capital.</p>
+</blockquote>
 </div>
 </section>
-<section id="regiões-de-operação-e-encerramento" class="slide level2">
-<h2>Regiões de Operação e Encerramento</h2>
-<p><strong>Mapa completo de decisão da firma:</strong></p>
+<section id="oferta-de-lp-firma-e-indústria" class="slide level2">
+<h2>Oferta de LP: Firma e Indústria</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Firma individual no LP:</strong></p>
+<ul>
+<li>Oferta = CMg acima do <span class="math inline">\(CMe_{LP}\)</span> mínimo</li>
+<li>Cada firma produz na escala eficiente <span class="math inline">\(q^*_{EME}\)</span></li>
+</ul>
+<p>. . .</p>
+<p><strong>Indústria com custos constantes:</strong></p>
+<ul>
+<li>Oferta de LP é <strong>horizontal</strong> em <span class="math inline">\(P = \min CMe_{LP}\)</span></li>
+<li>Ajuste ocorre pelo <strong>número de firmas</strong>, não pelo preço</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Ajuste via <span class="math inline">\(n\)</span>:</strong></p>
+<ol type="1">
+<li>Demanda aumenta → <span class="math inline">\(P\)</span> sobe no CP</li>
+<li><span class="math inline">\(\pi &gt; 0\)</span> → firmas entram</li>
+<li>Oferta se desloca para a direita</li>
+<li><span class="math inline">\(P\)</span> retorna a <span class="math inline">\(\min CMe_{LP}\)</span></li>
+<li>Mais firmas, mesmo preço</li>
+</ol>
+<p>. . .</p>
+<blockquote>
+<p>No caso de custos constantes, a oferta de LP é <strong>perfeitamente elástica</strong> — choques de demanda afetam apenas a quantidade, nunca o preço.</p>
+</blockquote>
+</div></div>
+</section>
+<section id="custos-crescentes-e-decrescentes" class="slide level2">
+<h2>Custos Crescentes e Decrescentes</h2>
+<p>A inclinação da oferta de LP depende de como os custos mudam com a entrada de firmas:</p>
+<div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Preço</th>
-<th>Decisão CP</th>
-<th>Decisão LP</th>
+<th style="text-align: left;">Tipo de Indústria</th>
+<th style="text-align: left;">Preços dos insumos</th>
+<th style="text-align: left;">Oferta de LP</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(P &gt; CMe\)</span></td>
-<td>Operar: <span class="math inline">\(\pi &gt; 0\)</span></td>
-<td>Operar: <span class="math inline">\(\pi &gt; 0\)</span></td>
+<td style="text-align: left;"><strong>Custos constantes</strong></td>
+<td style="text-align: left;">Não mudam com <span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">Horizontal</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(CMe &gt; P &gt; CVMe\)</span></td>
-<td>Operar: <span class="math inline">\(\pi &lt; 0\)</span>, mas cobre parte do CF</td>
-<td>Sair</td>
+<td style="text-align: left;"><strong>Custos crescentes</strong></td>
+<td style="text-align: left;">Sobem com <span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">Positivamente inclinada</td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(P = CVMe_{\min}\)</span></td>
-<td>Indiferente entre operar e fechar</td>
-<td>Sair</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(P &lt; CVMe_{\min}\)</span></td>
-<td>Fechar</td>
-<td>Sair</td>
+<td style="text-align: left;"><strong>Custos decrescentes</strong></td>
+<td style="text-align: left;">Caem com <span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">Negativamente inclinada</td>
 </tr>
 </tbody>
 </table>
-<iframe src="../../graficos/cap12/lucro-maximo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</section>
-<section id="dinâmica-de-entrada-e-saída" class="slide level2">
-<h2>Dinâmica de Entrada e Saída</h2>
-<p><strong>Modelo de ajuste:</strong></p>
-<p><span class="math display">\[\frac{dn}{dt} = \phi \cdot \pi(P, w, v)\]</span></p>
-<p>onde <span class="math inline">\(\phi &gt; 0\)</span> é a velocidade de ajuste.</p>
+</div>
 <div class="fragment">
-<p><strong>Sequência de eventos após choque positivo de demanda:</strong></p>
-<ol type="1">
-<li><span class="math inline">\(D\)</span> se desloca para a direita <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(P\)</span> sobe no CP</li>
-<li><span class="math inline">\(P &gt; CMe^{\min}\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(\pi &gt; 0\)</span> <span class="math inline">\(\Rightarrow\)</span> firmas entram</li>
-<li><span class="math inline">\(S\)</span> se desloca para a direita <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(P\)</span> cai gradualmente</li>
-<li>Novo equilíbrio LP: mais firmas, <span class="math inline">\(P\)</span> volta a <span class="math inline">\(CMe^{\min}\)</span> (custos constantes)</li>
-</ol>
+<p><strong>Custos crescentes</strong> (caso mais comum): entrada de firmas pressiona preços de insumos especializados (terra agrícola, mão de obra qualificada).</p>
+</div>
+<div class="fragment">
+<p><strong>Custos decrescentes</strong> (raro): economias externas — mais firmas geram melhor infraestrutura, fornecedores especializados, spillovers de conhecimento.</p>
 </div>
 <div class="fragment">
 <blockquote>
-<p>No mundo real, ajuste é lento — construir fábricas leva tempo. Lucros persistem no <strong>médio prazo</strong>.</p>
+<p>No mercado de tecnologia, custos decrescentes explicam por que regiões como o Vale do Silício atraem cada vez mais firmas — a concentração reduz custos para todos.</p>
 </blockquote>
 </div>
 </section>
-<section id="simulação-mercado-competitivo" class="slide level2">
-<h2>Simulação: Mercado Competitivo</h2>
-<p><strong>Regras do jogo (20 min):</strong></p>
-<ul>
-<li>Cada grupo é uma <strong>firma</strong> no mercado de café artesanal</li>
-<li>Função de custo: <span class="math inline">\(CT(q) = 50 + 2q + 0{,}1q^2\)</span></li>
-<li>Rodada 1: preço de mercado <span class="math inline">\(P = 12\)</span></li>
-<li>Rodada 2: choque — <span class="math inline">\(P\)</span> cai para <span class="math inline">\(P = 6\)</span></li>
-<li>Rodada 3: longo prazo — livre entrada/saída</li>
-</ul>
+<section id="renda-econômica-e-renda-ricardiana" class="slide level2">
+<h2>Renda Econômica e Renda Ricardiana</h2>
+<p>Nem todas as firmas são idênticas. Firmas com <strong>custos mais baixos</strong> obtêm renda mesmo no equilíbrio de LP.</p>
 <div class="fragment">
-<p><strong>Cada grupo deve decidir:</strong></p>
-<ol type="1">
-<li>Quanto produzir? (encontre <span class="math inline">\(q^*\)</span> onde <span class="math inline">\(P = CMg\)</span>)</li>
-<li>Calcule o lucro. Opera ou encerra?</li>
-<li>No LP, quantas firmas sobrevivem se <span class="math inline">\(Q^D = 500\)</span>?</li>
-</ol>
+<p><strong>Renda ricardiana:</strong> diferença entre o custo da firma <strong>inframarginal</strong> e da firma <strong>marginal</strong>.</p>
+<p><span class="math display">\[\text{Renda}_i = (CMe_{\text{marginal}} - CMe_i) \cdot q_i\]</span></p>
 </div>
-</section>
-<section id="pbl-startup-de-delivery" class="slide level2">
-<h2>PBL: Startup de Delivery</h2>
-<p><strong>Cenário:</strong> Vocês são fundadores de uma startup de delivery em São Paulo.</p>
 <div class="fragment">
-<p><strong>Dados:</strong></p>
+<p><strong>No equilíbrio de LP:</strong></p>
 <ul>
-<li>Custo fixo mensal: R$ 80.000 (aluguel, tecnologia, salários fixos)</li>
-<li>Custo variável por entrega: R$ 8</li>
-<li>Preço médio por entrega: R$ 15</li>
-<li>Demanda atual: 10.000 entregas/mês</li>
-<li>Concorrentes: iFood, Rappi, 99Food (preço médio R$ 14)</li>
+<li>Firma marginal: <span class="math inline">\(\pi = 0\)</span> (determina o preço)</li>
+<li>Firmas inframarginais: <span class="math inline">\(\pi &gt; 0\)</span> (renda econômica)</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Questões para discussão (10 min):</strong></p>
-<ol type="1">
-<li>Calcule o lucro mensal. A firma é viável no CP?</li>
-<li>O que acontece se um concorrente baixar o preço para R$ 12?</li>
-<li>No LP, qual é o preço de equilíbrio? Sua firma sobrevive?</li>
-</ol>
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Terras mais férteis geram renda ricardiana na agricultura</li>
+<li>Empresas com tecnologia superior obtêm lucro mesmo em mercados competitivos</li>
+<li>Talentos excepcionais recebem salários acima do custo de oportunidade</li>
+</ul>
 </div>
 </section>
-<section id="think-pair-share-lucro-zero-é-ruim" class="slide level2">
-<h2>Think-Pair-Share: Lucro zero é ruim?</h2>
+<section id="simulação-instruções" class="slide level2">
+<h2>Simulação: Instruções</h2>
+<div title="Atividade em Equipes">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Atividade em Equipes</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Tempo:</strong> 25 minutos | <strong>Formato:</strong> Equipes de 4–5 alunos</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Regras:</strong></p>
+<ol type="1">
+<li>Cada equipe é uma <strong>firma</strong> com custo <span class="math inline">\(CT(q) = 0{,}5q^2 + q + 8\)</span></li>
+<li>Objetivo: escolher <span class="math inline">\(q\)</span> que maximiza o lucro dado o preço de mercado</li>
+<li>Três cenários serão apresentados em sequência</li>
+<li>Para cada cenário: calcule <span class="math inline">\(q^*\)</span>, o lucro <span class="math inline">\(\pi\)</span> e decida se opera ou encerra</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Referência rápida:</strong></p>
+<ul>
+<li><span class="math inline">\(CMg(q) = q + 1\)</span></li>
+<li><span class="math inline">\(CVMe(q) = 0{,}5q + 1\)</span></li>
+<li><span class="math inline">\(CMe(q) = 0{,}5q + 1 + 8/q\)</span></li>
+<li><span class="math inline">\(\min CVMe = 1\)</span> (em <span class="math inline">\(q = 0\)</span>)</li>
+<li>Ponto de encerramento: <span class="math inline">\(P &lt; 1\)</span></li>
+</ul>
+</div>
+</section>
+<section id="simulação-cenário-1-choque-de-demanda" class="slide level2">
+<h2>Simulação: Cenário 1 — Choque de Demanda</h2>
+<p><strong>O preço de mercado sobe de <span class="math inline">\(P = 8\)</span> para <span class="math inline">\(P = 12\)</span>.</strong></p>
+<div class="fragment">
+<p><strong>Tarefa:</strong></p>
+<ol type="1">
+<li>Com <span class="math inline">\(P = 8\)</span>: calcule <span class="math inline">\(q^*\)</span>, <span class="math inline">\(RT\)</span>, <span class="math inline">\(CT\)</span> e <span class="math inline">\(\pi\)</span></li>
+<li>Com <span class="math inline">\(P = 12\)</span>: recalcule tudo</li>
+<li>Compare: quanto a quantidade ofertada aumentou?</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Previsões teóricas (<span class="math inline">\(P = CMg \implies P = q + 1\)</span>):</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Variável</th>
+<th style="text-align: center;"><span class="math inline">\(P = 8\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P = 12\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(q^*\)</span></td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">11</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(RT\)</span></td>
+<td style="text-align: center;">56</td>
+<td style="text-align: center;">132</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CT\)</span></td>
+<td style="text-align: center;">39,5</td>
+<td style="text-align: center;">79,5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\pi\)</span></td>
+<td style="text-align: center;">16,5</td>
+<td style="text-align: center;">52,5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
 <blockquote>
-<p><strong>Questão:</strong> “No equilíbrio de longo prazo, as firmas competitivas obtêm lucro econômico zero. Isso significa que o empreendedorismo não vale a pena?”</p>
+<p>O lucro mais que triplicou com um aumento de 50% no preço. A função lucro é <strong>convexa</strong> em <span class="math inline">\(P\)</span> — a firma se beneficia desproporcionalmente de preços altos.</p>
 </blockquote>
-<div class="fragment">
-<p><strong>Think (2 min):</strong> Reflita individualmente.</p>
-<p><strong>Pair (3 min):</strong> Discuta com seu vizinho. Considere:</p>
-<ul>
-<li>Diferença entre lucro econômico e lucro contábil</li>
-<li>O que está embutido no “custo” econômico</li>
-<li>Lucros durante a transição para o equilíbrio</li>
-</ul>
-</div>
-<div class="fragment">
-<p><strong>Share:</strong> Dois voluntários apresentam argumentos opostos.</p>
 </div>
 </section>
-<section id="próxima-aula-equilíbrio-geral" class="slide level2">
-<h2>Próxima Aula: Equilíbrio Geral</h2>
-<p><strong>Bloco 4 — Equilíbrio e Bem-Estar</strong></p>
-<ul>
-<li>Passamos da firma individual para o <strong>mercado como um todo</strong></li>
-<li>Equilíbrio parcial vs.&nbsp;equilíbrio geral</li>
-<li>Eficiência de Pareto e os dois teoremas do bem-estar</li>
-</ul>
+<section id="simulação-cenário-2-aumento-de-custo" class="slide level2">
+<h2>Simulação: Cenário 2 — Aumento de Custo</h2>
+<p><strong>O preço de um insumo sobe, elevando os custos.</strong> Novo custo: <span class="math inline">\(CT(q) = 0{,}5q^2 + 3q + 8\)</span>.</p>
 <div class="fragment">
-<p><strong>Preparação:</strong></p>
+<p><strong>Novo CMg:</strong> <span class="math inline">\(CMg(q) = q + 3\)</span> (antes era <span class="math inline">\(q + 1\)</span>)</p>
+</div>
+<div class="fragment">
+<p><strong>Tarefa (com <span class="math inline">\(P = 12\)</span>):</strong></p>
+<ol type="1">
+<li>Encontre o novo <span class="math inline">\(q^*\)</span> onde <span class="math inline">\(P = CMg\)</span></li>
+<li>Calcule o novo lucro</li>
+<li>Compare com o Cenário 1</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Previsão teórica:</strong></p>
 <ul>
-<li>Revisar oferta e demanda de mercado</li>
-<li>Pensar: quando o equilíbrio parcial é insuficiente?</li>
+<li><span class="math inline">\(q^* = 12 - 3 = 9\)</span> (antes: 11)</li>
+<li><span class="math inline">\(CT = 0{,}5(81) + 27 + 8 = 75{,}5\)</span></li>
+<li><span class="math inline">\(\pi = 108 - 75{,}5 = 32{,}5\)</span> (antes: 52,5)</li>
 </ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O aumento do custo do insumo <strong>deslocou a curva de oferta para a esquerda</strong>: menos quantidade a cada preço. A firma ainda opera (<span class="math inline">\(\pi &gt; 0\)</span>), mas o lucro caiu 38%.</p>
+</blockquote>
+</div>
+</section>
+<section id="simulação-cenário-3-entrada-de-concorrente" class="slide level2">
+<h2>Simulação: Cenário 3 — Entrada de Concorrente</h2>
+<p><strong>Novas firmas entram no mercado</strong>, atraídas pelo lucro positivo. A oferta de mercado se desloca para a direita e o preço cai para <span class="math inline">\(P = 5\)</span>.</p>
+<div class="fragment">
+<p><strong>Tarefa (custo original <span class="math inline">\(CT = 0{,}5q^2 + q + 8\)</span>, <span class="math inline">\(P = 5\)</span>):</strong></p>
+<ol type="1">
+<li>Calcule <span class="math inline">\(q^*\)</span> e <span class="math inline">\(\pi\)</span></li>
+<li>A firma deve operar ou encerrar?</li>
+<li>Se todas as firmas são idênticas, qual será o preço de LP?</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Previsão teórica:</strong></p>
+<ul>
+<li><span class="math inline">\(q^* = 5 - 1 = 4\)</span>, <span class="math inline">\(RT = 20\)</span>, <span class="math inline">\(CT = 0{,}5(16) + 4 + 8 = 20\)</span></li>
+<li><span class="math inline">\(\pi = 0\)</span> — <strong>lucro econômico zero!</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A entrada de concorrentes eliminou os lucros. O preço <span class="math inline">\(P = 5\)</span> é exatamente o <span class="math inline">\(\min CMe_{LP}\)</span>. Este é o equilíbrio de longo prazo.</p>
+</blockquote>
+</div>
+</section>
+<section id="função-lucro-propriedades" class="slide level2">
+<h2>Função Lucro: Propriedades</h2>
+<p>A função lucro <span class="math inline">\(\pi^*(P)\)</span> é <strong>convexa</strong> em <span class="math inline">\(P\)</span>. Use o slider para alterar o parâmetro de custo <span class="math inline">\(a\)</span> em <span class="math inline">\(C(q) = a \cdot q^2 + q\)</span>.</p>
+<div id="graph-a18-profit" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Parâmetro de custo (a): <span id="val-a18-cost">0.50</span></label> <input type="range" id="sl-a18-cost" min="0.3" max="1.5" step="0.05" value="0.5" oninput="window.updateA18Profit(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a18-profit', {
+    boundingbox: [-1, 60, 16, -10],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'P', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '\u03C0*(P)', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var aVal = 0.5;
+
+  // pi*(P) = max_q (Pq - aq^2 - q)
+  // FOC: P = 2aq + 1 => q* = (P-1)/(2a)
+  // pi* = P*(P-1)/(2a) - a*((P-1)/(2a))^2 - (P-1)/(2a)
+  //      = (P-1)^2 / (2a) * [P/(P-1) - 1/2 - 1] ... simplify:
+  // pi* = (P-1)^2 / (4a) for P >= 1, else 0
+
+  var profitCurve = board.create('functiongraph', [
+    function(p) {
+      if (p <= 1) return 0;
+      return (p - 1) * (p - 1) / (4 * aVal);
+    }, 0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var labelProfit = board.create('text', [12.5, function() {
+    return (12.5 - 1) * (12.5 - 1) / (4 * aVal) + 3;
+  }, '\u03C0*(P)'], { fontSize: 13, color: '#1565c0', fixed: true });
+
+  // Zero-profit line
+  board.create('functiongraph', [
+    function(p) { return 0; }, 0, 15
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+
+  // Tangent line at P=8 to show convexity
+  var tangentLine = board.create('functiongraph', [
+    function(p) {
+      var p0 = 8;
+      var pi0 = (p0 - 1) * (p0 - 1) / (4 * aVal);
+      var slope = (p0 - 1) / (2 * aVal);
+      return pi0 + slope * (p - p0);
+    }, 0, 15
+  ], { strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2 });
+
+  var labelTangent = board.create('text', [1, function() {
+    var p0 = 8;
+    var pi0 = (p0 - 1) * (p0 - 1) / (4 * aVal);
+    var slope = (p0 - 1) / (2 * aVal);
+    return pi0 + slope * (1 - p0) + 3;
+  }, 'Tangente: inclin. = q*(P)'], { fontSize: 11, color: '#ff9800', fixed: true });
+
+  // Point on curve at P=8
+  board.create('point', [8, function() {
+    return (8 - 1) * (8 - 1) / (4 * aVal);
+  }], { name: '', size: 4, color: '#C8102E', strokeColor: '#C8102E',
+        fillColor: '#C8102E', fixed: true });
+
+  // Convexity annotation
+  board.create('text', [9.5, function() {
+    return (8 - 1) * (8 - 1) / (4 * aVal) + 5;
+  }, function() {
+    var pi8 = (8 - 1) * (8 - 1) / (4 * aVal);
+    return '\u03C0*(8) = ' + pi8.toFixed(1);
+  }], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  window.updateA18Profit = function(val) {
+    aVal = parseFloat(val);
+    document.getElementById('val-a18-cost').textContent = aVal.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="discussão-e-resultados" class="slide level2">
+<h2>Discussão e Resultados</h2>
+<div title="Debrief — 10 minutos">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Debrief — 10 minutos</strong></p>
+</div>
+<div class="callout-content">
+<p>Compare os resultados da sua equipe com as previsões teóricas de cada cenário.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Perguntas para discussão:</strong></p>
+<ol type="1">
+<li>No Cenário 1, o lucro mais que triplicou quando <span class="math inline">\(P\)</span> subiu 50%. Por que a resposta é <strong>mais que proporcional</strong>?</li>
+<li>No Cenário 2, o aumento de custo reduziu <span class="math inline">\(q^*\)</span> e <span class="math inline">\(\pi\)</span>. Quais insumos na prática teriam esse efeito?</li>
+<li>No Cenário 3, a entrada eliminou os lucros. Isso é bom ou ruim para a sociedade?</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Lições principais:</strong></p>
+<ul>
+<li>A função lucro é convexa em <span class="math inline">\(P\)</span> — a firma se beneficia da volatilidade de preços</li>
+<li>Choques de custo deslocam a oferta e reduzem o lucro</li>
+<li>A livre entrada é o mecanismo que elimina lucros extraordinários no LP</li>
+<li>O equilíbrio de LP com <span class="math inline">\(\pi = 0\)</span> é eficiente: <span class="math inline">\(P = \min CMe\)</span></li>
+</ul>
+</div>
+</section>
+<section id="próxima-aula" class="slide level2">
+<h2>Próxima Aula</h2>
+<p><strong>Aula 19 — Equilíbrio Competitivo</strong></p>
+<div class="fragment">
+<ul>
+<li>Da firma individual para o <strong>mercado como um todo</strong></li>
+<li>Equilíbrio parcial: oferta e demanda determinam <span class="math inline">\(P^*\)</span> e <span class="math inline">\(Q^*\)</span></li>
+<li>Primeiro Teorema do Bem-Estar: equilíbrio competitivo é eficiente</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Preparação">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Preparação</strong></p>
+</div>
+<div class="callout-content">
+<p>Se o equilíbrio competitivo maximiza o excedente total, por que existem mercados ineficientes? Pense em exemplos onde as hipóteses de concorrência perfeita falham.</p>
+</div>
+</div>
+</div>
+</div>
 
 </div>
 </section>

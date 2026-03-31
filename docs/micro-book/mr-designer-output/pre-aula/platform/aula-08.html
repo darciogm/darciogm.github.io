@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula — Microeconomia II</title>
+<title>Pré-Aula 08 — Equação de Slutsky: Teoria — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,271 +17,264 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-08-decomposição-slutsky-case-brasil-prática">Pré-Aula
-08 — Decomposição Slutsky + Case Brasil (Prática)</h1>
+<h1 id="pré-aula-08-equação-de-slutsky-teoria">Pré-Aula 08 — Equação de
+Slutsky: Teoria</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 6 completo</strong> do livro interativo + Box Brasil |
-Tempo estimado: <strong>45 min</strong></p>
+<p><strong>Cap. 5, Seções 5.1–5.3</strong> do livro interativo | Tempo
+estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 6 completo** do livro interativo + Box Brasil | Tempo estimado: **45 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
 <ol type="1">
-<li>Distinguir substitutos/complementares brutos (Marshallianos) de
-líquidos (Hicksianos) e explicar por que a distinção importa</li>
-<li>Aplicar a simetria dos efeitos cruzados Hicksianos e a equação de
-Slutsky cruzada</li>
-<li>Analisar padrões de consumo brasileiros (arroz-feijão, carne-frango,
-gasolina-etanol) usando o ferramental de demanda</li>
+<li>Decompor o efeito total de uma mudança de preço em efeito
+substituição (ES) e efeito renda (ER)</li>
+<li>Enunciar a equação de Slutsky e explicar o sinal de cada
+componente</li>
+<li>Classificar bens como normais, inferiores ou de Giffen com base na
+decomposição</li>
 </ol>
 <hr />
-<h2 id="efeitos-preço-cruzados">1. Efeitos preço-cruzados</h2>
-<p>Quando o preço de <span class="math inline">\(y\)</span> muda, o que
-acontece com a demanda de <span class="math inline">\(x\)</span>? A
-resposta depende de <strong>qual demanda</strong> estamos usando.</p>
-<h3 id="substitutos-e-complementares-brutos-marshallianos">Substitutos e
-complementares brutos (Marshallianos)</h3>
-<p>Baseados na demanda Marshalliana <span class="math inline">\(x^*(p_x,
-p_y, m)\)</span>:</p>
-<p><span class="math display">\[\text{Substitutos brutos:} \quad
-\frac{\partial x^*}{\partial p_y} &gt; 0 \qquad \text{(preço de } y
-\text{ sobe } \Rightarrow \text{ demanda de } x \text{
-sobe)}\]</span></p>
-<span class="math display">\[\text{Complementares brutos:} \quad
-\frac{\partial x^*}{\partial p_y} &lt; 0 \qquad \text{(preço de } y
-\text{ sobe } \Rightarrow \text{ demanda de } x \text{ cai)}\]</span>
-<div class="admonition warning">
-<div class="admonition-title">
-Problema dos brutos
-</div>
-<p>A relação <strong>não é necessariamente simétrica</strong>: é
-possível que <span class="math inline">\(x\)</span> seja substituto
-bruto de <span class="math inline">\(y\)</span>, mas <span
-class="math inline">\(y\)</span> seja complementar bruto de <span
-class="math inline">\(x\)</span>. Isso ocorre porque a Marshalliana
-mistura efeitos substituição e renda.</p>
-</div>
-<pre><code>A relação **não é necessariamente simétrica**: é possível que $x$ seja substituto bruto de $y$, mas $y$ seja complementar bruto de $x$. Isso ocorre porque a Marshalliana mistura efeitos substituição e renda.</code></pre>
-<hr />
-<h2 id="substitutos-e-complementares-líquidos-hicksianos">2. Substitutos
-e complementares líquidos (Hicksianos)</h2>
-<p>Baseados na demanda Hicksiana <span class="math inline">\(h_x(p_x,
-p_y, \bar{U})\)</span>:</p>
-<p><span class="math display">\[\text{Substitutos líquidos:} \quad
-\frac{\partial h_x}{\partial p_y} &gt; 0\]</span></p>
-<p><span class="math display">\[\text{Complementares líquidos:} \quad
-\frac{\partial h_x}{\partial p_y} &lt; 0\]</span></p>
-<h3 id="a-grande-vantagem-simetria">A grande vantagem: simetria</h3>
-<p><span class="math display">\[\boxed{\frac{\partial h_x}{\partial p_y}
-= \frac{\partial h_y}{\partial p_x}}\]</span></p>
-<blockquote>
-<p>Se <span class="math inline">\(x\)</span> é substituto líquido de
-<span class="math inline">\(y\)</span>, então <span
-class="math inline">\(y\)</span> é substituto líquido de <span
-class="math inline">\(x\)</span>. Sempre!</p>
-</blockquote>
-<p>Essa simetria vem do <strong>lema de Shephard</strong> e do teorema
-de Young:</p>
-<p><span class="math display">\[\frac{\partial h_x}{\partial p_y} =
-\frac{\partial^2 E}{\partial p_y \partial p_x} = \frac{\partial^2
-E}{\partial p_x \partial p_y} = \frac{\partial h_y}{\partial
-p_x}\]</span></p>
-<hr />
-<h2 id="equação-de-slutsky-cruzada">3. Equação de Slutsky cruzada</h2>
-<p>A decomposição de Slutsky também vale para efeitos cruzados:</p>
-<p><span class="math display">\[\frac{\partial x^*}{\partial p_y} =
-\frac{\partial h_x}{\partial p_y} - y^* \frac{\partial x^*}{\partial
-m}\]</span></p>
-<span class="math display">\[\underbrace{\text{Efeito
-bruto}}_{\text{observável}} = \underbrace{\text{Efeito
-líquido}}_{\text{substituição pura}} - \underbrace{\text{Efeito renda
-cruzado}}_{y^* \cdot \partial x^*/\partial m}\]</span>
+<h2 id="o-problema-por-que-decompor">1. O problema: por que
+decompor?</h2>
+<p>Quando o preço de um bem sobe, a quantidade demandada geralmente cai.
+Mas por quê? Dois mecanismos atuam simultaneamente:</p>
+<ol type="1">
+<li><strong>Efeito substituição (ES)</strong>: o bem ficou relativamente
+mais caro — o consumidor substitui por alternativas.</li>
+<li><strong>Efeito renda (ER)</strong>: o poder de compra caiu — o
+consumidor é efetivamente mais pobre.</li>
+</ol>
+<p>Separar esses efeitos é crucial porque eles podem apontar em direções
+opostas.</p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Frango e carne bovina no Brasil.</strong></p>
-<p>Quando o preço da carne bovina sobe, os brasileiros compram mais
-frango (substituto bruto). Mas parte desse aumento é efeito renda: carne
-cara “empobrece” a família, que migra para proteína mais barata. O
-efeito líquido (compensado) isola a pura substituição: mesmo mantendo o
-poder de compra, o consumidor trocaria carne por frango porque o preço
-relativo mudou.</p>
+<p>Imagine que o preço da carne dobra. Você compra menos carne por dois
+motivos: (1) frango ficou relativamente mais barato (ES), e (2) sua
+renda real caiu, reduzindo seu consumo geral (ER). Para bens normais,
+ambos reduzem a demanda. Mas para bens inferiores, o ER pode aumentar a
+demanda!</p>
 </div>
-<pre><code>**Frango e carne bovina no Brasil.**
-
-Quando o preço da carne bovina sobe, os brasileiros compram mais frango (substituto bruto). Mas parte desse aumento é efeito renda: carne cara &quot;empobrece&quot; a família, que migra para proteína mais barata. O efeito líquido (compensado) isola a pura substituição: mesmo mantendo o poder de compra, o consumidor trocaria carne por frango porque o preço relativo mudou.</code></pre>
 <hr />
-<h2 id="elasticidade-preço-cruzado">4. Elasticidade preço-cruzado</h2>
-<p><span class="math display">\[\varepsilon_{x, p_y} = \frac{\partial
-x^*}{\partial p_y} \cdot \frac{p_y}{x^*}\]</span></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Sinal de <span
-class="math inline">\(\varepsilon_{x, p_y}\)</span></th>
-<th style="text-align: left;">Classificação (bruta)</th>
-<th style="text-align: left;">Exemplo BR</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(&gt;
-0\)</span></td>
-<td style="text-align: left;">Substitutos brutos</td>
-<td style="text-align: left;">Gasolina e etanol</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(&lt;
-0\)</span></td>
-<td style="text-align: left;">Complementares brutos</td>
-<td style="text-align: left;">Arroz e feijão</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(=
-0\)</span></td>
-<td style="text-align: left;">Independentes</td>
-<td style="text-align: left;">Sapato e sorvete</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="agregação-da-demanda-individual-à-demanda-de-mercado">5.
-Agregação: da demanda individual à demanda de mercado</h2>
-<p>A demanda de mercado é a <strong>soma horizontal</strong> das
-demandas individuais:</p>
-<p><span class="math display">\[X^D(p) = \sum_{i=1}^{n} x_i^*(p,
-m_i)\]</span></p>
-<p>Propriedades:</p>
-<ul>
-<li>Se cada <span class="math inline">\(x_i^*\)</span> é decrescente em
-<span class="math inline">\(p_x\)</span>, a demanda de mercado também é
-(a menos de Giffen)</li>
-<li>A <strong>distribuição de renda</strong> afeta a demanda de mercado
-(mesmo com renda agregada igual)</li>
-<li>A elasticidade de mercado é uma <strong>média ponderada</strong> das
-elasticidades individuais</li>
-</ul>
-<hr />
-<h2 id="case-brasil-padrões-de-consumo">6. Case Brasil: padrões de
-consumo</h2>
-<div class="admonition example">
-<div class="admonition-title">
-Exemplos empíricos brasileiros
-</div>
-<p><strong>Arroz e feijão</strong> (<span
-class="math inline">\(\varepsilon_{cross} &lt; 0\)</span>):
-complementares clássicos na dieta brasileira. Quando o preço do feijão
-sobe, o consumo de arroz também cai — são consumidos juntos.</p>
-<p><strong>Carne bovina e frango</strong> (<span
-class="math inline">\(\varepsilon_{cross} &gt; 0\)</span>): substitutos.
-Nas crises, o brasileiro migra de carne bovina para frango. A
-elasticidade cruzada estimada é <span class="math inline">\(\approx
-0{,}3\)</span> a <span class="math inline">\(0{,}5\)</span>.</p>
-<p><strong>Gasolina e etanol</strong> (<span
-class="math inline">\(\varepsilon_{cross} &gt; 0\)</span>): no Brasil,
-graças aos carros flex, são substitutos quase perfeitos quando a relação
-de preço cruza o limiar de 70%. A elasticidade cruzada é alta (<span
-class="math inline">\(\approx 0{,}8\)</span> a <span
-class="math inline">\(1{,}2\)</span>).</p>
-</div>
-<pre><code>**Arroz e feijão** ($\varepsilon_{cross} &lt; 0$): complementares clássicos na dieta brasileira. Quando o preço do feijão sobe, o consumo de arroz também cai — são consumidos juntos.
-
-**Carne bovina e frango** ($\varepsilon_{cross} &gt; 0$): substitutos. Nas crises, o brasileiro migra de carne bovina para frango. A elasticidade cruzada estimada é $\approx 0{,}3$ a $0{,}5$.
-
-**Gasolina e etanol** ($\varepsilon_{cross} &gt; 0$): no Brasil, graças aos carros flex, são substitutos quase perfeitos quando a relação de preço cruza o limiar de 70%. A elasticidade cruzada é alta ($\approx 0{,}8$ a $1{,}2$).</code></pre>
-<hr />
-<h2 id="gráfico-interativo-substitutos-e-complementares">Gráfico
-interativo: substitutos e complementares</h2>
-<div id="graph-cross-effects" style="min-height: 450px;">
-<iframe src="../../graficos/cap06/substitutos-complementares.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+<h2 id="decomposição-de-hicks">2. Decomposição de Hicks</h2>
+<p>A decomposição de Hicks usa a <strong>curva de indiferença
+original</strong> como referência.</p>
+<p>Partindo de <span class="math inline">\((p_1, p_2, I)\)</span> com
+utilidade <span class="math inline">\(\bar{u} = V(p, I)\)</span>, quando
+<span class="math inline">\(p_1\)</span> muda para <span
+class="math inline">\(p_1&#39;\)</span>:</p>
+<p><strong>Efeito Total (ET)</strong>:</p>
+<p><span class="math display">\[\text{ET} = x_1^M(p_1&#39;, p_2, I) -
+x_1^M(p_1, p_2, I)\]</span></p>
+<p><strong>Efeito Substituição de Hicks (ES)</strong>:</p>
+<p><span class="math display">\[\text{ES}_H = h_1(p_1&#39;, p_2,
+\bar{u}) - h_1(p_1, p_2, \bar{u})\]</span></p>
+<p>O ES move o consumidor ao longo da curva de indiferença original,
+mudando apenas preços relativos.</p>
+<p><strong>Efeito Renda (ER)</strong>:</p>
+<p><span class="math display">\[\text{ER} = \text{ET} - \text{ES}_H =
+x_1^M(p_1&#39;, p_2, I) - h_1(p_1&#39;, p_2, \bar{u})\]</span></p>
+<h2 id="gráfico-interativo-efeitos-renda-e-substituição">Gráfico
+interativo: Efeitos Renda e Substituição</h2>
+<iframe src="graficos/cap05/efeito-renda-substituicao.html">
 </iframe>
-</div>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<ul>
-<li>Aumente <span class="math inline">\(p_y\)</span> e observe se <span
-class="math inline">\(x^*\)</span> sobe (substitutos) ou cai
-(complementares)</li>
-<li>Compare o efeito bruto (Marshalliano) com o líquido (Hicksiano)</li>
-<li>Teste o caso gasolina-etanol com elasticidade cruzada alta</li>
-</ul>
+<p>Aumente o preço de <span class="math inline">\(x_1\)</span> e observe
+os três passos: (1) nova reta orçamentária, (2) reta compensada
+(paralela à nova, tangente à curva original), (3) ponto final. A
+distância entre o ponto original e o compensado é o ES; entre o
+compensado e o final é o ER.</p>
 </div>
-<pre><code>- Aumente $p_y$ e observe se $x^*$ sobe (substitutos) ou cai (complementares)
-- Compare o efeito bruto (Marshalliano) com o líquido (Hicksiano)
-- Teste o caso gasolina-etanol com elasticidade cruzada alta</code></pre>
+<hr />
+<h2 id="a-equação-de-slutsky">3. A equação de Slutsky</h2>
+<p>Em forma diferencial, a decomposição é a célebre <strong>equação de
+Slutsky</strong>:</p>
+<p><span class="math display">\[\frac{\partial x_i^M}{\partial p_j} =
+\frac{\partial h_i}{\partial p_j} - x_j^M \frac{\partial x_i^M}{\partial
+I}\]</span></p>
+<p>Ou, para o efeito próprio (<span class="math inline">\(i =
+j\)</span>):</p>
+<p><span class="math display">\[\underbrace{\frac{\partial
+x_i^M}{\partial p_i}}_{\text{ET}} = \underbrace{\frac{\partial
+h_i}{\partial p_i}}_{\text{ES} \leq 0} - \underbrace{x_i^M
+\frac{\partial x_i^M}{\partial I}}_{\text{ER}}\]</span></p>
+<h3 id="sinais-dos-componentes">Sinais dos componentes</h3>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 20%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Sinal</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ES (<span class="math inline">\(\partial h_i / \partial
+p_i\)</span>)</td>
+<td><span class="math inline">\(\leq 0\)</span> sempre</td>
+<td>Lei da demanda compensada</td>
+</tr>
+<tr>
+<td>ER (<span class="math inline">\(-x_i^M \cdot \partial x_i^M /
+\partial I\)</span>)</td>
+<td>Depende</td>
+<td>Negativo se normal; positivo se inferior</td>
+</tr>
+<tr>
+<td>ET (<span class="math inline">\(\partial x_i^M / \partial
+p_i\)</span>)</td>
+<td>Geralmente <span class="math inline">\(&lt; 0\)</span></td>
+<td>Exceto bens de Giffen</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>O ES é <strong>sempre negativo</strong> (a demanda compensada sempre
+cai com o preço). O ER depende do tipo de bem. Para bens normais (<span
+class="math inline">\(\partial x_i^M/\partial I &gt; 0\)</span>), o ER
+reforça o ES. Para bens inferiores (<span class="math inline">\(\partial
+x_i^M/\partial I &lt; 0\)</span>), o ER se opõe ao ES. No caso extremo
+(Giffen), o ER positivo domina o ES negativo.</p>
+</div>
+<hr />
+<h2 id="classificação-de-bens">4. Classificação de bens</h2>
+<h3 id="bens-normais">4.1 Bens normais</h3>
+<p><span class="math display">\[\frac{\partial x_i^M}{\partial I} &gt; 0
+\implies \text{ER reforça ES} \implies \frac{\partial x_i^M}{\partial
+p_i} &lt; 0\]</span></p>
+<p>A Lei da Demanda sempre vale para bens normais.</p>
+<h3 id="bens-inferiores-não-giffen">4.2 Bens inferiores
+(não-Giffen)</h3>
+<p><span class="math display">\[\frac{\partial x_i^M}{\partial I} &lt; 0
+\quad \text{mas} \quad |\text{ES}| &gt; |\text{ER}| \implies
+\frac{\partial x_i^M}{\partial p_i} &lt; 0\]</span></p>
+<p>O ER se opõe ao ES, mas não o domina. A Lei da Demanda ainda
+vale.</p>
+<h3 id="bens-de-giffen">4.3 Bens de Giffen</h3>
+<p><span class="math display">\[\frac{\partial x_i^M}{\partial I} &lt; 0
+\quad \text{e} \quad |\text{ER}| &gt; |\text{ES}| \implies
+\frac{\partial x_i^M}{\partial p_i} &gt; 0\]</span></p>
+<p>Caso extremamente raro: o preço sobe e a quantidade demandada sobe.
+Requer que o bem seja muito inferior e que represente grande parcela do
+orçamento (para que <span class="math inline">\(x_i^M\)</span> no ER
+seja grande).</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Um bem de Giffen é necessariamente inferior, mas um bem inferior não
+é necessariamente Giffen. Para ser Giffen, a inferioridade precisa ser
+tão forte que o efeito renda domina o efeito substituição. Isso é
+logicamente possível mas empiricamente muito raro.</p>
+</div>
+<h2 id="gráfico-interativo-curva-de-engel">Gráfico interativo: Curva de
+Engel</h2>
+<iframe src="graficos/cap05/curva-engel.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>A curva de Engel mostra como a demanda varia com a renda. Para bens
+normais, é positivamente inclinada; para inferiores, negativamente.
+Varie os parâmetros e observe a transição.</p>
+</div>
+<hr />
+<h2 id="matriz-de-slutsky">5. Matriz de Slutsky</h2>
+<p>A equação de Slutsky generaliza para todos os pares de bens. A
+<strong>matriz de substituição de Slutsky</strong> <span
+class="math inline">\(S\)</span> tem elementos:</p>
+<p><span class="math display">\[s_{ij} = \frac{\partial h_i}{\partial
+p_j} = \frac{\partial x_i^M}{\partial p_j} + x_j^M \frac{\partial
+x_i^M}{\partial I}\]</span></p>
+<p>Propriedades de <span class="math inline">\(S\)</span>:</p>
+<ul>
+<li><strong>Simétrica</strong>: <span class="math inline">\(s_{ij} =
+s_{ji}\)</span> (integrabilidade)</li>
+<li><strong>Negativa semidefinida</strong>: <span
+class="math inline">\(v&#39; S v \leq 0\)</span> para todo <span
+class="math inline">\(v\)</span> (ES sempre reduz gasto)</li>
+<li>Diagonal: <span class="math inline">\(s_{ii} \leq 0\)</span> (Lei da
+demanda compensada)</li>
+</ul>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Para <span class="math inline">\(U =
-x^{0{,}5} y^{0{,}5}\)</span>, os bens são substitutos ou complementares
-brutos? E líquidos? Justifique.
+<p><strong>Exercício 1.</strong> Para <span class="math inline">\(u =
+x_1^{1/2} x_2^{1/2}\)</span> com <span class="math inline">\(p_1 =
+1\)</span>, <span class="math inline">\(p_2 = 1\)</span>, <span
+class="math inline">\(I = 100\)</span>, suponha que <span
+class="math inline">\(p_1\)</span> sobe para 4. (a) Calcule o ET. (b)
+Calcule o ES de Hicks. (c) Calcule o ER.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><strong>Marshallianas:</strong> <span class="math inline">\(x^* =
-m/(2p_x)\)</span> e <span class="math inline">\(y^* =
-m/(2p_y)\)</span>.</p>
-<p><span class="math inline">\(\frac{\partial x^*}{\partial p_y} =
-0\)</span> — bens <strong>independentes</strong> no sentido bruto
-(Cobb-Douglas tem elasticidade cruzada zero).</p>
-<p><strong>Hicksianas:</strong> <span class="math inline">\(h_x =
-\bar{U}\sqrt{p_y/p_x}\)</span>.</p>
-<p><span class="math inline">\(\frac{\partial h_x}{\partial p_y} =
-\frac{\bar{U}}{2\sqrt{p_x p_y}} &gt; 0\)</span> — <strong>substitutos
-líquidos</strong>.</p>
-<p>A Cobb-Douglas esconde a substituição líquida porque o efeito renda
-cruzado compensa exatamente o efeito substituição na Marshalliana.</p>
+<p>Inicial: <span class="math inline">\(x_1^M = 50\)</span>, <span
+class="math inline">\(\bar{u} = 50^{1/2} \cdot 50^{1/2} = 50\)</span>.
+Novo: <span class="math inline">\(x_1^M = (1/2)(100)/4 =
+12{,}5\)</span>. <strong>ET</strong> <span class="math inline">\(=
+12{,}5 - 50 = -37{,}5\)</span>. Hicksiana: <span
+class="math inline">\(h_1(4, 1, 50) = 50 \cdot (1/4)^{1/2} =
+25\)</span>. <strong>ES</strong> <span class="math inline">\(= 25 - 50 =
+-25\)</span>. <strong>ER</strong> <span class="math inline">\(= -37{,}5
+- (-25) = -12{,}5\)</span>. Ambos negativos (bem normal), ER reforça
+ES.</p>
 </div>
 </details>
-<pre><code>**Marshallianas:** $x^* = m/(2p_x)$ e $y^* = m/(2p_y)$.
-
-$\frac{\partial x^*}{\partial p_y} = 0$ — bens **independentes** no sentido bruto (Cobb-Douglas tem elasticidade cruzada zero).
-
-**Hicksianas:** $h_x = \bar{U}\sqrt{p_y/p_x}$.
-
-$\frac{\partial h_x}{\partial p_y} = \frac{\bar{U}}{2\sqrt{p_x p_y}} &gt; 0$ — **substitutos líquidos**.
-
-A Cobb-Douglas esconde a substituição líquida porque o efeito renda cruzado compensa exatamente o efeito substituição na Marshalliana.</code></pre>
-<strong>Exercício 2.</strong> Se a elasticidade cruzada entre gasolina e
-etanol é <span class="math inline">\(\varepsilon_{g,e} = 1{,}0\)</span>
-e o preço do etanol sobe 20%, em quanto varia a demanda de gasolina?
+<p><strong>Exercício 2.</strong> Um bem inferior tem <span
+class="math inline">\(\partial x^M/\partial I = -0{,}2\)</span> e <span
+class="math inline">\(\partial h/\partial p = -3\)</span>. A demanda
+Marshalliana é <span class="math inline">\(x^M = 5\)</span>. Calcule
+<span class="math inline">\(\partial x^M/\partial p\)</span> via Slutsky
+e classifique o bem.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\Delta\% \, x_g \approx \varepsilon_{g,e}
-\times \Delta\% \, p_e = 1{,}0 \times 20\% = 20\%\)</span></p>
-<p>A demanda de gasolina sobe 20% (são substitutos brutos).</p>
+<p><span class="math inline">\(\partial x^M/\partial p = \partial
+h/\partial p - x^M \cdot \partial x^M/\partial I = -3 - 5(-0{,}2) = -3 +
+1 = -2 &lt; 0\)</span>. O bem é <strong>inferior mas não
+Giffen</strong>: o ES (<span class="math inline">\(-3\)</span>) domina o
+ER (<span class="math inline">\(+1\)</span>). A Lei da Demanda ainda
+vale.</p>
 </div>
 </details>
-<pre><code>$\Delta\% \, x_g \approx \varepsilon_{g,e} \times \Delta\% \, p_e = 1{,}0 \times 20\% = 20\%$
-
-A demanda de gasolina sobe 20% (são substitutos brutos).</code></pre>
-<strong>Exercício 3.</strong> Verifique a simetria Hicksiana: se <span
-class="math inline">\(\partial h_x / \partial p_y = 3\)</span>, quanto
-vale <span class="math inline">\(\partial h_y / \partial p_x\)</span>?
+<p><strong>Exercício 3.</strong> Modifique o exercício anterior para que
+o bem seja de Giffen. Qual valor mínimo de <span
+class="math inline">\(|\partial x^M/\partial I|\)</span> seria
+necessário?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Pela simetria da matriz de Slutsky: <span
-class="math inline">\(\frac{\partial h_y}{\partial p_x} = \frac{\partial
-h_x}{\partial p_y} = 3\)</span>.</p>
-<p>Isso decorre do teorema de Young aplicado à função gasto (derivadas
-cruzadas de <span class="math inline">\(E\)</span> são simétricas).</p>
+<p>Para Giffen, precisamos <span class="math inline">\(\partial
+x^M/\partial p &gt; 0\)</span>: <span class="math inline">\(-3 -
+5(\partial x^M/\partial I) &gt; 0 \implies \partial x^M/\partial I &lt;
+-3/5 = -0{,}6\)</span>. Logo <span class="math inline">\(|\partial
+x^M/\partial I| &gt; 0{,}6\)</span>. Com inferioridade tão forte e <span
+class="math inline">\(x^M = 5\)</span> (alta parcela do orçamento), o ER
+domina o ES.</p>
 </div>
 </details>
-<pre><code>Pela simetria da matriz de Slutsky: $\frac{\partial h_y}{\partial p_x} = \frac{\partial h_x}{\partial p_y} = 3$.
-
-Isso decorre do teorema de Young aplicado à função gasto (derivadas cruzadas de $E$ são simétricas).</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -291,229 +284,58 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">Q1. Na equação de Slutsky, o efeito substituição é:</div>
+<div class="quiz-option" data-value="a">(a) Sempre negativo (ou zero)</div>
+<div class="quiz-option" data-value="b">(b) Sempre positivo</div>
+<div class="quiz-option" data-value="c">(c) Positivo para bens normais, negativo para inferiores</div>
+<div class="quiz-option" data-value="d">(d) Depende da elasticidade-renda</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. Um bem de Giffen é necessariamente:</div>
+<div class="quiz-option" data-value="a">(a) Normal</div>
+<div class="quiz-option" data-value="b">(b) De luxo</div>
+<div class="quiz-option" data-value="c">(c) Inferior</div>
+<div class="quiz-option" data-value="d">(d) Substituto</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. Bens substitutos brutos são aqueles para os quais:
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Se o efeito renda reforça o efeito substituição, o bem é:</div>
+<div class="quiz-option" data-value="a">(a) Normal</div>
+<div class="quiz-option" data-value="b">(b) Inferior</div>
+<div class="quiz-option" data-value="c">(c) De Giffen</div>
+<div class="quiz-option" data-value="d">(d) Complementar</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(\partial x^* / \partial p_y &lt;
-0\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(\partial x^* / \partial p_y &gt;
-0\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(\partial h_x / \partial p_y &lt;
-0\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(\partial x^* / \partial m &gt;
-0\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. A simetria <span class="math inline">\(\partial h_x / \partial p_y =
-\partial h_y / \partial p_x\)</span> vale para:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Demandas Marshallianas
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Demandas Hicksianas
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Ambas
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Nenhuma
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. Qual é a elasticidade preço-cruzado esperada entre arroz e feijão no
-Brasil?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Positiva (substitutos)
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Negativa (complementares)
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Zero (independentes)
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Infinita
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="c">
-<div class="q-text">
-Q4. No Brasil, a relação gasolina-etanol é de substitutibilidade alta
-porque:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Ambos são derivados de petróleo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O preço é tabelado pelo governo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Carros flex permitem trocar entre os combustíveis
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A elasticidade-renda é unitária
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. A matriz de substituição de Slutsky é:</div>
+<div class="quiz-option" data-value="a">(a) Positiva definida</div>
+<div class="quiz-option" data-value="b">(b) Negativa semidefinida e simétrica</div>
+<div class="quiz-option" data-value="c">(c) Diagonal</div>
+<div class="quiz-option" data-value="d">(d) Identidade</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q5" data-correct="a">
-<div class="q-text">
-Q5. Na Cobb-Douglas, a elasticidade cruzada Marshalliana entre os bens
-é:
+<div class="q-text">Q5. Na decomposição de Hicks, o efeito substituição é medido:</div>
+<div class="quiz-option" data-value="a">(a) Ao longo da curva de indiferença original</div>
+<div class="quiz-option" data-value="b">(b) Ao longo da nova curva de indiferença</div>
+<div class="quiz-option" data-value="c">(c) Ao longo da reta orçamentária original</div>
+<div class="quiz-option" data-value="d">(d) Mantendo a renda nominal constante</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Zero
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Positiva
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Negativa
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Unitária
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-08')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 08</strong>: Lab prático — decomposição de Slutsky cruzada
-com dados brasileiros + debate sobre classificação de pares de bens e
-implicações para política tributária.
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 08**: Lab prático — decomposição de Slutsky cruzada com dados brasileiros + debate sobre classificação de pares de bens e implicações para política tributária.</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 09</strong>: Equação de Slutsky — Exercícios práticos de
+decomposição para Cobb-Douglas e quase-linear.</p>
 </div>
 
 </div>
@@ -524,7 +346,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-08');
 MicroQuiz.init('aula-08');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

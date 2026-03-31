@@ -1,191 +1,115 @@
-# Pré-Aula 12 — Jogo de Loterias + Seguro (Prática)
+# Pré-Aula 12 — Economia de Dotações: Trabalho e Escolha Intertemporal
 
 !!! info "Leitura obrigatória"
-    **Cap. 7, Seções 7.5–7.7** (diversificação, paradoxo de Allais) do livro interativo | Tempo estimado: **40 min**
+    **Cap. 17, Seções 17.1–17.3** e **Cap. 18, Seções 18.1–18.2** do livro-texto | Tempo estimado: **~45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Explicar como a diversificação reduz risco e aplicar o conceito a portfólios simples
-2. Descrever o Paradoxo de Allais e identificar a violação do axioma de independência
-3. Contrastar a abordagem de utilidade esperada com a Teoria dos Prospectos de Kahneman e Tversky
+1. Formular a restrição orçamentária com dotações e resolver problemas de oferta de trabalho.
+2. Explicar a curva de oferta de trabalho backward-bending a partir dos efeitos renda e substituição.
+3. Modelar a escolha intertemporal entre consumo presente e futuro com taxa de juros.
 
 ---
 
-## 1. Diversificação: "não coloque todos os ovos na mesma cesta"
+## 1. Restrição Orçamentária com Dotações
 
-Suponha dois ativos com retornos aleatórios $X_1$ e $X_2$, cada um com valor esperado $\mu$ e variância $\sigma^2$, e correlação $\rho$.
+Diferente do modelo padrão com renda fixa $m$, muitos problemas envolvem **dotações** — quantidades iniciais dos bens que o consumidor pode trocar no mercado. A restrição orçamentária torna-se:
 
-Se investimos fração $\alpha$ no ativo 1 e $(1-\alpha)$ no ativo 2:
+$$p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2$$
 
-$$E[R] = \alpha \mu + (1-\alpha)\mu = \mu$$
+onde $(\omega_1, \omega_2)$ é a dotação inicial. O lado direito é a **renda total** ou **riqueza**: o valor de mercado da dotação.
 
-$$\text{Var}(R) = \alpha^2 \sigma^2 + (1-\alpha)^2 \sigma^2 + 2\alpha(1-\alpha)\rho\sigma^2$$
+Mudanças de preço agora têm dois efeitos:
 
-Para $\alpha = 0{,}5$ e $\rho < 1$:
-
-$$\text{Var}(R) = \frac{\sigma^2(1 + \rho)}{2} < \sigma^2$$
-
-O retorno esperado é **o mesmo**, mas o risco é **menor**. Essa é a mágica da diversificação.
-
-!!! example "Exemplo: dois investimentos"
-    Dois ativos, cada um com retorno R$ 100 ou R$ 0 com probabilidades iguais, independentes ($\rho = 0$).
-
-    - **Tudo no ativo 1**: R$ 100 ou R$ 0 (variância = $2500$)
-    - **50% em cada**: R$ 100 (25%), R$ 50 (50%), R$ 0 (25%) (variância = $1250$)
-
-    Mesmo $E[R] = 50$, mas variância caiu pela metade!
-
----
-
-## 2. A abordagem por estados da natureza
-
-Uma forma alternativa (e muitas vezes mais conveniente) de modelar incerteza é pensar em **estados da natureza**:
-
-- Estado 1 ("bom"): ocorre com probabilidade $\pi_1$
-- Estado 2 ("ruim"): ocorre com probabilidade $\pi_2 = 1 - \pi_1$
-
-A riqueza contingente é $(W_1, W_2)$ — quanto o agente tem em cada estado.
-
-O problema de maximização:
-
-$$\max_{W_1, W_2} \pi_1 u(W_1) + \pi_2 u(W_2)$$
-
-sujeito à restrição orçamentária entre estados.
-
-As **curvas de indiferença no espaço de estados** têm TMS:
-
-$$\text{TMS} = \frac{\pi_1 u'(W_1)}{\pi_2 u'(W_2)}$$
-
-Na **linha de certeza** ($W_1 = W_2$): $\text{TMS} = \frac{\pi_1}{\pi_2}$
-
----
-
-## 3. O Paradoxo de Allais (1953)
-
-Maurice Allais propôs o seguinte experimento mental:
-
-**Situação A** — escolha entre:
-
-| Loteria | Descrição |
-|:---|:---|
-| $L_1$ | R$ 1 milhão com certeza |
-| $L_2$ | R$ 5 milhões (10%), R$ 1 milhão (89%), R$ 0 (1%) |
-
-**Situação B** — escolha entre:
-
-| Loteria | Descrição |
-|:---|:---|
-| $L_3$ | R$ 1 milhão (11%), R$ 0 (89%) |
-| $L_4$ | R$ 5 milhões (10%), R$ 0 (90%) |
-
-A maioria das pessoas escolhe $L_1$ na Situação A e $L_4$ na Situação B.
-
-**O problema**: essa combinação viola o axioma de independência!
-
-Pela utilidade esperada, $L_1 \succ L_2$ implica:
-
-$$u(1M) > 0{,}10 \, u(5M) + 0{,}89 \, u(1M) + 0{,}01 \, u(0)$$
-$$0{,}11 \, u(1M) > 0{,}10 \, u(5M) + 0{,}01 \, u(0)$$
-
-Mas isso é equivalente a $L_3 \succ L_4$, contradizendo a escolha $L_4 \succ L_3$.
+- Alteram o custo relativo dos bens (efeito substituição + efeito renda ordinário).
+- Alteram o **valor da dotação** (efeito dotação).
 
 !!! note "Intuição Econômica"
-    **O que o Paradoxo de Allais revela?**
-
-    As pessoas dão um peso desproporcional à **certeza**. Na Situação A, trocar R$ 1 milhão certo por uma loteria com 1% de chance de nada é insuportável. Na Situação B, ambas envolvem risco alto, então a diferença de 1% parece irrelevante.
-
-    Este fenômeno — chamado **efeito certeza** — mostra que seres humanos não processam probabilidades linearmente. Pequenas probabilidades perto de 0 ou 1 são distorcidas. Isso motivou a Teoria dos Prospectos.
+    Quando o preço de um bem que você possui sobe, você fica mais rico (sua dotação vale mais) e ao mesmo tempo o bem fica mais caro. Os dois efeitos trabalham em direções opostas — é por isso que a oferta de trabalho pode "dobrar para trás".
 
 ---
 
-## 4. Teoria dos Prospectos: uma prévia
+## 2. Oferta de Trabalho: Lazer vs. Consumo
 
-Kahneman e Tversky (1979) propuseram um modelo alternativo com três ingredientes:
+O trabalhador possui dotação de tempo $T$ (ex.: 24h), que divide entre **lazer** $\ell$ e **trabalho** $h = T - \ell$. Com salário $w$ e preço do consumo normalizado ($p = 1$):
 
-### 4.1 Função de valor (não utilidade)
+$$c = w(T - \ell) + m_0 = wT + m_0 - w\ell$$
 
-$$v(x) = \begin{cases} x^\alpha & \text{se } x \geq 0 \\ -\lambda(-x)^\beta & \text{se } x < 0 \end{cases}$$
+onde $m_0$ é a renda não-trabalho. O problema é:
 
-Características:
+$$\max_{c, \ell} \; u(c, \ell) \quad \text{s.a.} \quad c + w\ell = wT + m_0$$
 
-- **Ponto de referência**: ganhos e perdas são relativos ao status quo
-- **Côncava para ganhos, convexa para perdas**: avesso ao risco em ganhos, amante do risco em perdas
-- **Aversão à perda**: $\lambda > 1$ (tipicamente $\lambda \approx 2{,}25$) — perder R$ 100 dói mais do que ganhar R$ 100 agrada
+O "preço" do lazer é o salário $w$ (custo de oportunidade).
 
-### 4.2 Função de ponderação de probabilidades
+<iframe src="graficos/cap17/trabalho-lazer.html"></iframe>
 
-$$w(p) \neq p$$
-
-As pessoas **sobrepesam** probabilidades pequenas e **subpesam** probabilidades grandes:
-
-- $w(0{,}01) > 0{,}01$: superestimam chances de eventos raros (loterias, catástrofes)
-- $w(0{,}99) < 0{,}99$: subestimam chances de eventos quase certos
+!!! tip "Explore o gráfico"
+    Altere o salário $w$ e observe como a escolha ótima de lazer e consumo se move. Note que a dotação (ponto $T$ no eixo do lazer) é o pivô da restrição orçamentária.
 
 ---
 
-## 5. Preparação para o jogo de loterias
+## 3. A Curva Backward-Bending
 
-Na próxima aula, faremos dois exercícios práticos:
+A resposta da oferta de trabalho ao salário depende da magnitude relativa dos efeitos:
 
-### Jogo 1: Teste de Allais em sala
+- **Efeito substituição**: salário maior torna lazer mais caro → trabalha mais.
+- **Efeito renda**: salário maior aumenta riqueza → consome mais lazer (se lazer é normal) → trabalha menos.
 
-Você responderá (anonimamente) a sequências de escolhas entre loterias. Os resultados da turma serão compilados em tempo real para verificar se o paradoxo de Allais se manifesta.
+Para salários baixos, o efeito substituição domina e a oferta de trabalho é **crescente**. Para salários altos, o efeito renda pode dominar e a oferta **decresce** — a curva "dobra para trás" (backward-bending).
 
-### Jogo 2: Design de seguro (PBL)
+$$\frac{\partial h^*}{\partial w} = \underbrace{ES}_{>0} + \underbrace{ER}_{<0} \quad \gtrless \quad 0$$
 
-Em grupos, vocês receberão um cenário com:
+<iframe src="graficos/cap17/oferta-trabalho.html"></iframe>
 
-- Uma população com distribuição de riqueza e riscos
-- Custos administrativos da seguradora
-- Informação assimétrica (alguns grupos terão seleção adversa)
-
-O desafio: **desenhar um contrato de seguro** que seja viável para a seguradora e atraente para os consumidores.
-
-!!! tip "Como se preparar"
-    1. Revise o cálculo de prêmio de risco e equivalente de certeza (Pré-Aula 11)
-    2. Entenda a condição de seguro atuarialmente justo: $\gamma = p$
-    3. Pense em por que a seguradora cobra $\gamma > p$ na prática (custos, lucro, seleção adversa)
-    4. Reflita: você escolheria $L_1$ ou $L_2$ na Situação A de Allais?
+!!! tip "Explore o gráfico"
+    Observe a curva de oferta de trabalho. Identifique o ponto onde ela muda de inclinação positiva para negativa. Esse é o salário a partir do qual o efeito renda passa a dominar.
 
 ---
 
-## Exercícios de preparação
+## 4. Escolha Intertemporal
 
-**Exercício 1.** Dois ativos independentes, cada um retornando R$ 200 ou R$ 0 com probabilidades iguais. Compare a variância de investir tudo no ativo 1 versus dividir igualmente entre os dois.
+O consumidor vive dois períodos com rendas $(m_1, m_2)$ e pode poupar ou tomar emprestado à taxa de juros $r$. A restrição intertemporal é:
+
+$$c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r} \equiv W$$
+
+onde $W$ é a **riqueza presente**. Equivalentemente, em valor futuro:
+
+$$(1+r)c_1 + c_2 = (1+r)m_1 + m_2$$
+
+A dotação é $(m_1, m_2)$ e o "preço" do consumo presente em termos de consumo futuro é $(1+r)$.
+
+!!! note "Intuição Econômica"
+    Poupar é "comprar" consumo futuro ao preço $1/(1+r)$. Quando a taxa de juros sobe, consumo presente fica mais caro — mas quem já é poupador fica mais rico pela maior remuneração. Novamente, efeitos renda e substituição podem se opor.
+
+<iframe src="graficos/cap18/consumo-intertemporal.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Varie a taxa de juros e observe como a restrição gira em torno do ponto de dotação $(m_1, m_2)$. Note que um poupador pode se tornar tomador de empréstimos se $r$ cair suficientemente.
+
+---
+
+## Exercícios Preparatórios
+
+**Exercício 1.** Um trabalhador com $u = c^{0{,}5}\ell^{0{,}5}$, $T = 16$, $m_0 = 0$ e $w = 10$. Encontre a oferta de trabalho $h^*$.
 
 ??? success "Solução"
-    **Tudo no ativo 1**: $E[R] = 100$, $\text{Var}(R) = 0{,}5(200-100)^2 + 0{,}5(0-100)^2 = 10000$
+    Pela Cobb-Douglas com $\alpha = 0{,}5$: $\ell^* = \frac{0{,}5(wT + m_0)}{w} = \frac{0{,}5 \times 160}{10} = 8$.  
+    Logo $h^* = T - \ell^* = 16 - 8 = 8$ horas.
 
-    **50% em cada** (independentes):
-
-    Resultados possíveis: $(200,200) \to 200$; $(200,0) \to 100$; $(0,200) \to 100$; $(0,0) \to 0$
-
-    Com probabilidades: $200$ (25%), $100$ (50%), $0$ (25%). $E[R] = 100$.
-
-    $\text{Var}(R) = 0{,}25(200-100)^2 + 0{,}5(100-100)^2 + 0{,}25(0-100)^2 = 2500 + 0 + 2500 = 5000$
-
-    A variância caiu de $10000$ para $5000$ — redução de 50%.
-
-**Exercício 2.** Verifique que as escolhas $L_1 \succ L_2$ e $L_4 \succ L_3$ no Paradoxo de Allais são inconsistentes com a utilidade esperada.
+**Exercício 2.** Se o salário sobe para $w = 20$, qual a nova oferta de trabalho? Houve backward-bending?
 
 ??? success "Solução"
-    $L_1 \succ L_2$:
+    $\ell^* = \frac{0{,}5 \times 320}{20} = 8$. Logo $h^* = 8$ horas novamente.  
+    Com Cobb-Douglas, os efeitos renda e substituição se cancelam exatamente: a oferta de trabalho é constante. Não há backward-bending neste caso.
 
-    $u(1M) > 0{,}10 \, u(5M) + 0{,}89 \, u(1M) + 0{,}01 \, u(0)$
+**Exercício 3.** Um consumidor com $m_1 = 1000$, $m_2 = 550$ e $r = 10\%$ tem $u = c_1 c_2$. Determine $c_1^*$, $c_2^*$ e se é poupador ou tomador.
 
-    Subtraindo $0{,}89 \, u(1M)$:
-
-    $0{,}11 \, u(1M) > 0{,}10 \, u(5M) + 0{,}01 \, u(0)$ ... (*)
-
-    $L_4 \succ L_3$:
-
-    $0{,}10 \, u(5M) + 0{,}90 \, u(0) > 0{,}11 \, u(1M) + 0{,}89 \, u(0)$
-
-    Simplificando: $0{,}10 \, u(5M) + 0{,}01 \, u(0) > 0{,}11 \, u(1M)$ ... (**)
-
-    (**) contradiz diretamente (*). Logo, as escolhas são inconsistentes com qualquer função $u$ na utilidade esperada.
+??? success "Solução"
+    $W = 1000 + \frac{550}{1{,}10} = 1000 + 500 = 1500$.  
+    Com Cobb-Douglas ($\alpha = 0{,}5$): $c_1^* = \frac{W}{2} = 750$, $c_2^* = \frac{(1+r)W}{2} = \frac{1{,}10 \times 1500}{2} = 825$.  
+    Como $c_1^* = 750 < m_1 = 1000$, o consumidor é **poupador** (poupa 250 no período 1).
 
 ---
 
@@ -196,44 +120,44 @@ O desafio: **desenhar um contrato de seguro** que seja viável para a seguradora
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A diversificação reduz o risco porque:
+**Q1.** Na restrição com dotações, um aumento no preço de $x_1$ beneficia o consumidor se:
 
-- [ ] (a) Aumenta o retorno esperado
-- [x] (b) Reduz a variância do portfólio sem alterar o retorno esperado
-- [ ] (c) Elimina todo o risco
-- [ ] (d) Aumenta a correlação entre ativos
+- [x] (a) Ele é vendedor líquido de $x_1$ ($x_1^* < \omega_1$)
+- [ ] (b) Ele é comprador líquido de $x_1$ ($x_1^* > \omega_1$)
+- [ ] (c) Sempre beneficia
+- [ ] (d) Nunca beneficia
 
-**Q2.** O Paradoxo de Allais viola qual axioma da utilidade esperada?
+**Q2.** O custo de oportunidade do lazer é:
 
-- [ ] (a) Completude
-- [ ] (b) Transitividade
-- [ ] (c) Continuidade
-- [x] (d) Independência
+- [ ] (a) O preço dos bens de consumo
+- [x] (b) O salário
+- [ ] (c) A renda não-trabalho
+- [ ] (d) O tempo total disponível
 
-**Q3.** Na Teoria dos Prospectos, "aversão à perda" significa que:
+**Q3.** A curva de oferta de trabalho backward-bending ocorre quando:
 
-- [ ] (a) O agente nunca aceita loterias
-- [x] (b) Perdas pesam mais do que ganhos de mesmo valor absoluto
-- [ ] (c) O agente é avesso ao risco em todos os domínios
-- [ ] (d) A função utilidade é côncava
+- [ ] (a) O efeito substituição domina em todos os salários
+- [ ] (b) O trabalhador tem renda não-trabalho nula
+- [x] (c) O efeito renda domina o efeito substituição para salários altos
+- [ ] (d) As preferências são quase-lineares
 
-**Q4.** Na abordagem por estados, sobre a linha de certeza ($W_1 = W_2$), a TMS é igual a:
+**Q4.** Na escolha intertemporal, o preço relativo do consumo presente em termos de futuro é:
 
-- [ ] (a) 1
-- [x] (b) $\pi_1 / \pi_2$
-- [ ] (c) $u'(W_1) / u'(W_2)$
-- [ ] (d) 0
+- [ ] (a) $r$
+- [x] (b) $(1 + r)$
+- [ ] (c) $1/(1 + r)$
+- [ ] (d) $m_1/m_2$
 
-**Q5.** Se pessoas sobrepesam probabilidades pequenas, como prevê a Teoria dos Prospectos, elas tendem a:
+**Q5.** Um aumento da taxa de juros necessariamente aumenta a poupança se:
 
-- [ ] (a) Nunca comprar seguros
-- [ ] (b) Ignorar riscos raros
-- [x] (c) Comprar seguros caros contra eventos raros e bilhetes de loteria
-- [ ] (d) Ser neutras ao risco para eventos raros
+- [ ] (a) O consumidor é tomador de empréstimos
+- [ ] (b) As preferências são Cobb-Douglas
+- [x] (c) O efeito substituição domina o efeito renda e o consumidor já é poupador
+- [ ] (d) Sempre aumenta
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 12**: Jogo de loterias (Teste de Allais em sala) + Design de contrato de seguro em grupos (PBL). Traga calculadora!
+    Na **Aula 13**, iniciaremos o bloco de escolha sob incerteza, com loterias, o paradoxo de São Petersburgo e o teorema da utilidade esperada de Von Neumann-Morgenstern.

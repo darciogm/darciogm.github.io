@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 02 — Oficina — Microeconomia II</title>
+<title>Pré-Aula 02 — Restrição Orçamentária — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,142 +17,241 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-02-oficina-de-otimização-prática">Pré-Aula 02 — Oficina
-de Otimização (Prática)</h1>
+<h1 id="pré-aula-02-restrição-orçamentária">Pré-Aula 02 — Restrição
+Orçamentária</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 2, Seções 2.5–2.7</strong> (teorema do envelope,
-elasticidade, homogeneidade) + Rever soluções do PS0 | Tempo estimado:
-<strong>40 min</strong></p>
+<p><strong>Cap. 4, Seções 4.1–4.2</strong> do livro interativo | Tempo
+estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 2, Seções 2.5–2.7** (teorema do envelope, elasticidade, homogeneidade) + Rever soluções do PS0 | Tempo estimado: **40 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
 <ol type="1">
-<li>Aplicar o teorema do envelope para avaliar impactos de mudanças
-paramétricas</li>
-<li>Calcular elasticidades e verificar grau de homogeneidade</li>
-<li>Identificar e corrigir erros comuns na resolução de
-Lagrangianos</li>
+<li>Representar graficamente o conjunto orçamentário e a reta
+orçamentária</li>
+<li>Interpretar a inclinação da reta orçamentária como a razão de preços
+(custo de oportunidade)</li>
+<li>Analisar como mudanças na renda e nos preços alteram o conjunto de
+escolhas do consumidor</li>
 </ol>
 <hr />
-<h2 id="teorema-do-envelope">1. Teorema do Envelope</h2>
-<p>Suponha que resolvemos <span class="math inline">\(\max_x f(x;
-a)\)</span> sujeito a alguma restrição, onde <span
-class="math inline">\(a\)</span> é um parâmetro. O valor ótimo é <span
-class="math inline">\(V(a) = f(x^*(a); a)\)</span>.</p>
-<p><strong>Teorema do Envelope:</strong></p>
-<p><span class="math display">\[\frac{dV}{da} = \frac{\partial
-\mathcal{L}}{\partial a}\bigg|_{x^*, \lambda^*}\]</span></p>
-<blockquote>
-Para saber como o valor ótimo muda quando <span
-class="math inline">\(a\)</span> muda, basta derivar o Lagrangiano em
-relação a <span class="math inline">\(a\)</span> <strong>no ponto
-ótimo</strong> — sem precisar re-resolver o problema!
-<div class="admonition example">
-<div class="admonition-title">
-Aplicação
-</div>
-</div>
-</blockquote>
-<p>No problema do consumidor, <span class="math inline">\(V(I) =
-U(x^*(I), y^*(I))\)</span>.</p>
-<p>Pelo envelope: <span class="math inline">\(\frac{dV}{dI} =
-\lambda^*\)</span></p>
-<p>Se <span class="math inline">\(\lambda^* = 0{,}05\)</span>, um
-aumento de R$ 1 na renda eleva a utilidade em ~0,05.</p>
-</div>
-<pre><code>No problema do consumidor, $V(I) = U(x^*(I), y^*(I))$.
-
-Pelo envelope: $\frac{dV}{dI} = \lambda^*$
-
-Se $\lambda^* = 0{,}05$, um aumento de R$ 1 na renda eleva a utilidade em ~0,05.</code></pre>
+<h2 id="o-problema-do-consumidor-visão-geral">1. O problema do
+consumidor: visão geral</h2>
+<p>O consumidor deseja escolher a melhor cesta de bens que pode pagar.
+Isso envolve dois ingredientes:</p>
+<ul>
+<li><strong>Preferências</strong> (o que ele quer) — estudaremos nas
+Aulas 03–04</li>
+<li><strong>Restrição orçamentária</strong> (o que ele pode comprar) — o
+tema de hoje</li>
+</ul>
+<p>Considere dois bens, <span class="math inline">\(x_1\)</span> e <span
+class="math inline">\(x_2\)</span>, com preços <span
+class="math inline">\(p_1 &gt; 0\)</span> e <span
+class="math inline">\(p_2 &gt; 0\)</span>. O consumidor tem renda
+monetária <span class="math inline">\(I &gt; 0\)</span>.</p>
 <hr />
-<h2 id="elasticidade">2. Elasticidade</h2>
-<p>A elasticidade mede a <strong>sensibilidade percentual</strong> de
-uma variável a outra:</p>
-<p><span class="math display">\[\varepsilon_{x,p} = \frac{\partial
-x}{\partial p} \cdot \frac{p}{x} = \frac{\% \Delta x}{\% \Delta
-p}\]</span></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Valor</th>
-<th style="text-align: left;">Classificação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><span
-class="math inline">\(|\varepsilon| = 0\)</span></td>
-<td style="text-align: left;">Perfeitamente inelástica</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span class="math inline">\(0 &lt;
-|\varepsilon| &lt; 1\)</span></td>
-<td style="text-align: left;">Inelástica</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline">\(|\varepsilon| = 1\)</span></td>
-<td style="text-align: left;">Elasticidade unitária</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline">\(|\varepsilon| &gt; 1\)</span></td>
-<td style="text-align: left;">Elástica</td>
-</tr>
-<tr>
-<td style="text-align: center;"><span
-class="math inline">\(|\varepsilon| = \infty\)</span></td>
-<td style="text-align: left;">Perfeitamente elástica</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="homogeneidade">3. Homogeneidade</h2>
-<p>Uma função <span class="math inline">\(f(x,y)\)</span> é
-<strong>homogênea de grau <span
-class="math inline">\(k\)</span></strong> se:</p>
-<p><span class="math display">\[f(tx, ty) = t^k \cdot f(x,y) \quad
-\forall t &gt; 0\]</span></p>
-<p><strong>Teorema de Euler:</strong> Se <span
-class="math inline">\(f\)</span> é homogênea de grau <span
-class="math inline">\(k\)</span>:</p>
-<span class="math display">\[x \frac{\partial f}{\partial x} + y
-\frac{\partial f}{\partial y} = k \cdot f(x,y)\]</span>
+<h2 id="a-reta-orçamentária">2. A reta orçamentária</h2>
+<p>O gasto total não pode exceder a renda:</p>
+<p><span class="math display">\[p_1 x_1 + p_2 x_2 \leq I\]</span></p>
+<p>O <strong>conjunto orçamentário</strong> <span
+class="math inline">\(B\)</span> é o conjunto de todas as cestas
+acessíveis:</p>
+<p><span class="math display">\[B = \{(x_1, x_2) \in \mathbb{R}^2_+ :
+p_1 x_1 + p_2 x_2 \leq I\}\]</span></p>
+<p>A <strong>reta orçamentária</strong> é a fronteira desse conjunto,
+onde o consumidor gasta toda a renda:</p>
+<p><span class="math display">\[p_1 x_1 + p_2 x_2 = I\]</span></p>
+<p>Isolando <span class="math inline">\(x_2\)</span>:</p>
+<p><span class="math display">\[x_2 = \frac{I}{p_2} - \frac{p_1}{p_2}
+x_1\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>A demanda Marshalliana é homogênea de grau <strong>zero</strong> em
-preços e renda: <span class="math inline">\(x^*(tp_x, tp_y, tI) =
-x^*(p_x, p_y, I)\)</span>.</p>
-<p>Significado: se todos os preços e a renda dobram, as quantidades
-demandadas <strong>não mudam</strong>. Não há ilusão monetária!</p>
+<p>A inclinação da reta orçamentária é <span
+class="math inline">\(-p_1/p_2\)</span>. Ela mede o <strong>custo de
+oportunidade</strong> do bem 1 em termos do bem 2: para comprar uma
+unidade adicional de <span class="math inline">\(x_1\)</span>, o
+consumidor precisa abrir mão de <span
+class="math inline">\(p_1/p_2\)</span> unidades de <span
+class="math inline">\(x_2\)</span>.</p>
 </div>
-<pre><code>A demanda Marshalliana é homogênea de grau **zero** em preços e renda: $x^*(tp_x, tp_y, tI) = x^*(p_x, p_y, I)$.
-
-Significado: se todos os preços e a renda dobram, as quantidades demandadas **não mudam**. Não há ilusão monetária!</code></pre>
-<hr />
-<h2 id="preparação-para-a-oficina">Preparação para a oficina</h2>
-<p>A Aula 02 será uma <strong>oficina prática</strong> com:</p>
+<h3 id="interceptos">Interceptos</h3>
 <ul>
-<li><strong>Think-Pair-Share</strong>: resolver problemas do PS0 que
-geraram mais dúvidas</li>
-<li><strong>Gallery Walk</strong>: 4 estações com problemas de
-Lagrangiano diferentes</li>
-<li><strong>Desafio cronometrado</strong>: 3 problemas em 15 minutos —
-ranking ao vivo!</li>
+<li>Intercepto vertical: <span class="math inline">\(x_2 =
+I/p_2\)</span> (gastando tudo em <span
+class="math inline">\(x_2\)</span>)</li>
+<li>Intercepto horizontal: <span class="math inline">\(x_1 =
+I/p_1\)</span> (gastando tudo em <span
+class="math inline">\(x_1\)</span>)</li>
 </ul>
-<h3 id="para-se-preparar">Para se preparar:</h3>
-<ol type="1">
-<li>Revise as soluções do <strong>Problem Set 0</strong></li>
-<li>Identifique <strong>2 dúvidas</strong> que teve ao resolver</li>
-<li>Pratique montar o Lagrangiano rapidamente (objetivo: &lt; 2 minutos
-por problema)</li>
+<h2 id="gráfico-interativo-restrição-orçamentária">Gráfico interativo:
+Restrição Orçamentária</h2>
+<iframe src="graficos/cap04/restricao-orcamentaria.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Use os controles para alterar <span
+class="math inline">\(p_1\)</span>, <span
+class="math inline">\(p_2\)</span> e <span
+class="math inline">\(I\)</span>. Observe como a reta orçamentária se
+desloca (mudanças de renda) ou rotaciona (mudanças de preço). A área
+sombreada é o conjunto orçamentário.</p>
+</div>
+<hr />
+<h2 id="mudanças-na-renda-e-nos-preços">3. Mudanças na renda e nos
+preços</h2>
+<h3 id="aumento-de-renda-i-to-i-com-i-i">3.1 Aumento de renda (<span
+class="math inline">\(I \to I&#39;\)</span>, com <span
+class="math inline">\(I&#39; &gt; I\)</span>)</h3>
+<p>A reta se desloca paralelamente para fora. A inclinação <span
+class="math inline">\(-p_1/p_2\)</span> não muda, pois os preços
+relativos permanecem os mesmos. O consumidor pode comprar mais de ambos
+os bens.</p>
+<h3 id="aumento-no-preço-de-x_1-p_1-to-p_1-com-p_1-p_1">3.2 Aumento no
+preço de <span class="math inline">\(x_1\)</span> (<span
+class="math inline">\(p_1 \to p_1&#39;\)</span>, com <span
+class="math inline">\(p_1&#39; &gt; p_1\)</span>)</h3>
+<p>O intercepto horizontal encolhe para <span
+class="math inline">\(I/p_1&#39;\)</span>, mas o intercepto vertical
+permanece <span class="math inline">\(I/p_2\)</span>. A reta rotaciona
+em torno do intercepto vertical, tornando-se mais inclinada:</p>
+<p><span class="math display">\[\text{Nova inclinação: }
+-\frac{p_1&#39;}{p_2} \quad (\text{mais íngreme em valor
+absoluto})\]</span></p>
+<h3 id="variação-proporcional-de-preços">3.3 Variação proporcional de
+preços</h3>
+<p>Se ambos os preços dobram (<span class="math inline">\(p_1 \to
+2p_1\)</span>, <span class="math inline">\(p_2 \to 2p_2\)</span>), a
+reta orçamentária se contrai como se a renda caísse pela metade.
+Formalmente:</p>
+<p><span class="math display">\[2p_1 x_1 + 2p_2 x_2 = I \iff p_1 x_1 +
+p_2 x_2 = \frac{I}{2}\]</span></p>
+<p>Logo, apenas preços <strong>relativos</strong> e renda
+<strong>real</strong> importam.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Se todos os preços e a renda dobram simultaneamente, a reta
+orçamentária não muda. A restrição é <strong>homogênea de grau
+zero</strong> em <span class="math inline">\((p_1, p_2, I)\)</span>:
+<span class="math inline">\(B(\lambda p_1, \lambda p_2, \lambda I) =
+B(p_1, p_2, I)\)</span> para <span class="math inline">\(\lambda &gt;
+0\)</span>.</p>
+</div>
+<hr />
+<h2 id="restrições-não-lineares-e-extensões">4. Restrições não-lineares
+e extensões</h2>
+<p>Nem sempre a restrição é linear. Exemplos comuns:</p>
+<ul>
+<li><strong>Impostos por quantidade</strong>: um imposto de <span
+class="math inline">\(t\)</span> por unidade sobre <span
+class="math inline">\(x_1\)</span> eleva o preço efetivo para <span
+class="math inline">\(p_1 + t\)</span>, mantendo a linearidade mas
+mudando a inclinação.</li>
+<li><strong>Racionamento</strong>: se <span class="math inline">\(x_1
+\leq \bar{x}_1\)</span>, o conjunto orçamentário ganha uma “parede”
+vertical.</li>
+<li><strong>Descontos por quantidade</strong>: se o preço de <span
+class="math inline">\(x_1\)</span> cai para unidades acima de <span
+class="math inline">\(\bar{x}_1\)</span>, a reta orçamentária apresenta
+uma <strong>quebra</strong> (kink), tornando o conjunto
+não-convexo.</li>
+<li><strong>Dotações</strong>: se o consumidor parte de uma dotação
+<span class="math inline">\((\omega_1, \omega_2)\)</span> em vez de
+renda monetária, <span class="math inline">\(I = p_1\omega_1 +
+p_2\omega_2\)</span> e a reta orçamentária passa pelo ponto de
+dotação.</li>
+</ul>
+<h2 id="gráfico-interativo-equilíbrio-do-consumidor">Gráfico interativo:
+Equilíbrio do Consumidor</h2>
+<iframe src="graficos/cap04/equilibrio-consumidor.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe como a curva de indiferença tangencia a reta orçamentária no
+ponto ótimo. Altere os parâmetros e veja como o equilíbrio se
+ajusta.</p>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Um consumidor tem renda <span
+class="math inline">\(I = 120\)</span>, e os preços são <span
+class="math inline">\(p_1 = 4\)</span> e <span class="math inline">\(p_2
+= 6\)</span>. (a) Escreva a equação da reta orçamentária. (b) Calcule os
+interceptos. (c) Qual o custo de oportunidade de uma unidade de <span
+class="math inline">\(x_1\)</span>?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li><span class="math inline">\(4x_1 + 6x_2 = 120\)</span>, ou seja,
+<span class="math inline">\(x_2 = 20 - \frac{2}{3}x_1\)</span>. (b)
+Intercepto horizontal: <span class="math inline">\(x_1 = 120/4 =
+30\)</span>. Intercepto vertical: <span class="math inline">\(x_2 =
+120/6 = 20\)</span>. (c) O custo de oportunidade é <span
+class="math inline">\(p_1/p_2 = 4/6 = 2/3\)</span> unidades de <span
+class="math inline">\(x_2\)</span> por unidade de <span
+class="math inline">\(x_1\)</span>.</li>
 </ol>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Com os dados do exercício anterior, o
+governo impõe um imposto de <span class="math inline">\(t = 2\)</span>
+por unidade de <span class="math inline">\(x_1\)</span>. (a) Qual o novo
+preço efetivo de <span class="math inline">\(x_1\)</span>? (b) Escreva a
+nova reta orçamentária. (c) O conjunto orçamentário aumentou ou
+diminuiu?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li>Novo preço efetivo: <span class="math inline">\(p_1 + t = 4 + 2 =
+6\)</span>. (b) <span class="math inline">\(6x_1 + 6x_2 = 120 \implies
+x_1 + x_2 = 20\)</span>. (c) Diminuiu — o novo intercepto horizontal é
+<span class="math inline">\(120/6 = 20 &lt; 30\)</span>, enquanto o
+vertical permanece 20. A área do conjunto orçamentário caiu de <span
+class="math inline">\(\frac{1}{2}(30)(20) = 300\)</span> para <span
+class="math inline">\(\frac{1}{2}(20)(20) = 200\)</span>.</li>
+</ol>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Mostre que a restrição orçamentária é
+homogênea de grau zero: se multiplicarmos <span
+class="math inline">\(p_1\)</span>, <span
+class="math inline">\(p_2\)</span> e <span
+class="math inline">\(I\)</span> por <span class="math inline">\(\lambda
+&gt; 0\)</span>, o conjunto orçamentário não muda.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>O conjunto orçamentário com preços <span
+class="math inline">\(\lambda p_1\)</span>, <span
+class="math inline">\(\lambda p_2\)</span> e renda <span
+class="math inline">\(\lambda I\)</span> é <span
+class="math inline">\(\{(x_1,x_2) : \lambda p_1 x_1 + \lambda p_2 x_2
+\leq \lambda I\}\)</span>. Dividindo ambos os lados por <span
+class="math inline">\(\lambda &gt; 0\)</span>: <span
+class="math inline">\(\{(x_1,x_2) : p_1 x_1 + p_2 x_2 \leq I\}\)</span>,
+que é idêntico ao conjunto original. <span
+class="math inline">\(\blacksquare\)</span></p>
+</div>
+</details>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -162,214 +261,58 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. A inclinação da reta orçamentária $p_1x_1 + p_2x_2 = I$ é:</div>
+<div class="quiz-option" data-value="a">(a) $-I/p_1$</div>
+<div class="quiz-option" data-value="b">(b) $-p_1/p_2$</div>
+<div class="quiz-option" data-value="c">(c) $-p_2/p_1$</div>
+<div class="quiz-option" data-value="d">(d) $-I/(p_1 p_2)$</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2. Se a renda do consumidor dobra e os preços não mudam, a reta orçamentária:</div>
+<div class="quiz-option" data-value="a">(a) Rotaciona em torno do intercepto vertical</div>
+<div class="quiz-option" data-value="b">(b) Desloca-se paralelamente para fora</div>
+<div class="quiz-option" data-value="c">(c) Não muda</div>
+<div class="quiz-option" data-value="d">(d) Rotaciona em torno da origem</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-question" data-question="q1" data-correct="a">
-<div class="q-text">
-Q1. O que o teorema do envelope afirma sobre o valor ótimo de uma
-função?
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. Se $p_1 = 5$ e $p_2 = 10$, o custo de oportunidade de uma unidade de $x_1$ em termos de $x_2$ é:</div>
+<div class="quiz-option" data-value="a">(a) 2</div>
+<div class="quiz-option" data-value="b">(b) 0,5</div>
+<div class="quiz-option" data-value="c">(c) 5</div>
+<div class="quiz-option" data-value="d">(d) 10</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">Q4. Se todos os preços e a renda são multiplicados por 3, o conjunto orçamentário:</div>
+<div class="quiz-option" data-value="a">(a) Triplica de tamanho</div>
+<div class="quiz-option" data-value="b">(b) Reduz a um terço</div>
+<div class="quiz-option" data-value="c">(c) Permanece inalterado</div>
+<div class="quiz-option" data-value="d">(d) Depende dos valores iniciais</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. Um imposto de $t$ por unidade sobre o bem 1 equivale a:</div>
+<div class="quiz-option" data-value="a">(a) Aumentar $p_1$ para $p_1 + t$, rotacionando a reta</div>
+<div class="quiz-option" data-value="b">(b) Reduzir a renda em $t$ unidades monetárias</div>
+<div class="quiz-option" data-value="c">(c) Deslocar a reta paralelamente para dentro</div>
+<div class="quiz-option" data-value="d">(d) Aumentar $p_2$ para $p_2 + t$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Sua sensibilidade a parâmetros pode ser calculada sem re-resolver o
-problema
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O valor ótimo é sempre crescente nos parâmetros
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O multiplicador de Lagrange é sempre positivo
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A CSO é automaticamente satisfeita
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="c">
-<div class="q-text">
-Q2. Se <span class="math inline">\(f(tx, ty) = t^2 f(x,y)\)</span>, qual
-é o grau de homogeneidade de <span class="math inline">\(f\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>0
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>1
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>2
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(1/2\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="a">
-<div class="q-text">
-Q3. Qual a elasticidade-preço da demanda se <span
-class="math inline">\(Q = 100/P\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(-1\)</span> (unitária)
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(-100\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(0\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(-P/100\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="a">
-<div class="q-text">
-Q4. V/F: “No ótimo, o efeito de uma mudança no parâmetro sobre o valor
-da função objetivo pode ser calculado sem re-resolver o problema.”
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro — é exatamente o teorema do envelope
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. O teorema de Euler para <span class="math inline">\(f\)</span>
-homogênea de grau <span class="math inline">\(k\)</span> afirma que:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(f(tx, ty) = t^k\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(x f_x + y f_y = k f\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(f_x + f_y = k\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(\nabla f = k \cdot (x, y)\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-02')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 02</strong>: Oficina prática com Gallery Walk + desafio
-cronometrado. Traga calculadora e disposição para competir!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 02**: Oficina prática com Gallery Walk + desafio cronometrado. Traga calculadora e disposição para competir!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 03</strong>: Preferências e Axiomas — as propriedades
+fundamentais que descrevem os gostos do consumidor.</p>
 </div>
 
 </div>
@@ -380,7 +323,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-02');
 MicroQuiz.init('aula-02');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

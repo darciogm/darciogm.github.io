@@ -1,160 +1,167 @@
-# Pré-Aula 22 — Discriminação de Preços + Regulação (Prática)
+# Pré-Aula 22 — Concorrência Perfeita e Bem-Estar
 
 !!! info "Leitura obrigatória"
-    **Cap. 14, Seções 14.6–14.8** (regulação de monopólio) + resumo de casos CADE disponível no LMS | Tempo estimado: **40 min**
+    **Cap. 13, Seções 13.1–13.4** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Comparar os esquemas de regulação de monopólio natural (precificação pelo CMg, CMe e tarifa em duas partes)
-2. Explicar a lógica do *price cap* (RPI – X) e da regulação por taxa de retorno
-3. Descrever o papel do CADE na defesa da concorrência e identificar práticas anticompetitivas
+1. Derivar a oferta de mercado por soma horizontal e determinar o equilíbrio marshalliano com estática comparativa
+2. Explicar o equilíbrio de longo prazo com livre entrada/saída e distinguir os três tipos de indústria
+3. Calcular excedentes (EC + EP) e enunciar o Primeiro Teorema do Bem-Estar
 
 ---
 
-## 1. O problema do monopólio natural
+## 1. Oferta de mercado: soma horizontal
 
-Um **monopólio natural** surge quando a curva de custo médio é decrescente em toda a faixa relevante de demanda — uma única firma atende o mercado a custo menor do que duas ou mais. Exemplos: distribuição de energia elétrica, saneamento, ferrovias.
+A **oferta de mercado** é a soma horizontal das ofertas individuais. Com $n$ firmas, cada uma com oferta $q_i^S(P)$:
 
-A condição formal é **subaditividade de custos**:
+$$Q^S(P) = \sum_{i=1}^{n} q_i^S(P)$$
 
-$$C(q) < C(q_1) + C(q_2) \quad \text{para todo } q_1 + q_2 = q$$
+Para firmas idênticas: $Q^S(P) = n \cdot q^S(P)$.
 
-Nesse caso, a entrada de concorrentes **aumentaria** o custo total. Mas deixar o monopolista sem regulação gera peso morto.
-
----
-
-## 2. Esquemas de regulação
-
-### 2.1 Precificação pelo custo marginal
-
-A regra $P = \text{CMg}$ é eficiente (elimina peso morto), mas gera **prejuízo** quando o CMe é decrescente:
-
-$$\text{Se } \text{CMe}(q) > \text{CMg}(q), \text{ então } P = \text{CMg} < \text{CMe} \implies \pi < 0$$
-
-O governo precisaria subsidiar a firma — o que levanta problemas de financiamento e incentivos.
-
-### 2.2 Precificação pelo custo médio
-
-A regra $P = \text{CMe}$ garante **lucro zero** (a firma sobrevive), mas não elimina todo o peso morto:
-
-$$\text{DWL}_{\text{CMe}} < \text{DWL}_{\text{monopólio}} \quad \text{mas} \quad \text{DWL}_{\text{CMe}} > 0$$
-
-É uma solução de **segundo melhor** (*second best*).
-
-### 2.3 Tarifa em duas partes regulada
-
-Combina as vantagens: preço por unidade $p = \text{CMg}$ (eficiência) + taxa fixa $T$ que cobre o déficit:
-
-$$T = \frac{C(q^*) - \text{CMg} \cdot q^*}{N}$$
-
-onde $N$ é o número de consumidores. A taxa fixa não distorce a decisão marginal, mas pode excluir consumidores com baixa disposição a pagar.
+A soma é **horizontal** — para cada preço $P$, somamos as quantidades. Cuidado com os "kinks": firmas com custos diferentes entram em preços diferentes, criando quebras na curva de oferta agregada.
 
 ---
 
-## 3. Regulação na prática
+## 2. Equilíbrio marshalliano
 
-### Taxa de retorno
+O **equilíbrio de mercado** ocorre quando oferta iguala demanda:
 
-O regulador fixa um **retorno justo** $s$ sobre o capital $K$:
+$$Q^D(P^*) = Q^S(P^*)$$
 
-$$\pi \leq s \cdot K$$
+No equilíbrio, cada consumidor maximiza utilidade, cada firma maximiza lucro, e não há excesso de oferta nem de demanda.
 
-!!! warning "Efeito Averch-Johnson"
-    A firma tem incentivo a **sobreinvestir** em capital para inflar a base $K$ e, assim, aumentar o lucro permitido $s \cdot K$. Isso gera ineficiência alocativa.
+### Estática comparativa
 
-### Price cap (RPI – X)
+Deslocamentos de demanda ou oferta alteram o equilíbrio:
 
-O preço pode subir no máximo pela inflação ($\text{RPI}$) menos um fator de eficiência ($X$):
+- **Aumento de demanda** ($D$ desloca para a direita): $P^* \uparrow$, $Q^* \uparrow$
+- **Aumento de oferta** ($S$ desloca para a direita): $P^* \downarrow$, $Q^* \uparrow$
 
-$$P_{t+1} \leq P_t \times (1 + \text{RPI} - X)$$
-
-!!! tip "Incentivos"
-    O *price cap* incentiva a firma a **cortar custos**: qualquer redução de custo abaixo do teto vira lucro para a firma (pelo menos até a próxima revisão tarifária). É o modelo usado pela ANEEL e ANATEL no Brasil.
+A magnitude dos ajustes depende das elasticidades: lado mais inelástico absorve mais do ajuste em preço.
 
 ---
 
-## 4. CADE e defesa da concorrência
+## 3. Longo prazo: entrada e saída
 
-O **Conselho Administrativo de Defesa Econômica (CADE)** atua em três frentes:
+No longo prazo, **livre entrada e saída** impõe:
 
-| Frente | Exemplo |
-|--------|---------|
-| **Controle de estruturas** | Aprovação/rejeição de fusões (ex.: Nestlé-Garoto) |
-| **Condutas anticompetitivas** | Cartéis, preços predatórios, venda casada |
-| **Advocacia da concorrência** | Pareceres sobre regulação setorial |
+$$\pi > 0 \xrightarrow{\text{entrada}} Q^S \uparrow \xrightarrow{} P \downarrow \xrightarrow{} \pi \downarrow$$
 
-!!! example "Caso emblemático"
-    O **cartel dos postos de combustíveis** é um dos casos mais recorrentes no CADE. A evidência típica inclui: paralelismo de preços, comunicação entre concorrentes e margens uniformes acima do esperado.
+$$\pi < 0 \xrightarrow{\text{saída}} Q^S \downarrow \xrightarrow{} P \uparrow \xrightarrow{} \pi \uparrow$$
+
+**Equilíbrio de longo prazo:** $\pi^* = 0 \implies P^* = CMe_{\min}$. Cada firma produz na **escala eficiente**.
+
+### Três tipos de indústria
+
+| Tipo | Efeito da entrada nos custos | Oferta de LP |
+|---|---|---|
+| Custos constantes | Nenhum | Horizontal em $P = CMe_{\min}$ |
+| Custos crescentes | Entrada eleva preços dos insumos | Positivamente inclinada |
+| Custos decrescentes | Entrada reduz custos (externalidades) | Negativamente inclinada |
+
+!!! note "Intuição Econômica"
+    **Lucro zero não é ruim para a firma.** Lucro econômico zero significa que a firma cobre todos os custos, incluindo o retorno normal do capital (custo de oportunidade). Os proprietários recebem exatamente o que ganhariam na melhor alternativa. Lucro contábil continua positivo. A condição $P = CMe_{\min}$ é a expressão máxima da eficiência: o consumidor paga o menor preço possível que sustenta a produção.
 
 ---
 
-## Gráfico interativo: regulação de monopólio natural
+## 4. Medidas de bem-estar
 
-<div id="graph-regulacao" style="min-height: 450px;">
-<iframe src="../../graficos/cap14/regulacao-monopolio.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+### Excedente do consumidor (EC)
+
+$$EC = \int_0^{Q^*} P^D(Q)\,dQ - P^*Q^*$$
+
+Graficamente: área **abaixo** da demanda e **acima** do preço.
+
+### Excedente do produtor (EP)
+
+$$EP = P^*Q^* - \int_0^{Q^*} P^S(Q)\,dQ$$
+
+Graficamente: área **acima** da oferta e **abaixo** do preço.
+
+### Excedente total
+
+$$W = EC + EP = \int_0^{Q^*}\big[P^D(Q) - P^S(Q)\big]\,dQ$$
+
+O excedente total é maximizado quando a última unidade produzida tem benefício marginal igual ao custo marginal.
+
+---
+
+## 5. Primeiro Teorema do Bem-Estar e perda de peso morto
+
+**Primeiro Teorema do Bem-Estar:** sob competição perfeita (sem externalidades, sem poder de mercado, com informação completa), o equilíbrio de mercado é **Pareto-eficiente** — maximiza o excedente total.
+
+Qualquer desvio do equilíbrio competitivo gera **perda de peso morto** (*deadweight loss*, DWL):
+
+$$DWL = W_{\text{equilíbrio}} - W_{\text{intervenção}} > 0$$
+
+O peso morto representa transações mutuamente benéficas que deixam de ocorrer — uma perda líquida para a sociedade que não é capturada por ninguém.
+
+!!! note "Intuição Econômica"
+    **O preço de equilíbrio é um coordenador perfeito.** No equilíbrio competitivo, a última unidade transacionada tem disposição a pagar exatamente igual ao custo marginal. Todas as unidades anteriores geram benefício marginal superior ao custo marginal. Produzir além de $Q^*$ destruiria valor; produzir menos desperdiçaria oportunidades de ganho mútuo. Nenhum planejador central poderia fazer melhor.
+
+---
+
+## Gráfico interativo: equilíbrio de oferta e demanda
+
+<div id="graph-equilibrio" style="min-height: 450px;">
+<iframe src="graficos/cap13/oferta-demanda.html"></iframe>
 </div>
 
 !!! tip "Explore o gráfico"
-    - Compare os resultados de $P = \text{CMg}$, $P = \text{CMe}$ e monopólio não regulado
-    - Observe o prejuízo gerado pela precificação marginal (área hachurada)
-    - Identifique o DWL residual na precificação pelo custo médio
+    - Desloque as curvas de demanda ou oferta e observe o novo equilíbrio
+    - Visualize as áreas de EC e EP e como se redistribuem
+    - Note que o excedente total é máximo no equilíbrio sem intervenção
 
 ---
 
-## Box: Regulação e incentivos
+## Gráfico interativo: equilíbrio de longo prazo
 
-!!! note "Intuição Econômica"
-    **O dilema fundamental da regulação**
+<div id="graph-lp" style="min-height: 450px;">
+<iframe src="graficos/cap13/equilibrio-longo-prazo.html"></iframe>
+</div>
 
-    O regulador enfrenta um problema de **informação assimétrica**: a firma conhece seus custos melhor do que o regulador. Se o regulador fixa $P = \text{CMe}$, a firma não tem incentivo para reduzir custos — qualquer economia será "devolvida" via preço menor.
-
-    O *price cap* resolve parcialmente: ao fixar um teto que independe dos custos realizados, a firma captura os ganhos de eficiência. Porém, se o $X$ for muito alto, a firma pode cortar custos em **qualidade** (racionamento, manutenção precária). Por isso, reguladores modernos combinam *price cap* com **indicadores de qualidade**.
-
----
-
-## Preparação para a aula prática
-
-!!! abstract "Atividades em sala"
-    A Aula 22 terá duas atividades práticas:
-
-    1. **Simulação de discriminação de preços**: você será um monopolista escolhendo menus de preços para diferentes segmentos
-    2. **Tribunal do CADE**: análise de um caso real de fusão — prepare argumentos pró e contra a aprovação
-
-    Leia o caso disponível no LMS e anote: (a) qual o mercado relevante, (b) qual a participação de mercado pós-fusão, (c) quais as eficiências alegadas.
+!!! tip "Explore o gráfico"
+    - Observe a dinâmica de entrada e saída de firmas até o lucro zero
+    - Compare os três tipos de indústria e suas curvas de oferta de longo prazo
+    - Verifique que no equilíbrio de LP cada firma produz no mínimo do CMe
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Um monopólio natural tem $C(q) = 500 + 5q$ e enfrenta demanda $P = 50 - q$. Calcule: (a) o resultado de monopólio; (b) o resultado com $P = \text{CMg}$; (c) o resultado com $P = \text{CMe}$.
+**Exercício 1.** Um mercado tem 50 firmas idênticas com $C(q) = q^2 + 2q + 8$ e demanda $Q^D = 400 - 10P$. Encontre o equilíbrio de curto prazo e o lucro de cada firma.
 
 ??? success "Solução"
-    **(a) Monopólio:** $\text{RMg} = 50 - 2q = 5 \implies q_m = 22{,}5$, $P_m = 27{,}5$
+    Oferta individual: $CMg = 2q + 2 = P \implies q^S = (P-2)/2$ para $P \geq CVMe_{\min}$.
 
-    $\pi_m = 27{,}5 \times 22{,}5 - (500 + 112{,}5) = 618{,}75 - 612{,}5 = 6{,}25$
+    $CVMe = q + 2$, crescente, então $CVMe_{\min} = 2$ (em $q \to 0$). Oferta válida para $P \geq 2$.
 
-    **(b) $P = \text{CMg} = 5$:** $5 = 50 - q \implies q_c = 45$
+    Oferta de mercado: $Q^S = 50 \times (P-2)/2 = 25(P-2) = 25P - 50$.
 
-    $\pi = 5 \times 45 - (500 + 225) = 225 - 725 = -500$ (prejuízo)
+    Equilíbrio: $400 - 10P = 25P - 50 \implies 35P = 450 \implies P^* \approx 12{,}86$.
 
-    **(c) $P = \text{CMe}$:** $\text{CMe} = 500/q + 5$
+    $Q^* = 400 - 128{,}6 = 271{,}4$. Cada firma: $q^* = 5{,}43$.
 
-    $50 - q = 500/q + 5 \implies 45q - q^2 = 500 \implies q^2 - 45q + 500 = 0$
+    Lucro: $\pi = 12{,}86(5{,}43) - [(5{,}43)^2 + 2(5{,}43) + 8] = 69{,}8 - [29{,}5 + 10{,}9 + 8] = 69{,}8 - 48{,}4 = 21{,}4$.
 
-    $q = \frac{45 \pm \sqrt{2025 - 2000}}{2} = \frac{45 \pm 5}{2}$
-
-    $q = 25$ (solução relevante), $P = 25$, $\pi = 0$ ✓
-
-**Exercício 2.** Explique a diferença entre regulação por taxa de retorno e *price cap* em termos de incentivos à eficiência.
+**Exercício 2.** No exercício anterior, qual é o preço de equilíbrio de longo prazo? Quantas firmas haverá se a demanda permanecer a mesma?
 
 ??? success "Solução"
-    **Taxa de retorno:** a firma recebe $\pi = s \cdot K$. O incentivo é **aumentar o capital** (efeito Averch-Johnson), não reduzir custos operacionais. Qualquer ganho de eficiência reduz os custos, mas o regulador ajusta o preço para manter $\pi = s \cdot K$, eliminando o incentivo.
+    LP: $P = CMe_{\min}$. $CMe = q + 2 + 8/q$. Mínimo: $1 - 8/q^2 = 0 \implies q = 2\sqrt{2} \approx 2{,}83$.
 
-    **Price cap:** o teto de preço é fixo (ajustado apenas pela inflação menos $X$). Se a firma reduz custos, a diferença entre o teto e o custo vira **lucro retido**. O incentivo para cortar custos é forte — pelo menos até a próxima revisão tarifária.
+    $CMe(2\sqrt{2}) = 2\sqrt{2} + 2 + 8/(2\sqrt{2}) = 2\sqrt{2} + 2 + 2\sqrt{2} = 4\sqrt{2} + 2 \approx 7{,}66$.
 
-    Em resumo: taxa de retorno incentiva sobreinvestimento; *price cap* incentiva eficiência operacional (mas pode comprometer qualidade).
+    Verificação: $CMg(2\sqrt{2}) = 2(2\sqrt{2}) + 2 = 4\sqrt{2} + 2 \approx 7{,}66 = CMe$.
+
+    $Q^D(7{,}66) = 400 - 76{,}6 = 323{,}4$. Firmas: $n = 323{,}4/2{,}83 \approx 114$.
+
+**Exercício 3.** Explique por que o equilíbrio competitivo maximiza o excedente total.
+
+??? success "Solução"
+    No equilíbrio, $P^* = CMg(Q^*)$ e $P^* = P^D(Q^*)$. Isso significa que a disposição a pagar marginal iguala o custo marginal. Para qualquer $Q < Q^*$, há consumidores dispostos a pagar mais do que o custo de produção — transações com ganho mútuo positivo. Para qualquer $Q > Q^*$, o custo supera a disposição a pagar — transações destruiriam valor. O equilíbrio $Q^*$ é exatamente o ponto onde todas as transações benéficas ocorrem e nenhuma prejudicial acontece, maximizando $W = \int_0^{Q^*}[P^D - CMg]\,dQ$.
 
 ---
 
@@ -165,44 +172,44 @@ O **Conselho Administrativo de Defesa Econômica (CADE)** atua em três frentes:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Um monopólio natural é caracterizado por:
+**Q1.** A oferta de mercado é obtida pela soma \_\_\_\_\_\_ das ofertas individuais.
 
-- [ ] (a) Lucros extraordinários permanentes
-- [ ] (b) Barreiras legais à entrada
-- [x] (c) Custos médios decrescentes na faixa relevante de demanda
-- [ ] (d) Demanda perfeitamente inelástica
+- [x] (a) Horizontal (soma das quantidades para cada preço)
+- [ ] (b) Vertical (soma dos preços para cada quantidade)
+- [ ] (c) Algébrica das funções custo
+- [ ] (d) Geométrica das curvas
 
-**Q2.** A precificação pelo custo marginal em monopólio natural gera:
+**Q2.** No equilíbrio de longo prazo com livre entrada:
 
-- [x] (a) Eficiência alocativa, mas prejuízo para a firma
-- [ ] (b) Lucro zero e eficiência alocativa
-- [ ] (c) Peso morto menor que a precificação pelo CMe
-- [ ] (d) Incentivo ao sobreinvestimento
+- [ ] (a) Todas as firmas têm lucro positivo
+- [ ] (b) $P = CMg$ mas $P > CMe$
+- [x] (c) $P = CMe_{\min}$ e o lucro econômico é zero
+- [ ] (d) Não há produção
 
-**Q3.** O efeito Averch-Johnson está associado a qual tipo de regulação?
+**Q3.** Em uma indústria de custos constantes, um aumento permanente de demanda resulta no LP em:
 
-- [ ] (a) Price cap
-- [x] (b) Taxa de retorno
-- [ ] (c) Precificação pelo custo marginal
-- [ ] (d) Tarifa em duas partes
+- [ ] (a) Preço mais alto e mais firmas
+- [x] (b) Mesmo preço e mais firmas
+- [ ] (c) Preço mais alto e mesmo número de firmas
+- [ ] (d) Preço mais baixo e menos firmas
 
-**Q4.** Na fórmula do *price cap* (RPI – X), o fator X representa:
+**Q4.** O Primeiro Teorema do Bem-Estar afirma que:
 
-- [ ] (a) A taxa de lucro permitida
-- [ ] (b) A inflação esperada
-- [x] (c) O ganho de eficiência esperado do setor
-- [ ] (d) O imposto sobre a receita
+- [ ] (a) Todo equilíbrio de mercado é justo
+- [x] (b) Sob competição perfeita, o equilíbrio é Pareto-eficiente
+- [ ] (c) O governo deve intervir para maximizar bem-estar
+- [ ] (d) Monopólios são eficientes
 
-**Q5.** Qual das seguintes NÃO é uma atribuição do CADE?
+**Q5.** Perda de peso morto representa:
 
-- [ ] (a) Analisar fusões e aquisições
-- [ ] (b) Investigar cartéis
-- [x] (c) Fixar tarifas de energia elétrica
-- [ ] (d) Emitir pareceres sobre regulação setorial
+- [ ] (a) Transferência de renda entre agentes
+- [ ] (b) Custo administrativo de políticas
+- [x] (c) Transações mutuamente benéficas que deixam de ocorrer
+- [ ] (d) A diferença entre lucro contábil e econômico
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 22**: Simulação de discriminação de preços + Tribunal do CADE. Venha preparado com o caso lido!
+    **Aula 23**: Intervenção estatal — tributação, subsídios e controles de preços. Traga calculadora e prepare-se para calcular peso morto!

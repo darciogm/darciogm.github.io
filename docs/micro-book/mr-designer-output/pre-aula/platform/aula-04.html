@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 04 — — Microeconomia II</title>
+<title>Pré-Aula 04 — Utilidade e Curvas de Indiferença — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,109 +17,148 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-04-lab-curvas-de-indiferença-prática">Pré-Aula 04 —
-Lab: Curvas de Indiferença (Prática)</h1>
+<h1 id="pré-aula-04-utilidade-e-curvas-de-indiferença">Pré-Aula 04 —
+Utilidade e Curvas de Indiferença</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
 <p><strong>Cap. 3, Seções 3.4–3.6</strong> do livro interativo | Tempo
-estimado: <strong>40 min</strong></p>
+estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 3, Seções 3.4–3.6** do livro interativo | Tempo estimado: **40 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz
+de:</p>
 <ol type="1">
-<li>Calcular e interpretar a elasticidade de substituição <span
-class="math inline">\(\sigma\)</span> para as funções clássicas</li>
-<li>Demonstrar como a CES aninha Linear, Cobb-Douglas e Leontief via
-parâmetro <span class="math inline">\(\rho\)</span></li>
-<li>Preparar uma “ficha técnica” completa para uma função utilidade
-atribuída (atividade Jigsaw)</li>
+<li>Calcular a Taxa Marginal de Substituição (TMS) e interpretá-la
+geometricamente</li>
+<li>Identificar e trabalhar com as principais funções de utilidade:
+Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES e
+quase-linear</li>
+<li>Explicar o princípio da TMS decrescente e sua relação com a
+convexidade das preferências</li>
 </ol>
 <hr />
-<h2 id="elasticidade-de-substituição">1. Elasticidade de
-substituição</h2>
-<p>A elasticidade de substituição <span
-class="math inline">\(\sigma\)</span> mede a <strong>facilidade</strong>
-com que o consumidor troca um bem pelo outro ao longo da curva de
+<h2 id="taxa-marginal-de-substituição-tms">1. Taxa Marginal de
+Substituição (TMS)</h2>
+<p>A TMS mede a taxa à qual o consumidor está disposto a trocar <span
+class="math inline">\(x_2\)</span> por <span
+class="math inline">\(x_1\)</span> ao longo de uma curva de
 indiferença:</p>
-<p><span class="math display">\[\sigma =
-\frac{d\ln(y/x)}{d\ln(\text{TMS})}\]</span></p>
-<ul>
-<li><span class="math inline">\(\sigma\)</span> alto: curvas “suaves” —
-o consumidor substitui facilmente (ex.: Coca vs. Pepsi)</li>
-<li><span class="math inline">\(\sigma\)</span> baixo: curvas
-“angulosas” — o consumidor exige proporções fixas (ex.: café e
-açúcar)</li>
-<li><span class="math inline">\(\sigma = \infty\)</span>: substitutos
-perfeitos (Linear)</li>
-<li><span class="math inline">\(\sigma = 1\)</span>: Cobb-Douglas</li>
-<li><span class="math inline">\(\sigma = 0\)</span>: complementares
-perfeitos (Leontief)</li>
-</ul>
+<p><span class="math display">\[\text{TMS}_{12} =
+-\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}}\]</span></p>
+<p>Usando o diferencial total <span class="math inline">\(du = u_1 dx_1
++ u_2 dx_2 = 0\)</span> ao longo da curva:</p>
+<p><span class="math display">\[\text{TMS}_{12} = \frac{u_1}{u_2} =
+\frac{\partial u / \partial x_1}{\partial u / \partial x_2}\]</span></p>
+<p>onde <span class="math inline">\(u_i = \partial u / \partial
+x_i\)</span> é a utilidade marginal do bem <span
+class="math inline">\(i\)</span>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A TMS é a “taxa de câmbio subjetiva” do consumidor. Se <span
+class="math inline">\(\text{TMS}_{12} = 3\)</span>, ele está disposto a
+trocar até 3 unidades de <span class="math inline">\(x_2\)</span> por 1
+unidade adicional de <span class="math inline">\(x_1\)</span>. Se o
+mercado oferece essa troca por menos de 3 (ou seja, <span
+class="math inline">\(p_1/p_2 &lt; 3\)</span>), ele compra mais <span
+class="math inline">\(x_1\)</span>.</p>
+</div>
+<h3 id="tms-decrescente">TMS decrescente</h3>
+<p>A convexidade das preferências implica que a TMS é
+<strong>decrescente</strong> ao longo da curva de indiferença: quanto
+mais <span class="math inline">\(x_1\)</span> o consumidor já possui,
+menos <span class="math inline">\(x_2\)</span> ele está disposto a ceder
+por mais uma unidade de <span class="math inline">\(x_1\)</span>.</p>
+<h2 id="gráfico-interativo-tms-em-um-ponto">Gráfico interativo: TMS em
+um ponto</h2>
+<iframe src="graficos/cap03/tms-ponto.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Arraste o ponto ao longo da curva de indiferença e observe como a
+reta tangente (cuja inclinação é <span
+class="math inline">\(-\text{TMS}\)</span>) muda. Verifique que a TMS
+diminui à medida que você se move para a direita.</p>
+</div>
 <hr />
-<h2 id="a-função-ces-a-grande-unificadora">2. A função CES: a grande
-unificadora</h2>
-<p>A função CES (Constant Elasticity of Substitution) é:</p>
-<p><span class="math display">\[U(x,y) = \left(\alpha x^{\rho} +
-(1-\alpha) y^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \ \rho \neq
-0\]</span></p>
-<p>onde:</p>
+<h2 id="funções-de-utilidade-clássicas">2. Funções de utilidade
+clássicas</h2>
+<h3 id="cobb-douglas">2.1 Cobb-Douglas</h3>
+<p><span class="math display">\[u(x_1, x_2) = x_1^a x_2^b \quad (a, b
+&gt; 0)\]</span></p>
+<p>Propriedades:</p>
 <ul>
-<li><span class="math inline">\(\alpha \in (0,1)\)</span>: peso relativo
-do bem <span class="math inline">\(x\)</span></li>
-<li><span class="math inline">\(\rho\)</span>: parâmetro de
-substituição, com <span class="math inline">\(\sigma =
-\frac{1}{1-\rho}\)</span></li>
+<li>TMS: <span class="math inline">\(\text{TMS}_{12} = \frac{a}{b} \cdot
+\frac{x_2}{x_1}\)</span> — decrescente em <span
+class="math inline">\(x_1\)</span></li>
+<li>Curvas de indiferença: hipérboles convexas que nunca tocam os
+eixos</li>
+<li>Fração da renda gasta em cada bem é constante: <span
+class="math inline">\(\frac{a}{a+b}\)</span> em <span
+class="math inline">\(x_1\)</span>, <span
+class="math inline">\(\frac{b}{a+b}\)</span> em <span
+class="math inline">\(x_2\)</span></li>
 </ul>
-<h3 id="tms-da-ces">TMS da CES</h3>
-<p><span class="math display">\[\text{TMS}_{x,y} =
-\frac{\alpha}{1-\alpha} \left(\frac{y}{x}\right)^{1-\rho}\]</span></p>
-<hr />
-<h2 id="casos-especiais-da-ces">3. Casos especiais da CES</h2>
+<p>A transformação monotônica <span class="math inline">\(v = a \ln x_1
++ b \ln x_2\)</span> é equivalente e mais conveniente para cálculos.</p>
+<h3 id="substitutos-perfeitos">2.2 Substitutos perfeitos</h3>
+<p><span class="math display">\[u(x_1, x_2) = ax_1 + bx_2 \quad (a, b
+&gt; 0)\]</span></p>
+<ul>
+<li>TMS: <span class="math inline">\(a/b\)</span> —
+<strong>constante</strong> em todos os pontos</li>
+<li>Curvas de indiferença: retas paralelas com inclinação <span
+class="math inline">\(-a/b\)</span></li>
+<li>O consumidor só se importa com a “quantidade total ponderada”</li>
+</ul>
+<h3 id="complementos-perfeitos">2.3 Complementos perfeitos</h3>
+<p><span class="math display">\[u(x_1, x_2) = \min\{ax_1, bx_2\} \quad
+(a, b &gt; 0)\]</span></p>
+<ul>
+<li>TMS: indefinida no vértice (<span class="math inline">\(ax_1 =
+bx_2\)</span>); zero ou infinita nos segmentos</li>
+<li>Curvas de indiferença: formato de “L” com vértice na reta <span
+class="math inline">\(x_2 = (a/b)x_1\)</span></li>
+<li>O consumidor sempre consome na proporção <span
+class="math inline">\(x_1/x_2 = b/a\)</span></li>
+</ul>
+<h3 id="ces-elasticidade-de-substituição-constante">2.4 CES
+(Elasticidade de Substituição Constante)</h3>
+<p><span class="math display">\[u(x_1, x_2) = \left(\alpha x_1^\rho +
+(1-\alpha) x_2^\rho\right)^{1/\rho} \quad (\rho \leq 1, \rho \neq
+0)\]</span></p>
+<p>O parâmetro <span class="math inline">\(\rho\)</span> controla a
+curvatura. A <strong>elasticidade de substituição</strong> é:</p>
+<p><span class="math display">\[\sigma = \frac{1}{1 - \rho}\]</span></p>
+<p>Casos especiais:</p>
 <table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
 <thead>
 <tr>
-<th style="text-align: left;">Parâmetro</th>
-<th style="text-align: left;"><span
-class="math inline">\(\sigma\)</span></th>
-<th style="text-align: left;">Função</th>
-<th style="text-align: left;">Curvas de indiferença</th>
+<th><span class="math inline">\(\rho\)</span></th>
+<th><span class="math inline">\(\sigma\)</span></th>
+<th>Tipo</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
-1\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma \to
-\infty\)</span></td>
-<td style="text-align: left;"><strong>Linear</strong>: <span
-class="math inline">\(\alpha x + (1-\alpha)y\)</span></td>
-<td style="text-align: left;">Retas paralelas</td>
+<td><span class="math inline">\(\rho \to 1\)</span></td>
+<td><span class="math inline">\(\sigma \to \infty\)</span></td>
+<td>Substitutos perfeitos</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
-0\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma =
-1\)</span></td>
-<td style="text-align: left;"><strong>Cobb-Douglas</strong>: <span
-class="math inline">\(x^{\alpha} y^{1-\alpha}\)</span></td>
-<td style="text-align: left;">Hipérboles convexas</td>
+<td><span class="math inline">\(\rho \to 0\)</span></td>
+<td><span class="math inline">\(\sigma = 1\)</span></td>
+<td>Cobb-Douglas</td>
 </tr>
 <tr>
-<td style="text-align: left;"><span class="math inline">\(\rho \to
--\infty\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\sigma \to
-0\)</span></td>
-<td style="text-align: left;"><strong>Leontief</strong>: <span
-class="math inline">\(\min\{\alpha x, (1-\alpha)y\}\)</span></td>
-<td style="text-align: left;">L’s com vértice na ray</td>
+<td><span class="math inline">\(\rho \to -\infty\)</span></td>
+<td><span class="math inline">\(\sigma \to 0\)</span></td>
+<td>Complementos perfeitos</td>
 </tr>
 </tbody>
 </table>
@@ -127,199 +166,110 @@ class="math inline">\(\min\{\alpha x, (1-\alpha)y\}\)</span></td>
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Por que a CES é tão importante?</strong></p>
-<p>Porque ela captura um <strong>espectro contínuo</strong> de
-comportamentos de substituição com um único parâmetro <span
-class="math inline">\(\rho\)</span>. Em vez de escolher entre modelos
-separados, o economista estima <span class="math inline">\(\rho\)</span>
-e os dados “escolhem” se os bens são mais parecidos com substitutos
-perfeitos ou complementares perfeitos. Na prática empírica, quase todos
-os modelos de demanda partem da CES.</p>
+<p>A família CES unifica os três tipos clássicos num único framework. A
+elasticidade de substituição <span class="math inline">\(\sigma\)</span>
+mede quão facilmente o consumidor troca um bem pelo outro: <span
+class="math inline">\(\sigma\)</span> alto = fácil substituição; <span
+class="math inline">\(\sigma\)</span> baixo = difícil.</p>
 </div>
-<pre><code>**Por que a CES é tão importante?**
-
-Porque ela captura um **espectro contínuo** de comportamentos de substituição com um único parâmetro $\rho$. Em vez de escolher entre modelos separados, o economista estima $\rho$ e os dados &quot;escolhem&quot; se os bens são mais parecidos com substitutos perfeitos ou complementares perfeitos. Na prática empírica, quase todos os modelos de demanda partem da CES.</code></pre>
-<hr />
-<h2 id="quase-concavidade-e-preferências-convexas">4. Quase-concavidade
-e preferências convexas</h2>
-<p>Uma função <span class="math inline">\(U\)</span> é
-<strong>quase-côncava</strong> se seus conjuntos de nível superior são
-convexos:</p>
-<p><span class="math display">\[\{(x,y) : U(x,y) \geq \bar{U}\} \text{ é
-convexo para todo } \bar{U}\]</span></p>
-<p>Quase-concavidade garante que:</p>
+<h3 id="quase-linear">2.5 Quase-linear</h3>
+<p><span class="math display">\[u(x_1, x_2) = v(x_1) + x_2 \quad
+\text{com } v&#39; &gt; 0, \; v&#39;&#39; &lt; 0\]</span></p>
 <ul>
-<li>As curvas de indiferença são <strong>convexas</strong> (arqueiam em
-direção à origem)</li>
-<li>A TMS é <strong>decrescente</strong> ao longo da curva</li>
-<li>A solução do problema do consumidor é um <strong>máximo</strong>
-(não mínimo)
-<div class="admonition tip">
-<div class="admonition-title">
-Teste prático
-</div>
-</div></li>
+<li>TMS: <span class="math inline">\(v&#39;(x_1)\)</span> — depende
+<strong>apenas</strong> de <span class="math inline">\(x_1\)</span></li>
+<li>Curvas de indiferença: translações verticais umas das outras</li>
+<li>Não há efeito renda para o bem 1 (toda renda extra vai para <span
+class="math inline">\(x_2\)</span>)</li>
 </ul>
-<p>Verifique quase-concavidade calculando o <strong>Hessiano
-Orlado</strong>. Se o determinante do Hessiano orlado for positivo, a
-função é quase-côncava na região relevante.</p>
-</div>
-<pre><code>Verifique quase-concavidade calculando o **Hessiano Orlado**. Se o determinante do Hessiano orlado for positivo, a função é quase-côncava na região relevante.</code></pre>
-<hr />
-<h2 id="preparação-para-o-jigsaw-ficha-técnica">5. Preparação para o
-Jigsaw: ficha técnica</h2>
-Na aula, cada grupo será “especialista” em uma função. Prepare sua
-ficha:
-<div class="admonition example">
-<div class="admonition-title">
-Modelo de ficha técnica
-</div>
-<p><strong>Função:</strong> Cobb-Douglas <span class="math inline">\(U =
-x^{0{,}4} y^{0{,}6}\)</span></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Item</th>
-<th style="text-align: left;">Resultado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">TMS</td>
-<td style="text-align: left;"><span class="math inline">\(\frac{0{,}4
-\cdot y}{0{,}6 \cdot x} = \frac{2y}{3x}\)</span></td>
-</tr>
-<tr>
-<td style="text-align: left;"><span
-class="math inline">\(\sigma\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(1\)</span>
-(sempre)</td>
-</tr>
-<tr>
-<td style="text-align: left;">Curvas</td>
-<td style="text-align: left;">Hipérboles convexas, nunca tocam os
-eixos</td>
-</tr>
-<tr>
-<td style="text-align: left;">Quase-côncava?</td>
-<td style="text-align: left;">Sim</td>
-</tr>
-<tr>
-<td style="text-align: left;">Particularidade</td>
-<td style="text-align: left;">Gasto fixo: fração <span
-class="math inline">\(a=0{,}4\)</span> da renda em <span
-class="math inline">\(x\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<pre><code>**Função:** Cobb-Douglas $U = x^{0{,}4} y^{0{,}6}$
-
-| Item | Resultado |
-|:---|:---|
-| TMS | $\frac{0{,}4 \cdot y}{0{,}6 \cdot x} = \frac{2y}{3x}$ |
-| $\sigma$ | $1$ (sempre) |
-| Curvas | Hipérboles convexas, nunca tocam os eixos |
-| Quase-côncava? | Sim |
-| Particularidade | Gasto fixo: fração $a=0{,}4$ da renda em $x$ |</code></pre>
-<hr />
-<h2 id="gráfico-interativo-famílias-de-funções-utilidade">Gráfico
-interativo: famílias de funções utilidade</h2>
-<div id="graph-utility-functions" style="min-height: 450px;">
-<iframe src="../../graficos/cap03/funcoes-utilidade.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+<h2 id="gráfico-interativo-funções-de-utilidade">Gráfico interativo:
+Funções de Utilidade</h2>
+<iframe src="graficos/cap03/funcoes-utilidade.html">
 </iframe>
-</div>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<ul>
-<li>Varie <span class="math inline">\(\rho\)</span> de <span
-class="math inline">\(-5\)</span> até <span
-class="math inline">\(0{,}9\)</span> e observe a transição de Leontief a
-Linear</li>
-<li>Compare as curvas com <span class="math inline">\(\alpha =
-0{,}3\)</span> vs. <span class="math inline">\(\alpha =
-0{,}7\)</span></li>
-<li>Identifique visualmente a elasticidade de substituição pela
-“curvatura”</li>
-</ul>
+<p>Selecione diferentes funções de utilidade e ajuste os parâmetros.
+Compare a forma das curvas de indiferença entre Cobb-Douglas, CES e
+quase-linear.</p>
 </div>
-<pre><code>- Varie $\rho$ de $-5$ até $0{,}9$ e observe a transição de Leontief a Linear
-- Compare as curvas com $\alpha = 0{,}3$ vs. $\alpha = 0{,}7$
-- Identifique visualmente a elasticidade de substituição pela &quot;curvatura&quot;</code></pre>
+<h2 id="gráfico-interativo-família-ces">Gráfico interativo: Família
+CES</h2>
+<iframe src="graficos/cap03/ces-continua.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Varie o parâmetro <span class="math inline">\(\rho\)</span>
+continuamente e observe a transição suave entre substitutos perfeitos
+(<span class="math inline">\(\rho \to 1\)</span>), Cobb-Douglas (<span
+class="math inline">\(\rho \to 0\)</span>) e complementos perfeitos
+(<span class="math inline">\(\rho \to -\infty\)</span>).</p>
+</div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Para a CES com <span
-class="math inline">\(\rho = 0{,}5\)</span> e <span
-class="math inline">\(\alpha = 0{,}5\)</span>, calcule <span
-class="math inline">\(\sigma\)</span> e a TMS no ponto <span
-class="math inline">\((4, 1)\)</span>.
+<p><strong>Exercício 1.</strong> Para <span
+class="math inline">\(u(x_1,x_2) = x_1^{1/3} x_2^{2/3}\)</span>, calcule
+a TMS no ponto <span class="math inline">\((8, 4)\)</span>. Interprete o
+resultado.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\sigma = \frac{1}{1-\rho} =
-\frac{1}{1-0{,}5} = 2\)</span></p>
-<p><span class="math inline">\(\text{TMS} =
-\frac{0{,}5}{0{,}5}\left(\frac{1}{4}\right)^{1-0{,}5} =
-\left(\frac{1}{4}\right)^{0{,}5} = \frac{1}{2} = 0{,}5\)</span></p>
-<p>O consumidor aceita perder 0,5 unidade de <span
-class="math inline">\(y\)</span> por 1 unidade a mais de <span
-class="math inline">\(x\)</span>.</p>
+<p><span class="math inline">\(\text{TMS}_{12} = \frac{a}{b} \cdot
+\frac{x_2}{x_1} = \frac{1/3}{2/3} \cdot \frac{4}{8} = \frac{1}{2} \cdot
+\frac{1}{2} = \frac{1}{4}\)</span>. O consumidor está disposto a ceder
+no máximo <span class="math inline">\(1/4\)</span> de unidade de <span
+class="math inline">\(x_2\)</span> por uma unidade adicional de <span
+class="math inline">\(x_1\)</span>. Ele já tem relativamente bastante
+<span class="math inline">\(x_1\)</span>, então valoriza pouco uma
+unidade extra.</p>
 </div>
 </details>
-<pre><code>$\sigma = \frac{1}{1-\rho} = \frac{1}{1-0{,}5} = 2$
-
-$\text{TMS} = \frac{0{,}5}{0{,}5}\left(\frac{1}{4}\right)^{1-0{,}5} = \left(\frac{1}{4}\right)^{0{,}5} = \frac{1}{2} = 0{,}5$
-
-O consumidor aceita perder 0,5 unidade de $y$ por 1 unidade a mais de $x$.</code></pre>
-<strong>Exercício 2.</strong> Mostre que quando <span
-class="math inline">\(\rho \to 0\)</span>, a CES converge para
-Cobb-Douglas.
+<p><strong>Exercício 2.</strong> Um consumidor tem utilidade <span
+class="math inline">\(u = 2x_1 + 3x_2\)</span> (substitutos perfeitos).
+Se <span class="math inline">\(p_1 = 4\)</span>, <span
+class="math inline">\(p_2 = 9\)</span> e <span class="math inline">\(I =
+36\)</span>, qual cesta ele escolhe?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Tomando <span class="math inline">\(\ln U = \frac{1}{\rho}\ln(\alpha
-x^{\rho} + (1-\alpha)y^{\rho})\)</span>. Quando <span
-class="math inline">\(\rho \to 0\)</span>, aplicamos L’Hôpital: <span
-class="math inline">\(x^{\rho} = e^{\rho \ln x} \approx 1 + \rho \ln
-x\)</span>. Substituindo:</p>
-<p><span class="math inline">\(\ln U \approx \frac{1}{\rho}\ln\left(1 +
-\rho[\alpha \ln x + (1-\alpha)\ln y]\right) \to \alpha \ln x +
-(1-\alpha)\ln y\)</span></p>
-<p>Portanto <span class="math inline">\(U \to x^{\alpha}
-y^{1-\alpha}\)</span>, que é Cobb-Douglas.</p>
+<p>A TMS é <span class="math inline">\(a/b = 2/3\)</span>. A razão de
+preços é <span class="math inline">\(p_1/p_2 = 4/9\)</span>. Como <span
+class="math inline">\(\text{TMS} = 2/3 &gt; 4/9 = p_1/p_2\)</span>, o
+consumidor valoriza <span class="math inline">\(x_1\)</span>
+relativamente mais do que o mercado. Solução de canto: gasta tudo em
+<span class="math inline">\(x_1\)</span>. <span
+class="math inline">\(x_1^* = I/p_1 = 36/4 = 9\)</span>, <span
+class="math inline">\(x_2^* = 0\)</span>.</p>
 </div>
 </details>
-<pre><code>Tomando $\ln U = \frac{1}{\rho}\ln(\alpha x^{\rho} + (1-\alpha)y^{\rho})$. Quando $\rho \to 0$, aplicamos L&#39;Hôpital: $x^{\rho} = e^{\rho \ln x} \approx 1 + \rho \ln x$. Substituindo:
-
-$\ln U \approx \frac{1}{\rho}\ln\left(1 + \rho[\alpha \ln x + (1-\alpha)\ln y]\right) \to \alpha \ln x + (1-\alpha)\ln y$
-
-Portanto $U \to x^{\alpha} y^{1-\alpha}$, que é Cobb-Douglas.</code></pre>
-<strong>Exercício 3.</strong> Na Leontief <span class="math inline">\(U
-= \min\{2x, 3y\}\)</span>, se o consumidor tem <span
-class="math inline">\((6, 4)\)</span>, quanto de <span
-class="math inline">\(x\)</span> está sendo “desperdiçado”?
+<p><strong>Exercício 3.</strong> Para a função CES <span
+class="math inline">\(u = (x_1^\rho + x_2^\rho)^{1/\rho}\)</span>,
+mostre que quando <span class="math inline">\(\rho \to 0\)</span>, a TMS
+converge para <span class="math inline">\(x_2/x_1\)</span> (caso
+Cobb-Douglas com pesos iguais).</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>O vértice ocorre quando <span class="math inline">\(2x = 3y\)</span>,
-ou seja, <span class="math inline">\(x = \frac{3y}{2}\)</span>. Com
-<span class="math inline">\(y = 4\)</span>: <span
-class="math inline">\(x^* = 6\)</span>. Neste caso, <span
-class="math inline">\(2(6) = 12 = 3(4) = 12\)</span>. O consumidor está
-<strong>exatamente no vértice</strong> — nada é desperdiçado. A
-utilidade é <span class="math inline">\(U = \min\{12, 12\} =
-12\)</span>.</p>
+<p>A TMS da CES é <span class="math inline">\(\text{TMS} =
+\frac{x_1^{\rho-1}}{x_2^{\rho-1}} =
+\left(\frac{x_1}{x_2}\right)^{\rho-1} =
+\left(\frac{x_2}{x_1}\right)^{1-\rho}\)</span>. Quando <span
+class="math inline">\(\rho \to 0\)</span>: <span
+class="math inline">\(\text{TMS} \to (x_2/x_1)^1 = x_2/x_1\)</span>, que
+é a TMS de <span class="math inline">\(u = x_1 x_2\)</span>
+(Cobb-Douglas com <span class="math inline">\(a=b=1\)</span>). <span
+class="math inline">\(\blacksquare\)</span></p>
 </div>
 </details>
-<pre><code>O vértice ocorre quando $2x = 3y$, ou seja, $x = \frac{3y}{2}$. Com $y = 4$: $x^* = 6$. Neste caso, $2(6) = 12 = 3(4) = 12$. O consumidor está **exatamente no vértice** — nada é desperdiçado. A utilidade é $U = \min\{12, 12\} = 12$.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -329,224 +279,58 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
-<div class="quiz-question" data-question="q1" data-correct="c">
-<div class="q-text">
-Q1. Na CES, o que acontece com as curvas de indiferença quando <span
-class="math inline">\(\rho \to -\infty\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Tornam-se retas paralelas
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Tornam-se hipérboles
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Tornam-se L’s (ângulo reto)
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Desaparecem
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. A TMS de uma Cobb-Douglas $u = x_1^a x_2^b$ é:</div>
+<div class="quiz-option" data-value="a">(a) $a/b$</div>
+<div class="quiz-option" data-value="b">(b) $(a/b)(x_2/x_1)$</div>
+<div class="quiz-option" data-value="c">(c) $(a/b)(x_1/x_2)$</div>
+<div class="quiz-option" data-value="d">(d) $ax_1 + bx_2$</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. Qual é a elasticidade de substituição da Cobb-Douglas?
+<div class="q-text">Q2. Para substitutos perfeitos $u = 3x_1 + 5x_2$, a TMS é:</div>
+<div class="quiz-option" data-value="a">(a) $5/3$</div>
+<div class="quiz-option" data-value="b">(b) $3/5$</div>
+<div class="quiz-option" data-value="c">(c) Depende do ponto</div>
+<div class="quiz-option" data-value="d">(d) Indefinida</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3. Na família CES, quando $\sigma \to 0$ (elasticidade de substituição tende a zero), as preferências se aproximam de:</div>
+<div class="quiz-option" data-value="a">(a) Substitutos perfeitos</div>
+<div class="quiz-option" data-value="b">(b) Cobb-Douglas</div>
+<div class="quiz-option" data-value="c">(c) Complementos perfeitos</div>
+<div class="quiz-option" data-value="d">(d) Quase-lineares</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. Nas preferências quase-lineares $u = v(x_1) + x_2$, as curvas de indiferença:</div>
+<div class="quiz-option" data-value="a">(a) São retas paralelas</div>
+<div class="quiz-option" data-value="b">(b) São translações verticais umas das outras</div>
+<div class="quiz-option" data-value="c">(c) Têm formato de L</div>
+<div class="quiz-option" data-value="d">(d) São círculos concêntricos</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>0
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. Se a TMS é decrescente ao longo de uma curva de indiferença, as preferências são:</div>
+<div class="quiz-option" data-value="a">(a) Lineares</div>
+<div class="quiz-option" data-value="b">(b) Não-monotônicas</div>
+<div class="quiz-option" data-value="c">(c) Convexas</div>
+<div class="quiz-option" data-value="d">(d) Não-contínuas</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>1
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(\infty\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Depende dos expoentes
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. Se <span class="math inline">\(U = \min\{3x, 2y\}\)</span>, qual é a
-proporção ótima de consumo <span class="math inline">\(x/y\)</span>?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(3/2\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(2/3\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(1\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(6\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="c">
-<div class="q-text">
-Q4. A quase-concavidade de <span class="math inline">\(U\)</span>
-garante que:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>A utilidade é cardinal
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>A TMS é crescente
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Os conjuntos de nível superior são convexos
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A função é diferenciável
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. Na CES com <span class="math inline">\(\rho = 0{,}5\)</span>, a
-elasticidade de substituição vale:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>0,5
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>2
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>1
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(\infty\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-04')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 04</strong>: Lab Jigsaw — cada grupo apresenta sua função
-utilidade e ensina os demais. Traga sua ficha técnica preparada!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 04**: Lab Jigsaw — cada grupo apresenta sua função utilidade e ensina os demais. Traga sua ficha técnica preparada!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 05</strong>: Maximização de Utilidade e Demanda
+Marshalliana — o problema completo de otimização do consumidor.</p>
 </div>
 
 </div>
@@ -557,7 +341,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-04');
 MicroQuiz.init('aula-04');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

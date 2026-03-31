@@ -1,161 +1,155 @@
-# Pré-Aula 07 — Efeitos Renda e Substituição
+# Pré-Aula 07 — Dualidade na Teoria do Consumidor
 
 !!! info "Leitura obrigatória"
-    **Cap. 5, Seções 5.1–5.4** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 4, Seções 4.8–4.9** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Classificar bens como normais/inferiores e de luxo/necessidade usando curvas de Engel e elasticidade-renda
-2. Decompor o efeito total de uma variação de preço em efeitos substituição (Hicks) e renda
-3. Enunciar a equação de Slutsky e identificar as condições para a existência de bens de Giffen
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Descrever o mapa completo de relações entre as quatro funções fundamentais do consumidor
+2. Demonstrar e aplicar as identidades de inversão $V(p, E(p,u)) = u$ e $E(p, V(p,I)) = I$
+3. Resolver um exemplo completo Cobb-Douglas percorrendo todo o circuito primal-dual
 
 ---
 
-## 1. Propriedades da demanda Marshalliana
+## 1. O mapa primal-dual
 
-A demanda Marshalliana $x^*(p_x, p_y, m)$ satisfaz:
+A teoria do consumidor se organiza em torno de quatro funções interconectadas:
 
-**Homogeneidade de grau zero:**
+| Função | Notação | Argumentos | Obtida de |
+|--------|---------|------------|-----------|
+| Demanda Marshalliana | $x^M(p, I)$ | Preços, renda | Maximizar $u$ s.a. orçamento |
+| Utilidade indireta | $V(p, I)$ | Preços, renda | $u(x^M)$ |
+| Demanda Hicksiana | $h(p, \bar{u})$ | Preços, utilidade | Minimizar gasto s.a. $u \geq \bar{u}$ |
+| Função dispêndio | $E(p, \bar{u})$ | Preços, utilidade | $p \cdot h$ |
 
-$$x^*(tp_x, tp_y, tm) = x^*(p_x, p_y, m) \quad \forall \, t > 0$$
-
-> Se todos os preços e a renda mudam na mesma proporção, a demanda não se altera — o que importa são **preços relativos** e **renda real**.
-
-**Lei de Walras (esgotamento da renda):**
-
-$$p_x x^* + p_y y^* = m$$
-
-> O consumidor sempre gasta toda a renda (monotonicidade).
+As conexões entre elas formam um circuito fechado que é o coração da teoria.
 
 ---
 
-## 2. Curvas de Engel e classificação de bens
+## 2. Identidades fundamentais de inversão
 
-A **curva de Engel** mostra como a demanda de um bem varia com a renda, mantendo preços fixos:
+### 2.1 Primeira identidade
 
-$$x^*(m) = x^*(p_x, p_y, m) \quad \text{com } p_x, p_y \text{ fixos}$$
+$$V(p, E(p, \bar{u})) = \bar{u}$$
 
-A **elasticidade-renda** classifica os bens:
+**Leitura**: se damos ao consumidor a renda mínima para atingir $\bar{u}$ (que é $E(p,\bar{u})$), ele maximiza e obtém exatamente $\bar{u}$.
 
-$$\eta_m = \frac{\partial x^*}{\partial m} \cdot \frac{m}{x^*}$$
+### 2.2 Segunda identidade
 
-| Classificação | Condição | Curva de Engel | Exemplo |
-|:---|:---|:---|:---|
-| **Normal** | $\partial x^*/\partial m > 0$ ($\eta_m > 0$) | Inclinação positiva | Maioria dos bens |
-| **Inferior** | $\partial x^*/\partial m < 0$ ($\eta_m < 0$) | Inclinação negativa | Macarrão instantâneo |
-| **Necessidade** | $0 < \eta_m < 1$ | Côncava (cresce menos que renda) | Alimentos básicos |
-| **Luxo** | $\eta_m > 1$ | Convexa (cresce mais que renda) | Viagens internacionais |
+$$E(p, V(p, I)) = I$$
 
----
-
-## 3. Decomposição de Hicks
-
-Quando $p_x$ sobe, acontecem **dois efeitos simultâneos**:
-
-### Efeito Substituição (ES)
-
-Movimento **ao longo** da curva de indiferença original: o consumidor substitui $x$ (agora relativamente mais caro) por $y$.
-
-- **Sempre negativo**: $\Delta x_{ES} < 0$ quando $p_x$ sobe (lei da demanda compensada)
-
-### Efeito Renda (ER)
-
-Deslocamento **entre** curvas de indiferença: o aumento de $p_x$ reduz o poder de compra real.
-
-- **Bem normal**: $\Delta x_{ER} < 0$ (reforça o ES)
-- **Bem inferior**: $\Delta x_{ER} > 0$ (contraria o ES)
-
-### Efeito Total (ET)
-
-$$\Delta x_{ET} = \underbrace{\Delta x_{ES}}_{<0} + \underbrace{\Delta x_{ER}}_{\text{depende}}$$
+**Leitura**: o custo mínimo para atingir a utilidade que $I$ proporciona ($V(p,I)$) é exatamente $I$ — nem mais, nem menos.
 
 !!! note "Intuição Econômica"
-    **Pense em gasolina a R\$ 7,00/litro.**
-
-    Efeito substituição: você troca carro por ônibus, bicicleta ou carona — consome menos gasolina porque ficou relativamente mais cara.
-
-    Efeito renda: com gasolina mais cara, seu orçamento "encolheu" — como se tivesse ficado mais pobre. Se gasolina é um bem normal, esse efeito também reduz o consumo. Ambos puxam na mesma direção: você compra menos gasolina.
-
-    Mas se fosse arroz (bem inferior para famílias ricas)? O efeito renda poderia ir na direção oposta.
+    As duas identidades dizem que $V$ e $E$ são inversas uma da outra no argumento "renda/utilidade". Conhecer uma é conhecer a outra. Isso é a essência da **dualidade**: o problema de maximização e o de minimização carregam exatamente a mesma informação.
 
 ---
 
-## 4. A Equação de Slutsky
+## 3. Conexões entre demandas
 
-A decomposição formal é expressa pela **equação de Slutsky**:
+### 3.1 Marshalliana a partir da Hicksiana
 
-$$\boxed{\frac{\partial x^*}{\partial p_x} = \frac{\partial h_x}{\partial p_x} - x^* \frac{\partial x^*}{\partial m}}$$
+Substituindo $\bar{u} = V(p, I)$ na Hicksiana:
 
-$$\underbrace{\text{Efeito Total}}_{\partial x^*/\partial p_x} = \underbrace{\text{Efeito Substituição}}_{\partial h_x/\partial p_x} - \underbrace{\text{Efeito Renda}}_{x^* \cdot \partial x^*/\partial m}$$
+$$x_i^M(p, I) = h_i(p, V(p, I))$$
 
-Em termos de elasticidades:
+### 3.2 Hicksiana a partir da Marshalliana
 
-$$\varepsilon_{x, p_x} = \varepsilon^h_{x, p_x} - s_x \cdot \eta_m$$
+Substituindo $I = E(p, \bar{u})$ na Marshalliana:
 
-onde $s_x = p_x x^* / m$ é a participação orçamentária de $x$.
+$$h_i(p, \bar{u}) = x_i^M(p, E(p, \bar{u}))$$
 
----
+### 3.3 Identidade de Roy (via dualidade)
 
-## 5. Bens de Giffen
+Diferenciando $V(p, E(p, \bar{u})) = \bar{u}$ em relação a $p_i$:
 
-Um **bem de Giffen** é aquele cuja demanda Marshalliana **sobe** quando o preço sobe:
+$$\frac{\partial V}{\partial p_i} + \frac{\partial V}{\partial I} \cdot \frac{\partial E}{\partial p_i} = 0$$
 
-$$\frac{\partial x^*}{\partial p_x} > 0$$
+Pelo Lema de Shephard, $\partial E / \partial p_i = h_i$. No ponto onde $I = E$, temos $h_i = x_i^M$. Logo:
 
-Pela equação de Slutsky, isso requer:
+$$x_i^M = -\frac{\partial V / \partial p_i}{\partial V / \partial I}$$
 
-1. Bem **inferior** ($\partial x^*/\partial m < 0$)
-2. Efeito renda **maior em módulo** que o efeito substituição
-3. Geralmente: bem que ocupa **grande parcela** do orçamento ($s_x$ alto)
+que é exatamente a **identidade de Roy** — deduzida aqui como consequência da dualidade!
 
-!!! warning "Giffen é raro, mas existe"
-    Jensen e Miller (2008) documentaram comportamento Giffen para arroz em regiões pobres da China: quando o preço do arroz subiu, famílias muito pobres compraram **mais** arroz (cortando carne, que ficou inalcançável) para sobreviver.
+## Gráfico interativo: Dualidade
 
----
-
-## Gráfico interativo: decomposição de Slutsky
-
-<div id="graph-slutsky" style="min-height: 450px;">
-<iframe src="../../graficos/cap05/decomposicao-slutsky.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap04/dualidade.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Aumente $p_x$ e observe os três pontos: original, compensado (Hicks) e final
-    - Identifique visualmente ES (azul) e ER (vermelho)
-    - Alterne entre bem normal e inferior para ver como o ER muda de direção
+    Visualize como a solução do primal (maximizar utilidade na reta orçamentária) e do dual (minimizar gasto na curva de indiferença) convergem para o mesmo ponto. Altere os parâmetros e verifique.
+
+---
+
+## 4. Exemplo completo: Cobb-Douglas
+
+Seja $u(x_1, x_2) = x_1^a x_2^{1-a}$ com $a \in (0,1)$.
+
+### Passo 1: Demandas Marshallianas (primal)
+
+$$x_1^M = \frac{aI}{p_1}, \qquad x_2^M = \frac{(1-a)I}{p_2}$$
+
+### Passo 2: Utilidade indireta
+
+$$V(p, I) = \left(\frac{a}{p_1}\right)^a \left(\frac{1-a}{p_2}\right)^{1-a} I = K \cdot \frac{I}{p_1^a p_2^{1-a}}$$
+
+onde $K = a^a(1-a)^{1-a}$.
+
+### Passo 3: Função dispêndio (invertendo $V$)
+
+De $V = K \cdot I / (p_1^a p_2^{1-a})$, isolamos $I$:
+
+$$E(p, \bar{u}) = \frac{\bar{u}}{K} \cdot p_1^a p_2^{1-a} = \frac{p_1^a p_2^{1-a}}{a^a(1-a)^{1-a}} \cdot \bar{u}$$
+
+### Passo 4: Demandas Hicksianas (Lema de Shephard)
+
+$$h_1 = \frac{\partial E}{\partial p_1} = \frac{a \, p_1^{a-1} p_2^{1-a}}{a^a(1-a)^{1-a}} \cdot \bar{u}$$
+
+### Passo 5: Verificação das identidades
+
+$V(p, E(p, \bar{u})) = K \cdot E/p_1^a p_2^{1-a} = K \cdot \frac{\bar{u}}{K} = \bar{u}$ $\checkmark$
+
+$E(p, V(p, I)) = \frac{p_1^a p_2^{1-a}}{K} \cdot K \cdot \frac{I}{p_1^a p_2^{1-a}} = I$ $\checkmark$
+
+!!! note "Intuição Econômica"
+    O circuito completo Cobb-Douglas mostra que todas as funções são faces do mesmo objeto matemático. Na prática, basta resolver **um** dos problemas (primal ou dual) e usar as identidades para obter todo o resto.
+
+---
+
+## 5. O princípio do lump sum
+
+Uma aplicação importante da dualidade é o **princípio do lump sum**: um imposto sobre a renda (lump sum) é sempre preferível a um imposto sobre o consumo que gera a mesma receita.
+
+Formalmente: seja $t$ um imposto sobre $x_1$. A receita é $R = t \cdot x_1^M(p_1+t, p_2, I)$. Um imposto lump sum de $R$ sobre a renda deixa o consumidor com utilidade maior:
+
+$$V(p_1, p_2, I - R) > V(p_1 + t, p_2, I)$$
+
+## Gráfico interativo: Princípio Lump Sum
+
+<iframe src="graficos/cap04/lump-sum-principle.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Compare o equilíbrio com imposto sobre consumo vs. imposto lump sum de mesma receita. Observe que o lump sum permite atingir uma curva de indiferença mais alta.
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Para $U = x^{0{,}5} y^{0{,}5}$ com $m = 100$, se $p_x$ sobe de 2 para 4 (com $p_y = 2$), decomponha o efeito total em ES e ER.
+**Exercício 1.** Para $u = x_1^{1/3} x_2^{2/3}$, com $p_1 = 3$, $p_2 = 6$ e $I = 90$: percorra o circuito completo — encontre $x^M$, $V$, $E$ e $h$.
 
 ??? success "Solução"
-    **Situação inicial** ($p_x = 2$): $x^* = \frac{0{,}5 \times 100}{2} = 25$, $y^* = 25$, $U^* = 25$.
+    **Marshallianas**: $x_1^M = (1/3)(90)/3 = 10$, $x_2^M = (2/3)(90)/6 = 10$. **Utilidade indireta**: $V = 10^{1/3} \cdot 10^{2/3} = 10$. **Função dispêndio**: $E = \frac{p_1^{1/3} p_2^{2/3}}{(1/3)^{1/3}(2/3)^{2/3}} \bar{u} = \frac{3^{1/3} \cdot 6^{2/3}}{(1/3)^{1/3}(2/3)^{2/3}} \bar{u}$. Simplificando: $= \frac{3^{1/3} \cdot 6^{2/3} \cdot 3^{1/3} \cdot (3/2)^{2/3}}{1} \bar{u} = 9\bar{u}$. Verificação: $E(p, V=10) = 90 = I$. $\checkmark$ **Hicksianas**: $h_1 = \partial E/\partial p_1$, calculada via Shephard.
 
-    **Situação final** ($p_x = 4$): $x^* = \frac{0{,}5 \times 100}{4} = 12{,}5$, $y^* = 25$.
-
-    **Ponto compensado** (Hicks): manter $\bar{U} = 25$ com $p_x = 4$.
-
-    $h_x = 25\sqrt{p_y/p_x} = 25\sqrt{2/4} = 25/\sqrt{2} \approx 17{,}68$
-
-    **Decomposição:**
-
-    - ET: $12{,}5 - 25 = -12{,}5$
-    - ES: $17{,}68 - 25 = -7{,}32$
-    - ER: $12{,}5 - 17{,}68 = -5{,}18$
-
-    Ambos negativos (bem normal): ES + ER = ET ✓
-
-**Exercício 2.** Explique por que o efeito substituição é sempre negativo (quando o preço sobe).
+**Exercício 2.** Demonstre a segunda identidade $E(p, V(p,I)) = I$ de forma geral (sem especificar a forma funcional).
 
 ??? success "Solução"
-    O efeito substituição move o consumidor **ao longo** da mesma curva de indiferença. Quando $p_x$ sobe, a reta de gasto tangente "gira" — fica mais íngreme. Pela convexidade das curvas de indiferença, o novo ponto de tangência sempre terá **menos $x$** e **mais $y$**. Formalmente, a matriz de Slutsky é negativa semidefinida, garantindo $\partial h_x / \partial p_x \leq 0$.
+    Seja $\bar{u} = V(p,I)$ a utilidade máxima com renda $I$. A cesta ótima $x^M(p,I)$ atinge $\bar{u}$ e custa exatamente $I$ (Lei de Walras). Logo $E(p,\bar{u}) \leq I$ (pois $x^M$ é viável para o dual). Mas $E(p,\bar{u}) < I$ é impossível: se houvesse cesta mais barata atingindo $\bar{u}$, sobraria renda, e por monotonicidade o consumidor poderia atingir utilidade maior que $\bar{u}$, contradizendo que $\bar{u}$ é o máximo. Logo $E(p, V(p,I)) = I$. $\blacksquare$
 
-**Exercício 3.** Dê um exemplo de bem que seja de necessidade para famílias de baixa renda e de luxo para famílias de alta renda. É possível?
+**Exercício 3.** Explique intuitivamente por que o imposto lump sum é mais eficiente que o imposto sobre consumo.
 
 ??? success "Solução"
-    Sim, a classificação pode depender da faixa de renda. **Carne bovina** pode ser necessidade para classe média (já consome regularmente, elasticidade-renda < 1) e luxo para famílias de baixa renda (começam a consumir quando renda sobe, elasticidade-renda > 1). A curva de Engel teria formato em S: convexa para rendas baixas (luxo) e côncava para rendas altas (necessidade).
+    O imposto sobre consumo distorce preços relativos, fazendo o consumidor substituir para longe do bem tributado — essa substituição gera **perda de peso morto** (excesso de carga). O imposto lump sum reduz a renda sem alterar preços relativos: a reta orçamentária se desloca paralelamente. O consumidor é mais pobre, mas não tem seus preços distorcidos, atingindo utilidade maior para a mesma receita extraída.
 
 ---
 
@@ -166,44 +160,44 @@ Pela equação de Slutsky, isso requer:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Um bem inferior é aquele cuja demanda:
+**Q1.** A identidade $V(p, E(p, \bar{u})) = \bar{u}$ expressa que:
 
-- [ ] (a) Cai quando o preço sobe
-- [x] (b) Cai quando a renda sobe
-- [ ] (c) Tem elasticidade-preço positiva
-- [ ] (d) Tem curva de Engel convexa
+- [x] (a) $V$ e $E$ são inversas no argumento renda/utilidade
+- [ ] (b) A utilidade é cardinal
+- [ ] (c) As demandas são homogêneas de grau zero
+- [ ] (d) O efeito substituição é negativo
 
-**Q2.** O efeito substituição de Hicks, quando $p_x$ sobe, é:
+**Q2.** A relação $x_i^M(p, I) = h_i(p, V(p, I))$ mostra que:
 
-- [x] (a) Sempre negativo (reduz $x$)
-- [ ] (b) Sempre positivo (aumenta $x$)
-- [ ] (c) Positivo para bens normais, negativo para inferiores
-- [ ] (d) Zero para Cobb-Douglas
+- [ ] (a) Marshallianas e Hicksianas são sempre iguais
+- [x] (b) As demandas coincidem quando a utilidade-alvo é a ótima do primal
+- [ ] (c) Marshallianas dependem da utilidade
+- [ ] (d) Hicksianas dependem da renda
 
-**Q3.** Para que um bem seja de Giffen, ele deve ser:
+**Q3.** No circuito Cobb-Douglas, a identidade de Roy é consequência de:
 
-- [ ] (a) Normal e de luxo
-- [ ] (b) Normal e de necessidade
-- [x] (c) Inferior com efeito renda dominando o efeito substituição
-- [ ] (d) Inferior com efeito substituição dominando o efeito renda
+- [ ] (a) Monotonicidade
+- [ ] (b) Convexidade
+- [x] (c) Dualidade entre $V$ e $E$
+- [ ] (d) Homogeneidade das demandas
 
-**Q4.** A curva de Engel de um bem de luxo é:
+**Q4.** O princípio do lump sum afirma que:
 
-- [ ] (a) Reta horizontal
-- [ ] (b) Côncava (cresce a taxas decrescentes)
-- [x] (c) Convexa (cresce a taxas crescentes)
-- [ ] (d) Decrescente
+- [ ] (a) Impostos sobre consumo são mais eficientes
+- [x] (b) Imposto sobre a renda gera menos distorção que imposto sobre consumo, para mesma receita
+- [ ] (c) Todo imposto é neutro
+- [ ] (d) O consumidor prefere imposto sobre consumo
 
-**Q5.** Na equação de Slutsky, $\frac{\partial x^*}{\partial p_x} = \frac{\partial h_x}{\partial p_x} - x^* \frac{\partial x^*}{\partial m}$, o termo $x^* \frac{\partial x^*}{\partial m}$ é o:
+**Q5.** Para obter as demandas Hicksianas a partir da função dispêndio, usamos:
 
-- [ ] (a) Efeito substituição
-- [x] (b) Efeito renda
-- [ ] (c) Efeito total
-- [ ] (d) Efeito preço-cruzado
+- [ ] (a) A identidade de Roy
+- [x] (b) O Lema de Shephard
+- [ ] (c) O Teorema de Debreu
+- [ ] (d) A condição de tangência
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 07**: Mini-lecture sobre decomposição de Slutsky + simulação interativa com Peer Instruction sobre classificação de bens e condições de Giffen.
+    **Aula 08**: Equação de Slutsky — decompondo o efeito de uma mudança de preço em efeito substituição e efeito renda.

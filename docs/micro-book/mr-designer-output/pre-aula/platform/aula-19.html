@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 19 — — Microeconomia II</title>
+<title>Pré-Aula 19 — Custos de Produção e Minimização de Custos — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,157 +17,175 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-19-equilíbrio-competitivo-e-bem-estar">Pré-Aula 19 —
-Equilíbrio Competitivo e Bem-Estar</h1>
+<h1 id="pré-aula-19-custos-de-produção-e-minimização-de-custos">Pré-Aula
+19 — Custos de Produção e Minimização de Custos</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 12, Seções 12.1–12.5</strong> do livro interativo |
-Tempo estimado: <strong>50 min</strong></p>
+<p><strong>Cap. 11, Seções 11.1–11.5</strong> do livro interativo |
+Tempo estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 12, Seções 12.1–12.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Derivar o equilíbrio de mercado competitivo e analisar ajustes em
-diferentes horizontes temporais</li>
-<li>Calcular excedente do consumidor, excedente do produtor e excedente
-total</li>
-<li>Explicar por que o equilíbrio competitivo é Pareto-eficiente e
-identificar fontes de peso morto</li>
+<li>Distinguir custo econômico de custo contábil e explicar o papel do
+custo de oportunidade</li>
+<li>Derivar as demandas condicionais de fatores via Lagrangiano e
+enunciar o Lema de Shephard</li>
+<li>Relacionar as curvas CT, CMe, CVMe e CMg, explicar a envoltória de
+Viner e identificar economias de escala</li>
 </ol>
 <hr />
-<h2 id="agregação-e-equilíbrio-de-mercado">1. Agregação e equilíbrio de
-mercado</h2>
-<h3 id="demanda-de-mercado">Demanda de mercado</h3>
-<p>A demanda de mercado é a soma horizontal das demandas
-individuais:</p>
-<p><span class="math display">\[Q^D(P) = \sum_{i=1}^{m}
-q_i^D(P)\]</span></p>
-<h3 id="oferta-de-mercado">Oferta de mercado</h3>
-<p>A oferta de mercado é a soma horizontal das ofertas individuais
-(trechos de CMg acima de CVMe):</p>
-<p><span class="math display">\[Q^S(P) = \sum_{j=1}^{n}
-q_j^S(P)\]</span></p>
-<h3 id="equilíbrio">Equilíbrio</h3>
-<p>O <strong>equilíbrio competitivo</strong> ocorre quando:</p>
-<p><span class="math display">\[Q^D(P^*) = Q^S(P^*) \implies
-\text{mercado se ajusta sem excesso}\]</span></p>
-<p>No equilíbrio, cada consumidor maximiza utilidade, cada firma
-maximiza lucro, e a quantidade demandada iguala a ofertada.</p>
+<h2 id="custo-econômico-vs.-custo-contábil">1. Custo econômico vs. custo
+contábil</h2>
+<p>O <strong>custo contábil</strong> registra despesas monetárias
+explícitas (salários, aluguel, matéria-prima). O <strong>custo
+econômico</strong> inclui também os <strong>custos de
+oportunidade</strong> — o valor da melhor alternativa renunciada:</p>
+<p><span class="math display">\[C_{\text{econômico}} =
+C_{\text{explícito}} + C_{\text{oportunidade}}\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>O custo de oportunidade é invisível, mas real.</strong> Se um
+empresário poderia ganhar R$ 10.000/mês como empregado, esse valor é um
+custo econômico de operar seu próprio negócio, mesmo que não apareça em
+nenhuma nota fiscal. Ignorar o custo de oportunidade leva a decisões
+erradas — o empresário pode achar que tem lucro quando, na verdade,
+estaria melhor como empregado.</p>
+</div>
 <hr />
-<h2 id="condições-da-competição-perfeita">2. Condições da competição
-perfeita</h2>
-<p>Para que o modelo competitivo se aplique, assumimos:</p>
+<h2 id="minimização-de-custos">2. Minimização de custos</h2>
+<p>A firma escolhe <span class="math inline">\(K\)</span> e <span
+class="math inline">\(L\)</span> para minimizar o custo de produzir
+<span class="math inline">\(q\)</span> unidades:</p>
+<p><span class="math display">\[\min_{K,L} \; wL + vK \quad \text{s.a.}
+\quad f(K,L) = q\]</span></p>
+<h3 id="lagrangiano">Lagrangiano</h3>
+<p><span class="math display">\[\mathcal{L} = wL + vK + \lambda\big[q -
+f(K,L)\big]\]</span></p>
+<p><strong>Condições de primeira ordem:</strong></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L}
+= w - \lambda\frac{\partial f}{\partial L} = 0 \implies \lambda =
+\frac{w}{PMg_L}\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial K}
+= v - \lambda\frac{\partial f}{\partial K} = 0 \implies \lambda =
+\frac{v}{PMg_K}\]</span></p>
+<p>Igualando:</p>
+<p><span class="math display">\[\boxed{\frac{PMg_L}{PMg_K} = \frac{w}{v}
+\iff TMST = \frac{w}{v}}\]</span></p>
+<p>A firma iguala a taxa marginal de substituição técnica à razão de
+preços dos fatores. O multiplicador <span
+class="math inline">\(\lambda\)</span> é o <strong>custo
+marginal</strong> — o custo adicional de produzir uma unidade a
+mais.</p>
+<h3 id="demandas-condicionais-de-fatores">Demandas condicionais de
+fatores</h3>
+<p>As soluções <span class="math inline">\(L^c(w,v,q)\)</span> e <span
+class="math inline">\(K^c(w,v,q)\)</span> são as <strong>demandas
+condicionais</strong> — a quantidade ótima de cada fator para produzir
+<span class="math inline">\(q\)</span> ao menor custo.</p>
+<hr />
+<h2 id="função-custo-e-propriedades">3. Função custo e propriedades</h2>
+<p>Substituindo as demandas condicionais na função objetivo:</p>
+<p><span class="math display">\[C(w,v,q) = wL^c(w,v,q) +
+vK^c(w,v,q)\]</span></p>
+<p><strong>Propriedades da função custo:</strong></p>
 <ol type="1">
-<li><strong>Muitos compradores e vendedores</strong> — ninguém tem poder
-de mercado</li>
-<li><strong>Produto homogêneo</strong> — bens idênticos entre
-firmas</li>
-<li><strong>Livre entrada e saída</strong> — sem barreiras</li>
-<li><strong>Informação perfeita</strong> — todos conhecem preços e
-qualidades
-<div class="admonition tip">
-<div class="admonition-title">
-Na prática
-</div>
-</div></li>
+<li><strong>Não decrescente</strong> em <span
+class="math inline">\(w\)</span>, <span class="math inline">\(v\)</span>
+e <span class="math inline">\(q\)</span></li>
+<li><strong>Homogênea de grau 1</strong> em <span
+class="math inline">\((w,v)\)</span>: dobrar todos os preços dos fatores
+dobra o custo</li>
+<li><strong>Côncava</strong> em <span
+class="math inline">\((w,v)\)</span>: a firma pode substituir fatores
+quando preços mudam</li>
+<li><strong>Lema de Shephard:</strong> <span
+class="math inline">\(\displaystyle L^c = \frac{\partial C}{\partial w},
+\quad K^c = \frac{\partial C}{\partial v}\)</span></li>
 </ol>
-<p>Poucos mercados satisfazem todas as condições simultaneamente. Mas o
-modelo é uma referência (benchmark) poderosa: mercados agrícolas de
-commodities, mercados financeiros e alguns mercados digitais se
-aproximam bastante.</p>
-</div>
-<pre><code>Poucos mercados satisfazem todas as condições simultaneamente. Mas o modelo é uma referência (benchmark) poderosa: mercados agrícolas de commodities, mercados financeiros e alguns mercados digitais se aproximam bastante.</code></pre>
-<hr />
-<h2 id="horizontes-temporais">3. Horizontes temporais</h2>
-<p>A resposta do mercado a choques depende do horizonte temporal:</p>
-<h3 id="curtíssimo-prazo-mercado">Curtíssimo prazo (mercado)</h3>
-<p>Oferta <strong>fixa</strong> — a quantidade não pode se ajustar. Todo
-o ajuste ocorre via preço.</p>
-<p><span class="math display">\[Q^S = \bar{Q} \implies P^* \text{
-determinado pela demanda}\]</span></p>
-<h3 id="curto-prazo">Curto prazo</h3>
-<p>Firmas existentes ajustam a produção (fator variável), mas
-<strong>novas firmas não entram</strong>. Oferta positivamente
-inclinada.</p>
-<h3 id="longo-prazo">Longo prazo</h3>
-Todos os fatores são variáveis e há <strong>livre
-entrada/saída</strong>. A oferta é mais elástica (ou perfeitamente
-elástica em indústria de custos constantes).
-<div class="admonition example">
+<div class="admonition note">
 <div class="admonition-title">
-Choque de demanda: aumento do preço do café
+Intuição Econômica
 </div>
+<p><strong>O Lema de Shephard é o dual do Lema de Hotelling.</strong>
+Assim como a demanda hicksiana sai da função dispêndio por
+diferenciação, a demanda condicional de fatores sai da função custo. A
+dualidade entre minimização de custos e maximização de lucro permeia
+toda a teoria da firma.</p>
+</div>
+<hr />
+<h2 id="curvas-de-custo-no-curto-prazo">4. Curvas de custo no curto
+prazo</h2>
+<p>Com capital fixo <span class="math inline">\(\bar{K}\)</span> no
+curto prazo, definimos:</p>
+<table>
+<thead>
+<tr>
+<th>Curva</th>
+<th>Definição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custo Total</td>
+<td><span class="math inline">\(CT(q) = CF + CV(q)\)</span></td>
+</tr>
+<tr>
+<td>Custo Médio</td>
+<td><span class="math inline">\(CMe(q) = CT(q)/q = CF/q +
+CVMe(q)\)</span></td>
+</tr>
+<tr>
+<td>Custo Variável Médio</td>
+<td><span class="math inline">\(CVMe(q) = CV(q)/q\)</span></td>
+</tr>
+<tr>
+<td>Custo Marginal</td>
+<td><span class="math inline">\(CMg(q) = dCT/dq = dCV/dq\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Relações fundamentais:</strong></p>
 <ul>
-<li><strong>Curtíssimo prazo</strong>: preço dispara; quantidade fixa
-(safra já colhida)</li>
-<li><strong>Curto prazo</strong>: agricultores existentes expandem
-colheita; preço sobe menos</li>
-<li><strong>Longo prazo</strong>: novos agricultores entram; preço
-retorna próximo ao custo mínimo</li>
+<li>O CMg corta o CMe e o CVMe em seus respectivos <strong>pontos de
+mínimo</strong></li>
+<li>Se <span class="math inline">\(CMg &lt; CMe\)</span>, o CMe está
+caindo; se <span class="math inline">\(CMg &gt; CMe\)</span>, o CMe está
+subindo</li>
+<li>A distância vertical entre CMe e CVMe é <span
+class="math inline">\(CF/q\)</span>, que diminui com <span
+class="math inline">\(q\)</span></li>
 </ul>
-</div>
-<pre><code>- **Curtíssimo prazo**: preço dispara; quantidade fixa (safra já colhida)
-- **Curto prazo**: agricultores existentes expandem colheita; preço sobe menos
-- **Longo prazo**: novos agricultores entram; preço retorna próximo ao custo mínimo</code></pre>
 <hr />
-<h2 id="dinâmica-de-entrada-e-saída">4. Dinâmica de entrada e saída</h2>
-<p>O ajuste de longo prazo segue o mecanismo:</p>
-<p><span class="math display">\[\pi &gt; 0 \xrightarrow{\text{entrada}}
-Q^S \uparrow \xrightarrow{} P \downarrow \xrightarrow{} \pi
-\downarrow\]</span></p>
-<p><span class="math display">\[\pi &lt; 0 \xrightarrow{\text{saída}}
-Q^S \downarrow \xrightarrow{} P \uparrow \xrightarrow{} \pi
-\uparrow\]</span></p>
-<p>Convergência: <span class="math inline">\(\pi^* = 0 \implies P^* =
-CMe_{\min}\)</span></p>
+<h2 id="custos-de-longo-prazo-e-envoltória-de-viner">5. Custos de longo
+prazo e envoltória de Viner</h2>
+<p>No longo prazo, todos os fatores são variáveis. Para cada nível de
+capital <span class="math inline">\(\bar{K}\)</span>, existe uma curva
+de CMe de curto prazo. A curva de <strong>CMe de longo prazo</strong>
+(CMeLP) é a <strong>envoltória</strong> dessas curvas:</p>
+<p><span class="math display">\[CMeLP(q) = \min_{\bar{K}} CMe_{CP}(q;
+\bar{K})\]</span></p>
+<p>A CMeLP tangencia cada curva de CMe de curto prazo no ponto
+correspondente ao <span class="math inline">\(\bar{K}\)</span> ótimo
+para aquele <span class="math inline">\(q\)</span>. No ponto de escala
+eficiente, CMeLP = CMeCP e ambas atingem o mínimo.</p>
+<p><strong>Economias de escala</strong> ocorrem quando <span
+class="math inline">\(CMeLP\)</span> é decrescente (<span
+class="math inline">\(\varepsilon_C &lt; 1\)</span>, onde <span
+class="math inline">\(\varepsilon_C = CMg/CMe\)</span>).
+<strong>Deseconomias de escala</strong> quando <span
+class="math inline">\(CMeLP\)</span> é crescente (<span
+class="math inline">\(\varepsilon_C &gt; 1\)</span>).</p>
 <hr />
-<h2 id="medidas-de-bem-estar">5. Medidas de bem-estar</h2>
-<h3 id="excedente-do-consumidor-ec">Excedente do consumidor (EC)</h3>
-<p>Diferença entre a disposição a pagar e o preço efetivamente pago:</p>
-<p><span class="math display">\[EC = \int_0^{Q^*} P^D(Q)\,dQ - P^*
-Q^*\]</span></p>
-<p>Graficamente: área <strong>abaixo</strong> da curva de demanda e
-<strong>acima</strong> do preço de equilíbrio.</p>
-<h3 id="excedente-do-produtor-ep">Excedente do produtor (EP)</h3>
-<p>Diferença entre a receita e o custo variável:</p>
-<p><span class="math display">\[EP = P^* Q^* - \int_0^{Q^*}
-CMg(Q)\,dQ\]</span></p>
-<p>Graficamente: área <strong>acima</strong> da curva de oferta e
-<strong>abaixo</strong> do preço de equilíbrio.</p>
-<h3 id="excedente-total-et">Excedente total (ET)</h3>
-<p><span class="math display">\[ET = EC + EP = \int_0^{Q^*} \big[P^D(Q)
-- CMg(Q)\big]\,dQ\]</span></p>
-<hr />
-<h2 id="eficiência-de-pareto-e-peso-morto">6. Eficiência de Pareto e
-peso morto</h2>
-<div class="admonition warning">
-<div class="admonition-title">
-Conceito central
-</div>
-<p>Uma alocação é <strong>Pareto-eficiente</strong> se não é possível
-melhorar a situação de nenhum agente sem piorar a de outro.</p>
-</div>
-<pre><code>Uma alocação é **Pareto-eficiente** se não é possível melhorar a situação de nenhum agente sem piorar a de outro.</code></pre>
-<p>O equilíbrio competitivo é Pareto-eficiente — ele maximiza o
-excedente total. Qualquer desvio do equilíbrio (por intervenção, poder
-de mercado ou externalidades) gera <strong>peso morto</strong>
-(deadweight loss):</p>
-<p><span class="math display">\[DWL = ET_{\text{equilíbrio}} -
-ET_{\text{intervenção}} &gt; 0\]</span></p>
-<p>O peso morto representa transações mutuamente benéficas que deixam de
-ocorrer. É uma perda líquida para a sociedade — não é transferida para
-ninguém.</p>
-<p><strong>Primeiro Teorema do Bem-Estar:</strong> sob competição
-perfeita, o equilíbrio de mercado é Pareto-eficiente.</p>
-<hr />
-<h2 id="gráfico-interativo-equilíbrio-de-mercado">Gráfico interativo:
-equilíbrio de mercado</h2>
-<div id="graph-equilibrio" style="min-height: 450px;">
-<iframe src="../../graficos/cap12/equilibrio-mercado.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+<h2 id="gráfico-interativo-minimização-de-custo">Gráfico interativo:
+minimização de custo</h2>
+<div id="graph-min-custo" style="min-height: 450px;">
+<iframe src="graficos/cap11/minimizacao-custo.html">
 </iframe>
 </div>
 <div class="admonition tip">
@@ -175,142 +193,116 @@ equilíbrio de mercado</h2>
 Explore o gráfico
 </div>
 <ul>
-<li>Desloque as curvas de demanda ou oferta e observe o novo
-equilíbrio</li>
-<li>Visualize as áreas de excedente do consumidor e do produtor</li>
-<li>Introduza um imposto ou preço fixo e veja o peso morto surgir</li>
+<li>Mova a isoquanta para diferentes níveis de produção e veja o ponto
+de tangência com a isocusto</li>
+<li>Altere a razão <span class="math inline">\(w/v\)</span> e observe a
+substituição entre fatores</li>
+<li>Verifique que no ótimo <span class="math inline">\(TMST =
+w/v\)</span></li>
 </ul>
 </div>
-<pre><code>- Desloque as curvas de demanda ou oferta e observe o novo equilíbrio
-- Visualize as áreas de excedente do consumidor e do produtor
-- Introduza um imposto ou preço fixo e veja o peso morto surgir</code></pre>
 <hr />
-<h2 id="box-o-poder-do-equilíbrio-competitivo">Box: O poder do
-equilíbrio competitivo</h2>
-<div class="admonition note">
+<h2 id="gráfico-interativo-curvas-de-custo">Gráfico interativo: curvas
+de custo</h2>
+<div id="graph-curvas-custo" style="min-height: 450px;">
+<iframe src="graficos/cap11/curvas-custo.html">
+</iframe>
+</div>
+<div class="admonition tip">
 <div class="admonition-title">
-Intuição Econômica
+Explore o gráfico
 </div>
-<p><strong>Por que o equilíbrio competitivo maximiza o
-bem-estar?</strong></p>
-<p>No equilíbrio, a última unidade transacionada tem benefício marginal
-(disposição a pagar) exatamente igual ao custo marginal de produzi-la.
-Todas as unidades anteriores geram benefício marginal superior ao custo
-marginal — cada uma contribui positivamente para o excedente total.
-Produzir além de <span class="math inline">\(Q^*\)</span> destruiria
-valor (custo &gt; benefício); produzir menos de <span
-class="math inline">\(Q^*\)</span> desperdiçaria oportunidades de ganho
-mútuo. O preço de equilíbrio é o “sinal” perfeito que coordena essa
-eficiência.</p>
+<ul>
+<li>Observe como o CMg cruza o CMe e o CVMe nos seus mínimos</li>
+<li>Note que a distância CMe - CVMe diminui à medida que <span
+class="math inline">\(q\)</span> cresce</li>
+<li>Identifique as regiões de economias e deseconomias de escala</li>
+</ul>
 </div>
-<pre><code>**Por que o equilíbrio competitivo maximiza o bem-estar?**
-
-No equilíbrio, a última unidade transacionada tem benefício marginal (disposição a pagar) exatamente igual ao custo marginal de produzi-la. Todas as unidades anteriores geram benefício marginal superior ao custo marginal — cada uma contribui positivamente para o excedente total. Produzir além de $Q^*$ destruiria valor (custo &gt; benefício); produzir menos de $Q^*$ desperdiçaria oportunidades de ganho mútuo. O preço de equilíbrio é o &quot;sinal&quot; perfeito que coordena essa eficiência.</code></pre>
+<hr />
+<h2 id="gráfico-interativo-envoltória-de-custo-total">Gráfico
+interativo: envoltória de custo total</h2>
+<div id="graph-envoltoria" style="min-height: 450px;">
+<iframe src="graficos/cap11/envoltoria-custo-total.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Varie o nível de capital fixo e veja diferentes curvas de CMe de
+curto prazo</li>
+<li>Observe como a envoltória de longo prazo tangencia cada curva de
+curto prazo</li>
+<li>Identifique a escala eficiente (mínimo do CMeLP)</li>
+</ul>
+</div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Em um mercado com demanda <span
-class="math inline">\(Q^D = 100 - 2P\)</span> e oferta <span
-class="math inline">\(Q^S = 3P - 25\)</span>, encontre: (a) preço e
-quantidade de equilíbrio, (b) excedente do consumidor e do produtor, (c)
-excedente total.
+<p><strong>Exercício 1.</strong> Uma firma tem <span
+class="math inline">\(f(K,L) = K^{1/2}L^{1/2}\)</span>, <span
+class="math inline">\(w = 4\)</span> e <span class="math inline">\(v =
+1\)</span>. Encontre as demandas condicionais e a função custo <span
+class="math inline">\(C(q)\)</span>.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<ol type="a">
-<li><span class="math inline">\(Q^D = Q^S \implies 100 - 2P = 3P - 25
-\implies 5P = 125 \implies P^* = 25\)</span></li>
-</ol>
-<p><span class="math inline">\(Q^* = 100 - 50 = 50\)</span></p>
-<ol start="2" type="a">
-<li>Demanda inversa: <span class="math inline">\(P^D = 50 -
-Q/2\)</span>. Oferta inversa: <span class="math inline">\(P^S = (Q +
-25)/3\)</span>.</li>
-</ol>
-<p><span class="math inline">\(EC = \frac{1}{2}(50 - 25)(50) =
-625\)</span></p>
-<p>Para o EP: preço mínimo de oferta (quando <span
-class="math inline">\(Q^S = 0\)</span>): <span class="math inline">\(P =
-25/3 \approx 8{,}33\)</span>.</p>
-<p><span class="math inline">\(EP = \frac{1}{2}(25 - 8{,}33)(50) =
-\frac{1}{2}(16{,}67)(50) \approx 416{,}67\)</span></p>
-<ol start="3" type="a">
-<li><span class="math inline">\(ET = EC + EP = 625 + 416{,}67 =
-1.041{,}67\)</span></li>
-</ol>
+<p><span class="math inline">\(TMST = \frac{PMg_L}{PMg_K} = \frac{K}{L}
+= \frac{w}{v} = 4 \implies K = 4L\)</span></p>
+<p>Restrição: <span class="math inline">\((4L)^{1/2}L^{1/2} = 2L = q
+\implies L^c = q/2\)</span>, <span class="math inline">\(K^c =
+2q\)</span>.</p>
+<p><span class="math inline">\(C(q) = 4(q/2) + 1(2q) = 2q + 2q =
+4q\)</span></p>
+<p>Verificação pelo Lema de Shephard: <span
+class="math inline">\(\partial C/\partial w = q/2 = L^c\)</span> e <span
+class="math inline">\(\partial C/\partial v = 2q = K^c\)</span>.</p>
 </div>
 </details>
-<pre><code>(a) $Q^D = Q^S \implies 100 - 2P = 3P - 25 \implies 5P = 125 \implies P^* = 25$
-
-$Q^* = 100 - 50 = 50$
-
-(b) Demanda inversa: $P^D = 50 - Q/2$. Oferta inversa: $P^S = (Q + 25)/3$.
-
-$EC = \frac{1}{2}(50 - 25)(50) = 625$
-
-Para o EP: preço mínimo de oferta (quando $Q^S = 0$): $P = 25/3 \approx 8{,}33$.
-
-$EP = \frac{1}{2}(25 - 8{,}33)(50) = \frac{1}{2}(16{,}67)(50) \approx 416{,}67$
-
-(c) $ET = EC + EP = 625 + 416{,}67 = 1.041{,}67$</code></pre>
-<strong>Exercício 2.</strong> Explique o que acontece nesse mercado se o
-governo fixa o preço em <span class="math inline">\(P = 20\)</span>
-(abaixo do equilíbrio). Há excesso de oferta ou demanda? Calcule o peso
-morto.
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(C(q) =
+q^3 - 6q^2 + 15q + 10\)</span>, encontre CMg, CMe, CVMe e seus
+mínimos.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Com <span class="math inline">\(P = 20\)</span>: <span
-class="math inline">\(Q^D = 100 - 40 = 60\)</span> e <span
-class="math inline">\(Q^S = 60 - 25 = 35\)</span>.</p>
-<p>Há <strong>excesso de demanda</strong> (escassez): <span
-class="math inline">\(Q^D - Q^S = 25\)</span> unidades.</p>
-<p>A quantidade efetivamente transacionada é <span
-class="math inline">\(Q = 35\)</span> (lado curto do mercado).</p>
-<p>Novo EC: área sob a demanda de <span class="math inline">\(0\)</span>
-a <span class="math inline">\(35\)</span>, menos o gasto <span
-class="math inline">\(20 \times 35\)</span>:</p>
-<p><span class="math inline">\(EC&#39; = \int_0^{35}(50 - Q/2)\,dQ -
-20(35) = [50(35) - 35^2/4] - 700 = 1.750 - 306{,}25 - 700 =
-743{,}75\)</span></p>
-<p>Novo EP: <span class="math inline">\(EP&#39; = 20(35) - \int_0^{35}(Q
-+ 25)/3\,dQ = 700 - [35^2/6 + 25(35)/3] = 700 - 204{,}17 - 291{,}67 =
-204{,}17\)</span></p>
-<p><span class="math inline">\(ET&#39; = 743{,}75 + 204{,}17 =
-947{,}92\)</span></p>
-<p><span class="math inline">\(DWL = 1.041{,}67 - 947{,}92 =
-93{,}75\)</span></p>
-<p>Alternativamente: <span class="math inline">\(DWL = \frac{1}{2}(25 -
-20)(50 - 35) = \frac{1}{2}(5)(15) = 37{,}5\)</span>.</p>
-<p>Nota: a discrepância se deve à geometria não-triangular exata; usando
-as inversas corretamente: <span class="math inline">\(P^D(35) =
-32{,}5\)</span> e <span class="math inline">\(P^S(35) = 20\)</span>,
-então <span class="math inline">\(DWL = \frac{1}{2}(32{,}5 - 20)(50 -
-35) = \frac{1}{2}(12{,}5)(15) = 93{,}75\)</span>.</p>
+<p><span class="math inline">\(CMg = 3q^2 - 12q + 15\)</span>. Mínimo:
+<span class="math inline">\(6q - 12 = 0 \implies q = 2\)</span>, <span
+class="math inline">\(CMg(2) = 3\)</span>.</p>
+<p><span class="math inline">\(CVMe = q^2 - 6q + 15\)</span>. Mínimo:
+<span class="math inline">\(2q - 6 = 0 \implies q = 3\)</span>, <span
+class="math inline">\(CVMe(3) = 6\)</span>.</p>
+<p>Verificação: <span class="math inline">\(CMg(3) = 27 - 36 + 15 = 6 =
+CVMe(3)\)</span>.</p>
+<p><span class="math inline">\(CMe = q^2 - 6q + 15 + 10/q\)</span>.
+Mínimo onde <span class="math inline">\(CMg = CMe\)</span>: resolvendo
+numericamente, <span class="math inline">\(q \approx 3{,}68\)</span>,
+<span class="math inline">\(CMe \approx 6{,}39\)</span>.</p>
 </div>
 </details>
-<pre><code>Com $P = 20$: $Q^D = 100 - 40 = 60$ e $Q^S = 60 - 25 = 35$.
-
-Há **excesso de demanda** (escassez): $Q^D - Q^S = 25$ unidades.
-
-A quantidade efetivamente transacionada é $Q = 35$ (lado curto do mercado).
-
-Novo EC: área sob a demanda de $0$ a $35$, menos o gasto $20 \times 35$:
-
-$EC&#39; = \int_0^{35}(50 - Q/2)\,dQ - 20(35) = [50(35) - 35^2/4] - 700 = 1.750 - 306{,}25 - 700 = 743{,}75$
-
-Novo EP: $EP&#39; = 20(35) - \int_0^{35}(Q + 25)/3\,dQ = 700 - [35^2/6 + 25(35)/3] = 700 - 204{,}17 - 291{,}67 = 204{,}17$
-
-$ET&#39; = 743{,}75 + 204{,}17 = 947{,}92$
-
-$DWL = 1.041{,}67 - 947{,}92 = 93{,}75$
-
-Alternativamente: $DWL = \frac{1}{2}(25 - 20)(50 - 35) = \frac{1}{2}(5)(15) = 37{,}5$.
-
-Nota: a discrepância se deve à geometria não-triangular exata; usando as inversas corretamente: $P^D(35) = 32{,}5$ e $P^S(35) = 20$, então $DWL = \frac{1}{2}(32{,}5 - 20)(50 - 35) = \frac{1}{2}(12{,}5)(15) = 93{,}75$.</code></pre>
+<p><strong>Exercício 3.</strong> Explique por que a curva de CMeLP nunca
+fica acima de nenhuma curva de CMe de curto prazo.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>A CMeLP é obtida minimizando o custo sobre <strong>todos</strong> os
+fatores, inclusive o capital. Cada curva de CMe de curto prazo fixa o
+capital em <span class="math inline">\(\bar{K}\)</span>, restringindo a
+escolha da firma. Como a minimização com mais liberdade (LP) não pode
+produzir custo maior que a minimização restrita (CP), temos <span
+class="math inline">\(CMeLP(q) \leq CMe_{CP}(q;\bar{K})\)</span> para
+todo <span class="math inline">\(\bar{K}\)</span>. A igualdade ocorre
+apenas no ponto onde <span class="math inline">\(\bar{K}\)</span>
+coincide com o capital ótimo de longo prazo para aquele <span
+class="math inline">\(q\)</span>.</p>
+</div>
+</details>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -320,212 +312,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. A diferença entre custo econômico e custo contábil é:</div>
+<div class="quiz-option" data-value="a">(a) O custo econômico exclui a depreciação</div>
+<div class="quiz-option" data-value="b">(b) O custo econômico inclui o custo de oportunidade</div>
+<div class="quiz-option" data-value="c">(c) O custo contábil é sempre maior</div>
+<div class="quiz-option" data-value="d">(d) Não há diferença relevante</div>
+<div class="quiz-feedback"></div>
 </div>
-</div>
-<div class="quiz-question" data-question="q1" data-correct="a">
-<div class="q-text">
-Q1. O excedente do consumidor é a área:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Abaixo da curva de demanda e acima do preço de equilíbrio
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Acima da curva de oferta e abaixo do preço de equilíbrio
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Entre as curvas de oferta e demanda, à direita do equilíbrio
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Abaixo do preço de equilíbrio e acima do eixo horizontal
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. O Primeiro Teorema do Bem-Estar afirma que:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Todo equilíbrio de mercado é justo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Sob competição perfeita, o equilíbrio é Pareto-eficiente
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O governo deve intervir para maximizar o bem-estar
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Monopólios são eficientes
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">Q2. A condição de minimização de custos é:</div>
+<div class="quiz-option" data-value="a">(a) $TMST = w/v$</div>
+<div class="quiz-option" data-value="b">(b) $PMg_L = PMg_K$</div>
+<div class="quiz-option" data-value="c">(c) $w = v$</div>
+<div class="quiz-option" data-value="d">(d) $CMg = CMe$</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. No longo prazo, um aumento permanente de demanda em uma indústria de
-custos constantes resulta em:
+<div class="q-text">Q3. Pelo Lema de Shephard, a demanda condicional por trabalho é:</div>
+<div class="quiz-option" data-value="a">(a) $L^c = \partial C/\partial q$</div>
+<div class="quiz-option" data-value="b">(b) $L^c = \partial C/\partial w$</div>
+<div class="quiz-option" data-value="c">(c) $L^c = \partial C/\partial v$</div>
+<div class="quiz-option" data-value="d">(d) $L^c = C/w$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. O CMg cruza o CMe no ponto de:</div>
+<div class="quiz-option" data-value="a">(a) Máximo do CMe</div>
+<div class="quiz-option" data-value="b">(b) Mínimo do CMe</div>
+<div class="quiz-option" data-value="c">(c) Máximo do CMg</div>
+<div class="quiz-option" data-value="d">(d) Inflexão do CT</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. A envoltória de Viner mostra que o CMeLP:</div>
+<div class="quiz-option" data-value="a">(a) É sempre igual ao CMeCP</div>
+<div class="quiz-option" data-value="b">(b) Está sempre acima das curvas de CMeCP</div>
+<div class="quiz-option" data-value="c">(c) Tangencia cada curva de CMeCP, nunca ficando acima de nenhuma</div>
+<div class="quiz-option" data-value="d">(d) É uma linha horizontal</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Preço mais alto e mais firmas
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Mesmo preço e mais firmas
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Preço mais alto e mesmo número de firmas
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Preço mais baixo e menos firmas
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="c">
-<div class="q-text">
-Q4. Peso morto (deadweight loss) representa:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Uma transferência de renda do consumidor para o governo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O custo administrativo de uma política pública
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Transações mutuamente benéficas que deixam de ocorrer
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A diferença entre lucro contábil e lucro econômico
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “Se o preço de mercado está abaixo do equilíbrio
-(preço-teto), há excesso de oferta.”
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — preço abaixo do equilíbrio gera excesso de demanda
-(escassez)
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-19')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 19</strong>: Mini-lecture sobre equilíbrio competitivo e
-bem-estar + análise gráfica de excedentes e eficiência. Traga
-calculadora!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 19**: Mini-lecture sobre equilíbrio competitivo e bem-estar + análise gráfica de excedentes e eficiência. Traga calculadora!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 20</strong>: Maximização de lucro — da condição <span
+class="math inline">\(P = CMg\)</span> à função lucro e o Lema de
+Hotelling. Revise as propriedades da função custo!</p>
 </div>
 
 </div>
@@ -536,7 +375,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-19');
 MicroQuiz.init('aula-19');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

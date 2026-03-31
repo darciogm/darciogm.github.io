@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula — Microeconomia II</title>
+<title>Pré-Aula 24 — Monopólio I: Maximização e Bem-Estar — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,422 +17,288 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-24-torneio-de-oligopólio-encerramento-prática">Pré-Aula
-24 — Torneio de Oligopólio + Encerramento (Prática)</h1>
+<h1 id="pré-aula-24-monopólio-i-maximização-e-bem-estar">Pré-Aula 24 —
+Monopólio I: Maximização e Bem-Estar</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 15, Seções 15.6–15.8</strong> (jogos repetidos, colusão
-e concorrência monopolística) | Tempo estimado: <strong>40
-min</strong></p>
+<p><strong>Cap. 15, Seções 15.1–15.3</strong> do livro interativo |
+Tempo estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 15, Seções 15.6–15.8** (jogos repetidos, colusão e concorrência monopolística) | Tempo estimado: **40 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Analisar o dilema dos prisioneiros em oligopólio e as condições para
-colusão sustentável</li>
-<li>Derivar o fator de desconto crítico <span
-class="math inline">\(\delta^*\)</span> para a estratégia de gatilho
-(<em>grim trigger</em>)</li>
-<li>Caracterizar o equilíbrio de longo prazo em concorrência
-monopolística (diferenciação + lucro zero)</li>
+<li>Explicar as fontes de poder de monopólio, derivar a condição <span
+class="math inline">\(RMg = CMg\)</span> e a regra de markup de
+Lerner</li>
+<li>Comparar o equilíbrio de monopólio com o competitivo e calcular o
+custo social (triângulo de Harberger)</li>
+<li>Analisar a estática comparativa do monopólio e explicar por que não
+existe curva de oferta</li>
 </ol>
 <hr />
-<h2 id="o-dilema-dos-prisioneiros-no-oligopólio">1. O dilema dos
-prisioneiros no oligopólio</h2>
-<p>Considere duas firmas de Cournot que poderiam
-<strong>colundir</strong> (produzir a quantidade de monopólio dividida
-por dois) ou <strong>desviar</strong> (produzir mais
-unilateralmente).</p>
-<p>Usando o exemplo <span class="math inline">\(P = 100 - (q_1 +
-q_2)\)</span>, <span class="math inline">\(c = 10\)</span>:</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th></th>
-<th>Firma 2: Colundir</th>
-<th>Firma 2: Desviar</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Firma 1: Colundir</strong></td>
-<td><span class="math inline">\((1.012{,}5;\; 1.012{,}5)\)</span></td>
-<td><span class="math inline">\((506{,}25;\; 1.139{,}06)\)</span></td>
-</tr>
-<tr>
-<td><strong>Firma 1: Desviar</strong></td>
-<td><span class="math inline">\((1.139{,}06;\; 506{,}25)\)</span></td>
-<td><span class="math inline">\((900;\; 900)\)</span></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition example">
-<div class="admonition-title">
-Cálculo dos payoffs
-</div>
-<p><strong>Colusão:</strong> cada firma produz <span
-class="math inline">\(q_m/2 = 22{,}5\)</span>; <span
-class="math inline">\(P = 55\)</span>; <span class="math inline">\(\pi_i
-= 1.012{,}5\)</span></p>
-<p><strong>Desvio (melhor resposta a 22,5):</strong> <span
-class="math inline">\(q_d = 45 - 22{,}5/2 = 33{,}75\)</span>; <span
-class="math inline">\(Q = 56{,}25\)</span>; <span
-class="math inline">\(P = 43{,}75\)</span>; <span
-class="math inline">\(\pi_d = 1.139{,}06\)</span></p>
-<p><strong>Nash (Cournot):</strong> <span class="math inline">\(q_i =
-30\)</span>; <span class="math inline">\(\pi_i = 900\)</span></p>
-</div>
-<pre><code>**Colusão:** cada firma produz $q_m/2 = 22{,}5$; $P = 55$; $\pi_i = 1.012{,}5$
-
-**Desvio (melhor resposta a 22,5):** $q_d = 45 - 22{,}5/2 = 33{,}75$; $Q = 56{,}25$; $P = 43{,}75$; $\pi_d = 1.139{,}06$
-
-**Nash (Cournot):** $q_i = 30$; $\pi_i = 900$</code></pre>
-<p>O equilíbrio de Nash é (Desviar, Desviar) — a colusão <strong>não é
-sustentável</strong> em um jogo de uma rodada.</p>
-<hr />
-<h2 id="jogos-repetidos-e-estratégias-de-gatilho">2. Jogos repetidos e
-estratégias de gatilho</h2>
-<p>Quando o jogo é repetido <strong>infinitas vezes</strong>, a
-cooperação pode ser sustentada se as firmas valorizam suficientemente o
-futuro.</p>
-<h3 id="estratégia-grim-trigger">Estratégia Grim Trigger</h3>
-<blockquote>
-<p>“Coopero enquanto o rival cooperar. Se ele desviar uma vez, jogo Nash
-para sempre.”</p>
-</blockquote>
-<p><strong>Condição de sustentabilidade:</strong> o valor presente da
-colusão deve superar o ganho do desvio seguido de punição perpétua.</p>
-<p><span
-class="math display">\[\underbrace{\frac{\pi_{\text{colusão}}}{1 -
-\delta}}_{\text{cooperar para sempre}} \geq
-\underbrace{\pi_{\text{desvio}} +
-\frac{\delta}{1-\delta}\pi_{\text{Nash}}}_{\text{desviar e ser
-punido}}\]</span></p>
-<p>Resolvendo para <span class="math inline">\(\delta\)</span>:</p>
-<span class="math display">\[\delta \geq \delta^* =
-\frac{\pi_{\text{desvio}} - \pi_{\text{colusão}}}{\pi_{\text{desvio}} -
-\pi_{\text{Nash}}}\]</span>
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo numérico (continuação)
-</div>
-<p><span class="math inline">\(\pi_{\text{colusão}} =
-1.012{,}5\)</span>; <span class="math inline">\(\pi_{\text{desvio}} =
-1.139{,}06\)</span>; <span class="math inline">\(\pi_{\text{Nash}} =
-900\)</span></p>
-<p><span class="math display">\[\delta^* = \frac{1.139{,}06 -
-1.012{,}5}{1.139{,}06 - 900} = \frac{126{,}56}{239{,}06} \approx
-0{,}53\]</span></p>
-<p>Se <span class="math inline">\(\delta \geq 0{,}53\)</span> (firmas
-suficientemente pacientes), a colusão é sustentável.</p>
-</div>
-<pre><code>$\pi_{\text{colusão}} = 1.012{,}5$; $\pi_{\text{desvio}} = 1.139{,}06$; $\pi_{\text{Nash}} = 900$
-
-$$\delta^* = \frac{1.139{,}06 - 1.012{,}5}{1.139{,}06 - 900} = \frac{126{,}56}{239{,}06} \approx 0{,}53$$
-
-Se $\delta \geq 0{,}53$ (firmas suficientemente pacientes), a colusão é sustentável.</code></pre>
-<h3 id="fatores-que-facilitam-a-colusão">Fatores que facilitam a
-colusão</h3>
-<table>
-<thead>
-<tr>
-<th>Fator</th>
-<th>Efeito sobre colusão</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Poucas firmas</td>
-<td>Facilita (menor incentivo a desviar)</td>
-</tr>
-<tr>
-<td>Interação frequente</td>
-<td>Facilita (punição rápida)</td>
-</tr>
-<tr>
-<td>Transparência de preços</td>
-<td>Facilita (desvio detectado imediatamente)</td>
-</tr>
-<tr>
-<td>Demanda instável</td>
-<td>Dificulta (difícil distinguir desvio de choque)</td>
-</tr>
-<tr>
-<td>Assimetria de custos</td>
-<td>Dificulta (firmas discordam da divisão ótima)</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<div class="admonition-title">
-Colusão e lei
-</div>
-<p>A colusão explícita (cartel com acordo formal) é
-<strong>ilegal</strong> em praticamente todas as jurisdições. A colusão
-tácita (coordenação sem comunicação direta) é mais difícil de combater
-legalmente, mas o CADE monitora <strong>paralelismo de
-conduta</strong>.</p>
-</div>
-<pre><code>A colusão explícita (cartel com acordo formal) é **ilegal** em praticamente todas as jurisdições. A colusão tácita (coordenação sem comunicação direta) é mais difícil de combater legalmente, mas o CADE monitora **paralelismo de conduta**.</code></pre>
-<hr />
-<h2 id="concorrência-monopolística">3. Concorrência monopolística</h2>
-<p>A <strong>concorrência monopolística</strong> combina elementos de
-concorrência e monopólio:</p>
+<h2 id="barreiras-à-entrada-e-monopólio-natural">1. Barreiras à entrada
+e monopólio natural</h2>
+<p>O monopólio surge quando há <strong>barreiras à entrada</strong> que
+impedem outras firmas de competir:</p>
 <ul>
-<li><strong>Muitas firmas</strong> (como concorrência perfeita)</li>
-<li><strong>Produtos diferenciados</strong> (cada firma tem algum poder
-de mercado)</li>
-<li><strong>Livre entrada e saída</strong> (como concorrência
-perfeita)</li>
+<li><strong>Legais</strong>: patentes, concessões, licenças
+exclusivas</li>
+<li><strong>Econômicas</strong>: economias de escala, controle de
+insumos essenciais</li>
+<li><strong>Estratégicas</strong>: investimentos irreversíveis, efeitos
+de rede</li>
 </ul>
-<h3 id="curto-prazo">Curto prazo</h3>
-<p>Cada firma enfrenta uma demanda negativamente inclinada (por causa da
-diferenciação) e maximiza lucro como um monopolista:</p>
-<p><span class="math display">\[\text{RMg} = \text{CMg}, \quad P &gt;
-\text{CMg}\]</span></p>
-<p>Se <span class="math inline">\(P &gt; \text{CMe}\)</span>, há lucro
-econômico positivo.</p>
-<h3 id="longo-prazo">Longo prazo</h3>
-<p>A livre entrada atrai novas firmas, que “roubam” demanda das
-existentes. A curva de demanda de cada firma se desloca para a esquerda
-até:</p>
-<p><span class="math display">\[P = \text{CMe} \quad \text{(lucro
-zero)}\]</span></p>
-<p>Mas como a demanda é negativamente inclinada, o ponto de tangência
-ocorre <strong>à esquerda</strong> do mínimo do CMe:</p>
-<span class="math display">\[P_{\text{LP}} = \text{CMe}_{\text{LP}} &gt;
-\text{CMe}_{\min}\]</span>
-<div class="admonition tip">
-<div class="admonition-title">
-Excesso de capacidade
-</div>
-<p>No longo prazo, cada firma opera com <strong>capacidade
-ociosa</strong> — produz menos do que a escala eficiente. Esse é o
-“custo” da variedade: consumidores pagam um pouco mais, mas têm acesso a
-produtos diferenciados.</p>
-</div>
-<pre><code>No longo prazo, cada firma opera com **capacidade ociosa** — produz menos do que a escala eficiente. Esse é o &quot;custo&quot; da variedade: consumidores pagam um pouco mais, mas têm acesso a produtos diferenciados.</code></pre>
+<p>Um <strong>monopólio natural</strong> ocorre quando a função custo é
+<strong>subaditiva</strong> — é mais barato uma única firma produzir
+toda a demanda do que duas ou mais firmas dividirem o mercado:</p>
+<p><span class="math display">\[C(Q) &lt; C(Q_1) + C(Q_2) \quad
+\text{para todo } Q_1 + Q_2 = Q\]</span></p>
+<p>Condição suficiente (mas não necessária): custo médio estritamente
+decrescente em toda a faixa relevante de produção.</p>
 <hr />
-<h2 id="comparação-concorrência-monopolística-vs.-perfeita">4.
-Comparação: concorrência monopolística vs. perfeita</h2>
+<h2 id="maximização-de-lucro-do-monopolista">2. Maximização de lucro do
+monopolista</h2>
+<p>O monopolista é a <strong>própria indústria</strong> — enfrenta a
+demanda de mercado <span class="math inline">\(P(Q)\)</span>. Sua
+receita total é:</p>
+<p><span class="math display">\[RT = P(Q) \cdot Q\]</span></p>
+<p>A receita marginal é:</p>
+<p><span class="math display">\[RMg = \frac{dRT}{dQ} = P +
+Q\frac{dP}{dQ} = P\left(1 + \frac{1}{\varepsilon_D}\right) = P\left(1 -
+\frac{1}{|\varepsilon_D|}\right)\]</span></p>
+<p>Como <span class="math inline">\(dP/dQ &lt; 0\)</span>, temos <span
+class="math inline">\(\boxed{RMg &lt; P}\)</span>: para vender mais uma
+unidade, o monopolista precisa reduzir o preço de <strong>todas</strong>
+as unidades.</p>
+<h3 id="cpo-e-cso">CPO e CSO</h3>
+<p><span class="math display">\[RMg(Q^m) = CMg(Q^m)\]</span></p>
+<p><span class="math display">\[\frac{dRMg}{dQ} &lt; \frac{dCMg}{dQ}
+\quad \text{(RMg corta CMg de cima)}\]</span></p>
+<hr />
+<h2 id="regra-de-markup-e-índice-de-lerner">3. Regra de markup e índice
+de Lerner</h2>
+<p>Da CPO, podemos escrever a <strong>regra de precificação do
+monopólio</strong>:</p>
+<p><span class="math display">\[P\left(1 -
+\frac{1}{|\varepsilon_D|}\right) = CMg \implies \boxed{P = \frac{CMg}{1
+- 1/|\varepsilon_D|}}\]</span></p>
+<p>O <strong>índice de Lerner</strong> mede o poder de mercado:</p>
+<p><span class="math display">\[L = \frac{P - CMg}{P} =
+\frac{1}{|\varepsilon_D|}\]</span></p>
 <table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
 <thead>
 <tr>
-<th>Característica</th>
-<th>Conc. Perfeita</th>
-<th>Conc. Monopolística</th>
+<th><span class="math inline">\(|\varepsilon_D|\)</span></th>
+<th><span class="math inline">\(L\)</span></th>
+<th>Markup</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Produto</td>
-<td>Homogêneo</td>
-<td>Diferenciado</td>
+<td><span class="math inline">\(\infty\)</span> (competição)</td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(P = CMg\)</span></td>
 </tr>
 <tr>
-<td>Poder de mercado</td>
-<td>Nenhum (<span class="math inline">\(P = \text{CMg}\)</span>)</td>
-<td>Algum (<span class="math inline">\(P &gt; \text{CMg}\)</span>)</td>
+<td><span class="math inline">\(5\)</span></td>
+<td><span class="math inline">\(0{,}20\)</span></td>
+<td><span class="math inline">\(P = 1{,}25\,CMg\)</span></td>
 </tr>
 <tr>
-<td>Lucro LP</td>
-<td>Zero</td>
-<td>Zero</td>
+<td><span class="math inline">\(2\)</span></td>
+<td><span class="math inline">\(0{,}50\)</span></td>
+<td><span class="math inline">\(P = 2\,CMg\)</span></td>
 </tr>
 <tr>
-<td>Eficiência produtiva</td>
-<td>Sim (<span class="math inline">\(q = q_{\min
-\text{CMe}}\)</span>)</td>
-<td>Não (excesso de capacidade)</td>
-</tr>
-<tr>
-<td>Variedade</td>
-<td>Nenhuma</td>
-<td>Alta</td>
+<td><span class="math inline">\(1{,}5\)</span></td>
+<td><span class="math inline">\(0{,}67\)</span></td>
+<td><span class="math inline">\(P = 3\,CMg\)</span></td>
 </tr>
 </tbody>
 </table>
-<hr />
-<h2 id="preparação-para-o-torneio">Preparação para o torneio</h2>
-<div class="admonition abstract">
-<div class="admonition-title">
-Atividade em sala — Torneio de Oligopólio
-</div>
-<p>Na Aula 24, você participará de um <strong>torneio de
-oligopólio</strong> onde cada equipe representará uma firma tomando
-decisões estratégicas repetidas.</p>
-<p><strong>Regras básicas:</strong></p>
-<ul>
-<li>Rodadas sucessivas de decisão de quantidade (Cournot) ou preço
-(Bertrand)</li>
-<li>Comunicação entre equipes pode ser permitida em algumas rodadas
-(colusão)</li>
-<li>Pontuação baseada no lucro acumulado</li>
-</ul>
-<p><strong>Prepare sua estratégia considerando:</strong></p>
-<ol type="1">
-<li>Você deve cooperar ou competir na primeira rodada?</li>
-<li>Qual sua resposta se o rival desviar?</li>
-<li>Nas últimas rodadas, a cooperação é sustentável? (Pense no
-<em>unraveling</em>)</li>
-<li>Vale a pena sinalizar disposição para cooperar? Como?</li>
-</ol>
-</div>
-<pre><code>Na Aula 24, você participará de um **torneio de oligopólio** onde cada equipe representará uma firma tomando decisões estratégicas repetidas.
-
-**Regras básicas:**
-
-- Rodadas sucessivas de decisão de quantidade (Cournot) ou preço (Bertrand)
-- Comunicação entre equipes pode ser permitida em algumas rodadas (colusão)
-- Pontuação baseada no lucro acumulado
-
-**Prepare sua estratégia considerando:**
-
-1. Você deve cooperar ou competir na primeira rodada?
-2. Qual sua resposta se o rival desviar?
-3. Nas últimas rodadas, a cooperação é sustentável? (Pense no *unraveling*)
-4. Vale a pena sinalizar disposição para cooperar? Como?</code></pre>
-<div class="admonition warning">
-<div class="admonition-title">
-Dica estratégica
-</div>
-<p>No dilema dos prisioneiros com <strong>número finito</strong> de
-rodadas e informação completa, a indução retroativa prevê que a colusão
-se desfaz. Mas em experimentos, a cooperação costuma emergir nas
-primeiras rodadas. Estratégias como <em>tit-for-tat</em> (imitar a ação
-do rival na rodada anterior) tendem a ter bom desempenho.</p>
-</div>
-<pre><code>No dilema dos prisioneiros com **número finito** de rodadas e informação completa, a indução retroativa prevê que a colusão se desfaz. Mas em experimentos, a cooperação costuma emergir nas primeiras rodadas. Estratégias como *tit-for-tat* (imitar a ação do rival na rodada anterior) tendem a ter bom desempenho.</code></pre>
-<hr />
-<h2 id="box-a-tensão-entre-competição-e-cooperação">Box: A tensão entre
-competição e cooperação</h2>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Por que cartéis são instáveis?</strong></p>
-<p>Todo cartel carrega uma <strong>contradição interna</strong>: o
-acordo maximiza o lucro conjunto, mas cada membro individualmente ganha
-mais ao desviar (produzir além da cota, dar um desconto secreto). É o
-dilema dos prisioneiros em ação.</p>
-<p>A sustentabilidade depende de <span
-class="math inline">\(\delta\)</span> — quanto as firmas valorizam o
-futuro. Em setores com interação frequente, poucas firmas e preços
-transparentes, a colusão tácita é mais provável. Por isso, o CADE presta
-atenção especial a mercados concentrados com produtos homogêneos
-(combustíveis, cimento, produtos químicos).</p>
-<p>Adam Smith já alertava em 1776: <em>“Pessoas do mesmo ramo raramente
-se reúnem, mesmo para diversão, sem que a conversa termine numa
-conspiração contra o público.”</em></p>
+<p><strong>O monopolista cobra mais quando a demanda é mais
+inelástica.</strong> Se os consumidores têm poucas alternativas (<span
+class="math inline">\(|\varepsilon_D|\)</span> baixo), o monopolista
+pode elevar o preço sem perder muitos clientes. Se a demanda é muito
+elástica, o markup é pequeno — o monopólio se aproxima da competição. A
+fórmula <span class="math inline">\(L = 1/|\varepsilon_D|\)</span> é uma
+das mais elegantes da microeconomia: conecta poder de mercado e
+elasticidade em uma única equação.</p>
 </div>
-<pre><code>**Por que cartéis são instáveis?**
-
-Todo cartel carrega uma **contradição interna**: o acordo maximiza o lucro conjunto, mas cada membro individualmente ganha mais ao desviar (produzir além da cota, dar um desconto secreto). É o dilema dos prisioneiros em ação.
-
-A sustentabilidade depende de $\delta$ — quanto as firmas valorizam o futuro. Em setores com interação frequente, poucas firmas e preços transparentes, a colusão tácita é mais provável. Por isso, o CADE presta atenção especial a mercados concentrados com produtos homogêneos (combustíveis, cimento, produtos químicos).
-
-Adam Smith já alertava em 1776: *&quot;Pessoas do mesmo ramo raramente se reúnem, mesmo para diversão, sem que a conversa termine numa conspiração contra o público.&quot;*</code></pre>
+<hr />
+<h2 id="monopólio-vs.-competição-custo-social">4. Monopólio
+vs. competição: custo social</h2>
+<p>Na <strong>competição perfeita</strong>: <span
+class="math inline">\(P_c = CMg\)</span>, <span
+class="math inline">\(Q_c\)</span>.</p>
+<p>No <strong>monopólio</strong>: <span class="math inline">\(P_m &gt;
+CMg\)</span>, <span class="math inline">\(Q_m &lt; Q_c\)</span>.</p>
+<p>O monopolista produz <strong>menos</strong> e cobra
+<strong>mais</strong>. A diferença no excedente total é o <strong>custo
+social do monopólio</strong> — o triângulo de Harberger:</p>
+<p><span class="math display">\[DWL = \frac{1}{2}(P_m - CMg_m)(Q_c -
+Q_m) = \frac{1}{2}(P_m - P_c)(Q_c - Q_m)\]</span></p>
+<p>Esse triângulo representa transações mutuamente benéficas que o
+monopolista suprime para manter o preço elevado. Parte do excedente do
+consumidor é <strong>transferida</strong> ao monopolista (retângulo de
+lucro), mas o triângulo é perda líquida.</p>
+<h3 id="ausência-de-curva-de-oferta">Ausência de curva de oferta</h3>
+<p>O monopólio <strong>não tem curva de oferta</strong>. Na competição,
+a oferta é <span class="math inline">\(P = CMg\)</span> — uma relação
+unívoca entre <span class="math inline">\(P\)</span> e <span
+class="math inline">\(Q\)</span>. No monopólio, a mesma quantidade pode
+ser vendida a preços diferentes dependendo da forma da demanda. A
+decisão de produção depende de toda a curva de demanda, não apenas do
+preço.</p>
+<hr />
+<h2 id="estática-comparativa-imposto-sobre-o-monopólio">5. Estática
+comparativa: imposto sobre o monopólio</h2>
+<p>Um imposto de <span class="math inline">\(t\)</span> por unidade
+eleva o custo marginal para <span class="math inline">\(CMg +
+t\)</span>. O monopolista repassa o imposto conforme a curvatura da
+demanda:</p>
+<ul>
+<li><strong>Demanda linear</strong>: repasse é <span
+class="math inline">\(&lt; t\)</span> (em geral, <span
+class="math inline">\(t/2\)</span> com CMg constante)</li>
+<li><strong>Demanda isoelástica</strong>: repasse pode ser <span
+class="math inline">\(&gt; t\)</span></li>
+</ul>
+<p><span class="math display">\[\frac{dP_m}{dt} = \frac{1}{2 -
+\frac{d^2P/dQ^2 \cdot Q}{dP/dQ}} \quad \text{(demanda
+geral)}\]</span></p>
+<p>Para demanda linear <span class="math inline">\(P = a - bQ\)</span> e
+<span class="math inline">\(CMg = c\)</span>: <span
+class="math inline">\(P_m = (a + c + t)/2\)</span>, logo <span
+class="math inline">\(dP_m/dt = 1/2\)</span>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>O monopólio pode repassar mais de 100% do imposto.</strong>
+Com demanda isoelástica, <span class="math inline">\(P =
+CMg/(1-1/|\varepsilon|)\)</span>. Se o CMg sobe em <span
+class="math inline">\(t\)</span>, o preço sobe em <span
+class="math inline">\(t/(1-1/|\varepsilon|) &gt; t\)</span>. Isso
+contrasta com a competição, onde o repasse nunca excede 100%. O poder de
+mercado amplifica a transmissão de choques de custo.</p>
+</div>
+<hr />
+<h2 id="gráfico-interativo-monopólio">Gráfico interativo: monopólio</h2>
+<div id="graph-monopolio" style="min-height: 450px;">
+<iframe src="graficos/cap15/monopolio.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Compare o equilíbrio de monopólio (<span class="math inline">\(RMg =
+CMg\)</span>) com o competitivo (<span class="math inline">\(P =
+CMg\)</span>)</li>
+<li>Visualize o triângulo de Harberger (peso morto) e o retângulo de
+lucro do monopolista</li>
+<li>Note que <span class="math inline">\(RMg\)</span> está sempre abaixo
+da demanda</li>
+</ul>
+</div>
+<hr />
+<h2 id="gráfico-interativo-estática-comparativa">Gráfico interativo:
+estática comparativa</h2>
+<div id="graph-estatica" style="min-height: 450px;">
+<iframe src="graficos/cap15/estatica-comparativa.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Aplique um imposto e observe como o preço do monopolista se
+ajusta</li>
+<li>Compare o repasse do imposto com demanda linear vs. isoelástica</li>
+<li>Note como o DWL do monopólio aumenta com o imposto</li>
+</ul>
+</div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Duas firmas jogam um dilema dos
-prisioneiros repetido com <span
-class="math inline">\(\pi_{\text{colusão}} = 500\)</span>, <span
-class="math inline">\(\pi_{\text{desvio}} = 600\)</span> e <span
-class="math inline">\(\pi_{\text{Nash}} = 300\)</span>. Calcule o <span
-class="math inline">\(\delta^*\)</span> mínimo para sustentar a colusão
-com <em>grim trigger</em>.
+<p><strong>Exercício 1.</strong> Um monopolista enfrenta <span
+class="math inline">\(P = 100 - 2Q\)</span> com <span
+class="math inline">\(CMg = 20\)</span>. Encontre <span
+class="math inline">\(Q_m\)</span>, <span
+class="math inline">\(P_m\)</span>, lucro e índice de Lerner.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math display">\[\delta^* = \frac{\pi_{\text{desvio}} -
-\pi_{\text{colusão}}}{\pi_{\text{desvio}} - \pi_{\text{Nash}}} =
-\frac{600 - 500}{600 - 300} = \frac{100}{300} = \frac{1}{3} \approx
-0{,}33\]</span></p>
-<p>A colusão é sustentável se <span class="math inline">\(\delta \geq
-1/3\)</span>. Como esse limiar é relativamente baixo, mesmo firmas com
-alguma impaciência conseguem manter o acordo.</p>
+<p><span class="math inline">\(RT = 100Q - 2Q^2\)</span>. <span
+class="math inline">\(RMg = 100 - 4Q\)</span>.</p>
+<p><span class="math inline">\(RMg = CMg\)</span>: <span
+class="math inline">\(100 - 4Q = 20 \implies Q_m = 20\)</span>. <span
+class="math inline">\(P_m = 100 - 40 = 60\)</span>.</p>
+<p><span class="math inline">\(\pi = (60 - 20) \times 20 =
+800\)</span>.</p>
+<p><span class="math inline">\(L = (P - CMg)/P = (60 - 20)/60 =
+2/3\)</span>.</p>
+<p>Verificação: <span class="math inline">\(\varepsilon_D =
+-(P/Q)(1/(dP/dQ)) = -(60/20)(1/2) = -1{,}5\)</span>. <span
+class="math inline">\(L = 1/1{,}5 = 2/3\)</span>.</p>
 </div>
 </details>
-<pre><code>$$\delta^* = \frac{\pi_{\text{desvio}} - \pi_{\text{colusão}}}{\pi_{\text{desvio}} - \pi_{\text{Nash}}} = \frac{600 - 500}{600 - 300} = \frac{100}{300} = \frac{1}{3} \approx 0{,}33$$
-
-A colusão é sustentável se $\delta \geq 1/3$. Como esse limiar é relativamente baixo, mesmo firmas com alguma impaciência conseguem manter o acordo.</code></pre>
-<strong>Exercício 2.</strong> Em concorrência monopolística de longo
-prazo, por que o lucro é zero mesmo com <span class="math inline">\(P
-&gt; \text{CMg}\)</span>?
+<p><strong>Exercício 2.</strong> No exercício anterior, calcule o DWL
+comparando com o resultado competitivo.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>No longo prazo, a livre entrada desloca a curva de demanda de cada
-firma para a esquerda (novas firmas roubam clientes). Esse processo
-continua até que a curva de demanda seja <strong>tangente</strong> à
-curva de CMe.</p>
-<p>No ponto de tangência: <span class="math inline">\(P =
-\text{CMe}\)</span>, logo <span class="math inline">\(\pi = (P -
-\text{CMe}) \times q = 0\)</span>.</p>
-<p>Ao mesmo tempo, como a demanda é negativamente inclinada, a tangência
-ocorre num ponto onde <span class="math inline">\(\text{CMe}\)</span> é
-decrescente, ou seja, <span class="math inline">\(P = \text{CMe} &gt;
-\text{CMg}\)</span>. Há poder de mercado (markup positivo), mas não há
-lucro econômico — o markup cobre exatamente os custos fixos por
-unidade.</p>
+<p>Competição: <span class="math inline">\(P_c = CMg = 20\)</span>.
+<span class="math inline">\(Q_c = (100 - 20)/2 = 40\)</span>.</p>
+<p><span class="math inline">\(DWL = \frac{1}{2}(60 - 20)(40 - 20) =
+\frac{1}{2}(40)(20) = 400\)</span>.</p>
+<p><span class="math inline">\(EC_{\text{comp}} = \frac{1}{2}(100 -
+20)(40) = 1.600\)</span>. <span class="math inline">\(EP_{\text{comp}} =
+0\)</span> (CMg constante).</p>
+<p><span class="math inline">\(EC_{\text{mon}} = \frac{1}{2}(100 -
+60)(20) = 400\)</span>. <span class="math inline">\(\pi_{\text{mon}} =
+800\)</span>.</p>
+<p><span class="math inline">\(W_{\text{comp}} = 1.600\)</span>. <span
+class="math inline">\(W_{\text{mon}} = 400 + 800 = 1.200\)</span>. <span
+class="math inline">\(DWL = 1.600 - 1.200 = 400\)</span>.</p>
 </div>
 </details>
-<pre><code>No longo prazo, a livre entrada desloca a curva de demanda de cada firma para a esquerda (novas firmas roubam clientes). Esse processo continua até que a curva de demanda seja **tangente** à curva de CMe.
-
-No ponto de tangência: $P = \text{CMe}$, logo $\pi = (P - \text{CMe}) \times q = 0$.
-
-Ao mesmo tempo, como a demanda é negativamente inclinada, a tangência ocorre num ponto onde $\text{CMe}$ é decrescente, ou seja, $P = \text{CMe} &gt; \text{CMg}$. Há poder de mercado (markup positivo), mas não há lucro econômico — o markup cobre exatamente os custos fixos por unidade.</code></pre>
-<strong>Exercício 3.</strong> Explique por que a estratégia
-<em>tit-for-tat</em> tende a ser eficaz em jogos repetidos.
+<p><strong>Exercício 3.</strong> Explique por que o monopolista não tem
+curva de oferta.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>A <em>tit-for-tat</em> (TFT) começa cooperando e depois imita a ação
-do rival na rodada anterior. Suas virtudes são:</p>
-<ol type="1">
-<li><strong>Generosa</strong>: começa cooperando, sinalizando boa
-vontade</li>
-<li><strong>Retaliadora</strong>: pune imediatamente o desvio,
-desencorajando exploração</li>
-<li><strong>Perdoadora</strong>: volta a cooperar assim que o rival
-coopera (diferente do <em>grim trigger</em>, que nunca perdoa)</li>
-<li><strong>Simples</strong>: fácil de entender e prever, facilitando a
-coordenação</li>
-</ol>
-<p>Robert Axelrod mostrou em seus famosos torneios computacionais que a
-TFT venceu estratégias muito mais sofisticadas — evidência de que
-simplicidade e reciprocidade são poderosas na sustentação da
-cooperação.</p>
+<p>Uma curva de oferta é uma relação entre preço e quantidade que
+independe da demanda. Na competição, <span class="math inline">\(P =
+CMg\)</span> define essa relação: dado qualquer <span
+class="math inline">\(P\)</span>, a firma produz <span
+class="math inline">\(q = CMg^{-1}(P)\)</span>, independentemente da
+forma da demanda.</p>
+<p>O monopolista, porém, escolhe <span class="math inline">\(Q\)</span>
+onde <span class="math inline">\(RMg = CMg\)</span>. Como <span
+class="math inline">\(RMg\)</span> depende da <strong>forma</strong> da
+curva de demanda (não apenas do nível de preço), duas demandas
+diferentes que passem pelo mesmo ponto <span class="math inline">\((P,
+Q)\)</span> podem gerar quantidades ótimas diferentes. Não existe uma
+função <span class="math inline">\(Q(P)\)</span> independente da demanda
+— logo, não há curva de oferta.</p>
 </div>
 </details>
-<pre><code>A *tit-for-tat* (TFT) começa cooperando e depois imita a ação do rival na rodada anterior. Suas virtudes são:
-
-1. **Generosa**: começa cooperando, sinalizando boa vontade
-2. **Retaliadora**: pune imediatamente o desvio, desencorajando exploração
-3. **Perdoadora**: volta a cooperar assim que o rival coopera (diferente do *grim trigger*, que nunca perdoa)
-4. **Simples**: fácil de entender e prever, facilitando a coordenação
-
-Robert Axelrod mostrou em seus famosos torneios computacionais que a TFT venceu estratégias muito mais sofisticadas — evidência de que simplicidade e reciprocidade são poderosas na sustentação da cooperação.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -442,229 +308,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 <div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. No dilema dos prisioneiros do oligopólio, o equilíbrio de Nash em
-jogo de uma rodada é:
+<div class="q-text">Q1. A receita marginal do monopolista é menor que o preço porque:</div>
+<div class="quiz-option" data-value="a">(a) O monopolista tem custos mais altos</div>
+<div class="quiz-option" data-value="b">(b) Para vender mais, precisa reduzir o preço de todas as unidades</div>
+<div class="quiz-option" data-value="c">(c) A demanda é perfeitamente elástica</div>
+<div class="quiz-option" data-value="d">(d) O governo cobra impostos</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2. O índice de Lerner $L = (P - CMg)/P$ é igual a:</div>
+<div class="quiz-option" data-value="a">(a) A elasticidade-preço da demanda</div>
+<div class="quiz-option" data-value="b">(b) O inverso do valor absoluto da elasticidade: $1/|\varepsilon_D|$</div>
+<div class="quiz-option" data-value="c">(c) A parcela do lucro na receita</div>
+<div class="quiz-option" data-value="d">(d) O peso morto dividido pela receita</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. Comparado à competição perfeita, o monopólio:</div>
+<div class="quiz-option" data-value="a">(a) Produz mais e cobra menos</div>
+<div class="quiz-option" data-value="b">(b) Produz menos e cobra mais</div>
+<div class="quiz-option" data-value="c">(c) Produz a mesma quantidade com preço mais alto</div>
+<div class="quiz-option" data-value="d">(d) Maximiza o excedente total</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Ambas cooperam
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">Q4. O monopólio não tem curva de oferta porque:</div>
+<div class="quiz-option" data-value="a">(a) O monopolista produz quantidade fixa</div>
+<div class="quiz-option" data-value="b">(b) O preço é determinado pelo governo</div>
+<div class="quiz-option" data-value="c">(c) A quantidade ótima depende da forma da curva de demanda, não apenas do preço</div>
+<div class="quiz-option" data-value="d">(d) A oferta é perfeitamente inelástica</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Ambas desviam
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. Com demanda linear e CMg constante, o monopolista repassa que fração de um imposto $t$?</div>
+<div class="quiz-option" data-value="a">(a) Metade ($t/2$)</div>
+<div class="quiz-option" data-value="b">(b) Todo o imposto ($t$)</div>
+<div class="quiz-option" data-value="c">(c) Mais que o imposto ($> t$)</div>
+<div class="quiz-option" data-value="d">(d) Nada — absorve integralmente</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Uma coopera e outra desvia
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Não existe equilíbrio
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="c">
-<div class="q-text">
-Q2. Na estratégia <em>grim trigger</em>, o que acontece após um desvio
-do rival?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>A firma perdoa após uma rodada de punição
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>A firma desvia também, mas volta a cooperar depois
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>A firma joga Nash para sempre (punição permanente)
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A firma sai do mercado
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="a">
-<div class="q-text">
-Q3. Se <span class="math inline">\(\delta^* = 0{,}6\)</span> e a taxa de
-juros é <span class="math inline">\(r = 0{,}4\)</span> (logo <span
-class="math inline">\(\delta = 1/(1+r) \approx 0{,}71\)</span>), a
-colusão é:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Sustentável, pois <span class="math inline">\(\delta = 0{,}71 &gt;
-\delta^* = 0{,}6\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Insustentável, pois <span class="math inline">\(\delta &lt;
-\delta^*\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Impossível de determinar sem mais informações
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Sustentável apenas com <em>tit-for-tat</em>
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="b">
-<div class="q-text">
-Q4. No longo prazo em concorrência monopolística:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(P = \text{CMg}\)</span> e lucro zero
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(P = \text{CMe}\)</span> e lucro zero,
-mas <span class="math inline">\(P &gt; \text{CMg}\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(P &gt; \text{CMe}\)</span> e lucro
-positivo
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>As firmas se tornam monopolistas puros
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="c">
-<div class="q-text">
-Q5. Qual fator NÃO facilita a colusão tácita?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Poucas firmas no mercado
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Preços publicamente observáveis
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Demanda altamente volátil e imprevisível
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Interações frequentes entre as firmas
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-24')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 24</strong>: Torneio de Oligopólio + encerramento do módulo
-de estruturas de mercado. Venha com sua estratégia preparada!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 24**: Torneio de Oligopólio + encerramento do módulo de estruturas de mercado. Venha com sua estratégia preparada!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 25</strong>: Monopólio II — discriminação de preços (3
+graus de Pigou), tarifa em duas partes e regulação de monopólio natural.
+Revise o conceito de excedente do consumidor!</p>
 </div>
 
 </div>
@@ -675,7 +371,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-24');
 MicroQuiz.init('aula-24');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

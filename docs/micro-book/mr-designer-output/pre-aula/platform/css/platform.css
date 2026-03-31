@@ -68,22 +68,23 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .aula-card a{text-decoration:none;color:inherit}
 
 /* ---- PRE-AULA PAGE ---- */
-.content-wrapper{max-width:850px;margin:0 auto;padding:1.5rem}
-.content-wrapper h1{font-size:1.6rem;border-bottom:3px solid var(--accent);padding-bottom:0.5rem;margin-bottom:1rem}
-.content-wrapper h2{font-size:1.2rem;margin-top:2rem;margin-bottom:0.5rem;color:var(--primary)}
-.content-wrapper h3{font-size:1rem;margin-top:1.5rem;margin-bottom:0.4rem}
-.content-wrapper p{margin-bottom:0.8rem}
-.content-wrapper table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:0.85rem}
+.content-wrapper{max-width:900px;margin:0 auto;padding:1.5rem;text-align:center}
+.content-wrapper h1{font-size:1.6rem;border-bottom:3px solid var(--accent);padding-bottom:0.5rem;margin-bottom:1rem;text-align:center}
+.content-wrapper h2{font-size:1.2rem;margin-top:2rem;margin-bottom:0.5rem;color:var(--primary);text-align:center}
+.content-wrapper h3{font-size:1rem;margin-top:1.5rem;margin-bottom:0.4rem;text-align:center}
+.content-wrapper p{margin-bottom:0.8rem;text-align:left}
+.content-wrapper ol,.content-wrapper ul{text-align:left}
+.content-wrapper table{width:100%;border-collapse:collapse;margin:1rem auto;font-size:0.85rem;text-align:left}
 .content-wrapper th{background:#edf2f7;padding:0.5rem 0.8rem;text-align:left;border-bottom:2px solid var(--border)}
 .content-wrapper td{padding:0.5rem 0.8rem;border-bottom:1px solid #f0f0f0}
 .content-wrapper code{background:#edf2f7;padding:0.15rem 0.4rem;border-radius:3px;font-size:0.9em}
-.content-wrapper pre{background:#1a202c;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow-x:auto;margin:1rem 0}
-.content-wrapper blockquote{border-left:4px solid var(--accent);padding:0.5rem 1rem;margin:1rem 0;background:#ebf8ff;border-radius:0 var(--radius) var(--radius) 0}
-.content-wrapper img{max-width:100%;border-radius:var(--radius)}
-.content-wrapper iframe{border:1px solid var(--border);border-radius:var(--radius);margin:1rem 0}
+.content-wrapper pre{background:#1a202c;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow-x:auto;margin:1rem 0;text-align:left}
+.content-wrapper blockquote{border-left:4px solid var(--accent);padding:0.5rem 1rem;margin:1rem 0;background:#ebf8ff;border-radius:0 var(--radius) var(--radius) 0;text-align:left}
+.content-wrapper img{max-width:100%;border-radius:var(--radius);display:block;margin:1rem auto}
+.content-wrapper iframe{display:block;border:1px solid var(--border);border-radius:var(--radius);width:calc(100% + 3rem);margin:0 -1.5rem 0.5rem;height:560px}
 
 /* Admonitions */
-.admonition{border-radius:var(--radius);padding:1rem 1.2rem;margin:1rem 0;border-left:4px solid}
+.admonition{border-radius:var(--radius);padding:1rem 1.2rem;margin:1rem auto;border-left:4px solid;text-align:left}
 .admonition-title{font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.3px}
 .admonition.info{background:#ebf8ff;border-color:#3182ce;}.admonition.info .admonition-title{color:#2b6cb0}
 .admonition.tip{background:#f0fff4;border-color:#38a169;}.admonition.tip .admonition-title{color:#276749}
@@ -93,14 +94,14 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .admonition.example{background:#e6fffa;border-color:#319795;}.admonition.example .admonition-title{color:#285e61}
 
 /* Collapsible solutions */
-details{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin:0.8rem 0;overflow:hidden}
+details{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin:0.8rem auto;overflow:hidden;text-align:left}
 details summary{padding:0.7rem 1rem;cursor:pointer;font-weight:600;font-size:0.85rem;background:#f7fafc;user-select:none}
 details summary:hover{background:#edf2f7}
 details[open] summary{border-bottom:1px solid var(--border)}
 details .solution-body{padding:1rem}
 
 /* ---- QUIZ ---- */
-.quiz-container{background:#f7fafc;border:2px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1.5rem 0}
+.quiz-container{background:#f7fafc;border:2px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1.5rem auto;text-align:left}
 .quiz-container h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}
 .quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
 .quiz-score{font-size:0.9rem;font-weight:600;color:var(--accent)}

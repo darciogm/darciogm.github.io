@@ -1,133 +1,135 @@
-# Pré-Aula 04 — Lab: Curvas de Indiferença (Prática)
+# Pré-Aula 04 — Utilidade e Curvas de Indiferença
 
 !!! info "Leitura obrigatória"
-    **Cap. 3, Seções 3.4–3.6** do livro interativo | Tempo estimado: **40 min**
+    **Cap. 3, Seções 3.4–3.6** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Calcular e interpretar a elasticidade de substituição $\sigma$ para as funções clássicas
-2. Demonstrar como a CES aninha Linear, Cobb-Douglas e Leontief via parâmetro $\rho$
-3. Preparar uma "ficha técnica" completa para uma função utilidade atribuída (atividade Jigsaw)
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Calcular a Taxa Marginal de Substituição (TMS) e interpretá-la geometricamente
+2. Identificar e trabalhar com as principais funções de utilidade: Cobb-Douglas, substitutos perfeitos, complementos perfeitos, CES e quase-linear
+3. Explicar o princípio da TMS decrescente e sua relação com a convexidade das preferências
 
 ---
 
-## 1. Elasticidade de substituição
+## 1. Taxa Marginal de Substituição (TMS)
 
-A elasticidade de substituição $\sigma$ mede a **facilidade** com que o consumidor troca um bem pelo outro ao longo da curva de indiferença:
+A TMS mede a taxa à qual o consumidor está disposto a trocar $x_2$ por $x_1$ ao longo de uma curva de indiferença:
 
-$$\sigma = \frac{d\ln(y/x)}{d\ln(\text{TMS})}$$
+$$\text{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}}$$
 
-- $\sigma$ alto: curvas "suaves" — o consumidor substitui facilmente (ex.: Coca vs. Pepsi)
-- $\sigma$ baixo: curvas "angulosas" — o consumidor exige proporções fixas (ex.: café e açúcar)
-- $\sigma = \infty$: substitutos perfeitos (Linear)
-- $\sigma = 1$: Cobb-Douglas
-- $\sigma = 0$: complementares perfeitos (Leontief)
+Usando o diferencial total $du = u_1 dx_1 + u_2 dx_2 = 0$ ao longo da curva:
 
----
+$$\text{TMS}_{12} = \frac{u_1}{u_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2}$$
 
-## 2. A função CES: a grande unificadora
-
-A função CES (Constant Elasticity of Substitution) é:
-
-$$U(x,y) = \left(\alpha x^{\rho} + (1-\alpha) y^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \ \rho \neq 0$$
-
-onde:
-
-- $\alpha \in (0,1)$: peso relativo do bem $x$
-- $\rho$: parâmetro de substituição, com $\sigma = \frac{1}{1-\rho}$
-
-### TMS da CES
-
-$$\text{TMS}_{x,y} = \frac{\alpha}{1-\alpha} \left(\frac{y}{x}\right)^{1-\rho}$$
-
----
-
-## 3. Casos especiais da CES
-
-| Parâmetro | $\sigma$ | Função | Curvas de indiferença |
-|:---|:---|:---|:---|
-| $\rho \to 1$ | $\sigma \to \infty$ | **Linear**: $\alpha x + (1-\alpha)y$ | Retas paralelas |
-| $\rho \to 0$ | $\sigma = 1$ | **Cobb-Douglas**: $x^{\alpha} y^{1-\alpha}$ | Hipérboles convexas |
-| $\rho \to -\infty$ | $\sigma \to 0$ | **Leontief**: $\min\{\alpha x, (1-\alpha)y\}$ | L's com vértice na ray |
+onde $u_i = \partial u / \partial x_i$ é a utilidade marginal do bem $i$.
 
 !!! note "Intuição Econômica"
-    **Por que a CES é tão importante?**
+    A TMS é a "taxa de câmbio subjetiva" do consumidor. Se $\text{TMS}_{12} = 3$, ele está disposto a trocar até 3 unidades de $x_2$ por 1 unidade adicional de $x_1$. Se o mercado oferece essa troca por menos de 3 (ou seja, $p_1/p_2 < 3$), ele compra mais $x_1$.
 
-    Porque ela captura um **espectro contínuo** de comportamentos de substituição com um único parâmetro $\rho$. Em vez de escolher entre modelos separados, o economista estima $\rho$ e os dados "escolhem" se os bens são mais parecidos com substitutos perfeitos ou complementares perfeitos. Na prática empírica, quase todos os modelos de demanda partem da CES.
+### TMS decrescente
 
----
+A convexidade das preferências implica que a TMS é **decrescente** ao longo da curva de indiferença: quanto mais $x_1$ o consumidor já possui, menos $x_2$ ele está disposto a ceder por mais uma unidade de $x_1$.
 
-## 4. Quase-concavidade e preferências convexas
+## Gráfico interativo: TMS em um ponto
 
-Uma função $U$ é **quase-côncava** se seus conjuntos de nível superior são convexos:
-
-$$\{(x,y) : U(x,y) \geq \bar{U}\} \text{ é convexo para todo } \bar{U}$$
-
-Quase-concavidade garante que:
-
-- As curvas de indiferença são **convexas** (arqueiam em direção à origem)
-- A TMS é **decrescente** ao longo da curva
-- A solução do problema do consumidor é um **máximo** (não mínimo)
-
-!!! tip "Teste prático"
-    Verifique quase-concavidade calculando o **Hessiano Orlado**. Se o determinante do Hessiano orlado for positivo, a função é quase-côncava na região relevante.
-
----
-
-## 5. Preparação para o Jigsaw: ficha técnica
-
-Na aula, cada grupo será "especialista" em uma função. Prepare sua ficha:
-
-!!! example "Modelo de ficha técnica"
-    **Função:** Cobb-Douglas $U = x^{0{,}4} y^{0{,}6}$
-
-    | Item | Resultado |
-    |:---|:---|
-    | TMS | $\frac{0{,}4 \cdot y}{0{,}6 \cdot x} = \frac{2y}{3x}$ |
-    | $\sigma$ | $1$ (sempre) |
-    | Curvas | Hipérboles convexas, nunca tocam os eixos |
-    | Quase-côncava? | Sim |
-    | Particularidade | Gasto fixo: fração $a=0{,}4$ da renda em $x$ |
-
----
-
-## Gráfico interativo: famílias de funções utilidade
-
-<div id="graph-utility-functions" style="min-height: 450px;">
-<iframe src="../../graficos/cap03/funcoes-utilidade.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap03/tms-ponto.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Varie $\rho$ de $-5$ até $0{,}9$ e observe a transição de Leontief a Linear
-    - Compare as curvas com $\alpha = 0{,}3$ vs. $\alpha = 0{,}7$
-    - Identifique visualmente a elasticidade de substituição pela "curvatura"
+    Arraste o ponto ao longo da curva de indiferença e observe como a reta tangente (cuja inclinação é $-\text{TMS}$) muda. Verifique que a TMS diminui à medida que você se move para a direita.
+
+---
+
+## 2. Funções de utilidade clássicas
+
+### 2.1 Cobb-Douglas
+
+$$u(x_1, x_2) = x_1^a x_2^b \quad (a, b > 0)$$
+
+Propriedades:
+
+- TMS: $\text{TMS}_{12} = \frac{a}{b} \cdot \frac{x_2}{x_1}$ — decrescente em $x_1$
+- Curvas de indiferença: hipérboles convexas que nunca tocam os eixos
+- Fração da renda gasta em cada bem é constante: $\frac{a}{a+b}$ em $x_1$, $\frac{b}{a+b}$ em $x_2$
+
+A transformação monotônica $v = a \ln x_1 + b \ln x_2$ é equivalente e mais conveniente para cálculos.
+
+### 2.2 Substitutos perfeitos
+
+$$u(x_1, x_2) = ax_1 + bx_2 \quad (a, b > 0)$$
+
+- TMS: $a/b$ — **constante** em todos os pontos
+- Curvas de indiferença: retas paralelas com inclinação $-a/b$
+- O consumidor só se importa com a "quantidade total ponderada"
+
+### 2.3 Complementos perfeitos
+
+$$u(x_1, x_2) = \min\{ax_1, bx_2\} \quad (a, b > 0)$$
+
+- TMS: indefinida no vértice ($ax_1 = bx_2$); zero ou infinita nos segmentos
+- Curvas de indiferença: formato de "L" com vértice na reta $x_2 = (a/b)x_1$
+- O consumidor sempre consome na proporção $x_1/x_2 = b/a$
+
+### 2.4 CES (Elasticidade de Substituição Constante)
+
+$$u(x_1, x_2) = \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho} \quad (\rho \leq 1, \rho \neq 0)$$
+
+O parâmetro $\rho$ controla a curvatura. A **elasticidade de substituição** é:
+
+$$\sigma = \frac{1}{1 - \rho}$$
+
+Casos especiais:
+
+| $\rho$ | $\sigma$ | Tipo |
+|---------|----------|------|
+| $\rho \to 1$ | $\sigma \to \infty$ | Substitutos perfeitos |
+| $\rho \to 0$ | $\sigma = 1$ | Cobb-Douglas |
+| $\rho \to -\infty$ | $\sigma \to 0$ | Complementos perfeitos |
+
+!!! note "Intuição Econômica"
+    A família CES unifica os três tipos clássicos num único framework. A elasticidade de substituição $\sigma$ mede quão facilmente o consumidor troca um bem pelo outro: $\sigma$ alto = fácil substituição; $\sigma$ baixo = difícil.
+
+### 2.5 Quase-linear
+
+$$u(x_1, x_2) = v(x_1) + x_2 \quad \text{com } v' > 0, \; v'' < 0$$
+
+- TMS: $v'(x_1)$ — depende **apenas** de $x_1$
+- Curvas de indiferença: translações verticais umas das outras
+- Não há efeito renda para o bem 1 (toda renda extra vai para $x_2$)
+
+## Gráfico interativo: Funções de Utilidade
+
+<iframe src="graficos/cap03/funcoes-utilidade.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Selecione diferentes funções de utilidade e ajuste os parâmetros. Compare a forma das curvas de indiferença entre Cobb-Douglas, CES e quase-linear.
+
+## Gráfico interativo: Família CES
+
+<iframe src="graficos/cap03/ces-continua.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Varie o parâmetro $\rho$ continuamente e observe a transição suave entre substitutos perfeitos ($\rho \to 1$), Cobb-Douglas ($\rho \to 0$) e complementos perfeitos ($\rho \to -\infty$).
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Para a CES com $\rho = 0{,}5$ e $\alpha = 0{,}5$, calcule $\sigma$ e a TMS no ponto $(4, 1)$.
+**Exercício 1.** Para $u(x_1,x_2) = x_1^{1/3} x_2^{2/3}$, calcule a TMS no ponto $(8, 4)$. Interprete o resultado.
 
 ??? success "Solução"
-    $\sigma = \frac{1}{1-\rho} = \frac{1}{1-0{,}5} = 2$
+    $\text{TMS}_{12} = \frac{a}{b} \cdot \frac{x_2}{x_1} = \frac{1/3}{2/3} \cdot \frac{4}{8} = \frac{1}{2} \cdot \frac{1}{2} = \frac{1}{4}$. O consumidor está disposto a ceder no máximo $1/4$ de unidade de $x_2$ por uma unidade adicional de $x_1$. Ele já tem relativamente bastante $x_1$, então valoriza pouco uma unidade extra.
 
-    $\text{TMS} = \frac{0{,}5}{0{,}5}\left(\frac{1}{4}\right)^{1-0{,}5} = \left(\frac{1}{4}\right)^{0{,}5} = \frac{1}{2} = 0{,}5$
-
-    O consumidor aceita perder 0,5 unidade de $y$ por 1 unidade a mais de $x$.
-
-**Exercício 2.** Mostre que quando $\rho \to 0$, a CES converge para Cobb-Douglas.
+**Exercício 2.** Um consumidor tem utilidade $u = 2x_1 + 3x_2$ (substitutos perfeitos). Se $p_1 = 4$, $p_2 = 9$ e $I = 36$, qual cesta ele escolhe?
 
 ??? success "Solução"
-    Tomando $\ln U = \frac{1}{\rho}\ln(\alpha x^{\rho} + (1-\alpha)y^{\rho})$. Quando $\rho \to 0$, aplicamos L'Hôpital: $x^{\rho} = e^{\rho \ln x} \approx 1 + \rho \ln x$. Substituindo:
+    A TMS é $a/b = 2/3$. A razão de preços é $p_1/p_2 = 4/9$. Como $\text{TMS} = 2/3 > 4/9 = p_1/p_2$, o consumidor valoriza $x_1$ relativamente mais do que o mercado. Solução de canto: gasta tudo em $x_1$. $x_1^* = I/p_1 = 36/4 = 9$, $x_2^* = 0$.
 
-    $\ln U \approx \frac{1}{\rho}\ln\left(1 + \rho[\alpha \ln x + (1-\alpha)\ln y]\right) \to \alpha \ln x + (1-\alpha)\ln y$
-
-    Portanto $U \to x^{\alpha} y^{1-\alpha}$, que é Cobb-Douglas.
-
-**Exercício 3.** Na Leontief $U = \min\{2x, 3y\}$, se o consumidor tem $(6, 4)$, quanto de $x$ está sendo "desperdiçado"?
+**Exercício 3.** Para a função CES $u = (x_1^\rho + x_2^\rho)^{1/\rho}$, mostre que quando $\rho \to 0$, a TMS converge para $x_2/x_1$ (caso Cobb-Douglas com pesos iguais).
 
 ??? success "Solução"
-    O vértice ocorre quando $2x = 3y$, ou seja, $x = \frac{3y}{2}$. Com $y = 4$: $x^* = 6$. Neste caso, $2(6) = 12 = 3(4) = 12$. O consumidor está **exatamente no vértice** — nada é desperdiçado. A utilidade é $U = \min\{12, 12\} = 12$.
+    A TMS da CES é $\text{TMS} = \frac{x_1^{\rho-1}}{x_2^{\rho-1}} = \left(\frac{x_1}{x_2}\right)^{\rho-1} = \left(\frac{x_2}{x_1}\right)^{1-\rho}$. Quando $\rho \to 0$: $\text{TMS} \to (x_2/x_1)^1 = x_2/x_1$, que é a TMS de $u = x_1 x_2$ (Cobb-Douglas com $a=b=1$). $\blacksquare$
 
 ---
 
@@ -138,44 +140,44 @@ Na aula, cada grupo será "especialista" em uma função. Prepare sua ficha:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Na CES, o que acontece com as curvas de indiferença quando $\rho \to -\infty$?
+**Q1.** A TMS de uma Cobb-Douglas $u = x_1^a x_2^b$ é:
 
-- [ ] (a) Tornam-se retas paralelas
-- [ ] (b) Tornam-se hipérboles
-- [x] (c) Tornam-se L's (ângulo reto)
-- [ ] (d) Desaparecem
+- [ ] (a) $a/b$
+- [x] (b) $(a/b)(x_2/x_1)$
+- [ ] (c) $(a/b)(x_1/x_2)$
+- [ ] (d) $ax_1 + bx_2$
 
-**Q2.** Qual é a elasticidade de substituição da Cobb-Douglas?
+**Q2.** Para substitutos perfeitos $u = 3x_1 + 5x_2$, a TMS é:
 
-- [ ] (a) 0
-- [x] (b) 1
-- [ ] (c) $\infty$
-- [ ] (d) Depende dos expoentes
+- [ ] (a) $5/3$
+- [x] (b) $3/5$
+- [ ] (c) Depende do ponto
+- [ ] (d) Indefinida
 
-**Q3.** Se $U = \min\{3x, 2y\}$, qual é a proporção ótima de consumo $x/y$?
+**Q3.** Na família CES, quando $\sigma \to 0$ (elasticidade de substituição tende a zero), as preferências se aproximam de:
 
-- [ ] (a) $3/2$
-- [x] (b) $2/3$
-- [ ] (c) $1$
-- [ ] (d) $6$
+- [ ] (a) Substitutos perfeitos
+- [ ] (b) Cobb-Douglas
+- [x] (c) Complementos perfeitos
+- [ ] (d) Quase-lineares
 
-**Q4.** A quase-concavidade de $U$ garante que:
+**Q4.** Nas preferências quase-lineares $u = v(x_1) + x_2$, as curvas de indiferença:
 
-- [ ] (a) A utilidade é cardinal
-- [ ] (b) A TMS é crescente
-- [x] (c) Os conjuntos de nível superior são convexos
-- [ ] (d) A função é diferenciável
+- [ ] (a) São retas paralelas
+- [x] (b) São translações verticais umas das outras
+- [ ] (c) Têm formato de L
+- [ ] (d) São círculos concêntricos
 
-**Q5.** Na CES com $\rho = 0{,}5$, a elasticidade de substituição vale:
+**Q5.** Se a TMS é decrescente ao longo de uma curva de indiferença, as preferências são:
 
-- [ ] (a) 0,5
-- [x] (b) 2
-- [ ] (c) 1
-- [ ] (d) $\infty$
+- [ ] (a) Lineares
+- [ ] (b) Não-monotônicas
+- [x] (c) Convexas
+- [ ] (d) Não-contínuas
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 04**: Lab Jigsaw — cada grupo apresenta sua função utilidade e ensina os demais. Traga sua ficha técnica preparada!
+    **Aula 05**: Maximização de Utilidade e Demanda Marshalliana — o problema completo de otimização do consumidor.

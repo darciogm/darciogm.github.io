@@ -20,7 +20,7 @@
   <p>Estude o material antes de cada aula. Complete o quiz para registrar sua preparacao.</p>
   <div class="portal-stats">
     <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Completas</div></div>
-    <div class="stat-badge"><div class="val" id="stat-total">24</div><div class="lbl">Total</div></div>
+    <div class="stat-badge"><div class="val" id="stat-total">25</div><div class="lbl">Total</div></div>
     <div class="stat-badge"><div class="val" id="stat-time">0</div><div class="lbl">Min. estudados</div></div>
     <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Media Quizzes</div></div>
   </div>
@@ -37,30 +37,31 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
 
 var AULAS = [
-  {n:1, title:'Ferramentas Matematicas do Economista', desc:'Otimizacao, Lagrangiano, estatica comparativa, elasticidade', cap:'Cap. 2', time:50},
-  {n:2, title:'Oficina: Lagrangiano (Teoria+Pratica)', desc:'Teorema do envelope, Kuhn-Tucker, exercicios cronometrados', cap:'Cap. 2', time:40},
-  {n:3, title:'Preferencias, Axiomas e Utilidade', desc:'Axiomas de racionalidade, funcoes utilidade, TMS', cap:'Cap. 3', time:50},
-  {n:4, title:'Lab: Curvas de Indiferenca (Teoria+Pratica)', desc:'Elasticidade de substituicao, CES, Jigsaw de funcoes', cap:'Cap. 3', time:40},
-  {n:5, title:'Escolha Otima do Consumidor', desc:'Restricao orcamentaria, tangencia, demandas Marshallianas', cap:'Cap. 4', time:50},
-  {n:6, title:'Dualidade: Hicksiana e Funcao Gasto (T+P)', desc:'Problema dual, identidades de Roy e Shephard', cap:'Cap. 4', time:50},
-  {n:7, title:'Efeitos Renda e Substituicao', desc:'Slutsky, Hicks, bens normais/inferiores/Giffen', cap:'Cap. 5', time:50},
-  {n:8, title:'Decomposicao Slutsky + Case Brasil (T+P)', desc:'Substitutos/complementares, elasticidade cruzada, casos reais', cap:'Cap. 5-6', time:45},
-  {n:9, title:'Dotacoes, Trabalho e Escolha Intertemporal', desc:'Oferta de trabalho, backward-bending, Fisher 2 periodos', cap:'Cap. 5/17', time:50},
-  {n:10, title:'Simulacao: Mercado de Trabalho (T+P)', desc:'Salario de reserva, monopsonio, FIES e poupanca', cap:'Cap. 17', time:40},
-  {n:11, title:'Incerteza e Utilidade Esperada', desc:'VNM, aversao ao risco, equivalente certo, seguros', cap:'Cap. 7', time:50},
-  {n:12, title:'Loterias + Seguro (T+P)', desc:'Allais, diversificacao, prospect theory, design de seguro', cap:'Cap. 7', time:40},
-  {n:13, title:'Funcao de Producao e Tecnologia', desc:'PMg, PMe, isoquantas, TMST, rendimentos de escala', cap:'Cap. 9', time:50},
-  {n:14, title:'Lab: Isoquantas e Rendimentos (T+P)', desc:'CES producao, progresso tecnico, diagnostico tecnologico', cap:'Cap. 9', time:40},
-  {n:15, title:'Custos de Producao', desc:'Custo economico, minimizacao, isocusto, curvas de custo', cap:'Cap. 10', time:50},
-  {n:16, title:'Custos CP vs LP + Envelope (T+P)', desc:'Custos fixos/variaveis, envoltoria, economias de escala', cap:'Cap. 10', time:40},
-  {n:17, title:'Maximizacao de Lucro e Oferta', desc:'P=CMg, shutdown, curva de oferta, excedente do produtor', cap:'Cap. 11', time:50},
-  {n:18, title:'Simulacao: Decisao de Producao (T+P)', desc:'Coase, agregacao de oferta, equilibrio LP, startup case', cap:'Cap. 11-12', time:40},
-  {n:19, title:'Equilibrio Competitivo e Bem-Estar', desc:'Oferta/demanda de mercado, excedentes, Pareto, peso morto', cap:'Cap. 12', time:50},
-  {n:20, title:'Politicas Publicas no Brasil (T+P)', desc:'Impostos, controles de preco, subsidios, 4 cases', cap:'Cap. 12', time:45},
-  {n:21, title:'Monopolio e Discriminacao de Precos', desc:'RMg=CMg, Lerner, DWL, discriminacao 1o/2o/3o grau', cap:'Cap. 14', time:50},
-  {n:22, title:'Discriminacao + Regulacao (T+P)', desc:'Monopolio natural, CADE, tarifa em duas partes', cap:'Cap. 14', time:40},
-  {n:23, title:'Oligopolio: Cournot, Bertrand, Stackelberg', desc:'Best response, Nash, paradoxo de Bertrand, first-mover', cap:'Cap. 15', time:50},
-  {n:24, title:'Torneio de Oligopolio (T+P)', desc:'Jogos repetidos, colusao, concorrencia monopolistica', cap:'Cap. 15', time:40}
+  {n:1, title:'Introducao a Microeconomia II', desc:'Modelos economicos, oferta e demanda, equilibrio, estatica comparativa', cap:'Cap. 1', time:45},
+  {n:2, title:'Restricao Orcamentaria', desc:'Conjunto orcamentario, precos relativos, variacoes de renda e precos', cap:'Cap. 4', time:45},
+  {n:3, title:'Preferencias e Axiomas', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade', cap:'Cap. 3', time:45},
+  {n:4, title:'Utilidade e Curvas de Indiferenca', desc:'TMS, Cobb-Douglas, substitutos, complementos, CES, quase-linear', cap:'Cap. 3', time:45},
+  {n:5, title:'Maximizacao de Utilidade e Demanda Marshalliana', desc:'Lagrangiano, tangencia, demandas, utilidade indireta, Roy', cap:'Cap. 4', time:45},
+  {n:6, title:'Minimizacao do Dispendio e Demanda Hicksiana', desc:'Problema dual, funcao dispendio, Lema de Shephard', cap:'Cap. 4', time:45},
+  {n:7, title:'Dualidade na Teoria do Consumidor', desc:'Mapa primal-dual, identidades V-E, relacao entre demandas', cap:'Cap. 4', time:45},
+  {n:8, title:'Equacao de Slutsky: Teoria', desc:'Efeitos renda e substituicao, bens normais/inferiores/Giffen', cap:'Cap. 5', time:45},
+  {n:9, title:'Equacao de Slutsky: Exercicios', desc:'Decomposicao CD e quase-linear, Slutsky em elasticidades', cap:'Cap. 5', time:40},
+  {n:10, title:'Decomposicao de Hicks: Teoria', desc:'Excedente consumidor, VC, VE, principio lump sum', cap:'Cap. 5', time:45},
+  {n:11, title:'Decomposicao de Hicks: Exercicios', desc:'VC e VE para CD e quase-linear, ICMS eletricidade', cap:'Cap. 5', time:40},
+  {n:12, title:'Economia de Dotacoes: Trabalho e Intertemporal', desc:'Oferta trabalho, backward-bending, Fisher 2 periodos', cap:'Cap. 17-18', time:45},
+  {n:13, title:'Escolha sob Incerteza I: Loterias e Utilidade Esperada', desc:'Axiomas VNM, aversao ao risco, desigualdade de Jensen', cap:'Cap. 7', time:45},
+  {n:14, title:'Escolha sob Incerteza II: Seguros e Informacao', desc:'Arrow-Pratt, premio de risco, cobertura otima, diversificacao', cap:'Cap. 7', time:45},
+  {n:15, title:'Escolha sob Incerteza III: Paradoxos', desc:'Allais, Ellsberg, Teoria dos Prospectos, funcao valor', cap:'Cap. 8', time:45},
+  {n:16, title:'Escolha sob Incerteza IV: Mercados de Risco', desc:'Selecao adversa, risco moral, sinalizacao, screening', cap:'Cap. 7/19', time:45},
+  {n:17, title:'Funcao de Producao I', desc:'PMg, PMe, isoquantas, TMST, rendimentos de escala', cap:'Cap. 10', time:45},
+  {n:18, title:'Funcao de Producao II', desc:'Funcoes especificas, elasticidade substituicao, progresso tecnico', cap:'Cap. 10', time:45},
+  {n:19, title:'Custos de Producao e Minimizacao de Custos', desc:'Custo economico, Lagrangiano, Shephard, curvas custo, envoltoria', cap:'Cap. 11', time:50},
+  {n:20, title:'Maximizacao de Lucro I', desc:'P=CMg, funcao lucro, Hotelling, convexidade, lei da oferta', cap:'Cap. 12', time:45},
+  {n:21, title:'Maximizacao de Lucro II: Receita Marginal e Oferta', desc:'RMg e elasticidade, shutdown, oferta CP, excedente produtor', cap:'Cap. 12', time:45},
+  {n:22, title:'Concorrencia Perfeita e Bem-Estar', desc:'Equilibrio marshalliano, LP, excedentes, 1o Teorema Bem-Estar', cap:'Cap. 13', time:45},
+  {n:23, title:'Intervencao Estatal: Tributacao e Controles', desc:'Incidencia tributaria, peso morto, teto/piso precos, subsidios', cap:'Cap. 13', time:45},
+  {n:24, title:'Monopolio I: Maximizacao e Bem-Estar', desc:'Barreiras entrada, markup Lerner, custo social, estatica comparativa', cap:'Cap. 15', time:45},
+  {n:25, title:'Monopolio II: Discriminacao e Regulacao', desc:'3 graus Pigou, tarifa 2 partes, bundling, regulacao CMg/CMe', cap:'Cap. 15', time:45}
 ];
 
 function renderPortal() {
@@ -96,7 +97,7 @@ function renderPortal() {
   document.getElementById('stat-time').textContent = Math.round(totalTime / 60000);
   document.getElementById('stat-avg').textContent = quizScores.length > 0
     ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
-  document.getElementById('progress-fill').style.width = Math.round(done / 24 * 100) + '%';
+  document.getElementById('progress-fill').style.width = Math.round(done / 25 * 100) + '%';
 }
 
 renderPortal();

@@ -1,192 +1,173 @@
-# Pré-Aula 19 — Equilíbrio Competitivo e Bem-Estar
+# Pré-Aula 19 — Custos de Produção e Minimização de Custos
 
 !!! info "Leitura obrigatória"
-    **Cap. 12, Seções 12.1–12.5** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 11, Seções 11.1–11.5** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Derivar o equilíbrio de mercado competitivo e analisar ajustes em diferentes horizontes temporais
-2. Calcular excedente do consumidor, excedente do produtor e excedente total
-3. Explicar por que o equilíbrio competitivo é Pareto-eficiente e identificar fontes de peso morto
+1. Distinguir custo econômico de custo contábil e explicar o papel do custo de oportunidade
+2. Derivar as demandas condicionais de fatores via Lagrangiano e enunciar o Lema de Shephard
+3. Relacionar as curvas CT, CMe, CVMe e CMg, explicar a envoltória de Viner e identificar economias de escala
 
 ---
 
-## 1. Agregação e equilíbrio de mercado
+## 1. Custo econômico vs. custo contábil
 
-### Demanda de mercado
+O **custo contábil** registra despesas monetárias explícitas (salários, aluguel, matéria-prima). O **custo econômico** inclui também os **custos de oportunidade** — o valor da melhor alternativa renunciada:
 
-A demanda de mercado é a soma horizontal das demandas individuais:
+$$C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{oportunidade}}$$
 
-$$Q^D(P) = \sum_{i=1}^{m} q_i^D(P)$$
-
-### Oferta de mercado
-
-A oferta de mercado é a soma horizontal das ofertas individuais (trechos de CMg acima de CVMe):
-
-$$Q^S(P) = \sum_{j=1}^{n} q_j^S(P)$$
-
-### Equilíbrio
-
-O **equilíbrio competitivo** ocorre quando:
-
-$$Q^D(P^*) = Q^S(P^*) \implies \text{mercado se ajusta sem excesso}$$
-
-No equilíbrio, cada consumidor maximiza utilidade, cada firma maximiza lucro, e a quantidade demandada iguala a ofertada.
+!!! note "Intuição Econômica"
+    **O custo de oportunidade é invisível, mas real.** Se um empresário poderia ganhar R\$ 10.000/mês como empregado, esse valor é um custo econômico de operar seu próprio negócio, mesmo que não apareça em nenhuma nota fiscal. Ignorar o custo de oportunidade leva a decisões erradas — o empresário pode achar que tem lucro quando, na verdade, estaria melhor como empregado.
 
 ---
 
-## 2. Condições da competição perfeita
+## 2. Minimização de custos
 
-Para que o modelo competitivo se aplique, assumimos:
+A firma escolhe $K$ e $L$ para minimizar o custo de produzir $q$ unidades:
 
-1. **Muitos compradores e vendedores** — ninguém tem poder de mercado
-2. **Produto homogêneo** — bens idênticos entre firmas
-3. **Livre entrada e saída** — sem barreiras
-4. **Informação perfeita** — todos conhecem preços e qualidades
+$$\min_{K,L} \; wL + vK \quad \text{s.a.} \quad f(K,L) = q$$
 
-!!! tip "Na prática"
-    Poucos mercados satisfazem todas as condições simultaneamente. Mas o modelo é uma referência (benchmark) poderosa: mercados agrícolas de commodities, mercados financeiros e alguns mercados digitais se aproximam bastante.
+### Lagrangiano
 
----
+$$\mathcal{L} = wL + vK + \lambda\big[q - f(K,L)\big]$$
 
-## 3. Horizontes temporais
+**Condições de primeira ordem:**
 
-A resposta do mercado a choques depende do horizonte temporal:
+$$\frac{\partial \mathcal{L}}{\partial L} = w - \lambda\frac{\partial f}{\partial L} = 0 \implies \lambda = \frac{w}{PMg_L}$$
 
-### Curtíssimo prazo (mercado)
-Oferta **fixa** — a quantidade não pode se ajustar. Todo o ajuste ocorre via preço.
+$$\frac{\partial \mathcal{L}}{\partial K} = v - \lambda\frac{\partial f}{\partial K} = 0 \implies \lambda = \frac{v}{PMg_K}$$
 
-$$Q^S = \bar{Q} \implies P^* \text{ determinado pela demanda}$$
+Igualando:
 
-### Curto prazo
-Firmas existentes ajustam a produção (fator variável), mas **novas firmas não entram**. Oferta positivamente inclinada.
+$$\boxed{\frac{PMg_L}{PMg_K} = \frac{w}{v} \iff TMST = \frac{w}{v}}$$
 
-### Longo prazo
-Todos os fatores são variáveis e há **livre entrada/saída**. A oferta é mais elástica (ou perfeitamente elástica em indústria de custos constantes).
+A firma iguala a taxa marginal de substituição técnica à razão de preços dos fatores. O multiplicador $\lambda$ é o **custo marginal** — o custo adicional de produzir uma unidade a mais.
 
-!!! example "Choque de demanda: aumento do preço do café"
-    - **Curtíssimo prazo**: preço dispara; quantidade fixa (safra já colhida)
-    - **Curto prazo**: agricultores existentes expandem colheita; preço sobe menos
-    - **Longo prazo**: novos agricultores entram; preço retorna próximo ao custo mínimo
+### Demandas condicionais de fatores
+
+As soluções $L^c(w,v,q)$ e $K^c(w,v,q)$ são as **demandas condicionais** — a quantidade ótima de cada fator para produzir $q$ ao menor custo.
 
 ---
 
-## 4. Dinâmica de entrada e saída
+## 3. Função custo e propriedades
 
-O ajuste de longo prazo segue o mecanismo:
+Substituindo as demandas condicionais na função objetivo:
 
-$$\pi > 0 \xrightarrow{\text{entrada}} Q^S \uparrow \xrightarrow{} P \downarrow \xrightarrow{} \pi \downarrow$$
+$$C(w,v,q) = wL^c(w,v,q) + vK^c(w,v,q)$$
 
-$$\pi < 0 \xrightarrow{\text{saída}} Q^S \downarrow \xrightarrow{} P \uparrow \xrightarrow{} \pi \uparrow$$
+**Propriedades da função custo:**
 
-Convergência: $\pi^* = 0 \implies P^* = CMe_{\min}$
+1. **Não decrescente** em $w$, $v$ e $q$
+2. **Homogênea de grau 1** em $(w,v)$: dobrar todos os preços dos fatores dobra o custo
+3. **Côncava** em $(w,v)$: a firma pode substituir fatores quando preços mudam
+4. **Lema de Shephard:** $\displaystyle L^c = \frac{\partial C}{\partial w}, \quad K^c = \frac{\partial C}{\partial v}$
 
----
-
-## 5. Medidas de bem-estar
-
-### Excedente do consumidor (EC)
-
-Diferença entre a disposição a pagar e o preço efetivamente pago:
-
-$$EC = \int_0^{Q^*} P^D(Q)\,dQ - P^* Q^*$$
-
-Graficamente: área **abaixo** da curva de demanda e **acima** do preço de equilíbrio.
-
-### Excedente do produtor (EP)
-
-Diferença entre a receita e o custo variável:
-
-$$EP = P^* Q^* - \int_0^{Q^*} CMg(Q)\,dQ$$
-
-Graficamente: área **acima** da curva de oferta e **abaixo** do preço de equilíbrio.
-
-### Excedente total (ET)
-
-$$ET = EC + EP = \int_0^{Q^*} \big[P^D(Q) - CMg(Q)\big]\,dQ$$
+!!! note "Intuição Econômica"
+    **O Lema de Shephard é o dual do Lema de Hotelling.** Assim como a demanda hicksiana sai da função dispêndio por diferenciação, a demanda condicional de fatores sai da função custo. A dualidade entre minimização de custos e maximização de lucro permeia toda a teoria da firma.
 
 ---
 
-## 6. Eficiência de Pareto e peso morto
+## 4. Curvas de custo no curto prazo
 
-!!! warning "Conceito central"
-    Uma alocação é **Pareto-eficiente** se não é possível melhorar a situação de nenhum agente sem piorar a de outro.
+Com capital fixo $\bar{K}$ no curto prazo, definimos:
 
-O equilíbrio competitivo é Pareto-eficiente — ele maximiza o excedente total. Qualquer desvio do equilíbrio (por intervenção, poder de mercado ou externalidades) gera **peso morto** (deadweight loss):
+| Curva | Definição |
+|---|---|
+| Custo Total | $CT(q) = CF + CV(q)$ |
+| Custo Médio | $CMe(q) = CT(q)/q = CF/q + CVMe(q)$ |
+| Custo Variável Médio | $CVMe(q) = CV(q)/q$ |
+| Custo Marginal | $CMg(q) = dCT/dq = dCV/dq$ |
 
-$$DWL = ET_{\text{equilíbrio}} - ET_{\text{intervenção}} > 0$$
+**Relações fundamentais:**
 
-O peso morto representa transações mutuamente benéficas que deixam de ocorrer. É uma perda líquida para a sociedade — não é transferida para ninguém.
-
-**Primeiro Teorema do Bem-Estar:** sob competição perfeita, o equilíbrio de mercado é Pareto-eficiente.
+- O CMg corta o CMe e o CVMe em seus respectivos **pontos de mínimo**
+- Se $CMg < CMe$, o CMe está caindo; se $CMg > CMe$, o CMe está subindo
+- A distância vertical entre CMe e CVMe é $CF/q$, que diminui com $q$
 
 ---
 
-## Gráfico interativo: equilíbrio de mercado
+## 5. Custos de longo prazo e envoltória de Viner
 
-<div id="graph-equilibrio" style="min-height: 450px;">
-<iframe src="../../graficos/cap12/equilibrio-mercado.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+No longo prazo, todos os fatores são variáveis. Para cada nível de capital $\bar{K}$, existe uma curva de CMe de curto prazo. A curva de **CMe de longo prazo** (CMeLP) é a **envoltória** dessas curvas:
+
+$$CMeLP(q) = \min_{\bar{K}} CMe_{CP}(q; \bar{K})$$
+
+A CMeLP tangencia cada curva de CMe de curto prazo no ponto correspondente ao $\bar{K}$ ótimo para aquele $q$. No ponto de escala eficiente, CMeLP = CMeCP e ambas atingem o mínimo.
+
+**Economias de escala** ocorrem quando $CMeLP$ é decrescente ($\varepsilon_C < 1$, onde $\varepsilon_C = CMg/CMe$). **Deseconomias de escala** quando $CMeLP$ é crescente ($\varepsilon_C > 1$).
+
+---
+
+## Gráfico interativo: minimização de custo
+
+<div id="graph-min-custo" style="min-height: 450px;">
+<iframe src="graficos/cap11/minimizacao-custo.html"></iframe>
 </div>
 
 !!! tip "Explore o gráfico"
-    - Desloque as curvas de demanda ou oferta e observe o novo equilíbrio
-    - Visualize as áreas de excedente do consumidor e do produtor
-    - Introduza um imposto ou preço fixo e veja o peso morto surgir
+    - Mova a isoquanta para diferentes níveis de produção e veja o ponto de tangência com a isocusto
+    - Altere a razão $w/v$ e observe a substituição entre fatores
+    - Verifique que no ótimo $TMST = w/v$
 
 ---
 
-## Box: O poder do equilíbrio competitivo
+## Gráfico interativo: curvas de custo
 
-!!! note "Intuição Econômica"
-    **Por que o equilíbrio competitivo maximiza o bem-estar?**
+<div id="graph-curvas-custo" style="min-height: 450px;">
+<iframe src="graficos/cap11/curvas-custo.html"></iframe>
+</div>
 
-    No equilíbrio, a última unidade transacionada tem benefício marginal (disposição a pagar) exatamente igual ao custo marginal de produzi-la. Todas as unidades anteriores geram benefício marginal superior ao custo marginal — cada uma contribui positivamente para o excedente total. Produzir além de $Q^*$ destruiria valor (custo > benefício); produzir menos de $Q^*$ desperdiçaria oportunidades de ganho mútuo. O preço de equilíbrio é o "sinal" perfeito que coordena essa eficiência.
+!!! tip "Explore o gráfico"
+    - Observe como o CMg cruza o CMe e o CVMe nos seus mínimos
+    - Note que a distância CMe - CVMe diminui à medida que $q$ cresce
+    - Identifique as regiões de economias e deseconomias de escala
+
+---
+
+## Gráfico interativo: envoltória de custo total
+
+<div id="graph-envoltoria" style="min-height: 450px;">
+<iframe src="graficos/cap11/envoltoria-custo-total.html"></iframe>
+</div>
+
+!!! tip "Explore o gráfico"
+    - Varie o nível de capital fixo e veja diferentes curvas de CMe de curto prazo
+    - Observe como a envoltória de longo prazo tangencia cada curva de curto prazo
+    - Identifique a escala eficiente (mínimo do CMeLP)
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Em um mercado com demanda $Q^D = 100 - 2P$ e oferta $Q^S = 3P - 25$, encontre: (a) preço e quantidade de equilíbrio, (b) excedente do consumidor e do produtor, (c) excedente total.
+**Exercício 1.** Uma firma tem $f(K,L) = K^{1/2}L^{1/2}$, $w = 4$ e $v = 1$. Encontre as demandas condicionais e a função custo $C(q)$.
 
 ??? success "Solução"
-    (a) $Q^D = Q^S \implies 100 - 2P = 3P - 25 \implies 5P = 125 \implies P^* = 25$
+    $TMST = \frac{PMg_L}{PMg_K} = \frac{K}{L} = \frac{w}{v} = 4 \implies K = 4L$
 
-    $Q^* = 100 - 50 = 50$
+    Restrição: $(4L)^{1/2}L^{1/2} = 2L = q \implies L^c = q/2$, $K^c = 2q$.
 
-    (b) Demanda inversa: $P^D = 50 - Q/2$. Oferta inversa: $P^S = (Q + 25)/3$.
+    $C(q) = 4(q/2) + 1(2q) = 2q + 2q = 4q$
 
-    $EC = \frac{1}{2}(50 - 25)(50) = 625$
+    Verificação pelo Lema de Shephard: $\partial C/\partial w = q/2 = L^c$ e $\partial C/\partial v = 2q = K^c$.
 
-    Para o EP: preço mínimo de oferta (quando $Q^S = 0$): $P = 25/3 \approx 8{,}33$.
-
-    $EP = \frac{1}{2}(25 - 8{,}33)(50) = \frac{1}{2}(16{,}67)(50) \approx 416{,}67$
-
-    (c) $ET = EC + EP = 625 + 416{,}67 = 1.041{,}67$
-
-**Exercício 2.** Explique o que acontece nesse mercado se o governo fixa o preço em $P = 20$ (abaixo do equilíbrio). Há excesso de oferta ou demanda? Calcule o peso morto.
+**Exercício 2.** Para $C(q) = q^3 - 6q^2 + 15q + 10$, encontre CMg, CMe, CVMe e seus mínimos.
 
 ??? success "Solução"
-    Com $P = 20$: $Q^D = 100 - 40 = 60$ e $Q^S = 60 - 25 = 35$.
+    $CMg = 3q^2 - 12q + 15$. Mínimo: $6q - 12 = 0 \implies q = 2$, $CMg(2) = 3$.
 
-    Há **excesso de demanda** (escassez): $Q^D - Q^S = 25$ unidades.
+    $CVMe = q^2 - 6q + 15$. Mínimo: $2q - 6 = 0 \implies q = 3$, $CVMe(3) = 6$.
 
-    A quantidade efetivamente transacionada é $Q = 35$ (lado curto do mercado).
+    Verificação: $CMg(3) = 27 - 36 + 15 = 6 = CVMe(3)$.
 
-    Novo EC: área sob a demanda de $0$ a $35$, menos o gasto $20 \times 35$:
+    $CMe = q^2 - 6q + 15 + 10/q$. Mínimo onde $CMg = CMe$: resolvendo numericamente, $q \approx 3{,}68$, $CMe \approx 6{,}39$.
 
-    $EC' = \int_0^{35}(50 - Q/2)\,dQ - 20(35) = [50(35) - 35^2/4] - 700 = 1.750 - 306{,}25 - 700 = 743{,}75$
+**Exercício 3.** Explique por que a curva de CMeLP nunca fica acima de nenhuma curva de CMe de curto prazo.
 
-    Novo EP: $EP' = 20(35) - \int_0^{35}(Q + 25)/3\,dQ = 700 - [35^2/6 + 25(35)/3] = 700 - 204{,}17 - 291{,}67 = 204{,}17$
-
-    $ET' = 743{,}75 + 204{,}17 = 947{,}92$
-
-    $DWL = 1.041{,}67 - 947{,}92 = 93{,}75$
-
-    Alternativamente: $DWL = \frac{1}{2}(25 - 20)(50 - 35) = \frac{1}{2}(5)(15) = 37{,}5$.
-
-    Nota: a discrepância se deve à geometria não-triangular exata; usando as inversas corretamente: $P^D(35) = 32{,}5$ e $P^S(35) = 20$, então $DWL = \frac{1}{2}(32{,}5 - 20)(50 - 35) = \frac{1}{2}(12{,}5)(15) = 93{,}75$.
+??? success "Solução"
+    A CMeLP é obtida minimizando o custo sobre **todos** os fatores, inclusive o capital. Cada curva de CMe de curto prazo fixa o capital em $\bar{K}$, restringindo a escolha da firma. Como a minimização com mais liberdade (LP) não pode produzir custo maior que a minimização restrita (CP), temos $CMeLP(q) \leq CMe_{CP}(q;\bar{K})$ para todo $\bar{K}$. A igualdade ocorre apenas no ponto onde $\bar{K}$ coincide com o capital ótimo de longo prazo para aquele $q$.
 
 ---
 
@@ -197,42 +178,44 @@ O peso morto representa transações mutuamente benéficas que deixam de ocorrer
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O excedente do consumidor é a área:
+**Q1.** A diferença entre custo econômico e custo contábil é:
 
-- [x] (a) Abaixo da curva de demanda e acima do preço de equilíbrio
-- [ ] (b) Acima da curva de oferta e abaixo do preço de equilíbrio
-- [ ] (c) Entre as curvas de oferta e demanda, à direita do equilíbrio
-- [ ] (d) Abaixo do preço de equilíbrio e acima do eixo horizontal
+- [ ] (a) O custo econômico exclui a depreciação
+- [x] (b) O custo econômico inclui o custo de oportunidade
+- [ ] (c) O custo contábil é sempre maior
+- [ ] (d) Não há diferença relevante
 
-**Q2.** O Primeiro Teorema do Bem-Estar afirma que:
+**Q2.** A condição de minimização de custos é:
 
-- [ ] (a) Todo equilíbrio de mercado é justo
-- [x] (b) Sob competição perfeita, o equilíbrio é Pareto-eficiente
-- [ ] (c) O governo deve intervir para maximizar o bem-estar
-- [ ] (d) Monopólios são eficientes
+- [x] (a) $TMST = w/v$
+- [ ] (b) $PMg_L = PMg_K$
+- [ ] (c) $w = v$
+- [ ] (d) $CMg = CMe$
 
-**Q3.** No longo prazo, um aumento permanente de demanda em uma indústria de custos constantes resulta em:
+**Q3.** Pelo Lema de Shephard, a demanda condicional por trabalho é:
 
-- [ ] (a) Preço mais alto e mais firmas
-- [x] (b) Mesmo preço e mais firmas
-- [ ] (c) Preço mais alto e mesmo número de firmas
-- [ ] (d) Preço mais baixo e menos firmas
+- [ ] (a) $L^c = \partial C/\partial q$
+- [x] (b) $L^c = \partial C/\partial w$
+- [ ] (c) $L^c = \partial C/\partial v$
+- [ ] (d) $L^c = C/w$
 
-**Q4.** Peso morto (deadweight loss) representa:
+**Q4.** O CMg cruza o CMe no ponto de:
 
-- [ ] (a) Uma transferência de renda do consumidor para o governo
-- [ ] (b) O custo administrativo de uma política pública
-- [x] (c) Transações mutuamente benéficas que deixam de ocorrer
-- [ ] (d) A diferença entre lucro contábil e lucro econômico
+- [ ] (a) Máximo do CMe
+- [x] (b) Mínimo do CMe
+- [ ] (c) Máximo do CMg
+- [ ] (d) Inflexão do CT
 
-**Q5.** V ou F: "Se o preço de mercado está abaixo do equilíbrio (preço-teto), há excesso de oferta."
+**Q5.** A envoltória de Viner mostra que o CMeLP:
 
-- [ ] (a) Verdadeiro
-- [x] (b) Falso — preço abaixo do equilíbrio gera excesso de demanda (escassez)
+- [ ] (a) É sempre igual ao CMeCP
+- [ ] (b) Está sempre acima das curvas de CMeCP
+- [x] (c) Tangencia cada curva de CMeCP, nunca ficando acima de nenhuma
+- [ ] (d) É uma linha horizontal
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 19**: Mini-lecture sobre equilíbrio competitivo e bem-estar + análise gráfica de excedentes e eficiência. Traga calculadora!
+    **Aula 20**: Maximização de lucro — da condição $P = CMg$ à função lucro e o Lema de Hotelling. Revise as propriedades da função custo!

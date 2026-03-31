@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-22-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-22-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-22-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-22-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-22-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,21 +143,81 @@ Insper
 </div>
 
 </section>
-<section id="monopólio-natural-custos-subaditivos" class="slide level2">
-<h2>Monopólio Natural: Custos Subaditivos</h2>
-<p><strong>Definição:</strong> uma firma é monopólio natural se, para toda quantidade relevante:</p>
-<p><span class="math display">\[C(Q) &lt; C(Q_1) + C(Q_2) \quad \text{para todo } Q_1 + Q_2 = Q\]</span></p>
+<section id="discriminação-de-preços-visão-geral" class="slide level2">
+<h2>Discriminação de Preços: Visão Geral</h2>
+<p><strong>Condições necessárias:</strong> poder de mercado, capacidade de segmentar consumidores, impossibilidade de revenda.</p>
 <div class="fragment">
-<p>Isto ocorre quando há <strong>altos custos fixos</strong> e <strong>custos marginais baixos/constantes</strong>:</p>
-<p><span class="math display">\[CMe(Q) = \frac{CF}{Q} + CVMe \quad \text{(decrescente no intervalo relevante)}\]</span></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Grau</th>
+<th style="text-align: left;">Informação do monopolista</th>
+<th style="text-align: left;">Mecanismo</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1º (perfeita)</td>
+<td style="text-align: left;">Disposição a pagar individual</td>
+<td style="text-align: left;">Cobra WTP de cada um</td>
+<td style="text-align: left;">Leilão, negociação individual</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2º (autosseleção)</td>
+<td style="text-align: left;">Menu de opções</td>
+<td style="text-align: left;">Consumidor se revela</td>
+<td style="text-align: left;">Versioning, tarifa em duas partes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3º (segmentação)</td>
+<td style="text-align: left;">Grupo identificável</td>
+<td style="text-align: left;">Preço por segmento</td>
+<td style="text-align: left;">Meia-entrada, tarifa idoso</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="fragment">
-<p><strong>Exemplos clássicos:</strong></p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Os três graus diferem na <strong>quantidade de informação</strong> que o monopolista possui sobre seus consumidores. Mais informação permite extrair mais excedente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="º-grau-discriminação-perfeita" class="slide level2">
+<h2>1º Grau: Discriminação Perfeita</h2>
+<p>O monopolista cobra de cada consumidor exatamente sua <strong>disposição máxima a pagar</strong> (WTP).</p>
+<div class="fragment">
+<p><strong>Resultado:</strong></p>
 <ul>
-<li>Distribuição de água, gás e eletricidade</li>
-<li>Ferrovias e metrô</li>
-<li>Rede de telecomunicações (infraestrutura física)</li>
+<li><span class="math inline">\(Q^{1\text{º}} = Q^{CP}\)</span> — quantidade eficiente</li>
+<li><span class="math inline">\(EC = 0\)</span> — todo excedente vai para o monopolista</li>
+<li><span class="math inline">\(DWL = 0\)</span> — sem peso morto</li>
+<li><span class="math inline">\(\pi = ET_{\text{competitivo}}\)</span> — lucro = excedente total</li>
 </ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\pi^{1\text{º}} = \int_0^{Q^{CP}} [P^D(Q) - CMg(Q)]\,dQ\]</span></p>
+</div>
+<div class="fragment">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -165,67 +227,211 @@ Insper
 <p><strong>Importante</strong></p>
 </div>
 <div class="callout-content">
-<p>Se <span class="math inline">\(CMe\)</span> é decrescente, duplicar a infraestrutura seria <strong>desperdício social</strong>. Mas sem regulação, o monopolista cobra <span class="math inline">\(P^M &gt; CMg\)</span>.</p>
+<p>Discriminação perfeita é <strong>eficiente</strong> (Pareto) mas extremamente desigual. Na prática é impossível — requer informação perfeita sobre cada consumidor.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="regulação-pelo-custo-marginal-p-cmg" class="slide level2">
-<h2>Regulação pelo Custo Marginal: <span class="math inline">\(P = CMg\)</span></h2>
-<p>A regulação “first-best” impõe:</p>
-<p><span class="math display">\[P_{reg} = CMg\]</span></p>
+<section id="º-grau-autosseleção-e-tarifa-em-duas-partes" class="slide level2">
+<h2>2º Grau: Autosseleção e Tarifa em Duas Partes</h2>
+<p>O monopolista não conhece o tipo de cada consumidor, mas oferece um <strong>menu</strong> e o consumidor se autoseleciona.</p>
 <div class="fragment">
-<p><strong>Vantagem:</strong> eficiência alocativa — <span class="math inline">\(Q_{reg} = Q^{CP}\)</span>, <span class="math inline">\(DWL = 0\)</span>.</p>
+<p><strong>Tarifa em duas partes:</strong> <span class="math inline">\(T(q) = A + p \cdot q\)</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: taxa fixa (assinatura, entrada)</li>
+<li><span class="math inline">\(p\)</span>: preço por unidade consumida</li>
+</ul>
 </div>
 <div class="fragment">
-<p><strong>Problema fatal:</strong> como <span class="math inline">\(CMe &gt; CMg\)</span> no monopólio natural, a firma tem <strong>prejuízo</strong>:</p>
-<p><span class="math display">\[\pi = (P_{reg} - CMe) \cdot Q &lt; 0\]</span></p>
+<p><strong>Ótimo com consumidores idênticos:</strong></p>
+<p><span class="math display">\[p^* = CMg, \quad A^* = EC_{\text{individual}}\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Soluções possíveis:</strong></p>
+<p><strong>Outras formas de discriminação de 2º grau:</strong></p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Solução</th>
-<th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Estratégia</th>
+<th style="text-align: left;">Mecanismo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Subsídio governamental</td>
-<td style="text-align: left;">Custo fiscal + incentivo a inflar custos</td>
+<td style="text-align: left;">Bundling</td>
+<td style="text-align: left;">Pacote de bens a preço único</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Tarifa em duas partes (<span class="math inline">\(F + CMg \cdot Q\)</span>)</td>
-<td style="text-align: left;">Pode excluir consumidores de baixa renda</td>
+<td style="text-align: left;">Versioning</td>
+<td style="text-align: left;">Básico vs.&nbsp;premium (qualidade diferente)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Estatização</td>
-<td style="text-align: left;">Sem incentivo a eficiência</td>
+<td style="text-align: left;">Desconto por quantidade</td>
+<td style="text-align: left;"><span class="math inline">\(p(q)\)</span> decrescente</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="regulação-pelo-custo-médio-second-best" class="slide level2">
-<h2>Regulação pelo Custo Médio: Second-Best</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>A regulação “second-best” impõe:</p>
-<p><span class="math display">\[P_{reg} = CMe \implies \pi = 0\]</span></p>
-<p>. . .</p>
-<p><strong>Trade-off:</strong></p>
-<ul>
-<li>Firma <strong>sobrevive</strong> sem subsídio</li>
-<li>Mas <span class="math inline">\(P_{CMe} &gt; CMg\)</span> → ainda há DWL</li>
-<li><span class="math inline">\(DWL_{CMe} &lt; DWL_{\text{monopólio}}\)</span></li>
-</ul>
-<p>. . .</p>
+<section id="º-grau-segmentação-de-mercado" class="slide level2 smaller">
+<h2>3º Grau: Segmentação de Mercado</h2>
+<p>O monopolista identifica <strong>grupos</strong> com elasticidades diferentes e cobra preços distintos.</p>
+<div class="fragment">
+<p><strong>Regra ótima:</strong> igualar <span class="math inline">\(RMg\)</span> em todos os segmentos ao <span class="math inline">\(CMg\)</span>:</p>
+<p><span class="math display">\[RMg_1(Q_1) = RMg_2(Q_2) = CMg\]</span></p>
+<div class="graph-slider-row">
+<div style="display:flex;gap:10px;justify-content:center;">
+<div id="graph-a22-discrim-m1" style="width:380px;height:320px;">
+
+</div>
+<div id="graph-a22-discrim-m2" style="width:380px;height:320px;">
+
+</div>
+</div>
+</div>
+<script>
+(function() {
+  /* Mercado 1 — inelástico: P1 = 20 - Q1 */
+  var b1 = JXG.JSXGraph.initBoard('graph-a22-discrim-m1', {
+    boundingbox: [-1, 24, 22, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q₁', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slMC = b1.create('slider', [[2, 22], [10, 22], [2, 4, 10]], {
+    name: 'CMg',
+    snapWidth: 0.5,
+    id: 'sl-a22-mc'
+  });
+
+  /* D1: P = 20 - Q  =>  MR1 = 20 - 2Q */
+  b1.create('functiongraph', [function(Q) { return 20 - Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D₁'
+  });
+  b1.create('text', [18, 3, 'D₁'], { fontSize: 12, color: '#1565c0' });
+
+  b1.create('functiongraph', [function(Q) { return 20 - 2 * Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2, dash: 2
+  });
+  b1.create('text', [8, 5, 'RMg₁'], { fontSize: 11, color: '#1565c0' });
+
+  /* MC horizontal */
+  b1.create('functiongraph', [function(Q) { return slMC.Value(); }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  b1.create('text', [18, function() { return slMC.Value() + 1; }, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* Q1*: MR1 = MC => 20 - 2Q = MC => Q = (20-MC)/2 */
+  var pQ1 = b1.create('point', [
+    function() { return (20 - slMC.Value()) / 2; },
+    function() { return slMC.Value(); }
+  ], { visible: false });
+
+  var pP1 = b1.create('point', [
+    function() { return (20 - slMC.Value()) / 2; },
+    function() { return 20 - (20 - slMC.Value()) / 2; }
+  ], { size: 3, color: '#1565c0', name: '' });
+
+  b1.create('segment', [pQ1, pP1], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+  b1.create('text', [1, function() { return 20 - (20 - slMC.Value()) / 2 + 0.8; },
+    function() { return 'P₁=' + (20 - (20 - slMC.Value()) / 2).toFixed(1); }
+  ], { fontSize: 11, color: '#1565c0' });
+
+  /* Mercado 2 — elástico: P2 = 12 - 0.5Q2  =>  MR2 = 12 - Q2 */
+  var b2 = JXG.JSXGraph.initBoard('graph-a22-discrim-m2', {
+    boundingbox: [-1, 16, 26, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q₂', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* D2: P = 12 - 0.5Q  =>  MR2 = 12 - Q */
+  b2.create('functiongraph', [function(Q) { return 12 - 0.5 * Q; }], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  b2.create('text', [21, 2, 'D₂'], { fontSize: 12, color: '#00897b' });
+
+  b2.create('functiongraph', [function(Q) { return 12 - Q; }], {
+    strokeColor: '#00897b', strokeWidth: 2, dash: 2
+  });
+  b2.create('text', [10, 3, 'RMg₂'], { fontSize: 11, color: '#00897b' });
+
+  /* MC from slider on board 1 */
+  b2.create('functiongraph', [function(Q) { return slMC.Value(); }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  b2.create('text', [22, function() { return slMC.Value() + 0.8; }, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* Q2*: MR2 = MC => 12 - Q = MC => Q = 12 - MC */
+  var pQ2 = b2.create('point', [
+    function() { return Math.max(0, 12 - slMC.Value()); },
+    function() { return slMC.Value(); }
+  ], { visible: false });
+
+  var pP2 = b2.create('point', [
+    function() { return Math.max(0, 12 - slMC.Value()); },
+    function() { var Q2 = Math.max(0, 12 - slMC.Value()); return 12 - 0.5 * Q2; }
+  ], { size: 3, color: '#00897b', name: '' });
+
+  b2.create('segment', [pQ2, pP2], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+  b2.create('text', [1, function() {
+    var Q2 = Math.max(0, 12 - slMC.Value());
+    return 12 - 0.5 * Q2 + 0.6;
+  }, function() {
+    var Q2 = Math.max(0, 12 - slMC.Value());
+    return 'P₂=' + (12 - 0.5 * Q2).toFixed(1);
+  }], { fontSize: 11, color: '#00897b' });
+})();
+</script>
+<p>Mova o slider CMg e observe: <span class="math inline">\(P_1 &gt; P_2\)</span> sempre — o mercado <strong>inelástico</strong> paga mais.</p>
+</div>
+</section>
+<section id="º-grau-regra-ótima" class="slide level2">
+<h2>3º Grau: Regra Ótima</h2>
+<p>Da condição <span class="math inline">\(RMg_i = CMg\)</span> e da relação de Lerner <span class="math inline">\(\frac{P - CMg}{P} = -\frac{1}{\varepsilon_i}\)</span>:</p>
+<div class="fragment">
+<p><span class="math display">\[\frac{P_i}{P_j} = \frac{1 + 1/\varepsilon_j}{1 + 1/\varepsilon_i}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Interpretação:</strong> cobra-se preço <strong>mais alto</strong> no mercado com <span class="math inline">\(|\varepsilon|\)</span> <strong>menor</strong> (demanda mais inelástica).</p>
+</div>
+<div class="fragment">
+<p><strong>Exemplo numérico:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Mercado</th>
+<th style="text-align: center;"><span class="math inline">\(|\varepsilon|\)</span></th>
+<th style="text-align: center;">Lerner</th>
+<th style="text-align: left;">Preço relativo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adultos (inelástico)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0,50</td>
+<td style="text-align: left;"><span class="math inline">\(P = 2 \times CMg\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Estudantes (elástico)</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0,20</td>
+<td style="text-align: left;"><span class="math inline">\(P = 1,25 \times CMg\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -235,66 +441,256 @@ Insper
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Na prática, a maioria das agências reguladoras usa uma variação da regulação por custo médio (ANEEL, ANATEL).</p>
+<p>A meia-entrada é um caso clássico: estudantes têm demanda mais elástica (menor renda, mais substitutos de lazer), então pagam menos.</p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap15/regulacao-monopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
+</div>
 </section>
-<section id="tarifa-em-duas-partes-como-regulação" class="slide level2">
-<h2>Tarifa em Duas Partes como Regulação</h2>
-<p>Combinação que busca eficiência <strong>e</strong> viabilidade financeira:</p>
-<p><span class="math display">\[T(Q) = F + CMg \cdot Q\]</span></p>
+<section id="bem-estar-com-discriminação" class="slide level2">
+<h2>Bem-Estar com Discriminação</h2>
+<p>O efeito da discriminação de 3º grau sobre o bem-estar social é <strong>ambíguo</strong>:</p>
 <div class="fragment">
-<p><strong>Mecanismo:</strong></p>
-<ol type="1">
-<li>Preço por unidade = <span class="math inline">\(CMg\)</span> → eficiência alocativa</li>
-<li>Taxa fixa <span class="math inline">\(F\)</span> cobre o déficit: <span class="math inline">\(F \cdot N = CF\)</span> → <span class="math inline">\(F = CF/N\)</span></li>
-</ol>
-</div>
-<div class="fragment">
-<p><strong>Vantagens:</strong></p>
+<p><strong>Efeito positivo:</strong> pode <strong>abrir mercados</strong> antes não atendidos.</p>
 <ul>
-<li>Consumo eficiente na margem</li>
-<li>Firma cobre custos</li>
+<li>Se <span class="math inline">\(P^M &gt; P_{\text{reserva}}\)</span> do mercado 2, preço único exclui esse mercado</li>
+<li>Discriminação permite atendê-lo a <span class="math inline">\(P_2 &lt; P^M\)</span></li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Desvantagens:</strong></p>
+<p><strong>Efeito negativo:</strong> <strong>extrai mais excedente</strong> dos consumidores cativos.</p>
 <ul>
-<li><span class="math inline">\(F\)</span> pode ser <strong>barreira</strong> para consumidores de baixa renda</li>
-<li>Requer conhecimento dos custos (assimetria de informação)</li>
+<li>No mercado 1 (inelástico), <span class="math inline">\(P_1 &gt; P^M\)</span> — consumidores pagam mais</li>
+<li>Transferência de EC para lucro do monopolista</li>
 </ul>
-<div class="callout callout-tip callout-titled callout-style-default">
+</div>
+<div class="fragment">
+<p><strong>Resultado teórico (Varian, 1985):</strong></p>
+<p><span class="math display">\[\Delta ET \gtrless 0 \quad \text{depende se } \Delta Q_{\text{total}} &gt; 0\]</span></p>
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Dica</strong></p>
+<p><strong>Importante</strong></p>
 </div>
 <div class="callout-content">
-<p>A tarifa social de energia no Brasil é uma versão: isenção de taxa fixa para famílias de baixa renda.</p>
+<p>Se a discriminação <strong>não aumenta</strong> a quantidade total vendida, o bem-estar social necessariamente <strong>cai</strong>.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="price-cap-regulação-rpi-x" class="slide level2">
-<h2>Price Cap: Regulação RPI-X</h2>
+<section id="regulação-de-monopólio-natural" class="slide level2">
+<h2>Regulação de Monopólio Natural</h2>
+<p>Monopólio natural: <span class="math inline">\(CMe\)</span> é <strong>sempre decrescente</strong> no intervalo relevante.</p>
+<div class="fragment">
+<p><span class="math display">\[CMe(Q) = \frac{CF}{Q} + CVMe \quad \text{(decrescente)}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Dilema do regulador:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Regulação</th>
+<th style="text-align: center;">Preço</th>
+<th style="text-align: center;">Quantidade</th>
+<th style="text-align: center;">Lucro</th>
+<th style="text-align: center;">DWL</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Sem regulação</td>
+<td style="text-align: center;"><span class="math inline">\(P^M\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(Q^M\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi &gt; 0\)</span></td>
+<td style="text-align: center;">Alto</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(P = CMg\)</span> (first-best)</td>
+<td style="text-align: center;"><span class="math inline">\(CMg\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(Q^{CP}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi &lt; 0\)</span></td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(P = CMe\)</span> (second-best)</td>
+<td style="text-align: center;"><span class="math inline">\(CMe\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(Q_{CMe}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\pi = 0\)</span></td>
+<td style="text-align: center;">Baixo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aviso</strong></p>
+</div>
+<div class="callout-content">
+<p>Se impor <span class="math inline">\(P = CMg\)</span>, a firma tem <strong>prejuízo</strong> (pois <span class="math inline">\(CMe &gt; CMg\)</span>) e precisa de subsídio ou tarifa em duas partes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="regulação-interativa" class="slide level2 smaller">
+<h2>Regulação Interativa</h2>
+<div class="graph-slider-row">
+<div id="graph-a22-regulation" style="width:700px;height:400px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a22-regulation', {
+    boundingbox: [-1, 30, 22, -3],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P, C', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* Slider: 0 = sem regulação, 1 = CMe, 2 = CMg */
+  var slReg = brd.create('slider', [[2, 28], [10, 28], [0, 0, 2]], {
+    name: 'Cenário',
+    snapWidth: 1,
+    id: 'sl-a22-reg'
+  });
+
+  brd.create('text', [11.5, 28, function() {
+    var v = slReg.Value();
+    if (v < 0.5) return '← Monopólio';
+    if (v < 1.5) return '← Reg. CMe';
+    return '← Reg. CMg';
+  }], { fontSize: 11, color: '#333' });
+
+  /* Demanda: P = 24 - Q */
+  brd.create('functiongraph', [function(Q) { return 24 - Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  brd.create('text', [20, 5, 'D'], { fontSize: 12, color: '#1565c0' });
+
+  /* MR: 24 - 2Q */
+  brd.create('functiongraph', [function(Q) { return 24 - 2 * Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2, dash: 2
+  });
+  brd.create('text', [10, 5, 'RMg'], { fontSize: 11, color: '#1565c0' });
+
+  /* MC = 4 (constant) */
+  brd.create('functiongraph', [function(Q) { return 4; }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  brd.create('text', [19, 5.2, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* AC = 4 + 60/Q (CF=60, CVMe=4) */
+  brd.create('functiongraph', [function(Q) {
+    if (Q < 0.3) return NaN;
+    return 4 + 60 / Q;
+  }, 0.3, 21], {
+    strokeColor: '#ff9800', strokeWidth: 2
+  });
+  brd.create('text', [17, function() { return 4 + 60 / 17 + 1; }, 'CMe'], { fontSize: 11, color: '#ff9800' });
+
+  /* Cenário-dependent point */
+  /* Monopólio: MR=MC => 24-2Q=4 => Q=10, P=14 */
+  /* CMe: P=CMe => 24-Q = 4+60/Q => Q²-20Q+60=0 => Q=(20-sqrt(160))/2 ≈ 3.35 nope
+     actually 24-Q = 4+60/Q => (24-Q)Q = 4Q+60 => 24Q-Q²=4Q+60 => Q²-20Q+60=0
+     Q = (20 ± sqrt(400-240))/2 = (20 ± sqrt(160))/2 = (20 ± 12.65)/2
+     Q = 16.32 or Q = 3.68 => take larger: Q≈16.32, P≈7.68 */
+  /* CMg: P=CMg=4 => 24-Q=4 => Q=20, P=4 */
+
+  function getQstar() {
+    var v = slReg.Value();
+    if (v < 0.5) return 10;          /* monopoly */
+    if (v < 1.5) return 16.32;       /* AC pricing */
+    return 20;                        /* MC pricing */
+  }
+  function getPstar() {
+    var v = slReg.Value();
+    if (v < 0.5) return 14;
+    if (v < 1.5) return 7.68;
+    return 4;
+  }
+
+  var pEq = brd.create('point', [
+    function() { return getQstar(); },
+    function() { return getPstar(); }
+  ], { size: 4, color: '#7b1fa2', name: '' });
+
+  /* Dashed lines to axes */
+  brd.create('segment', [
+    function() { return [getQstar(), 0]; },
+    function() { return [getQstar(), getPstar()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+
+  brd.create('segment', [
+    function() { return [0, getPstar()]; },
+    function() { return [getQstar(), getPstar()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+
+  brd.create('text', [1, function() { return getPstar() + 1.2; },
+    function() { return 'P*=' + getPstar().toFixed(1); }
+  ], { fontSize: 11, color: '#7b1fa2' });
+
+  brd.create('text', [function() { return getQstar() - 0.5; }, -1.5,
+    function() { return 'Q*=' + getQstar().toFixed(1); }
+  ], { fontSize: 11, color: '#7b1fa2' });
+
+  /* DWL shading — triangle between Q* and Q_cp=20 */
+  brd.create('curve', [
+    function(t) {
+      var Qs = getQstar();
+      if (Qs >= 19.9) return NaN;
+      return Qs + t * (20 - Qs);
+    },
+    function(t) {
+      var Qs = getQstar();
+      if (Qs >= 19.9) return NaN;
+      var Q = Qs + t * (20 - Qs);
+      return 24 - Q;
+    },
+    0, 1
+  ], { strokeWidth: 0, fillColor: '#e53935', fillOpacity: 0.15,
+    curveType: 'plot', numberPointsHigh: 60 });
+
+  brd.create('text', [function() {
+    var Qs = getQstar();
+    return (Qs + 20) / 2;
+  }, function() {
+    var Qs = getQstar();
+    return ((24 - Qs) + 4) / 2 - 1;
+  }, function() {
+    var v = slReg.Value();
+    if (v > 1.5) return '';
+    return 'DWL';
+  }], { fontSize: 11, color: '#e53935' });
+})();
+</script>
+<p>Mova o slider <strong>Cenário</strong>: 0 = monopólio puro, 1 = regulação por CMe, 2 = regulação por CMg. Observe como o DWL diminui e eventualmente desaparece.</p>
+</section>
+<section id="price-cap-rpi-x" class="slide level2">
+<h2>Price Cap (RPI-X)</h2>
 <p><strong>Fórmula:</strong> o preço máximo cresce pela inflação menos um fator de eficiência:</p>
 <p><span class="math display">\[\Delta P \leq RPI - X\]</span></p>
 <div class="fragment">
 <ul>
 <li><span class="math inline">\(RPI\)</span>: índice de inflação (<em>Retail Price Index</em>)</li>
-<li><span class="math inline">\(X\)</span>: ganho de produtividade esperado</li>
+<li><span class="math inline">\(X\)</span>: ganho de produtividade esperado pelo regulador</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Vantagens sobre regulação por custo:</strong></p>
+<p><strong>Vantagens sobre regulação por custo (Rate of Return):</strong></p>
 <table class="caption-top">
 <colgroup>
 <col style="width: 33%">
@@ -342,26 +738,26 @@ Insper
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Usado pela ANEEL nas revisões tarifárias periódicas da distribuição de energia.</p>
+<p>Usado pela ANEEL nas revisões tarifárias periódicas da distribuição de energia no Brasil.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="cade-e-defesa-da-concorrência" class="slide level2">
-<h2>CADE e Defesa da Concorrência</h2>
-<p>O <strong>CADE</strong> (Conselho Administrativo de Defesa Econômica) atua em três frentes:</p>
+<section id="o-papel-do-cade" class="slide level2">
+<h2>O Papel do CADE</h2>
+<p>O <strong>CADE</strong> (Conselho Administrativo de Defesa Econômica) é a autoridade brasileira de defesa da concorrência.</p>
 <div class="fragment">
+<p><strong>Três frentes de atuação:</strong></p>
 <ol type="1">
-<li><strong>Controle de fusões:</strong> aprovar, reprovar ou impor remédios</li>
-<li><strong>Condutas anticompetitivas:</strong> cartel, preços predatórios, venda casada</li>
-<li><strong>Estudos de mercado:</strong> promover concorrência</li>
+<li><strong>Controle de fusões:</strong> aprovar, reprovar ou impor remédios estruturais/comportamentais</li>
+<li><strong>Condutas anticompetitivas:</strong> cartel, preços predatórios, venda casada, abuso de posição dominante</li>
+<li><strong>Estudos de mercado:</strong> advocacy para promover a concorrência</li>
 </ol>
 </div>
 <div class="fragment">
-<p><strong>Critérios para análise de fusão:</strong></p>
-<p><span class="math display">\[\Delta HHI &gt; 100 \text{ e } HHI &gt; 1500 \implies \text{análise aprofundada}\]</span></p>
-<p>onde <span class="math inline">\(HHI = \sum_i s_i^2\)</span> (em pontos-base).</p>
+<p><strong>Critérios para análise de fusão (triagem por HHI):</strong></p>
+<p><span class="math display">\[HHI = \sum_i s_i^2, \quad \Delta HHI &gt; 100 \text{ e } HHI &gt; 1500 \implies \text{análise aprofundada}\]</span></p>
 </div>
 <div class="fragment">
 <div title="Caso emblemático">
@@ -374,327 +770,189 @@ Insper
 <p><strong>Caso emblemático</strong></p>
 </div>
 <div class="callout-content">
-<p>Fusão Sadia-Perdigão (2009) → BRF. CADE aprovou com restrições: venda de marcas em mercados concentrados.</p>
+<p>Fusão Sadia-Perdigão (2009) formou a BRF. O CADE aprovou com restrições: venda de marcas em mercados altamente concentrados.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="estática-comparativa-do-monopólio" class="slide level2">
-<h2>Estática Comparativa do Monopólio</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><strong>O que acontece quando…</strong></p>
-<p>. . .</p>
+<section id="exercício-discriminação-de-3º-grau" class="slide level2">
+<h2>Exercício: Discriminação de 3º Grau</h2>
+<p><strong>Dados:</strong></p>
+<ul>
+<li>Mercado 1: <span class="math inline">\(P_1 = 24 - Q_1\)</span></li>
+<li>Mercado 2: <span class="math inline">\(P_2 = 12 - 0{,}5Q_2\)</span></li>
+<li><span class="math inline">\(CMg = 6\)</span> (constante)</li>
+</ul>
+<div class="fragment">
+<p><strong>Resolução:</strong></p>
 <table class="caption-top">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 21%">
-<col style="width: 21%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Choque</th>
-<th style="text-align: center;"><span class="math inline">\(Q^M\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(P^M\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\pi\)</span></th>
-<th style="text-align: center;">DWL</th>
+<th style="text-align: left;">Mercado</th>
+<th style="text-align: left;"><span class="math inline">\(RMg_i = CMg\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q_i^*\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P_i^*\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_i\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span> Demanda</td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(24 - 2Q_1 = 6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(15\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((15-6) \times 9 = 81\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span> CMg</td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;">Ambíguo</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span> Elasticidade</td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Imposto <span class="math inline">\(t\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow^*\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\uparrow\)</span></td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(12 - Q_2 = 6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(6\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(9\)</span></td>
+<td style="text-align: center;"><span class="math inline">\((9-6) \times 6 = 18\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>. . .</p>
-<p><span class="math inline">\(^*\)</span>Com demanda linear, o monopolista repassa <strong>menos da metade</strong> do imposto ao consumidor — diferente da competição perfeita.</p>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap15/estatica-comparativa.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
-</section>
-<section id="comparação-de-bem-estar-regulado-vs.-não-regulado" class="slide level2">
-<h2>Comparação de Bem-Estar: Regulado vs.&nbsp;Não Regulado</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Cenário</th>
-<th style="text-align: center;">Preço</th>
-<th style="text-align: center;">Quantidade</th>
-<th style="text-align: center;">EC</th>
-<th style="text-align: center;">EP</th>
-<th style="text-align: center;">ET</th>
-<th style="text-align: center;">DWL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Monopólio puro</td>
-<td style="text-align: center;"><span class="math inline">\(P^M\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(Q^M\)</span></td>
-<td style="text-align: center;">Baixo</td>
-<td style="text-align: center;">Alto</td>
-<td style="text-align: center;">Médio</td>
-<td style="text-align: center;">Alto</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Reg. <span class="math inline">\(CMg\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(CMg\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(Q^{CP}\)</span></td>
-<td style="text-align: center;">Máximo</td>
-<td style="text-align: center;">Negativo</td>
-<td style="text-align: center;">Máximo</td>
-<td style="text-align: center;">0</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Reg. <span class="math inline">\(CMe\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(CMe\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(Q_{CMe}\)</span></td>
-<td style="text-align: center;">Médio-alto</td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">Alto</td>
-<td style="text-align: center;">Baixo</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Discrim. 1º grau</td>
-<td style="text-align: center;">Variável</td>
-<td style="text-align: center;"><span class="math inline">\(Q^{CP}\)</span></td>
-<td style="text-align: center;">0</td>
-<td style="text-align: center;">Máximo</td>
-<td style="text-align: center;">Máximo</td>
-<td style="text-align: center;">0</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<div title="Paradoxo">
-<div class="callout callout-important callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Paradoxo</strong></p>
-</div>
-<div class="callout-content">
-<p>A discriminação de 1º grau e a regulação por <span class="math inline">\(CMg\)</span> alcançam a mesma quantidade eficiente — mas distribuem o excedente de formas opostas!</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="fragment">
-<p>A escolha regulatória depende do <strong>objetivo social</strong>: eficiência pura ou equidade.</p>
+<p><span class="math display">\[\pi_{\text{total}} = 81 + 18 = 99\]</span></p>
 </div>
-</section>
-<section id="simulação-discriminação-de-preços-em-ação" class="slide level2 smaller">
-<h2>Simulação: Discriminação de Preços em Ação</h2>
-<div title="Atividade — Simulação de Mercado (20 min)">
+<div class="fragment">
+<div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Atividade — Simulação de Mercado (20 min)</strong></p>
+<p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-
+<p>Confirmação: <span class="math inline">\(P_1 = 15 &gt; P_2 = 9\)</span>. O mercado com demanda mais inelástica paga preço mais alto, exatamente como previsto pela regra ótima <span class="math inline">\(P_i/P_j = (1+1/\varepsilon_j)/(1+1/\varepsilon_i)\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<p><strong>Setup:</strong> Cada aluno recebe um cartão com sua <strong>disposição a pagar</strong> (entre R$5 e R$50).</p>
+</div>
+</section>
+<section id="bundling-e-versioning" class="slide level2">
+<h2>Bundling e Versioning</h2>
+<p>Formas modernas de discriminação de 2º grau:</p>
 <div class="fragment">
-<p><strong>Rodadas:</strong></p>
+<p><strong>Bundling (venda casada):</strong></p>
+<ul>
+<li>Pacote de bens vendidos juntos a preço inferior à soma individual</li>
+<li>Funciona quando valuations dos consumidores são <strong>negativamente correlacionadas</strong></li>
+<li>Exemplo: Microsoft Office (Word + Excel + PowerPoint)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Versioning (versionamento):</strong></p>
+<ul>
+<li>Mesma base tecnológica, diferentes níveis de qualidade/funcionalidade</li>
+<li>A versão “inferior” é deliberadamente <strong>degradada</strong> para segmentar</li>
+<li>Exemplo: Intel i3/i5/i7, classes aérea/executiva/primeira</li>
+</ul>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>Em ambos os casos, o custo marginal de oferecer a versão extra é próximo de zero — o lucro vem da <strong>segmentação</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aplicação-netflix-e-planos-tiered" class="slide level2">
+<h2>Aplicação: Netflix e Planos Tiered</h2>
+<p><strong>Case study</strong> de discriminação de 2º grau em ação:</p>
+<div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Rodada</th>
-<th style="text-align: left;">Regime</th>
-<th style="text-align: left;">Regra</th>
+<th style="text-align: left;">Plano</th>
+<th style="text-align: center;">Preço</th>
+<th style="text-align: center;">Telas</th>
+<th style="text-align: left;">Qualidade</th>
+<th style="text-align: left;">Público-alvo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
+<td style="text-align: left;">Básico</td>
+<td style="text-align: center;">R$25</td>
 <td style="text-align: center;">1</td>
-<td style="text-align: left;">Preço único</td>
-<td style="text-align: left;">Monopolista anuncia <span class="math inline">\(P\)</span>; quem aceita, compra</td>
+<td style="text-align: left;">720p</td>
+<td style="text-align: left;">Baixa WTP, individual</td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">Padrão</td>
+<td style="text-align: center;">R$40</td>
 <td style="text-align: center;">2</td>
-<td style="text-align: left;">3º grau</td>
-<td style="text-align: left;">Dois grupos (azul/vermelho); preços diferentes</td>
+<td style="text-align: left;">1080p</td>
+<td style="text-align: left;">Médio, casais</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">3</td>
-<td style="text-align: left;">2º grau</td>
-<td style="text-align: left;">Menu: “básico” (R$X) e “premium” (R$Y)</td>
+<td style="text-align: left;">Premium</td>
+<td style="text-align: center;">R$56</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">4K + HDR</td>
+<td style="text-align: left;">Alta WTP, famílias</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
-<p><strong>Após cada rodada:</strong> calcule EC, EP e DWL. Compare os três regimes.</p>
-</div>
-</section>
-<section id="tribunal-do-cade-role-play" class="slide level2">
-<h2>Tribunal do CADE: Role-Play</h2>
-<p><strong>Caso fictício:</strong> Fusão entre as duas maiores redes de farmácias de São Paulo.</p>
-<div class="fragment">
-<p><strong>Papéis (5 min de preparação, 10 min de debate):</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 30%">
-<col style="width: 40%">
-<col style="width: 30%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Papel</th>
-<th style="text-align: center;">Grupo</th>
-<th style="text-align: left;">Argumento central</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Empresas (defesa da fusão)</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: left;">Ganhos de eficiência, redução de custos</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Consumidores (contra)</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: left;">Aumento de concentração, risco de preço alto</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Conselheiros do CADE</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: left;">Analisar <span class="math inline">\(\Delta HHI\)</span>, definir remédios</td>
-</tr>
-</tbody>
-</table>
+<p><strong>Lógica econômica:</strong></p>
+<ul>
+<li>O custo marginal de streaming em 4K vs.&nbsp;720p é <strong>mínimo</strong></li>
+<li>A diferenciação de qualidade serve como mecanismo de <strong>autosseleção</strong></li>
+<li>Consumidores com alta WTP se auto-revelam ao escolher o plano premium</li>
+</ul>
 </div>
 <div class="fragment">
-<div title="Dados fornecidos">
-<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Dados fornecidos</strong></p>
+<p><strong>Importante</strong></p>
 </div>
 <div class="callout-content">
-<ul>
-<li>Market shares pré-fusão: Empresa 1 (25%), Empresa 2 (20%), outras (55%)</li>
-<li><span class="math inline">\(HHI_{antes}\)</span>, <span class="math inline">\(HHI_{depois}\)</span>, sinergias estimadas</li>
-</ul>
-</div>
+<p>A Netflix <strong>poderia</strong> oferecer 4K a todos pelo mesmo custo. A restrição de qualidade nos planos baratos é proposital — é discriminação de preços disfarçada de “diferenciação de produto”.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="resultados-e-discussão-das-atividades" class="slide level2">
-<h2>Resultados e Discussão das Atividades</h2>
-<p><strong>Após as rodadas da simulação e o tribunal:</strong></p>
-<div class="fragment">
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Atividade</th>
-<th style="text-align: left;">Pergunta-chave</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Simulação de discriminação</td>
-<td style="text-align: left;">Qual regime gerou maior ET? E maior EC?</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Tribunal do CADE</td>
-<td style="text-align: left;">Os remédios propostos reduzem o <span class="math inline">\(\Delta HHI\)</span> o suficiente?</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<p><strong>Conexão com a teoria:</strong></p>
-<ul>
-<li>A discriminação de 3º grau <strong>pode</strong> aumentar o ET se abre mercados antes não atendidos</li>
-<li>Fusões com sinergias reais podem compensar o aumento de concentração</li>
-<li>O regulador precisa comparar <span class="math inline">\(DWL_{\text{antes}}\)</span> vs.&nbsp;<span class="math inline">\(DWL_{\text{depois}}\)</span> da fusão</li>
-</ul>
-<div title="Lição central">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Lição central</strong></p>
-</div>
-<div class="callout-content">
-<p>Regulação é um exercício de <strong>trade-offs</strong> — não existe política sem custo.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="peer-instruction-próxima-aula" class="slide level2">
-<h2>Peer Instruction + Próxima Aula</h2>
-<p><strong>Peer Instruction — Vote individualmente:</strong></p>
+<section id="peer-instruction-regulação" class="slide level2">
+<h2>Peer Instruction: Regulação</h2>
+<p><strong>Vote individualmente:</strong></p>
 <blockquote>
-<p>“A meia-entrada para estudantes é uma política que <strong>melhora</strong> o bem-estar social?”</p>
+<p>“Um monopólio natural regulado por <span class="math inline">\(P = CMe\)</span> é a melhor solução para o consumidor?”</p>
 </blockquote>
 <div class="fragment">
 <ul>
 <li><ol type="A">
-<li>Sim, sempre — mais gente acessa cultura</li>
+<li>Sim — a firma não tem lucro, então o preço é justo</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>Sim, se os não-estudantes não pagam mais</li>
+<li>Sim — é melhor que monopólio sem regulação</li>
 </ol></li>
 <li><ol start="3" type="A">
-<li>Não necessariamente — depende da elasticidade cruzada</li>
+<li>Não necessariamente — regulação por <span class="math inline">\(P = CMg\)</span> com subsídio seria melhor</li>
 </ol></li>
 <li><ol start="4" type="A">
-<li>Não — é transferência de EC entre grupos, sem ganho líquido</li>
+<li>Não — a firma não tem incentivo a reduzir custos</li>
 </ol></li>
 </ul>
 </div>
@@ -702,28 +960,93 @@ Insper
 <p><em>Discuta com seu vizinho (2 min). Revote.</em></p>
 </div>
 <div class="fragment">
-<div title="Próxima Aula (23): Oligopólio">
+<div title="Ponto-chave">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Próxima Aula (23): Oligopólio</strong></p>
+<p><strong>Ponto-chave</strong></p>
 </div>
 <div class="callout-content">
-<p>Cournot, Bertrand, Stackelberg — o que muda quando há <strong>poucos</strong> competidores? Prepare-se: leia o Capítulo 16.</p>
+<p>A resposta depende do critério: <strong>(B)</strong> é correto em termos práticos (second-best), <strong>(C)</strong> é correto em termos teóricos (first-best), e <strong>(D)</strong> levanta o problema real da regulação — <strong>incentivos dinâmicos</strong>.</p>
 </div>
 </div>
 </div>
 </div>
+</div>
+</section>
+<section id="próxima-aula" class="slide level2">
+<h2>Próxima Aula</h2>
+<div title="Aula 23: Oligopólio">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Aula 23: Oligopólio</strong></p>
+</div>
+<div class="callout-content">
+<p>O que acontece quando há <strong>poucos</strong> competidores no mercado?</p>
+<ul>
+<li>Modelo de Cournot (competição em quantidades)</li>
+<li>Modelo de Bertrand (competição em preços)</li>
+<li>Modelo de Stackelberg (líder-seguidor)</li>
+</ul>
+<p>Prepare-se: leia o Capítulo 16.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment">
+<p><strong>Resumo da Aula 22:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tema</th>
+<th style="text-align: left;">Ideia central</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Discriminação 1º grau</td>
+<td style="text-align: left;">Captura todo EC, <span class="math inline">\(DWL = 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Discriminação 2º grau</td>
+<td style="text-align: left;">Menu/tarifa em duas partes, autosseleção</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Discriminação 3º grau</td>
+<td style="text-align: left;">Segmentação: <span class="math inline">\(P\)</span> maior onde <span class="math inline">\(|\varepsilon|\)</span> menor</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Regulação <span class="math inline">\(CMg\)</span></td>
+<td style="text-align: left;">Eficiente mas firma tem prejuízo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Regulação <span class="math inline">\(CMe\)</span></td>
+<td style="text-align: left;">Second-best, lucro zero</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Price Cap (RPI-X)</td>
+<td style="text-align: left;">Incentivo à eficiência</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Microeconomia II | Aula 22</p>
+<p>Aula 22</p>
 </div>
 </div></div>
 

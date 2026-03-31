@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<!--
+  Substitutos e Complementos — Efeitos cruzados de preço
+  Library: JSXGraph
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Substitutos e Complementos</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .boards-wrapper { display: flex; flex-direction: column; gap: 0.5rem; flex: 1 1 380px; max-width: 420px; }
+    .board-label { font-size: 0.8rem; font-weight: 700; color: #555; text-align: center; }
+    .jxgbox { width: 100%; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: 0.8rem; }
+    .toggle-group label { font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.3rem; }
+    .toggle-group input[type="radio"] { accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .boards-wrapper { flex-basis: 100%; width: 100%; max-width: 420px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 420px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div class="boards-wrapper">
+      <div class="board-label">Demanda por \(x_1\) em função de \(p_2\)</div>
+      <div id="jxgbox1" class="jxgbox"></div>
+      <div class="board-label">Espaço de bens: curvas de indiferença e restrição</div>
+      <div id="jxgbox2" class="jxgbox"></div>
+    </div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(p_2\) (preço do bem 2): <span class="val" id="val-p2">2.00</span></label>
+        <input type="range" id="slider-p2" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="slider-group">
+        <label>\(p_1\): <span class="val" id="val-p1">2.00</span></label>
+        <input type="range" id="slider-p1" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Renda \(I\): <span class="val" id="val-I">100</span></label>
+        <input type="range" id="slider-I" min="20" max="200" step="5" value="100">
+      </div>
+      <div class="slider-group">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">0.50</span></label>
+        <input type="range" id="slider-rho" min="-3.00" max="0.90" step="0.10" value="0.50">
+      </div>
+      <div class="toggle-group">
+        <strong style="font-size:0.85rem;">Relação entre bens:</strong>
+        <label><input type="radio" name="relType" value="substitutos" checked> Substitutos (\(\rho > 0\))</label>
+        <label><input type="radio" name="relType" value="complementos"> Complementos (\(\rho < 0\))</label>
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Board 1: Demand for x1 as function of p2
+    var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
+      boundingbox: [-1.1, 70, 7, -7],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+    board1.create('axis', [[0,0],[6,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 1 },
+      name: '', withLabel: false
+    });
+    board1.create('axis', [[0,0],[0,55]], {
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+      name: '', withLabel: false
+    });
+
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board1.create('text', [
+      -1.1 * 0.55, 70 / 2,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board1.create('text', [
+      7 / 2, -7 * 0.65,
+      '<b><i>p</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+    // CES demand: x1 = I * p1^(s-1) / (p1^s + p2^s) where s = rho/(rho-1)
+    function cesDemandX1(p1, p2, I, rho) {
+      if (Math.abs(rho) < 0.01) {
+        // Cobb-Douglas limit: x1 = I/(2*p1)
+        return I / (2 * p1);
+      }
+      var s = rho / (rho - 1); // elasticity of substitution = 1/(1-rho)
+      var p1s = Math.pow(p1, s);
+      var p2s = Math.pow(p2, s);
+      return I * Math.pow(p1, s - 1) / (p1s + p2s);
+    }
+
+    function cesDemandX2(p1, p2, I, rho) {
+      if (Math.abs(rho) < 0.01) {
+        return I / (2 * p2);
+      }
+      var s = rho / (rho - 1);
+      var p1s = Math.pow(p1, s);
+      var p2s = Math.pow(p2, s);
+      return I * Math.pow(p2, s - 1) / (p1s + p2s);
+    }
+
+    // Demand curve: x1 as function of p2 (parametric)
+    var demandCurve = board1.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var s = getState();
+        return cesDemandX1(s.p1, t, s.I, s.rho);
+      },
+      0.5, 5.5
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // Current point on demand curve
+    var demandPt = board1.create('point', [
+      function() { return getState().p2; },
+      function() { var s = getState(); return cesDemandX1(s.p1, s.p2, s.I, s.rho); }
+    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+
+    // Dashed lines to axes
+    board1.create('segment', [
+      function() { var s = getState(); return [s.p2, 0]; },
+      function() { var s = getState(); return [s.p2, cesDemandX1(s.p1, s.p2, s.I, s.rho)]; }
+    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
+    board1.create('segment', [
+      function() { var s = getState(); return [0, cesDemandX1(s.p1, s.p2, s.I, s.rho)]; },
+      function() { var s = getState(); return [s.p2, cesDemandX1(s.p1, s.p2, s.I, s.rho)]; }
+    ], { strokeColor: '#aaa', strokeWidth: 1, dash: 3 });
+
+    // Board 2: Goods space
+    var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
+      boundingbox: [-7, 70, 67, -7],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+    board2.create('axis', [[0,0],[55,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 10 }, minorTicks: 0, ticksDistance: 10 },
+      name: '', withLabel: false
+    });
+    board2.create('axis', [[0,0],[0,55]], {
+      ticks: { drawLabels: true, label: { fontSize: 10, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 10 },
+      name: '', withLabel: false
+    });
+
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board2.create('text', [
+      -7 * 0.55, 70 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board2.create('text', [
+      67 / 2, -7 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+    // Budget line
+    var budgetLine = board2.create('segment', [
+      function() { var s = getState(); return [s.I / s.p1, 0]; },
+      function() { var s = getState(); return [0, s.I / s.p2]; }
+    ], { strokeColor: '#1565c0', strokeWidth: 2 });
+
+    // Optimal point
+    var optPt = board2.create('point', [
+      function() { var s = getState(); return cesDemandX1(s.p1, s.p2, s.I, s.rho); },
+      function() { var s = getState(); return cesDemandX2(s.p1, s.p2, s.I, s.rho); }
+    ], { size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true });
+
+    // CES utility at optimal point
+    function cesUtility(x1, x2, rho) {
+      if (Math.abs(rho) < 0.01) return Math.sqrt(x1 * x2);
+      return Math.pow(Math.pow(Math.max(x1,0.01), rho) + Math.pow(Math.max(x2,0.01), rho), 1/rho);
+    }
+
+    // Indifference curve through optimal point
+    var indiffCurve2 = board2.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var s = getState();
+        var x1s = cesDemandX1(s.p1, s.p2, s.I, s.rho);
+        var x2s = cesDemandX2(s.p1, s.p2, s.I, s.rho);
+        var U = cesUtility(x1s, x2s, s.rho);
+        if (t < 0.1) return 999;
+        if (Math.abs(s.rho) < 0.01) {
+          // Cobb-Douglas
+          return U * U / t;
+        }
+        var Ur = Math.pow(U, s.rho);
+        var tr = Math.pow(t, s.rho);
+        var diff = Ur - tr;
+        if (diff <= 0) return -999;
+        return Math.pow(diff, 1 / s.rho);
+      },
+      0.2, 58
+    ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 3 });
+
+    // State
+    function getState() {
+      var rho = parseFloat(document.getElementById('slider-rho').value);
+      return {
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        p2: parseFloat(document.getElementById('slider-p2').value),
+        I: parseFloat(document.getElementById('slider-I').value),
+        rho: rho
+      };
+    }
+
+    // When toggle changes, set rho to appropriate value
+    document.querySelectorAll('input[name="relType"]').forEach(function(el) {
+      el.addEventListener('change', function() {
+        var slider = document.getElementById('slider-rho');
+        if (this.value === 'substitutos') {
+          slider.value = 0.5;
+        } else {
+          slider.value = -1.0;
+        }
+        update();
+      });
+    });
+
+    function update() {
+      var s = getState();
+      document.getElementById('val-p2').textContent = s.p2.toFixed(2);
+      document.getElementById('val-p1').textContent = s.p1.toFixed(2);
+      document.getElementById('val-I').textContent = s.I.toFixed(0);
+      document.getElementById('val-rho').textContent = s.rho.toFixed(2);
+
+      // Update radio button to match rho
+      if (s.rho >= 0) {
+        document.querySelector('input[name="relType"][value="substitutos"]').checked = true;
+      } else {
+        document.querySelector('input[name="relType"][value="complementos"]').checked = true;
+      }
+
+      var x1 = cesDemandX1(s.p1, s.p2, s.I, s.rho);
+      var x2 = cesDemandX2(s.p1, s.p2, s.I, s.rho);
+
+      // Numerical derivative dx1/dp2
+      var dp = 0.01;
+      var x1plus = cesDemandX1(s.p1, s.p2 + dp, s.I, s.rho);
+      var x1minus = cesDemandX1(s.p1, s.p2 - dp, s.I, s.rho);
+      var dx1dp2 = (x1plus - x1minus) / (2 * dp);
+
+      // Cross-price elasticity
+      var crossElast = (dx1dp2 * s.p2) / Math.max(x1, 0.001);
+
+      var sigma = 1 / (1 - s.rho);
+      var classif = dx1dp2 > 0.001 ? 'Substitutos brutos' : (dx1dp2 < -0.001 ? 'Complementos brutos' : 'Independentes');
+
+      var html = '<div style="text-align:center;">CES: \\(U = (x_1^\\rho + x_2^\\rho)^{1/\\rho}\\)</div>';
+      html += '<div style="margin-top:0.5rem;">';
+      html += '\\(x_1^* = ' + x1.toFixed(2) + '\\), \\(x_2^* = ' + x2.toFixed(2) + '\\)<br>';
+      html += '\\(\\sigma = ' + sigma.toFixed(2) + '\\) (elast. subst.)<br>';
+      html += '\\(\\partial x_1 / \\partial p_2 = ' + dx1dp2.toFixed(3) + '\\)<br>';
+      html += '\\(\\varepsilon_{x_1,p_2} = ' + crossElast.toFixed(3) + '\\)<br>';
+      html += '<strong style="color:' + (dx1dp2 > 0 ? '#C8102E' : '#1565c0') + ';">' + classif + '</strong>';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      board1.update();
+      board2.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-p2').value = 2;
+      document.getElementById('slider-p1').value = 2;
+      document.getElementById('slider-I').value = 100;
+      document.getElementById('slider-rho').value = 0.5;
+      document.querySelector('input[name="relType"][value="substitutos"]').checked = true;
+      update();
+    }
+
+    ['slider-p2','slider-p1','slider-I','slider-rho'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+  </script>
+</body>
+</html>

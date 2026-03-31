@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-08-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-08-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-08-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-08-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-08-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -141,14 +141,13 @@ Insper
 </div>
 
 </section>
-<section id="efeitos-preço-cruzados" class="slide level2">
-<h2>Efeitos Preço-Cruzados</h2>
-<p>Como a variação no preço de <span class="math inline">\(j\)</span> afeta a demanda pelo bem <span class="math inline">\(i\)</span>?</p>
+<section id="a-equação-de-slutsky" class="slide level2">
+<h2>A Equação de Slutsky</h2>
+<p>Para cada par de bens <span class="math inline">\((i, j)\)</span>:</p>
+<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{Efeito Substituição}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{Efeito Renda}}\]</span></p>
 <div class="fragment">
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES cruzado}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{ER cruzado}}\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Propriedade de simetria:</strong> <span class="math inline">\(\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}\)</span></p>
+<p><strong>Forma matricial</strong> (para <span class="math inline">\(n\)</span> bens):</p>
+<p><span class="math display">\[\underbrace{\mathbf{D}_p \mathbf{x}}_{\text{Slutsky total}} = \underbrace{\mathbf{D}_p \mathbf{h}}_{\text{Substituição}} - \underbrace{\mathbf{x} \cdot (\mathbf{D}_m \mathbf{x})^\top}_{\text{Renda}}\]</span></p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -161,116 +160,289 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>A simetria dos efeitos cruzados Hicksianos é uma consequência direta do Teorema de Young aplicado à função dispêndio.</p>
+<p>A equação de Slutsky decompõe a reação <em>observável</em> da demanda Marshalliana em dois canais teoricamente distintos: a substituição entre bens (a preços relativos) e a mudança no poder de compra real.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="substitutos-e-complementos-brutos-vs.-líquidos" class="slide level2">
-<h2>Substitutos e Complementos — Brutos vs.&nbsp;Líquidos</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p><strong>Substitutos brutos (Marshalliana):</strong></p>
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} &gt; 0\]</span></p>
-<p><strong>Substitutos líquidos (Hicksiana):</strong></p>
-<p><span class="math display">\[\frac{\partial h_i}{\partial p_j} &gt; 0\]</span></p>
-<p>. . .</p>
-<blockquote>
-<p>A classificação líquida é mais confiável, pois isola o efeito renda.</p>
-</blockquote>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap06/substitutos-complementos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
-</section>
-<section id="simetria-hicksiana-e-integrabilidade" class="slide level2">
-<h2>Simetria Hicksiana e Integrabilidade</h2>
-<p>A demanda Hicksiana satisfaz:</p>
-<p><span class="math display">\[\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i} = \frac{\partial^2 e(\mathbf{p}, \bar{u})}{\partial p_i \, \partial p_j}\]</span></p>
+<section id="slutsky-em-elasticidades" class="slide level2">
+<h2>Slutsky em Elasticidades</h2>
+<p>Dividindo ambos os lados da equação de Slutsky por <span class="math inline">\(x_i / p_j\)</span>:</p>
+<p><span class="math display">\[\varepsilon_{ij} = \varepsilon_{ij}^{H} - s_j \, \eta_i\]</span></p>
 <div class="fragment">
-<p><strong>Consequência prática:</strong> se café e chá são substitutos líquidos, a intensidade da substituição é a <em>mesma</em> em ambas as direções.</p>
-</div>
-<div class="fragment">
-<p><strong>Matriz de Slutsky</strong> <span class="math inline">\(\mathbf{S}\)</span>:</p>
+<p>onde:</p>
 <ul>
-<li>Simétrica: <span class="math inline">\(s_{ij} = s_{ji}\)</span></li>
-<li>Semidefinida negativa: <span class="math inline">\(\mathbf{z'Sz} \leq 0\)</span> para todo <span class="math inline">\(\mathbf{z}\)</span></li>
+<li><span class="math inline">\(\varepsilon_{ij}\)</span> — elasticidade-preço cruzada Marshalliana</li>
+<li><span class="math inline">\(\varepsilon_{ij}^{H}\)</span> — elasticidade-preço cruzada Hicksiana (compensada)</li>
+<li><span class="math inline">\(s_j = \frac{p_j x_j}{m}\)</span> — parcela orçamentária do bem <span class="math inline">\(j\)</span></li>
+<li><span class="math inline">\(\eta_i\)</span> — elasticidade-renda do bem <span class="math inline">\(i\)</span></li>
 </ul>
 </div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Quanto maior a parcela do orçamento gasta no bem <span class="math inline">\(j\)</span> (<span class="math inline">\(s_j\)</span> grande), maior a divergência entre a elasticidade bruta e a compensada. Para bens que pesam pouco no orçamento, <span class="math inline">\(\varepsilon_{ij} \approx \varepsilon_{ij}^H\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="curvas-de-engel-para-o-brasil" class="slide level2">
-<h2>Curvas de Engel para o Brasil</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>Dados da <strong>POF (IBGE)</strong> mostram:</p>
+<section id="propriedades-da-matriz-de-slutsky" class="slide level2">
+<h2>Propriedades da Matriz de Slutsky</h2>
+<p>A matriz de Slutsky <span class="math inline">\(\mathbf{S}\)</span> com elementos <span class="math inline">\(s_{ij} = \frac{\partial h_i}{\partial p_j}\)</span> satisfaz:</p>
+<div class="fragment">
+<p><strong>1. Simetria:</strong> <span class="math inline">\(s_{ij} = s_{ji}\)</span> para todo <span class="math inline">\(i, j\)</span></p>
+<p>(Consequência do Teorema de Young aplicado à função dispêndio <span class="math inline">\(e(\mathbf{p}, \bar{u})\)</span>.)</p>
+</div>
+<div class="fragment">
+<p><strong>2. Semidefinida negativa:</strong> <span class="math inline">\(\mathbf{z'Sz} \leq 0\)</span> para todo vetor <span class="math inline">\(\mathbf{z}\)</span></p>
+<p>(Efeito substituição próprio é sempre não-positivo: <span class="math inline">\(s_{ii} \leq 0\)</span>.)</p>
+</div>
+<div class="fragment">
+<p><strong>3. Adding-up:</strong> <span class="math inline">\(\sum_i s_{ij} p_i = 0\)</span> para todo <span class="math inline">\(j\)</span></p>
+<p>(As demandas compensadas satisfazem a restrição orçamentária automaticamente.)</p>
+</div>
+</section>
+<section id="elasticidade-preço-da-demanda" class="slide level2">
+<h2>Elasticidade-Preço da Demanda</h2>
+<p><span class="math display">\[\varepsilon_{ii} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i} = \frac{\% \Delta x_i}{\% \Delta p_i}\]</span></p>
+<div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Bem</th>
-<th style="text-align: center;"><span class="math inline">\(\varepsilon_m\)</span></th>
-<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Classificação</th>
+<th style="text-align: center;"><span class="math inline">\(|\varepsilon_{ii}|\)</span></th>
+<th style="text-align: left;">Exemplo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Arroz</td>
-<td style="text-align: center;">0,3</td>
-<td style="text-align: left;">Necessário</td>
+<td style="text-align: left;">Perfeitamente inelástica</td>
+<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: left;">Insulina</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Carne bovina</td>
-<td style="text-align: center;">0,9</td>
-<td style="text-align: left;">Necessário</td>
+<td style="text-align: left;">Inelástica</td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 1\)</span></td>
+<td style="text-align: left;">Gasolina (curto prazo)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Refeição fora</td>
-<td style="text-align: center;">1,4</td>
-<td style="text-align: left;">Luxo</td>
+<td style="text-align: left;">Elasticidade unitária</td>
+<td style="text-align: center;"><span class="math inline">\(= 1\)</span></td>
+<td style="text-align: left;">Cobb-Douglas próprio</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Transporte</td>
-<td style="text-align: center;">1,1</td>
-<td style="text-align: left;">Luxo</td>
+<td style="text-align: left;">Elástica</td>
+<td style="text-align: center;"><span class="math inline">\(&gt; 1\)</span></td>
+<td style="text-align: left;">Viagens de avião</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Perfeitamente elástica</td>
+<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: left;">Commodity homogênea</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Bens com poucos substitutos próximos tendem a ter demanda inelástica. Bens com muitos substitutos próximos tendem a ter demanda elástica.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="elasticidade-renda" class="slide level2">
+<h2>Elasticidade-Renda</h2>
+<p><span class="math display">\[\eta_i = \frac{\partial x_i}{\partial m} \cdot \frac{m}{x_i} = \frac{\% \Delta x_i}{\% \Delta m}\]</span></p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Bens normais</strong> (<span class="math inline">\(\eta_i &gt; 0\)</span>):</p>
+<ul>
+<li><strong>Necessário:</strong> <span class="math inline">\(0 &lt; \eta_i &lt; 1\)</span>
+<ul>
+<li>Ex: arroz, feijão, energia elétrica</li>
+</ul></li>
+<li><strong>Luxo:</strong> <span class="math inline">\(\eta_i &gt; 1\)</span>
+<ul>
+<li>Ex: viagens internacionais, refeições fora</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Bens inferiores</strong> (<span class="math inline">\(\eta_i &lt; 0\)</span>):</p>
+<ul>
+<li>Consumo cai quando a renda sobe</li>
+<li>Ex: transporte público (em certas faixas), marcas genéricas</li>
+</ul>
 <p>. . .</p>
 <blockquote>
-<p>À medida que a renda cresce, a parcela gasta em alimentos básicos cai — <strong>Lei de Engel</strong>.</p>
+<p><strong>Lei de Engel:</strong> à medida que a renda cresce, a parcela gasta em alimentos cai.</p>
 </blockquote>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap05/curva-engel.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
 </div></div>
-</section>
-<section id="variação-compensadora-e-equivalente" class="slide level2">
-<h2>Variação Compensadora e Equivalente</h2>
-<p>Duas medidas monetárias de bem-estar para uma queda em <span class="math inline">\(p_1\)</span>:</p>
-<div class="fragment">
-<p><strong>Variação Compensadora (VC):</strong> quanto dinheiro tirar do consumidor, <em>após</em> a mudança, para que ele volte ao nível de utilidade original?</p>
-<p><span class="math display">\[VC = e(\mathbf{p'}, u_0) - e(\mathbf{p'}, u_1) = m - e(\mathbf{p'}, u_0)\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Variação Equivalente (VE):</strong> quanto dinheiro dar ao consumidor, <em>antes</em> da mudança, para que ele atinja o novo nível de utilidade?</p>
-<p><span class="math display">\[VE = e(\mathbf{p}, u_1) - e(\mathbf{p}, u_0) = e(\mathbf{p}, u_1) - m\]</span></p>
-</div>
-<div class="fragment">
-<blockquote>
-<p>Para quase-linear: <span class="math inline">\(VC = VE = \Delta EC\)</span> (excedente do consumidor).</p>
-</blockquote>
 </div>
 </section>
-<section id="medidas-de-bem-estar-resumo" class="slide level2">
-<h2>Medidas de Bem-Estar — Resumo</h2>
+<section id="elasticidades-cruzadas" class="slide level2">
+<h2>Elasticidades Cruzadas</h2>
+<p><span class="math display">\[\varepsilon_{ij} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i}\]</span></p>
+<div class="fragment">
 <table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Relação</th>
+<th style="text-align: center;">Bruta (Marshalliana)</th>
+<th style="text-align: center;">Líquida (Hicksiana)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Substitutos</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij} &gt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij}^H &gt; 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Complementares</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij} &lt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij}^H &lt; 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Independentes</td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_{ij}^H = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><strong>Bruta vs.&nbsp;líquida:</strong> a classificação pode diferir! Um par de bens pode ser complementar bruto mas substituto líquido quando o efeito renda é forte.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A classificação líquida (Hicksiana) é mais confiável porque isola o efeito preço relativo, removendo a distorção causada pelo efeito renda.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="excedente-do-consumidor" class="slide level2">
+<h2>Excedente do Consumidor</h2>
+<p>O excedente do consumidor <span class="math inline">\(EC\)</span> mede o benefício líquido do consumo ao preço de mercado:</p>
+<p><span class="math display">\[EC = \int_{p^*}^{p_{\max}} D(p) \, dp\]</span></p>
+<div id="graph-a08-cs" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Preço <span class="math inline">\(p\)</span>: <input type="range" id="sl-a08-p" min="2" max="10" value="6" step="0.5" oninput="window.updateA08CS()"> <span id="val-a08-p">6.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-cs',{
+    boundingbox:[-1,52,22,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,49,'p'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[20.5,-3,'Q'],{fontSize:14,anchorX:'left'});
+
+  var pVal = 6;
+  var pMax = 10;
+  var slope = -2;
+  var intercept = 50;
+  function demand(q){ return intercept + slope * q; }
+  function qFromP(p){ return (p - intercept) / slope; }
+
+  /* Demand curve */
+  brd.create('functiongraph',[function(q){ return demand(q); },0,25],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[23,demand(22)+5,'D(Q)'],{fontSize:13,color:'#1565c0',anchorX:'left'});
+
+  /* CS shaded area */
+  var csArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#1565c0',fillOpacity:0.2});
+  csArea.updateDataArray = function(){
+    var q0 = qFromP(pVal);
+    this.dataX = [0];
+    this.dataY = [pVal];
+    for(var q=0; q<=q0; q+=0.3){
+      this.dataX.push(q);
+      this.dataY.push(demand(q));
+    }
+    this.dataX.push(q0);
+    this.dataY.push(demand(q0));
+    this.dataX.push(q0);
+    this.dataY.push(pVal);
+    this.dataX.push(0);
+    this.dataY.push(pVal);
+  };
+
+  /* Price line */
+  var priceLine = brd.create('functiongraph',[function(q){ return pVal; },0,25],
+    {strokeColor:'#C8102E',strokeWidth:2,dash:2});
+
+  /* Equilibrium point */
+  var eqPt = brd.create('point',
+    [function(){ return qFromP(pVal); }, function(){ return pVal; }],
+    {size:5,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  /* CS label */
+  brd.create('text',
+    [function(){ return qFromP(pVal)/2 - 1; }, function(){ return (demand(0)+pVal)/2; },
+     function(){ var q0=qFromP(pVal); var cs=0.5*(demand(0)-pVal)*q0; return 'EC = '+cs.toFixed(1); }],
+    {fontSize:14,color:'#1565c0',anchorX:'center'});
+
+  window.updateA08CS = function(){
+    pVal = parseFloat(document.getElementById('sl-a08-p').value);
+    document.getElementById('val-a08-p').textContent = pVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+</section>
+<section id="vc-ve-e-excedente-comparação" class="slide level2">
+<h2>VC, VE e Excedente: Comparação</h2>
+<p>Três medidas monetárias de variação de bem-estar para uma queda em <span class="math inline">\(p_1\)</span>:</p>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 28%">
+<col style="width: 28%">
+<col style="width: 21%">
+</colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Medida</th>
 <th style="text-align: center;">Preços base</th>
-<th style="text-align: center;">Utilidade referência</th>
-<th style="text-align: left;">Uso principal</th>
+<th style="text-align: center;">Utilidade ref.</th>
+<th style="text-align: left;">Fórmula</th>
 </tr>
 </thead>
 <tbody>
@@ -278,48 +450,26 @@ Insper
 <td style="text-align: left;"><span class="math inline">\(\Delta EC\)</span></td>
 <td style="text-align: center;">Observados</td>
 <td style="text-align: center;">—</td>
-<td style="text-align: left;">Aproximação rápida</td>
+<td style="text-align: left;"><span class="math inline">\(\int_{p_1'}^{p_1} x_1(p, m)\,dp\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(VC\)</span></td>
 <td style="text-align: center;">Novos <span class="math inline">\(\mathbf{p'}\)</span></td>
 <td style="text-align: center;">Antiga <span class="math inline">\(u_0\)</span></td>
-<td style="text-align: left;">Compensação ex-post</td>
+<td style="text-align: left;"><span class="math inline">\(m - e(\mathbf{p'}, u_0)\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(VE\)</span></td>
 <td style="text-align: center;">Antigos <span class="math inline">\(\mathbf{p}\)</span></td>
 <td style="text-align: center;">Nova <span class="math inline">\(u_1\)</span></td>
-<td style="text-align: left;">Avaliação ex-ante</td>
+<td style="text-align: left;"><span class="math inline">\(e(\mathbf{p}, u_1) - m\)</span></td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="fragment">
-<p><strong>Relação de ordem</strong> (para queda de preço de bem normal):</p>
+<p><strong>Relação de ordem</strong> (queda de preço, bem normal):</p>
 <p><span class="math display">\[VE \geq \Delta EC \geq VC\]</span></p>
-<div title="Intuição Econômica">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Intuição Econômica</strong></p>
-</div>
-<div class="callout-content">
-<p>A diferença entre VC e VE reflete o efeito renda. Se o efeito renda for zero, as três medidas coincidem.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="agregação-de-demanda-e-receita" class="slide level2">
-<h2>Agregação de Demanda e Receita</h2>
-<p>A demanda de mercado é <span class="math inline">\(X(p) = \sum_{i=1}^{n} x_i(p, m_i)\)</span>.</p>
-<div class="fragment">
-<p><strong>Receita total:</strong></p>
-<p><span class="math display">\[R(p) = p \cdot X(p) \implies \frac{dR}{dp} = X(p)\left[1 + \frac{1}{\varepsilon}\right]\]</span></p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -332,110 +482,264 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Se <span class="math inline">\(|\varepsilon| &gt; 1\)</span> (demanda elástica), reduzir o preço <strong>aumenta</strong> a receita. Se <span class="math inline">\(|\varepsilon| &lt; 1\)</span>, reduzir o preço <strong>diminui</strong> a receita.</p>
+<p>As três medidas divergem quando o efeito renda é grande. Para utilidade quase-linear (<span class="math inline">\(\partial x_1 / \partial m = 0\)</span>), temos <span class="math inline">\(VC = VE = \Delta EC\)</span> e o excedente do consumidor é uma medida exata.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="elasticidade-e-receita-interativo" class="slide level2">
-<h2>Elasticidade e Receita — Interativo</h2>
-<iframe src="../../graficos/cap06/elasticidade-receita.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<section id="caso-brasil-bolsa-família-e-elasticidades" class="slide level2">
+<h2>Caso Brasil: Bolsa Família e Elasticidades</h2>
+<div title="Exercício em grupos">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Exercício em grupos</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Tempo:</strong> 15 minutos | <strong>Formato:</strong> grupos de 3-4 alunos</p>
+</div>
+</div>
+</div>
+</div>
 <div class="fragment">
+<p><strong>Contexto:</strong> Entre 2003 e 2014, o Bolsa Família elevou a renda das famílias mais pobres. Dados da <strong>POF (IBGE)</strong>:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Região</th>
-<th style="text-align: center;"><span class="math inline">\(|\varepsilon|\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(\frac{dR}{dp}\)</span></th>
-<th style="text-align: left;">Estratégia</th>
+<th style="text-align: left;">Bem</th>
+<th style="text-align: center;"><span class="math inline">\(\eta_i\)</span> estimado</th>
+<th style="text-align: left;">Classificação</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Elástica</td>
-<td style="text-align: center;"><span class="math inline">\(&gt; 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
-<td style="text-align: left;">Reduzir preço</td>
+<td style="text-align: left;">Arroz/feijão</td>
+<td style="text-align: center;">0,2 – 0,4</td>
+<td style="text-align: left;">Necessário</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Unitária</td>
-<td style="text-align: center;"><span class="math inline">\(= 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(= 0\)</span></td>
-<td style="text-align: left;">Receita máxima</td>
+<td style="text-align: left;">Carne bovina</td>
+<td style="text-align: center;">0,8 – 1,0</td>
+<td style="text-align: left;">Necessário / fronteira</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Inelástica</td>
-<td style="text-align: center;"><span class="math inline">\(&lt; 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
-<td style="text-align: left;">Aumentar preço</td>
+<td style="text-align: left;">Refeição fora</td>
+<td style="text-align: center;">1,3 – 1,6</td>
+<td style="text-align: left;">Luxo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Transporte privado</td>
+<td style="text-align: center;">1,1 – 1,3</td>
+<td style="text-align: left;">Luxo</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="gallery-walk-efeitos-cruzados" class="slide level2">
-<h2>Gallery Walk — Efeitos Cruzados</h2>
-<div title="Exercício em duplas">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercício em duplas</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Tempo:</strong> 12 minutos | <strong>Formato:</strong> Gallery Walk com 4 estações</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Estação 1:</strong> Dados da POF — classifique 5 pares de bens como substitutos ou complementos brutos.</p>
-<p><strong>Estação 2:</strong> Repita a classificação usando a definição de substitutos/complementos <em>líquidos</em>. Compare.</p>
-<p><strong>Estação 3:</strong> Calcule <span class="math inline">\(VC\)</span> e <span class="math inline">\(VE\)</span> para <span class="math inline">\(U = x_1^{0{,}5} x_2^{0{,}5}\)</span> com <span class="math inline">\(p_1: 4 \to 2\)</span>.</p>
-<p><strong>Estação 4:</strong> Para demanda linear <span class="math inline">\(X = 100 - 2p\)</span>, encontre o preço que maximiza a receita.</p>
-</div>
-</section>
-<section id="case-brasil-arroz-feijão-e-carne" class="slide level2">
-<h2>Case Brasil — Arroz, Feijão e Carne</h2>
-<div title="Exercício em duplas">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Exercício em duplas</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>Tempo:</strong> 15 minutos | <strong>Formato:</strong> Case em grupos de 3–4 alunos</p>
-</div>
-</div>
-</div>
-</div>
-<div class="fragment">
-<p><strong>Contexto:</strong> Entre 2003 e 2014, a renda real das famílias brasileiras cresceu ~40%. A POF registrou:</p>
-<ul>
-<li>Consumo per capita de arroz: <strong>caiu 20%</strong></li>
-<li>Consumo per capita de carne bovina: <strong>subiu 15%</strong></li>
-<li>Consumo per capita de refeições fora: <strong>subiu 60%</strong></li>
-</ul>
-</div>
 <div class="fragment">
 <p><strong>Tarefas:</strong></p>
 <ol type="1">
-<li>Estime a elasticidade-renda para cada categoria</li>
-<li>Classifique cada bem (inferior, necessário, luxo)</li>
-<li>Um aumento no preço do arroz pode gerar efeito Giffen? Argumente usando Slutsky</li>
+<li>Explique por que o consumo de arroz per capita <strong>caiu</strong> mesmo com a renda subindo</li>
+<li>Um aumento no preço da carne pode gerar efeito Giffen para famílias de baixa renda? Use Slutsky</li>
+<li>Qual parcela orçamentária <span class="math inline">\(s_j\)</span> tornaria o efeito renda dominante?</li>
 </ol>
 </div>
 </section>
-<section id="peer-instruction-giffen-ou-não" class="slide level2">
-<h2>Peer Instruction — Giffen ou Não?</h2>
+<section id="agregação-de-demanda" class="slide level2">
+<h2>Agregação de Demanda</h2>
+<p>A demanda de <strong>mercado</strong> é a soma horizontal das demandas individuais:</p>
+<p><span class="math display">\[X(p) = \sum_{i=1}^{n} x_i(p, m_i)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades da demanda agregada:</strong></p>
+<ul>
+<li>Homogeneidade de grau zero em <span class="math inline">\((p, m_1, \ldots, m_n)\)</span></li>
+<li>A elasticidade de mercado é a média ponderada das elasticidades individuais</li>
+<li>A curva de mercado pode ter “dobras” quando consumidores entram/saem</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Condição de Gorman:</strong> a agregação resulta em uma demanda representativa se as curvas de Engel forem lineares e paralelas (preferências quase-homotéticas).</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Na prática, a demanda de mercado “suaviza” idiossincrasias individuais. Mesmo que cada consumidor tenha demanda angular, a soma tende a gerar uma curva contínua.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="bem-composto" class="slide level2">
+<h2>Bem Composto</h2>
+<p><strong>Teorema do Bem Composto (Hicks):</strong> se os preços relativos de um grupo de bens não mudam, podemos tratar todo o grupo como um único “bem composto”.</p>
+<div id="graph-a08-composite" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Renda <span class="math inline">\(m\)</span>: <input type="range" id="sl-a08-m" min="50" max="200" value="100" step="5" oninput="window.updateA08Composite()"> <span id="val-a08-m">100</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-composite',{
+    boundingbox:[-1,22,22,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,20.5,'y (composto)'],{fontSize:13,anchorX:'left'});
+  brd.create('text',[20.5,-1,'x'],{fontSize:14,anchorX:'left'});
+
+  var mVal = 100;
+  var px = 5;
+  var py = 1; /* price index of composite good = 1 */
+
+  /* Budget line */
+  var budgetLine = brd.create('functiongraph',[function(x){
+    return (mVal - px*x)/py;
+  },0,22],{strokeColor:'#1565c0',strokeWidth:3});
+
+  /* x-intercept label */
+  brd.create('text',
+    [function(){ return mVal/px + 0.5; }, function(){ return -1; },
+     function(){ return 'm/p_x = '+(mVal/px).toFixed(0); }],
+    {fontSize:12,color:'#1565c0',anchorX:'left'});
+
+  /* y-intercept label */
+  brd.create('text',
+    [function(){ return 0.5; }, function(){ return mVal/py + 0.8; },
+     function(){ return 'm = '+mVal; }],
+    {fontSize:12,color:'#1565c0',anchorX:'left'});
+
+  /* Indifference curve (Cobb-Douglas: U = x^0.4 * y^0.6) */
+  var alpha = 0.4;
+  function optX(){ return alpha * mVal / px; }
+  function optY(){ return (1-alpha) * mVal / py; }
+  function uStar(){ return Math.pow(optX(), alpha) * Math.pow(optY(), 1-alpha); }
+
+  var icCurve = brd.create('functiongraph',[function(x){
+    if(x <= 0.1) return 999;
+    var u = uStar();
+    var yVal = Math.pow(u / Math.pow(x, alpha), 1/(1-alpha));
+    return yVal;
+  },0.1,22],{strokeColor:'#00897b',strokeWidth:2,dash:3});
+
+  /* Optimal point */
+  brd.create('point',
+    [function(){ return optX(); }, function(){ return optY(); }],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  brd.create('text',
+    [function(){ return optX()+0.8; }, function(){ return optY()+1; },
+     function(){ return '('+optX().toFixed(1)+', '+optY().toFixed(1)+')'; }],
+    {fontSize:12,color:'#C8102E',anchorX:'left'});
+
+  window.updateA08Composite = function(){
+    mVal = parseFloat(document.getElementById('sl-a08-m').value);
+    document.getElementById('val-a08-m').textContent = mVal.toFixed(0);
+    brd.update();
+  };
+})();
+</script>
+</section>
+<section id="elasticidade-e-receita" class="slide level2">
+<h2>Elasticidade e Receita</h2>
+<p>A receita total é <span class="math inline">\(R(p) = p \cdot Q(p)\)</span>. Diferenciando:</p>
+<p><span class="math display">\[\frac{dR}{dp} = Q(p)\left[1 + \frac{1}{\varepsilon}\right]\]</span></p>
+<div class="fragment">
+<div id="graph-a08-revenue" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Inclinação da demanda <span class="math inline">\(b\)</span>: <input type="range" id="sl-a08-b" min="0.5" max="4" value="2" step="0.25" oninput="window.updateA08Revenue()"> <span id="val-a08-b">2.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-revenue',{
+    boundingbox:[-1,700,28,-60], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,660,'R'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[26,-40,'p'],{fontSize:14,anchorX:'left'});
+
+  var bVal = 2;
+  var a = 50; /* demand: Q = a - b*p */
+
+  /* Revenue curve R = p*(a - b*p) */
+  var revCurve = brd.create('functiongraph',[function(p){
+    var q = a - bVal*p;
+    if(q < 0) return 0;
+    return p * q;
+  },0,26],{strokeColor:'#1565c0',strokeWidth:3});
+
+  /* Max revenue point: p* = a/(2b), R* = a^2/(4b) */
+  var maxPt = brd.create('point',
+    [function(){ return a/(2*bVal); }, function(){ return a*a/(4*bVal); }],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  brd.create('text',
+    [function(){ return a/(2*bVal)+1; }, function(){ return a*a/(4*bVal)+20; },
+     function(){ return 'R_{max} = '+(a*a/(4*bVal)).toFixed(0)+' (|\\varepsilon|=1)'; }],
+    {fontSize:13,color:'#C8102E',anchorX:'left'});
+
+  /* Elastic region label */
+  brd.create('text',
+    [function(){ return a/(2*bVal) + a/(4*bVal); }, function(){ return a*a/(8*bVal); },
+     'Elástica'],
+    {fontSize:13,color:'#00897b',anchorX:'center'});
+
+  /* Inelastic region label */
+  brd.create('text',
+    [function(){ return a/(4*bVal); }, function(){ return a*a/(8*bVal); },
+     'Inelástica'],
+    {fontSize:13,color:'#ff9800',anchorX:'center'});
+
+  /* Vertical dashed line at p* */
+  brd.create('segment',
+    [function(){ return [a/(2*bVal), 0]; }, function(){ return [a/(2*bVal), a*a/(4*bVal)]; }],
+    {strokeColor:'#888',strokeWidth:1,dash:3,fixed:true});
+
+  window.updateA08Revenue = function(){
+    bVal = parseFloat(document.getElementById('sl-a08-b').value);
+    document.getElementById('val-a08-b').textContent = bVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+</div>
+</section>
+<section id="substitutos-e-complementos-brutos-vs-líquidos" class="slide level2">
+<h2>Substitutos e Complementos Brutos vs Líquidos</h2>
+<p><strong>Classificação de Slutsky (líquida):</strong> baseada na demanda Hicksiana</p>
+<p><span class="math display">\[\frac{\partial h_i}{\partial p_j} &gt; 0 \implies \text{substitutos líquidos}\]</span></p>
+<div class="fragment">
+<p><strong>Classificação bruta:</strong> baseada na demanda Marshalliana</p>
+<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial m}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Quando as classificações divergem?</strong></p>
+<ul>
+<li>Se o bem <span class="math inline">\(i\)</span> é <strong>inferior</strong> (<span class="math inline">\(\partial x_i / \partial m &lt; 0\)</span>), o termo de renda <span class="math inline">\(-x_j (\partial x_i / \partial m)\)</span> é <strong>positivo</strong></li>
+<li>Isso pode tornar <span class="math inline">\(\partial x_i / \partial p_j &gt; 0\)</span> mesmo quando <span class="math inline">\(\partial h_i / \partial p_j &lt; 0\)</span></li>
+<li>Resultado: bens classificados como <strong>substitutos brutos</strong> mas <strong>complementares líquidos</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A classificação líquida é preferida na teoria, pois a simetria <span class="math inline">\(s_{ij} = s_{ji}\)</span> só vale para a Hicksiana.</p>
+</blockquote>
+</div>
+</section>
+<section id="peer-instruction-elasticidades" class="slide level2">
+<h2>Peer Instruction: Elasticidades</h2>
 <div title="Think-Pair-Share">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -446,24 +750,29 @@ Insper
 <p><strong>Think-Pair-Share</strong></p>
 </div>
 <div class="callout-content">
-<p><strong>Tempo:</strong> 5 minutos | Vote → Discuta → Revote</p>
+<p><strong>Tempo:</strong> 5 minutos | Vote –&gt; Discuta –&gt; Revote</p>
 </div>
 </div>
 </div>
 </div>
 <div class="fragment">
 <blockquote>
-<p>Em 2007, Jensen &amp; Miller encontraram que, em Hunan (China), quando o preço do arroz <strong>subiu</strong>, o consumo de arroz também <strong>subiu</strong>. Nas províncias de Gansu, o mesmo padrão foi observado para o trigo.</p>
+<p>Um estudo estima que a elasticidade-renda do frango no Brasil é <span class="math inline">\(\eta = -0{,}3\)</span> e a elasticidade-preço cruzada (Marshalliana) entre carne bovina e frango é <span class="math inline">\(\varepsilon_{bf} = 0{,}5\)</span>. A parcela orçamentária do frango é <span class="math inline">\(s_f = 0{,}08\)</span>.</p>
 </blockquote>
 </div>
 <div class="fragment">
-<p><strong>Pergunta:</strong> Qual condição da equação de Slutsky <strong>falha</strong> para que o arroz em Hunan seja um bem de Giffen legítimo?</p>
+<p><strong>Pergunta:</strong> Qual é a elasticidade-preço cruzada <strong>compensada</strong> (Hicksiana) entre carne bovina e frango?</p>
 <ul>
-<li><strong>(A)</strong> O efeito substituição é positivo</li>
-<li><strong>(B)</strong> O efeito renda domina o efeito substituição</li>
-<li><strong>(C)</strong> O arroz é um bem normal naquela faixa de renda</li>
-<li><strong>(D)</strong> A demanda Hicksiana tem inclinação positiva</li>
+<li><strong>(A)</strong> <span class="math inline">\(0{,}524\)</span> — substitutos líquidos</li>
+<li><strong>(B)</strong> <span class="math inline">\(0{,}476\)</span> — substitutos líquidos</li>
+<li><strong>(C)</strong> <span class="math inline">\(-0{,}024\)</span> — complementares líquidos</li>
+<li><strong>(D)</strong> <span class="math inline">\(0{,}50\)</span> — a correção é desprezível</li>
 </ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Resolução:</strong> <span class="math inline">\(\varepsilon_{bf}^H = \varepsilon_{bf} + s_f \cdot \eta_b\)</span>. Precisamos de <span class="math inline">\(\eta_b\)</span>, mas usando Slutsky na forma <span class="math inline">\(\varepsilon_{bf}^H = \varepsilon_{bf} + s_f \cdot \eta_b\)</span>, a resposta depende de <span class="math inline">\(\eta_b\)</span>. Com <span class="math inline">\(\eta_b \approx 0{,}3\)</span>: <span class="math inline">\(\varepsilon_{bf}^H = 0{,}5 + 0{,}08 \times 0{,}3 = 0{,}524\)</span>. <strong>(A)</strong>.</p>
+</blockquote>
 </div>
 </section>
 <section id="próxima-aula" class="slide level2">
@@ -471,8 +780,8 @@ Insper
 <p><strong>Aula 09 — Dotações, Trabalho e Escolha Intertemporal</strong></p>
 <div class="fragment">
 <ul>
-<li>Economia com dotações e Slutsky generalizado</li>
-<li>Oferta de trabalho e o trade-off trabalho–lazer</li>
+<li>Economia com dotações e equação de Slutsky generalizada</li>
+<li>Oferta de trabalho e o trade-off trabalho-lazer</li>
 <li>Modelo de Fisher de dois períodos</li>
 </ul>
 </div>

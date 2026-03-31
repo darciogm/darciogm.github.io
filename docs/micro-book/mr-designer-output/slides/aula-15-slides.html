@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-15-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-15-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-15-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -144,13 +146,13 @@ Insper
 <section id="amazon-750-mil-robôs-e-contando" class="slide level2">
 <h2>Amazon: 750 mil robôs e contando</h2>
 <ul>
-<li>Em 2024, a Amazon opera mais de 750.000 robôs em seus centros de distribuição</li>
+<li>Em 2024, a Amazon opera mais de <strong>750.000 robôs</strong> em seus centros de distribuição</li>
 <li>Cada robô substituiu tarefas humanas — mas <strong>não eliminou</strong> empregos</li>
 <li>A firma escolhe a <strong>combinação de insumos que minimiza o custo</strong> para um dado nível de produto</li>
 </ul>
 <div class="fragment">
 <blockquote>
-<p>Nesta aula: como a firma traduz tecnologia em custos?</p>
+<p>Por que a Amazon usa robôs em vez de mais trabalhadores? Porque a <strong>minimização de custos</strong> comanda a automação: quando <span class="math inline">\(w/r\)</span> sobe, capital substitui trabalho.</p>
 </blockquote>
 </div>
 </section>
@@ -159,167 +161,664 @@ Insper
 <p><strong>Custo contábil:</strong> despesas explícitas registradas (salários, aluguel, materiais)</p>
 <p><strong>Custo econômico:</strong> custo contábil + <strong>custos de oportunidade</strong></p>
 <div class="fragment">
-<p><span class="math display">\[C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{oportunidade}}\]</span></p>
-<p><strong>Exemplo:</strong> empresário que ganha R$ 0 de salário na própria firma, mas poderia ganhar R$ 15.000/mês como empregado.</p>
-<ul>
-<li>Custo contábil do seu trabalho: R$ 0</li>
-<li>Custo econômico do seu trabalho: R$ 15.000/mês</li>
-</ul>
+<p><span class="math display">\[C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{implícito (oportunidade)}}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Exemplo:</strong> empresário que ganha R$ 0 na própria firma, mas poderia ganhar R$ 15.000/mês como empregado.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Custo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Contábil (do seu trabalho)</td>
+<td style="text-align: left;">R$ 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Econômico (do seu trabalho)</td>
+<td style="text-align: left;">R$ 15.000/mês</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O lucro econômico é sempre menor ou igual ao lucro contábil. Uma firma com lucro contábil positivo pode ter lucro econômico negativo — o empresário estaria melhor em outra atividade.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="custo-de-oportunidade-e-custo-irrecuperável" class="slide level2">
-<h2>Custo de Oportunidade e Custo Irrecuperável</h2>
-<p><strong>Custo de oportunidade:</strong> valor da melhor alternativa sacrificada</p>
-<p><span class="math display">\[C_{\text{oportunidade}}(x) = \max_{y \neq x} V(y)\]</span></p>
+<section id="minimização-de-custo-o-problema" class="slide level2">
+<h2>Minimização de Custo: O Problema</h2>
+<p>A firma escolhe <span class="math inline">\((K, L)\)</span> para:</p>
+<p><span class="math display">\[\min_{K,L} \; wL + rK \quad \text{s.a.} \quad f(K,L) = q_0\]</span></p>
+<p>onde <span class="math inline">\(w\)</span> = salário e <span class="math inline">\(r\)</span> = custo de uso do capital.</p>
 <div class="fragment">
-<p><strong>Custo irrecuperável (sunk cost):</strong> gasto já realizado, irreversível</p>
+<p><strong>Lagrangeano:</strong></p>
+<p><span class="math display">\[\mathcal{L} = wL + rK + \lambda[q_0 - f(K,L)]\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Condições de Primeira Ordem (CPOs):</strong></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L} = w - \lambda \cdot PMg_L = 0 \qquad \frac{\partial \mathcal{L}}{\partial K} = r - \lambda \cdot PMg_K = 0\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O multiplicador <span class="math inline">\(\lambda\)</span> mede o <strong>custo marginal</strong>: quanto custa produzir uma unidade adicional de <span class="math inline">\(q\)</span>.</p>
+</blockquote>
+</div>
+</section>
+<section id="condição-de-tangência-tmst-wr" class="slide level2">
+<h2>Condição de Tangência: TMST = w/r</h2>
+<p>Dividindo as CPOs:</p>
+<p><span class="math display">\[\frac{PMg_L}{PMg_K} = \frac{w}{r} \quad \Longleftrightarrow \quad TMST_{L,K} = \frac{w}{r}\]</span></p>
+<div class="fragment">
+<p><strong>Geometricamente:</strong> a isoquanta é tangente à reta isocusto no ponto ótimo.</p>
+<p><strong>Reta isocusto:</strong> <span class="math inline">\(C = wL + rK \implies K = \frac{C}{r} - \frac{w}{r}L\)</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A firma iguala a taxa à qual a tecnologia permite trocar insumos (<span class="math inline">\(TMST\)</span>) à taxa de troca do mercado (<span class="math inline">\(w/r\)</span>). Se <span class="math inline">\(TMST &gt; w/r\)</span>, a firma deveria usar mais trabalho e menos capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimização-de-custo-interativo" class="slide level2">
+<h2>Minimização de Custo — Interativo</h2>
+<p>Mova a razão <span class="math inline">\(w/r\)</span> e observe como o ponto de tangência se ajusta:</p>
+<div id="graph-a15-costmin" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>w/r: <span id="val-a15-wr">1.00</span></label> <input type="range" id="sl-a15-wr" min="0.3" max="3" step="0.1" value="1" oninput="window.updateA15Costmin(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-costmin', {
+    boundingbox: [-0.5, 22, 22, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qbar = 10;
+  var wr = 1.0;
+
+  // Cobb-Douglas isoquant: q = K^0.5 * L^0.5 => K = q^2 / L
+  var isoquant = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qbar * qbar) / t; },
+    1, 21
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'q=10' });
+
+  board.create('text', [18, (qbar * qbar) / 18 + 1.2, 'q = 10'], {
+    fontSize: 12, color: '#1565c0', fixed: true
+  });
+
+  // Optimal point: TMST = K/L = w/r => K = (w/r)*L; K*L = q^2 => L* = q/sqrt(w/r), K* = q*sqrt(w/r)
+  var optPt = board.create('point', [
+    function() { return qbar / Math.sqrt(wr); },
+    function() { return qbar * Math.sqrt(wr); }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  var optLabel = board.create('text', [
+    function() { return qbar / Math.sqrt(wr) + 0.6; },
+    function() { return qbar * Math.sqrt(wr) + 0.8; }
+  ], {
+    name: '',
+    fontSize: 11, color: '#C8102E', fixed: true,
+    text: function() {
+      var Ls = qbar / Math.sqrt(wr);
+      var Ks = qbar * Math.sqrt(wr);
+      return '(' + Ls.toFixed(1) + ', ' + Ks.toFixed(1) + ')';
+    }
+  });
+
+  // Optimal isocost through tangency: C* = w*L* + r*K*; with w/r known, set w=wr, r=1
+  // C* = wr*L* + K* = wr * q/sqrt(wr) + q*sqrt(wr) = 2*q*sqrt(wr)
+  // Isocost: K = C*/r - (w/r)*L = 2*q*sqrt(wr) - wr*L
+  var optIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 0 });
+
+  // Additional isocost lines (higher and lower cost)
+  var hiIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2.6 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  var loIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 1.4 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  // Info text
+  board.create('text', [12, 20, function() {
+    var Ls = qbar / Math.sqrt(wr);
+    var Ks = qbar * Math.sqrt(wr);
+    var Cstar = 2 * qbar * Math.sqrt(wr);
+    return 'C* = ' + Cstar.toFixed(1) + '  |  w/r = ' + wr.toFixed(1);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Costmin = function(val) {
+    wr = parseFloat(val);
+    document.getElementById('val-a15-wr').textContent = wr.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="demandas-condicionadas-de-fatores" class="slide level2">
+<h2>Demandas Condicionadas de Fatores</h2>
+<p>Das CPOs, obtemos as <strong>demandas condicionadas</strong> de insumos:</p>
+<p><span class="math display">\[L^c(w, r, q) \qquad K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades:</strong></p>
 <ul>
-<li><strong>Não</strong> deve influenciar decisões futuras</li>
+<li>Decrescentes no próprio preço: <span class="math inline">\(\partial L^c / \partial w \leq 0\)</span></li>
+<li><strong>Homogêneas de grau 0</strong> em <span class="math inline">\((w, r)\)</span>: dobrar ambos os preços não altera as quantidades ótimas</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[L^c(\alpha w, \alpha r, q) = L^c(w, r, q) \quad \forall \alpha &gt; 0\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Apenas a razão <span class="math inline">\(w/r\)</span> importa para a escolha de insumos, não o nível absoluto de preços. Se salários e custo do capital dobram igualmente, a firma mantém a mesma combinação.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-custo-cw-r-q" class="slide level2">
+<h2>Função Custo <span class="math inline">\(c(w, r, q)\)</span></h2>
+<p>Substituindo as demandas condicionadas na função objetivo:</p>
+<p><span class="math display">\[c(w, r, q) = w \cdot L^c(w, r, q) + r \cdot K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades da função custo:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Propriedade</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Crescente em <span class="math inline">\(w\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(q\)</span></td>
+<td style="text-align: left;">Insumos mais caros ou mais produção <span class="math inline">\(\Rightarrow\)</span> custo maior</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HD1 em <span class="math inline">\((w, r)\)</span></td>
+<td style="text-align: left;">Dobrar preços dobra o custo: <span class="math inline">\(c(\alpha w, \alpha r, q) = \alpha \cdot c(w, r, q)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Côncava em <span class="math inline">\((w, r)\)</span></td>
+<td style="text-align: left;">A firma pode substituir insumos, limitando o impacto de aumentos de preço</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A concavidade em <span class="math inline">\((w, r)\)</span> reflete a capacidade de ajuste: o custo sobe menos que proporcionalmente quando um preço de insumo aumenta, porque a firma substitui parcialmente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lema-de-shephard-para-a-firma" class="slide level2">
+<h2>Lema de Shephard para a Firma</h2>
+<p><span class="math display">\[\frac{\partial c(w, r, q)}{\partial w} = L^c(w, r, q) \qquad \frac{\partial c(w, r, q)}{\partial r} = K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Analogia com o consumidor:</strong> o Lema de Shephard aqui é o análogo do Lema de Shephard na teoria do consumidor (demandas hicksianas).</p>
+</div>
+<div class="fragment">
+<p><strong>Utilidade prática:</strong> se conhecemos a função custo <span class="math inline">\(c(w, r, q)\)</span>, podemos <strong>derivar</strong> as demandas condicionadas sem resolver o problema de otimização novamente.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Quando <span class="math inline">\(w\)</span> sobe marginalmente, o custo aumenta em exatamente <span class="math inline">\(L^c\)</span> — a quantidade de trabalho usada. Efeitos de substituição são de segunda ordem (teorema do envelope).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="caminho-de-expansão" class="slide level2">
+<h2>Caminho de Expansão</h2>
+<p>O <strong>caminho de expansão</strong> é o lugar geométrico dos pontos de tangência quando <span class="math inline">\(q\)</span> varia (mantendo <span class="math inline">\(w\)</span> e <span class="math inline">\(r\)</span> fixos).</p>
+<div id="graph-a15-expansion" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>q: <span id="val-a15-q">10</span></label> <input type="range" id="sl-a15-q" min="5" max="20" step="1" value="10" oninput="window.updateA15Expansion(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-expansion', {
+    boundingbox: [-0.5, 25, 25, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qCurrent = 10;
+  var wr = 1.0; // fixed w/r = 1
+
+  // Expansion path: for CD q=K^0.5*L^0.5 with w/r=1: K*=L*=q, so path is K=L (45-degree line)
+  board.create('curve', [
+    function(t) { return t; },
+    function(t) { return t; },
+    0, 24
+  ], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 3 });
+
+  board.create('text', [21, 22.5, 'Caminho de Expansão'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // Fixed isoquants at q=6, 8, 12, 16
+  var fixedQs = [6, 8, 12, 16];
+  for (var i = 0; i < fixedQs.length; i++) {
+    (function(qVal) {
+      board.create('curve', [
+        function(t) { return t; },
+        function(t) { return (qVal * qVal) / t; },
+        1.5, 24
+      ], { strokeColor: '#bbdefb', strokeWidth: 1.5 });
+      board.create('text', [23, (qVal * qVal) / 23 + 0.8, 'q=' + qVal], {
+        fontSize: 10, color: '#90caf9', fixed: true
+      });
+      // Tangency dot on expansion path
+      board.create('point', [qVal, qVal], {
+        size: 3, fixed: true, name: '',
+        color: '#90caf9', strokeColor: '#90caf9', fillColor: '#90caf9'
+      });
+    })(fixedQs[i]);
+  }
+
+  // Current isoquant (highlighted)
+  var currentIso = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qCurrent * qCurrent) / t; },
+    1.5, 24
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var currentIsoLabel = board.create('text', [
+    function() { return 23; },
+    function() { return (qCurrent * qCurrent) / 23 + 0.8; }
+  ], {
+    fontSize: 11, color: '#1565c0', fixed: true,
+    text: function() { return 'q=' + qCurrent; }
+  });
+
+  // Current tangency point
+  var tangPt = board.create('point', [
+    function() { return qCurrent; },
+    function() { return qCurrent; }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  // Isocost through tangency: K = 2*q - L (since w/r=1, C*=2q, K = 2q - L)
+  var tangIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qCurrent - t; },
+    0, 24
+  ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+  board.create('text', [2, 23, function() {
+    return 'C* = ' + (2 * qCurrent).toFixed(0) + '  (w/r = 1)';
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Expansion = function(val) {
+    qCurrent = parseInt(val);
+    document.getElementById('val-a15-q').textContent = qCurrent;
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="cobb-douglas-custos-derivados" class="slide level2">
+<h2>Cobb-Douglas: Custos Derivados</h2>
+<p><span class="math display">\[f(K,L) = K^{0{,}5} L^{0{,}5}\]</span></p>
+<div class="fragment">
+<p><strong>Passo 1 — Tangência:</strong> <span class="math inline">\(\frac{PMg_L}{PMg_K} = \frac{0{,}5 K}{0{,}5 L} = \frac{K}{L} = \frac{w}{r} \implies K = \frac{w}{r}L\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 2 — Substituir na restrição:</strong> <span class="math inline">\(\left(\frac{w}{r}L\right)^{0{,}5} L^{0{,}5} = q \implies L^c = q\sqrt{\frac{r}{w}}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 3 — Demanda de capital:</strong> <span class="math inline">\(K^c = \frac{w}{r} \cdot q\sqrt{\frac{r}{w}} = q\sqrt{\frac{w}{r}}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 4 — Função custo:</strong></p>
+<p><span class="math display">\[c(w,r,q) = w \cdot q\sqrt{\frac{r}{w}} + r \cdot q\sqrt{\frac{w}{r}} = 2q\sqrt{wr}\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Verifique:</strong> <span class="math inline">\(c\)</span> é HD1 em <span class="math inline">\((w,r)\)</span>, crescente em <span class="math inline">\(q\)</span>, e <span class="math inline">\(\partial c / \partial w = q\sqrt{r/w} = L^c\)</span> (Shephard <span class="math inline">\(\checkmark\)</span>).</p>
+</blockquote>
+</div>
+</section>
+<section id="curvas-de-custo" class="slide level2">
+<h2>Curvas de Custo</h2>
+<div id="graph-a15-curves" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>CF: <span id="val-a15-fc">10</span></label> <input type="range" id="sl-a15-fc" min="5" max="30" step="1" value="10" oninput="window.updateA15Curves(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-curves', {
+    boundingbox: [-0.5, 90, 8, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '$', withLabel: true, label: { position: 'rt', offset: [-20, 0] } }
+    }
+  });
+
+  var fc = 10;
+  // c(q) = q^3 - 6q^2 + 15q + FC (cubic cost)
+  function CT(q) { return q * q * q - 6 * q * q + 15 * q + fc; }
+  function CV(q) { return q * q * q - 6 * q * q + 15 * q; }
+  function CMe(q) { return (q > 0.1) ? CT(q) / q : NaN; }
+  function CVMe(q) { return (q > 0.1) ? CV(q) / q : NaN; }
+  function CMg(q) { return 3 * q * q - 12 * q + 15; }
+
+  // CT curve
+  board.create('functiongraph', [function(q) { return CT(q); }, 0, 7.5], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  board.create('text', [6.5, CT(6.5) + 3, 'CT'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // CMe curve
+  var cmeCurve = board.create('functiongraph', [function(q) { return CMe(q); }, 0.2, 7.5], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMe(7) + 2, 'CMe'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // CVMe curve
+  board.create('functiongraph', [function(q) { return CVMe(q); }, 0.2, 7.5], {
+    strokeColor: '#ff9800', strokeWidth: 2
+  });
+  board.create('text', [7, CVMe(7) + 2, 'CVMe'], {
+    fontSize: 11, color: '#ff9800', fixed: true
+  });
+
+  // CMg curve
+  board.create('functiongraph', [function(q) { return CMg(q); }, 0, 7.5], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMg(7) + 2, 'CMg'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Min CMe: d(CMe)/dq = 0 => solve numerically
+  // CMe = q^2 - 6q + 15 + fc/q => CMe' = 2q - 6 - fc/q^2 = 0
+  function findMinCMe() {
+    var bestQ = 0.5, bestVal = 9999;
+    for (var q = 0.5; q <= 7; q += 0.05) {
+      var val = CMe(q);
+      if (val < bestVal) { bestVal = val; bestQ = q; }
+    }
+    return { q: bestQ, val: bestVal };
+  }
+
+  // Min CVMe: q^2 - 6q + 15 => 2q - 6 = 0 => q = 3, CVMe = 9-18+15 = 6
+  var minCVMePt = board.create('point', [3, 6], {
+    name: 'min CVMe', size: 4, fixed: true,
+    color: '#ff9800', strokeColor: '#ff9800', fillColor: '#ff9800',
+    label: { fontSize: 10, offset: [-45, -15] }
+  });
+
+  var minCMePt = board.create('point', [
+    function() { return findMinCMe().q; },
+    function() { return findMinCMe().val; }
+  ], {
+    name: 'min CMe', size: 4, fixed: true,
+    color: '#00897b', strokeColor: '#00897b', fillColor: '#00897b',
+    label: { fontSize: 10, offset: [8, 8] }
+  });
+
+  window.updateA15Curves = function(val) {
+    fc = parseInt(val);
+    document.getElementById('val-a15-fc').textContent = fc;
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="custo-fixo-variável-e-irrecuperável" class="slide level2">
+<h2>Custo Fixo, Variável e Irrecuperável</h2>
+<p><strong>Custo Fixo (CF):</strong> não varia com a quantidade produzida</p>
+<p><span class="math display">\[CF = r \bar{K} \qquad \frac{\partial CF}{\partial q} = 0\]</span></p>
+<div class="fragment">
+<p><strong>Custo Variável (CV):</strong> depende do nível de produção</p>
+<p><span class="math display">\[CV(q) = CT(q) - CF\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Custo Irrecuperável (sunk cost):</strong> gasto já realizado, irreversível</p>
+<ul>
+<li>Uma vez pago, <strong>não</strong> deve influenciar decisões futuras</li>
 <li>Erro comum: “já gastei tanto, não posso parar agora” (falácia do custo irrecuperável)</li>
 </ul>
 </div>
 <div class="fragment">
-<blockquote>
-<p><strong>Regra:</strong> apenas custos que <strong>variam</strong> com a decisão são relevantes para escolhas econômicas.</p>
-</blockquote>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Um custo fixo pode ou não ser irrecuperável. O aluguel do mês é fixo (não varia com <span class="math inline">\(q\)</span>), mas se o contrato permite rescisão, não é irrecuperável. Uma máquina sob medida sem valor de revenda é fixo <strong>e</strong> irrecuperável.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="o-problema-de-minimização-de-custos" class="slide level2">
-<h2>O Problema de Minimização de Custos</h2>
-<p>A firma escolhe <span class="math inline">\((K, L)\)</span> para:</p>
-<p><span class="math display">\[\min_{K,L} \; wL + vK \quad \text{s.a.} \quad f(K,L) \geq \bar{q}\]</span></p>
-<p>onde <span class="math inline">\(w\)</span> = salário e <span class="math inline">\(v\)</span> = custo de uso do capital.</p>
-<div class="fragment">
-<p><strong>Lagrangeano:</strong></p>
-<p><span class="math display">\[\mathcal{L} = wL + vK + \lambda[\bar{q} - f(K,L)]\]</span></p>
-<p><strong>CPOs:</strong></p>
-<p><span class="math display">\[w = \lambda \cdot PMg_L \qquad v = \lambda \cdot PMg_K\]</span></p>
-</div>
-</section>
-<section id="reta-isocusto-e-tangência" class="slide level2">
-<h2>Reta Isocusto e Tangência</h2>
-<p><strong>Reta isocusto:</strong> combinações <span class="math inline">\((K,L)\)</span> com mesmo custo total <span class="math inline">\(C\)</span>:</p>
-<p><span class="math display">\[C = wL + vK \implies K = \frac{C}{v} - \frac{w}{v}L\]</span></p>
-<div class="fragment">
-<p><strong>Condição de tangência</strong> (solução interior):</p>
-<p><span class="math display">\[\frac{PMg_L}{PMg_K} = \frac{w}{v} \quad \Longleftrightarrow \quad TMST_{L,K} = \frac{w}{v}\]</span></p>
-</div>
-<div class="fragment">
-<blockquote>
-<p><strong>Intuição:</strong> a firma iguala a taxa à qual a tecnologia permite trocar insumos à taxa de troca do mercado.</p>
-</blockquote>
-</div>
-</section>
-<section id="minimização-de-custos-interativo" class="slide level2">
-<h2>Minimização de Custos — Interativo</h2>
-<p>Explore a tangência entre isoquanta e isocusto:</p>
-<iframe src="../../graficos/cap11/minimizacao-custo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-<p>Mova os preços dos insumos e observe como a combinação ótima se ajusta.</p>
-</section>
-<section id="demandas-condicionais-e-função-custo" class="slide level2">
-<h2>Demandas Condicionais e Função Custo</h2>
-<p>Das CPOs, obtemos as <strong>demandas condicionais</strong> de insumos:</p>
-<p><span class="math display">\[K^*(w, v, q) \qquad L^*(w, v, q)\]</span></p>
-<div class="fragment">
-<p>Substituindo na função objetivo:</p>
-<p><span class="math display">\[C(w, v, q) = wL^*(w, v, q) + vK^*(w, v, q)\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Propriedades da função custo:</strong></p>
-<ul>
-<li>Crescente em <span class="math inline">\(w\)</span>, <span class="math inline">\(v\)</span> e <span class="math inline">\(q\)</span></li>
-<li>Homogênea de grau 1 em <span class="math inline">\((w, v)\)</span></li>
-<li>Côncava em <span class="math inline">\((w, v)\)</span> (Lema de Shephard)</li>
-</ul>
-</div>
-</section>
-<section id="exemplo-cobb-douglas" class="slide level2">
-<h2>Exemplo: Cobb-Douglas</h2>
-<p><span class="math display">\[q = K^{\alpha}L^{\beta} \qquad \alpha + \beta = 1 \text{ (CRS)}\]</span></p>
-<p><strong>CPO de tangência:</strong></p>
-<p><span class="math display">\[\frac{\beta K}{\alpha L} = \frac{w}{v} \implies K = \frac{\alpha w}{\beta v} L\]</span></p>
-<div class="fragment">
-<p><strong>Demandas condicionais:</strong></p>
-<p><span class="math display">\[L^* = q \left(\frac{\alpha w}{\beta v}\right)^{-\alpha} \qquad K^* = q \left(\frac{\alpha w}{\beta v}\right)^{\beta}\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Função custo (CRS):</strong></p>
-<p><span class="math display">\[C(w,v,q) = q \cdot \underbrace{\frac{w^\beta v^\alpha}{\alpha^\alpha \beta^\beta}}_{\text{custo unitário}}\]</span></p>
-</div>
-</section>
-<section id="curvas-ct-cme-e-cmg" class="slide level2">
-<h2>Curvas CT, CMe e CMg</h2>
-<p><strong>Definições:</strong></p>
-<p><span class="math display">\[CT(q) = C(w,v,q) \qquad CMe(q) = \frac{CT(q)}{q} \qquad CMg(q) = \frac{dCT}{dq}\]</span></p>
-<iframe src="../../graficos/cap11/curvas-custo.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</section>
-<section id="relação-cmgcme" class="slide level2">
-<h2>Relação CMg–CMe</h2>
-<p><span class="math display">\[\frac{d\,CMe}{dq} = \frac{CMg - CMe}{q}\]</span></p>
+<section id="relação-cme-e-cmg" class="slide level2">
+<h2>Relação CMe e CMg</h2>
+<p><span class="math display">\[\frac{d\,CMe}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{CMg \cdot q - CT}{q^2} = \frac{CMg - CMe}{q}\]</span></p>
 <div class="fragment">
 <p><strong>Implicações:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th>Condição</th>
-<th>Efeito</th>
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;"><span class="math inline">\(d\,CMe/dq\)</span></th>
+<th style="text-align: left;">Efeito</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(CMg &lt; CMe\)</span></td>
-<td><span class="math inline">\(CMe\)</span> decrescente</td>
+<td style="text-align: left;"><span class="math inline">\(CMg &lt; CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> decrescente</td>
 </tr>
 <tr class="even">
-<td><span class="math inline">\(CMg = CMe\)</span></td>
-<td><span class="math inline">\(CMe\)</span> mínimo</td>
+<td style="text-align: left;"><span class="math inline">\(CMg = CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(= 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> <strong>mínimo</strong></td>
 </tr>
 <tr class="odd">
-<td><span class="math inline">\(CMg &gt; CMe\)</span></td>
-<td><span class="math inline">\(CMe\)</span> crescente</td>
+<td style="text-align: left;"><span class="math inline">\(CMg &gt; CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(&gt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> crescente</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
 <blockquote>
-<p><strong>Regra:</strong> a curva de CMg <strong>sempre</strong> cruza a curva de CMe em seu ponto de mínimo — mesma lógica da relação PMg-PMe, invertida.</p>
+<p><strong>O CMg cruza o CMe em seu ponto de mínimo</strong> — mesma lógica da relação PMg-PMe na produção, invertida.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Pense em notas de prova: se sua nota na próxima prova (marginal) está abaixo da sua média, a média cai. Se está acima, a média sobe. A nota marginal cruza a média quando ambas coincidem.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dualidade-custo-produção" class="slide level2">
+<h2>Dualidade Custo-Produção</h2>
+<p><strong>Da produção ao custo:</strong></p>
+<p><span class="math display">\[f(K,L) \xrightarrow{\text{minimização de custo}} c(w,r,q)\]</span></p>
+<div class="fragment">
+<p><strong>Do custo à produção:</strong></p>
+<p><span class="math display">\[c(w,r,q) \xrightarrow{\text{Shephard + inversão}} f(K,L)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Paralelo com a teoria do consumidor:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Consumidor</th>
+<th style="text-align: left;">Firma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Utilidade <span class="math inline">\(u(x)\)</span></td>
+<td style="text-align: left;">Produção <span class="math inline">\(f(K,L)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Função dispêndio <span class="math inline">\(e(p,u)\)</span></td>
+<td style="text-align: left;">Função custo <span class="math inline">\(c(w,r,q)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Demandas hicksianas <span class="math inline">\(h_i\)</span></td>
+<td style="text-align: left;">Demandas condicionadas <span class="math inline">\(L^c, K^c\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lema de Shephard: <span class="math inline">\(\partial e/\partial p_i = h_i\)</span></td>
+<td style="text-align: left;">Lema de Shephard: <span class="math inline">\(\partial c/\partial w = L^c\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A dualidade permite obter toda a informação sobre a tecnologia a partir da função custo, e vice-versa.</p>
 </blockquote>
 </div>
 </section>
-<section id="custos-no-curto-prazo-vs.-longo-prazo" class="slide level2">
-<h2>Custos no Curto Prazo vs.&nbsp;Longo Prazo</h2>
-<p><strong>Curto prazo</strong> (<span class="math inline">\(K = \bar{K}\)</span> fixo):</p>
-<p><span class="math display">\[CT_{CP}(q) = v\bar{K} + wL(q, \bar{K})\]</span></p>
-<ul>
-<li>Custos fixos: <span class="math inline">\(CF = v\bar{K}\)</span></li>
-<li>Custos variáveis: <span class="math inline">\(CV = wL(q, \bar{K})\)</span></li>
-</ul>
-<div class="fragment">
-<p><strong>Longo prazo</strong> (todos os insumos variáveis):</p>
-<p><span class="math display">\[CT_{LP}(q) = C(w, v, q)\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Resultado fundamental:</strong></p>
-<p><span class="math display">\[CT_{LP}(q) \leq CT_{CP}(q) \quad \forall q\]</span></p>
-<p>com igualdade apenas no nível <span class="math inline">\(q\)</span> para o qual <span class="math inline">\(\bar{K}\)</span> é ótimo.</p>
-</div>
-</section>
-<section id="próxima-aula-custos-cp-vs-lp-envelope" class="slide level2">
-<h2>Próxima Aula: Custos CP vs LP + Envelope</h2>
+<section id="próxima-aula-custos-cp-vs-lp" class="slide level2">
+<h2>Próxima Aula: Custos CP vs LP</h2>
 <p><strong>Aula 16 — Custos de Curto e Longo Prazo</strong></p>
 <ul>
 <li>Curvas de custo no curto prazo: CF, CV, CMe, CVMe, CMg</li>
-<li>A envoltória: como o longo prazo “abraça” os curtos prazos</li>
+<li>A <strong>envoltória</strong>: como o longo prazo “abraça” os curtos prazos</li>
 <li>Economias e deseconomias de escala</li>
+<li>Resultado fundamental: <span class="math inline">\(CT_{LP}(q) \leq CT_{CP}(q)\)</span></li>
 </ul>
 <div class="fragment">
 <p><strong>Preparação:</strong></p>
 <ul>
-<li>Revisar as relações CMg-CMe</li>
-<li>Pensar: por que <span class="math inline">\(CT_{LP} \leq CT_{CP}\)</span> sempre?</li>
+<li>Revisar as relações CMg-CMe desta aula</li>
+<li>Pensar: por que o custo de longo prazo é sempre menor ou igual ao de curto prazo?</li>
 </ul>
 
 </div>

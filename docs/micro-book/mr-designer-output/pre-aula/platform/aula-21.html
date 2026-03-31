@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 21 — — Microeconomia II</title>
+<title>Pré-Aula 21 — Maximização de Lucro II: Receita Marginal e Oferta — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,205 +17,186 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-21-monopólio-e-discriminação-de-preços">Pré-Aula 21 —
-Monopólio e Discriminação de Preços</h1>
+<h1
+id="pré-aula-21-maximização-de-lucro-ii-receita-marginal-e-oferta">Pré-Aula
+21 — Maximização de Lucro II: Receita Marginal e Oferta</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 14, Seções 14.1–14.5</strong> do livro interativo |
-Tempo estimado: <strong>50 min</strong></p>
+<p><strong>Cap. 12, Seções 12.4–12.6</strong> do livro interativo |
+Tempo estimado: <strong>45 min</strong></p>
 </div>
-<pre><code>**Cap. 14, Seções 14.1–14.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Derivar a receita marginal do monopolista e explicar por que <span
-class="math inline">\(\text{RMg} &lt; P\)</span></li>
-<li>Calcular preço, quantidade e lucro do monopólio usando a condição
-<span class="math inline">\(\text{RMg} = \text{CMg}\)</span></li>
-<li>Distinguir os três graus de discriminação de preços e suas
-implicações sobre bem-estar</li>
+<li>Relacionar receita marginal com elasticidade-preço da demanda e
+aplicar à decisão de produção</li>
+<li>Derivar a curva de oferta de curto prazo a partir da condição de
+fechamento (<span class="math inline">\(P \geq
+CVMe_{\min}\)</span>)</li>
+<li>Decompor o efeito de uma variação de preço de fator em efeito
+substituição e efeito produto</li>
 </ol>
 <hr />
-<h2 id="o-que-define-um-monopólio">1. O que define um monopólio?</h2>
-<p>Um <strong>monopólio</strong> é uma estrutura de mercado com um único
-vendedor que enfrenta toda a curva de demanda do mercado. Diferentemente
-da firma competitiva (que é tomadora de preço), o monopolista é
-<strong>formador de preço</strong>: ao escolher a quantidade <span
-class="math inline">\(q\)</span>, ele determina o preço <span
-class="math inline">\(P(q)\)</span>.</p>
-<p><strong>Barreiras à entrada</strong> sustentam o monopólio:</p>
-<table>
-<thead>
-<tr>
-<th>Tipo</th>
-<th>Exemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Legal</strong></td>
-<td>Patentes farmacêuticas, concessões de TV</td>
-</tr>
-<tr>
-<td><strong>Natural</strong></td>
-<td>Redes de distribuição de energia (custo fixo elevado)</td>
-</tr>
-<tr>
-<td><strong>Estratégica</strong></td>
-<td>Contratos de exclusividade, preços predatórios</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="receita-marginal-do-monopolista">2. Receita marginal do
-monopolista</h2>
-<p>A receita total é <span class="math inline">\(R(q) = P(q) \cdot
-q\)</span>. A receita marginal:</p>
-<p><span class="math display">\[\text{RMg} = \frac{dR}{dq} = P + q
-\frac{dP}{dq}\]</span></p>
-<p>Como a demanda é negativamente inclinada (<span
-class="math inline">\(dP/dq &lt; 0\)</span>), temos sempre:</p>
-<span class="math display">\[\text{RMg} &lt; P\]</span>
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo numérico
-</div>
-<p>Demanda linear <span class="math inline">\(P = 100 - 2q\)</span>.</p>
-<p><span class="math inline">\(R(q) = 100q - 2q^2\)</span></p>
-<p><span class="math inline">\(\text{RMg} = 100 - 4q\)</span></p>
-<p>Note que a RMg tem o <strong>mesmo intercepto</strong> e o
-<strong>dobro da inclinação</strong> da demanda inversa.</p>
-</div>
-<pre><code>Demanda linear $P = 100 - 2q$.
-
-$R(q) = 100q - 2q^2$
-
-$\text{RMg} = 100 - 4q$
-
-Note que a RMg tem o **mesmo intercepto** e o **dobro da inclinação** da demanda inversa.</code></pre>
-<hr />
-<h2 id="otimização-do-monopolista">3. Otimização do monopolista</h2>
-<p>O monopolista maximiza o lucro <span class="math inline">\(\pi = R(q)
-- C(q)\)</span>:</p>
-<p><span class="math display">\[\text{RMg}(q^*) =
-\text{CMg}(q^*)\]</span></p>
-O preço é então lido na curva de demanda: <span
-class="math inline">\(P^* = P(q^*)\)</span>.
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo completo
-</div>
-<p>Demanda: <span class="math inline">\(P = 100 - 2q\)</span>, Custo:
-<span class="math inline">\(C(q) = 10q + 50\)</span>.</p>
-<p><span class="math inline">\(\text{RMg} = 100 - 4q = 10 =
-\text{CMg}\)</span></p>
-<p><span class="math inline">\(q^* = 22{,}5\)</span>; <span
-class="math inline">\(P^* = 100 - 45 = 55\)</span></p>
-<p><span class="math inline">\(\pi = 55 \times 22{,}5 - (10 \times
-22{,}5 + 50) = 1.012{,}50 - 275 = 962{,}50\)</span></p>
-</div>
-<pre><code>Demanda: $P = 100 - 2q$, Custo: $C(q) = 10q + 50$.
-
-$\text{RMg} = 100 - 4q = 10 = \text{CMg}$
-
-$q^* = 22{,}5$; $P^* = 100 - 45 = 55$
-
-$\pi = 55 \times 22{,}5 - (10 \times 22{,}5 + 50) = 1.012{,}50 - 275 = 962{,}50$</code></pre>
-<hr />
-<h2 id="o-índice-de-lerner">4. O índice de Lerner</h2>
-<p>O <strong>poder de mercado</strong> é medido pelo índice de
-Lerner:</p>
-<p><span class="math display">\[L = \frac{P -
-\text{CMg}}{P}\]</span></p>
-<p>Usando a condição de otimização, pode-se mostrar que:</p>
-<p><span class="math display">\[L =
-\frac{1}{|\varepsilon_d|}\]</span></p>
-onde <span class="math inline">\(|\varepsilon_d|\)</span> é a
-elasticidade-preço da demanda (em valor absoluto).
-<div class="admonition warning">
-<div class="admonition-title">
-Região elástica
-</div>
-<p>O monopolista <strong>nunca opera na região inelástica</strong> da
-demanda (<span class="math inline">\(|\varepsilon_d| &lt; 1\)</span>),
-pois ali <span class="math inline">\(\text{RMg} &lt; 0\)</span>: reduzir
-a quantidade aumentaria a receita e diminuiria o custo — seria
-lucrativo.</p>
-</div>
-<pre><code>O monopolista **nunca opera na região inelástica** da demanda ($|\varepsilon_d| &lt; 1$), pois ali $\text{RMg} &lt; 0$: reduzir a quantidade aumentaria a receita e diminuiria o custo — seria lucrativo.</code></pre>
-<hr />
-<h2 id="peso-morto-do-monopólio">5. Peso morto do monopólio</h2>
-<p>Comparando com a concorrência perfeita (onde <span
-class="math inline">\(P = \text{CMg}\)</span>):</p>
-<ul>
-<li>O monopolista produz <strong>menos</strong> (<span
-class="math inline">\(q_m &lt; q_c\)</span>) e cobra
-<strong>mais</strong> (<span class="math inline">\(P_m &gt;
-P_c\)</span>)</li>
-<li>Surge um <strong>peso morto</strong> (DWL) — triângulo entre as
-curvas de demanda e CMg, de <span class="math inline">\(q_m\)</span> a
-<span class="math inline">\(q_c\)</span>:</li>
-</ul>
-<p><span class="math display">\[\text{DWL} = \frac{1}{2}(P_m -
-\text{CMg})(q_c - q_m)\]</span></p>
-<hr />
-<h2 id="discriminação-de-preços">6. Discriminação de preços</h2>
-<p>O monopolista pode aumentar o lucro cobrando preços diferentes:</p>
+<h2 id="receita-marginal-e-elasticidade">1. Receita marginal e
+elasticidade</h2>
+<p>Para uma firma com poder de mercado, a receita marginal depende da
+elasticidade-preço da demanda <span
+class="math inline">\(\varepsilon_D\)</span>:</p>
+<p><span class="math display">\[RMg = P\left(1 +
+\frac{1}{\varepsilon_D}\right) = P\left(1 -
+\frac{1}{|\varepsilon_D|}\right)\]</span></p>
 <table>
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 37%" />
-<col style="width: 41%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
 </colgroup>
 <thead>
 <tr>
-<th>Grau</th>
-<th>Mecanismo</th>
-<th>Exemplo BR</th>
+<th>Elasticidade</th>
+<th><span class="math inline">\(RMg\)</span></th>
+<th>Implicação</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>1.° grau</strong> (perfeita)</td>
-<td>Cobra a disposição a pagar de cada consumidor</td>
-<td>Negociação de carro usado</td>
+<td><span class="math inline">\(|\varepsilon_D| &gt; 1\)</span>
+(elástica)</td>
+<td><span class="math inline">\(RMg &gt; 0\)</span></td>
+<td>Aumentar <span class="math inline">\(q\)</span> eleva <span
+class="math inline">\(RT\)</span></td>
 </tr>
 <tr>
-<td><strong>2.° grau</strong></td>
-<td>Menu de opções (auto-seleção)</td>
-<td>Spotify Free vs. Premium, passagens aéreas</td>
+<td><span class="math inline">\(|\varepsilon_D| = 1\)</span>
+(unitária)</td>
+<td><span class="math inline">\(RMg = 0\)</span></td>
+<td><span class="math inline">\(RT\)</span> é máxima</td>
 </tr>
 <tr>
-<td><strong>3.° grau</strong></td>
-<td>Segmenta por grupo observável</td>
-<td>Meia-entrada para estudantes, tarifa de idosos</td>
+<td><span class="math inline">\(|\varepsilon_D| &lt; 1\)</span>
+(inelástica)</td>
+<td><span class="math inline">\(RMg &lt; 0\)</span></td>
+<td>Aumentar <span class="math inline">\(q\)</span> reduz <span
+class="math inline">\(RT\)</span></td>
 </tr>
 </tbody>
 </table>
-<p><strong>Tarifa em duas partes:</strong> cobra uma taxa fixa <span
-class="math inline">\(T\)</span> (que extrai o excedente) + preço por
-unidade <span class="math inline">\(p\)</span>. Exemplo: clube de
-compras (anuidade + preço por item).</p>
-<strong>Bundling (venda casada):</strong> combina dois bens num único
-pacote quando as disposições a pagar são negativamente correlacionadas.
-Exemplo: pacotes de TV + internet.
-<div class="admonition tip">
+<p>Para a firma <strong>competitiva</strong>, a demanda individual é
+perfeitamente elástica (<span class="math inline">\(|\varepsilon_D| \to
+\infty\)</span>), logo <span class="math inline">\(RMg = P\)</span>.</p>
+<div class="admonition note">
 <div class="admonition-title">
-Uber e preço dinâmico
+Intuição Econômica
 </div>
-<p>O <em>surge pricing</em> da Uber é uma forma de discriminação de
-preços que varia conforme o <strong>momento</strong> (pico de demanda).
-Economicamente, aproxima-se de uma discriminação de 3.° grau com
-segmentação temporal.</p>
+<p><strong>A firma nunca opera na faixa inelástica da demanda.</strong>
+Se <span class="math inline">\(|\varepsilon_D| &lt; 1\)</span>, reduzir
+a produção aumenta a receita e diminui o custo — o lucro sobe dos dois
+lados. O ponto de maximização de lucro sempre ocorre onde a demanda é
+elástica (<span class="math inline">\(|\varepsilon_D| \geq
+1\)</span>).</p>
 </div>
-<pre><code>O *surge pricing* da Uber é uma forma de discriminação de preços que varia conforme o **momento** (pico de demanda). Economicamente, aproxima-se de uma discriminação de 3.° grau com segmentação temporal.</code></pre>
 <hr />
-<h2 id="gráfico-interativo-monopólio">Gráfico interativo: monopólio</h2>
-<div id="graph-monopolio" style="min-height: 450px;">
-<iframe src="../../graficos/cap14/monopolio.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
+<h2 id="decisão-de-operar-ou-fechar">2. Decisão de operar ou fechar</h2>
+<p>Mesmo com <span class="math inline">\(P = CMg\)</span>, a firma pode
+ter <strong>prejuízo</strong> (<span class="math inline">\(\pi &lt;
+0\)</span>). No curto prazo, o custo fixo é irrecuperável
+(<em>sunk</em>), então a firma compara:</p>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produzir <span class="math inline">\(q^*\)</span></td>
+<td><span class="math inline">\(\pi = Pq^* - CV(q^*) - CF\)</span></td>
+</tr>
+<tr>
+<td>Fechar (<span class="math inline">\(q = 0\)</span>)</td>
+<td><span class="math inline">\(\pi = -CF\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Produzir é melhor se <span class="math inline">\(Pq^* - CV(q^*) &gt;
+0\)</span>, ou seja:</p>
+<p><span class="math display">\[\boxed{P \geq CVMe_{\min}}\]</span></p>
+<p>Se <span class="math inline">\(P &lt; CVMe_{\min}\)</span>, a firma
+fecha no curto prazo (produz <span class="math inline">\(q =
+0\)</span>).</p>
+<hr />
+<h2 id="curva-de-oferta-de-curto-prazo">3. Curva de oferta de curto
+prazo</h2>
+<p>Combinando as condições de ótimo e fechamento:</p>
+<p><span class="math display">\[q^S(P) = \begin{cases} CMg^{-1}(P) &amp;
+\text{se } P \geq CVMe_{\min} \\ 0 &amp; \text{se } P &lt; CVMe_{\min}
+\end{cases}\]</span></p>
+<p>A curva de oferta individual é o trecho da curva de CMg
+<strong>acima</strong> do ponto mínimo do CVMe. Para preços entre <span
+class="math inline">\(CVMe_{\min}\)</span> e <span
+class="math inline">\(CMe_{\min}\)</span>, a firma opera com prejuízo
+mas cobre parte dos custos fixos.</p>
+<hr />
+<h2 id="excedente-do-produtor">4. Excedente do produtor</h2>
+<p>O <strong>excedente do produtor</strong> (EP) mede o ganho da firma
+acima do mínimo necessário para induzi-la a produzir:</p>
+<p><span class="math display">\[EP = RT - CV = Pq^* - \int_0^{q^*}
+CMg(q)\,dq\]</span></p>
+<p>Graficamente, é a área entre a linha de preço e a curva de oferta
+(CMg). Note que <span class="math inline">\(EP = \pi + CF\)</span>: o
+excedente do produtor inclui o lucro econômico mais os custos fixos.</p>
+<hr />
+<h2 id="demanda-condicionada-vs.-incondicional-por-fatores">5. Demanda
+condicionada vs. incondicional por fatores</h2>
+<p><strong>Demanda condicional</strong> <span
+class="math inline">\(L^c(w,v,q)\)</span>: minimiza o custo para
+produzir <span class="math inline">\(q\)</span> dado (problema de
+minimização de custos).</p>
+<p><strong>Demanda incondicional</strong> <span
+class="math inline">\(L^*(P,w,v)\)</span>: maximiza o lucro escolhendo
+tanto <span class="math inline">\(q\)</span> quanto <span
+class="math inline">\(L\)</span> (problema de maximização de lucro).</p>
+<p>A relação: <span class="math inline">\(L^*(P,w,v) = L^c\big(w, v,
+q^*(P,w,v)\big)\)</span>.</p>
+<h3 id="decomposição-efeito-substituição-efeito-produto">Decomposição:
+efeito substituição + efeito produto</h3>
+<p>Quando <span class="math inline">\(w\)</span> aumenta:</p>
+<p><span class="math display">\[\underbrace{\frac{\partial L^*}{\partial
+w}}_{\text{efeito total}} = \underbrace{\frac{\partial L^c}{\partial
+w}\bigg|_{q=q^*}}_{\text{efeito substituição (}\leq 0\text{)}} +
+\underbrace{\frac{\partial L^c}{\partial q}\cdot\frac{\partial
+q^*}{\partial w}}_{\text{efeito produto (}\leq 0\text{)}}\]</span></p>
+<ul>
+<li><strong>Efeito substituição</strong> (<span
+class="math inline">\(\leq 0\)</span>): salário mais alto leva a
+substituir trabalho por capital, mantendo <span
+class="math inline">\(q\)</span> fixo</li>
+<li><strong>Efeito produto</strong> (<span class="math inline">\(\leq
+0\)</span>): custo mais alto reduz a produção ótima, que reduz a demanda
+por trabalho</li>
+</ul>
+<p>Ambos vão na mesma direção: a demanda incondicional é mais elástica
+que a condicional.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Essa decomposição é análoga à de Slutsky para o
+consumidor.</strong> Lá, o efeito preço se decompunha em efeito
+substituição (ao longo da curva de indiferença) e efeito renda. Aqui,
+temos substituição (ao longo da isoquanta) e efeito produto (mudança no
+nível ótimo de produção). A simetria entre as duas teorias é uma das
+belezas da microeconomia.</p>
+</div>
+<hr />
+<h2 id="gráfico-interativo-receita-marginal">Gráfico interativo: receita
+marginal</h2>
+<div id="graph-rmg" style="min-height: 450px;">
+<iframe src="graficos/cap12/receita-marginal.html">
 </iframe>
 </div>
 <div class="admonition tip">
@@ -223,119 +204,94 @@ segmentação temporal.</p>
 Explore o gráfico
 </div>
 <ul>
-<li>Observe como <span class="math inline">\(\text{RMg}\)</span> fica
-abaixo da demanda</li>
-<li>Mova os parâmetros de custo e veja como <span
-class="math inline">\(q^*\)</span> e <span
-class="math inline">\(P^*\)</span> se ajustam</li>
-<li>Identifique visualmente o triângulo de peso morto</li>
+<li>Observe como a RMg está sempre abaixo da curva de demanda</li>
+<li>Identifique o ponto onde <span class="math inline">\(RMg =
+0\)</span> (elasticidade unitária) e a RT máxima</li>
+<li>Note que a firma nunca produz na faixa onde <span
+class="math inline">\(RMg &lt; 0\)</span></li>
 </ul>
 </div>
-<pre><code>- Observe como $\text{RMg}$ fica abaixo da demanda
-- Mova os parâmetros de custo e veja como $q^*$ e $P^*$ se ajustam
-- Identifique visualmente o triângulo de peso morto</code></pre>
 <hr />
-<h2 id="box-intuição-do-poder-de-mercado">Box: Intuição do poder de
-mercado</h2>
-<div class="admonition note">
+<h2 id="gráfico-interativo-curva-de-oferta-e-fechamento">Gráfico
+interativo: curva de oferta e fechamento</h2>
+<div id="graph-oferta" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html">
+</iframe>
+</div>
+<div class="admonition tip">
 <div class="admonition-title">
-Intuição Econômica
+Explore o gráfico
 </div>
-<p><strong>Por que o monopolista cobra mais e produz menos?</strong></p>
-<p>O monopolista enfrenta um <em>trade-off</em> ao vender uma unidade
-adicional: ganha a receita daquela unidade, mas precisa <strong>baixar o
-preço de todas as unidades anteriores</strong> (efeito preço). Esse
-custo implícito faz com que <span class="math inline">\(\text{RMg} &lt;
-P\)</span>, e a firma para de produzir antes do ponto competitivo.</p>
-<p>A fórmula <span class="math inline">\(L = 1/|\varepsilon_d|\)</span>
-revela: quanto menos elástica a demanda (consumidores sem alternativas),
-maior o poder de mercado. Políticas antitruste buscam justamente
-aumentar <span class="math inline">\(|\varepsilon_d|\)</span> — abrindo
-mercados, reduzindo barreiras.</p>
+<ul>
+<li>Reduza o preço abaixo do CVMe mínimo e veja a firma fechar</li>
+<li>Identifique a faixa de preços onde a firma opera com prejuízo mas
+não fecha</li>
+<li>Observe a área do excedente do produtor para diferentes preços</li>
+</ul>
 </div>
-<pre><code>**Por que o monopolista cobra mais e produz menos?**
-
-O monopolista enfrenta um *trade-off* ao vender uma unidade adicional: ganha a receita daquela unidade, mas precisa **baixar o preço de todas as unidades anteriores** (efeito preço). Esse custo implícito faz com que $\text{RMg} &lt; P$, e a firma para de produzir antes do ponto competitivo.
-
-A fórmula $L = 1/|\varepsilon_d|$ revela: quanto menos elástica a demanda (consumidores sem alternativas), maior o poder de mercado. Políticas antitruste buscam justamente aumentar $|\varepsilon_d|$ — abrindo mercados, reduzindo barreiras.</code></pre>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Um monopolista enfrenta <span
-class="math inline">\(P = 200 - 5q\)</span> e tem <span
-class="math inline">\(\text{CMg} = 20\)</span>. Encontre <span
-class="math inline">\(q^*\)</span>, <span
-class="math inline">\(P^*\)</span> e o índice de Lerner.
+<p><strong>Exercício 1.</strong> Uma firma enfrenta demanda <span
+class="math inline">\(P = 100 - 2q\)</span>. Encontre a função de
+receita marginal e determine para qual <span
+class="math inline">\(q\)</span> a receita total é máxima.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\text{RMg} = 200 - 10q = 20 =
-\text{CMg}\)</span></p>
-<p><span class="math inline">\(10q = 180 \implies q^* = 18\)</span></p>
-<p><span class="math inline">\(P^* = 200 - 90 = 110\)</span></p>
-<p><span class="math inline">\(L = \frac{110 - 20}{110} = \frac{90}{110}
-\approx 0{,}818\)</span></p>
-<p>O monopolista tem alto poder de mercado — o preço está 82% acima do
-custo marginal.</p>
+<p><span class="math inline">\(RT = Pq = 100q - 2q^2\)</span>. <span
+class="math inline">\(RMg = 100 - 4q\)</span>.</p>
+<p><span class="math inline">\(RT\)</span> máxima quando <span
+class="math inline">\(RMg = 0\)</span>: <span class="math inline">\(q =
+25\)</span>. <span class="math inline">\(RT(25) = 1.250\)</span>.</p>
+<p>No ponto <span class="math inline">\(q = 25\)</span>: <span
+class="math inline">\(P = 50\)</span> e <span
+class="math inline">\(\varepsilon_D = -P/(dP/dq \cdot q) = -50/(2 \times
+25) = -1\)</span> (elasticidade unitária).</p>
 </div>
 </details>
-<pre><code>$\text{RMg} = 200 - 10q = 20 = \text{CMg}$
-
-$10q = 180 \implies q^* = 18$
-
-$P^* = 200 - 90 = 110$
-
-$L = \frac{110 - 20}{110} = \frac{90}{110} \approx 0{,}818$
-
-O monopolista tem alto poder de mercado — o preço está 82% acima do custo marginal.</code></pre>
-<strong>Exercício 2.</strong> Explique por que a discriminação de preços
-de 1.° grau elimina o peso morto, mas não é eficiente no sentido de
-equidade.
+<p><strong>Exercício 2.</strong> Uma firma competitiva tem <span
+class="math inline">\(C(q) = q^3 - 4q^2 + 8q + 5\)</span>. Encontre o
+preço mínimo de operação e a curva de oferta.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Na discriminação perfeita, cada consumidor paga exatamente sua
-disposição a pagar. Isso faz com que o monopolista produza <span
-class="math inline">\(q_c\)</span> (a quantidade competitiva),
-eliminando o DWL. Toda transação com benefício líquido positivo
-ocorre.</p>
-<p>Contudo, <strong>todo o excedente</strong> vai para o produtor — o
-excedente do consumidor é zero. Embora seja eficiente no sentido de
-Pareto (ninguém pode melhorar sem piorar outro), a distribuição é
-extremamente desigual.</p>
+<p><span class="math inline">\(CV = q^3 - 4q^2 + 8q\)</span>. <span
+class="math inline">\(CVMe = q^2 - 4q + 8\)</span>.</p>
+<p>Mínimo: <span class="math inline">\(2q - 4 = 0 \implies q =
+2\)</span>. <span class="math inline">\(CVMe(2) = 4 - 8 + 8 =
+4\)</span>.</p>
+<p>Verificação: <span class="math inline">\(CMg = 3q^2 - 8q +
+8\)</span>. <span class="math inline">\(CMg(2) = 12 - 16 + 8 = 4 =
+CVMe(2)\)</span>.</p>
+<p>Preço mínimo de operação: <span class="math inline">\(P =
+4\)</span>.</p>
+<p>Oferta: <span class="math inline">\(P = 3q^2 - 8q + 8\)</span> para
+<span class="math inline">\(P \geq 4\)</span>, i.e., <span
+class="math inline">\(q = \frac{8 + \sqrt{12P - 32}}{6}\)</span>.</p>
 </div>
 </details>
-<pre><code>Na discriminação perfeita, cada consumidor paga exatamente sua disposição a pagar. Isso faz com que o monopolista produza $q_c$ (a quantidade competitiva), eliminando o DWL. Toda transação com benefício líquido positivo ocorre.
-
-Contudo, **todo o excedente** vai para o produtor — o excedente do consumidor é zero. Embora seja eficiente no sentido de Pareto (ninguém pode melhorar sem piorar outro), a distribuição é extremamente desigual.</code></pre>
-<strong>Exercício 3.</strong> Um monopolista serve dois mercados com
-demandas <span class="math inline">\(P_1 = 80 - q_1\)</span> e <span
-class="math inline">\(P_2 = 60 - 2q_2\)</span>, com <span
-class="math inline">\(\text{CMg} = 10\)</span> constante. Calcule preço
-e quantidade em cada mercado sob discriminação de 3.° grau.
+<p><strong>Exercício 3.</strong> Explique por que a demanda
+incondicional por trabalho é mais elástica que a condicional.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><strong>Mercado 1:</strong> <span class="math inline">\(\text{RMg}_1
-= 80 - 2q_1 = 10 \implies q_1^* = 35\)</span>, <span
-class="math inline">\(P_1^* = 45\)</span></p>
-<p><strong>Mercado 2:</strong> <span class="math inline">\(\text{RMg}_2
-= 60 - 4q_2 = 10 \implies q_2^* = 12{,}5\)</span>, <span
-class="math inline">\(P_2^* = 35\)</span></p>
-<p>O mercado com demanda mais inelástica (mercado 1) recebe o preço mais
-alto.</p>
+<p>A demanda condicional captura apenas o <strong>efeito
+substituição</strong>: quando <span class="math inline">\(w\)</span>
+sobe, a firma substitui trabalho por capital mantendo <span
+class="math inline">\(q\)</span> fixo. A demanda incondicional captura
+adicionalmente o <strong>efeito produto</strong>: o custo mais alto
+reduz <span class="math inline">\(q^*\)</span>, o que reduz ainda mais a
+demanda por trabalho. Como ambos os efeitos são negativos, <span
+class="math inline">\(|\partial L^*/\partial w| &gt; |\partial
+L^c/\partial w|\)</span>.</p>
 </div>
 </details>
-<pre><code>**Mercado 1:** $\text{RMg}_1 = 80 - 2q_1 = 10 \implies q_1^* = 35$, $P_1^* = 45$
-
-**Mercado 2:** $\text{RMg}_2 = 60 - 4q_2 = 10 \implies q_2^* = 12{,}5$, $P_2^* = 35$
-
-O mercado com demanda mais inelástica (mercado 1) recebe o preço mais alto.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -345,213 +301,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. A receita marginal é negativa quando a demanda é:</div>
+<div class="quiz-option" data-value="a">(a) Elástica ($|\varepsilon| > 1$)</div>
+<div class="quiz-option" data-value="b">(b) Unitária ($|\varepsilon| = 1$)</div>
+<div class="quiz-option" data-value="c">(c) Inelástica ($|\varepsilon| < 1$)</div>
+<div class="quiz-option" data-value="d">(d) Perfeitamente elástica</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. Uma firma deve fechar no curto prazo quando:</div>
+<div class="quiz-option" data-value="a">(a) O lucro econômico é negativo</div>
+<div class="quiz-option" data-value="b">(b) $P < CMe_{\min}$</div>
+<div class="quiz-option" data-value="c">(c) $P < CVMe_{\min}$</div>
+<div class="quiz-option" data-value="d">(d) $P < CMg$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. A receita marginal do monopolista é menor que o preço porque:
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. A curva de oferta individual de curto prazo é:</div>
+<div class="quiz-option" data-value="a">(a) A curva de CMg inteira</div>
+<div class="quiz-option" data-value="b">(b) O trecho do CMg acima do CVMe mínimo</div>
+<div class="quiz-option" data-value="c">(c) O trecho do CMg acima do CMe mínimo</div>
+<div class="quiz-option" data-value="d">(d) A curva de CMe</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O custo marginal é crescente
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Para vender mais uma unidade, ele precisa reduzir o preço de todas
-as unidades
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>A demanda é perfeitamente elástica
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O monopolista tem custos fixos elevados
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="a">
-<div class="q-text">
-Q2. O índice de Lerner de uma firma competitiva é:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Zero
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>1
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Depende da elasticidade
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Igual a <span class="math inline">\(1/|\varepsilon_d|\)</span>, mas
-positivo
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="c">
-<div class="q-text">
-Q3. Um monopolista enfrenta demanda com <span
-class="math inline">\(|\varepsilon_d| = 0{,}5\)</span>. Ele deve:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Manter a produção, pois está maximizando lucro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Aumentar a produção para ganhar escala
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Reduzir a produção para alcançar a região elástica
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Sair do mercado
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="c">
-<div class="q-text">
-Q4. Qual tipo de discriminação de preços o programa de meia-entrada
-brasileiro exemplifica?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>1.° grau
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>2.° grau
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>3.° grau
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Tarifa em duas partes
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. O excedente do produtor é igual a:</div>
+<div class="quiz-option" data-value="a">(a) Lucro econômico</div>
+<div class="quiz-option" data-value="b">(b) Lucro econômico mais custos fixos</div>
+<div class="quiz-option" data-value="c">(c) Receita total menos custo total</div>
+<div class="quiz-option" data-value="d">(d) Custo fixo</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “O peso morto do monopólio surge porque o monopolista produz
-mais do que o socialmente ótimo.”
+<div class="q-text">Q5. O efeito produto na demanda por trabalho é:</div>
+<div class="quiz-option" data-value="a">(a) Positivo (aumento de $w$ aumenta $L$)</div>
+<div class="quiz-option" data-value="b">(b) Negativo (aumento de $w$ eleva custos, reduz $q^*$ e $L$)</div>
+<div class="quiz-option" data-value="c">(c) Zero</div>
+<div class="quiz-option" data-value="d">(d) Ambíguo em sinal</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — o monopolista produz menos do que o socialmente ótimo
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-21')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 21</strong>: Derivação formal do equilíbrio de monopólio +
-análise de bem-estar com exercícios guiados. Traga calculadora!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 21**: Derivação formal do equilíbrio de monopólio + análise de bem-estar com exercícios guiados. Traga calculadora!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p><strong>Aula 22</strong>: Concorrência perfeita e bem-estar —
+equilíbrio marshalliano, excedentes e o Primeiro Teorema do Bem-Estar.
+Revise soma horizontal de curvas de oferta!</p>
 </div>
 
 </div>
@@ -562,7 +364,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-21');
 MicroQuiz.init('aula-21');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

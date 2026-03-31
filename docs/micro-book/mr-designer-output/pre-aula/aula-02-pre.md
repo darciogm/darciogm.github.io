@@ -1,81 +1,123 @@
-# Pré-Aula 02 — Oficina de Otimização (Prática)
+# Pré-Aula 02 — Restrição Orçamentária
 
 !!! info "Leitura obrigatória"
-    **Cap. 2, Seções 2.5–2.7** (teorema do envelope, elasticidade, homogeneidade) + Rever soluções do PS0 | Tempo estimado: **40 min**
+    **Cap. 4, Seções 4.1–4.2** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Aplicar o teorema do envelope para avaliar impactos de mudanças paramétricas
-2. Calcular elasticidades e verificar grau de homogeneidade
-3. Identificar e corrigir erros comuns na resolução de Lagrangianos
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Representar graficamente o conjunto orçamentário e a reta orçamentária
+2. Interpretar a inclinação da reta orçamentária como a razão de preços (custo de oportunidade)
+3. Analisar como mudanças na renda e nos preços alteram o conjunto de escolhas do consumidor
 
 ---
 
-## 1. Teorema do Envelope
+## 1. O problema do consumidor: visão geral
 
-Suponha que resolvemos $\max_x f(x; a)$ sujeito a alguma restrição, onde $a$ é um parâmetro. O valor ótimo é $V(a) = f(x^*(a); a)$.
+O consumidor deseja escolher a melhor cesta de bens que pode pagar. Isso envolve dois ingredientes:
 
-**Teorema do Envelope:**
+- **Preferências** (o que ele quer) — estudaremos nas Aulas 03–04
+- **Restrição orçamentária** (o que ele pode comprar) — o tema de hoje
 
-$$\frac{dV}{da} = \frac{\partial \mathcal{L}}{\partial a}\bigg|_{x^*, \lambda^*}$$
-
-> Para saber como o valor ótimo muda quando $a$ muda, basta derivar o Lagrangiano em relação a $a$ **no ponto ótimo** — sem precisar re-resolver o problema!
-
-!!! example "Aplicação"
-    No problema do consumidor, $V(I) = U(x^*(I), y^*(I))$.
-
-    Pelo envelope: $\frac{dV}{dI} = \lambda^*$
-
-    Se $\lambda^* = 0{,}05$, um aumento de R$ 1 na renda eleva a utilidade em ~0,05.
+Considere dois bens, $x_1$ e $x_2$, com preços $p_1 > 0$ e $p_2 > 0$. O consumidor tem renda monetária $I > 0$.
 
 ---
 
-## 2. Elasticidade
+## 2. A reta orçamentária
 
-A elasticidade mede a **sensibilidade percentual** de uma variável a outra:
+O gasto total não pode exceder a renda:
 
-$$\varepsilon_{x,p} = \frac{\partial x}{\partial p} \cdot \frac{p}{x} = \frac{\% \Delta x}{\% \Delta p}$$
+$$p_1 x_1 + p_2 x_2 \leq I$$
 
-| Valor | Classificação |
-|:---:|:---|
-| $|\varepsilon| = 0$ | Perfeitamente inelástica |
-| $0 < |\varepsilon| < 1$ | Inelástica |
-| $|\varepsilon| = 1$ | Elasticidade unitária |
-| $|\varepsilon| > 1$ | Elástica |
-| $|\varepsilon| = \infty$ | Perfeitamente elástica |
+O **conjunto orçamentário** $B$ é o conjunto de todas as cestas acessíveis:
 
----
+$$B = \{(x_1, x_2) \in \mathbb{R}^2_+ : p_1 x_1 + p_2 x_2 \leq I\}$$
 
-## 3. Homogeneidade
+A **reta orçamentária** é a fronteira desse conjunto, onde o consumidor gasta toda a renda:
 
-Uma função $f(x,y)$ é **homogênea de grau $k$** se:
+$$p_1 x_1 + p_2 x_2 = I$$
 
-$$f(tx, ty) = t^k \cdot f(x,y) \quad \forall t > 0$$
+Isolando $x_2$:
 
-**Teorema de Euler:** Se $f$ é homogênea de grau $k$:
-
-$$x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = k \cdot f(x,y)$$
+$$x_2 = \frac{I}{p_2} - \frac{p_1}{p_2} x_1$$
 
 !!! note "Intuição Econômica"
-    A demanda Marshalliana é homogênea de grau **zero** em preços e renda: $x^*(tp_x, tp_y, tI) = x^*(p_x, p_y, I)$.
+    A inclinação da reta orçamentária é $-p_1/p_2$. Ela mede o **custo de oportunidade** do bem 1 em termos do bem 2: para comprar uma unidade adicional de $x_1$, o consumidor precisa abrir mão de $p_1/p_2$ unidades de $x_2$.
 
-    Significado: se todos os preços e a renda dobram, as quantidades demandadas **não mudam**. Não há ilusão monetária!
+### Interceptos
+
+- Intercepto vertical: $x_2 = I/p_2$ (gastando tudo em $x_2$)
+- Intercepto horizontal: $x_1 = I/p_1$ (gastando tudo em $x_1$)
+
+## Gráfico interativo: Restrição Orçamentária
+
+<iframe src="graficos/cap04/restricao-orcamentaria.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Use os controles para alterar $p_1$, $p_2$ e $I$. Observe como a reta orçamentária se desloca (mudanças de renda) ou rotaciona (mudanças de preço). A área sombreada é o conjunto orçamentário.
 
 ---
 
-## Preparação para a oficina
+## 3. Mudanças na renda e nos preços
 
-A Aula 02 será uma **oficina prática** com:
+### 3.1 Aumento de renda ($I \to I'$, com $I' > I$)
 
-- **Think-Pair-Share**: resolver problemas do PS0 que geraram mais dúvidas
-- **Gallery Walk**: 4 estações com problemas de Lagrangiano diferentes
-- **Desafio cronometrado**: 3 problemas em 15 minutos — ranking ao vivo!
+A reta se desloca paralelamente para fora. A inclinação $-p_1/p_2$ não muda, pois os preços relativos permanecem os mesmos. O consumidor pode comprar mais de ambos os bens.
 
-### Para se preparar:
+### 3.2 Aumento no preço de $x_1$ ($p_1 \to p_1'$, com $p_1' > p_1$)
 
-1. Revise as soluções do **Problem Set 0**
-2. Identifique **2 dúvidas** que teve ao resolver
-3. Pratique montar o Lagrangiano rapidamente (objetivo: < 2 minutos por problema)
+O intercepto horizontal encolhe para $I/p_1'$, mas o intercepto vertical permanece $I/p_2$. A reta rotaciona em torno do intercepto vertical, tornando-se mais inclinada:
+
+$$\text{Nova inclinação: } -\frac{p_1'}{p_2} \quad (\text{mais íngreme em valor absoluto})$$
+
+### 3.3 Variação proporcional de preços
+
+Se ambos os preços dobram ($p_1 \to 2p_1$, $p_2 \to 2p_2$), a reta orçamentária se contrai como se a renda caísse pela metade. Formalmente:
+
+$$2p_1 x_1 + 2p_2 x_2 = I \iff p_1 x_1 + p_2 x_2 = \frac{I}{2}$$
+
+Logo, apenas preços **relativos** e renda **real** importam.
+
+!!! note "Intuição Econômica"
+    Se todos os preços e a renda dobram simultaneamente, a reta orçamentária não muda. A restrição é **homogênea de grau zero** em $(p_1, p_2, I)$: $B(\lambda p_1, \lambda p_2, \lambda I) = B(p_1, p_2, I)$ para $\lambda > 0$.
+
+---
+
+## 4. Restrições não-lineares e extensões
+
+Nem sempre a restrição é linear. Exemplos comuns:
+
+- **Impostos por quantidade**: um imposto de $t$ por unidade sobre $x_1$ eleva o preço efetivo para $p_1 + t$, mantendo a linearidade mas mudando a inclinação.
+- **Racionamento**: se $x_1 \leq \bar{x}_1$, o conjunto orçamentário ganha uma "parede" vertical.
+- **Descontos por quantidade**: se o preço de $x_1$ cai para unidades acima de $\bar{x}_1$, a reta orçamentária apresenta uma **quebra** (kink), tornando o conjunto não-convexo.
+- **Dotações**: se o consumidor parte de uma dotação $(\omega_1, \omega_2)$ em vez de renda monetária, $I = p_1\omega_1 + p_2\omega_2$ e a reta orçamentária passa pelo ponto de dotação.
+
+## Gráfico interativo: Equilíbrio do Consumidor
+
+<iframe src="graficos/cap04/equilibrio-consumidor.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Observe como a curva de indiferença tangencia a reta orçamentária no ponto ótimo. Altere os parâmetros e veja como o equilíbrio se ajusta.
+
+---
+
+## Exercícios de preparação
+
+**Exercício 1.** Um consumidor tem renda $I = 120$, e os preços são $p_1 = 4$ e $p_2 = 6$. (a) Escreva a equação da reta orçamentária. (b) Calcule os interceptos. (c) Qual o custo de oportunidade de uma unidade de $x_1$?
+
+??? success "Solução"
+    (a) $4x_1 + 6x_2 = 120$, ou seja, $x_2 = 20 - \frac{2}{3}x_1$. (b) Intercepto horizontal: $x_1 = 120/4 = 30$. Intercepto vertical: $x_2 = 120/6 = 20$. (c) O custo de oportunidade é $p_1/p_2 = 4/6 = 2/3$ unidades de $x_2$ por unidade de $x_1$.
+
+**Exercício 2.** Com os dados do exercício anterior, o governo impõe um imposto de $t = 2$ por unidade de $x_1$. (a) Qual o novo preço efetivo de $x_1$? (b) Escreva a nova reta orçamentária. (c) O conjunto orçamentário aumentou ou diminuiu?
+
+??? success "Solução"
+    (a) Novo preço efetivo: $p_1 + t = 4 + 2 = 6$. (b) $6x_1 + 6x_2 = 120 \implies x_1 + x_2 = 20$. (c) Diminuiu — o novo intercepto horizontal é $120/6 = 20 < 30$, enquanto o vertical permanece 20. A área do conjunto orçamentário caiu de $\frac{1}{2}(30)(20) = 300$ para $\frac{1}{2}(20)(20) = 200$.
+
+**Exercício 3.** Mostre que a restrição orçamentária é homogênea de grau zero: se multiplicarmos $p_1$, $p_2$ e $I$ por $\lambda > 0$, o conjunto orçamentário não muda.
+
+??? success "Solução"
+    O conjunto orçamentário com preços $\lambda p_1$, $\lambda p_2$ e renda $\lambda I$ é $\{(x_1,x_2) : \lambda p_1 x_1 + \lambda p_2 x_2 \leq \lambda I\}$. Dividindo ambos os lados por $\lambda > 0$: $\{(x_1,x_2) : p_1 x_1 + p_2 x_2 \leq I\}$, que é idêntico ao conjunto original. $\blacksquare$
 
 ---
 
@@ -86,42 +128,44 @@ A Aula 02 será uma **oficina prática** com:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O que o teorema do envelope afirma sobre o valor ótimo de uma função?
+**Q1.** A inclinação da reta orçamentária $p_1x_1 + p_2x_2 = I$ é:
 
-- [x] (a) Sua sensibilidade a parâmetros pode ser calculada sem re-resolver o problema
-- [ ] (b) O valor ótimo é sempre crescente nos parâmetros
-- [ ] (c) O multiplicador de Lagrange é sempre positivo
-- [ ] (d) A CSO é automaticamente satisfeita
+- [ ] (a) $-I/p_1$
+- [x] (b) $-p_1/p_2$
+- [ ] (c) $-p_2/p_1$
+- [ ] (d) $-I/(p_1 p_2)$
 
-**Q2.** Se $f(tx, ty) = t^2 f(x,y)$, qual é o grau de homogeneidade de $f$?
+**Q2.** Se a renda do consumidor dobra e os preços não mudam, a reta orçamentária:
 
-- [ ] (a) 0
-- [ ] (b) 1
-- [x] (c) 2
-- [ ] (d) $1/2$
+- [ ] (a) Rotaciona em torno do intercepto vertical
+- [x] (b) Desloca-se paralelamente para fora
+- [ ] (c) Não muda
+- [ ] (d) Rotaciona em torno da origem
 
-**Q3.** Qual a elasticidade-preço da demanda se $Q = 100/P$?
+**Q3.** Se $p_1 = 5$ e $p_2 = 10$, o custo de oportunidade de uma unidade de $x_1$ em termos de $x_2$ é:
 
-- [x] (a) $-1$ (unitária)
-- [ ] (b) $-100$
-- [ ] (c) $0$
-- [ ] (d) $-P/100$
+- [ ] (a) 2
+- [x] (b) 0,5
+- [ ] (c) 5
+- [ ] (d) 10
 
-**Q4.** V/F: "No ótimo, o efeito de uma mudança no parâmetro sobre o valor da função objetivo pode ser calculado sem re-resolver o problema."
+**Q4.** Se todos os preços e a renda são multiplicados por 3, o conjunto orçamentário:
 
-- [x] (a) Verdadeiro — é exatamente o teorema do envelope
-- [ ] (b) Falso
+- [ ] (a) Triplica de tamanho
+- [ ] (b) Reduz a um terço
+- [x] (c) Permanece inalterado
+- [ ] (d) Depende dos valores iniciais
 
-**Q5.** O teorema de Euler para $f$ homogênea de grau $k$ afirma que:
+**Q5.** Um imposto de $t$ por unidade sobre o bem 1 equivale a:
 
-- [ ] (a) $f(tx, ty) = t^k$
-- [x] (b) $x f_x + y f_y = k f$
-- [ ] (c) $f_x + f_y = k$
-- [ ] (d) $\nabla f = k \cdot (x, y)$
+- [x] (a) Aumentar $p_1$ para $p_1 + t$, rotacionando a reta
+- [ ] (b) Reduzir a renda em $t$ unidades monetárias
+- [ ] (c) Deslocar a reta paralelamente para dentro
+- [ ] (d) Aumentar $p_2$ para $p_2 + t$
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 02**: Oficina prática com Gallery Walk + desafio cronometrado. Traga calculadora e disposição para competir!
+    **Aula 03**: Preferências e Axiomas — as propriedades fundamentais que descrevem os gostos do consumidor.

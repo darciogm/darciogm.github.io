@@ -1,158 +1,142 @@
-# Pré-Aula 06 — Dualidade: Hicksiana e Função Gasto (Prática)
+# Pré-Aula 06 — Minimização do Dispêndio e Demanda Hicksiana
 
 !!! info "Leitura obrigatória"
-    **Cap. 4, Seções 4.4–4.6** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 4, Seções 4.6–4.8** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Formular e resolver o problema dual do consumidor (minimização do gasto)
-2. Derivar a demanda Hicksiana e a função gasto, conectando-as ao primal via identidades de dualidade
-3. Aplicar a identidade de Roy e o lema de Shephard para obter demandas sem resolver novamente o Lagrangeano
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Formular o problema de minimização do dispêndio (dual do consumidor)
+2. Derivar demandas Hicksianas e a função dispêndio, enunciando o Lema de Shephard
+3. Relacionar as soluções primal e dual via dualidade $V \leftrightarrow E$
 
 ---
 
-## 1. O problema dual: minimização do gasto
+## 1. O problema dual: minimização do dispêndio
 
-Enquanto o problema primal maximiza utilidade dada a renda, o **dual** minimiza o gasto necessário para atingir um nível de utilidade alvo $\bar{U}$:
+Enquanto o problema **primal** maximiza utilidade dada a renda, o **dual** minimiza o gasto necessário para atingir um nível de utilidade $\bar{u}$:
 
-$$\min_{x,y} \ p_x x + p_y y \quad \text{s.a.} \quad U(x,y) \geq \bar{U}$$
+$$\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad u(x_1, x_2) \geq \bar{u}$$
 
-### Lagrangeano do dual
+### 1.1 Lagrangiano do dual
 
-$$\mathcal{L} = p_x x + p_y y - \mu\left(U(x,y) - \bar{U}\right)$$
+$$\mathcal{L} = p_1 x_1 + p_2 x_2 - \mu\big(u(x_1, x_2) - \bar{u}\big)$$
 
 CPOs:
 
-$$p_x = \mu \frac{\partial U}{\partial x}, \qquad p_y = \mu \frac{\partial U}{\partial y}, \qquad U(x,y) = \bar{U}$$
+$$p_1 = \mu \, u_1, \qquad p_2 = \mu \, u_2, \qquad u(x_1, x_2) = \bar{u}$$
 
-A condição de tangência é **a mesma**: $\text{TMS} = p_x / p_y$. Apenas o que é fixo muda (renda no primal, utilidade no dual).
+Dividindo as duas primeiras:
 
----
+$$\frac{p_1}{p_2} = \frac{u_1}{u_2} = \text{TMS}_{12}$$
 
-## 2. Demanda Hicksiana (compensada)
-
-A solução do dual gera a **demanda Hicksiana** (ou compensada):
-
-$$h_x(p_x, p_y, \bar{U}) \qquad h_y(p_x, p_y, \bar{U})$$
-
-Diferença fundamental em relação à Marshalliana:
-
-| | Marshalliana $x^*(p, m)$ | Hicksiana $h(p, \bar{U})$ |
-|:---|:---|:---|
-| **Fixa** | Renda $m$ | Utilidade $\bar{U}$ |
-| **Mede** | Efeito total do preço | Efeito substituição puro |
-| **Observável?** | Sim (dados de mercado) | Não diretamente |
+A condição de tangência é **idêntica** à do primal! A diferença está em qual restrição é usada para fechar o sistema.
 
 !!! note "Intuição Econômica"
-    **Por que precisamos da Hicksiana se não a observamos?**
-
-    Porque ela isola o **efeito substituição** puro — a resposta do consumidor a preços mantendo o bem-estar constante. Isso é essencial para política pública: quando o governo taxa um bem, quanto da redução de consumo vem da mudança de preços relativos (substituição) e quanto vem da perda de poder de compra (renda)? A Hicksiana responde à primeira pergunta.
+    Primal e dual são dois lados da mesma moeda. No primal, o consumidor fica na reta orçamentária e sobe para a curva de indiferença mais alta. No dual, ele fica na curva de indiferença e desce para a reta de isocusto mais baixa. O ponto ótimo é o mesmo.
 
 ---
 
-## 3. Função gasto
+## 2. Demandas Hicksianas (compensadas)
 
-A **função gasto** é o valor ótimo do problema dual:
+As soluções do dual são as **demandas Hicksianas**:
 
-$$E(p_x, p_y, \bar{U}) = p_x h_x(p_x, p_y, \bar{U}) + p_y h_y(p_x, p_y, \bar{U})$$
+$$h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2$$
 
-Propriedades:
+Diferentemente das Marshallianas $x_i^M(p, I)$, as Hicksianas dependem de preços e do nível de utilidade (não da renda).
 
-1. **Crescente** em $p_x$, $p_y$ e $\bar{U}$
-2. **Homogênea de grau 1** em preços: $E(tp, \bar{U}) = t \cdot E(p, \bar{U})$
-3. **Côncava** em preços
+### Propriedades
 
-!!! example "Cobb-Douglas: $U = x^a y^{1-a}$"
-    Demandas Hicksianas:
+1. **HOD0 em preços**: $h_i(\lambda p, \bar{u}) = h_i(p, \bar{u})$
+2. **Lei da demanda compensada**: $\partial h_i / \partial p_i \leq 0$ — sempre! (Não há exceção Giffen)
+3. **Simetria**: $\partial h_i / \partial p_j = \partial h_j / \partial p_i$ (Teorema de Slutsky)
 
-    $h_x = \bar{U} \left(\frac{(1-a)p_x}{a \, p_y}\right)^{-(1-a)}$
+## Gráfico interativo: Dualidade Primal-Dual
 
-    $h_y = \bar{U} \left(\frac{a \, p_y}{(1-a)p_x}\right)^{-a}$
-
-    Função gasto:
-
-    $E(p_x, p_y, \bar{U}) = \bar{U} \left(\frac{p_x}{a}\right)^a \left(\frac{p_y}{1-a}\right)^{1-a}$
-
----
-
-## 4. Identidades de dualidade
-
-O primal e o dual são **dois lados da mesma moeda**. As conexões fundamentais são:
-
-$$h_x(p, \bar{U}) = x^*(p, E(p, \bar{U}))$$
-
-$$x^*(p, m) = h_x(p, V(p, m))$$
-
-$$E(p, V(p, m)) = m \qquad \text{e} \qquad V(p, E(p, \bar{U})) = \bar{U}$$
-
-> Tradução: se você fixar a utilidade no nível que o consumidor atinge com renda $m$, a Hicksiana coincide com a Marshalliana.
-
----
-
-## 5. Atalhos poderosos
-
-### Lema de Shephard
-
-$$h_x(p, \bar{U}) = \frac{\partial E(p, \bar{U})}{\partial p_x}$$
-
-> "A derivada da função gasto em relação ao preço dá diretamente a demanda Hicksiana."
-
-### Identidade de Roy
-
-$$x^*(p, m) = -\frac{\partial V / \partial p_x}{\partial V / \partial m}$$
-
-> "A derivada da utilidade indireta em relação ao preço, dividida pela derivada em relação à renda (com sinal negativo), dá a demanda Marshalliana."
-
-!!! tip "Quando usar cada atalho"
-    - Tem a **função gasto** $E$? Use **Shephard** para obter Hicksianas.
-    - Tem a **utilidade indireta** $V$? Use **Roy** para obter Marshallianas.
-    - Evite resolver o Lagrangeano do zero quando já tem $V$ ou $E$!
-
----
-
-## Gráfico interativo: diagrama de dualidade
-
-<div id="graph-duality" style="min-height: 450px;">
-<iframe src="../../graficos/cap04/dualidade.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap04/dualidade.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Compare os problemas primal e dual lado a lado
-    - Observe como o ponto ótimo é o mesmo nos dois problemas
-    - Mude $\bar{U}$ no dual e veja como $E$ se ajusta
+    Visualize os dois problemas simultaneamente: a maximização de utilidade (primal) e a minimização do dispêndio (dual). Observe que o ponto ótimo é o mesmo, apenas a perspectiva muda.
+
+---
+
+## 3. Função dispêndio
+
+Substituindo as demandas Hicksianas na função objetivo:
+
+$$E(p_1, p_2, \bar{u}) = p_1 h_1(p, \bar{u}) + p_2 h_2(p, \bar{u})$$
+
+$E$ dá o **custo mínimo** para atingir utilidade $\bar{u}$ aos preços $p$.
+
+### Propriedades de $E$
+
+1. **Crescente** em cada $p_i$ e em $\bar{u}$
+2. **HOD1 em preços**: $E(\lambda p, \bar{u}) = \lambda E(p, \bar{u})$ — se preços dobram, o custo dobra
+3. **Côncava** em preços (importante para a equação de Slutsky)
+
+### Exemplo Cobb-Douglas
+
+Para $u = x_1^a x_2^{1-a}$:
+
+$$h_1 = \left(\frac{a}{1-a} \cdot \frac{p_2}{p_1}\right)^{1-a} \bar{u}, \qquad h_2 = \left(\frac{1-a}{a} \cdot \frac{p_1}{p_2}\right)^{a} \bar{u}$$
+
+$$E(p, \bar{u}) = \bar{u} \cdot \frac{p_1^a p_2^{1-a}}{a^a (1-a)^{1-a}}$$
+
+---
+
+## 4. Lema de Shephard
+
+$$h_i(p, \bar{u}) = \frac{\partial E(p, \bar{u})}{\partial p_i}$$
+
+!!! note "Intuição Econômica"
+    O Lema de Shephard é análogo à identidade de Roy, mas para o lado dual. Derivando a função dispêndio em relação ao preço de um bem, obtemos diretamente a demanda Hicksiana daquele bem. É uma aplicação do **Teorema do Envelope**: no ótimo, o efeito de uma mudança de parâmetro sobre o valor ótimo depende apenas do efeito direto.
+
+---
+
+## 5. Dualidade $V \leftrightarrow E$
+
+As funções $V$ (utilidade indireta) e $E$ (dispêndio) são **inversas** uma da outra:
+
+$$V(p, E(p, \bar{u})) = \bar{u} \qquad \text{e} \qquad E(p, V(p, I)) = I$$
+
+A primeira diz: se você dá ao consumidor exatamente a renda mínima para atingir $\bar{u}$, ele atinge exatamente $\bar{u}$.
+
+A segunda diz: o custo mínimo para atingir a utilidade que a renda $I$ proporciona é exatamente $I$.
+
+### Relação entre demandas
+
+No ponto inicial $(p, I)$, com $\bar{u} = V(p, I)$:
+
+$$x_i^M(p, I) = h_i(p, V(p, I))$$
+
+As demandas Marshalliana e Hicksiana coincidem quando a utilidade-alvo é a utilidade ótima do primal.
+
+## Gráfico interativo: Demandas Marshalliana e Hicksiana
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Varie o preço $p_1$ e compare as duas curvas de demanda. Para bens normais, a Marshalliana é mais elástica (mais horizontal) que a Hicksiana. Elas se cruzam no preço inicial.
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Para $U = x^{1/2} y^{1/2}$ com $p_x = 2$, $p_y = 8$, encontre as demandas Hicksianas e a função gasto para atingir $\bar{U} = 10$.
+**Exercício 1.** Para $u = x_1^{1/2} x_2^{1/2}$, derive as demandas Hicksianas resolvendo o problema de minimização do dispêndio. Verifique usando o Lema de Shephard.
 
 ??? success "Solução"
-    Tangência: $\frac{y}{x} = \frac{p_x}{p_y} = \frac{2}{8} = \frac{1}{4}$, logo $y = x/4$.
+    Tangência: $(1/2)(x_2/x_1) = p_1/p_2 \implies x_2 = (p_1/p_2)x_1$. Restrição: $x_1^{1/2}[(p_1/p_2)x_1]^{1/2} = \bar{u} \implies x_1(p_1/p_2)^{1/2} = \bar{u}$. Logo $h_1 = \bar{u}(p_2/p_1)^{1/2}$ e $h_2 = \bar{u}(p_1/p_2)^{1/2}$. Função dispêndio: $E = p_1 h_1 + p_2 h_2 = 2\bar{u}(p_1 p_2)^{1/2}$. Verificação: $\partial E/\partial p_1 = \bar{u}(p_2/p_1)^{1/2} = h_1$. $\checkmark$
 
-    Restrição: $x^{1/2}(x/4)^{1/2} = 10 \Rightarrow x \cdot \frac{1}{2} = 10 \Rightarrow x = 20$.
-
-    $h_x = 20, \quad h_y = 5$
-
-    $E = 2(20) + 8(5) = 40 + 40 = 80$
-
-**Exercício 2.** Verifique o lema de Shephard para o exercício anterior: calcule $\partial E / \partial p_x$ e confirme que é igual a $h_x$.
+**Exercício 2.** Verifique que $E(p, V(p, I)) = I$ para o caso Cobb-Douglas com $a = 1/2$.
 
 ??? success "Solução"
-    Para Cobb-Douglas com $a = 1/2$:
+    $V = (1/2)(1/2) \cdot I/(p_1^{1/2} p_2^{1/2}) = I/(2\sqrt{p_1 p_2})$. Então $E = 2\bar{u}\sqrt{p_1 p_2} = 2 \cdot \frac{I}{2\sqrt{p_1 p_2}} \cdot \sqrt{p_1 p_2} = I$. $\checkmark$
 
-    $E = \bar{U} \left(\frac{p_x}{1/2}\right)^{1/2}\left(\frac{p_y}{1/2}\right)^{1/2} = \bar{U} \cdot 2\sqrt{p_x}\cdot 2\sqrt{p_y} = 4\bar{U}\sqrt{p_x p_y}$
-
-    $\frac{\partial E}{\partial p_x} = 4\bar{U} \cdot \frac{\sqrt{p_y}}{2\sqrt{p_x}} = \frac{2\bar{U}\sqrt{p_y}}{\sqrt{p_x}}$
-
-    Com $p_x = 2$, $p_y = 8$, $\bar{U} = 10$: $\frac{2(10)\sqrt{8}}{\sqrt{2}} = 20 \cdot 2 = 40$... Verificando: na verdade, usando a fórmula geral $E = 2p_x^{1/2}p_y^{1/2}\bar{U}$:
-
-    $\frac{\partial E}{\partial p_x} = p_x^{-1/2}p_y^{1/2}\bar{U} = \frac{\sqrt{8}}{\sqrt{2}}\cdot 10 = 2 \cdot 10 = 20 = h_x$ ✓
-
-**Exercício 3.** Explique em palavras: por que $E(p, V(p,m)) = m$?
+**Exercício 3.** Explique intuitivamente por que $\partial h_i/\partial p_i \leq 0$ sempre (sem exceção Giffen), enquanto $\partial x_i^M/\partial p_i$ pode ser positivo.
 
 ??? success "Solução"
-    Se o consumidor tem renda $m$ e atinge utilidade $V(p,m)$, o gasto mínimo para atingir essa mesma utilidade é exatamente $m$. Gastar menos não seria suficiente (não atingiria $V$), e gastar mais seria desnecessário (já resolve o problema primal com $m$). A identidade diz que primal e dual são **consistentes**: a renda disponível é exatamente o gasto mínimo para o nível de utilidade que ela permite.
+    A Hicksiana mantém utilidade constante, isolando o **efeito substituição puro**: quando $p_i$ sobe, o consumidor substitui para bens mais baratos. Esse efeito é sempre negativo. A Marshalliana inclui também o **efeito renda**: o aumento de preço reduz poder de compra. Para bens inferiores, o efeito renda é positivo. Se superar o efeito substituição (caso Giffen), $\partial x_i^M/\partial p_i > 0$. A Hicksiana "neutraliza" o efeito renda por construção.
 
 ---
 
@@ -163,44 +147,44 @@ $$x^*(p, m) = -\frac{\partial V / \partial p_x}{\partial V / \partial m}$$
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O problema dual do consumidor é:
+**Q1.** O problema de minimização do dispêndio consiste em:
 
-- [ ] (a) Maximizar utilidade sujeito à restrição orçamentária
-- [x] (b) Minimizar gasto sujeito a atingir utilidade mínima $\bar{U}$
-- [ ] (c) Maximizar gasto sujeito à restrição de utilidade
-- [ ] (d) Minimizar utilidade sujeito à restrição orçamentária
+- [ ] (a) Maximizar utilidade sujeito ao orçamento
+- [x] (b) Minimizar gasto sujeito a um nível mínimo de utilidade
+- [ ] (c) Minimizar utilidade sujeito ao orçamento
+- [ ] (d) Maximizar gasto sujeito à utilidade
 
-**Q2.** A demanda Hicksiana difere da Marshalliana porque:
+**Q2.** O Lema de Shephard afirma que:
 
-- [ ] (a) Usa preços diferentes
-- [x] (b) Mantém utilidade constante em vez de renda
-- [ ] (c) Sempre é maior que a Marshalliana
-- [ ] (d) Não depende de preços
+- [x] (a) $h_i = \partial E / \partial p_i$
+- [ ] (b) $h_i = \partial V / \partial p_i$
+- [ ] (c) $x_i^M = \partial E / \partial p_i$
+- [ ] (d) $E = \partial h_i / \partial p_i$
 
-**Q3.** O lema de Shephard afirma que:
+**Q3.** A função dispêndio é homogênea de grau ___ em preços:
 
-- [ ] (a) $x^* = -\frac{\partial V}{\partial p_x} / \frac{\partial V}{\partial m}$
-- [x] (b) $h_x = \frac{\partial E}{\partial p_x}$
-- [ ] (c) $\lambda = \frac{\partial V}{\partial m}$
-- [ ] (d) $E = p_x h_x + p_y h_y$
-
-**Q4.** A função gasto é homogênea de grau ___ em preços:
-
-- [x] (a) 1
-- [ ] (b) 0
+- [ ] (a) 0
+- [x] (b) 1
 - [ ] (c) 2
 - [ ] (d) -1
 
-**Q5.** Se a utilidade indireta é $V = m / (2\sqrt{p_x p_y})$, a demanda Marshalliana de $x$ (por Roy) é:
+**Q4.** A demanda Hicksiana satisfaz $\partial h_i / \partial p_i \leq 0$ porque:
 
-- [x] (a) $m / (2p_x)$
-- [ ] (b) $m / (2p_y)$
-- [ ] (c) $2p_x / m$
-- [ ] (d) $\sqrt{p_y / p_x}$
+- [x] (a) Ela isola o efeito substituição, que é sempre negativo
+- [ ] (b) A função dispêndio é convexa
+- [ ] (c) Todos os bens são normais
+- [ ] (d) O multiplicador de Lagrange é positivo
+
+**Q5.** A relação $V(p, E(p, \bar{u})) = \bar{u}$ expressa:
+
+- [ ] (a) A Lei de Walras
+- [ ] (b) A identidade de Roy
+- [x] (c) A dualidade entre utilidade indireta e função dispêndio
+- [ ] (d) A homogeneidade das demandas
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 06**: Lab prático — resolver primal e dual lado a lado para CES, construir diagrama de dualidade e verificar identidades numericamente.
+    **Aula 07**: Dualidade na Teoria do Consumidor — o mapa completo primal-dual e as identidades fundamentais.

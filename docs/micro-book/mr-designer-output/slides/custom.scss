@@ -52,3 +52,31 @@ $presentation-h2-font-size: 1.3em;
 .reveal .mermaid {
   font-size: 0.7em;
 }
+
+/* JSXGraph inline graphs */
+.reveal .jxgbox {
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.reveal .graph-slider-row {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.75em;
+}
+
+.reveal .graph-slider-row input[type="range"] {
+  width: 300px;
+  accent-color: #C8102E;
+  vertical-align: middle;
+}
+
+.reveal .graph-slider-row label {
+  margin: 0 12px;
+}
+
+.reveal section .graph-container-inline {
+  overflow: visible;
+  max-height: 500px;
+}

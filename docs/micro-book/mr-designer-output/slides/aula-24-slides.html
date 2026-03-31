@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-24-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-24-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-24-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-24-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-24-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -175,7 +177,7 @@ Insper
 <h2>Estratégia Grim Trigger (Gatilho)</h2>
 <p><strong>Definição da estratégia:</strong></p>
 <blockquote>
-<p>“Coopero enquanto todos cooperam. Se alguém desviar, <strong>puno para sempre</strong> (jogo Cournot/Nash para sempre).”</p>
+<p>“Coopero enquanto todos cooperam. Se alguém desviar, <strong>puno para sempre</strong> (Nash reversion — Cournot para sempre).”</p>
 </blockquote>
 <div class="fragment">
 <p><strong>Payoffs no duopólio (<span class="math inline">\(P = 100 - Q\)</span>, <span class="math inline">\(c = 10\)</span>):</strong></p>
@@ -196,7 +198,7 @@ Insper
 <td style="text-align: center;"><span class="math inline">\(1139{,}1\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Punição (Cournot)</td>
+<td style="text-align: left;">Punição (Cournot-Nash)</td>
 <td style="text-align: center;"><span class="math inline">\(900\)</span></td>
 </tr>
 </tbody>
@@ -206,16 +208,31 @@ Insper
 <p><strong>O desvio vale a pena?</strong> Depende de <span class="math inline">\(\delta\)</span>:</p>
 <p><span class="math display">\[\underbrace{1139{,}1 + \frac{\delta}{1-\delta} \cdot 900}_{\text{Desviar}} \leq \underbrace{\frac{1}{1-\delta} \cdot 1012{,}5}_{\text{Cooperar}}\]</span></p>
 </div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p>O grim trigger é a punição mais severa possível: qualquer desvio resulta em reversão permanente ao equilíbrio de Nash.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="condição-para-colusão-sustentável" class="slide level2">
 <h2>Condição para Colusão Sustentável</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
+<div class="column" style="width:40%;">
 <p>Simplificando a desigualdade:</p>
-<p><span class="math display">\[\delta \geq \frac{\pi^{desvio} - \pi^{cartel}}{\pi^{desvio} - \pi^{Nash}}\]</span></p>
+<p><span class="math display">\[\delta \geq \delta^* = \frac{\pi^{desvio} - \pi^{cartel}}{\pi^{desvio} - \pi^{Nash}}\]</span></p>
 <p>. . .</p>
 <p><strong>Com nossos números:</strong></p>
-<p><span class="math display">\[\delta \geq \frac{1139{,}1 - 1012{,}5}{1139{,}1 - 900} = \frac{126{,}6}{239{,}1} \approx 0{,}53\]</span></p>
+<p><span class="math display">\[\delta^* = \frac{1139{,}1 - 1012{,}5}{1139{,}1 - 900} = \frac{126{,}6}{239{,}1} \approx 0{,}53\]</span></p>
 <p>. . .</p>
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -226,22 +243,109 @@ Insper
 <p><strong>Dica</strong></p>
 </div>
 <div class="callout-content">
-<p>Se as firmas são suficientemente <strong>pacientes</strong> (<span class="math inline">\(\delta &gt; 0{,}53\)</span>), a colusão tácita é sustentável como equilíbrio de Nash do jogo repetido.</p>
+<p>Se <span class="math inline">\(\delta &gt; 0{,}53\)</span>, a colusão tácita é sustentável como equilíbrio de Nash do jogo repetido.</p>
 </div>
 </div>
 </div>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap16/webr-colusao.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+</div><div class="column" style="width:60%;">
+<div id="graph-a24-collusion" style="width:640px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>δ: <span id="val-a24-delta">0.50</span></label> <input type="range" id="sl-a24-delta" min="0.1" max="0.99" step="0.01" value="0.5" oninput="window.updateA24Collusion(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a24-collusion', {
+    boundingbox: [-0.05, 1400, 1.05, 600],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: '\u03B4', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'V\u1D62', withLabel: true, label: { position: 'rt', offset: [-30, 0] } }
+    }
+  });
+
+  var piCartel = 1012.5;
+  var piDesvio = 1139.1;
+  var piNash = 900;
+  var deltaStar = (piDesvio - piCartel) / (piDesvio - piNash);
+
+  // Cooperation value: piCartel / (1 - delta)
+  var coopCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piCartel / (1 - d) : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  board.create('text', [0.75, piCartel / (1 - 0.75) + 35, 'V(cooperar)'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // Deviation value: piDesvio + delta/(1-delta)*piNash
+  var devCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piDesvio + (d / (1 - d)) * piNash : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  board.create('text', [0.75, piDesvio + (0.75 / (1 - 0.75)) * piNash + 35, 'V(desviar)'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Punishment value: piNash / (1-delta)
+  var punishCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piNash / (1 - d) : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#666', strokeWidth: 2, dash: 2 });
+
+  board.create('text', [0.75, piNash / (1 - 0.75) + 35, 'V(punição)'], {
+    fontSize: 11, color: '#666', fixed: true
+  });
+
+  // delta* vertical line
+  var deltaLine = board.create('line', [
+    [deltaStar, 0], [deltaStar, 1]
+  ], { strokeColor: '#388e3c', strokeWidth: 2, dash: 3, straightFirst: true, straightLast: true });
+
+  board.create('text', [deltaStar + 0.02, 680, '\u03B4* \u2248 0.53'], {
+    fontSize: 11, color: '#388e3c', fixed: true
+  });
+
+  // Current delta marker
+  var currentDelta = 0.5;
+
+  var marker = board.create('point', [
+    function() { return currentDelta; },
+    function() { return piCartel / (1 - currentDelta); }
+  ], { name: '', size: 5, fixed: true, color: '#ff8f00', strokeColor: '#ff8f00', fillColor: '#ff8f00' });
+
+  var statusText = board.create('text', [0.12, 1350, function() {
+    if (currentDelta >= deltaStar) {
+      return '\u03B4 = ' + currentDelta.toFixed(2) + ' \u2265 \u03B4* \u2192 Colusão SUSTENTÁVEL';
+    } else {
+      return '\u03B4 = ' + currentDelta.toFixed(2) + ' < \u03B4* \u2192 Colusão INSUSTENTÁVEL';
+    }
+  }], { fontSize: 13, fixed: true, color: function() { return currentDelta >= deltaStar ? '#388e3c' : '#C8102E'; } });
+
+  window.updateA24Collusion = function(val) {
+    currentDelta = parseFloat(val);
+    document.getElementById('val-a24-delta').textContent = currentDelta.toFixed(2);
+    board.update();
+  };
+})();
+</script>
 </div></div>
 </section>
 <section id="folk-theorem-muitos-equilíbrios-possíveis" class="slide level2">
 <h2>Folk Theorem: Muitos Equilíbrios Possíveis</h2>
-<p><strong>Teorema Folk:</strong> em jogos repetidos com <span class="math inline">\(\delta\)</span> suficientemente alto, <strong>qualquer</strong> payoff que domine o payoff de Nash pode ser sustentado como equilíbrio.</p>
+<p><strong>Teorema Folk:</strong> em jogos repetidos com <span class="math inline">\(\delta\)</span> suficientemente alto, <strong>qualquer</strong> payoff individualmente racional pode ser sustentado como equilíbrio de Nash.</p>
+<div class="fragment">
+<p><strong>Payoff individualmente racional:</strong> qualquer payoff que domine o payoff de minimax (o pior que o rival pode impor).</p>
+</div>
 <div class="fragment">
 <p><strong>Implicações:</strong></p>
 <ul>
-<li>Há <strong>infinitos</strong> equilíbrios possíveis (não só cartel e Cournot)</li>
+<li>Há <strong>infinitos</strong> equilíbrios possíveis (não apenas cartel ou Cournot)</li>
 <li>Qualquer divisão de mercado entre colusão total e Nash é sustentável</li>
 <li>A teoria não prevê <strong>qual</strong> equilíbrio será selecionado</li>
 </ul>
@@ -264,7 +368,7 @@ Insper
 </div>
 </div>
 <div class="fragment">
-<p><strong>Quanto mais firmas, mais difícil a colusão:</strong> o <span class="math inline">\(\delta\)</span> crítico cresce com <span class="math inline">\(N\)</span>.</p>
+<p><strong>Quanto mais firmas, mais difícil a colusão:</strong> o <span class="math inline">\(\delta^*\)</span> crítico cresce com <span class="math inline">\(N\)</span>.</p>
 </div>
 </section>
 <section id="concorrência-monopolística" class="slide level2">
@@ -314,6 +418,21 @@ Insper
 <div class="fragment">
 <p>Cada firma enfrenta uma demanda <strong>negativamente inclinada</strong> (poder de mercado limitado):</p>
 <p><span class="math display">\[P_i = P_i(q_i, \mathbf{p}_{-i})\]</span></p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Diferenciação de produto confere poder de mercado, mas a livre entrada limita os lucros no longo prazo.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="longo-prazo-lucro-zero-com-p-cmg" class="slide level2">
@@ -321,11 +440,13 @@ Insper
 <p><strong>Curto prazo:</strong> a firma monopolisticamente competitiva age como monopolista no seu nicho.</p>
 <p><span class="math display">\[RMg = CMg \implies P &gt; CMg, \quad \pi &gt; 0\]</span></p>
 <div class="fragment">
-<p><strong>Longo prazo:</strong> livre entrada atrai concorrentes → demanda individual se desloca para a esquerda até:</p>
+<p><strong>Longo prazo:</strong> livre entrada atrai concorrentes <span class="math inline">\(\to\)</span> demanda individual se desloca para a esquerda até:</p>
 <p><span class="math display">\[\pi = 0 \implies P = CMe\]</span></p>
 </div>
 <div class="fragment">
 <p><strong>Mas <span class="math inline">\(P &gt; CMg\)</span>!</strong> A firma opera com <strong>capacidade ociosa</strong> — produz menos que a escala eficiente.</p>
+</div>
+<div class="fragment">
 <div title="Custo da diferenciação">
 <div class="callout callout-important callout-titled callout-style-default">
 <div class="callout-body">
@@ -336,94 +457,131 @@ Insper
 <p><strong>Custo da diferenciação</strong></p>
 </div>
 <div class="callout-content">
-<p>O consumidor “paga” pela variedade: preço acima do CMg e firmas operando abaixo da escala ótima.</p>
+<p>O consumidor “paga” pela variedade: preço acima do CMg e firmas operando abaixo da escala ótima. O <strong>excesso de capacidade</strong> é o preço da variedade.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="teorema-do-excesso-de-capacidade" class="slide level2">
-<h2>Teorema do Excesso de Capacidade</h2>
-<p>No equilíbrio de longo prazo da concorrência monopolística:</p>
-<p><span class="math display">\[P = CMe &gt; CMg = CMe_{\min}\]</span></p>
-<div class="fragment">
-<p><strong>Excesso de capacidade:</strong> <span class="math inline">\(Q_{\text{firma}} &lt; Q_{\text{escala eficiente}}\)</span>.</p>
-</div>
-<div class="fragment">
-<p><strong>Comparação visual:</strong></p>
-<table class="caption-top">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;"></th>
-<th style="text-align: left;">Conc. Perfeita (LP)</th>
-<th style="text-align: left;">Conc. Monopolística (LP)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Preço</td>
-<td style="text-align: left;"><span class="math inline">\(P = CMg = CMe_{\min}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(P = CMe &gt; CMg\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Lucro</td>
-<td style="text-align: left;">Zero</td>
-<td style="text-align: left;">Zero</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Eficiência produtiva</td>
-<td style="text-align: left;">Sim (<span class="math inline">\(CMe_{\min}\)</span>)</td>
-<td style="text-align: left;">Não (excesso de capacidade)</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Eficiência alocativa</td>
-<td style="text-align: left;">Sim (<span class="math inline">\(P = CMg\)</span>)</td>
-<td style="text-align: left;">Não (<span class="math inline">\(P &gt; CMg\)</span>)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Nota</strong></p>
-</div>
-<div class="callout-content">
-<p>O excesso de capacidade é o “preço” da <strong>variedade</strong> — e consumidores frequentemente preferem variedade a preço mínimo.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="convergência-cournot-com-n-firmas-competição-perfeita" class="slide level2">
-<h2>Convergência: Cournot com <span class="math inline">\(N\)</span> Firmas → Competição Perfeita</h2>
+<section id="convergência-cournot-n-firmas-to-competição-perfeita" class="slide level2">
+<h2>Convergência: Cournot <span class="math inline">\(N\)</span> Firmas <span class="math inline">\(\to\)</span> Competição Perfeita</h2>
 <div class="columns">
-<div class="column" style="width:45%;">
-<p>À medida que <span class="math inline">\(N \to \infty\)</span>:</p>
-<p><span class="math display">\[P^C(N) = \frac{a + Nc}{N+1} \xrightarrow{N \to \infty} c\]</span></p>
-<p><span class="math display">\[L(N) = \frac{1}{N \cdot |\varepsilon_D|} \xrightarrow{N \to \infty} 0\]</span></p>
+<div class="column" style="width:40%;">
+<p>Com <span class="math inline">\(P = 100 - Q\)</span> e <span class="math inline">\(CMg = 10\)</span>:</p>
+<p><span class="math display">\[q_i^* = \frac{90}{N+1}, \quad Q^* = \frac{90N}{N+1}\]</span></p>
+<p><span class="math display">\[P^* = \frac{100 + 10N}{N+1}, \quad \pi_i = \left(\frac{90}{N+1}\right)^2\]</span></p>
 <p>. . .</p>
-<p><strong>Insight unificador:</strong></p>
+<p>Quando <span class="math inline">\(N \to \infty\)</span>:</p>
 <ul>
-<li><span class="math inline">\(N = 1\)</span>: monopólio</li>
-<li><span class="math inline">\(N = 2\)</span>: duopólio de Cournot</li>
-<li><span class="math inline">\(N\)</span> grande: aproxima concorrência perfeita</li>
-<li><span class="math inline">\(N \to \infty\)</span>: competição perfeita</li>
+<li><span class="math inline">\(Q^* \to 90 = Q^{CP}\)</span></li>
+<li><span class="math inline">\(P^* \to 10 = CMg\)</span></li>
+<li><span class="math inline">\(\pi_i \to 0\)</span></li>
 </ul>
+<p>. . .</p>
 <p>O oligopólio é o <strong>caso geral</strong>; monopólio e CP são <strong>casos limite</strong>.</p>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap16/webr-cournot-n-firmas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+</div><div class="column" style="width:60%;">
+<div id="graph-a24-convergence" style="width:640px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>N (firmas): <span id="val-a24-n">2</span></label> <input type="range" id="sl-a24-n" min="1" max="50" step="1" value="2" oninput="window.updateA24Convergence(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a24-convergence', {
+    boundingbox: [-3, 110, 53, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'N', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '', withLabel: false }
+    }
+  });
+
+  var currentN = 2;
+
+  // Competitive price line
+  board.create('functiongraph', [
+    function(n) { return 10; },
+    0, 52
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 3 });
+
+  board.create('text', [42, 13, 'P = CMg = 10'], {
+    fontSize: 10, color: '#999', fixed: true
+  });
+
+  // Competitive quantity line
+  board.create('functiongraph', [
+    function(n) { return 90; },
+    0, 52
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 3 });
+
+  board.create('text', [42, 93, 'Q = 90'], {
+    fontSize: 10, color: '#999', fixed: true
+  });
+
+  // Price curve: P(N) = (100 + 10N)/(N+1)
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? (100 + 10 * n) / (n + 1) : NaN; },
+    1, 50
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  board.create('text', [8, (100 + 80) / 9 + 5, 'P(N)'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Quantity curve: Q(N) = 90N/(N+1)
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? (90 * n) / (n + 1) : NaN; },
+    1, 50
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  board.create('text', [8, (90 * 8) / 9 + 5, 'Q(N)'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // Profit per firm (scaled to fit): pi_i = (90/(N+1))^2, max at N=1 is 2025, scale by /25
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? Math.pow(90 / (n + 1), 2) / 25 : NaN; },
+    1, 50
+  ], { strokeColor: '#388e3c', strokeWidth: 2.5 });
+
+  board.create('text', [5, Math.pow(90 / 6, 2) / 25 + 5, '\u03C0\u1D62 (\u00F725)'], {
+    fontSize: 11, color: '#388e3c', fixed: true
+  });
+
+  // Current N markers
+  var pMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return (100 + 10 * currentN) / (currentN + 1); }
+  ], { name: '', size: 5, fixed: true, color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E' });
+
+  var qMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return (90 * currentN) / (currentN + 1); }
+  ], { name: '', size: 5, fixed: true, color: '#1565c0', strokeColor: '#1565c0', fillColor: '#1565c0' });
+
+  var piMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return Math.pow(90 / (currentN + 1), 2) / 25; }
+  ], { name: '', size: 5, fixed: true, color: '#388e3c', strokeColor: '#388e3c', fillColor: '#388e3c' });
+
+  var infoText = board.create('text', [25, 105, function() {
+    var P = (100 + 10 * currentN) / (currentN + 1);
+    var Q = (90 * currentN) / (currentN + 1);
+    var pi = Math.pow(90 / (currentN + 1), 2);
+    return 'N=' + currentN + '  P=' + P.toFixed(1) + '  Q=' + Q.toFixed(1) + '  \u03C0\u1D62=' + pi.toFixed(0);
+  }], { fontSize: 12, fixed: true, color: '#333' });
+
+  window.updateA24Convergence = function(val) {
+    currentN = parseInt(val);
+    document.getElementById('val-a24-n').textContent = currentN;
+    board.update();
+  };
+})();
+</script>
 </div></div>
 </section>
 <section id="torneio-de-oligopólio-regras" class="slide level2 smaller">
@@ -453,26 +611,34 @@ Insper
 </ol>
 </div>
 <div class="fragment">
-<p><strong>Sistema de pontuação:</strong></p>
+<p><strong>Referências:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Métrica</th>
-<th style="text-align: center;">Peso</th>
+<th style="text-align: left;">Cenário</th>
+<th style="text-align: center;"><span class="math inline">\(q_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_i\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Lucro total acumulado (10 rodadas)</td>
-<td style="text-align: center;">70%</td>
+<td style="text-align: left;">Cartel (cooperação)</td>
+<td style="text-align: center;">22,5</td>
+<td style="text-align: center;">55</td>
+<td style="text-align: center;">1012,5</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Estabilidade (menor variância de <span class="math inline">\(q\)</span>)</td>
-<td style="text-align: center;">15%</td>
+<td style="text-align: left;">Cournot (Nash)</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">900</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Relatório estratégico (2 parágrafos)</td>
-<td style="text-align: center;">15%</td>
+<td style="text-align: left;">Desvio unilateral</td>
+<td style="text-align: center;">33,75</td>
+<td style="text-align: center;">33,75</td>
+<td style="text-align: center;">1139,1</td>
 </tr>
 </tbody>
 </table>
@@ -493,8 +659,8 @@ Insper
 </div>
 </div>
 </section>
-<section id="sistema-de-pontuação-e-estratégias-esperadas" class="slide level2">
-<h2>Sistema de Pontuação e Estratégias Esperadas</h2>
+<section id="torneio-sistema-de-pontuação" class="slide level2">
+<h2>Torneio: Sistema de Pontuação</h2>
 <p><strong>Pontuação detalhada:</strong></p>
 <table class="caption-top">
 <colgroup>
@@ -535,6 +701,8 @@ Insper
 <li><strong>Sempre Cournot:</strong> jogue Nash desde o início (seguro, mas não ótimo)</li>
 <li><strong>Teste e ajuste:</strong> desvie uma vez para testar a reação do rival</li>
 </ul>
+</div>
+<div class="fragment">
 <div title="Dica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -545,8 +713,229 @@ Insper
 <p><strong>Dica</strong></p>
 </div>
 <div class="callout-content">
-<p>O relatório vale 15% — explique sua lógica mesmo se o lucro não foi alto!</p>
+<p>O relatório vale 15% — explique sua lógica mesmo se o lucro não foi alto! Bônus para a dupla com maior lucro total acumulado.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="torneio-rodadas-15" class="slide level2">
+<h2>Torneio: Rodadas 1–5</h2>
+<p><strong>Rodadas 1 a 5 — Fase de aprendizado</strong></p>
+<div class="fragment">
+<p>Registrem suas escolhas e resultados na tabela:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Rodada</th>
+<th style="text-align: center;"><span class="math inline">\(q_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>Observe:</strong> o rival está cooperando? Desviando? Ajuste sua estratégia nas próximas rodadas.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="torneio-rodadas-610" class="slide level2">
+<h2>Torneio: Rodadas 6–10</h2>
+<p><strong>Rodadas 6 a 10 — Fase de exploração</strong></p>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Rodada</th>
+<th style="text-align: center;"><span class="math inline">\(q_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q_2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Efeito de final de jogo">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Efeito de final de jogo</strong></p>
+</div>
+<div class="callout-content">
+<p>Nas últimas rodadas, o incentivo a desviar é maior — não há punição futura! Isso é análogo ao <strong>unraveling</strong> do jogo repetido finito.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="torneio-resultados-e-análise" class="slide level2">
+<h2>Torneio: Resultados e Análise</h2>
+<p><strong>Debrief — perguntas para discussão:</strong></p>
+<div class="fragment">
+<ol type="1">
+<li>As firmas conseguiram <strong>sustentar a colusão</strong>? Em quais rodadas?</li>
+<li>Houve <strong>desvios</strong>? Como o rival reagiu?</li>
+<li>O comportamento mudou nas <strong>últimas rodadas</strong> (efeito de fim de jogo)?</li>
+<li>Os resultados se aproximaram da previsão de <strong>Nash (Cournot)</strong>?</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Comparando teoria vs.&nbsp;prática:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Previsão teórica</th>
+<th style="text-align: left;">Resultado observado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Jogo finito <span class="math inline">\(\Rightarrow\)</span> Nash em toda rodada</td>
+<td style="text-align: left;">Muitas duplas cooperam no início</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Unraveling nas últimas rodadas</td>
+<td style="text-align: left;">Desvios aumentam perto da rodada 10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\pi_i^{Nash} = 900\)</span> por rodada</td>
+<td style="text-align: left;">Lucros médios tipicamente entre 900 e 1012</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>A discrepância entre teoria e prática revela: <strong>racionalidade limitada, reputação e normas sociais</strong> importam!</p>
 </div>
 </div>
 </div>
@@ -554,7 +943,7 @@ Insper
 </section>
 <section id="retrospectiva-do-curso-mapa-conceitual" class="slide level2">
 <h2>Retrospectiva do Curso: Mapa Conceitual</h2>
-<p><strong>Mapa conceitual — o que aprendemos:</strong></p>
+<p><strong>O que aprendemos — quatro blocos:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -592,9 +981,10 @@ Insper
 <div class="fragment">
 <p><strong>Conexões que atravessam o curso:</strong></p>
 <ul>
-<li>Elasticidade (Cap. 2) → incidência tributária (Cap. 13) → Lerner (Cap. 15)</li>
-<li>Custos (Cap. 8–9) → oferta (Cap. 12) → entrada/saída LP (Cap. 13) → monopólio natural (Cap. 15)</li>
-<li>Teoria dos jogos (Cap. 16) ← maximização com interdependência</li>
+<li><strong>Elasticidade</strong> (Cap. 2) <span class="math inline">\(\to\)</span> incidência tributária (Cap. 13) <span class="math inline">\(\to\)</span> índice de Lerner (Cap. 15)</li>
+<li><strong>Custos</strong> (Cap. 8–9) <span class="math inline">\(\to\)</span> oferta (Cap. 12) <span class="math inline">\(\to\)</span> entrada/saída LP (Cap. 13) <span class="math inline">\(\to\)</span> monopólio natural (Cap. 15)</li>
+<li><strong>Teoria dos jogos</strong> (Cap. 16) <span class="math inline">\(\leftarrow\)</span> maximização com interdependência estratégica</li>
+<li><strong>Otimização</strong> <span class="math inline">\(\to\)</span> consumidor (utilidade), firma (lucro), bem-estar (excedente total)</li>
 </ul>
 </div>
 </section>
@@ -621,18 +1011,56 @@ Insper
 <li>Informação assimétrica (seleção adversa, risco moral)</li>
 <li>Mecanismos de incentivo e leilões</li>
 </ul>
+</div>
+<div class="fragment">
+<div title="Dica de estudo">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Dica</strong></p>
+<p><strong>Dica de estudo</strong></p>
 </div>
 <div class="callout-content">
+<p>Revise os gráficos interativos das aulas — a P2 exige interpretação gráfica fluente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="encerramento" class="slide level2">
+<h2>Encerramento</h2>
+<div class="fragment">
 <blockquote>
-<p>“A teoria sem prática é estéril; a prática sem teoria é cega.” — Kant (adaptado para economistas)</p>
+<p>“All models are wrong, but some are useful.” — George Box</p>
 </blockquote>
+</div>
+<div class="fragment">
+<p>Neste curso, vocês aprenderam a construir, resolver e interpretar modelos que simplificam a realidade para iluminar as forças econômicas fundamentais.</p>
+</div>
+<div class="fragment">
+<p><strong>O que levam daqui:</strong></p>
+<ul>
+<li>Uma caixa de ferramentas analítica (otimização, equilíbrio, teoria dos jogos)</li>
+<li>A habilidade de pensar em <strong>trade-offs</strong> e <strong>incentivos</strong></li>
+<li>A humildade de saber que todo modelo tem limites</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Mensagem final">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Mensagem final</strong></p>
+</div>
+<div class="callout-content">
+<p>A microeconomia não é um conjunto de respostas — é um <strong>modo de pensar</strong>. Usem-no para entender mercados, políticas públicas e as decisões do dia a dia. Boa sorte na P2 e nos próximos passos!</p>
+</div>
 </div>
 </div>
 </div>
@@ -642,7 +1070,7 @@ Insper
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
-<p>Microeconomia II | Aula 24</p>
+<p>Aula 24</p>
 </div>
 </div></div>
 

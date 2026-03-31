@@ -11,36 +11,56 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
-## Por que Precisamos de Axiomas?
+## Escolha sob Escassez: A Questão Fundamental
 
-Queremos modelar **escolhas** de consumidores. Mas como transformar preferências subjetivas em matemática?
+O consumidor enfrenta recursos **finitos** e alternativas **ilimitadas**. Como ele decide?
 
 . . .
 
-**Estratégia:**
+**Precisamos de um modelo que:**
 
-1. Postular axiomas "razoáveis" sobre preferências $\succsim$
-2. Provar que existe uma função $U$ que representa $\succsim$
-3. Usar $U$ para resolver problemas de otimização
+1. Descreva preferências de forma **consistente**
+2. Permita **comparar** qualquer par de alternativas
+3. Traduza preferências em uma **função matemática** otimizável
 
 . . .
 
 :::{.callout-tip title="Intuição Econômica"}
-Os axiomas não dizem *o que* o consumidor prefere — dizem que ele é **consistente** o suficiente para que possamos representar suas preferências com números.
+Estudar preferências não é dizer *o que* o consumidor gosta — é garantir que suas escolhas sejam **coerentes** o suficiente para prevermos seu comportamento.
 :::
 
-## Os Quatro Axiomas Fundamentais
+## Cestas de Consumo e Relações de Preferência
+
+Uma **cesta de consumo** é um vetor $X = (x_1, x_2) \in \mathbb{R}^2_+$ indicando as quantidades de cada bem.
+
+. . .
+
+**Três relações fundamentais:**
+
+| Símbolo | Leitura | Significado |
+|:--|:--|:--|
+| $X \succsim Y$ | "$X$ é pelo menos tão bom quanto $Y$" | Preferência fraca |
+| $X \succ Y$ | "$X$ é estritamente preferido a $Y$" | $X \succsim Y$ e não $Y \succsim X$ |
+| $X \sim Y$ | "$X$ é indiferente a $Y$" | $X \succsim Y$ e $Y \succsim X$ |
+
+. . .
+
+A relação $\succsim$ é a primitiva do modelo — dela derivamos $\succ$ e $\sim$.
+
+## Axiomas das Preferências
 
 :::: {.columns}
 ::: {.column width="50%"}
 **1. Completude**
 
-Para quaisquer cestas $A$ e $B$:
-
-$$A \succsim B \;\text{ ou }\; B \succsim A \;\text{ (ou ambos)}$$
+$$\forall\, A, B: \; A \succsim B \;\text{ ou }\; B \succsim A$$
 
 O consumidor sempre consegue comparar.
 
@@ -50,84 +70,143 @@ O consumidor sempre consegue comparar.
 
 $$A \succsim B \;\text{ e }\; B \succsim C \implies A \succsim C$$
 
-Preferências não são "circulares".
-:::
-::: {.column width="50%"}
-**3. Continuidade**
-
-Os conjuntos $\{x : x \succsim A\}$ e $\{x : A \succsim x\}$ são fechados.
-
-Pequenas mudanças nas cestas não causam "saltos" nas preferências.
+Preferências não são circulares.
 
 . . .
 
-**4. Monotonicidade (não saciedade)**
+**3. Continuidade**
+
+Os conjuntos $\{x : x \succsim A\}$ e $\{x : A \succsim x\}$ são fechados. Pequenas mudanças não causam "saltos".
+:::
+::: {.column width="50%"}
+**4. Monotonicidade**
 
 $$x \geq y \;\text{ e }\; x \neq y \implies x \succ y$$
 
-Mais é melhor (pelo menos fracamente).
+Mais é (pelo menos fracamente) melhor.
+
+. . .
+
+**5. Convexidade**
+
+$$A \sim B \implies \lambda A + (1-\lambda)B \succsim A, \;\; \lambda \in (0,1)$$
+
+Médias são preferidas a extremos.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Convexidade captura a ideia de **diversificação**: o consumidor prefere um pouco de cada bem a muito de um só.
+:::
 :::
 ::::
 
-## Teorema de Debreu e Utilidade Ordinal
+## Representação por Função Utilidade
 
 :::{.callout-tip title="Teorema de Debreu (1954)"}
-Se $\succsim$ satisfaz completude, transitividade e continuidade, então **existe** uma função contínua $U: \mathbb{R}^n_+ \to \mathbb{R}$ tal que:
+Se $\succsim$ satisfaz **completude**, **transitividade** e **continuidade**, então existe uma função contínua $U: \mathbb{R}^n_+ \to \mathbb{R}$ tal que:
 
 $$A \succsim B \iff U(A) \geq U(B)$$
 :::
 
 . . .
 
-**Utilidade é ordinal, não cardinal:**
+**Por que isso importa?**
 
-- $U(A) = 10$ e $U(B) = 5$ **não** significa que $A$ é "duas vezes melhor"
-- Qualquer transformação monotônica crescente $V = \phi(U)$ representa as mesmas preferências
-- Exemplo: $U = xy$ e $V = \ln x + \ln y$ são equivalentes
+- Transforma um problema de **ordenação** (preferências) em um problema de **otimização** (maximizar $U$)
+- Podemos usar cálculo, Lagrangeano, estática comparativa...
 
-## Curvas de Indiferença: Propriedades
+. . .
 
-**Definição:** curva de indiferença é o conjunto $\{(x_1, x_2) : U(x_1, x_2) = \bar{u}\}$.
+**Atenção:** a função $U$ não é única — qualquer transformação monotônica crescente $V = \phi(U)$ com $\phi' > 0$ representa as mesmas preferências.
+
+## Curvas de Indiferença
+
+**Definição:** $\{(x_1, x_2) : U(x_1, x_2) = \bar{u}\}$ — conjunto de cestas que geram a mesma utilidade.
 
 . . .
 
 **Propriedades fundamentais:**
 
-1. **Preenchem o espaço** — por completude, todo ponto pertence a alguma curva
-2. **Inclinação negativa** — por monotonicidade (se $x_1 \uparrow$, precisa $x_2 \downarrow$ para manter $\bar{u}$)
-3. **Não se cruzam** — consequência da transitividade
-4. **Convexas** — preferências convexas $\implies$ médias são preferidas a extremos
+1. **Preenchem o espaço** — por completude
+2. **Inclinação negativa** — por monotonicidade
+3. **Não se cruzam** — por transitividade
+4. **Convexas** — por convexidade das preferências
 
 . . .
 
-Curvas "mais ao nordeste" representam utilidades maiores.
+Explore como o parâmetro $\alpha$ altera as curvas Cobb-Douglas $U = x^{\alpha} y^{1-\alpha}$:
 
-## Por que Curvas de Indiferença Não se Cruzam?
+<div id="graph-a03-ic" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>&alpha;: <span id="val-a03-alpha">0.50</span></label>
+  <input type="range" id="sl-a03-alpha" min="0.10" max="0.90" step="0.05" value="0.50" oninput="window.updateA03IC(this.value)">
+</div>
 
-**Prova por contradição:**
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-ic', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
 
-. . .
+  var alpha = 0.5;
+  var uLevels = [2, 3, 4, 5, 6];
+  var colors = ['#1565c0', '#1565c0', '#1565c0', '#1565c0', '#1565c0'];
+  var curves = [];
 
-Suponha que duas curvas ($\bar{u}_1 \neq \bar{u}_2$) se cruzam no ponto $P$.
+  function makeIC(uBar) {
+    return board.create('curve', [
+      function(t) { return t; },
+      function(t) {
+        var val = Math.pow(uBar / Math.pow(t, alpha), 1 / (1 - alpha));
+        return (val > 10 || val < 0 || isNaN(val)) ? NaN : val;
+      },
+      0.05, 9.5
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+  }
 
-:::: {.columns}
-::: {.column width="50%"}
-- Ponto $A$ está na curva $\bar{u}_1$: $A \sim P$
-- Ponto $B$ está na curva $\bar{u}_2$: $B \sim P$
-- Por transitividade: $A \sim B$
-:::
-::: {.column width="50%"}
-- Mas $A$ e $B$ estão em curvas diferentes!
-- Se $\bar{u}_1 > \bar{u}_2$: $A \succ B$
-- **Contradição** com $A \sim B$
-:::
-::::
+  for (var i = 0; i < uLevels.length; i++) {
+    curves.push(makeIC(uLevels[i]));
+  }
 
-. . .
+  // Labels
+  var labels = [];
+  for (var i = 0; i < uLevels.length; i++) {
+    var tx = 8;
+    var tyVal = Math.pow(uLevels[i] / Math.pow(tx, alpha), 1 / (1 - alpha));
+    labels.push(board.create('text', [tx + 0.3, tyVal + 0.3, 'U=' + uLevels[i]], {
+      fontSize: 11, color: '#1565c0', fixed: true
+    }));
+  }
 
-:::{.callout-tip title="Intuição Econômica"}
-Se as curvas se cruzassem, o consumidor seria "inconsistente" — violaria a transitividade.
-:::
+  window.updateA03IC = function(val) {
+    alpha = parseFloat(val);
+    document.getElementById('val-a03-alpha').textContent = alpha.toFixed(2);
+    for (var i = 0; i < curves.length; i++) {
+      var uBar = uLevels[i];
+      curves[i].Y = (function(u, a) {
+        return function(t) {
+          var v = Math.pow(u / Math.pow(t, a), 1 / (1 - a));
+          return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+        };
+      })(uBar, alpha);
+    }
+    for (var i = 0; i < labels.length; i++) {
+      var tx = 8;
+      var tyVal = Math.pow(uLevels[i] / Math.pow(tx, alpha), 1 / (1 - alpha));
+      labels[i].setCoords(JXG.COORDS_BY_USER, [tx + 0.3, tyVal + 0.3]);
+    }
+    board.update();
+  };
+})();
+</script>
 
 ## Taxa Marginal de Substituição (TMS)
 
@@ -137,121 +216,389 @@ A TMS mede a **disposição a trocar** $x_2$ por $x_1$ mantendo a utilidade cons
 
 **Definição formal:** ao longo de uma curva de indiferença ($dU = 0$):
 
-$$TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{U = \bar{u}} = \frac{U_1}{U_2} = \frac{\partial U / \partial x_1}{\partial U / \partial x_2}$$
+$$TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{U = \bar{u}} = \frac{UMg_1}{UMg_2} = \frac{\partial U / \partial x_1}{\partial U / \partial x_2}$$
 
 . . .
-
-Explore a TMS em diferentes pontos da curva de indiferença:
-
-<iframe src="../../graficos/cap03/tms-ponto.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## Calculando a TMS — Exemplos
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Cobb-Douglas:** $U = x_1^\alpha x_2^\beta$
+**Interpretação geométrica:**
 
-$$TMS = \frac{\alpha x_2}{\beta x_1}$$
-
-. . .
-
-TMS decrescente: curvas "bem comportadas".
+- Inclinação (em valor absoluto) da tangente à curva de indiferença
+- Preço relativo **subjetivo** do bem 1 em unidades do bem 2
 :::
 ::: {.column width="50%"}
-**CES:** $U = (x_1^\rho + x_2^\rho)^{1/\rho}$
+**Exemplo Cobb-Douglas:** $U = x_1^\alpha x_2^{1-\alpha}$
 
-$$TMS = \left(\frac{x_2}{x_1}\right)^{1-\rho}$$
+$$TMS = \frac{\alpha}{1 - \alpha} \cdot \frac{x_2}{x_1}$$
+:::
+::::
+
+## TMS Interativa
+
+Arraste o ponto ao longo da curva de indiferença e observe como a TMS (inclinação da reta tangente) varia:
+
+<div id="graph-a03-tms" style="width:700px;height:370px;margin:0 auto;"></div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-tms', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var alpha = 0.5;
+  var uBar = 4;
+
+  // Indifference curve
+  board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var v = Math.pow(uBar / Math.pow(t, alpha), 1 / (1 - alpha));
+      return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+    },
+    0.2, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Draggable point on IC
+  var px0 = 2.5;
+  var py0 = Math.pow(uBar / Math.pow(px0, alpha), 1 / (1 - alpha));
+  var pt = board.create('point', [px0, py0], {
+    name: '',
+    size: 5,
+    color: '#C8102E',
+    strokeColor: '#C8102E',
+    fillColor: '#C8102E'
+  });
+
+  // Constrain point to IC
+  pt.on('drag', function() {
+    var x = pt.X();
+    if (x < 0.2) x = 0.2;
+    if (x > 9.5) x = 9.5;
+    var y = Math.pow(uBar / Math.pow(x, alpha), 1 / (1 - alpha));
+    if (y > 10) { x = Math.pow(uBar / Math.pow(10, 1 - alpha), 1 / alpha); y = 10; }
+    pt.moveTo([x, y]);
+  });
+
+  // Tangent line
+  var tangent = board.create('line', [
+    function() {
+      var x = pt.X(), y = pt.Y();
+      var mrs = (alpha / (1 - alpha)) * (y / x);
+      return [y + mrs * x, -mrs, 1];
+    }
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  // MRS label
+  board.create('text', [0.5, 9, function() {
+    var x = pt.X(), y = pt.Y();
+    var mrs = (alpha / (1 - alpha)) * (y / x);
+    return 'TMS = ' + mrs.toFixed(2);
+  }], { fontSize: 16, color: '#C8102E', fixed: true });
+
+  // Point coordinates label
+  board.create('text', [0.5, 8.2, function() {
+    return '(' + pt.X().toFixed(2) + ', ' + pt.Y().toFixed(2) + ')';
+  }], { fontSize: 13, color: '#555', fixed: true });
+})();
+</script>
 
 . . .
 
-O parâmetro $\rho$ controla a curvatura.
+:::{.callout-tip title="Intuição Econômica"}
+Quanto mais $x_1$ o consumidor já possui, menor a TMS: ele valoriza cada unidade adicional de $x_1$ menos em termos de $x_2$. Isso e a **TMS decrescente**.
+:::
+
+## TMS Decrescente e Convexidade Estrita
+
+**Por que a TMS diminui ao longo da curva de indiferença?**
+
+. . .
+
+Quando o consumidor tem **muito** $x_1$ e **pouco** $x_2$:
+
+- A utilidade marginal de $x_1$ é baixa (abundante)
+- A utilidade marginal de $x_2$ e alta (escasso)
+- Logo, $TMS = \frac{UMg_1}{UMg_2}$ e **pequena**
+
+. . .
+
+**Equivalencia formal:**
+
+$$\text{TMS decrescente} \iff \text{Preferencias estritamente convexas} \iff \text{Curvas de indiferenca estritamente convexas}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+TMS decrescente e o reflexo matematico da ideia de que **variedade e preferida a especialização** — o consumidor resiste cada vez mais a abrir mão do bem que ja e escasso.
+:::
+
+## Utilidade Ordinal vs Cardinal
+
+:::: {.columns}
+::: {.column width="50%"}
+**Utilidade ordinal** (usamos esta):
+
+- Apenas a **ordem** importa
+- $U(A) = 10, U(B) = 5$ significa $A \succ B$, nada mais
+- Não podemos dizer "$A$ e duas vezes melhor que $B$"
+:::
+::: {.column width="50%"}
+**Transformações monotônicas:**
+
+Se $V = \phi(U)$ com $\phi' > 0$:
+
+$$U(A) \geq U(B) \iff V(A) \geq V(B)$$
 :::
 ::::
 
 . . .
 
-**TMS decrescente** $\implies$ preferências convexas $\implies$ curvas de indiferença convexas.
+**Exemplo:** estas funções representam as **mesmas** preferencias:
 
-:::{.callout-tip title="Intuição Econômica"}
-Quanto mais $x_1$ você já tem, menos $x_2$ está disposto a abrir mão por mais uma unidade de $x_1$.
-:::
-
-## Menu de Funções de Utilidade
-
-| Função | Fórmula | Características |
+| Função | Fórmula | TMS |
 |:--|:--|:--|
-| Linear | $U = ax_1 + bx_2$ | Substitutos perfeitos, $TMS = a/b$ constante |
-| Leontief | $U = \min\{ax_1, bx_2\}$ | Complementares perfeitos, curvas em L |
-| Cobb-Douglas | $U = x_1^\alpha x_2^\beta$ | Caso intermediário, curvas suaves |
-| CES | $U = (ax_1^\rho + bx_2^\rho)^{1/\rho}$ | Generaliza todos os anteriores |
-| Quase-linear | $U = v(x_1) + x_2$ | Sem efeito renda para $x_2$ |
+| $U$ | $x_1 \cdot x_2$ | $x_2 / x_1$ |
+| $V = \ln U$ | $\ln x_1 + \ln x_2$ | $x_2 / x_1$ |
+| $W = U^2$ | $x_1^2 x_2^2$ | $x_2 / x_1$ |
 
-## Substitutos Perfeitos e Complementares Perfeitos
+. . .
+
+A TMS e **invariante** a transformações monotônicas — confirma que e uma propriedade ordinal.
+
+## Substitutos Perfeitos
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Linear (Substitutos Perfeitos)**
+**Função de utilidade:**
 
 $$U = ax_1 + bx_2$$
 
+**Propriedades:**
+
 - Curvas de indiferença: **retas** com inclinação $-a/b$
-- TMS constante: o consumidor troca a uma taxa fixa
-- Exemplos: café marca A vs. marca B, notas de R\$10 vs. R\$5
+- $TMS = a/b$ — **constante**
+- O consumidor troca a uma taxa fixa
+- Solução de canto se $TMS \neq p_1/p_2$
 :::
 ::: {.column width="50%"}
-**Leontief (Complementares Perfeitos)**
+**Exemplos:**
 
-$$U = \min\{ax_1, bx_2\}$$
+- Notas de R\$10 vs. duas de R\$5
+- Cafe marca A vs. marca B (se identicos)
+- Gasolina comum vs. aditivada (por litro)
 
-- Curvas de indiferença: **L** com vértice em $ax_1 = bx_2$
-- TMS: 0 ou $\infty$ (indefinida no vértice)
-- Exemplos: sapato esquerdo e direito, café e açúcar (proporção fixa)
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se dois bens são substitutos perfeitos, o consumidor so se importa com a **quantidade total ponderada** — a composição da cesta e irrelevante.
+:::
+:::
+::::
+
+## Complementares Perfeitos
+
+:::: {.columns}
+::: {.column width="50%"}
+**Função de utilidade:**
+
+$$U = \min\left\{\frac{x_1}{a}, \frac{x_2}{b}\right\}$$
+
+**Propriedades:**
+
+- Curvas de indiferença: **L** com vertice em $x_1/a = x_2/b$
+- TMS: $0$ ou $\infty$ (indefinida no vertice)
+- Consumo sempre na proporção $x_1/x_2 = a/b$
+:::
+::: {.column width="50%"}
+**Exemplos:**
+
+- Sapato esquerdo e sapato direito ($a = b = 1$)
+- Café e açucar em proporção fixa
+- Processador e placa-mãe (compativel)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com complementares perfeitos, ter mais de um bem **sem** o outro não aumenta a utilidade — o "gargalo" e sempre o bem mais escasso na proporção.
+:::
+:::
+::::
+
+## Tipos de Preferências — Interativo
+
+Use o controle para alternar entre os três tipos classicos de preferências:
+
+<div id="graph-a03-types" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Tipo: <span id="val-a03-type">Cobb-Douglas</span></label>
+  <input type="range" id="sl-a03-type" min="0" max="2" step="1" value="0" oninput="window.updateA03Types(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a03-types', {
+    boundingbox: [0, 10, 10, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var curves = [];
+  var typeNames = ['Cobb-Douglas', 'Substitutos Perfeitos', 'Complementares Perfeitos'];
+  var currentType = 0;
+
+  function clearCurves() {
+    for (var i = 0; i < curves.length; i++) {
+      board.removeObject(curves[i]);
+    }
+    curves = [];
+  }
+
+  function drawCobbDouglas() {
+    var uLevels = [2, 3, 4, 5, 6];
+    var a = 0.5;
+    for (var i = 0; i < uLevels.length; i++) {
+      var u = uLevels[i];
+      curves.push(board.create('curve', [
+        function(t) { return t; },
+        (function(uv) {
+          return function(t) {
+            var v = Math.pow(uv / Math.pow(t, a), 1 / (1 - a));
+            return (v > 10 || v < 0 || isNaN(v)) ? NaN : v;
+          };
+        })(u),
+        0.1, 9.5
+      ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+    }
+  }
+
+  function drawPerfectSubs() {
+    var uLevels = [2, 4, 6, 8, 10];
+    for (var i = 0; i < uLevels.length; i++) {
+      var u = uLevels[i];
+      curves.push(board.create('line', [
+        [u, 0], [0, u]
+      ], { strokeColor: '#1565c0', strokeWidth: 2.5, straightFirst: false, straightLast: false }));
+    }
+  }
+
+  function drawPerfectComps() {
+    var uLevels = [1, 2, 3, 4, 5];
+    for (var i = 0; i < uLevels.length; i++) {
+      (function(u) {
+        // Vertical part
+        curves.push(board.create('curve', [
+          function() { return u; },
+          function(t) { return t; },
+          u, 9.5
+        ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        // Horizontal part
+        curves.push(board.create('curve', [
+          function(t) { return t; },
+          function() { return u; },
+          u, 9.5
+        ], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        // Corner point
+        curves.push(board.create('point', [u, u], {
+          size: 3, color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+          name: '', fixed: true
+        }));
+      })(uLevels[i]);
+    }
+  }
+
+  function drawType(type) {
+    clearCurves();
+    if (type === 0) drawCobbDouglas();
+    else if (type === 1) drawPerfectSubs();
+    else drawPerfectComps();
+    board.update();
+  }
+
+  drawType(0);
+
+  window.updateA03Types = function(val) {
+    currentType = parseInt(val);
+    document.getElementById('val-a03-type').textContent = typeNames[currentType];
+    drawType(currentType);
+  };
+})();
+</script>
+
+## Preferências Quase-Lineares e Homotéticas
+
+:::: {.columns}
+::: {.column width="50%"}
+**Quase-lineares:**
+
+$$U = v(x_1) + x_2, \quad v' > 0, \; v'' < 0$$
+
+- Curvas de indiferença: deslocamentos **verticais** de uma mesma forma
+- $TMS = v'(x_1)$ — depende apenas de $x_1$
+- Sem efeito renda para $x_2$
+- Util para modelar um bem "especial" ($x_1$) vs. dinheiro ($x_2$)
+:::
+::: {.column width="50%"}
+**Homotéticas:**
+
+$$U = f(x_1, x_2) \text{ homogênea de grau } k$$
+
+- Curvas de indiferença são **expansões radiais** umas das outras
+- $TMS$ depende apenas da **razão** $x_2/x_1$
+- Parcelas de gasto constantes (Cobb-Douglas e CES)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com preferencias homoteticas, ricos e pobres escolhem a mesma **proporção** de bens — so a escala muda. Preferencias quase-lineares quebram isso: a demanda por $x_1$ independe da renda (apos um minimo).
+:::
+:::
+::::
+
+## Restrição Orçamentária — Introdução
+
+O consumidor quer maximizar $U$, mas enfrenta a **restrição orçamentária**:
+
+$$p_1 x_1 + p_2 x_2 \leq m$$
+
+. . .
+
+**Conjunto orçamentário:** todas as cestas acessiveis (triangulo abaixo da reta).
+
+**Reta orçamentária:** $x_2 = \frac{m}{p_2} - \frac{p_1}{p_2} x_1$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+- **Intercepto vertical:** $m/p_2$ (gasta tudo em $x_2$)
+- **Intercepto horizontal:** $m/p_1$ (gasta tudo em $x_1$)
+- **Inclinação:** $-p_1/p_2$ (custo de oportunidade)
+:::
+::: {.column width="50%"}
+**Deslocamentos:**
+
+- $m \uparrow$: reta desloca para fora (paralela)
+- $p_1 \uparrow$: reta gira para dentro (intercepto horizontal cai)
+- $p_1 \downarrow$: reta gira para fora
 :::
 ::::
 
 . . .
 
-> Esses são os casos polares — a realidade geralmente está no meio.
-
-## Cobb-Douglas e Curvas de Indiferença
-
-$$U = x_1^\alpha x_2^\beta \quad (\alpha, \beta > 0)$$
-
-. . .
-
-**Propriedades:**
-
-- TMS = $\frac{\alpha x_2}{\beta x_1}$ — decrescente ao longo da curva
-- Parcelas de gasto constantes: $\frac{p_1 x_1}{m} = \frac{\alpha}{\alpha + \beta}$
-- Homogênea de grau $\alpha + \beta$
-
-. . .
-
-Explore diferentes combinações de $\alpha$ e $\beta$:
-
-<iframe src="../../graficos/cap03/curvas-indiferenca.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## CES: A Função que Generaliza Tudo
-
-$$U = \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}, \quad \rho \leq 1$$
-
-. . .
-
-**Elasticidade de substituição:** $\sigma = \frac{1}{1 - \rho}$
-
-. . .
-
-| $\rho$ | $\sigma$ | Caso especial |
-|:--|:--|:--|
-| $\rho \to 1$ | $\sigma \to \infty$ | Substitutos perfeitos (linear) |
-| $\rho \to 0$ | $\sigma \to 1$ | Cobb-Douglas |
-| $\rho \to -\infty$ | $\sigma \to 0$ | Complementares perfeitos (Leontief) |
-
-. . .
-
-:::{.callout-tip title="Intuição Econômica"}
-$\sigma$ mede quão fácil é substituir um bem pelo outro. Quanto maior $\sigma$, mais "substituíveis" são os bens.
-:::
+Na proxima aula, juntaremos preferencias com a restrição para encontrar a **escolha otima**.
 
 ## Próxima Aula
 
@@ -259,13 +606,13 @@ $\sigma$ mede quão fácil é substituir um bem pelo outro. Quanto maior $\sigma
 
 . . .
 
+- Atividade pratica com funções de utilidade (Jigsaw)
 - Quase-concavidade e por que ela importa
 - Elasticidade de substituição $\sigma$ em detalhe
-- Transformações monotônicas: por que $\ln U$ é tão útil
-- **Atividade prática:** Jigsaw com funções de utilidade
+- Transformações monotônicas: por que $\ln U$ e tão util
 
 . . .
 
 :::{.callout-tip title="Preparação"}
-Traga calculadora e revise os casos especiais da CES — você vai precisar identificá-los rapidamente na atividade.
+Traga calculadora e revise os casos especiais (Cobb-Douglas, Linear, Leontief) — voce vai precisar identifica-los rapidamente na atividade.
 :::

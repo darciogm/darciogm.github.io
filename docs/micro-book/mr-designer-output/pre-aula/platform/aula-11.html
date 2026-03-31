@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula — Microeconomia II</title>
+<title>Pré-Aula 11 — Decomposição de Hicks: Exercícios — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,432 +17,204 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-11-escolha-sob-incerteza-e-utilidade-esperada">Pré-Aula
-11 — Escolha sob Incerteza e Utilidade Esperada</h1>
+<h1 id="pré-aula-11-decomposição-de-hicks-exercícios">Pré-Aula 11 —
+Decomposição de Hicks: Exercícios</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 7, Seções 7.1–7.4</strong> do livro interativo | Tempo
-estimado: <strong>50 min</strong></p>
+<p><strong>Cap. 5, Seções 5.4–5.6</strong> do livro-texto | Tempo
+estimado: <strong>~45 min</strong> — revise especialmente as fórmulas de
+VC e VE.</p>
 </div>
-<pre><code>**Cap. 7, Seções 7.1–7.4** do livro interativo | Tempo estimado: **50 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Calcular o valor esperado de uma loteria e distinguir valor esperado
-de utilidade esperada</li>
-<li>Classificar atitudes frente ao risco (avesso, neutro, amante) usando
-a concavidade da função utilidade</li>
-<li>Calcular equivalente de certeza, prêmio de risco e o coeficiente de
-Arrow-Pratt</li>
+<li>Aplicar as fórmulas de VC e VE para utilidades Cobb-Douglas e
+quase-lineares.</li>
+<li>Calcular e comparar as três medidas de bem-estar em problemas
+numéricos.</li>
+<li>Preparar-se para o exercício em sala sobre tributação de
+eletricidade (ICMS).</li>
 </ol>
 <hr />
-<h2 id="por-que-incerteza-importa">1. Por que incerteza importa?</h2>
-<p>Na vida real, quase nenhuma decisão é tomada com certeza: investir na
-bolsa, fazer seguro, escolher uma carreira. Precisamos de um modelo que
-permita ao consumidor <strong>comparar resultados incertos</strong>.</p>
-<p>Uma <strong>loteria</strong> é um conjunto de resultados possíveis,
-cada um com uma probabilidade:</p>
-<p><span class="math display">\[L = \{(x_1, p_1), (x_2, p_2), \dots,
-(x_n, p_n)\} \quad \text{com } \sum_{i} p_i = 1\]</span></p>
-<p>O <strong>valor esperado</strong> da loteria é:</p>
-<p><span class="math display">\[E[L] = \sum_{i} p_i x_i\]</span></p>
-<hr />
-<h2 id="o-paradoxo-de-são-petersburgo">2. O Paradoxo de São
-Petersburgo</h2>
-<p>Considere o seguinte jogo: uma moeda é lançada repetidamente até sair
-cara. Se a primeira cara sai no lançamento <span
-class="math inline">\(n\)</span>, você recebe <span
-class="math inline">\(2^n\)</span> reais.</p>
-<p>O valor esperado é:</p>
-<p><span class="math display">\[E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n}
-\cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty\]</span></p>
-<p>O valor esperado é <strong>infinito</strong>, mas ninguém pagaria
-mais do que algumas dezenas de reais para jogar. Por quê?</p>
-<p>A resposta de Daniel Bernoulli (1738): as pessoas não maximizam
-<strong>valor esperado</strong>, mas <strong>utilidade esperada</strong>
-— e a utilidade é <strong>côncava</strong> (cada real adicional vale
-menos).</p>
-<hr />
-<h2 id="axiomas-de-von-neumann-morgenstern-vnm">3. Axiomas de Von
-Neumann-Morgenstern (VNM)</h2>
-<p>Para que a utilidade esperada funcione como critério de decisão,
-precisamos de axiomas sobre preferências entre loterias:</p>
-<table>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Axioma</th>
-<th style="text-align: left;">Significado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Completude</strong></td>
-<td style="text-align: left;">O agente compara quaisquer duas
-loterias</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Transitividade</strong></td>
-<td style="text-align: left;">Sem ciclos entre loterias</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Continuidade</strong></td>
-<td style="text-align: left;">Pequenas mudanças nas probabilidades geram
-pequenas mudanças na preferência</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Independência</strong></td>
-<td style="text-align: left;">Se <span class="math inline">\(L_1 \succ
-L_2\)</span>, então misturar cada uma com uma terceira loteria <span
-class="math inline">\(L_3\)</span> preserva a preferência</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Teorema VNM:</strong> Se os axiomas são satisfeitos, existe
-uma função <span class="math inline">\(u\)</span> (utilidade de
-Bernoulli) tal que:</p>
-<p><span class="math display">\[L_1 \succeq L_2 \iff E[u(L_1)] \geq
-E[u(L_2)]\]</span></p>
-<span class="math display">\[E[u(L)] = \sum_{i} p_i \, u(x_i)\]</span>
-<div class="admonition warning">
-<div class="admonition-title">
-Utilidade cardinal
-</div>
-<p>Diferentemente da utilidade ordinal do consumidor (onde <span
-class="math inline">\(V = f(U)\)</span> com <span
-class="math inline">\(f&#39; &gt; 0\)</span> preserva preferências),
-aqui a função <span class="math inline">\(u\)</span> é definida
-<strong>a menos de transformações afins</strong>: <span
-class="math inline">\(v = a + bu\)</span> com <span
-class="math inline">\(b &gt; 0\)</span>. Isso significa que a curvatura
-de <span class="math inline">\(u\)</span> tem significado — ela mede a
-atitude frente ao risco.</p>
-</div>
-<pre><code>Diferentemente da utilidade ordinal do consumidor (onde $V = f(U)$ com $f&#39; &gt; 0$ preserva preferências), aqui a função $u$ é definida **a menos de transformações afins**: $v = a + bu$ com $b &gt; 0$. Isso significa que a curvatura de $u$ tem significado — ela mede a atitude frente ao risco.</code></pre>
-<hr />
-<h2 id="aversão-ao-risco-e-concavidade">4. Aversão ao risco e
-concavidade</h2>
-<p>Considere uma loteria <span class="math inline">\(L\)</span> com
-valor esperado <span class="math inline">\(E[L]\)</span> e compare com
-receber <span class="math inline">\(E[L]\)</span> com certeza.</p>
-<p><strong>Desigualdade de Jensen:</strong></p>
-<p>Se <span class="math inline">\(u\)</span> é <strong>côncava</strong>:
-<span class="math inline">\(u(E[L]) &gt; E[u(L)]\)</span> — prefere o
-valor esperado certo à loteria.</p>
-<p>Se <span class="math inline">\(u\)</span> é <strong>convexa</strong>:
-<span class="math inline">\(u(E[L]) &lt; E[u(L)]\)</span> — prefere a
-loteria ao valor esperado certo.</p>
-<table>
-<colgroup>
-<col style="width: 33%" />
-<col style="width: 33%" />
-<col style="width: 33%" />
-</colgroup>
-<thead>
-<tr>
-<th style="text-align: left;">Tipo</th>
-<th style="text-align: left;">Função <span
-class="math inline">\(u\)</span></th>
-<th style="text-align: left;">Comportamento</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Avesso ao risco</strong></td>
-<td style="text-align: left;">Côncava (<span
-class="math inline">\(u&#39;&#39; &lt; 0\)</span>)</td>
-<td style="text-align: left;">Prefere certeza; faz seguro</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Neutro ao risco</strong></td>
-<td style="text-align: left;">Linear (<span
-class="math inline">\(u&#39;&#39; = 0\)</span>)</td>
-<td style="text-align: left;">Indiferente</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Amante do risco</strong></td>
-<td style="text-align: left;">Convexa (<span
-class="math inline">\(u&#39;&#39; &gt; 0\)</span>)</td>
-<td style="text-align: left;">Prefere a loteria; joga</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo: cara ou coroa
-</div>
-<p>Loteria: R$ 100 com prob. 50% ou R$ 0 com prob. 50%. <span
-class="math inline">\(E[L] = 50\)</span>.</p>
-<p>Se <span class="math inline">\(u(x) = \sqrt{x}\)</span>:</p>
-<p><span class="math inline">\(E[u(L)] = 0{,}5 \cdot \sqrt{100} + 0{,}5
-\cdot \sqrt{0} = 0{,}5 \cdot 10 = 5\)</span></p>
-<p><span class="math inline">\(u(E[L]) = \sqrt{50} \approx
-7{,}07\)</span></p>
-<p>Como <span class="math inline">\(u(50) &gt; E[u(L)]\)</span>: o
-agente é <strong>avesso ao risco</strong>.</p>
-</div>
-<pre><code>Loteria: R$ 100 com prob. 50% ou R$ 0 com prob. 50%. $E[L] = 50$.
-
-Se $u(x) = \sqrt{x}$:
-
-$E[u(L)] = 0{,}5 \cdot \sqrt{100} + 0{,}5 \cdot \sqrt{0} = 0{,}5 \cdot 10 = 5$
-
-$u(E[L]) = \sqrt{50} \approx 7{,}07$
-
-Como $u(50) &gt; E[u(L)]$: o agente é **avesso ao risco**.</code></pre>
-<hr />
-<h2 id="equivalente-de-certeza-e-prêmio-de-risco">5. Equivalente de
-certeza e prêmio de risco</h2>
-<p>O <strong>equivalente de certeza</strong> <span
-class="math inline">\(EC\)</span> é o valor certo que dá a mesma
-utilidade que a loteria:</p>
-<p><span class="math display">\[u(EC) = E[u(L)] \implies EC =
-u^{-1}\big(E[u(L)]\big)\]</span></p>
-<p>O <strong>prêmio de risco</strong> <span
-class="math inline">\(\pi\)</span> é quanto o agente paga para eliminar
-o risco:</p>
-<p><span class="math display">\[\pi = E[L] - EC\]</span></p>
-Para um avesso ao risco: <span class="math inline">\(EC &lt;
-E[L]\)</span>, logo <span class="math inline">\(\pi &gt; 0\)</span>.
-<div class="admonition example">
-<div class="admonition-title">
-Continuação do exemplo
-</div>
-<p><span class="math inline">\(E[u(L)] = 5\)</span>, logo <span
-class="math inline">\(EC = u^{-1}(5) = 5^2 = 25\)</span>.</p>
-<p><span class="math inline">\(\pi = E[L] - EC = 50 - 25 =
-25\)</span>.</p>
-<p>O agente aceitaria receber R$ 25 com certeza em vez de jogar a
-loteria de R$ 0/R$ 100.</p>
-</div>
-<pre><code>$E[u(L)] = 5$, logo $EC = u^{-1}(5) = 5^2 = 25$.
-
-$\pi = E[L] - EC = 50 - 25 = 25$.
-
-O agente aceitaria receber R$ 25 com certeza em vez de jogar a loteria de R$ 0/R$ 100.</code></pre>
-<hr />
-<h2
-id="gráfico-interativo-utilidade-esperada-e-aversão-ao-risco">Gráfico
-interativo: utilidade esperada e aversão ao risco</h2>
-<div id="graph-expected-utility" style="min-height: 450px;">
-<iframe src="../../graficos/cap07/utilidade-esperada.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
-</iframe>
-</div>
-<div class="admonition tip">
-<div class="admonition-title">
-Explore o gráfico
-</div>
-<ul>
-<li>Mude a curvatura de <span class="math inline">\(u\)</span> e observe
-como <span class="math inline">\(EC\)</span> e <span
-class="math inline">\(\pi\)</span> mudam</li>
-<li>Compare os casos côncavo, linear e convexo</li>
-<li>Arraste as probabilidades e veja o impacto na utilidade
-esperada</li>
-</ul>
-</div>
-<pre><code>- Mude a curvatura de $u$ e observe como $EC$ e $\pi$ mudam
-- Compare os casos côncavo, linear e convexo
-- Arraste as probabilidades e veja o impacto na utilidade esperada</code></pre>
-<hr />
-<h2 id="coeficiente-de-arrow-pratt">6. Coeficiente de Arrow-Pratt</h2>
-<p>O <strong>coeficiente de aversão absoluta ao risco</strong> de
-Arrow-Pratt mede a intensidade da aversão ao risco:</p>
-<p><span class="math display">\[A(x) =
--\frac{u&#39;&#39;(x)}{u&#39;(x)}\]</span></p>
-<p>O <strong>coeficiente de aversão relativa ao risco</strong>:</p>
-<p><span class="math display">\[R(x) = -\frac{x \cdot
-u&#39;&#39;(x)}{u&#39;(x)} = x \cdot A(x)\]</span></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Função</th>
-<th style="text-align: left;"><span
-class="math inline">\(A(x)\)</span></th>
-<th style="text-align: left;"><span
-class="math inline">\(R(x)\)</span></th>
-<th style="text-align: left;">Tipo</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(u =
-\sqrt{x}\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(\frac{1}{2x}\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(\frac{1}{2}\)</span></td>
-<td style="text-align: left;">CRRA</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(u = \ln
-x\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(\frac{1}{x}\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(1\)</span></td>
-<td style="text-align: left;">CRRA</td>
-</tr>
-<tr>
-<td style="text-align: left;"><span class="math inline">\(u =
--e^{-ax}\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(a\)</span></td>
-<td style="text-align: left;"><span
-class="math inline">\(ax\)</span></td>
-<td style="text-align: left;">CARA</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><strong>CARA</strong> (Constant Absolute Risk Aversion): $A(x) = $
-constante</li>
-<li><strong>CRRA</strong> (Constant Relative Risk Aversion): $R(x) = $
-constante</li>
-</ul>
-<hr />
-<h2 id="seguro-aplicação-da-aversão-ao-risco">7. Seguro: aplicação da
-aversão ao risco</h2>
-<p>Um indivíduo avesso ao risco com riqueza <span
-class="math inline">\(W\)</span> enfrenta uma perda <span
-class="math inline">\(D\)</span> com probabilidade <span
-class="math inline">\(p\)</span>.</p>
-<p>Uma seguradora oferece cobertura <span
-class="math inline">\(K\)</span> ao prêmio <span
-class="math inline">\(\gamma K\)</span> (onde <span
-class="math inline">\(\gamma\)</span> é o preço por unidade de
-cobertura).</p>
-<p><strong>Riqueza nos estados:</strong></p>
-<p><span class="math display">\[W_{\text{sem perda}} = W - \gamma
-K\]</span> <span class="math display">\[W_{\text{com perda}} = W - D -
-\gamma K + K = W - D + K(1 - \gamma)\]</span></p>
-<strong>Seguro atuarialmente justo</strong>: <span
-class="math inline">\(\gamma = p\)</span>. Neste caso, o avesso ao risco
-faz <strong>seguro completo</strong> (<span class="math inline">\(K =
-D\)</span>).
+<h2 id="formulário-de-medidas-de-bem-estar">1. Formulário de Medidas de
+Bem-Estar</h2>
+<p>Antes dos exercícios, consolide as fórmulas essenciais.</p>
+<p><strong>Excedente do consumidor (variação):</strong></p>
+<p><span class="math display">\[\Delta EC = \int_{p_0}^{p_1} x^M(p,
+m)\,dp\]</span></p>
+<p><strong>Variação compensatória:</strong></p>
+<p><span class="math display">\[VC = e(p_1, u_0) - m\]</span></p>
+<p><strong>Variação equivalente:</strong></p>
+<p><span class="math display">\[VE = m - e(p_0, u_1)\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Por que seguros existem?</strong></p>
-<p>O seguro é uma transferência de risco: o consumidor avesso ao risco
-paga um prêmio para transferir o risco à seguradora. A seguradora, por
-diversificar entre milhares de contratos, enfrenta risco muito menor
-(Lei dos Grandes Números). Assim, o <strong>risco desaparece</strong> no
-agregado — mas não por mágica: é a diversificação que o elimina.</p>
-<p>Para o seguro justo (<span class="math inline">\(\gamma =
-p\)</span>), o teorema é elegante: o avesso ao risco iguala a riqueza em
-todos os estados — elimina completamente a incerteza.</p>
+<p>A VC “compensa” a mudança mantendo utilidade em <span
+class="math inline">\(u_0\)</span>; a VE encontra o “equivalente”
+monetário da mudança avaliado a preços antigos. Para aumentos de preço
+de bens normais: <span class="math inline">\(|VE| &lt; |\Delta EC| &lt;
+|VC|\)</span>.</p>
 </div>
-<pre><code>**Por que seguros existem?**
-
-O seguro é uma transferência de risco: o consumidor avesso ao risco paga um prêmio para transferir o risco à seguradora. A seguradora, por diversificar entre milhares de contratos, enfrenta risco muito menor (Lei dos Grandes Números). Assim, o **risco desaparece** no agregado — mas não por mágica: é a diversificação que o elimina.
-
-Para o seguro justo ($\gamma = p$), o teorema é elegante: o avesso ao risco iguala a riqueza em todos os estados — elimina completamente a incerteza.</code></pre>
 <hr />
-<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Uma loteria paga R$ 400 com probabilidade
-0,3 e R$ 100 com probabilidade 0,7. Se <span class="math inline">\(u(x)
-= \ln(x)\)</span>, calcule o valor esperado, a utilidade esperada, o
-equivalente de certeza e o prêmio de risco.
+<h2 id="vc-e-ve-para-cobb-douglas">2. VC e VE para Cobb-Douglas</h2>
+<p>Para <span class="math inline">\(u = x_1^\alpha
+x_2^{1-\alpha}\)</span> com preços <span class="math inline">\((p_1,
+p_2)\)</span> e renda <span class="math inline">\(m\)</span>:</p>
+<ul>
+<li><strong>Demanda marshalliana:</strong> <span
+class="math inline">\(x_1^M = \frac{\alpha m}{p_1}\)</span>, <span
+class="math inline">\(x_2^M = \frac{(1-\alpha) m}{p_2}\)</span></li>
+<li><strong>Utilidade indireta:</strong> <span
+class="math inline">\(v(p_1, p_2, m) = \alpha^\alpha
+(1-\alpha)^{1-\alpha} \frac{m}{p_1^\alpha p_2^{1-\alpha}}\)</span></li>
+<li><strong>Função dispêndio:</strong> <span
+class="math inline">\(e(p_1, p_2, u) = \frac{u \, p_1^\alpha
+p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}\)</span></li>
+</ul>
+<p>Quando <span class="math inline">\(p_1\)</span> muda de <span
+class="math inline">\(p_1^0\)</span> para <span
+class="math inline">\(p_1^1\)</span>:</p>
+<p><span class="math display">\[VC =
+m\left[\left(\frac{p_1^1}{p_1^0}\right)^\alpha - 1\right], \qquad VE =
+m\left[1 - \left(\frac{p_1^0}{p_1^1}\right)^\alpha\right]\]</span></p>
+<iframe src="graficos/cap05/excedente-consumidor.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Altere o preço e observe como as áreas de EC, VC e VE diferem para
+demandas com efeito renda não nulo. Compare com o caso quase-linear.</p>
+</div>
+<hr />
+<h2 id="vc-e-ve-para-quase-linear">3. VC e VE para Quase-Linear</h2>
+<p>Para <span class="math inline">\(u = v(x_1) + x_2\)</span> com <span
+class="math inline">\(v&#39;(x_1) &gt; 0\)</span>, <span
+class="math inline">\(v&#39;&#39;(x_1) &lt; 0\)</span>:</p>
+<ul>
+<li><strong>Demanda marshalliana:</strong> <span
+class="math inline">\(v&#39;(x_1) = p_1\)</span>, independe de <span
+class="math inline">\(m\)</span>.</li>
+<li><strong>Não há efeito renda</strong> sobre <span
+class="math inline">\(x_1\)</span>.</li>
+</ul>
+<p>Resultado fundamental:</p>
+<p><span class="math display">\[VC = VE = \Delta EC = \int_{p_0}^{p_1}
+x^M(p)\,dp\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Em preferências quase-lineares, toda a variação de renda é absorvida
+pelo bem numerário <span class="math inline">\(x_2\)</span>. A demanda
+por <span class="math inline">\(x_1\)</span> depende apenas do preço —
+as curvas hicksiana e marshalliana coincidem.</p>
+</div>
+<hr />
+<h2 id="exercício-preparatório-icms-sobre-eletricidade">4. Exercício
+Preparatório: ICMS sobre Eletricidade</h2>
+<p>O ICMS sobre eletricidade no Brasil pode chegar a 25–30% em alguns
+estados. Modelamos o consumo de eletricidade (<span
+class="math inline">\(x_1\)</span>) e outros bens (<span
+class="math inline">\(x_2\)</span>) com:</p>
+<p><span class="math display">\[u = x_1^{0{,}4} x_2^{0{,}6}, \quad m =
+3000, \quad p_2 = 1\]</span></p>
+<p>O preço da eletricidade sobe de <span class="math inline">\(p_1 =
+1\)</span> para <span class="math inline">\(p_1 = 1{,}30\)</span>
+(alíquota de 30%).</p>
+<p><strong>Receita do governo:</strong> <span class="math inline">\(R =
+(p_1^1 - p_1^0) \cdot x_1^*(p_1^1)\)</span></p>
+<p><strong>Perda de peso morto:</strong> <span class="math inline">\(DWL
+= |VC| - R\)</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A perda de peso morto cresce com o <strong>quadrado</strong> da
+alíquota — a chamada regra de Harberger. Dobrar a alíquota quadruplica a
+ineficiência. Isso é central no debate sobre reforma tributária no
+Brasil.</p>
+</div>
+<iframe src="graficos/cap06/substitutos-complementos.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe como a relação de substituição ou complementaridade entre
+bens afeta a magnitude da perda de peso morto. Bens com substitutos
+próximos sofrem maior distorção.</p>
+</div>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Com <span class="math inline">\(u =
+x_1^{0{,}5} x_2^{0{,}5}\)</span>, <span class="math inline">\(m =
+400\)</span>, <span class="math inline">\(p_2 = 1\)</span> e aumento de
+<span class="math inline">\(p_1\)</span> de 2 para 8, calcule VC, VE e
+<span class="math inline">\(\Delta EC\)</span>.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(E[L] = 0{,}3(400) + 0{,}7(100) = 120 + 70
-= 190\)</span></p>
-<p><span class="math inline">\(E[u(L)] = 0{,}3 \ln(400) + 0{,}7 \ln(100)
-= 0{,}3(5{,}991) + 0{,}7(4{,}605) = 1{,}797 + 3{,}224 =
-5{,}021\)</span></p>
-<p><span class="math inline">\(EC = e^{5{,}021} \approx
-151{,}6\)</span></p>
-<p><span class="math inline">\(\pi = 190 - 151{,}6 = 38{,}4\)</span></p>
-<p>O agente aceitaria R$ 151,60 com certeza em vez da loteria de valor
-esperado R$ 190.</p>
+<p><span class="math inline">\(\alpha = 0{,}5\)</span>. Usando as
+fórmulas:<br />
+<span class="math inline">\(VC = 400\left[\left(\frac{8}{2}\right)^{0,5}
+- 1\right] = 400(2 - 1) = 400\)</span>.<br />
+<span class="math inline">\(VE = 400\left[1 -
+\left(\frac{2}{8}\right)^{0,5}\right] = 400(1 - 0{,}5) =
+200\)</span>.<br />
+<span class="math inline">\(\Delta EC = \int_2^8 \frac{200}{p}\,dp =
+200\ln 4 \approx 277{,}26\)</span>.<br />
+Confirmamos: <span class="math inline">\(VE = 200 &lt; \Delta EC \approx
+277 &lt; VC = 400\)</span>.</p>
 </div>
 </details>
-<pre><code>$E[L] = 0{,}3(400) + 0{,}7(100) = 120 + 70 = 190$
-
-$E[u(L)] = 0{,}3 \ln(400) + 0{,}7 \ln(100) = 0{,}3(5{,}991) + 0{,}7(4{,}605) = 1{,}797 + 3{,}224 = 5{,}021$
-
-$EC = e^{5{,}021} \approx 151{,}6$
-
-$\pi = 190 - 151{,}6 = 38{,}4$
-
-O agente aceitaria R$ 151,60 com certeza em vez da loteria de valor esperado R$ 190.</code></pre>
-<strong>Exercício 2.</strong> Mostre que, para <span
-class="math inline">\(u(x) = -e^{-2x}\)</span>, o coeficiente de aversão
-absoluta é constante e calcule seu valor.
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(u =
+10\sqrt{x_1} + x_2\)</span>, <span class="math inline">\(m =
+100\)</span>, <span class="math inline">\(p_2 = 1\)</span> e <span
+class="math inline">\(p_1\)</span> subindo de 1 para 4, calcule as três
+medidas.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(u&#39;(x) = 2e^{-2x}\)</span></p>
-<p><span class="math inline">\(u&#39;&#39;(x) = -4e^{-2x}\)</span></p>
-<p><span class="math inline">\(A(x) = -\frac{u&#39;&#39;(x)}{u&#39;(x)}
-= -\frac{-4e^{-2x}}{2e^{-2x}} = \frac{4}{2} = 2\)</span></p>
-<p><span class="math inline">\(A(x) = 2\)</span> para todo <span
-class="math inline">\(x\)</span>. Trata-se de uma função CARA com
-parâmetro <span class="math inline">\(a = 2\)</span>.</p>
+<p>Demanda: <span class="math inline">\(v&#39;(x_1) =
+\frac{5}{\sqrt{x_1}} = p_1 \Rightarrow x_1 = 25/p_1^2\)</span>.<br />
+<span class="math inline">\(\Delta EC = \int_1^4 \frac{25}{p^2}\,dp =
+25\left[-\frac{1}{p}\right]_1^4 = 25\left(1 - \frac{1}{4}\right) =
+18{,}75\)</span>.<br />
+Como é quase-linear: <span class="math inline">\(VC = VE = \Delta EC =
+18{,}75\)</span>.</p>
 </div>
 </details>
-<pre><code>$u&#39;(x) = 2e^{-2x}$
-
-$u&#39;&#39;(x) = -4e^{-2x}$
-
-$A(x) = -\frac{u&#39;&#39;(x)}{u&#39;(x)} = -\frac{-4e^{-2x}}{2e^{-2x}} = \frac{4}{2} = 2$
-
-$A(x) = 2$ para todo $x$. Trata-se de uma função CARA com parâmetro $a = 2$.</code></pre>
-<strong>Exercício 3.</strong> Um fazendeiro com riqueza <span
-class="math inline">\(W = 1000\)</span> enfrenta risco de perda <span
-class="math inline">\(D = 600\)</span> com probabilidade <span
-class="math inline">\(p = 0{,}2\)</span>. Se o seguro tem preço
-atuarialmente justo (<span class="math inline">\(\gamma =
-0{,}2\)</span>) e <span class="math inline">\(u = \sqrt{x}\)</span>,
-mostre que o seguro completo é ótimo.
+<p><strong>Exercício 3.</strong> No exercício do ICMS (<span
+class="math inline">\(\alpha = 0{,}4\)</span>, <span
+class="math inline">\(m = 3000\)</span>, <span
+class="math inline">\(p_1\)</span>: 1 para 1,30), calcule a receita
+<span class="math inline">\(R\)</span> e a perda de peso morto.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Com seguro completo (<span class="math inline">\(K = D =
-600\)</span>): prêmio <span class="math inline">\(= 0{,}2 \times 600 =
-120\)</span>.</p>
-<p><span class="math inline">\(W_{\text{final}} = 1000 - 120 =
-880\)</span> em ambos os estados.</p>
-<p><span class="math inline">\(U_{\text{seguro}} = \sqrt{880} \approx
-29{,}66\)</span></p>
-<p>Sem seguro: <span class="math inline">\(U_{\text{sem}} =
-0{,}8\sqrt{1000} + 0{,}2\sqrt{400} = 0{,}8(31{,}62) + 0{,}2(20) =
-25{,}30 + 4{,}00 = 29{,}30\)</span></p>
-<p><span class="math inline">\(U_{\text{seguro}} = 29{,}66 &gt; 29{,}30
-= U_{\text{sem}}\)</span>. Seguro completo é melhor.</p>
-<p>De fato, para <span class="math inline">\(\gamma = p\)</span> e <span
-class="math inline">\(u&#39;&#39; &lt; 0\)</span>, o seguro completo
-sempre é ótimo (pode-se provar via CPO: <span
-class="math inline">\(u&#39;(W_1) = u&#39;(W_2) \implies W_1 =
-W_2\)</span>).</p>
+<p><span class="math inline">\(x_1^*(1{,}30) = \frac{0{,}4 \times
+3000}{1{,}30} \approx 923{,}08\)</span>.<br />
+<span class="math inline">\(R = 0{,}30 \times 923{,}08 \approx
+276{,}92\)</span>.<br />
+<span class="math inline">\(VC = 3000[(1{,}30)^{0,4} - 1] =
+3000[1{,}1096 - 1] = 3000 \times 0{,}1096 \approx
+328{,}77\)</span>.<br />
+<span class="math inline">\(DWL = 328{,}77 - 276{,}92 \approx
+51{,}85\)</span>.<br />
+A perda de peso morto é de aproximadamente R$ 51,85.</p>
 </div>
 </details>
-<pre><code>Com seguro completo ($K = D = 600$): prêmio $= 0{,}2 \times 600 = 120$.
-
-$W_{\text{final}} = 1000 - 120 = 880$ em ambos os estados.
-
-$U_{\text{seguro}} = \sqrt{880} \approx 29{,}66$
-
-Sem seguro: $U_{\text{sem}} = 0{,}8\sqrt{1000} + 0{,}2\sqrt{400} = 0{,}8(31{,}62) + 0{,}2(20) = 25{,}30 + 4{,}00 = 29{,}30$
-
-$U_{\text{seguro}} = 29{,}66 &gt; 29{,}30 = U_{\text{sem}}$. Seguro completo é melhor.
-
-De fato, para $\gamma = p$ e $u&#39;&#39; &lt; 0$, o seguro completo sempre é ótimo (pode-se provar via CPO: $u&#39;(W_1) = u&#39;(W_2) \implies W_1 = W_2$).</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -452,222 +224,59 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 <div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. O Paradoxo de São Petersburgo mostra que as pessoas:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Maximizam o valor esperado
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Não maximizam o valor esperado — a utilidade marginal da renda é
-decrescente
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>São amantes do risco
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>São neutras ao risco
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="q-text">Q1. Para preferências Cobb-Douglas com $\alpha = 0{,}5$, a função dispêndio é proporcional a:</div>
+<div class="quiz-option" data-value="a">(a) $p_1 / p_2$</div>
+<div class="quiz-option" data-value="b">(b) $\sqrt{p_1 p_2}$</div>
+<div class="quiz-option" data-value="c">(c) $p_1 + p_2$</div>
+<div class="quiz-option" data-value="d">(d) $p_1^2 p_2^2$</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q2" data-correct="c">
-<div class="q-text">
-Q2. Se <span class="math inline">\(u(x) = x^2\)</span>, o agente é:
+<div class="q-text">Q2. Em preferências quase-lineares, o efeito renda sobre $x_1$ é:</div>
+<div class="quiz-option" data-value="a">(a) Positivo</div>
+<div class="quiz-option" data-value="b">(b) Negativo</div>
+<div class="quiz-option" data-value="c">(c) Zero</div>
+<div class="quiz-option" data-value="d">(d) Depende dos parâmetros</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Se o preço de um bem normal aumenta, a maior medida de perda (em valor absoluto) é:</div>
+<div class="quiz-option" data-value="a">(a) Variação compensatória</div>
+<div class="quiz-option" data-value="b">(b) Variação equivalente</div>
+<div class="quiz-option" data-value="c">(c) Excedente do consumidor</div>
+<div class="quiz-option" data-value="d">(d) São todas iguais</div>
+<div class="quiz-feedback"></div>
 </div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. A perda de peso morto de um imposto cresce aproximadamente com:</div>
+<div class="quiz-option" data-value="a">(a) A alíquota</div>
+<div class="quiz-option" data-value="b">(b) O quadrado da alíquota</div>
+<div class="quiz-option" data-value="c">(c) A raiz da alíquota</div>
+<div class="quiz-option" data-value="d">(d) O logaritmo da alíquota</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Avesso ao risco
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. A receita do governo com um imposto unitário $t$ sobre o bem $x_1$ é:</div>
+<div class="quiz-option" data-value="a">(a) $t \cdot x_1(p_1^0)$</div>
+<div class="quiz-option" data-value="b">(b) $t \cdot x_1(p_1^0 + t)$</div>
+<div class="quiz-option" data-value="c">(c) $t^2 \cdot x_1(p_1^0)$</div>
+<div class="quiz-option" data-value="d">(d) $t \cdot m$</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Neutro ao risco
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Amante do risco
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Impossível determinar
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. O equivalente de certeza é:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O valor esperado da loteria
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O valor certo que dá a mesma utilidade que a loteria
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O prêmio de seguro
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O lucro esperado
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q4" data-correct="a">
-<div class="q-text">
-Q4. Se o prêmio de risco é positivo, o agente é:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Avesso ao risco
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Neutro ao risco
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Amante do risco
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Indiferente ao risco
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="a">
-<div class="q-text">
-Q5. No seguro atuarialmente justo, um avesso ao risco:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Compra seguro completo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Não compra seguro
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Compra seguro parcial
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>É indiferente entre comprar ou não
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-11')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 11</strong>: Mini-lecture sobre utilidade esperada e
-aversão ao risco + Peer Instruction sobre classificação de atitudes
-frente ao risco.
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 11**: Mini-lecture sobre utilidade esperada e aversão ao risco + Peer Instruction sobre classificação de atitudes frente ao risco.</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p>Na <strong>Aula 12</strong>, estudaremos economias com dotações,
+incluindo o modelo de oferta de trabalho (lazer-consumo) e a escolha
+intertemporal com taxa de juros.</p>
 </div>
 
 </div>
@@ -678,7 +287,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-11');
 MicroQuiz.init('aula-11');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

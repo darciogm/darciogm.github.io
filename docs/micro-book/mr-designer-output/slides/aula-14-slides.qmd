@@ -11,210 +11,561 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
-## Quase-Concavidade e Produção
+## Família de Funções de Produção
 
-Uma função $f$ é **quase-côncava** se os conjuntos de nível superior são convexos:
-
-$$\{(K,L) : f(K,L) \geq \bar{q}\} \text{ é convexo } \forall \bar{q}$$
+A função **CES** (Constant Elasticity of Substitution) unifica as três grandes famílias:
 
 . . .
 
-**Implicações para a produção:**
-
-- Isoquantas são **convexas** em direção à origem
-- TMST é **decrescente** ao longo da isoquanta
-- Garante que a minimização de custos tem solução **única**
-
-. . .
-
-> Quase-concavidade **não** exige concavidade — a função pode ter rendimentos crescentes de escala.
-
-## Produção CES: Aninhamento
-
-A função CES aninha os casos polares:
-
-$$q = A\bigl[\delta K^{\rho} + (1-\delta)L^{\rho}\bigr]^{r/\rho}$$
+| Caso Limite | $\sigma$ | Isoquantas | Substituição |
+|---|---|---|---|
+| **Linear** | $\sigma \to \infty$ | Retas | Perfeita |
+| **Cobb-Douglas** | $\sigma = 1$ | Curvas suaves | Unitária |
+| **Leontief** | $\sigma \to 0$ | Ângulos retos | Nenhuma |
 
 . . .
 
-**Casos especiais via $\rho$:**
+:::{.callout-tip title="Intuição Econômica"}
+A CES é uma "superfamília": ajustando um único parâmetro ($\rho$), ela transita continuamente de proporções fixas até substituição perfeita, passando pela Cobb-Douglas.
+:::
 
-| $\rho$ | $\sigma = \frac{1}{1-\rho}$ | Função |
+## CES na Produção
+
+$$q = A\bigl[\delta K^{\rho} + (1-\delta)L^{\rho}\bigr]^{1/\rho}$$
+
+. . .
+
+**Parâmetros:**
+
+- $A > 0$: produtividade total dos fatores (TFP)
+- $\delta \in (0,1)$: parâmetro de distribuição (peso do capital)
+- $\rho \leq 1, \; \rho \neq 0$: parâmetro de substituição
+
+. . .
+
+**Relação fundamental:**
+
+$$\sigma = \frac{1}{1 - \rho}$$
+
+. . .
+
+| $\rho$ | $\sigma$ | Função resultante |
 |---|---|---|
+| $\to -\infty$ | $\to 0$ | Leontief |
 | $\to 0$ | $1$ | Cobb-Douglas |
-| $1$ | $\infty$ | Linear |
-| $\to -\infty$ | $0$ | Leontief |
+| $\to 1$ | $\to \infty$ | Linear |
+
+## CES: Variando $\sigma$
+
+Arraste o slider de $\rho$ e observe as isoquantas mudando de forma — de ângulos retos (Leontief) a retas (Linear):
+
+<div id="graph-a14-ces" style="width:700px;height:400px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\rho$: <input type="range" id="sl-a14-rho" min="-5" max="0.9" value="0" step="0.1" oninput="updA14Ces()"> <span id="val-a14-rho">0.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a14-ces',{
+    boundingbox:[-1,22,22,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[20.5,0.8,'K'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[0.5,21,'L'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var rhoVal = 0;
+  var delta = 0.5, A = 1;
+  var qLevels = [4, 6, 8, 10];
+  var colors = ['#1565c0','#00897b','#C8102E','#ff9800'];
+  var curves = [];
+
+  // CES isoquant: given q, parametrically sweep K and solve for L
+  // q = A[delta*K^rho + (1-delta)*L^rho]^(1/rho)
+  // => (q/A)^rho = delta*K^rho + (1-delta)*L^rho
+  // => L = [((q/A)^rho - delta*K^rho)/(1-delta)]^(1/rho)
+  function cesL(K, q, rho){
+    if(Math.abs(rho) < 0.01){
+      // Cobb-Douglas limit: q = A * K^delta * L^(1-delta)
+      // L = (q/(A*K^delta))^(1/(1-delta))
+      if(K <= 0.01) return 999;
+      return Math.pow(q/(A*Math.pow(K, delta)), 1/(1-delta));
+    }
+    if(rho < -50){
+      // Leontief limit: q = A*min(K, L) with equal weights
+      return q/A;
+    }
+    if(K <= 0.01) return 999;
+    var qArho = Math.pow(q/A, rho);
+    var remainder = qArho - delta*Math.pow(K, rho);
+    if(rho > 0){
+      if(remainder <= 0) return 999;
+      return Math.pow(remainder/(1-delta), 1/rho);
+    } else {
+      // rho < 0
+      if(remainder/(1-delta) <= 0) return 999;
+      return Math.pow(remainder/(1-delta), 1/rho);
+    }
+  }
+
+  for(var i = 0; i < qLevels.length; i++){
+    (function(idx){
+      var c = brd.create('functiongraph',[function(K){
+        return cesL(K, qLevels[idx], rhoVal);
+      }, 0.15, 21],{strokeColor:colors[idx],strokeWidth:2.5});
+      curves.push(c);
+      brd.create('text',[function(){
+        var kp = qLevels[idx]*0.45;
+        return kp;
+      }, function(){
+        var kp = qLevels[idx]*0.45;
+        var lv = cesL(kp, qLevels[idx], rhoVal);
+        return lv + 0.6;
+      }, function(){return 'q='+qLevels[idx];}],{fontSize:12,cssStyle:'font-weight:bold;color:'+colors[idx]+';'});
+    })(i);
+  }
+
+  window.updA14Ces = function(){
+    rhoVal = parseFloat(document.getElementById('sl-a14-rho').value);
+    document.getElementById('val-a14-rho').textContent = rhoVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+## Leontief: Proporções Fixas
+
+$$q = \min\!\left(\frac{K}{a},\; \frac{L}{b}\right)$$
 
 . . .
 
-O parâmetro $r$ controla rendimentos de escala independentemente de $\sigma$.
+**Propriedades:**
 
-## Elasticidade de Substituição na Prática
-
-Explore como $\sigma$ altera a forma das isoquantas:
-
-<iframe src="../../graficos/cap10/isoquantas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-**Observe:** quando $\sigma \to 0$, as isoquantas se tornam angulosas; quando $\sigma \to \infty$, tornam-se retas.
-
-## Cobb-Douglas em Detalhe
-
-$$q = AK^{\alpha}L^{\beta}$$
-
-**Propriedades algébricas:**
-
-- $PMg_L = \beta A K^{\alpha} L^{\beta - 1} = \beta \frac{q}{L}$
-- $PMg_K = \alpha A K^{\alpha - 1} L^{\beta} = \alpha \frac{q}{K}$
-- $TMST_{L,K} = \frac{\beta}{\alpha} \cdot \frac{K}{L}$
+- A isoquanta é um **ângulo reto** com vértice em $(K, L) = (aq, bq)$
+- A razão ótima de insumos é **fixa**: $\frac{K}{L} = \frac{a}{b}$
+- Qualquer desvio dessa razão desperdiça um dos insumos
+- $\sigma = 0$ — **nenhuma** substituição possível
 
 . . .
 
-**Rendimentos de escala:** $\alpha + \beta$
+**Exemplos reais:**
 
-| $\alpha + \beta$ | Rendimentos |
-|---|---|
-| $> 1$ | Crescentes |
-| $= 1$ | Constantes |
-| $< 1$ | Decrescentes |
-
-<iframe src="../../graficos/cap10/rendimentos-escala.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## Relações entre PMg e PMe
-
-**Resultado fundamental:** o produto marginal cruza o produto médio no ponto de máximo do produto médio.
-
-$$\frac{d}{dL}\left(\frac{q}{L}\right) = \frac{PMg_L - PMe_L}{L}$$
+- Um motorista + um caminhão (transporte rodoviário)
+- Uma receita de bolo com proporções exatas
 
 . . .
 
-**Três fases da produção:**
+> Excesso de qualquer insumo não gera produto adicional — a produtividade marginal do insumo em excesso é **zero**.
 
-- **Fase I:** $PMg_L > PMe_L$ — ineficiente (PMe ainda crescente)
-- **Fase II:** $PMg_L < PMe_L$ mas $PMg_L > 0$ — região econômica
-- **Fase III:** $PMg_L < 0$ — absurda (mais insumo, menos produto)
+## Linear: Substituição Perfeita
 
-<iframe src="../../graficos/cap10/progresso-tecnico.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## Efeitos Cruzados de Produtividade
-
-O que acontece com $PMg_L$ quando $K$ aumenta?
-
-$$\frac{\partial PMg_L}{\partial K} = \frac{\partial^2 f}{\partial K \partial L} = f_{KL}$$
+$$q = aK + bL$$
 
 . . .
 
-**Complementaridade dos insumos:**
+**Propriedades:**
 
-- $f_{KL} > 0$: insumos são **complementares** — mais capital torna o trabalho mais produtivo
-- $f_{KL} < 0$: insumos são **substitutos** na produção
-- $f_{KL} = 0$: produtividades independentes (ex.: função aditiva)
+- Isoquantas são **retas** com inclinação $-a/b$
+- $TMST = \frac{b}{a}$ — constante ao longo de toda a isoquanta
+- $\sigma = \infty$ — substituição perfeita entre insumos
 
 . . .
 
-> **Cobb-Douglas:** $f_{KL} = \alpha\beta AK^{\alpha-1}L^{\beta-1} > 0$ — sempre complementares!
+**Implicação para a firma:** soluções de canto
 
-## Tipos de Progresso Técnico
+- Se $\frac{w}{r} < \frac{b}{a}$: usa **só trabalho** ($K = 0$)
+- Se $\frac{w}{r} > \frac{b}{a}$: usa **só capital** ($L = 0$)
+- Se $\frac{w}{r} = \frac{b}{a}$: qualquer combinação é ótima
 
-**Classificação de Hicks** — como a inovação altera a razão $K/L$ ótima a preços constantes:
+. . .
 
-| Tipo | Efeito | Exemplo |
+:::{.callout-tip title="Intuição Econômica"}
+Com substituição perfeita, a firma nunca diversifica insumos — sempre escolhe o mais barato por unidade de produto efetivo.
+:::
+
+## Homogeneidade e Rendimentos de Escala
+
+Uma função $f$ é **homogênea de grau $k$** se:
+
+$$f(tK, tL) = t^k \cdot f(K, L) \quad \forall\, t > 0$$
+
+. . .
+
+**Conexão direta com rendimentos de escala:**
+
+| Grau $k$ | Rendimentos | Escalar insumos por $t$ |
 |---|---|---|
-| **Neutro** | Não altera $K/L$ | TFP geral |
-| **Poupador de L** | Aumenta $K/L$ | Automação |
-| **Poupador de K** | Reduz $K/L$ | Software aberto |
+| $k > 1$ | **Crescentes** (IRS) | Produto cresce mais que $t$ vezes |
+| $k = 1$ | **Constantes** (CRS) | Produto cresce exatamente $t$ vezes |
+| $k < 1$ | **Decrescentes** (DRS) | Produto cresce menos que $t$ vezes |
 
 . . .
 
-**Progresso Hicks-neutro:**
+**Teorema de Euler** (para $f$ homogênea de grau $k$):
 
-$$q = A(t) \cdot f(K, L)$$
-
-**Progresso Harrod-neutro (aumentador de trabalho):**
-
-$$q = f(K, A(t) \cdot L)$$
-
-## Funções de Produção na Prática
-
-**Estimação empírica:**
-
-- Solow (1957): resíduo de Solow = progresso técnico
-- Griliches (1967): capital humano na Cobb-Douglas
-- Arrow, Chenery, Minhas, Solow (1961): introdução da CES
+$$K \cdot PMg_K + L \cdot PMg_L = k \cdot q$$
 
 . . .
 
-**Evidência sobre $\sigma$:**
+> Com CRS ($k=1$), o produto é **exatamente esgotado** pela remuneração dos fatores às respectivas produtividades marginais.
 
-| Setor | $\hat{\sigma}$ estimado |
+## Função de Produção Homotética
+
+Uma função $f$ é **homotética** se as isoquantas são **expansões radiais** umas das outras.
+
+. . .
+
+**Definição formal:** $f$ é homotética se pode ser escrita como:
+
+$$f(K, L) = g\bigl(h(K, L)\bigr)$$
+
+onde $h$ é homogênea de grau 1 e $g$ é estritamente crescente.
+
+. . .
+
+**Implicação fundamental:**
+
+- A TMST depende apenas da **razão** $K/L$, não do nível de produto
+- O **caminho de expansão** é um **raio** pela origem
+- Dado $w/r$, a razão ótima $K^*/L^*$ é a mesma para qualquer nível de $q$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Homoteticidade significa que escalar a produção não altera a "receita" de insumos — a firma simplesmente usa mais de tudo na mesma proporção. Cobb-Douglas, CES e Leontief são todas homotéticas.
+:::
+
+## Elasticidade de Substituição: Medindo
+
+Arraste o ponto ao longo da isoquanta e observe como $K/L$ e $TMST$ se relacionam com $\sigma$:
+
+<div id="graph-a14-elast" style="width:700px;height:400px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\sigma$: <input type="range" id="sl-a14-sigma" min="0.1" max="5" value="1" step="0.1" oninput="updA14Elast()"> <span id="val-a14-sigma">1.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a14-elast',{
+    boundingbox:[-1,16,16,-3], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[14.5,0.6,'K'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[0.5,15,'L'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var sigmaVal = 1.0;
+  var q0 = 6, delta = 0.5, A = 1;
+
+  function getRho(s){ return (s - 1)/s; }
+
+  function cesL(K, rho){
+    if(Math.abs(rho) < 0.01){
+      if(K<=0.01) return 999;
+      return Math.pow(q0/(A*Math.pow(K,delta)),1/(1-delta));
+    }
+    if(K<=0.01) return 999;
+    var qr = Math.pow(q0/A, rho);
+    var rem = qr - delta*Math.pow(K, rho);
+    if(rem/(1-delta) <= 0) return 999;
+    return Math.pow(rem/(1-delta), 1/rho);
+  }
+
+  // Isoquant curve
+  var isoCurve = brd.create('functiongraph',[function(K){
+    return cesL(K, getRho(sigmaVal));
+  },0.2,15],{strokeColor:'#1565c0',strokeWidth:3});
+
+  // Draggable point on isoquant
+  var Kp = 5;
+  var ptDrag = brd.create('point',[Kp, function(){return cesL(Kp, getRho(sigmaVal));}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:false});
+
+  // Constrain point to isoquant on drag
+  ptDrag.on('drag', function(){
+    Kp = Math.max(0.5, Math.min(14, ptDrag.X()));
+    var Lv = cesL(Kp, getRho(sigmaVal));
+    if(Lv > 15 || Lv < 0.1){Kp = 5;}
+    ptDrag.moveTo([Kp, cesL(Kp, getRho(sigmaVal))]);
+  });
+
+  // Ray from origin through point
+  brd.create('line',[[0,0],[function(){return ptDrag.X();},function(){return ptDrag.Y();}]],
+    {strokeColor:'#ff9800',strokeWidth:1.5,dash:2,straightFirst:false,straightLast:false});
+
+  // Tangent line at the point (showing TMST)
+  function tmst(K, rho){
+    // TMST = (delta/(1-delta)) * (L/K)^(1-rho)
+    var Lv = cesL(K, rho);
+    if(Math.abs(rho)<0.01){
+      return (delta/(1-delta))*(Lv/K);
+    }
+    return (delta/(1-delta))*Math.pow(Lv/K, 1-rho);
+  }
+
+  brd.create('line',[function(){
+    var K0 = ptDrag.X(), L0 = ptDrag.Y();
+    var slope = -tmst(K0, getRho(sigmaVal));
+    // line: L - L0 = slope*(K - K0) => two points
+    return [[K0 - 3, L0 - slope*3],[K0 + 3, L0 + slope*3]];
+  }],{strokeColor:'#00897b',strokeWidth:2,dash:3,straightFirst:false,straightLast:false,
+    point1:{visible:false},point2:{visible:false}});
+
+  // Info text
+  brd.create('text',[9, 14, function(){
+    var K0 = ptDrag.X(), L0 = ptDrag.Y();
+    var ratio = (K0/L0).toFixed(2);
+    var t = tmst(K0, getRho(sigmaVal)).toFixed(2);
+    return 'K/L = '+ratio+'  |  TMST = '+t;
+  }],{fontSize:13,cssStyle:'font-weight:bold;color:#333;'});
+
+  brd.create('text',[9, 12.5, function(){
+    return '\u03c3 = '+sigmaVal.toFixed(1);
+  }],{fontSize:14,cssStyle:'font-weight:bold;color:#1565c0;'});
+
+  window.updA14Elast = function(){
+    sigmaVal = parseFloat(document.getElementById('sl-a14-sigma').value);
+    document.getElementById('val-a14-sigma').textContent = sigmaVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+> $\sigma$ alto → isoquanta "achatada", pequenas mudanças na TMST geram grandes mudanças em $K/L$.
+
+## Caminho de Expansão
+
+À medida que o produto $q$ cresce, a preços dos insumos constantes, a combinação ótima $(K^*, L^*)$ traça o **caminho de expansão**.
+
+. . .
+
+**Construção:**
+
+1. Para cada nível de $q$, resolve-se a minimização de custos com $w/r$ fixo
+2. A tangência entre isocusto e isoquanta define $(K^*, L^*)$
+3. Conectando esses pontos → caminho de expansão
+
+. . .
+
+**Casos especiais:**
+
+| Função | Caminho de Expansão |
 |---|---|
-| Manufatura (EUA) | $0{,}8 - 1{,}0$ |
-| Agricultura | $0{,}3 - 0{,}6$ |
-| Serviços | $1{,}0 - 1{,}5$ |
-
-> Antony (2010): a maioria das estimativas situa $\sigma < 1$.
-
-## Atividade Jigsaw: 4 Funções de Produção
-
-**Instruções (15 min):**
-
-1. Formem **4 grupos** — cada um recebe uma função:
-   - **Grupo A:** Linear $q = aK + bL$
-   - **Grupo B:** Leontief $q = \min\{aK, bL\}$
-   - **Grupo C:** Cobb-Douglas $q = K^{0{,}5}L^{0{,}5}$
-   - **Grupo D:** CES com $\rho = -1$ ($\sigma = 0{,}5$)
+| **Homotética** | Raio pela origem ($K/L$ constante) |
+| **Cobb-Douglas** $K^\alpha L^\beta$ | $K/L = \frac{\alpha}{\beta}\cdot\frac{w}{r}$ — raio |
+| **Não-homotética** | Curva (razão $K/L$ varia com $q$) |
 
 . . .
 
-2. Cada grupo deve determinar: isoquantas, TMST, rendimentos de escala, $\sigma$
-3. **Reagrupem** (um de cada grupo) e ensinem uns aos outros
+:::{.callout-tip title="Intuição Econômica"}
+O caminho de expansão é a "planta de crescimento" da firma — mostra como ela escala a produção de forma ótima. Se for um raio, escalar é simples; se for curvado, a tecnologia muda com o tamanho.
+:::
 
-## Desafio Diagnóstico
+## Progresso Técnico: Tipos
 
-**Cenário:** Uma firma usa $K=100$, $L=200$ e produz $q=500$.
+Arraste o slider de TFP ($A$) e observe as isoquantas se deslocarem para dentro — mesmo produto com menos insumos:
 
-Após duplicar ambos os insumos: $K=200$, $L=400$, produz $q=1200$.
+<div id="graph-a14-tech" style="width:700px;height:400px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>TFP ($A$): <input type="range" id="sl-a14-A" min="1" max="3" value="1" step="0.1" oninput="updA14Tech()"> <span id="val-a14-A">1.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a14-tech',{
+    boundingbox:[-1,18,18,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[16.5,0.6,'K'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[0.5,17,'L'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var Aval = 1.0;
+  var alpha = 0.5;
+  var qTargets = [6, 9];
+  var colorsOrig = ['#aaa','#ccc'];
+  var colorsNew  = ['#1565c0','#00897b'];
+
+  // Cobb-Douglas isoquant: L = (q/(A*K^alpha))^(1/(1-alpha))
+  function cdL(K, q, Av){
+    if(K<=0.05) return 999;
+    return Math.pow(q/(Av*Math.pow(K,alpha)), 1/(1-alpha));
+  }
+
+  // Original isoquants (A=1, dashed)
+  for(var i=0; i<qTargets.length; i++){
+    (function(idx){
+      brd.create('functiongraph',[function(K){
+        return cdL(K, qTargets[idx], 1.0);
+      },0.2,17],{strokeColor:colorsOrig[idx],strokeWidth:2,dash:3});
+      brd.create('text',[function(){return qTargets[idx]*0.7+1;},function(){
+        return cdL(qTargets[idx]*0.7+1, qTargets[idx], 1.0)+0.6;
+      },function(){return 'q='+qTargets[idx]+' (A=1)';}],{fontSize:11,cssStyle:'color:#999;'});
+    })(i);
+  }
+
+  // New isoquants (dynamic A)
+  for(var i=0; i<qTargets.length; i++){
+    (function(idx){
+      brd.create('functiongraph',[function(K){
+        return cdL(K, qTargets[idx], Aval);
+      },0.2,17],{strokeColor:colorsNew[idx],strokeWidth:3});
+      brd.create('text',[function(){return qTargets[idx]*0.5/Math.sqrt(Aval)+0.5;},function(){
+        var kk = qTargets[idx]*0.5/Math.sqrt(Aval)+0.5;
+        return cdL(kk, qTargets[idx], Aval)+0.6;
+      },function(){return 'q='+qTargets[idx]+' (A='+Aval.toFixed(1)+')';}],
+        {fontSize:11,cssStyle:'font-weight:bold;color:'+colorsNew[idx]+';'});
+    })(i);
+  }
+
+  // Arrow showing inward shift
+  brd.create('arrow',[
+    [function(){return 7;}, function(){return cdL(7, 6, 1.0);}],
+    [function(){return 7;}, function(){return cdL(7, 6, Aval);}]
+  ],{strokeColor:'#C8102E',strokeWidth:2,dash:0});
+
+  brd.create('text',[8, function(){
+    return (cdL(7,6,1.0)+cdL(7,6,Aval))/2;
+  }, function(){
+    if(Aval>1.05) return '\u2190 ganho';
+    return '';
+  }],{fontSize:12,cssStyle:'color:#C8102E;font-weight:bold;'});
+
+  window.updA14Tech = function(){
+    Aval = parseFloat(document.getElementById('sl-a14-A').value);
+    document.getElementById('val-a14-A').textContent = Aval.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
 
 . . .
 
-**Perguntas:**
+> Progresso técnico é **deslocamento de isoquantas para dentro**: a firma atinge $q$ usando menos $K$ e $L$.
 
-1. Que tipo de rendimentos de escala essa firma apresenta? **Justifique.**
-2. Essa firma pode ter função Cobb-Douglas com $\alpha + \beta = 1$? **Por quê?**
-3. Se $w$ (salário) dobrar, o que acontece com a razão $K/L$ ótima na Cobb-Douglas?
+## Exercício: Identifique a Função
+
+**Associe cada mapa de isoquantas à função de produção correspondente:**
+
+:::: {.columns}
+::: {.column width="50%"}
+**Mapa I:** Isoquantas são retas paralelas com inclinação $-2$
+
+**Mapa II:** Isoquantas são ângulos retos com vértices sobre $K = 2L$
+
+**Mapa III:** Isoquantas são curvas suaves, espaçamento constante ao longo de raio
+
+**Mapa IV:** Isoquantas são curvas "quase-angulosas" ($\sigma = 0{,}5$)
+:::
+::: {.column width="50%"}
+**Funções:**
+
+**(a)** $q = \min\{K/2,\; L\}$
+
+**(b)** $q = K^{0{,}5}L^{0{,}5}$
+
+**(c)** $q = 2K + L$
+
+**(d)** $q = [\tfrac{1}{2}K^{-1} + \tfrac{1}{2}L^{-1}]^{-1}$
+:::
+::::
 
 . . .
 
-> **Tempo:** 8 minutos em duplas. Preparem argumentos para discussão.
+**Respostas:** I → (c), II → (a), III → (b), IV → (d)
 
-## Peer Instruction: IRS implica monopólio?
+. . .
 
-> **Questão:** "Se uma indústria apresenta rendimentos crescentes de escala, ela necessariamente se tornará um monopólio natural."
+> **Dica:** olhe para a curvatura e para a inclinação-limite das isoquantas.
+
+## PMg e PMe: Relação
+
+**Resultado fundamental:**
+
+$$\frac{d}{dL}\!\left(\frac{q}{L}\right) = \frac{PMg_L - PMe_L}{L}$$
+
+. . .
+
+**Implicação:**
+
+- Quando $PMg_L > PMe_L$: o produto médio está **subindo**
+- Quando $PMg_L = PMe_L$: o produto médio está no **máximo**
+- Quando $PMg_L < PMe_L$: o produto médio está **caindo**
+
+. . .
+
+**As três fases da produção de curto prazo:**
+
+| Fase | Condição | Interpretação |
+|---|---|---|
+| **I** | $PMg_L > PMe_L > 0$ | Subaproveitamento do fator fixo |
+| **II** | $PMe_L > PMg_L > 0$ | Região economicamente eficiente |
+| **III** | $PMg_L < 0$ | Congestionamento — produção cai |
+
+. . .
+
+> **Analogia:** se a nota da sua próxima prova (marginal) for maior que sua média, a média sobe — o marginal "puxa" a média.
+
+## Aplicação: Agricultura Brasileira
+
+**Produtividade Total dos Fatores (TFP) na agricultura:**
+
+. . .
+
+| Período | Crescimento TFP (% a.a.) | Evento |
+|---|---|---|
+| 1970–1980 | $\approx 1{,}5\%$ | Modernização conservadora |
+| 1980–2000 | $\approx 2{,}5\%$ | Embrapa + sementes adaptadas |
+| 2000–2020 | $\approx 3{,}5\%$ | Cerrado + biotecnologia |
+
+. . .
+
+**Revolução Verde no Brasil:**
+
+- Adaptação da soja ao cerrado (Embrapa, anos 1970–80)
+- Produtividade: de $\approx 1{,}5$ t/ha para $\approx 3{,}5$ t/ha
+- Brasil: de importador a **maior exportador mundial** de soja
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O crescimento da TFP agrícola brasileira equivale a um deslocamento contínuo das isoquantas para dentro: a mesma área e mão de obra produzem progressivamente mais, sem aumento proporcional de insumos.
+:::
+
+## Peer Instruction: Rendimentos de Escala
+
+> **Questão:** Considere a função de produção $f(K,L) = K^{0{,}8}L^{0{,}4}$. Quais são os rendimentos de escala?
+
+. . .
 
 **Vote:**
 
-- **(A)** Verdadeiro — IRS sempre leva a monopólio
-- **(B)** Falso — IRS é condição necessária mas não suficiente
-- **(C)** Falso — IRS não tem relação com monopólio
-- **(D)** Depende do intervalo relevante de produção
+- **(A)** Constantes — porque é Cobb-Douglas
+- **(B)** Crescentes — porque $0{,}8 + 0{,}4 = 1{,}2 > 1$
+- **(C)** Decrescentes — porque cada expoente é menor que 1
+- **(D)** Depende do nível de produção
 
 . . .
 
 **Discuta com seu vizinho por 2 minutos e vote novamente.**
 
+. . .
+
+**Resposta:** **(B)** — Para Cobb-Douglas $q = AK^\alpha L^\beta$, os rendimentos de escala são determinados por $\alpha + \beta$. Como $0{,}8 + 0{,}4 = 1{,}2 > 1$, temos rendimentos **crescentes**. A função é homogênea de grau $1{,}2$.
+
 ## Próxima Aula: Custos de Produção
 
 **Aula 15 — Custos de Produção**
 
-- Do problema da firma ao custo: minimização de custos
-- Isocustos, tangência e demandas condicionais
-- Curvas de custo total, médio e marginal
+. . .
+
+- Do problema da firma ao custo: **minimização de custos**
+- Isocustos, tangência e demandas condicionais de insumos
+- Derivação das curvas de custo total, médio e marginal
+- Dualidade: custo como função de $q$, $w$ e $r$
 
 . . .
 
-**Preparação:**
-
-- Ler capítulo 11 (custos)
-- Pensar: qual a relação entre a TMST e os preços dos insumos?
+:::{.callout-tip title="Preparação"}
+Ler capítulo 11 (custos). Pergunta para reflexão: se a TMST mede a troca técnica entre insumos, e a razão $w/r$ mede a troca no mercado, o que acontece no ótimo da firma?
+:::

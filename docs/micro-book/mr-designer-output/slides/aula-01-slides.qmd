@@ -11,6 +11,10 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
@@ -54,6 +58,40 @@ $$f''(x^*) < 0 \quad \text{(máximo)}$$
 No ótimo, o ganho marginal de "mais um pouquinho" é exatamente zero — não há como melhorar.
 :::
 
+## Otimização em Uma Variável — Interativo
+
+Mova o ponto sobre a curva e ajuste os parâmetros para ver como o ótimo se desloca:
+
+<div id="graph-a01-optim1var" style="width:700px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Centro $a$: <input type="range" id="sl-a01-a" min="-2" max="6" value="3" step="0.2" oninput="updA01Opt()"> <span id="val-a01-a">3.0</span></label>
+  <label>Curvatura $b$: <input type="range" id="sl-a01-b" min="0.2" max="3" value="1" step="0.1" oninput="updA01Opt()"> <span id="val-a01-b">1.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-optim1var',{
+    boundingbox:[-2,9,9,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  var pA=3, pB=1;
+  function f(x){return -pB*(x-pA)*(x-pA)+pA*pB+3;}
+  function fp(x){return -2*pB*(x-pA);}
+  var curve = brd.create('functiongraph',[f,-5,12],{strokeColor:'#1565c0',strokeWidth:3});
+  var maxPt = brd.create('point',[function(){return pA;},function(){return f(pA);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'x*',label:{fontSize:14,offset:[10,10]}});
+  var dashV = brd.create('segment',[function(){return [pA,0];},function(){return [pA,f(pA)];}],
+    {strokeColor:'#C8102E',dash:2,strokeWidth:1.5});
+  var glider = brd.create('glider',[1,f(1),curve],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:''});
+  var tang = brd.create('tangent',[glider],{strokeColor:'#ff9800',dash:2,strokeWidth:2});
+  window.updA01Opt = function(){
+    pA = parseFloat(document.getElementById('sl-a01-a').value);
+    pB = parseFloat(document.getElementById('sl-a01-b').value);
+    document.getElementById('val-a01-a').textContent = pA.toFixed(1);
+    document.getElementById('val-a01-b').textContent = pB.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
 ## Otimização Multivariável e Gradiente
 
 Com $n$ variáveis de escolha: $\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n)$
@@ -80,6 +118,43 @@ Matriz Hessiana $H$ deve ser negativa definida:
 $$H = \begin{bmatrix} f_{11} & f_{12} \\ f_{21} & f_{22} \end{bmatrix}$$
 :::
 ::::
+
+## Visualizando o Gradiente
+
+Arraste o ponto sobre o mapa de contorno. A seta mostra a direção do gradiente $\nabla f$.
+
+<div id="graph-a01-gradient" style="width:700px;height:380px;margin:0 auto;"></div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-gradient',{
+    boundingbox:[-1,10,10,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  // f(x,y) = -(x-5)^2 -(y-5)^2 + 50  (paraboloid, max at (5,5))
+  function fval(x,y){return -(x-5)*(x-5)-(y-5)*(y-5)+50;}
+  // Contour lines f=k
+  var levels = [10,20,30,35,40,45,48,50];
+  for(var i=0;i<levels.length;i++){
+    var r = Math.sqrt(50-levels[i]);
+    if(r>0){
+      brd.create('circle',[[5,5],r],{strokeColor:'#1565c0',strokeWidth:1.5,
+        strokeOpacity:0.3+0.07*i,dash:2,fixed:true,highlight:false});
+    } else {
+      brd.create('point',[5,5],{size:3,fillColor:'#00897b',strokeColor:'#00897b',
+        name:'máx',label:{fontSize:14,offset:[10,5]}});
+    }
+  }
+  var P = brd.create('point',[3,7],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:'P',
+    label:{fontSize:14,offset:[10,10]}});
+  var sc = 0.3;
+  var arr = brd.create('arrow',
+    [function(){return [P.X(),P.Y()];},
+     function(){var gx=-2*(P.X()-5),gy=-2*(P.Y()-5);return [P.X()+sc*gx,P.Y()+sc*gy];}],
+    {strokeColor:'#C8102E',strokeWidth:3,lastArrow:{type:2,size:8}});
+  brd.create('text',[function(){return P.X()+0.3;},function(){return P.Y()-0.8;},
+    function(){return '∇f = ('+(-2*(P.X()-5)).toFixed(1)+', '+(-2*(P.Y()-5)).toFixed(1)+')';}],
+    {fontSize:13,color:'#C8102E'});
+})();
+</script>
 
 ## Por que Precisamos do Lagrangeano?
 
@@ -140,6 +215,55 @@ $$\frac{f_1}{f_2} = \frac{g_1}{g_2}$$
 
 > **Taxa marginal de substituição = preço relativo** (no caso do consumidor).
 
+## O Lagrangeano em Ação — Interativo
+
+$\max_{x,y} \; U = xy \quad \text{s.a.} \quad x + y = c$. Mova o slider para alterar a restrição:
+
+<div id="graph-a01-lagrange" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Restrição $c$: <input type="range" id="sl-a01-c" min="2" max="18" value="10" step="0.5" oninput="updA01Lag()"> <span id="val-a01-c">10.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-lagrange',{
+    boundingbox:[-1,16,16,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var cVal=10;
+  // Contour curves U=k (hyperbolas y=k/x)
+  var contours=[], conLevels=[4,9,16,25];
+  function drawAll(){
+    brd.suspendUpdate();
+    // Remove old
+    while(brd.objectsList.length>2) brd.removeObject(brd.objectsList[brd.objectsList.length-1]);
+    var optX=cVal/2, optY=cVal/2, optU=optX*optY;
+    // Contour levels
+    var levels=[optU*0.2,optU*0.4,optU*0.6,optU*0.8,optU];
+    for(var i=0;i<levels.length;i++){
+      var k=levels[i];
+      var op = i<4?0.3:0.9;
+      var col = i<4?'#1565c0':'#00897b';
+      var d = i<4?2:0;
+      var w = i<4?1.5:2.5;
+      brd.create('functiongraph',[function(kk){return function(x){return x>0.1?kk/x:NaN;};}(k),0.1,18],
+        {strokeColor:col,strokeWidth:w,strokeOpacity:op,dash:d,highlight:false});
+    }
+    // Constraint line
+    brd.create('line',[[cVal,0],[0,cVal]],{strokeColor:'#C8102E',strokeWidth:2.5,straightFirst:false,straightLast:false,
+      point1:{visible:false},point2:{visible:false}});
+    // Optimal point
+    brd.create('point',[optX,optY],{size:6,fillColor:'#00897b',strokeColor:'#00897b',
+      name:'('+optX.toFixed(1)+', '+optY.toFixed(1)+')',label:{fontSize:13,offset:[10,10]}});
+    brd.unsuspendUpdate();
+  }
+  drawAll();
+  window.updA01Lag = function(){
+    cVal = parseFloat(document.getElementById('sl-a01-c').value);
+    document.getElementById('val-a01-c').textContent = cVal.toFixed(1);
+    drawAll();
+  };
+})();
+</script>
+
 ## O Multiplicador $\lambda$ e o Teorema do Envelope
 
 **Interpretação de $\lambda$:**
@@ -160,19 +284,7 @@ Se o consumidor ganha R\$1 a mais de renda, $\lambda^*$ diz quanto sua utilidade
 
 **Teorema do Envelope:** no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo depende **apenas** do efeito direto, não do reajuste das variáveis de escolha.
 
-## Exemplo Interativo: O Lagrangeano em Ação
-
-Considere o problema:
-
-$$\max_{x,y} \; U(x,y) = x^{0{,}5} y^{0{,}5} \quad \text{s.a.} \quad 2x + 3y = 120$$
-
-. . .
-
-Explore o gráfico abaixo — mova os controles para ver como a solução ótima se ajusta:
-
-<iframe src="../../graficos/cap02/lagrangeano.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## Estática Comparativa e Otimização em Uma Variável
+## Estática Comparativa
 
 **Estática comparativa:** como $x^*$ muda quando um parâmetro $\alpha$ se altera?
 
@@ -184,9 +296,22 @@ $$\frac{dx^*}{d\alpha} = -\frac{f_{x\alpha}}{f_{xx}}$$
 
 . . .
 
-Explore a otimização em uma variável e veja como o ótimo se desloca:
+:::: {.columns}
+::: {.column width="50%"}
+**Sinal de $f_{xx}$:**
 
-<iframe src="../../graficos/cap02/otimizacao-1var.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+CSO garante $f_{xx} < 0$ (máximo)
+:::
+::: {.column width="50%"}
+**Sinal de $f_{x\alpha}$:**
+
+Determina a **direção** do deslocamento de $x^*$
+:::
+::::
+
+. . .
+
+> A estática comparativa transforma derivadas cruzadas em **previsões econômicas**.
 
 ## Elasticidade e Funções Homogêneas
 
@@ -215,24 +340,48 @@ Cobb-Douglas $x^\alpha y^\beta$ é homogênea de grau $\alpha + \beta$.
 :::
 ::::
 
+## Aplicação: Cobb-Douglas e Homogeneidade
+
+Considere $f(K,L) = K^{0{,}3} L^{0{,}7}$ — homogênea de grau 1.
+
+. . .
+
+**Pelo Teorema de Euler:**
+
+$$K \cdot \frac{\partial f}{\partial K} + L \cdot \frac{\partial f}{\partial L} = 1 \cdot f(K,L)$$
+
+. . .
+
+$$K \cdot 0{,}3 \frac{f}{K} + L \cdot 0{,}7 \frac{f}{L} = f$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se a função de produção tem retornos constantes de escala ($k=1$), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o **Teorema da Exaustão**.
+:::
+
 ## Mapa do Curso: De Ferramentas a Mercados
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Bloco 1 — Consumidor**
+**Bloco 1 — Consumidor** (Aulas 1–12)
 
 1. Ferramentas matemáticas
 2. Preferências e utilidade
-3. Escolha ótima
-4. Demanda e bem-estar
+3. Escolha ótima e dualidade
+4. Efeitos renda e substituição
+5. Dotações e trabalho
+6. Incerteza e seguros
 :::
 ::: {.column width="50%"}
-**Bloco 2 — Firma e Mercados**
+**Bloco 2 — Firma e Mercados** (Aulas 13–24)
 
-5. Produção e custos
-6. Concorrência perfeita
-7. Monopólio e oligopólio
-8. Equilíbrio geral
+7. Produção e tecnologia
+8. Custos
+9. Lucro e oferta
+10. Equilíbrio competitivo
+11. Monopólio e discriminação
+12. Oligopólio
 :::
 ::::
 

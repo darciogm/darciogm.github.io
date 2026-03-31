@@ -1,151 +1,107 @@
-# Pré-Aula 10 — Simulação: Mercado de Trabalho (Prática)
+# Pré-Aula 10 — Decomposição de Hicks: Teoria
 
 !!! info "Leitura obrigatória"
-    **Material sobre mercado de trabalho jovem brasileiro + dados IBGE** | Tempo estimado: **40 min**
+    **Cap. 5, Seções 5.4–5.6** do livro-texto | Tempo estimado: **~45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Descrever os principais indicadores do mercado de trabalho jovem (18–24 anos) no Brasil
-2. Conectar os conceitos de oferta de trabalho (lazer-consumo, efeito renda/substituição) a fenômenos reais como informalidade e desemprego juvenil
-3. Formular argumentos econômicos estruturados para o debate sobre salário mínimo e política de emprego jovem
+1. Definir e calcular o excedente do consumidor (EC), a variação compensatória (VC) e a variação equivalente (VE).
+2. Comparar as três medidas de bem-estar e identificar quando coincidem.
+3. Explicar o princípio lump sum e por que impostos distorcivos geram perda de peso morto.
 
 ---
 
-## 1. O mercado de trabalho jovem no Brasil: panorama
+## 1. Excedente do Consumidor
 
-O Brasil apresenta um padrão recorrente: a taxa de desemprego entre jovens de 18 a 24 anos é **cerca de 2 a 3 vezes maior** do que a taxa geral.
+O **excedente do consumidor** mede o ganho líquido do consumidor ao adquirir um bem a determinado preço de mercado. Geometricamente, corresponde à área entre a curva de demanda marshalliana e a linha de preço:
 
-Dados recentes (PNAD Contínua / IBGE):
+$$EC = \int_{0}^{x^*} p(x)\,dx - p^* x^*$$
 
-| Indicador | Jovens (18–24) | Geral |
-|:---|:---|:---|
-| Taxa de desemprego | ~18–22% | ~7–9% |
-| Informalidade | ~45–55% | ~38–40% |
-| Renda média | ~R$ 1.200–1.500 | ~R$ 2.800–3.200 |
-| Jovens "nem-nem" (NEET) | ~20–25% do grupo | — |
+onde $p(x)$ é a demanda inversa e $p^*$ o preço vigente. Para variações discretas de preço de $p_0$ para $p_1$:
 
-!!! warning "Dados aproximados"
-    Os valores acima são ordens de grandeza para contextualização. Na aula, trabalharemos com a série histórica atualizada do IBGE. Consulte a [PNAD Contínua](https://www.ibge.gov.br/estatisticas/sociais/trabalho.html) para os dados mais recentes.
-
----
-
-## 2. Conectando teoria e realidade
-
-### O modelo lazer-consumo e o jovem brasileiro
-
-No modelo teórico da Pré-Aula 09, o trabalhador escolhe entre lazer $R$ e consumo $C$:
-
-$$\max_{C, R} U(C, R) \quad \text{s.a.} \quad C + wR = w\bar{T} + m$$
-
-Na realidade do jovem brasileiro, vários elementos complicam este modelo:
-
-- **Renda não-salarial $m$**: apoio familiar, programas sociais (Bolsa Família), moradia com os pais
-- **Salário de reserva**: $w^*$ tal que o jovem é indiferente entre trabalhar e não trabalhar. Se $w_{\text{mercado}} < w^*$, o jovem fica fora do mercado
-- **Custos fixos de trabalhar**: transporte, alimentação, vestuário — reduzem o salário efetivo
-
-### Informalidade como "solução" de mercado
-
-Para muitos jovens, o salário mínimo legal supera sua produtividade marginal. O mercado informal surge como um equilíbrio onde:
-
-$$w_{\text{informal}} < w_{\text{mínimo}} \leq w_{\text{formal}}$$
-
-O trabalhador aceita menos em troca de **flexibilidade** e **acesso imediato** ao mercado.
-
----
-
-## 3. O debate sobre salário mínimo
-
-O salário mínimo pode ser analisado como um **piso de preço** no mercado de trabalho:
-
-$$w_{\text{mín}} > w^* \implies \text{excesso de oferta (desemprego)}$$
-
-Mas a realidade é mais complexa do que o modelo competitivo simples:
-
-**Argumentos a favor do aumento:**
-
-- Poder de monopsônio de empregadores — o piso corrige distorção
-- Efeito multiplicador sobre demanda agregada
-- Redução de desigualdade salarial
-
-**Argumentos contra o aumento:**
-
-- Destruição de postos formais, especialmente para jovens e menos qualificados
-- Migração para informalidade
-- Compressão salarial (perda de diferenciação)
+$$\Delta EC = \int_{p_1}^{p_0} x^M(p, m)\,dp$$
 
 !!! note "Intuição Econômica"
-    **O paradoxo do salário mínimo para o jovem**
+    O excedente do consumidor captura a diferença entre o que o consumidor **estaria disposto a pagar** e o que **efetivamente paga**. Quanto maior essa diferença, maior o ganho percebido na transação.
 
-    O jovem tem, em média, menor produtividade (menos experiência, menos treinamento). Se o salário mínimo for fixado acima de sua produtividade marginal, a firma racional não o contrata. Porém, sem o primeiro emprego, o jovem não acumula capital humano — criando uma armadilha.
+<iframe src="graficos/cap05/excedente-consumidor.html"></iframe>
 
-    Este é um exemplo clássico de **falha de coordenação**: individualmente, nenhuma firma quer investir no treinamento (o jovem pode sair), mas coletivamente, todas se beneficiariam de uma força de trabalho mais qualificada.
-
----
-
-## 4. FIES, educação e o mercado de trabalho
-
-O FIES (Fundo de Financiamento Estudantil) é um caso de **escolha intertemporal aplicada**:
-
-$$\text{Investir em educação} \iff c_1 \downarrow, \; c_2 \uparrow$$
-
-O estudante sacrifica consumo presente (e trabalho) em troca de maior produtividade e renda futura.
-
-Questões relevantes para o debate:
-
-- Qual a taxa de retorno da educação superior no Brasil?
-- O endividamento do FIES é compatível com os salários iniciais dos formandos?
-- Como a inadimplência do FIES reflete uma falha na estimativa de $m_2$ (renda futura)?
+!!! tip "Explore o gráfico"
+    Deslize o preço para cima e para baixo e observe como a área sombreada do excedente do consumidor se altera. Note que a demanda marshalliana é usada nesta medida.
 
 ---
 
-## 5. Preparação para a simulação
+## 2. Variação Compensatória e Variação Equivalente
 
-Na próxima aula, faremos uma **simulação de negociação** sobre política de emprego jovem. Cada grupo representará um ator:
+A decomposição de Hicks introduz duas medidas baseadas na demanda **hicksiana** (compensada):
 
-| Grupo | Papel | Interesse principal |
-|:---|:---|:---|
-| A | Sindicato dos trabalhadores | Proteção salarial, formalização |
-| B | Federação da indústria | Flexibilização, redução de custos |
-| C | Governo (Ministério do Trabalho) | Emprego + proteção social |
-| D | Jovens trabalhadores informais | Acesso ao mercado, qualificação |
-| E | Economistas acadêmicos | Eficiência, evidência empírica |
+- **Variação Compensatória (VC)**: renda que deve ser **retirada** do consumidor após a mudança de preço para que ele retorne ao nível de utilidade **original** $u_0$.
 
-!!! tip "Como se preparar"
-    1. Leia o material complementar sobre seu grupo (disponível no LMS)
-    2. Prepare **3 argumentos econômicos** baseados nos conceitos de oferta de trabalho, salário mínimo e escolha intertemporal
-    3. Identifique **1 concessão** que seu grupo poderia fazer na negociação
-    4. Pense em **dados/evidências** que sustentam sua posição
+$$VC = e(p_1, u_0) - e(p_0, u_0) = e(p_1, u_0) - m$$
+
+- **Variação Equivalente (VE)**: renda que deveria ser **dada** ao consumidor, aos preços **originais**, para que ele atinja o nível de utilidade **novo** $u_1$.
+
+$$VE = e(p_0, u_1) - e(p_0, u_0) = m - e(p_0, u_1)$$
+
+!!! note "Intuição Econômica"
+    A VC pergunta: "quanto dinheiro compensa a mudança?". A VE pergunta: "quanto dinheiro equivale à mudança?". Ambas usam a demanda hicksiana, que isola o efeito substituição.
 
 ---
 
-## Exercícios de preparação
+## 3. Relação entre EC, VC e VE
 
-**Exercício 1.** Um jovem tem $\bar{T} = 14$ horas disponíveis por dia, utilidade $U(C, R) = C^{0{,}6} R^{0{,}4}$, renda não-salarial de R$ 30/dia (apoio familiar) e custo fixo de R$ 15/dia para trabalhar (transporte). Qual o salário mínimo por hora para que ele aceite trabalhar?
+Para um bem **normal** com queda de preço ($p_1 < p_0$):
+
+$$VC < \Delta EC < VE$$
+
+No caso especial de preferências **quase-lineares** ($u = v(x_1) + x_2$), o efeito renda é nulo e as três medidas coincidem:
+
+$$VC = \Delta EC = VE$$
+
+Essa propriedade torna as preferências quase-lineares especialmente úteis em análise de políticas públicas.
+
+---
+
+## 4. O Princípio Lump Sum
+
+Um **imposto lump sum** (montante fixo) arrecada a mesma receita que um imposto sobre consumo, porém sem distorcer as escolhas do consumidor. O imposto sobre consumo gera uma **perda de peso morto** (deadweight loss):
+
+$$DWL = VC - R > 0$$
+
+onde $R$ é a receita arrecadada pelo governo. A perda ocorre porque o imposto altera os preços relativos, induzindo substituição ineficiente.
+
+<iframe src="graficos/cap04/lump-sum-principle.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Compare as restrições orçamentárias com imposto sobre o bem $x_1$ versus imposto lump sum de mesma receita. Observe que o consumidor atinge uma curva de indiferença mais alta com o imposto lump sum.
+
+!!! note "Intuição Econômica"
+    Impostos sobre quantidade distorcem preços relativos e geram substituição artificial. Impostos lump sum reduzem a renda sem alterar preços relativos — por isso são mais eficientes, embora menos usados na prática por questões distributivas.
+
+---
+
+## Exercícios Preparatórios
+
+**Exercício 1.** Um consumidor possui demanda marshalliana $x(p, m) = \frac{m}{2p}$. Se a renda é $m = 100$ e o preço sobe de $p_0 = 5$ para $p_1 = 10$, calcule $\Delta EC$.
 
 ??? success "Solução"
-    Sem trabalhar: $C = 30$, $R = 14$, $U_0 = 30^{0{,}6} \cdot 14^{0{,}4}$
+    $$\Delta EC = \int_{5}^{10} \frac{100}{2p}\,dp = 50\left[\ln p\right]_{5}^{10} = 50\ln 2 \approx 34{,}66$$
+    O consumidor perde aproximadamente R\$ 34,66 de excedente.
 
-    $U_0 = 30^{0{,}6} \cdot 14^{0{,}4} \approx 7{,}17 \times 2{,}69 \approx 19{,}3$
-
-    Para aceitar trabalhar, precisa que a utilidade com $L > 0$ supere $U_0$, descontando o custo fixo de R$ 15.
-
-    Com salário $w$, renda plena líquida: $w \cdot 14 + 30 - 15 = 14w + 15$.
-
-    Escolha ótima: $R^* = \frac{0{,}4(14w + 15)}{w}$, $C^* = 0{,}6(14w + 15)$.
-
-    O salário de reserva $w^*$ é tal que $U^*(w^*) = U_0$ e $R^* \leq 14$. Para valores baixos de $w$, o custo fixo torna o trabalho inviável. Resolvendo numericamente, $w^* \approx$ R$ 5–6/hora.
-
-**Exercício 2.** Explique, usando o modelo de Slutsky com dotações, por que um aumento do salário mínimo pode reduzir as horas trabalhadas de alguém que já estava empregado.
+**Exercício 2.** Para preferências Cobb-Douglas $u = x_1^{0{,}5} x_2^{0{,}5}$ com $m = 200$, $p_2 = 1$ e aumento de $p_1$ de 1 para 4, calcule VC e VE.
 
 ??? success "Solução"
-    O trabalhador tem dotação de tempo $\bar{T}$. Um aumento de $w$:
+    A função dispêndio é $e(p_1, p_2, u) = 2u\sqrt{p_1 p_2}$. Com $p_2 = 1$:  
+    $u_0 = \frac{200}{2\sqrt{1}} = 100$, logo $VC = 2(100)\sqrt{4} - 200 = 400 - 200 = 200$.  
+    $u_1 = \frac{200}{2\sqrt{4}} = 50$, logo $VE = 200 - 2(50)\sqrt{1} = 200 - 100 = 100$.  
+    Confirmamos $VC > VE$ para aumento de preço de bem normal.
 
-    - **Efeito substituição**: lazer ficou mais caro $\implies$ trabalha mais
-    - **Efeito renda (dotação)**: como é "vendedor" de tempo, o aumento de $w$ eleva sua renda real $\implies$ demanda mais lazer $\implies$ trabalha menos
+**Exercício 3.** Explique por que o governo brasileiro prefere tributar consumo (ICMS, IPI) em vez de adotar impostos lump sum, apesar da ineficiência.
 
-    Se o efeito renda domina (o que é plausível para salários já razoáveis), o trabalhador **reduz** as horas trabalhadas. Este é o mecanismo da curva backward-bending.
+??? success "Solução"
+    Impostos lump sum são regressivos: cobram o mesmo valor absoluto de ricos e pobres, o que fere o princípio da capacidade contributiva. Além disso, para calibrar um lump sum ideal seria necessário observar características individuais (renda potencial, preferências), o que gera problemas de informação assimétrica. Impostos sobre consumo permitem progressividade implícita (alíquotas maiores em bens de luxo) e são mais fáceis de administrar.
 
 ---
 
@@ -156,44 +112,44 @@ Na próxima aula, faremos uma **simulação de negociação** sobre política de
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A taxa de desemprego entre jovens de 18–24 anos no Brasil é, tipicamente:
+**Q1.** Qual medida de bem-estar utiliza a demanda marshalliana?
 
-- [ ] (a) Igual à taxa geral
-- [ ] (b) Ligeiramente acima da taxa geral
-- [x] (c) Cerca de 2 a 3 vezes a taxa geral
-- [ ] (d) Abaixo da taxa geral (jovens são mais flexíveis)
+- [x] (a) Excedente do consumidor
+- [ ] (b) Variação compensatória
+- [ ] (c) Variação equivalente
+- [ ] (d) Todas as anteriores
 
-**Q2.** No modelo lazer-consumo, o "salário de reserva" é:
+**Q2.** Se as preferências são quase-lineares, então:
 
-- [ ] (a) O salário mínimo legal
-- [x] (b) O salário mínimo que torna o indivíduo indiferente entre trabalhar e não trabalhar
-- [ ] (c) O salário médio da economia
-- [ ] (d) O custo de oportunidade do lazer
+- [ ] (a) $VC > \Delta EC > VE$
+- [ ] (b) $VC < VE$
+- [x] (c) $VC = \Delta EC = VE$
+- [ ] (d) Não é possível calcular VC
 
-**Q3.** Se o salário mínimo é fixado acima da produtividade marginal de um trabalhador jovem, o modelo competitivo prevê:
+**Q3.** A variação compensatória mede a renda necessária para retornar ao nível de utilidade:
 
-- [ ] (a) Aumento do emprego formal
-- [x] (b) Desemprego ou migração para a informalidade
-- [ ] (c) Aumento de salários acima do mínimo
-- [ ] (d) Nenhum efeito
+- [x] (a) Original ($u_0$)
+- [ ] (b) Novo ($u_1$)
+- [ ] (c) Médio entre $u_0$ e $u_1$
+- [ ] (d) Nenhuma das anteriores
 
-**Q4.** O FIES pode ser interpretado como um caso de:
+**Q4.** A perda de peso morto de um imposto sobre consumo ocorre porque:
 
-- [ ] (a) Oferta de trabalho backward-bending
-- [ ] (b) Demanda líquida negativa
-- [x] (c) Escolha intertemporal — sacrificar consumo presente por renda futura maior
-- [ ] (d) Efeito substituição puro
+- [ ] (a) O governo arrecada menos
+- [x] (b) O imposto distorce preços relativos, gerando substituição ineficiente
+- [ ] (c) O consumidor deixa de consumir completamente
+- [ ] (d) A demanda hicksiana se desloca
 
-**Q5.** Qual das seguintes é uma razão econômica para que o mercado informal seja atraente para jovens?
+**Q5.** Para um bem normal com queda de preço, a ordem correta é:
 
-- [ ] (a) Salários mais altos que no mercado formal
-- [ ] (b) Maior estabilidade no emprego
-- [x] (c) Flexibilidade e acesso imediato, sem barreiras do salário mínimo
-- [ ] (d) Benefícios trabalhistas mais generosos
+- [ ] (a) $VE < EC < VC$
+- [x] (b) $VC < \Delta EC < VE$
+- [ ] (c) $VC = VE < \Delta EC$
+- [ ] (d) $\Delta EC < VC < VE$
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 10**: Simulação de negociação sobre política de emprego jovem. Venha com seus argumentos preparados e dados de apoio!
+    Na **Aula 11**, aplicaremos as medidas VC, VE e EC em exercícios práticos com preferências Cobb-Douglas e quase-lineares, incluindo um estudo de caso sobre tributação de eletricidade.

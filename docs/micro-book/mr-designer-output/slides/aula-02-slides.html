@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-02-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-02-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-02-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-02-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-02-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,49 +143,106 @@ Insper
 </div>
 
 </section>
-<section id="teorema-do-envelope-revisão-e-aprofundamento" class="slide level2">
-<h2>Teorema do Envelope — Revisão e Aprofundamento</h2>
-<p>Dado o problema <span class="math inline">\(V(\alpha) = \max_x f(x, \alpha)\)</span> s.a. <span class="math inline">\(g(x, \alpha) = 0\)</span>:</p>
-<p><span class="math display">\[\frac{dV}{d\alpha} = \frac{\partial \mathcal{L}}{\partial \alpha}\bigg|_{x = x^*(\alpha)}\]</span></p>
+<section id="revisão-relâmpago-o-lagrangeano" class="slide level2">
+<h2>Revisão Relâmpago: O Lagrangeano</h2>
+<p>Problema canônico de otimização com restrição de igualdade:</p>
+<p><span class="math display">\[\max_{x_1, x_2} f(x_1, x_2) \quad \text{s.a.} \quad g(x_1, x_2) = c\]</span></p>
 <div class="fragment">
-<p><strong>Por que é poderoso?</strong> Não precisamos resolver <span class="math inline">\(x^*(\alpha)\)</span> explicitamente para saber como o valor ótimo muda.</p>
+<p><strong>Lagrangeano:</strong></p>
+<p><span class="math display">\[\mathcal{L} = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]\]</span></p>
 </div>
 <div class="fragment">
-<p>Explore o Teorema do Envelope interativamente:</p>
-<iframe src="../../graficos/cap02/envelope.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<p><strong>Condições de Primeira Ordem (CPOs):</strong></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial f}{\partial x_i} - \lambda \frac{\partial g}{\partial x_i} = 0, \quad i = 1, 2\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial \lambda} = -(g(x_1, x_2) - c) = 0\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O multiplicador <span class="math inline">\(\lambda\)</span> mede o “preço sombra” da restrição — quanto o valor ótimo melhoraria se relaxássemos a restrição em uma unidade.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="elasticidade-e-log-linearização" class="slide level2">
-<h2>Elasticidade e Log-Linearização</h2>
-<p>A elasticidade <span class="math inline">\(\varepsilon_{y,x} = \frac{d \ln y}{d \ln x}\)</span> é a ferramenta de estática comparativa mais usada em economia.</p>
+<section id="teorema-do-envelope" class="slide level2">
+<h2>Teorema do Envelope</h2>
+<p>Dado o <strong>valor ótimo</strong> como função do parâmetro <span class="math inline">\(\alpha\)</span>:</p>
+<p><span class="math display">\[V(\alpha) = \max_{x} f(x, \alpha) \quad \text{s.a.} \quad g(x, \alpha) = 0\]</span></p>
+<div class="fragment">
+<p><strong>Teorema do Envelope:</strong></p>
+<p><span class="math display">\[\frac{dV}{d\alpha} = \frac{\partial \mathcal{L}}{\partial \alpha}\bigg|_{x = x^*(\alpha)}\]</span></p>
+</div>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Propriedades úteis:</strong></p>
-<ul>
-<li><span class="math inline">\(\varepsilon_{fg, x} = \varepsilon_{f,x} + \varepsilon_{g,x}\)</span></li>
-<li><span class="math inline">\(\varepsilon_{f/g, x} = \varepsilon_{f,x} - \varepsilon_{g,x}\)</span></li>
-<li><span class="math inline">\(\varepsilon_{f^n, x} = n \cdot \varepsilon_{f,x}\)</span></li>
-</ul>
+<p><strong>Por que é poderoso?</strong></p>
+<p>Não precisamos resolver <span class="math inline">\(x^*(\alpha)\)</span> explicitamente para saber como <span class="math inline">\(V\)</span> muda com <span class="math inline">\(\alpha\)</span>.</p>
 </div><div class="column" style="width:50%;">
-<p><strong>Exemplo — Demanda:</strong></p>
-<p><span class="math display">\[Q = A p^{-\eta} m^{\beta}\]</span></p>
-<p><span class="math display">\[\varepsilon_{Q,p} = -\eta, \quad \varepsilon_{Q,m} = \beta\]</span></p>
+<p><strong>Exemplo clássico:</strong></p>
+<p>Para <span class="math inline">\(V(m) = \max U\)</span> s.a. orçamento <span class="math inline">\(= m\)</span>:</p>
+<p><span class="math display">\[\frac{dV}{dm} = \lambda^*\]</span></p>
+<p>O multiplicador <strong>é</strong> a utilidade marginal da renda.</p>
 </div></div>
 </div>
 </section>
-<section id="funções-homogêneas-e-teorema-de-euler" class="slide level2">
-<h2>Funções Homogêneas e Teorema de Euler</h2>
-<p><span class="math inline">\(f\)</span> é <strong>homogênea de grau <span class="math inline">\(k\)</span></strong> se <span class="math inline">\(f(t\mathbf{x}) = t^k f(\mathbf{x})\)</span>, <span class="math inline">\(\forall t &gt; 0\)</span>.</p>
-<div class="fragment">
-<p><strong>Teorema de Euler:</strong></p>
-<p><span class="math display">\[\sum_{i=1}^n x_i \frac{\partial f}{\partial x_i} = k \cdot f(\mathbf{x})\]</span></p>
+<section id="envelope-em-ação" class="slide level2">
+<h2>Envelope em Ação</h2>
+<p>Considere <span class="math inline">\(U = xy\)</span> sujeito a <span class="math inline">\(x + y = c\)</span>. A solução é <span class="math inline">\(x^* = y^* = c/2\)</span>, logo <span class="math inline">\(V^*(c) = c^2/4\)</span> e <span class="math inline">\(\lambda^* = c/2\)</span>.</p>
+<div id="graph-a02-envelope" style="width:700px;height:370px;margin:0 auto;">
+
 </div>
-<div class="fragment">
-<p><strong>Consequência importante:</strong> se <span class="math inline">\(f\)</span> é homogênea de grau <span class="math inline">\(k\)</span>, suas derivadas parciais são homogêneas de grau <span class="math inline">\(k-1\)</span>.</p>
+<div class="graph-slider-row">
+<p><label>Restrição <span class="math inline">\(c\)</span>: <input type="range" id="sl-a02-c" min="1" max="10" value="4" step="0.1" oninput="window.updateA02Envelope()"> <span id="val-a02-c">4.0</span></label></p>
 </div>
-<div class="fragment">
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-envelope',{
+    boundingbox:[-0.5,28,11,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.3,26,'V*(c)'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[10.2,-1,'c'],{fontSize:14,anchorX:'left'});
+
+  var cVal = 4;
+  /* V*(c) = c^2/4 curve */
+  var vCurve = brd.create('functiongraph',[function(c){return c*c/4;},0,11],
+    {strokeColor:'#1565c0',strokeWidth:3,name:'V*(c)'});
+
+  /* Optimal point */
+  var optPt = brd.create('point',
+    [function(){return cVal;}, function(){return cVal*cVal/4;}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',
+     label:{fontSize:13,offset:[10,10]}});
+
+  /* Tangent line: slope = lambda* = c/2, passes through (cVal, cVal^2/4) */
+  var tangent = brd.create('functiongraph',[function(x){
+    var slope = cVal/2;
+    var y0 = cVal*cVal/4;
+    return y0 + slope*(x - cVal);
+  },0,11],{strokeColor:'#ff9800',strokeWidth:2,dash:2});
+
+  /* Lambda label */
+  var lamLabel = brd.create('text',
+    [function(){return cVal+0.5;}, function(){return cVal*cVal/4+1.5;},
+     function(){return '\\(\\lambda^*=\\)'+( cVal/2).toFixed(2);}],
+    {fontSize:13,color:'#ff9800',anchorX:'left'});
+
+  window.updateA02Envelope = function(){
+    cVal = parseFloat(document.getElementById('sl-a02-c').value);
+    document.getElementById('val-a02-c').textContent = cVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
@@ -194,32 +253,26 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Se a função de produção tem retornos constantes de escala (<span class="math inline">\(k=1\)</span>), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o <strong>Teorema da Exaustão</strong>.</p>
-</div>
+<p>A reta tangente à curva <span class="math inline">\(V^*(c)\)</span> tem inclinação <span class="math inline">\(\lambda^*\)</span>. O Teorema do Envelope diz que a derivada do valor ótimo em relação ao parâmetro é exatamente o multiplicador de Lagrange avaliado no ótimo.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="introdução-às-condições-de-kuhn-tucker" class="slide level2">
-<h2>Introdução às Condições de Kuhn-Tucker</h2>
+<section id="condições-de-kuhn-tucker-kkt" class="slide level2">
+<h2>Condições de Kuhn-Tucker (KKT)</h2>
 <p>Quando a restrição é uma <strong>desigualdade</strong>: <span class="math inline">\(g(x_1, x_2) \leq c\)</span></p>
 <div class="fragment">
 <p><span class="math display">\[\mathcal{L} = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]\]</span></p>
+</div>
+<div class="fragment">
 <p><strong>Condições KKT:</strong></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial x_i} = 0, \quad \lambda \geq 0, \quad \lambda\big[g(\mathbf{x}) - c\big] = 0\]</span></p>
-</div>
-<div class="fragment">
-<p>A condição <span class="math inline">\(\lambda[g(\mathbf{x}) - c] = 0\)</span> é a <strong>folga complementar</strong>: ou a restrição é ativa (<span class="math inline">\(g = c\)</span>), ou o multiplicador é zero (<span class="math inline">\(\lambda = 0\)</span>).</p>
-</div>
-</section>
-<section id="kuhn-tucker-visualização-interativa" class="slide level2">
-<h2>Kuhn-Tucker: Visualização Interativa</h2>
-<p>Quando a restrição “não morde”, o ótimo irrestrito já satisfaz <span class="math inline">\(g \leq c\)</span> e <span class="math inline">\(\lambda^* = 0\)</span>.</p>
-<div class="fragment">
-<p>Observe como a solução muda conforme a restrição se torna ativa ou inativa:</p>
-<iframe src="../../graficos/cap02/kuhn-tucker.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<ol type="1">
+<li><span class="math inline">\(\dfrac{\partial \mathcal{L}}{\partial x_i} = 0\)</span> para todo <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(\lambda \geq 0\)</span> (multiplicador não-negativo)</li>
+<li><span class="math inline">\(g(\mathbf{x}) \leq c\)</span> (viabilidade primal)</li>
+<li><span class="math inline">\(\lambda\big[g(\mathbf{x}) - c\big] = 0\)</span> (<strong>folga complementar</strong>)</li>
+</ol>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -232,117 +285,174 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p><span class="math inline">\(\lambda &gt; 0\)</span> significa que a restrição tem “custo” — relaxá-la melhoraria o objetivo. <span class="math inline">\(\lambda = 0\)</span> significa que ela é irrelevante no ótimo.</p>
+<p>As condições KKT generalizam o Lagrangeano clássico para restrições de desigualdade. A novidade central é a restrição de sinal sobre <span class="math inline">\(\lambda\)</span> e a condição de folga complementar.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exemplo-resolvido-cobb-douglas-com-restrição" class="slide level2">
-<h2>Exemplo Resolvido: Cobb-Douglas com Restrição</h2>
-<p><span class="math display">\[\max_{x,y} \; U = x^{1/3} y^{2/3} \quad \text{s.a.} \quad 4x + 6y = 240\]</span></p>
+<section id="kkt-folga-complementar" class="slide level2">
+<h2>KKT: Folga Complementar</h2>
+<p>A condição <span class="math inline">\(\lambda\big[g(\mathbf{x}) - c\big] = 0\)</span> implica dois cenários mutuamente exclusivos:</p>
 <div class="fragment">
-<p><strong>Lagrangeano:</strong> <span class="math inline">\(\mathcal{L} = x^{1/3}y^{2/3} - \lambda(4x + 6y - 240)\)</span></p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Caso 1: Restrição ativa</strong> (<span class="math inline">\(g = c\)</span>)</p>
+<ul>
+<li>A restrição “morde”</li>
+<li><span class="math inline">\(\lambda^* &gt; 0\)</span> (tem custo sombra)</li>
+<li>Relaxar a restrição melhoraria o objetivo</li>
+<li>Solução está <strong>na fronteira</strong></li>
+</ul>
+<p><em>Exemplo:</em> consumidor gasta toda a renda</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Caso 2: Restrição inativa</strong> (<span class="math inline">\(g &lt; c\)</span>)</p>
+<ul>
+<li>A restrição “sobra”</li>
+<li><span class="math inline">\(\lambda^* = 0\)</span> (sem custo sombra)</li>
+<li>Relaxar a restrição não muda nada</li>
+<li>Solução é o <strong>ótimo irrestrito</strong></li>
+</ul>
+<p><em>Exemplo:</em> restrição de capacidade com folga</p>
+</div></div>
 </div>
 <div class="fragment">
-<p><strong>CPOs:</strong></p>
-<p><span class="math display">\[\frac{1}{3}x^{-2/3}y^{2/3} = 4\lambda \qquad \frac{2}{3}x^{1/3}y^{-1/3} = 6\lambda\]</span></p>
-</div>
-<div class="fragment">
-<p>Dividindo: <span class="math inline">\(\frac{y}{2x} = \frac{4}{6} \implies y = \frac{4x}{3}\)</span></p>
-<p>Substituindo: <span class="math inline">\(4x + 6 \cdot \frac{4x}{3} = 240 \implies x^* = 20, \; y^* = \frac{80}{3}\)</span></p>
-</div>
-</section>
-<section id="exemplo-interpretação-de-lambda-e-estática-comparativa" class="slide level2">
-<h2>Exemplo: Interpretação de <span class="math inline">\(\lambda\)</span> e Estática Comparativa</h2>
-<p>Do exemplo anterior, encontramos <span class="math inline">\(\lambda^*\)</span>:</p>
-<p><span class="math display">\[\lambda^* = \frac{1}{3} \cdot 20^{-2/3} \cdot \left(\frac{80}{3}\right)^{2/3} \cdot \frac{1}{4}\]</span></p>
-<div class="fragment">
-<p><strong>Interpretação:</strong> se a renda passasse de 240 para 241, a utilidade máxima cresceria em <span class="math inline">\(\approx \lambda^*\)</span>.</p>
-</div>
-<div class="fragment">
-<p><strong>Estática comparativa:</strong></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Parâmetro</th>
-<th style="text-align: left;">Efeito sobre <span class="math inline">\(x^*\)</span></th>
-<th style="text-align: left;">Efeito sobre <span class="math inline">\(y^*\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(m \uparrow\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><span class="math inline">\(p_x \uparrow\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\downarrow\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span> (renda relativa)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(p_y \uparrow\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\uparrow\)</span> (renda relativa)</td>
-<td style="text-align: left;"><span class="math inline">\(\downarrow\)</span></td>
-</tr>
-</tbody>
-</table>
+<p><strong>Regra prática:</strong> Resolva assumindo <span class="math inline">\(\lambda &gt; 0\)</span> (restrição ativa). Se obtiver <span class="math inline">\(\lambda &lt; 0\)</span>, descarte e resolva o caso irrestrito com <span class="math inline">\(\lambda = 0\)</span>.</p>
 </div>
 </section>
-<section id="quadro-síntese-ferramentas-do-cap.-2" class="slide level2">
-<h2>Quadro-Síntese: Ferramentas do Cap. 2</h2>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th style="text-align: left;">Ferramenta</th>
-<th style="text-align: left;">Quando usar</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Lagrangeano</td>
-<td style="text-align: left;">Otimização com restrição de igualdade</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Kuhn-Tucker</td>
-<td style="text-align: left;">Otimização com restrição de desigualdade</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Teorema do Envelope</td>
-<td style="text-align: left;">Estática comparativa sem resolver <span class="math inline">\(x^*\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Elasticidade</td>
-<td style="text-align: left;">Comparar sensibilidades em escalas diferentes</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Homogeneidade + Euler</td>
-<td style="text-align: left;">Retornos de escala e distribuição de renda</td>
-</tr>
-</tbody>
-</table>
-<div class="fragment">
-<div title="Dica de Prova">
+<section id="kkt-interativo" class="slide level2">
+<h2>KKT Interativo</h2>
+<p>Observe como a solução muda conforme a restrição se torna ativa ou inativa:</p>
+<div id="graph-a02-kkt" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Restrição <span class="math inline">\(c\)</span>: <input type="range" id="sl-a02-kkt" min="1" max="8" value="3" step="0.1" oninput="window.updateA02KKT()"> <span id="val-a02-kkt">3.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-kkt',{
+    boundingbox:[-0.5,8,8,-0.5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.3,7.5,'y'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[7.5,-0.3,'x'],{fontSize:14,anchorX:'left'});
+
+  var cVal = 3;
+  /* Unconstrained optimum of f = -(x-4)^2 -(y-4)^2 is at (4,4) */
+  var xOpt = 4, yOpt = 4;
+
+  /* Constraint: x + y <= c */
+  var conLine = brd.create('functiongraph',[function(x){return cVal - x;},0,10],
+    {strokeColor:'#C8102E',strokeWidth:2,name:''});
+  /* Shade feasible region */
+  var feasible = brd.create('inequality',[conLine],
+    {fillColor:'#C8102E',fillOpacity:0.06,strokeWidth:0});
+
+  /* Indifference curves (circles centered at (4,4)) */
+  var ic1 = brd.create('functiongraph',[function(x){
+    var r2 = (getSolX()-xOpt)*(getSolX()-xOpt)+(getSolY()-yOpt)*(getSolY()-yOpt);
+    var val = r2-(x-xOpt)*(x-xOpt);
+    return val>=0 ? yOpt+Math.sqrt(val) : NaN;
+  },0,8],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+  var ic2 = brd.create('functiongraph',[function(x){
+    var r2 = (getSolX()-xOpt)*(getSolX()-xOpt)+(getSolY()-yOpt)*(getSolY()-yOpt);
+    var val = r2-(x-xOpt)*(x-xOpt);
+    return val>=0 ? yOpt-Math.sqrt(val) : NaN;
+  },0,8],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+
+  function getSolX(){
+    if(cVal >= xOpt+yOpt) return xOpt;
+    return cVal/2;
+  }
+  function getSolY(){
+    if(cVal >= xOpt+yOpt) return yOpt;
+    return cVal/2;
+  }
+  function getLambda(){
+    if(cVal >= xOpt+yOpt) return 0;
+    return 2*(xOpt - cVal/2);
+  }
+
+  var solPt = brd.create('point',
+    [function(){return getSolX();},function(){return getSolY();}],
+    {size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'ótimo',
+     label:{fontSize:13,offset:[10,10]}});
+
+  var uncon = brd.create('point',[xOpt,yOpt],
+    {size:5,fillColor:'#1565c0',strokeColor:'#1565c0',name:'irrestrito',
+     label:{fontSize:12,offset:[10,-15]}});
+
+  var lamText = brd.create('text',[0.3,7,
+    function(){
+      var lam = getLambda();
+      var status = cVal>=(xOpt+yOpt) ? 'inativa' : 'ativa';
+      return '\\(\\lambda^*=\\)'+lam.toFixed(2)+' (restrição '+status+')';
+    }],{fontSize:13,color:'#C8102E'});
+
+  window.updateA02KKT = function(){
+    cVal = parseFloat(document.getElementById('sl-a02-kkt').value);
+    document.getElementById('val-a02-kkt').textContent = cVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+<div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Dica de Prova</strong></p>
+<p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Sempre verifique se a restrição é igualdade ou desigualdade antes de montar o Lagrangeano — isso determina se <span class="math inline">\(\lambda\)</span> tem restrição de sinal.</p>
-</div>
+<p>Quando <span class="math inline">\(c\)</span> é grande o suficiente, o ótimo irrestrito já satisfaz <span class="math inline">\(g \leq c\)</span> e o multiplicador <span class="math inline">\(\lambda^*\)</span> cai a zero. A restrição só tem “preço” quando efetivamente limita a escolha.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="agora-com-vocês-gallery-walk" class="slide level2">
-<h2>Agora com Vocês — Gallery Walk</h2>
+<section id="exemplo-resolvido-utilidade-cobb-douglas" class="slide level2">
+<h2>Exemplo Resolvido: Utilidade Cobb-Douglas</h2>
+<p><span class="math display">\[\max_{x,y} \; U = x^{0{,}5}\, y^{0{,}5} \quad \text{s.a.} \quad 2x + 3y = 120\]</span></p>
+<div class="fragment">
+<p><strong>Passo 1 — Lagrangeano:</strong></p>
+<p><span class="math display">\[\mathcal{L} = x^{0{,}5}\,y^{0{,}5} - \lambda(2x + 3y - 120)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 2 — CPOs:</strong></p>
+<p><span class="math display">\[\frac{0{,}5\, y^{0{,}5}}{x^{0{,}5}} = 2\lambda \qquad \frac{0{,}5\, x^{0{,}5}}{y^{0{,}5}} = 3\lambda\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 3 — Dividindo CPO₁ por CPO₂:</strong></p>
+<p><span class="math display">\[\frac{y}{x} = \frac{2}{3} \implies y = \frac{2x}{3}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 4 — Substituindo na restrição:</strong></p>
+<p><span class="math display">\[2x + 3 \cdot \frac{2x}{3} = 120 \implies 4x = 120 \implies x^* = 30, \quad y^* = 20\]</span></p>
+</div>
+</section>
+<section id="exemplo-resolvido-solução-de-canto" class="slide level2">
+<h2>Exemplo Resolvido: Solução de Canto</h2>
+<p><span class="math display">\[\max_{x,y} \; U = x + 2y \quad \text{s.a.} \quad x^2 + y^2 \leq 25, \quad x \geq 0, \quad y \geq 0\]</span></p>
+<div class="fragment">
+<p><strong>Lagrangeano com KKT:</strong></p>
+<p><span class="math display">\[\mathcal{L} = x + 2y - \lambda(x^2 + y^2 - 25)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>CPOs:</strong> <span class="math inline">\(1 = 2\lambda x\)</span> e <span class="math inline">\(2 = 2\lambda y\)</span></p>
+<p>Da razão: <span class="math inline">\(\dfrac{1}{2} = \dfrac{x}{y} \implies y = 2x\)</span></p>
+</div>
+<div class="fragment">
+<p>Substituindo: <span class="math inline">\(x^2 + 4x^2 = 25 \implies x^* = \sqrt{5}, \; y^* = 2\sqrt{5}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Verificação KKT:</strong> <span class="math inline">\(\lambda^* = \frac{1}{2\sqrt{5}} &gt; 0\)</span> — restrição ativa. O ótimo irrestrito (<span class="math inline">\(U\)</span> crescente) seria ilimitado, então a restrição de capacidade necessariamente “morde”.</p>
+</div>
+</section>
+<section id="gallery-walk-instruções" class="slide level2">
+<h2>Gallery Walk — Instruções</h2>
 <p><strong>Formato:</strong> Gallery Walk (20 min)</p>
 <div class="fragment">
 <p><strong>Instruções:</strong></p>
@@ -360,79 +470,246 @@ Insper
 <tr class="header">
 <th style="text-align: left;">Estação</th>
 <th style="text-align: left;">Problema</th>
+<th style="text-align: left;">Ferramenta</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">A</td>
-<td style="text-align: left;">Lagrangeano com Cobb-Douglas e 3 bens</td>
+<td style="text-align: left;">Consumidor Cobb-Douglas com 3 bens</td>
+<td style="text-align: left;">Lagrangeano</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">B</td>
-<td style="text-align: left;">Kuhn-Tucker com restrição de não-negatividade</td>
+<td style="text-align: left;">Firma com restrição de capacidade</td>
+<td style="text-align: left;">KKT</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">C</td>
-<td style="text-align: left;">Envelope: efeito de imposto sobre valor ótimo</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">D</td>
-<td style="text-align: left;">Homogeneidade: verificar grau e aplicar Euler</td>
+<td style="text-align: left;">Governo com orçamento limitado</td>
+<td style="text-align: left;">KKT + Envelope</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="exercício-em-duplas-problema-integrado" class="slide level2">
-<h2>Exercício em Duplas — Problema Integrado</h2>
-<p><strong>Exercício em duplas</strong> (10 min):</p>
 <div class="fragment">
-<p>Uma firma maximiza lucro <span class="math inline">\(\pi = pf(K,L) - rK - wL\)</span> onde <span class="math inline">\(f(K,L) = K^{0{,}4}L^{0{,}6}\)</span>.</p>
+<p><strong>Dica:</strong> Para cada problema, identifiquem primeiro se a restrição é de igualdade ou desigualdade!</p>
+</div>
+</section>
+<section id="problema-1-consumidor-cobb-douglas" class="slide level2">
+<h2>Problema 1: Consumidor Cobb-Douglas</h2>
+<p><strong>Estação A — Lagrangeano clássico</strong></p>
+<p><span class="math display">\[\max_{x,y,z} \; U = x^{1/3}\,y^{1/3}\,z^{1/3} \quad \text{s.a.} \quad 2x + 4y + 5z = 200\]</span></p>
+<div class="fragment">
+<p><strong>Roteiro:</strong></p>
 <ol type="1">
-<li>Monte o Lagrangeano (sem restrição explícita — otimização livre)</li>
-<li>Encontre as CPOs e mostre que <span class="math inline">\(\frac{f_K}{f_L} = \frac{r}{w}\)</span></li>
-<li>Verifique que <span class="math inline">\(f\)</span> é homogênea de grau 1 e aplique Euler</li>
-<li>Interprete economicamente: o que Euler implica sobre a distribuição de renda entre capital e trabalho?</li>
+<li>Escreva o Lagrangeano <span class="math inline">\(\mathcal{L}\)</span></li>
+<li>Obtenha as 4 CPOs (3 variáveis + restrição)</li>
+<li>Use a razão das CPOs para encontrar as relações entre <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> e <span class="math inline">\(z\)</span></li>
+<li>Substitua na restrição e resolva</li>
+<li>Calcule <span class="math inline">\(\lambda^*\)</span> e interprete</li>
 </ol>
 </div>
 <div class="fragment">
-<div title="Dica">
+<div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Dica</strong></p>
+<p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Use o fato de que <span class="math inline">\(f_K \cdot K + f_L \cdot L = f(K,L)\)</span> quando o grau é 1.</p>
+<p>Com Cobb-Douglas simétrica (expoentes iguais), o consumidor gasta <strong>frações iguais</strong> da renda em cada bem. Verifique: <span class="math inline">\(p_x x^* = p_y y^* = p_z z^*\)</span>?</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="peer-instruction-teste-conceitual" class="slide level2">
-<h2>Peer Instruction — Teste Conceitual</h2>
-<p><strong>Pergunta:</strong> Considere <span class="math inline">\(\max_{x,y} f(x,y)\)</span> s.a. <span class="math inline">\(g(x,y) \leq 10\)</span>. No ótimo, <span class="math inline">\(g(x^*,y^*) = 7\)</span>. Qual é o valor de <span class="math inline">\(\lambda^*\)</span>?</p>
+<section id="problema-2-firma-com-restrição-de-capacidade" class="slide level2">
+<h2>Problema 2: Firma com Restrição de Capacidade</h2>
+<p><strong>Estação B — Kuhn-Tucker</strong></p>
+<p><span class="math display">\[\max_{L} \; \pi = 10\sqrt{L} - 2L \quad \text{s.a.} \quad L \leq 16\]</span></p>
+<div class="fragment">
+<p><strong>Roteiro:</strong></p>
+<ol type="1">
+<li>Resolva o problema irrestrito: <span class="math inline">\(\pi'(L) = 0\)</span></li>
+<li>Verifique se o ótimo irrestrito satisfaz <span class="math inline">\(L \leq 16\)</span></li>
+<li>Se sim, <span class="math inline">\(\lambda^* = 0\)</span> e acabou. Se não, resolva com restrição ativa (<span class="math inline">\(L = 16\)</span>)</li>
+<li>Qual é o valor de <span class="math inline">\(\lambda^*\)</span>? Interprete</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Bônus:</strong> Use o Teorema do Envelope para determinar <span class="math inline">\(\frac{d\pi^*}{dc}\)</span> onde <span class="math inline">\(c\)</span> é o limite de capacidade.</p>
+</div>
+</section>
+<section id="problema-3-governo-com-orçamento" class="slide level2">
+<h2>Problema 3: Governo com Orçamento</h2>
+<p><strong>Estação C — KKT + Envelope</strong></p>
+<p><span class="math display">\[\max_{x,y} \; W = \ln(x) + \ln(y) \quad \text{s.a.} \quad 3x + 5y \leq B, \quad B = 80\]</span></p>
+<div class="fragment">
+<p><strong>Roteiro:</strong></p>
+<ol type="1">
+<li>Monte o Lagrangeano e obtenha as CPOs</li>
+<li>Resolva para <span class="math inline">\(x^*(B)\)</span> e <span class="math inline">\(y^*(B)\)</span></li>
+<li>Calcule <span class="math inline">\(\lambda^*\)</span> e interprete: quanto vale um real a mais no orçamento?</li>
+<li>Use o Teorema do Envelope para verificar: <span class="math inline">\(\frac{dW^*}{dB} = \lambda^*\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com utilidade logarítmica, o multiplicador <span class="math inline">\(\lambda^*\)</span> é decrescente em <span class="math inline">\(B\)</span> — o “valor” de uma unidade extra de orçamento é maior quando o orçamento é apertado.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="demandas-ces-via-lagrangeano" class="slide level2">
+<h2>Demandas CES via Lagrangeano</h2>
+<p>A função de utilidade CES: <span class="math inline">\(U = \big(x^{\rho} + y^{\rho}\big)^{1/\rho}\)</span>, com elasticidade de substituição <span class="math inline">\(\sigma = \frac{1}{1-\rho}\)</span>.</p>
+<div id="graph-a02-ces" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label><span class="math inline">\(\rho\)</span>: <input type="range" id="sl-a02-rho" min="-4" max="0.9" value="0" step="0.1" oninput="window.updateA02CES()"> <span id="val-a02-rho">0.0</span> &nbsp; (<span class="math inline">\(\sigma\)</span> = <span id="val-a02-sigma">1.0</span>)</label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-ces',{
+    boundingbox:[-0.3,14,5.5,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.2,13,'Quantidade demandada'],{fontSize:13,anchorX:'left'});
+  brd.create('text',[5.2,-0.5,'p'],{fontSize:14,anchorX:'left'});
+
+  var rho = 0;
+  var m = 12; /* income */
+  var py = 2; /* price of y, fixed */
+
+  /* CES demands: x*(p) and y*(p) for given m, py, rho */
+  function xDem(p){
+    if(rho < -3.9){
+      /* Leontief limit: x = y = m/(p+py) */
+      return m/(p+py);
+    }
+    if(Math.abs(rho) < 0.05){
+      /* Cobb-Douglas limit: x = m/(2p) */
+      return m/(2*p);
+    }
+    var s = 1/(1-rho);
+    var pxs = Math.pow(p, 1-s);
+    var pys = Math.pow(py, 1-s);
+    return m * Math.pow(p, -s) / (pxs + pys);
+  }
+  function yDem(p){
+    if(rho < -3.9){
+      return m/(p+py);
+    }
+    if(Math.abs(rho) < 0.05){
+      return m/(2*py);
+    }
+    var s = 1/(1-rho);
+    var pxs = Math.pow(p, 1-s);
+    var pys = Math.pow(py, 1-s);
+    return m * Math.pow(py, -s) / (pxs + pys);
+  }
+
+  var curveX = brd.create('functiongraph',[function(p){return xDem(p);},0.2,5.5],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  var curveY = brd.create('functiongraph',[function(p){return yDem(p);},0.2,5.5],
+    {strokeColor:'#00897b',strokeWidth:3,dash:0});
+
+  brd.create('text',[3.5,function(){return xDem(3.5)+0.6;},'x*(p)'],
+    {fontSize:13,color:'#1565c0',anchorX:'left'});
+  brd.create('text',[3.5,function(){return yDem(3.5)+0.6;},'y*(p)'],
+    {fontSize:13,color:'#00897b',anchorX:'left'});
+
+  var sigLabel = brd.create('text',[0.3,11.5,
+    function(){
+      if(rho < -3.9) return 'Leontief (\\(\\sigma \\to 0\\))';
+      if(Math.abs(rho) < 0.05) return 'Cobb-Douglas (\\(\\sigma = 1\\))';
+      if(rho > 0.85) return 'Substitutos perfeitos (\\(\\sigma \\to \\infty\\))';
+      var s = 1/(1-rho);
+      return '\\(\\sigma = '+s.toFixed(2)+'\\)';
+    }],{fontSize:13,color:'#C8102E'});
+
+  window.updateA02CES = function(){
+    rho = parseFloat(document.getElementById('sl-a02-rho').value);
+    document.getElementById('val-a02-rho').textContent = rho.toFixed(1);
+    var sig = (rho < -3.9) ? '0' : (rho > 0.85) ? '∞' : (1/(1-rho)).toFixed(2);
+    document.getElementById('val-a02-sigma').textContent = sig;
+    brd.update();
+  };
+})();
+</script>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A elasticidade de substituição <span class="math inline">\(\sigma\)</span> governa quão “curvadas” são as curvas de demanda. Quanto maior <span class="math inline">\(\sigma\)</span>, mais o consumidor substitui entre bens quando o preço relativo muda.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="funções-homogêneas-propriedades-úteis" class="slide level2">
+<h2>Funções Homogêneas — Propriedades Úteis</h2>
+<p><span class="math inline">\(f\)</span> é <strong>homogênea de grau <span class="math inline">\(k\)</span></strong> se <span class="math inline">\(f(t\mathbf{x}) = t^k f(\mathbf{x})\)</span>, <span class="math inline">\(\forall t &gt; 0\)</span>.</p>
+<div class="fragment">
+<p><strong>Teorema de Euler:</strong></p>
+<p><span class="math display">\[\sum_{i=1}^n x_i \frac{\partial f}{\partial x_i} = k \cdot f(\mathbf{x})\]</span></p>
+</div>
 <div class="fragment">
 <div class="columns">
-<div class="column" style="width:25%;">
-<p><strong>(A)</strong> <span class="math inline">\(\lambda^* &gt; 0\)</span></p>
-</div><div class="column" style="width:25%;">
-<p><strong>(B)</strong> <span class="math inline">\(\lambda^* = 0\)</span></p>
-</div><div class="column" style="width:25%;">
-<p><strong>(C)</strong> <span class="math inline">\(\lambda^* &lt; 0\)</span></p>
-</div><div class="column" style="width:25%;">
-<p><strong>(D)</strong> Não é possível determinar</p>
+<div class="column" style="width:50%;">
+<p><strong>Aplicações em Microeconomia:</strong></p>
+<ul>
+<li>Produção CRS (<span class="math inline">\(k=1\)</span>): pagando cada fator pelo produto marginal, esgota-se a receita total</li>
+<li>Demandas Marshallianas: homogêneas de grau 0 em <span class="math inline">\((p, m)\)</span> — sem ilusão monetária</li>
+<li>Funções custo: homogêneas de grau 1 em preços dos fatores</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Consequências úteis:</strong></p>
+<ul>
+<li>Derivadas de <span class="math inline">\(f\)</span> hom. grau <span class="math inline">\(k\)</span> são hom. grau <span class="math inline">\(k-1\)</span></li>
+<li>Se <span class="math inline">\(k=1\)</span>: <span class="math inline">\(\sum x_i f_i = f\)</span> (Exaustão)</li>
+<li>Se <span class="math inline">\(k=0\)</span>: <span class="math inline">\(\sum x_i f_i = 0\)</span> (derivadas somam zero ponderadas)</li>
+</ul>
 </div></div>
 </div>
 <div class="fragment">
-<p><strong>Resposta:</strong> <strong>(B)</strong> — pela folga complementar, se <span class="math inline">\(g &lt; c\)</span> (restrição inativa), então <span class="math inline">\(\lambda^* = 0\)</span>.</p>
-<blockquote>
-<p>Discuta com seu vizinho por 2 minutos antes de responder!</p>
-</blockquote>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Se a função de produção tem retornos constantes de escala (<span class="math inline">\(k=1\)</span>), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o <strong>Teorema da Exaustão</strong>.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="próxima-aula" class="slide level2">
@@ -457,7 +734,7 @@ Insper
 <p><strong>Preparação</strong></p>
 </div>
 <div class="callout-content">
-<p>Leia o Capítulo 3 do livro, focando nos axiomas e na definição de TMS.</p>
+<p>Leia o Capítulo 3 do livro, focando nos axiomas e na definição de TMS. Revise como as funções CES que exploramos hoje se conectam com diferentes formatos de curvas de indiferença.</p>
 </div>
 </div>
 </div>

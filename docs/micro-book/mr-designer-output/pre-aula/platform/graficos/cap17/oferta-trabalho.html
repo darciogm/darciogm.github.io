@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<!--
+  Oferta de Trabalho Backward-Bending — Chapter 17
+  Library: JSXGraph
+  Two panels: Lazer-Consumo + Curva de oferta h*(w)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oferta de Trabalho Backward-Bending</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .boards-wrapper { display: flex; flex-direction: column; gap: 0.5rem; }
+    .board-label { font-size: 0.8rem; font-weight: 700; color: #555; text-align: center; }
+    .jxgbox { flex: 1 1 420px; max-width: 420px; height: 320px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { flex-basis: 100%; width: 100%; max-width: 420px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 420px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div class="boards-wrapper">
+      <div class="board-label">Lazer–Consumo (para o salário selecionado)</div>
+      <div id="jxgbox1" class="jxgbox"></div>
+      <div class="board-label">Curva de oferta de trabalho \(h^*(w)\)</div>
+      <div id="jxgbox2" class="jxgbox"></div>
+    </div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Salário \(w\): <span class="val" id="val-w">10</span></label>
+        <input type="range" id="slider-w" min="1" max="40" step="0.5" value="10">
+      </div>
+      <div class="slider-group">
+        <label>Renda não-salarial \(V\): <span class="val" id="val-V">20</span></label>
+        <input type="range" id="slider-V" min="0" max="150" step="5" value="20">
+      </div>
+      <div class="slider-group">
+        <label>\(\gamma\) (elast.-renda do lazer): <span class="val" id="val-gamma">1.50</span></label>
+        <input type="range" id="slider-gamma" min="0.50" max="3.00" step="0.10" value="1.50">
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+<script>
+  var TT = 24; // total hours
+
+  // CES utility: U = [a*C^rho + (1-a)*L^rho]^(1/rho)
+  // sigma = 1/gamma (gamma > 1 => sigma < 1 => backward bending possible)
+  function computeOptimal(w, V, gamma) {
+    var sigma = 1 / gamma;
+    var a = 0.5;
+    var fullIncome = w * TT + V;
+    var ratio = Math.pow(a / (w * (1 - a)), sigma);
+    var Lstar = fullIncome / (ratio + w);
+    Lstar = Math.min(Math.max(Lstar, 0.5), TT - 0.1);
+    var hstar = TT - Lstar;
+    var Cstar = w * hstar + V;
+    return { L: Lstar, h: hstar, C: Cstar };
+  }
+
+  function getState() {
+    return {
+      w: parseFloat(document.getElementById('slider-w').value),
+      V: parseFloat(document.getElementById('slider-V').value),
+      gamma: parseFloat(document.getElementById('slider-gamma').value)
+    };
+  }
+
+  // ========== Board 1: Leisure-Consumption ==========
+  var board1 = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-3, 1150, 30, -60],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  board1.create('axis', [[0,0],[28,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
+    name: '', withLabel: false
+  });
+  board1.create('text', [15, -40, '<b><i>L</i> (lazer)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board1.create('axis', [[0,0],[0,1100]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 200 },
+    name: '', withLabel: false
+  });
+  board1.create('text', [-2.2, 575, '<b><i>C</i> (consumo)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+
+  // Dynamic objects for board 1
+  var dyn1 = [];
+  function clearDyn1() { dyn1.forEach(function(o) { board1.removeObject(o); }); dyn1 = []; }
+
+  // ========== Board 2: Labor supply h*(w) ==========
+  var board2 = JXG.JSXGraph.initBoard('jxgbox2', {
+    boundingbox: [-2, 45, 22, -4],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  board2.create('axis', [[0,0],[20,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 4 },
+    name: '', withLabel: false
+  });
+  board2.create('text', [11, -2.8, '<b><i>h</i> (trabalho)</b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+  });
+  board2.create('axis', [[0,0],[0,42]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] }, minorTicks: 0, ticksDistance: 5 },
+    name: '', withLabel: false
+  });
+  board2.create('text', [-1.4, 22, '<b><i>w</i></b>'], {
+    fontSize: 14, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+  });
+
+  // Dynamic objects for board 2
+  var dyn2 = [];
+  function clearDyn2() { dyn2.forEach(function(o) { board2.removeObject(o); }); dyn2 = []; }
+
+  // ========== Update ==========
+  function update() {
+    var s = getState();
+    document.getElementById('val-w').textContent = s.w.toFixed(1);
+    document.getElementById('val-V').textContent = s.V.toFixed(0);
+    document.getElementById('val-gamma').textContent = s.gamma.toFixed(2);
+
+    var opt = computeOptimal(s.w, s.V, s.gamma);
+    var fullIncome = s.w * TT + s.V;
+
+    // --- Board 1: redraw dynamic objects ---
+    clearDyn1();
+
+    // Budget line
+    var xIntercept = Math.min(TT + s.V / s.w, 29);
+    dyn1.push(board1.create('segment', [
+      [0, fullIncome], [xIntercept, 0]
+    ], { strokeColor: '#1565c0', strokeWidth: 2.5, fixed: true }));
+
+    // Slope label (above the line, not on it)
+    dyn1.push(board1.create('text', [2, fullIncome * 0.82,
+      '<span style="font-size:10px;color:#1565c0;">incl. = −<i>w</i></span>'
+    ], { fontSize: 10, anchorX: 'left', fixed: true, highlight: false }));
+
+    // Endowment point
+    dyn1.push(board1.create('point', [TT, s.V], {
+      size: 4, fillColor: '#666', strokeColor: '#666', name: '(<i>T</i>, <i>V</i>)', fixed: true,
+      label: { fontSize: 10, offset: [-50, 8], highlight: false }
+    }));
+
+    // Optimal point
+    dyn1.push(board1.create('point', [opt.L, opt.C], {
+      size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '(<i>L</i>*, <i>C</i>*)', fixed: true,
+      label: { fontSize: 11, offset: [10, 8], highlight: false }
+    }));
+
+    // Dashed projection lines
+    dyn1.push(board1.create('segment', [[opt.L, 0], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+    dyn1.push(board1.create('segment', [[0, opt.C], [opt.L, opt.C]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+
+    // --- Board 2: redraw dynamic objects ---
+    clearDyn2();
+
+    // Labor supply curve (parametric: h on x-axis, w on y-axis)
+    dyn2.push(board2.create('curve', [
+      function(t) { return computeOptimal(t, s.V, s.gamma).h; },
+      function(t) { return t; },
+      0.5, 42
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
+
+    // Compensated supply (SE only — approximate with positive slope from current point)
+    dyn2.push(board2.create('curve', [
+      function(t) { return opt.h + 0.3 * (t - s.w); },
+      function(t) { return t; },
+      0.5, 42
+    ], { strokeColor: '#00897b', strokeWidth: 1.5, dash: 2, strokeOpacity: 0.5 }));
+
+    dyn2.push(board2.create('text', [16, 40, '<span style="color:#00897b;font-size:10px;"><i>ES</i> (compensada)</span>'], {
+      fontSize: 10, anchorX: 'left', fixed: true, highlight: false
+    }));
+
+    // Current point on supply curve
+    dyn2.push(board2.create('point', [opt.h, s.w], {
+      size: 5, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true
+    }));
+
+    // Dashed projection lines
+    dyn2.push(board2.create('segment', [[opt.h, 0], [opt.h, s.w]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+    dyn2.push(board2.create('segment', [[0, s.w], [opt.h, s.w]], { strokeColor: '#aaa', strokeWidth: 1, dash: 3, fixed: true }));
+
+    // --- Info panel ---
+    var dw = 0.1;
+    var hplus = computeOptimal(s.w + dw, s.V, s.gamma).h;
+    var hminus = computeOptimal(s.w - dw, s.V, s.gamma).h;
+    var dhdw = (hplus - hminus) / (2 * dw);
+
+    var region = dhdw > 0.01 ? 'ES domina (trecho ascendente)' :
+                 (dhdw < -0.01 ? 'ER domina (backward-bending)' : 'ES \\(\\approx\\) ER');
+    var regionColor = dhdw > 0.01 ? '#00897b' : '#C8102E';
+
+    var html = '<div style="margin-top:0.2rem;">';
+    html += 'Renda plena: \\(M^* = ' + fullIncome.toFixed(0) + '\\)<br>';
+    html += '\\(h^* = ' + opt.h.toFixed(1) + '\\) horas de trabalho<br>';
+    html += '\\(L^* = ' + opt.L.toFixed(1) + '\\) horas de lazer<br>';
+    html += '\\(C^* = ' + opt.C.toFixed(0) + '\\)<br>';
+    html += '\\(\\partial h^*/\\partial w = ' + dhdw.toFixed(3) + '\\)<br>';
+    html += '<strong style="color:' + regionColor + ';">' + region + '</strong>';
+    html += '</div>';
+    html += '<div style="margin-top:0.4rem;font-size:0.78rem;color:#666;">';
+    html += '\\(\\gamma > 1\\): baixa elasticidade de substituição (\\(\\sigma = 1/\\gamma < 1\\)), favorece backward-bending.';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    board1.update();
+    board2.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-w').value = 10;
+    document.getElementById('slider-V').value = 20;
+    document.getElementById('slider-gamma').value = 1.50;
+    update();
+  }
+
+  ['slider-w','slider-V','slider-gamma'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

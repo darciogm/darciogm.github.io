@@ -11,10 +11,14 @@ format:
     transition: slide
     width: 1280
     height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 lang: pt-BR
 ---
 
-## O Problema Dual do Consumidor
+## Dois Lados da Mesma Moeda
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -23,7 +27,7 @@ lang: pt-BR
 $$\max_{x_1, x_2} \; U(x_1, x_2)$$
 $$\text{s.a.} \quad p_1 x_1 + p_2 x_2 \leq m$$
 
-Resultado: demandas marshallianas $x_i^M(p, m)$
+Resultado: demandas marshallianas $x_i^*(p, m)$
 
 Valor ótimo: utilidade indireta $V(p, m)$
 :::
@@ -35,14 +39,57 @@ $$\text{s.a.} \quad U(x_1, x_2) \geq \bar{u}$$
 
 Resultado: demandas hicksianas $h_i(p, \bar{u})$
 
-Valor ótimo: função gasto $E(p, \bar{u})$
+Valor ótimo: função gasto $e(p, \bar{u})$
 :::
 ::::
 
 . . .
 
 :::{.callout-tip title="Intuição Econômica"}
-Primal: "dado o orçamento, qual a maior utilidade?" Dual: "dada a utilidade desejada, qual o menor custo?"
+Primal: "dado o orçamento, qual a maior utilidade?" Dual: "dada a utilidade desejada, qual o menor custo?" Ambos chegam ao **mesmo ponto ótimo**.
+:::
+
+## Problema Dual: Minimização do Gasto
+
+$$\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x_1, x_2) \geq \bar{u}$$
+
+. . .
+
+**Lagrangeano do problema dual:**
+
+$$\mathcal{L} = p_1 x_1 + p_2 x_2 - \mu\big(U(x_1, x_2) - \bar{u}\big)$$
+
+. . .
+
+**CPOs:**
+
+$$p_1 = \mu \frac{\partial U}{\partial x_1}, \qquad p_2 = \mu \frac{\partial U}{\partial x_2}$$
+
+Dividindo: $\dfrac{p_1}{p_2} = \dfrac{U_1}{U_2} = TMS_{12}$ — **mesma condição de tangência** do primal!
+
+. . .
+
+> A diferença: no primal fixamos $m$ e maximizamos $U$; no dual fixamos $\bar{u}$ e minimizamos $E$.
+
+## Função Gasto $e(p, \bar{u})$
+
+$$e(p_1, p_2, \bar{u}) = \min_{x} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x) \geq \bar{u}$$
+
+. . .
+
+**Propriedades de $e$:**
+
+| Propriedade | Enunciado |
+|:--|:--|
+| Crescente em $p_i$ | Preços maiores $\Rightarrow$ gasto maior |
+| Crescente em $\bar{u}$ | Mais utilidade custa mais |
+| HD1 em $p$ | $e(tp, \bar{u}) = t \cdot e(p, \bar{u})$ |
+| Côncava em $p$ | $e(\lambda p + (1-\lambda)p', \bar{u}) \geq \lambda e(p,\bar{u}) + (1-\lambda)e(p',\bar{u})$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Concavidade em preços: o consumidor pode **substituir** entre bens, de modo que o gasto sobe menos que proporcionalmente quando um preço aumenta.
 :::
 
 ## Demanda Hicksiana (Compensada)
@@ -51,147 +98,333 @@ $$h_i(p_1, p_2, \bar{u}) = \arg\min_{x} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \
 
 . . .
 
-**Diferença fundamental em relação à marshalliana:**
+**Propriedades:**
 
-| Propriedade | Marshalliana $x_i^M(p, m)$ | Hicksiana $h_i(p, \bar{u})$ |
+1. **HD0 em $p$:** $h(tp, \bar{u}) = h(p, \bar{u})$ — dobrar preços não altera a cesta compensada
+2. **Matriz de substituição NSD:** $\dfrac{\partial h_i}{\partial p_j}$ é simétrica e negativa semidefinida
+3. **Lei da demanda compensada:** $\dfrac{\partial h_i}{\partial p_i} \leq 0$ — sempre!
+
+. . .
+
+| Propriedade | Marshalliana $x_i^*(p, m)$ | Hicksiana $h_i(p, \bar{u})$ |
 |:--|:--|:--|
 | Mantém fixa | Renda $m$ | Utilidade $\bar{u}$ |
-| Captura | Efeito total (preço) | Apenas efeito substituição |
-| Observável? | Sim (dados de mercado) | Não diretamente |
+| Captura | Efeito total | Apenas efeito substituição |
+| Observável? | Sim | Não diretamente |
 
-> A hicksiana isola o **efeito substituição** ao "compensar" a variação de renda.
+## Dualidade Visual
 
-## Função Gasto
+Mova o slider para ver como o gasto mínimo muda com o nível de utilidade:
 
-$$E(p_1, p_2, \bar{u}) = \min_{x} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x) \geq \bar{u}$$
+<div id="graph-a06-dual" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Utilidade $\bar{u}$: <input type="range" id="sl-a06-u" min="2" max="10" value="5" step="0.2" oninput="updA06Dual()"> <span id="val-a06-u">5.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a06-dual',{
+    boundingbox:[-1,14,14,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var ubar = 5;
+  var p1 = 2, p2 = 1;
+  // Cobb-Douglas U = x^0.5 * y^0.5, so IC: y = ubar^2 / x
+  // Hicksian: h1 = ubar*sqrt(p2/p1), h2 = ubar*sqrt(p1/p2)
+  // Expenditure: e = 2*ubar*sqrt(p1*p2)
+  function ic(x){ return (ubar*ubar)/x; }
+  function isocost(x, E){ return (E - p1*x)/p2; }
+
+  // Indifference curve
+  var icCurve = brd.create('functiongraph',[function(x){return ic(x);}, 0.3, 13],
+    {strokeColor:'#1565c0', strokeWidth:3, name:''});
+
+  // Optimal hicksian bundle
+  var hx = function(){ return ubar*Math.sqrt(p2/p1); };
+  var hy = function(){ return ubar*Math.sqrt(p1/p2); };
+  var eStar = function(){ return 2*ubar*Math.sqrt(p1*p2); };
+
+  // Optimal isocost
+  var isoOpt = brd.create('functiongraph',[function(x){return isocost(x, eStar());}, -1, 14],
+    {strokeColor:'#C8102E', strokeWidth:2, dash:2});
+
+  // Higher isocost (budget line for primal with m = e*)
+  var budgetLine = brd.create('functiongraph',[function(x){return isocost(x, eStar()*1.3);}, -1, 14],
+    {strokeColor:'#ff9800', strokeWidth:1.5, dash:3, visible:true});
+
+  // Tangency point
+  var tangPt = brd.create('point',[hx, hy],
+    {size:6, fillColor:'#C8102E', strokeColor:'#C8102E', name:'h*(p,ū)',
+     label:{fontSize:13, offset:[10,10]}});
+
+  // Dashed projections
+  brd.create('segment',[function(){return [hx(),0];}, function(){return [hx(),hy()];}],
+    {strokeColor:'#C8102E', dash:2, strokeWidth:1.5});
+  brd.create('segment',[function(){return [0,hy()];}, function(){return [hx(),hy()];}],
+    {strokeColor:'#C8102E', dash:2, strokeWidth:1.5});
+
+  // Labels
+  brd.create('text',[12, 1.5, function(){return 'ū = '+ubar.toFixed(1);}],
+    {fontSize:13, color:'#1565c0'});
+  brd.create('text',[0.5, 13, function(){return 'e* = '+eStar().toFixed(1);}],
+    {fontSize:13, color:'#C8102E'});
+
+  window.updA06Dual = function(){
+    ubar = parseFloat(document.getElementById('sl-a06-u').value);
+    document.getElementById('val-a06-u').textContent = ubar.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+## Lema de Shephard
+
+A demanda hicksiana pode ser recuperada a partir de $e(p, \bar{u})$:
+
+$$\boxed{h_i(p, \bar{u}) = \frac{\partial e(p, \bar{u})}{\partial p_i}}$$
 
 . . .
 
-**Propriedades de $E$:**
+**Derivação (Teorema do Envelope):**
 
-1. **Crescente** em $p_i$ e em $\bar{u}$
-2. **Homogênea de grau 1** em preços: $E(tp, \bar{u}) = tE(p, \bar{u})$
-3. **Côncava** em preços (crucial para bem-estar)
-4. $E(p, V(p, m)) = m$ — gastar o mínimo para atingir a utilidade ótima custa exatamente $m$
+- No problema dual, $e(p,\bar{u}) = p_1 h_1 + p_2 h_2$
+- Pelo envelope: $\frac{\partial e}{\partial p_i} = h_i + \sum_j p_j \frac{\partial h_j}{\partial p_i}$
+- Mas $\sum_j p_j \frac{\partial h_j}{\partial p_i} = 0$ (diferenciando a restrição)
+- Portanto: $\frac{\partial e}{\partial p_i} = h_i$ $\blacksquare$
 
 . . .
 
-**Exemplo Cobb-Douglas** ($U = x_1^\alpha x_2^{1-\alpha}$):
+:::{.callout-tip title="Intuição Econômica"}
+Se $p_1$ sobe marginalmente, o gasto mínimo aumenta em exatamente $h_1$ unidades monetárias — a quantidade compensada do bem 1.
+:::
 
-$$E(p_1, p_2, \bar{u}) = \bar{u} \cdot \frac{p_1^\alpha p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$$
-
-## Identidade de Roy
+## Identidade de Roy Revisitada
 
 A demanda marshalliana pode ser recuperada a partir de $V(p, m)$:
 
-$$x_i^M(p, m) = -\frac{\partial V / \partial p_i}{\partial V / \partial m}$$
+$$\boxed{x_i^*(p, m) = -\frac{\partial V / \partial p_i}{\partial V / \partial m}}$$
 
 . . .
 
 **Por que funciona?**
 
-- $\frac{\partial V}{\partial p_i}$ mede quanto a utilidade cai quando $p_i$ sobe (efeito negativo)
-- $\frac{\partial V}{\partial m} = \lambda$ é a utilidade marginal da renda
-- A razão nos dá exatamente a quantidade demandada
+- $\frac{\partial V}{\partial p_i} = -\lambda^* x_i^*$ (envelope no primal) — aumento de $p_i$ reduz utilidade
+- $\frac{\partial V}{\partial m} = \lambda^*$ — utilidade marginal da renda
+
+. . .
+
+Dividindo:
+
+$$-\frac{-\lambda^* x_i^*}{\lambda^*} = x_i^*$$
+
+> Roy e Shephard são "espelhos" — um opera no primal, outro no dual.
+
+## Relações de Dualidade: Mapa Completo
+
+As quatro funções $V$, $e$, $x^*$, $h$ estão conectadas por identidades fundamentais:
+
+. . .
+
+| Identidade | Significado |
+|:--|:--|
+| $e(p, V(p,m)) = m$ | Gasto mínimo p/ atingir a utilidade ótima = renda |
+| $V(p, e(p,\bar{u})) = \bar{u}$ | Utilidade máxima com gasto mínimo = $\bar{u}$ |
+| $x_i^*(p,m) = h_i(p, V(p,m))$ | No ótimo, marshalliana = hicksiana |
+| $h_i(p,\bar{u}) = x_i^*(p, e(p,\bar{u}))$ | Hicksiana avaliada no gasto ótimo = marshalliana |
+
+. . .
+
+```
+     V(p, m)  ───Roy───>   x_i*(p, m)
+       │                        │
+    inversa                  Slutsky
+       │                        │
+     e(p, ū)  ──Shephard──>  h_i(p, ū)
+```
 
 . . .
 
 :::{.callout-tip title="Intuição Econômica"}
-Roy nos diz: "quanto de renda eu precisaria para compensar o aumento de preço?" — dividido pela utilidade marginal da renda, isso é exatamente a quantidade consumida.
+$V$ e $e$ são **inversas** uma da outra (fixando $p$). Todo o mapa pode ser construído a partir de uma única função de utilidade $U$.
 :::
 
-## Lema de Shephard
+## Exemplo: Cobb-Douglas Dual
 
-A demanda hicksiana pode ser recuperada a partir de $E(p, \bar{u})$:
-
-$$h_i(p, \bar{u}) = \frac{\partial E(p, \bar{u})}{\partial p_i}$$
+$$U = x_1^\alpha x_2^{1-\alpha}, \quad \text{com } \alpha \in (0,1)$$
 
 . . .
 
-**Este é o Teorema do Envelope aplicado ao problema dual:**
+**Passo 1 — CPOs do dual:**
 
-- O efeito de $p_i$ sobre o gasto mínimo é exatamente a quantidade compensada $h_i$
-- Não precisamos resolver o problema de minimização novamente!
-
-. . .
-
-**Verificação para Cobb-Douglas:**
-
-$$h_1 = \frac{\partial E}{\partial p_1} = \alpha \cdot \bar{u} \cdot \frac{p_1^{\alpha-1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$$
-
-Confere com a solução direta do problema dual.
-
-## Diagrama de Dualidade — Visualização
-
-Todas as relações se conectam num diagrama elegante:
-
-<iframe src="../../graficos/cap04/dualidade.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+$$\frac{p_1}{p_2} = \frac{\alpha x_2}{(1-\alpha)x_1} \implies x_2 = \frac{(1-\alpha)p_1 x_1}{\alpha p_2}$$
 
 . . .
 
-**Conexões-chave:**
+**Passo 2 — Substituindo na restrição** $x_1^\alpha x_2^{1-\alpha} = \bar{u}$:
 
-- $V$ e $E$ são **inversas** uma da outra (fixando $p$)
-- Roy liga $V \to x^M$; Shephard liga $E \to h$
-- No ótimo: $x_i^M(p, m) = h_i(p, V(p, m))$
+$$x_1^\alpha \left(\frac{(1-\alpha)p_1}{\alpha p_2}\right)^{1-\alpha} x_1^{1-\alpha} = \bar{u}$$
 
-## O Lump-Sum Principle
+$$h_1(p, \bar{u}) = \bar{u} \left(\frac{\alpha p_2}{(1-\alpha)p_1}\right)^{1-\alpha}$$
 
-**Pergunta de política:** um imposto sobre o bem 1 ou um imposto lump-sum (fixo) arrecadando o mesmo valor — qual é melhor para o consumidor?
+. . .
+
+**Passo 3 — Função gasto:**
+
+$$e(p, \bar{u}) = \bar{u} \cdot \frac{p_1^\alpha p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$$
+
+> Verifique: $\frac{\partial e}{\partial p_1} = h_1$ (Shephard) $\checkmark$
+
+## Princípio do Lump-Sum
+
+Imposto específico vs. lump-sum: qual é melhor para o consumidor?
+
+<div id="graph-a06-lumpsum" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Imposto $t$: <input type="range" id="sl-a06-tax" min="0.5" max="5" value="2" step="0.1" oninput="updA06Tax()"> <span id="val-a06-tax">2.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a06-lumpsum',{
+    boundingbox:[-1,18,18,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var p1=2, p2=1, m=24, alpha=0.5, tax=2;
+
+  // Marshallian demands for CD: x1 = alpha*m/p1, x2 = (1-alpha)*m/p2
+  // Utility: V = (alpha*m/p1)^alpha * ((1-alpha)*m/p2)^(1-alpha)
+  function dem1(pp1,mm){ return alpha*mm/pp1; }
+  function dem2(pp2,mm){ return (1-alpha)*mm/pp2; }
+  function util(x1,x2){ return Math.pow(x1,alpha)*Math.pow(x2,1-alpha); }
+  function icFunc(uval){ return function(x){ return (x>0.1)? Math.pow(uval/Math.pow(x,alpha), 1/(1-alpha)) : 999; }; }
+
+  // Original budget: p1*x1 + p2*x2 = m
+  var budgetOrig = brd.create('functiongraph',[function(x){return (m-p1*x)/p2;}, -1, 18],
+    {strokeColor:'#1565c0', strokeWidth:2, dash:0});
+
+  // Original optimum
+  var x1orig = function(){ return dem1(p1,m); };
+  var x2orig = function(){ return dem2(p2,m); };
+  var uOrig = function(){ return util(x1orig(), x2orig()); };
+
+  // IC original
+  var icOrig = brd.create('functiongraph',[function(x){return icFunc(uOrig())(x);}, 0.3, 17],
+    {strokeColor:'#1565c0', strokeWidth:2, dash:3});
+
+  // Tax on good 1: new price p1+t
+  var x1tax = function(){ return dem1(p1+tax, m); };
+  var x2tax = function(){ return dem2(p2, m); };
+  var uTax = function(){ return util(x1tax(), x2tax()); };
+  var revenue = function(){ return tax * x1tax(); };
+
+  // Tax budget line
+  var budgetTax = brd.create('functiongraph',[function(x){return (m-(p1+tax)*x)/p2;}, -1, 18],
+    {strokeColor:'#C8102E', strokeWidth:2});
+
+  // Tax IC
+  var icTax = brd.create('functiongraph',[function(x){return icFunc(uTax())(x);}, 0.3, 17],
+    {strokeColor:'#C8102E', strokeWidth:2, dash:3});
+
+  // Tax optimum point
+  var ptTax = brd.create('point',[x1tax, x2tax],
+    {size:5, fillColor:'#C8102E', strokeColor:'#C8102E', name:'Tax',
+     label:{fontSize:12, offset:[-30,10]}});
+
+  // Lump-sum: m - R, same prices
+  var mLS = function(){ return m - revenue(); };
+  var x1ls = function(){ return dem1(p1, mLS()); };
+  var x2ls = function(){ return dem2(p2, mLS()); };
+  var uLS = function(){ return util(x1ls(), x2ls()); };
+
+  // Lump-sum budget line
+  var budgetLS = brd.create('functiongraph',[function(x){return (mLS()-p1*x)/p2;}, -1, 18],
+    {strokeColor:'#00897b', strokeWidth:2});
+
+  // Lump-sum IC
+  var icLS = brd.create('functiongraph',[function(x){return icFunc(uLS())(x);}, 0.3, 17],
+    {strokeColor:'#00897b', strokeWidth:2, dash:3});
+
+  // Lump-sum optimum point
+  var ptLS = brd.create('point',[x1ls, x2ls],
+    {size:5, fillColor:'#00897b', strokeColor:'#00897b', name:'Lump-sum',
+     label:{fontSize:12, offset:[10,10]}});
+
+  // Info text
+  brd.create('text',[10, 16, function(){
+    return 'R = '+revenue().toFixed(1)+' | U(tax)='+uTax().toFixed(2)+' | U(LS)='+uLS().toFixed(2);
+  }], {fontSize:12, color:'#333'});
+
+  // Legend
+  brd.create('text',[10, 14.5, 'Vermelho: imposto específico'], {fontSize:11, color:'#C8102E'});
+  brd.create('text',[10, 13.5, 'Verde: lump-sum (mesma receita)'], {fontSize:11, color:'#00897b'});
+
+  window.updA06Tax = function(){
+    tax = parseFloat(document.getElementById('sl-a06-tax').value);
+    document.getElementById('val-a06-tax').textContent = tax.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+> O lump-sum sempre gera utilidade $\geq$ imposto específico com mesma receita, pois **não distorce preços relativos**.
+
+## Variação Compensatória e Equivalente
+
+Duas medidas monetárias de variação de bem-estar quando $p_1$ muda de $p_1^0$ para $p_1'$:
 
 . . .
 
 :::: {.columns}
 ::: {.column width="50%"}
-**Imposto específico:** $p_1 \to p_1 + t$
+**Variação Compensatória (CV):**
 
-Arrecadação: $R = t \cdot x_1^*(p_1+t, p_2, m)$
+$$CV = e(p', \bar{u}_0) - m$$
 
-O consumidor enfrenta preços distorcidos.
+"Quanto devo **compensar** o consumidor (aos novos preços) para que ele mantenha a utilidade original?"
+
+Referência: utilidade **antes** da mudança.
 :::
 ::: {.column width="50%"}
-**Lump-sum:** $m \to m - R$
+**Variação Equivalente (EV):**
 
-Arrecadação: mesma $R$
+$$EV = m - e(p^0, \bar{u}')$$
 
-Preços relativos preservados.
+"Quanto o consumidor pagaria (aos preços antigos) para **evitar** a mudança?"
+
+Referência: utilidade **depois** da mudança.
 :::
 ::::
 
 . . .
 
-<iframe src="../../graficos/cap04/lump-sum-principle.html" width="100%" height="350" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-## Marshalliana vs. Hicksiana — Síntese
-
-:::: {.columns}
-::: {.column width="50%"}
-**Marshalliana $x_i^M(p, m)$:**
-
-- Renda fixa, utilidade varia
-- Efeito total = substituição + renda
-- Pode ter inclinação positiva (bem de Giffen)
-- Observável nos dados
-- Obtida via Roy: $-\frac{V_{p_i}}{V_m}$
+:::{.callout-tip title="Intuição Econômica"}
+CV pergunta: "quanto dinheiro restaura o bem-estar antigo?" EV pergunta: "quanto dinheiro equivale à mudança de preço?"
 :::
-::: {.column width="50%"}
-**Hicksiana $h_i(p, \bar{u})$:**
 
-- Utilidade fixa, gasto varia
-- Apenas efeito substituição
-- Sempre inclinação negativa ($\partial h_i/\partial p_i < 0$)
-- Construção teórica
-- Obtida via Shephard: $\frac{\partial E}{\partial p_i}$
-:::
-::::
+## Excedente do Consumidor como Aproximação
+
+Quando o efeito renda é pequeno, as três medidas convergem:
+
+$$CV \approx EV \approx \Delta CS$$
 
 . . .
 
-**Equação de Slutsky** (conecta as duas):
+**Por quê?**
 
-$$\frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i^M}{\partial m}$$
+- Se $\frac{\partial x_i^*}{\partial m} \approx 0$, a marshalliana e a hicksiana quase coincidem
+- $\Delta CS = \int_{p_1^0}^{p_1'} x_1^*(p_1, p_2, m) \, dp_1$
 
-## Agora com Vocês — PBL: Dossiê Completo do Consumidor
+. . .
+
+**Quando a aproximação funciona bem:**
+
+- Bens com pequena participação no orçamento
+- Variações pequenas de preço
+- Preferências quase-lineares (efeito renda nulo)
+
+. . .
+
+> Na prática, $\Delta CS$ é a medida mais usada em análise de políticas pela sua simplicidade — basta observar a demanda marshalliana.
+
+## PBL: Dossiê Completo do Consumidor
 
 **Exercício em duplas** (20 min):
 
@@ -201,13 +434,13 @@ Dado: $U = x_1^{1/2} x_2^{1/2}$, $p_1 = 4$, $p_2 = 8$, $m = 160$.
 
 Construa o **dossiê completo**:
 
-1. Demandas marshallianas $x_1^M, x_2^M$
+1. Demandas marshallianas $x_1^*, x_2^*$
 2. Utilidade indireta $V(p, m)$
-3. Função gasto $E(p, \bar{u})$
+3. Função gasto $e(p, \bar{u})$
 4. Demandas hicksianas $h_1, h_2$
-5. Verifique Roy: $x_1^M = -V_{p_1}/V_m$
-6. Verifique Shephard: $h_1 = E_{p_1}$
-7. Verifique: $E(p, V(p,m)) = m$
+5. Verifique Roy: $x_1^* = -V_{p_1}/V_m$
+6. Verifique Shephard: $h_1 = \partial e/\partial p_1$
+7. Verifique: $e(p, V(p,m)) = m$
 
 . . .
 
@@ -215,72 +448,50 @@ Construa o **dossiê completo**:
 Comece resolvendo o primal. Todo o resto se obtém por substituição e derivação.
 :::
 
-## Peer Instruction — Interpretação de $\lambda$
+## Resumo: O Mapa da Dualidade
 
-**Pergunta:** No problema do consumidor, $\lambda^* = 0{,}05$. Se a renda aumenta de R\$200 para R\$210, a utilidade máxima aumenta aproximadamente:
-
-. . .
-
-:::: {.columns}
-::: {.column width="25%"}
-**(A)** 0,05
-:::
-::: {.column width="25%"}
-**(B)** 0,50
-:::
-::: {.column width="25%"}
-**(C)** 5,00
-:::
-::: {.column width="25%"}
-**(D)** 10,50
-:::
-::::
+Todas as funções e identidades em um fluxograma:
 
 . . .
-
-**Resposta:** **(B)** — Pelo Teorema do Envelope, $\Delta V \approx \lambda^* \cdot \Delta m = 0{,}05 \times 10 = 0{,}50$.
-
-> Think-Pair-Share: discuta 2 min com seu vizinho. Qual a unidade de $\lambda$? (úteis/R\$)
-
-## Exercício de Fixação — Mapa da Dualidade
-
-**Agora com vocês!** (5 min)
-
-. . .
-
-Preencha o diagrama abaixo com as fórmulas corretas:
 
 ```
-     V(p, m)  ───Roy───>   x_i^M(p, m)
-       │                        │
-    inversa                  Slutsky
-       │                        │
-     E(p, ū)  ──Shephard──>  h_i(p, ū)
+          ┌─────────────────────────────────────────────┐
+          │            U(x₁, x₂)                       │
+          └─────────┬───────────────────┬───────────────┘
+                    │                   │
+              max U s.a. m        min E s.a. ū
+                    │                   │
+          ┌─────────▼─────┐   ┌─────────▼─────┐
+          │  V(p, m)      │◄──┤  e(p, ū)      │
+          │               │──►│               │
+          │  inversas     │   │  inversas     │
+          └─────┬─────────┘   └─────┬─────────┘
+                │ Roy               │ Shephard
+                │ xᵢ*=-Vₚᵢ/Vₘ     │ hᵢ=∂e/∂pᵢ
+          ┌─────▼─────────┐   ┌─────▼─────────┐
+          │  xᵢ*(p, m)    │◄──┤  hᵢ(p, ū)    │
+          │               │──►│               │
+          │   Slutsky      │   │              │
+          └───────────────┘   └───────────────┘
 ```
 
 . . .
 
-**Para cada seta, escreva:**
+**Identidades de fechamento:**
 
-- A fórmula que conecta os dois objetos
-- A interpretação econômica em uma frase
-
-. . .
-
-:::{.callout-tip title="Verificação"}
-Se você consegue preencher todo o diagrama partindo apenas de $U(x_1, x_2)$, você dominou a dualidade!
-:::
+- $e(p, V(p,m)) = m$ e $V(p, e(p,\bar{u})) = \bar{u}$
+- $x_i^*(p,m) = h_i(p, V(p,m))$ e $h_i(p,\bar{u}) = x_i^*(p, e(p,\bar{u}))$
 
 ## Próxima Aula
 
-**Aula 07 — Efeito Renda, Efeito Substituição e Equação de Slutsky**
+**Aula 07 — Efeitos Renda e Substituição e Equação de Slutsky**
 
 . . .
 
 - Decomposição de Slutsky completa
 - Bens normais, inferiores e de Giffen
-- Variação compensatória e variação equivalente
-- Excedente do consumidor e medidas de bem-estar
+- Visualização geométrica da decomposição
+- Aplicações: por que demanda por gasolina é inelástica?
 
 . . .
 

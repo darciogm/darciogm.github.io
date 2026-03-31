@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-12-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-12-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-12-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-12-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-12-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,15 +143,15 @@ Insper
 </div>
 
 </section>
-<section id="diversificação-não-coloque-todos-os-ovos-na-mesma-cesta" class="slide level2">
-<h2>Diversificação — Não Coloque Todos os Ovos na Mesma Cesta</h2>
-<p>Considere dois ativos com retornos <span class="math inline">\(\tilde{R}_1\)</span> e <span class="math inline">\(\tilde{R}_2\)</span>, ambos com <span class="math inline">\(E[R] = \mu\)</span> e <span class="math inline">\(\text{Var}(R) = \sigma^2\)</span>.</p>
+<section id="diversificação-dont-put-all-eggs-in-one-basket" class="slide level2">
+<h2>Diversificação — “Don’t Put All Eggs in One Basket”</h2>
+<p>Considere dois ativos <span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> com retornos <span class="math inline">\(\tilde{R}_A\)</span> e <span class="math inline">\(\tilde{R}_B\)</span>. Um portfólio com peso <span class="math inline">\(w\)</span> no ativo <span class="math inline">\(A\)</span>:</p>
 <div class="fragment">
-<p><strong>Portfólio com peso <span class="math inline">\(\alpha\)</span> no ativo 1:</strong></p>
-<p><span class="math display">\[\text{Var}(\alpha \tilde{R}_1 + (1-\alpha)\tilde{R}_2) = \sigma^2[1 - 2\alpha(1-\alpha)(1-\rho)]\]</span></p>
+<p><strong>Variância do portfólio:</strong></p>
+<p><span class="math display">\[\sigma^2_p = w^2\sigma^2_A + (1-w)^2\sigma^2_B + 2w(1-w)\,\rho\,\sigma_A\sigma_B\]</span></p>
 </div>
 <div class="fragment">
-<p>Se <span class="math inline">\(\rho &lt; 1\)</span>, o portfólio tem variância <strong>menor</strong> que cada ativo individual, sem sacrificar retorno esperado.</p>
+<p>Se <span class="math inline">\(\rho &lt; 1\)</span>, existe <span class="math inline">\(w^* \in (0,1)\)</span> tal que <span class="math inline">\(\sigma^2_p &lt; \min\{\sigma^2_A, \sigma^2_B\}\)</span>.</p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -162,7 +164,7 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Diversificação é um “almoço grátis”: reduz o risco sem reduzir o retorno esperado, desde que os ativos não sejam perfeitamente correlacionados.</p>
+<p>Diversificação é um “almoço grátis”: reduz o risco sem sacrificar retorno esperado, desde que os ativos não sejam perfeitamente correlacionados.</p>
 </div>
 </div>
 </div>
@@ -173,19 +175,22 @@ Insper
 <h2>Abordagem Estado-Preferência</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Dois estados da natureza:</strong> “bom” e “ruim”, com probabilidades <span class="math inline">\((1-p)\)</span> e <span class="math inline">\(p\)</span>.</p>
+<p><strong>Dois estados da natureza:</strong> “acidente” (<span class="math inline">\(A\)</span>) e “normal” (<span class="math inline">\(N\)</span>), com probabilidades <span class="math inline">\(p\)</span> e <span class="math inline">\((1-p)\)</span>.</p>
 <ul>
-<li>Consumo contingente: <span class="math inline">\((c_b, c_r)\)</span></li>
-<li>Utilidade esperada: <span class="math inline">\((1-p)\,u(c_b) + p\,u(c_r)\)</span></li>
+<li>Consumo contingente: <span class="math inline">\((c_A, c_N)\)</span></li>
+<li>Utilidade esperada: <span class="math inline">\(p\,u(c_A) + (1-p)\,u(c_N)\)</span></li>
 </ul>
 <p>. . .</p>
-<p><strong>Curvas de indiferença</strong> no espaço <span class="math inline">\((c_b, c_r)\)</span>:</p>
-<p><span class="math display">\[\text{TMS} = \frac{(1-p)\,u'(c_b)}{p\,u'(c_r)}\]</span></p>
+<p><strong>Restrição orçamentária no espaço de estados:</strong></p>
+<p><span class="math display">\[\pi_A c_A + \pi_N c_N = W\]</span></p>
+<p>onde <span class="math inline">\(\pi_A, \pi_N\)</span> são os preços dos contratos contingentes.</p>
 </div><div class="column" style="width:50%;">
 <p>. . .</p>
-<p><strong>Linha de certeza:</strong> <span class="math inline">\(c_b = c_r\)</span></p>
-<p>Sobre a linha de certeza:</p>
-<p><span class="math display">\[\text{TMS} = \frac{(1-p)}{p}\]</span></p>
+<p><strong>Curvas de indiferença</strong> no espaço <span class="math inline">\((c_A, c_N)\)</span>:</p>
+<p><span class="math display">\[\text{TMS} = \frac{p\,u'(c_A)}{(1-p)\,u'(c_N)}\]</span></p>
+<p>. . .</p>
+<p><strong>Linha de certeza:</strong> <span class="math inline">\(c_A = c_N\)</span></p>
+<p>Sobre a linha de certeza: <span class="math inline">\(\text{TMS} = \dfrac{p}{1-p}\)</span></p>
 <p>. . .</p>
 <blockquote>
 <p>Para avesso ao risco, o ótimo com seguro atuarialmente justo está <strong>sobre a linha de certeza</strong> (cobertura total).</p>
@@ -300,10 +305,11 @@ Insper
 <p>. . .</p>
 <p><strong>Propriedades:</strong></p>
 <ol type="1">
-<li>Dependência de referência</li>
-<li>Sensibilidade decrescente</li>
-<li>Aversão a perdas (<span class="math inline">\(\lambda &gt; 1\)</span>)</li>
+<li><strong>Dependência de referência</strong> — ganhos e perdas relativos</li>
+<li><strong>Sensibilidade decrescente</strong> — cada real adicional importa menos</li>
+<li><strong>Aversão a perdas</strong> (<span class="math inline">\(\lambda &gt; 1\)</span>) — perdas doem mais que ganhos equivalentes</li>
 </ol>
+<p>. . .</p>
 <blockquote>
 <p>“Perder R$ 100 dói ~2,25x mais do que ganhar R$ 100 agrada.”</p>
 </blockquote>
@@ -353,47 +359,171 @@ Insper
 </section>
 <section id="equilíbrio-no-mercado-de-seguros" class="slide level2">
 <h2>Equilíbrio no Mercado de Seguros</h2>
-<iframe src="../../graficos/cap07/seguro.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div id="graph-a12-insmarket" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Carregamento <span class="math inline">\(\theta\)</span>: <input type="range" id="sl-a12-loading" min="1.0" max="2.0" value="1.2" step="0.05" oninput="updA12Ins()"> <span id="val-a12-loading">1.20</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a12-insmarket',{
+    boundingbox:[-0.05,1.1,1.15,-0.15], axis:false, showCopyright:false, showNavigation:false
+  });
+  // Axes
+  brd.create('axis',[[0,0],[1,0]],{ticks:{visible:true,minorTicks:0}});
+  brd.create('axis',[[0,0],[0,1]],{ticks:{visible:true,minorTicks:0}});
+  brd.create('text',[1.05,-0.04,'Cobertura q'],{fontSize:13,anchorX:'middle'});
+  brd.create('text',[-0.03,1.05,'Prêmio γ'],{fontSize:13,anchorX:'right'});
+
+  var theta = 1.2;
+  var pLoss = 0.05; // probability of loss
+
+  // Demand curve: willingness to pay decreases with coverage
+  // D(q) = pLoss * (1.5 - q) -- simple linear demand
+  var demandLine = brd.create('functiongraph',[function(q){
+    return pLoss * (1.8 - 1.2*q);
+  },0,1],{strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  // Fair premium line (horizontal)
+  var fairLine = brd.create('functiongraph',[function(q){
+    return pLoss;
+  },0,1],{strokeColor:'#00897b',strokeWidth:2,dash:2,highlight:false});
+
+  // Loaded premium line
+  var loadedLine = brd.create('functiongraph',[function(q){
+    return theta * pLoss;
+  },0,1],{strokeColor:'#C8102E',strokeWidth:2.5,highlight:false});
+
+  // Equilibrium point (loaded)
+  var eqPt = brd.create('point',[
+    function(){ return (1.8 - theta) / 1.2; },
+    function(){ return theta * pLoss; }
+  ],{size:5,fillColor:'#C8102E',strokeColor:'#C8102E',
+    name:'',label:{visible:false}});
+
+  // Equilibrium point (fair)
+  var eqFair = brd.create('point',[
+    function(){ return (1.8 - 1.0) / 1.2; },
+    function(){ return pLoss; }
+  ],{size:4,fillColor:'#00897b',strokeColor:'#00897b',
+    name:'',label:{visible:false}});
+
+  // Labels with +5 offset to avoid overlap
+  var lblDemand = brd.create('text',[0.15,0.1,'Demanda D(q)'],
+    {fontSize:12,color:'#1565c0'});
+  var lblFair = brd.create('text',[0.7,function(){return pLoss+0.015;},'Prêmio justo (γ=p)'],
+    {fontSize:11,color:'#00897b'});
+  var lblLoaded = brd.create('text',[0.7,function(){return theta*pLoss+0.015;},
+    function(){return 'Prêmio carregado (θ='+theta.toFixed(2)+')';}],
+    {fontSize:11,color:'#C8102E'});
+  var lblEq = brd.create('text',[
+    function(){return (1.8-theta)/1.2 + 0.03;},
+    function(){return theta*pLoss - 0.02;},
+    function(){return 'q*='+((1.8-theta)/1.2).toFixed(2);}],
+    {fontSize:11,color:'#C8102E'});
+
+  window.updA12Ins = function(){
+    theta = parseFloat(document.getElementById('sl-a12-loading').value);
+    document.getElementById('val-a12-loading').textContent = theta.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
 <div class="fragment">
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Seguro atuarialmente justo:</strong> <span class="math inline">\(\gamma = p\)</span></p>
-<ul>
-<li>Lucro esperado da seguradora = 0</li>
-<li>Avesso ao risco compra cobertura <strong>total</strong></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<p><strong>Seguro com carregamento:</strong> <span class="math inline">\(\gamma = (1+\theta)p\)</span></p>
-<ul>
-<li>Lucro esperado positivo</li>
-<li>Cobertura parcial ótima</li>
-</ul>
-</div></div>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com carregamento, o prêmio sobe e a cobertura ótima cai. Somente com seguro atuarialmente justo o avesso ao risco compra cobertura total.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="cara-vs.-crra-comparação" class="slide level2">
-<h2>CARA vs.&nbsp;CRRA — Comparação</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>CARA:</strong> <span class="math inline">\(u(x) = -e^{-ax}\)</span></p>
-<ul>
-<li><span class="math inline">\(A(x) = a\)</span> (constante)</li>
-<li>Prêmio de risco <strong>não depende</strong> da riqueza</li>
-<li>Útil para modelos com riqueza variável</li>
-</ul>
-<p>. . .</p>
-<p><strong>CRRA:</strong> <span class="math inline">\(u(x) = \frac{x^{1-\gamma}}{1-\gamma}\)</span></p>
-<ul>
-<li><span class="math inline">\(R(x) = \gamma\)</span> (constante)</li>
-<li>Prêmio de risco <strong>proporcional</strong> à riqueza</li>
-<li>Mais usado em macroeconomia e finanças</li>
-</ul>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap07/aversao-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
+<section id="cara-vs.-crra-comparação-visual" class="slide level2">
+<h2>CARA vs.&nbsp;CRRA — Comparação Visual</h2>
+<div id="graph-a12-cara-crra" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Parâmetro <span class="math inline">\(\gamma\)</span>: <input type="range" id="sl-a12-gamma" min="0.5" max="5" value="2" step="0.25" oninput="updA12Cara()"> <span id="val-a12-gamma">2.00</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a12-cara-crra',{
+    boundingbox:[-0.5,2.5,6,-3], axis:true, showCopyright:false, showNavigation:false
+  });
+  var gamma = 2.0;
+
+  // CARA: u(x) = -exp(-a*x), using a = gamma for comparison
+  var caraCurve = brd.create('functiongraph',[function(x){
+    if(x<0.01) return NaN;
+    return -Math.exp(-gamma * x);
+  },0.01,6],{strokeColor:'#C8102E',strokeWidth:2.5,highlight:false});
+
+  // CRRA: u(x) = x^(1-gamma)/(1-gamma) for gamma != 1, ln(x) for gamma==1
+  var crraCurve = brd.create('functiongraph',[function(x){
+    if(x<0.05) return NaN;
+    if(Math.abs(gamma-1)<0.01) return Math.log(x);
+    return (Math.pow(x, 1-gamma))/(1-gamma);
+  },0.05,6],{strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  // Labels offset +5px to avoid overlap with curves
+  brd.create('text',[4.2, function(){return -Math.exp(-gamma*4.2)+0.15;},
+    function(){return 'CARA (a='+gamma.toFixed(2)+')';}],
+    {fontSize:12,color:'#C8102E'});
+  brd.create('text',[4.2, function(){
+    if(Math.abs(gamma-1)<0.01) return Math.log(4.2)+0.15;
+    return Math.pow(4.2,1-gamma)/(1-gamma)+0.15;},
+    function(){return 'CRRA (γ='+gamma.toFixed(2)+')';}],
+    {fontSize:12,color:'#1565c0'});
+
+  window.updA12Cara = function(){
+    gamma = parseFloat(document.getElementById('sl-a12-gamma').value);
+    document.getElementById('val-a12-gamma').textContent = gamma.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
 <div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 26%">
+<col style="width: 26%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Família</th>
+<th style="text-align: center;"><span class="math inline">\(u(x)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(A(x)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(R(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">CARA</td>
+<td style="text-align: center;"><span class="math inline">\(-e^{-ax}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span> (constante)</td>
+<td style="text-align: center;"><span class="math inline">\(ax\)</span> (crescente)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">CRRA</td>
+<td style="text-align: center;"><span class="math inline">\(\frac{x^{1-\gamma}}{1-\gamma}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma/x\)</span> (decrescente)</td>
+<td style="text-align: center;"><span class="math inline">\(\gamma\)</span> (constante)</td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p>Evidência empírica favorece CRRA com <span class="math inline">\(\gamma \in [1, 5]\)</span> para a maioria das aplicações.</p>
 </blockquote>
@@ -417,17 +547,132 @@ Insper
 </div>
 </div>
 <div class="fragment">
-<p><strong>Rodada 1 — Revelando preferências:</strong></p>
-<p>Cada aluno recebe R$ 100 fictícios. Escolha entre:</p>
+<p>Cada aluno recebe <strong>R$ 100 fictícios</strong>. Três rodadas revelarão suas preferências sob incerteza.</p>
+</div>
+<div class="fragment">
+<p><strong>Regras gerais:</strong></p>
+<ol type="1">
+<li>Escolhas são individuais e simultâneas (levante o cartão)</li>
+<li>Após cada rodada, tabulamos os resultados no quadro</li>
+<li>Compararemos as escolhas da turma com as previsões da Utilidade Esperada</li>
+</ol>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Lembrem-se: não há resposta certa ou errada — o objetivo é <strong>revelar</strong> suas preferências, não julgar.</p>
+</blockquote>
+</div>
+</section>
+<section id="rodada-1-revelando-preferências" class="slide level2">
+<h2>Rodada 1 — Revelando Preferências</h2>
+<p>Escolha <strong>uma</strong> das três loterias:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Loteria</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>A</strong> (arriscada)</td>
+<td style="text-align: left;">R$ 200 (50%) ou R$ 0 (50%)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>B</strong> (segura)</td>
+<td style="text-align: left;">R$ 130 com certeza</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>C</strong> (intermediária)</td>
+<td style="text-align: left;">R$ 300 (30%) ou R$ 50 (70%)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>Valor esperado:</strong> <span class="math inline">\(E[A] = 100\)</span>, <span class="math inline">\(E[B] = 130\)</span>, <span class="math inline">\(E[C] = 125\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Interpretação:</strong></p>
 <ul>
-<li><strong>Loteria A:</strong> R$ 200 (50%) ou R$ 0 (50%)</li>
-<li><strong>Loteria B:</strong> R$ 130 com certeza</li>
-<li><strong>Loteria C:</strong> R$ 300 (30%) ou R$ 50 (70%)</li>
+<li>Escolheu A → amante do risco (rejeitou B que tem <span class="math inline">\(E\)</span> maior)</li>
+<li>Escolheu B → avesso ao risco (preferiu certeza)</li>
+<li>Escolheu C → avesso, mas tolerante a algum risco</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Rodada 2 — Teste de Allais:</strong> responda às Escolhas 1 e 2. Verifique se <em>você</em> viola o axioma de independência.</p>
-<p><strong>Rodada 3 — Leilão pelo EC:</strong> lance o máximo que pagaria pela Loteria A. O maior lance vence e paga o segundo maior lance (Vickrey).</p>
+<blockquote>
+<p>Que distribuição a turma observou? Comparar com a “previsão racional” de <span class="math inline">\(B\)</span>.</p>
+</blockquote>
+</div>
+</section>
+<section id="rodada-2-teste-de-allais" class="slide level2">
+<h2>Rodada 2 — Teste de Allais</h2>
+<p>Responda às <strong>duas</strong> escolhas sem olhar a resposta do colega:</p>
+<div class="fragment">
+<p><strong>Escolha 1:</strong> A (R$ 1M certo) ou B (89% R$ 1M, 10% R$ 5M, 1% R$ 0)?</p>
+<p><strong>Escolha 2:</strong> C (11% R$ 1M, 89% R$ 0) ou D (10% R$ 5M, 90% R$ 0)?</p>
+</div>
+<div class="fragment">
+<p><strong>Tabulação:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Combinação</th>
+<th style="text-align: center;">Consistente com UE?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A e C</td>
+<td style="text-align: center;">Sim</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B e D</td>
+<td style="text-align: center;">Sim</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">A e D</td>
+<td style="text-align: center;"><strong>Não</strong> (Allais!)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">B e C</td>
+<td style="text-align: center;"><strong>Não</strong> (Allais!)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Quantos na turma violaram a independência? Tipicamente 40–60% escolhem A e D.</p>
+</blockquote>
+</div>
+</section>
+<section id="rodada-3-leilão-pelo-equivalente-certo" class="slide level2">
+<h2>Rodada 3 — Leilão pelo Equivalente Certo</h2>
+<p><strong>Loteria em leilão:</strong> R$ 200 (50%) ou R$ 0 (50%). <span class="math inline">\(E[\mathcal{L}] = 100\)</span>.</p>
+<div class="fragment">
+<p>Cada aluno escreve o <strong>máximo que pagaria</strong> por essa loteria (seu equivalente certo revelado).</p>
+</div>
+<div class="fragment">
+<p><strong>Mecanismo de Vickrey (segundo preço):</strong></p>
+<ol type="1">
+<li>O maior lance <strong>vence</strong> o direito de jogar a loteria</li>
+<li>O vencedor paga o <strong>segundo maior</strong> lance</li>
+<li>A estratégia dominante é reportar o verdadeiro EC</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Análise dos resultados:</strong></p>
+<ul>
+<li><span class="math inline">\(EC &lt; 100\)</span> → avesso ao risco (prêmio de risco positivo)</li>
+<li><span class="math inline">\(EC = 100\)</span> → neutro ao risco</li>
+<li><span class="math inline">\(EC &gt; 100\)</span> → amante do risco</li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Construiremos um histograma dos ECs da turma — espera-se média abaixo de R$ 100.</p>
+</blockquote>
 </div>
 </section>
 <section id="design-de-seguro-pbl" class="slide level2">
@@ -448,21 +693,21 @@ Insper
 </div>
 </div>
 <div class="fragment">
-<p><strong>Cenário:</strong> Vocês são a equipe atuarial de uma seguradora. Dados:</p>
+<p><strong>Cenário:</strong> Vocês são a equipe atuarial de uma seguradora agrícola. Dados:</p>
 <ul>
-<li>População: 10.000 motoristas</li>
-<li>Probabilidade de sinistro: <span class="math inline">\(p = 0{,}05\)</span></li>
-<li>Perda média por sinistro: R$ 30.000</li>
-<li>Custo administrativo: 15% do prêmio</li>
+<li>10.000 agricultores, probabilidade de quebra de safra: <span class="math inline">\(p = 0{,}08\)</span></li>
+<li>Perda média: R$ 50.000</li>
+<li>Custo administrativo: 12% do prêmio</li>
+<li>Agricultores têm <span class="math inline">\(u(x) = \ln(x)\)</span> e riqueza R$ 300.000</li>
 </ul>
 </div>
 <div class="fragment">
 <p><strong>Tarefas:</strong></p>
 <ol type="1">
 <li>Calcule o prêmio atuarialmente justo e o prêmio com carregamento</li>
-<li>Se motoristas têm <span class="math inline">\(u(x) = \ln(x)\)</span> e riqueza R$ 200.000, qual a cobertura ótima?</li>
-<li>Proponha uma apólice com franquia. Como ela afeta o risco moral?</li>
-<li>Apresentem a apólice em 2 minutos para a turma</li>
+<li>Determine a cobertura ótima dado o prêmio carregado</li>
+<li>Proponha uma apólice com franquia — como ela mitiga o risco moral?</li>
+<li>Apresentem a apólice final em 2 minutos para a turma</li>
 </ol>
 </div>
 </section>
@@ -507,11 +752,11 @@ Insper
 </section>
 <section id="próxima-aula" class="slide level2">
 <h2>Próxima Aula</h2>
-<p><strong>Aula 13 — Teoria da Produção</strong></p>
+<p><strong>Aula 13 — Função de Produção</strong></p>
 <div class="fragment">
 <ul>
 <li>Função de produção e isoquantas</li>
-<li>Rendimentos de escala</li>
+<li>Produto marginal e rendimentos de escala</li>
 <li>Custos de curto e longo prazo</li>
 </ul>
 </div>

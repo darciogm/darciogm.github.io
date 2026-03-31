@@ -1,158 +1,149 @@
-# Pré-Aula 05 — Escolha Ótima do Consumidor
+# Pré-Aula 05 — Maximização de Utilidade e Demanda Marshalliana
 
 !!! info "Leitura obrigatória"
-    **Cap. 4, Seções 4.1–4.3** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 4, Seções 4.3–4.5** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Montar e resolver o problema de maximização do consumidor (primal) usando o Lagrangeano
-2. Derivar a condição de tangência $\text{TMS} = p_x / p_y$ e interpretar o multiplicador $\lambda$
-3. Calcular demandas Marshallianas e utilidade indireta para Cobb-Douglas
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Montar o Lagrangiano do problema do consumidor e derivar as condições de primeira ordem
+2. Derivar demandas Marshallianas para o caso Cobb-Douglas e interpretar suas propriedades
+3. Definir a função utilidade indireta $V(p,I)$ e enunciar a identidade de Roy
 
 ---
 
-## 1. A restrição orçamentária
+## 1. O problema de maximização de utilidade
 
-O consumidor tem renda $m$ e enfrenta preços $p_x$ e $p_y$. O conjunto orçamentário é:
+O consumidor resolve:
 
-$$B = \{(x, y) : p_x x + p_y y \leq m\}$$
+$$\max_{x_1, x_2} \; u(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = I$$
 
-A **reta orçamentária** (fronteira de $B$) é:
+Sob as hipóteses de monotonicidade (gastar toda a renda é ótimo) e convexidade (solução interior), usamos o **método de Lagrange**.
 
-$$y = \frac{m}{p_y} - \frac{p_x}{p_y} x$$
+### 1.1 O Lagrangiano
 
-- **Intercepto vertical:** $m / p_y$ (tudo em $y$)
-- **Intercepto horizontal:** $m / p_x$ (tudo em $x$)
-- **Inclinação:** $-p_x / p_y$ (custo de oportunidade de $x$ em termos de $y$)
-
-!!! example "Exemplo numérico"
-    Se $p_x = 4$, $p_y = 2$ e $m = 100$:
-
-    $y = 50 - 2x$
-
-    - Cada unidade de $x$ "custa" 2 unidades de $y$
-    - Máximo de $x$: 25 unidades | Máximo de $y$: 50 unidades
-
----
-
-## 2. O problema do consumidor (primal)
-
-$$\max_{x,y} \ U(x,y) \quad \text{s.a.} \quad p_x x + p_y y = m$$
-
-No ótimo, o consumidor **esgota toda a renda** (monotonicidade: mais é melhor).
-
-### Método do Lagrangeano
-
-$$\mathcal{L} = U(x,y) - \lambda(p_x x + p_y y - m)$$
+$$\mathcal{L} = u(x_1, x_2) - \lambda(p_1 x_1 + p_2 x_2 - I)$$
 
 Condições de primeira ordem (CPOs):
 
-$$\frac{\partial \mathcal{L}}{\partial x} = \frac{\partial U}{\partial x} - \lambda p_x = 0 \quad \Rightarrow \quad UMg_x = \lambda p_x$$
+$$\frac{\partial \mathcal{L}}{\partial x_1} = u_1 - \lambda p_1 = 0$$
 
-$$\frac{\partial \mathcal{L}}{\partial y} = \frac{\partial U}{\partial y} - \lambda p_y = 0 \quad \Rightarrow \quad UMg_y = \lambda p_y$$
+$$\frac{\partial \mathcal{L}}{\partial x_2} = u_2 - \lambda p_2 = 0$$
 
-$$\frac{\partial \mathcal{L}}{\partial \lambda} = m - p_x x - p_y y = 0$$
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = -(p_1 x_1 + p_2 x_2 - I) = 0$$
 
----
+### 1.2 Condição de tangência
 
-## 3. A condição de tangência
+Das duas primeiras CPOs:
 
-Dividindo a primeira CPO pela segunda:
-
-$$\frac{UMg_x}{UMg_y} = \frac{p_x}{p_y} \quad \Longleftrightarrow \quad \text{TMS}_{x,y} = \frac{p_x}{p_y}$$
+$$\frac{u_1}{u_2} = \frac{p_1}{p_2} \quad \Longleftrightarrow \quad \text{TMS}_{12} = \frac{p_1}{p_2}$$
 
 !!! note "Intuição Econômica"
-    **O que a tangência significa?**
+    No ótimo, a taxa à qual o consumidor está *disposto* a trocar os bens (TMS) iguala a taxa à qual o mercado *permite* a troca ($p_1/p_2$). Se a TMS fosse maior que $p_1/p_2$, o consumidor valorizaria $x_1$ mais do que o mercado e deveria comprar mais — logo não estaria no ótimo.
 
-    No ótimo, a taxa à qual o consumidor está **disposto** a trocar $y$ por $x$ (TMS) é exatamente igual à taxa à qual o **mercado** permite essa troca ($p_x/p_y$). Se a TMS fosse maior que o preço relativo, valeria a pena comprar mais $x$ e menos $y$ — o consumidor ainda não otimizou. A tangência é o ponto onde não há mais "arbitragem" possível entre os bens.
+O multiplicador $\lambda$ tem interpretação: é a **utilidade marginal da renda**:
 
----
-
-## 4. O multiplicador $\lambda$: utilidade marginal da renda
-
-Das CPOs: $\lambda = UMg_x / p_x = UMg_y / p_y$
-
-Interpretação: $\lambda$ mede **quantas unidades de utilidade** o consumidor ganha por 1 real adicional de renda. É a "utilidade marginal da renda" (ou "preço-sombra" da restrição orçamentária).
-
-!!! tip "No ótimo"
-    A última unidade monetária gasta em **qualquer** bem rende a mesma utilidade marginal: $\frac{UMg_x}{p_x} = \frac{UMg_y}{p_y} = \lambda$
+$$\lambda = \frac{u_1}{p_1} = \frac{u_2}{p_2} = \frac{\partial V}{\partial I}$$
 
 ---
 
-## 5. Exemplo completo: Cobb-Douglas
+## 2. Demandas Marshallianas
 
-Seja $U(x,y) = x^a y^{1-a}$, com $a \in (0,1)$.
+Resolvendo as CPOs para $x_1$ e $x_2$ em função de $(p_1, p_2, I)$, obtemos as **demandas Marshallianas** (ou ordinárias):
 
-**Passo 1: Lagrangeano**
+$$x_i^* = x_i^M(p_1, p_2, I), \quad i = 1, 2$$
 
-$$\mathcal{L} = x^a y^{1-a} - \lambda(p_x x + p_y y - m)$$
+### Propriedades gerais
 
-**Passo 2: CPOs**
+1. **Homogeneidade de grau zero (HOD0)**: $x_i^M(\lambda p_1, \lambda p_2, \lambda I) = x_i^M(p_1, p_2, I)$. Apenas preços relativos e renda real importam.
 
-$$a x^{a-1} y^{1-a} = \lambda p_x$$
-$$(1-a) x^a y^{-a} = \lambda p_y$$
+2. **Lei de Walras (esgotamento do orçamento)**: $p_1 x_1^M + p_2 x_2^M = I$. O consumidor gasta toda a renda.
 
-**Passo 3: Tangência**
+3. **Adição das elasticidades (Engel)**: $\sum_i s_i \eta_i = 1$, onde $s_i$ é a parcela do gasto e $\eta_i$ é a elasticidade-renda.
 
-$$\frac{a}{1-a} \cdot \frac{y}{x} = \frac{p_x}{p_y} \quad \Rightarrow \quad y = \frac{(1-a) p_x x}{a p_y}$$
+## Gráfico interativo: Equilíbrio do Consumidor
 
-**Passo 4: Substituir na restrição**
-
-$$p_x x + p_y \cdot \frac{(1-a) p_x x}{a p_y} = m \quad \Rightarrow \quad p_x x \left(1 + \frac{1-a}{a}\right) = m \quad \Rightarrow \quad \frac{p_x x}{a} = m$$
-
-**Demandas Marshallianas:**
-
-$$\boxed{x^*(p_x, p_y, m) = \frac{am}{p_x}} \qquad \boxed{y^*(p_x, p_y, m) = \frac{(1-a)m}{p_y}}$$
-
-**Utilidade indireta:**
-
-$$V(p_x, p_y, m) = \left(\frac{a}{p_x}\right)^a \left(\frac{1-a}{p_y}\right)^{1-a} m$$
-
----
-
-## Gráfico interativo: restrição orçamentária e escolha ótima
-
-<div id="graph-budget" style="min-height: 450px;">
-<iframe src="../../graficos/cap04/restricao-orcamentaria.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap04/equilibrio-consumidor.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Aumente $p_x$ e observe a reta orçamentária girar (pivô no intercepto $y$)
-    - Aumente $m$ e observe a reta se deslocar paralelamente
-    - Veja o ponto de tangência se mover ao longo da curva de indiferença
+    Altere preços e renda para ver como o ponto ótimo (tangência) se move. Observe que a reta orçamentária sempre toca a curva de indiferença mais alta possível.
+
+---
+
+## 3. Exemplo: Cobb-Douglas
+
+Seja $u = x_1^a x_2^{1-a}$ com $0 < a < 1$.
+
+**CPO de tangência:**
+
+$$\frac{a}{1-a} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}$$
+
+**Restrição:** $p_1 x_1 + p_2 x_2 = I$
+
+Resolvendo:
+
+$$x_1^M = \frac{aI}{p_1}, \qquad x_2^M = \frac{(1-a)I}{p_2}$$
+
+Propriedades notáveis:
+
+- Fração fixa da renda em cada bem: o gasto com $x_1$ é $p_1 x_1^M = aI$
+- Demanda de $x_1$ não depende de $p_2$ (e vice-versa)
+- Elasticidade-renda = 1 para ambos os bens (bens normais)
+- Elasticidade-preço própria = $-1$ (demanda unitariamente elástica)
+
+---
+
+## 4. Função utilidade indireta e identidade de Roy
+
+### 4.1 Função utilidade indireta
+
+Substituindo as demandas ótimas na função utilidade:
+
+$$V(p_1, p_2, I) = u\big(x_1^M(p,I), \; x_2^M(p,I)\big)$$
+
+$V$ dá o **máximo de utilidade alcançável** dados preços e renda.
+
+Para Cobb-Douglas: $V = a^a(1-a)^{1-a} \cdot \frac{I}{p_1^a p_2^{1-a}}$
+
+Propriedades de $V$:
+
+- **Decrescente** em preços, **crescente** em renda
+- **HOD0** em $(p_1, p_2, I)$
+- **Quase-convexa** em preços
+
+### 4.2 Identidade de Roy
+
+$$x_i^M(p, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}$$
+
+!!! note "Intuição Econômica"
+    A identidade de Roy permite recuperar as demandas Marshallianas diretamente da função utilidade indireta, sem resolver o problema de otimização novamente. É uma ferramenta poderosa em trabalho empírico.
+
+## Gráfico interativo: Demanda Marshalliana e Hicksiana
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Compare as curvas de demanda Marshalliana (renda constante) e Hicksiana (utilidade constante). Observe como elas se cruzam no preço inicial e divergem para preços diferentes.
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Se $p_x = 5$, $p_y = 10$ e $m = 200$, qual é a inclinação da reta orçamentária e o custo de oportunidade de $x$?
+**Exercício 1.** Para $u = x_1^{1/2} x_2^{1/2}$, com $p_1 = 2$, $p_2 = 4$ e $I = 100$: (a) Encontre as demandas Marshallianas. (b) Calcule a utilidade máxima.
 
 ??? success "Solução"
-    Inclinação: $-p_x/p_y = -5/10 = -0{,}5$.
+    (a) Com $a = 1/2$: $x_1^M = \frac{(1/2)(100)}{2} = 25$ e $x_2^M = \frac{(1/2)(100)}{4} = 12{,}5$. (b) $V = (25)^{1/2}(12{,}5)^{1/2} = 5 \cdot 3{,}536 \approx 17{,}68$. Ou usando a fórmula: $V = (1/2)^{1/2}(1/2)^{1/2} \cdot 100/(2^{1/2} \cdot 4^{1/2}) = 0{,}5 \cdot 100/2\sqrt{2} \approx 17{,}68$.
 
-    Custo de oportunidade de $x$: cada unidade de $x$ custa $0{,}5$ unidade de $y$.
-
-    Interceptos: $x_{\max} = 200/5 = 40$ e $y_{\max} = 200/10 = 20$.
-
-**Exercício 2.** Para $U = x^{0{,}3} y^{0{,}7}$ com $p_x = 3$, $p_y = 7$ e $m = 210$, encontre as demandas Marshallianas e a utilidade no ótimo.
+**Exercício 2.** Verifique que as demandas Cobb-Douglas $x_1^M = aI/p_1$ são HOD0 em $(p_1, p_2, I)$.
 
 ??? success "Solução"
-    Pela fórmula Cobb-Douglas:
+    $x_1^M(\lambda p_1, \lambda p_2, \lambda I) = \frac{a(\lambda I)}{\lambda p_1} = \frac{a I}{p_1} = x_1^M(p_1, p_2, I)$. Os $\lambda$ se cancelam, confirmando HOD0. Note que a demanda não depende de $p_2$, logo a multiplicação de $p_2$ por $\lambda$ é irrelevante. $\blacksquare$
 
-    $x^* = \frac{0{,}3 \times 210}{3} = 21$
-
-    $y^* = \frac{0{,}7 \times 210}{7} = 21$
-
-    $V = (21)^{0{,}3}(21)^{0{,}7} = 21$
-
-**Exercício 3.** Se todos os preços e a renda dobram simultaneamente, o que acontece com a cesta ótima? Justifique usando a propriedade das demandas Marshallianas.
+**Exercício 3.** Usando a identidade de Roy, recupere $x_1^M$ a partir de $V = a^a(1-a)^{1-a} I p_1^{-a} p_2^{-(1-a)}$.
 
 ??? success "Solução"
-    Nada muda. As demandas Marshallianas são **homogêneas de grau zero** em $(p_x, p_y, m)$:
-
-    $x^*(tp_x, tp_y, tm) = \frac{a \cdot tm}{t \cdot p_x} = \frac{am}{p_x} = x^*(p_x, p_y, m)$
-
-    Apenas o nível nominal mudou — o poder de compra real é o mesmo.
+    $\frac{\partial V}{\partial p_1} = a^a(1-a)^{1-a} I \cdot (-a) p_1^{-a-1} p_2^{-(1-a)} = -\frac{a}{p_1} V$. $\frac{\partial V}{\partial I} = a^a(1-a)^{1-a} p_1^{-a} p_2^{-(1-a)} = \frac{V}{I}$. Logo: $x_1^M = -\frac{-aV/p_1}{V/I} = \frac{aI}{p_1}$. Correto! $\blacksquare$
 
 ---
 
@@ -163,44 +154,44 @@ $$V(p_x, p_y, m) = \left(\frac{a}{p_x}\right)^a \left(\frac{1-a}{p_y}\right)^{1-
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A inclinação da reta orçamentária é:
+**Q1.** A condição de tangência no ótimo do consumidor é:
 
-- [ ] (a) $-m / p_x$
-- [x] (b) $-p_x / p_y$
-- [ ] (c) $-p_y / p_x$
-- [ ] (d) $-m / p_y$
+- [ ] (a) $u_1 = u_2$
+- [x] (b) $\text{TMS} = p_1/p_2$
+- [ ] (c) $p_1 x_1 = p_2 x_2$
+- [ ] (d) $\lambda = 0$
 
-**Q2.** A condição de tangência no ótimo do consumidor é:
+**Q2.** Para a Cobb-Douglas $u = x_1^{0.3} x_2^{0.7}$, a fração da renda gasta em $x_1$ é:
 
-- [ ] (a) $UMg_x = UMg_y$
-- [ ] (b) $UMg_x / UMg_y = p_y / p_x$
-- [x] (c) $UMg_x / UMg_y = p_x / p_y$
-- [ ] (d) $UMg_x \cdot p_x = UMg_y \cdot p_y$
-
-**Q3.** O multiplicador de Lagrange $\lambda$ representa:
-
-- [ ] (a) O preço relativo dos bens
-- [ ] (b) A utilidade total no ótimo
-- [x] (c) A utilidade marginal da renda
-- [ ] (d) A inclinação da curva de indiferença
-
-**Q4.** Se os preços e a renda dobram simultaneamente, a demanda Marshalliana:
-
-- [ ] (a) Dobra
-- [ ] (b) Cai pela metade
-- [x] (c) Não se altera
-- [ ] (d) Depende das preferências
-
-**Q5.** Na Cobb-Douglas $U = x^{0{,}4} y^{0{,}6}$, a fração da renda gasta em $x$ é:
-
-- [x] (a) 40%
-- [ ] (b) 60%
+- [x] (a) 30%
+- [ ] (b) 70%
 - [ ] (c) 50%
 - [ ] (d) Depende dos preços
+
+**Q3.** As demandas Marshallianas são homogêneas de grau zero em $(p, I)$, o que significa:
+
+- [ ] (a) A demanda não depende da renda
+- [ ] (b) A demanda é sempre positiva
+- [x] (c) Dobrar todos os preços e a renda não muda a demanda
+- [ ] (d) A demanda é linear nos preços
+
+**Q4.** O multiplicador de Lagrange $\lambda$ no problema do consumidor representa:
+
+- [ ] (a) O preço relativo dos bens
+- [x] (b) A utilidade marginal da renda
+- [ ] (c) A quantidade demandada
+- [ ] (d) A elasticidade-preço
+
+**Q5.** A identidade de Roy afirma que $x_i^M$ pode ser obtida como:
+
+- [ ] (a) $\partial V / \partial p_i$
+- [ ] (b) $\partial V / \partial I$
+- [x] (c) $-(\partial V / \partial p_i) / (\partial V / \partial I)$
+- [ ] (d) $(\partial V / \partial I) / (\partial V / \partial p_i)$
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 05**: Mini-lecture sobre o problema do consumidor + resolução guiada do Lagrangeano com Peer Instruction sobre tangência e $\lambda$.
+    **Aula 06**: Minimização do Dispêndio e Demanda Hicksiana — o problema dual do consumidor.

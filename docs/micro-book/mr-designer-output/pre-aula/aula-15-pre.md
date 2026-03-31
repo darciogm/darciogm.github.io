@@ -1,168 +1,142 @@
-# Pré-Aula 15 — Custos de Produção
+# Pré-Aula 15 — Escolha sob Incerteza III: Aplicações e Paradoxos
 
 !!! info "Leitura obrigatória"
-    **Cap. 10, Seções 10.1–10.5** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 8, Seções 8.1–8.3** do livro-texto | Tempo estimado: **~45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Distinguir custo econômico de custo contábil e identificar custos de oportunidade
-2. Resolver o problema de minimização de custos usando o Lagrangiano e derivar as demandas condicionais de fatores
-3. Derivar e relacionar as curvas de custo total, custo médio e custo marginal
+1. Explicar os paradoxos de Allais e Ellsberg e identificar quais axiomas VNM eles violam.
+2. Descrever os três componentes da Teoria dos Prospectos: função valor, ponderação de probabilidades e ponto de referência.
+3. Aplicar a Teoria dos Prospectos a decisões do cotidiano, incluindo loterias e seguros.
 
 ---
 
-## 1. Custo econômico vs. custo contábil
+## 1. Paradoxo de Allais
 
-O **custo contábil** registra apenas despesas explícitas — salários, aluguel, matérias-primas. O **custo econômico** inclui também o **custo de oportunidade**: o valor da melhor alternativa sacrificada.
+Maurice Allais (1953) propôs dois pares de escolha que sistematicamente violam o axioma da independência:
 
-!!! example "Exemplo rápido"
-    Um empresário que poderia ganhar $\text{R\$}\,8.000$/mês como empregado, mas obtém receita de $\text{R\$}\,15.000$ e tem despesas de $\text{R\$}\,5.000$:
+**Par 1:** A = R$ 1 milhão com certeza vs. B = (0,89; 1M | 0,10; 5M | 0,01; 0)
 
-    - Lucro contábil: $15.000 - 5.000 = \text{R\$}\,10.000$
-    - Lucro econômico: $15.000 - 5.000 - 8.000 = \text{R\$}\,2.000$
+**Par 2:** C = (0,11; 1M | 0,89; 0) vs. D = (0,10; 5M | 0,90; 0)
 
-**Custos irrecuperáveis (sunk costs):** gastos já realizados que **não** devem influenciar decisões futuras. Se você pagou R$ 50.000 por uma máquina que não tem valor de revenda, esse custo é irrelevante para a decisão de continuar ou parar a produção.
+A maioria escolhe $A \succ B$ e $D \succ C$. Porém, pela utilidade esperada:
 
----
+$$A \succ B \implies u(1M) > 0{,}89\,u(1M) + 0{,}10\,u(5M) + 0{,}01\,u(0)$$
 
-## 2. O problema de minimização de custos
-
-A firma quer produzir uma quantidade $q$ ao menor custo possível, dados os preços dos insumos — salário $w$ (trabalho $L$) e aluguel do capital $v$ (capital $K$):
-
-$$\min_{L,K} \; wL + vK \quad \text{s.a.} \quad f(L,K) = q$$
-
-### Linhas de isocusto
-
-Para um dado gasto total $C$, a combinação de insumos que custa exatamente $C$ satisfaz:
-
-$$C = wL + vK \implies K = \frac{C}{v} - \frac{w}{v}L$$
-
-A inclinação da isocusto é $-w/v$ — a **razão de preços dos fatores**.
-
-### Condição de tangência
-
-No ótimo, a isoquanta é tangente à isocusto:
-
-$$\text{TMST}_{L,K} = \frac{PMg_L}{PMg_K} = \frac{w}{v}$$
-
-Isso significa que o último real gasto em trabalho gera a mesma produção adicional que o último real gasto em capital.
-
----
-
-## 3. Solução pelo Lagrangiano
-
-Montamos o Lagrangiano:
-
-$$\mathcal{L}(L, K, \lambda) = wL + vK + \lambda\big[q - f(L,K)\big]$$
-
-As CPOs são:
-
-$$\frac{\partial \mathcal{L}}{\partial L} = w - \lambda f_L = 0 \implies \lambda = \frac{w}{f_L}$$
-
-$$\frac{\partial \mathcal{L}}{\partial K} = v - \lambda f_K = 0 \implies \lambda = \frac{v}{f_K}$$
-
-$$\frac{\partial \mathcal{L}}{\partial \lambda} = q - f(L,K) = 0$$
-
-Igualando as duas primeiras: $\frac{f_L}{f_K} = \frac{w}{v}$ — a condição de tangência.
-
-### Demandas condicionais de fatores
-
-Resolvendo as CPOs, obtemos as **demandas condicionais**:
-
-$$L^* = L^c(w, v, q) \qquad K^* = K^c(w, v, q)$$
-
-Essas funções nos dizem quanto de cada fator usar para produzir $q$ ao menor custo.
-
-!!! example "Exemplo: Cobb-Douglas $f(L,K) = L^{1/2}K^{1/2}$"
-    Da tangência: $\frac{K}{L} = \frac{w}{v} \implies K = \frac{w}{v}L$
-
-    Substituindo na restrição: $L^{1/2}\left(\frac{w}{v}L\right)^{1/2} = q$
-
-    $$L^c = q\left(\frac{v}{w}\right)^{1/2}, \qquad K^c = q\left(\frac{w}{v}\right)^{1/2}$$
-
----
-
-## 4. A função custo e suas derivadas
-
-Substituindo as demandas condicionais na função objetivo:
-
-$$C(w,v,q) = wL^c(w,v,q) + vK^c(w,v,q)$$
-
-Para a Cobb-Douglas do exemplo: $C(w,v,q) = 2q\sqrt{wv}$.
-
-### Custo Médio e Custo Marginal
-
-$$\text{CMe}(q) = \frac{C(q)}{q} \qquad \text{CMg}(q) = \frac{dC}{dq}$$
-
-**Relação fundamental CMg–CMe:**
-
-- Se $\text{CMg} < \text{CMe}$: o custo médio está **caindo**
-- Se $\text{CMg} > \text{CMe}$: o custo médio está **subindo**
-- Se $\text{CMg} = \text{CMe}$: o custo médio está no seu **mínimo**
-
-!!! tip "Analogia útil"
-    Pense na sua média de notas. Se a próxima prova (marginal) for abaixo da média, a média cai. Se for acima, sobe. Se for igual, a média fica constante. A mesma lógica vale para custos.
-
----
-
-## Gráfico interativo: minimização de custos
-
-<div id="graph-min-custos" style="min-height: 450px;">
-<iframe src="../../graficos/cap10/minimizacao-custos.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
-
-!!! tip "Explore o gráfico"
-    - Altere os preços dos fatores ($w$, $v$) e observe como a isocusto rotaciona
-    - Mude a quantidade-alvo $q$ e veja a isoquanta se deslocar
-    - Note que o ótimo está sempre na **tangência** entre isoquanta e isocusto
-
----
-
-## Box: Custos de oportunidade e decisão
+Reescrevendo: $0{,}11\,u(1M) > 0{,}10\,u(5M) + 0{,}01\,u(0)$, o que implica $C \succ D$ — contradição!
 
 !!! note "Intuição Econômica"
-    **Por que economistas insistem em custos de oportunidade?**
-
-    Porque toda decisão envolve uma alternativa sacrificada. Ao alocar trabalho na linha de produção A, a firma abre mão de usá-lo na linha B. A condição de tangência $\text{TMST} = w/v$ garante que a firma não está "desperdiçando" nenhum fator — cada real gasto gera a mesma produção marginal, independentemente de onde é alocado. Ignorar custos de oportunidade leva a decisões ineficientes, mesmo quando o lucro contábil parece positivo.
+    O paradoxo de Allais revela o **efeito certeza**: as pessoas sobrevalorizam resultados certos em relação a resultados apenas prováveis. Trocar "certeza de 1M" por "89% de 1M" parece uma perda enorme, mesmo que a probabilidade mude apenas 11 pontos percentuais.
 
 ---
 
-## Exercícios de preparação
+## 2. Paradoxo de Ellsberg
 
-**Exercício 1.** Uma firma tem função de produção $f(L,K) = L^{1/3}K^{2/3}$, com $w = 4$ e $v = 8$. Encontre as demandas condicionais $L^c$ e $K^c$ para produzir $q = 10$.
+Daniel Ellsberg (1961) mostrou que as pessoas distinguem entre **risco** (probabilidades conhecidas) e **ambiguidade** (probabilidades desconhecidas).
+
+Uma urna contém 30 bolas vermelhas e 60 bolas pretas ou amarelas (proporção desconhecida):
+
+- **Aposta A**: ganha R$ 100 se vermelha → $P = 1/3$ (conhecida)
+- **Aposta B**: ganha R$ 100 se preta → $P = ?$ (ambígua)
+
+A maioria prefere $A \succ B$, revelando **aversão à ambiguidade**. Este comportamento viola não apenas a utilidade esperada, mas qualquer modelo baseado em probabilidades subjetivas únicas.
+
+!!! note "Intuição Econômica"
+    As pessoas preferem "o diabo que conhecem". A ambiguidade gera desconforto adicional além do risco puro. Isso explica por que investidores preferem ações domésticas (home bias) mesmo quando a diversificação internacional seria ótima.
+
+---
+
+## 3. Teoria dos Prospectos
+
+Kahneman e Tversky (1979) propuseram a **Teoria dos Prospectos** (Prospect Theory) como alternativa descritiva à utilidade esperada. Seus três pilares são:
+
+**Função valor** $v(x)$ definida sobre **ganhos e perdas** relativas a um ponto de referência:
+
+$$v(x) = \begin{cases} x^\alpha & \text{se } x \geq 0 \\ -\lambda(-x)^\beta & \text{se } x < 0 \end{cases}$$
+
+com parâmetros típicos $\alpha = \beta \approx 0{,}88$ e $\lambda \approx 2{,}25$.
+
+Propriedades da função valor:
+
+- **Côncava para ganhos** (aversão ao risco em ganhos)
+- **Convexa para perdas** (propensão ao risco em perdas)
+- **Mais íngreme para perdas** → **aversão à perda** ($\lambda > 1$)
+
+<iframe src="graficos/cap08/funcao-valor-pt.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Observe o formato em "S" da função valor. Note a assimetria: a dor de perder R$ 100 é sentida com intensidade $\lambda \approx 2{,}25$ vezes maior do que o prazer de ganhar R$ 100.
+
+---
+
+## 4. Ponderação de Probabilidades e CPT
+
+Na Teoria dos Prospectos, as probabilidades objetivas $p$ são transformadas por uma **função de ponderação** $w(p)$:
+
+$$w(p) = \frac{p^\delta}{(p^\delta + (1-p)^\delta)^{1/\delta}}$$
+
+com $\delta \approx 0{,}65$. Propriedades:
+
+- **Sobreponderação de probabilidades pequenas**: $w(p) > p$ para $p$ pequeno
+- **Subponderação de probabilidades grandes**: $w(p) < p$ para $p$ grande
+- $w(0) = 0$, $w(1) = 1$
+
+A avaliação de um prospecto $(x_1, p; x_2, 1-p)$ com $x_1 > 0 > x_2$ é:
+
+$$V = w(p) \cdot v(x_1) + w(1-p) \cdot v(x_2)$$
+
+A **Teoria dos Prospectos Cumulativa** (CPT, Tversky & Kahneman, 1992) estende o modelo para loterias com múltiplos resultados, aplicando a ponderação às probabilidades cumulativas.
+
+<iframe src="graficos/cap08/ponderacao-prob.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Compare a curva de ponderação $w(p)$ com a diagonal (probabilidades objetivas). Note o cruzamento: probabilidades pequenas são infladas e probabilidades grandes são deflacionadas.
+
+!!! note "Intuição Econômica"
+    A Teoria dos Prospectos explica um padrão fascinante: a mesma pessoa compra bilhete de loteria (sobrepondera a pequena chance de ganho) e faz seguro (sobrepondera a pequena chance de perda catastrófica). Na utilidade esperada padrão, isso seria impossível com uma única curvatura de $u$.
+
+---
+
+## 5. Aplicação: Mega-Sena
+
+O bilhete da Mega-Sena custa R$ 5,00 e a chance de acertar 6 números é $\approx 1/50\,\text{milhões}$. O valor esperado é amplamente negativo. Pela Teoria dos Prospectos:
+
+- A pequena probabilidade de ganho é **sobreponderada** ($w(p) \gg p$).
+- O ganho é avaliado pela função valor côncava, mas o efeito da sobreponderação domina.
+- A perda de R$ 5,00 é pequena em relação ao ponto de referência.
+
+Resultado: a compra do bilhete pode ser "racional" sob Prospect Theory.
+
+---
+
+## Exercícios Preparatórios
+
+**Exercício 1.** No paradoxo de Allais, mostre formalmente que as escolhas $A \succ B$ e $D \succ C$ violam o axioma da independência.
 
 ??? success "Solução"
-    Tangência: $\frac{PMg_L}{PMg_K} = \frac{w}{v}$
+    Defina $L_0 = (1,\;1M)$, $L_1 = (10/11,\;5M;\;1/11,\;0)$, $L_2 = (1,\;0)$.  
+    $A = 0{,}11 L_0 + 0{,}89 L_0$ e $B = 0{,}11 L_1 + 0{,}89 L_0$.  
+    Pelo axioma da independência, $A \succ B \iff L_0 \succ L_1$.  
+    $C = 0{,}11 L_0 + 0{,}89 L_2$ e $D = 0{,}11 L_1 + 0{,}89 L_2$.  
+    Pelo mesmo axioma, $L_0 \succ L_1 \implies C \succ D$.  
+    Mas as pessoas escolhem $D \succ C$, violando a independência.
 
-    $PMg_L = \frac{1}{3}L^{-2/3}K^{2/3}$, $\quad PMg_K = \frac{2}{3}L^{1/3}K^{-1/3}$
-
-    $$\frac{K}{2L} = \frac{4}{8} = \frac{1}{2} \implies K = L$$
-
-    Substituindo: $L^{1/3}L^{2/3} = L = 10 \implies L^c = 10, \; K^c = 10$
-
-    Custo total: $C = 4(10) + 8(10) = 120$
-
-**Exercício 2.** Para a função custo $C(q) = q^3 - 6q^2 + 15q$, encontre o custo marginal e o custo médio. Em que quantidade $q$ o CMe atinge seu mínimo?
+**Exercício 2.** Calcule o valor de um prospecto $P = (+500, 0{,}10;\; -200, 0{,}90)$ usando $\alpha = \beta = 0{,}88$, $\lambda = 2{,}25$ e $\delta = 0{,}65$.
 
 ??? success "Solução"
-    $\text{CMg} = 3q^2 - 12q + 15$
+    $v(+500) = 500^{0,88} \approx 274{,}7$.  
+    $v(-200) = -2{,}25 \times 200^{0,88} \approx -2{,}25 \times 122{,}5 \approx -275{,}6$.  
+    $w(0{,}10) \approx \frac{0{,}10^{0,65}}{(0{,}10^{0,65} + 0{,}90^{0,65})^{1/0,65}} \approx 0{,}18$.  
+    $w(0{,}90) \approx 0{,}71$.  
+    $V = 0{,}18 \times 274{,}7 + 0{,}71 \times (-275{,}6) \approx 49{,}4 - 195{,}7 = -146{,}3 < 0$.  
+    O prospecto é rejeitado.
 
-    $\text{CMe} = q^2 - 6q + 15$
-
-    No mínimo do CMe: $\frac{d(\text{CMe})}{dq} = 2q - 6 = 0 \implies q = 3$
-
-    $\text{CMe}(3) = 9 - 18 + 15 = 6$
-
-    Verificação: $\text{CMg}(3) = 27 - 36 + 15 = 6 = \text{CMe}(3)$ ✓
-
-**Exercício 3.** Explique por que custos irrecuperáveis não devem afetar decisões racionais. Dê um exemplo cotidiano.
+**Exercício 3.** Explique por que a Teoria dos Prospectos prevê que motoristas de táxi trabalham menos em dias de alta demanda.
 
 ??? success "Solução"
-    Custos irrecuperáveis (sunk costs) já foram incorridos e não podem ser recuperados, independentemente da decisão futura. Como decisões racionais se baseiam em comparar custos e benefícios **marginais** (futuros), incluir custos passados distorce a análise.
-
-    Exemplo: você pagou R$ 80 por um ingresso de cinema, mas após 30 minutos percebe que o filme é péssimo. O custo do ingresso é irrecuperável — a decisão racional é sair se o benefício de ficar (prazer restante) for menor que o custo de oportunidade do seu tempo. Ficar "para não desperdiçar o ingresso" é a falácia do custo irrecuperável.
+    Camerer et al. (1997) documentaram que taxistas estabelecem uma **meta diária de renda** (ponto de referência). Em dias bons (alta demanda), atingem a meta rapidamente e param — estão no domínio dos ganhos (aversos ao risco, logo param). Em dias ruins, continuam trabalhando para evitar ficar abaixo da meta — estão no domínio das perdas (propensos ao risco). Isso contradiz a teoria padrão: deveriam trabalhar mais quando o "salário" por hora é maior.
 
 ---
 
@@ -173,42 +147,44 @@ $$\text{CMe}(q) = \frac{C(q)}{q} \qquad \text{CMg}(q) = \frac{dC}{dq}$$
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Qual a diferença entre custo econômico e custo contábil?
+**Q1.** O paradoxo de Allais viola qual axioma de VNM?
 
-- [ ] (a) Não há diferença; são sinônimos
-- [x] (b) O custo econômico inclui custos de oportunidade; o contábil, não
-- [ ] (c) O custo contábil inclui custos de oportunidade; o econômico, não
-- [ ] (d) O custo econômico desconsidera custos fixos
+- [ ] (a) Completude
+- [ ] (b) Transitividade
+- [x] (c) Independência
+- [ ] (d) Continuidade
 
-**Q2.** No problema de minimização de custos, a condição de tangência exige que:
+**Q2.** A aversão à perda na Teoria dos Prospectos significa que:
 
-- [ ] (a) $PMg_L = PMg_K$
-- [ ] (b) $PMg_L / w = PMg_K \cdot v$
-- [x] (c) $PMg_L / PMg_K = w / v$
-- [ ] (d) $PMg_L \cdot PMg_K = w \cdot v$
+- [ ] (a) Perdas são ignoradas
+- [x] (b) Perdas pesam mais do que ganhos de mesma magnitude ($\lambda > 1$)
+- [ ] (c) Ganhos e perdas são simétricos
+- [ ] (d) Todas as pessoas são aversas ao risco
 
-**Q3.** Se o custo marginal está abaixo do custo médio, o que acontece com o CMe à medida que $q$ aumenta?
+**Q3.** A função de ponderação $w(p)$ para $p$ pequeno tipicamente satisfaz:
 
-- [x] (a) O CMe está caindo
-- [ ] (b) O CMe está subindo
-- [ ] (c) O CMe permanece constante
-- [ ] (d) Depende do custo fixo
+- [x] (a) $w(p) > p$ (sobreponderação)
+- [ ] (b) $w(p) < p$ (subponderação)
+- [ ] (c) $w(p) = p$
+- [ ] (d) $w(p) = 0$
 
-**Q4.** No ótimo do Lagrangiano de minimização de custos, o multiplicador $\lambda^*$ representa:
+**Q4.** No domínio das perdas, a função valor da PT prevê:
 
-- [ ] (a) O custo total de produção
-- [x] (b) O custo marginal — quanto custa produzir uma unidade adicional
-- [ ] (c) O preço do trabalho dividido pelo preço do capital
-- [ ] (d) A produtividade marginal do trabalho
+- [ ] (a) Aversão ao risco
+- [x] (b) Propensão ao risco
+- [ ] (c) Neutralidade ao risco
+- [ ] (d) Aversão à ambiguidade
 
-**Q5.** V ou F: "Custos irrecuperáveis devem ser incluídos na análise marginal de decisões futuras."
+**Q5.** O paradoxo de Ellsberg demonstra:
 
-- [ ] (a) Verdadeiro
-- [x] (b) Falso — custos irrecuperáveis não afetam decisões racionais futuras
+- [ ] (a) Violação da transitividade
+- [ ] (b) Que as pessoas são neutras ao risco
+- [x] (c) Aversão à ambiguidade (incerteza sobre probabilidades)
+- [ ] (d) Que $w(p) = p$ para todo $p$
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 15**: Mini-lecture sobre custos de produção + minimização de custos com exercícios práticos. Traga calculadora!
+    Na **Aula 16**, estudaremos mercados de risco e informação assimétrica: seleção adversa (mercado de limões), risco moral, sinalização e screening, com aplicações ao sistema de saúde e seguros no Brasil.

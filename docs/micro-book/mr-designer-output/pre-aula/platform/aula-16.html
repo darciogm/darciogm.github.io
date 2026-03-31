@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 16 — — Microeconomia II</title>
+<title>Pré-Aula 16 — Escolha sob Incerteza IV: Mercados de Risco e Informação — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,290 +17,240 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-16-custos-cp-vs-lp-envelope-prática">Pré-Aula 16 —
-Custos CP vs LP + Envelope (Prática)</h1>
+<h1
+id="pré-aula-16-escolha-sob-incerteza-iv-mercados-de-risco-e-informação">Pré-Aula
+16 — Escolha sob Incerteza IV: Mercados de Risco e Informação</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 10, Seções 10.6–10.8</strong> do livro interativo |
-Tempo estimado: <strong>40 min</strong></p>
+<p><strong>Cap. 7, Seção 7.7</strong> e <strong>Cap. 19, Seções
+19.1–19.2</strong> do livro-texto | Tempo estimado: <strong>~45
+min</strong></p>
 </div>
-<pre><code>**Cap. 10, Seções 10.6–10.8** do livro interativo | Tempo estimado: **40 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Distinguir custos de curto prazo (com fator fixo) de custos de longo
-prazo (todos os fatores variáveis)</li>
-<li>Explicar como a curva de custo médio de longo prazo é o
-<strong>envelope</strong> das curvas de curto prazo</li>
-<li>Identificar economias e deseconomias de escala a partir do formato
-da curva de CMe de longo prazo</li>
+<li>Explicar como a seleção adversa pode levar ao colapso de mercados
+(modelo de Akerlof).</li>
+<li>Distinguir entre risco moral e seleção adversa e identificar
+exemplos em mercados brasileiros.</li>
+<li>Descrever os mecanismos de sinalização (Spence) e screening
+(Rothschild-Stiglitz) como soluções para informação assimétrica.</li>
 </ol>
 <hr />
-<h2 id="custos-de-curto-prazo-fixos-e-variáveis">1. Custos de curto
-prazo: fixos e variáveis</h2>
-<p>No <strong>curto prazo</strong>, pelo menos um fator é fixo
-(tipicamente o capital <span class="math inline">\(\bar{K}\)</span>). O
-custo total se decompõe:</p>
-<p><span class="math display">\[CT_{CP}(q) = CF + CV(q) = v\bar{K} +
-wL(q, \bar{K})\]</span></p>
-<p>Onde <span class="math inline">\(L(q, \bar{K})\)</span> é a
-quantidade de trabalho necessária para produzir <span
-class="math inline">\(q\)</span> dado <span
-class="math inline">\(\bar{K}\)</span>.</p>
-<p><strong>Curvas de custo de curto prazo:</strong></p>
-<p><span class="math display">\[\text{CMe}_{CP} = \frac{CT_{CP}}{q} =
-\frac{CF}{q} + \frac{CV}{q} = \text{CFMe} + \text{CVMe}\]</span></p>
-<span class="math display">\[\text{CMg}_{CP} = \frac{dCT_{CP}}{dq} =
-\frac{dCV}{dq}\]</span>
-<div class="admonition tip">
-<div class="admonition-title">
-Formato em U
-</div>
-<p>A curva de <span class="math inline">\(\text{CMe}_{CP}\)</span> tem
-formato em <strong>U</strong>: inicialmente, o custo fixo é diluído
-(<span class="math inline">\(\text{CFMe}\)</span> cai rápido); depois,
-rendimentos marginais decrescentes fazem o <span
-class="math inline">\(\text{CVMe}\)</span> subir. O CMg corta o CMe no
-ponto mínimo.</p>
-</div>
-<pre><code>A curva de $\text{CMe}_{CP}$ tem formato em **U**: inicialmente, o custo fixo é diluído ($\text{CFMe}$ cai rápido); depois, rendimentos marginais decrescentes fazem o $\text{CVMe}$ subir. O CMg corta o CMe no ponto mínimo.</code></pre>
-<hr />
-<h2 id="custos-de-longo-prazo-todos-os-fatores-variáveis">2. Custos de
-longo prazo: todos os fatores variáveis</h2>
-<p>No <strong>longo prazo</strong>, a firma pode ajustar
-<strong>todos</strong> os fatores. Para cada nível de produção <span
-class="math inline">\(q\)</span>, ela escolhe a combinação ótima <span
-class="math inline">\((L^*, K^*)\)</span> que minimiza custos:</p>
-<p><span class="math display">\[CT_{LP}(q) = \min_{L,K} \; wL + vK \quad
-\text{s.a.} \quad f(L,K) = q\]</span></p>
-<p>O resultado é a <strong>função custo de longo prazo</strong> <span
-class="math inline">\(C(q)\)</span>, já estudada na Aula 15.</p>
-<p><strong>Propriedade fundamental:</strong> <span
-class="math inline">\(CT_{LP}(q) \leq CT_{CP}(q, \bar{K})\)</span> para
-qualquer <span class="math inline">\(q\)</span> e <span
-class="math inline">\(\bar{K}\)</span>, com igualdade no nível de
-produção para o qual <span class="math inline">\(\bar{K}\)</span> é
-ótimo.</p>
-<hr />
-<h2 id="a-curva-envelope">3. A curva envelope</h2>
-<p>Imagine que a firma pode operar com diferentes tamanhos de planta:
-<span class="math inline">\(\bar{K}_1 &lt; \bar{K}_2 &lt;
-\bar{K}_3\)</span>. Cada tamanho gera uma curva de <span
-class="math inline">\(\text{CMe}_{CP}\)</span> em U.</p>
-<p>A curva de <span class="math inline">\(\text{CMe}_{LP}\)</span> é o
-<strong>envelope inferior</strong> dessas curvas:</p>
-<p><span class="math display">\[\text{CMe}_{LP}(q) = \min_{\bar{K}} \;
-\text{CMe}_{CP}(q, \bar{K})\]</span></p>
-Para cada <span class="math inline">\(q\)</span>, o longo prazo
-corresponde ao melhor tamanho de planta possível.
-<div class="admonition example">
-<div class="admonition-title">
-Visualizando o envelope
-</div>
-<p>Com três plantas:</p>
+<h2 id="mercado-de-seguros-e-informação-assimétrica">1. Mercado de
+Seguros e Informação Assimétrica</h2>
+<p>No modelo básico de seguros (Aula 14), assumimos que a seguradora
+conhece a probabilidade de sinistro <span
+class="math inline">\(p\)</span>. Na prática, <strong>o segurado conhece
+seu risco melhor que a seguradora</strong> — temos <strong>informação
+assimétrica</strong>.</p>
+<p>Dois problemas fundamentais surgem:</p>
 <ul>
-<li>Planta pequena (<span class="math inline">\(\bar{K}_1\)</span>):
-eficiente para <span class="math inline">\(q\)</span> baixo</li>
-<li>Planta média (<span class="math inline">\(\bar{K}_2\)</span>):
-eficiente para <span class="math inline">\(q\)</span> intermediário</li>
-<li>Planta grande (<span class="math inline">\(\bar{K}_3\)</span>):
-eficiente para <span class="math inline">\(q\)</span> alto</li>
+<li><strong>Seleção adversa</strong> (antes do contrato): indivíduos de
+alto risco são os mais propensos a comprar seguro.</li>
+<li><strong>Risco moral</strong> (após o contrato): o segurado toma
+menos cuidado após obter cobertura.</li>
 </ul>
-<p>O <span class="math inline">\(\text{CMe}_{LP}\)</span> “toca” cada
-curva de <span class="math inline">\(\text{CMe}_{CP}\)</span> exatamente
-no ponto onde aquele tamanho de planta é ótimo.</p>
-</div>
-<pre><code>Com três plantas:
-
-- Planta pequena ($\bar{K}_1$): eficiente para $q$ baixo
-- Planta média ($\bar{K}_2$): eficiente para $q$ intermediário
-- Planta grande ($\bar{K}_3$): eficiente para $q$ alto
-
-O $\text{CMe}_{LP}$ &quot;toca&quot; cada curva de $\text{CMe}_{CP}$ exatamente no ponto onde aquele tamanho de planta é ótimo.</code></pre>
-<hr />
-<h2 id="economias-e-deseconomias-de-escala">4. Economias e deseconomias
-de escala</h2>
-<p>O formato da curva de <span
-class="math inline">\(\text{CMe}_{LP}\)</span> revela o tipo de retorno
-de escala:</p>
-<table>
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-<col style="width: 25%" />
-</colgroup>
-<thead>
-<tr>
-<th>Trecho da curva</th>
-<th><span class="math inline">\(\text{CMe}_{LP}\)</span></th>
-<th>Retorno de escala</th>
-<th>Interpretação</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Descendente</td>
-<td>Caindo</td>
-<td>Crescente</td>
-<td>Dobrar produção custa menos que o dobro</td>
-</tr>
-<tr>
-<td>Mínimo</td>
-<td>Constante</td>
-<td>Constante</td>
-<td>Dobrar produção custa exatamente o dobro</td>
-</tr>
-<tr>
-<td>Ascendente</td>
-<td>Subindo</td>
-<td>Decrescente</td>
-<td>Dobrar produção custa mais que o dobro</td>
-</tr>
-</tbody>
-</table>
-<p>A <strong>escala mínima eficiente (EME)</strong> é o menor nível de
-<span class="math inline">\(q\)</span> em que o <span
-class="math inline">\(\text{CMe}_{LP}\)</span> atinge seu mínimo. Firmas
-menores que a EME têm desvantagem de custo.</p>
-<p>Formalmente, economias de escala existem quando:</p>
-<p><span class="math display">\[\frac{C(\lambda q)}{\lambda q} &lt;
-\frac{C(q)}{q} \quad \text{para } \lambda &gt; 1\]</span></p>
-<hr />
-<h2 id="gráfico-interativo-curva-envelope">Gráfico interativo: curva
-envelope</h2>
-<div id="graph-envelope" style="min-height: 450px;">
-<iframe src="../../graficos/cap10/curva-envelope.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
-</iframe>
-</div>
-<div class="admonition tip">
-<div class="admonition-title">
-Explore o gráfico
-</div>
-<ul>
-<li>Adicione ou remova curvas de CMe de curto prazo para diferentes
-tamanhos de planta</li>
-<li>Observe como o envelope se forma a partir das curvas
-individuais</li>
-<li>Identifique a escala mínima eficiente no ponto mais baixo do
-envelope</li>
-</ul>
-</div>
-<pre><code>- Adicione ou remova curvas de CMe de curto prazo para diferentes tamanhos de planta
-- Observe como o envelope se forma a partir das curvas individuais
-- Identifique a escala mínima eficiente no ponto mais baixo do envelope</code></pre>
-<hr />
-<h2 id="box-escala-e-estrutura-de-mercado">Box: Escala e estrutura de
-mercado</h2>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>O que o formato do envelope diz sobre o mercado?</strong></p>
-<p>Se a EME é pequena em relação à demanda total do mercado, muitas
-firmas podem operar eficientemente — temos um mercado competitivo (ex.:
-restaurantes, padarias). Se a EME é grande em relação à demanda, apenas
-poucas firmas cabem — temos oligopólio (ex.: aviação, siderurgia). Se a
-EME é tão grande que uma única firma atende todo o mercado com menor
-custo, temos um <strong>monopólio natural</strong> (ex.: distribuição de
-água). O envelope é, portanto, um dos determinantes fundamentais da
-estrutura de mercado.</p>
+<p>A informação assimétrica cria um círculo vicioso: a seguradora
+aumenta o prêmio para cobrir os altos riscos, o que expulsa os baixos
+riscos do mercado, o que piora ainda mais o pool de segurados. No
+limite, o mercado pode desaparecer.</p>
 </div>
-<pre><code>**O que o formato do envelope diz sobre o mercado?**
-
-Se a EME é pequena em relação à demanda total do mercado, muitas firmas podem operar eficientemente — temos um mercado competitivo (ex.: restaurantes, padarias). Se a EME é grande em relação à demanda, apenas poucas firmas cabem — temos oligopólio (ex.: aviação, siderurgia). Se a EME é tão grande que uma única firma atende todo o mercado com menor custo, temos um **monopólio natural** (ex.: distribuição de água). O envelope é, portanto, um dos determinantes fundamentais da estrutura de mercado.</code></pre>
 <hr />
-<h2 id="preparação-para-a-atividade-prática">Preparação para a atividade
-prática</h2>
-<div class="admonition warning">
+<h2 id="seleção-adversa-o-mercado-de-limões">2. Seleção Adversa: O
+Mercado de Limões</h2>
+<p>Akerlof (1970) analisou o mercado de carros usados. Vendedores
+conhecem a qualidade do carro; compradores não. Se há carros bons (valor
+<span class="math inline">\(V_H\)</span>) e ruins/“limões” (valor <span
+class="math inline">\(V_L\)</span>), o comprador oferece o preço
+esperado:</p>
+<p><span class="math display">\[P^* = \theta V_H + (1-\theta)
+V_L\]</span></p>
+<p>onde <span class="math inline">\(\theta\)</span> é a fração esperada
+de carros bons. Se <span class="math inline">\(P^* &lt; V_H\)</span>,
+donos de carros bons <strong>saem do mercado</strong>. Isso reduz <span
+class="math inline">\(\theta\)</span>, reduz <span
+class="math inline">\(P^*\)</span>, e mais vendedores bons saem —
+<strong>espiral adversa</strong>.</p>
+<p>No caso extremo, apenas limões são vendidos: o mercado colapsa para
+bens de qualidade.</p>
+<iframe src="graficos/cap19/mercado-limoes.html">
+</iframe>
+<div class="admonition tip">
 <div class="admonition-title">
-Atividade colaborativa na Aula 16
+Explore o gráfico
 </div>
-<p>Na aula, você participará de uma <strong>construção coletiva do
-envelope</strong>. Cada grupo receberá um tamanho de planta diferente e
-calculará sua curva de CMe de curto prazo. Em seguida, reuniremos todas
-as curvas para visualizar o envelope emergir.</p>
-<p><strong>Prepare-se:</strong></p>
-<ul>
-<li>Revise como calcular CMe e CMg a partir de uma função custo
-total</li>
-<li>Traga calculadora</li>
-<li>Pense: por que o CMe de longo prazo nunca está
-<strong>acima</strong> de nenhum CMe de curto prazo?</li>
-</ul>
+<p>Varie a proporção de carros bons e observe como o preço de equilíbrio
+se ajusta. Note o ponto crítico em que vendedores de carros bons
+abandonam o mercado.</p>
 </div>
-<pre><code>Na aula, você participará de uma **construção coletiva do envelope**. Cada grupo receberá um tamanho de planta diferente e calculará sua curva de CMe de curto prazo. Em seguida, reuniremos todas as curvas para visualizar o envelope emergir.
-
-**Prepare-se:**
-
-- Revise como calcular CMe e CMg a partir de uma função custo total
-- Traga calculadora
-- Pense: por que o CMe de longo prazo nunca está **acima** de nenhum CMe de curto prazo?</code></pre>
 <hr />
-<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Uma firma tem <span
-class="math inline">\(CT_{CP} = 100 + 10q + q^2\)</span> (com <span
-class="math inline">\(CF = 100\)</span>). Encontre CMe, CVMe, CFMe e
-CMg. Em que <span class="math inline">\(q\)</span> o CMe é mínimo?
+<h2 id="risco-moral">3. Risco Moral</h2>
+<p>O <strong>risco moral</strong> (moral hazard) ocorre quando o
+comportamento do agente muda <strong>após</strong> a contratação, de
+forma não observável pelo principal:</p>
+<ul>
+<li>Segurado de automóvel dirige com menos cuidado após contratar seguro
+total.</li>
+<li>Trabalhador com estabilidade reduz esforço.</li>
+<li>Banco “grande demais para falir” assume riscos excessivos.</li>
+</ul>
+<p><strong>Soluções típicas:</strong></p>
+<ul>
+<li><strong>Franquias e copagamentos</strong>: o segurado retém parte do
+risco → incentivo a tomar cuidado.</li>
+<li><strong>Monitoramento</strong>: câmeras, auditorias, avaliações de
+desempenho.</li>
+<li><strong>Contratos contingentes</strong>: bônus por resultado,
+pagamento por desempenho.</li>
+</ul>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A franquia resolve parcialmente o risco moral: como o segurado paga
+os primeiros R$ <span class="math inline">\(d\)</span> de qualquer
+sinistro, ele ainda tem incentivo para ser cauteloso. É um trade-off
+entre proteção contra risco e incentivos ao cuidado.</p>
+</div>
+<hr />
+<h2 id="sinalização-spence">4. Sinalização (Spence)</h2>
+<p>Michael Spence (1973) mostrou como a parte informada pode
+<strong>sinalizar</strong> sua qualidade por meio de ações custosas:</p>
+<ul>
+<li>Trabalhadores de alta produtividade obtêm educação como
+<strong>sinal</strong>, mesmo que a educação não aumente diretamente a
+produtividade.</li>
+<li>O sinal funciona se for <strong>mais custoso</strong> para o tipo
+ruim imitar.</li>
+</ul>
+<p><strong>Condição de separação</strong>: custo do sinal para tipo alto
+&lt; benefício; custo para tipo baixo &gt; benefício.</p>
+<p><span class="math display">\[w_H - c_H(e^*) &gt; w_L \quad \text{e}
+\quad w_H - c_L(e^*) &lt; w_L\]</span></p>
+<p>onde <span class="math inline">\(c_H &lt; c_L\)</span> (tipo alto tem
+custo menor para adquirir educação <span
+class="math inline">\(e^*\)</span>).</p>
+<iframe src="graficos/cap07/seguro.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Os conceitos de autosseleção no mercado de seguros são análogos à
+sinalização: diferentes tipos escolhem contratos diferentes, revelando
+informação privada.</p>
+</div>
+<hr />
+<h2 id="screening-rothschild-stiglitz-e-aplicações-brasil">5. Screening
+(Rothschild-Stiglitz) e Aplicações Brasil</h2>
+<p>Quando a parte <strong>desinformada</strong> age primeiro, ela pode
+oferecer um <strong>menu de contratos</strong> que induz
+autosseleção:</p>
+<ul>
+<li>Seguradora oferece: contrato A (cobertura alta, prêmio alto) e
+contrato B (cobertura baixa, prêmio baixo).</li>
+<li>Desenhados para que altos riscos prefiram A e baixos riscos prefiram
+B.</li>
+</ul>
+<p><strong>Condição de compatibilidade de incentivos (IC):</strong> cada
+tipo deve preferir o contrato desenhado para ele.</p>
+<p><strong>Aplicações no Brasil:</strong></p>
+<ul>
+<li><strong>SUS</strong>: sistema universal enfrenta seleção adversa
+reversa — quem pode pagar sai para planos privados, deixando o SUS com
+população de maior custo médio.</li>
+<li><strong>Proagro</strong>: seguro agrícola subsidiado enfrenta tanto
+seleção adversa (regiões mais arriscadas demandam mais) quanto risco
+moral (menor cuidado com manejo).</li>
+</ul>
+<iframe src="graficos/cap08/ellsberg-urnas.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Este gráfico ilustra a incerteza sobre probabilidades. Em mercados
+com informação assimétrica, a seguradora enfrenta ambiguidade similar:
+não sabe a verdadeira distribuição de riscos dos segurados.</p>
+</div>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Sinalização e screening são espelhos: na sinalização, quem tem
+informação age primeiro; no screening, quem não tem informação desenha o
+menu. Ambos exploram o fato de que imitar é mais custoso para tipos
+ruins.</p>
+</div>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Em um mercado de carros usados, carros
+bons valem R$ 20.000 para compradores e R$ 15.000 para vendedores;
+limões valem R$ 10.000 para compradores e R$ 5.000 para vendedores. Se
+50% são bons, qual o preço de equilíbrio? O mercado colapsa?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\text{CMe} = \frac{100}{q} + 10 +
-q\)</span></p>
-<p><span class="math inline">\(\text{CVMe} = 10 + q\)</span></p>
-<p><span class="math inline">\(\text{CFMe} = \frac{100}{q}\)</span></p>
-<p><span class="math inline">\(\text{CMg} = 10 + 2q\)</span></p>
-<p>Mínimo do CMe: <span class="math inline">\(\frac{d(\text{CMe})}{dq} =
--\frac{100}{q^2} + 1 = 0 \implies q = 10\)</span></p>
-<p><span class="math inline">\(\text{CMe}(10) = 10 + 10 + 10 =
-30\)</span></p>
-<p>Verificação: <span class="math inline">\(\text{CMg}(10) = 10 + 20 =
-30 = \text{CMe}(10)\)</span> ✓</p>
+<p>Preço esperado pelo comprador: <span class="math inline">\(P = 0{,}5
+\times 20000 + 0{,}5 \times 10000 = 15000\)</span>.<br />
+Vendedores de carros bons exigem pelo menos R$ 15.000 → aceitam vender a
+R$ 15.000 (marginalmente).<br />
+Vendedores de limões exigem R$ 5.000 → aceitam.<br />
+O mercado não colapsa totalmente neste caso. Porém, se o custo de
+oportunidade dos bons fosse R$ 16.000, eles sairiam e só limões seriam
+vendidos (<span class="math inline">\(P = 10000\)</span>).</p>
 </div>
 </details>
-<pre><code>$\text{CMe} = \frac{100}{q} + 10 + q$
-
-$\text{CVMe} = 10 + q$
-
-$\text{CFMe} = \frac{100}{q}$
-
-$\text{CMg} = 10 + 2q$
-
-Mínimo do CMe: $\frac{d(\text{CMe})}{dq} = -\frac{100}{q^2} + 1 = 0 \implies q = 10$
-
-$\text{CMe}(10) = 10 + 10 + 10 = 30$
-
-Verificação: $\text{CMg}(10) = 10 + 20 = 30 = \text{CMe}(10)$ ✓</code></pre>
-<strong>Exercício 2.</strong> Explique por que <span
-class="math inline">\(CT_{LP}(q) \leq CT_{CP}(q, \bar{K})\)</span> para
-todo <span class="math inline">\(q\)</span>. Em que ponto há igualdade?
+<p><strong>Exercício 2.</strong> Explique por que planos de saúde no
+Brasil cobram prêmios maiores para faixas etárias mais altas. Isso é
+seleção adversa ou precificação por risco?</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>No longo prazo, a firma pode ajustar <strong>todos</strong> os
-fatores para minimizar custos. No curto prazo, o capital é fixo em <span
-class="math inline">\(\bar{K}\)</span>, o que restringe as opções — a
-firma só pode ajustar <span class="math inline">\(L\)</span>. Como o
-longo prazo tem mais flexibilidade (o conjunto viável do LP contém o do
-CP como caso particular), o custo mínimo de LP nunca pode ser maior que
-o de CP.</p>
-<p>Há igualdade quando <span class="math inline">\(\bar{K}\)</span>
-coincide com o capital ótimo de longo prazo para aquele nível de <span
-class="math inline">\(q\)</span>: <span class="math inline">\(\bar{K} =
-K^*(q)\)</span>. Nesse ponto, a restrição do curto prazo não é
-limitante.</p>
+<p>É uma combinação. A <strong>precificação por risco</strong> reflete o
+fato observável de que idosos têm maior frequência de uso. Porém, há
+<strong>seleção adversa residual</strong>: dentro de cada faixa etária,
+pessoas mais doentes (informação privada) têm maior propensão a
+contratar planos mais completos. A ANS regula o fator de variação entre
+faixas (máximo de 1:6), justamente para evitar a exclusão de idosos —
+uma intervenção que reconhece a falha de mercado.</p>
 </div>
 </details>
-<pre><code>No longo prazo, a firma pode ajustar **todos** os fatores para minimizar custos. No curto prazo, o capital é fixo em $\bar{K}$, o que restringe as opções — a firma só pode ajustar $L$. Como o longo prazo tem mais flexibilidade (o conjunto viável do LP contém o do CP como caso particular), o custo mínimo de LP nunca pode ser maior que o de CP.
-
-Há igualdade quando $\bar{K}$ coincide com o capital ótimo de longo prazo para aquele nível de $q$: $\bar{K} = K^*(q)$. Nesse ponto, a restrição do curto prazo não é limitante.</code></pre>
+<p><strong>Exercício 3.</strong> Uma empresa oferece dois contratos de
+seguro: A (cobertura total, prêmio R$ 500) e B (cobertura 50%, prêmio R$
+150). Se o alto risco (<span class="math inline">\(p = 0{,}3\)</span>,
+perda <span class="math inline">\(L = 2000\)</span>) prefere A e o baixo
+risco (<span class="math inline">\(p = 0{,}1\)</span>) prefere B,
+verifique se o contrato A é lucrativo.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Lucro esperado de A para alto risco: <span class="math inline">\(500
+- 0{,}3 \times 2000 = 500 - 600 = -100\)</span>.<br />
+O contrato A isolado dá <strong>prejuízo</strong> com alto risco! Para o
+menu ser viável, a seguradora precisa que o lucro de B com baixo risco
+compense:<br />
+Lucro de B: <span class="math inline">\(150 - 0{,}1 \times 1000 = 150 -
+100 = 50\)</span>.<br />
+Com proporções adequadas, o pool pode ser sustentável, mas o contrato A
+deve ser ajustado (prêmio mínimo de R$ 600 para break-even com alto
+risco).</p>
+</div>
+</details>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -310,214 +260,58 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
-</div>
-</div>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 <div class="quiz-question" data-question="q1" data-correct="a">
-<div class="q-text">
-Q1. No curto prazo, qual componente de custo é independente do nível de
-produção?
+<div class="q-text">Q1. A seleção adversa ocorre:</div>
+<div class="quiz-option" data-value="a">(a) Antes da contratação, quando uma parte tem informação privada sobre seu tipo</div>
+<div class="quiz-option" data-value="b">(b) Depois da contratação, quando o comportamento muda</div>
+<div class="quiz-option" data-value="c">(c) Quando ambas as partes têm informação completa</div>
+<div class="quiz-option" data-value="d">(d) Apenas em mercados de seguros</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Custo fixo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Custo variável
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>Custo marginal
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Custo variável médio
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="b">
-<div class="q-text">
-Q2. A curva de CMe de longo prazo é chamada de “envelope” porque:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Está sempre acima das curvas de CMe de curto prazo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>É tangente por baixo a cada curva de CMe de curto prazo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>É a soma de todas as curvas de CMe de curto prazo
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>É a média das curvas de CMe de curto prazo
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. No modelo de Akerlof, o mercado de limões pode colapsar porque:</div>
+<div class="quiz-option" data-value="a">(a) Compradores são irracionais</div>
+<div class="quiz-option" data-value="b">(b) Vendedores são desonestos</div>
+<div class="quiz-option" data-value="c">(c) O preço médio expulsa vendedores de bens de alta qualidade</div>
+<div class="quiz-option" data-value="d">(d) O governo impõe preços máximos</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q3" data-correct="b">
-<div class="q-text">
-Q3. Economias de escala existem quando:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O CMe de longo prazo é constante
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O CMe de longo prazo é decrescente
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O CMe de longo prazo é crescente
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O CMg é igual ao CMe
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="q-text">Q3. O risco moral é mitigado por:</div>
+<div class="quiz-option" data-value="a">(a) Cobertura total sem franquia</div>
+<div class="quiz-option" data-value="b">(b) Franquias, copagamentos e monitoramento</div>
+<div class="quiz-option" data-value="c">(c) Prêmio atuarialmente justo</div>
+<div class="quiz-option" data-value="d">(d) Seleção adversa</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q4" data-correct="b">
-<div class="q-text">
-Q4. A escala mínima eficiente (EME) é:
+<div class="q-text">Q4. Na sinalização de Spence, a educação funciona como sinal porque:</div>
+<div class="quiz-option" data-value="a">(a) Aumenta a produtividade de todos igualmente</div>
+<div class="quiz-option" data-value="b">(b) É relativamente menos custosa para trabalhadores de alta produtividade</div>
+<div class="quiz-option" data-value="c">(c) É obrigatória por lei</div>
+<div class="quiz-option" data-value="d">(d) Todos os tipos investem igualmente</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. No screening de Rothschild-Stiglitz, a seguradora:</div>
+<div class="quiz-option" data-value="a">(a) Oferece um único contrato para todos</div>
+<div class="quiz-option" data-value="b">(b) Exige exame médico perfeito</div>
+<div class="quiz-option" data-value="c">(c) Oferece um menu de contratos que induz autosseleção</div>
+<div class="quiz-option" data-value="d">(d) Recusa segurar altos riscos</div>
+<div class="quiz-feedback"></div>
 </div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O nível de produção onde o CMg é mínimo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O menor nível de produção onde o CMe de longo prazo atinge seu
-mínimo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O nível de produção onde o custo total é mínimo
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O nível de produção onde o custo fixo é zero
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “No ponto mínimo do CMe de curto prazo, a curva de CMe de LP
-necessariamente também atinge seu mínimo.”
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — o CMe de LP toca o CMe de CP no ponto onde aquele tamanho de
-planta é ótimo, que geralmente não é o mínimo do CMe de CP (exceto na
-EME)
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-16')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 16</strong>: Atividade prática colaborativa — construção do
-envelope de custos. Cada grupo calculará custos para um tamanho de
-planta e veremos o envelope emergir!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 16**: Atividade prática colaborativa — construção do envelope de custos. Cada grupo calculará custos para um tamanho de planta e veremos o envelope emergir!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p>Na <strong>Aula 17</strong>, iniciaremos a teoria da firma com a
+função de produção, isoquantas, TMST e rendimentos de escala.</p>
 </div>
 
 </div>
@@ -528,7 +322,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-16');
 MicroQuiz.init('aula-16');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

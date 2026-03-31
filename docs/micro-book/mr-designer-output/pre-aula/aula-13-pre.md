@@ -1,195 +1,120 @@
-# Pré-Aula 13 — Função de Produção e Tecnologia
+# Pré-Aula 13 — Escolha sob Incerteza I: Loterias e Utilidade Esperada
 
 !!! info "Leitura obrigatória"
-    **Cap. 9, Seções 9.1–9.4** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 7, Seções 7.1–7.3** do livro-texto | Tempo estimado: **~45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Definir a função de produção, calcular produto marginal e produto médio, e identificar rendimentos marginais decrescentes
-2. Traçar isoquantas, calcular a TMST e interpretar seu significado econômico
-3. Classificar rendimentos de escala (crescentes, constantes, decrescentes) para funções de produção clássicas
+1. Definir loterias simples e compostas e operar com reduções de loterias compostas.
+2. Enunciar os axiomas de Von Neumann-Morgenstern e o teorema da utilidade esperada.
+3. Classificar as três atitudes perante o risco e aplicar a desigualdade de Jensen.
 
 ---
 
-## 1. A função de produção
+## 1. Loterias e o Paradoxo de São Petersburgo
 
-A **função de produção** descreve a relação tecnológica entre insumos e produto:
+Uma **loteria simples** é definida por:
 
-$$q = f(L, K)$$
+$$L = (p, W_1;\; 1-p, W_2)$$
 
-onde $L$ = trabalho, $K$ = capital, e $q$ = quantidade produzida.
+onde $W_1$ e $W_2$ são os resultados monetários e $p$ a probabilidade de $W_1$. O **valor esperado** é:
 
-Pressupostos básicos:
+$$E[L] = pW_1 + (1-p)W_2$$
 
-- $f(0, K) = f(L, 0) = 0$ (ambos os insumos são essenciais)
-- $f$ é crescente em cada insumo ($f_L > 0$, $f_K > 0$)
-- $f$ é côncava (tecnologia "bem-comportada")
+**Loterias compostas** são loterias cujos prêmios são outras loterias. O **axioma da redução** garante que toda loteria composta pode ser simplificada pela lei das probabilidades totais.
 
----
+O **paradoxo de São Petersburgo** mostra que o valor esperado não basta para decisões: uma moeda é lançada repetidamente e o prêmio é $2^n$ se a primeira cara aparece no lançamento $n$:
 
-## 2. Curto prazo vs. longo prazo
+$$E[\text{prêmio}] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty$$
 
-| Horizonte | Definição | Variáveis |
-|:---|:---|:---|
-| **Curto prazo** | Pelo menos um insumo é fixo | $K = \bar{K}$; só $L$ varia |
-| **Longo prazo** | Todos os insumos podem variar | $L$ e $K$ variam |
-
-No curto prazo, a função de produção se reduz a:
-
-$$q = f(L, \bar{K}) \equiv g(L)$$
-
----
-
-## 3. Produto marginal e produto médio
-
-**Produto Marginal do Trabalho (PMgL):**
-
-$$PMgL = \frac{\partial f}{\partial L} = f_L$$
-
-> "Quanto produto adicional se obtém com 1 unidade a mais de trabalho, mantendo $K$ fixo."
-
-**Produto Médio do Trabalho (PMeL):**
-
-$$PMeL = \frac{f(L, K)}{L}$$
-
-> "Produto por trabalhador."
-
-Relação fundamental: **o PMgL corta o PMeL no ponto máximo do PMeL**.
-
-- Se $PMgL > PMeL$: o PMeL está subindo
-- Se $PMgL < PMeL$: o PMeL está caindo
-
-!!! example "Exemplo numérico"
-    $f(L, K) = 10 L^{0{,}5} K^{0{,}5}$ com $K = 25$.
-
-    $g(L) = 10 L^{0{,}5} \cdot 5 = 50 L^{0{,}5}$
-
-    $PMgL = 25 L^{-0{,}5} = \frac{25}{\sqrt{L}}$
-
-    $PMeL = 50 L^{-0{,}5} = \frac{50}{\sqrt{L}}$
-
-    Para $L = 100$: $PMgL = 2{,}5$ e $PMeL = 5$. O PMgL está abaixo do PMeL.
-
----
-
-## 4. Lei dos rendimentos marginais decrescentes
-
-$$\frac{\partial^2 f}{\partial L^2} = f_{LL} < 0$$
-
-> "Cada trabalhador adicional produz **menos** que o anterior, mantendo o capital fixo."
-
-Isso **não** significa que a produção total cai — apenas que os **acréscimos** ficam menores.
-
-!!! warning "Atenção"
-    A lei dos rendimentos marginais decrescentes é um fenômeno de **curto prazo** (um insumo fixo). Não confundir com rendimentos de escala (longo prazo, todos os insumos variam).
-
----
-
-## 5. Isoquantas
-
-Uma **isoquanta** é o conjunto de combinações $(L, K)$ que produzem a mesma quantidade $\bar{q}$:
-
-$$\{(L, K) : f(L, K) = \bar{q}\}$$
-
-Propriedades (análogas às curvas de indiferença):
-
-1. **Decrescentes** (PMgL, PMgK > 0)
-2. **Não se cruzam**
-3. **Convexas** (substituição entre insumos é possível mas cada vez mais difícil)
-
----
-
-## 6. Taxa Marginal de Substituição Técnica (TMST)
-
-$$\text{TMST}_{L,K} = -\frac{dK}{dL}\bigg|_{\bar{q}} = \frac{PMgL}{PMgK} = \frac{f_L}{f_K}$$
-
-> "Quanto de capital a firma pode **dispensar** se contratar 1 trabalhador a mais, mantendo a produção constante."
-
-A TMST é **decrescente** ao longo da isoquanta: à medida que se usa mais trabalho e menos capital, cada trabalhador adicional substitui menos capital.
-
----
-
-## Gráfico interativo: isoquantas
-
-<div id="graph-isoquants" style="min-height: 450px;">
-<iframe src="../../graficos/cap09/isoquantas.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
-
-!!! tip "Explore o gráfico"
-    - Mude os parâmetros da função de produção e observe como as isoquantas se alteram
-    - Arraste um ponto ao longo da isoquanta e observe a TMST mudar
-    - Compare as formas de isoquantas para Cobb-Douglas, Leontief e Linear
-
----
-
-## 7. Rendimentos de escala
-
-Se multiplicamos **todos** os insumos por $t > 1$:
-
-$$f(tL, tK) \begin{cases} > t \cdot f(L,K) & \text{Rendimentos crescentes} \\ = t \cdot f(L,K) & \text{Rendimentos constantes} \\ < t \cdot f(L,K) & \text{Rendimentos decrescentes} \end{cases}$$
-
-Equivalentemente, se $f$ é **homogênea de grau $k$**: $f(tL, tK) = t^k f(L,K)$
-
-- $k > 1$: crescentes (dobrar insumos mais que dobra produção)
-- $k = 1$: constantes (dobrar insumos dobra produção)
-- $k < 1$: decrescentes (dobrar insumos menos que dobra produção)
-
----
-
-## 8. As funções de produção clássicas
-
-| Função | Forma | TMST | Isoquantas | Rend. escala |
-|:---|:---|:---|:---|:---|
-| **Cobb-Douglas** | $A L^a K^b$ | $\frac{aK}{bL}$ | Hipérboles | $a + b$ |
-| **Linear** | $aL + bK$ | $\frac{a}{b}$ (cte) | Retas | Constantes |
-| **Leontief** | $\min\{aL, bK\}$ | 0 ou $\infty$ | L's | Constantes |
-| **CES** | $A(\alpha L^\rho + (1-\alpha)K^\rho)^{1/\rho}$ | $\frac{\alpha}{1-\alpha}\left(\frac{K}{L}\right)^{1-\rho}$ | Variável | Depende de $A$ |
+Apesar do valor esperado infinito, ninguém pagaria uma quantia arbitrariamente grande para jogar.
 
 !!! note "Intuição Econômica"
-    **A função de produção como um "mapa tecnológico"**
-
-    Assim como as curvas de indiferença representam as preferências do consumidor, as isoquantas representam a **tecnologia** da firma. A TMST é o análogo da TMS: mede a taxa na qual um insumo pode substituir outro.
-
-    A grande diferença: enquanto preferências são subjetivas (cada consumidor tem as suas), a tecnologia é **objetiva** — dada pela engenharia, pela física, pela organização do processo produtivo. Duas firmas no mesmo setor, com a mesma tecnologia, têm as mesmas isoquantas.
-
-    Porém, a escolha de **onde operar** na isoquanta depende dos preços dos insumos — e isso é o problema de minimização de custos, tema das próximas aulas.
+    O paradoxo de São Petersburgo motivou Daniel Bernoulli (1738) a propor que as pessoas avaliam **utilidade da riqueza**, não a riqueza em si. A utilidade marginal decrescente da riqueza explica por que prêmios cada vez maiores contribuem cada vez menos para o bem-estar.
 
 ---
 
-## Exercícios de preparação
+## 2. Axiomas VNM e o Teorema da Utilidade Esperada
 
-**Exercício 1.** Para $f(L,K) = 4L^{0{,}3}K^{0{,}7}$: (a) calcule $PMgL$ e $PMgK$; (b) determine a TMST; (c) classifique os rendimentos de escala.
+Os axiomas de **Von Neumann-Morgenstern** são:
+
+1. **Completude**: para quaisquer loterias $L_1, L_2$, o agente pode compará-las ($L_1 \succeq L_2$, $L_2 \succeq L_1$ ou ambos).
+2. **Transitividade**: se $L_1 \succeq L_2$ e $L_2 \succeq L_3$, então $L_1 \succeq L_3$.
+3. **Continuidade**: se $L_1 \succeq L_2 \succeq L_3$, existe $\alpha \in [0,1]$ tal que $L_2 \sim \alpha L_1 + (1-\alpha) L_3$.
+4. **Independência**: se $L_1 \succeq L_2$, então para qualquer $L_3$ e $\alpha \in (0,1]$: $\alpha L_1 + (1-\alpha)L_3 \succeq \alpha L_2 + (1-\alpha)L_3$.
+
+**Teorema**: Se as preferências satisfazem esses axiomas, existe uma função $u(\cdot)$ tal que:
+
+$$L_1 \succeq L_2 \iff E[u(L_1)] \geq E[u(L_2)]$$
+
+onde $E[u(L)] = \sum_i p_i \, u(W_i)$ é a **utilidade esperada**.
+
+!!! note "Intuição Econômica"
+    O axioma da independência é o mais forte e controverso: ele diz que misturar a mesma loteria $L_3$ com duas alternativas não deve alterar a preferência entre elas. O paradoxo de Allais (que veremos na Aula 15) viola justamente este axioma.
+
+---
+
+## 3. Atitudes Perante o Risco
+
+Considere a loteria $L = (p, W_1;\; 1-p, W_2)$ com valor esperado $E[W]$. Comparamos $u(E[W])$ com $E[u(W)]$:
+
+- **Aversão ao risco**: $u(E[W]) > E[u(W)]$ → $u$ é **côncava**.
+- **Neutralidade ao risco**: $u(E[W]) = E[u(W)]$ → $u$ é **linear**.
+- **Propensão ao risco**: $u(E[W]) < E[u(W)]$ → $u$ é **convexa**.
+
+Exemplos clássicos de funções côncavas (averso): $u(W) = \ln W$, $u(W) = \sqrt{W}$, $u(W) = W^\alpha$ com $0 < \alpha < 1$.
+
+<iframe src="graficos/cap07/aversao-risco.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Observe a concavidade da função utilidade. A diferença vertical entre a corda (utilidade esperada) e a curva (utilidade do valor esperado) representa a "perda" que o averso ao risco percebe ao enfrentar incerteza.
+
+---
+
+## 4. Desigualdade de Jensen e Prêmio de Risco
+
+A **desigualdade de Jensen** formaliza a aversão ao risco: se $u$ é côncava e $W$ é uma variável aleatória não degenerada:
+
+$$u(E[W]) > E[u(W)]$$
+
+O **prêmio de risco** $\pi$ é o valor máximo que o agente pagaria para eliminar a incerteza:
+
+$$u(E[W] - \pi) = E[u(W)]$$
+
+O **equivalente certo** é $CE = E[W] - \pi$: a quantia certa que dá a mesma utilidade que a loteria.
+
+<iframe src="graficos/cap07/premio-risco.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Mova as probabilidades e os resultados da loteria. Observe como o prêmio de risco (distância horizontal entre $E[W]$ e $CE$) aumenta com a variância da loteria e com a concavidade de $u$.
+
+---
+
+## Exercícios Preparatórios
+
+**Exercício 1.** Um agente com $u(W) = \sqrt{W}$ enfrenta a loteria $L = (0{,}5,\; 100;\; 0{,}5,\; 400)$. Calcule $E[W]$, $E[u(W)]$, o equivalente certo e o prêmio de risco.
 
 ??? success "Solução"
-    (a) $PMgL = 4 \cdot 0{,}3 \cdot L^{-0{,}7} K^{0{,}7} = 1{,}2 L^{-0{,}7} K^{0{,}7}$
+    $E[W] = 0{,}5(100) + 0{,}5(400) = 250$.  
+    $E[u(W)] = 0{,}5\sqrt{100} + 0{,}5\sqrt{400} = 0{,}5(10) + 0{,}5(20) = 15$.  
+    $CE$: $\sqrt{CE} = 15 \Rightarrow CE = 225$.  
+    $\pi = E[W] - CE = 250 - 225 = 25$.
 
-    $PMgK = 4 \cdot 0{,}7 \cdot L^{0{,}3} K^{-0{,}3} = 2{,}8 L^{0{,}3} K^{-0{,}3}$
-
-    (b) $\text{TMST} = \frac{PMgL}{PMgK} = \frac{1{,}2 L^{-0{,}7} K^{0{,}7}}{2{,}8 L^{0{,}3} K^{-0{,}3}} = \frac{1{,}2}{2{,}8} \cdot \frac{K}{L} = \frac{3K}{7L}$
-
-    (c) $a + b = 0{,}3 + 0{,}7 = 1$. **Rendimentos constantes de escala.**
-
-**Exercício 2.** Explique por que a Lei dos Rendimentos Marginais Decrescentes não contradiz rendimentos crescentes de escala.
+**Exercício 2.** Mostre que um agente com $u(W) = aW + b$ (com $a > 0$) é neutro ao risco.
 
 ??? success "Solução"
-    A lei dos rendimentos marginais decrescentes diz que $f_{LL} < 0$ quando $K$ é **fixo** (curto prazo). Rendimentos crescentes de escala dizem que $f(tL, tK) > tf(L,K)$ quando **ambos** os insumos crescem proporcionalmente (longo prazo).
+    $E[u(W)] = E[aW + b] = aE[W] + b = u(E[W])$.  
+    Como $u(E[W]) = E[u(W)]$ para qualquer loteria, o agente é neutro ao risco. Além disso, $u''(W) = 0$, confirmando linearidade.
 
-    Exemplo: $f(L,K) = L^{0{,}7} K^{0{,}7}$. Temos $f_{LL} = -0{,}21 L^{-1{,}3}K^{0{,}7} < 0$ (rendimentos marginais decrescentes), mas $a + b = 1{,}4 > 1$ (rendimentos crescentes de escala).
-
-    No curto prazo, adicionar mais trabalho com capital fixo é cada vez menos eficiente. No longo prazo, aumentar ambos proporcionalmente gera ganhos de especialização e escala.
-
-**Exercício 3.** Para a função Leontief $f(L,K) = \min\{3L, 2K\}$, qual a combinação eficiente para produzir $q = 12$?
+**Exercício 3.** Reduza a loteria composta: $L_c = (0{,}6, L_1;\; 0{,}4, L_2)$ onde $L_1 = (0{,}5,\; 100;\; 0{,}5,\; 200)$ e $L_2 = (0{,}25,\; 100;\; 0{,}75,\; 300)$.
 
 ??? success "Solução"
-    Eficiência requer $3L = 2K = q$:
-
-    $3L = 12 \implies L = 4$
-
-    $2K = 12 \implies K = 6$
-
-    Combinação eficiente: $(L, K) = (4, 6)$. Qualquer desvio desperdiça um insumo.
+    $P(100) = 0{,}6 \times 0{,}5 + 0{,}4 \times 0{,}25 = 0{,}30 + 0{,}10 = 0{,}40$.  
+    $P(200) = 0{,}6 \times 0{,}5 + 0{,}4 \times 0 = 0{,}30$.  
+    $P(300) = 0{,}6 \times 0 + 0{,}4 \times 0{,}75 = 0{,}30$.  
+    Loteria reduzida: $L = (0{,}40,\; 100;\; 0{,}30,\; 200;\; 0{,}30,\; 300)$.
 
 ---
 
@@ -200,44 +125,44 @@ Equivalentemente, se $f$ é **homogênea de grau $k$**: $f(tL, tK) = t^k f(L,K)$
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O produto marginal do trabalho ($PMgL$) mede:
+**Q1.** O paradoxo de São Petersburgo demonstra que:
 
-- [ ] (a) A produção total dividida pelo número de trabalhadores
-- [x] (b) A produção adicional gerada pelo último trabalhador contratado
-- [ ] (c) A inclinação da isoquanta
-- [ ] (d) O custo de contratar um trabalhador
+- [ ] (a) O valor esperado é sempre finito
+- [x] (b) O valor esperado não é suficiente para explicar decisões sob risco
+- [ ] (c) Todos os agentes são propensos ao risco
+- [ ] (d) Loterias compostas não podem ser reduzidas
 
-**Q2.** A Lei dos Rendimentos Marginais Decrescentes se aplica ao:
+**Q2.** O axioma da independência de VNM afirma que:
 
-- [x] (a) Curto prazo, com pelo menos um insumo fixo
-- [ ] (b) Longo prazo, com todos os insumos variáveis
-- [ ] (c) Qualquer horizonte temporal
-- [ ] (d) Apenas à função Cobb-Douglas
+- [ ] (a) As preferências são transitivas
+- [ ] (b) Existe sempre uma probabilidade de indiferença
+- [x] (c) Misturar a mesma terceira loteria não altera a ordenação entre duas loterias
+- [ ] (d) Todas as loterias podem ser comparadas
 
-**Q3.** Se $f(L,K) = L^{0{,}4}K^{0{,}8}$, os rendimentos de escala são:
+**Q3.** Se $u''(W) < 0$ para todo $W$, o agente é:
 
-- [x] (a) Crescentes ($0{,}4 + 0{,}8 = 1{,}2 > 1$)
-- [ ] (b) Constantes
-- [ ] (c) Decrescentes
+- [x] (a) Averso ao risco
+- [ ] (b) Neutro ao risco
+- [ ] (c) Propenso ao risco
 - [ ] (d) Impossível determinar
 
-**Q4.** A TMST mede:
+**Q4.** O equivalente certo de uma loteria para um averso ao risco é:
 
-- [ ] (a) Quanto a produção muda quando se contrata mais trabalho
-- [x] (b) Quanto de capital a firma pode dispensar por 1 trabalhador adicional, mantendo produção constante
-- [ ] (c) O preço relativo dos insumos
-- [ ] (d) A elasticidade de substituição
+- [ ] (a) Maior que o valor esperado
+- [ ] (b) Igual ao valor esperado
+- [x] (c) Menor que o valor esperado
+- [ ] (d) Igual ao prêmio de risco
 
-**Q5.** Na função Leontief $f = \min\{aL, bK\}$, as isoquantas têm formato:
+**Q5.** A desigualdade de Jensen para $u$ côncava implica:
 
-- [ ] (a) Hipérboles
-- [ ] (b) Retas
-- [x] (c) Ângulos retos (L)
-- [ ] (d) Círculos
+- [x] (a) $u(E[W]) > E[u(W)]$
+- [ ] (b) $u(E[W]) < E[u(W)]$
+- [ ] (c) $u(E[W]) = E[u(W)]$
+- [ ] (d) Depende da loteria específica
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 13**: Mini-lecture sobre função de produção e isoquantas + exercícios guiados de TMST e rendimentos de escala.
+    Na **Aula 14**, aprofundaremos as medidas de aversão ao risco de Arrow-Pratt, estudaremos o mercado de seguros e a cobertura ótima.

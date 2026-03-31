@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Aula 15 — Custos de — Microeconomia II</title>
+<title>Pré-Aula 15 — Escolha sob Incerteza III: Aplicações e Paradoxos — Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
-<script>window.MathJax={tex:{inlineMath:[['$$','$$'],['\\(','\\)']],displayMath:[['\\[','\\]'],['$$$$','$$$$']]},options:{enableMenu:false}};</script>
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
 </head>
 <body>
@@ -17,288 +17,243 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-15-custos-de-produção">Pré-Aula 15 — Custos de
-Produção</h1>
+<h1
+id="pré-aula-15-escolha-sob-incerteza-iii-aplicações-e-paradoxos">Pré-Aula
+15 — Escolha sob Incerteza III: Aplicações e Paradoxos</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 10, Seções 10.1–10.5</strong> do livro interativo |
-Tempo estimado: <strong>50 min</strong></p>
+<p><strong>Cap. 8, Seções 8.1–8.3</strong> do livro-texto | Tempo
+estimado: <strong>~45 min</strong></p>
 </div>
-<pre><code>**Cap. 10, Seções 10.1–10.5** do livro interativo | Tempo estimado: **50 min**</code></pre>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
 <p>Após estudar este material e antes de vir à aula, você deve ser capaz
 de:</p>
 <ol type="1">
-<li>Distinguir custo econômico de custo contábil e identificar custos de
-oportunidade</li>
-<li>Resolver o problema de minimização de custos usando o Lagrangiano e
-derivar as demandas condicionais de fatores</li>
-<li>Derivar e relacionar as curvas de custo total, custo médio e custo
-marginal</li>
+<li>Explicar os paradoxos de Allais e Ellsberg e identificar quais
+axiomas VNM eles violam.</li>
+<li>Descrever os três componentes da Teoria dos Prospectos: função
+valor, ponderação de probabilidades e ponto de referência.</li>
+<li>Aplicar a Teoria dos Prospectos a decisões do cotidiano, incluindo
+loterias e seguros.</li>
 </ol>
 <hr />
-<h2 id="custo-econômico-vs.-custo-contábil">1. Custo econômico vs. custo
-contábil</h2>
-O <strong>custo contábil</strong> registra apenas despesas explícitas —
-salários, aluguel, matérias-primas. O <strong>custo econômico</strong>
-inclui também o <strong>custo de oportunidade</strong>: o valor da
-melhor alternativa sacrificada.
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo rápido
-</div>
-<p>Um empresário que poderia ganhar <span
-class="math inline">\(\text{R\$}\,8.000\)</span>/mês como empregado, mas
-obtém receita de <span class="math inline">\(\text{R\$}\,15.000\)</span>
-e tem despesas de <span
-class="math inline">\(\text{R\$}\,5.000\)</span>:</p>
-<ul>
-<li>Lucro contábil: <span class="math inline">\(15.000 - 5.000 =
-\text{R\$}\,10.000\)</span></li>
-<li>Lucro econômico: <span class="math inline">\(15.000 - 5.000 - 8.000
-= \text{R\$}\,2.000\)</span></li>
-</ul>
-</div>
-<pre><code>Um empresário que poderia ganhar $\text{R\$}\,8.000$/mês como empregado, mas obtém receita de $\text{R\$}\,15.000$ e tem despesas de $\text{R\$}\,5.000$:
-
-- Lucro contábil: $15.000 - 5.000 = \text{R\$}\,10.000$
-- Lucro econômico: $15.000 - 5.000 - 8.000 = \text{R\$}\,2.000$</code></pre>
-<p><strong>Custos irrecuperáveis (sunk costs):</strong> gastos já
-realizados que <strong>não</strong> devem influenciar decisões futuras.
-Se você pagou R$ 50.000 por uma máquina que não tem valor de revenda,
-esse custo é irrelevante para a decisão de continuar ou parar a
-produção.</p>
-<hr />
-<h2 id="o-problema-de-minimização-de-custos">2. O problema de
-minimização de custos</h2>
-<p>A firma quer produzir uma quantidade <span
-class="math inline">\(q\)</span> ao menor custo possível, dados os
-preços dos insumos — salário <span class="math inline">\(w\)</span>
-(trabalho <span class="math inline">\(L\)</span>) e aluguel do capital
-<span class="math inline">\(v\)</span> (capital <span
-class="math inline">\(K\)</span>):</p>
-<p><span class="math display">\[\min_{L,K} \; wL + vK \quad \text{s.a.}
-\quad f(L,K) = q\]</span></p>
-<h3 id="linhas-de-isocusto">Linhas de isocusto</h3>
-<p>Para um dado gasto total <span class="math inline">\(C\)</span>, a
-combinação de insumos que custa exatamente <span
-class="math inline">\(C\)</span> satisfaz:</p>
-<p><span class="math display">\[C = wL + vK \implies K = \frac{C}{v} -
-\frac{w}{v}L\]</span></p>
-<p>A inclinação da isocusto é <span class="math inline">\(-w/v\)</span>
-— a <strong>razão de preços dos fatores</strong>.</p>
-<h3 id="condição-de-tangência">Condição de tangência</h3>
-<p>No ótimo, a isoquanta é tangente à isocusto:</p>
-<p><span class="math display">\[\text{TMST}_{L,K} = \frac{PMg_L}{PMg_K}
-= \frac{w}{v}\]</span></p>
-<p>Isso significa que o último real gasto em trabalho gera a mesma
-produção adicional que o último real gasto em capital.</p>
-<hr />
-<h2 id="solução-pelo-lagrangiano">3. Solução pelo Lagrangiano</h2>
-<p>Montamos o Lagrangiano:</p>
-<p><span class="math display">\[\mathcal{L}(L, K, \lambda) = wL + vK +
-\lambda\big[q - f(L,K)\big]\]</span></p>
-<p>As CPOs são:</p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L}
-= w - \lambda f_L = 0 \implies \lambda = \frac{w}{f_L}\]</span></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial K}
-= v - \lambda f_K = 0 \implies \lambda = \frac{v}{f_K}\]</span></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial
-\lambda} = q - f(L,K) = 0\]</span></p>
-<p>Igualando as duas primeiras: <span
-class="math inline">\(\frac{f_L}{f_K} = \frac{w}{v}\)</span> — a
-condição de tangência.</p>
-<h3 id="demandas-condicionais-de-fatores">Demandas condicionais de
-fatores</h3>
-<p>Resolvendo as CPOs, obtemos as <strong>demandas
-condicionais</strong>:</p>
-<p><span class="math display">\[L^* = L^c(w, v, q) \qquad K^* = K^c(w,
-v, q)\]</span></p>
-Essas funções nos dizem quanto de cada fator usar para produzir <span
-class="math inline">\(q\)</span> ao menor custo.
-<div class="admonition example">
-<div class="admonition-title">
-Exemplo: Cobb-Douglas <span class="math inline">\(f(L,K) =
-L^{1/2}K^{1/2}\)</span>
-</div>
-<p>Da tangência: <span class="math inline">\(\frac{K}{L} = \frac{w}{v}
-\implies K = \frac{w}{v}L\)</span></p>
-<p>Substituindo na restrição: <span
-class="math inline">\(L^{1/2}\left(\frac{w}{v}L\right)^{1/2} =
-q\)</span></p>
-<p><span class="math display">\[L^c = q\left(\frac{v}{w}\right)^{1/2},
-\qquad K^c = q\left(\frac{w}{v}\right)^{1/2}\]</span></p>
-</div>
-<pre><code>Da tangência: $\frac{K}{L} = \frac{w}{v} \implies K = \frac{w}{v}L$
-
-Substituindo na restrição: $L^{1/2}\left(\frac{w}{v}L\right)^{1/2} = q$
-
-$$L^c = q\left(\frac{v}{w}\right)^{1/2}, \qquad K^c = q\left(\frac{w}{v}\right)^{1/2}$$</code></pre>
-<hr />
-<h2 id="a-função-custo-e-suas-derivadas">4. A função custo e suas
-derivadas</h2>
-<p>Substituindo as demandas condicionais na função objetivo:</p>
-<p><span class="math display">\[C(w,v,q) = wL^c(w,v,q) +
-vK^c(w,v,q)\]</span></p>
-<p>Para a Cobb-Douglas do exemplo: <span class="math inline">\(C(w,v,q)
-= 2q\sqrt{wv}\)</span>.</p>
-<h3 id="custo-médio-e-custo-marginal">Custo Médio e Custo Marginal</h3>
-<p><span class="math display">\[\text{CMe}(q) = \frac{C(q)}{q} \qquad
-\text{CMg}(q) = \frac{dC}{dq}\]</span></p>
-<p><strong>Relação fundamental CMg–CMe:</strong></p>
-<ul>
-<li>Se <span class="math inline">\(\text{CMg} &lt; \text{CMe}\)</span>:
-o custo médio está <strong>caindo</strong></li>
-<li>Se <span class="math inline">\(\text{CMg} &gt; \text{CMe}\)</span>:
-o custo médio está <strong>subindo</strong></li>
-<li>Se <span class="math inline">\(\text{CMg} = \text{CMe}\)</span>: o
-custo médio está no seu <strong>mínimo</strong>
-<div class="admonition tip">
-<div class="admonition-title">
-Analogia útil
-</div>
-</div></li>
-</ul>
-<p>Pense na sua média de notas. Se a próxima prova (marginal) for abaixo
-da média, a média cai. Se for acima, sobe. Se for igual, a média fica
-constante. A mesma lógica vale para custos.</p>
-</div>
-<pre><code>Pense na sua média de notas. Se a próxima prova (marginal) for abaixo da média, a média cai. Se for acima, sobe. Se for igual, a média fica constante. A mesma lógica vale para custos.</code></pre>
-<hr />
-<h2 id="gráfico-interativo-minimização-de-custos">Gráfico interativo:
-minimização de custos</h2>
-<div id="graph-min-custos" style="min-height: 450px;">
-<iframe src="../../graficos/cap10/minimizacao-custos.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;">
-</iframe>
-</div>
-<div class="admonition tip">
-<div class="admonition-title">
-Explore o gráfico
-</div>
-<ul>
-<li>Altere os preços dos fatores (<span
-class="math inline">\(w\)</span>, <span
-class="math inline">\(v\)</span>) e observe como a isocusto
-rotaciona</li>
-<li>Mude a quantidade-alvo <span class="math inline">\(q\)</span> e veja
-a isoquanta se deslocar</li>
-<li>Note que o ótimo está sempre na <strong>tangência</strong> entre
-isoquanta e isocusto</li>
-</ul>
-</div>
-<pre><code>- Altere os preços dos fatores ($w$, $v$) e observe como a isocusto rotaciona
-- Mude a quantidade-alvo $q$ e veja a isoquanta se deslocar
-- Note que o ótimo está sempre na **tangência** entre isoquanta e isocusto</code></pre>
-<hr />
-<h2 id="box-custos-de-oportunidade-e-decisão">Box: Custos de
-oportunidade e decisão</h2>
+<h2 id="paradoxo-de-allais">1. Paradoxo de Allais</h2>
+<p>Maurice Allais (1953) propôs dois pares de escolha que
+sistematicamente violam o axioma da independência:</p>
+<p><strong>Par 1:</strong> A = R$ 1 milhão com certeza vs. B = (0,89; 1M
+| 0,10; 5M | 0,01; 0)</p>
+<p><strong>Par 2:</strong> C = (0,11; 1M | 0,89; 0) vs. D = (0,10; 5M |
+0,90; 0)</p>
+<p>A maioria escolhe <span class="math inline">\(A \succ B\)</span> e
+<span class="math inline">\(D \succ C\)</span>. Porém, pela utilidade
+esperada:</p>
+<p><span class="math display">\[A \succ B \implies u(1M) &gt;
+0{,}89\,u(1M) + 0{,}10\,u(5M) + 0{,}01\,u(0)\]</span></p>
+<p>Reescrevendo: <span class="math inline">\(0{,}11\,u(1M) &gt;
+0{,}10\,u(5M) + 0{,}01\,u(0)\)</span>, o que implica <span
+class="math inline">\(C \succ D\)</span> — contradição!</p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>Por que economistas insistem em custos de
-oportunidade?</strong></p>
-<p>Porque toda decisão envolve uma alternativa sacrificada. Ao alocar
-trabalho na linha de produção A, a firma abre mão de usá-lo na linha B.
-A condição de tangência <span class="math inline">\(\text{TMST} =
-w/v\)</span> garante que a firma não está “desperdiçando” nenhum fator —
-cada real gasto gera a mesma produção marginal, independentemente de
-onde é alocado. Ignorar custos de oportunidade leva a decisões
-ineficientes, mesmo quando o lucro contábil parece positivo.</p>
+<p>O paradoxo de Allais revela o <strong>efeito certeza</strong>: as
+pessoas sobrevalorizam resultados certos em relação a resultados apenas
+prováveis. Trocar “certeza de 1M” por “89% de 1M” parece uma perda
+enorme, mesmo que a probabilidade mude apenas 11 pontos percentuais.</p>
 </div>
-<pre><code>**Por que economistas insistem em custos de oportunidade?**
-
-Porque toda decisão envolve uma alternativa sacrificada. Ao alocar trabalho na linha de produção A, a firma abre mão de usá-lo na linha B. A condição de tangência $\text{TMST} = w/v$ garante que a firma não está &quot;desperdiçando&quot; nenhum fator — cada real gasto gera a mesma produção marginal, independentemente de onde é alocado. Ignorar custos de oportunidade leva a decisões ineficientes, mesmo quando o lucro contábil parece positivo.</code></pre>
 <hr />
-<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<strong>Exercício 1.</strong> Uma firma tem função de produção <span
-class="math inline">\(f(L,K) = L^{1/3}K^{2/3}\)</span>, com <span
-class="math inline">\(w = 4\)</span> e <span class="math inline">\(v =
-8\)</span>. Encontre as demandas condicionais <span
-class="math inline">\(L^c\)</span> e <span
-class="math inline">\(K^c\)</span> para produzir <span
-class="math inline">\(q = 10\)</span>.
+<h2 id="paradoxo-de-ellsberg">2. Paradoxo de Ellsberg</h2>
+<p>Daniel Ellsberg (1961) mostrou que as pessoas distinguem entre
+<strong>risco</strong> (probabilidades conhecidas) e
+<strong>ambiguidade</strong> (probabilidades desconhecidas).</p>
+<p>Uma urna contém 30 bolas vermelhas e 60 bolas pretas ou amarelas
+(proporção desconhecida):</p>
+<ul>
+<li><strong>Aposta A</strong>: ganha R$ 100 se vermelha → <span
+class="math inline">\(P = 1/3\)</span> (conhecida)</li>
+<li><strong>Aposta B</strong>: ganha R$ 100 se preta → <span
+class="math inline">\(P = ?\)</span> (ambígua)</li>
+</ul>
+<p>A maioria prefere <span class="math inline">\(A \succ B\)</span>,
+revelando <strong>aversão à ambiguidade</strong>. Este comportamento
+viola não apenas a utilidade esperada, mas qualquer modelo baseado em
+probabilidades subjetivas únicas.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>As pessoas preferem “o diabo que conhecem”. A ambiguidade gera
+desconforto adicional além do risco puro. Isso explica por que
+investidores preferem ações domésticas (home bias) mesmo quando a
+diversificação internacional seria ótima.</p>
+</div>
+<hr />
+<h2 id="teoria-dos-prospectos">3. Teoria dos Prospectos</h2>
+<p>Kahneman e Tversky (1979) propuseram a <strong>Teoria dos
+Prospectos</strong> (Prospect Theory) como alternativa descritiva à
+utilidade esperada. Seus três pilares são:</p>
+<p><strong>Função valor</strong> <span
+class="math inline">\(v(x)\)</span> definida sobre <strong>ganhos e
+perdas</strong> relativas a um ponto de referência:</p>
+<p><span class="math display">\[v(x) = \begin{cases} x^\alpha &amp;
+\text{se } x \geq 0 \\ -\lambda(-x)^\beta &amp; \text{se } x &lt; 0
+\end{cases}\]</span></p>
+<p>com parâmetros típicos <span class="math inline">\(\alpha = \beta
+\approx 0{,}88\)</span> e <span class="math inline">\(\lambda \approx
+2{,}25\)</span>.</p>
+<p>Propriedades da função valor:</p>
+<ul>
+<li><strong>Côncava para ganhos</strong> (aversão ao risco em
+ganhos)</li>
+<li><strong>Convexa para perdas</strong> (propensão ao risco em
+perdas)</li>
+<li><strong>Mais íngreme para perdas</strong> → <strong>aversão à
+perda</strong> (<span class="math inline">\(\lambda &gt;
+1\)</span>)</li>
+</ul>
+<iframe src="graficos/cap08/funcao-valor-pt.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe o formato em “S” da função valor. Note a assimetria: a dor de
+perder R$ 100 é sentida com intensidade <span
+class="math inline">\(\lambda \approx 2{,}25\)</span> vezes maior do que
+o prazer de ganhar R$ 100.</p>
+</div>
+<hr />
+<h2 id="ponderação-de-probabilidades-e-cpt">4. Ponderação de
+Probabilidades e CPT</h2>
+<p>Na Teoria dos Prospectos, as probabilidades objetivas <span
+class="math inline">\(p\)</span> são transformadas por uma
+<strong>função de ponderação</strong> <span
+class="math inline">\(w(p)\)</span>:</p>
+<p><span class="math display">\[w(p) = \frac{p^\delta}{(p^\delta +
+(1-p)^\delta)^{1/\delta}}\]</span></p>
+<p>com <span class="math inline">\(\delta \approx 0{,}65\)</span>.
+Propriedades:</p>
+<ul>
+<li><strong>Sobreponderação de probabilidades pequenas</strong>: <span
+class="math inline">\(w(p) &gt; p\)</span> para <span
+class="math inline">\(p\)</span> pequeno</li>
+<li><strong>Subponderação de probabilidades grandes</strong>: <span
+class="math inline">\(w(p) &lt; p\)</span> para <span
+class="math inline">\(p\)</span> grande</li>
+<li><span class="math inline">\(w(0) = 0\)</span>, <span
+class="math inline">\(w(1) = 1\)</span></li>
+</ul>
+<p>A avaliação de um prospecto <span class="math inline">\((x_1, p; x_2,
+1-p)\)</span> com <span class="math inline">\(x_1 &gt; 0 &gt;
+x_2\)</span> é:</p>
+<p><span class="math display">\[V = w(p) \cdot v(x_1) + w(1-p) \cdot
+v(x_2)\]</span></p>
+<p>A <strong>Teoria dos Prospectos Cumulativa</strong> (CPT, Tversky
+&amp; Kahneman, 1992) estende o modelo para loterias com múltiplos
+resultados, aplicando a ponderação às probabilidades cumulativas.</p>
+<iframe src="graficos/cap08/ponderacao-prob.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Compare a curva de ponderação <span
+class="math inline">\(w(p)\)</span> com a diagonal (probabilidades
+objetivas). Note o cruzamento: probabilidades pequenas são infladas e
+probabilidades grandes são deflacionadas.</p>
+</div>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A Teoria dos Prospectos explica um padrão fascinante: a mesma pessoa
+compra bilhete de loteria (sobrepondera a pequena chance de ganho) e faz
+seguro (sobrepondera a pequena chance de perda catastrófica). Na
+utilidade esperada padrão, isso seria impossível com uma única curvatura
+de <span class="math inline">\(u\)</span>.</p>
+</div>
+<hr />
+<h2 id="aplicação-mega-sena">5. Aplicação: Mega-Sena</h2>
+<p>O bilhete da Mega-Sena custa R$ 5,00 e a chance de acertar 6 números
+é <span class="math inline">\(\approx 1/50\,\text{milhões}\)</span>. O
+valor esperado é amplamente negativo. Pela Teoria dos Prospectos:</p>
+<ul>
+<li>A pequena probabilidade de ganho é <strong>sobreponderada</strong>
+(<span class="math inline">\(w(p) \gg p\)</span>).</li>
+<li>O ganho é avaliado pela função valor côncava, mas o efeito da
+sobreponderação domina.</li>
+<li>A perda de R$ 5,00 é pequena em relação ao ponto de referência.</li>
+</ul>
+<p>Resultado: a compra do bilhete pode ser “racional” sob Prospect
+Theory.</p>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> No paradoxo de Allais, mostre
+formalmente que as escolhas <span class="math inline">\(A \succ
+B\)</span> e <span class="math inline">\(D \succ C\)</span> violam o
+axioma da independência.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Tangência: <span class="math inline">\(\frac{PMg_L}{PMg_K} =
-\frac{w}{v}\)</span></p>
-<p><span class="math inline">\(PMg_L =
-\frac{1}{3}L^{-2/3}K^{2/3}\)</span>, <span class="math inline">\(\quad
-PMg_K = \frac{2}{3}L^{1/3}K^{-1/3}\)</span></p>
-<p><span class="math display">\[\frac{K}{2L} = \frac{4}{8} = \frac{1}{2}
-\implies K = L\]</span></p>
-<p>Substituindo: <span class="math inline">\(L^{1/3}L^{2/3} = L = 10
-\implies L^c = 10, \; K^c = 10\)</span></p>
-<p>Custo total: <span class="math inline">\(C = 4(10) + 8(10) =
-120\)</span></p>
+<p>Defina <span class="math inline">\(L_0 = (1,\;1M)\)</span>, <span
+class="math inline">\(L_1 = (10/11,\;5M;\;1/11,\;0)\)</span>, <span
+class="math inline">\(L_2 = (1,\;0)\)</span>.<br />
+<span class="math inline">\(A = 0{,}11 L_0 + 0{,}89 L_0\)</span> e <span
+class="math inline">\(B = 0{,}11 L_1 + 0{,}89 L_0\)</span>.<br />
+Pelo axioma da independência, <span class="math inline">\(A \succ B \iff
+L_0 \succ L_1\)</span>.<br />
+<span class="math inline">\(C = 0{,}11 L_0 + 0{,}89 L_2\)</span> e <span
+class="math inline">\(D = 0{,}11 L_1 + 0{,}89 L_2\)</span>.<br />
+Pelo mesmo axioma, <span class="math inline">\(L_0 \succ L_1 \implies C
+\succ D\)</span>.<br />
+Mas as pessoas escolhem <span class="math inline">\(D \succ C\)</span>,
+violando a independência.</p>
 </div>
 </details>
-<pre><code>Tangência: $\frac{PMg_L}{PMg_K} = \frac{w}{v}$
-
-$PMg_L = \frac{1}{3}L^{-2/3}K^{2/3}$, $\quad PMg_K = \frac{2}{3}L^{1/3}K^{-1/3}$
-
-$$\frac{K}{2L} = \frac{4}{8} = \frac{1}{2} \implies K = L$$
-
-Substituindo: $L^{1/3}L^{2/3} = L = 10 \implies L^c = 10, \; K^c = 10$
-
-Custo total: $C = 4(10) + 8(10) = 120$</code></pre>
-<strong>Exercício 2.</strong> Para a função custo <span
-class="math inline">\(C(q) = q^3 - 6q^2 + 15q\)</span>, encontre o custo
-marginal e o custo médio. Em que quantidade <span
-class="math inline">\(q\)</span> o CMe atinge seu mínimo?
+<p><strong>Exercício 2.</strong> Calcule o valor de um prospecto <span
+class="math inline">\(P = (+500, 0{,}10;\; -200, 0{,}90)\)</span> usando
+<span class="math inline">\(\alpha = \beta = 0{,}88\)</span>, <span
+class="math inline">\(\lambda = 2{,}25\)</span> e <span
+class="math inline">\(\delta = 0{,}65\)</span>.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(\text{CMg} = 3q^2 - 12q + 15\)</span></p>
-<p><span class="math inline">\(\text{CMe} = q^2 - 6q + 15\)</span></p>
-<p>No mínimo do CMe: <span
-class="math inline">\(\frac{d(\text{CMe})}{dq} = 2q - 6 = 0 \implies q =
-3\)</span></p>
-<p><span class="math inline">\(\text{CMe}(3) = 9 - 18 + 15 =
-6\)</span></p>
-<p>Verificação: <span class="math inline">\(\text{CMg}(3) = 27 - 36 + 15
-= 6 = \text{CMe}(3)\)</span> ✓</p>
+<p><span class="math inline">\(v(+500) = 500^{0,88} \approx
+274{,}7\)</span>.<br />
+<span class="math inline">\(v(-200) = -2{,}25 \times 200^{0,88} \approx
+-2{,}25 \times 122{,}5 \approx -275{,}6\)</span>.<br />
+<span class="math inline">\(w(0{,}10) \approx
+\frac{0{,}10^{0,65}}{(0{,}10^{0,65} + 0{,}90^{0,65})^{1/0,65}} \approx
+0{,}18\)</span>.<br />
+<span class="math inline">\(w(0{,}90) \approx 0{,}71\)</span>.<br />
+<span class="math inline">\(V = 0{,}18 \times 274{,}7 + 0{,}71 \times
+(-275{,}6) \approx 49{,}4 - 195{,}7 = -146{,}3 &lt; 0\)</span>.<br />
+O prospecto é rejeitado.</p>
 </div>
 </details>
-<pre><code>$\text{CMg} = 3q^2 - 12q + 15$
-
-$\text{CMe} = q^2 - 6q + 15$
-
-No mínimo do CMe: $\frac{d(\text{CMe})}{dq} = 2q - 6 = 0 \implies q = 3$
-
-$\text{CMe}(3) = 9 - 18 + 15 = 6$
-
-Verificação: $\text{CMg}(3) = 27 - 36 + 15 = 6 = \text{CMe}(3)$ ✓</code></pre>
-<strong>Exercício 3.</strong> Explique por que custos irrecuperáveis não
-devem afetar decisões racionais. Dê um exemplo cotidiano.
+<p><strong>Exercício 3.</strong> Explique por que a Teoria dos
+Prospectos prevê que motoristas de táxi trabalham menos em dias de alta
+demanda.</p>
 <details>
 <summary>
-success
+Solução
 </summary>
 <div class="solution-body">
-<p>Custos irrecuperáveis (sunk costs) já foram incorridos e não podem
-ser recuperados, independentemente da decisão futura. Como decisões
-racionais se baseiam em comparar custos e benefícios
-<strong>marginais</strong> (futuros), incluir custos passados distorce a
-análise.</p>
-<p>Exemplo: você pagou R$ 80 por um ingresso de cinema, mas após 30
-minutos percebe que o filme é péssimo. O custo do ingresso é
-irrecuperável — a decisão racional é sair se o benefício de ficar
-(prazer restante) for menor que o custo de oportunidade do seu tempo.
-Ficar “para não desperdiçar o ingresso” é a falácia do custo
-irrecuperável.</p>
+<p>Camerer et al. (1997) documentaram que taxistas estabelecem uma
+<strong>meta diária de renda</strong> (ponto de referência). Em dias
+bons (alta demanda), atingem a meta rapidamente e param — estão no
+domínio dos ganhos (aversos ao risco, logo param). Em dias ruins,
+continuam trabalhando para evitar ficar abaixo da meta — estão no
+domínio das perdas (propensos ao risco). Isso contradiz a teoria padrão:
+deveriam trabalhar mais quando o “salário” por hora é maior.</p>
 </div>
 </details>
-<pre><code>Custos irrecuperáveis (sunk costs) já foram incorridos e não podem ser recuperados, independentemente da decisão futura. Como decisões racionais se baseiam em comparar custos e benefícios **marginais** (futuros), incluir custos passados distorce a análise.
-
-Exemplo: você pagou R$ 80 por um ingresso de cinema, mas após 30 minutos percebe que o filme é péssimo. O custo do ingresso é irrecuperável — a decisão racional é sair se o benefício de ficar (prazer restante) for menor que o custo de oportunidade do seu tempo. Ficar &quot;para não desperdiçar o ingresso&quot; é a falácia do custo irrecuperável.</code></pre>
 <hr />
 <h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
 <div class="admonition warning">
@@ -308,212 +263,60 @@ Complete antes da aula
 <p>Responda no LMS até <strong>2 horas antes</strong> do início da
 aula.</p>
 </div>
-<pre><code>Responda no LMS até **2 horas antes** do início da aula.</code></pre>
 <div class="quiz-container">
-<div class="quiz-header">
-<h3>
-Quiz Pre-Aula
-</h3>
-<div class="quiz-score">
-Pontuacao: <span id="quiz-score">0/0</span>
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. O paradoxo de Allais viola qual axioma de VNM?</div>
+<div class="quiz-option" data-value="a">(a) Completude</div>
+<div class="quiz-option" data-value="b">(b) Transitividade</div>
+<div class="quiz-option" data-value="c">(c) Independência</div>
+<div class="quiz-option" data-value="d">(d) Continuidade</div>
+<div class="quiz-feedback"></div>
 </div>
-</div>
-<div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">
-Q1. Qual a diferença entre custo econômico e custo contábil?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Não há diferença; são sinônimos
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O custo econômico inclui custos de oportunidade; o contábil, não
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O custo contábil inclui custos de oportunidade; o econômico, não
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>O custo econômico desconsidera custos fixos
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q2" data-correct="c">
-<div class="q-text">
-Q2. No problema de minimização de custos, a condição de tangência exige
-que:
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li><span class="math inline">\(PMg_L = PMg_K\)</span>
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li><span class="math inline">\(PMg_L / w = PMg_K \cdot v\)</span>
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li><span class="math inline">\(PMg_L / PMg_K = w / v\)</span>
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li><span class="math inline">\(PMg_L \cdot PMg_K = w \cdot v\)</span>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2. A aversão à perda na Teoria dos Prospectos significa que:</div>
+<div class="quiz-option" data-value="a">(a) Perdas são ignoradas</div>
+<div class="quiz-option" data-value="b">(b) Perdas pesam mais do que ganhos de mesma magnitude ($\lambda > 1$)</div>
+<div class="quiz-option" data-value="c">(c) Ganhos e perdas são simétricos</div>
+<div class="quiz-option" data-value="d">(d) Todas as pessoas são aversas ao risco</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q3" data-correct="a">
-<div class="q-text">
-Q3. Se o custo marginal está abaixo do custo médio, o que acontece com o
-CMe à medida que <span class="math inline">\(q\)</span> aumenta?
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O CMe está caindo
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O CMe está subindo
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O CMe permanece constante
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>Depende do custo fixo
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="q-text">Q3. A função de ponderação $w(p)$ para $p$ pequeno tipicamente satisfaz:</div>
+<div class="quiz-option" data-value="a">(a) $w(p) > p$ (sobreponderação)</div>
+<div class="quiz-option" data-value="b">(b) $w(p) < p$ (subponderação)</div>
+<div class="quiz-option" data-value="c">(c) $w(p) = p$</div>
+<div class="quiz-option" data-value="d">(d) $w(p) = 0$</div>
+<div class="quiz-feedback"></div>
 </div>
 <div class="quiz-question" data-question="q4" data-correct="b">
-<div class="q-text">
-Q4. No ótimo do Lagrangiano de minimização de custos, o multiplicador
-<span class="math inline">\(\lambda^*\)</span> representa:
+<div class="q-text">Q4. No domínio das perdas, a função valor da PT prevê:</div>
+<div class="quiz-option" data-value="a">(a) Aversão ao risco</div>
+<div class="quiz-option" data-value="b">(b) Propensão ao risco</div>
+<div class="quiz-option" data-value="c">(c) Neutralidade ao risco</div>
+<div class="quiz-option" data-value="d">(d) Aversão à ambiguidade</div>
+<div class="quiz-feedback"></div>
 </div>
-<div class="quiz-feedback">
-
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. O paradoxo de Ellsberg demonstra:</div>
+<div class="quiz-option" data-value="a">(a) Violação da transitividade</div>
+<div class="quiz-option" data-value="b">(b) Que as pessoas são neutras ao risco</div>
+<div class="quiz-option" data-value="c">(c) Aversão à ambiguidade (incerteza sobre probabilidades)</div>
+<div class="quiz-option" data-value="d">(d) Que $w(p) = p$ para todo $p$</div>
+<div class="quiz-feedback"></div>
 </div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>O custo total de produção
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>O custo marginal — quanto custa produzir uma unidade adicional
-</div>
-<div class="quiz-option" data-value="c">
-<ol start="3" type="a">
-<li>O preço do trabalho dividido pelo preço do capital
-</div>
-<div class="quiz-option" data-value="d">
-<ol start="4" type="a">
-<li>A produtividade marginal do trabalho
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-question" data-question="q5" data-correct="b">
-<div class="q-text">
-Q5. V ou F: “Custos irrecuperáveis devem ser incluídos na análise
-marginal de decisões futuras.”
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<div class="quiz-option" data-value="a">
-<ol type="a">
-<li>Verdadeiro
-</div>
-<div class="quiz-option" data-value="b">
-<ol start="2" type="a">
-<li>Falso — custos irrecuperáveis não afetam decisões racionais futuras
-</div>
-<div class="quiz-feedback">
-
-</div>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div></li>
-</ol>
-</div>
-<div class="quiz-feedback">
-
-</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-15')">Enviar Quiz</button></div>
 </div>
 <hr />
 <div class="admonition abstract">
 <div class="admonition-title">
 Próxima aula
 </div>
-<div class="quiz-feedback">
-
-</div>
-</div>
-<strong>Aula 15</strong>: Mini-lecture sobre custos de produção +
-minimização de custos com exercícios práticos. Traga calculadora!
-<div class="quiz-feedback">
-
-</div>
-</div>
-</div>
-<pre><code>**Aula 15**: Mini-lecture sobre custos de produção + minimização de custos com exercícios práticos. Traga calculadora!</code></pre>
-<div class="quiz-feedback">
-
-</div>
+<p>Na <strong>Aula 16</strong>, estudaremos mercados de risco e
+informação assimétrica: seleção adversa (mercado de limões), risco
+moral, sinalização e screening, com aplicações ao sistema de saúde e
+seguros no Brasil.</p>
 </div>
 
 </div>
@@ -524,7 +327,22 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('aula-15');
 MicroQuiz.init('aula-15');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
 </script>
 </body>
 </html>
-

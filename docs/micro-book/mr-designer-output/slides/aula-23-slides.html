@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-23-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-23-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-23-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-23-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-23-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,8 +143,8 @@ Insper
 </div>
 
 </section>
-<section id="gol-vs.-azul-como-duas-empresas-decidem-o-preço-da-passagem" class="slide level2">
-<h2>Gol vs.&nbsp;Azul: como duas empresas decidem o preço da passagem?</h2>
+<section id="gol-vs-azul-interdependência-estratégica" class="slide level2">
+<h2>Gol vs Azul: Interdependência Estratégica</h2>
 <blockquote>
 <p>Em janeiro de 2024, a passagem SP–RJ custava R$350 na Gol e R$360 na Azul. Coincidência?</p>
 </blockquote>
@@ -227,8 +229,8 @@ Insper
 </div>
 </div>
 </section>
-<section id="bertrand-competição-em-preços-e-o-paradoxo" class="slide level2">
-<h2>Bertrand: Competição em Preços e o Paradoxo</h2>
+<section id="bertrand-competição-em-preços" class="slide level2">
+<h2>Bertrand: Competição em Preços</h2>
 <div class="columns">
 <div class="column" style="width:45%;">
 <p><strong>Hipóteses:</strong></p>
@@ -241,23 +243,96 @@ Insper
 <p><strong>Equilíbrio de Nash:</strong></p>
 <p><span class="math display">\[P_1^* = P_2^* = c\]</span></p>
 <p>. . .</p>
-<p><strong>Paradoxo de Bertrand:</strong> apenas 2 firmas e já temos o resultado <strong>competitivo</strong>!</p>
-<p><span class="math display">\[\pi_1 = \pi_2 = 0\]</span></p>
+<p><strong>Lucro:</strong> <span class="math inline">\(\pi_1 = \pi_2 = 0\)</span></p>
+<p>Arraste o slider para alterar o custo marginal e observe o equilíbrio se mover ao longo da diagonal.</p>
 </div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap16/bertrand.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div id="graph-a23-bertrand" style="width:520px;height:400px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label><span class="math inline">\(c\)</span>: <input type="range" id="sl-a23-mc" min="2" max="8" value="4" step="0.5" oninput="updA23Bertrand()"> <span id="val-a23-mc">4.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-bertrand',{
+    boundingbox:[-1,12,12,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[11,0.6,'P₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[0.4,11.2,'P₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var mcVal = 4;
+
+  // 45-degree line (diagonal)
+  brd.create('line',[[0,0],[1,1]],{
+    strokeColor:'#999',strokeWidth:1,dash:2,
+    straightFirst:true,straightLast:true,fixed:true
+  });
+
+  // Best response firm 1: P1 = P2 - eps, shown as segment on/just below diagonal
+  var br1 = brd.create('functiongraph',[function(p2){
+    // BR1: match rival's price down to MC
+    if(p2 <= mcVal) return mcVal;
+    return p2 - 0.05;
+  }, mcVal, 11],{strokeColor:'#1565c0',strokeWidth:2.5});
+
+  // Best response firm 2: P2 = P1 - eps, shown as segment on/just left of diagonal
+  var br2 = brd.create('functiongraph',[function(p1){
+    if(p1 <= mcVal) return mcVal;
+    return p1 - 0.05;
+  }, mcVal, 11],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // Equilibrium point
+  var eqPt = brd.create('point',[function(){return mcVal;},function(){return mcVal;}],{
+    name:'', size:5, strokeColor:'#000', fillColor:'#ff9800',fixed:true
+  });
+  var eqLabel = brd.create('text',[function(){return mcVal+0.4;},function(){return mcVal+0.5;},
+    function(){return 'NE ('+mcVal.toFixed(1)+', '+mcVal.toFixed(1)+')';}],{
+    fontSize:12,cssStyle:'font-weight:bold;color:#ff9800;'
+  });
+
+  brd.create('text',[8.5,9.5,'BR₁'],{fontSize:12,cssStyle:'font-weight:bold;color:#1565c0;'});
+  brd.create('text',[9.5,8.5,'BR₂'],{fontSize:12,cssStyle:'font-weight:bold;color:#C8102E;'});
+
+  window.updA23Bertrand = function(){
+    mcVal = parseFloat(document.getElementById('sl-a23-mc').value);
+    document.getElementById('val-a23-mc').textContent = mcVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
 </div></div>
+</section>
+<section id="paradoxo-de-bertrand" class="slide level2">
+<h2>Paradoxo de Bertrand</h2>
+<p><strong>Com apenas 2 firmas, obtemos o resultado competitivo!</strong></p>
+<p><span class="math display">\[P_1^* = P_2^* = c, \quad \pi_1 = \pi_2 = 0\]</span></p>
 <div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
+<p><strong>Por que é surpreendente?</strong></p>
+<ul>
+<li>No monopólio, 1 firma <span class="math inline">\(\implies\)</span> <span class="math inline">\(P \gg c\)</span> e lucro econômico positivo</li>
+<li>No oligopólio de Cournot, 2 firmas <span class="math inline">\(\implies\)</span> <span class="math inline">\(P &gt; c\)</span></li>
+<li>Em Bertrand, 2 firmas já bastam para <strong>eliminar todo o lucro</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Lógica do equilíbrio:</strong></p>
+<ol type="1">
+<li>Se <span class="math inline">\(P_1 &gt; P_2 &gt; c\)</span>: firma 1 perde todos os clientes</li>
+<li>Se <span class="math inline">\(P_1 = P_2 &gt; c\)</span>: firma 1 pode desviar para <span class="math inline">\(P_1 - \epsilon\)</span> e capturar todo o mercado</li>
+<li>O único equilíbrio estável: <span class="math inline">\(P_1 = P_2 = c\)</span></li>
+</ol>
+</div>
+<div class="fragment">
+<div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Nota</strong></p>
+<p><strong>Aviso</strong></p>
 </div>
 <div class="callout-content">
-<p>O paradoxo se resolve com: diferenciação de produto, restrições de capacidade, ou interação repetida.</p>
+<p>A competição em preços com produto homogêneo é <strong>brutal</strong> — basta um rival para destruir o poder de mercado.</p>
 </div>
 </div>
 </div>
@@ -283,7 +358,7 @@ Insper
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Diferenciação de produto</td>
-<td style="text-align: left;">Consumidores têm preferências → demanda não migra 100%</td>
+<td style="text-align: left;">Consumidores têm preferências <span class="math inline">\(\implies\)</span> demanda não migra 100%</td>
 <td style="text-align: left;"><span class="math inline">\(P &gt; c\)</span>, lucro positivo</td>
 </tr>
 <tr class="even">
@@ -322,8 +397,8 @@ Insper
 </div>
 </div>
 </section>
-<section id="cournot-competição-em-quantidades-setup" class="slide level2">
-<h2>Cournot: Competição em Quantidades — Setup</h2>
+<section id="cournot-competição-em-quantidades" class="slide level2">
+<h2>Cournot: Competição em Quantidades</h2>
 <p><strong>Hipóteses:</strong></p>
 <ul>
 <li>2 firmas, produto homogêneo</li>
@@ -349,34 +424,88 @@ Insper
 <p>. . .</p>
 <p><strong>No equilíbrio:</strong> <span class="math inline">\(q_1^* = q_2^* = q^C\)</span>:</p>
 <p><span class="math display">\[q^C = \frac{a - c}{3b}\]</span></p>
-<p><span class="math display">\[Q^C = 2q^C = \frac{2(a-c)}{3b}\]</span></p>
-<p><span class="math display">\[P^C = \frac{a + 2c}{3}\]</span></p>
+<p><span class="math display">\[Q^C = \frac{2(a-c)}{3b}, \quad P^C = \frac{a + 2c}{3}\]</span></p>
 <p>. . .</p>
 <p><strong>Lucro de cada firma:</strong></p>
 <p><span class="math display">\[\pi^C = \frac{(a-c)^2}{9b}\]</span></p>
+<p>Arraste <span class="math inline">\(a\)</span> para ver como o intercepto da demanda desloca as funções de melhor resposta.</p>
 </div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap16/cournot.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div id="graph-a23-cournot" style="width:520px;height:400px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label><span class="math inline">\(a\)</span>: <input type="range" id="sl-a23-a" min="20" max="50" value="30" step="1" oninput="updA23Cournot()"> <span id="val-a23-a">30</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-cournot',{
+    boundingbox:[-2,28,28,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[26,1,'q₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1,26.5,'q₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var aVal = 30, bVal = 1, cVal = 6;
+
+  // BR1: q1*(q2) = (a-c)/(2b) - q2/2  =>  q2 = (a-c)/b - 2*q1
+  // BR2: q2*(q1) = (a-c)/(2b) - q1/2
+  var br1 = brd.create('functiongraph',[function(q1){
+    // This plots q2 as function of q1 for BR1: q2 = (a-c)/b - 2*q1
+    var intercept = (aVal - cVal)/bVal;
+    return intercept - 2*q1;
+  }, 0, function(){return (aVal-cVal)/(2*bVal);}],{strokeColor:'#1565c0',strokeWidth:2.5});
+
+  var br2 = brd.create('functiongraph',[function(q1){
+    // BR2: q2 = (a-c)/(2b) - q1/2
+    return (aVal - cVal)/(2*bVal) - q1/2;
+  }, 0, function(){return (aVal-cVal)/bVal;}],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // Cournot NE
+  var nePoint = brd.create('point',[
+    function(){return (aVal-cVal)/(3*bVal);},
+    function(){return (aVal-cVal)/(3*bVal);}
+  ],{name:'',size:5,strokeColor:'#000',fillColor:'#ff9800',fixed:true});
+
+  brd.create('text',[function(){return (aVal-cVal)/(3*bVal)+0.8;},
+    function(){return (aVal-cVal)/(3*bVal)+1.2;},
+    function(){
+      var qc = ((aVal-cVal)/(3*bVal)).toFixed(1);
+      return 'Cournot NE ('+qc+', '+qc+')';
+    }],{fontSize:11,cssStyle:'font-weight:bold;color:#ff9800;'});
+
+  // Monopoly point (split equally)
+  var monPoint = brd.create('point',[
+    function(){return (aVal-cVal)/(4*bVal);},
+    function(){return (aVal-cVal)/(4*bVal);}
+  ],{name:'',size:4,strokeColor:'#000',fillColor:'#9c27b0',fixed:true});
+
+  brd.create('text',[function(){return (aVal-cVal)/(4*bVal)+0.8;},
+    function(){return (aVal-cVal)/(4*bVal)-1;},
+    function(){
+      var qm = ((aVal-cVal)/(4*bVal)).toFixed(1);
+      return 'Monopólio ('+qm+', '+qm+')';
+    }],{fontSize:10,cssStyle:'color:#9c27b0;'});
+
+  // Competitive point
+  var cpPoint = brd.create('point',[
+    function(){return (aVal-cVal)/(2*bVal);},
+    function(){return 0;}
+  ],{name:'',size:4,strokeColor:'#000',fillColor:'#4caf50',fixed:true,visible:false});
+
+  brd.create('text',[2,function(){return (aVal-cVal)/(2*bVal)+1.2;},'BR₁ (firma 1)'],{fontSize:11,cssStyle:'font-weight:bold;color:#1565c0;'});
+  brd.create('text',[function(){return (aVal-cVal)/bVal - 4;},2,'BR₂ (firma 2)'],{fontSize:11,cssStyle:'font-weight:bold;color:#C8102E;'});
+
+  window.updA23Cournot = function(){
+    aVal = parseFloat(document.getElementById('sl-a23-a').value);
+    document.getElementById('val-a23-a').textContent = aVal;
+    brd.update();
+  };
+})();
+</script>
 </div></div>
-<div class="fragment">
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Nota</strong></p>
-</div>
-<div class="callout-content">
-<p>As curvas de melhor resposta se cruzam no equilíbrio de Nash — nenhuma firma quer desviar unilateralmente.</p>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="exemplo-numérico-p-100---q-c-10" class="slide level2">
-<h2>Exemplo Numérico: <span class="math inline">\(P = 100 - Q\)</span>, <span class="math inline">\(c = 10\)</span></h2>
-<p><strong>Dados:</strong> <span class="math inline">\(a = 100\)</span>, <span class="math inline">\(b = 1\)</span>, <span class="math inline">\(c = 10\)</span>.</p>
+<section id="exemplo-numérico-cournot" class="slide level2">
+<h2>Exemplo Numérico Cournot</h2>
+<p><strong>Dados:</strong> <span class="math inline">\(P = 30 - Q\)</span>, <span class="math inline">\(MC_1 = MC_2 = 6\)</span> (ou seja, <span class="math inline">\(a=30\)</span>, <span class="math inline">\(b=1\)</span>, <span class="math inline">\(c=6\)</span>).</p>
 <div class="fragment">
 <table class="caption-top">
 <thead>
@@ -389,34 +518,64 @@ Insper
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(q^C\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\frac{a-c}{3b}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(30\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\frac{a-c}{3b} = \frac{24}{3}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(8\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(Q^C\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\frac{2(a-c)}{3b}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(60\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2 \times 8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(16\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(P^C\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\frac{a+2c}{3}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(40\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(30 - 16\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(14\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;"><span class="math inline">\(\pi_i\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(\frac{(a-c)^2}{9b}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(900\)</span></td>
+<td style="text-align: left;"><span class="math inline">\((14 - 6) \times 8\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(64\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;"><span class="math inline">\(\pi_{\text{total}}\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(2 \times 900\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1800\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2 \times 64\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(128\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="fragment">
-<p><strong>Compare com monopólio:</strong> <span class="math inline">\(Q^M = 45\)</span>, <span class="math inline">\(P^M = 55\)</span>, <span class="math inline">\(\pi^M = 2025\)</span>.</p>
+<p><strong>Compare com os benchmarks:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modelo</th>
+<th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_{\text{total}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Monopólio</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">144</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Cournot</strong></td>
+<td style="text-align: center;"><strong>16</strong></td>
+<td style="text-align: center;"><strong>14</strong></td>
+<td style="text-align: center;"><strong>128</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Conc. Perfeita</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="fragment">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -428,7 +587,7 @@ Insper
 <p><strong>Dica</strong></p>
 </div>
 <div class="callout-content">
-<p>O Cournot produz <strong>mais</strong> e cobra <strong>menos</strong> que o monopólio, mas ainda está longe da concorrência perfeita (<span class="math inline">\(Q^{CP} = 90\)</span>, <span class="math inline">\(P^{CP} = 10\)</span>).</p>
+<p>O Cournot produz <strong>mais</strong> e cobra <strong>menos</strong> que o monopólio, mas ainda está longe da concorrência perfeita.</p>
 </div>
 </div>
 </div>
@@ -442,30 +601,90 @@ Insper
 <p>. . .</p>
 <p><strong>Indução retroativa:</strong></p>
 <ol type="1">
-<li>Firma 2 usa sua melhor resposta: <span class="math inline">\(q_2^*(q_1)\)</span></li>
-<li>Firma 1 substitui na sua função lucro e maximiza</li>
+<li>Firma 2 usa BR: <span class="math inline">\(q_2^*(q_1) = \frac{a-c}{2b} - \frac{q_1}{2}\)</span></li>
+<li>Firma 1 substitui e maximiza</li>
 </ol>
 <p>. . .</p>
-<p><strong>Resultado (<span class="math inline">\(a=100\)</span>, <span class="math inline">\(b=1\)</span>, <span class="math inline">\(c=10\)</span>):</strong></p>
-<p><span class="math display">\[q_1^S = \frac{a-c}{2b} = 45, \quad q_2^S = \frac{a-c}{4b} = 22{,}5\]</span></p>
-<p><span class="math display">\[Q^S = 67{,}5, \quad P^S = 32{,}5\]</span></p>
+<p><strong>Resultado (<span class="math inline">\(a=30\)</span>, <span class="math inline">\(b=1\)</span>, <span class="math inline">\(c=6\)</span>):</strong></p>
+<p><span class="math display">\[q_1^S = \frac{a-c}{2b} = 12\]</span> <span class="math display">\[q_2^S = \frac{a-c}{4b} = 6\]</span> <span class="math display">\[Q^S = 18, \quad P^S = 12\]</span></p>
 <p>. . .</p>
-<p><strong>Vantagem do primeiro movimento:</strong> o líder lucra mais que no Cournot.</p>
+<p><strong>Vantagem do primeiro movimento:</strong> o líder lucra <span class="math inline">\(\pi_1 = 72 &gt; 64 = \pi^C\)</span>.</p>
 </div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap16/stackelberg.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div id="graph-a23-stackelberg" style="width:520px;height:400px;margin:0 auto;">
+
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-stackelberg',{
+    boundingbox:[-2,28,28,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[26,1,'q₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1,26.5,'q₂'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  var a=30, b=1, c=6;
+  var qcn = (a-c)/(3*b);  // 8
+  var qs1 = (a-c)/(2*b);  // 12
+  var qs2 = (a-c)/(4*b);  // 6
+
+  // BR2: q2 = (a-c)/(2b) - q1/2
+  brd.create('functiongraph',[function(q1){
+    return (a-c)/(2*b) - q1/2;
+  }, 0, (a-c)/b],{strokeColor:'#C8102E',strokeWidth:2.5});
+
+  // BR1 (for reference)
+  brd.create('functiongraph',[function(q1){
+    return (a-c)/b - 2*q1;
+  }, 0, (a-c)/(2*b)],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+
+  // Iso-profit curves of leader (tangent to BR2 at Stackelberg eq)
+  // pi1 = (a - b(q1+q2) - c)*q1 = const
+  // q2 = (a-c)/b - q1 - pi1/(b*q1)
+  var piStack = (a - b*(qs1+qs2) - c)*qs1; // 72
+  brd.create('functiongraph',[function(q1){
+    if(q1 <= 0.3) return -99;
+    return (a-c)/b - q1 - piStack/(b*q1);
+  }, 0.5, 23],{strokeColor:'#00897b',strokeWidth:2,dash:2});
+
+  // A higher iso-profit (through Cournot NE)
+  var piCournot = (a - b*(qcn+qcn) - c)*qcn; // 64
+  brd.create('functiongraph',[function(q1){
+    if(q1 <= 0.3) return -99;
+    return (a-c)/b - q1 - piCournot/(b*q1);
+  }, 0.5, 23],{strokeColor:'#00897b',strokeWidth:1.5,dash:4});
+
+  // Stackelberg equilibrium
+  brd.create('point',[qs1, qs2],{
+    name:'',size:5,strokeColor:'#000',fillColor:'#ff9800',fixed:true
+  });
+  brd.create('text',[qs1+0.6, qs2+1.2, 'Stackelberg (12, 6)'],{
+    fontSize:11,cssStyle:'font-weight:bold;color:#ff9800;'
+  });
+
+  // Cournot NE for comparison
+  brd.create('point',[qcn, qcn],{
+    name:'',size:4,strokeColor:'#000',fillColor:'#9c27b0',fixed:true
+  });
+  brd.create('text',[qcn+0.6, qcn+1.2, 'Cournot (8, 8)'],{
+    fontSize:10,cssStyle:'color:#9c27b0;'
+  });
+
+  brd.create('text',[18,3,'BR₂'],{fontSize:12,cssStyle:'font-weight:bold;color:#C8102E;'});
+  brd.create('text',[3,18,'BR₁'],{fontSize:11,cssStyle:'color:#1565c0;'});
+  brd.create('text',[16,8,'isoprofit líder'],{fontSize:10,cssStyle:'color:#00897b;'});
+})();
+</script>
 </div></div>
 </section>
-<section id="comparação-todos-os-modelos-p-100---q-c-10" class="slide level2">
-<h2>Comparação: Todos os Modelos (<span class="math inline">\(P = 100 - Q\)</span>, <span class="math inline">\(c = 10\)</span>)</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<section id="comparação-todos-os-modelos-p-30---q-c-6" class="slide level2">
+<h2>Comparação: Todos os Modelos (<span class="math inline">\(P = 30 - Q\)</span>, <span class="math inline">\(c = 6\)</span>)</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Modelo</th>
 <th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(P\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_1\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\pi_2\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\pi_{\text{total}}\)</span></th>
 <th style="text-align: center;">DWL</th>
 </tr>
@@ -473,51 +692,113 @@ Insper
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Monopólio</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">55</td>
-<td style="text-align: center;">2025</td>
-<td style="text-align: center;">1012,5</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">144</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">144</td>
+<td style="text-align: center;">72</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Cournot</td>
-<td style="text-align: center;">60</td>
-<td style="text-align: center;">40</td>
-<td style="text-align: center;">1800</td>
-<td style="text-align: center;">450</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">128</td>
+<td style="text-align: center;">32</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Stackelberg</td>
-<td style="text-align: center;">67,5</td>
-<td style="text-align: center;">32,5</td>
-<td style="text-align: center;">1518,75</td>
-<td style="text-align: center;">253,1</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">36</td>
+<td style="text-align: center;">108</td>
+<td style="text-align: center;">18</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Bertrand</td>
-<td style="text-align: center;">90</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Conc. Perfeita</td>
-<td style="text-align: center;">90</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
-<p>. . .</p>
-<p><strong>Ordenação por bem-estar:</strong></p>
-<p><span class="math display">\[W_{CP} = W_{Bert} &gt; W_{Stack} &gt; W_{Cournot} &gt; W_{Mon}\]</span></p>
-</div><div class="column" style="width:50%;">
-<iframe src="../../graficos/cap16/comparacao-oligopolio.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
+<div class="fragment">
+<p><strong>Ordenação por quantidade (bem-estar crescente):</strong></p>
+<p><span class="math display">\[Q_{Mon} &lt; Q_{Cournot} &lt; Q_{Stack} &lt; Q_{Bert} = Q_{CP}\]</span></p>
+</div>
+<div class="fragment">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Importante</strong></p>
+</div>
+<div class="callout-content">
+<p>Mais competição <span class="math inline">\(\implies\)</span> mais quantidade, menor preço, menor DWL. O Stackelberg fica entre Cournot e Bertrand porque a liderança “compromete” a firma 1 com produção alta.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="cournot-com-n-firmas-convergência-à-competição" class="slide level2">
-<h2>Cournot com <span class="math inline">\(N\)</span> Firmas: Convergência à Competição</h2>
+<section id="comparação-visual-dos-modelos" class="slide level2">
+<h2>Comparação Visual dos Modelos</h2>
+<div title="Resumo das estruturas de mercado">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resumo das estruturas de mercado</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+<pre><code>Quantidade total (Q)
+│
+│  CP/Bert ████████████████████████  24
+│  Stack   ██████████████████        18
+│  Cournot ████████████████          16
+│  Monop.  ████████████              12
+│          ─────────────────────────── Q
+│
+│ Preço (P)
+│  Monop.  ██████████████████        18
+│  Cournot ██████████████            14
+│  Stack   ████████████              12
+│  CP/Bert ██████                     6
+│          ─────────────────────────── P</code></pre>
+<div class="fragment">
+<p><strong>Padrão geral:</strong></p>
+<ul>
+<li><strong>Mais firmas</strong> ou <strong>mais agressividade</strong> <span class="math inline">\(\implies\)</span> convergência ao resultado competitivo</li>
+<li><strong>Bertrand</strong> é o caso extremo: 2 firmas bastam para <span class="math inline">\(P = c\)</span></li>
+<li><strong>Stackelberg</strong> &gt; Cournot em <span class="math inline">\(Q\)</span> porque o líder se compromete com produção alta</li>
+</ul>
+</div>
+</section>
+<section id="cournot-com-n-firmas-convergência" class="slide level2">
+<h2>Cournot com <span class="math inline">\(N\)</span> Firmas: Convergência</h2>
 <p>Generalizando para <span class="math inline">\(N\)</span> firmas simétricas:</p>
 <p><span class="math display">\[q_i^* = \frac{a - c}{(N+1)b}, \quad Q^* = \frac{N(a-c)}{(N+1)b}, \quad P^* = \frac{a + Nc}{N+1}\]</span></p>
 <div class="fragment">
@@ -529,79 +810,100 @@ Insper
 <thead>
 <tr class="header">
 <th style="text-align: center;"><span class="math inline">\(N\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(q_i\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(Q\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(P\)</span></th>
 <th style="text-align: center;"><span class="math inline">\(\pi_i\)</span></th>
-<th style="text-align: center;">Lerner</th>
+<th style="text-align: center;">Markup</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: center;">1</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">55</td>
-<td style="text-align: center;">2025</td>
-<td style="text-align: center;">0,82</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">144</td>
+<td style="text-align: center;">200%</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">2</td>
-<td style="text-align: center;">60</td>
-<td style="text-align: center;">40</td>
-<td style="text-align: center;">900</td>
-<td style="text-align: center;">0,75</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">64</td>
+<td style="text-align: center;">133%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">5</td>
-<td style="text-align: center;">75</td>
-<td style="text-align: center;">25</td>
-<td style="text-align: center;">225</td>
-<td style="text-align: center;">0,60</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">67%</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">10</td>
-<td style="text-align: center;">81,8</td>
-<td style="text-align: center;">18,2</td>
-<td style="text-align: center;">67,4</td>
-<td style="text-align: center;">0,45</td>
+<td style="text-align: center;">2,18</td>
+<td style="text-align: center;">21,8</td>
+<td style="text-align: center;">8,18</td>
+<td style="text-align: center;">4,76</td>
+<td style="text-align: center;">36%</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
-<td style="text-align: center;">90</td>
-<td style="text-align: center;">10</td>
+<td style="text-align: center;"><span class="math inline">\(\to 0\)</span></td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">6</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">0%</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="fragment">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>O modelo de Cournot conecta monopólio e concorrência perfeita: à medida que <span class="math inline">\(N\)</span> cresce, o poder de mercado <strong>desaparece continuamente</strong>.</p>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="colusão-e-o-dilema-do-prisioneiro" class="slide level2">
 <h2>Colusão e o Dilema do Prisioneiro</h2>
 <p><strong>Se as firmas cooperam</strong> (cartel), produzem a quantidade de monopólio e dividem:</p>
-<p><span class="math display">\[q_i^{cartel} = \frac{Q^M}{2} = 22{,}5, \quad \pi_i^{cartel} = \frac{\pi^M}{2} = 1012{,}5\]</span></p>
+<p><span class="math display">\[q_i^{cartel} = \frac{Q^M}{2} = 6, \quad \pi_i^{cartel} = \frac{\pi^M}{2} = 72\]</span></p>
 <div class="fragment">
 <p><strong>Mas cada firma tem incentivo a desviar!</strong> Se firma 1 desvia enquanto firma 2 coopera:</p>
-<p><span class="math display">\[q_1^{desvio} = BR_1(22{,}5) = 33{,}75 \implies \pi_1^{desvio} = 1139{,}06 &gt; 1012{,}5\]</span></p>
+<p><span class="math display">\[q_1^{desvio} = BR_1(6) = \frac{30-6}{2} - \frac{6}{2} = 9 \implies \pi_1^{desvio} = (30 - 15 - 6) \times 9 = 81\]</span></p>
 </div>
 <div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
-<th style="text-align: center;">Firma 2: Coopera</th>
-<th style="text-align: center;">Firma 2: Desvia</th>
+<th style="text-align: center;">Firma 2: Coopera (<span class="math inline">\(q=6\)</span>)</th>
+<th style="text-align: center;">Firma 2: Desvia (<span class="math inline">\(q=9\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><strong>Firma 1: Coopera</strong></td>
-<td style="text-align: center;">(1012,5 ; 1012,5)</td>
-<td style="text-align: center;">(759,4 ; 1139,1)</td>
+<td style="text-align: left;"><strong>Firma 1: Coopera</strong> (<span class="math inline">\(q=6\)</span>)</td>
+<td style="text-align: center;">(72 ; 72)</td>
+<td style="text-align: center;">(48 ; 81)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><strong>Firma 1: Desvia</strong></td>
-<td style="text-align: center;">(1139,1 ; 759,4)</td>
-<td style="text-align: center;">(900 ; 900)</td>
+<td style="text-align: left;"><strong>Firma 1: Desvia</strong> (<span class="math inline">\(q=9\)</span>)</td>
+<td style="text-align: center;">(81 ; 48)</td>
+<td style="text-align: center;">(64 ; 64)</td>
 </tr>
 </tbody>
 </table>
@@ -616,14 +918,14 @@ Insper
 <p><strong>Importante</strong></p>
 </div>
 <div class="callout-content">
-<p>Equilíbrio de Nash: <strong>(Desvia, Desvia)</strong> = Cournot. O cartel é <strong>instável</strong> em jogo de uma rodada.</p>
+<p>Equilíbrio de Nash: <strong>(Desvia, Desvia)</strong> = Cournot. O cartel é <strong>instável</strong> em jogo de uma rodada — estrutura idêntica ao Dilema do Prisioneiro.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="peer-instruction-próxima-aula" class="slide level2">
-<h2>Peer Instruction + Próxima Aula</h2>
+<section id="peer-instruction-qual-modelo" class="slide level2">
+<h2>Peer Instruction: Qual Modelo?</h2>
 <p><strong>Vote individualmente:</strong></p>
 <blockquote>
 <p>“A Ambev (cerveja) e a Petrobras (gasolina) operam em mercados oligopolísticos. Qual modelo melhor descreve cada um?”</p>
@@ -634,7 +936,7 @@ Insper
 <li>Ambev: Bertrand; Petrobras: Cournot</li>
 </ol></li>
 <li><ol start="2" type="A">
-<li>Ambev: Cournot (capacidade importa); Petrobras: Stackelberg (líder)</li>
+<li>Ambev: Cournot (capacidade importa); Petrobras: Stackelberg (líder de mercado)</li>
 </ol></li>
 <li><ol start="3" type="A">
 <li>Ambos Cournot — quantidade é a variável estratégica em ambos</li>
@@ -648,21 +950,85 @@ Insper
 <p><em>Discuta com seu vizinho (2 min). Revote.</em></p>
 </div>
 <div class="fragment">
-<div title="Próxima Aula (24): Torneio de Oligopólio">
+<div title="Dica para reflexão">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica para reflexão</strong></p>
+</div>
+<div class="callout-content">
+<p>Pergunte-se: (1) a variável estratégica é preço ou quantidade? (2) Há líder claro? (3) Os produtos são homogêneos ou diferenciados?</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="próxima-aula" class="slide level2">
+<h2>Próxima Aula</h2>
+<div title="Aula 24: Torneio de Oligopólio">
 <div class="callout callout-tip callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<p><strong>Próxima Aula (24): Torneio de Oligopólio</strong></p>
+<p><strong>Aula 24: Torneio de Oligopólio</strong></p>
 </div>
 <div class="callout-content">
-<p>Jogos repetidos, colusão tácita, folk theorem — e um <strong>torneio em sala</strong> onde vocês serão as firmas! Leia as seções 16.5–16.7.</p>
+<p>Jogos repetidos, colusão tácita, folk theorem — e um <strong>torneio em sala</strong> onde vocês serão as firmas!</p>
 </div>
 </div>
 </div>
 </div>
+<div class="fragment">
+<p><strong>Preparação:</strong></p>
+<ul>
+<li>Leia as seções 16.5–16.7 (jogos repetidos e colusão)</li>
+<li>Revise a lógica das funções de melhor resposta</li>
+<li>Pense: <strong>o que muda quando o jogo se repete?</strong></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Resumo de hoje:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Modelo</th>
+<th style="text-align: left;">Variável</th>
+<th style="text-align: left;">Timing</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Bertrand</td>
+<td style="text-align: left;">Preço</td>
+<td style="text-align: left;">Simultâneo</td>
+<td style="text-align: left;"><span class="math inline">\(P = c\)</span> (paradoxo)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Cournot</td>
+<td style="text-align: left;">Quantidade</td>
+<td style="text-align: left;">Simultâneo</td>
+<td style="text-align: left;"><span class="math inline">\(P &gt; c\)</span>, lucro positivo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Stackelberg</td>
+<td style="text-align: left;">Quantidade</td>
+<td style="text-align: left;">Sequencial</td>
+<td style="text-align: left;">Líder lucra mais</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Mensagem-chave:</strong> a estrutura do jogo (variável, timing, informação) determina o equilíbrio — pequenas diferenças nas hipóteses geram grandes diferenças nos resultados.</p>
+</blockquote>
 
 </div>
 </section>

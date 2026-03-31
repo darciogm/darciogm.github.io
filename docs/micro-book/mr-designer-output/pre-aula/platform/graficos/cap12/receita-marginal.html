@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!--
+  Cap. 11 — Receita Marginal e Elasticidade
+  Library: JSXGraph
+  Slider: demand elasticity parameter (linear demand: p = a - bq)
+  Shows demand curve and MR curve
+  Highlights MR = p(1 + 1/epsilon), MR=0 unit elastic point
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receita Marginal e Elasticidade</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 540px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.6; }
+    .legend { margin-top: .5rem; font-size: .78rem; line-height: 1.8; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 880px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { flex-basis: 100%; width: 100%; max-width: 540px; } .controls { flex-basis: 100%; width: 100%; max-width: 540px; } }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Demanda Linear: \(p = a - bq\)</h3>
+      <div class="slider-group">
+        <label>Intercepto \(a\): <span class="val" id="val-a">20.00</span></label>
+        <input type="range" id="sl-a" min="5" max="40" step="1" value="20">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação \(b\): <span class="val" id="val-b">1.00</span></label>
+        <input type="range" id="sl-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Quantidade \(q\): <span class="val" id="val-q">5.00</span></label>
+        <input type="range" id="sl-q" min="0.5" max="20" step="0.5" value="5">
+      </div>
+      <div class="legend">
+        <span style="background:#1565c0"></span>Demanda \(p(q)\)<br>
+        <span style="background:#C8102E"></span>Receita Marginal<br>
+        <span style="background:#00897b"></span>Receita Total (RT)
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-4.7, 28, 28, -13],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[25,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,25]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold
+    board.create('text', [-4.7 * 0.55, 28 / 2, '<b><i>p</i>, RMg</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [28 / 2, -13 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    // Global parameters (updated by sliders)
+    var pa = 20, pb = 1, pqSel = 5;
+
+    function getA() { return pa; }
+    function getB() { return pb; }
+
+    // Demand curve: p = a - bq (functiongraph auto-clips to visible area)
+    board.create('functiongraph', [function(q) {
+      var qMax = getA() / getB();
+      if (q < 0 || q > qMax) return NaN;
+      return getA() - getB() * q;
+    }, 0, 200], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+    // MR curve: MR = a - 2bq
+    board.create('functiongraph', [function(q) {
+      if (q < 0) return NaN;
+      var mr = getA() - 2 * getB() * q;
+      if (mr < -10) return NaN;
+      return mr;
+    }, 0, 200], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // Dynamic elements (recreated on each draw)
+    var objs = [];
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      pa = parseFloat(document.getElementById('sl-a').value);
+      pb = parseFloat(document.getElementById('sl-b').value);
+      pqSel = parseFloat(document.getElementById('sl-q').value);
+
+      document.getElementById('val-a').textContent = pa.toFixed(2);
+      document.getElementById('val-b').textContent = pb.toFixed(2);
+      document.getElementById('val-q').textContent = pqSel.toFixed(2);
+
+      var a = pa, b = pb, qSel = pqSel;
+      var qMax = a / b;
+      var qMR0 = a / (2 * b);
+
+      // Labels for curves
+      if (qMax * 0.85 < 24) {
+        objs.push(board.create('text', [qMax * 0.85, (a - b * qMax * 0.85) + 1, 'D'], { fontSize: 11, color: '#1565c0' }));
+      }
+      objs.push(board.create('text', [Math.min(qMax * 0.45, 23), -8, 'RMg'], { fontSize: 11, color: '#C8102E' }));
+
+      // MR = 0 point (unit elastic)
+      objs.push(board.create('point', [qMR0, 0], {
+        name: '', size: 5, color: '#00897b', fixed: true
+      }));
+      objs.push(board.create('text', [qMR0 + 0.3, 1.2, 'RMg=0'], { fontSize: 9, color: '#00897b' }));
+      objs.push(board.create('text', [qMR0 + 0.3, -1.5, '|<i>ε</i>| = 1'], { fontSize: 9, color: '#00897b' }));
+
+      // Vertical dashed at qMR0
+      objs.push(board.create('segment', [[qMR0, -10], [qMR0, a/2 + 1]], {
+        strokeColor: '#00897b', dash: 3, strokeWidth: 1
+      }));
+
+      // Region labels
+      var qElastic = qMR0 / 2;
+      var qInelastic = (qMR0 + qMax) / 2;
+      objs.push(board.create('text', [qElastic, -6, 'Elástica'], { fontSize: 10, color: '#1565c0', anchorX: 'middle' }));
+      objs.push(board.create('text', [qElastic, -8, '|<i>ε</i>| > 1'], { fontSize: 9, color: '#1565c0', anchorX: 'middle' }));
+      if (qInelastic < 24) {
+        objs.push(board.create('text', [qInelastic, -6, 'Inelástica'], { fontSize: 10, color: '#999', anchorX: 'middle' }));
+        objs.push(board.create('text', [qInelastic, -8, '|<i>ε</i>| < 1'], { fontSize: 9, color: '#999', anchorX: 'middle' }));
+      }
+
+      // Selected point
+      var pSel = a - b * qSel;
+      var mrSel = a - 2 * b * qSel;
+      var rtSel = pSel * qSel;
+      var epsSel = (qSel > 0 && pSel > 0) ? -(1/b) * (pSel / qSel) : NaN;
+
+      if (qSel > 0 && qSel < qMax * 1.1) {
+        if (pSel > 0) {
+          objs.push(board.create('point', [qSel, pSel], {
+            name: '', size: 4, color: '#1565c0', fixed: true
+          }));
+          objs.push(board.create('segment', [[qSel, 0], [qSel, pSel]], {
+            strokeColor: '#999', dash: 3, strokeWidth: 1
+          }));
+          objs.push(board.create('segment', [[0, pSel], [qSel, pSel]], {
+            strokeColor: '#999', dash: 3, strokeWidth: 1
+          }));
+        }
+        objs.push(board.create('point', [qSel, mrSel], {
+          name: '', size: 4, color: '#C8102E', fixed: true
+        }));
+      }
+
+      // Info
+      var info = document.getElementById('info');
+      var html = '<div class="eq">\\(p(q) = ' + a + ' - ' + b.toFixed(1) + 'q\\)</div>';
+      html += '<div class="eq">\\(\\mathrm{RMg} = ' + a + ' - ' + (2*b).toFixed(1) + 'q\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div>No ponto \\(q = ' + qSel.toFixed(1) + '\\):</div>';
+
+      if (pSel > 0) {
+        html += '<div>\\(p = ' + pSel.toFixed(2) + '\\)</div>';
+        html += '<div>\\(\\mathrm{RMg} = ' + mrSel.toFixed(2) + '\\)</div>';
+        html += '<div>\\(RT = p \\cdot q = ' + rtSel.toFixed(2) + '\\)</div>';
+        if (!isNaN(epsSel)) {
+          html += '<div>\\(\\varepsilon_d = ' + epsSel.toFixed(2) + '\\)</div>';
+          html += '<div class="eq">\\(\\mathrm{RMg} = p\\left(1 + \\frac{1}{\\varepsilon_d}\\right) = '
+            + (pSel * (1 + 1/epsSel)).toFixed(2) + '\\)</div>';
+        }
+      } else {
+        html += '<div style="color:#999">Fora do dominio da demanda</div>';
+      }
+
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div style="font-size:.75rem;color:#666">\\(\\mathrm{RMg}=0\\) em \\(q = ' + qMR0.toFixed(2) + '\\) (elasticidade unitária)<br>';
+      html += 'Firma com poder de mercado <b>nunca</b> opera onde \\(|\\varepsilon|<1\\)</div>';
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-a').value = 20;
+      document.getElementById('sl-b').value = 1;
+      document.getElementById('sl-q').value = 5;
+      draw();
+    }
+
+    ['sl-a','sl-b','sl-q'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

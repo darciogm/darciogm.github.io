@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-13-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-13-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-13-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,85 +143,108 @@ Insper
 </div>
 
 </section>
-<section id="por-que-a-embrapa-mudou-a-agricultura-brasileira" class="slide level2">
-<h2>Por que a Embrapa mudou a agricultura brasileira?</h2>
-<ul>
-<li>Produtividade da soja no Brasil: de 1,5 t/ha (1970) para 3,5 t/ha (2020)</li>
-<li><strong>Mesma terra, mais produto</strong> — o que mudou foi a <strong>tecnologia</strong></li>
-<li>Nesta aula: como modelar a relação entre insumos e produto?</li>
-</ul>
-<div class="fragment">
-<blockquote>
-<p>“A função de produção é o DNA econômico da firma.”</p>
-</blockquote>
-</div>
-</section>
-<section id="função-de-produção-definição" class="slide level2">
-<h2>Função de Produção: Definição</h2>
-<p>A <strong>função de produção</strong> mapeia insumos em produto máximo:</p>
-<p><span class="math display">\[q = f(x_1, x_2, \ldots, x_n)\]</span></p>
-<p><strong>Propriedades usuais:</strong></p>
-<ul>
-<li><span class="math inline">\(f(0, 0) = 0\)</span> (sem insumos, sem produto)</li>
-<li><span class="math inline">\(f\)</span> é contínua e diferenciável</li>
-<li><span class="math inline">\(f\)</span> é crescente em cada <span class="math inline">\(x_i\)</span> (monotonicidade)</li>
-</ul>
-<div class="fragment">
-<p><strong>Caso clássico com dois insumos:</strong></p>
-<p><span class="math display">\[q = f(K, L)\]</span></p>
-<p>onde <span class="math inline">\(K\)</span> = capital e <span class="math inline">\(L\)</span> = trabalho.</p>
-</div>
-</section>
-<section id="curto-prazo-vs.-longo-prazo" class="slide level2">
-<h2>Curto Prazo vs.&nbsp;Longo Prazo</h2>
+<section id="da-teoria-do-consumidor-à-teoria-da-firma" class="slide level2">
+<h2>Da Teoria do Consumidor à Teoria da Firma</h2>
+<p>A Teoria da Firma é um <strong>espelho</strong> da Teoria do Consumidor:</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th></th>
-<th>Curto Prazo (CP)</th>
-<th>Longo Prazo (LP)</th>
+<th style="text-align: left;">Consumidor</th>
+<th style="text-align: left;">Firma</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Capital</strong></td>
-<td>Fixo: <span class="math inline">\(\bar{K}\)</span></td>
-<td>Variável</td>
+<td style="text-align: left;">Utilidade <span class="math inline">\(u(x_1, x_2)\)</span></td>
+<td style="text-align: left;">Produção <span class="math inline">\(q = f(K, L)\)</span></td>
 </tr>
 <tr class="even">
-<td><strong>Trabalho</strong></td>
-<td>Variável</td>
-<td>Variável</td>
+<td style="text-align: left;">Restrição orçamentária</td>
+<td style="text-align: left;">Restrição de isocusto</td>
 </tr>
 <tr class="odd">
-<td><strong>Função</strong></td>
-<td><span class="math inline">\(q = f(\bar{K}, L)\)</span></td>
-<td><span class="math inline">\(q = f(K, L)\)</span></td>
+<td style="text-align: left;">Curva de indiferença</td>
+<td style="text-align: left;">Isoquanta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TMS</td>
+<td style="text-align: left;">TMST</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maximiza utilidade</td>
+<td style="text-align: left;">Minimiza custo (ou maximiza produto)</td>
 </tr>
 </tbody>
 </table>
 <div class="fragment">
-<p><strong>No curto prazo</strong>, definimos:</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A matemática da otimização é a mesma — tangência entre curva de nível e restrição linear. O que muda é a <strong>interpretação econômica</strong>: preferências viram tecnologia, preços de bens viram preços de insumos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-produção-definição" class="slide level2">
+<h2>Função de Produção: Definição</h2>
+<p>A <strong>função de produção</strong> mapeia insumos no produto máximo tecnicamente viável:</p>
+<p><span class="math display">\[q = f(K, L)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades usuais:</strong></p>
 <ul>
-<li><strong>Produto Total:</strong> <span class="math inline">\(q = f(\bar{K}, L)\)</span></li>
-<li><strong>Produto Marginal:</strong> <span class="math inline">\(PMg_L = \frac{\partial f}{\partial L}\)</span></li>
-<li><strong>Produto Médio:</strong> <span class="math inline">\(PMe_L = \frac{f(\bar{K}, L)}{L}\)</span></li>
+<li><span class="math inline">\(f(0, 0) = 0\)</span> — sem insumos, sem produto</li>
+<li><span class="math inline">\(f\)</span> é crescente em cada insumo (monotonicidade)</li>
+<li><span class="math inline">\(f\)</span> é contínua e (ao menos duas vezes) diferenciável</li>
 </ul>
+</div>
+<div class="fragment">
+<p><strong>Conjunto de produção (technology set):</strong></p>
+<p><span class="math display">\[Y = \{(K, L, q) : 0 \leq q \leq f(K, L)\}\]</span></p>
+<p>A função de produção descreve a <strong>fronteira eficiente</strong> deste conjunto — a quantidade máxima de produto para cada combinação de insumos.</p>
 </div>
 </section>
 <section id="produto-marginal-e-produto-médio" class="slide level2">
 <h2>Produto Marginal e Produto Médio</h2>
-<p><strong>Relação fundamental:</strong></p>
-<p><span class="math display">\[PMe_L = \frac{q}{L} \implies \frac{d\,PMe_L}{dL} = \frac{PMg_L - PMe_L}{L}\]</span></p>
+<p><strong>Produto Marginal do Trabalho:</strong></p>
+<p><span class="math display">\[PMg_L = \frac{\partial f(K, L)}{\partial L}\]</span></p>
+<p><strong>Produto Médio do Trabalho:</strong></p>
+<p><span class="math display">\[PMe_L = \frac{f(K, L)}{L}\]</span></p>
 <div class="fragment">
-<p><strong>Três regiões:</strong></p>
-<ol type="1">
-<li><span class="math inline">\(PMg_L &gt; PMe_L \Rightarrow PMe_L\)</span> crescente</li>
-<li><span class="math inline">\(PMg_L = PMe_L \Rightarrow PMe_L\)</span> máximo</li>
-<li><span class="math inline">\(PMg_L &lt; PMe_L \Rightarrow PMe_L\)</span> decrescente</li>
-</ol>
+<p><strong>Relação fundamental:</strong></p>
+<p><span class="math display">\[\frac{d\,PMe_L}{dL} = \frac{PMg_L - PMe_L}{L}\]</span></p>
 </div>
 <div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;">Consequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(PMg_L &gt; PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está <strong>subindo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(PMg_L = PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está no <strong>máximo</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(PMg_L &lt; PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está <strong>caindo</strong></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
 <p><strong>Analogia:</strong> se sua nota na próxima prova (marginal) for maior que sua média, a média sobe.</p>
 </blockquote>
@@ -228,169 +253,572 @@ Insper
 <section id="lei-dos-rendimentos-marginais-decrescentes" class="slide level2">
 <h2>Lei dos Rendimentos Marginais Decrescentes</h2>
 <blockquote>
-<p>Mantendo os demais insumos fixos, aumentos sucessivos de um insumo variável eventualmente geram acréscimos decrescentes de produto.</p>
+<p>Mantendo os demais insumos fixos, aumentos sucessivos de um insumo variável <strong>eventualmente</strong> geram acréscimos decrescentes de produto.</p>
 </blockquote>
 <p><span class="math display">\[\frac{\partial^2 f}{\partial L^2} &lt; 0 \quad \text{(a partir de certo ponto)}\]</span></p>
 <div class="fragment">
-<p><strong>Atenção:</strong> a lei se aplica ao <strong>curto prazo</strong> (pelo menos um insumo fixo).</p>
+<p><strong>Exemplos:</strong></p>
 <ul>
-<li>Não diz que <span class="math inline">\(PMg_L\)</span> é sempre decrescente</li>
-<li>Não se aplica quando <strong>todos</strong> os insumos variam proporcionalmente</li>
+<li>Mais trabalhadores numa fábrica com máquinas fixas: inicialmente produtividade sobe (especialização), depois cai (superlotação)</li>
+<li>Mais fertilizante numa área fixa de terra: rendimento cresce a taxas decrescentes</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Atenção — o que a lei NÃO diz:</strong></p>
+<ul>
+<li>Não diz que <span class="math inline">\(PMg_L\)</span> é <strong>sempre</strong> decrescente (pode crescer inicialmente)</li>
+<li>Não se aplica quando <strong>todos</strong> os insumos variam proporcionalmente (isso é rendimentos de escala)</li>
+<li>É uma regularidade empírica, não um teorema matemático</li>
 </ul>
 </div>
 </section>
 <section id="isoquantas" class="slide level2">
 <h2>Isoquantas</h2>
-<p>A <strong>isoquanta</strong> é o conjunto de combinações <span class="math inline">\((K, L)\)</span> que produzem o mesmo nível de produto:</p>
+<p>A <strong>isoquanta</strong> é o conjunto de combinações <span class="math inline">\((K, L)\)</span> que produzem o mesmo nível de produto <span class="math inline">\(\bar{q}\)</span>:</p>
 <p><span class="math display">\[\{(K, L) : f(K, L) = \bar{q}\}\]</span></p>
-<iframe src="../../graficos/cap10/isoquantas.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div class="graph-slider-row">
+<div id="graph-a13-isoquant" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-isoquant', {
+    boundingbox: [0, 12, 12, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAlpha = brd.create('slider', [[1.5, 11], [5, 11], [0.1, 0.5, 0.9]], {
+    name: '\\alpha',
+    snapWidth: 0.05,
+    id: 'sl-a13-alpha'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var a = slAlpha.Value();
+      if (L < 0.15) return NaN;
+      return Math.pow(qVal / Math.pow(L, 1 - a), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      return Lpos;
+    }, function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, 1 - a), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+})();
+</script>
+<div class="fragment">
+<p>Mova o slider <span class="math inline">\(\alpha\)</span> e observe: quanto maior <span class="math inline">\(\alpha\)</span> (capital-intensivo), mais <strong>verticais</strong> as isoquantas; quanto menor, mais horizontais (trabalho-intensivo).</p>
+</div>
 </section>
 <section id="taxa-marginal-de-substituição-técnica-tmst" class="slide level2">
 <h2>Taxa Marginal de Substituição Técnica (TMST)</h2>
-<p>A TMST mede a taxa à qual a firma pode trocar <span class="math inline">\(K\)</span> por <span class="math inline">\(L\)</span> mantendo <span class="math inline">\(q\)</span> constante:</p>
+<p>A <strong>TMST</strong> mede a taxa à qual a firma pode substituir capital por trabalho mantendo o produto constante:</p>
 <p><span class="math display">\[TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q=\bar{q}} = \frac{PMg_L}{PMg_K}\]</span></p>
+<div class="fragment">
+<p><strong>Derivação:</strong> sobre a isoquanta, <span class="math inline">\(dq = 0\)</span>:</p>
+<p><span class="math display">\[df = PMg_L \, dL + PMg_K \, dK = 0 \implies \frac{dK}{dL} = -\frac{PMg_L}{PMg_K}\]</span></p>
+</div>
 <div class="fragment">
 <p><strong>Propriedades:</strong></p>
 <ul>
-<li>Decrescente ao longo da isoquanta (convexidade)</li>
+<li><strong>Decrescente</strong> ao longo da isoquanta (convexidade estrita)</li>
 <li>Reflete a <strong>substituibilidade</strong> entre insumos</li>
-<li>Análoga à TMS do consumidor</li>
+<li>Análoga à TMS do consumidor (onde <span class="math inline">\(TMS = UMg_1/UMg_2\)</span>)</li>
+</ul>
+</div>
+</section>
+<section id="cobb-douglas-na-produção" class="slide level2">
+<h2>Cobb-Douglas na Produção</h2>
+<p>A função <strong>Cobb-Douglas</strong> é o caso mais usado:</p>
+<p><span class="math display">\[q = A K^\alpha L^\beta\]</span></p>
+<div class="fragment">
+<p><strong>TMST da Cobb-Douglas:</strong></p>
+<p><span class="math display">\[TMST_{L,K} = \frac{PMg_L}{PMg_K} = \frac{\beta}{\alpha} \cdot \frac{K}{L}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Propriedades importantes:</strong></p>
+<ul>
+<li>Elasticidade de substituição: <span class="math inline">\(\sigma = 1\)</span> (sempre)</li>
+<li>Rendimentos de escala: <span class="math inline">\(\alpha + \beta\)</span> (soma dos expoentes)</li>
+<li>Participação dos fatores: se mercados são competitivos, <span class="math inline">\(\alpha\)</span> = participação do capital na renda, <span class="math inline">\(\beta\)</span> = participação do trabalho</li>
 </ul>
 </div>
 <div class="fragment">
-<p><span class="math display">\[df = PMg_L \, dL + PMg_K \, dK = 0 \implies \frac{dK}{dL} = -\frac{PMg_L}{PMg_K}\]</span></p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Na Cobb-Douglas, a TMST depende apenas da <strong>razão</strong> <span class="math inline">\(K/L\)</span>, não do nível absoluto. Ao longo de qualquer raio partindo da origem, a inclinação da isoquanta é constante — por isso a elasticidade de substituição é unitária.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
 <section id="rendimentos-de-escala" class="slide level2">
 <h2>Rendimentos de Escala</h2>
-<p>O que acontece quando <strong>todos</strong> os insumos variam proporcionalmente?</p>
+<p>O que acontece quando <strong>todos</strong> os insumos variam <strong>proporcionalmente</strong>?</p>
 <p><span class="math display">\[f(tK, tL) \text{ vs. } t \cdot f(K, L), \quad t &gt; 1\]</span></p>
-<table class="caption-top">
-<thead>
-<tr class="header">
-<th>Tipo</th>
-<th>Condição</th>
-<th>Exemplo</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Crescentes (IRS)</strong></td>
-<td><span class="math inline">\(f(tK,tL) &gt; t \cdot f(K,L)\)</span></td>
-<td>Especialização</td>
-</tr>
-<tr class="even">
-<td><strong>Constantes (CRS)</strong></td>
-<td><span class="math inline">\(f(tK,tL) = t \cdot f(K,L)\)</span></td>
-<td>Replicação</td>
-</tr>
-<tr class="odd">
-<td><strong>Decrescentes (DRS)</strong></td>
-<td><span class="math inline">\(f(tK,tL) &lt; t \cdot f(K,L)\)</span></td>
-<td>Coordenação</td>
-</tr>
-</tbody>
-</table>
-<iframe src="../../graficos/cap10/rendimentos-escala.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<div class="graph-slider-row">
+<div id="graph-a13-returns" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-returns', {
+    boundingbox: [0, 14, 14, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAB = brd.create('slider', [[2, 13], [6, 13], [0.5, 1.0, 1.5]], {
+    name: '\\alpha+\\beta',
+    snapWidth: 0.05,
+    id: 'sl-a13-ab'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var ab = slAB.Value();
+      if (L < 0.15) return NaN;
+      var a = ab / 2;
+      var b = ab / 2;
+      return Math.pow(qVal / Math.pow(L, b), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var Lpos = 2.5 + idx * 1.0;
+      return Lpos;
+    }, function() {
+      var ab = slAB.Value();
+      var a = ab / 2;
+      var b = ab / 2;
+      var Lpos = 2.5 + idx * 1.0;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, b), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+
+  // Ray from origin to show scaling
+  brd.create('line', [[0,0],[1,1]], {
+    strokeColor: '#999',
+    strokeWidth: 1,
+    dash: 2,
+    straightFirst: false,
+    straightLast: true
+  });
+
+  brd.create('text', [8, 12.2, function() {
+    var ab = slAB.Value();
+    if (ab > 1.02) return 'IRS — isoquantas se aproximam';
+    if (ab < 0.98) return 'DRS — isoquantas se afastam';
+    return 'CRS — espaçamento constante';
+  }], { fontSize: 13, color: '#333' });
+})();
+</script>
+<div class="fragment">
+<p>Observe: com <span class="math inline">\(\alpha+\beta &gt; 1\)</span> (IRS), as isoquantas ficam <strong>mais próximas</strong>; com <span class="math inline">\(\alpha+\beta &lt; 1\)</span> (DRS), ficam <strong>mais distantes</strong>.</p>
+</div>
 </section>
-<section id="menu-de-funções-de-produção" class="slide level2">
-<h2>Menu de Funções de Produção</h2>
-<table class="caption-top">
+<section id="classificação-constantes-crescentes-decrescentes" class="slide level2">
+<h2>Classificação: Constantes, Crescentes, Decrescentes</h2>
+<p>Para a Cobb-Douglas <span class="math inline">\(q = AK^\alpha L^\beta\)</span>:</p>
+<p><span class="math display">\[f(tK, tL) = A(tK)^\alpha(tL)^\beta = t^{\alpha+\beta} \cdot AK^\alpha L^\beta = t^{\alpha+\beta} \cdot f(K,L)\]</span></p>
+<div class="fragment">
+<table class="caption-top" style="width:100%;">
 <colgroup>
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
-<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
-<th>Função</th>
-<th>Fórmula</th>
-<th><span class="math inline">\(\sigma\)</span></th>
-<th>Rendimentos</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Condição</th>
+<th style="text-align: left;">Dobrar insumos…</th>
+<th style="text-align: left;">Fonte econômica</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td><strong>Cobb-Douglas</strong></td>
-<td><span class="math inline">\(AK^\alpha L^\beta\)</span></td>
-<td><span class="math inline">\(1\)</span></td>
-<td><span class="math inline">\(\alpha + \beta\)</span></td>
+<td style="text-align: left;"><strong>CRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta = 1\)</span></td>
+<td style="text-align: left;">…dobra o produto</td>
+<td style="text-align: left;">Replicação</td>
 </tr>
 <tr class="even">
-<td><strong>CES</strong></td>
-<td><span class="math inline">\(A[\delta K^\rho + (1-\delta)L^\rho]^{r/\rho}\)</span></td>
-<td><span class="math inline">\(\frac{1}{1-\rho}\)</span></td>
-<td><span class="math inline">\(r\)</span></td>
+<td style="text-align: left;"><strong>IRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta &gt; 1\)</span></td>
+<td style="text-align: left;">…mais que dobra</td>
+<td style="text-align: left;">Especialização, indivisibilidades</td>
 </tr>
 <tr class="odd">
-<td><strong>Linear</strong></td>
-<td><span class="math inline">\(aK + bL\)</span></td>
-<td><span class="math inline">\(\infty\)</span></td>
-<td>CRS</td>
-</tr>
-<tr class="even">
-<td><strong>Leontief</strong></td>
-<td><span class="math inline">\(\min\{aK, bL\}\)</span></td>
-<td><span class="math inline">\(0\)</span></td>
-<td>CRS</td>
+<td style="text-align: left;"><strong>DRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta &lt; 1\)</span></td>
+<td style="text-align: left;">…menos que dobra</td>
+<td style="text-align: left;">Problemas de coordenação</td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="fragment">
+<p><strong>Teste geral</strong> (não restrito a Cobb-Douglas):</p>
+<p><span class="math display">\[f(tK, tL) = t^k \cdot f(K, L) \implies \text{homogênea de grau } k\]</span></p>
 <ul>
-<li>A <strong>CES</strong> aninha todas as demais como casos especiais</li>
-<li><span class="math inline">\(\rho \to 0\)</span>: Cobb-Douglas; <span class="math inline">\(\rho \to -\infty\)</span>: Leontief; <span class="math inline">\(\rho = 1\)</span>: Linear</li>
+<li><span class="math inline">\(k &gt; 1\)</span>: IRS</li>
+<li><span class="math inline">\(k = 1\)</span>: CRS</li>
+<li><span class="math inline">\(k &lt; 1\)</span>: DRS</li>
 </ul>
 </div>
 </section>
 <section id="elasticidade-de-substituição" class="slide level2">
 <h2>Elasticidade de Substituição</h2>
-<p>A <strong>elasticidade de substituição</strong> mede quão facilmente a firma troca insumos:</p>
+<p>A <strong>elasticidade de substituição</strong> mede quão facilmente a firma troca insumos ao longo da isoquanta:</p>
 <p><span class="math display">\[\sigma = \frac{d\ln(K/L)}{d\ln(TMST_{L,K})}\]</span></p>
 <div class="fragment">
-<p><strong>Interpretação:</strong></p>
+<p><strong>Interpretação geométrica:</strong> <span class="math inline">\(\sigma\)</span> mede a <strong>curvatura</strong> da isoquanta.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\sigma\)</span></th>
+<th style="text-align: left;">Forma da isoquanta</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sigma \to \infty\)</span></td>
+<td style="text-align: left;">Reta (substitutos perfeitos)</td>
+<td style="text-align: left;"><span class="math inline">\(q = aK + bL\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\sigma = 1\)</span></td>
+<td style="text-align: left;">Cobb-Douglas (curvatura intermediária)</td>
+<td style="text-align: left;"><span class="math inline">\(q = AK^\alpha L^\beta\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sigma \to 0\)</span></td>
+<td style="text-align: left;">“L” (complementos perfeitos)</td>
+<td style="text-align: left;"><span class="math inline">\(q = \min\{aK, bL\}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\sigma\)</span> determina como a firma responde a mudanças nos <strong>preços relativos</strong> dos insumos. Se <span class="math inline">\(\sigma\)</span> é alto, um aumento no salário faz a firma substituir bastante trabalho por capital. Se <span class="math inline">\(\sigma\)</span> é baixo, a firma tem pouca margem de manobra.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="curto-prazo-vs-longo-prazo" class="slide level2">
+<h2>Curto Prazo vs Longo Prazo</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Curto Prazo (CP)</th>
+<th style="text-align: left;">Longo Prazo (LP)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Capital</strong></td>
+<td style="text-align: left;">Fixo: <span class="math inline">\(\bar{K}\)</span></td>
+<td style="text-align: left;">Variável</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Trabalho</strong></td>
+<td style="text-align: left;">Variável</td>
+<td style="text-align: left;">Variável</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Função</strong></td>
+<td style="text-align: left;"><span class="math inline">\(q = f(\bar{K}, L)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(q = f(K, L)\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>No curto prazo</strong> temos uma função de <strong>um</strong> insumo variável:</p>
+<p><span class="math display">\[q = f(\bar{K}, L) \equiv g(L)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Definições no CP:</strong></p>
 <ul>
-<li><span class="math inline">\(\sigma\)</span> alto <span class="math inline">\(\Rightarrow\)</span> insumos facilmente substituíveis (isoquantas “achatadas”)</li>
-<li><span class="math inline">\(\sigma\)</span> baixo <span class="math inline">\(\Rightarrow\)</span> insumos complementares (isoquantas “angulosas”)</li>
-<li><span class="math inline">\(\sigma = 1\)</span> <span class="math inline">\(\Rightarrow\)</span> Cobb-Douglas (curvatura intermediária)</li>
+<li><strong>Produto Total (PT):</strong> <span class="math inline">\(q = g(L)\)</span></li>
+<li><strong>Produto Marginal:</strong> <span class="math inline">\(PMg_L = g'(L)\)</span></li>
+<li><strong>Produto Médio:</strong> <span class="math inline">\(PMe_L = g(L)/L\)</span></li>
+</ul>
+<blockquote>
+<p>O longo prazo não é um período de tempo fixo — é o horizonte no qual <strong>todos</strong> os insumos são ajustáveis.</p>
+</blockquote>
+</div>
+</section>
+<section id="produto-total-médio-e-marginal-no-cp" class="slide level2">
+<h2>Produto Total, Médio e Marginal no CP</h2>
+<p>Considere <span class="math inline">\(q = AL^2(60 - L)\)</span> com <span class="math inline">\(A &gt; 0\)</span> (válida para <span class="math inline">\(0 &lt; L &lt; 60\)</span>):</p>
+<div class="graph-slider-row">
+<div id="graph-a13-tpapmp" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-tpapmp', {
+    boundingbox: [-2, 110, 55, -40],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'q', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slA = brd.create('slider', [[5, 105], [20, 105], [0.005, 0.01, 0.02]], {
+    name: 'A',
+    snapWidth: 0.001,
+    id: 'sl-a13-A'
+  });
+
+  // TP: q = A * L^2 * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * L * (60 - L) / 100;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 42 * 18 / 100 + 5;
+  }, 'PT'], { fontSize: 12, color: '#1565c0' });
+
+  // AP: q/L = A * L * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0.5 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * (60 - L) / 2;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 2 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 18 / 2 + 5;
+  }, 'PMe'], { fontSize: 12, color: '#00897b' });
+
+  // MP: dq/dL = A * (120L - 3L^2)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * (120 * L - 3 * L * L) / 2;
+  }], { strokeColor: '#C8102E', strokeWidth: 2.5, dash: 3 });
+
+  brd.create('text', [25, function() {
+    var A = slA.Value();
+    return A * (120 * 25 - 3 * 625) / 2 + 5;
+  }, 'PMg'], { fontSize: 12, color: '#C8102E' });
+
+  // Zero line
+  brd.create('line', [[0,0],[1,0]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 4,
+    straightFirst: true, straightLast: true, fixed: true
+  });
+
+  // Stage labels
+  brd.create('text', [8, -15, 'I'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [25, -15, 'II'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [44, -15, 'III'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+
+  // Stage boundary: PMg = PMe at L = 30
+  brd.create('line', [[30, -40],[30, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+
+  // Stage boundary: PMg = 0 at L = 40
+  brd.create('line', [[40, -40],[40, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+})();
+</script>
+<div class="fragment">
+<p>As curvas de PMg e PMe se cruzam no <strong>máximo</strong> do PMe. O PMg cruza zero no <strong>máximo</strong> do PT.</p>
+</div>
+</section>
+<section id="estágios-da-produção" class="slide level2">
+<h2>Estágios da Produção</h2>
+<p>Os <strong>três estágios</strong> dividem a produção de curto prazo:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Estágio</th>
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;">Característica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>I</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMg_L &gt; PMe_L &gt; 0\)</span></td>
+<td style="text-align: left;">PMe ainda subindo — insumo fixo subutilizado</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>II</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L &gt; PMg_L &gt; 0\)</span></td>
+<td style="text-align: left;">Região <strong>eficiente</strong> — produção racional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>III</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMg_L &lt; 0\)</span></td>
+<td style="text-align: left;">Produto total <strong>caindo</strong> — excesso de insumo variável</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>Por que a firma opera no Estágio II?</strong></p>
+<ul>
+<li>No Estágio I, contratar mais <span class="math inline">\(L\)</span> eleva a produtividade média — ainda compensa</li>
+<li>No Estágio III, contratar mais <span class="math inline">\(L\)</span> <strong>reduz</strong> o produto total — irracional</li>
+<li>O ponto ótimo exato no Estágio II depende dos <strong>preços</strong> relativos (veremos em custos)</li>
 </ul>
 </div>
 <div class="fragment">
-<p><strong>Na prática:</strong> <span class="math inline">\(\sigma\)</span> determina como a firma responde a mudanças nos preços relativos dos insumos.</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Os estágios I e III são “eliminados” pela lógica econômica. No I, a firma sempre ganha adicionando trabalho; no III, ela ganha <strong>reduzindo</strong> trabalho. Só no Estágio II existe um <strong>trade-off</strong> genuíno.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </section>
-<section id="progresso-técnico" class="slide level2">
-<h2>Progresso Técnico</h2>
+<section id="progresso-tecnológico" class="slide level2">
+<h2>Progresso Tecnológico</h2>
 <p>O progresso técnico desloca a função de produção <strong>para cima</strong>: mais produto com os mesmos insumos.</p>
-<p><span class="math display">\[q_1 = A_1 \cdot f(K,L) \to q_2 = A_2 \cdot f(K,L), \quad A_2 &gt; A_1\]</span></p>
+<p><span class="math display">\[q_t = A(t) \cdot f(K, L), \quad A(t) \text{ crescente — Produtividade Total dos Fatores (PTF)}\]</span></p>
 <div class="fragment">
-<p><strong>Classificação (Hicks):</strong></p>
+<p><strong>Classificação de Hicks:</strong></p>
 <ul>
-<li><strong>Neutro:</strong> não altera a razão <span class="math inline">\(K/L\)</span> ótima</li>
-<li><strong>Poupador de trabalho:</strong> aumenta <span class="math inline">\(PMg_K\)</span> relativamente</li>
-<li><strong>Poupador de capital:</strong> aumenta <span class="math inline">\(PMg_L\)</span> relativamente</li>
+<li><strong>Neutro:</strong> não altera a razão <span class="math inline">\(K/L\)</span> ótima para dado <span class="math inline">\(w/r\)</span> — isoquantas se contraem homoteticamente</li>
+<li><strong>Poupador de trabalho:</strong> aumenta <span class="math inline">\(PMg_K\)</span> relativamente — firma substitui <span class="math inline">\(L\)</span> por <span class="math inline">\(K\)</span></li>
+<li><strong>Poupador de capital:</strong> aumenta <span class="math inline">\(PMg_L\)</span> relativamente — firma substitui <span class="math inline">\(K\)</span> por <span class="math inline">\(L\)</span></li>
 </ul>
-<iframe src="../../graficos/cap10/progresso-tecnico.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+</div>
+<div class="fragment">
+<p><strong>Resíduo de Solow:</strong></p>
+<p><span class="math display">\[\Delta \ln q = \alpha \, \Delta \ln K + (1-\alpha) \, \Delta \ln L + \underbrace{\Delta \ln A}_{\text{resíduo}}\]</span></p>
+<p>O resíduo captura tudo que <strong>não é explicado</strong> pelo aumento dos insumos — é a “medida da nossa ignorância” (Abramovitz).</p>
 </div>
 </section>
-<section id="próxima-aula-lab-isoquantas" class="slide level2">
-<h2>Próxima Aula: Lab Isoquantas</h2>
+<section id="próxima-aula" class="slide level2">
+<h2>Próxima Aula</h2>
 <p><strong>Aula 14 — Lab Isoquantas e Funções de Produção</strong></p>
+<div class="fragment">
 <ul>
 <li>Exploração interativa de funções Cobb-Douglas e CES</li>
 <li>Jigsaw: cada grupo analisa uma função de produção diferente</li>
-<li>Peer Instruction: rendimentos crescentes implicam monopólio?</li>
+<li>Peer Instruction: rendimentos crescentes implicam monopólio natural?</li>
 </ul>
+</div>
 <div class="fragment">
 <p><strong>Preparação:</strong></p>
 <ul>
-<li>Revisar propriedades da Cobb-Douglas</li>
-<li>Pensar: por que diferentes indústrias usam diferentes tecnologias?</li>
+<li>Revisar propriedades da Cobb-Douglas (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\sigma\)</span>)</li>
+<li>Pensar: por que diferentes indústrias usam diferentes combinações de <span class="math inline">\(K\)</span> e <span class="math inline">\(L\)</span>?</li>
+<li>Trazer calculadora ou dispositivo com acesso à internet</li>
 </ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A teoria da produção que vimos hoje é a base de <strong>tudo</strong> que vem a seguir: custos, oferta, equilíbrio competitivo, poder de mercado. Dominar isoquantas e rendimentos de escala agora economiza muito esforço depois.</p>
+</div>
+</div>
+</div>
+</div>
 
 </div>
 </section>

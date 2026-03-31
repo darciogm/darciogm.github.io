@@ -1,173 +1,152 @@
-# Pré-Aula 21 — Monopólio e Discriminação de Preços
+# Pré-Aula 21 — Maximização de Lucro II: Receita Marginal e Oferta
 
 !!! info "Leitura obrigatória"
-    **Cap. 14, Seções 14.1–14.5** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 12, Seções 12.4–12.6** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Derivar a receita marginal do monopolista e explicar por que $\text{RMg} < P$
-2. Calcular preço, quantidade e lucro do monopólio usando a condição $\text{RMg} = \text{CMg}$
-3. Distinguir os três graus de discriminação de preços e suas implicações sobre bem-estar
+1. Relacionar receita marginal com elasticidade-preço da demanda e aplicar à decisão de produção
+2. Derivar a curva de oferta de curto prazo a partir da condição de fechamento ($P \geq CVMe_{\min}$)
+3. Decompor o efeito de uma variação de preço de fator em efeito substituição e efeito produto
 
 ---
 
-## 1. O que define um monopólio?
+## 1. Receita marginal e elasticidade
 
-Um **monopólio** é uma estrutura de mercado com um único vendedor que enfrenta toda a curva de demanda do mercado. Diferentemente da firma competitiva (que é tomadora de preço), o monopolista é **formador de preço**: ao escolher a quantidade $q$, ele determina o preço $P(q)$.
+Para uma firma com poder de mercado, a receita marginal depende da elasticidade-preço da demanda $\varepsilon_D$:
 
-**Barreiras à entrada** sustentam o monopólio:
+$$RMg = P\left(1 + \frac{1}{\varepsilon_D}\right) = P\left(1 - \frac{1}{|\varepsilon_D|}\right)$$
 
-| Tipo | Exemplo |
-|------|---------|
-| **Legal** | Patentes farmacêuticas, concessões de TV |
-| **Natural** | Redes de distribuição de energia (custo fixo elevado) |
-| **Estratégica** | Contratos de exclusividade, preços predatórios |
+| Elasticidade | $RMg$ | Implicação |
+|---|---|---|
+| $|\varepsilon_D| > 1$ (elástica) | $RMg > 0$ | Aumentar $q$ eleva $RT$ |
+| $|\varepsilon_D| = 1$ (unitária) | $RMg = 0$ | $RT$ é máxima |
+| $|\varepsilon_D| < 1$ (inelástica) | $RMg < 0$ | Aumentar $q$ reduz $RT$ |
 
----
+Para a firma **competitiva**, a demanda individual é perfeitamente elástica ($|\varepsilon_D| \to \infty$), logo $RMg = P$.
 
-## 2. Receita marginal do monopolista
-
-A receita total é $R(q) = P(q) \cdot q$. A receita marginal:
-
-$$\text{RMg} = \frac{dR}{dq} = P + q \frac{dP}{dq}$$
-
-Como a demanda é negativamente inclinada ($dP/dq < 0$), temos sempre:
-
-$$\text{RMg} < P$$
-
-!!! example "Exemplo numérico"
-    Demanda linear $P = 100 - 2q$.
-
-    $R(q) = 100q - 2q^2$
-
-    $\text{RMg} = 100 - 4q$
-
-    Note que a RMg tem o **mesmo intercepto** e o **dobro da inclinação** da demanda inversa.
+!!! note "Intuição Econômica"
+    **A firma nunca opera na faixa inelástica da demanda.** Se $|\varepsilon_D| < 1$, reduzir a produção aumenta a receita e diminui o custo — o lucro sobe dos dois lados. O ponto de maximização de lucro sempre ocorre onde a demanda é elástica ($|\varepsilon_D| \geq 1$).
 
 ---
 
-## 3. Otimização do monopolista
+## 2. Decisão de operar ou fechar
 
-O monopolista maximiza o lucro $\pi = R(q) - C(q)$:
+Mesmo com $P = CMg$, a firma pode ter **prejuízo** ($\pi < 0$). No curto prazo, o custo fixo é irrecuperável (*sunk*), então a firma compara:
 
-$$\text{RMg}(q^*) = \text{CMg}(q^*)$$
+| Opção | Resultado |
+|---|---|
+| Produzir $q^*$ | $\pi = Pq^* - CV(q^*) - CF$ |
+| Fechar ($q = 0$) | $\pi = -CF$ |
 
-O preço é então lido na curva de demanda: $P^* = P(q^*)$.
+Produzir é melhor se $Pq^* - CV(q^*) > 0$, ou seja:
 
-!!! example "Exemplo completo"
-    Demanda: $P = 100 - 2q$, Custo: $C(q) = 10q + 50$.
+$$\boxed{P \geq CVMe_{\min}}$$
 
-    $\text{RMg} = 100 - 4q = 10 = \text{CMg}$
-
-    $q^* = 22{,}5$; $P^* = 100 - 45 = 55$
-
-    $\pi = 55 \times 22{,}5 - (10 \times 22{,}5 + 50) = 1.012{,}50 - 275 = 962{,}50$
+Se $P < CVMe_{\min}$, a firma fecha no curto prazo (produz $q = 0$).
 
 ---
 
-## 4. O índice de Lerner
+## 3. Curva de oferta de curto prazo
 
-O **poder de mercado** é medido pelo índice de Lerner:
+Combinando as condições de ótimo e fechamento:
 
-$$L = \frac{P - \text{CMg}}{P}$$
+$$q^S(P) = \begin{cases} CMg^{-1}(P) & \text{se } P \geq CVMe_{\min} \\ 0 & \text{se } P < CVMe_{\min} \end{cases}$$
 
-Usando a condição de otimização, pode-se mostrar que:
-
-$$L = \frac{1}{|\varepsilon_d|}$$
-
-onde $|\varepsilon_d|$ é a elasticidade-preço da demanda (em valor absoluto).
-
-!!! warning "Região elástica"
-    O monopolista **nunca opera na região inelástica** da demanda ($|\varepsilon_d| < 1$), pois ali $\text{RMg} < 0$: reduzir a quantidade aumentaria a receita e diminuiria o custo — seria lucrativo.
+A curva de oferta individual é o trecho da curva de CMg **acima** do ponto mínimo do CVMe. Para preços entre $CVMe_{\min}$ e $CMe_{\min}$, a firma opera com prejuízo mas cobre parte dos custos fixos.
 
 ---
 
-## 5. Peso morto do monopólio
+## 4. Excedente do produtor
 
-Comparando com a concorrência perfeita (onde $P = \text{CMg}$):
+O **excedente do produtor** (EP) mede o ganho da firma acima do mínimo necessário para induzi-la a produzir:
 
-- O monopolista produz **menos** ($q_m < q_c$) e cobra **mais** ($P_m > P_c$)
-- Surge um **peso morto** (DWL) — triângulo entre as curvas de demanda e CMg, de $q_m$ a $q_c$:
+$$EP = RT - CV = Pq^* - \int_0^{q^*} CMg(q)\,dq$$
 
-$$\text{DWL} = \frac{1}{2}(P_m - \text{CMg})(q_c - q_m)$$
-
----
-
-## 6. Discriminação de preços
-
-O monopolista pode aumentar o lucro cobrando preços diferentes:
-
-| Grau | Mecanismo | Exemplo BR |
-|------|-----------|------------|
-| **1.° grau** (perfeita) | Cobra a disposição a pagar de cada consumidor | Negociação de carro usado |
-| **2.° grau** | Menu de opções (auto-seleção) | Spotify Free vs. Premium, passagens aéreas |
-| **3.° grau** | Segmenta por grupo observável | Meia-entrada para estudantes, tarifa de idosos |
-
-**Tarifa em duas partes:** cobra uma taxa fixa $T$ (que extrai o excedente) + preço por unidade $p$. Exemplo: clube de compras (anuidade + preço por item).
-
-**Bundling (venda casada):** combina dois bens num único pacote quando as disposições a pagar são negativamente correlacionadas. Exemplo: pacotes de TV + internet.
-
-!!! tip "Uber e preço dinâmico"
-    O *surge pricing* da Uber é uma forma de discriminação de preços que varia conforme o **momento** (pico de demanda). Economicamente, aproxima-se de uma discriminação de 3.° grau com segmentação temporal.
+Graficamente, é a área entre a linha de preço e a curva de oferta (CMg). Note que $EP = \pi + CF$: o excedente do produtor inclui o lucro econômico mais os custos fixos.
 
 ---
 
-## Gráfico interativo: monopólio
+## 5. Demanda condicionada vs. incondicional por fatores
 
-<div id="graph-monopolio" style="min-height: 450px;">
-<iframe src="../../graficos/cap14/monopolio.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+**Demanda condicional** $L^c(w,v,q)$: minimiza o custo para produzir $q$ dado (problema de minimização de custos).
+
+**Demanda incondicional** $L^*(P,w,v)$: maximiza o lucro escolhendo tanto $q$ quanto $L$ (problema de maximização de lucro).
+
+A relação: $L^*(P,w,v) = L^c\big(w, v, q^*(P,w,v)\big)$.
+
+### Decomposição: efeito substituição + efeito produto
+
+Quando $w$ aumenta:
+
+$$\underbrace{\frac{\partial L^*}{\partial w}}_{\text{efeito total}} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição (}\leq 0\text{)}} + \underbrace{\frac{\partial L^c}{\partial q}\cdot\frac{\partial q^*}{\partial w}}_{\text{efeito produto (}\leq 0\text{)}}$$
+
+- **Efeito substituição** ($\leq 0$): salário mais alto leva a substituir trabalho por capital, mantendo $q$ fixo
+- **Efeito produto** ($\leq 0$): custo mais alto reduz a produção ótima, que reduz a demanda por trabalho
+
+Ambos vão na mesma direção: a demanda incondicional é mais elástica que a condicional.
+
+!!! note "Intuição Econômica"
+    **Essa decomposição é análoga à de Slutsky para o consumidor.** Lá, o efeito preço se decompunha em efeito substituição (ao longo da curva de indiferença) e efeito renda. Aqui, temos substituição (ao longo da isoquanta) e efeito produto (mudança no nível ótimo de produção). A simetria entre as duas teorias é uma das belezas da microeconomia.
+
+---
+
+## Gráfico interativo: receita marginal
+
+<div id="graph-rmg" style="min-height: 450px;">
+<iframe src="graficos/cap12/receita-marginal.html"></iframe>
 </div>
 
 !!! tip "Explore o gráfico"
-    - Observe como $\text{RMg}$ fica abaixo da demanda
-    - Mova os parâmetros de custo e veja como $q^*$ e $P^*$ se ajustam
-    - Identifique visualmente o triângulo de peso morto
+    - Observe como a RMg está sempre abaixo da curva de demanda
+    - Identifique o ponto onde $RMg = 0$ (elasticidade unitária) e a RT máxima
+    - Note que a firma nunca produz na faixa onde $RMg < 0$
 
 ---
 
-## Box: Intuição do poder de mercado
+## Gráfico interativo: curva de oferta e fechamento
 
-!!! note "Intuição Econômica"
-    **Por que o monopolista cobra mais e produz menos?**
+<div id="graph-oferta" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html"></iframe>
+</div>
 
-    O monopolista enfrenta um *trade-off* ao vender uma unidade adicional: ganha a receita daquela unidade, mas precisa **baixar o preço de todas as unidades anteriores** (efeito preço). Esse custo implícito faz com que $\text{RMg} < P$, e a firma para de produzir antes do ponto competitivo.
-
-    A fórmula $L = 1/|\varepsilon_d|$ revela: quanto menos elástica a demanda (consumidores sem alternativas), maior o poder de mercado. Políticas antitruste buscam justamente aumentar $|\varepsilon_d|$ — abrindo mercados, reduzindo barreiras.
+!!! tip "Explore o gráfico"
+    - Reduza o preço abaixo do CVMe mínimo e veja a firma fechar
+    - Identifique a faixa de preços onde a firma opera com prejuízo mas não fecha
+    - Observe a área do excedente do produtor para diferentes preços
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Um monopolista enfrenta $P = 200 - 5q$ e tem $\text{CMg} = 20$. Encontre $q^*$, $P^*$ e o índice de Lerner.
+**Exercício 1.** Uma firma enfrenta demanda $P = 100 - 2q$. Encontre a função de receita marginal e determine para qual $q$ a receita total é máxima.
 
 ??? success "Solução"
-    $\text{RMg} = 200 - 10q = 20 = \text{CMg}$
+    $RT = Pq = 100q - 2q^2$. $RMg = 100 - 4q$.
 
-    $10q = 180 \implies q^* = 18$
+    $RT$ máxima quando $RMg = 0$: $q = 25$. $RT(25) = 1.250$.
 
-    $P^* = 200 - 90 = 110$
+    No ponto $q = 25$: $P = 50$ e $\varepsilon_D = -P/(dP/dq \cdot q) = -50/(2 \times 25) = -1$ (elasticidade unitária).
 
-    $L = \frac{110 - 20}{110} = \frac{90}{110} \approx 0{,}818$
-
-    O monopolista tem alto poder de mercado — o preço está 82% acima do custo marginal.
-
-**Exercício 2.** Explique por que a discriminação de preços de 1.° grau elimina o peso morto, mas não é eficiente no sentido de equidade.
+**Exercício 2.** Uma firma competitiva tem $C(q) = q^3 - 4q^2 + 8q + 5$. Encontre o preço mínimo de operação e a curva de oferta.
 
 ??? success "Solução"
-    Na discriminação perfeita, cada consumidor paga exatamente sua disposição a pagar. Isso faz com que o monopolista produza $q_c$ (a quantidade competitiva), eliminando o DWL. Toda transação com benefício líquido positivo ocorre.
+    $CV = q^3 - 4q^2 + 8q$. $CVMe = q^2 - 4q + 8$.
 
-    Contudo, **todo o excedente** vai para o produtor — o excedente do consumidor é zero. Embora seja eficiente no sentido de Pareto (ninguém pode melhorar sem piorar outro), a distribuição é extremamente desigual.
+    Mínimo: $2q - 4 = 0 \implies q = 2$. $CVMe(2) = 4 - 8 + 8 = 4$.
 
-**Exercício 3.** Um monopolista serve dois mercados com demandas $P_1 = 80 - q_1$ e $P_2 = 60 - 2q_2$, com $\text{CMg} = 10$ constante. Calcule preço e quantidade em cada mercado sob discriminação de 3.° grau.
+    Verificação: $CMg = 3q^2 - 8q + 8$. $CMg(2) = 12 - 16 + 8 = 4 = CVMe(2)$.
+
+    Preço mínimo de operação: $P = 4$.
+
+    Oferta: $P = 3q^2 - 8q + 8$ para $P \geq 4$, i.e., $q = \frac{8 + \sqrt{12P - 32}}{6}$.
+
+**Exercício 3.** Explique por que a demanda incondicional por trabalho é mais elástica que a condicional.
 
 ??? success "Solução"
-    **Mercado 1:** $\text{RMg}_1 = 80 - 2q_1 = 10 \implies q_1^* = 35$, $P_1^* = 45$
-
-    **Mercado 2:** $\text{RMg}_2 = 60 - 4q_2 = 10 \implies q_2^* = 12{,}5$, $P_2^* = 35$
-
-    O mercado com demanda mais inelástica (mercado 1) recebe o preço mais alto.
+    A demanda condicional captura apenas o **efeito substituição**: quando $w$ sobe, a firma substitui trabalho por capital mantendo $q$ fixo. A demanda incondicional captura adicionalmente o **efeito produto**: o custo mais alto reduz $q^*$, o que reduz ainda mais a demanda por trabalho. Como ambos os efeitos são negativos, $|\partial L^*/\partial w| > |\partial L^c/\partial w|$.
 
 ---
 
@@ -178,42 +157,44 @@ O monopolista pode aumentar o lucro cobrando preços diferentes:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A receita marginal do monopolista é menor que o preço porque:
+**Q1.** A receita marginal é negativa quando a demanda é:
 
-- [ ] (a) O custo marginal é crescente
-- [x] (b) Para vender mais uma unidade, ele precisa reduzir o preço de todas as unidades
-- [ ] (c) A demanda é perfeitamente elástica
-- [ ] (d) O monopolista tem custos fixos elevados
+- [ ] (a) Elástica ($|\varepsilon| > 1$)
+- [ ] (b) Unitária ($|\varepsilon| = 1$)
+- [x] (c) Inelástica ($|\varepsilon| < 1$)
+- [ ] (d) Perfeitamente elástica
 
-**Q2.** O índice de Lerner de uma firma competitiva é:
+**Q2.** Uma firma deve fechar no curto prazo quando:
 
-- [x] (a) Zero
-- [ ] (b) 1
-- [ ] (c) Depende da elasticidade
-- [ ] (d) Igual a $1/|\varepsilon_d|$, mas positivo
+- [ ] (a) O lucro econômico é negativo
+- [ ] (b) $P < CMe_{\min}$
+- [x] (c) $P < CVMe_{\min}$
+- [ ] (d) $P < CMg$
 
-**Q3.** Um monopolista enfrenta demanda com $|\varepsilon_d| = 0{,}5$. Ele deve:
+**Q3.** A curva de oferta individual de curto prazo é:
 
-- [ ] (a) Manter a produção, pois está maximizando lucro
-- [ ] (b) Aumentar a produção para ganhar escala
-- [x] (c) Reduzir a produção para alcançar a região elástica
-- [ ] (d) Sair do mercado
+- [ ] (a) A curva de CMg inteira
+- [x] (b) O trecho do CMg acima do CVMe mínimo
+- [ ] (c) O trecho do CMg acima do CMe mínimo
+- [ ] (d) A curva de CMe
 
-**Q4.** Qual tipo de discriminação de preços o programa de meia-entrada brasileiro exemplifica?
+**Q4.** O excedente do produtor é igual a:
 
-- [ ] (a) 1.° grau
-- [ ] (b) 2.° grau
-- [x] (c) 3.° grau
-- [ ] (d) Tarifa em duas partes
+- [ ] (a) Lucro econômico
+- [x] (b) Lucro econômico mais custos fixos
+- [ ] (c) Receita total menos custo total
+- [ ] (d) Custo fixo
 
-**Q5.** V ou F: "O peso morto do monopólio surge porque o monopolista produz mais do que o socialmente ótimo."
+**Q5.** O efeito produto na demanda por trabalho é:
 
-- [ ] (a) Verdadeiro
-- [x] (b) Falso — o monopolista produz menos do que o socialmente ótimo
+- [ ] (a) Positivo (aumento de $w$ aumenta $L$)
+- [x] (b) Negativo (aumento de $w$ eleva custos, reduz $q^*$ e $L$)
+- [ ] (c) Zero
+- [ ] (d) Ambíguo em sinal
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 21**: Derivação formal do equilíbrio de monopólio + análise de bem-estar com exercícios guiados. Traga calculadora!
+    **Aula 22**: Concorrência perfeita e bem-estar — equilíbrio marshalliano, excedentes e o Primeiro Teorema do Bem-Estar. Revise soma horizontal de curvas de oferta!

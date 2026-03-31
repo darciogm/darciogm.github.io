@@ -1,221 +1,165 @@
-# Pré-Aula 20 — Políticas Públicas e Peso Morto no Brasil (Prática)
+# Pré-Aula 20 — Maximização de Lucro I
 
 !!! info "Leitura obrigatória"
-    **Cap. 12, Seções 12.6–12.8** + material complementar sobre políticas brasileiras | Tempo estimado: **45 min**
+    **Cap. 12, Seções 12.1–12.3** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Analisar os efeitos de impostos (específicos e *ad valorem*), subsídios, preços-teto e preços-piso sobre equilíbrio, excedentes e peso morto
-2. Aplicar o princípio da incidência tributária e sua relação com elasticidades
-3. Avaliar criticamente quatro políticas públicas brasileiras usando o arcabouço de bem-estar
+1. Derivar a condição de maximização de lucro $P = CMg$ para uma firma tomadora de preços e verificar a condição de segunda ordem
+2. Explicar a relação $VPMg = w$ e sua interpretação como demanda por fatores
+3. Enunciar as propriedades da função lucro, o Lema de Hotelling e a lei da oferta
 
 ---
 
-## 1. Impostos: específico vs. *ad valorem*
+## 1. A firma tomadora de preços
 
-### Imposto específico
+Uma firma **competitiva** (tomadora de preço, ou *price taker*) não consegue influenciar o preço de mercado. Ela pode vender qualquer quantidade ao preço $P$ vigente. Sua receita total é:
 
-Um imposto de $t$ reais por unidade cria uma cunha entre o preço pago pelo consumidor ($P_C$) e o recebido pelo produtor ($P_P$):
+$$RT(q) = Pq$$
 
-$$P_C = P_P + t$$
+e a receita marginal é simplesmente $RMg = P$. O **lucro econômico** é:
 
-No equilíbrio: $Q^D(P_C) = Q^S(P_P) = Q^S(P_C - t)$
+$$\pi(q) = Pq - C(q)$$
 
-### Imposto *ad valorem*
-
-Um imposto de alíquota $\tau$ sobre o preço:
-
-$$P_C = (1 + \tau) P_P$$
-
-!!! example "Exemplo: imposto específico"
-    Demanda: $Q^D = 100 - 2P_C$. Oferta: $Q^S = 3P_P - 25$. Imposto: $t = 5$.
-
-    $P_C = P_P + 5$. Substituindo: $100 - 2(P_P + 5) = 3P_P - 25$
-
-    $90 - 2P_P = 3P_P - 25 \implies P_P = 23$, $P_C = 28$
-
-    $Q_t = 100 - 56 = 44$
-
-    Sem imposto: $P^* = 25$, $Q^* = 50$ (da Aula 19).
-
-    O consumidor paga $3$ a mais; o produtor recebe $2$ a menos.
+onde $C(q)$ inclui todos os custos de oportunidade.
 
 ---
 
-## 2. Incidência tributária e elasticidade
+## 2. Condições de ótimo
 
-Quem "paga" o imposto não depende de sobre quem ele é legalmente cobrado, mas das **elasticidades**:
+### CPO (Condição de Primeira Ordem)
 
-$$\frac{\Delta P_C}{\Delta P_P} = \frac{|\varepsilon_S|}{|\varepsilon_D|}$$
+$$\frac{d\pi}{dq} = P - CMg(q) = 0 \implies \boxed{P = CMg(q^*)}$$
 
-**Regra geral:** o lado mais **inelástico** do mercado absorve a maior parcela do imposto.
+### CSO (Condição de Segunda Ordem)
 
-- Se $|\varepsilon_D| < |\varepsilon_S|$: consumidores pagam mais
-- Se $|\varepsilon_D| > |\varepsilon_S|$: produtores pagam mais
+$$\frac{d^2\pi}{dq^2} = -\frac{dCMg}{dq} < 0 \implies \frac{dCMg}{dq} > 0$$
 
-### Peso morto do imposto
+O custo marginal deve ser **crescente** no ponto ótimo. Se o CMg fosse decrescente, teríamos um mínimo de lucro, não um máximo.
 
-$$DWL = \frac{1}{2} t (Q^* - Q_t)$$
-
-O peso morto cresce com o quadrado da alíquota — dobrar o imposto quadruplica o peso morto.
+!!! note "Intuição Econômica"
+    **O preço é o sinal, o custo marginal é a resposta.** Se $P > CMg$, a última unidade gera mais receita do que custa — vale produzir mais. Se $P < CMg$, a última unidade custa mais do que rende — é melhor produzir menos. O equilíbrio $P = CMg$ é o ponto em que a firma esgota todas as oportunidades de lucro marginal positivo.
 
 ---
 
-## 3. Preços-teto e preços-piso
+## 3. VPMg e a demanda por fatores
 
-### Preço-teto ($\bar{P} < P^*$)
+No problema de maximização de lucro com um fator variável (trabalho):
 
-Gera **escassez**: $Q^D(\bar{P}) > Q^S(\bar{P})$. Consequências: filas, mercado negro, deterioração da qualidade.
+$$\max_L \; Pf(L,\bar{K}) - wL - v\bar{K}$$
 
-$$DWL = \frac{1}{2}\big[P^D(Q_S) - \bar{P}\big](Q^* - Q_S)$$
+**CPO:**
 
-### Preço-piso ($\underline{P} > P^*$)
+$$P \cdot PMg_L = w \implies \boxed{VPMg_L = w}$$
 
-Gera **excedente**: $Q^S(\underline{P}) > Q^D(\underline{P})$. Consequências: estoques não vendidos, desperdício.
+O **valor do produto marginal** ($VPMg = P \cdot PMg$) é o que vale para a firma a última unidade de trabalho contratada. A firma contrata até o ponto em que $VPMg = w$.
 
----
+Com dois fatores variáveis:
 
-## 4. Subsídios
+$$VPMg_L = w \quad \text{e} \quad VPMg_K = v$$
 
-Um subsídio de $s$ por unidade é um "imposto negativo":
-
-$$P_C = P_P - s$$
-
-Efeito: preço ao consumidor cai, preço ao produtor sobe, quantidade aumenta para além do equilíbrio. Há peso morto porque unidades com custo marginal superior ao benefício marginal são produzidas.
-
-$$DWL_{\text{subsídio}} = \frac{1}{2} s (Q_s - Q^*)$$
+Dividindo: $PMg_L/PMg_K = w/v$, que recupera a condição de minimização de custos.
 
 ---
 
-## 5. Quatro casos brasileiros
+## 4. A função lucro e suas propriedades
 
-### Caso 1: Tributação de combustíveis (CIDE + ICMS)
+A **função lucro** $\pi^*(P, w, v)$ dá o lucro máximo como função dos preços:
 
-O preço da gasolina no Brasil embute CIDE (imposto federal específico) e ICMS (imposto estadual *ad valorem*). A demanda por combustível é relativamente **inelástica** no curto prazo (as pessoas precisam se deslocar).
+$$\pi^*(P, w, v) = \max_q \big[Pq - C(w,v,q)\big]$$
 
-- **Incidência**: maior parcela recai sobre o consumidor
-- **Peso morto**: relativamente pequeno (demanda inelástica) mas significativo em escala
-- **Debate**: redução da CIDE em 2022 — quem se beneficiou?
+**Propriedades:**
 
-### Caso 2: Controle de aluguéis
+1. **Não decrescente em $P$** e **não crescente em $w$, $v$**
+2. **Homogênea de grau 1** em $(P, w, v)$: dobrar todos os preços dobra o lucro nominal
+3. **Convexa em $P$**: a firma responde mais do que proporcionalmente a aumentos de preço
+4. **Convexa em $(w,v)$**: idem para preços dos fatores
 
-Historicamente, o Brasil adotou políticas de congelamento de aluguéis (Lei do Inquilinato de 1991 flexibilizou). Um preço-teto no mercado de aluguel:
+### Lema de Hotelling
 
-- **Efeito**: escassez habitacional, deterioração dos imóveis, mercado informal
-- **Quem é prejudicado?** Inquilinos que não conseguem encontrar imóvel; proprietários que reduzem manutenção
-- **Peso morto**: transações habitacionais que deixam de ocorrer
+$$q^*(P) = \frac{\partial \pi^*}{\partial P}, \quad L^* = -\frac{\partial \pi^*}{\partial w}, \quad K^* = -\frac{\partial \pi^*}{\partial v}$$
 
-### Caso 3: Preço mínimo agrícola (PGPM)
-
-A Política de Garantia de Preços Mínimos garante aos agricultores um preço-piso para produtos como milho, arroz e feijão:
-
-$$\underline{P}_{\text{PGPM}} > P^*_{\text{mercado}} \implies \text{excedente de produção}$$
-
-- **Efeito**: governo compra o excedente (estoques reguladores) ou paga a diferença de preços
-- **Custo fiscal**: manutenção de estoques, perdas por deterioração
-- **Peso morto**: superproduçao além do socialmente eficiente
-
-### Caso 4: Subsídio ao transporte público
-
-Cidades brasileiras subsidiam tarifas de ônibus e metrô para manter preços acessíveis:
-
-- **Objetivo**: garantir mobilidade urbana, reduzir desigualdade
-- **Efeito**: $P_C < CMg$ para o usuário $\to$ quantidade demandada acima do ótimo privado
-- **Justificativa econômica**: se há **externalidade positiva** (menos carros, menos poluição), o subsídio pode ser eficiente — corrige uma falha de mercado
-- **Peso morto**: depende se o subsídio corrige ou excede a externalidade
-
-!!! tip "Lições dos casos"
-    Nenhuma política é universalmente boa ou ruim. A análise de bem-estar (excedentes + peso morto) nos dá uma linguagem precisa para avaliar *trade-offs*. O subsídio ao transporte pode ser eficiente se corrige externalidades; o controle de aluguéis gera ineficiência se o preço-teto está muito abaixo do equilíbrio.
+A oferta e as demandas de fatores são obtidas por simples diferenciação da função lucro.
 
 ---
 
-## Gráfico interativo: incidência tributária
+## 5. Convexidade e lei da oferta
 
-<div id="graph-imposto" style="min-height: 450px;">
-<iframe src="../../graficos/cap12/imposto-incidencia.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
+A convexidade de $\pi^*$ em $P$ implica que:
+
+$$\frac{\partial^2 \pi^*}{\partial P^2} = \frac{\partial q^*}{\partial P} \geq 0$$
+
+Isso é a **lei da oferta**: a quantidade ofertada é não decrescente no preço. Um aumento de preço nunca reduz a produção ótima da firma.
+
+Analogamente, a convexidade em $w$ implica $\partial L^*/\partial w \leq 0$: a demanda (incondicional) por trabalho é não crescente no salário.
+
+!!! note "Intuição Econômica"
+    **A convexidade da função lucro reflete a flexibilidade da firma.** Se o preço sobe, a firma pode ajustar a produção para cima e capturar mais lucro; se cai, pode reduzir a produção e limitar perdas. Essa capacidade de ajuste é o que torna o lucro convexo — os ganhos com preços altos superam as perdas com preços baixos.
+
+---
+
+## Gráfico interativo: maximização de lucro
+
+<div id="graph-max-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html"></iframe>
 </div>
 
 !!! tip "Explore o gráfico"
-    - Altere o valor do imposto e observe a cunha entre $P_C$ e $P_P$
-    - Mude as elasticidades de oferta e demanda para ver quem absorve mais o imposto
-    - Note como o triângulo de peso morto cresce com o imposto
+    - Varie o preço $P$ e observe como $q^*$ se ajusta ao longo da curva de CMg
+    - Note a área de lucro (retângulo entre $P$ e CMe no ponto $q^*$)
+    - Verifique que a CSO exige CMg crescente no ótimo
 
 ---
 
-## Box: A armadilha do pensamento parcial
+## Gráfico interativo: lucro máximo como função do preço
 
-!!! note "Intuição Econômica"
-    **Por que a análise de equilíbrio geral importa para políticas públicas?**
+<div id="graph-funcao-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/lucro-maximo.html"></iframe>
+</div>
 
-    Quando o governo reduz o ICMS da gasolina, o efeito direto é claro: preço menor na bomba. Mas a análise parcial esconde efeitos indiretos — menor arrecadação estadual significa menos investimento em saúde e educação, e o preço menor incentiva mais consumo de combustível fóssil. A microeconomia nos ensina que toda intervenção tem custos (peso morto) e benefícios (correção de falhas), e a boa política pública é aquela em que os benefícios superam os custos. O triângulo de Harberger é uma ferramenta simples mas poderosa para essa contabilidade.
-
----
-
-## Preparação para a atividade prática
-
-!!! warning "Atividade na Aula 20"
-    Na aula, cada grupo receberá um dos 4 casos brasileiros e deverá:
-
-    1. Modelar o mercado com curvas de oferta e demanda (valores simulados)
-    2. Calcular o equilíbrio sem intervenção
-    3. Aplicar a política pública e calcular o novo equilíbrio
-    4. Mensurar mudanças em EC, EP, receita fiscal e peso morto
-    5. Apresentar recomendação: manter, reformar ou eliminar a política?
-
-    **Prepare-se:** revise o cálculo de áreas de excedentes e peso morto. Pense em argumentos a favor e contra cada política.
+!!! tip "Explore o gráfico"
+    - Observe a convexidade de $\pi^*(P)$ — a curva "abre para cima"
+    - A inclinação em cada ponto é $q^*(P)$ (Lema de Hotelling)
+    - Note que $\pi^*$ nunca fica abaixo de zero para preços suficientemente altos
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Um mercado tem demanda $Q^D = 80 - P$ e oferta $Q^S = 2P - 10$. O governo impõe um imposto de $t = 6$ por unidade. Encontre: (a) equilíbrio sem imposto, (b) equilíbrio com imposto ($P_C$, $P_P$, $Q_t$), (c) receita fiscal, (d) peso morto.
+**Exercício 1.** Uma firma competitiva tem $C(q) = 2q^2 + 4q + 18$. O preço é $P = 20$. Encontre $q^*$, o lucro e verifique a CSO.
 
 ??? success "Solução"
-    (a) Sem imposto: $80 - P = 2P - 10 \implies 3P = 90 \implies P^* = 30$, $Q^* = 50$.
+    $CMg = 4q + 4$. CPO: $20 = 4q + 4 \implies q^* = 4$.
 
-    (b) Com imposto: $P_C = P_P + 6$.
+    CSO: $dCMg/dq = 4 > 0$ (CMg crescente no ótimo).
 
-    $80 - (P_P + 6) = 2P_P - 10 \implies 84 = 3P_P \implies P_P = 28$, $P_C = 34$.
+    $\pi = 20(4) - [2(16) + 4(4) + 18] = 80 - [32 + 16 + 18] = 80 - 66 = 14$.
 
-    $Q_t = 80 - 34 = 46$.
-
-    (c) Receita fiscal: $R = t \cdot Q_t = 6 \times 46 = 276$.
-
-    (d) $DWL = \frac{1}{2} \times 6 \times (50 - 46) = \frac{1}{2} \times 6 \times 4 = 12$.
-
-    Parcela paga pelo consumidor: $34 - 30 = 4$ (2/3 do imposto).
-
-    Parcela paga pelo produtor: $30 - 28 = 2$ (1/3 do imposto).
-
-    Isso é consistente: demanda tem elasticidade $|\varepsilon_D| = 30/50 = 0{,}6$; oferta tem $\varepsilon_S = 60/50 = 1{,}2$. Demanda mais inelástica absorve mais.
-
-**Exercício 2.** No mesmo mercado, suponha que o governo imponha um preço-teto de $\bar{P} = 24$. Calcule a escassez e o peso morto.
+**Exercício 2.** Para $f(L) = 10L^{1/2}$ com $P = 5$ e $w = 2$, encontre a quantidade ótima de trabalho.
 
 ??? success "Solução"
-    $Q^D(24) = 80 - 24 = 56$
+    $PMg_L = 5L^{-1/2}$. Condição $VPMg_L = w$:
 
-    $Q^S(24) = 2(24) - 10 = 38$
+    $5 \times 5L^{-1/2} = 2 \implies 25L^{-1/2} = 2 \implies L^{-1/2} = 2/25$
 
-    Escassez: $56 - 38 = 18$ unidades.
+    $L^{1/2} = 25/2 \implies L^* = 156{,}25$
 
-    Quantidade transacionada: $Q = 38$ (lado curto).
+    Verificação: $VPMg_L(156{,}25) = 25/12{,}5 = 2 = w$.
 
-    $P^D(38) = 80 - 38 = 42$ (disposição a pagar pela última unidade transacionada).
-
-    $DWL = \frac{1}{2}(42 - 24)(50 - 38) = \frac{1}{2}(18)(12) = 108$
-
-    Note que o peso morto do preço-teto ($108$) é muito maior que o do imposto ($12$), porque a distorção é mais severa.
-
-**Exercício 3.** Um subsídio pode ser eficiente? Dê um exemplo e explique a condição para que o subsídio aumente o bem-estar total.
+**Exercício 3.** Mostre que a função lucro é homogênea de grau 1 em $(P,w,v)$. O que isso significa economicamente?
 
 ??? success "Solução"
-    Um subsídio pode ser eficiente quando corrige uma **externalidade positiva** — quando o benefício social marginal excede o benefício privado marginal.
+    Se multiplicamos $P$, $w$ e $v$ por $t > 0$:
 
-    Exemplo: vacinação. O benefício privado de se vacinar inclui apenas a proteção individual. O benefício social inclui também a proteção dos outros (imunidade de rebanho). Sem subsídio, o mercado gera quantidade abaixo do ótimo social.
+    $\pi^*(tP, tw, tv) = \max_q [tPq - C(tw, tv, q)]$
 
-    Condição: o subsídio deve ser igual à externalidade marginal no ótimo social: $s = BMg_{\text{social}} - BMg_{\text{privado}}$. Se o subsídio exceder a externalidade, há peso morto por superprodução. O subsídio eficiente internaliza a externalidade, movendo a quantidade de mercado para o ótimo social.
+    Como $C$ é homogênea de grau 1 em $(w,v)$: $C(tw, tv, q) = tC(w, v, q)$.
+
+    $\pi^*(tP, tw, tv) = \max_q\, t[Pq - C(w,v,q)] = t\,\pi^*(P, w, v)$
+
+    Economicamente: o lucro é medido em unidades monetárias. Uma inflação uniforme (todos os preços dobram) dobra o lucro nominal sem alterar decisões reais. A firma não sofre de "ilusão monetária".
 
 ---
 
@@ -226,42 +170,44 @@ Cidades brasileiras subsidiam tarifas de ônibus e metrô para manter preços ac
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** A incidência econômica de um imposto depende de:
+**Q1.** A condição de maximização de lucro para uma firma competitiva é:
 
-- [ ] (a) Sobre quem o imposto é legalmente cobrado
-- [x] (b) Das elasticidades relativas de oferta e demanda
-- [ ] (c) Do tamanho do mercado
-- [ ] (d) Da receita fiscal arrecadada
+- [ ] (a) $RMg = CMe$
+- [x] (b) $P = CMg$ com CMg crescente
+- [ ] (c) $P = CMe$
+- [ ] (d) $CMg = CVMe$
 
-**Q2.** O peso morto de um imposto cresce com:
+**Q2.** A condição $VPMg_L = w$ significa que a firma contrata trabalho até:
 
-- [ ] (a) O valor absoluto do imposto, linearmente
-- [x] (b) O quadrado do imposto (dobrar $t$ quadruplica DWL)
-- [ ] (c) A receita fiscal, proporcionalmente
-- [ ] (d) O número de firmas no mercado
+- [ ] (a) O produto marginal ser zero
+- [ ] (b) O salário igualar o custo médio
+- [x] (c) O valor monetário da produção adicional igualar o salário
+- [ ] (d) O produto total ser máximo
 
-**Q3.** Um preço-teto abaixo do equilíbrio gera:
+**Q3.** Pelo Lema de Hotelling, a oferta da firma é:
 
-- [ ] (a) Excesso de oferta
-- [x] (b) Excesso de demanda (escassez)
-- [ ] (c) Nenhum efeito se bem administrado
-- [ ] (d) Aumento do excedente total
+- [x] (a) $q^* = \partial\pi^*/\partial P$
+- [ ] (b) $q^* = -\partial\pi^*/\partial P$
+- [ ] (c) $q^* = \partial C/\partial P$
+- [ ] (d) $q^* = \pi^*/P$
 
-**Q4.** No caso do PGPM brasileiro, o preço-piso agrícola gera:
+**Q4.** A lei da oferta decorre de qual propriedade da função lucro?
 
-- [x] (a) Excesso de oferta que o governo precisa absorver
-- [ ] (b) Escassez de produtos agrícolas
-- [ ] (c) Redução no excedente do produtor
-- [ ] (d) Eliminação do peso morto
+- [ ] (a) Homogeneidade de grau 1
+- [x] (b) Convexidade em $P$
+- [ ] (c) Concavidade em $P$
+- [ ] (d) Monotonicidade em $w$
 
-**Q5.** V ou F: "Um subsídio ao transporte público sempre gera peso morto e é, portanto, sempre ineficiente."
+**Q5.** Se todos os preços (produto e fatores) dobram, o lucro máximo:
 
-- [ ] (a) Verdadeiro
-- [x] (b) Falso — se há externalidade positiva (menos poluição, menos congestionamento), o subsídio pode corrigir uma falha de mercado e aumentar a eficiência
+- [x] (a) Dobra (homogeneidade de grau 1)
+- [ ] (b) Quadruplica
+- [ ] (c) Não se altera
+- [ ] (d) Cai pela metade
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 20**: Atividade prática — análise de políticas públicas brasileiras com cálculo de excedentes e peso morto. Traga calculadora e prepare seus argumentos!
+    **Aula 21**: Maximização de lucro II — receita marginal, decisão de fechamento, curva de oferta e excedente do produtor. Revise a relação entre CMg e CVMe!

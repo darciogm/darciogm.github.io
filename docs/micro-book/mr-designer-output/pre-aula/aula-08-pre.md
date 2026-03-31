@@ -1,146 +1,146 @@
-# Pré-Aula 08 — Decomposição Slutsky + Case Brasil (Prática)
+# Pré-Aula 08 — Equação de Slutsky: Teoria
 
 !!! info "Leitura obrigatória"
-    **Cap. 6 completo** do livro interativo + Box Brasil | Tempo estimado: **45 min**
+    **Cap. 5, Seções 5.1–5.3** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
-1. Distinguir substitutos/complementares brutos (Marshallianos) de líquidos (Hicksianos) e explicar por que a distinção importa
-2. Aplicar a simetria dos efeitos cruzados Hicksianos e a equação de Slutsky cruzada
-3. Analisar padrões de consumo brasileiros (arroz-feijão, carne-frango, gasolina-etanol) usando o ferramental de demanda
+Após estudar este material e antes de vir à aula, você deve ser capaz de:
+
+1. Decompor o efeito total de uma mudança de preço em efeito substituição (ES) e efeito renda (ER)
+2. Enunciar a equação de Slutsky e explicar o sinal de cada componente
+3. Classificar bens como normais, inferiores ou de Giffen com base na decomposição
 
 ---
 
-## 1. Efeitos preço-cruzados
+## 1. O problema: por que decompor?
 
-Quando o preço de $y$ muda, o que acontece com a demanda de $x$? A resposta depende de **qual demanda** estamos usando.
+Quando o preço de um bem sobe, a quantidade demandada geralmente cai. Mas por quê? Dois mecanismos atuam simultaneamente:
 
-### Substitutos e complementares brutos (Marshallianos)
+1. **Efeito substituição (ES)**: o bem ficou relativamente mais caro — o consumidor substitui por alternativas.
+2. **Efeito renda (ER)**: o poder de compra caiu — o consumidor é efetivamente mais pobre.
 
-Baseados na demanda Marshalliana $x^*(p_x, p_y, m)$:
-
-$$\text{Substitutos brutos:} \quad \frac{\partial x^*}{\partial p_y} > 0 \qquad \text{(preço de } y \text{ sobe } \Rightarrow \text{ demanda de } x \text{ sobe)}$$
-
-$$\text{Complementares brutos:} \quad \frac{\partial x^*}{\partial p_y} < 0 \qquad \text{(preço de } y \text{ sobe } \Rightarrow \text{ demanda de } x \text{ cai)}$$
-
-!!! warning "Problema dos brutos"
-    A relação **não é necessariamente simétrica**: é possível que $x$ seja substituto bruto de $y$, mas $y$ seja complementar bruto de $x$. Isso ocorre porque a Marshalliana mistura efeitos substituição e renda.
-
----
-
-## 2. Substitutos e complementares líquidos (Hicksianos)
-
-Baseados na demanda Hicksiana $h_x(p_x, p_y, \bar{U})$:
-
-$$\text{Substitutos líquidos:} \quad \frac{\partial h_x}{\partial p_y} > 0$$
-
-$$\text{Complementares líquidos:} \quad \frac{\partial h_x}{\partial p_y} < 0$$
-
-### A grande vantagem: simetria
-
-$$\boxed{\frac{\partial h_x}{\partial p_y} = \frac{\partial h_y}{\partial p_x}}$$
-
-> Se $x$ é substituto líquido de $y$, então $y$ é substituto líquido de $x$. Sempre!
-
-Essa simetria vem do **lema de Shephard** e do teorema de Young:
-
-$$\frac{\partial h_x}{\partial p_y} = \frac{\partial^2 E}{\partial p_y \partial p_x} = \frac{\partial^2 E}{\partial p_x \partial p_y} = \frac{\partial h_y}{\partial p_x}$$
-
----
-
-## 3. Equação de Slutsky cruzada
-
-A decomposição de Slutsky também vale para efeitos cruzados:
-
-$$\frac{\partial x^*}{\partial p_y} = \frac{\partial h_x}{\partial p_y} - y^* \frac{\partial x^*}{\partial m}$$
-
-$$\underbrace{\text{Efeito bruto}}_{\text{observável}} = \underbrace{\text{Efeito líquido}}_{\text{substituição pura}} - \underbrace{\text{Efeito renda cruzado}}_{y^* \cdot \partial x^*/\partial m}$$
+Separar esses efeitos é crucial porque eles podem apontar em direções opostas.
 
 !!! note "Intuição Econômica"
-    **Frango e carne bovina no Brasil.**
-
-    Quando o preço da carne bovina sobe, os brasileiros compram mais frango (substituto bruto). Mas parte desse aumento é efeito renda: carne cara "empobrece" a família, que migra para proteína mais barata. O efeito líquido (compensado) isola a pura substituição: mesmo mantendo o poder de compra, o consumidor trocaria carne por frango porque o preço relativo mudou.
+    Imagine que o preço da carne dobra. Você compra menos carne por dois motivos: (1) frango ficou relativamente mais barato (ES), e (2) sua renda real caiu, reduzindo seu consumo geral (ER). Para bens normais, ambos reduzem a demanda. Mas para bens inferiores, o ER pode aumentar a demanda!
 
 ---
 
-## 4. Elasticidade preço-cruzado
+## 2. Decomposição de Hicks
 
-$$\varepsilon_{x, p_y} = \frac{\partial x^*}{\partial p_y} \cdot \frac{p_y}{x^*}$$
+A decomposição de Hicks usa a **curva de indiferença original** como referência.
 
-| Sinal de $\varepsilon_{x, p_y}$ | Classificação (bruta) | Exemplo BR |
-|:---|:---|:---|
-| $> 0$ | Substitutos brutos | Gasolina e etanol |
-| $< 0$ | Complementares brutos | Arroz e feijão |
-| $= 0$ | Independentes | Sapato e sorvete |
+Partindo de $(p_1, p_2, I)$ com utilidade $\bar{u} = V(p, I)$, quando $p_1$ muda para $p_1'$:
 
----
+**Efeito Total (ET)**:
 
-## 5. Agregação: da demanda individual à demanda de mercado
+$$\text{ET} = x_1^M(p_1', p_2, I) - x_1^M(p_1, p_2, I)$$
 
-A demanda de mercado é a **soma horizontal** das demandas individuais:
+**Efeito Substituição de Hicks (ES)**:
 
-$$X^D(p) = \sum_{i=1}^{n} x_i^*(p, m_i)$$
+$$\text{ES}_H = h_1(p_1', p_2, \bar{u}) - h_1(p_1, p_2, \bar{u})$$
 
-Propriedades:
+O ES move o consumidor ao longo da curva de indiferença original, mudando apenas preços relativos.
 
-- Se cada $x_i^*$ é decrescente em $p_x$, a demanda de mercado também é (a menos de Giffen)
-- A **distribuição de renda** afeta a demanda de mercado (mesmo com renda agregada igual)
-- A elasticidade de mercado é uma **média ponderada** das elasticidades individuais
+**Efeito Renda (ER)**:
 
----
+$$\text{ER} = \text{ET} - \text{ES}_H = x_1^M(p_1', p_2, I) - h_1(p_1', p_2, \bar{u})$$
 
-## 6. Case Brasil: padrões de consumo
+## Gráfico interativo: Efeitos Renda e Substituição
 
-!!! example "Exemplos empíricos brasileiros"
-    **Arroz e feijão** ($\varepsilon_{cross} < 0$): complementares clássicos na dieta brasileira. Quando o preço do feijão sobe, o consumo de arroz também cai — são consumidos juntos.
-
-    **Carne bovina e frango** ($\varepsilon_{cross} > 0$): substitutos. Nas crises, o brasileiro migra de carne bovina para frango. A elasticidade cruzada estimada é $\approx 0{,}3$ a $0{,}5$.
-
-    **Gasolina e etanol** ($\varepsilon_{cross} > 0$): no Brasil, graças aos carros flex, são substitutos quase perfeitos quando a relação de preço cruza o limiar de 70%. A elasticidade cruzada é alta ($\approx 0{,}8$ a $1{,}2$).
-
----
-
-## Gráfico interativo: substitutos e complementares
-
-<div id="graph-cross-effects" style="min-height: 450px;">
-<iframe src="../../graficos/cap06/substitutos-complementares.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
+<iframe src="graficos/cap05/efeito-renda-substituicao.html"></iframe>
 
 !!! tip "Explore o gráfico"
-    - Aumente $p_y$ e observe se $x^*$ sobe (substitutos) ou cai (complementares)
-    - Compare o efeito bruto (Marshalliano) com o líquido (Hicksiano)
-    - Teste o caso gasolina-etanol com elasticidade cruzada alta
+    Aumente o preço de $x_1$ e observe os três passos: (1) nova reta orçamentária, (2) reta compensada (paralela à nova, tangente à curva original), (3) ponto final. A distância entre o ponto original e o compensado é o ES; entre o compensado e o final é o ER.
+
+---
+
+## 3. A equação de Slutsky
+
+Em forma diferencial, a decomposição é a célebre **equação de Slutsky**:
+
+$$\frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j^M \frac{\partial x_i^M}{\partial I}$$
+
+Ou, para o efeito próprio ($i = j$):
+
+$$\underbrace{\frac{\partial x_i^M}{\partial p_i}}_{\text{ET}} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\text{ES} \leq 0} - \underbrace{x_i^M \frac{\partial x_i^M}{\partial I}}_{\text{ER}}$$
+
+### Sinais dos componentes
+
+| Componente | Sinal | Justificativa |
+|------------|-------|---------------|
+| ES ($\partial h_i / \partial p_i$) | $\leq 0$ sempre | Lei da demanda compensada |
+| ER ($-x_i^M \cdot \partial x_i^M / \partial I$) | Depende | Negativo se normal; positivo se inferior |
+| ET ($\partial x_i^M / \partial p_i$) | Geralmente $< 0$ | Exceto bens de Giffen |
+
+!!! note "Intuição Econômica"
+    O ES é **sempre negativo** (a demanda compensada sempre cai com o preço). O ER depende do tipo de bem. Para bens normais ($\partial x_i^M/\partial I > 0$), o ER reforça o ES. Para bens inferiores ($\partial x_i^M/\partial I < 0$), o ER se opõe ao ES. No caso extremo (Giffen), o ER positivo domina o ES negativo.
+
+---
+
+## 4. Classificação de bens
+
+### 4.1 Bens normais
+
+$$\frac{\partial x_i^M}{\partial I} > 0 \implies \text{ER reforça ES} \implies \frac{\partial x_i^M}{\partial p_i} < 0$$
+
+A Lei da Demanda sempre vale para bens normais.
+
+### 4.2 Bens inferiores (não-Giffen)
+
+$$\frac{\partial x_i^M}{\partial I} < 0 \quad \text{mas} \quad |\text{ES}| > |\text{ER}| \implies \frac{\partial x_i^M}{\partial p_i} < 0$$
+
+O ER se opõe ao ES, mas não o domina. A Lei da Demanda ainda vale.
+
+### 4.3 Bens de Giffen
+
+$$\frac{\partial x_i^M}{\partial I} < 0 \quad \text{e} \quad |\text{ER}| > |\text{ES}| \implies \frac{\partial x_i^M}{\partial p_i} > 0$$
+
+Caso extremamente raro: o preço sobe e a quantidade demandada sobe. Requer que o bem seja muito inferior e que represente grande parcela do orçamento (para que $x_i^M$ no ER seja grande).
+
+!!! note "Intuição Econômica"
+    Um bem de Giffen é necessariamente inferior, mas um bem inferior não é necessariamente Giffen. Para ser Giffen, a inferioridade precisa ser tão forte que o efeito renda domina o efeito substituição. Isso é logicamente possível mas empiricamente muito raro.
+
+## Gráfico interativo: Curva de Engel
+
+<iframe src="graficos/cap05/curva-engel.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    A curva de Engel mostra como a demanda varia com a renda. Para bens normais, é positivamente inclinada; para inferiores, negativamente. Varie os parâmetros e observe a transição.
+
+---
+
+## 5. Matriz de Slutsky
+
+A equação de Slutsky generaliza para todos os pares de bens. A **matriz de substituição de Slutsky** $S$ tem elementos:
+
+$$s_{ij} = \frac{\partial h_i}{\partial p_j} = \frac{\partial x_i^M}{\partial p_j} + x_j^M \frac{\partial x_i^M}{\partial I}$$
+
+Propriedades de $S$:
+
+- **Simétrica**: $s_{ij} = s_{ji}$ (integrabilidade)
+- **Negativa semidefinida**: $v' S v \leq 0$ para todo $v$ (ES sempre reduz gasto)
+- Diagonal: $s_{ii} \leq 0$ (Lei da demanda compensada)
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Para $U = x^{0{,}5} y^{0{,}5}$, os bens são substitutos ou complementares brutos? E líquidos? Justifique.
+**Exercício 1.** Para $u = x_1^{1/2} x_2^{1/2}$ com $p_1 = 1$, $p_2 = 1$, $I = 100$, suponha que $p_1$ sobe para 4. (a) Calcule o ET. (b) Calcule o ES de Hicks. (c) Calcule o ER.
 
 ??? success "Solução"
-    **Marshallianas:** $x^* = m/(2p_x)$ e $y^* = m/(2p_y)$.
+    Inicial: $x_1^M = 50$, $\bar{u} = 50^{1/2} \cdot 50^{1/2} = 50$. Novo: $x_1^M = (1/2)(100)/4 = 12{,}5$. **ET** $= 12{,}5 - 50 = -37{,}5$. Hicksiana: $h_1(4, 1, 50) = 50 \cdot (1/4)^{1/2} = 25$. **ES** $= 25 - 50 = -25$. **ER** $= -37{,}5 - (-25) = -12{,}5$. Ambos negativos (bem normal), ER reforça ES.
 
-    $\frac{\partial x^*}{\partial p_y} = 0$ — bens **independentes** no sentido bruto (Cobb-Douglas tem elasticidade cruzada zero).
-
-    **Hicksianas:** $h_x = \bar{U}\sqrt{p_y/p_x}$.
-
-    $\frac{\partial h_x}{\partial p_y} = \frac{\bar{U}}{2\sqrt{p_x p_y}} > 0$ — **substitutos líquidos**.
-
-    A Cobb-Douglas esconde a substituição líquida porque o efeito renda cruzado compensa exatamente o efeito substituição na Marshalliana.
-
-**Exercício 2.** Se a elasticidade cruzada entre gasolina e etanol é $\varepsilon_{g,e} = 1{,}0$ e o preço do etanol sobe 20%, em quanto varia a demanda de gasolina?
+**Exercício 2.** Um bem inferior tem $\partial x^M/\partial I = -0{,}2$ e $\partial h/\partial p = -3$. A demanda Marshalliana é $x^M = 5$. Calcule $\partial x^M/\partial p$ via Slutsky e classifique o bem.
 
 ??? success "Solução"
-    $\Delta\% \, x_g \approx \varepsilon_{g,e} \times \Delta\% \, p_e = 1{,}0 \times 20\% = 20\%$
+    $\partial x^M/\partial p = \partial h/\partial p - x^M \cdot \partial x^M/\partial I = -3 - 5(-0{,}2) = -3 + 1 = -2 < 0$. O bem é **inferior mas não Giffen**: o ES ($-3$) domina o ER ($+1$). A Lei da Demanda ainda vale.
 
-    A demanda de gasolina sobe 20% (são substitutos brutos).
-
-**Exercício 3.** Verifique a simetria Hicksiana: se $\partial h_x / \partial p_y = 3$, quanto vale $\partial h_y / \partial p_x$?
+**Exercício 3.** Modifique o exercício anterior para que o bem seja de Giffen. Qual valor mínimo de $|\partial x^M/\partial I|$ seria necessário?
 
 ??? success "Solução"
-    Pela simetria da matriz de Slutsky: $\frac{\partial h_y}{\partial p_x} = \frac{\partial h_x}{\partial p_y} = 3$.
-
-    Isso decorre do teorema de Young aplicado à função gasto (derivadas cruzadas de $E$ são simétricas).
+    Para Giffen, precisamos $\partial x^M/\partial p > 0$: $-3 - 5(\partial x^M/\partial I) > 0 \implies \partial x^M/\partial I < -3/5 = -0{,}6$. Logo $|\partial x^M/\partial I| > 0{,}6$. Com inferioridade tão forte e $x^M = 5$ (alta parcela do orçamento), o ER domina o ES.
 
 ---
 
@@ -151,44 +151,44 @@ Propriedades:
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Bens substitutos brutos são aqueles para os quais:
+**Q1.** Na equação de Slutsky, o efeito substituição é:
 
-- [ ] (a) $\partial x^* / \partial p_y < 0$
-- [x] (b) $\partial x^* / \partial p_y > 0$
-- [ ] (c) $\partial h_x / \partial p_y < 0$
-- [ ] (d) $\partial x^* / \partial m > 0$
+- [x] (a) Sempre negativo (ou zero)
+- [ ] (b) Sempre positivo
+- [ ] (c) Positivo para bens normais, negativo para inferiores
+- [ ] (d) Depende da elasticidade-renda
 
-**Q2.** A simetria $\partial h_x / \partial p_y = \partial h_y / \partial p_x$ vale para:
+**Q2.** Um bem de Giffen é necessariamente:
 
-- [ ] (a) Demandas Marshallianas
-- [x] (b) Demandas Hicksianas
-- [ ] (c) Ambas
-- [ ] (d) Nenhuma
+- [ ] (a) Normal
+- [ ] (b) De luxo
+- [x] (c) Inferior
+- [ ] (d) Substituto
 
-**Q3.** Qual é a elasticidade preço-cruzado esperada entre arroz e feijão no Brasil?
+**Q3.** Se o efeito renda reforça o efeito substituição, o bem é:
 
-- [ ] (a) Positiva (substitutos)
-- [x] (b) Negativa (complementares)
-- [ ] (c) Zero (independentes)
-- [ ] (d) Infinita
+- [x] (a) Normal
+- [ ] (b) Inferior
+- [ ] (c) De Giffen
+- [ ] (d) Complementar
 
-**Q4.** No Brasil, a relação gasolina-etanol é de substitutibilidade alta porque:
+**Q4.** A matriz de substituição de Slutsky é:
 
-- [ ] (a) Ambos são derivados de petróleo
-- [ ] (b) O preço é tabelado pelo governo
-- [x] (c) Carros flex permitem trocar entre os combustíveis
-- [ ] (d) A elasticidade-renda é unitária
+- [ ] (a) Positiva definida
+- [x] (b) Negativa semidefinida e simétrica
+- [ ] (c) Diagonal
+- [ ] (d) Identidade
 
-**Q5.** Na Cobb-Douglas, a elasticidade cruzada Marshalliana entre os bens é:
+**Q5.** Na decomposição de Hicks, o efeito substituição é medido:
 
-- [x] (a) Zero
-- [ ] (b) Positiva
-- [ ] (c) Negativa
-- [ ] (d) Unitária
+- [x] (a) Ao longo da curva de indiferença original
+- [ ] (b) Ao longo da nova curva de indiferença
+- [ ] (c) Ao longo da reta orçamentária original
+- [ ] (d) Mantendo a renda nominal constante
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 08**: Lab prático — decomposição de Slutsky cruzada com dados brasileiros + debate sobre classificação de pares de bens e implicações para política tributária.
+    **Aula 09**: Equação de Slutsky — Exercícios práticos de decomposição para Cobb-Douglas e quase-linear.

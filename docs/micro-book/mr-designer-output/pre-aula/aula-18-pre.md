@@ -1,156 +1,151 @@
-# Pré-Aula 18 — Simulação: Decisão de Produção (Prática)
+# Pré-Aula 18 — Função de Produção II
 
 !!! info "Leitura obrigatória"
-    **Cap. 11** (natureza da firma, Coase) + **Cap. 12 preview** do livro interativo | Tempo estimado: **40 min**
+    **Cap. 10, Seções 10.4–10.6** do livro interativo | Tempo estimado: **45 min**
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Explicar a natureza da firma segundo Coase e o papel dos custos de transação
-2. Agregar curvas de oferta individuais para obter a oferta de mercado
-3. Descrever o equilíbrio de longo prazo com livre entrada e a condição de lucro zero
+1. Classificar funções de produção específicas (linear, Leontief, Cobb-Douglas, CES) e calcular a elasticidade de substituição $\sigma$ para cada uma
+2. Distinguir os três tipos de progresso técnico (Hicks-neutro, Harrod-neutro, Solow-neutro) e interpretar o resíduo de Solow
+3. Identificar funções homotéticas e traçar o caminho de expansão da firma
 
 ---
 
-## 1. Por que firmas existem? — Coase e custos de transação
+## 1. Funções de produção específicas
 
-Em 1937, Ronald Coase fez uma pergunta fundamental: se o mercado é tão eficiente em alocar recursos, **por que existem firmas?** Por que nem tudo é feito por contratos entre indivíduos autônomos?
+### Linear
 
-A resposta está nos **custos de transação** — custos de usar o mercado:
+$$f(K,L) = aK + bL$$
 
-- **Custos de busca**: encontrar fornecedores, comparar preços
-- **Custos de negociação**: elaborar contratos, negociar termos
-- **Custos de enforcement**: monitorar cumprimento, resolver disputas
+Fatores são **substitutos perfeitos**. As isoquantas são retas com inclinação $-a/b$. A TMST é constante:
 
-!!! example "Exemplo: produzir vs. terceirizar"
-    Uma montadora de automóveis pode:
+$$TMST = \frac{a}{b}$$
 
-    **(a)** Produzir parafusos internamente: custo de produção + gestão interna
+### Leontief (proporções fixas)
 
-    **(b)** Comprar de fornecedores: preço de mercado + custos de transação (busca, contratos, controle de qualidade)
+$$f(K,L) = \min\left\{\frac{K}{a},\; \frac{L}{b}\right\}$$
 
-    A firma existe quando o custo de organização interna é **menor** que os custos de transação do mercado.
+Fatores são **complementares perfeitos**. As isoquantas têm formato de "L" com vértice em $K = aq$, $L = bq$. Não há possibilidade de substituição: $\sigma = 0$.
 
-A **fronteira da firma** é determinada pelo ponto onde o custo marginal de uma transação interna iguala o custo marginal de uma transação pelo mercado.
+### Cobb-Douglas
 
----
+$$f(K,L) = AK^\alpha L^\beta$$
 
-## 2. Oferta de mercado: agregação
+Com $\alpha, \beta > 0$. Os rendimentos de escala dependem de $\alpha + \beta$:
 
-A **oferta de mercado** é a soma horizontal das ofertas individuais. Se há $n$ firmas idênticas, cada com oferta $q^S(P)$:
+- $\alpha + \beta > 1$: rendimentos crescentes
+- $\alpha + \beta = 1$: rendimentos constantes
+- $\alpha + \beta < 1$: rendimentos decrescentes
 
-$$Q^S(P) = \sum_{i=1}^{n} q_i^S(P) = n \cdot q^S(P) \quad \text{(firmas idênticas)}$$
+A TMST é $\displaystyle TMST = \frac{\alpha}{\beta}\cdot\frac{L}{K}$.
 
-Com firmas heterogêneas:
+### CES (Elasticidade de Substituição Constante)
 
-$$Q^S(P) = \sum_{i=1}^{n} q_i^S(P)$$
+$$f(K,L) = A\!\left[\delta K^\rho + (1-\delta)L^\rho\right]^{1/\rho}$$
 
-Onde cada $q_i^S(P)$ é o trecho do $CMg_i$ acima do $CVMe_{i,\min}$.
-
-!!! example "Agregação com 2 firmas"
-    Firma 1: $q_1^S = P - 4$ para $P \geq 4$
-
-    Firma 2: $q_2^S = 2P - 6$ para $P \geq 3$
-
-    Para $P < 3$: $Q^S = 0$
-
-    Para $3 \leq P < 4$: $Q^S = 2P - 6$
-
-    Para $P \geq 4$: $Q^S = (P - 4) + (2P - 6) = 3P - 10$
-
----
-
-## 3. Equilíbrio de longo prazo com livre entrada
-
-No longo prazo, **novas firmas podem entrar** e firmas existentes podem **sair** do mercado. O mecanismo é:
-
-1. Se $\pi > 0$ (lucro positivo): novas firmas entram $\to$ oferta aumenta $\to$ $P$ cai
-2. Se $\pi < 0$ (prejuízo): firmas saem $\to$ oferta diminui $\to$ $P$ sobe
-3. Equilíbrio: $\pi = 0$ (lucro econômico zero)
-
-**Condição de equilíbrio de longo prazo:**
-
-$$\boxed{P^* = CMe_{\min} = CMg(q^*)}$$
-
-Cada firma produz na **escala eficiente** (mínimo do CMe), cobra o preço que cobre exatamente todos os custos (incluindo custo de oportunidade), e não há incentivo para entrada ou saída.
-
-!!! tip "Lucro zero não é ruim!"
-    Lucro **econômico** zero significa que a firma cobre todos os custos, incluindo o retorno normal do capital. Os proprietários recebem exatamente o que ganhariam na melhor alternativa. Lucro contábil continua positivo.
-
----
-
-## 4. Oferta de longo prazo da indústria
-
-A **curva de oferta de longo prazo** depende de como os custos se comportam com a entrada de novas firmas:
-
-| Tipo de indústria | Efeito da entrada nos custos | Oferta LP |
-|---|---|---|
-| Custos constantes | Nenhum | Horizontal em $P = CMe_{\min}$ |
-| Custos crescentes | Entrada eleva preços dos insumos | Positivamente inclinada |
-| Custos decrescentes | Entrada reduz custos (externalidades) | Negativamente inclinada |
-
----
-
-## Preparação para a simulação
-
-!!! warning "Simulação de mercado na Aula 18"
-    Na aula, você assumirá o papel de uma **firma em um mercado competitivo**. Cada participante:
-
-    1. Receberá uma função custo individual
-    2. Decidirá **quanto produzir** dado o preço de mercado
-    3. Observará o resultado agregado (oferta de mercado)
-    4. Verá novas firmas entrarem (ou firmas saírem) em rodadas subsequentes
-
-    **Prepare-se:**
-
-    - Revise como encontrar $q^*$ dado $P$ (condição $P = CMg$)
-    - Revise a decisão de fechamento ($P$ vs. $CVMe_{\min}$)
-    - Pense: o que acontece com o preço se muitas firmas estão tendo lucro?
+onde $\rho \leq 1$, $\rho \neq 0$, e $0 < \delta < 1$.
 
 !!! note "Intuição Econômica"
-    **A "mão invisível" em ação**
+    **A família CES unifica tudo.** Para $\rho = 1$ obtemos a linear; para $\rho \to 0$ a Cobb-Douglas; para $\rho \to -\infty$ a Leontief. O parâmetro $\rho$ governa a facilidade de substituição entre fatores — quanto maior $\rho$, mais fácil substituir capital por trabalho e vice-versa.
 
-    A simulação ilustra como o mecanismo de preços coordena decisões descentralizadas. Nenhuma firma precisa saber o que as outras fazem — basta olhar para o preço. Se o preço é alto, produz mais; se é baixo, produz menos ou fecha. A entrada e saída de firmas ajustam automaticamente a oferta até o lucro econômico zerar. Adam Smith chamou isso de "mão invisível", e a simulação permite vivenciar essa convergência.
+---
+
+## 2. Elasticidade de substituição
+
+A **elasticidade de substituição** $\sigma$ mede a variação percentual na razão capital-trabalho quando a TMST varia em 1%:
+
+$$\sigma = \frac{d\ln(K/L)}{d\ln(TMST)}$$
+
+| Função | $\sigma$ |
+|---|---|
+| Linear | $\infty$ |
+| Cobb-Douglas | $1$ |
+| CES | $\dfrac{1}{1-\rho}$ |
+| Leontief | $0$ |
+
+Para a CES, a relação $\sigma = 1/(1-\rho)$ mostra que $\rho$ e $\sigma$ movem-se juntos: maior $\rho$ implica maior substituibilidade.
+
+---
+
+## 3. Progresso técnico
+
+O progresso técnico desloca a função de produção para cima ao longo do tempo. Classificamos pelo efeito sobre a razão $K/L$:
+
+**Hicks-neutro:** $f(K,L,t) = A(t)\cdot g(K,L)$. Multiplica a produção por um fator crescente no tempo. A TMST não se altera para uma dada razão $K/L$.
+
+**Harrod-neutro (labour-augmenting):** $f(K,L,t) = g\big(K,\, A(t)L\big)$. Equivale a aumentar a eficiência do trabalho — cada trabalhador produz como se fossem $A(t)$ trabalhadores.
+
+**Solow-neutro (capital-augmenting):** $f(K,L,t) = g\big(A(t)K,\, L\big)$. Equivale a aumentar a eficiência do capital.
+
+!!! note "Intuição Econômica"
+    **O resíduo de Solow mede nossa ignorância.** Ao estimar $\dot{Y}/Y = \dot{A}/A + \alpha\dot{K}/K + \beta\dot{L}/L$, o termo $\dot{A}/A$ — a PTF (produtividade total dos fatores) — captura tudo aquilo que explica o crescimento do produto além da acumulação de fatores: inovação, eficiência institucional e melhorias na qualidade dos insumos.
+
+---
+
+## 4. Funções homotéticas e caminho de expansão
+
+Uma função de produção é **homotética** se pode ser escrita como $f(K,L) = h\big(g(K,L)\big)$, onde $g$ é homogênea de grau 1 e $h$ é crescente. As isoquantas são "versões ampliadas" umas das outras — ao longo de qualquer raio, a TMST é constante.
+
+O **caminho de expansão** conecta os pontos de minimização de custos à medida que $q$ varia, com preços dos fatores fixos. Para funções homotéticas, o caminho de expansão é uma **reta** partindo da origem: a razão $K/L$ ótima depende apenas dos preços relativos, não do nível de produção.
+
+---
+
+## Gráfico interativo: rendimentos de escala
+
+<div id="graph-rendimentos" style="min-height: 450px;">
+<iframe src="graficos/cap10/rendimentos-escala.html"></iframe>
+</div>
+
+!!! tip "Explore o gráfico"
+    - Compare as isoquantas de Cobb-Douglas com $\alpha + \beta < 1$, $= 1$ e $> 1$
+    - Observe como o espaçamento entre isoquantas muda com os rendimentos de escala
+    - Trace o caminho de expansão e verifique que é linear para funções homotéticas
+
+---
+
+## Gráfico interativo: progresso técnico
+
+<div id="graph-progresso" style="min-height: 450px;">
+<iframe src="graficos/cap10/progresso-tecnico.html"></iframe>
+</div>
+
+!!! tip "Explore o gráfico"
+    - Alterne entre Hicks-neutro, Harrod-neutro e Solow-neutro
+    - Observe como cada tipo de progresso técnico desloca as isoquantas de forma diferente
+    - Verifique que o Hicks-neutro mantém a TMST constante ao longo de raios
 
 ---
 
 ## Exercícios de preparação
 
-**Exercício 1.** Um mercado tem 100 firmas idênticas, cada uma com custo $C(q) = q^2 + q + 16$. Encontre: (a) a oferta individual, (b) a oferta de mercado, (c) o preço de fechamento de curto prazo.
+**Exercício 1.** Para a CES com $\rho = 0{,}5$ e $\delta = 0{,}5$, calcule $\sigma$ e mostre que quando $\rho \to 0$ a CES converge para a Cobb-Douglas.
 
 ??? success "Solução"
-    (a) $CMg = 2q + 1 \implies P = 2q + 1 \implies q^S = \frac{P - 1}{2}$ para $P \geq CVMe_{\min}$.
+    $\sigma = \frac{1}{1-\rho} = \frac{1}{1-0{,}5} = 2$
 
-    $CV = q^2 + q \implies CVMe = q + 1$. Como $CVMe$ é crescente, $CVMe_{\min} = 1$ (em $q \to 0$). Na prática, $CMg = CVMe \implies 2q + 1 = q + 1 \implies q = 0$, confirmando $CVMe_{\min} = 1$.
+    Para a convergência, tome $\ln f = \ln A + \frac{1}{\rho}\ln[\delta K^\rho + (1-\delta)L^\rho]$. Usando $K^\rho \approx 1 + \rho\ln K$ quando $\rho \to 0$:
 
-    Oferta individual: $q^S = \frac{P-1}{2}$ para $P \geq 1$.
+    $$\frac{1}{\rho}\ln[1 + \rho(\delta\ln K + (1-\delta)\ln L)] \to \delta\ln K + (1-\delta)\ln L$$
 
-    (b) $Q^S = 100 \cdot \frac{P-1}{2} = 50(P - 1)$ para $P \geq 1$.
+    Logo $f \to AK^\delta L^{1-\delta}$, que é Cobb-Douglas.
 
-    (c) Preço de fechamento: $P = CVMe_{\min} = 1$.
-
-**Exercício 2.** No exercício anterior, qual é o preço de equilíbrio de longo prazo com livre entrada? Quantas unidades cada firma produz?
+**Exercício 2.** Uma economia tem $Y = AK^{0{,}3}L^{0{,}7}$. Em um ano, $\dot{Y}/Y = 5\%$, $\dot{K}/K = 4\%$ e $\dot{L}/L = 2\%$. Calcule o resíduo de Solow.
 
 ??? success "Solução"
-    No longo prazo: $P = CMe_{\min}$.
+    $$\frac{\dot{A}}{A} = \frac{\dot{Y}}{Y} - \alpha\frac{\dot{K}}{K} - \beta\frac{\dot{L}}{L} = 5\% - 0{,}3 \times 4\% - 0{,}7 \times 2\% = 5\% - 1{,}2\% - 1{,}4\% = 2{,}4\%$$
 
-    $CMe = q + 1 + \frac{16}{q}$
+    O resíduo de Solow é $2{,}4\%$ — quase metade do crescimento do produto é atribuída ao progresso técnico.
 
-    $\frac{d(CMe)}{dq} = 1 - \frac{16}{q^2} = 0 \implies q = 4$
-
-    $CMe(4) = 4 + 1 + 4 = 9$
-
-    Verificação: $CMg(4) = 9 = CMe(4)$ ✓
-
-    No equilíbrio de longo prazo: $P^* = 9$ e cada firma produz $q^* = 4$.
-
-**Exercício 3.** Segundo Coase, em que situação faz sentido para uma firma produzir internamente em vez de comprar no mercado?
+**Exercício 3.** Mostre que a Cobb-Douglas é homotética e determine o caminho de expansão quando $w/v = 2$.
 
 ??? success "Solução"
-    Segundo Coase, a firma deve produzir internamente quando os custos de transação de usar o mercado (busca de fornecedores, negociação de contratos, monitoramento de qualidade, enforcement) excedem o custo de organização interna (gestão, hierarquia, burocracia).
+    A Cobb-Douglas é homogênea de grau $\alpha + \beta$: $f(tK,tL) = t^{\alpha+\beta}f(K,L)$. Toda função homogênea é homotética.
 
-    Em mercados com alta especificidade de ativos, alta incerteza ou transações frequentes, os custos de transação tendem a ser elevados, favorecendo a integração vertical. Em mercados com produtos padronizados e muitos fornecedores, os custos de transação são baixos, favorecendo a compra no mercado.
+    Minimização de custos: $TMST = v/w \implies \frac{\alpha L}{\beta K} = \frac{1}{2} \implies L = \frac{\beta}{2\alpha}K$.
+
+    O caminho de expansão é uma reta pela origem com inclinação $\beta/(2\alpha)$.
 
 ---
 
@@ -161,42 +156,44 @@ A **curva de oferta de longo prazo** depende de como os custos se comportam com 
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** Segundo Coase, firmas existem porque:
+**Q1.** A elasticidade de substituição da função Cobb-Douglas é:
 
-- [ ] (a) O governo obriga a formação de empresas
-- [ ] (b) É sempre mais barato produzir internamente
-- [x] (c) Os custos de transação de usar o mercado podem ser maiores que os custos de organização interna
-- [ ] (d) Os trabalhadores preferem empregos fixos
+- [ ] (a) $0$
+- [x] (b) $1$
+- [ ] (c) $\infty$
+- [ ] (d) Depende dos parâmetros $\alpha$ e $\beta$
 
-**Q2.** A oferta de mercado é obtida pela soma \_\_\_\_\_\_\_ das ofertas individuais.
+**Q2.** Na CES, quando $\rho \to -\infty$, obtemos:
 
-- [x] (a) Horizontal (soma das quantidades para cada preço)
-- [ ] (b) Vertical (soma dos preços para cada quantidade)
-- [ ] (c) Algébrica (soma das funções custo)
-- [ ] (d) Geométrica (média das curvas)
+- [ ] (a) Função linear
+- [ ] (b) Cobb-Douglas
+- [x] (c) Leontief
+- [ ] (d) Rendimentos constantes
 
-**Q3.** No equilíbrio de longo prazo com livre entrada:
+**Q3.** O progresso técnico Harrod-neutro é equivalente a:
 
-- [ ] (a) Todas as firmas têm lucro positivo
-- [ ] (b) $P = CMg$ mas $P > CMe$
-- [x] (c) $P = CMe_{\min}$ e o lucro econômico é zero
-- [ ] (d) Não há produção pois o lucro é zero
+- [ ] (a) Aumentar a eficiência do capital
+- [x] (b) Aumentar a eficiência do trabalho
+- [ ] (c) Multiplicar a produção por um fator constante
+- [ ] (d) Reduzir os rendimentos de escala
 
-**Q4.** Se todas as firmas em um mercado competitivo estão tendo lucro econômico positivo, o que se espera no longo prazo?
+**Q4.** O resíduo de Solow mede:
 
-- [ ] (a) As firmas aumentarão preços
-- [x] (b) Novas firmas entrarão, aumentando a oferta e reduzindo o preço
-- [ ] (c) As firmas reduzirão a produção
-- [ ] (d) O governo intervirá para regular
+- [ ] (a) A taxa de depreciação do capital
+- [ ] (b) O crescimento da força de trabalho
+- [x] (c) O crescimento da produtividade total dos fatores
+- [ ] (d) A elasticidade de substituição
 
-**Q5.** V ou F: "Lucro econômico zero significa que a firma não cobre seus custos e deveria sair do mercado."
+**Q5.** Para uma função homotética, o caminho de expansão é:
 
-- [ ] (a) Verdadeiro
-- [x] (b) Falso — lucro econômico zero significa que a firma cobre todos os custos, incluindo o custo de oportunidade do capital
+- [x] (a) Uma reta partindo da origem
+- [ ] (b) Uma curva côncava
+- [ ] (c) Uma isoquanta
+- [ ] (d) A diagonal principal do espaço de fatores
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 18**: Simulação de mercado competitivo — você será uma firma decidindo quanto produzir! Traga calculadora e esteja preparado para calcular rapidamente $P = CMg$.
+    **Aula 19**: Custos de produção e minimização de custos — derivação formal via Lagrangiano, funções custo e o Lema de Shephard. Revise derivadas parciais e multiplicadores de Lagrange!

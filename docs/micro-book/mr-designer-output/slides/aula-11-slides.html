@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-11-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-11-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-11-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -144,10 +146,13 @@ Insper
 <section id="a-aposta" class="slide level2">
 <h2>A Aposta</h2>
 <blockquote>
-<p>Você tem R$ 100.000. Alguém oferece uma aposta: cara, você ganha R$ 50.000; coroa, você perde R$ 50.000. O valor esperado é <strong>zero</strong>. Você aceita?</p>
+<p>Você pagaria R$ 5 por uma loteria que paga R$ 12 com 50% de chance e R$ 0 com 50%?</p>
 </blockquote>
 <div class="fragment">
-<p>A maioria das pessoas <strong>recusa</strong>. Por quê?</p>
+<p><strong>Valor esperado:</strong> <span class="math inline">\(E[X] = 0{,}5 \times 12 + 0{,}5 \times 0 = 6 &gt; 5\)</span></p>
+</div>
+<div class="fragment">
+<p>Parece um bom negócio. Mas muitas pessoas <strong>recusam</strong>.</p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -160,7 +165,7 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>A dor de perder R$ 50 mil é maior que o prazer de ganhar R$ 50 mil. Precisamos de uma teoria que capture essa assimetria — a <strong>utilidade esperada</strong>.</p>
+<p>O valor esperado diz que vale a pena, mas a possibilidade de perder R$ 5 com certeza gera desconforto. Precisamos de uma teoria que capture a <strong>atitude em relação ao risco</strong> — a <strong>utilidade esperada</strong>.</p>
 </div>
 </div>
 </div>
@@ -170,18 +175,18 @@ Insper
 <section id="loterias-e-valor-esperado" class="slide level2">
 <h2>Loterias e Valor Esperado</h2>
 <p>Uma <strong>loteria</strong> <span class="math inline">\(\mathcal{L}\)</span> é uma distribuição de probabilidade sobre resultados:</p>
-<p><span class="math display">\[\mathcal{L} = (x_1, p_1; \; x_2, p_2; \; \ldots; \; x_n, p_n), \quad \sum_i p_i = 1\]</span></p>
+<p><span class="math display">\[\mathcal{L} = (x_1, \pi_1; \; x_2, \pi_2), \quad \pi_1 + \pi_2 = 1\]</span></p>
 <div class="fragment">
 <p><strong>Valor esperado:</strong></p>
-<p><span class="math display">\[E[\mathcal{L}] = \sum_{i=1}^n p_i \cdot x_i\]</span></p>
+<p><span class="math display">\[E[X] = \pi_1 x_1 + \pi_2 x_2\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Exemplo:</strong> <span class="math inline">\(\mathcal{L} = (100, \; 0{,}5; \; 0, \; 0{,}5)\)</span></p>
-<p><span class="math display">\[E[\mathcal{L}] = 0{,}5 \times 100 + 0{,}5 \times 0 = 50\]</span></p>
+<p><strong>Generalização para <span class="math inline">\(n\)</span> resultados:</strong></p>
+<p><span class="math display">\[\mathcal{L} = (x_1, \pi_1; \; \ldots; \; x_n, \pi_n), \quad E[X] = \sum_{i=1}^n \pi_i x_i\]</span></p>
 </div>
 <div class="fragment">
 <blockquote>
-<p>O valor esperado é um bom critério de decisão? Nem sempre…</p>
+<p>O valor esperado resume a loteria em um único número — mas será que captura tudo?</p>
 </blockquote>
 </div>
 </section>
@@ -195,8 +200,8 @@ Insper
 <p><strong>Problema:</strong> o valor esperado é <strong>infinito</strong>, mas ninguém pagaria R$ 1 milhão para jogar.</p>
 </div>
 <div class="fragment">
-<p><strong>Solução de Bernoulli (1738):</strong> as pessoas maximizam a <strong>utilidade esperada</strong>, não o valor esperado. Com <span class="math inline">\(u(x) = \ln(x)\)</span>:</p>
-<p><span class="math display">\[E[u] = \sum_{n=1}^{\infty} \frac{1}{2^n} \ln(2^n) = \ln 2 \sum_{n=1}^{\infty} \frac{n}{2^n} = 2\ln 2 \approx 1{,}39\]</span></p>
+<p><strong>Solução de Bernoulli (1738):</strong> as pessoas maximizam a <strong>utilidade esperada</strong>, não o valor esperado. Com <span class="math inline">\(U(x) = \ln(x)\)</span>:</p>
+<p><span class="math display">\[E[U] = \sum_{n=1}^{\infty} \frac{1}{2^n} \ln(2^n) = \ln 2 \sum_{n=1}^{\infty} \frac{n}{2^n} = 2\ln 2 \approx 1{,}39\]</span></p>
 </div>
 </section>
 <section id="axiomas-de-von-neumann-morgenstern" class="slide level2">
@@ -211,20 +216,21 @@ Insper
 <div class="fragment">
 <ol start="3" type="1">
 <li><p><strong>Continuidade:</strong> se <span class="math inline">\(\mathcal{L}_1 \succ \mathcal{L}_2 \succ \mathcal{L}_3\)</span>, existe <span class="math inline">\(\alpha \in (0,1)\)</span> tal que <span class="math inline">\(\mathcal{L}_2 \sim \alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3\)</span></p></li>
-<li><p><strong>Independência:</strong> se <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_2\)</span>, então <span class="math inline">\(\alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3 \succsim \alpha \mathcal{L}_2 + (1-\alpha)\mathcal{L}_3\)</span></p></li>
+<li><p><strong>Independência:</strong> se <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_2\)</span>, então para todo <span class="math inline">\(\alpha \in (0,1)\)</span> e <span class="math inline">\(\mathcal{L}_3\)</span>:</p></li>
 </ol>
+<p><span class="math display">\[\alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3 \succsim \alpha \mathcal{L}_2 + (1-\alpha)\mathcal{L}_3\]</span></p>
 </div>
 </section>
 <section id="teorema-da-utilidade-esperada" class="slide level2">
 <h2>Teorema da Utilidade Esperada</h2>
-<p><strong>Teorema (VNM):</strong> Se <span class="math inline">\(\succsim\)</span> satisfaz os quatro axiomas, existe <span class="math inline">\(u: \mathbb{R} \to \mathbb{R}\)</span> tal que:</p>
-<p><span class="math display">\[\mathcal{L}_1 \succsim \mathcal{L}_2 \iff E[u(\mathcal{L}_1)] \geq E[u(\mathcal{L}_2)]\]</span></p>
+<p><strong>Teorema (VNM):</strong> Se <span class="math inline">\(\succsim\)</span> satisfaz os quatro axiomas, existe <span class="math inline">\(U: \mathbb{R} \to \mathbb{R}\)</span> tal que:</p>
+<p><span class="math display">\[\mathcal{L}_1 \succsim \mathcal{L}_2 \iff EU(\mathcal{L}_1) \geq EU(\mathcal{L}_2)\]</span></p>
 <div class="fragment">
 <p>onde:</p>
-<p><span class="math display">\[E[u(\mathcal{L})] = \sum_{i=1}^n p_i \, u(x_i)\]</span></p>
+<p><span class="math display">\[EU(\mathcal{L}) = \pi_1 U(x_1) + \pi_2 U(x_2)\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Propriedade:</strong> <span class="math inline">\(u\)</span> é única a menos de transformação <strong>afim positiva</strong>: se <span class="math inline">\(u\)</span> representa <span class="math inline">\(\succsim\)</span>, então <span class="math inline">\(v = a + b \cdot u\)</span> (com <span class="math inline">\(b &gt; 0\)</span>) também representa.</p>
+<p><strong>Unicidade:</strong> <span class="math inline">\(U\)</span> é única a menos de transformação <strong>afim positiva</strong> — se <span class="math inline">\(U\)</span> representa <span class="math inline">\(\succsim\)</span>, então <span class="math inline">\(V = a + bU\)</span> (com <span class="math inline">\(b &gt; 0\)</span>) também representa.</p>
 </div>
 <div class="fragment">
 <blockquote>
@@ -232,16 +238,68 @@ Insper
 </blockquote>
 </div>
 </section>
-<section id="três-atitudes-em-relação-ao-risco" class="slide level2">
-<h2>Três Atitudes em Relação ao Risco</h2>
-<iframe src="../../graficos/cap07/aversao-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<section id="tres-atitudes-em-relacao-ao-risco" class="slide level2 smaller">
+<h2>Tres Atitudes em Relacao ao Risco</h2>
+<div id="graph-a11-risk" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Curvatura: <input type="range" id="sl-a11-curv" min="-200" max="200" value="-100" step="10" oninput="updA11Risk()"> <span id="val-a11-curv">-1.00</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-risk',{
+    boundingbox:[-5,12,110,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var curv = -1.0;
+  var x1 = 20, x2 = 80, pi1 = 0.5;
+  var EX = pi1*x1 + (1-pi1)*x2;
+
+  function uf(x){
+    if(Math.abs(curv)<0.05) return x/10;
+    if(curv<0) return 10*(1-Math.exp(curv*x/100));
+    return 10*(Math.exp(curv*x/100)-1);
+  }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,105],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[x1, function(){return uf(x1);}],
+    {name:'U(x₁)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+  var pHigh = brd.create('point',[x2, function(){return uf(x2);}],
+    {name:'U(x₂)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+
+  var chordLine = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var pEU = brd.create('point',[EX, function(){return pi1*uf(x1)+(1-pi1)*uf(x2);}],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-30,-15],fontSize:12}});
+  var pUEX = brd.create('point',[EX, function(){return uf(EX);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  brd.create('segment',
+    [[EX,0], [EX, function(){return Math.max(uf(EX), pi1*uf(x1)+(1-pi1)*uf(x2));}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+
+  brd.create('text',[55,11, function(){
+    if(curv<-0.05) return 'Avesso ao risco (côncava)';
+    if(curv>0.05) return 'Amante do risco (convexa)';
+    return 'Neutro ao risco (linear)';
+  }],{fontSize:14,color:'#1565c0'});
+
+  window.updA11Risk = function(){
+    curv = parseFloat(document.getElementById('sl-a11-curv').value)/100;
+    document.getElementById('val-a11-curv').textContent = curv.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
 <div class="fragment">
 <table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;">Atitude</th>
-<th style="text-align: center;"><span class="math inline">\(u''(x)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(U''(x)\)</span></th>
 <th style="text-align: center;">Formato</th>
 <th style="text-align: left;">Comportamento</th>
 </tr>
@@ -250,7 +308,7 @@ Insper
 <tr class="odd">
 <td style="text-align: left;">Avesso</td>
 <td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
-<td style="text-align: center;">Côncava</td>
+<td style="text-align: center;">Concava</td>
 <td style="text-align: left;">Recusa apostas justas</td>
 </tr>
 <tr class="even">
@@ -273,34 +331,98 @@ Insper
 <h2>Desigualdade de Jensen</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Teorema (Jensen):</strong> Se <span class="math inline">\(u\)</span> é côncava:</p>
-<p><span class="math display">\[u(E[X]) \geq E[u(X)]\]</span></p>
+<p><strong>Teorema (Jensen):</strong> Se <span class="math inline">\(U\)</span> e concava:</p>
+<p><span class="math display">\[E[U(X)] \leq U(E[X])\]</span></p>
 <p>. . .</p>
-<p><strong>Interpretação:</strong> o agente avesso ao risco prefere receber o valor esperado com certeza a enfrentar a loteria.</p>
+<p><strong>Interpretacao:</strong> o agente avesso ao risco prefere receber o valor esperado com certeza a enfrentar a loteria.</p>
 <p>. . .</p>
-<p><strong>Consequência:</strong> para aposta justa (<span class="math inline">\(E[\text{ganho}] = 0\)</span>):</p>
-<p><span class="math display">\[E[u(w + \tilde{\varepsilon})] &lt; u(w)\]</span></p>
+<p><strong>Consequencia:</strong> para aposta justa (<span class="math inline">\(E[\tilde{\varepsilon}] = 0\)</span>):</p>
+<p><span class="math display">\[E[U(W + \tilde{\varepsilon})] &lt; U(W)\]</span></p>
 </div><div class="column" style="width:50%;">
 <p>. . .</p>
-<p><strong>Prova gráfica:</strong></p>
-<p>A corda ligando <span class="math inline">\(u(x_1)\)</span> e <span class="math inline">\(u(x_2)\)</span> fica <strong>abaixo</strong> da curva <span class="math inline">\(u\)</span>.</p>
-<p>O ponto sobre a corda em <span class="math inline">\(E[X]\)</span> é <span class="math inline">\(E[u(X)]\)</span>.</p>
-<p>O ponto sobre a curva em <span class="math inline">\(E[X]\)</span> é <span class="math inline">\(u(E[X])\)</span>.</p>
-<p>Logo <span class="math inline">\(u(E[X]) &gt; E[u(X)]\)</span>.</p>
+<p><strong>Esboço da prova (caso discreto):</strong></p>
+<p>Pela concavidade, para todo <span class="math inline">\(\lambda \in [0,1]\)</span>:</p>
+<p><span class="math display">\[U(\lambda x_1 + (1-\lambda)x_2) \geq \lambda U(x_1) + (1-\lambda)U(x_2)\]</span></p>
+<p>Tomando <span class="math inline">\(\lambda = \pi_1\)</span>:</p>
+<p><span class="math display">\[U(\pi_1 x_1 + \pi_2 x_2) \geq \pi_1 U(x_1) + \pi_2 U(x_2)\]</span></p>
+<p><span class="math display">\[\Rightarrow U(E[X]) \geq E[U(X)] \quad \blacksquare\]</span></p>
 </div></div>
 </section>
-<section id="equivalente-certo-e-prêmio-de-risco" class="slide level2">
-<h2>Equivalente Certo e Prêmio de Risco</h2>
-<iframe src="../../graficos/cap07/premio-risco.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<section id="equivalente-certo-e-premio-de-risco" class="slide level2">
+<h2>Equivalente Certo e Premio de Risco</h2>
+<div id="graph-a11-premium" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Tamanho da aposta <span class="math inline">\(h\)</span>: <input type="range" id="sl-a11-h" min="5" max="40" value="20" step="1" oninput="updA11Premium()"> <span id="val-a11-h">20</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-premium',{
+    boundingbox:[-5,11,155,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W = 100, h = 20;
+
+  function uf(x){ return Math.sqrt(x)/1.2; }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,150],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[function(){return W-h;}, function(){return uf(W-h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+  var pHigh = brd.create('point',[function(){return W+h;}, function(){return uf(W+h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[function(){return W-h-2;}, function(){return uf(W-h)+0.4;},
+    function(){return 'W−h='+(W-h);}],{fontSize:11,color:'#C8102E'});
+  brd.create('text',[function(){return W+h+1;}, function(){return uf(W+h)+0.4;},
+    function(){return 'W+h='+(W+h);}],{fontSize:11,color:'#C8102E'});
+
+  var chord = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var EX = function(){return W;};
+  var EU = function(){return 0.5*uf(W-h)+0.5*uf(W+h);};
+  var CE = function(){return (EU()*1.2)*(EU()*1.2);};
+
+  var pEU = brd.create('point',[EX, EU],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-35,-15],fontSize:12}});
+
+  var pUEX = brd.create('point',[EX, function(){return uf(W);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  var pCE = brd.create('point',[CE, EU],
+    {name:'CE', size:3, color:'#6a1b9a', label:{offset:[-5,-18],fontSize:12}});
+
+  brd.create('segment',[[EX,0],[EX,function(){return uf(W);}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+  brd.create('segment',[[CE,0],[CE,EU]],
+    {strokeColor:'#6a1b9a',strokeWidth:1,dash:3,highlight:false});
+
+  // Risk premium arrow
+  brd.create('segment',[[CE,function(){return -0.4;}],[EX,function(){return -0.4;}]],
+    {strokeColor:'#d32f2f',strokeWidth:2,lastArrow:true,firstArrow:true,highlight:false});
+  brd.create('text',[function(){return (CE()+W)/2-5;}, -0.8,
+    function(){return 'RP='+(W-CE()).toFixed(1);}],
+    {fontSize:12,color:'#d32f2f'});
+
+  window.updA11Premium = function(){
+    h = parseFloat(document.getElementById('sl-a11-h').value);
+    document.getElementById('val-a11-h').textContent = h;
+    brd.update();
+  };
+})();
+</script>
 <div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Equivalente certo (EC):</strong></p>
-<p><span class="math display">\[u(EC) = E[u(\mathcal{L})]\]</span></p>
+<p><strong>Equivalente certo (CE):</strong></p>
+<p><span class="math display">\[U(CE) = E[U(\mathcal{L})]\]</span></p>
 </div><div class="column" style="width:50%;">
-<p><strong>Prêmio de risco (<span class="math inline">\(\pi\)</span>):</strong></p>
-<p><span class="math display">\[\pi = E[\mathcal{L}] - EC &gt; 0\]</span></p>
+<p><strong>Premio de risco (RP):</strong></p>
+<p><span class="math display">\[RP = E[X] - CE &gt; 0\]</span></p>
 <p>(para avesso ao risco)</p>
 </div></div>
 </div>
@@ -309,66 +431,161 @@ Insper
 <h2>Medidas de Arrow-Pratt</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Aversão absoluta ao risco (ARA):</strong></p>
-<p><span class="math display">\[A(x) = -\frac{u''(x)}{u'(x)}\]</span></p>
+<p><strong>Aversao absoluta ao risco (ARA):</strong></p>
+<p><span class="math display">\[A(x) = -\frac{U''(x)}{U'(x)}\]</span></p>
 <p>. . .</p>
-<p><strong>Aversão relativa ao risco (RRA):</strong></p>
-<p><span class="math display">\[R(x) = -\frac{x \, u''(x)}{u'(x)} = x \cdot A(x)\]</span></p>
+<p><strong>Aversao relativa ao risco (RRA):</strong></p>
+<p><span class="math display">\[R(x) = -\frac{x \, U''(x)}{U'(x)} = x \cdot A(x)\]</span></p>
 </div><div class="column" style="width:50%;">
 <p>. . .</p>
-<p><strong>Exemplos clássicos:</strong></p>
+<p><strong>Interpretacao local:</strong></p>
+<p>Para uma aposta pequena <span class="math inline">\(\tilde{\varepsilon}\)</span> com <span class="math inline">\(E[\tilde{\varepsilon}]=0\)</span> e <span class="math inline">\(\text{Var}(\tilde{\varepsilon})=\sigma^2\)</span>:</p>
+<p><span class="math display">\[RP \approx \frac{1}{2} A(W) \sigma^2\]</span></p>
+<p>. . .</p>
+<blockquote>
+<p><span class="math inline">\(A(W)\)</span> mede a <strong>taxa de conversao</strong> de variancia em premio de risco.</p>
+</blockquote>
+</div></div>
+</section>
+<section id="cara-vs-crra" class="slide level2">
+<h2>CARA vs CRRA</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>CARA</strong> (Constant Absolute Risk Aversion):</p>
+<p><span class="math display">\[U(x) = -e^{-ax}, \quad a &gt; 0\]</span></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Função</th>
-<th style="text-align: center;"><span class="math inline">\(A(x)\)</span></th>
-<th style="text-align: center;"><span class="math inline">\(R(x)\)</span></th>
+<th style="text-align: left;">Medida</th>
+<th style="text-align: center;">Valor</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(-e^{-ax}\)</span> (CARA)</td>
-<td style="text-align: center;"><span class="math inline">\(a\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(ax\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(A(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span> (constante)</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(\frac{x^{1-\gamma}}{1-\gamma}\)</span> (CRRA)</td>
-<td style="text-align: center;"><span class="math inline">\(\gamma/x\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\gamma\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(\ln x\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1/x\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(R(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ax\)</span> (crescente)</td>
 </tr>
 </tbody>
 </table>
 <p>. . .</p>
-<blockquote>
-<p>CARA: mesma aversão em $ para qualquer riqueza. CRRA: mesma aversão <em>proporcional</em> para qualquer riqueza.</p>
-</blockquote>
+<p>Mesma aversao em <strong>reais</strong> independentemente da riqueza.</p>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>CRRA</strong> (Constant Relative Risk Aversion):</p>
+<p><span class="math display">\[U(x) = \frac{x^{1-\gamma}}{1-\gamma}, \quad \gamma &gt; 0, \; \gamma \neq 1\]</span></p>
+<p>Para <span class="math inline">\(\gamma = 1\)</span>: <span class="math inline">\(U(x) = \ln(x)\)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Medida</th>
+<th style="text-align: center;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma / x\)</span> (decrescente)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(R(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma\)</span> (constante)</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p>Mesma aversao <strong>proporcional</strong> independentemente da riqueza.</p>
 </div></div>
 </section>
-<section id="seguro-aplicação-fundamental" class="slide level2">
-<h2>Seguro — Aplicação Fundamental</h2>
-<iframe src="../../graficos/cap07/seguro.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
+<section id="seguro-aplicacao-fundamental" class="slide level2 smaller">
+<h2>Seguro — Aplicacao Fundamental</h2>
+<div id="graph-a11-insurance" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Cobertura <span class="math inline">\(q\)</span>: <input type="range" id="sl-a11-q" min="0" max="100" value="50" step="1" oninput="updA11Ins()"> <span id="val-a11-q">0.50</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-insurance',{
+    boundingbox:[-50,1150,1150,-50], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W=1000, L=600, pi=0.25, gamma=0.3, q=0.5;
+
+  // 45-degree line
+  brd.create('line',[[0,0],[1,1]],
+    {strokeColor:'#bbb',strokeWidth:1,dash:3,highlight:false,
+     straightFirst:true,straightLast:true,point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[950,980,'45°'],{fontSize:11,color:'#999'});
+
+  // Endowment point (no insurance)
+  var cN0 = W;       // no accident consumption without insurance
+  var cA0 = W - L;   // accident consumption without insurance
+  var pEndow = brd.create('point',[cN0, cA0],
+    {name:'Dotação', size:4, color:'#C8102E', fixed:true,
+     label:{offset:[5,10],fontSize:12}});
+
+  // Budget line: cA = cA0 + q*L - gamma*q*L ... parametric in q
+  // cN = W - gamma*q*L, cA = W - L + q*L - gamma*q*L = W - L + q*L*(1-gamma)
+  // Eliminating q: q = (W - cN)/(gamma*L)
+  // cA = W - L + (W - cN)*(1-gamma)/gamma
+  // slope dcA/dcN = -(1-gamma)/gamma
+  var slope = -(1-gamma)/gamma;
+  brd.create('line',[[cN0, cA0], [cN0+1, cA0+slope]],
+    {strokeColor:'#1565c0',strokeWidth:2,highlight:false,
+     straightFirst:true,straightLast:true,
+     point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[200,900,
+    function(){return 'Inclinação = −(1−γ)/γ = '+slope.toFixed(2);}],
+    {fontSize:12,color:'#1565c0'});
+
+  // Current choice point
+  var pChoice = brd.create('point',[
+    function(){return W - gamma*q*L;},
+    function(){return W - L + q*L*(1-gamma);}],
+    {name:'', size:4, color:'#2e7d32',
+     label:{offset:[5,10],fontSize:12}});
+  brd.create('text',[function(){return W-gamma*q*L+15;},
+    function(){return W-L+q*L*(1-gamma)+15;},
+    function(){return 'q='+q.toFixed(2)+' | cN='+(W-gamma*q*L).toFixed(0)+', cA='+(W-L+q*L*(1-gamma)).toFixed(0);}],
+    {fontSize:11,color:'#2e7d32'});
+
+  // Full insurance point on 45-degree line
+  var qFull = 1;
+  var cFull = W - gamma*L;
+  var pFull = brd.create('point',[cFull, cFull],
+    {name:'Seguro total', size:3, color:'#6a1b9a', fixed:true,
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[50,1100,'c_A (acidente)'],{fontSize:13,color:'#333'});
+  brd.create('text',[950,-30,'c_N (sem acidente)'],{fontSize:13,color:'#333'});
+
+  window.updA11Ins = function(){
+    q = parseFloat(document.getElementById('sl-a11-q').value)/100;
+    document.getElementById('val-a11-q').textContent = q.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
 <div class="fragment">
-<p><strong>Setup:</strong> riqueza <span class="math inline">\(W\)</span>, perda <span class="math inline">\(L\)</span> com probabilidade <span class="math inline">\(p\)</span>, prêmio <span class="math inline">\(\gamma\)</span> por unidade de cobertura <span class="math inline">\(q\)</span>.</p>
-<p><span class="math display">\[E[u] = (1-p)\,u(W - \gamma q) + p\,u(W - L - \gamma q + q)\]</span></p>
+<p><strong>Setup:</strong> riqueza <span class="math inline">\(W\)</span>, perda <span class="math inline">\(L\)</span> com prob. <span class="math inline">\(\pi\)</span>, premio <span class="math inline">\(\gamma\)</span> por unidade de cobertura <span class="math inline">\(q\)</span>.</p>
+<p><span class="math display">\[EU = (1-\pi)\,U(W - \gamma q L) + \pi\,U(W - L + qL - \gamma q L)\]</span></p>
 </div>
 </section>
-<section id="exemplo-numérico-decisão-de-seguro" class="slide level2">
-<h2>Exemplo Numérico — Decisão de Seguro</h2>
-<p><span class="math inline">\(u(x) = \sqrt{x}\)</span>, <span class="math inline">\(W = 100.000\)</span>, <span class="math inline">\(L = 75.000\)</span>, <span class="math inline">\(p = 0{,}2\)</span>, <span class="math inline">\(\gamma = 0{,}25\)</span>/unidade.</p>
+<section id="exemplo-numerico-decisao-de-seguro" class="slide level2">
+<h2>Exemplo Numerico — Decisao de Seguro</h2>
+<p><span class="math inline">\(U(c) = \ln(c)\)</span>, <span class="math inline">\(W = 1000\)</span>, <span class="math inline">\(L = 600\)</span>, <span class="math inline">\(\pi = 0{,}25\)</span>, <span class="math inline">\(\gamma = 0{,}3\)</span>/unidade.</p>
 <div class="fragment">
-<p><strong>Sem seguro:</strong></p>
-<p><span class="math display">\[E[u] = 0{,}8 \sqrt{100.000} + 0{,}2 \sqrt{25.000} = 0{,}8 \times 316{,}2 + 0{,}2 \times 158{,}1 = 284{,}6\]</span></p>
-<p><span class="math display">\[EC = 284{,}6^2 = 80.997\]</span></p>
+<p><strong>Sem seguro</strong> (<span class="math inline">\(q = 0\)</span>):</p>
+<p><span class="math display">\[EU = 0{,}75 \ln(1000) + 0{,}25 \ln(400) = 0{,}75 \times 6{,}908 + 0{,}25 \times 5{,}991 = 6{,}679\]</span></p>
+<p><span class="math display">\[CE = e^{6{,}679} = 795{,}3\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Com seguro atuarialmente justo</strong> (<span class="math inline">\(\gamma = p = 0{,}2\)</span>, cobertura total <span class="math inline">\(q = L\)</span>):</p>
-<p><span class="math display">\[u = \sqrt{100.000 - 0{,}2 \times 75.000} = \sqrt{85.000} = 291{,}5\]</span></p>
+<p><strong>Com seguro total</strong> (<span class="math inline">\(q = 1\)</span>, <span class="math inline">\(\gamma = 0{,}3\)</span>):</p>
+<p><span class="math display">\[U = \ln(1000 - 0{,}3 \times 600) = \ln(820) = 6{,}709\]</span></p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -381,21 +598,107 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>O agente avesso ao risco prefere pagar R$ 15.000 de prêmio e ter R$ 85.000 certos do que enfrentar a loteria com <span class="math inline">\(EC = 80.997\)</span>. A diferença de R$ 4.003 é o prêmio de risco.</p>
+<p>O agente prefere pagar R$ 180 de premio e ter R$ 820 certos (<span class="math inline">\(CE = 820\)</span>) do que enfrentar a loteria sem seguro (<span class="math inline">\(CE = 795{,}3\)</span>). A diferenca de R$ 24{,}7 e o ganho de bem-estar do seguro.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="próxima-aula" class="slide level2">
-<h2>Próxima Aula</h2>
-<p><strong>Aula 12 — Loterias + Seguro (Prática)</strong></p>
+<section id="seguro-atuarialmente-justo-vs-carregamento" class="slide level2">
+<h2>Seguro Atuarialmente Justo vs Carregamento</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Seguro atuarialmente justo:</strong> <span class="math inline">\(\gamma = \pi\)</span></p>
+<ul>
+<li>Lucro esperado da seguradora: <span class="math inline">\(\gamma q L - \pi q L = 0\)</span></li>
+<li>O agente avesso ao risco <strong>compra cobertura total</strong> (<span class="math inline">\(q^* = 1\)</span>)</li>
+<li>Consumo igual nos dois estados: <span class="math inline">\(c_A = c_N\)</span></li>
+</ul>
+<p>. . .</p>
+<blockquote>
+<p>O seguro justo elimina todo o risco.</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Seguro com carregamento:</strong> <span class="math inline">\(\gamma &gt; \pi\)</span></p>
+<ul>
+<li>Seguradora tem lucro esperado positivo</li>
+<li>O agente compra <strong>cobertura parcial</strong> (<span class="math inline">\(q^* &lt; 1\)</span>)</li>
+<li>Trade-off: reducao de risco vs custo do premio</li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplo:</strong> se <span class="math inline">\(\pi = 0{,}25\)</span> e <span class="math inline">\(\gamma = 0{,}3\)</span>:</p>
+<p><span class="math display">\[\text{Carregamento} = \frac{\gamma - \pi}{\pi} = \frac{0{,}05}{0{,}25} = 20\%\]</span></p>
+</div></div>
+</section>
+<section id="cobertura-otima" class="slide level2">
+<h2>Cobertura Otima</h2>
+<p>A <strong>condicao de primeira ordem</strong> para <span class="math inline">\(q^*\)</span> e:</p>
+<p><span class="math display">\[\frac{\pi \, U'(c_A)}{(1-\pi) \, U'(c_N)} = \frac{\gamma}{1-\gamma}\]</span></p>
+<div class="fragment">
+<p>onde <span class="math inline">\(c_N = W - \gamma q L\)</span> e <span class="math inline">\(c_A = W - L + qL(1-\gamma)\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Tres casos:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condicao</th>
+<th style="text-align: left;">Resultado</th>
+<th style="text-align: center;">Cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma = \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) = U'(c_N) \Rightarrow c_A = c_N\)</span></td>
+<td style="text-align: center;">Total (<span class="math inline">\(q^*=1\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\gamma &gt; \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) &gt; U'(c_N) \Rightarrow c_A &lt; c_N\)</span></td>
+<td style="text-align: center;">Parcial (<span class="math inline">\(q^*&lt;1\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma &lt; \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) &lt; U'(c_N) \Rightarrow c_A &gt; c_N\)</span></td>
+<td style="text-align: center;">Sobre-seguro (<span class="math inline">\(q^*&gt;1\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com seguro justo, a unica motivacao e eliminar risco — e o agente avesso faz exatamente isso. Com carregamento, ele aceita algum risco residual para economizar no premio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="proxima-aula" class="slide level2">
+<h2>Proxima Aula</h2>
+<p><strong>Aula 12 — Loterias + Seguro (Pratica)</strong></p>
 <div class="fragment">
 <ul>
-<li>Diversificação e abordagem estado-preferência</li>
+<li>Diversificacao e abordagem estado-preferencia</li>
 <li>Paradoxo de Allais e teoria da perspectiva</li>
-<li>Jogo de loterias em sala e design de seguro</li>
+<li>Exercicios de seguro e design de contrato</li>
 </ul>
 </div>
 <div class="fragment">
@@ -409,7 +712,7 @@ Insper
 <p><strong>Preparação</strong></p>
 </div>
 <div class="callout-content">
-<p>Pesquise o <strong>Paradoxo de Allais</strong>: dois pares de escolhas que parecem razoáveis individualmente mas violam o axioma de independência. Traga sua opinião: somos <em>realmente</em> racionais sob incerteza?</p>
+<p>Pesquise o <strong>Paradoxo de Allais</strong>: dois pares de escolhas que parecem razoaveis individualmente mas violam o axioma de independencia. Traga sua opiniao: somos <em>realmente</em> racionais sob incerteza?</p>
 </div>
 </div>
 </div>

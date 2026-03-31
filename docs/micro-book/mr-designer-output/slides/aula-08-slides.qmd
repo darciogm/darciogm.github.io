@@ -14,214 +14,463 @@ format:
 lang: pt-BR
 ---
 
-## Efeitos Preço-Cruzados
+## A Equação de Slutsky
 
-Como a variação no preço de $j$ afeta a demanda pelo bem $i$?
+Para cada par de bens $(i, j)$:
 
-. . .
-
-$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES cruzado}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{ER cruzado}}$$
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{Efeito Substituição}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{Efeito Renda}}$$
 
 . . .
 
-**Propriedade de simetria:** $\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i}$
+**Forma matricial** (para $n$ bens):
+
+$$\underbrace{\mathbf{D}_p \mathbf{x}}_{\text{Slutsky total}} = \underbrace{\mathbf{D}_p \mathbf{h}}_{\text{Substituição}} - \underbrace{\mathbf{x} \cdot (\mathbf{D}_m \mathbf{x})^\top}_{\text{Renda}}$$
 
 . . .
 
 :::{.callout-tip title="Intuição Econômica"}
-A simetria dos efeitos cruzados Hicksianos é uma consequência direta do Teorema de Young aplicado à função dispêndio.
+A equação de Slutsky decompõe a reação *observável* da demanda Marshalliana em dois canais teoricamente distintos: a substituição entre bens (a preços relativos) e a mudança no poder de compra real.
 :::
 
-## Substitutos e Complementos — Brutos vs. Líquidos
+## Slutsky em Elasticidades
 
-:::: {.columns}
-::: {.column width="45%"}
+Dividindo ambos os lados da equação de Slutsky por $x_i / p_j$:
 
-**Substitutos brutos (Marshalliana):**
-
-$$\frac{\partial x_i}{\partial p_j} > 0$$
-
-**Substitutos líquidos (Hicksiana):**
-
-$$\frac{\partial h_i}{\partial p_j} > 0$$
+$$\varepsilon_{ij} = \varepsilon_{ij}^{H} - s_j \, \eta_i$$
 
 . . .
 
-> A classificação líquida é mais confiável, pois isola o efeito renda.
+onde:
 
-:::
-::: {.column width="55%"}
-
-<iframe src="../../graficos/cap06/substitutos-complementos.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-:::
-::::
-
-## Simetria Hicksiana e Integrabilidade
-
-A demanda Hicksiana satisfaz:
-
-$$\frac{\partial h_i}{\partial p_j} = \frac{\partial h_j}{\partial p_i} = \frac{\partial^2 e(\mathbf{p}, \bar{u})}{\partial p_i \, \partial p_j}$$
+- $\varepsilon_{ij}$ — elasticidade-preço cruzada Marshalliana
+- $\varepsilon_{ij}^{H}$ — elasticidade-preço cruzada Hicksiana (compensada)
+- $s_j = \frac{p_j x_j}{m}$ — parcela orçamentária do bem $j$
+- $\eta_i$ — elasticidade-renda do bem $i$
 
 . . .
 
-**Consequência prática:** se café e chá são substitutos líquidos, a intensidade da substituição é a *mesma* em ambas as direções.
+:::{.callout-tip title="Intuição Econômica"}
+Quanto maior a parcela do orçamento gasta no bem $j$ ($s_j$ grande), maior a divergência entre a elasticidade bruta e a compensada. Para bens que pesam pouco no orçamento, $\varepsilon_{ij} \approx \varepsilon_{ij}^H$.
+:::
+
+## Propriedades da Matriz de Slutsky
+
+A matriz de Slutsky $\mathbf{S}$ com elementos $s_{ij} = \frac{\partial h_i}{\partial p_j}$ satisfaz:
 
 . . .
 
-**Matriz de Slutsky** $\mathbf{S}$:
+**1. Simetria:** $s_{ij} = s_{ji}$ para todo $i, j$
 
-- Simétrica: $s_{ij} = s_{ji}$
-- Semidefinida negativa: $\mathbf{z'Sz} \leq 0$ para todo $\mathbf{z}$
+(Consequência do Teorema de Young aplicado à função dispêndio $e(\mathbf{p}, \bar{u})$.)
 
-## Curvas de Engel para o Brasil
+. . .
 
-:::: {.columns}
-::: {.column width="45%"}
+**2. Semidefinida negativa:** $\mathbf{z'Sz} \leq 0$ para todo vetor $\mathbf{z}$
 
-Dados da **POF (IBGE)** mostram:
+(Efeito substituição próprio é sempre não-positivo: $s_{ii} \leq 0$.)
 
-| Bem | $\varepsilon_m$ | Tipo |
+. . .
+
+**3. Adding-up:** $\sum_i s_{ij} p_i = 0$ para todo $j$
+
+(As demandas compensadas satisfazem a restrição orçamentária automaticamente.)
+
+## Elasticidade-Preço da Demanda
+
+$$\varepsilon_{ii} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i} = \frac{\% \Delta x_i}{\% \Delta p_i}$$
+
+. . .
+
+| Classificação | $|\varepsilon_{ii}|$ | Exemplo |
 |:--|:--:|:--|
-| Arroz | 0,3 | Necessário |
-| Carne bovina | 0,9 | Necessário |
-| Refeição fora | 1,4 | Luxo |
-| Transporte | 1,1 | Luxo |
+| Perfeitamente inelástica | $0$ | Insulina |
+| Inelástica | $< 1$ | Gasolina (curto prazo) |
+| Elasticidade unitária | $= 1$ | Cobb-Douglas próprio |
+| Elástica | $> 1$ | Viagens de avião |
+| Perfeitamente elástica | $\infty$ | Commodity homogênea |
 
 . . .
 
-> À medida que a renda cresce, a parcela gasta em alimentos básicos cai — **Lei de Engel**.
+:::{.callout-tip title="Intuição Econômica"}
+Bens com poucos substitutos próximos tendem a ter demanda inelástica. Bens com muitos substitutos próximos tendem a ter demanda elástica.
+:::
+
+## Elasticidade-Renda
+
+$$\eta_i = \frac{\partial x_i}{\partial m} \cdot \frac{m}{x_i} = \frac{\% \Delta x_i}{\% \Delta m}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Bens normais** ($\eta_i > 0$):
+
+- **Necessário:** $0 < \eta_i < 1$
+  - Ex: arroz, feijão, energia elétrica
+- **Luxo:** $\eta_i > 1$
+  - Ex: viagens internacionais, refeições fora
 
 :::
-::: {.column width="55%"}
+::: {.column width="50%"}
 
-<iframe src="../../graficos/cap05/curva-engel.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
+**Bens inferiores** ($\eta_i < 0$):
+
+- Consumo cai quando a renda sobe
+- Ex: transporte público (em certas faixas), marcas genéricas
+
+. . .
+
+> **Lei de Engel:** à medida que a renda cresce, a parcela gasta em alimentos cai.
 
 :::
 ::::
 
-## Variação Compensadora e Equivalente
+## Elasticidades Cruzadas
 
-Duas medidas monetárias de bem-estar para uma queda em $p_1$:
-
-. . .
-
-**Variação Compensadora (VC):** quanto dinheiro tirar do consumidor, *após* a mudança, para que ele volte ao nível de utilidade original?
-
-$$VC = e(\mathbf{p'}, u_0) - e(\mathbf{p'}, u_1) = m - e(\mathbf{p'}, u_0)$$
+$$\varepsilon_{ij} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i}$$
 
 . . .
 
-**Variação Equivalente (VE):** quanto dinheiro dar ao consumidor, *antes* da mudança, para que ele atinja o novo nível de utilidade?
-
-$$VE = e(\mathbf{p}, u_1) - e(\mathbf{p}, u_0) = e(\mathbf{p}, u_1) - m$$
+| Relação | Bruta (Marshalliana) | Líquida (Hicksiana) |
+|:--|:--:|:--:|
+| Substitutos | $\varepsilon_{ij} > 0$ | $\varepsilon_{ij}^H > 0$ |
+| Complementares | $\varepsilon_{ij} < 0$ | $\varepsilon_{ij}^H < 0$ |
+| Independentes | $\varepsilon_{ij} = 0$ | $\varepsilon_{ij}^H = 0$ |
 
 . . .
 
-> Para quase-linear: $VC = VE = \Delta EC$ (excedente do consumidor).
+**Bruta vs. líquida:** a classificação pode diferir! Um par de bens pode ser complementar bruto mas substituto líquido quando o efeito renda é forte.
 
-## Medidas de Bem-Estar — Resumo
+. . .
 
-| Medida | Preços base | Utilidade referência | Uso principal |
+:::{.callout-tip title="Intuição Econômica"}
+A classificação líquida (Hicksiana) é mais confiável porque isola o efeito preço relativo, removendo a distorção causada pelo efeito renda.
+:::
+
+## Excedente do Consumidor
+
+O excedente do consumidor $EC$ mede o benefício líquido do consumo ao preço de mercado:
+
+$$EC = \int_{p^*}^{p_{\max}} D(p) \, dp$$
+
+<div id="graph-a08-cs" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Preço $p$: <input type="range" id="sl-a08-p" min="2" max="10" value="6" step="0.5" oninput="window.updateA08CS()"> <span id="val-a08-p">6.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-cs',{
+    boundingbox:[-1,52,22,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,49,'p'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[20.5,-3,'Q'],{fontSize:14,anchorX:'left'});
+
+  var pVal = 6;
+  var pMax = 10;
+  var slope = -2;
+  var intercept = 50;
+  function demand(q){ return intercept + slope * q; }
+  function qFromP(p){ return (p - intercept) / slope; }
+
+  /* Demand curve */
+  brd.create('functiongraph',[function(q){ return demand(q); },0,25],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[23,demand(22)+5,'D(Q)'],{fontSize:13,color:'#1565c0',anchorX:'left'});
+
+  /* CS shaded area */
+  var csArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#1565c0',fillOpacity:0.2});
+  csArea.updateDataArray = function(){
+    var q0 = qFromP(pVal);
+    this.dataX = [0];
+    this.dataY = [pVal];
+    for(var q=0; q<=q0; q+=0.3){
+      this.dataX.push(q);
+      this.dataY.push(demand(q));
+    }
+    this.dataX.push(q0);
+    this.dataY.push(demand(q0));
+    this.dataX.push(q0);
+    this.dataY.push(pVal);
+    this.dataX.push(0);
+    this.dataY.push(pVal);
+  };
+
+  /* Price line */
+  var priceLine = brd.create('functiongraph',[function(q){ return pVal; },0,25],
+    {strokeColor:'#C8102E',strokeWidth:2,dash:2});
+
+  /* Equilibrium point */
+  var eqPt = brd.create('point',
+    [function(){ return qFromP(pVal); }, function(){ return pVal; }],
+    {size:5,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  /* CS label */
+  brd.create('text',
+    [function(){ return qFromP(pVal)/2 - 1; }, function(){ return (demand(0)+pVal)/2; },
+     function(){ var q0=qFromP(pVal); var cs=0.5*(demand(0)-pVal)*q0; return 'EC = '+cs.toFixed(1); }],
+    {fontSize:14,color:'#1565c0',anchorX:'center'});
+
+  window.updateA08CS = function(){
+    pVal = parseFloat(document.getElementById('sl-a08-p').value);
+    document.getElementById('val-a08-p').textContent = pVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+## VC, VE e Excedente: Comparação
+
+Três medidas monetárias de variação de bem-estar para uma queda em $p_1$:
+
+. . .
+
+| Medida | Preços base | Utilidade ref. | Fórmula |
 |:--|:--:|:--:|:--|
-| $\Delta EC$ | Observados | — | Aproximação rápida |
-| $VC$ | Novos $\mathbf{p'}$ | Antiga $u_0$ | Compensação ex-post |
-| $VE$ | Antigos $\mathbf{p}$ | Nova $u_1$ | Avaliação ex-ante |
+| $\Delta EC$ | Observados | — | $\int_{p_1'}^{p_1} x_1(p, m)\,dp$ |
+| $VC$ | Novos $\mathbf{p'}$ | Antiga $u_0$ | $m - e(\mathbf{p'}, u_0)$ |
+| $VE$ | Antigos $\mathbf{p}$ | Nova $u_1$ | $e(\mathbf{p}, u_1) - m$ |
 
 . . .
 
-**Relação de ordem** (para queda de preço de bem normal):
+**Relação de ordem** (queda de preço, bem normal):
 
 $$VE \geq \Delta EC \geq VC$$
 
-:::{.callout-tip title="Intuição Econômica"}
-A diferença entre VC e VE reflete o efeito renda. Se o efeito renda for zero, as três medidas coincidem.
-:::
-
-## Agregação de Demanda e Receita
-
-A demanda de mercado é $X(p) = \sum_{i=1}^{n} x_i(p, m_i)$.
-
-. . .
-
-**Receita total:**
-
-$$R(p) = p \cdot X(p) \implies \frac{dR}{dp} = X(p)\left[1 + \frac{1}{\varepsilon}\right]$$
-
 . . .
 
 :::{.callout-tip title="Intuição Econômica"}
-Se $|\varepsilon| > 1$ (demanda elástica), reduzir o preço **aumenta** a receita. Se $|\varepsilon| < 1$, reduzir o preço **diminui** a receita.
+As três medidas divergem quando o efeito renda é grande. Para utilidade quase-linear ($\partial x_1 / \partial m = 0$), temos $VC = VE = \Delta EC$ e o excedente do consumidor é uma medida exata.
 :::
 
-## Elasticidade e Receita — Interativo
+## Caso Brasil: Bolsa Família e Elasticidades
 
-<iframe src="../../graficos/cap06/elasticidade-receita.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;"></iframe>
-
-. . .
-
-| Região | $|\varepsilon|$ | $\frac{dR}{dp}$ | Estratégia |
-|:--|:--:|:--:|:--|
-| Elástica | $> 1$ | $< 0$ | Reduzir preço |
-| Unitária | $= 1$ | $= 0$ | Receita máxima |
-| Inelástica | $< 1$ | $> 0$ | Aumentar preço |
-
-## Gallery Walk — Efeitos Cruzados
-
-:::{.callout-tip title="Exercício em duplas"}
-**Tempo:** 12 minutos | **Formato:** Gallery Walk com 4 estações
+:::{.callout-tip title="Exercício em grupos"}
+**Tempo:** 15 minutos | **Formato:** grupos de 3-4 alunos
 :::
 
 . . .
 
-**Estação 1:** Dados da POF — classifique 5 pares de bens como substitutos ou complementos brutos.
+**Contexto:** Entre 2003 e 2014, o Bolsa Família elevou a renda das famílias mais pobres. Dados da **POF (IBGE)**:
 
-**Estação 2:** Repita a classificação usando a definição de substitutos/complementos *líquidos*. Compare.
-
-**Estação 3:** Calcule $VC$ e $VE$ para $U = x_1^{0{,}5} x_2^{0{,}5}$ com $p_1: 4 \to 2$.
-
-**Estação 4:** Para demanda linear $X = 100 - 2p$, encontre o preço que maximiza a receita.
-
-## Case Brasil — Arroz, Feijão e Carne
-
-:::{.callout-tip title="Exercício em duplas"}
-**Tempo:** 15 minutos | **Formato:** Case em grupos de 3–4 alunos
-:::
-
-. . .
-
-**Contexto:** Entre 2003 e 2014, a renda real das famílias brasileiras cresceu ~40%. A POF registrou:
-
-- Consumo per capita de arroz: **caiu 20%**
-- Consumo per capita de carne bovina: **subiu 15%**
-- Consumo per capita de refeições fora: **subiu 60%**
+| Bem | $\eta_i$ estimado | Classificação |
+|:--|:--:|:--|
+| Arroz/feijão | 0,2 – 0,4 | Necessário |
+| Carne bovina | 0,8 – 1,0 | Necessário / fronteira |
+| Refeição fora | 1,3 – 1,6 | Luxo |
+| Transporte privado | 1,1 – 1,3 | Luxo |
 
 . . .
 
 **Tarefas:**
 
-1. Estime a elasticidade-renda para cada categoria
-2. Classifique cada bem (inferior, necessário, luxo)
-3. Um aumento no preço do arroz pode gerar efeito Giffen? Argumente usando Slutsky
+1. Explique por que o consumo de arroz per capita **caiu** mesmo com a renda subindo
+2. Um aumento no preço da carne pode gerar efeito Giffen para famílias de baixa renda? Use Slutsky
+3. Qual parcela orçamentária $s_j$ tornaria o efeito renda dominante?
 
-## Peer Instruction — Giffen ou Não?
+## Agregação de Demanda
+
+A demanda de **mercado** é a soma horizontal das demandas individuais:
+
+$$X(p) = \sum_{i=1}^{n} x_i(p, m_i)$$
+
+. . .
+
+**Propriedades da demanda agregada:**
+
+- Homogeneidade de grau zero em $(p, m_1, \ldots, m_n)$
+- A elasticidade de mercado é a média ponderada das elasticidades individuais
+- A curva de mercado pode ter "dobras" quando consumidores entram/saem
+
+. . .
+
+**Condição de Gorman:** a agregação resulta em uma demanda representativa se as curvas de Engel forem lineares e paralelas (preferências quase-homotéticas).
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na prática, a demanda de mercado "suaviza" idiossincrasias individuais. Mesmo que cada consumidor tenha demanda angular, a soma tende a gerar uma curva contínua.
+:::
+
+## Bem Composto
+
+**Teorema do Bem Composto (Hicks):** se os preços relativos de um grupo de bens não mudam, podemos tratar todo o grupo como um único "bem composto".
+
+<div id="graph-a08-composite" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Renda $m$: <input type="range" id="sl-a08-m" min="50" max="200" value="100" step="5" oninput="window.updateA08Composite()"> <span id="val-a08-m">100</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-composite',{
+    boundingbox:[-1,22,22,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,20.5,'y (composto)'],{fontSize:13,anchorX:'left'});
+  brd.create('text',[20.5,-1,'x'],{fontSize:14,anchorX:'left'});
+
+  var mVal = 100;
+  var px = 5;
+  var py = 1; /* price index of composite good = 1 */
+
+  /* Budget line */
+  var budgetLine = brd.create('functiongraph',[function(x){
+    return (mVal - px*x)/py;
+  },0,22],{strokeColor:'#1565c0',strokeWidth:3});
+
+  /* x-intercept label */
+  brd.create('text',
+    [function(){ return mVal/px + 0.5; }, function(){ return -1; },
+     function(){ return 'm/p_x = '+(mVal/px).toFixed(0); }],
+    {fontSize:12,color:'#1565c0',anchorX:'left'});
+
+  /* y-intercept label */
+  brd.create('text',
+    [function(){ return 0.5; }, function(){ return mVal/py + 0.8; },
+     function(){ return 'm = '+mVal; }],
+    {fontSize:12,color:'#1565c0',anchorX:'left'});
+
+  /* Indifference curve (Cobb-Douglas: U = x^0.4 * y^0.6) */
+  var alpha = 0.4;
+  function optX(){ return alpha * mVal / px; }
+  function optY(){ return (1-alpha) * mVal / py; }
+  function uStar(){ return Math.pow(optX(), alpha) * Math.pow(optY(), 1-alpha); }
+
+  var icCurve = brd.create('functiongraph',[function(x){
+    if(x <= 0.1) return 999;
+    var u = uStar();
+    var yVal = Math.pow(u / Math.pow(x, alpha), 1/(1-alpha));
+    return yVal;
+  },0.1,22],{strokeColor:'#00897b',strokeWidth:2,dash:3});
+
+  /* Optimal point */
+  brd.create('point',
+    [function(){ return optX(); }, function(){ return optY(); }],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  brd.create('text',
+    [function(){ return optX()+0.8; }, function(){ return optY()+1; },
+     function(){ return '('+optX().toFixed(1)+', '+optY().toFixed(1)+')'; }],
+    {fontSize:12,color:'#C8102E',anchorX:'left'});
+
+  window.updateA08Composite = function(){
+    mVal = parseFloat(document.getElementById('sl-a08-m').value);
+    document.getElementById('val-a08-m').textContent = mVal.toFixed(0);
+    brd.update();
+  };
+})();
+</script>
+
+## Elasticidade e Receita
+
+A receita total é $R(p) = p \cdot Q(p)$. Diferenciando:
+
+$$\frac{dR}{dp} = Q(p)\left[1 + \frac{1}{\varepsilon}\right]$$
+
+. . .
+
+<div id="graph-a08-revenue" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Inclinação da demanda $b$: <input type="range" id="sl-a08-b" min="0.5" max="4" value="2" step="0.25" oninput="window.updateA08Revenue()"> <span id="val-a08-b">2.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-revenue',{
+    boundingbox:[-1,700,28,-60], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.5,660,'R'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[26,-40,'p'],{fontSize:14,anchorX:'left'});
+
+  var bVal = 2;
+  var a = 50; /* demand: Q = a - b*p */
+
+  /* Revenue curve R = p*(a - b*p) */
+  var revCurve = brd.create('functiongraph',[function(p){
+    var q = a - bVal*p;
+    if(q < 0) return 0;
+    return p * q;
+  },0,26],{strokeColor:'#1565c0',strokeWidth:3});
+
+  /* Max revenue point: p* = a/(2b), R* = a^2/(4b) */
+  var maxPt = brd.create('point',
+    [function(){ return a/(2*bVal); }, function(){ return a*a/(4*bVal); }],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  brd.create('text',
+    [function(){ return a/(2*bVal)+1; }, function(){ return a*a/(4*bVal)+20; },
+     function(){ return 'R_{max} = '+(a*a/(4*bVal)).toFixed(0)+' (|\\varepsilon|=1)'; }],
+    {fontSize:13,color:'#C8102E',anchorX:'left'});
+
+  /* Elastic region label */
+  brd.create('text',
+    [function(){ return a/(2*bVal) + a/(4*bVal); }, function(){ return a*a/(8*bVal); },
+     'Elástica'],
+    {fontSize:13,color:'#00897b',anchorX:'center'});
+
+  /* Inelastic region label */
+  brd.create('text',
+    [function(){ return a/(4*bVal); }, function(){ return a*a/(8*bVal); },
+     'Inelástica'],
+    {fontSize:13,color:'#ff9800',anchorX:'center'});
+
+  /* Vertical dashed line at p* */
+  brd.create('segment',
+    [function(){ return [a/(2*bVal), 0]; }, function(){ return [a/(2*bVal), a*a/(4*bVal)]; }],
+    {strokeColor:'#888',strokeWidth:1,dash:3,fixed:true});
+
+  window.updateA08Revenue = function(){
+    bVal = parseFloat(document.getElementById('sl-a08-b').value);
+    document.getElementById('val-a08-b').textContent = bVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+## Substitutos e Complementos Brutos vs Líquidos
+
+**Classificação de Slutsky (líquida):** baseada na demanda Hicksiana
+
+$$\frac{\partial h_i}{\partial p_j} > 0 \implies \text{substitutos líquidos}$$
+
+. . .
+
+**Classificação bruta:** baseada na demanda Marshalliana
+
+$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial m}$$
+
+. . .
+
+**Quando as classificações divergem?**
+
+- Se o bem $i$ é **inferior** ($\partial x_i / \partial m < 0$), o termo de renda $-x_j (\partial x_i / \partial m)$ é **positivo**
+- Isso pode tornar $\partial x_i / \partial p_j > 0$ mesmo quando $\partial h_i / \partial p_j < 0$
+- Resultado: bens classificados como **substitutos brutos** mas **complementares líquidos**
+
+. . .
+
+> A classificação líquida é preferida na teoria, pois a simetria $s_{ij} = s_{ji}$ só vale para a Hicksiana.
+
+## Peer Instruction: Elasticidades
 
 :::{.callout-tip title="Think-Pair-Share"}
-**Tempo:** 5 minutos | Vote → Discuta → Revote
+**Tempo:** 5 minutos | Vote --> Discuta --> Revote
 :::
 
 . . .
 
-> Em 2007, Jensen & Miller encontraram que, em Hunan (China), quando o preço do arroz **subiu**, o consumo de arroz também **subiu**. Nas províncias de Gansu, o mesmo padrão foi observado para o trigo.
+> Um estudo estima que a elasticidade-renda do frango no Brasil é $\eta = -0{,}3$ e a elasticidade-preço cruzada (Marshalliana) entre carne bovina e frango é $\varepsilon_{bf} = 0{,}5$. A parcela orçamentária do frango é $s_f = 0{,}08$.
 
 . . .
 
-**Pergunta:** Qual condição da equação de Slutsky **falha** para que o arroz em Hunan seja um bem de Giffen legítimo?
+**Pergunta:** Qual é a elasticidade-preço cruzada **compensada** (Hicksiana) entre carne bovina e frango?
 
-- **(A)** O efeito substituição é positivo
-- **(B)** O efeito renda domina o efeito substituição
-- **(C)** O arroz é um bem normal naquela faixa de renda
-- **(D)** A demanda Hicksiana tem inclinação positiva
+- **(A)** $0{,}524$ — substitutos líquidos
+- **(B)** $0{,}476$ — substitutos líquidos
+- **(C)** $-0{,}024$ — complementares líquidos
+- **(D)** $0{,}50$ — a correção é desprezível
+
+. . .
+
+> **Resolução:** $\varepsilon_{bf}^H = \varepsilon_{bf} + s_f \cdot \eta_b$. Precisamos de $\eta_b$, mas usando Slutsky na forma $\varepsilon_{bf}^H = \varepsilon_{bf} + s_f \cdot \eta_b$, a resposta depende de $\eta_b$. Com $\eta_b \approx 0{,}3$: $\varepsilon_{bf}^H = 0{,}5 + 0{,}08 \times 0{,}3 = 0{,}524$. **(A)**.
 
 ## Próxima Aula
 
@@ -229,8 +478,8 @@ Se $|\varepsilon| > 1$ (demanda elástica), reduzir o preço **aumenta** a recei
 
 . . .
 
-- Economia com dotações e Slutsky generalizado
-- Oferta de trabalho e o trade-off trabalho–lazer
+- Economia com dotações e equação de Slutsky generalizada
+- Oferta de trabalho e o trade-off trabalho-lazer
 - Modelo de Fisher de dois períodos
 
 . . .

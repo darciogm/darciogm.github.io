@@ -1,214 +1,122 @@
-# Pré-Aula 11 — Escolha sob Incerteza e Utilidade Esperada
+# Pré-Aula 11 — Decomposição de Hicks: Exercícios
 
 !!! info "Leitura obrigatória"
-    **Cap. 7, Seções 7.1–7.4** do livro interativo | Tempo estimado: **50 min**
+    **Cap. 5, Seções 5.4–5.6** do livro-texto | Tempo estimado: **~45 min** — revise especialmente as fórmulas de VC e VE.
 
 ## Objetivos de aprendizagem
 
 Após estudar este material e antes de vir à aula, você deve ser capaz de:
 
-1. Calcular o valor esperado de uma loteria e distinguir valor esperado de utilidade esperada
-2. Classificar atitudes frente ao risco (avesso, neutro, amante) usando a concavidade da função utilidade
-3. Calcular equivalente de certeza, prêmio de risco e o coeficiente de Arrow-Pratt
+1. Aplicar as fórmulas de VC e VE para utilidades Cobb-Douglas e quase-lineares.
+2. Calcular e comparar as três medidas de bem-estar em problemas numéricos.
+3. Preparar-se para o exercício em sala sobre tributação de eletricidade (ICMS).
 
 ---
 
-## 1. Por que incerteza importa?
+## 1. Formulário de Medidas de Bem-Estar
 
-Na vida real, quase nenhuma decisão é tomada com certeza: investir na bolsa, fazer seguro, escolher uma carreira. Precisamos de um modelo que permita ao consumidor **comparar resultados incertos**.
+Antes dos exercícios, consolide as fórmulas essenciais.
 
-Uma **loteria** é um conjunto de resultados possíveis, cada um com uma probabilidade:
+**Excedente do consumidor (variação):**
 
-$$L = \{(x_1, p_1), (x_2, p_2), \dots, (x_n, p_n)\} \quad \text{com } \sum_{i} p_i = 1$$
+$$\Delta EC = \int_{p_0}^{p_1} x^M(p, m)\,dp$$
 
-O **valor esperado** da loteria é:
+**Variação compensatória:**
 
-$$E[L] = \sum_{i} p_i x_i$$
+$$VC = e(p_1, u_0) - m$$
 
----
+**Variação equivalente:**
 
-## 2. O Paradoxo de São Petersburgo
-
-Considere o seguinte jogo: uma moeda é lançada repetidamente até sair cara. Se a primeira cara sai no lançamento $n$, você recebe $2^n$ reais.
-
-O valor esperado é:
-
-$$E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty$$
-
-O valor esperado é **infinito**, mas ninguém pagaria mais do que algumas dezenas de reais para jogar. Por quê?
-
-A resposta de Daniel Bernoulli (1738): as pessoas não maximizam **valor esperado**, mas **utilidade esperada** — e a utilidade é **côncava** (cada real adicional vale menos).
-
----
-
-## 3. Axiomas de Von Neumann-Morgenstern (VNM)
-
-Para que a utilidade esperada funcione como critério de decisão, precisamos de axiomas sobre preferências entre loterias:
-
-| Axioma | Significado |
-|:---|:---|
-| **Completude** | O agente compara quaisquer duas loterias |
-| **Transitividade** | Sem ciclos entre loterias |
-| **Continuidade** | Pequenas mudanças nas probabilidades geram pequenas mudanças na preferência |
-| **Independência** | Se $L_1 \succ L_2$, então misturar cada uma com uma terceira loteria $L_3$ preserva a preferência |
-
-**Teorema VNM:** Se os axiomas são satisfeitos, existe uma função $u$ (utilidade de Bernoulli) tal que:
-
-$$L_1 \succeq L_2 \iff E[u(L_1)] \geq E[u(L_2)]$$
-
-$$E[u(L)] = \sum_{i} p_i \, u(x_i)$$
-
-!!! warning "Utilidade cardinal"
-    Diferentemente da utilidade ordinal do consumidor (onde $V = f(U)$ com $f' > 0$ preserva preferências), aqui a função $u$ é definida **a menos de transformações afins**: $v = a + bu$ com $b > 0$. Isso significa que a curvatura de $u$ tem significado — ela mede a atitude frente ao risco.
-
----
-
-## 4. Aversão ao risco e concavidade
-
-Considere uma loteria $L$ com valor esperado $E[L]$ e compare com receber $E[L]$ com certeza.
-
-**Desigualdade de Jensen:**
-
-Se $u$ é **côncava**: $u(E[L]) > E[u(L)]$ — prefere o valor esperado certo à loteria.
-
-Se $u$ é **convexa**: $u(E[L]) < E[u(L)]$ — prefere a loteria ao valor esperado certo.
-
-| Tipo | Função $u$ | Comportamento |
-|:---|:---|:---|
-| **Avesso ao risco** | Côncava ($u'' < 0$) | Prefere certeza; faz seguro |
-| **Neutro ao risco** | Linear ($u'' = 0$) | Indiferente |
-| **Amante do risco** | Convexa ($u'' > 0$) | Prefere a loteria; joga |
-
-!!! example "Exemplo: cara ou coroa"
-    Loteria: R$ 100 com prob. 50% ou R$ 0 com prob. 50%. $E[L] = 50$.
-
-    Se $u(x) = \sqrt{x}$:
-
-    $E[u(L)] = 0{,}5 \cdot \sqrt{100} + 0{,}5 \cdot \sqrt{0} = 0{,}5 \cdot 10 = 5$
-
-    $u(E[L]) = \sqrt{50} \approx 7{,}07$
-
-    Como $u(50) > E[u(L)]$: o agente é **avesso ao risco**.
-
----
-
-## 5. Equivalente de certeza e prêmio de risco
-
-O **equivalente de certeza** $EC$ é o valor certo que dá a mesma utilidade que a loteria:
-
-$$u(EC) = E[u(L)] \implies EC = u^{-1}\big(E[u(L)]\big)$$
-
-O **prêmio de risco** $\pi$ é quanto o agente paga para eliminar o risco:
-
-$$\pi = E[L] - EC$$
-
-Para um avesso ao risco: $EC < E[L]$, logo $\pi > 0$.
-
-!!! example "Continuação do exemplo"
-    $E[u(L)] = 5$, logo $EC = u^{-1}(5) = 5^2 = 25$.
-
-    $\pi = E[L] - EC = 50 - 25 = 25$.
-
-    O agente aceitaria receber R$ 25 com certeza em vez de jogar a loteria de R$ 0/R$ 100.
-
----
-
-## Gráfico interativo: utilidade esperada e aversão ao risco
-
-<div id="graph-expected-utility" style="min-height: 450px;">
-<iframe src="../../graficos/cap07/utilidade-esperada.html" width="100%" height="450" frameborder="0" style="border: 1px solid #ddd; border-radius: 6px;"></iframe>
-</div>
-
-!!! tip "Explore o gráfico"
-    - Mude a curvatura de $u$ e observe como $EC$ e $\pi$ mudam
-    - Compare os casos côncavo, linear e convexo
-    - Arraste as probabilidades e veja o impacto na utilidade esperada
-
----
-
-## 6. Coeficiente de Arrow-Pratt
-
-O **coeficiente de aversão absoluta ao risco** de Arrow-Pratt mede a intensidade da aversão ao risco:
-
-$$A(x) = -\frac{u''(x)}{u'(x)}$$
-
-O **coeficiente de aversão relativa ao risco**:
-
-$$R(x) = -\frac{x \cdot u''(x)}{u'(x)} = x \cdot A(x)$$
-
-| Função | $A(x)$ | $R(x)$ | Tipo |
-|:---|:---|:---|:---|
-| $u = \sqrt{x}$ | $\frac{1}{2x}$ | $\frac{1}{2}$ | CRRA |
-| $u = \ln x$ | $\frac{1}{x}$ | $1$ | CRRA |
-| $u = -e^{-ax}$ | $a$ | $ax$ | CARA |
-
-- **CARA** (Constant Absolute Risk Aversion): $A(x) = $ constante
-- **CRRA** (Constant Relative Risk Aversion): $R(x) = $ constante
-
----
-
-## 7. Seguro: aplicação da aversão ao risco
-
-Um indivíduo avesso ao risco com riqueza $W$ enfrenta uma perda $D$ com probabilidade $p$.
-
-Uma seguradora oferece cobertura $K$ ao prêmio $\gamma K$ (onde $\gamma$ é o preço por unidade de cobertura).
-
-**Riqueza nos estados:**
-
-$$W_{\text{sem perda}} = W - \gamma K$$
-$$W_{\text{com perda}} = W - D - \gamma K + K = W - D + K(1 - \gamma)$$
-
-**Seguro atuarialmente justo**: $\gamma = p$. Neste caso, o avesso ao risco faz **seguro completo** ($K = D$).
+$$VE = m - e(p_0, u_1)$$
 
 !!! note "Intuição Econômica"
-    **Por que seguros existem?**
-
-    O seguro é uma transferência de risco: o consumidor avesso ao risco paga um prêmio para transferir o risco à seguradora. A seguradora, por diversificar entre milhares de contratos, enfrenta risco muito menor (Lei dos Grandes Números). Assim, o **risco desaparece** no agregado — mas não por mágica: é a diversificação que o elimina.
-
-    Para o seguro justo ($\gamma = p$), o teorema é elegante: o avesso ao risco iguala a riqueza em todos os estados — elimina completamente a incerteza.
+    A VC "compensa" a mudança mantendo utilidade em $u_0$; a VE encontra o "equivalente" monetário da mudança avaliado a preços antigos. Para aumentos de preço de bens normais: $|VE| < |\Delta EC| < |VC|$.
 
 ---
 
-## Exercícios de preparação
+## 2. VC e VE para Cobb-Douglas
 
-**Exercício 1.** Uma loteria paga R$ 400 com probabilidade 0,3 e R$ 100 com probabilidade 0,7. Se $u(x) = \ln(x)$, calcule o valor esperado, a utilidade esperada, o equivalente de certeza e o prêmio de risco.
+Para $u = x_1^\alpha x_2^{1-\alpha}$ com preços $(p_1, p_2)$ e renda $m$:
+
+- **Demanda marshalliana:** $x_1^M = \frac{\alpha m}{p_1}$, $x_2^M = \frac{(1-\alpha) m}{p_2}$
+- **Utilidade indireta:** $v(p_1, p_2, m) = \alpha^\alpha (1-\alpha)^{1-\alpha} \frac{m}{p_1^\alpha p_2^{1-\alpha}}$
+- **Função dispêndio:** $e(p_1, p_2, u) = \frac{u \, p_1^\alpha p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}$
+
+Quando $p_1$ muda de $p_1^0$ para $p_1^1$:
+
+$$VC = m\left[\left(\frac{p_1^1}{p_1^0}\right)^\alpha - 1\right], \qquad VE = m\left[1 - \left(\frac{p_1^0}{p_1^1}\right)^\alpha\right]$$
+
+<iframe src="graficos/cap05/excedente-consumidor.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Altere o preço e observe como as áreas de EC, VC e VE diferem para demandas com efeito renda não nulo. Compare com o caso quase-linear.
+
+---
+
+## 3. VC e VE para Quase-Linear
+
+Para $u = v(x_1) + x_2$ com $v'(x_1) > 0$, $v''(x_1) < 0$:
+
+- **Demanda marshalliana:** $v'(x_1) = p_1$, independe de $m$.
+- **Não há efeito renda** sobre $x_1$.
+
+Resultado fundamental:
+
+$$VC = VE = \Delta EC = \int_{p_0}^{p_1} x^M(p)\,dp$$
+
+!!! note "Intuição Econômica"
+    Em preferências quase-lineares, toda a variação de renda é absorvida pelo bem numerário $x_2$. A demanda por $x_1$ depende apenas do preço — as curvas hicksiana e marshalliana coincidem.
+
+---
+
+## 4. Exercício Preparatório: ICMS sobre Eletricidade
+
+O ICMS sobre eletricidade no Brasil pode chegar a 25–30% em alguns estados. Modelamos o consumo de eletricidade ($x_1$) e outros bens ($x_2$) com:
+
+$$u = x_1^{0{,}4} x_2^{0{,}6}, \quad m = 3000, \quad p_2 = 1$$
+
+O preço da eletricidade sobe de $p_1 = 1$ para $p_1 = 1{,}30$ (alíquota de 30%).
+
+**Receita do governo:** $R = (p_1^1 - p_1^0) \cdot x_1^*(p_1^1)$
+
+**Perda de peso morto:** $DWL = |VC| - R$
+
+!!! note "Intuição Econômica"
+    A perda de peso morto cresce com o **quadrado** da alíquota — a chamada regra de Harberger. Dobrar a alíquota quadruplica a ineficiência. Isso é central no debate sobre reforma tributária no Brasil.
+
+<iframe src="graficos/cap06/substitutos-complementos.html"></iframe>
+
+!!! tip "Explore o gráfico"
+    Observe como a relação de substituição ou complementaridade entre bens afeta a magnitude da perda de peso morto. Bens com substitutos próximos sofrem maior distorção.
+
+---
+
+## Exercícios Preparatórios
+
+**Exercício 1.** Com $u = x_1^{0{,}5} x_2^{0{,}5}$, $m = 400$, $p_2 = 1$ e aumento de $p_1$ de 2 para 8, calcule VC, VE e $\Delta EC$.
 
 ??? success "Solução"
-    $E[L] = 0{,}3(400) + 0{,}7(100) = 120 + 70 = 190$
+    $\alpha = 0{,}5$. Usando as fórmulas:  
+    $VC = 400\left[\left(\frac{8}{2}\right)^{0,5} - 1\right] = 400(2 - 1) = 400$.  
+    $VE = 400\left[1 - \left(\frac{2}{8}\right)^{0,5}\right] = 400(1 - 0{,}5) = 200$.  
+    $\Delta EC = \int_2^8 \frac{200}{p}\,dp = 200\ln 4 \approx 277{,}26$.  
+    Confirmamos: $VE = 200 < \Delta EC \approx 277 < VC = 400$.
 
-    $E[u(L)] = 0{,}3 \ln(400) + 0{,}7 \ln(100) = 0{,}3(5{,}991) + 0{,}7(4{,}605) = 1{,}797 + 3{,}224 = 5{,}021$
-
-    $EC = e^{5{,}021} \approx 151{,}6$
-
-    $\pi = 190 - 151{,}6 = 38{,}4$
-
-    O agente aceitaria R$ 151,60 com certeza em vez da loteria de valor esperado R$ 190.
-
-**Exercício 2.** Mostre que, para $u(x) = -e^{-2x}$, o coeficiente de aversão absoluta é constante e calcule seu valor.
+**Exercício 2.** Para $u = 10\sqrt{x_1} + x_2$, $m = 100$, $p_2 = 1$ e $p_1$ subindo de 1 para 4, calcule as três medidas.
 
 ??? success "Solução"
-    $u'(x) = 2e^{-2x}$
+    Demanda: $v'(x_1) = \frac{5}{\sqrt{x_1}} = p_1 \Rightarrow x_1 = 25/p_1^2$.  
+    $\Delta EC = \int_1^4 \frac{25}{p^2}\,dp = 25\left[-\frac{1}{p}\right]_1^4 = 25\left(1 - \frac{1}{4}\right) = 18{,}75$.  
+    Como é quase-linear: $VC = VE = \Delta EC = 18{,}75$.
 
-    $u''(x) = -4e^{-2x}$
-
-    $A(x) = -\frac{u''(x)}{u'(x)} = -\frac{-4e^{-2x}}{2e^{-2x}} = \frac{4}{2} = 2$
-
-    $A(x) = 2$ para todo $x$. Trata-se de uma função CARA com parâmetro $a = 2$.
-
-**Exercício 3.** Um fazendeiro com riqueza $W = 1000$ enfrenta risco de perda $D = 600$ com probabilidade $p = 0{,}2$. Se o seguro tem preço atuarialmente justo ($\gamma = 0{,}2$) e $u = \sqrt{x}$, mostre que o seguro completo é ótimo.
+**Exercício 3.** No exercício do ICMS ($\alpha = 0{,}4$, $m = 3000$, $p_1$: 1 para 1,30), calcule a receita $R$ e a perda de peso morto.
 
 ??? success "Solução"
-    Com seguro completo ($K = D = 600$): prêmio $= 0{,}2 \times 600 = 120$.
-
-    $W_{\text{final}} = 1000 - 120 = 880$ em ambos os estados.
-
-    $U_{\text{seguro}} = \sqrt{880} \approx 29{,}66$
-
-    Sem seguro: $U_{\text{sem}} = 0{,}8\sqrt{1000} + 0{,}2\sqrt{400} = 0{,}8(31{,}62) + 0{,}2(20) = 25{,}30 + 4{,}00 = 29{,}30$
-
-    $U_{\text{seguro}} = 29{,}66 > 29{,}30 = U_{\text{sem}}$. Seguro completo é melhor.
-
-    De fato, para $\gamma = p$ e $u'' < 0$, o seguro completo sempre é ótimo (pode-se provar via CPO: $u'(W_1) = u'(W_2) \implies W_1 = W_2$).
+    $x_1^*(1{,}30) = \frac{0{,}4 \times 3000}{1{,}30} \approx 923{,}08$.  
+    $R = 0{,}30 \times 923{,}08 \approx 276{,}92$.  
+    $VC = 3000[(1{,}30)^{0,4} - 1] = 3000[1{,}1096 - 1] = 3000 \times 0{,}1096 \approx 328{,}77$.  
+    $DWL = 328{,}77 - 276{,}92 \approx 51{,}85$.  
+    A perda de peso morto é de aproximadamente R\$ 51,85.
 
 ---
 
@@ -219,44 +127,44 @@ $$W_{\text{com perda}} = W - D - \gamma K + K = W - D + K(1 - \gamma)$$
 
 <div class="quiz-container" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1rem 0;">
 
-**Q1.** O Paradoxo de São Petersburgo mostra que as pessoas:
+**Q1.** Para preferências Cobb-Douglas com $\alpha = 0{,}5$, a função dispêndio é proporcional a:
 
-- [ ] (a) Maximizam o valor esperado
-- [x] (b) Não maximizam o valor esperado — a utilidade marginal da renda é decrescente
-- [ ] (c) São amantes do risco
-- [ ] (d) São neutras ao risco
+- [ ] (a) $p_1 / p_2$
+- [x] (b) $\sqrt{p_1 p_2}$
+- [ ] (c) $p_1 + p_2$
+- [ ] (d) $p_1^2 p_2^2$
 
-**Q2.** Se $u(x) = x^2$, o agente é:
+**Q2.** Em preferências quase-lineares, o efeito renda sobre $x_1$ é:
 
-- [ ] (a) Avesso ao risco
-- [ ] (b) Neutro ao risco
-- [x] (c) Amante do risco
-- [ ] (d) Impossível determinar
+- [ ] (a) Positivo
+- [ ] (b) Negativo
+- [x] (c) Zero
+- [ ] (d) Depende dos parâmetros
 
-**Q3.** O equivalente de certeza é:
+**Q3.** Se o preço de um bem normal aumenta, a maior medida de perda (em valor absoluto) é:
 
-- [ ] (a) O valor esperado da loteria
-- [x] (b) O valor certo que dá a mesma utilidade que a loteria
-- [ ] (c) O prêmio de seguro
-- [ ] (d) O lucro esperado
+- [x] (a) Variação compensatória
+- [ ] (b) Variação equivalente
+- [ ] (c) Excedente do consumidor
+- [ ] (d) São todas iguais
 
-**Q4.** Se o prêmio de risco é positivo, o agente é:
+**Q4.** A perda de peso morto de um imposto cresce aproximadamente com:
 
-- [x] (a) Avesso ao risco
-- [ ] (b) Neutro ao risco
-- [ ] (c) Amante do risco
-- [ ] (d) Indiferente ao risco
+- [ ] (a) A alíquota
+- [x] (b) O quadrado da alíquota
+- [ ] (c) A raiz da alíquota
+- [ ] (d) O logaritmo da alíquota
 
-**Q5.** No seguro atuarialmente justo, um avesso ao risco:
+**Q5.** A receita do governo com um imposto unitário $t$ sobre o bem $x_1$ é:
 
-- [x] (a) Compra seguro completo
-- [ ] (b) Não compra seguro
-- [ ] (c) Compra seguro parcial
-- [ ] (d) É indiferente entre comprar ou não
+- [ ] (a) $t \cdot x_1(p_1^0)$
+- [x] (b) $t \cdot x_1(p_1^0 + t)$
+- [ ] (c) $t^2 \cdot x_1(p_1^0)$
+- [ ] (d) $t \cdot m$
 
 </div>
 
 ---
 
 !!! abstract "Próxima aula"
-    **Aula 11**: Mini-lecture sobre utilidade esperada e aversão ao risco + Peer Instruction sobre classificação de atitudes frente ao risco.
+    Na **Aula 12**, estudaremos economias com dotações, incluindo o modelo de oferta de trabalho (lazer-consumo) e a escolha intertemporal com taxa de juros.

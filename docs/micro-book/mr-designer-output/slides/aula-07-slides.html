@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-07-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-07-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-07-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-07-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-07-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -141,13 +141,13 @@ Insper
 </div>
 
 </section>
-<section id="por-que-bens-inferiores-existem" class="slide level2">
-<h2>Por que bens inferiores existem?</h2>
+<section id="quando-o-preço-muda-tudo-muda" class="slide level2">
+<h2>Quando o Preço Muda, Tudo Muda</h2>
 <blockquote>
-<p>Quando o preço da carne sobe, famílias compram <strong>mais frango</strong>. Mas quando a <em>renda</em> sobe, elas compram <strong>menos frango</strong>. Como separar esses dois efeitos?</p>
+<p>Quando <span class="math inline">\(p_1\)</span> cai, o consumidor compra mais de <span class="math inline">\(x_1\)</span>. Mas <strong>por quê</strong>? Porque ficou relativamente mais barato, ou porque o poder de compra aumentou?</p>
 </blockquote>
 <div class="fragment">
-<p><strong>Objetivo da aula:</strong> decompor a variação na quantidade demandada em <strong>efeito substituição</strong> e <strong>efeito renda</strong>.</p>
+<p><strong>Resposta:</strong> as duas coisas ao mesmo tempo.</p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -160,65 +160,26 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Toda mudança de preço faz duas coisas ao mesmo tempo: altera o preço <em>relativo</em> e altera o <em>poder de compra</em> real do consumidor.</p>
+<p>Toda variação de preço produz <strong>dois efeitos simultâneos</strong>: (1) altera o preço <em>relativo</em> entre os bens — <strong>efeito substituição</strong>; (2) altera o <em>poder de compra</em> real da renda — <strong>efeito renda</strong>.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="demanda-marshalliana-propriedades" class="slide level2">
-<h2>Demanda Marshalliana — Propriedades</h2>
-<p>A demanda Marshalliana <span class="math inline">\(x_i(\mathbf{p}, m)\)</span> é obtida da maximização da utilidade sujeita à restrição orçamentária.</p>
+<section id="decomposição-de-hicks" class="slide level2">
+<h2>Decomposição de Hicks</h2>
+<p><strong>Ideia:</strong> introduzir uma etapa intermediária para isolar cada efeito.</p>
 <div class="fragment">
-<p><strong>Propriedades fundamentais:</strong></p>
-<ul>
-<li>Homogeneidade de grau zero: <span class="math inline">\(x_i(\lambda\mathbf{p}, \lambda m) = x_i(\mathbf{p}, m)\)</span></li>
-<li>Esgotamento do orçamento (Lei de Walras): <span class="math inline">\(\sum_i p_i x_i = m\)</span></li>
-<li>Simetria e negatividade da matriz de Slutsky</li>
-</ul>
-</div>
-<div class="fragment">
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{efeito substituição}} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{efeito renda}}\]</span></p>
-</div>
-</section>
-<section id="curvas-de-engel-e-classificação-de-bens" class="slide level2">
-<h2>Curvas de Engel e Classificação de Bens</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Curvas de Engel</strong> relacionam <span class="math inline">\(m \to x_i\)</span>:</p>
-<ul>
-<li><strong>Bem normal:</strong> <span class="math inline">\(\frac{\partial x_i}{\partial m} &gt; 0\)</span></li>
-<li><strong>Bem inferior:</strong> <span class="math inline">\(\frac{\partial x_i}{\partial m} &lt; 0\)</span></li>
-<li><strong>Bem de luxo:</strong> <span class="math inline">\(\varepsilon_m &gt; 1\)</span></li>
-<li><strong>Bem necessário:</strong> <span class="math inline">\(0 &lt; \varepsilon_m &lt; 1\)</span></li>
-</ul>
-</div><div class="column" style="width:50%;">
-<iframe src="../../graficos/cap05/curva-engel.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
-</section>
-<section id="efeito-total-de-uma-variação-de-preço" class="slide level2">
-<h2>Efeito Total de uma Variação de Preço</h2>
-<p>Quando <span class="math inline">\(p_1\)</span> cai, o consumidor se move de <span class="math inline">\(A\)</span> para <span class="math inline">\(C\)</span> na nova restrição orçamentária.</p>
-<div class="fragment">
-<p><span class="math display">\[\Delta x_1^{\text{total}} = x_1(p_1', m) - x_1(p_1, m)\]</span></p>
-</div>
-<div class="fragment">
-<p><strong>Decomposição de Hicks:</strong></p>
 <ol type="1">
-<li>Manter a utilidade constante em <span class="math inline">\(\bar{u}\)</span> e variar <span class="math inline">\(p_1\)</span> → ponto <span class="math inline">\(B\)</span></li>
-<li>Manter <span class="math inline">\(p_1'\)</span> constante e ajustar a renda de volta → de <span class="math inline">\(B\)</span> para <span class="math inline">\(C\)</span></li>
+<li><strong>Ponto <span class="math inline">\(A\)</span>:</strong> cesta ótima original — preços <span class="math inline">\((p_1, p_2)\)</span>, renda <span class="math inline">\(m\)</span>, utilidade <span class="math inline">\(\bar{u}\)</span></li>
+<li><strong>Ponto <span class="math inline">\(B\)</span>:</strong> cesta ótima ao preço novo <span class="math inline">\(p_1'\)</span> mantendo <span class="math inline">\(U = \bar{u}\)</span> (compensação hicksiana)</li>
+<li><strong>Ponto <span class="math inline">\(C\)</span>:</strong> cesta ótima final — preços <span class="math inline">\((p_1', p_2)\)</span>, renda <span class="math inline">\(m\)</span></li>
 </ol>
 </div>
 <div class="fragment">
-<p><span class="math display">\[\Delta x_1^{\text{total}} = \underbrace{\Delta x_1^{ES}}_{\text{de } A \to B} + \underbrace{\Delta x_1^{ER}}_{\text{de } B \to C}\]</span></p>
+<p><span class="math display">\[\underbrace{A \to C}_{\text{efeito total}} = \underbrace{A \to B}_{\text{efeito substituição}} + \underbrace{B \to C}_{\text{efeito renda}}\]</span></p>
 </div>
-</section>
-<section id="decomposição-de-hicks-visualização" class="slide level2">
-<h2>Decomposição de Hicks — Visualização</h2>
-<iframe src="../../graficos/cap05/efeito-renda-substituicao.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
 <div class="fragment">
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -230,74 +191,269 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>O ponto <span class="math inline">\(B\)</span> é a cesta que o consumidor escolheria se enfrentasse os novos preços mas mantivesse o nível de utilidade original.</p>
+<p><span class="math inline">\(B\)</span> é a cesta que o consumidor escolheria aos novos preços se alguém ajustasse sua renda de modo a mantê-lo na curva de indiferença original.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="o-efeito-substituição-é-sempre-negativo" class="slide level2">
-<h2>O Efeito Substituição É Sempre Negativo</h2>
-<p><strong>Teorema:</strong> Para a demanda Hicksiana <span class="math inline">\(h_i(\mathbf{p}, \bar{u})\)</span>:</p>
-<p><span class="math display">\[\frac{\partial h_i}{\partial p_i} \leq 0 \quad \text{sempre}\]</span></p>
+<section id="efeito-substituição-hicks" class="slide level2">
+<h2>Efeito Substituição (Hicks)</h2>
+<p>O efeito substituição hicksiano é o movimento <strong>ao longo</strong> da curva de indiferença original.</p>
 <div class="fragment">
-<p><strong>Demonstração (intuitiva):</strong></p>
+<p><strong>Resultado fundamental — Lei da Demanda Compensada:</strong></p>
+<p><span class="math display">\[\frac{\partial h_i}{\partial p_i} \leq 0 \quad \text{sempre}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Demonstração intuitiva:</strong></p>
 <ul>
-<li>A curva de indiferença é convexa → quando <span class="math inline">\(p_1\)</span> cai, <span class="math inline">\(\text{TMS}\)</span> deve cair</li>
-<li>Isso exige mover-se para a direita ao longo da curva → <span class="math inline">\(x_1\)</span> sobe</li>
+<li>A curva de indiferença é convexa → quando <span class="math inline">\(p_1\)</span> cai, a reta de isocusto gira</li>
+<li>O novo ponto de tangência exige menor TMS → move-se para a <strong>direita</strong></li>
+<li>Logo <span class="math inline">\(x_1\)</span> aumenta quando <span class="math inline">\(p_1\)</span> cai — <strong>sempre</strong></li>
 </ul>
 </div>
 <div class="fragment">
 <blockquote>
-<p>O efeito substituição <strong>sempre</strong> empurra o consumo na direção oposta à variação de preço.</p>
+<p>O efeito substituição empurra o consumo na direção <strong>oposta</strong> à variação de preço, sem exceção.</p>
 </blockquote>
 </div>
 </section>
-<section id="o-efeito-renda-depende-do-tipo-de-bem" class="slide level2">
-<h2>O Efeito Renda Depende do Tipo de Bem</h2>
+<section id="efeito-renda" class="slide level2">
+<h2>Efeito Renda</h2>
+<p>O efeito renda é o deslocamento de <span class="math inline">\(B\)</span> para <span class="math inline">\(C\)</span>: mudança de renda real a preços constantes.</p>
+<div class="fragment">
 <div class="columns">
 <div class="column" style="width:50%;">
+<p><strong>Bem normal</strong> (<span class="math inline">\(\frac{\partial x}{\partial m} &gt; 0\)</span>):</p>
+<p>Queda em <span class="math inline">\(p_1\)</span> → renda real sobe → consome <strong>mais</strong> <span class="math inline">\(x_1\)</span></p>
+<p>→ ER reforça ES → demanda cai inequivocamente</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Bem inferior</strong> (<span class="math inline">\(\frac{\partial x}{\partial m} &lt; 0\)</span>):</p>
+<p>Queda em <span class="math inline">\(p_1\)</span> → renda real sobe → consome <strong>menos</strong> <span class="math inline">\(x_1\)</span></p>
+<p>→ ER contraria ES → resultado ambíguo</p>
+</div></div>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\text{Efeito renda} = -x_1^* \cdot \frac{\partial x_1}{\partial m} \cdot \Delta p_1\]</span></p>
+<p>O sinal depende inteiramente de o bem ser normal ou inferior.</p>
+</div>
+</section>
+<section id="decomposição-interativa" class="slide level2">
+<h2>Decomposição Interativa</h2>
+<p>Arraste o slider para alterar <span class="math inline">\(p_1'\)</span> e observe a decomposição de Hicks nos pontos <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> e <span class="math inline">\(C\)</span>:</p>
+<div id="graph-a07-hicks" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Novo <span class="math inline">\(p_1'\)</span>: <input type="range" id="sl-a07-p1new" min="1" max="8" value="4" step="0.2" oninput="updA07Hicks()"> <span id="val-a07-p1new">4.0</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-hicks',{
+    boundingbox:[-2,55,75,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  // Parameters: U = x^0.5 * y^0.5, m=120, p1=2, p2=3
+  var m=120, p1=2, p2=3, alpha=0.5;
+  var p1new = 4;
+
+  // Marshallian demand Cobb-Douglas: x1 = alpha*m/p1, x2 = (1-alpha)*m/p2
+  function xM1(pp1, mm){ return alpha*mm/pp1; }
+  function xM2(pp2, mm){ return (1-alpha)*mm/pp2; }
+  // Utility
+  function U(x,y){ return Math.pow(x,alpha)*Math.pow(y,1-alpha); }
+  // Hicksian: h1 = ubar*(p2/p1)^(1-alpha) * (alpha/(1-alpha))^(1-alpha)
+  //           h2 = ubar*(p1/p2)^alpha * ((1-alpha)/alpha)^alpha
+  function h1(pp1, pp2, ubar){
+    return ubar * Math.pow(pp2/pp1, 1-alpha) * Math.pow(alpha/(1-alpha), 1-alpha);
+  }
+  function h2(pp1, pp2, ubar){
+    return ubar * Math.pow(pp1/pp2, alpha) * Math.pow((1-alpha)/alpha, alpha);
+  }
+
+  // IC: y = (ubar / x^alpha)^(1/(1-alpha))
+  function icY(x, ubar){
+    if(x<=0) return 999;
+    return Math.pow(ubar / Math.pow(x, alpha), 1/(1-alpha));
+  }
+
+  // Point A
+  var xA1 = xM1(p1, m), xA2 = xM2(p2, m);
+  var ubarA = U(xA1, xA2);
+
+  // Original budget line
+  brd.create('line',[[0, m/p2],[m/p1, 0]],{strokeColor:'#1565c0',strokeWidth:2,straightFirst:false,straightLast:false,name:'',fixed:true});
+  // Original IC
+  brd.create('functiongraph',[function(x){return icY(x, ubarA);},0.3,70],{strokeColor:'#1565c0',strokeWidth:2,dash:0});
+  // Point A
+  var ptA = brd.create('point',[xA1, xA2],{size:6,fillColor:'#1565c0',strokeColor:'#1565c0',name:'A',fixed:true,label:{fontSize:15,offset:[10,10]}});
+
+  // New budget line (dynamic)
+  var blNew1 = brd.create('point',[function(){return m/p1new;},0],{visible:false});
+  var blNew2 = brd.create('point',[0, function(){return m/p2;}],{visible:false});
+  brd.create('line',[blNew2, blNew1],{strokeColor:'#C8102E',strokeWidth:2,straightFirst:false,straightLast:false});
+
+  // Point C (final)
+  var ptC = brd.create('point',[function(){return xM1(p1new, m);}, function(){return xM2(p2, m);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'C',fixed:true,label:{fontSize:15,offset:[10,10]}});
+  // New IC through C
+  brd.create('functiongraph',[function(x){return icY(x, U(xM1(p1new,m), xM2(p2,m)));},0.3,70],{strokeColor:'#C8102E',strokeWidth:2,dash:0});
+
+  // Compensated budget (dashed): tangent to original IC at new price ratio
+  var ptB = brd.create('point',[function(){return h1(p1new, p2, ubarA);}, function(){return h2(p1new, p2, ubarA);}],
+    {size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'B',fixed:true,label:{fontSize:15,offset:[10,10]}});
+  // Compensated budget line passes through B with slope -p1new/p2
+  var mComp = function(){ return p1new * h1(p1new, p2, ubarA) + p2 * h2(p1new, p2, ubarA); };
+  var blC1 = brd.create('point',[function(){return mComp()/p1new;},0],{visible:false});
+  var blC2 = brd.create('point',[0, function(){return mComp()/p2;}],{visible:false});
+  brd.create('line',[blC2, blC1],{strokeColor:'#00897b',strokeWidth:2,dash:3,straightFirst:false,straightLast:false});
+
+  // Arrows SE and IE
+  brd.create('arrow',[[function(){return xA1;},function(){return -2;}],[function(){return h1(p1new,p2,ubarA);},function(){return -2;}]],
+    {strokeColor:'#00897b',strokeWidth:3});
+  brd.create('text',[function(){return (xA1+h1(p1new,p2,ubarA))/2;}, -3.5, 'ES'],{fontSize:13,cssStyle:'color:#00897b;font-weight:bold;'});
+
+  brd.create('arrow',[[function(){return h1(p1new,p2,ubarA);},function(){return -2;}],[function(){return xM1(p1new,m);},function(){return -2;}]],
+    {strokeColor:'#ff9800',strokeWidth:3});
+  brd.create('text',[function(){return (h1(p1new,p2,ubarA)+xM1(p1new,m))/2;}, -3.5, 'ER'],{fontSize:13,cssStyle:'color:#ff9800;font-weight:bold;'});
+
+  window.updA07Hicks = function(){
+    p1new = parseFloat(document.getElementById('sl-a07-p1new').value);
+    document.getElementById('val-a07-p1new').textContent = p1new.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Observe: o ES (<span class="math inline">\(A \to B\)</span>) sempre vai na direção oposta ao aumento de preço; o ER (<span class="math inline">\(B \to C\)</span>) depende do tipo de bem.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="decomposição-de-slutsky" class="slide level2">
+<h2>Decomposição de Slutsky</h2>
+<p><strong>Alternativa à decomposição de Hicks:</strong> em vez de manter a utilidade constante, manter o <strong>poder de compra</strong> constante.</p>
+<div class="fragment">
+<ul>
+<li><strong>Renda compensada (Slutsky):</strong> <span class="math inline">\(m^S = p_1' x_1^A + p_2 x_2^A\)</span> — o consumidor pode comprar a cesta original</li>
+<li>A reta orçamentária compensada <strong>pivota pela cesta</strong> <span class="math inline">\(A\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[ES_{\text{Slutsky}} = x_1(p_1', m^S) - x_1(p_1, m)\]</span> <span class="math display">\[ER_{\text{Slutsky}} = x_1(p_1', m) - x_1(p_1', m^S)\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A decomposição de Slutsky é mais fácil de calcular empiricamente porque usa cestas observáveis.</p>
+</blockquote>
+</div>
+</section>
+<section id="hicks-vs-slutsky-comparação" class="slide level2">
+<h2>Hicks vs Slutsky: Comparação</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Hicks</strong></th>
+<th style="text-align: left;"><strong>Slutsky</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Compensação</strong></td>
+<td style="text-align: left;">Mesma utilidade <span class="math inline">\(\bar{u}\)</span></td>
+<td style="text-align: left;">Mesmo poder de compra (cesta original acessível)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Efeito Substituição</strong></td>
+<td style="text-align: left;">Move-se ao longo da CI</td>
+<td style="text-align: left;">Pivota a restrição pela cesta original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Resultado</strong></td>
+<td style="text-align: left;"><span class="math inline">\(B\)</span> na CI original</td>
+<td style="text-align: left;"><span class="math inline">\(B'\)</span> sobre a reta que passa por <span class="math inline">\(A\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Uso principal</strong></td>
+<td style="text-align: left;">Teoria (demanda hicksiana)</td>
+<td style="text-align: left;">Empírico (dados observáveis)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>Convergência:</strong> para variações infinitesimais de preço, as duas decomposições coincidem.</p>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\text{Para } \Delta p \to 0: \quad ES_{\text{Hicks}} = ES_{\text{Slutsky}}\]</span></p>
+</div>
+</section>
+<section id="bens-normais-inferiores-e-de-giffen" class="slide level2">
+<h2>Bens Normais, Inferiores e de Giffen</h2>
+<p>A classificação depende da <strong>direção relativa</strong> dos efeitos:</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<pre><code>         ∂x/∂m &gt; 0?
+        /          \
+      Sim          Não
+     NORMAL      INFERIOR
+    /     \         |
+ εm&gt;1   εm&lt;1    |ER|&gt;|ES|?
+ Luxo  Necess.   /     \
+               Sim      Não
+              GIFFEN  Inferior
+                      comum</code></pre>
+</div><div class="column" style="width:50%;">
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Tipo de bem</th>
-<th style="text-align: center;"><span class="math inline">\(\frac{\partial x}{\partial m}\)</span></th>
-<th style="text-align: center;">Efeito Renda</th>
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">ES</th>
+<th style="text-align: center;">ER</th>
+<th style="text-align: center;">Total</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Normal</td>
-<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
-<td style="text-align: center;">Reforça ES</td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Inferior</td>
-<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
-<td style="text-align: center;">Contraria ES</td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Giffen</td>
-<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span> e domina</td>
-<td style="text-align: center;">Inverte ES</td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span> (domina)</td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span></td>
 </tr>
 </tbody>
 </table>
-</div><div class="column" style="width:50%;">
-<p>. . .</p>
-<p><strong>Bem normal:</strong> queda em <span class="math inline">\(p_1\)</span> → aumento no poder de compra → consome mais <span class="math inline">\(x_1\)</span></p>
-<p>. . .</p>
-<p><strong>Bem inferior:</strong> queda em <span class="math inline">\(p_1\)</span> → aumento no poder de compra → consome <em>menos</em> <span class="math inline">\(x_1\)</span></p>
+<p>(sinais para <span class="math inline">\(\Delta p_1 &gt; 0\)</span>)</p>
 </div></div>
-</section>
-<section id="a-equação-de-slutsky" class="slide level2">
-<h2>A Equação de Slutsky</h2>
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial m}\]</span></p>
-<div class="fragment">
-<p>Em termos de <strong>elasticidades:</strong></p>
-<p><span class="math display">\[\varepsilon_{ij}^{M} = \varepsilon_{ij}^{H} - s_j \, \varepsilon_{i}^{m}\]</span></p>
-<p>onde <span class="math inline">\(s_j = \frac{p_j x_j}{m}\)</span> é a parcela orçamentária do bem <span class="math inline">\(j\)</span>.</p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -310,77 +466,271 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Quanto maior a parcela do orçamento gasta no bem (<span class="math inline">\(s_j\)</span> grande), maior o efeito renda. Por isso, bens “caros” têm efeitos renda mais relevantes.</p>
+<p>Um bem de Giffen é necessariamente inferior, mas nem todo bem inferior é de Giffen — o efeito renda precisa dominar o efeito substituição.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="exemplo-numérico-cobb-douglas" class="slide level2">
-<h2>Exemplo Numérico — Cobb-Douglas</h2>
-<p><span class="math inline">\(U(x_1, x_2) = x_1^{0{,}4} x_2^{0{,}6}\)</span>, com <span class="math inline">\(p_1 = 10\)</span>, <span class="math inline">\(p_2 = 5\)</span>, <span class="math inline">\(m = 100\)</span>.</p>
+<section id="o-caso-giffen" class="slide level2">
+<h2>O Caso Giffen</h2>
+<p><strong>Condições necessárias</strong> para que a demanda <strong>suba</strong> quando o preço sobe:</p>
 <div class="fragment">
-<p><strong>Demanda Marshalliana:</strong> <span class="math inline">\(x_1^* = \frac{0{,}4 \times 100}{10} = 4\)</span>, <span class="math inline">\(x_2^* = \frac{0{,}6 \times 100}{5} = 12\)</span></p>
+<ol type="1">
+<li>O bem deve ser <strong>inferior</strong>: <span class="math inline">\(\frac{\partial x_1}{\partial m} &lt; 0\)</span></li>
+<li>O efeito renda deve <strong>dominar</strong> o efeito substituição em módulo</li>
+<li>O bem deve ter <strong>grande parcela orçamentária</strong> <span class="math inline">\(s_1 = \frac{p_1 x_1}{m}\)</span></li>
+</ol>
 </div>
 <div class="fragment">
-<p><strong>Se <span class="math inline">\(p_1\)</span> cai para 5:</strong></p>
+<p><span class="math display">\[\frac{\partial x_1}{\partial p_1} = \underbrace{\frac{\partial h_1}{\partial p_1}}_{&lt; 0} - \underbrace{x_1 \frac{\partial x_1}{\partial m}}_{&gt; 0 \text{ (pois } \frac{\partial x_1}{\partial m} &lt; 0)} &gt; 0\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Evidência histórica:</strong></p>
 <ul>
-<li>Nova demanda: <span class="math inline">\(x_1' = \frac{0{,}4 \times 100}{5} = 8\)</span> → <span class="math inline">\(\Delta x_1^{\text{total}} = +4\)</span></li>
-<li>Renda compensada (Hicks): <span class="math inline">\(m^H \approx 79{,}4\)</span> → <span class="math inline">\(x_1^H = 6{,}35\)</span> → <span class="math inline">\(ES = +2{,}35\)</span></li>
-<li><span class="math inline">\(ER = 4 - 2{,}35 = +1{,}65\)</span></li>
+<li>Batatas na Irlanda (séc. XIX) — bem básico, grande parcela do orçamento familiar</li>
+<li>Arroz em províncias chinesas (Jensen &amp; Miller, 2008) — subsídio ao arroz reduziu consumo</li>
 </ul>
 </div>
-<div class="fragment">
-<blockquote>
-<p>Para Cobb-Douglas, ambos os efeitos vão na mesma direção (bem normal).</p>
-</blockquote>
-</div>
 </section>
-<section id="bens-de-giffen-quando-a-demanda-sobe-com-o-preço" class="slide level2">
-<h2>Bens de Giffen — Quando a Demanda “Sobe” com o Preço</h2>
-<p><strong>Condição necessária</strong> para um bem de Giffen:</p>
+<section id="curva-de-demanda-marshalliana" class="slide level2">
+<h2>Curva de Demanda Marshalliana</h2>
+<p>A curva de demanda marshalliana é derivada do problema de maximização de utilidade:</p>
+<div class="fragment">
+<p><span class="math display">\[x_1^*(p_1) = \arg\max_{x_1,x_2} U(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Construção gráfica:</strong></p>
 <ol type="1">
-<li>O bem deve ser <strong>inferior</strong> (<span class="math inline">\(\frac{\partial x}{\partial m} &lt; 0\)</span>)</li>
-<li>O efeito renda deve <strong>dominar</strong> o efeito substituição</li>
-<li>O bem deve representar <strong>grande parte</strong> do orçamento</li>
+<li>Para cada <span class="math inline">\(p_1\)</span>, encontre a cesta ótima <span class="math inline">\((x_1^*, x_2^*)\)</span></li>
+<li>Projete <span class="math inline">\(x_1^*\)</span> no plano <span class="math inline">\((x_1, p_1)\)</span></li>
+<li>Conecte os pontos → curva de demanda</li>
 </ol>
+</div>
 <div class="fragment">
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{&lt; 0} - \underbrace{x_i \frac{\partial x_i}{\partial m}}_{&gt; 0 \text{ (pois } \frac{\partial x}{\partial m} &lt; 0)} &gt; 0\]</span></p>
+<p><span class="math display">\[\text{Inclinação:} \quad \frac{\partial x_1^*}{\partial p_1} = \frac{\partial h_1}{\partial p_1} - x_1^* \frac{\partial x_1^*}{\partial m}\]</span></p>
+<p>A inclinação captura <strong>ambos</strong> os efeitos (substituição + renda).</p>
+</div>
+</section>
+<section id="demanda-marshalliana-vs-hicksiana" class="slide level2">
+<h2>Demanda Marshalliana vs Hicksiana</h2>
+<p>Compare as duas curvas de demanda. A marshalliana incorpora o efeito renda; a hicksiana, não.</p>
+<div id="graph-a07-demands" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Renda <span class="math inline">\(m\)</span>: <input type="range" id="sl-a07-m" min="40" max="240" value="120" step="10" oninput="updA07Dem()"> <span id="val-a07-m">120</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-demands',{
+    boundingbox:[-0.5,12,50,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var p2=3, alpha=0.5, mVal=120;
+  // Marshallian: x1*(p1) = alpha*m/p1
+  // Hicksian at ubar = U(x1*(p10,m), x2*(p10,m)) with p10=2
+  // ubar = (alpha*m/p10)^a * ((1-a)*m/p2)^(1-a)
+  function getUbar(mm){
+    var p10=2;
+    return Math.pow(alpha*mm/p10, alpha)*Math.pow((1-alpha)*mm/p2, 1-alpha);
+  }
+  // h1(p1) = ubar*(p2/p1)^(1-a)*(a/(1-a))^(1-a)
+  function hicksX1(p1val, ubar){
+    return ubar * Math.pow(p2/p1val, 1-alpha) * Math.pow(alpha/(1-alpha), 1-alpha);
+  }
+
+  // Plot Marshallian: p1 on y-axis, x1 on x-axis
+  // x1 = alpha*m/p1 => p1 = alpha*m/x1
+  var marshCurve = brd.create('functiongraph',[function(x1){
+    if(x1<=0.1) return 12;
+    return alpha*mVal/x1;
+  },0.5,50],{strokeColor:'#1565c0',strokeWidth:3,name:'Marshalliana',withLabel:true,label:{fontSize:13,offset:[-10,15]}});
+
+  var ubar0 = getUbar(mVal);
+  var hicksCurve = brd.create('functiongraph',[function(x1){
+    if(x1<=0.1) return 12;
+    // h1 = ubar*(p2/p1)^(1-a)*k => p1 = p2*(ubar*k/x1)^(1/(1-a))
+    var k = Math.pow(alpha/(1-alpha), 1-alpha);
+    var ratio = ubar0*k/x1;
+    if(ratio<=0) return 12;
+    return p2 * Math.pow(ratio, 1/(1-alpha));
+  },0.5,50],{strokeColor:'#00897b',strokeWidth:3,dash:2,name:'Hicksiana',withLabel:true,label:{fontSize:13,offset:[-10,-15]}});
+
+  brd.create('text',[35, 11, function(){return 'x₁';}],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1, 11, function(){return 'p₁';}],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  window.updA07Dem = function(){
+    mVal = parseFloat(document.getElementById('sl-a07-m').value);
+    document.getElementById('val-a07-m').textContent = mVal.toFixed(0);
+    ubar0 = getUbar(mVal);
+    brd.update();
+  };
+})();
+</script>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Para bens normais, a marshalliana é mais inclinada (mais elástica ao preço) porque o efeito renda reforça o efeito substituição. As duas curvas se cruzam no preço de referência.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lei-da-demanda-para-bens-normais" class="slide level2">
+<h2>Lei da Demanda para Bens Normais</h2>
+<p><strong>Teorema:</strong> Se <span class="math inline">\(x_1\)</span> é um bem normal, então <span class="math inline">\(\frac{\partial x_1^*}{\partial p_1} &lt; 0\)</span>.</p>
+<div class="fragment">
+<p><strong>Prova via equação de Slutsky:</strong></p>
+<p><span class="math display">\[\frac{\partial x_1^*}{\partial p_1} = \underbrace{\frac{\partial h_1}{\partial p_1}}_{&lt; 0 \text{ (lei da demanda compensada)}} - \underbrace{x_1^* \cdot \frac{\partial x_1^*}{\partial m}}_{&gt; 0 \text{ (bem normal)}}\]</span></p>
+</div>
+<div class="fragment">
+<p>Ambos os termos contribuem negativamente:</p>
+<p><span class="math display">\[\frac{\partial x_1^*}{\partial p_1} = (\text{negativo}) - (\text{positivo}) &lt; 0 \quad \blacksquare\]</span></p>
 </div>
 <div class="fragment">
 <blockquote>
-<p>Exemplo histórico: batatas na Irlanda do séc. XIX; arroz em províncias chinesas (Jensen &amp; Miller, 2008).</p>
+<p>A lei da demanda é <strong>garantida</strong> para bens normais. Para bens inferiores, vale <strong>quase sempre</strong> — exceto no caso Giffen.</p>
 </blockquote>
 </div>
 </section>
-<section id="fluxograma-de-classificação-de-bens" class="slide level2">
-<h2>Fluxograma de Classificação de Bens</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<pre><code>           ∂x/∂m &gt; 0?
-          /          \
-        Sim          Não
-       Normal      Inferior
-      /     \         |
-   εm&gt;1   εm&lt;1    |ER|&gt;|ES|?
-   Luxo  Necess.   /     \
-                 Sim      Não
-                Giffen  Inferior
-                        comum</code></pre>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap05/demanda-marshalliana-hicksiana.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
+<section id="curvas-de-engel" class="slide level2">
+<h2>Curvas de Engel</h2>
+<p>A curva de Engel mostra a relação entre renda e quantidade demandada, <span class="math inline">\(x_1^*(m)\)</span>:</p>
+<div id="graph-a07-engel" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-engel',{
+    boundingbox:[-10,55,310,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+
+  brd.create('text',[280, 52, 'm'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[5, 52, 'x₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  // Normal necessity (concave): x1 = 12*sqrt(m/50)
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    return 12*Math.sqrt(mm/50);
+  },0,300],{strokeColor:'#1565c0',strokeWidth:3,name:'Necessidade',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+  // Normal luxury (convex): x1 = 0.0006*m^2
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    return 0.0006*mm*mm;
+  },0,300],{strokeColor:'#00897b',strokeWidth:3,name:'Luxo',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+  // Inferior (backward bending): x1 = 20*(1 - exp(-m/80)) - 0.04*max(m-150,0)
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    var base = 25*(1 - Math.exp(-mm/60));
+    var decline = 0.06*Math.max(mm-140, 0);
+    return Math.max(base - decline, 0.5);
+  },0,300],{strokeColor:'#C8102E',strokeWidth:3,dash:2,name:'Inferior',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+})();
+</script>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Bens necessários têm curva de Engel côncava (saturação), bens de luxo têm convexa (aceleração), e bens inferiores apresentam trecho decrescente a partir de certa renda.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="classificação-de-bens-resumo" class="slide level2">
+<h2>Classificação de Bens: Resumo</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo de Bem</th>
+<th style="text-align: center;"><span class="math inline">\(\frac{\partial x}{\partial m}\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\varepsilon_m\)</span></th>
+<th style="text-align: center;">ES</th>
+<th style="text-align: center;">ER</th>
+<th style="text-align: center;"><span class="math inline">\(\frac{\partial x}{\partial p}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Normal — Necessidade</strong></td>
+<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(0 &lt; \varepsilon_m &lt; 1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Normal — Luxo</strong></td>
+<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon_m &gt; 1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Inferior (comum)</strong></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span> (menor)</td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Giffen</strong></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(+\)</span> (domina)</td>
+<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p>(sinais de ES e ER para aumento de preço <span class="math inline">\(\Delta p &gt; 0\)</span>)</p>
+</div>
+<div class="fragment">
+<p><strong>Regra prática:</strong> a equação de Slutsky organiza tudo:</p>
+<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES: sempre } \leq 0} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{ER: depende do tipo}}\]</span></p>
+</div>
 </section>
 <section id="próxima-aula" class="slide level2">
 <h2>Próxima Aula</h2>
-<p><strong>Aula 08 — Decomposição de Slutsky + Case Brasil</strong></p>
+<p><strong>Aula 08 — Equação de Slutsky e Aplicações</strong></p>
 <div class="fragment">
 <ul>
-<li>Efeitos preço-cruzados e substitutos/complementos líquidos</li>
-<li>Variação compensadora e equivalente</li>
-<li>Agregação de demanda e elasticidade-receita</li>
+<li>Equação de Slutsky em forma matricial e em elasticidades</li>
+<li>Efeitos preço-cruzados: substitutos e complementos líquidos</li>
+<li>Variação compensatória e variação equivalente</li>
+<li>Aplicação: incidência de impostos e o <em>lump-sum principle</em></li>
 </ul>
 </div>
 <div class="fragment">
@@ -394,7 +744,7 @@ Insper
 <p><strong>Preparação</strong></p>
 </div>
 <div class="callout-content">
-<p>Revise o conceito de elasticidade-preço cruzada e traga exemplos de bens que você considera substitutos ou complementos no seu dia a dia.</p>
+<p>Revise a equação de Slutsky e traga exemplos de pares de bens que você considera substitutos ou complementos no seu dia a dia. Pense: o efeito renda é relevante para esses bens?</p>
 </div>
 </div>
 </div>

@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-09-slides_files/libs/revealjs/dist/theme/quarto-e37552cb70812ef9b630211c46018a1e.css">
+  <link rel="stylesheet" href="aula-09-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
   <link href="aula-09-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-09-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-09-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -123,6 +123,8 @@
       margin-right: 0; 
     }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -141,18 +143,15 @@ Insper
 </div>
 
 </section>
-<section id="o-consumidor-não-tem-só-renda-ele-tem-dotações" class="slide level2">
-<h2>O Consumidor Não Tem Só Renda — Ele Tem Dotações</h2>
-<blockquote>
-<p>Até agora, a renda <span class="math inline">\(m\)</span> era fixa. Mas na realidade, boa parte da “renda” vem da <strong>venda</strong> de algo que já possuímos: tempo, imóvel, poupança passada.</p>
-</blockquote>
+<section id="o-consumidor-não-tem-só-renda-tem-dotações" class="slide level2">
+<h2>O Consumidor Não Tem Só Renda — Tem Dotações</h2>
+<p>Até agora, a renda <span class="math inline">\(m\)</span> era um valor fixo e exógeno. Mas na realidade, a “renda” do consumidor vem da <strong>venda</strong> de algo que ele já possui.</p>
 <div class="fragment">
-<p><strong>Três aplicações fundamentais:</strong></p>
-<ol type="1">
-<li><strong>Economia de trocas</strong> — consumidor com dotação de bens</li>
-<li><strong>Oferta de trabalho</strong> — consumidor “vende” seu tempo</li>
-<li><strong>Escolha intertemporal</strong> — consumidor “vende” consumo futuro por consumo presente</li>
-</ol>
+<p><strong>Dotação (endowment):</strong> o consumidor começa com uma cesta <span class="math inline">\((\omega_1, \omega_2)\)</span> e enfrenta preços <span class="math inline">\((p_1, p_2)\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Renda como valor da dotação:</strong></p>
+<p><span class="math display">\[m = p_1 \omega_1 + p_2 \omega_2\]</span></p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -165,57 +164,186 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Quando os preços mudam, o consumidor com dotações sofre um efeito adicional: o valor da sua riqueza também muda.</p>
+<p>Quando os preços mudam, a renda do consumidor com dotações também muda — ele sofre um efeito adicional que não existia no modelo com renda fixa.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="economia-com-dotações" class="slide level2">
-<h2>Economia com Dotações</h2>
-<p>O consumidor possui dotação <span class="math inline">\((\omega_1, \omega_2)\)</span> e enfrenta preços <span class="math inline">\((p_1, p_2)\)</span>.</p>
+<section id="restrição-orçamentária-com-dotação" class="slide level2">
+<h2>Restrição Orçamentária com Dotação</h2>
+<p>A restrição orçamentária passa pelo ponto de dotação <span class="math inline">\((\omega_1, \omega_2)\)</span>:</p>
 <div class="fragment">
-<p><strong>Restrição orçamentária:</strong></p>
-<p><span class="math display">\[p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2 \equiv W\]</span></p>
+<p><span class="math display">\[p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Observação:</strong> a dotação <span class="math inline">\((\omega_1, \omega_2)\)</span> sempre é acessível, independentemente dos preços.</p>
+<p><strong>Reescrevendo:</strong> <span class="math inline">\(x_2 = \omega_2 - \frac{p_1}{p_2}(x_1 - \omega_1)\)</span></p>
 </div>
 <div class="fragment">
+<p><strong>Propriedades:</strong></p>
 <ul>
-<li>Se <span class="math inline">\(x_i &gt; \omega_i\)</span>: consumidor é <strong>comprador líquido</strong> do bem <span class="math inline">\(i\)</span></li>
-<li>Se <span class="math inline">\(x_i &lt; \omega_i\)</span>: consumidor é <strong>vendedor líquido</strong> do bem <span class="math inline">\(i\)</span></li>
+<li>A reta <strong>sempre</strong> passa pela dotação, independentemente dos preços</li>
+<li>A inclinação é <span class="math inline">\(-p_1/p_2\)</span> (como antes)</li>
+<li>Quando <span class="math inline">\(p_1\)</span> muda, a reta <strong>pivota</strong> em torno de <span class="math inline">\((\omega_1, \omega_2)\)</span></li>
 </ul>
 </div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A dotação é o “ponto fixo” da restrição: o consumidor sempre pode consumir o que já possui, sem comprar nem vender nada.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="demanda-bruta-vs.-demanda-líquida" class="slide level2">
-<h2>Demanda Bruta vs.&nbsp;Demanda Líquida</h2>
+<section id="efeito-preço-com-dotação-comprador-vs-vendedor" class="slide level2">
+<h2>Efeito-Preço com Dotação: Comprador vs Vendedor</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><strong>Demanda bruta:</strong> <span class="math inline">\(x_i(\mathbf{p}, W)\)</span> — quantidade total consumida</p>
-<p><strong>Demanda líquida:</strong> <span class="math inline">\(x_i - \omega_i\)</span> — quantidade comprada ou vendida no mercado</p>
+<p><strong>Comprador líquido</strong> (net buyer) do bem <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[x_i &gt; \omega_i\]</span></p>
+<p>O consumidor <strong>compra</strong> a diferença <span class="math inline">\(x_i - \omega_i\)</span> no mercado.</p>
 <p>. . .</p>
-<blockquote>
-<p>A demanda líquida pode ser <strong>negativa</strong> (o consumidor é vendedor).</p>
-</blockquote>
+<p>Se <span class="math inline">\(p_i\)</span> sobe: fica <strong>mais pobre</strong> (paga mais pelo que compra).</p>
 </div><div class="column" style="width:50%;">
-<p><strong>Exemplo:</strong> Agricultor com dotação <span class="math inline">\((10, 2)\)</span>.</p>
-<p>Se <span class="math inline">\(p_1/p_2 = 1\)</span> e escolhe <span class="math inline">\((6, 6)\)</span>:</p>
-<ul>
-<li>Demanda líquida de bem 1: <span class="math inline">\(6 - 10 = -4\)</span> (vende 4)</li>
-<li>Demanda líquida de bem 2: <span class="math inline">\(6 - 2 = +4\)</span> (compra 4)</li>
-</ul>
+<p><strong>Vendedor líquido</strong> (net seller) do bem <span class="math inline">\(i\)</span>:</p>
+<p><span class="math display">\[x_i &lt; \omega_i\]</span></p>
+<p>O consumidor <strong>vende</strong> a diferença <span class="math inline">\(\omega_i - x_i\)</span> no mercado.</p>
+<p>. . .</p>
+<p>Se <span class="math inline">\(p_i\)</span> sobe: fica <strong>mais rico</strong> (recebe mais pelo que vende).</p>
 </div></div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A mesma variação de preço pode beneficiar ou prejudicar o consumidor, dependendo de ele ser comprador ou vendedor líquido do bem cujo preço mudou.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="efeito-dotação-interativo" class="slide level2">
+<h2>Efeito Dotação Interativo</h2>
+<p>Ajuste <span class="math inline">\(p_1\)</span> e observe a reta orçamentária pivotar em torno da dotação. Note as regiões de comprador e vendedor do bem 1.</p>
+<div id="graph-a09-endow" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>p₁: <span id="val-a09-p1">3.0</span></label> <input type="range" id="sl-a09-p1" min="1" max="8" step="0.5" value="3" oninput="window.updateA09Endow(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-endow', {
+    boundingbox: [-0.5, 18, 16, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var w1 = 6, w2 = 4, p2 = 2;
+  var p1 = 3;
+
+  // Endowment point
+  var endowPt = board.create('point', [w1, w2], {
+    name: '\u03C9', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 14, offset: [8, 8] }
+  });
+
+  // Budget line
+  var budgetLine = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return val;
+    },
+    0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Shade buyer region (x1 > w1): right of endowment
+  var buyerShade = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return (val < 0) ? NaN : val;
+    },
+    w1, 15
+  ], { strokeWidth: 0 });
+
+  var buyerFill = board.create('inequality', [buyerShade], {
+    inverse: true, fillColor: '#1565c0', fillOpacity: 0.08
+  });
+
+  // Shade seller region (x1 < w1): left of endowment
+  var sellerShade = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return (val < 0) ? NaN : val;
+    },
+    0, w1
+  ], { strokeWidth: 0 });
+
+  var sellerFill = board.create('inequality', [sellerShade], {
+    inverse: true, fillColor: '#00897b', fillOpacity: 0.08
+  });
+
+  // Labels for regions
+  var buyerLabel = board.create('text', [9.5, 1.5, 'Comprador de x\u2081'], {
+    fontSize: 12, color: '#1565c0', fixed: true
+  });
+  var sellerLabel = board.create('text', [1, 12, 'Vendedor de x\u2081'], {
+    fontSize: 12, color: '#00897b', fixed: true
+  });
+
+  // Info text
+  var infoText = board.create('text', [10, 16, function() {
+    var W = p1 * w1 + p2 * w2;
+    return 'W = ' + W.toFixed(1) + '  |  slope = -' + (p1 / p2).toFixed(2);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA09Endow = function(val) {
+    p1 = parseFloat(val);
+    document.getElementById('val-a09-p1').textContent = p1.toFixed(1);
+    board.update();
+  };
+})();
+</script>
 </section>
 <section id="equação-de-slutsky-com-dotações" class="slide level2">
 <h2>Equação de Slutsky com Dotações</h2>
-<p>A decomposição inclui um <strong>efeito dotação</strong> adicional:</p>
+<p>A decomposição agora inclui um <strong>efeito dotação</strong> adicional:</p>
 <div class="fragment">
-<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES}} - \underbrace{(x_j - \omega_j) \frac{\partial x_i}{\partial m}}_{\text{ER modificado}}\]</span></p>
+<p><span class="math display">\[\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{Efeito Substituição}} \;-\; \underbrace{(x_j - \omega_j)\frac{\partial x_i}{\partial m}}_{\text{Efeito Renda Modificado}}\]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Diferença crucial:</strong> o efeito renda agora depende da <strong>demanda líquida</strong> <span class="math inline">\((x_j - \omega_j)\)</span>, não da demanda bruta.</p>
+<p><strong>Diferença crucial:</strong> o efeito renda depende da <strong>demanda líquida</strong> <span class="math inline">\((x_j - \omega_j)\)</span>, não da demanda bruta <span class="math inline">\(x_j\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Se</strong> <span class="math inline">\(x_j &gt; \omega_j\)</span> (comprador): aumento de <span class="math inline">\(p_j\)</span> reduz riqueza real <span class="math inline">\(\Rightarrow\)</span> ER usual</p>
+<p><strong>Se</strong> <span class="math inline">\(x_j &lt; \omega_j\)</span> (vendedor): aumento de <span class="math inline">\(p_j\)</span> aumenta riqueza real <span class="math inline">\(\Rightarrow\)</span> ER invertido</p>
 </div>
 <div class="fragment">
 <div title="Intuição Econômica">
@@ -228,60 +356,52 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Se o consumidor é <strong>vendedor líquido</strong> de <span class="math inline">\(j\)</span> e <span class="math inline">\(p_j\)</span> sobe, ele fica <em>mais rico</em> — o efeito renda vai na direção oposta ao caso sem dotações.</p>
+<p>O vendedor líquido de um bem se beneficia quando o preço desse bem sobe — o efeito renda vai na direção oposta ao caso sem dotações.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="oferta-de-trabalho-o-modelo-trabalho-lazer" class="slide level2">
-<h2>Oferta de Trabalho — O Modelo Trabalho-Lazer</h2>
-<div class="columns">
-<div class="column" style="width:45%;">
-<p>O consumidor tem dotação de <span class="math inline">\(\bar{T}\)</span> horas (ex.: 24h/dia).</p>
+<section id="oferta-de-trabalho-setup" class="slide level2">
+<h2>Oferta de Trabalho: Setup</h2>
+<p>O modelo trabalho-lazer é uma aplicação direta de dotações:</p>
+<div class="fragment">
 <ul>
-<li><strong>Lazer:</strong> <span class="math inline">\(\ell\)</span> horas</li>
-<li><strong>Trabalho:</strong> <span class="math inline">\(L = \bar{T} - \ell\)</span> horas</li>
+<li><strong>Dotação de tempo:</strong> <span class="math inline">\(T\)</span> horas (ex.: 24h/dia)</li>
+<li><strong>Lazer:</strong> <span class="math inline">\(R\)</span> horas consumidas</li>
+<li><strong>Trabalho:</strong> <span class="math inline">\(L = T - R\)</span> horas vendidas</li>
 <li><strong>Salário:</strong> <span class="math inline">\(w\)</span> por hora</li>
-<li><strong>Renda não-salarial:</strong> <span class="math inline">\(V\)</span></li>
+<li><strong>Renda não-salarial:</strong> <span class="math inline">\(m_0\)</span></li>
 </ul>
-<p>. . .</p>
-<p><strong>Restrição:</strong></p>
-<p><span class="math display">\[C = w(\bar{T} - \ell) + V = w\bar{T} + V - w\ell\]</span></p>
-<p>. . .</p>
-<blockquote>
-<p>O preço do lazer é o <strong>salário</strong> <span class="math inline">\(w\)</span> (custo de oportunidade).</p>
-</blockquote>
-</div><div class="column" style="width:55%;">
-<iframe src="../../graficos/cap17/trabalho-lazer.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-</div></div>
-</section>
-<section id="condição-ótima-tms-salário" class="slide level2">
-<h2>Condição Ótima — TMS = Salário</h2>
-<p>No ótimo interior:</p>
-<p><span class="math display">\[\text{TMS}_{\ell, C} = \frac{U_\ell}{U_C} = w\]</span></p>
-<div class="fragment">
-<p><strong>Interpretação:</strong> o valor marginal de uma hora adicional de lazer deve igualar o salário.</p>
 </div>
 <div class="fragment">
-<p><strong>Estática comparativa</strong> — efeito de um aumento em <span class="math inline">\(w\)</span>:</p>
+<p><strong>Restrição orçamentária:</strong></p>
+<p><span class="math display">\[c = w \cdot L + m_0 = w(T - R) + m_0\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O preço do lazer é o salário <span class="math inline">\(w\)</span> — cada hora de lazer custa <span class="math inline">\(w\)</span> em consumo sacrificado.</p>
+</blockquote>
+</div>
+</section>
+<section id="oferta-de-trabalho-solução" class="slide level2">
+<h2>Oferta de Trabalho: Solução</h2>
+<p>No ótimo interior: <span class="math inline">\(TMS_{R,c} = w\)</span></p>
+<div class="fragment">
+<p><strong>Estática comparativa — aumento de <span class="math inline">\(w\)</span>:</strong></p>
 <ul>
-<li><strong>ES:</strong> lazer fica mais caro → trabalha <strong>mais</strong></li>
-<li><strong>ER:</strong> trabalhador é vendedor líquido de tempo → mais rico → consome <strong>mais lazer</strong> (trabalha menos)</li>
+<li><strong>Efeito Substituição:</strong> lazer fica mais caro <span class="math inline">\(\Rightarrow\)</span> trabalha <strong>mais</strong></li>
+<li><strong>Efeito Renda:</strong> trabalhador é vendedor líquido de tempo <span class="math inline">\(\Rightarrow\)</span> mais rico <span class="math inline">\(\Rightarrow\)</span> consome <strong>mais lazer</strong> (trabalha menos)</li>
 </ul>
 </div>
 <div class="fragment">
-<blockquote>
-<p>O resultado líquido é ambíguo: depende de qual efeito domina.</p>
-</blockquote>
+<p><strong>Resultado:</strong></p>
+<ul>
+<li>Para <span class="math inline">\(w\)</span> baixo: ES domina <span class="math inline">\(\Rightarrow\)</span> oferta de trabalho <strong>positivamente</strong> inclinada</li>
+<li>Para <span class="math inline">\(w\)</span> alto: ER domina <span class="math inline">\(\Rightarrow\)</span> oferta de trabalho <strong>negativamente</strong> inclinada</li>
+</ul>
 </div>
-</section>
-<section id="curva-de-oferta-de-trabalho-backward-bending" class="slide level2">
-<h2>Curva de Oferta de Trabalho — Backward-Bending</h2>
-<iframe src="../../graficos/cap17/oferta-trabalho.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
 <div class="fragment">
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -293,117 +413,187 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Para salários baixos, o ES domina (curva positiva). Para salários altos, o ER domina (curva se inclina para trás). Isso explica por que países ricos trabalham menos horas.</p>
+<p>A curva de oferta de trabalho tem formato <strong>backward-bending</strong>: a partir de certo salário, o trabalhador prefere mais lazer a mais renda. Países ricos trabalham menos horas que países pobres.</p>
 </div>
 </div>
 </div>
 </div>
 </div>
 </section>
-<section id="modelo-de-fisher-dois-períodos" class="slide level2">
-<h2>Modelo de Fisher — Dois Períodos</h2>
+<section id="oferta-de-trabalho-interativa" class="slide level2">
+<h2>Oferta de Trabalho Interativa</h2>
+<p>Observe como a renda não-salarial <span class="math inline">\(m_0\)</span> desloca a curva de oferta de trabalho (backward-bending):</p>
+<div id="graph-a09-labor" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>m₀: <span id="val-a09-m0">10</span></label> <input type="range" id="sl-a09-m0" min="0" max="50" step="2" value="10" oninput="window.updateA09Labor(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-labor', {
+    boundingbox: [-1, 22, 18, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L (horas)', withLabel: true, label: { position: 'rt', offset: [-40, -15] } },
+      y: { name: 'w (sal\u00e1rio)', withLabel: true, label: { position: 'rt', offset: [-30, 0] } }
+    }
+  });
+
+  var m0 = 10;
+
+  // Backward-bending labor supply: L = f(w, m0)
+  // Simple parametric model: L rises then falls with w
+  // L(w) = T * (a*w) / (a*w + 1) - b*m0/(w+1)
+  // We trace w on y-axis, L on x-axis parametrically
+  var T = 16, a = 0.3, b = 0.06;
+
+  function laborSupply(w) {
+    var sub = T * (a * w) / (a * w + 1);
+    var inc = b * (m0 + w * sub) / (w + 1);
+    var L = sub - inc;
+    return (L < 0) ? 0 : L;
+  }
+
+  var laborCurve = board.create('curve', [
+    function(w) { return laborSupply(w); },
+    function(w) { return w; },
+    0.5, 20
+  ], { strokeColor: '#1565c0', strokeWidth: 3 });
+
+  // Peak indicator
+  var peakDot = board.create('point', [
+    function() {
+      var bestW = 0.5, bestL = 0;
+      for (var w = 0.5; w <= 20; w += 0.1) {
+        var L = laborSupply(w);
+        if (L > bestL) { bestL = L; bestW = w; }
+      }
+      return bestL;
+    },
+    function() {
+      var bestW = 0.5, bestL = 0;
+      for (var w = 0.5; w <= 20; w += 0.1) {
+        var L = laborSupply(w);
+        if (L > bestL) { bestL = L; bestW = w; }
+      }
+      return bestW;
+    }
+  ], {
+    name: 'pico', size: 4, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 11, offset: [8, 5] }
+  });
+
+  // Labels
+  board.create('text', [14, 18, 'ES domina'], { fontSize: 11, color: '#00897b', fixed: true });
+  board.create('text', [3, 18, 'ER domina'], { fontSize: 11, color: '#C8102E', fixed: true });
+
+  window.updateA09Labor = function(val) {
+    m0 = parseFloat(val);
+    document.getElementById('val-a09-m0').textContent = m0.toFixed(0);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="efeito-renda-vs-substituição-no-trabalho" class="slide level2">
+<h2>Efeito Renda vs Substituição no Trabalho</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p>O consumidor vive 2 períodos com rendas <span class="math inline">\((m_1, m_2)\)</span> e taxa de juros <span class="math inline">\(r\)</span>.</p>
-<p>. . .</p>
-<p><strong>Restrição intertemporal:</strong></p>
-<p><span class="math display">\[c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r} \equiv W\]</span></p>
-<p>. . .</p>
-<p><strong>Preço relativo:</strong> o “preço” do consumo presente em termos do futuro é <span class="math inline">\((1+r)\)</span>.</p>
-</div><div class="column" style="width:50%;">
-<p>Maximizar: <span class="math inline">\(U(c_1, c_2)\)</span></p>
-<p>. . .</p>
-<p><strong>Condição de ótimo:</strong></p>
-<p><span class="math display">\[\text{TMS}_{c_1, c_2} = 1 + r\]</span></p>
-<p>. . .</p>
-<blockquote>
-<p>A taxa marginal de substituição intertemporal iguala o preço relativo do consumo nos dois períodos.</p>
-</blockquote>
-</div></div>
-</section>
-<section id="restrição-intertemporal-visualização" class="slide level2">
-<h2>Restrição Intertemporal — Visualização</h2>
-<iframe src="../../graficos/cap18/consumo-intertemporal.html" width="100%" height="420" frameborder="0" style="border:1px solid #ddd;border-radius:6px;">
-</iframe>
-<div class="fragment">
-<p><strong>Efeito de um aumento em <span class="math inline">\(r\)</span>:</strong></p>
-<ul>
-<li><strong>ES:</strong> consumo presente fica mais caro → <strong>poupa mais</strong> (substitui <span class="math inline">\(c_1\)</span> por <span class="math inline">\(c_2\)</span>)</li>
-<li><strong>ER:</strong> depende se é poupador ou devedor</li>
-</ul>
-</div>
-</section>
-<section id="poupador-vs.-devedor" class="slide level2">
-<h2>Poupador vs.&nbsp;Devedor</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><strong>Poupador</strong> (<span class="math inline">\(c_1 &lt; m_1\)</span>):</p>
-<ul>
-<li>Aumento em <span class="math inline">\(r\)</span> → fica <strong>mais rico</strong> (recebe mais juros)</li>
-<li>ER → consome mais em ambos os períodos</li>
-<li>ES + ER: <span class="math inline">\(c_2\)</span> sobe; <span class="math inline">\(c_1\)</span> ambíguo</li>
-</ul>
-<p>. . .</p>
-<blockquote>
-<p>Um poupador <strong>nunca</strong> se torna devedor quando <span class="math inline">\(r\)</span> sobe (preferência revelada).</p>
-</blockquote>
-</div><div class="column" style="width:50%;">
-<p><strong>Devedor</strong> (<span class="math inline">\(c_1 &gt; m_1\)</span>):</p>
-<ul>
-<li>Aumento em <span class="math inline">\(r\)</span> → fica <strong>mais pobre</strong> (paga mais juros)</li>
-<li>ER → consome menos em ambos os períodos</li>
-<li>ES + ER: <span class="math inline">\(c_1\)</span> cai inequivocamente</li>
-</ul>
-<p>. . .</p>
-<blockquote>
-<p>Um devedor pode se tornar poupador quando <span class="math inline">\(r\)</span> sobe (ambos os efeitos reduzem <span class="math inline">\(c_1\)</span>).</p>
-</blockquote>
-</div></div>
-</section>
-<section id="comparação-dos-três-modelos" class="slide level2">
-<h2>Comparação dos Três Modelos</h2>
+<p><strong>Quando o salário <span class="math inline">\(w\)</span> sobe:</strong></p>
 <table class="caption-top">
 <thead>
 <tr class="header">
-<th style="text-align: left;">Aspecto</th>
-<th style="text-align: center;">Trocas</th>
-<th style="text-align: center;">Trabalho-Lazer</th>
-<th style="text-align: center;">Intertemporal</th>
+<th style="text-align: left;">Efeito</th>
+<th style="text-align: left;">Direção</th>
+<th style="text-align: left;">Sobre o trabalho</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">Dotação</td>
-<td style="text-align: center;"><span class="math inline">\((\omega_1, \omega_2)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\((\bar{T}, V)\)</span></td>
-<td style="text-align: center;"><span class="math inline">\((m_1, m_2)\)</span></td>
+<td style="text-align: left;">Substituição</td>
+<td style="text-align: left;">Lazer mais caro</td>
+<td style="text-align: left;">Trabalha <strong>mais</strong></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">“Preço”</td>
-<td style="text-align: center;"><span class="math inline">\(p_1/p_2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(w\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1+r\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Vende</td>
-<td style="text-align: center;">Bem em excesso</td>
-<td style="text-align: center;">Tempo</td>
-<td style="text-align: center;">Consumo futuro</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Compra</td>
-<td style="text-align: center;">Bem desejado</td>
-<td style="text-align: center;">Consumo</td>
-<td style="text-align: center;">Consumo presente</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">Backward-bending?</td>
-<td style="text-align: center;">Possível</td>
-<td style="text-align: center;">Sim (trabalho)</td>
-<td style="text-align: center;">Sim (poupança)</td>
+<td style="text-align: left;">Renda</td>
+<td style="text-align: left;">Mais rico</td>
+<td style="text-align: left;">Trabalha <strong>menos</strong></td>
 </tr>
 </tbody>
 </table>
+<p>. . .</p>
+<p><strong>Resultado líquido:</strong></p>
+<ul>
+<li><span class="math inline">\(w\)</span> baixo: <span class="math inline">\(|ES| &gt; |ER|\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(L\)</span> sobe</li>
+<li><span class="math inline">\(w\)</span> alto: <span class="math inline">\(|ER| &gt; |ES|\)</span> <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(L\)</span> cai</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Evidência empírica:</strong></p>
+<ul>
+<li>Horas trabalhadas caíram ~40% nos países ricos desde 1900</li>
+<li>Elasticidade-salário da oferta: homens <span class="math inline">\(\approx 0.1\)</span>, mulheres <span class="math inline">\(\approx 0.5\)</span></li>
+<li>Loteria: vencedores reduzem horas de trabalho (ER puro)</li>
+</ul>
+<p>. . .</p>
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A backward-bending explica por que aumentar impostos sobre altos salários pode ter efeitos ambíguos sobre a arrecadação: depende de onde estamos na curva.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="escolha-intertemporal-setup" class="slide level2">
+<h2>Escolha Intertemporal: Setup</h2>
+<p>O consumidor vive <strong>dois períodos</strong> e decide quanto consumir em cada um.</p>
+<div class="fragment">
+<ul>
+<li><strong>Renda:</strong> <span class="math inline">\((m_1, m_2)\)</span> — dotação intertemporal</li>
+<li><strong>Consumo:</strong> <span class="math inline">\((c_1, c_2)\)</span></li>
+<li><strong>Taxa de juros:</strong> <span class="math inline">\(r\)</span> (pode emprestar ou tomar emprestado)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Poupança:</strong> <span class="math inline">\(s = m_1 - c_1\)</span></p>
+<ul>
+<li>Se <span class="math inline">\(s &gt; 0\)</span>: <strong>poupador</strong> (consome menos que a renda no período 1)</li>
+<li>Se <span class="math inline">\(s &lt; 0\)</span>: <strong>tomador de empréstimo</strong> (consome mais que a renda no período 1)</li>
+</ul>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A taxa de juros <span class="math inline">\(r\)</span> é o “preço” do consumo presente em termos do consumo futuro.</p>
+</blockquote>
+</div>
+</section>
+<section id="restrição-intertemporal" class="slide level2">
+<h2>Restrição Intertemporal</h2>
+<p>A restrição pode ser escrita em <strong>valor presente</strong> ou <strong>valor futuro</strong>:</p>
+<div class="fragment">
+<p><strong>Valor Presente:</strong></p>
+<p><span class="math display">\[c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r} \equiv W_{VP}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Valor Futuro:</strong></p>
+<p><span class="math display">\[c_1(1+r) + c_2 = m_1(1+r) + m_2 \equiv W_{VF}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Inclinação da reta:</strong> <span class="math inline">\(-\frac{dc_2}{dc_1} = (1+r)\)</span></p>
+</div>
 <div class="fragment">
 <div title="Intuição Econômica">
 <div class="callout callout-tip callout-titled callout-style-default">
@@ -415,7 +605,177 @@ Insper
 <p><strong>Intuição Econômica</strong></p>
 </div>
 <div class="callout-content">
-<p>Nos três casos, a equação de Slutsky com dotações se aplica: o efeito renda depende de se o agente é comprador ou vendedor líquido.</p>
+<p>A reta intertemporal sempre passa pela dotação <span class="math inline">\((m_1, m_2)\)</span>: o consumidor pode sempre escolher consumir exatamente suas rendas em cada período.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="escolha-intertemporal-interativa" class="slide level2">
+<h2>Escolha Intertemporal Interativa</h2>
+<p>Ajuste a taxa de juros <span class="math inline">\(r\)</span> e observe a reta intertemporal pivotar em torno da dotação:</p>
+<div id="graph-a09-intertemp" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>r: <span id="val-a09-r">0.10</span></label> <input type="range" id="sl-a09-r" min="0.01" max="0.50" step="0.01" value="0.10" oninput="window.updateA09Intertemp(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-intertemp', {
+    boundingbox: [-5, 180, 180, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'c\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'c\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var m1 = 80, m2 = 60;
+  var r = 0.10;
+
+  // Endowment point
+  var endowPt = board.create('point', [m1, m2], {
+    name: '(m\u2081, m\u2082)', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 12, offset: [8, 8] }
+  });
+
+  // Budget line: c2 = m2 + (1+r)*(m1 - c1)
+  var budgetLine = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      return m2 + (1 + r) * (m1 - t);
+    },
+    0, 170
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Saver region label (c1 < m1)
+  board.create('text', [20, 155, function() { return 'Poupador'; }], {
+    fontSize: 12, color: '#00897b', fixed: true
+  });
+
+  // Borrower region label (c1 > m1)
+  board.create('text', [120, 20, function() { return 'Tomador'; }], {
+    fontSize: 12, color: '#ff9800', fixed: true
+  });
+
+  // Vertical dashed line at m1
+  board.create('line', [[m1, 0], [m1, 1]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true
+  });
+
+  // Info text
+  var infoText = board.create('text', [5, 170, function() {
+    var WVP = m1 + m2 / (1 + r);
+    return 'W_{VP} = ' + WVP.toFixed(1) + '  |  (1+r) = ' + (1 + r).toFixed(2);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA09Intertemp = function(val) {
+    r = parseFloat(val);
+    document.getElementById('val-a09-r').textContent = r.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="poupador-vs-tomador-de-empréstimo" class="slide level2">
+<h2>Poupador vs Tomador de Empréstimo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Poupador</strong> (<span class="math inline">\(c_1^* &lt; m_1\)</span>):</p>
+<ul>
+<li>Empresta <span class="math inline">\((m_1 - c_1^*)\)</span> no período 1</li>
+<li>Recebe <span class="math inline">\((1+r)(m_1 - c_1^*)\)</span> no período 2</li>
+<li>Consumo futuro: <span class="math inline">\(c_2^* = m_2 + (1+r)(m_1 - c_1^*)\)</span></li>
+</ul>
+<p>. . .</p>
+<blockquote>
+<p>Um poupador <strong>nunca</strong> se torna tomador quando <span class="math inline">\(r\)</span> sobe (preferência revelada).</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p><strong>Tomador</strong> (<span class="math inline">\(c_1^* &gt; m_1\)</span>):</p>
+<ul>
+<li>Toma emprestado <span class="math inline">\((c_1^* - m_1)\)</span> no período 1</li>
+<li>Paga <span class="math inline">\((1+r)(c_1^* - m_1)\)</span> no período 2</li>
+<li>Consumo futuro: <span class="math inline">\(c_2^* = m_2 - (1+r)(c_1^* - m_1)\)</span></li>
+</ul>
+<p>. . .</p>
+<blockquote>
+<p>Um tomador <strong>pode</strong> se tornar poupador quando <span class="math inline">\(r\)</span> sobe (ambos os efeitos reduzem <span class="math inline">\(c_1\)</span>).</p>
+</blockquote>
+</div></div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A classificação poupador/tomador é análoga a vendedor/comprador líquido: o poupador “vende” consumo presente e “compra” consumo futuro.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="efeito-de-mudança-na-taxa-de-juros" class="slide level2">
+<h2>Efeito de Mudança na Taxa de Juros</h2>
+<p>Slutsky com dotações aplicado à escolha intertemporal:</p>
+<div class="fragment">
+<p><span class="math display">\[\frac{\partial c_1}{\partial r} = \underbrace{ES}_{\text{&lt; 0}} \;-\; \underbrace{(c_1 - m_1) \cdot \frac{\partial c_1}{\partial W}}_{\text{ER modificado}}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Agente</th>
+<th style="text-align: left;">ES</th>
+<th style="text-align: left;">ER</th>
+<th style="text-align: left;"><span class="math inline">\(c_1\)</span> quando <span class="math inline">\(r\)</span> sobe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Poupador</strong> (<span class="math inline">\(c_1 &lt; m_1\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(c_1 \downarrow\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(c_1 \uparrow\)</span> (mais rico)</td>
+<td style="text-align: left;"><strong>Ambíguo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Tomador</strong> (<span class="math inline">\(c_1 &gt; m_1\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(c_1 \downarrow\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(c_1 \downarrow\)</span> (mais pobre)</td>
+<td style="text-align: left;"><strong>Cai com certeza</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Para o poupador, juros maiores trazem ES e ER em direções opostas — pode poupar mais ou menos. Para o tomador, ambos os efeitos vão na mesma direção: ele reduz <span class="math inline">\(c_1\)</span> inequivocamente.</p>
 </div>
 </div>
 </div>
@@ -427,9 +787,10 @@ Insper
 <p><strong>Aula 10 — Simulação: Mercado de Trabalho</strong></p>
 <div class="fragment">
 <ul>
-<li>Salário de reserva e demanda por trabalho</li>
+<li>Salário de reserva e decisão de participação</li>
 <li>Equilíbrio competitivo vs.&nbsp;monopsônio</li>
 <li>Salário mínimo e backward-bending na prática</li>
+<li>Simulação interativa com diferentes perfis de trabalhadores</li>
 </ul>
 </div>
 <div class="fragment">
