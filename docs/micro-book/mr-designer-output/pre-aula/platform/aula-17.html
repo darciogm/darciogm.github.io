@@ -17,226 +17,130 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-17-função-de-produção-i">Pré-Aula 17 — Função de
-Produção I</h1>
+<h1 id="pré-aula-17-função-de-produção-i">Pré-Aula 17 — Função de Produção I</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 10, Seções 10.1–10.3</strong> do livro-texto | Tempo
-estimado: <strong>~45 min</strong></p>
+<p><strong>Cap. 10, Seções 10.1–10.3</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong></p>
 </div>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
-<p>Após estudar este material e antes de vir à aula, você deve ser capaz
-de:</p>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
 <ol type="1">
-<li>Definir a função de produção e distinguir entre curto prazo (CP) e
-longo prazo (LP).</li>
-<li>Calcular produto marginal, produto médio e a TMST, e enunciar a lei
-dos rendimentos marginais decrescentes.</li>
-<li>Classificar rendimentos de escala (CRS, IRS, DRS) e calcular a
-elasticidade de escala.</li>
+<li>Definir a função de produção e distinguir entre curto prazo (CP) e longo prazo (LP).</li>
+<li>Calcular produto marginal, produto médio e a TMST, e enunciar a lei dos rendimentos marginais decrescentes.</li>
+<li>Classificar rendimentos de escala (CRS, IRS, DRS) e calcular a elasticidade de escala.</li>
 </ol>
 <hr />
-<h2 id="função-de-produção-cp-vs.-lp">1. Função de Produção: CP
-vs. LP</h2>
-<p>A <strong>função de produção</strong> descreve a quantidade máxima de
-produto que pode ser obtida a partir de uma combinação de insumos:</p>
+<h2 id="função-de-produção-cp-vs.-lp">1. Função de Produção: CP vs. LP</h2>
+<p>A <strong>função de produção</strong> descreve a quantidade máxima de produto que pode ser obtida a partir de uma combinação de insumos:</p>
 <p><span class="math display">\[q = f(K, L)\]</span></p>
-<p>onde <span class="math inline">\(K\)</span> é capital e <span
-class="math inline">\(L\)</span> é trabalho. Assumimos <span
-class="math inline">\(f\)</span> contínua, diferenciável e <span
-class="math inline">\(f(0, 0) = 0\)</span>.</p>
-<p><strong>Curto prazo (CP):</strong> pelo menos um insumo é fixo
-(tipicamente <span class="math inline">\(K = \bar{K}\)</span>), e a
-função se reduz a <span class="math inline">\(q = f(\bar{K},
-L)\)</span>.</p>
-<p><strong>Longo prazo (LP):</strong> todos os insumos são variáveis. A
-firma escolhe livremente <span class="math inline">\((K,
-L)\)</span>.</p>
+<p>onde <span class="math inline">\(K\)</span> é capital e <span class="math inline">\(L\)</span> é trabalho. Assumimos <span class="math inline">\(f\)</span> contínua, diferenciável e <span class="math inline">\(f(0, 0) = 0\)</span>.</p>
+<p><strong>Curto prazo (CP):</strong> pelo menos um insumo é fixo (tipicamente <span class="math inline">\(K = \bar{K}\)</span>), e a função se reduz a <span class="math inline">\(q = f(\bar{K}, L)\)</span>.</p>
+<p><strong>Longo prazo (LP):</strong> todos os insumos são variáveis. A firma escolhe livremente <span class="math inline">\((K, L)\)</span>.</p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>A distinção CP/LP não é sobre tempo cronológico, mas sobre
-flexibilidade. Uma startup pode mudar tudo em meses (LP); uma
-siderúrgica leva anos para expandir um alto-forno (CP prolongado). O que
-define o “prazo” é a capacidade de ajustar todos os fatores.</p>
+<p>A distinção CP/LP não é sobre tempo cronológico, mas sobre flexibilidade. Uma startup pode mudar tudo em meses (LP); uma siderúrgica leva anos para expandir um alto-forno (CP prolongado). O que define o “prazo” é a capacidade de ajustar todos os fatores.</p>
 </div>
 <hr />
-<h2 id="produto-marginal-e-produto-médio">2. Produto Marginal e Produto
-Médio</h2>
-<p>O <strong>produto marginal</strong> do trabalho é o acréscimo de
-produto gerado por uma unidade adicional de <span
-class="math inline">\(L\)</span>:</p>
-<p><span class="math display">\[PMg_L = \frac{\partial f(K, L)}{\partial
-L}\]</span></p>
-<p>O <strong>produto médio</strong> do trabalho é o produto total por
-unidade de trabalho:</p>
+<h2 id="produto-marginal-e-produto-médio">2. Produto Marginal e Produto Médio</h2>
+<p>O <strong>produto marginal</strong> do trabalho é o acréscimo de produto gerado por uma unidade adicional de <span class="math inline">\(L\)</span>:</p>
+<p><span class="math display">\[PMg_L = \frac{\partial f(K, L)}{\partial L}\]</span></p>
+<p>O <strong>produto médio</strong> do trabalho é o produto total por unidade de trabalho:</p>
 <p><span class="math display">\[PMe_L = \frac{f(K, L)}{L}\]</span></p>
-<p>Relação fundamental: <span class="math inline">\(PMg_L =
-PMe_L\)</span> quando <span class="math inline">\(PMe_L\)</span> atinge
-seu máximo.</p>
-<p><strong>Lei dos rendimentos marginais decrescentes:</strong> para
-<span class="math inline">\(K\)</span> fixo, a partir de certo ponto,
-<span class="math inline">\(PMg_L\)</span> decresce à medida que <span
-class="math inline">\(L\)</span> aumenta:</p>
-<p><span class="math display">\[\frac{\partial^2 f}{\partial L^2} &lt; 0
-\quad \text{(eventualmente)}\]</span></p>
+<p>Relação fundamental: <span class="math inline">\(PMg_L = PMe_L\)</span> quando <span class="math inline">\(PMe_L\)</span> atinge seu máximo.</p>
+<p><strong>Lei dos rendimentos marginais decrescentes:</strong> para <span class="math inline">\(K\)</span> fixo, a partir de certo ponto, <span class="math inline">\(PMg_L\)</span> decresce à medida que <span class="math inline">\(L\)</span> aumenta:</p>
+<p><span class="math display">\[\frac{\partial^2 f}{\partial L^2} &lt; 0 \quad \text{(eventualmente)}\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>Imagine uma cozinha de restaurante com 4 fogões. O 1.° cozinheiro é
-muito produtivo, o 2.° e 3.° também ajudam bastante, mas o 10.°
-cozinheiro mal tem onde ficar. O capital fixo limita a produtividade
-marginal do trabalho adicional.</p>
+<p>Imagine uma cozinha de restaurante com 4 fogões. O 1.° cozinheiro é muito produtivo, o 2.° e 3.° também ajudam bastante, mas o 10.° cozinheiro mal tem onde ficar. O capital fixo limita a produtividade marginal do trabalho adicional.</p>
 </div>
 <hr />
 <h2 id="isoquantas-e-tmst">3. Isoquantas e TMST</h2>
-<p>Uma <strong>isoquanta</strong> é o conjunto de combinações <span
-class="math inline">\((K, L)\)</span> que produzem a mesma quantidade
-<span class="math inline">\(q_0\)</span>:</p>
+<p>Uma <strong>isoquanta</strong> é o conjunto de combinações <span class="math inline">\((K, L)\)</span> que produzem a mesma quantidade <span class="math inline">\(q_0\)</span>:</p>
 <p><span class="math display">\[f(K, L) = q_0\]</span></p>
-<p>A <strong>Taxa Marginal de Substituição Técnica (TMST)</strong> é a
-taxa à qual a firma pode trocar capital por trabalho mantendo o produto
-constante:</p>
-<p><span class="math display">\[TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q =
-q_0} = \frac{PMg_L}{PMg_K}\]</span></p>
-<p>A TMST é análoga à TMS na teoria do consumidor. Isoquantas convexas
-implicam TMST decrescente (em valor absoluto).</p>
+<p>A <strong>Taxa Marginal de Substituição Técnica (TMST)</strong> é a taxa à qual a firma pode trocar capital por trabalho mantendo o produto constante:</p>
+<p><span class="math display">\[TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q = q_0} = \frac{PMg_L}{PMg_K}\]</span></p>
+<p>A TMST é análoga à TMS na teoria do consumidor. Isoquantas convexas implicam TMST decrescente (em valor absoluto).</p>
 <iframe src="graficos/cap10/isoquantas.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Mova-se ao longo de uma isoquanta e observe como a inclinação (TMST)
-muda. Perto do eixo <span class="math inline">\(L\)</span>, a TMST é
-alta (muito capital é necessário para substituir uma unidade de
-trabalho); perto do eixo <span class="math inline">\(K\)</span>, é
-baixa.</p>
+<p>Mova-se ao longo de uma isoquanta e observe como a inclinação (TMST) muda. Perto do eixo <span class="math inline">\(L\)</span>, a TMST é alta (muito capital é necessário para substituir uma unidade de trabalho); perto do eixo <span class="math inline">\(K\)</span>, é baixa.</p>
 </div>
 <hr />
 <h2 id="rendimentos-de-escala">4. Rendimentos de Escala</h2>
-<p>Os <strong>rendimentos de escala</strong> medem como o produto
-responde quando <strong>todos</strong> os insumos são multiplicados por
-<span class="math inline">\(t &gt; 1\)</span>:</p>
+<p>Os <strong>rendimentos de escala</strong> medem como o produto responde quando <strong>todos</strong> os insumos são multiplicados por <span class="math inline">\(t &gt; 1\)</span>:</p>
 <ul>
-<li><strong>Rendimentos constantes de escala (CRS):</strong> <span
-class="math inline">\(f(tK, tL) = t \cdot f(K, L)\)</span></li>
-<li><strong>Rendimentos crescentes de escala (IRS):</strong> <span
-class="math inline">\(f(tK, tL) &gt; t \cdot f(K, L)\)</span></li>
-<li><strong>Rendimentos decrescentes de escala (DRS):</strong> <span
-class="math inline">\(f(tK, tL) &lt; t \cdot f(K, L)\)</span></li>
+<li><strong>Rendimentos constantes de escala (CRS):</strong> <span class="math inline">\(f(tK, tL) = t \cdot f(K, L)\)</span></li>
+<li><strong>Rendimentos crescentes de escala (IRS):</strong> <span class="math inline">\(f(tK, tL) &gt; t \cdot f(K, L)\)</span></li>
+<li><strong>Rendimentos decrescentes de escala (DRS):</strong> <span class="math inline">\(f(tK, tL) &lt; t \cdot f(K, L)\)</span></li>
 </ul>
-<p>Para a função <strong>Cobb-Douglas</strong> <span
-class="math inline">\(q = AK^\alpha L^\beta\)</span>:</p>
-<p><span class="math display">\[f(tK, tL) = A(tK)^\alpha(tL)^\beta =
-t^{\alpha+\beta} \cdot AK^\alpha L^\beta\]</span></p>
-<p>Logo: CRS se <span class="math inline">\(\alpha + \beta = 1\)</span>;
-IRS se <span class="math inline">\(\alpha + \beta &gt; 1\)</span>; DRS
-se <span class="math inline">\(\alpha + \beta &lt; 1\)</span>.</p>
+<p>Para a função <strong>Cobb-Douglas</strong> <span class="math inline">\(q = AK^\alpha L^\beta\)</span>:</p>
+<p><span class="math display">\[f(tK, tL) = A(tK)^\alpha(tL)^\beta = t^{\alpha+\beta} \cdot AK^\alpha L^\beta\]</span></p>
+<p>Logo: CRS se <span class="math inline">\(\alpha + \beta = 1\)</span>; IRS se <span class="math inline">\(\alpha + \beta &gt; 1\)</span>; DRS se <span class="math inline">\(\alpha + \beta &lt; 1\)</span>.</p>
 <p>A <strong>elasticidade de escala</strong> generaliza:</p>
-<p><span class="math display">\[e(q) = \frac{K \cdot PMg_K + L \cdot
-PMg_L}{f(K,L)}\]</span></p>
-<p>Se <span class="math inline">\(e &gt; 1\)</span>: IRS; <span
-class="math inline">\(e = 1\)</span>: CRS; <span class="math inline">\(e
-&lt; 1\)</span>: DRS.</p>
+<p><span class="math display">\[e(q) = \frac{K \cdot PMg_K + L \cdot PMg_L}{f(K,L)}\]</span></p>
+<p>Se <span class="math inline">\(e &gt; 1\)</span>: IRS; <span class="math inline">\(e = 1\)</span>: CRS; <span class="math inline">\(e &lt; 1\)</span>: DRS.</p>
 <iframe src="graficos/cap10/rendimentos-escala.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Observe como as isoquantas se espaçam para CRS, IRS e DRS. Com IRS,
-isoquantas de nível maior ficam mais próximas (produção cresce mais
-rápido que os insumos); com DRS, ficam mais distantes.</p>
+<p>Observe como as isoquantas se espaçam para CRS, IRS e DRS. Com IRS, isoquantas de nível maior ficam mais próximas (produção cresce mais rápido que os insumos); com DRS, ficam mais distantes.</p>
 </div>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>Rendimentos de escala e rendimentos marginais decrescentes são
-conceitos <strong>distintos</strong>. A lei dos rendimentos decrescentes
-é sobre variar <strong>um</strong> insumo com outros fixos (CP).
-Rendimentos de escala são sobre variar <strong>todos</strong> os insumos
-proporcionalmente (LP). Uma firma pode ter rendimentos marginais
-decrescentes no CP e rendimentos crescentes de escala no LP.</p>
+<p>Rendimentos de escala e rendimentos marginais decrescentes são conceitos <strong>distintos</strong>. A lei dos rendimentos decrescentes é sobre variar <strong>um</strong> insumo com outros fixos (CP). Rendimentos de escala são sobre variar <strong>todos</strong> os insumos proporcionalmente (LP). Uma firma pode ter rendimentos marginais decrescentes no CP e rendimentos crescentes de escala no LP.</p>
 </div>
 <hr />
 <h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
-<p><strong>Exercício 1.</strong> Para <span class="math inline">\(q =
-4K^{0{,}5}L^{0{,}5}\)</span>, calcule <span
-class="math inline">\(PMg_L\)</span>, <span
-class="math inline">\(PMg_K\)</span> e a TMST quando <span
-class="math inline">\(K = 16\)</span> e <span class="math inline">\(L =
-4\)</span>.</p>
+<p><strong>Exercício 1.</strong> Para <span class="math inline">\(q = 4K^{0{,}5}L^{0{,}5}\)</span>, calcule <span class="math inline">\(PMg_L\)</span>, <span class="math inline">\(PMg_K\)</span> e a TMST quando <span class="math inline">\(K = 16\)</span> e <span class="math inline">\(L = 4\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(PMg_L = 4 \times 0{,}5 \times K^{0,5}
-L^{-0,5} = 2\sqrt{K/L} = 2\sqrt{16/4} = 2 \times 2 = 4\)</span>.<br />
-<span class="math inline">\(PMg_K = 4 \times 0{,}5 \times K^{-0,5}
-L^{0,5} = 2\sqrt{L/K} = 2\sqrt{4/16} = 2 \times 0{,}5 =
-1\)</span>.<br />
-<span class="math inline">\(TMST_{L,K} = PMg_L / PMg_K = 4/1 =
-4\)</span>.<br />
-A firma pode reduzir 4 unidades de <span
-class="math inline">\(K\)</span> ao adicionar 1 unidade de <span
-class="math inline">\(L\)</span>, mantendo <span
-class="math inline">\(q\)</span> constante.</p>
+<p><span class="math inline">\(PMg_L = 4 \times 0{,}5 \times K^{0,5} L^{-0,5} = 2\sqrt{K/L} = 2\sqrt{16/4} = 2 \times 2 = 4\)</span>.<br />
+<span class="math inline">\(PMg_K = 4 \times 0{,}5 \times K^{-0,5} L^{0,5} = 2\sqrt{L/K} = 2\sqrt{4/16} = 2 \times 0{,}5 = 1\)</span>.<br />
+<span class="math inline">\(TMST_{L,K} = PMg_L / PMg_K = 4/1 = 4\)</span>.<br />
+A firma pode reduzir 4 unidades de <span class="math inline">\(K\)</span> ao adicionar 1 unidade de <span class="math inline">\(L\)</span>, mantendo <span class="math inline">\(q\)</span> constante.</p>
 </div>
 </details>
-<p><strong>Exercício 2.</strong> Classifique os rendimentos de escala:
-(a) <span class="math inline">\(q = K + 3L\)</span>; (b) <span
-class="math inline">\(q = K^{0{,}3}L^{0{,}8}\)</span>; (c) <span
-class="math inline">\(q = \min(2K, 5L)\)</span>.</p>
+<p><strong>Exercício 2.</strong> Classifique os rendimentos de escala: (a) <span class="math inline">\(q = K + 3L\)</span>; (b) <span class="math inline">\(q = K^{0{,}3}L^{0{,}8}\)</span>; (c) <span class="math inline">\(q = \min(2K, 5L)\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
 <ol type="a">
-<li><span class="math inline">\(f(tK, tL) = tK + 3tL = t(K + 3L) =
-tf(K,L)\)</span> → <strong>CRS</strong>.<br />
+<li><span class="math inline">\(f(tK, tL) = tK + 3tL = t(K + 3L) = tf(K,L)\)</span> → <strong>CRS</strong>.<br />
 </li>
-<li><span class="math inline">\(\alpha + \beta = 0{,}3 + 0{,}8 = 1{,}1
-&gt; 1\)</span> → <strong>IRS</strong>.<br />
+<li><span class="math inline">\(\alpha + \beta = 0{,}3 + 0{,}8 = 1{,}1 &gt; 1\)</span> → <strong>IRS</strong>.<br />
 </li>
-<li><span class="math inline">\(f(tK, tL) = \min(2tK, 5tL) = t\min(2K,
-5L) = tf(K,L)\)</span> → <strong>CRS</strong>.</li>
+<li><span class="math inline">\(f(tK, tL) = \min(2tK, 5tL) = t\min(2K, 5L) = tf(K,L)\)</span> → <strong>CRS</strong>.</li>
 </ol>
 </div>
 </details>
-<p><strong>Exercício 3.</strong> Uma firma tem <span
-class="math inline">\(q = 10L - 0{,}5L^2\)</span> no CP com <span
-class="math inline">\(\bar{K} = 25\)</span>. Encontre o <span
-class="math inline">\(L\)</span> que maximiza <span
-class="math inline">\(PMe_L\)</span> e o <span
-class="math inline">\(L\)</span> em que <span
-class="math inline">\(PMg_L = 0\)</span>.</p>
+<p><strong>Exercício 3.</strong> Uma firma tem <span class="math inline">\(q = 10L - 0{,}5L^2\)</span> no CP com <span class="math inline">\(\bar{K} = 25\)</span>. Encontre o <span class="math inline">\(L\)</span> que maximiza <span class="math inline">\(PMe_L\)</span> e o <span class="math inline">\(L\)</span> em que <span class="math inline">\(PMg_L = 0\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(PMg_L = 10 - L\)</span>. Logo <span
-class="math inline">\(PMg_L = 0\)</span> quando <span
-class="math inline">\(L = 10\)</span>.<br />
-<span class="math inline">\(PMe_L = 10 - 0{,}5L\)</span>. Para encontrar
-o máximo de <span class="math inline">\(PMe_L\)</span>, igualamos <span
-class="math inline">\(PMg_L = PMe_L\)</span>:<br />
-<span class="math inline">\(10 - L = 10 - 0{,}5L \Rightarrow -0{,}5L = 0
-\Rightarrow L = 0\)</span>.<br />
-Nesta função, <span class="math inline">\(PMe_L\)</span> é decrescente
-desde <span class="math inline">\(L = 0\)</span> (máximo de 10) e <span
-class="math inline">\(PMg_L\)</span> cruza zero em <span
-class="math inline">\(L = 10\)</span>. O produto total é máximo em <span
-class="math inline">\(L = 10\)</span> (onde <span
-class="math inline">\(q = 50\)</span>).</p>
+<p><span class="math inline">\(PMg_L = 10 - L\)</span>. Logo <span class="math inline">\(PMg_L = 0\)</span> quando <span class="math inline">\(L = 10\)</span>.<br />
+<span class="math inline">\(PMe_L = 10 - 0{,}5L\)</span>. Para encontrar o máximo de <span class="math inline">\(PMe_L\)</span>, igualamos <span class="math inline">\(PMg_L = PMe_L\)</span>:<br />
+<span class="math inline">\(10 - L = 10 - 0{,}5L \Rightarrow -0{,}5L = 0 \Rightarrow L = 0\)</span>.<br />
+Nesta função, <span class="math inline">\(PMe_L\)</span> é decrescente desde <span class="math inline">\(L = 0\)</span> (máximo de 10) e <span class="math inline">\(PMg_L\)</span> cruza zero em <span class="math inline">\(L = 10\)</span>. O produto total é máximo em <span class="math inline">\(L = 10\)</span> (onde <span class="math inline">\(q = 50\)</span>).</p>
 </div>
 </details>
 <hr />
@@ -245,8 +149,7 @@ class="math inline">\(q = 50\)</span>).</p>
 <div class="admonition-title">
 Complete antes da aula
 </div>
-<p>Responda no LMS até <strong>2 horas antes</strong> do início da
-aula.</p>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
 </div>
 <div class="quiz-container">
 <div class="quiz-header"><h3>Quiz Pré-Aula</h3>
@@ -298,9 +201,7 @@ aula.</p>
 <div class="admonition-title">
 Próxima aula
 </div>
-<p>Na <strong>Aula 18</strong>, estudaremos os custos de produção:
-custos fixos e variáveis, custo marginal, custo médio e as curvas de
-custo de curto e longo prazo.</p>
+<p>Na <strong>Aula 18</strong>, estudaremos os custos de produção: custos fixos e variáveis, custo marginal, custo médio e as curvas de custo de curto e longo prazo.</p>
 </div>
 
 </div>

@@ -182,7 +182,8 @@ try:
          '--from', 'markdown+tex_math_dollars+raw_html',
          '--to', 'html5',
          '--mathjax',
-         '--no-highlight'],
+         '--no-highlight',
+         '--columns=9999'],
         capture_output=True, text=True, timeout=30
     )
     body = result.stdout

@@ -17,216 +17,124 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1
-id="pré-aula-14-escolha-sob-incerteza-ii-seguros-e-informação">Pré-Aula
-14 — Escolha sob Incerteza II: Seguros e Informação</h1>
+<h1 id="pré-aula-14-escolha-sob-incerteza-ii-seguros-e-informação">Pré-Aula 14 — Escolha sob Incerteza II: Seguros e Informação</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 7, Seções 7.4–7.6</strong> do livro-texto | Tempo
-estimado: <strong>~45 min</strong></p>
+<p><strong>Cap. 7, Seções 7.4–7.6</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong></p>
 </div>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
-<p>Após estudar este material e antes de vir à aula, você deve ser capaz
-de:</p>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
 <ol type="1">
-<li>Calcular e interpretar as medidas de aversão ao risco de Arrow-Pratt
-(ARA e RRA).</li>
-<li>Determinar a cobertura ótima de seguro sob prêmio justo e com
-carregamento.</li>
+<li>Calcular e interpretar as medidas de aversão ao risco de Arrow-Pratt (ARA e RRA).</li>
+<li>Determinar a cobertura ótima de seguro sob prêmio justo e com carregamento.</li>
 <li>Aplicar o conceito de diversificação para redução de risco.</li>
 </ol>
 <hr />
-<h2 id="medidas-de-aversão-ao-risco-de-arrow-pratt">1. Medidas de
-Aversão ao Risco de Arrow-Pratt</h2>
-<p>Para comparar a intensidade da aversão ao risco entre agentes ou ao
-longo da riqueza, usamos:</p>
+<h2 id="medidas-de-aversão-ao-risco-de-arrow-pratt">1. Medidas de Aversão ao Risco de Arrow-Pratt</h2>
+<p>Para comparar a intensidade da aversão ao risco entre agentes ou ao longo da riqueza, usamos:</p>
 <p><strong>Aversão absoluta ao risco (ARA):</strong></p>
-<p><span class="math display">\[A(W) =
--\frac{u&#39;&#39;(W)}{u&#39;(W)}\]</span></p>
+<p><span class="math display">\[A(W) = -\frac{u&#39;&#39;(W)}{u&#39;(W)}\]</span></p>
 <p><strong>Aversão relativa ao risco (RRA):</strong></p>
-<p><span class="math display">\[R(W) = -\frac{W \cdot
-u&#39;&#39;(W)}{u&#39;(W)} = W \cdot A(W)\]</span></p>
+<p><span class="math display">\[R(W) = -\frac{W \cdot u&#39;&#39;(W)}{u&#39;(W)} = W \cdot A(W)\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>A ARA mede quanto aversão ao risco você tem para uma aposta de
-<strong>valor absoluto fixo</strong> (ex.: apostar R$ 100). A RRA mede a
-aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da
-riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA
-muito diferentes.</p>
+<p>A ARA mede quanto aversão ao risco você tem para uma aposta de <strong>valor absoluto fixo</strong> (ex.: apostar R$ 100). A RRA mede a aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA muito diferentes.</p>
 </div>
 <hr />
 <h2 id="cara-vs.-crra">2. CARA vs. CRRA</h2>
 <p>Duas famílias de funções utilidade são especialmente importantes:</p>
-<p><strong>CARA</strong> (Constant Absolute Risk Aversion): <span
-class="math inline">\(u(W) = -e^{-aW}\)</span>, com <span
-class="math inline">\(A(W) = a\)</span> constante.</p>
+<p><strong>CARA</strong> (Constant Absolute Risk Aversion): <span class="math inline">\(u(W) = -e^{-aW}\)</span>, com <span class="math inline">\(A(W) = a\)</span> constante.</p>
 <ul>
-<li>O prêmio de risco <strong>não depende</strong> da riqueza
-inicial.</li>
-<li>Pouco realista: um bilionário pagaria o mesmo que um estudante para
-evitar a mesma aposta.</li>
+<li>O prêmio de risco <strong>não depende</strong> da riqueza inicial.</li>
+<li>Pouco realista: um bilionário pagaria o mesmo que um estudante para evitar a mesma aposta.</li>
 </ul>
-<p><strong>CRRA</strong> (Constant Relative Risk Aversion): <span
-class="math inline">\(u(W) = \frac{W^{1-\gamma}}{1-\gamma}\)</span> para
-<span class="math inline">\(\gamma \neq 1\)</span>, ou <span
-class="math inline">\(u(W) = \ln W\)</span> para <span
-class="math inline">\(\gamma = 1\)</span>.</p>
+<p><strong>CRRA</strong> (Constant Relative Risk Aversion): <span class="math inline">\(u(W) = \frac{W^{1-\gamma}}{1-\gamma}\)</span> para <span class="math inline">\(\gamma \neq 1\)</span>, ou <span class="math inline">\(u(W) = \ln W\)</span> para <span class="math inline">\(\gamma = 1\)</span>.</p>
 <ul>
-<li><span class="math inline">\(R(W) = \gamma\)</span> constante; <span
-class="math inline">\(A(W) = \gamma/W\)</span> decrescente.</li>
-<li>Mais realista: à medida que enriquece, o agente aceita apostas
-maiores em termos absolutos, mas mantém a proporção.</li>
+<li><span class="math inline">\(R(W) = \gamma\)</span> constante; <span class="math inline">\(A(W) = \gamma/W\)</span> decrescente.</li>
+<li>Mais realista: à medida que enriquece, o agente aceita apostas maiores em termos absolutos, mas mantém a proporção.</li>
 </ul>
-<p><span class="math display">\[\text{CRRA:} \quad A(W) =
-\frac{\gamma}{W} \downarrow, \quad R(W) = \gamma =
-\text{const.}\]</span></p>
+<p><span class="math display">\[\text{CRRA:} \quad A(W) = \frac{\gamma}{W} \downarrow, \quad R(W) = \gamma = \text{const.}\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>Evidências empíricas sugerem que a aversão absoluta é decrescente na
-riqueza (DARA) e a aversão relativa é aproximadamente constante (CRRA
-com <span class="math inline">\(\gamma\)</span> entre 1 e 4). Isso
-justifica o uso frequente de <span class="math inline">\(u(W) = \ln
-W\)</span> em modelos aplicados.</p>
+<p>Evidências empíricas sugerem que a aversão absoluta é decrescente na riqueza (DARA) e a aversão relativa é aproximadamente constante (CRRA com <span class="math inline">\(\gamma\)</span> entre 1 e 4). Isso justifica o uso frequente de <span class="math inline">\(u(W) = \ln W\)</span> em modelos aplicados.</p>
 </div>
 <hr />
-<h2 id="prêmio-de-risco-e-equivalente-certo">3. Prêmio de Risco e
-Equivalente Certo</h2>
-<p>Para uma aposta pequena <span
-class="math inline">\(\tilde{\varepsilon}\)</span> com <span
-class="math inline">\(E[\tilde{\varepsilon}] = 0\)</span> e <span
-class="math inline">\(\text{Var}(\tilde{\varepsilon}) =
-\sigma^2\)</span>, a <strong>aproximação de Arrow-Pratt</strong>
-fornece:</p>
-<p><span class="math display">\[\pi \approx \frac{1}{2} A(W)
-\sigma^2\]</span></p>
+<h2 id="prêmio-de-risco-e-equivalente-certo">3. Prêmio de Risco e Equivalente Certo</h2>
+<p>Para uma aposta pequena <span class="math inline">\(\tilde{\varepsilon}\)</span> com <span class="math inline">\(E[\tilde{\varepsilon}] = 0\)</span> e <span class="math inline">\(\text{Var}(\tilde{\varepsilon}) = \sigma^2\)</span>, a <strong>aproximação de Arrow-Pratt</strong> fornece:</p>
+<p><span class="math display">\[\pi \approx \frac{1}{2} A(W) \sigma^2\]</span></p>
 <p>O <strong>equivalente certo</strong> é:</p>
-<p><span class="math display">\[CE = E[W] - \pi \approx E[W] -
-\frac{1}{2}A(W)\sigma^2\]</span></p>
+<p><span class="math display">\[CE = E[W] - \pi \approx E[W] - \frac{1}{2}A(W)\sigma^2\]</span></p>
 <iframe src="graficos/cap07/premio-risco.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Aumente a variância da loteria e observe como o prêmio de risco
-cresce. Depois altere a concavidade da função utilidade e veja o impacto
-direto no tamanho de <span class="math inline">\(\pi\)</span>.</p>
+<p>Aumente a variância da loteria e observe como o prêmio de risco cresce. Depois altere a concavidade da função utilidade e veja o impacto direto no tamanho de <span class="math inline">\(\pi\)</span>.</p>
 </div>
 <hr />
 <h2 id="cobertura-ótima-de-seguros">4. Cobertura Ótima de Seguros</h2>
-<p>Um agente com riqueza <span class="math inline">\(W_0\)</span>
-enfrenta perda <span class="math inline">\(L\)</span> com probabilidade
-<span class="math inline">\(p\)</span>. Ele pode comprar cobertura <span
-class="math inline">\(q\)</span> pagando prêmio <span
-class="math inline">\(\gamma q\)</span>, onde <span
-class="math inline">\(\gamma\)</span> é o preço por unidade de
-cobertura.</p>
+<p>Um agente com riqueza <span class="math inline">\(W_0\)</span> enfrenta perda <span class="math inline">\(L\)</span> com probabilidade <span class="math inline">\(p\)</span>. Ele pode comprar cobertura <span class="math inline">\(q\)</span> pagando prêmio <span class="math inline">\(\gamma q\)</span>, onde <span class="math inline">\(\gamma\)</span> é o preço por unidade de cobertura.</p>
 <p><strong>Riquezas nos dois estados:</strong></p>
-<p><span class="math display">\[W_{\text{sem\ sinistro}} = W_0 - \gamma
-q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q\]</span></p>
-<p><strong>Prêmio atuarialmente justo</strong>: <span
-class="math inline">\(\gamma = p\)</span>. Neste caso, a CPO implica
-igualdade de utilidades marginais nos dois estados:</p>
-<p><span class="math display">\[q^* = L \quad \text{(cobertura\
-total)}\]</span></p>
-<p><strong>Com carregamento</strong> (<span class="math inline">\(\gamma
-&gt; p\)</span>): <span class="math inline">\(q^* &lt; L\)</span>
-(cobertura parcial). O agente retém parte do risco porque o seguro é
-caro demais.</p>
+<p><span class="math display">\[W_{\text{sem sinistro}} = W_0 - \gamma q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q\]</span></p>
+<p><strong>Prêmio atuarialmente justo</strong>: <span class="math inline">\(\gamma = p\)</span>. Neste caso, a CPO implica igualdade de utilidades marginais nos dois estados:</p>
+<p><span class="math display">\[q^* = L \quad \text{(cobertura total)}\]</span></p>
+<p><strong>Com carregamento</strong> (<span class="math inline">\(\gamma &gt; p\)</span>): <span class="math inline">\(q^* &lt; L\)</span> (cobertura parcial). O agente retém parte do risco porque o seguro é caro demais.</p>
 <iframe src="graficos/cap07/seguro.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Ajuste o carregamento do prêmio (diferença entre <span
-class="math inline">\(\gamma\)</span> e <span
-class="math inline">\(p\)</span>) e observe como a cobertura ótima se
-reduz. Com prêmio justo, o ponto ótimo está sobre a linha de certeza
-(45°).</p>
+<p>Ajuste o carregamento do prêmio (diferença entre <span class="math inline">\(\gamma\)</span> e <span class="math inline">\(p\)</span>) e observe como a cobertura ótima se reduz. Com prêmio justo, o ponto ótimo está sobre a linha de certeza (45°).</p>
 </div>
 <hr />
 <h2 id="diversificação">5. Diversificação</h2>
-<p>Se o agente pode dividir a riqueza entre <span
-class="math inline">\(n\)</span> ativos independentes, cada um com risco
-<span class="math inline">\(\sigma^2\)</span>, o risco total cai:</p>
-<p><span class="math display">\[\text{Var}\left(\frac{1}{n}\sum_{i=1}^n
-\tilde{R}_i\right) = \frac{\sigma^2}{n}\]</span></p>
+<p>Se o agente pode dividir a riqueza entre <span class="math inline">\(n\)</span> ativos independentes, cada um com risco <span class="math inline">\(\sigma^2\)</span>, o risco total cai:</p>
+<p><span class="math display">\[\text{Var}\left(\frac{1}{n}\sum_{i=1}^n \tilde{R}_i\right) = \frac{\sigma^2}{n}\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>“Não coloque todos os ovos na mesma cesta.” A diversificação elimina
-o risco idiossincrático sem custo. No entanto, o risco sistemático (que
-afeta todos os ativos simultaneamente) não pode ser diversificado.</p>
+<p>“Não coloque todos os ovos na mesma cesta.” A diversificação elimina o risco idiossincrático sem custo. No entanto, o risco sistemático (que afeta todos os ativos simultaneamente) não pode ser diversificado.</p>
 </div>
 <hr />
 <h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
-<p><strong>Exercício 1.</strong> Calcule ARA e RRA para <span
-class="math inline">\(u(W) = \ln W\)</span> e para <span
-class="math inline">\(u(W) = -e^{-2W}\)</span>.</p>
+<p><strong>Exercício 1.</strong> Calcule ARA e RRA para <span class="math inline">\(u(W) = \ln W\)</span> e para <span class="math inline">\(u(W) = -e^{-2W}\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>Para <span class="math inline">\(u(W) = \ln W\)</span>: <span
-class="math inline">\(u&#39; = 1/W\)</span>, <span
-class="math inline">\(u&#39;&#39; = -1/W^2\)</span>.<br />
-<span class="math inline">\(A(W) = -(-1/W^2)/(1/W) = 1/W\)</span>
-(DARA). <span class="math inline">\(R(W) = W/W = 1\)</span> (CRRA com
-<span class="math inline">\(\gamma = 1\)</span>).<br />
-Para <span class="math inline">\(u(W) = -e^{-2W}\)</span>: <span
-class="math inline">\(u&#39; = 2e^{-2W}\)</span>, <span
-class="math inline">\(u&#39;&#39; = -4e^{-2W}\)</span>.<br />
-<span class="math inline">\(A(W) = 4e^{-2W}/(2e^{-2W}) = 2\)</span>
-(CARA). <span class="math inline">\(R(W) = 2W\)</span> (RRA
-crescente).</p>
+<p>Para <span class="math inline">\(u(W) = \ln W\)</span>: <span class="math inline">\(u&#39; = 1/W\)</span>, <span class="math inline">\(u&#39;&#39; = -1/W^2\)</span>.<br />
+<span class="math inline">\(A(W) = -(-1/W^2)/(1/W) = 1/W\)</span> (DARA). <span class="math inline">\(R(W) = W/W = 1\)</span> (CRRA com <span class="math inline">\(\gamma = 1\)</span>).<br />
+Para <span class="math inline">\(u(W) = -e^{-2W}\)</span>: <span class="math inline">\(u&#39; = 2e^{-2W}\)</span>, <span class="math inline">\(u&#39;&#39; = -4e^{-2W}\)</span>.<br />
+<span class="math inline">\(A(W) = 4e^{-2W}/(2e^{-2W}) = 2\)</span> (CARA). <span class="math inline">\(R(W) = 2W\)</span> (RRA crescente).</p>
 </div>
 </details>
-<p><strong>Exercício 2.</strong> Um agente com <span
-class="math inline">\(u(W) = \sqrt{W}\)</span>, <span
-class="math inline">\(W_0 = 10000\)</span>, perda <span
-class="math inline">\(L = 6000\)</span> com <span
-class="math inline">\(p = 0{,}2\)</span>, prêmio justo <span
-class="math inline">\(\gamma = p = 0{,}2\)</span>. Qual a cobertura
-ótima?</p>
+<p><strong>Exercício 2.</strong> Um agente com <span class="math inline">\(u(W) = \sqrt{W}\)</span>, <span class="math inline">\(W_0 = 10000\)</span>, perda <span class="math inline">\(L = 6000\)</span> com <span class="math inline">\(p = 0{,}2\)</span>, prêmio justo <span class="math inline">\(\gamma = p = 0{,}2\)</span>. Qual a cobertura ótima?</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>Com prêmio justo, sabemos que <span class="math inline">\(q^* = L =
-6000\)</span> (cobertura total).<br />
-Verificação: prêmio pago = <span class="math inline">\(0{,}2 \times 6000
-= 1200\)</span>. Riqueza certa = <span class="math inline">\(10000 -
-1200 = 8800\)</span> em ambos os estados.</p>
+<p>Com prêmio justo, sabemos que <span class="math inline">\(q^* = L = 6000\)</span> (cobertura total).<br />
+Verificação: prêmio pago = <span class="math inline">\(0{,}2 \times 6000 = 1200\)</span>. Riqueza certa = <span class="math inline">\(10000 - 1200 = 8800\)</span> em ambos os estados.</p>
 </div>
 </details>
-<p><strong>Exercício 3.</strong> Se o carregamento faz <span
-class="math inline">\(\gamma = 0{,}30\)</span> (50% acima do justo), o
-agente do Exercício 2 comprará mais ou menos cobertura? Justifique
-qualitativamente.</p>
+<p><strong>Exercício 3.</strong> Se o carregamento faz <span class="math inline">\(\gamma = 0{,}30\)</span> (50% acima do justo), o agente do Exercício 2 comprará mais ou menos cobertura? Justifique qualitativamente.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>Comprará <strong>menos</strong> cobertura (<span
-class="math inline">\(q^* &lt; 6000\)</span>). Com <span
-class="math inline">\(\gamma &gt; p\)</span>, a CPO exige <span
-class="math inline">\(u&#39;(W_{\text{sem}}) &lt;
-u&#39;(W_{\text{sin}})\)</span>, ou seja, <span
-class="math inline">\(W_{\text{sem}} &gt; W_{\text{sin}}\)</span>. O
-agente retém parte do risco porque o custo marginal do seguro excede o
-benefício marginal atuarial. Quanto maior o carregamento, menor a
-cobertura ótima.</p>
+<p>Comprará <strong>menos</strong> cobertura (<span class="math inline">\(q^* &lt; 6000\)</span>). Com <span class="math inline">\(\gamma &gt; p\)</span>, a CPO exige <span class="math inline">\(u&#39;(W_{\text{sem}}) &lt; u&#39;(W_{\text{sin}})\)</span>, ou seja, <span class="math inline">\(W_{\text{sem}} &gt; W_{\text{sin}}\)</span>. O agente retém parte do risco porque o custo marginal do seguro excede o benefício marginal atuarial. Quanto maior o carregamento, menor a cobertura ótima.</p>
 </div>
 </details>
 <hr />
@@ -235,8 +143,7 @@ cobertura ótima.</p>
 <div class="admonition-title">
 Complete antes da aula
 </div>
-<p>Responda no LMS até <strong>2 horas antes</strong> do início da
-aula.</p>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
 </div>
 <div class="quiz-container">
 <div class="quiz-header"><h3>Quiz Pré-Aula</h3>
@@ -288,9 +195,7 @@ aula.</p>
 <div class="admonition-title">
 Próxima aula
 </div>
-<p>Na <strong>Aula 15</strong>, estudaremos os paradoxos de Allais e
-Ellsberg, que violam a teoria da utilidade esperada, e a Teoria dos
-Prospectos de Kahneman e Tversky como alternativa comportamental.</p>
+<p>Na <strong>Aula 15</strong>, estudaremos os paradoxos de Allais e Ellsberg, que violam a teoria da utilidade esperada, e a Teoria dos Prospectos de Kahneman e Tversky como alternativa comportamental.</p>
 </div>
 
 </div>

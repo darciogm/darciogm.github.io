@@ -17,220 +17,127 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1
-id="pré-aula-06-minimização-do-dispêndio-e-demanda-hicksiana">Pré-Aula
-06 — Minimização do Dispêndio e Demanda Hicksiana</h1>
+<h1 id="pré-aula-06-minimização-do-dispêndio-e-demanda-hicksiana">Pré-Aula 06 — Minimização do Dispêndio e Demanda Hicksiana</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 4, Seções 4.6–4.8</strong> do livro interativo | Tempo
-estimado: <strong>45 min</strong></p>
+<p><strong>Cap. 4, Seções 4.6–4.8</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
 </div>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
-<p>Após estudar este material e antes de vir à aula, você deve ser capaz
-de:</p>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
 <ol type="1">
-<li>Formular o problema de minimização do dispêndio (dual do
-consumidor)</li>
-<li>Derivar demandas Hicksianas e a função dispêndio, enunciando o Lema
-de Shephard</li>
-<li>Relacionar as soluções primal e dual via dualidade <span
-class="math inline">\(V \leftrightarrow E\)</span></li>
+<li>Formular o problema de minimização do dispêndio (dual do consumidor)</li>
+<li>Derivar demandas Hicksianas e a função dispêndio, enunciando o Lema de Shephard</li>
+<li>Relacionar as soluções primal e dual via dualidade <span class="math inline">\(V \leftrightarrow E\)</span></li>
 </ol>
 <hr />
-<h2 id="o-problema-dual-minimização-do-dispêndio">1. O problema dual:
-minimização do dispêndio</h2>
-<p>Enquanto o problema <strong>primal</strong> maximiza utilidade dada a
-renda, o <strong>dual</strong> minimiza o gasto necessário para atingir
-um nível de utilidade <span class="math inline">\(\bar{u}\)</span>:</p>
-<p><span class="math display">\[\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2
-\quad \text{s.a.} \quad u(x_1, x_2) \geq \bar{u}\]</span></p>
+<h2 id="o-problema-dual-minimização-do-dispêndio">1. O problema dual: minimização do dispêndio</h2>
+<p>Enquanto o problema <strong>primal</strong> maximiza utilidade dada a renda, o <strong>dual</strong> minimiza o gasto necessário para atingir um nível de utilidade <span class="math inline">\(\bar{u}\)</span>:</p>
+<p><span class="math display">\[\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad u(x_1, x_2) \geq \bar{u}\]</span></p>
 <h3 id="lagrangiano-do-dual">1.1 Lagrangiano do dual</h3>
-<p><span class="math display">\[\mathcal{L} = p_1 x_1 + p_2 x_2 -
-\mu\big(u(x_1, x_2) - \bar{u}\big)\]</span></p>
+<p><span class="math display">\[\mathcal{L} = p_1 x_1 + p_2 x_2 - \mu\big(u(x_1, x_2) - \bar{u}\big)\]</span></p>
 <p>CPOs:</p>
-<p><span class="math display">\[p_1 = \mu \, u_1, \qquad p_2 = \mu \,
-u_2, \qquad u(x_1, x_2) = \bar{u}\]</span></p>
+<p><span class="math display">\[p_1 = \mu \, u_1, \qquad p_2 = \mu \, u_2, \qquad u(x_1, x_2) = \bar{u}\]</span></p>
 <p>Dividindo as duas primeiras:</p>
-<p><span class="math display">\[\frac{p_1}{p_2} = \frac{u_1}{u_2} =
-\text{TMS}_{12}\]</span></p>
-<p>A condição de tangência é <strong>idêntica</strong> à do primal! A
-diferença está em qual restrição é usada para fechar o sistema.</p>
+<p><span class="math display">\[\frac{p_1}{p_2} = \frac{u_1}{u_2} = \text{TMS}_{12}\]</span></p>
+<p>A condição de tangência é <strong>idêntica</strong> à do primal! A diferença está em qual restrição é usada para fechar o sistema.</p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>Primal e dual são dois lados da mesma moeda. No primal, o consumidor
-fica na reta orçamentária e sobe para a curva de indiferença mais alta.
-No dual, ele fica na curva de indiferença e desce para a reta de
-isocusto mais baixa. O ponto ótimo é o mesmo.</p>
+<p>Primal e dual são dois lados da mesma moeda. No primal, o consumidor fica na reta orçamentária e sobe para a curva de indiferença mais alta. No dual, ele fica na curva de indiferença e desce para a reta de isocusto mais baixa. O ponto ótimo é o mesmo.</p>
 </div>
 <hr />
-<h2 id="demandas-hicksianas-compensadas">2. Demandas Hicksianas
-(compensadas)</h2>
+<h2 id="demandas-hicksianas-compensadas">2. Demandas Hicksianas (compensadas)</h2>
 <p>As soluções do dual são as <strong>demandas Hicksianas</strong>:</p>
-<p><span class="math display">\[h_i = h_i(p_1, p_2, \bar{u}), \quad i =
-1, 2\]</span></p>
-<p>Diferentemente das Marshallianas <span class="math inline">\(x_i^M(p,
-I)\)</span>, as Hicksianas dependem de preços e do nível de utilidade
-(não da renda).</p>
+<p><span class="math display">\[h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2\]</span></p>
+<p>Diferentemente das Marshallianas <span class="math inline">\(x_i^M(p, I)\)</span>, as Hicksianas dependem de preços e do nível de utilidade (não da renda).</p>
 <h3 id="propriedades">Propriedades</h3>
 <ol type="1">
-<li><strong>HOD0 em preços</strong>: <span
-class="math inline">\(h_i(\lambda p, \bar{u}) = h_i(p,
-\bar{u})\)</span></li>
-<li><strong>Lei da demanda compensada</strong>: <span
-class="math inline">\(\partial h_i / \partial p_i \leq 0\)</span> —
-sempre! (Não há exceção Giffen)</li>
-<li><strong>Simetria</strong>: <span class="math inline">\(\partial h_i
-/ \partial p_j = \partial h_j / \partial p_i\)</span> (Teorema de
-Slutsky)</li>
+<li><strong>HOD0 em preços</strong>: <span class="math inline">\(h_i(\lambda p, \bar{u}) = h_i(p, \bar{u})\)</span></li>
+<li><strong>Lei da demanda compensada</strong>: <span class="math inline">\(\partial h_i / \partial p_i \leq 0\)</span> — sempre! (Não há exceção Giffen)</li>
+<li><strong>Simetria</strong>: <span class="math inline">\(\partial h_i / \partial p_j = \partial h_j / \partial p_i\)</span> (Teorema de Slutsky)</li>
 </ol>
-<h2 id="gráfico-interativo-dualidade-primal-dual">Gráfico interativo:
-Dualidade Primal-Dual</h2>
+<h2 id="gráfico-interativo-dualidade-primal-dual">Gráfico interativo: Dualidade Primal-Dual</h2>
 <iframe src="graficos/cap04/dualidade.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Visualize os dois problemas simultaneamente: a maximização de
-utilidade (primal) e a minimização do dispêndio (dual). Observe que o
-ponto ótimo é o mesmo, apenas a perspectiva muda.</p>
+<p>Visualize os dois problemas simultaneamente: a maximização de utilidade (primal) e a minimização do dispêndio (dual). Observe que o ponto ótimo é o mesmo, apenas a perspectiva muda.</p>
 </div>
 <hr />
 <h2 id="função-dispêndio">3. Função dispêndio</h2>
 <p>Substituindo as demandas Hicksianas na função objetivo:</p>
-<p><span class="math display">\[E(p_1, p_2, \bar{u}) = p_1 h_1(p,
-\bar{u}) + p_2 h_2(p, \bar{u})\]</span></p>
-<p><span class="math inline">\(E\)</span> dá o <strong>custo
-mínimo</strong> para atingir utilidade <span
-class="math inline">\(\bar{u}\)</span> aos preços <span
-class="math inline">\(p\)</span>.</p>
-<h3 id="propriedades-de-e">Propriedades de <span
-class="math inline">\(E\)</span></h3>
+<p><span class="math display">\[E(p_1, p_2, \bar{u}) = p_1 h_1(p, \bar{u}) + p_2 h_2(p, \bar{u})\]</span></p>
+<p><span class="math inline">\(E\)</span> dá o <strong>custo mínimo</strong> para atingir utilidade <span class="math inline">\(\bar{u}\)</span> aos preços <span class="math inline">\(p\)</span>.</p>
+<h3 id="propriedades-de-e">Propriedades de <span class="math inline">\(E\)</span></h3>
 <ol type="1">
-<li><strong>Crescente</strong> em cada <span
-class="math inline">\(p_i\)</span> e em <span
-class="math inline">\(\bar{u}\)</span></li>
-<li><strong>HOD1 em preços</strong>: <span
-class="math inline">\(E(\lambda p, \bar{u}) = \lambda E(p,
-\bar{u})\)</span> — se preços dobram, o custo dobra</li>
-<li><strong>Côncava</strong> em preços (importante para a equação de
-Slutsky)</li>
+<li><strong>Crescente</strong> em cada <span class="math inline">\(p_i\)</span> e em <span class="math inline">\(\bar{u}\)</span></li>
+<li><strong>HOD1 em preços</strong>: <span class="math inline">\(E(\lambda p, \bar{u}) = \lambda E(p, \bar{u})\)</span> — se preços dobram, o custo dobra</li>
+<li><strong>Côncava</strong> em preços (importante para a equação de Slutsky)</li>
 </ol>
 <h3 id="exemplo-cobb-douglas">Exemplo Cobb-Douglas</h3>
 <p>Para <span class="math inline">\(u = x_1^a x_2^{1-a}\)</span>:</p>
-<p><span class="math display">\[h_1 = \left(\frac{a}{1-a} \cdot
-\frac{p_2}{p_1}\right)^{1-a} \bar{u}, \qquad h_2 = \left(\frac{1-a}{a}
-\cdot \frac{p_1}{p_2}\right)^{a} \bar{u}\]</span></p>
-<p><span class="math display">\[E(p, \bar{u}) = \bar{u} \cdot
-\frac{p_1^a p_2^{1-a}}{a^a (1-a)^{1-a}}\]</span></p>
+<p><span class="math display">\[h_1 = \left(\frac{a}{1-a} \cdot \frac{p_2}{p_1}\right)^{1-a} \bar{u}, \qquad h_2 = \left(\frac{1-a}{a} \cdot \frac{p_1}{p_2}\right)^{a} \bar{u}\]</span></p>
+<p><span class="math display">\[E(p, \bar{u}) = \bar{u} \cdot \frac{p_1^a p_2^{1-a}}{a^a (1-a)^{1-a}}\]</span></p>
 <hr />
 <h2 id="lema-de-shephard">4. Lema de Shephard</h2>
-<p><span class="math display">\[h_i(p, \bar{u}) = \frac{\partial E(p,
-\bar{u})}{\partial p_i}\]</span></p>
+<p><span class="math display">\[h_i(p, \bar{u}) = \frac{\partial E(p, \bar{u})}{\partial p_i}\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p>O Lema de Shephard é análogo à identidade de Roy, mas para o lado
-dual. Derivando a função dispêndio em relação ao preço de um bem,
-obtemos diretamente a demanda Hicksiana daquele bem. É uma aplicação do
-<strong>Teorema do Envelope</strong>: no ótimo, o efeito de uma mudança
-de parâmetro sobre o valor ótimo depende apenas do efeito direto.</p>
+<p>O Lema de Shephard é análogo à identidade de Roy, mas para o lado dual. Derivando a função dispêndio em relação ao preço de um bem, obtemos diretamente a demanda Hicksiana daquele bem. É uma aplicação do <strong>Teorema do Envelope</strong>: no ótimo, o efeito de uma mudança de parâmetro sobre o valor ótimo depende apenas do efeito direto.</p>
 </div>
 <hr />
-<h2 id="dualidade-v-leftrightarrow-e">5. Dualidade <span
-class="math inline">\(V \leftrightarrow E\)</span></h2>
-<p>As funções <span class="math inline">\(V\)</span> (utilidade
-indireta) e <span class="math inline">\(E\)</span> (dispêndio) são
-<strong>inversas</strong> uma da outra:</p>
-<p><span class="math display">\[V(p, E(p, \bar{u})) = \bar{u} \qquad
-\text{e} \qquad E(p, V(p, I)) = I\]</span></p>
-<p>A primeira diz: se você dá ao consumidor exatamente a renda mínima
-para atingir <span class="math inline">\(\bar{u}\)</span>, ele atinge
-exatamente <span class="math inline">\(\bar{u}\)</span>.</p>
-<p>A segunda diz: o custo mínimo para atingir a utilidade que a renda
-<span class="math inline">\(I\)</span> proporciona é exatamente <span
-class="math inline">\(I\)</span>.</p>
+<h2 id="dualidade-v-leftrightarrow-e">5. Dualidade <span class="math inline">\(V \leftrightarrow E\)</span></h2>
+<p>As funções <span class="math inline">\(V\)</span> (utilidade indireta) e <span class="math inline">\(E\)</span> (dispêndio) são <strong>inversas</strong> uma da outra:</p>
+<p><span class="math display">\[V(p, E(p, \bar{u})) = \bar{u} \qquad \text{e} \qquad E(p, V(p, I)) = I\]</span></p>
+<p>A primeira diz: se você dá ao consumidor exatamente a renda mínima para atingir <span class="math inline">\(\bar{u}\)</span>, ele atinge exatamente <span class="math inline">\(\bar{u}\)</span>.</p>
+<p>A segunda diz: o custo mínimo para atingir a utilidade que a renda <span class="math inline">\(I\)</span> proporciona é exatamente <span class="math inline">\(I\)</span>.</p>
 <h3 id="relação-entre-demandas">Relação entre demandas</h3>
-<p>No ponto inicial <span class="math inline">\((p, I)\)</span>, com
-<span class="math inline">\(\bar{u} = V(p, I)\)</span>:</p>
-<p><span class="math display">\[x_i^M(p, I) = h_i(p, V(p,
-I))\]</span></p>
-<p>As demandas Marshalliana e Hicksiana coincidem quando a
-utilidade-alvo é a utilidade ótima do primal.</p>
-<h2 id="gráfico-interativo-demandas-marshalliana-e-hicksiana">Gráfico
-interativo: Demandas Marshalliana e Hicksiana</h2>
+<p>No ponto inicial <span class="math inline">\((p, I)\)</span>, com <span class="math inline">\(\bar{u} = V(p, I)\)</span>:</p>
+<p><span class="math display">\[x_i^M(p, I) = h_i(p, V(p, I))\]</span></p>
+<p>As demandas Marshalliana e Hicksiana coincidem quando a utilidade-alvo é a utilidade ótima do primal.</p>
+<h2 id="gráfico-interativo-demandas-marshalliana-e-hicksiana">Gráfico interativo: Demandas Marshalliana e Hicksiana</h2>
 <iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html">
 </iframe>
 <div class="admonition tip">
 <div class="admonition-title">
 Explore o gráfico
 </div>
-<p>Varie o preço <span class="math inline">\(p_1\)</span> e compare as
-duas curvas de demanda. Para bens normais, a Marshalliana é mais
-elástica (mais horizontal) que a Hicksiana. Elas se cruzam no preço
-inicial.</p>
+<p>Varie o preço <span class="math inline">\(p_1\)</span> e compare as duas curvas de demanda. Para bens normais, a Marshalliana é mais elástica (mais horizontal) que a Hicksiana. Elas se cruzam no preço inicial.</p>
 </div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<p><strong>Exercício 1.</strong> Para <span class="math inline">\(u =
-x_1^{1/2} x_2^{1/2}\)</span>, derive as demandas Hicksianas resolvendo o
-problema de minimização do dispêndio. Verifique usando o Lema de
-Shephard.</p>
+<p><strong>Exercício 1.</strong> Para <span class="math inline">\(u = x_1^{1/2} x_2^{1/2}\)</span>, derive as demandas Hicksianas resolvendo o problema de minimização do dispêndio. Verifique usando o Lema de Shephard.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>Tangência: <span class="math inline">\((1/2)(x_2/x_1) = p_1/p_2
-\implies x_2 = (p_1/p_2)x_1\)</span>. Restrição: <span
-class="math inline">\(x_1^{1/2}[(p_1/p_2)x_1]^{1/2} = \bar{u} \implies
-x_1(p_1/p_2)^{1/2} = \bar{u}\)</span>. Logo <span
-class="math inline">\(h_1 = \bar{u}(p_2/p_1)^{1/2}\)</span> e <span
-class="math inline">\(h_2 = \bar{u}(p_1/p_2)^{1/2}\)</span>. Função
-dispêndio: <span class="math inline">\(E = p_1 h_1 + p_2 h_2 =
-2\bar{u}(p_1 p_2)^{1/2}\)</span>. Verificação: <span
-class="math inline">\(\partial E/\partial p_1 = \bar{u}(p_2/p_1)^{1/2} =
-h_1\)</span>. <span class="math inline">\(\checkmark\)</span></p>
+<p>Tangência: <span class="math inline">\((1/2)(x_2/x_1) = p_1/p_2 \implies x_2 = (p_1/p_2)x_1\)</span>. Restrição: <span class="math inline">\(x_1^{1/2}[(p_1/p_2)x_1]^{1/2} = \bar{u} \implies x_1(p_1/p_2)^{1/2} = \bar{u}\)</span>. Logo <span class="math inline">\(h_1 = \bar{u}(p_2/p_1)^{1/2}\)</span> e <span class="math inline">\(h_2 = \bar{u}(p_1/p_2)^{1/2}\)</span>. Função dispêndio: <span class="math inline">\(E = p_1 h_1 + p_2 h_2 = 2\bar{u}(p_1 p_2)^{1/2}\)</span>. Verificação: <span class="math inline">\(\partial E/\partial p_1 = \bar{u}(p_2/p_1)^{1/2} = h_1\)</span>. <span class="math inline">\(\checkmark\)</span></p>
 </div>
 </details>
-<p><strong>Exercício 2.</strong> Verifique que <span
-class="math inline">\(E(p, V(p, I)) = I\)</span> para o caso
-Cobb-Douglas com <span class="math inline">\(a = 1/2\)</span>.</p>
+<p><strong>Exercício 2.</strong> Verifique que <span class="math inline">\(E(p, V(p, I)) = I\)</span> para o caso Cobb-Douglas com <span class="math inline">\(a = 1/2\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(V = (1/2)(1/2) \cdot I/(p_1^{1/2}
-p_2^{1/2}) = I/(2\sqrt{p_1 p_2})\)</span>. Então <span
-class="math inline">\(E = 2\bar{u}\sqrt{p_1 p_2} = 2 \cdot
-\frac{I}{2\sqrt{p_1 p_2}} \cdot \sqrt{p_1 p_2} = I\)</span>. <span
-class="math inline">\(\checkmark\)</span></p>
+<p><span class="math inline">\(V = (1/2)(1/2) \cdot I/(p_1^{1/2} p_2^{1/2}) = I/(2\sqrt{p_1 p_2})\)</span>. Então <span class="math inline">\(E = 2\bar{u}\sqrt{p_1 p_2} = 2 \cdot \frac{I}{2\sqrt{p_1 p_2}} \cdot \sqrt{p_1 p_2} = I\)</span>. <span class="math inline">\(\checkmark\)</span></p>
 </div>
 </details>
-<p><strong>Exercício 3.</strong> Explique intuitivamente por que <span
-class="math inline">\(\partial h_i/\partial p_i \leq 0\)</span> sempre
-(sem exceção Giffen), enquanto <span class="math inline">\(\partial
-x_i^M/\partial p_i\)</span> pode ser positivo.</p>
+<p><strong>Exercício 3.</strong> Explique intuitivamente por que <span class="math inline">\(\partial h_i/\partial p_i \leq 0\)</span> sempre (sem exceção Giffen), enquanto <span class="math inline">\(\partial x_i^M/\partial p_i\)</span> pode ser positivo.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>A Hicksiana mantém utilidade constante, isolando o <strong>efeito
-substituição puro</strong>: quando <span
-class="math inline">\(p_i\)</span> sobe, o consumidor substitui para
-bens mais baratos. Esse efeito é sempre negativo. A Marshalliana inclui
-também o <strong>efeito renda</strong>: o aumento de preço reduz poder
-de compra. Para bens inferiores, o efeito renda é positivo. Se superar o
-efeito substituição (caso Giffen), <span class="math inline">\(\partial
-x_i^M/\partial p_i &gt; 0\)</span>. A Hicksiana “neutraliza” o efeito
-renda por construção.</p>
+<p>A Hicksiana mantém utilidade constante, isolando o <strong>efeito substituição puro</strong>: quando <span class="math inline">\(p_i\)</span> sobe, o consumidor substitui para bens mais baratos. Esse efeito é sempre negativo. A Marshalliana inclui também o <strong>efeito renda</strong>: o aumento de preço reduz poder de compra. Para bens inferiores, o efeito renda é positivo. Se superar o efeito substituição (caso Giffen), <span class="math inline">\(\partial x_i^M/\partial p_i &gt; 0\)</span>. A Hicksiana “neutraliza” o efeito renda por construção.</p>
 </div>
 </details>
 <hr />
@@ -239,8 +146,7 @@ renda por construção.</p>
 <div class="admonition-title">
 Complete antes da aula
 </div>
-<p>Responda no LMS até <strong>2 horas antes</strong> do início da
-aula.</p>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
 </div>
 <div class="quiz-container">
 <div class="quiz-header"><h3>Quiz Pré-Aula</h3>
@@ -292,8 +198,7 @@ aula.</p>
 <div class="admonition-title">
 Próxima aula
 </div>
-<p><strong>Aula 07</strong>: Dualidade na Teoria do Consumidor — o mapa
-completo primal-dual e as identidades fundamentais.</p>
+<p><strong>Aula 07</strong>: Dualidade na Teoria do Consumidor — o mapa completo primal-dual e as identidades fundamentais.</p>
 </div>
 
 </div>

@@ -17,112 +17,64 @@
   </div>
 </div>
 <div class="content-wrapper">
-<h1 id="pré-aula-19-custos-de-produção-e-minimização-de-custos">Pré-Aula
-19 — Custos de Produção e Minimização de Custos</h1>
+<h1 id="pré-aula-19-custos-de-produção-e-minimização-de-custos">Pré-Aula 19 — Custos de Produção e Minimização de Custos</h1>
 <div class="admonition info">
 <div class="admonition-title">
 Leitura obrigatória
 </div>
-<p><strong>Cap. 11, Seções 11.1–11.5</strong> do livro interativo |
-Tempo estimado: <strong>45 min</strong></p>
+<p><strong>Cap. 11, Seções 11.1–11.5</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
 </div>
 <h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
-<p>Após estudar este material e antes de vir à aula, você deve ser capaz
-de:</p>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
 <ol type="1">
-<li>Distinguir custo econômico de custo contábil e explicar o papel do
-custo de oportunidade</li>
-<li>Derivar as demandas condicionais de fatores via Lagrangiano e
-enunciar o Lema de Shephard</li>
-<li>Relacionar as curvas CT, CMe, CVMe e CMg, explicar a envoltória de
-Viner e identificar economias de escala</li>
+<li>Distinguir custo econômico de custo contábil e explicar o papel do custo de oportunidade</li>
+<li>Derivar as demandas condicionais de fatores via Lagrangiano e enunciar o Lema de Shephard</li>
+<li>Relacionar as curvas CT, CMe, CVMe e CMg, explicar a envoltória de Viner e identificar economias de escala</li>
 </ol>
 <hr />
-<h2 id="custo-econômico-vs.-custo-contábil">1. Custo econômico vs. custo
-contábil</h2>
-<p>O <strong>custo contábil</strong> registra despesas monetárias
-explícitas (salários, aluguel, matéria-prima). O <strong>custo
-econômico</strong> inclui também os <strong>custos de
-oportunidade</strong> — o valor da melhor alternativa renunciada:</p>
-<p><span class="math display">\[C_{\text{econômico}} =
-C_{\text{explícito}} + C_{\text{oportunidade}}\]</span></p>
+<h2 id="custo-econômico-vs.-custo-contábil">1. Custo econômico vs. custo contábil</h2>
+<p>O <strong>custo contábil</strong> registra despesas monetárias explícitas (salários, aluguel, matéria-prima). O <strong>custo econômico</strong> inclui também os <strong>custos de oportunidade</strong> — o valor da melhor alternativa renunciada:</p>
+<p><span class="math display">\[C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{oportunidade}}\]</span></p>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>O custo de oportunidade é invisível, mas real.</strong> Se um
-empresário poderia ganhar R$ 10.000/mês como empregado, esse valor é um
-custo econômico de operar seu próprio negócio, mesmo que não apareça em
-nenhuma nota fiscal. Ignorar o custo de oportunidade leva a decisões
-erradas — o empresário pode achar que tem lucro quando, na verdade,
-estaria melhor como empregado.</p>
+<p><strong>O custo de oportunidade é invisível, mas real.</strong> Se um empresário poderia ganhar R$ 10.000/mês como empregado, esse valor é um custo econômico de operar seu próprio negócio, mesmo que não apareça em nenhuma nota fiscal. Ignorar o custo de oportunidade leva a decisões erradas — o empresário pode achar que tem lucro quando, na verdade, estaria melhor como empregado.</p>
 </div>
 <hr />
 <h2 id="minimização-de-custos">2. Minimização de custos</h2>
-<p>A firma escolhe <span class="math inline">\(K\)</span> e <span
-class="math inline">\(L\)</span> para minimizar o custo de produzir
-<span class="math inline">\(q\)</span> unidades:</p>
-<p><span class="math display">\[\min_{K,L} \; wL + vK \quad \text{s.a.}
-\quad f(K,L) = q\]</span></p>
+<p>A firma escolhe <span class="math inline">\(K\)</span> e <span class="math inline">\(L\)</span> para minimizar o custo de produzir <span class="math inline">\(q\)</span> unidades:</p>
+<p><span class="math display">\[\min_{K,L} \; wL + vK \quad \text{s.a.} \quad f(K,L) = q\]</span></p>
 <h3 id="lagrangiano">Lagrangiano</h3>
-<p><span class="math display">\[\mathcal{L} = wL + vK + \lambda\big[q -
-f(K,L)\big]\]</span></p>
+<p><span class="math display">\[\mathcal{L} = wL + vK + \lambda\big[q - f(K,L)\big]\]</span></p>
 <p><strong>Condições de primeira ordem:</strong></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L}
-= w - \lambda\frac{\partial f}{\partial L} = 0 \implies \lambda =
-\frac{w}{PMg_L}\]</span></p>
-<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial K}
-= v - \lambda\frac{\partial f}{\partial K} = 0 \implies \lambda =
-\frac{v}{PMg_K}\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L} = w - \lambda\frac{\partial f}{\partial L} = 0 \implies \lambda = \frac{w}{PMg_L}\]</span></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial K} = v - \lambda\frac{\partial f}{\partial K} = 0 \implies \lambda = \frac{v}{PMg_K}\]</span></p>
 <p>Igualando:</p>
-<p><span class="math display">\[\boxed{\frac{PMg_L}{PMg_K} = \frac{w}{v}
-\iff TMST = \frac{w}{v}}\]</span></p>
-<p>A firma iguala a taxa marginal de substituição técnica à razão de
-preços dos fatores. O multiplicador <span
-class="math inline">\(\lambda\)</span> é o <strong>custo
-marginal</strong> — o custo adicional de produzir uma unidade a
-mais.</p>
-<h3 id="demandas-condicionais-de-fatores">Demandas condicionais de
-fatores</h3>
-<p>As soluções <span class="math inline">\(L^c(w,v,q)\)</span> e <span
-class="math inline">\(K^c(w,v,q)\)</span> são as <strong>demandas
-condicionais</strong> — a quantidade ótima de cada fator para produzir
-<span class="math inline">\(q\)</span> ao menor custo.</p>
+<p><span class="math display">\[\boxed{\frac{PMg_L}{PMg_K} = \frac{w}{v} \iff TMST = \frac{w}{v}}\]</span></p>
+<p>A firma iguala a taxa marginal de substituição técnica à razão de preços dos fatores. O multiplicador <span class="math inline">\(\lambda\)</span> é o <strong>custo marginal</strong> — o custo adicional de produzir uma unidade a mais.</p>
+<h3 id="demandas-condicionais-de-fatores">Demandas condicionais de fatores</h3>
+<p>As soluções <span class="math inline">\(L^c(w,v,q)\)</span> e <span class="math inline">\(K^c(w,v,q)\)</span> são as <strong>demandas condicionais</strong> — a quantidade ótima de cada fator para produzir <span class="math inline">\(q\)</span> ao menor custo.</p>
 <hr />
 <h2 id="função-custo-e-propriedades">3. Função custo e propriedades</h2>
 <p>Substituindo as demandas condicionais na função objetivo:</p>
-<p><span class="math display">\[C(w,v,q) = wL^c(w,v,q) +
-vK^c(w,v,q)\]</span></p>
+<p><span class="math display">\[C(w,v,q) = wL^c(w,v,q) + vK^c(w,v,q)\]</span></p>
 <p><strong>Propriedades da função custo:</strong></p>
 <ol type="1">
-<li><strong>Não decrescente</strong> em <span
-class="math inline">\(w\)</span>, <span class="math inline">\(v\)</span>
-e <span class="math inline">\(q\)</span></li>
-<li><strong>Homogênea de grau 1</strong> em <span
-class="math inline">\((w,v)\)</span>: dobrar todos os preços dos fatores
-dobra o custo</li>
-<li><strong>Côncava</strong> em <span
-class="math inline">\((w,v)\)</span>: a firma pode substituir fatores
-quando preços mudam</li>
-<li><strong>Lema de Shephard:</strong> <span
-class="math inline">\(\displaystyle L^c = \frac{\partial C}{\partial w},
-\quad K^c = \frac{\partial C}{\partial v}\)</span></li>
+<li><strong>Não decrescente</strong> em <span class="math inline">\(w\)</span>, <span class="math inline">\(v\)</span> e <span class="math inline">\(q\)</span></li>
+<li><strong>Homogênea de grau 1</strong> em <span class="math inline">\((w,v)\)</span>: dobrar todos os preços dos fatores dobra o custo</li>
+<li><strong>Côncava</strong> em <span class="math inline">\((w,v)\)</span>: a firma pode substituir fatores quando preços mudam</li>
+<li><strong>Lema de Shephard:</strong> <span class="math inline">\(\displaystyle L^c = \frac{\partial C}{\partial w}, \quad K^c = \frac{\partial C}{\partial v}\)</span></li>
 </ol>
 <div class="admonition note">
 <div class="admonition-title">
 Intuição Econômica
 </div>
-<p><strong>O Lema de Shephard é o dual do Lema de Hotelling.</strong>
-Assim como a demanda hicksiana sai da função dispêndio por
-diferenciação, a demanda condicional de fatores sai da função custo. A
-dualidade entre minimização de custos e maximização de lucro permeia
-toda a teoria da firma.</p>
+<p><strong>O Lema de Shephard é o dual do Lema de Hotelling.</strong> Assim como a demanda hicksiana sai da função dispêndio por diferenciação, a demanda condicional de fatores sai da função custo. A dualidade entre minimização de custos e maximização de lucro permeia toda a teoria da firma.</p>
 </div>
 <hr />
-<h2 id="curvas-de-custo-no-curto-prazo">4. Curvas de custo no curto
-prazo</h2>
-<p>Com capital fixo <span class="math inline">\(\bar{K}\)</span> no
-curto prazo, definimos:</p>
+<h2 id="curvas-de-custo-no-curto-prazo">4. Curvas de custo no curto prazo</h2>
+<p>Com capital fixo <span class="math inline">\(\bar{K}\)</span> no curto prazo, definimos:</p>
 <table>
 <thead>
 <tr>
@@ -137,8 +89,7 @@ curto prazo, definimos:</p>
 </tr>
 <tr>
 <td>Custo Médio</td>
-<td><span class="math inline">\(CMe(q) = CT(q)/q = CF/q +
-CVMe(q)\)</span></td>
+<td><span class="math inline">\(CMe(q) = CT(q)/q = CF/q + CVMe(q)\)</span></td>
 </tr>
 <tr>
 <td>Custo Variável Médio</td>
@@ -152,38 +103,18 @@ CVMe(q)\)</span></td>
 </table>
 <p><strong>Relações fundamentais:</strong></p>
 <ul>
-<li>O CMg corta o CMe e o CVMe em seus respectivos <strong>pontos de
-mínimo</strong></li>
-<li>Se <span class="math inline">\(CMg &lt; CMe\)</span>, o CMe está
-caindo; se <span class="math inline">\(CMg &gt; CMe\)</span>, o CMe está
-subindo</li>
-<li>A distância vertical entre CMe e CVMe é <span
-class="math inline">\(CF/q\)</span>, que diminui com <span
-class="math inline">\(q\)</span></li>
+<li>O CMg corta o CMe e o CVMe em seus respectivos <strong>pontos de mínimo</strong></li>
+<li>Se <span class="math inline">\(CMg &lt; CMe\)</span>, o CMe está caindo; se <span class="math inline">\(CMg &gt; CMe\)</span>, o CMe está subindo</li>
+<li>A distância vertical entre CMe e CVMe é <span class="math inline">\(CF/q\)</span>, que diminui com <span class="math inline">\(q\)</span></li>
 </ul>
 <hr />
-<h2 id="custos-de-longo-prazo-e-envoltória-de-viner">5. Custos de longo
-prazo e envoltória de Viner</h2>
-<p>No longo prazo, todos os fatores são variáveis. Para cada nível de
-capital <span class="math inline">\(\bar{K}\)</span>, existe uma curva
-de CMe de curto prazo. A curva de <strong>CMe de longo prazo</strong>
-(CMeLP) é a <strong>envoltória</strong> dessas curvas:</p>
-<p><span class="math display">\[CMeLP(q) = \min_{\bar{K}} CMe_{CP}(q;
-\bar{K})\]</span></p>
-<p>A CMeLP tangencia cada curva de CMe de curto prazo no ponto
-correspondente ao <span class="math inline">\(\bar{K}\)</span> ótimo
-para aquele <span class="math inline">\(q\)</span>. No ponto de escala
-eficiente, CMeLP = CMeCP e ambas atingem o mínimo.</p>
-<p><strong>Economias de escala</strong> ocorrem quando <span
-class="math inline">\(CMeLP\)</span> é decrescente (<span
-class="math inline">\(\varepsilon_C &lt; 1\)</span>, onde <span
-class="math inline">\(\varepsilon_C = CMg/CMe\)</span>).
-<strong>Deseconomias de escala</strong> quando <span
-class="math inline">\(CMeLP\)</span> é crescente (<span
-class="math inline">\(\varepsilon_C &gt; 1\)</span>).</p>
+<h2 id="custos-de-longo-prazo-e-envoltória-de-viner">5. Custos de longo prazo e envoltória de Viner</h2>
+<p>No longo prazo, todos os fatores são variáveis. Para cada nível de capital <span class="math inline">\(\bar{K}\)</span>, existe uma curva de CMe de curto prazo. A curva de <strong>CMe de longo prazo</strong> (CMeLP) é a <strong>envoltória</strong> dessas curvas:</p>
+<p><span class="math display">\[CMeLP(q) = \min_{\bar{K}} CMe_{CP}(q; \bar{K})\]</span></p>
+<p>A CMeLP tangencia cada curva de CMe de curto prazo no ponto correspondente ao <span class="math inline">\(\bar{K}\)</span> ótimo para aquele <span class="math inline">\(q\)</span>. No ponto de escala eficiente, CMeLP = CMeCP e ambas atingem o mínimo.</p>
+<p><strong>Economias de escala</strong> ocorrem quando <span class="math inline">\(CMeLP\)</span> é decrescente (<span class="math inline">\(\varepsilon_C &lt; 1\)</span>, onde <span class="math inline">\(\varepsilon_C = CMg/CMe\)</span>). <strong>Deseconomias de escala</strong> quando <span class="math inline">\(CMeLP\)</span> é crescente (<span class="math inline">\(\varepsilon_C &gt; 1\)</span>).</p>
 <hr />
-<h2 id="gráfico-interativo-minimização-de-custo">Gráfico interativo:
-minimização de custo</h2>
+<h2 id="gráfico-interativo-minimização-de-custo">Gráfico interativo: minimização de custo</h2>
 <div id="graph-min-custo" style="min-height: 450px;">
 <iframe src="graficos/cap11/minimizacao-custo.html">
 </iframe>
@@ -193,17 +124,13 @@ minimização de custo</h2>
 Explore o gráfico
 </div>
 <ul>
-<li>Mova a isoquanta para diferentes níveis de produção e veja o ponto
-de tangência com a isocusto</li>
-<li>Altere a razão <span class="math inline">\(w/v\)</span> e observe a
-substituição entre fatores</li>
-<li>Verifique que no ótimo <span class="math inline">\(TMST =
-w/v\)</span></li>
+<li>Mova a isoquanta para diferentes níveis de produção e veja o ponto de tangência com a isocusto</li>
+<li>Altere a razão <span class="math inline">\(w/v\)</span> e observe a substituição entre fatores</li>
+<li>Verifique que no ótimo <span class="math inline">\(TMST = w/v\)</span></li>
 </ul>
 </div>
 <hr />
-<h2 id="gráfico-interativo-curvas-de-custo">Gráfico interativo: curvas
-de custo</h2>
+<h2 id="gráfico-interativo-curvas-de-custo">Gráfico interativo: curvas de custo</h2>
 <div id="graph-curvas-custo" style="min-height: 450px;">
 <iframe src="graficos/cap11/curvas-custo.html">
 </iframe>
@@ -214,14 +141,12 @@ Explore o gráfico
 </div>
 <ul>
 <li>Observe como o CMg cruza o CMe e o CVMe nos seus mínimos</li>
-<li>Note que a distância CMe - CVMe diminui à medida que <span
-class="math inline">\(q\)</span> cresce</li>
+<li>Note que a distância CMe - CVMe diminui à medida que <span class="math inline">\(q\)</span> cresce</li>
 <li>Identifique as regiões de economias e deseconomias de escala</li>
 </ul>
 </div>
 <hr />
-<h2 id="gráfico-interativo-envoltória-de-custo-total">Gráfico
-interativo: envoltória de custo total</h2>
+<h2 id="gráfico-interativo-envoltória-de-custo-total">Gráfico interativo: envoltória de custo total</h2>
 <div id="graph-envoltoria" style="min-height: 450px;">
 <iframe src="graficos/cap11/envoltoria-custo-total.html">
 </iframe>
@@ -231,76 +156,44 @@ interativo: envoltória de custo total</h2>
 Explore o gráfico
 </div>
 <ul>
-<li>Varie o nível de capital fixo e veja diferentes curvas de CMe de
-curto prazo</li>
-<li>Observe como a envoltória de longo prazo tangencia cada curva de
-curto prazo</li>
+<li>Varie o nível de capital fixo e veja diferentes curvas de CMe de curto prazo</li>
+<li>Observe como a envoltória de longo prazo tangencia cada curva de curto prazo</li>
 <li>Identifique a escala eficiente (mínimo do CMeLP)</li>
 </ul>
 </div>
 <hr />
 <h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
-<p><strong>Exercício 1.</strong> Uma firma tem <span
-class="math inline">\(f(K,L) = K^{1/2}L^{1/2}\)</span>, <span
-class="math inline">\(w = 4\)</span> e <span class="math inline">\(v =
-1\)</span>. Encontre as demandas condicionais e a função custo <span
-class="math inline">\(C(q)\)</span>.</p>
+<p><strong>Exercício 1.</strong> Uma firma tem <span class="math inline">\(f(K,L) = K^{1/2}L^{1/2}\)</span>, <span class="math inline">\(w = 4\)</span> e <span class="math inline">\(v = 1\)</span>. Encontre as demandas condicionais e a função custo <span class="math inline">\(C(q)\)</span>.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(TMST = \frac{PMg_L}{PMg_K} = \frac{K}{L}
-= \frac{w}{v} = 4 \implies K = 4L\)</span></p>
-<p>Restrição: <span class="math inline">\((4L)^{1/2}L^{1/2} = 2L = q
-\implies L^c = q/2\)</span>, <span class="math inline">\(K^c =
-2q\)</span>.</p>
-<p><span class="math inline">\(C(q) = 4(q/2) + 1(2q) = 2q + 2q =
-4q\)</span></p>
-<p>Verificação pelo Lema de Shephard: <span
-class="math inline">\(\partial C/\partial w = q/2 = L^c\)</span> e <span
-class="math inline">\(\partial C/\partial v = 2q = K^c\)</span>.</p>
+<p><span class="math inline">\(TMST = \frac{PMg_L}{PMg_K} = \frac{K}{L} = \frac{w}{v} = 4 \implies K = 4L\)</span></p>
+<p>Restrição: <span class="math inline">\((4L)^{1/2}L^{1/2} = 2L = q \implies L^c = q/2\)</span>, <span class="math inline">\(K^c = 2q\)</span>.</p>
+<p><span class="math inline">\(C(q) = 4(q/2) + 1(2q) = 2q + 2q = 4q\)</span></p>
+<p>Verificação pelo Lema de Shephard: <span class="math inline">\(\partial C/\partial w = q/2 = L^c\)</span> e <span class="math inline">\(\partial C/\partial v = 2q = K^c\)</span>.</p>
 </div>
 </details>
-<p><strong>Exercício 2.</strong> Para <span class="math inline">\(C(q) =
-q^3 - 6q^2 + 15q + 10\)</span>, encontre CMg, CMe, CVMe e seus
-mínimos.</p>
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(C(q) = q^3 - 6q^2 + 15q + 10\)</span>, encontre CMg, CMe, CVMe e seus mínimos.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p><span class="math inline">\(CMg = 3q^2 - 12q + 15\)</span>. Mínimo:
-<span class="math inline">\(6q - 12 = 0 \implies q = 2\)</span>, <span
-class="math inline">\(CMg(2) = 3\)</span>.</p>
-<p><span class="math inline">\(CVMe = q^2 - 6q + 15\)</span>. Mínimo:
-<span class="math inline">\(2q - 6 = 0 \implies q = 3\)</span>, <span
-class="math inline">\(CVMe(3) = 6\)</span>.</p>
-<p>Verificação: <span class="math inline">\(CMg(3) = 27 - 36 + 15 = 6 =
-CVMe(3)\)</span>.</p>
-<p><span class="math inline">\(CMe = q^2 - 6q + 15 + 10/q\)</span>.
-Mínimo onde <span class="math inline">\(CMg = CMe\)</span>: resolvendo
-numericamente, <span class="math inline">\(q \approx 3{,}68\)</span>,
-<span class="math inline">\(CMe \approx 6{,}39\)</span>.</p>
+<p><span class="math inline">\(CMg = 3q^2 - 12q + 15\)</span>. Mínimo: <span class="math inline">\(6q - 12 = 0 \implies q = 2\)</span>, <span class="math inline">\(CMg(2) = 3\)</span>.</p>
+<p><span class="math inline">\(CVMe = q^2 - 6q + 15\)</span>. Mínimo: <span class="math inline">\(2q - 6 = 0 \implies q = 3\)</span>, <span class="math inline">\(CVMe(3) = 6\)</span>.</p>
+<p>Verificação: <span class="math inline">\(CMg(3) = 27 - 36 + 15 = 6 = CVMe(3)\)</span>.</p>
+<p><span class="math inline">\(CMe = q^2 - 6q + 15 + 10/q\)</span>. Mínimo onde <span class="math inline">\(CMg = CMe\)</span>: resolvendo numericamente, <span class="math inline">\(q \approx 3{,}68\)</span>, <span class="math inline">\(CMe \approx 6{,}39\)</span>.</p>
 </div>
 </details>
-<p><strong>Exercício 3.</strong> Explique por que a curva de CMeLP nunca
-fica acima de nenhuma curva de CMe de curto prazo.</p>
+<p><strong>Exercício 3.</strong> Explique por que a curva de CMeLP nunca fica acima de nenhuma curva de CMe de curto prazo.</p>
 <details>
 <summary>
 Solução
 </summary>
 <div class="solution-body">
-<p>A CMeLP é obtida minimizando o custo sobre <strong>todos</strong> os
-fatores, inclusive o capital. Cada curva de CMe de curto prazo fixa o
-capital em <span class="math inline">\(\bar{K}\)</span>, restringindo a
-escolha da firma. Como a minimização com mais liberdade (LP) não pode
-produzir custo maior que a minimização restrita (CP), temos <span
-class="math inline">\(CMeLP(q) \leq CMe_{CP}(q;\bar{K})\)</span> para
-todo <span class="math inline">\(\bar{K}\)</span>. A igualdade ocorre
-apenas no ponto onde <span class="math inline">\(\bar{K}\)</span>
-coincide com o capital ótimo de longo prazo para aquele <span
-class="math inline">\(q\)</span>.</p>
+<p>A CMeLP é obtida minimizando o custo sobre <strong>todos</strong> os fatores, inclusive o capital. Cada curva de CMe de curto prazo fixa o capital em <span class="math inline">\(\bar{K}\)</span>, restringindo a escolha da firma. Como a minimização com mais liberdade (LP) não pode produzir custo maior que a minimização restrita (CP), temos <span class="math inline">\(CMeLP(q) \leq CMe_{CP}(q;\bar{K})\)</span> para todo <span class="math inline">\(\bar{K}\)</span>. A igualdade ocorre apenas no ponto onde <span class="math inline">\(\bar{K}\)</span> coincide com o capital ótimo de longo prazo para aquele <span class="math inline">\(q\)</span>.</p>
 </div>
 </details>
 <hr />
@@ -309,8 +202,7 @@ class="math inline">\(q\)</span>.</p>
 <div class="admonition-title">
 Complete antes da aula
 </div>
-<p>Responda no LMS até <strong>2 horas antes</strong> do início da
-aula.</p>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
 </div>
 <div class="quiz-container">
 <div class="quiz-header"><h3>Quiz Pré-Aula</h3>
@@ -362,9 +254,7 @@ aula.</p>
 <div class="admonition-title">
 Próxima aula
 </div>
-<p><strong>Aula 20</strong>: Maximização de lucro — da condição <span
-class="math inline">\(P = CMg\)</span> à função lucro e o Lema de
-Hotelling. Revise as propriedades da função custo!</p>
+<p><strong>Aula 20</strong>: Maximização de lucro — da condição <span class="math inline">\(P = CMg\)</span> à função lucro e o Lema de Hotelling. Revise as propriedades da função custo!</p>
 </div>
 
 </div>

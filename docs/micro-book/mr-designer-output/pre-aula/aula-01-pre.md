@@ -28,7 +28,7 @@ A expressão latina *ceteris paribus* ("tudo o mais constante") é a principal f
 
 Formalmente, se a quantidade demandada é $Q^d = D(p, I, \mathbf{p}_{-})$, a análise *ceteris paribus* examina:
 
-$$\frac{\partial Q^d}{\partial p} \bigg|_{I, \mathbf{p}_{-} \text{\ fixos}} < 0$$
+$$\frac{\partial Q^d}{\partial p} \bigg|_{I, \mathbf{p}_{-} \text{ fixos}} < 0$$
 
 ### 1.2 Positivo vs. normativo
 
@@ -84,7 +84,7 @@ Estática comparativa compara dois equilíbrios: o inicial e o novo, após a mud
 
 Se a renda dos consumidores aumenta e o bem é **normal**, a curva de demanda se desloca para a direita:
 
-$$D(p; I_1) \to D(p; I_2) \quad \text{com\ } I_2 > I_1$$
+$$D(p; I_1) \to D(p; I_2) \quad \text{com } I_2 > I_1$$
 
 Resultado: $p^*$ sobe e $Q^*$ sobe.
 
@@ -92,7 +92,7 @@ Resultado: $p^*$ sobe e $Q^*$ sobe.
 
 Se uma inovação reduz custos de produção, a curva de oferta se desloca para a direita:
 
-$$S(p; c_1) \to S(p; c_2) \quad \text{com\ } c_2 < c_1$$
+$$S(p; c_1) \to S(p; c_2) \quad \text{com } c_2 < c_1$$
 
 Resultado: $p^*$ cai e $Q^*$ sobe.
 
