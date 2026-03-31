@@ -1,0 +1,383 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 23 — Intervenção Estatal: Tributação, Subsídios e Controles"
+author: "Prof. Darcio Genicolo Martins"
+date: "Demanda de Mercado, Oferta, Eficiência e Impostos"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Da Decisão Individual ao Mercado
+
+Até agora: consumidor **individual** ($x_i^*$) e firma **individual** ($q_j^*$).
+
+. . .
+
+**Hoje:** como agregar milhões de agentes e analisar o **equilíbrio de mercado**.
+
+. . .
+
+1. Demanda de mercado (soma horizontal)
+2. Oferta de mercado e horizontes temporais
+3. Equilíbrio competitivo e bem-estar
+4. Impostos e incidência tributária
+
+## Soma Horizontal das Demandas {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$X(p) = \sum_{i=1}^{n} x_i(p)$$
+:::
+
+. . .
+
+Para cada nível de preço $p$, somamos as **quantidades** de todos os $n$ consumidores.
+
+. . .
+
+**Elasticidade-preço de mercado** --- média ponderada:
+
+$$\varepsilon_{X,p} = \sum_{i=1}^{n} \frac{x_i}{X} \cdot \varepsilon_{x_i, p}$$
+
+. . .
+
+:::{.callout-note title="Implicação"}
+A composição dos consumidores importa: se os mais sensíveis ao preço representam faixa maior, a elasticidade de mercado é mais alta.
+:::
+
+## Propriedades da Demanda de Mercado
+
+:::: {.columns}
+::: {.column width="50%"}
+**Herda das individuais:**
+
+- Inclinação negativa (em geral)
+- Desloca com renda agregada
+- Desloca com preços de substitutos/complementares
+:::
+::: {.column width="50%"}
+**Ganhos da agregação:**
+
+- Mais "suave" com muitos consumidores
+- Irregularidades individuais se cancelam
+- Lei da Demanda pode emergir da agregação (Hildenbrand, 1994)
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A distribuição de renda importa: mesma renda total concentrada vs. distribuída gera demandas de mercado diferentes.
+:::
+
+## Três Horizontes Temporais {data-background-color="#E50505"}
+
+| Horizonte | Oferta | Ajuste | Exemplo |
+|:----------|:-------|:-------|:--------|
+| **Curtíssimo prazo** | Fixa ($S = \bar{Q}$, vertical) | Só preço | Feirante com caminhão de tomates |
+| **Curto prazo** | $S(p) = \sum_j S_j(p)$, $p \geq CVMe_{min}$ | Produção, não capital | Fábrica liga segundo turno |
+| **Longo prazo** | Horizontal ou crescente | Capital + entrada/saída | Novas fábricas entram |
+
+. . .
+
+**Oferta individual de curto prazo:**
+
+::: {.eq-highlight}
+$$S_j(p) = \begin{cases} q_j \text{ t.q. } CMg_j(q_j) = p, & p \geq CVMe_{\min} \\ 0, & p < CVMe_{\min} \end{cases}$$
+:::
+
+## Equilíbrio Competitivo
+
+::: {.eq-highlight}
+$$X(p^*) = S(p^*)$$
+:::
+
+. . .
+
+**Estabilidade walrasiana:** $\; p > p^* \Rightarrow$ excesso de oferta $\Rightarrow$ preço cai; $\; p < p^* \Rightarrow$ excesso de demanda $\Rightarrow$ preço sobe.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na feira, se o tomate está caro demais, sobra na barraca e o feirante baixa. Se está barato, falta e os compradores competem. O equilíbrio é onde a pilha "dá certo" com a fila.
+:::
+
+## Oferta e Demanda --- Interativo
+
+<iframe src="graficos/cap13/oferta-demanda.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Equilibrio de oferta e demanda"></iframe>
+
+## Estática Comparativa {.smaller}
+
+Equilíbrio implícito: $X(p, \alpha) = S(p, \beta)$
+
+. . .
+
+**Choque de demanda** ($\alpha \uparrow$, demanda para direita):
+
+$$\frac{dp}{d\alpha} = \frac{\partial X/\partial \alpha}{\partial S/\partial p - \partial X/\partial p} > 0$$
+
+. . .
+
+**Choque de oferta** ($\beta \uparrow$, custo sobe, oferta para esquerda):
+
+$$\frac{dp}{d\beta} = \frac{-\partial S/\partial \beta}{\partial S/\partial p - \partial X/\partial p} > 0$$
+
+. . .
+
+:::{.callout-note title="Exemplos Brasileiros"}
+Demanda: RenovaBio $\uparrow$ demanda de etanol $\Rightarrow$ preço sobe. Oferta: geada 2021 no Paraná $\Rightarrow$ café +80% em 12 meses.
+:::
+
+## Longo Prazo: Entrada e Saída
+
+No longo prazo, **lucro zero** para a firma marginal:
+
+::: {.eq-highlight}
+$$p^* = CMe_{\min} \quad \Rightarrow \quad \pi = 0$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Lucro > 0:**
+
+- Novas firmas entram
+- Oferta desloca para direita
+- Preço cai até $\pi = 0$
+:::
+::: {.column width="48%"}
+**Lucro < 0:**
+
+- Firmas saem
+- Oferta desloca para esquerda
+- Preço sobe até $\pi = 0$
+:::
+::::
+
+. . .
+
+**Oferta de longo prazo:** horizontal (custos constantes) ou levemente crescente (custos crescentes).
+
+## Equilibrio de Longo Prazo com Intervencao
+
+<iframe src="graficos/cap13/equilibrio-longo-prazo.html" title="Equilíbrio de Longo Prazo com Intervenção" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Excedente Total {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$W = \underbrace{\int_0^{Q^*} p^d(Q)\, dQ - p^* Q^*}_{EC} + \underbrace{p^* Q^* - \int_0^{Q^*} CMg(Q)\, dQ}_{EP}$$
+:::
+
+. . .
+
+$$W = \int_0^{Q^*} \left[p^d(Q) - CMg(Q)\right] dQ$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Cada transação onde disposição a pagar > custo marginal gera valor. O equilíbrio competitivo realiza **todas** essas transações.
+:::
+
+## Primeiro Teorema do Bem-Estar
+
+:::{.callout-warning title="Teorema (Equilíbrio Parcial)"}
+O equilíbrio competitivo **maximiza** o excedente total $W = EC + EP$.
+:::
+
+. . .
+
+**Demonstração:** $\;\dfrac{dW}{dQ} = p^d(Q) - CMg(Q) = 0$ no equilíbrio. CSO: $\dfrac{d^2W}{dQ^2} < 0$ pois demanda decrescente e $CMg$ crescente. $\blacksquare$
+
+. . .
+
+**Hipóteses cruciais:** tomadores de preço, sem externalidades, informação completa, sem poder de mercado.
+
+. . .
+
+Violação $\Rightarrow$ **falhas de mercado** (Caps. 19--20).
+
+## Perda de Peso Morto
+
+::: {.eq-highlight}
+$$PPM = \int_{Q_t}^{Q^*} \left[p^d(Q) - CMg(Q)\right] dQ$$
+:::
+
+. . .
+
+Qualquer desvio de $Q^*$ --- imposto, teto/piso de preço, monopólio --- gera PPM: transações mutuamente benéficas que **deixam de ocorrer**.
+
+. . .
+
+:::{.callout-warning title="Regra"}
+A PPM é valor que **ninguém captura** --- nem consumidor, nem produtor, nem governo. É o "dinheiro queimado" da economia.
+:::
+
+## Quem Realmente Paga o Imposto? {data-background-color="#E50505"}
+
+Imposto específico de $t$ por unidade. **Resultado fundamental:**
+
+$$p_c - p_p = t \qquad \text{(sempre)}$$
+
+. . .
+
+A divisao da carga depende das **elasticidades relativas**:
+
+::: {.eq-highlight}
+$$\text{Fracao}_C = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|}, \qquad \text{Fracao}_P = \frac{|\varepsilon_D|}{\varepsilon_S + |\varepsilon_D|}$$
+:::
+
+. . .
+
+| Cenário | Quem paga mais? |
+|:--------|:---------------|
+| Demanda inelástica, oferta elástica | **Consumidor** |
+| Oferta inelástica, demanda elástica | **Produtor** |
+| Elasticidades iguais | Divisão 50/50 |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O imposto cai no colo de quem **não pode fugir** --- quem tem menos alternativas absorve mais da carga. A incidência **legal** é irrelevante para o resultado econômico.
+:::
+
+## Incidência Tributária --- Interativo
+
+<iframe src="graficos/cap13/incidencia-tributaria.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Incidencia tributaria"></iframe>
+
+## PPM do Imposto --- JSXGraph
+
+<div id="graph-a23-ppm" style="width:700px;height:350px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Imposto $t$: <input type="range" id="sl-a23-t" min="0" max="8" value="3" step="0.5" oninput="updA23()"> <span id="val-a23-t">3.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a23-ppm',{
+    boundingbox:[-1,18,18,-1], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'Q',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:12}},
+                 y:{name:'P',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:12}}}
+  });
+  var aD=15, bD=1, aS=1, bS=0.8;
+  var dLine, sLine, sLineT, ppmPoly, eqPt, eqPtT, txtPPM;
+  function draw(){
+    brd.suspendUpdate();
+    if(dLine) brd.removeObject(dLine);
+    if(sLine) brd.removeObject(sLine);
+    if(sLineT) brd.removeObject(sLineT);
+    if(ppmPoly) brd.removeObject(ppmPoly);
+    if(eqPt) brd.removeObject(eqPt);
+    if(eqPtT) brd.removeObject(eqPtT);
+    if(txtPPM) brd.removeObject(txtPPM);
+    var t = parseFloat(document.getElementById('sl-a23-t').value);
+    var Qe = (aD - aS)/(bD + bS);
+    var Pe = aD - bD*Qe;
+    var Qt = (aD - aS - t)/(bD + bS);
+    var Pc = aD - bD*Qt;
+    var Pp = aS + bS*Qt;
+    dLine = brd.create('functiongraph',[function(q){return aD - bD*q;},0,16],{strokeColor:'#1A56DB',strokeWidth:2.5});
+    sLine = brd.create('functiongraph',[function(q){return aS + bS*q;},0,16],{strokeColor:'#2ECC40',strokeWidth:2.5});
+    sLineT = brd.create('functiongraph',[function(q){return aS + t + bS*q;},0,16],{strokeColor:'#E50505',strokeWidth:2,dash:2});
+    if(t > 0 && Qt > 0){
+      ppmPoly = brd.create('polygon',[[Qt,Pc],[Qe,Pe],[Qt,Pp]],
+        {fillColor:'#E50505',fillOpacity:0.25,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+      var ppmVal = 0.5*t*(Qe - Qt);
+      txtPPM = brd.create('text',[Qt+0.5,(Pc+Pp)/2,'PPM='+ppmVal.toFixed(1)],{fontSize:13,cssClass:'jxg-bold'});
+    }
+    eqPt = brd.create('point',[Qe,Pe],{size:4,fillColor:'#333',strokeColor:'#333',name:'E*',label:{fontSize:12,offset:[8,5]}});
+    if(t > 0 && Qt > 0){
+      eqPtT = brd.create('point',[Qt,Pc],{size:4,fillColor:'#E50505',strokeColor:'#E50505',name:'E_t',label:{fontSize:12,offset:[8,5]}});
+    }
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA23 = function(){
+    document.getElementById('val-a23-t').textContent = parseFloat(document.getElementById('sl-a23-t').value).toFixed(1);
+    draw();
+  };
+})();
+</script>
+
+## PPM Cresce com $t^2$ {.smaller}
+
+::: {.eq-highlight}
+$$PPM \approx \frac{1}{2} \cdot \frac{|\varepsilon_D| \cdot \varepsilon_S}{|\varepsilon_D| + \varepsilon_S} \cdot \frac{t^2}{p^*} \cdot Q^*$$
+:::
+
+. . .
+
+**Implicações:**
+
+1. **Dobrar a alíquota quadruplica a PPM** --- impostos altos são desproporcionalmente distorcivos.
+2. **PPM é menor com elasticidades menores** --- tributar bens com demanda/oferta inelásticas distorce pouco.
+3. **Princípio de Ramsey:** alíquotas inversamente proporcionais às elasticidades minimizam PPM total.
+
+. . .
+
+:::{.callout-note title="Reforma Tributária Brasileira (EC 132/2023)"}
+Substituiu 5 tributos (ICMS, ISS, PIS, Cofins, IPI) por 2 (IBS e CBS). Mudar a forma não muda quem paga --- muda transparência, simplicidade e magnitude da distorção.
+:::
+
+## Placar das Intervenções {.smaller}
+
+| Intervenção | EC | EP | Receita Gov. | PPM | $Q$ |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| Equilíbrio livre | Max conjunto | Max conjunto | 0 | 0 | $Q^*$ |
+| Teto de preço | Ambíguo | $\downarrow$ | 0 | $>0$ | $\downarrow$ |
+| Piso de preço | $\downarrow$ | Ambíguo | 0 | $>0$ | $\downarrow$ |
+| Imposto $t$ | $\downarrow$ | $\downarrow$ | $tQ_t > 0$ | $>0$ | $\downarrow$ |
+| Subsídio $s$ | $\uparrow$ | $\uparrow$ | $-sQ_s < 0$ | $>0$ | $\uparrow$ |
+
+. . .
+
+:::{.callout-warning title="Princípio Geral"}
+Qualquer desvio do equilíbrio competitivo gera PPM (sob hipóteses do 1o Teorema). Transferências *lump sum* dominam controles de preços como instrumento redistributivo.
+:::
+
+## Controles de Precos: Teto e Piso
+
+<iframe src="graficos/cap13/controles-precos.html" title="Controles de Preços: Teto e Piso" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Demanda de mercado** = soma horizontal das individuais; elasticidade depende da composição.
+
+2. **Equilíbrio competitivo** maximiza excedente total (1o Teorema do Bem-Estar).
+
+3. **Incidência econômica** depende de elasticidades, não da lei. O lado mais inelástico paga mais.
+
+4. **PPM $\propto t^2$**: impostos altos são desproporcionalmente custosos.
+
+. . .
+
+**Próxima aula:** Escolha sob incerteza --- loterias, utilidade esperada e aversão ao risco.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

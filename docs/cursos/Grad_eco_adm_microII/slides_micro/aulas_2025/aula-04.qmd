@@ -1,0 +1,407 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 04 — Utilidade e Curvas de Indiferença"
+author: "Prof. Darcio Genicolo Martins"
+date: "Função Utilidade, TMS e Tipos de Preferências"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roadmap da Aula {data-background-color="#E50505"}
+
+## Das Regras aos Cálculos
+
+Na aula anterior: axiomas e Teorema de Debreu garantem a existência de $u(\mathbf{x})$.
+
+. . .
+
+Hoje colocamos **nomes e rostos** na função de utilidade:
+
+1. Utilidade ordinal vs. cardinal
+2. Taxa Marginal de Substituição (TMS)
+3. Utilidade marginal e a razão $UMg_1 / UMg_2$
+4. Catálogo: Cobb-Douglas, substitutos, complementares, CES, quase-linear
+5. Transformações monotônicas
+
+:::{.callout-note title="Observação"}
+Cada forma funcional captura um **tipo diferente de consumidor** — e reaparecerão em todo capítulo daqui para frente.
+:::
+
+## Os Números Importam? {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$u(\mathbf{x}) = 10, \; u(\mathbf{y}) = 5 \implies \mathbf{x} \succ \mathbf{y}$$
+:::
+
+Mas $\mathbf{x}$ **NÃO** é "duas vezes melhor" que $\mathbf{y}$!
+
+. . .
+
+**Transformação monotônica:** Se $f$ é estritamente crescente, então $\hat{u} = f(u)$ representa as mesmas preferências.
+
+$$u = x_1^{1/3} x_2^{2/3} \quad \Leftrightarrow \quad \hat{u} = \ln u = \tfrac{1}{3}\ln x_1 + \tfrac{2}{3}\ln x_2$$
+
+. . .
+
+:::{.callout-warning title="Cuidado"}
+Utilidade marginal $UMg_i$ muda com a transformação! O que é **invariante** é a razão $UMg_1/UMg_2 = TMS$. Não confunda "UMg decrescente" (cardinal, sem sentido ordinal) com "TMS decrescente" (ordinal, com sentido econômico).
+:::
+
+## Taxa Marginal de Substituição (TMS)
+
+::: {.eq-highlight}
+$$TMS_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{UMg_1}{UMg_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2}$$
+:::
+
+. . .
+
+**Interpretação:** "quantas unidades de $x_2$ o consumidor topa ceder por uma unidade a mais de $x_1$, sem perder satisfação" — é o **preço pessoal de troca**.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Demonstração:**
+
+Ao longo da curva de indiferença: $du = 0$
+
+$$\frac{\partial u}{\partial x_1}dx_1 + \frac{\partial u}{\partial x_2}dx_2 = 0$$
+
+$$TMS = -\frac{dx_2}{dx_1} = \frac{UMg_1}{UMg_2}$$
+:::
+::: {.column width="48%"}
+**TMS decrescente:**
+
+- Quanto mais $x_1$, menos $x_2$ se topa ceder
+- Equivale a convexidade estrita
+- Consumidores preferem **variedade**
+:::
+::::
+
+## TMS no Ponto — Interativo
+
+Arraste o ponto P ao longo da curva e veja a reta tangente e o cálculo da TMS:
+
+<iframe src="graficos/cap03/tms-ponto.html" title="TMS no ponto" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## Cobb-Douglas {data-background-color="#E50505"}
+
+## O Cavalo de Batalha
+
+::: {.eq-highlight}
+$$u(x_1, x_2) = x_1^a \, x_2^b, \quad a, b > 0$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Propriedades:**
+
+- Curvas: hipérboles convexas
+- $TMS = \frac{a}{b} \cdot \frac{x_2}{x_1}$
+- Participação constante na despesa: $\frac{a}{a+b}$
+- Elasticidade de substituição: $\sigma = 1$
+:::
+::: {.column width="48%"}
+**Exercício Resolvido:**
+
+$u = x_1^{2/5} x_2^{3/5}$, ponto $(10, 15)$:
+
+$$TMS = \frac{2/5}{3/5} \cdot \frac{15}{10} = \frac{2}{3} \cdot 1{,}5 = 1$$
+
+Troca 1:1 neste ponto.
+:::
+::::
+
+:::{.callout-tip title="Intuição Econômica"}
+A Cobb-Douglas é conveniente por gerar demandas com forma fechada. A participação de cada bem na despesa é **constante** — independe de preços e renda.
+:::
+
+## Substitutos Perfeitos
+
+::: {.eq-highlight}
+$$u(x_1, x_2) = ax_1 + bx_2, \quad a, b > 0$$
+:::
+
+. . .
+
+- Curvas de indiferença: **retas** com inclinação $-a/b$
+- $TMS = a/b$ (constante!)
+- $\sigma = \infty$
+
+. . .
+
+:::{.callout-warning title="Soluções de canto"}
+O consumidor gasta **tudo** no bem com maior $a_i/p_i$:
+
+- Se $a/p_1 > b/p_2$: $x_1^* = m/p_1$, $x_2^* = 0$
+- Se $a/p_1 < b/p_2$: $x_1^* = 0$, $x_2^* = m/p_2$
+- Caso-faca: qualquer cesta na reta é ótima
+
+A condição de tangência **não se aplica** (TMS e inclinação da RO são ambas constantes).
+:::
+
+## Complementos Perfeitos
+
+::: {.eq-highlight}
+$$u(x_1, x_2) = \min\{ax_1, \, bx_2\}, \quad a, b > 0$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Geometria:**
+
+- Curvas em **L** (ângulo reto)
+- Vértice na reta $ax_1 = bx_2$
+- $\sigma = 0$
+:::
+::: {.column width="48%"}
+**TMS:**
+
+- Indefinida no vértice
+- $0$ nos segmentos horizontais
+- $\infty$ nos segmentos verticais
+
+Nenhum ajuste de preços muda a proporção!
+:::
+::::
+
+. . .
+
+**Exemplos:** sapato esquerdo/direito, CPU/monitor, impressora/cartucho.
+
+:::{.callout-note title="Observação"}
+A solução ótima é sempre no vértice: $ax_1^* = bx_2^*$, com $p_1 x_1 + p_2 x_2 = m$.
+:::
+
+## CES: A Familia Unificadora {data-background-color="#E50505"}
+
+## Um Parâmetro Governa Tudo
+
+::: {.eq-highlight}
+$$u(x_1, x_2) = \left(x_1^{\rho} + x_2^{\rho}\right)^{1/\rho}, \quad \rho \leq 1, \; \rho \neq 0$$
+:::
+
+. . .
+
+$$\sigma = \frac{1}{1 - \rho}, \qquad TMS = \left(\frac{x_1}{x_2}\right)^{\rho - 1}$$
+
+. . .
+
+| $\rho$ | $\sigma$ | Tipo | Curvas |
+|:---:|:---:|:---|:---|
+| $\to -\infty$ | $0$ | Complementos perfeitos | L |
+| $0$ | $1$ | Cobb-Douglas | Hipérboles |
+| $1$ | $\infty$ | Substitutos perfeitos | Retas |
+
+:::{.callout-tip title="Intuição Econômica"}
+A CES unifica todas as formas anteriores num único framework. Os dados podem "escolher" o grau de substituibilidade que melhor se ajusta ao comportamento observado.
+:::
+
+## CES: Exemplo Numérico
+
+Ponto $(x_1, x_2) = (4, 8)$. $TMS = (x_1/x_2)^{\rho - 1} = (0{,}5)^{\rho - 1}$
+
+. . .
+
+| $\rho$ | $\sigma$ | $TMS(4,8)$ | Interpretação |
+|:---:|:---:|:---:|:---|
+| $0{,}5$ | $2$ | $1{,}41$ | Substituição fácil |
+| $0$ (CD) | $1$ | $2{,}00$ | Moderada |
+| $-1$ | $0{,}5$ | $4{,}00$ | Difícil |
+| $-5$ | $0{,}17$ | $64{,}00$ | Quase complementares |
+
+. . .
+
+:::{.callout-note title="Brasil na Prática"}
+Etanol vs. gasolina no Brasil: $\sigma \approx 3$ a $5$ (Santos, 2013; Salvo & Huse, 2013). Substituição alta mas finita — explica por que a participação do etanol varia *suavemente* com o preço relativo.
+:::
+
+## Tipos de Preferências — Interativo
+
+Ajuste $\rho$ e observe a transformação contínua das curvas de indiferença:
+
+<div id="graph-a15-ces" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\rho$: <input type="range" id="sl-a15-rho" min="-5" max="0.95" value="0" step="0.05" oninput="updA15CES()"> <span id="val-a15-rho">0.00</span> &nbsp; ($\sigma$ = <span id="val-a15-sigma">1.00</span>)</label>
+</div>
+<script>
+(function(){
+  var brd=JXG.JSXGraph.initBoard('graph-a15-ces',{
+    boundingbox:[-1,22,22,-1],axis:true,showCopyright:false,showNavigation:false,
+    defaultAxes:{x:{name:'x\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2082',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var rho=0;
+  var curves=[];
+  var uLevels=[4,7,10,13,16];
+  var colors=['#E50505','#1565C0','#2E7D32','#F7C704','#730D9F'];
+  function cesU(x1,x2,r){
+    if(Math.abs(r)<0.01) return Math.pow(x1,0.5)*Math.pow(x2,0.5);
+    return Math.pow(Math.pow(x1,r)+Math.pow(x2,r),1/r);
+  }
+  function draw(){
+    brd.suspendUpdate();
+    curves.forEach(function(c){brd.removeObject(c);});
+    curves=[];
+    for(var k=0;k<uLevels.length;k++){
+      var ubar=uLevels[k];
+      var r=rho;
+      (function(ub,col,rr){
+        var c=brd.create('curve',[
+          function(t){return t;},
+          function(t){
+            if(t<0.2) return NaN;
+            if(Math.abs(rr)<0.01){var v=ub*ub/t; return v>20?NaN:v;}
+            var base=Math.pow(ub,rr)-Math.pow(t,rr);
+            if(base<=0) return NaN;
+            var v2=Math.pow(base,1/rr);
+            return v2>20?NaN:v2;
+          },
+          0.2,20
+        ],{strokeColor:col,strokeWidth:2});
+        curves.push(c);
+      })(ubar,colors[k],r);
+    }
+    var sigma=(1/(1-rho)).toFixed(2);
+    if(rho>=0.99) sigma='\u221E';
+    var txt=brd.create('text',[15,20,'\u03C1='+rho.toFixed(2)+', \u03C3='+sigma],{fontSize:13,color:'#333'});
+    curves.push(txt);
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA15CES=function(){
+    rho=parseFloat(document.getElementById('sl-a15-rho').value);
+    document.getElementById('val-a15-rho').textContent=rho.toFixed(2);
+    var s=(1/(1-rho));
+    document.getElementById('val-a15-sigma').textContent=s.toFixed(2);
+    draw();
+  };
+})();
+</script>
+
+## Família CES: Variando rho
+
+<iframe src="graficos/cap03/ces-continua.html" title="Família CES: Variando ρ" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Quase-Linear {data-background-color="#E50505"}
+
+## Quando um Bem é "Dinheiro"
+
+::: {.eq-highlight}
+$$u(x_1, x_2) = v(x_1) + x_2, \quad v' > 0, \; v'' < 0$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Propriedades:**
+
+- $TMS = v'(x_1)$ — depende **só** de $x_1$!
+- Curvas são **translações verticais**
+- Efeito renda **nulo** sobre $x_1$
+- Todo aumento de renda vai para $x_2$
+:::
+::: {.column width="48%"}
+**Consequências:**
+
+- Demanda por $x_1$ depende só de preços
+- $VC = VE = \Delta EC$
+- Ideal para análise de **equilíbrio parcial**
+- Muito usada em organização industrial
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na quase-linear, $x_2$ funciona como "dinheiro" — todo aumento de renda vai para $x_2$, sem afetar a escolha de $x_1$. É por isso que as medidas de bem-estar coincidem.
+:::
+
+## Homotética vs. Quase-linear
+
+<iframe src="graficos/cap03/homotetica-vs-quaselinear.html" title="Homotética vs. Quase-linear" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Catálogo Completo de Preferências {.smaller}
+
+| Função Utilidade | TMS | Demanda $x_1^*$ | $\sigma$ | Curvas |
+|:---|:---:|:---:|:---:|:---|
+| CD: $x_1^\alpha x_2^{1-\alpha}$ | $\frac{\alpha}{1-\alpha}\frac{x_2}{x_1}$ | $\frac{\alpha m}{p_1}$ | $1$ | Hipérboles |
+| Substitutos: $ax_1 + bx_2$ | $\frac{a}{b}$ | $\frac{m}{p_1}$ ou $0$ | $\infty$ | Retas |
+| Complementares: $\min(ax_1, bx_2)$ | $0$ ou $\infty$ | $\frac{bm}{bp_1+ap_2}$ | $0$ | L |
+| CES: $(x_1^\rho + x_2^\rho)^{1/\rho}$ | $\left(\frac{x_1}{x_2}\right)^{\rho-1}$ | complexa | $\frac{1}{1-\rho}$ | Varia |
+| Quase-linear: $v(x_1) + x_2$ | $v'(x_1)$ | $v'^{-1}(p_1/p_2)$ | — | Translações |
+
+:::{.callout-note title="Observação"}
+A CES engloba CD ($\rho \to 0$), substitutos ($\rho = 1$) e complementares ($\rho \to -\infty$) como casos especiais.
+:::
+
+## Exercício: TMS e Escolha Ótima
+
+**Atividade em sala:** Você tem 10 fatias de pizza e 2 cervejas.
+
+. . .
+
+1. Quantas fatias topa trocar por 1 cerveja extra? $\to$ sua TMS
+2. Agora inverta: 2 pizzas e 10 cervejas. Quantas fatias por 1 cerveja? $\to$ nova TMS
+
+. . .
+
+**Resultado esperado:** o número do caso 2 é **menor** $\to$ TMS decrescente!
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A TMS caiu porque pizza ficou escassa e cerveja abundante. A disposição a trocar não é fixa — depende da composição da cesta. Isso é a **convexidade** em ação.
+:::
+
+## O Que Aprendemos
+
+| Conceito | Resultado-chave |
+|:---|:---|
+| Utilidade ordinal | Ordem importa, valores não |
+| TMS | $UMg_1/UMg_2$ = preço pessoal de troca |
+| Cobb-Douglas | Participação constante, $\sigma = 1$ |
+| Substitutos | TMS constante, soluções de canto |
+| Complementos | Proporções fixas, $\sigma = 0$ |
+| CES | Unifica tudo via $\rho$ |
+| Quase-linear | Efeito renda nulo sobre $x_1$ |
+
+. . .
+
+:::{.callout-tip title="Próxima Aula"}
+Próximo tópico: **Restrição Orçamentária e Escolha Ótima** — sobrepomos curvas de indiferença à reta orçamentária e encontramos o ponto de tangência $TMS = p_1/p_2$.
+:::
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no portal da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

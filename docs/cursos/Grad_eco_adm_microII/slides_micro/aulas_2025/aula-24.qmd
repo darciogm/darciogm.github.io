@@ -1,0 +1,412 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 24 — Monopólio I: Maximização e Bem-Estar"
+author: "Prof. Darcio Genicolo Martins"
+date: "Barreiras, Markup e Perda de Peso Morto"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roadmap da Aula {data-background-color="#E50505"}
+
+## De Muitos para Um
+
+Na aula anterior, mercados competitivos maximizavam o bem-estar. Agora:
+
+. . .
+
+- **Um único vendedor** enfrenta toda a demanda
+- Escolhe **preço e quantidade** (não é mais tomador de preço)
+- Resultado: $p > CMg$, $Q < Q^*$, perda de peso morto
+
+. . .
+
+**Estrutura da aula:**
+
+1. Barreiras à entrada
+2. Maximização: $RMg = CMg$
+3. Receita marginal e elasticidade
+4. Indice de Lerner
+5. Ineficiência e PPM
+
+:::{.callout-note title="Observação"}
+O monopolista tem poder, mas não é onipotente: se exagerar no preço, ninguém compra.
+:::
+
+## Muralhas, Fossos e Portoes {data-background-color="#E50505"}
+
+O monopólio só se sustenta por **barreiras à entrada**:
+
+. . .
+
+:::: {.columns}
+::: {.column width="32%"}
+**Legais**
+
+- Patentes (20 anos, Lei 9.279/96)
+- Concessões e licenças
+- Direitos autorais
+:::
+::: {.column width="32%"}
+**Naturais**
+
+- Economias de escala
+- Subaditividade de custos
+- $C(q) < C(q_1) + C(q_2)$
+:::
+::: {.column width="32%"}
+**Estrategicas**
+
+- Excesso de capacidade
+- Preços predatórios
+- Proliferação de marcas
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Em um monopólio natural, uma única empresa atende todo o mercado a um custo menor do que duas fariam — duplicar a infraestrutura seria desperdício.
+:::
+
+## Monopólio Natural --- Definição Formal
+
+::: {.eq-highlight}
+$$C(q) < C(q_1) + C(q_2), \quad \text{para todo } q_1, q_2 > 0 \text{ com } q_1 + q_2 = q$$
+:::
+
+. . .
+
+**Exemplos brasileiros:**
+
+| Setor | Regulador | Barreira |
+|:---|:---|:---|
+| Distribuição de energia | ANEEL | Rede física |
+| Saneamento | ANA | Tubulação |
+| Telefonia fixa | ANATEL | Cabeamento |
+
+:::{.callout-note title="Observação"}
+A subaditividade dos custos é condição necessária. Um monopólio *de fato* por razões históricas não é necessariamente natural.
+:::
+
+## O Problema do Monopolista {data-background-color="#E50505"}
+
+O monopolista enfrenta toda a curva de demanda. Se a demanda inversa e $p(q)$:
+
+::: {.eq-highlight}
+$$\max_q \; \pi(q) = p(q) \cdot q - C(q)$$
+:::
+
+. . .
+
+**Condição de primeira ordem:**
+
+$$\underbrace{p(q) + q \cdot p'(q)}_{\text{Receita Marginal}} = \underbrace{C'(q)}_{\text{Custo Marginal}}$$
+
+. . .
+
+::: {.eq-highlight}
+$$\boxed{RMg(q^m) = CMg(q^m)}$$
+:::
+
+:::{.callout-warning title="Dois efeitos opostos"}
+**Efeito quantidade** (+): vende mais unidades. **Efeito preço** (−): reduz o preço de *todas* as unidades. Por isso $RMg < p$.
+:::
+
+## Monopólio --- Interativo
+
+Ajuste os parâmetros da demanda e do CMg para visualizar o equilíbrio:
+
+<iframe src="graficos/cap15/monopolio.html" title="Equilibrio de monopolio" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## Receita Marginal e Elasticidade
+
+A RMg pode ser expressa em termos da elasticidade-preço da demanda:
+
+::: {.eq-highlight}
+$$RMg = p\left(1 - \frac{1}{|\varepsilon_p|}\right)$$
+:::
+
+. . .
+
+| Faixa | $|\varepsilon_p|$ | $RMg$ | Monopolista opera? |
+|:---|:---:|:---:|:---:|
+| Elástica | $> 1$ | $> 0$ | **Sim** |
+| Unitária | $= 1$ | $= 0$ | Limite |
+| Inelástica | $< 1$ | $< 0$ | **Nunca** |
+
+. . .
+
+:::{.callout-warning title="Erro Comum"}
+O monopolista **nunca** opera na faixa inelástica. Se $RMg < 0$, pode aumentar receita *e* reduzir custo simplesmente produzindo menos.
+:::
+
+## A Regra de Markup
+
+Da condição $RMg = CMg$:
+
+::: {.eq-highlight}
+$$p = \frac{CMg}{1 - \frac{1}{|\varepsilon_p|}}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Demanda muito elástica** ($|\varepsilon_p| \to \infty$):
+
+$p \to CMg$
+
+Recupera o resultado competitivo!
+:::
+::: {.column width="48%"}
+**Demanda pouco elástica** ($|\varepsilon_p|$ baixo):
+
+Markup **explode**
+
+Garrafa d'água no estádio: R\$10 vs. R\$2 no supermercado.
+:::
+::::
+
+## Índice de Lerner {data-background-color="#E50505"}
+
+## A Regua do Poder de Mercado
+
+::: {.eq-highlight}
+$$L = \frac{p - CMg}{p} = \frac{1}{|\varepsilon_p|}$$
+:::
+
+. . .
+
+| Estrutura | $L$ |
+|:---|:---:|
+| Concorrência perfeita | $0$ |
+| Monopólio com demanda elástica | Baixo |
+| Monopólio com demanda inelástica | **Alto** |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O índice de Lerner mede o "poder de espremer" o consumidor. O CADE usa medidas como essa para avaliar se fusões criarão poder de mercado excessivo.
+:::
+
+## Monopólio com CMg Variável --- Interativo
+
+Ajuste o custo marginal e veja como o markup e o Lerner respondem:
+
+<div id="graph-a12-mono" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>CMg ($c$): <input type="range" id="sl-a12-c" min="2" max="40" value="10" step="1" oninput="updA12Mono()"> <span id="val-a12-c">10</span></label>
+</div>
+<script>
+(function(){
+  var brd=JXG.JSXGraph.initBoard('graph-a12-mono',{
+    boundingbox:[-3,105,55,-5],axis:true,showCopyright:false,showNavigation:false,
+    defaultAxes:{x:{name:'q',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'P',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var a=100,b=2,c=10;
+  function draw(){
+    brd.suspendUpdate();
+    brd.removeObject(brd.objectsList.filter(function(o){return o.elType!=='axis'&&o.elType!=='ticks';}));
+    var qm=(a-c)/(2*b), pm=a-b*qm, qc=(a-c)/b;
+    brd.create('functiongraph',[function(q){return a-b*q;},0,52],{strokeColor:'#1565C0',strokeWidth:2.5,name:'D',withLabel:true,label:{position:'rt',offset:[5,10],fontSize:12}});
+    brd.create('functiongraph',[function(q){return a-2*b*q;},0,a/(2*b)+1],{strokeColor:'#1565C0',strokeWidth:2,dash:2,name:'RMg',withLabel:true,label:{position:'rt',offset:[5,10],fontSize:12}});
+    brd.create('line',[[0,c],[50,c]],{strokeColor:'#2E7D32',strokeWidth:2.5,straightFirst:false,straightLast:false,name:'CMg='+c,withLabel:true,label:{position:'rt',offset:[5,10],fontSize:12}});
+    brd.create('polygon',[[0,a],[0,pm],[qm,pm]],{fillColor:'#1565C0',fillOpacity:0.12,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    brd.create('polygon',[[0,pm],[0,c],[qm,c],[qm,pm]],{fillColor:'#2E7D32',fillOpacity:0.12,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    brd.create('polygon',[[qm,pm],[qm,c],[qc,c]],{fillColor:'#E50505',fillOpacity:0.2,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    brd.create('point',[qm,pm],{size:4,fillColor:'#E50505',strokeColor:'#E50505',name:'Mon ('+qm.toFixed(0)+','+pm.toFixed(0)+')',label:{fontSize:11,offset:[5,10]}});
+    brd.create('segment',[[qm,0],[qm,pm]],{strokeColor:'#999',dash:3,strokeWidth:1});
+    brd.create('segment',[[0,pm],[qm,pm]],{strokeColor:'#999',dash:3,strokeWidth:1});
+    var L=((pm-c)/pm).toFixed(3);
+    brd.create('text',[35,95,'L = '+L],{fontSize:14,color:'#E50505'});
+    brd.create('text',[35,88,'Lucro = '+((pm-c)*qm).toFixed(0)],{fontSize:13,color:'#2E7D32'});
+    brd.create('text',[35,81,'PPM = '+(0.5*(pm-c)*(qc-qm)).toFixed(0)],{fontSize:13,color:'#E50505'});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA12Mono=function(){
+    c=parseFloat(document.getElementById('sl-a12-c').value);
+    document.getElementById('val-a12-c').textContent=c;
+    draw();
+  };
+})();
+</script>
+
+## Monopólio vs. Concorrência {data-background-color="#E50505"}
+
+Com demanda linear $p = a - bq$ e $CMg = c$ constante:
+
+. . .
+
+| Variável | Concorrência | Monopólio |
+|:---|:---:|:---:|
+| Preço | $c$ | $\frac{a+c}{2}$ |
+| Quantidade | $\frac{a-c}{b}$ | $\frac{a-c}{2b}$ |
+| EC | $\frac{(a-c)^2}{2b}$ | $\frac{(a-c)^2}{8b}$ |
+| EP | $0$ | $\frac{(a-c)^2}{4b}$ |
+| PPM | $0$ | $\frac{(a-c)^2}{8b}$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O monopolista produz **metade** da quantidade competitiva (demanda linear). A PPM é o "triângulo de Harberger" --- valor que ninguém captura.
+:::
+
+## O Custo Social do Monopolio
+
+:::: {.columns}
+::: {.column width="48%"}
+**Harberger (1954):**
+
+PPM $\approx$ 0,1% do PIB (EUA)
+
+"O monopólio importa tão pouco?"
+:::
+::: {.column width="48%"}
+**Cowling & Mueller (1978):**
+
+PPM + rent-seeking $\approx$ 4-13% do PIB
+
+"Custos ocultos sao enormes!"
+:::
+::::
+
+. . .
+
+Três fontes de custo social:
+
+1. **Alocativo** --- triângulo de Harberger
+2. **Rent-seeking** --- recursos gastos para manter o monopólio (lobby, litígios)
+3. **X-inefficiency** (Leibenstein) --- firma sem pressão competitiva opera acima do custo mínimo
+
+## Ausência de Curva de Oferta
+
+:::{.callout-warning title="Cuidado"}
+O monopolista **não tem** curva de oferta! A cada nível de demanda, ele escolhe $(p, q)$ via $RMg = CMg$. Não existe uma relação unívoca $p \to q$.
+:::
+
+. . .
+
+**Por que?**
+
+- Firma competitiva: dado $p$, produz $q$ tal que $p = CMg(q)$ — relacao univoca
+- Monopolista: a quantidade ótima depende da **forma** de toda a curva de demanda, não apenas do preço
+
+. . .
+
+Duas demandas diferentes com o mesmo $p^m$ podem gerar $q^m$ diferentes.
+
+## Estática Comparativa: Imposto {data-background-color="#E50505"}
+
+## Efeito de um Imposto sobre o Monopolista
+
+Com demanda linear e imposto unitário $t$:
+
+::: {.eq-highlight}
+$$p^m(t) = \frac{a + c + t}{2}, \quad q^m(t) = \frac{a - c - t}{2b}$$
+:::
+
+. . .
+
+$$\frac{dp^m}{dt} = \frac{1}{2}$$
+
+O monopolista repassa apenas **metade** do imposto ao consumidor!
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Concorrência perfeita** (oferta elástica):
+
+Repasse = 100%
+:::
+::: {.column width="48%"}
+**Monopólio** (demanda linear):
+
+Repasse = 50%
+
+A outra metade sai do lucro.
+:::
+::::
+
+:::{.callout-note title="Observação"}
+Com demanda isoelástica, o repasse pode **exceder** 100% --- o preço sobe mais que $t$.
+:::
+
+## Exercicio Resolvido
+
+**Demanda:** $p = 80 - 2q$. **Custo:** $C(q) = 200 + 8q$.
+
+. . .
+
+**(a)** $RMg = 80 - 4q = 8 \implies q^m = 18, \; p^m = 44$
+
+$\pi = 44 \times 18 - (200 + 144) = 448$
+
+. . .
+
+**(b)** Lerner: $L = \frac{44 - 8}{44} = 0{,}818$
+
+Elasticidade: $|\varepsilon_p| = \frac{1}{2}\cdot\frac{44}{18} = 1{,}222 \implies L = \frac{1}{1{,}222} = 0{,}818$ $\checkmark$
+
+. . .
+
+**(c)** Competitivo: $q^c = 36$, $p^c = 8$
+
+$PPM = \frac{1}{2}(44-8)(36-18) = 324$
+
+## Estática Comparativa: Monopólio vs. Competição
+
+<iframe src="graficos/cap15/estatica-comparativa.html" title="Estática Comparativa: Monopólio vs. Competição" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Preview: Discriminação de Preços
+
+<iframe src="graficos/cap15/discriminacao-precos.html" title="Preview: Discriminação de Preços" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## O Que Aprendemos
+
+| Conceito | Resultado-chave |
+|:---|:---|
+| Barreiras à entrada | Legais, naturais, estratégicas |
+| Max lucro | $RMg = CMg$, sempre na faixa elástica |
+| Markup | $p = CMg / (1 - 1/|\varepsilon_p|)$ |
+| Lerner | $L = (p - CMg)/p = 1/|\varepsilon_p|$ |
+| PPM | Triângulo de Harberger: $(a-c)^2/8b$ |
+| Imposto | Repasse de 50% (demanda linear) |
+
+. . .
+
+:::{.callout-tip title="Próxima Aula"}
+Aula 13: **Monopólio II** --- discriminação de preços (1o, 2o e 3o grau), tarifa em duas partes, bundling e regulação.
+:::
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no portal da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

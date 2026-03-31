@@ -1,0 +1,411 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 07 — Dualidade na Teoria do Consumidor"
+author: "Prof. Darcio Genicolo Martins"
+date: "Primal, Dual e Identidades de Dualidade"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Onde Estamos no Curso
+
+O consumidor resolve **dois problemas equivalentes**:
+
+. . .
+
+| Problema | Objetivo | Fixo | Resultado |
+|:---------|:---------|:-----|:----------|
+| **Primal** | Max $U$ | Renda $m$ | Demanda marshalliana $x^*(\mathbf{p},m)$ |
+| **Dual** | Min dispêndio | Utilidade $\bar{u}$ | Demanda hicksiana $h(\mathbf{p},\bar{u})$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Primal e dual são duas faces da mesma moeda --- a cesta ótima é idêntica, só muda a pergunta que fazemos.
+:::
+
+## O Problema Primal (Revisão)
+
+::: {.eq-highlight}
+$$\max_{x_1, x_2} \; U(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m$$
+:::
+
+. . .
+
+**Solução:** demandas marshallianas $x_i^*(p_1, p_2, m)$
+
+. . .
+
+**Valor ótimo:** função de utilidade indireta
+
+$$V(p_1, p_2, m) = U\big(x_1^*, x_2^*\big)$$
+
+. . .
+
+:::{.callout-note title="Propriedades de $V$"}
+Homogênea de grau 0 em $(\mathbf{p}, m)$; não crescente em $p_i$; não decrescente em $m$; quase-convexa em $\mathbf{p}$.
+:::
+
+## Minimização do Dispêndio {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad U(x_1, x_2) \geq \bar{u}$$
+:::
+
+. . .
+
+**Lagrangeano:**
+
+$$\mathcal{L} = p_1 x_1 + p_2 x_2 + \lambda\big[\bar{u} - U(x_1, x_2)\big]$$
+
+. . .
+
+**CPOs:** $\; p_i = \lambda \dfrac{\partial U}{\partial x_i}$, $\quad U(x_1,x_2) = \bar{u}$
+
+. . .
+
+**Condição de tangência** (idêntica ao primal!):
+
+$$\frac{p_1}{p_2} = \frac{UMg_1}{UMg_2} = TMS_{12}$$
+
+## Demanda Hicksiana (Compensada)
+
+A solução do dual define as **demandas hicksianas**:
+
+$$h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Marshalliana** $x_i^*(\mathbf{p}, m)$
+
+- Renda $m$ fixa
+- Capta ES + ER
+- Pode violar lei da demanda (Giffen)
+:::
+::: {.column width="48%"}
+**Hicksiana** $h_i(\mathbf{p}, \bar{u})$
+
+- Utilidade $\bar{u}$ fixa
+- Isola ES puro
+- **Sempre** $\partial h_i / \partial p_i \leq 0$
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Cuidado"}
+A hicksiana não é diretamente observável --- precisamos das identidades de dualidade para recuperá-la.
+:::
+
+## Função Dispêndio {.smaller}
+
+::: {.eq-highlight}
+$$E(\mathbf{p}, \bar{u}) = p_1 h_1(\mathbf{p}, \bar{u}) + p_2 h_2(\mathbf{p}, \bar{u}) = \min_{\mathbf{x}: U(\mathbf{x}) \geq \bar{u}} \mathbf{p} \cdot \mathbf{x}$$
+:::
+
+. . .
+
+**Propriedades:**
+
+| # | Propriedade | Significado |
+|:-:|:-----------|:-----------|
+| 1 | Homogênea grau 1 em $\mathbf{p}$ | Preços dobram $\Rightarrow$ gasto dobra |
+| 2 | Não decrescente em $p_i$ | Preços maiores $\Rightarrow$ gasto maior |
+| 3 | Estritamente crescente em $\bar{u}$ | Mais felicidade custa mais |
+| 4 | **Concava** em $\mathbf{p}$ | Consumidor se protege substituindo |
+| 5 | Lema de Shephard | $\partial E / \partial p_i = h_i$ |
+
+## Lema de Shephard
+
+::: {.eq-highlight}
+$$h_i(\mathbf{p}, \bar{u}) = \frac{\partial E(\mathbf{p}, \bar{u})}{\partial p_i}$$
+:::
+
+. . .
+
+**Demonstração (Teorema do Envelope):**
+
+Variação marginal de $p_i$ sobre o valor ótimo do gasto:
+
+$$\frac{\partial E}{\partial p_i} = x_i^* = h_i$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o preço do bem 1 sobe R\$ 1, o aumento no gasto mínimo é **exatamente** a quantidade que o consumidor estava comprando --- na margem, ele não realoca.
+:::
+
+## Exemplo: Cobb-Douglas {.smaller}
+
+Para $u = x_1^a x_2^b$ com $a + b = 1$:
+
+. . .
+
+**Função dispêndio:**
+
+$$E(p_1, p_2, \bar{u}) = \left(\frac{p_1}{a}\right)^a \left(\frac{p_2}{b}\right)^b \cdot \bar{u}$$
+
+. . .
+
+**Hicksianas (via Shephard):**
+
+$$h_1 = \frac{\partial E}{\partial p_1} = \left(\frac{p_2}{p_1}\right)^b \left(\frac{a}{b}\right)^b \bar{u}$$
+
+. . .
+
+**Utilidade indireta:**
+
+$$V(p_1, p_2, m) = \left(\frac{a}{p_1}\right)^a \left(\frac{b}{p_2}\right)^b \cdot m$$
+
+## Dualidade $V \leftrightarrow E$ {data-background-color="#E50505"}
+
+## Duas Funções, Uma Moeda
+
+$V$ fala em "reais" e devolve "felicidade"; $E$ fala em "felicidade" e devolve "reais".
+
+. . .
+
+::: {.eq-highlight}
+$$V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u}$$
+:::
+
+A renda mínima para atingir $\bar{u}$ gera utilidade **exatamente** $\bar{u}$.
+
+. . .
+
+::: {.eq-highlight}
+$$E(\mathbf{p}, V(\mathbf{p}, m)) = m$$
+:::
+
+O custo mínimo de atingir a utilidade máxima com renda $m$ é **exatamente** $m$.
+
+. . .
+
+:::{.callout-note title="Implicação"}
+$V(\mathbf{p}, \cdot)$ e $E(\mathbf{p}, \cdot)$ são **inversas** uma da outra (fixados os preços).
+:::
+
+## Dualidade --- Interativo
+
+<iframe src="graficos/cap04/dualidade.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Dualidade V e E"></iframe>
+
+## $V(m)$ e $E(u)$ como Inversas --- JSXGraph
+
+Observe como $V$ e $E$ são reflexos em torno da reta $y = x$ (fixados preços):
+
+<div id="graph-a21-dual" style="width:700px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$p_1$: <input type="range" id="sl-a21-p1" min="1" max="10" value="4" step="1" oninput="updA21()"> <span id="val-a21-p1">4</span></label>
+  <label>$p_2$: <input type="range" id="sl-a21-p2" min="1" max="10" value="1" step="1" oninput="updA21()"> <span id="val-a21-p2">1</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a21-dual',{
+    boundingbox:[-2,52,52,-2], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'m  ou  u',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:12}},
+                 y:{name:'V(m) / E(u)',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:12}}}
+  });
+  var p1=4, p2=1, a=0.5, b=0.5;
+  var cV, cE, cId;
+  function K(p1,p2){ return Math.pow(a/p1,a)*Math.pow(b/p2,b); }
+  function Kinv(p1,p2){ return Math.pow(p1/a,a)*Math.pow(p2/b,b); }
+  function draw(){
+    brd.suspendUpdate();
+    if(cV) brd.removeObject(cV);
+    if(cE) brd.removeObject(cE);
+    if(cId) brd.removeObject(cId);
+    var k = K(p1,p2), ki = Kinv(p1,p2);
+    cV = brd.create('functiongraph',[function(m){return k*m;},0,50],
+      {strokeColor:'#E50505',strokeWidth:3,name:'V(m)',withLabel:true,label:{fontSize:13,offset:[10,5]}});
+    cE = brd.create('functiongraph',[function(u){return ki*u;},0,50],
+      {strokeColor:'#1A56DB',strokeWidth:3,name:'E(u)',withLabel:true,label:{fontSize:13,offset:[10,-15]}});
+    cId = brd.create('line',[[0,0],[1,1]],
+      {strokeColor:'#999',strokeWidth:1,dash:2,straightFirst:true,straightLast:true,label:{visible:false}});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA21 = function(){
+    p1 = parseFloat(document.getElementById('sl-a21-p1').value);
+    p2 = parseFloat(document.getElementById('sl-a21-p2').value);
+    document.getElementById('val-a21-p1').textContent = p1;
+    document.getElementById('val-a21-p2').textContent = p2;
+    draw();
+  };
+})();
+</script>
+
+## Relação entre Demandas
+
+As demandas marshalliana e hicksiana estão conectadas:
+
+. . .
+
+::: {.eq-highlight}
+$$x_i(\mathbf{p}, m) = h_i\big(\mathbf{p}, V(\mathbf{p}, m)\big)$$
+:::
+
+Avalie a hicksiana no nível de utilidade ótimo $\Rightarrow$ marshalliana.
+
+. . .
+
+::: {.eq-highlight}
+$$h_i(\mathbf{p}, \bar{u}) = x_i\big(\mathbf{p}, E(\mathbf{p}, \bar{u})\big)$$
+:::
+
+Avalie a marshalliana na renda mínima necessária $\Rightarrow$ hicksiana.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Essas identidades garantem a **consistência interna** da teoria do consumidor --- se estimativas empíricas de marshallianas e hicksianas não as satisfazem, algo está errado.
+:::
+
+## Identidade de Roy {data-background-color="#E50505"}
+
+Se alguém lhe dá $V(\mathbf{p}, m)$, você recupera as demandas **sem resolver Lagrangeano**:
+
+. . .
+
+::: {.eq-highlight}
+$$x_i(\mathbf{p}, m) = -\frac{\partial V / \partial p_i}{\partial V / \partial m}$$
+:::
+
+. . .
+
+**Demonstração (em 3 linhas):**
+
+1. Parta de $E(\mathbf{p}, V(\mathbf{p}, m)) = m$
+2. Derive em $p_i$: $\;\frac{\partial E}{\partial p_i} + \frac{\partial E}{\partial \bar{u}} \cdot \frac{\partial V}{\partial p_i} = 0$
+3. Use Shephard ($\partial E/\partial p_i = h_i$) e inversão ($\partial E/\partial \bar{u} = 1/(\partial V/\partial m)$)
+
+## Verificação: Cobb-Douglas
+
+Para $u = x_1^a x_2^b$, $a+b=1$: $\; V = (a/p_1)^a(b/p_2)^b \cdot m$
+
+. . .
+
+$$\frac{\partial V}{\partial p_1} = -a \cdot \frac{V}{p_1}, \qquad \frac{\partial V}{\partial m} = \frac{V}{m}$$
+
+. . .
+
+Pela Identidade de Roy:
+
+$$x_1 = -\frac{-aV/p_1}{V/m} = \frac{am}{p_1} \quad \checkmark$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Roy é a "engenharia reversa" que recupera o carrinho de compras a partir do extrato bancário (utilidade indireta). Shephard faz o mesmo truque partindo da função dispêndio.
+:::
+
+## Mapa das Ferramentas Duais {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Do Primal:**
+
+- $x_i^*(\mathbf{p}, m)$ --- marshalliana
+- $V(\mathbf{p}, m)$ --- utilidade indireta
+- Roy: $V \to x_i^*$
+:::
+::: {.column width="50%"}
+**Do Dual:**
+
+- $h_i(\mathbf{p}, \bar{u})$ --- hicksiana
+- $E(\mathbf{p}, \bar{u})$ --- função dispêndio
+- Shephard: $E \to h_i$
+:::
+::::
+
+. . .
+
+**Ponte:** $V$ e $E$ são inversas $\Rightarrow$ $x_i^* = h_i(\mathbf{p}, V)$ e $h_i = x_i^*(\mathbf{p}, E)$
+
+. . .
+
+:::{.callout-warning title="Para a Próxima Aula"}
+Com essas ferramentas, vamos medir variação de bem-estar em reais: **VC**, **VE** e excedente do consumidor.
+:::
+
+## Exercício Resolvido {.smaller}
+
+**Dados:** $u = x_1^{1/2}x_2^{1/2}$, $p_1=4$, $p_2=1$, $m=100$.
+
+. . .
+
+**Passo 1 --- Marshalliana e $V$:**
+
+$x_1^* = \frac{0{,}5 \times 100}{4} = 12{,}5$, $\; x_2^* = \frac{0{,}5 \times 100}{1} = 50$, $\; V = \sqrt{12{,}5 \times 50} = 25$
+
+. . .
+
+**Passo 2 --- $E(\mathbf{p}, V)$ = ?**
+
+$E = (4/0{,}5)^{0{,}5}(1/0{,}5)^{0{,}5} \times 25 = \sqrt{8}\sqrt{2} \times 25 = 4 \times 25 = 100 \;\checkmark$
+
+. . .
+
+**Passo 3 --- $V(\mathbf{p}, E(\mathbf{p}, \bar{u}))$ = ?**
+
+$V(4, 1, 100) = 25 = \bar{u} \;\checkmark$
+
+. . .
+
+:::{.callout-note title="Resultado"}
+Ambas as identidades de dualidade verificadas: $E(\mathbf{p}, V) = m$ e $V(\mathbf{p}, E) = \bar{u}$.
+:::
+
+## Princípio Lump Sum
+
+<iframe src="graficos/cap04/lump-sum-principle.html" title="Princípio Lump Sum" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Excedente do Consumidor
+
+<iframe src="graficos/cap05/excedente-consumidor.html" title="Excedente do Consumidor" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Primal e dual** produzem a mesma cesta ótima --- mudam as ferramentas derivadas.
+
+2. **Função dispêndio** $E$ é o valor ótimo do dual; **Lema de Shephard** extrai hicksianas de $E$.
+
+3. **Identidades de dualidade:** $V$ e $E$ são inversas; marshallianas e hicksianas se recuperam mutuamente.
+
+4. **Identidade de Roy:** recupera demandas a partir de $V$ --- sem resolver Lagrangeano.
+
+. . .
+
+**Próxima aula:** Excedente do consumidor, VC, VE e princípio *lump sum*.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

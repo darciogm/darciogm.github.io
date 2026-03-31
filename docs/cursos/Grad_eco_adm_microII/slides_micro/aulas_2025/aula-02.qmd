@@ -1,0 +1,364 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 02 — Restrição Orçamentária"
+author: "Prof. Darcio Genicolo Martins"
+date: "Conjunto Orçamentário, Tangência e Lagrangeano"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## O Problema do Consumidor {data-background-color="#E50505"}
+
+## Motivação: Escolhas Sob Escassez
+
+O consumidor enfrenta um problema fundamental:
+
+. . .
+
+> **Dada uma renda limitada, como distribuir gastos para obter a maior satisfação possível?**
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Cada real gasto em um bem é um real a menos disponível para outro. A restrição orçamentária transforma **desejos ilimitados** em **escolhas concretas**.
+:::
+
+## Conjunto e Reta Orçamentária
+
+::: {.eq-highlight}
+$$B(p_1, p_2, I) = \{(x_1, x_2) \in \mathbb{R}^2_+ : p_1 x_1 + p_2 x_2 \leq I\}$$
+:::
+
+. . .
+
+- **Conjunto orçamentário**: triângulo de cestas acessíveis
+- **Reta orçamentária**: fronteira $p_1 x_1 + p_2 x_2 = I$
+- **Interceptos**: $I/p_1$ no eixo $x_1$, $I/p_2$ no eixo $x_2$
+
+. . .
+
+:::{.callout-note title="Inclinação"}
+A inclinação da reta orçamentária é $-p_1/p_2$ — o **custo de oportunidade** de $x_1$ em termos de $x_2$.
+:::
+
+## Visualizando a Restrição Orçamentária
+
+<iframe src="graficos/cap04/restricao-orcamentaria.html" title="Restrição Orçamentária" width="1100" height="560" style="border:none;"></iframe>
+
+## Mudanças na Renda {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+**Aumento de renda** ($I \uparrow$)
+
+- Reta se desloca **para fora**, paralelamente
+- Inclinação **não muda** ($-p_1/p_2$ inalterada)
+- O consumidor pode acessar cestas antes impossíveis
+
+:::
+::: {.column width="48%"}
+**Redução de renda** ($I \downarrow$)
+
+- Reta se desloca **para dentro**, paralelamente
+- Preços relativos permanecem os mesmos
+- O conjunto de cestas acessíveis **encolhe**
+
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Cuidado"}
+Deslocamento paralelo = mesma inclinação. Apenas o poder de compra muda, não os preços relativos.
+:::
+
+## Mudanças nos Preços {.smaller}
+
+| Evento | Efeito na reta | Inclinação | Interceptos |
+|:---|:---|:---:|:---|
+| $p_1 \uparrow$ | Rotação para dentro (eixo $x_1$) | $\|$ sobe | $I/p_1 \downarrow$, $I/p_2$ fixo |
+| $p_1 \downarrow$ | Rotação para fora (eixo $x_1$) | $\|$ cai | $I/p_1 \uparrow$, $I/p_2$ fixo |
+| $p_2 \uparrow$ | Rotação para dentro (eixo $x_2$) | $\|$ cai | $I/p_1$ fixo, $I/p_2 \downarrow$ |
+| Todos $\times 2$ | Rotação para dentro | Mesma | Todos caem pela metade |
+| Todos $\times 2$ e $I \times 2$ | **Nada muda** | Mesma | Mesmos |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Duplicar preços e renda simultaneamente não altera a reta — o que importa são **preços relativos** e **renda real**.
+:::
+
+## A Condição de Tangência {data-background-color="#E50505"}
+
+## O Ponto Ótimo: Análise Gráfica
+
+O consumidor busca a **curva de indiferença mais alta** que ainda toque o conjunto orçamentário.
+
+. . .
+
+Para uma solução interior ($x_1^* > 0$, $x_2^* > 0$):
+
+::: {.eq-highlight}
+$$\text{TMS}_{12} = \frac{p_1}{p_2}$$
+:::
+
+. . .
+
+- **TMS**: taxa de troca *subjetiva* (inclinação da CI)
+- **$p_1/p_2$**: taxa de troca *objetiva* do mercado
+- No ótimo, as duas coincidem
+
+## Equilíbrio do Consumidor — Interativo
+
+<iframe src="graficos/cap04/equilibrio-consumidor.html" title="Equilíbrio do Consumidor" width="1100" height="560" style="border:none;"></iframe>
+
+## Utilidade Marginal Ponderada Igualada
+
+A condição de tangência pode ser reescrita:
+
+::: {.eq-highlight}
+$$\frac{UMg_1}{p_1} = \frac{UMg_2}{p_2}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No ótimo, o **último real** gasto em cada bem produz o **mesmo incremento** de utilidade. Se não fosse assim, valeria a pena realocar gastos.
+:::
+
+. . .
+
+> Se $UMg_1/p_1 > UMg_2/p_2$, o consumidor deveria comprar **mais** do bem 1 e **menos** do bem 2.
+
+## O Lagrangeano do Consumidor {data-background-color="#E50505"}
+
+## Formulação com $n$ Bens
+
+Para $n$ bens, o problema é:
+
+$$\max_{\mathbf{x} \in \mathbb{R}^n_+} \; u(\mathbf{x}) \quad \text{s.a.} \quad \mathbf{p} \cdot \mathbf{x} \leq I$$
+
+. . .
+
+Montamos o **Lagrangeano**:
+
+::: {.eq-highlight}
+$$\mathcal{L}(\mathbf{x}, \lambda) = u(\mathbf{x}) + \lambda \left(I - \sum_{i=1}^{n} p_i x_i\right)$$
+:::
+
+## Condições de Primeira Ordem (CPOs)
+
+As CPOs para solução interior:
+
+$$\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial u}{\partial x_i} - \lambda p_i = 0, \quad i = 1, \ldots, n$$
+
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = I - \sum_{i=1}^{n} p_i x_i = 0$$
+
+. . .
+
+Rearranjando:
+
+::: {.eq-highlight}
+$$\frac{UMg_i}{p_i} = \lambda, \quad \forall \, i$$
+:::
+
+. . .
+
+O multiplicador $\lambda$ é a **utilidade marginal da renda**.
+
+## O Multiplicador $\lambda$: Preço-Sombra da Renda
+
+:::: {.columns}
+::: {.column width="55%"}
+
+- $\lambda^* = \partial V / \partial I$ (teorema do envelope)
+- Mede o ganho em utilidade de **R\$ 1 adicional** de renda
+
+. . .
+
+| Perfil do consumidor | $\lambda$ |
+|:---|:---:|
+| Família na linha da pobreza | **Alto** |
+| Consumidor de alta renda | **Baixo** |
+
+:::
+::: {.column width="40%"}
+
+:::{.callout-note title="Implicação para políticas"}
+O mesmo R\$ 1 transferido gera mais utilidade quando vai para quem tem $\lambda$ alto — base teórica de transferências progressivas como o Bolsa Família.
+:::
+
+:::
+::::
+
+## Tangência + IC + Reta Orçamentária — Interativo
+
+Ajuste preços e renda para visualizar a cesta ótima:
+
+<div id="graph-a16-tangency" style="width:700px;height:340px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$I$: <input type="range" id="sl-a16-I" min="40" max="300" value="120" step="10" oninput="updA16()"> <span id="val-a16-I">120</span></label>
+  <label>$p_1$: <input type="range" id="sl-a16-p1" min="1" max="10" value="3" step="0.5" oninput="updA16()"> <span id="val-a16-p1">3.0</span></label>
+  <label>$p_2$: <input type="range" id="sl-a16-p2" min="1" max="10" value="4" step="0.5" oninput="updA16()"> <span id="val-a16-p2">4.0</span></label>
+  <label>$\alpha$: <input type="range" id="sl-a16-a" min="0.1" max="0.9" value="0.5" step="0.05" oninput="updA16()"> <span id="val-a16-a">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a16-tangency',{
+    boundingbox:[-3,85,85,-5], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'x\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2082',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var objs=[];
+  function draw(){
+    var I=parseFloat(document.getElementById('sl-a16-I').value),
+        p1=parseFloat(document.getElementById('sl-a16-p1').value),
+        p2=parseFloat(document.getElementById('sl-a16-p2').value),
+        a=parseFloat(document.getElementById('sl-a16-a').value);
+    document.getElementById('val-a16-I').textContent=I;
+    document.getElementById('val-a16-p1').textContent=p1.toFixed(1);
+    document.getElementById('val-a16-p2').textContent=p2.toFixed(1);
+    document.getElementById('val-a16-a').textContent=a.toFixed(2);
+    brd.suspendUpdate();
+    objs.forEach(function(o){brd.removeObject(o)});
+    objs=[];
+    var x1s=a*I/p1, x2s=(1-a)*I/p2;
+    var xM=I/p1, yM=I/p2;
+    objs.push(brd.create('polygon',[[0,0],[xM,0],[0,yM]],
+      {fillColor:'#E50505',fillOpacity:0.06,borders:{strokeWidth:0},vertices:{visible:false},highlight:false}));
+    objs.push(brd.create('segment',[[xM,0],[0,yM]],{strokeColor:'#E50505',strokeWidth:3}));
+    var uStar=Math.pow(x1s,a)*Math.pow(x2s,1-a);
+    var icPts=[];
+    for(var t=0.3;t<80;t+=0.3){
+      var y2=Math.pow(uStar/Math.pow(t,a),1/(1-a));
+      if(y2>0&&y2<82) icPts.push([t,y2]);
+    }
+    if(icPts.length>1) objs.push(brd.create('curve',
+      [icPts.map(function(p){return p[0]}),icPts.map(function(p){return p[1]})],
+      {strokeColor:'#1a5276',strokeWidth:2,dash:2}));
+    objs.push(brd.create('point',[x1s,x2s],{size:5,fillColor:'#E50505',strokeColor:'#E50505',
+      name:'('+x1s.toFixed(1)+', '+x2s.toFixed(1)+')',label:{fontSize:11,offset:[8,12]}}));
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA16=draw;
+})();
+</script>
+
+## Exemplo Cobb-Douglas: Passo a Passo {.smaller}
+
+$u(x_1,x_2)=x_1^{1/3}x_2^{2/3}$, $p_1=6$, $p_2=3$, $I=180$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**1. Lagrangeano e CPOs**
+
+$\mathcal{L} = x_1^{1/3}x_2^{2/3} + \lambda(180-6x_1-3x_2)$
+
+$\frac{1}{3}x_1^{-2/3}x_2^{2/3}=6\lambda$
+
+$\frac{2}{3}x_1^{1/3}x_2^{-1/3}=3\lambda$
+
+:::
+::: {.column width="50%"}
+**2. Dividir CPOs e resolver**
+
+$\frac{x_2}{2x_1}=2 \Rightarrow x_2=4x_1$
+
+$6x_1+12x_1=180 \Rightarrow x_1^*=10$, $x_2^*=40$
+
+**3. Fórmula geral CD**: $x_1^*=\frac{a}{a+b}\frac{I}{p_1}=\frac{1/3}{1}\frac{180}{6}=10$ ✓
+
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Parcelas de gasto"}
+Gasto em $x_1$: $6 \times 10 = 60$ (1/3 da renda). Gasto em $x_2$: $3 \times 40 = 120$ (2/3 da renda). Na CD, os expoentes determinam as parcelas.
+:::
+
+## Soluções de Canto
+
+Nem sempre a tangência ocorre no interior:
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Substitutos perfeitos** ($u = ax_1 + bx_2$)
+
+- TMS = $a/b$ é constante
+- Se $a/b > p_1/p_2$: só consome $x_1$
+- Se $a/b < p_1/p_2$: só consome $x_2$
+
+:::
+::: {.column width="48%"}
+**Complementos perfeitos** ($u = \min\{x_1/a, x_2/b\}$)
+
+- Sempre consome na proporção fixa $x_1/a = x_2/b$
+- Tangência **não se aplica** (CI com quina)
+- Solução: $x_1^* = \frac{bI}{bp_1+ap_2}$
+
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Condições de segunda ordem"}
+Para garantir máximo, a hessiana orlada deve ser definida negativa. Com preferências **estritamente quase-côncavas** (CIs convexas), CSOs são automaticamente satisfeitas.
+:::
+
+## Tipos de Preferências
+
+<iframe src="graficos/cap03/tipos-preferencias.html" title="Tipos de Preferências" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Preview: Funções Utilidade e Preferências
+
+<iframe src="graficos/cap03/funcoes-utilidade.html" title="Funções Utilidade e Preferências" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Fórmula / Resultado |
+|:---|:---|
+| Reta orçamentária | $p_1x_1 + p_2x_2 = I$, inclinação $-p_1/p_2$ |
+| Tangência | $TMS_{12} = p_1/p_2$ |
+| UMg ponderada | $UMg_1/p_1 = UMg_2/p_2 = \lambda$ |
+| Lagrangeano | $\mathcal{L} = u(\mathbf{x}) + \lambda(I - \mathbf{p}\cdot\mathbf{x})$ |
+| CPO | $\partial u/\partial x_i = \lambda p_i$ |
+| $\lambda$ | Utilidade marginal da renda ($\partial V/\partial I$) |
+
+. . .
+
+**Próxima aula**: Demandas Marshallianas — como as quantidades ótimas respondem a preços e renda.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

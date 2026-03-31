@@ -1,0 +1,364 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 25 — Monopólio II: Discriminação de Preços e Regulação"
+author: "Prof. Darcio Genicolo Martins"
+date: "Discriminação de Preços, Tarifas e Regulação"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roadmap da Aula {data-background-color="#E50505"}
+
+## Além do Preço Único
+
+Na aula anterior: monopolista com preço único, $RMg = CMg$, PPM.
+
+. . .
+
+Hoje o monopolista fica **mais sofisticado**:
+
+1. Qualidade sob monopólio
+2. Discriminação de 1o grau (perfeita)
+3. Discriminação de 2o grau (autosseleção)
+4. Discriminação de 3o grau (segmentação)
+5. Tarifa em duas partes e bundling
+6. Regulação: price cap, custo médio, taxa de retorno
+
+:::{.callout-note title="Requisitos para discriminar"}
+Poder de mercado **+** impossibilidade de revenda (arbitragem) entre consumidores.
+:::
+
+## O Monopolista Também Escolhe Qualidade {data-background-color="#E50505"}
+
+O monopolista maximiza $\pi(q, s)$ escolhendo quantidade **e** qualidade $s$:
+
+::: {.eq-highlight}
+$$\frac{\partial p}{\partial s} \cdot q = \frac{\partial C}{\partial s}$$
+:::
+
+. . .
+
+A receita marginal da qualidade é avaliada no **consumidor marginal** (o último a comprar), não no consumidor médio.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Se consumidor marginal valora qualidade menos que o médio:**
+
+Monopolista **subprovê** qualidade.
+:::
+::: {.column width="48%"}
+**Se consumidor marginal valora qualidade mais que o médio:**
+
+Monopolista pode **sobreprover** qualidade.
+:::
+::::
+
+:::{.callout-tip title="Intuição Econômica"}
+O monopolista ajusta a qualidade pensando no cliente que está quase desistindo de comprar --- não no mais entusiasmado.
+:::
+
+## Discriminação de Preços: Visão Geral
+
+Taxonomia de **Pigou (1920)**: três graus conforme a informação do monopolista.
+
+. . .
+
+| Grau | Informação | Estratégia | Exemplo |
+|:---|:---|:---|:---|
+| 1o | Perfeita sobre cada consumidor | Preço = disposição a pagar | Leilão de arte |
+| 2o | Não observa tipo | Menu de contratos (autosseleção) | Classes tarifárias aéreas |
+| 3o | Observa grupo | Preço diferente por segmento | Desconto estudante/idoso |
+
+. . .
+
+:::{.callout-warning title="Condição necessária"}
+Impossibilidade de **revenda**: se consumidores de preço baixo revendem para os de preço alto, a discriminação desmorona.
+:::
+
+## Cada Um Paga o que Pode {data-background-color="#E50505"}
+
+O monopolista cobra de cada consumidor exatamente sua **disposição a pagar**:
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Resultados:**
+
+- $q = q^c$ (eficiente!)
+- $PPM = 0$
+- $EC = 0$
+- $EP = \frac{(a-c)^2}{2b}$
+:::
+::: {.column width="48%"}
+**Comparacao com preco unico:**
+
+| | Preço Único | Disc. Perfeita |
+|:---|:---:|:---:|
+| EC | $\frac{(a-c)^2}{8b}$ | $0$ |
+| EP | $\frac{(a-c)^2}{4b}$ | $\frac{(a-c)^2}{2b}$ |
+| PPM | $\frac{(a-c)^2}{8b}$ | $0$ |
+:::
+::::
+
+:::{.callout-tip title="Intuição Econômica"}
+O poder de mercado *per se* não gera ineficiência --- é a **uniformidade** do preço que gera a PPM. Com discriminação perfeita, eficiência é restaurada (mas o consumidor não fica com nada).
+:::
+
+## Discriminação de 2o Grau (Menu)
+
+O monopolista oferece um **menu de contratos** e deixa os consumidores se autosselecionarem:
+
+. . .
+
+- Tipo **alta valoração**: quantidade eficiente, paga preço alto (mas mantém alguma renda informacional)
+- Tipo **baixa valoração**: quantidade **distorcida para baixo**, excedente zero
+
+. . .
+
+::: {.eq-highlight}
+$$\text{Distorção no tipo baixo} = \text{custo da compatibilidade de incentivos}$$
+:::
+
+:::{.callout-note title="Exemplos"}
+Passagens aéreas (econômica vs. executiva), versões de software (basic vs. pro), planos de streaming (com/sem anúncios).
+:::
+
+## Discriminação de 3o Grau (Segmentação)
+
+O monopolista divide consumidores em **grupos observáveis** e cobra preços diferentes:
+
+::: {.eq-highlight}
+$$RMg_1(q_1) = RMg_2(q_2) = CMg(q_1 + q_2)$$
+:::
+
+. . .
+
+O mercado com demanda **mais inelástica** paga o preço **mais alto**:
+
+$$\frac{p_1}{p_2} = \frac{1 - \frac{1}{|\varepsilon_2|}}{1 - \frac{1}{|\varepsilon_1|}}$$
+
+. . .
+
+**Exercicio Resolvido:** $p_1 = 120 - 2q_1$, $p_2 = 80 - q_2$, $CMg = 20$
+
+$q_1 = 25, \; p_1 = 70, \; L_1 = 0{,}71$ vs. $q_2 = 30, \; p_2 = 50, \; L_2 = 0{,}60$
+
+Mercado 1 mais inelástico $\Rightarrow$ preço mais alto. $\checkmark$
+
+## Discriminação de Preços --- Interativo
+
+Alterne entre os três graus e observe como cada tipo afeta excedente e eficiência:
+
+<iframe src="graficos/cap15/discriminacao-precos.html" title="Discriminacao de precos" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## Pague para Entrar, Pague para Brincar {data-background-color="#E50505"}
+
+Tarifa em duas partes: **taxa fixa** $T$ + **preço por unidade** $p$. Gasto total: $G = T + p \cdot q$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Consumidores homogêneos:**
+
+1. $p = CMg$ (eficiente)
+2. $T = EC$ (extrai tudo)
+
+Replica a disc. de 1o grau!
+:::
+::: {.column width="48%"}
+**Consumidores heterogêneos:**
+
+- $T$ limitado pelo EC do tipo baixo
+- $p > CMg$ (PPM residual)
+- Trade-off: extrair mais vs. manter todos
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Exemplos"}
+Sam's Club (anuidade + preços), academias (mensalidade + aula extra), BahnCard alemã (anuidade + desconto por viagem).
+:::
+
+## Bundling e Práticas Correlatas
+
+**Bundling (venda casada):** vender dois ou mais produtos juntos.
+
+. . .
+
+| Estratégia | Descrição | Exemplo |
+|:---|:---|:---|
+| Bundling puro | So vende o pacote | Office 365 |
+| Bundling misto | Pacote ou separado | Combo lanchonete |
+| Tying | Produto A exige produto B | Impressora + cartucho |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Bundling funciona quando as valorações são **negativamente correlacionadas**: quem valora muito A valora pouco B e vice-versa. O pacote "achata" a dispersão de valorações, permitindo extrair mais excedente.
+:::
+
+## Regulação de Monopólios {data-background-color="#E50505"}
+
+## O Dilema do Regulador
+
+Em monopólios naturais, a concorrência é ineficiente. O regulador busca:
+
+- Produzir mais, cobrar menos
+- Sem eliminar incentivos ao investimento
+
+. . .
+
+**Tres regimes:**
+
+| Regime | Regra | Resultado |
+|:---|:---|:---|
+| First-best | $p = CMg$ | Eficiente, mas **prejuízo** |
+| Second-best | $p = CMe$ | Lucro zero, PPM residual |
+| Price cap | $\Delta p \leq \text{inflação} - X$ | Incentiva eficiência |
+
+## Regulação pelo Custo Marginal (First-Best)
+
+::: {.eq-highlight}
+$$p = CMg \implies \text{quantidade eficiente, mas } CMg < CMe \implies \pi < 0$$
+:::
+
+. . .
+
+O governo precisa **subsidiar** a firma. Custo: distorções tributárias em outros mercados.
+
+No Brasil, o custo marginal dos fundos públicos é estimado em **0,20 a 0,50** --- cada R\$1 de subsídio custa R\$1,20 a R\$1,50 para a sociedade.
+
+. . .
+
+:::{.callout-warning title="Problema prático"}
+O regulador precisa conhecer a função de custo da firma --- informação que a firma tem incentivo a **distorcer**.
+:::
+
+## Regulação pelo Custo Médio (Second-Best)
+
+$p = CMe$: lucro zero, produção maior que monopólio não regulado.
+
+. . .
+
+**Exercício numérico:** $C(q) = 500 + 10q$, $p = 60 - 0{,}5q$
+
+| Regime | $q$ | $p$ | $\pi$ | PPM |
+|:---|:---:|:---:|:---:|:---:|
+| Monopólio | 50 | 35 | 750 | 625 |
+| First-best | 100 | 10 | $-500$ | 0 |
+| Second-best | 88,7 | 15,6 | 0 | 31,6 |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A regulação second-best reduz a PPM de 625 para 31,6 --- melhoria de **95%**! É o modelo conceitual da ANEEL para distribuidoras de energia.
+:::
+
+## Regulação por Price Cap e Taxa de Retorno
+
+:::: {.columns}
+::: {.column width="48%"}
+**Price Cap (Littlechild, 1983):**
+
+$$\Delta p \leq \text{inflação} - X$$
+
+- Firma retém ganhos de produtividade
+- Incentiva corte de custos
+- Risco: queda de qualidade
+- Usado: ANATEL, regulação britânica
+:::
+::: {.column width="48%"}
+**Taxa de Retorno:**
+
+$$pq - wL - rK \leq (s - r)K$$
+
+- Permite retorno "justo" $s$ sobre capital $K$
+- **Efeito Averch-Johnson**: sobreinvestimento em capital
+- Firma infla a base de remuneração
+:::
+::::
+
+## Regulação de Monopólio --- Interativo
+
+Alterne entre os regimes e compare preço, quantidade e bem-estar:
+
+<iframe src="graficos/cap15/regulacao-monopolio.html" title="Regulacao de monopolio natural" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## O Vilão Também Inova {data-background-color="#E50505"}
+
+A análise até aqui é **estática**. Na perspectiva **dinâmica** (Schumpeter, 1942):
+
+. . .
+
+- Lucros de monopólio são a **recompensa pela inovação**
+- Concorrência relevante: **destruição criativa**, não preço
+- Firmas com poder de mercado investem mais em P&D
+
+. . .
+
+**Mercados contestáveis (Baumol et al., 1982):** se entrada e saída são livres, a **ameaça** de entrada disciplina o monopolista mesmo sem concorrentes reais.
+
+:::{.callout-tip title="Intuição Econômica"}
+Sem a promessa de lucros extraordinários, ninguém assume o risco de inventar algo novo. A patente é a "cenoura" que justifica o investimento.
+:::
+
+## Monopólio: Estática Comparativa
+
+<iframe src="graficos/cap15/estatica-comparativa.html" title="Monopólio: Estática Comparativa" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## O Problema do Monopolista (Revisão)
+
+<iframe src="graficos/cap15/monopolio.html" title="O Problema do Monopolista (Revisão)" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Síntese
+
+| Conceito | Resultado-chave |
+|:---|:---|
+| Qualidade | Calibrada pelo consumidor marginal, não médio |
+| Disc. 1o grau | $EC = 0$, $PPM = 0$, eficiente |
+| Disc. 2o grau | Menu, distorcao no tipo baixo |
+| Disc. 3o grau | $RMg_1 = RMg_2 = CMg$, mais inelástico paga mais |
+| Tarifa 2 partes | $T + pq$; homogêneos: replica 1o grau |
+| Regulação FB | $p = CMg$, prejuízo |
+| Regulação SB | $p = CMe$, PPM residual |
+| Price cap | Incentiva eficiência |
+
+. . .
+
+:::{.callout-tip title="Próxima Aula"}
+Aula 14: **Preferências e Axiomas** --- voltamos às fundações da teoria do consumidor. Completude, transitividade, Teorema de Debreu.
+:::
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no portal da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

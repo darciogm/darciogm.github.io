@@ -1,0 +1,385 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 13 — Escolha sob Incerteza I: Loterias e Utilidade Esperada"
+author: "Prof. Darcio Genicolo Martins"
+date: "Loterias, Utilidade Esperada e Aversão ao Risco"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Tirando o Tapete da Certeza
+
+Até agora, o consumidor conhecia preços, renda e qualidade dos bens com **certeza**.
+
+. . .
+
+**Realidade:** comprar ações, abrir um negócio, escolher um plano de saúde --- tudo envolve **incerteza**.
+
+. . .
+
+**Hoje:**
+
+1. Loterias e valor esperado
+2. Paradoxo de São Petersburgo
+3. Axiomas de Von Neumann--Morgenstern
+4. Utilidade esperada
+5. Três atitudes perante risco
+
+## O Que É uma Loteria? {data-background-color="#E50505"}
+
+Toda decisão sob incerteza é uma **loteria**:
+
+::: {.eq-highlight}
+$$L = \{(x_1, p_1), (x_2, p_2), \ldots, (x_n, p_n)\}, \quad \sum p_i = 1$$
+:::
+
+. . .
+
+**Valor esperado:**
+
+$$E[L] = \sum_{i=1}^{n} p_i \, x_i$$
+
+. . .
+
+:::{.callout-note title="Exemplo"}
+$L = \{(100,\; 0{,}5);\; (0,\; 0{,}5)\}$. Valor esperado: $E[L] = 0{,}5 \times 100 + 0{,}5 \times 0 = 50$.
+
+Você aceitaria R\$ 50 com certeza ou jogaria a moeda?
+:::
+
+## Loterias Compostas
+
+Uma **loteria composta** tem loterias como resultados.
+
+. . .
+
+Sob o axioma de redução: toda loteria composta se reduz a uma **loteria simples** (pela regra de probabilidade total).
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Loteria composta:**
+
+- 50%: jogue outra moeda (R\$200 ou R\$0)
+- 50%: receba R\$100 certo
+:::
+::: {.column width="50%"}
+**Equivalente simples:**
+
+- 25%: R\$200
+- 50%: R\$100
+- 25%: R\$0
+:::
+::::
+
+. . .
+
+$E[L] = 0{,}25 \times 200 + 0{,}50 \times 100 + 0{,}25 \times 0 = 100$
+
+## O Paradoxo de São Petersburgo
+
+Uma moeda é lançada até sair cara. Se cara no $n$-ésimo lançamento, você recebe $2^n$ reais.
+
+. . .
+
+::: {.eq-highlight}
+$$E[L] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty$$
+:::
+
+. . .
+
+Valor esperado **infinito** --- mas ninguém pagaria uma quantia arbitrariamente alta para jogar!
+
+. . .
+
+:::{.callout-warning title="Conclusão"}
+O valor esperado **não** é suficiente para descrever decisões sob risco. Precisamos de algo que capture **como** o agente avalia cada real adicional.
+:::
+
+## A Solução de Bernoulli (1738)
+
+Daniel Bernoulli propõe: avalie $E[u(x)]$, não $E[x]$.
+
+. . .
+
+O salto conceitual:
+
+| Critério | Avalia | Problema |
+|:---------|:-------|:---------|
+| Valor esperado $E[x]$ | Dinheiro médio | Ignora curvatura das preferências |
+| Utilidade esperada $E[u(x)]$ | Felicidade média | Capta aversão/propensão ao risco |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O segundo prato de comida no rodízio nunca é tão bom quanto o primeiro --- R\$ 10.000 não trazem o dobro da felicidade de R\$ 5.000.
+:::
+
+## Axiomas VNM {data-background-color="#E50505"}
+
+## As Quatro Regras de Coerência {.smaller}
+
+:::{.callout-note title="Axiomas de Von Neumann--Morgenstern"}
+Sejam $L_1, L_2, L_3$ loterias. As preferências $\succsim$ satisfazem:
+
+1. **Completude:** $L_1 \succsim L_2$ ou $L_2 \succsim L_1$ (ou ambos)
+2. **Transitividade:** $L_1 \succsim L_2$ e $L_2 \succsim L_3 \Rightarrow L_1 \succsim L_3$
+3. **Continuidade:** $L_1 \succ L_2 \succ L_3 \Rightarrow \exists\, \alpha$ tal que $L_2 \sim \alpha L_1 + (1-\alpha)L_3$
+4. **Independência:** $L_1 \succsim L_2 \Rightarrow \alpha L_1 + (1-\alpha)L_3 \succsim \alpha L_2 + (1-\alpha)L_3$
+:::
+
+. . .
+
+Os três primeiros são análogos ao Cap. 3 (preferências ordinais). O **quarto** --- independência --- é o divisor de águas.
+
+. . .
+
+:::{.callout-warning title="Independência"}
+"Misturar" ambas as loterias com uma mesma terceira não deveria alterar a comparação. Parece óbvio --- mas o Paradoxo de Allais mostra que pessoas reais violam isso sistematicamente.
+:::
+
+## Teorema da Utilidade Esperada
+
+::: {.eq-highlight}
+$$L_1 \succsim L_2 \iff E[u(L_1)] \geq E[u(L_2)]$$
+:::
+
+onde $E[u(L)] = \sum p_i \, u(x_i)$.
+
+. . .
+
+**Unicidade:** $u$ é única a menos de transformações **afins positivas**: $v(x) = au(x) + b$, $a > 0$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Utilidade ordinal (Cap. 3):**
+
+- Qualquer $f$ crescente preserva
+- $u, u^2, \ln(u)$ são equivalentes
+- Só importa a **ordem**
+:::
+::: {.column width="50%"}
+**Utilidade VNM (Cap. 7):**
+
+- Só transformações **afins** preservam
+- $u$ e $u^2$ **não** são equivalentes
+- A **curvatura** importa
+:::
+::::
+
+## O Paradoxo de Allais {.smaller}
+
+| | Opção A | Opção B |
+|:-|:--------|:--------|
+| **Situação I** | R\$ 1M certo | 10% R\$ 5M, 89% R\$ 1M, 1% nada |
+| **Situação II** | 11% R\$ 1M, 89% nada | 10% R\$ 5M, 90% nada |
+
+. . .
+
+Maioria escolhe **A** na I e **B** na II --- mas isso viola independência!
+
+. . .
+
+Subtraia 89% de R\$ 1M de ambas as opções da Situação I $\Rightarrow$ Situação II.
+
+. . .
+
+:::{.callout-note title="Efeito Certeza"}
+Agentes reais sobreponderam resultados certos. Isso motiva a **Teoria dos Prospectos** (Kahneman & Tversky, 1979 --- Cap. 8).
+
+:::
+
+## Três Atitudes Perante o Risco {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$\text{Avesso:} \; u(E[L]) > E[u(L)] \qquad \text{Neutro:} \; u(E[L]) = E[u(L)] \qquad \text{Propenso:} \; u(E[L]) < E[u(L)]$$
+:::
+
+. . .
+
+| Atitude | $u$ | Significado |
+|:--------|:----|:-----------|
+| Avesso | Côncava ($u'' < 0$) | Prefere o certo ao duvidoso |
+| Neutro | Linear ($u'' = 0$) | Indiferente |
+| Propenso | Convexa ($u'' > 0$) | Prefere o risco |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Aversão ao risco = utilidade marginal **decrescente**. A dor de perder R\$ 5.000 pesa mais que a alegria de ganhar R\$ 5.000.
+:::
+
+## Desigualdade de Jensen
+
+Se $u$ é **estritamente côncava** e $\tilde{x}$ não é degenerada:
+
+::: {.eq-highlight}
+$$u(E[\tilde{x}]) > E[u(\tilde{x})]$$
+:::
+
+. . .
+
+**Geometria:** a corda entre dois pontos da curva de utilidade fica **abaixo** da própria curva.
+
+. . .
+
+**Implicações:**
+
+- Agente avesso **rejeita apostas justas** ($E = 0$)
+- Compra seguro mesmo acima do preco atuarialmente justo
+- Diversifica investimentos
+- Prefere salário fixo a comissão pura (mesmo $E$ igual)
+
+## Aversão ao Risco --- Interativo
+
+<iframe src="graficos/cap07/aversao-risco.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Aversão ao risco e função de utilidade"></iframe>
+
+## $E[u(W)]$ vs $u(E[W])$ --- JSXGraph
+
+<div id="graph-a24-jensen" style="width:700px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Concavidade $\gamma$: <input type="range" id="sl-a24-g" min="0.1" max="3" value="1" step="0.1" oninput="updA24()"> <span id="val-a24-g">1.0</span></label>
+  <label>Prob. $\pi$: <input type="range" id="sl-a24-pi" min="0.1" max="0.9" value="0.5" step="0.05" oninput="updA24()"> <span id="val-a24-pi">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a24-jensen',{
+    boundingbox:[-5,12,105,-1], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'W',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:12}},
+                 y:{name:'u(W)',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:12}}}
+  });
+  var W1=10, W2=90, gam=1, pi=0.5;
+  var cU, cChord, ptEW, ptEU, ptA, ptB, segDiff;
+  function uf(w){ return gam===1 ? Math.log(w+1) : Math.pow(w+1,1-gam)/(1-gam); }
+  function draw(){
+    brd.suspendUpdate();
+    if(cU) brd.removeObject(cU);
+    if(cChord) brd.removeObject(cChord);
+    if(ptEW) brd.removeObject(ptEW);
+    if(ptEU) brd.removeObject(ptEU);
+    if(ptA) brd.removeObject(ptA);
+    if(ptB) brd.removeObject(ptB);
+    if(segDiff) brd.removeObject(segDiff);
+    gam = parseFloat(document.getElementById('sl-a24-g').value);
+    pi = parseFloat(document.getElementById('sl-a24-pi').value);
+    cU = brd.create('functiongraph',[function(w){return uf(w);},0,100],{strokeColor:'#1A56DB',strokeWidth:3});
+    ptA = brd.create('point',[W1,uf(W1)],{size:4,fillColor:'#E50505',strokeColor:'#E50505',name:'W\u2081',label:{fontSize:11,offset:[-20,8]}});
+    ptB = brd.create('point',[W2,uf(W2)],{size:4,fillColor:'#E50505',strokeColor:'#E50505',name:'W\u2082',label:{fontSize:11,offset:[8,8]}});
+    cChord = brd.create('segment',[ptA,ptB],{strokeColor:'#999',strokeWidth:1.5,dash:2});
+    var EW = pi*W1 + (1-pi)*W2;
+    var EU = pi*uf(W1) + (1-pi)*uf(W2);
+    var uEW = uf(EW);
+    ptEU = brd.create('point',[EW,EU],{size:5,fillColor:'#E50505',strokeColor:'#E50505',name:'E[u(W)]',label:{fontSize:11,offset:[8,-18]}});
+    ptEW = brd.create('point',[EW,uEW],{size:5,fillColor:'#2ECC40',strokeColor:'#2ECC40',name:'u(E[W])',label:{fontSize:11,offset:[8,10]}});
+    segDiff = brd.create('segment',[[EW,EU],[EW,uEW]],{strokeColor:'#E50505',strokeWidth:2.5,name:'Premio',withLabel:true,label:{fontSize:11,offset:[8,0]}});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA24 = function(){
+    document.getElementById('val-a24-g').textContent = parseFloat(document.getElementById('sl-a24-g').value).toFixed(1);
+    document.getElementById('val-a24-pi').textContent = parseFloat(document.getElementById('sl-a24-pi').value).toFixed(2);
+    draw();
+  };
+})();
+</script>
+
+## Prêmio de Risco e Equivalente Certo --- Interativo
+
+<iframe src="graficos/cap07/premio-risco.html" title="Prêmio de Risco e Equivalente Certo" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Mercado de Seguros --- Interativo
+
+<iframe src="graficos/cap07/seguro.html" title="Mercado de Seguros" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Mega-Sena e a Busca por Risco {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Números:**
+
+- Probabilidade de acertar 6: 1 em 50 milhões
+- Aposta: R\$ 5,00
+- Prêmio médio: ~R\$ 50M
+- Valor esperado: ~R\$ 1,00
+- **Retorno por real: R\$ 0,20** (perda de 80%)
+
+Agente avesso ao risco **jamais** compraria!
+:::
+::: {.column width="45%"}
+**Três explicações:**
+
+1. **Friedman-Savage:** $u$ côncava perto da riqueza atual, **convexa** para ganhos enormes
+2. **Teoria dos Prospectos:** sobrepondera probabilidades pequenas: $\pi(1/50M) \gg 1/50M$
+3. **Utilidade do sonho:** prazer de imaginar o prêmio (antecipação)
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Conexão"}
+A loteria é o teste empírico mais acessível da teoria VNM --- sua ubiquidade sugere que aversão ao risco não é monolítica.
+:::
+
+## Erro Comum
+
+:::{.callout-warning title="Aversão ao risco NÃO é evitar todo risco"}
+Um agente avesso ao risco **ainda toma riscos** --- ele simplesmente exige ser **compensado** por eles.
+
+- **Rejeita** apostas justas ($E = 0$)
+- **Aceita** apostas com retorno esperado **suficientemente alto**
+- Investir em ações da Petrobras **não** viola aversão ao risco --- o prêmio de risco compensa
+:::
+
+. . .
+
+Aversão ao risco regula o **preço** que o agente cobra pelo risco, não se ele aceita ou recusa **qualquer** risco.
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Loteria:** toda decisão sob incerteza; valor esperado é insuficiente (São Petersburgo).
+
+2. **Axiomas VNM:** 4 regras de coerência $\Rightarrow$ utilidade esperada $E[u(x)]$, não $E[x]$.
+
+3. **Jensen:** $u$ côncava $\Rightarrow$ $u(E) > E[u]$ $\Rightarrow$ aversão ao risco.
+
+4. **Três atitudes:** côncava (avesso), linear (neutro), convexa (propenso).
+
+. . .
+
+**Próxima aula:** Medindo o medo --- Arrow-Pratt, prêmio de risco, seguros e diversificação.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

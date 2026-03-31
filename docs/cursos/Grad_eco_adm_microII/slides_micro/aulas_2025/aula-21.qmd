@@ -1,0 +1,419 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 21 — Maximização de Lucro II: Receita Marginal e Oferta"
+author: "Prof. Darcio Genicolo Martins"
+date: "RMg, elasticidade, oferta de curto prazo e shutdown"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Recapitulando: CPO e CSO
+
+Na aula anterior:
+
+- $\text{RMg}(q^*) = \text{CMg}(q^*)$ (CPO)
+- $\text{CMg}'(q^*) > \text{RMg}'(q^*)$ (CSO)
+
+. . .
+
+Hoje aprofundamos o **lado da receita**:
+
+- O que é a receita marginal para firmas com poder de mercado?
+- Como a elasticidade da demanda afeta a RMg?
+- Quando a firma deve **operar** e quando deve **fechar**?
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Para a firma tomadora de preços, vender mais é simples: cada unidade extra rende $p$. Para a firma com poder de mercado, vender mais é como encher um balde furado — precisa baixar o preço de todas as outras.
+:::
+
+## Receita Marginal {data-background-color="#E50505"}
+
+## Receita Total e Receita Marginal
+
+A **receita total** é $RT = p(q) \cdot q$. A **receita marginal**:
+
+::: {.eq-highlight}
+$$\text{RMg} = \frac{dRT}{dq} = p + q\frac{dp}{dq}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Tomadora de preços:**
+
+- $dp/dq = 0$
+- $\text{RMg} = p$
+- Horizontal no gráfico
+:::
+::: {.column width="48%"}
+**Poder de mercado:**
+
+- $dp/dq < 0$
+- $\text{RMg} < p$
+- Inclina mais que a demanda
+:::
+::::
+
+## RMg e Elasticidade-Preço da Demanda
+
+A relação fundamental:
+
+::: {.eq-highlight}
+$$\text{RMg} = p\left(1 + \frac{1}{\varepsilon_d}\right) = p\left(1 - \frac{1}{|\varepsilon_d|}\right)$$
+:::
+
+. . .
+
+| Elasticidade | RMg | Efeito sobre RT |
+|:---|:---:|:---|
+| $|\varepsilon_d| > 1$ (elástica) | $> 0$ | Produzir mais eleva RT |
+| $|\varepsilon_d| = 1$ (unitária) | $= 0$ | RT é máxima |
+| $|\varepsilon_d| < 1$ (inelástica) | $< 0$ | Produzir mais reduz RT |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Uma firma maximizadora de lucro com poder de mercado **nunca** opera na porção inelástica da demanda, pois lá $\text{RMg} < 0$ enquanto $\text{CMg} > 0$. Reduzir a produção elevaria receita e reduziria custos.
+:::
+
+## Derivação: RMg e Elasticidade
+
+A derivação é direta a partir de $\text{RMg} = p + q\frac{dp}{dq}$:
+
+$$\text{RMg} = p\left(1 + \frac{q}{p}\frac{dp}{dq}\right) = p\left(1 + \frac{1}{\varepsilon_d}\right)$$
+
+. . .
+
+onde $\varepsilon_d = \frac{dq}{dp}\cdot\frac{p}{q}$ é a elasticidade-preço da demanda.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A RMg tem dois componentes: o preço recebido pela unidade extra ($p$) menos a perda de receita por baixar o preço de todas as unidades já vendidas ($q \cdot dp/dq$). Quanto mais inelástica a demanda, maior essa perda.
+:::
+
+## Receita Marginal, Demanda e Elasticidade
+
+A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca $\text{RMg} = 0$ (elasticidade unitária).
+
+<iframe src="graficos/cap12/receita-marginal.html" width="1100" height="500" style="border:none;margin:0 auto;display:block;"></iframe>
+
+## Oferta de Curto Prazo {data-background-color="#E50505"}
+
+## A Decisão de Operar ou Fechar
+
+No curto prazo, a firma incorre em custos fixos independentemente de produzir:
+
+. . .
+
+- Se **opera**: $\pi = pq - CV(q) - CF$
+- Se **fecha**: $\pi = -CF$
+
+. . .
+
+A firma deve operar se e somente se:
+
+::: {.eq-highlight}
+$$p \cdot q \geq CV(q) \implies p \geq \text{CVMe}(q)$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Um quiosque na praia paga R\$ 3.000 de aluguel (custo fixo). Se fechar, perde os R\$ 3.000 de qualquer jeito. Se abrir e faturar o suficiente para pagar funcionários e insumos e ainda sobrar R\$ 500, é melhor abrir — mesmo com prejuízo.
+:::
+
+## Os Três Regimes de Preço {.smaller}
+
+| Condição de preço | Decisão | Lucro econômico |
+|:---|:---|:---|
+| $p > \text{CMe}_{\min}$ | Produzir em $p = \text{CMg}$ | Lucro positivo ($\pi > 0$) |
+| $p = \text{CMe}_{\min}$ | Produzir (break-even) | Lucro zero |
+| $\text{CVMe}_{\min} < p < \text{CMe}_{\min}$ | Produzir em $p = \text{CMg}$ | Prejuízo, mas $< CF$ |
+| $p = \text{CVMe}_{\min}$ | Indiferente | Prejuízo $= CF$ (shutdown) |
+| $p < \text{CVMe}_{\min}$ | Fechar ($q=0$) | Prejuízo $= CF$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O ponto de **break-even** ($p = \text{CMe}_{\min}$) é onde o lucro econômico é zero — a firma cobre todos os custos de oportunidade. O ponto de **shutdown** ($p = \text{CVMe}_{\min}$) é onde fechar se torna preferível a operar.
+:::
+
+## Curva de Oferta de Curto Prazo
+
+A curva de oferta da firma tomadora de precos:
+
+::: {.eq-highlight}
+$$q^s(p) = \begin{cases} \text{CMg}^{-1}(p) & \text{se } p \geq \text{CVMe}_{\min} \\ 0 & \text{se } p < \text{CVMe}_{\min} \end{cases}$$
+:::
+
+. . .
+
+Em palavras: o trecho da curva de CMg **acima** do CVMe mínimo.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A curva de oferta da firma é sua curva de custo marginal — mas só a parte de cima, onde vale a pena operar.
+:::
+
+## Oferta com CMg/CVMe/CMe — Interativo
+
+Ajuste o preço $p$ para ver os três regimes: lucro positivo, prejuízo com operação e shutdown.
+
+<div id="graph-a08-supply" style="width:720px;height:340px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Preco $p$: <input type="range" id="sl-a08-p" min="2" max="30" value="16" step="0.5" oninput="updA08Supply()"> <span id="val-a08-p">16.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a08-supply',{
+    boundingbox:[-1,35,22,-3], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'q',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'$/q',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var CF=50, a=2, b=0.5;
+  function CMg(q){return a+2*b*q;}
+  function CVMe(q){return q>0? a+b*q : a;}
+  function CMe(q){return q>0? CF/q+a+b*q : NaN;}
+  var pp=16;
+  var cmgCurve, cvmeCurve, cmeCurve, priceLine, optPt, profitRect;
+  function draw(){
+    brd.suspendUpdate();
+    if(cmgCurve) brd.removeObject(cmgCurve);
+    if(cvmeCurve) brd.removeObject(cvmeCurve);
+    if(cmeCurve) brd.removeObject(cmeCurve);
+    if(priceLine) brd.removeObject(priceLine);
+    if(optPt) brd.removeObject(optPt);
+    if(profitRect) brd.removeObject(profitRect);
+    cmgCurve = brd.create('functiongraph',[function(q){return q>=0?CMg(q):NaN;},0,20],
+      {strokeColor:'#E50505',strokeWidth:3,name:'CMg',withLabel:true,label:{position:'rt',fontSize:12,offset:[5,10]}});
+    cvmeCurve = brd.create('functiongraph',[function(q){return q>0.5?CVMe(q):NaN;},0.5,20],
+      {strokeColor:'#F59E0B',strokeWidth:2,dash:2,name:'CVMe',withLabel:true,label:{position:'rt',fontSize:12,offset:[5,10]}});
+    cmeCurve = brd.create('functiongraph',[function(q){return q>0.5?CMe(q):NaN;},0.5,20],
+      {strokeColor:'#2563EB',strokeWidth:2,dash:2,name:'CMe',withLabel:true,label:{position:'rt',fontSize:12,offset:[5,10]}});
+    priceLine = brd.create('line',[[0,pp],[1,pp]],{strokeColor:'#10B981',strokeWidth:2,straightFirst:true,straightLast:true,name:'p',withLabel:true,label:{position:'rt',fontSize:12,offset:[5,10]}});
+    var qstar = Math.max(0,(pp-a)/(2*b));
+    var cvmeMin = a;
+    if(pp >= cvmeMin && qstar > 0){
+      var cmeQ = CMe(qstar);
+      var piQ = pp - cmeQ;
+      var fc = piQ >= 0 ? '#10B98133' : '#E5050533';
+      profitRect = brd.create('polygon',[[0,pp],[qstar,pp],[qstar,cmeQ],[0,cmeQ]],
+        {fillColor:fc,fillOpacity:0.3,borders:{strokeWidth:1,strokeColor:'#666'},vertices:{visible:false},highlight:false});
+      optPt = brd.create('point',[qstar,pp],{size:5,fillColor:'#E50505',strokeColor:'#E50505',
+        name:'q*='+qstar.toFixed(1),label:{fontSize:12,offset:[10,12]}});
+    }
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA08Supply = function(){
+    pp=parseFloat(document.getElementById('sl-a08-p').value);
+    document.getElementById('val-a08-p').textContent=pp.toFixed(1);
+    draw();
+  };
+})();
+</script>
+
+## Excedente do Produtor {data-background-color="#E50505"}
+
+## Excedente do Produtor (EP)
+
+O **excedente do produtor** no curto prazo:
+
+::: {.eq-highlight}
+$$EP = RT - CV = p \cdot q - CV(q) = \pi + CF$$
+:::
+
+. . .
+
+- Graficamente: área **acima** da curva de oferta (CMg) e **abaixo** do preço
+- Mede a contribuição da produção para cobrir custos fixos e gerar lucro
+
+. . .
+
+| Horizonte | EP |
+|:---|:---|
+| Curto prazo | $EP_{CP} = \pi + CF$ |
+| Longo prazo | $EP_{LP} = \pi_{LP}$ (sem custos fixos) |
+
+## Exercício: Operar ou Fechar? {.smaller}
+
+**Dados:** $CT(q) = 72 + 10q + 0{,}5q^2$, $p = 16$.
+
+. . .
+
+| Função | Expressão |
+|:---|:---|
+| $\text{CVMe}(q)$ | $10 + 0{,}5q$ |
+| $\text{CMg}(q)$ | $10 + q$ |
+| $\text{CVMe}_{\min}$ | $10$ (em $q \to 0$) |
+
+. . .
+
+**CPO:** $16 = 10 + q \implies q^* = 6$
+
+**Lucro:** $\pi = 96 - 150 = -54$
+
+. . .
+
+| Decisão | Lucro |
+|:---|:---|
+| Operar ($q=6$) | $\pi = -54$ |
+| Fechar ($q=0$) | $\pi = -CF = -72$ |
+
+$\Rightarrow$ Operar é racional mesmo com prejuízo!
+
+## Aplicação: Soja no Brasil
+
+:::: {.columns}
+::: {.column width="48%"}
+**Dados CONAB (área plantada):**
+
+| Safra | Milhões de ha |
+|:---|:---|
+| 2022/23 | 44,1 |
+| 2023/24 | 46,1 |
+| 2024/25 | 47,5 |
+| 2025/26 | 48,9 |
+:::
+::: {.column width="48%"}
+**Interpretação:**
+
+. . .
+
+- Produtor rural $\approx$ **tomador de preços**
+- Preço da soja sobe $\Rightarrow$ área plantada cresce
+- Novas terras marginais entram enquanto $p \geq \text{CVMe}_{\min}$
+- Quebra climática + custos altos $\Rightarrow$ produtores não plantam segunda safra ($p < \text{CVMe}_{\min}$)
+:::
+::::
+
+## Demanda por Insumos {data-background-color="#E50505"}
+
+## Demanda Condicionada vs. Incondicional
+
+:::: {.columns}
+::: {.column width="48%"}
+**Demanda condicionada** (Shephard):
+
+- $L^c(w, v, q)$
+- Fixa o nível de produto $q$
+- "Dado que quero produzir $q$, quanto de $L$?"
+- Depende de $(w, v, q)$
+:::
+::: {.column width="48%"}
+**Demanda incondicional** (Hotelling):
+
+. . .
+
+- $L^*(p, w, v)$
+- Produto é determinado endogenamente
+- "Quanto de $L$ para maximizar lucro?"
+- Depende de $(p, w, v)$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A demanda incondicional é o objeto relevante para analisar o mercado de trabalho: a firma ajusta simultaneamente a quantidade produzida e os insumos utilizados.
+:::
+
+## Decomposição: Efeito Substituição + Efeito Produto
+
+A variação na demanda incondicional quando $w$ sobe:
+
+::: {.eq-highlight}
+$$\frac{\partial L^*}{\partial w} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição} \leq 0} + \underbrace{\frac{\partial L^c}{\partial q} \cdot \frac{\partial q^*}{\partial w}}_{\text{efeito produto} \leq 0}$$
+:::
+
+. . .
+
+- **Efeito substituição**: $w$ sobe $\Rightarrow$ firma substitui $L$ por $K$ ao longo da isoquanta
+- **Efeito produto**: $w$ sobe $\Rightarrow$ CMg sobe $\Rightarrow$ $q^*$ cai $\Rightarrow$ menos $L$
+
+. . .
+
+Ambos **negativos** — não existe "insumo de Giffen"!
+
+## Por que Não Existe Insumo de Giffen?
+
+No caso do consumidor: efeito substituição ($-$) e efeito renda podem ter sinais opostos $\Rightarrow$ bem de Giffen possível.
+
+. . .
+
+No caso da firma: **ambos** os efeitos sao negativos:
+
+| Efeito | Direção | Razão |
+|:---|:---:|:---|
+| Substituição | $\leq 0$ | Substitui insumo caro por barato |
+| Produto | $\leq 0$ | Custo maior $\Rightarrow$ menos produção $\Rightarrow$ menos insumo |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na teoria da firma, os dois remadores (substituição e produto) sempre remam na mesma direção. Por isso a demanda por insumos é sempre negativamente inclinada — sem exceção.
+:::
+
+## Lucro Máximo --- Gráfico Interativo
+
+<iframe src="graficos/cap12/lucro-maximo.html" title="Lucro Máximo" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+O gráfico mostra $q^*$ onde $p = \text{CMg}$, o retângulo de lucro e as curvas de custo, integrando a análise de oferta com a demanda por insumos.
+
+## Maximização de Lucro: Condição p = CMg
+
+<iframe src="graficos/cap12/maximizacao-lucro.html" title="Maximização de Lucro: p = CMg" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Conexões {data-background-color="#E50505"}
+
+## Resumo da Aula
+
+| Conceito | Equação-chave |
+|:---|:---|
+| Receita marginal | $\text{RMg} = p(1 + 1/\varepsilon_d)$ |
+| RMg e elasticidade | Firma nunca opera onde $|\varepsilon_d| < 1$ |
+| Curva de oferta CP | CMg acima de $\text{CVMe}_{\min}$ |
+| Shutdown | Fechar se $p < \text{CVMe}_{\min}$ |
+| Excedente do produtor | $EP = RT - CV = \pi + CF$ |
+| Demanda condicionada vs. incondicional | $L^c(w,v,q)$ vs. $L^*(p,w,v)$ |
+| Decomposição | ES + EP, ambos $\leq 0$ — não existe insumo de Giffen |
+
+. . .
+
+**Próxima aula:** Equilíbrio competitivo — da firma individual ao mercado.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Próxima aula: **Função Lucro e Demanda por Insumos** --- o truque de mágica de Hotelling.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

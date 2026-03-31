@@ -1,0 +1,390 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 01 — Introdução à Microeconomia II"
+author: "Prof. Darcio Genicolo Martins"
+date: ""
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Bem-vindos à Microeconomia II
+
+**Objetivo do curso:** Compreender o comportamento das firmas — produção, custos, oferta e estruturas de mercado.
+
+. . .
+
+**Pré-requisitos:** Micro I (teoria do consumidor, demanda, equilíbrio parcial)
+
+. . .
+
+**O que muda de Micro I para Micro II?**
+
+| Micro I | Micro II |
+|---|---|
+| Consumidor | Firma |
+| Utilidade | Produção e Lucro |
+| Demanda | Oferta |
+| Equilíbrio parcial | Estruturas de mercado |
+
+## Logística e Avaliação
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Avaliações**
+
+- Provas intermediárias (P1 e P2)
+- Listas de exercícios semanais
+- Participação em sala
+- Prova final (substitutiva)
+:::
+
+::: {.column width="50%"}
+**Recursos**
+
+- Slides disponíveis no Blackboard
+- Livro-texto: Nicholson & Snyder (2017)
+- Leituras complementares por aula
+- Monitoria semanal
+:::
+
+::::
+
+. . .
+
+> **Regra de ouro:** Microeconomia se aprende *fazendo* exercícios, não assistindo aulas.
+
+## Estrutura do Curso {data-background-color="#730D9F" .smaller}
+
+| Bloco | Aulas | Temas |
+|---|---|---|
+| **Produção** | 02–03 | Função de produção, isoquantas, rendimentos |
+| **Custos** | 04–07 | Custos econômicos, curvas de custo, curto e longo prazo |
+| **Concorrência Perfeita** | 08–10 | Oferta, equilíbrio, bem-estar |
+| **Monopólio** | 11–13 | Poder de mercado, discriminação de preços |
+| **Oligopólio** | 14–16 | Cournot, Bertrand, Stackelberg |
+| **Teoria dos Jogos** | 17–19 | Equilíbrio de Nash, jogos repetidos |
+| **Informação** | 20–22 | Seleção adversa, risco moral |
+
+. . .
+
+**Prova 1:** após aula 10 | **Prova 2:** após aula 22
+
+## Por Que Estudar Microeconomia?
+
+A microeconomia estuda como pessoas, firmas e governos tomam decisões quando os recursos são **escassos** e as vontades, **infinitas**.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se você já brigou consigo mesmo sobre pedir a sobremesa ou resistir, já fez microeconomia — só não sabia.
+:::
+
+. . .
+
+Toda política pública — do Bolsa Família à Selic — nasce de um **modelo**. Saber o que ele ignora é tão importante quanto saber o que ele inclui.
+
+## Modelos Econômicos {data-background-color="#E50505"}
+
+## Fluxo Circular da Renda
+
+<iframe src="graficos/cap01/fluxo-circular.html" title="Fluxo Circular da Renda" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## O Que É um Modelo Econômico?
+
+> "Todos os modelos estão errados, mas alguns são úteis." — George Box
+
+. . .
+
+Um modelo econômico é como um **mapa**: a utilidade reside no que ele **omite**.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O Waze ignora a cor dos prédios e o nome das padarias para resolver *seu* problema. Um modelo econômico faz o mesmo: descarta o que não importa para a pergunta que você está fazendo.
+:::
+
+## Elementos de um Modelo
+
+Todo modelo econômico contém:
+
+1. **Suposições** — premissas sobre comportamento e estrutura
+2. **Variáveis** — endógenas (explicadas) e exógenas (dadas)
+3. **Relações funcionais** — equações que conectam as variáveis
+4. **Implicações** — previsões testáveis derivadas logicamente
+
+. . .
+
+::: {.eq-highlight}
+$$Q^d = D(P, Y) \quad \text{(demanda)}$$
+$$Q^s = S(P, w, A) \quad \text{(oferta)}$$
+$$Q^d = Q^s \quad \text{(equilíbrio)}$$
+:::
+
+## Verificação de Modelos
+
+**Abordagem direta:** examina-se o realismo das suposições
+
+**Abordagem indireta (Friedman, 1953):** avalia-se o modelo pelas previsões
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Desafios empíricos:**
+
+- Impossibilidade de experimentos controlados
+- Correlação $\neq$ Causalidade
+- Expectativas e reflexividade
+:::
+
+::: {.column width="50%"}
+**Revolução da credibilidade:**
+
+- Variáveis instrumentais
+- Diferenças em diferenças
+- Regressão descontínua
+- Nobel 2021: Card, Angrist, Imbens
+:::
+
+::::
+
+## Oferta e Demanda Interativa
+
+<iframe src="graficos/cap01/oferta-demanda.html" width="100%" height="450" frameborder="0" class="graph-embed"></iframe>
+
+Ajuste renda $Y$ e custo dos insumos $w$ para observar como $P^*$ e $Q^*$ se deslocam.
+
+## Os Três Pilares da Microeconomia
+
+**Pilar 1 — *Ceteris Paribus*:** "mude só uma coisa por vez"
+
+$$\frac{\partial Q^d}{\partial P} < 0 \quad \text{(lei da demanda)}$$
+
+. . .
+
+**Pilar 2 — Otimização:** "todo mundo tenta fazer o melhor possível"
+
+- Consumidores maximizam utilidade
+- Firmas maximizam lucro (ou minimizam custo)
+
+. . .
+
+**Pilar 3 — Positivo vs. Normativo:** "não confunda o que *é* com o que *deveria ser*"
+
+## Positivo vs. Normativo {.smaller}
+
+| Aspecto | Análise Positiva | Análise Normativa |
+|---|---|---|
+| **Pergunta central** | "O que é?" / "O que será?" | "O que deveria ser?" |
+| **Natureza** | Descritiva/preditiva | Prescritiva |
+| **Verificação** | Confronto com dados | Julgamento de valor |
+| **Exemplo** | "Um imposto reduz consumo em X%" | "O governo deveria tributar cigarros" |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando dois economistas "discordam", pergunte: discordam sobre os *fatos* (positivo) ou sobre os *valores* (normativo)?
+:::
+
+## Utilidade Marginal e o Paradoxo do Valor
+
+<iframe src="graficos/cap01/utilidade-marginal.html" title="Utilidade Marginal e Paradoxo do Valor" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Variáveis Exógenas e Endógenas
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Exógenas** (determinadas *fora* do modelo):
+
+- Renda dos consumidores ($Y$)
+- Preços dos insumos ($w$)
+- Tecnologia ($A$)
+:::
+
+::: {.column width="50%"}
+**Endógenas** (determinadas *dentro* do modelo):
+
+- Preço de equilíbrio ($P^*$)
+- Quantidade de equilíbrio ($Q^*$)
+:::
+
+::::
+
+. . .
+
+> O mesmo ingrediente muda de papel dependendo da receita: o preço do petróleo é exógeno para o mercado de gasolina no Brasil, mas endógeno no mercado mundial de commodities.
+
+## Equilíbrio de Mercado
+
+::: {.eq-highlight}
+$$Q^d(P^*) = Q^s(P^*) \quad \Longrightarrow \quad \text{Equilíbrio}$$
+:::
+
+No equilíbrio, **nenhum agente tem incentivo para alterar unilateralmente seu comportamento**.
+
+. . .
+
+Fora do equilíbrio:
+
+- Excesso de demanda $\Rightarrow$ pressão de alta no preço
+- Excesso de oferta $\Rightarrow$ pressão de baixa no preço
+
+## Estática Comparativa
+
+:::{.callout-tip title="Intuição Econômica"}
+Estática comparativa é como comparar duas fotos: uma antes e uma depois de uma mudança. Não mostramos o filme — só os dois frames.
+:::
+
+. . .
+
+**Exemplo:** Mercado de café com $Q^d = 200 - 4P + 2Y$ e $Q^s = -20 + 6P - 3C$
+
+$$P^* = 22 + 0{,}2Y + 0{,}3C$$
+
+. . .
+
+$$\frac{\partial P^*}{\partial Y} = 0{,}2 > 0 \quad \Longrightarrow \quad \text{Mais renda} \Rightarrow \text{Preço sobe}$$
+
+## O Roteiro de Modelagem
+
+A construção de qualquer modelo microeconômico segue **cinco passos**:
+
+1. Definir o **objetivo** do agente (utilidade, lucro)
+2. Identificar as **restrições** (orçamento, tecnologia)
+3. Resolver o **problema de otimização** (CPO e CSO)
+4. Derivar **funções de resposta** (demanda, oferta)
+5. Analisar **estática comparativa** ($\partial x^*/\partial p$)
+
+. . .
+
+> Este roteiro será repetido em **todos** os capítulos do curso.
+
+## Equilíbrio Interativo: JSXGraph
+
+<div id="jxgbox-aula01" style="width:700px; height:400px; margin: 0 auto;"></div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('jxgbox-aula01', {
+    boundingbox: [0, 120, 30, 0], axis: true,
+    defaultAxes: {x: {name: 'Q', withLabel: true, label: {position: 'rt', offset: [-10, 15]}},
+                  y: {name: 'P', withLabel: true, label: {position: 'rt', offset: [15, -5]}}}
+  });
+  var sY = brd.create('slider', [[1,110],[8,110],[20,50,80]], {name: 'Y (renda)', snapWidth: 1});
+  var demanda = brd.create('functiongraph', [function(Q) {
+    return (200 + 2*sY.Value() - Q) / 4;
+  }, 0, 30], {strokeColor: '#2196F3', strokeWidth: 2.5, name: 'Demanda'});
+  var oferta = brd.create('functiongraph', [function(Q) {
+    return (Q + 20 + 30) / 6;
+  }, 0, 30], {strokeColor: '#E50505', strokeWidth: 2.5, name: 'Oferta'});
+  var Qeq = brd.create('point', [
+    function() { return (200 + 2*sY.Value() + 20 - 30) * 6 / (4+6) - (20+30)/1; },
+    function() { var Qs = (200 + 2*sY.Value() + 20 - 30) / 10; return (Qs + 20 + 30) / 6; }
+  ], {visible: false});
+  brd.create('text', [2, 15, function() {
+    var P = (220 + 2*sY.Value() + 30) / 10;
+    return 'P* = ' + P.toFixed(1);
+  }], {fontSize: 14, cssClass: 'eq-highlight'});
+})();
+</script>
+
+Ajuste o slider de renda $Y$ e observe o deslocamento da curva de demanda e o novo $P^*$.
+
+## Micro I → Micro II: A Ponte
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Micro I (Consumidor)**
+
+- Preferências → Utilidade
+- Restrição orçamentária
+- Demanda marshalliana
+- Efeito renda e substituição
+:::
+
+::: {.column width="50%"}
+**Micro II (Firma)**
+
+- Tecnologia → Produção
+- Restrição tecnológica
+- Oferta competitiva
+- Minimização de custos
+:::
+
+::::
+
+. . .
+
+> A dualidade entre consumidor e firma é uma das elegâncias da microeconomia moderna.
+
+## Maximização de Lucro: Firma Competitiva
+
+<iframe src="graficos/cap01/maximizacao-lucro.html" title="Maximização de Lucro: Firma Competitiva" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Card & Krueger: Modelos vs. Dados
+
+**Experimento natural (1994):** Nova Jersey elevou salário mínimo; Pensilvânia não.
+
+. . .
+
+- **Modelo competitivo padrão:** emprego deveria cair
+- **Resultado empírico:** emprego *não* caiu — leve aumento relativo
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O estudo não "refutou" oferta e demanda. Mostrou que a previsão depende da **estrutura do mercado** — com monopsônio, aumento moderado do salário mínimo pode *elevar* emprego.
+:::
+
+**Nobel 2021** — David Card, pela revolução da credibilidade.
+
+## Próximas Aulas
+
+**Aula 02 — Função de Produção I**
+
+- A firma como unidade produtiva
+- Produto marginal e produto médio
+- Isoquantas e TMST
+- Retornos de escala
+
+. . .
+
+**Leitura preparatória:**
+
+- Nicholson & Snyder, Cap. 10 (seções 10.1–10.3)
+- Livro digital: *cap10/produtividade.md* e *cap10/isoquantas.md*
+
+## Resumo da Aula
+
+1. Microeconomia estuda decisões sob **escassez** — o instrumento é o **modelo**
+2. Modelos são simplificações deliberadas — avaliados pelas **previsões**
+3. Três pilares: *ceteris paribus*, **otimização**, positivo vs. normativo
+4. Variáveis exógenas vs. endógenas; **equilíbrio** e **estática comparativa**
+5. Roteiro de modelagem em 5 passos — será usado o semestre inteiro
+
+. . .
+
+::: {.eq-highlight}
+$$\text{Modelo} \xrightarrow{\text{otimização}} \text{Funções de resposta} \xrightarrow{\text{estática comp.}} \text{Previsões testáveis}$$
+:::

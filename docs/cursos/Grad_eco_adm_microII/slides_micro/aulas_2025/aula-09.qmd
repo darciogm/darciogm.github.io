@@ -1,0 +1,837 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 09 — Equação de Slutsky: Exercícios em Sala"
+author: "Prof. Darcio Genicolo Martins"
+date: "Decomposição ES/ER: Prática com Cobb-Douglas, Quase-linear e Bens Inferiores"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Agenda da Aula {data-background-color="#E50505"}
+
+## O que Faremos Hoje
+
+Hoje é dia de **praticar**. Vamos aplicar a equação de Slutsky a diferentes tipos de preferência.
+
+. . .
+
+1. **Revisão relâmpago** da equação de Slutsky
+2. **Exercício 1**: Cobb-Douglas — decomposição completa
+3. **Exercício 2**: Quase-linear — efeito renda nulo
+4. **Exercício 3**: Bem inferior — quando ER se opõe ao ES
+5. **Exercício 4**: Aplicação Brasil — preço do combustível e demanda por etanol
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A melhor forma de entender a Slutsky é **calculando**. Cada tipo de preferência revela um aspecto diferente da decomposição.
+:::
+
+## Revisão Relâmpago {data-background-color="#E50505"}
+
+## A Equação de Slutsky
+
+::: {.eq-highlight}
+$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+**Efeito Total**
+
+$\partial x_i / \partial p_j$
+
+Demanda marshalliana
+:::
+::: {.column width="33%"}
+**Efeito Substituição**
+
+$\partial h_i / \partial p_j$
+
+Demanda hicksiana; $\leq 0$ para $i=j$
+:::
+::: {.column width="33%"}
+**Efeito Renda**
+
+$-x_j \cdot \partial x_i / \partial I$
+
+Ponderado pela quantidade consumida
+:::
+::::
+
+## Decomposição Discreta (Slutsky)
+
+Para variações **finitas** de preço, usamos a versão discreta:
+
+. . .
+
+::: {.eq-highlight}
+$$\Delta x_i^{Total} = \underbrace{\Delta x_i^{ES}}_{\text{preço muda, poder de compra compensado}} + \underbrace{\Delta x_i^{ER}}_{\text{renda volta ao original}}$$
+:::
+
+. . .
+
+**Compensação de Slutsky**: ajustar a renda para que a cesta original permaneça acessível:
+
+$$\Delta I^S = x_1^* \cdot \Delta p_1$$
+
+. . .
+
+$$I^S = I + \Delta I^S$$
+
+## Roteiro de Cálculo {.smaller}
+
+Para cada exercício, seguiremos este roteiro:
+
+| Passo | Descrição |
+|:---:|:---|
+| 1 | Calcular demandas marshallianas $x_1^*(p_1, p_2, I)$ e $x_2^*(p_1, p_2, I)$ |
+| 2 | Encontrar a cesta **antes** da mudança de preço |
+| 3 | Encontrar a cesta **depois** da mudança de preço |
+| 4 | Calcular $\Delta I^S$ e a renda compensada $I^S$ |
+| 5 | Encontrar a cesta **compensada** (Slutsky) |
+| 6 | Decompor: $ES = x_1^S - x_1^{antes}$ e $ER = x_1^{depois} - x_1^S$ |
+| 7 | Verificar: $ES + ER = \Delta x_1^{Total}$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O passo 4 é a "mágica" de Slutsky: compensamos a renda para isolar o efeito puramente de preço relativo.
+:::
+
+## Exercício 1: Cobb-Douglas {data-background-color="#E50505"}
+
+## Exercício 1 — Enunciado
+
+**Preferências**: $u(x_1, x_2) = x_1^{0.4} x_2^{0.6}$
+
+**Parâmetros iniciais**: $p_1 = 2$, $p_2 = 3$, $I = 120$
+
+**Choque de preço**: $p_1$ sobe para $p_1' = 3$
+
+. . .
+
+**Tarefas**:
+
+a) Calcule as demandas marshallianas antes e depois
+b) Calcule a compensação de Slutsky $\Delta I^S$
+c) Encontre a cesta compensada
+d) Decomponha em ES e ER
+e) Represente graficamente
+
+## Passo 1: Demandas Marshallianas CD
+
+Para $u = x_1^\alpha x_2^\beta$ com $\alpha + \beta = 1$:
+
+. . .
+
+::: {.eq-highlight}
+$$x_1^* = \frac{\alpha I}{p_1} \qquad x_2^* = \frac{\beta I}{p_2}$$
+:::
+
+. . .
+
+Com $\alpha = 0.4$ e $\beta = 0.6$:
+
+$$x_1^* = \frac{0.4 I}{p_1} \qquad x_2^* = \frac{0.6 I}{p_2}$$
+
+. . .
+
+:::{.callout-note title="Lembrete"}
+Na Cobb-Douglas, cada bem recebe uma fração **fixa** da renda, independente dos preços. Isso implica elasticidade-renda unitária.
+:::
+
+## Passo 2: Cesta Antes ($A$)
+
+Com $p_1 = 2$, $p_2 = 3$, $I = 120$:
+
+. . .
+
+$$x_1^A = \frac{0.4 \times 120}{2} = 24$$
+
+$$x_2^A = \frac{0.6 \times 120}{3} = 24$$
+
+. . .
+
+**Utilidade inicial**:
+
+$$u^A = 24^{0.4} \times 24^{0.6} = 24$$
+
+. . .
+
+O consumidor escolhe a cesta $A = (24, 24)$.
+
+## Passo 3: Cesta Depois ($C$)
+
+Com $p_1' = 3$, $p_2 = 3$, $I = 120$:
+
+. . .
+
+$$x_1^C = \frac{0.4 \times 120}{3} = 16$$
+
+$$x_2^C = \frac{0.6 \times 120}{3} = 24$$
+
+. . .
+
+**Efeito Total**:
+
+$$\Delta x_1^{Total} = 16 - 24 = -8$$
+
+$$\Delta x_2^{Total} = 24 - 24 = 0$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Note que $x_2$ não muda! Na CD, a fração gasta em cada bem é fixa, e como $p_2$ não mudou, $x_2$ permanece em 24. Toda a ação está em $x_1$.
+:::
+
+## Passo 4: Compensação de Slutsky
+
+A renda compensada mantém a **cesta original acessível** aos novos preços:
+
+. . .
+
+$$\Delta I^S = x_1^A \cdot \Delta p_1 = 24 \times (3 - 2) = 24$$
+
+. . .
+
+$$I^S = 120 + 24 = 144$$
+
+. . .
+
+:::{.callout-note title="Interpretação"}
+O consumidor precisaria de R\$ 144 para poder comprar exatamente $(24, 24)$ aos novos preços: $3 \times 24 + 3 \times 24 = 144$. Confira!
+:::
+
+## Passo 5: Cesta Compensada ($B$)
+
+Com $p_1' = 3$, $p_2 = 3$, $I^S = 144$:
+
+. . .
+
+$$x_1^B = \frac{0.4 \times 144}{3} = 19.2$$
+
+$$x_2^B = \frac{0.6 \times 144}{3} = 28.8$$
+
+. . .
+
+**Cesta Slutsky**: $B = (19.2,\; 28.8)$
+
+. . .
+
+Note que $B \neq A$: mesmo podendo comprar $A$, o consumidor **reotimiza** e substitui $x_1$ (agora mais caro) por $x_2$.
+
+## Passo 6: Decomposição
+
+:::: {.columns}
+::: {.column width="50%"}
+**Efeito Substituição** (ES):
+
+$$ES_1 = x_1^B - x_1^A = 19.2 - 24 = -4.8$$
+
+$$ES_2 = x_2^B - x_2^A = 28.8 - 24 = +4.8$$
+
+:::
+::: {.column width="50%"}
+**Efeito Renda** (ER):
+
+$$ER_1 = x_1^C - x_1^B = 16 - 19.2 = -3.2$$
+
+$$ER_2 = x_2^C - x_2^B = 24 - 28.8 = -4.8$$
+
+:::
+::::
+
+. . .
+
+**Verificação**:
+
+$$\Delta x_1^{Total} = ES_1 + ER_1 = (-4.8) + (-3.2) = -8 \quad \checkmark$$
+
+$$\Delta x_2^{Total} = ES_2 + ER_2 = (+4.8) + (-4.8) = 0 \quad \checkmark$$
+
+## Classificação do Bem
+
+Para $x_1$:
+
+- $ES_1 = -4.8 < 0$ (substituição: $x_1$ ficou relativamente mais caro)
+- $ER_1 = -3.2 < 0$ (ficou mais pobre → consome menos)
+
+. . .
+
+ES e ER têm o **mesmo sinal** → $x_1$ é um **bem normal**.
+
+. . .
+
+Para $x_2$:
+
+- $ES_2 = +4.8 > 0$ (substituição cruzada: vai para $x_2$)
+- $ER_2 = -4.8 < 0$ (ficou mais pobre → consome menos de $x_2$ também)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na CD, ambos os bens são sempre normais. O ES e o ER se reforçam para o bem cujo preço mudou, garantindo a lei da demanda.
+:::
+
+## Visualização — Decomposição Slutsky
+
+<iframe src="graficos/cap05/efeito-renda-substituicao.html" title="Decomposição Slutsky" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo do Exercício 1 {.smaller}
+
+| Cesta | $x_1$ | $x_2$ | Renda | Preço $x_1$ |
+|:---:|:---:|:---:|:---:|:---:|
+| $A$ (antes) | 24 | 24 | 120 | 2 |
+| $B$ (compensada) | 19.2 | 28.8 | 144 | 3 |
+| $C$ (depois) | 16 | 24 | 120 | 3 |
+
+. . .
+
+| Componente | $\Delta x_1$ | $\Delta x_2$ |
+|:---|:---:|:---:|
+| ES ($A \to B$) | $-4.8$ | $+4.8$ |
+| ER ($B \to C$) | $-3.2$ | $-4.8$ |
+| **Total** ($A \to C$) | $-8.0$ | $0.0$ |
+
+## Exercício 2: Quase-Linear {data-background-color="#E50505"}
+
+## Exercício 2 — Enunciado
+
+**Preferências**: $u(x_1, x_2) = \ln x_1 + x_2$
+
+**Parâmetros iniciais**: $p_1 = 2$, $p_2 = 3$, $I = 120$
+
+**Choque de preço**: $p_1$ sobe para $p_1' = 3$
+
+. . .
+
+**Tarefas**:
+
+a) Derive as demandas marshallianas
+b) Decomponha em ES e ER
+c) Mostre que $ER = 0$ para o bem 2
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A preferência quase-linear é especial: a utilidade é linear em $x_2$, o que elimina o efeito renda para esse bem. Veremos isso numericamente.
+:::
+
+## Demandas Marshallianas — Quase-Linear
+
+Maximizando $\ln x_1 + x_2$ sujeito a $p_1 x_1 + p_2 x_2 = I$:
+
+. . .
+
+CPO: $\frac{1}{x_1} = \frac{p_1}{p_2} \implies x_1^* = \frac{p_2}{p_1}$
+
+. . .
+
+Substituindo na restrição:
+
+$$x_2^* = \frac{I - p_2}{p_2} = \frac{I}{p_2} - 1$$
+
+. . .
+
+::: {.eq-highlight}
+$$x_1^* = \frac{p_2}{p_1} \qquad x_2^* = \frac{I - p_2}{p_2}$$
+:::
+
+. . .
+
+:::{.callout-warning title="Atenção"}
+$x_1^*$ **não depende da renda** — depende apenas dos preços. Isso é a marca registrada da quase-linear: a demanda pelo bem "não-linear" é independente de $I$.
+:::
+
+## Cesta Antes e Depois
+
+**Antes** ($p_1 = 2$, $p_2 = 3$, $I = 120$):
+
+$$x_1^A = \frac{3}{2} = 1.5 \qquad x_2^A = \frac{120 - 3}{3} = 39$$
+
+. . .
+
+**Depois** ($p_1' = 3$, $p_2 = 3$, $I = 120$):
+
+$$x_1^C = \frac{3}{3} = 1.0 \qquad x_2^C = \frac{120 - 3}{3} = 39$$
+
+. . .
+
+**Efeito Total**:
+
+$$\Delta x_1 = -0.5 \qquad \Delta x_2 = 0$$
+
+## Compensação e Decomposição
+
+**Compensação de Slutsky**:
+
+$$\Delta I^S = x_1^A \cdot \Delta p_1 = 1.5 \times 1 = 1.5 \implies I^S = 121.5$$
+
+. . .
+
+**Cesta compensada**:
+
+$$x_1^B = \frac{3}{3} = 1.0 \qquad x_2^B = \frac{121.5 - 3}{3} = 39.5$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**ES**:
+
+$ES_1 = 1.0 - 1.5 = -0.5$
+
+$ES_2 = 39.5 - 39 = +0.5$
+:::
+::: {.column width="50%"}
+**ER**:
+
+$ER_1 = 1.0 - 1.0 = 0$
+
+$ER_2 = 39 - 39.5 = -0.5$
+:::
+::::
+
+## O Resultado Notável
+
+Para o bem 1 (o bem "não-linear"):
+
+::: {.eq-highlight}
+$$ER_1 = 0$$
+:::
+
+. . .
+
+**Todo o efeito é substituição!**
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Como $x_1^* = p_2/p_1$ não depende de $I$, variações de renda **não afetam** a demanda por $x_1$. Logo, $\partial x_1/\partial I = 0$, e o termo de efeito renda na Slutsky é zero: $-x_1 \cdot 0 = 0$.
+:::
+
+. . .
+
+**Consequência prática**: para preferências quase-lineares, a demanda marshalliana e a hicksiana por $x_1$ **coincidem**.
+
+## Curva de Engel — Quase-Linear
+
+A curva de Engel para $x_1$ é **vertical** (não responde à renda):
+
+<iframe src="graficos/cap05/curva-engel.html" title="Curva de Engel" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo do Exercício 2 {.smaller}
+
+| Componente | $\Delta x_1$ | $\Delta x_2$ |
+|:---|:---:|:---:|
+| ES | $-0.5$ | $+0.5$ |
+| ER | $0$ | $-0.5$ |
+| **Total** | $-0.5$ | $0$ |
+
+. . .
+
+**Lições**:
+
+- Na quase-linear, $ER = 0$ para o bem não-linear ($x_1$)
+- $x_2$ absorve todo o efeito renda
+- Demanda marshalliana = demanda hicksiana para $x_1$
+- Excedente do consumidor é uma medida **exata** de bem-estar para $x_1$
+
+## Exercício 3: Bem Inferior {data-background-color="#E50505"}
+
+## Exercício 3 — Enunciado
+
+Considere um consumidor com demanda marshalliana por $x_1$ dada por:
+
+$$x_1^*(p_1, I) = \frac{A}{p_1} - bI$$
+
+onde $A > 0$ e $b > 0$.
+
+. . .
+
+**Tarefas**:
+
+a) Verifique que $x_1$ é um bem inferior
+b) Encontre condições para que $x_1$ seja um bem de Giffen
+c) Interprete usando a equação de Slutsky
+
+## Verificação: Bem Inferior
+
+Para verificar o tipo do bem, calculamos $\partial x_1/\partial I$:
+
+. . .
+
+$$\frac{\partial x_1}{\partial I} = -b < 0$$
+
+. . .
+
+Como a derivada é **negativa**, $x_1$ é um **bem inferior**.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando a renda sobe, o consumidor compra **menos** deste bem. Pense em transporte público: à medida que a renda aumenta, o consumidor migra para carro particular.
+:::
+
+## Quando é Giffen?
+
+Para ser Giffen, precisamos que o efeito total seja **positivo** (preço sobe, demanda sobe):
+
+$$\frac{\partial x_1}{\partial p_1} > 0$$
+
+. . .
+
+Calculando:
+
+$$\frac{\partial x_1}{\partial p_1} = -\frac{A}{p_1^2}$$
+
+. . .
+
+Pela equação de Slutsky:
+
+$$\frac{\partial x_1}{\partial p_1} = \underbrace{\frac{\partial h_1}{\partial p_1}}_{\leq 0} - x_1 \underbrace{(-b)}_{< 0}$$
+
+$$= \frac{\partial h_1}{\partial p_1} + bx_1$$
+
+## Condição para Giffen
+
+Para $\partial x_1 / \partial p_1 > 0$:
+
+. . .
+
+::: {.eq-highlight}
+$$bx_1 > \left|\frac{\partial h_1}{\partial p_1}\right|$$
+:::
+
+. . .
+
+O efeito renda ($bx_1$) precisa **superar** o efeito substituição em magnitude.
+
+. . .
+
+Isso requer:
+
+1. $b$ grande: bem **muito inferior** (forte reação negativa à renda)
+2. $x_1$ grande: consumidor gasta muita renda no bem
+3. ES pequeno: poucos substitutos disponíveis
+
+. . .
+
+:::{.callout-warning title="Na prática"}
+Essas três condições raramente são satisfeitas simultaneamente. Bens Giffen são uma curiosidade teórica — mas a Slutsky explica **por que** são raros.
+:::
+
+## Diagrama: Normal vs. Inferior vs. Giffen {.smaller}
+
+| Tipo | $\partial x/\partial I$ | ES | ER | Total | Lei da Demanda |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **Normal** | $> 0$ | $-$ | $-$ | $-$ | Vale |
+| **Inferior comum** | $< 0$ | $-$ | $+$ (pequeno) | $-$ | Vale |
+| **Giffen** | $< 0$ | $-$ | $+$ (grande) | $+$ | **Falha** |
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Bem normal**: ES e ER se reforçam
+
+$\underbrace{(-)}_{\text{ES}} + \underbrace{(-)}_{\text{ER}} = (-)$
+:::
+::: {.column width="50%"}
+**Bem Giffen**: ER domina ES
+
+$\underbrace{(-)}_{\text{ES}} + \underbrace{(+)_{\text{grande}}}_{\text{ER}} = (+)$
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Resultado Teórico"}
+A equação de Slutsky demonstra que a lei da demanda **só pode falhar** se o bem for inferior **e** o efeito renda for suficientemente grande.
+:::
+
+## Exercício 4: Aplicação Brasil {data-background-color="#E50505"}
+
+## Exercício 4 — Preço do Combustível e Etanol
+
+No Brasil, gasolina e etanol são **substitutos** na bomba. Quando o preço da gasolina sobe, como fica a demanda por etanol?
+
+. . .
+
+**Dados estilizados**:
+
+- $p_G = 5.50$ R\$/litro (gasolina, antes)
+- $p_G' = 6.50$ R\$/litro (gasolina, depois — aumento de ICMS)
+- $p_E = 3.80$ R\$/litro (etanol, constante)
+- $I = 600$ R\$/mês (orçamento mensal para combustível)
+
+. . .
+
+**Pergunta**: decomponha o efeito sobre a demanda de etanol usando a Slutsky cruzada.
+
+## Slutsky Cruzada
+
+A equação de Slutsky para o efeito cruzado ($i = E$, $j = G$):
+
+. . .
+
+::: {.eq-highlight}
+$$\frac{\partial x_E}{\partial p_G} = \underbrace{\frac{\partial h_E}{\partial p_G}}_{\text{ES cruzado}} - \underbrace{x_G \frac{\partial x_E}{\partial I}}_{\text{ER}}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**ES cruzado** ($> 0$):
+
+Gasolina ficou mais cara → etanol ficou **relativamente mais barato** → substitui gasolina por etanol
+
+:::
+::: {.column width="50%"}
+**ER** ($< 0$ se etanol é normal):
+
+Consumidor ficou mais pobre → compra menos de **tudo**, incluindo etanol
+
+:::
+::::
+
+## Cálculo Simplificado {.smaller}
+
+Suponha demandas CD com $\alpha_G = 0.6$ (gasolina) e $\alpha_E = 0.4$ (etanol):
+
+. . .
+
+**Antes**: $x_G = 0.6 \times 600 / 5.50 \approx 65.5$ litros; $x_E = 0.4 \times 600 / 3.80 \approx 63.2$ litros
+
+. . .
+
+**Depois** ($p_G' = 6.50$): $x_G' = 0.6 \times 600 / 6.50 \approx 55.4$ litros; $x_E' = 63.2$ litros (não muda na CD!)
+
+. . .
+
+**Compensação Slutsky**: $\Delta I^S = x_G \times \Delta p_G = 65.5 \times 1 = 65.5$
+
+$I^S = 665.5$
+
+$x_E^S = 0.4 \times 665.5 / 3.80 \approx 70.1$ litros
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+$ES_E = 70.1 - 63.2 = +6.9$ litros
+:::
+::: {.column width="50%"}
+$ER_E = 63.2 - 70.1 = -6.9$ litros
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na CD, o efeito cruzado total é zero! O ES cruzado positivo (substituição) é exatamente cancelado pelo ER negativo (empobrecimento). Preferências mais realistas com elasticidade de substituição diferente de 1 gerariam efeito líquido não nulo.
+:::
+
+## Elasticidade e Receita
+
+Como o aumento do preço da gasolina afeta a receita dos postos de etanol?
+
+<iframe src="graficos/cap06/elasticidade-receita.html" title="Elasticidade e Receita" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Discussão: Política Tributária e Combustíveis {.smaller}
+
+O governo brasileiro frequentemente ajusta a tributação sobre combustíveis. A Slutsky nos ajuda a prever os efeitos:
+
+. . .
+
+| Efeito | Gasolina → Etanol | Implicação |
+|:---|:---:|:---|
+| **ES cruzado** | $+$ | Consumidores migram para etanol |
+| **ER** | $-$ | Consumidores reduzem consumo total |
+| **Total** | Depende | Resultado líquido requer dados empíricos |
+
+. . .
+
+:::{.callout-note title="Dados do CEPEA/USP"}
+Estimativas empíricas sugerem elasticidade cruzada gasolina-etanol entre 0.7 e 1.2 no Brasil — **substitutos imperfeitos**, com ES dominando ER.
+:::
+
+. . .
+
+:::{.callout-warning title="Para a Prova"}
+Sempre identifique os sinais de ES e ER separadamente, depois analise o resultado líquido. Nunca pule direto para o efeito total.
+:::
+
+## Exercícios Complementares {data-background-color="#E50505"}
+
+## Para Praticar em Casa — Exercício A {.smaller}
+
+$u = x_1^{0.3} x_2^{0.7}$, $p_1 = 5$, $p_2 = 2$, $I = 200$.
+
+O preço de $x_1$ **cai** para $p_1' = 3$.
+
+. . .
+
+a) Encontre as cestas $A$, $C$ e $B$ (Slutsky)
+b) Decomponha o efeito sobre $x_1$ em ES e ER
+c) Verifique que $x_1$ é bem normal
+
+. . .
+
+:::{.callout-note title="Dica"}
+Lembre-se: quando o preço **cai**, $\Delta p_1 < 0$, logo $\Delta I^S < 0$. A compensação de Slutsky **reduz** a renda para que a cesta original permaneça "apenas acessível".
+:::
+
+## Para Praticar em Casa — Exercício B {.smaller}
+
+$u = \sqrt{x_1} + x_2$, $p_1 = 1$, $p_2 = 1$, $I = 10$.
+
+O preço de $x_1$ sobe para $p_1' = 4$.
+
+. . .
+
+a) Encontre as demandas marshallianas (CPO!)
+b) Verifique que $ER_1 = 0$ (quase-linear)
+c) Compare a variação do excedente do consumidor com o ES
+
+. . .
+
+**Resposta parcial**: $x_1^* = (p_2/(2p_1))^2 = 1/(4p_1^2)$
+
+Antes: $x_1 = 0.25$. Depois: $x_1 = 1/64 \approx 0.016$. $\Delta x_1 \approx -0.234$.
+
+## Para Praticar em Casa — Exercício C {.smaller}
+
+Um consumidor gasta 80% da renda em arroz e 20% em carne. Quando o preço do arroz sobe 10%:
+
+a) Calcule $\Delta I^S$ em termos da renda
+b) Se arroz é bem inferior, qual o sinal do ER?
+c) É possível que arroz seja Giffen neste caso? Argumente.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A fração do orçamento gasta no bem é **crucial** para determinar a magnitude do ER. Um bem que consome 80% do orçamento tem um efeito renda muito grande — exatamente a condição para um possível bem Giffen (se for inferior).
+:::
+
+## Conexões Importantes {data-background-color="#E50505"}
+
+## Slutsky e a Matriz de Substituição {.smaller}
+
+A equação de Slutsky pode ser escrita em forma matricial:
+
+. . .
+
+::: {.eq-highlight}
+$$\mathbf{S} = \begin{bmatrix} \partial h_1/\partial p_1 & \partial h_1/\partial p_2 \\ \partial h_2/\partial p_1 & \partial h_2/\partial p_2 \end{bmatrix}$$
+:::
+
+. . .
+
+**Propriedades da matriz de Slutsky** ($\mathbf{S}$):
+
+1. **Simétrica**: $S_{ij} = S_{ji}$ (reciprocidade)
+2. **Negativa semidefinida**: $\mathbf{v}'\mathbf{S}\mathbf{v} \leq 0$ para todo $\mathbf{v}$
+3. **Diagonal negativa**: $S_{ii} \leq 0$ (ES próprio sempre $\leq 0$)
+
+. . .
+
+:::{.callout-note title="Testabilidade"}
+Essas propriedades são **testáveis com dados** — permitem verificar se o comportamento observado é consistente com maximização de utilidade.
+:::
+
+## Slutsky e Elasticidades
+
+Dividindo a Slutsky por $x_i$ e multiplicando por $p_j/1$:
+
+. . .
+
+::: {.eq-highlight}
+$$\varepsilon_{ij} = \varepsilon_{ij}^H - s_j \cdot \eta_i$$
+:::
+
+. . .
+
+Onde:
+
+- $\varepsilon_{ij}$ = elasticidade-preço marshalliana
+- $\varepsilon_{ij}^H$ = elasticidade-preço hicksiana (compensada)
+- $s_j = p_j x_j / I$ = fração do orçamento gasta em $j$
+- $\eta_i$ = elasticidade-renda de $i$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A diferença entre as elasticidades marshalliana e hicksiana é proporcional à **fração do orçamento**. Para bens com $s_j$ pequeno (sal, fósforo), as duas elasticidades são praticamente iguais.
+:::
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Resultado Principal |
+|:---|:---|
+| **CD ($u = x_1^{0.4}x_2^{0.6}$)** | ES e ER se reforçam; ambos os bens normais |
+| **Quase-linear ($u = \ln x_1 + x_2$)** | $ER_1 = 0$; demanda marshalliana = hicksiana para $x_1$ |
+| **Bem inferior** | ER se opõe ao ES; Giffen requer $|ER| > |ES|$ |
+| **Slutsky cruzada** | ES cruzado: sinal depende se substitutos ou complementos |
+| **Aplicação Brasil** | Decomposição ajuda a prever impacto de política tributária |
+
+. . .
+
+**Lições práticas**:
+
+1. Sempre siga o **roteiro de 7 passos**
+2. **Verifique**: $ES + ER = \text{Total}$
+3. **Classifique** o bem pelo sinal do ER
+4. A **fração do orçamento** amplifica o ER
+
+## Próxima Aula
+
+**Aula 10 — Decomposição de Hicks: Variação Compensatória e Variação Equivalente**
+
+. . .
+
+Veremos:
+
+- A decomposição de Hicks como alternativa à Slutsky
+- Medidas monetárias de bem-estar: VC e VE
+- Quando VC = VE (spoiler: quase-linear!)
+- O princípio *lump-sum*
+
+. . .
+
+**Preparação**: revisar função dispêndio $E(\mathbf{p}, \bar{u})$ e demanda hicksiana $h_i(\mathbf{p}, \bar{u})$.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.
