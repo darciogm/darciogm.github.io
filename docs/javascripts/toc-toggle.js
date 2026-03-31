@@ -1,10 +1,11 @@
-/* TOC colapsável no sidebar — todas as páginas
-   Clique na página ativa abre/fecha as seções (TOC) */
+/* TOC colapsavel no sidebar — todas as paginas
+   Clique na pagina ativa abre/fecha as secoes (TOC)
+   Compativel com navigation.instant (SPA) */
 (function () {
   "use strict";
 
   function initTocToggle() {
-    /* Encontrar o link <a> do capítulo ativo no sidebar */
+    /* Encontrar o nav secundario (TOC integrado no sidebar) */
     var tocNav = document.querySelector(".md-nav--secondary");
     if (!tocNav) return;
 
@@ -16,7 +17,11 @@
     );
     if (!link) return;
 
-    /* Começar colapsado */
+    /* Evitar re-bind se ja foi configurado neste elemento */
+    if (link.dataset.tocBound) return;
+    link.dataset.tocBound = "1";
+
+    /* Comecar colapsado */
     tocNav.classList.add("toc--collapsed");
 
     /* Toggle ao clicar */
@@ -26,10 +31,17 @@
     });
   }
 
-  /* Inicializar após DOM pronto */
+  /* Inicializar na carga completa */
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initTocToggle);
   } else {
     initTocToggle();
+  }
+
+  /* Re-inicializar apos navegacao instant (SPA) */
+  if (typeof document$ !== "undefined") {
+    document$.subscribe(function () {
+      initTocToggle();
+    });
   }
 })();
