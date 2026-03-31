@@ -26,7 +26,7 @@ $$A(W) = -\frac{u''(W)}{u'(W)}$$
 $$R(W) = -\frac{W \cdot u''(W)}{u'(W)} = W \cdot A(W)$$
 
 !!! note "Intuição Econômica"
-    A ARA mede quanto aversão ao risco você tem para uma aposta de **valor absoluto fixo** (ex.: apostar R\$ 100). A RRA mede a aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA muito diferentes.
+    A ARA mede quanta aversão ao risco você tem para uma aposta de **valor absoluto fixo** (ex.: apostar R\$ 100). A RRA mede a aversão para uma aposta proporcional à sua riqueza (ex.: apostar 10% da riqueza). Um bilionário e um assalariado podem ter a mesma RRA mas ARA muito diferentes.
 
 ---
 

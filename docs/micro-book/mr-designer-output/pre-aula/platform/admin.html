@@ -69,7 +69,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
 
   <!-- STATS -->
   <div class="admin-card">
-    <h3>Visao Geral</h3>
+    <h3>Visão Geral</h3>
     <div class="stat-row" id="admin-stats"></div>
   </div>
 
@@ -93,7 +93,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
   <div class="admin-card tab-content" id="tab-heatmap" style="display:none">
     <h3>Mapa de Completude (Alunos &times; Aulas)</h3>
     <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem">
-      &#9989; = quiz feito &nbsp; &#128260; = visitou &nbsp; &#11035; = nao acessou
+      &#9989; = quiz feito &nbsp; &#128260; = visitou &nbsp; &#11035; = não acessou
     </p>
     <div class="heatmap-wrap">
       <table class="heatmap" id="heatmap-table"></table>
@@ -106,8 +106,8 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
     <div style="overflow-x:auto">
       <table id="detail-table">
         <thead><tr>
-          <th>Matricula</th><th>Nome</th><th>Aulas</th><th>Visitas</th>
-          <th>Tempo (min)</th><th>Quizzes</th><th>Media Quiz</th><th>Risco</th>
+          <th>Matrícula</th><th>Nome</th><th>Aulas</th><th>Visitas</th>
+          <th>Tempo (min)</th><th>Quizzes</th><th>Média Quiz</th><th>Risco</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -120,8 +120,8 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
     <div style="overflow-x:auto">
       <table id="quiz-table">
         <thead><tr>
-          <th>Matricula</th><th>Nome</th><th>Aula</th><th>Tentativas</th>
-          <th>Melhor Score</th><th>Acertos</th><th>Total Q</th><th>Ultimo</th>
+          <th>Matrícula</th><th>Nome</th><th>Aula</th><th>Tentativas</th>
+          <th>Melhor Score</th><th>Acertos</th><th>Total Q</th><th>Último</th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -159,8 +159,8 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
       <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os dados de tracking?')){MicroTracker.clearAll();location.reload();}">
         &#128465; Limpar Dados de Tracking
       </button>
-      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuarios?')){localStorage.removeItem('microII_users');location.reload();}">
-        &#128465; Limpar Usuarios
+      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuários?')){localStorage.removeItem('microII_users');location.reload();}">
+        &#128465; Limpar Usuários
       </button>
     </div>
   </div>
@@ -170,31 +170,31 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
 <script src="js/tracker.js"></script>
 <script>
 var AULAS = [
-  {n:1, title:'Introducao a Microeconomia II', cap:'Cap. 1'},
-  {n:2, title:'Restricao Orcamentaria', cap:'Cap. 4'},
-  {n:3, title:'Preferencias e Axiomas', cap:'Cap. 3'},
-  {n:4, title:'Utilidade e Curvas de Indiferenca', cap:'Cap. 3'},
+  {n:1, title:'Introdução à Microeconomia II', cap:'Cap. 1'},
+  {n:2, title:'Restrição Orçamentária', cap:'Cap. 4'},
+  {n:3, title:'Preferências e Axiomas', cap:'Cap. 3'},
+  {n:4, title:'Utilidade e Curvas de Indiferença', cap:'Cap. 3'},
   {n:5, title:'Max Utilidade e Demanda Marshalliana', cap:'Cap. 4'},
-  {n:6, title:'Min Dispendio e Demanda Hicksiana', cap:'Cap. 4'},
+  {n:6, title:'Min Dispêndio e Demanda Hicksiana', cap:'Cap. 4'},
   {n:7, title:'Dualidade do Consumidor', cap:'Cap. 4'},
-  {n:8, title:'Equacao de Slutsky: Teoria', cap:'Cap. 5'},
-  {n:9, title:'Equacao de Slutsky: Exercicios', cap:'Cap. 5'},
-  {n:10, title:'Decomposicao de Hicks: Teoria', cap:'Cap. 5'},
-  {n:11, title:'Decomposicao de Hicks: Exercicios', cap:'Cap. 5'},
-  {n:12, title:'Economia de Dotacoes', cap:'Cap. 17-18'},
+  {n:8, title:'Equação de Slutsky: Teoria', cap:'Cap. 5'},
+  {n:9, title:'Equação de Slutsky: Exercícios', cap:'Cap. 5'},
+  {n:10, title:'Decomposição de Hicks: Teoria', cap:'Cap. 5'},
+  {n:11, title:'Decomposição de Hicks: Exercícios', cap:'Cap. 5'},
+  {n:12, title:'Economia de Dotações', cap:'Cap. 17-18'},
   {n:13, title:'Incerteza I: Utilidade Esperada', cap:'Cap. 7'},
   {n:14, title:'Incerteza II: Seguros', cap:'Cap. 7'},
   {n:15, title:'Incerteza III: Paradoxos', cap:'Cap. 8'},
   {n:16, title:'Incerteza IV: Mercados de Risco', cap:'Cap. 7/19'},
-  {n:17, title:'Funcao de Producao I', cap:'Cap. 10'},
-  {n:18, title:'Funcao de Producao II', cap:'Cap. 10'},
+  {n:17, title:'Função de Produção I', cap:'Cap. 10'},
+  {n:18, title:'Função de Produção II', cap:'Cap. 10'},
   {n:19, title:'Custos e Min Custos', cap:'Cap. 11'},
   {n:20, title:'Max Lucro I', cap:'Cap. 12'},
   {n:21, title:'Max Lucro II: RMg e Oferta', cap:'Cap. 12'},
-  {n:22, title:'Concorrencia Perfeita', cap:'Cap. 13'},
-  {n:23, title:'Intervencao Estatal', cap:'Cap. 13'},
-  {n:24, title:'Monopolio I', cap:'Cap. 15'},
-  {n:25, title:'Monopolio II: Discriminacao', cap:'Cap. 15'}
+  {n:22, title:'Concorrência Perfeita', cap:'Cap. 13'},
+  {n:23, title:'Intervenção Estatal', cap:'Cap. 13'},
+  {n:24, title:'Monopólio I', cap:'Cap. 15'},
+  {n:25, title:'Monopólio II: Discriminação', cap:'Cap. 15'}
 ];
 
 var TOTAL_AULAS = AULAS.length;
@@ -224,7 +224,7 @@ function renderAdmin() {
     +'<div class="stat-box"><div class="v">'+activeStudents+'</div><div class="l">Com Atividade</div></div>'
     +'<div class="stat-box"><div class="v">'+completionRate+'%</div><div class="l">Completude</div></div>'
     +'<div class="stat-box"><div class="v">'+Math.round(totalTime)+'</div><div class="l">Min. Totais</div></div>'
-    +'<div class="stat-box"><div class="v">'+Math.round(avgQuiz)+'%</div><div class="l">Media Quizzes</div></div>';
+    +'<div class="stat-box"><div class="v">'+Math.round(avgQuiz)+'%</div><div class="l">Média Quizzes</div></div>';
 
   // === TAB: POR AULA ===
   var aulaHtml = '';
@@ -247,7 +247,7 @@ function renderAdmin() {
     aulaHtml += '<div class="aula-mini" onclick="window.open(\''+pid+'.html\',\'_blank\')">'
       +'<div class="aula-mini-num">Aula '+String(a.n).padStart(2,'0')+' | '+a.cap+'</div>'
       +'<div class="aula-mini-title">'+a.title+'</div>'
-      +'<div style="font-size:0.72rem;color:var(--text-muted)">'+visited+' visitaram &bull; '+quizDone+' quiz &bull; Media: '+avgScore+'%</div>'
+      +'<div style="font-size:0.72rem;color:var(--text-muted)">'+visited+' visitaram &bull; '+quizDone+' quiz &bull; Média: '+avgScore+'%</div>'
       +'<div class="aula-mini-bar"><div class="aula-mini-fill '+fillClass+'" style="width:'+pct+'%"></div></div>'
       +'</div>';
   });
@@ -293,7 +293,7 @@ function renderAdmin() {
     var risk = s.avgQuizScore < 40 || s.pagesVisited < 6 ? 'high' :
               s.avgQuizScore < 60 || s.pagesVisited < 13 ? 'med' : 'low';
     var badge = risk==='high'?'badge-high':risk==='med'?'badge-med':'badge-low';
-    var label = risk==='high'?'ALTO':risk==='med'?'MEDIO':'BAIXO';
+    var label = risk==='high'?'ALTO':risk==='med'?'MÉDIO':'BAIXO';
     tbody += '<tr><td>'+s.matricula+'</td><td>'+s.nome+'</td><td>'+s.pagesVisited+'/'+TOTAL_AULAS+'</td>'
       +'<td>'+s.totalVisits+'</td><td>'+s.totalTimeMin+'</td><td>'+s.quizzesCompleted+'/'+TOTAL_AULAS+'</td>'
       +'<td>'+s.avgQuizScore+'%</td><td><span class="badge '+badge+'">'+label+'</span></td></tr>';

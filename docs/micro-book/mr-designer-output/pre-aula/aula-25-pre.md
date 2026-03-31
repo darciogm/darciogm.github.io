@@ -23,7 +23,7 @@ O monopolista cobra de cada consumidor exatamente sua **disposição a pagar**. 
 
 $$P_i = v_i \quad \text{para cada consumidor } i$$
 
-- Toda o excedente do consumidor é capturado pelo monopolista: $EC = 0$
+- Todo o excedente do consumidor é capturado pelo monopolista: $EC = 0$
 - A quantidade é **eficiente**: $Q = Q_c$ (mesma da competição)
 - **Não há peso morto** — mas toda a renda vai para o monopolista
 

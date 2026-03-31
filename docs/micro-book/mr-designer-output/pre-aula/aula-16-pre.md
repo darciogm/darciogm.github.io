@@ -83,7 +83,7 @@ onde $c_H < c_L$ (tipo alto tem custo menor para adquirir educação $e^*$).
 
 ---
 
-## 5. Screening (Rothschild-Stiglitz) e Aplicações Brasil
+## 5. Screening (Rothschild-Stiglitz) e Aplicações no Brasil
 
 Quando a parte **desinformada** age primeiro, ela pode oferecer um **menu de contratos** que induz autosseleção:
 
