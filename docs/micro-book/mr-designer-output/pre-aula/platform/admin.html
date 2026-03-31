@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Dados de Tracking | Microeconomia II</title>
+<title>Admin — Dashboard do Professor | Microeconomia II</title>
 <link rel="stylesheet" href="css/platform.css">
 <style>
-.admin-wrapper{max-width:1000px;margin:0 auto;padding:1.5rem}
+.admin-wrapper{max-width:1100px;margin:0 auto;padding:1.5rem}
 .admin-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-bottom:1rem;box-shadow:var(--shadow)}
 .admin-card h3{margin-bottom:0.8rem;color:var(--primary)}
 .admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -21,21 +21,47 @@
 .stat-box .l{font-size:0.75rem;color:var(--text-muted)}
 pre.json-preview{background:#1a202c;color:#e2e8f0;padding:1rem;border-radius:6px;max-height:300px;overflow:auto;font-size:0.75rem}
 table{width:100%;border-collapse:collapse;font-size:0.82rem;margin-top:0.5rem}
-th{background:#edf2f7;padding:0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase}
+th{background:#edf2f7;padding:0.5rem;text-align:left;font-size:0.7rem;text-transform:uppercase;position:sticky;top:0}
 td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
 .badge{padding:0.15rem 0.5rem;border-radius:10px;font-size:0.65rem;font-weight:700}
 .badge-high{background:#fed7d7;color:#c53030}
 .badge-med{background:#fefcbf;color:#744210}
 .badge-low{background:#c6f6d5;color:#276749}
 .copy-msg{display:none;color:var(--success);font-size:0.8rem;margin-left:0.5rem}
+/* Heatmap */
+.heatmap-wrap{overflow-x:auto;max-height:500px;overflow-y:auto}
+.heatmap{border-collapse:collapse;font-size:0.7rem;min-width:900px}
+.heatmap th,.heatmap td{padding:0.3rem 0.4rem;text-align:center;border:1px solid #eee}
+.heatmap th{background:#edf2f7;font-size:0.65rem;white-space:nowrap}
+.heatmap th.aula-header{writing-mode:vertical-lr;text-orientation:mixed;height:90px;cursor:pointer}
+.heatmap th.aula-header:hover{background:#bee3f8}
+.heatmap td.name-cell{text-align:left;white-space:nowrap;font-weight:600;position:sticky;left:0;background:#fff;z-index:1}
+.heatmap .cell-done{background:#c6f6d5;color:#276749;font-weight:700}
+.heatmap .cell-progress{background:#fefcbf;color:#744210}
+.heatmap .cell-empty{background:#f7fafc;color:#cbd5e0}
+/* Aula summary */
+.aula-summary{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:0.6rem;margin-top:1rem}
+.aula-mini{padding:0.6rem;border:1px solid var(--border);border-radius:6px;font-size:0.78rem;cursor:pointer;transition:0.2s}
+.aula-mini:hover{border-color:var(--accent);box-shadow:0 2px 8px rgba(49,130,206,0.15)}
+.aula-mini .aula-mini-num{font-size:0.65rem;color:var(--accent);font-weight:700;text-transform:uppercase}
+.aula-mini .aula-mini-title{font-weight:600;margin:0.2rem 0}
+.aula-mini .aula-mini-bar{height:4px;background:#e2e8f0;border-radius:2px;margin-top:0.3rem}
+.aula-mini .aula-mini-fill{height:100%;border-radius:2px;transition:width 0.3s}
+.fill-high{background:#38a169}
+.fill-med{background:#d69e2e}
+.fill-low{background:#e53e3e}
+.tabs{display:flex;gap:0.5rem;margin-bottom:1rem;flex-wrap:wrap}
+.tab{padding:0.5rem 1rem;border:2px solid var(--border);border-radius:6px;background:#fff;cursor:pointer;font-size:0.85rem;font-weight:600;transition:0.2s}
+.tab.active{border-color:var(--accent);background:var(--accent);color:#fff}
+.tab:hover{border-color:var(--accent)}
 @media(max-width:768px){.admin-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="topbar">
-  <h1>&#128272; Admin — Dados de Tracking</h1>
+  <h1>&#128272; Dashboard do Professor — Microeconomia II</h1>
   <div class="user-info">
-    <a href="portal.html" style="color:#fff;font-size:0.85rem">Voltar ao portal</a>
+    <a href="portal.html" style="color:#fff;font-size:0.85rem">&#128218; Portal Aluno</a>
   </div>
 </div>
 
@@ -47,46 +73,40 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
     <div class="stat-row" id="admin-stats"></div>
   </div>
 
-  <!-- EXPORT -->
-  <div class="admin-grid">
-    <div class="admin-card">
-      <h3>Exportar Dados</h3>
-      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
-        Exporte os dados de tracking para usar no Dashboard do Professor.
-      </p>
-      <button class="btn-export btn-csv" onclick="downloadCSV()">&#128190; Exportar CSV</button>
-      <button class="btn-export btn-json" onclick="downloadJSON()">&#128190; Exportar JSON</button>
-      <button class="btn-export" style="background:#d69e2e;color:#fff" onclick="copyDashboardCSV()">
-        &#128203; Copiar CSV p/ Dashboard
-      </button>
-      <span class="copy-msg" id="copy-msg">Copiado!</span>
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">
-        O CSV exportado pode ser importado diretamente no <strong>Dashboard do Professor</strong>
-        (tela "Dados" → "Carregar CSV").
-      </p>
-    </div>
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('aulas')">Por Aula</div>
+    <div class="tab" onclick="showTab('heatmap')">Mapa de Completude</div>
+    <div class="tab" onclick="showTab('alunos')">Por Aluno</div>
+    <div class="tab" onclick="showTab('quizzes')">Quizzes</div>
+    <div class="tab" onclick="showTab('export')">Exportar / Gerenciar</div>
+  </div>
 
-    <div class="admin-card">
-      <h3>Gerenciar Alunos</h3>
-      <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:1rem">
-        Importar lista de alunos ou carregar dados demo.
-      </p>
-      <button class="btn-export btn-import" onclick="importStudents()">&#128194; Importar CSV de alunos</button>
-      <button class="btn-export btn-csv" onclick="loadDemo()">&#128101; Carregar 45 Alunos Demo</button>
-      <input type="file" id="students-csv" accept=".csv" style="display:none">
-      <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">
-        Formato CSV: <code>matricula,senha,nome</code> (1 aluno por linha, com header)
-      </p>
+  <!-- TAB: POR AULA -->
+  <div class="admin-card tab-content" id="tab-aulas">
+    <h3>Progresso por Aula</h3>
+    <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem">Clique numa aula para abri-la.</p>
+    <div class="aula-summary" id="aula-summary"></div>
+  </div>
+
+  <!-- TAB: HEATMAP -->
+  <div class="admin-card tab-content" id="tab-heatmap" style="display:none">
+    <h3>Mapa de Completude (Alunos &times; Aulas)</h3>
+    <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:0.5rem">
+      &#9989; = quiz feito &nbsp; &#128260; = visitou &nbsp; &#11035; = nao acessou
+    </p>
+    <div class="heatmap-wrap">
+      <table class="heatmap" id="heatmap-table"></table>
     </div>
   </div>
 
-  <!-- DETAILED TABLE -->
-  <div class="admin-card">
-    <h3>Dados Detalhados por Aluno</h3>
+  <!-- TAB: POR ALUNO -->
+  <div class="admin-card tab-content" id="tab-alunos" style="display:none">
+    <h3>Dados por Aluno</h3>
     <div style="overflow-x:auto">
       <table id="detail-table">
         <thead><tr>
-          <th>Matricula</th><th>Nome</th><th>Paginas</th><th>Visitas</th>
+          <th>Matricula</th><th>Nome</th><th>Aulas</th><th>Visitas</th>
           <th>Tempo (min)</th><th>Quizzes</th><th>Media Quiz</th><th>Risco</th>
         </tr></thead>
         <tbody></tbody>
@@ -94,8 +114,8 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
     </div>
   </div>
 
-  <!-- QUIZ DETAILS -->
-  <div class="admin-card">
+  <!-- TAB: QUIZZES -->
+  <div class="admin-card tab-content" id="tab-quizzes" style="display:none">
     <h3>Detalhamento de Quizzes</h3>
     <div style="overflow-x:auto">
       <table id="quiz-table">
@@ -108,74 +128,197 @@ td{padding:0.5rem;border-bottom:1px solid #f0f0f0}
     </div>
   </div>
 
-  <!-- RAW DATA -->
-  <div class="admin-card">
-    <h3>Dados Brutos (JSON)</h3>
-    <pre class="json-preview" id="json-preview"></pre>
-  </div>
-
-  <!-- DANGER ZONE -->
-  <div class="admin-card" style="border-color:#e53e3e">
-    <h3 style="color:#e53e3e">Zona de Perigo</h3>
-    <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os dados de tracking?')){MicroTracker.clearAll();location.reload();}">
-      &#128465; Limpar Todos os Dados de Tracking
-    </button>
-    <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuarios cadastrados?')){localStorage.removeItem('microII_users');location.reload();}">
-      &#128465; Limpar Todos os Usuarios
-    </button>
+  <!-- TAB: EXPORT -->
+  <div class="tab-content" id="tab-export" style="display:none">
+    <div class="admin-grid">
+      <div class="admin-card">
+        <h3>Exportar Dados</h3>
+        <button class="btn-export btn-csv" onclick="downloadCSV()">&#128190; Exportar CSV</button>
+        <button class="btn-export btn-json" onclick="downloadJSON()">&#128190; Exportar JSON</button>
+        <button class="btn-export" style="background:#d69e2e;color:#fff" onclick="copyDashboardCSV()">
+          &#128203; Copiar CSV p/ Dashboard
+        </button>
+        <span class="copy-msg" id="copy-msg">Copiado!</span>
+      </div>
+      <div class="admin-card">
+        <h3>Gerenciar Alunos</h3>
+        <button class="btn-export btn-import" onclick="importStudents()">&#128194; Importar CSV de alunos</button>
+        <button class="btn-export btn-csv" onclick="loadDemo()">&#128101; Carregar 45 Alunos Demo</button>
+        <input type="file" id="students-csv" accept=".csv" style="display:none">
+        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:1rem">
+          Formato CSV: <code>matricula,senha,nome</code> (1 aluno por linha, com header)
+        </p>
+      </div>
+    </div>
+    <div class="admin-card">
+      <h3>Dados Brutos (JSON)</h3>
+      <pre class="json-preview" id="json-preview"></pre>
+    </div>
+    <div class="admin-card" style="border-color:#e53e3e">
+      <h3 style="color:#e53e3e">Zona de Perigo</h3>
+      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os dados de tracking?')){MicroTracker.clearAll();location.reload();}">
+        &#128465; Limpar Dados de Tracking
+      </button>
+      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuarios?')){localStorage.removeItem('microII_users');location.reload();}">
+        &#128465; Limpar Usuarios
+      </button>
+    </div>
   </div>
 
 </div>
 
 <script src="js/tracker.js"></script>
 <script>
+var AULAS = [
+  {n:1, title:'Introducao a Microeconomia II', cap:'Cap. 1'},
+  {n:2, title:'Restricao Orcamentaria', cap:'Cap. 4'},
+  {n:3, title:'Preferencias e Axiomas', cap:'Cap. 3'},
+  {n:4, title:'Utilidade e Curvas de Indiferenca', cap:'Cap. 3'},
+  {n:5, title:'Max Utilidade e Demanda Marshalliana', cap:'Cap. 4'},
+  {n:6, title:'Min Dispendio e Demanda Hicksiana', cap:'Cap. 4'},
+  {n:7, title:'Dualidade do Consumidor', cap:'Cap. 4'},
+  {n:8, title:'Equacao de Slutsky: Teoria', cap:'Cap. 5'},
+  {n:9, title:'Equacao de Slutsky: Exercicios', cap:'Cap. 5'},
+  {n:10, title:'Decomposicao de Hicks: Teoria', cap:'Cap. 5'},
+  {n:11, title:'Decomposicao de Hicks: Exercicios', cap:'Cap. 5'},
+  {n:12, title:'Economia de Dotacoes', cap:'Cap. 17-18'},
+  {n:13, title:'Incerteza I: Utilidade Esperada', cap:'Cap. 7'},
+  {n:14, title:'Incerteza II: Seguros', cap:'Cap. 7'},
+  {n:15, title:'Incerteza III: Paradoxos', cap:'Cap. 8'},
+  {n:16, title:'Incerteza IV: Mercados de Risco', cap:'Cap. 7/19'},
+  {n:17, title:'Funcao de Producao I', cap:'Cap. 10'},
+  {n:18, title:'Funcao de Producao II', cap:'Cap. 10'},
+  {n:19, title:'Custos e Min Custos', cap:'Cap. 11'},
+  {n:20, title:'Max Lucro I', cap:'Cap. 12'},
+  {n:21, title:'Max Lucro II: RMg e Oferta', cap:'Cap. 12'},
+  {n:22, title:'Concorrencia Perfeita', cap:'Cap. 13'},
+  {n:23, title:'Intervencao Estatal', cap:'Cap. 13'},
+  {n:24, title:'Monopolio I', cap:'Cap. 15'},
+  {n:25, title:'Monopolio II: Discriminacao', cap:'Cap. 15'}
+];
+
+var TOTAL_AULAS = AULAS.length;
+
+function pageId(n) { return 'aula-' + String(n).padStart(2, '0'); }
+
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
+  document.getElementById('tab-' + name).style.display = '';
+  event.target.classList.add('active');
+}
+
 function renderAdmin() {
   var summary = MicroTracker.getSummary();
   var data = MicroTracker.getData();
   var users = MicroAuth.getUsers();
 
-  // Stats
   var totalStudents = Object.keys(users).length;
   var activeStudents = summary.length;
   var totalTime = summary.reduce(function(a,s){return a+s.totalTimeMin},0);
   var avgQuiz = summary.length > 0 ? summary.reduce(function(a,s){return a+s.avgQuizScore},0)/summary.length : 0;
+  var completionRate = totalStudents > 0 ? Math.round(summary.reduce(function(a,s){return a+s.pagesVisited},0) / (totalStudents * TOTAL_AULAS) * 100) : 0;
 
   document.getElementById('admin-stats').innerHTML =
     '<div class="stat-box"><div class="v">'+totalStudents+'</div><div class="l">Cadastrados</div></div>'
     +'<div class="stat-box"><div class="v">'+activeStudents+'</div><div class="l">Com Atividade</div></div>'
+    +'<div class="stat-box"><div class="v">'+completionRate+'%</div><div class="l">Completude</div></div>'
     +'<div class="stat-box"><div class="v">'+Math.round(totalTime)+'</div><div class="l">Min. Totais</div></div>'
     +'<div class="stat-box"><div class="v">'+Math.round(avgQuiz)+'%</div><div class="l">Media Quizzes</div></div>';
 
-  // Detail table
+  // === TAB: POR AULA ===
+  var aulaHtml = '';
+  AULAS.forEach(function(a) {
+    var pid = pageId(a.n);
+    var visited = 0, quizDone = 0, totalScore = 0, quizCount = 0;
+    Object.keys(data).forEach(function(mat) {
+      var s = data[mat];
+      if (s.pages && s.pages[pid] && s.pages[pid].visits > 0) visited++;
+      if (s.quizzes && s.quizzes[pid] && s.quizzes[pid].attempts > 0) {
+        quizDone++;
+        totalScore += s.quizzes[pid].bestScore;
+        quizCount++;
+      }
+    });
+    var pct = totalStudents > 0 ? Math.round(quizDone / totalStudents * 100) : 0;
+    var avgScore = quizCount > 0 ? Math.round(totalScore / quizCount) : 0;
+    var fillClass = pct >= 60 ? 'fill-high' : pct >= 30 ? 'fill-med' : 'fill-low';
+
+    aulaHtml += '<div class="aula-mini" onclick="window.open(\''+pid+'.html\',\'_blank\')">'
+      +'<div class="aula-mini-num">Aula '+String(a.n).padStart(2,'0')+' | '+a.cap+'</div>'
+      +'<div class="aula-mini-title">'+a.title+'</div>'
+      +'<div style="font-size:0.72rem;color:var(--text-muted)">'+visited+' visitaram &bull; '+quizDone+' quiz &bull; Media: '+avgScore+'%</div>'
+      +'<div class="aula-mini-bar"><div class="aula-mini-fill '+fillClass+'" style="width:'+pct+'%"></div></div>'
+      +'</div>';
+  });
+  document.getElementById('aula-summary').innerHTML = aulaHtml;
+
+  // === TAB: HEATMAP ===
+  var allMats = Object.keys(users).sort();
+  var hmHead = '<thead><tr><th>Aluno</th>';
+  AULAS.forEach(function(a) {
+    hmHead += '<th class="aula-header" onclick="window.open(\''+pageId(a.n)+'.html\',\'_blank\')" title="'+a.title+'">'+String(a.n).padStart(2,'0')+'</th>';
+  });
+  hmHead += '<th>%</th></tr></thead>';
+
+  var hmBody = '<tbody>';
+  allMats.forEach(function(mat) {
+    var u = users[mat];
+    var s = data[mat] || {pages:{}, quizzes:{}};
+    var done = 0;
+    hmBody += '<tr><td class="name-cell" title="'+mat+'">'+u.nome+'</td>';
+    AULAS.forEach(function(a) {
+      var pid = pageId(a.n);
+      var pg = (s.pages||{})[pid];
+      var qz = (s.quizzes||{})[pid];
+      if (qz && qz.attempts > 0) {
+        hmBody += '<td class="cell-done" title="Quiz: '+qz.bestScore+'%">'+qz.bestScore+'</td>';
+        done++;
+      } else if (pg && pg.visits > 0) {
+        hmBody += '<td class="cell-progress" title="Visitou '+pg.visits+'x">&#128260;</td>';
+      } else {
+        hmBody += '<td class="cell-empty">&#11035;</td>';
+      }
+    });
+    var pctStudent = Math.round(done / TOTAL_AULAS * 100);
+    hmBody += '<td style="font-weight:700">'+pctStudent+'%</td></tr>';
+  });
+  hmBody += '</tbody>';
+  document.getElementById('heatmap-table').innerHTML = hmHead + hmBody;
+
+  // === TAB: POR ALUNO ===
   var tbody = '';
   summary.sort(function(a,b){return b.totalTimeMin-a.totalTimeMin});
   summary.forEach(function(s) {
-    var risk = s.avgQuizScore < 40 || s.pagesVisited < 5 ? 'high' :
-              s.avgQuizScore < 60 || s.pagesVisited < 12 ? 'med' : 'low';
+    var risk = s.avgQuizScore < 40 || s.pagesVisited < 6 ? 'high' :
+              s.avgQuizScore < 60 || s.pagesVisited < 13 ? 'med' : 'low';
     var badge = risk==='high'?'badge-high':risk==='med'?'badge-med':'badge-low';
     var label = risk==='high'?'ALTO':risk==='med'?'MEDIO':'BAIXO';
-    tbody += '<tr><td>'+s.matricula+'</td><td>'+s.nome+'</td><td>'+s.pagesVisited+'</td>'
-      +'<td>'+s.totalVisits+'</td><td>'+s.totalTimeMin+'</td><td>'+s.quizzesCompleted+'</td>'
+    tbody += '<tr><td>'+s.matricula+'</td><td>'+s.nome+'</td><td>'+s.pagesVisited+'/'+TOTAL_AULAS+'</td>'
+      +'<td>'+s.totalVisits+'</td><td>'+s.totalTimeMin+'</td><td>'+s.quizzesCompleted+'/'+TOTAL_AULAS+'</td>'
       +'<td>'+s.avgQuizScore+'%</td><td><span class="badge '+badge+'">'+label+'</span></td></tr>';
   });
   document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum dado ainda</td></tr>';
 
-  // Quiz table
+  // === TAB: QUIZZES ===
   var qRows = '';
   Object.keys(data).forEach(function(mat) {
     var s = data[mat];
-    Object.keys(s.quizzes || {}).forEach(function(page) {
-      var q = s.quizzes[page];
-      var total = Object.keys(q.questions||{}).length;
-      var right = Object.values(q.questions||{}).filter(function(x){return x.correct}).length;
-      qRows += '<tr><td>'+mat+'</td><td>'+s.nome+'</td><td>'+page+'</td>'
-        +'<td>'+q.attempts+'</td><td>'+q.bestScore+'%</td><td>'+right+'</td>'
-        +'<td>'+total+'</td><td>'+(q.lastAttempt?q.lastAttempt.substring(0,16):'—')+'</td></tr>';
+    AULAS.forEach(function(a) {
+      var pid = pageId(a.n);
+      var q = (s.quizzes||{})[pid];
+      if (q && q.attempts > 0) {
+        var total = Object.keys(q.questions||{}).length;
+        var right = Object.values(q.questions||{}).filter(function(x){return x.correct}).length;
+        qRows += '<tr><td>'+mat+'</td><td>'+s.nome+'</td><td>Aula '+String(a.n).padStart(2,'0')+'</td>'
+          +'<td>'+q.attempts+'</td><td>'+q.bestScore+'%</td><td>'+right+'</td>'
+          +'<td>'+total+'</td><td>'+(q.lastAttempt?q.lastAttempt.substring(0,16).replace('T',' '):'—')+'</td></tr>';
+      }
     });
   });
   document.querySelector('#quiz-table tbody').innerHTML = qRows || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum quiz respondido</td></tr>';
 
-  // JSON preview
+  // === JSON ===
   document.getElementById('json-preview').textContent = MicroTracker.exportJSON();
 }
 
@@ -198,13 +341,12 @@ function downloadJSON() {
 }
 
 function copyDashboardCSV() {
-  // Generate dashboard-compatible CSV
   var summary = MicroTracker.getSummary();
-  var rows = ['nome,matricula,quiz_avg,ps_avg,p1,participacao,tendencia'];
+  var rows = ['nome,matricula,aulas_visitadas,quizzes_feitos,media_quiz,tempo_min,risco'];
   summary.forEach(function(s) {
-    var quizAvg = (s.avgQuizScore / 10).toFixed(1); // convert 0-100 to 0-10
-    var trend = s.avgQuizScore >= 60 ? 'subindo' : s.avgQuizScore >= 40 ? 'estavel' : 'caindo';
-    rows.push([s.nome,s.matricula,quizAvg,'0','0','0',trend].join(','));
+    var risk = s.avgQuizScore < 40 || s.pagesVisited < 6 ? 'ALTO' :
+              s.avgQuizScore < 60 || s.pagesVisited < 13 ? 'MEDIO' : 'BAIXO';
+    rows.push([s.nome,s.matricula,s.pagesVisited,s.quizzesCompleted,s.avgQuizScore,s.totalTimeMin,risk].join(','));
   });
   navigator.clipboard.writeText(rows.join('\n')).then(function() {
     var msg = document.getElementById('copy-msg');
@@ -237,3 +379,5 @@ renderAdmin();
 </script>
 </body>
 </html>
+</content>
+</invoke>
