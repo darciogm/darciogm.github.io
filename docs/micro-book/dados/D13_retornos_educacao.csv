@@ -1,0 +1,41 @@
+ano;uf;sexo;nivel_instrucao;rendimento_medio_habitual_BRL;horas_semanais_media;rendimento_por_hora_BRL;populacao_ocupada_mil
+2023;SP;Homem;Fundamental incompleto;1580;42.5;9.35;1250
+2023;SP;Homem;Fundamental completo;1850;43.2;10.76;980
+2023;SP;Homem;Medio completo;2350;43.8;13.49;2850
+2023;SP;Homem;Superior completo;5480;42.5;32.38;1680
+2023;SP;Homem;Pos-graduacao;8950;40.8;55.09;420
+2023;SP;Mulher;Fundamental incompleto;1080;35.2;7.71;680
+2023;SP;Mulher;Fundamental completo;1350;36.8;9.22;620
+2023;SP;Mulher;Medio completo;1850;38.5;12.08;2420
+2023;SP;Mulher;Superior completo;4280;39.2;27.45;1520
+2023;SP;Mulher;Pos-graduacao;7250;38.5;47.32;380
+2023;MG;Homem;Fundamental incompleto;1320;41.8;7.93;520
+2023;MG;Homem;Fundamental completo;1580;42.5;9.34;380
+2023;MG;Homem;Medio completo;1980;43.2;11.51;1180
+2023;MG;Homem;Superior completo;4850;42.2;28.89;650
+2023;MG;Homem;Pos-graduacao;8200;40.5;50.86;180
+2023;MG;Mulher;Fundamental incompleto;920;34.5;6.70;280
+2023;MG;Mulher;Fundamental completo;1180;35.8;8.28;250
+2023;MG;Mulher;Medio completo;1580;37.5;10.59;980
+2023;MG;Mulher;Superior completo;3850;38.8;24.94;580
+2023;MG;Mulher;Pos-graduacao;6580;38.2;43.30;150
+2023;BA;Homem;Fundamental incompleto;1050;40.2;6.56;380
+2023;BA;Homem;Fundamental completo;1280;41.5;7.75;280
+2023;BA;Homem;Medio completo;1650;42.8;9.69;820
+2023;BA;Homem;Superior completo;4250;41.5;25.72;350
+2023;BA;Homem;Pos-graduacao;7580;39.8;47.84;120
+2023;BA;Mulher;Fundamental incompleto;750;33.2;5.67;180
+2023;BA;Mulher;Fundamental completo;980;34.8;7.07;150
+2023;BA;Mulher;Medio completo;1350;36.5;9.29;650
+2023;BA;Mulher;Superior completo;3580;38.2;23.55;320
+2023;BA;Mulher;Pos-graduacao;6180;37.8;41.09;95
+2023;RS;Homem;Fundamental incompleto;1480;42.2;8.81;320
+2023;RS;Homem;Fundamental completo;1750;43.0;10.23;280
+2023;RS;Homem;Medio completo;2180;43.5;12.59;780
+2023;RS;Homem;Superior completo;5250;42.0;31.43;450
+2023;RS;Homem;Pos-graduacao;8650;40.5;53.67;130
+2023;RS;Mulher;Fundamental incompleto;1020;35.0;7.31;180
+2023;RS;Mulher;Fundamental completo;1280;36.5;8.81;160
+2023;RS;Mulher;Medio completo;1780;38.2;11.70;650
+2023;RS;Mulher;Superior completo;4150;39.0;26.73;420
+2023;RS;Mulher;Pos-graduacao;7050;38.2;46.36;120

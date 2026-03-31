@@ -218,8 +218,8 @@ nav:
           - "Visão Geral": micro-book/cap17/index.md
           - "17.1–17.3 Oferta de Trabalho": micro-book/cap17/oferta-trabalho.md
           - "17.4–17.6 Equilíbrio e Diferenciais": micro-book/cap17/equilibrio-diferenciais.md
-          - "17.7–17.8 Monopsônio e Sindicatos": micro-book/cap17/monopsonio-sindicatos.md
-          - "17.9–17.10 Fatores e Terra": micro-book/cap17/fatores-terra.md
+          - "17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy": micro-book/cap17/monopsonio-sindicatos.md
+          - "17.11–17.12 Fatores e Terra": micro-book/cap17/fatores-terra.md
           - "Exercícios e ANPEC": micro-book/cap17/exercicios.md
           - "Pesquisa em Ação": micro-book/cap17/pesquisa.md
       - "Cap. 18 — A Paciência Tem Preço":
@@ -296,6 +296,9 @@ nav:
       - "Newsletter Template": micro-book/recursos/newsletter-template.md
       - "Atividades de Sala": micro-book/recursos/atividades-sala.md
       - "Spin-offs": micro-book/recursos/spin-offs.md
+      - "Dados Brasileiros": micro-book/recursos/dados-brasileiros.md
+      - "Roteiros de Vídeo": micro-book/recursos/roteiros-video.md
+      - "Protocolo de Atualização": micro-book/recursos/protocolo-atualizacao.md
     - Referência:
       - micro-book/referencia/index.md
       - Notação: micro-book/notacao.md

@@ -48,6 +48,22 @@ Cada expansão gera novos efeitos de rede cruzados: mais serviços no ecossistem
 
     **Fonte:** European Commission (2023). Digital Markets Act — List of Designated Gatekeepers. Regulation (EU) 2022/1925.
 
+!!! box-brasil "Box Brasil 21.4 — CADE e a antitruste digital: os casos Google, iFood e Mercado Livre"
+
+    **Contexto.** O **CADE** (Conselho Administrativo de Defesa Econômica) enfrenta, desde 2019, o desafio de adaptar a análise antitruste tradicional aos mercados digitais — onde os conceitos de mercado relevante, poder de mercado e barreiras à entrada são radicalmente diferentes dos mercados "de tijolo".
+
+    **Casos emblemáticos:**
+
+    - **Google Shopping (Inquérito Administrativo 08012.010483/2011-94).** O CADE investigou se o Google favorecia seu próprio comparador de preços nos resultados de busca (auto-preferência). Em 2019, encerrou a investigação com um **acordo de cessação** (TCC): o Google se comprometeu a exibir links de concorrentes com igual destaque por 5 anos. A decisão foi mais branda que a da Comissão Europeia, que multou o Google em €2,4 bilhões pelo mesmo comportamento. A diferença reflete as ferramentas limitadas do CADE para quantificar danos em mercados de preço zero — como medir o "dano ao consumidor" quando o produto é gratuito?
+
+    - **iFood e cláusulas de exclusividade (Processo 08700.004588/2020-47).** Em 2021, o CADE determinou que o iFood suspendesse cláusulas de exclusividade com restaurantes, que impediam a listagem em plataformas concorrentes (Rappi, Uber Eats). A análise usou o framework exato da Seção 21.4.2: a exclusividade forçava *single-homing* no lado dos restaurantes, reforçando o poder de mercado do iFood (com ~80% de market share em delivery). Ao proibir a exclusividade, o CADE habilitou *multi-homing*, reduzindo barreiras à entrada para plataformas rivais.
+
+    - **Mercado Livre (atos de concentração múltiplos).** O CADE acompanha a estratégia de *envelopment* do Mercado Livre — marketplace + Mercado Pago (fintech) + Mercado Envios (logística) + Mercado Ads (publicidade) — monitorando se a integração vertical gera foreclosure de concorrentes. O paralelo com a Amazon (Seção 21.4.3) é direto.
+
+    **Desafio analítico.** O CADE publicou em 2022 os **Cadernos do CADE: Concorrência em Mercados Digitais**, reconhecendo três dificuldades centrais: (i) definir mercado relevante quando o produto é gratuito e a "moeda" é atenção e dados; (ii) avaliar poder de mercado quando a participação é volátil e o multi-homing é extensivo; (iii) distinguir eficiência de conduta anticompetitiva quando os ganhos de escala são reais. A lição microeconômica: as ferramentas do Capítulo 15 (poder de mercado) e do Capítulo 16 (oligopólio) precisam ser adaptadas — não abandonadas — para a era digital.
+
+    **Fonte:** CADE — *Cadernos do CADE: Concorrência em Mercados Digitais*, 2022. Tribunal do CADE — decisões disponíveis em [cade.gov.br](https://www.gov.br/cade).
+
 ---
 
 ## 21.5 Sua Atenção, Por Favor — Ela Vale Bilhões: Economia da Atenção e Publicidade {#215}
@@ -110,3 +126,53 @@ A análise de bem-estar é ambígua. Por um lado, o modelo ad-supported permite 
     **Pense assim:** O Google oferece busca gratuita, mapas gratuitos, e-mail gratuito. Em troca, coleta dados sobre suas buscas, localização e comunicações, que usa para direcionar anúncios. O "preço" que você paga é a exposição a publicidade e a cessão de dados pessoais. Mas há um benefício real: sem o modelo ad-supported, o Google cobraria pelo buscador — e muitos consumidores de baixa renda seriam excluídos. A questão de bem-estar não é se "grátis é exploração" ou "grátis é generosidade", mas se os consumidores compreendem adequadamente o preço implícito que estão pagando.
 
     **Por que isso importa:** A regulação de plataformas ad-supported (como a LGPD no Brasil e o GDPR na Europa, discutidos na Seção 21.6) busca garantir que os consumidores tenham informação suficiente sobre o "preço" implícito que pagam — uma aplicação direta da lógica de informação assimétrica do Capítulo 19.
+
+!!! transversal "Conexão Transversal — Economia Comportamental (Cap. 8) × Economia Digital (Cap. 21): Quando o Viés é o Produto"
+
+    A economia digital e a economia comportamental são frequentemente tratadas como subcampos separados da microeconomia. Isso é um erro. As plataformas digitais mais lucrativas do mundo são, em essência, **máquinas de exploração de vieses comportamentais** — e entender como elas funcionam exige combinar as ferramentas dos Capítulos 8 e 21 simultaneamente.
+
+    ---
+
+    **1. Design aditivo e desconto hiperbólico**
+
+    O *scroll* infinito do TikTok, o autoplay do YouTube e as notificações push do Instagram não são acidentes de design — são aplicações engenhosas do desconto quasi-hiperbólico (Seção 8.5). O usuário *sabe* que deveria parar de assistir e estudar para a prova. Seu "eu futuro" pagará o preço. Mas o \(\beta < 1\) do modelo de Laibson garante que o prazer imediato do próximo vídeo (período \(t = 0\)) recebe peso desproporcional em relação ao custo do sono perdido (período \(t = 1\)).
+
+    As plataformas não apenas *exploram* esse viés — elas o **amplificam**. O algoritmo de recomendação otimiza para *engagement* (tempo na plataforma), não para utilidade do usuário. Cada vídeo recomendado é calibrado para ser *marginalmente mais atraente* que o anterior, mantendo o usuário na zona onde o benefício marginal percebido do próximo vídeo excede o custo marginal percebido de ficar mais um minuto — enquanto o custo *real* (acumulado em sono, produtividade e saúde mental) é sistematicamente subestimado pelo viés do presente.
+
+    Formalmente: se a utilidade do usuário ao assistir o \(k\)-ésimo vídeo é \(u(k)\) e o custo oportunidade acumulado é \(c(k)\), um agente com desconto exponencial pararia quando \(u(k) < c(k)\). Mas um agente com \(\beta < 1\) para apenas quando \(u(k) < \beta \cdot c(k)\) — ou seja, consome \(k^* > k^{**}\) vídeos, onde \(k^{**}\) é a quantidade que ele *gostaria de ter consumido* ex post. O design aditivo da plataforma equivale a escolher \(u(k)\) para maximizar \(k^*\) — o engagement — sabendo que \(\beta < 1\).
+
+    **Referência:** Allcott, H.; Braghieri, L.; Eichmeyer, S.; Gentzkow, M. (2020). The welfare effects of social media. *American Economic Review*, 110(3), 629–676.
+
+    ---
+
+    **2. Aversão à perda e discriminação algorítmica de preços**
+
+    A precificação dinâmica das plataformas (Uber surge pricing, preços personalizados no e-commerce) explora sistematicamente a **aversão à perda** (Seção 8.3). Quando o Uber mostra "preço 1,8× — a demanda está alta!", o passageiro enfrenta duas forças:
+
+    - **Aversão à perda:** não pegar a corrida *agora* é percebido como "perder" a oportunidade (framing de perda, Seção 8.4). O \(\lambda > 1\) de Kahneman e Tversky amplifica o custo percebido de esperar.
+    - **Viés do presente:** a espera é um custo *agora*; a economia de dinheiro é um benefício *futuro* (quando a tarifa baixar). Com \(\beta < 1\), o custo presente domina.
+
+    Resultado: consumidores aceitam *surge pricing* a taxas que excederiam sua disposição a pagar em condições de decisão "fria" — exatamente a previsão do modelo de preferências dependentes de referência (Seção 8.3) combinado com o viés do presente.
+
+    Plataformas de e-commerce vão além: usam dados comportamentais para estimar a **função de valor** individual de cada consumidor (ponto de referência, grau de aversão à perda) e personalizar preços de acordo. Um consumidor que sempre compra no mesmo horário, nunca compara preços e demonstra alta urgência revelada recebe preços mais altos — discriminação de preços de primeiro grau (Seção 15.4) alimentada por dados comportamentais.
+
+    **Referência:** Dubé, J.-P.; Misra, S. (2023). Personalized pricing and consumer welfare. *Journal of Political Economy*, 131(1), 131–189.
+
+    ---
+
+    **3. Implicações para regulação**
+
+    A interseção entre vieses comportamentais e poder de plataforma cria falhas de mercado que nenhum dos dois campos, isoladamente, diagnostica por completo:
+
+    | Problema | Ferramenta do Cap. 8 | Ferramenta do Cap. 21 | Combinação |
+    |:---------|:--------------------|:---------------------|:-----------|
+    | Uso excessivo de redes sociais | Desconto hiperbólico (\(\beta < 1\)) | Efeitos de rede + lock-in | A plataforma *amplifica* o viés via design aditivo e custos de troca |
+    | Aceitação de preços altos sob urgência | Aversão à perda (\(\lambda > 1\)) | Poder de mercado bilateral | A plataforma *explora* o viés via precificação dinâmica personalizada |
+    | Cessão excessiva de dados pessoais | Viés do presente + inatenção | Assimetria de informação sobre uso de dados | O usuário subestima custos futuros de privacidade e supervaloriza o serviço gratuito imediato |
+    | Compras por impulso (dark patterns) | Framing, saliência, default | Fricções de escolha como estratégia de design | O "botão de compra com 1 clique" explora a impulsividade; adicionar fricção (e.g., timer de 24h) é um nudge |
+
+    A regulação eficaz precisa, portanto, ser **behaviorally informed** *e* **platform-aware**. O DMA europeu (Box Mundo 21.3) aborda o poder de plataforma mas ignora os vieses comportamentais; a LGPD brasileira protege dados pessoais mas não regula o design aditivo. Uma regulação completa exigiria algo como um "Nudge Digital Act" — regras sobre design de interface que limitem a exploração de vieses documentados.
+
+    ---
+
+    **Para refletir:** O TikTok afirma que seu algoritmo "dá ao usuário o que ele quer". Usando o modelo \((\beta, \delta)\) da Seção 8.5, argumente por que o que o usuário *quer* no momento \(t = 0\) (mais um vídeo) pode ser diferente do que ele *gostaria de querer* avaliado em \(t = -1\) (ter dormido cedo). Quem deveria ter autoridade para resolver esse conflito — o próprio usuário, a plataforma, ou o regulador?

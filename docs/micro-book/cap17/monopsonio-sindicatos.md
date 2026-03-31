@@ -1,4 +1,4 @@
-# 17.7–17.8 Monopsônio e Sindicatos
+# 17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy
 
 ## 17.7 Quando Só Tem Um Patrão na Cidade: Monopsônio {#177}
 
@@ -364,3 +364,149 @@ No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao e
     - Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.
 
     Como mostra a tabela do Box Brasil anterior, a elevada taxa de informalidade (38,1% em 2025) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal. Em 2025, o SM atingiu R$ 1.518, com rendimento real médio habitual de R$ 3.652 (PNAD Contínua/IBGE).
+
+---
+
+### 17.9 Modelos de Busca e Matching: Por Que Existe Desemprego? {#179a}
+
+O modelo competitivo de mercado de trabalho (Seção 17.5) tem uma previsão embaraçosa: **não existe desemprego involuntário**. Se o salário é flexível e o mercado é competitivo, todo mundo que quer trabalhar ao salário vigente encontra emprego. Mas no mundo real, pessoas desempregadas e vagas abertas coexistem simultaneamente — o que sugere que encontrar emprego é um *processo*, não um resultado instantâneo.
+
+Os modelos de **busca e matching** (Diamond, 1982; Mortensen, 1982; Pissarides, 1985 — Nobel de Economia 2010) resolvem esse paradoxo introduzindo **fricções** no mercado de trabalho: encontrar um emprego leva tempo, custa esforço e envolve incerteza. Essas fricções são o "atrito" que faz o mercado de trabalho parecer um mercado de casamentos (Capítulo 9) mais do que um mercado de tomates.
+
+#### A função de matching
+
+O ingrediente central é a **função de matching** \(m(U, V)\), que determina quantas contratações ocorrem por período dado o número de desempregados \(U\) e o número de vagas abertas \(V\):
+
+\[
+m = m(U, V), \qquad m_U > 0, \ m_V > 0, \qquad m \text{ CRS} \tag{17.16}
+\]
+
+A hipótese de retornos constantes de escala (CRS) é empiricamente robusta e extremamente conveniente: ela implica que a taxa na qual um desempregado encontra emprego e a taxa na qual uma vaga é preenchida dependem apenas da **tensão do mercado** \(\theta \equiv V/U\):
+
+\[
+\text{Taxa de encontro do trabalhador:} \quad f(\theta) = \frac{m(U, V)}{U} = m\left(1, \frac{V}{U}\right) = m(1, \theta)
+\]
+
+\[
+\text{Taxa de preenchimento da vaga:} \quad q(\theta) = \frac{m(U, V)}{V} = m\left(\frac{U}{V}, 1\right) = m(1/\theta, 1)
+\]
+
+Quando \(\theta\) é alto (muitas vagas por desempregado), trabalhadores encontram emprego rapidamente (\(f\) alto) mas firmas demoram para preencher vagas (\(q\) baixo). O oposto vale quando \(\theta\) é baixo. A **curva de Beveridge** — a relação negativa empírica entre taxa de desemprego e taxa de vagas — é uma implicação direta.
+
+#### A determinação do salário: barganha de Nash
+
+Em um mercado com fricções, nem o trabalhador nem a firma são tomadores de preço. Cada par trabalhador-vaga gera um **excedente** \(S\) (a diferença entre o valor da produção conjunta e os valores de continuar buscando). Esse excedente é dividido por **barganha de Nash**:
+
+\[
+w^* = \arg\max_w \; (W - U_0)^\beta \cdot (J - V_0)^{1-\beta} \tag{17.17}
+\]
+
+onde \(W\) é o valor para o trabalhador de estar empregado, \(U_0\) é o valor de continuar desempregado, \(J\) é o valor para a firma de ter a vaga preenchida, \(V_0\) é o valor de manter a vaga aberta, e \(\beta\) é o poder de barganha do trabalhador.
+
+A solução é:
+
+\[
+w^* = (1 - \beta) \cdot z + \beta \cdot (p + c\theta) \tag{17.18}
+\]
+
+onde \(z\) é o valor do desemprego (seguro-desemprego + valor do lazer), \(p\) é a produtividade e \(c\) é o custo de manter uma vaga aberta. O salário é uma média ponderada entre o "outside option" do trabalhador (\(z\)) e a produtividade ajustada (\(p + c\theta\)). Quanto mais apertado o mercado (\(\theta\) alto), maior o salário — porque o trabalhador tem mais opções lá fora.
+
+#### Equilíbrio de estado estacionário
+
+No estado estacionário, o fluxo de trabalhadores que encontram emprego (\(f(\theta) \cdot U\)) iguala o fluxo de separações (\(s \cdot (N - U)\), onde \(s\) é a taxa exógena de destruição de empregos):
+
+\[
+u^* = \frac{s}{s + f(\theta^*)} \tag{17.19}
+\]
+
+O desemprego de equilíbrio é *positivo* mesmo quando o mercado funciona "bem" — ele reflete o tempo necessário para que trabalhadores e firmas se encontrem. Esse é o **desemprego friccional**, irredutível enquanto houver heterogeneidade e informação imperfeita.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** O modelo DMP explica por que existem, simultaneamente, 8 milhões de desempregados e centenas de milhares de vagas abertas no Brasil — o mercado de trabalho não é uma feira onde tudo se resolve na hora, mas um Tinder profissional onde o match leva tempo.
+
+    **Pense assim:** Imagine que São Paulo tem 500.000 vagas abertas e 1 milhão de desempregados. Se todos soubessem instantaneamente de todas as vagas, e todas as vagas fossem perfeitamente compatíveis com todos os trabalhadores, o desemprego cairia a 500.000 amanhã. Mas o programador desempregado não sabe que a startup em Pinheiros precisa dele, e a startup não sabe que ele existe. Ambos estão "buscando" — e essa busca é custosa, demorada e incerta. O modelo DMP formaliza exatamente esse processo.
+
+    **Por que isso importa:** O modelo DMP mudou a forma como pensamos sobre política de emprego. Em vez de apenas "reduzir o salário" (receita do modelo competitivo), a política ótima envolve **reduzir fricções**: sistemas de intermediação de mão de obra (como o SINE no Brasil), plataformas digitais de emprego (LinkedIn, Catho, 99jobs), treinamento vocacional e seguro-desemprego bem desenhado (que não destrua os incentivos de busca).
+
+!!! box-mundo "Box Mundo 17.4 — Nobel 2010: Diamond, Mortensen e Pissarides"
+
+    O Prêmio Nobel de 2010 foi concedido a Peter Diamond (MIT), Dale Mortensen (Northwestern) e Christopher Pissarides (LSE) "por suas análises de mercados com fricções de busca". O modelo DMP — como ficou conhecido — é o arcabouço padrão para análise do desemprego na macroeconomia moderna.
+
+    **A contribuição de cada um:**
+
+    - **Diamond** (1982): mostrou que mesmo em mercados descentralizados, a busca gera externalidades — quando mais trabalhadores buscam, é mais fácil para firmas encontrarem candidatos (externalidade positiva de "mercado grosso"). Mas cada trabalhador adicional também "rouba" vagas dos outros (externalidade negativa de congestionamento). O equilíbrio descentralizado pode ter *excesso* ou *deficiência* de busca.
+    - **Mortensen** (1982): formalizou a decisão de busca do trabalhador (quanto esforço dedicar, quando aceitar uma oferta) e introduziu o salário de reserva dinâmico — o trabalhador aceita uma oferta se e somente se o salário oferecido excede o valor de continuar buscando.
+    - **Pissarides** (1985, 2000): completou o modelo com a decisão das firmas de abrir vagas e derivou a curva de Beveridge como equilíbrio geral do modelo. Seu livro *Equilibrium Unemployment Theory* (MIT Press, 2000) é a referência canônica.
+
+    **Aplicações modernas:** O modelo DMP tem sido estendido para analisar o impacto de salário mínimo em mercados com fricções (Flinn, 2006), a eficácia do seguro-desemprego (Chetty, 2008), o design de políticas ativas de emprego, e — relevante para a seção seguinte — o funcionamento das plataformas digitais de trabalho como mecanismos de redução de fricções de busca.
+
+---
+
+### 17.10 A Gig Economy e o Novo Mercado de Trabalho {#1710b}
+
+O entregador que pedala sob chuva levando seu açaí pelo iFood não tem chefe, não tem horário fixo, não tem férias — e, segundo a plataforma, não tem emprego. Ele é um "parceiro", um "empreendedor", um "microempreendedor individual". Segundo a CLT e (cada vez mais) os tribunais trabalhistas, ele é um trabalhador subordinado disfarçado. Essa tensão entre a narrativa da "liberdade" e a realidade do controle algorítmico é o grande quebra-cabeça do mercado de trabalho do século XXI — e a microeconomia tem muito a dizer sobre ele.
+
+#### A escala do fenômeno no Brasil
+
+Os dados da PNAD Contínua (IBGE, 2023–2024) revelam a magnitude do trabalho por plataformas digitais no Brasil:
+
+| Indicador | Valor |
+|:----------|:------|
+| Trabalhadores por aplicativo (transporte + entregas) | ~1,7 milhão (2023) |
+| Motoristas de aplicativo (Uber, 99, etc.) | ~780 mil |
+| Entregadores de aplicativo (iFood, Rappi, etc.) | ~590 mil |
+| Outros serviços por plataforma (limpeza, reparos, freelancers) | ~330 mil |
+| Renda média mensal (motoristas) | ~R$ 2.900 (bruta, antes de custos) |
+| Renda média mensal (entregadores) | ~R$ 1.600 (bruta, antes de custos) |
+| Jornada média semanal | 46 horas (motoristas), 38 horas (entregadores) |
+| % sem contribuição previdenciária | ~65% |
+
+*Fontes: PNAD Contínua/IBGE, módulo suplementar TIC (2023); IPEA, Nota Técnica (2024).*
+
+Esses números subestimam a realidade: muitos trabalhadores por plataforma não se declaram como tal nas pesquisas, e a fronteira entre "trabalho por aplicativo" e "bico informal com intermediação digital" é borrada.
+
+#### A microeconomia da gig economy
+
+A economia das plataformas de trabalho pode ser analisada com as ferramentas que já desenvolvemos neste capítulo — e a conclusão é que a gig economy combina elementos de vários modelos:
+
+**1. Monopsônio algorítmico.** A plataforma não é um "mercado aberto" onde motoristas e passageiros negociam livremente. O algoritmo fixa o preço da corrida, a taxa da plataforma (tipicamente 20–25%), o matching entre motorista e passageiro, e até o *surge pricing* (preço dinâmico). O trabalhador aceita ou rejeita a corrida, mas não negocia termos. Isso configura poder de monopsônio — não pela ausência de alternativas (há Uber, 99, iFood, Rappi), mas pelo controle unilateral dos termos de troca.
+
+Dua e Janakiraman (2024) e Caldwell e Oehlsen (2022) documentam que plataformas exploram a **assimetria de informação sobre demanda futura**: o motorista não sabe se, ao rejeitar uma corrida de baixo valor, aparecerá uma melhor. Essa incerteza reduz o salário de reserva efetivo — exatamente o mecanismo de monopsônio da Seção 17.7, operando via informação imperfeita em vez de concentração de mercado.
+
+**2. Oferta de trabalho e a ilusão da flexibilidade.** O argumento pró-plataforma é que o trabalhador "escolhe seu horário" — a margem intensiva (Seção 17.2) é totalmente flexível. Mas a evidência empírica mostra que a flexibilidade é mais retórica do que real:
+
+- **Incentivos gamificados** (bônus por completar X corridas, "missões" do iFood) funcionam como mecanismos de comprometimento que induzem jornadas longas — um nudge (Capítulo 12) a serviço do empregador.
+- **Desativação algorítmica**: rejeitar corridas demais ou ter avaliação baixa leva à redução de chamados ou desativação — equivalente funcional da demissão, sem o ônus trabalhista.
+- **Custos fixos do trabalhador** (aluguel/financiamento do veículo, celular, gasolina) criam um piso de horas necessárias para cobrir custos — transformando o "autônomo flexível" em alguém preso a jornadas de 10–12 horas.
+
+**3. Classificação trabalhista como problema de contratos (Capítulo 19).** O debate jurídico sobre se o motorista de Uber é empregado ou autônomo é, em essência, um problema de desenho de contratos incompletos à la Hart (Capítulo 19). A questão central é: quem detém os **direitos residuais de controle**?
+
+- Se a plataforma define preço, rota, padrão de atendimento e pode desativar o trabalhador → a plataforma detém os direitos residuais → relação de emprego.
+- Se o trabalhador genuinamente define seus termos → autônomo.
+
+No Brasil, o TST e os TRTs têm decidido de forma heterogênea, com tendência crescente ao reconhecimento de vínculo empregatício em casos onde o controle algorítmico é intenso. Em 2024, o STF reconheceu repercussão geral do tema (Tema 1291), sinalizando que definirá a questão nacionalmente.
+
+!!! idea "Intuição Econômica"
+    **Em uma frase:** A gig economy é um mercado de trabalho onde o monopsônio não vem do "único empregador na cidade", mas do controle algorítmico sobre preços, matching e avaliação — um monopsônio digital disfarçado de marketplace.
+
+    **Pense assim:** Imagine que você é motorista de Uber. Você "escolhe" trabalhar quando quer. Mas o app decide quanto você ganha por corrida, qual corrida você recebe, e se você continua ativo amanhã. Se um patrão tradicional fizesse tudo isso, ninguém duvidaria de que é uma relação de emprego. O algoritmo é o novo capataz — só que usa estrelinhas em vez de gritos.
+
+    **Por que isso importa:** No Brasil, ~1,7 milhão de trabalhadores estão nessa zona cinzenta. A regulação que será adotada — classificação como empregado, autônomo, ou uma terceira categoria intermediária — determinará se esses trabalhadores terão acesso a previdência, seguro-desemprego e limites de jornada, ou se permanecerão num limbo institucional que concentra riscos no elo mais fraco da cadeia.
+
+!!! box-brasil "Box Brasil 17.4 — O Projeto de Lei dos Motoristas e a regulação brasileira"
+
+    Em 2024, o governo federal enviou ao Congresso um Projeto de Lei (PL 12/2024) propondo uma regulação intermediária para motoristas de aplicativo: nem empregados plenos (CLT), nem autônomos puros. Os pontos centrais incluem:
+
+    - **Contribuição previdenciária obrigatória** com alíquota reduzida (7,5% do trabalhador + 20% da plataforma sobre remuneração);
+    - **Remuneração mínima por hora trabalhada** de R$ 32,10/hora (incluindo custos do veículo);
+    - **Limitação de jornada** a 12 horas diárias;
+    - **Manutenção do status de autônomo** — sem vínculo CLT, sem férias, sem 13º.
+
+    O PL ilustra o trade-off clássico da regulação trabalhista:
+
+    - **Pró-regulação:** reduz a precarização, garante piso de renda, inclui na previdência → reduz externalidades negativas sobre o sistema de saúde e assistência social.
+    - **Contra-regulação:** aumenta o custo da plataforma, que pode repassar para o consumidor (preço da corrida) ou reduzir a demanda por motoristas → possível redução do emprego (o argumento padrão contra salário mínimo, Seção 17.8).
+
+    O debate é empiricamente aberto — e a resposta depende da elasticidade da demanda por corridas e da elasticidade da oferta de motoristas, exatamente as ferramentas deste capítulo.
+
+    *Fontes: Câmara dos Deputados, PL 12/2024; IPEA (2024), "Regulação do trabalho por plataformas: evidências e propostas".*

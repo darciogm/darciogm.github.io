@@ -20,8 +20,10 @@ Partimos do modelo de alocação do tempo, no qual o indivíduo escolhe entre co
 | 17.6 | Por que o médico ganha mais que o professor? | Diferenciais compensatórios, capital humano | [Diferenciais](equilibrio-diferenciais.md#176) |
 | 17.7 | O que acontece quando só tem um patrão na cidade? | Monopsônio, salário abaixo do PMg | [Monopsônio](monopsonio-sindicatos.md#177) |
 | 17.8 | O sindicato melhora ou piora o mercado de trabalho? | Barganha salarial, modelos de sindicato | [Sindicatos](monopsonio-sindicatos.md#178) |
-| 17.9 | Subir o salário atrai mais trabalho ou mais lazer? | Efeito substituição vs. renda na oferta de fatores | [Substituição vs. renda](fatores-terra.md#179) |
-| 17.10 | Se a terra não vai a lugar nenhum, quem captura o valor? | Renda da terra, recursos naturais | [Terra](fatores-terra.md#1710) |
+| 17.9 | Por que existem desempregados e vagas abertas ao mesmo tempo? | Modelos de busca, DMP, curva de Beveridge | [Busca e Matching](monopsonio-sindicatos.md#179a) |
+| 17.10 | O app decide seu salário — isso é mercado livre? | Gig economy, monopsônio algorítmico, regulação | [Gig Economy](monopsonio-sindicatos.md#1710b) |
+| 17.11 | Subir o salário atrai mais trabalho ou mais lazer? | Efeito substituição vs. renda na oferta de fatores | [Substituição vs. renda](fatores-terra.md#179) |
+| 17.12 | Se a terra não vai a lugar nenhum, quem captura o valor? | Renda da terra, recursos naturais | [Terra](fatores-terra.md#1710) |
 | **Exercícios** | Teste, pratique, resolva | Revisão, exercícios, ANPEC | [Exercícios](exercicios.md) |
 | **Pesquisa** | O que a pesquisa recente diz? | Artigos seminais e fronteira empírica | [Pesquisa](pesquisa.md) |
 

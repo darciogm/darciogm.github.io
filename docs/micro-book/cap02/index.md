@@ -9,6 +9,59 @@ Se o Capítulo 1 era o "o quê" e o "por quê" da microeconomia, este é o "com 
 !!! tip "Não entre em pânico"
     Este capítulo é como aquecimento antes do jogo — ninguém gosta, mas quem pula se machuca no minuto 5. Se você já domina cálculo multivariado, pode pular direto para as seções que precisa consultando o roteiro abaixo. Se está vendo isso pela primeira vez: respire. Pense neste capítulo como um dicionário — você não lê da primeira à última página; você volta quando precisa.
 
+!!! example "Autodiagnóstico: Qual é o seu ponto de partida?"
+
+    Responda mentalmente (ou no caderno) às 6 questões abaixo. Elas cobrem os pré-requisitos mínimos para acompanhar este capítulo sem sofrimento desnecessário.
+
+    **Bloco A — Cálculo diferencial básico** (pré-requisito para Seções 2.1–2.3)
+
+    1. Calcule $\dfrac{d}{dx}\left(3x^2 - 5x + 2\right)$.
+    2. Encontre o $x$ que maximiza $f(x) = -x^2 + 6x - 1$ e verifique que é máximo.
+    3. Se $f(x,y) = x^2 y + 3xy^2$, calcule $\dfrac{\partial f}{\partial x}$.
+
+    **Bloco B — Álgebra e funções** (pré-requisito para Seções 2.5–2.9)
+
+    4. Resolva para $x$ e $y$: $\;2x + y = 10$ e $x - y = 2$.
+    5. Simplifique $\ln(e^{3x})$.
+    6. Se $f(tx, ty) = t^2 f(x,y)$ para todo $t > 0$, qual é o grau de homogeneidade de $f$?
+
+    ---
+
+    **Interpretação:**
+
+    - **6/6 corretas:** Você pode avançar rapidamente — use o capítulo como referência e concentre-se nas seções menos familiares (Envelope, Kuhn-Tucker, Euler).
+    - **4–5 corretas:** Você está bem, mas leia com atenção as seções onde errou. Os conceitos se acumulam.
+    - **2–3 corretas:** Leia o capítulo inteiro com calma. Faça os exercícios de aquecimento antes dos exercícios formais. Use os recursos do box abaixo.
+    - **0–1 corretas:** Invista uma semana nos "Primeiros Socorros" abaixo *antes* de entrar no capítulo. É mais rápido do que parece, e o retorno sobre o investimento é enorme.
+
+    ??? success "Gabarito rápido"
+        1. $6x - 5$
+        2. $x^* = 3$ (CPO: $-2x + 6 = 0$); $f''(x) = -2 < 0$ → máximo. ✓
+        3. $2xy + 3y^2$
+        4. $x = 4,\; y = 2$
+        5. $3x$
+        6. Grau 2 (homogênea de grau 2).
+
+!!! info "Primeiros Socorros Matemáticos"
+
+    Se o autodiagnóstico revelou lacunas, não se desespere — elas são mais comuns do que você imagina, e há recursos excelentes (e gratuitos) para resolvê-las em poucos dias.
+
+    **Vídeos (português)**
+
+    - [Khan Academy Brasil — Cálculo Diferencial](https://pt.khanacademy.org/math/calculus-1): derivadas, regras de derivação, máximos e mínimos. Comece por "Derivadas: definição e regras básicas".
+    - [Khan Academy Brasil — Álgebra Linear](https://pt.khanacademy.org/math/linear-algebra): sistemas lineares, matrizes (útil para Hessianas).
+
+    **Vídeos (inglês com legendas)**
+
+    - [3Blue1Brown — Essence of Calculus](https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr): a melhor série visual sobre cálculo que existe. 12 vídeos de ~20 min que constroem a intuição geométrica por trás de derivadas e integrais.
+    - [3Blue1Brown — Essence of Linear Algebra](https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab): transformações lineares, autovalores (para Hessianas e concavidade).
+
+    **Livro de referência acessível**
+
+    - Chiang, A.C. & Wainwright, K. (2005). *Matemática para Economistas*. Campus/Elsevier. — O "clássico gentil": rigoroso mas escrito para economistas, não para matemáticos. Capítulos 2–4 cobrem todo o Bloco A do autodiagnóstico; Capítulos 9–12 cobrem o Bloco B.
+
+    **Dica prática:** reserve 30 min/dia durante 5–7 dias para os vídeos do 3Blue1Brown + exercícios do Khan Academy. Esse investimento de ~5 horas vai render dividendos pelo resto do livro — literalmente, o melhor VPL que você pode conseguir antes do Capítulo 18.
+
 Este capítulo é a caixa de ferramentas do livro inteiro — uma referência autocontida que vai da otimização em uma variável (Seção 2.1) até os teoremas de ponto fixo que garantem a existência de equilíbrios (Seção 2.13), passando por Lagrange, Kuhn-Tucker, teorema do envelope, curvatura e homogeneidade. O leitor familiarizado com cálculo multivariado pode avançar rapidamente, concentrando-se nos resultados menos habituais (envelope, Kuhn-Tucker, Euler). Cada ferramenta será *usada* em um problema econômico concreto nos capítulos seguintes — teoria do consumidor (Capítulos 3–6), incerteza e risco (Capítulo 7), teoria da firma (Capítulos 10–12), teoria dos jogos (Capítulo 9a) e equilíbrio de mercado (Capítulos 13–14) — de modo que nada aqui é decorativo. A exposição segue Nicholson e Snyder (2017, Cap. 2), complementada por Simon e Blume (1994), Mas-Colell, Whinston e Green (1995, Apêndice Matemático) e Chiang e Wainwright (2005).
 
 !!! abstract "Roteiro do capítulo"

@@ -197,3 +197,41 @@ A tabela abaixo sintetiza os critérios de escolha:
 | Coordenação internacional | Mais simples (cada país fixa seu imposto) | Mais complexa (linking de mercados) |
 
 Na prática, sistemas híbridos são comuns: cap-and-trade com piso e teto de preço (*price collar*), combinando a certeza de quantidade do cap com limites à volatilidade de preço.
+
+!!! box-brasil "Box Brasil 24.0 — ICMS Ecológico: o imposto que paga para preservar"
+
+    **O mecanismo.** O ICMS Ecológico é uma inovação genuinamente brasileira na política ambiental — e um dos exemplos mais elegantes de incentivo econômico à conservação no mundo. Criado pelo Paraná em 1991, o mecanismo não cria um imposto novo: ele **redistribui** a parcela de 25% do ICMS que os estados repassam aos municípios, usando critérios ambientais. Municípios que mantêm unidades de conservação, mananciais de abastecimento ou áreas protegidas recebem uma fatia maior do bolo — transformando a floresta em pé em receita fiscal.
+
+    **Dados.** Em 2024, 18 dos 26 estados brasileiros adotavam alguma forma de ICMS Ecológico, com critérios que variam de estado para estado:
+
+    | Estado | Critério principal | % do ICMS alocado | Desde |
+    |:-------|:-------------------|:-:|:---:|
+    | Paraná | Unidades de conservação + mananciais | 5% | 1991 |
+    | Minas Gerais | UCs + saneamento + patrimônio cultural | 1,1% | 1995 |
+    | São Paulo | UCs estaduais | 0,5% | 1993 |
+    | Tocantins | Política municipal de meio ambiente + UCs | 13% | 2002 |
+    | Ceará | Educação + saúde + meio ambiente | 2% | 2007 |
+
+    **Análise microeconômica.** O ICMS Ecológico é um **subsídio pigouviano às avessas**: em vez de taxar a externalidade negativa (poluição), remunera a externalidade positiva (conservação). A lógica é idêntica ao imposto pigouviano da equação $\eqref{eq:24.2}$, mas com sinal invertido: o "preço" de preservar é positivo (receita adicional), e cada município decide quanto "produzir" de conservação comparando o benefício marginal (repasse de ICMS) com o custo de oportunidade (receita agrícola ou imobiliária da terra). A beleza do mecanismo é que ele opera sobre o **orçamento municipal** — o recurso mais escasso e mais disputado na política local — criando um lobby interno pela conservação: prefeitos passam a defender áreas protegidas porque elas *pagam*.
+
+    **Evidências.** Ring (2008) e Loureiro (2002) mostram que o ICMS Ecológico do Paraná levou a um aumento de 165% nas unidades de conservação municipais entre 1991 e 2001. Em Minas Gerais, municípios que recebem ICMS Ecológico apresentaram menor taxa de desmatamento relativo. O mecanismo tem limitações — o critério é de *estoque* (ter a área), não de *fluxo* (melhorar a qualidade) — mas a direção é correta.
+
+    **Conexão teórica.** O ICMS Ecológico é um caso raro de **duplo dividendo fiscal ambiental** (Seção 24.2.4) aplicado no nível subnacional: a redistribuição do ICMS não aumenta a carga tributária total, mas redireciona receita para municípios que produzem externalidades positivas. É Pigou encontrando o federalismo fiscal brasileiro.
+
+    **Fonte:** Loureiro, W. (2002). *Contribuição do ICMS Ecológico à conservação da biodiversidade no estado do Paraná*. Tese de Doutorado, UFPR. Ring, I. (2008). Integrating local ecological services into intergovernmental fiscal transfers: the case of the ecological ICMS in Brazil. *Land Use Policy*, 25(4), 485–497.
+
+!!! box-brasil "Box Brasil 24.0b — Pagamento por Serviços Ambientais (PSA) na Mata Atlântica e o marco legal brasileiro"
+
+    **Contexto.** A Mata Atlântica — o bioma mais degradado do Brasil, com apenas ~12% de cobertura original remanescente — tornou-se o principal laboratório de **Pagamento por Serviços Ambientais** (PSA) no país. O PSA opera pela lógica coaseana (Capítulo 20): se a floresta em pé gera serviços ecossistêmicos (água limpa, carbono sequestrado, biodiversidade) que beneficiam terceiros, e se esses terceiros não pagam por eles, a floresta é subofertada. O PSA corrige essa falha pagando diretamente ao proprietário rural pela conservação — transformando a externalidade positiva em receita privada.
+
+    **Casos emblemáticos:**
+
+    - **Programa Conservador das Águas (Extrema/MG, 2005):** Primeiro PSA municipal do Brasil. Paga R$ 100–300/ha/ano a proprietários rurais que restauram matas ciliares e mantêm nascentes. Resultado: aumento de 50% na cobertura florestal de áreas de preservação permanente (APP) em 15 anos, com melhoria mensurável na qualidade da água que abastece o Sistema Cantareira (SP).
+    - **Programa Produtor de Água (ANA):** Modelo nacional da Agência Nacional de Águas que remunera proprietários rurais por práticas de conservação do solo e da água. Presente em ~80 projetos pelo Brasil.
+    - **Bolsa Verde (federal, 2011–2018):** Pagamento de R$ 300/trimestre a famílias em extrema pobreza que vivem em unidades de conservação e mantêm a cobertura vegetal. Alcançou ~75 mil famílias.
+
+    **Marco legal.** A **Lei 14.119/2021** (Política Nacional de PSA) formalizou o arcabouço jurídico para PSA no Brasil, definindo: (i) serviços ambientais elegíveis (sequestro de carbono, conservação da biodiversidade, conservação hídrica, beleza cênica); (ii) modalidades de pagamento (direto, fiscal, creditício); (iii) o Cadastro Nacional de PSA; e (iv) o Programa Federal de PSA. A lei estabeleceu que o PSA não é incompatível com obrigações legais (como a reserva legal do Código Florestal) — ponto controverso, pois economistas argumentam que pagar pela conservação *obrigatória* gera incentivos perversos.
+
+    **Análise.** O PSA é a aplicação prática do Teorema de Coase com custos de transação reduzidos pelo governo: em vez de esperar que proprietários rurais e consumidores de água negociem diretamente (inviável por número de agentes), o governo intermedia a transação via programa público. O desafio é a **adicionalidade** — garantir que o pagamento financia conservação *nova*, não conservação que ocorreria de qualquer forma. Sem adicionalidade, o PSA é transferência de renda, não política ambiental.
+
+    **Fonte:** ANA — Programa Produtor de Água, 2024. Brasil, Lei 14.119/2021. TNC — *Conservador das Águas: Lições de Extrema*, 2020.

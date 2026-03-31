@@ -200,14 +200,33 @@ Teste seu entendimento dos conceitos centrais deste capítulo.
 
 [:material-arrow-right: Ver solução](../solucoes/cap22.md#ex-22-9)
 
-<a id="ex-22-10"></a>**Exercício 22.10.** Um pesquisador conduz um RCT com 500 participantes (250 tratados, 250 controles) e encontra efeito de \(\hat{\tau} = 3{,}2\) com erro padrão \(SE = 1{,}5\).
+<a id="ex-22-10"></a>**Exercício 22.10 — DiD com dados brasileiros: o Programa Mais Médicos.** Em 2013, o governo federal lançou o Programa Mais Médicos, enviando médicos (majoritariamente cubanos) para municípios com escassez de profissionais de saúde. Considere os seguintes dados hipotéticos (inspirados em Carrillo & Feres, 2019) sobre a taxa de internação por condições sensíveis à atenção primária (ICSAP) por 10.000 habitantes:
+
+| | Municípios atendidos (tratamento) | Municípios não atendidos (controle) |
+|:--|:----------------------------------|:------------------------------------|
+| 2012 (antes) | 182 | 145 |
+| 2015 (depois) | 158 | 139 |
+
+(a) Calcule o estimador de diferenças-em-diferenças e interprete o resultado.
+
+(b) A hipótese de tendências paralelas é plausível neste caso? Que variáveis você controlaria para torná-la mais defensável?
+
+(c) Suponha que municípios que *mais precisavam* de médicos foram priorizados pelo programa (o que é verdade). Isso viola a exogeneidade do tratamento? Discuta como o DiD lida com esse tipo de seleção, em contraste com uma simples comparação cross-section.
+
+(d) Se o efeito encontrado é uma redução de 18 internações por 10.000 habitantes, e cada internação evitada economiza em média R\$ 3.200 (dados do SIH/SUS), calcule a economia anual para um município com 50.000 habitantes. Compare com o custo anual do programa para esse município (suponha 3 médicos × R\$ 120.000/ano cada).
+
+(e) Discuta uma limitação importante: os municípios tratados diferem dos não tratados em nível (182 vs 145 *antes* do programa). Isso invalida o DiD? Por quê?
+
+[:material-arrow-right: Ver solução](../solucoes/cap22.md#ex-22-10b)
+
+<a id="ex-22-11"></a>**Exercício 22.11.** Um pesquisador conduz um RCT com 500 participantes (250 tratados, 250 controles) e encontra efeito de \(\hat{\tau} = 3{,}2\) com erro padrão \(SE = 1{,}5\).
 
 (a) Calcule a estatística \(t\) e o p-valor (bilateral) aproximado. O resultado é "significativo" a 5%?
 (b) Se o pesquisador tivesse testado 20 hipóteses e reportado apenas a significativa, qual é a probabilidade de um falso positivo (com correção de Bonferroni)?
 (c) Outro pesquisador tenta replicar com amostra de 1.000 e encontra \(\hat{\tau} = 1{,}8\) com \(SE = 0{,}7\). Compare os resultados.
 (d) Discuta como o pré-registro de hipóteses ajudaria a resolver a preocupação do item (b).
 
-[:material-arrow-right: Ver solução](../solucoes/cap22.md#ex-22-10)
+[:material-arrow-right: Ver solução](../solucoes/cap22.md#ex-22-11)
 
 ---
 

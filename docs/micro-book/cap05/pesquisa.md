@@ -11,7 +11,7 @@
 
     **Relevância para o capítulo:** O estudo é a ilustração empírica mais rigorosa das Seções 5.3–5.4. Ele demonstra que a Equação de Slutsky não é apenas uma identidade matemática: suas implicações qualitativas — em particular, que um bem de Giffen deve ser inferior e representar parcela substancial do orçamento — encontram confirmação nos dados. O caso também ilumina a discussão sobre bens inferiores no Brasil (farinha de mandioca), embora o contexto brasileiro contemporâneo não seja de subsistência pura, tornando o surgimento de Giffen improvável.
 
-??? pesquisa "Hausman, J. A. (1981). [Exact Consumer's Surplus and Deadweight Loss](https://www.jstor.org/stable/1805921). *The American Economic Review*, 71(4), 662–676."
+??? pesquisa "Hausman, J. A. (1981). [Exact Consumer's Surplus and Deadweight Loss](https://www.jstor.org/stable/1806997). *The American Economic Review*, 71(4), 662–676."
     **Pergunta central:** O excedente do consumidor marshalliano, calculado a partir da curva de demanda observável, é uma boa medida da variação de bem-estar causada por mudanças de preço? Ou é necessário recorrer às medidas exatas — variação compensatória (VC) e variação equivalente (VE) — baseadas nas demandas hicksianas não-observáveis?
 
     **Método:** Hausman desenvolveu um procedimento para calcular a VC e a VE exatas a partir de estimativas econométricas da demanda marshalliana observada. O método explora a Equação de Slutsky e a dualidade entre problema primal e dual para recuperar a demanda hicksiana a partir da marshalliana, permitindo calcular as medidas exatas de bem-estar sem precisar estimar diretamente a função dispêndio.

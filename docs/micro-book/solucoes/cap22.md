@@ -435,7 +435,84 @@ A proibição do mecanismo de preços (venda de órgãos) baseia-se em argumento
 
 ---
 
-## ✏️ Exercício 22.10 {#ex-22-10}
+## ✏️ Exercício 22.10 — DiD com dados brasileiros: Mais Médicos {#ex-22-10b}
+
+**Diferenças-em-diferenças aplicada ao Programa Mais Médicos.**
+
+Dados: Taxa de ICSAP por 10.000 habitantes.
+
+| | Tratamento | Controle |
+|:--|:----------|:---------|
+| 2012 | 182 | 145 |
+| 2015 | 158 | 139 |
+
+---
+
+**(a) Estimador DiD**
+
+O estimador de diferenças-em-diferenças é:
+
+\[
+\hat{\delta}_{DD} = (\bar{Y}_{T,\text{depois}} - \bar{Y}_{T,\text{antes}}) - (\bar{Y}_{C,\text{depois}} - \bar{Y}_{C,\text{antes}})
+\]
+
+\[
+\hat{\delta}_{DD} = (158 - 182) - (139 - 145) = (-24) - (-6) = -18
+\]
+
+**Interpretação:** O Programa Mais Médicos está associado a uma redução de **18 internações por condições sensíveis à atenção primária por 10.000 habitantes**, além da tendência já observada nos municípios de controle. As ICSAP caíram em ambos os grupos (tendência nacional de melhoria), mas caíram **18 a mais** nos municípios atendidos pelo programa.
+
+---
+
+**(b) Plausibilidade das tendências paralelas**
+
+A hipótese de tendências paralelas exige que, *na ausência* do Mais Médicos, os municípios tratados teriam seguido a mesma trajetória de ICSAP que os de controle. Isso é questionável porque municípios tratados foram selecionados por maior carência — e municípios carentes podem ter trajetórias diferentes.
+
+Para tornar a hipótese mais defensável, o pesquisador deveria:
+
+- Controlar por **covariáveis** (PIB per capita, cobertura da ESF, taxa de urbanização, distância a capitais);
+- Verificar **tendências pré-tratamento** (2008–2012): se as trajetórias eram paralelas antes de 2013, é mais plausível que continuariam paralelas sem o programa;
+- Usar **matching** (PSM ou CEM) para construir um grupo de controle mais comparável.
+
+---
+
+**(c) Seleção por necessidade**
+
+Sim, a priorização de municípios carentes viola a exogeneidade do tratamento — municípios tratados são sistematicamente diferentes dos controle. Mas isso **não** invalida o DiD! O DiD permite diferenças de **nível** entre os grupos (os tratados tinham ICSAP mais alta). O que o DiD exige é que as **tendências** sejam paralelas.
+
+Em contraste, uma simples comparação cross-section em 2015 (\(158 - 139 = 19\)) atribuiria a diferença ao programa, mas essa diferença já existia antes (\(182 - 145 = 37\)). A diferença cross-section diminuiu, não aumentou — o DiD captura corretamente essa convergência.
+
+---
+
+**(d) Análise custo-benefício**
+
+Economia anual:
+
+\[
+\text{Internações evitadas} = 18 \times \frac{50.000}{10.000} = 90 \text{ internações}
+\]
+
+\[
+\text{Economia} = 90 \times \text{R\$}\;3.200 = \text{R\$}\;288.000
+\]
+
+Custo anual do programa:
+
+\[
+\text{Custo} = 3 \times \text{R\$}\;120.000 = \text{R\$}\;360.000
+\]
+
+Razão benefício-custo: \(288.000/360.000 = 0{,}80\). Considerando **apenas** internações evitadas, o programa não se paga. Mas essa conta subestima os benefícios: o programa também reduz mortalidade, melhora indicadores de saúde materna e infantil, reduz deslocamentos para outros municípios e gera externalidades positivas (formação de equipes locais). Incluindo esses benefícios, estudos como Carrillo e Feres (2019) encontram razão benefício-custo superior a 1.
+
+---
+
+**(e) Diferenças de nível**
+
+A diferença de nível *antes* do programa (182 vs 145) **não** invalida o DiD. O estimador DD não requer que os grupos tenham o mesmo nível — apenas que teriam a mesma **variação** (tendência paralela) na ausência do tratamento. Municípios com mais internações podem estar convergindo naturalmente (por investimentos do SUS, urbanização, etc.), o que violaria as tendências paralelas. Mas a diferença de nível em si não é um problema — é a razão de ser do DiD, que "limpa" esse efeito fixo de grupo.
+
+---
+
+## ✏️ Exercício 22.11 {#ex-22-11}
 
 **Replicação, significância e pré-registro.**
 
