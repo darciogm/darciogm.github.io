@@ -23,7 +23,7 @@ O monopólio surge quando há **barreiras à entrada** que impedem outras firmas
 
 Um **monopólio natural** ocorre quando a função custo é **subaditiva** — é mais barato uma única firma produzir toda a demanda do que duas ou mais firmas dividirem o mercado:
 
-$$C(Q) < C(Q_1) + C(Q_2) \quad \text{para todo } Q_1 + Q_2 = Q$$
+$$C(Q) < C(Q_1) + C(Q_2) \quad \text{para~todo~} Q_1 + Q_2 = Q$$
 
 Condição suficiente (mas não necessária): custo médio estritamente decrescente em toda a faixa relevante de produção.
 
@@ -45,7 +45,7 @@ Como $dP/dQ < 0$, temos $\boxed{RMg < P}$: para vender mais uma unidade, o monop
 
 $$RMg(Q^m) = CMg(Q^m)$$
 
-$$\frac{dRMg}{dQ} < \frac{dCMg}{dQ} \quad \text{(RMg corta CMg de cima)}$$
+$$\frac{dRMg}{dQ} < \frac{dCMg}{dQ} \quad \text{(RMg~corta~CMg~de~cima)}$$
 
 ---
 
@@ -96,7 +96,7 @@ Um imposto de $t$ por unidade eleva o custo marginal para $CMg + t$. O monopolis
 - **Demanda linear**: repasse é $< t$ (em geral, $t/2$ com CMg constante)
 - **Demanda isoelástica**: repasse pode ser $> t$
 
-$$\frac{dP_m}{dt} = \frac{1}{2 - \frac{d^2P/dQ^2 \cdot Q}{dP/dQ}} \quad \text{(demanda geral)}$$
+$$\frac{dP_m}{dt} = \frac{1}{2 - \frac{d^2P/dQ^2 \cdot Q}{dP/dQ}} \quad \text{(demanda~geral)}$$
 
 Para demanda linear $P = a - bQ$ e $CMg = c$: $P_m = (a + c + t)/2$, logo $dP_m/dt = 1/2$.
 

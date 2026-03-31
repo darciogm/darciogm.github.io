@@ -92,7 +92,7 @@ Casos especiais:
 
 ### 2.5 Quase-linear
 
-$$u(x_1, x_2) = v(x_1) + x_2 \quad \text{com } v' > 0, \; v'' < 0$$
+$$u(x_1, x_2) = v(x_1) + x_2 \quad \text{com~} v' > 0, \; v'' < 0$$
 
 - TMS: $v'(x_1)$ — depende **apenas** de $x_1$
 - Curvas de indiferença: translações verticais umas das outras

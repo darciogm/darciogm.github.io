@@ -21,7 +21,7 @@ A **discriminação de preços** ocorre quando uma firma cobra preços diferente
 
 O monopolista cobra de cada consumidor exatamente sua **disposição a pagar**. Resultado:
 
-$$P_i = v_i \quad \text{para cada consumidor } i$$
+$$P_i = v_i \quad \text{para~cada~consumidor~} i$$
 
 - Toda o excedente do consumidor é capturado pelo monopolista: $EC = 0$
 - A quantidade é **eficiente**: $Q = Q_c$ (mesma da competição)

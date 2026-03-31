@@ -19,7 +19,7 @@ Relembrando a equação fundamental:
 
 $$\frac{\partial x_i^M}{\partial p_i} = \frac{\partial h_i}{\partial p_i} - x_i^M \frac{\partial x_i^M}{\partial I}$$
 
-$$\underbrace{\text{ET}}_{\text{efeito total}} = \underbrace{\text{ES}}_{\text{substituição}} + \underbrace{\text{ER}}_{\text{renda}}$$
+$$\underbrace{\text{ET}}_{\text{efeito~total}} = \underbrace{\text{ES}}_{\text{substituição}} + \underbrace{\text{ER}}_{\text{renda}}$$
 
 O ES é o movimento ao longo da curva de indiferença (compensado). O ER é a mudança devida à alteração do poder de compra.
 

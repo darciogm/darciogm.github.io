@@ -81,7 +81,7 @@ A relação: $L^*(P,w,v) = L^c\big(w, v, q^*(P,w,v)\big)$.
 
 Quando $w$ aumenta:
 
-$$\underbrace{\frac{\partial L^*}{\partial w}}_{\text{efeito total}} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição (}\leq 0\text{)}} + \underbrace{\frac{\partial L^c}{\partial q}\cdot\frac{\partial q^*}{\partial w}}_{\text{efeito produto (}\leq 0\text{)}}$$
+$$\underbrace{\frac{\partial L^*}{\partial w}}_{\text{efeito~total}} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito~substituição~(}\leq 0\text{)}} + \underbrace{\frac{\partial L^c}{\partial q}\cdot\frac{\partial q^*}{\partial w}}_{\text{efeito~produto~(}\leq 0\text{)}}$$
 
 - **Efeito substituição** ($\leq 0$): salário mais alto leva a substituir trabalho por capital, mantendo $q$ fixo
 - **Efeito produto** ($\leq 0$): custo mais alto reduz a produção ótima, que reduz a demanda por trabalho
