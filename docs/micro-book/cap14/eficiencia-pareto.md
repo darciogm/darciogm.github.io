@@ -191,7 +191,7 @@ Quando introduzimos produção na análise, precisamos considerar a eficiência 
 TMST_1^{LK} = TMST_2^{LK}
 \label{eq:14.5} \tag{14.5} \]
 
-Essa condição, descrita pela equação $\eqref{eq:14.5}$, é análoga à condição de eficiência na troca ($\eqref{eq:14.3}$), mas aplicada ao lado da produção. Quando as TMST são iguais entre os dois setores, não é possível realocar trabalho e capital entre eles de modo a aumentar a produção de um bem sem reduzir a do outro. Se as TMST diferem — digamos, o setor 1 usa relativamente muito trabalho e pouco capital em relação ao setor 2 —, seria possível transferir capital para o setor 1 e trabalho para o setor 2, aumentando a produção de ambos os bens. Essa é a essência da ineficiência na alocação de insumos.
+Essa condição, descrita pela equação $\eqref{eq:14.5}$, é análoga à condição de eficiência na troca (equação $14.3$), mas aplicada ao lado da produção. Quando as TMST são iguais entre os dois setores, não é possível realocar trabalho e capital entre eles de modo a aumentar a produção de um bem sem reduzir a do outro. Se as TMST diferem — digamos, o setor 1 usa relativamente muito trabalho e pouco capital em relação ao setor 2 —, seria possível transferir capital para o setor 1 e trabalho para o setor 2, aumentando a produção de ambos os bens. Essa é a essência da ineficiência na alocação de insumos.
 
 ### Fronteira de possibilidades de produção (FPP)
 

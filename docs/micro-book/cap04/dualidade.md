@@ -34,7 +34,7 @@ Dividindo as CPOs dos bens 1 e 2:
 \frac{p_1}{p_2} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \text{TMS}_{12}. \label{eq:4.6.12} \tag{4.6.12}
 \]
 
-A condição de tangência $\eqref{eq:4.6.12}$ é **idêntica** à do problema primal (equação 4.2.3), confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
+A condição de tangência $\eqref{eq:4.6.12}$ é **idêntica** à do problema primal (equação $4.2.3$), confirmando a equivalência entre os dois problemas. Esse resultado não é uma coincidência: primal e dual são duas perspectivas sobre a mesma decisão ótima, e o ponto de tangência entre a curva de indiferença e a reta orçamentária permanece o mesmo, independentemente de qual dos dois problemas se resolve.
 
 !!! idea "Intuição Econômica"
     **Em uma frase:** O problema primal e o dual são duas faces da mesma moeda — a cesta ótima é idêntica, só muda a pergunta que fazemos.

@@ -55,7 +55,7 @@
 
     **Por que isso importa:** O estudo é a referência mais abrangente para comparações internacionais de retornos à educação. Confirma a previsão da teoria do capital humano (seção 17.6) de que a educação é um investimento rentável, especialmente em países com grande desigualdade educacional. Os altos retornos no Brasil sugerem que a expansão do acesso à educação de qualidade é uma das políticas mais eficazes para reduzir a desigualdade salarial.
 
-    **Relevância para o capítulo:** Fornece a base empírica para a equação de Mincer (equação \(\eqref{eq:17.13}\)) e para os exercícios sobre retornos à educação (Exercício 17.7, Exercício Resolvido 17.3). Os dados comparativos permitem situar o Brasil no contexto internacional dos retornos à educação.
+    **Relevância para o capítulo:** Fornece a base empírica para a equação de Mincer (equação $17.13$) e para os exercícios sobre retornos à educação (Exercício 17.7, Exercício Resolvido 17.3). Os dados comparativos permitem situar o Brasil no contexto internacional dos retornos à educação.
 
 ---
 

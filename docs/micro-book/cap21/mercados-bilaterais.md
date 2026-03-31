@@ -267,7 +267,7 @@ O TikTok (ByteDance) introduziu uma ruptura no modelo de plataformas bilaterais 
 
 **Implicações microeconômicas:**
 
-1. **Efeitos de rede enfraquecidos**: em plataformas baseadas em grafo social, o lock-in é forte porque migrar significa perder conexões (custo de troca alto, equação $\eqref{eq:21.6}$). No TikTok, o valor vem do algoritmo de recomendação, não da rede de contatos — o que significa que o custo de troca do lado do usuário é *menor*. A plataforma retém usuários pela qualidade do algoritmo, não pelo aprisionamento social.
+1. **Efeitos de rede enfraquecidos**: em plataformas baseadas em grafo social, o lock-in é forte porque migrar significa perder conexões (custo de troca alto, equação $21.6$). No TikTok, o valor vem do algoritmo de recomendação, não da rede de contatos — o que significa que o custo de troca do lado do usuário é *menor*. A plataforma retém usuários pela qualidade do algoritmo, não pelo aprisionamento social.
 
 2. **Competição por atenção, não por rede**: o TikTok compete diretamente com Netflix, YouTube e Instagram pelo recurso mais escasso da economia digital — a atenção (Seção 21.5). Com mais de 1,5 bilhão de usuários ativos mensais globalmente e tempo médio de uso de 95 minutos/dia (2024), o TikTok captura uma fração crescente do "orçamento de atenção" dos jovens, reduzindo a atenção disponível para plataformas incumbentes.
 

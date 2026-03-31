@@ -224,7 +224,7 @@ O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A c
     - **Seleção amostral:** a composição de quem trabalha (e aparece na amostra) difere por gênero e raça;
     - **Discriminação efetiva:** diferenças de tratamento por empregadores, no sentido de Becker ou estatístico.
 
-    A decomposição de Oaxaca-Blinder (equação \(\eqref{eq:17.13b}\)) é uma extensão natural desta análise: permite separar formalmente a parte do diferencial que se deve a diferenças de características versus diferenças de retornos.
+    A decomposição de Oaxaca-Blinder (equação $17.13\text{b}$) é uma extensão natural desta análise: permite separar formalmente a parte do diferencial que se deve a diferenças de características versus diferenças de retornos.
 
 <iframe src="/micro-book/graficos/cap17/webr-mincer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
 <div class="caption-obj">

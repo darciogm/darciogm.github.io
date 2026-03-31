@@ -331,7 +331,7 @@ Payoffs com investimento: se E entra e I luta, I obtém 0 (em vez de –1); o cu
 
 <a id="ex-9b-9"></a>**Exercício 9b.9.** (Difícil — Barganha de Rubinstein com paciência assimétrica) Dois agentes negociam a divisão de um bolo de tamanho 1 com ofertas alternadas. O agente 1 (proponente ímpar) tem fator de desconto \(\delta_1\) e o agente 2 (proponente par) tem \(\delta_2\), com \(\delta_1 \neq \delta_2\).
 
-(a) Derive o único EPS de Rubinstein usando as condições de indiferença: o respondedor deve ser indiferente entre aceitar e rejeitar em equilíbrio. Mostre que as equações de ponto fixo levam à fórmula \eqref{eq:9b.2}.
+(a) Derive o único EPS de Rubinstein usando as condições de indiferença: o respondedor deve ser indiferente entre aceitar e rejeitar em equilíbrio. Mostre que as equações de ponto fixo levam à fórmula $(9\text{b}.2)$.
 
 (b) Calcule a divisão para \(\delta_1 = 0{,}9\) e \(\delta_2 = 0{,}5\). Quem tem maior poder de barganha?
 

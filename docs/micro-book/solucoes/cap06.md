@@ -406,7 +406,7 @@ s_{11} \leq 0
 
 **Passo 3: Isolando \(s_{12}\).**
 
-Da equação \eqref{eq:passo1}:
+Da equação $\eqref{eq:passo1}$:
 
 \[
 s_{12} = -\frac{p_1}{p_2} s_{11}

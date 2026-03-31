@@ -194,7 +194,7 @@ Um regulador quer reduzir emissões de um poluente. O benefício marginal da red
     L_P - L_Q = \frac{\sigma^2}{2} \cdot \frac{|BMg'| - |CMgA'|}{|CMgA'|^2} = \frac{\sigma^2}{2} \cdot \frac{2 - 1}{1} = \frac{\sigma^2}{2} > 0
     \]
 
-    **(d)** O imposto gera perda esperada *maior* que o cap (\(L_P > L_Q\)) porque \(|BMg'| = 2 > |CMgA'| = 1\) — a curva de benefício marginal é mais inclinada. Neste caso, **o cap é preferível** (equação $\eqref{eq:24.5}$). O imposto seria preferível se a curva de custo de abatimento fosse mais inclinada que a de benefício marginal.
+    **(d)** O imposto gera perda esperada *maior* que o cap (\(L_P > L_Q\)) porque \(|BMg'| = 2 > |CMgA'| = 1\) — a curva de benefício marginal é mais inclinada. Neste caso, **o cap é preferível** (equação $24.5$). O imposto seria preferível se a curva de custo de abatimento fosse mais inclinada que a de benefício marginal.
 
 <a id="ex-24-4"></a>**Exercício 24.4.** *(Exercício resolvido)* Regra de Hotelling.
 
