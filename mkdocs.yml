@@ -82,6 +82,12 @@ nav:
         - "Pesquisa em Ação": micro-book/cap01/pesquisa.md
       - "Cap. 2 — O Manual de Sobrevivência Matemática":
         - "Visão Geral": micro-book/cap02/index.md
+        - "2.1–2.3 Otimização e Estática Comparativa": micro-book/cap02/otimizacao.md
+        - "2.4 Teorema do Envelope": micro-book/cap02/envelope.md
+        - "2.5–2.6 Lagrange e Preço-Sombra": micro-book/cap02/lagrange.md
+        - "2.7 Kuhn-Tucker": micro-book/cap02/kuhn-tucker.md
+        - "2.8–2.9 Concavidade, Homogeneidade e Euler": micro-book/cap02/curvatura.md
+        - "2.10–2.13 Complementos": micro-book/cap02/complementos.md
     - O Consumidor:
       - "Cap. 3 — Mais É Melhor — Será?":
         - "Visão Geral": micro-book/cap03/index.md
@@ -123,6 +129,14 @@ nav:
         - "Pesquisa em Ação": micro-book/cap07/pesquisa.md
       - "Cap. 8 — Nem Tão Racionais Assim":
         - "Visão Geral": micro-book/cap08/index.md
+        - "8.1 Heurísticas e Vieses Cognitivos": micro-book/cap08/heuristicas.md
+        - "8.2 Teoria do Prospecto": micro-book/cap08/prospecto.md
+        - "8.3 Ambiguidade e Ellsberg": micro-book/cap08/ambiguidade.md
+        - "8.4 Preferências Sociais": micro-book/cap08/preferencias-sociais.md
+        - "8.5 Desconto Hiperbólico e Autocontrole": micro-book/cap08/desconto.md
+        - "8.6 Nudges e Arquitetura de Escolhas": micro-book/cap08/nudges.md
+        - "Exercícios e ANPEC": micro-book/cap08/exercicios.md
+        - "Pesquisa em Ação": micro-book/cap08/pesquisa.md
     - Interação Estratégica:
       - "Cap. 9 — Quando Sua Escolha Não É Só Sua":
         - "Visão Geral": micro-book/cap09/index.md
