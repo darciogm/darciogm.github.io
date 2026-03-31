@@ -69,7 +69,7 @@ A reta se desloca paralelamente para fora. A inclinação $-p_1/p_2$ não muda, 
 
 O intercepto horizontal encolhe para $I/p_1'$, mas o intercepto vertical permanece $I/p_2$. A reta rotaciona em torno do intercepto vertical, tornando-se mais inclinada:
 
-$$\text{Nova~inclinação:~} -\frac{p_1'}{p_2} \quad (\text{mais~íngreme~em~valor~absoluto})$$
+$$\text{Nova\ inclinação:\ } -\frac{p_1'}{p_2} \quad (\text{mais\ íngreme\ em\ valor\ absoluto})$$
 
 ### 3.3 Variação proporcional de preços
 

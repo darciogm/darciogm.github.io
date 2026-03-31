@@ -83,7 +83,7 @@ $$\underbrace{\frac{\partial x_i^M}{\partial p_i}}_{\text{ET}} = \underbrace{\fr
 
 ### 4.1 Bens normais
 
-$$\frac{\partial x_i^M}{\partial I} > 0 \implies \text{ER~reforça~ES} \implies \frac{\partial x_i^M}{\partial p_i} < 0$$
+$$\frac{\partial x_i^M}{\partial I} > 0 \implies \text{ER\ reforça\ ES} \implies \frac{\partial x_i^M}{\partial p_i} < 0$$
 
 A Lei da Demanda sempre vale para bens normais.
 

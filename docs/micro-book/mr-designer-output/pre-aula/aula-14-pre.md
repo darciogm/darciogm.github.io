@@ -74,11 +74,11 @@ Um agente com riqueza $W_0$ enfrenta perda $L$ com probabilidade $p$. Ele pode c
 
 **Riquezas nos dois estados:**
 
-$$W_{\text{sem~sinistro}} = W_0 - \gamma q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q$$
+$$W_{\text{sem\ sinistro}} = W_0 - \gamma q, \qquad W_{\text{sinistro}} = W_0 - L - \gamma q + q$$
 
 **Prêmio atuarialmente justo**: $\gamma = p$. Neste caso, a CPO implica igualdade de utilidades marginais nos dois estados:
 
-$$q^* = L \quad \text{(cobertura~total)}$$
+$$q^* = L \quad \text{(cobertura\ total)}$$
 
 **Com carregamento** ($\gamma > p$): $q^* < L$ (cobertura parcial). O agente retém parte do risco porque o seguro é caro demais.
 
