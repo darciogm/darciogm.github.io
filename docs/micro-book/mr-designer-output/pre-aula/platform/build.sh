@@ -154,9 +154,14 @@ while idx < len(lines):
         quiz_html.append(f'<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit(\'{pageid}\')">Enviar Quiz</button></div>')
         quiz_html.append('</div>')
 
+        # Convert $...$ math to \(...\) since quiz bypasses Pandoc
+        quiz_raw = '\n'.join(quiz_html)
+        quiz_raw = re.sub(r'\$\$(.+?)\$\$', r'\\[\1\\]', quiz_raw)
+        quiz_raw = re.sub(r'\$(.+?)\$', r'\\(\1\\)', quiz_raw)
+
         # Store quiz and emit placeholder (Pandoc won't touch it)
         quiz_key = f'QUIZPLACEHOLDER{len(saved_blocks)}'
-        saved_blocks[quiz_key] = '\n'.join(quiz_html)
+        saved_blocks[quiz_key] = quiz_raw
         output.append(f'\n\n{quiz_key}\n\n')
         continue
 
