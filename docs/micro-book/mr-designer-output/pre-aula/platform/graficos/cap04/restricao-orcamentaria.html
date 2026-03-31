@@ -133,45 +133,30 @@
   </div>
 
   <script>
+    // Fixed bounding box: M max=100, p min=1 → max intercept=100
+    // But typical use is M~50, p~5 → intercept~10. Use [0,25] as good default.
+    var BB_MAX = 25;
     var board = JXG.JSXGraph.initBoard('jxgbox', {
-      boundingbox: [-3, 25.5, 24, -3],
+      boundingbox: [-2, BB_MAX, BB_MAX, -2],
       axis: false,
       showCopyright: false,
       showNavigation: false,
       keepAspectRatio: false
     });
 
-    // Custom axes (will be recreated on resize)
-    var xAxis, yAxis, labelX, labelY;
-    function createAxes() {
-      if (xAxis) board.removeObject(xAxis);
-      if (yAxis) board.removeObject(yAxis);
-      if (labelX) board.removeObject(labelX);
-      if (labelY) board.removeObject(labelY);
-      var p = getParams();
-      var maxInt = Math.max(p.M / p.p1, p.M / p.p2);
-      var margin = maxInt * 0.15;
-      var top = maxInt + margin;
-      var right = maxInt + margin;
-      var tickDist = maxInt <= 15 ? 2 : maxInt <= 30 ? 5 : maxInt <= 60 ? 10 : 20;
-      board.setBoundingBox([-margin, top, right, -margin]);
-      xAxis = board.create('axis', [[0,0],[1,0]], {
-        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: tickDist },
-        name: '', withLabel: false
-      });
-      yAxis = board.create('axis', [[0,0],[0,1]], {
-        ticks: { drawLabels: true, minorTicks: 0, ticksDistance: tickDist, label: { anchorX: 'right', offset: [-8, 0] } },
-        name: '', withLabel: false
-      });
-      labelY = board.create('text', [
-        -margin * 0.55, top / 2,
-        '<b><i>x</i><sub>2</sub></b>'
-      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
-      labelX = board.create('text', [
-        right / 2, -margin * 0.65,
-        '<b><i>x</i><sub>1</sub></b>'
-      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
-    }
+    // Fixed axes — created once, never recreated
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    board.create('text', [BB_MAX / 2, -1.2, '<b><i>x</i><sub>1</sub></b>'],
+      { fontSize: 15, fixed: true, anchorX: 'middle', highlight: false });
+    board.create('text', [-1.2, BB_MAX / 2, '<b><i>x</i><sub>2</sub></b>'],
+      { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
 
     // Helper to read slider values
     function getParams() {
@@ -209,15 +194,15 @@
     // Intercept labels
     var labelA = board.create('text', [
       function() { return getParams().M / getParams().p1; },
-      -0.8,
-      function() { return '\\(\\frac{M}{p_1}=' + (getParams().M / getParams().p1).toFixed(1) + '\\)'; }
-    ], { fontSize: 9, color: '#C8102E', anchorX: 'middle', useMathJax: true });
+      -0.6,
+      function() { return '\\(\\tfrac{M}{p_1}=' + (getParams().M / getParams().p1).toFixed(1) + '\\)'; }
+    ], { fontSize: 10, color: '#C8102E', anchorX: 'middle', useMathJax: true });
 
     var labelB = board.create('text', [
-      -0.3,
-      function() { return getParams().M / getParams().p2 + 0.5; },
-      function() { return '\\(\\frac{M}{p_2}=' + (getParams().M / getParams().p2).toFixed(1) + '\\)'; }
-    ], { fontSize: 9, color: '#C8102E', anchorX: 'right', useMathJax: true });
+      -0.2,
+      function() { return getParams().M / getParams().p2 + 0.4; },
+      function() { return '\\(\\tfrac{M}{p_2}=' + (getParams().M / getParams().p2).toFixed(1) + '\\)'; }
+    ], { fontSize: 10, color: '#C8102E', anchorX: 'right', useMathJax: true });
 
     // Draggable point on budget line
     var dragPt = board.create('glider', [5, 5, budgetLine], {
@@ -258,7 +243,6 @@
       document.getElementById('eq-point').innerHTML =
         'Ponto: \\((' + dragPt.X().toFixed(2) + ',\\,' + dragPt.Y().toFixed(2) + ')\\)';
 
-      createAxes();
       board.update();
       if (window.MathJax && MathJax.typeset) MathJax.typeset();
     }
