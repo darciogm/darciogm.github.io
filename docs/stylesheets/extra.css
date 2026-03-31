@@ -418,20 +418,6 @@ figcaption {
   }
 }
 
-/* ========================================
-   TOC COLAPSÁVEL NO SIDEBAR
-   (com toc.integrate ativo)
-   ======================================== */
-
-/* Estado colapsado — controlado via JS */
-.md-nav--secondary.toc--collapsed {
-  display: none !important;
-}
-
-/* Cursor pointer no link do capítulo ativo */
-.md-nav__item--active > a.md-nav__link--active {
-  cursor: pointer;
-}
 
 /* Wrapper de tabelas — remover margin-bottom extra */
 .md-typeset .md-typeset__scrollwrap {
