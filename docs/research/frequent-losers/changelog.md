@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Changelog
 
 ---

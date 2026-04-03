@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Extensions
 
 This page presents additional analyses: structural diagnostic, supporting diagnostics, bid rotation and inflation, strategic adaptation, and the Lei 14.133/2021 discussion.

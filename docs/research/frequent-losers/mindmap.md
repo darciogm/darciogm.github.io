@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Mind Map
 
 Interactive overview of the paper's logical structure. Click and drag to explore.

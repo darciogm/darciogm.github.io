@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 hide:
   - navigation
 ---

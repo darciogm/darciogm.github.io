@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Main Results
 
 This page presents the core empirical findings: classification diagnostics, price association, detection performance, network-split heterogeneity, Bajari--Ye tests, structural estimation, and supporting mechanism evidence.

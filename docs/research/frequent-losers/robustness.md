@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Robustness
 
 This page summarizes the five groups of robustness checks reported in the paper.
