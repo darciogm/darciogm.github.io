@@ -1,12 +1,46 @@
----
-paper: frequent-losers
----
-
 # Changelog
 
 ---
 
-## v4 --- March 2026 (Current)
+## v5 --- April 2026 (Current)
+
+**JLE repositioning and institutional framing:**
+
+- Repositioned for Journal of Law and Economics (institutional framing throughout)
+- Abstract leads with minimum-bidder rules giving cartels a reason to deploy cover bidders
+- Price range narrowed to **3.6--7.7%** (cross-fit, OLS, matching), replacing 4--21% from v4
+- IV (19.4%) reframed as **measurement-error diagnostic**, not a primary estimate
+- Finding now Regime 2 (coordinated), not Regime 1 (complementary): $\sigma_c / \sigma_g = 0.72$
+- $\gamma > 0$: strategic complementarity (more cover bidders in MORE competitive tenders)
+- Convite 3.8% vs pregao 9.3% --- larger where voluntary, signal dilution in convite
+- AUC = 0.94 against CADE convictions (primary validation)
+- Horse-race: correlation 0.06 with Imhof-style CV proxy; FL rises to 0.084 when CV added
+
+**New content:**
+
+- Three new figures: corner solution, dispersion paradox, enforcement flowchart
+- Five JLE-relevant references added (Posner 1970, Caoui 2022, Ghosal & Sokol 2014, Harrington 2015, Baranek & Titl 2024)
+- Lei 14.133/2021 discussion with two testable predictions
+- Three-stage enforcement pathway (screen, triage, investigate)
+- Welfare reframed as cost-benefit of screening deployment
+- 12.5x gradient in oversight heterogeneity across PBU size quartiles
+- Minimum-bidder constraint variation: 7.6% voluntary premium vs. $-0.160$ forced interaction
+- Five supporting diagnostics (M1--M5) with joint assessment
+- Non-claims paragraph and explicit limitations section
+
+**Tables and figures:**
+
+- 35+ tables, 26 figures
+- ~56 pages, natbib/bibtex compilation
+
+**Pipeline:**
+
+- 24 R scripts (22 numbered + `figures_new.R` + `00_setup.R`), full pipeline in ~8 minutes
+- New scripts: `14_quality_checks.R` through `22_threshold_heatmap.R` plus `figures_new.R`
+
+---
+
+## v4 --- March 2026
 
 **Manuscript:**
 

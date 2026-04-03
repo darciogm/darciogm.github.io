@@ -1,23 +1,26 @@
----
-paper: frequent-losers
----
-
 # Mind Map
 
 Interactive overview of the paper's logical structure. Click and drag to explore.
 
 ```mermaid
 mindmap
-  root((Frequent Losers<br/>as Cover Bidders))
-    **Data**
+  root((Screening for<br/>Bid Rigging with<br/>Frequent Losers))
+    **Institutional Setting**
       BEC Platform
         Sao Paulo state
-        2009–2019
+        2009-2019
       4.5M tender-items
       41K unique firms
-      Phases 2 and 3
+      Two modalities
         Convite sealed bid
+          3-bidder minimum
+          Signal dilution 3.8%
         Pregao e-auction
+          No bidder minimum
+          Voluntary 9.3%
+      Lei 14.133/2021
+        Eliminates convite
+        Testable predictions
     **FL Definition**
       Always-losers
         win rate = 0%
@@ -27,50 +30,73 @@ mindmap
         threshold ~ 14 tenders
       2,735 FL firms
         Treatment: tender has >= 1 FL
-    **H1: Screening Marker**
-      OLS price premium
-        4–9% higher prices
-        4 DVs x 4 specs
+    **Conceptual Framework**
+      Two regimes
+        Regime 1 complementary
+        Regime 2 coordinated
+          BIC favors by 91,473
+          sigma_c/sigma_g = 0.72
+      Strategic complementarity
+        gamma = 0.69 > 0
+        More cover bidders in competitive markets
+      Market selection
+        FL concentrates in low HHI
+    **Detection Performance**
+      AUC = 0.94 vs CADE
+      Youden J = 0.84 at 1.45x
+      Horse-race
+        Correlation 0.06 with CV
+        FL rises to 0.084
       CADE validation
         3.5x overrepresentation
-        3 of 5 convicted firms
-      Sensitivity
-        Oster delta = 3.6
-        Sensemakr RV = 17.5%
-    **H2: Cover Bidding**
-      Instrumental Variables
-        IGYR shift-share IV
-        First stage F = 396
-        21% markup LATE
+        193/2,735 co-participate
+        3 convicted FL firms
+    **Price Association**
+      3.6-7.7% range
+        Cross-fit 3.6%
+        IPW 5.5%
+        OLS 6.4%
+        CEM 7.7%
+      Network split
+        Competitive 0.126
+        Concentrated -0.018
       Bajari-Ye tests
-        Exchangeability rejected
-        Independence rejected
-        Tender FE: coeff 0.38
-      Network analysis
-        Competitive > concentrated
-        FL amplify bid rigging
-    **Mechanisms**
-      M1 Selection
-        +15% genuine firms
-      M2 Calibration
-        -4% bids closer to ref
+        KS D = 0.15
+        Pairwise product 4.28
+        Tender FE reversal
+      IV diagnostic
+        0.194 F=396
+        Lambda = 0.33
+    **Diagnostics M1-M5**
+      M1 No displacement
+        +0.19 non-FL firms
+      M2 Reference anchoring
+        -4.1% to ref price
       M3 Reverse causality
-        Elasticity ~ 0
+        Elasticity ~ 0.002
+      M4 Dyadic linkage
+        4,696 pairs p<0.001
+      M5 Exit hazard
+        HR = 0.60
     **Robustness**
       Threshold sensitivity
-        IQR multiplier 1.0–2.5
-      Matching
-        CEM and IPW
-      Cross-fitting
-        DML welfare bounds
-      DiD
-        Sun and Abraham
-        Underpowered MDE 7.8%
-      Welfare bounds
-        2.4% of spending
-    **Policy Implications**
-      Flag FL participation
-      Triage suspicious tenders
-      Investigate patterns
-      Monitor over time
+        36 cells all significant
+      Cinelli-Hazlett
+        RV = 17.5%
+      Oster delta
+        Degenerate R2 gap ~ 0
+      DiD pre-trends
+        Non-causal framing
+      Oversight heterogeneity
+        12.5x gradient Q1 to Q4
+    **Enforcement Pathway**
+      Screen
+        Participation records only
+        SQL query or spreadsheet
+      Triage
+        Network metrics
+        PBU size quartile
+      Investigate
+        Bid-level forensics
+        On triaged subset
 ```

@@ -1,40 +1,43 @@
 ---
 hide:
   - navigation
-paper: frequent-losers
 ---
 
 <div class="hero-section" markdown>
 
-# Frequent Losers as Cover Bidders
+# Screening for Bid Rigging with Frequent Losers
 
-<p class="subtitle">Screening for Bid Rigging in Public Procurement</p>
+<p class="subtitle">A Participation-Based Screen for Public Procurement</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">4--21%</span>
-<span class="label">Price markup from cover bidding by frequent losers (OLS lower bound to IV upper bound)</span>
+<span class="number">3.6--7.7%</span>
+<span class="label">Conditional price association with frequent-loser presence (cross-fit to CEM matching)</span>
 </div>
 
 ## Abstract
 
-We propose frequent losers (FL)---firms that never win yet participate in
-abnormally many public tenders---as a screening marker for cover bidding
-in procurement auctions. Using 4.5 million tender-items from Sao
-Paulo's BEC platform (2009--2019), we identify 2,735 FL firms via an
-IQR-based threshold. FL presence is associated with 4--9% higher
-negotiated prices (OLS with item, year, and purchasing-unit fixed
-effects). External validation shows 7.1% of FL firms co-participate
-with CADE-convicted cartelists, 3.5 times the rate expected by chance
-($p < 0.001$). A leave-one-out instrumental variable yields a 21%
-price markup ($F = 396$), consistent with OLS attenuation. Bajari--Ye
-tests reject exchangeability and conditional independence for FL bid
-residuals. The screen requires only participation data, making it
-deployable by any competition authority with electronic procurement
-records.
+Minimum-bidder rules in public procurement give cartels a reason to
+deploy cover bidders---firms that show up repeatedly with no
+intention of winning. We exploit this behavioral footprint to build
+a participation-based screen: *frequent losers* (FL), firms
+that never win yet bid abnormally often. The screen requires only
+win/loss records, making it deployable in settings where bid
+microdata are unavailable. In Sao Paulo's electronic procurement
+(4.5 million tender-items, 2009--2019), it achieves
+AUC $= 0.94$ against competition-authority convictions, complements
+bid-level tools (correlation 0.06), and flags environments with
+3.6--7.7% higher conditional prices. The price association is
+concentrated in competitive markets and where cover bidding is
+voluntary rather than forced by the minimum-bidder
+constraint---suggesting strategic deployment, not mere rule
+compliance. We propose a three-stage enforcement pathway (screen,
+triage, investigate) that allocates investigative resources toward
+the procurement environments where the association is strongest and
+oversight weakest.
 
 **JEL Classification:**
 <span class="badge">D44</span>
@@ -49,23 +52,22 @@ records.
 <span class="badge badge-kw">public procurement</span>
 <span class="badge badge-kw">cartel screening</span>
 <span class="badge badge-kw">frequent losers</span>
-<span class="badge badge-kw">instrumental variables</span>
 
 ---
 
 ## Key Findings
 
-!!! success "FL presence raises procurement prices"
-    Tenders with frequent loser participation exhibit **4--9% higher negotiated prices** (OLS) and up to **21% higher prices** (IV), after controlling for item, year, and purchasing-unit fixed effects.
+!!! success "3.6--7.7% conditional price association"
+    FL-present tenders exhibit **3.6--7.7% higher conditional prices** across four estimation approaches: cross-fit (3.6%), IPW (5.5%), OLS with item + year + PBU FE (6.4%), and CEM matching (7.7%). The estimates cluster rather than scatter, indicating a stable association across designs.
 
-!!! warning "External validation with CADE convictions"
-    **7.1% of FL firms** co-participate with CADE-convicted cartelists---**3.5 times** the rate expected by chance ($p < 0.001$, permutation test). The FL--price association persists after excluding all CADE-involved markets.
+!!! warning "AUC = 0.94 against CADE convictions"
+    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens are nearly orthogonal (correlation 0.06).
 
-!!! danger "Cover bidding is the dominant mechanism"
-    Bajari--Ye tests reject exchangeability and conditional independence for FL bid residuals. FL-present tenders have **more** genuine competitors (not fewer), ruling out competitive displacement. The evidence points to complementary cover bidding (Regime 1).
+!!! danger "Coordinated cover bidding (Regime 2)"
+    BIC strongly favors coordinated cover bidding ($\Delta$BIC = $-91{,}473$): FL bids are 28% **less** dispersed than non-FL bids ($\sigma_c / \sigma_g = 0.72$). The price association concentrates in **competitive markets** (0.126) and vanishes in concentrated ones ($-0.018$), consistent with strategic complementarity ($\hat{\gamma} = 0.69 > 0$).
 
-!!! info "Deployable with minimal data"
-    The FL screen requires only **participation and outcome data** (no bid values), making it operational for any competition authority with electronic procurement records. Estimated welfare loss: R\$ 734 million (OLS) to R\$ 2.4 billion (IV).
+!!! info "Three-stage enforcement pathway"
+    The FL screen requires only **participation and outcome data** (no bid values). We propose a screen--triage--investigate pathway that exploits a **12.5x gradient** in the FL--price association across PBU size quartiles to direct investigative resources where oversight is weakest.
 
 ---
 
@@ -73,11 +75,11 @@ records.
 
 <div class="quick-links" markdown>
 
-[**Paper** <br> Contribution, theory, and empirical strategy](paper.md)
+[**Paper** <br> Contribution, institutional setting, and empirical strategy](paper.md)
 
-[**Results** <br> Main tables, IV estimates, and Bajari--Ye tests](results.md)
+[**Results** <br> Classification, detection, price association, and diagnostics](results.md)
 
-[**Robustness** <br> Sensitivity checks and extensions](robustness.md)
+[**Robustness** <br> Threshold sensitivity, DiD, IV diagnostic, and extensions](robustness.md)
 
 [**Replication** <br> Code, data, and pipeline](replication.md)
 
