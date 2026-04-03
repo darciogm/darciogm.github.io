@@ -1,0 +1,606 @@
+---
+title: "Discriminação + Regulação de Monopólios"
+subtitle: "Microeconomia II — Aula 22"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Aula 22"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Discriminação de Preços: Visão Geral
+
+**Condições necessárias:** poder de mercado, capacidade de segmentar consumidores, impossibilidade de revenda.
+
+. . .
+
+| Grau | Informação do monopolista | Mecanismo | Exemplo |
+|:--|:--|:--|:--|
+| 1º (perfeita) | Disposição a pagar individual | Cobra WTP de cada um | Leilão, negociação individual |
+| 2º (autosseleção) | Menu de opções | Consumidor se revela | Versioning, tarifa em duas partes |
+| 3º (segmentação) | Grupo identificável | Preço por segmento | Meia-entrada, tarifa idoso |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Os três graus diferem na **quantidade de informação** que o monopolista possui sobre seus consumidores. Mais informação permite extrair mais excedente.
+:::
+
+## 1º Grau: Discriminação Perfeita
+
+O monopolista cobra de cada consumidor exatamente sua **disposição máxima a pagar** (WTP).
+
+. . .
+
+**Resultado:**
+
+- $Q^{1\text{º}} = Q^{CP}$ — quantidade eficiente
+- $EC = 0$ — todo excedente vai para o monopolista
+- $DWL = 0$ — sem peso morto
+- $\pi = ET_{\text{competitivo}}$ — lucro = excedente total
+
+. . .
+
+$$\pi^{1\text{º}} = \int_0^{Q^{CP}} [P^D(Q) - CMg(Q)]\,dQ$$
+
+. . .
+
+:::{.callout-important}
+Discriminação perfeita é **eficiente** (Pareto) mas extremamente desigual. Na prática é impossível — requer informação perfeita sobre cada consumidor.
+:::
+
+## 2º Grau: Autosseleção e Tarifa em Duas Partes
+
+O monopolista não conhece o tipo de cada consumidor, mas oferece um **menu** e o consumidor se autoseleciona.
+
+. . .
+
+**Tarifa em duas partes:** $T(q) = A + p \cdot q$
+
+- $A$: taxa fixa (assinatura, entrada)
+- $p$: preço por unidade consumida
+
+. . .
+
+**Ótimo com consumidores idênticos:**
+
+$$p^* = CMg, \quad A^* = EC_{\text{individual}}$$
+
+. . .
+
+**Outras formas de discriminação de 2º grau:**
+
+| Estratégia | Mecanismo |
+|:--|:--|
+| Bundling | Pacote de bens a preço único |
+| Versioning | Básico vs. premium (qualidade diferente) |
+| Desconto por quantidade | $p(q)$ decrescente |
+
+## 3º Grau: Segmentação de Mercado {.smaller}
+
+O monopolista identifica **grupos** com elasticidades diferentes e cobra preços distintos.
+
+. . .
+
+**Regra ótima:** igualar $RMg$ em todos os segmentos ao $CMg$:
+
+$$RMg_1(Q_1) = RMg_2(Q_2) = CMg$$
+
+<div class="graph-slider-row">
+<div style="display:flex;gap:10px;justify-content:center;">
+<div id="graph-a22-discrim-m1" style="width:380px;height:320px;"></div>
+<div id="graph-a22-discrim-m2" style="width:380px;height:320px;"></div>
+</div>
+</div>
+
+<script>
+(function() {
+  /* Mercado 1 — inelástico: P1 = 20 - Q1 */
+  var b1 = JXG.JSXGraph.initBoard('graph-a22-discrim-m1', {
+    boundingbox: [-1, 24, 22, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q₁', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slMC = b1.create('slider', [[2, 22], [10, 22], [2, 4, 10]], {
+    name: 'CMg',
+    snapWidth: 0.5,
+    id: 'sl-a22-mc'
+  });
+
+  /* D1: P = 20 - Q  =>  MR1 = 20 - 2Q */
+  b1.create('functiongraph', [function(Q) { return 20 - Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D₁'
+  });
+  b1.create('text', [18, 3, 'D₁'], { fontSize: 12, color: '#1565c0' });
+
+  b1.create('functiongraph', [function(Q) { return 20 - 2 * Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2, dash: 2
+  });
+  b1.create('text', [8, 5, 'RMg₁'], { fontSize: 11, color: '#1565c0' });
+
+  /* MC horizontal */
+  b1.create('functiongraph', [function(Q) { return slMC.Value(); }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  b1.create('text', [18, function() { return slMC.Value() + 1; }, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* Q1*: MR1 = MC => 20 - 2Q = MC => Q = (20-MC)/2 */
+  var pQ1 = b1.create('point', [
+    function() { return (20 - slMC.Value()) / 2; },
+    function() { return slMC.Value(); }
+  ], { visible: false });
+
+  var pP1 = b1.create('point', [
+    function() { return (20 - slMC.Value()) / 2; },
+    function() { return 20 - (20 - slMC.Value()) / 2; }
+  ], { size: 3, color: '#1565c0', name: '' });
+
+  b1.create('segment', [pQ1, pP1], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+  b1.create('text', [1, function() { return 20 - (20 - slMC.Value()) / 2 + 0.8; },
+    function() { return 'P₁=' + (20 - (20 - slMC.Value()) / 2).toFixed(1); }
+  ], { fontSize: 11, color: '#1565c0' });
+
+  /* Mercado 2 — elástico: P2 = 12 - 0.5Q2  =>  MR2 = 12 - Q2 */
+  var b2 = JXG.JSXGraph.initBoard('graph-a22-discrim-m2', {
+    boundingbox: [-1, 16, 26, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q₂', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* D2: P = 12 - 0.5Q  =>  MR2 = 12 - Q */
+  b2.create('functiongraph', [function(Q) { return 12 - 0.5 * Q; }], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  b2.create('text', [21, 2, 'D₂'], { fontSize: 12, color: '#00897b' });
+
+  b2.create('functiongraph', [function(Q) { return 12 - Q; }], {
+    strokeColor: '#00897b', strokeWidth: 2, dash: 2
+  });
+  b2.create('text', [10, 3, 'RMg₂'], { fontSize: 11, color: '#00897b' });
+
+  /* MC from slider on board 1 */
+  b2.create('functiongraph', [function(Q) { return slMC.Value(); }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  b2.create('text', [22, function() { return slMC.Value() + 0.8; }, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* Q2*: MR2 = MC => 12 - Q = MC => Q = 12 - MC */
+  var pQ2 = b2.create('point', [
+    function() { return Math.max(0, 12 - slMC.Value()); },
+    function() { return slMC.Value(); }
+  ], { visible: false });
+
+  var pP2 = b2.create('point', [
+    function() { return Math.max(0, 12 - slMC.Value()); },
+    function() { var Q2 = Math.max(0, 12 - slMC.Value()); return 12 - 0.5 * Q2; }
+  ], { size: 3, color: '#00897b', name: '' });
+
+  b2.create('segment', [pQ2, pP2], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+  b2.create('text', [1, function() {
+    var Q2 = Math.max(0, 12 - slMC.Value());
+    return 12 - 0.5 * Q2 + 0.6;
+  }, function() {
+    var Q2 = Math.max(0, 12 - slMC.Value());
+    return 'P₂=' + (12 - 0.5 * Q2).toFixed(1);
+  }], { fontSize: 11, color: '#00897b' });
+})();
+</script>
+
+Mova o slider CMg e observe: $P_1 > P_2$ sempre — o mercado **inelástico** paga mais.
+
+## 3º Grau: Regra Ótima
+
+Da condição $RMg_i = CMg$ e da relação de Lerner $\frac{P - CMg}{P} = -\frac{1}{\varepsilon_i}$:
+
+. . .
+
+$$\frac{P_i}{P_j} = \frac{1 + 1/\varepsilon_j}{1 + 1/\varepsilon_i}$$
+
+. . .
+
+**Interpretação:** cobra-se preço **mais alto** no mercado com $|\varepsilon|$ **menor** (demanda mais inelástica).
+
+. . .
+
+**Exemplo numérico:**
+
+| Mercado | $|\varepsilon|$ | Lerner | Preço relativo |
+|:--|:--:|:--:|:--|
+| Adultos (inelástico) | 2 | 0,50 | $P = 2 \times CMg$ |
+| Estudantes (elástico) | 5 | 0,20 | $P = 1,25 \times CMg$ |
+
+. . .
+
+:::{.callout-note}
+A meia-entrada é um caso clássico: estudantes têm demanda mais elástica (menor renda, mais substitutos de lazer), então pagam menos.
+:::
+
+## Bem-Estar com Discriminação
+
+O efeito da discriminação de 3º grau sobre o bem-estar social é **ambíguo**:
+
+. . .
+
+**Efeito positivo:** pode **abrir mercados** antes não atendidos.
+
+- Se $P^M > P_{\text{reserva}}$ do mercado 2, preço único exclui esse mercado
+- Discriminação permite atendê-lo a $P_2 < P^M$
+
+. . .
+
+**Efeito negativo:** **extrai mais excedente** dos consumidores cativos.
+
+- No mercado 1 (inelástico), $P_1 > P^M$ — consumidores pagam mais
+- Transferência de EC para lucro do monopolista
+
+. . .
+
+**Resultado teórico (Varian, 1985):**
+
+$$\Delta ET \gtrless 0 \quad \text{depende se } \Delta Q_{\text{total}} > 0$$
+
+:::{.callout-important}
+Se a discriminação **não aumenta** a quantidade total vendida, o bem-estar social necessariamente **cai**.
+:::
+
+## Regulação de Monopólio Natural
+
+Monopólio natural: $CMe$ é **sempre decrescente** no intervalo relevante.
+
+. . .
+
+$$CMe(Q) = \frac{CF}{Q} + CVMe \quad \text{(decrescente)}$$
+
+. . .
+
+**Dilema do regulador:**
+
+| Regulação | Preço | Quantidade | Lucro | DWL |
+|:--|:--:|:--:|:--:|:--:|
+| Sem regulação | $P^M$ | $Q^M$ | $\pi > 0$ | Alto |
+| $P = CMg$ (first-best) | $CMg$ | $Q^{CP}$ | $\pi < 0$ | 0 |
+| $P = CMe$ (second-best) | $CMe$ | $Q_{CMe}$ | $\pi = 0$ | Baixo |
+
+. . .
+
+:::{.callout-warning}
+Se impor $P = CMg$, a firma tem **prejuízo** (pois $CMe > CMg$) e precisa de subsídio ou tarifa em duas partes.
+:::
+
+## Regulação Interativa {.smaller}
+
+<div class="graph-slider-row">
+<div id="graph-a22-regulation" style="width:700px;height:400px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a22-regulation', {
+    boundingbox: [-1, 30, 22, -3],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P, C', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* Slider: 0 = sem regulação, 1 = CMe, 2 = CMg */
+  var slReg = brd.create('slider', [[2, 28], [10, 28], [0, 0, 2]], {
+    name: 'Cenário',
+    snapWidth: 1,
+    id: 'sl-a22-reg'
+  });
+
+  brd.create('text', [11.5, 28, function() {
+    var v = slReg.Value();
+    if (v < 0.5) return '← Monopólio';
+    if (v < 1.5) return '← Reg. CMe';
+    return '← Reg. CMg';
+  }], { fontSize: 11, color: '#333' });
+
+  /* Demanda: P = 24 - Q */
+  brd.create('functiongraph', [function(Q) { return 24 - Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  brd.create('text', [20, 5, 'D'], { fontSize: 12, color: '#1565c0' });
+
+  /* MR: 24 - 2Q */
+  brd.create('functiongraph', [function(Q) { return 24 - 2 * Q; }], {
+    strokeColor: '#1565c0', strokeWidth: 2, dash: 2
+  });
+  brd.create('text', [10, 5, 'RMg'], { fontSize: 11, color: '#1565c0' });
+
+  /* MC = 4 (constant) */
+  brd.create('functiongraph', [function(Q) { return 4; }], {
+    strokeColor: '#e53935', strokeWidth: 2
+  });
+  brd.create('text', [19, 5.2, 'CMg'], { fontSize: 11, color: '#e53935' });
+
+  /* AC = 4 + 60/Q (CF=60, CVMe=4) */
+  brd.create('functiongraph', [function(Q) {
+    if (Q < 0.3) return NaN;
+    return 4 + 60 / Q;
+  }, 0.3, 21], {
+    strokeColor: '#ff9800', strokeWidth: 2
+  });
+  brd.create('text', [17, function() { return 4 + 60 / 17 + 1; }, 'CMe'], { fontSize: 11, color: '#ff9800' });
+
+  /* Cenário-dependent point */
+  /* Monopólio: MR=MC => 24-2Q=4 => Q=10, P=14 */
+  /* CMe: P=CMe => 24-Q = 4+60/Q => Q²-20Q+60=0 => Q=(20-sqrt(160))/2 ≈ 3.35 nope
+     actually 24-Q = 4+60/Q => (24-Q)Q = 4Q+60 => 24Q-Q²=4Q+60 => Q²-20Q+60=0
+     Q = (20 ± sqrt(400-240))/2 = (20 ± sqrt(160))/2 = (20 ± 12.65)/2
+     Q = 16.32 or Q = 3.68 => take larger: Q≈16.32, P≈7.68 */
+  /* CMg: P=CMg=4 => 24-Q=4 => Q=20, P=4 */
+
+  function getQstar() {
+    var v = slReg.Value();
+    if (v < 0.5) return 10;          /* monopoly */
+    if (v < 1.5) return 16.32;       /* AC pricing */
+    return 20;                        /* MC pricing */
+  }
+  function getPstar() {
+    var v = slReg.Value();
+    if (v < 0.5) return 14;
+    if (v < 1.5) return 7.68;
+    return 4;
+  }
+
+  var pEq = brd.create('point', [
+    function() { return getQstar(); },
+    function() { return getPstar(); }
+  ], { size: 4, color: '#7b1fa2', name: '' });
+
+  /* Dashed lines to axes */
+  brd.create('segment', [
+    function() { return [getQstar(), 0]; },
+    function() { return [getQstar(), getPstar()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+
+  brd.create('segment', [
+    function() { return [0, getPstar()]; },
+    function() { return [getQstar(), getPstar()]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1 });
+
+  brd.create('text', [1, function() { return getPstar() + 1.2; },
+    function() { return 'P*=' + getPstar().toFixed(1); }
+  ], { fontSize: 11, color: '#7b1fa2' });
+
+  brd.create('text', [function() { return getQstar() - 0.5; }, -1.5,
+    function() { return 'Q*=' + getQstar().toFixed(1); }
+  ], { fontSize: 11, color: '#7b1fa2' });
+
+  /* DWL shading — triangle between Q* and Q_cp=20 */
+  brd.create('curve', [
+    function(t) {
+      var Qs = getQstar();
+      if (Qs >= 19.9) return NaN;
+      return Qs + t * (20 - Qs);
+    },
+    function(t) {
+      var Qs = getQstar();
+      if (Qs >= 19.9) return NaN;
+      var Q = Qs + t * (20 - Qs);
+      return 24 - Q;
+    },
+    0, 1
+  ], { strokeWidth: 0, fillColor: '#e53935', fillOpacity: 0.15,
+    curveType: 'plot', numberPointsHigh: 60 });
+
+  brd.create('text', [function() {
+    var Qs = getQstar();
+    return (Qs + 20) / 2;
+  }, function() {
+    var Qs = getQstar();
+    return ((24 - Qs) + 4) / 2 - 1;
+  }, function() {
+    var v = slReg.Value();
+    if (v > 1.5) return '';
+    return 'DWL';
+  }], { fontSize: 11, color: '#e53935' });
+})();
+</script>
+
+Mova o slider **Cenário**: 0 = monopólio puro, 1 = regulação por CMe, 2 = regulação por CMg. Observe como o DWL diminui e eventualmente desaparece.
+
+## Price Cap (RPI-X)
+
+**Fórmula:** o preço máximo cresce pela inflação menos um fator de eficiência:
+
+$$\Delta P \leq RPI - X$$
+
+. . .
+
+- $RPI$: índice de inflação (*Retail Price Index*)
+- $X$: ganho de produtividade esperado pelo regulador
+
+. . .
+
+**Vantagens sobre regulação por custo (Rate of Return):**
+
+| Critério | Rate of Return | Price Cap (RPI-X) |
+|:--|:--|:--|
+| Incentivo à eficiência | Fraco (custo é repassado) | Forte (lucro = eficiência) |
+| Risco | Firma protegida | Firma assume risco |
+| Informação necessária | Custos detalhados | Projeção de produtividade |
+| Captura regulatória | Alto risco | Menor risco |
+
+. . .
+
+:::{.callout-note}
+Usado pela ANEEL nas revisões tarifárias periódicas da distribuição de energia no Brasil.
+:::
+
+## O Papel do CADE
+
+O **CADE** (Conselho Administrativo de Defesa Econômica) é a autoridade brasileira de defesa da concorrência.
+
+. . .
+
+**Três frentes de atuação:**
+
+1. **Controle de fusões:** aprovar, reprovar ou impor remédios estruturais/comportamentais
+2. **Condutas anticompetitivas:** cartel, preços predatórios, venda casada, abuso de posição dominante
+3. **Estudos de mercado:** advocacy para promover a concorrência
+
+. . .
+
+**Critérios para análise de fusão (triagem por HHI):**
+
+$$HHI = \sum_i s_i^2, \quad \Delta HHI > 100 \text{ e } HHI > 1500 \implies \text{análise aprofundada}$$
+
+. . .
+
+:::{.callout-warning title="Caso emblemático"}
+Fusão Sadia-Perdigão (2009) formou a BRF. O CADE aprovou com restrições: venda de marcas em mercados altamente concentrados.
+:::
+
+## Exercício: Discriminação de 3º Grau
+
+**Dados:**
+
+- Mercado 1: $P_1 = 24 - Q_1$
+- Mercado 2: $P_2 = 12 - 0{,}5Q_2$
+- $CMg = 6$ (constante)
+
+. . .
+
+**Resolução:**
+
+| Mercado | $RMg_i = CMg$ | $Q_i^*$ | $P_i^*$ | $\pi_i$ |
+|:--|:--|:--:|:--:|:--:|
+| 1 | $24 - 2Q_1 = 6$ | $9$ | $15$ | $(15-6) \times 9 = 81$ |
+| 2 | $12 - Q_2 = 6$ | $6$ | $9$ | $(9-6) \times 6 = 18$ |
+
+. . .
+
+$$\pi_{\text{total}} = 81 + 18 = 99$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Confirmação: $P_1 = 15 > P_2 = 9$. O mercado com demanda mais inelástica paga preço mais alto, exatamente como previsto pela regra ótima $P_i/P_j = (1+1/\varepsilon_j)/(1+1/\varepsilon_i)$.
+:::
+
+## Bundling e Versioning
+
+Formas modernas de discriminação de 2º grau:
+
+. . .
+
+**Bundling (venda casada):**
+
+- Pacote de bens vendidos juntos a preço inferior à soma individual
+- Funciona quando valuations dos consumidores são **negativamente correlacionadas**
+- Exemplo: Microsoft Office (Word + Excel + PowerPoint)
+
+. . .
+
+**Versioning (versionamento):**
+
+- Mesma base tecnológica, diferentes níveis de qualidade/funcionalidade
+- A versão "inferior" é deliberadamente **degradada** para segmentar
+- Exemplo: Intel i3/i5/i7, classes aérea/executiva/primeira
+
+. . .
+
+:::{.callout-note}
+Em ambos os casos, o custo marginal de oferecer a versão extra é próximo de zero — o lucro vem da **segmentação**.
+:::
+
+## Aplicação: Netflix e Planos Tiered
+
+**Case study** de discriminação de 2º grau em ação:
+
+. . .
+
+| Plano | Preço | Telas | Qualidade | Público-alvo |
+|:--|:--:|:--:|:--|:--|
+| Básico | R\$25 | 1 | 720p | Baixa WTP, individual |
+| Padrão | R\$40 | 2 | 1080p | Médio, casais |
+| Premium | R\$56 | 4 | 4K + HDR | Alta WTP, famílias |
+
+. . .
+
+**Lógica econômica:**
+
+- O custo marginal de streaming em 4K vs. 720p é **mínimo**
+- A diferenciação de qualidade serve como mecanismo de **autosseleção**
+- Consumidores com alta WTP se auto-revelam ao escolher o plano premium
+
+. . .
+
+:::{.callout-important}
+A Netflix **poderia** oferecer 4K a todos pelo mesmo custo. A restrição de qualidade nos planos baratos é proposital — é discriminação de preços disfarçada de "diferenciação de produto".
+:::
+
+## Peer Instruction: Regulação
+
+**Vote individualmente:**
+
+> "Um monopólio natural regulado por $P = CMe$ é a melhor solução para o consumidor?"
+
+. . .
+
+- (A) Sim — a firma não tem lucro, então o preço é justo
+- (B) Sim — é melhor que monopólio sem regulação
+- (C) Não necessariamente — regulação por $P = CMg$ com subsídio seria melhor
+- (D) Não — a firma não tem incentivo a reduzir custos
+
+. . .
+
+*Discuta com seu vizinho (2 min). Revote.*
+
+. . .
+
+:::{.callout-tip title="Ponto-chave"}
+A resposta depende do critério: **(B)** é correto em termos práticos (second-best), **(C)** é correto em termos teóricos (first-best), e **(D)** levanta o problema real da regulação — **incentivos dinâmicos**.
+:::
+
+## Próxima Aula
+
+:::{.callout-tip title="Aula 23: Oligopólio"}
+O que acontece quando há **poucos** competidores no mercado?
+
+- Modelo de Cournot (competição em quantidades)
+- Modelo de Bertrand (competição em preços)
+- Modelo de Stackelberg (líder-seguidor)
+
+Prepare-se: leia o Capítulo 16.
+:::
+
+. . .
+
+**Resumo da Aula 22:**
+
+| Tema | Ideia central |
+|:--|:--|
+| Discriminação 1º grau | Captura todo EC, $DWL = 0$ |
+| Discriminação 2º grau | Menu/tarifa em duas partes, autosseleção |
+| Discriminação 3º grau | Segmentação: $P$ maior onde $|\varepsilon|$ menor |
+| Regulação $CMg$ | Eficiente mas firma tem prejuízo |
+| Regulação $CMe$ | Second-best, lucro zero |
+| Price Cap (RPI-X) | Incentivo à eficiência |

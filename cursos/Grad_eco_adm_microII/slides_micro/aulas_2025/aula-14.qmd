@@ -1,0 +1,405 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 14 — Escolha sob Incerteza II: Seguros e Informação"
+author: "Prof. Darcio Genicolo Martins"
+date: "Arrow-Pratt, Prêmio de Risco, Seguros e Assimetria de Informação"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Onde Estamos
+
+Na aula anterior: **loterias**, axiomas VNM, utilidade esperada, Jensen, três atitudes.
+
+. . .
+
+**Hoje:** quantificar a aversão ao risco e suas consequências:
+
+1. Medidas de Arrow-Pratt (ARA, RRA)
+2. CARA, CRRA e classes de utilidade
+3. Prêmio de risco e equivalente certo
+4. Seguros e cobertura ótima
+5. Diversificação
+6. Assimetria de informação: seleção adversa e risco moral
+
+## Quanto Medo Você Tem? {data-background-color="#E50505"}
+
+"Sou avesso ao risco" --- mas **quanto**? As medidas de Arrow-Pratt são o **termômetro**:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Aversão Absoluta (ARA):**
+
+::: {.eq-highlight}
+$$A(W) = -\frac{u''(W)}{u'(W)}$$
+:::
+
+Mede aversão para apostas de **valor fixo**.
+:::
+::: {.column width="50%"}
+**Aversão Relativa (RRA):**
+
+::: {.eq-highlight}
+$$R(W) = -\frac{W \cdot u''(W)}{u'(W)} = W \cdot A(W)$$
+:::
+
+Mede aversão para apostas **proporcionais** à riqueza.
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+$A(W)$ e $R(W)$ convertem curvatura geométrica em números comparáveis entre pessoas, momentos e níveis de riqueza.
+:::
+
+## Classes de Funções de Utilidade {.smaller}
+
+| Classe | $u(W)$ | $A(W)$ | $R(W)$ | Propriedade |
+|:-------|:-------|:-------|:-------|:-----------|
+| CARA | $-e^{-aW}$ | $a$ (constante) | $aW$ (crescente) | Aversão absoluta constante |
+| CRRA ($\gamma \neq 1$) | $\frac{W^{1-\gamma}}{1-\gamma}$ | $\gamma/W$ (decresc.) | $\gamma$ (constante) | Aversão relativa constante |
+| CRRA (log) | $\ln(W)$ | $1/W$ (decresc.) | $1$ (constante) | Caso $\gamma \to 1$ |
+| Quadrática | $W - bW^2$ | crescente (IARA) | crescente | Pouco realista |
+
+. . .
+
+:::{.callout-note title="DARA --- Propriedade Desejável"}
+Evidência empírica: aversão absoluta é **decrescente** na riqueza. Ricos aceitam apostas de valor fixo que pobres recusam. CRRA e log satisfazem DARA; quadrática **não**.
+:::
+
+## Valores Empíricos de $\gamma$ (CRRA)
+
+:::: {.columns}
+::: {.column width="25%"}
+[1--5]{.metric-value}
+
+[Estimativas típicas]{.metric-label}
+:::
+::: {.column width="25%"}
+[2--8]{.metric-value}
+
+[Brasil (Issler & Piqueira)]{.metric-label}
+:::
+::: {.column width="25%"}
+[> 30]{.metric-value}
+
+[Enigma do prêmio de risco]{.metric-label}
+:::
+::: {.column width="25%"}
+[$\gamma = 1$]{.metric-value}
+
+[Log utility]{.metric-label}
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Enigma do Prêmio de Risco (Mehra & Prescott, 1985)"}
+Reproduzir o diferencial histórico ações vs. títulos nos EUA exigiria $\gamma > 30$ --- nível implausível. Sugere falhas no modelo padrão.
+:::
+
+## Prêmio de Risco e Equivalente Certo {data-background-color="#E50505"}
+
+## Traduzindo Curvatura em Reais
+
+Seja $\tilde{W} = W + \tilde{\varepsilon}$ com $E[\tilde{\varepsilon}] = 0$ e $\text{Var}(\tilde{\varepsilon}) = \sigma^2$.
+
+. . .
+
+::: {.eq-highlight}
+$$u(W_{EC}) = E[u(\tilde{W})] \qquad \Rightarrow \qquad \pi = E[\tilde{W}] - W_{EC} > 0 \;\text{(avesso)}$$
+:::
+
+. . .
+
+**Aproximação de Arrow-Pratt** (riscos pequenos):
+
+::: {.eq-highlight}
+$$\pi \approx \frac{1}{2}\, A(W)\, \sigma^2$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O **equivalente certo** é o "preço de saída" da aposta. O **prêmio de risco** é o desconto que você dá só para dormir tranquilo.
+:::
+
+## Prêmio de Risco --- Interativo
+
+<iframe src="graficos/cap07/premio-risco.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Prêmio de risco"></iframe>
+
+## Aversão ao Risco: Concavidade da Utilidade --- Interativo
+
+<iframe src="graficos/cap07/aversao-risco.html" title="Aversão ao Risco: Concavidade da Utilidade" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exemplo Numérico {.smaller}
+
+**Dados:** $u = \sqrt{W}$, $W = 500.000$, perda $d = 200.000$ com prob. $p = 0{,}2$.
+
+. . .
+
+$$E[u] = 0{,}8\sqrt{500.000} + 0{,}2\sqrt{300.000} = 565{,}69 + 109{,}54 = 675{,}23$$
+
+. . .
+
+**Equivalente certo:** $\sqrt{W_{EC}} = 675{,}23 \Rightarrow W_{EC} = 455.936$
+
+. . .
+
+**Prêmio de risco:** $\pi = E[W] - W_{EC} = 460.000 - 455.936 = \text{R\$}\, 4.064$
+
+. . .
+
+:::{.callout-note title="Interpretação"}
+A produtora pagaria até R\$ 4.064 **acima** do prêmio atuarialmente justo (R\$ 40.000) para eliminar o risco. Total máximo: R\$ 44.064.
+:::
+
+## Cobertura Ótima {data-background-color="#E50505"}
+
+:::{.callout-warning title="Teorema"}
+Se o prêmio é **atuarialmente justo** ($P = p \cdot d$) e o agente é estritamente avesso ao risco, o contrato ótimo é de **cobertura total** ($q^* = d$).
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Prêmio justo ($\lambda = 0$):**
+
+- $P = p \cdot d$
+- Cobertura total
+- Riqueza certa: $W - P$
+:::
+::: {.column width="50%"}
+**Carregamento ($\lambda > 0$):**
+
+- $P = (1+\lambda)pd$
+- Cobertura **parcial**
+- Franquias, copagamentos
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando o prêmio é justo, o avesso ao risco "compra certeza" sem custo atuarial. Com carregamento, a certeza tem preço e a cobertura cai.
+:::
+
+## Seguros --- Interativo
+
+<iframe src="graficos/cap07/seguro.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Mercado de seguros"></iframe>
+
+## Diversificação {.smaller}
+
+"Não coloque todos os ovos na mesma cesta."
+
+. . .
+
+Para $n$ ativos i.i.d. com média $\mu$ e variância $\sigma^2$:
+
+::: {.eq-highlight}
+$$\text{Var}\left(\frac{1}{n}\sum_{i=1}^{n}\tilde{r}_i\right) = \frac{\sigma^2}{n} \xrightarrow{n \to \infty} 0$$
+:::
+
+. . .
+
+Para 2 ativos com correlação $\rho$:
+
+$$\sigma_p^2 = w^2\sigma_1^2 + (1-w)^2\sigma_2^2 + 2w(1-w)\rho\sigma_1\sigma_2$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**$\rho < 1$:** diversificação reduz risco
+
+**$\rho = -1$:** risco eliminável
+:::
+::: {.column width="50%"}
+**Risco idiossincrático:** diversificável
+
+**Risco sistemático:** NÃO diversificável (ciclo, Selic, câmbio)
+:::
+::::
+
+## JSXGraph --- Fronteira Risco-Retorno
+
+<div id="graph-a25-front" style="width:700px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\rho$: <input type="range" id="sl-a25-rho" min="-1" max="1" value="0" step="0.1" oninput="updA25()"> <span id="val-a25-rho">0.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a25-front',{
+    boundingbox:[-1,16,25,-1], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'\u03c3 (%)',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:12}},
+                 y:{name:'\u03bc (%)',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:12}}}
+  });
+  var mu1=12, s1=20, mu2=8, s2=15, rho=0;
+  var cFront, ptA, ptB, ptMin;
+  function draw(){
+    brd.suspendUpdate();
+    if(cFront) brd.removeObject(cFront);
+    if(ptA) brd.removeObject(ptA);
+    if(ptB) brd.removeObject(ptB);
+    if(ptMin) brd.removeObject(ptMin);
+    rho = parseFloat(document.getElementById('sl-a25-rho').value);
+    var pts = [];
+    var wMin = (s2*s2 - rho*s1*s2)/(s1*s1 + s2*s2 - 2*rho*s1*s2);
+    wMin = Math.max(0, Math.min(1, wMin));
+    for(var w=0; w<=1.001; w+=0.02){
+      var mu = w*mu1 + (1-w)*mu2;
+      var v = w*w*s1*s1 + (1-w)*(1-w)*s2*s2 + 2*w*(1-w)*rho*s1*s2;
+      pts.push([Math.sqrt(Math.max(0,v)), mu]);
+    }
+    cFront = brd.create('curve',[pts.map(function(p){return p[0];}), pts.map(function(p){return p[1];})],
+      {strokeColor:'#1A56DB',strokeWidth:3});
+    ptA = brd.create('point',[s1,mu1],{size:5,fillColor:'#E50505',strokeColor:'#E50505',name:'Ativo 1',label:{fontSize:11,offset:[8,8]}});
+    ptB = brd.create('point',[s2,mu2],{size:5,fillColor:'#2ECC40',strokeColor:'#2ECC40',name:'Ativo 2',label:{fontSize:11,offset:[8,-15]}});
+    var vMin = wMin*wMin*s1*s1 + (1-wMin)*(1-wMin)*s2*s2 + 2*wMin*(1-wMin)*rho*s1*s2;
+    var muMin = wMin*mu1 + (1-wMin)*mu2;
+    ptMin = brd.create('point',[Math.sqrt(Math.max(0,vMin)),muMin],{size:5,fillColor:'#F7C704',strokeColor:'#333',name:'VMG',label:{fontSize:11,offset:[8,8]}});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA25 = function(){
+    document.getElementById('val-a25-rho').textContent = parseFloat(document.getElementById('sl-a25-rho').value).toFixed(1);
+    draw();
+  };
+})();
+</script>
+
+## Quando Um Sabe Mais Que o Outro {data-background-color="#E50505"}
+
+:::: {.columns}
+::: {.column width="48%"}
+**Seleção Adversa** (antes do contrato)
+
+- Informação **oculta** (quem é o agente?)
+- Akerlof (1970): mercado de carros usados
+- Vendedor sabe qualidade; comprador não
+- Bons carros saem do mercado
+
+**Mitigação:** sinalização (Spence), triagem (menus de contratos)
+:::
+::: {.column width="48%"}
+**Risco Moral** (depois do contrato)
+
+- Ação **oculta** (o que o agente faz?)
+- Segurado reduz cuidados preventivos
+- Empregado shirk sem monitoramento
+
+**Mitigação:** franquias, copagamentos, bônus por desempenho
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Cuidado com a Terminologia"}
+"Risco moral" **não** é "risco de inadimplência". Refere-se ao problema de **incentivos** pela impossibilidade de observar ações.
+:::
+
+## Exemplos Brasileiros
+
+| Mercado | Seleção Adversa | Risco Moral |
+|:--------|:---------------|:-----------|
+| **Saúde (ANS)** | Doentes contratam mais planos | Com plano, menos prevenção |
+| **Seguro auto (SUSEP)** | Motoristas de alto risco aderem mais | Com seguro, menos cuidado |
+| **Crédito rural (Proagro)** | Regiões de maior risco aderem mais | Menos investimento em irrigação |
+| **Trabalho** | Candidatos escondem fraquezas | Empregados reduzem esforço |
+
+. . .
+
+:::{.callout-note title="Conexão"}
+A ANS exige coberturas mínimas obrigatórias **exatamente** como resposta à seleção adversa --- sem isso, operadoras excluiriam os de maior risco.
+:::
+
+## Proagro e Seguro Rural no Brasil {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Programa de Subvencao ao Premio (PSR):**
+
+- Orçamento 2024: R\$ 1,15 bi
+- 62+ atividades agropecuárias
+- Subsídio médio: ~40%
+
+**Justificativa microeconômica:**
+
+1. Completude de mercados
+2. Externalidades positivas (estabiliza renda)
+3. Combate seleção adversa
+:::
+::: {.column width="45%"}
+:::{.callout-tip title="Lógica Teórica"}
+Sem subsídio, o prêmio justo para o Semiárido seria proibitivo. O subsídio reduz o carregamento $\lambda$, viabilizando o seguro e permitindo que produtores adotem tecnologias de maior risco/retorno.
+:::
+:::
+::::
+
+## Visão Geral: Caixa de Ferramentas {.smaller}
+
+| Ferramenta | Mecanismo | Exemplo |
+|:-----------|:----------|:--------|
+| **Seguro** | Transfere risco (avesso $\to$ diversificado) | Proagro, seguro auto |
+| **Diversificação** | Dilui risco (muitos ativos) | Fundos de investimento |
+| **Flexibilidade** | Mantém opções abertas | Contratos flex, opções financeiras |
+| **Informação** | Reduz incerteza | Pesquisa de mercado, due diligence |
+
+. . .
+
+:::{.callout-note title="Três Convicções para Levar"}
+1. **Utilidade, não dinheiro:** $E[u(x)] \neq u(E[x])$ --- curvatura governa decisões.
+2. **Risco tem preço:** prêmio de risco = $\frac{1}{2}A(W)\sigma^2$ --- do Proagro ao CAPM.
+3. **Assimetria é falha:** quando um sabe mais, mercados podem colapsar.
+:::
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Arrow-Pratt:** ARA e RRA quantificam aversão ao risco; CRRA e DARA são empiricamente realistas.
+
+2. **Prêmio de risco** $\approx \frac{1}{2}A(W)\sigma^2$: traduz curvatura em reais.
+
+3. **Seguro:** cobertura total sob prêmio justo; parcial com carregamento.
+
+4. **Diversificação:** elimina risco idiossincrático, não sistemático.
+
+5. **Assimetria de informação:** seleção adversa (antes) e risco moral (depois) --- sementes dos próximos capítulos.
+
+. . .
+
+**Próxima aula:** Economia comportamental --- quando o agente **não** é racional.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

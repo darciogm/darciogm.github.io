@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 01 — Introdução à Microeconomia II — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-01-introdução-à-microeconomia-ii">Pré-Aula 01 — Introdução à Microeconomia II</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 1, Seções 1.1–1.4</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Distinguir análise econômica positiva de normativa e aplicar a cláusula <em>ceteris paribus</em></li>
+<li>Descrever o modelo de oferta e demanda e identificar o equilíbrio de mercado</li>
+<li>Realizar exercícios de estática comparativa simples (deslocamentos de curvas)</li>
+</ol>
+<hr />
+<h2 id="o-que-é-um-modelo-econômico">1. O que é um modelo econômico?</h2>
+<p>A Microeconomia estuda como agentes individuais — consumidores, firmas, governos — tomam decisões quando os recursos são escassos. Para isso, utilizamos <strong>modelos</strong>: representações simplificadas da realidade que isolam os mecanismos essenciais.</p>
+<p>Um bom modelo não precisa ser realista em todos os detalhes. Precisa ser <strong>útil</strong>: gerar previsões testáveis e ajudar a organizar o raciocínio.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Pense no mapa de uma cidade: ele omite prédios, árvores e pessoas, mas é extremamente útil para encontrar caminhos. Modelos econômicos funcionam da mesma forma — simplificam para iluminar.</p>
+</div>
+<h3 id="ceteris-paribus">1.1 Ceteris paribus</h3>
+<p>A expressão latina <em>ceteris paribus</em> (“tudo o mais constante”) é a principal ferramenta lógica do economista. Quando dizemos “se o preço sobe, a quantidade demandada cai”, estamos supondo que renda, preferências e preços de outros bens permanecem fixos.</p>
+<p>Formalmente, se a quantidade demandada é <span class="math inline">\(Q^d = D(p, I, \mathbf{p}_{-})\)</span>, a análise <em>ceteris paribus</em> examina:</p>
+<p><span class="math display">\[\frac{\partial Q^d}{\partial p} \bigg|_{I, \mathbf{p}_{-} \text{ fixos}} &lt; 0\]</span></p>
+<h3 id="positivo-vs.-normativo">1.2 Positivo vs. normativo</h3>
+<ul>
+<li><strong>Análise positiva</strong>: descreve <em>o que é</em>. “Um imposto de R$2 sobre cigarros reduz o consumo em 15%.”</li>
+<li><strong>Análise normativa</strong>: prescreve <em>o que deveria ser</em>. “O governo deveria tributar cigarros para melhorar a saúde pública.”</li>
+</ul>
+<p>A Microeconomia II foca primariamente na análise positiva, mas fornece ferramentas (como excedente e bem-estar) que informam juízos normativos.</p>
+<hr />
+<h2 id="oferta-demanda-e-equilíbrio">2. Oferta, demanda e equilíbrio</h2>
+<p>O modelo de oferta e demanda é o ponto de partida de toda a análise microeconômica.</p>
+<h3 id="a-curva-de-demanda">2.1 A curva de demanda</h3>
+<p>A demanda de mercado relaciona preço e quantidade que os consumidores desejam comprar:</p>
+<p><span class="math display">\[Q^d = D(p) \quad \text{com} \quad D&#39;(p) &lt; 0\]</span></p>
+<p>A inclinação negativa reflete a <strong>Lei da Demanda</strong>: quanto maior o preço, menor a quantidade demandada (<em>ceteris paribus</em>).</p>
+<h3 id="a-curva-de-oferta">2.2 A curva de oferta</h3>
+<p>A oferta de mercado relaciona preço e quantidade que os produtores desejam vender:</p>
+<p><span class="math display">\[Q^s = S(p) \quad \text{com} \quad S&#39;(p) &gt; 0\]</span></p>
+<p>Preços mais altos tornam a produção mais lucrativa, incentivando maior oferta.</p>
+<h3 id="equilíbrio-de-mercado">2.3 Equilíbrio de mercado</h3>
+<p>O equilíbrio ocorre quando oferta iguala demanda:</p>
+<p><span class="math display">\[D(p^*) = S(p^*) \implies Q^* = D(p^*) = S(p^*)\]</span></p>
+<p>No preço de equilíbrio <span class="math inline">\(p^*\)</span>, não há excesso de oferta nem de demanda. O mercado se “limpa”.</p>
+<h2 id="gráfico-interativo-oferta-e-demanda">Gráfico interativo: Oferta e Demanda</h2>
+<iframe src="graficos/cap01/oferta-demanda.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Desloque as curvas de oferta e demanda usando os controles deslizantes. Observe como o ponto de equilíbrio (<span class="math inline">\(p^*\)</span>, <span class="math inline">\(Q^*\)</span>) se move quando os determinantes mudam.</p>
+</div>
+<hr />
+<h2 id="estática-comparativa">3. Estática comparativa</h2>
+<p>Estática comparativa compara dois equilíbrios: o inicial e o novo, após a mudança de um parâmetro exógeno. Não descreve a transição — apenas o “antes” e o “depois”.</p>
+<h3 id="exemplo-aumento-de-renda">Exemplo: aumento de renda</h3>
+<p>Se a renda dos consumidores aumenta e o bem é <strong>normal</strong>, a curva de demanda se desloca para a direita:</p>
+<p><span class="math display">\[D(p; I_1) \to D(p; I_2) \quad \text{com } I_2 &gt; I_1\]</span></p>
+<p>Resultado: <span class="math inline">\(p^*\)</span> sobe e <span class="math inline">\(Q^*\)</span> sobe.</p>
+<h3 id="exemplo-avanço-tecnológico">Exemplo: avanço tecnológico</h3>
+<p>Se uma inovação reduz custos de produção, a curva de oferta se desloca para a direita:</p>
+<p><span class="math display">\[S(p; c_1) \to S(p; c_2) \quad \text{com } c_2 &lt; c_1\]</span></p>
+<p>Resultado: <span class="math inline">\(p^*\)</span> cai e <span class="math inline">\(Q^*\)</span> sobe.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A estática comparativa é a principal forma de gerar previsões em economia. A pergunta sempre é: “o que acontece com preço e quantidade quando X muda?”</p>
+</div>
+<hr />
+<h2 id="o-fluxo-circular-da-economia">4. O fluxo circular da economia</h2>
+<p>O modelo de fluxo circular ilustra como famílias e firmas interagem em dois mercados: o de bens e serviços e o de fatores de produção. Famílias ofertam trabalho e capital; firmas ofertam bens. O dinheiro circula em sentido oposto aos bens.</p>
+<h2 id="gráfico-interativo-fluxo-circular">Gráfico interativo: Fluxo Circular</h2>
+<iframe src="graficos/cap01/fluxo-circular.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Identifique os dois mercados (bens e fatores) e observe como renda e despesa se conectam. Clique nos fluxos para ver as descrições detalhadas.</p>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> O preço do café sobe de R$10 para R$12 por quilo. A quantidade demandada cai de 100 para 80 kg/semana. Calcule a variação percentual do preço e da quantidade. Esse comportamento é consistente com a Lei da Demanda?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Variação percentual do preço: <span class="math inline">\(\Delta p/p = (12-10)/10 = 20\%\)</span>. Variação percentual da quantidade: <span class="math inline">\(\Delta Q/Q = (80-100)/100 = -20\%\)</span>. Sim, é consistente com a Lei da Demanda: preço subiu e quantidade caiu.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Em um mercado, <span class="math inline">\(Q^d = 200 - 4p\)</span> e <span class="math inline">\(Q^s = -40 + 2p\)</span>. Encontre o equilíbrio <span class="math inline">\((p^*, Q^*)\)</span>. Se o governo fixa um preço máximo <span class="math inline">\(\bar{p} = 30\)</span>, há excesso de oferta ou de demanda? De quanto?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Equilíbrio: <span class="math inline">\(200 - 4p = -40 + 2p \implies 6p = 240 \implies p^* = 40\)</span> e <span class="math inline">\(Q^* = 200 - 4(40) = 40\)</span>. Com <span class="math inline">\(\bar{p} = 30\)</span>: <span class="math inline">\(Q^d = 200 - 4(30) = 80\)</span> e <span class="math inline">\(Q^s = -40 + 2(30) = 20\)</span>. Há <strong>excesso de demanda</strong> de <span class="math inline">\(80 - 20 = 60\)</span> unidades.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Classifique como análise positiva (P) ou normativa (N): (a) “Um salário mínimo acima do equilíbrio gera desemprego.” (b) “O governo deveria aumentar o salário mínimo para reduzir a desigualdade.” (c) “A elasticidade-preço da demanda por gasolina é -0,3 no curto prazo.”</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li><strong>P</strong> — é uma previsão do modelo de oferta e demanda. (b) <strong>N</strong> — envolve juízo de valor sobre o que o governo <em>deveria</em> fazer. (c) <strong>P</strong> — é uma estimativa empírica, sem juízo de valor.</li>
+</ol>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. A cláusula *ceteris paribus* significa:</div>
+<div class="quiz-option" data-value="a">(a) Que todos os agentes são racionais</div>
+<div class="quiz-option" data-value="b">(b) Que o mercado está em equilíbrio</div>
+<div class="quiz-option" data-value="c">(c) Que todas as demais variáveis são mantidas constantes</div>
+<div class="quiz-option" data-value="d">(d) Que a análise é normativa</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">Q2. Se o preço de equilíbrio de um bem sobe após um aumento de renda dos consumidores, o bem é provavelmente:</div>
+<div class="quiz-option" data-value="a">(a) Normal</div>
+<div class="quiz-option" data-value="b">(b) Inferior</div>
+<div class="quiz-option" data-value="c">(c) De Giffen</div>
+<div class="quiz-option" data-value="d">(d) Complementar</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3. No equilíbrio de mercado:</div>
+<div class="quiz-option" data-value="a">(a) A quantidade ofertada é maior que a demandada</div>
+<div class="quiz-option" data-value="b">(b) O preço está no nível mais baixo possível</div>
+<div class="quiz-option" data-value="c">(c) A quantidade ofertada iguala a quantidade demandada</div>
+<div class="quiz-option" data-value="d">(d) Não há transações</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. Um avanço tecnológico que reduz custos de produção desloca:</div>
+<div class="quiz-option" data-value="a">(a) A curva de demanda para a direita</div>
+<div class="quiz-option" data-value="b">(b) A curva de oferta para a direita</div>
+<div class="quiz-option" data-value="c">(c) A curva de oferta para a esquerda</div>
+<div class="quiz-option" data-value="d">(d) Ambas as curvas para a direita</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. A afirmação "o governo deveria subsidiar energia solar" é um exemplo de análise:</div>
+<div class="quiz-option" data-value="a">(a) Positiva</div>
+<div class="quiz-option" data-value="b">(b) Normativa</div>
+<div class="quiz-option" data-value="c">(c) Ceteris paribus</div>
+<div class="quiz-option" data-value="d">(d) De equilíbrio parcial</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-01')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 02</strong>: Restrição Orçamentária — como a renda e os preços limitam as escolhas do consumidor.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-01');
+MicroQuiz.init('aula-01');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

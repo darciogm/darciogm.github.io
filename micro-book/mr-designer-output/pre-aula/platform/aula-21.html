@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 21 — Maximização de Lucro II: Receita Marginal e Oferta — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-21-maximização-de-lucro-ii-receita-marginal-e-oferta">Pré-Aula 21 — Maximização de Lucro II: Receita Marginal e Oferta</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 12, Seções 12.4–12.6</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Relacionar receita marginal com elasticidade-preço da demanda e aplicar à decisão de produção</li>
+<li>Derivar a curva de oferta de curto prazo a partir da condição de fechamento (<span class="math inline">\(P \geq CVMe_{\min}\)</span>)</li>
+<li>Decompor o efeito de uma variação de preço de fator em efeito substituição e efeito produto</li>
+</ol>
+<hr />
+<h2 id="receita-marginal-e-elasticidade">1. Receita marginal e elasticidade</h2>
+<p>Para uma firma com poder de mercado, a receita marginal depende da elasticidade-preço da demanda <span class="math inline">\(\varepsilon_D\)</span>:</p>
+<p><span class="math display">\[RMg = P\left(1 + \frac{1}{\varepsilon_D}\right) = P\left(1 - \frac{1}{|\varepsilon_D|}\right)\]</span></p>
+<table>
+<thead>
+<tr>
+<th>Elasticidade</th>
+<th><span class="math inline">\(RMg\)</span></th>
+<th>Implicação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(|\varepsilon_D| &gt; 1\)</span> (elástica)</td>
+<td><span class="math inline">\(RMg &gt; 0\)</span></td>
+<td>Aumentar <span class="math inline">\(q\)</span> eleva <span class="math inline">\(RT\)</span></td>
+</tr>
+<tr>
+<td><span class="math inline">\(|\varepsilon_D| = 1\)</span> (unitária)</td>
+<td><span class="math inline">\(RMg = 0\)</span></td>
+<td><span class="math inline">\(RT\)</span> é máxima</td>
+</tr>
+<tr>
+<td><span class="math inline">\(|\varepsilon_D| &lt; 1\)</span> (inelástica)</td>
+<td><span class="math inline">\(RMg &lt; 0\)</span></td>
+<td>Aumentar <span class="math inline">\(q\)</span> reduz <span class="math inline">\(RT\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Para a firma <strong>competitiva</strong>, a demanda individual é perfeitamente elástica (<span class="math inline">\(|\varepsilon_D| \to \infty\)</span>), logo <span class="math inline">\(RMg = P\)</span>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>A firma nunca opera na faixa inelástica da demanda.</strong> Se <span class="math inline">\(|\varepsilon_D| &lt; 1\)</span>, reduzir a produção aumenta a receita e diminui o custo — o lucro sobe dos dois lados. O ponto de maximização de lucro sempre ocorre onde a demanda é elástica (<span class="math inline">\(|\varepsilon_D| \geq 1\)</span>).</p>
+</div>
+<hr />
+<h2 id="decisão-de-operar-ou-fechar">2. Decisão de operar ou fechar</h2>
+<p>Mesmo com <span class="math inline">\(P = CMg\)</span>, a firma pode ter <strong>prejuízo</strong> (<span class="math inline">\(\pi &lt; 0\)</span>). No curto prazo, o custo fixo é irrecuperável (<em>sunk</em>), então a firma compara:</p>
+<table>
+<thead>
+<tr>
+<th>Opção</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produzir <span class="math inline">\(q^*\)</span></td>
+<td><span class="math inline">\(\pi = Pq^* - CV(q^*) - CF\)</span></td>
+</tr>
+<tr>
+<td>Fechar (<span class="math inline">\(q = 0\)</span>)</td>
+<td><span class="math inline">\(\pi = -CF\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Produzir é melhor se <span class="math inline">\(Pq^* - CV(q^*) &gt; 0\)</span>, ou seja:</p>
+<p><span class="math display">\[\boxed{P \geq CVMe_{\min}}\]</span></p>
+<p>Se <span class="math inline">\(P &lt; CVMe_{\min}\)</span>, a firma fecha no curto prazo (produz <span class="math inline">\(q = 0\)</span>).</p>
+<hr />
+<h2 id="curva-de-oferta-de-curto-prazo">3. Curva de oferta de curto prazo</h2>
+<p>Combinando as condições de ótimo e fechamento:</p>
+<p><span class="math display">\[q^S(P) = \begin{cases} CMg^{-1}(P) &amp; \text{se } P \geq CVMe_{\min} \\ 0 &amp; \text{se } P &lt; CVMe_{\min} \end{cases}\]</span></p>
+<p>A curva de oferta individual é o trecho da curva de CMg <strong>acima</strong> do ponto mínimo do CVMe. Para preços entre <span class="math inline">\(CVMe_{\min}\)</span> e <span class="math inline">\(CMe_{\min}\)</span>, a firma opera com prejuízo mas cobre parte dos custos fixos.</p>
+<hr />
+<h2 id="excedente-do-produtor">4. Excedente do produtor</h2>
+<p>O <strong>excedente do produtor</strong> (EP) mede o ganho da firma acima do mínimo necessário para induzi-la a produzir:</p>
+<p><span class="math display">\[EP = RT - CV = Pq^* - \int_0^{q^*} CMg(q)\,dq\]</span></p>
+<p>Graficamente, é a área entre a linha de preço e a curva de oferta (CMg). Note que <span class="math inline">\(EP = \pi + CF\)</span>: o excedente do produtor inclui o lucro econômico mais os custos fixos.</p>
+<hr />
+<h2 id="demanda-condicionada-vs.-incondicional-por-fatores">5. Demanda condicionada vs. incondicional por fatores</h2>
+<p><strong>Demanda condicional</strong> <span class="math inline">\(L^c(w,v,q)\)</span>: minimiza o custo para produzir <span class="math inline">\(q\)</span> dado (problema de minimização de custos).</p>
+<p><strong>Demanda incondicional</strong> <span class="math inline">\(L^*(P,w,v)\)</span>: maximiza o lucro escolhendo tanto <span class="math inline">\(q\)</span> quanto <span class="math inline">\(L\)</span> (problema de maximização de lucro).</p>
+<p>A relação: <span class="math inline">\(L^*(P,w,v) = L^c\big(w, v, q^*(P,w,v)\big)\)</span>.</p>
+<h3 id="decomposição-efeito-substituição-efeito-produto">Decomposição: efeito substituição + efeito produto</h3>
+<p>Quando <span class="math inline">\(w\)</span> aumenta:</p>
+<p><span class="math display">\[\underbrace{\frac{\partial L^*}{\partial w}}_{\text{efeito total}} = \underbrace{\frac{\partial L^c}{\partial w}\bigg|_{q=q^*}}_{\text{efeito substituição (}\leq 0\text{)}} + \underbrace{\frac{\partial L^c}{\partial q}\cdot\frac{\partial q^*}{\partial w}}_{\text{efeito produto (}\leq 0\text{)}}\]</span></p>
+<ul>
+<li><strong>Efeito substituição</strong> (<span class="math inline">\(\leq 0\)</span>): salário mais alto leva a substituir trabalho por capital, mantendo <span class="math inline">\(q\)</span> fixo</li>
+<li><strong>Efeito produto</strong> (<span class="math inline">\(\leq 0\)</span>): custo mais alto reduz a produção ótima, que reduz a demanda por trabalho</li>
+</ul>
+<p>Ambos vão na mesma direção: a demanda incondicional é mais elástica que a condicional.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Essa decomposição é análoga à de Slutsky para o consumidor.</strong> Lá, o efeito preço se decompunha em efeito substituição (ao longo da curva de indiferença) e efeito renda. Aqui, temos substituição (ao longo da isoquanta) e efeito produto (mudança no nível ótimo de produção). A simetria entre as duas teorias é uma das belezas da microeconomia.</p>
+</div>
+<hr />
+<h2 id="gráfico-interativo-receita-marginal">Gráfico interativo: receita marginal</h2>
+<div id="graph-rmg" style="min-height: 450px;">
+<iframe src="graficos/cap12/receita-marginal.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Observe como a RMg está sempre abaixo da curva de demanda</li>
+<li>Identifique o ponto onde <span class="math inline">\(RMg = 0\)</span> (elasticidade unitária) e a RT máxima</li>
+<li>Note que a firma nunca produz na faixa onde <span class="math inline">\(RMg &lt; 0\)</span></li>
+</ul>
+</div>
+<hr />
+<h2 id="gráfico-interativo-curva-de-oferta-e-fechamento">Gráfico interativo: curva de oferta e fechamento</h2>
+<div id="graph-oferta" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Reduza o preço abaixo do CVMe mínimo e veja a firma fechar</li>
+<li>Identifique a faixa de preços onde a firma opera com prejuízo mas não fecha</li>
+<li>Observe a área do excedente do produtor para diferentes preços</li>
+</ul>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Uma firma enfrenta demanda <span class="math inline">\(P = 100 - 2q\)</span>. Encontre a função de receita marginal e determine para qual <span class="math inline">\(q\)</span> a receita total é máxima.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(RT = Pq = 100q - 2q^2\)</span>. <span class="math inline">\(RMg = 100 - 4q\)</span>.</p>
+<p><span class="math inline">\(RT\)</span> máxima quando <span class="math inline">\(RMg = 0\)</span>: <span class="math inline">\(q = 25\)</span>. <span class="math inline">\(RT(25) = 1.250\)</span>.</p>
+<p>No ponto <span class="math inline">\(q = 25\)</span>: <span class="math inline">\(P = 50\)</span> e <span class="math inline">\(\varepsilon_D = -P/(dP/dq \cdot q) = -50/(2 \times 25) = -1\)</span> (elasticidade unitária).</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Uma firma competitiva tem <span class="math inline">\(C(q) = q^3 - 4q^2 + 8q + 5\)</span>. Encontre o preço mínimo de operação e a curva de oferta.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(CV = q^3 - 4q^2 + 8q\)</span>. <span class="math inline">\(CVMe = q^2 - 4q + 8\)</span>.</p>
+<p>Mínimo: <span class="math inline">\(2q - 4 = 0 \implies q = 2\)</span>. <span class="math inline">\(CVMe(2) = 4 - 8 + 8 = 4\)</span>.</p>
+<p>Verificação: <span class="math inline">\(CMg = 3q^2 - 8q + 8\)</span>. <span class="math inline">\(CMg(2) = 12 - 16 + 8 = 4 = CVMe(2)\)</span>.</p>
+<p>Preço mínimo de operação: <span class="math inline">\(P = 4\)</span>.</p>
+<p>Oferta: <span class="math inline">\(P = 3q^2 - 8q + 8\)</span> para <span class="math inline">\(P \geq 4\)</span>, i.e., <span class="math inline">\(q = \frac{8 + \sqrt{12P - 32}}{6}\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Explique por que a demanda incondicional por trabalho é mais elástica que a condicional.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>A demanda condicional captura apenas o <strong>efeito substituição</strong>: quando <span class="math inline">\(w\)</span> sobe, a firma substitui trabalho por capital mantendo <span class="math inline">\(q\)</span> fixo. A demanda incondicional captura adicionalmente o <strong>efeito produto</strong>: o custo mais alto reduz <span class="math inline">\(q^*\)</span>, o que reduz ainda mais a demanda por trabalho. Como ambos os efeitos são negativos, <span class="math inline">\(|\partial L^*/\partial w| &gt; |\partial L^c/\partial w|\)</span>.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. A receita marginal é negativa quando a demanda é:</div>
+<div class="quiz-option" data-value="a">(a) Elástica (\(|\varepsilon| > 1\))</div>
+<div class="quiz-option" data-value="b">(b) Unitária (\(|\varepsilon| = 1\))</div>
+<div class="quiz-option" data-value="c">(c) Inelástica (\(|\varepsilon| < 1\))</div>
+<div class="quiz-option" data-value="d">(d) Perfeitamente elástica</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. Uma firma deve fechar no curto prazo quando:</div>
+<div class="quiz-option" data-value="a">(a) O lucro econômico é negativo</div>
+<div class="quiz-option" data-value="b">(b) \(P < CMe_{\min}\)</div>
+<div class="quiz-option" data-value="c">(c) \(P < CVMe_{\min}\)</div>
+<div class="quiz-option" data-value="d">(d) \(P < CMg\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. A curva de oferta individual de curto prazo é:</div>
+<div class="quiz-option" data-value="a">(a) A curva de CMg inteira</div>
+<div class="quiz-option" data-value="b">(b) O trecho do CMg acima do CVMe mínimo</div>
+<div class="quiz-option" data-value="c">(c) O trecho do CMg acima do CMe mínimo</div>
+<div class="quiz-option" data-value="d">(d) A curva de CMe</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. O excedente do produtor é igual a:</div>
+<div class="quiz-option" data-value="a">(a) Lucro econômico</div>
+<div class="quiz-option" data-value="b">(b) Lucro econômico mais custos fixos</div>
+<div class="quiz-option" data-value="c">(c) Receita total menos custo total</div>
+<div class="quiz-option" data-value="d">(d) Custo fixo</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. O efeito produto na demanda por trabalho é:</div>
+<div class="quiz-option" data-value="a">(a) Positivo (aumento de \(w\) aumenta \(L\))</div>
+<div class="quiz-option" data-value="b">(b) Negativo (aumento de \(w\) eleva custos, reduz \(q^*\) e \(L\))</div>
+<div class="quiz-option" data-value="c">(c) Zero</div>
+<div class="quiz-option" data-value="d">(d) Ambíguo em sinal</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-21')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 22</strong>: Concorrência perfeita e bem-estar — equilíbrio marshalliano, excedentes e o Primeiro Teorema do Bem-Estar. Revise soma horizontal de curvas de oferta!</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-21');
+MicroQuiz.init('aula-21');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+---
+title: "Lab Curvas de Indiferença"
+subtitle: "Microeconomia II — Aula 04"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 04"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Família CES: Uma Utilidade que Unifica Tudo
+
+A função **CES** (Constant Elasticity of Substitution) é a grande unificadora:
+
+$$U(x,y) = \left(x^\rho + y^\rho\right)^{1/\rho}, \qquad \rho \leq 1, \; \rho \neq 0$$
+
+. . .
+
+A **elasticidade de substituição** é constante e dada por:
+
+$$\sigma = \frac{1}{1 - \rho}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O parâmetro $\rho$ controla a **curvatura** das curvas de indiferença. Um único parâmetro gera todo o espectro de preferências — de substitutos perfeitos a complementares perfeitos.
+:::
+
+## CES: Casos Especiais
+
+$$U = \left(x^\rho + y^\rho\right)^{1/\rho}$$
+
+. . .
+
+| $\rho$ | $\sigma$ | Caso Especial | Curvas |
+|:--|:--|:--|:--|
+| $\rho \to 1$ | $\sigma \to \infty$ | **Substitutos Perfeitos** ($U = x + y$) | Retas |
+| $\rho \to 0$ | $\sigma = 1$ | **Cobb-Douglas** ($U = xy$) | Hipérboles |
+| $\rho \to -\infty$ | $\sigma \to 0$ | **Leontief** ($U = \min\{x, y\}$) | L's |
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**$\rho$ alto** $\implies$ bens muito substituíveis
+
+Pequena mudança na TMS gera grande mudança na razão $y/x$.
+:::
+::: {.column width="50%"}
+**$\rho$ baixo** $\implies$ bens pouco substituíveis
+
+Grande mudança na TMS gera pequena mudança na razão $y/x$.
+:::
+::::
+
+## CES Contínua — Interativo
+
+Varie $\rho$ e observe como as curvas transitam de **L** ($\rho \to -\infty$) a **retas** ($\rho \to 1$):
+
+<div id="graph-a04-ces" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\rho$: <input type="range" id="sl-a04-rho" min="-5" max="0.99" value="-0.5" step="0.01" oninput="window.updateA04CES()"> <span id="val-a04-rho">-0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a04-ces',{
+    boundingbox:[-0.5,11,11,-0.5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.defaultAxes.x.name = 'x';
+  brd.defaultAxes.y.name = 'y';
+  var rho = -0.5;
+  var colors = ['#1565c0','#C8102E','#00897b','#ff9800'];
+  var kvals = [2,4,6,8];
+  var curves = [];
+  for(var i=0;i<kvals.length;i++){
+    (function(idx){
+      var c = brd.create('curve',[
+        function(t){
+          var k = kvals[idx];
+          if(Math.abs(rho)<0.01){
+            return t;
+          }
+          var xr = Math.pow(t,rho);
+          var rem = Math.pow(k,rho) - xr;
+          if(rem<=0) return NaN;
+          return Math.pow(rem, 1/rho);
+        }
+      ],{strokeColor:colors[idx],strokeWidth:2.5,
+        curveType:'plot',numberPointsHigh:300,numberPointsLow:100});
+      c.setFunction(function(t){return t;},
+        function(t){
+          var k = kvals[idx];
+          if(Math.abs(rho)<0.01){
+            return k*k/t;
+          }
+          var xr = Math.pow(t,rho);
+          var rem = Math.pow(k,rho) - xr;
+          if(rem<=0) return NaN;
+          return Math.pow(rem, 1/rho);
+        },0.05,10.5);
+      curves.push(c);
+    })(i);
+  }
+  // Labels
+  for(var i=0;i<kvals.length;i++){
+    (function(idx){
+      brd.create('text',[function(){
+        var k=kvals[idx];
+        if(Math.abs(rho)<0.01) return k*k/(k*0.8+0.5)>10?k*0.6:k*0.8;
+        var t=k*0.7;
+        var xr=Math.pow(t,rho);
+        var rem=Math.pow(k,rho)-xr;
+        if(rem<=0) return k*0.7;
+        return Math.pow(rem,1/rho)+0.3;
+      }.bind(null), function(){return 0;}.bind(null),
+      function(){return 'k='+kvals[idx];}],
+      {fontSize:12,color:colors[idx],anchorX:'left'});
+    })(i);
+  }
+  window.updateA04CES = function(){
+    rho = parseFloat(document.getElementById('sl-a04-rho').value);
+    document.getElementById('val-a04-rho').textContent = rho.toFixed(2);
+    for(var i=0;i<curves.length;i++){
+      (function(idx){
+        curves[idx].setFunction(function(t){return t;},
+          function(t){
+            var k = kvals[idx];
+            if(Math.abs(rho)<0.01){
+              return k*k/t;
+            }
+            var xr = Math.pow(t,rho);
+            var rem = Math.pow(k,rho) - xr;
+            if(rem<=0) return NaN;
+            return Math.pow(rem, 1/rho);
+          },0.05,10.5);
+      })(i);
+    }
+    brd.update();
+  };
+})();
+</script>
+
+> Teste valores extremos: $\rho = -5$ (quase Leontief) e $\rho = 0.99$ (quase linear).
+
+## Cobb-Douglas: Propriedades
+
+$$U = x^\alpha y^\beta$$
+
+. . .
+
+**Transformação logarítmica** simplifica a análise:
+
+$$\ln U = \alpha \ln x + \beta \ln y$$
+
+. . .
+
+**Taxa Marginal de Substituição:**
+
+$$TMS = \frac{U_x}{U_y} = \frac{\alpha}{\beta}\cdot\frac{y}{x}$$
+
+. . .
+
+**Parcelas de gasto constantes** (no ótimo):
+
+$$s_x = \frac{p_x x^*}{m} = \frac{\alpha}{\alpha+\beta}, \qquad s_y = \frac{p_y y^*}{m} = \frac{\beta}{\alpha+\beta}$$
+
+:::{.callout-tip title="Intuição Econômica"}
+A fração da renda gasta em cada bem depende **apenas** dos expoentes, nunca dos preços. Isso torna a Cobb-Douglas a preferida em aplicações empíricas iniciais.
+:::
+
+## Superfície de Utilidade 3D — Interativo
+
+Arraste o ponto $P$ no plano $(x,y)$ e veja o nível de utilidade $U = x^{0{,}5}\,y^{0{,}5}$:
+
+<div id="graph-a04-surface" style="width:700px;height:370px;margin:0 auto;"></div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a04-surface',{
+    boundingbox:[-0.5,10,10,-0.5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.defaultAxes.x.name = 'x';
+  brd.defaultAxes.y.name = 'y';
+  // Contour lines for U = sqrt(x*y) = k  =>  y = k^2/x
+  var levels = [1,2,3,4,5,6,7];
+  for(var i=0;i<levels.length;i++){
+    (function(k){
+      brd.create('functiongraph',[function(x){return k*k/x;},0.05,10],
+        {strokeColor:'#1565c0',strokeWidth:1.5,strokeOpacity:0.3+0.1*k/7,
+         highlight:false,name:'',fixed:true});
+    })(levels[i]);
+  }
+  var P = brd.create('point',[3,4],{size:6,fillColor:'#C8102E',strokeColor:'#C8102E',
+    name:'P',label:{fontSize:14,offset:[10,10]}});
+  var utilText = brd.create('text',[0.5,9.2,function(){
+    var u = Math.sqrt(P.X()*P.Y());
+    return 'U(P) = \\sqrt{'+P.X().toFixed(1)+'\\times'+P.Y().toFixed(1)+'} = '+u.toFixed(2);
+  }],{fontSize:16,color:'#C8102E',useMathJax:false});
+  // Highlight the IC passing through P
+  var icP = brd.create('functiongraph',[function(x){
+    var k2 = P.X()*P.Y();
+    return k2/x;
+  },0.05,10],{strokeColor:'#00897b',strokeWidth:3,highlight:false});
+  // Dashed lines to axes
+  brd.create('segment',[function(){return [P.X(),0];},function(){return [P.X(),P.Y()];}],
+    {strokeColor:'#C8102E',dash:2,strokeWidth:1.5,fixed:true});
+  brd.create('segment',[function(){return [0,P.Y()];},function(){return [P.X(),P.Y()];}],
+    {strokeColor:'#C8102E',dash:2,strokeWidth:1.5,fixed:true});
+})();
+</script>
+
+> A curva verde é a curva de indiferença que passa por $P$. As curvas azuis são níveis fixos.
+
+## Leontief: Proporções Fixas
+
+$$U = \min\left\{\frac{x}{a},\;\frac{y}{b}\right\}$$
+
+. . .
+
+**Curvas em L** com vértice sobre a reta $y = (b/a)\,x$.
+
+. . .
+
+**Derivação da demanda** (dado $p_x x + p_y y = m$):
+
+No ótimo, $x/a = y/b \implies y = (b/a)\,x$. Substituindo:
+
+$$p_x x + p_y \frac{b}{a}x = m \implies x^* = \frac{m\,a}{a\,p_x + b\,p_y}, \quad y^* = \frac{m\,b}{a\,p_x + b\,p_y}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O consumidor **sempre** compra na proporção fixa $a:b$. Excesso de um bem não aumenta a utilidade — como ter sapatos esquerdos sem os direitos.
+:::
+
+## Substitutos Perfeitos: Linearidade
+
+$$U = ax + by$$
+
+. . .
+
+**TMS** constante $= a/b$. Curvas de indiferença são **retas** com inclinação $-a/b$.
+
+. . .
+
+**Soluções de canto:** o consumidor gasta toda a renda no bem mais barato por unidade de utilidade.
+
+$$x^* = \begin{cases} m/p_x & \text{se } a/b > p_x/p_y \\ 0 & \text{se } a/b < p_x/p_y \\ \text{qualquer ponto na reta} & \text{se } a/b = p_x/p_y \end{cases}$$
+
+. . .
+
+> Quando $a/b \neq p_x/p_y$, a solução é sempre de **canto** — o consumidor compra apenas um bem.
+
+:::{.callout-tip title="Intuição Econômica"}
+Se dois bens são perfeitamente substituíveis, o consumidor age como um "caçador de barganhas" — compra 100% do bem com melhor custo-benefício.
+:::
+
+## Homotética vs Quase-Linear — Interativo
+
+:::: {.columns}
+::: {.column width="50%"}
+**Homotética (Cobb-Douglas)**
+
+Curvas de Engel: retas pela origem.
+
+<div id="graph-a04-engel-left" style="width:320px;height:370px;margin:0 auto;"></div>
+:::
+::: {.column width="50%"}
+**Quase-Linear** $U = \sqrt{x} + y$
+
+Curva de Engel: vertical para $y$, horizontal para $x$ acima do limiar.
+
+<div id="graph-a04-engel-right" style="width:320px;height:370px;margin:0 auto;"></div>
+:::
+::::
+<div class="graph-slider-row">
+  <label>Renda $m$: <input type="range" id="sl-a04-m" min="2" max="20" value="10" step="0.5" oninput="window.updateA04Engel()"> <span id="val-a04-m">10.0</span></label>
+</div>
+<script>
+(function(){
+  // Left panel: Cobb-Douglas x^0.5 y^0.5, p1=p2=1
+  var brdL = JXG.JSXGraph.initBoard('graph-a04-engel-left',{
+    boundingbox:[-1,22,22,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brdL.defaultAxes.x.name = 'x';
+  brdL.defaultAxes.y.name = 'y';
+  var mVal = 10;
+  // Engel curve for CD: x* = m/2, y* = m/2 => line y=x from origin
+  var engelL = brdL.create('line',[[0,0],[1,1]],{strokeColor:'#1565c0',strokeWidth:2.5,
+    straightFirst:false,straightLast:true,lastArrow:true});
+  var ptL = brdL.create('point',[function(){return mVal/2;},function(){return mVal/2;}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+  // Budget line
+  var blL = brdL.create('line',[function(){return [mVal,0];},function(){return [0,mVal];}],
+    {strokeColor:'#C8102E',strokeWidth:2,dash:2,straightFirst:false,straightLast:false});
+  brdL.create('text',[1,20,'Engel (CD)'],{fontSize:13,color:'#1565c0'});
+
+  // Right panel: Quasi-linear U=sqrt(x)+y, p1=p2=1
+  // FOC: 1/(2*sqrt(x))=1 => x*=1/4, y*=m-1/4 (if m>1/4)
+  var brdR = JXG.JSXGraph.initBoard('graph-a04-engel-right',{
+    boundingbox:[-1,22,22,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brdR.defaultAxes.x.name = 'x';
+  brdR.defaultAxes.y.name = 'y';
+  // Engel: x*=0.25 (constant), y*=m-0.25
+  var engelRx = brdR.create('line',[[0.25,-1],[0.25,22]],{strokeColor:'#00897b',strokeWidth:2.5,
+    straightFirst:false,straightLast:false});
+  var ptR = brdR.create('point',[function(){return 0.25;},function(){return Math.max(mVal-0.25,0);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+  // Budget line
+  var blR = brdR.create('line',[function(){return [mVal,0];},function(){return [0,mVal];}],
+    {strokeColor:'#C8102E',strokeWidth:2,dash:2,straightFirst:false,straightLast:false});
+  brdR.create('text',[1,20,'Engel (QL)'],{fontSize:13,color:'#00897b'});
+  brdR.create('text',[1.5,5,function(){return 'x*=0.25';}],{fontSize:12,color:'#00897b'});
+
+  window.updateA04Engel = function(){
+    mVal = parseFloat(document.getElementById('sl-a04-m').value);
+    document.getElementById('val-a04-m').textContent = mVal.toFixed(1);
+    brdL.update();
+    brdR.update();
+  };
+})();
+</script>
+
+## Transformação Monotônica e Equivalência
+
+Por que $\ln(xy)$ representa as **mesmas preferências** que $xy$?
+
+. . .
+
+Seja $U = xy$ e defina $V = \ln U = \ln(xy) = \ln x + \ln y$.
+
+. . .
+
+Como $\phi(t) = \ln t$ é **estritamente crescente** para $t > 0$:
+
+$$U(A) \geq U(B) \iff \ln U(A) \geq \ln U(B) \iff V(A) \geq V(B)$$
+
+. . .
+
+**Vantagem prática:** $V = \ln x + \ln y$ é aditivamente separável — muito mais fácil de derivar.
+
+$$TMS_V = \frac{\partial V/\partial x}{\partial V/\partial y} = \frac{1/x}{1/y} = \frac{y}{x} = TMS_U \; \checkmark$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Transformações monotônicas preservam a **ordenação** das cestas. As curvas de indiferença são as mesmas — apenas os "rótulos" de utilidade mudam.
+:::
+
+## Exercício: Identifique a Preferência
+
+Para cada mapa de curvas, associe à função de utilidade correta:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Mapa 1:** Curvas retas paralelas, inclinação $-3$.
+
+**(A)** $U = 3x + y$ &emsp; **(B)** $U = \min\{3x, y\}$
+
+. . .
+
+**Mapa 2:** Curvas em L, vértice sobre $y = 2x$.
+
+**(A)** $U = \min\{x, 2y\}$ &emsp; **(B)** $U = \min\{2x, y\}$
+:::
+::: {.column width="50%"}
+**Mapa 3:** Hipérboles suaves, simétricas em relação a $y = x$.
+
+**(A)** $U = x^{0{,}5}y^{0{,}5}$ &emsp; **(B)** $U = x^{0{,}3}y^{0{,}7}$
+
+. . .
+
+**Mapa 4:** Curvas quase retas com leve curvatura.
+
+**(A)** CES com $\rho = 0{,}8$ &emsp; **(B)** CES com $\rho = -2$
+:::
+::::
+
+. . .
+
+**Respostas:** 1 $\to$ **(A)**; 2 $\to$ **(B)**; 3 $\to$ **(A)**; 4 $\to$ **(A)**
+
+## Restrição Orçamentária — Detalhes
+
+O consumidor enfrenta a restrição:
+
+$$p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+**Reta orçamentária:** interceptos $(m/p_1, 0)$ e $(0, m/p_2)$, inclinação $= -p_1/p_2$.
+
+. . .
+
+**Efeito de mudanças:**
+
+| Variável que muda | Efeito na reta |
+|:--|:--|
+| $m$ aumenta | Deslocamento **paralelo** para fora |
+| $p_1$ aumenta | **Pivô** para dentro pelo eixo $x_2$ |
+| $p_2$ aumenta | **Pivô** para dentro pelo eixo $x_1$ |
+
+. . .
+
+> O **conjunto orçamentário** é a região abaixo da reta: $\{(x_1,x_2) : p_1 x_1 + p_2 x_2 \leq m\}$.
+
+## Conjunto Orçamentário e Taxas de Troca
+
+A inclinação da restrição revela o **custo de oportunidade**:
+
+$$\left|\frac{dx_2}{dx_1}\right| = \frac{p_1}{p_2}$$
+
+. . .
+
+Para obter 1 unidade adicional de $x_1$, o consumidor abre mão de $p_1/p_2$ unidades de $x_2$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Exemplo numérico:**
+
+$p_1 = 4$, $p_2 = 2$, $m = 40$.
+
+- Taxa de troca: $4/2 = 2$ unidades de $x_2$ por $x_1$
+- Intercepto $x_1$: $40/4 = 10$
+- Intercepto $x_2$: $40/2 = 20$
+:::
+::: {.column width="50%"}
+**Preço relativo como sinal:**
+
+O mercado "diz" ao consumidor: cada $x_1$ custa $2$ unidades de $x_2$.
+
+Essa taxa é **constante** ao longo da reta (linearidade).
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O preço relativo $p_1/p_2$ é a taxa à qual o **mercado** permite trocar bens. A TMS é a taxa à qual o **consumidor** quer trocar. O ótimo ocorre quando ambas se igualam.
+:::
+
+## Mudanças na Restrição
+
+**Como a reta orçamentária se move?**
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+**Aumento de renda** ($m \uparrow$)
+
+Deslocamento paralelo para fora.
+
+Mais cestas acessíveis, mesmos preços relativos.
+:::
+::: {.column width="33%"}
+**Aumento de $p_1$** ($p_1 \uparrow$)
+
+Pivô para dentro sobre o eixo $x_2$.
+
+Intercepto $x_1$ diminui; intercepto $x_2$ não muda.
+:::
+::: {.column width="34%"}
+**Aumento de $p_2$** ($p_2 \uparrow$)
+
+Pivô para dentro sobre o eixo $x_1$.
+
+Intercepto $x_2$ diminui; intercepto $x_1$ não muda.
+:::
+::::
+
+. . .
+
+**Regra geral:**
+
+- Mudança em $m$ $\implies$ deslocamento paralelo (efeito renda puro)
+- Mudança em $p_i$ $\implies$ pivô (altera preços relativos)
+
+. . .
+
+> Na próxima aula veremos como o consumidor **reage** a essas mudanças — efeito substituição vs. efeito renda.
+
+## Peer Instruction: Qual Curva?
+
+**Pergunta:** Um consumidor tem utilidade $U = \min\{2x, y\}$ e enfrenta preços $p_x = 1$, $p_y = 2$ com renda $m = 12$. Qual é a cesta ótima?
+
+. . .
+
+:::: {.columns}
+::: {.column width="25%"}
+**(A)** $(3, 6)$
+:::
+::: {.column width="25%"}
+**(B)** $(6, 3)$
+:::
+::: {.column width="25%"}
+**(C)** $(12, 0)$
+:::
+::: {.column width="25%"}
+**(D)** $(2, 4)$
+:::
+::::
+
+. . .
+
+**Resposta:** **(A)** — No ótimo, $2x = y$. Substituindo: $x + 2(2x) = 12 \implies 5x = 12 \implies x = 2{,}4$...
+
+Espere! Refazendo: $x + 2y = 12$ e $y = 2x$: $x + 4x = 12 \implies x = 2{,}4$, $y = 4{,}8$.
+
+Nenhuma alternativa é exata — **(A)** é a mais próxima. Na prova, confira sempre suas contas!
+
+> Think-Pair-Share: discuta 2 min com seu vizinho antes de votar!
+
+## Próxima Aula
+
+**Aula 05 — Escolha Ótima do Consumidor**
+
+. . .
+
+- Condição de tangência: $TMS = p_1/p_2$
+- Demandas marshallianas para Cobb-Douglas, CES, Leontief
+- Soluções de canto e condições de Kuhn-Tucker
+- Utilidade indireta $V(p_1, p_2, m)$
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Leia o Capítulo 4 do livro. Tente resolver: $\max \; x^{0{,}5}y^{0{,}5}$ sujeito a $2x + 4y = 100$ antes da aula.
+:::

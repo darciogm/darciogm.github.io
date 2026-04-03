@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 22 — Concorrência Perfeita e Bem-Estar — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-22-concorrência-perfeita-e-bem-estar">Pré-Aula 22 — Concorrência Perfeita e Bem-Estar</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 13, Seções 13.1–13.4</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Derivar a oferta de mercado por soma horizontal e determinar o equilíbrio marshalliano com estática comparativa</li>
+<li>Explicar o equilíbrio de longo prazo com livre entrada/saída e distinguir os três tipos de indústria</li>
+<li>Calcular excedentes (EC + EP) e enunciar o Primeiro Teorema do Bem-Estar</li>
+</ol>
+<hr />
+<h2 id="oferta-de-mercado-soma-horizontal">1. Oferta de mercado: soma horizontal</h2>
+<p>A <strong>oferta de mercado</strong> é a soma horizontal das ofertas individuais. Com <span class="math inline">\(n\)</span> firmas, cada uma com oferta <span class="math inline">\(q_i^S(P)\)</span>:</p>
+<p><span class="math display">\[Q^S(P) = \sum_{i=1}^{n} q_i^S(P)\]</span></p>
+<p>Para firmas idênticas: <span class="math inline">\(Q^S(P) = n \cdot q^S(P)\)</span>.</p>
+<p>A soma é <strong>horizontal</strong> — para cada preço <span class="math inline">\(P\)</span>, somamos as quantidades. Cuidado com os “kinks”: firmas com custos diferentes entram em preços diferentes, criando quebras na curva de oferta agregada.</p>
+<hr />
+<h2 id="equilíbrio-marshalliano">2. Equilíbrio marshalliano</h2>
+<p>O <strong>equilíbrio de mercado</strong> ocorre quando oferta iguala demanda:</p>
+<p><span class="math display">\[Q^D(P^*) = Q^S(P^*)\]</span></p>
+<p>No equilíbrio, cada consumidor maximiza utilidade, cada firma maximiza lucro, e não há excesso de oferta nem de demanda.</p>
+<h3 id="estática-comparativa">Estática comparativa</h3>
+<p>Deslocamentos de demanda ou oferta alteram o equilíbrio:</p>
+<ul>
+<li><strong>Aumento de demanda</strong> (<span class="math inline">\(D\)</span> desloca para a direita): <span class="math inline">\(P^* \uparrow\)</span>, <span class="math inline">\(Q^* \uparrow\)</span></li>
+<li><strong>Aumento de oferta</strong> (<span class="math inline">\(S\)</span> desloca para a direita): <span class="math inline">\(P^* \downarrow\)</span>, <span class="math inline">\(Q^* \uparrow\)</span></li>
+</ul>
+<p>A magnitude dos ajustes depende das elasticidades: lado mais inelástico absorve mais do ajuste em preço.</p>
+<hr />
+<h2 id="longo-prazo-entrada-e-saída">3. Longo prazo: entrada e saída</h2>
+<p>No longo prazo, <strong>livre entrada e saída</strong> impõe:</p>
+<p><span class="math display">\[\pi &gt; 0 \xrightarrow{\text{entrada}} Q^S \uparrow \xrightarrow{} P \downarrow \xrightarrow{} \pi \downarrow\]</span></p>
+<p><span class="math display">\[\pi &lt; 0 \xrightarrow{\text{saída}} Q^S \downarrow \xrightarrow{} P \uparrow \xrightarrow{} \pi \uparrow\]</span></p>
+<p><strong>Equilíbrio de longo prazo:</strong> <span class="math inline">\(\pi^* = 0 \implies P^* = CMe_{\min}\)</span>. Cada firma produz na <strong>escala eficiente</strong>.</p>
+<h3 id="três-tipos-de-indústria">Três tipos de indústria</h3>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Efeito da entrada nos custos</th>
+<th>Oferta de LP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Custos constantes</td>
+<td>Nenhum</td>
+<td>Horizontal em <span class="math inline">\(P = CMe_{\min}\)</span></td>
+</tr>
+<tr>
+<td>Custos crescentes</td>
+<td>Entrada eleva preços dos insumos</td>
+<td>Positivamente inclinada</td>
+</tr>
+<tr>
+<td>Custos decrescentes</td>
+<td>Entrada reduz custos (externalidades)</td>
+<td>Negativamente inclinada</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>Lucro zero não é ruim para a firma.</strong> Lucro econômico zero significa que a firma cobre todos os custos, incluindo o retorno normal do capital (custo de oportunidade). Os proprietários recebem exatamente o que ganhariam na melhor alternativa. Lucro contábil continua positivo. A condição <span class="math inline">\(P = CMe_{\min}\)</span> é a expressão máxima da eficiência: o consumidor paga o menor preço possível que sustenta a produção.</p>
+</div>
+<hr />
+<h2 id="medidas-de-bem-estar">4. Medidas de bem-estar</h2>
+<h3 id="excedente-do-consumidor-ec">Excedente do consumidor (EC)</h3>
+<p><span class="math display">\[EC = \int_0^{Q^*} P^D(Q)\,dQ - P^*Q^*\]</span></p>
+<p>Graficamente: área <strong>abaixo</strong> da demanda e <strong>acima</strong> do preço.</p>
+<h3 id="excedente-do-produtor-ep">Excedente do produtor (EP)</h3>
+<p><span class="math display">\[EP = P^*Q^* - \int_0^{Q^*} P^S(Q)\,dQ\]</span></p>
+<p>Graficamente: área <strong>acima</strong> da oferta e <strong>abaixo</strong> do preço.</p>
+<h3 id="excedente-total">Excedente total</h3>
+<p><span class="math display">\[W = EC + EP = \int_0^{Q^*}\big[P^D(Q) - P^S(Q)\big]\,dQ\]</span></p>
+<p>O excedente total é maximizado quando a última unidade produzida tem benefício marginal igual ao custo marginal.</p>
+<hr />
+<h2 id="primeiro-teorema-do-bem-estar-e-perda-de-peso-morto">5. Primeiro Teorema do Bem-Estar e perda de peso morto</h2>
+<p><strong>Primeiro Teorema do Bem-Estar:</strong> sob competição perfeita (sem externalidades, sem poder de mercado, com informação completa), o equilíbrio de mercado é <strong>Pareto-eficiente</strong> — maximiza o excedente total.</p>
+<p>Qualquer desvio do equilíbrio competitivo gera <strong>perda de peso morto</strong> (<em>deadweight loss</em>, DWL):</p>
+<p><span class="math display">\[DWL = W_{\text{equilíbrio}} - W_{\text{intervenção}} &gt; 0\]</span></p>
+<p>O peso morto representa transações mutuamente benéficas que deixam de ocorrer — uma perda líquida para a sociedade que não é capturada por ninguém.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>O preço de equilíbrio é um coordenador perfeito.</strong> No equilíbrio competitivo, a última unidade transacionada tem disposição a pagar exatamente igual ao custo marginal. Todas as unidades anteriores geram benefício marginal superior ao custo marginal. Produzir além de <span class="math inline">\(Q^*\)</span> destruiria valor; produzir menos desperdiçaria oportunidades de ganho mútuo. Nenhum planejador central poderia fazer melhor.</p>
+</div>
+<hr />
+<h2 id="gráfico-interativo-equilíbrio-de-oferta-e-demanda">Gráfico interativo: equilíbrio de oferta e demanda</h2>
+<div id="graph-equilibrio" style="min-height: 450px;">
+<iframe src="graficos/cap13/oferta-demanda.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Desloque as curvas de demanda ou oferta e observe o novo equilíbrio</li>
+<li>Visualize as áreas de EC e EP e como se redistribuem</li>
+<li>Note que o excedente total é máximo no equilíbrio sem intervenção</li>
+</ul>
+</div>
+<hr />
+<h2 id="gráfico-interativo-equilíbrio-de-longo-prazo">Gráfico interativo: equilíbrio de longo prazo</h2>
+<div id="graph-lp" style="min-height: 450px;">
+<iframe src="graficos/cap13/equilibrio-longo-prazo.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Observe a dinâmica de entrada e saída de firmas até o lucro zero</li>
+<li>Compare os três tipos de indústria e suas curvas de oferta de longo prazo</li>
+<li>Verifique que no equilíbrio de LP cada firma produz no mínimo do CMe</li>
+</ul>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Um mercado tem 50 firmas idênticas com <span class="math inline">\(C(q) = q^2 + 2q + 8\)</span> e demanda <span class="math inline">\(Q^D = 400 - 10P\)</span>. Encontre o equilíbrio de curto prazo e o lucro de cada firma.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Oferta individual: <span class="math inline">\(CMg = 2q + 2 = P \implies q^S = (P-2)/2\)</span> para <span class="math inline">\(P \geq CVMe_{\min}\)</span>.</p>
+<p><span class="math inline">\(CVMe = q + 2\)</span>, crescente, então <span class="math inline">\(CVMe_{\min} = 2\)</span> (em <span class="math inline">\(q \to 0\)</span>). Oferta válida para <span class="math inline">\(P \geq 2\)</span>.</p>
+<p>Oferta de mercado: <span class="math inline">\(Q^S = 50 \times (P-2)/2 = 25(P-2) = 25P - 50\)</span>.</p>
+<p>Equilíbrio: <span class="math inline">\(400 - 10P = 25P - 50 \implies 35P = 450 \implies P^* \approx 12{,}86\)</span>.</p>
+<p><span class="math inline">\(Q^* = 400 - 128{,}6 = 271{,}4\)</span>. Cada firma: <span class="math inline">\(q^* = 5{,}43\)</span>.</p>
+<p>Lucro: <span class="math inline">\(\pi = 12{,}86(5{,}43) - [(5{,}43)^2 + 2(5{,}43) + 8] = 69{,}8 - [29{,}5 + 10{,}9 + 8] = 69{,}8 - 48{,}4 = 21{,}4\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> No exercício anterior, qual é o preço de equilíbrio de longo prazo? Quantas firmas haverá se a demanda permanecer a mesma?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>LP: <span class="math inline">\(P = CMe_{\min}\)</span>. <span class="math inline">\(CMe = q + 2 + 8/q\)</span>. Mínimo: <span class="math inline">\(1 - 8/q^2 = 0 \implies q = 2\sqrt{2} \approx 2{,}83\)</span>.</p>
+<p><span class="math inline">\(CMe(2\sqrt{2}) = 2\sqrt{2} + 2 + 8/(2\sqrt{2}) = 2\sqrt{2} + 2 + 2\sqrt{2} = 4\sqrt{2} + 2 \approx 7{,}66\)</span>.</p>
+<p>Verificação: <span class="math inline">\(CMg(2\sqrt{2}) = 2(2\sqrt{2}) + 2 = 4\sqrt{2} + 2 \approx 7{,}66 = CMe\)</span>.</p>
+<p><span class="math inline">\(Q^D(7{,}66) = 400 - 76{,}6 = 323{,}4\)</span>. Firmas: <span class="math inline">\(n = 323{,}4/2{,}83 \approx 114\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Explique por que o equilíbrio competitivo maximiza o excedente total.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>No equilíbrio, <span class="math inline">\(P^* = CMg(Q^*)\)</span> e <span class="math inline">\(P^* = P^D(Q^*)\)</span>. Isso significa que a disposição a pagar marginal iguala o custo marginal. Para qualquer <span class="math inline">\(Q &lt; Q^*\)</span>, há consumidores dispostos a pagar mais do que o custo de produção — transações com ganho mútuo positivo. Para qualquer <span class="math inline">\(Q &gt; Q^*\)</span>, o custo supera a disposição a pagar — transações destruiriam valor. O equilíbrio <span class="math inline">\(Q^*\)</span> é exatamente o ponto onde todas as transações benéficas ocorrem e nenhuma prejudicial acontece, maximizando <span class="math inline">\(W = \int_0^{Q^*}[P^D - CMg]\,dQ\)</span>.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">Q1. A oferta de mercado é obtida pela soma \_\_\_\_\_\_ das ofertas individuais.</div>
+<div class="quiz-option" data-value="a">(a) Horizontal (soma das quantidades para cada preço)</div>
+<div class="quiz-option" data-value="b">(b) Vertical (soma dos preços para cada quantidade)</div>
+<div class="quiz-option" data-value="c">(c) Algébrica das funções custo</div>
+<div class="quiz-option" data-value="d">(d) Geométrica das curvas</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. No equilíbrio de longo prazo com livre entrada:</div>
+<div class="quiz-option" data-value="a">(a) Todas as firmas têm lucro positivo</div>
+<div class="quiz-option" data-value="b">(b) \(P = CMg\) mas \(P > CMe\)</div>
+<div class="quiz-option" data-value="c">(c) \(P = CMe_{\min}\) e o lucro econômico é zero</div>
+<div class="quiz-option" data-value="d">(d) Não há produção</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. Em uma indústria de custos constantes, um aumento permanente de demanda resulta no LP em:</div>
+<div class="quiz-option" data-value="a">(a) Preço mais alto e mais firmas</div>
+<div class="quiz-option" data-value="b">(b) Mesmo preço e mais firmas</div>
+<div class="quiz-option" data-value="c">(c) Preço mais alto e mesmo número de firmas</div>
+<div class="quiz-option" data-value="d">(d) Preço mais baixo e menos firmas</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. O Primeiro Teorema do Bem-Estar afirma que:</div>
+<div class="quiz-option" data-value="a">(a) Todo equilíbrio de mercado é justo</div>
+<div class="quiz-option" data-value="b">(b) Sob competição perfeita, o equilíbrio é Pareto-eficiente</div>
+<div class="quiz-option" data-value="c">(c) O governo deve intervir para maximizar bem-estar</div>
+<div class="quiz-option" data-value="d">(d) Monopólios são eficientes</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. Perda de peso morto representa:</div>
+<div class="quiz-option" data-value="a">(a) Transferência de renda entre agentes</div>
+<div class="quiz-option" data-value="b">(b) Custo administrativo de políticas</div>
+<div class="quiz-option" data-value="c">(c) Transações mutuamente benéficas que deixam de ocorrer</div>
+<div class="quiz-option" data-value="d">(d) A diferença entre lucro contábil e econômico</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-22')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 23</strong>: Intervenção estatal — tributação, subsídios e controles de preços. Traga calculadora e prepare-se para calcular peso morto!</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-22');
+MicroQuiz.init('aula-22');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

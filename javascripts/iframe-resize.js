@@ -31,6 +31,13 @@
         });
     }).observe(document.body, { childList: true, subtree: true });
 
+    // Re-scan iframes after instant navigation (SPA)
+    if (typeof document$ !== "undefined") {
+        document$.subscribe(function() {
+            document.querySelectorAll('iframe').forEach(setup);
+        });
+    }
+
     // Dynamic resize via postMessage (WebR iframes after R code execution)
     window.addEventListener('message', function(e) {
         if (e.data && e.data.iframeHeight && e.data.src) {

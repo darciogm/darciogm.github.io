@@ -1,0 +1,641 @@
+---
+title: "Políticas Públicas e Peso Morto no Brasil"
+subtitle: "Microeconomia II — Aula 20"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 20"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Quando o Governo Intervém
+
+Por que o governo interfere nos mercados?
+
+. . .
+
+**Três grandes categorias de intervenção:**
+
+| Instrumento | Mecanismo | Exemplo brasileiro |
+|:--|:--|:--|
+| **Impostos** | Cunha entre preço pago e recebido | ICMS, IPI, ISS |
+| **Controles de preços** | Teto ou piso obrigatório | Salário mínimo, tabelamento |
+| **Política comercial** | Tarifas e quotas sobre importação | TEC do Mercosul |
+
+. . .
+
+:::{.callout-important title="Questão central"}
+Toda intervenção redistribui bem-estar — mas também **destrói** parte dele. O peso morto (DWL) é o custo inevitável da distorção.
+:::
+
+## Imposto Específico: Incidência
+
+Quem **realmente** paga o imposto? A incidência legal difere da econômica.
+
+. . .
+
+Com um imposto específico $t$ por unidade:
+
+**Preço pago pelo comprador:**
+
+$$P_b = P^* + t \cdot \frac{\varepsilon_S}{\varepsilon_S - \varepsilon_D}$$
+
+**Preço recebido pelo vendedor:**
+
+$$P_s = P^* - t \cdot \frac{\varepsilon_D}{\varepsilon_S - \varepsilon_D}$$
+
+. . .
+
+:::{.callout-note}
+Note que $\varepsilon_D < 0$, então $\varepsilon_S - \varepsilon_D > 0$. A cunha total é $P_b - P_s = t$.
+:::
+
+## Incidência Tributária Interativa {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+
+<div class="graph-slider-row">
+<div id="graph-a20-tax" style="width:620px;height:420px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a20-tax', {
+    boundingbox: [-1, 16, 16, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slT = brd.create('slider', [[2, 15], [7, 15], [0, 3, 8]], {
+    name: 't',
+    snapWidth: 0.5,
+    id: 'sl-a20-t'
+  });
+
+  // Demand: P = 14 - Q  =>  Q = 14 - P
+  // Supply: P = 2 + Q    =>  Q = P - 2
+  // Equilibrium: 14 - Q = 2 + Q => Q*=6, P*=8
+
+  // Demand curve
+  brd.create('functiongraph', [function(Q) {
+    return 14 - Q;
+  }, 0, 14], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 2, 'D'], { fontSize: 13, color: '#1565c0' });
+
+  // Supply curve (original)
+  brd.create('functiongraph', [function(Q) {
+    return 2 + Q;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 14.8, 'S'], { fontSize: 13, color: '#C8102E' });
+
+  // Supply curve shifted up by t (effective supply with tax)
+  brd.create('functiongraph', [function(Q) {
+    var t = slT.Value();
+    return 2 + Q + t;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+  // Qt after tax: 14 - Q = 2 + Q + t => 2Q = 12 - t => Q = (12-t)/2
+  // Pb = 14 - Qt = 14 - (12-t)/2 = (16+t)/2 = 8 + t/2
+  // Ps = 2 + Qt = 2 + (12-t)/2 = (16-t)/2 = 8 - t/2
+
+  // Tax revenue rectangle
+  brd.create('polygon', [
+    [function() { return 0; }, function() { return 8 - slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 - slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 + slT.Value()/2; }],
+    [function() { return 0; }, function() { return 8 + slT.Value()/2; }]
+  ], {
+    fillColor: '#4caf50', fillOpacity: 0.2,
+    borders: { strokeColor: '#4caf50', strokeWidth: 1 },
+    vertices: { visible: false }
+  });
+
+  // DWL triangle
+  brd.create('polygon', [
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 + slT.Value()/2; }],
+    [function() { return (12 - slT.Value())/2; }, function() { return 8 - slT.Value()/2; }],
+    [6, 8]
+  ], {
+    fillColor: '#f44336', fillOpacity: 0.3,
+    borders: { strokeColor: '#f44336', strokeWidth: 1.5 },
+    vertices: { visible: false }
+  });
+
+  // Pb line
+  brd.create('line', [[0, function() { return 8 + slT.Value()/2; }],
+                       [1, function() { return 8 + slT.Value()/2; }]], {
+    strokeColor: '#1565c0', strokeWidth: 1, dash: 3,
+    straightFirst: false, straightLast: true, fixed: true
+  });
+
+  // Ps line
+  brd.create('line', [[0, function() { return 8 - slT.Value()/2; }],
+                       [1, function() { return 8 - slT.Value()/2; }]], {
+    strokeColor: '#C8102E', strokeWidth: 1, dash: 3,
+    straightFirst: false, straightLast: true, fixed: true
+  });
+
+  // Labels
+  brd.create('text', [-0.8, function() { return 8 + slT.Value()/2 + 0.3; }, function() {
+    return 'P_b=' + (8 + slT.Value()/2).toFixed(1);
+  }], { fontSize: 11, color: '#1565c0' });
+
+  brd.create('text', [-0.8, function() { return 8 - slT.Value()/2 - 0.5; }, function() {
+    return 'P_s=' + (8 - slT.Value()/2).toFixed(1);
+  }], { fontSize: 11, color: '#C8102E' });
+
+  brd.create('text', [2, 8, function() {
+    var t = slT.Value();
+    var Qt = (12 - t) / 2;
+    return 'Receita=' + (t * Qt).toFixed(1);
+  }], { fontSize: 11, color: '#4caf50' });
+
+  brd.create('text', [function() { return (12 - slT.Value())/2 + 0.3; }, 8, function() {
+    var t = slT.Value();
+    var dQ = 6 - (12 - t) / 2;
+    return 'DWL=' + (0.5 * t * dQ).toFixed(1);
+  }], { fontSize: 11, color: '#f44336' });
+
+  // Equilibrium point
+  brd.create('point', [6, 8], {
+    name: 'E*', size: 3, color: '#333',
+    label: { offset: [8, 8], fontSize: 12 }
+  });
+})();
+</script>
+
+:::
+::: {.column width="45%"}
+
+**Mova o slider** $t$ para observar:
+
+- A cunha tributária entre $P_b$ e $P_s$
+- O retângulo verde = **receita tributária**
+- O triângulo vermelho = **peso morto (DWL)**
+
+. . .
+
+Com elasticidades simétricas (oferta e demanda lineares), o imposto é dividido igualmente.
+
+:::
+::::
+
+## Peso Morto do Imposto
+
+O peso morto mede as transações mutuamente benéficas que **deixam de acontecer**:
+
+$$DWL = \frac{1}{2} \cdot t \cdot \Delta Q$$
+
+. . .
+
+**Resultado crucial — DWL cresce com o quadrado do imposto:**
+
+$$DWL = \frac{t^2}{2} \cdot \frac{\varepsilon_S \cdot |\varepsilon_D|}{(\varepsilon_S + |\varepsilon_D|)} \cdot \frac{Q^*}{P^*}$$
+
+. . .
+
+| Se $t$ dobra... | Receita | DWL |
+|:--|:--:|:--:|
+| Cresce | $\approx 2\times$ | $\approx 4\times$ |
+
+. . .
+
+:::{.callout-warning}
+Implicação: muitos impostos pequenos geram **menos** DWL total do que poucos impostos altos para a mesma arrecadação.
+:::
+
+## Incidência e Elasticidades
+
+O lado **mais inelástico** do mercado arca com a maior parcela do imposto.
+
+. . .
+
+$$\frac{\text{Parcela do consumidor}}{\text{Parcela do produtor}} = \frac{\varepsilon_S}{|\varepsilon_D|}$$
+
+. . .
+
+| Cenário | $|\varepsilon_D|$ | $\varepsilon_S$ | Quem paga mais? |
+|:--|:--:|:--:|:--|
+| Gasolina (CP) | 0,3 | 0,5 | Consumidor (62%) |
+| Restaurantes | 2,0 | 1,0 | Produtor (67%) |
+| Cigarro | 0,4 | $\infty$ | Consumidor (~100%) |
+| Oferta fixa (terra) | 1,0 | 0 | Produtor (100%) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quem tem menos alternativas (mais inelástico) não consegue "escapar" do imposto — acaba absorvendo a maior parte da cunha.
+:::
+
+## Preço Máximo (Teto) {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+
+<div class="graph-slider-row">
+<div id="graph-a20-ceiling" style="width:620px;height:420px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a20-ceiling', {
+    boundingbox: [-1, 16, 16, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slCeil = brd.create('slider', [[2, 15], [7, 15], [2, 5, 12]], {
+    name: 'P_{teto}',
+    snapWidth: 0.5,
+    id: 'sl-a20-ceil'
+  });
+
+  // Demand: P = 14 - Q  =>  Qd = 14 - P
+  // Supply: P = 2 + Q   =>  Qs = P - 2
+  // Equilibrium: Q*=6, P*=8
+
+  // Demand curve
+  brd.create('functiongraph', [function(Q) {
+    return 14 - Q;
+  }, 0, 14], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 2, 'D'], { fontSize: 13, color: '#1565c0' });
+
+  // Supply curve
+  brd.create('functiongraph', [function(Q) {
+    return 2 + Q;
+  }, 0, 13], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  brd.create('text', [12.5, 14.8, 'S'], { fontSize: 13, color: '#C8102E' });
+
+  // Price ceiling line
+  brd.create('functiongraph', [function(Q) {
+    return slCeil.Value();
+  }, 0, 15], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  brd.create('text', [13, function() { return slCeil.Value() + 0.5; }, 'Teto'], {
+    fontSize: 12, color: '#ff9800'
+  });
+
+  // Qs at ceiling = max(0, Pceil - 2)
+  // Qd at ceiling = max(0, 14 - Pceil)
+  // Shortage = Qd - Qs (when ceiling < P*)
+
+  // DWL triangle (when binding): area between D and S from Qs to Q*
+  brd.create('polygon', [
+    [function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 6;
+      return Math.max(0, pc - 2);
+    }, function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 8;
+      return pc;
+    }],
+    [6, 8],
+    [function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 6;
+      return Math.max(0, pc - 2);
+    }, function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return 8;
+      var Qs = Math.max(0, pc - 2);
+      return 14 - Qs;
+    }]
+  ], {
+    fillColor: '#f44336', fillOpacity: 0.25,
+    borders: { strokeColor: '#f44336', strokeWidth: 1.5 },
+    vertices: { visible: false }
+  });
+
+  // Shortage arrow
+  brd.create('arrow', [
+    [function() { var pc = slCeil.Value(); return Math.max(0, pc - 2); },
+     function() { return slCeil.Value() - 0.6; }],
+    [function() { var pc = slCeil.Value(); return 14 - pc; },
+     function() { return slCeil.Value() - 0.6; }]
+  ], {
+    strokeColor: '#9c27b0', strokeWidth: 2,
+    visible: function() { return slCeil.Value() < 8; }
+  });
+
+  brd.create('text', [
+    function() {
+      var pc = slCeil.Value();
+      var Qs = Math.max(0, pc - 2);
+      var Qd = 14 - pc;
+      return (Qs + Qd) / 2;
+    },
+    function() { return slCeil.Value() - 1.2; },
+    function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return '';
+      var Qs = Math.max(0, pc - 2);
+      var Qd = 14 - pc;
+      return 'Escassez=' + (Qd - Qs).toFixed(1);
+    }
+  ], { fontSize: 11, color: '#9c27b0' });
+
+  // Equilibrium point
+  brd.create('point', [6, 8], {
+    name: 'E*', size: 3, color: '#333',
+    label: { offset: [8, 8], fontSize: 12 }
+  });
+
+  // DWL label
+  brd.create('text', [
+    function() {
+      var pc = slCeil.Value();
+      var Qs = Math.max(0, pc - 2);
+      return Qs + 1.5;
+    },
+    function() {
+      var pc = slCeil.Value();
+      return pc + 2;
+    },
+    function() {
+      var pc = slCeil.Value();
+      if (pc >= 8) return '';
+      var Qs = Math.max(0, pc - 2);
+      var dQ = 6 - Qs;
+      var dP = 8 - pc;
+      return 'DWL';
+    }
+  ], { fontSize: 12, color: '#f44336' });
+})();
+</script>
+
+:::
+::: {.column width="45%"}
+
+Um **teto de preço** $\bar{P} < P^*$ gera:
+
+1. **Escassez:** $Q^D(\bar{P}) > Q^S(\bar{P})$
+2. **Filas e racionamento** não baseado em preço
+3. **Mercado negro** a preços acima de $P^*$
+4. **Perda de peso morto** (triângulo vermelho)
+
+. . .
+
+Mova o slider para $P_{\text{teto}} < 8$ e observe a escassez crescer.
+
+. . .
+
+:::{.callout-warning title="Caso brasileiro"}
+Tabelamento da gasolina nos anos 1980: filas nos postos, adulteração e mercado paralelo.
+:::
+
+:::
+::::
+
+## Preço Mínimo (Piso)
+
+Um **piso de preço** $\underline{P} > P^*$ gera **excedente de oferta**:
+
+$$Q^S(\underline{P}) > Q^D(\underline{P})$$
+
+. . .
+
+**Consequências:**
+
+1. O governo precisa **comprar o excesso** ou restringir oferta
+2. Gera peso morto + custo fiscal
+3. Beneficia produtores intramarginais às custas dos consumidores
+
+. . .
+
+**Exemplos no Brasil:**
+
+| Política | Mecanismo | Efeito colateral |
+|:--|:--|:--|
+| **Salário mínimo** | Piso no mercado de trabalho | Desemprego entre menos qualificados |
+| **PGPM agrícola** | Governo compra excedente | Estoques públicos, custo fiscal |
+
+. . .
+
+:::{.callout-tip}
+O efeito do salário mínimo depende de quão acima do equilíbrio ele está. Onde o piso não é *binding*, o efeito é neutro.
+:::
+
+## Subsídio: Espelho do Imposto
+
+Um subsídio de $s$ reais por unidade é um "imposto negativo":
+
+$$P_b = P_s - s$$
+
+. . .
+
+O governo paga $s$ por unidade, deslocando efetivamente a oferta **para baixo**:
+
+- Quantidade transacionada **aumenta** acima de $Q^*$
+- Gera **sobreconsumo** (ou sobreprodução)
+- Peso morto: $DWL = \frac{1}{2} \cdot s \cdot \Delta Q$
+- Custo fiscal: $s \times Q_{\text{subsidiado}}$
+
+. . .
+
+**Incidência do subsídio:** segue a mesma lógica — o lado mais inelástico captura maior parcela do benefício.
+
+. . .
+
+:::{.callout-note title="Exemplo"}
+Subsídio à energia elétrica residencial: com demanda inelástica, o subsídio vira "desconto" para o consumidor, sem grande aumento de consumo.
+:::
+
+## Tarifa de Importação
+
+**Modelo de país pequeno:** o preço doméstico é determinado pelo preço mundial.
+
+$$P_{\text{dom}} = P_w + \tau$$
+
+. . .
+
+**Efeitos da tarifa $\tau$:**
+
+- Produção doméstica $\uparrow$ (ineficiente)
+- Consumo doméstico $\downarrow$
+- Importações $\downarrow$
+- Receita do governo: $\tau \times M$ (onde $M$ = importações)
+
+. . .
+
+**Peso morto:** dois triângulos — um de **ineficiência produtiva** (produtores marginais que não deveriam produzir) e outro de **perda de consumo**.
+
+$$DWL = \frac{1}{2}\tau(\Delta Q^S + \Delta Q^D)$$
+
+. . .
+
+:::{.callout-note}
+No Brasil, a TEC (Tarifa Externa Comum) do Mercosul impõe tarifas significativas sobre bens de capital — encarecendo o investimento.
+:::
+
+## Quota de Importação
+
+Uma **quota** limita a quantidade importada a $\bar{M}$ unidades.
+
+. . .
+
+**Diferença crucial em relação à tarifa:**
+
+| Aspecto | Tarifa | Quota |
+|:--|:--|:--|
+| Preço doméstico | $P_w + \tau$ | $P_w + $ "tarifa implícita" |
+| Receita | Governo arrecada $\tau \times M$ | **Renda da quota** vai para importadores licenciados |
+| Ajuste automático | Se $P_w$ cai, importações $\uparrow$ | Quota fixa — sem ajuste |
+
+. . .
+
+A quota é **equivalente em bem-estar** a uma tarifa somente se a renda da quota for capturada pelo governo (via leilão de licenças).
+
+. . .
+
+:::{.callout-warning}
+Quotas são geralmente **piores** que tarifas: a renda da quota frequentemente vira *rent-seeking*, com custo social adicional.
+:::
+
+## Comparação: Imposto vs Quota vs Tarifa
+
+| Critério | Imposto doméstico | Tarifa | Quota |
+|:--|:--:|:--:|:--:|
+| Receita para o governo | Sim | Sim | Não (renda da quota) |
+| Ajuste a choques de oferta | Automático | Automático | Rígida |
+| Transparência | Alta | Alta | Baixa |
+| DWL | 1 triângulo | 2 triângulos | 2 triângulos + rent-seeking |
+| Favorece produtores domésticos | Não diretamente | Sim | Sim |
+
+. . .
+
+:::{.callout-important title="Hierarquia de eficiência"}
+Livre comércio $>$ Tarifa $>$ Quota (sem leilão). Se o objetivo é proteger o produtor doméstico, a tarifa é o **mal menor** em termos de bem-estar.
+:::
+
+## Caso Brasil: ICMS e Distorções {.smaller}
+
+O **ICMS** (Imposto sobre Circulação de Mercadorias e Serviços) é o principal tributo estadual brasileiro.
+
+. . .
+
+**Problemas estruturais:**
+
+| Distorção | Mecanismo | Consequência |
+|:--|:--|:--|
+| **Cumulatividade parcial** | Créditos incompletos na cadeia | Incentivo à verticalização |
+| **Guerra fiscal** | Estados competem com alíquotas menores | Ineficiência locacional |
+| **Alíquotas interestaduais** | 7% ou 12% conforme destino | Complexidade e litígio |
+| **Substituição tributária** | Imposto antecipado com MVA | Distorção de preços relativos |
+
+. . .
+
+**Reforma Tributária (EC 132/2023):**
+
+- Substitui ICMS + ISS pelo **IBS** (Imposto sobre Bens e Serviços)
+- Princípio do destino (fim da guerra fiscal)
+- Não cumulatividade plena
+- Transição: 2026–2033
+
+. . .
+
+:::{.callout-tip}
+A reforma busca reduzir o peso morto do sistema tributário brasileiro, estimado em até **4,8% do PIB** (Banco Mundial, 2021).
+:::
+
+## Exercício: Calculando DWL {.smaller}
+
+**Dados:**
+
+- Demanda: $Q = 100 - 2P$
+- Oferta: $Q = 3P - 20$
+- Imposto: $t = 5$ por unidade
+
+. . .
+
+**Passo 1 — Equilíbrio sem imposto:**
+
+$$100 - 2P = 3P - 20 \implies 5P = 120 \implies P^* = 24, \quad Q^* = 52$$
+
+. . .
+
+**Passo 2 — Equilíbrio com imposto** (cunha: $P_b = P_s + 5$):
+
+$$100 - 2P_b = 3(P_b - 5) - 20 \implies 100 - 2P_b = 3P_b - 35 \implies 5P_b = 135 \implies P_b = 27$$
+
+$$P_s = 22, \quad Q_t = 100 - 2(27) = 46$$
+
+. . .
+
+**Passo 3 — Receita e DWL:**
+
+$$\text{Receita} = t \times Q_t = 5 \times 46 = 230$$
+
+$$DWL = \frac{1}{2} \times t \times \Delta Q = \frac{1}{2} \times 5 \times (52 - 46) = 15$$
+
+## Peer Instruction: Quem Paga o Imposto?
+
+> Um imposto de R\$10 é aplicado sobre um bem. A demanda é muito inelástica ($|\varepsilon_D| = 0{,}2$) e a oferta é muito elástica ($\varepsilon_S = 5{,}0$). Qual é aproximadamente a parcela do imposto paga pelo **consumidor**?
+
+. . .
+
+**(A)** 20% — o consumidor é inelástico, logo paga pouco
+
+**(B)** 50% — o imposto é dividido igualmente
+
+**(C)** 80% — a oferta é elástica, logo o consumidor absorve mais
+
+**(D)** 96% — o lado inelástico arca com quase tudo
+
+. . .
+
+:::{.callout-tip title="Resolução"}
+$$\frac{\text{Parcela do consumidor}}{1} = \frac{\varepsilon_S}{\varepsilon_S + |\varepsilon_D|} = \frac{5{,}0}{5{,}0 + 0{,}2} = \frac{5{,}0}{5{,}2} \approx 0{,}96 = 96\%$$
+
+**Resposta: (D).** A demanda extremamente inelástica faz o consumidor absorver quase toda a cunha tributária.
+:::
+
+## Próxima Aula: Monopólio
+
+**Saímos da concorrência perfeita!**
+
+. . .
+
+Na **Aula 21 — Monopólio**, veremos:
+
+- Por que o monopolista produz **menos** e cobra **mais** que o mercado competitivo?
+- Receita marginal: $RMg = P\left(1 + \frac{1}{\varepsilon_D}\right)$
+- Poder de mercado e o índice de Lerner
+- DWL do monopólio: comparação com o imposto
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Resolva os exercícios do Capítulo 13 (itens 6–10)
+2. Pesquise: quanto o consumidor paga de imposto no seu produto favorito? (use a calculadora do IBPT)
+3. Leia a Seção 15.1 — Monopólio: definição e fontes de poder de mercado
+:::
+
+. . .
+
+> "O sistema tributário ideal é aquele que arrecada o necessário causando o mínimo de distorção nas decisões privadas." — A. C. Pigou

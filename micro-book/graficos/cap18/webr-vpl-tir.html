@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — VPL, TIR e Decisão de Investimento</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# VPL, TIR e Decisao de Investimento
+# Exercicio Resolvido 18.2
+# ============================================
+
+# Paineis solares: I = 200.000, FC = 55.000/ano, 5 anos
+I0 <- 200000
+FC <- 55000
+n <- 5
+r_oport <- 0.12  # custo de oportunidade
+
+cat("====== VPL E TIR ======\n")
+cat(sprintf("Investimento: R$ %s\n", format(I0, big.mark=".")))
+cat(sprintf("Fluxo anual: R$ %s por %d anos\n", format(FC, big.mark="."), n))
+cat(sprintf("Custo de oportunidade: %.0f%%\n\n", r_oport*100))
+
+# Funcao VPL
+VPL <- function(r, FC, n, I0) {
+  -I0 + FC * (1 - (1+r)^(-n)) / r
+}
+
+# --- VPL para varias taxas ---
+cat("--- VPL vs. Taxa de desconto ---\n")
+cat(sprintf("%-10s %-15s %-10s\n", "r (%)", "VPL (R$)", "Decisao"))
+cat(strrep("-", 38), "\n")
+r_tab <- c(0.02, 0.05, 0.08, 0.10, 0.12, 0.15, 0.18, 0.20)
+for (ri in r_tab) {
+  vpl_i <- VPL(ri, FC, n, I0)
+  dec <- ifelse(vpl_i > 0, "Aceitar", ifelse(vpl_i < -1, "Rejeitar", "~Neutro"))
+  cat(sprintf("%-10.0f %-15s %-10s\n", ri*100,
+      format(round(vpl_i), big.mark="."), dec))
+}
+
+# --- TIR (busca numerica) ---
+tir_func <- function(r) VPL(r, FC, n, I0)
+TIR <- uniroot(tir_func, c(0.001, 0.99))$root
+cat(sprintf("\nTIR = %.2f%%\n", TIR*100))
+cat(sprintf("TIR %s r => %s\n\n",
+    ifelse(TIR > r_oport, ">", "<"),
+    ifelse(TIR > r_oport, "ACEITAR", "REJEITAR")))
+
+# --- Contexto Brasil vs. EUA ---
+cat("--- Contexto internacional ---\n")
+vpl_eua <- VPL(0.04, FC, n, I0)
+vpl_br <- VPL(0.08, FC, n, I0)
+cat(sprintf("VPL a 4%% (juro real EUA): R$ %s => ACEITAR\n",
+    format(round(vpl_eua), big.mark=".")))
+cat(sprintf("VPL a 8%% (juro real Brasil): R$ %s => %s\n",
+    format(round(vpl_br), big.mark="."),
+    ifelse(vpl_br > 0, "ACEITAR", "REJEITAR")))
+cat(sprintf("VPL a 12%%: R$ %s => %s\n",
+    format(round(VPL(0.12, FC, n, I0)), big.mark="."),
+    ifelse(VPL(0.12, FC, n, I0) > 0, "ACEITAR", "REJEITAR")))
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+r_seq <- seq(0.01, 0.30, length = 300)
+vpl_seq <- sapply(r_seq, function(r) VPL(r, FC, n, I0))
+
+plot(r_seq * 100, vpl_seq / 1000, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Taxa de desconto (%)",
+     ylab = "VPL (R$ mil)",
+     main = "VPL vs. Taxa de desconto")
+abline(h = 0, col = "#dc3545", lwd = 2, lty = 2)
+abline(v = TIR * 100, col = "#6f42c1", lwd = 2, lty = 3)
+
+# Zonas aceitar/rejeitar
+polygon(c(r_seq[vpl_seq>0]*100, rev(r_seq[vpl_seq>0]*100)),
+        c(vpl_seq[vpl_seq>0]/1000, rep(0, sum(vpl_seq>0))),
+        col = rgb(0.1, 0.6, 0.3, 0.1), border = NA)
+polygon(c(r_seq[vpl_seq<0]*100, rev(r_seq[vpl_seq<0]*100)),
+        c(vpl_seq[vpl_seq<0]/1000, rep(0, sum(vpl_seq<0))),
+        col = rgb(0.85, 0.2, 0.2, 0.1), border = NA)
+
+# TIR
+points(TIR*100, 0, pch = 19, col = "#6f42c1", cex = 2)
+text(TIR*100 + 1.5, 3, paste0("TIR = ", round(TIR*100, 1), "%"),
+     col = "#6f42c1", cex = 0.8, font = 2)
+
+# Marcadores
+points(r_oport*100, VPL(r_oport, FC, n, I0)/1000,
+       pch = 17, col = "#dc3545", cex = 1.5)
+text(r_oport*100 + 1.5, VPL(r_oport, FC, n, I0)/1000,
+     paste0("r=", r_oport*100, "%"),
+     col = "#dc3545", cex = 0.7, font = 2)
+
+text(5, max(vpl_seq)/1000 * 0.6, "ACEITAR",
+     col = "#198754", cex = 1, font = 2)
+text(25, min(vpl_seq)/1000 * 0.4, "REJEITAR",
+     col = "#dc3545", cex = 1, font = 2)
+
+legend("topright",
+       legend = c("VPL(r)", "VPL = 0", "TIR"),
+       col = c("#0d6efd", "#dc3545", "#6f42c1"),
+       lwd = c(3, 2, 2), lty = c(1, 2, 3),
+       cex = 0.65, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

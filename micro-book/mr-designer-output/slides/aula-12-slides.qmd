@@ -1,0 +1,484 @@
+---
+title: "Loterias + Seguro"
+subtitle: "Microeconomia II — Aula 12"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 12"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Diversificação — "Don't Put All Eggs in One Basket"
+
+Considere dois ativos $A$ e $B$ com retornos $\tilde{R}_A$ e $\tilde{R}_B$. Um portfólio com peso $w$ no ativo $A$:
+
+. . .
+
+**Variância do portfólio:**
+
+$$\sigma^2_p = w^2\sigma^2_A + (1-w)^2\sigma^2_B + 2w(1-w)\,\rho\,\sigma_A\sigma_B$$
+
+. . .
+
+Se $\rho < 1$, existe $w^* \in (0,1)$ tal que $\sigma^2_p < \min\{\sigma^2_A, \sigma^2_B\}$.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Diversificação é um "almoço grátis": reduz o risco sem sacrificar retorno esperado, desde que os ativos não sejam perfeitamente correlacionados.
+:::
+
+## Abordagem Estado-Preferência
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Dois estados da natureza:** "acidente" ($A$) e "normal" ($N$), com probabilidades $p$ e $(1-p)$.
+
+- Consumo contingente: $(c_A, c_N)$
+- Utilidade esperada: $p\,u(c_A) + (1-p)\,u(c_N)$
+
+. . .
+
+**Restrição orçamentária no espaço de estados:**
+
+$$\pi_A c_A + \pi_N c_N = W$$
+
+onde $\pi_A, \pi_N$ são os preços dos contratos contingentes.
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Curvas de indiferença** no espaço $(c_A, c_N)$:
+
+$$\text{TMS} = \frac{p\,u'(c_A)}{(1-p)\,u'(c_N)}$$
+
+. . .
+
+**Linha de certeza:** $c_A = c_N$
+
+Sobre a linha de certeza: $\text{TMS} = \dfrac{p}{1-p}$
+
+. . .
+
+> Para avesso ao risco, o ótimo com seguro atuarialmente justo está **sobre a linha de certeza** (cobertura total).
+
+:::
+::::
+
+## Paradoxo de Allais — A Independência Falha?
+
+**Escolha 1:** Prefere A ou B?
+
+| Loteria | Resultado | | |
+|:--|:--:|:--:|:--:|
+| A | R\$ 1M com certeza | | |
+| B | R\$ 5M (10%), R\$ 1M (89%), R\$ 0 (1%) | | |
+
+. . .
+
+**Escolha 2:** Prefere C ou D?
+
+| Loteria | Resultado | | |
+|:--|:--:|:--:|:--:|
+| C | R\$ 1M (11%), R\$ 0 (89%) | | |
+| D | R\$ 5M (10%), R\$ 0 (90%) | | |
+
+. . .
+
+> Maioria escolhe **A** e **D**. Mas $A \succ B$ e $D \succ C$ violam o axioma de independência!
+
+## Paradoxo de Allais — Prova Formal
+
+Se $A \succ B$:
+
+$$u(1M) > 0{,}10\,u(5M) + 0{,}89\,u(1M) + 0{,}01\,u(0)$$
+
+$$\implies 0{,}11\,u(1M) > 0{,}10\,u(5M) + 0{,}01\,u(0)$$
+
+. . .
+
+Se $D \succ C$:
+
+$$0{,}10\,u(5M) + 0{,}90\,u(0) > 0{,}11\,u(1M) + 0{,}89\,u(0)$$
+
+$$\implies 0{,}10\,u(5M) + 0{,}01\,u(0) > 0{,}11\,u(1M)$$
+
+. . .
+
+**Contradição!** As duas desigualdades são incompatíveis.
+
+:::{.callout-tip title="Intuição Econômica"}
+O "efeito certeza" de Allais: as pessoas sobrevalorizam resultados certos em relação a resultados muito prováveis, violando a linearidade nas probabilidades.
+:::
+
+## Teoria da Perspectiva — Função Valor
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Kahneman & Tversky (1979):** as pessoas avaliam **ganhos e perdas** em relação a um ponto de referência, não riqueza total.
+
+. . .
+
+**Função valor $v(x)$:**
+
+- Côncava para ganhos (aversão ao risco)
+- Convexa para perdas (propensão ao risco)
+- Mais íngreme para perdas (**aversão a perdas**)
+
+. . .
+
+$$v(x) = \begin{cases} x^\alpha & \text{se } x \geq 0 \\ -\lambda(-x)^\beta & \text{se } x < 0 \end{cases}$$
+
+com $\lambda \approx 2{,}25$ e $\alpha \approx \beta \approx 0{,}88$.
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Propriedades:**
+
+1. **Dependência de referência** — ganhos e perdas relativos
+2. **Sensibilidade decrescente** — cada real adicional importa menos
+3. **Aversão a perdas** ($\lambda > 1$) — perdas doem mais que ganhos equivalentes
+
+. . .
+
+> "Perder R\$ 100 dói ~2,25x mais do que ganhar R\$ 100 agrada."
+
+:::
+::::
+
+## Ponderação de Probabilidades
+
+Na teoria da perspectiva, as probabilidades são transformadas por uma função peso $\pi(p)$:
+
+. . .
+
+$$V(\mathcal{L}) = \sum_i \pi(p_i) \, v(x_i)$$
+
+. . .
+
+**Padrão empírico de $\pi(p)$:**
+
+- Sobreponderam probabilidades **pequenas** ($\pi(0{,}01) > 0{,}01$)
+- Subponderam probabilidades **moderadas a altas** ($\pi(0{,}90) < 0{,}90$)
+
+. . .
+
+| Fenômeno | Probabilidade | Explicação |
+|:--|:--:|:--|
+| Loteria (compra bilhete) | Pequena de ganhar | Sobrepondera $p$ pequeno × ganho |
+| Seguro (compra apólice) | Pequena de perder | Sobrepondera $p$ pequeno × perda |
+
+## Equilíbrio no Mercado de Seguros
+
+<div id="graph-a12-insmarket" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Carregamento $\theta$: <input type="range" id="sl-a12-loading" min="1.0" max="2.0" value="1.2" step="0.05" oninput="updA12Ins()"> <span id="val-a12-loading">1.20</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a12-insmarket',{
+    boundingbox:[-0.05,1.1,1.15,-0.15], axis:false, showCopyright:false, showNavigation:false
+  });
+  // Axes
+  brd.create('axis',[[0,0],[1,0]],{ticks:{visible:true,minorTicks:0}});
+  brd.create('axis',[[0,0],[0,1]],{ticks:{visible:true,minorTicks:0}});
+  brd.create('text',[1.05,-0.04,'Cobertura q'],{fontSize:13,anchorX:'middle'});
+  brd.create('text',[-0.03,1.05,'Prêmio γ'],{fontSize:13,anchorX:'right'});
+
+  var theta = 1.2;
+  var pLoss = 0.05; // probability of loss
+
+  // Demand curve: willingness to pay decreases with coverage
+  // D(q) = pLoss * (1.5 - q) -- simple linear demand
+  var demandLine = brd.create('functiongraph',[function(q){
+    return pLoss * (1.8 - 1.2*q);
+  },0,1],{strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  // Fair premium line (horizontal)
+  var fairLine = brd.create('functiongraph',[function(q){
+    return pLoss;
+  },0,1],{strokeColor:'#00897b',strokeWidth:2,dash:2,highlight:false});
+
+  // Loaded premium line
+  var loadedLine = brd.create('functiongraph',[function(q){
+    return theta * pLoss;
+  },0,1],{strokeColor:'#C8102E',strokeWidth:2.5,highlight:false});
+
+  // Equilibrium point (loaded)
+  var eqPt = brd.create('point',[
+    function(){ return (1.8 - theta) / 1.2; },
+    function(){ return theta * pLoss; }
+  ],{size:5,fillColor:'#C8102E',strokeColor:'#C8102E',
+    name:'',label:{visible:false}});
+
+  // Equilibrium point (fair)
+  var eqFair = brd.create('point',[
+    function(){ return (1.8 - 1.0) / 1.2; },
+    function(){ return pLoss; }
+  ],{size:4,fillColor:'#00897b',strokeColor:'#00897b',
+    name:'',label:{visible:false}});
+
+  // Labels with +5 offset to avoid overlap
+  var lblDemand = brd.create('text',[0.15,0.1,'Demanda D(q)'],
+    {fontSize:12,color:'#1565c0'});
+  var lblFair = brd.create('text',[0.7,function(){return pLoss+0.015;},'Prêmio justo (γ=p)'],
+    {fontSize:11,color:'#00897b'});
+  var lblLoaded = brd.create('text',[0.7,function(){return theta*pLoss+0.015;},
+    function(){return 'Prêmio carregado (θ='+theta.toFixed(2)+')';}],
+    {fontSize:11,color:'#C8102E'});
+  var lblEq = brd.create('text',[
+    function(){return (1.8-theta)/1.2 + 0.03;},
+    function(){return theta*pLoss - 0.02;},
+    function(){return 'q*='+((1.8-theta)/1.2).toFixed(2);}],
+    {fontSize:11,color:'#C8102E'});
+
+  window.updA12Ins = function(){
+    theta = parseFloat(document.getElementById('sl-a12-loading').value);
+    document.getElementById('val-a12-loading').textContent = theta.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com carregamento, o prêmio sobe e a cobertura ótima cai. Somente com seguro atuarialmente justo o avesso ao risco compra cobertura total.
+:::
+
+## CARA vs. CRRA — Comparação Visual
+
+<div id="graph-a12-cara-crra" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Parâmetro $\gamma$: <input type="range" id="sl-a12-gamma" min="0.5" max="5" value="2" step="0.25" oninput="updA12Cara()"> <span id="val-a12-gamma">2.00</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a12-cara-crra',{
+    boundingbox:[-0.5,2.5,6,-3], axis:true, showCopyright:false, showNavigation:false
+  });
+  var gamma = 2.0;
+
+  // CARA: u(x) = -exp(-a*x), using a = gamma for comparison
+  var caraCurve = brd.create('functiongraph',[function(x){
+    if(x<0.01) return NaN;
+    return -Math.exp(-gamma * x);
+  },0.01,6],{strokeColor:'#C8102E',strokeWidth:2.5,highlight:false});
+
+  // CRRA: u(x) = x^(1-gamma)/(1-gamma) for gamma != 1, ln(x) for gamma==1
+  var crraCurve = brd.create('functiongraph',[function(x){
+    if(x<0.05) return NaN;
+    if(Math.abs(gamma-1)<0.01) return Math.log(x);
+    return (Math.pow(x, 1-gamma))/(1-gamma);
+  },0.05,6],{strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  // Labels offset +5px to avoid overlap with curves
+  brd.create('text',[4.2, function(){return -Math.exp(-gamma*4.2)+0.15;},
+    function(){return 'CARA (a='+gamma.toFixed(2)+')';}],
+    {fontSize:12,color:'#C8102E'});
+  brd.create('text',[4.2, function(){
+    if(Math.abs(gamma-1)<0.01) return Math.log(4.2)+0.15;
+    return Math.pow(4.2,1-gamma)/(1-gamma)+0.15;},
+    function(){return 'CRRA (γ='+gamma.toFixed(2)+')';}],
+    {fontSize:12,color:'#1565c0'});
+
+  window.updA12Cara = function(){
+    gamma = parseFloat(document.getElementById('sl-a12-gamma').value);
+    document.getElementById('val-a12-gamma').textContent = gamma.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+| Família | $u(x)$ | $A(x)$ | $R(x)$ |
+|:--|:--:|:--:|:--:|
+| CARA | $-e^{-ax}$ | $a$ (constante) | $ax$ (crescente) |
+| CRRA | $\frac{x^{1-\gamma}}{1-\gamma}$ | $\gamma/x$ (decrescente) | $\gamma$ (constante) |
+
+> Evidência empírica favorece CRRA com $\gamma \in [1, 5]$ para a maioria das aplicações.
+
+## Jogo de Loterias em Sala
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 12 minutos | **Formato:** Jogo interativo com toda a turma
+:::
+
+. . .
+
+Cada aluno recebe **R\$ 100 fictícios**. Três rodadas revelarão suas preferências sob incerteza.
+
+. . .
+
+**Regras gerais:**
+
+1. Escolhas são individuais e simultâneas (levante o cartão)
+2. Após cada rodada, tabulamos os resultados no quadro
+3. Compararemos as escolhas da turma com as previsões da Utilidade Esperada
+
+. . .
+
+> Lembrem-se: não há resposta certa ou errada — o objetivo é **revelar** suas preferências, não julgar.
+
+## Rodada 1 — Revelando Preferências
+
+Escolha **uma** das três loterias:
+
+| Loteria | Resultado |
+|:--|:--|
+| **A** (arriscada) | R\$ 200 (50%) ou R\$ 0 (50%) |
+| **B** (segura) | R\$ 130 com certeza |
+| **C** (intermediária) | R\$ 300 (30%) ou R\$ 50 (70%) |
+
+. . .
+
+**Valor esperado:** $E[A] = 100$, $E[B] = 130$, $E[C] = 125$.
+
+. . .
+
+**Interpretação:**
+
+- Escolheu A → amante do risco (rejeitou B que tem $E$ maior)
+- Escolheu B → avesso ao risco (preferiu certeza)
+- Escolheu C → avesso, mas tolerante a algum risco
+
+. . .
+
+> Que distribuição a turma observou? Comparar com a "previsão racional" de $B$.
+
+## Rodada 2 — Teste de Allais
+
+Responda às **duas** escolhas sem olhar a resposta do colega:
+
+. . .
+
+**Escolha 1:** A (R\$ 1M certo) ou B (89% R\$ 1M, 10% R\$ 5M, 1% R\$ 0)?
+
+**Escolha 2:** C (11% R\$ 1M, 89% R\$ 0) ou D (10% R\$ 5M, 90% R\$ 0)?
+
+. . .
+
+**Tabulação:**
+
+| Combinação | Consistente com UE? |
+|:--|:--:|
+| A e C | Sim |
+| B e D | Sim |
+| A e D | **Não** (Allais!) |
+| B e C | **Não** (Allais!) |
+
+. . .
+
+> Quantos na turma violaram a independência? Tipicamente 40–60% escolhem A e D.
+
+## Rodada 3 — Leilão pelo Equivalente Certo
+
+**Loteria em leilão:** R\$ 200 (50%) ou R\$ 0 (50%). $E[\mathcal{L}] = 100$.
+
+. . .
+
+Cada aluno escreve o **máximo que pagaria** por essa loteria (seu equivalente certo revelado).
+
+. . .
+
+**Mecanismo de Vickrey (segundo preço):**
+
+1. O maior lance **vence** o direito de jogar a loteria
+2. O vencedor paga o **segundo maior** lance
+3. A estratégia dominante é reportar o verdadeiro EC
+
+. . .
+
+**Análise dos resultados:**
+
+- $EC < 100$ → avesso ao risco (prêmio de risco positivo)
+- $EC = 100$ → neutro ao risco
+- $EC > 100$ → amante do risco
+
+. . .
+
+> Construiremos um histograma dos ECs da turma — espera-se média abaixo de R\$ 100.
+
+## Design de Seguro — PBL
+
+:::{.callout-tip title="Exercício em duplas"}
+**Tempo:** 15 minutos | **Formato:** Aprendizagem Baseada em Problemas (grupos de 4)
+:::
+
+. . .
+
+**Cenário:** Vocês são a equipe atuarial de uma seguradora agrícola. Dados:
+
+- 10.000 agricultores, probabilidade de quebra de safra: $p = 0{,}08$
+- Perda média: R\$ 50.000
+- Custo administrativo: 12% do prêmio
+- Agricultores têm $u(x) = \ln(x)$ e riqueza R\$ 300.000
+
+. . .
+
+**Tarefas:**
+
+1. Calcule o prêmio atuarialmente justo e o prêmio com carregamento
+2. Determine a cobertura ótima dado o prêmio carregado
+3. Proponha uma apólice com franquia — como ela mitiga o risco moral?
+4. Apresentem a apólice final em 2 minutos para a turma
+
+## Debate — Somos Racionais?
+
+:::{.callout-tip title="Peer Instruction"}
+**Tempo:** 10 minutos | **Formato:** Debate estruturado
+:::
+
+. . .
+
+**Grupo A — Defende a Utilidade Esperada:**
+
+- Axiomas são normativamente razoáveis
+- Violações desaparecem com aprendizado e experiência
+- Mercados financeiros se aproximam da racionalidade
+
+. . .
+
+**Grupo B — Defende a Teoria da Perspectiva:**
+
+- Evidência experimental robusta (Allais, framing effects)
+- Aversão a perdas explica fenômenos reais (equity premium puzzle)
+- Racionalidade limitada é a norma, não a exceção
+
+. . .
+
+> Após 4 min por lado + 2 min de réplicas, a turma vota: qual teoria é mais **útil**?
+
+## Próxima Aula
+
+**Aula 13 — Função de Produção**
+
+. . .
+
+- Função de produção e isoquantas
+- Produto marginal e rendimentos de escala
+- Custos de curto e longo prazo
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise a analogia entre **isoquantas** (produção) e **curvas de indiferença** (consumo). A matemática da otimização é a mesma — o que muda é a interpretação econômica.
+:::

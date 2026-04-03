@@ -1,0 +1,529 @@
+---
+title: "Função de Produção e Tecnologia"
+subtitle: "Microeconomia II — Aula 13"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 13"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Da Teoria do Consumidor à Teoria da Firma
+
+A Teoria da Firma é um **espelho** da Teoria do Consumidor:
+
+| Consumidor | Firma |
+|:--|:--|
+| Utilidade $u(x_1, x_2)$ | Produção $q = f(K, L)$ |
+| Restrição orçamentária | Restrição de isocusto |
+| Curva de indiferença | Isoquanta |
+| TMS | TMST |
+| Maximiza utilidade | Minimiza custo (ou maximiza produto) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A matemática da otimização é a mesma — tangência entre curva de nível e restrição linear. O que muda é a **interpretação econômica**: preferências viram tecnologia, preços de bens viram preços de insumos.
+:::
+
+## Função de Produção: Definição
+
+A **função de produção** mapeia insumos no produto máximo tecnicamente viável:
+
+$$q = f(K, L)$$
+
+. . .
+
+**Propriedades usuais:**
+
+- $f(0, 0) = 0$ — sem insumos, sem produto
+- $f$ é crescente em cada insumo (monotonicidade)
+- $f$ é contínua e (ao menos duas vezes) diferenciável
+
+. . .
+
+**Conjunto de produção (technology set):**
+
+$$Y = \{(K, L, q) : 0 \leq q \leq f(K, L)\}$$
+
+A função de produção descreve a **fronteira eficiente** deste conjunto — a quantidade máxima de produto para cada combinação de insumos.
+
+## Produto Marginal e Produto Médio
+
+**Produto Marginal do Trabalho:**
+
+$$PMg_L = \frac{\partial f(K, L)}{\partial L}$$
+
+**Produto Médio do Trabalho:**
+
+$$PMe_L = \frac{f(K, L)}{L}$$
+
+. . .
+
+**Relação fundamental:**
+
+$$\frac{d\,PMe_L}{dL} = \frac{PMg_L - PMe_L}{L}$$
+
+. . .
+
+| Condição | Consequência |
+|:--|:--|
+| $PMg_L > PMe_L$ | $PMe_L$ está **subindo** |
+| $PMg_L = PMe_L$ | $PMe_L$ está no **máximo** |
+| $PMg_L < PMe_L$ | $PMe_L$ está **caindo** |
+
+> **Analogia:** se sua nota na próxima prova (marginal) for maior que sua média, a média sobe.
+
+## Lei dos Rendimentos Marginais Decrescentes
+
+> Mantendo os demais insumos fixos, aumentos sucessivos de um insumo variável **eventualmente** geram acréscimos decrescentes de produto.
+
+$$\frac{\partial^2 f}{\partial L^2} < 0 \quad \text{(a partir de certo ponto)}$$
+
+. . .
+
+**Exemplos:**
+
+- Mais trabalhadores numa fábrica com máquinas fixas: inicialmente produtividade sobe (especialização), depois cai (superlotação)
+- Mais fertilizante numa área fixa de terra: rendimento cresce a taxas decrescentes
+
+. . .
+
+**Atenção — o que a lei NÃO diz:**
+
+- Não diz que $PMg_L$ é **sempre** decrescente (pode crescer inicialmente)
+- Não se aplica quando **todos** os insumos variam proporcionalmente (isso é rendimentos de escala)
+- É uma regularidade empírica, não um teorema matemático
+
+## Isoquantas
+
+A **isoquanta** é o conjunto de combinações $(K, L)$ que produzem o mesmo nível de produto $\bar{q}$:
+
+$$\{(K, L) : f(K, L) = \bar{q}\}$$
+
+<div class="graph-slider-row">
+<div id="graph-a13-isoquant" style="width:700px;height:370px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-isoquant', {
+    boundingbox: [0, 12, 12, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAlpha = brd.create('slider', [[1.5, 11], [5, 11], [0.1, 0.5, 0.9]], {
+    name: '\\alpha',
+    snapWidth: 0.05,
+    id: 'sl-a13-alpha'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var a = slAlpha.Value();
+      if (L < 0.15) return NaN;
+      return Math.pow(qVal / Math.pow(L, 1 - a), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      return Lpos;
+    }, function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, 1 - a), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+})();
+</script>
+
+. . .
+
+Mova o slider $\alpha$ e observe: quanto maior $\alpha$ (capital-intensivo), mais **verticais** as isoquantas; quanto menor, mais horizontais (trabalho-intensivo).
+
+## Taxa Marginal de Substituição Técnica (TMST)
+
+A **TMST** mede a taxa à qual a firma pode substituir capital por trabalho mantendo o produto constante:
+
+$$TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q=\bar{q}} = \frac{PMg_L}{PMg_K}$$
+
+. . .
+
+**Derivação:** sobre a isoquanta, $dq = 0$:
+
+$$df = PMg_L \, dL + PMg_K \, dK = 0 \implies \frac{dK}{dL} = -\frac{PMg_L}{PMg_K}$$
+
+. . .
+
+**Propriedades:**
+
+- **Decrescente** ao longo da isoquanta (convexidade estrita)
+- Reflete a **substituibilidade** entre insumos
+- Análoga à TMS do consumidor (onde $TMS = UMg_1/UMg_2$)
+
+## Cobb-Douglas na Produção
+
+A função **Cobb-Douglas** é o caso mais usado:
+
+$$q = A K^\alpha L^\beta$$
+
+. . .
+
+**TMST da Cobb-Douglas:**
+
+$$TMST_{L,K} = \frac{PMg_L}{PMg_K} = \frac{\beta}{\alpha} \cdot \frac{K}{L}$$
+
+. . .
+
+**Propriedades importantes:**
+
+- Elasticidade de substituição: $\sigma = 1$ (sempre)
+- Rendimentos de escala: $\alpha + \beta$ (soma dos expoentes)
+- Participação dos fatores: se mercados são competitivos, $\alpha$ = participação do capital na renda, $\beta$ = participação do trabalho
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na Cobb-Douglas, a TMST depende apenas da **razão** $K/L$, não do nível absoluto. Ao longo de qualquer raio partindo da origem, a inclinação da isoquanta é constante — por isso a elasticidade de substituição é unitária.
+:::
+
+## Rendimentos de Escala
+
+O que acontece quando **todos** os insumos variam **proporcionalmente**?
+
+$$f(tK, tL) \text{ vs. } t \cdot f(K, L), \quad t > 1$$
+
+<div class="graph-slider-row">
+<div id="graph-a13-returns" style="width:700px;height:370px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-returns', {
+    boundingbox: [0, 14, 14, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAB = brd.create('slider', [[2, 13], [6, 13], [0.5, 1.0, 1.5]], {
+    name: '\\alpha+\\beta',
+    snapWidth: 0.05,
+    id: 'sl-a13-ab'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var ab = slAB.Value();
+      if (L < 0.15) return NaN;
+      var a = ab / 2;
+      var b = ab / 2;
+      return Math.pow(qVal / Math.pow(L, b), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var Lpos = 2.5 + idx * 1.0;
+      return Lpos;
+    }, function() {
+      var ab = slAB.Value();
+      var a = ab / 2;
+      var b = ab / 2;
+      var Lpos = 2.5 + idx * 1.0;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, b), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+
+  // Ray from origin to show scaling
+  brd.create('line', [[0,0],[1,1]], {
+    strokeColor: '#999',
+    strokeWidth: 1,
+    dash: 2,
+    straightFirst: false,
+    straightLast: true
+  });
+
+  brd.create('text', [8, 12.2, function() {
+    var ab = slAB.Value();
+    if (ab > 1.02) return 'IRS — isoquantas se aproximam';
+    if (ab < 0.98) return 'DRS — isoquantas se afastam';
+    return 'CRS — espaçamento constante';
+  }], { fontSize: 13, color: '#333' });
+})();
+</script>
+
+. . .
+
+Observe: com $\alpha+\beta > 1$ (IRS), as isoquantas ficam **mais próximas**; com $\alpha+\beta < 1$ (DRS), ficam **mais distantes**.
+
+## Classificação: Constantes, Crescentes, Decrescentes
+
+Para a Cobb-Douglas $q = AK^\alpha L^\beta$:
+
+$$f(tK, tL) = A(tK)^\alpha(tL)^\beta = t^{\alpha+\beta} \cdot AK^\alpha L^\beta = t^{\alpha+\beta} \cdot f(K,L)$$
+
+. . .
+
+| Tipo | Condição | Dobrar insumos... | Fonte econômica |
+|:--|:--:|:--|:--|
+| **CRS** | $\alpha+\beta = 1$ | ...dobra o produto | Replicação |
+| **IRS** | $\alpha+\beta > 1$ | ...mais que dobra | Especialização, indivisibilidades |
+| **DRS** | $\alpha+\beta < 1$ | ...menos que dobra | Problemas de coordenação |
+
+. . .
+
+**Teste geral** (não restrito a Cobb-Douglas):
+
+$$f(tK, tL) = t^k \cdot f(K, L) \implies \text{homogênea de grau } k$$
+
+- $k > 1$: IRS
+- $k = 1$: CRS
+- $k < 1$: DRS
+
+## Elasticidade de Substituição
+
+A **elasticidade de substituição** mede quão facilmente a firma troca insumos ao longo da isoquanta:
+
+$$\sigma = \frac{d\ln(K/L)}{d\ln(TMST_{L,K})}$$
+
+. . .
+
+**Interpretação geométrica:** $\sigma$ mede a **curvatura** da isoquanta.
+
+| $\sigma$ | Forma da isoquanta | Exemplo |
+|:--:|:--|:--|
+| $\sigma \to \infty$ | Reta (substitutos perfeitos) | $q = aK + bL$ |
+| $\sigma = 1$ | Cobb-Douglas (curvatura intermediária) | $q = AK^\alpha L^\beta$ |
+| $\sigma \to 0$ | "L" (complementos perfeitos) | $q = \min\{aK, bL\}$ |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+$\sigma$ determina como a firma responde a mudanças nos **preços relativos** dos insumos. Se $\sigma$ é alto, um aumento no salário faz a firma substituir bastante trabalho por capital. Se $\sigma$ é baixo, a firma tem pouca margem de manobra.
+:::
+
+## Curto Prazo vs Longo Prazo
+
+| | Curto Prazo (CP) | Longo Prazo (LP) |
+|:--|:--|:--|
+| **Capital** | Fixo: $\bar{K}$ | Variável |
+| **Trabalho** | Variável | Variável |
+| **Função** | $q = f(\bar{K}, L)$ | $q = f(K, L)$ |
+
+. . .
+
+**No curto prazo** temos uma função de **um** insumo variável:
+
+$$q = f(\bar{K}, L) \equiv g(L)$$
+
+. . .
+
+**Definições no CP:**
+
+- **Produto Total (PT):** $q = g(L)$
+- **Produto Marginal:** $PMg_L = g'(L)$
+- **Produto Médio:** $PMe_L = g(L)/L$
+
+> O longo prazo não é um período de tempo fixo — é o horizonte no qual **todos** os insumos são ajustáveis.
+
+## Produto Total, Médio e Marginal no CP
+
+Considere $q = AL^2(60 - L)$ com $A > 0$ (válida para $0 < L < 60$):
+
+<div class="graph-slider-row">
+<div id="graph-a13-tpapmp" style="width:700px;height:370px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-tpapmp', {
+    boundingbox: [-2, 110, 55, -40],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'q', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slA = brd.create('slider', [[5, 105], [20, 105], [0.005, 0.01, 0.02]], {
+    name: 'A',
+    snapWidth: 0.001,
+    id: 'sl-a13-A'
+  });
+
+  // TP: q = A * L^2 * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * L * (60 - L) / 100;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 42 * 18 / 100 + 5;
+  }, 'PT'], { fontSize: 12, color: '#1565c0' });
+
+  // AP: q/L = A * L * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0.5 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * (60 - L) / 2;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 2 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 18 / 2 + 5;
+  }, 'PMe'], { fontSize: 12, color: '#00897b' });
+
+  // MP: dq/dL = A * (120L - 3L^2)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * (120 * L - 3 * L * L) / 2;
+  }], { strokeColor: '#C8102E', strokeWidth: 2.5, dash: 3 });
+
+  brd.create('text', [25, function() {
+    var A = slA.Value();
+    return A * (120 * 25 - 3 * 625) / 2 + 5;
+  }, 'PMg'], { fontSize: 12, color: '#C8102E' });
+
+  // Zero line
+  brd.create('line', [[0,0],[1,0]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 4,
+    straightFirst: true, straightLast: true, fixed: true
+  });
+
+  // Stage labels
+  brd.create('text', [8, -15, 'I'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [25, -15, 'II'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [44, -15, 'III'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+
+  // Stage boundary: PMg = PMe at L = 30
+  brd.create('line', [[30, -40],[30, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+
+  // Stage boundary: PMg = 0 at L = 40
+  brd.create('line', [[40, -40],[40, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+})();
+</script>
+
+. . .
+
+As curvas de PMg e PMe se cruzam no **máximo** do PMe. O PMg cruza zero no **máximo** do PT.
+
+## Estágios da Produção
+
+Os **três estágios** dividem a produção de curto prazo:
+
+| Estágio | Condição | Característica |
+|:--:|:--|:--|
+| **I** | $PMg_L > PMe_L > 0$ | PMe ainda subindo — insumo fixo subutilizado |
+| **II** | $PMe_L > PMg_L > 0$ | Região **eficiente** — produção racional |
+| **III** | $PMg_L < 0$ | Produto total **caindo** — excesso de insumo variável |
+
+. . .
+
+**Por que a firma opera no Estágio II?**
+
+- No Estágio I, contratar mais $L$ eleva a produtividade média — ainda compensa
+- No Estágio III, contratar mais $L$ **reduz** o produto total — irracional
+- O ponto ótimo exato no Estágio II depende dos **preços** relativos (veremos em custos)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Os estágios I e III são "eliminados" pela lógica econômica. No I, a firma sempre ganha adicionando trabalho; no III, ela ganha **reduzindo** trabalho. Só no Estágio II existe um **trade-off** genuíno.
+:::
+
+## Progresso Tecnológico
+
+O progresso técnico desloca a função de produção **para cima**: mais produto com os mesmos insumos.
+
+$$q_t = A(t) \cdot f(K, L), \quad A(t) \text{ crescente — Produtividade Total dos Fatores (PTF)}$$
+
+. . .
+
+**Classificação de Hicks:**
+
+- **Neutro:** não altera a razão $K/L$ ótima para dado $w/r$ — isoquantas se contraem homoteticamente
+- **Poupador de trabalho:** aumenta $PMg_K$ relativamente — firma substitui $L$ por $K$
+- **Poupador de capital:** aumenta $PMg_L$ relativamente — firma substitui $K$ por $L$
+
+. . .
+
+**Resíduo de Solow:**
+
+$$\Delta \ln q = \alpha \, \Delta \ln K + (1-\alpha) \, \Delta \ln L + \underbrace{\Delta \ln A}_{\text{resíduo}}$$
+
+O resíduo captura tudo que **não é explicado** pelo aumento dos insumos — é a "medida da nossa ignorância" (Abramovitz).
+
+## Próxima Aula
+
+**Aula 14 — Lab Isoquantas e Funções de Produção**
+
+. . .
+
+- Exploração interativa de funções Cobb-Douglas e CES
+- Jigsaw: cada grupo analisa uma função de produção diferente
+- Peer Instruction: rendimentos crescentes implicam monopólio natural?
+
+. . .
+
+**Preparação:**
+
+- Revisar propriedades da Cobb-Douglas ($\alpha$, $\beta$, $\sigma$)
+- Pensar: por que diferentes indústrias usam diferentes combinações de $K$ e $L$?
+- Trazer calculadora ou dispositivo com acesso à internet
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A teoria da produção que vimos hoje é a base de **tudo** que vem a seguir: custos, oferta, equilíbrio competitivo, poder de mercado. Dominar isoquantas e rendimentos de escala agora economiza muito esforço depois.
+:::

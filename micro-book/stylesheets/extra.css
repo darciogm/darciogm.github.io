@@ -201,6 +201,21 @@ code, pre, kbd, .highlight {
   border-left: 4px solid #009c3b;
 }
 
+/* Classroom — Atividades de aprendizagem ativa e experimentos de sala */
+.md-typeset .admonition.classroom,
+.md-typeset details.classroom {
+  border-color: #7B1FA2;
+}
+.md-typeset .classroom > .admonition-title,
+.md-typeset .classroom > summary {
+  background-color: rgba(123, 31, 162, 0.1);
+  color: #7B1FA2;
+}
+.md-typeset .classroom > .admonition-title::before,
+.md-typeset .classroom > summary::before {
+  content: "🧪 ";
+}
+
 /* Box Mundo — Casos aplicados internacionais (EUA, Europa, Ásia, etc.) */
 .md-typeset .admonition.box-mundo,
 .md-typeset details.box-mundo {

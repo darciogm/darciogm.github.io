@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Modelo Trabalho-Lazer com Cobb-Douglas</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Modelo Trabalho-Lazer: Cobb-Douglas
+# Exercicio Resolvido 17.1
+# ============================================
+
+alpha <- 0.5   # peso do consumo
+TT <- 16       # dotacao de tempo (horas)
+V <- 32        # renda nao salarial
+
+cat("====== MODELO TRABALHO-LAZER ======\n")
+cat("U(C,L) = C^alpha * L^(1-alpha)\n")
+cat("alpha =", alpha, "  T =", TT, "  V =", V, "\n\n")
+
+# Demandas marshallianas (Cobb-Douglas):
+# L*(w) = (1-alpha)*(wT + V) / w
+# h*(w) = T - L*(w) = alpha*T - (1-alpha)*V/w
+# C*(w) = alpha*(wT + V)
+
+# --- Salario de reserva ---
+# h* > 0 => alpha*T - (1-alpha)*V/w > 0
+# => w > (1-alpha)*V / (alpha*T)
+w_R <- (1 - alpha) * V / (alpha * TT)
+cat("Salario de reserva: w_R =", w_R, "\n\n")
+
+# --- Tabela para varios salarios ---
+w_vals <- c(1, 2, 3, 4, 6, 8, 10, 15, 20)
+cat(sprintf("%-6s %-8s %-8s %-8s %-8s\n",
+    "w", "L*", "h*", "C*", "Renda"))
+cat(strrep("-", 42), "\n")
+for (w in w_vals) {
+  L_star <- (1-alpha) * (w*TT + V) / w
+  h_star <- max(TT - L_star, 0)
+  C_star <- alpha * (w*TT + V)
+  renda <- w * h_star + V
+  if (h_star > 0) {
+    cat(sprintf("%-6.0f %-8.2f %-8.2f %-8.1f %-8.1f\n",
+        w, L_star, h_star, C_star, renda))
+  } else {
+    cat(sprintf("%-6.0f %-8s %-8s %-8.1f %-8.1f\n",
+        w, "16.00", "0.00", V, V))
+  }
+}
+
+cat(sprintf("\ndh*/dw = (1-alpha)*V / w^2 = %.4f (em w=4)\n",
+    (1-alpha)*V / 4^2))
+cat("Oferta sempre positivamente inclinada (sem backward-bending)\n")
+cat("Com V=0: h* = alpha*T =", alpha*TT, "(nao depende de w)\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Escolha otima no espaco (L, C)
+w_ex <- 4
+L_opt <- (1-alpha)*(w_ex*TT + V)/w_ex
+C_opt <- alpha*(w_ex*TT + V)
+M_star <- w_ex*TT + V
+
+# Restricao orcamentaria
+L_seq <- seq(0, TT, length=200)
+C_reta <- M_star - w_ex * L_seq
+
+plot(L_seq, C_reta, type="l", lwd=3, col="#0d6efd",
+     xlim=c(0, TT+1), ylim=c(0, M_star+10),
+     xlab="Lazer (L)", ylab="Consumo (C)",
+     main=paste0("Escolha otima (w=", w_ex, ")"))
+
+# Curva de indiferenca pelo ponto otimo
+U_opt <- C_opt^alpha * L_opt^(1-alpha)
+L_ci <- seq(0.5, TT, length=300)
+C_ci <- (U_opt / L_ci^(1-alpha))^(1/alpha)
+valid <- C_ci <= M_star * 1.2
+lines(L_ci[valid], C_ci[valid], lwd=2, col="#6f42c1", lty=2)
+
+points(L_opt, C_opt, pch=19, col="#dc3545", cex=2)
+text(L_opt-0.8, C_opt+4,
+     paste0("(", round(L_opt,1), ", ", round(C_opt,1), ")"),
+     col="#dc3545", cex=0.8, font=2)
+
+# Dotacao
+points(TT, V, pch=17, col="#198754", cex=1.5)
+text(TT-1, V+4, paste0("Dotacao (", TT, ",", V, ")"),
+     col="#198754", cex=0.7, font=2)
+
+legend("topright",
+       legend=c("Restricao orc.", "Curva de indiferenca", "Otimo"),
+       col=c("#0d6efd", "#6f42c1", "#dc3545"),
+       lwd=c(3,2,NA), lty=c(1,2,NA), pch=c(NA,NA,19),
+       cex=0.65, bg="white")
+
+# Painel 2: Oferta de trabalho h*(w)
+w_seq <- seq(0.5, 25, length=300)
+h_seq <- pmax(alpha*TT - (1-alpha)*V/w_seq, 0)
+
+plot(h_seq, w_seq, type="l", lwd=3, col="#dc3545",
+     xlab="Horas trabalhadas (h)", ylab="Salario (w)",
+     main="Oferta de trabalho h*(w)",
+     xlim=c(0, alpha*TT + 1))
+abline(h=w_R, col="#adb5bd", lty=3, lwd=1.5)
+text(2, w_R + 0.5, paste0("w_R = ", w_R), col="#adb5bd",
+     cex=0.75, font=2)
+
+# Caso V=0
+h_V0 <- rep(alpha*TT, length(w_seq))
+lines(h_V0, w_seq, lwd=2, col="#0d6efd", lty=2)
+text(alpha*TT + 0.3, 20, "V=0\n(inelastica)",
+     col="#0d6efd", cex=0.65, font=2)
+
+legend("bottomright",
+       legend=c(paste0("V=", V), "V=0"),
+       col=c("#dc3545", "#0d6efd"),
+       lwd=c(3,2), lty=c(1,2), cex=0.65, bg="white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

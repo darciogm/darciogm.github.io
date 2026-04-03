@@ -1,0 +1,592 @@
+---
+title: "Torneio de Oligopólio + Encerramento"
+subtitle: "Microeconomia II — Aula 24"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Aula 24"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Jogos Repetidos: Formalização
+
+No dilema do prisioneiro de uma rodada, a colusão é instável. Mas e se o jogo se **repete**?
+
+. . .
+
+**Jogo repetido infinitamente** (ou com probabilidade $\delta$ de continuação):
+
+$$V_i = \sum_{t=0}^{\infty} \delta^t \cdot \pi_i^t$$
+
+onde $\delta \in (0,1)$ é o **fator de desconto** (paciência da firma).
+
+. . .
+
+**Ideia central:** a ameaça de **punição futura** pode sustentar a cooperação no presente.
+
+:::{.callout-important title="Distinção crucial"}
+- Jogo de uma rodada: cooperação é irracional
+- Jogo repetido: cooperação pode ser um equilíbrio de Nash, se $\delta$ for alto o suficiente
+:::
+
+## Estratégia Grim Trigger (Gatilho)
+
+**Definição da estratégia:**
+
+> "Coopero enquanto todos cooperam. Se alguém desviar, **puno para sempre** (Nash reversion — Cournot para sempre)."
+
+. . .
+
+**Payoffs no duopólio ($P = 100 - Q$, $c = 10$):**
+
+| Cenário | $\pi_i$ por rodada |
+|:--|:--:|
+| Cooperação (cartel) | $1012{,}5$ |
+| Desvio (uma rodada) | $1139{,}1$ |
+| Punição (Cournot-Nash) | $900$ |
+
+. . .
+
+**O desvio vale a pena?** Depende de $\delta$:
+
+$$\underbrace{1139{,}1 + \frac{\delta}{1-\delta} \cdot 900}_{\text{Desviar}} \leq \underbrace{\frac{1}{1-\delta} \cdot 1012{,}5}_{\text{Cooperar}}$$
+
+. . .
+
+:::{.callout-note}
+O grim trigger é a punição mais severa possível: qualquer desvio resulta em reversão permanente ao equilíbrio de Nash.
+:::
+
+## Condição para Colusão Sustentável
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Simplificando a desigualdade:
+
+$$\delta \geq \delta^* = \frac{\pi^{desvio} - \pi^{cartel}}{\pi^{desvio} - \pi^{Nash}}$$
+
+. . .
+
+**Com nossos números:**
+
+$$\delta^* = \frac{1139{,}1 - 1012{,}5}{1139{,}1 - 900} = \frac{126{,}6}{239{,}1} \approx 0{,}53$$
+
+. . .
+
+:::{.callout-tip}
+Se $\delta > 0{,}53$, a colusão tácita é sustentável como equilíbrio de Nash do jogo repetido.
+:::
+
+:::
+::: {.column width="60%"}
+
+<div id="graph-a24-collusion" style="width:640px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>&delta;: <span id="val-a24-delta">0.50</span></label>
+  <input type="range" id="sl-a24-delta" min="0.1" max="0.99" step="0.01" value="0.5" oninput="window.updateA24Collusion(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a24-collusion', {
+    boundingbox: [-0.05, 1400, 1.05, 600],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: '\u03B4', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'V\u1D62', withLabel: true, label: { position: 'rt', offset: [-30, 0] } }
+    }
+  });
+
+  var piCartel = 1012.5;
+  var piDesvio = 1139.1;
+  var piNash = 900;
+  var deltaStar = (piDesvio - piCartel) / (piDesvio - piNash);
+
+  // Cooperation value: piCartel / (1 - delta)
+  var coopCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piCartel / (1 - d) : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  board.create('text', [0.75, piCartel / (1 - 0.75) + 35, 'V(cooperar)'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // Deviation value: piDesvio + delta/(1-delta)*piNash
+  var devCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piDesvio + (d / (1 - d)) * piNash : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  board.create('text', [0.75, piDesvio + (0.75 / (1 - 0.75)) * piNash + 35, 'V(desviar)'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Punishment value: piNash / (1-delta)
+  var punishCurve = board.create('functiongraph', [
+    function(d) { return (d >= 0.1 && d <= 0.98) ? piNash / (1 - d) : NaN; },
+    0.1, 0.98
+  ], { strokeColor: '#666', strokeWidth: 2, dash: 2 });
+
+  board.create('text', [0.75, piNash / (1 - 0.75) + 35, 'V(punição)'], {
+    fontSize: 11, color: '#666', fixed: true
+  });
+
+  // delta* vertical line
+  var deltaLine = board.create('line', [
+    [deltaStar, 0], [deltaStar, 1]
+  ], { strokeColor: '#388e3c', strokeWidth: 2, dash: 3, straightFirst: true, straightLast: true });
+
+  board.create('text', [deltaStar + 0.02, 680, '\u03B4* \u2248 0.53'], {
+    fontSize: 11, color: '#388e3c', fixed: true
+  });
+
+  // Current delta marker
+  var currentDelta = 0.5;
+
+  var marker = board.create('point', [
+    function() { return currentDelta; },
+    function() { return piCartel / (1 - currentDelta); }
+  ], { name: '', size: 5, fixed: true, color: '#ff8f00', strokeColor: '#ff8f00', fillColor: '#ff8f00' });
+
+  var statusText = board.create('text', [0.12, 1350, function() {
+    if (currentDelta >= deltaStar) {
+      return '\u03B4 = ' + currentDelta.toFixed(2) + ' \u2265 \u03B4* \u2192 Colusão SUSTENTÁVEL';
+    } else {
+      return '\u03B4 = ' + currentDelta.toFixed(2) + ' < \u03B4* \u2192 Colusão INSUSTENTÁVEL';
+    }
+  }], { fontSize: 13, fixed: true, color: function() { return currentDelta >= deltaStar ? '#388e3c' : '#C8102E'; } });
+
+  window.updateA24Collusion = function(val) {
+    currentDelta = parseFloat(val);
+    document.getElementById('val-a24-delta').textContent = currentDelta.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+
+:::
+::::
+
+## Folk Theorem: Muitos Equilíbrios Possíveis
+
+**Teorema Folk:** em jogos repetidos com $\delta$ suficientemente alto, **qualquer** payoff individualmente racional pode ser sustentado como equilíbrio de Nash.
+
+. . .
+
+**Payoff individualmente racional:** qualquer payoff que domine o payoff de minimax (o pior que o rival pode impor).
+
+. . .
+
+**Implicações:**
+
+- Há **infinitos** equilíbrios possíveis (não apenas cartel ou Cournot)
+- Qualquer divisão de mercado entre colusão total e Nash é sustentável
+- A teoria não prevê **qual** equilíbrio será selecionado
+
+. . .
+
+:::{.callout-warning title="Limitação prática"}
+O folk theorem explica por que a colusão **pode** existir, mas não prevê **quando** ocorrerá. Fatores como transparência de preços, número de firmas e homogeneidade do produto importam.
+:::
+
+. . .
+
+**Quanto mais firmas, mais difícil a colusão:** o $\delta^*$ crítico cresce com $N$.
+
+## Concorrência Monopolística
+
+**Meio-termo** entre competição perfeita e monopólio:
+
+. . .
+
+| Característica | Conc. Perfeita | Conc. Monopolística | Monopólio |
+|:--|:--:|:--:|:--:|
+| Firmas | Muitas | Muitas | Uma |
+| Produto | Homogêneo | **Diferenciado** | Único |
+| Entrada | Livre | Livre | Bloqueada |
+| Poder de mercado | Nenhum | Algum | Total |
+
+. . .
+
+**Exemplos:** restaurantes, salões de beleza, apps de delivery, marcas de roupa.
+
+. . .
+
+Cada firma enfrenta uma demanda **negativamente inclinada** (poder de mercado limitado):
+
+$$P_i = P_i(q_i, \mathbf{p}_{-i})$$
+
+:::{.callout-tip title="Intuição Econômica"}
+Diferenciação de produto confere poder de mercado, mas a livre entrada limita os lucros no longo prazo.
+:::
+
+## Longo Prazo: Lucro Zero com $P > CMg$
+
+**Curto prazo:** a firma monopolisticamente competitiva age como monopolista no seu nicho.
+
+$$RMg = CMg \implies P > CMg, \quad \pi > 0$$
+
+. . .
+
+**Longo prazo:** livre entrada atrai concorrentes $\to$ demanda individual se desloca para a esquerda até:
+
+$$\pi = 0 \implies P = CMe$$
+
+. . .
+
+**Mas $P > CMg$!** A firma opera com **capacidade ociosa** — produz menos que a escala eficiente.
+
+. . .
+
+:::{.callout-important title="Custo da diferenciação"}
+O consumidor "paga" pela variedade: preço acima do CMg e firmas operando abaixo da escala ótima. O **excesso de capacidade** é o preço da variedade.
+:::
+
+## Convergência: Cournot $N$ Firmas $\to$ Competição Perfeita
+
+:::: {.columns}
+::: {.column width="40%"}
+
+Com $P = 100 - Q$ e $CMg = 10$:
+
+$$q_i^* = \frac{90}{N+1}, \quad Q^* = \frac{90N}{N+1}$$
+
+$$P^* = \frac{100 + 10N}{N+1}, \quad \pi_i = \left(\frac{90}{N+1}\right)^2$$
+
+. . .
+
+Quando $N \to \infty$:
+
+- $Q^* \to 90 = Q^{CP}$
+- $P^* \to 10 = CMg$
+- $\pi_i \to 0$
+
+. . .
+
+O oligopólio é o **caso geral**; monopólio e CP são **casos limite**.
+
+:::
+::: {.column width="60%"}
+
+<div id="graph-a24-convergence" style="width:640px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>N (firmas): <span id="val-a24-n">2</span></label>
+  <input type="range" id="sl-a24-n" min="1" max="50" step="1" value="2" oninput="window.updateA24Convergence(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a24-convergence', {
+    boundingbox: [-3, 110, 53, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'N', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '', withLabel: false }
+    }
+  });
+
+  var currentN = 2;
+
+  // Competitive price line
+  board.create('functiongraph', [
+    function(n) { return 10; },
+    0, 52
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 3 });
+
+  board.create('text', [42, 13, 'P = CMg = 10'], {
+    fontSize: 10, color: '#999', fixed: true
+  });
+
+  // Competitive quantity line
+  board.create('functiongraph', [
+    function(n) { return 90; },
+    0, 52
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 3 });
+
+  board.create('text', [42, 93, 'Q = 90'], {
+    fontSize: 10, color: '#999', fixed: true
+  });
+
+  // Price curve: P(N) = (100 + 10N)/(N+1)
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? (100 + 10 * n) / (n + 1) : NaN; },
+    1, 50
+  ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+  board.create('text', [8, (100 + 80) / 9 + 5, 'P(N)'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Quantity curve: Q(N) = 90N/(N+1)
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? (90 * n) / (n + 1) : NaN; },
+    1, 50
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  board.create('text', [8, (90 * 8) / 9 + 5, 'Q(N)'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // Profit per firm (scaled to fit): pi_i = (90/(N+1))^2, max at N=1 is 2025, scale by /25
+  board.create('functiongraph', [
+    function(n) { return (n >= 1) ? Math.pow(90 / (n + 1), 2) / 25 : NaN; },
+    1, 50
+  ], { strokeColor: '#388e3c', strokeWidth: 2.5 });
+
+  board.create('text', [5, Math.pow(90 / 6, 2) / 25 + 5, '\u03C0\u1D62 (\u00F725)'], {
+    fontSize: 11, color: '#388e3c', fixed: true
+  });
+
+  // Current N markers
+  var pMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return (100 + 10 * currentN) / (currentN + 1); }
+  ], { name: '', size: 5, fixed: true, color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E' });
+
+  var qMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return (90 * currentN) / (currentN + 1); }
+  ], { name: '', size: 5, fixed: true, color: '#1565c0', strokeColor: '#1565c0', fillColor: '#1565c0' });
+
+  var piMarker = board.create('point', [
+    function() { return currentN; },
+    function() { return Math.pow(90 / (currentN + 1), 2) / 25; }
+  ], { name: '', size: 5, fixed: true, color: '#388e3c', strokeColor: '#388e3c', fillColor: '#388e3c' });
+
+  var infoText = board.create('text', [25, 105, function() {
+    var P = (100 + 10 * currentN) / (currentN + 1);
+    var Q = (90 * currentN) / (currentN + 1);
+    var pi = Math.pow(90 / (currentN + 1), 2);
+    return 'N=' + currentN + '  P=' + P.toFixed(1) + '  Q=' + Q.toFixed(1) + '  \u03C0\u1D62=' + pi.toFixed(0);
+  }], { fontSize: 12, fixed: true, color: '#333' });
+
+  window.updateA24Convergence = function(val) {
+    currentN = parseInt(val);
+    document.getElementById('val-a24-n').textContent = currentN;
+    board.update();
+  };
+})();
+</script>
+
+:::
+::::
+
+## Torneio de Oligopólio: Regras {.smaller}
+
+:::{.callout-tip title="Instruções do Torneio (30 min)"}
+:::
+
+**Setup:** Grupos de 2 formam "firmas" em um duopólio. Demanda: $P = 100 - Q$, $c = 10$.
+
+. . .
+
+**Mecânica — 10 rodadas:**
+
+1. Cada firma escolhe $q_i \in [0, 45]$ **simultaneamente** (escrito em papel)
+2. Professor calcula $Q = q_1 + q_2$, $P = 100 - Q$, $\pi_i = (P - 10) \cdot q_i$
+3. Resultados anunciados publicamente
+
+. . .
+
+**Referências:**
+
+| Cenário | $q_i$ | $P$ | $\pi_i$ |
+|:--|:--:|:--:|:--:|
+| Cartel (cooperação) | 22,5 | 55 | 1012,5 |
+| Cournot (Nash) | 30 | 40 | 900 |
+| Desvio unilateral | 33,75 | 33,75 | 1139,1 |
+
+. . .
+
+:::{.callout-warning}
+Comunicação entre firmas é **proibida** — colusão deve ser tácita!
+:::
+
+## Torneio: Sistema de Pontuação
+
+**Pontuação detalhada:**
+
+| Critério | Peso | Métrica |
+|:--|:--:|:--|
+| Lucro acumulado | 70% | $\sum_{t=1}^{10} \pi_i^t$ |
+| Estabilidade | 15% | $1/\text{Var}(q_i^t)$ — penaliza oscilação |
+| Relatório estratégico | 15% | 2 parágrafos: qual foi sua estratégia e por quê? |
+
+. . .
+
+**Estratégias comuns que vocês podem tentar:**
+
+- **Tit-for-tat:** coopere na rodada 1; depois copie a ação do rival
+- **Grim trigger:** coopere até o primeiro desvio; depois Cournot para sempre
+- **Sempre Cournot:** jogue Nash desde o início (seguro, mas não ótimo)
+- **Teste e ajuste:** desvie uma vez para testar a reação do rival
+
+. . .
+
+:::{.callout-tip title="Dica"}
+O relatório vale 15% — explique sua lógica mesmo se o lucro não foi alto! Bônus para a dupla com maior lucro total acumulado.
+:::
+
+## Torneio: Rodadas 1--5
+
+**Rodadas 1 a 5 — Fase de aprendizado**
+
+. . .
+
+Registrem suas escolhas e resultados na tabela:
+
+| Rodada | $q_1$ | $q_2$ | $Q$ | $P$ | $\pi_1$ | $\pi_2$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 1 |  |  |  |  |  |  |
+| 2 |  |  |  |  |  |  |
+| 3 |  |  |  |  |  |  |
+| 4 |  |  |  |  |  |  |
+| 5 |  |  |  |  |  |  |
+
+. . .
+
+:::{.callout-note}
+**Observe:** o rival está cooperando? Desviando? Ajuste sua estratégia nas próximas rodadas.
+:::
+
+## Torneio: Rodadas 6--10
+
+**Rodadas 6 a 10 — Fase de exploração**
+
+. . .
+
+| Rodada | $q_1$ | $q_2$ | $Q$ | $P$ | $\pi_1$ | $\pi_2$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| 6 |  |  |  |  |  |  |
+| 7 |  |  |  |  |  |  |
+| 8 |  |  |  |  |  |  |
+| 9 |  |  |  |  |  |  |
+| 10 |  |  |  |  |  |  |
+
+. . .
+
+:::{.callout-warning title="Efeito de final de jogo"}
+Nas últimas rodadas, o incentivo a desviar é maior — não há punição futura! Isso é análogo ao **unraveling** do jogo repetido finito.
+:::
+
+## Torneio: Resultados e Análise
+
+**Debrief — perguntas para discussão:**
+
+. . .
+
+1. As firmas conseguiram **sustentar a colusão**? Em quais rodadas?
+2. Houve **desvios**? Como o rival reagiu?
+3. O comportamento mudou nas **últimas rodadas** (efeito de fim de jogo)?
+4. Os resultados se aproximaram da previsão de **Nash (Cournot)**?
+
+. . .
+
+**Comparando teoria vs. prática:**
+
+| Previsão teórica | Resultado observado |
+|:--|:--|
+| Jogo finito $\Rightarrow$ Nash em toda rodada | Muitas duplas cooperam no início |
+| Unraveling nas últimas rodadas | Desvios aumentam perto da rodada 10 |
+| $\pi_i^{Nash} = 900$ por rodada | Lucros médios tipicamente entre 900 e 1012 |
+
+. . .
+
+:::{.callout-important}
+A discrepância entre teoria e prática revela: **racionalidade limitada, reputação e normas sociais** importam!
+:::
+
+## Retrospectiva do Curso: Mapa Conceitual
+
+**O que aprendemos — quatro blocos:**
+
+| Bloco | Capítulos | Conceito central |
+|:--|:--:|:--|
+| Consumidor | 1--6 | Escolha racional sob restrição |
+| Firma | 7--12 | Minimização de custo, oferta |
+| Equilíbrio | 13--14 | Eficiência, bem-estar |
+| Poder de mercado | 15--16 | Monopólio, oligopólio, regulação |
+
+. . .
+
+**Fio condutor:** do agente individual ao mercado, e do mercado eficiente às falhas de mercado.
+
+. . .
+
+**Conexões que atravessam o curso:**
+
+- **Elasticidade** (Cap. 2) $\to$ incidência tributária (Cap. 13) $\to$ índice de Lerner (Cap. 15)
+- **Custos** (Cap. 8--9) $\to$ oferta (Cap. 12) $\to$ entrada/saída LP (Cap. 13) $\to$ monopólio natural (Cap. 15)
+- **Teoria dos jogos** (Cap. 16) $\leftarrow$ maximização com interdependência estratégica
+- **Otimização** $\to$ consumidor (utilidade), firma (lucro), bem-estar (excedente total)
+
+## Próximos Passos: P2, Projeto e Micro III
+
+**Preparação para a P2:**
+
+- Capítulos 13--16 (equilíbrio competitivo, monopólio, oligopólio)
+- Foco em: derivações algébricas, interpretação gráfica, comparação de modelos
+- Dica: refaça os exercícios numéricos das aulas 19--24
+
+. . .
+
+**Projeto final:**
+
+- Análise de um mercado real com dados (CADE, ANP, ANEEL)
+- Identifique a estrutura de mercado e aplique o modelo adequado
+- Entrega: relatório + apresentação (15 min)
+
+. . .
+
+**O que vem em Micro III:**
+
+- Externalidades e bens públicos
+- Informação assimétrica (seleção adversa, risco moral)
+- Mecanismos de incentivo e leilões
+
+. . .
+
+:::{.callout-tip title="Dica de estudo"}
+Revise os gráficos interativos das aulas — a P2 exige interpretação gráfica fluente.
+:::
+
+## Encerramento
+
+. . .
+
+> "All models are wrong, but some are useful."
+> — George Box
+
+. . .
+
+Neste curso, vocês aprenderam a construir, resolver e interpretar modelos que simplificam a realidade para iluminar as forças econômicas fundamentais.
+
+. . .
+
+**O que levam daqui:**
+
+- Uma caixa de ferramentas analítica (otimização, equilíbrio, teoria dos jogos)
+- A habilidade de pensar em **trade-offs** e **incentivos**
+- A humildade de saber que todo modelo tem limites
+
+. . .
+
+:::{.callout-tip title="Mensagem final"}
+A microeconomia não é um conjunto de respostas — é um **modo de pensar**. Usem-no para entender mercados, políticas públicas e as decisões do dia a dia. Boa sorte na P2 e nos próximos passos!
+:::

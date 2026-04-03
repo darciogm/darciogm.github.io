@@ -1,0 +1,613 @@
+---
+title: "Monopólio e Discriminação de Preços"
+subtitle: "Microeconomia II — Aula 21"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 21"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Uber, Spotify, Meia-Entrada: O que têm em comum?
+
+> A Uber cobra mais na chuva. O Spotify oferece plano família. O cinema cobra metade do estudante.
+
+. . .
+
+Todas essas práticas dependem de **poder de precificação** — a capacidade de fixar preço acima do custo marginal.
+
+. . .
+
+**Perguntas da aula:**
+
+- Por que algumas firmas conseguem fazer isso e outras não?
+- Qual é o custo social do monopólio?
+- Como o monopolista decide preço e quantidade?
+
+:::{.callout-tip title="Objetivo da Aula"}
+Compreender a teoria do monopólio puro: decisão ótima, peso morto e estática comparativa — base para discriminação de preços na próxima aula.
+:::
+
+## Monopólio: Definição e Barreiras à Entrada
+
+**Monopólio:** um único vendedor no mercado, sem substitutos próximos.
+
+. . .
+
+**Fontes de poder de monopólio (barreiras à entrada):**
+
+| Tipo de Barreira | Mecanismo | Exemplo |
+|:--|:--|:--|
+| **Legal / Patente** | Governo concede exclusividade | Farmacêuticas (20 anos) |
+| **Tecnológica** | Know-how ou segredo industrial | Intel (litografia avançada) |
+| **Natural** | Economias de escala → CMe sempre decrescente | Distribuição de água |
+| **Estratégica** | Capacidade instalada, preço predatório | Grandes siderúrgicas |
+
+. . .
+
+:::{.callout-important}
+A diferença central: o monopolista é **formador de preço** (*price maker*), não tomador. Ele **escolhe** o ponto na curva de demanda — mas não pode escolher preço e quantidade independentemente.
+:::
+
+## Receita Marginal Menor que o Preço: $RMg < P$
+
+Para vender uma unidade adicional, o monopolista precisa **reduzir o preço de todas as unidades**.
+
+. . .
+
+Se a demanda inversa é $P(Q)$:
+
+$$RT = P(Q) \cdot Q$$
+
+$$RMg = \frac{dRT}{dQ} = P(Q) + Q \cdot \frac{dP}{dQ}$$
+
+. . .
+
+Como $\frac{dP}{dQ} < 0$, temos $\boxed{RMg < P}$.
+
+. . .
+
+**Em termos de elasticidade:**
+
+$$RMg = P\!\left(1 + \frac{1}{\varepsilon_D}\right)$$
+
+onde $\varepsilon_D < 0$ é a elasticidade-preço da demanda.
+
+**Exemplo linear:** Se $P = 20 - 0{,}5Q$, então $RMg = 20 - Q$ — o dobro da inclinação.
+
+## Otimização do Monopolista: $RMg = CMg$
+
+:::: {.columns}
+::: {.column width="40%"}
+
+A firma maximiza lucro onde:
+
+$$RMg(Q^*) = CMg(Q^*)$$
+
+. . .
+
+**Passo a passo:**
+
+1. Derive $RMg$ a partir da demanda
+2. Iguale $RMg = CMg$
+3. Encontre $Q^*$
+4. Substitua na demanda: $P^* = P(Q^*)$
+
+. . .
+
+**Mova o slider** para alterar o nível de $CMg$ e observe como $Q^*$, $P^*$ e o lucro se ajustam.
+
+O retângulo azul claro é o **lucro** e o triângulo vermelho é o **peso morto (DWL)**.
+
+:::
+::: {.column width="60%"}
+
+<div class="graph-slider-row">
+<div id="graph-a21-monopoly" style="width:620px;height:420px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a21-monopoly', {
+    boundingbox: [-2, 24, 44, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* Slider: CMg level (constant MC) */
+  var slMC = brd.create('slider', [[5, 22], [18, 22], [2, 4, 10]], {
+    name: 'CMg',
+    snapWidth: 0.5,
+    id: 'sl-a21-mc'
+  });
+
+  /* Demand: P = 20 - 0.5Q  =>  Q = 40 - 2P */
+  var demandF = function(Q) { return 20 - 0.5 * Q; };
+  /* MR: P = 20 - Q */
+  var mrF = function(Q) { return 20 - Q; };
+
+  /* Demand curve */
+  brd.create('functiongraph', [demandF, 0, 40], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  brd.create('text', [34, function() { return demandF(34) + 1; }, 'D'], {
+    fontSize: 13, color: '#1565c0', anchorX: 'left'
+  });
+
+  /* MR curve */
+  brd.create('functiongraph', [mrF, 0, 20], {
+    strokeColor: '#00897b', strokeWidth: 2.5, dash: 2
+  });
+  brd.create('text', [17, function() { return mrF(17) + 1; }, 'RMg'], {
+    fontSize: 13, color: '#00897b', anchorX: 'left'
+  });
+
+  /* MC curve (horizontal) */
+  brd.create('functiongraph', [function() { return slMC.Value(); }, 0, 42], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  brd.create('text', [36, function() { return slMC.Value() + 1; }, 'CMg'], {
+    fontSize: 13, color: '#C8102E', anchorX: 'left'
+  });
+
+  /* Optimal Q*: RMg = CMg  =>  20 - Q* = c  =>  Q* = 20 - c */
+  var qStar = function() { return Math.max(20 - slMC.Value(), 0); };
+  var pStar = function() { return demandF(qStar()); };
+  /* Competitive Q: P = CMg  =>  20 - 0.5Qc = c  =>  Qc = 2(20-c) = 40-2c */
+  var qComp = function() { return Math.max(40 - 2 * slMC.Value(), 0); };
+
+  /* Profit rectangle: from 0 to Q*, height from CMg to P* */
+  brd.create('polygon', [
+    [function() { return 0; }, function() { return slMC.Value(); }],
+    [function() { return qStar(); }, function() { return slMC.Value(); }],
+    [function() { return qStar(); }, function() { return pStar(); }],
+    [function() { return 0; }, function() { return pStar(); }]
+  ], {
+    fillColor: '#90caf9', fillOpacity: 0.35,
+    borders: { strokeColor: '#1565c0', strokeWidth: 0, dash: 2 },
+    vertices: { visible: false }
+  });
+
+  /* DWL triangle: vertices at (Q*, P*), (Q*, CMg), (Qc, CMg=Pc) */
+  brd.create('polygon', [
+    [function() { return qStar(); }, function() { return pStar(); }],
+    [function() { return qComp(); }, function() { return slMC.Value(); }],
+    [function() { return qStar(); }, function() { return slMC.Value(); }]
+  ], {
+    fillColor: '#C8102E', fillOpacity: 0.25,
+    borders: { strokeColor: '#C8102E', strokeWidth: 0 },
+    vertices: { visible: false }
+  });
+
+  /* Dashed lines to axes for Q* and P* */
+  brd.create('segment', [
+    [function() { return qStar(); }, 0],
+    [function() { return qStar(); }, function() { return pStar(); }]
+  ], { strokeColor: '#555', dash: 3, strokeWidth: 1 });
+
+  brd.create('segment', [
+    [0, function() { return pStar(); }],
+    [function() { return qStar(); }, function() { return pStar(); }]
+  ], { strokeColor: '#555', dash: 3, strokeWidth: 1 });
+
+  /* Labels for Q* and P* */
+  brd.create('text', [function() { return qStar(); }, -1.2, function() {
+    return 'Q*=' + qStar().toFixed(1);
+  }], { fontSize: 11, color: '#333', anchorX: 'middle' });
+
+  brd.create('text', [-1.8, function() { return pStar(); }, function() {
+    return 'P*=' + pStar().toFixed(1);
+  }], { fontSize: 11, color: '#333', anchorX: 'left' });
+
+  /* Labels for areas */
+  brd.create('text', [function() { return qStar() * 0.4; }, function() {
+    return (pStar() + slMC.Value()) / 2;
+  }, function() {
+    var profit = qStar() * (pStar() - slMC.Value());
+    return '\\pi=' + profit.toFixed(0);
+  }], { fontSize: 12, color: '#1565c0', anchorX: 'middle', useMathJax: false });
+
+  brd.create('text', [function() { return (qStar() + qComp()) / 2 + 1; }, function() {
+    return slMC.Value() + (pStar() - slMC.Value()) * 0.3;
+  }, 'DWL'], { fontSize: 11, color: '#C8102E', anchorX: 'middle' });
+})();
+</script>
+
+:::
+::::
+
+## Índice de Lerner: Medindo Poder de Mercado
+
+O **markup** do monopolista sobre o custo marginal é medido pelo **Índice de Lerner**:
+
+$$L = \frac{P - CMg}{P} = -\frac{1}{\varepsilon_D}$$
+
+. . .
+
+**Interpretação:**
+
+| $|\varepsilon_D|$ | Lerner $L$ | Markup sobre CMg |
+|:--:|:--:|:--|
+| 2 | 0,50 | Preço = 2x o CMg |
+| 5 | 0,20 | Preço = 1,25x o CMg |
+| 10 | 0,10 | Preço $\approx$ CMg |
+| $\infty$ | 0 | Concorrência perfeita |
+
+. . .
+
+:::{.callout-note}
+Quanto mais **inelástica** a demanda, maior o poder de mercado. O Lerner varia de 0 (concorrência perfeita) a 1 (máximo poder).
+:::
+
+## O Monopolista Opera Apenas na Região Elástica
+
+Da condição de maximização e $CMg > 0$:
+
+$$RMg = P\!\left(1 + \frac{1}{\varepsilon_D}\right) = CMg > 0$$
+
+. . .
+
+Como $P > 0$, precisamos:
+
+$$1 + \frac{1}{\varepsilon_D} > 0 \implies \varepsilon_D < -1 \implies |\varepsilon_D| > 1$$
+
+. . .
+
+:::{.callout-important title="Resultado fundamental"}
+O monopolista **nunca** opera na região inelástica da demanda ($|\varepsilon_D| < 1$).
+
+**Prova intuitiva:** na região inelástica, reduzir a quantidade **aumenta** a receita total e **reduz** o custo total simultaneamente. Logo, o lucro sobe — não pode ser ótimo.
+:::
+
+## Peso Morto do Monopólio
+
+Comparado ao equilíbrio competitivo ($P = CMg$), o monopólio gera:
+
+. . .
+
+- **Menos quantidade:** $Q^M < Q^{CP}$
+- **Preço maior:** $P^M > P^{CP}$
+- **Transferência** de excedente do consumidor para lucro do monopolista
+- **Perda líquida (DWL):** transações mutuamente benéficas que deixam de ocorrer
+
+. . .
+
+$$DWL = \int_{Q^M}^{Q^{CP}} \!\big[P^D(Q) - CMg(Q)\big]\,dQ$$
+
+. . .
+
+**Com curvas lineares** ($P = a - bQ$, $CMg$ constante):
+
+$$DWL = \frac{1}{2}(P^M - CMg)(Q^{CP} - Q^M)$$
+
+:::{.callout-warning}
+O DWL mede o **custo social** do poder de mercado — transações destruídas pela restrição de oferta.
+:::
+
+## Comparação: Monopólio vs. Competição Perfeita
+
+| Variável | Competição Perfeita | Monopólio | Comparação |
+|:--|:--:|:--:|:--|
+| Preço | $P^{CP} = CMg$ | $P^M > CMg$ | $P^M > P^{CP}$ |
+| Quantidade | $Q^{CP}$ | $Q^M$ | $Q^M < Q^{CP}$ |
+| Excedente do Consumidor | Máximo | Reduzido | $EC^M < EC^{CP}$ |
+| Excedente do Produtor | Normal | Lucro econômico | $EP^M > EP^{CP}$ |
+| Bem-Estar Total ($W$) | Máximo | Menor | $W^M < W^{CP}$ |
+| Peso Morto | 0 | $> 0$ | Perda líquida |
+
+. . .
+
+:::{.callout-important}
+O monopólio é **ineficiente em Pareto**: existem trocas mutuamente benéficas que não ocorrem. A transferência de EC para o monopolista é uma questão **distributiva**, mas o DWL é uma perda **absoluta** de bem-estar.
+:::
+
+## Estática Comparativa do Monopólio
+
+:::: {.columns}
+::: {.column width="40%"}
+
+**O que acontece quando a demanda se desloca?**
+
+. . .
+
+Se $P = a - 0{,}5Q$, com $CMg = 4$:
+
+$$Q^* = 2(a - 4)/2 = a - 4$$
+$$P^* = (a + 4)/2$$
+
+. . .
+
+**Pass-through:**
+
+$$\frac{\Delta P^*}{\Delta a} = \frac{1}{2}$$
+
+O monopolista repassa apenas **metade** do aumento de demanda para o preço.
+
+. . .
+
+Mova o slider $a$ e observe a variação de $Q^*$ e $P^*$.
+
+:::
+::: {.column width="60%"}
+
+<div class="graph-slider-row">
+<div id="graph-a21-compstatic" style="width:620px;height:420px;margin:0 auto;"></div>
+</div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a21-compstatic', {
+    boundingbox: [-2, 34, 60, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'Q', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'P', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  /* Slider: demand intercept a */
+  var slA = brd.create('slider', [[5, 32], [22, 32], [15, 20, 30]], {
+    name: 'a',
+    snapWidth: 0.5,
+    id: 'sl-a21-a'
+  });
+
+  var mc = 4;
+
+  /* Demand: P = a - 0.5Q */
+  brd.create('functiongraph', [function(Q) {
+    return slA.Value() - 0.5 * Q;
+  }, 0, function() { return 2 * slA.Value(); }], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  brd.create('text', [function() { return 2 * slA.Value() - 4; }, 2, 'D'], {
+    fontSize: 13, color: '#1565c0', anchorX: 'left'
+  });
+
+  /* MR: P = a - Q */
+  brd.create('functiongraph', [function(Q) {
+    return slA.Value() - Q;
+  }, 0, function() { return slA.Value(); }], {
+    strokeColor: '#00897b', strokeWidth: 2.5, dash: 2
+  });
+  brd.create('text', [function() { return slA.Value() - 3; }, 4, 'RMg'], {
+    fontSize: 13, color: '#00897b', anchorX: 'left'
+  });
+
+  /* MC = 4 */
+  brd.create('functiongraph', [function() { return mc; }, 0, 55], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  brd.create('text', [50, mc + 1.5, 'CMg=4'], {
+    fontSize: 13, color: '#C8102E', anchorX: 'left'
+  });
+
+  /* Q* = a - mc,  P* = (a + mc) / 2 */
+  var qStar = function() { return Math.max(slA.Value() - mc, 0); };
+  var pStar = function() { return (slA.Value() + mc) / 2; };
+  var qComp = function() { return Math.max(2 * (slA.Value() - mc), 0); };
+
+  /* Profit rectangle */
+  brd.create('polygon', [
+    [0, mc],
+    [function() { return qStar(); }, mc],
+    [function() { return qStar(); }, function() { return pStar(); }],
+    [0, function() { return pStar(); }]
+  ], {
+    fillColor: '#90caf9', fillOpacity: 0.3,
+    borders: { strokeColor: '#1565c0', strokeWidth: 0 },
+    vertices: { visible: false }
+  });
+
+  /* DWL triangle */
+  brd.create('polygon', [
+    [function() { return qStar(); }, function() { return pStar(); }],
+    [function() { return qComp(); }, mc],
+    [function() { return qStar(); }, mc]
+  ], {
+    fillColor: '#C8102E', fillOpacity: 0.2,
+    borders: { strokeColor: '#C8102E', strokeWidth: 0 },
+    vertices: { visible: false }
+  });
+
+  /* Dashed lines */
+  brd.create('segment', [
+    [function() { return qStar(); }, 0],
+    [function() { return qStar(); }, function() { return pStar(); }]
+  ], { strokeColor: '#555', dash: 3, strokeWidth: 1 });
+
+  brd.create('segment', [
+    [0, function() { return pStar(); }],
+    [function() { return qStar(); }, function() { return pStar(); }]
+  ], { strokeColor: '#555', dash: 3, strokeWidth: 1 });
+
+  /* Labels */
+  brd.create('text', [function() { return qStar(); }, -1.5, function() {
+    return 'Q*=' + qStar().toFixed(1);
+  }], { fontSize: 11, color: '#333', anchorX: 'middle' });
+
+  brd.create('text', [-1.8, function() { return pStar(); }, function() {
+    return 'P*=' + pStar().toFixed(1);
+  }], { fontSize: 11, color: '#333', anchorX: 'left' });
+
+  /* Pass-through annotation */
+  brd.create('text', [35, 28, function() {
+    return 'Pass-through: \\DeltaP/\\Deltaa = 0.5';
+  }], { fontSize: 12, color: '#555', anchorX: 'left' });
+})();
+</script>
+
+:::
+::::
+
+## Imposto sobre o Monopolista
+
+Um imposto específico $t$ por unidade eleva o custo marginal efetivo:
+
+$$CMg_{\text{novo}} = CMg + t$$
+
+. . .
+
+Com demanda linear $P = a - bQ$ e $CMg$ constante:
+
+$$Q^* = \frac{a - (CMg + t)}{2b}, \quad P^* = \frac{a + CMg + t}{2}$$
+
+. . .
+
+**Pass-through do imposto:**
+
+$$\frac{dP^*}{dt} = \frac{1}{2} < 1$$
+
+. . .
+
+:::{.callout-important title="Resultado-chave"}
+Com demanda linear, o monopolista repassa apenas **metade** do imposto ao consumidor (pass-through = 0,5). Isso contrasta com a competição perfeita, onde a repartição depende das elasticidades relativas.
+:::
+
+. . .
+
+> Com demanda convexa (ex: isoelástica), o pass-through pode exceder 1 — o monopolista repassa **mais** que o imposto.
+
+## Exemplo Numérico Completo
+
+**Dados:** $P = 100 - 2Q$, $\quad C(Q) = Q^2 + 20$
+
+. . .
+
+**Receita Marginal:** $RT = 100Q - 2Q^2 \implies RMg = 100 - 4Q$
+
+**Custo Marginal:** $CMg = 2Q$
+
+. . .
+
+**Otimização:** $RMg = CMg \implies 100 - 4Q = 2Q \implies Q^* = \frac{100}{6} \approx 16{,}67$
+
+$$P^* = 100 - 2(16{,}67) = 66{,}67$$
+
+. . .
+
+**Lucro:** $\pi = P^* \cdot Q^* - C(Q^*) = 66{,}67 \times 16{,}67 - (16{,}67^2 + 20) \approx 811{,}1 - 297{,}9 = 813{,}3$
+
+. . .
+
+**Equilíbrio competitivo:** $P = CMg \implies 100 - 2Q = 2Q \implies Q^{CP} = 25$, $P^{CP} = 50$
+
+**DWL:** $= \int_{16{,}67}^{25} [(100 - 2Q) - 2Q]\,dQ = \int_{16{,}67}^{25} (100 - 4Q)\,dQ \approx 138{,}9$
+
+## Monopsônio: O Espelho do Monopólio
+
+**Monopsônio:** um único comprador no mercado (tipicamente de insumo).
+
+. . .
+
+| Monopólio (vendedor) | Monopsônio (comprador) |
+|:--|:--|
+| Demanda negativamente inclinada | Oferta positivamente inclinada |
+| $RMg < P$ | $CMg_L > w$ (custo marginal do trabalho > salário) |
+| Produz menos que competição | **Contrata menos** que competição |
+| $P^M > P^{CP}$ | $w^{Mon} < w^{CP}$ (salário menor) |
+
+. . .
+
+**Analogia:** o monopsonista enfrenta uma oferta crescente de trabalho. Para contratar mais um trabalhador, precisa elevar o salário de **todos** — logo, o custo marginal do trabalho excede o salário.
+
+$$CMg_L = w(L) + L \cdot \frac{dw}{dL} > w(L)$$
+
+. . .
+
+:::{.callout-note}
+O monopsônio gera DWL simétrico ao do monopólio — menos emprego e salários abaixo do nível competitivo.
+:::
+
+## Aplicação: Farmacêuticas e Patentes
+
+A **patente** é um monopólio temporário concedido pelo governo (tipicamente 20 anos).
+
+. . .
+
+**O trade-off Schumpeteriano:**
+
+| Custo (estático) | Benefício (dinâmico) |
+|:--|:--|
+| DWL durante a vigência da patente | Incentivo à inovação e P&D |
+| Preço elevado → acesso reduzido | Novos medicamentos e tecnologias |
+| Transferência de EC para lucro | Recuperação dos custos fixos de pesquisa |
+
+. . .
+
+**Números ilustrativos (setor farmacêutico):**
+
+- Custo médio de desenvolvimento de um novo medicamento: ~US$ 2,6 bilhões
+- Período efetivo de monopólio (após aprovação regulatória): ~10-12 anos
+- Queda de preço após expiração da patente (genéricos): 80-90%
+
+. . .
+
+:::{.callout-warning}
+Sem patentes, o incentivo à inovação colapsa. Com patentes muito longas, o custo social acumulado (DWL) pode superar o benefício. O **prazo ótimo** equilibra esses efeitos.
+:::
+
+## Por que Regular o Monopólio?
+
+**Motivações para regulação:**
+
+. . .
+
+1. **Eficiência:** eliminar ou reduzir o DWL
+2. **Distribuição:** evitar transferências excessivas de EC para o monopolista
+3. **Acesso universal:** bens essenciais (água, energia, saúde)
+
+. . .
+
+**Formas de regulação:**
+
+| Instrumento | Ideia | Problema |
+|:--|:--|:--|
+| Preço = CMg | Eficiência de 1º melhor | Monopólio natural: $CMg < CMe$ → prejuízo |
+| Preço = CMe | Firma não tem prejuízo | Ainda gera DWL (menor) |
+| *Price cap* (RPI-X) | Teto reajustado por inflação menos produtividade | Requer informação do regulador |
+| Leilão de concessão | Competição *ex ante* pelo mercado | Design do leilão é complexo |
+
+. . .
+
+:::{.callout-tip}
+O regulador enfrenta **assimetria de informação**: a firma conhece seus custos melhor que o regulador. Isso gera o problema de *regulatory capture* e ineficiências da regulação.
+:::
+
+## Próxima Aula: Discriminação de Preços e Regulação
+
+**Na Aula 22, veremos:**
+
+- Discriminação de 1o, 2o e 3o graus
+- Tarifa em duas partes e *bundling*
+- Regulação de monopólios naturais: CMg vs. CMe
+- O papel do CADE e a experiência brasileira
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Exercícios do Capítulo 15 (itens 1-6)
+2. Resolva: se $P = 80 - Q$ e $CMg = 10 + Q$, encontre $Q^M$, $P^M$, lucro e DWL
+3. Pesquise: cite 2 monopólios regulados no Brasil e identifique o instrumento de regulação usado
+:::
+
+. . .
+
+> "O monopólio é o grande inimigo da boa gestão." — Adam Smith

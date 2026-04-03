@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="aula-19-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula-19-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula-19-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula-19-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula-19-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula-19-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula-19-slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Insper">
+  <title>Equilíbrio Competitivo e Bem-Estar</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula-19-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula-19-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="aula-19-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula-19-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Equilíbrio Competitivo e Bem-Estar</h1>
+  <p class="subtitle">Microeconomia II — Aula 19</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Insper 
+</div>
+</div>
+</div>
+
+</section>
+<section id="do-agente-individual-ao-mercado" class="slide level2">
+<h2>Do Agente Individual ao Mercado</h2>
+<blockquote>
+<p>Por que o equilíbrio competitivo é tão importante? Porque milhões de decisões descentralizadas produzem um resultado coordenado — sem nenhum planejador central.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Caminho percorrido:</strong></p>
+<ol type="1">
+<li>Consumidor maximiza utilidade → <strong>demanda individual</strong> <span class="math inline">\(q^D_i(P)\)</span></li>
+<li>Firma maximiza lucro → <strong>oferta individual</strong> <span class="math inline">\(q^S_j(P)\)</span></li>
+<li>Somamos <strong>horizontalmente</strong> → demanda e oferta <strong>de mercado</strong></li>
+</ol>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O preço de equilíbrio é o “sinal” que coordena as decisões de todos os agentes. Ninguém precisa conhecer as preferências ou custos de ninguém — o preço transmite a informação relevante.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="oferta-e-demanda-de-mercado" class="slide level2">
+<h2>Oferta e Demanda de Mercado</h2>
+<p><strong>Demanda de mercado</strong> — soma horizontal das demandas individuais:</p>
+<p><span class="math display">\[Q^D(P) = \sum_{i=1}^{n} q_i^D(P)\]</span></p>
+<div class="fragment">
+<p><strong>Oferta de mercado</strong> — soma horizontal das ofertas individuais:</p>
+<p><span class="math display">\[Q^S(P) = \sum_{j=1}^{m} q_j^S(P)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Com <span class="math inline">\(n\)</span> consumidores e <span class="math inline">\(m\)</span> firmas idênticas:</strong></p>
+<p><span class="math display">\[Q^D(P) = n \cdot q^D(P) \qquad Q^S(P) = m \cdot q^S(P)\]</span></p>
+</div>
+<div class="fragment">
+<div title="Cuidado">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Cuidado</strong></p>
+</div>
+<div class="callout-content">
+<p>A soma é <strong>horizontal</strong>: para cada preço fixo, somamos quantidades. Não confunda com soma vertical (usada para bens públicos).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="equilíbrio-definição-e-existência" class="slide level2">
+<h2>Equilíbrio: Definição e Existência</h2>
+<p>O <strong>equilíbrio competitivo</strong> é o par <span class="math inline">\((P^*, Q^*)\)</span> tal que:</p>
+<p><span class="math display">\[Q^D(P^*) = Q^S(P^*) \implies \text{excesso de demanda} = 0\]</span></p>
+<div class="fragment">
+<p><strong>Condições de existência:</strong></p>
+<ul>
+<li>Demanda decrescente e oferta crescente → interseção única</li>
+<li>Caso geral: o <strong>Teorema do Ponto Fixo</strong> garante existência sob condições de continuidade</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Estabilidade walrasiana:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Situação</th>
+<th style="text-align: left;">Pressão</th>
+<th style="text-align: left;">Ajuste</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(Q^D &gt; Q^S\)</span> (escassez)</td>
+<td style="text-align: left;">Compradores competem</td>
+<td style="text-align: left;"><span class="math inline">\(P \uparrow\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(Q^D &lt; Q^S\)</span> (excesso)</td>
+<td style="text-align: left;">Vendedores competem</td>
+<td style="text-align: left;"><span class="math inline">\(P \downarrow\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(Q^D = Q^S\)</span></td>
+<td style="text-align: left;">Sem pressão</td>
+<td style="text-align: left;"><span class="math inline">\(P\)</span> estável</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O equilíbrio é <strong>estável</strong> se perturbações pequenas são autocorrigidas pelas forças de mercado.</p>
+</blockquote>
+</div>
+</section>
+<section id="oferta-e-demanda-interativo" class="slide level2">
+<h2>Oferta e Demanda Interativo</h2>
+<p>Demanda: <span class="math inline">\(Q^D = a - 2P\)</span>. Oferta: <span class="math inline">\(Q^S = -c + 1{,}5P\)</span>. Ajuste os interceptos e observe o equilíbrio.</p>
+<div id="graph-a19-sd" style="width:720px;height:380px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Intercepto demanda <span class="math inline">\(a\)</span>: <input type="range" id="sl-a19-a" min="80" max="200" value="120" step="5" oninput="window.updateA19SD()"> <span id="val-a19-a">120</span></label> <label style="margin-left:30px;">Intercepto oferta <span class="math inline">\(c\)</span>: <input type="range" id="sl-a19-c" min="10" max="60" value="20" step="2" oninput="window.updateA19SD()"> <span id="val-a19-c">20</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-sd',{
+    boundingbox:[-5,90,160,-8], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[1,86,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[155,-5,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  var aVal = 120, cVal = 20;
+
+  function pDemand(q){ return (aVal - q) / 2; }
+  function pSupply(q){ return (q + cVal) / 1.5; }
+  function qEq(){ return (1.5 * aVal - 2 * cVal) / (2 + 1.5); }
+  function pEq(){ return (aVal - qEq()) / 2; }
+
+  /* Demand curve */
+  var demandCurve = brd.create('functiongraph',[function(q){ return pDemand(q); },0,200],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[function(){ return aVal - 5; },3,'D'],
+    {fontSize:13,color:'#1565c0',anchorX:'left',fixed:true});
+
+  /* Supply curve */
+  var supplyCurve = brd.create('functiongraph',[function(q){ return pSupply(q); },0,200],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[140,function(){ return pSupply(140)+5; },'S'],
+    {fontSize:13,color:'#C8102E',anchorX:'left',fixed:true});
+
+  /* CS shaded area */
+  var csArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#1565c0',fillOpacity:0.18});
+  csArea.updateDataArray = function(){
+    var qe = qEq(), pe = pEq();
+    var pMax = pDemand(0);
+    this.dataX = [0, 0];
+    this.dataY = [pe, pMax];
+    for(var q=0; q<=qe; q+=1){
+      this.dataX.push(q);
+      this.dataY.push(pDemand(q));
+    }
+    this.dataX.push(qe); this.dataY.push(pe);
+    this.dataX.push(0);  this.dataY.push(pe);
+  };
+
+  /* PS shaded area */
+  var psArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#C8102E',fillOpacity:0.15});
+  psArea.updateDataArray = function(){
+    var qe = qEq(), pe = pEq();
+    var pMin = pSupply(0);
+    this.dataX = [0, 0];
+    this.dataY = [pMin, pe];
+    for(var q=qe; q>=0; q-=1){
+      this.dataX.push(q);
+      this.dataY.push(pSupply(q));
+    }
+    this.dataX.push(0);  this.dataY.push(pMin);
+    this.dataX.push(0);  this.dataY.push(pe);
+  };
+
+  /* Equilibrium point */
+  var eqPt = brd.create('point',
+    [function(){ return qEq(); }, function(){ return pEq(); }],
+    {size:5,fillColor:'#388e3c',strokeColor:'#388e3c',name:'',fixed:true});
+
+  /* Dashed lines to axes */
+  brd.create('segment',
+    [function(){ return [qEq(),0]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+  brd.create('segment',
+    [function(){ return [0,pEq()]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+
+  /* Labels */
+  brd.create('text',
+    [function(){ return qEq()/2; }, function(){ return (pDemand(0)+pEq())/2; },
+     function(){ var qe=qEq(),pe=pEq(); var cs=0.5*(pDemand(0)-pe)*qe; return 'EC='+cs.toFixed(0); }],
+    {fontSize:12,color:'#1565c0',anchorX:'center',fixed:true});
+  brd.create('text',
+    [function(){ return qEq()/2; }, function(){ return (pSupply(0)+pEq())/2; },
+     function(){ var qe=qEq(),pe=pEq(); var ps=0.5*(pe-pSupply(0))*qe; return 'EP='+ps.toFixed(0); }],
+    {fontSize:12,color:'#C8102E',anchorX:'center',fixed:true});
+  brd.create('text',
+    [function(){ return qEq()+8; }, function(){ return pEq()+5; },
+     function(){ return '(Q*='+qEq().toFixed(0)+', P*='+pEq().toFixed(1)+')'; }],
+    {fontSize:11,color:'#388e3c',anchorX:'left',fixed:true});
+
+  window.updateA19SD = function(){
+    aVal = parseFloat(document.getElementById('sl-a19-a').value);
+    cVal = parseFloat(document.getElementById('sl-a19-c').value);
+    document.getElementById('val-a19-a').textContent = aVal.toFixed(0);
+    document.getElementById('val-a19-c').textContent = cVal.toFixed(0);
+    brd.update();
+  };
+})();
+</script>
+</section>
+<section id="estática-comparativa-deslocamentos" class="slide level2">
+<h2>Estática Comparativa: Deslocamentos</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Aumento de demanda</strong> (<span class="math inline">\(a \uparrow\)</span>):</p>
+<ul>
+<li><span class="math inline">\(D\)</span> desloca para a <strong>direita</strong></li>
+<li><span class="math inline">\(P^* \uparrow\)</span> e <span class="math inline">\(Q^* \uparrow\)</span></li>
+<li>EC pode subir ou cair; EP sobe</li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplos:</strong> aumento de renda, mudança de preferências, aumento do preço de substituto.</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Aumento de oferta</strong> (<span class="math inline">\(c \downarrow\)</span>):</p>
+<ul>
+<li><span class="math inline">\(S\)</span> desloca para a <strong>direita</strong></li>
+<li><span class="math inline">\(P^* \downarrow\)</span> e <span class="math inline">\(Q^* \uparrow\)</span></li>
+<li>EC sobe; EP pode subir ou cair</li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplos:</strong> inovação tecnológica, queda no preço de insumos, entrada de firmas.</p>
+</div></div>
+<div class="fragment">
+<div title="Regra geral">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Regra geral</strong></p>
+</div>
+<div class="callout-content">
+<p>Desloque a curva do lado do choque. O <strong>preço</strong> move na direção do choque de demanda e na direção oposta ao choque de oferta. A <strong>quantidade</strong> sobe em ambos os casos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="excedente-total-e-eficiência" class="slide level2">
+<h2>Excedente Total e Eficiência</h2>
+<p><strong>Excedente do Consumidor:</strong> <span class="math inline">\(EC = \displaystyle\int_0^{Q^*} P^D(Q)\,dQ - P^*Q^*\)</span></p>
+<p><strong>Excedente do Produtor:</strong> <span class="math inline">\(EP = P^*Q^* - \displaystyle\int_0^{Q^*} P^S(Q)\,dQ\)</span></p>
+<div class="fragment">
+<p><strong>Excedente Total (Bem-Estar):</strong></p>
+<p><span class="math display">\[W = EC + EP = \int_0^{Q^*} \bigl[P^D(Q) - P^S(Q)\bigr]\,dQ\]</span></p>
+</div>
+<div class="fragment">
+<div title="Resultado central">
+<div class="callout callout-important callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resultado central</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(W\)</span> é <strong>maximizado</strong> quando <span class="math inline">\(Q = Q^*\)</span> (equilíbrio competitivo), pois:</p>
+<ul>
+<li>Para <span class="math inline">\(Q &lt; Q^*\)</span>: <span class="math inline">\(BMg &gt; CMg\)</span> → transações adicionais gerariam ganho</li>
+<li>Para <span class="math inline">\(Q &gt; Q^*\)</span>: <span class="math inline">\(BMg &lt; CMg\)</span> → transações em excesso destroem valor</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="primeiro-teorema-do-bem-estar" class="slide level2">
+<h2>Primeiro Teorema do Bem-Estar</h2>
+<blockquote>
+<p><strong>Primeiro TBE:</strong> Todo equilíbrio competitivo de Walras é <strong>Pareto-eficiente</strong>, desde que os mercados sejam completos e não haja externalidades.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Condições necessárias:</strong></p>
+<ol type="1">
+<li>Todos os agentes são <strong>tomadores de preço</strong></li>
+<li>Mercados completos (sem missing markets)</li>
+<li>Ausência de <strong>externalidades</strong></li>
+<li>Informação simétrica</li>
+</ol>
+</div>
+<div class="fragment">
+<p><strong>Intuição da prova:</strong></p>
+<ul>
+<li>No equilíbrio: <span class="math inline">\(BMg_i = P^* = CMg_j \;\forall\, i, j\)</span></li>
+<li>Logo <span class="math inline">\(BMg = CMg\)</span> para todas as unidades transacionadas</li>
+<li>Nenhuma realocação pode melhorar alguém sem piorar outro</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Limitação">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Limitação</strong></p>
+</div>
+<div class="callout-content">
+<p>O 1º TBE diz que o equilíbrio é <strong>eficiente</strong>, mas nada diz sobre <strong>equidade</strong>. Uma economia com desigualdade extrema pode ser Pareto-eficiente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="segundo-teorema-do-bem-estar" class="slide level2">
+<h2>Segundo Teorema do Bem-Estar</h2>
+<blockquote>
+<p><strong>Segundo TBE:</strong> Qualquer alocação Pareto-eficiente pode ser sustentada como equilíbrio competitivo, desde que se realizem <strong>transferências lump-sum</strong> adequadas.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Implicações para política pública:</strong></p>
+<ul>
+<li>Eficiência e equidade podem ser tratadas <strong>separadamente</strong></li>
+<li>Use transferências para redistribuir dotações</li>
+<li>Depois, deixe o mercado alocar</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Condições adicionais (além das do 1º TBE):</strong></p>
+<ul>
+<li>Preferências <strong>convexas</strong> (conjuntos de consumo convexos)</li>
+<li>Conjuntos de produção convexos (retornos não-crescentes de escala)</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Na prática">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Na prática</strong></p>
+</div>
+<div class="callout-content">
+<p>Transferências lump-sum são difíceis de implementar (requerem informação sobre tipos). O trade-off eficiência vs.&nbsp;equidade reaparece via <strong>impostos distorcivos</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="equilíbrio-de-longo-prazo" class="slide level2">
+<h2>Equilíbrio de Longo Prazo</h2>
+<p>Livre entrada e saída: no LP, <span class="math inline">\(P = CMg = CMe_{\min}\)</span> e <span class="math inline">\(\pi = 0\)</span> para a firma marginal.</p>
+<div id="graph-a19-lr" style="width:720px;height:380px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Número de firmas <span class="math inline">\(n\)</span>: <input type="range" id="sl-a19-n" min="5" max="50" value="20" step="1" oninput="window.updateA19LR()"> <span id="val-a19-n">20</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-lr',{
+    boundingbox:[-8,65,260,-8], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[2,61,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[252,-5,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  var nFirms = 20;
+
+  /* Firm-level cost: C(q) = q^2 + 4q + 4 → MC = 2q+4, AC = q + 4 + 4/q */
+  function mc(q){ return 2*q + 4; }
+  function ac(q){ return q + 4 + 4/q; }
+  /* AC min at q where dAC/dq=0: 1 - 4/q^2 = 0 → q*=2, AC_min = 2+4+2 = 8 */
+  var qStar = 2, acMin = 8;
+
+  /* Industry supply: each firm supplies where P=MC → q=(P-4)/2, so Q = n*(P-4)/2 for P>=4 */
+  function industryQ(p){ return (p >= 4) ? nFirms * (p - 4) / 2 : 0; }
+  function industryP(Q){ return 4 + 2 * Q / nFirms; }
+
+  /* Demand: Q^D = 200 - 4P */
+  function demandQ(p){ return Math.max(200 - 4*p, 0); }
+  function demandP(Q){ return (200 - Q) / 4; }
+
+  /* Equilibrium: industryP(Q) = demandP(Q) → 4 + 2Q/n = (200-Q)/4 */
+  /* 16 + 8Q/n = 200 - Q → Q(1 + 8/n) = 184 → Q = 184n/(n+8) */
+  function qEq(){ return 184*nFirms/(nFirms+8); }
+  function pEq(){ return demandP(qEq()); }
+
+  /* Demand curve */
+  brd.create('functiongraph',[function(Q){ return demandP(Q); },0,200],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[195,5,'D'],{fontSize:13,color:'#1565c0',anchorX:'left',fixed:true});
+
+  /* Industry supply curve */
+  brd.create('functiongraph',[function(Q){ return industryP(Q); },0,260],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[function(){ return Math.min(nFirms*25, 240); },
+    function(){ return industryP(Math.min(nFirms*25, 240))+5; },'S(n)'],
+    {fontSize:13,color:'#C8102E',anchorX:'left',fixed:true});
+
+  /* AC_min reference line */
+  brd.create('functiongraph',[function(Q){ return acMin; },0,260],
+    {strokeColor:'#388e3c',strokeWidth:1.5,dash:3});
+  brd.create('text',[245,acMin+3,'CMe\u2098\u1d62\u2099=8'],
+    {fontSize:11,color:'#388e3c',anchorX:'right',fixed:true});
+
+  /* Equilibrium point */
+  brd.create('point',
+    [function(){ return qEq(); }, function(){ return pEq(); }],
+    {size:5,fillColor:'#e65100',strokeColor:'#e65100',name:'',fixed:true});
+
+  /* Dashed lines */
+  brd.create('segment',
+    [function(){ return [qEq(),0]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+  brd.create('segment',
+    [function(){ return [0,pEq()]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+
+  /* Info text */
+  brd.create('text',[140,55,
+    function(){
+      var pe = pEq(), Qe = qEq();
+      var qfirm = (pe-4)/2;
+      return 'n='+nFirms+' | P*='+pe.toFixed(1)+' | Q*='+Qe.toFixed(0)+' | q/firma='+qfirm.toFixed(1);
+    }],
+    {fontSize:11,color:'#333',anchorX:'center',fixed:true});
+
+  window.updateA19LR = function(){
+    nFirms = parseInt(document.getElementById('sl-a19-n').value);
+    document.getElementById('val-a19-n').textContent = nFirms;
+    brd.update();
+  };
+})();
+</script>
+</section>
+<section id="indústria-de-custos-constantes-vs-crescentes" class="slide level2">
+<h2>Indústria de Custos Constantes vs Crescentes</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Custos constantes:</strong></p>
+<ul>
+<li>Preços dos insumos não mudam com <span class="math inline">\(n\)</span></li>
+<li>Cada firma nova tem a mesma <span class="math inline">\(CMe_{\min}\)</span></li>
+<li>Oferta de LP: <strong>horizontal</strong> em <span class="math inline">\(P = CMe_{\min}\)</span></li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplo:</strong> indústria que usa insumo abundante (e.g., software, serviços digitais).</p>
+</div><div class="column" style="width:50%;">
+<p><strong>Custos crescentes:</strong></p>
+<ul>
+<li>Entrada de firmas pressiona preços dos insumos especializados</li>
+<li><span class="math inline">\(CMe_{\min}\)</span> sobe com <span class="math inline">\(n\)</span></li>
+<li>Oferta de LP: <strong>positivamente inclinada</strong></li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplo:</strong> mineração — mais firmas <span class="math inline">\(\Rightarrow\)</span> jazidas piores <span class="math inline">\(\Rightarrow\)</span> custo unitário cresce.</p>
+</div></div>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: left;">Preços de insumos</th>
+<th style="text-align: left;">Oferta LP</th>
+<th style="text-align: left;">Lucro LP</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Custos constantes</td>
+<td style="text-align: left;">Fixos</td>
+<td style="text-align: left;">Horizontal</td>
+<td style="text-align: left;">Zero para todas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Custos crescentes</td>
+<td style="text-align: left;">Sobem com <span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">Inclinação positiva</td>
+<td style="text-align: left;">Infra-marginais <span class="math inline">\(&gt;0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Custos decrescentes</td>
+<td style="text-align: left;">Caem com <span class="math inline">\(n\)</span></td>
+<td style="text-align: left;">Inclinação negativa</td>
+<td style="text-align: left;">Raro</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="renda-ricardiana-e-eficiência" class="slide level2">
+<h2>Renda Ricardiana e Eficiência</h2>
+<p>A <strong>renda ricardiana</strong> é o excedente das firmas infra-marginais — aquelas com custos menores que a firma marginal.</p>
+<div class="fragment">
+<p><strong>No equilíbrio de LP com custos crescentes:</strong></p>
+<ul>
+<li>Firma <strong>marginal</strong>: <span class="math inline">\(\pi = 0\)</span>, <span class="math inline">\(P = CMe_{\min}^{marginal}\)</span></li>
+<li>Firmas <strong>infra-marginais</strong>: <span class="math inline">\(CMe_{\min}^i &lt; P\)</span> → <span class="math inline">\(\pi_i &gt; 0\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[\text{Renda Ricardiana}_i = (P - CMe_{\min}^i) \cdot q_i^*\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Lucro zero no LP se aplica à firma <strong>marginal</strong> (a última a entrar). Firmas mais eficientes ou com insumos superiores retêm <strong>rendas</strong> — que refletem a escassez desses recursos, não ineficiência.</p>
+</div>
+</div>
+</div>
+</div>
+<blockquote>
+<p>Ricardo (1817): a renda da terra não é causa, mas <strong>consequência</strong>, do preço alto do trigo.</p>
+</blockquote>
+</div>
+</section>
+<section id="oferta-de-lp-com-custos-crescentes" class="slide level2">
+<h2>Oferta de LP com Custos Crescentes</h2>
+<div id="graph-a19-lrsupply" style="width:720px;height:380px;margin:0 auto;">
+
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-lrsupply',{
+    boundingbox:[-5,55,160,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[2,52,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[155,-3,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  /* Constant cost: horizontal LR supply */
+  var pConst = 15;
+  brd.create('functiongraph',[function(Q){ return pConst; },0,150],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[140,pConst+3,'S\u2097\u2099 (custos constantes)'],
+    {fontSize:11,color:'#1565c0',anchorX:'right',fixed:true});
+
+  /* Increasing cost: upward-sloping LR supply */
+  brd.create('functiongraph',[function(Q){ return 8 + 0.25*Q; },0,150],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[140,8+0.25*140+5,'S\u2097\u2099 (custos crescentes)'],
+    {fontSize:11,color:'#C8102E',anchorX:'right',fixed:true});
+
+  /* Decreasing cost: downward-sloping LR supply */
+  brd.create('functiongraph',[function(Q){ return 30 - 0.1*Q; },0,150],
+    {strokeColor:'#388e3c',strokeWidth:2.5,dash:2});
+  brd.create('text',[140,30-0.1*140-4,'S\u2097\u2099 (custos decrescentes)'],
+    {fontSize:11,color:'#388e3c',anchorX:'right',fixed:true});
+
+  /* Demand */
+  brd.create('functiongraph',[function(Q){ return 45 - 0.25*Q; },0,180],
+    {strokeColor:'#888',strokeWidth:2,dash:3});
+  brd.create('text',[170,45-0.25*170+3,'D'],
+    {fontSize:12,color:'#888',anchorX:'left',fixed:true});
+
+  /* Equilibrium points */
+  /* Constant: 15 = 45 - 0.25Q → Q=120 */
+  brd.create('point',[120, 15],
+    {size:4,fillColor:'#1565c0',strokeColor:'#1565c0',name:'',fixed:true});
+
+  /* Increasing: 8+0.25Q = 45-0.25Q → 0.5Q=37 → Q=74, P=26.5 */
+  brd.create('point',[74, 26.5],
+    {size:4,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  /* Decreasing: 30-0.1Q = 45-0.25Q → 0.15Q=15 → Q=100, P=20 */
+  brd.create('point',[100, 20],
+    {size:4,fillColor:'#388e3c',strokeColor:'#388e3c',name:'',fixed:true});
+})();
+</script>
+<div class="fragment">
+<blockquote>
+<p>Curva de oferta de LP reflete como os <strong>custos da indústria</strong> respondem à entrada. Em custos crescentes, o equilíbrio LP tem preço mais alto e quantidade menor que em custos constantes.</p>
+</blockquote>
+</div>
+</section>
+<section id="exemplo-numérico-mercado-competitivo" class="slide level2">
+<h2>Exemplo Numérico: Mercado Competitivo</h2>
+<p><strong>Dados:</strong> Demanda <span class="math inline">\(Q^D = 100 - 2P\)</span>. Há <span class="math inline">\(n = 50\)</span> firmas idênticas, cada uma com <span class="math inline">\(C(q) = q^2 + 4q + 4\)</span>.</p>
+<div class="fragment">
+<p><strong>Firma:</strong> <span class="math inline">\(CMg = 2q + 4\)</span>. Oferta individual: <span class="math inline">\(P = 2q + 4 \Rightarrow q = \frac{P-4}{2}\)</span>.</p>
+<p><strong>Oferta de mercado:</strong> <span class="math inline">\(Q^S = 50 \cdot \frac{P-4}{2} = 25(P-4) = 25P - 100\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Equilíbrio:</strong> <span class="math inline">\(100 - 2P = 25P - 100 \implies 27P = 200 \implies P^* \approx 7{,}41\)</span></p>
+<p><span class="math display">\[Q^* = 100 - 2(7{,}41) \approx 85{,}2 \quad\implies\quad q^* = \frac{Q^*}{50} \approx 1{,}70\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Lucro por firma:</strong></p>
+<p><span class="math display">\[\pi = P^*q^* - C(q^*) = 7{,}41 \times 1{,}70 - (1{,}70^2 + 4 \times 1{,}70 + 4) \approx 12{,}60 - 13{,}69 = -1{,}09\]</span></p>
+</div>
+<div class="fragment">
+<div title="Interpretação">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Interpretação</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\pi &lt; 0\)</span> indica que, com 50 firmas, o mercado ainda não atingiu o LP. Firmas sairiam até que <span class="math inline">\(P = CMe_{\min} = 8\)</span>, restando <span class="math inline">\(n^* = \frac{100-2(8)}{(8-4)/2} = \frac{84}{2} = 42\)</span> firmas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aplicação-mercado-de-café" class="slide level2">
+<h2>Aplicação: Mercado de Café</h2>
+<p><strong>Brasil:</strong> maior produtor mundial (~35% da oferta global). O mercado de café commodity é um bom exemplo de competição quase perfeita.</p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Características competitivas:</strong></p>
+<ul>
+<li>Milhares de produtores (price takers)</li>
+<li>Produto relativamente homogêneo (café commodity)</li>
+<li>Baixas barreiras à entrada regional</li>
+<li>Preço determinado em bolsa (ICE Futures)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Custos crescentes em ação:</strong></p>
+<ul>
+<li>Terras férteis (Sul de Minas) são limitadas</li>
+<li>Expansão para cerrado: custo de irrigação maior</li>
+<li>Mão de obra sazonal: salários sobem na colheita</li>
+<li>Resultado: oferta de LP <strong>positivamente inclinada</strong></li>
+</ul>
+</div></div>
+</div>
+<div class="fragment">
+<p><strong>Renda ricardiana:</strong> produtores no Sul de Minas (terra fértil, altitude ideal) obtêm lucros positivos mesmo quando a firma marginal (cerrado) tem <span class="math inline">\(\pi = 0\)</span>.</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Geadas no Paraná (1975, 1994) e seca em MG (2021): choques de oferta → <span class="math inline">\(P \uparrow\)</span> forte, demonstrando estática comparativa em tempo real.</p>
+</blockquote>
+</div>
+</section>
+<section id="próxima-aula-política-e-peso-morto" class="slide level2">
+<h2>Próxima Aula: Política e Peso Morto</h2>
+<p><strong>Aula 20 — Políticas Públicas e Peso Morto:</strong></p>
+<ul>
+<li>Impostos específicos e <em>ad valorem</em>: incidência e peso morto</li>
+<li>Teto e piso de preços: escassez, excedente e mercados paralelos</li>
+<li>Princípio de Ramsey para tributação ótima</li>
+</ul>
+<div class="fragment">
+<p><strong>Preparação:</strong></p>
+<ul>
+<li>Revisar excedente do consumidor e produtor</li>
+<li>Pesquisar: qual o impacto do congelamento de preços no Plano Cruzado (1986)?</li>
+<li>Pensar: por que subsídios também geram peso morto?</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Para casa">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Para casa</strong></p>
+</div>
+<div class="callout-content">
+<ol type="1">
+<li>Resolva os exercícios do Capítulo 13 (itens 6–10)</li>
+<li>Use o gráfico interativo do slide 4 para verificar: quando <span class="math inline">\(a\)</span> dobra, <span class="math inline">\(P^*\)</span> dobra?</li>
+<li>Calcule o excedente total no exemplo numérico do slide 13</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Microeconomia II | Aula 19</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula-19-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula-19-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="aula-19-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula-19-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

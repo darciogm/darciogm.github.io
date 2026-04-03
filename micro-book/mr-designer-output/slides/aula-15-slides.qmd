@@ -1,0 +1,570 @@
+---
+title: "Custos de Produção"
+subtitle: "Microeconomia II — Aula 15"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 15"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Amazon: 750 mil robôs e contando
+
+- Em 2024, a Amazon opera mais de **750.000 robôs** em seus centros de distribuição
+- Cada robô substituiu tarefas humanas — mas **não eliminou** empregos
+- A firma escolhe a **combinação de insumos que minimiza o custo** para um dado nível de produto
+
+. . .
+
+> Por que a Amazon usa robôs em vez de mais trabalhadores? Porque a **minimização de custos** comanda a automação: quando $w/r$ sobe, capital substitui trabalho.
+
+## Custo Econômico vs. Custo Contábil
+
+**Custo contábil:** despesas explícitas registradas (salários, aluguel, materiais)
+
+**Custo econômico:** custo contábil + **custos de oportunidade**
+
+. . .
+
+$$C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{implícito (oportunidade)}}$$
+
+. . .
+
+**Exemplo:** empresário que ganha R\$ 0 na própria firma, mas poderia ganhar R\$ 15.000/mês como empregado.
+
+| Custo | Valor |
+|:--|:--|
+| Contábil (do seu trabalho) | R\$ 0 |
+| Econômico (do seu trabalho) | R\$ 15.000/mês |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O lucro econômico é sempre menor ou igual ao lucro contábil. Uma firma com lucro contábil positivo pode ter lucro econômico negativo — o empresário estaria melhor em outra atividade.
+:::
+
+## Minimização de Custo: O Problema
+
+A firma escolhe $(K, L)$ para:
+
+$$\min_{K,L} \; wL + rK \quad \text{s.a.} \quad f(K,L) = q_0$$
+
+onde $w$ = salário e $r$ = custo de uso do capital.
+
+. . .
+
+**Lagrangeano:**
+
+$$\mathcal{L} = wL + rK + \lambda[q_0 - f(K,L)]$$
+
+. . .
+
+**Condições de Primeira Ordem (CPOs):**
+
+$$\frac{\partial \mathcal{L}}{\partial L} = w - \lambda \cdot PMg_L = 0 \qquad \frac{\partial \mathcal{L}}{\partial K} = r - \lambda \cdot PMg_K = 0$$
+
+. . .
+
+> O multiplicador $\lambda$ mede o **custo marginal**: quanto custa produzir uma unidade adicional de $q$.
+
+## Condição de Tangência: TMST = w/r
+
+Dividindo as CPOs:
+
+$$\frac{PMg_L}{PMg_K} = \frac{w}{r} \quad \Longleftrightarrow \quad TMST_{L,K} = \frac{w}{r}$$
+
+. . .
+
+**Geometricamente:** a isoquanta é tangente à reta isocusto no ponto ótimo.
+
+**Reta isocusto:** $C = wL + rK \implies K = \frac{C}{r} - \frac{w}{r}L$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A firma iguala a taxa à qual a tecnologia permite trocar insumos ($TMST$) à taxa de troca do mercado ($w/r$). Se $TMST > w/r$, a firma deveria usar mais trabalho e menos capital.
+:::
+
+## Minimização de Custo — Interativo
+
+Mova a razão $w/r$ e observe como o ponto de tangência se ajusta:
+
+<div id="graph-a15-costmin" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>w/r: <span id="val-a15-wr">1.00</span></label>
+  <input type="range" id="sl-a15-wr" min="0.3" max="3" step="0.1" value="1" oninput="window.updateA15Costmin(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-costmin', {
+    boundingbox: [-0.5, 22, 22, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qbar = 10;
+  var wr = 1.0;
+
+  // Cobb-Douglas isoquant: q = K^0.5 * L^0.5 => K = q^2 / L
+  var isoquant = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qbar * qbar) / t; },
+    1, 21
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'q=10' });
+
+  board.create('text', [18, (qbar * qbar) / 18 + 1.2, 'q = 10'], {
+    fontSize: 12, color: '#1565c0', fixed: true
+  });
+
+  // Optimal point: TMST = K/L = w/r => K = (w/r)*L; K*L = q^2 => L* = q/sqrt(w/r), K* = q*sqrt(w/r)
+  var optPt = board.create('point', [
+    function() { return qbar / Math.sqrt(wr); },
+    function() { return qbar * Math.sqrt(wr); }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  var optLabel = board.create('text', [
+    function() { return qbar / Math.sqrt(wr) + 0.6; },
+    function() { return qbar * Math.sqrt(wr) + 0.8; }
+  ], {
+    name: '',
+    fontSize: 11, color: '#C8102E', fixed: true,
+    text: function() {
+      var Ls = qbar / Math.sqrt(wr);
+      var Ks = qbar * Math.sqrt(wr);
+      return '(' + Ls.toFixed(1) + ', ' + Ks.toFixed(1) + ')';
+    }
+  });
+
+  // Optimal isocost through tangency: C* = w*L* + r*K*; with w/r known, set w=wr, r=1
+  // C* = wr*L* + K* = wr * q/sqrt(wr) + q*sqrt(wr) = 2*q*sqrt(wr)
+  // Isocost: K = C*/r - (w/r)*L = 2*q*sqrt(wr) - wr*L
+  var optIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 0 });
+
+  // Additional isocost lines (higher and lower cost)
+  var hiIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2.6 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  var loIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 1.4 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  // Info text
+  board.create('text', [12, 20, function() {
+    var Ls = qbar / Math.sqrt(wr);
+    var Ks = qbar * Math.sqrt(wr);
+    var Cstar = 2 * qbar * Math.sqrt(wr);
+    return 'C* = ' + Cstar.toFixed(1) + '  |  w/r = ' + wr.toFixed(1);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Costmin = function(val) {
+    wr = parseFloat(val);
+    document.getElementById('val-a15-wr').textContent = wr.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+
+## Demandas Condicionadas de Fatores
+
+Das CPOs, obtemos as **demandas condicionadas** de insumos:
+
+$$L^c(w, r, q) \qquad K^c(w, r, q)$$
+
+. . .
+
+**Propriedades:**
+
+- Decrescentes no próprio preço: $\partial L^c / \partial w \leq 0$
+- **Homogêneas de grau 0** em $(w, r)$: dobrar ambos os preços não altera as quantidades ótimas
+
+. . .
+
+$$L^c(\alpha w, \alpha r, q) = L^c(w, r, q) \quad \forall \alpha > 0$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Apenas a razão $w/r$ importa para a escolha de insumos, não o nível absoluto de preços. Se salários e custo do capital dobram igualmente, a firma mantém a mesma combinação.
+:::
+
+## Função Custo $c(w, r, q)$
+
+Substituindo as demandas condicionadas na função objetivo:
+
+$$c(w, r, q) = w \cdot L^c(w, r, q) + r \cdot K^c(w, r, q)$$
+
+. . .
+
+**Propriedades da função custo:**
+
+| Propriedade | Significado |
+|:--|:--|
+| Crescente em $w$, $r$, $q$ | Insumos mais caros ou mais produção $\Rightarrow$ custo maior |
+| HD1 em $(w, r)$ | Dobrar preços dobra o custo: $c(\alpha w, \alpha r, q) = \alpha \cdot c(w, r, q)$ |
+| Côncava em $(w, r)$ | A firma pode substituir insumos, limitando o impacto de aumentos de preço |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A concavidade em $(w, r)$ reflete a capacidade de ajuste: o custo sobe menos que proporcionalmente quando um preço de insumo aumenta, porque a firma substitui parcialmente.
+:::
+
+## Lema de Shephard para a Firma
+
+$$\frac{\partial c(w, r, q)}{\partial w} = L^c(w, r, q) \qquad \frac{\partial c(w, r, q)}{\partial r} = K^c(w, r, q)$$
+
+. . .
+
+**Analogia com o consumidor:** o Lema de Shephard aqui é o análogo do Lema de Shephard na teoria do consumidor (demandas hicksianas).
+
+. . .
+
+**Utilidade prática:** se conhecemos a função custo $c(w, r, q)$, podemos **derivar** as demandas condicionadas sem resolver o problema de otimização novamente.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando $w$ sobe marginalmente, o custo aumenta em exatamente $L^c$ — a quantidade de trabalho usada. Efeitos de substituição são de segunda ordem (teorema do envelope).
+:::
+
+## Caminho de Expansão
+
+O **caminho de expansão** é o lugar geométrico dos pontos de tangência quando $q$ varia (mantendo $w$ e $r$ fixos).
+
+<div id="graph-a15-expansion" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>q: <span id="val-a15-q">10</span></label>
+  <input type="range" id="sl-a15-q" min="5" max="20" step="1" value="10" oninput="window.updateA15Expansion(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-expansion', {
+    boundingbox: [-0.5, 25, 25, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qCurrent = 10;
+  var wr = 1.0; // fixed w/r = 1
+
+  // Expansion path: for CD q=K^0.5*L^0.5 with w/r=1: K*=L*=q, so path is K=L (45-degree line)
+  board.create('curve', [
+    function(t) { return t; },
+    function(t) { return t; },
+    0, 24
+  ], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 3 });
+
+  board.create('text', [21, 22.5, 'Caminho de Expansão'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // Fixed isoquants at q=6, 8, 12, 16
+  var fixedQs = [6, 8, 12, 16];
+  for (var i = 0; i < fixedQs.length; i++) {
+    (function(qVal) {
+      board.create('curve', [
+        function(t) { return t; },
+        function(t) { return (qVal * qVal) / t; },
+        1.5, 24
+      ], { strokeColor: '#bbdefb', strokeWidth: 1.5 });
+      board.create('text', [23, (qVal * qVal) / 23 + 0.8, 'q=' + qVal], {
+        fontSize: 10, color: '#90caf9', fixed: true
+      });
+      // Tangency dot on expansion path
+      board.create('point', [qVal, qVal], {
+        size: 3, fixed: true, name: '',
+        color: '#90caf9', strokeColor: '#90caf9', fillColor: '#90caf9'
+      });
+    })(fixedQs[i]);
+  }
+
+  // Current isoquant (highlighted)
+  var currentIso = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qCurrent * qCurrent) / t; },
+    1.5, 24
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var currentIsoLabel = board.create('text', [
+    function() { return 23; },
+    function() { return (qCurrent * qCurrent) / 23 + 0.8; }
+  ], {
+    fontSize: 11, color: '#1565c0', fixed: true,
+    text: function() { return 'q=' + qCurrent; }
+  });
+
+  // Current tangency point
+  var tangPt = board.create('point', [
+    function() { return qCurrent; },
+    function() { return qCurrent; }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  // Isocost through tangency: K = 2*q - L (since w/r=1, C*=2q, K = 2q - L)
+  var tangIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qCurrent - t; },
+    0, 24
+  ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+  board.create('text', [2, 23, function() {
+    return 'C* = ' + (2 * qCurrent).toFixed(0) + '  (w/r = 1)';
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Expansion = function(val) {
+    qCurrent = parseInt(val);
+    document.getElementById('val-a15-q').textContent = qCurrent;
+    board.update();
+  };
+})();
+</script>
+
+## Cobb-Douglas: Custos Derivados
+
+$$f(K,L) = K^{0{,}5} L^{0{,}5}$$
+
+. . .
+
+**Passo 1 — Tangência:** $\frac{PMg_L}{PMg_K} = \frac{0{,}5 K}{0{,}5 L} = \frac{K}{L} = \frac{w}{r} \implies K = \frac{w}{r}L$
+
+. . .
+
+**Passo 2 — Substituir na restrição:** $\left(\frac{w}{r}L\right)^{0{,}5} L^{0{,}5} = q \implies L^c = q\sqrt{\frac{r}{w}}$
+
+. . .
+
+**Passo 3 — Demanda de capital:** $K^c = \frac{w}{r} \cdot q\sqrt{\frac{r}{w}} = q\sqrt{\frac{w}{r}}$
+
+. . .
+
+**Passo 4 — Função custo:**
+
+$$c(w,r,q) = w \cdot q\sqrt{\frac{r}{w}} + r \cdot q\sqrt{\frac{w}{r}} = 2q\sqrt{wr}$$
+
+. . .
+
+> **Verifique:** $c$ é HD1 em $(w,r)$, crescente em $q$, e $\partial c / \partial w = q\sqrt{r/w} = L^c$ (Shephard $\checkmark$).
+
+## Curvas de Custo
+
+<div id="graph-a15-curves" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>CF: <span id="val-a15-fc">10</span></label>
+  <input type="range" id="sl-a15-fc" min="5" max="30" step="1" value="10" oninput="window.updateA15Curves(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-curves', {
+    boundingbox: [-0.5, 90, 8, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '$', withLabel: true, label: { position: 'rt', offset: [-20, 0] } }
+    }
+  });
+
+  var fc = 10;
+  // c(q) = q^3 - 6q^2 + 15q + FC (cubic cost)
+  function CT(q) { return q * q * q - 6 * q * q + 15 * q + fc; }
+  function CV(q) { return q * q * q - 6 * q * q + 15 * q; }
+  function CMe(q) { return (q > 0.1) ? CT(q) / q : NaN; }
+  function CVMe(q) { return (q > 0.1) ? CV(q) / q : NaN; }
+  function CMg(q) { return 3 * q * q - 12 * q + 15; }
+
+  // CT curve
+  board.create('functiongraph', [function(q) { return CT(q); }, 0, 7.5], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  board.create('text', [6.5, CT(6.5) + 3, 'CT'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // CMe curve
+  var cmeCurve = board.create('functiongraph', [function(q) { return CMe(q); }, 0.2, 7.5], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMe(7) + 2, 'CMe'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // CVMe curve
+  board.create('functiongraph', [function(q) { return CVMe(q); }, 0.2, 7.5], {
+    strokeColor: '#ff9800', strokeWidth: 2
+  });
+  board.create('text', [7, CVMe(7) + 2, 'CVMe'], {
+    fontSize: 11, color: '#ff9800', fixed: true
+  });
+
+  // CMg curve
+  board.create('functiongraph', [function(q) { return CMg(q); }, 0, 7.5], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMg(7) + 2, 'CMg'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Min CMe: d(CMe)/dq = 0 => solve numerically
+  // CMe = q^2 - 6q + 15 + fc/q => CMe' = 2q - 6 - fc/q^2 = 0
+  function findMinCMe() {
+    var bestQ = 0.5, bestVal = 9999;
+    for (var q = 0.5; q <= 7; q += 0.05) {
+      var val = CMe(q);
+      if (val < bestVal) { bestVal = val; bestQ = q; }
+    }
+    return { q: bestQ, val: bestVal };
+  }
+
+  // Min CVMe: q^2 - 6q + 15 => 2q - 6 = 0 => q = 3, CVMe = 9-18+15 = 6
+  var minCVMePt = board.create('point', [3, 6], {
+    name: 'min CVMe', size: 4, fixed: true,
+    color: '#ff9800', strokeColor: '#ff9800', fillColor: '#ff9800',
+    label: { fontSize: 10, offset: [-45, -15] }
+  });
+
+  var minCMePt = board.create('point', [
+    function() { return findMinCMe().q; },
+    function() { return findMinCMe().val; }
+  ], {
+    name: 'min CMe', size: 4, fixed: true,
+    color: '#00897b', strokeColor: '#00897b', fillColor: '#00897b',
+    label: { fontSize: 10, offset: [8, 8] }
+  });
+
+  window.updateA15Curves = function(val) {
+    fc = parseInt(val);
+    document.getElementById('val-a15-fc').textContent = fc;
+    board.update();
+  };
+})();
+</script>
+
+## Custo Fixo, Variável e Irrecuperável
+
+**Custo Fixo (CF):** não varia com a quantidade produzida
+
+$$CF = r \bar{K} \qquad \frac{\partial CF}{\partial q} = 0$$
+
+. . .
+
+**Custo Variável (CV):** depende do nível de produção
+
+$$CV(q) = CT(q) - CF$$
+
+. . .
+
+**Custo Irrecuperável (sunk cost):** gasto já realizado, irreversível
+
+- Uma vez pago, **não** deve influenciar decisões futuras
+- Erro comum: "já gastei tanto, não posso parar agora" (falácia do custo irrecuperável)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Um custo fixo pode ou não ser irrecuperável. O aluguel do mês é fixo (não varia com $q$), mas se o contrato permite rescisão, não é irrecuperável. Uma máquina sob medida sem valor de revenda é fixo **e** irrecuperável.
+:::
+
+## Relação CMe e CMg
+
+$$\frac{d\,CMe}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{CMg \cdot q - CT}{q^2} = \frac{CMg - CMe}{q}$$
+
+. . .
+
+**Implicações:**
+
+| Condição | $d\,CMe/dq$ | Efeito |
+|:--|:--|:--|
+| $CMg < CMe$ | $< 0$ | $CMe$ decrescente |
+| $CMg = CMe$ | $= 0$ | $CMe$ **mínimo** |
+| $CMg > CMe$ | $> 0$ | $CMe$ crescente |
+
+. . .
+
+> **O CMg cruza o CMe em seu ponto de mínimo** — mesma lógica da relação PMg-PMe na produção, invertida.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Pense em notas de prova: se sua nota na próxima prova (marginal) está abaixo da sua média, a média cai. Se está acima, a média sobe. A nota marginal cruza a média quando ambas coincidem.
+:::
+
+## Dualidade Custo-Produção
+
+**Da produção ao custo:**
+
+$$f(K,L) \xrightarrow{\text{minimização de custo}} c(w,r,q)$$
+
+. . .
+
+**Do custo à produção:**
+
+$$c(w,r,q) \xrightarrow{\text{Shephard + inversão}} f(K,L)$$
+
+. . .
+
+**Paralelo com a teoria do consumidor:**
+
+| Consumidor | Firma |
+|:--|:--|
+| Utilidade $u(x)$ | Produção $f(K,L)$ |
+| Função dispêndio $e(p,u)$ | Função custo $c(w,r,q)$ |
+| Demandas hicksianas $h_i$ | Demandas condicionadas $L^c, K^c$ |
+| Lema de Shephard: $\partial e/\partial p_i = h_i$ | Lema de Shephard: $\partial c/\partial w = L^c$ |
+
+. . .
+
+> A dualidade permite obter toda a informação sobre a tecnologia a partir da função custo, e vice-versa.
+
+## Próxima Aula: Custos CP vs LP
+
+**Aula 16 — Custos de Curto e Longo Prazo**
+
+- Curvas de custo no curto prazo: CF, CV, CMe, CVMe, CMg
+- A **envoltória**: como o longo prazo "abraça" os curtos prazos
+- Economias e deseconomias de escala
+- Resultado fundamental: $CT_{LP}(q) \leq CT_{CP}(q)$
+
+. . .
+
+**Preparação:**
+
+- Revisar as relações CMg-CMe desta aula
+- Pensar: por que o custo de longo prazo é sempre menor ou igual ao de curto prazo?

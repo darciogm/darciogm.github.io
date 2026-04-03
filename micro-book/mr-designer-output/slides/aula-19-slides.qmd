@@ -1,0 +1,595 @@
+---
+title: "Equilíbrio Competitivo e Bem-Estar"
+subtitle: "Microeconomia II — Aula 19"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 19"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Do Agente Individual ao Mercado
+
+> Por que o equilíbrio competitivo é tão importante? Porque milhões de decisões descentralizadas produzem um resultado coordenado — sem nenhum planejador central.
+
+. . .
+
+**Caminho percorrido:**
+
+1. Consumidor maximiza utilidade → **demanda individual** $q^D_i(P)$
+2. Firma maximiza lucro → **oferta individual** $q^S_j(P)$
+3. Somamos **horizontalmente** → demanda e oferta **de mercado**
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O preço de equilíbrio é o "sinal" que coordena as decisões de todos os agentes. Ninguém precisa conhecer as preferências ou custos de ninguém — o preço transmite a informação relevante.
+:::
+
+## Oferta e Demanda de Mercado
+
+**Demanda de mercado** — soma horizontal das demandas individuais:
+
+$$Q^D(P) = \sum_{i=1}^{n} q_i^D(P)$$
+
+. . .
+
+**Oferta de mercado** — soma horizontal das ofertas individuais:
+
+$$Q^S(P) = \sum_{j=1}^{m} q_j^S(P)$$
+
+. . .
+
+**Com $n$ consumidores e $m$ firmas idênticas:**
+
+$$Q^D(P) = n \cdot q^D(P) \qquad Q^S(P) = m \cdot q^S(P)$$
+
+. . .
+
+:::{.callout-note title="Cuidado"}
+A soma é **horizontal**: para cada preço fixo, somamos quantidades. Não confunda com soma vertical (usada para bens públicos).
+:::
+
+## Equilíbrio: Definição e Existência
+
+O **equilíbrio competitivo** é o par $(P^*, Q^*)$ tal que:
+
+$$Q^D(P^*) = Q^S(P^*) \implies \text{excesso de demanda} = 0$$
+
+. . .
+
+**Condições de existência:**
+
+- Demanda decrescente e oferta crescente → interseção única
+- Caso geral: o **Teorema do Ponto Fixo** garante existência sob condições de continuidade
+
+. . .
+
+**Estabilidade walrasiana:**
+
+| Situação | Pressão | Ajuste |
+|:--|:--|:--|
+| $Q^D > Q^S$ (escassez) | Compradores competem | $P \uparrow$ |
+| $Q^D < Q^S$ (excesso) | Vendedores competem | $P \downarrow$ |
+| $Q^D = Q^S$ | Sem pressão | $P$ estável |
+
+. . .
+
+> O equilíbrio é **estável** se perturbações pequenas são autocorrigidas pelas forças de mercado.
+
+## Oferta e Demanda Interativo
+
+Demanda: $Q^D = a - 2P$. Oferta: $Q^S = -c + 1{,}5P$. Ajuste os interceptos e observe o equilíbrio.
+
+<div id="graph-a19-sd" style="width:720px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Intercepto demanda $a$: <input type="range" id="sl-a19-a" min="80" max="200" value="120" step="5" oninput="window.updateA19SD()"> <span id="val-a19-a">120</span></label>
+  <label style="margin-left:30px;">Intercepto oferta $c$: <input type="range" id="sl-a19-c" min="10" max="60" value="20" step="2" oninput="window.updateA19SD()"> <span id="val-a19-c">20</span></label>
+</div>
+
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-sd',{
+    boundingbox:[-5,90,160,-8], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[1,86,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[155,-5,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  var aVal = 120, cVal = 20;
+
+  function pDemand(q){ return (aVal - q) / 2; }
+  function pSupply(q){ return (q + cVal) / 1.5; }
+  function qEq(){ return (1.5 * aVal - 2 * cVal) / (2 + 1.5); }
+  function pEq(){ return (aVal - qEq()) / 2; }
+
+  /* Demand curve */
+  var demandCurve = brd.create('functiongraph',[function(q){ return pDemand(q); },0,200],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[function(){ return aVal - 5; },3,'D'],
+    {fontSize:13,color:'#1565c0',anchorX:'left',fixed:true});
+
+  /* Supply curve */
+  var supplyCurve = brd.create('functiongraph',[function(q){ return pSupply(q); },0,200],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[140,function(){ return pSupply(140)+5; },'S'],
+    {fontSize:13,color:'#C8102E',anchorX:'left',fixed:true});
+
+  /* CS shaded area */
+  var csArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#1565c0',fillOpacity:0.18});
+  csArea.updateDataArray = function(){
+    var qe = qEq(), pe = pEq();
+    var pMax = pDemand(0);
+    this.dataX = [0, 0];
+    this.dataY = [pe, pMax];
+    for(var q=0; q<=qe; q+=1){
+      this.dataX.push(q);
+      this.dataY.push(pDemand(q));
+    }
+    this.dataX.push(qe); this.dataY.push(pe);
+    this.dataX.push(0);  this.dataY.push(pe);
+  };
+
+  /* PS shaded area */
+  var psArea = brd.create('curve',[[],[]],{strokeWidth:0,fillColor:'#C8102E',fillOpacity:0.15});
+  psArea.updateDataArray = function(){
+    var qe = qEq(), pe = pEq();
+    var pMin = pSupply(0);
+    this.dataX = [0, 0];
+    this.dataY = [pMin, pe];
+    for(var q=qe; q>=0; q-=1){
+      this.dataX.push(q);
+      this.dataY.push(pSupply(q));
+    }
+    this.dataX.push(0);  this.dataY.push(pMin);
+    this.dataX.push(0);  this.dataY.push(pe);
+  };
+
+  /* Equilibrium point */
+  var eqPt = brd.create('point',
+    [function(){ return qEq(); }, function(){ return pEq(); }],
+    {size:5,fillColor:'#388e3c',strokeColor:'#388e3c',name:'',fixed:true});
+
+  /* Dashed lines to axes */
+  brd.create('segment',
+    [function(){ return [qEq(),0]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+  brd.create('segment',
+    [function(){ return [0,pEq()]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+
+  /* Labels */
+  brd.create('text',
+    [function(){ return qEq()/2; }, function(){ return (pDemand(0)+pEq())/2; },
+     function(){ var qe=qEq(),pe=pEq(); var cs=0.5*(pDemand(0)-pe)*qe; return 'EC='+cs.toFixed(0); }],
+    {fontSize:12,color:'#1565c0',anchorX:'center',fixed:true});
+  brd.create('text',
+    [function(){ return qEq()/2; }, function(){ return (pSupply(0)+pEq())/2; },
+     function(){ var qe=qEq(),pe=pEq(); var ps=0.5*(pe-pSupply(0))*qe; return 'EP='+ps.toFixed(0); }],
+    {fontSize:12,color:'#C8102E',anchorX:'center',fixed:true});
+  brd.create('text',
+    [function(){ return qEq()+8; }, function(){ return pEq()+5; },
+     function(){ return '(Q*='+qEq().toFixed(0)+', P*='+pEq().toFixed(1)+')'; }],
+    {fontSize:11,color:'#388e3c',anchorX:'left',fixed:true});
+
+  window.updateA19SD = function(){
+    aVal = parseFloat(document.getElementById('sl-a19-a').value);
+    cVal = parseFloat(document.getElementById('sl-a19-c').value);
+    document.getElementById('val-a19-a').textContent = aVal.toFixed(0);
+    document.getElementById('val-a19-c').textContent = cVal.toFixed(0);
+    brd.update();
+  };
+})();
+</script>
+
+## Estática Comparativa: Deslocamentos
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Aumento de demanda** ($a \uparrow$):
+
+- $D$ desloca para a **direita**
+- $P^* \uparrow$ e $Q^* \uparrow$
+- EC pode subir ou cair; EP sobe
+
+. . .
+
+**Exemplos:** aumento de renda, mudança de preferências, aumento do preço de substituto.
+
+:::
+::: {.column width="50%"}
+
+**Aumento de oferta** ($c \downarrow$):
+
+- $S$ desloca para a **direita**
+- $P^* \downarrow$ e $Q^* \uparrow$
+- EC sobe; EP pode subir ou cair
+
+. . .
+
+**Exemplos:** inovação tecnológica, queda no preço de insumos, entrada de firmas.
+
+:::
+::::
+
+. . .
+
+:::{.callout-important title="Regra geral"}
+Desloque a curva do lado do choque. O **preço** move na direção do choque de demanda e na direção oposta ao choque de oferta. A **quantidade** sobe em ambos os casos.
+:::
+
+## Excedente Total e Eficiência
+
+**Excedente do Consumidor:** $EC = \displaystyle\int_0^{Q^*} P^D(Q)\,dQ - P^*Q^*$
+
+**Excedente do Produtor:** $EP = P^*Q^* - \displaystyle\int_0^{Q^*} P^S(Q)\,dQ$
+
+. . .
+
+**Excedente Total (Bem-Estar):**
+
+$$W = EC + EP = \int_0^{Q^*} \bigl[P^D(Q) - P^S(Q)\bigr]\,dQ$$
+
+. . .
+
+:::{.callout-important title="Resultado central"}
+$W$ é **maximizado** quando $Q = Q^*$ (equilíbrio competitivo), pois:
+
+- Para $Q < Q^*$: $BMg > CMg$ → transações adicionais gerariam ganho
+- Para $Q > Q^*$: $BMg < CMg$ → transações em excesso destroem valor
+:::
+
+## Primeiro Teorema do Bem-Estar
+
+> **Primeiro TBE:** Todo equilíbrio competitivo de Walras é **Pareto-eficiente**, desde que os mercados sejam completos e não haja externalidades.
+
+. . .
+
+**Condições necessárias:**
+
+1. Todos os agentes são **tomadores de preço**
+2. Mercados completos (sem missing markets)
+3. Ausência de **externalidades**
+4. Informação simétrica
+
+. . .
+
+**Intuição da prova:**
+
+- No equilíbrio: $BMg_i = P^* = CMg_j \;\forall\, i, j$
+- Logo $BMg = CMg$ para todas as unidades transacionadas
+- Nenhuma realocação pode melhorar alguém sem piorar outro
+
+. . .
+
+:::{.callout-warning title="Limitação"}
+O 1º TBE diz que o equilíbrio é **eficiente**, mas nada diz sobre **equidade**. Uma economia com desigualdade extrema pode ser Pareto-eficiente.
+:::
+
+## Segundo Teorema do Bem-Estar
+
+> **Segundo TBE:** Qualquer alocação Pareto-eficiente pode ser sustentada como equilíbrio competitivo, desde que se realizem **transferências lump-sum** adequadas.
+
+. . .
+
+**Implicações para política pública:**
+
+- Eficiência e equidade podem ser tratadas **separadamente**
+- Use transferências para redistribuir dotações
+- Depois, deixe o mercado alocar
+
+. . .
+
+**Condições adicionais (além das do 1º TBE):**
+
+- Preferências **convexas** (conjuntos de consumo convexos)
+- Conjuntos de produção convexos (retornos não-crescentes de escala)
+
+. . .
+
+:::{.callout-note title="Na prática"}
+Transferências lump-sum são difíceis de implementar (requerem informação sobre tipos). O trade-off eficiência vs. equidade reaparece via **impostos distorcivos**.
+:::
+
+## Equilíbrio de Longo Prazo
+
+Livre entrada e saída: no LP, $P = CMg = CMe_{\min}$ e $\pi = 0$ para a firma marginal.
+
+<div id="graph-a19-lr" style="width:720px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Número de firmas $n$: <input type="range" id="sl-a19-n" min="5" max="50" value="20" step="1" oninput="window.updateA19LR()"> <span id="val-a19-n">20</span></label>
+</div>
+
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-lr',{
+    boundingbox:[-8,65,260,-8], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[2,61,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[252,-5,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  var nFirms = 20;
+
+  /* Firm-level cost: C(q) = q^2 + 4q + 4 → MC = 2q+4, AC = q + 4 + 4/q */
+  function mc(q){ return 2*q + 4; }
+  function ac(q){ return q + 4 + 4/q; }
+  /* AC min at q where dAC/dq=0: 1 - 4/q^2 = 0 → q*=2, AC_min = 2+4+2 = 8 */
+  var qStar = 2, acMin = 8;
+
+  /* Industry supply: each firm supplies where P=MC → q=(P-4)/2, so Q = n*(P-4)/2 for P>=4 */
+  function industryQ(p){ return (p >= 4) ? nFirms * (p - 4) / 2 : 0; }
+  function industryP(Q){ return 4 + 2 * Q / nFirms; }
+
+  /* Demand: Q^D = 200 - 4P */
+  function demandQ(p){ return Math.max(200 - 4*p, 0); }
+  function demandP(Q){ return (200 - Q) / 4; }
+
+  /* Equilibrium: industryP(Q) = demandP(Q) → 4 + 2Q/n = (200-Q)/4 */
+  /* 16 + 8Q/n = 200 - Q → Q(1 + 8/n) = 184 → Q = 184n/(n+8) */
+  function qEq(){ return 184*nFirms/(nFirms+8); }
+  function pEq(){ return demandP(qEq()); }
+
+  /* Demand curve */
+  brd.create('functiongraph',[function(Q){ return demandP(Q); },0,200],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[195,5,'D'],{fontSize:13,color:'#1565c0',anchorX:'left',fixed:true});
+
+  /* Industry supply curve */
+  brd.create('functiongraph',[function(Q){ return industryP(Q); },0,260],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[function(){ return Math.min(nFirms*25, 240); },
+    function(){ return industryP(Math.min(nFirms*25, 240))+5; },'S(n)'],
+    {fontSize:13,color:'#C8102E',anchorX:'left',fixed:true});
+
+  /* AC_min reference line */
+  brd.create('functiongraph',[function(Q){ return acMin; },0,260],
+    {strokeColor:'#388e3c',strokeWidth:1.5,dash:3});
+  brd.create('text',[245,acMin+3,'CMe\u2098\u1d62\u2099=8'],
+    {fontSize:11,color:'#388e3c',anchorX:'right',fixed:true});
+
+  /* Equilibrium point */
+  brd.create('point',
+    [function(){ return qEq(); }, function(){ return pEq(); }],
+    {size:5,fillColor:'#e65100',strokeColor:'#e65100',name:'',fixed:true});
+
+  /* Dashed lines */
+  brd.create('segment',
+    [function(){ return [qEq(),0]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+  brd.create('segment',
+    [function(){ return [0,pEq()]; }, function(){ return [qEq(),pEq()]; }],
+    {strokeColor:'#888',dash:2,strokeWidth:1,fixed:true});
+
+  /* Info text */
+  brd.create('text',[140,55,
+    function(){
+      var pe = pEq(), Qe = qEq();
+      var qfirm = (pe-4)/2;
+      return 'n='+nFirms+' | P*='+pe.toFixed(1)+' | Q*='+Qe.toFixed(0)+' | q/firma='+qfirm.toFixed(1);
+    }],
+    {fontSize:11,color:'#333',anchorX:'center',fixed:true});
+
+  window.updateA19LR = function(){
+    nFirms = parseInt(document.getElementById('sl-a19-n').value);
+    document.getElementById('val-a19-n').textContent = nFirms;
+    brd.update();
+  };
+})();
+</script>
+
+## Indústria de Custos Constantes vs Crescentes
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Custos constantes:**
+
+- Preços dos insumos não mudam com $n$
+- Cada firma nova tem a mesma $CMe_{\min}$
+- Oferta de LP: **horizontal** em $P = CMe_{\min}$
+
+. . .
+
+**Exemplo:** indústria que usa insumo abundante (e.g., software, serviços digitais).
+
+:::
+::: {.column width="50%"}
+
+**Custos crescentes:**
+
+- Entrada de firmas pressiona preços dos insumos especializados
+- $CMe_{\min}$ sobe com $n$
+- Oferta de LP: **positivamente inclinada**
+
+. . .
+
+**Exemplo:** mineração — mais firmas $\Rightarrow$ jazidas piores $\Rightarrow$ custo unitário cresce.
+
+:::
+::::
+
+. . .
+
+| Tipo | Preços de insumos | Oferta LP | Lucro LP |
+|:--|:--|:--|:--|
+| Custos constantes | Fixos | Horizontal | Zero para todas |
+| Custos crescentes | Sobem com $n$ | Inclinação positiva | Infra-marginais $>0$ |
+| Custos decrescentes | Caem com $n$ | Inclinação negativa | Raro |
+
+## Renda Ricardiana e Eficiência
+
+A **renda ricardiana** é o excedente das firmas infra-marginais — aquelas com custos menores que a firma marginal.
+
+. . .
+
+**No equilíbrio de LP com custos crescentes:**
+
+- Firma **marginal**: $\pi = 0$, $P = CMe_{\min}^{marginal}$
+- Firmas **infra-marginais**: $CMe_{\min}^i < P$ → $\pi_i > 0$
+
+. . .
+
+$$\text{Renda Ricardiana}_i = (P - CMe_{\min}^i) \cdot q_i^*$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Lucro zero no LP se aplica à firma **marginal** (a última a entrar). Firmas mais eficientes ou com insumos superiores retêm **rendas** — que refletem a escassez desses recursos, não ineficiência.
+:::
+
+> Ricardo (1817): a renda da terra não é causa, mas **consequência**, do preço alto do trigo.
+
+## Oferta de LP com Custos Crescentes
+
+<div id="graph-a19-lrsupply" style="width:720px;height:380px;margin:0 auto;"></div>
+
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-lrsupply',{
+    boundingbox:[-5,55,160,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[2,52,'P'],{fontSize:14,anchorX:'left',fixed:true});
+  brd.create('text',[155,-3,'Q'],{fontSize:14,anchorX:'left',fixed:true});
+
+  /* Constant cost: horizontal LR supply */
+  var pConst = 15;
+  brd.create('functiongraph',[function(Q){ return pConst; },0,150],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  brd.create('text',[140,pConst+3,'S\u2097\u2099 (custos constantes)'],
+    {fontSize:11,color:'#1565c0',anchorX:'right',fixed:true});
+
+  /* Increasing cost: upward-sloping LR supply */
+  brd.create('functiongraph',[function(Q){ return 8 + 0.25*Q; },0,150],
+    {strokeColor:'#C8102E',strokeWidth:3});
+  brd.create('text',[140,8+0.25*140+5,'S\u2097\u2099 (custos crescentes)'],
+    {fontSize:11,color:'#C8102E',anchorX:'right',fixed:true});
+
+  /* Decreasing cost: downward-sloping LR supply */
+  brd.create('functiongraph',[function(Q){ return 30 - 0.1*Q; },0,150],
+    {strokeColor:'#388e3c',strokeWidth:2.5,dash:2});
+  brd.create('text',[140,30-0.1*140-4,'S\u2097\u2099 (custos decrescentes)'],
+    {fontSize:11,color:'#388e3c',anchorX:'right',fixed:true});
+
+  /* Demand */
+  brd.create('functiongraph',[function(Q){ return 45 - 0.25*Q; },0,180],
+    {strokeColor:'#888',strokeWidth:2,dash:3});
+  brd.create('text',[170,45-0.25*170+3,'D'],
+    {fontSize:12,color:'#888',anchorX:'left',fixed:true});
+
+  /* Equilibrium points */
+  /* Constant: 15 = 45 - 0.25Q → Q=120 */
+  brd.create('point',[120, 15],
+    {size:4,fillColor:'#1565c0',strokeColor:'#1565c0',name:'',fixed:true});
+
+  /* Increasing: 8+0.25Q = 45-0.25Q → 0.5Q=37 → Q=74, P=26.5 */
+  brd.create('point',[74, 26.5],
+    {size:4,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+
+  /* Decreasing: 30-0.1Q = 45-0.25Q → 0.15Q=15 → Q=100, P=20 */
+  brd.create('point',[100, 20],
+    {size:4,fillColor:'#388e3c',strokeColor:'#388e3c',name:'',fixed:true});
+})();
+</script>
+
+. . .
+
+> Curva de oferta de LP reflete como os **custos da indústria** respondem à entrada. Em custos crescentes, o equilíbrio LP tem preço mais alto e quantidade menor que em custos constantes.
+
+## Exemplo Numérico: Mercado Competitivo
+
+**Dados:** Demanda $Q^D = 100 - 2P$. Há $n = 50$ firmas idênticas, cada uma com $C(q) = q^2 + 4q + 4$.
+
+. . .
+
+**Firma:** $CMg = 2q + 4$. Oferta individual: $P = 2q + 4 \Rightarrow q = \frac{P-4}{2}$.
+
+**Oferta de mercado:** $Q^S = 50 \cdot \frac{P-4}{2} = 25(P-4) = 25P - 100$
+
+. . .
+
+**Equilíbrio:** $100 - 2P = 25P - 100 \implies 27P = 200 \implies P^* \approx 7{,}41$
+
+$$Q^* = 100 - 2(7{,}41) \approx 85{,}2 \quad\implies\quad q^* = \frac{Q^*}{50} \approx 1{,}70$$
+
+. . .
+
+**Lucro por firma:**
+
+$$\pi = P^*q^* - C(q^*) = 7{,}41 \times 1{,}70 - (1{,}70^2 + 4 \times 1{,}70 + 4) \approx 12{,}60 - 13{,}69 = -1{,}09$$
+
+. . .
+
+:::{.callout-warning title="Interpretação"}
+$\pi < 0$ indica que, com 50 firmas, o mercado ainda não atingiu o LP. Firmas sairiam até que $P = CMe_{\min} = 8$, restando $n^* = \frac{100-2(8)}{(8-4)/2} = \frac{84}{2} = 42$ firmas.
+:::
+
+## Aplicação: Mercado de Café
+
+**Brasil:** maior produtor mundial (~35% da oferta global). O mercado de café commodity é um bom exemplo de competição quase perfeita.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Características competitivas:**
+
+- Milhares de produtores (price takers)
+- Produto relativamente homogêneo (café commodity)
+- Baixas barreiras à entrada regional
+- Preço determinado em bolsa (ICE Futures)
+
+:::
+::: {.column width="50%"}
+
+**Custos crescentes em ação:**
+
+- Terras férteis (Sul de Minas) são limitadas
+- Expansão para cerrado: custo de irrigação maior
+- Mão de obra sazonal: salários sobem na colheita
+- Resultado: oferta de LP **positivamente inclinada**
+
+:::
+::::
+
+. . .
+
+**Renda ricardiana:** produtores no Sul de Minas (terra fértil, altitude ideal) obtêm lucros positivos mesmo quando a firma marginal (cerrado) tem $\pi = 0$.
+
+. . .
+
+> Geadas no Paraná (1975, 1994) e seca em MG (2021): choques de oferta → $P \uparrow$ forte, demonstrando estática comparativa em tempo real.
+
+## Próxima Aula: Política e Peso Morto
+
+**Aula 20 — Políticas Públicas e Peso Morto:**
+
+- Impostos específicos e *ad valorem*: incidência e peso morto
+- Teto e piso de preços: escassez, excedente e mercados paralelos
+- Princípio de Ramsey para tributação ótima
+
+. . .
+
+**Preparação:**
+
+- Revisar excedente do consumidor e produtor
+- Pesquisar: qual o impacto do congelamento de preços no Plano Cruzado (1986)?
+- Pensar: por que subsídios também geram peso morto?
+
+. . .
+
+:::{.callout-tip title="Para casa"}
+1. Resolva os exercícios do Capítulo 13 (itens 6–10)
+2. Use o gráfico interativo do slide 4 para verificar: quando $a$ dobra, $P^*$ dobra?
+3. Calcule o excedente total no exemplo numérico do slide 13
+:::

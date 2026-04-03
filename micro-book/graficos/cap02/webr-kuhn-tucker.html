@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Kuhn-Tucker</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Kuhn-Tucker: Soluções de Canto vs. Interior
+# Cap. 2 — Quando a restrição de não-negatividade morde
+
+# max U = alpha*ln(x) + (1-alpha)*ln(y)
+# s.a. px*x + py*y <= m,  x >= 0, y >= 0
+# Com alpha muito baixo, o consumidor pode querer x=0 (canto)
+
+alpha <- 0.08   # altere! (tente 0.5, 0.08, 0.95)
+px    <- 5
+py    <- 2
+m     <- 100
+
+cat("=== Kuhn-Tucker: solução de canto vs. interior ===\n")
+cat(sprintf("  alpha = %.2f, px = %.0f, py = %.0f, m = %.0f\n\n", alpha, px, py, m))
+
+# Solução interior (Lagrange puro)
+x_int <- alpha * m / px
+y_int <- (1 - alpha) * m / py
+
+if (x_int > 0 & y_int > 0) {
+  cat("Lagrange interior:\n")
+  cat(sprintf("  x* = %.2f,  y* = %.2f\n", x_int, y_int))
+  U_int <- alpha * log(x_int) + (1 - alpha) * log(y_int)
+  cat(sprintf("  U* = %.4f\n\n", U_int))
+  tipo <- "interior"
+} else {
+  cat("Solucao interior impossivel (x ou y < 0)!\n")
+  tipo <- "canto"
+}
+
+# Checar cantos
+# Canto x=0: y = m/py
+y_canto <- m / py
+if (alpha == 0) {
+  U_cantox <- log(y_canto)
+} else {
+  U_cantox <- -Inf  # ln(0) = -Inf
+}
+
+# Canto y=0: x = m/px
+x_canto <- m / px
+if (alpha == 1) {
+  U_cantoy <- log(x_canto)
+} else {
+  U_cantoy <- -Inf
+}
+
+cat("Verificacao dos cantos:\n")
+cat(sprintf("  Canto x=0: y=%.1f, U=%s\n", y_canto,
+    ifelse(is.finite(U_cantox), sprintf("%.4f", U_cantox), "-Inf (ln(0)!)")))
+cat(sprintf("  Canto y=0: x=%.1f, U=%s\n\n", x_canto,
+    ifelse(is.finite(U_cantoy), sprintf("%.4f", U_cantoy), "-Inf (ln(0)!)")))
+
+if (tipo == "interior") {
+  cat("=> Com U = alpha*ln(x) + (1-alpha)*ln(y),\n")
+  cat("   ln(0) = -Inf impede solucoes de canto.\n")
+  cat("   A condicao de Inada garante interior!\n\n")
+  cat("Mas e se U = alpha*x + (1-alpha)*y (linear)?\n")
+  # Substitutos perfeitos
+  Ux_lin <- alpha / px   # UMg_x / px
+  Uy_lin <- (1 - alpha) / py
+  cat(sprintf("  UMg_x/px = %.4f\n  UMg_y/py = %.4f\n",Ux_lin, Uy_lin))
+  if (abs(Ux_lin - Uy_lin) < 1e-10) {
+    cat("  => Iguais! Qualquer combinacao na reta orcamentaria e otima.\n")
+  } else if (Ux_lin > Uy_lin) {
+    cat("  => Solucao de CANTO: so compra x (x=m/px)!\n")
+  } else {
+    cat("  => Solucao de CANTO: so compra y (y=m/py)!\n")
+  }
+}
+
+# Gráfico: curvas de indiferença + reta orçamentária
+par(mar = c(4, 4, 3, 1))
+x_grid <- seq(0.01, m/px + 5, length.out = 200)
+y_budget <- (m - px * x_grid) / py
+
+plot(NA, xlim = c(0, m/px + 2), ylim = c(0, m/py + 2),
+     xlab = "x", ylab = "y",
+     main = sprintf("Kuhn-Tucker (alpha = %.2f)", alpha))
+
+# Reta orçamentária
+lines(x_grid[y_budget >= 0], y_budget[y_budget >= 0],
+      col = "#333", lwd = 2)
+
+# Curvas de indiferença
+if (tipo == "interior") {
+  U_vals <- U_int * c(0.7, 0.85, 1, 1.15)
+  for (u in U_vals) {
+    y_ci <- exp((u - alpha * log(x_grid)) / (1 - alpha))
+    keep <- y_ci <= m/py + 5 & y_ci > 0
+    lines(x_grid[keep], y_ci[keep],
+          col = ifelse(abs(u - U_int) < 0.01, "#C8102E", "lightblue"),
+          lwd = ifelse(abs(u - U_int) < 0.01, 2, 1))
+  }
+  points(x_int, y_int, pch = 19, col = "#C8102E", cex = 1.5)
+  text(x_int + 1, y_int + 2,
+       sprintf("(%0.1f, %0.1f)", x_int, y_int),
+       col = "#C8102E", font = 2, cex = 0.85)
+}
+
+# Nota: com alpha perto de 0, o ótimo fica colado no eixo y
+if (alpha < 0.15) {
+  text(m/(2*px), m/(2*py), "alpha baixo:\notimo perto do eixo y!",
+       col = "#C8102E", cex = 0.9, font = 2)
+}
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Com Cobb-Douglas, a condição de Inada (UMg -> infinito quando x -> 0) garante solução interior. Mas com substitutos perfeitos (U linear), o consumidor vai para o canto. Teste alpha = 0.5 vs. 0.08!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

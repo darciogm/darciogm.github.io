@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+  Risco Moral em Saúde: Copagamento e Peso Morto
+  Library: JSXGraph
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risco Moral em Saúde</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.jxgbox{flex:1 1 420px;max-width:500px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.jxgbox,.controls{flex-basis:100%;width:100%;max-width:500px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox1" class="jxgbox"></div>
+  <div class="controls">
+    <h3>Risco Moral em Saude</h3>
+    <div class="slider-group">
+      <label>Coparticipacao \(r\): <span class="val" id="val-r">0.20</span></label>
+      <input type="range" id="slider-r" min="0" max="1" step="0.05" value="0.2">
+    </div>
+    <div class="slider-group">
+      <label>Custo por consulta \(p\): <span class="val" id="val-p">100</span></label>
+      <input type="range" id="slider-p" min="30" max="200" step="10" value="100">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  var board=JXG.JSXGraph.initBoard('jxgbox1',{boundingbox:[-2,220,14,-30],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false});
+  board.create('axis',[[0,0],[14,0]],{ticks:{drawLabels:true,label:{fontSize:11},minorTicks:0,ticksDistance:2}});
+  board.create('text',[7,-20,'<b>Consultas (Q)</b>'],{fontSize:12,fixed:true,anchorX:'middle',highlight:false});
+  board.create('axis',[[0,0],[0,220]],{ticks:{drawLabels:true,label:{fontSize:11,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:50}});
+  board.create('text',[-1.5,200,'<b>p</b>'],{fontSize:12,fixed:true,highlight:false});
+  var objs=[];
+  function draw(){
+    for(var i=0;i<objs.length;i++)board.removeObject(objs[i]);objs=[];
+    var r=parseFloat(document.getElementById('slider-r').value);
+    var p=parseFloat(document.getElementById('slider-p').value);
+    document.getElementById('val-r').textContent=r.toFixed(2);
+    document.getElementById('val-p').textContent=p;
+    var pPerc=r*p; // perceived price
+    // Demand: Q = 12 - 0.05*price_perceived
+    var Qeff=Math.max(0,12-0.05*p); // efficient Q (no insurance)
+    var Qins=Math.max(0,12-0.05*pPerc); // insured Q
+    // Demand curve: p_perceived = (12-Q)/0.05 = 240-20Q
+    objs.push(board.create('segment',[[0,240],[12,0]],{strokeColor:'#1565c0',strokeWidth:2.5}));
+    objs.push(board.create('text',[11.5,15,'<i>D</i>'],{fontSize:11,color:'#1565c0',fixed:true,highlight:false}));
+    // MC line (true cost)
+    objs.push(board.create('line',[[0,p],[1,p]],{strokeColor:'#00897b',strokeWidth:2,dash:3,straightFirst:false,straightLast:true,point1:{visible:false},point2:{visible:false}}));
+    objs.push(board.create('text',[12.5,p+8,'CMg='+p],{fontSize:10,color:'#00897b',fixed:true,highlight:false}));
+    // Perceived price line
+    objs.push(board.create('line',[[0,pPerc],[1,pPerc]],{strokeColor:'#C8102E',strokeWidth:2,dash:2,straightFirst:false,straightLast:true,point1:{visible:false},point2:{visible:false}}));
+    objs.push(board.create('text',[12.5,pPerc+8,'r·p='+pPerc.toFixed(0)],{fontSize:10,color:'#C8102E',fixed:true,highlight:false}));
+    // Efficient point
+    objs.push(board.create('point',[Qeff,p],{name:'',size:5,fillColor:'#00897b',strokeColor:'#00897b',fixed:true}));
+    // Insured point
+    objs.push(board.create('point',[Qins,pPerc],{name:'',size:5,fillColor:'#C8102E',strokeColor:'#C8102E',fixed:true}));
+    // DWL triangle
+    if(Qins>Qeff){
+      objs.push(board.create('polygon',[[Qeff,p],[Qins,pPerc],[Qins,p]],{fillColor:'rgba(230,81,0,0.18)',borders:{strokeWidth:0},vertices:{visible:false}}));
+      objs.push(board.create('text',[(Qeff+Qins)/2+0.3,(p+pPerc)/2,'DWL'],{fontSize:10,color:'#e65100',anchorX:'middle',fixed:true,highlight:false}));
+    }
+    // Dashed lines
+    objs.push(board.create('segment',[[Qeff,0],[Qeff,p]],{strokeColor:'#00897b',dash:3,strokeWidth:1}));
+    objs.push(board.create('segment',[[Qins,0],[Qins,pPerc]],{strokeColor:'#C8102E',dash:3,strokeWidth:1}));
+    var dwl=0.5*(Qins-Qeff)*(p-pPerc);
+    var excessQ=(Qins-Qeff);
+    var html='\\(Q_{\\text{eficiente}} = '+Qeff.toFixed(1)+'\\), \\(Q_{\\text{segurado}} = '+Qins.toFixed(1)+'\\)<br>';
+    html+='Excesso de utilizacao: <strong>'+excessQ.toFixed(1)+'</strong> consultas<br>';
+    html+='Peso morto: <strong style="color:#e65100;">'+dwl.toFixed(0)+'</strong><br>';
+    if(r<0.01)html+='<span style="color:#C8102E;">Cobertura total: maximo risco moral!</span>';
+    else if(r>0.99)html+='<span style="color:#00897b;">Sem seguro: eficiente, mas sem protecao contra risco.</span>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">O copagamento \\(r\\) equilibra protecao contra risco e incentivos para uso eficiente.</div>';
+    document.getElementById('info').innerHTML=html;board.update();
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-r').value=0.2;document.getElementById('slider-p').value=100;draw();}
+  ['slider-r','slider-p'].forEach(function(id){document.getElementById(id).addEventListener('input',draw);});
+  draw();
+</script>
+</body>
+</html>

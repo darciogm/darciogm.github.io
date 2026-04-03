@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  WebR — Elasticidades cruzadas e classificação de bens
+  Cap. 6: Relações entre Bens
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Elasticidades Cruzadas</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:320px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Elasticidades Cruzadas e Classificação de Bens
+# Cap. 6: Relações entre Bens
+# Função CES: U(x1, x2) = (a*x1^rho + (1-a)*x2^rho)^(1/rho)
+
+# Parâmetros (altere!)
+a   <- 0.5     # peso do bem 1
+rho <- 0.5     # rho -> 1: substitutos; rho -> -inf: complementos
+m   <- 100     # renda
+p2  <- 5       # preço fixo do bem 2
+
+sigma <- 1 / (1 - rho)  # elasticidade de substituição
+
+cat(sprintf("σ (elast. substituição) = %.2f\n", sigma))
+cat(sprintf("rho = %.2f  →  bens são %s\n\n",
+    rho, ifelse(sigma > 1, "SUBSTITUTOS líquidos",
+          ifelse(sigma == 1, "Cobb-Douglas (σ=1)",
+                 "COMPLEMENTOS líquidos"))))
+
+# Demanda Marshalliana para CES (solução numérica via FOC)
+# x1/x2 = (a/(1-a) * p2/p1)^sigma
+p1_grid <- seq(1, 20, length.out = 200)
+x1_marsh <- numeric(length(p1_grid))
+x2_marsh <- numeric(length(p1_grid))
+
+for (i in seq_along(p1_grid)) {
+  p1 <- p1_grid[i]
+  ratio <- (a / (1 - a) * p2 / p1)^sigma
+  # x2 = m / (p2 + p1 * ratio)
+  x2_marsh[i] <- m / (p2 + p1 * ratio)
+  x1_marsh[i] <- ratio * x2_marsh[i]
+}
+
+# Elasticidade cruzada numérica: e_{1,p2}
+dp2 <- 0.01
+x1_alt <- numeric(length(p1_grid))
+for (i in seq_along(p1_grid)) {
+  p1 <- p1_grid[i]
+  ratio_alt <- (a / (1 - a) * (p2 + dp2) / p1)^sigma
+  x2_alt <- m / ((p2 + dp2) + p1 * ratio_alt)
+  x1_alt[i] <- ratio_alt * x2_alt
+}
+e_cross <- (x1_alt - x1_marsh) / dp2 * p2 / x1_marsh
+
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# Painel 1: Demanda x1(p1)
+plot(p1_grid, x1_marsh, type = "l", col = "#C8102E", lwd = 2,
+     xlab = expression(p[1]), ylab = expression(x[1]),
+     main = sprintf("Demanda x₁(p₁) | σ = %.1f", sigma))
+grid()
+
+# Painel 2: Elasticidade cruzada
+plot(p1_grid, e_cross, type = "l", col = "#2a7f2a", lwd = 2,
+     xlab = expression(p[1]),
+     ylab = expression(e[list(1,p[2])]),
+     main = "Elasticidade cruzada ε₁,p₂")
+abline(h = 0, col = "gray", lty = 2)
+grid()
+
+cat(sprintf("\nNo ponto p1=5: ε₁,p₂ = %.3f  →  ", e_cross[which.min(abs(p1_grid - 5))]))
+e_val <- e_cross[which.min(abs(p1_grid - 5))]
+cat(ifelse(e_val > 0, "SUBSTITUTOS brutos\n", "COMPLEMENTOS brutos\n"))
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Altere <code>rho</code>: valores positivos (ex: 0.5) = substitutos; negativos (ex: -2) = complementos. Observe como a elasticidade cruzada muda de sinal!
+  </div>
+</div>
+<script type="module">
+  import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

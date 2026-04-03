@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Curva de Oferta Backward-Bending (CES)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Backward-Bending com utilidade CES
+# Baseado no Exercicio 17.6
+# ============================================
+
+# U(C,L) = (alpha*C^rho + (1-alpha)*L^rho)^(1/rho)
+# sigma = 1/(1-rho) = elasticidade de substituicao
+
+alpha <- 0.5
+TT <- 24       # dotacao de tempo
+V <- 0         # renda nao salarial
+
+# Testar varias elasticidades de substituicao
+sigma_vals <- c(2.0, 1.0, 0.5, 0.3)
+
+cat("====== BACKWARD-BENDING COM CES ======\n")
+cat("U = (alpha*C^rho + (1-alpha)*L^rho)^(1/rho)\n")
+cat("alpha =", alpha, "  T =", TT, "  V =", V, "\n\n")
+
+# Demanda marshalliana por lazer (CES, V=0):
+# L*(w) = T / (1 + ((alpha)/(1-alpha))^sigma * w^(sigma-1))
+# Quando sigma < 1 => sigma-1 < 0 => backward-bending possivel
+
+cat("--- Oferta de trabalho para diferentes sigma ---\n\n")
+
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+w_seq <- seq(0.1, 50, length = 500)
+cols <- c("#0d6efd", "#198754", "#dc3545", "#6f42c1")
+
+# Primeiro calcular os ranges
+plot(NULL, xlim = c(0, TT), ylim = c(0, max(w_seq)),
+     xlab = "Horas trabalhadas (h)",
+     ylab = "Salario (w)",
+     main = "Oferta de trabalho: papel da elasticidade")
+
+for (k in seq_along(sigma_vals)) {
+  sig <- sigma_vals[k]
+  ratio <- (alpha / (1 - alpha))^sig
+  L_star <- TT / (1 + ratio * w_seq^(sig - 1))
+  h_star <- TT - L_star
+
+  lines(h_star, w_seq, lwd = 3, col = cols[k],
+        lty = ifelse(k <= 2, 1, 2))
+
+  # Encontrar h maximo (pico da backward-bending)
+  h_max <- max(h_star)
+  w_peak <- w_seq[which.max(h_star)]
+
+  if (sig < 1) {
+    cat(sprintf("sigma = %.1f: backward-bending!\n", sig))
+    cat(sprintf("  h maximo = %.2f em w = %.1f\n", h_max, w_peak))
+    points(h_max, w_peak, pch = 19, col = cols[k], cex = 1.5)
+  } else if (sig == 1) {
+    cat(sprintf("sigma = %.1f (Cobb-Douglas): h* = alpha*T = %.0f (constante)\n",
+        sig, alpha * TT))
+  } else {
+    cat(sprintf("sigma = %.1f: sempre positivamente inclinada\n", sig))
+  }
+}
+
+cat("\n--- Resumo ---\n")
+cat("sigma > 1: oferta sempre positiva (ES domina)\n")
+cat("sigma = 1: Cobb-Douglas, oferta perfeitamente inelastica\n")
+cat("sigma < 1: backward-bending (ER domina para w alto)\n")
+cat("Quanto menor sigma, mais rapido a curva se volta.\n")
+
+# Linha vertical para Cobb-Douglas
+abline(v = alpha * TT, col = "#198754", lty = 3, lwd = 1)
+
+legend("topright",
+       legend = paste0("sigma = ", sigma_vals),
+       col = cols, lwd = 3,
+       lty = c(1, 1, 2, 2),
+       cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

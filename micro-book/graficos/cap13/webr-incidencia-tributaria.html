@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Incidencia Tributaria e Elasticidades</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Incidencia tributaria: quem paga o imposto?
+# Exercicio Resolvido 13.3
+# ============================================
+
+# --- Parametros (altere e re-execute!) ---
+a_d <- 120   # intercepto demanda: Qd = a_d - b_d*p
+b_d <- 2     # inclinacao demanda
+c_s <- -30   # intercepto oferta: Qs = c_s + d_s*p
+d_s <- 3     # inclinacao oferta
+t   <- 10    # imposto por unidade
+
+# --- Equilibrio sem imposto ---
+p0 <- (a_d - c_s) / (b_d + d_s)
+Q0 <- a_d - b_d * p0
+
+# Elasticidades no equilibrio
+e_D <- -b_d * p0 / Q0
+e_S <-  d_s * p0 / Q0
+
+cat("====== INCIDENCIA TRIBUTARIA ======\n")
+cat("Demanda: Qd =", a_d, "-", b_d, "p\n")
+cat("Oferta:  Qs =", c_s, "+", d_s, "p\n")
+cat("Imposto: t =", t, "\n\n")
+
+cat("--- Equilibrio sem imposto ---\n")
+cat("p* =", p0, "  Q* =", Q0, "\n")
+cat("e_D =", round(e_D, 3), "  e_S =", round(e_S, 3), "\n\n")
+
+# --- Equilibrio com imposto ---
+# Qd(pc) = Qs(pc - t) => a_d - b_d*pc = c_s + d_s*(pc - t)
+pc <- (a_d - c_s + d_s * t) / (b_d + d_s)
+pp <- pc - t
+Qt <- a_d - b_d * pc
+
+cat("--- Equilibrio com imposto ---\n")
+cat("Preco consumidor: pc =", round(pc, 2), " (subiu", round(pc - p0, 2), ")\n")
+cat("Preco produtor:   pp =", round(pp, 2), " (caiu", round(p0 - pp, 2), ")\n")
+cat("Quantidade:       Qt =", round(Qt, 2), " (caiu", round(Q0 - Qt, 2), ")\n\n")
+
+# --- Incidencia ---
+frac_cons <- e_S / (e_S + abs(e_D))
+frac_prod <- abs(e_D) / (e_S + abs(e_D))
+
+cat("--- Divisao do onus ---\n")
+cat("Fracao consumidor:", round(frac_cons * 100, 1), "%\n")
+cat("Fracao produtor:  ", round(frac_prod * 100, 1), "%\n")
+cat("Verificacao: dp_c/t =", round((pc-p0)/t*100, 1), "%\n")
+cat("             dp_p/t =", round((p0-pp)/t*100, 1), "%\n\n")
+
+# --- Excedentes e PPM ---
+# Demanda inversa: p = (a_d - Q)/b_d; Oferta inversa: p = (Q - c_s)/d_s
+p_D_inv <- function(Q) (a_d - Q) / b_d
+p_S_inv <- function(Q) (Q - c_s) / d_s
+
+EC0 <- 0.5 * (p_D_inv(0) - p0) * Q0
+EP0 <- 0.5 * (p0 - p_S_inv(0)) * Q0
+W0 <- EC0 + EP0
+
+EC1 <- 0.5 * (p_D_inv(0) - pc) * Qt
+EP1 <- 0.5 * (pp - p_S_inv(0)) * Qt
+R   <- t * Qt
+PPM <- W0 - EC1 - EP1 - R
+
+cat("--- Bem-estar ---\n")
+cat("Sem imposto: EC =", EC0, " EP =", EP0, " W =", W0, "\n")
+cat("Com imposto: EC =", round(EC1, 1), " EP =", round(EP1, 1), "\n")
+cat("Receita gov: R =", round(R, 1), "\n")
+cat("PPM = W0 - EC1 - EP1 - R =", round(PPM, 1), "\n")
+cat("PPM (formula): 0.5*t*dQ =", round(0.5 * t * (Q0 - Qt), 1), "\n\n")
+
+cat("PPM crece com t^2: dobrar t quadruplica PPM!\n")
+cat("PPM(t=", t, ") =", round(PPM, 1), "\n")
+cat("PPM(t=", 2*t, ") =", round(0.5 * (2*t)^2 * b_d*d_s/(b_d+d_s), 1), "\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+Q_seq <- seq(0, a_d, length = 300)
+
+plot(Q_seq, p_D_inv(Q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, max(p_D_inv(0), (a_d-c_s)/d_s) * 1.05),
+     xlab = "Q", ylab = "p",
+     main = "Incidencia tributaria")
+lines(Q_seq, p_S_inv(Q_seq), lwd = 3, col = "#dc3545")
+
+# Oferta deslocada (S + t)
+lines(Q_seq, p_S_inv(Q_seq) + t, lwd = 2, col = "#dc3545", lty = 2)
+
+# Area de receita do governo
+rect(0, pp, Qt, pc, col = rgb(0.43, 0.26, 0.76, 0.12), border = "#6f42c1", lty = 2)
+text(Qt/2, (pc + pp)/2, paste0("Receita\n= ", round(R)), col = "#6f42c1", cex = 0.8, font = 2)
+
+# Triangulo de PPM
+polygon(c(Qt, Q0, Qt), c(pc, p0, pp),
+        col = rgb(0.86, 0.21, 0.27, 0.2), border = "#dc3545", lwd = 1.5)
+text(Qt + (Q0-Qt)*0.6, p0, paste0("PPM = ", round(PPM, 1)),
+     col = "#dc3545", cex = 0.75, font = 2)
+
+# Pontos
+points(Q0, p0, pch = 19, col = "#198754", cex = 1.8)
+points(Qt, pc, pch = 17, col = "#0d6efd", cex = 1.3)
+points(Qt, pp, pch = 17, col = "#dc3545", cex = 1.3)
+
+# Anotacoes
+text(Q0, p0, paste0("  E0: p=", p0), pos = 4, cex = 0.7, col = "#198754", font = 2)
+text(Qt, pc + 1, paste0("pc=", round(pc, 1)), pos = 2, cex = 0.7, col = "#0d6efd", font = 2)
+text(Qt, pp - 1, paste0("pp=", round(pp, 1)), pos = 2, cex = 0.7, col = "#dc3545", font = 2)
+
+# Cunha
+arrows(Qt * 0.15, pp, Qt * 0.15, pc, code = 3, col = "#6f42c1", lwd = 2, length = 0.06)
+text(Qt * 0.15, (pc+pp)/2, paste0("t=", t), pos = 2, col = "#6f42c1", cex = 0.75, font = 2)
+
+legend("topright",
+       legend = c("Demanda", "Oferta", "Oferta + t", "Receita", "PPM"),
+       col = c("#0d6efd", "#dc3545", "#dc3545", "#6f42c1", rgb(0.86, 0.21, 0.27, 0.5)),
+       lwd = c(3, 3, 2, NA, NA), lty = c(1, 1, 2, NA, NA),
+       pch = c(NA, NA, NA, 15, 15), cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:440}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

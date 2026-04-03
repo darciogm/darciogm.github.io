@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — FPP, Imposto e Perda de Eficiencia</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# FPP, imposto e perda de eficiencia
+# Exercicio Resolvido 14.5
+# ============================================
+
+# --- FPP: X1^2 + X2^2 = 200 ---
+# Consumidores identicos: U = x1^(1/2) * x2^(1/2)
+# Imposto ad valorem t sobre bem 1
+
+cat("====== FPP E DISTORCAO TRIBUTARIA ======\n\n")
+
+# --- Equilibrio sem imposto ---
+cat("--- Equilibrio sem imposto ---\n")
+X1_star <- sqrt(100)  # X1 = X2 = 10
+X2_star <- sqrt(100)
+U_star <- (X1_star/2)^0.5 * (X2_star/2)^0.5
+TMT_star <- X1_star / X2_star
+TMS_star <- X2_star / X1_star  # = 1 (simetria)
+
+cat("X1* =", X1_star, "  X2* =", X2_star, "\n")
+cat("TMT = X1/X2 =", TMT_star, "\n")
+cat("TMS = X2/X1 =", TMS_star, "\n")
+cat("TMT = TMS?", abs(TMT_star - TMS_star) < 1e-10, "\n")
+cat("Utilidade por consumidor:", U_star, "\n\n")
+
+# --- Equilibrio com imposto ---
+taxas <- c(0.1, 0.25, 0.5, 1.0, 2.0)
+cat("--- Efeito do imposto t sobre bem 1 ---\n")
+cat(sprintf("%-6s %-8s %-8s %-8s %-8s %-10s %-8s\n",
+    "t", "X1", "X2", "TMT", "TMS", "U/cons", "Perda%"))
+cat(strrep("-", 60), "\n")
+
+resultados <- data.frame()
+for (t in taxas) {
+  # X2^2 = (1+t)*X1^2, na FPP: X1^2*(2+t) = 200
+  X1_t <- sqrt(200 / (2 + t))
+  X2_t <- sqrt(200 - X1_t^2)
+  TMT_t <- X1_t / X2_t
+  TMS_t <- (1 + t) * TMT_t  # consumidor ve preco (1+t)*p1
+  U_t <- (X1_t/2)^0.5 * (X2_t/2)^0.5
+  perda <- (U_star - U_t) / U_star * 100
+  cat(sprintf("%-6.2f %-8.2f %-8.2f %-8.3f %-8.3f %-10.4f %-8.2f\n",
+      t, X1_t, X2_t, TMT_t, TMS_t, U_t, perda))
+  resultados <- rbind(resultados,
+    data.frame(t = t, X1 = X1_t, X2 = X2_t, U = U_t, perda = perda))
+}
+
+cat("\nCONCLUSAO: O imposto cria uma cunha TMS != TMT.\n")
+cat("Quanto maior t, maior a distorcao e a perda de bem-estar.\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: FPP com e sem imposto
+theta <- seq(0, pi/2, length = 300)
+X1_fpp <- sqrt(200) * cos(theta)
+X2_fpp <- sqrt(200) * sin(theta)
+
+plot(X1_fpp, X2_fpp, type = "l", lwd = 3, col = "#343a40",
+     xlab = expression(X[1]), ylab = expression(X[2]),
+     main = "FPP e distorcao tributaria",
+     xlim = c(0, 16), ylim = c(0, 16), asp = 1)
+
+# Ponto sem imposto
+points(X1_star, X2_star, pch = 19, col = "#198754", cex = 2)
+text(X1_star + 0.3, X2_star + 0.5, "Sem imposto\n(TMS = TMT)",
+     col = "#198754", cex = 0.7, font = 2)
+
+# Ponto com t = 0.5
+t05 <- 0.5
+X1_05 <- sqrt(200/(2+t05)); X2_05 <- sqrt(200 - X1_05^2)
+points(X1_05, X2_05, pch = 17, col = "#dc3545", cex = 2)
+text(X1_05 - 0.3, X2_05 + 0.6, "t = 0.5\n(TMS != TMT)",
+     col = "#dc3545", cex = 0.7, font = 2, pos = 2)
+
+# Ponto com t = 1.0
+t10 <- 1.0
+X1_10 <- sqrt(200/(2+t10)); X2_10 <- sqrt(200 - X1_10^2)
+points(X1_10, X2_10, pch = 15, col = "#fd7e14", cex = 1.8)
+text(X1_10 - 0.3, X2_10 + 0.6, "t = 1.0",
+     col = "#fd7e14", cex = 0.7, font = 2, pos = 2)
+
+# Linha 45 graus (eficiencia)
+abline(a = 0, b = 1, col = "#198754", lty = 3, lwd = 1)
+
+legend("topright", legend = c("FPP", "Eficiente", "t=0.5", "t=1.0"),
+       col = c("#343a40", "#198754", "#dc3545", "#fd7e14"),
+       pch = c(NA, 19, 17, 15), lwd = c(3, NA, NA, NA),
+       cex = 0.7, bg = "white")
+
+# Painel 2: Perda de bem-estar vs taxa
+t_seq <- seq(0, 3, length = 200)
+perda_seq <- sapply(t_seq, function(t) {
+  X1 <- sqrt(200/(2+t)); X2 <- sqrt(200 - X1^2)
+  U <- (X1/2)^0.5 * (X2/2)^0.5
+  (U_star - U) / U_star * 100
+})
+
+plot(t_seq, perda_seq, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Taxa de imposto (t)",
+     ylab = "Perda de bem-estar (%)",
+     main = "Peso morto em equilibrio geral")
+abline(h = 0, col = "#adb5bd", lty = 2)
+points(0.5, resultados$perda[resultados$t == 0.5],
+       pch = 19, col = "#dc3545", cex = 1.5)
+text(0.5, resultados$perda[resultados$t == 0.5] + 1,
+     "t = 0.5", col = "#dc3545", cex = 0.8, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<!--
+  Cap. 10 — Curto vs Longo Prazo: Curva Envoltória
+  Library: JSXGraph
+  Multiple SRAC curves for different K levels
+  LRAC as envelope
+  Slider: K (capital fixed in SR)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curto Prazo vs Longo Prazo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .legend { margin-top: .5rem; font-size: .78rem; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; } .controls { flex-basis: 100%; width: 100%; max-width: 520px; } }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(\bar{K}\) selecionado: <span class="val" id="val-K">4.00</span></label>
+        <input type="range" id="sl-K" min="1" max="10" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>\(w\): <span class="val" id="val-w">2.00</span></label>
+        <input type="range" id="sl-w" min="0.5" max="5" step="0.25" value="2">
+      </div>
+      <div class="slider-group">
+        <label>\(r\): <span class="val" id="val-r">2.00</span></label>
+        <input type="range" id="sl-r" min="0.5" max="5" step="0.25" value="2">
+      </div>
+      <div class="legend">
+        <span style="background:#C8102E"></span>SRAC (\(\bar{K}\) selecionado) &nbsp;
+        <span style="background:#ccc"></span>Outros SRAC &nbsp;
+        <span style="background:#1565c0"></span>LRAC (envoltória)
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2.9, 28, 17, -3.8],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[15,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,25]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold
+    board.create('text', [-2.9 * 0.55, 28 / 2, '<b>CMe</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [17 / 2, -3.8 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var objs = [];
+
+    // Production function: q = K^0.5 * L^0.5 (CRS)
+    // Short run: q = Kbar^0.5 * L^0.5 => L = q^2 / Kbar
+    // CT_SR = r*Kbar + w*q^2/Kbar
+    // CMe_SR = r*Kbar/q + w*q/Kbar
+
+    // Long run: C = 2*sqrt(w*r)*q => CMe_LR = 2*sqrt(w*r)
+
+    // For U-shaped curves, use q = K^(1/3) * L^(1/3) (DRS)
+    // SR: q = Kbar^(1/3) * L^(1/3) => L = q^3 / Kbar
+    // CT_SR = r*Kbar + w*q^3/Kbar
+    // CMe_SR = r*Kbar/q + w*q^2/Kbar
+
+    // LR: min wL + rK s.t. K^(1/3)*L^(1/3) = q
+    // TMST = K/L = w/r => K = (w/r)L
+    // (w/r)^(1/3) * L^(2/3) = q => L = q^(3/2) / (w/r)^(1/2)
+    // C_LR = 2*sqrt(w*r)*q^(3/2)
+    // CMe_LR = 2*sqrt(w*r)*q^(1/2)
+
+    function CMe_SR(q, Kbar, w, r) {
+      if (q <= 0.1) return NaN;
+      return r * Kbar / q + w * q * q / Kbar;
+    }
+
+    function CMe_LR(q, w, r) {
+      if (q <= 0.1) return NaN;
+      return 2 * Math.sqrt(w * r) * Math.sqrt(q);
+    }
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var Ksel = parseFloat(document.getElementById('sl-K').value);
+      var w = parseFloat(document.getElementById('sl-w').value);
+      var r = parseFloat(document.getElementById('sl-r').value);
+      document.getElementById('val-K').textContent = Ksel.toFixed(2);
+      document.getElementById('val-w').textContent = w.toFixed(2);
+      document.getElementById('val-r').textContent = r.toFixed(2);
+
+      var qmax = 14;
+      var Kvals = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+      // Draw SRAC for each K level
+      for (var ki = 0; ki < Kvals.length; ki++) {
+        var Kb = Kvals[ki];
+        var xs = [], ys = [];
+        for (var q = 0.3; q <= qmax; q += 0.1) {
+          var v = CMe_SR(q, Kb, w, r);
+          if (!isNaN(v) && v > 0 && v < 25) { xs.push(q); ys.push(v); }
+        }
+        if (xs.length > 0) {
+          var isSelected = (Math.abs(Kb - Ksel) < 0.01);
+          var col = isSelected ? '#C8102E' : '#ddd';
+          var sw = isSelected ? 2.5 : 1;
+          objs.push(board.create('curve', [xs, ys], { strokeColor: col, strokeWidth: sw }));
+          if (isSelected || Kb % 3 === 0) {
+            var midIdx = 0;
+            var minV = Infinity;
+            for (var j = 0; j < ys.length; j++) { if (ys[j] < minV) { minV = ys[j]; midIdx = j; } }
+            objs.push(board.create('text', [xs[midIdx], minV - 0.8, 'K=' + Kb],
+              { fontSize: 8, color: isSelected ? '#C8102E' : '#aaa', anchorX: 'middle' }));
+          }
+        }
+      }
+
+      // LRAC envelope
+      var xs_lr = [], ys_lr = [];
+      for (var q = 0.3; q <= qmax; q += 0.1) {
+        var v = CMe_LR(q, w, r);
+        if (!isNaN(v) && v > 0 && v < 25) { xs_lr.push(q); ys_lr.push(v); }
+      }
+      if (xs_lr.length > 0) {
+        objs.push(board.create('curve', [xs_lr, ys_lr], { strokeColor: '#1565c0', strokeWidth: 3 }));
+        var idx = Math.floor(xs_lr.length * 0.85);
+        objs.push(board.create('text', [xs_lr[idx]+0.2, ys_lr[idx]+0.5, 'LRAC'], { fontSize: 11, color: '#1565c0' }));
+      }
+
+      // Tangency point for selected K
+      // SRAC tangent to LRAC when dCMe_SR/dq = dCMe_LR/dq
+      // For selected K: min of SRAC does not necessarily touch LRAC
+      // Tangency: CMe_SR = CMe_LR
+      // r*K/q + w*q^2/K = 2*sqrt(wr)*q^(1/2)
+      // Solve numerically
+      var qTan = NaN, cmeTan = NaN;
+      for (var q = 0.5; q <= qmax; q += 0.05) {
+        var diff = CMe_SR(q, Ksel, w, r) - CMe_LR(q, w, r);
+        var diff2 = CMe_SR(q + 0.05, Ksel, w, r) - CMe_LR(q + 0.05, w, r);
+        if (diff * diff2 <= 0) {
+          qTan = q + 0.025;
+          cmeTan = CMe_LR(qTan, w, r);
+          break;
+        }
+      }
+      // Also check near minimum of SRAC
+      // min SRAC: d/dq(r*K/q + w*q^2/K) = -rK/q^2 + 2wq/K = 0 => q^3 = rK^2/(2w)
+      var qMinSR = Math.pow(r * Ksel * Ksel / (2 * w), 1.0/3);
+      var cmeMinSR = CMe_SR(qMinSR, Ksel, w, r);
+      var cmeLR_at_min = CMe_LR(qMinSR, w, r);
+
+      if (!isNaN(qTan) && qTan > 0 && qTan < qmax && cmeTan < 25) {
+        objs.push(board.create('point', [qTan, cmeTan], {
+          name: '', size: 4, color: '#00897b', fixed: true
+        }));
+        objs.push(board.create('text', [qTan + 0.3, cmeTan + 0.8, 'Tangência'], { fontSize: 9, color: '#00897b' }));
+      }
+
+      var info = document.getElementById('info');
+      var html = '<div class="eq">\\(q = K^{1/3} L^{1/3}\\)</div>';
+      html += '<div>\\(\\bar{K} = ' + Ksel.toFixed(1) + '\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div>CMe\\(_{CP} = \\frac{r\\bar{K}}{q} + \\frac{wq^2}{\\bar{K}}\\)</div>';
+      html += '<div>CMe\\(_{LP} = 2\\sqrt{wr} \\cdot q^{1/2}\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div>Min SRAC: \\(q = ' + qMinSR.toFixed(2) + '\\), CMe = ' + cmeMinSR.toFixed(2) + '</div>';
+      if (!isNaN(qTan)) {
+        html += '<div style="color:#00897b">Tangência em \\(q \\approx ' + qTan.toFixed(2) + '\\)</div>';
+      }
+      html += '<div style="margin-top:.4rem;font-size:.78rem;color:#666">LRAC tangência cada SRAC: no LP a firma escolhe \\(K\\) ótimo</div>';
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-K').value = 4;
+      document.getElementById('sl-w').value = 2;
+      document.getElementById('sl-r').value = 2;
+      draw();
+    }
+
+    ['sl-K','sl-w','sl-r'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

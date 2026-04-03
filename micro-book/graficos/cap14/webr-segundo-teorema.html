@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Segundo Teorema e Transferencias Lump-Sum</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Segundo Teorema do Bem-Estar:
+# Transferencias lump-sum (ER 14.4)
+# ============================================
+
+# --- Economia (mesma do ER 14.2) ---
+wA <- c(8, 2); wB <- c(2, 8)
+aA <- 0.5   # U_A = x1^(1/2) * x2^(1/2)
+aB <- 1/3   # U_B = x1^(1/3) * x2^(2/3)
+
+# --- Alocacao desejada ---
+xA_target <- c(5, 10/3)
+xB_target <- c(5, 20/3)
+totais <- wA + wB
+
+cat("====== SEGUNDO TEOREMA DO BEM-ESTAR ======\n")
+cat("Dotacoes originais: wA =", wA, "  wB =", wB, "\n")
+cat("Alocacao desejada:  xA =", round(xA_target, 3),
+    "  xB =", round(xB_target, 3), "\n\n")
+
+# --- Passo 1: Verificar eficiencia ---
+TMS_A <- (aA/(1-aA)) * xA_target[2] / xA_target[1]
+TMS_B <- (aB/(1-aB)) * xB_target[2] / xB_target[1]
+
+cat("--- Verificacao de eficiencia ---\n")
+cat("TMS_A =", round(TMS_A, 4), "\n")
+cat("TMS_B =", round(TMS_B, 4), "\n")
+cat("Pareto-eficiente (TMS_A = TMS_B)?", abs(TMS_A - TMS_B) < 1e-10, "\n\n")
+
+# --- Passo 2: Preco que sustenta ---
+p_target <- TMS_A  # p1/p2 = TMS no equilibrio
+cat("--- Preco de equilibrio ---\n")
+cat("p* = TMS =", round(p_target, 4), " (p2 = 1)\n\n")
+
+# --- Passo 3: Rendas necessarias ---
+IA_need <- p_target * xA_target[1] + xA_target[2]
+IB_need <- p_target * xB_target[1] + xB_target[2]
+
+# --- Passo 4: Rendas originais ao novo preco ---
+IA_orig <- p_target * wA[1] + wA[2]
+IB_orig <- p_target * wB[1] + wB[2]
+
+# --- Passo 5: Transferencia ---
+T_A <- IA_need - IA_orig
+T_B <- IB_need - IB_orig
+
+cat("--- Transferencias lump-sum ---\n")
+cat("Renda necessaria: IA =", round(IA_need, 4),
+    "  IB =", round(IB_need, 4), "\n")
+cat("Renda original:   IA =", round(IA_orig, 4),
+    "  IB =", round(IB_orig, 4), "\n")
+cat("Transferencia: T_A =", round(T_A, 4),
+    "  T_B =", round(T_B, 4), "\n")
+cat("T_A + T_B =", round(T_A + T_B, 10), " (soma zero!)\n\n")
+
+# --- Comparacao de utilidades ---
+UA_orig <- wA[1]^aA * wA[2]^(1-aA)
+UB_orig <- wB[1]^aB * wB[2]^(1-aB)
+UA_target <- xA_target[1]^aA * xA_target[2]^(1-aA)
+UB_target <- xB_target[1]^aB * xB_target[2]^(1-aB)
+
+cat("--- Utilidades ---\n")
+cat("Na dotacao:  U_A =", round(UA_orig, 3),
+    "  U_B =", round(UB_orig, 3), "\n")
+cat("Na meta:     U_A =", round(UA_target, 3),
+    "  U_B =", round(UB_target, 3), "\n")
+cat("A perde?", UA_target < UA_orig,
+    "  B ganha?", UB_target > UB_orig, "\n\n")
+
+cat("CONCLUSAO: O Segundo Teorema separa eficiencia de equidade.\n")
+cat("Basta redistribuir renda (lump-sum) e deixar o mercado operar.\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+# Curva de contrato (para CD com alphas diferentes)
+# TMS_A = TMS_B => (aA/(1-aA))*(x2A/x1A) = (aB/(1-aB))*((T2-x2A)/(T1-x1A))
+x1A_seq <- seq(0.1, totais[1]-0.1, length = 300)
+rA <- aA / (1 - aA)
+rB <- aB / (1 - aB)
+# rA * x2A / x1A = rB * (T2 - x2A) / (T1 - x1A)
+# x2A * (rA*(T1-x1A) + rB*x1A) = rB * x1A * T2
+x2A_cc <- (rB * x1A_seq * totais[2]) / (rA * (totais[1] - x1A_seq) + rB * x1A_seq)
+
+plot(x1A_seq, x2A_cc, type = "l", lwd = 2, col = "#6f42c1",
+     xlim = c(0, totais[1]), ylim = c(0, totais[2]),
+     xlab = expression(x[1]^A), ylab = expression(x[2]^A),
+     main = "Caixa de Edgeworth: Segundo Teorema")
+rect(0, 0, totais[1], totais[2], border = "#343a40", lwd = 2)
+
+# Dotacao
+points(wA[1], wA[2], pch = 15, col = "#198754", cex = 2)
+text(wA[1], wA[2], "  E (dotacao)", pos = 4, cex = 0.8, col = "#198754", font = 2)
+
+# Equilibrio de mercado (do ER 14.2)
+num <- aA * wA[2] + aB * wB[2]
+den <- totais[1] - aA * wA[1] - aB * wB[1]
+p_eq <- num / den
+IA_eq <- wA[1]*p_eq + wA[2]
+xA_eq <- c(aA*IA_eq/p_eq, (1-aA)*IA_eq)
+points(xA_eq[1], xA_eq[2], pch = 19, col = "#0d6efd", cex = 1.8)
+text(xA_eq[1], xA_eq[2], "  W (eq. mercado)", pos = 4, cex = 0.7, col = "#0d6efd", font = 2)
+
+# Alocacao desejada
+points(xA_target[1], xA_target[2], pch = 17, col = "#dc3545", cex = 2)
+text(xA_target[1], xA_target[2], "  T (meta)", pos = 2, cex = 0.8, col = "#dc3545", font = 2)
+
+# Linha de preco para meta
+abline(a = IA_need, b = -p_target, col = "#dc3545", lty = 2, lwd = 1.5)
+
+# Seta dotacao -> meta
+arrows(wA[1]-0.2, wA[2]+0.1, xA_target[1]+0.2, xA_target[2]-0.1,
+       col = "#fd7e14", lwd = 2, length = 0.1)
+text((wA[1]+xA_target[1])/2, (wA[2]+xA_target[2])/2 + 0.5,
+     "Transferencia\nlump-sum", col = "#fd7e14", cex = 0.7, font = 2)
+
+legend("bottomright",
+       legend = c("Curva de contrato", "Dotacao", "Eq. mercado", "Meta (2o Teorema)"),
+       col = c("#6f42c1", "#198754", "#0d6efd", "#dc3545"),
+       pch = c(NA, 15, 19, 17), lwd = c(2, NA, NA, NA), lty = c(1, NA, NA, NA),
+       cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

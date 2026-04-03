@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Equilibrio de Longo Prazo e Entrada/Saida</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Equilibrio de longo prazo com entrada/saida
+# Tres tipos de industria:
+#   custos constantes, crescentes, decrescentes
+# ============================================
+
+# --- Firma individual: C(q) = CF + c*q + d*q^2 ---
+CF <- 50; c_par <- 10; d_par <- 1
+
+CMe <- function(q) CF/q + c_par + d_par*q
+CMg <- function(q) c_par + 2*d_par*q
+CVMe <- function(q) c_par + d_par*q
+
+# CMe minimo (ponto de lucro zero)
+q_min <- sqrt(CF / d_par)
+p_min <- CMe(q_min)
+
+cat("====== FIRMA INDIVIDUAL ======\n")
+cat("C(q) =", CF, "+", c_par, "q +", d_par, "q^2\n")
+cat("CMe_min =", round(p_min, 2), " em q =", round(q_min, 2), "\n\n")
+
+# --- Demanda de mercado ---
+a_dem <- 1000; b_dem <- 10
+Qd <- function(p) a_dem - b_dem * p
+
+# --- 1. CUSTOS CONSTANTES ---
+cat("====== 1. INDUSTRIA DE CUSTOS CONSTANTES ======\n")
+p_LP1 <- p_min
+Q_LP1 <- Qd(p_LP1)
+n_LP1 <- Q_LP1 / q_min
+cat("p_LP =", round(p_LP1, 2), " (= CMe_min, fixo)\n")
+cat("Q_LP =", round(Q_LP1, 1), "\n")
+cat("Numero de firmas =", round(n_LP1, 1), "\n")
+cat("Oferta LP: horizontal em p =", round(p_LP1, 2), "\n\n")
+
+# --- 2. CUSTOS CRESCENTES ---
+# CMe_min sobe com n: p_min(n) = p_min + 0.1*(n - n_LP1)
+cat("====== 2. INDUSTRIA DE CUSTOS CRESCENTES ======\n")
+gamma <- 0.1  # sensibilidade do custo ao numero de firmas
+# No LP: p = p_min + gamma*(Q/q_min - n_LP1) e p = (a - Q)/b
+# Resolver:
+# Q/b_dem = a/b_dem - p_min - gamma*(Q/q_min - n_LP1)
+# Simplificando para oferta LP inclinada positiva
+
+# Oferta LP: p = p_min + (gamma/q_min)*(Q - Q_LP1)
+slope_LP <- gamma / q_min
+cat("Oferta LP: p =", round(p_LP1, 2), "+", round(slope_LP, 4), "*(Q -", round(Q_LP1,1), ")\n")
+
+# Choque de demanda: a' = 1200
+a_dem2 <- 1200
+# Novo equilibrio LP
+# a'/b - Q/b = p_min + slope*(Q - Q_LP1)
+# (a'/b - p_min + slope*Q_LP1) = Q*(1/b + slope)
+Q_LP2 <- (a_dem2/b_dem - p_LP1 + slope_LP * Q_LP1) / (1/b_dem + slope_LP)
+p_LP2 <- p_LP1 + slope_LP * (Q_LP2 - Q_LP1)
+n_LP2 <- Q_LP2 / q_min
+
+cat("Pos-choque (demanda +200):\n")
+cat("  p_LP =", round(p_LP2, 2), " (subiu!)\n")
+cat("  Q_LP =", round(Q_LP2, 1), "\n")
+cat("  Firmas =", round(n_LP2, 1), "\n\n")
+
+# --- 3. CUSTOS DECRESCENTES ---
+cat("====== 3. INDUSTRIA DE CUSTOS DECRESCENTES ======\n")
+gamma_d <- -0.05
+slope_LP_d <- gamma_d / q_min
+cat("Oferta LP: inclinacao negativa =", round(slope_LP_d, 4), "\n")
+Q_LP3 <- (a_dem2/b_dem - p_LP1 + abs(slope_LP_d)*Q_LP1) / (1/b_dem - abs(slope_LP_d))
+p_LP3 <- p_LP1 + slope_LP_d * (Q_LP3 - Q_LP1)
+cat("Pos-choque: p_LP =", round(p_LP3, 2), " (caiu!)\n")
+cat("  Q_LP =", round(Q_LP3, 1), "\n\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Firma individual
+q_seq <- seq(0.5, 20, length = 300)
+plot(q_seq, CMe(q_seq), type = "l", lwd = 2, col = "#0d6efd",
+     ylim = c(0, 50), xlab = "q (firma)", ylab = "$/unidade",
+     main = "Firma individual")
+lines(q_seq, CMg(q_seq), lwd = 2, col = "#dc3545")
+abline(h = p_min, col = "#198754", lwd = 1.5, lty = 2)
+points(q_min, p_min, pch = 19, col = "#198754", cex = 1.5)
+text(q_min, p_min, paste0("  CMe_min=", round(p_min, 1)),
+     pos = 4, cex = 0.75, col = "#198754", font = 2)
+legend("topright", legend = c("CMe", "CMg", "p_LP"),
+       col = c("#0d6efd", "#dc3545", "#198754"),
+       lwd = 2, lty = c(1, 1, 2), cex = 0.7, bg = "white")
+
+# Painel 2: Tres tipos de industria
+Q_seq <- seq(0, 900, length = 300)
+p_dem1 <- (a_dem - Q_seq) / b_dem
+p_dem2 <- (a_dem2 - Q_seq) / b_dem
+
+plot(Q_seq, p_dem1, type = "l", lwd = 2, col = "#0d6efd", lty = 2,
+     ylim = c(0, 50), xlab = "Q (industria)", ylab = "p",
+     main = "Oferta de longo prazo")
+lines(Q_seq, p_dem2, lwd = 3, col = "#0d6efd")
+
+# Custos constantes (horizontal)
+abline(h = p_LP1, col = "#198754", lwd = 2.5)
+
+# Custos crescentes
+p_cresc <- p_LP1 + slope_LP * (Q_seq - Q_LP1)
+lines(Q_seq[p_cresc > 0], p_cresc[p_cresc > 0], lwd = 2.5, col = "#fd7e14")
+
+# Custos decrescentes
+p_decresc <- p_LP1 + slope_LP_d * (Q_seq - Q_LP1)
+lines(Q_seq[p_decresc > 5], p_decresc[p_decresc > 5], lwd = 2.5, col = "#dc3545", lty = 4)
+
+# Equilibrios
+points(Q_LP1, p_LP1, pch = 19, col = "#198754", cex = 1.5)
+points(Q_LP2, p_LP2, pch = 17, col = "#fd7e14", cex = 1.5)
+
+legend("topright",
+       legend = c("Demanda D", "Demanda D'",
+                  "OLP: custos ctes", "OLP: custos cresc.", "OLP: custos decresc."),
+       col = c("#0d6efd", "#0d6efd", "#198754", "#fd7e14", "#dc3545"),
+       lwd = c(2, 3, 2.5, 2.5, 2.5), lty = c(2, 1, 1, 1, 4),
+       cex = 0.6, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

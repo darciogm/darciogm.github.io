@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 20 — Maximização de Lucro I — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-20-maximização-de-lucro-i">Pré-Aula 20 — Maximização de Lucro I</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 12, Seções 12.1–12.3</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Derivar a condição de maximização de lucro <span class="math inline">\(P = CMg\)</span> para uma firma tomadora de preços e verificar a condição de segunda ordem</li>
+<li>Explicar a relação <span class="math inline">\(VPMg = w\)</span> e sua interpretação como demanda por fatores</li>
+<li>Enunciar as propriedades da função lucro, o Lema de Hotelling e a lei da oferta</li>
+</ol>
+<hr />
+<h2 id="a-firma-tomadora-de-preços">1. A firma tomadora de preços</h2>
+<p>Uma firma <strong>competitiva</strong> (tomadora de preço, ou <em>price taker</em>) não consegue influenciar o preço de mercado. Ela pode vender qualquer quantidade ao preço <span class="math inline">\(P\)</span> vigente. Sua receita total é:</p>
+<p><span class="math display">\[RT(q) = Pq\]</span></p>
+<p>e a receita marginal é simplesmente <span class="math inline">\(RMg = P\)</span>. O <strong>lucro econômico</strong> é:</p>
+<p><span class="math display">\[\pi(q) = Pq - C(q)\]</span></p>
+<p>onde <span class="math inline">\(C(q)\)</span> inclui todos os custos de oportunidade.</p>
+<hr />
+<h2 id="condições-de-ótimo">2. Condições de ótimo</h2>
+<h3 id="cpo-condição-de-primeira-ordem">CPO (Condição de Primeira Ordem)</h3>
+<p><span class="math display">\[\frac{d\pi}{dq} = P - CMg(q) = 0 \implies \boxed{P = CMg(q^*)}\]</span></p>
+<h3 id="cso-condição-de-segunda-ordem">CSO (Condição de Segunda Ordem)</h3>
+<p><span class="math display">\[\frac{d^2\pi}{dq^2} = -\frac{dCMg}{dq} &lt; 0 \implies \frac{dCMg}{dq} &gt; 0\]</span></p>
+<p>O custo marginal deve ser <strong>crescente</strong> no ponto ótimo. Se o CMg fosse decrescente, teríamos um mínimo de lucro, não um máximo.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>O preço é o sinal, o custo marginal é a resposta.</strong> Se <span class="math inline">\(P &gt; CMg\)</span>, a última unidade gera mais receita do que custa — vale produzir mais. Se <span class="math inline">\(P &lt; CMg\)</span>, a última unidade custa mais do que rende — é melhor produzir menos. O equilíbrio <span class="math inline">\(P = CMg\)</span> é o ponto em que a firma esgota todas as oportunidades de lucro marginal positivo.</p>
+</div>
+<hr />
+<h2 id="vpmg-e-a-demanda-por-fatores">3. VPMg e a demanda por fatores</h2>
+<p>No problema de maximização de lucro com um fator variável (trabalho):</p>
+<p><span class="math display">\[\max_L \; Pf(L,\bar{K}) - wL - v\bar{K}\]</span></p>
+<p><strong>CPO:</strong></p>
+<p><span class="math display">\[P \cdot PMg_L = w \implies \boxed{VPMg_L = w}\]</span></p>
+<p>O <strong>valor do produto marginal</strong> (<span class="math inline">\(VPMg = P \cdot PMg\)</span>) é o que vale para a firma a última unidade de trabalho contratada. A firma contrata até o ponto em que <span class="math inline">\(VPMg = w\)</span>.</p>
+<p>Com dois fatores variáveis:</p>
+<p><span class="math display">\[VPMg_L = w \quad \text{e} \quad VPMg_K = v\]</span></p>
+<p>Dividindo: <span class="math inline">\(PMg_L/PMg_K = w/v\)</span>, que recupera a condição de minimização de custos.</p>
+<hr />
+<h2 id="a-função-lucro-e-suas-propriedades">4. A função lucro e suas propriedades</h2>
+<p>A <strong>função lucro</strong> <span class="math inline">\(\pi^*(P, w, v)\)</span> dá o lucro máximo como função dos preços:</p>
+<p><span class="math display">\[\pi^*(P, w, v) = \max_q \big[Pq - C(w,v,q)\big]\]</span></p>
+<p><strong>Propriedades:</strong></p>
+<ol type="1">
+<li><strong>Não decrescente em <span class="math inline">\(P\)</span></strong> e <strong>não crescente em <span class="math inline">\(w\)</span>, <span class="math inline">\(v\)</span></strong></li>
+<li><strong>Homogênea de grau 1</strong> em <span class="math inline">\((P, w, v)\)</span>: dobrar todos os preços dobra o lucro nominal</li>
+<li><strong>Convexa em <span class="math inline">\(P\)</span></strong>: a firma responde mais do que proporcionalmente a aumentos de preço</li>
+<li><strong>Convexa em <span class="math inline">\((w,v)\)</span></strong>: idem para preços dos fatores</li>
+</ol>
+<h3 id="lema-de-hotelling">Lema de Hotelling</h3>
+<p><span class="math display">\[q^*(P) = \frac{\partial \pi^*}{\partial P}, \quad L^* = -\frac{\partial \pi^*}{\partial w}, \quad K^* = -\frac{\partial \pi^*}{\partial v}\]</span></p>
+<p>A oferta e as demandas de fatores são obtidas por simples diferenciação da função lucro.</p>
+<hr />
+<h2 id="convexidade-e-lei-da-oferta">5. Convexidade e lei da oferta</h2>
+<p>A convexidade de <span class="math inline">\(\pi^*\)</span> em <span class="math inline">\(P\)</span> implica que:</p>
+<p><span class="math display">\[\frac{\partial^2 \pi^*}{\partial P^2} = \frac{\partial q^*}{\partial P} \geq 0\]</span></p>
+<p>Isso é a <strong>lei da oferta</strong>: a quantidade ofertada é não decrescente no preço. Um aumento de preço nunca reduz a produção ótima da firma.</p>
+<p>Analogamente, a convexidade em <span class="math inline">\(w\)</span> implica <span class="math inline">\(\partial L^*/\partial w \leq 0\)</span>: a demanda (incondicional) por trabalho é não crescente no salário.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p><strong>A convexidade da função lucro reflete a flexibilidade da firma.</strong> Se o preço sobe, a firma pode ajustar a produção para cima e capturar mais lucro; se cai, pode reduzir a produção e limitar perdas. Essa capacidade de ajuste é o que torna o lucro convexo — os ganhos com preços altos superam as perdas com preços baixos.</p>
+</div>
+<hr />
+<h2 id="gráfico-interativo-maximização-de-lucro">Gráfico interativo: maximização de lucro</h2>
+<div id="graph-max-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/maximizacao-lucro.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Varie o preço <span class="math inline">\(P\)</span> e observe como <span class="math inline">\(q^*\)</span> se ajusta ao longo da curva de CMg</li>
+<li>Note a área de lucro (retângulo entre <span class="math inline">\(P\)</span> e CMe no ponto <span class="math inline">\(q^*\)</span>)</li>
+<li>Verifique que a CSO exige CMg crescente no ótimo</li>
+</ul>
+</div>
+<hr />
+<h2 id="gráfico-interativo-lucro-máximo-como-função-do-preço">Gráfico interativo: lucro máximo como função do preço</h2>
+<div id="graph-funcao-lucro" style="min-height: 450px;">
+<iframe src="graficos/cap12/lucro-maximo.html">
+</iframe>
+</div>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<ul>
+<li>Observe a convexidade de <span class="math inline">\(\pi^*(P)\)</span> — a curva “abre para cima”</li>
+<li>A inclinação em cada ponto é <span class="math inline">\(q^*(P)\)</span> (Lema de Hotelling)</li>
+<li>Note que <span class="math inline">\(\pi^*\)</span> nunca fica abaixo de zero para preços suficientemente altos</li>
+</ul>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Uma firma competitiva tem <span class="math inline">\(C(q) = 2q^2 + 4q + 18\)</span>. O preço é <span class="math inline">\(P = 20\)</span>. Encontre <span class="math inline">\(q^*\)</span>, o lucro e verifique a CSO.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(CMg = 4q + 4\)</span>. CPO: <span class="math inline">\(20 = 4q + 4 \implies q^* = 4\)</span>.</p>
+<p>CSO: <span class="math inline">\(dCMg/dq = 4 &gt; 0\)</span> (CMg crescente no ótimo).</p>
+<p><span class="math inline">\(\pi = 20(4) - [2(16) + 4(4) + 18] = 80 - [32 + 16 + 18] = 80 - 66 = 14\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(f(L) = 10L^{1/2}\)</span> com <span class="math inline">\(P = 5\)</span> e <span class="math inline">\(w = 2\)</span>, encontre a quantidade ótima de trabalho.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(PMg_L = 5L^{-1/2}\)</span>. Condição <span class="math inline">\(VPMg_L = w\)</span>:</p>
+<p><span class="math inline">\(5 \times 5L^{-1/2} = 2 \implies 25L^{-1/2} = 2 \implies L^{-1/2} = 2/25\)</span></p>
+<p><span class="math inline">\(L^{1/2} = 25/2 \implies L^* = 156{,}25\)</span></p>
+<p>Verificação: <span class="math inline">\(VPMg_L(156{,}25) = 25/12{,}5 = 2 = w\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Mostre que a função lucro é homogênea de grau 1 em <span class="math inline">\((P,w,v)\)</span>. O que isso significa economicamente?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Se multiplicamos <span class="math inline">\(P\)</span>, <span class="math inline">\(w\)</span> e <span class="math inline">\(v\)</span> por <span class="math inline">\(t &gt; 0\)</span>:</p>
+<p><span class="math inline">\(\pi^*(tP, tw, tv) = \max_q [tPq - C(tw, tv, q)]\)</span></p>
+<p>Como <span class="math inline">\(C\)</span> é homogênea de grau 1 em <span class="math inline">\((w,v)\)</span>: <span class="math inline">\(C(tw, tv, q) = tC(w, v, q)\)</span>.</p>
+<p><span class="math inline">\(\pi^*(tP, tw, tv) = \max_q\, t[Pq - C(w,v,q)] = t\,\pi^*(P, w, v)\)</span></p>
+<p>Economicamente: o lucro é medido em unidades monetárias. Uma inflação uniforme (todos os preços dobram) dobra o lucro nominal sem alterar decisões reais. A firma não sofre de “ilusão monetária”.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. A condição de maximização de lucro para uma firma competitiva é:</div>
+<div class="quiz-option" data-value="a">(a) \(RMg = CMe\)</div>
+<div class="quiz-option" data-value="b">(b) \(P = CMg\) com CMg crescente</div>
+<div class="quiz-option" data-value="c">(c) \(P = CMe\)</div>
+<div class="quiz-option" data-value="d">(d) \(CMg = CVMe\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. A condição \(VPMg_L = w\) significa que a firma contrata trabalho até:</div>
+<div class="quiz-option" data-value="a">(a) O produto marginal ser zero</div>
+<div class="quiz-option" data-value="b">(b) O salário igualar o custo médio</div>
+<div class="quiz-option" data-value="c">(c) O valor monetário da produção adicional igualar o salário</div>
+<div class="quiz-option" data-value="d">(d) O produto total ser máximo</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Pelo Lema de Hotelling, a oferta da firma é:</div>
+<div class="quiz-option" data-value="a">(a) \(q^* = \partial\pi^*/\partial P\)</div>
+<div class="quiz-option" data-value="b">(b) \(q^* = -\partial\pi^*/\partial P\)</div>
+<div class="quiz-option" data-value="c">(c) \(q^* = \partial C/\partial P\)</div>
+<div class="quiz-option" data-value="d">(d) \(q^* = \pi^*/P\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. A lei da oferta decorre de qual propriedade da função lucro?</div>
+<div class="quiz-option" data-value="a">(a) Homogeneidade de grau 1</div>
+<div class="quiz-option" data-value="b">(b) Convexidade em \(P\)</div>
+<div class="quiz-option" data-value="c">(c) Concavidade em \(P\)</div>
+<div class="quiz-option" data-value="d">(d) Monotonicidade em \(w\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. Se todos os preços (produto e fatores) dobram, o lucro máximo:</div>
+<div class="quiz-option" data-value="a">(a) Dobra (homogeneidade de grau 1)</div>
+<div class="quiz-option" data-value="b">(b) Quadruplica</div>
+<div class="quiz-option" data-value="c">(c) Não se altera</div>
+<div class="quiz-option" data-value="d">(d) Cai pela metade</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-20')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 21</strong>: Maximização de lucro II — receita marginal, decisão de fechamento, curva de oferta e excedente do produtor. Revise a relação entre CMg e CVMe!</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-20');
+MicroQuiz.init('aula-20');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

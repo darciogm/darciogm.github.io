@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--
+  Cap. 10 — Curvas de Custo (CT, CMe, CMg, CVMe)
+  Library: JSXGraph
+  Cubic cost: CT = a + bq - cq^2 + dq^3
+  Sliders: a (CF), b, c, d
+  Shows CT, CMe, CMg, CVMe simultaneously
+  Highlights CMg crossing CMe at min CMe, shut-down point
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curvas de Custo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .boards { display: flex; flex-direction: column; gap: .5rem; flex: 1 1 420px; max-width: 520px; }
+    #jxgbox1 { width: 100%; height: 220px; border: 1px solid #ddd; border-radius: 6px; }
+    #jxgbox2 { width: 100%; height: 280px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .8rem; line-height: 1.5; }
+    .legend { margin-top: .5rem; font-size: .78rem; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) { .graph-container { flex-direction: column; align-items: center; } .boards { flex-basis: 100%; width: 100%; max-width: 520px; } #jxgbox1, #jxgbox2 { width: 100%; } .controls { flex-basis: 100%; width: 100%; max-width: 520px; } }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div class="boards">
+      <div id="jxgbox1"></div>
+      <div id="jxgbox2"></div>
+    </div>
+    <div class="controls">
+      <h3>Parâmetros do CT</h3>
+      <div style="font-size:.82rem;margin-bottom:.6rem;color:#555;">
+        \(CT(q) = a + bq - cq^2 + dq^3\)
+      </div>
+      <div class="slider-group">
+        <label>\(a\) (CF): <span class="val" id="val-a">50</span></label>
+        <input type="range" id="sl-a" min="10" max="100" step="5" value="50">
+      </div>
+      <div class="slider-group">
+        <label>\(b\): <span class="val" id="val-b">20</span></label>
+        <input type="range" id="sl-b" min="5" max="40" step="1" value="20">
+      </div>
+      <div class="slider-group">
+        <label>\(c\): <span class="val" id="val-c">3.00</span></label>
+        <input type="range" id="sl-c" min="0.5" max="6" step="0.25" value="3">
+      </div>
+      <div class="slider-group">
+        <label>\(d\): <span class="val" id="val-d">0.20</span></label>
+        <input type="range" id="sl-d" min="0.05" max="0.5" step="0.01" value="0.2">
+      </div>
+      <div class="legend">
+        <span style="background:#333"></span>CT &nbsp;
+        <span style="background:#C8102E"></span>CMg &nbsp;
+        <span style="background:#1565c0"></span>CMe &nbsp;
+        <span style="background:#00897b"></span>CVMe
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Board 1: CT
+    var b1 = JXG.JSXGraph.initBoard('jxgbox1', {
+      boundingbox: [-4.2, 560, 25, -75],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    b1.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    b1.create('axis', [[0,0],[0,500]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold
+    b1.create('text', [-4.2 * 0.55, 560 / 2, '<b>CT</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    b1.create('text', [25 / 2, -75 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    // Board 2: CMe, CMg, CVMe
+    var b2 = JXG.JSXGraph.initBoard('jxgbox2', {
+      boundingbox: [-4.2, 90, 25, -12],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    b2.create('axis', [[0,0],[22,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    b2.create('axis', [[0,0],[0,80]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold
+    b2.create('text', [-4.2 * 0.55, 90 / 2, '<b>$</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    b2.create('text', [25 / 2, -12 * 0.65, '<b><i>q</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var objs1 = [], objs2 = [];
+    var dragPt = null;
+
+    function getParams() {
+      return {
+        a: parseFloat(document.getElementById('sl-a').value),
+        b: parseFloat(document.getElementById('sl-b').value),
+        c: parseFloat(document.getElementById('sl-c').value),
+        d: parseFloat(document.getElementById('sl-d').value)
+      };
+    }
+
+    function CT(q, p) { return p.a + p.b*q - p.c*q*q + p.d*q*q*q; }
+    function CV(q, p) { return p.b*q - p.c*q*q + p.d*q*q*q; }
+    function CMg(q, p) { return p.b - 2*p.c*q + 3*p.d*q*q; }
+    function CMe(q, p) { return q > 0.1 ? CT(q, p) / q : NaN; }
+    function CVMe(q, p) { return q > 0.1 ? CV(q, p) / q : NaN; }
+
+    function draw() {
+      var i;
+      for (i = 0; i < objs1.length; i++) b1.removeObject(objs1[i]);
+      for (i = 0; i < objs2.length; i++) b2.removeObject(objs2[i]);
+      objs1 = []; objs2 = [];
+
+      var p = getParams();
+      document.getElementById('val-a').textContent = p.a.toFixed(0);
+      document.getElementById('val-b').textContent = p.b.toFixed(0);
+      document.getElementById('val-c').textContent = p.c.toFixed(2);
+      document.getElementById('val-d').textContent = p.d.toFixed(2);
+
+      var qmax = 20;
+
+      // CT curve
+      var xs = [], ys = [];
+      for (var q = 0; q <= qmax; q += 0.1) {
+        var ct = CT(q, p);
+        if (ct >= 0) { xs.push(q); ys.push(ct); }
+      }
+      objs1.push(b1.create('curve', [xs, ys], { strokeColor: '#333', strokeWidth: 2.5 }));
+      // CF line
+      objs1.push(b1.create('line', [[0, p.a], [20, p.a]], {
+        strokeColor: '#999', dash: 3, strokeWidth: 1, straightFirst: false, straightLast: false
+      }));
+      objs1.push(b1.create('text', [0.5, p.a + 10, 'CF=' + p.a.toFixed(0)], { fontSize: 9, color: '#999' }));
+
+      // Fixed y-limit for board 2 (matches boundingbox ymax = 80)
+      var yMax2 = 80;
+
+      // CMg curve
+      xs = []; ys = [];
+      for (var q = 0.1; q <= qmax; q += 0.1) {
+        var v = CMg(q, p);
+        if (v >= -5 && v <= yMax2) { xs.push(q); ys.push(v); }
+      }
+      objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
+      objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CMg'], { fontSize: 10, color: '#C8102E' }));
+
+      // CMe curve
+      xs = []; ys = [];
+      for (var q = 0.3; q <= qmax; q += 0.1) {
+        var v = CMe(q, p);
+        if (!isNaN(v) && v >= 0 && v <= yMax2) { xs.push(q); ys.push(v); }
+      }
+      objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#1565c0', strokeWidth: 2 }));
+      objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CMe'], { fontSize: 10, color: '#1565c0' }));
+
+      // CVMe curve
+      xs = []; ys = [];
+      for (var q = 0.3; q <= qmax; q += 0.1) {
+        var v = CVMe(q, p);
+        if (!isNaN(v) && v >= 0 && v <= yMax2) { xs.push(q); ys.push(v); }
+      }
+      objs2.push(b2.create('curve', [xs, ys], { strokeColor: '#00897b', strokeWidth: 2 }));
+      objs2.push(b2.create('text', [xs[xs.length-1]-1, ys[ys.length-1]+2, 'CVMe'], { fontSize: 10, color: '#00897b' }));
+
+      // Find min CVMe (shutdown point): d(CVMe)/dq = 0 => b - 2cq + dq^2... wait
+      // CVMe = b - cq + dq^2, d(CVMe)/dq = -c + 2dq = 0 => q_shutdown = c/(2d)
+      var qShutdown = p.c / (2 * p.d);
+      var cvmeMin = CVMe(qShutdown, p);
+
+      // Find min CMe: CMe = a/q + b - cq + dq^2
+      // d(CMe)/dq = -a/q^2 - c + 2dq = 0 => 2dq^3 - cq^2 - a = 0 (solve numerically)
+      var qMinCMe = qShutdown; // start guess
+      for (var iter = 0; iter < 50; iter++) {
+        var f = 2*p.d*qMinCMe*qMinCMe*qMinCMe - p.c*qMinCMe*qMinCMe - p.a;
+        var fp = 6*p.d*qMinCMe*qMinCMe - 2*p.c*qMinCMe;
+        if (Math.abs(fp) < 1e-10) break;
+        qMinCMe = qMinCMe - f / fp;
+        if (qMinCMe < 0.1) qMinCMe = 0.1;
+      }
+      var cmeMin = CMe(qMinCMe, p);
+
+      // Mark shutdown point
+      if (qShutdown > 0 && qShutdown < qmax && cvmeMin > 0 && cvmeMin < yMax2) {
+        objs2.push(b2.create('point', [qShutdown, cvmeMin], {
+          name: '', size: 4, color: '#00897b', fixed: true
+        }));
+        objs2.push(b2.create('text', [qShutdown + 0.3, cvmeMin - 3, 'Fechamento'], { fontSize: 9, color: '#00897b' }));
+        objs2.push(b2.create('segment', [[qShutdown, 0], [qShutdown, cvmeMin]], { strokeColor: '#00897b', dash: 3, strokeWidth: 1 }));
+      }
+
+      // Mark min CMe
+      if (qMinCMe > 0 && qMinCMe < qmax && cmeMin > 0 && cmeMin < yMax2) {
+        objs2.push(b2.create('point', [qMinCMe, cmeMin], {
+          name: '', size: 4, color: '#1565c0', fixed: true
+        }));
+        objs2.push(b2.create('text', [qMinCMe + 0.3, cmeMin + 2, 'Min CMe'], { fontSize: 9, color: '#1565c0' }));
+      }
+
+      // Draggable point on CMg
+      var qDrag = 8;
+      dragPt = b2.create('point', [qDrag, CMg(qDrag, p)], {
+        name: '', size: 5, color: '#C8102E', fixed: false
+      });
+      objs2.push(dragPt);
+      dragPt.on('drag', function() {
+        var qq = Math.max(0.5, Math.min(this.X(), qmax));
+        this.moveTo([qq, CMg(qq, p)]);
+      });
+
+      // Info
+      var info = document.getElementById('info');
+      var qd = dragPt.X();
+      var html = '<div class="eq">\\(CT = ' + p.a + ' + ' + p.b + 'q - ' + p.c.toFixed(2) + 'q^2 + ' + p.d.toFixed(2) + 'q^3\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div>Min CVMe: \\(q = ' + qShutdown.toFixed(2) + '\\), \\(CVMe = ' + cvmeMin.toFixed(2) + '\\)</div>';
+      html += '<div>Min CMe: \\(q = ' + qMinCMe.toFixed(2) + '\\), \\(CMe = ' + cmeMin.toFixed(2) + '\\)</div>';
+      html += '<hr style="margin:.3rem 0">';
+      html += '<div style="color:#C8102E">Ponto no CMg: \\(q=' + qd.toFixed(1) + '\\), \\(CMg=' + CMg(qd, p).toFixed(2) + '\\)</div>';
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+
+      b1.update(); b2.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-a').value = 50;
+      document.getElementById('sl-b').value = 20;
+      document.getElementById('sl-c').value = 3;
+      document.getElementById('sl-d').value = 0.2;
+      draw();
+    }
+
+    ['sl-a','sl-b','sl-c','sl-d'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [b1, b2];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

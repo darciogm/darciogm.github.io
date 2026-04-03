@@ -1,0 +1,610 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 19 — Custos de Produção e Minimização de Custos"
+author: "Prof. Darcio Genicolo Martins"
+date: ""
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Recapitulando
+
+Nas duas últimas aulas, mapeamos a **tecnologia** da firma:
+
+- Função de produção $q = f(K,L)$
+- Isoquantas, TMST, rendimentos de escala
+- Quatro formas funcionais: Linear, Leontief, Cobb-Douglas, CES
+- Progresso técnico e PTF
+
+. . .
+
+**Hoje:** Falta o ingrediente crucial — o **preço**. Sabemos produzir; agora, quanto **custa**?
+
+> *And now for something completely different: a conta chega.*
+
+## Definições de Custo {data-background-color="#E50505"}
+
+## Custo Econômico vs. Custo Contábil
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Custo contábil:**
+
+Apenas desembolsos efetivos (custos explícitos)
+
+$$\pi_{\text{contábil}} = \text{Receita} - \text{Custos explícitos}$$
+:::
+
+::: {.column width="50%"}
+**Custo econômico:**
+
+Inclui custo de oportunidade dos recursos próprios
+
+$$\pi_{\text{econômico}} = \text{Receita} - \text{Explícitos} - \text{Implícitos}$$
+:::
+
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Um engenheiro que larga o emprego de R\$ 15.000/mês para abrir uma hamburgueria precisa contar esse salário perdido como custo. Se a hamburgueria "lucra" R\$ 12.000 no papel, ele está *perdendo* R\$ 3.000 em relação ao que poderia ganhar.
+:::
+
+## Custo de Oportunidade
+
+> O custo de oportunidade é o valor daquilo que você **deixou de fazer** ao escolher o que fez.
+
+. . .
+
+**Exemplo — Agricultura no Cerrado:**
+
+- Produtor com 500 ha próprios planta soja
+- Custo contábil: sementes, fertilizantes, mão de obra
+- Custo de oportunidade da terra: arrendamento de ~12 sacas/ha/ano
+- Se saca = R\$ 120: custo implícito = **R\$ 720.000/ano**
+
+. . .
+
+> Ignorar o custo de oportunidade é o erro mais comum de pequenos empreendedores no Brasil.
+
+## Exemplo Numérico: Confeitaria em BH {.smaller}
+
+| Item | Valor anual |
+|---|---:|
+| Receita | R\$ 480.000 |
+| Ingredientes | R\$ 120.000 |
+| Aluguel | R\$ 60.000 |
+| Salários funcionários | R\$ 96.000 |
+| Pró-labore | R\$ 48.000 |
+
+Equipamentos da proprietária: R\$ 200.000 (renderia 10% a.a.)
+
+Oferta de emprego como chef: R\$ 84.000/ano
+
+. . .
+
+$$\pi_{\text{contábil}} = 480 - 324 = \text{R\$}\; 156.000$$
+
+$$\pi_{\text{econômico}} = 480 - 324 - (36 + 20) = \text{R\$}\; 100.000 > 0 \; \checkmark$$
+
+## Lucro Normal e Lucro Econômico
+
+::: {.eq-highlight}
+$$\pi_{\text{econômico}} = 0 \implies \text{Lucro Normal}$$
+:::
+
+. . .
+
+| Conceito | Significado |
+|---|---|
+| **Lucro normal** ($\pi = 0$) | Remunera todos os fatores pelo custo de oportunidade |
+| **Lucro supranormal** ($\pi > 0$) | Renda econômica — atrai novas firmas |
+| **Prejuízo econômico** ($\pi < 0$) | Recursos renderiam mais em outro uso |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Lucro econômico zero **não** significa que a firma não ganha dinheiro. Significa que ganha *exatamente* o que ganharia na melhor alternativa. É o equilíbrio natural de mercados competitivos no longo prazo.
+:::
+
+## O MEI e a Armadilha do Lucro Contábil
+
+:::: {.columns}
+
+::: {.column width="55%"}
+**Dados (IBGE, 2023):**
+
+- Salário formal médio (ens. médio): R\$ 2.400/mês
+- MEI típico: fatura R\$ 3.500, custos R\$ 800
+- Lucro contábil: R\$ 2.700/mês
+
+Mas compensação total do emprego formal: ~R\$ 3.200/mês (FGTS + 13.o + férias)
+:::
+
+::: {.column width="45%"}
+**Lucro econômico do MEI:**
+
+$$2.700 - 3.200 = -\text{R\$}\; 500/\text{mês}$$
+
+O MEI que "ganha mais" está **perdendo** R\$ 500/mês em relação ao emprego formal!
+:::
+
+::::
+
+. . .
+
+> Não significa que todo MEI está errado — há ganhos de autonomia e potencial de crescimento.
+
+## Custos Irrecuperáveis (Sunk Costs)
+
+**Custos irrecuperáveis** são despesas já realizadas e que **não podem** ser recuperadas.
+
+. . .
+
+**Regra racional:** Ao decidir, considere apenas custos e benefícios *futuros*.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Você comprou ingresso de R\$ 200 para um show e está com febre. A pergunta racional **não** é "já paguei R\$ 200". Essa quantia se foi de qualquer jeito. A pergunta certa é: "dado como estou, ir ao show me deixa melhor ou pior?"
+:::
+
+. . .
+
+**No mundo corporativo:** Projetos de obras públicas continuam sendo financiados simplesmente porque "já se investiu muito" — *sunk cost fallacy*.
+
+## Minimização de Custos {data-background-color="#730D9F"}
+
+## Maximização de Lucro → Minimização de Custos
+
+A firma maximizadora de lucro resolve:
+
+$$\max_{K, L} \; \pi = p \cdot f(K, L) - wL - vK$$
+
+. . .
+
+**Resultado fundamental:**
+
+> Maximizar lucro **implica** minimizar custos — mas a recíproca não vale!
+
+. . .
+
+**Por quê?** Minimizar custos é **necessário**, mas a firma ainda precisa escolher o *nível ótimo* de produção.
+
+. . .
+
+**Estratégia analítica em dois estágios:**
+
+1. Cap. 11: Minimizar custo para cada $q$ → função custo $C(q)$
+2. Caps. 12–13: Escolher $q^*$ que maximiza lucro dado $C(q)$
+
+## A Decomposição em Dois Estágios
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Estágio 1 — Eficiência produtiva**
+
+Para cada $q$, encontrar a combinação de insumos que **minimiza** o custo:
+
+$$C(q) = \min_{K,L} \{wL + vK : f(K,L) = q\}$$
+
+*"Como produzir?"*
+:::
+
+::: {.column width="50%"}
+**Estágio 2 — Decisão de produção**
+
+Escolher $q^*$ que **maximiza** o lucro:
+
+$$\max_q \; \pi = pq - C(q)$$
+
+$$\implies p = C'(q^*) = \mathrm{CMg}$$
+
+*"Quanto produzir?"*
+:::
+
+::::
+
+. . .
+
+> Hoje resolvemos o Estágio 1. O Estágio 2 virá nos Capítulos 12–13.
+
+## O Problema de Minimização de Custos
+
+::: {.eq-highlight}
+$$\min_{K, L} \; C = wL + vK \quad \text{s.a.} \quad f(K, L) = q_0$$
+:::
+
+. . .
+
+**Déjà vu do consumidor!**
+
+| Consumidor (Cap. 4) | Firma (Cap. 11) |
+|---|---|
+| Curva de indiferença | Isoquanta |
+| Reta orçamentária | Reta de isocusto |
+| Demandas hicksianas | Demandas condicionadas |
+| Função gasto | Função custo |
+| Identidade de Roy | Lema de Shephard |
+
+## A Reta de Isocusto
+
+Todas as combinações $(K, L)$ com mesmo custo total $C_0$:
+
+$$K = \frac{C_0}{v} - \frac{w}{v}L$$
+
+. . .
+
+**Inclinação:** $-w/v$ (razão dos preços dos insumos)
+
+. . .
+
+A minimização de custos busca a isocusto **mais baixa** que ainda toca a isoquanta $q_0$.
+
+## Interpretação Geométrica da Tangência
+
+No ponto ótimo, a isoquanta e a isocusto são **tangentes**:
+
+- A isoquanta é convexa (TMST decrescente)
+- A isocusto é uma reta com inclinação $-w/v$
+- No ponto de tangência: inclinação da isoquanta = inclinação da isocusto
+
+. . .
+
+**Três regiões:**
+
+| Posição | Condição | Ação |
+|---|---|---|
+| TMST $> w/v$ | L muito produtivo relativo ao custo | Usar **mais** L |
+| TMST $< w/v$ | K muito produtivo relativo ao custo | Usar **mais** K |
+| TMST $= w/v$ | **Ótimo** — nenhum ajuste melhora | Ponto de tangência |
+
+## Isocustos Interativas (JSXGraph)
+
+<div id="jxgbox-aula04" style="width:700px; height:420px; margin: 0 auto;"></div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('jxgbox-aula04', {
+    boundingbox: [-0.5, 12, 12, -0.5], axis: true,
+    defaultAxes: {x: {name: 'L', withLabel: true, label: {position: 'rt', offset: [-10, 15]}},
+                  y: {name: 'K', withLabel: true, label: {position: 'rt', offset: [15, -5]}}}
+  });
+  var sw = brd.create('slider', [[0.5,11.2],[5,11.2],[1, 4, 10]], {name: 'w', snapWidth: 0.5});
+  var sr = brd.create('slider', [[0.5,10.4],[5,10.4],[1, 2, 10]], {name: 'v', snapWidth: 0.5});
+  // Isoquanta: Cobb-Douglas q=K^0.5 L^0.5 = 4
+  var q0 = 4;
+  brd.create('functiongraph', [function(L) {
+    if (L < 0.2) return NaN;
+    return q0*q0 / L;
+  }, 0.2, 11], {strokeColor: '#2196F3', strokeWidth: 2.5, name: 'Isoquanta q=4'});
+  // Isocost at optimal level
+  var optL = function() {
+    var w = sw.Value(), v = sr.Value();
+    return q0 * Math.sqrt(v/w);
+  };
+  var optK = function() {
+    var w = sw.Value(), v = sr.Value();
+    return q0 * Math.sqrt(w/v);
+  };
+  var C0 = function() { return sw.Value()*optL() + sr.Value()*optK(); };
+  brd.create('line', [
+    function() { return [0, C0()/sr.Value()]; },
+    function() { return [C0()/sw.Value(), 0]; }
+  ], {strokeColor: '#E50505', strokeWidth: 2, dash: 2, straightFirst: false, straightLast: false,
+      point1: {visible: false}, point2: {visible: false}});
+  brd.create('point', [optL, optK], {
+    size: 5, fillColor: '#E50505', name: 'Ótimo',
+    label: {offset: [10, 10], fontSize: 13}
+  });
+  brd.create('text', [7, 9, function() {
+    return 'C* = ' + C0().toFixed(1) + '  |  w/v = ' + (sw.Value()/sr.Value()).toFixed(2);
+  }], {fontSize: 13});
+})();
+</script>
+
+Ajuste $w$ e $v$ para ver como a isocusto gira e o ponto ótimo se desloca sobre a isoquanta.
+
+## Condição de Tangência
+
+Pelo método de Lagrange:
+
+$$\mathcal{L} = wL + vK + \lambda[q_0 - f(K, L)]$$
+
+. . .
+
+CPO:
+
+$$\frac{w}{f_L} = \frac{v}{f_K} \implies \boxed{\mathrm{TMST}_{L,K} = \frac{w}{v}}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No ótimo, a taxa à qual a firma *pode* trocar $K$ por $L$ sem perder produção (TMST) deve igualar a taxa à qual o *mercado permite* essa troca ($w/v$). Se a TMST fosse maior que $w/v$, a firma economizaria usando mais trabalho e menos capital.
+:::
+
+## Condição Equivalente
+
+A condição de tangência pode ser reescrita como:
+
+::: {.eq-highlight}
+$$\frac{f_L}{w} = \frac{f_K}{v} = \frac{1}{\lambda}$$
+:::
+
+**Interpretação:** O produto marginal por **unidade monetária** gasta deve ser igual para todos os insumos.
+
+. . .
+
+Se $\mathrm{PMg}_L / w > \mathrm{PMg}_K / v$: o trabalho rende mais por real gasto → use **mais** trabalho
+
+Se $\mathrm{PMg}_L / w < \mathrm{PMg}_K / v$: o capital rende mais por real gasto → use **mais** capital
+
+. . .
+
+> No ótimo, o "último real" gasto em qualquer insumo gera o mesmo acréscimo de produto.
+
+## Minimização de Custo — Gráfico Interativo
+
+<iframe src="graficos/cap11/minimizacao-custo.html" width="100%" height="450" frameborder="0" class="graph-embed"></iframe>
+
+Ajuste $w$, $v$, $q$ e $\alpha$ para observar como o ponto ótimo e o custo mínimo se alteram.
+
+## Exemplo: Cobb-Douglas $q = K^{1/3}L^{2/3}$ {.smaller}
+
+**Dados:** $w = 8$, $v = 2$, $\alpha = 1/3$, $\beta = 2/3$
+
+**Passo 1 — Tangência:**
+
+$$\frac{\beta}{\alpha} \cdot \frac{K}{L} = \frac{w}{v} \implies 2 \cdot \frac{K}{L} = 4 \implies L = \frac{K}{2}$$
+
+. . .
+
+**Passo 2 — Substituir na restrição** $K^{1/3}(K/2)^{2/3} = q$:
+
+$$K^c = 2^{2/3}\, q, \qquad L^c = 2^{-1/3}\, q$$
+
+. . .
+
+**Passo 3 — Função custo:**
+
+$$C(w,v,q) = 2 \cdot 2^{2/3} q + 8 \cdot 2^{-1/3} q = 3 \cdot 2^{5/3}\, q \approx 9{,}52\, q$$
+
+Com CRS ($\alpha + \beta = 1$): $\mathrm{CMe} = \mathrm{CMg} \approx 9{,}52$ (constantes).
+
+## Demandas Condicionais e Função Custo {data-background-color="#E50505"}
+
+## Das CPO às Demandas Condicionais
+
+Resolvendo a tangência $\mathrm{TMST} = w/v$ junto com a restrição $f(K,L) = q_0$:
+
+::: {.eq-highlight}
+$$L^c = L^c(w, v, q), \qquad K^c = K^c(w, v, q)$$
+:::
+
+. . .
+
+**"Condicionais"** = condicionadas ao nível de produto $q$ (que é tomado como dado).
+
+. . .
+
+**Propriedades:**
+
+- Homogêneas de grau **zero** nos preços: $L^c(tw, tv, q) = L^c(w, v, q)$
+- Se todos os preços dobram, a combinação ótima **não muda** — só o custo dobra
+- Análogas às demandas **hicksianas** do consumidor
+
+## A Função Custo
+
+Plugamos as demandas ótimas de volta na conta:
+
+::: {.eq-highlight}
+$$C(w, v, q) = w \cdot L^c(w, v, q) + v \cdot K^c(w, v, q)$$
+:::
+
+. . .
+
+**Propriedades fundamentais:**
+
+1. **Não decrescente** em $w$, $v$ e $q$
+2. **Homogênea de grau 1** nos preços: $C(tw, tv, q) = t \cdot C(w, v, q)$
+3. **Côncava** nos preços dos insumos (firma substitui o insumo mais caro)
+4. **Contínua** nos preços
+
+. . .
+
+> A função custo é o "extrato bancário" da firma eficiente — resume tecnologia e preços em um único número.
+
+## Lema de Shephard
+
+::: {.eq-highlight}
+$$\frac{\partial C(w, v, q)}{\partial w} = L^c(w, v, q), \qquad \frac{\partial C(w, v, q)}{\partial v} = K^c(w, v, q)$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o preço da energia sobe R\$ 0,01 por kWh e a conta de luz da fábrica sobe R\$ 500, você sabe que a fábrica consome 50.000 kWh. O Lema de Shephard formaliza essa ideia: a sensibilidade do custo ao preço de um insumo **revela** a quantidade usada desse insumo.
+:::
+
+. . .
+
+**Demonstração** (pelo teorema da envoltória):
+
+$$\frac{\partial C}{\partial w} = \frac{\partial \mathcal{L}}{\partial w}\bigg|_{\text{ótimo}} = L^c \quad \blacksquare$$
+
+## Curvas de Custo {data-background-color="#000000"}
+
+## Curvas de Custo: O Trio que Manda na Oferta
+
+Fixamos preços dos insumos e variamos apenas $q$:
+
+::: {.eq-highlight}
+$$CT(q) = CF + CV(q)$$
+:::
+
+| Curva | Fórmula |
+|---|---|
+| **Custo Total** | $CT(q) = CF + CV(q)$ |
+| **Custo Médio** | $\mathrm{CMe}(q) = CF/q + CV(q)/q$ |
+| **Custo Variável Médio** | $\mathrm{CVMe}(q) = CV(q)/q$ |
+| **Custo Marginal** | $\mathrm{CMg}(q) = dCT/dq = dCV/dq$ |
+
+. . .
+
+> O CMg é o protagonista: determina as decisões de produção da firma competitiva.
+
+## Relação CMg–CMe: A Analogia da Média
+
+$$\frac{d(\mathrm{CMe})}{dq} = \frac{\mathrm{CMg} - \mathrm{CMe}}{q}$$
+
+. . .
+
+| Condição | Efeito |
+|---|---|
+| $\mathrm{CMg} < \mathrm{CMe}$ | CMe **decrescente** — CMg puxa a média para baixo |
+| $\mathrm{CMg} > \mathrm{CMe}$ | CMe **crescente** — CMg puxa a média para cima |
+| $\mathrm{CMg} = \mathrm{CMe}$ | CMe no **mínimo** — cruzamento |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se sua média de notas é 7 e você tira 9 na próxima prova, a média sobe. Se tira 5, cai. A nota marginal sempre arrasta a média. Com custos, o CMg cruza o CMe exatamente no ponto de **mínimo** do CMe.
+:::
+
+## CMg e PMg: Reflexo no Espelho
+
+::: {.eq-highlight}
+$$\mathrm{CMg} = \frac{w}{\mathrm{PMg}_L}$$
+:::
+
+. . .
+
+**PMg crescente** $\Rightarrow$ CMg decrescente (cada trabalhador extra produz mais $\to$ custo por unidade cai)
+
+**PMg decrescente** $\Rightarrow$ CMg crescente (rendimentos marginais decrescentes $\to$ custo sobe)
+
+. . .
+
+> A curva de CMg em U é a **herança direta** da lei dos rendimentos marginais decrescentes (Cap. 10).
+
+## Curvas de Custo — Gráfico Interativo
+
+<iframe src="graficos/cap11/curvas-custo.html" title="Curvas de Custo" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+Ajuste os parâmetros da função cúbica de custo. Observe o cruzamento CMg-CMe no mínimo do CMe.
+
+## Custos de Curto e Longo Prazo {data-background-color="#E50505"}
+
+## Curto Prazo vs. Longo Prazo
+
+No **curto prazo**, o capital é fixo em $\bar{K}$. No **longo prazo**, todos os insumos são variáveis.
+
+. . .
+
+::: {.eq-highlight}
+$$CT_{LP}(q) \leq CT_{CP}(q; \bar{K}) \quad \text{para todo } q \text{ e todo } \bar{K}$$
+:::
+
+com igualdade quando $\bar{K} = K^*(q)$ — o capital fixo coincide com o ótimo de longo prazo.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No curto prazo, a planta do apartamento está fixa — você empilha colchões. No longo prazo, você poderia ter alugado uma casa maior. Por isso $CT_{LP} \leq CT_{CP}$.
+:::
+
+## Custos CP vs LP — Gráfico Interativo
+
+<iframe src="graficos/cap11/curto-longo-prazo.html" title="Custos CP vs LP" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+Cada curva cinza é um CMe de curto prazo (SRAC) para um nível fixo de capital; a curva azul (LRAC) é a envoltória.
+
+## A Envoltória de Viner
+
+A curva de CMe de longo prazo (LRAC) é a **envoltória** das curvas de CMe de curto prazo:
+
+::: {.eq-highlight}
+$$\text{CMe}_{LP}(q) \leq \text{CMe}_{CP}(q; \bar{K}) \quad \text{para todo } \bar{K}$$
+:::
+
+. . .
+
+No ponto de tangência, os custos marginais coincidem: $\text{CMg}_{CP}(q^*; \bar{K}^*) = \text{CMg}_{LP}(q^*)$ (Teorema do Envelope).
+
+<iframe src="graficos/cap11/envoltoria-custo-total.html" title="Envoltória de Viner" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Economias de Escala e EME
+
+A forma da curva $\text{CMe}_{LP}$ reflete os rendimentos de escala:
+
+| Rendimentos | CMe$_{LP}$ | Tipo |
+|:---|:---|:---|
+| Crescentes | Decrescente | **Economias de escala** |
+| Constantes | Constante | Escala constante |
+| Decrescentes | Crescente | **Deseconomias de escala** |
+
+. . .
+
+A **Escala Mínima Eficiente (EME)** é o menor nível de produto para o qual $\text{CMe}_{LP}$ atinge seu mínimo. Se a EME é grande em relação ao mercado $\Rightarrow$ poucas firmas (oligopólio).
+
+## O Mapa Completo da Dualidade
+
+```
+         f(K,L)
+        /      \
+   Min Custo    Max Lucro
+      |            |
+   C(w,v,q)    pi(p,w,v)
+      |            |
+   Shephard     Hotelling
+      |            |
+   Lc, Kc      q*, L*, K*
+```
+
+. . .
+
+| | Lema de Shephard | Lema de Hotelling |
+|:---|:---|:---|
+| **Função** | $C(w,v,q)$ (custo mínimo) | $\pi(p,w,v)$ (lucro máximo) |
+| **Derivada em $w$** | $L^c$ (demanda condicionada) | $-L^*$ (demanda incondicional) |
+| **Produto** | Fixo ($q$ dado) | Endógeno ($q^*$ ótimo) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Shephard e Hotelling são primos: ambos usam o Teorema do Envelope, mas aplicado a problemas diferentes. A concavidade de $C$ e a convexidade de $\pi$ nos preços dos insumos são faces da mesma moeda.
+:::
+
+## Resumo da Aula
+
+1. **Custo econômico** $\neq$ custo contábil: inclui custo de oportunidade
+2. **Condição de tangência:** $\mathrm{TMST} = w/v$; produto marginal por real gasto igual para todos os insumos
+3. **Função custo** $C(w,v,q)$: não decrescente, homogênea de grau 1, côncava nos preços
+4. **Lema de Shephard**: $\partial C/\partial w = L^c$ — derivada do custo revela quantidade do insumo
+5. **Curvas de custo**: CT, CMe, CVMe, CMg — o CMg cruza CMe e CVMe nos seus mínimos
+6. **Envoltória**: $\text{CMe}_{LP} \leq \text{CMe}_{CP}$ — no longo prazo, a firma ajusta tudo
+7. **Dualidade**: Shephard (custo) e Hotelling (lucro) extraem demandas por insumos via derivadas
+
+. . .
+
+**Próxima aula:** Maximização de lucro — CPO, CSO e a decisão de quanto produzir.

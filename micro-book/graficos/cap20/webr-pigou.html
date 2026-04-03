@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Imposto Pigouviano e Perda de Peso Morto</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Imposto Pigouviano e Perda de Peso Morto
+# Exercicio Resolvido 20.1
+# ============================================
+
+P <- 100        # preco competitivo
+a <- 10         # coef linear do custo privado
+b <- 1          # coef quadratico do custo privado: C(q) = aq + bq^2
+d <- 1          # coef quadratico do custo externo: E(q) = dq^2
+
+cat("====== IMPOSTO PIGOUVIANO (ER 20.1) ======\n")
+cat(sprintf("Preco: P = %d\n", P))
+cat(sprintf("Custo privado: C(q) = %dq + %dq^2\n", a, b))
+cat(sprintf("Custo externo: E(q) = %dq^2\n\n", d))
+
+# --- (a) Producao privada e otimo social ---
+# CMg privado = a + 2bq = P  =>  q_priv = (P - a) / (2b)
+q_priv <- (P - a) / (2 * b)
+# CMg social = a + 2bq + 2dq = P  =>  q_soc = (P - a) / (2b + 2d)
+q_soc <- (P - a) / (2 * b + 2 * d)
+
+cat("--- (a) Producao ---\n")
+cat(sprintf("CMg privado = %d + %dq  =>  q_priv = %.1f\n", a, 2*b, q_priv))
+cat(sprintf("CMg social  = %d + %dq  =>  q_soc  = %.1f\n", a, 2*(b+d), q_soc))
+cat(sprintf("Sobreprod.: %.1f unidades (%.0f%% acima do otimo)\n\n",
+    q_priv - q_soc, (q_priv/q_soc - 1)*100))
+
+# --- (b) Imposto pigouviano ---
+t_star <- 2 * d * q_soc
+cat("--- (b) Imposto pigouviano ---\n")
+cat(sprintf("t* = E'(q_soc) = 2*%d*%.1f = %.1f\n", d, q_soc, t_star))
+
+# Verificacao
+q_tax <- (P - a - t_star) / (2 * b)
+cat(sprintf("Verif.: q com imposto = (%.0f - %d - %.1f)/(2*%d) = %.1f = q_soc? %s\n\n",
+    P, a, t_star, b, q_tax, ifelse(abs(q_tax - q_soc) < 0.01, "SIM!", "NAO")))
+
+# --- (c) Perda de peso morto ---
+# DWL = integral de q_soc a q_priv de [CMg_social - P] dq
+# CMg_social - P = (a + 2(b+d)q) - P
+# No intervalo [q_soc, q_priv], isso vai de 0 a (2(b+d)*q_priv - (P-a))
+# DWL = (1/2) * base * altura (triangulo)
+altura_dwl <- (a + 2*(b+d)*q_priv) - P
+base_dwl <- q_priv - q_soc
+DWL <- 0.5 * base_dwl * altura_dwl
+
+cat("--- (c) Perda de peso morto ---\n")
+cat(sprintf("DWL = 0.5 * (%.1f - %.1f) * (%.1f - %.0f)\n",
+    q_priv, q_soc, a + 2*(b+d)*q_priv, P))
+cat(sprintf("DWL = 0.5 * %.1f * %.1f = R$ %.1f\n\n", base_dwl, altura_dwl, DWL))
+
+# --- Sensibilidade: variando custo externo ---
+cat("--- Sensibilidade: variando d (custo externo) ---\n")
+cat(sprintf("%-8s %-10s %-10s %-10s %-10s\n",
+    "d", "q_soc", "t*", "DWL", "% sobrep."))
+cat(strrep("-", 52), "\n")
+d_vals <- c(0.25, 0.5, 1, 2, 4, 8)
+for (di in d_vals) {
+  qs <- (P - a) / (2*b + 2*di)
+  ti <- 2 * di * qs
+  hi <- (a + 2*(b+di)*q_priv) - P
+  dwli <- 0.5 * (q_priv - qs) * hi
+  cat(sprintf("%-8.2f %-10.1f %-10.1f %-10.1f %-10.0f%%\n",
+      di, qs, ti, dwli, (q_priv/qs - 1)*100))
+}
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: CMg privado vs social
+q_seq <- seq(0, q_priv * 1.2, length = 300)
+CMg_priv <- a + 2 * b * q_seq
+CMg_soc  <- a + 2 * (b + d) * q_seq
+
+plot(q_seq, CMg_soc, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Quantidade (q)", ylab = "Custo marginal / Preco (R$)",
+     main = "Imposto pigouviano otimo",
+     ylim = c(0, max(CMg_soc) * 1.05))
+lines(q_seq, CMg_priv, lwd = 3, col = "#0d6efd")
+abline(h = P, col = "#198754", lwd = 2, lty = 2)
+
+# Zona DWL
+q_dwl <- seq(q_soc, q_priv, length = 100)
+CMg_soc_dwl <- a + 2*(b+d)*q_dwl
+polygon(c(q_dwl, rev(q_dwl)),
+        c(CMg_soc_dwl, rep(P, length(q_dwl))),
+        col = rgb(0.86, 0.2, 0.2, 0.15), border = NA)
+text((q_soc + q_priv)/2, P + (altura_dwl)/3, "DWL",
+     col = "#dc3545", cex = 0.8, font = 2)
+
+# Marcas
+abline(v = q_soc, col = "#6f42c1", lty = 3, lwd = 1.5)
+abline(v = q_priv, col = "#fd7e14", lty = 3, lwd = 1.5)
+text(q_soc - 2, P * 0.15, expression(q^{soc}), col = "#6f42c1", cex = 0.7, font = 2)
+text(q_priv + 1.5, P * 0.15, expression(q^{priv}), col = "#fd7e14", cex = 0.7, font = 2)
+
+# Seta do imposto
+arrows(q_soc + 0.5, a + 2*b*q_soc, q_soc + 0.5, a + 2*(b+d)*q_soc,
+       code = 3, lwd = 2, col = "#6f42c1", length = 0.08)
+text(q_soc + 4, (a + 2*b*q_soc + a + 2*(b+d)*q_soc)/2,
+     paste0("t* = ", round(t_star, 1)),
+     col = "#6f42c1", cex = 0.65, font = 2)
+
+legend("topleft",
+       legend = c("CMg privado", "CMg social", "Preco (P)"),
+       col = c("#0d6efd", "#dc3545", "#198754"),
+       lwd = c(3, 3, 2), lty = c(1, 1, 2),
+       cex = 0.55, bg = "white")
+
+# Painel 2: DWL vs custo externo d
+d_fine <- seq(0.1, 10, length = 200)
+DWL_fine <- numeric(length(d_fine))
+for (k in seq_along(d_fine)) {
+  di <- d_fine[k]
+  qs <- (P - a) / (2*b + 2*di)
+  hi <- (a + 2*(b+di)*q_priv) - P
+  DWL_fine[k] <- 0.5 * (q_priv - qs) * hi
+}
+
+plot(d_fine, DWL_fine, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Coeficiente do custo externo (d)",
+     ylab = "Perda de peso morto (R$)",
+     main = "DWL vs. magnitude da externalidade")
+
+points(d, DWL, pch = 19, col = "#0d6efd", cex = 2)
+text(d + 0.5, DWL + max(DWL_fine)*0.05,
+     paste0("ER 20.1\n(d=", d, ", DWL=", round(DWL, 1), ")"),
+     col = "#0d6efd", cex = 0.6, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

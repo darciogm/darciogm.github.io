@@ -1,0 +1,401 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 20 — Maximização de Lucro I"
+author: "Prof. Darcio Genicolo Martins"
+date: "Natureza da firma, CPO e CSO"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Da Estrutura de Custos à Decisão de Produzir
+
+Nas aulas anteriores construímos o **lado dos custos** da firma (Cap. 11).
+
+. . .
+
+Agora a pergunta muda:
+
+- Dado o cardápio de custos, **quanto produzir?**
+- Qual é o **GPS** que leva a firma ao lucro máximo?
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Querer lucro não basta — a firma precisa de regras práticas que digam "produza exatamente esta quantidade".
+:::
+
+## Por que Firmas Existem? (Coase, 1937) {data-background-color="#E50505"}
+
+## Custos de Transação
+
+:::: {.columns}
+::: {.column width="48%"}
+**Ronald Coase** (Nobel 1991) perguntou: por que firmas existem se o mercado coordena tudo via preços?
+
+. . .
+
+Resposta: usar o mercado tem **custos de transação**:
+
+- Custos de busca
+- Custos de negociação
+- Custos de elaboração de contratos
+- Custos de execução
+:::
+::: {.column width="48%"}
+**Oliver Williamson** (Nobel 2009) expandiu:
+
+. . .
+
+1. **Especificidade de ativos**: máquina que só serve a um cliente
+2. **Frequência**: transações recorrentes
+3. **Incerteza**: contratos incompletos
+
+. . .
+
+Quando custos de transação > custos de organização interna $\Rightarrow$ firma.
+:::
+::::
+
+## A Firma como Instituição
+
+:::{.callout-tip title="Intuição Econômica"}
+Imagine um dono de restaurante em São Paulo. Ele poderia, todo dia, ir à CEAGESP negociar preço de cada verdura com um fornecedor diferente. Mas o tempo gasto e o risco tornam mais eficiente ter um fornecedor fixo ou até uma horta própria. Essa é a lógica dos custos de transação.
+:::
+
+. . .
+
+**Exemplos brasileiros:**
+
+- **JBS**: integra verticalmente da criação ao varejo (alta especificidade de ativos)
+- **Startups**: terceirizam TI quando custos de transação são baixos
+- **Reforma Trabalhista 2017**: reduziu custos de transação $\Rightarrow$ mais terceirização
+
+## O Objetivo da Firma
+
+Na análise microeconômica padrão, a firma busca **maximizar o lucro**:
+
+::: {.eq-highlight}
+$$\pi = RT - CT = p \cdot q - C(q)$$
+:::
+
+. . .
+
+| Conceito | Definição |
+|:---|:---|
+| **Lucro contábil** | Receitas $-$ custos explícitos |
+| **Lucro econômico** | Receitas $-$ custos explícitos $-$ custos de oportunidade |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Uma empresa com lucro contábil positivo pode estar destruindo valor se o retorno sobre o capital for inferior ao custo de oportunidade.
+:::
+
+## Maximização de Lucro {data-background-color="#E50505"}
+
+## Condição de Primeira Ordem (CPO)
+
+A firma escolhe $q$ para maximizar:
+
+$$\pi(q) = p \cdot q - C(q)$$
+
+. . .
+
+A CPO é:
+
+::: {.eq-highlight}
+$$\frac{d\pi}{dq} = 0 \implies \text{RMg}(q^*) = \text{CMg}(q^*)$$
+:::
+
+. . .
+
+Para firma **tomadora de preços** ($\text{RMg} = p$):
+
+$$p = \text{CMg}(q^*)$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A firma produz até o ponto em que o ganho da próxima unidade vendida empata com o custo de produzi-la. É a barraquinha de açaí na praia: enquanto o próximo copo custar menos de R\$ 10 para fazer, vale a pena produzir.
+:::
+
+## Condição de Segunda Ordem (CSO)
+
+Para que $q^*$ seja um **máximo** (e não um mínimo):
+
+::: {.eq-highlight}
+$$\frac{d^2\pi}{dq^2}\bigg|_{q^*} < 0 \implies \text{CMg}'(q^*) > \text{RMg}'(q^*)$$
+:::
+
+. . .
+
+Em concorrência perfeita ($\text{RMg}' = 0$):
+
+$$\text{CMg}'(q^*) > 0 \quad \text{(CMg deve ser crescente no ótimo)}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O CMg deve cruzar o preço **de baixo para cima**. Se cruzar de cima para baixo, encontramos um mínimo de lucro, não um máximo!
+:::
+
+## Visualizando $p = \text{CMg}$
+
+Ajuste o preço e os parâmetros de custo. O gráfico mostra $q^*$ onde $p = \text{CMg}$ e o retângulo de lucro/prejuízo.
+
+<iframe src="graficos/cap12/maximizacao-lucro.html" width="1100" height="500" style="border:none;margin:0 auto;display:block;"></iframe>
+
+## Curva de Lucro $\pi(q)$ --- Interativo
+
+Ajuste o preço $p$ para ver como a curva de lucro muda de forma:
+
+<div id="graph-a07-profit" style="width:700px;height:320px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Preco $p$: <input type="range" id="sl-a07-p" min="5" max="40" value="20" step="1" oninput="updA07Profit()"> <span id="val-a07-p">20</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-profit',{
+    boundingbox:[-1,200,22,-150], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'q',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'\u03C0(q)',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var pp=20;
+  var profitCurve, optPt, zeroLine;
+  function Cq(q){return 50 + 2*q + 0.5*q*q;}
+  function draw(){
+    brd.suspendUpdate();
+    if(profitCurve) brd.removeObject(profitCurve);
+    if(optPt) brd.removeObject(optPt);
+    if(zeroLine) brd.removeObject(zeroLine);
+    profitCurve = brd.create('functiongraph',[function(q){return q>=0? pp*q - Cq(q) : NaN;},0,20],
+      {strokeColor:'#2563EB',strokeWidth:3});
+    zeroLine = brd.create('line',[[0,0],[1,0]],{strokeColor:'#999',strokeWidth:1,dash:2,straightFirst:true,straightLast:true});
+    var qstar = Math.max(0, pp - 2);
+    var pistar = pp*qstar - Cq(qstar);
+    optPt = brd.create('point',[qstar, pistar],{size:5,fillColor:'#E50505',strokeColor:'#E50505',
+      name:'\u03C0*='+pistar.toFixed(0),label:{fontSize:12,offset:[10,12]}});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA07Profit = function(){
+    pp=parseFloat(document.getElementById('sl-a07-p').value);
+    document.getElementById('val-a07-p').textContent=pp;
+    draw();
+  };
+})();
+</script>
+
+## Max Lucro com Dois Insumos {data-background-color="#E50505"}
+
+## Escolha Direta de Insumos
+
+A firma pode escolher diretamente as quantidades de insumos:
+
+$$\max_{K, L} \; \pi = p \cdot f(K, L) - wL - vK$$
+
+. . .
+
+As CPOs são:
+
+::: {.eq-highlight}
+$$p \cdot f_L = w \implies \text{VPMg}_L = w$$
+:::
+
+$$p \cdot f_K = v \implies \text{VPMg}_K = v$$
+
+. . .
+
+Cada insumo deve ser empregado até o ponto em que o **valor do produto marginal** iguala seu preço.
+
+## VPMg e Distribuição de Renda
+
+:::: {.columns}
+::: {.column width="48%"}
+**O que a CPO diz:**
+
+- O último trabalhador gera receita adicional $= w$
+- O último real em capital gera receita adicional $= v$
+- Em equilíbrio: cada fator recebe o valor do seu produto marginal
+:::
+::: {.column width="48%"}
+**No Brasil:**
+
+. . .
+
+- Uma sojicultora do MT planta até o ponto em que o custo de mais uma saca na terra marginal atinge R\$ 120
+- Expandir além disso **destrói valor**
+- Retrair **deixa lucro na mesa**
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A condição $\text{VPMg}_L = w$ conecta a teoria da firma à distribuição funcional da renda: em equilíbrio competitivo, cada fator recebe o valor do seu produto marginal.
+:::
+
+## Max Lucro $\Rightarrow$ Min Custo
+
+Um resultado central:
+
+. . .
+
+> Se $(K^*, L^*)$ maximiza lucro com produto $q^* = f(K^*, L^*)$, então $(K^*, L^*)$ também **minimiza custo** para $q^*$.
+
+. . .
+
+**Prova por contradição:** se não minimizasse, existiria combinação alternativa com custo menor para o mesmo $q^*$ — o que aumentaria o lucro, contradizendo a hipótese.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Maximizar lucro implica minimizar custos, mas a recíproca não vale — a firma ainda precisa escolher o nível ótimo de $q$. Minimizar custo é necessário, mas não suficiente.
+:::
+
+## Exercício Rápido {.smaller}
+
+Uma firma tomadora de preços tem $CT(q) = 50 + 2q + 0{,}5q^2$ e $p = 12$.
+
+. . .
+
+**CPO:** $p = \text{CMg} \implies 12 = 2 + q \implies q^* = 10$
+
+. . .
+
+**CSO:** $\text{CMg}'(q) = 1 > 0$ $\checkmark$ (CMg crescente)
+
+. . .
+
+**Lucro:** $\pi = 12 \times 10 - (50 + 20 + 50) = 120 - 120 = 0$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Lucro econômico zero não significa prejuízo! Significa que a firma cobre todos os custos de oportunidade — exatamente o que esperamos em competição perfeita de longo prazo.
+:::
+
+## A Função Lucro {data-background-color="#E50505"}
+
+## Função Lucro e Suas Propriedades
+
+A **função lucro** $\pi^*(p, w, v)$ é o lucro máximo dado os preços:
+
+::: {.eq-highlight}
+$$\pi^*(p, w, v) = \max_{q \geq 0} \{p \cdot q - C(w, v, q)\}$$
+:::
+
+. . .
+
+| Propriedade | Significado |
+|:---|:---|
+| Não decrescente em $p$ | Preço do produto sobe $\Rightarrow$ lucro não cai |
+| Não crescente em $w$, $v$ | Preço de insumo sobe $\Rightarrow$ lucro não cresce |
+| Homogênea de grau 1 | Se todos os preços dobram, lucro dobra |
+| **Convexa** em $(p, w, v)$ | Lucro responde mais que proporcionalmente a grandes mudanças de preços |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A função lucro mapeia o espaço de preços $(p, w, v)$ no lucro máximo alcançável. É a função valor do problema de maximização — análoga à utilidade indireta $V(p, m)$ do consumidor. A convexidade captura a flexibilidade da firma em ajustar decisões.
+:::
+
+## Lema de Hotelling
+
+Se $\pi(p, w, v)$ é diferenciável:
+
+::: {.eq-highlight}
+$$\frac{\partial \pi}{\partial p} = q^*(p, w, v) \quad \text{(função de oferta)}$$
+:::
+
+$$\frac{\partial \pi}{\partial w} = -L^*(p, w, v) \quad \text{(demanda por trabalho)}$$
+
+$$\frac{\partial \pi}{\partial v} = -K^*(p, w, v) \quad \text{(demanda por capital)}$$
+
+. . .
+
+**Prova:** Teorema do Envelope — a derivada da função valor em relação a um parâmetro é a derivada parcial do objetivo avaliada no ótimo.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No Cap. 11, o Lema de Shephard extraiu demandas por insumos da função custo. Agora, o Lema de Hotelling faz o mesmo truque com a função lucro — e extrai também a função de oferta.
+:::
+
+## Convexidade e Lei da Oferta
+
+Da convexidade de $\pi$ em $p$:
+
+$$\frac{\partial^2\pi}{\partial p^2} \geq 0 \implies \frac{\partial q^*}{\partial p} \geq 0$$
+
+A **oferta é não decrescente no preço** — a lei da oferta.
+
+. . .
+
+Da convexidade em $w$:
+
+$$\frac{\partial^2\pi}{\partial w^2} \geq 0 \implies \frac{\partial L^*}{\partial w} = -\frac{\partial^2\pi}{\partial w^2} \leq 0$$
+
+A **demanda por insumos é não crescente no preço** — a lei da demanda para fatores.
+
+## Lucro Máximo --- Gráfico Interativo
+
+<iframe src="graficos/cap12/lucro-maximo.html" title="Lucro Máximo" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+O gráfico mostra $q^*$ onde $p = \text{CMg}$, o retângulo de lucro e as curvas de custo.
+
+## Receita Marginal --- Gráfico Interativo
+
+<iframe src="graficos/cap12/receita-marginal.html" title="Receita Marginal" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+A curva de RMg tem o dobro da inclinação da demanda linear. O ponto verde marca $\text{RMg} = 0$ (elasticidade unitária).
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Resumo da Aula
+
+| Conceito | Resultado |
+|:---|:---|
+| Custos de transação (Coase) | Firmas existem para economizar custos de transação |
+| Lucro econômico | $\pi = pq - C(q)$, incluindo custos de oportunidade |
+| CPO | $\text{RMg}(q^*) = \text{CMg}(q^*)$ |
+| CPO (tomadora de preços) | $p = \text{CMg}(q^*)$ |
+| CSO | $\text{CMg}'(q^*) > 0$ (CMg crescente no ótimo) |
+| VPMg | $p \cdot f_L = w$; $p \cdot f_K = v$ |
+| Função lucro | $\pi^*(p,w,v)$: HD1, convexa em $(p,w,v)$ |
+| Hotelling | $\partial\pi/\partial p = q^*$; $\partial\pi/\partial w = -L^*$ |
+
+. . .
+
+**Próxima aula:** Receita marginal, elasticidade, oferta de curto prazo e demanda por insumos.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Próxima aula: **Maximização de Lucro II** --- Receita Marginal e Oferta.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

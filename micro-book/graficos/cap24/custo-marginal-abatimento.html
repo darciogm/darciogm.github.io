@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--
+  Curva de Custo Marginal de Abatimento (MAC)
+  Library: Plotly.js
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custo Marginal de Abatimento</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Custo Marginal de Abatimento</h3>
+    <div class="slider-group">
+      <label>Convexidade \(\alpha\): <span class="val" id="val-a">2.0</span></label>
+      <input type="range" id="slider-a" min="1.2" max="3" step="0.1" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Escala \(k\): <span class="val" id="val-k">5</span></label>
+      <input type="range" id="slider-k" min="1" max="15" step="0.5" value="5">
+    </div>
+    <div class="slider-group">
+      <label>Imposto \(\tau\) (US$/tCO₂): <span class="val" id="val-t">40</span></label>
+      <input type="range" id="slider-t" min="0" max="120" step="5" value="40">
+    </div>
+    <div class="slider-group">
+      <label>Cap (MtCO₂): <span class="val" id="val-cap">50</span></label>
+      <input type="range" id="slider-cap" min="10" max="90" step="5" value="50">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  // MAC(q) = k * (q/100)^alpha  where q is abatement in MtCO2
+  function mac(q,k,alpha){ return k*Math.pow(q/100,alpha); }
+  function totalCost(qMax,k,alpha,n){
+    // numerical integration (trapezoidal)
+    var s=0,dx=qMax/n;
+    for(var i=0;i<n;i++){
+      var q0=i*dx, q1=(i+1)*dx;
+      s+=0.5*(mac(q0,k,alpha)+mac(q1,k,alpha))*dx;
+    }
+    return s;
+  }
+  // Find q where MAC(q)=tau
+  function qFromTax(tau,k,alpha){
+    if(tau<=0)return 0;
+    // MAC(q)=tau => k*(q/100)^alpha=tau => q=100*(tau/k)^(1/alpha)
+    var val=Math.pow(tau/k,1/alpha)*100;
+    return Math.min(val,100);
+  }
+
+  function update(){
+    var alpha=parseFloat(document.getElementById('slider-a').value);
+    var k=parseFloat(document.getElementById('slider-k').value);
+    var tau=parseFloat(document.getElementById('slider-t').value);
+    var capQ=parseFloat(document.getElementById('slider-cap').value);
+    document.getElementById('val-a').textContent=alpha.toFixed(1);
+    document.getElementById('val-k').textContent=k.toFixed(1);
+    document.getElementById('val-t').textContent=tau;
+    document.getElementById('val-cap').textContent=capQ;
+
+    // MAC curve
+    var qs=[],macs=[];
+    for(var q=0;q<=100;q+=0.5){ qs.push(q); macs.push(mac(q,k,alpha)); }
+
+    // Abatement under tax
+    var qTax=qFromTax(tau,k,alpha);
+    // Price under cap
+    var pCap=mac(capQ,k,alpha);
+
+    // Fill area under MAC up to qTax (tax cost)
+    var fillTaxQ=[],fillTaxY=[];
+    for(var q=0;q<=qTax;q+=0.5){ fillTaxQ.push(q); fillTaxY.push(mac(q,k,alpha)); }
+    fillTaxQ.push(qTax); fillTaxY.push(mac(qTax,k,alpha));
+    fillTaxQ.push(qTax); fillTaxY.push(0);
+    fillTaxQ.push(0); fillTaxY.push(0);
+
+    // Fill area under MAC up to cap
+    var fillCapQ=[],fillCapY=[];
+    for(var q=0;q<=capQ;q+=0.5){ fillCapQ.push(q); fillCapY.push(mac(q,k,alpha)); }
+    fillCapQ.push(capQ); fillCapY.push(mac(capQ,k,alpha));
+    fillCapQ.push(capQ); fillCapY.push(0);
+    fillCapQ.push(0); fillCapY.push(0);
+
+    var traces=[
+      // MAC curve
+      {x:qs,y:macs,mode:'lines',line:{color:'#1565c0',width:2.5},name:'CMgA(q)'},
+      // Tax line
+      {x:[0,100],y:[tau,tau],mode:'lines',line:{color:'#C8102E',width:2,dash:'dash'},name:'Imposto τ='+tau},
+      // Cap vertical
+      {x:[capQ,capQ],y:[0,mac(100,k,alpha)*1.1],mode:'lines',line:{color:'#e65100',width:2,dash:'dot'},name:'Cap='+capQ+' Mt'},
+      // Tax fill
+      {x:fillTaxQ,y:fillTaxY,fill:'toself',fillcolor:'rgba(200,16,46,0.10)',line:{width:0},showlegend:false,hoverinfo:'skip'},
+      // Tax point
+      {x:[qTax],y:[tau],mode:'markers',marker:{size:9,color:'#C8102E',symbol:'diamond'},name:'q*(τ)='+qTax.toFixed(1)},
+      // Cap point
+      {x:[capQ],y:[pCap],mode:'markers',marker:{size:9,color:'#e65100',symbol:'circle'},name:'p*(cap)='+pCap.toFixed(1)}
+    ];
+
+    var maxY=mac(100,k,alpha)*1.15;
+
+    // Annotations for regions
+    var annotations=[
+      {x:15,y:mac(100,k,alpha)*0.08,text:'Eficiência<br>energética',showarrow:false,font:{size:9,color:'#666'}},
+      {x:75,y:mac(75,k,alpha)*0.7,text:'Captura<br>de carbono',showarrow:false,font:{size:9,color:'#666'}}
+    ];
+
+    Plotly.react('plotDiv',traces,{
+      margin:{l:60,r:20,t:25,b:50},
+      xaxis:{title:'Abatimento (MtCO₂)',range:[0,105]},
+      yaxis:{title:'US$/tCO₂',range:[0,maxY]},
+      showlegend:true,legend:{x:0.02,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      annotations:annotations,
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+
+    var costTax=totalCost(qTax,k,alpha,200);
+    var costCap=totalCost(capQ,k,alpha,200);
+    var html='<div style="text-align:center;margin-bottom:0.3rem;">\\(CMgA(q) = k\\left(\\frac{q}{100}\\right)^\\alpha\\)</div>';
+    html+='<span style="color:#C8102E;"><b>Imposto τ='+tau+'</b></span>: abate '+qTax.toFixed(1)+' Mt, custo total US$ '+costTax.toFixed(0)+' mi<br>';
+    html+='<span style="color:#e65100;"><b>Cap='+capQ+' Mt</b></span>: preço-sombra US$ '+pCap.toFixed(1)+'/t, custo total US$ '+costCap.toFixed(0)+' mi<br>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">As primeiras toneladas são baratas (eficiência energética); as últimas são caríssimas (captura de carbono). A área sob a curva é o custo total de abatimento.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){
+    document.getElementById('slider-a').value=2;
+    document.getElementById('slider-k').value=5;
+    document.getElementById('slider-t').value=40;
+    document.getElementById('slider-cap').value=50;
+    update();
+  }
+  ['slider-a','slider-k','slider-t','slider-cap'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

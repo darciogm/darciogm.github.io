@@ -1,0 +1,549 @@
+---
+title: "Simulação: Decisão de Produção"
+subtitle: "Microeconomia II — Aula 18"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 18"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Revisão: Oferta da Firma
+
+A **curva de oferta** da firma competitiva no curto prazo é o trecho do CMg acima do CVMe mínimo:
+
+$$q^S(P) = \begin{cases} CMg^{-1}(P) & \text{se } P \geq \min CVMe \\ 0 & \text{se } P < \min CVMe \end{cases}$$
+
+. . .
+
+**Condições para produzir $q^* > 0$:**
+
+1. $P = CMg(q^*)$ — condição de primeira ordem
+2. $CMg$ crescente em $q^*$ — condição de segunda ordem
+3. $P \geq CVMe(q^*)$ — melhor produzir que fechar
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O ponto de encerramento é o mínimo do CVMe. Abaixo desse preço, a firma perde mais operando do que simplesmente pagando os custos fixos e produzindo zero.
+:::
+
+## Excedente do Produtor e Lucro
+
+O **excedente do produtor** (EP) mede o ganho acima dos custos variáveis:
+
+$$EP = RT - CV = \int_0^{q^*} [P - CMg(q)] \, dq$$
+
+. . .
+
+**Relação EP–Lucro no curto prazo:**
+
+$$EP = \pi + CF$$
+
+pois $\pi = RT - CV - CF = EP - CF$.
+
+. . .
+
+**No longo prazo** (sem custos fixos):
+
+$$EP = \pi$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O EP inclui a recuperação dos custos fixos. Mesmo com lucro zero ($\pi = 0$), a firma ainda tem $EP = CF > 0$ — ela cobre exatamente seus custos fixos.
+:::
+
+## Excedente do Produtor Interativo
+
+Use o slider para alterar o preço de mercado e observe como o EP (área sombreada) varia. Custo: $C(q) = 0{,}5q^2 + q + 8$.
+
+<div id="graph-a18-ps" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Preço (P): <span id="val-a18-p">8.0</span></label>
+  <input type="range" id="sl-a18-p" min="3" max="15" step="0.5" value="8" oninput="window.updateA18PS(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a18-ps', {
+    boundingbox: [-1, 18, 16, -2],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'R$/unid.', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var pVal = 8;
+
+  // MC(q) = q + 1 (derivative of 0.5q^2 + q + 8)
+  var mcCurve = board.create('functiongraph', [
+    function(q) { return q + 1; }, 0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var labelMC = board.create('text', [13.5, 15.5, 'CMg'],
+    { fontSize: 13, color: '#1565c0', fixed: true });
+
+  // AVC(q) = 0.5q + 1 (CV = 0.5q^2 + q, so AVC = 0.5q + 1)
+  var avcCurve = board.create('functiongraph', [
+    function(q) { return 0.5 * q + 1; }, 0.01, 15
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  var labelAVC = board.create('text', [13.5, 8.8, 'CVMe'],
+    { fontSize: 12, color: '#ff9800', fixed: true });
+
+  // Price line
+  var priceLine = board.create('functiongraph', [
+    function(q) { return pVal; }, 0, 15
+  ], { strokeColor: '#C8102E', strokeWidth: 2 });
+
+  var labelP = board.create('text', [
+    14.2, function() { return pVal + 0.6; },
+    function() { return 'P = ' + pVal.toFixed(1); }
+  ], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  // Optimal quantity: P = MC => P = q + 1 => q* = P - 1
+  // Shade EP area between price and MC from 0 to q*
+  var epArea = board.create('curve', [[], []], {
+    strokeWidth: 0, fillColor: '#388e3c', fillOpacity: 0.3, fixed: true
+  });
+
+  function updateEPArea() {
+    var qStar = Math.max(pVal - 1, 0);
+    var xCoords = [0];
+    var yCoords = [pVal];
+    var steps = 50;
+    for (var i = 0; i <= steps; i++) {
+      var q = (qStar * i) / steps;
+      xCoords.push(q);
+      yCoords.push(pVal);
+    }
+    for (var i = steps; i >= 0; i--) {
+      var q = (qStar * i) / steps;
+      xCoords.push(q);
+      yCoords.push(q + 1);
+    }
+    xCoords.push(0);
+    yCoords.push(pVal);
+    epArea.dataX = xCoords;
+    epArea.dataY = yCoords;
+  }
+
+  updateEPArea();
+
+  // q* point
+  var qStarPt = board.create('point', [
+    function() { return Math.max(pVal - 1, 0); },
+    function() { return pVal; }
+  ], { name: '', size: 4, color: '#388e3c', strokeColor: '#388e3c',
+       fillColor: '#388e3c', fixed: true });
+
+  // EP label
+  board.create('text', [
+    function() { return Math.max(pVal - 1, 0) / 2 - 0.5; },
+    function() { return pVal - 0.8; },
+    function() {
+      var qStar = Math.max(pVal - 1, 0);
+      var ep = 0.5 * (pVal - 1) * qStar;
+      return 'EP = ' + ep.toFixed(1);
+    }
+  ], { fontSize: 13, color: '#388e3c', fixed: true });
+
+  // q* label
+  board.create('text', [
+    function() { return Math.max(pVal - 1, 0) + 0.3; },
+    function() { return pVal + 0.6; },
+    function() { return 'q* = ' + Math.max(pVal - 1, 0).toFixed(1); }
+  ], { fontSize: 12, color: '#388e3c', fixed: true });
+
+  // Dashed line from q* to x-axis
+  board.create('segment', [
+    function() { return [Math.max(pVal - 1, 0), 0]; },
+    function() { return [Math.max(pVal - 1, 0), pVal]; }
+  ], { strokeColor: '#999', dash: 3, strokeWidth: 1, fixed: true });
+
+  window.updateA18PS = function(val) {
+    pVal = parseFloat(val);
+    document.getElementById('val-a18-p').textContent = pVal.toFixed(1);
+    updateEPArea();
+    board.update();
+  };
+})();
+</script>
+
+## Decomposição via Insumos
+
+Pelo **Lema de Hotelling**, a função lucro $\pi^*(P, w, v)$ gera as demandas ótimas de insumos:
+
+$$\frac{\partial \pi^*}{\partial w} = -L^*(P, w, v)$$
+
+. . .
+
+**Estática comparativa sobre o preço do trabalho:**
+
+$$\frac{\partial L^*}{\partial w} = -\frac{\partial^2 \pi^*}{\partial w^2} \leq 0$$
+
+pois $\pi^*$ é convexa em $(w, v)$, logo $\frac{\partial^2 \pi^*}{\partial w^2} \geq 0$.
+
+. . .
+
+**Resultado:** a demanda condicional de trabalho é decrescente no salário — quando $w$ sobe, a firma usa menos trabalho.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A convexidade da função lucro nos preços dos insumos garante que a firma sempre reduz o uso de um insumo quando seu preço sobe — é a "lei da demanda" aplicada aos fatores de produção.
+:::
+
+## Decisão de Entrada e Saída no LP
+
+**Livre entrada e saída** garante lucro econômico zero no equilíbrio de longo prazo:
+
+$$P^* = \min_q CMe_{LP}(q) \qquad \pi^* = 0$$
+
+. . .
+
+**Dinâmica de ajuste:**
+
+| Situação | Sinal | Consequência |
+|:--|:--:|:--|
+| $P > \min CMe_{LP}$ | $\pi > 0$ | Novas firmas entram |
+| $P < \min CMe_{LP}$ | $\pi < 0$ | Firmas existentes saem |
+| $P = \min CMe_{LP}$ | $\pi = 0$ | Equilíbrio — sem incentivo para entrar ou sair |
+
+. . .
+
+**Número de firmas no equilíbrio:**
+
+$$n^* = \frac{Q^D(P^*)}{q^*_{EME}}$$
+
+. . .
+
+> A condição de lucro zero não significa que o empresário não ganha nada — o custo econômico já inclui o retorno normal do capital.
+
+## Oferta de LP: Firma e Indústria
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Firma individual no LP:**
+
+- Oferta = CMg acima do $CMe_{LP}$ mínimo
+- Cada firma produz na escala eficiente $q^*_{EME}$
+
+. . .
+
+**Indústria com custos constantes:**
+
+- Oferta de LP é **horizontal** em $P = \min CMe_{LP}$
+- Ajuste ocorre pelo **número de firmas**, não pelo preço
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Ajuste via $n$:**
+
+1. Demanda aumenta → $P$ sobe no CP
+2. $\pi > 0$ → firmas entram
+3. Oferta se desloca para a direita
+4. $P$ retorna a $\min CMe_{LP}$
+5. Mais firmas, mesmo preço
+
+. . .
+
+> No caso de custos constantes, a oferta de LP é **perfeitamente elástica** — choques de demanda afetam apenas a quantidade, nunca o preço.
+
+:::
+::::
+
+## Custos Crescentes e Decrescentes
+
+A inclinação da oferta de LP depende de como os custos mudam com a entrada de firmas:
+
+. . .
+
+| Tipo de Indústria | Preços dos insumos | Oferta de LP |
+|:--|:--|:--|
+| **Custos constantes** | Não mudam com $n$ | Horizontal |
+| **Custos crescentes** | Sobem com $n$ | Positivamente inclinada |
+| **Custos decrescentes** | Caem com $n$ | Negativamente inclinada |
+
+. . .
+
+**Custos crescentes** (caso mais comum): entrada de firmas pressiona preços de insumos especializados (terra agrícola, mão de obra qualificada).
+
+. . .
+
+**Custos decrescentes** (raro): economias externas — mais firmas geram melhor infraestrutura, fornecedores especializados, spillovers de conhecimento.
+
+. . .
+
+> No mercado de tecnologia, custos decrescentes explicam por que regiões como o Vale do Silício atraem cada vez mais firmas — a concentração reduz custos para todos.
+
+## Renda Econômica e Renda Ricardiana
+
+Nem todas as firmas são idênticas. Firmas com **custos mais baixos** obtêm renda mesmo no equilíbrio de LP.
+
+. . .
+
+**Renda ricardiana:** diferença entre o custo da firma **inframarginal** e da firma **marginal**.
+
+$$\text{Renda}_i = (CMe_{\text{marginal}} - CMe_i) \cdot q_i$$
+
+. . .
+
+**No equilíbrio de LP:**
+
+- Firma marginal: $\pi = 0$ (determina o preço)
+- Firmas inframarginais: $\pi > 0$ (renda econômica)
+
+. . .
+
+**Exemplos:**
+
+- Terras mais férteis geram renda ricardiana na agricultura
+- Empresas com tecnologia superior obtêm lucro mesmo em mercados competitivos
+- Talentos excepcionais recebem salários acima do custo de oportunidade
+
+## Simulação: Instruções
+
+:::{.callout-tip title="Atividade em Equipes"}
+**Tempo:** 25 minutos | **Formato:** Equipes de 4–5 alunos
+:::
+
+. . .
+
+**Regras:**
+
+1. Cada equipe é uma **firma** com custo $CT(q) = 0{,}5q^2 + q + 8$
+2. Objetivo: escolher $q$ que maximiza o lucro dado o preço de mercado
+3. Três cenários serão apresentados em sequência
+4. Para cada cenário: calcule $q^*$, o lucro $\pi$ e decida se opera ou encerra
+
+. . .
+
+**Referência rápida:**
+
+- $CMg(q) = q + 1$
+- $CVMe(q) = 0{,}5q + 1$
+- $CMe(q) = 0{,}5q + 1 + 8/q$
+- $\min CVMe = 1$ (em $q = 0$)
+- Ponto de encerramento: $P < 1$
+
+## Simulação: Cenário 1 — Choque de Demanda
+
+**O preço de mercado sobe de $P = 8$ para $P = 12$.**
+
+. . .
+
+**Tarefa:**
+
+1. Com $P = 8$: calcule $q^*$, $RT$, $CT$ e $\pi$
+2. Com $P = 12$: recalcule tudo
+3. Compare: quanto a quantidade ofertada aumentou?
+
+. . .
+
+**Previsões teóricas ($P = CMg \implies P = q + 1$):**
+
+| Variável | $P = 8$ | $P = 12$ |
+|:--|:--:|:--:|
+| $q^*$ | 7 | 11 |
+| $RT$ | 56 | 132 |
+| $CT$ | 39,5 | 79,5 |
+| $\pi$ | 16,5 | 52,5 |
+
+. . .
+
+> O lucro mais que triplicou com um aumento de 50% no preço. A função lucro é **convexa** em $P$ — a firma se beneficia desproporcionalmente de preços altos.
+
+## Simulação: Cenário 2 — Aumento de Custo
+
+**O preço de um insumo sobe, elevando os custos.** Novo custo: $CT(q) = 0{,}5q^2 + 3q + 8$.
+
+. . .
+
+**Novo CMg:** $CMg(q) = q + 3$ (antes era $q + 1$)
+
+. . .
+
+**Tarefa (com $P = 12$):**
+
+1. Encontre o novo $q^*$ onde $P = CMg$
+2. Calcule o novo lucro
+3. Compare com o Cenário 1
+
+. . .
+
+**Previsão teórica:**
+
+- $q^* = 12 - 3 = 9$ (antes: 11)
+- $CT = 0{,}5(81) + 27 + 8 = 75{,}5$
+- $\pi = 108 - 75{,}5 = 32{,}5$ (antes: 52,5)
+
+. . .
+
+> O aumento do custo do insumo **deslocou a curva de oferta para a esquerda**: menos quantidade a cada preço. A firma ainda opera ($\pi > 0$), mas o lucro caiu 38%.
+
+## Simulação: Cenário 3 — Entrada de Concorrente
+
+**Novas firmas entram no mercado**, atraídas pelo lucro positivo. A oferta de mercado se desloca para a direita e o preço cai para $P = 5$.
+
+. . .
+
+**Tarefa (custo original $CT = 0{,}5q^2 + q + 8$, $P = 5$):**
+
+1. Calcule $q^*$ e $\pi$
+2. A firma deve operar ou encerrar?
+3. Se todas as firmas são idênticas, qual será o preço de LP?
+
+. . .
+
+**Previsão teórica:**
+
+- $q^* = 5 - 1 = 4$, $RT = 20$, $CT = 0{,}5(16) + 4 + 8 = 20$
+- $\pi = 0$ — **lucro econômico zero!**
+
+. . .
+
+> A entrada de concorrentes eliminou os lucros. O preço $P = 5$ é exatamente o $\min CMe_{LP}$. Este é o equilíbrio de longo prazo.
+
+## Função Lucro: Propriedades
+
+A função lucro $\pi^*(P)$ é **convexa** em $P$. Use o slider para alterar o parâmetro de custo $a$ em $C(q) = a \cdot q^2 + q$.
+
+<div id="graph-a18-profit" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Parâmetro de custo (a): <span id="val-a18-cost">0.50</span></label>
+  <input type="range" id="sl-a18-cost" min="0.3" max="1.5" step="0.05" value="0.5" oninput="window.updateA18Profit(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a18-profit', {
+    boundingbox: [-1, 60, 16, -10],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'P', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '\u03C0*(P)', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var aVal = 0.5;
+
+  // pi*(P) = max_q (Pq - aq^2 - q)
+  // FOC: P = 2aq + 1 => q* = (P-1)/(2a)
+  // pi* = P*(P-1)/(2a) - a*((P-1)/(2a))^2 - (P-1)/(2a)
+  //      = (P-1)^2 / (2a) * [P/(P-1) - 1/2 - 1] ... simplify:
+  // pi* = (P-1)^2 / (4a) for P >= 1, else 0
+
+  var profitCurve = board.create('functiongraph', [
+    function(p) {
+      if (p <= 1) return 0;
+      return (p - 1) * (p - 1) / (4 * aVal);
+    }, 0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var labelProfit = board.create('text', [12.5, function() {
+    return (12.5 - 1) * (12.5 - 1) / (4 * aVal) + 3;
+  }, '\u03C0*(P)'], { fontSize: 13, color: '#1565c0', fixed: true });
+
+  // Zero-profit line
+  board.create('functiongraph', [
+    function(p) { return 0; }, 0, 15
+  ], { strokeColor: '#999', strokeWidth: 1, dash: 3 });
+
+  // Tangent line at P=8 to show convexity
+  var tangentLine = board.create('functiongraph', [
+    function(p) {
+      var p0 = 8;
+      var pi0 = (p0 - 1) * (p0 - 1) / (4 * aVal);
+      var slope = (p0 - 1) / (2 * aVal);
+      return pi0 + slope * (p - p0);
+    }, 0, 15
+  ], { strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2 });
+
+  var labelTangent = board.create('text', [1, function() {
+    var p0 = 8;
+    var pi0 = (p0 - 1) * (p0 - 1) / (4 * aVal);
+    var slope = (p0 - 1) / (2 * aVal);
+    return pi0 + slope * (1 - p0) + 3;
+  }, 'Tangente: inclin. = q*(P)'], { fontSize: 11, color: '#ff9800', fixed: true });
+
+  // Point on curve at P=8
+  board.create('point', [8, function() {
+    return (8 - 1) * (8 - 1) / (4 * aVal);
+  }], { name: '', size: 4, color: '#C8102E', strokeColor: '#C8102E',
+        fillColor: '#C8102E', fixed: true });
+
+  // Convexity annotation
+  board.create('text', [9.5, function() {
+    return (8 - 1) * (8 - 1) / (4 * aVal) + 5;
+  }, function() {
+    var pi8 = (8 - 1) * (8 - 1) / (4 * aVal);
+    return '\u03C0*(8) = ' + pi8.toFixed(1);
+  }], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  window.updateA18Profit = function(val) {
+    aVal = parseFloat(val);
+    document.getElementById('val-a18-cost').textContent = aVal.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+
+## Discussão e Resultados
+
+:::{.callout-tip title="Debrief — 10 minutos"}
+Compare os resultados da sua equipe com as previsões teóricas de cada cenário.
+:::
+
+. . .
+
+**Perguntas para discussão:**
+
+1. No Cenário 1, o lucro mais que triplicou quando $P$ subiu 50%. Por que a resposta é **mais que proporcional**?
+2. No Cenário 2, o aumento de custo reduziu $q^*$ e $\pi$. Quais insumos na prática teriam esse efeito?
+3. No Cenário 3, a entrada eliminou os lucros. Isso é bom ou ruim para a sociedade?
+
+. . .
+
+**Lições principais:**
+
+- A função lucro é convexa em $P$ — a firma se beneficia da volatilidade de preços
+- Choques de custo deslocam a oferta e reduzem o lucro
+- A livre entrada é o mecanismo que elimina lucros extraordinários no LP
+- O equilíbrio de LP com $\pi = 0$ é eficiente: $P = \min CMe$
+
+## Próxima Aula
+
+**Aula 19 — Equilíbrio Competitivo**
+
+. . .
+
+- Da firma individual para o **mercado como um todo**
+- Equilíbrio parcial: oferta e demanda determinam $P^*$ e $Q^*$
+- Primeiro Teorema do Bem-Estar: equilíbrio competitivo é eficiente
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Se o equilíbrio competitivo maximiza o excedente total, por que existem mercados ineficientes? Pense em exemplos onde as hipóteses de concorrência perfeita falham.
+:::

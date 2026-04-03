@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="aula-15-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula-15-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula-15-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula-15-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula-15-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula-15-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula-15-slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Insper">
+  <title>Custos de Produção</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula-15-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula-15-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="aula-15-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula-15-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Custos de Produção</h1>
+  <p class="subtitle">Microeconomia II — Aula 15</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Insper 
+</div>
+</div>
+</div>
+
+</section>
+<section id="amazon-750-mil-robôs-e-contando" class="slide level2">
+<h2>Amazon: 750 mil robôs e contando</h2>
+<ul>
+<li>Em 2024, a Amazon opera mais de <strong>750.000 robôs</strong> em seus centros de distribuição</li>
+<li>Cada robô substituiu tarefas humanas — mas <strong>não eliminou</strong> empregos</li>
+<li>A firma escolhe a <strong>combinação de insumos que minimiza o custo</strong> para um dado nível de produto</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Por que a Amazon usa robôs em vez de mais trabalhadores? Porque a <strong>minimização de custos</strong> comanda a automação: quando <span class="math inline">\(w/r\)</span> sobe, capital substitui trabalho.</p>
+</blockquote>
+</div>
+</section>
+<section id="custo-econômico-vs.-custo-contábil" class="slide level2">
+<h2>Custo Econômico vs.&nbsp;Custo Contábil</h2>
+<p><strong>Custo contábil:</strong> despesas explícitas registradas (salários, aluguel, materiais)</p>
+<p><strong>Custo econômico:</strong> custo contábil + <strong>custos de oportunidade</strong></p>
+<div class="fragment">
+<p><span class="math display">\[C_{\text{econômico}} = C_{\text{explícito}} + C_{\text{implícito (oportunidade)}}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Exemplo:</strong> empresário que ganha R$ 0 na própria firma, mas poderia ganhar R$ 15.000/mês como empregado.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Custo</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Contábil (do seu trabalho)</td>
+<td style="text-align: left;">R$ 0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Econômico (do seu trabalho)</td>
+<td style="text-align: left;">R$ 15.000/mês</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O lucro econômico é sempre menor ou igual ao lucro contábil. Uma firma com lucro contábil positivo pode ter lucro econômico negativo — o empresário estaria melhor em outra atividade.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimização-de-custo-o-problema" class="slide level2">
+<h2>Minimização de Custo: O Problema</h2>
+<p>A firma escolhe <span class="math inline">\((K, L)\)</span> para:</p>
+<p><span class="math display">\[\min_{K,L} \; wL + rK \quad \text{s.a.} \quad f(K,L) = q_0\]</span></p>
+<p>onde <span class="math inline">\(w\)</span> = salário e <span class="math inline">\(r\)</span> = custo de uso do capital.</p>
+<div class="fragment">
+<p><strong>Lagrangeano:</strong></p>
+<p><span class="math display">\[\mathcal{L} = wL + rK + \lambda[q_0 - f(K,L)]\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Condições de Primeira Ordem (CPOs):</strong></p>
+<p><span class="math display">\[\frac{\partial \mathcal{L}}{\partial L} = w - \lambda \cdot PMg_L = 0 \qquad \frac{\partial \mathcal{L}}{\partial K} = r - \lambda \cdot PMg_K = 0\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O multiplicador <span class="math inline">\(\lambda\)</span> mede o <strong>custo marginal</strong>: quanto custa produzir uma unidade adicional de <span class="math inline">\(q\)</span>.</p>
+</blockquote>
+</div>
+</section>
+<section id="condição-de-tangência-tmst-wr" class="slide level2">
+<h2>Condição de Tangência: TMST = w/r</h2>
+<p>Dividindo as CPOs:</p>
+<p><span class="math display">\[\frac{PMg_L}{PMg_K} = \frac{w}{r} \quad \Longleftrightarrow \quad TMST_{L,K} = \frac{w}{r}\]</span></p>
+<div class="fragment">
+<p><strong>Geometricamente:</strong> a isoquanta é tangente à reta isocusto no ponto ótimo.</p>
+<p><strong>Reta isocusto:</strong> <span class="math inline">\(C = wL + rK \implies K = \frac{C}{r} - \frac{w}{r}L\)</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A firma iguala a taxa à qual a tecnologia permite trocar insumos (<span class="math inline">\(TMST\)</span>) à taxa de troca do mercado (<span class="math inline">\(w/r\)</span>). Se <span class="math inline">\(TMST &gt; w/r\)</span>, a firma deveria usar mais trabalho e menos capital.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="minimização-de-custo-interativo" class="slide level2">
+<h2>Minimização de Custo — Interativo</h2>
+<p>Mova a razão <span class="math inline">\(w/r\)</span> e observe como o ponto de tangência se ajusta:</p>
+<div id="graph-a15-costmin" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>w/r: <span id="val-a15-wr">1.00</span></label> <input type="range" id="sl-a15-wr" min="0.3" max="3" step="0.1" value="1" oninput="window.updateA15Costmin(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-costmin', {
+    boundingbox: [-0.5, 22, 22, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qbar = 10;
+  var wr = 1.0;
+
+  // Cobb-Douglas isoquant: q = K^0.5 * L^0.5 => K = q^2 / L
+  var isoquant = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qbar * qbar) / t; },
+    1, 21
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'q=10' });
+
+  board.create('text', [18, (qbar * qbar) / 18 + 1.2, 'q = 10'], {
+    fontSize: 12, color: '#1565c0', fixed: true
+  });
+
+  // Optimal point: TMST = K/L = w/r => K = (w/r)*L; K*L = q^2 => L* = q/sqrt(w/r), K* = q*sqrt(w/r)
+  var optPt = board.create('point', [
+    function() { return qbar / Math.sqrt(wr); },
+    function() { return qbar * Math.sqrt(wr); }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  var optLabel = board.create('text', [
+    function() { return qbar / Math.sqrt(wr) + 0.6; },
+    function() { return qbar * Math.sqrt(wr) + 0.8; }
+  ], {
+    name: '',
+    fontSize: 11, color: '#C8102E', fixed: true,
+    text: function() {
+      var Ls = qbar / Math.sqrt(wr);
+      var Ks = qbar * Math.sqrt(wr);
+      return '(' + Ls.toFixed(1) + ', ' + Ks.toFixed(1) + ')';
+    }
+  });
+
+  // Optimal isocost through tangency: C* = w*L* + r*K*; with w/r known, set w=wr, r=1
+  // C* = wr*L* + K* = wr * q/sqrt(wr) + q*sqrt(wr) = 2*q*sqrt(wr)
+  // Isocost: K = C*/r - (w/r)*L = 2*q*sqrt(wr) - wr*L
+  var optIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 0 });
+
+  // Additional isocost lines (higher and lower cost)
+  var hiIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2.6 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  var loIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 1.4 * qbar * Math.sqrt(wr) - wr * t; },
+    0, 21
+  ], { strokeColor: '#999', strokeWidth: 1.5, dash: 2 });
+
+  // Info text
+  board.create('text', [12, 20, function() {
+    var Ls = qbar / Math.sqrt(wr);
+    var Ks = qbar * Math.sqrt(wr);
+    var Cstar = 2 * qbar * Math.sqrt(wr);
+    return 'C* = ' + Cstar.toFixed(1) + '  |  w/r = ' + wr.toFixed(1);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Costmin = function(val) {
+    wr = parseFloat(val);
+    document.getElementById('val-a15-wr').textContent = wr.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="demandas-condicionadas-de-fatores" class="slide level2">
+<h2>Demandas Condicionadas de Fatores</h2>
+<p>Das CPOs, obtemos as <strong>demandas condicionadas</strong> de insumos:</p>
+<p><span class="math display">\[L^c(w, r, q) \qquad K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades:</strong></p>
+<ul>
+<li>Decrescentes no próprio preço: <span class="math inline">\(\partial L^c / \partial w \leq 0\)</span></li>
+<li><strong>Homogêneas de grau 0</strong> em <span class="math inline">\((w, r)\)</span>: dobrar ambos os preços não altera as quantidades ótimas</li>
+</ul>
+</div>
+<div class="fragment">
+<p><span class="math display">\[L^c(\alpha w, \alpha r, q) = L^c(w, r, q) \quad \forall \alpha &gt; 0\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Apenas a razão <span class="math inline">\(w/r\)</span> importa para a escolha de insumos, não o nível absoluto de preços. Se salários e custo do capital dobram igualmente, a firma mantém a mesma combinação.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-custo-cw-r-q" class="slide level2">
+<h2>Função Custo <span class="math inline">\(c(w, r, q)\)</span></h2>
+<p>Substituindo as demandas condicionadas na função objetivo:</p>
+<p><span class="math display">\[c(w, r, q) = w \cdot L^c(w, r, q) + r \cdot K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades da função custo:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Propriedade</th>
+<th style="text-align: left;">Significado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Crescente em <span class="math inline">\(w\)</span>, <span class="math inline">\(r\)</span>, <span class="math inline">\(q\)</span></td>
+<td style="text-align: left;">Insumos mais caros ou mais produção <span class="math inline">\(\Rightarrow\)</span> custo maior</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">HD1 em <span class="math inline">\((w, r)\)</span></td>
+<td style="text-align: left;">Dobrar preços dobra o custo: <span class="math inline">\(c(\alpha w, \alpha r, q) = \alpha \cdot c(w, r, q)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Côncava em <span class="math inline">\((w, r)\)</span></td>
+<td style="text-align: left;">A firma pode substituir insumos, limitando o impacto de aumentos de preço</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A concavidade em <span class="math inline">\((w, r)\)</span> reflete a capacidade de ajuste: o custo sobe menos que proporcionalmente quando um preço de insumo aumenta, porque a firma substitui parcialmente.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lema-de-shephard-para-a-firma" class="slide level2">
+<h2>Lema de Shephard para a Firma</h2>
+<p><span class="math display">\[\frac{\partial c(w, r, q)}{\partial w} = L^c(w, r, q) \qquad \frac{\partial c(w, r, q)}{\partial r} = K^c(w, r, q)\]</span></p>
+<div class="fragment">
+<p><strong>Analogia com o consumidor:</strong> o Lema de Shephard aqui é o análogo do Lema de Shephard na teoria do consumidor (demandas hicksianas).</p>
+</div>
+<div class="fragment">
+<p><strong>Utilidade prática:</strong> se conhecemos a função custo <span class="math inline">\(c(w, r, q)\)</span>, podemos <strong>derivar</strong> as demandas condicionadas sem resolver o problema de otimização novamente.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Quando <span class="math inline">\(w\)</span> sobe marginalmente, o custo aumenta em exatamente <span class="math inline">\(L^c\)</span> — a quantidade de trabalho usada. Efeitos de substituição são de segunda ordem (teorema do envelope).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="caminho-de-expansão" class="slide level2">
+<h2>Caminho de Expansão</h2>
+<p>O <strong>caminho de expansão</strong> é o lugar geométrico dos pontos de tangência quando <span class="math inline">\(q\)</span> varia (mantendo <span class="math inline">\(w\)</span> e <span class="math inline">\(r\)</span> fixos).</p>
+<div id="graph-a15-expansion" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>q: <span id="val-a15-q">10</span></label> <input type="range" id="sl-a15-q" min="5" max="20" step="1" value="10" oninput="window.updateA15Expansion(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-expansion', {
+    boundingbox: [-0.5, 25, 25, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var qCurrent = 10;
+  var wr = 1.0; // fixed w/r = 1
+
+  // Expansion path: for CD q=K^0.5*L^0.5 with w/r=1: K*=L*=q, so path is K=L (45-degree line)
+  board.create('curve', [
+    function(t) { return t; },
+    function(t) { return t; },
+    0, 24
+  ], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 3 });
+
+  board.create('text', [21, 22.5, 'Caminho de Expansão'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // Fixed isoquants at q=6, 8, 12, 16
+  var fixedQs = [6, 8, 12, 16];
+  for (var i = 0; i < fixedQs.length; i++) {
+    (function(qVal) {
+      board.create('curve', [
+        function(t) { return t; },
+        function(t) { return (qVal * qVal) / t; },
+        1.5, 24
+      ], { strokeColor: '#bbdefb', strokeWidth: 1.5 });
+      board.create('text', [23, (qVal * qVal) / 23 + 0.8, 'q=' + qVal], {
+        fontSize: 10, color: '#90caf9', fixed: true
+      });
+      // Tangency dot on expansion path
+      board.create('point', [qVal, qVal], {
+        size: 3, fixed: true, name: '',
+        color: '#90caf9', strokeColor: '#90caf9', fillColor: '#90caf9'
+      });
+    })(fixedQs[i]);
+  }
+
+  // Current isoquant (highlighted)
+  var currentIso = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return (qCurrent * qCurrent) / t; },
+    1.5, 24
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  var currentIsoLabel = board.create('text', [
+    function() { return 23; },
+    function() { return (qCurrent * qCurrent) / 23 + 0.8; }
+  ], {
+    fontSize: 11, color: '#1565c0', fixed: true,
+    text: function() { return 'q=' + qCurrent; }
+  });
+
+  // Current tangency point
+  var tangPt = board.create('point', [
+    function() { return qCurrent; },
+    function() { return qCurrent; }
+  ], {
+    name: '', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  // Isocost through tangency: K = 2*q - L (since w/r=1, C*=2q, K = 2q - L)
+  var tangIsocost = board.create('curve', [
+    function(t) { return t; },
+    function(t) { return 2 * qCurrent - t; },
+    0, 24
+  ], { strokeColor: '#C8102E', strokeWidth: 1.5, dash: 2 });
+
+  board.create('text', [2, 23, function() {
+    return 'C* = ' + (2 * qCurrent).toFixed(0) + '  (w/r = 1)';
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA15Expansion = function(val) {
+    qCurrent = parseInt(val);
+    document.getElementById('val-a15-q').textContent = qCurrent;
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="cobb-douglas-custos-derivados" class="slide level2">
+<h2>Cobb-Douglas: Custos Derivados</h2>
+<p><span class="math display">\[f(K,L) = K^{0{,}5} L^{0{,}5}\]</span></p>
+<div class="fragment">
+<p><strong>Passo 1 — Tangência:</strong> <span class="math inline">\(\frac{PMg_L}{PMg_K} = \frac{0{,}5 K}{0{,}5 L} = \frac{K}{L} = \frac{w}{r} \implies K = \frac{w}{r}L\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 2 — Substituir na restrição:</strong> <span class="math inline">\(\left(\frac{w}{r}L\right)^{0{,}5} L^{0{,}5} = q \implies L^c = q\sqrt{\frac{r}{w}}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 3 — Demanda de capital:</strong> <span class="math inline">\(K^c = \frac{w}{r} \cdot q\sqrt{\frac{r}{w}} = q\sqrt{\frac{w}{r}}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 4 — Função custo:</strong></p>
+<p><span class="math display">\[c(w,r,q) = w \cdot q\sqrt{\frac{r}{w}} + r \cdot q\sqrt{\frac{w}{r}} = 2q\sqrt{wr}\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>Verifique:</strong> <span class="math inline">\(c\)</span> é HD1 em <span class="math inline">\((w,r)\)</span>, crescente em <span class="math inline">\(q\)</span>, e <span class="math inline">\(\partial c / \partial w = q\sqrt{r/w} = L^c\)</span> (Shephard <span class="math inline">\(\checkmark\)</span>).</p>
+</blockquote>
+</div>
+</section>
+<section id="curvas-de-custo" class="slide level2">
+<h2>Curvas de Custo</h2>
+<div id="graph-a15-curves" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>CF: <span id="val-a15-fc">10</span></label> <input type="range" id="sl-a15-fc" min="5" max="30" step="1" value="10" oninput="window.updateA15Curves(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a15-curves', {
+    boundingbox: [-0.5, 90, 8, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: '$', withLabel: true, label: { position: 'rt', offset: [-20, 0] } }
+    }
+  });
+
+  var fc = 10;
+  // c(q) = q^3 - 6q^2 + 15q + FC (cubic cost)
+  function CT(q) { return q * q * q - 6 * q * q + 15 * q + fc; }
+  function CV(q) { return q * q * q - 6 * q * q + 15 * q; }
+  function CMe(q) { return (q > 0.1) ? CT(q) / q : NaN; }
+  function CVMe(q) { return (q > 0.1) ? CV(q) / q : NaN; }
+  function CMg(q) { return 3 * q * q - 12 * q + 15; }
+
+  // CT curve
+  board.create('functiongraph', [function(q) { return CT(q); }, 0, 7.5], {
+    strokeColor: '#1565c0', strokeWidth: 2.5
+  });
+  board.create('text', [6.5, CT(6.5) + 3, 'CT'], {
+    fontSize: 11, color: '#1565c0', fixed: true
+  });
+
+  // CMe curve
+  var cmeCurve = board.create('functiongraph', [function(q) { return CMe(q); }, 0.2, 7.5], {
+    strokeColor: '#00897b', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMe(7) + 2, 'CMe'], {
+    fontSize: 11, color: '#00897b', fixed: true
+  });
+
+  // CVMe curve
+  board.create('functiongraph', [function(q) { return CVMe(q); }, 0.2, 7.5], {
+    strokeColor: '#ff9800', strokeWidth: 2
+  });
+  board.create('text', [7, CVMe(7) + 2, 'CVMe'], {
+    fontSize: 11, color: '#ff9800', fixed: true
+  });
+
+  // CMg curve
+  board.create('functiongraph', [function(q) { return CMg(q); }, 0, 7.5], {
+    strokeColor: '#C8102E', strokeWidth: 2.5
+  });
+  board.create('text', [7, CMg(7) + 2, 'CMg'], {
+    fontSize: 11, color: '#C8102E', fixed: true
+  });
+
+  // Min CMe: d(CMe)/dq = 0 => solve numerically
+  // CMe = q^2 - 6q + 15 + fc/q => CMe' = 2q - 6 - fc/q^2 = 0
+  function findMinCMe() {
+    var bestQ = 0.5, bestVal = 9999;
+    for (var q = 0.5; q <= 7; q += 0.05) {
+      var val = CMe(q);
+      if (val < bestVal) { bestVal = val; bestQ = q; }
+    }
+    return { q: bestQ, val: bestVal };
+  }
+
+  // Min CVMe: q^2 - 6q + 15 => 2q - 6 = 0 => q = 3, CVMe = 9-18+15 = 6
+  var minCVMePt = board.create('point', [3, 6], {
+    name: 'min CVMe', size: 4, fixed: true,
+    color: '#ff9800', strokeColor: '#ff9800', fillColor: '#ff9800',
+    label: { fontSize: 10, offset: [-45, -15] }
+  });
+
+  var minCMePt = board.create('point', [
+    function() { return findMinCMe().q; },
+    function() { return findMinCMe().val; }
+  ], {
+    name: 'min CMe', size: 4, fixed: true,
+    color: '#00897b', strokeColor: '#00897b', fillColor: '#00897b',
+    label: { fontSize: 10, offset: [8, 8] }
+  });
+
+  window.updateA15Curves = function(val) {
+    fc = parseInt(val);
+    document.getElementById('val-a15-fc').textContent = fc;
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="custo-fixo-variável-e-irrecuperável" class="slide level2">
+<h2>Custo Fixo, Variável e Irrecuperável</h2>
+<p><strong>Custo Fixo (CF):</strong> não varia com a quantidade produzida</p>
+<p><span class="math display">\[CF = r \bar{K} \qquad \frac{\partial CF}{\partial q} = 0\]</span></p>
+<div class="fragment">
+<p><strong>Custo Variável (CV):</strong> depende do nível de produção</p>
+<p><span class="math display">\[CV(q) = CT(q) - CF\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Custo Irrecuperável (sunk cost):</strong> gasto já realizado, irreversível</p>
+<ul>
+<li>Uma vez pago, <strong>não</strong> deve influenciar decisões futuras</li>
+<li>Erro comum: “já gastei tanto, não posso parar agora” (falácia do custo irrecuperável)</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Um custo fixo pode ou não ser irrecuperável. O aluguel do mês é fixo (não varia com <span class="math inline">\(q\)</span>), mas se o contrato permite rescisão, não é irrecuperável. Uma máquina sob medida sem valor de revenda é fixo <strong>e</strong> irrecuperável.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="relação-cme-e-cmg" class="slide level2">
+<h2>Relação CMe e CMg</h2>
+<p><span class="math display">\[\frac{d\,CMe}{dq} = \frac{d}{dq}\left(\frac{CT}{q}\right) = \frac{CMg \cdot q - CT}{q^2} = \frac{CMg - CMe}{q}\]</span></p>
+<div class="fragment">
+<p><strong>Implicações:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;"><span class="math inline">\(d\,CMe/dq\)</span></th>
+<th style="text-align: left;">Efeito</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CMg &lt; CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> decrescente</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(CMg = CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(= 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> <strong>mínimo</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CMg &gt; CMe\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(&gt; 0\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CMe\)</span> crescente</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p><strong>O CMg cruza o CMe em seu ponto de mínimo</strong> — mesma lógica da relação PMg-PMe na produção, invertida.</p>
+</blockquote>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Pense em notas de prova: se sua nota na próxima prova (marginal) está abaixo da sua média, a média cai. Se está acima, a média sobe. A nota marginal cruza a média quando ambas coincidem.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="dualidade-custo-produção" class="slide level2">
+<h2>Dualidade Custo-Produção</h2>
+<p><strong>Da produção ao custo:</strong></p>
+<p><span class="math display">\[f(K,L) \xrightarrow{\text{minimização de custo}} c(w,r,q)\]</span></p>
+<div class="fragment">
+<p><strong>Do custo à produção:</strong></p>
+<p><span class="math display">\[c(w,r,q) \xrightarrow{\text{Shephard + inversão}} f(K,L)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Paralelo com a teoria do consumidor:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Consumidor</th>
+<th style="text-align: left;">Firma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Utilidade <span class="math inline">\(u(x)\)</span></td>
+<td style="text-align: left;">Produção <span class="math inline">\(f(K,L)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Função dispêndio <span class="math inline">\(e(p,u)\)</span></td>
+<td style="text-align: left;">Função custo <span class="math inline">\(c(w,r,q)\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Demandas hicksianas <span class="math inline">\(h_i\)</span></td>
+<td style="text-align: left;">Demandas condicionadas <span class="math inline">\(L^c, K^c\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lema de Shephard: <span class="math inline">\(\partial e/\partial p_i = h_i\)</span></td>
+<td style="text-align: left;">Lema de Shephard: <span class="math inline">\(\partial c/\partial w = L^c\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<blockquote>
+<p>A dualidade permite obter toda a informação sobre a tecnologia a partir da função custo, e vice-versa.</p>
+</blockquote>
+</div>
+</section>
+<section id="próxima-aula-custos-cp-vs-lp" class="slide level2">
+<h2>Próxima Aula: Custos CP vs LP</h2>
+<p><strong>Aula 16 — Custos de Curto e Longo Prazo</strong></p>
+<ul>
+<li>Curvas de custo no curto prazo: CF, CV, CMe, CVMe, CMg</li>
+<li>A <strong>envoltória</strong>: como o longo prazo “abraça” os curtos prazos</li>
+<li>Economias e deseconomias de escala</li>
+<li>Resultado fundamental: <span class="math inline">\(CT_{LP}(q) \leq CT_{CP}(q)\)</span></li>
+</ul>
+<div class="fragment">
+<p><strong>Preparação:</strong></p>
+<ul>
+<li>Revisar as relações CMg-CMe desta aula</li>
+<li>Pensar: por que o custo de longo prazo é sempre menor ou igual ao de curto prazo?</li>
+</ul>
+
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Microeconomia II | Aula 15</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula-15-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula-15-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="aula-15-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula-15-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

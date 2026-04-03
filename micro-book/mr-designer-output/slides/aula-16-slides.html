@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="aula-16-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula-16-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula-16-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula-16-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula-16-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula-16-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula-16-slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Insper">
+  <title>Custos CP vs LP + Envelope</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula-16-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula-16-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="aula-16-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula-16-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Custos CP vs LP + Envelope</h1>
+  <p class="subtitle">Microeconomia II — Aula 16</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Insper 
+</div>
+</div>
+</div>
+
+</section>
+<section id="curto-prazo-capital-fixo" class="slide level2">
+<h2>Curto Prazo: Capital Fixo</h2>
+<p>No <strong>curto prazo</strong>, o capital é fixo em <span class="math inline">\(K = \bar{K}\)</span>. Apenas o trabalho <span class="math inline">\(L\)</span> varia.</p>
+<div class="fragment">
+<p><strong>Custo total de curto prazo:</strong></p>
+<p><span class="math display">\[CT_{CP}(q;\bar{K}) = \underbrace{r\bar{K}}_{\text{Custo Fixo}} + \underbrace{wL(q,\bar{K})}_{\text{Custo Variável}}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Consequências:</strong></p>
+<ul>
+<li>O custo fixo <span class="math inline">\(r\bar{K}\)</span> não depende de <span class="math inline">\(q\)</span> — é pago mesmo com <span class="math inline">\(q=0\)</span></li>
+<li>O custo variável <span class="math inline">\(wL(q,\bar{K})\)</span> cresce com <span class="math inline">\(q\)</span> (mais produto exige mais trabalho)</li>
+<li>No CP, a firma só pode ajustar <span class="math inline">\(L\)</span>; no LP, ajusta <span class="math inline">\(K\)</span> e <span class="math inline">\(L\)</span> simultaneamente</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A firma “herda” sua planta <span class="math inline">\(\bar{K}\)</span> — pode estar grande demais ou pequena demais para a produção desejada. Só no longo prazo ela pode corrigir.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="custo-total-de-cp-vs-lp" class="slide level2">
+<h2>Custo Total de CP vs LP</h2>
+<p><strong>Resultado fundamental:</strong></p>
+<p><span class="math display">\[CT_{CP}(q;\bar{K}) \geq CT_{LP}(q) \quad \forall\, q\]</span></p>
+<div class="fragment">
+<p><strong>Por quê?</strong> No LP a firma otimiza <strong>ambos</strong> os insumos; no CP, está restrita a <span class="math inline">\(\bar{K}\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Tangência:</strong> igualdade ocorre no nível <span class="math inline">\(q^*(\bar{K})\)</span> para o qual <span class="math inline">\(\bar{K}\)</span> é ótimo:</p>
+<p><span class="math display">\[CT_{CP}(q^*;\bar{K}) = CT_{LP}(q^*)\]</span></p>
+</div>
+<div class="fragment">
+<p>Nesse ponto de tangência:</p>
+<ul>
+<li>As duas curvas se tocam (mesmo nível de custo)</li>
+<li>Têm a mesma inclinação (<span class="math inline">\(CMg_{CP} = CMg_{LP}\)</span>)</li>
+<li>A curva de CP é <strong>convexa</strong> em relação à de LP (tangente por cima)</li>
+</ul>
+</div>
+</section>
+<section id="envoltória-de-custo-total" class="slide level2">
+<h2>Envoltória de Custo Total</h2>
+<p>A curva de <span class="math inline">\(CT_{LP}\)</span> é a <strong>envoltória inferior</strong> das curvas de <span class="math inline">\(CT_{CP}\)</span> para diferentes <span class="math inline">\(\bar{K}\)</span>:</p>
+<div id="graph-a16-envelope" style="width:720px;height:380px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Destacar planta K̄: <span id="val-a16-k">3</span></label> <input type="range" id="sl-a16-k" min="1" max="5" step="1" value="3" oninput="window.updateA16Envelope(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a16-envelope', {
+    boundingbox: [-0.5, 110, 12, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'CT', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  // Parameters: Cobb-Douglas q = K^0.5 L^0.5, w=4, r=1
+  // SR: L(q,K) = q^2/K, so STC(q,K) = K + 4*q^2/K
+  // LR: C(q) = 2*q*sqrt(4*1) = 4q (CRS)
+  var w = 4, r = 1;
+  var Kvals = [1, 2, 3, 4, 5];
+  var colors = ['#90a4ae', '#90a4ae', '#90a4ae', '#90a4ae', '#90a4ae'];
+  var highlightK = 3;
+
+  function stc(q, K) {
+    return r * K + w * q * q / K;
+  }
+
+  function ltc(q) {
+    return 2 * q * Math.sqrt(w * r);
+  }
+
+  // Draw 5 STC curves
+  var stcCurves = [];
+  for (var i = 0; i < 5; i++) {
+    (function(idx) {
+      var K = Kvals[idx];
+      stcCurves.push(board.create('functiongraph', [
+        function(q) { return stc(q, Kvals[idx]); },
+        0.01, 11
+      ], {
+        strokeColor: '#90a4ae',
+        strokeWidth: 1.5,
+        dash: 2,
+        highlight: false
+      }));
+    })(i);
+  }
+
+  // Highlighted STC curve
+  var highlightCurve = board.create('functiongraph', [
+    function(q) { return stc(q, highlightK); },
+    0.01, 11
+  ], {
+    strokeColor: '#C8102E',
+    strokeWidth: 3,
+    highlight: false
+  });
+
+  // LR TC envelope
+  var lrCurve = board.create('functiongraph', [
+    function(q) { return ltc(q); },
+    0, 11
+  ], {
+    strokeColor: '#1565c0',
+    strokeWidth: 3,
+    highlight: false
+  });
+
+  // Tangent point for highlighted K: q* where STC touches LTC
+  // STC = K + 4q^2/K, LTC = 4q. Tangency: dSTC/dq = dLTC/dq => 8q/K = 4 => q = K/2
+  var tangentPt = board.create('point', [
+    function() { return highlightK / 2; },
+    function() { return ltc(highlightK / 2); }
+  ], {
+    name: '', size: 4, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E'
+  });
+
+  // Labels
+  board.create('text', [9, function() { return ltc(9) + 5; }, 'CT_{LP}'], {
+    fontSize: 13, color: '#1565c0', fixed: true
+  });
+
+  for (var j = 0; j < 5; j++) {
+    (function(idx) {
+      board.create('text', [
+        10.5,
+        function() { return stc(10.5, Kvals[idx]); },
+        function() { return 'K\u0304=' + Kvals[idx]; }
+      ], { fontSize: 10, color: '#777', fixed: true });
+    })(j);
+  }
+
+  window.updateA16Envelope = function(val) {
+    highlightK = parseInt(val);
+    document.getElementById('val-a16-k').textContent = highlightK;
+    highlightCurve.Y = function(q) { return stc(q, highlightK); };
+    highlightCurve.updateCurve();
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="cmecp-vs-cmelp" class="slide level2">
+<h2>CMeCP vs CMeLP</h2>
+<p>Para cada planta <span class="math inline">\(\bar{K}\)</span>, a curva de <span class="math inline">\(CMe_{CP}\)</span> é tangente à de <span class="math inline">\(CMe_{LP}\)</span> <strong>por cima</strong>:</p>
+<p><span class="math display">\[CMe_{LP}(q) = \min_{\bar{K}} CMe_{CP}(q, \bar{K})\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades da envoltória de custo médio:</strong></p>
+<ul>
+<li>Cada <span class="math inline">\(CMe_{CP}(\bar{K})\)</span> toca <span class="math inline">\(CMe_{LP}\)</span> em <strong>exatamente um ponto</strong></li>
+<li>No ponto de tangência: <span class="math inline">\(CMe_{CP} = CMe_{LP}\)</span> e <span class="math inline">\(\frac{dCMe_{CP}}{dq} = \frac{dCMe_{LP}}{dq}\)</span></li>
+<li>O mínimo de <span class="math inline">\(CMe_{CP}\)</span> <strong>não</strong> coincide com o ponto de tangência (exceto na EME)</li>
+</ul>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Região</th>
+<th style="text-align: left;">Tangência ocorre…</th>
+<th style="text-align: left;"><span class="math inline">\(CMe_{CP}\)</span> mínimo está…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(q &lt; q_{EME}\)</span></td>
+<td style="text-align: left;">No ramo descendente de <span class="math inline">\(CMe_{CP}\)</span></td>
+<td style="text-align: left;">À direita da tangência</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(q = q_{EME}\)</span></td>
+<td style="text-align: left;">No mínimo de <span class="math inline">\(CMe_{CP}\)</span></td>
+<td style="text-align: left;">Coincide</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(q &gt; q_{EME}\)</span></td>
+<td style="text-align: left;">No ramo ascendente de <span class="math inline">\(CMe_{CP}\)</span></td>
+<td style="text-align: left;">À esquerda da tangência</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="curto-vs-longo-prazo-interativo" class="slide level2">
+<h2>Curto vs Longo Prazo Interativo</h2>
+<p>Compare as curvas de custo médio e marginal nos dois horizontes:</p>
+<div id="graph-a16-srlr" style="width:720px;height:380px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Planta K̄: <span id="val-a16-k2">3</span></label> <input type="range" id="sl-a16-k2" min="1" max="6" step="0.5" value="3" oninput="window.updateA16SRLR(this.value)"></p>
+</div>
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a16-srlr', {
+    boundingbox: [-0.3, 18, 10, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'q', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'R$/unid', withLabel: true, label: { position: 'rt', offset: [-40, 0] } }
+    }
+  });
+
+  // Model: q = K^0.4 L^0.6, w=4, r=1
+  // This gives IRS (alpha+beta=1 but we use different exponents for U-shaped LR curves)
+  // Use a simpler model for U-shaped curves:
+  // LR: C(q) = q^3 - 6q^2 + 15q  (gives U-shaped AC)
+  // LRAC = q^2 - 6q + 15, LRMC = 3q^2 - 12q + 15
+  // SR: STC(q,K) = K + (q^3)/(3K) + 2q  (parametric)
+  // SRAC = K/q + q^2/(3K) + 2, SRMC = q^2/K + 2
+
+  var Kbar = 3;
+
+  function lrac(q) { return q * q - 6 * q + 15; }
+  function lrmc(q) { return 3 * q * q - 12 * q + 15; }
+  function srac(q, K) { return K / q + q * q / (3 * K) + 2; }
+  function srmc(q, K) { return q * q / K + 2; }
+
+  // LRAC
+  var lracCurve = board.create('functiongraph', [
+    function(q) { return lrac(q); },
+    0.3, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 3, highlight: false });
+
+  // LRMC
+  var lrmcCurve = board.create('functiongraph', [
+    function(q) { return lrmc(q); },
+    0.3, 9.5
+  ], { strokeColor: '#1565c0', strokeWidth: 2, dash: 3, highlight: false });
+
+  // SRAC
+  var sracCurve = board.create('functiongraph', [
+    function(q) { return srac(q, Kbar); },
+    0.3, 9.5
+  ], { strokeColor: '#C8102E', strokeWidth: 3, highlight: false });
+
+  // SRMC
+  var srmcCurve = board.create('functiongraph', [
+    function(q) { return srmc(q, Kbar); },
+    0.3, 9.5
+  ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 3, highlight: false });
+
+  // Find tangent point numerically (where SRAC ≈ LRAC)
+  var tangentPt = board.create('point', [
+    function() {
+      var bestQ = 1, bestDiff = 999;
+      for (var q = 0.5; q <= 9; q += 0.05) {
+        var diff = Math.abs(srac(q, Kbar) - lrac(q));
+        if (diff < bestDiff) { bestDiff = diff; bestQ = q; }
+      }
+      return bestQ;
+    },
+    function() {
+      var bestQ = 1, bestDiff = 999;
+      for (var q = 0.5; q <= 9; q += 0.05) {
+        var diff = Math.abs(srac(q, Kbar) - lrac(q));
+        if (diff < bestDiff) { bestDiff = diff; bestQ = q; }
+      }
+      return lrac(bestQ);
+    }
+  ], {
+    name: 'tangência', size: 4, fixed: true,
+    color: '#00897b', strokeColor: '#00897b', fillColor: '#00897b',
+    label: { fontSize: 11, offset: [8, 8] }
+  });
+
+  // Legend
+  board.create('text', [6.5, 17, 'LRAC'], { fontSize: 12, color: '#1565c0', fixed: true });
+  board.create('text', [6.5, 15.8, 'LRMC'], { fontSize: 12, color: '#1565c0', fixed: true });
+  board.create('text', [8, 17, 'SRAC'], { fontSize: 12, color: '#C8102E', fixed: true });
+  board.create('text', [8, 15.8, 'SRMC'], { fontSize: 12, color: '#C8102E', fixed: true });
+
+  window.updateA16SRLR = function(val) {
+    Kbar = parseFloat(val);
+    document.getElementById('val-a16-k2').textContent = Kbar.toFixed(1);
+    sracCurve.Y = function(q) { return srac(q, Kbar); };
+    sracCurve.updateCurve();
+    srmcCurve.Y = function(q) { return srmc(q, Kbar); };
+    srmcCurve.updateCurve();
+    board.update();
+  };
+})();
+</script>
+</section>
+<section id="lema-de-shephard-na-prática" class="slide level2">
+<h2>Lema de Shephard na Prática</h2>
+<p>O <strong>Lema de Shephard</strong> permite derivar demandas condicionais a partir da função custo:</p>
+<p><span class="math display">\[L^c = \frac{\partial C}{\partial w} \qquad K^c = \frac{\partial C}{\partial r}\]</span></p>
+<div class="fragment">
+<p><strong>Exemplo numérico:</strong> <span class="math inline">\(f(K,L) = K^{1/2}L^{1/2}\)</span>, <span class="math inline">\(w=4\)</span>, <span class="math inline">\(r=1\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Passo 1:</strong> Função custo (já derivada): <span class="math inline">\(C(w,r,q) = 2q\sqrt{wr}\)</span></p>
+</div>
+<div class="fragment">
+<p><strong>Passo 2:</strong> Aplicar Shephard:</p>
+<p><span class="math display">\[L^c = \frac{\partial C}{\partial w} = 2q \cdot \frac{1}{2}\sqrt{\frac{r}{w}} = q\sqrt{\frac{r}{w}} = q\sqrt{\frac{1}{4}} = \frac{q}{2}\]</span></p>
+<p><span class="math display">\[K^c = \frac{\partial C}{\partial r} = 2q \cdot \frac{1}{2}\sqrt{\frac{w}{r}} = q\sqrt{\frac{w}{r}} = q\sqrt{\frac{4}{1}} = 2q\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Verificação:</strong> <span class="math inline">\(C = wL^c + rK^c = 4 \cdot \frac{q}{2} + 1 \cdot 2q = 2q + 2q = 4q = 2q\sqrt{4} \;\checkmark\)</span></p>
+</div>
+</section>
+<section id="economias-e-deseconomias-de-escala" class="slide level2">
+<h2>Economias e Deseconomias de Escala</h2>
+<p><strong>Economias de escala:</strong> <span class="math inline">\(CMe_{LP}\)</span> decrescente — produzir mais reduz o custo unitário.</p>
+<p><span class="math display">\[S(q) = \frac{CMe_{LP}(q)}{CMg_{LP}(q)} &gt; 1 \implies \text{economias de escala}\]</span></p>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Fontes de economias:</strong></p>
+<ul>
+<li>Indivisibilidades (setup, P&amp;D)</li>
+<li>Especialização do trabalho</li>
+<li>Regra dos dois terços (engenharia)</li>
+<li>Compras em volume (descontos)</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Fontes de deseconomias:</strong></p>
+<ul>
+<li>Custos de coordenação e burocracia</li>
+<li>Congestionamento de recursos</li>
+<li>Problemas de agência (incentivos)</li>
+<li>Limites gerenciais (span of control)</li>
+</ul>
+</div></div>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(S(q)\)</span></th>
+<th style="text-align: left;">Retornos de escala</th>
+<th style="text-align: left;"><span class="math inline">\(CMe_{LP}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(S &gt; 1\)</span></td>
+<td style="text-align: left;">Crescentes</td>
+<td style="text-align: left;">Decrescente</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(S = 1\)</span></td>
+<td style="text-align: left;">Constantes</td>
+<td style="text-align: left;">Constante</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(S &lt; 1\)</span></td>
+<td style="text-align: left;">Decrescentes</td>
+<td style="text-align: left;">Crescente</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="escala-mínima-eficiente" class="slide level2">
+<h2>Escala Mínima Eficiente</h2>
+<p>A <strong>EME</strong> (Escala Mínima Eficiente) é o menor <span class="math inline">\(q\)</span> em que <span class="math inline">\(CMe_{LP}\)</span> atinge seu mínimo:</p>
+<p><span class="math display">\[q_{EME} = \arg\min_q CMe_{LP}(q)\]</span></p>
+<div class="fragment">
+<p><strong>Implicações para a estrutura de mercado:</strong></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(q_{EME}\)</span> relativo ao mercado</th>
+<th style="text-align: left;">Estrutura provável</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Muito pequeno</td>
+<td style="text-align: left;">Concorrência perfeita</td>
+<td style="text-align: left;">Restaurantes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Moderado</td>
+<td style="text-align: left;">Oligopólio</td>
+<td style="text-align: left;">Automóveis</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Próximo da demanda total</td>
+<td style="text-align: left;">Monopólio natural</td>
+<td style="text-align: left;">Distribuição de água</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A EME determina <strong>quantas firmas cabem</strong> no mercado de forma eficiente. Se a EME é grande relativa à demanda, poucas firmas conseguem operar no mínimo do custo médio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="curvas-de-custo-resumo-visual" class="slide level2">
+<h2>Curvas de Custo: Resumo Visual</h2>
+<p><strong>Todas as curvas de custo e suas relações:</strong></p>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Curva</th>
+<th style="text-align: left;">Fórmula</th>
+<th style="text-align: left;">Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CT(q)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CF + CV(q)\)</span></td>
+<td style="text-align: left;">Cresce; parte de <span class="math inline">\(CF &gt; 0\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(CMe(q)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CT/q\)</span></td>
+<td style="text-align: left;">Formato U; min onde <span class="math inline">\(CMg = CMe\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CVMe(q)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CV/q\)</span></td>
+<td style="text-align: left;">Formato U; min onde <span class="math inline">\(CMg = CVMe\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(CFMe(q)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(CF/q\)</span></td>
+<td style="text-align: left;">Sempre decrescente</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(CMg(q)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(dCT/dq\)</span></td>
+<td style="text-align: left;">Cruza <span class="math inline">\(CVMe\)</span> e <span class="math inline">\(CMe\)</span> nos mínimos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><strong>Relações-chave:</strong></p>
+<ul>
+<li><span class="math inline">\(CMe = CVMe + CFMe\)</span> (custo médio = variável médio + fixo médio)</li>
+<li><span class="math inline">\(CMg\)</span> cruza <span class="math inline">\(CVMe\)</span> no mínimo de <span class="math inline">\(CVMe\)</span> (primeiro)</li>
+<li><span class="math inline">\(CMg\)</span> cruza <span class="math inline">\(CMe\)</span> no mínimo de <span class="math inline">\(CMe\)</span> (depois, à direita)</li>
+<li>Mín de <span class="math inline">\(CMe\)</span> ocorre à direita do mín de <span class="math inline">\(CVMe\)</span> (efeito de diluição dos fixos)</li>
+</ul>
+</div>
+</section>
+<section id="funções-de-custo-e-elasticidade-de-produção" class="slide level2">
+<h2>Funções de Custo e Elasticidade de Produção</h2>
+<p>A <strong>elasticidade custo-produto</strong> mede como o custo total responde a variações na produção:</p>
+<p><span class="math display">\[\varepsilon_{C,q} = \frac{dCT}{dq} \cdot \frac{q}{CT} = \frac{CMg}{CMe}\]</span></p>
+<div class="fragment">
+<p><strong>Relação com retornos de escala:</strong></p>
+<p><span class="math display">\[\varepsilon_{C,q} = \frac{1}{S(q)} = \frac{1}{\text{grau de economias de escala}}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"><span class="math inline">\(\varepsilon_{C,q}\)</span></th>
+<th style="text-align: left;">Significado</th>
+<th style="text-align: left;">Retornos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(&lt; 1\)</span></td>
+<td style="text-align: left;">CT cresce menos que <span class="math inline">\(q\)</span></td>
+<td style="text-align: left;">Crescentes</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(= 1\)</span></td>
+<td style="text-align: left;">CT cresce na mesma proporção</td>
+<td style="text-align: left;">Constantes</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(&gt; 1\)</span></td>
+<td style="text-align: left;">CT cresce mais que <span class="math inline">\(q\)</span></td>
+<td style="text-align: left;">Decrescentes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A elasticidade custo-produto é o inverso do índice de economias de escala. Se duplicar a produção menos que duplica o custo (<span class="math inline">\(\varepsilon &lt; 1\)</span>), há economias de escala.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="aplicação-custos-na-indústria-brasileira" class="slide level2">
+<h2>Aplicação: Custos na Indústria Brasileira</h2>
+<p><strong>Caso: Siderurgia — economias de escala e competitividade</strong></p>
+<div class="fragment">
+<ul>
+<li>A produção de aço tem <strong>fortes economias de escala</strong> (altos-fornos, laminação)</li>
+<li>EME estimada: ~3 milhões de toneladas/ano</li>
+<li>Brasil: CSN, Usiminas e Gerdau operam próximo ou acima da EME</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Contraste com pequenas empresas:</strong></p>
+<ul>
+<li>Padarias, salões de beleza: EME muito baixa</li>
+<li>Milhares de firmas coexistem no mercado</li>
+<li>Deseconomias de escala surgem rapidamente (gestão, espaço)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Pergunta para reflexão:</strong></p>
+<blockquote>
+<p>Por que o Brasil tem poucas siderúrgicas mas milhares de padarias? A resposta está na relação entre EME e tamanho do mercado.</p>
+</blockquote>
+</div>
+</section>
+<section id="exercício-numérico-completo" class="slide level2">
+<h2>Exercício Numérico Completo</h2>
+<p><strong>Dados:</strong> <span class="math inline">\(f(K,L) = K^{0.5}L^{0.5}\)</span>, <span class="math inline">\(w = 4\)</span>, <span class="math inline">\(r = 1\)</span>.</p>
+<div class="fragment">
+<p><strong>1. Demandas condicionais</strong> (tangência + isoquanta):</p>
+<p><span class="math display">\[TMST = \frac{0.5K}{0.5L} = \frac{K}{L} = \frac{w}{r} = 4 \implies K = 4L\]</span></p>
+<p><span class="math display">\[q = (4L)^{0.5}L^{0.5} = 2L \implies L^c = \frac{q}{2}, \quad K^c = 2q\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>2. Função custo:</strong></p>
+<p><span class="math display">\[C(q) = wL^c + rK^c = 4\cdot\frac{q}{2} + 1\cdot 2q = 4q\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>3. CMe e CMg:</strong></p>
+<p><span class="math display">\[CMe = \frac{4q}{q} = 4 \qquad CMg = \frac{dC}{dq} = 4\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>4. Custo de CP</strong> (<span class="math inline">\(\bar{K} = 8\)</span>): <span class="math inline">\(L = q^2/\bar{K} = q^2/8\)</span></p>
+<p><span class="math display">\[CT_{CP} = 1\cdot 8 + 4\cdot\frac{q^2}{8} = 8 + \frac{q^2}{2} \qquad CMe_{CP} = \frac{8}{q} + \frac{q}{2}\]</span></p>
+<p>Tangência com LP em <span class="math inline">\(q^* = 4\)</span>: <span class="math inline">\(CT_{CP}(4) = 8 + 8 = 16 = 4\cdot 4 = CT_{LP}(4)\)</span> <span class="math inline">\(\checkmark\)</span></p>
+</div>
+</section>
+<section id="multiproduto-economias-de-escopo" class="slide level2">
+<h2>Multiproduto: Economias de Escopo</h2>
+<p>Quando a firma produz <strong>mais de um bem</strong>, surgem <strong>economias de escopo</strong>:</p>
+<p><span class="math display">\[C(q_1, q_2) &lt; C(q_1, 0) + C(0, q_2)\]</span></p>
+<div class="fragment">
+<p><strong>Grau de economias de escopo:</strong></p>
+<p><span class="math display">\[SC = \frac{C(q_1, 0) + C(0, q_2) - C(q_1, q_2)}{C(q_1, q_2)}\]</span></p>
+<p>Se <span class="math inline">\(SC &gt; 0\)</span>: há economia de escopo (produção conjunta é mais barata).</p>
+</div>
+<div class="fragment">
+<p><strong>Fontes:</strong></p>
+<ul>
+<li>Insumos compartilhados (mesma fábrica, mesma equipe)</li>
+<li>Subprodutos aproveitados (petroquímica)</li>
+<li>Conhecimento transferível (P&amp;D)</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Exemplo:</strong> Uma montadora que produz carros e caminhões na mesma planta — compartilha chassis, pintura, logística.</p>
+<blockquote>
+<p><strong>Atenção:</strong> economias de escala <span class="math inline">\(\neq\)</span> economias de escopo. A primeira refere-se a um produto; a segunda, à produção conjunta.</p>
+</blockquote>
+</div>
+</section>
+<section id="peer-instruction-custos" class="slide level2">
+<h2>Peer Instruction: Custos</h2>
+<blockquote>
+<p><strong>Questão:</strong> A firma tem <span class="math inline">\(CT_{CP}(q) = 50 + 2q^2\)</span>. Qual afirmação é <strong>correta</strong>?</p>
+</blockquote>
+<div class="fragment">
+<p><strong>(A)</strong> O custo fixo é 50 e o <span class="math inline">\(CMg = 4q\)</span>, logo <span class="math inline">\(CMg\)</span> cruza <span class="math inline">\(CMe\)</span> em <span class="math inline">\(q = 5\)</span>.</p>
+<p><strong>(B)</strong> O custo fixo é 50 e o <span class="math inline">\(CMg = 4q\)</span>, logo <span class="math inline">\(CMg\)</span> cruza <span class="math inline">\(CVMe\)</span> em <span class="math inline">\(q = 0\)</span>.</p>
+<p><strong>(C)</strong> O <span class="math inline">\(CMe_{CP}\)</span> mínimo ocorre onde <span class="math inline">\(CMg = CMe\)</span>, isto é, em <span class="math inline">\(q = 5\)</span>.</p>
+<p><strong>(D)</strong> O <span class="math inline">\(CVMe\)</span> é constante e igual a <span class="math inline">\(2q\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Discuta com seu vizinho por 2 minutos e vote novamente.</strong></p>
+</div>
+<div class="fragment">
+<div title="Resolução">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Resolução</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(CMe = 50/q + 2q\)</span>, <span class="math inline">\(CMg = 4q\)</span>. No mínimo: <span class="math inline">\(4q = 50/q + 2q \Rightarrow 2q = 50/q \Rightarrow q^2 = 25 \Rightarrow q = 5\)</span>. <span class="math inline">\(CMe(5) = 10 + 10 = 20 = CMg(5)\)</span>. <strong>Resposta: (A) e (C) são corretas.</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="próxima-aula-maximização-de-lucro" class="slide level2">
+<h2>Próxima Aula: Maximização de Lucro</h2>
+<p><strong>Aula 17 — Maximização de Lucro e Oferta</strong></p>
+<div class="fragment">
+<ul>
+<li>Da minimização de custos à <strong>maximização de lucro</strong></li>
+<li>Condição <span class="math inline">\(P = CMg\)</span> e decisão de operação</li>
+<li>Curva de oferta da firma competitiva</li>
+<li>Excedente do produtor e lucro econômico</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Preparação:</strong></p>
+<ul>
+<li>Ler capítulo 12 (lucro e oferta)</li>
+<li>Revisar as relações <span class="math inline">\(CMg\)</span>–<span class="math inline">\(CMe\)</span> desta aula</li>
+<li>Pensar: por que a firma competitiva <strong>não escolhe o preço</strong>?</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A firma price-taker aceita o preço do mercado como dado. Sua única decisão é <strong>quanto</strong> produzir — e a resposta está na curva de custo marginal.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Microeconomia II | Aula 16</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula-16-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula-16-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="aula-16-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula-16-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

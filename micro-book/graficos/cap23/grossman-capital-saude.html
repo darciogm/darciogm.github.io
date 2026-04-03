@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+  Modelo de Grossman: Capital de Saúde ao Longo da Vida
+  Library: Plotly.js
+  Chapter 23 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modelo de Grossman</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.panels{flex:1 1 420px;max-width:520px;display:flex;flex-direction:column;gap:.5rem}.plot-box{width:100%;height:220px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.panels,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div class="panels">
+    <div id="plotTop" class="plot-box"></div>
+    <div id="plotBot" class="plot-box"></div>
+  </div>
+  <div class="controls">
+    <h3>Capital de Saude</h3>
+    <div class="slider-group">
+      <label>Saude inicial \(H_0\): <span class="val" id="val-H0">100</span></label>
+      <input type="range" id="slider-H0" min="50" max="150" step="5" value="100">
+    </div>
+    <div class="slider-group">
+      <label>Investimento \(I\): <span class="val" id="val-I">3.0</span></label>
+      <input type="range" id="slider-I" min="0" max="8" step="0.5" value="3">
+    </div>
+    <div class="slider-group">
+      <label>Depr. base \(\delta_0\): <span class="val" id="val-d0">0.02</span></label>
+      <input type="range" id="slider-d0" min="0.01" max="0.08" step="0.005" value="0.02">
+    </div>
+    <div class="slider-group">
+      <label>Aceleracao \(\gamma\): <span class="val" id="val-g">0.0010</span></label>
+      <input type="range" id="slider-g" min="0" max="0.003" step="0.0002" value="0.001">
+    </div>
+    <div class="slider-group">
+      <label>Limiar \(H_{\min}\): <span class="val" id="val-Hmin">20</span></label>
+      <input type="range" id="slider-Hmin" min="5" max="40" step="5" value="20">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function update(){
+    var H0=parseFloat(document.getElementById('slider-H0').value);
+    var I=parseFloat(document.getElementById('slider-I').value);
+    var d0=parseFloat(document.getElementById('slider-d0').value);
+    var g=parseFloat(document.getElementById('slider-g').value);
+    var Hmin=parseFloat(document.getElementById('slider-Hmin').value);
+    document.getElementById('val-H0').textContent=H0;
+    document.getElementById('val-I').textContent=I.toFixed(1);
+    document.getElementById('val-d0').textContent=d0.toFixed(3);
+    document.getElementById('val-g').textContent=g.toFixed(4);
+    document.getElementById('val-Hmin').textContent=Hmin;
+    // H(t+1) = H(t) - delta(t)*H(t) + I, delta(t) = d0 + g*t^2
+    var ages=[],Hs=[],deltas=[],deathAge=null;
+    var H=H0;
+    for(var t=0;t<=80;t++){
+      var age=20+t;
+      var delta=d0+g*t*t;
+      ages.push(age);Hs.push(H);deltas.push(delta*100);
+      if(H<Hmin&&deathAge===null)deathAge=age;
+      H=H-delta*H+I;
+      if(H<0)H=0;
+    }
+    if(!deathAge)deathAge='>100';
+    Plotly.react('plotTop',[
+      {x:ages,y:Hs,mode:'lines',line:{color:'#1565c0',width:2.5},name:'H(t)'},
+      {x:[20,100],y:[Hmin,Hmin],mode:'lines',line:{color:'#C8102E',width:1.5,dash:'dash'},name:'H_min'}
+    ],{
+      margin:{l:55,r:15,t:20,b:25},xaxis:{title:''},yaxis:{title:'Estoque H(t)'},
+      showlegend:true,legend:{x:0.5,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    Plotly.react('plotBot',[
+      {x:ages,y:deltas,mode:'lines',line:{color:'#e65100',width:2},name:'delta(t) %'}
+    ],{
+      margin:{l:55,r:15,t:5,b:40},xaxis:{title:'Idade'},yaxis:{title:'Depreciacao (%)'},
+      showlegend:true,legend:{x:0.02,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    var html='\\(H(t+1) = H(t)(1-\\delta(t)) + I\\)<br>';
+    html+='\\(\\delta(t) = \\delta_0 + \\gamma t^2\\)<br>';
+    html+='<strong>Idade ao cruzar \\(H_{\\min}\\):</strong> '+(typeof deathAge==='number'?deathAge+' anos':deathAge)+'<br>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">Aumente \\(I\\) (investimento em saude) para adiar a queda. Pessoas mais educadas produzem saude com maior eficiencia — parte do gradiente educacao-saude.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-H0').value=100;document.getElementById('slider-I').value=3;document.getElementById('slider-d0').value=0.02;document.getElementById('slider-g').value=0.001;document.getElementById('slider-Hmin').value=20;update();}
+  ['slider-H0','slider-I','slider-d0','slider-g','slider-Hmin'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

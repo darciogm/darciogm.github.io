@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<!--
+  Duality: Utility Maximization vs Expenditure Minimization — Chapter 4
+  Library: JSXGraph
+  Function types: Cobb-Douglas, Linear, Leontief, CES
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dualidade — Primal e Dual</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
+    .toggle-group { margin-bottom: 0.8rem; display: flex; gap: 0.5rem; }
+    .toggle-btn { flex: 1; padding: 0.45rem 0.3rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.8rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .toggle-btn.active { background: #C8102E; color: #fff; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.8rem; line-height: 1.7; }
+    .info-box .eq { text-align: center; margin: 0.2rem 0; color: #333; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 700px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Função Utilidade</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
+      <h3>Visualização</h3>
+      <div class="toggle-group">
+        <button class="toggle-btn active" id="btn-primal" onclick="setView('primal')">Primal (max U)</button>
+        <button class="toggle-btn" id="btn-dual" onclick="setView('dual')">Dual (min E)</button>
+        <button class="toggle-btn" id="btn-both" onclick="setView('both')">Ambos</button>
+      </div>
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Renda \(I\): <span class="val" id="val-I">60</span></label>
+        <input type="range" id="slider-I" min="10" max="100" step="1" value="60">
+      </div>
+      <div class="slider-group">
+        <label>Preço \(p_1\): <span class="val" id="val-p1">4</span></label>
+        <input type="range" id="slider-p1" min="1" max="20" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>Preço \(p_2\): <span class="val" id="val-p2">3</span></label>
+        <input type="range" id="slider-p2" min="1" max="20" step="0.5" value="3">
+      </div>
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
+      <div class="info-box" id="info">
+        <div class="eq" id="eq-problem"></div>
+        <div class="eq" id="eq-solution"></div>
+        <div class="eq" id="eq-V"></div>
+        <div class="eq" id="eq-E"></div>
+        <div class="eq" id="eq-identity"></div>
+      </div>
+      <label style="font-size:0.82rem; cursor:pointer;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var ALPHA = 0.5;
+    var currentFn = 'cd';
+    var currentView = 'primal';
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-3, 29.5, 28, -3],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5 },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 5, label: { anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board.create('text', [
+      -3 * 0.55, 29.5 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board.create('text', [
+      28 / 2, -3 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+    function getP() {
+      return {
+        I: parseFloat(document.getElementById('slider-I').value),
+        p1: parseFloat(document.getElementById('slider-p1').value),
+        p2: parseFloat(document.getElementById('slider-p2').value)
+      };
+    }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
+
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === fn); });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      updateAll();
+    }
+
+    function utilVal(x1, x2) {
+      var a = ALPHA, b = 1 - a;
+      if (x1 <= 0 || x2 <= 0) {
+        if (currentFn === 'linear') return a * Math.max(x1,0) + b * Math.max(x2,0);
+        return 0;
+      }
+      switch (currentFn) {
+        case 'cd': return Math.pow(x1, a) * Math.pow(x2, b);
+        case 'linear': return a * x1 + b * x2;
+        case 'leontief': return Math.min(x1 / a, x2 / b);
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) return Math.pow(x1, a) * Math.pow(x2, b);
+          return Math.pow(a * Math.pow(x1, r) + b * Math.pow(x2, r), 1/r);
+      }
+    }
+
+    function icX2(x1, U) {
+      var a = ALPHA, b = 1 - a;
+      switch (currentFn) {
+        case 'cd':
+          if (x1 <= 0.01 || U <= 0) return NaN;
+          return Math.pow(U / Math.pow(x1, a), 1/b);
+        case 'linear':
+          var v = (U - a * x1) / b;
+          return v >= 0 ? v : NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r) < 0.05) {
+            if (x1 <= 0.01 || U <= 0) return NaN;
+            return Math.pow(U / Math.pow(x1, a), 1/b);
+          }
+          if (x1 <= 0.01) return NaN;
+          var s = Math.pow(U, r) - a * Math.pow(x1, r);
+          if (s <= 0) return NaN;
+          return Math.pow(s / b, 1/r);
+      }
+    }
+
+    function compute() {
+      var p = getP();
+      var a = ALPHA, b = 1 - a;
+      var x1s, x2s;
+
+      switch (currentFn) {
+        case 'cd':
+          x1s = a * p.I / p.p1;
+          x2s = b * p.I / p.p2;
+          break;
+        case 'linear':
+          var bang1 = a/p.p1, bang2 = b/p.p2;
+          if (bang1 > bang2 + 0.0001) { x1s = p.I/p.p1; x2s = 0.001; }
+          else if (bang2 > bang1 + 0.0001) { x1s = 0.001; x2s = p.I/p.p2; }
+          else { x1s = p.I/p.p1/2; x2s = p.I/p.p2/2; }
+          break;
+        case 'leontief':
+          x1s = a * p.I / (a*p.p1 + b*p.p2);
+          x2s = b * p.I / (a*p.p1 + b*p.p2);
+          break;
+        case 'ces':
+          var rho = getRho();
+          if (Math.abs(rho) < 0.05) { x1s = a*p.I/p.p1; x2s = b*p.I/p.p2; }
+          else {
+            var sigma = 1/(1-rho);
+            var R = Math.pow((b/a)*(p.p1/p.p2), sigma);
+            if (!isFinite(R) || R < 0) { x1s = p.I/p.p1; x2s = 0.01; }
+            else { x1s = p.I/(p.p1+p.p2*R); x2s = R*x1s; }
+          }
+          break;
+      }
+
+      x1s = Math.max(x1s, 0.001);
+      x2s = Math.max(x2s, 0.001);
+      var Us = utilVal(x1s, x2s);
+
+      // Expenditure at optimal = I (duality)
+      var E = p.p1 * x1s + p.p2 * x2s;
+
+      return { x1: x1s, x2: x2s, U: Us, V: Us, E: E };
+    }
+
+    // Budget line (primal)
+    var blA = board.create('point', [function() { return getP().I/getP().p1; }, 0], { visible: false });
+    var blB = board.create('point', [0, function() { return getP().I/getP().p2; }], { visible: false });
+    var budgetLine = board.create('segment', [blA, blB], { strokeColor: '#C8102E', strokeWidth: 3 });
+
+    // Tangency point
+    var tangPt = board.create('point', [
+      function() { return compute().x1; },
+      function() { return compute().x2; }
+    ], { name: '', size: 6, strokeColor: '#C8102E', fillColor: '#C8102E' });
+
+    board.create('segment', [tangPt, [function() { return compute().x1; }, 0]], { strokeColor: '#888', dash: 2, strokeWidth: 1 });
+    board.create('segment', [tangPt, [0, function() { return compute().x2; }]], { strokeColor: '#888', dash: 2, strokeWidth: 1 });
+    var _lblCoord = board.create('text', [
+      function() { return compute().x1 + 0.6; },
+      function() { return compute().x2 + 1.0; },
+      function() { var c = compute(); return '(' + c.x1.toFixed(2) + ', ' + c.x2.toFixed(2) + ')'; }
+    ], { fontSize: 12, color: '#C8102E', fontWeight: 'bold' });
+    var textLabels = [_lblCoord];
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({visible: show}); });
+      // Also redraw dynamic labels
+      updateAll();
+    }
+
+    // Dynamic objects
+    var dynObjs = [];
+    function clearDyn() {
+      dynObjs.forEach(function(o) { board.removeObject(o); });
+      dynObjs = [];
+    }
+
+    function drawDyn() {
+      clearDyn();
+      var p = getP();
+      var c = compute();
+      var showPrimal = (currentView === 'primal' || currentView === 'both');
+      var showDual = (currentView === 'dual' || currentView === 'both');
+
+      budgetLine.setAttribute({ visible: showPrimal });
+
+      // Primal ICs
+      if (showPrimal) {
+        [0.6, 1.0, 1.3].forEach(function(factor, i) {
+          var Uk = c.U * factor;
+          if (currentFn === 'leontief') {
+            var vx = ALPHA*Uk, vy = (1-ALPHA)*Uk;
+            dynObjs.push(board.create('segment', [[vx, vy], [vx, 50]], {
+              strokeColor: '#1565c0', strokeWidth: i===1?2.5:1.5, dash: i===1?0:2
+            }));
+            dynObjs.push(board.create('segment', [[vx, vy], [50, vy]], {
+              strokeColor: '#1565c0', strokeWidth: i===1?2.5:1.5, dash: i===1?0:2
+            }));
+          } else {
+            dynObjs.push(board.create('curve', [
+              function(t) { return t; },
+              (function(U) { return function(t) { var v=icX2(t,U); return (v>0&&v<50)?v:NaN; }; })(Uk),
+              0.05, 25
+            ], { strokeColor: '#1565c0', strokeWidth: i===1?2.5:1.5, dash: i===1?0:2 }));
+          }
+        });
+        var _showLbl = document.getElementById('chk-labels').checked;
+        dynObjs.push(board.create('text', [
+          c.x1 + 3, c.x2 + 3, 'max U \\(\\uparrow\\)'
+        ], { fontSize: 12, color: '#1565c0', useMathJax: true, visible: _showLbl }));
+      }
+
+      // Dual iso-expenditure lines
+      if (showDual) {
+        [0.7, 1.0, 1.3].forEach(function(factor, i) {
+          var Ef = c.E * factor;
+          dynObjs.push(board.create('segment', [
+            [0, Ef/p.p2], [Ef/p.p1, 0]
+          ], { strokeColor: '#00897b', strokeWidth: i===1?2.5:1.5, dash: i===1?0:2 }));
+        });
+        // Target IC
+        if (currentFn === 'leontief') {
+          var vx = ALPHA*c.U, vy = (1-ALPHA)*c.U;
+          dynObjs.push(board.create('segment', [[vx, vy], [vx, 50]], { strokeColor: '#00897b', strokeWidth: 2.5 }));
+          dynObjs.push(board.create('segment', [[vx, vy], [50, vy]], { strokeColor: '#00897b', strokeWidth: 2.5 }));
+        } else {
+          dynObjs.push(board.create('curve', [
+            function(t) { return t; },
+            (function(U) { return function(t) { var v=icX2(t,U); return (v>0&&v<50)?v:NaN; }; })(c.U),
+            0.05, 25
+          ], { strokeColor: '#00897b', strokeWidth: 2.5 }));
+        }
+        var _showLbl2 = document.getElementById('chk-labels').checked;
+        dynObjs.push(board.create('text', [
+          Math.max(c.x1 - 4, 1), Math.max(c.x2 - 2, 1), 'min E \\(\\downarrow\\)'
+        ], { fontSize: 12, color: '#00897b', useMathJax: true, visible: _showLbl2 }));
+      }
+    }
+
+    function setView(view) {
+      currentView = view;
+      document.getElementById('btn-primal').classList.toggle('active', view === 'primal');
+      document.getElementById('btn-dual').classList.toggle('active', view === 'dual');
+      document.getElementById('btn-both').classList.toggle('active', view === 'both');
+      updateAll();
+    }
+
+    function updateAll() {
+      var p = getP();
+      var c = compute();
+      document.getElementById('val-I').textContent = p.I.toFixed(0);
+      document.getElementById('val-p1').textContent = p.p1.toFixed(1);
+      document.getElementById('val-p2').textContent = p.p2.toFixed(1);
+      if (currentFn === 'ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
+
+      var fnLabel;
+      switch (currentFn) {
+        case 'cd': fnLabel = '\\(U = x_1^{0.5} x_2^{0.5}\\)'; break;
+        case 'linear': fnLabel = '\\(U = 0.5 x_1 + 0.5 x_2\\)'; break;
+        case 'leontief': fnLabel = '\\(U = \\min(x_1/0.5,\\; x_2/0.5)\\)'; break;
+        case 'ces':
+          var rho = getRho();
+          fnLabel = '\\(U = (0.5 x_1^{' + rho.toFixed(1) + '} + 0.5 x_2^{' + rho.toFixed(1) + '})^{1/' + rho.toFixed(1) + '}\\)';
+          break;
+      }
+
+      if (currentView === 'primal') {
+        document.getElementById('eq-problem').innerHTML = '\\(\\max\\) ' + fnLabel + ' s.a. \\(p_1 x_1 + p_2 x_2 \\leq I\\)';
+      } else if (currentView === 'dual') {
+        document.getElementById('eq-problem').innerHTML = '\\(\\min E = p_1 x_1 + p_2 x_2\\) s.a. \\(U \\geq \\bar{u}\\)';
+      } else {
+        document.getElementById('eq-problem').innerHTML = 'Primal e Dual: mesmo ponto de tangência';
+      }
+      document.getElementById('eq-solution').innerHTML = '\\(x_1^* = ' + c.x1.toFixed(2) + ',\\; x_2^* = ' + c.x2.toFixed(2) + '\\)';
+      document.getElementById('eq-V').innerHTML = '\\(V(\\mathbf{p}, I) = ' + c.V.toFixed(3) + '\\)';
+      document.getElementById('eq-E').innerHTML = '\\(E(\\mathbf{p}, \\bar{u}) = ' + c.E.toFixed(2) + '\\)';
+      document.getElementById('eq-identity').innerHTML = 'Identidade: \\(E = ' + c.E.toFixed(2) + ' = I = ' + p.I.toFixed(0) + '\\) &#10003;';
+
+      drawDyn();
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-I').value = 60;
+      document.getElementById('slider-p1').value = 4;
+      document.getElementById('slider-p2').value = 3;
+      document.getElementById('slider-rho').value = -1;
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === 'cd'); });
+      document.getElementById('rho-group').style.display = 'none';
+      setView('primal');
+    }
+
+    ['slider-I', 'slider-p1', 'slider-p2', 'slider-rho'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', updateAll);
+    });
+    setView('primal');
+  </script>
+</body>
+</html>

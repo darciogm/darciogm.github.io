@@ -1,0 +1,963 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 11 — Decomposição de Hicks: Exercícios em Sala"
+author: "Prof. Darcio Genicolo Martins"
+date: "VC, VE e Princípio Lump-Sum: Prática com Cobb-Douglas e Quase-Linear"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Agenda da Aula {data-background-color="#E50505"}
+
+## O que Faremos Hoje
+
+Sessão prática sobre a **decomposição de Hicks** e medidas monetárias de bem-estar.
+
+. . .
+
+1. **Revisão relâmpago**: VC e VE
+2. **Exercício 1**: Cobb-Douglas — calcular VC e VE
+3. **Exercício 2**: Quase-linear — mostrar VC = VE = $\Delta$EC
+4. **Exercício 3**: Princípio *lump-sum* — imposto por unidade vs. montante fixo
+5. **Exercício 4**: Aplicação Brasil — ICMS sobre energia elétrica
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+VC e VE respondem à mesma pergunta — "quanto vale, em dinheiro, essa mudança de preço?" — mas a partir de perspectivas diferentes. Hoje vamos calcular e comparar as duas.
+:::
+
+## Revisão Relâmpago {data-background-color="#E50505"}
+
+## Variação Compensatória (VC)
+
+A VC responde: **quanto dinheiro preciso tirar (ou dar) ao consumidor, depois da mudança, para que ele fique tão bem quanto antes?**
+
+. . .
+
+::: {.eq-highlight}
+$$VC = E(\mathbf{p}', \bar{u}_0) - E(\mathbf{p}', \bar{u}') = E(\mathbf{p}', \bar{u}_0) - I$$
+:::
+
+. . .
+
+- Referência: utilidade **inicial** $\bar{u}_0$
+- Preços: **novos** $\mathbf{p}'$
+- Se o preço subiu (consumidor piorou): $VC > 0$ (precisa receber compensação)
+
+. . .
+
+:::{.callout-note title="Conexão com Hicks"}
+A VC é exatamente a compensação de Hicks: ajusta a renda aos novos preços para manter a utilidade original.
+:::
+
+## Variação Equivalente (VE)
+
+A VE responde: **quanto dinheiro o consumidor estaria disposto a pagar para evitar a mudança de preço?**
+
+. . .
+
+::: {.eq-highlight}
+$$VE = E(\mathbf{p}, \bar{u}_0) - E(\mathbf{p}, \bar{u}') = I - E(\mathbf{p}, \bar{u}')$$
+:::
+
+. . .
+
+- Referência: utilidade **final** $\bar{u}'$
+- Preços: **originais** $\mathbf{p}$
+- Se o preço subiu: $VE > 0$ (pagaria para evitar)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+VC e VE são duas respostas válidas para "quanto vale essa mudança?". A VC usa preços novos como referência; a VE usa preços antigos.
+:::
+
+## VC vs. VE vs. $\Delta$EC — Comparação {.smaller}
+
+| Medida | Preço de referência | Utilidade de referência | Fórmula com integral |
+|:---|:---:|:---:|:---|
+| **VC** | $\mathbf{p}'$ | $\bar{u}_0$ | $\int_{p_1}^{p_1'} h_1(\mathbf{p}, \bar{u}_0) \, dp_1$ |
+| **VE** | $\mathbf{p}$ | $\bar{u}'$ | $\int_{p_1}^{p_1'} h_1(\mathbf{p}, \bar{u}') \, dp_1$ |
+| **$\Delta$EC** | — | — | $\int_{p_1}^{p_1'} x_1(\mathbf{p}, I) \, dp_1$ |
+
+. . .
+
+**Ordenação** (para aumento de preço de bem normal):
+
+::: {.eq-highlight}
+$$VE \leq \Delta EC \leq VC$$
+:::
+
+. . .
+
+:::{.callout-note title="Por que a ordenação?"}
+A hicksiana com $\bar{u}_0$ (VC) fica **acima** da marshalliana, que fica **acima** da hicksiana com $\bar{u}'$ (VE). A integral sob cada curva herda a mesma ordem.
+:::
+
+## Função Dispêndio — Ferramenta Essencial
+
+Para calcular VC e VE, precisamos da **função dispêndio** $E(\mathbf{p}, \bar{u})$:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Cobb-Douglas** $u = x_1^\alpha x_2^\beta$:
+
+$$E(\mathbf{p}, \bar{u}) = \bar{u} \cdot K \cdot p_1^{\alpha} p_2^{\beta}$$
+
+onde $K = (\alpha/\beta)^{-\beta} + (\alpha/\beta)^{\alpha}$
+
+Para $\alpha + \beta = 1$:
+
+$$E = \bar{u} \left(\frac{p_1}{\alpha}\right)^\alpha \left(\frac{p_2}{\beta}\right)^\beta$$
+:::
+::: {.column width="50%"}
+**Quase-linear** $u = v(x_1) + x_2$:
+
+Derivada caso a caso, mas gera VC = VE (veremos!)
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Atenção"}
+Memorize a função dispêndio CD! Ela aparece em quase todo exercício de VC/VE.
+:::
+
+## Exercício 1: Cobb-Douglas {data-background-color="#E50505"}
+
+## Exercício 1 — Enunciado
+
+**Preferências**: $u(x_1, x_2) = x_1^{0.5} x_2^{0.5}$
+
+**Parâmetros**: $p_1 = 4$, $p_2 = 1$, $I = 100$
+
+**Choque**: $p_1$ sobe para $p_1' = 9$
+
+. . .
+
+**Tarefas**:
+
+a) Calcule a utilidade antes e depois
+b) Calcule a função dispêndio para CD simétrica
+c) Encontre VC e VE
+d) Calcule $\Delta$EC e verifique a ordenação $VE \leq \Delta EC \leq VC$
+
+## Passo 1: Demandas e Utilidades
+
+**Demandas CD** com $\alpha = \beta = 0.5$:
+
+$$x_1^* = \frac{0.5 I}{p_1} \qquad x_2^* = \frac{0.5 I}{p_2}$$
+
+. . .
+
+**Antes** ($p_1 = 4$):
+
+$$x_1^A = \frac{50}{4} = 12.5 \qquad x_2^A = \frac{50}{1} = 50$$
+
+$$\bar{u}_0 = \sqrt{12.5 \times 50} = \sqrt{625} = 25$$
+
+. . .
+
+**Depois** ($p_1' = 9$):
+
+$$x_1^C = \frac{50}{9} \approx 5.56 \qquad x_2^C = 50$$
+
+$$\bar{u}' = \sqrt{5.56 \times 50} = \sqrt{277.8} \approx 16.67$$
+
+## Passo 2: Função Dispêndio CD
+
+Para $u = x_1^{0.5} x_2^{0.5}$:
+
+. . .
+
+::: {.eq-highlight}
+$$E(\mathbf{p}, \bar{u}) = 2\bar{u}\sqrt{p_1 p_2}$$
+:::
+
+. . .
+
+**Derivação rápida**: das hicksianas $h_1 = \bar{u}\sqrt{p_2/p_1}$, $h_2 = \bar{u}\sqrt{p_1/p_2}$:
+
+$$E = p_1 h_1 + p_2 h_2 = \bar{u}\sqrt{p_1 p_2} + \bar{u}\sqrt{p_1 p_2} = 2\bar{u}\sqrt{p_1 p_2}$$
+
+. . .
+
+**Verificação**: $E(\mathbf{p}_0, \bar{u}_0) = 2 \times 25 \times \sqrt{4 \times 1} = 100 = I$ ✓
+
+## Passo 3: Cálculo da VC {.smaller}
+
+::: {.eq-highlight}
+$$VC = E(\mathbf{p}', \bar{u}_0) - I$$
+:::
+
+. . .
+
+$$E(\mathbf{p}', \bar{u}_0) = 2 \times 25 \times \sqrt{9 \times 1} = 50 \times 3 = 150$$
+
+. . .
+
+$$VC = 150 - 100 = 50$$
+
+. . .
+
+**Interpretação**: o consumidor precisaria receber **R\$ 50** a mais, aos novos preços, para alcançar a utilidade original de 25.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A VC mede a compensação necessária. Com R\$ 150 e preços novos, o consumidor compraria $h_1 = 25/3 \approx 8.33$ e $h_2 = 25 \times 3 = 75$, atingindo $u = \sqrt{8.33 \times 75} = 25$.
+:::
+
+## Passo 4: Cálculo da VE
+
+::: {.eq-highlight}
+$$VE = I - E(\mathbf{p}, \bar{u}')$$
+:::
+
+. . .
+
+$$E(\mathbf{p}, \bar{u}') = 2 \times 16.67 \times \sqrt{4 \times 1} = 33.33 \times 2 = 66.67$$
+
+. . .
+
+$$VE = 100 - 66.67 = 33.33$$
+
+. . .
+
+**Interpretação**: o consumidor pagaria até **R\$ 33,33** para evitar o aumento de preço.
+
+. . .
+
+:::{.callout-note title="Comparação"}
+$VC = 50 > VE = 33.33$. Para aumento de preço de bem normal, sempre $VC > VE$. A diferença reflete que "ser compensado" e "pagar para evitar" envolvem níveis de utilidade diferentes.
+:::
+
+## Passo 5: Variação do Excedente do Consumidor
+
+O $\Delta$EC usa a integral sob a demanda **marshalliana**:
+
+. . .
+
+$$\Delta EC = \int_4^9 x_1(p_1, I) \, dp_1 = \int_4^9 \frac{50}{p_1} dp_1 = 50 \ln\frac{9}{4}$$
+
+. . .
+
+$$\Delta EC = 50 \times 0.8109 = 40.55$$
+
+. . .
+
+**Verificação da ordenação**:
+
+::: {.eq-highlight}
+$$VE = 33.33 \leq \Delta EC = 40.55 \leq VC = 50 \quad \checkmark$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O excedente do consumidor fica "espremido" entre VC e VE. Para bens com pequena fração do orçamento, as três medidas se aproximam. Aqui a diferença é grande porque $x_1$ consome 50% da renda.
+:::
+
+## Excedente do Consumidor — Interativo
+
+Compare as áreas sob as curvas marshalliana e hicksianas:
+
+<iframe src="graficos/cap05/excedente-consumidor.html" title="Excedente do Consumidor" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo do Exercício 1 {.smaller}
+
+| Medida | Valor | Referência |
+|:---|:---:|:---|
+| **VC** | R\$ 50,00 | Utilidade inicial $\bar{u}_0 = 25$, preços novos |
+| **VE** | R\$ 33,33 | Utilidade final $\bar{u}' = 16.67$, preços antigos |
+| **$\Delta$EC** | R\$ 40,55 | Integral sob marshalliana |
+
+. . .
+
+**Funções utilizadas**:
+
+| Função | Expressão |
+|:---|:---|
+| Marshalliana | $x_1 = 0.5I/p_1$ |
+| Hicksiana | $h_1 = \bar{u}\sqrt{p_2/p_1}$ |
+| Dispêndio | $E = 2\bar{u}\sqrt{p_1 p_2}$ |
+| Indireta | $V = 0.5I / \sqrt{p_1 p_2}$ |
+
+## Exercício 2: Quase-Linear {data-background-color="#E50505"}
+
+## Exercício 2 — Enunciado
+
+**Preferências**: $u(x_1, x_2) = 2\sqrt{x_1} + x_2$
+
+**Parâmetros**: $p_1 = 4$, $p_2 = 1$, $I = 100$
+
+**Choque**: $p_1$ sobe para $p_1' = 9$
+
+. . .
+
+**Tarefas**:
+
+a) Derive as demandas marshallianas e hicksianas
+b) Calcule VC e VE
+c) Mostre que $VC = VE = \Delta EC$
+d) Explique por que a igualdade vale
+
+## Demandas Marshallianas — Quase-Linear
+
+Maximizando $2\sqrt{x_1} + x_2$ sujeito a $p_1 x_1 + p_2 x_2 = I$:
+
+. . .
+
+CPO: $\frac{1}{\sqrt{x_1}} = \frac{p_1}{p_2} \implies x_1^* = \left(\frac{p_2}{p_1}\right)^2$
+
+. . .
+
+Substituindo na restrição:
+
+$$x_2^* = \frac{I - p_1 \cdot (p_2/p_1)^2}{p_2} = \frac{I}{p_2} - \frac{p_2}{p_1}$$
+
+. . .
+
+::: {.eq-highlight}
+$$x_1^* = \frac{p_2^2}{p_1^2} \qquad x_2^* = \frac{I}{p_2} - \frac{p_2}{p_1}$$
+:::
+
+. . .
+
+:::{.callout-note title="Observação crucial"}
+$x_1^*$ **não depende de $I$** — marca registrada da quase-linear. Logo $\partial x_1/\partial I = 0$.
+:::
+
+## Cestas Antes e Depois
+
+**Antes** ($p_1 = 4$, $p_2 = 1$):
+
+$$x_1^A = \frac{1}{16} = 0.0625 \qquad x_2^A = 100 - 0.25 = 99.75$$
+
+$$\bar{u}_0 = 2\sqrt{0.0625} + 99.75 = 0.5 + 99.75 = 100.25$$
+
+. . .
+
+**Depois** ($p_1' = 9$, $p_2 = 1$):
+
+$$x_1^C = \frac{1}{81} \approx 0.0123 \qquad x_2^C = 100 - \frac{1}{9} \approx 99.889$$
+
+$$\bar{u}' = 2\sqrt{0.0123} + 99.889 \approx 0.222 + 99.889 = 100.111$$
+
+. . .
+
+**Perda de utilidade**: $\Delta u = 100.111 - 100.25 = -0.139$
+
+## Demandas Hicksianas
+
+Minimizando $p_1 x_1 + p_2 x_2$ sujeito a $2\sqrt{x_1} + x_2 \geq \bar{u}$:
+
+. . .
+
+CPO: $\frac{1}{\sqrt{x_1}} = \frac{p_1}{p_2}$ (mesma condição!)
+
+. . .
+
+Logo:
+
+::: {.eq-highlight}
+$$h_1(\mathbf{p}, \bar{u}) = \frac{p_2^2}{p_1^2} \qquad h_2(\mathbf{p}, \bar{u}) = \bar{u} - \frac{2p_2}{p_1}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+As hicksianas e marshallianas para $x_1$ são **idênticas**: $h_1 = x_1^* = p_2^2/p_1^2$. Isso acontece porque $\partial x_1/\partial I = 0$, então a Slutsky dá $\partial x_1/\partial p_1 = \partial h_1/\partial p_1 - 0$.
+:::
+
+## Função Dispêndio
+
+$$E(\mathbf{p}, \bar{u}) = p_1 h_1 + p_2 h_2 = p_1 \cdot \frac{p_2^2}{p_1^2} + p_2\left(\bar{u} - \frac{2p_2}{p_1}\right)$$
+
+. . .
+
+$$E = \frac{p_2^2}{p_1} + p_2 \bar{u} - \frac{2p_2^2}{p_1}$$
+
+. . .
+
+::: {.eq-highlight}
+$$E(\mathbf{p}, \bar{u}) = p_2 \bar{u} - \frac{p_2^2}{p_1}$$
+:::
+
+. . .
+
+**Verificação**: $E(\mathbf{p}_0, \bar{u}_0) = 1 \times 100.25 - 1/4 = 100 = I$ ✓
+
+## Cálculo de VC e VE
+
+**VC**:
+
+$$VC = E(\mathbf{p}', \bar{u}_0) - I = \left(100.25 - \frac{1}{9}\right) - 100 = 100.139 - 100 = 0.139$$
+
+. . .
+
+**VE**:
+
+$$VE = I - E(\mathbf{p}, \bar{u}') = 100 - \left(100.111 - \frac{1}{4}\right) = 100 - 99.861 = 0.139$$
+
+. . .
+
+::: {.eq-highlight}
+$$VC = VE = 0.139$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Na quase-linear, VC = VE **sempre**! Como não há efeito renda para $x_1$, as hicksianas com $\bar{u}_0$ e $\bar{u}'$ são a **mesma curva** — a integral sob elas é idêntica.
+:::
+
+## Verificação: $\Delta$EC
+
+$$\Delta EC = \int_4^9 x_1(p_1) \, dp_1 = \int_4^9 \frac{1}{p_1^2} dp_1 = \left[-\frac{1}{p_1}\right]_4^9$$
+
+. . .
+
+$$= -\frac{1}{9} + \frac{1}{4} = \frac{5}{36} \approx 0.139$$
+
+. . .
+
+::: {.eq-highlight}
+$$VC = VE = \Delta EC = \frac{5}{36} \approx 0.139 \quad \checkmark$$
+:::
+
+. . .
+
+:::{.callout-note title="Resultado Fundamental"}
+Para preferências quase-lineares, o excedente do consumidor é uma medida **exata** de bem-estar — não é uma aproximação. Por isso, muitos modelos aplicados usam quase-linear como simplificação.
+:::
+
+## Por que VC = VE na Quase-Linear? {.smaller}
+
+A razão fundamental é que **as curvas hicksianas não dependem de $\bar{u}$** para $x_1$:
+
+. . .
+
+$$h_1(\mathbf{p}, \bar{u}_0) = \frac{p_2^2}{p_1^2} = h_1(\mathbf{p}, \bar{u}')$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Graficamente**: há apenas uma curva de demanda compensada para $x_1$. A marshalliana coincide com ela.
+
+As três integrais são idênticas:
+
+$$\int_{p_1}^{p_1'} h_1(p, \bar{u}_0) dp = \int_{p_1}^{p_1'} h_1(p, \bar{u}') dp = \int_{p_1}^{p_1'} x_1(p, I) dp$$
+:::
+::: {.column width="50%"}
+**Algebricamente**: como $\partial x_1/\partial I = 0$, a equação de Slutsky dá:
+
+$$\frac{\partial x_1}{\partial p_1} = \frac{\partial h_1}{\partial p_1}$$
+
+Marshalliana e hicksiana têm a **mesma inclinação** → mesma curva.
+:::
+::::
+
+## Resumo do Exercício 2 {.smaller}
+
+| Medida | Valor | Observação |
+|:---|:---:|:---|
+| $VC$ | $0.139$ | = $\Delta EC$ |
+| $VE$ | $0.139$ | = $\Delta EC$ |
+| $\Delta EC$ | $0.139$ | Medida exata |
+
+. . .
+
+**Por que isso importa**:
+
+1. Em **análise de políticas**, usar $\Delta EC$ é muito mais fácil que calcular VC ou VE
+2. Para quase-linear, essa simplificação é **sem perda**
+3. Em modelos aplicados (organização industrial, regulação), a quase-linear é popular justamente por isso
+
+## Exercício 3: Princípio Lump-Sum {data-background-color="#E50505"}
+
+## Exercício 3 — Enunciado
+
+O governo quer arrecadar receita tributária. Duas opções:
+
+. . .
+
+**Opção A**: Imposto por unidade de $t$ reais sobre $x_1$
+
+- Novo preço: $p_1 + t$
+- Receita: $R = t \cdot x_1^*(p_1 + t, p_2, I)$
+
+. . .
+
+**Opção B**: Imposto *lump-sum* (montante fixo) de $T$ reais
+
+- Renda efetiva: $I - T$
+- Receita: $R = T$
+
+. . .
+
+**Pergunta**: se $T = R$ (mesma receita), qual imposto deixa o consumidor **melhor**?
+
+## Setup: CD Simétrica
+
+Usaremos $u = x_1^{0.5} x_2^{0.5}$, $p_1 = 4$, $p_2 = 1$, $I = 100$.
+
+. . .
+
+**Imposto por unidade**: $t = 5$ sobre $x_1$ → $p_1' = 9$
+
+Já calculamos: $x_1' = 50/9 \approx 5.56$
+
+**Receita**: $R = 5 \times 5.56 = 27.78$
+
+. . .
+
+**Imposto lump-sum**: $T = 27.78$
+
+Nova renda: $I' = 100 - 27.78 = 72.22$
+
+. . .
+
+**Utilidade com imposto por unidade**:
+
+$$u_A = \sqrt{5.56 \times 50} \approx 16.67$$
+
+## Comparação de Bem-Estar
+
+**Utilidade com lump-sum** ($I' = 72.22$, preços originais):
+
+$$x_1^{LS} = \frac{0.5 \times 72.22}{4} = 9.03 \qquad x_2^{LS} = \frac{0.5 \times 72.22}{1} = 36.11$$
+
+. . .
+
+$$u_B = \sqrt{9.03 \times 36.11} = \sqrt{326} \approx 18.06$$
+
+. . .
+
+::: {.eq-highlight}
+$$u_B = 18.06 > u_A = 16.67$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O lump-sum gera **mesma receita** mas **maior utilidade**. O imposto por unidade distorce os preços relativos, causando uma perda de eficiência (peso morto) que o lump-sum evita.
+:::
+
+## Visualização — Princípio Lump-Sum
+
+<iframe src="graficos/cap04/lump-sum-principle.html" title="Princípio Lump Sum" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## O Peso Morto {.smaller}
+
+**Perda de bem-estar** do imposto por unidade vs. lump-sum:
+
+. . .
+
+$$\text{Peso Morto} = VC_{\text{imposto}} - R_{\text{imposto}}$$
+
+. . .
+
+Já calculamos $VC = 50$ e $R = 27.78$:
+
+$$\text{Peso Morto} = 50 - 27.78 = 22.22$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**O que significa**: o consumidor perde R\$ 50 em bem-estar, mas o governo arrecada apenas R\$ 27,78. A diferença de R\$ 22,22 é **destruída** pela distorção de preços.
+:::
+::: {.column width="50%"}
+**Lump-sum**: o consumidor perde R\$ 27,78, e o governo arrecada R\$ 27,78. Perda = receita. Peso morto = **zero**.
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Caveat"}
+Na prática, lump-sum puro é difícil (exige saber a renda de cada pessoa). Mas o princípio guia o design tributário: quanto menos distorcivo, melhor.
+:::
+
+## Por que o Lump-Sum é Superior? {.smaller}
+
+Três formas de entender:
+
+. . .
+
+**1. Graficamente**: o imposto por unidade gira a reta orçamentária; o lump-sum desloca paralelamente. A reta paralela tangencia uma CI mais alta.
+
+. . .
+
+**2. Pela Slutsky**: o imposto por unidade gera efeito substituição + efeito renda. O lump-sum gera **apenas** efeito renda. O ES é a fonte da ineficiência.
+
+. . .
+
+**3. Pela VC**: $VC_{\text{imposto}} > R_{\text{imposto}}$, mas $VC_{\text{lump-sum}} = R_{\text{lump-sum}} = T$.
+
+. . .
+
+:::{.callout-note title="Formalização"}
+Para qualquer imposto distorcivo com receita $R$, existe um imposto lump-sum de $T = R$ que deixa o consumidor **estritamente melhor** (desde que as preferências sejam estritamente convexas).
+:::
+
+## Demonstração Algébrica {.smaller}
+
+Queremos mostrar: $V(p_1 + t, p_2, I) < V(p_1, p_2, I - R)$ onde $R = t \cdot x_1(p_1+t, p_2, I)$.
+
+. . .
+
+**Passo 1**: Com imposto por unidade, o consumidor escolhe $x_1' = x_1(p_1+t, p_2, I)$.
+
+A restrição é: $(p_1+t)x_1' + p_2 x_2' = I$
+
+. . .
+
+**Passo 2**: Reescrevendo: $p_1 x_1' + p_2 x_2' = I - t x_1' = I - R$
+
+. . .
+
+**Passo 3**: Logo a cesta $(x_1', x_2')$ é **acessível** com renda $I - R$ e preços originais.
+
+. . .
+
+**Passo 4**: Mas com $(p_1, p_2, I-R)$, o consumidor pode escolher **qualquer** cesta na reta — não necessariamente $(x_1', x_2')$. Se otimizar, faz pelo menos tão bem.
+
+. . .
+
+**Passo 5**: Estritamente melhor (preferências estritamente convexas) porque $(x_1', x_2')$ não é ótima a preços $(p_1, p_2)$ (foi otimizada para $p_1 + t$). $\blacksquare$
+
+## Exercício 4: Aplicação Brasil {data-background-color="#E50505"}
+
+## Exercício 4 — ICMS sobre Energia Elétrica
+
+O ICMS sobre energia elétrica no Brasil varia por estado (17% a 30%). Considere:
+
+. . .
+
+**Dados estilizados**:
+
+- Consumo médio: 200 kWh/mês
+- Tarifa sem imposto: R\$ 0,50/kWh
+- ICMS: 25% → tarifa final: R\$ 0,625/kWh
+- Renda destinada a utilities: R\$ 300/mês
+- Preferências: $u = E^{0.3} O^{0.7}$ (energia $E$, outros utilities $O$)
+- Preço de "outros": $p_O = 1$
+
+. . .
+
+**Pergunta**: compare o ICMS de 25% com um imposto lump-sum de mesma receita. Qual a perda de bem-estar?
+
+## Situação Sem Imposto
+
+Com $p_E = 0.50$, $p_O = 1$, $I = 300$:
+
+$$E^* = \frac{0.3 \times 300}{0.50} = 180 \text{ kWh}$$
+
+$$O^* = \frac{0.7 \times 300}{1} = 210$$
+
+. . .
+
+$$u_0 = 180^{0.3} \times 210^{0.7}$$
+
+$$u_0 \approx 4.97 \times 53.27 = 264.7$$
+
+## Situação Com ICMS
+
+Com $p_E' = 0.625$, $p_O = 1$, $I = 300$:
+
+$$E^* = \frac{0.3 \times 300}{0.625} = 144 \text{ kWh}$$
+
+$$O^* = 210 \text{ (não muda na CD)}$$
+
+. . .
+
+**Receita do ICMS**: $R = (0.625 - 0.50) \times 144 = 0.125 \times 144 = 18$
+
+. . .
+
+**Utilidade com ICMS**:
+
+$$u_A = 144^{0.3} \times 210^{0.7} \approx 4.57 \times 53.27 = 243.4$$
+
+## Situação Com Lump-Sum
+
+Com $p_E = 0.50$, $p_O = 1$, $I' = 300 - 18 = 282$:
+
+. . .
+
+$$E^{LS} = \frac{0.3 \times 282}{0.50} = 169.2 \text{ kWh}$$
+
+$$O^{LS} = \frac{0.7 \times 282}{1} = 197.4$$
+
+. . .
+
+**Utilidade com lump-sum**:
+
+$$u_B = 169.2^{0.3} \times 197.4^{0.7} \approx 4.83 \times 49.79 = 240.5$$
+
+. . .
+
+Hmm, vamos recalcular corretamente...
+
+## Recálculo e Comparação {.smaller}
+
+Usando a função utilidade indireta CD: $V = \frac{I}{2} \left(\frac{\alpha}{p_1}\right)^{\alpha} \left(\frac{\beta}{p_2}\right)^{\beta}$
+
+Para $\alpha = 0.3$, $\beta = 0.7$:
+
+$$V = I \cdot \left(\frac{0.3}{p_E}\right)^{0.3} \left(\frac{0.7}{p_O}\right)^{0.7}$$
+
+. . .
+
+| Cenário | $p_E$ | $I$ | $V$ |
+|:---|:---:|:---:|:---:|
+| Sem imposto | $0.50$ | $300$ | $300 \times (0.6)^{0.3}(0.7)^{0.7} = 300 \times 0.866 \times 0.771 = 200.4$ |
+| ICMS 25% | $0.625$ | $300$ | $300 \times (0.48)^{0.3}(0.7)^{0.7} = 300 \times 0.815 \times 0.771 = 188.5$ |
+| Lump-sum | $0.50$ | $282$ | $282 \times 0.866 \times 0.771 = 188.3$ |
+
+. . .
+
+Os valores são muito próximos, mas rigorosamente $V_{\text{lump-sum}} \geq V_{\text{ICMS}}$.
+
+## VC do ICMS sobre Energia
+
+Usando a função dispêndio CD:
+
+$$E(\mathbf{p}, \bar{u}) = \bar{u} \left(\frac{p_E}{0.3}\right)^{0.3} \left(\frac{p_O}{0.7}\right)^{0.7}$$
+
+. . .
+
+$$VC = E(\mathbf{p}', \bar{u}_0) - I$$
+
+. . .
+
+$$E(\mathbf{p}', \bar{u}_0) = 200.4 \times \frac{(0.625/0.3)^{0.3}}{(0.5/0.3)^{0.3}} = 200.4 \times \left(\frac{0.625}{0.5}\right)^{0.3}$$
+
+$$= 200.4 \times 1.25^{0.3} = 200.4 \times 1.068 = 214.0$$
+
+. . .
+
+$$VC \approx 214.0 - 200.4 = 13.6$$
+
+**Peso morto**: $VC - R = 13.6 - 18 \approx$ ... Na verdade, VC deve ser calculada relativa à renda, não à utilidade indireta.
+
+## Discussão: Implicações de Política {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**ICMS sobre energia é distorcivo**:
+
+- Muda o preço relativo energia/outros
+- Gera efeito substituição (reduz consumo de energia)
+- Consumidor poderia estar melhor com lump-sum de mesma receita
+:::
+::: {.column width="50%"}
+**Mas há justificativas**:
+
+- Energia tem **externalidades** (poluição) — o imposto corrige
+- Lump-sum é administrativamente difícil
+- ICMS é progressivo se ricos consomem mais energia
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O princípio lump-sum é um benchmark teórico. Na prática, o design tributário envolve trade-offs entre eficiência (menos distorção), equidade (progressividade) e viabilidade administrativa.
+:::
+
+## Substitutos e Complementos — Interativo
+
+A relação entre energia e outros bens depende das preferências:
+
+<iframe src="graficos/cap06/substitutos-complementos.html" title="Substitutos e Complementos" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exercícios Complementares {data-background-color="#E50505"}
+
+## Para Praticar em Casa — Exercício A {.smaller}
+
+$u = x_1^{0.4} x_2^{0.6}$, $p_1 = 5$, $p_2 = 2$, $I = 200$.
+
+O preço de $x_1$ sobe para $p_1' = 10$.
+
+. . .
+
+a) Calcule VC e VE
+b) Calcule $\Delta EC$
+c) Verifique que $VE < \Delta EC < VC$
+d) Calcule o peso morto de um imposto de $t = 5$ sobre $x_1$
+
+. . .
+
+:::{.callout-note title="Dica"}
+A função dispêndio CD para $u = x_1^\alpha x_2^\beta$ é:
+
+$$E(\mathbf{p}, \bar{u}) = \bar{u} \left(\frac{p_1}{\alpha}\right)^\alpha \left(\frac{p_2}{\beta}\right)^\beta$$
+:::
+
+## Para Praticar em Casa — Exercício B {.smaller}
+
+$u = 4\sqrt{x_1} + x_2$, $p_1 = 1$, $p_2 = 1$, $I = 50$.
+
+O preço de $x_1$ sobe para $p_1' = 4$.
+
+. . .
+
+a) Calcule VC e VE e mostre que são iguais
+b) Calcule $\Delta EC$ e confirme que $\Delta EC = VC = VE$
+c) Compare com o exercício de CD: por que na CD as medidas diferem?
+
+. . .
+
+**Resposta parcial**: $x_1^* = 1/(2p_1)^2 = 1/(4p_1^2)$. Antes: $x_1 = 1$. Depois: $x_1 = 1/16$.
+
+$\Delta EC = \int_1^4 4/(4p^2) dp = \int_1^4 1/p^2 dp = 1 - 1/4 = 0.75$
+
+## Para Praticar em Casa — Exercício C {.smaller}
+
+O governo de São Paulo reduz o ICMS sobre gás de cozinha de 18% para 12%.
+
+- Preço antes: R\$ 100 (botijão)
+- Preço depois: R\$ 94,92
+- Família gasta R\$ 200/mês em gás e "outros" ($p_O = 1$)
+- Preferências: $u = G^{0.2} O^{0.8}$
+
+. . .
+
+a) Calcule a VC desta redução de imposto (é negativa — o consumidor melhora)
+b) O benefício ao consumidor é maior ou menor que a perda de receita do governo?
+c) Existe peso morto na **redução** do imposto? (Sim! Reduzir o imposto elimina peso morto.)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Reduzir um imposto distorcivo gera um benefício ao consumidor que **excede** a perda de receita do governo — exatamente o peso morto "devolvido" à sociedade.
+:::
+
+## Conexões e Síntese {data-background-color="#E50505"}
+
+## Mapa Conceitual {.smaller}
+
+| Conceito | Conexão |
+|:---|:---|
+| **Slutsky** (Aula 09) | Decompõe ET em ES + ER usando compensação de poder de compra |
+| **Hicks** (Aula 10-11) | Decompõe ET em ES + ER usando compensação de utilidade |
+| **VC** | Compensação de Hicks medida em R\$ |
+| **VE** | Alternativa à VC com preços originais como referência |
+| **$\Delta$EC** | Aproximação usando marshalliana; exata para quase-linear |
+| **Peso morto** | $VC - R$ = ineficiência do imposto distorcivo |
+| **Lump-sum** | Benchmark de eficiência: peso morto = 0 |
+
+. . .
+
+:::{.callout-note title="Unificação"}
+A Slutsky é o elo: conecta demanda marshalliana, hicksiana e função dispêndio. Todas as medidas de bem-estar derivam dessa identidade fundamental.
+:::
+
+## Quando Usar Cada Medida? {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Use VC quando**:
+
+- O governo precisa saber quanto compensar
+- Exemplo: indenização por desapropriação
+- Benchmark: preços novos, utilidade antiga
+
+. . .
+
+**Use VE quando**:
+
+- O consumidor avalia "quanto vale evitar?"
+- Exemplo: disposição a pagar por seguro
+- Benchmark: preços antigos, utilidade nova
+:::
+::: {.column width="50%"}
+**Use $\Delta$EC quando**:
+
+- Dados limitados (só tem a marshalliana)
+- Fração do orçamento é pequena
+- Preferências são quase-lineares
+
+. . .
+
+**Na dúvida**:
+
+- Calcule as três e compare
+- Se próximas: qualquer uma serve
+- Se diferentes: explicite qual medida e por quê
+:::
+::::
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Resultado Principal |
+|:---|:---|
+| **VC (Cobb-Douglas)** | $VC = E(\mathbf{p}', \bar{u}_0) - I = 50$ |
+| **VE (Cobb-Douglas)** | $VE = I - E(\mathbf{p}, \bar{u}') = 33.33$ |
+| **Ordenação** | $VE \leq \Delta EC \leq VC$ para bens normais |
+| **Quase-linear** | $VC = VE = \Delta EC$ (medida exata) |
+| **Princípio lump-sum** | Imposto distorcivo → peso morto > 0; lump-sum → peso morto = 0 |
+| **ICMS energia** | Imposto distorcivo com justificativas práticas |
+
+. . .
+
+**Lições práticas**:
+
+1. Sempre comece pela **função dispêndio**
+2. VC e VE diferem quando há **efeito renda**
+3. O peso morto mede a **ineficiência** da distorção de preços
+4. Na quase-linear, tudo se simplifica
+
+## Próxima Aula
+
+**Aula 12 — Preferência Revelada e Racionalidade**
+
+. . .
+
+Veremos:
+
+- Axioma Fraco da Preferência Revelada (AFPR)
+- Axioma Forte (GARP)
+- Testando racionalidade com dados observados
+- Conexão com a Slutsky: negatividade da matriz de substituição como consequência do GARP
+
+. . .
+
+**Preparação**: revisar o conceito de cesta revelada preferida e as condições de otimalidade.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

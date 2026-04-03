@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Produto Marginal e Médio</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Produto Total, Marginal e Médio
+# Cap. 10 — A lei dos rendimentos decrescentes em ação
+
+# f(L) = A * L^alpha (K fixo, curto prazo)
+A     <- 10     # produtividade total
+alpha <- 0.6    # elasticidade do trabalho (altere! <1 => rend. decresc.)
+K_fixo <- 5
+
+# Com Cobb-Douglas: f(L,K) = A * K^beta * L^alpha
+beta <- 0.3
+f  <- function(L) A * K_fixo^beta * L^alpha
+PMgL <- function(L) A * K_fixo^beta * alpha * L^(alpha - 1)
+PMeL <- function(L) f(L) / L
+
+L <- seq(0.5, 20, length.out = 300)
+
+cat("=== Produto Total, Marginal e Medio ===\n\n")
+cat(sprintf("f(L,K) = %.0f * %.0f^%.1f * L^%.1f\n", A, K_fixo, beta, alpha))
+cat(sprintf("K fixo = %.0f (curto prazo)\n\n", K_fixo))
+
+cat(sprintf("%-5s %-10s %-10s %-10s %-10s\n",
+    "L", "PT", "PMgL", "PMeL", "PMgL/PMeL"))
+cat(paste(rep("-", 50), collapse=""), "\n")
+for (l in c(1, 2, 5, 10, 15, 20)) {
+  cat(sprintf("%-5.0f %-10.1f %-10.2f %-10.2f %-10.3f\n",
+      l, f(l), PMgL(l), PMeL(l), PMgL(l)/PMeL(l)))
+}
+cat(sprintf("\nPMgL/PMeL = alpha = %.1f (constante para CD!)\n", alpha))
+cat("PMgL < PMeL quando alpha < 1 => PMgL puxa PMe para baixo.\n")
+if (alpha < 1) cat("Rendimentos marginais decrescentes do trabalho.\n")
+
+# Gráficos
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# Painel 1: Produto Total
+plot(L, f(L), type = "l", col = "steelblue", lwd = 2,
+     xlab = "Trabalho (L)", ylab = "Produto",
+     main = "Produto Total")
+# Tangente num ponto (PMg é a inclinação)
+L0 <- 8
+tang <- f(L0) + PMgL(L0) * (L - L0)
+lines(L, tang, col = "#C8102E", lwd = 1.5, lty = 2)
+# Reta do PMe (da origem ao ponto)
+lines(c(0, L0), c(0, f(L0)), col = "#2a7f2a", lwd = 1.5, lty = 3)
+points(L0, f(L0), pch = 19, col = "#333", cex = 1.3)
+legend("topleft",
+       legend = c("PT = f(L)", "Tangente (PMgL)", "Secante (PMeL)"),
+       col = c("steelblue", "#C8102E", "#2a7f2a"),
+       lwd = c(2, 1.5, 1.5), lty = c(1, 2, 3), cex = 0.75)
+
+# Painel 2: PMg e PMe
+plot(L, PMgL(L), type = "l", col = "#C8102E", lwd = 2,
+     xlab = "Trabalho (L)", ylab = "Produto por trabalhador",
+     main = "PMgL e PMeL",
+     ylim = c(0, max(PMeL(L))*1.3))
+lines(L, PMeL(L), col = "#2a7f2a", lwd = 2, lty = 2)
+legend("topright",
+       legend = c("PMgL", "PMeL"),
+       col = c("#C8102E", "#2a7f2a"),
+       lwd = 2, lty = c(1, 2), cex = 0.85)
+text(15, PMgL(15)+0.5, "PMgL < PMeL sempre\n(alpha<1 na CD)",
+     col = "#C8102E", cex = 0.8, font = 2)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. A tangente à curva de PT dá o PMg; a secante dá o PMe. Com alpha &lt; 1, PMg &lt; PMe sempre (rendimentos decrescentes). Altere alpha para 1.2 e veja rendimentos crescentes!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

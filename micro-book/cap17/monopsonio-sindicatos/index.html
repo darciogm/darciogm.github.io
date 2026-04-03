@@ -1,0 +1,7605 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic website — Darcio Genicolo-Martins, Assistant Professor of Economics at Insper">
+      
+      
+        <meta name="author" content="Darcio Genicolo-Martins">
+      
+      
+        <link rel="canonical" href="https://darciogm.github.io/micro-book/cap17/monopsonio-sindicatos/">
+      
+      
+        <link rel="prev" href="../equilibrio-diferenciais/">
+      
+      
+        <link rel="next" href="../fatores-terra/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy - Darcio Genicolo-Martins</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--idea:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>');--md-admonition-icon--definition:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>');--md-admonition-icon--theorem:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 21 2-1 2 1v-7h-4m4-5V7l-2 1-2-1v2l-2 1 2 1v2l2-1 2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z"/></svg>');--md-admonition-icon--proof:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19.88V22l-1.8-1.17-4.79-9c.66-.21 1.26-.55 1.78-1zM15 7a3 3 0 0 1-3 3h-.44L5.8 20.83 4 22v-2.12L9.79 9c-1.1-1.23-1-3.13.24-4.24C10.57 4.28 11.27 4 12 4V2a1 1 0 0 1 1 1v1.18c1.2.42 2 1.55 2 2.82m-2 0a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.6.6 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg>');--md-admonition-icon--exercicio-resolvido:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-1.16-.21-2.31-.61-3.39l-1.6 1.6c.14.59.21 1.19.21 1.79a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.6 0 1.2.07 1.79.21L15.4 2.6C14.31 2.21 13.16 2 12 2m7 0-4 4v1.5l-2.55 2.55C12.3 10 12.15 10 12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.15 0-.3-.05-.45L16.5 9H18l4-4h-3zm-7 4a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6h-2a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4z"/></svg>');--md-admonition-icon--exercicio-proposto:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.06 9 .94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.21-.07-.41-.18-.57L13 8.35V4h-2v4.35L5.18 18.43c-.11.16-.18.36-.18.57m1 3a3 3 0 0 1-3-3c0-.6.18-1.16.5-1.63L9 7.81V6a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1v1.81l5.5 9.56c.32.47.5 1.03.5 1.63a3 3 0 0 1-3 3zm7-6 1.34-1.34L16.27 18H7.73l2.66-4.61zm-.5-4a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5"/></svg>');--md-admonition-icon--box-brasil:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 3a1 1 0 0 1 1 1v.88C8.06 4.44 9.5 4 11 4c3 0 3 2 5 2 3 0 4-2 4-2v8s-1 2-4 2-3-2-5-2c-3 0-4 2-4 2v7H5V4a1 1 0 0 1 1-1"/></svg>');--md-admonition-icon--box-mundo:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm10 .5c0 1.93-.58 3.5-4 3.5-3.41 0-4-1.57-4-3.5V6h8zm4-.5h-2V4h2z"/></svg>');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--code:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.29c-5.5 0-10 3-10 6.71 0 3.28 3.56 6 8.24 6.58v2.13h3.41v-2.12c.85-.09 1.64-.25 2.39-.48l1.38 2.6h3.86l-2.32-3.91C20.83 14.58 22 12.87 22 11c0-3.71-4.5-6.71-10-6.71m1.53 2.62c4.2 0 7.3 1.4 7.3 4.59 0 1.71-.92 2.91-2.42 3.65-.09-.05-.17-.1-.22-.15-.36-.16-.96-.34-.96-.34s2.98-.22 2.98-3.19-3.12-3.02-3.12-3.02h-6.85v7.16c-2.55-.74-4.31-2.31-4.31-4.11 0-2.54 3.4-4.59 7.6-4.59m.15 3.98h2.07s.95-.05.95.94c0 .97-.95.97-.95.97h-2.07zm-.03 4.41h.92c.18 0 .27.05.43.2.13.1.27.29.39.46-.55.07-1.13.1-1.74.1z"/></svg>');--md-admonition-icon--pesquisa:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.05 8.05 0 0 1-2.46 4h2.71v2h-16v-2h2.71a8 8 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3z"/></svg>');--md-admonition-icon--classroom:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a3 3 0 0 1-3-3c0-.6.18-1.16.5-1.63L9 7.81V6a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1v1.81l5.5 9.56c.32.47.5 1.03.5 1.63a3 3 0 0 1-3 3zm-1-3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.21-.07-.41-.18-.57l-2.29-3.96L14 17l-5.07-5.07-3.75 6.5c-.11.16-.18.36-.18.57m8-9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/micro-book.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1771710-monopsonio-sindicatos-busca-e-gig-economy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Darcio Genicolo-Martins" class="md-header__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Darcio Genicolo-Martins
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../research/working-papers/" class="md-tabs__link">
+          
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../teaching/intermediate-microeconomics/" class="md-tabs__link">
+          
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Micro Book
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Darcio Genicolo-Martins" class="md-nav__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    Darcio Genicolo-Martins
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/working-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/works-in-progress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Works in Progress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/policy-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../research/media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teaching
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Insper Institute of Education and Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Insper Institute of Education and Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teaching/intermediate-microeconomics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intermediate Microeconomics (Micro II)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teaching/microeconomics-101-lawyers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microeconomics 101 for Lawyers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../teaching/good-economics-hard-times/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Economics for Hard Times (DEDP - J-Pal / Insper)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Micro Book
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Micro Book
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../prefacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefácio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 1 — Todos os Modelos Estão Errados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 1 — Todos os Modelos Estão Errados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1–1.2 Modelos e Verificação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/fundamentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3–1.4 Regras do Jogo e Anatomia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/valor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5–1.6 Teoria do Valor e Fronteiras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Maximização de Lucro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap01/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 2 — O Manual de Sobrevivência Matemática
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 2 — O Manual de Sobrevivência Matemática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/otimizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1–2.3 Otimização e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/envelope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Teorema do Envelope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/lagrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5–2.6 Lagrange e Preço-Sombra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/kuhn-tucker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Kuhn-Tucker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/curvatura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8–2.9 Concavidade, Homogeneidade e Euler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap02/complementos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10–2.13 Complementos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    O Consumidor
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            O Consumidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 3 — Mais É Melhor — Será?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 3 — Mais É Melhor — Será?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/axiomas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1–3.3 Axiomas, Utilidade e Curvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/tms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4–3.5 TMS e Utilidade Marginal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/preferencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6–3.7 Formas Funcionais e Transformações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap03/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 4 — Você Quer Tudo. Mas Não Pode.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 4 — Você Quer Tudo. Mas Não Pode.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/problema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1–4.3 Problema do Consumidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/utilidade-indireta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4–4.5 Utilidade Indireta e Lump Sum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/dualidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6–4.9 Dualidade e Identidade de Roy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/catalogo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10–4.11 Catálogo de Soluções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap04/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 5 — Slutsky no Supermercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 5 — Slutsky no Supermercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/propriedades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1–5.2 Propriedades e Variações na Renda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/slutsky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3–5.6 Slutsky e Curvas de Demanda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/elasticidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Elasticidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/excedente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.8–5.9 Excedente e Preferência Revelada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap05/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 6 — Substitutos, Complementos e Relações Complicadas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 6 — Substitutos, Complementos e Relações Complicadas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/relacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1–6.4 Efeitos Cruzados e Matriz de Slutsky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/composto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.5–6.6 Bem Composto, Lancaster e Becker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/agregacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.7–6.8 Agregação e Classificação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap06/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 7 — O Preço do Talvez
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 7 — O Preço do Talvez
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/loterias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1–7.2 Loterias e Utilidade Esperada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/risco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3–7.5 Aversão ao Risco e Arrow-Pratt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/ferramentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Ferramentas Contra o Risco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/estado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7–7.8 Estado-Preferência e Informação Assimétrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap07/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 8 — Nem Tão Racionais Assim
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 8 — Nem Tão Racionais Assim
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/heuristicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Heurísticas e Vieses Cognitivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/prospecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Teoria do Prospecto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/ambiguidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Ambiguidade e Ellsberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/preferencias-sociais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Preferências Sociais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/desconto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Desconto Hiperbólico e Autocontrole
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/nudges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.6 Nudges e Arquitetura de Escolhas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap08/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interação Estratégica
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Interação Estratégica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 9 — Quando Sua Escolha Não É Só Sua
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 9 — Quando Sua Escolha Não É Só Sua
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap09a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9a — Pedra, Papel, Nash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap09b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9b — Primeiro Você, Depois Eu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap09c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9c — Jogando no Escuro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap09d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9d — O Diploma É Caro, Mas O Sinal É Grátis?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A Firma e os Custos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            A Firma e os Custos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/produtividade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Produto Marginal e Médio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/isoquantas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2–10.3 Isoquantas e Rendimentos de Escala
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/elasticidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.4 Elasticidade de Substituição
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/funcoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.5 Catálogo de Funções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/progresso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.6–10.7 Progresso Técnico e Homotéticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap10/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 11 — A Conta Sempre Chega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 11 — A Conta Sempre Chega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/definicoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Definições de Custos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/minimizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2–11.4 Minimização e Shephard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/curvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.5–11.6 Curvas de Custo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/envoltoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.7 Envoltória
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/catalogo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.8 Catálogo de Custos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap11/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 12 — Lucro = Receita − Custo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 12 — Lucro = Receita − Custo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/natureza-firma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.1 Natureza da Firma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.2–12.3 Maximização e Receita
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/oferta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.4 Oferta de Curto Prazo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/funcao-lucro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.5–12.6 Função Lucro e Insumos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap12/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mercados Competitivos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mercados Competitivos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_1" id="__nav_4_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 13 — O Leiloeiro que Ninguém Vê
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 13 — O Leiloeiro que Ninguém Vê
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/demanda-mercado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.1 Demanda de Mercado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/equilibrio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.2–13.4 Equilíbrio e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/longo-prazo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.5–13.8 Longo Prazo e Renda Ricardiana
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.9 Eficiência e Bem-Estar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/politicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.10–13.12 Políticas Públicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap13/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_2" id="__nav_4_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 14 — Equilíbrio Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 14 — Equilíbrio Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/sistema-precos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.1–14.2 Sistema de Preços e Edgeworth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/eficiencia-pareto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.3–14.5 Eficiência de Pareto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/teoremas-bem-estar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.6–14.7 Teoremas do Bem-Estar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/modelo-matematico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.8–14.10 Modelo Matemático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/cge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.11 Modelos CGE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/escolha-social/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.12 Escolha Social e Arrow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap14/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Poder de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Poder de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_1" id="__nav_4_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 15 — Sozinho, Feliz e Cobrando Caro
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 15 — Sozinho, Feliz e Cobrando Caro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/barreiras-maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.1–15.2 Barreiras e Maximização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/lerner-ineficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.3–15.5 Lerner, Ineficiência e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/qualidade-discriminacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.6–15.8 Qualidade, Discriminação e Tarifas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/regulacao-dinamica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.9–15.10 Regulação e Visão Dinâmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap15/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_2" id="__nav_4_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 16a — Poucos — e Isso Muda Tudo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 16a — Poucos — e Isso Muda Tudo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16a/fundamentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16a.1–16a.4 Bertrand, Cournot e Stackelberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16a/capacidade-diferenciacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16a.5–16a.6 Capacidade e Diferenciação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16a/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16a/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_3" id="__nav_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 16b — Colusão, Entrada e o Árbitro
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 16b — Colusão, Entrada e o Árbitro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/colusao-entrada/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.1–16b.4 Colusão e Entrada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/entrada-inovacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.5–16b.7 Entrada Livre e Inovação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/monopolistica-fusoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.8–16b.10 Competição Monopolística e Fusões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap16b/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fatores e Tempo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fatores e Tempo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_1" id="__nav_4_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oferta-trabalho/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.1–17.3 Oferta de Trabalho
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equilibrio-diferenciais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.4–17.6 Equilíbrio e Diferenciais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#177" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.7 Quando Só Tem Um Patrão na Cidade: Monopsônio
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.7 Quando Só Tem Um Patrão na Cidade: Monopsônio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#maximizacao-de-lucro-do-monopsonista" class="md-nav__link">
+    <span class="md-ellipsis">
+      Maximização de lucro do monopsonista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-novo-monopsonio-poder-de-mercado-sem-ser-o-unico-empregador" class="md-nav__link">
+    <span class="md-ellipsis">
+      O "novo monopsônio": poder de mercado sem ser o único empregador
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-resolvidos" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎯 Exercícios Resolvidos
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#178" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.8 A Força do Coletivo: Sindicatos e Barganha Salarial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.8 A Força do Coletivo: Sindicatos e Barganha Salarial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#objetivos-dos-sindicatos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objetivos dos sindicatos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-modelo-de-monopolio-sindical" class="md-nav__link">
+    <span class="md-ellipsis">
+      O modelo de monopólio sindical
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#barganha-eficiente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Barganha eficiente
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#o-declinio-global-dos-sindicatos-e-a-desigualdade" class="md-nav__link">
+    <span class="md-ellipsis">
+      O declínio global dos sindicatos e a desigualdade
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#179a" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.9 Modelos de Busca e Matching: Por Que Existe Desemprego?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.9 Modelos de Busca e Matching: Por Que Existe Desemprego?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-funcao-de-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      A função de matching
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-determinacao-do-salario-barganha-de-nash" class="md-nav__link">
+    <span class="md-ellipsis">
+      A determinação do salário: barganha de Nash
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#equilibrio-de-estado-estacionario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Equilíbrio de estado estacionário
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1710b" class="md-nav__link">
+    <span class="md-ellipsis">
+      17.10 A Gig Economy e o Novo Mercado de Trabalho
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="17.10 A Gig Economy e o Novo Mercado de Trabalho">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-escala-do-fenomeno-no-brasil" class="md-nav__link">
+    <span class="md-ellipsis">
+      A escala do fenômeno no Brasil
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#a-microeconomia-da-gig-economy" class="md-nav__link">
+    <span class="md-ellipsis">
+      A microeconomia da gig economy
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fatores-terra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.11–17.12 Fatores e Terra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_2" id="__nav_4_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 18 — A Paciência Tem Preço
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 18 — A Paciência Tem Preço
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/capital-juros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.1–18.2 Capital e Juros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/fisher-inflacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.3–18.4 Fisher e Inflação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/ativos-investimento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.5–18.7 Ativos e Investimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/demanda-capital/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.8–18.9 Demanda e Juros Compostos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/hotelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.10–18.11 Hotelling e Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap18/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Falhas de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Falhas de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_1" id="__nav_4_10_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 19 — Quando Um Lado Sabe Mais
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 19 — Quando Um Lado Sabe Mais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/principal-agente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.1–19.2 Contratos e Principal-Agente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/risco-moral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.3 Risco Moral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/selecao-adversa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.4 Seleção Adversa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/sinalizacao-screening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.5–19.6 Sinalização e Screening
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/leiloes-taxonomia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.7–19.8 Leilões e Taxonomia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/matching-markets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.9 Matching Markets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap19/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_2" id="__nav_4_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 20 — Fumaça, Caronas e Tragédias
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 20 — Fumaça, Caronas e Tragédias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/externalidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.1–20.2 Externalidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/modelo-solucoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.3–20.4 Modelo e Soluções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/bens-publicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.5–20.6 Bens Públicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/lindahl-carona/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.7–20.8 Lindahl e Carona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/votacao-mecanismos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.9–20.10 Votação e Mecanismos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap20/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11">
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Digital
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Digital
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_11_1" id="__nav_4_11_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 21 — Se É De Graça, O Produto É Você
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 21 — Se É De Graça, O Produto É Você
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/bens-info-redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.1–21.2 Bens de Informação e Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/mercados-bilaterais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.3 Mercados Bilaterais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/competicao-atencao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.4–21.5 Competição e Atenção
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/dados-leiloes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.6–21.7 Dados e Leilões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap21/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12">
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Métodos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Métodos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_1" id="__nav_4_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/experimentacao-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.1–22.2 Experimentação e Laboratório
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/campo-rcts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.3–22.4 Campo e RCTs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/naturais-mecanismos-limites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.5–22.7 Naturais, Mecanismos e Limites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap22/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13">
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia da Saúde
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            Economia da Saúde
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_13_1" id="__nav_4_13_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 23 — Doutor, Quanto Custa?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 23 — Doutor, Quanto Custa?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/arrow-grossman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.1 Arrow e Grossman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/demanda-oferta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.2–23.3 Demanda e Oferta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/seguros-sistemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.4–23.5 Seguros e Sistemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/avaliacao-externalidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.6 Avaliação e Externalidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/regulacao-farmaceutica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.7 Regulação Farmacêutica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap23/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14">
+        
+          
+          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Ambiental
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Ambiental
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_14_1" id="__nav_4_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 24 — Quanto Vale Um Pôr do Sol?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 24 — Quanto Vale Um Pôr do Sol?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/politica-instrumentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.1–24.2 Política e Instrumentos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/clima-carbono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.3–24.4 Clima e Carbono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/valoracao-recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.5–24.6 Valoração e Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cap24/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cadernos Computacionais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exercicios-ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios com IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anpec-compilado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilado ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_18">
+        
+          
+          <label class="md-nav__link" for="__nav_4_18" id="__nav_4_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Recursos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_18">
+            <span class="md-nav__icon md-icon"></span>
+            Recursos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos para Download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/mapas-conceituais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapas Conceituais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/guia-pythonesco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia Pythonesco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/newsletter-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/atividades-sala/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atividades de Sala
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/spin-offs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spin-offs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/dados-brasileiros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dados Brasileiros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/roteiros-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roteiros de Vídeo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursos/protocolo-atualizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocolo de Atualização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_19">
+        
+          
+          <label class="md-nav__link" for="__nav_4_19" id="__nav_4_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Referência
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_19">
+            <span class="md-nav__icon md-icon"></span>
+            Referência
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📚 Referência
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../notacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../indice-remissivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índice Remissivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../referencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referências
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    
+                  
+
+
+<h1 id="1771710-monopsonio-sindicatos-busca-e-gig-economy">17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy<a class="headerlink" href="#1771710-monopsonio-sindicatos-busca-e-gig-economy" title="Permanent link">¶</a></h1>
+<h2 id="177">17.7 Quando Só Tem Um Patrão na Cidade: Monopsônio<a class="headerlink" href="#177" title="Permanent link">¶</a></h2>
+<p>Até aqui, o mercado de trabalho era uma democracia: muitos vendedores, muitos compradores, ninguém mandando no preço. Mas pergunte a um professor em cidade pequena do interior, onde a prefeitura é a única empregadora com carteira assinada, se o mercado parece competitivo. Quando há poder de mercado do lado da demanda — isto é, quando uma firma (ou poucas firmas) é a única compradora de trabalho em uma região ou ocupação —, entramos no território do monopsônio, o espelho do monopólio no mercado de bens. O resultado é previsível e desagradável: salários abaixo da produtividade e emprego inferior ao socialmente ótimo.</p>
+<div class="admonition definition">
+<p class="admonition-title">Monopsônio</p>
+<p><strong>Monopsônio</strong> é a estrutura de mercado em que existe um único comprador de trabalho (ou poucos compradores com poder de mercado). Nessa situação, a firma não é tomadora de salário: ao contratar mais trabalhadores, ela eleva o salário de mercado.</p>
+</div>
+<h3 id="maximizacao-de-lucro-do-monopsonista">Maximização de lucro do monopsonista<a class="headerlink" href="#maximizacao-de-lucro-do-monopsonista" title="Permanent link">¶</a></h3>
+<p>Para o monopsonista, a oferta de trabalho é a curva de oferta do mercado: <span class="arithmatex">\(w = w(H)\)</span>, com <span class="arithmatex">\(w'(H) &gt; 0\)</span>. O custo total do trabalho é:</p>
+<div class="arithmatex">\[
+CT_L = w(H) \cdot H
+\]</div>
+<p>O <strong>custo marginal do trabalho</strong> (despesa marginal) é:</p>
+<div class="arithmatex">\[
+CMg_L = \frac{dCT_L}{dH} = w(H) + H \cdot w'(H) &gt; w(H)
+\label{eq:17.14} \tag{17.14} \]</div>
+<p>O monopsonista contrata até que:</p>
+<div class="arithmatex">\[
+VPMg_L = CMg_L
+\label{eq:17.15} \tag{17.15} \]</div>
+<p>Isso resulta em:</p>
+<ul>
+<li><strong>Emprego menor</strong> do que no equilíbrio competitivo;</li>
+<li><strong>Salário menor</strong> do que no equilíbrio competitivo.</li>
+</ul>
+<p>A diferença <span class="arithmatex">\(VPMg_L - w\)</span> é a <strong>exploração monopsonística</strong> (no sentido de Joan Robinson).</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> Quando há um único grande empregador na região, ele pode pagar salários abaixo da produtividade dos trabalhadores porque eles não têm para onde ir.</p>
+<p><strong>Pense assim:</strong> Em muitas cidades pequenas do interior do Brasil, a prefeitura ou uma única fábrica é praticamente a única empregadora formal. Se o trabalhador pede aumento, não tem concorrente para onde migrar. O empregador sabe disso e mantém salários baixos, mesmo que o trabalhador produza muito mais do que recebe.</p>
+<p><strong>Por que isso importa:</strong> Em mercados monopsonísticos, um salário mínimo bem calibrado pode, paradoxalmente, aumentar emprego e salário ao mesmo tempo — uma das conclusões mais contraintuitivas da economia do trabalho.</p>
+</div>
+<h3 id="o-novo-monopsonio-poder-de-mercado-sem-ser-o-unico-empregador">O "novo monopsônio": poder de mercado sem ser o único empregador<a class="headerlink" href="#o-novo-monopsonio-poder-de-mercado-sem-ser-o-unico-empregador" title="Permanent link">¶</a></h3>
+<p>O modelo clássico de monopsônio — uma única firma em uma cidade isolada — pode parecer uma construção teórica com aplicações limitadas. Mas a partir dos anos 2000, uma revolução na economia do trabalho mostrou que o poder monopsonístico é muito mais disseminado do que se pensava. O trabalho seminal de Alan Manning (2003, <em>Monopsony in Motion</em>) demonstrou que <strong>custos de mobilidade, fricções de busca e informação imperfeita</strong> conferem às firmas poder de mercado sobre seus trabalhadores mesmo em mercados com múltiplos empregadores. Essa abordagem, conhecida como "novo monopsônio" (<em>new monopsony</em>), tem implicações profundas para a análise do mercado de trabalho.</p>
+<p>A ideia central é simples: se um trabalhador não pode instantaneamente e sem custo encontrar um emprego equivalente em outra firma, então seu empregador atual detém algum poder de monopsônio sobre ele. As fontes desse poder incluem:</p>
+<ul>
+<li><strong>Custos de busca:</strong> encontrar um novo emprego requer tempo, esforço e, frequentemente, custos financeiros (deslocamento para entrevistas, períodos sem salário).</li>
+<li><strong>Custos de mudança geográfica:</strong> se as alternativas de emprego estão em outra cidade, os custos de mudança (moradia, escola dos filhos, redes sociais) criam uma barreira significativa.</li>
+<li><strong>Informação imperfeita:</strong> trabalhadores nem sempre conhecem todas as vagas disponíveis e suas condições — especialmente em mercados informais.</li>
+<li><strong>Preferências heterogêneas por empregador:</strong> trabalhadores podem preferir certas firmas por localização, ambiente de trabalho ou horário, mesmo que paguem menos.</li>
+<li><strong>Concentração do mercado de trabalho:</strong> em muitos mercados de trabalho locais (definidos por ocupação × região), poucas firmas respondem pela maioria das contratações.</li>
+</ul>
+<p>Estudos recentes sobre <strong>concentração do mercado de trabalho</strong> (Azar, Marinescu e Steinbaum, 2022) documentaram que muitos mercados de trabalho locais nos EUA são altamente concentrados — com índices Herfindahl-Hirschman (HHI) comparáveis aos de mercados de bens que seriam alvo de regulação antitruste. Mercados mais concentrados apresentam salários significativamente menores, mesmo controlando para produtividade. No Brasil, onde a combinação de grandes distâncias, informalidade e baixa mobilidade geográfica é particularmente acentuada, o poder monopsonístico pode ser ainda mais relevante.</p>
+<p>O novo monopsônio tem implicações diretas para políticas públicas. Se as firmas detêm poder de mercado sobre os trabalhadores, então: (i) o salário mínimo pode elevar o emprego (como no modelo clássico); (ii) políticas que aumentam a transparência salarial e facilitam a busca por emprego (como plataformas de vagas e obrigatoriedade de divulgação de faixas salariais) podem elevar salários; (iii) a análise antitruste deveria considerar não apenas os efeitos sobre consumidores, mas também sobre trabalhadores — uma fronteira emergente no direito concorrencial.</p>
+<div class="admonition tip">
+<p class="admonition-title">Monopsônio e salário mínimo</p>
+<p>Uma implicação surpreendente do modelo de monopsônio é que a imposição de um <strong>salário mínimo</strong> pode, sob certas condições, aumentar <strong>simultaneamente</strong> o salário e o emprego. Isso ocorre porque o salário mínimo transforma a curva de custo marginal do trabalho em uma linha horizontal até o ponto em que a oferta de trabalho ao salário mínimo se esgota, eliminando o incentivo do monopsonista a restringir contratações.</p>
+</div>
+<hr>
+<p>O gráfico abaixo mostra o equilíbrio monopsonístico versus o competitivo. A curva de oferta de trabalho <span class="arithmatex">\(S(w)\)</span>, o custo marginal do trabalho (CMgL) e a curva de valor do produto marginal (VPMgL) determinam o emprego e o salário. A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.</p>
+<iframe src="/micro-book/graficos/cap17/monopsonio.html" title="Figura 17.3 — Equilíbrio monopsonístico versus competitivo no mercado de trabalho" class="graph-iframe" style="height:590px;overflow:hidden" scrolling="no"></iframe>
+
+<div class="caption-obj">
+
+**Figura 17.3 — Equilíbrio monopsonístico versus competitivo no mercado de trabalho.** A diferença entre VPMg e o salário pago no monopsônio é a exploração monopsonística.
+
+</div>
+
+<hr>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 17.2 — Card e Krueger e a revolução do salário mínimo</p>
+<p><strong>Contexto:</strong> Em 1992, o estado de New Jersey elevou seu salário mínimo de US$ 4,25 para US$ 5,05 por hora, enquanto a vizinha Pennsylvania manteve o mínimo inalterado. Os economistas David Card e Alan Krueger aproveitaram esse "experimento natural" para estimar o efeito causal do salário mínimo sobre o emprego, comparando restaurantes de fast-food nos dois estados antes e depois do aumento — um design de diferenças-em-diferenças que se tornaria um marco na economia empírica.</p>
+<p><strong>Dados:</strong> Card e Krueger (1994) pesquisaram 410 restaurantes (Burger King, KFC, Wendy's, Roy Rogers) ao longo da fronteira NJ-PA. Seus resultados foram surpreendentes:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Indicador</th>
+<th style="text-align: left;">New Jersey (aumento do SM)</th>
+<th style="text-align: left;">Pennsylvania (controle)</th>
+<th style="text-align: left;">Diferença-em-diferenças</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Variação no emprego médio (ETI)</td>
+<td style="text-align: left;">+0,59</td>
+<td style="text-align: left;">−2,16</td>
+<td style="text-align: left;"><strong>+2,76</strong></td>
+</tr>
+</tbody>
+</table>
+<p>O emprego em New Jersey não caiu — ao contrário, aumentou relativamente a Pennsylvania. Este resultado desafiou diretamente a previsão do modelo competitivo.</p>
+<p><strong>Análise:</strong> O estudo gerou intensa controvérsia. Neumark e Wascher (2000) reanalisaram os dados usando registros administrativos (em vez de pesquisas telefônicas) e encontraram efeitos negativos sobre o emprego. Card e Krueger (2000) responderam com uma nova análise dos mesmos dados administrativos, confirmando seus resultados originais. Meta-análises recentes (Dube, 2019) sugerem que o consenso empírico se moveu significativamente: aumentos moderados do salário mínimo (da ordem de 10%) têm efeitos sobre o emprego <strong>próximos de zero ou muito pequenos</strong>, consistentes com modelos de monopsônio ou busca com fricções. Os efeitos negativos, quando existem, concentram-se em aumentos muito grandes ou em mercados com muita competição entre empregadores.</p>
+<p><strong>Para refletir:</strong> O debate Card-Krueger ilustra como a evidência empírica pode desafiar modelos teóricos estabelecidos. O modelo competitivo prevê inequivocamente que salários mínimos acima do equilíbrio reduzem o emprego. Se a evidência mostra efeitos nulos ou positivos, isso sugere que o mercado de trabalho não é competitivo — e que modelos com poder monopsonístico (seção 17.7) podem ser mais realistas. Qual modelo melhor descreve o mercado de trabalho do seu bairro?</p>
+</div>
+<hr>
+<h2 id="exercicios-resolvidos">🎯 Exercícios Resolvidos<a class="headerlink" href="#exercicios-resolvidos" title="Permanent link">¶</a></h2>
+<details class="exercicio-resolvido">
+<summary>Exercício Resolvido 17.2</summary>
+<p><strong>Enunciado:</strong> Uma firma monopsonista enfrenta a curva de oferta de trabalho <span class="arithmatex">\(w = 4 + 2H\)</span> e possui valor do produto marginal <span class="arithmatex">\(VPMg_L = 100 - 2H\)</span>. (a) Encontre o equilíbrio competitivo. (b) Encontre o equilíbrio monopsonístico e calcule a exploração. (c) Se o governo impõe um salário mínimo igual ao competitivo, qual o efeito sobre emprego e salário no monopsônio?</p>
+<p><strong>Dados:</strong> <span class="arithmatex">\(w(H) = 4 + 2H\)</span>; <span class="arithmatex">\(VPMg_L = 100 - 2H\)</span>.</p>
+<p><strong>Resolução:</strong></p>
+<p><strong>Passo 1 — Equilíbrio competitivo</strong></p>
+<p>No equilíbrio competitivo, <span class="arithmatex">\(VPMg_L = w\)</span>:</p>
+<div class="arithmatex">\[
+100 - 2H = 4 + 2H \;\Rightarrow\; 96 = 4H \;\Rightarrow\; H_c = 24, \quad w_c = 4 + 2(24) = 52
+\]</div>
+<p><strong>Passo 2 — Equilíbrio monopsonístico</strong></p>
+<p>O custo total do trabalho é <span class="arithmatex">\(CT_L = w \cdot H = (4 + 2H)H = 4H + 2H^2\)</span>.</p>
+<p>O custo marginal do trabalho é:</p>
+<div class="arithmatex">\[
+CMg_L = \frac{dCT_L}{dH} = 4 + 4H
+\]</div>
+<p>Igualando <span class="arithmatex">\(VPMg_L = CMg_L\)</span>:</p>
+<div class="arithmatex">\[
+100 - 2H = 4 + 4H \;\Rightarrow\; 96 = 6H \;\Rightarrow\; H_m = 16
+\]</div>
+<p>O salário pago é determinado pela curva de oferta:</p>
+<div class="arithmatex">\[
+w_m = 4 + 2(16) = 36
+\]</div>
+<p>O valor do produto marginal no ponto de emprego monopsonístico é:</p>
+<div class="arithmatex">\[
+VPMg_L(16) = 100 - 32 = 68
+\]</div>
+<p><strong>Exploração monopsonística:</strong> <span class="arithmatex">\(VPMg_L - w_m = 68 - 36 = 32\)</span>.</p>
+<p><strong>Passo 3 — Salário mínimo no monopsônio</strong></p>
+<p>Com <span class="arithmatex">\(w_{\min} = 52\)</span>, o custo marginal do trabalho torna-se horizontal em 52 até <span class="arithmatex">\(H = 24\)</span> (quando a oferta se iguala a 52):</p>
+<div class="arithmatex">\[
+VPMg_L = w_{\min}:\quad 100 - 2H = 52 \;\Rightarrow\; H = 24
+\]</div>
+<p><strong>Resultado:</strong> O salário mínimo eleva o emprego de 16 para 24 (+50%) e o salário de 36 para 52 (+44%), restaurando o equilíbrio competitivo.</p>
+<p><strong>Interpretação econômica:</strong> O salário mínimo elimina o poder monopsonístico ao tornar o custo marginal do trabalho constante. Este resultado contrasta com o modelo competitivo, no qual o salário mínimo sempre reduz o emprego — e ajuda a entender por que estudos empíricos (como Card e Krueger, 1994) encontram efeitos nulos ou positivos do salário mínimo sobre o emprego em mercados com concentração de empregadores.</p>
+</details>
+<iframe src="/micro-book/graficos/cap17/webr-monopsonio.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 17.3 — Monopsônio vs. competição.** Altere os parâmetros da oferta de trabalho e da VPMgL para comparar os equilíbrios e visualizar a exploração monopsonística.
+
+</div>
+
+<hr>
+<details class="exercicio-resolvido">
+<summary>Exercício Resolvido 17.3</summary>
+<p><strong>Enunciado:</strong> Um economista estima a seguinte equação de Mincer com dados da PNAD para o Brasil:</p>
+<div class="arithmatex">\[
+\ln w_i = 1{,}20 + 0{,}12 S_i + 0{,}05 X_i - 0{,}0007 X_i^2 - 0{,}18 D_i^{fem} - 0{,}15 D_i^{negro} + \varepsilon_i
+\]</div>
+<p>onde <span class="arithmatex">\(w_i\)</span> é o salário-hora, <span class="arithmatex">\(S_i\)</span> são os anos de escolaridade, <span class="arithmatex">\(X_i\)</span> é a experiência (em anos), <span class="arithmatex">\(D_i^{fem}\)</span> é uma dummy para gênero feminino e <span class="arithmatex">\(D_i^{negro}\)</span> é uma dummy para raça negra.</p>
+<p>(a) Interprete o coeficiente <span class="arithmatex">\(\hat{\beta}_1 = 0{,}12\)</span>.</p>
+<p>(b) Calcule a experiência que maximiza o salário (mantidos os demais fatores constantes).</p>
+<p>(c) Calcule a diferença salarial percentual entre um homem branco e uma mulher negra com mesma escolaridade e experiência.</p>
+<p>(d) Discuta se os coeficientes das dummies capturam necessariamente discriminação.</p>
+<p><strong>Resolução:</strong></p>
+<p><strong>Passo 1 — Retorno da educação</strong></p>
+<p>O coeficiente <span class="arithmatex">\(\hat{\beta}_1 = 0{,}12\)</span> indica que cada ano adicional de escolaridade está associado a um aumento de aproximadamente <strong>12%</strong> no salário-hora, <em>ceteris paribus</em>. Formalmente, como a variável dependente está em logaritmo:</p>
+<div class="arithmatex">\[
+\frac{\partial \ln w}{\partial S} = 0{,}12 \implies \frac{\Delta w / w}{\Delta S} \approx 12\%
+\]</div>
+<p>Esse valor é consistente com estimativas para o Brasil, que encontram retornos à educação entre 10% e 15% por ano — entre os mais altos do mundo, refletindo a grande escassez relativa de mão de obra qualificada.</p>
+<p><strong>Passo 2 — Experiência ótima</strong></p>
+<p>O perfil de experiência-salário é côncavo: <span class="arithmatex">\(0{,}05X - 0{,}0007X^2\)</span>. Maximizando:</p>
+<div class="arithmatex">\[
+\frac{\partial \ln w}{\partial X} = 0{,}05 - 0{,}0014X = 0 \implies X^* = \frac{0{,}05}{0{,}0014} \approx 35{,}7 \text{ anos}
+\]</div>
+<p>O salário atinge seu pico com aproximadamente <strong>36 anos de experiência</strong> (para alguém que começou a trabalhar aos 18, isso corresponde aos 54 anos de idade). Após esse ponto, o salário decresce — refletindo a depreciação do capital humano (obsolescência de habilidades, menor vigor físico em trabalhos manuais).</p>
+<p><strong>Passo 3 — Diferencial de gênero e raça</strong></p>
+<p>Para um homem branco (<span class="arithmatex">\(D^{fem} = 0, D^{negro} = 0\)</span>) e uma mulher negra (<span class="arithmatex">\(D^{fem} = 1, D^{negro} = 1\)</span>) com mesma escolaridade e experiência:</p>
+<div class="arithmatex">\[
+\ln w_{HB} - \ln w_{MN} = -(-0{,}18) - (-0{,}15) = 0{,}33
+\]</div>
+<p>Em termos percentuais:</p>
+<div class="arithmatex">\[
+\frac{w_{HB} - w_{MN}}{w_{MN}} = e^{0{,}33} - 1 \approx 0{,}391 = 39{,}1\%
+\]</div>
+<p>Uma mulher negra recebe, em média, <strong>39,1% a menos</strong> que um homem branco com mesma educação e experiência.</p>
+<p><strong>Passo 4 — Interpretação causal</strong></p>
+<p>Os coeficientes das dummies <strong>não capturam necessariamente discriminação pura</strong>. Eles medem o diferencial salarial condicional às variáveis incluídas na regressão. Parte desse diferencial pode refletir:</p>
+<ul>
+<li><strong>Variáveis omitidas:</strong> diferenças na qualidade da educação (escolas em bairros mais pobres), tipo de curso, habilidades não cognitivas;</li>
+<li><strong>Segregação ocupacional:</strong> mulheres e negros podem estar concentrados em ocupações que pagam menos, mesmo controlando por escolaridade total;</li>
+<li><strong>Seleção amostral:</strong> a composição de quem trabalha (e aparece na amostra) difere por gênero e raça;</li>
+<li><strong>Discriminação efetiva:</strong> diferenças de tratamento por empregadores, no sentido de Becker ou estatístico.</li>
+</ul>
+<p>A decomposição de Oaxaca-Blinder (equação <span class="arithmatex">\(17.13\text{b}\)</span>) é uma extensão natural desta análise: permite separar formalmente a parte do diferencial que se deve a diferenças de características versus diferenças de retornos.</p>
+</details>
+<iframe src="/micro-book/graficos/cap17/webr-mincer.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 17.4 — Equação de Mincer.** Altere os coeficientes e visualize como educação, experiência e dummies de gênero/raça afetam o perfil salarial previsto.
+
+</div>
+
+<hr>
+<h2 id="178">17.8 A Força do Coletivo: Sindicatos e Barganha Salarial<a class="headerlink" href="#178" title="Permanent link">¶</a></h2>
+<p>O monopsônio representa poder de mercado do lado da demanda por trabalho. Do lado da oferta, a contrapartida é o sindicato — uma organização que agrega o poder de barganha dos trabalhadores para negociar coletivamente salários e condições de emprego. Enquanto no mercado competitivo cada trabalhador é individualmente incapaz de influenciar o salário, o sindicato confere aos trabalhadores poder de mercado análogo ao do monopolista no mercado de bens. Como esse poder afeta salários, emprego e eficiência?</p>
+<h3 id="objetivos-dos-sindicatos">Objetivos dos sindicatos<a class="headerlink" href="#objetivos-dos-sindicatos" title="Permanent link">¶</a></h3>
+<p>Os sindicatos podem ser modelados como agentes que buscam maximizar alguma função objetivo, como:</p>
+<ul>
+<li><strong>Maximização do salário</strong> com emprego fixo;</li>
+<li><strong>Maximização do emprego</strong> com salário fixo;</li>
+<li><strong>Maximização da renda total</strong> dos membros: <span class="arithmatex">\(\max_w \; w \cdot H^d(w)\)</span>;</li>
+<li><strong>Maximização da utilidade</strong> dos membros: <span class="arithmatex">\(\max_w \; U(w) \cdot H^d(w)\)</span>.</li>
+</ul>
+<h3 id="o-modelo-de-monopolio-sindical">O modelo de monopólio sindical<a class="headerlink" href="#o-modelo-de-monopolio-sindical" title="Permanent link">¶</a></h3>
+<p>No modelo mais simples, o sindicato fixa o salário <span class="arithmatex">\(w_s &gt; w^*\)</span> e a firma escolhe o nível de emprego ao longo de sua curva de demanda por trabalho. O resultado é:</p>
+<div class="arithmatex">\[
+H^d(w_s) &lt; H^d(w^*) = H^*
+\]</div>
+<p>Há um trade-off entre salário e emprego: salários mais altos reduzem o emprego.</p>
+<h3 id="barganha-eficiente">Barganha eficiente<a class="headerlink" href="#barganha-eficiente" title="Permanent link">¶</a></h3>
+<p>O modelo de <strong>barganha eficiente</strong> (McDonald e Solow, 1981) propõe que sindicato e firma negociam simultaneamente salário e emprego, atingindo a <strong>curva de contrato</strong> — o conjunto de alocações Pareto-eficientes. Nesse caso, o nível de emprego pode ser maior do que no modelo de monopólio sindical.</p>
+<p>Na negociação de Nash, o resultado da barganha maximiza o produto:</p>
+<div class="arithmatex">\[
+\max_{w, H} \; \bigl[U_S(w, H) - U_S^0\bigr]^\beta \cdot \bigl[\pi(w, H) - \pi^0\bigr]^{1-\beta}
+\label{eq:17.15b} \tag{17.15b}
+\]</div>
+<p>onde <span class="arithmatex">\(U_S\)</span> é a utilidade do sindicato, <span class="arithmatex">\(\pi\)</span> é o lucro da firma, os sobrescritos <span class="arithmatex">\(0\)</span> denotam os payoffs no ponto de desacordo (por exemplo, greve prolongada) e <span class="arithmatex">\(\beta \in [0,1]\)</span> mede o poder de barganha relativo do sindicato. Quando <span class="arithmatex">\(\beta = 0\)</span>, a firma tem todo o poder e o resultado é competitivo; quando <span class="arithmatex">\(\beta = 1\)</span>, o sindicato tem todo o poder e o resultado se aproxima do monopólio sindical.</p>
+<h3 id="o-declinio-global-dos-sindicatos-e-a-desigualdade">O declínio global dos sindicatos e a desigualdade<a class="headerlink" href="#o-declinio-global-dos-sindicatos-e-a-desigualdade" title="Permanent link">¶</a></h3>
+<p>Uma das transformações mais marcantes do mercado de trabalho nas últimas quatro décadas é o <strong>declínio da sindicalização</strong> na maioria dos países desenvolvidos. Nos Estados Unidos, a taxa de sindicalização caiu de 35% na década de 1950 para cerca de 10% atualmente (e apenas 6% no setor privado). No Reino Unido, a queda foi de 50% para 23%. Mesmo em países com tradição sindical forte, como França e Alemanha, as taxas de cobertura de negociações coletivas têm diminuído.</p>
+<p>Esse declínio resulta de uma combinação de fatores: (i) a desindustrialização e o crescimento do setor de serviços, onde a sindicalização é historicamente menor; (ii) mudanças legislativas que enfraqueceram o poder sindical (como as reformas Thatcher no Reino Unido e a Reforma Trabalhista de 2017 no Brasil); (iii) a globalização e a ameaça de realocação da produção para países com mão de obra mais barata; (iv) o aumento do trabalho temporário, terceirizado e por plataforma (<em>gig economy</em>), que dificulta a organização coletiva.</p>
+<p>A relação entre o declínio sindical e o aumento da desigualdade é um dos debates centrais da economia contemporânea. Estudos como o de Farber et al. (2021) para os EUA estimam que a dessindicalização explica entre 20% e 33% do aumento da desigualdade salarial desde 1980. O mecanismo é duplo: sindicatos comprimem a distribuição salarial dentro das firmas sindicalizadas (reduzindo o prêmio para gestores e aumentando o piso para operários) e exercem pressão sobre os salários de firmas não sindicalizadas na mesma região ou setor (efeito <em>threat effect</em>). Quando os sindicatos enfraquecem, ambos os canais de compressão salarial se dissipam.</p>
+<p>No Brasil, a queda foi ainda mais acentuada: a Reforma Trabalhista de 2017, ao eliminar a contribuição sindical obrigatória, acelerou o declínio da sindicalização para níveis historicamente baixos (ver Box Brasil a seguir). Esse "experimento natural" permite avaliar se o enfraquecimento sindical está associado a maior dispersão salarial nos setores afetados — uma questão empiricamente relevante e ainda em investigação.</p>
+<iframe src="/micro-book/graficos/cap17/webr-sindicato.html" width="100%" height="820" style="border:none; border-radius:8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);"></iframe>
+<div class="caption-obj">
+
+**WebR 17.5 — Barganha sindical.** Ajuste o poder de barganha \(\beta\) e visualize como o salário negociado e o emprego variam entre o resultado competitivo e o monopólio sindical.
+
+</div>
+
+<hr>
+<div class="admonition box-brasil">
+<p class="admonition-title">A informalidade estrutural e os efeitos da Reforma Trabalhista de 2017</p>
+<p>O mercado de trabalho brasileiro é marcado por uma taxa de informalidade persistentemente elevada, que condiciona a eficácia de políticas salariais e trabalhistas.</p>
+<p><strong>Informalidade em números (PNAD Contínua/IBGE):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Indicador</th>
+<th style="text-align: left;">2024</th>
+<th style="text-align: left;">2025</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Taxa de informalidade</td>
+<td style="text-align: left;">39,0%</td>
+<td style="text-align: left;">38,1%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empregados com carteira (CLT)</td>
+<td style="text-align: left;">38,4 milhões</td>
+<td style="text-align: left;">39,4 milhões</td>
+</tr>
+<tr>
+<td style="text-align: left;">Empregados sem carteira</td>
+<td style="text-align: left;">13,2 milhões</td>
+<td style="text-align: left;">13,4 milhões</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trabalhadores por conta própria</td>
+<td style="text-align: left;">25,4 milhões</td>
+<td style="text-align: left;">26,2 milhões</td>
+</tr>
+<tr>
+<td style="text-align: left;">Rendimento real médio habitual</td>
+<td style="text-align: left;">R$ 3.470</td>
+<td style="text-align: left;">R$ 3.652</td>
+</tr>
+<tr>
+<td style="text-align: left;">Taxa de desocupação</td>
+<td style="text-align: left;">6,6%</td>
+<td style="text-align: left;">5,6%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Fonte: PNAD Contínua/IBGE, médias anuais 2024-2025.</em></p>
+<p><strong>Reforma Trabalhista de 2017:</strong></p>
+<p>A Lei 13.467/2017 promoveu ampla flexibilização das relações de trabalho, com destaque para o fim da contribuição sindical obrigatória. Os efeitos sobre os sindicatos foram imediatos e profundos:</p>
+<ul>
+<li>A <strong>taxa de sindicalização</strong> caiu de 16,1% (2012) para <strong>8,4%</strong> (2023), o menor patamar da série histórica do IBGE.</li>
+<li>A receita dos sindicatos despencou cerca de <strong>90%</strong> no primeiro ano após a reforma, comprometendo a capacidade de negociação coletiva e de fiscalização em regiões remotas.</li>
+</ul>
+<p><strong>Conexão com a teoria:</strong></p>
+<p>O modelo de monopólio sindical (seção 17.8) prevê que sindicatos mais fortes elevam salários acima do nível competitivo, ao custo de menor emprego. A drástica redução do poder sindical após 2017 representa um "experimento natural" que permite testar essa previsão: se o modelo está correto, o enfraquecimento sindical deveria aproximar os salários negociados do equilíbrio competitivo.</p>
+<p><em>Fonte: PNAD Contínua/IBGE; <a href="https://www.ipea.gov.br">IPEA</a>, Nota Técnica sobre Reforma Trabalhista, 2023.</em></p>
+</div>
+<hr>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 17.1 — O modelo nórdico de mercado de trabalho: flexicurity</p>
+<p><strong>Contexto:</strong> Os países nórdicos (Dinamarca, Suécia, Noruega, Finlândia) combinam altas taxas de sindicalização com mercados de trabalho flexíveis e baixos níveis de desigualdade — um aparente paradoxo para modelos que preveem rigidez quando sindicatos são fortes. O segredo reside no modelo de <strong>flexicurity</strong> (<em>flexibilidade + segurança</em>), particularmente desenvolvido na Dinamarca.</p>
+<p><strong>Dados:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">País</th>
+<th style="text-align: left;">Taxa de sindicalização (2023)</th>
+<th style="text-align: left;">Taxa de desemprego (2024)</th>
+<th style="text-align: left;">Índice de Gini (renda disponível)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dinamarca</td>
+<td style="text-align: left;">67%</td>
+<td style="text-align: left;">5,0%</td>
+<td style="text-align: left;">0,28</td>
+</tr>
+<tr>
+<td style="text-align: left;">Suécia</td>
+<td style="text-align: left;">65%</td>
+<td style="text-align: left;">8,3%</td>
+<td style="text-align: left;">0,28</td>
+</tr>
+<tr>
+<td style="text-align: left;">Noruega</td>
+<td style="text-align: left;">50%</td>
+<td style="text-align: left;">3,7%</td>
+<td style="text-align: left;">0,26</td>
+</tr>
+<tr>
+<td style="text-align: left;">EUA</td>
+<td style="text-align: left;">10%</td>
+<td style="text-align: left;">4,1%</td>
+<td style="text-align: left;">0,39</td>
+</tr>
+<tr>
+<td style="text-align: left;">Brasil</td>
+<td style="text-align: left;">8,4%</td>
+<td style="text-align: left;">5,6%</td>
+<td style="text-align: left;">0,52</td>
+</tr>
+</tbody>
+</table>
+<p><em>Fonte: OCDE, <a href="https://stats.oecd.org">Statistics</a>; OIT, <a href="https://ilostat.ilo.org">ILOSTAT</a>; IBGE, PNAD Contínua 2024–2025.</em></p>
+<p><strong>Análise:</strong> O modelo nórdico opera em três pilares: (i) <strong>flexibilidade para demitir</strong> — firmas podem ajustar o emprego com facilidade, sem custos de demissão elevados; (ii) <strong>generoso seguro-desemprego</strong> — o trabalhador demitido recebe até 90% do salário anterior por até dois anos na Dinamarca; (iii) <strong>políticas ativas de emprego</strong> — programas de requalificação, intermediação de mão de obra e incentivos à recolocação. A negociação coletiva é centralizada e coordenada, com sindicatos e associações patronais negociando pisos salariais por setor (sem salário mínimo legal na Dinamarca e na Suécia). A compressão salarial resultante — a diferença entre o salário mais alto e o mais baixo é muito menor que nos EUA — é uma consequência direta do poder de barganha sindical coordenado. O modelo demonstra que a barganha eficiente (seção 17.8), quando institucionalizada em nível nacional, pode aproximar o resultado do ótimo de Pareto.</p>
+<p><strong>Para refletir:</strong> Se sindicatos fortes podem coexistir com flexibilidade e baixo desemprego nos países nórdicos, por que a sindicalização é frequentemente vista como obstáculo à eficiência? Que fatores institucionais (tamanho do país, homogeneidade social, cultura de cooperação) podem limitar a replicabilidade do modelo nórdico em países grandes e desiguais como o Brasil?</p>
+</div>
+<hr>
+<div class="admonition box-brasil">
+<p class="admonition-title">O salário mínimo e o debate sobre o 'efeito-farol'</p>
+<p>O salário mínimo (SM) no Brasil desempenha um papel que vai muito além de um piso salarial para trabalhadores formais com carteira assinada. Ele serve como <strong>referência</strong> (ou "farol") para a fixação de salários em todo o mercado de trabalho — inclusive no setor informal, onde não há obrigação legal de cumpri-lo.</p>
+<p><strong>Fatos estilizados:</strong></p>
+<ul>
+<li>O SM real cresceu significativamente entre 2003 e 2014, acumulando ganho real superior a 70% no período. A política de valorização do SM adotada a partir de 2007 previa reajustes pela inflação acumulada mais o crescimento do PIB.</li>
+<li>Em 2025, o SM atingiu <strong>R$ 1.518</strong>, beneficiando diretamente cerca de 59,9 milhões de brasileiros entre trabalhadores formais, informais, aposentados e pensionistas.</li>
+<li>O <strong>efeito-farol</strong>, documentado em estudos do IPEA (Neri, Gonzaga e Camargo, 2001; Saboia, 2007), mostra que aumentos no SM elevam salários não apenas no setor formal, mas também no informal, e até afetam rendimentos de trabalhadores por conta própria e aposentadorias/pensões (que são indexadas ao SM).</li>
+</ul>
+<p><strong>Impactos sobre emprego e informalidade:</strong></p>
+<p>O debate empírico sobre os efeitos do SM sobre o emprego no Brasil é rico:</p>
+<ul>
+<li>Estudos como Corseuil e Carneiro (2001) encontraram efeitos negativos pequenos sobre o emprego formal, mas significativos sobre a informalidade.</li>
+<li>Lemos (2009) mostrou que o efeito compressão salarial (redução da desigualdade) domina o efeito desemprego.</li>
+<li><a href="https://doi.org/10.1257/aer.20181506">Engbom e Moser (2022)</a> estimam que a alta real de 128% do SM entre 1996 e 2018 explica <strong>45% da queda da desigualdade salarial</strong> no período, com efeitos limitados sobre o emprego total.</li>
+<li>Dados do CAGED/MTE e da PNAD indicam que a elevação do SM tende a aumentar a proporção de trabalhadores na informalidade, pois empregadores que não conseguem pagar o novo piso migram para relações informais.</li>
+</ul>
+<p>Como mostra a tabela do Box Brasil anterior, a elevada taxa de informalidade (38,1% em 2025) implica que uma parcela substancial da força de trabalho opera à margem da legislação trabalhista, o que limita a eficácia de políticas baseadas exclusivamente em regulação do mercado formal. Em 2025, o SM atingiu R$ 1.518, com rendimento real médio habitual de R$ 3.652 (PNAD Contínua/IBGE).</p>
+</div>
+<hr>
+<h3 id="179a">17.9 Modelos de Busca e Matching: Por Que Existe Desemprego?<a class="headerlink" href="#179a" title="Permanent link">¶</a></h3>
+<p>O modelo competitivo de mercado de trabalho (Seção 17.5) tem uma previsão embaraçosa: <strong>não existe desemprego involuntário</strong>. Se o salário é flexível e o mercado é competitivo, todo mundo que quer trabalhar ao salário vigente encontra emprego. Mas no mundo real, pessoas desempregadas e vagas abertas coexistem simultaneamente — o que sugere que encontrar emprego é um <em>processo</em>, não um resultado instantâneo.</p>
+<p>Os modelos de <strong>busca e matching</strong> (Diamond, 1982; Mortensen, 1982; Pissarides, 1985 — Nobel de Economia 2010) resolvem esse paradoxo introduzindo <strong>fricções</strong> no mercado de trabalho: encontrar um emprego leva tempo, custa esforço e envolve incerteza. Essas fricções são o "atrito" que faz o mercado de trabalho parecer um mercado de casamentos (Capítulo 9) mais do que um mercado de tomates.</p>
+<h4 id="a-funcao-de-matching">A função de matching<a class="headerlink" href="#a-funcao-de-matching" title="Permanent link">¶</a></h4>
+<p>O ingrediente central é a <strong>função de matching</strong> <span class="arithmatex">\(m(U, V)\)</span>, que determina quantas contratações ocorrem por período dado o número de desempregados <span class="arithmatex">\(U\)</span> e o número de vagas abertas <span class="arithmatex">\(V\)</span>:</p>
+<div class="arithmatex">\[
+m = m(U, V), \qquad m_U &gt; 0, \ m_V &gt; 0, \qquad m \text{ CRS} \tag{17.16}
+\]</div>
+<p>A hipótese de retornos constantes de escala (CRS) é empiricamente robusta e extremamente conveniente: ela implica que a taxa na qual um desempregado encontra emprego e a taxa na qual uma vaga é preenchida dependem apenas da <strong>tensão do mercado</strong> <span class="arithmatex">\(\theta \equiv V/U\)</span>:</p>
+<div class="arithmatex">\[
+\text{Taxa de encontro do trabalhador:} \quad f(\theta) = \frac{m(U, V)}{U} = m\left(1, \frac{V}{U}\right) = m(1, \theta)
+\]</div>
+<div class="arithmatex">\[
+\text{Taxa de preenchimento da vaga:} \quad q(\theta) = \frac{m(U, V)}{V} = m\left(\frac{U}{V}, 1\right) = m(1/\theta, 1)
+\]</div>
+<p>Quando <span class="arithmatex">\(\theta\)</span> é alto (muitas vagas por desempregado), trabalhadores encontram emprego rapidamente (<span class="arithmatex">\(f\)</span> alto) mas firmas demoram para preencher vagas (<span class="arithmatex">\(q\)</span> baixo). O oposto vale quando <span class="arithmatex">\(\theta\)</span> é baixo. A <strong>curva de Beveridge</strong> — a relação negativa empírica entre taxa de desemprego e taxa de vagas — é uma implicação direta.</p>
+<h4 id="a-determinacao-do-salario-barganha-de-nash">A determinação do salário: barganha de Nash<a class="headerlink" href="#a-determinacao-do-salario-barganha-de-nash" title="Permanent link">¶</a></h4>
+<p>Em um mercado com fricções, nem o trabalhador nem a firma são tomadores de preço. Cada par trabalhador-vaga gera um <strong>excedente</strong> <span class="arithmatex">\(S\)</span> (a diferença entre o valor da produção conjunta e os valores de continuar buscando). Esse excedente é dividido por <strong>barganha de Nash</strong>:</p>
+<div class="arithmatex">\[
+w^* = \arg\max_w \; (W - U_0)^\beta \cdot (J - V_0)^{1-\beta} \tag{17.17}
+\]</div>
+<p>onde <span class="arithmatex">\(W\)</span> é o valor para o trabalhador de estar empregado, <span class="arithmatex">\(U_0\)</span> é o valor de continuar desempregado, <span class="arithmatex">\(J\)</span> é o valor para a firma de ter a vaga preenchida, <span class="arithmatex">\(V_0\)</span> é o valor de manter a vaga aberta, e <span class="arithmatex">\(\beta\)</span> é o poder de barganha do trabalhador.</p>
+<p>A solução é:</p>
+<div class="arithmatex">\[
+w^* = (1 - \beta) \cdot z + \beta \cdot (p + c\theta) \tag{17.18}
+\]</div>
+<p>onde <span class="arithmatex">\(z\)</span> é o valor do desemprego (seguro-desemprego + valor do lazer), <span class="arithmatex">\(p\)</span> é a produtividade e <span class="arithmatex">\(c\)</span> é o custo de manter uma vaga aberta. O salário é uma média ponderada entre o "outside option" do trabalhador (<span class="arithmatex">\(z\)</span>) e a produtividade ajustada (<span class="arithmatex">\(p + c\theta\)</span>). Quanto mais apertado o mercado (<span class="arithmatex">\(\theta\)</span> alto), maior o salário — porque o trabalhador tem mais opções lá fora.</p>
+<h4 id="equilibrio-de-estado-estacionario">Equilíbrio de estado estacionário<a class="headerlink" href="#equilibrio-de-estado-estacionario" title="Permanent link">¶</a></h4>
+<p>No estado estacionário, o fluxo de trabalhadores que encontram emprego (<span class="arithmatex">\(f(\theta) \cdot U\)</span>) iguala o fluxo de separações (<span class="arithmatex">\(s \cdot (N - U)\)</span>, onde <span class="arithmatex">\(s\)</span> é a taxa exógena de destruição de empregos):</p>
+<div class="arithmatex">\[
+u^* = \frac{s}{s + f(\theta^*)} \tag{17.19}
+\]</div>
+<p>O desemprego de equilíbrio é <em>positivo</em> mesmo quando o mercado funciona "bem" — ele reflete o tempo necessário para que trabalhadores e firmas se encontrem. Esse é o <strong>desemprego friccional</strong>, irredutível enquanto houver heterogeneidade e informação imperfeita.</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> O modelo DMP explica por que existem, simultaneamente, 8 milhões de desempregados e centenas de milhares de vagas abertas no Brasil — o mercado de trabalho não é uma feira onde tudo se resolve na hora, mas um Tinder profissional onde o match leva tempo.</p>
+<p><strong>Pense assim:</strong> Imagine que São Paulo tem 500.000 vagas abertas e 1 milhão de desempregados. Se todos soubessem instantaneamente de todas as vagas, e todas as vagas fossem perfeitamente compatíveis com todos os trabalhadores, o desemprego cairia a 500.000 amanhã. Mas o programador desempregado não sabe que a startup em Pinheiros precisa dele, e a startup não sabe que ele existe. Ambos estão "buscando" — e essa busca é custosa, demorada e incerta. O modelo DMP formaliza exatamente esse processo.</p>
+<p><strong>Por que isso importa:</strong> O modelo DMP mudou a forma como pensamos sobre política de emprego. Em vez de apenas "reduzir o salário" (receita do modelo competitivo), a política ótima envolve <strong>reduzir fricções</strong>: sistemas de intermediação de mão de obra (como o SINE no Brasil), plataformas digitais de emprego (LinkedIn, Catho, 99jobs), treinamento vocacional e seguro-desemprego bem desenhado (que não destrua os incentivos de busca).</p>
+</div>
+<div class="admonition box-mundo">
+<p class="admonition-title">Box Mundo 17.4 — Nobel 2010: Diamond, Mortensen e Pissarides</p>
+<p>O Prêmio Nobel de 2010 foi concedido a Peter Diamond (MIT), Dale Mortensen (Northwestern) e Christopher Pissarides (LSE) "por suas análises de mercados com fricções de busca". O modelo DMP — como ficou conhecido — é o arcabouço padrão para análise do desemprego na macroeconomia moderna.</p>
+<p><strong>A contribuição de cada um:</strong></p>
+<ul>
+<li><strong>Diamond</strong> (1982): mostrou que mesmo em mercados descentralizados, a busca gera externalidades — quando mais trabalhadores buscam, é mais fácil para firmas encontrarem candidatos (externalidade positiva de "mercado grosso"). Mas cada trabalhador adicional também "rouba" vagas dos outros (externalidade negativa de congestionamento). O equilíbrio descentralizado pode ter <em>excesso</em> ou <em>deficiência</em> de busca.</li>
+<li><strong>Mortensen</strong> (1982): formalizou a decisão de busca do trabalhador (quanto esforço dedicar, quando aceitar uma oferta) e introduziu o salário de reserva dinâmico — o trabalhador aceita uma oferta se e somente se o salário oferecido excede o valor de continuar buscando.</li>
+<li><strong>Pissarides</strong> (1985, 2000): completou o modelo com a decisão das firmas de abrir vagas e derivou a curva de Beveridge como equilíbrio geral do modelo. Seu livro <em>Equilibrium Unemployment Theory</em> (MIT Press, 2000) é a referência canônica.</li>
+</ul>
+<p><strong>Aplicações modernas:</strong> O modelo DMP tem sido estendido para analisar o impacto de salário mínimo em mercados com fricções (Flinn, 2006), a eficácia do seguro-desemprego (Chetty, 2008), o design de políticas ativas de emprego, e — relevante para a seção seguinte — o funcionamento das plataformas digitais de trabalho como mecanismos de redução de fricções de busca.</p>
+</div>
+<hr>
+<h3 id="1710b">17.10 A Gig Economy e o Novo Mercado de Trabalho<a class="headerlink" href="#1710b" title="Permanent link">¶</a></h3>
+<p>O entregador que pedala sob chuva levando seu açaí pelo iFood não tem chefe, não tem horário fixo, não tem férias — e, segundo a plataforma, não tem emprego. Ele é um "parceiro", um "empreendedor", um "microempreendedor individual". Segundo a CLT e (cada vez mais) os tribunais trabalhistas, ele é um trabalhador subordinado disfarçado. Essa tensão entre a narrativa da "liberdade" e a realidade do controle algorítmico é o grande quebra-cabeça do mercado de trabalho do século XXI — e a microeconomia tem muito a dizer sobre ele.</p>
+<h4 id="a-escala-do-fenomeno-no-brasil">A escala do fenômeno no Brasil<a class="headerlink" href="#a-escala-do-fenomeno-no-brasil" title="Permanent link">¶</a></h4>
+<p>Os dados da PNAD Contínua (IBGE, 2023–2024) revelam a magnitude do trabalho por plataformas digitais no Brasil:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Indicador</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Trabalhadores por aplicativo (transporte + entregas)</td>
+<td style="text-align: left;">~1,7 milhão (2023)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Motoristas de aplicativo (Uber, 99, etc.)</td>
+<td style="text-align: left;">~780 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Entregadores de aplicativo (iFood, Rappi, etc.)</td>
+<td style="text-align: left;">~590 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Outros serviços por plataforma (limpeza, reparos, freelancers)</td>
+<td style="text-align: left;">~330 mil</td>
+</tr>
+<tr>
+<td style="text-align: left;">Renda média mensal (motoristas)</td>
+<td style="text-align: left;">~R$ 2.900 (bruta, antes de custos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Renda média mensal (entregadores)</td>
+<td style="text-align: left;">~R$ 1.600 (bruta, antes de custos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jornada média semanal</td>
+<td style="text-align: left;">46 horas (motoristas), 38 horas (entregadores)</td>
+</tr>
+<tr>
+<td style="text-align: left;">% sem contribuição previdenciária</td>
+<td style="text-align: left;">~65%</td>
+</tr>
+</tbody>
+</table>
+<p><em>Fontes: PNAD Contínua/IBGE, módulo suplementar TIC (2023); IPEA, Nota Técnica (2024).</em></p>
+<p>Esses números subestimam a realidade: muitos trabalhadores por plataforma não se declaram como tal nas pesquisas, e a fronteira entre "trabalho por aplicativo" e "bico informal com intermediação digital" é borrada.</p>
+<h4 id="a-microeconomia-da-gig-economy">A microeconomia da gig economy<a class="headerlink" href="#a-microeconomia-da-gig-economy" title="Permanent link">¶</a></h4>
+<p>A economia das plataformas de trabalho pode ser analisada com as ferramentas que já desenvolvemos neste capítulo — e a conclusão é que a gig economy combina elementos de vários modelos:</p>
+<p><strong>1. Monopsônio algorítmico.</strong> A plataforma não é um "mercado aberto" onde motoristas e passageiros negociam livremente. O algoritmo fixa o preço da corrida, a taxa da plataforma (tipicamente 20–25%), o matching entre motorista e passageiro, e até o <em>surge pricing</em> (preço dinâmico). O trabalhador aceita ou rejeita a corrida, mas não negocia termos. Isso configura poder de monopsônio — não pela ausência de alternativas (há Uber, 99, iFood, Rappi), mas pelo controle unilateral dos termos de troca.</p>
+<p>Dua e Janakiraman (2024) e Caldwell e Oehlsen (2022) documentam que plataformas exploram a <strong>assimetria de informação sobre demanda futura</strong>: o motorista não sabe se, ao rejeitar uma corrida de baixo valor, aparecerá uma melhor. Essa incerteza reduz o salário de reserva efetivo — exatamente o mecanismo de monopsônio da Seção 17.7, operando via informação imperfeita em vez de concentração de mercado.</p>
+<p><strong>2. Oferta de trabalho e a ilusão da flexibilidade.</strong> O argumento pró-plataforma é que o trabalhador "escolhe seu horário" — a margem intensiva (Seção 17.2) é totalmente flexível. Mas a evidência empírica mostra que a flexibilidade é mais retórica do que real:</p>
+<ul>
+<li><strong>Incentivos gamificados</strong> (bônus por completar X corridas, "missões" do iFood) funcionam como mecanismos de comprometimento que induzem jornadas longas — um nudge (Capítulo 12) a serviço do empregador.</li>
+<li><strong>Desativação algorítmica</strong>: rejeitar corridas demais ou ter avaliação baixa leva à redução de chamados ou desativação — equivalente funcional da demissão, sem o ônus trabalhista.</li>
+<li><strong>Custos fixos do trabalhador</strong> (aluguel/financiamento do veículo, celular, gasolina) criam um piso de horas necessárias para cobrir custos — transformando o "autônomo flexível" em alguém preso a jornadas de 10–12 horas.</li>
+</ul>
+<p><strong>3. Classificação trabalhista como problema de contratos (Capítulo 19).</strong> O debate jurídico sobre se o motorista de Uber é empregado ou autônomo é, em essência, um problema de desenho de contratos incompletos à la Hart (Capítulo 19). A questão central é: quem detém os <strong>direitos residuais de controle</strong>?</p>
+<ul>
+<li>Se a plataforma define preço, rota, padrão de atendimento e pode desativar o trabalhador → a plataforma detém os direitos residuais → relação de emprego.</li>
+<li>Se o trabalhador genuinamente define seus termos → autônomo.</li>
+</ul>
+<p>No Brasil, o TST e os TRTs têm decidido de forma heterogênea, com tendência crescente ao reconhecimento de vínculo empregatício em casos onde o controle algorítmico é intenso. Em 2024, o STF reconheceu repercussão geral do tema (Tema 1291), sinalizando que definirá a questão nacionalmente.</p>
+<div class="admonition idea">
+<p class="admonition-title">Intuição Econômica</p>
+<p><strong>Em uma frase:</strong> A gig economy é um mercado de trabalho onde o monopsônio não vem do "único empregador na cidade", mas do controle algorítmico sobre preços, matching e avaliação — um monopsônio digital disfarçado de marketplace.</p>
+<p><strong>Pense assim:</strong> Imagine que você é motorista de Uber. Você "escolhe" trabalhar quando quer. Mas o app decide quanto você ganha por corrida, qual corrida você recebe, e se você continua ativo amanhã. Se um patrão tradicional fizesse tudo isso, ninguém duvidaria de que é uma relação de emprego. O algoritmo é o novo capataz — só que usa estrelinhas em vez de gritos.</p>
+<p><strong>Por que isso importa:</strong> No Brasil, ~1,7 milhão de trabalhadores estão nessa zona cinzenta. A regulação que será adotada — classificação como empregado, autônomo, ou uma terceira categoria intermediária — determinará se esses trabalhadores terão acesso a previdência, seguro-desemprego e limites de jornada, ou se permanecerão num limbo institucional que concentra riscos no elo mais fraco da cadeia.</p>
+</div>
+<div class="admonition box-brasil">
+<p class="admonition-title">Box Brasil 17.4 — O Projeto de Lei dos Motoristas e a regulação brasileira</p>
+<p>Em 2024, o governo federal enviou ao Congresso um Projeto de Lei (PL 12/2024) propondo uma regulação intermediária para motoristas de aplicativo: nem empregados plenos (CLT), nem autônomos puros. Os pontos centrais incluem:</p>
+<ul>
+<li><strong>Contribuição previdenciária obrigatória</strong> com alíquota reduzida (7,5% do trabalhador + 20% da plataforma sobre remuneração);</li>
+<li><strong>Remuneração mínima por hora trabalhada</strong> de R$ 32,10/hora (incluindo custos do veículo);</li>
+<li><strong>Limitação de jornada</strong> a 12 horas diárias;</li>
+<li><strong>Manutenção do status de autônomo</strong> — sem vínculo CLT, sem férias, sem 13º.</li>
+</ul>
+<p>O PL ilustra o trade-off clássico da regulação trabalhista:</p>
+<ul>
+<li><strong>Pró-regulação:</strong> reduz a precarização, garante piso de renda, inclui na previdência → reduz externalidades negativas sobre o sistema de saúde e assistência social.</li>
+<li><strong>Contra-regulação:</strong> aumenta o custo da plataforma, que pode repassar para o consumidor (preço da corrida) ou reduzir a demanda por motoristas → possível redução do emprego (o argumento padrão contra salário mínimo, Seção 17.8).</li>
+</ul>
+<p>O debate é empiricamente aberto — e a resposta depende da elasticidade da demanda por corridas e da elasticidade da oferta de motoristas, exatamente as ferramentas deste capítulo.</p>
+<p><em>Fontes: Câmara dos Deputados, PL 12/2024; IPEA (2024), "Regulação do trabalho por plataformas: evidências e propostas".</em></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../equilibrio-diferenciais/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 17.4–17.6 Equilíbrio e Diferenciais">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                17.4–17.6 Equilíbrio e Diferenciais
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../fatores-terra/" class="md-footer__link md-footer__link--next" aria-label="Next: 17.11–17.12 Fatores e Terra">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                17.11–17.12 Fatores e Terra
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:darciogm1@insper.edu.br" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://scholar.google.com/citations?user=ywp2nq0AAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener" title="Google Scholar" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M390.9 298.5s0 .1.1.1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64 1.7-3.6 3.6-7.2 5.6-10.7q6.6-11.4 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3 33.6 0 64.6 11.1 89.6 29.9 9.1 6.9 17.4 14.7 24.8 23.5 5.6 6.6 10.6 13.8 15 21.3 2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0l256 202.7-94.7 77.1z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0003-2223-6930" target="_blank" rel="noopener" title="ORCID" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0M7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947m-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/darciogm" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/darcio_martins" target="_blank" rel="noopener" title="Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../../javascripts/iframe-resize.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

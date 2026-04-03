@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Discriminação de Preços de 3º Grau</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Discriminacao de precos de 3o grau
+# Exercicio Resolvido 15.4
+# ============================================
+
+# --- Parametros ---
+a1 <- 120; b1 <- 2  # Mercado 1: p1 = a1 - b1*q1
+a2 <- 80;  b2 <- 1  # Mercado 2: p2 = a2 - b2*q2
+c <- 20              # CMg constante
+
+cat("====== DISCRIMINACAO DE 3o GRAU ======\n")
+cat("Mercado 1: p =", a1, "-", b1, "q  (demanda mais inelastica)\n")
+cat("Mercado 2: p =", a2, "-", b2, "q  (demanda mais elastica)\n")
+cat("CMg =", c, "\n\n")
+
+# --- Equilibrio com discriminacao ---
+q1 <- (a1 - c) / (2 * b1)
+p1 <- a1 - b1 * q1
+q2 <- (a2 - c) / (2 * b2)
+p2 <- a2 - b2 * q2
+
+eps1 <- (-1/b1) * (p1/q1)
+eps2 <- (-1/b2) * (p2/q2)
+L1 <- (p1 - c) / p1
+L2 <- (p2 - c) / p2
+
+lucro1 <- (p1 - c) * q1
+lucro2 <- (p2 - c) * q2
+lucro_total <- lucro1 + lucro2
+
+cat("--- Com discriminacao ---\n")
+cat(sprintf("Mercado 1: q = %-6.1f  p = %-6.1f  eps = %-6.3f  L = %-6.4f  Lucro = %-8.1f\n",
+    q1, p1, eps1, L1, lucro1))
+cat(sprintf("Mercado 2: q = %-6.1f  p = %-6.1f  eps = %-6.3f  L = %-6.4f  Lucro = %-8.1f\n",
+    q2, p2, eps2, L2, lucro2))
+cat("Lucro total =", lucro_total, "\n")
+cat("Razao de precos: p1/p2 =", round(p1/p2, 3), "\n\n")
+
+# Verificacao: razao de precos pela formula
+razao_teorica <- (1 - 1/abs(eps2)) / (1 - 1/abs(eps1))
+cat("Verificacao: (1-1/|eps2|)/(1-1/|eps1|) =", round(razao_teorica, 3), "\n\n")
+
+# --- Equilibrio sem discriminacao (preco unico) ---
+# Demanda agregada: Q = q1 + q2 = (a1-p)/(b1) + (a2-p)/(b2)
+# Para p < min(a1,a2) = 80: Q = (a1/b1 + a2/b2) - p*(1/b1 + 1/b2)
+# Inversa: p = [a1/b1 + a2/b2 - Q] / (1/b1 + 1/b2)
+A <- a1/b1 + a2/b2
+B <- 1/b1 + 1/b2
+# p = (A - Q)/B => RMg = (A - 2Q)/B
+# (A - 2Q)/B = c => Q_u = (A - c*B)/2
+Qu <- (A - c * B) / 2
+pu <- (A - Qu) / B
+lucro_u <- (pu - c) * Qu
+
+cat("--- Sem discriminacao (preco unico) ---\n")
+cat("Q =", round(Qu, 2), "  p =", round(pu, 2), "\n")
+cat("Lucro =", round(lucro_u, 1), "\n")
+cat("Ganho da discriminacao:", round(lucro_total - lucro_u, 1),
+    "(+", round((lucro_total/lucro_u - 1)*100, 1), "%)\n\n")
+
+cat("CONCLUSAO: O mercado com demanda MAIS INELASTICA paga mais.\n")
+cat("p1 =", p1, "> p2 =", p2, "porque |eps1| =", round(abs(eps1), 2),
+    "< |eps2| =", round(abs(eps2), 2), "\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Mercado 1
+q_seq1 <- seq(0, a1/b1, length = 200)
+plot(q_seq1, a1 - b1*q_seq1, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, a1 + 5), xlim = c(0, 65),
+     xlab = "q", ylab = "p",
+     main = "Mercado 1 (inelastico)")
+lines(q_seq1, a1 - 2*b1*q_seq1, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#dc3545", lwd = 2)
+rect(0, c, q1, p1, col = rgb(0.1, 0.53, 0.33, 0.15), border = "#198754", lty = 2)
+points(q1, p1, pch = 19, col = "#dc3545", cex = 2)
+text(q1 + 2, p1, paste0("(", q1, ", ", p1, ")"), col = "#dc3545", cex = 0.8, font = 2)
+text(q1/2, (p1+c)/2, paste0("pi = ", lucro1), col = "#198754", cex = 0.9, font = 2)
+
+# Mercado 2
+q_seq2 <- seq(0, a2/b2, length = 200)
+plot(q_seq2, a2 - b2*q_seq2, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, a1 + 5), xlim = c(0, 65),
+     xlab = "q", ylab = "p",
+     main = "Mercado 2 (elastico)")
+lines(q_seq2, a2 - 2*b2*q_seq2, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#dc3545", lwd = 2)
+rect(0, c, q2, p2, col = rgb(0.1, 0.53, 0.33, 0.15), border = "#198754", lty = 2)
+points(q2, p2, pch = 19, col = "#dc3545", cex = 2)
+text(q2 + 2, p2, paste0("(", q2, ", ", p2, ")"), col = "#dc3545", cex = 0.8, font = 2)
+text(q2/2, (p2+c)/2, paste0("pi = ", lucro2), col = "#198754", cex = 0.9, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

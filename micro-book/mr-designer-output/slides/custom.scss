@@ -1,0 +1,82 @@
+/*-- scss:defaults --*/
+$presentation-heading-color: #2c3e50;
+$body-color: #333;
+$link-color: #2980b9;
+$code-color: #e74c3c;
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+$presentation-font-size-root: 36px;
+$presentation-h1-font-size: 1.8em;
+$presentation-h2-font-size: 1.3em;
+
+/*-- scss:rules --*/
+
+.reveal .slide-number {
+  font-size: 0.6em;
+  color: #7f8c8d;
+}
+
+.reveal .footer {
+  font-size: 0.5em;
+  color: #95a5a6;
+}
+
+.reveal table {
+  font-size: 0.75em;
+}
+
+.reveal .callout {
+  font-size: 0.85em;
+}
+
+.reveal blockquote {
+  border-left: 4px solid #3498db;
+  padding-left: 1em;
+  font-style: italic;
+  color: #555;
+}
+
+.reveal .r-fit-text {
+  font-size: 1.1em;
+}
+
+/* Peer Instruction slides */
+.reveal section[data-background-color="#2c3e50"] h2 {
+  color: #ecf0f1;
+}
+
+.reveal section[data-background-color="#2c3e50"] {
+  color: #ecf0f1;
+}
+
+/* Mermaid diagrams */
+.reveal .mermaid {
+  font-size: 0.7em;
+}
+
+/* JSXGraph inline graphs */
+.reveal .jxgbox {
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.reveal .graph-slider-row {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.75em;
+}
+
+.reveal .graph-slider-row input[type="range"] {
+  width: 300px;
+  accent-color: #C8102E;
+  vertical-align: middle;
+}
+
+.reveal .graph-slider-row label {
+  margin: 0 12px;
+}
+
+.reveal section .graph-container-inline {
+  overflow: visible;
+  max-height: 500px;
+}
