@@ -6,9 +6,9 @@ paper: sme-public
 
 <div class="hero-section" markdown>
 
-# SMEs and Public Procurement
+# The Price of Protecting Small Firms
 
-<p class="subtitle">The Costs of Restricting Tenders</p>
+<p class="subtitle">Evidence from Public Procurement</p>
 <p class="authors">Darcio Genicolo-Martins</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
