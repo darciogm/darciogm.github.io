@@ -42,6 +42,8 @@ triage, investigate) that allocates investigative resources toward
 the procurement environments where the association is strongest and
 oversight weakest.
 
+[:material-file-pdf-box: Download manuscript (PDF)](assets/paper_screening_v4_final.pdf){ .md-button .md-button--primary }
+
 **JEL Classification:**
 <span class="badge">D44</span>
 <span class="badge">D73</span>
