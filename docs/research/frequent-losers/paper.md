@@ -4,7 +4,7 @@ paper: frequent-losers
 
 # Manuscript
 
-This page summarizes the contribution, institutional setting, conceptual framework, and empirical strategy of the paper.
+How we built the screen, what it assumes, and why it works where existing tools cannot.
 
 ---
 
@@ -18,7 +18,7 @@ The paper makes three contributions:
 
 3. **Institutional tie-in.** The price association concentrates where cover bidding is a strategic choice (7.6% voluntary premium) and where oversight is weakest (12.5x gradient across purchasing-unit size quartiles), tying the screen's empirical performance to the institutional features that make cover bidding profitable.
 
-**Non-claims.** The conditional price association is not a causal estimate of the effect of collusion on prices; the FL classification flags suspicious environments, not guilty firms; and the diagnostics, while consistent with coordinated cover bidding, fall short of sanction-grade evidence. What the paper contributes is the screen itself---how to build it, how it performs against external enforcement data, and why the diagnostic pattern supports its use as a first-stage investigative tool.
+**What we do not claim.** The price association is not a causal estimate of collusion's effect on prices. The FL classification flags suspicious environments, not guilty firms. The diagnostics are consistent with coordinated cover bidding but do not prove it. What the paper contributes is the screen itself---how to build it, how it performs against external enforcement data, and why the diagnostic pattern supports its use as a first-stage investigative tool.
 
 ---
 

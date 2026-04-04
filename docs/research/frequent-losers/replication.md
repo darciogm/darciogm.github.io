@@ -4,13 +4,13 @@ paper: frequent-losers
 
 # Replication
 
-This page describes how to replicate the results presented in the paper.
+Everything is reproducible---from raw data to final PDF. Start here.
 
 ---
 
 ## Replication Package
 
-The full replication package includes all code, processed datasets, and manuscript source files needed to reproduce every table and figure in the paper.
+The replication package contains all code, processed datasets, and manuscript sources needed to reproduce every table and figure from scratch.
 
 !!! info "Repository Structure"
     The replication materials are organized under `papers_finais/paper1_screening/`. The `code/` directory contains the analysis pipeline, `manuscript/v4/` the LaTeX source, and `output/` the generated tables and figures.

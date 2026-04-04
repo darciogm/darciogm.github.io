@@ -4,7 +4,7 @@ paper: frequent-losers
 
 # Extensions
 
-This page presents additional analyses: structural diagnostic, supporting diagnostics, bid rotation and inflation, strategic adaptation, and the Lei 14.133/2021 discussion.
+Deeper dives: how cover bids move, where cartels might adapt, and what Brazil's new procurement law predicts.
 
 ---
 

@@ -4,7 +4,7 @@ paper: frequent-losers
 
 # Robustness
 
-This page summarizes the five groups of robustness checks reported in the paper.
+We stress-test the screen from every angle---definition, data, assumptions, and alternative interpretations.
 
 ---
 
