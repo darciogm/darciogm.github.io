@@ -8,7 +8,7 @@ paper: bitter-pills
 
 **Authors:** Darcio Genicolo-Martins and Paulo Furquim de Azevedo
 **Affiliation:** Insper Institute of Education and Research, Sao Paulo, Brazil
-**Version:** February 2026
+**Version:** April 2026 (v6, Journal of Public Economics short paper)
 
 !!! abstract "Download"
     The latest version of the paper is available as a PDF in the manuscript directory of the replication package.
@@ -23,7 +23,14 @@ This paper makes three main contributions to the literature on public procuremen
 
 2. **Identifying the "under the gun" mechanism.** By exploiting the institutional distinction between litigated and administrative urgent purchases---both of which bypass standard procurement timelines, but only the former expose officials to judicial sanctions---we isolate the causal effect of enforcement pressure on procurement costs. This "under the gun" effect accounts for the bulk of the observed price premium.
 
-3. **Informing the design of judicial remedies.** The findings suggest that courts should consider the procurement-side costs of their mandates and that institutional reforms reducing the sanction channel---such as centralized procurement for litigated items or pre-negotiated supply agreements---could substantially lower the fiscal burden of health litigation.
+3. **Informing the design of judicial remedies.** The findings suggest that courts should consider the procurement-side costs of their mandates and that institutional reforms reducing the sanction channel---such as expanding the administrative request mechanism to other states and removing the court-order signal from tender notices---could substantially lower the fiscal burden of health litigation.
+
+### New in v6
+
+Two additional empirical exercises strengthen the causal interpretation:
+
+- **Placebo test (items never litigated):** Running the preferred specification on items with zero litigated purchases yields a coefficient of $-0.020$ (SE = 0.032, n.s.), confirming the premium is absent where judicial pressure plays no role.
+- **Supplier fixed effects (2,202 firms):** Adding firm FE attenuates the urgency coefficient by 52% (from 0.051 to 0.025), decomposing the premium into roughly equal demand-side and supply-side components. With both firm FE and quantity controls, the residual falls to 0.011 (n.s.).
 
 ---
 

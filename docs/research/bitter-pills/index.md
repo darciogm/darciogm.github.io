@@ -54,6 +54,9 @@ Public health procurement is shaped not only by administrative decisions but als
 !!! info "Officials accept worse terms to comply"
     Tender success rates are **2.1 percentage points higher** for litigated purchases, indicating that procurement officials accept less favorable bids to meet court deadlines.
 
+!!! example "Half supply-side, half demand-side"
+    Supplier fixed effects (2,202 firms) attenuate the urgency coefficient by **52%** (from 0.051 to 0.025), revealing that roughly half the premium reflects firms charging more when the purchase is court-mandated, and half reflects officials selecting into worse matches under time pressure. A placebo test on items never subject to litigation confirms the premium is **absent where judicial pressure plays no role** (coefficient $-0.020$, n.s.).
+
 ---
 
 ## Quick Links

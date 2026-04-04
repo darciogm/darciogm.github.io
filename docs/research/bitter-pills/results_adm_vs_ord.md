@@ -41,3 +41,6 @@ This analysis compares **administrative** purchases (urgency without judicial sa
 
 !!! success "Key Takeaway"
     The gradient of effects across comparison groups—largest for litigated vs ordinary, moderate for urgent (pooled), and **reversed** for admin vs ordinary—confirms that **judicial sanctions, not urgency per se**, drive the procurement cost premium.
+
+!!! warning "Quantity channel in the UTG effect"
+    Controlling for log quantity in the UTG specification reduces the coefficient from $-0.262$ to $-0.117$ (statistically insignificant). Judicial sanctions distort the **entire procurement environment**—quantities, competition, and prices—generating a total cost premium that the administrative comparison isolates cleanly. The attenuation confirms that a substantial share operates through the quantity channel: sanctions prevent demand aggregation, yielding smaller orders and forgoing bulk discounts.

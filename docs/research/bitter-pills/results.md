@@ -161,10 +161,41 @@ The paper documents significant heterogeneous effects across several dimensions:
 
 ---
 
+## Falsification: Items Never Litigated
+
+If the urgency premium reflects the causal effect of judicial pressure rather than unobserved item characteristics, it should be absent for items that are never subject to court orders. We test this by running the preferred specification on items with zero litigated purchases across the entire 2009--2019 period, restricting to those with both ordinary and administrative purchases for within-item comparability.
+
+| Outcome | Coefficient | Std. Error | Significant? |
+|:--------|:-----------:|:----------:|:------------:|
+| Log Negotiated Price | -0.020 | (0.032) | No |
+| Log Reference Price | -0.031 | (0.045) | No |
+
+!!! success "Falsification passes"
+    Both coefficients are economically small and statistically insignificant. The urgency premium exists **only** for items that are targets of litigation, ruling out the possibility that the main estimates reflect a generic correlation between urgency and prices.
+
+---
+
+## Demand vs Supply Side: Supplier Fixed Effects
+
+The urgency premium could reflect demand-side pressure (officials accepting worse terms) or supply-side exploitation (firms charging more because they know the government is desperate). To distinguish these channels, we add supplier fixed effects (2,202 unique winning firms) to the preferred specification.
+
+| Specification | Coefficient | Attenuation |
+|:--------------|:-----------:|:-----------:|
+| Baseline (Item + Year + PBU FE) | 0.051 | -- |
+| + Supplier FE | 0.025 | 52% |
+| + Supplier FE + Log Quantity | 0.011 (n.s.) | 78% |
+
+!!! example "Decomposition"
+    Adding firm FE attenuates the urgency coefficient by **52%**, from 0.051 to 0.025. This indicates that roughly half the price premium reflects the same firms charging higher prices in urgent tenders (supply side), and half reflects officials selecting into worse matches under time pressure (demand side). With both firm FE and quantity controls, the residual coefficient falls to 0.011 (statistically insignificant), suggesting that the urgency premium operates through two concrete channels: suppliers exploiting judicial pressure, and the loss of bulk discounts from demand fragmentation.
+
+---
+
 ## Summary of Channels
 
-The results can be decomposed into two main channels through which judicial mandates increase procurement costs:
+The results can be decomposed into three main channels through which judicial mandates increase procurement costs:
 
 1. **Competition channel:** Litigated purchases attract fewer bidders (-5.5%), reducing competitive pressure and leading to higher prices. This channel accounts for the difference between the "total" and "direct" price effects.
 
 2. **Sanction channel ("under the gun"):** Even controlling for reduced competition, the threat of judicial sanctions induces procurement officials to accept higher prices. This is the dominant channel, accounting for the 23--30% premium identified in the urgent-subsample analysis.
+
+3. **Supply-side exploitation:** Supplier fixed effects reveal that firms charge higher prices when they know the purchase is court-mandated, accounting for roughly half the urgency premium. The remaining half reflects demand-side distortions (officials accepting worse matches under pressure).

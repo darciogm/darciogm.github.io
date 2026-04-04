@@ -109,6 +109,19 @@ This single command executes all analysis scripts in sequence:
 9. `08_pub_tables.R` -- Publication-ready LaTeX tables
 10. `09_pub_figures.R` -- Publication-ready PDF figures
 
+### v6 Extensions (Journal of Public Economics)
+
+The v6 revision adds one new script with two exercises:
+
+| Script | Purpose | Outputs |
+|--------|---------|---------|
+| `20_falsification_and_supplier_fe.R` | Placebo test (items never litigated) + supplier FE decomposition | `output/tables/tab_placebo.tex`, `output/tables/tab_supplier_fe.tex` |
+
+```bash
+# Run after the main v4 pipeline
+Rscript v6-jpub-short/analysis/20_falsification_and_supplier_fe.R
+```
+
 ### Running Individual Scripts
 
 ```bash
@@ -152,12 +165,12 @@ bash v3/analysis/run_all.sh
 ### Manuscript
 
 ```bash
-# Compile the manuscript
-cd v5/manuscript/paper
-pdflatex -interaction=nonstopmode main.tex
-bibtex main
-pdflatex main.tex
-pdflatex main.tex
+# Compile the manuscript (v6 — Journal of Public Economics short paper)
+cd v6-jpub-short/manuscript/paper
+pdflatex -interaction=nonstopmode Bitter-Pills_v6.tex
+bibtex Bitter-Pills_v6
+pdflatex Bitter-Pills_v6.tex
+pdflatex Bitter-Pills_v6.tex
 ```
 
 ---
