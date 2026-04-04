@@ -6923,6 +6923,27 @@ Rscript<span class="w"> </span>v4/run_all.R
 <li><code>08_pub_tables.R</code> -- Publication-ready LaTeX tables</li>
 <li><code>09_pub_figures.R</code> -- Publication-ready PDF figures</li>
 </ol>
+<h3 id="v6-extensions-journal-of-public-economics">v6 Extensions (Journal of Public Economics)<a class="headerlink" href="#v6-extensions-journal-of-public-economics" title="Permanent link">¶</a></h3>
+<p>The v6 revision adds one new script with two exercises:</p>
+<table>
+<thead>
+<tr>
+<th>Script</th>
+<th>Purpose</th>
+<th>Outputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>20_falsification_and_supplier_fe.R</code></td>
+<td>Placebo test (items never litigated) + supplier FE decomposition</td>
+<td><code>output/tables/tab_placebo.tex</code>, <code>output/tables/tab_supplier_fe.tex</code></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><span class="c1"># Run after the main v4 pipeline</span>
+Rscript<span class="w"> </span>v6-jpub-short/analysis/20_falsification_and_supplier_fe.R
+</code></pre></div>
 <h3 id="running-individual-scripts">Running Individual Scripts<a class="headerlink" href="#running-individual-scripts" title="Permanent link">¶</a></h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># Must run data preparation first</span>
 Rscript<span class="w"> </span>v4/analysis/00_prepare_data.R
@@ -6997,12 +7018,12 @@ bash<span class="w"> </span>v3/analysis/run_all.sh
 </tbody>
 </table>
 <h3 id="manuscript_1">Manuscript<a class="headerlink" href="#manuscript_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Compile the manuscript</span>
-<span class="nb">cd</span><span class="w"> </span>v5/manuscript/paper
-pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>main.tex
-bibtex<span class="w"> </span>main
-pdflatex<span class="w"> </span>main.tex
-pdflatex<span class="w"> </span>main.tex
+<div class="highlight"><pre><span></span><code><span class="c1"># Compile the manuscript (v6 — Journal of Public Economics short paper)</span>
+<span class="nb">cd</span><span class="w"> </span>v6-jpub-short/manuscript/paper
+pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>Bitter-Pills_v6.tex
+bibtex<span class="w"> </span>Bitter-Pills_v6
+pdflatex<span class="w"> </span>Bitter-Pills_v6.tex
+pdflatex<span class="w"> </span>Bitter-Pills_v6.tex
 </code></pre></div>
 <hr>
 <h2 id="computational-environment">Computational Environment<a class="headerlink" href="#computational-environment" title="Permanent link">¶</a></h2>
