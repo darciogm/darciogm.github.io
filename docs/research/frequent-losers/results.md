@@ -1,7 +1,3 @@
----
-paper: frequent-losers
----
-
 # Main Results
 
 This page presents the core empirical findings: classification diagnostics, price association, detection performance, network-split heterogeneity, Bajari--Ye tests, structural estimation, and supporting mechanism evidence.
@@ -76,10 +72,14 @@ This is the paper's primary validation exercise.
 
 ### Horse-Race Regression
 
-The FL screen and an Imhof-style CV flag capture nearly orthogonal information (correlation **0.06**). When both are included as regressors:
+The FL screen and an Imhof-style CV flag capture largely non-overlapping information (correlation **0.06**; the theoretical maximum for two binary indicators with prevalences 4.8% and 50% is approximately 0.30, so the observed correlation is about one-fifth of this ceiling). When both are included as regressors:
 
 - FL coefficient **rises** from 0.064 to **0.084** ($p < 0.01$)---a suppression effect predicted by the framework (coordinated cover bidding produces low dispersion while maintaining FL participation)
 - Imhof CV flag enters at 0.021 ($p < 0.01$)
+
+### Why Combination Degrades
+
+Naively combining the FL and Imhof scores into a single index degrades detection sharply (AUC = **0.61** vs. 0.94 for FL alone). The degradation reflects the framework's central insight: under coordinated cover bidding, FL firms enter tenders where they *raise* within-tender dispersion (coefficient 0.47--0.55 on log bid SD), causing Imhof-style features to classify those environments as *less* suspicious. The two screens point in opposite directions for the same firms---precisely the reason the paper proposes sequential deployment (screen → triage → investigate) rather than score combination.
 
 ### CADE External Validation
 
@@ -135,7 +135,7 @@ Under tender FE, both products drop substantially:
 | FL pairwise product | 5.16 | **0.38** |
 | Non-FL pairwise product | 2.21 | 0.86 |
 
-The FL product falls **below** non-FL---a reversal predicted by Regime 2. Under the coordinated regime, cover bids cluster near $b^* + \epsilon$; removing the tender mean strips out the shared focal-point component.
+The FL product falls **below** non-FL---a reversal predicted by Regime 2. Under the coordinated regime, cover bids cluster near $b^* + \epsilon$; removing the tender mean strips out the shared focal-point component. The reversal is also consistent, however, with a simpler account in which FL--non-FL bid differences are entirely between-tender rather than within-tender; the tender-FE result is therefore suggestive but not definitive.
 
 ---
 

@@ -1,7 +1,3 @@
----
-paper: frequent-losers
----
-
 # Manuscript
 
 This page summarizes the contribution, institutional setting, conceptual framework, and empirical strategy of the paper.
@@ -53,7 +49,7 @@ Brazil's new procurement law eliminates the convite modality and with it the min
 | Dimension | Value |
 |-----------|-------|
 | **Source** | BEC (Sao Paulo, 2009--2019) |
-| **Tender-items** | 4.5 million (raw); 1,654,401 (analysis sample) |
+| **Tender-items** | 4.5 million (raw); 1,654,447 (analysis sample; 1,654,401 for price regressions) |
 | **Bids** | 40 million (bid-level) |
 | **Firms** | 41,000 total; 16,843 always-losers |
 | **PBUs** | 1,308 public buying units |

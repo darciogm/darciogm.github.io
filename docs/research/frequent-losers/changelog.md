@@ -1,12 +1,25 @@
----
-paper: frequent-losers
----
-
 # Changelog
 
 ---
 
-## v5 --- April 2026 (Current)
+## v5.1 --- April 2026 (Current)
+
+**Referee-report edits (mr-frequent review):**
+
+- Fixed combined AUC (0.502 → 0.608): included omitted z_skew component in combined score
+- Added "Why combination degrades" paragraph explaining AUC = 0.61 as empirical signature of Regime 2
+- "nearly orthogonal" → "largely non-overlapping" with theoretical ceiling note (corr/max ≈ 1/5)
+- "lower bound" → "conservative estimate" for cross-fit
+- Sample size clarified: body reports 1,654,447 (full sample) with footnote explaining 1,654,401 (prices) and 1,653,156 (non-FL firms)
+- AUC interpretation: added sentences clarifying AUC reflects high-participation proximity, not conditional discrimination
+- Measurement error: "Classical binary ME" → explicit assumption that FP > FN justifies attenuation direction
+- Bajari--Ye tender FE: acknowledged ambiguity ("suggestive but not definitive")
+- Fixed pre-existing LaTeX bug in `tab_fl_crossfit.tex` (unescaped underscores)
+- Updated MkDocs site to reflect all changes
+
+---
+
+## v5 --- April 2026
 
 **JLE repositioning and institutional framing:**
 
