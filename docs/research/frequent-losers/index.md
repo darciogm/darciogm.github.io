@@ -1,6 +1,7 @@
 ---
 hide:
   - navigation
+paper: frequent-losers
 ---
 
 <div class="hero-section" markdown>
