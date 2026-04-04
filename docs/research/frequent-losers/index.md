@@ -24,12 +24,14 @@ paper: frequent-losers
 Minimum-bidder rules in public procurement give cartels a reason to
 deploy cover bidders---firms that show up repeatedly with no
 intention of winning. We exploit this behavioral footprint to build
-a participation-based screen: *frequent losers* (FL), firms
+a participation-based screen: frequent losers (FL), firms
 that never win yet bid abnormally often. The screen requires only
 win/loss records, making it deployable in settings where bid
 microdata are unavailable. In Sao Paulo's electronic procurement
 (4.5 million tender-items, 2009--2019), it achieves
-AUC $= 0.94$ against competition-authority convictions, complements
+AUC = 0.94 against competition-authority co-participation
+(0.54 within participation-count bands, confirming that volume
+contributes substantially to the unconditional figure), complements
 bid-level tools (correlation 0.06), and flags environments with
 3.6--7.7% higher conditional prices. The price association is
 concentrated in competitive markets and where cover bidding is
