@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Screening for Bid Rigging with Frequent Losers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a1a;
+    color: #e0e0e0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #video-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scene {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+    pointer-events: none;
+    padding: 60px;
+  }
+
+  .scene.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Background particles */
+  #particles {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .scene > * { position: relative; z-index: 1; }
+
+  /* ---- SCENE STYLES ---- */
+
+  /* Title scene */
+  .title-main {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #60a5fa, #a78bfa, #f472b6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .title-main.animate {
+    animation: fadeUp 1s ease forwards;
+  }
+
+  .title-authors {
+    font-size: clamp(0.9rem, 1.5vw, 1.3rem);
+    font-weight: 300;
+    color: #94a3b8;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .title-authors.animate {
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+
+  .title-institution {
+    font-size: clamp(0.7rem, 1.2vw, 1rem);
+    font-weight: 300;
+    color: #64748b;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  .title-institution.animate {
+    animation: fadeUp 1s ease 0.8s forwards;
+  }
+
+  /* Narration subtitle */
+  .subtitle-bar {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+    font-weight: 300;
+    color: #cbd5e1;
+    text-align: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.5s;
+    line-height: 1.5;
+  }
+  .subtitle-bar.visible { opacity: 1; }
+
+  /* Scene: Problem */
+  .icon-grid {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon-card {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .icon-card.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .icon-card span {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .scene-title {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .scene-text {
+    font-size: clamp(1rem, 1.8vw, 1.4rem);
+    font-weight: 300;
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.7;
+    color: #94a3b8;
+  }
+
+  /* Bidding animation */
+  .auction-visual {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+    height: 200px;
+    margin-bottom: 40px;
+  }
+  .bid-bar {
+    width: 50px;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 8px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transition: height 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+    height: 0;
+  }
+  .bid-bar.genuine { background: linear-gradient(to top, #3b82f6, #60a5fa); }
+  .bid-bar.cover { background: linear-gradient(to top, #ef4444, #f87171); }
+  .bid-bar.winner { background: linear-gradient(to top, #22c55e, #4ade80); }
+
+  /* Frequent Loser spotlight */
+  .fl-counter {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .fl-label {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    color: #94a3b8;
+    margin-top: 10px;
+  }
+
+  /* Funnel */
+  .funnel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0;
+  }
+  .funnel-step {
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: clamp(0.7rem, 1.2vw, 0.95rem);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+    color: white;
+  }
+  .funnel-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .funnel-arrow {
+    font-size: 1.5rem;
+    color: #475569;
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+  .funnel-arrow.animate { opacity: 1; }
+
+  /* Stats */
+  .stat-row {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .stat-box {
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+  }
+  .stat-box.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+  }
+  .stat-label {
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    color: #64748b;
+    margin-top: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Price bar chart */
+  .price-comparison {
+    display: flex;
+    gap: 60px;
+    align-items: flex-end;
+    margin: 30px 0;
+  }
+  .price-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .price-bar-outer {
+    width: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+  }
+  .price-bar-outer.animate { opacity: 1; }
+  .price-bar-inner {
+    width: 100%;
+    transition: height 1.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    height: 0;
+  }
+  .price-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #94a3b8;
+  }
+  .price-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+
+  /* AUC gauge */
+  .gauge-container {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    margin: 20px 0;
+  }
+  .gauge-bg {
+    fill: none;
+    stroke: #1e293b;
+    stroke-width: 14;
+  }
+  .gauge-fill {
+    fill: none;
+    stroke: url(#gaugeGrad);
+    stroke-width: 14;
+    stroke-linecap: round;
+    stroke-dasharray: 565;
+    stroke-dashoffset: 565;
+    transition: stroke-dashoffset 2s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: rotate(-90deg);
+    transform-origin: center;
+  }
+  .gauge-fill.animate {
+    stroke-dashoffset: 33.9;
+  }
+  .gauge-text {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  .gauge-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #60a5fa;
+  }
+  .gauge-label {
+    font-size: 0.8rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  /* Three stages */
+  .stages {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .stage-card {
+    width: 200px;
+    padding: 30px 20px;
+    border-radius: 16px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+  .stage-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .stage-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .stage-name {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .stage-desc {
+    font-size: 0.75rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+
+  /* Closing */
+  .closing-quote {
+    font-size: clamp(1.2rem, 2.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.6;
+    color: #cbd5e1;
+    border-left: 3px solid #60a5fa;
+    padding-left: 30px;
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  .closing-quote.animate {
+    animation: fadeRight 1s ease forwards;
+  }
+
+  /* Controls */
+  #controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 200;
+    display: flex;
+    gap: 10px;
+  }
+  .ctrl-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: #94a3b8;
+    border-radius: 10px;
+    padding: 8px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+  }
+  .ctrl-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  /* Progress bar */
+  #progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #3b82f6, #a78bfa, #f472b6);
+    z-index: 200;
+    transition: width 0.5s ease;
+    width: 0;
+  }
+
+  /* Scene counter */
+  #scene-counter {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #475569;
+    z-index: 200;
+  }
+
+  /* Start overlay */
+  #start-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(10, 10, 26, 0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 500;
+    cursor: pointer;
+    transition: opacity 0.8s;
+  }
+  #start-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .start-play {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    animation: pulse 2s ease infinite;
+  }
+  .start-play svg {
+    margin-left: 5px;
+  }
+  .start-text {
+    font-size: 1rem;
+    color: #64748b;
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeRight {
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+    50% { box-shadow: 0 0 0 20px rgba(59,130,246,0); }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Bidder icons */
+  .bidder-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  .bidder-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  .bidder-icon.animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+  .bidder-icon.genuine-icon { background: rgba(59,130,246,0.2); border: 2px solid #3b82f6; }
+  .bidder-icon.loser-icon { background: rgba(239,68,68,0.2); border: 2px solid #ef4444; }
+  .bidder-icon.winner-icon { background: rgba(34,197,94,0.2); border: 2px solid #22c55e; }
+
+  .highlight { color: #60a5fa; font-weight: 600; }
+  .highlight-red { color: #f87171; font-weight: 600; }
+  .highlight-green { color: #4ade80; font-weight: 600; }
+
+  /* Regime comparison */
+  .regime-row {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  .regime-card {
+    width: 260px;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease;
+  }
+  .regime-card.animate { opacity: 1; transform: scale(1); }
+  .regime-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+  }
+  .regime-pct {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  .regime-desc {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.4;
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+<div id="scene-counter"></div>
+
+<div id="controls">
+  <button class="ctrl-btn" onclick="prevScene()">&#9664; Prev</button>
+  <button class="ctrl-btn" id="pauseBtn" onclick="togglePause()">&#10074;&#10074; Pause</button>
+  <button class="ctrl-btn" onclick="nextScene()">Next &#9654;</button>
+</div>
+
+<canvas id="particles"></canvas>
+
+<!-- Start overlay -->
+<div id="start-overlay" onclick="startVideo()">
+  <div class="start-play">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+  </div>
+  <div class="start-text">Click to play</div>
+</div>
+
+<div id="video-container">
+
+  <!-- SCENE 0: Title -->
+  <div class="scene" id="scene-0">
+    <div class="title-main">Screening for Bid Rigging<br>with Frequent Losers</div>
+    <div class="title-authors">Darcio Genicolo-Martins &amp; Paulo Furquim de Azevedo</div>
+    <div class="title-institution">INSPER, S&atilde;o Paulo, Brazil</div>
+  </div>
+
+  <!-- SCENE 1: The Problem -->
+  <div class="scene" id="scene-1">
+    <div class="scene-title">The Problem</div>
+    <div class="icon-grid">
+      <div class="icon-card" style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); transition-delay:0s">
+        <div>&#127963;</div><span style="color:#60a5fa">Government</span>
+      </div>
+      <div class="icon-card" style="background:rgba(34,197,94,0.1); border:1px solid rgba(34,197,94,0.3); transition-delay:0.2s">
+        <div>&#128176;</div><span style="color:#4ade80">Procurement</span>
+      </div>
+      <div class="icon-card" style="background:rgba(239,68,68,0.1); border:1px solid rgba(239,68,68,0.3); transition-delay:0.4s">
+        <div>&#129309;</div><span style="color:#f87171">Cartels</span>
+      </div>
+      <div class="icon-card" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.3); transition-delay:0.6s">
+        <div>&#128184;</div><span style="color:#fb923c">Overpricing</span>
+      </div>
+    </div>
+    <div class="scene-text">When governments buy goods through public tenders, firms compete on price. But sometimes firms secretly agree on who wins &mdash; forming cartels that inflate prices at taxpayers' expense.</div>
+  </div>
+
+  <!-- SCENE 2: The Difficulty -->
+  <div class="scene" id="scene-2">
+    <div class="scene-title">The Detection Gap</div>
+    <div class="scene-text" style="margin-bottom:30px">
+      Existing bid-rigging screens require <span class="highlight">detailed bid amounts</span>. But many procurement systems &mdash; especially in developing countries &mdash; only record <span class="highlight">who bid</span> and <span class="highlight">who won</span>.
+    </div>
+    <div class="stat-row">
+      <div class="stat-box" style="transition-delay:0s">
+        <div class="stat-value" style="color:#f87171">&#128269;</div>
+        <div class="stat-label">Scarce Resources</div>
+      </div>
+      <div class="stat-box" style="transition-delay:0.3s">
+        <div class="stat-value" style="color:#fbbf24">&#128202;</div>
+        <div class="stat-label">No Bid Microdata</div>
+      </div>
+      <div class="stat-box" style="transition-delay:0.6s">
+        <div class="stat-value" style="color:#60a5fa">&#10067;</div>
+        <div class="stat-label">Where to Look?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 3: The Insight -->
+  <div class="scene" id="scene-3">
+    <div class="scene-title" style="color:#f87171">A Strange Pattern</div>
+    <div class="bidder-row" id="loser-parade">
+      <!-- filled by JS -->
+    </div>
+    <div class="scene-text" style="margin-top:20px">
+      Some firms bid on <span class="highlight-red">dozens of tenders over a decade</span> and <span class="highlight-red">never win a single one</span>. Participating costs time and money. If you never win, why keep showing up?
+    </div>
+  </div>
+
+  <!-- SCENE 4: The Hypothesis -->
+  <div class="scene" id="scene-4">
+    <div class="scene-title">Cover Bidders</div>
+    <div class="auction-visual" id="auction-bars">
+      <!-- filled by JS -->
+    </div>
+    <div class="scene-text">
+      These <span class="highlight-red">frequent losers</span> aren't trying to win. They exist to <span class="highlight">fake competition</span>. Brazilian law requires at least 3 bidders &mdash; cartels need extras to fill the seats. Cover bidders submit intentionally high bids and lose on purpose, receiving side payments.
+    </div>
+  </div>
+
+  <!-- SCENE 5: The Filter -->
+  <div class="scene" id="scene-5">
+    <div class="scene-title">The Screening Rule</div>
+    <div class="funnel" id="funnel">
+      <div class="funnel-step" style="width:500px; background:linear-gradient(90deg,#1e3a5f,#1e4d7b); transition-delay:0s">
+        &#128101; 41,000 firms in BEC (S&atilde;o Paulo, 2009&ndash;2019)
+      </div>
+      <div class="funnel-arrow" style="transition-delay:0.3s">&#9660;</div>
+      <div class="funnel-step" style="width:380px; background:linear-gradient(90deg,#4a2040,#6b2f5b); transition-delay:0.5s">
+        &#10060; 16,843 never won a single tender
+      </div>
+      <div class="funnel-arrow" style="transition-delay:0.8s">&#9660;</div>
+      <div class="funnel-step" style="width:240px; background:linear-gradient(90deg,#7f1d1d,#b91c1c); transition-delay:1s">
+        &#128680; 2,735 bid abnormally often
+      </div>
+    </div>
+    <div class="scene-text" style="font-size:clamp(0.85rem,1.3vw,1.1rem)">
+      A simple statistical rule (IQR outlier detection) &mdash; needs only <span class="highlight">who bid</span> and <span class="highlight">who won</span>. Any procurement agency can replicate it.
+    </div>
+  </div>
+
+  <!-- SCENE 6: Evidence - Prices -->
+  <div class="scene" id="scene-6">
+    <div class="scene-title">Evidence #1: Higher Prices</div>
+    <div class="price-comparison" id="price-chart">
+      <div class="price-col">
+        <div class="price-value" style="color:#4ade80">baseline</div>
+        <div class="price-bar-outer" style="transition-delay:0.3s">
+          <div class="price-bar-inner" style="background:linear-gradient(to top,#22c55e,#4ade80); border-radius:10px 10px 0 0" id="bar-nofl"></div>
+        </div>
+        <div class="price-label">Without FL</div>
+      </div>
+      <div class="price-col">
+        <div class="price-value" style="color:#f87171">+3.6&ndash;7.7%</div>
+        <div class="price-bar-outer" style="transition-delay:0.6s">
+          <div class="price-bar-inner" style="background:linear-gradient(to top,#ef4444,#f87171); border-radius:10px 10px 0 0" id="bar-fl"></div>
+        </div>
+        <div class="price-label">With FL</div>
+      </div>
+    </div>
+    <div class="scene-text" style="font-size:clamp(0.85rem,1.3vw,1.1rem)">
+      Tenders where a frequent loser participates have <span class="highlight-red">3.6&ndash;7.7% higher prices</span> &mdash; comparing the same product, same year, same purchasing unit. Robust across OLS, cross-fitting, and matching estimators.
+    </div>
+  </div>
+
+  <!-- SCENE 7: Evidence - CADE -->
+  <div class="scene" id="scene-7">
+    <div class="scene-title">Evidence #2: Validated Against Known Cartels</div>
+    <div class="gauge-container">
+      <svg width="220" height="220" viewBox="0 0 220 220">
+        <defs>
+          <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3b82f6"/>
+            <stop offset="100%" style="stop-color:#a78bfa"/>
+          </linearGradient>
+        </defs>
+        <circle class="gauge-bg" cx="110" cy="110" r="90"/>
+        <circle class="gauge-fill" id="auc-gauge" cx="110" cy="110" r="90"/>
+      </svg>
+      <div class="gauge-text">
+        <div class="gauge-number" id="auc-number">0.00</div>
+        <div class="gauge-label">AUC Score</div>
+      </div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-box" style="transition-delay:0.3s">
+        <div class="stat-value" style="color:#a78bfa">3.5&times;</div>
+        <div class="stat-label">Co-participation<br>with cartelists</div>
+      </div>
+      <div class="stat-box" style="transition-delay:0.6s">
+        <div class="stat-value" style="color:#f472b6">3</div>
+        <div class="stat-label">CADE-convicted firms<br>classified as FL</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCENE 8: Evidence - Strategic Pattern -->
+  <div class="scene" id="scene-8">
+    <div class="scene-title">Evidence #3: Strategic, Not Random</div>
+    <div class="regime-row">
+      <div class="regime-card" style="background:rgba(249,115,22,0.1); border:1px solid rgba(249,115,22,0.3); transition-delay:0s">
+        <div class="regime-name" style="color:#fb923c">Convite (Sealed-bid)</div>
+        <div class="regime-pct" style="color:#fb923c">+3.8%</div>
+        <div class="regime-desc">Minimum 3 bidders required by law. Some cover bidding is forced &mdash; dilutes the signal.</div>
+      </div>
+      <div class="regime-card" style="background:rgba(139,92,246,0.1); border:1px solid rgba(139,92,246,0.3); transition-delay:0.4s">
+        <div class="regime-name" style="color:#a78bfa">Preg&atilde;o (E-auction)</div>
+        <div class="regime-pct" style="color:#a78bfa">+9.3%</div>
+        <div class="regime-desc">No minimum-bidder rule. If a cover bidder shows up here, it's purely strategic &mdash; cleaner signal.</div>
+      </div>
+    </div>
+    <div class="scene-text" style="font-size:clamp(0.85rem,1.3vw,1.1rem)">
+      The price premium is <span class="highlight">larger where cover bidding is voluntary</span> &mdash; exactly what strategic deployment predicts. The FL screen also captures information <span class="highlight">orthogonal</span> to bid-level tools (correlation: 0.06).
+    </div>
+  </div>
+
+  <!-- SCENE 9: The Proposal -->
+  <div class="scene" id="scene-9">
+    <div class="scene-title">A Three-Stage Enforcement Pathway</div>
+    <div class="stages">
+      <div class="stage-card" style="background:rgba(59,130,246,0.1); border:1px solid rgba(59,130,246,0.3); transition-delay:0s">
+        <div class="stage-num" style="color:#60a5fa">1</div>
+        <div class="stage-name" style="color:#60a5fa">Screen</div>
+        <div class="stage-desc">Run the FL filter automatically on participation records</div>
+      </div>
+      <div class="stage-card" style="background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); transition-delay:0.4s">
+        <div class="stage-num" style="color:#a855f7">2</div>
+        <div class="stage-name" style="color:#a855f7">Triage</div>
+        <div class="stage-desc">Prioritize flagged environments for closer scrutiny</div>
+      </div>
+      <div class="stage-card" style="background:rgba(236,72,153,0.1); border:1px solid rgba(236,72,153,0.3); transition-delay:0.8s">
+        <div class="stage-num" style="color:#ec4899">3</div>
+        <div class="stage-name" style="color:#ec4899">Investigate</div>
+        <div class="stage-desc">Apply detailed bid-level analysis only where risk is highest</div>
+      </div>
+    </div>
+    <div class="scene-text" style="font-size:clamp(0.85rem,1.3vw,1.1rem)">
+      Triage, not conviction. Direct scarce investigative resources where the risk is greatest and oversight is weakest.
+    </div>
+  </div>
+
+  <!-- SCENE 10: Closing -->
+  <div class="scene" id="scene-10">
+    <div class="closing-quote">
+      "Firms that lose too much may be losing on purpose &mdash; and this pattern, detectable with minimal data, points to where cartels are likely operating."
+    </div>
+    <div class="title-authors" style="margin-top:50px; opacity:0; transform:translateY(20px)">
+      Genicolo-Martins &amp; Furquim de Azevedo (2026)
+    </div>
+    <div class="title-institution" style="opacity:0; transform:translateY(20px)">
+      INSPER &bull; S&atilde;o Paulo, Brazil
+    </div>
+  </div>
+
+</div>
+
+<div class="subtitle-bar" id="subtitle"></div>
+
+<script>
+// ---- NARRATION SCRIPT ----
+const scenes = [
+  {
+    narration: "Screening for Bid Rigging with Frequent Losers in Public Procurement. By Darcio Genicolo-Martins and Paulo Furquim de Azevedo, from INSPER, São Paulo, Brazil.",
+    duration: 9000,
+    setup: (el) => {
+      setTimeout(() => el.querySelector('.title-main').classList.add('animate'), 300);
+      setTimeout(() => el.querySelector('.title-authors').classList.add('animate'), 300);
+      setTimeout(() => el.querySelector('.title-institution').classList.add('animate'), 300);
+    }
+  },
+  {
+    narration: "When governments purchase goods and services, they open public tenders. Firms compete by offering prices — the lowest bid wins. But sometimes, firms secretly collude — forming cartels that fix prices and inflate costs. Taxpayers foot the bill.",
+    duration: 15000,
+    setup: (el) => {
+      el.querySelectorAll('.icon-card').forEach((c, i) => {
+        setTimeout(() => c.classList.add('animate'), i * 400 + 300);
+      });
+    }
+  },
+  {
+    narration: "Detecting bid rigging is extremely difficult. Competition authorities have limited resources. Most screening tools require detailed bid amounts — but many procurement systems, especially in developing countries, only record who participated and who won. Without bid values, traditional tools are blind.",
+    duration: 17000,
+    setup: (el) => {
+      el.querySelectorAll('.stat-box').forEach((b, i) => {
+        setTimeout(() => b.classList.add('animate'), i * 500 + 500);
+      });
+    }
+  },
+  {
+    narration: "The authors discovered a strange pattern in the data. Some firms participate in dozens — even nearly a hundred — tenders over a decade... and never win a single one. Participation costs time and money. If you never win, why keep showing up? That question is the key insight.",
+    duration: 17000,
+    setup: (el) => {
+      const row = el.querySelector('#loser-parade');
+      row.innerHTML = '';
+      for (let i = 0; i < 20; i++) {
+        const d = document.createElement('div');
+        d.className = 'bidder-icon loser-icon';
+        d.textContent = '✗';
+        row.appendChild(d);
+        setTimeout(() => d.classList.add('animate'), i * 120 + 300);
+      }
+    }
+  },
+  {
+    narration: "These firms — called frequent losers — are not trying to win. They exist to fake competition. Brazilian procurement law often requires at least three bidders. Cartels need extras to fill the seats. Cover bidders submit intentionally high bids and lose on purpose — receiving compensation through side payments.",
+    duration: 19000,
+    setup: (el) => {
+      const container = el.querySelector('#auction-bars');
+      container.innerHTML = '';
+      const bids = [
+        { h: 40, cls: 'winner', label: '★' },
+        { h: 80, cls: 'genuine', label: '' },
+        { h: 100, cls: 'genuine', label: '' },
+        { h: 150, cls: 'cover', label: '✗' },
+        { h: 160, cls: 'cover', label: '✗' },
+        { h: 170, cls: 'cover', label: '✗' },
+      ];
+      bids.forEach((b, i) => {
+        const bar = document.createElement('div');
+        bar.className = 'bid-bar ' + b.cls;
+        bar.textContent = b.label;
+        container.appendChild(bar);
+        setTimeout(() => { bar.style.height = b.h + 'px'; }, i * 200 + 500);
+      });
+    }
+  },
+  {
+    narration: "The screening rule is remarkably simple. Among 41,000 firms in São Paulo's electronic procurement platform, about 16,800 never won any tender. A statistical outlier rule then flags 2,735 firms whose participation frequency is impossible to reconcile with profit-maximizing behavior. The filter requires only who bid and who won. Any procurement agency can replicate it.",
+    duration: 21000,
+    setup: (el) => {
+      el.querySelectorAll('.funnel-step, .funnel-arrow').forEach((s, i) => {
+        setTimeout(() => s.classList.add('animate'), i * 400 + 300);
+      });
+    }
+  },
+  {
+    narration: "The first piece of evidence: prices. Tenders where a frequent loser participates have 3.6 to 7.7 percent higher prices — comparing the exact same product, same year, same purchasing unit. This holds across multiple estimation methods: OLS, cross-fitting, and matching.",
+    duration: 16000,
+    setup: (el) => {
+      el.querySelectorAll('.price-bar-outer').forEach(b => b.classList.add('animate'));
+      setTimeout(() => {
+        document.getElementById('bar-nofl').style.height = '140px';
+        document.getElementById('bar-fl').style.height = '180px';
+      }, 600);
+    }
+  },
+  {
+    narration: "Second: external validation. Cross-checked against Brazil's competition authority convictions, the screen achieves an AUC of 0.94 — close to perfect detection. Frequent losers co-participate with convicted cartelists at 3.5 times the expected rate. And three convicted firms are themselves classified as frequent losers.",
+    duration: 18000,
+    setup: (el) => {
+      setTimeout(() => {
+        document.getElementById('auc-gauge').classList.add('animate');
+        // Animate number
+        let start = 0;
+        const target = 0.94;
+        const numEl = document.getElementById('auc-number');
+        const step = () => {
+          start += 0.01;
+          if (start > target) start = target;
+          numEl.textContent = start.toFixed(2);
+          if (start < target) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }, 500);
+      el.querySelectorAll('.stat-box').forEach((b, i) => {
+        setTimeout(() => b.classList.add('animate'), i * 400 + 1200);
+      });
+    }
+  },
+  {
+    narration: "Third: the pattern is strategic, not random. The price premium is larger in electronic auctions — where there's no minimum bidder rule — than in sealed bids where the law forces participation. When cover bidding is voluntary, the signal is cleaner. The FL screen also captures entirely different information from bid-level tools, with a near-zero correlation of just 0.06.",
+    duration: 20000,
+    setup: (el) => {
+      el.querySelectorAll('.regime-card').forEach((c, i) => {
+        setTimeout(() => c.classList.add('animate'), i * 600 + 300);
+      });
+    }
+  },
+  {
+    narration: "The paper proposes a three-stage enforcement pathway. First, screen: run the frequent loser filter automatically. Second, triage: prioritize the flagged environments. Third, investigate: deploy detailed analysis only where risk is highest. This is triage, not conviction — directing scarce resources where oversight is weakest and suspicion is strongest.",
+    duration: 19000,
+    setup: (el) => {
+      el.querySelectorAll('.stage-card').forEach((c, i) => {
+        setTimeout(() => c.classList.add('animate'), i * 500 + 300);
+      });
+    }
+  },
+  {
+    narration: "Firms that lose too much may be losing on purpose — and this pattern, detectable with minimal data, points to where cartels are likely operating.",
+    duration: 12000,
+    setup: (el) => {
+      setTimeout(() => el.querySelector('.closing-quote').classList.add('animate'), 300);
+      const authors = el.querySelectorAll('.title-authors, .title-institution');
+      authors.forEach((a, i) => {
+        setTimeout(() => {
+          a.style.transition = 'all 1s ease';
+          a.style.opacity = '1';
+          a.style.transform = 'translateY(0)';
+        }, 2000 + i * 400);
+      });
+    }
+  }
+];
+
+let currentScene = 0;
+let paused = false;
+let sceneTimeout = null;
+let synth = window.speechSynthesis;
+let utterance = null;
+
+// ---- PARTICLES ----
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let particles = [];
+
+function initParticles() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  particles = [];
+  for (let i = 0; i < 60; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 2 + 0.5,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+      alpha: Math.random() * 0.3 + 0.05
+    });
+  }
+}
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(96,165,250,${p.alpha})`;
+    ctx.fill();
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+  });
+  requestAnimationFrame(drawParticles);
+}
+
+initParticles();
+drawParticles();
+window.addEventListener('resize', initParticles);
+
+// ---- SCENE MANAGEMENT ----
+function showScene(idx) {
+  if (idx < 0 || idx >= scenes.length) return;
+  currentScene = idx;
+
+  // Update progress
+  document.getElementById('progress-bar').style.width = ((idx + 1) / scenes.length * 100) + '%';
+  document.getElementById('scene-counter').textContent = `${idx + 1} / ${scenes.length}`;
+
+  // Hide all scenes
+  document.querySelectorAll('.scene').forEach(s => s.classList.remove('active'));
+
+  // Show current
+  const el = document.getElementById('scene-' + idx);
+  el.classList.add('active');
+
+  // Run setup
+  scenes[idx].setup(el);
+
+  // Narrate
+  stopSpeech();
+  const sub = document.getElementById('subtitle');
+  sub.textContent = scenes[idx].narration;
+  sub.classList.add('visible');
+
+  speak(scenes[idx].narration, () => {
+    // After speech ends, wait a beat then advance
+    if (!paused && currentScene < scenes.length - 1) {
+      sceneTimeout = setTimeout(() => nextScene(), 1500);
+    }
+  });
+}
+
+function speak(text, onEnd) {
+  if (!synth) { if (onEnd) setTimeout(onEnd, scenes[currentScene].duration); return; }
+  synth.cancel();
+  utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  utterance.rate = 0.92;
+  utterance.pitch = 1.0;
+
+  // Try to pick a good voice
+  const voices = synth.getVoices();
+  const preferred = voices.find(v => v.name.includes('Google') && v.lang.startsWith('en')) ||
+                    voices.find(v => v.lang.startsWith('en-US')) ||
+                    voices.find(v => v.lang.startsWith('en'));
+  if (preferred) utterance.voice = preferred;
+
+  utterance.onend = onEnd;
+  // Fallback if speech doesn't fire onend
+  const fallback = setTimeout(() => { if (onEnd) onEnd(); }, scenes[currentScene].duration + 2000);
+  utterance.onend = () => { clearTimeout(fallback); if (onEnd) onEnd(); };
+
+  synth.speak(utterance);
+}
+
+function stopSpeech() {
+  if (synth) synth.cancel();
+  if (sceneTimeout) clearTimeout(sceneTimeout);
+}
+
+function nextScene() {
+  stopSpeech();
+  if (currentScene < scenes.length - 1) {
+    showScene(currentScene + 1);
+  }
+}
+
+function prevScene() {
+  stopSpeech();
+  if (currentScene > 0) {
+    showScene(currentScene - 1);
+  }
+}
+
+function togglePause() {
+  paused = !paused;
+  const btn = document.getElementById('pauseBtn');
+  if (paused) {
+    btn.innerHTML = '&#9654; Play';
+    if (synth) synth.pause();
+    if (sceneTimeout) clearTimeout(sceneTimeout);
+  } else {
+    btn.innerHTML = '&#10074;&#10074; Pause';
+    if (synth) synth.resume();
+  }
+}
+
+function startVideo() {
+  document.getElementById('start-overlay').classList.add('hidden');
+  // Voices may load async
+  if (synth && synth.getVoices().length === 0) {
+    synth.onvoiceschanged = () => showScene(0);
+    setTimeout(() => showScene(0), 500);
+  } else {
+    showScene(0);
+  }
+}
+
+// Keyboard controls
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextScene(); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); prevScene(); }
+  if (e.key === 'p') togglePause();
+});
+
+// Preload voices
+if (synth) synth.getVoices();
+</script>
+</body>
+</html>

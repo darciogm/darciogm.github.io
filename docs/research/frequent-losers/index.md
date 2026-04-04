@@ -1,5 +1,4 @@
 ---
-paper: frequent-losers
 hide:
   - navigation
 ---
@@ -62,7 +61,7 @@ oversight weakest.
     FL-present tenders exhibit **3.6--7.7% higher conditional prices** across four estimation approaches: cross-fit (3.6%), IPW (5.5%), OLS with item + year + PBU FE (6.4%), and CEM matching (7.7%). The estimates cluster rather than scatter, indicating a stable association across designs.
 
 !!! warning "AUC = 0.94 against CADE convictions"
-    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens are nearly orthogonal (correlation 0.06).
+    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens capture largely non-overlapping information (correlation 0.06); naively combining them into a single score degrades detection to AUC = 0.61, confirming that they operate on different dimensions and are best deployed sequentially.
 
 !!! danger "Coordinated cover bidding (Regime 2)"
     BIC strongly favors coordinated cover bidding ($\Delta$BIC = $-91{,}473$): FL bids are 28% **less** dispersed than non-FL bids ($\sigma_c / \sigma_g = 0.72$). The price association concentrates in **competitive markets** (0.126) and vanishes in concentrated ones ($-0.018$), consistent with strategic complementarity ($\hat{\gamma} = 0.69 > 0$).
@@ -75,6 +74,8 @@ oversight weakest.
 ## Quick Links
 
 <div class="quick-links" markdown>
+
+[**Video** <br> Narrated animated overview of the paper (English)](video.md)
 
 [**Paper** <br> Contribution, institutional setting, and empirical strategy](paper.md)
 
