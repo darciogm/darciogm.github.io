@@ -64,7 +64,7 @@ This is the paper's primary validation exercise.
 
 | Metric | Value |
 |--------|-------|
-| AUC (FL screen) | **0.94** (95% CI: 0.91--0.94) |
+| AUC (FL screen) | **0.94** (95% CI: 0.93--0.95) |
 | AUC (Imhof-style CV proxy) | 0.79 |
 | DeLong $p$-value | $< 0.001$ |
 | Youden $J$ | 0.84 at 1.45x IQR |
