@@ -23,6 +23,8 @@ paper: bitter-pills
 
 Courts routinely compel governments to purchase specific medicines under tight deadlines, overriding standard procurement procedures. We estimate the fiscal costs of such judicial enforcement using bid-level data on pharmaceutical procurement in Sao Paulo, Brazil (2009--2019). With item, time, and buyer fixed effects, court-mandated purchases raise negotiated prices by 3.1--5.4% and reduce bidder participation by 4.1--5.5%. Comparing litigated and administrative urgent purchases---which share planning constraints but differ in penalty exposure---we isolate the "under the gun" effect: judicial sanctions alone raise procurement costs by 23--30%. These findings reveal a substantial and previously unquantified fiscal cost of right-to-health enforcement.
 
+[:material-file-pdf-box: Download manuscript (PDF)](assets/bitter_pills_v6_jpub.pdf){ .md-button .md-button--primary }
+
 **JEL Classification:**
 <span class="badge">D44</span>
 <span class="badge">D73</span>
