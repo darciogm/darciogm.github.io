@@ -3,24 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frequent Losers — The Story</title>
+<title>Frequent Losers — Who Keeps Losing on Purpose?</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
 
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
   :root {
-    --bg: #07080f;
-    --surface: #0f1118;
-    --border: rgba(255,255,255,0.06);
+    --bg: #06070d;
+    --surface: #0d0f18;
+    --surface2: #111322;
+    --border: rgba(255,255,255,0.05);
+    --border2: rgba(255,255,255,0.08);
     --text: #c8cdd8;
-    --text-dim: #5a6178;
+    --text-dim: #4f5570;
+    --text-bright: #e8eaf0;
     --accent: #6d9fff;
+    --accent-dim: rgba(109,159,255,0.15);
     --accent2: #c084fc;
     --red: #ff6b6b;
+    --red-dim: rgba(255,107,107,0.12);
     --green: #4ade80;
+    --green-dim: rgba(74,222,128,0.12);
     --orange: #fb923c;
     --pink: #f472b6;
+    --gold: #fbbf24;
+    --cyan: #22d3ee;
   }
 
   body {
@@ -32,194 +40,246 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  /* === AMBIENT LAYER === */
+  #ambient {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    opacity: 0.4;
+  }
+  .amb-orb {
+    position: absolute; border-radius: 50%; filter: blur(100px);
+    animation: orbDrift 25s ease-in-out infinite alternate;
+  }
+
   /* === PARTICLES === */
-  #particles { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+  #particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
 
   /* === PROGRESS === */
   #progress { position: fixed; top: 0; left: 0; height: 2px; z-index: 300;
-    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--pink));
-    transition: width 0.6s ease; width: 0; }
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--pink), var(--gold));
+    transition: width 0.8s cubic-bezier(0.4,0,0.2,1); width: 0;
+    box-shadow: 0 0 12px rgba(109,159,255,0.4); }
 
   /* === SCENE COUNTER === */
   #counter { position: fixed; top: 16px; left: 20px; z-index: 300;
-    font: 600 0.7rem/1 'JetBrains Mono', monospace; color: var(--text-dim);
-    letter-spacing: 1px; }
+    font: 500 0.68rem/1 'JetBrains Mono', monospace; color: var(--text-dim);
+    letter-spacing: 2px; }
 
   /* === CONTROLS === */
   #controls { position: fixed; top: 14px; right: 20px; z-index: 300;
-    display: flex; gap: 8px; }
-  .btn { background: rgba(255,255,255,0.04); border: 1px solid var(--border);
-    color: var(--text-dim); border-radius: 8px; padding: 6px 14px;
-    font: 500 0.75rem/1 'Inter', sans-serif; cursor: pointer;
-    transition: all 0.25s; backdrop-filter: blur(12px); }
-  .btn:hover { background: rgba(255,255,255,0.1); color: #fff; }
+    display: flex; gap: 6px; }
+  .btn { background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    color: var(--text-dim); border-radius: 10px; padding: 7px 16px;
+    font: 500 0.72rem/1 'Inter', sans-serif; cursor: pointer;
+    transition: all 0.3s; backdrop-filter: blur(16px); }
+  .btn:hover { background: rgba(255,255,255,0.08); color: #fff;
+    border-color: var(--border2); }
 
   /* === SCENES === */
   .scene { position: absolute; inset: 0; display: flex; flex-direction: column;
     align-items: center; justify-content: center; padding: 60px 40px;
-    opacity: 0; transform: scale(0.97); pointer-events: none;
-    transition: opacity 0.8s ease, transform 0.8s ease; z-index: 1; }
-  .scene.active { opacity: 1; transform: scale(1); pointer-events: auto; }
+    opacity: 0; pointer-events: none;
+    transition: opacity 1s ease; z-index: 2; }
+  .scene.active { opacity: 1; pointer-events: auto; }
   .scene > * { position: relative; z-index: 1; }
 
   /* === SUBTITLE BAR === */
-  #subtitle { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-    max-width: 75%; background: rgba(7,8,15,0.85); backdrop-filter: blur(16px);
-    border: 1px solid var(--border); border-radius: 14px;
-    padding: 14px 26px; text-align: center; z-index: 200;
-    font: 300 clamp(0.82rem,1.2vw,1.05rem)/1.6 'Inter', sans-serif;
-    color: rgba(200,205,216,0.9); opacity: 0; transition: opacity 0.4s; }
+  #subtitle { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    max-width: 72%; background: rgba(6,7,13,0.88); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 16px 28px; text-align: center; z-index: 200;
+    font: 400 clamp(0.8rem,1.15vw,1rem)/1.65 'Crimson Pro', serif;
+    color: rgba(200,205,216,0.85); opacity: 0; transition: opacity 0.5s;
+    letter-spacing: 0.2px; }
   #subtitle.visible { opacity: 1; }
 
   /* === START OVERLAY === */
   #overlay { position: fixed; inset: 0; z-index: 500;
-    background: rgba(7,8,15,0.96); backdrop-filter: blur(30px);
+    background: rgba(6,7,13,0.97); backdrop-filter: blur(40px);
     display: flex; flex-direction: column; align-items: center;
-    justify-content: center; cursor: pointer; transition: opacity 0.8s; }
+    justify-content: center; cursor: pointer; transition: opacity 1s; }
   #overlay.hidden { opacity: 0; pointer-events: none; }
-  .play-circle { width: 90px; height: 90px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    display: grid; place-items: center; margin-bottom: 24px;
-    animation: breathe 2.5s ease infinite; }
-  .play-circle svg { margin-left: 4px; }
-  .play-hint { font: 300 0.9rem/1 'Inter', sans-serif; color: var(--text-dim); }
-  .play-sub { font: 300 0.7rem/1 'Inter', sans-serif; color: var(--text-dim);
-    margin-top: 8px; opacity: 0.5; }
-
-  /* === TYPOGRAPHY === */
-  .hook { font: 400 clamp(1.6rem,3.5vw,3rem)/1.3 'Playfair Display', serif;
-    text-align: center; max-width: 780px;
-    background: linear-gradient(135deg, #fff 30%, var(--accent));
+  .ov-title { font: 900 clamp(1.8rem,4vw,3.2rem)/1.1 'Playfair Display', serif;
+    text-align: center; margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 20%, var(--accent) 60%, var(--accent2));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text; }
-  .st { font: 700 clamp(1.3rem,2.8vw,2.2rem)/1.2 'Inter', sans-serif;
-    text-align: center; margin-bottom: 28px; }
-  .body { font: 300 clamp(0.95rem,1.5vw,1.2rem)/1.7 'Inter', sans-serif;
-    text-align: center; max-width: 720px; color: var(--text); }
-  .em { color: var(--accent); font-weight: 500; }
-  .em-r { color: var(--red); font-weight: 500; }
-  .em-g { color: var(--green); font-weight: 500; }
-  .em-o { color: var(--orange); font-weight: 500; }
-  .em-p { color: var(--accent2); font-weight: 500; }
+  .ov-sub { font: 400 italic clamp(0.85rem,1.3vw,1.1rem)/1.4 'Crimson Pro', serif;
+    color: var(--text-dim); margin-bottom: 40px; text-align: center; }
+  .play-circle { width: 86px; height: 86px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    display: grid; place-items: center; margin-bottom: 20px;
+    animation: breathe 3s ease infinite;
+    box-shadow: 0 0 40px rgba(109,159,255,0.2); }
+  .play-circle svg { margin-left: 4px; }
+  .play-hint { font: 400 0.85rem/1 'Inter', sans-serif; color: var(--text-dim); }
+  .play-sub { font: 300 0.68rem/1 'Inter', sans-serif; color: var(--text-dim);
+    margin-top: 8px; opacity: 0.4; }
+
+  /* === TYPOGRAPHY === */
+  .hook { font: 900 clamp(1.8rem,4vw,3.4rem)/1.2 'Playfair Display', serif;
+    text-align: center; max-width: 820px;
+    background: linear-gradient(135deg, #fff 30%, var(--accent) 70%, var(--accent2));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; }
+  .hook-sm { font: 700 clamp(1.2rem,2.5vw,2rem)/1.3 'Playfair Display', serif;
+    text-align: center; max-width: 700px; color: var(--text-bright); }
+  .st { font: 700 clamp(1.2rem,2.5vw,2rem)/1.15 'Inter', sans-serif;
+    text-align: center; margin-bottom: 24px; letter-spacing: -0.5px; }
+  .body { font: 400 clamp(0.9rem,1.35vw,1.1rem)/1.7 'Crimson Pro', serif;
+    text-align: center; max-width: 700px; color: var(--text); }
+  .em { color: var(--accent); font-weight: 600; }
+  .em-r { color: var(--red); font-weight: 600; }
+  .em-g { color: var(--green); font-weight: 600; }
+  .em-o { color: var(--orange); font-weight: 600; }
+  .em-p { color: var(--accent2); font-weight: 600; }
+  .em-c { color: var(--cyan); font-weight: 600; }
+  .em-k { color: var(--gold); font-weight: 600; }
   .mono { font-family: 'JetBrains Mono', monospace; }
+  .dim { color: var(--text-dim); }
+  .small { font-size: 0.85em; }
 
   /* === ANIMATED ELEMENTS === */
 
-  /* Typewriter */
-  .typewriter { overflow: hidden; border-right: 2px solid var(--accent);
-    white-space: nowrap; width: 0; font: 600 clamp(1rem,2vw,1.5rem)/1 'JetBrains Mono', monospace;
-    color: var(--accent); animation: typeOut 2s steps(40) forwards, blink 0.6s step-end infinite; }
-  @keyframes typeOut { to { width: 100%; } }
-  @keyframes blink { 50% { border-color: transparent; } }
-
   /* Fade up */
-  .fu { opacity: 0; transform: translateY(24px); transition: all 0.7s cubic-bezier(0.22,1,0.36,1); }
+  .fu { opacity: 0; transform: translateY(22px);
+    transition: all 0.8s cubic-bezier(0.22,1,0.36,1); }
   .fu.on { opacity: 1; transform: translateY(0); }
 
   /* Scale in */
-  .si { opacity: 0; transform: scale(0.6); transition: all 0.5s cubic-bezier(0.34,1.56,0.64,1); }
+  .si { opacity: 0; transform: scale(0.55);
+    transition: all 0.6s cubic-bezier(0.34,1.56,0.64,1); }
   .si.on { opacity: 1; transform: scale(1); }
 
   /* Slide right */
-  .sr { opacity: 0; transform: translateX(-30px); transition: all 0.7s ease; }
+  .sr { opacity: 0; transform: translateX(-28px); transition: all 0.8s ease; }
   .sr.on { opacity: 1; transform: translateX(0); }
 
+  /* Slide left */
+  .sl { opacity: 0; transform: translateX(28px); transition: all 0.8s ease; }
+  .sl.on { opacity: 1; transform: translateX(0); }
+
+  /* Blur in */
+  .bi { opacity: 0; filter: blur(12px); transition: all 1s ease; }
+  .bi.on { opacity: 1; filter: blur(0); }
+
   /* Number counter */
-  .big-num { font: 700 clamp(3rem,8vw,6rem)/1 'JetBrains Mono', monospace;
+  .big-num { font: 700 clamp(3rem,8vw,5.5rem)/1 'JetBrains Mono', monospace;
     background: linear-gradient(135deg, var(--red), var(--orange));
     -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text; }
 
   /* Icon cards */
-  .cards { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 24px 0; }
-  .card { width: 130px; padding: 22px 14px; border-radius: 16px;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  .cards { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .card { width: 120px; padding: 20px 12px; border-radius: 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
     background: var(--surface); border: 1px solid var(--border); }
-  .card-icon { font-size: 2.4rem; }
-  .card-label { font: 600 0.65rem/1.2 'Inter', sans-serif; text-transform: uppercase;
+  .card-icon { font-size: 2.2rem; }
+  .card-label { font: 600 0.6rem/1.2 'Inter', sans-serif; text-transform: uppercase;
     letter-spacing: 1.5px; text-align: center; }
 
   /* Loser parade */
-  .parade { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center;
-    margin: 20px 0; max-width: 500px; }
-  .dot { width: 36px; height: 36px; border-radius: 50%;
-    display: grid; place-items: center; font-size: 0.9rem; font-weight: 700; }
-  .dot-red { background: rgba(255,107,107,0.15); border: 2px solid var(--red); color: var(--red); }
-  .dot-green { background: rgba(74,222,128,0.15); border: 2px solid var(--green); color: var(--green); }
-  .dot-blue { background: rgba(109,159,255,0.15); border: 2px solid var(--accent); color: var(--accent); }
+  .parade { display: flex; gap: 5px; flex-wrap: wrap; justify-content: center;
+    margin: 16px 0; max-width: 480px; }
+  .dot { width: 32px; height: 32px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 0.8rem; font-weight: 700; }
+  .dot-red { background: var(--red-dim); border: 2px solid var(--red); color: var(--red); }
+  .dot-green { background: var(--green-dim); border: 2px solid var(--green); color: var(--green); }
+  .dot-blue { background: var(--accent-dim); border: 2px solid var(--accent); color: var(--accent); }
 
   /* Auction bars */
-  .bars { display: flex; align-items: flex-end; gap: 14px; height: 200px; margin: 20px 0; }
-  .bar { width: 48px; border-radius: 8px 8px 0 0; display: flex;
+  .bars { display: flex; align-items: flex-end; gap: 12px; height: 180px; margin: 18px 0; }
+  .bar { width: 44px; border-radius: 8px 8px 0 0; display: flex;
     flex-direction: column; align-items: center; justify-content: flex-start;
-    padding-top: 6px; font: 700 0.7rem/1 'JetBrains Mono', monospace;
+    padding-top: 6px; font: 700 0.65rem/1 'JetBrains Mono', monospace;
     color: rgba(255,255,255,0.8); transition: height 1.2s cubic-bezier(0.34,1.56,0.64,1); height: 0; }
   .bar-w { background: linear-gradient(to top, #15803d, var(--green)); }
   .bar-g { background: linear-gradient(to top, #1d4ed8, var(--accent)); }
   .bar-c { background: linear-gradient(to top, #b91c1c, var(--red)); }
 
   /* Funnel */
-  .funnel { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 20px 0; }
-  .fstep { height: 48px; border-radius: 12px; display: flex; align-items: center;
-    justify-content: center; font: 600 clamp(0.7rem,1.1vw,0.9rem)/1 'Inter', sans-serif;
-    color: #fff; }
-  .farrow { font-size: 1.2rem; color: var(--text-dim); }
+  .funnel { display: flex; flex-direction: column; align-items: center; gap: 5px; margin: 16px 0; }
+  .fstep { height: 44px; border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; font: 600 clamp(0.68rem,1vw,0.85rem)/1 'Inter', sans-serif;
+    color: #fff; letter-spacing: 0.3px; }
+  .farrow { font-size: 1rem; color: var(--text-dim); }
 
   /* Stat row */
-  .stats { display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; margin: 24px 0; }
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
   .stat { text-align: center; }
-  .stat-v { font: 700 clamp(2rem,4vw,3rem)/1 'JetBrains Mono', monospace; }
-  .stat-l { font: 500 0.7rem/1 'Inter', sans-serif; color: var(--text-dim);
+  .stat-v { font: 700 clamp(1.8rem,3.5vw,2.6rem)/1 'JetBrains Mono', monospace; }
+  .stat-l { font: 500 0.65rem/1.2 'Inter', sans-serif; color: var(--text-dim);
     text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
 
   /* Gauge */
-  .gauge { position: relative; width: 200px; height: 200px; margin: 16px 0; }
+  .gauge { position: relative; width: 180px; height: 180px; margin: 12px 0; }
   .gauge svg { width: 100%; height: 100%; }
-  .gauge-bg { fill: none; stroke: #1a1d2e; stroke-width: 12; }
-  .gauge-fill { fill: none; stroke: url(#gGrad); stroke-width: 12;
+  .gauge-bg { fill: none; stroke: #151828; stroke-width: 10; }
+  .gauge-fill { fill: none; stroke: url(#gGrad); stroke-width: 10;
     stroke-linecap: round; stroke-dasharray: 527; stroke-dashoffset: 527;
-    transition: stroke-dashoffset 2.5s cubic-bezier(0.4,0,0.2,1);
+    transition: stroke-dashoffset 2.8s cubic-bezier(0.4,0,0.2,1);
     transform: rotate(-90deg); transform-origin: center; }
   .gauge-fill.on { stroke-dashoffset: 31.6; }
   .gauge-center { position: absolute; inset: 0; display: flex;
     flex-direction: column; align-items: center; justify-content: center; }
-  .gauge-num { font: 700 2.2rem/1 'JetBrains Mono', monospace; color: var(--accent); }
-  .gauge-lab { font: 600 0.65rem/1 'Inter', sans-serif; color: var(--text-dim);
+  .gauge-num { font: 700 2rem/1 'JetBrains Mono', monospace; color: var(--accent); }
+  .gauge-lab { font: 600 0.6rem/1 'Inter', sans-serif; color: var(--text-dim);
     text-transform: uppercase; letter-spacing: 2px; margin-top: 4px; }
 
   /* Regime cards */
-  .regimes { display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin: 24px 0; }
-  .regime { width: 240px; padding: 24px 20px; border-radius: 16px; text-align: center;
+  .regimes { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .regime { width: 220px; padding: 22px 18px; border-radius: 16px; text-align: center;
     background: var(--surface); border: 1px solid var(--border); }
-  .regime-tag { font: 700 0.65rem/1 'Inter', sans-serif; text-transform: uppercase;
-    letter-spacing: 2px; margin-bottom: 8px; }
-  .regime-num { font: 700 2.8rem/1 'JetBrains Mono', monospace; margin: 8px 0; }
-  .regime-desc { font: 300 0.78rem/1.4 'Inter', sans-serif; color: var(--text-dim); }
+  .regime-tag { font: 700 0.6rem/1 'Inter', sans-serif; text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 6px; }
+  .regime-num { font: 700 2.4rem/1 'JetBrains Mono', monospace; margin: 6px 0; }
+  .regime-desc { font: 400 0.75rem/1.4 'Crimson Pro', serif; color: var(--text-dim); }
 
   /* Stage cards */
-  .stages { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 24px 0; }
-  .stage { width: 190px; padding: 28px 18px; border-radius: 16px; text-align: center;
+  .stages { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .stage { width: 175px; padding: 24px 16px; border-radius: 16px; text-align: center;
     background: var(--surface); border: 1px solid var(--border); }
-  .stage-n { font: 700 1.8rem/1 'JetBrains Mono', monospace; margin-bottom: 8px; }
-  .stage-t { font: 600 1rem/1 'Inter', sans-serif; margin-bottom: 6px; }
-  .stage-d { font: 300 0.72rem/1.4 'Inter', sans-serif; color: var(--text-dim); }
+  .stage-n { font: 700 1.6rem/1 'JetBrains Mono', monospace; margin-bottom: 6px; }
+  .stage-t { font: 600 0.95rem/1 'Inter', sans-serif; margin-bottom: 5px; }
+  .stage-d { font: 400 0.7rem/1.4 'Crimson Pro', serif; color: var(--text-dim); }
+
+  /* Diagnostic grid */
+  .diag-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; max-width: 620px; margin: 18px 0; }
+  .diag-item { padding: 16px 12px; border-radius: 12px; text-align: center;
+    background: var(--surface); border: 1px solid var(--border); }
+  .diag-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .diag-title { font: 600 0.65rem/1.2 'Inter', sans-serif; text-transform: uppercase;
+    letter-spacing: 1px; margin-bottom: 4px; }
+  .diag-val { font: 700 0.85rem/1 'JetBrains Mono', monospace; }
+
+  /* Bid distribution */
+  .bid-dist { position: relative; width: min(500px, 80vw); height: 160px; margin: 16px 0; }
+  .bid-dist canvas { width: 100%; height: 100%; }
 
   /* Closing quote */
-  .quote { font: 400 italic clamp(1.2rem,2.5vw,1.9rem)/1.6 'Playfair Display', serif;
-    max-width: 750px; text-align: center; color: #e2e4ea;
-    border-left: 3px solid var(--accent); padding-left: 28px; text-align: left; }
+  .quote { font: 400 italic clamp(1.1rem,2.2vw,1.7rem)/1.6 'Playfair Display', serif;
+    max-width: 700px; color: #e2e4ea;
+    border-left: 3px solid var(--accent); padding-left: 24px; text-align: left; }
+
+  /* Separator */
+  .sep { width: 40px; height: 2px; margin: 16px auto;
+    background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 2px; }
 
   /* Animations */
   @keyframes breathe {
-    0%, 100% { box-shadow: 0 0 0 0 rgba(109,159,255,0.35); }
-    50% { box-shadow: 0 0 0 18px rgba(109,159,255,0); } }
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); } }
-  @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-4px); }
-    75% { transform: translateX(4px); } }
+    0%, 100% { box-shadow: 0 0 0 0 rgba(109,159,255,0.3); }
+    50% { box-shadow: 0 0 0 20px rgba(109,159,255,0); } }
+  @keyframes orbDrift {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(30px, -20px) scale(1.1); }
+    66% { transform: translate(-20px, 15px) scale(0.9); }
+    100% { transform: translate(10px, -10px) scale(1.05); } }
+  @keyframes pulseRed {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(255,107,107,0.3); }
+    50% { box-shadow: 0 0 0 8px rgba(255,107,107,0); } }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); } }
 </style>
 </head>
 <body>
@@ -232,116 +292,133 @@
   <button class="btn" onclick="next()">&#9654;</button>
 </div>
 
+<!-- Ambient orbs -->
+<div id="ambient">
+  <div class="amb-orb" style="width:400px;height:400px;top:-10%;left:-5%;background:rgba(109,159,255,0.08);animation-delay:0s"></div>
+  <div class="amb-orb" style="width:350px;height:350px;bottom:-5%;right:-5%;background:rgba(192,132,252,0.06);animation-delay:-8s"></div>
+  <div class="amb-orb" style="width:300px;height:300px;top:40%;left:60%;background:rgba(244,114,182,0.04);animation-delay:-16s"></div>
+</div>
+
 <canvas id="particles"></canvas>
 
+<!-- OVERLAY -->
 <div id="overlay" onclick="start()">
+  <div class="ov-title">Frequent Losers</div>
+  <div class="ov-sub">Who keeps losing on purpose &mdash; and why it matters</div>
   <div class="play-circle">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
   </div>
   <div class="play-hint">Click to play</div>
-  <div class="play-sub">Narrated animation &middot; ~3 minutes &middot; Sound on</div>
+  <div class="play-sub">Narrated &middot; ~5 min &middot; Sound on &middot; Arrows to navigate</div>
 </div>
 
 <!-- ==================== SCENES ==================== -->
 
-<!-- 0: COLD OPEN -->
+<!-- 0: COLD OPEN — THE QUESTION -->
 <div class="scene" id="s0">
-  <div class="hook fu" data-d="0">What if the biggest clue to a<br>billion-dollar fraud was hiding<br>in plain sight?</div>
+  <div class="hook bi" data-d="0">What kind of company<br>bids on 97 government contracts<br>and never wins a single one?</div>
+  <div class="sep fu" data-d="1200"></div>
+  <div class="body fu" data-d="1500" style="color:var(--text-dim); font-style:italic">Not an unlucky one.</div>
 </div>
 
-<!-- 1: THE SETUP -->
+<!-- 1: THE WORLD — PROCUREMENT 101 -->
 <div class="scene" id="s1">
-  <div class="st fu" data-d="0">The Setup</div>
+  <div class="st fu" data-d="0">The World We're In</div>
   <div class="cards">
     <div class="card si" data-d="200"><div class="card-icon">&#127963;</div><div class="card-label" style="color:var(--accent)">Governments<br>buy stuff</div></div>
     <div class="card si" data-d="400"><div class="card-icon">&#128200;</div><div class="card-label" style="color:var(--green)">Firms<br>compete</div></div>
     <div class="card si" data-d="600"><div class="card-icon">&#128176;</div><div class="card-label" style="color:var(--orange)">Lowest bid<br>wins</div></div>
     <div class="card si" data-d="800"><div class="card-icon">&#128077;</div><div class="card-label" style="color:var(--accent2)">Taxpayers<br>save</div></div>
   </div>
-  <div class="body fu" data-d="400">Every year, governments spend trillions on public procurement &mdash; from pencils to highways. Companies bid, lowest price wins, taxpayers save. <span class="em">Sounds fair, right?</span></div>
+  <div class="body fu" data-d="500">Every year, governments spend trillions buying everything from pencils to highways. The system is elegant: companies compete, lowest price wins, taxpayers get a good deal. <span class="em">That's the theory.</span></div>
 </div>
 
-<!-- 2: THE CRIME -->
+<!-- 2: THE CRIME — BID RIGGING -->
 <div class="scene" id="s2">
-  <div class="st fu" data-d="0" style="color:var(--red)">&#128123; The Crime</div>
+  <div class="st fu" data-d="0" style="color:var(--red)">The Crime Nobody Sees</div>
   <div class="cards">
-    <div class="card si" data-d="300" style="border-color:rgba(255,107,107,0.2)"><div class="card-icon">&#129309;</div><div class="card-label" style="color:var(--red)">Secret<br>agreement</div></div>
-    <div class="card si" data-d="500" style="border-color:rgba(255,107,107,0.2)"><div class="card-icon">&#128260;</div><div class="card-label" style="color:var(--red)">Take<br>turns</div></div>
-    <div class="card si" data-d="700" style="border-color:rgba(255,107,107,0.2)"><div class="card-icon">&#128184;</div><div class="card-label" style="color:var(--red)">Inflate<br>prices</div></div>
-    <div class="card si" data-d="900" style="border-color:rgba(255,107,107,0.2)"><div class="card-icon">&#129534;</div><div class="card-label" style="color:var(--red)">Taxpayers<br>pay</div></div>
+    <div class="card si" data-d="300" style="border-color:rgba(255,107,107,0.15)"><div class="card-icon">&#129309;</div><div class="card-label" style="color:var(--red)">Secret<br>handshake</div></div>
+    <div class="card si" data-d="500" style="border-color:rgba(255,107,107,0.15)"><div class="card-icon">&#128260;</div><div class="card-label" style="color:var(--red)">Take<br>turns</div></div>
+    <div class="card si" data-d="700" style="border-color:rgba(255,107,107,0.15)"><div class="card-icon">&#128184;</div><div class="card-label" style="color:var(--red)">Inflate<br>prices</div></div>
+    <div class="card si" data-d="900" style="border-color:rgba(255,107,107,0.15)"><div class="card-icon">&#129534;</div><div class="card-label" style="color:var(--red)">Taxpayers<br>bleed</div></div>
   </div>
-  <div class="body fu" data-d="500">Enter the <span class="em-r">cartel</span>. Companies that secretly agree who wins each contract. They take turns. They inflate prices. And taxpayers foot the bill &mdash; <span class="em-r">without ever knowing</span>.</div>
+  <div class="body fu" data-d="500">Enter the <span class="em-r">cartel</span>. Companies secretly agree who wins each contract. They rotate. They inflate. And the public &mdash; <span class="em-r">foots the bill without a clue</span>. Half a century after Posner documented it, most cartels remain undetected.</div>
 </div>
 
-<!-- 3: THE DETECTION GAP -->
+<!-- 3: THE DETECTION PROBLEM -->
 <div class="scene" id="s3">
-  <div class="st fu" data-d="0">&#128269; The Frustrating Part</div>
+  <div class="st fu" data-d="0">The Frustrating Part</div>
   <div class="stats">
-    <div class="stat si" data-d="300">
+    <div class="stat si" data-d="200">
       <div class="stat-v" style="color:var(--red)">&#128683;</div>
-      <div class="stat-l">Scarce<br>resources</div>
+      <div class="stat-l">Scarce<br>investigators</div>
     </div>
-    <div class="stat si" data-d="600">
+    <div class="stat si" data-d="500">
       <div class="stat-v" style="color:var(--orange)">&#128202;</div>
-      <div class="stat-l">No bid<br>amounts</div>
+      <div class="stat-l">Most tools need<br>bid amounts</div>
     </div>
-    <div class="stat si" data-d="900">
-      <div class="stat-v" style="color:var(--text-dim)">&#10067;</div>
-      <div class="stat-l">Where<br>to look?</div>
+    <div class="stat si" data-d="800">
+      <div class="stat-v" style="color:var(--text-dim)">&#127758;</div>
+      <div class="stat-l">Most countries<br>don't have them</div>
     </div>
   </div>
-  <div class="body fu" data-d="500">Most detection tools require <span class="em">detailed bid data</span>. But most procurement systems in the world only record <span class="em">who showed up</span> and <span class="em">who won</span>. Dead end? <span class="em-o">Not quite.</span></div>
+  <div class="body fu" data-d="500">The best detection tools &mdash; Imhof screens, variance tests, kurtosis &mdash; require <span class="em">granular bid amounts</span>. But most procurement systems, especially in developing countries, only record <span class="em">who showed up</span> and <span class="em">who won</span>. That's it. Dead end? <span class="em-o">Not quite.</span></div>
 </div>
 
-<!-- 4: THE STRANGE PATTERN -->
+<!-- 4: THE ANOMALY — SOMETHING WEIRD -->
 <div class="scene" id="s4">
-  <div class="st fu" data-d="0" style="color:var(--red)">&#129300; Something Weird Is Going On</div>
+  <div class="st fu" data-d="0" style="color:var(--red)">Something Weird in the Data</div>
   <div class="parade" id="parade"></div>
-  <div class="body fu" data-d="300">Among <span class="em mono">41,000</span> firms in S&atilde;o Paulo, nearly <span class="em-r mono">17,000</span> never won a single tender. Some keep coming back &mdash; again, and again, and again. One firm bid on <span class="em-r">97 contracts</span> over ten years. Won <span class="em-r">zero</span>. That&rsquo;s not bad luck. <span class="em-r">That&rsquo;s a job description.</span></div>
+  <div class="body fu" data-d="300">S&atilde;o Paulo, Brazil. <span class="mono em">41,000</span> firms bid on government contracts between 2009 and 2019. Among them, <span class="em-r mono">16,843</span> never won. Not once. And within those eternal losers, <span class="em-r mono">2,735</span> bid with an intensity that defies economic rationality. One company entered <span class="em-r">97 tenders over a decade</span>. Won <span class="em-r">zero</span>. Every bid costs money. Zero wins means negative expected profit. <span class="em-r">So why do they keep coming back?</span></div>
 </div>
 
-<!-- 5: THE HYPOTHESIS -->
+<!-- 5: COVER BIDDING EXPLAINED -->
 <div class="scene" id="s5">
-  <div class="st fu" data-d="0">&#127917; The Cover Bidders</div>
+  <div class="st fu" data-d="0">Meet the Cover Bidders</div>
   <div class="bars" id="bars"></div>
-  <div class="body fu" data-d="300">Brazilian law often requires <span class="em">at least 3 bidders</span>. Cartels need extras to fill the room. <span class="em-r">Cover bidders</span> submit absurdly high bids, lose on purpose, and collect a side payment. They&rsquo;re not competitors. They&rsquo;re <span class="em-r">extras in a rigged play</span>.</div>
+  <div style="display:flex; gap:16px; margin:6px 0; font:500 0.65rem/1 'Inter',sans-serif">
+    <div class="fu" data-d="800" style="color:var(--green)">&#9733; Winner (cartel pick)</div>
+    <div class="fu" data-d="900" style="color:var(--accent)">Genuine bidders</div>
+    <div class="fu" data-d="1000" style="color:var(--red)">&#10007; Cover bidders (FL)</div>
+  </div>
+  <div class="body fu" data-d="400">Brazilian law requires <span class="em">at least 3 bidders</span> for sealed-bid contracts. Cartels need bodies to fill the room. Cover bidders show up, submit comically high bids, lose by design, and collect a side payment. They're not competitors. They're <span class="em-r">extras in a rigged play</span>. And here's the key: <span class="em">they must participate</span>. That footprint is all we need.</div>
 </div>
 
-<!-- 6: THE FILTER -->
+<!-- 6: THE FL SCREEN — THE FILTER -->
 <div class="scene" id="s6">
-  <div class="st fu" data-d="0">&#128270; The Beautifully Simple Filter</div>
+  <div class="st fu" data-d="0">A Beautifully Simple Filter</div>
   <div class="funnel" id="funnel">
-    <div class="fstep fu" data-d="200" style="width:min(480px,80vw); background:linear-gradient(90deg,#1a2744,#1e3a5f)">&#128101;&ensp;41,000 firms in BEC (2009&ndash;2019)</div>
+    <div class="fstep fu" data-d="200" style="width:min(460px,78vw); background:linear-gradient(90deg,#141e33,#1a2d55)">&#128101;&ensp;41,000 firms in BEC (2009&ndash;2019)</div>
     <div class="farrow fu" data-d="500">&#9660;</div>
-    <div class="fstep fu" data-d="700" style="width:min(360px,65vw); background:linear-gradient(90deg,#3b1a3b,#5b2d5b)">&#10060;&ensp;16,843 never won anything</div>
+    <div class="fstep fu" data-d="700" style="width:min(340px,63vw); background:linear-gradient(90deg,#2d1640,#4a2068)">&#10060;&ensp;16,843 never won a tender (always-losers)</div>
     <div class="farrow fu" data-d="1000">&#9660;</div>
-    <div class="fstep fu" data-d="1200" style="width:min(260px,50vw); background:linear-gradient(90deg,#5c1a1a,#8b2020)">&#128680;&ensp;2,735 bid way too often</div>
+    <div class="fstep fu" data-d="1200" style="width:min(250px,48vw); background:linear-gradient(90deg,#4a1515,#7a1e1e)">&#128680;&ensp;2,735 bid too often to be rational</div>
   </div>
-  <div class="body fu" data-d="800" style="font-size:clamp(0.85rem,1.2vw,1.05rem)">A basic outlier rule. Needs only <span class="em">who bid</span> and <span class="em">who won</span>. Any procurement agency on Earth can run it.</div>
+  <div class="body fu" data-d="900" style="font-size:clamp(0.82rem,1.15vw,1rem)">Win rate = zero. Participation count above the IQR outlier threshold. That's it. Needs only <span class="em">who bid</span> and <span class="em">who won</span>. Any procurement agency can run it <span class="em">with a spreadsheet</span>.</div>
 </div>
 
-<!-- 7: EVIDENCE — PRICES -->
+<!-- 7: PRICE EVIDENCE -->
 <div class="scene" id="s7">
-  <div class="st fu" data-d="0">&#128176; Follow the Money</div>
-  <div style="display:flex; gap:60px; align-items:flex-end; margin:20px 0">
+  <div class="st fu" data-d="0">Follow the Money</div>
+  <div style="display:flex; gap:50px; align-items:flex-end; margin:16px 0">
     <div style="text-align:center">
-      <div class="mono fu" data-d="300" style="font-weight:700; color:var(--green); margin-bottom:8px">baseline</div>
-      <div class="si" data-d="500" style="width:70px; height:0; border-radius:10px 10px 0 0; background:linear-gradient(to top,#15803d,var(--green)); transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1) 0.6s" id="bNoFL"></div>
-      <div class="fu" data-d="600" style="font:500 0.8rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:8px">Without FL</div>
+      <div class="mono fu" data-d="300" style="font-weight:700; color:var(--green); font-size:0.8rem; margin-bottom:8px">baseline</div>
+      <div class="si" data-d="500" style="width:65px; height:0; border-radius:10px 10px 0 0; background:linear-gradient(to top,#15803d,var(--green)); transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1) 0.6s" id="bNoFL"></div>
+      <div class="fu" data-d="700" style="font:500 0.72rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:8px">Without FL</div>
     </div>
     <div style="text-align:center">
-      <div class="mono fu" data-d="300" style="font-weight:700; color:var(--red); margin-bottom:8px">+3.6&ndash;7.7%</div>
-      <div class="si" data-d="500" style="width:70px; height:0; border-radius:10px 10px 0 0; background:linear-gradient(to top,#b91c1c,var(--red)); transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1) 0.9s" id="bFL"></div>
-      <div class="fu" data-d="600" style="font:500 0.8rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:8px">With FL</div>
+      <div class="mono fu" data-d="300" style="font-weight:700; color:var(--red); font-size:0.8rem; margin-bottom:8px">+3.6&ndash;7.7%</div>
+      <div class="si" data-d="500" style="width:65px; height:0; border-radius:10px 10px 0 0; background:linear-gradient(to top,#b91c1c,var(--red)); transition:height 1.5s cubic-bezier(0.34,1.56,0.64,1) 0.9s" id="bFL"></div>
+      <div class="fu" data-d="700" style="font:500 0.72rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:8px">With FL</div>
     </div>
   </div>
-  <div class="body fu" data-d="400">When a frequent loser shows up, prices are <span class="em-r">3.6 to 7.7 percent higher</span>. Same product. Same year. Same purchasing unit. That&rsquo;s not noise &mdash; <span class="em-r">that&rsquo;s a premium</span>, and someone is paying it.</div>
+  <div class="body fu" data-d="400">Same product. Same year. Same purchasing unit. When a frequent loser appears, prices run <span class="em-r">3.6 to 7.7 percent higher</span>. Cross-fit, OLS, matching, IV &mdash; four different estimation approaches, same story. That's not noise. <span class="em-r">That's a premium somebody is paying.</span></div>
 </div>
 
-<!-- 8: EVIDENCE — CADE VALIDATION -->
+<!-- 8: CADE VALIDATION -->
 <div class="scene" id="s8">
-  <div class="st fu" data-d="0">&#127919; Validated Against Real Cartels</div>
-  <div class="gauge si" data-d="300">
+  <div class="st fu" data-d="0">Tested Against Real Cartels</div>
+  <div class="gauge si" data-d="200">
     <svg viewBox="0 0 200 200">
       <defs><linearGradient id="gGrad" x1="0%" y1="0%" x2="100%"><stop offset="0%" stop-color="var(--accent)"/><stop offset="100%" stop-color="var(--accent2)"/></linearGradient></defs>
       <circle class="gauge-bg" cx="100" cy="100" r="84"/>
@@ -353,62 +430,172 @@
     </div>
   </div>
   <div class="stats">
-    <div class="stat fu" data-d="800"><div class="stat-v" style="color:var(--accent2)">3.5&times;</div><div class="stat-l">Co-participation<br>with cartelists</div></div>
-    <div class="stat fu" data-d="1100"><div class="stat-v" style="color:var(--pink)">3</div><div class="stat-l">Convicted firms<br>classified as FL</div></div>
+    <div class="stat fu" data-d="600"><div class="stat-v" style="color:var(--accent2)">3.5&times;</div><div class="stat-l">Co-participation<br>vs expected</div></div>
+    <div class="stat fu" data-d="900"><div class="stat-v" style="color:var(--pink)">3</div><div class="stat-l">Convicted firms<br>are themselves FL</div></div>
+    <div class="stat fu" data-d="1200"><div class="stat-v" style="color:var(--cyan)">2.2&times;</div><div class="stat-l">Survives exact<br>count matching</div></div>
   </div>
-  <div class="body fu" data-d="600" style="font-size:clamp(0.85rem,1.2vw,1.05rem)">Checked against Brazil&rsquo;s competition authority: <span class="em">AUC = 0.94</span> &mdash; nearly perfect. The screen doesn&rsquo;t just work. It works <span class="em-p">embarrassingly well</span>.</div>
+  <div class="body fu" data-d="500" style="font-size:clamp(0.82rem,1.1vw,0.95rem)">Brazil&rsquo;s competition authority, CADE, has convicted 65 procurement cartels. Against that ground truth: <span class="em">AUC = 0.94</span> &mdash; though volume contributes substantially (within participation-count bands, AUC drops to <span class="em-o">0.54</span>). The screen&rsquo;s detection power comes from identifying the <span class="em">high-participation tail</span> of always-losers. A count-matched permutation test (<span class="em">2.2&times;</span>) confirms the FL classification adds signal beyond volume alone.</div>
 </div>
 
-<!-- 9: THE TWIST -->
+<!-- 9: THE PARADOX — WHY EXISTING TOOLS MISS THIS -->
 <div class="scene" id="s9">
-  <div class="st fu" data-d="0">&#128260; The Twist That Seals It</div>
+  <div class="st fu" data-d="0">The Dispersion Paradox</div>
+  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center; margin:16px 0">
+    <div class="si" data-d="300" style="text-align:center">
+      <div style="font:600 0.65rem/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent); margin-bottom:8px">FL Bids</div>
+      <div style="font:700 2rem/1 'JetBrains Mono',monospace; color:var(--accent)">CV 0.57</div>
+      <div style="font:400 0.7rem/1 'Crimson Pro',serif; color:var(--text-dim); margin-top:4px">Lower dispersion</div>
+    </div>
+    <div class="si" data-d="500" style="text-align:center; color:var(--text-dim); font-size:2rem; display:flex; align-items:center">vs</div>
+    <div class="si" data-d="700" style="text-align:center">
+      <div style="font:600 0.65rem/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:8px">Non-FL Bids</div>
+      <div style="font:700 2rem/1 'JetBrains Mono',monospace; color:var(--orange)">CV 1.65</div>
+      <div style="font:400 0.7rem/1 'Crimson Pro',serif; color:var(--text-dim); margin-top:4px">Higher dispersion</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="400">Here's the twist that makes the paper click. FL bids are <span class="em">less</span> dispersed than genuine bids. They cluster tightly above the winner. This is <span class="em-c">coordinated cover bidding</span> &mdash; and it means <span class="em-r">variance-based screens lose power</span> exactly when coordination is strongest. A participation-based screen sidesteps this completely. It doesn't care how they bid. It cares that <span class="em">they showed up at all</span>.</div>
+</div>
+
+<!-- 10: THE SMOKING GUN — CONVITE VS PREGÃO -->
+<div class="scene" id="s10">
+  <div class="st fu" data-d="0">The Telltale Asymmetry</div>
   <div class="regimes">
-    <div class="regime si" data-d="200" style="border-color:rgba(251,146,60,0.25)">
+    <div class="regime si" data-d="200" style="border-color:rgba(251,146,60,0.2)">
       <div class="regime-tag" style="color:var(--orange)">Convite (Sealed bid)</div>
       <div class="regime-num" style="color:var(--orange)">+3.8%</div>
-      <div class="regime-desc">Law requires 3 bidders. Some cover bidding is just compliance noise.</div>
+      <div class="regime-desc">Law requires 3 bidders.<br>Some FL presence is just compliance noise.</div>
     </div>
-    <div class="regime si" data-d="600" style="border-color:rgba(192,132,252,0.25)">
+    <div class="regime si" data-d="600" style="border-color:rgba(192,132,252,0.2)">
       <div class="regime-tag" style="color:var(--accent2)">Preg&atilde;o (E-auction)</div>
       <div class="regime-num" style="color:var(--accent2)">+9.3%</div>
-      <div class="regime-desc">No minimum rule. If a cover bidder shows up here, it&rsquo;s <strong>purely strategic</strong>.</div>
+      <div class="regime-desc">No minimum-bidder rule.<br>Every FL appearance is <strong>voluntary</strong>.</div>
     </div>
   </div>
-  <div class="body fu" data-d="400">The premium is <span class="em-p">bigger where cover bidding is voluntary</span>. When no law forces you to show up and you show up anyway &mdash; and lose &mdash; that&rsquo;s not compliance. <span class="em-p">That&rsquo;s strategy.</span></div>
+  <div class="body fu" data-d="400">The premium is <span class="em-p">almost three times larger</span> where cover bidding is purely strategic. When no law forces you to show up and you show up anyway &mdash; and lose, every time &mdash; that's not compliance. <span class="em-p">That's strategy.</span> And when we interact FL with a constraint-binding indicator, the entire effect comes from <span class="em-k">voluntary participation</span>: a 7.6% premium.</div>
 </div>
 
-<!-- 10: THE SOLUTION -->
-<div class="scene" id="s10">
-  <div class="st fu" data-d="0">&#128161; The Prescription</div>
+<!-- 11: FIVE DIAGNOSTICS -->
+<div class="scene" id="s11">
+  <div class="st fu" data-d="0">Five Clues, One Pattern</div>
+  <div class="diag-grid">
+    <div class="diag-item si" data-d="200">
+      <div class="diag-icon">&#128101;</div>
+      <div class="diag-title" style="color:var(--green)">No crowding out</div>
+      <div class="diag-val" style="color:var(--green)">+0.19 firms</div>
+    </div>
+    <div class="diag-item si" data-d="400">
+      <div class="diag-icon">&#127919;</div>
+      <div class="diag-title" style="color:var(--accent)">Price anchoring</div>
+      <div class="diag-val" style="color:var(--accent)">&minus;4%</div>
+    </div>
+    <div class="diag-item si" data-d="600">
+      <div class="diag-icon">&#128279;</div>
+      <div class="diag-title" style="color:var(--accent2)">Dyadic links</div>
+      <div class="diag-val" style="color:var(--accent2)">4,696 pairs</div>
+    </div>
+    <div class="diag-item si" data-d="800">
+      <div class="diag-icon">&#128200;</div>
+      <div class="diag-title" style="color:var(--pink)">Lower exit</div>
+      <div class="diag-val" style="color:var(--pink)">HR = 0.60</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="500">FL firms don&rsquo;t displace genuine bidders &mdash; they <span class="em-g">add</span> to participation. Winners bid closer to reference prices. FL&ndash;winner pairs recur far beyond chance. And firms in FL-exposed markets exit <span class="em-p">less</span>, not more. Each fact alone has benign readings. Together? <span class="em">Hard to square with anything but coordinated cover bidding.</span></div>
+</div>
+
+<!-- 12: COMPLEMENTARITY — FL vs IMHOF -->
+<div class="scene" id="s12">
+  <div class="st fu" data-d="0">Two Lenses, One Problem</div>
+  <div style="display:flex; gap:40px; flex-wrap:wrap; justify-content:center; margin:16px 0; align-items:center">
+    <div class="si" data-d="300" style="text-align:center; padding:20px; background:var(--surface); border-radius:14px; border:1px solid var(--border); width:180px">
+      <div style="font:600 0.6rem/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent); margin-bottom:6px">FL Screen</div>
+      <div style="font:700 1.2rem/1 'JetBrains Mono',monospace; color:var(--accent)">AUC 0.94</div>
+      <div style="font:400 0.7rem/1 'Crimson Pro',serif; color:var(--text-dim); margin-top:4px">Participation only</div>
+      <div style="font:400 0.6rem/1 'Crimson Pro',serif; color:var(--orange); margin-top:2px">(0.54 within bands)</div>
+    </div>
+    <div class="si" data-d="500" style="font:500 0.75rem/1 'Inter',sans-serif; color:var(--text-dim)">correlation<br><span style="font:700 1.4rem/1 'JetBrains Mono',monospace; color:var(--gold)">0.06</span></div>
+    <div class="si" data-d="700" style="text-align:center; padding:20px; background:var(--surface); border-radius:14px; border:1px solid var(--border); width:180px">
+      <div style="font:600 0.6rem/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:var(--orange); margin-bottom:6px">Imhof Screen</div>
+      <div style="font:700 1.2rem/1 'JetBrains Mono',monospace; color:var(--orange)">AUC 0.90</div>
+      <div style="font:400 0.7rem/1 'Crimson Pro',serif; color:var(--text-dim); margin-top:4px">Bid-level data</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="400">The FL screen and bid-level tools capture <span class="em-k">almost entirely different information</span>. Correlation of just 0.06. In a horse-race regression, the FL coefficient actually <span class="em">rises</span> when you add the Imhof flag. They're complementary. The paper proposes using them <span class="em">sequentially</span>: FL first to triage, then bid-level forensics on the flagged subset.</div>
+</div>
+
+<!-- 13: OVERSIGHT GRADIENT -->
+<div class="scene" id="s13">
+  <div class="st fu" data-d="0">Where It Bites Hardest</div>
+  <div class="stats">
+    <div class="stat si" data-d="200">
+      <div class="stat-v" style="color:var(--red)">21.4%</div>
+      <div class="stat-l">Smallest<br>PBUs (Q1)</div>
+    </div>
+    <div class="stat si" data-d="400">
+      <div class="stat-v" style="color:var(--orange)">9.8%</div>
+      <div class="stat-l">Q2</div>
+    </div>
+    <div class="stat si" data-d="600">
+      <div class="stat-v" style="color:var(--accent)">4.5%</div>
+      <div class="stat-l">Q3</div>
+    </div>
+    <div class="stat si" data-d="800">
+      <div class="stat-v" style="color:var(--green)">1.7%</div>
+      <div class="stat-l">Largest<br>PBUs (Q4)</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="500">A <span class="em-r">12.5&times; gradient</span> across purchasing-unit size. Where oversight is weakest, the screen signal is strongest. This matches the framework's prediction: cover bidding is most profitable where detection probability is lowest. <span class="em">The screen bites hardest where it's needed most.</span></div>
+</div>
+
+<!-- 14: THE PRESCRIPTION -->
+<div class="scene" id="s14">
+  <div class="st fu" data-d="0">The Three-Stage Pathway</div>
   <div class="stages">
-    <div class="stage si" data-d="200" style="border-color:rgba(109,159,255,0.25)">
+    <div class="stage si" data-d="200" style="border-color:rgba(109,159,255,0.2)">
       <div class="stage-n" style="color:var(--accent)">1</div>
       <div class="stage-t" style="color:var(--accent)">Screen</div>
-      <div class="stage-d">Run the FL filter automatically on participation records</div>
+      <div class="stage-d">Apply the FL filter to participation records. A SQL query. Minutes.</div>
     </div>
-    <div class="stage si" data-d="600" style="border-color:rgba(192,132,252,0.25)">
+    <div class="stage si" data-d="600" style="border-color:rgba(192,132,252,0.2)">
       <div class="stage-n" style="color:var(--accent2)">2</div>
       <div class="stage-t" style="color:var(--accent2)">Triage</div>
-      <div class="stage-d">Prioritize flagged environments for closer scrutiny</div>
+      <div class="stage-d">Prioritize by network metrics and oversight capacity. Focus on competitive markets.</div>
     </div>
-    <div class="stage si" data-d="1000" style="border-color:rgba(244,114,182,0.25)">
+    <div class="stage si" data-d="1000" style="border-color:rgba(244,114,182,0.2)">
       <div class="stage-n" style="color:var(--pink)">3</div>
       <div class="stage-t" style="color:var(--pink)">Investigate</div>
-      <div class="stage-d">Deploy detailed analysis only where risk is highest</div>
+      <div class="stage-d">Deploy bid-level forensics only where the signal is strongest.</div>
     </div>
   </div>
-  <div class="body fu" data-d="500">Not a conviction tool &mdash; a <span class="em">flashlight in a dark room</span>, pointing investigators exactly where to look.</div>
+  <div class="body fu" data-d="500">Not a conviction machine &mdash; a <span class="em">flashlight in a dark room</span>. From 41,000 firms to 2,735 flags. From millions of tenders to the ones that matter. It tells investigators exactly <span class="em">where to start looking</span>.</div>
 </div>
 
-<!-- 11: CLOSING -->
-<div class="scene" id="s11">
-  <div class="quote sr" data-d="0">&ldquo;Firms that lose too often may be losing on purpose. And this pattern &mdash; detectable with nothing more than participation records &mdash; reveals where cartels are most likely hiding.&rdquo;</div>
-  <div class="fu" data-d="2000" style="margin-top:40px; text-align:center">
-    <div style="font:500 1rem/1 Inter,sans-serif; color:var(--text-dim)">Genicolo-Martins &amp; Furquim de Azevedo</div>
-    <div style="font:300 0.8rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:6px; opacity:0.6">INSPER &bull; S&atilde;o Paulo, Brazil &bull; 2026</div>
+<!-- 15: INTELLECTUAL HONESTY — WHAT IT DOESN'T CLAIM -->
+<div class="scene" id="s15">
+  <div class="st fu" data-d="0" style="color:var(--text-dim)">What We Don't Claim</div>
+  <div class="body fu" data-d="200" style="max-width:640px">
+    <div style="text-align:left; display:flex; flex-direction:column; gap:12px; font-size:clamp(0.85rem,1.2vw,1rem)">
+      <div class="sr" data-d="300"><span class="em-r">&#10007;</span> &ensp;This is not causal identification. It's a conditional association.</div>
+      <div class="sr" data-d="600"><span class="em-r">&#10007;</span> &ensp;The screen flags environments, not guilty firms.</div>
+      <div class="sr" data-d="900"><span class="em-r">&#10007;</span> &ensp;Diagnostics are consistent with cover bidding but don't prove it.</div>
+      <div class="sr" data-d="1100"><span class="em-r">&#10007;</span> &ensp;The staggered DiD yields a null result &mdash; insufficient power and pre-trends preclude causal interpretation.</div>
+      <div class="sr" data-d="1400"><span class="em-g">&#10003;</span> &ensp;An omitted confounder would need to explain 17.5% of residual variation in <em>both</em> FL presence and prices to nullify the result.</div>
+    </div>
   </div>
-  <div class="fu" data-d="3000" style="margin-top:24px; font:300 0.75rem/1 Inter,sans-serif; color:var(--text-dim); opacity:0.4">
-    Sometimes the best clue isn&rsquo;t who wins. It&rsquo;s who keeps losing.
+  <div class="body fu" data-d="1500" style="font-style:italic; color:var(--text-dim); margin-top:20px; font-size:0.9rem">The diagnostics don't prove the mechanism.<br>They make the case for deploying the screen.</div>
+</div>
+
+<!-- 16: CLOSING -->
+<div class="scene" id="s16">
+  <div class="quote sr" data-d="0">&ldquo;Firms that lose too often may be losing on purpose. And this pattern &mdash; detectable with nothing more than participation records &mdash; reveals where cartels are most likely hiding.&rdquo;</div>
+  <div class="sep fu" data-d="2000"></div>
+  <div class="fu" data-d="2200" style="text-align:center">
+    <div style="font:500 1rem/1 Inter,sans-serif; color:var(--text-dim)">Genicolo-Martins &amp; Furquim de Azevedo</div>
+    <div style="font:300 0.78rem/1 Inter,sans-serif; color:var(--text-dim); margin-top:6px; opacity:0.5">INSPER &bull; S&atilde;o Paulo, Brazil &bull; 2026</div>
+  </div>
+  <div class="fu" data-d="3000" style="margin-top:28px; text-align:center">
+    <div style="font:400 italic clamp(0.85rem,1.3vw,1.05rem)/1.4 'Crimson Pro',serif; color:var(--text-dim); opacity:0.5">
+      Sometimes the best clue isn&rsquo;t who wins.<br>It&rsquo;s who keeps losing.
+    </div>
   </div>
 </div>
 
@@ -418,52 +605,72 @@
 // === NARRATION SCRIPT ===
 const S = [
   { // 0 — Cold open
-    text: "What if the biggest clue to a billion-dollar fraud... was hiding in plain sight?",
-    dur: 7000
+    text: "What kind of company bids on ninety-seven government contracts... and never wins a single one? Not an unlucky one.",
+    dur: 8000
   },
-  { // 1 — Setup
-    text: "Every year, governments spend trillions on public procurement — buying everything from pencils to highways. Companies bid, lowest price wins, taxpayers save money. Sounds fair, right?... Well. Not always.",
-    dur: 14000
-  },
-  { // 2 — Crime
-    text: "Enter the cartel. A group of companies that secretly agree who wins each contract. They take turns. They inflate prices. And taxpayers? They pay the bill — without ever knowing.",
-    dur: 13000
-  },
-  { // 3 — Detection gap
-    text: "Here's the frustrating part. We know cartels exist. Competition authorities catch a few. But most detection tools need detailed bid data. And most procurement systems in the world? They only record who showed up and who won. Dead end? Not quite.",
-    dur: 17000
-  },
-  { // 4 — Strange pattern
-    text: "Deep in the procurement records of São Paulo, Brazil, something weird is going on. Among 41,000 firms, nearly 17,000 never won a single tender. And some of these eternal losers keep coming back. Again... and again... and again. One firm bid on 97 contracts over ten years. Won zero. That's not bad luck. That's a job description.",
-    dur: 22000
-  },
-  { // 5 — Hypothesis
-    text: "Meet the cover bidders. Brazilian law requires at least three bidders for certain contracts. Cartels need warm bodies to fill the room. Cover bidders show up, submit absurdly high bids, lose on purpose, and collect a side payment. They're not competitors. They're extras in a rigged play.",
-    dur: 19000
-  },
-  { // 6 — Filter
-    text: "The researchers built a beautifully simple filter. Step one: find firms with a zero percent win rate. Step two: flag the ones who bid way more often than chance would explain. A basic outlier rule. 2,735 firms whose behavior makes no economic sense — unless they're being paid to lose. The best part? Any procurement agency on Earth can run it.",
-    dur: 22000
-  },
-  { // 7 — Prices
-    text: "So does the filter actually work? Follow the money. When a frequent loser shows up, prices are 3.6 to 7.7 percent higher. Same product. Same year. Same purchasing unit. That's not noise — that's a premium. And someone is paying it.",
-    dur: 16000
-  },
-  { // 8 — CADE
-    text: "The researchers checked the filter against Brazil's competition authority — actual convicted cartels. The result? An AUC of 0.94 — that's nearly perfect detection. Frequent losers co-appear with convicted cartelists at 3.5 times the expected rate. And three convicted firms were themselves classified as frequent losers. The screen doesn't just work. It works embarrassingly well.",
-    dur: 21000
-  },
-  { // 9 — Twist
-    text: "Here's the twist. The price premium is actually bigger in electronic auctions — where there's no minimum bidder rule — than in sealed bids where the law forces participation. When no law forces you to show up, and you show up anyway and lose? That's not compliance. That's strategy.",
+  { // 1 — Procurement 101
+    text: "Here's how public procurement is supposed to work. Government needs something — could be hospital supplies, school buses, highway repairs. Companies compete. Lowest price wins. Taxpayers get a good deal. Elegant system. Trillions of dollars a year, flowing through it worldwide. That's the theory. The practice... is messier.",
     dur: 18000
   },
-  { // 10 — Solution
-    text: "The paper doesn't just diagnose — it prescribes. A three-stage pathway. Screen automatically. Triage the flagged markets. Investigate only where the signal is strongest. Not a conviction tool — a flashlight in a dark room, pointing investigators exactly where to look.",
-    dur: 17000
+  { // 2 — The crime
+    text: "Bid-rigging cartels. Companies that secretly agree who wins each contract. They rotate the winner. They inflate prices. And the public — taxpayers, patients, students — they foot the bill without ever knowing. Half a century after Posner first documented the problem, most cartels remain undetected. The few we catch? That's just the visible tip.",
+    dur: 19000
   },
-  { // 11 — Closing
-    text: "Firms that lose too often may be losing on purpose. And this pattern — detectable with nothing more than participation records — reveals where cartels are most likely hiding. Sometimes the best clue isn't who wins. It's who keeps losing.",
-    dur: 14000
+  { // 3 — Detection gap
+    text: "Here's the frustrating part. The best cartel-detection tools — variance screens, kurtosis tests, machine learning classifiers — they all need one thing: detailed bid amounts. But most procurement systems in the world, especially in developing countries, only record two things: who showed up, and who won. No bid amounts. No microdata. So how does an agency with limited data and even more limited resources decide where to look?",
+    dur: 23000
+  },
+  { // 4 — Strange pattern
+    text: "Deep in the electronic procurement records of São Paulo, Brazil, something very strange is going on. Among forty-one thousand firms that bid on government contracts between 2009 and 2019, nearly seventeen thousand never won a single tender. Now, some attrition is normal. But twenty-seven hundred of these eternal losers keep coming back with an intensity that makes no economic sense. One company bid on ninety-seven contracts over a decade. Won zero. Every bid costs money — time, paperwork, filing fees. Zero wins means strictly negative profit. So why on earth do they keep showing up? Unless... losing is the job.",
+    dur: 32000
+  },
+  { // 5 — Cover bidders
+    text: "Meet the cover bidders. Brazilian procurement law requires at least three bidders for sealed-bid contracts called convite. If a cartel controls the market but only has two members, it needs a warm body to fill the third chair. Cover bidders show up, submit absurdly high bids, lose by design, and quietly collect a side payment. They're not competitors. They're extras in a rigged play. And here's the critical insight: whatever they do with their bids, they must participate. That behavioral footprint — the act of showing up — is visible even without bid amounts. And that's all we need.",
+    dur: 30000
+  },
+  { // 6 — The filter
+    text: "The researchers built a screen of almost brutal simplicity. Step one: find every firm with a zero win rate across the entire decade. Step two: among those always-losers, flag the ones who bid more often than a statistical outlier rule can explain. The threshold falls at fourteen tenders. Below that? Maybe bad luck. Above that? With zero wins and positive bidding costs, the expected profit is negative under any competitive model. Twenty-seven thirty-five firms. The whole computation runs in minutes. Needs only two columns of data: who bid and who won. Any procurement agency on Earth can implement it with a spreadsheet.",
+    dur: 32000
+  },
+  { // 7 — Prices
+    text: "So does the filter actually catch anything? Follow the money. When a frequent loser shows up in a tender, the negotiated price is three-point-six to seven-point-seven percent higher. Same product category. Same year. Same purchasing unit. Four different estimation strategies — cross-fitting, OLS with high-dimensional fixed effects, coarsened exact matching, inverse probability weighting — all converge on the same range. That's not statistical noise. That's a price premium. And somebody is paying it.",
+    dur: 28000
+  },
+  { // 8 — CADE validation
+    text: "But here's where it gets interesting — and where intellectual honesty matters. The researchers checked the screen against ground truth — Brazil's competition authority, CADE, which convicted sixty-five procurement cartels during the same period. Using a strict temporal split, they got an unconditional AUC of zero-point-nine-four. Impressive — but partly mechanical. Both the screening score and the ground truth are driven by participation volume. Within participation-count bands, the AUC drops to zero-point-five-four. The screen's detection power comes primarily from identifying the high-participation tail of always-losers. That said, a count-matched permutation test confirms the FL classification adds real signal beyond volume alone — two-point-two times the expected rate — and the zero-win condition is the active ingredient. For enforcement purposes, the unconditional AUC is the relevant metric: volume is part of the behavioral anomaly the screen exploits.",
+    dur: 38000
+  },
+  { // 9 — Dispersion paradox
+    text: "Now here's the twist that makes the whole thing click — and it's genuinely clever. You'd expect cover bids to be wild and random, right? High variance, all over the place? That's what variance-based screens look for. But no. FL bids cluster tightly above the winning price. Their within-tender coefficient of variation is zero-point-five-seven — compared to one-point-six-five for genuine losing bids. Cover bids are less dispersed, not more. This is what the paper calls Regime Two: coordinated cover bidding. And it means that the existing detection tools — the ones everyone uses — lose power precisely when cartel coordination is tightest. A participation-based screen sidesteps this trap entirely. It doesn't care how they bid. It only cares that they showed up.",
+    dur: 36000
+  },
+  { // 10 — Convite vs pregão
+    text: "The price premium tells us something even more striking when you split by procurement format. In convite — sealed-bid contracts where the law requires at least three bidders — the FL premium is three-point-eight percent. In pregão — electronic auctions with no minimum-bidder rule — it's nine-point-three percent. Almost three times larger. Think about what that means. When the law forces participation, some cover bidding is just compliance noise. But when no rule requires your presence and you still show up — and lose, every single time — that's not compliance. That's strategy. And when the researchers interact FL with a constraint-binding indicator, the entire price association comes from voluntary participation: a seven-point-six percent premium. The signal is strategic deployment, not rule-following.",
+    dur: 36000
+  },
+  { // 11 — Five diagnostics
+    text: "Five independent diagnostic tests paint a consistent picture. First: FL firms don't crowd out genuine bidders — they add zero-point-nineteen more competitors per tender, suggesting they add noise rather than substitute for real competition. Second: in FL-present tenders, winning bids hug the reference price four percent more tightly — consistent with calibrated bid placement. Third: FL firms form persistent co-bidding pairs with specific winners, far beyond what chance predicts. Fourth: firms in FL-exposed markets actually exit less — not what you'd expect from a crowded competitive environment. Fifth, Bajari–Ye tests reject exchangeability of FL and non-FL bid residuals. Each diagnostic, alone, has other readings. Together, the pattern is hard to square with any benign explanation.",
+    dur: 40000
+  },
+  { // 12 — Complementarity
+    text: "Perhaps the most practically important finding: the FL screen and bid-level tools capture almost entirely different collusion signatures. The correlation between them is just zero-point-zero-six — barely above zero. In a horse-race regression, the FL coefficient actually rises when you add the Imhof-style flag. They're not substitutes — they're complements. The paper proposes using them sequentially. FL first, to triage with minimal data. Then bid-level forensics on the flagged subset. Screen, triage, investigate. Two stages capture different blind spots, reducing both false positives and missed cases.",
+    dur: 30000
+  },
+  { // 13 — Oversight gradient
+    text: "One more finding that seals the enforcement case. The FL–price association varies dramatically with oversight capacity. In the smallest purchasing units — the ones with the thinnest bureaucracies, the fewest auditors — the premium is twenty-one percent. In the largest, most scrutinized ones, it drops to one-point-seven percent. A twelve-and-a-half times gradient. The screen bites hardest exactly where cover bidding is most profitable and where investigative resources should be directed first.",
+    dur: 26000
+  },
+  { // 14 — The prescription
+    text: "The paper doesn't just diagnose — it prescribes. A three-stage enforcement pathway. Stage one: Screen. Run the FL rule on participation records. It's a SQL query that takes minutes. No bid microdata, no enforcement priors, no machine learning training. Stage two: Triage. Cross-reference flagged markets with network metrics and oversight indicators. Focus on competitive markets and small purchasing units — that's where the signal is strongest. Stage three: Investigate. Deploy bid-level forensic tools — Imhof screens, Bajari–Ye tests — only on the triaged subset. Not a conviction tool — a flashlight in a dark room, pointing investigators where to start.",
+    dur: 32000
+  },
+  { // 15 — Honesty
+    text: "And the paper is remarkably honest about what it does not claim. This is not causal identification — it's a conditional association, robust across estimation strategies but not a treatment effect. The screen flags environments, not guilty firms. The staggered difference-in-differences yields a null result — the estimator lacks power and pre-trends suggest strategic market selection. The diagnostics are consistent with coordinated cover bidding, but they don't prove the mechanism. An omitted confounder would need to explain seventeen-and-a-half percent of residual variation in both FL presence and prices to nullify the result — though that bound assumes a single confounder and the pre-trends suggest multi-channel selection. The diagnostics don't prove the mechanism. They make the case for deploying the screen.",
+    dur: 34000
+  },
+  { // 16 — Closing
+    text: "Firms that lose too often may be losing on purpose. And this pattern — detectable with nothing more than who bid and who won — reveals where cartels are most likely hiding. The screen is simple. The data requirements are minimal. The enforcement pathway is actionable. And sometimes... the best clue to a rigged game isn't who wins. It's who keeps losing.",
+    dur: 22000
   }
 ];
 
@@ -471,16 +678,20 @@ let cur = 0, paused = false, tmr = null;
 const synth = window.speechSynthesis;
 let utt = null, bestVoice = null;
 
-// === VOICE SELECTION — pick the most natural English voice ===
+// === VOICE SELECTION ===
 function pickVoice() {
   const v = synth.getVoices();
-  // Preference tiers: Google UK > Google US > any en-GB > any en-US > any en
   const tiers = [
-    vv => /Google UK English (Female|Male)/i.test(vv.name),
+    // Natural-sounding neural voices (Chrome/Edge)
     vv => /Google US English/i.test(vv.name),
+    vv => /Google UK English (Male|Female)/i.test(vv.name),
     vv => /Microsoft.*Online.*Natural/i.test(vv.name) && vv.lang.startsWith('en'),
-    vv => vv.lang === 'en-GB',
+    vv => /Samantha/i.test(vv.name), // macOS
+    vv => /Daniel/i.test(vv.name) && vv.lang.startsWith('en'), // macOS
+    vv => /Alex/i.test(vv.name),
+    vv => vv.lang === 'en-US' && !vv.localService,
     vv => vv.lang === 'en-US',
+    vv => vv.lang === 'en-GB',
     vv => vv.lang.startsWith('en')
   ];
   for (const fn of tiers) { const m = v.find(fn); if (m) return m; }
@@ -492,10 +703,10 @@ const cvs = document.getElementById('particles'), ctx = cvs.getContext('2d');
 let pts = [];
 function initP() {
   cvs.width = innerWidth; cvs.height = innerHeight; pts = [];
-  for (let i = 0; i < 80; i++) pts.push({
+  for (let i = 0; i < 60; i++) pts.push({
     x: Math.random()*cvs.width, y: Math.random()*cvs.height,
-    r: Math.random()*1.5+0.3, dx: (Math.random()-0.5)*0.25, dy: (Math.random()-0.5)*0.25,
-    a: Math.random()*0.2+0.03
+    r: Math.random()*1.2+0.2, dx: (Math.random()-0.5)*0.2, dy: (Math.random()-0.5)*0.2,
+    a: Math.random()*0.15+0.02
   });
 }
 function drawP() {
@@ -513,57 +724,72 @@ initP(); drawP(); addEventListener('resize', initP);
 
 // === SCENE SETUP HOOKS ===
 const hooks = {
-  4: el => { // Loser parade
+  4: el => {
     const p = el.querySelector('#parade'); p.innerHTML = '';
-    for (let i = 0; i < 24; i++) {
+    for (let i = 0; i < 28; i++) {
       const d = document.createElement('div');
-      d.className = 'dot dot-red si'; d.dataset.d = i * 80 + 300;
+      d.className = 'dot dot-red si'; d.dataset.d = i * 60 + 300;
       d.textContent = '\u2717';
       p.appendChild(d);
     }
   },
-  5: el => { // Auction bars
+  5: el => {
     const c = el.querySelector('#bars'); c.innerHTML = '';
-    [{h:55,c:'bar-w',l:'\u2605'},{h:90,c:'bar-g',l:''},{h:105,c:'bar-g',l:''},
-     {h:155,c:'bar-c',l:'\u2717'},{h:168,c:'bar-c',l:'\u2717'},{h:175,c:'bar-c',l:'\u2717'}
+    [{h:50,c:'bar-w',l:'\u2605'},{h:82,c:'bar-g',l:''},{h:95,c:'bar-g',l:''},
+     {h:140,c:'bar-c',l:'\u2717'},{h:152,c:'bar-c',l:'\u2717'},{h:160,c:'bar-c',l:'\u2717'}
     ].forEach((b,i) => {
       const d = document.createElement('div');
       d.className = 'bar ' + b.c; d.textContent = b.l;
       c.appendChild(d);
-      setTimeout(() => d.style.height = b.h + 'px', i*180+600);
+      setTimeout(() => d.style.height = b.h + 'px', i*160+600);
     });
   },
-  7: el => { // Price bars
+  7: el => {
     setTimeout(() => {
-      document.getElementById('bNoFL').style.height = '130px';
-      document.getElementById('bFL').style.height = '175px';
+      document.getElementById('bNoFL').style.height = '120px';
+      document.getElementById('bFL').style.height = '162px';
     }, 700);
   },
-  8: el => { // Gauge
+  8: el => {
     setTimeout(() => {
       document.getElementById('gFill').classList.add('on');
       let v = 0; const t = 0.94, n = document.getElementById('gNum');
-      const step = () => { v = Math.min(v+0.008, t); n.textContent = v.toFixed(2); if(v<t) requestAnimationFrame(step); };
+      const step = () => { v = Math.min(v+0.006, t); n.textContent = v.toFixed(2); if(v<t) requestAnimationFrame(step); };
       requestAnimationFrame(step);
-    }, 600);
+    }, 500);
   }
 };
 
 // === SCENE MANAGEMENT ===
+
+// Global handle for the current scene's async cleanup
+let _sceneCleanup = null;
+
 function show(idx) {
   if (idx < 0 || idx >= S.length) return;
+
+  // --- 1. Kill everything from the previous scene ---
+  cleanup();
+
   cur = idx;
   document.getElementById('progress').style.width = ((idx+1)/S.length*100)+'%';
-  document.getElementById('counter').textContent = `${idx+1} / ${S.length}`;
+  document.getElementById('counter').textContent = `${String(idx+1).padStart(2,'0')} / ${S.length}`;
 
-  // Deactivate all
+  // Deactivate all scenes
   document.querySelectorAll('.scene').forEach(s => {
     s.classList.remove('active');
     s.querySelectorAll('.on').forEach(e => e.classList.remove('on'));
   });
 
   // Reset gauge
-  document.getElementById('gFill').classList.remove('on');
+  const gf = document.getElementById('gFill');
+  if (gf) gf.classList.remove('on');
+
+  // Reset bar heights
+  ['bNoFL','bFL'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.height = '0';
+  });
 
   const el = document.getElementById('s'+idx);
   el.classList.add('active');
@@ -576,36 +802,106 @@ function show(idx) {
     setTimeout(() => e.classList.add('on'), parseInt(e.dataset.d) + 200);
   });
 
-  // Narrate
-  stopSpeak();
+  // --- 2. Subtitle ---
   const sub = document.getElementById('subtitle');
-  sub.textContent = S[idx].text; sub.classList.add('visible');
-  speak(S[idx].text, () => {
-    if (!paused && cur < S.length - 1) tmr = setTimeout(next, 1200);
-  });
-}
+  sub.textContent = S[idx].text;
+  sub.classList.add('visible');
 
-function speak(text, onEnd) {
+  // --- 3. Start TTS (fire-and-forget — we never rely on its events) ---
   synth.cancel();
-  utt = new SpeechSynthesisUtterance(text);
-  utt.lang = 'en-GB';
-  utt.rate = 0.88;
-  utt.pitch = 1.05;
+  utt = new SpeechSynthesisUtterance(S[idx].text);
+  utt.lang = 'en-US';
+  utt.rate = 0.92;
+  utt.pitch = 1.0;
   if (bestVoice) utt.voice = bestVoice;
-  const fb = setTimeout(() => { if(onEnd) onEnd(); }, S[cur].dur + 3000);
-  utt.onend = () => { clearTimeout(fb); if(onEnd) onEnd(); };
+  // Swallow all events — we do NOT use onend/onerror for advancement
+  utt.onend = () => {};
+  utt.onerror = () => {};
   synth.speak(utt);
+
+  // --- 4. Chrome long-utterance workaround ---
+  // Chrome silently stops TTS after ~15 s. Periodic pause/resume keeps it alive.
+  // We do NOT rely on any event this might fire.
+  const resumeInterval = setInterval(() => {
+    if (synth.speaking && !synth.paused) {
+      synth.pause();
+      synth.resume();
+    }
+  }, 10000);
+
+  // --- 5. Advancement logic: poll-based, never event-based ---
+  //
+  // STRATEGY (belt-and-suspenders):
+  //   A) The scene stays visible for AT LEAST `dur` milliseconds.
+  //   B) After `dur` has elapsed, we poll synth.speaking every 500 ms.
+  //   C) The scene advances only when BOTH dur has passed AND speech has stopped.
+  //   D) Hard ceiling at dur + 15 s in case synth.speaking gets stuck.
+  //   E) We NEVER use onend/onerror to trigger advancement.
+  //
+  // All timer/interval IDs are collected in `ids` so cleanup() can nuke them all.
+
+  const sceneIdx = idx;
+  const minDur = S[idx].dur;
+
+  // Collector for ALL async handles this scene creates
+  const ids = { timeouts: [], intervals: [resumeInterval] };
+
+  // After minDur, start polling synth.speaking
+  ids.timeouts.push(setTimeout(() => {
+    if (sceneIdx !== cur) return;
+    // Speech might already be done by now
+    if (!synth.speaking) { scheduleAdvance(sceneIdx); return; }
+    // Poll until speech finishes
+    const poll = setInterval(() => {
+      if (sceneIdx !== cur) { clearInterval(poll); return; }
+      if (!synth.speaking) { clearInterval(poll); scheduleAdvance(sceneIdx); }
+    }, 500);
+    ids.intervals.push(poll);
+  }, minDur));
+
+  // Hard ceiling: if synth.speaking is stuck, advance after dur + 15 s
+  ids.timeouts.push(setTimeout(() => {
+    if (sceneIdx !== cur) return;
+    scheduleAdvance(sceneIdx);
+  }, minDur + 15000));
+
+  // Single cleanup function that clears EVERYTHING
+  _sceneCleanup = () => {
+    ids.timeouts.forEach(t => clearTimeout(t));
+    ids.intervals.forEach(i => clearInterval(i));
+  };
 }
 
-function stopSpeak() { synth.cancel(); if(tmr) clearTimeout(tmr); }
+// Schedule the auto-advance to the next scene (with a brief breathing pause)
+function scheduleAdvance(fromIdx) {
+  if (fromIdx !== cur) return;
+  if (paused) return;
+  if (cur >= S.length - 1) return;
+  tmr = setTimeout(() => {
+    if (fromIdx === cur && !paused) next();
+  }, 1800);
+}
 
-function next() { stopSpeak(); if(cur < S.length-1) show(cur+1); }
-function prev() { stopSpeak(); if(cur > 0) show(cur-1); }
+// Kill all timers, intervals, and TTS from the current scene
+function cleanup() {
+  if (_sceneCleanup) { _sceneCleanup(); _sceneCleanup = null; }
+  if (tmr) { clearTimeout(tmr); tmr = null; }
+  synth.cancel();
+}
+
+function next() { cleanup(); if(cur < S.length-1) show(cur+1); }
+function prev() { cleanup(); if(cur > 0) show(cur-1); }
 function pp() {
   paused = !paused;
   document.getElementById('ppBtn').innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
-  if (paused) { synth.pause(); if(tmr) clearTimeout(tmr); }
-  else synth.resume();
+  if (paused) {
+    synth.pause();
+    if (tmr) { clearTimeout(tmr); tmr = null; }
+  } else {
+    synth.resume();
+    // If speech is already done and we were just waiting, try to advance
+    if (!synth.speaking) scheduleAdvance(cur);
+  }
 }
 
 function start() {
@@ -619,6 +915,7 @@ addEventListener('keydown', e => {
   if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
   if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
   if (e.key === 'p') pp();
+  if (e.key === 'Enter' && !document.getElementById('overlay').classList.contains('hidden')) start();
 });
 
 // Preload voices
