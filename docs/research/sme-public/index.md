@@ -15,13 +15,13 @@ paper: sme-public
 </div>
 
 <div class="key-result" markdown>
-<span class="number">R$ 84.5--85.8 million</span>
-<span class="label">Fiscal cost of SME-only tender restrictions for group 65 alone (18-month pre-period)</span>
+<span class="number">R$ 50--85 million</span>
+<span class="label">Fiscal cost of SME-only tender restrictions for group 65 alone (18-month pre-period, real to nominal range)</span>
 </div>
 
 ## Abstract
 
-Governments worldwide restrict public tenders to small and medium-sized enterprises (SMEs), yet the fiscal cost of this policy is virtually unknown. I exploit a natural experiment in Sao Paulo, Brazil, where the policy operates through opt-out costs: public buyers that wish to conduct open tenders must justify their choice to audit courts, effectively penalizing the efficient procurement decision. Until March 2018, medical supplies were uniquely exempt from these costs. When a legal reinterpretation---unrelated to procurement outcomes---ended this exemption, it created a clean difference-in-differences in reverse (DiDiR) design. Open tenders yielded prices 12--13% lower and attracted 19% more firms, but a Gelbach decomposition reveals that increased participation explains only 6% of the price reduction---most of the savings come from fiercer competition among bidders. The fiscal cost for one product group alone amounts to R\$84.5 million (~US\$17 million) over 18 months; extrapolating to all state procurement yields ~R\$310 million. These costs are concentrated among standardized goods; for specialized items, restrictions appear less distortionary. The one clear benefit: SME-only tenders successfully promote local sourcing.
+Governments worldwide restrict public tenders to small and medium-sized enterprises (SMEs), yet the fiscal cost of this policy is virtually unknown. I exploit a natural experiment in Sao Paulo, Brazil, where the policy operates through opt-out costs: public buyers that wish to conduct open tenders must justify their choice to audit courts, effectively penalizing the efficient procurement decision. Until March 2018, medical supplies were uniquely exempt from these costs. When a legal reinterpretation---unrelated to procurement outcomes---ended this exemption, it created a clean difference-in-differences in reverse (DiDiR) design. Open tenders yielded prices 7--13% lower (12--13% nominal, 7--8% in real terms) and attracted 19% more firms, but a Gelbach decomposition reveals that increased participation explains only 6% of the price reduction---most of the savings come from fiercer competition among bidders. The fiscal cost for one product group alone is R\$50--85 million over 18 months, depending on the inflation adjustment. These costs are concentrated among standardized goods; for specialized items, restrictions appear less distortionary. The one clear benefit: SME-only tenders successfully promote local sourcing.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary }
 
@@ -44,8 +44,8 @@ Governments worldwide restrict public tenders to small and medium-sized enterpri
 
 ## Key Findings
 
-!!! success "SME restrictions raise procurement prices by 12--13%"
-    Open tenders for Group 65 yielded **12--13% lower prices** (13--14 log points) compared to SME-restricted tenders, after controlling for item and buyer fixed effects. IPCA-deflated estimates range from 7% to 12%.
+!!! success "SME restrictions raise procurement prices by 7--13%"
+    Open tenders for Group 65 yielded **7--13% lower prices** (12--13% nominal, 7--8% IPCA-deflated) compared to SME-restricted tenders, after controlling for item and buyer fixed effects.
 
 !!! danger "R$ 84.5--85.8 million in fiscal costs (one product group)"
     The fiscal cost of SME-only restrictions for **Group 65 alone** amounts to ~12% of this product group's total procurement value over 18 months (~US\$17 million). A rough extrapolation to all product groups yields ~R\$310 million (~US\$62 million).
