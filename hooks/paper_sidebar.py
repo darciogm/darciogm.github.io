@@ -13,6 +13,7 @@ PAPER_NAVS = {
     "sme-public": [
         {"title": "Summary",     "url": "/research/sme-public/"},
         {"title": "Paper",       "url": "/research/sme-public/paper/"},
+        {"title": "Video",       "url": "/research/sme-public/video/"},
         {"title": "Results",     "url": "/research/sme-public/results/"},
         {"title": "Robustness",  "url": "/research/sme-public/robustness/"},
         {"title": "Extensions",  "url": "/research/sme-public/extensions/"},
