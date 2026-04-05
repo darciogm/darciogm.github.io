@@ -2,6 +2,7 @@ PAPER_NAVS = {
     "bitter-pills": [
         {"title": "Summary",           "url": "/research/bitter-pills/"},
         {"title": "Paper",             "url": "/research/bitter-pills/paper/"},
+        {"title": "Video",             "url": "/research/bitter-pills/video/"},
         {"title": "Results",           "url": "/research/bitter-pills/results/"},
         {"title": "Maps",              "url": "/research/bitter-pills/maps/"},
         {"title": "Admin vs Ordinary", "url": "/research/bitter-pills/results_adm_vs_ord/"},
