@@ -34,13 +34,14 @@ PAPER_NAVS = {
         {"title": "Mind Map",    "url": "/research/frequent-losers/mindmap/"},
         {"title": "Changelog",   "url": "/research/frequent-losers/changelog/"},
     ],
-    "beneath-the-surface": [
-        {"title": "Summary",     "url": "/research/beneath-the-surface/"},
-        {"title": "Paper",       "url": "/research/beneath-the-surface/paper/"},
-        {"title": "Results",     "url": "/research/beneath-the-surface/results/"},
-        {"title": "Replication", "url": "/research/beneath-the-surface/replication/"},
-        {"title": "Authors",     "url": "/research/beneath-the-surface/authors/"},
-        {"title": "Changelog",   "url": "/research/beneath-the-surface/changelog/"},
+    "beneath-surface": [
+        {"title": "Summary",     "url": "/research/beneath-surface/"},
+        {"title": "Paper",       "url": "/research/beneath-surface/paper/"},
+        {"title": "Results",     "url": "/research/beneath-surface/results/"},
+        {"title": "Robustness",  "url": "/research/beneath-surface/robustness/"},
+        {"title": "Replication", "url": "/research/beneath-surface/replication/"},
+        {"title": "Authors",     "url": "/research/beneath-surface/authors/"},
+        {"title": "Changelog",   "url": "/research/beneath-surface/changelog/"},
     ],
 }
 

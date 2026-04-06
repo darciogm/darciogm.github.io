@@ -1,5 +1,5 @@
 ---
-paper: beneath-the-surface
+paper: beneath-surface
 ---
 
 # Changelog
@@ -10,11 +10,12 @@ paper: beneath-the-surface
 
 **Initial site deployment:**
 
-- Published manuscript summary, results, replication guide, and author pages
-- Manuscript under review at *International Journal of Industrial Organization*
+- Full research site: summary, paper, results, robustness, replication, authors
+- Main estimates: incumbency advantage (1.8 pp), last-bid effect (6.4 pp)
 - R replication pipeline: `01_replicate_estimates.R`, `02_rdd_validity_tests.R`
-- RAIS-BEC firm linkage pipeline: `linkage_rais_bec.py`
-- Main estimates: incumbency advantage (1.8 pp) and last-bid effect (6.4 pp)
+- RAIS-BEC firm linkage: `linkage_rais_bec.py` (95.8% match rate)
+- RAIS harmonization fix: recovered `sexo` and `idade` for 2009-2010
+- Manuscript under review at *International Journal of Industrial Organization*
 
 ---
 

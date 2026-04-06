@@ -1,5 +1,5 @@
 ---
-paper: beneath-the-surface
+paper: beneath-surface
 ---
 
 # Authors
@@ -14,10 +14,11 @@ paper: beneath-the-surface
       <strong>ETH Zurich</strong>
     </p>
     <p class="author-bio">
-      Researcher in political economy and public economics at ETH Zurich.
-      His work focuses on the interaction between institutions, political
-      behavior, and economic outcomes, with applications to public procurement
-      and local governance.
+      Researcher in political economy and public economics at the Center
+      for Law & Economics, ETH Zurich. His work focuses on the interaction
+      between institutions, political behavior, and economic outcomes,
+      with applications to public procurement, local governance, and
+      media markets.
     </p>
     <div class="author-links">
       <a href="mailto:sergio.galletta@gess.ethz.ch">Email</a>
@@ -26,6 +27,9 @@ paper: beneath-the-surface
 </div>
 
 <div class="author-card">
+  <img src="../assets/autores/darcio-martins.jpg"
+       alt="Darcio Genicolo Martins"
+       class="author-photo">
   <div class="author-info">
     <h3>Darcio Genicolo Martins</h3>
     <p class="author-title">
@@ -60,7 +64,8 @@ paper: beneath-the-surface
     <p class="author-bio">
       Researcher in political economy, public economics, and law and economics
       at the University of Amsterdam. His research examines how institutional
-      design affects corruption, public spending, and political accountability.
+      design affects corruption, public spending, and political accountability,
+      with a focus on European and Latin American settings.
     </p>
     <div class="author-links">
       <a href="mailto:t.giommoni@uva.nl">Email</a>
