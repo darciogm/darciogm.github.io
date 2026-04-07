@@ -25,6 +25,9 @@ This study employs a Regression Discontinuity design inspired by Kawai, Nakabaya
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_beneath.pdf){ .md-button .md-button--primary }
 
+!!! info ":material-trophy: SIOE 2026 & R1 revision"
+    **Accepted for presentation at [SIOE 2026](https://www.sioe.org/conference/2026)** (INSEAD Fontainebleau, July 13–15). An R1 revision for *IJIO* is in progress, extending the analysis with a **worker-flow network screen** evaluated against CADE cartel ground truth. New residual AUC of 0.76 (pregão) / 0.72 (convite) within-sector; co-bidding AUC of 0.25 indicating designated-rotation signature. Details in the [changelog](changelog.md).
+
 **JEL Classification:**
 <span class="badge">D44</span>
 <span class="badge">D73</span>
