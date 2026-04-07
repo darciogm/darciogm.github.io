@@ -6,6 +6,30 @@ paper: beneath-surface
 
 ---
 
+## v1.2 --- April 7, 2026 (bold-thesis pivot)
+
+**Strategic decision:** after consolidating every cartel-detection screen produced by the Track A pipeline into a unified table (script `22_consolidate_screens.py`, [commit `92055e6`](https://github.com/darciogm/bitter-pills/commit/92055e6)), the empirical picture sharpened enough to justify a substantive reframe of the paper. Author and coauthors (Galletta, Giommoni) approved the new direction on 2026-04-07.
+
+**The new headline finding:**
+
+Classical detection screens (variance, CV, n_firms, Kawai-style RDD) systematically misfire in this developing-country procurement setting --- when they detect a signal at all, they frequently do so with magnitudes or signs *opposite* to those predicted by canonical bid-rotation theory. In contrast, network-based screens built from worker-flow and co-bidding overlap reach AUCs above 0.80 against the same CADE ground truth.
+
+**Three money numbers from the multi-screen consolidated table:**
+
+- **Pair-matched LISTED (n=107 pregão auctions where both winner and runner-up are CADE-convicted cartel firms):** classical screens are statistically significant but with *positive* signs --- `cv_bid` Δ=+0.107 (p=0.012, AUC=0.605); `spread` Δ=+0.286 (p=0.020, AUC=0.625); `n_firms` Δ=+0.819 (p=0.003, AUC=0.628). The positive signs are inconsistent with the variance-compression prediction of inner-circle bid rotation and consistent with hub-and-spoke and cover-bidding patterns documented in 5 of the 7 SP cartels in our ground truth.
+- **Cartel-active broad sample (n≈2,300--3,900 pregão auctions during cartel period):** network screens crush classical screens. `shared_workers` AUC=0.825 vs. `cv_bid` AUC=0.484; `jaccard` AUC=0.815 vs. `spread` AUC=0.476.
+- **Within-period strict subsample (n=10--14 auctions):** all screens are underpowered, documenting empirically the cost of restricting to the "purest" head-to-head comparison.
+
+**Revised abstract** (sent to SIOE OC ahead of the 2026-07-01 deadline):
+
+> This study leverages convictions from Brazil's antitrust authority (CADE) as ground truth to validate a Regression Discontinuity design inspired by Kawai (2023) and a portfolio of complementary detection screens, applied to 3.8 million public procurement auctions conducted in São Paulo, Brazil. By comparing narrowly winning and losing bids within auctions involving convicted cartel members, we identify statistically significant signals across multiple screen families---but with magnitudes and signs that diverge sharply from those predicted by canonical bid-rotation theory. Network-based screens (worker-flow and co-bidding overlap) substantially outperform classical variance and incumbency screens, achieving AUCs above 0.80 against AUCs near chance for variance-based detectors. Our findings highlight that in developing countries, anti-competitive behaviors---even when unrelated to explicit corruption---generate detection signatures distinct from those documented in advanced economies, with direct implications for the design of antitrust screening programs in emerging markets.
+
+**12-week roadmap to the SIOE 2026-07-01 deadline:** within-pair robustness on the 107 pair-matched (weeks 1--3) → Introduction and Methodology rewrites (weeks 4--5) → Results and Tables (weeks 6--7) → Background, Literature review and Conclusion (weeks 8--9) → coauthor iteration and slide deck (weeks 10--11) → submission (week 12). Three escape hatches built in: if the inverted-sign signal does not survive robustness, the paper falls back to a hybrid framing that preserves the network-screen contribution as a secondary finding.
+
+The v1.1 framing (worker-flow as a *complement* to the original incumbency/last-bid story) is now superseded. The new framing places the network-vs-classical contrast at the center.
+
+---
+
 ## v1.1 --- April 2026 (extension in progress)
 
 **Conference acceptance:**
