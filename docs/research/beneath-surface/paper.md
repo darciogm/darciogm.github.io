@@ -6,8 +6,8 @@ paper: beneath-surface
 
 How we detect anti-competitive signals in public procurement using close-margin auctions and a regression discontinuity design.
 
-!!! info "Version note --- R1 revision in progress"
-    The page below describes the version of the paper currently under review at *International Journal of Industrial Organization* and accepted for presentation at [**SIOE 2026**](https://www.sioe.org/conference/2026) (INSEAD Fontainebleau, July 13–15). An R1 revision is in progress that extends the empirical strategy with a **worker-flow network screen** evaluated against a CADE cartel ground-truth database. See the [changelog](changelog.md) for the new headline results and methodological updates.
+!!! info "Version note --- v1.1 extension in progress"
+    The page below describes the version of the paper currently under review at *International Journal of Industrial Organization* and accepted for presentation at [**SIOE 2026**](https://www.sioe.org/conference/2026) (INSEAD Fontainebleau, July 13–15). Ahead of the conference, the paper is being extended with a **worker-flow network screen** evaluated against a CADE cartel ground-truth database. See the [changelog](changelog.md) for the new headline results and methodological updates.
 
 ---
 
