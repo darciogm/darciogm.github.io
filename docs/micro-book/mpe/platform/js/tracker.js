@@ -54,6 +54,20 @@
       }
       return true;
     },
+    // Admin detection: matrícula começando com "prof-" concede acesso ao dashboard
+    isAdmin: function() {
+      var s = this.getSession();
+      if (!s || !s.matricula) return false;
+      return s.matricula.toLowerCase().indexOf('prof') === 0;
+    },
+    requireAdmin: function() {
+      if (!this.requireAuth()) return false;
+      if (!this.isAdmin()) {
+        window.location.href = 'portal.html';
+        return false;
+      }
+      return true;
+    },
     _hash: function(str) {
       // Simple hash for localStorage (NOT production-grade security)
       var hash = 0;

@@ -10,6 +10,7 @@
 <div class="topbar">
   <h1 style="font-size:1rem"><span class="insper-topbar"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32 — Pré-Aula</span></span></h1>
   <div class="user-info">
+    <a id="admin-link" href="admin.html" class="btn-logout" style="display:none;background:var(--accent);text-decoration:none">Dashboard</a>
     <span class="name" id="user-name"></span>
     <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
   </div>
@@ -72,6 +73,7 @@ if (!MicroAuth.requireAuth()) throw 'redirect';
 
 var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
+if (MicroAuth.isAdmin()) document.getElementById('admin-link').style.display = 'inline-block';
 
 var AULAS = [
   {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true},
