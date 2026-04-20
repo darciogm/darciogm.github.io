@@ -239,6 +239,93 @@
       }
     },
 
+    // ==================== SECTIONAL TRACKING (nova granularidade) ====================
+    _ensureSection: function(pageId, sectionId) {
+      var session = MicroAuth.getSession();
+      if (!session) return null;
+      var data = this.getData();
+      var mat = session.matricula;
+      if (!data[mat]) data[mat] = { nome: session.nome, pages: {}, quizzes: {} };
+      if (!data[mat].sections) data[mat].sections = {};
+      if (!data[mat].sections[pageId]) data[mat].sections[pageId] = {};
+      if (!data[mat].sections[pageId][sectionId]) {
+        data[mat].sections[pageId][sectionId] = { startedAt: new Date().toISOString() };
+      }
+      return { data: data, mat: mat };
+    },
+
+    recordSectionStart: function(pageId, sectionId) {
+      var ctx = this._ensureSection(pageId, sectionId);
+      if (!ctx) return;
+      // startedAt já foi marcado em _ensureSection se primeira vez
+      this._save(ctx.data);
+    },
+
+    recordSectionComplete: function(pageId, sectionId) {
+      var ctx = this._ensureSection(pageId, sectionId);
+      if (!ctx) return;
+      ctx.data[ctx.mat].sections[pageId][sectionId].completedAt = new Date().toISOString();
+      this._save(ctx.data);
+    },
+
+    recordConfidence: function(pageId, sectionId, phase, value) {
+      // phase: 'pre' ou 'post'; value: 1-5
+      var ctx = this._ensureSection(pageId, sectionId);
+      if (!ctx) return;
+      var sec = ctx.data[ctx.mat].sections[pageId][sectionId];
+      if (phase === 'pre') sec.confidencePre = { value: value, at: new Date().toISOString() };
+      else sec.confidencePost = { value: value, at: new Date().toISOString() };
+      this._save(ctx.data);
+    },
+
+    recordMicroCheckpoint: function(pageId, sectionId, questionId, selectedAnswer, correctAnswer) {
+      var ctx = this._ensureSection(pageId, sectionId);
+      if (!ctx) return { correct: false };
+      var sec = ctx.data[ctx.mat].sections[pageId][sectionId];
+      if (!sec.microCheckpoint) sec.microCheckpoint = {};
+      if (!sec.microCheckpoint[questionId]) sec.microCheckpoint[questionId] = { attempts: [], correct: false };
+      var isCorrect = selectedAnswer === correctAnswer;
+      sec.microCheckpoint[questionId].attempts.push({
+        answer: selectedAnswer,
+        correct: isCorrect,
+        timestamp: new Date().toISOString()
+      });
+      if (isCorrect) sec.microCheckpoint[questionId].correct = true;
+      this._save(ctx.data);
+      return { correct: isCorrect, attemptNum: sec.microCheckpoint[questionId].attempts.length };
+    },
+
+    recordPaperExercise: function(pageId, exerciseId, approach) {
+      var session = MicroAuth.getSession();
+      if (!session) return;
+      var data = this.getData();
+      var mat = session.matricula;
+      if (!data[mat]) data[mat] = { nome: session.nome, pages: {}, quizzes: {} };
+      if (!data[mat].paperExercises) data[mat].paperExercises = {};
+      if (!data[mat].paperExercises[pageId]) data[mat].paperExercises[pageId] = {};
+      data[mat].paperExercises[pageId][exerciseId] = {
+        completed: true,
+        approach: approach,
+        completedAt: new Date().toISOString()
+      };
+      this._save(data);
+    },
+
+    recordReflection: function(pageId, promptId, text) {
+      var session = MicroAuth.getSession();
+      if (!session) return;
+      var data = this.getData();
+      var mat = session.matricula;
+      if (!data[mat]) data[mat] = { nome: session.nome, pages: {}, quizzes: {} };
+      if (!data[mat].reflections) data[mat].reflections = {};
+      if (!data[mat].reflections[pageId]) data[mat].reflections[pageId] = {};
+      data[mat].reflections[pageId][promptId] = {
+        text: text,
+        submittedAt: new Date().toISOString()
+      };
+      this._save(data);
+    },
+
     // ==================== EXPORT ====================
     exportCSV: function() {
       var data = this.getData();

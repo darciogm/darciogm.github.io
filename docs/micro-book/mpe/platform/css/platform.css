@@ -95,6 +95,76 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .mini-progress{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:0.5rem}
 .mini-progress-fill{height:100%;background:var(--accent);transition:width 0.3s}
 
+/* ---- SECTIONED PRE-AULA ---- */
+.progress-header{position:sticky;top:48px;background:#fff;border-bottom:2px solid var(--accent);padding:0.6rem 1rem;z-index:50;margin:-1.5rem -2rem 1.5rem;display:flex;align-items:center;gap:1rem;font-size:0.85rem}
+.progress-header .progress-bar{flex:1;max-width:none;margin:0}
+.progress-header .progress-label{font-weight:600;color:var(--primary);white-space:nowrap}
+.progress-header .progress-meta{font-size:0.75rem;color:var(--text-muted);white-space:nowrap}
+
+.section-block{border-radius:10px;margin:1.2rem 0;padding:1.5rem 1.8rem;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);transition:all 0.3s}
+.section-block.locked{opacity:0.35;pointer-events:none;background:#FAFAF8;filter:grayscale(60%)}
+.section-block.locked::before{content:"🔒 Bloqueada — conclua a seção anterior";display:block;color:var(--text-muted);font-size:0.8rem;font-weight:600;margin-bottom:0.5rem}
+.section-block.completed{border-color:var(--success);background:#F7FBF9}
+.section-block.completed::after{content:"✓ Concluída";display:inline-block;color:var(--success);font-size:0.75rem;font-weight:700;margin-top:0.5rem}
+.section-block.active{border-color:var(--accent);box-shadow:0 4px 16px rgba(200,16,46,0.1)}
+.section-block h2{margin-top:0;padding-top:0;color:var(--primary);border-bottom:none}
+.section-meta{font-size:0.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.08em;font-weight:700;margin-bottom:0.4rem}
+
+.section-complete-btn{background:var(--accent);color:#fff;border:none;padding:0.7rem 1.3rem;border-radius:var(--radius);font-size:0.9rem;font-weight:600;cursor:pointer;margin-top:1rem;transition:0.2s}
+.section-complete-btn:hover:not(:disabled){background:var(--accent-hover)}
+.section-complete-btn:disabled{background:#ccc;cursor:not-allowed}
+.section-complete-btn.success{background:var(--success)}
+
+/* Confidence slider */
+.confidence-block{background:var(--accent-soft);border-left:3px solid var(--accent);padding:0.9rem 1.2rem;border-radius:6px;margin:1rem 0}
+.confidence-block label{display:block;font-weight:600;margin-bottom:0.5rem;font-size:0.9rem;color:var(--primary)}
+.confidence-block .slider-row{display:flex;align-items:center;gap:0.8rem}
+.confidence-block input[type="range"]{flex:1;accent-color:var(--accent)}
+.confidence-block .conf-value{font-size:1.4rem;font-weight:700;color:var(--accent);min-width:30px;text-align:center}
+.confidence-block .conf-scale{font-size:0.7rem;color:var(--text-muted);display:flex;justify-content:space-between;margin-top:0.3rem}
+.confidence-block .btn-confidence{background:var(--accent);color:#fff;border:none;padding:0.4rem 0.9rem;border-radius:4px;font-size:0.8rem;font-weight:600;cursor:pointer;margin-top:0.6rem}
+.confidence-block.recorded{opacity:0.8}
+.confidence-block.recorded .btn-confidence{display:none}
+.confidence-block.recorded::after{content:"✓ Registrado";color:var(--success);font-size:0.75rem;font-weight:700;display:block;margin-top:0.4rem}
+
+/* Micro-checkpoint */
+.micro-checkpoint{background:#FFF8E1;border-left:3px solid var(--warning);padding:1rem 1.3rem;border-radius:6px;margin:1rem 0}
+.micro-checkpoint h3{font-size:0.95rem;margin:0 0 0.6rem;color:var(--primary)}
+.micro-checkpoint .micro-desc{font-size:0.75rem;color:var(--text-muted);margin-bottom:0.8rem}
+.micro-q{margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px dashed var(--border)}
+.micro-q:last-child{border-bottom:none;padding-bottom:0;margin-bottom:0}
+.micro-q .q-text{font-weight:600;margin-bottom:0.5rem;font-size:0.9rem}
+.micro-q .micro-option{padding:0.45rem 0.8rem;margin:0.25rem 0;border:1px solid var(--border);border-radius:4px;cursor:pointer;font-size:0.85rem;transition:0.15s}
+.micro-q .micro-option:hover{border-color:var(--accent);background:var(--accent-soft)}
+.micro-q .micro-option.selected{border-color:var(--accent);background:var(--accent-soft)}
+.micro-q .micro-option.correct{background:#D1FAE5;border-color:var(--success);color:#065F46}
+.micro-q .micro-option.incorrect{background:#FED7D7;border-color:var(--danger);color:#7A1F1F}
+.micro-q .micro-feedback{font-size:0.78rem;margin-top:0.5rem;padding:0.5rem;border-radius:4px}
+.micro-q .micro-feedback.info{background:#FEF3C7;color:#92400E}
+.micro-q .micro-feedback.error{background:#FED7D7;color:#7A1F1F}
+.micro-q .micro-feedback.success{background:#D1FAE5;color:#065F46}
+.micro-q .attempts-left{font-size:0.72rem;color:var(--text-muted);font-weight:600}
+.scroll-back-hint{background:#FFF8E1;border:1px solid var(--warning);padding:0.5rem 0.8rem;border-radius:4px;font-size:0.78rem;margin-top:0.5rem;color:#744210}
+
+/* Paper exercise */
+.paper-exercise{background:#F7FBF9;border-left:3px solid var(--success);padding:1rem 1.3rem;border-radius:6px;margin:0.8rem 0}
+.paper-exercise h3{font-size:0.95rem;margin:0 0 0.4rem;color:var(--primary)}
+.paper-exercise .ex-statement{font-size:0.85rem;margin-bottom:0.7rem}
+.paper-exercise label.done-check{display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;font-weight:600;margin-bottom:0.5rem;cursor:pointer}
+.paper-exercise textarea{width:100%;min-height:70px;padding:0.55rem;border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:0.85rem;resize:vertical}
+.paper-exercise textarea:focus{outline:none;border-color:var(--accent)}
+
+/* Reflection */
+.reflection-block{background:#F0F9FF;border-left:3px solid #3B82F6;padding:1rem 1.3rem;border-radius:6px;margin:0.8rem 0}
+.reflection-block label{display:block;font-weight:600;margin-bottom:0.4rem;font-size:0.9rem;color:var(--primary)}
+.reflection-block textarea{width:100%;min-height:80px;padding:0.6rem;border:1px solid var(--border);border-radius:4px;font-family:inherit;font-size:0.9rem;resize:vertical}
+.reflection-block textarea:focus{outline:none;border-color:var(--accent)}
+.reflection-block .help{font-size:0.72rem;color:var(--text-muted);margin-top:0.3rem}
+
+.completion-celebration{background:linear-gradient(135deg,#065F46,#047857);color:#fff;padding:2rem;border-radius:10px;text-align:center;margin:2rem 0}
+.completion-celebration h2{color:#fff;margin-top:0;border:none}
+.completion-celebration p{color:rgba(255,255,255,0.95)}
+
 /* ---- PRE-AULA PAGE ---- */
 .content-wrapper{max-width:900px;margin:0 auto;padding:1.5rem;text-align:center}
 .content-wrapper h1{font-size:1.6rem;border-bottom:3px solid var(--accent);padding-bottom:0.5rem;margin-bottom:1rem;text-align:center}
