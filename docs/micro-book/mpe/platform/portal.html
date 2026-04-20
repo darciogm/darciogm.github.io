@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="topbar">
-  <h1>&#128218; Microeconomia I — MPE 2026/32 — Pré-Aula</h1>
+  <h1 style="font-size:1rem"><span class="insper-topbar"><span class="ilogo">insper<span class="accent">.</span></span><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32 — Pré-Aula</span></span></h1>
   <div class="user-info">
     <span class="name" id="user-name"></span>
     <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
@@ -16,15 +16,43 @@
 </div>
 
 <div class="portal-header">
-  <h2>Material Pre-Aula</h2>
-  <p>Leia as referências indicadas e resolva o checkpoint antes de cada aula. Cada clique é registrado e alimenta o <em>dashboard</em> de acompanhamento.</p>
+  <h2>Meu painel</h2>
+  <p>Leia as referências indicadas e resolva o <em>checkpoint</em> antes de cada aula. Cada acesso é registrado e alimenta tanto este painel quanto o <em>dashboard</em> do professor.</p>
   <div class="portal-stats">
-    <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Completas</div></div>
-    <div class="stat-badge"><div class="val" id="stat-total">10</div><div class="lbl">Total</div></div>
+    <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Aulas completas</div></div>
     <div class="stat-badge"><div class="val" id="stat-time">0</div><div class="lbl">Min. estudados</div></div>
-    <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Media Quizzes</div></div>
+    <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Média quizzes</div></div>
+    <div class="stat-badge"><div class="val" id="stat-first">—</div><div class="lbl">Acerto 1ª tentativa</div></div>
+    <div class="stat-badge"><div class="val" id="stat-streak">0</div><div class="lbl">Dias consecutivos</div></div>
   </div>
-  <div class="progress-bar" style="max-width:400px;margin:0 auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-bar" style="max-width:400px;margin:0.5rem auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem" id="progress-label">0 de 0 aulas disponíveis</div>
+</div>
+
+<div class="my-performance">
+  <h3>Meu desempenho</h3>
+  <div class="perf-grid">
+    <div class="perf-card wide">
+      <div class="perf-title">Tempo por aula (minutos)</div>
+      <div class="spark-container" id="spark-time"></div>
+      <div class="spark-legend"><span>Aula 1</span><span>Aula 10</span></div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-title">Tempo médio por aula concluída</div>
+      <div class="perf-value" id="perf-avgtime">—</div>
+      <div class="perf-sub">Minutos efetivos de sessão (heartbeat 30s)</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-title">Total de tentativas de quiz</div>
+      <div class="perf-value" id="perf-attempts">0</div>
+      <div class="perf-sub">Inclui todas as tentativas submetidas</div>
+    </div>
+    <div class="perf-card">
+      <div class="perf-title">Próxima ação</div>
+      <div class="perf-value" id="perf-next" style="font-size:1rem;line-height:1.3">—</div>
+      <div class="perf-sub" id="perf-next-sub">&nbsp;</div>
+    </div>
+  </div>
 </div>
 
 <div class="aulas-grid" id="aulas-grid"></div>
@@ -49,12 +77,104 @@ var AULAS = [
   {n:10, title:'Avaliação Final Presencial', desc:'Prova escrita cumulativa, 3h, cobertura integrada dos 9 tópicos, 70% da nota', cap:'Ementa completa', time:180, available:false}
 ];
 
+function computeFirstTryAccuracy(studentData) {
+  // % de itens onde a primeira tentativa foi correta
+  var total = 0, correctFirst = 0;
+  Object.keys(studentData.quizzes || {}).forEach(function(pid) {
+    var q = studentData.quizzes[pid];
+    Object.keys(q.questions || {}).forEach(function(qid) {
+      var attempts = q.questions[qid].attempts || [];
+      if (attempts.length > 0) {
+        total++;
+        if (attempts[0].correct) correctFirst++;
+      }
+    });
+  });
+  return total > 0 ? Math.round(correctFirst / total * 100) : null;
+}
+
+function computeStreak(studentData) {
+  // Dias consecutivos (até hoje) com pelo menos um lastVisit
+  var dates = new Set();
+  Object.keys(studentData.pages || {}).forEach(function(pid) {
+    var pg = studentData.pages[pid];
+    if (pg.lastVisit) dates.add(pg.lastVisit.substring(0,10));
+    if (pg.firstVisit) dates.add(pg.firstVisit.substring(0,10));
+  });
+  Object.keys(studentData.quizzes || {}).forEach(function(pid) {
+    var q = studentData.quizzes[pid];
+    (Object.values(q.questions || {})).forEach(function(it) {
+      (it.attempts || []).forEach(function(a) {
+        if (a.timestamp) dates.add(a.timestamp.substring(0,10));
+      });
+    });
+    if (q.lastAttempt) dates.add(q.lastAttempt.substring(0,10));
+  });
+  if (dates.size === 0) return 0;
+  var today = new Date(); today.setHours(0,0,0,0);
+  var streak = 0;
+  for (var i = 0; i < 365; i++) {
+    var d = new Date(today.getTime() - i*86400000);
+    var key = d.toISOString().substring(0,10);
+    if (dates.has(key)) streak++;
+    else if (i > 0) break; // break streak if today absent allowed 1 grace
+  }
+  return streak;
+}
+
+function totalQuizAttempts(studentData) {
+  var total = 0;
+  Object.keys(studentData.quizzes || {}).forEach(function(pid) {
+    total += (studentData.quizzes[pid].attempts || 0);
+  });
+  return total;
+}
+
+function renderSparkline(studentData) {
+  // Mini barras: tempo gasto em cada aula (minutos)
+  var container = document.getElementById('spark-time');
+  var minutes = AULAS.map(function(a) {
+    var pid = 'aula-' + String(a.n).padStart(2,'0');
+    var pg = (studentData.pages || {})[pid] || {};
+    return (pg.totalTime || 0) / 60000;
+  });
+  var maxMin = Math.max.apply(null, minutes.concat([1]));
+  var html = '';
+  AULAS.forEach(function(a, i) {
+    var m = minutes[i];
+    var h = m > 0 ? Math.max(4, (m / maxMin) * 58) : 3;
+    var cls = m > 0 ? 'spark-bar' : 'spark-bar empty';
+    var label = a.available ? String(a.n).padStart(2,'0') : '·';
+    html += '<div class="' + cls + '" style="height:' + h + 'px" title="Aula ' + String(a.n).padStart(2,'0') + ': ' + Math.round(m) + ' min"><span class="spark-label">' + label + '</span></div>';
+  });
+  container.innerHTML = html;
+}
+
+function recommendNext(studentData) {
+  // Qual aula o aluno deveria fazer em seguida
+  for (var i = 0; i < AULAS.length; i++) {
+    var a = AULAS[i];
+    if (!a.available) continue;
+    var pid = 'aula-' + String(a.n).padStart(2,'0');
+    var pg = (studentData.pages || {})[pid] || {};
+    var qz = (studentData.quizzes || {})[pid] || {};
+    if (!qz.attempts) {
+      return {
+        action: 'Aula ' + String(a.n).padStart(2,'0') + ' — ' + (pg.visits ? 'continuar' : 'começar'),
+        sub: pg.visits ? 'Você já visitou. Faltam exercícios e checkpoint.' : 'Leitura + checkpoint de 6 itens.',
+        link: 'aula-' + String(a.n).padStart(2,'0') + '.html'
+      };
+    }
+  }
+  return { action: 'Em dia!', sub: 'Aguarde a próxima aula ser liberada.', link: null };
+}
+
 function renderPortal() {
   var data = MicroTracker.getData();
   var mat = session.matricula;
   var studentData = data[mat] || { pages: {}, quizzes: {} };
 
-  var done = 0, totalTime = 0, quizScores = [];
+  var done = 0, totalTime = 0, quizScores = [], completedTimes = [];
   var availableCount = AULAS.filter(function(a){return a.available}).length;
   var gridHtml = '';
   AULAS.forEach(function(a) {
@@ -65,7 +185,7 @@ function renderPortal() {
     var quizDone = qz.attempts > 0;
     var badge, badgeClass;
     if (!a.available) { badge = 'Em breve'; badgeClass = 'badge-new'; }
-    else if (quizDone) { badge = 'Completa'; badgeClass = 'badge-done'; done++; }
+    else if (quizDone) { badge = 'Completa'; badgeClass = 'badge-done'; done++; completedTimes.push(pg.totalTime || 0); }
     else if (visited) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
     else { badge = 'Nova'; badgeClass = 'badge-new'; }
     if (pg.totalTime) totalTime += pg.totalTime;
@@ -85,11 +205,35 @@ function renderPortal() {
   });
 
   document.getElementById('aulas-grid').innerHTML = gridHtml;
+
+  // Stats principais
   document.getElementById('stat-done').textContent = done;
   document.getElementById('stat-time').textContent = Math.round(totalTime / 60000);
   document.getElementById('stat-avg').textContent = quizScores.length > 0
     ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
+  var firstTry = computeFirstTryAccuracy(studentData);
+  document.getElementById('stat-first').textContent = firstTry !== null ? firstTry + '%' : '—';
+  var streak = computeStreak(studentData);
+  document.getElementById('stat-streak').innerHTML = streak > 0 ? '<span class="streak-flame">🔥</span>' + streak : '0';
+
+  // Progress
   document.getElementById('progress-fill').style.width = Math.round(done / availableCount * 100) + '%';
+  document.getElementById('progress-label').textContent = done + ' de ' + availableCount + ' aulas disponíveis';
+
+  // Meu desempenho — cards
+  renderSparkline(studentData);
+  var avgCompletedMin = completedTimes.length > 0 ? Math.round(completedTimes.reduce(function(a,b){return a+b},0) / completedTimes.length / 60000) : null;
+  document.getElementById('perf-avgtime').textContent = avgCompletedMin !== null ? avgCompletedMin + ' min' : '—';
+  document.getElementById('perf-attempts').textContent = totalQuizAttempts(studentData);
+
+  var next = recommendNext(studentData);
+  var nextEl = document.getElementById('perf-next');
+  if (next.link) {
+    nextEl.innerHTML = '<a href="' + next.link + '" style="color:var(--accent);text-decoration:none">→ ' + next.action + '</a>';
+  } else {
+    nextEl.textContent = next.action;
+  }
+  document.getElementById('perf-next-sub').textContent = next.sub;
 }
 
 renderPortal();

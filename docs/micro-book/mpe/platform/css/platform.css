@@ -1,29 +1,39 @@
 /* ==================== PLATFORM CSS ==================== */
 :root {
-  --primary: #1a365d;
-  --primary-light: #2c5282;
-  --accent: #3182ce;
-  --accent-hover: #2b6cb0;
-  --success: #38a169;
-  --warning: #d69e2e;
-  --danger: #e53e3e;
-  --bg: #f7fafc;
+  /* Insper palette — dark red / burgundy */
+  --primary: #4A0E15;         /* dark burgundy — topbar, headings */
+  --primary-light: #7D1F2B;   /* mid burgundy — gradients */
+  --accent: #C8102E;          /* Insper red — CTAs, highlights */
+  --accent-hover: #9B0820;    /* darker Insper red — hover */
+  --accent-soft: #F9E6E9;     /* very light red — backgrounds */
+  --success: #2F855A;
+  --warning: #B7791F;
+  --danger: #C53030;
+  --bg: #FAFAF8;              /* warm off-white */
   --card: #fff;
-  --text: #2d3748;
-  --text-muted: #718096;
-  --border: #e2e8f0;
-  --radius: 8px;
-  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+  --text: #1A1A1A;
+  --text-muted: #6B6B6B;
+  --border: #E8E4DF;
+  --radius: 6px;
+  --shadow: 0 1px 3px rgba(74,14,21,0.08);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
 /* ---- LOGIN ---- */
-.login-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a365d 0%,#2c5282 100%)}
+.login-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#2D0A0A 0%,#4A0E15 55%,#7D1F2B 100%)}
 .login-card{background:#fff;border-radius:12px;padding:2.5rem;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
 .login-card h1{font-size:1.4rem;text-align:center;margin-bottom:0.3rem;color:var(--primary)}
 .login-card .subtitle{text-align:center;color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem}
 .login-card .logo{text-align:center;font-size:2.5rem;margin-bottom:0.5rem}
+.insper-logo{text-align:center;margin-bottom:0.8rem;line-height:1}
+.insper-logo .wordmark{font-size:3.2rem;font-weight:900;color:var(--accent);letter-spacing:-0.06em;font-family:'Arial Black','Helvetica Neue','Helvetica',sans-serif;display:inline-block}
+.insper-logo .wordmark .dot{color:#1A1A1A}
+.insper-topbar{display:inline-flex;align-items:baseline;gap:0.5rem;color:#fff;text-decoration:none}
+.insper-topbar .ilogo{font-weight:900;color:#fff;letter-spacing:-0.05em;font-family:'Arial Black','Helvetica Neue','Helvetica',sans-serif;font-size:1.3rem}
+.insper-topbar .ilogo .accent{color:#FF5B6E}
+.insper-topbar .sep{color:rgba(255,255,255,0.4);font-size:0.9rem}
+.insper-topbar .course{font-size:0.95rem;font-weight:600}
 .form-group{margin-bottom:1rem}
 .form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.5px}
 .form-group input{width:100%;padding:0.7rem 1rem;border:2px solid var(--border);border-radius:var(--radius);font-size:0.95rem;transition:0.2s}
@@ -55,7 +65,7 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 
 .aulas-grid{max-width:1000px;margin:0 auto;padding:0 1rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
 .aula-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.2rem;transition:0.2s;box-shadow:var(--shadow);display:flex;flex-direction:column}
-.aula-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(49,130,206,0.15);transform:translateY(-2px)}
+.aula-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(200,16,46,0.15);transform:translateY(-2px)}
 .aula-card .aula-num{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:0.3rem}
 .aula-card .aula-title{font-size:1rem;font-weight:600;margin-bottom:0.3rem}
 .aula-card .aula-desc{font-size:0.8rem;color:var(--text-muted);flex:1;margin-bottom:0.8rem}
@@ -66,6 +76,26 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .badge-new{background:#bee3f8;color:#2a4365}
 .badge-progress{background:#fefcbf;color:#744210}
 .aula-card a{text-decoration:none;color:inherit}
+
+/* ---- PERSONAL DASHBOARD (student) ---- */
+.my-performance{max-width:1000px;margin:0 auto 1.5rem;padding:0 1rem}
+.my-performance h3{font-size:1.1rem;margin-bottom:0.8rem;color:var(--primary);border-bottom:2px solid var(--accent);padding-bottom:0.4rem;display:inline-block}
+.perf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.perf-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.2rem;box-shadow:var(--shadow)}
+.perf-card .perf-title{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);font-weight:700;margin-bottom:0.3rem}
+.perf-card .perf-value{font-size:1.6rem;font-weight:700;color:var(--accent);line-height:1}
+.perf-card .perf-sub{font-size:0.75rem;color:var(--text-muted);margin-top:0.3rem}
+.perf-card.wide{grid-column:span 2}
+@media(max-width:680px){.perf-card.wide{grid-column:auto}}
+.spark-container{display:flex;gap:3px;align-items:flex-end;height:60px;margin:0.5rem 0}
+.spark-bar{flex:1;background:linear-gradient(180deg,var(--accent) 0%,var(--accent-hover) 100%);border-radius:2px 2px 0 0;position:relative;min-height:2px;transition:all 0.3s}
+.spark-bar.empty{background:var(--border);opacity:0.4}
+.spark-bar:hover{opacity:0.75}
+.spark-bar .spark-label{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);font-size:0.65rem;color:var(--text-muted);font-weight:600}
+.spark-legend{display:flex;justify-content:space-between;font-size:0.7rem;color:var(--text-muted);margin-top:0.8rem}
+.streak-flame{color:var(--accent);margin-right:0.2rem}
+.mini-progress{height:5px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:0.5rem}
+.mini-progress-fill{height:100%;background:var(--accent);transition:width 0.3s}
 
 /* ---- PRE-AULA PAGE ---- */
 .content-wrapper{max-width:900px;margin:0 auto;padding:1.5rem;text-align:center}
