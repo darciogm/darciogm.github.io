@@ -17,6 +17,6 @@ window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXB
  */
 window.MPE_CONFIG = {
   USE_SUPABASE_AUTH:   true,   // Fase 3 — ativo
-  USE_SUPABASE_WRITES: false,  // Fase 4 — ainda localStorage
+  USE_SUPABASE_WRITES: true,   // Fase 4 — dual-write (localStorage + Supabase)
   USE_SUPABASE_READS:  false   // Fase 8 — ainda localStorage
 };

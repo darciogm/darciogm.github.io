@@ -166,6 +166,24 @@
     }
   };
 
+  // Helper: dispara write Supabase se flag ligada, sem lancar
+  function _syncWrite(fnName, args) {
+    if (!window.MPE_CONFIG || !window.MPE_CONFIG.USE_SUPABASE_WRITES) return;
+    if (!window.MpeDB || !window.MpeDB.enabled) return;
+    try {
+      var p = window.MpeDB[fnName].apply(window.MpeDB, args);
+      if (p && typeof p.then === 'function') {
+        p.then(function(r) {
+          if (!r || !r.ok) console.warn('[MpeDB sync] ' + fnName + ' falhou:', r && r.error);
+        }).catch(function(e) {
+          console.warn('[MpeDB sync] ' + fnName + ' erro:', e);
+        });
+      }
+    } catch(e) {
+      console.warn('[MpeDB sync] ' + fnName + ' exception:', e);
+    }
+  }
+
   // ==================== TRACKER ====================
   window.MicroTracker = {
     _startTime: null,
@@ -202,6 +220,14 @@
 
       this._save(data);
 
+      // Supabase sync
+      _syncWrite('upsertPageVisit', [pageId, {
+        visits: pg.visits,
+        total_time_ms: pg.totalTime,
+        first_visit_at: pg.firstVisit,
+        last_visit_at: pg.lastVisit
+      }]);
+
       // Heartbeat for time tracking
       var self = this;
       this._heartbeatId = setInterval(function() { self._heartbeat(); }, HEARTBEAT_MS);
@@ -222,8 +248,20 @@
         var data = this.getData();
         var mat = MicroAuth.getSession()?.matricula;
         if (mat && data[mat] && data[mat].pages[this._currentPage]) {
-          data[mat].pages[this._currentPage].totalTime += elapsed;
+          var pg = data[mat].pages[this._currentPage];
+          pg.totalTime += elapsed;
           this._save(data);
+
+          // Supabase sync (throttle: só a cada 4 heartbeats ≈ 2min)
+          this._heartbeatCount = (this._heartbeatCount || 0) + 1;
+          if (this._heartbeatCount % 4 === 0) {
+            _syncWrite('upsertPageVisit', [this._currentPage, {
+              visits: pg.visits,
+              total_time_ms: pg.totalTime,
+              first_visit_at: pg.firstVisit,
+              last_visit_at: pg.lastVisit
+            }]);
+          }
         }
       }
     },
@@ -233,6 +271,20 @@
 
     flush: function() {
       this._heartbeat();
+      // Sync final (independente do throttle)
+      if (this._currentPage) {
+        var data = this.getData();
+        var mat = MicroAuth.getSession()?.matricula;
+        if (mat && data[mat] && data[mat].pages[this._currentPage]) {
+          var pg = data[mat].pages[this._currentPage];
+          _syncWrite('upsertPageVisit', [this._currentPage, {
+            visits: pg.visits,
+            total_time_ms: pg.totalTime,
+            first_visit_at: pg.firstVisit,
+            last_visit_at: pg.lastVisit
+          }]);
+        }
+      }
       if (this._heartbeatId) clearInterval(this._heartbeatId);
       this._heartbeatId = null;
     },
@@ -266,6 +318,15 @@
       if (score > quiz.bestScore) quiz.bestScore = score;
 
       this._save(data);
+
+      // Supabase sync: insert uma linha por tentativa de questao + upsert agregado
+      _syncWrite('recordQuizQuestionAttempt', [pageId, questionId, selectedAnswer, isCorrect]);
+      _syncWrite('upsertQuizAggregate', [pageId, {
+        attempts: quiz.attempts,
+        best_score: quiz.bestScore,
+        last_attempt_at: quiz.lastAttempt
+      }]);
+
       return { correct: isCorrect, score: score, total: total, right: right };
     },
 
@@ -275,9 +336,16 @@
       var data = this.getData();
       var mat = session.matricula;
       if (data[mat] && data[mat].quizzes[pageId]) {
-        data[mat].quizzes[pageId].attempts++;
-        data[mat].quizzes[pageId].submittedAt = new Date().toISOString();
+        var quiz = data[mat].quizzes[pageId];
+        quiz.attempts++;
+        quiz.submittedAt = new Date().toISOString();
         this._save(data);
+        _syncWrite('upsertQuizAggregate', [pageId, {
+          attempts: quiz.attempts,
+          best_score: quiz.bestScore,
+          last_attempt_at: quiz.lastAttempt,
+          submitted_at: quiz.submittedAt
+        }]);
       }
     },
 
@@ -299,15 +367,21 @@
     recordSectionStart: function(pageId, sectionId) {
       var ctx = this._ensureSection(pageId, sectionId);
       if (!ctx) return;
-      // startedAt já foi marcado em _ensureSection se primeira vez
+      var sec = ctx.data[ctx.mat].sections[pageId][sectionId];
       this._save(ctx.data);
+      _syncWrite('upsertSectionProgress', [pageId, sectionId, { started_at: sec.startedAt }]);
     },
 
     recordSectionComplete: function(pageId, sectionId) {
       var ctx = this._ensureSection(pageId, sectionId);
       if (!ctx) return;
-      ctx.data[ctx.mat].sections[pageId][sectionId].completedAt = new Date().toISOString();
+      var sec = ctx.data[ctx.mat].sections[pageId][sectionId];
+      sec.completedAt = new Date().toISOString();
       this._save(ctx.data);
+      _syncWrite('upsertSectionProgress', [pageId, sectionId, {
+        started_at: sec.startedAt,
+        completed_at: sec.completedAt
+      }]);
     },
 
     recordConfidence: function(pageId, sectionId, phase, value) {
@@ -318,6 +392,7 @@
       if (phase === 'pre') sec.confidencePre = { value: value, at: new Date().toISOString() };
       else sec.confidencePost = { value: value, at: new Date().toISOString() };
       this._save(ctx.data);
+      _syncWrite('recordConfidence', [pageId, sectionId, phase, value]);
     },
 
     recordMicroCheckpoint: function(pageId, sectionId, questionId, selectedAnswer, correctAnswer) {
@@ -333,8 +408,10 @@
         timestamp: new Date().toISOString()
       });
       if (isCorrect) sec.microCheckpoint[questionId].correct = true;
+      var attemptNum = sec.microCheckpoint[questionId].attempts.length;
       this._save(ctx.data);
-      return { correct: isCorrect, attemptNum: sec.microCheckpoint[questionId].attempts.length };
+      _syncWrite('recordMicroAttempt', [pageId, sectionId, questionId, selectedAnswer, isCorrect, attemptNum]);
+      return { correct: isCorrect, attemptNum: attemptNum };
     },
 
     recordPaperExercise: function(pageId, exerciseId, approach) {
@@ -351,6 +428,7 @@
         completedAt: new Date().toISOString()
       };
       this._save(data);
+      _syncWrite('upsertPaperExercise', [pageId, exerciseId, approach]);
     },
 
     recordReflection: function(pageId, promptId, text) {
@@ -366,6 +444,7 @@
         submittedAt: new Date().toISOString()
       };
       this._save(data);
+      _syncWrite('upsertReflection', [pageId, promptId, text]);
     },
 
     // ==================== EXPORT ====================
