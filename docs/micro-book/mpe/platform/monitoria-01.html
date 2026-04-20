@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Monitoria 01 — Aulas 3 e 4 + revisão relâmpago — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Monitoria 01 — Aulas 3 e 4 com revisão relâmpago de 1 e 2</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Dados do encontro</div>
+<ul>
+  <li><strong>Data:</strong> sábado, 16/05/2026 — à tarde (horário e sala conforme divulgação)</li>
+  <li><strong>Monitor:</strong> Alberto Nishikawa</li>
+  <li><strong>Encontros de referência:</strong> Aulas 3 (Slutsky e Elasticidades) e 4 (Equilíbrio Geral: Trocas e Produção), com revisão relâmpago de Aulas 1 (Preferências) e 2 (UMP/EMP/Dualidade)</li>
+  <li><strong>Formato:</strong> resolução de exercícios no quadro, com participação ativa. Não é reexposição de aula — é extensão e calibre.</li>
+  <li><strong>Tempo-alvo desta pré-monitoria:</strong> 45–60 min (assumindo pré-aulas 1–4 já concluídas)</li>
+</ul>
+</div>
+
+<h2>Como a monitoria é estruturada</h2>
+<p>A monitoria tem três camadas de calibre:</p>
+<ol>
+  <li><strong>Piso N&amp;S-difícil:</strong> revisão dos itens mais duros de N&amp;S 12e correspondentes ao material coberto. Consolida o que já foi visto em sala.</li>
+  <li><strong>Teto J-R:</strong> um ou dois exercícios no calibre Jehle-Reny, para quem quer empurrar o rigor.</li>
+  <li><strong>Tópicos extras:</strong> extensões que não couberam na aula — limites CES, cálculo direto de <span class="math inline">\(\sigma\)</span>, contraexemplos clássicos — e sabor ANPEC quando pertinente.</li>
+</ol>
+
+<p>A pré-monitoria existe para você chegar com o ferramental fresco. Não é checkpoint obrigatório da plataforma; é uma chance de garantir que você extrai o máximo do encontro de sábado.</p>
+
+<hr>
+
+<h2>1. Escopo desta monitoria</h2>
+<p>Como M1 é a primeira e cobre quatro aulas, a estratégia é densa mas linear. Primeiros 20–25 minutos: revisão relâmpago de axiomas → representação → UMP/EMP/dualidade via envelope, fixando esses blocos como <em>fundo</em>. Depois: foco principal em decomposição de Slutsky, propriedades da matriz, paradoxo Giffen, e construção do equilíbrio walrasiano 2×2 Cobb-Douglas na caixa de Edgeworth. Fecha com uma ponte direta para Arrow-Debreu (Aulas 5–6).</p>
+
+<hr>
+
+<h2>2. Exercícios-âncora</h2>
+<p>Os cinco exercícios abaixo serão resolvidos ao vivo. <strong>Tente antes</strong> — é quando você aprende. Chegar com rascunhos, por mais tortos que estejam, multiplica o valor da monitoria.</p>
+
+<ul>
+  <li><strong>N&amp;S 12e 3.5 e 3.7</strong> em versão estendida (revisão). 3.5 cobre Leontief e composite goods; 3.7 cobre identificação de Cobb-Douglas a partir de TMS observada. Integramos com discussão explícita de axiomas violados em cada alternativa.</li>
+  <li><strong>N&amp;S 12e 4.10</strong> (Cobb-Douglas Analytical Problem). Pede: (a) função de utilidade indireta \(V(p,I)\), (b) função gasto \(E(p,u)\), (c) compensação equivalente para aumento no preço de um bem. Derivação completa da dualidade em Cobb-Douglas \(U(x,y) = x^\alpha y^{1-\alpha}\).</li>
+  <li><strong>N&amp;S 12e 5.4</strong> (Cobb-Douglas com verificação explícita da equação de Slutsky). Decomposição efeito-renda × efeito-substituição linha a linha. Consolida a matriz de Slutsky como construção dual.</li>
+  <li><strong>N&amp;S 12e 13.2</strong> (Smith/Jones, produção Cobb-Douglas). Dois consumidores com preferências CD, produção com labor como insumo, resolver razão de preços e alocação de equilíbrio. É o bloco 2×2 do walrasiano que entra na Aula 5 como ponto de partida.</li>
+  <li><strong>J-R 1.38</strong> (teto, para quem quer empurrar). Verificar que a função gasto derivada da utilidade CES do Exemplo 1.3 satisfaz as propriedades do Teorema 1.7 (homogeneidade grau 1 em preços, crescente em \(u\), côncava em \(p\), continua, etc.). Dualidade rigorosa.</li>
+</ul>
+
+<hr>
+
+<h2>3. Tópicos extras e extensões</h2>
+<p>Material não coberto em sala que aparece aqui pela primeira vez com rigor:</p>
+
+<ul>
+  <li><strong>Cobb-Douglas como limite da CES</strong> quando \(\rho \to 0\). Usar \(\ln u = \frac{1}{\rho}\ln\left(\alpha x_1^\rho + (1-\alpha)x_2^\rho\right)\) e L'Hôpital para obter \(\ln u = \alpha \ln x_1 + (1-\alpha)\ln x_2\). Discutir por que \(\sigma = 1\) no limite.</li>
+  <li><strong>Leontief como limite da CES</strong> quando \(\rho \to -\infty\). Argumento heurístico via \(\min\): termo dominante no somatório é o menor \(x_i\). Atenção ao <em>kink</em> — TMS não-diferenciável no vértice.</li>
+  <li><strong>Cálculo direto de \(\sigma\)</strong> pela definição \(\sigma = \dfrac{d\ln(x_2/x_1)}{d\ln \mathrm{TMS}}\) para as quatro famílias (Cobb-Douglas, CES, quasilinear, Leontief). Fecha o passeio.</li>
+  <li><strong>Contraexemplo das preferências lexicográficas</strong> — por que satisfazem completude, transitividade e monotonicidade, mas violam continuidade; construção explícita de conjunto de nível não-fechado; prova (intuitiva) de não-representabilidade por função utilidade contínua. Promessa pendente da Aula 1.</li>
+</ul>
+
+<hr>
+
+<h2>4. Conexão com o curso</h2>
+<p>Ao fim desta monitoria você deve ter consolidado:</p>
+<ul>
+  <li>A cadeia <strong>axiomas → representação → UMP/EMP → dualidade → Slutsky → equilíbrio walrasiano 2×2</strong>.</li>
+  <li>A mecânica dos três objetos principais: função de utilidade indireta \(V\), função gasto \(E\), demanda Hicksiana \(x^h = \partial E/\partial p\).</li>
+  <li>A caixa de Edgeworth como objeto geométrico que antecipa Arrow-Debreu (Aulas 5–6) quando as cestas são estendidas para bens contingentes.</li>
+</ul>
+
+<p>Se algum desses blocos ainda está gelado quando você chegar na monitoria, fale com o Alberto logo no início. Vale mais admitir 15 minutos que "travar" 3 horas.</p>
+
+<hr>
+
+<h2>Checkpoint de pré-monitoria (4 itens)</h2>
+
+<div class="admonition warning">
+<div class="admonition-title">Calibre de aquecimento</div>
+<p>Estes 4 itens testam pré-requisitos. Se errar muito, reveja as pré-aulas 1–4 antes de sábado. Se acertar em 1ª tentativa, chegou com a preparação certa.</p>
+</div>
+
+<div class="quiz-container">
+<div class="quiz-header"><h3>Checkpoint Pré-Monitoria 01</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1 (Limite CES). No limite \(\rho \to 0\), a função CES \(u(x_1, x_2) = \left(\alpha x_1^\rho + (1-\alpha)x_2^\rho\right)^{1/\rho}\) converge (a menos de transformação monótona) para:</div>
+<div class="quiz-option" data-value="a">(a) Substitutos perfeitos: \(u = \alpha x_1 + (1-\alpha)x_2\)</div>
+<div class="quiz-option" data-value="b">(b) Cobb-Douglas: \(u = x_1^\alpha x_2^{1-\alpha}\)</div>
+<div class="quiz-option" data-value="c">(c) Leontief: \(u = \min\{x_1, x_2\}\)</div>
+<div class="quiz-option" data-value="d">(d) Quasilinear: \(u = \ln x_1 + x_2\)</div>
+<div class="quiz-option" data-value="e">(e) Nenhuma das anteriores — o limite não existe</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2 (Slutsky matricial). A matriz de Slutsky \(S\) de um consumidor racional que maximiza utilidade estritamente quasi-côncava é:</div>
+<div class="quiz-option" data-value="a">(a) Simétrica e definida positiva</div>
+<div class="quiz-option" data-value="b">(b) Assimétrica e semidefinida negativa</div>
+<div class="quiz-option" data-value="c">(c) Simétrica e semidefinida negativa</div>
+<div class="quiz-option" data-value="d">(d) Simétrica, mas com diagonal positiva (pela lei da demanda)</div>
+<div class="quiz-option" data-value="e">(e) Nenhuma restrição geral além de homogeneidade de grau zero</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3 (Equilíbrio walrasiano 2×2). Numa economia de trocas com dois agentes e dois bens e preferências estritamente monotônicas, o equilíbrio walrasiano é caracterizado por:</div>
+<div class="quiz-option" data-value="a">(a) Alocações idênticas para os dois agentes</div>
+<div class="quiz-option" data-value="b">(b) TMS igual à razão de dotações iniciais</div>
+<div class="quiz-option" data-value="c">(c) TMS de ambos os agentes iguais à razão de preços, com mercados se limpando</div>
+<div class="quiz-option" data-value="d">(d) Preços iguais a zero para um dos bens</div>
+<div class="quiz-option" data-value="e">(e) Existência do núcleo vazio</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q4" data-correct="a">
+<div class="q-text">Q4 (Identidade de Roy). A identidade de Roy estabelece que, se \(V(p, I)\) é a função de utilidade indireta diferenciável, a demanda Marshalliana pelo bem \(i\) é:</div>
+<div class="quiz-option" data-value="a">(a) \(x_i^*(p, I) = -\dfrac{\partial V / \partial p_i}{\partial V / \partial I}\)</div>
+<div class="quiz-option" data-value="b">(b) \(x_i^*(p, I) = \dfrac{\partial V}{\partial p_i}\)</div>
+<div class="quiz-option" data-value="c">(c) \(x_i^*(p, I) = \dfrac{\partial E}{\partial p_i}\) (lema de Shephard, não Roy)</div>
+<div class="quiz-option" data-value="d">(d) \(x_i^*(p, I) = \dfrac{\partial V / \partial I}{\partial V / \partial p_i}\)</div>
+<div class="quiz-option" data-value="e">(e) \(x_i^*(p, I) = p_i / I\) pelo teorema de Walras</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('monitoria-01')">Enviar Checkpoint</button></div>
+</div>
+
+<hr>
+
+<h2>Material de apoio (opcional)</h2>
+<ul>
+  <li><strong>ZaE</strong>: caps. 3–5 e capítulo de Equilíbrio Geral. <a href="https://darciogm.github.io/micro-book/" target="_blank">Abrir →</a></li>
+  <li><strong>N&amp;S 12e</strong>: caps. 3 (Preferences and Utility), 4 (Utility Maximization and Choice), 5 (Income and Substitution Effects), 6 (Demand Relationships among Goods, §§até 6.3), 13 (General Equilibrium and Welfare, §§até Mathematical Model of Exchange).</li>
+  <li><strong>J-R 3e</strong>: cap. 1 (Consumer Theory) para quem quer empurrar; cap. 2.1 (Duality: A Closer Look) para o exercício 1.38.</li>
+</ul>
+
+<div class="admonition abstract">
+<div class="admonition-title">Próxima aula — quarta, 20/05/2026</div>
+<p><strong>Aula 05 — Arrow-Debreu I: Bens Contingentes, Tempo e Risco.</strong> Expansão do espaço de bens para estados da natureza e datas. Utilidade esperada VNM. Abordagem state-preference. Leitura: N&amp;S 12e cap. 7 integral + ZaE capítulo AD parte I.</p>
+</div>
+
+</div>
+
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('monitoria-01');
+MicroQuiz.init('monitoria-01');
+</script>
+</body>
+</html>

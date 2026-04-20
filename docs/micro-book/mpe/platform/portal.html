@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="topbar">
-  <h1 style="font-size:1rem"><span class="insper-topbar"><span class="ilogo">insper<span class="accent">.</span></span><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32 — Pré-Aula</span></span></h1>
+  <h1 style="font-size:1rem"><span class="insper-topbar"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32 — Pré-Aula</span></span></h1>
   <div class="user-info">
     <span class="name" id="user-name"></span>
     <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
@@ -55,7 +55,16 @@
   </div>
 </div>
 
+<div class="my-performance" style="margin-top:0.5rem">
+  <h3>Aulas</h3>
+</div>
 <div class="aulas-grid" id="aulas-grid"></div>
+
+<div class="my-performance" style="margin-top:2rem">
+  <h3>Monitorias — pré-monitoria</h3>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Encontros de sábado à tarde com o monitor Alberto. A pré-monitoria é opcional, mas recomendada — chegar preparado multiplica o valor do encontro.</p>
+</div>
+<div class="aulas-grid" id="monitorias-grid"></div>
 
 <script src="js/tracker.js"></script>
 <script>
@@ -75,6 +84,14 @@ var AULAS = [
   {n:8,  title:'Informação Assimétrica: Seleção Adversa e Risco Moral', desc:'Akerlof, Rothschild-Stiglitz, principal-agente, contratos com IR e IC, trade-off seguro-incentivo', cap:'ZaE Info · N&S 12e 18', time:90, available:false},
   {n:9,  title:'Sinalização e Matching', desc:'Spence com single-crossing, intuitive criterion, matching estável Gale-Shapley, aplicações', cap:'ZaE Sin · N&S 12e 18 + ZaE Match', time:85, available:false},
   {n:10, title:'Avaliação Final Presencial', desc:'Prova escrita cumulativa, 3h, cobertura integrada dos 9 tópicos, 70% da nota', cap:'Ementa completa', time:180, available:false}
+];
+
+var MONITORIAS = [
+  {n:1, title:'M1 — Aulas 3 e 4 + revisão relâmpago 1-2', desc:'Slutsky, EG 2×2 Cobb-Douglas em Edgeworth, dualidade. Exercícios-âncora N&S 3.5, 3.7, 4.10, 5.4, 13.2 + J-R 1.38 (teto). Tópicos extras: limites CES, σ direto, lexicográfica.', data:'sáb 16/05', time:60, available:true},
+  {n:2, title:'M2 — Arrow-Debreu I', desc:'Estados da natureza, preços de Arrow, state-preference, utilidade esperada. Exercícios-âncora N&S 7.13 + J-R 5.34 (Arrow Securities).', data:'sáb 23/05', time:60, available:false},
+  {n:3, title:'M3 — Arrow-Debreu II', desc:'Existência via Brouwer, 1T e 2T do bem-estar rigoroso, transferências lump-sum. Exercícios-âncora N&S 13.13 + J-R 5.28 (contraexemplo 2T).', data:'sáb 30/05', time:60, available:false},
+  {n:4, title:'M4 — Externalidades + Seleção Adversa e Risco Moral', desc:'Duplo bloco: Pigou/Coase/cotas (Aula 7) + IR/IC em principal-agente e Rothschild-Stiglitz (Aula 8). Exercícios-âncora N&S 19.9 + extensões.', data:'sáb 13/06', time:60, available:false},
+  {n:5, title:'M5 — Sinalização, Matching e Revisão Integrada', desc:'Spence com single-crossing, Gale-Shapley, refinamentos. Exercícios-âncora J-R 8.10 + simulado dirigido para a AF.', data:'sáb 20/06', time:90, available:false}
 ];
 
 function computeFirstTryAccuracy(studentData) {
@@ -205,6 +222,34 @@ function renderPortal() {
   });
 
   document.getElementById('aulas-grid').innerHTML = gridHtml;
+
+  // Monitorias grid
+  var monHtml = '';
+  MONITORIAS.forEach(function(m) {
+    var pageId = 'monitoria-' + String(m.n).padStart(2,'0');
+    var pg = studentData.pages[pageId] || {};
+    var qz = studentData.quizzes[pageId] || {};
+    var visited = pg.visits > 0;
+    var quizDone = qz.attempts > 0;
+    var badge, badgeClass;
+    if (!m.available) { badge = 'Em breve'; badgeClass = 'badge-new'; }
+    else if (quizDone) { badge = 'Preparado'; badgeClass = 'badge-done'; }
+    else if (visited) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
+    else { badge = 'Nova'; badgeClass = 'badge-new'; }
+
+    var cardBody = '<div class="aula-num">Monitoria ' + String(m.n).padStart(2,'0') + ' &middot; ' + m.data + '</div>'
+      + '<div class="aula-title">' + m.title + '</div>'
+      + '<div class="aula-desc">' + m.desc + '</div>'
+      + '<div class="aula-meta"><span class="time">&#9201; ' + m.time + ' min pré-monitoria</span>'
+      + '<span class="badge ' + badgeClass + '">' + badge + '</span></div>';
+
+    if (m.available) {
+      monHtml += '<div class="aula-card"><a href="monitoria-' + String(m.n).padStart(2,'0') + '.html">' + cardBody + '</a></div>';
+    } else {
+      monHtml += '<div class="aula-card" style="opacity:0.5;cursor:not-allowed">' + cardBody + '</div>';
+    }
+  });
+  document.getElementById('monitorias-grid').innerHTML = monHtml;
 
   // Stats principais
   document.getElementById('stat-done').textContent = done;

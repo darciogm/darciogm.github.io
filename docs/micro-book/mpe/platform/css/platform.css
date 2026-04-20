@@ -26,14 +26,12 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .login-card h1{font-size:1.4rem;text-align:center;margin-bottom:0.3rem;color:var(--primary)}
 .login-card .subtitle{text-align:center;color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem}
 .login-card .logo{text-align:center;font-size:2.5rem;margin-bottom:0.5rem}
-.insper-logo{text-align:center;margin-bottom:0.8rem;line-height:1}
-.insper-logo .wordmark{font-size:3.2rem;font-weight:900;color:var(--accent);letter-spacing:-0.06em;font-family:'Arial Black','Helvetica Neue','Helvetica',sans-serif;display:inline-block}
-.insper-logo .wordmark .dot{color:#1A1A1A}
-.insper-topbar{display:inline-flex;align-items:baseline;gap:0.5rem;color:#fff;text-decoration:none}
-.insper-topbar .ilogo{font-weight:900;color:#fff;letter-spacing:-0.05em;font-family:'Arial Black','Helvetica Neue','Helvetica',sans-serif;font-size:1.3rem}
-.insper-topbar .ilogo .accent{color:#FF5B6E}
-.insper-topbar .sep{color:rgba(255,255,255,0.4);font-size:0.9rem}
-.insper-topbar .course{font-size:0.95rem;font-weight:600}
+.insper-logo{text-align:center;margin-bottom:1rem;line-height:1}
+.insper-logo img{height:52px;width:auto;display:inline-block}
+.insper-topbar{display:inline-flex;align-items:center;gap:0.7rem;color:#fff;text-decoration:none}
+.insper-topbar .logo-img{height:26px;width:auto;filter:brightness(0) invert(1);display:block}
+.insper-topbar .sep{color:rgba(255,255,255,0.4);font-size:0.9rem;align-self:center}
+.insper-topbar .course{font-size:0.95rem;font-weight:600;align-self:center}
 .form-group{margin-bottom:1rem}
 .form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.5px}
 .form-group input{width:100%;padding:0.7rem 1rem;border:2px solid var(--border);border-radius:var(--radius);font-size:0.95rem;transition:0.2s}
