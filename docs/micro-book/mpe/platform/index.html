@@ -17,8 +17,8 @@
 
     <div id="form-login">
       <div class="form-group">
-        <label for="matricula">Matricula</label>
-        <input type="text" id="matricula" placeholder="Ex: 2024001" autocomplete="username">
+        <label for="login-id" id="login-id-label">Email</label>
+        <input type="text" id="login-id" placeholder="seu.email@insper.edu.br" autocomplete="username">
       </div>
       <div class="form-group">
         <label for="senha">Senha</label>
@@ -26,6 +26,9 @@
       </div>
       <button class="btn btn-primary" onclick="doLogin()">Entrar</button>
       <button class="btn btn-secondary" onclick="showRegister()">Primeiro acesso? Cadastrar</button>
+      <div style="text-align:center;margin-top:0.6rem">
+        <a href="#" onclick="doForgotPassword();return false" style="color:var(--accent);font-size:0.78rem;text-decoration:underline">Esqueci minha senha</a>
+      </div>
     </div>
 
     <div id="form-register" style="display:none">
@@ -34,12 +37,16 @@
         <input type="text" id="reg-nome" placeholder="Seu nome">
       </div>
       <div class="form-group">
-        <label for="reg-matricula">Matricula</label>
-        <input type="text" id="reg-matricula" placeholder="Ex: 2024001">
+        <label for="reg-matricula">Matricula Insper</label>
+        <input type="text" id="reg-matricula" placeholder="Ex: 202412345">
+      </div>
+      <div class="form-group" id="reg-email-wrapper">
+        <label for="reg-email">Email Insper</label>
+        <input type="email" id="reg-email" placeholder="seu.email@insper.edu.br">
       </div>
       <div class="form-group">
         <label for="reg-senha">Criar senha</label>
-        <input type="password" id="reg-senha" placeholder="Minimo 4 caracteres">
+        <input type="password" id="reg-senha" placeholder="Minimo 8 caracteres">
       </div>
       <button class="btn btn-primary" onclick="doRegister()">Cadastrar</button>
       <button class="btn btn-secondary" onclick="showLogin()">Voltar ao login</button>
@@ -60,41 +67,84 @@
 <script src="js/mpe-db.js"></script>
 <script src="js/tracker.js"></script>
 <script>
-// Check if already logged in
-if (MicroAuth.getSession()) window.location.href = 'portal.html';
-
+// Helper para mostrar erro
 function showError(msg) {
   var el = document.getElementById('login-error');
   el.textContent = msg; el.style.display = 'block';
-  setTimeout(function(){ el.style.display='none'; }, 4000);
+  setTimeout(function(){ el.style.display='none'; }, 6000);
+}
+function showSuccess(msg) {
+  var el = document.getElementById('login-error');
+  el.textContent = msg;
+  el.style.background = '#D1FAE5';
+  el.style.color = '#065F46';
+  el.style.display = 'block';
+  setTimeout(function(){ el.style.display='none'; el.style.background=''; el.style.color=''; }, 6000);
 }
 
-function doLogin() {
-  var mat = document.getElementById('matricula').value.trim();
+// Modo: Supabase ou legacy
+var SB_AUTH = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH && window.MpeDB && window.MpeDB.enabled;
+
+// Ajusta label de login
+if (!SB_AUTH) {
+  document.getElementById('login-id-label').textContent = 'Matrícula';
+  document.getElementById('login-id').setAttribute('placeholder', 'Ex: 2024001');
+}
+
+// Se já há sessão, redireciona
+(async function() {
+  if (SB_AUTH && window.MpeDB && window.MpeDB.enabled) {
+    // Pequeno delay: onAuthStateChange pode ainda estar restaurando sessionStorage
+    await new Promise(function(r){ setTimeout(r, 300); });
+  }
+  if (MicroAuth.getSession()) window.location.href = 'portal.html';
+})();
+
+async function doLogin() {
+  var id = document.getElementById('login-id').value.trim();
   var pwd = document.getElementById('senha').value;
-  if (!mat || !pwd) { showError('Preencha matricula e senha.'); return; }
-  var r = MicroAuth.login(mat, pwd);
+  if (!id || !pwd) { showError('Preencha email/matrícula e senha.'); return; }
+  var r = MicroAuth.login(id, pwd);
+  if (r && typeof r.then === 'function') r = await r;
   if (r.ok) window.location.href = 'portal.html';
   else showError(r.msg);
 }
 
-function doRegister() {
+async function doRegister() {
   var nome = document.getElementById('reg-nome').value.trim();
   var mat = document.getElementById('reg-matricula').value.trim();
+  var email = document.getElementById('reg-email').value.trim();
   var pwd = document.getElementById('reg-senha').value;
   if (!nome || !mat || !pwd) { showError('Preencha todos os campos.'); return; }
-  if (pwd.length < 4) { showError('Senha deve ter pelo menos 4 caracteres.'); return; }
-  var r = MicroAuth.register(mat, pwd, nome);
+  if (SB_AUTH && !email) { showError('Email é obrigatório.'); return; }
+  if (pwd.length < (SB_AUTH ? 8 : 4)) { showError('Senha deve ter pelo menos ' + (SB_AUTH ? 8 : 4) + ' caracteres.'); return; }
+  var r = MicroAuth.register(mat, pwd, nome, email);
+  if (r && typeof r.then === 'function') r = await r;
   if (r.ok) {
-    MicroAuth.login(mat, pwd);
-    window.location.href = 'portal.html';
+    if (SB_AUTH) {
+      showSuccess('Cadastro criado. Verifique seu email para confirmar a conta, depois entre.');
+      showLogin();
+    } else {
+      var lr = MicroAuth.login(mat, pwd);
+      window.location.href = 'portal.html';
+    }
   } else showError(r.msg);
+}
+
+async function doForgotPassword() {
+  if (!SB_AUTH) { showError('Esqueci-minha-senha só disponível após migração do sistema.'); return; }
+  var id = document.getElementById('login-id').value.trim();
+  if (!id || id.indexOf('@') < 0) { showError('Digite seu email no campo acima e clique "Esqueci minha senha" de novo.'); return; }
+  var r = await MicroAuth.resetPassword(id);
+  if (r.ok) showSuccess('Link de redefinição enviado para ' + id + '. Verifique seu email.');
+  else showError(r.msg || 'Erro ao enviar link.');
 }
 
 function showRegister() { document.getElementById('form-login').style.display='none'; document.getElementById('form-register').style.display='block'; }
 function showLogin() { document.getElementById('form-register').style.display='none'; document.getElementById('form-login').style.display='block'; }
 
 function loadDemo() {
+  if (SB_AUTH) { showError('Alunos demo só no modo legacy. Em Supabase, import via CSV pela coordenação.'); return; }
   var n = MicroAuth.loadDemoStudents();
   alert(n + ' alunos demo cadastrados.\nMatricula: 2024001\nSenha: micro2');
 }

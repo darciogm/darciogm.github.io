@@ -16,7 +16,7 @@ window.SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXB
  * Fase 8: USE_SUPABASE_READS  = true para Supabase virar source of truth.
  */
 window.MPE_CONFIG = {
-  USE_SUPABASE_AUTH:   false,  // flipped in Fase 3
-  USE_SUPABASE_WRITES: false,  // flipped in Fase 4
-  USE_SUPABASE_READS:  false   // flipped in Fase 8
+  USE_SUPABASE_AUTH:   true,   // Fase 3 — ativo
+  USE_SUPABASE_WRITES: false,  // Fase 4 — ainda localStorage
+  USE_SUPABASE_READS:  false   // Fase 8 — ainda localStorage
 };

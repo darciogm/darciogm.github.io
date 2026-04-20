@@ -209,4 +209,43 @@
 
   window.MpeDB = MpeDB;
   console.log('[MpeDB] cliente Supabase iniciado. window.MpeDB disponível. Rodar MpeDB.testConnection() para testar.');
+
+  // Listener: sincroniza sessao Supabase -> sessionStorage (espelho sincrono
+  // para o resto do codigo nao precisar ser async).
+  var SESSION_KEY = 'mpe_microI_session';
+
+  async function mirrorToSessionStorage(session) {
+    if (!session) {
+      sessionStorage.removeItem(SESSION_KEY);
+      return;
+    }
+    try {
+      var prof = await client.from('profiles').select('*').eq('id', session.user.id).single();
+      if (prof.error) {
+        console.warn('[MpeDB] sessao Supabase ok mas profile nao encontrado:', prof.error.message);
+        return;
+      }
+      sessionStorage.setItem(SESSION_KEY, JSON.stringify({
+        matricula: prof.data.matricula,
+        nome: prof.data.nome,
+        email: prof.data.email,
+        role: prof.data.role,
+        userId: prof.data.id,
+        loginAt: new Date().toISOString()
+      }));
+    } catch(e) {
+      console.warn('[MpeDB] erro ao espelhar sessao:', e);
+    }
+  }
+
+  // Primeira carga: se ja ha sessao persistida, mirror imediato
+  client.auth.getSession().then(function(res) {
+    if (res.data.session) mirrorToSessionStorage(res.data.session);
+  });
+
+  // Escuta mudancas de auth
+  client.auth.onAuthStateChange(function(event, session) {
+    console.log('[MpeDB] auth event:', event);
+    mirrorToSessionStorage(session);
+  });
 })();

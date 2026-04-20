@@ -15,33 +15,74 @@
   var USERS_KEY = 'mpe_microI_users';
   var HEARTBEAT_MS = 30000; // 30s heartbeat for time tracking
 
+  // Helper: usa Supabase se feature flag ativa
+  function _supabaseAuthOn() {
+    return window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH && window.MpeDB && window.MpeDB.enabled;
+  }
+
   // ==================== AUTH ====================
   window.MicroAuth = {
     getUsers: function() {
+      // Apenas modo legacy. Em modo Supabase, lista de usuarios nao e exposta para anon.
+      if (_supabaseAuthOn()) return {};
       try { return JSON.parse(localStorage.getItem(USERS_KEY)) || {}; }
       catch(e) { return {}; }
     },
     saveUsers: function(users) {
+      if (_supabaseAuthOn()) return;
       localStorage.setItem(USERS_KEY, JSON.stringify(users));
     },
-    register: function(matricula, senha, nome) {
+    // Em modo Supabase, register precisa de email; matricula/nome vao em metadata.
+    // Retorna { ok, msg } — Promise se Supabase ligado, sincrono se legacy.
+    register: function(matriculaOrEmail, senha, nome, emailOpt) {
+      if (_supabaseAuthOn()) {
+        var email = emailOpt || (String(matriculaOrEmail).indexOf('@') >= 0 ? matriculaOrEmail : null);
+        var matricula = emailOpt ? matriculaOrEmail : (String(matriculaOrEmail).indexOf('@') >= 0 ? null : matriculaOrEmail);
+        if (!email) return Promise.resolve({ ok:false, msg:'Email é obrigatório no cadastro.' });
+        if (!matricula) return Promise.resolve({ ok:false, msg:'Matrícula é obrigatória no cadastro.' });
+        return MpeDB.signUp(email, senha, { matricula: matricula, nome: nome }).then(function(res) {
+          if (!res.ok) return { ok:false, msg: (res.error && res.error.message) || String(res.error) };
+          return { ok:true };
+        });
+      }
+      // legacy sync
       var users = this.getUsers();
-      if (users[matricula]) return { ok: false, msg: 'Matrícula já cadastrada.' };
-      users[matricula] = { senha: this._hash(senha), nome: nome, createdAt: new Date().toISOString() };
+      if (users[matriculaOrEmail]) return { ok: false, msg: 'Matrícula já cadastrada.' };
+      users[matriculaOrEmail] = { senha: this._hash(senha), nome: nome, createdAt: new Date().toISOString() };
       this.saveUsers(users);
       return { ok: true };
     },
-    login: function(matricula, senha) {
+    // Em Supabase: login por email. Legacy: matricula.
+    login: function(identifier, senha) {
+      if (_supabaseAuthOn()) {
+        var self = this;
+        return MpeDB.signIn(identifier, senha).then(function(res) {
+          if (!res.ok) return { ok:false, msg: (res.error && res.error.message) || 'Credenciais inválidas.' };
+          // Espelho para sessionStorage (onAuthStateChange ja faz, mas aguardamos um tick)
+          return new Promise(function(resolve) {
+            setTimeout(function(){ resolve({ ok:true, session: self.getSession() }); }, 400);
+          });
+        });
+      }
+      // legacy
       var users = this.getUsers();
-      if (!users[matricula]) return { ok: false, msg: 'Matrícula não encontrada.' };
-      if (users[matricula].senha !== this._hash(senha)) return { ok: false, msg: 'Senha incorreta.' };
-      var session = { matricula: matricula, nome: users[matricula].nome, loginAt: new Date().toISOString() };
+      if (!users[identifier]) return { ok: false, msg: 'Matrícula não encontrada.' };
+      if (users[identifier].senha !== this._hash(senha)) return { ok: false, msg: 'Senha incorreta.' };
+      var session = { matricula: identifier, nome: users[identifier].nome, loginAt: new Date().toISOString() };
       sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
       return { ok: true, session: session };
     },
     logout: function() {
       MicroTracker.flush();
       sessionStorage.removeItem(SESSION_KEY);
+      if (_supabaseAuthOn()) {
+        // fire-and-forget; a UI vai redirecionar
+        MpeDB.signOut();
+      }
+    },
+    resetPassword: function(email) {
+      if (!_supabaseAuthOn()) return Promise.resolve({ ok:false, msg:'Reset de senha disponível apenas com Supabase.' });
+      return MpeDB.resetPassword(email);
     },
     getSession: function() {
       try { return JSON.parse(sessionStorage.getItem(SESSION_KEY)); }
@@ -54,11 +95,12 @@
       }
       return true;
     },
-    // Admin detection: matrícula começando com "prof-" concede acesso ao dashboard
+    // Admin detection: em Supabase le role do profile; legacy usa prefixo 'prof-'
     isAdmin: function() {
       var s = this.getSession();
-      if (!s || !s.matricula) return false;
-      return s.matricula.toLowerCase().indexOf('prof') === 0;
+      if (!s) return false;
+      if (_supabaseAuthOn()) return s.role === 'admin';
+      return s.matricula && s.matricula.toLowerCase().indexOf('prof') === 0;
     },
     requireAdmin: function() {
       if (!this.requireAuth()) return false;
