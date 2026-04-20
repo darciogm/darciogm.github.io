@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Pré-Aula — Microeconomia I | MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
+<div class="topbar">
+  <h1>&#128218; Microeconomia I — MPE 2026/32 — Pré-Aula</h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="portal-header">
+  <h2>Material Pre-Aula</h2>
+  <p>Leia as referências indicadas e resolva o checkpoint antes de cada aula. Cada clique é registrado e alimenta o <em>dashboard</em> de acompanhamento.</p>
+  <div class="portal-stats">
+    <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Completas</div></div>
+    <div class="stat-badge"><div class="val" id="stat-total">10</div><div class="lbl">Total</div></div>
+    <div class="stat-badge"><div class="val" id="stat-time">0</div><div class="lbl">Min. estudados</div></div>
+    <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Media Quizzes</div></div>
+  </div>
+  <div class="progress-bar" style="max-width:400px;margin:0 auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+</div>
+
+<div class="aulas-grid" id="aulas-grid"></div>
+
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
+
+var AULAS = [
+  {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true},
+  {n:2,  title:'Maximização, Minimização de Gasto e Dualidade', desc:'UMP e EMP, demandas Marshalliana e Hicksiana, identidades de Roy e Shephard, dualidade', cap:'ZaE 4 · N&S 12e 4', time:90, available:false},
+  {n:3,  title:'Slutsky, Elasticidades e Princípios de Estimação', desc:'Decomposição de Slutsky, bens normais/inferiores/Giffen, matriz e propriedades, identificação em demanda', cap:'ZaE 5 · N&S 12e 5-6', time:90, available:false},
+  {n:4,  title:'Equilíbrio Geral: Trocas e Produção', desc:'Caixa de Edgeworth, núcleo, equilíbrio walrasiano, extensão para economia com produção', cap:'ZaE EG · N&S 12e 13', time:75, available:false},
+  {n:5,  title:'Arrow-Debreu I: Bens Contingentes, Tempo e Risco', desc:'Estados da natureza, VNM, abordagem state-preference, mercados de Arrow, utilidade esperada', cap:'ZaE AD I · N&S 12e 7', time:75, available:false},
+  {n:6,  title:'Arrow-Debreu II: Existência e Teoremas do Bem-Estar', desc:'Existência via Brouwer, 1T e 2T do bem-estar, convexidade, completude de mercados', cap:'ZaE AD II · N&S 12e 13', time:90, available:false},
+  {n:7,  title:'Externalidades e Bens Públicos', desc:'Externalidades tecnológicas, condição de Samuelson, Pigou, Coase, cotas, mercados de permissão', cap:'ZaE Ext · N&S 12e 19', time:80, available:false},
+  {n:8,  title:'Informação Assimétrica: Seleção Adversa e Risco Moral', desc:'Akerlof, Rothschild-Stiglitz, principal-agente, contratos com IR e IC, trade-off seguro-incentivo', cap:'ZaE Info · N&S 12e 18', time:90, available:false},
+  {n:9,  title:'Sinalização e Matching', desc:'Spence com single-crossing, intuitive criterion, matching estável Gale-Shapley, aplicações', cap:'ZaE Sin · N&S 12e 18 + ZaE Match', time:85, available:false},
+  {n:10, title:'Avaliação Final Presencial', desc:'Prova escrita cumulativa, 3h, cobertura integrada dos 9 tópicos, 70% da nota', cap:'Ementa completa', time:180, available:false}
+];
+
+function renderPortal() {
+  var data = MicroTracker.getData();
+  var mat = session.matricula;
+  var studentData = data[mat] || { pages: {}, quizzes: {} };
+
+  var done = 0, totalTime = 0, quizScores = [];
+  var availableCount = AULAS.filter(function(a){return a.available}).length;
+  var gridHtml = '';
+  AULAS.forEach(function(a) {
+    var pageId = 'aula-' + String(a.n).padStart(2,'0');
+    var pg = studentData.pages[pageId] || {};
+    var qz = studentData.quizzes[pageId] || {};
+    var visited = pg.visits > 0;
+    var quizDone = qz.attempts > 0;
+    var badge, badgeClass;
+    if (!a.available) { badge = 'Em breve'; badgeClass = 'badge-new'; }
+    else if (quizDone) { badge = 'Completa'; badgeClass = 'badge-done'; done++; }
+    else if (visited) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
+    else { badge = 'Nova'; badgeClass = 'badge-new'; }
+    if (pg.totalTime) totalTime += pg.totalTime;
+    if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
+
+    var cardBody = '<div class="aula-num">Aula ' + String(a.n).padStart(2,'0') + ' &middot; ' + a.cap + '</div>'
+      + '<div class="aula-title">' + a.title + '</div>'
+      + '<div class="aula-desc">' + a.desc + '</div>'
+      + '<div class="aula-meta"><span class="time">&#9201; ' + a.time + ' min</span>'
+      + '<span class="badge ' + badgeClass + '">' + badge + '</span></div>';
+
+    if (a.available) {
+      gridHtml += '<div class="aula-card"><a href="aula-' + String(a.n).padStart(2,'0') + '.html">' + cardBody + '</a></div>';
+    } else {
+      gridHtml += '<div class="aula-card" style="opacity:0.5;cursor:not-allowed">' + cardBody + '</div>';
+    }
+  });
+
+  document.getElementById('aulas-grid').innerHTML = gridHtml;
+  document.getElementById('stat-done').textContent = done;
+  document.getElementById('stat-time').textContent = Math.round(totalTime / 60000);
+  document.getElementById('stat-avg').textContent = quizScores.length > 0
+    ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
+  document.getElementById('progress-fill').style.width = Math.round(done / availableCount * 100) + '%';
+}
+
+renderPortal();
+</script>
+</body>
+</html>

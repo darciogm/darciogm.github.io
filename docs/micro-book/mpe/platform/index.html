@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Microeconomia I | MPE 2026/32 | Insper</title>
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="logo">&#128218;</div>
+    <h1>Microeconomia I</h1>
+    <p class="subtitle">MPE 2026/32 &middot; Plataforma Pré-Aula &middot; Insper</p>
+
+    <div class="login-error" id="login-error"></div>
+
+    <div id="form-login">
+      <div class="form-group">
+        <label for="matricula">Matricula</label>
+        <input type="text" id="matricula" placeholder="Ex: 2024001" autocomplete="username">
+      </div>
+      <div class="form-group">
+        <label for="senha">Senha</label>
+        <input type="password" id="senha" placeholder="Sua senha" autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary" onclick="doLogin()">Entrar</button>
+      <button class="btn btn-secondary" onclick="showRegister()">Primeiro acesso? Cadastrar</button>
+    </div>
+
+    <div id="form-register" style="display:none">
+      <div class="form-group">
+        <label for="reg-nome">Nome completo</label>
+        <input type="text" id="reg-nome" placeholder="Seu nome">
+      </div>
+      <div class="form-group">
+        <label for="reg-matricula">Matricula</label>
+        <input type="text" id="reg-matricula" placeholder="Ex: 2024001">
+      </div>
+      <div class="form-group">
+        <label for="reg-senha">Criar senha</label>
+        <input type="password" id="reg-senha" placeholder="Minimo 4 caracteres">
+      </div>
+      <button class="btn btn-primary" onclick="doRegister()">Cadastrar</button>
+      <button class="btn btn-secondary" onclick="showLogin()">Voltar ao login</button>
+    </div>
+
+    <div class="login-footer">
+      <button style="background:none;border:none;color:var(--accent);cursor:pointer;font-size:0.75rem;text-decoration:underline" onclick="loadDemo()">
+        Carregar alunos demo (professor)
+      </button>
+      <br>
+      <span style="font-size:0.7rem;color:#aaa">Demo: matricula 2024001, senha micro2</span>
+    </div>
+  </div>
+</div>
+
+<script src="js/tracker.js"></script>
+<script>
+// Check if already logged in
+if (MicroAuth.getSession()) window.location.href = 'portal.html';
+
+function showError(msg) {
+  var el = document.getElementById('login-error');
+  el.textContent = msg; el.style.display = 'block';
+  setTimeout(function(){ el.style.display='none'; }, 4000);
+}
+
+function doLogin() {
+  var mat = document.getElementById('matricula').value.trim();
+  var pwd = document.getElementById('senha').value;
+  if (!mat || !pwd) { showError('Preencha matricula e senha.'); return; }
+  var r = MicroAuth.login(mat, pwd);
+  if (r.ok) window.location.href = 'portal.html';
+  else showError(r.msg);
+}
+
+function doRegister() {
+  var nome = document.getElementById('reg-nome').value.trim();
+  var mat = document.getElementById('reg-matricula').value.trim();
+  var pwd = document.getElementById('reg-senha').value;
+  if (!nome || !mat || !pwd) { showError('Preencha todos os campos.'); return; }
+  if (pwd.length < 4) { showError('Senha deve ter pelo menos 4 caracteres.'); return; }
+  var r = MicroAuth.register(mat, pwd, nome);
+  if (r.ok) {
+    MicroAuth.login(mat, pwd);
+    window.location.href = 'portal.html';
+  } else showError(r.msg);
+}
+
+function showRegister() { document.getElementById('form-login').style.display='none'; document.getElementById('form-register').style.display='block'; }
+function showLogin() { document.getElementById('form-register').style.display='none'; document.getElementById('form-login').style.display='block'; }
+
+function loadDemo() {
+  var n = MicroAuth.loadDemoStudents();
+  alert(n + ' alunos demo cadastrados.\nMatricula: 2024001\nSenha: micro2');
+}
+
+// Enter key
+document.getElementById('senha').addEventListener('keypress', function(e){ if(e.key==='Enter') doLogin(); });
+document.getElementById('reg-senha').addEventListener('keypress', function(e){ if(e.key==='Enter') doRegister(); });
+</script>
+</body>
+</html>

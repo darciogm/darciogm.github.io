@@ -3,3 +3,19 @@ livro-micro/site/
 __pycache__/
 .Rhistory
 *.deb
+
+# WSL/Windows artifacts
+*:Zone.Identifier
+*.lnk
+
+# MPE course — copyrighted textbooks (keep local; do NOT publish)
+docs/micro-book/mpe/Advanced Microeconomic Theory*.pdf
+docs/micro-book/mpe/Microeconomic Theory Basic Principles*.pdf
+docs/micro-book/mpe/Nicholson - Intermediate*.pdf
+
+# MPE course — LaTeX auxiliary & local backups
+docs/micro-book/mpe/*.aux
+docs/micro-book/mpe/*.log
+docs/micro-book/mpe/*.out
+docs/micro-book/mpe/*.bak
+docs/micro-book/mpe/*\ (1).pdf

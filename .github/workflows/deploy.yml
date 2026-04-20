@@ -35,6 +35,13 @@ jobs:
             cp -r procure_meeting_0326/* site/procure/meeting_0326/
           fi
 
+      # Copy MPE 2026/32 pre-aula platform (served at /mpe-platform/)
+      - run: |
+          if [ -d "docs/micro-book/mpe/platform" ]; then
+            mkdir -p site/mpe-platform
+            cp -r docs/micro-book/mpe/platform/* site/mpe-platform/
+          fi
+
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

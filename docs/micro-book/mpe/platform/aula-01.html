@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 01 — Preferências, Axiomas e Utilidade — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia I — MPE 2026/32</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Aula 01 — Teoria do Consumidor I: Preferências, Axiomas e Utilidade</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Leitura dirigida (75–90 min de trabalho efetivo)</div>
+<ul>
+  <li><strong>ZaE — Cap. 3, §§3.1–3.4</strong> (referência primária, notas de aula do curso). <a href="https://darciogm.github.io/micro-book/cap03/axiomas/" target="_blank">Abrir →</a></li>
+  <li><strong>N&amp;S 12e — Cap. 3</strong> (cruzamento de notação): <em>Axioms of Rational Choice</em>, <em>Utility</em>, <em>Trades and Substitution</em>, <em>The Mathematics of Indifference Curves</em>, <em>Utility Functions for Specific Preferences</em>.</li>
+  <li><strong>N&amp;S 12e — Cap. 2</strong> (apoio pontual): consultar apenas o que for necessário para acompanhar o cap. 3 (otimização, concavidade, quasiconcavidade).</li>
+</ul>
+<p><strong>Papel e caneta obrigatórios.</strong> Cada equação numerada deve ser reproduzida ao lado do texto.</p>
+</div>
+
+<h2>Objetivos da pré-aula</h2>
+<p>Ao terminar este módulo você deve ser capaz de:</p>
+<ol>
+  <li>Enunciar os cinco axiomas de preferências racionais e exemplificar o que cada um bloqueia.</li>
+  <li>Reconhecer a lógica do teorema da representação por utilidade (Debreu) e o papel da continuidade.</li>
+  <li>Distinguir <strong>ordinalidade</strong> de <strong>cardinalidade</strong> e identificar quais transformações preservam preferências.</li>
+  <li>Calcular a TMS para Cobb-Douglas e CES, e classificar as quatro famílias funcionais (Cobb-Douglas, CES, quasilinear, Leontief) por elasticidade de substituição.</li>
+</ol>
+
+<hr>
+
+<h2>1. Preferências como primitivo e os cinco axiomas</h2>
+<p>Na teoria do consumidor, a relação de preferência \(\succsim\) é um <strong>primitivo</strong>: tomamos como dado que o consumidor sabe comparar cestas. A função de utilidade é uma <em>consequência</em> dos axiomas que impomos sobre \(\succsim\), não uma hipótese adicional. Este é o ponto de partida da disciplina.</p>
+
+<p>Dada uma relação \(\succsim\) sobre o conjunto de consumo \(X \subseteq \mathbb{R}^n_+\), dizemos que \(\mathbf{x} \succsim \mathbf{y}\) quando \(\mathbf{x}\) é <em>fracamente preferida</em> a \(\mathbf{y}\). Derivam-se a preferência estrita \(\succ\) e a indiferença \(\sim\).</p>
+
+<p>Os cinco axiomas, na ordem de ZaE:</p>
+
+<ol>
+  <li><strong>Completude:</strong> para quaisquer \(\mathbf{x}, \mathbf{y} \in X\), vale \(\mathbf{x} \succsim \mathbf{y}\) ou \(\mathbf{y} \succsim \mathbf{x}\) (ou ambos). O consumidor consegue comparar <em>qualquer</em> par.</li>
+  <li><strong>Transitividade:</strong> se \(\mathbf{x} \succsim \mathbf{y}\) e \(\mathbf{y} \succsim \mathbf{z}\), então \(\mathbf{x} \succsim \mathbf{z}\). Bloqueia ciclos (paradoxo das máquinas de dinheiro).</li>
+  <li><strong>Continuidade:</strong> para todo \(\mathbf{x}\), os conjuntos \(\{\mathbf{y} : \mathbf{y} \succsim \mathbf{x}\}\) e \(\{\mathbf{y} : \mathbf{x} \succsim \mathbf{y}\}\) são fechados. Garante que pequenas variações nas cestas gerem pequenas variações na classificação. É o axioma <em>técnico</em> que viabiliza representação contínua.</li>
+  <li><strong>Monotonicidade</strong> (em suas versões <em>forte</em>, <em>fraca</em> e <em>não-saciedade local</em>): "mais é melhor" em diferentes graus. A forte implica a fraca, que implica a local.</li>
+  <li><strong>Convexidade:</strong> médias são fracamente preferidas a extremos. Formalmente, se \(\mathbf{x} \succsim \mathbf{z}\) e \(\mathbf{y} \succsim \mathbf{z}\), então \(\lambda \mathbf{x} + (1-\lambda)\mathbf{y} \succsim \mathbf{z}\) para todo \(\lambda \in [0,1]\). A versão estrita bloqueia indiferenças lineares. Dá à TMS a propriedade decrescente.</li>
+</ol>
+
+<div class="admonition note">
+<div class="admonition-title">Intuição Econômica</div>
+<p>Os três primeiros axiomas (completude, transitividade, continuidade) são <strong>racionalidade + topologia</strong>: garantem a <em>existência</em> de uma função de utilidade contínua. Os dois últimos (monotonicidade, convexidade) dão <em>forma útil</em> à função — mapas de indiferença com inclinação definida e TMS decrescente.</p>
+</div>
+
+<p>O contraexemplo clássico é a <strong>preferência lexicográfica</strong>: \((x_1, x_2) \succsim (y_1, y_2)\) se \(x_1 &gt; y_1\), ou se \(x_1 = y_1\) e \(x_2 \geq y_2\). Ela satisfaz completude, transitividade e monotonicidade, mas <em>viola continuidade</em> — e por isso não admite representação por função de utilidade contínua.</p>
+
+<hr>
+
+<h2>2. Representação por utilidade (Teorema de Debreu)</h2>
+
+<p><strong>Teorema (Debreu):</strong> se \(\succsim\) em \(X \subseteq \mathbb{R}^n_+\) é completa, transitiva e contínua, então existe \(u: X \to \mathbb{R}\) contínua tal que</p>
+\[ \mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \]
+
+<p>A ideia central da prova é construtiva: para cada \(\mathbf{x}\), encontra-se o escalar \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\), onde \(\mathbf{1} = (1, 1, \ldots, 1)\). Esse \(t\) é a utilidade atribuída a \(\mathbf{x}\). A monotonicidade garante unicidade; a continuidade garante que a função resultante é contínua.</p>
+
+<p>A demonstração rigorosa está em MWG (Proposição 3.C.1) e em ZaE §3.3. Para a pré-aula basta reconhecer:</p>
+<ul>
+  <li>A existência é resultado dos três primeiros axiomas.</li>
+  <li>Monotonicidade e convexidade são <em>adicionais</em> — não necessárias para existência, mas dão propriedades desejáveis (quasiconcavidade estrita, TMS bem definida).</li>
+</ul>
+
+<hr>
+
+<h2>3. Ordinalidade vs. cardinalidade</h2>
+
+<p>Utilidade é um objeto <strong>ordinal</strong>: só importa a ordem, não a magnitude. Se \(u\) representa \(\succsim\) e \(f\) é qualquer transformação estritamente crescente, então \(v = f \circ u\) representa a mesma \(\succsim\).</p>
+
+\[ v(\mathbf{x}) = f(u(\mathbf{x})), \quad f'(t) > 0 \text{ em todo } t \implies v \text{ e } u \text{ representam a mesma preferência.} \]
+
+<p><strong>Consequência operacional:</strong> a TMS é <em>invariante</em> a transformações monótonas de \(u\); magnitudes da utilidade <em>não são</em>. Exemplo: \(u(x,y) = xy\) e \(v(x,y) = \ln x + \ln y\) representam as mesmas preferências (Cobb-Douglas), ainda que os valores numéricos sejam muito diferentes.</p>
+
+<div class="admonition note">
+<div class="admonition-title">Intuição Econômica</div>
+<p>Quando a utilidade esperada entra em cena (Aula 5, Arrow-Debreu I), reintroduz-se um grau de cardinalidade: a utilidade VNM é única a menos de transformação <em>afim</em> (não monótona genérica). A distinção entre ordinalidade e cardinalidade vai voltar nessa passagem.</p>
+</div>
+
+<hr>
+
+<h2>4. TMS e as quatro famílias funcionais</h2>
+
+<p>A taxa marginal de substituição (TMS) do bem 1 pelo bem 2 é a inclinação da curva de indiferença:</p>
+\[ \mathrm{TMS}_{12} = -\frac{dx_2}{dx_1}\bigg|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2}. \]
+
+<h3>4.1 Cobb-Douglas</h3>
+<p>\(u(x_1, x_2) = x_1^{\alpha} x_2^{1-\alpha}\), com \(\alpha \in (0,1)\). Derivando, \(\mathrm{TMS} = \dfrac{\alpha}{1-\alpha} \cdot \dfrac{x_2}{x_1}\). Elasticidade de substituição <strong>unitária</strong> (\(\sigma = 1\)). Parcelas de gasto constantes: \(p_1 x_1 / I = \alpha\), \(p_2 x_2 / I = 1-\alpha\).</p>
+
+<h3>4.2 Leontief (complementos perfeitos)</h3>
+<p>\(u(x_1, x_2) = \min\{a x_1, b x_2\}\). Curvas de indiferença em L. TMS <strong>não-diferenciável</strong> no vértice (0 ou \(\infty\) nos lados, indefinida no <em>kink</em>). Elasticidade de substituição \(\sigma = 0\) — bens em proporção fixa.</p>
+
+<h3>4.3 CES genérica</h3>
+<p>\(u(x_1, x_2) = \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}\), com \(\rho \leq 1\), \(\rho \neq 0\). TMS:</p>
+\[ \mathrm{TMS} = \frac{\alpha}{1-\alpha} \left(\frac{x_2}{x_1}\right)^{1-\rho}, \quad \sigma = \frac{1}{1-\rho}. \]
+<p>A CES generaliza as famílias acima: \(\rho = 1\) recupera substitutos perfeitos (\(\sigma = \infty\)); \(\rho \to 0\) recupera Cobb-Douglas (\(\sigma = 1\)); \(\rho \to -\infty\) recupera Leontief (\(\sigma = 0\)). As passagens algébricas desses limites ficam para a monitoria.</p>
+
+<h3>4.4 Quasilinear</h3>
+<p>\(u(x_1, x_2) = v(x_1) + x_2\), com \(v\) crescente e côncava. TMS \(= v'(x_1)\) — depende <strong>apenas</strong> de \(x_1\). Efeito-renda zero no bem 1 (interior). Forma canônica em IO aplicada e <em>public</em>; excedente do consumidor bem-definido.</p>
+
+<hr>
+
+<h2>Exercícios de papel (preparação para a Aula 1 presencial)</h2>
+
+<p>Resolva os dois exercícios abaixo com papel e caneta antes da aula. Serão retomados em dupla no bloco de prática. Não precisam ser submetidos na plataforma — a verificação acontece em sala.</p>
+
+<ul>
+  <li><strong>N&amp;S 12e 3.1</strong> — verificar convexidade de curvas de indiferença para cinco funções utilidade dadas. Para cada, graficar e discutir se a TMS declina com \(x\).</li>
+  <li><strong>N&amp;S 12e 3.3</strong> — para \(u = xy\), \(u = x^2 y^2\) e \(u = \ln x + \ln y\), mostrar que as três têm a mesma TMS mas utilidade marginal <em>constante/crescente/decrescente</em>. Articular a conclusão em termos de ordinalidade.</li>
+</ul>
+
+<hr>
+
+<h2>Checkpoint da plataforma (6 itens)</h2>
+
+<div class="admonition warning">
+<div class="admonition-title">Como resolver</div>
+<p>Tentativa genuína: ler, pensar no papel, responder. A plataforma registra tempo efetivo e acerto em primeira tentativa. Múltiplas tentativas são permitidas, mas a primeira pesa mais no <em>dashboard</em>.</p>
+</div>
+
+<div class="quiz-container">
+<div class="quiz-header"><h3>Checkpoint Pré-Aula 01</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1 (Axiomas). Preferências lexicográficas sobre \(\mathbb{R}^2_+\) priorizam \(x_1\) e, em caso de empate, \(x_2\). Elas satisfazem completude, transitividade e monotonicidade, mas <strong>violam</strong> qual axioma?</div>
+<div class="quiz-option" data-value="a">(a) Completude — há pares incomparáveis</div>
+<div class="quiz-option" data-value="b">(b) Transitividade — aparecem ciclos</div>
+<div class="quiz-option" data-value="c">(c) Continuidade — conjuntos de nível não são fechados</div>
+<div class="quiz-option" data-value="d">(d) Convexidade — médias não são fracamente preferidas</div>
+<div class="quiz-option" data-value="e">(e) Nenhum — lexicográficas satisfazem todos os axiomas</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2 (Monotonicidade). A afirmação correta sobre monotonicidade forte (MF), monotonicidade fraca (Mf) e não-saciedade local (NSL) é:</div>
+<div class="quiz-option" data-value="a">(a) NSL ⟹ Mf ⟹ MF</div>
+<div class="quiz-option" data-value="b">(b) MF ⟹ Mf ⟹ NSL</div>
+<div class="quiz-option" data-value="c">(c) Mf ⟺ NSL; MF é incompatível com ambas</div>
+<div class="quiz-option" data-value="d">(d) As três noções são equivalentes</div>
+<div class="quiz-option" data-value="e">(e) Nenhuma implica outra em geral</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3 (Convexidade). Qual das funções utilidade abaixo gera preferências <strong>estritamente convexas</strong>?</div>
+<div class="quiz-option" data-value="a">(a) Substitutos perfeitos: \(u(x,y) = x + y\)</div>
+<div class="quiz-option" data-value="b">(b) Complementos perfeitos: \(u(x,y) = \min\{x, y\}\)</div>
+<div class="quiz-option" data-value="c">(c) Cobb-Douglas: \(u(x,y) = x^{1/2} y^{1/2}\)</div>
+<div class="quiz-option" data-value="d">(d) \(u(x,y) = \max\{x, y\}\)</div>
+<div class="quiz-option" data-value="e">(e) Lexicográfica</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4 (TMS). Para \(u(x_1, x_2) = x_1^{1/3} x_2^{2/3}\), o valor da TMS no ponto \((x_1, x_2) = (8, 4)\) é:</div>
+<div class="quiz-option" data-value="a">(a) \(1/8\)</div>
+<div class="quiz-option" data-value="b">(b) \(1/4\)</div>
+<div class="quiz-option" data-value="c">(c) \(1/2\)</div>
+<div class="quiz-option" data-value="d">(d) \(1\)</div>
+<div class="quiz-option" data-value="e">(e) \(2\)</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5 (Ordinalidade). Se \(u\) representa uma preferência \(\succsim\) e \(v = f \circ u\), sob qual condição mínima em \(f\) a função \(v\) representa a <em>mesma</em> preferência?</div>
+<div class="quiz-option" data-value="a">(a) \(f\) é estritamente crescente em todo o domínio de \(u\)</div>
+<div class="quiz-option" data-value="b">(b) \(f\) é afim: \(f(t) = at + b\) com \(a, b \in \mathbb{R}\)</div>
+<div class="quiz-option" data-value="c">(c) \(f\) é contínua</div>
+<div class="quiz-option" data-value="d">(d) \(f\) é a identidade: \(f(t) = t\)</div>
+<div class="quiz-option" data-value="e">(e) Nenhuma transformação preserva preferências</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-question" data-question="q6" data-correct="c">
+<div class="q-text">Q6 (Classificação de utilidades). As elasticidades de substituição \(\sigma\) para, respectivamente, <strong>Cobb-Douglas</strong>, <strong>Leontief</strong> e <strong>substitutos perfeitos</strong> são:</div>
+<div class="quiz-option" data-value="a">(a) \(\sigma = 0,\ \sigma = 1,\ \sigma = \infty\)</div>
+<div class="quiz-option" data-value="b">(b) \(\sigma = \infty,\ \sigma = 1,\ \sigma = 0\)</div>
+<div class="quiz-option" data-value="c">(c) \(\sigma = 1,\ \sigma = 0,\ \sigma = \infty\)</div>
+<div class="quiz-option" data-value="d">(d) \(\sigma = 1,\ \sigma = \infty,\ \sigma = 0\)</div>
+<div class="quiz-option" data-value="e">(e) As três famílias têm \(\sigma\) variável com o ponto</div>
+<div class="quiz-feedback"></div>
+</div>
+
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-01')">Enviar Checkpoint</button></div>
+</div>
+
+<hr>
+
+<div class="admonition abstract">
+<div class="admonition-title">Próxima aula — quarta, 29/04/2026</div>
+<p><strong>Aula 02 — Maximização, Minimização de Gasto e Dualidade.</strong> UMP e EMP via Lagrangiano, demandas Marshalliana e Hicksiana, identidades de Roy e Shephard, matriz de Slutsky pela via da dualidade. Leitura: ZaE cap. 4 e N&amp;S 12e cap. 4.</p>
+</div>
+
+</div>
+
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-01');
+MicroQuiz.init('aula-01');
+</script>
+</body>
+</html>

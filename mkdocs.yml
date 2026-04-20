@@ -55,6 +55,11 @@ theme:
       pesquisa: material/microscope
       classroom: material/flask
 
+# Exclude MPE platform from MkDocs build — served separately at /mpe-platform/
+# via copy step in .github/workflows/deploy.yml
+exclude_docs: |
+  micro-book/mpe/platform/
+
 nav:
   - Home: index.md
   - Research:
