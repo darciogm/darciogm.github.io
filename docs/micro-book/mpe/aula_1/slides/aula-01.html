@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-01_files/libs/revealjs/dist/theme/quarto-74c05248b0d0490ccc425ede7fff76d8.css">
+  <link rel="stylesheet" href="aula-01_files/libs/revealjs/dist/theme/quarto-ed8e816736bde4f1cbb1ecf8cff3947f.css">
   <link href="aula-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -309,9 +309,9 @@ x \succeq y \iff u(x) \geq u(y)\,?
 <section class="slide level2 center">
 <h2>(1) Completude</h2>
 <div class="card">
-<p><strong>Axioma.</strong> Para todo <span class="math inline">\(x, y \in X\)</span>: <span class="math inline">\(x \succeq y\)</span> <strong>ou</strong> <span class="math inline">\(y \succeq x\)</span> (ou ambos).</p>
+<p><strong>Axioma.</strong> Para todo <span class="math inline">\(x, y \in X\)</span>: <span class="math inline">\(x \succeq y\)</span> <strong>ou</strong> <span class="math inline">\(y \succeq x\)</span>.</p>
 </div>
-<p><strong>Leitura:</strong> o agente <em>sempre</em> se posiciona. Não há “não sei comparar”.</p>
+<p><strong>Leitura:</strong> o agente <em>sempre</em> se posiciona. Não há “não sei comparar”. Quando ambas valem (equivalência), dizemos <span class="math inline">\(x \sim y\)</span>.</p>
 <p><strong>Exemplo:</strong> entre um café e um chá, opta por algum ou é indiferente.<br>
 <strong>Contraexemplo:</strong> indecisão genuína — “não sei o suficiente sobre o pacote B”.</p>
 <div class="callout callout-note callout-titled callout-style-default">
@@ -376,13 +376,15 @@ x_1 = y_1 \text{ e } x_2 \geq y_2.
 </section>
 <section class="slide level2 center">
 <h2>Preferências lexicográficas (2/5) · Satisfaz (1) e (2)?</h2>
-<p><strong>Verificação rápida.</strong></p>
+<p><strong>Completude.</strong> Dado qualquer par <span class="math inline">\((x, y)\)</span>: ou <span class="math inline">\(x_1 &gt; y_1\)</span>, ou <span class="math inline">\(x_1 &lt; y_1\)</span>, ou <span class="math inline">\(x_1 = y_1\)</span>. Em cada caso a regra decide. ✓</p>
+<p><strong>Transitividade.</strong> Suponha <span class="math inline">\(x \succeq^L y\)</span> e <span class="math inline">\(y \succeq^L z\)</span>. Três casos:</p>
 <ul>
-<li><p><strong>Completude.</strong> Dado qualquer par <span class="math inline">\((x, y)\)</span>, ou <span class="math inline">\(x_1 &gt; y_1\)</span>, ou <span class="math inline">\(x_1 &lt; y_1\)</span>, ou <span class="math inline">\(x_1 = y_1\)</span>. Em cada caso, a regra decide. ✓</p></li>
-<li><p><strong>Transitividade.</strong> Se <span class="math inline">\(x \succeq^L y\)</span> e <span class="math inline">\(y \succeq^L z\)</span>, a primeira coordenada impõe <span class="math inline">\(x_1 \geq y_1 \geq z_1\)</span>, logo <span class="math inline">\(x_1 \geq z_1\)</span>. No empate <span class="math inline">\(x_1 = y_1 = z_1\)</span>, a segunda coordenada decide — que é transitiva em <span class="math inline">\(\mathbb{R}\)</span>. ✓</p></li>
+<li><strong><span class="math inline">\(x_1 &gt; y_1\)</span></strong>. Combinado com <span class="math inline">\(y_1 \geq z_1\)</span> (de <span class="math inline">\(y \succeq^L z\)</span>, qualquer branch), <span class="math inline">\(x_1 &gt; z_1\)</span> ⇒ <span class="math inline">\(x \succ^L z\)</span>. ✓</li>
+<li><strong><span class="math inline">\(x_1 = y_1\)</span> e <span class="math inline">\(y_1 &gt; z_1\)</span></strong>. Então <span class="math inline">\(x_1 &gt; z_1\)</span> ⇒ <span class="math inline">\(x \succ^L z\)</span>. ✓</li>
+<li><strong><span class="math inline">\(x_1 = y_1 = z_1\)</span></strong>. <span class="math inline">\(x_2 \geq y_2 \geq z_2\)</span> (segundo branch em ambas), transitividade do <code>≥</code> em <span class="math inline">\(\mathbb{R}\)</span> ⇒ <span class="math inline">\(x \succeq^L z\)</span>. ✓</li>
 </ul>
 <div class="bridge">
-<p>Temos (1) e (2). Vamos ver que <strong>falha (3) — continuidade</strong> — no próximo slide.</p>
+<p>Temos (1) e (2). Falta ver (3) — <strong>continuidade</strong>.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -404,19 +406,22 @@ x^n = \left(1 - \tfrac{1}{n},\ 2\right) \longrightarrow x = (1,\ 2) \quad \text{
 </section>
 <section class="slide level2 center">
 <h2>Preferências lexicográficas (4/5) · Conclusão do contraexemplo</h2>
+<p><strong>O que a sequência revelou.</strong> Cada <span class="math inline">\(x^n\)</span> satisfaz <span class="math inline">\(y \succ^L x^n\)</span>, logo <span class="math inline">\(x^n \in \{z : y \succeq^L z\}\)</span> (conjunto inferior fraco). Mas no limite <span class="math inline">\(x \succ^L y\)</span>, então <span class="math inline">\(x \notin \{z : y \succeq^L z\}\)</span>.</p>
 <div class="eq-key">
-<p>O conjunto <span class="math inline">\(\{z : z \succeq^L y\}\)</span> <strong>não é fechado</strong> em <span class="math inline">\(\mathbb{R}^2_+\)</span>.</p>
+<p>O conjunto <span class="math inline">\(\{z : y \succeq^L z\}\)</span> <strong>não é fechado</strong> em <span class="math inline">\(\mathbb{R}^2_+\)</span> — uma sequência inteiramente dentro dele converge para um ponto fora. Continuidade <strong>falha</strong>.</p>
 </div>
-<p><strong>Por quê?</strong> A continuidade quebra exatamente porque a preferência é lexicográfica: <strong>um <span class="math inline">\(\varepsilon\)</span> no bem 1 domina qualquer quantidade do bem 2</strong>. Entre o ponto-limite <span class="math inline">\(x = (1,2)\)</span> e os termos <span class="math inline">\(x^n = (1 - 1/n, 2)\)</span> há descontinuidade na preferência revelada.</p>
+<p><strong>Mecanismo.</strong> A preferência lexicográfica faz com que <strong>um <span class="math inline">\(\varepsilon\)</span> no bem 1 domine qualquer quantidade do bem 2</strong>: a fronteira entre “<span class="math inline">\(y\)</span> é preferido” e “<span class="math inline">\(x\)</span> é preferido” não é fechada — é aberta de um lado.</p>
 <div class="fragment bridge">
 <p>Sem continuidade, a representação por utilidade falha. Vamos ver <strong>por que</strong> no slide seguinte (argumento de Debreu).</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Preferências lexicográficas (5/5) · Não representabilidade</h2>
-<p><strong>Argumento de Debreu — intuição.</strong> Suponha, por absurdo, <span class="math inline">\(u: \mathbb{R}^2_+ \to \mathbb{R}\)</span> representando <span class="math inline">\(\succeq^L\)</span>. Para cada <span class="math inline">\(x_1\)</span> fixo, <span class="math inline">\(u(x_1, \cdot)\)</span> é estritamente crescente em <span class="math inline">\(x_2\)</span>. Tome um racional <span class="math inline">\(q(x_1)\)</span> estritamente entre <span class="math inline">\(u(x_1, 0)\)</span> e <span class="math inline">\(\lim_{x_2 \to \infty} u(x_1, x_2)\)</span>. A ordem lexicográfica força <span class="math inline">\(q\)</span> a ser <strong>injetiva em <span class="math inline">\(x_1 \in \mathbb{R}\)</span></strong>.</p>
+<p><strong>Argumento de Debreu (1954) — intuição.</strong> Suponha, por absurdo, que existe <span class="math inline">\(u: \mathbb{R}^2_+ \to \mathbb{R}\)</span> representando <span class="math inline">\(\succeq^L\)</span>. Para cada <span class="math inline">\(x_1 \in \mathbb{R}_+\)</span>, o intervalo <span class="math display">\[
+I(x_1) \;=\; \bigl(\, u(x_1, 0),\; u(x_1, 1) \,\bigr)
+\]</span> é aberto e não-vazio (monotonicidade estrita de <span class="math inline">\(u(x_1, \cdot)\)</span>). Como <span class="math inline">\(x_1 \neq x_1'\)</span> ⇒ intervalos <span class="math inline">\(I(x_1)\)</span> e <span class="math inline">\(I(x_1')\)</span> são <strong>disjuntos</strong> (pela ordem lex), escolhemos um racional em cada intervalo.</p>
 <div class="eq-key">
-<p>Injeção de <span class="math inline">\(\mathbb{R}\)</span> em <span class="math inline">\(\mathbb{Q}\)</span>: impossível (cardinalidades). <span class="math inline">\(\square\)</span></p>
+<p>Injeção <span class="math inline">\(\mathbb{R} \hookrightarrow \mathbb{Q}\)</span>: impossível (cardinalidades). <span class="math inline">\(\square\)</span></p>
 </div>
 <div class="fragment">
 <p><strong>Onde aparece no mundo real:</strong></p>
@@ -507,16 +512,9 @@ x^n = \left(1 - \tfrac{1}{n},\ 2\right) \longrightarrow x = (1,\ 2) \quad \text{
 <div class="bridge">
 <p>A confusão canônica é entre os dois últimos: <strong>quasiconcavidade não implica concavidade</strong> — e só a primeira é ordinal.</p>
 </div>
-</section>
-<section class="slide level2 center">
-<h2>O box — equivalências e TMS decrescente</h2>
-<div class="eq-key">
-<p><span class="math inline">\(\succeq\)</span> <strong>convexa (fraca)</strong> <span class="math inline">\(\iff\)</span> <span class="math inline">\(u\)</span> <strong>quasiconcava</strong> (para qualquer representação).</p>
-<p><strong>TMS decrescente</strong> ao longo da CI <span class="math inline">\(\iff\)</span> convexidade.</p>
-</div>
-<div class="fragment">
-<p><strong>O que “TMS decrescente” significa operacionalmente?</strong> Andando ao longo de uma curva de indiferença, quando <span class="math inline">\(x_1\)</span> aumenta (e <span class="math inline">\(x_2\)</span> diminui), a TMS cai.</p>
-<p>Economicamente: <strong>quanto mais você tem do bem 1, menos disposto está a sacrificar <span class="math inline">\(x_2\)</span> para ganhar mais <span class="math inline">\(x_1\)</span></strong>. É a <em>saciação relativa na margem</em> — o núcleo da intuição microeconômica de diversificação.</p>
+<p><strong>No dia-a-dia:</strong> trocar <span class="math inline">\(u(x_1,x_2) = x_1^{\alpha} x_2^{1-\alpha}\)</span> por <span class="math inline">\(\alpha \ln x_1 + (1-\alpha) \ln x_2\)</span> é <strong>ordinalidade em ação</strong> — mesma preferência, álgebra mais fácil. Veremos em dois slides.</p>
+<div class="bridge">
+<p><strong>Em uma linha:</strong> <span class="math inline">\(\succeq\)</span> convexa fraca <span class="math inline">\(\iff\)</span> <span class="math inline">\(u\)</span> quasiconcava <span class="math inline">\(\iff\)</span> <strong>TMS decrescente</strong> ao longo da CI — <em>saciação relativa na margem</em>.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -647,10 +645,10 @@ x \succeq y \iff u(x) \geq u(y).
 \text{TMS}_{12}(x_1, x_2) = -\left.\frac{dx_2}{dx_1}\right|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{u_1}{u_2}.
 \]</span></p>
 </div>
-<p><strong>Ponto central:</strong> TMS é objeto <strong>ordinal</strong>. Se <span class="math inline">\(v = f(u)\)</span> com <span class="math inline">\(f' &gt; 0\)</span>: <span class="math display">\[
+<p><strong>Ponto central:</strong> TMS é objeto <strong>ordinal</strong>. Se <span class="math inline">\(v = f(u)\)</span> com <span class="math inline">\(f \in C^1\)</span> e <span class="math inline">\(f' &gt; 0\)</span>: <span class="math display">\[
 \frac{v_1}{v_2} = \frac{f'(u) \cdot u_1}{f'(u) \cdot u_2} = \frac{u_1}{u_2}.
 \]</span></p>
-<p>O <span class="math inline">\(f'(u)\)</span> <strong>cancela</strong>. Mesma TMS, mesma preferência, mesmo comportamento.</p>
+<p>O <span class="math inline">\(f'(u)\)</span> <strong>cancela</strong>. Mesma TMS, mesma preferência, mesmo comportamento. (Caso <span class="math inline">\(f\)</span> meramente contínua sem derivada, argumento é via conjuntos de nível — idêntico.)</p>
 <p><strong>Leitura econômica:</strong> TMS é o que o consumidor está disposto a trocar <em>na margem</em>. É observável (em teoria) via escolhas.</p>
 </section>
 <section class="slide level2 center">
@@ -812,18 +810,18 @@ u_2 = S^{1/\rho - 1} \cdot (1-\alpha)\, x_2^{\rho-1}.
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\rho = 1\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\infty\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\rho \to 1^-\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\to \infty\)</span></td>
 <td style="text-align: left;">Substitutos perfeitos <span class="math inline">\(u = \alpha x_1 + (1-\alpha) x_2\)</span></td>
 </tr>
 <tr class="even">
 <td style="text-align: center;"><span class="math inline">\(\rho \to 0\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(1\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\to 1\)</span></td>
 <td style="text-align: left;">Cobb-Douglas (L’Hôpital no log)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;"><span class="math inline">\(\rho \to -\infty\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\to 0\)</span></td>
 <td style="text-align: left;">Leontief</td>
 </tr>
 </tbody>
@@ -985,6 +983,9 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <div class="bridge">
 <p><strong>Pergunta para a turma:</strong> olhando estes microdados, a <strong>convexidade</strong> como axioma é plausível? Onde ela falha ou ameaça falhar?</p>
 </div>
+<div class="fragment">
+<p><strong>Resposta curta:</strong> provavelmente <strong>sim na agregação</strong> (curvas de indiferença suaves em dados cross-section), mas <strong>vulnerável em subsistência</strong> — em faixas de renda muito baixas, preferências quase lexicográficas (comida &gt; tudo) ameaçam a convexidade estrita. Heterogeneidade é regra, não exceção.</p>
+</div>
 </section>
 <section class="slide level2 center">
 <h2>Ordinalidade × microdados — e a ponte com política pública</h2>
@@ -995,7 +996,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p><strong>P3</strong> — Preferências <strong>idênticas</strong> entre agentes quebra onde? Por que isso importa para focalização de política pública?</p>
 </div>
 <div>
-<p><strong>Ponte com aulas futuras:</strong></p>
+<p><strong>Ponte com aulas futuras</strong></p>
 <ul>
 <li><strong>Preferência revelada</strong> — Aula 3.</li>
 <li><strong>Bem-estar e comparação interpessoal</strong> — Aulas 4 e 7.</li>
@@ -1029,8 +1030,8 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </ul>
 <h3>Exercício 3.7 · Identificação de forma funcional</h3>
 <ul>
-<li><strong>(a)</strong> Consumidora é indiferente entre <span class="math inline">\((6,5)\)</span> e <span class="math inline">\((12,3)\)</span>, com <span class="math inline">\(\text{TMS}(6,5) = 3\)</span> e <span class="math inline">\(\text{TMS}(12,3) = 3\)</span>. Qual a forma de <span class="math inline">\(U\)</span>? <em>(Dica: observar a CI.)</em></li>
-<li><strong>(b)</strong> Agora ela é indiferente entre <span class="math inline">\((8,1)\)</span> e <span class="math inline">\((4,4)\)</span>, com <span class="math inline">\(\text{TMS}(8,1)=4\)</span> e <span class="math inline">\(\text{TMS}(4,4)=\tfrac{1}{2}\)</span>. Assumindo <span class="math inline">\(U(x,y) = x^\alpha y^\beta\)</span>, calcule <span class="math inline">\((\alpha, \beta)\)</span>.</li>
+<li><strong>(a)</strong> Consumidora é indiferente entre <span class="math inline">\((6,5)\)</span> e <span class="math inline">\((12,3)\)</span>; disposta a trocar <strong>3 <span class="math inline">\(x\)</span> por 1 <span class="math inline">\(y\)</span></strong> em ambos os pontos. Qual a forma de <span class="math inline">\(U\)</span>? <em>(Dica: observe a CI.)</em></li>
+<li><strong>(b)</strong> Agora ela é indiferente entre <span class="math inline">\((8,1)\)</span> e <span class="math inline">\((4,4)\)</span>; em <span class="math inline">\((8,1)\)</span> troca <strong>4 <span class="math inline">\(x\)</span> por 1 <span class="math inline">\(y\)</span></strong>, em <span class="math inline">\((4,4)\)</span> troca <strong>1 <span class="math inline">\(x\)</span> por 2 <span class="math inline">\(y\)</span></strong>. Assumindo <span class="math inline">\(U(x,y) = x^\alpha y^\beta\)</span>, calcule <span class="math inline">\(\alpha/\beta\)</span>.</li>
 <li><strong>(c)</strong> Havia redundância em (b)? Se sim, qual o mínimo de informação suficiente?</li>
 </ul>
 </section>
@@ -1078,6 +1079,29 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>RESOLUÇÃO COMPLETA (speaker notes — fallback se ninguém se voluntariar).</p>
+<ol type="a">
+<li><p>Complementos perfeitos em 4 bens com coeficientes fixos (1 hot-dog, 1/2 pão, 1 mostarda, 2 relish por “combo”): U(h, p, m, r) = min{ h, 2p, m, r/2 } ou, equivalente, U = N onde N = nº de combos que dá pra montar com os estoques.</p></li>
+<li><p>O bem único é o “combo completo” de hot-dog. Uma unidade = 1 hot-dog + 0,5 pão + 1 oz mostarda + 2 oz relish. Utilidade é linear no nº de combos.</p></li>
+<li><p>Preço por combo, aos preços dados: P_combo = 1<em>(1,00) + 0,5</em>(0,50) + 1<em>(0,05) + 2</em>(0,15) = 1,00 + 0,25 + 0,05 + 0,30 = $1,60.</p></li>
+<li><p>Hot-dog sobe 50% (1,00 -&gt; 1,50). Novo P_combo = 1,50 + 0,25 + 0,05 + 0,30 = $2,10. Variação: (2,10 - 1,60)/1,60 = 0,3125 = +31,25%.</p></li>
+<li><p>Pão sobe 50% (0,50 -&gt; 0,75). Novo P_combo = 1,00 + 0,5<em>0,75 + 0,05 + 0,30 = 1,00 + 0,375 + 0,05 + 0,30 = $1,725. Variação: (1,725 - 1,60)/1,60 = 7,8125%. Diferente de (d) porque o PESO do pão no combo é 0,5, não 1. A participação no custo unitário de P_combo é 0,25/1,60 = 15,6%. Um aumento de 50% no preço de um insumo com peso w na soma faz P_combo subir em w </em> 0,50.</p></li>
+<li><p>NEUTRALIDADE TRIBUTÁRIA. Sob Leontief estrito, o consumidor compra exatamente (1, 0,5, 1, 2) combos. Impostos unitários t_h, t_p, t_m, t_r arrecadam N*(t_h + 0,5 t_p + t_m + 2 t_r). O custo do combo sobe exatamente pelo mesmo valor, independente de qual imposto é usado. Governo arrecada $1 qualquer que seja a alocação; o efeito em utilidade é determinado apenas pelo TOTAL que sobe P_combo, não pela composição. Planejador é indiferente entre tributos. Observação: isso é um resultado forte que depende da Leontief estrita — qualquer substituibilidade quebra a neutralidade (tributo sobre bem mais substituível distorce menos).</p></li>
+</ol>
+<p>ARMADILHA comum: aluno tenta derivar condições de primeira ordem com Lagrangeano. Leontief é não-diferenciável no vértice; a solução é por proporções, não por CPO.</p>
+<p>EXTENSÃO: “E se pickles e mostarda fossem parcialmente substituíveis?” (vira CES no lugar de Leontief → perde neutralidade tributária).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Consolidação — N&amp;S 3.7</h2>
@@ -1100,6 +1124,26 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>RESOLUÇÃO COMPLETA (speaker notes — fallback).</p>
+<ol type="a">
+<li><p>“Trade 3 x for 1 y” em (6,5) e em (12,3): Δx = -3, Δy = +1, logo dy/dx = -1/3 e MRS = 1/3, CONSTANTE. MRS constante ao longo da CI ⇒ CI é LINHA RETA ⇒ substitutos perfeitos. Forma: U(x, y) = a<em>x + b</em>y com a/b = MRS = 1/3. Canônico: U = x + 3y (ou qualquer transformação monótona desta). Verificação: u_x = 1, u_y = 3, MRS = u_x/u_y = 1/3. ✓</p></li>
+<li><p>“Trade 4 x for 1 y” em (8,1): MRS(8,1) = 1/4. “Trade 1 x for 2 y” em (4,4): Δx = -1, Δy = +2, MRS(4,4) = 2. Cobb-Douglas U = x^α y^β ⇒ MRS = (α/β)(y/x). Ponto (8,1): (α/β)(1/8) = 1/4 ⇒ α/β = 2. ✓ Ponto (4,4): (α/β)(4/4) = α/β = 2 ⇒ α/β = 2. ✓ Razão α/β = 2 consistente em ambos os pontos. U(x,y) = x^{2k} y^k para qualquer k&gt;0; canonicamente α=2/3, β=1/3 se impomos α + β = 1 (não é necessário — só convenção).</p></li>
+<li><p>SIM, há redundância. Com Cobb-Douglas, a preferência é determinada a menos de transformação monótona pela RAZÃO α/β. Um único par (ponto + MRS) — ou (dois pontos na mesma CI, que dá razão pela condição de indiferença) — basta. Portanto os dois pares (MRS em 2 pontos + relação de indiferença entre eles) é super-determinação: dá a mesma razão de 3 maneiras diferentes (consistência é checável, mas não é info nova).</p></li>
+</ol>
+<p>ARMADILHA em (a): aluno tenta Cobb-Douglas e fica preso porque MRS constante impede CD (que tem MRS proporcional a y/x). Dica: antes de chutar a forma, OBSERVE se a MRS varia com o ponto. Não varia ⇒ CI linear.</p>
+<p>EXTENSÃO: “E se MRS fosse 1/3 em (6,5) e 1/6 em (12,3)?” → CI curvada; testar Cobb-Douglas com (α/β)(5/6) = 1/3 e (α/β)(3/12) = 1/6 → ambos dão α/β = 2/5. Coerente. Seria U = x^{2k} y^{5k}.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="aside-note" style="font-size:0.78em;color:#4A5568;font-style:italic;margin-top:0.8em">
 <p><em>Speaker note:</em> se o 3.7 estourar o tempo, entregar <strong>caminho + resultado</strong> no quadro e mover a resolução completa para a plataforma pós-aula.</p>
 </div>
@@ -1134,9 +1178,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <li>Do problema dual (minimização de gasto dado <span class="math inline">\(\bar{u}\)</span>) nasce a <strong>função gasto</strong> <span class="math inline">\(e(\mathbf{p}, \bar{u})\)</span> e a <strong>demanda hicksiana</strong>.</li>
 <li><strong>Roy</strong> e <strong>Shephard</strong> costuram as duas pontas — a pedagogia sênior da dualidade.</li>
 </ul>
-<div class="bridge">
 <p><strong>Quiz pós-aula 1</strong> e <strong>Pré-aula 2</strong> serão liberados na plataforma em <strong>23/04</strong>.</p>
-</div>
 </section>
 <section class="slide level2 title-slide center">
 <h2>Obrigado.</h2>
@@ -1147,8 +1189,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p><br></p>
 <p><br></p>
 <div style="font-size: 0.85em; color: #2A2F36;">
-<p>Dúvidas não resolvidas hoje: registrar na plataforma até 48h.<br>
-Pré-aula 2: abre amanhã.</p>
+<p>Dúvidas na plataforma até <strong>23/04</strong> — data em que abre a <strong>Pré-aula 2</strong>.</p>
 </div>
 </div>
 
