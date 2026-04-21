@@ -561,4 +561,262 @@
     }
   };
 
+  // ==================== MICROQUIZ GRADED (pre_review / post) ====================
+  // Engine novo, isolado do MicroQuiz legado. Lock na 1a submissao, submit
+  // em bloco, revela gabarito+peer-review so apos submit, rehidrata em
+  // "modo review" se ja houve submissao para (pageId, phase).
+  //
+  // HTML esperado:
+  //   <div class="quizg-block" data-page="aula-03-pre" data-phase="pre_review" data-title="...">
+  //     <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+  //       <div class="quizg-qtext">...</div>
+  //       <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) ...</label>
+  //       ...
+  //       <div class="quizg-feedback" hidden>...gabarito + peer-review...</div>
+  //     </div>
+  //     ...
+  //     <button class="btn btn-primary quizg-submit">Submeter bloco</button>
+  //     <div class="quizg-score" hidden></div>
+  //   </div>
+  //
+  // phase permitidos: 'pre_review' | 'post'. data-difficulty so e usado na
+  // fase 'post' (5🟡+5🔴); nas outras e ignorado na gravacao.
+
+  function _gradedBlockState(block) {
+    var questions = Array.prototype.slice.call(block.querySelectorAll('.quizg-q'));
+    return {
+      pageId: block.dataset.page,
+      phase: block.dataset.phase || 'pre_review',
+      total: questions.length,
+      questions: questions
+    };
+  }
+
+  function _gradedLock(block) {
+    // Desabilita inputs e marca bloco como submetido.
+    block.classList.add('quizg-locked');
+    var inputs = block.querySelectorAll('input[type="radio"]');
+    for (var i = 0; i < inputs.length; i++) inputs[i].disabled = true;
+    var btn = block.querySelector('.quizg-submit');
+    if (btn) btn.disabled = true;
+  }
+
+  function _gradedRevealFeedback(block) {
+    var fbs = block.querySelectorAll('.quizg-feedback');
+    for (var i = 0; i < fbs.length; i++) fbs[i].hidden = false;
+  }
+
+  function _gradedPaint(question, selectedValue) {
+    // Pinta a questao com correct/incorrect/correct-answer. selectedValue
+    // pode ser null (aluno nao respondeu — raro, mas tratamos).
+    var correct = question.dataset.correct;
+    var opts = question.querySelectorAll('.quizg-opt');
+    for (var i = 0; i < opts.length; i++) {
+      var input = opts[i].querySelector('input[type="radio"]');
+      if (!input) continue;
+      opts[i].classList.remove('quizg-opt-selected','quizg-opt-correct','quizg-opt-incorrect');
+      if (input.value === correct) {
+        opts[i].classList.add('quizg-opt-correct');
+      }
+      if (selectedValue && input.value === selectedValue && selectedValue !== correct) {
+        opts[i].classList.add('quizg-opt-incorrect');
+      }
+      if (selectedValue && input.value === selectedValue) {
+        opts[i].classList.add('quizg-opt-selected');
+      }
+    }
+  }
+
+  function _gradedComputeScore(block) {
+    var st = _gradedBlockState(block);
+    var right = 0;
+    var answers = [];
+    for (var i = 0; i < st.questions.length; i++) {
+      var q = st.questions[i];
+      var qid = q.dataset.qid;
+      var correct = q.dataset.correct;
+      var difficulty = q.dataset.difficulty || null;
+      var chosen = q.querySelector('input[type="radio"]:checked');
+      var val = chosen ? chosen.value : null;
+      var isRight = val !== null && val === correct;
+      if (isRight) right++;
+      answers.push({ qid: qid, value: val, correct: isRight, difficulty: difficulty });
+    }
+    var pct = st.total > 0 ? Math.round(right / st.total * 100) : 0;
+    return { right: right, total: st.total, pct: pct, answers: answers };
+  }
+
+  function _gradedShowScore(block, scoreObj, submitted) {
+    var scoreEl = block.querySelector('.quizg-score');
+    if (!scoreEl) return;
+    scoreEl.hidden = false;
+    var label = submitted ? 'Resultado' : 'Pontuação';
+    scoreEl.innerHTML = '<strong>' + label + ':</strong> ' +
+      scoreObj.right + '/' + scoreObj.total + ' (' + scoreObj.pct + '%)';
+  }
+
+  async function _gradedSubmit(block) {
+    var st = _gradedBlockState(block);
+    var score = _gradedComputeScore(block);
+
+    // 1. Pinta todas as questoes (feedback visual local)
+    for (var i = 0; i < st.questions.length; i++) {
+      var q = st.questions[i];
+      var ans = score.answers[i];
+      _gradedPaint(q, ans.value);
+    }
+
+    // 2. Revela gabaritos/peer-review
+    _gradedRevealFeedback(block);
+
+    // 3. Lock
+    _gradedLock(block);
+
+    // 4. Mostra score
+    _gradedShowScore(block, score, true);
+
+    // 5. Grava no Supabase (fire-and-forget, tolerante a offline/LGPD-off).
+    //    Usa o helper _syncWrite para herdar guardas USE_SUPABASE_WRITES.
+    for (var j = 0; j < score.answers.length; j++) {
+      var a = score.answers[j];
+      if (a.value === null) continue; // nao grava questao nao respondida
+      _syncWrite('recordQuizQuestionAttempt', [
+        st.pageId, a.qid, a.value, a.correct,
+        { phase: st.phase, difficulty: a.difficulty }
+      ]);
+    }
+    // Agregado: lemos o registro atual para calcular best_score e attempts
+    // incrementado. Se a leitura falhar (sem sessao, offline), caimos para
+    // payload com attempts=1/best_score=score.pct (upsert vai criar).
+    var current = null;
+    try {
+      if (window.MpeDB && window.MpeDB.enabled && window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_WRITES) {
+        var fetched = await window.MpeDB.fetchQuizAggregate(st.pageId, st.phase);
+        if (fetched && fetched.ok) current = fetched.row;
+      }
+    } catch(e) { /* ignore */ }
+    var attempts = (current && current.attempts ? current.attempts : 0) + 1;
+    var bestScore = Math.max(current && current.best_score ? current.best_score : 0, score.pct);
+    var nowIso = new Date().toISOString();
+    _syncWrite('upsertQuizAggregatePhase', [st.pageId, st.phase, {
+      attempts: attempts,
+      best_score: bestScore,
+      last_attempt_at: nowIso,
+      submitted_at: nowIso
+    }]);
+
+    return score;
+  }
+
+  async function _gradedRehydrate(block) {
+    // Se ja houve submissao para (pageId, phase), repopula a UI em modo
+    // review: marca as opcoes escolhidas pelo aluno (ultima tentativa por
+    // questao), pinta correct/incorrect, revela feedbacks, trava submit.
+    if (!(window.MpeDB && window.MpeDB.enabled && window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_WRITES)) {
+      return false;
+    }
+    var st = _gradedBlockState(block);
+    var agg;
+    try {
+      agg = await window.MpeDB.fetchQuizAggregate(st.pageId, st.phase);
+    } catch(e) { return false; }
+    if (!agg || !agg.ok || !agg.row || !agg.row.submitted_at) return false;
+
+    var attempts;
+    try {
+      attempts = await window.MpeDB.fetchQuizQuestionAttempts(st.pageId, st.phase);
+    } catch(e) { return false; }
+    if (!attempts || !attempts.ok) return false;
+
+    // Pega a ULTIMA tentativa por qid (rows vem ordenados asc)
+    var lastByQid = {};
+    for (var i = 0; i < attempts.rows.length; i++) {
+      var r = attempts.rows[i];
+      lastByQid[r.question_id] = r;
+    }
+
+    // Marca radios e pinta
+    for (var j = 0; j < st.questions.length; j++) {
+      var q = st.questions[j];
+      var last = lastByQid[q.dataset.qid];
+      if (!last) continue;
+      var radios = q.querySelectorAll('input[type="radio"]');
+      for (var k = 0; k < radios.length; k++) {
+        if (radios[k].value === last.answer) radios[k].checked = true;
+      }
+      _gradedPaint(q, last.answer);
+    }
+
+    _gradedRevealFeedback(block);
+    _gradedLock(block);
+
+    // Mostra score persistido (best_score reflete a melhor tentativa;
+    // aqui o "resultado" e a ultima — podem diferir se houver re-submit
+    // no futuro. Por ora so ha 1 submit, entao batem).
+    var lastRight = 0;
+    for (var qid in lastByQid) {
+      if (lastByQid[qid].correct) lastRight++;
+    }
+    var pct = st.total > 0 ? Math.round(lastRight / st.total * 100) : 0;
+    _gradedShowScore(block, { right: lastRight, total: st.total, pct: pct }, true);
+
+    block.classList.add('quizg-review');
+    return true;
+  }
+
+  window.MicroQuizGraded = {
+    // Auto-scan: procura todos os .quizg-block na pagina, tenta rehidratar,
+    // e se nao houver submissao, anexa o handler do botao de submit.
+    init: async function() {
+      var blocks = document.querySelectorAll('.quizg-block');
+      for (var i = 0; i < blocks.length; i++) {
+        var block = blocks[i];
+        if (block.__quizgInit) continue;
+        block.__quizgInit = true;
+
+        // Esconde todos os feedbacks ate submit (defensivo — o HTML ja usa hidden)
+        var fbs = block.querySelectorAll('.quizg-feedback');
+        for (var f = 0; f < fbs.length; f++) fbs[f].hidden = true;
+
+        var rehydrated = false;
+        try { rehydrated = await _gradedRehydrate(block); }
+        catch(e) { console.warn('[MicroQuizGraded] rehydrate falhou:', e); }
+
+        if (!rehydrated) {
+          var btn = block.querySelector('.quizg-submit');
+          if (btn) {
+            (function(b, blk) {
+              b.addEventListener('click', async function(ev) {
+                ev.preventDefault();
+                // Validacao: todas as questoes respondidas?
+                var st = _gradedBlockState(blk);
+                var unanswered = [];
+                for (var q = 0; q < st.questions.length; q++) {
+                  var chosen = st.questions[q].querySelector('input[type="radio"]:checked');
+                  if (!chosen) unanswered.push(st.questions[q].dataset.qid);
+                }
+                if (unanswered.length > 0) {
+                  var msg = 'Responda todas as questões antes de submeter. Faltam: ' + unanswered.join(', ');
+                  var warn = blk.querySelector('.quizg-warn');
+                  if (warn) { warn.textContent = msg; warn.hidden = false; }
+                  else { alert(msg); }
+                  return;
+                }
+                b.disabled = true;
+                b.textContent = 'Enviando…';
+                try {
+                  await _gradedSubmit(blk);
+                  b.textContent = 'Bloco submetido';
+                } catch(e) {
+                  console.warn('[MicroQuizGraded] submit erro:', e);
+                  b.textContent = 'Erro — ver console';
+                }
+              });
+            })(btn, block);
+          }
+        }
+      }
+    }
+  };
+
 })();

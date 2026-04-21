@@ -238,6 +238,35 @@ details .solution-body{padding:1rem}
 .feedback-incorrect{background:#fed7d7;color:#9b2c2c}
 .quiz-submit{margin-top:1rem}
 
+/* ---- QUIZ GRADED (pre_review / post) ---- */
+.quizg-block{background:#f7fafc;border:2px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1.5rem auto;text-align:left}
+.quizg-block > h3{font-size:1rem;margin-bottom:0.2rem;color:var(--primary)}
+.quizg-block .quizg-intro{color:var(--text-muted);font-size:0.85rem;margin-bottom:1rem}
+.quizg-q{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #e2e8f0}
+.quizg-q:last-of-type{border-bottom:none}
+.quizg-q .quizg-qtext{font-weight:600;margin-bottom:0.6rem;font-size:0.9rem}
+.quizg-q[data-difficulty="yellow"] .quizg-qtext::before{content:"\1F7E1 ";margin-right:0.2rem}
+.quizg-q[data-difficulty="red"] .quizg-qtext::before{content:"\1F534 ";margin-right:0.2rem}
+.quizg-opt{display:flex;align-items:flex-start;gap:0.55rem;padding:0.5rem 0.8rem;margin:0.3rem 0;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:0.15s}
+.quizg-opt:hover{border-color:var(--accent);background:#ebf8ff}
+.quizg-opt input[type="radio"]{margin-top:0.2rem;flex:0 0 auto}
+.quizg-opt-selected{border-color:var(--accent);background:#bee3f8}
+.quizg-opt-correct{border-color:var(--success)!important;background:#c6f6d5!important}
+.quizg-opt-incorrect{border-color:var(--danger)!important;background:#fed7d7!important}
+.quizg-locked .quizg-opt{cursor:not-allowed}
+.quizg-locked .quizg-opt:hover{border-color:var(--border);background:#f7fafc}
+.quizg-locked .quizg-opt-correct:hover{border-color:var(--success)!important;background:#c6f6d5!important}
+.quizg-locked .quizg-opt-incorrect:hover{border-color:var(--danger)!important;background:#fed7d7!important}
+.quizg-feedback{margin-top:0.6rem;padding:0.7rem 0.9rem;border-radius:6px;font-size:0.85rem;background:#FFFBEA;border-left:3px solid var(--warning);color:#1A1A1A;line-height:1.5}
+.quizg-feedback strong{color:var(--primary)}
+.quizg-feedback .peer-review{margin-top:0.6rem;padding-top:0.6rem;border-top:1px dashed #e2e8f0;font-style:italic;color:var(--text-muted)}
+.quizg-submit-wrap{margin-top:1rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.quizg-submit{flex:0 0 auto}
+.quizg-warn{background:#fed7d7;color:var(--danger);padding:0.5rem 0.8rem;border-radius:6px;font-size:0.8rem;flex:1 1 auto}
+.quizg-score{flex:1 1 auto;padding:0.5rem 0.8rem;background:#E6FFFA;border-radius:6px;font-size:0.9rem;color:var(--primary)}
+.quizg-review{border-color:var(--accent-soft)}
+.quizg-review::before{content:"Modo revisão — você já submeteu este bloco";display:block;margin-bottom:0.8rem;padding:0.4rem 0.7rem;background:var(--accent-soft);color:var(--primary);border-radius:6px;font-size:0.8rem;font-weight:600}
+
 /* ---- PROGRESS ---- */
 .progress-bar{height:6px;background:#e2e8f0;border-radius:3px;margin:0.5rem 0}
 .progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width 0.3s}

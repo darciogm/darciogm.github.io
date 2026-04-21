@@ -150,14 +150,66 @@
       return res.error ? { ok:false, error:res.error } : { ok:true };
     },
 
-    recordQuizQuestionAttempt: async function(pageId, questionId, answer, correct) {
+    // Variante com phase explicito. Mantem onConflict em (user_id, page_id)
+    // porque a regra do schema (schema.sql L155-157) e que cada fase vive em
+    // page_id distinto (aula-XX vs aula-XX-pre vs aula-XX-pos). O phase aqui
+    // e descritivo, para rollups do admin sem depender de convencao de sufixo.
+    upsertQuizAggregatePhase: async function(pageId, phase, updates) {
       var sess = await client.auth.getSession();
       var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
       if (!uid) return { ok:false, error:'no session' };
-      var res = await client.from('quiz_question_attempts').insert({
+      var payload = Object.assign({ user_id: uid, page_id: pageId, phase: phase }, updates);
+      var res = await client.from('quiz_aggregates').upsert(payload, { onConflict: 'user_id,page_id' });
+      return res.error ? { ok:false, error:res.error } : { ok:true };
+    },
+
+    // Busca o agregado do usuario corrente para (pageId, phase). Retorna
+    // {ok, row} onde row pode ser null se ainda nao houve submissao. Usado
+    // pela rehidratacao do MicroQuizGraded (entra em modo review se
+    // attempts > 0).
+    fetchQuizAggregate: async function(pageId, phase) {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session', row:null };
+      var q = client.from('quiz_aggregates').select('*').eq('user_id', uid).eq('page_id', pageId);
+      if (phase) q = q.eq('phase', phase);
+      var res = await q.maybeSingle();
+      if (res.error) return { ok:false, error:res.error, row:null };
+      return { ok:true, row: res.data || null };
+    },
+
+    // Busca historico de tentativas de questao para (pageId[, phase]). Usado
+    // pela rehidratacao para recolorir opcoes corretas/incorretas.
+    fetchQuizQuestionAttempts: async function(pageId, phase) {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session', rows:[] };
+      var q = client.from('quiz_question_attempts').select('*')
+        .eq('user_id', uid).eq('page_id', pageId)
+        .order('answered_at', { ascending: true });
+      if (phase) q = q.eq('phase', phase);
+      var res = await q;
+      if (res.error) return { ok:false, error:res.error, rows:[] };
+      return { ok:true, rows: res.data || [] };
+    },
+
+    // Assinatura legada preservada: (pageId, questionId, answer, correct).
+    // Opcionalmente aceita um 5o argumento {phase, difficulty} para o engine
+    // MicroQuizGraded. _syncWrite em tracker.js passa args arbitrariamente,
+    // entao adicionar um parametro opcional e backward compatible.
+    recordQuizQuestionAttempt: async function(pageId, questionId, answer, correct, opts) {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+      var payload = {
         user_id: uid, page_id: pageId, question_id: questionId,
         answer: answer, correct: correct
-      });
+      };
+      if (opts && typeof opts === 'object') {
+        if (opts.phase) payload.phase = opts.phase;
+        if (opts.difficulty) payload.difficulty = opts.difficulty;
+      }
+      var res = await client.from('quiz_question_attempts').insert(payload);
       return res.error ? { ok:false, error:res.error } : { ok:true };
     },
 
