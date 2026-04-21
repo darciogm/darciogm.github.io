@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-# build.sh — Converte os 25 pré-aula .md em HTML com tracking
+# build.sh — Converte fontes .md legadas em HTML via pandoc+template.
+#
+# ATENCAO: este pipeline gera apenas as paginas "full-page" legadas a partir
+# de aula-NN-pre.md (ex.: a versao 1-pagina-inteira de uma pre-aula antiga).
+# NAO gera as novas aula-NN-pre.html / aula-NN-pos.html (quiz de 10 questoes
+# com MicroQuizGraded) — essas sao HTML escritos a mao; ver skeletons em
+# aula-02-pre.html / aula-02-pos.html.
+#
 # Uso: bash build.sh
 
 set -e
@@ -9,31 +16,53 @@ SRC_DIR="$(dirname "$SCRIPT_DIR")"  # pre-aula/
 OUT_DIR="$SCRIPT_DIR"               # platform/
 TEMPLATE="$OUT_DIR/template.html"
 
-echo "=== Convertendo pre-aulas .md → .html ==="
+echo "=== Convertendo pre-aulas .md → .html (pipeline legado) ==="
 echo "Source: $SRC_DIR"
 echo "Output: $OUT_DIR"
 echo ""
+
+# pick_engine_init <pageid>
+#   ecoa o snippet JS que deve substituir $engine_init$ na template, baseado
+#   no sufixo do PAGEID. Sufixos '-pre' ou '-pos' → MicroQuizGraded (auto-scan,
+#   sem argumento). Caso contrario (aula-NN, monitoria-NN) → MicroQuiz legado.
+pick_engine_init() {
+  case "$1" in
+    *-pre|*-pos) printf 'MicroQuizGraded.init();' ;;
+    *)           printf "MicroQuiz.init('%s');" "$1" ;;
+  esac
+}
 
 for i in $(seq -w 1 25); do
   SRC="$SRC_DIR/aula-${i}-pre.md"
   OUT="$OUT_DIR/aula-${i}.html"
   PAGEID="aula-${i}"
+  ENGINE_INIT="$(pick_engine_init "$PAGEID")"
 
   if [ ! -f "$SRC" ]; then
     echo "SKIP: $SRC not found"
     continue
   fi
 
+  # Guarda-chuva defensivo: nao sobrescreve paginas escritas a mao que ja
+  # estao em producao (aula-01.html em 22/04). Gerados pelo build.sh trazem
+  # o marker "<!-- generated-by: build.sh -->" no topo; qualquer OUT sem esse
+  # marker e tratado como handwritten e pulado.
+  if [ -f "$OUT" ] && ! head -5 "$OUT" | grep -q 'generated-by: build.sh' 2>/dev/null; then
+    echo "SKIP: $OUT existe sem marker generated-by (handwritten?)"
+    continue
+  fi
+
   echo -n "  aula-${i}-pre.md → aula-${i}.html ... "
 
   # Full preprocessing + pandoc + template injection in one Python script
-  python3 - "$SRC" "$OUT" "$TEMPLATE" "$PAGEID" << 'PYEOF'
+  python3 - "$SRC" "$OUT" "$TEMPLATE" "$PAGEID" "$ENGINE_INIT" << 'PYEOF'
 import re, sys, subprocess, tempfile, os
 
 src_path = sys.argv[1]
 out_path = sys.argv[2]
 template_path = sys.argv[3]
 pageid = sys.argv[4]
+engine_init = sys.argv[5]
 
 with open(src_path, 'r', encoding='utf-8') as f:
     lines = f.readlines()
@@ -216,6 +245,7 @@ with open(template_path, 'r', encoding='utf-8') as f:
 
 html = template.replace('$title$', title)
 html = html.replace('$pageid$', pageid)
+html = html.replace('$engine_init$', engine_init)
 html = html.replace('$body$', body)
 
 with open(out_path, 'w', encoding='utf-8') as f:
