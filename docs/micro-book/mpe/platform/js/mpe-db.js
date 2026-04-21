@@ -239,6 +239,42 @@
       return res.error ? { ok:false, error:res.error } : { ok:true };
     },
 
+    // ==================== FIRST-LOGIN PASSWORD GATE ====================
+
+    // Marca o profile do usuario corrente como "ja trocou a senha inicial".
+    // Tolerante a ausencia da coluna password_changed_at (migration nao
+    // aplicada ainda): retorna {ok:false, missing:true} em vez de derrubar.
+    markPasswordChanged: async function() {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+      var res = await client.from('profiles')
+        .update({ password_changed_at: new Date().toISOString() })
+        .eq('id', uid);
+      if (res.error) {
+        // codigo 42703 = coluna inexistente (schema nao migrado)
+        var missing = res.error && (res.error.code === '42703' ||
+          /password_changed_at/.test(res.error.message || ''));
+        return { ok:false, error:res.error, missing:!!missing };
+      }
+      return { ok:true };
+    },
+
+    // Troca a senha do usuario autenticado e, em caso de sucesso, marca o
+    // profile como "ja trocou a senha inicial". Usado pelo gate de primeiro
+    // acesso no portal.html.
+    changePassword: async function(novaSenha) {
+      if (!novaSenha || novaSenha.length < 8) {
+        return { ok:false, error:{ message:'Senha precisa ter ao menos 8 caracteres.' } };
+      }
+      var upd = await client.auth.updateUser({ password: novaSenha });
+      if (upd.error) return { ok:false, error:upd.error };
+      var mark = await MpeDB.markPasswordChanged();
+      // Se coluna ausente (migration pendente), seguimos em frente com warning.
+      if (!mark.ok && !mark.missing) return { ok:false, error:mark.error };
+      return { ok:true, column_missing: !!mark.missing };
+    },
+
     fetchMyDataAll: async function() {
       // Para o titular baixar os proprios dados (direito de acesso/portabilidade)
       var sess = await client.auth.getSession();
@@ -314,6 +350,9 @@
         role: prof.data.role,
         userId: prof.data.id,
         consented_lgpd: prof.data.consented_lgpd,
+        // password_changed_at pode nao existir ainda (migration pendente);
+        // nesse caso guardamos undefined, e o gate trata como ausente.
+        password_changed_at: prof.data.password_changed_at,
         loginAt: new Date().toISOString()
       }));
     } catch(e) {

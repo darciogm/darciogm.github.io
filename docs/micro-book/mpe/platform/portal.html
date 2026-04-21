@@ -95,6 +95,29 @@
   Dúvidas: <a href="mailto:darciogm1@insper.edu.br">darciogm1@insper.edu.br</a>
 </div>
 
+<!-- Password-change gate — aparece se session.password_changed_at for null (primeiro acesso) -->
+<div id="pwd-modal" class="lgpd-backdrop" style="display:none">
+  <div class="lgpd-modal">
+    <h2>Troque sua senha inicial</h2>
+    <div class="lgpd-body">
+      <p>Você está usando a <strong>senha inicial</strong> enviada no email de boas-vindas. Por segurança, escolha agora uma nova senha pessoal.</p>
+      <p style="font-size:0.82rem;color:var(--text-muted)">Requisitos mínimos: ao menos 8 caracteres. Recomenda-se misturar letras, números e símbolos, e não reutilizar senhas de outros serviços.</p>
+      <div class="pwd-error" id="pwd-error" style="display:none;background:#fed7d7;color:var(--danger);padding:0.6rem;border-radius:6px;font-size:0.85rem;margin:0.5rem 0"></div>
+      <div class="form-group" style="margin-top:0.8rem">
+        <label for="pwd-new">Nova senha</label>
+        <input type="password" id="pwd-new" placeholder="Mínimo 8 caracteres" autocomplete="new-password">
+      </div>
+      <div class="form-group">
+        <label for="pwd-conf">Confirmar nova senha</label>
+        <input type="password" id="pwd-conf" placeholder="Repita a nova senha" autocomplete="new-password">
+      </div>
+    </div>
+    <div class="lgpd-footer">
+      <button class="btn-accept" id="pwd-accept" onclick="submitPasswordChange()">Salvar nova senha</button>
+    </div>
+  </div>
+</div>
+
 <!-- LGPD consent modal — aparece se session.consented_lgpd for null -->
 <div id="lgpd-modal" class="lgpd-backdrop" style="display:none">
   <div class="lgpd-modal">
@@ -135,6 +158,101 @@ if (!MicroAuth.requireAuth()) throw 'redirect';
 var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
 if (MicroAuth.isAdmin()) document.getElementById('admin-link').style.display = 'inline-block';
+
+// Gate de primeiro acesso: forca troca de senha inicial.
+// Roda ANTES do modal LGPD. Se nao houver sessao Supabase ativa, se for
+// admin, ou se a coluna password_changed_at ainda nao existir (migration
+// pendente), passa direto. Defensivo por design.
+function checkPasswordGate() {
+  var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
+  if (!USE_SB || MicroAuth.isAdmin()) { checkLGPDConsent(); return; }
+
+  // Se session.password_changed_at for undefined, pode ser que:
+  //   (a) a coluna nao existe no schema (migration pendente) -> pular gate
+  //   (b) o espelho de sessionStorage ainda nao foi populado -> tentar ler
+  //       do Supabase direto.
+  // Em (a), nao bloqueamos a turma inteira. Em (b), buscamos.
+  (async function() {
+    var pwd = session.password_changed_at;
+    if (pwd === undefined && window.MpeDB && window.MpeDB.enabled) {
+      // Tenta pegar profile fresco. Se a coluna nao existir, o Supabase
+      // ainda retorna o registro sem o campo — nesse caso seguimos sem
+      // bloquear e logamos warning.
+      var res = await window.MpeDB.getProfile();
+      if (res.ok) {
+        pwd = res.profile.password_changed_at;
+        if (pwd === undefined) {
+          console.warn('[portal] coluna password_changed_at ausente no schema — gate desativado. Aplique a migration 2026-04-21_password_changed_at.sql.');
+          checkLGPDConsent();
+          return;
+        }
+      } else {
+        // Falha de rede — nao bloqueia, segue para LGPD.
+        console.warn('[portal] falha ao buscar profile para gate de senha:', res.error);
+        checkLGPDConsent();
+        return;
+      }
+    }
+
+    if (pwd) {
+      // Ja trocou a senha em algum momento — libera.
+      checkLGPDConsent();
+      return;
+    }
+
+    // password_changed_at IS NULL — aluno ainda esta na senha inicial.
+    document.getElementById('pwd-modal').style.display = 'flex';
+    setTimeout(function(){
+      var el = document.getElementById('pwd-new');
+      if (el) el.focus();
+    }, 100);
+  })();
+}
+
+function showPwdError(msg) {
+  var el = document.getElementById('pwd-error');
+  el.textContent = msg; el.style.display = 'block';
+}
+
+async function submitPasswordChange() {
+  if (!window.MpeDB || !window.MpeDB.enabled) {
+    showPwdError('Sistema offline. Recarregue a página.');
+    return;
+  }
+  var nova = document.getElementById('pwd-new').value;
+  var conf = document.getElementById('pwd-conf').value;
+  if (!nova || nova.length < 8) { showPwdError('Senha precisa ter ao menos 8 caracteres.'); return; }
+  if (nova !== conf) { showPwdError('As senhas não conferem.'); return; }
+
+  var btn = document.getElementById('pwd-accept');
+  btn.disabled = true; btn.textContent = 'Salvando...';
+  document.getElementById('pwd-error').style.display = 'none';
+
+  var res = await window.MpeDB.changePassword(nova);
+  if (!res.ok) {
+    showPwdError('Erro ao atualizar senha: ' + ((res.error && res.error.message) || 'tente novamente.'));
+    btn.disabled = false; btn.textContent = 'Salvar nova senha';
+    return;
+  }
+
+  // Atualiza espelho de sessao local
+  var s = MicroAuth.getSession();
+  if (s) {
+    s.password_changed_at = new Date().toISOString();
+    sessionStorage.setItem('mpe_microI_session', JSON.stringify(s));
+  }
+  // Limpa campos (nao logar valor)
+  document.getElementById('pwd-new').value = '';
+  document.getElementById('pwd-conf').value = '';
+  document.getElementById('pwd-modal').style.display = 'none';
+
+  if (res.column_missing) {
+    console.warn('[portal] senha trocada, mas coluna password_changed_at ausente — o gate voltara no proximo login ate a migration ser aplicada.');
+  }
+
+  // Fluxo continua para LGPD.
+  checkLGPDConsent();
+}
 
 // LGPD: bloqueia portal ate aluno consentir (admin pulado)
 function checkLGPDConsent() {
@@ -177,8 +295,9 @@ async function downloadMyData() {
   a.click();
 }
 
-// Dispara apos um pequeno delay para garantir que session espelho foi atualizado
-setTimeout(checkLGPDConsent, 400);
+// Dispara apos um pequeno delay para garantir que session espelho foi atualizado.
+// checkPasswordGate() eh o primeiro gate; se liberar, chama checkLGPDConsent em cadeia.
+setTimeout(checkPasswordGate, 400);
 
 var AULAS = [
   {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true},
