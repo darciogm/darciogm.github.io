@@ -208,6 +208,14 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
+          <h4>Curva de aprendizado dentro do quiz</h4>
+          <div class="metric-desc">
+            % acerto na <strong>1ª metade</strong> (Q1–Q5) vs <strong>2ª metade</strong> (Q6–Q10) de cada quiz estruturado. Δ positivo = turma "aquece" (sinal de aprendizado no próprio bloco); Δ negativo = fadiga ou dificuldade crescente. Para quizzes pós-aula (phase=<code>post</code>), colunas <strong>🟡</strong> e <strong>🔴</strong> separam por calibre. Baseline heurístico: Δ entre ±5 p.p. é ruído amostral.
+          </div>
+          <div id="m-learning-curve" style="font-size:0.82rem;overflow-x:auto"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
           <h4>Reflexões recentes da turma</h4>
           <div class="metric-desc">Respostas abertas da seção 8 de cada pré-aula. Alimenta diretamente o Bloco 0 da aula presencial. Mostra as 15 mais recentes.</div>
           <div id="m-reflections" style="max-height:400px;overflow-y:auto"></div>
@@ -529,6 +537,137 @@ function _tx(supabaseData) {
   return { data: data, summary: summary, users: users, raw: d };
 }
 
+// ============================================================
+// Curva de aprendizado dentro do quiz (Fase-3 Métricas)
+// Agrega raw.quizQA por (page_id), extrai numero da questao via question_id
+// ("q1"..."q10"), separa em 1a vs 2a metade do quiz e compara. Para quizzes
+// phase='post', também reporta acerto em questoes 🟡 vs 🔴 (difficulty).
+// ============================================================
+
+function computeLearningCurve(raw) {
+  if (!raw || !raw.quizQA || !raw.quizQA.length) return [];
+
+  // Mapa page_id -> phase (via quizAggregates ou fallback do proprio QA)
+  var pageToPhase = {};
+  (raw.quizAggregates || []).forEach(function(a) {
+    pageToPhase[a.page_id] = a.phase || 'embedded';
+  });
+  raw.quizQA.forEach(function(q) {
+    if (!pageToPhase[q.page_id]) pageToPhase[q.page_id] = q.phase || 'embedded';
+  });
+
+  // Grupo por page_id
+  var byPage = {};
+  raw.quizQA.forEach(function(q) {
+    var pid = q.page_id;
+    var qnum = parseInt(String(q.question_id || '').replace(/[^\d]/g, ''), 10);
+    if (!isFinite(qnum)) return; // ignora question_ids sem numero (defensivo)
+    if (!byPage[pid]) byPage[pid] = { attempts: [], students: {}, yellow: [], red: [] };
+    byPage[pid].attempts.push({ qnum: qnum, correct: !!q.correct });
+    byPage[pid].students[q.user_id] = true;
+    if (q.difficulty === 'yellow') byPage[pid].yellow.push(!!q.correct);
+    else if (q.difficulty === 'red') byPage[pid].red.push(!!q.correct);
+  });
+
+  function pct(arr) {
+    if (!arr.length) return null;
+    var right = 0;
+    for (var i = 0; i < arr.length; i++) if (arr[i]) right++;
+    return Math.round(right / arr.length * 100);
+  }
+
+  var results = [];
+  Object.keys(byPage).forEach(function(pid) {
+    var b = byPage[pid];
+    var qnums = b.attempts.map(function(a){return a.qnum;});
+    var maxQ = Math.max.apply(null, qnums);
+    if (!isFinite(maxQ) || maxQ <= 0) return;
+    // Quiz de <=3 questoes (ex: aula-01 legado) nao faz sentido metade/metade.
+    if (maxQ < 4) return;
+    var half = Math.ceil(maxQ / 2); // 10 Q -> half=5 -> Q1..Q5 | Q6..Q10
+    var h1 = [], h2 = [];
+    b.attempts.forEach(function(a) {
+      if (a.qnum <= half) h1.push(a.correct);
+      else h2.push(a.correct);
+    });
+    var h1pct = pct(h1), h2pct = pct(h2);
+    results.push({
+      page_id: pid,
+      phase: pageToPhase[pid] || 'embedded',
+      n_students: Object.keys(b.students).length,
+      n_attempts: b.attempts.length,
+      max_q: maxQ,
+      half1_pct: h1pct,
+      half2_pct: h2pct,
+      delta: (h1pct !== null && h2pct !== null) ? (h2pct - h1pct) : null,
+      yellow_n: b.yellow.length,
+      yellow_pct: pct(b.yellow),
+      red_n: b.red.length,
+      red_pct: pct(b.red)
+    });
+  });
+  results.sort(function(a, b) { return a.page_id.localeCompare(b.page_id); });
+  return results;
+}
+
+function renderLearningCurve(raw) {
+  var container = document.getElementById('m-learning-curve');
+  if (!container) return;
+  if (!raw) {
+    container.innerHTML = '<div style="color:var(--text-muted)">Métrica requer Supabase ativo.</div>';
+    return;
+  }
+  var rows = computeLearningCurve(raw);
+  if (!rows.length) {
+    container.innerHTML = '<div style="color:var(--text-muted)">Nenhum quiz estruturado (≥4 questões) submetido ainda.</div>';
+    return;
+  }
+
+  var html = '<table style="width:100%;border-collapse:collapse">'
+    + '<thead><tr style="background:#FAFAF8;border-bottom:2px solid var(--border)">'
+    + '<th style="text-align:left;padding:0.45rem 0.5rem">Quiz</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem">Fase</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem" title="Número de alunos distintos com pelo menos 1 tentativa">Alunos</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem" title="% acerto médio nas primeiras 5 questões">1ª ½</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem" title="% acerto médio nas últimas 5 questões">2ª ½</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem">Δ</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem" title="% acerto em questões marcadas yellow (só em phase=post)">🟡</th>'
+    + '<th style="text-align:center;padding:0.45rem 0.3rem" title="% acerto em questões marcadas red (só em phase=post)">🔴</th>'
+    + '</tr></thead><tbody>';
+
+  rows.forEach(function(r) {
+    var deltaStr = '—', deltaCol = 'var(--text-muted)', deltaWeight = '400';
+    if (r.delta !== null) {
+      var sign = r.delta > 0 ? '+' : '';
+      deltaStr = sign + r.delta + ' pp';
+      deltaWeight = '600';
+      if (r.delta > 5) deltaCol = 'var(--success)';
+      else if (r.delta < -5) deltaCol = 'var(--danger)';
+      else deltaCol = 'var(--text-muted)';
+    }
+    var yellowCell = (r.yellow_n > 0 && r.yellow_pct !== null)
+      ? r.yellow_pct + '% <span style="font-size:0.7rem;color:var(--text-muted)">(n=' + r.yellow_n + ')</span>'
+      : '<span style="color:var(--text-muted)">—</span>';
+    var redCell = (r.red_n > 0 && r.red_pct !== null)
+      ? r.red_pct + '% <span style="font-size:0.7rem;color:var(--text-muted)">(n=' + r.red_n + ')</span>'
+      : '<span style="color:var(--text-muted)">—</span>';
+
+    html += '<tr style="border-bottom:1px solid #f5f0ec">'
+      + '<td style="padding:0.4rem 0.5rem"><code>' + r.page_id + '</code></td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem;font-size:0.75rem">' + r.phase + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem">' + r.n_students + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem">' + (r.half1_pct !== null ? r.half1_pct + '%' : '—') + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem">' + (r.half2_pct !== null ? r.half2_pct + '%' : '—') + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem;color:' + deltaCol + ';font-weight:' + deltaWeight + '">' + deltaStr + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem">' + yellowCell + '</td>'
+      + '<td style="text-align:center;padding:0.4rem 0.3rem">' + redCell + '</td>'
+      + '</tr>';
+  });
+
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
 async function _loadAdminData() {
   var badge = document.getElementById('data-source-badge');
   if (window.MpeDB && window.MpeDB.enabled) {
@@ -819,6 +958,9 @@ async function renderAdmin() {
     reflHtml = '<div style="color:var(--text-muted);font-size:0.82rem">Reflexões só ficam visíveis com Supabase ativo.</div>';
   }
   document.getElementById('m-reflections').innerHTML = reflHtml;
+
+  // 8) Curva de aprendizado dentro do quiz — requer raw.quizQA (Supabase).
+  renderLearningCurve(raw);
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
