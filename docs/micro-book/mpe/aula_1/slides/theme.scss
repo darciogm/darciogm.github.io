@@ -230,6 +230,32 @@ $codeFont: "JetBrains Mono", "Menlo", "Consolas", monospace;
   font-size: 1.05em;
 }
 
+// Frases-martelo — slab tipográfico editorial (estilo pull-quote).
+// Distinto de .eq-key: fundo escuro, texto branco, sem border-left vermelho.
+// Uso: afirmações conceituais que precisam ressoar. NÃO usar em equações.
+.reveal .eq-punch {
+  background: #1A1A1A;
+  color: #F7F7F5;
+  border: none;
+  border-radius: 2px;
+  padding: 0.9em 1.4em;
+  margin: 0.9em 0;
+  font-size: 1.12em;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.reveal .eq-punch strong {
+  color: #FFFFFF;
+}
+
+.reveal .eq-punch em {
+  color: #E8E6E1;
+  font-style: italic;
+}
+
 // Ponte/transição entre blocos — sóbrio, sem border-top agressivo (Sprint D)
 .reveal .bridge {
   font-style: italic;

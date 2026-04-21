@@ -153,7 +153,7 @@ Cinco axiomas, um teorema, uma tensão (ordinalidade).
 Hoje não mediremos utilidade. Mediremos *se faz sentido* falar em utilidade.
 :::
 
-::: {.eq-key style="text-align: center; font-size: 1.15em; font-weight: 600; margin-top: 0.6em;"}
+::: {.eq-punch}
 A preferência é o fato. A utilidade é o truque.
 :::
 
@@ -319,7 +319,7 @@ O conjunto $\{z : y \succeq^L z\}$ **não é fechado** em $\mathbb{R}^2_+$ — u
 
 **Mecanismo.** A fronteira entre "$y$ é preferido" e "$x$ é preferido" não é fechada — é aberta de um lado.
 
-::: {.eq-key style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.5em;"}
+::: {.eq-punch}
 Um $\varepsilon$ no bem 1 domina qualquer quantidade do bem 2.
 :::
 
@@ -405,15 +405,15 @@ $$
 
 ## Teorema da representação (Debreu)
 
-::: {.bridge}
-Axiomas 1–3 dão **existência** de $u$. Axiomas 4–5 dão **regularidade útil**.
-:::
-
 ::: {.eq-key}
 **Teorema.** Se $\succeq$ em $X \subseteq \mathbb{R}^n_+$ é **completa, transitiva e contínua**, então existe $u: X \to \mathbb{R}$ **contínua** tal que
 $$
 x \succeq y \iff u(x) \geq u(y).
 $$
+:::
+
+::: {.eq-punch}
+Em uma frase: existe um truque que funciona — e a continuidade é o passe.
 :::
 
 ::: {.fragment}
@@ -428,15 +428,42 @@ $$
 
 ## Ideia de prova (não é a prova)
 
-**Construção heurística** (na linha do J-R cap. 1):
+::: {.bridge}
+Axiomas 1–3 dão **existência** de $u$. Axiomas 4–5 dão **regularidade útil**. A prova completa de Debreu (1954) vive em J-R §1.2 — duas páginas de topologia bem-comportada.
+:::
 
-1. Pegue um raio no ortante positivo — "pacote de referência" $\bar{x}(t) = t \cdot \mathbf{1}$ para $t \geq 0$. *Usamos monotonicidade aqui como muleta didática; a prova de Debreu genuína dispensa (conjuntos de nível + separação).*
-2. Para cada $x \in X$, defina $u(x) = t^*(x)$ tal que $x \sim \bar{x}(t^*(x))$.
-3. Continuidade de $\succeq$ garante que $t^*(x)$ existe e é único.
-4. Continuidade de $u$ sai da continuidade de $\succeq$ via argumento topológico.
+**Para a aula de hoje, o que importa:** a construção heurística que mostra *por que* a continuidade é o axioma-chave — não os detalhes topológicos.
 
-::: {.callout-note .callout}
-Prova completa no J-R §1.2. O ponto hoje é *por que* continuidade é o axioma-chave.
+::: {.fragment}
+**Heurística rápida.** Raio unitário no ortante, indiferença com o ponto, topologia herdada. Continuidade de $\succeq$ garante que o mapa preferência → utilidade é contínuo. Monotonicidade aqui é muleta didática (a prova genuína dispensa).
+:::
+
+::: {.notes}
+RESOLUÇÃO COMPLETA — fallback se algum aluno pedir detalhe em aula.
+
+Construção heurística (na linha do J-R cap. 1):
+
+1. Pegue um raio no ortante positivo — "pacote de referência"
+   \bar{x}(t) = t · 1 para t ≥ 0. Usamos monotonicidade aqui como
+   muleta didática; a prova de Debreu genuína dispensa (conjuntos
+   de nível + separação topológica).
+
+2. Para cada x ∈ X, defina u(x) = t*(x) tal que x ~ \bar{x}(t*(x)).
+   Ou seja, u(x) é o "escalar ao longo do raio" que é indiferente a x.
+
+3. Continuidade de ≽ garante que t*(x) existe e é único:
+   - Existência: conjuntos superior e inferior são fechados, e o raio
+     atravessa X; intersecção não vazia por conexidade.
+   - Unicidade: monotonicidade estrita ao longo do raio elimina empates.
+
+4. Continuidade de u sai da continuidade de ≽ via argumento topológico:
+   pré-imagem de aberto é aberta (porque os conjuntos {x : x ≻ y} e
+   {x : y ≻ x} são abertos por continuidade).
+
+Prova completa no Jehle & Reny §1.2 — duas páginas, notação limpa.
+O ponto hoje é POR QUE continuidade é o axioma-chave: sem ela, o
+mapa t*(·) pode "pular" (como na lexicográfica) e u não pode ser
+contínua — ou sequer existir.
 :::
 
 ---
@@ -483,7 +510,7 @@ A confusão canônica é entre os dois últimos: **quasiconcavidade não implica
 
 ## Ponte para o Bloco 2
 
-::: {.eq-key style="text-align: center; font-size: 1.15em; font-weight: 600;"}
+::: {.eq-punch}
 Existe $u$. Mas **qual** $u$ serve para **qual** história?
 :::
 
@@ -515,8 +542,8 @@ Estique. Água. Deixe a caneta em cima da mesa.
 
 ## Bloco 2 — TMS em formas funcionais {background-color="#C8102E" .section-divider}
 
-::: {style="color: white; font-size: 1.25em; font-style: italic; font-weight: 500; margin-top: 0.6em; opacity: 0.95;"}
-"A preferência é o fato. A utilidade é o truque."
+::: {.eq-punch style="margin-top: 0.8em;"}
+A preferência é o fato. A utilidade é o truque.
 :::
 
 ::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
@@ -811,7 +838,7 @@ $$
 :::
 
 ::: {.fragment}
-::: {.eq-key style="text-align: center; font-size: 1.0em; font-weight: 500; margin-top: 0.4em;"}
+::: {.eq-punch}
 Axioma de convexidade → representação Cobb-Douglas → TMS fechada → número.  \
 **Isso é microeconomia em uma conta.**
 :::
@@ -845,7 +872,7 @@ Consumo domiciliar e o que os dados revelam sobre preferências.
 
 ## POF / IBGE e a Lei de Engel
 
-::: {.eq-key style="font-size: 1.05em; font-weight: 600;"}
+::: {.eq-punch}
 Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 :::
 
@@ -863,7 +890,7 @@ Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 :::
 
 ::: {.fragment}
-::: {.eq-key style="font-size: 1.0em; font-weight: 600;"}
+::: {.eq-punch}
 Se o consumidor representativo existisse, essa tabela seria plana. Não é. **O que a planilha da Fazenda faz com isso?**
 :::
 :::
@@ -1076,26 +1103,11 @@ Coerente. Seria U = x^{2k} y^{5k}.
 
 ---
 
-## Síntese — se você sair com isto, a aula valeu
-
-::: {.fragment}
-1. **Preferência é o fato. Utilidade é o truque.** Axiomas (1)–(3) garantem que o truque funciona — continuidade é o axioma-chave da existência.
-:::
-
-::: {.fragment}
-2. **Portanto**, a TMS é ordinal — $\ln u$ e $u$ contam a mesma história. (Você usou isso no mini-exercício Cobb-Douglas.)
-:::
-
-::: {.fragment}
-3. **Por isso**, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com $\sigma$ regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.
-:::
-
----
-
-<!-- Decisão: mover Ganchos-monitoria para cá (pre-fechamento) em vez de deixar
-     no meio do Bloco 2 (onde quebrava o arco CD→Leontief→CES→QL). Aqui o aluno
-     já viu tudo, então os 4 ganchos funcionam como teaser do que o Alberto
-     aprofunda — cronograma comporta (Bl.4 tinha 50min pra 7 slides; agora 8). -->
+<!-- Decisão (Sprint E): Alberto-teaser ANTES da Síntese. O teaser funciona
+     como "aqui ficam abertos os fios" — é parte do que segue, não do que
+     fecha. A Síntese ganha peso de fechamento puro, sem concorrer atenção
+     com ganchos de monitoria. Ordem final: Consolidação 3.7 → Alberto →
+     Síntese → Obrigado → Ponte Aula 2. -->
 
 ## O que o Alberto vai aprofundar na monitoria 1
 
@@ -1135,6 +1147,22 @@ Monitoria 1 é opcional-mas-recomendada. É onde a tecnologia algébrica que usa
 
 ---
 
+## Síntese — se você sair com isto, a aula valeu
+
+::: {.fragment}
+1. **Preferência é o fato. Utilidade é o truque.** Axiomas (1)–(3) garantem que o truque funciona — continuidade é o axioma-chave da existência.
+:::
+
+::: {.fragment}
+2. **Portanto**, a TMS é ordinal — $\ln u$ e $u$ contam a mesma história. (Você usou isso no mini-exercício Cobb-Douglas.)
+:::
+
+::: {.fragment}
+3. **Por isso**, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com $\sigma$ regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.
+:::
+
+---
+
 ## Obrigado. {.title-slide}
 
 ::: {style="margin-top: 3em; text-align: center;"}
@@ -1168,7 +1196,7 @@ $$
 - Do problema dual (minimização de gasto dado $\bar{u}$) nasce a **função gasto** $e(\mathbf{p}, \bar{u})$ e a **demanda hicksiana**.
 - **Roy** e **Shephard** costuram as duas pontas — a pedagogia sênior da dualidade.
 
-::: {.eq-key style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.6em;"}
+::: {.eq-punch}
 Duas formas de $u$ representam a mesma preferência. Uma resolve o UMP em 3 linhas; outra em 20. **Qual? E por quê?**
 :::
 

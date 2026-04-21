@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-01_files/libs/revealjs/dist/theme/quarto-ed8e816736bde4f1cbb1ecf8cff3947f.css">
+  <link rel="stylesheet" href="aula-01_files/libs/revealjs/dist/theme/quarto-f7e969b06c24886ff9b4ca9e9a39b1f4.css">
   <link href="aula-01_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-01_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-01_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -287,7 +287,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <div class="bridge">
 <p>Hoje não mediremos utilidade. Mediremos <em>se faz sentido</em> falar em utilidade.</p>
 </div>
-<div class="eq-key" style="text-align: center; font-size: 1.15em; font-weight: 600; margin-top: 0.6em;">
+<div class="eq-punch">
 <p>A preferência é o fato. A utilidade é o truque.</p>
 </div>
 </section>
@@ -419,7 +419,7 @@ x^n = \left(1 - \tfrac{1}{n},\ 2\right) \longrightarrow x = (1,\ 2) \quad \text{
 <p>O conjunto <span class="math inline">\(\{z : y \succeq^L z\}\)</span> <strong>não é fechado</strong> em <span class="math inline">\(\mathbb{R}^2_+\)</span> — uma sequência inteiramente dentro dele converge para um ponto fora. Continuidade <strong>falha</strong>.</p>
 </div>
 <p><strong>Mecanismo.</strong> A fronteira entre “<span class="math inline">\(y\)</span> é preferido” e “<span class="math inline">\(x\)</span> é preferido” não é fechada — é aberta de um lado.</p>
-<div class="eq-key" style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.5em;">
+<div class="eq-punch">
 <p>Um <span class="math inline">\(\varepsilon\)</span> no bem 1 domina qualquer quantidade do bem 2.</p>
 </div>
 <div class="fragment bridge">
@@ -521,13 +521,13 @@ I(x_1) \;=\; \bigl(\, u(x_1, 0),\; u(x_1, 1) \,\bigr)
 </section>
 <section class="slide level2 center">
 <h2>Teorema da representação (Debreu)</h2>
-<div class="bridge">
-<p>Axiomas 1–3 dão <strong>existência</strong> de <span class="math inline">\(u\)</span>. Axiomas 4–5 dão <strong>regularidade útil</strong>.</p>
-</div>
 <div class="eq-key">
 <p><strong>Teorema.</strong> Se <span class="math inline">\(\succeq\)</span> em <span class="math inline">\(X \subseteq \mathbb{R}^n_+\)</span> é <strong>completa, transitiva e contínua</strong>, então existe <span class="math inline">\(u: X \to \mathbb{R}\)</span> <strong>contínua</strong> tal que <span class="math display">\[
 x \succeq y \iff u(x) \geq u(y).
 \]</span></p>
+</div>
+<div class="eq-punch">
+<p>Em uma frase: existe um truque que funciona — e a continuidade é o passe.</p>
 </div>
 <div class="fragment">
 <p><strong>O que o teorema diz — e o que não diz:</strong></p>
@@ -540,26 +540,38 @@ x \succeq y \iff u(x) \geq u(y).
 </section>
 <section class="slide level2 center">
 <h2>Ideia de prova (não é a prova)</h2>
-<p><strong>Construção heurística</strong> (na linha do J-R cap. 1):</p>
+<div class="bridge">
+<p>Axiomas 1–3 dão <strong>existência</strong> de <span class="math inline">\(u\)</span>. Axiomas 4–5 dão <strong>regularidade útil</strong>. A prova completa de Debreu (1954) vive em J-R §1.2 — duas páginas de topologia bem-comportada.</p>
+</div>
+<p><strong>Para a aula de hoje, o que importa:</strong> a construção heurística que mostra <em>por que</em> a continuidade é o axioma-chave — não os detalhes topológicos.</p>
+<div class="fragment">
+<p><strong>Heurística rápida.</strong> Raio unitário no ortante, indiferença com o ponto, topologia herdada. Continuidade de <span class="math inline">\(\succeq\)</span> garante que o mapa preferência → utilidade é contínuo. Monotonicidade aqui é muleta didática (a prova genuína dispensa).</p>
+</div>
+<aside class="notes">
+<p>RESOLUÇÃO COMPLETA — fallback se algum aluno pedir detalhe em aula.</p>
+<p>Construção heurística (na linha do J-R cap. 1):</p>
 <ol type="1">
-<li>Pegue um raio no ortante positivo — “pacote de referência” <span class="math inline">\(\bar{x}(t) = t \cdot \mathbf{1}\)</span> para <span class="math inline">\(t \geq 0\)</span>. <em>Usamos monotonicidade aqui como muleta didática; a prova de Debreu genuína dispensa (conjuntos de nível + separação).</em></li>
-<li>Para cada <span class="math inline">\(x \in X\)</span>, defina <span class="math inline">\(u(x) = t^*(x)\)</span> tal que <span class="math inline">\(x \sim \bar{x}(t^*(x))\)</span>.</li>
-<li>Continuidade de <span class="math inline">\(\succeq\)</span> garante que <span class="math inline">\(t^*(x)\)</span> existe e é único.</li>
-<li>Continuidade de <span class="math inline">\(u\)</span> sai da continuidade de <span class="math inline">\(\succeq\)</span> via argumento topológico.</li>
+<li><p>Pegue um raio no ortante positivo — “pacote de referência” {x}(t) = t · 1 para t ≥ 0. Usamos monotonicidade aqui como muleta didática; a prova de Debreu genuína dispensa (conjuntos de nível + separação topológica).</p></li>
+<li><p>Para cada x ∈ X, defina u(x) = t<em>(x) tal que x ~ {x}(t</em>(x)). Ou seja, u(x) é o “escalar ao longo do raio” que é indiferente a x.</p></li>
+<li><p>Continuidade de ≽ garante que t*(x) existe e é único:</p>
+<ul>
+<li>Existência: conjuntos superior e inferior são fechados, e o raio atravessa X; intersecção não vazia por conexidade.</li>
+<li>Unicidade: monotonicidade estrita ao longo do raio elimina empates.</li>
+</ul></li>
+<li><p>Continuidade de u sai da continuidade de ≽ via argumento topológico: pré-imagem de aberto é aberta (porque os conjuntos {x : x ≻ y} e {x : y ≻ x} são abertos por continuidade).</p></li>
 </ol>
-<div class="callout callout-note callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Nota</strong></p>
-</div>
-<div class="callout-content">
-<p>Prova completa no J-R §1.2. O ponto hoje é <em>por que</em> continuidade é o axioma-chave.</p>
-</div>
-</div>
-</div>
+<p>Prova completa no Jehle &amp; Reny §1.2 — duas páginas, notação limpa. O ponto hoje é POR QUE continuidade é o axioma-chave: sem ela, o mapa t*(·) pode “pular” (como na lexicográfica) e u não pode ser contínua — ou sequer existir.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Ordinalidade vs.&nbsp;cardinalidade</h2>
@@ -625,7 +637,7 @@ x \succeq y \iff u(x) \geq u(y).
 </section>
 <section class="slide level2 center">
 <h2>Ponte para o Bloco 2</h2>
-<div class="eq-key" style="text-align: center; font-size: 1.15em; font-weight: 600;">
+<div class="eq-punch">
 <p>Existe <span class="math inline">\(u\)</span>. Mas <strong>qual</strong> <span class="math inline">\(u\)</span> serve para <strong>qual</strong> história?</p>
 </div>
 <p>Sabemos <strong>que</strong> <span class="math inline">\(u\)</span> existe. Sabemos <strong>que</strong> é única a menos de transformação monótona.</p>
@@ -651,8 +663,8 @@ x \succeq y \iff u(x) \geq u(y).
 </section>
 <section class="slide level2 section-divider center" data-background-color="#C8102E">
 <h2>Bloco 2 — TMS em formas funcionais</h2>
-<div style="color: white; font-size: 1.25em; font-style: italic; font-weight: 500; margin-top: 0.6em; opacity: 0.95;">
-<p>“A preferência é o fato. A utilidade é o truque.”</p>
+<div class="eq-punch" style="margin-top: 0.8em;">
+<p>A preferência é o fato. A utilidade é o truque.</p>
 </div>
 <div style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;">
 <p>40 min · 20:35–21:15</p>
@@ -913,7 +925,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p><strong>Leitura:</strong> na margem, o consumidor está disposto a trocar 1,5 unidade de <span class="math inline">\(x_2\)</span> por 1 unidade adicional de <span class="math inline">\(x_1\)</span>. Decrescente em <span class="math inline">\(x_1\)</span>, crescente em <span class="math inline">\(x_2\)</span> — convexidade estrita em ação.</p>
 </div>
 <div class="fragment">
-<div class="eq-key" style="text-align: center; font-size: 1.0em; font-weight: 500; margin-top: 0.4em;">
+<div class="eq-punch">
 <p>Axioma de convexidade → representação Cobb-Douglas → TMS fechada → número.<br>
 <strong>Isso é microeconomia em uma conta.</strong></p>
 </div>
@@ -939,7 +951,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </section>
 <section class="slide level2 center">
 <h2>POF / IBGE e a Lei de Engel</h2>
-<div class="eq-key" style="font-size: 1.05em; font-weight: 600;">
+<div class="eq-punch">
 <p>Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.</p>
 </div>
 <p><strong>Lei de Engel (1857):</strong> alimentação é bem <strong>necessário</strong> (<span class="math inline">\(\eta &lt; 1\)</span>) → participação no orçamento <strong>cai</strong> com a renda. <strong>Luxo</strong> (<span class="math inline">\(\eta &gt; 1\)</span>) faz o oposto.</p>
@@ -983,7 +995,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p><span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. Ver ZaE §3.6.6, Box Brasil 3.2.</span></p>
 </div>
 <div class="fragment">
-<div class="eq-key" style="font-size: 1.0em; font-weight: 600;">
+<div class="eq-punch">
 <p>Se o consumidor representativo existisse, essa tabela seria plana. Não é. <strong>O que a planilha da Fazenda faz com isso?</strong></p>
 </div>
 </div>
@@ -1169,29 +1181,12 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Síntese — se você sair com isto, a aula valeu</h2>
-<div class="fragment">
-<ol type="1">
-<li><strong>Preferência é o fato. Utilidade é o truque.</strong> Axiomas (1)–(3) garantem que o truque funciona — continuidade é o axioma-chave da existência.</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="2" type="1">
-<li><strong>Portanto</strong>, a TMS é ordinal — <span class="math inline">\(\ln u\)</span> e <span class="math inline">\(u\)</span> contam a mesma história. (Você usou isso no mini-exercício Cobb-Douglas.)</li>
-</ol>
-</div>
-<div class="fragment">
-<ol start="3" type="1">
-<li><strong>Por isso</strong>, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com <span class="math inline">\(\sigma\)</span> regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.</li>
-</ol>
-</div>
-</section>
-<section class="slide level2 center">
 
-<!-- Decisão: mover Ganchos-monitoria para cá (pre-fechamento) em vez de deixar
-     no meio do Bloco 2 (onde quebrava o arco CD→Leontief→CES→QL). Aqui o aluno
-     já viu tudo, então os 4 ganchos funcionam como teaser do que o Alberto
-     aprofunda — cronograma comporta (Bl.4 tinha 50min pra 7 slides; agora 8). -->
+<!-- Decisão (Sprint E): Alberto-teaser ANTES da Síntese. O teaser funciona
+     como "aqui ficam abertos os fios" — é parte do que segue, não do que
+     fecha. A Síntese ganha peso de fechamento puro, sem concorrer atenção
+     com ganchos de monitoria. Ordem final: Consolidação 3.7 → Alberto →
+     Síntese → Obrigado → Ponte Aula 2. -->
 </section>
 <section class="slide level2 center">
 <h2>O que o Alberto vai aprofundar na monitoria 1</h2>
@@ -1221,6 +1216,24 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p>Monitoria 1 é opcional-mas-recomendada. É onde a tecnologia algébrica que usamos hoje fica no corpo.</p>
 </div>
 </section>
+<section class="slide level2 center">
+<h2>Síntese — se você sair com isto, a aula valeu</h2>
+<div class="fragment">
+<ol type="1">
+<li><strong>Preferência é o fato. Utilidade é o truque.</strong> Axiomas (1)–(3) garantem que o truque funciona — continuidade é o axioma-chave da existência.</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="2" type="1">
+<li><strong>Portanto</strong>, a TMS é ordinal — <span class="math inline">\(\ln u\)</span> e <span class="math inline">\(u\)</span> contam a mesma história. (Você usou isso no mini-exercício Cobb-Douglas.)</li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><strong>Por isso</strong>, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com <span class="math inline">\(\sigma\)</span> regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.</li>
+</ol>
+</div>
+</section>
 <section class="slide level2 title-slide center">
 <h2>Obrigado.</h2>
 <div style="margin-top: 3em; text-align: center;">
@@ -1246,7 +1259,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <li>Do problema dual (minimização de gasto dado <span class="math inline">\(\bar{u}\)</span>) nasce a <strong>função gasto</strong> <span class="math inline">\(e(\mathbf{p}, \bar{u})\)</span> e a <strong>demanda hicksiana</strong>.</li>
 <li><strong>Roy</strong> e <strong>Shephard</strong> costuram as duas pontas — a pedagogia sênior da dualidade.</li>
 </ul>
-<div class="eq-key" style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.6em;">
+<div class="eq-punch">
 <p>Duas formas de <span class="math inline">\(u\)</span> representam a mesma preferência. Uma resolve o UMP em 3 linhas; outra em 20. <strong>Qual? E por quê?</strong></p>
 </div>
 <div style="font-size: 0.72em; color: #2A2F36; margin-top: 0.8em; text-align: center; font-style: italic;">
