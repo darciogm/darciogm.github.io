@@ -245,10 +245,10 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     </div>
     <div class="admin-card" style="border-color:var(--danger)">
       <h3 style="color:var(--danger)">Zona de perigo</h3>
-      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os dados de tracking?')){MicroTracker.clearAll();location.reload();}">
+      <button class="btn-export btn-danger" onclick="askClearTracking()">
         &#128465; Limpar dados de tracking
       </button>
-      <button class="btn-export btn-danger" onclick="if(confirm('Apagar TODOS os usuários?')){localStorage.removeItem('mpe_microI_users');location.reload();}">
+      <button class="btn-export btn-danger" onclick="askClearUsers()">
         &#128465; Limpar usuários
       </button>
     </div>
@@ -865,15 +865,37 @@ document.getElementById('students-csv').addEventListener('change', function(e) {
   var reader = new FileReader();
   reader.onload = function(ev) {
     var n = MicroAuth.importStudents(ev.target.result);
-    alert(n + ' alunos importados.');
+    MpeToast.success(n + ' alunos importados.');
     renderAdmin();
   };
   reader.readAsText(file);
 });
 function loadDemo() {
   var n = MicroAuth.loadDemoStudents();
-  alert(n + ' alunos demo cadastrados.');
+  MpeToast.success(n + ' alunos demo cadastrados.');
   renderAdmin();
+}
+
+// Zona de perigo — confirmação dupla com checkbox
+async function askClearTracking() {
+  var ok = await MpeConfirm.ask({
+    title: 'Apagar TODOS os dados de tracking?',
+    body: 'Esta ação remove todos os registros locais de page_visits, quizzes, reflexões e micro-attempts armazenados no navegador. Não afeta o Supabase. Ação irreversível.',
+    requireCheckbox: 'Tenho certeza — quero apagar os dados de tracking locais.',
+    confirmLabel: 'Apagar tracking',
+    danger: true
+  });
+  if (ok) { MicroTracker.clearAll(); location.reload(); }
+}
+async function askClearUsers() {
+  var ok = await MpeConfirm.ask({
+    title: 'Apagar TODOS os usuários?',
+    body: 'Esta ação remove o cache local de usuários (mpe_microI_users) do navegador. Não afeta o Supabase Auth nem a tabela profiles. Ação irreversível localmente.',
+    requireCheckbox: 'Tenho certeza — quero limpar o cache local de usuários.',
+    confirmLabel: 'Apagar usuários',
+    danger: true
+  });
+  if (ok) { localStorage.removeItem('mpe_microI_users'); location.reload(); }
 }
 
 renderAdmin();

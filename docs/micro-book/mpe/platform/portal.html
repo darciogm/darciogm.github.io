@@ -228,7 +228,15 @@ async function submitPasswordChange() {
   btn.disabled = true; btn.textContent = 'Salvando...';
   document.getElementById('pwd-error').style.display = 'none';
 
-  var res = await window.MpeDB.changePassword(nova);
+  // Timeout defensivo: se Supabase nao responder em 30s, reabilita botao e
+  // permite re-submit. Evita "botao disabled forever" quando a rede cai a
+  // meio da requisicao.
+  var TIMEOUT_MS = 30000;
+  var timeoutErr = { ok:false, error:{ message:'tempo esgotado (30s) — verifique sua conexao e tente novamente' }, __timeout:true };
+  var res = await Promise.race([
+    window.MpeDB.changePassword(nova),
+    new Promise(function(r){ setTimeout(function(){ r(timeoutErr); }, TIMEOUT_MS); })
+  ]);
   if (!res.ok) {
     showPwdError('Erro ao atualizar senha: ' + ((res.error && res.error.message) || 'tente novamente.'));
     btn.disabled = false; btn.textContent = 'Salvar nova senha';
@@ -267,7 +275,7 @@ async function acceptLGPD() {
   btn.disabled = true; btn.textContent = 'Registrando...';
   var res = await window.MpeDB.recordConsent();
   if (!res.ok) {
-    alert('Erro ao registrar consentimento. Tente novamente ou recarregue a página.');
+    MpeToast.error('Erro ao registrar consentimento. Tente novamente ou recarregue a página.');
     btn.disabled = false; btn.textContent = 'Aceito — entrar na plataforma';
     return;
   }
@@ -280,12 +288,12 @@ async function acceptLGPD() {
 
 async function downloadMyData() {
   if (!window.MpeDB || !window.MpeDB.enabled) {
-    alert('Download disponível apenas com sistema online.');
+    MpeToast.warn('Download disponível apenas com sistema online.');
     return;
   }
   var res = await window.MpeDB.fetchMyDataAll();
   if (!res.ok) {
-    alert('Erro ao buscar dados: ' + (res.error && res.error.message || res.error));
+    MpeToast.error('Erro ao buscar dados: ' + (res.error && res.error.message || res.error));
     return;
   }
   var blob = new Blob([JSON.stringify(res.data, null, 2)], {type:'application/json'});

@@ -819,4 +819,120 @@
     }
   };
 
+  // ==================== TOAST (UX replacement para alert/confirm) ====================
+  // Uso: MpeToast.show('mensagem', 'error' | 'success' | 'info' | 'warn', durationMs?)
+  // Aparece top-right, auto-some apos 4s por default. X fecha antes.
+  // Pensado para ser drop-in replacement de alert() em fluxos client-side.
+  var _toastRoot = null;
+  function _ensureToastRoot() {
+    if (_toastRoot && document.body.contains(_toastRoot)) return _toastRoot;
+    _toastRoot = document.createElement('div');
+    _toastRoot.className = 'mpe-toast-root';
+    _toastRoot.style.cssText = 'position:fixed;top:0;right:0;z-index:9999;pointer-events:none';
+    document.body.appendChild(_toastRoot);
+    return _toastRoot;
+  }
+
+  window.MpeToast = {
+    show: function(msg, type, durationMs) {
+      type = type || 'info';
+      durationMs = (typeof durationMs === 'number') ? durationMs : 4000;
+      var root = _ensureToastRoot();
+      var el = document.createElement('div');
+      el.className = 'mpe-toast type-' + type;
+      var close = document.createElement('span');
+      close.className = 'close';
+      close.textContent = '×';
+      close.setAttribute('aria-label', 'Fechar');
+      var text = document.createElement('span');
+      text.textContent = msg; // textContent, nao innerHTML — evita XSS por mensagem dinamica
+      el.appendChild(close);
+      el.appendChild(text);
+      root.appendChild(el);
+      // Forca reflow para animacao entrar
+      void el.offsetWidth;
+      el.classList.add('show');
+      var hideTimer = setTimeout(hide, durationMs);
+      function hide() {
+        clearTimeout(hideTimer);
+        el.classList.remove('show');
+        setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 300);
+      }
+      close.addEventListener('click', hide);
+      return { hide: hide };
+    },
+    error:   function(m, d){ return this.show(m, 'error', d); },
+    success: function(m, d){ return this.show(m, 'success', d); },
+    info:    function(m, d){ return this.show(m, 'info', d); },
+    warn:    function(m, d){ return this.show(m, 'warn', d); }
+  };
+
+  // ==================== CONFIRM DIALOG (substitui confirm() bloqueante) ====================
+  // Uso async:
+  //   var ok = await MpeConfirm.ask({title, body, confirmLabel, danger: true, requireCheckbox: 'Tenho certeza...'});
+  //   if (ok) { ... }
+  // Modal com overlay, foco no Cancelar por padrão. Se requireCheckbox string,
+  // botão Confirmar nasce disabled e só libera após checkbox marcada.
+  window.MpeConfirm = {
+    ask: function(opts) {
+      opts = opts || {};
+      return new Promise(function(resolve) {
+        var overlay = document.createElement('div');
+        overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;z-index:10000';
+        var modal = document.createElement('div');
+        modal.style.cssText = 'background:#fff;border-radius:10px;max-width:440px;width:calc(100% - 2rem);padding:1.2rem 1.3rem;box-shadow:0 20px 60px rgba(0,0,0,0.25);font-size:0.9rem;line-height:1.5';
+        var h = document.createElement('h3');
+        h.textContent = opts.title || 'Confirmar';
+        h.style.cssText = 'margin:0 0 0.7rem 0;font-size:1rem;color:' + (opts.danger ? '#822727' : 'var(--primary)');
+        modal.appendChild(h);
+        var body = document.createElement('div');
+        body.textContent = opts.body || 'Tem certeza?';
+        body.style.cssText = 'margin-bottom:1rem;color:#2D3748';
+        modal.appendChild(body);
+
+        var checkboxOk = !opts.requireCheckbox;
+        if (opts.requireCheckbox) {
+          var chkWrap = document.createElement('label');
+          chkWrap.style.cssText = 'display:flex;gap:0.5rem;align-items:flex-start;margin-bottom:1rem;font-size:0.82rem;color:#4A5568';
+          var chk = document.createElement('input');
+          chk.type = 'checkbox';
+          chk.style.marginTop = '0.2rem';
+          var chkLabel = document.createElement('span');
+          chkLabel.textContent = opts.requireCheckbox;
+          chkWrap.appendChild(chk);
+          chkWrap.appendChild(chkLabel);
+          modal.appendChild(chkWrap);
+          chk.addEventListener('change', function() {
+            checkboxOk = chk.checked;
+            confirmBtn.disabled = !checkboxOk;
+          });
+        }
+
+        var row = document.createElement('div');
+        row.style.cssText = 'display:flex;gap:0.6rem;justify-content:flex-end';
+        var cancelBtn = document.createElement('button');
+        cancelBtn.textContent = opts.cancelLabel || 'Cancelar';
+        cancelBtn.style.cssText = 'padding:0.5rem 0.9rem;border:1px solid var(--border);background:#fff;border-radius:6px;cursor:pointer;font-weight:600';
+        var confirmBtn = document.createElement('button');
+        confirmBtn.textContent = opts.confirmLabel || 'Confirmar';
+        confirmBtn.style.cssText = 'padding:0.5rem 0.9rem;border:none;border-radius:6px;cursor:pointer;font-weight:600;color:#fff;background:' + (opts.danger ? 'var(--danger)' : 'var(--accent)');
+        if (!checkboxOk) confirmBtn.disabled = true;
+        row.appendChild(cancelBtn);
+        row.appendChild(confirmBtn);
+        modal.appendChild(row);
+        overlay.appendChild(modal);
+        document.body.appendChild(overlay);
+        cancelBtn.focus();
+
+        function close(result) {
+          if (overlay.parentNode) overlay.parentNode.removeChild(overlay);
+          resolve(result);
+        }
+        cancelBtn.addEventListener('click', function(){ close(false); });
+        confirmBtn.addEventListener('click', function(){ if (!confirmBtn.disabled) close(true); });
+        overlay.addEventListener('click', function(e){ if (e.target === overlay) close(false); });
+      });
+    }
+  };
+
 })();

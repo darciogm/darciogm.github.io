@@ -83,10 +83,11 @@ async function doLogin() {
 async function doForgotPassword() {
   if (!SB_AUTH) { showError('Esqueci-minha-senha só disponível após migração do sistema.'); return; }
   var id = document.getElementById('login-id').value.trim();
-  if (!id || id.indexOf('@') < 0) { showError('Digite seu email no campo acima e clique "Esqueci minha senha" de novo.'); return; }
+  if (!id) { showError('Informe seu email no campo "Email" acima antes de clicar em "Esqueci minha senha".'); document.getElementById('login-id').focus(); return; }
+  if (id.indexOf('@') < 0) { showError('O valor informado não parece ser um email válido. Verifique e tente novamente.'); document.getElementById('login-id').focus(); return; }
   var r = await MicroAuth.resetPassword(id);
-  if (r.ok) showSuccess('Link de redefinição enviado para ' + id + '. Verifique seu email.');
-  else showError(r.msg || 'Erro ao enviar link.');
+  if (r.ok) showSuccess('Link de redefinição enviado para ' + id + '. Verifique sua caixa de entrada (e spam).');
+  else showError(r.msg || 'Erro ao enviar link. Tente novamente em alguns instantes.');
 }
 
 // Enter key
