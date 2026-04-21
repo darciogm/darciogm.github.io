@@ -89,7 +89,13 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 
   <!-- STATS -->
   <div class="admin-card">
-    <h3>Visão geral da turma</h3>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.5rem">
+      <h3 style="margin:0">Visão geral da turma</h3>
+      <div style="display:flex;gap:0.5rem;align-items:center">
+        <span id="data-source-badge" style="font-size:0.72rem;padding:0.2rem 0.6rem;border-radius:10px;background:#eee;color:#666">carregando…</span>
+        <button id="refresh-btn" onclick="renderAdmin()" class="btn-export" style="background:var(--accent);color:#fff;margin:0">↻ Atualizar</button>
+      </div>
+    </div>
     <div class="stat-row" id="admin-stats"></div>
   </div>
 
@@ -199,6 +205,12 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
           <h4>Top alunos por tempo efetivo</h4>
           <div class="metric-desc">Alunos que mais dedicaram tempo à plataforma (sessão ativa, não aba aberta).</div>
           <div id="m-top-time" style="font-size:0.8rem"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Reflexões recentes da turma</h4>
+          <div class="metric-desc">Respostas abertas da seção 8 de cada pré-aula. Alimenta diretamente o Bloco 0 da aula presencial. Mostra as 15 mais recentes.</div>
+          <div id="m-reflections" style="max-height:400px;overflow-y:auto"></div>
         </div>
       </div>
     </div>
@@ -406,10 +418,143 @@ function daysSinceLastActivity(studentData) {
 
 // ============ RENDER ============
 
-function renderAdmin() {
-  var summary = MicroTracker.getSummary();
-  var data = MicroTracker.getData();
-  var users = MicroAuth.getUsers();
+// ============ DATA SOURCE ADAPTER ============
+// Transforma dados "flat" do Supabase no shape que renderAdmin espera
+// (o mesmo de MicroTracker.getData/getSummary/MicroAuth.getUsers no legacy).
+
+function _tx(supabaseData) {
+  var d = supabaseData;
+  var byId = {}, data = {}, users = {};
+  d.profiles.forEach(function(p) {
+    byId[p.id] = p.matricula;
+    users[p.matricula] = { nome: p.nome, senha: '', createdAt: p.created_at, email: p.email, role: p.role };
+    data[p.matricula] = { nome: p.nome, pages: {}, quizzes: {}, sections: {}, paperExercises: {}, reflections: {} };
+  });
+
+  d.pageVisits.forEach(function(pv) {
+    var mat = byId[pv.user_id]; if (!mat) return;
+    data[mat].pages[pv.page_id] = {
+      visits: pv.visits,
+      totalTime: pv.total_time_ms,
+      firstVisit: pv.first_visit_at,
+      lastVisit: pv.last_visit_at
+    };
+  });
+
+  d.quizAggregates.forEach(function(qa) {
+    var mat = byId[qa.user_id]; if (!mat) return;
+    data[mat].quizzes[qa.page_id] = {
+      attempts: qa.attempts,
+      bestScore: qa.best_score,
+      lastAttempt: qa.last_attempt_at,
+      submittedAt: qa.submitted_at,
+      questions: {}
+    };
+  });
+
+  d.quizQA.forEach(function(q) {
+    var mat = byId[q.user_id]; if (!mat) return;
+    if (!data[mat].quizzes[q.page_id]) data[mat].quizzes[q.page_id] = { attempts: 0, bestScore: 0, questions: {} };
+    var quiz = data[mat].quizzes[q.page_id];
+    if (!quiz.questions[q.question_id]) quiz.questions[q.question_id] = { attempts: [], correct: false };
+    quiz.questions[q.question_id].attempts.push({ answer: q.answer, correct: q.correct, timestamp: q.answered_at });
+    if (q.correct) quiz.questions[q.question_id].correct = true;
+  });
+
+  d.sectionProgress.forEach(function(sp) {
+    var mat = byId[sp.user_id]; if (!mat) return;
+    if (!data[mat].sections[sp.page_id]) data[mat].sections[sp.page_id] = {};
+    var sec = data[mat].sections[sp.page_id][sp.section_id] || {};
+    sec.startedAt = sp.started_at;
+    sec.completedAt = sp.completed_at;
+    data[mat].sections[sp.page_id][sp.section_id] = sec;
+  });
+
+  d.confidence.forEach(function(c) {
+    var mat = byId[c.user_id]; if (!mat) return;
+    if (!data[mat].sections[c.page_id]) data[mat].sections[c.page_id] = {};
+    if (!data[mat].sections[c.page_id][c.section_id]) data[mat].sections[c.page_id][c.section_id] = {};
+    var sec = data[mat].sections[c.page_id][c.section_id];
+    if (c.phase === 'pre') sec.confidencePre = { value: c.value, at: c.recorded_at };
+    else sec.confidencePost = { value: c.value, at: c.recorded_at };
+  });
+
+  d.microAttempts.forEach(function(ma) {
+    var mat = byId[ma.user_id]; if (!mat) return;
+    if (!data[mat].sections[ma.page_id]) data[mat].sections[ma.page_id] = {};
+    if (!data[mat].sections[ma.page_id][ma.section_id]) data[mat].sections[ma.page_id][ma.section_id] = {};
+    var sec = data[mat].sections[ma.page_id][ma.section_id];
+    if (!sec.microCheckpoint) sec.microCheckpoint = {};
+    if (!sec.microCheckpoint[ma.question_id]) sec.microCheckpoint[ma.question_id] = { attempts: [], correct: false };
+    sec.microCheckpoint[ma.question_id].attempts.push({ answer: ma.answer, correct: ma.correct, timestamp: ma.answered_at });
+    if (ma.correct) sec.microCheckpoint[ma.question_id].correct = true;
+  });
+
+  d.paperExercises.forEach(function(pe) {
+    var mat = byId[pe.user_id]; if (!mat) return;
+    if (!data[mat].paperExercises[pe.page_id]) data[mat].paperExercises[pe.page_id] = {};
+    data[mat].paperExercises[pe.page_id][pe.exercise_id] = {
+      completed: true, approach: pe.approach, completedAt: pe.completed_at
+    };
+  });
+
+  d.reflections.forEach(function(r) {
+    var mat = byId[r.user_id]; if (!mat) return;
+    if (!data[mat].reflections[r.page_id]) data[mat].reflections[r.page_id] = {};
+    data[mat].reflections[r.page_id][r.prompt_id] = {
+      text: r.text, submittedAt: r.submitted_at,
+      _nome: data[mat].nome, _matricula: mat  // helpers para render de reflexoes
+    };
+  });
+
+  // Build summary (same shape as MicroTracker.getSummary)
+  var summary = [];
+  Object.keys(data).forEach(function(mat) {
+    var s = data[mat];
+    var pagesVisited = Object.keys(s.pages).filter(function(p){return (s.pages[p].visits||0) > 0}).length;
+    var totalVisits = Object.values(s.pages).reduce(function(a,p){return a + (p.visits||0)}, 0);
+    var totalTime = Object.values(s.pages).reduce(function(a,p){return a + (p.totalTime||0)}, 0);
+    var quizScores = Object.values(s.quizzes).filter(function(q){return (q.attempts||0) > 0}).map(function(q){return q.bestScore||0});
+    summary.push({
+      matricula: mat,
+      nome: s.nome,
+      pagesVisited: pagesVisited,
+      totalVisits: totalVisits,
+      totalTimeMin: Math.round(totalTime / 60000),
+      quizzesCompleted: quizScores.length,
+      avgQuizScore: quizScores.length > 0 ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) : 0
+    });
+  });
+
+  return { data: data, summary: summary, users: users, raw: d };
+}
+
+async function _loadAdminData() {
+  var badge = document.getElementById('data-source-badge');
+  if (window.MpeDB && window.MpeDB.enabled) {
+    badge.textContent = 'buscando…';
+    var res = await window.MpeDB.adminFetchAll();
+    if (res.ok) {
+      badge.textContent = 'Supabase · ' + res.data.profiles.length + ' alunos';
+      badge.style.background = '#D1FAE5'; badge.style.color = '#065F46';
+      return _tx(res.data);
+    }
+    badge.textContent = 'Supabase falhou — usando localStorage';
+    badge.style.background = '#FED7D7'; badge.style.color = '#7A1F1F';
+    console.error('[admin] adminFetchAll falhou:', res.error);
+  } else {
+    badge.textContent = 'localStorage (Supabase off)';
+    badge.style.background = '#FEF3C7'; badge.style.color = '#92400E';
+  }
+  return { data: MicroTracker.getData(), summary: MicroTracker.getSummary(), users: MicroAuth.getUsers(), raw: null };
+}
+
+async function renderAdmin() {
+  var loaded = await _loadAdminData();
+  var summary = loaded.summary;
+  var data = loaded.data;
+  var users = loaded.users;
+  var raw = loaded.raw;
   var totalStudents = Object.keys(users).filter(function(m){return m.toLowerCase().indexOf('prof')!==0}).length;
   var activeStudents = summary.filter(function(s){return s.matricula.toLowerCase().indexOf('prof')!==0}).length;
   var totalItems = TOTAL_AULAS + TOTAL_MONITORIAS;
@@ -646,8 +791,39 @@ function renderAdmin() {
   });
   document.getElementById('m-top-time').innerHTML = ttHtml || '<div style="color:var(--text-muted)">—</div>';
 
+  // 7) Reflexoes recentes da turma
+  var reflHtml = '';
+  if (raw && raw.reflections && raw.reflections.length > 0) {
+    var names = {};
+    Object.keys(users).forEach(function(m) { names[users[m].nome] = m; });
+    // raw.reflections ja vem ordenado por submitted_at DESC
+    var recent = raw.reflections.slice(0, 15);
+    recent.forEach(function(r) {
+      // Lookup nome/matricula via profiles
+      var matricula = '—', nome = '—';
+      Object.keys(data).forEach(function(m) {
+        if (raw.profiles.find(function(p){return p.matricula === m && p.id === r.user_id})) {
+          matricula = m; nome = data[m].nome;
+        }
+      });
+      var label = r.prompt_id === 'nebulosa' ? '❓ Nebulosa' : (r.prompt_id === 'aula' ? '💭 Quer em aula' : r.prompt_id);
+      var when = r.submitted_at ? r.submitted_at.substring(0,16).replace('T',' ') : '';
+      reflHtml += '<div style="padding:0.7rem;border-left:3px solid var(--accent);background:#FAFAF8;margin-bottom:0.5rem;border-radius:4px">'
+        + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.3rem"><strong>'+nome+'</strong> · '+matricula+' · '+r.page_id+' · '+label+' · '+when+'</div>'
+        + '<div style="font-size:0.85rem">'+r.text.replace(/</g,'&lt;')+'</div>'
+        + '</div>';
+    });
+  } else if (raw) {
+    reflHtml = '<div style="color:var(--text-muted);font-size:0.82rem">Nenhuma reflexão submetida ainda.</div>';
+  } else {
+    reflHtml = '<div style="color:var(--text-muted);font-size:0.82rem">Reflexões só ficam visíveis com Supabase ativo.</div>';
+  }
+  document.getElementById('m-reflections').innerHTML = reflHtml;
+
   // === JSON ===
-  document.getElementById('json-preview').textContent = MicroTracker.exportJSON();
+  document.getElementById('json-preview').textContent = raw
+    ? JSON.stringify({ alunos: raw.profiles.length, page_visits: raw.pageVisits.length, sections: raw.sectionProgress.length, reflections: raw.reflections.length }, null, 2)
+    : MicroTracker.exportJSON();
 }
 
 // Export functions

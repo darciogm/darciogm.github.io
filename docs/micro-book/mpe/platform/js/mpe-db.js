@@ -192,6 +192,43 @@
       return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
     },
 
+    // Busca TUDO em paralelo (9 tabelas). Retorna {ok, data:{...}, error}.
+    // Usado pelo dashboard admin para montar uma visao completa da turma.
+    adminFetchAll: async function() {
+      try {
+        var queries = await Promise.all([
+          client.from('profiles').select('*').order('nome'),
+          client.from('page_visits').select('*'),
+          client.from('section_progress').select('*'),
+          client.from('confidence_ratings').select('*'),
+          client.from('micro_attempts').select('*'),
+          client.from('quiz_aggregates').select('*'),
+          client.from('quiz_question_attempts').select('*'),
+          client.from('paper_exercises').select('*'),
+          client.from('reflections').select('*').order('submitted_at', { ascending: false })
+        ]);
+        for (var i = 0; i < queries.length; i++) {
+          if (queries[i].error) return { ok:false, error: queries[i].error };
+        }
+        return {
+          ok: true,
+          data: {
+            profiles:        queries[0].data || [],
+            pageVisits:      queries[1].data || [],
+            sectionProgress: queries[2].data || [],
+            confidence:      queries[3].data || [],
+            microAttempts:   queries[4].data || [],
+            quizAggregates:  queries[5].data || [],
+            quizQA:          queries[6].data || [],
+            paperExercises:  queries[7].data || [],
+            reflections:     queries[8].data || []
+          }
+        };
+      } catch(e) {
+        return { ok:false, error:e };
+      }
+    },
+
     // ==================== TEST (saude da conexao) ====================
 
     testConnection: async function() {
