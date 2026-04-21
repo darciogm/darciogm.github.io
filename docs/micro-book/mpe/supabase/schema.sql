@@ -37,6 +37,28 @@ AS $$
 $$;
 
 
+-- 2b. can_write_student_data() - gate de escrita para tabelas de tracking.
+-- Bloqueia INSERT/UPDATE em telemetria enquanto o aluno nao trocou a senha
+-- inicial. Admin tem escape hatch: sempre pode escrever, independente de
+-- password_changed_at (util para smoke test, backfill manual, etc).
+-- SECURITY DEFINER para ler profiles sem recair nas policies da propria
+-- profiles (evita recursao e permite leitura mesmo com RLS ativa).
+
+CREATE OR REPLACE FUNCTION public.can_write_student_data()
+RETURNS boolean
+LANGUAGE sql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT EXISTS (
+    SELECT 1 FROM public.profiles
+    WHERE id = auth.uid()
+      AND (password_changed_at IS NOT NULL OR role = 'admin')
+  );
+$$;
+
+
 -- 3. Trigger: ao criar conta em auth, cria profile automaticamente
 
 CREATE OR REPLACE FUNCTION public.handle_new_user()
@@ -241,8 +263,8 @@ BEGIN
     EXECUTE format('DROP POLICY IF EXISTS "%s_admin_select" ON public.%I', t, t);
 
     EXECUTE format('CREATE POLICY "%s_own_select" ON public.%I FOR SELECT USING (auth.uid() = user_id)', t, t);
-    EXECUTE format('CREATE POLICY "%s_own_insert" ON public.%I FOR INSERT WITH CHECK (auth.uid() = user_id)', t, t);
-    EXECUTE format('CREATE POLICY "%s_own_update" ON public.%I FOR UPDATE USING (auth.uid() = user_id) WITH CHECK (auth.uid() = user_id)', t, t);
+    EXECUTE format('CREATE POLICY "%s_own_insert" ON public.%I FOR INSERT WITH CHECK (auth.uid() = user_id AND public.can_write_student_data())', t, t);
+    EXECUTE format('CREATE POLICY "%s_own_update" ON public.%I FOR UPDATE USING (auth.uid() = user_id AND public.can_write_student_data()) WITH CHECK (auth.uid() = user_id AND public.can_write_student_data())', t, t);
     EXECUTE format('CREATE POLICY "%s_admin_select" ON public.%I FOR SELECT USING (public.is_admin())', t, t);
   END LOOP;
 END $$;
