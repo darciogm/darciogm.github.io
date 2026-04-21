@@ -428,19 +428,12 @@ x^n = \left(1 - \tfrac{1}{n},\ 2\right) \longrightarrow x = (1,\ 2) \quad \text{
 </section>
 <section class="slide level2 center">
 <h2>Preferências lexicográficas (5/5) · Não representabilidade</h2>
-<p><strong>Argumento de Debreu (1954) — intuição.</strong> Suponha, por absurdo, que existe <span class="math inline">\(u: \mathbb{R}^2_+ \to \mathbb{R}\)</span> representando <span class="math inline">\(\succeq^L\)</span>. Para cada <span class="math inline">\(x_1 \in \mathbb{R}_+\)</span>, o intervalo <span class="math display">\[
-I(x_1) \;=\; \bigl(\, u(x_1, 0),\; u(x_1, 1) \,\bigr)
-\]</span> é aberto e não-vazio (monotonicidade estrita de <span class="math inline">\(u(x_1, \cdot)\)</span>). Como <span class="math inline">\(x_1 \neq x_1'\)</span> ⇒ intervalos <span class="math inline">\(I(x_1)\)</span> e <span class="math inline">\(I(x_1')\)</span> são <strong>disjuntos</strong> (pela ordem lex), escolhemos um racional em cada intervalo.</p>
+<p><strong>Debreu (1954).</strong> Se existe <span class="math inline">\(u\)</span> representando <span class="math inline">\(\succeq^L\)</span>, para cada <span class="math inline">\(x_1\)</span> o intervalo <span class="math inline">\(I(x_1) = (u(x_1, 0),\, u(x_1, 1))\)</span> é aberto e não-vazio. Pela ordem lex, <span class="math inline">\(I(x_1)\)</span> e <span class="math inline">\(I(x_1')\)</span> são <strong>disjuntos</strong> quando <span class="math inline">\(x_1 \neq x_1'\)</span>. Um racional em cada.</p>
 <div class="eq-key">
 <p>Injeção <span class="math inline">\(\mathbb{R} \hookrightarrow \mathbb{Q}\)</span>: impossível (cardinalidades). <span class="math inline">\(\square\)</span></p>
 </div>
 <div class="fragment">
-<p><strong>Onde aparece no mundo real:</strong></p>
-<ul>
-<li><strong>Triagem médica (ABCDE):</strong> via aérea &gt; conforto, hierárquico.</li>
-<li><strong>Safety-first</strong> (Roy, 1952): minimize ruína, <em>depois</em> maximize retorno.</li>
-<li><strong>Covenants</strong> em dívida: obrigação contratual &gt; upside.</li>
-</ul>
+<p><strong>No mundo real:</strong> triagem médica ABCDE (via aérea &gt; conforto), <em>safety-first</em> de Roy (minimize ruína, depois maximize retorno), <em>covenants</em> de dívida (obrigação &gt; upside).</p>
 </div>
 <!-- layout: 3 opção (texto denso numa única tela, mas argumento linear e curto) -->
 </section>
@@ -530,11 +523,11 @@ x \succeq y \iff u(x) \geq u(y).
 <p>Em uma frase: existe um truque que funciona — e a continuidade é o passe.</p>
 </div>
 <div class="fragment">
-<p><strong>O que o teorema diz — e o que não diz:</strong></p>
+<p><strong>O que o teorema diz (e não diz):</strong></p>
 <ul>
-<li><strong>Existe</strong> representação. Qualquer transformação monótona crescente serve.</li>
-<li><strong>Nada</strong> sobre forma funcional (Cobb-Douglas, CES etc.) — vem de hipóteses <em>adicionais</em>.</li>
-<li><strong>Monotonicidade / convexidade</strong> não são necessárias para existência; dão regularidade útil.</li>
+<li><strong>Existe</strong> <span class="math inline">\(u\)</span>. Qualquer transformação monótona também serve.</li>
+<li><strong>Nada</strong> sobre forma funcional — CD, CES etc. vêm de hipóteses <em>adicionais</em>.</li>
+<li><strong>Monotonicidade / convexidade</strong> não são necessárias aqui; dão regularidade útil.</li>
 </ul>
 </div>
 </section>
@@ -914,15 +907,14 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <p>Teste a cadeia inteira em 30 segundos.</p>
 </div>
 <p><strong>Função:</strong> <span class="math inline">\(u(x_1, x_2) = x_1^{0.4}\, x_2^{0.6}\)</span>.<br>
-<strong>Ponto:</strong> <span class="math inline">\((x_1, x_2) = (4, 9)\)</span>.</p>
-<p><strong>Calcule <span class="math inline">\(\text{TMS}\)</span> no ponto.</strong></p>
+<strong>Ponto:</strong> <span class="math inline">\((4, 9)\)</span>. Calcule <span class="math inline">\(\text{TMS}\)</span>.</p>
 <div class="fragment">
 <p><span class="math display">\[
-\text{TMS} = \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{0.4}{0.6} \cdot \frac{9}{4} = \frac{2}{3} \cdot \frac{9}{4} = \frac{18}{12} = \boxed{1.5}.
+\text{TMS} = \tfrac{\alpha}{1-\alpha} \cdot \tfrac{x_2}{x_1} = \tfrac{0.4}{0.6} \cdot \tfrac{9}{4} = \boxed{1.5}.
 \]</span></p>
 </div>
 <div class="fragment">
-<p><strong>Leitura:</strong> na margem, o consumidor está disposto a trocar 1,5 unidade de <span class="math inline">\(x_2\)</span> por 1 unidade adicional de <span class="math inline">\(x_1\)</span>. Decrescente em <span class="math inline">\(x_1\)</span>, crescente em <span class="math inline">\(x_2\)</span> — convexidade estrita em ação.</p>
+<p><strong>Leitura:</strong> o consumidor troca, na margem, <strong>1,5 unidades de <span class="math inline">\(x_2\)</span> por 1 de <span class="math inline">\(x_1\)</span></strong>. Convexidade estrita em ação.</p>
 </div>
 <div class="fragment">
 <div class="eq-punch">
@@ -954,7 +946,7 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 <div class="eq-punch">
 <p>Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.</p>
 </div>
-<p><strong>Lei de Engel (1857):</strong> alimentação é bem <strong>necessário</strong> (<span class="math inline">\(\eta &lt; 1\)</span>) → participação no orçamento <strong>cai</strong> com a renda. <strong>Luxo</strong> (<span class="math inline">\(\eta &gt; 1\)</span>) faz o oposto.</p>
+<p><strong>Lei de Engel (1857):</strong> necessário (<span class="math inline">\(\eta &lt; 1\)</span>) → participação <strong>cai</strong> com renda; luxo (<span class="math inline">\(\eta &gt; 1\)</span>) faz o oposto.</p>
 <div class="fragment">
 <table class="caption-top">
 <thead>
@@ -992,15 +984,12 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </tr>
 </tbody>
 </table>
-<p><span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. Ver ZaE §3.6.6, Box Brasil 3.2.</span></p>
+<p><span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. ZaE §3.6.6.</span></p>
 </div>
 <div class="fragment">
 <div class="eq-punch">
-<p>Se o consumidor representativo existisse, essa tabela seria plana. Não é. <strong>O que a planilha da Fazenda faz com isso?</strong></p>
+<p>Se o consumidor representativo existisse, a tabela seria plana. Não é. <strong>O que a planilha da Fazenda faz com isso?</strong></p>
 </div>
-</div>
-<div class="fragment bridge">
-<p>Alimentação 22→7,6 pp (necessário). Educação 1,6→6,2 pp (luxo). Transporte não-monotônico: heterogeneidade sistemática, não “consumidor representativo”.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -1181,15 +1170,12 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </div>
 </section>
 <section class="slide level2 center">
-
+<h2>O que o Alberto vai aprofundar na monitoria 1</h2>
 <!-- Decisão (Sprint E): Alberto-teaser ANTES da Síntese. O teaser funciona
      como "aqui ficam abertos os fios" — é parte do que segue, não do que
      fecha. A Síntese ganha peso de fechamento puro, sem concorrer atenção
      com ganchos de monitoria. Ordem final: Consolidação 3.7 → Alberto →
      Síntese → Obrigado → Ponte Aula 2. -->
-</section>
-<section class="slide level2 center">
-<h2>O que o Alberto vai aprofundar na monitoria 1</h2>
 <div class="cols">
 <div>
 <p><strong>1. Cobb-Douglas como limite da CES</strong> <span class="math display">\[
@@ -1249,21 +1235,19 @@ u(x_1, x_2) = v(x_1) + x_2, \qquad v' &gt; 0,\ v'' &lt; 0.
 </section>
 <section class="slide level2 center">
 <h2>Ponte para a Aula 2</h2>
-<p>Sabemos: <span class="math inline">\(u\)</span> existe. Sabemos: TMS é ordinal.<br>
-<strong>Próximo passo — Aula 2 (29/04):</strong></p>
+<p><span class="math inline">\(u\)</span> existe. TMS é ordinal. <strong>Próximo passo — Aula 2 (29/04):</strong></p>
 <p><span class="math display">\[
 \max_{(x_1, x_2)} u(x_1, x_2) \quad\text{s.a.}\quad p_1 x_1 + p_2 x_2 = m.
 \]</span></p>
 <ul>
-<li>Nasce a <strong>demanda marshalliana</strong> <span class="math inline">\(x_i(\mathbf{p}, m)\)</span>.</li>
-<li>Do problema dual (minimização de gasto dado <span class="math inline">\(\bar{u}\)</span>) nasce a <strong>função gasto</strong> <span class="math inline">\(e(\mathbf{p}, \bar{u})\)</span> e a <strong>demanda hicksiana</strong>.</li>
-<li><strong>Roy</strong> e <strong>Shephard</strong> costuram as duas pontas — a pedagogia sênior da dualidade.</li>
+<li><strong>Marshalliana</strong> <span class="math inline">\(x_i(\mathbf{p}, m)\)</span> do problema direto; <strong>Hicksiana</strong> e <strong>função gasto</strong> <span class="math inline">\(e(\mathbf{p}, \bar{u})\)</span> do dual.</li>
+<li><strong>Roy</strong> e <strong>Shephard</strong> costuram as duas pontas.</li>
 </ul>
 <div class="eq-punch">
 <p>Duas formas de <span class="math inline">\(u\)</span> representam a mesma preferência. Uma resolve o UMP em 3 linhas; outra em 20. <strong>Qual? E por quê?</strong></p>
 </div>
 <div style="font-size: 0.72em; color: #2A2F36; margin-top: 0.8em; text-align: center; font-style: italic;">
-<p>Quiz pós-aula 1 e Pré-aula 2 liberados na plataforma em 23/04.</p>
+<p>Quiz pós-aula 1 e Pré-aula 2 liberados em 23/04.</p>
 </div>
 
 </section>

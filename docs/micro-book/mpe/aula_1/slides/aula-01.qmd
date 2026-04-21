@@ -331,22 +331,14 @@ Sem continuidade, a representação por utilidade falha. Vamos ver **por que** n
 
 ## Preferências lexicográficas (5/5) · Não representabilidade
 
-**Argumento de Debreu (1954) — intuição.** Suponha, por absurdo, que existe $u: \mathbb{R}^2_+ \to \mathbb{R}$ representando $\succeq^L$. Para cada $x_1 \in \mathbb{R}_+$, o intervalo
-$$
-I(x_1) \;=\; \bigl(\, u(x_1, 0),\; u(x_1, 1) \,\bigr)
-$$
-é aberto e não-vazio (monotonicidade estrita de $u(x_1, \cdot)$). Como $x_1 \neq x_1'$ ⇒ intervalos $I(x_1)$ e $I(x_1')$ são **disjuntos** (pela ordem lex), escolhemos um racional em cada intervalo.
+**Debreu (1954).** Se existe $u$ representando $\succeq^L$, para cada $x_1$ o intervalo $I(x_1) = (u(x_1, 0),\, u(x_1, 1))$ é aberto e não-vazio. Pela ordem lex, $I(x_1)$ e $I(x_1')$ são **disjuntos** quando $x_1 \neq x_1'$. Um racional em cada.
 
 ::: {.eq-key}
 Injeção $\mathbb{R} \hookrightarrow \mathbb{Q}$: impossível (cardinalidades). $\square$
 :::
 
 ::: {.fragment}
-**Onde aparece no mundo real:**
-
-- **Triagem médica (ABCDE):** via aérea > conforto, hierárquico.
-- **Safety-first** (Roy, 1952): minimize ruína, *depois* maximize retorno.
-- **Covenants** em dívida: obrigação contratual > upside.
+**No mundo real:** triagem médica ABCDE (via aérea > conforto), *safety-first* de Roy (minimize ruína, depois maximize retorno), *covenants* de dívida (obrigação > upside).
 :::
 
 <!-- layout: 3 opção (texto denso numa única tela, mas argumento linear e curto) -->
@@ -417,11 +409,11 @@ Em uma frase: existe um truque que funciona — e a continuidade é o passe.
 :::
 
 ::: {.fragment}
-**O que o teorema diz — e o que não diz:**
+**O que o teorema diz (e não diz):**
 
-- **Existe** representação. Qualquer transformação monótona crescente serve.
-- **Nada** sobre forma funcional (Cobb-Douglas, CES etc.) — vem de hipóteses *adicionais*.
-- **Monotonicidade / convexidade** não são necessárias para existência; dão regularidade útil.
+- **Existe** $u$. Qualquer transformação monótona também serve.
+- **Nada** sobre forma funcional — CD, CES etc. vêm de hipóteses *adicionais*.
+- **Monotonicidade / convexidade** não são necessárias aqui; dão regularidade útil.
 :::
 
 ---
@@ -823,18 +815,16 @@ Teste a cadeia inteira em 30 segundos.
 :::
 
 **Função:** $u(x_1, x_2) = x_1^{0.4}\, x_2^{0.6}$.  \
-**Ponto:** $(x_1, x_2) = (4, 9)$.
-
-**Calcule $\text{TMS}$ no ponto.**
+**Ponto:** $(4, 9)$. Calcule $\text{TMS}$.
 
 ::: {.fragment}
 $$
-\text{TMS} = \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{0.4}{0.6} \cdot \frac{9}{4} = \frac{2}{3} \cdot \frac{9}{4} = \frac{18}{12} = \boxed{1.5}.
+\text{TMS} = \tfrac{\alpha}{1-\alpha} \cdot \tfrac{x_2}{x_1} = \tfrac{0.4}{0.6} \cdot \tfrac{9}{4} = \boxed{1.5}.
 $$
 :::
 
 ::: {.fragment}
-**Leitura:** na margem, o consumidor está disposto a trocar 1,5 unidade de $x_2$ por 1 unidade adicional de $x_1$. Decrescente em $x_1$, crescente em $x_2$ — convexidade estrita em ação.
+**Leitura:** o consumidor troca, na margem, **1,5 unidades de $x_2$ por 1 de $x_1$**. Convexidade estrita em ação.
 :::
 
 ::: {.fragment}
@@ -876,7 +866,7 @@ Consumo domiciliar e o que os dados revelam sobre preferências.
 Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 :::
 
-**Lei de Engel (1857):** alimentação é bem **necessário** ($\eta < 1$) → participação no orçamento **cai** com a renda. **Luxo** ($\eta > 1$) faz o oposto.
+**Lei de Engel (1857):** necessário ($\eta < 1$) → participação **cai** com renda; luxo ($\eta > 1$) faz o oposto.
 
 ::: {.fragment}
 | Faixa de renda (R$/mês) | Alimentação | Transporte | Educação |
@@ -886,17 +876,13 @@ Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 | 5.724 – 9.540        | 12,1%     | 18,8% | 3,7% |
 | Acima de 23.850      | **7,6%**  | 15,4% | **6,2%** |
 
-<span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. Ver ZaE §3.6.6, Box Brasil 3.2.</span>
+<span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. ZaE §3.6.6.</span>
 :::
 
 ::: {.fragment}
 ::: {.eq-punch}
-Se o consumidor representativo existisse, essa tabela seria plana. Não é. **O que a planilha da Fazenda faz com isso?**
+Se o consumidor representativo existisse, a tabela seria plana. Não é. **O que a planilha da Fazenda faz com isso?**
 :::
-:::
-
-::: {.fragment .bridge}
-Alimentação 22→7,6 pp (necessário). Educação 1,6→6,2 pp (luxo). Transporte não-monotônico: heterogeneidade sistemática, não "consumidor representativo".
 :::
 
 ---
@@ -1103,13 +1089,13 @@ Coerente. Seria U = x^{2k} y^{5k}.
 
 ---
 
+## O que o Alberto vai aprofundar na monitoria 1
+
 <!-- Decisão (Sprint E): Alberto-teaser ANTES da Síntese. O teaser funciona
      como "aqui ficam abertos os fios" — é parte do que segue, não do que
      fecha. A Síntese ganha peso de fechamento puro, sem concorrer atenção
      com ganchos de monitoria. Ordem final: Consolidação 3.7 → Alberto →
      Síntese → Obrigado → Ponte Aula 2. -->
-
-## O que o Alberto vai aprofundar na monitoria 1
 
 ::: {.cols}
 ::: {}
@@ -1185,21 +1171,19 @@ Dúvidas na plataforma até **23/04** — data em que abre a **Pré-aula 2**.
 
 ## Ponte para a Aula 2
 
-Sabemos: $u$ existe. Sabemos: TMS é ordinal.  \
-**Próximo passo — Aula 2 (29/04):**
+$u$ existe. TMS é ordinal. **Próximo passo — Aula 2 (29/04):**
 
 $$
 \max_{(x_1, x_2)} u(x_1, x_2) \quad\text{s.a.}\quad p_1 x_1 + p_2 x_2 = m.
 $$
 
-- Nasce a **demanda marshalliana** $x_i(\mathbf{p}, m)$.
-- Do problema dual (minimização de gasto dado $\bar{u}$) nasce a **função gasto** $e(\mathbf{p}, \bar{u})$ e a **demanda hicksiana**.
-- **Roy** e **Shephard** costuram as duas pontas — a pedagogia sênior da dualidade.
+- **Marshalliana** $x_i(\mathbf{p}, m)$ do problema direto; **Hicksiana** e **função gasto** $e(\mathbf{p}, \bar{u})$ do dual.
+- **Roy** e **Shephard** costuram as duas pontas.
 
 ::: {.eq-punch}
 Duas formas de $u$ representam a mesma preferência. Uma resolve o UMP em 3 linhas; outra em 20. **Qual? E por quê?**
 :::
 
 ::: {style="font-size: 0.72em; color: #2A2F36; margin-top: 0.8em; text-align: center; font-style: italic;"}
-Quiz pós-aula 1 e Pré-aula 2 liberados na plataforma em 23/04.
+Quiz pós-aula 1 e Pré-aula 2 liberados em 23/04.
 :::
