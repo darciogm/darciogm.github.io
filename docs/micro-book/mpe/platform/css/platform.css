@@ -42,7 +42,6 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-top:0.5rem}
 .btn-secondary:hover{background:var(--accent);color:#fff}
 .login-error{background:#fed7d7;color:var(--danger);padding:0.6rem;border-radius:6px;font-size:0.85rem;margin-bottom:1rem;display:none}
-.login-footer{text-align:center;margin-top:1rem;font-size:0.75rem;color:var(--text-muted)}
 
 /* ---- TOPBAR ---- */
 .topbar{background:var(--primary);color:#fff;padding:0.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
