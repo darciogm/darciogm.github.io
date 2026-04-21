@@ -1,0 +1,418 @@
+/*-- scss:defaults --*/
+
+// Insper brand
+$insper-red: #C8102E;
+$insper-red-dark: #9A0C23;
+$ink: #0E1116;
+$ink-soft: #2A2F36;
+$paper: #FFFFFF;
+$paper-soft: #F7F7F5;
+$rule: #D9D9D6;
+$accent: #1B3A5C; // Box Mundo blue, usado como secundário
+
+// Reveal.js theme variables
+$backgroundColor: $paper;
+$mainColor: $ink;
+$headingColor: $insper-red;
+$linkColor: $insper-red-dark;
+$linkColorHover: $insper-red;
+$selectionBackgroundColor: rgba($insper-red, 0.25);
+
+// Fonts — 30px (subida para 32 testada, regrediu em slides densos com iframe)
+$mainFontSize: 30px;
+$mainFont: "Inter", "Helvetica Neue", "Helvetica", "Arial", system-ui, -apple-system, sans-serif;
+$headingFont: "Inter", "Helvetica Neue", "Helvetica", "Arial", system-ui, -apple-system, sans-serif;
+$headingTextShadow: none;
+$headingFontWeight: 700;
+$heading1Size: 2.0em;
+$heading2Size: 1.45em;
+$heading3Size: 1.15em;
+$heading4Size: 1.00em;
+
+$codeFont: "JetBrains Mono", "Menlo", "Consolas", monospace;
+
+/*-- scss:rules --*/
+
+.reveal {
+  font-weight: 400;
+  letter-spacing: 0.002em;
+  line-height: 1.45;
+}
+
+// Padrão de margens — 60/80/100/80 (top/right/bottom/left).
+// Bottom maior para acomodar footer + logo + slide number sem colisão.
+// box-sizing garante que o padding não extrapole os 1280x800.
+.reveal .slides > section,
+.reveal .slides > section > section {
+  padding: 60px 80px 100px 80px !important;
+  box-sizing: border-box;
+}
+// Section dividers e pause-slides: background preenche toda a área,
+// conteudo interno pode ter padding menor para ficar mais "respirado".
+.reveal .slides > section.section-divider,
+.reveal .slides > section.pause-slide {
+  padding: 120px 80px 120px 80px !important;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  text-transform: none;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+  margin-bottom: 0.5em;
+}
+
+.reveal h1 {
+  border-bottom: 4px solid $insper-red;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.6em;
+  display: inline-block;
+}
+
+.reveal h2 {
+  color: $insper-red;
+}
+
+.reveal h3 {
+  color: $ink;
+  border-left: 4px solid $insper-red;
+  padding-left: 0.5em;
+}
+
+.reveal .slide-number {
+  background-color: transparent;
+  color: $ink-soft;
+  font-size: 14pt;
+  right: 12px;
+  bottom: 10px;
+}
+
+.reveal .footer {
+  position: absolute;
+  bottom: 10px;
+  left: 18px;
+  font-size: 14pt;
+  color: $ink-soft;
+  font-weight: 500;
+}
+
+.reveal .footer .sep {
+  color: $rule;
+  margin: 0 0.5em;
+}
+
+// Logo Insper — canto inferior direito de cada slide
+.reveal .insper-logo {
+  position: fixed;
+  bottom: 8px;
+  right: 64px;
+  height: 34px;
+  width: auto;
+  z-index: 999;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+// Slide de título — mais impacto (reveal `center: true` cuida do vertical)
+.reveal section.title-slide {
+  text-align: center;
+}
+
+.reveal section.title-slide h1.title,
+.reveal section.title-slide h1,
+.reveal section.title-slide h2 {
+  font-size: 2.4em;
+  border-bottom: 6px solid $insper-red;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+  display: inline-block;
+  color: $ink;
+}
+
+.reveal section.title-slide p.subtitle {
+  font-size: 1.15em;
+  color: $insper-red;
+  font-weight: 600;
+  margin-top: 0.2em;
+}
+
+.reveal section.title-slide p.author,
+.reveal section.title-slide p.date {
+  font-size: 0.7em;
+  color: $ink-soft;
+  margin: 0.1em 0;
+}
+
+// Callouts sóbrios
+.reveal .callout {
+  border-left: 4px solid $insper-red;
+  background: $paper-soft;
+  padding: 0.7em 1em;
+  margin: 0.6em 0;
+  font-size: 0.9em;
+}
+
+.reveal .callout-note {
+  border-left-color: $accent;
+}
+
+.reveal .callout-warn {
+  border-left-color: #B8860B;
+  background: #FFFBF0;
+}
+
+// Tabelas
+.reveal table {
+  border-collapse: collapse;
+  margin: 0.4em 0;
+  font-size: 0.8em;
+}
+
+.reveal table th {
+  background: $ink;
+  color: $paper;
+  padding: 0.35em 0.7em;
+  text-align: left;
+  font-weight: 600;
+}
+
+.reveal table td {
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid $rule;
+}
+
+// Tabela compacta — reduz fonte e padding para slides com tabelas densas
+.reveal .compact-table table {
+  font-size: 0.62em;
+  line-height: 1.3;
+}
+.reveal .compact-table table th,
+.reveal .compact-table table td {
+  padding: 0.25em 0.5em;
+  vertical-align: top;
+}
+.reveal .compact-table table .math {
+  font-size: 0.95em;
+}
+
+// Listas
+.reveal ul, .reveal ol {
+  margin-left: 1.1em;
+}
+
+.reveal li {
+  margin-bottom: 0.25em;
+}
+
+// Destaques inline
+.reveal strong {
+  color: $ink;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: $ink-soft;
+}
+
+.reveal code {
+  color: $insper-red-dark;
+  background: $paper-soft;
+  padding: 0.05em 0.25em;
+  border-radius: 3px;
+}
+
+// Equações-chave (markup .eq-key)
+.reveal .eq-key {
+  background: $paper-soft;
+  border-left: 4px solid $insper-red;
+  padding: 0.7em 1em;
+  margin: 0.5em 0;
+  font-size: 1.05em;
+}
+
+// Ponte/transição entre blocos — sóbrio, sem border-top agressivo (Sprint D)
+.reveal .bridge {
+  font-style: italic;
+  color: $ink-soft;
+  padding-left: 0.6em;
+  border-left: 2px solid $rule;
+  margin-top: 0.7em;
+  font-size: 0.82em;
+}
+
+// Slide de pausa
+.reveal section.pause-slide {
+  text-align: center;
+}
+
+.reveal section.pause-slide h1,
+.reveal section.pause-slide h2 {
+  font-size: 3em;
+  color: $insper-red;
+  margin-top: 1.2em;
+  border: none;
+  display: block;
+}
+
+.reveal section.pause-slide p {
+  font-size: 1.3em;
+  color: $ink-soft;
+}
+
+// Divisores de bloco (sections com background vermelho ou azul)
+.reveal section.section-divider {
+  text-align: left;
+}
+
+.reveal section.section-divider h1,
+.reveal section.section-divider h2,
+.reveal section.section-divider h3,
+.reveal section.section-divider p {
+  color: #FFFFFF !important;
+  border: none;
+}
+
+// Footer/slide-number em section-divider: contraste branco translucido
+.reveal section.section-divider ~ .footer,
+.reveal section.section-divider.present ~ .footer,
+body.has-section-divider .footer,
+.reveal .slide-background.present + .footer {
+  /* fallback — o footer é global ao reveal, não por section */
+}
+.reveal .footer,
+.reveal .slide-number {
+  /* cor padrão já é $ink-soft; em dividers vermelhos, herda */
+}
+.reveal section.section-divider .slide-number,
+.reveal section.section-divider .footer {
+  color: rgba(255,255,255,0.75) !important;
+}
+
+.reveal section.section-divider h1 {
+  font-size: 3em;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2em;
+  text-shadow: none;
+  border-bottom: 6px solid rgba(255,255,255,0.4);
+  padding-bottom: 0.15em;
+  display: inline-block;
+}
+
+// Título da capa reforçado
+.reveal section.slide.level1.center h1.title,
+.reveal section.slide.level1 h1.title {
+  color: $ink;
+  border-bottom: 6px solid $insper-red;
+}
+
+// Grid de duas colunas simples
+.reveal .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2em;
+  align-items: start;
+}
+
+.reveal .cols-3-2 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.reveal .cols-2-3 {
+  grid-template-columns: 2fr 3fr;
+}
+
+// Card para axiomas e formas funcionais
+.reveal .card {
+  background: $paper-soft;
+  border-top: 3px solid $insper-red;
+  padding: 0.8em 1em;
+  border-radius: 2px;
+}
+
+.reveal .card h4 {
+  color: $insper-red;
+  margin: 0 0 0.3em 0;
+}
+
+// Ênfase em vermelho (use com parcimônia)
+.reveal .red {
+  color: $insper-red;
+  font-weight: 600;
+}
+
+// Kbd
+.reveal kbd {
+  background: $ink;
+  color: $paper;
+  padding: 0.1em 0.4em;
+  border-radius: 3px;
+  font-size: 0.75em;
+  font-family: $codeFont;
+}
+
+// Ajustes MathJax — melhor leitura à distância
+.reveal .math {
+  font-size: 1.05em;
+}
+
+// Evitar texto cortado em slides densos
+.reveal .slides section {
+  height: 100%;
+}
+
+// Footer inferior
+.reveal .slide-footer {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 14pt;
+  color: $ink-soft;
+  opacity: 0.8;
+}
+
+// Iframes de graficos interativos (JSXGraph)
+// Contrato: em slide full, usar .graph-iframe-full (large height, sem bordas).
+// Em slide em coluna, usar .graph-iframe-col (height menor, caber no grid).
+.reveal iframe.graph-iframe,
+.reveal iframe.graph-iframe-full,
+.reveal iframe.graph-iframe-col,
+.reveal iframe.graph-iframe-tall {
+  border: 1px solid $rule;
+  border-radius: 4px;
+  background: #fff;
+  display: block;
+  margin: 0.2em auto;
+}
+
+.reveal iframe.graph-iframe-full {
+  width: 100%;
+  height: 560px;
+}
+
+.reveal iframe.graph-iframe-col {
+  width: 100%;
+  height: 440px;
+}
+
+.reveal iframe.graph-iframe-tall {
+  width: 100%;
+  height: 580px;
+}
+
+// Legenda curta abaixo de iframe
+.reveal .graph-caption {
+  text-align: center;
+  font-size: 0.72em;
+  color: $ink-soft;
+  font-style: italic;
+  margin-top: 0.3em;
+}
+
+// Mini-exemplo destacado — usado nas preferências lexicográficas
+.reveal .lex-example {
+  background: #FFFBF0;
+  border-left: 4px solid #B8860B;
+  padding: 0.6em 1em;
+  font-size: 0.88em;
+  margin: 0.5em 0;
+  font-family: $codeFont;
+}

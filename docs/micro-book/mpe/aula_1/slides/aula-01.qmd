@@ -1,0 +1,1033 @@
+---
+title: "Preferências, Axiomas e Utilidade"
+subtitle: "Aula 1 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-04-22"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 22/04/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-título auto-gerado pelo Quarto ANTES do reveal
+          // indexar as sections. Usa MutationObserver para capturar o
+          // elemento assim que ele for inserido no DOM — garante que a
+          // remocao acontece antes de Reveal.initialize.
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              // Fallback: tenta de novo no DOMContentLoaded
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Preferências, Axiomas e Utilidade {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 1 — Teoria do Consumidor I**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+22 de abril de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Primeira aula do curso. Bem-vindos(as). Vamos direto ao ponto e devagar onde precisa ser.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Formalizar preferências via axiomas, ver a lógica da representação por utilidade, separar ordinalidade de cardinalidade e classificar as principais formas funcionais.
+
+::: {.fragment}
+### O que assumo da pré-aula
+
+- ZaE §§3.1–3.4 lido com **papel e caneta**.
+- N&S 12e cap. 3 visitado (mesmo que de leve).
+- N&S 3.1 e 3.3 **no papel** — conferimos rapidamente hoje.
+- Checkpoint de 6 itens na plataforma concluído.
+:::
+
+::: {.fragment}
+[Se algum destes passos não foi feito, anote e recupere em até 48h — a Aula 2 pressupõe este piso.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura e triagem de dúvidas | 19:30–19:40 |
+| 1 | Axiomas, lexicográficas e teorema da representação | 19:40–20:25 |
+| — | *Pausa* | 20:25–20:35 |
+| 2 | TMS em formas funcionais (CD, Leontief, CES, QL) | 20:35–21:15 |
+| 3 | Box Brasil — POF/IBGE | 21:15–21:30 |
+| — | *Pausa* | 21:30–21:40 |
+| 4 | Prática em dupla + fechamento | 21:40–22:30 |
+
+::: {.bridge}
+3h cheias. Duas pausas curtas. Gráficos interativos do ZaE são usados como **pausa visual** — aluno olha, professor fala. O bloco 4 é onde o aluno sai com músculo — defendo esse tempo.
+:::
+
+---
+
+## Bloco 1 — Axiomas e teorema da representação {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 19:40–20:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Cinco axiomas, um teorema, uma tensão (ordinalidade).
+:::
+
+---
+
+## Por que axiomatizar?
+
+### A pergunta de abertura
+
+> Se quero falar *matematicamente* sobre "o consumidor prefere $x$ a $y$", do que eu preciso?
+
+**Dois movimentos:**
+
+- **Preferência é o primitivo.** Uma relação $\succeq$ sobre pacotes — não um número.
+- **Utilidade é representação conveniente.** Um número que só existe porque a preferência se comporta bem.
+
+::: {.bridge}
+Hoje não mediremos utilidade. Mediremos *se faz sentido* falar em utilidade.
+:::
+
+---
+
+## Preferência como primitivo
+
+Dado $X \subseteq \mathbb{R}^n_+$, a relação $\succeq$ sobre $X$ é o **objeto primário**.
+
+A partir dela:
+
+- $x \succ y$ sse $x \succeq y$ e **não** $y \succeq x$ (preferência estrita).
+- $x \sim y$ sse $x \succeq y$ e $y \succeq x$ (indiferença).
+
+E a pergunta central do bloco:
+
+::: {.eq-key}
+Sob que condições existe $u: X \to \mathbb{R}$ tal que
+$$
+x \succeq y \iff u(x) \geq u(y)\,?
+$$
+:::
+
+::: {.bridge}
+Vamos construir a resposta axioma por axioma. **Ordem:** completude → transitividade → continuidade → monotonicidade → convexidade.
+:::
+
+---
+
+## (1) Completude
+
+::: {.card}
+**Axioma.**
+Para todo $x, y \in X$: $x \succeq y$ **ou** $y \succeq x$ (ou ambos).
+:::
+
+**Leitura:** o agente *sempre* se posiciona. Não há "não sei comparar".
+
+**Exemplo:** entre um café e um chá, opta por algum ou é indiferente.  \
+**Contraexemplo:** indecisão genuína — "não sei o suficiente sobre o pacote B".
+
+::: {.callout-note .callout}
+Completude é mais exigente do que parece. Em contextos com incerteza profunda ou pacotes multidimensionais complexos, pode falhar — mas aí saímos do escopo clássico.
+:::
+
+---
+
+## (2) Transitividade
+
+::: {.card}
+**Axioma.**
+Se $x \succeq y$ e $y \succeq z$, então $x \succeq z$.
+:::
+
+**Sem transitividade: ciclo.** $x \succ y \succ z \succ x$.
+
+**Armadilha clássica — máquina de dinheiro:** um terceiro oferece trocas encadeadas e extrai recurso do agente indefinidamente.
+
+::: {.callout .callout-warn}
+Evidência empírica de ciclos em escolhas reais existe (framing, escassez cognitiva). Mas o modelo canônico assume transitividade como *disciplina mínima* de consistência.
+:::
+
+---
+
+## (3) Continuidade
+
+::: {.card}
+**Axioma.**
+Para todo $y \in X$, os conjuntos
+$$
+\{x \in X : x \succeq y\} \quad\text{e}\quad \{x \in X : y \succeq x\}
+$$
+são **fechados** em $X$.
+:::
+
+**Intuição:** pequenas perturbações no pacote não viram a preferência do avesso.  \
+Em linguagem operacional — se $x_n \to x$ e $x_n \succeq y$ para todo $n$, então $x \succeq y$. O limite "herda" a preferência.
+
+::: {.fragment}
+**Por que continuidade é o axioma-chave?** Porque é dele — e só dele entre (1)–(3) — que sai a **existência** da função de utilidade $u$ contínua (Debreu).
+:::
+
+::: {.fragment .bridge}
+Vou mostrar já-já que *existe* uma preferência satisfazendo (1) e (2) mas que falha (3) — e por isso não pode ser representada por $u$.
+:::
+
+<!-- layout: texto puro, ponte para bloco lexicográfico -->
+
+---
+
+## Preferências lexicográficas (1/5) · Definição formal
+
+::: {.card}
+**Definição.** $\succeq^L$ em $\mathbb{R}^2_+$:
+$$
+(x_1, x_2) \succeq^L (y_1, y_2) \iff
+\begin{cases}
+x_1 > y_1, \text{ ou} \\
+x_1 = y_1 \text{ e } x_2 \geq y_2.
+\end{cases}
+$$
+:::
+
+**De onde vem o nome?** É a ordem do **dicionário**: compare a primeira letra; empatou, compare a segunda.
+
+Aqui, primeiro vem o bem 1 (*"lead-good"*); o bem 2 só importa em caso de empate no primeiro.
+
+---
+
+## Preferências lexicográficas (2/5) · Satisfaz (1) e (2)?
+
+**Verificação rápida.**
+
+- **Completude.** Dado qualquer par $(x, y)$, ou $x_1 > y_1$, ou $x_1 < y_1$, ou $x_1 = y_1$. Em cada caso, a regra decide. ✓
+
+- **Transitividade.** Se $x \succeq^L y$ e $y \succeq^L z$, a primeira coordenada impõe $x_1 \geq y_1 \geq z_1$, logo $x_1 \geq z_1$. No empate $x_1 = y_1 = z_1$, a segunda coordenada decide — que é transitiva em $\mathbb{R}$. ✓
+
+::: {.bridge}
+Temos (1) e (2). Vamos ver que **falha (3) — continuidade** — no próximo slide.
+:::
+
+---
+
+## Preferências lexicográficas (3/5) · Por que viola continuidade
+
+**O mecanismo.** Considere a sequência
+$$
+x^n = \left(1 - \tfrac{1}{n},\ 2\right) \longrightarrow x = (1,\ 2) \quad \text{quando } n \to \infty.
+$$
+
+Compare cada termo com o ponto fixo $y = (1,\ 1)$:
+
+::: {.cols}
+::: {}
+**Para todo $n$:** $x^n_1 = 1 - \tfrac{1}{n} < 1 = y_1$.
+
+Logo $y \succ^L x^n$ — $y$ é preferido ao longo da sequência.
+:::
+::: {}
+**No limite:** $x_1 = 1 = y_1$ e $x_2 = 2 > 1 = y_2$.
+
+Logo $x \succ^L y$ — a preferência **pula**.
+:::
+:::
+
+---
+
+## Preferências lexicográficas (4/5) · Conclusão do contraexemplo
+
+::: {.eq-key}
+O conjunto $\{z : z \succeq^L y\}$ **não é fechado** em $\mathbb{R}^2_+$.
+:::
+
+**Por quê?** A continuidade quebra exatamente porque a preferência é lexicográfica: **um $\varepsilon$ no bem 1 domina qualquer quantidade do bem 2**. Entre o ponto-limite $x = (1,2)$ e os termos $x^n = (1 - 1/n, 2)$ há descontinuidade na preferência revelada.
+
+::: {.fragment .bridge}
+Sem continuidade, a representação por utilidade falha. Vamos ver **por que** no slide seguinte (argumento de Debreu).
+:::
+
+---
+
+## Preferências lexicográficas (5/5) · Não representabilidade
+
+**Argumento de Debreu — intuição.** Suponha, por absurdo, $u: \mathbb{R}^2_+ \to \mathbb{R}$ representando $\succeq^L$. Para cada $x_1$ fixo, $u(x_1, \cdot)$ é estritamente crescente em $x_2$. Tome um racional $q(x_1)$ estritamente entre $u(x_1, 0)$ e $\lim_{x_2 \to \infty} u(x_1, x_2)$. A ordem lexicográfica força $q$ a ser **injetiva em $x_1 \in \mathbb{R}$**.
+
+::: {.eq-key}
+Injeção de $\mathbb{R}$ em $\mathbb{Q}$: impossível (cardinalidades). $\square$
+:::
+
+::: {.fragment}
+**Onde aparece no mundo real:**
+
+- **Triagem médica (ABCDE):** via aérea > conforto, hierárquico.
+- **Safety-first** (Roy, 1952): minimize ruína, *depois* maximize retorno.
+- **Covenants** em dívida: obrigação contratual > upside.
+:::
+
+<!-- layout: 3 opção (texto denso numa única tela, mas argumento linear e curto) -->
+
+---
+
+## (4) Monotonicidade
+
+::: {.card}
+**Axioma (versão forte).**
+Se $x \geq y$ com alguma coordenada estritamente maior, então $x \succ y$.
+:::
+
+**Variantes:**
+
+- **Fraca:** $x \geq y \Rightarrow x \succeq y$.
+- **Não-saciedade local:** em toda vizinhança de $y$ existe $x$ com $x \succ y$.
+
+**Consequência operacional:** curvas de indiferença **não são faixas grossas** — são finas e com inclinação negativa.
+
+::: {.callout-note .callout}
+Na teoria do bem-estar (Aula 4) e em Hicksiana (Aula 2), a versão que segura os resultados é não-saciedade local — mais fraca, mais flexível.
+:::
+
+---
+
+## (5) Convexidade
+
+::: {.card}
+**Axioma (estrita).**
+Se $x \succeq y$ e $x \neq y$, então para todo $\lambda \in (0, 1)$:
+$$
+\lambda x + (1-\lambda) y \succ y.
+$$
+:::
+
+**Interpretação econômica:** **diversificação é preferida** — misturas estão no topo ou no meio, nunca abaixo dos extremos.
+
+**Gráfico mental:** curvas de indiferença convexas em relação à origem.
+
+**Versões.** Fraca: $\lambda x + (1-\lambda) y \succeq y$ — casa com quasiconcavidade de $u$ e é o default em N&S/ZaE. Estrita (acima): dá **TMS estritamente decrescente** e unicidade no UMP. É da fraca que segue a TMS "decrescente" do Panorama.
+
+---
+
+## Três conceitos que os alunos confundem
+
+::: {.compact-table}
+| Conceito | Sobre o quê | Caráter | Preciso? |
+|:---|:---|:---|:---:|
+| **Convexidade da preferência** (axioma 5) | Relação $\succeq$ sobre $X$ | Ordinal | Sim — dá TMS decrescente |
+| **Quasiconcavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \min\{u(x), u(y)\}$; conjuntos superiores de nível convexos | Ordinal — preservada por transformação monótona | Equivalente à convexidade |
+| **Concavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \lambda u(x) + (1-\lambda) u(y)$ | **Cardinal** — *não* preservada | **Não** — mais forte que o necessário |
+:::
+
+::: {.bridge}
+A confusão canônica é entre os dois últimos: **quasiconcavidade não implica concavidade** — e só a primeira é ordinal.
+:::
+
+---
+
+## O box — equivalências e TMS decrescente
+
+::: {.eq-key}
+$\succeq$ **convexa (fraca)** $\iff$ $u$ **quasiconcava** (para qualquer representação).
+
+**TMS decrescente** ao longo da CI $\iff$ convexidade.
+:::
+
+::: {.fragment}
+**O que "TMS decrescente" significa operacionalmente?** Andando ao longo de uma curva de indiferença, quando $x_1$ aumenta (e $x_2$ diminui), a TMS cai.
+
+Economicamente: **quanto mais você tem do bem 1, menos disposto está a sacrificar $x_2$ para ganhar mais $x_1$**. É a *saciação relativa na margem* — o núcleo da intuição microeconômica de diversificação.
+:::
+
+---
+
+## Panorama dos cinco axiomas
+
+| # | Axioma | Papel |
+|---|---|---|
+| 1 | Completude | Racionalidade mínima |
+| 2 | Transitividade | Consistência |
+| 3 | Continuidade | Topologia — *garante representação* |
+| 4 | Monotonicidade | Forma econômica (bens *são* bens) |
+| 5 | Convexidade | Forma matemática útil (TMS decrescente) |
+
+---
+
+## Teorema da representação (Debreu)
+
+::: {.bridge}
+Axiomas 1–3 dão **existência** de $u$. Axiomas 4–5 dão **regularidade útil**.
+:::
+
+::: {.eq-key}
+**Teorema.** Se $\succeq$ em $X \subseteq \mathbb{R}^n_+$ é **completa, transitiva e contínua**, então existe $u: X \to \mathbb{R}$ **contínua** tal que
+$$
+x \succeq y \iff u(x) \geq u(y).
+$$
+:::
+
+::: {.fragment}
+**O que o teorema diz — e o que não diz:**
+
+- **Existe** representação. Qualquer transformação monótona crescente serve.
+- **Nada** sobre forma funcional (Cobb-Douglas, CES etc.) — vem de hipóteses *adicionais*.
+- **Monotonicidade / convexidade** não são necessárias para existência; dão regularidade útil.
+:::
+
+---
+
+## Ideia de prova (não é a prova)
+
+**Construção heurística** (na linha do J-R cap. 1):
+
+1. Pegue um raio no ortante positivo — "pacote de referência" $\bar{x}(t) = t \cdot \mathbf{1}$ para $t \geq 0$. *Usamos monotonicidade aqui como muleta didática; a prova de Debreu genuína dispensa (conjuntos de nível + separação).*
+2. Para cada $x \in X$, defina $u(x) = t^*(x)$ tal que $x \sim \bar{x}(t^*(x))$.
+3. Continuidade de $\succeq$ garante que $t^*(x)$ existe e é único.
+4. Continuidade de $u$ sai da continuidade de $\succeq$ via argumento topológico.
+
+::: {.callout-note .callout}
+Prova completa no J-R §1.2. O ponto hoje é *por que* continuidade é o axioma-chave.
+:::
+
+---
+
+## Ordinalidade vs. cardinalidade
+
+::: {.eq-key}
+Se $v(x) = f(u(x))$ com $f: \mathbb{R} \to \mathbb{R}$ **estritamente crescente**, então $v$ representa **a mesma** relação $\succeq$.
+:::
+
+**Consequências operacionais:**
+
+- **TMS é ordinal** — invariante a transformação monótona. ✓
+- **Magnitudes de $u$ não são observáveis.** $u = 7$ vs. $u = 4$ só ordena.
+- Diferenças, somas, médias de utilidade **não têm significado estrutural** fora da teoria.
+
+### Adendo útil (para a Aula 5)
+
+Em **utilidade esperada**, a representação é única a menos de **transformações afins positivas** ($v = \alpha u + \beta$, $\alpha > 0$) — cardinalidade recuperada por uma estrutura extra. Só anunciando.
+
+---
+
+## Ponte para o Bloco 2
+
+Sabemos **que** $u$ existe. Sabemos **que** é única a menos de transformação monótona.
+
+Não sabemos **qual** $u$.
+
+::: {.bridge}
+No próximo bloco: quatro formas funcionais canônicas. Derivamos TMS, lemos economia, e preparamos a unificação via CES (que fica para a monitoria).
+:::
+
+---
+
+## Pausa 1 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 20:35.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Estique. Água. Deixe a caneta em cima da mesa.
+:::
+
+---
+
+## Bloco 2 — TMS em formas funcionais {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 20:35–21:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Cobb-Douglas · Leontief · CES · Quasilinear
+:::
+
+---
+
+## TMS — definição e invariância
+
+::: {.eq-key}
+$$
+\text{TMS}_{12}(x_1, x_2) = -\left.\frac{dx_2}{dx_1}\right|_{u = \bar{u}} = \frac{\partial u / \partial x_1}{\partial u / \partial x_2} = \frac{u_1}{u_2}.
+$$
+:::
+
+**Ponto central:** TMS é objeto **ordinal**. Se $v = f(u)$ com $f' > 0$:
+$$
+\frac{v_1}{v_2} = \frac{f'(u) \cdot u_1}{f'(u) \cdot u_2} = \frac{u_1}{u_2}.
+$$
+
+O $f'(u)$ **cancela**. Mesma TMS, mesma preferência, mesmo comportamento.
+
+**Leitura econômica:** TMS é o que o consumidor está disposto a trocar *na margem*. É observável (em teoria) via escolhas.
+
+---
+
+## TMS em forma geométrica — explorar ao vivo
+
+<iframe src="graficos/tms-ponto.html" title="TMS como inclinação da curva de indiferença" class="graph-iframe-full" scrolling="no"></iframe>
+
+<!-- caption "Arraste o ponto..." removida a pedido do Darcio; gráfico é auto-explicativo. -->
+<!-- layout: 3 opção — grafico em slide separado, sem texto. Aluno olha, professor fala por ~60-90s. -->
+
+---
+
+## Cobb-Douglas
+
+::: {.card}
+**Forma funcional.**
+$$
+u(x_1, x_2) = x_1^{\alpha}\, x_2^{1-\alpha}, \qquad \alpha \in (0, 1).
+$$
+:::
+
+**Derivação da TMS.** Com $u_1 = \alpha x_1^{\alpha-1} x_2^{1-\alpha}$ e $u_2 = (1-\alpha) x_1^\alpha x_2^{-\alpha}$:
+
+$$
+\boxed{\;\text{TMS} = \frac{u_1}{u_2} = \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1}\;}
+$$
+
+::: {.fragment}
+**Leituras econômicas:**
+
+- **Parcelas de gasto** em equilíbrio: $\alpha$ em bem 1, $1-\alpha$ em bem 2 (veremos na Aula 2).
+- **Elasticidade de substituição** $\sigma = 1$ (anunciando — derivação na monitoria).
+:::
+
+---
+
+## Cobb-Douglas em log — ordinalidade em ação
+
+Tomando logaritmo:
+$$
+\ln u(x_1, x_2) = \alpha \ln x_1 + (1-\alpha) \ln x_2.
+$$
+
+**Mesmíssima preferência** — logaritmo é estritamente crescente. Só a forma algébrica fica mais confortável.
+
+::: {.callout-note .callout}
+Este é o **primeiro exemplo prático** de ordinalidade. A versão aditiva-em-log é mais fácil de derivar, mais fácil de maximizar, e entrega exatamente a mesma TMS:
+$$
+\text{TMS} = \frac{\alpha / x_1}{(1-\alpha) / x_2} = \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1}. \quad\checkmark
+$$
+:::
+
+---
+
+## Invariância ordinal em ação
+
+<iframe src="graficos/transformacao-monotonica.html" title="Transformação monotônica e invariância das CIs" class="graph-iframe-full" scrolling="no"></iframe>
+
+<!-- caption original removida a pedido do Darcio (Sprint D+). -->
+
+<!-- layout: 3 opção — grafico em slide separado, sem texto. Remata o ponto de ordinalidade. -->
+
+---
+
+## Leontief — complementaridade perfeita
+
+::: {.card}
+**Forma funcional.**
+$$
+u(x_1, x_2) = \min\{a\, x_1,\; b\, x_2\}, \qquad a, b > 0.
+$$
+:::
+
+**Curvas de indiferença em L**, com o vértice em $a x_1 = b x_2$.
+
+::: {.cols}
+::: {}
+**TMS:**
+
+- No ramo horizontal ($a x_1 < b x_2$): $\text{TMS} = 0$.
+- No ramo vertical ($a x_1 > b x_2$): $\text{TMS} = \infty$.
+- No **vértice** ($a x_1 = b x_2$): **não-diferenciável**.
+
+:::
+::: {}
+**Leitura econômica:**
+
+- Bens em proporção rígida.
+- Exemplos: sapato esquerdo + direito, CPU + RAM, ingredientes de receita.
+- $\sigma = 0$.
+
+:::
+:::
+
+---
+
+## CES — a família que unifica
+
+::: {.card}
+**Forma funcional.**
+$$
+u(x_1, x_2) = \left(\alpha\, x_1^{\rho} + (1-\alpha)\, x_2^{\rho}\right)^{1/\rho},
+\quad \rho \leq 1,\ \rho \neq 0.
+$$
+:::
+
+**Derivadas parciais.** Seja $S = \alpha x_1^{\rho} + (1-\alpha) x_2^{\rho}$. Então:
+$$
+u_1 = S^{1/\rho - 1} \cdot \alpha\, x_1^{\rho-1}, \qquad
+u_2 = S^{1/\rho - 1} \cdot (1-\alpha)\, x_2^{\rho-1}.
+$$
+
+Razão — o fator $S^{1/\rho - 1}$ *cancela*:
+
+$$
+\boxed{\;\text{TMS} = \frac{\alpha}{1-\alpha} \left(\frac{x_2}{x_1}\right)^{1-\rho}\;}
+$$
+
+---
+
+## Por que "família mãe"?
+
+**CES é a única** forma funcional (a menos de transformação monótona) com $\sigma$ constante *e* que engole as 3 famílias clássicas como casos-limite de um único parâmetro $\rho$.
+
+::: {.cols}
+::: {}
+**Deslizando $\rho$:**
+
+- $\rho \to -\infty$ → **Leontief** (proporção rígida).
+- $\rho \to 0$ → **Cobb-Douglas** (L'Hôpital no log).
+- $\rho = 1$ → **Substitutos perfeitos**.
+:::
+::: {}
+::: {.fragment}
+**Por que importa:**
+
+- **Um modelo, espectro inteiro** de substituibilidade.
+- $\rho$ (ou $\sigma$) é **parâmetro estimável** — não escolhe família *a priori*.
+- Reaparece em Dixit-Stiglitz (IO), CRRA (finanças), CES production (macro).
+:::
+:::
+:::
+
+::: {.fragment .bridge}
+Próximo slide: veja com seus olhos — $\rho$ deslizando no eixo, as curvas morfando entre Leontief e substitutos perfeitos.
+:::
+
+<!-- layout: 1 opção (duas colunas equilibradas) — prepara o aluno para interpretar o slider -->
+
+---
+
+## CES contínua — do Leontief aos substitutos perfeitos
+
+<iframe src="graficos/ces-continua.html" title="CES contínua: slider em rho" class="graph-iframe-full" scrolling="no"></iframe>
+
+::: {.graph-caption}
+Slider em $\rho \in [-5,\ 0.95]$. Observe: em $\rho \to -\infty$ as curvas formam **L**; em $\rho = 0$ são as **hipérboles** de Cobb-Douglas; em $\rho \to 1$ colapsam em **retas**. Um só parâmetro, três famílias.
+:::
+
+<!-- layout: 3 opção — grafico em slide separado. Núcleo pedagógico do bloco 2: aqui deixo 2 min de exploração. -->
+
+---
+
+## CES — elasticidade de substituição
+
+::: {.eq-key}
+$$
+\sigma = \frac{1}{1 - \rho}.
+$$
+:::
+
+**Três regimes canônicos** — anunciados, sem derivar os limites (monitoria):
+
+| Valor de $\rho$ | $\sigma$ | Forma funcional |
+|:---:|:---:|:---|
+| $\rho = 1$ | $\infty$ | Substitutos perfeitos $u = \alpha x_1 + (1-\alpha) x_2$ |
+| $\rho \to 0$ | $1$ | Cobb-Douglas (L'Hôpital no log) |
+| $\rho \to -\infty$ | $0$ | Leontief |
+
+::: {.fragment}
+**Por que CES importa:** macro (produção), IO (demanda por variedades, Dixit-Stiglitz), finanças (aversão ao risco com CRRA). Mesma tecnologia algébrica.
+:::
+
+---
+
+## Quasilinear — simplicidade com estrutura
+
+::: {.card}
+**Forma funcional.**
+$$
+u(x_1, x_2) = v(x_1) + x_2, \qquad v' > 0,\ v'' < 0.
+$$
+:::
+
+**TMS** $= v'(x_1)$ — depende *apenas* de $x_1$. Assinatura das quasilineares.
+
+::: {.fragment}
+**Consequências:**
+
+- **Efeito-renda zero** no bem 1 — *desde que a solução seja interior em $x_2$* (se a renda é baixa a ponto de virar solução de canto, a propriedade cai). Retomada na Aula 3 (Slutsky).
+- **Excedente do consumidor bem-definido** — áreas sob demanda com interpretação de bem-estar.
+- Padrão em **IO aplicada** e **economia pública**.
+:::
+
+---
+
+## Excedente do consumidor — por que *só* quasilinear?
+
+**Definição informal:** área entre curva de demanda e preço. Mede (em $) o ganho do consumidor em comprar à quantidade ótima ao preço vigente.
+
+**Problema geral:** em preferências com efeito-renda, existem **três** candidatos — área sob demanda **Marshalliana** (Dupuit), variação **compensatória** e **equivalente** (Hicks). **Os três divergem.**
+
+::: {.eq-key}
+Se $u = v(x_1) + x_2$: efeito-renda no bem 1 é **zero** → Marshalliana = Hicksiana. Área sob a demanda ordinária *vira* variação equivalente sem ajuste. **Excedente bem-definido.**
+:::
+
+::: {.fragment}
+**Por que economia pública adora:** cálculo de bem-estar (imposto, tarifa, regulação) fica **auditável** — uma área, um número, sem ambiguidade. Willig (1976) delimita quando a aproximação serve em preferências não-QL; em QL é exato.
+:::
+
+<!-- layout: 3 opção (texto denso, mas argumento econômico fechado). Desamarra uma frase que o N&S joga solta. -->
+
+---
+
+## Homotética vs. quasilinear — caminhos de expansão da renda
+
+<iframe src="graficos/homotetica-vs-quaselinear.html" title="Homotetica vs quasilinear: caminhos de expansao" class="graph-iframe-tall" scrolling="no"></iframe>
+
+<!-- caption original removida a pedido do Darcio (Sprint D+). -->
+
+<!-- layout: 3 opção. Grafico é alto (~600px); dedicado. -->
+
+---
+
+## Mini-exercício — Cobb-Douglas numérico
+
+**Função:** $u(x_1, x_2) = x_1^{0.4}\, x_2^{0.6}$.  \
+**Ponto:** $(x_1, x_2) = (4, 9)$.
+
+**Calcule $\text{TMS}$ no ponto.**
+
+::: {.fragment}
+$$
+\text{TMS} = \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{0.4}{0.6} \cdot \frac{9}{4} = \frac{2}{3} \cdot \frac{9}{4} = \frac{18}{12} = \boxed{1.5}.
+$$
+:::
+
+::: {.fragment}
+**Leitura:** na margem, o consumidor está disposto a trocar 1,5 unidade de $x_2$ por 1 unidade adicional de $x_1$. Decrescente em $x_1$, crescente em $x_2$ — convexidade estrita em ação.
+:::
+
+---
+
+## Ganchos explícitos para a monitoria
+
+::: {.cols}
+::: {}
+**1. Cobb-Douglas como limite da CES**
+$$
+\lim_{\rho \to 0} \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}
+$$
+via log e L'Hôpital.
+:::
+::: {}
+**2. Leontief como limite da CES**
+$$
+\lim_{\rho \to -\infty} \left(\cdots\right)^{1/\rho} = \min\{\cdot, \cdot\}
+$$
+heurístico via min.
+:::
+:::
+
+::: {.fragment}
+::: {.cols}
+::: {}
+**3. $\sigma$ pela definição**
+$$
+\sigma = \frac{d \ln(x_2/x_1)}{d \ln \text{TMS}}
+$$
+calculado por forma.
+:::
+::: {}
+**4. Contraexemplo lexicográfico** — prova completa da não-representabilidade por utilidade.
+:::
+:::
+:::
+
+---
+
+## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 21:40 — direto na prática em dupla.*
+:::
+
+::: {style="text-align: center; font-size: 0.85em; color: #2A2F36; margin-top: 1.5em;"}
+Se alguém precisar rever N&S 3.5/3.7, este é o momento.
+:::
+
+---
+
+## Bloco 3 — Box Brasil · POF/IBGE {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+15 min · 21:15–21:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Consumo domiciliar e o que os dados revelam sobre preferências.
+:::
+
+---
+
+## POF / IBGE e a Lei de Engel
+
+**Lei de Engel (1857):** alimentação é bem **necessário** ($\eta < 1$) → participação no orçamento **cai** com a renda. **Luxo** ($\eta > 1$) faz o oposto. Pergunta: o Brasil obedece?
+
+::: {.fragment}
+| Faixa de renda (R$/mês) | Alimentação | Transporte | Educação |
+|:---|:---:|:---:|:---:|
+| Até 1.908            | **22,0%** | 11,5% | 1,6% |
+| 1.908 – 2.862        | 18,5%     | 14,2% | 2,0% |
+| 5.724 – 9.540        | 12,1%     | 18,8% | 3,7% |
+| Acima de 23.850      | **7,6%**  | 15,4% | **6,2%** |
+
+<span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. Ver ZaE §3.6.6, Box Brasil 3.2.</span>
+:::
+
+::: {.fragment .bridge}
+Alimentação 22→7,6 pp (necessário). Educação 1,6→6,2 pp (luxo). Transporte não-monotônico: heterogeneidade sistemática, não "consumidor representativo".
+:::
+
+---
+
+## Extremos — a convexidade passa no teste empírico?
+
+**Contraste qualitativo** entre faixas de renda (além dos %-ponto da tabela anterior):
+
+1. **Alimentação** — peso radicalmente maior na faixa baixa (22% vs. 7,6%).
+2. **Habitação** — alta em ambos, *composição* muda (aluguel vs. imóvel próprio + encargos).
+3. **Transporte** — público na faixa baixa, privado na alta.
+4. **Educação e saúde privadas** — concentradas no topo.
+
+::: {.bridge}
+**Pergunta para a turma:** olhando estes microdados, a **convexidade** como axioma é plausível? Onde ela falha ou ameaça falhar?
+:::
+
+---
+
+## Ordinalidade × microdados — e a ponte com política pública
+
+::: {.cols-2-3}
+::: {}
+**P1** — Que padrão de preferência os dados "revelam"?
+
+**P2** — Convexidade é plausível com microdados à mão?
+
+**P3** — Preferências **idênticas** entre agentes quebra onde? Por que isso importa para focalização de política pública?
+:::
+::: {}
+**Ponte com aulas futuras:**
+
+- **Preferência revelada** — Aula 3.
+- **Bem-estar e comparação interpessoal** — Aulas 4 e 7.
+- **Heterogeneidade agregada** — tema recorrente.
+:::
+:::
+
+::: {.callout .callout-warn}
+**Takeaway, sem moralismo:** utilidade ordinal *limita* comparações interpessoais — mas não as impede, desde que hipóteses de comparabilidade sejam explícitas. Aqui política pública e teoria se encontram.
+:::
+
+---
+
+## Bloco 4 — Prática em dupla e fechamento {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+50 min · 21:40–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+N&S 3.5 e 3.7 · consolidação · síntese · ponte para Aula 2.
+:::
+
+---
+
+## Enunciados — N&S 12e (3.5 e 3.7)
+
+### Exercício 3.5 · Phillie Phanatic (complementos perfeitos)
+
+**PP** sempre come o hot-dog de 30 cm com exatamente **½ pão, 1 onça de mostarda e 2 onças de *relish* de picles**. Sem um dos ingredientes, utilidade zero.
+
+- **(a)** Forma funcional de $U$?   **(b)** Simplificar como função de 1 só bem — qual?   **(c)** Preço desse bem composto a preços dados.   **(d–e)** Efeito no preço composto de aumentos de 50% no hot-dog e no pão.   **(f)** Tributo mínimo-perda.
+
+### Exercício 3.7 · Identificação de forma funcional
+
+- **(a)** Consumidora é indiferente entre $(6,5)$ e $(12,3)$, com $\text{TMS}(6,5) = 3$ e $\text{TMS}(12,3) = 3$. Qual a forma de $U$? *(Dica: observar a CI.)*
+- **(b)** Agora ela é indiferente entre $(8,1)$ e $(4,4)$, com $\text{TMS}(8,1)=4$ e $\text{TMS}(4,4)=\tfrac{1}{2}$. Assumindo $U(x,y) = x^\alpha y^\beta$, calcule $(\alpha, \beta)$.
+- **(c)** Havia redundância em (b)? Se sim, qual o mínimo de informação suficiente?
+
+---
+
+## Instruções — prática em dupla (25 min)
+
+::: {.cols}
+::: {}
+**Regras**
+
+- Duplas **aleatórias** (para mixar backgrounds).
+- **Papel e caneta.** Nada digital.
+- Professor circula.
+- Sinalizador levantado ao travar.
+:::
+::: {}
+**Armadilhas a evitar**
+
+- Erro de **sinal na TMS**.
+- Confundir **quasiconcavidade** com concavidade.
+- Aplicar **monotonicidade** onde só vale não-saciedade local.
+- Derivar Cobb-Douglas *sem* usar log (funciona, mas perde tempo).
+:::
+:::
+
+---
+
+## Consolidação — N&S 3.5
+
+*{{Aluno voluntário apresenta no quadro — professor refina.}}*
+
+::: {.callout-note .callout}
+**Esqueleto da consolidação** (preencher após validar no papel):
+
+1. Ponto-chave da solução — passo que *separa* quem resolveu de quem travou.
+2. Armadilha principal — o erro mais comum e o porquê.
+3. Extensão — uma pergunta de "e se".
+:::
+
+---
+
+## Consolidação — N&S 3.7
+
+*{{Aluno voluntário apresenta no quadro — professor refina.}}*
+
+::: {.callout-note .callout}
+**Esqueleto da consolidação** (preencher após validar no papel):
+
+1. Ponto-chave da solução — passo que *separa* quem resolveu de quem travou.
+2. Armadilha principal — o erro mais comum e o porquê.
+3. Extensão — uma pergunta de "e se".
+:::
+
+::: {.aside-note style="font-size:0.78em;color:#4A5568;font-style:italic;margin-top:0.8em"}
+*Speaker note:* se o 3.7 estourar o tempo, entregar **caminho + resultado** no quadro e mover a resolução completa para a plataforma pós-aula.
+:::
+
+---
+
+## Síntese — se você sair com isto, a aula valeu
+
+::: {.fragment}
+1. **Axiomas (1)–(3) → representação por utilidade.** Continuidade é o axioma-chave. Monotonicidade e convexidade dão regularidade útil, não existência.
+:::
+
+::: {.fragment}
+2. **Ordinalidade.** TMS invariante a transformação monótona. Magnitudes de $u$ não são observáveis. *Limita* comparações interpessoais — mas não as impede.
+:::
+
+::: {.fragment}
+3. **CES é a família mãe.** Cobb-Douglas ($\sigma=1$), Leontief ($\sigma=0$) e substitutos perfeitos ($\sigma=\infty$) são *regimes* da mesma forma funcional. A unificação algébrica vem na monitoria.
+:::
+
+---
+
+## Ponte para a Aula 2
+
+Sabemos: $u$ existe. Sabemos: TMS é ordinal.  \
+**Próximo passo — Aula 2 (29/04):**
+
+$$
+\max_{(x_1, x_2)} u(x_1, x_2) \quad\text{s.a.}\quad p_1 x_1 + p_2 x_2 = m.
+$$
+
+- Nasce a **demanda marshalliana** $x_i(\mathbf{p}, m)$.
+- Do problema dual (minimização de gasto dado $\bar{u}$) nasce a **função gasto** $e(\mathbf{p}, \bar{u})$ e a **demanda hicksiana**.
+- **Roy** e **Shephard** costuram as duas pontas — a pedagogia sênior da dualidade.
+
+::: {.bridge}
+**Quiz pós-aula 1** e **Pré-aula 2** serão liberados na plataforma em **23/04**.
+:::
+
+---
+
+## Obrigado. {.title-slide}
+
+::: {style="margin-top: 3em; text-align: center;"}
+
+::: {style="color: #C8102E; font-size: 1.8em; font-weight: 700;"}
+Perguntas?
+:::
+
+<br/>
+
+<br/>
+
+::: {style="font-size: 0.85em; color: #2A2F36;"}
+Dúvidas não resolvidas hoje: registrar na plataforma até 48h.  \
+Pré-aula 2: abre amanhã.
+:::
+
+:::

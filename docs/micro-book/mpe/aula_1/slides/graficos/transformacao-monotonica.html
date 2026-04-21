@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--
+  Transformações Monotônicas e Invariância Ordinal
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transformação Monotônica — Invariância Ordinal</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:.4rem .5rem}
+    .main-container{max-width:100%;margin:0 auto}
+    /* Grid 3 colunas em pixels FIXOS: garante dimensões determinísticas para
+       o JSXGraph no momento do initBoard (aspect-ratio causa race condition).
+       Slide Reveal.js de 1280px tem ~1120px úteis; total aqui: 400+400+280+2*gap = 1096px.
+    */
+    .widget-container{display:grid;grid-template-columns:400px 400px 280px;gap:.6rem;align-items:start;max-width:100%;justify-content:start}
+    .panel-col{min-width:0;width:400px}
+    .panel-title{text-align:center;font-size:.85rem;font-weight:700;margin:0 0 .25rem;color:#333;line-height:1.3}
+    .panel-title span{color:#C8102E}
+    /* Container fixo 400×400. Bate com bbox 11×11 mantendo proporção quadrada. */
+    .panel-box{width:400px;height:400px;border:1px solid #ddd;border-radius:6px;background:#fff}
+    .controls{min-width:0;width:280px;padding:.6rem .7rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee;overflow:hidden}
+    .controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}
+    .slider-group{margin-bottom:.8rem}
+    .slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    select{width:100%;padding:.4rem;border:1px solid #ccc;border-radius:4px;font-family:inherit;font-size:.85rem;accent-color:#C8102E}
+    .info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.7}
+    .info-box .info-row{display:flex;justify-content:space-between;align-items:baseline}
+    .info-box .info-label{color:#666}
+    .info-box .info-val{font-weight:700;color:#333}
+    .info-box .info-val.accent{color:#C8102E}
+    .info-box .info-val.green{color:#00897b}
+    .info-box .divider{border:none;border-top:1px solid #eee;margin:.4rem 0}
+    .highlight-box{margin-top:.6rem;padding:.6rem;border-radius:4px;font-size:.82rem;text-align:center;font-weight:700;background:#e8f5e9;color:#2e7d32;border:1px solid #a5d6a7}
+    .btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}
+    .btn-reset:hover{background:#9a0c23}
+    @media(max-width:860px){.panels{grid-template-columns:1fr}.panel-box{max-width:100%}}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <div class="widget-container">
+    <div class="panel-col">
+      <div class="panel-title">Original: <span id="label-left">\(U = x_1 \, x_2\)</span></div>
+      <div class="panel-box" id="board-left"></div>
+    </div>
+    <div class="panel-col">
+      <div class="panel-title">Transformada: <span id="label-right">\(\hat{U} = \ln(x_1 x_2)\)</span></div>
+      <div class="panel-box" id="board-right"></div>
+    </div>
+  <div class="controls">
+    <h3>Transformação monotônica</h3>
+    <div class="slider-group">
+      <label>Transformação \(f(U)\):</label>
+      <select id="sel-transform">
+        <option value="ln" selected>f(U) = ln(U)</option>
+        <option value="sqrt">f(U) = √U</option>
+        <option value="sq">f(U) = U²</option>
+        <option value="cube">f(U) = U³</option>
+        <option value="inv">f(U) = −1/U</option>
+      </select>
+    </div>
+    <div class="slider-group">
+      <label>Ponto de referência \(x_1\): <span class="val" id="val-x1">4</span></label>
+      <input type="range" id="sl-x1" min="1" max="9" step="0.5" value="4">
+    </div>
+    <div class="slider-group">
+      <label>Ponto de referência \(x_2\): <span class="val" id="val-x2">6</span></label>
+      <input type="range" id="sl-x2" min="1" max="9" step="0.5" value="6">
+    </div>
+    <div class="info-box">
+      <div class="info-row"><span class="info-label">No ponto \((x_1, x_2)\)</span><span class="info-val" id="info-pt">—</span></div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">\(U(x_1,x_2)\)</span><span class="info-val accent" id="info-U">—</span></div>
+      <div class="info-row"><span class="info-label">\(\hat{U} = f(U)\)</span><span class="info-val green" id="info-Uhat">—</span></div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">TMS original</span><span class="info-val accent" id="info-tms1">—</span></div>
+      <div class="info-row"><span class="info-label">TMS transformada</span><span class="info-val green" id="info-tms2">—</span></div>
+    </div>
+    <div class="highlight-box" id="verdict">
+      Curvas idênticas — TMS idêntica — apenas os rótulos mudam
+    </div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+  </div>
+</div>
+<script>
+var x1Ref=4, x2Ref=6, transformType='ln';
+
+// U(x1,x2) = x1*x2
+function U(a,b){return a*b;}
+function TMS(a,b){return b/a;} // UMg1/UMg2 = x2/x1
+
+// Transform functions
+var transforms={
+  ln:  {f:Math.log, label:'\\(\\hat{U} = \\ln(x_1 x_2)\\)', name:'ln(U)'},
+  sqrt:{f:Math.sqrt, label:'\\(\\hat{U} = \\sqrt{x_1 x_2}\\)', name:'√U'},
+  sq:  {f:function(u){return u*u;}, label:'\\(\\hat{U} = (x_1 x_2)^2\\)', name:'U²'},
+  cube:{f:function(u){return u*u*u;}, label:'\\(\\hat{U} = (x_1 x_2)^3\\)', name:'U³'},
+  inv: {f:function(u){return -1/u;}, label:'\\(\\hat{U} = -1/(x_1 x_2)\\)', name:'-1/U'}
+};
+
+// Indifference curve: x1*x2 = k => x2 = k/x1
+function icCurve(k){
+  return function(x){return x>0.1?k/x:100;};
+}
+
+var levels=[4,9,16,25,36];
+var colors=['#bbdefb','#64b5f6','#42a5f5','#1e88e5','#1565c0'];
+
+// boundingbox com pequena margem negativa para os eixos respirarem
+// (Darcio): os dois boards usam EXATAMENTE o mesmo bbox para comparação.
+var bbL=[-0.5,10.5,10.5,-0.5];
+var boardL=JXG.JSXGraph.initBoard('board-left',{boundingbox:bbL,axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:true});
+var boardR=JXG.JSXGraph.initBoard('board-right',{boundingbox:bbL,axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:true});
+
+function setupBoard(bd){
+  // Axis como segmento finito (straightFirst/Last=false) para não desenhar retas
+  // infinitas fora do 1º quadrante. Ticks a cada 1 unidade, labels 0..10.
+  bd.create('axis',[[0,0],[10,0]],{name:'',withLabel:false,straightFirst:false,straightLast:false,
+    ticks:{drawLabels:true,drawZero:true,label:{fontSize:9,offset:[-3,-10]},minorTicks:0,ticksDistance:1,majorHeight:6,tickEndings:[0,1]}});
+  bd.create('axis',[[0,0],[0,10]],{name:'',withLabel:false,straightFirst:false,straightLast:false,
+    ticks:{drawLabels:true,drawZero:false,label:{fontSize:9,anchorX:'right',offset:[-6,0]},minorTicks:0,ticksDistance:1,majorHeight:6,tickEndings:[1,0]}});
+  bd.create('text',[10.1,0.3,'<i>x₁</i>'],{fontSize:12,fixed:true,anchorX:'left',highlight:false});
+  bd.create('text',[0.3,10.1,'<i>x₂</i>'],{fontSize:12,fixed:true,anchorX:'left',anchorY:'bottom',highlight:false});
+}
+setupBoard(boardL);
+setupBoard(boardR);
+
+// Curvas de indiferença CD: U = x₁ x₂ = k => x₂ = k/x₁.
+// Range: EPS=0.3 como piso uniforme (evita assíntota). Todas cobrem o bbox horizontal.
+var EPS=0.3;
+var curvesL=[], curvesR=[], labelsL=[], labelsR=[];
+for(var i=0;i<levels.length;i++){
+  var k=levels[i];
+  curvesL.push(boardL.create('functiongraph',[icCurve(k),EPS,10.5],{strokeColor:colors[i],strokeWidth:2,highlight:false}));
+  curvesR.push(boardR.create('functiongraph',[icCurve(k),EPS,10.5],{strokeColor:colors[i],strokeWidth:2,highlight:false}));
+  // Label posicionado na diagonal (x₁=x₂=√k) onde a curva cruza y=x, com offset
+  // pequeno para cima-direita. Texto em cor da curva, sem background decorado.
+  var s=Math.sqrt(k);
+  var lx=s+0.35, ly=s+0.35;
+  if(s<=8){
+    labelsL.push(boardL.create('text',[lx,ly,'U='+k],{fontSize:11,fixed:true,anchorX:'left',anchorY:'bottom',strokeColor:colors[i],cssStyle:'font-weight:700'}));
+    labelsR.push(boardR.create('text',[lx,ly,'Û='+Math.log(k).toFixed(2)],{fontSize:11,fixed:true,anchorX:'left',anchorY:'bottom',strokeColor:colors[i],cssStyle:'font-weight:700'}));
+  } else {
+    labelsL.push(null);
+    labelsR.push(null);
+  }
+}
+
+// Reference point on both boards
+var ptL=boardL.create('point',[function(){return x1Ref;},function(){return x2Ref;}],{size:5,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',fixed:true});
+var ptR=boardR.create('point',[function(){return x1Ref;},function(){return x2Ref;}],{size:5,fillColor:'#00897b',strokeColor:'#00897b',name:'',fixed:true});
+
+// Indifference curve through reference point (highlighted)
+// Range calculado dinamicamente para não explodir numericamente (k/x → ∞ em x→0).
+var refCurveL=boardL.create('functiongraph',[function(x){return U(x1Ref,x2Ref)/x;},function(){return Math.max(EPS,U(x1Ref,x2Ref)/10.5);},10.5],{strokeColor:'#C8102E',strokeWidth:3,highlight:false});
+var refCurveR=boardR.create('functiongraph',[function(x){return U(x1Ref,x2Ref)/x;},function(){return Math.max(EPS,U(x1Ref,x2Ref)/10.5);},10.5],{strokeColor:'#00897b',strokeWidth:3,highlight:false});
+
+function updateLabels(){
+  var tf=transforms[transformType];
+  for(var i=0;i<labelsL.length;i++){
+    if(!labelsL[i]||!labelsR[i]) continue;
+    var uVal=levels[i];
+    labelsL[i].setText('U='+uVal);
+    var hatVal=tf.f(uVal);
+    // Símbolo do lado transformado muda conforme a função: ln, √, U², U³, -1/U
+    labelsR[i].setText('Û='+(isFinite(hatVal)?hatVal.toFixed(2):'—'));
+  }
+}
+
+function updateAll(){
+  x1Ref=+document.getElementById('sl-x1').value;
+  x2Ref=+document.getElementById('sl-x2').value;
+  transformType=document.getElementById('sel-transform').value;
+  var tf=transforms[transformType];
+
+  document.getElementById('val-x1').textContent=x1Ref;
+  document.getElementById('val-x2').textContent=x2Ref;
+  document.getElementById('label-right').innerHTML=tf.label;
+
+  var uVal=U(x1Ref,x2Ref);
+  var uHat=tf.f(uVal);
+  var tms=TMS(x1Ref,x2Ref);
+
+  document.getElementById('info-pt').textContent='('+x1Ref+', '+x2Ref+')';
+  document.getElementById('info-U').textContent=uVal.toFixed(2);
+  document.getElementById('info-Uhat').textContent=uHat.toFixed(4);
+  document.getElementById('info-tms1').textContent=tms.toFixed(3);
+  document.getElementById('info-tms2').textContent=tms.toFixed(3)+' (idêntica!)';
+
+  updateLabels();
+  boardL.update();
+  boardR.update();
+
+  if(window.MathJax&&MathJax.typesetPromise){
+    MathJax.typesetPromise([document.getElementById('label-right')]);
+  }
+}
+
+document.getElementById('sl-x1').addEventListener('input',updateAll);
+document.getElementById('sl-x2').addEventListener('input',updateAll);
+document.getElementById('sel-transform').addEventListener('change',updateAll);
+
+function resetAll(){
+  document.getElementById('sl-x1').value=4;
+  document.getElementById('sl-x2').value=6;
+  document.getElementById('sel-transform').value='ln';
+  x1Ref=4;x2Ref=6;transformType='ln';
+  updateAll();
+}
+updateAll();
+</script>
+</body>
+</html>
