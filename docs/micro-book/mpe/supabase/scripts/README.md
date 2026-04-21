@@ -5,7 +5,7 @@ Essa key dá acesso total ao banco (ignora RLS). **Nunca commitar em lugar nenhu
 
 ## import-turma.js
 
-Importa alunos do CSV para `auth.users`. Cria contas com senha temporária padronizada (`Mpe2026-<matricula>`). O trigger `handle_new_user` do banco cria automaticamente a linha em `profiles` com matrícula e nome.
+Importa alunos do CSV para `auth.users`. Cria contas com senha temporária padronizada (`Mpe2026-<parte-local-do-email>`, ex: `Mpe2026-vitoriaalmm` para `vitoriaalmm@al.insper.edu.br`). O trigger `handle_new_user` do banco cria automaticamente a linha em `profiles` com matrícula e nome.
 
 ### Passo a passo
 
@@ -57,13 +57,15 @@ O arquivo `credenciais-YYYY-MM-DD.csv` tem:
 
 ```csv
 matricula,nome,email,senha_temporaria
-264078,"VITORIA ...",vitoriaalmm@al.insper.edu.br,Mpe2026-264078
+264078,"VITORIA ...",vitoriaalmm@al.insper.edu.br,Mpe2026-vitoriaalmm
 ...
 ```
 
 **Distribua este CSV apenas pelo canal seguro** (Blackboard mensagem individual ou email institucional). **Não mande por WhatsApp nem Slack aberto.**
 
-Alternativa: a senha é previsível (`Mpe2026-<matricula>`), então basta anunciar o padrão em aula — cada aluno sabe a sua.
+Alternativa: a senha é previsível (`Mpe2026-<parte-local-do-email>`), então basta anunciar o padrão em aula — cada aluno sabe a sua.
+
+> Anúncio sugerido em aula: _"Sua senha é `Mpe2026-` seguido da parte do seu email antes do arroba. Ex: email `juanacf@al.insper.edu.br` → senha `Mpe2026-juanacf`."_
 
 ### Após o import
 

@@ -64,8 +64,11 @@ function parseCsvBR(raw) {
   });
 }
 
-function tempPassword(matricula) {
-  return `Mpe2026-${matricula}`;
+function tempPassword(email) {
+  // Usa parte local do email (antes do @) para senha inicial legivel
+  // ex: vitoriaalmm@al.insper.edu.br -> Mpe2026-vitoriaalmm
+  const localPart = (email || '').split('@')[0];
+  return `Mpe2026-${localPart}`;
 }
 
 // =============================================================================
@@ -94,7 +97,7 @@ async function main() {
       continue;
     }
 
-    const senha = tempPassword(a.matricula);
+    const senha = tempPassword(a.email);
 
     try {
       const { data, error } = await supabase.auth.admin.createUser({
