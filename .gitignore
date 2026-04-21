@@ -19,3 +19,12 @@ docs/micro-book/mpe/*.log
 docs/micro-book/mpe/*.out
 docs/micro-book/mpe/*.bak
 docs/micro-book/mpe/*\ (1).pdf
+
+# MPE course — dados pessoais LGPD (NUNCA commitar)
+docs/micro-book/mpe/lista_alunos_csv.csv
+docs/micro-book/mpe/lista_alunos_csv.csv:Zone.Identifier
+docs/micro-book/mpe/lista_alunos*.xls
+docs/micro-book/mpe/lista_alunos*.xlsx
+docs/micro-book/mpe/credenciais-*.csv
+docs/micro-book/mpe/supabase/scripts/node_modules/
+docs/micro-book/mpe/supabase/scripts/package-lock.json
