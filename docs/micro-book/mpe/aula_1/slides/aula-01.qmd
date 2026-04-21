@@ -408,12 +408,24 @@ $$
 Em uma frase: existe um truque que funciona — e a continuidade é o passe.
 :::
 
-::: {.fragment}
-**O que o teorema diz (e não diz):**
+---
 
-- **Existe** $u$. Qualquer transformação monótona também serve.
-- **Nada** sobre forma funcional — CD, CES etc. vêm de hipóteses *adicionais*.
-- **Monotonicidade / convexidade** não são necessárias aqui; dão regularidade útil.
+## Teorema da representação — o que ele diz (e não diz)
+
+::: {.fragment}
+- **Existe** $u$. Qualquer transformação monótona também serve — ordinalidade já está plantada aqui.
+:::
+
+::: {.fragment}
+- **Nada** sobre forma funcional. Cobb-Douglas, CES, Leontief etc. vêm de hipóteses *adicionais* — não do teorema.
+:::
+
+::: {.fragment}
+- **Monotonicidade e convexidade** não são necessárias para a existência. Elas dão **regularidade útil** para trabalhar com $u$ (diferenciabilidade, quasiconcavidade).
+:::
+
+::: {.fragment .bridge}
+Ou seja: o teorema destranca a porta. Passar por ela, escolher os móveis e decorar a sala — é o Bloco 2.
 :::
 
 ---
@@ -877,6 +889,22 @@ Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 | Acima de 23.850      | **7,6%**  | 15,4% | **6,2%** |
 
 <span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. ZaE §3.6.6.</span>
+:::
+
+---
+
+## POF — o que a tabela diz
+
+::: {.fragment}
+**Alimentação** cai de 22,0% para 7,6% — **bem necessário** ($\eta < 1$), exatamente como Engel previu.
+:::
+
+::: {.fragment}
+**Educação** sobe de 1,6% para 6,2% — **bem-luxo** ($\eta > 1$).
+:::
+
+::: {.fragment}
+**Transporte** não-monotônico (11,5 → 18,8 → 15,4) — composição muda com a renda, não só escala.
 :::
 
 ::: {.fragment}
