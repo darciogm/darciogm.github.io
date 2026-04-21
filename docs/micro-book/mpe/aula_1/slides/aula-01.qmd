@@ -153,6 +153,10 @@ Cinco axiomas, um teorema, uma tensão (ordinalidade).
 Hoje não mediremos utilidade. Mediremos *se faz sentido* falar em utilidade.
 :::
 
+::: {.eq-key style="text-align: center; font-size: 1.15em; font-weight: 600; margin-top: 0.6em;"}
+A preferência é o fato. A utilidade é o truque.
+:::
+
 ---
 
 ## Preferência como primitivo
@@ -297,6 +301,12 @@ Logo $x \succ^L y$ — a preferência **pula**.
 :::
 :::
 
+::: {.eq-key style="margin-top: 0.5em; font-size: 0.95em;"}
+$$
+\underbrace{x^n \longrightarrow x}_{\text{sequência converge}} \quad\text{com}\quad \underbrace{y \succ^L x^n\ \forall n}_{\text{ao longo}} \quad\text{mas}\quad \underbrace{x \succ^L y}_{\text{no limite}}
+$$
+:::
+
 ---
 
 ## Preferências lexicográficas (4/5) · Conclusão do contraexemplo
@@ -307,7 +317,11 @@ Logo $x \succ^L y$ — a preferência **pula**.
 O conjunto $\{z : y \succeq^L z\}$ **não é fechado** em $\mathbb{R}^2_+$ — uma sequência inteiramente dentro dele converge para um ponto fora. Continuidade **falha**.
 :::
 
-**Mecanismo.** A preferência lexicográfica faz com que **um $\varepsilon$ no bem 1 domine qualquer quantidade do bem 2**: a fronteira entre "$y$ é preferido" e "$x$ é preferido" não é fechada — é aberta de um lado.
+**Mecanismo.** A fronteira entre "$y$ é preferido" e "$x$ é preferido" não é fechada — é aberta de um lado.
+
+::: {.eq-key style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.5em;"}
+Um $\varepsilon$ no bem 1 domina qualquer quantidade do bem 2.
+:::
 
 ::: {.fragment .bridge}
 Sem continuidade, a representação por utilidade falha. Vamos ver **por que** no slide seguinte (argumento de Debreu).
@@ -374,28 +388,6 @@ $$
 **Gráfico mental:** curvas de indiferença convexas em relação à origem.
 
 **Versões.** Fraca: $\lambda x + (1-\lambda) y \succeq y$ — casa com quasiconcavidade de $u$ e é o default em N&S/ZaE. Estrita (acima): dá **TMS estritamente decrescente** e unicidade no UMP. É da fraca que segue a TMS "decrescente" do Panorama.
-
----
-
-## Três conceitos que os alunos confundem
-
-::: {.compact-table}
-| Conceito | Sobre o quê | Caráter | Preciso? |
-|:---|:---|:---|:---:|
-| **Convexidade da preferência** (axioma 5) | Relação $\succeq$ sobre $X$ | Ordinal | Sim — dá TMS decrescente |
-| **Quasiconcavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \min\{u(x), u(y)\}$; conjuntos superiores de nível convexos | Ordinal — preservada por transformação monótona | Equivalente à convexidade |
-| **Concavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \lambda u(x) + (1-\lambda) u(y)$ | **Cardinal** — *não* preservada | **Não** — mais forte que o necessário |
-:::
-
-::: {.bridge}
-A confusão canônica é entre os dois últimos: **quasiconcavidade não implica concavidade** — e só a primeira é ordinal.
-:::
-
-**No dia-a-dia:** trocar $u(x_1,x_2) = x_1^{\alpha} x_2^{1-\alpha}$ por $\alpha \ln x_1 + (1-\alpha) \ln x_2$ é **ordinalidade em ação** — mesma preferência, álgebra mais fácil. Veremos em dois slides.
-
-::: {.bridge}
-**Em uma linha:** $\succeq$ convexa fraca $\iff$ $u$ quasiconcava $\iff$ **TMS decrescente** ao longo da CI — *saciação relativa na margem*.
-:::
 
 ---
 
@@ -467,14 +459,44 @@ Em **utilidade esperada**, a representação é única a menos de **transformaç
 
 ---
 
+## Três conceitos que os alunos confundem
+
+::: {.compact-table}
+| Conceito | Sobre o quê | Caráter | Preciso? |
+|:---|:---|:---|:---:|
+| **Convexidade da preferência** (axioma 5) | Relação $\succeq$ sobre $X$ | Ordinal | Sim — dá TMS decrescente |
+| **Quasiconcavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \min\{u(x), u(y)\}$; conjuntos superiores de nível convexos | Ordinal — preservada por transformação monótona | Equivalente à convexidade |
+| **Concavidade de $u$** | $u(\lambda x + (1-\lambda)y) \geq \lambda u(x) + (1-\lambda) u(y)$ | **Cardinal** — *não* preservada | **Não** — mais forte que o necessário |
+:::
+
+::: {.bridge}
+A confusão canônica é entre os dois últimos: **quasiconcavidade não implica concavidade** — e só a primeira é ordinal. Como acabamos de ver, cardinal não sobrevive a transformação monótona.
+:::
+
+**No dia-a-dia:** trocar $u(x_1,x_2) = x_1^{\alpha} x_2^{1-\alpha}$ por $\alpha \ln x_1 + (1-\alpha) \ln x_2$ é **ordinalidade em ação** — mesma preferência, álgebra mais fácil. Veremos no Bloco 2.
+
+::: {.bridge}
+**Em uma linha:** $\succeq$ convexa fraca $\iff$ $u$ quasiconcava $\iff$ **TMS decrescente** ao longo da CI — *saciação relativa na margem*.
+:::
+
+---
+
 ## Ponte para o Bloco 2
+
+::: {.eq-key style="text-align: center; font-size: 1.15em; font-weight: 600;"}
+Existe $u$. Mas **qual** $u$ serve para **qual** história?
+:::
 
 Sabemos **que** $u$ existe. Sabemos **que** é única a menos de transformação monótona.
 
-Não sabemos **qual** $u$.
+- **Cobb-Douglas** — parcelas de gasto constantes.
+- **Leontief** — complementaridade rígida.
+- **CES** — a família que unifica as três, com $\sigma$ como parâmetro.
+- **Quasilinear** — efeito-renda zero, excedente bem-definido.
+- E a **TMS** como objeto ordinal transversal a todas.
 
 ::: {.bridge}
-No próximo bloco: quatro formas funcionais canônicas. Derivamos TMS, lemos economia, e preparamos a unificação via CES (que fica para a monitoria).
+No próximo bloco: derivamos TMS em cada forma, lemos a economia por trás, e preparamos a unificação via CES (limites finos ficam para a monitoria).
 :::
 
 ---
@@ -493,11 +515,15 @@ Estique. Água. Deixe a caneta em cima da mesa.
 
 ## Bloco 2 — TMS em formas funcionais {background-color="#C8102E" .section-divider}
 
-::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+::: {style="color: white; font-size: 1.25em; font-style: italic; font-weight: 500; margin-top: 0.6em; opacity: 0.95;"}
+"A preferência é o fato. A utilidade é o truque."
+:::
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
 40 min · 20:35–21:15
 :::
 
-::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
 Cobb-Douglas · Leontief · CES · Quasilinear
 :::
 
@@ -704,6 +730,16 @@ $$
 
 ---
 
+## De CES para quasilinear — por que trocar de história
+
+::: {style="margin-top: 1.5em; font-size: 1.05em; line-height: 1.6;"}
+CES varia $\sigma$ mantendo efeito-renda positivo. Nem toda história precisa disso.
+
+Às vezes, **zerar o efeito-renda** é o que interessa — e nasce a forma mais usada em economia pública.
+:::
+
+---
+
 ## Quasilinear — simplicidade com estrutura
 
 ::: {.card}
@@ -755,6 +791,10 @@ Se $u = v(x_1) + x_2$: efeito-renda no bem 1 é **zero** → Marshalliana = Hick
 
 ## Mini-exercício — Cobb-Douglas numérico
 
+::: {.bridge}
+Teste a cadeia inteira em 30 segundos.
+:::
+
 **Função:** $u(x_1, x_2) = x_1^{0.4}\, x_2^{0.6}$.  \
 **Ponto:** $(x_1, x_2) = (4, 9)$.
 
@@ -770,39 +810,10 @@ $$
 **Leitura:** na margem, o consumidor está disposto a trocar 1,5 unidade de $x_2$ por 1 unidade adicional de $x_1$. Decrescente em $x_1$, crescente em $x_2$ — convexidade estrita em ação.
 :::
 
----
-
-## Ganchos explícitos para a monitoria
-
-::: {.cols}
-::: {}
-**1. Cobb-Douglas como limite da CES**
-$$
-\lim_{\rho \to 0} \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}
-$$
-via log e L'Hôpital.
-:::
-::: {}
-**2. Leontief como limite da CES**
-$$
-\lim_{\rho \to -\infty} \left(\cdots\right)^{1/\rho} = \min\{\cdot, \cdot\}
-$$
-heurístico via min.
-:::
-:::
-
 ::: {.fragment}
-::: {.cols}
-::: {}
-**3. $\sigma$ pela definição**
-$$
-\sigma = \frac{d \ln(x_2/x_1)}{d \ln \text{TMS}}
-$$
-calculado por forma.
-:::
-::: {}
-**4. Contraexemplo lexicográfico** — prova completa da não-representabilidade por utilidade.
-:::
+::: {.eq-key style="text-align: center; font-size: 1.0em; font-weight: 500; margin-top: 0.4em;"}
+Axioma de convexidade → representação Cobb-Douglas → TMS fechada → número.  \
+**Isso é microeconomia em uma conta.**
 :::
 :::
 
@@ -834,7 +845,11 @@ Consumo domiciliar e o que os dados revelam sobre preferências.
 
 ## POF / IBGE e a Lei de Engel
 
-**Lei de Engel (1857):** alimentação é bem **necessário** ($\eta < 1$) → participação no orçamento **cai** com a renda. **Luxo** ($\eta > 1$) faz o oposto. Pergunta: o Brasil obedece?
+::: {.eq-key style="font-size: 1.05em; font-weight: 600;"}
+Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
+:::
+
+**Lei de Engel (1857):** alimentação é bem **necessário** ($\eta < 1$) → participação no orçamento **cai** com a renda. **Luxo** ($\eta > 1$) faz o oposto.
 
 ::: {.fragment}
 | Faixa de renda (R$/mês) | Alimentação | Transporte | Educação |
@@ -845,6 +860,12 @@ Consumo domiciliar e o que os dados revelam sobre preferências.
 | Acima de 23.850      | **7,6%**  | 15,4% | **6,2%** |
 
 <span style="font-size:0.75em;color:#2A2F36">Fonte: IBGE, POF 2017–2018. Ver ZaE §3.6.6, Box Brasil 3.2.</span>
+:::
+
+::: {.fragment}
+::: {.eq-key style="font-size: 1.0em; font-weight: 600;"}
+Se o consumidor representativo existisse, essa tabela seria plana. Não é. **O que a planilha da Fazenda faz com isso?**
+:::
 :::
 
 ::: {.fragment .bridge}
@@ -1058,33 +1079,59 @@ Coerente. Seria U = x^{2k} y^{5k}.
 ## Síntese — se você sair com isto, a aula valeu
 
 ::: {.fragment}
-1. **Axiomas (1)–(3) → representação por utilidade.** Continuidade é o axioma-chave. Monotonicidade e convexidade dão regularidade útil, não existência.
+1. **Preferência é o fato. Utilidade é o truque.** Axiomas (1)–(3) garantem que o truque funciona — continuidade é o axioma-chave da existência.
 :::
 
 ::: {.fragment}
-2. **Ordinalidade.** TMS invariante a transformação monótona. Magnitudes de $u$ não são observáveis. *Limita* comparações interpessoais — mas não as impede.
+2. **Portanto**, a TMS é ordinal — $\ln u$ e $u$ contam a mesma história. (Você usou isso no mini-exercício Cobb-Douglas.)
 :::
 
 ::: {.fragment}
-3. **CES é a família mãe.** Cobb-Douglas ($\sigma=1$), Leontief ($\sigma=0$) e substitutos perfeitos ($\sigma=\infty$) são *regimes* da mesma forma funcional. A unificação algébrica vem na monitoria.
+3. **Por isso**, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com $\sigma$ regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.
 :::
 
 ---
 
-## Ponte para a Aula 2
+<!-- Decisão: mover Ganchos-monitoria para cá (pre-fechamento) em vez de deixar
+     no meio do Bloco 2 (onde quebrava o arco CD→Leontief→CES→QL). Aqui o aluno
+     já viu tudo, então os 4 ganchos funcionam como teaser do que o Alberto
+     aprofunda — cronograma comporta (Bl.4 tinha 50min pra 7 slides; agora 8). -->
 
-Sabemos: $u$ existe. Sabemos: TMS é ordinal.  \
-**Próximo passo — Aula 2 (29/04):**
+## O que o Alberto vai aprofundar na monitoria 1
 
+::: {.cols}
+::: {}
+**1. Cobb-Douglas como limite da CES**
 $$
-\max_{(x_1, x_2)} u(x_1, x_2) \quad\text{s.a.}\quad p_1 x_1 + p_2 x_2 = m.
+\lim_{\rho \to 0} \left(\alpha x_1^\rho + (1-\alpha) x_2^\rho\right)^{1/\rho}
 $$
+via log e L'Hôpital.
+:::
+::: {}
+**2. Leontief como limite da CES**
+$$
+\lim_{\rho \to -\infty} \left(\cdots\right)^{1/\rho} = \min\{\cdot, \cdot\}
+$$
+heurístico via min.
+:::
+:::
 
-- Nasce a **demanda marshalliana** $x_i(\mathbf{p}, m)$.
-- Do problema dual (minimização de gasto dado $\bar{u}$) nasce a **função gasto** $e(\mathbf{p}, \bar{u})$ e a **demanda hicksiana**.
-- **Roy** e **Shephard** costuram as duas pontas — a pedagogia sênior da dualidade.
+::: {.cols}
+::: {}
+**3. $\sigma$ pela definição**
+$$
+\sigma = \frac{d \ln(x_2/x_1)}{d \ln \text{TMS}}
+$$
+calculado por forma.
+:::
+::: {}
+**4. Contraexemplo lexicográfico** — prova completa da não-representabilidade por utilidade.
+:::
+:::
 
-**Quiz pós-aula 1** e **Pré-aula 2** serão liberados na plataforma em **23/04**.
+::: {.bridge}
+Monitoria 1 é opcional-mas-recomendada. É onde a tecnologia algébrica que usamos hoje fica no corpo.
+:::
 
 ---
 
@@ -1104,4 +1151,27 @@ Perguntas?
 Dúvidas na plataforma até **23/04** — data em que abre a **Pré-aula 2**.
 :::
 
+:::
+
+---
+
+## Ponte para a Aula 2
+
+Sabemos: $u$ existe. Sabemos: TMS é ordinal.  \
+**Próximo passo — Aula 2 (29/04):**
+
+$$
+\max_{(x_1, x_2)} u(x_1, x_2) \quad\text{s.a.}\quad p_1 x_1 + p_2 x_2 = m.
+$$
+
+- Nasce a **demanda marshalliana** $x_i(\mathbf{p}, m)$.
+- Do problema dual (minimização de gasto dado $\bar{u}$) nasce a **função gasto** $e(\mathbf{p}, \bar{u})$ e a **demanda hicksiana**.
+- **Roy** e **Shephard** costuram as duas pontas — a pedagogia sênior da dualidade.
+
+::: {.eq-key style="text-align: center; font-size: 1.1em; font-weight: 600; margin-top: 0.6em;"}
+Duas formas de $u$ representam a mesma preferência. Uma resolve o UMP em 3 linhas; outra em 20. **Qual? E por quê?**
+:::
+
+::: {style="font-size: 0.72em; color: #2A2F36; margin-top: 0.8em; text-align: center; font-style: italic;"}
+Quiz pós-aula 1 e Pré-aula 2 liberados na plataforma em 23/04.
 :::
