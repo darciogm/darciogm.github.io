@@ -150,12 +150,20 @@ CREATE TABLE IF NOT EXISTS public.micro_attempts (
 CREATE INDEX IF NOT EXISTS idx_micro_attempts_user_page ON public.micro_attempts (user_id, page_id);
 
 
--- 8. QUIZ_AGGREGATES - estado agregado do checkpoint final por (user, page)
+-- 8. QUIZ_AGGREGATES - estado agregado por (user, page)
+-- Cada fase vive em uma page_id distinta (aula-XX, aula-XX-pre, aula-XX-pos),
+-- entao UNIQUE (user_id, page_id) ja e suficiente. A coluna `phase` e
+-- descritiva: facilita queries ("WHERE phase='post'") e rollups por fase no
+-- admin dashboard sem depender de convencao de sufixo no page_id.
+-- phase: 'embedded' (quiz embutido em aula-XX.html - legado aula-01),
+--        'pre_review' (quiz de 10 questoes 🟡 em aula-XX-pre.html),
+--        'post' (quiz de 5🟡+5🔴 em aula-XX-pos.html).
 
 CREATE TABLE IF NOT EXISTS public.quiz_aggregates (
   id              uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id         uuid        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   page_id         text        NOT NULL,
+  phase           text        NOT NULL DEFAULT 'embedded' CHECK (phase IN ('embedded','pre_review','post')),
   attempts        integer     NOT NULL DEFAULT 0,
   best_score      integer     NOT NULL DEFAULT 0,
   last_attempt_at timestamptz,
@@ -165,12 +173,17 @@ CREATE TABLE IF NOT EXISTS public.quiz_aggregates (
 CREATE INDEX IF NOT EXISTS idx_quiz_aggregates_user ON public.quiz_aggregates (user_id);
 
 
--- 9. QUIZ_QUESTION_ATTEMPTS - historico detalhado por questao do checkpoint
+-- 9. QUIZ_QUESTION_ATTEMPTS - historico detalhado por questao do quiz
+-- phase: mesma semantica de quiz_aggregates.
+-- difficulty: 'yellow' / 'red' gravado so na fase 'post' (5🟡+5🔴); NULL nas
+-- fases 'embedded' e 'pre_review' (que sao homogeneas por design).
 
 CREATE TABLE IF NOT EXISTS public.quiz_question_attempts (
   id            uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
   user_id       uuid        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   page_id       text        NOT NULL,
+  phase         text        NOT NULL DEFAULT 'embedded' CHECK (phase IN ('embedded','pre_review','post')),
+  difficulty    text        CHECK (difficulty IS NULL OR difficulty IN ('yellow','red')),
   question_id   text        NOT NULL,
   answer        text        NOT NULL,
   correct       boolean     NOT NULL,

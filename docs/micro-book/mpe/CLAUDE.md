@@ -54,7 +54,8 @@ mpe/
 - `profiles` — perfil do usuário, papel (`role`), `consented_lgpd`, `password_changed_at`.
 - `page_visits`, `section_progress`, `confidence_ratings` — tracker de engajamento.
 - `micro_attempts` — respostas de micro-checkpoints ao longo das páginas.
-- `quiz_aggregates`, `quiz_question_attempts` — infra de quizzes (usada pelos quizzes de revisão pré-aula e pós-aula).
+- `quiz_aggregates` — estado agregado por `(user_id, page_id)`. Coluna descritiva `phase IN ('embedded','pre_review','post')` marca a natureza do quiz (legado embutido, revisão pré-aula, pós-aula). UNIQUE permanece em `(user_id, page_id)` porque cada fase vive em `page_id` distinto (`aula-XX`, `aula-XX-pre`, `aula-XX-pos`).
+- `quiz_question_attempts` — histórico por questão; além de `phase`, carrega `difficulty IN ('yellow','red')` (NULL em `embedded`/`pre_review`, obrigatório por convenção em `post`).
 - `paper_exercises` — exercícios avaliativos (30% da nota).
 - `reflections` — reflexões qualitativas do aluno.
 
