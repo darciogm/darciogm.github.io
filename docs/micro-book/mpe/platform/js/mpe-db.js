@@ -229,6 +229,51 @@
       }
     },
 
+    // ==================== LGPD ====================
+
+    recordConsent: async function() {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+      var res = await client.from('profiles').update({ consented_lgpd: new Date().toISOString() }).eq('id', uid);
+      return res.error ? { ok:false, error:res.error } : { ok:true };
+    },
+
+    fetchMyDataAll: async function() {
+      // Para o titular baixar os proprios dados (direito de acesso/portabilidade)
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+      try {
+        var queries = await Promise.all([
+          client.from('profiles').select('*').eq('id', uid).single(),
+          client.from('page_visits').select('*').eq('user_id', uid),
+          client.from('section_progress').select('*').eq('user_id', uid),
+          client.from('confidence_ratings').select('*').eq('user_id', uid),
+          client.from('micro_attempts').select('*').eq('user_id', uid),
+          client.from('quiz_aggregates').select('*').eq('user_id', uid),
+          client.from('quiz_question_attempts').select('*').eq('user_id', uid),
+          client.from('paper_exercises').select('*').eq('user_id', uid),
+          client.from('reflections').select('*').eq('user_id', uid)
+        ]);
+        return {
+          ok: true,
+          data: {
+            exported_at: new Date().toISOString(),
+            profile:         queries[0].data,
+            page_visits:     queries[1].data || [],
+            section_progress: queries[2].data || [],
+            confidence_ratings: queries[3].data || [],
+            micro_attempts:  queries[4].data || [],
+            quiz_aggregates: queries[5].data || [],
+            quiz_question_attempts: queries[6].data || [],
+            paper_exercises: queries[7].data || [],
+            reflections:     queries[8].data || []
+          }
+        };
+      } catch(e) { return { ok:false, error:e }; }
+    },
+
     // ==================== TEST (saude da conexao) ====================
 
     testConnection: async function() {
@@ -268,6 +313,7 @@
         email: prof.data.email,
         role: prof.data.role,
         userId: prof.data.id,
+        consented_lgpd: prof.data.consented_lgpd,
         loginAt: new Date().toISOString()
       }));
     } catch(e) {

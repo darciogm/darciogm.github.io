@@ -67,6 +67,64 @@
 </div>
 <div class="aulas-grid" id="monitorias-grid"></div>
 
+<!-- LGPD: controles do titular (direitos Art. 18) -->
+<div class="my-performance" style="margin-top:2rem">
+  <h3 style="font-size:0.95rem">Meus dados e privacidade</h3>
+  <div class="perf-grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+    <div class="perf-card">
+      <div class="perf-title">Portabilidade de dados</div>
+      <div class="perf-sub" style="margin-bottom:0.5rem">Baixe todos os seus dados em JSON (LGPD Art. 18, V).</div>
+      <button onclick="downloadMyData()" style="background:var(--accent);color:#fff;border:none;padding:0.5rem 0.9rem;border-radius:var(--radius);font-size:0.8rem;font-weight:600;cursor:pointer">⬇ Baixar meus dados</button>
+    </div>
+    <div class="perf-card">
+      <div class="perf-title">Direito de eliminação</div>
+      <div class="perf-sub" style="margin-bottom:0.5rem">Solicite a eliminação dos dados (LGPD Art. 18, VI).</div>
+      <a href="mailto:darciogm1@insper.edu.br?subject=LGPD%3A%20Solicita%C3%A7%C3%A3o%20de%20elimina%C3%A7%C3%A3o%20de%20dados&body=Ol%C3%A1%2C%20solicito%20a%20elimina%C3%A7%C3%A3o%20dos%20meus%20dados%20pessoais%20na%20plataforma%20de%20pr%C3%A9-aula%20da%20disciplina%20Microeconomia%20I%20do%20MPE%202026%2F32.%0A%0ANome%20completo%3A%20%0AMatr%C3%ADcula%3A%20" style="background:#F5EFEC;color:var(--accent);text-decoration:none;padding:0.5rem 0.9rem;border-radius:var(--radius);font-size:0.8rem;font-weight:600;display:inline-block">✉ Enviar solicitação</a>
+    </div>
+    <div class="perf-card">
+      <div class="perf-title">Política completa</div>
+      <div class="perf-sub" style="margin-bottom:0.5rem">Leia a Política de Privacidade aplicada à plataforma.</div>
+      <a href="privacidade.html" target="_blank" style="color:var(--accent);font-size:0.8rem;font-weight:600">Abrir política →</a>
+    </div>
+  </div>
+</div>
+
+<div class="lgpd-footer-link">
+  Controlador dos dados: Insper Instituto de Ensino e Pesquisa ·
+  <a href="privacidade.html">Política de Privacidade</a> ·
+  Dúvidas: <a href="mailto:darciogm1@insper.edu.br">darciogm1@insper.edu.br</a>
+</div>
+
+<!-- LGPD consent modal — aparece se session.consented_lgpd for null -->
+<div id="lgpd-modal" class="lgpd-backdrop" style="display:none">
+  <div class="lgpd-modal">
+    <h2>Política de Privacidade — primeira entrada</h2>
+    <div class="lgpd-body">
+      <p>Esta plataforma coleta dados sobre sua preparação pré-aula para compor a nota de APA (30% da disciplina) e orientar a condução das aulas presenciais. Antes de começar, leia os pontos essenciais:</p>
+      <p><strong>Controlador:</strong> Insper Instituto de Ensino e Pesquisa.</p>
+      <p><strong>O que é coletado:</strong></p>
+      <ul>
+        <li>Cadastro: matrícula, nome, email</li>
+        <li>Acesso: horários de login, tempo efetivo por página e seção</li>
+        <li>Desempenho: respostas a quizzes e micro-checkpoints</li>
+        <li>Qualitativo: confiança auto-declarada (1-5), descrição de abordagem em exercícios de papel, reflexões livres ao final das pré-aulas</li>
+      </ul>
+      <p><strong>Quem vê:</strong> somente você (sobre seus dados), o Prof. Darcio Genicolo-Martins e o monitor Alberto Nishikawa.</p>
+      <p><strong>Infraestrutura:</strong> armazenamento no Supabase (região São Paulo), hospedagem cliente no GitHub Pages.</p>
+      <p><strong>Retenção:</strong> até 5 anos após o término do semestre; depois anonimização.</p>
+      <p><strong>Seus direitos (LGPD Art. 18):</strong> acesso, correção, portabilidade (botão "Baixar meus dados"), eliminação, anonimização, informação sobre compartilhamento, revogação de consentimento. Para exercer, email ao controlador.</p>
+      <p>A política completa está em <a href="privacidade.html" target="_blank" class="full-link">privacidade.html</a> (abre em nova aba) e detalha cada ponto.</p>
+    </div>
+    <div class="lgpd-footer">
+      <label class="lgpd-check">
+        <input type="checkbox" id="lgpd-check" onchange="document.getElementById('lgpd-accept').disabled = !this.checked">
+        <span>Li e compreendi esta Política. Autorizo o tratamento dos meus dados conforme descrito.</span>
+      </label>
+      <button class="btn-accept" id="lgpd-accept" disabled onclick="acceptLGPD()">Aceito — entrar na plataforma</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/mpe-db.js"></script>
@@ -77,6 +135,50 @@ if (!MicroAuth.requireAuth()) throw 'redirect';
 var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
 if (MicroAuth.isAdmin()) document.getElementById('admin-link').style.display = 'inline-block';
+
+// LGPD: bloqueia portal ate aluno consentir (admin pulado)
+function checkLGPDConsent() {
+  var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
+  if (!USE_SB || MicroAuth.isAdmin()) return;  // apenas em Supabase, apenas alunos
+  if (session.consented_lgpd) return;          // ja consentiu
+  document.getElementById('lgpd-modal').style.display = 'flex';
+}
+async function acceptLGPD() {
+  if (!window.MpeDB || !window.MpeDB.enabled) return;
+  var btn = document.getElementById('lgpd-accept');
+  btn.disabled = true; btn.textContent = 'Registrando...';
+  var res = await window.MpeDB.recordConsent();
+  if (!res.ok) {
+    alert('Erro ao registrar consentimento. Tente novamente ou recarregue a página.');
+    btn.disabled = false; btn.textContent = 'Aceito — entrar na plataforma';
+    return;
+  }
+  // Atualiza espelho de sessao
+  var s = MicroAuth.getSession();
+  s.consented_lgpd = new Date().toISOString();
+  sessionStorage.setItem('mpe_microI_session', JSON.stringify(s));
+  document.getElementById('lgpd-modal').style.display = 'none';
+}
+
+async function downloadMyData() {
+  if (!window.MpeDB || !window.MpeDB.enabled) {
+    alert('Download disponível apenas com sistema online.');
+    return;
+  }
+  var res = await window.MpeDB.fetchMyDataAll();
+  if (!res.ok) {
+    alert('Erro ao buscar dados: ' + (res.error && res.error.message || res.error));
+    return;
+  }
+  var blob = new Blob([JSON.stringify(res.data, null, 2)], {type:'application/json'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'mpe-microI-meus-dados-' + new Date().toISOString().substring(0,10) + '.json';
+  a.click();
+}
+
+// Dispara apos um pequeno delay para garantir que session espelho foi atualizado
+setTimeout(checkLGPDConsent, 400);
 
 var AULAS = [
   {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true},
