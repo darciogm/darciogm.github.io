@@ -128,19 +128,16 @@ Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitori
 **Alberto Nishikawa**
 
 - Doutorando em Economia pelo Insper
-- Experiência de monitoria em microeconomia intermediária e avançada
-- Vai conduzir **5 monitorias-chave** aos sábados (ver calendário adiante), com foco em:
-  - Resolução comentada de exercícios
-  - Passagens técnicas que a aula resvala de leve
-  - **Ocasionalmente** introduz matéria nova e extensões além do que cobrimos em sala
-  - Preparação para a avaliação final
+- Experiência em microeconomia intermediária/avançada
+- Conduz **5 monitorias-chave** aos sábados (calendário adiante)
+- Foco: resolução comentada, passagens técnicas, extensões ocasionais, preparação para a avaliação
 
 :::
 
 ::: {}
 
 ::: {.callout-note}
-Presença em monitoria **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai na monitoria termina o curso entendendo, mas não dominando.
+Presença **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai na monitoria termina o curso entendendo, sem dominar.
 :::
 
 :::
