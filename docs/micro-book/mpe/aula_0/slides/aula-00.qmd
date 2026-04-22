@@ -110,7 +110,7 @@ Professor, monitor, matéria, espaço-tempo.
 
 Email: `darciogm1@insper.edu.br`
 
-Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitoria/whatsapp da classe). Dúvida profunda, conflito de calendário, ou qualquer coisa pessoal — email direto.
+Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitoria/WhatsApp da classe). Dúvida profunda, conflito de calendário ou qualquer coisa pessoal — email direto.
 :::
 
 :::
@@ -137,7 +137,7 @@ Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitori
 ::: {}
 
 ::: {.callout-note}
-Presença **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai na monitoria termina o curso entendendo, sem dominar.
+Presença **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai à monitoria termina o curso entendendo, sem dominar.
 :::
 
 :::
@@ -265,7 +265,7 @@ Nota final = 0.70 × 9,0 + 0.30 × 5,0 = **7,80**
 :::
 
 ::: {.bridge}
-Dá para tirar nota boa com prova ok + engajamento forte, e vice-versa. O sistema é desenhado para não premiar só uma das pontas.
+Dá para tirar nota boa com prova ok + engajamento forte e vice-versa. O sistema é desenhado para não premiar só uma das pontas.
 :::
 
 ---
@@ -285,7 +285,7 @@ Para cada aula X dada numa **quarta-feira**:
 |---|---|---|
 | **Qua 19:30 – 22:30** | Aula X em sala | 3 h |
 | **Qua após a aula** | **Abrem:** quiz pós-X · exercícios avaliativos X · pré-aula da próx. semana | — |
-| **Qui / sex / sáb** | Recomendado: fazer a **pré-aula** (leitura + micro-checkpoints + quiz revisão 10🟡 + reflexão) | 90–120 min |
+| **Qui / sex / sáb** | Recomendado: fazer a **pré-aula** (leitura + micro-checkpoints + quiz de revisão 10🟡 + reflexão) | 90–120 min |
 | **Dom / seg** | Recomendado: fazer os **exercícios avaliativos** da aula X | 2–3 h |
 | **Terça** | Recomendado: **quiz pós-aula** da aula X | 30 min |
 | **Qua 18:00** | **Fecham:** pré-aula · quiz pós-X · exercícios avaliativos X | — |
@@ -303,7 +303,7 @@ Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado, tudo bem
 ::: {.callout-warn}
 **Regra única de fechamento:** toda a entrega da semana fecha na **quarta 18:00** — 1h30 antes da próxima aula. Três coisas travam ao mesmo tempo:
 
-1. **Pré-aula** da semana (leitura + micro-checkpoints + quiz revisão 10🟡 + reflexão)
+1. **Pré-aula** da semana (leitura + micro-checkpoints + quiz de revisão 10🟡 + reflexão)
 2. **Quiz pós-aula** da aula anterior (10 questões: 5🟡 + 5🔴)
 3. **Exercícios avaliativos** da aula anterior (5–8 exercícios 🟢/🟡/🔴)
 
@@ -389,7 +389,7 @@ Bilateral. Cada lado assume a parte dele.
 3. Registrar dúvidas na reflexão final da pré-aula. Elas alimentam o Bloco 0 da aula seguinte.
 4. Entregar os **exercícios avaliativos na plataforma** dentro do prazo — sem esperar o gabarito sair pra "entregar depois".
 5. **Participar** em sala. MPE que vem só para escutar sai pela metade.
-6. Ir nas monitorias relevantes pro meu nível. Se não for necessário, combino com o Alberto.
+6. Ir às monitorias relevantes pro meu nível. Se não for necessário, combino com o Alberto.
 :::
 
 ---
@@ -402,7 +402,7 @@ Bilateral. Cada lado assume a parte dele.
 3. Dar **feedback individual** ao fim do ciclo de 4 aulas (meio do curso) pra quem estiver abaixo da média — baseado no que o tracker registra.
 4. Liberar o **gabarito 5-passos** de cada lote de exercícios avaliativos logo após o prazo fechar.
 5. Responder **emails em até 48h úteis**. Se for demorar mais, aviso.
-6. Abrir exceções com base em **motivo, não em quantidade** de pedido. Quem pedir com justificativa razoável tem.
+6. Abrir exceções com base em **motivo, não em quantidade** de pedidos. Quem pedir com justificativa razoável tem.
 :::
 
 ---
@@ -495,7 +495,7 @@ Volte ao capítulo depois da aula — pontos que pareciam enjoativos costumam fi
 - Notação mais pesada — bom para quem vai fazer Micro II (PhD-track) ou pesquisa aplicada.
 
 ::: {.bridge}
-Pedagogicamente: leio N&S para formar o modelo mental, Jehle-Reny quando quero entender por que o modelo tem as propriedades que tem.
+Pedagogicamente: leio N&S para formar o modelo mental; Jehle-Reny, quando quero entender por que o modelo tem as propriedades que tem.
 :::
 
 ---
@@ -594,7 +594,7 @@ Começamos agora. Aula 1 já liberada.
 :::
 
 ::: {.bridge}
-Se você terminou a pré-aula e ainda sobrou tempo: o quiz de revisão (10🟡) está lá para verificar que sedimentou. Fecha em quarta 18h.
+Se você terminou a pré-aula e ainda sobrou tempo: o quiz de revisão (10🟡) está lá para verificar se sedimentou. Fecha na quarta, 18h.
 :::
 
 ---

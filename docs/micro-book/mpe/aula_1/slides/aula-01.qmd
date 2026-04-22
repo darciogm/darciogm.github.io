@@ -121,7 +121,7 @@ Primeira aula do curso. Bem-vindos(as). Vamos direto ao ponto e devagar onde pre
 | 4 | Prática em dupla + fechamento | 21:40–22:30 |
 
 ::: {.bridge}
-3h cheias. Duas pausas curtas. Gráficos interativos do ZaE são usados como **pausa visual** — aluno olha, professor fala. O bloco 4 é onde o aluno sai com músculo — defendo esse tempo.
+3h cheias. Duas pausas curtas. Gráficos interativos do ZaE são usados como **pausa visual** — aluno olha, professor fala. O Bloco 4 é onde o aluno sai com músculo — defendo esse tempo.
 :::
 
 ---
@@ -192,7 +192,7 @@ Para todo $x, y \in X$: $x \succeq y$ **ou** $y \succeq x$.
 
 **Leitura:** o agente *sempre* se posiciona. Não há "não sei comparar". Quando ambas valem (equivalência), dizemos $x \sim y$.
 
-**Exemplo:** entre um café e um chá, opta por algum ou é indiferente.  \
+**Exemplo:** entre um café e um chá, opta por um deles ou é indiferente.  \
 **Contraexemplo:** indecisão genuína — "não sei o suficiente sobre o pacote B".
 
 ::: {.callout-note .callout}
@@ -271,7 +271,7 @@ Aqui, primeiro vem o bem 1 (*"lead-good"*); o bem 2 só importa em caso de empat
 
 - **$x_1 > y_1$**. Combinado com $y_1 \geq z_1$ (de $y \succeq^L z$, qualquer branch), $x_1 > z_1$ ⇒ $x \succ^L z$. ✓
 - **$x_1 = y_1$ e $y_1 > z_1$**. Então $x_1 > z_1$ ⇒ $x \succ^L z$. ✓
-- **$x_1 = y_1 = z_1$**. $x_2 \geq y_2 \geq z_2$ (segundo branch em ambas), transitividade do `≥` em $\mathbb{R}$ ⇒ $x \succeq^L z$. ✓
+- **$x_1 = y_1 = z_1$**. $x_2 \geq y_2 \geq z_2$ (segundo branch em ambos), transitividade do `≥` em $\mathbb{R}$ ⇒ $x \succeq^L z$. ✓
 
 ::: {.bridge}
 Temos (1) e (2). Falta ver (3) — **continuidade**.
