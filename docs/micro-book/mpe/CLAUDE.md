@@ -219,6 +219,44 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 - Textos de prazo em `aula-01-exerc.html` (e equivalentes da aula 2 quando forem criados) mencionam explicitamente "calendário unificado Aula 1 ∪ Aula 2".
 - Para todas as próximas aulas (3 em diante), **seguir o padrão canônico** sem extensão.
 
+### Timeline concreto 2026/32 (SSOT: `platform/js/calendario.js`)
+
+**9 aulas** (quartas 19:30–22:30, Insper presencial):
+
+| # | Dia da aula | Material + Pré-quiz abrem | Pós-quiz + Exerc abrem | Fechamento | Gabarito |
+|---|---|---|---|---|---|
+| 1 | qua 22/04 · 19:30 | qua 15/04 (antecipada) | qui 23/04 madrugada | **qua 06/05 · 18:00** ⚠️ | qui 07/05 · 00:00 |
+| 2 | qua 29/04 · 19:30 | qui 23/04 madrugada | qui 30/04 madrugada | **qua 06/05 · 18:00** ⚠️ | qui 07/05 · 00:00 |
+| 3 | qua 06/05 · 19:30 | qui 30/04 madrugada | qui 07/05 madrugada | qua 13/05 · 18:00 | qui 14/05 · 00:00 |
+| 4 | qua 13/05 · 19:30 | qui 07/05 madrugada | qui 14/05 madrugada | qua 20/05 · 18:00 | qui 21/05 · 00:00 |
+| 5 | qua 20/05 · 19:30 | qui 14/05 madrugada | qui 21/05 madrugada | qua 27/05 · 18:00 | qui 28/05 · 00:00 |
+| 6 | qua 27/05 · 19:30 | qui 21/05 madrugada | qui 28/05 madrugada | qua 03/06 · 18:00 | qui 04/06 · 00:00 |
+| 7 | qua 03/06 · 19:30 | qui 28/05 madrugada | qui 04/06 madrugada | qua 10/06 · 18:00 | qui 11/06 · 00:00 |
+| 8 | qua 10/06 · 19:30 | qui 04/06 madrugada | qui 11/06 madrugada | qua 17/06 · 18:00 | qui 18/06 · 00:00 |
+| 9 | qua 17/06 · 19:30 | qui 11/06 madrugada | qui 18/06 madrugada | qua 24/06 · 18:00 | qui 25/06 · 00:00 |
+
+⚠️ **Exceção Aula 1 ∪ Aula 2**: tudo das duas aulas fecha junto em 06/05.
+
+**5 pré-monitorias** (formativas, não contam nota):
+
+| Pré-M | Cobertura | Abre | Fecha | Monitoria presencial |
+|---|---|---|---|---|
+| Pré-M1 | Aulas 1–3 | sáb 09/05 · 00:00 | sex 15/05 · 22:00 | **sáb 16/05 · 10:00** |
+| Pré-M2 | Aula 4 (EG trocas) | sáb 16/05 · 12:00 | sex 22/05 · 22:00 | **sáb 23/05 · 10:00** |
+| Pré-M3 | Aula 5 (EG produção) | sáb 23/05 · 12:00 | sex 29/05 · 22:00 | **sáb 30/05 · 10:00** |
+| Pré-M4 | Aulas 6–7 (Arrow-Debreu) | sáb 30/05 · 12:00 | sex 12/06 · 22:00 | **sáb 13/06 · 10:00** |
+| Pré-M5 | Aulas 8–9 + revisão AF | sáb 13/06 · 12:00 | sex 19/06 · 22:00 | **sáb 20/06 · 10:00** |
+
+**Pré-monitoria — conteúdo padrão:**
+- Leitura dirigida + 4–6 micro-checkpoints.
+- Foco em **extensões** que o Alberto vai dar em sala (não repetir a aula magistral).
+- **Sem quiz avaliativo nem exercícios para nota** — é formativa.
+- Objetivo: dar ao Alberto janela para revisar respostas antes do sábado.
+
+**Avaliação Final:** qua 24/06 · 19:00 · 3h · presencial · consulta A4 permitida · 70% da nota.
+
+**Para mudar prazos** (semestres seguintes ou ajustes): editar `platform/js/calendario.js` em um único lugar — portal, gates de submissão e gate de gabarito leem automaticamente.
+
 ### Calibre dos conteúdos
 
 - **Nicholson & Snyder 12ª ed.** (Cengage 2017, ISBN 978-1-305-50579-7) é o **piso obrigatório**.

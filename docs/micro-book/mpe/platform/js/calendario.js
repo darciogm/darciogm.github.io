@@ -48,6 +48,23 @@
     dt('2026-06-20T10:00:00')  // M5
   ];
 
+  // Pre-monitorias: abrem logo apos a monitoria anterior (ou sabado antes da M1)
+  // e fecham sexta 22:00 da semana da monitoria — dando ao Alberto janela
+  // para revisar respostas antes da monitoria sabatina.
+  // Conteudo formativo (nao conta nota), analogo a pre-aula.
+  var PRE_MONITORIAS = [
+    // Pre-M1 cobre aulas 1-3
+    { n: 1, abre: dt('2026-05-09T00:00:00'), fecha: dt('2026-05-15T22:00:00'), monitoria: dt('2026-05-16T10:00:00') },
+    // Pre-M2 cobre aula 4 (EG trocas)
+    { n: 2, abre: dt('2026-05-16T12:00:00'), fecha: dt('2026-05-22T22:00:00'), monitoria: dt('2026-05-23T10:00:00') },
+    // Pre-M3 cobre aula 5 (EG producao)
+    { n: 3, abre: dt('2026-05-23T12:00:00'), fecha: dt('2026-05-29T22:00:00'), monitoria: dt('2026-05-30T10:00:00') },
+    // Pre-M4 cobre aulas 6-7 (Arrow-Debreu) — janela de ~2 semanas
+    { n: 4, abre: dt('2026-05-30T12:00:00'), fecha: dt('2026-06-12T22:00:00'), monitoria: dt('2026-06-13T10:00:00') },
+    // Pre-M5 cobre aulas 8-9 + revisao AF
+    { n: 5, abre: dt('2026-06-13T12:00:00'), fecha: dt('2026-06-19T22:00:00'), monitoria: dt('2026-06-20T10:00:00') }
+  ];
+
   // Excecao: Aula 1 ∪ Aula 2 => tudo da aula 1 fecha junto com aula 2.
   var EXCECAO_AULA1_AULA2 = true;
 
@@ -170,6 +187,32 @@
     return Date.now() >= p.gabarito;
   }
 
+  // Pre-monitorias: helpers analogos
+  function getPreMonitoriaPrazo(n) {
+    if (n < 1 || n > PRE_MONITORIAS.length) return null;
+    var pm = PRE_MONITORIAS[n - 1];
+    return { abre: pm.abre, fecha: pm.fecha, monitoria: pm.monitoria };
+  }
+
+  function isPreMonitoriaOpen(n) {
+    var p = getPreMonitoriaPrazo(n);
+    if (!p) return false;
+    var now = Date.now();
+    return now >= p.abre && now < p.fecha;
+  }
+
+  function isPreMonitoriaClosed(n) {
+    var p = getPreMonitoriaPrazo(n);
+    if (!p) return false;
+    return Date.now() >= p.fecha;
+  }
+
+  function isPreMonitoriaNotYetOpen(n) {
+    var p = getPreMonitoriaPrazo(n);
+    if (!p) return false;
+    return Date.now() < p.abre;
+  }
+
   // Formato display "dd/mm HH:MM" (local do navegador, assumido BRT)
   function fmt(ts) {
     if (!ts) return '';
@@ -192,6 +235,7 @@
   window.MPE_CALENDARIO = {
     AULAS_DATAS: AULAS_DATAS,
     MONITORIAS_DATAS: MONITORIAS_DATAS,
+    PRE_MONITORIAS: PRE_MONITORIAS,
     AVALIACAO_FINAL: AVALIACAO_FINAL,
     EXCECAO_AULA1_AULA2: EXCECAO_AULA1_AULA2,
     getPrazo: getPrazo,
@@ -201,6 +245,10 @@
     isClosed: isClosed,
     isNotYetOpen: isNotYetOpen,
     canShowGabarito: canShowGabarito,
+    getPreMonitoriaPrazo: getPreMonitoriaPrazo,
+    isPreMonitoriaOpen: isPreMonitoriaOpen,
+    isPreMonitoriaClosed: isPreMonitoriaClosed,
+    isPreMonitoriaNotYetOpen: isPreMonitoriaNotYetOpen,
     fmt: fmt,
     fmtData: fmtData
   };
