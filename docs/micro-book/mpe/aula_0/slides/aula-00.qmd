@@ -279,21 +279,24 @@ Cadência pensada para 4–6h/semana fora da aula.
 
 ---
 
-## Cadência típica (entre aulas) {background-color="#FFFFFF"}
+## Mapa semanal — abre, ritmo, fecha {background-color="#FFFFFF"}
 
-::: {.compact-table}
-| Quando | O que fazer | Tempo-alvo |
+Para cada aula X dada numa **quarta-feira**:
+
+::: {.compact-table style="font-size: 0.72em;"}
+| Dia | O que acontece | Tempo-alvo |
 |---|---|---|
-| **Quarta à noite após a aula** | Descansar. Sério. | — |
-| **Qui/sex/sáb** | Pré-aula da próxima semana: leitura dirigida + micro-checkpoints | 75–90 min |
-| **Dom/seg** | Exercícios avaliativos da aula recém-encerrada (na plataforma) | 2–3 h |
-| **Terça** | Quiz pós-aula (10 questões) — **abre qui, fecha qua 18h** | 30 min |
-| **Terça** | Quiz de revisão da pré-aula (10🟡) + reflexão | 30 min |
-| **Quarta 19:30** | Aula nova | 3 h |
+| **Qua 19:30 – 22:30** | Aula X em sala | 3 h |
+| **Qua após a aula** | **Abrem:** quiz pós-X · exercícios avaliativos X · pré-aula da próx. semana | — |
+| **Qui / sex / sáb** | Recomendado: fazer a **pré-aula** (leitura + micro-checkpoints + quiz revisão 10🟡 + reflexão) | 90–120 min |
+| **Dom / seg** | Recomendado: fazer os **exercícios avaliativos** da aula X | 2–3 h |
+| **Terça** | Recomendado: **quiz pós-aula** da aula X | 30 min |
+| **Qua 18:00** | **Fecham:** pré-aula · quiz pós-X · exercícios avaliativos X | — |
+| **Qua 19:30** | Aula X+1 começa | — |
 :::
 
-::: {.bridge}
-Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado de manhã, tudo bem. O tracker olha **se** você entregou, não **quando**.
+::: {.bridge style="font-size: 0.75em;"}
+Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado, tudo bem. O tracker olha **se** você entregou, não **quando**.
 :::
 
 ---
@@ -301,13 +304,13 @@ Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado de manhã
 ## Prazos — a parte que importa {background-color="#FFFFFF"}
 
 ::: {.callout-warn}
-**Regra de fechamento:** cada ciclo fecha na **quarta 18:00** (1h30 antes da próxima aula).
+**Regra única de fechamento:** toda a entrega da semana fecha na **quarta 18:00** — 1h30 antes da próxima aula. Três coisas travam ao mesmo tempo:
 
-Depois disso:
+1. **Pré-aula** da semana (leitura + micro-checkpoints + quiz revisão 10🟡 + reflexão)
+2. **Quiz pós-aula** da aula anterior (10 questões: 5🟡 + 5🔴)
+3. **Exercícios avaliativos** da aula anterior (5–8 exercícios 🟢/🟡/🔴)
 
-- Pré-aula da semana: **trava para entrada** no tracker
-- Quiz pós-aula da aula anterior: **fecha**
-- Exercícios avaliativos: prazo declarado no próprio item da plataforma (tipicamente 1 semana após aula)
+Depois desse corte: sem entrada, sem resubmissão. Gabaritos 5-passos saem logo em seguida.
 :::
 
 ::: {.bridge}
