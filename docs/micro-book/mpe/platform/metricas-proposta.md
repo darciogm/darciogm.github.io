@@ -135,3 +135,44 @@ Abaixo, 12 métricas adicionais para discussão e priorização. Cada uma tem: (
 ## Para próxima iteração
 
 A conversa natural é escolher 3-5 da onda curta + 2-3 da onda média para a primeira versão instrumentada, rodando em paralelo com a Aula 1 para validar se os sinais são úteis antes de investir na onda longa com backend.
+
+---
+
+## Calibração pós-Aula 1 (pipeline proposto)
+
+Após a primeira leva completa da turma (dados populando `section_progress` e `page_visits`), rodar este pipeline para recalibrar tempos declarados:
+
+```sql
+-- 1) Tempo por seção (P50 e P75) em aula-01 pré-aula
+SELECT
+  section_id,
+  COUNT(DISTINCT user_id)                         AS n_alunos,
+  percentile_cont(0.50) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (completed_at - started_at))/60) AS mediana_min,
+  percentile_cont(0.75) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (completed_at - started_at))/60) AS p75_min,
+  MAX(EXTRACT(EPOCH FROM (completed_at - started_at))/60)                                           AS max_min
+FROM public.section_progress
+WHERE page_id = 'aula-01'
+  AND completed_at IS NOT NULL
+  AND started_at IS NOT NULL
+GROUP BY section_id
+ORDER BY section_id;
+
+-- 2) Tempo total por aluno em aula-01
+SELECT
+  user_id,
+  SUM(EXTRACT(EPOCH FROM (completed_at - started_at))/60) AS tempo_total_min
+FROM public.section_progress
+WHERE page_id = 'aula-01' AND completed_at IS NOT NULL
+GROUP BY user_id
+ORDER BY tempo_total_min DESC;
+```
+
+**Decisões de calibração:**
+- Se mediana do tempo total < tempo-alvo declarado: mantém.
+- Se mediana entre tempo-alvo e 1.3× teto: mantém declaração, nota complementar "~P75 leva X min".
+- Se mediana > 1.3× teto declarado: re-auditar seção com P50 mais alto (provável candidato: S3 axiomas ou S5 TMS); revisar explicações e/ou dividir.
+
+**Cadência de aplicação:** rodar após fechamento da pré-aula (quarta 18h antes de cada aula), atualizar `platform/aula-XX.html` se preciso, documentar em `metricas-proposta.md` como registro histórico.
+
+**Outros artefatos:** análogo para `aula-01-pre.html` (via `page_visits.updated_at - created_at`) e `aula-01-exerc.html` (via `quiz_aggregates.last_attempt_at - first_started_at`).
+

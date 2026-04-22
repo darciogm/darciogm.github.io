@@ -210,7 +210,7 @@ Se $x \succeq y$ e $y \succeq z$, então $x \succeq z$.
 
 **Sem transitividade: ciclo.** $x \succ y \succ z \succ x$.
 
-**Armadilha clássica — máquina de dinheiro:** um terceiro oferece trocas encadeadas e extrai recurso do agente indefinidamente.
+**Armadilha clássica — máquina de dinheiro:** um terceiro oferece trocas encadeadas e extrai recursos do agente indefinidamente.
 
 ::: {.callout .callout-warn}
 Evidência empírica de ciclos em escolhas reais existe (framing, escassez cognitiva). Mas o modelo canônico assume transitividade como *disciplina mínima* de consistência.
@@ -355,7 +355,7 @@ Se $x \geq y$ com alguma coordenada estritamente maior, então $x \succ y$.
 **Variantes:**
 
 - **Fraca:** $x \geq y \Rightarrow x \succeq y$.
-- **Não-saciedade local:** em toda vizinhança de $y$ existe $x$ com $x \succ y$.
+- **Não-saciedade local:** em toda vizinhança de $y$, existe $x$ com $x \succ y$.
 
 **Consequência operacional:** curvas de indiferença **não são faixas grossas** — são finas e com inclinação negativa.
 
@@ -379,7 +379,7 @@ $$
 
 **Gráfico mental:** curvas de indiferença convexas em relação à origem.
 
-**Versões.** Fraca: $\lambda x + (1-\lambda) y \succeq y$ — casa com quasiconcavidade de $u$ e é o default em N&S/ZaE. Estrita (acima): dá **TMS estritamente decrescente** e unicidade no UMP. É da fraca que segue a TMS "decrescente" do Panorama.
+**Versões.** Fraca: $\lambda x + (1-\lambda) y \succeq y$ — casa com quasiconcavidade de $u$ e é o default em N&S/ZaE. Estrita (acima): dá **TMS estritamente decrescente** e unicidade no UMP. É da fraca que segue a TMS "decrescente" do panorama.
 
 ---
 
@@ -527,7 +527,7 @@ Sabemos **que** $u$ existe. Sabemos **que** é única a menos de transformação
 - E a **TMS** como objeto ordinal transversal a todas.
 
 ::: {.bridge}
-No próximo bloco: derivamos TMS em cada forma, lemos a economia por trás, e preparamos a unificação via CES (limites finos ficam para a monitoria).
+No próximo bloco: derivamos TMS em cada forma, lemos a economia por trás e preparamos a unificação via CES (limites finos ficam para a monitoria).
 :::
 
 ---
@@ -696,7 +696,7 @@ $$
 
 ---
 
-## Por que "família mãe"?
+## Por que "família-mãe"?
 
 **CES é a única** forma funcional (a menos de transformação monótona) com $\sigma$ constante *e* que engole as 3 famílias clássicas como casos-limite de um único parâmetro $\rho$.
 
@@ -836,7 +836,7 @@ $$
 :::
 
 ::: {.fragment}
-**Leitura:** o consumidor troca, na margem, **1,5 unidades de $x_2$ por 1 de $x_1$**. Convexidade estrita em ação.
+**Leitura:** o consumidor troca, na margem, **1,5 unidade de $x_2$ por 1 de $x_1$**. Convexidade estrita em ação.
 :::
 
 ::: {.fragment}
@@ -866,7 +866,7 @@ Consumo domiciliar e o que os dados revelam sobre preferências.
 Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 :::
 
-**Lei de Engel (1857):** necessário ($\eta < 1$) → participação **cai** com renda; luxo ($\eta > 1$) faz o oposto.
+**Lei de Engel (1857):** necessário ($\eta < 1$) → participação **cai** com a renda; luxo ($\eta > 1$) faz o oposto.
 
 ::: {.fragment}
 | Faixa de renda (R$/mês) | Alimentação | Transporte | Educação |
@@ -892,7 +892,7 @@ Engel morreu em 1896. Vamos ver se o Brasil de 2018 lhe dá razão.
 :::
 
 ::: {.fragment}
-**Transporte** não-monotônico (11,5 → 18,8 → 15,4) — composição muda com a renda, não só escala.
+**Transporte** não-monotônico (11,5 → 18,8 → 15,4) — a composição muda com a renda, não só a escala.
 :::
 
 ::: {.fragment}
@@ -917,7 +917,7 @@ Se o consumidor representativo existisse, a tabela seria plana. Não é. **O que
 :::
 
 ::: {.fragment}
-**Resposta curta:** **sim na agregação** (curvas de indiferença suaves em dados cross-section da classe média). Mas **vulnerável em subsistência**: em faixas de renda muito baixas, há **não-convexidade estrita** em torno do patamar de necessidades básicas — modelos Stone-Geary e linhas de pobreza capturam esse efeito. (Cuidado: isso *não* é lexicografia no sentido técnico — lex estrita é convexa fraca; o problema empírico é outro.) Heterogeneidade é regra, não exceção.
+**Resposta curta:** **sim na agregação** (curvas de indiferença suaves em dados cross-section da classe média), mas **vulnerável em subsistência**: em faixas de renda muito baixas, há **não-convexidade estrita** em torno do patamar de necessidades básicas — modelos Stone-Geary e linhas de pobreza capturam esse efeito. (Cuidado: isso *não* é lexicografia no sentido técnico — lex estrita é convexa fraca; o problema empírico é outro.) Heterogeneidade é regra, não exceção.
 :::
 
 ---
@@ -1173,6 +1173,43 @@ Monitoria 1 é opcional-mas-recomendada. É onde a tecnologia algébrica que usa
 
 ::: {.fragment}
 3. **Por isso**, Cobb-Douglas, Leontief, substitutos perfeitos e CES são a mesma família, com $\sigma$ regulando o grau de substituibilidade. Quasilinear entra quando efeito-renda zero é o que interessa.
+:::
+
+---
+
+## Por que Arrow-Debreu vai importar (teaser Aula 6) {background-color="#FFFFFF"}
+
+O teorema de Debreu hoje diz: **axiomas (1)–(3) ⇒ existe \(u\) contínua**. Na Aula 6, um teorema análogo — **Arrow-Debreu 1954** — diz:
+
+::: {.eq-punch}
+Preferências contínuas + convexas + monotônicas ⇒ existe um **vetor de preços** que equilibra a economia inteira.
+:::
+
+::: {.cols style="margin-top: 1em;"}
+
+::: {}
+**O que muda de Debreu para AD:**
+
+- Representabilidade → **existência de preço de equilíbrio**
+- Axiomas do consumidor → axiomas de toda a economia
+- Argumento topológico (fechados) → argumento de ponto fixo (Kakutani)
+
+:::
+
+::: {}
+**Por que isso importa fora da academia:**
+
+- Precificação de ativos financeiros em **mercados completos**
+- Análise de reformas tributárias (incidência em EG)
+- Política monetária com microfundação
+- Economia climática (Nordhaus: AD com externalidades)
+
+:::
+
+:::
+
+::: {.bridge}
+A aula de hoje é o <em>primeiro tijolo</em> dessa ponte. Sem a existência de $u$, não há como agregar. Sem agregar, não há equilíbrio geral. Sem EG, não há welfare economics bem-definida.
 :::
 
 ---

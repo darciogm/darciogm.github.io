@@ -51,7 +51,7 @@ Responda cada item com base nos axiomas de (1) completude, (2) transitividade, (
 ### (d) "A lexicográfica é o contraexemplo canônico de $\succ$ sem representação por $u: X \to \mathbb{R}$." A afirmação é:
 
 - (i) Falsa — toda preferência completa e transitiva tem representação numérica.
-- (ii) Verdadeira, e a razão é que $\succeq^L$ é descontínua — pelo teorema de Debreu, continuidade é *suficiente*; a contrapositiva dá o resultado apenas se soubermos que é também *necessária* no domínio estendido do argumento de cardinalidade (ver passo 2 do gabarito). ← CORRETA
+- (ii) Verdadeira, e a razão é um argumento de **cardinalidade** (Debreu 1954): se existisse $u$ representando a lex, construir-se-ia uma injeção de $[0,1]$ em $\mathbb{Q}$, impossível (ver passo 2 do gabarito). ← CORRETA
 - (iii) Verdadeira, porque $\succeq^L$ viola transitividade.
 - (iv) Falsa — $u_B$ do item (c) representa $\succeq^L$.
 - (v) Verdadeira, mas a razão é convexidade e não continuidade.
@@ -143,7 +143,7 @@ $$
 
 Simplificando de forma limpa pela fórmula fechada: $\text{TMS} = \frac{\alpha}{1-\alpha}\cdot \frac{x_2}{x_1} = \frac{1/3}{2/3}\cdot \frac{4}{8} = \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4}$. ✓
 
-**3. Armadilha.** Duas clássicas. Primeira (item b): distrator (iii) inclui $v_4 = -u$. Aluno confunde "transformação monótona" com "monótona em módulo" — $-u$ é estritamente *decrescente*, então inverte a ordem de $\succeq$ (curvas viram mínimos). Segunda (item d, distrator v): a confusão simétrica "parcela é $1-\alpha$" troca os papéis porque o aluno memoriza fórmula sem conferir índice. A fórmula é $p_i x_i^*/m = \alpha_i$ onde $\alpha_i$ é o *expoente do próprio bem* — e em $x_1^\alpha x_2^{1-\alpha}$ o expoente do bem 1 é $\alpha$.
+**3. Armadilha.** Duas clássicas. Primeira (item b): distrator (iii) inclui $v_4 = -u$. Aluno confunde "transformação monótona" (sentido matemático: estritamente crescente) com "monótona" no sentido coloquial (só o sinal do movimento importa) — $-u$ é estritamente *decrescente*, inverte $\succeq$ (curvas viram mínimos). Segunda (item d, distrator v): a confusão simétrica "parcela é $1-\alpha$" troca os papéis porque o aluno memoriza fórmula sem conferir índice. A fórmula é $p_i x_i^*/m = \alpha_i$ onde $\alpha_i$ é o *expoente do próprio bem* — e em $x_1^\alpha x_2^{1-\alpha}$ o expoente do bem 1 é $\alpha$.
 
 **4. Extensão (Aula 2).** A parcela constante $\alpha$ derivará da UMP na Aula 2: CPO + restrição + a identidade $\text{TMS} = p_1/p_2$ entregam $p_1 x_1^*/(p_1 x_1^* + p_2 x_2^*) = \alpha$. Esse é o resultado-âncora que torna CD irresistível em empírica — parcela estimável por OLS da parcela observada contra constante. Quando *parcelas empíricas variam com renda*, o modelo correto é Stone-Geary ou AIDS, não CD (Aula 3, sistemas de demanda).
 
@@ -221,10 +221,10 @@ Aqui $x_2$ é o "numerário" — mede poder de compra sobre os demais bens da ec
 
 **Cenário A (rígido):** Todo pacote exige exatamente 2 diárias por passagem; sem um dos dois, utilidade zero. Preferência representada por $u_A(x_1, x_2) = \min\{2 x_1, x_2\}$.
 
-**Cenário B (CES, $\rho = 1/2$):** O consumidor aceita *alguma* substituição — dormir no sofá de amigos substitui hotel, pegar ônibus substitui avião. A preferência vira:
+**Cenário B (CES, $\rho = 1/2$, $\alpha = 1/2$):** O consumidor aceita *alguma* substituição — dormir no sofá de amigos substitui hotel, pegar ônibus substitui avião. Forma canônica CES:
 
 $$
-u_B(x_1, x_2) = \left(\tfrac{1}{2}\, x_1^{1/2} + \tfrac{1}{2}\, x_2^{1/2}\right)^{2}.
+u_B(x_1, x_2) = \left(\alpha\, x_1^\rho + (1-\alpha)\, x_2^\rho\right)^{1/\rho} = \left(\tfrac{1}{2}\, x_1^{1/2} + \tfrac{1}{2}\, x_2^{1/2}\right)^{2}.
 $$
 
 ### (a) No Cenário A, a TMS em $(x_1, x_2) = (3, 4)$ — dentro do ramo $2 x_1 > x_2$ — vale:
@@ -289,7 +289,7 @@ $$
 
 que mostra explicitamente por que $\sigma$ é *o* parâmetro de elasticidade-preço no caso de Dixit-Stiglitz. Com $\sigma = 2$, elasticidade-preço da demanda é 2 em módulo, no regime simétrico. Empiricamente é um valor plausível para bens de consumo de massa.
 
-**5. Peer-review.** O "Cenário B" é artificial — ninguém compra pacote de viagem como CES. A escolha narrativa é para o aluno ver o mesmo par $(x_1, x_2)$ em dois regimes e comparar TMS diretamente. Risco: aluno leva a história muito a sério e se perde na parte econômica. Mitigação: o enunciado diz "aceita *alguma* substituição" sem microfundar. Vale a aposta — o exercício testa maquinaria, e a narrativa só orienta. A formulação tradicional CES, $u = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}$, foi simplificada para expoente 2 externo (em vez de $1/\rho = 2$) por acaso numérico — os dois coincidem em $\rho = 1/2$, e o aluno que notar o paralelismo já entendeu estrutura CES. Se não notar, não perde ponto.
+**5. Peer-review.** O "Cenário B" é artificial — ninguém compra pacote de viagem como CES. A escolha narrativa é para o aluno ver o mesmo par $(x_1, x_2)$ em dois regimes e comparar TMS diretamente. Risco: aluno leva a história muito a sério e se perde na parte econômica. Mitigação: o enunciado diz "aceita *alguma* substituição" sem microfundar. O enunciado usa a forma canônica CES $u = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}$ com $\alpha = 1/2$ e $\rho = 1/2$, de modo que $1/\rho = 2$ coincide com o expoente externo — o aluno reconhece a estrutura padrão quando vê CES na Aula 2.
 
 ---
 
@@ -427,6 +427,8 @@ Considere também **duas variantes**:
 **2. Derivação (item c).** $\succeq^D$ com pesos $0{,}1$ e $0{,}01$ ordena lexicograficamente quando os saltos em $x_2, x_3$ são limitados: se $x_1 > y_1$ (em inteiros $\Delta \geq 1$), então $u_D(x) - u_D(y) \geq 1 - 0{,}1 \cdot |\Delta x_2|_{\max} - 0{,}01 \cdot |\Delta x_3|_{\max}$. Em $[0,1]^3$ com $\Delta x_1 \geq 1/10$, os pesos ainda dão sinal correto. **Mas** se $x = (1, 0, 0)$ e $y = (0, 100, 0)$, em $\mathbb{R}^3_+$: $u_D(x) = 1$, $u_D(y) = 10$, logo $y \succ^D x$. Em $\succeq^{L_3}$: $x_1 = 1 > 0 = y_1$, logo $x \succ^{L_3} y$. Ordens opostas — $\succeq^D$ só aproxima a lex em domínios onde a escala do bem 2 não "explode" o peso $0{,}1$. Esse é *exatamente* o ponto: nenhuma função de utilidade contínua, com quaisquer pesos finitos, pode replicar globalmente o "$\varepsilon$ no bem 1 domina tudo no bem 2".
 
 **3. Armadilha.** Item (d) pega aluno que memorizou "Debreu precisa de monotonicidade e convexidade". Não. Os slides são explícitos: continuidade é a hipótese-chave; monotonicidade e convexidade são *acréscimos de regularidade* (quasiconcavidade, diferenciabilidade), não pré-requisitos. Uma preferência côncava-na-origem e monótona-decrescente-em-bem-1 ainda é representável por $u$ contínua, desde que $\succeq$ seja contínua. Uma versão particularmente instrutiva — a preferência "anti-2" $u(x_1, x_2) = x_1 - x_2$ — viola monotonicidade (bem 2 é ruim) mas é Debreu-representável.
+
+**Leitura operacional para o aluno (item e):** em $\mathbb{Q}^3_+$, continuidade da preferência (na topologia induzida) *também* falha — a mesma sequência $(1-1/n, 2, 0)$ restrita a racionais mostra. O que sobrevive é a *representabilidade* (por uma $u$ não-contínua), porque $\mathbb{Q}^3$ é enumerável. São duas propriedades distintas — continuidade (topológica) e representabilidade (cardinalidade) — e o item separa quem entendeu a hierarquia.
 
 **4. Extensão (Aulas 4/6).** No equilíbrio geral (Aulas 4-5-6), a existência de um equilíbrio competitivo requer que as preferências sejam contínuas, convexas e monotônicas. O teorema de Debreu sustenta o passo de *representação* por $u$; a existência do equilíbrio (Arrow-Debreu 1954) usa a representação + convexidade para garantir que o mapa de melhor-resposta tenha ponto fixo (Kakutani). Os axiomas têm papéis hierárquicos: continuidade para $u$, convexidade para *comportamento* de $u$, monotonicidade para *desigualdades de preços* bem-postas. Discriminar entre eles é ferramenta central do resto do curso.
 

@@ -29,7 +29,8 @@
 
 <div class="admonition info">
 <div class="admonition-title">Como esta pré-aula funciona</div>
-<p>A pré-aula está dividida em <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção se desbloqueia quando você marca a anterior como concluída. Nas seções conceituais, uma auto-avaliação de confiança antes e depois + um micro-checkpoint obrigatório (até 3 tentativas) medem sua preparação real. Tempo-alvo total: 75–90min.</p>
+<p>A pré-aula está dividida em <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção se desbloqueia quando você marca a anterior como concluída. Nas seções conceituais, uma autoavaliação de confiança antes e depois, mais um micro-checkpoint obrigatório (até 3 tentativas), medem sua preparação real. Tempo-alvo total: <strong>90–120 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><em>Nota:</em> o tempo real depende do seu ritmo de papel-e-caneta — medimos por telemetria, sem julgar. Se você passar de 2h, isso é dado para calibrarmos a próxima aula, não reprovação.</p>
 </div>
 
 <!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
@@ -104,16 +105,17 @@
     <p><strong>Teorema (Debreu):</strong> se \(\succeq\) é completa, transitiva e contínua, existe \(u: X \to \mathbb{R}\) contínua tal que</p>
     \[ \mathbf{x} \succeq \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \]
 
-    <p>A ideia da prova: para cada \(\mathbf{x}\), acha-se \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\). Esse \(t\) é a utilidade. A monotonicidade garante unicidade; a continuidade, continuidade de \(u\).</p>
+    <p>A ideia da prova: para cada \(\mathbf{x}\), acha-se \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\). Esse \(t\) é a utilidade. A monotonicidade garante unicidade; a continuidade de \(\succeq\), a continuidade de \(u\).</p>
 
     <p><strong>Contraexemplo canônico — preferências lexicográficas:</strong> priorizam \(x_1\) e, em empate, \(x_2\). Satisfazem completude, transitividade e monotonicidade. <em>Violam continuidade.</em></p>
 
-    <p><strong>Sequência que quebra continuidade.</strong> Considere a sequência \(\mathbf{x}^n = \left(1 + \tfrac{1}{n},\, 0\right)\) e compare com \(\mathbf{y} = (1, 1)\):</p>
+    <p><strong>Sequência que quebra continuidade</strong> (construção canônica dos slides). Considere \(\mathbf{x}^n = \left(1 - \tfrac{1}{n},\, 2\right)\) e compare com \(\mathbf{y} = (1, 1)\):</p>
     <ul>
-      <li>Para todo \(n\): \(\mathbf{x}^n \succ \mathbf{y}\), porque \(1 + \tfrac{1}{n} > 1\) (lex decide no primeiro componente).</li>
-      <li>No limite, \(\mathbf{x}^n \to (1, 0)\). Mas \((1, 0) \prec (1, 1) = \mathbf{y}\) (empate em \(x_1\), lex vai ao segundo).</li>
+      <li>Para todo \(n\): \(\mathbf{y} \succ^L \mathbf{x}^n\), porque \(1 > 1 - \tfrac{1}{n}\) (lex decide no primeiro componente).</li>
+      <li>No limite, \(\mathbf{x}^n \to \mathbf{x} = (1, 2)\). Mas \((1, 2) \succ^L (1, 1) = \mathbf{y}\) (empate em \(x_1\), lex vai ao segundo: \(2 > 1\)).</li>
     </ul>
-    <p>Ou seja: o conjunto \(\{\mathbf{x} : \mathbf{x} \succeq \mathbf{y}\}\) contém toda a sequência, mas <em>não contém</em> o limite. Não é fechado — logo não há representação por função contínua.</p>
+    <p>Ou seja: o conjunto \(\{\mathbf{z} : \mathbf{y} \succeq^L \mathbf{z}\}\) (conjunto inferior fraco de \(\mathbf{y}\)) contém toda a sequência, mas <em>não contém</em> o limite. Não é fechado — logo não há representação por função contínua.</p>
+    <p style="font-size:0.85em;color:#64748b;margin-top:0.4em"><em>Exercício opcional:</em> a construção dual \(\mathbf{x}^n=(1+\tfrac{1}{n}, 0)\to(1,0)\) com \(\mathbf{y}=(1,1)\) exibe o conjunto <em>superior</em> não-fechado. Mesmo mecanismo, outro lado.</p>
 
     <div class="micro-checkpoint" id="micro-s3">
       <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
@@ -177,9 +179,9 @@
     <p><strong>Exemplo:</strong> \(u(x,y) = xy\) e \(v(x,y) = \ln x + \ln y\) representam a <em>mesma</em> preferência Cobb-Douglas. Os valores numéricos são totalmente diferentes, mas a TMS é a mesma.</p>
     <p><strong>Consequência operacional:</strong></p>
     <ul>
-      <li>TMS é <em>invariante</em> a transformação monótona</li>
-      <li>Magnitudes de utilidade <em>não são</em> — não faz sentido dizer "ganhei 3 de utilidade"</li>
-      <li>Comparações interpessoais de utilidade (ordinal) são problemáticas — volta em EG e welfare</li>
+      <li>TMS é <em>invariante</em> a transformação monótona.</li>
+      <li>Magnitudes de utilidade <em>não são</em> — não faz sentido dizer "ganhei 3 de utilidade".</li>
+      <li>Comparações interpessoais de utilidade (ordinal) são problemáticas — voltam em EG e welfare.</li>
     </ul>
 
     <div class="admonition note">
@@ -248,6 +250,12 @@
     <h3>Quasilinear</h3>
     <p>\(u = v(x_1) + x_2\) → \(\mathrm{TMS} = v'(x_1)\), depende só de \(x_1\). Efeito-renda zero no bem 1 interior. Excedente do consumidor bem-definido.</p>
 
+    <div class="admonition note" style="margin-top:1rem;border-left:4px solid #1B3A5C">
+    <div class="admonition-title">🧭 Homotetia — conceito que vai voltar</div>
+    <p>Uma preferência é <strong>homotética</strong> se a TMS depende apenas da <em>razão</em> \(x_2/x_1\) (não dos níveis absolutos). Consequência operacional: a demanda Marshalliana é linear na renda (\(x_i^M = k_i(p)\cdot m\)), <strong>parcelas de gasto \(w_i\) independem de \(m\)</strong> e o caminho de expansão da renda é um <em>raio pela origem</em>.</p>
+    <p style="margin-top:0.4em"><strong>Cobb-Douglas, CES e Leontief são homotéticas.</strong> <strong>Quasilinear não é</strong> — o caminho de expansão é <em>vertical</em> (tudo extra vira \(x_2\)), não radial. Essa classificação voltará na Aula 2 (UMP), Aula 3 (Slutsky) e Aula 5 (EG trocas).</p>
+    </div>
+
     <div class="admonition note" style="margin-top:1rem">
     <div class="admonition-title">🇧🇷 Box Brasil — teaser para o Bloco 3</div>
     <p>Em sala vamos aplicar essas quatro famílias a dados reais brasileiros: parcelas de gasto estáveis em <em>alimentação fora do domicílio</em> (Cobb-Douglas como aproximação), receita da gasolina <em>com e sem etanol</em> (substitutos — CES com \(\rho\) alto), pacote de frango congelado (Leontief aproximado), e compras de energia elétrica (quasilinear, via tarifa fixa + variável). Traga exemplos do seu dia a dia profissional para colar com a teoria.</p>
@@ -295,14 +303,7 @@
 <section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="6">
   <div class="section-meta">Seção 6 · Exercícios de papel · 15 min</div>
   <h2>Prestação de contas</h2>
-  <p>Resolva os <strong>dois primeiros</strong> exercícios abaixo no papel (obrigatórios). O terceiro (3.7, CES) é <em>bônus</em> e ajuda a fechar a família das formas funcionais — fortemente recomendado se você tiver fôlego. Serão retomados em dupla no Bloco 4 da aula presencial. Para concluir a seção: marque <em>concluí</em> e descreva sua abordagem em 1-3 linhas nos dois primeiros.</p>
-
-  <div class="paper-exercise">
-    <h3>N&amp;S 12e 3.1</h3>
-    <p class="ex-statement">Verificar convexidade de curvas de indiferença para 5 funções utilidade dadas (U = 3x+y, √(xy), √x+y, √(x²-y²), xy/(x+y)). Para cada, graficar e discutir se a TMS declina com \(x\).</p>
-    <label class="done-check"><input type="checkbox" id="ex31-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
-    <textarea id="ex31-approach" placeholder="Minha abordagem em 1-3 linhas... (ex.: 'Calculei TMS para cada, observei se dTMS/dx1 < 0 e grafiquei. A última tem curvas não-convexas porque...')" oninput="MPE.updatePaperState()"></textarea>
-  </div>
+  <p>Resolva os <strong>dois primeiros</strong> exercícios (3.5 e 3.7) no papel — são <em>obrigatórios</em> e serão retomados em dupla no Bloco 4 da aula presencial. O terceiro (3.1, convexidade de CIs) é <em>bônus</em>, útil para consolidar o visual das curvas de indiferença. Para concluir a seção, marque <em>concluí</em> e descreva sua abordagem em 1-3 linhas nos dois obrigatórios.</p>
 
   <div class="paper-exercise">
     <h3>N&amp;S 12e 3.5</h3>
@@ -312,10 +313,17 @@
   </div>
 
   <div class="paper-exercise">
-    <h3>N&amp;S 12e 3.7 (bônus — CES e limites)</h3>
+    <h3>N&amp;S 12e 3.7</h3>
     <p class="ex-statement">Para \(u = (x_1^\rho + x_2^\rho)^{1/\rho}\), calcule a TMS em função de \((x_1, x_2, \rho)\) e verifique o comportamento em três regimes: \(\rho = 1\) (substitutos perfeitos), \(\rho \to 0\) (Cobb-Douglas) e \(\rho \to -\infty\) (Leontief). Apenas anote a intuição — o cálculo formal do limite \(\rho \to 0\) via L'Hôpital fica para a Monitoria 1.</p>
-    <label class="done-check"><input type="checkbox" id="ex37-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
-    <textarea id="ex37-approach" placeholder="Opcional — 1-3 linhas sobre TMS e os 3 regimes..." oninput="MPE.updatePaperState()"></textarea>
+    <label class="done-check"><input type="checkbox" id="ex37-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
+    <textarea id="ex37-approach" placeholder="Minha abordagem em 1-3 linhas sobre TMS e os 3 regimes..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>N&amp;S 12e 3.1 (bônus — convexidade de CIs)</h3>
+    <p class="ex-statement">Verificar convexidade de curvas de indiferença para 5 funções utilidade dadas (U = 3x+y, √(xy), √x+y, √(x²-y²), xy/(x+y)). Para cada, graficar e discutir se a TMS declina com \(x\).</p>
+    <label class="done-check"><input type="checkbox" id="ex31-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
+    <textarea id="ex31-approach" placeholder="Opcional — 1-3 linhas (ex.: 'Calculei TMS para cada, observei se dTMS/dx1 < 0 e grafiquei. A última tem curvas não-convexas porque...')" oninput="MPE.updatePaperState()"></textarea>
   </div>
 
   <button class="section-complete-btn" id="complete-s6-exercicios" disabled onclick="MPE.completePaperExercises()">Registrar e avançar</button>
@@ -358,6 +366,7 @@
     <div class="quiz-option" data-value="c">(c) A passagem pode ser obtida via L'Hôpital no log</div>
     <div class="quiz-option" data-value="d">(d) Converge para Leontief (\(\sigma = 0\))</div>
     <div class="quiz-option" data-value="e">(e) Parcelas de gasto ficam constantes no limite</div>
+    <div class="quiz-option" data-value="f">(f) O limite é uma preferência <em>homotética</em> (classe que inclui CD, CES e Leontief)</div>
     <div class="quiz-feedback"></div>
     </div>
 
@@ -369,7 +378,7 @@
 <section class="section-block locked" id="s8-reflexao" data-section="s8-reflexao" data-order="8">
   <div class="section-meta">Seção 8 · Reflexão qualitativa · 3 min</div>
   <h2>Fechamento — suas dúvidas alimentam o Bloco 0 da aula</h2>
-  <p>Os dois campos abaixo são obrigatórios. Suas respostas entram no <em>dashboard</em> do professor e orientam a triagem da abertura da Aula 1 presencial.</p>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas entram no <em>dashboard</em> do professor e orientam a triagem na abertura da Aula 1 presencial.</p>
 
   <div class="reflection-block">
     <label>Que equação, passagem ou conceito ainda está <strong>nebuloso</strong> pra você?</label>
@@ -380,7 +389,7 @@
   <div class="reflection-block">
     <label>Qual ponto você quer ver <strong>discutido em sala</strong>?</label>
     <textarea id="refl-aula" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Gostaria de ver exemplos aplicados de quasilinear em public finance'"></textarea>
-    <div class="help">Essa resposta informa a agenda do Bloco 0. O que mais aparecer nas respostas, mais tempo ocupa na aula.</div>
+    <div class="help">Essa resposta informa a agenda do Bloco 0. Quanto mais aparecer nas respostas, mais tempo ocupa na aula.</div>
   </div>
 
   <button class="section-complete-btn final" id="complete-s8-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-aula</button>
@@ -528,16 +537,20 @@ var MPE = {
   },
 
   updatePaperState: function() {
-    var done31 = document.getElementById('ex31-done').checked;
-    var done33 = document.getElementById('ex33-done').checked;
-    var app31 = document.getElementById('ex31-approach').value.trim();
-    var app33 = document.getElementById('ex33-approach').value.trim();
-    var ok = done31 && done33 && app31.length >= 10 && app33.length >= 10;
+    // Obrigatorios: 3.5 (ex33) e 3.7 (ex37). 3.1 (ex31) e bonus.
+    var done35 = document.getElementById('ex33-done').checked;
+    var done37 = document.getElementById('ex37-done').checked;
+    var app35 = document.getElementById('ex33-approach').value.trim();
+    var app37 = document.getElementById('ex37-approach').value.trim();
+    var ok = done35 && done37 && app35.length >= 10 && app37.length >= 10;
     document.getElementById('complete-s6-exercicios').disabled = !ok;
   },
   completePaperExercises: function() {
-    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-3-1', document.getElementById('ex31-approach').value.trim());
-    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-3-3', document.getElementById('ex33-approach').value.trim());
+    // Grava os 2 obrigatorios + 3.1 bonus se preenchido.
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-3-5', document.getElementById('ex33-approach').value.trim());
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-3-7', document.getElementById('ex37-approach').value.trim());
+    var app31 = document.getElementById('ex31-approach').value.trim();
+    if (app31.length > 0) MicroTracker.recordPaperExercise(PAGE_ID, 'ns-3-1', app31);
     this.completeSection('s6-exercicios');
   },
 
