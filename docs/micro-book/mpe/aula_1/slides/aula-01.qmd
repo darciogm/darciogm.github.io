@@ -905,19 +905,19 @@ Se o consumidor representativo existisse, a tabela seria plana. Não é. **O que
 
 ## Extremos — a convexidade passa no teste empírico?
 
-**Contraste qualitativo** entre faixas de renda (além dos %-ponto da tabela anterior):
+**Contraste qualitativo** entre faixas de renda:
 
-1. **Alimentação** — peso radicalmente maior na faixa baixa (22% vs. 7,6%).
-2. **Habitação** — alta em ambos, *composição* muda (aluguel vs. imóvel próprio + encargos).
-3. **Transporte** — público na faixa baixa, privado na alta.
-4. **Educação e saúde privadas** — concentradas no topo.
+- **Alimentação** — radicalmente maior na baixa (22% vs. 7,6%).
+- **Habitação** — alta em ambos, muda a composição (aluguel vs. próprio).
+- **Transporte** — público na baixa, privado na alta.
+- **Educação/saúde privadas** — concentradas no topo.
 
 ::: {.bridge}
-**Pergunta para a turma:** olhando estes microdados, a **convexidade** como axioma é plausível? Onde ela falha ou ameaça falhar?
+**Pergunta:** olhando estes microdados, a **convexidade** é plausível?
 :::
 
 ::: {.fragment}
-**Resposta curta:** **sim na agregação** (curvas de indiferença suaves em dados cross-section da classe média), mas **vulnerável em subsistência**: em faixas de renda muito baixas, há **não-convexidade estrita** em torno do patamar de necessidades básicas — modelos Stone-Geary e linhas de pobreza capturam esse efeito. (Cuidado: isso *não* é lexicografia no sentido técnico — lex estrita é convexa fraca; o problema empírico é outro.) Heterogeneidade é regra, não exceção.
+**Resposta:** **sim na agregação** (CIs suaves na classe média); **vulnerável em subsistência** — há **não-convexidade estrita** em torno do patamar de necessidades básicas (Stone-Geary, linhas de pobreza). *Não* é lexicografia — lex estrita é convexa fraca; o problema empírico é outro.
 :::
 
 ---
@@ -1179,37 +1179,37 @@ Monitoria 1 é opcional-mas-recomendada. É onde a tecnologia algébrica que usa
 
 ## Por que Arrow-Debreu vai importar (teaser Aula 6) {background-color="#FFFFFF"}
 
-O teorema de Debreu hoje diz: **axiomas (1)–(3) ⇒ existe \(u\) contínua**. Na Aula 6, um teorema análogo — **Arrow-Debreu 1954** — diz:
+Hoje: axiomas (1)–(3) ⇒ existe \(u\) contínua. Na **Aula 6**, um teorema análogo (Arrow-Debreu 1954):
 
 ::: {.eq-punch}
-Preferências contínuas + convexas + monotônicas ⇒ existe um **vetor de preços** que equilibra a economia inteira.
+Preferências contínuas, convexas e monotônicas ⇒ existe **vetor de preços** que equilibra a economia.
 :::
 
-::: {.cols style="margin-top: 1em;"}
+::: {.cols style="margin-top: 0.8em;"}
 
 ::: {}
-**O que muda de Debreu para AD:**
+**De Debreu para AD:**
 
-- Representabilidade → **existência de preço de equilíbrio**
-- Axiomas do consumidor → axiomas de toda a economia
-- Argumento topológico (fechados) → argumento de ponto fixo (Kakutani)
+- Representabilidade → preço de equilíbrio
+- Axiomas do consumidor → de toda a economia
+- Topologia → ponto fixo (Kakutani)
 
 :::
 
 ::: {}
-**Por que isso importa fora da academia:**
+**Aplicações:**
 
-- Precificação de ativos financeiros em **mercados completos**
-- Análise de reformas tributárias (incidência em EG)
-- Política monetária com microfundação
-- Economia climática (Nordhaus: AD com externalidades)
+- Ativos em mercados completos
+- Reformas tributárias (EG)
+- Política monetária microfundada
+- Economia climática (Nordhaus)
 
 :::
 
 :::
 
 ::: {.bridge}
-A aula de hoje é o <em>primeiro tijolo</em> dessa ponte. Sem a existência de $u$, não há como agregar. Sem agregar, não há equilíbrio geral. Sem EG, não há welfare economics bem-definida.
+A aula de hoje é o primeiro tijolo: sem \(u\), não há agregação; sem agregação, não há EG; sem EG, não há welfare bem-definida.
 :::
 
 ---
