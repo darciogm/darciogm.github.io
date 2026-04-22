@@ -308,7 +308,7 @@ async function downloadMyData() {
 setTimeout(checkPasswordGate, 400);
 
 var AULAS = [
-  {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true, preAvailable:true, posAvailable:false, posOpensOn:'23/04'},
+  {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true, preAvailable:true, posAvailable:false, posOpensOn:'23/04', exercAvailable:true},
   {n:2,  title:'Maximização, Minimização de Gasto e Dualidade', desc:'UMP e EMP, demandas Marshalliana e Hicksiana, identidades de Roy e Shephard, dualidade', cap:'ZaE 4 · N&S 12e 4', time:90, available:false},
   {n:3,  title:'Slutsky, Elasticidades e Princípios de Estimação', desc:'Decomposição de Slutsky, bens normais/inferiores/Giffen, matriz e propriedades, identificação em demanda', cap:'ZaE 5 · N&S 12e 5-6', time:90, available:false},
   {n:4,  title:'Equilíbrio Geral: Trocas e Produção', desc:'Caixa de Edgeworth, núcleo, equilíbrio walrasiano, extensão para economia com produção', cap:'ZaE EG · N&S 12e 13', time:75, available:false},
@@ -463,7 +463,10 @@ function renderPortal() {
       var posBtn = a.posAvailable
         ? '<a href="aula-' + pid2 + '-pos.html" style="' + ctaActive + '" title="Quiz pós-aula (5🟡 + 5🔴)">✍ Pós-aula</a>'
         : '<span style="' + ctaLocked + '" title="Abre em ' + (a.posOpensOn || 'data a definir') + '">✍ Pós-aula (' + (a.posOpensOn || 'em breve') + ')</span>';
-      var ctaRow = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #e2e8f0;">' + preBtn + materialBtn + posBtn + '</div>';
+      var exercBtn = a.exercAvailable
+        ? '<a href="aula-' + pid2 + '-exerc.html" style="' + ctaActive + '" title="Exercícios avaliativos (6 exerc · 1🟢 + 3🟡 + 2🔴)">📋 Exercícios</a>'
+        : '<span style="' + ctaLocked + '" title="Em breve">📋 Exercícios</span>';
+      var ctaRow = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #e2e8f0;">' + preBtn + materialBtn + posBtn + exercBtn + '</div>';
 
       gridHtml += '<div class="aula-card">' + cardHeader + ctaRow + '</div>';
     } else {

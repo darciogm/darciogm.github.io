@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 01 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 01</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Preferências, Axiomas, Utilidade, TMS e Famílias Funcionais</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, 29 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo duma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong> — responda com calma, sem chute.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 29/04 às 18:00</strong> — 1h30 antes da Aula 2. Depois disso, a submissão trava.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 30/04 às 00:00</strong>, um dia após o fechamento. Isso preserva a integridade do exercício para toda a turma. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-01-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 01">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Axiomas, Lex em \(\mathbb{R}^2\) e o que cada um "segura"</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a preferência lexicográfica \(\succeq^L\) em \(X = \mathbb{R}^2_+\) vista em aula:</p>
+      \[
+      (x_1, x_2) \succeq^L (y_1, y_2) \iff x_1 > y_1,\ \text{ou}\ (x_1 = y_1\ \text{e}\ x_2 \geq y_2).
+      \]
+      <p>Considere também <strong>duas variantes</strong>:</p>
+      <ul style="margin:0.3em 0 0 1.2em">
+        <li>\(\succeq^A\) — igual à \(\succeq^L\), porém com uma "zona cega" de tolerância \(\varepsilon = 0{,}01\) no primeiro bem: se \(|x_1 - y_1| < 0{,}01\), o consumidor se declara <em>incomparável</em>.</li>
+        <li>\(\succeq^B\) — preferência representada por \(u_B(x_1, x_2) = x_1 + 0{,}0001 \cdot x_2\) em \(\mathbb{R}^2_+\).</li>
+      </ul>
+      <p style="margin-top:0.6em">Responda cada item com base nos axiomas de (1) completude, (2) transitividade, (3) continuidade, (4) monotonicidade e (5) convexidade fraca.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> Quais axiomas a lexicográfica clássica \(\succeq^L\) satisfaz em \(\mathbb{R}^2_+\)?</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) Apenas (1) e (2).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) (1), (2), (4) e (5), mas não (3).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) (1), (2), (3) e (4), mas não (5).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) Todos os cinco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="e"> (v) Apenas (1), (2) e (4).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> Sobre \(\succeq^A\) (lex com zona cega), o axioma que <strong>primeiro</strong> falha é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) Completude — existem pares \((x, y)\) sem comparação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) Transitividade — a zona cega gera ciclos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) Continuidade — pela mesma razão que a lex clássica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) Monotonicidade — a tolerância quebra o "mais é melhor".</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="e"> (v) Convexidade — a tolerância não é convexa.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> A preferência \(\succeq^B\) com \(u_B = x_1 + 0{,}0001\,x_2\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) Viola continuidade porque o peso de \(x_2\) é quase nulo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) Satisfaz os cinco axiomas; em particular é contínua porque \(u_B\) é contínua.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) Viola monotonicidade porque \(x_2\) tem peso desprezível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) É ordinalmente equivalente a \(\succeq^L\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="e"> (v) Viola convexidade porque é linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> "A lexicográfica é o contraexemplo canônico de \(\succ\) sem representação por \(u: X \to \mathbb{R}\)." A afirmação é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) Falsa — toda preferência completa e transitiva tem representação numérica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) Verdadeira, e a razão é um argumento de cardinalidade (Debreu 1954): se existisse \(u\) representando a lex, construir-se-ia uma injeção de \([0,1]\) em \(\mathbb{Q}\), impossível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) Verdadeira, porque \(\succeq^L\) viola transitividade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) Falsa — \(u_B\) do item (c) representa \(\succeq^L\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="e"> (v) Verdadeira, mas a razão é convexidade e não continuidade/cardinalidade.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Os axiomas não são intercambiáveis: cada um segura um resultado distinto. Completude e transitividade dão <em>estrutura de ordem</em>. Continuidade dá <em>representabilidade por função contínua</em> (Debreu). Monotonicidade e convexidade dão <em>forma econômica</em> e <em>TMS decrescente</em>. A lex clássica é o contraexemplo pedagógico porque isola a falha em continuidade — tudo o mais funciona.</p>
+      <p><strong>2. Derivação (item d).</strong> A representabilidade da lex clássica falha por um argumento de cardinalidade. Se existisse \(u: \mathbb{R}^2_+ \to \mathbb{R}\) representando \(\succeq^L\), então para cada \(x_1 \in [0,1]\) o intervalo aberto \(I(x_1) = (u(x_1, 0), u(x_1, 1)) \subset \mathbb{R}\) seria não-vazio (porque \((x_1, 0) \prec^L (x_1, 1)\)). Pela ordem lex em \(x_1\), esses intervalos são <strong>dois-a-dois disjuntos</strong>. Escolha um racional em cada: definiria uma injeção \([0,1] \hookrightarrow \mathbb{Q}\). Cardinalidades incompatíveis — \(|\mathbb{R}| > |\mathbb{Q}|\). Contradição. Logo \(u\) não existe. O argumento é <strong>mais forte</strong> que "viola continuidade": a lex não admite <em>nenhuma</em> representação numérica, contínua ou não.</p>
+      <p><strong>3. Armadilha.</strong> A mais comum está no item (a): aluno descarta convexidade da lex porque "a CI é estranha". Mas a lex é convexa fraca: se \((x_1, x_2) \succeq^L (y_1, y_2)\) e \(\lambda \in [0,1]\), a mistura fica na ordem. Convexidade <strong>estrita</strong> é que falha, mas o axioma (5) é tipicamente enunciado na forma fraca. A segunda armadilha, no item (d): distrator (iii) explora a memória de que "todo contraexemplo usa transitividade" — falso; a lex clássica é transitiva.</p>
+      <p><strong>4. Extensão (Aulas 2/3).</strong> Continuidade é pré-requisito silencioso para UMP bem-comportado (Aula 2): sem ela, o supremo \(\sup_{x \in B(p,m)} u(x)\) pode não ser atingido. Em quase toda a microeconomia aplicada, continuidade é <em>assumida por construção</em>. O que a lex ensina é que essa hipótese tem conteúdo.</p>
+      <p><strong>5. Peer-review.</strong> O item (d), distrator (ii), é denso — intencionalmente. A nuance "suficiência vs. necessidade" do teorema de Debreu é sutil. O tradeoff: ao forçar a leitura cuidadosa, discrimina quem <em>entendeu</em> de quem <em>decorou</em>. Se a turma errar em massa, reciclar como discussão formativa em monitoria.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Cobb-Douglas: TMS, Transformações Monótonas e Parcelas de Gasto (prévia)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Seja a preferência \(\succeq\) em \(\mathbb{R}^2_{++}\) representada por</p>
+      \[
+      u(x_1, x_2) = x_1^{1/3}\, x_2^{2/3}.
+      \]
+      <p>Considere quatro candidatos a "mesma preferência" via transformação:</p>
+      \[
+      v_1 = \tfrac{1}{3}\ln x_1 + \tfrac{2}{3}\ln x_2, \quad
+      v_2 = x_1\, x_2^2, \quad
+      v_3 = 7 + 5\, u^{3}, \quad
+      v_4 = -u.
+      \]
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A TMS de \(u\) no ponto \((x_1, x_2) = (8, 4)\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \(1/6\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(1/4\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(1/2\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \(1\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="e"> (v) \(2\)</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Quais dentre \(v_1, v_2, v_3, v_4\) representam <strong>a mesma</strong> preferência \(\succeq\)?</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) Apenas \(v_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(v_1\), \(v_2\) e \(v_3\) — todas são transformações estritamente crescentes no domínio \(\mathbb{R}^2_{++}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(v_1\), \(v_3\) e \(v_4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) Todas as quatro.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="e"> (v) Apenas \(v_1\) e \(v_3\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A TMS calculada com \(v_2 = x_1\, x_2^2\) no ponto \((8, 4)\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) É o dobro da TMS de \(u\), porque expoentes foram dobrados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) É igual à TMS de \(u\): \(1/4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Depende da constante multiplicativa implícita.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Não existe porque \(v_2\) não é côncava.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="e"> (v) É \(1/2\), metade da TMS de \(u\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Em Cobb-Douglas \(u = x_1^{\alpha} x_2^{1-\alpha}\) com \(\alpha \in (0,1)\), a <strong>parcela do gasto</strong> em bem 1 no ótimo (\(p_1 x_1^* / m\)) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(\alpha\), e isso decorre de \(\text{TMS} = p_1/p_2\) e da restrição orçamentária; não depende de preços nem de renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) \(\alpha\) somente quando \(p_1 = p_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) \(\alpha / (1-\alpha)\) sempre.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Depende de \(p_1, p_2, m\) de forma não-separável.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="e"> (v) \(1-\alpha\), porque a elasticidade-renda é 1.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Suponha que um econometrista estime, em microdados de consumo, um expoente do tipo \(\alpha = 1/3\) para "alimentação" num período, e \(\alpha = 1/4\) em outro período mais próspero. Dentro do modelo CD, a leitura canônica é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) O consumidor ficou irracional entre os períodos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) A elasticidade-preço cruzada mudou de sinal.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) A parcela de gasto em alimentação caiu — padrão Engel para bens necessários.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) A TMS colapsou para zero no segundo período.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="e"> (v) O modelo CD está rejeitado — nenhuma preferência CD gera parcelas variáveis.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> A TMS é ordinal: \(v = f(u)\) com \(f\) estritamente crescente preserva CIs e razão \(u_1/u_2\). Em Cobb-Douglas, isso se traduz numa simplificação prática — usar \(v_1 = \ln u\) dispensa regra do produto. A <em>parcela de gasto</em> \(\alpha\) constante é assinatura empírica: onde os dados mostram parcelas variando com renda (POF), CD pura é rejeitada em prol de famílias mais ricas (PIGLOG, Stone-Geary).</p>
+      <p><strong>2. Derivação (item a).</strong> Pela fórmula fechada \(\text{TMS} = \frac{\alpha}{1-\alpha}\cdot\frac{x_2}{x_1}\), com \(\alpha=1/3\): \(\text{TMS} = \frac{1/3}{2/3}\cdot\frac{4}{8} = \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4}\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Duas clássicas. Primeira (item b): distrator (iii) inclui \(v_4 = -u\). Aluno confunde "transformação monótona" com "monótona em módulo" — \(-u\) é estritamente <em>decrescente</em>, então inverte a ordem de \(\succeq\) (curvas viram mínimos). Segunda (item d, distrator v): confusão simétrica "parcela é \(1-\alpha\)" troca os papéis. A fórmula é \(p_i x_i^*/m = \alpha_i\) onde \(\alpha_i\) é o expoente <em>do próprio bem</em>.</p>
+      <p><strong>4. Extensão (Aula 2).</strong> A parcela constante \(\alpha\) derivará da UMP na Aula 2: CPO + restrição + \(\text{TMS} = p_1/p_2\) entregam \(p_1 x_1^*/(p_1 x_1^* + p_2 x_2^*) = \alpha\). Resultado-âncora que torna CD irresistível em empírica — parcela estimável por OLS. Quando parcelas empíricas variam com renda, troque para Stone-Geary ou AIDS.</p>
+      <p><strong>5. Peer-review.</strong> O item (e) flerta com economia empírica antes de Slutsky formal. Risco residual: aluno matematicamente forte mas empiricamente cru pode marcar (v) achando que "parcelas variáveis" contradiz CD estrito, sem perceber que o enunciado descreve \(\alpha\) mudando entre <em>períodos</em>, não <em>dentro</em>. O enunciado é claro, mas a ambiguidade é real; mantive porque a leitura correta é parte da habilidade avaliada.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Quasilinear: TMS, Curva de Engel e Excedente</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Seja a preferência em \(\mathbb{R}^2_+\) representada por</p>
+      \[
+      u(x_1, x_2) = 2\sqrt{x_1} + x_2.
+      \]
+      <p>Aqui \(x_2\) é o "numerário" — mede poder de compra sobre os demais bens da economia. Suponha preços \(p_1 = 1\) e \(p_2 = 1\) e renda \(m\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A TMS de \(u\) como função do ponto é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(\dfrac{1}{\sqrt{x_1}}\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(\dfrac{1}{2\sqrt{x_1}}\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(\dfrac{x_2}{\sqrt{x_1}}\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) \(\dfrac{2 x_2}{x_1}\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="e"> (v) Não definida porque \(u\) não é côncava em \(x_1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> No ótimo interior (renda suficiente para \(x_2 > 0\)), a demanda Marshalliana pelo bem 1 é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(x_1^* = m\) (toda a renda no bem 1).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(x_1^* = 1\), independente de \(m\) (enquanto \(m \geq 1\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(x_1^* = m/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) \(x_1^* = \sqrt{m}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="e"> (v) \(x_1^* = m^2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Conforme a renda \(m\) varia (com preços fixos em 1), o <em>caminho de expansão da renda</em> (locus dos ótimos interiores em \((x_1, x_2)\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) Um raio a partir da origem — preferência é homotética.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) Uma reta vertical em \(x_1 = 1\) — todo o aumento de renda vira \(x_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) Uma parábola.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) Uma reta horizontal em \(x_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="e"> (v) Coincide com a curva de indiferença \(u = \bar{u}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O <strong>excedente do consumidor</strong> ao preço \(p_1 = 1\) (assumindo \(p_2 = 1\) e renda suficiente para solução interior) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) \(0\) — no ótimo, consumidor está indiferente entre comprar e não comprar.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) \(m - 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="e"> (v) Depende de \(m\) de forma não-trivial.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Uma propriedade crucial deste exercício <strong>não</strong> sobrevive se a renda \(m\) é tão baixa que a solução vira de canto (\(x_2 = 0\)). Qual?</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) A existência de \(u\) — deixa de existir.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) A continuidade de \(u\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) O efeito-renda zero no bem 1 — nessa faixa, aumentos de \(m\) passam a ser gastos em \(x_1\), reintroduzindo efeito-renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) A monotonicidade — \(x_2 = 0\) viola o axioma.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="e"> (v) A representabilidade — sem interior, preferência não é representável.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Quasilinear é a única família onde excedente do consumidor = variação equivalente = variação compensatória — as três medidas de bem-estar coincidem porque o efeito-renda no bem "interessante" é zero. Esse efeito-renda zero tem condição: a solução tem que ser interior em \(x_2\). Em cima desse detalhe vive toda a economia pública que usa "área sob demanda".</p>
+      <p><strong>2. Derivação (itens a-d).</strong> TMS: \(u_1 = 1/\sqrt{x_1}\), \(u_2 = 1\), logo \(\text{TMS} = 1/\sqrt{x_1}\). No ótimo interior, TMS \(= p_1/p_2 = 1\), donde \(1/\sqrt{x_1^*} = 1 \Rightarrow x_1^* = 1\). Restrição: \(x_2^* = m - 1\). Caminho de expansão: \(\{(1, m-1)\}\) — vertical em \(x_1 = 1\). Excedente: demanda \(x_1^d(p_1) = 1/p_1^2\), área de \(p_1 = 1\) até \(\infty\): \(\int_1^{\infty} 1/p_1^2\, dp_1 = 1\). Efeito-renda zero no bem 1 ⇒ esse valor é EV exata.</p>
+      <p><strong>3. Armadilha.</strong> O item (e) é o coração didático. A propriedade "efeito-renda zero" é frequentemente enunciada no livro-texto <em>sem a ressalva de interioridade</em>. Aluno memoriza "quasilinear = efeito-renda zero no bem 1" e aplica em faixas de renda baixas. Mas quando \(m < 1\), o consumidor gasta <em>toda</em> a renda em bem 1 (canto \(x_2 = 0\)), e variações de \(m\) aumentam \(x_1\) — efeito-renda positivo.</p>
+      <p><strong>4. Extensão (Aulas 2/3).</strong> Na Aula 2, UMP formal: solução interior importa — Kuhn-Tucker muda resultados. Na Aula 3, Slutsky revela que excedente do consumidor é exato em QL e aproximado em geral — Willig (1976, AER) delimita quando a aproximação é boa.</p>
+      <p><strong>5. Peer-review.</strong> O item (d), distrator (iv) "\(m-1\)", captura aluno que confunde <em>excedente</em> com <em>consumo de numerário \(x_2^*\)</em>. Os dois batem por coincidência quando \(m=2\); preferi \(p_1=p_2=1\) exatamente para <em>não</em> fazer excedente coincidir com renda de forma estrutural. Alternativa seria \(p_1 = 2\), mas aí a aritmética ofusca o conceito.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Leontief Expandido e CES com \(\rho\) Específico</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor ao planejar uma viagem tem preferências sobre (1) passagem aérea \(x_1\) e (2) diárias de hotel \(x_2\), em número de <em>pacotes</em> possíveis.</p>
+      <p><strong>Cenário A (rígido):</strong> Todo pacote exige exatamente 2 diárias por passagem; sem um dos dois, utilidade zero. Preferência representada por \(u_A(x_1, x_2) = \min\{2 x_1, x_2\}\).</p>
+      <p><strong>Cenário B (CES, \(\rho = 1/2\)):</strong> O consumidor aceita <em>alguma</em> substituição (dormir no sofá de amigos substitui hotel, pegar ônibus substitui avião):</p>
+      \[
+      u_B(x_1, x_2) = \left(\tfrac{1}{2}\, x_1^{1/2} + \tfrac{1}{2}\, x_2^{1/2}\right)^{2}.
+      \]
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> No Cenário A, a TMS em \((x_1, x_2) = (3, 4)\) — dentro do ramo \(2x_1 > x_2\) — vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(0\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(+\infty\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(1/2\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(2\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="e"> (v) Não existe (não-diferenciável).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> No Cenário A, o conjunto de pontos onde \(u_A\) é <strong>não-diferenciável</strong> é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) Vazio — \(u_A\) é diferenciável em todo ponto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) O eixo \(x_1 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) A reta \(x_2 = 2 x_1\) (vértices dos "Ls").</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) A diagonal \(x_1 = x_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="e"> (v) Um ponto isolado: \((0, 0)\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> No Cenário B (CES com \(\rho = 1/2\)), a elasticidade de substituição é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) \(\sigma = 0\) (Leontief).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) \(\sigma = 1\) (Cobb-Douglas).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) \(\sigma = 2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) \(\sigma = 1/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="e"> (v) \(\sigma = \infty\) (substitutos perfeitos).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> No Cenário B, a TMS em \((x_1, x_2) = (1, 4)\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) \(1\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) \(1/2\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) \(2\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) \(4\)</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="e"> (v) \(1/4\)</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Entre os cenários A e B, a predição qualitativa que melhor descreve a diferença <strong>observável</strong> em escolhas é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) Em A, o consumidor compra proporção fixa \(x_2 = 2 x_1\) a qualquer vetor de preços; em B, a proporção \(x_2/x_1\) responde à razão de preços \(p_1/p_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) Em A, o consumidor muda de bem conforme preços; em B, mantém proporção rígida.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) Ambos geram parcelas de gasto constantes.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) Em A, excedente do consumidor está bem-definido; em B, não.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="e"> (v) Em B, a preferência é homotética; em A, não.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> CES com \(\rho \in (0, 1)\) ocupa o interior do espectro — nem Leontief (\(\rho \to -\infty\)), nem Cobb-Douglas (\(\rho \to 0\)), nem substitutos perfeitos (\(\rho \to 1\)). Em \(\rho = 1/2\), \(\sigma = 1/(1-\rho) = 2\): "mais substituível que CD, menos que perfeito". Regime empiricamente comum (Houthakker 1957, Deaton-Muellbauer).</p>
+      <p><strong>2. Derivação (item d).</strong> Fórmula geral da TMS em CES: \(\text{TMS} = \frac{\alpha}{1-\alpha}\left(\frac{x_2}{x_1}\right)^{1-\rho}\). Com \(\alpha = 1/2\), \(\rho = 1/2\): \(\text{TMS} = \sqrt{x_2/x_1}\). Em \((1, 4)\): \(\text{TMS} = \sqrt{4} = 2\). ✓</p>
+      <p><strong>3. Armadilha.</strong> No item (a), confundir os dois ramos é o clássico. No ramo \(2x_1 > x_2\), o bem 1 está em <em>excesso</em>, então uma unidade adicional de bem 1 não melhora \(u\) — CI é <strong>horizontal</strong>, \(u_1 = 0\), TMS \(= 0\). Aluno confunde "muito do bem 1" com "bem 1 é caro" e chuta \(+\infty\). No item (c), distrator (iv) \(\sigma = 1/2\) vem de ler \(\sigma = \rho\) em vez de \(\sigma = 1/(1-\rho)\) — erro de memorização bruta.</p>
+      <p><strong>4. Extensão (Aulas 2/3).</strong> A Marshalliana CES (Aula 2): \(x_i(p, m) = \frac{\alpha_i^{\sigma}\, p_i^{-\sigma}}{\sum_j \alpha_j^{\sigma}\, p_j^{1-\sigma}}\, m\). Com \(\sigma = 2\), elasticidade-preço da demanda é 2 em módulo. Empiricamente plausível para bens de consumo de massa (Feenstra JIE 1994, Broda-Weinstein QJE 2006).</p>
+      <p><strong>5. Peer-review.</strong> O "Cenário B" é artificial — ninguém compra pacote de viagem como CES. A escolha narrativa é para o aluno ver o mesmo par \((x_1, x_2)\) em dois regimes e comparar TMS diretamente. Vale a aposta — o exercício testa maquinaria, e a narrativa só orienta.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Limites da CES e Parcelas de Gasto</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a família CES parametrizada em \(\mathbb{R}^2_{++}\):</p>
+      \[
+      u_\rho(x_1, x_2) = \left(\alpha\, x_1^\rho + (1-\alpha)\, x_2^\rho\right)^{1/\rho},
+      \qquad \alpha \in (0, 1),\ \rho \leq 1,\ \rho \neq 0.
+      \]
+      <p>Denote por \(s_1(\rho) = \dfrac{p_1 x_1^*(\rho)}{m}\) a parcela do gasto em bem 1 na solução da UMP. Por ora, aceite o resultado fechado:</p>
+      \[
+      s_1(\rho) = \dfrac{\alpha^{\sigma}\, p_1^{1-\sigma}}{\alpha^{\sigma}\, p_1^{1-\sigma} + (1-\alpha)^{\sigma}\, p_2^{1-\sigma}}, \quad \sigma = \tfrac{1}{1-\rho}.
+      \]
+      <p>Suponha por toda a questão \(\alpha = 0{,}6\), \(p_1 = 2\), \(p_2 = 1\), \(m = 10\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> No limite \(\rho \to 0\) (Cobb-Douglas), a parcela \(s_1\) converge para:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) \(\alpha \cdot p_1 = 1{,}2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) \(\alpha = 0{,}6\), independente de preços.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) \(\alpha\, p_1 / (p_1 + p_2) = 2 \cdot 0{,}6 / 3 = 0{,}4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) \(\alpha^{1/2} \approx 0{,}775\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="e"> (v) Diverge — CD não tem parcela fixa.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> No limite \(\rho \to 1^-\) (substitutos perfeitos), a parcela \(s_1\) converge para:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(\alpha = 0{,}6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(0\) (consumidor gasta tudo em bem 2, mais barato).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(1\) (consumidor gasta tudo em bem 1, preferido por \(\alpha\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(\alpha p_2 / (\alpha p_1 + (1-\alpha) p_2) = 0{,}375\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="e"> (v) \(\alpha / (1-\alpha) = 1{,}5\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> No limite \(\rho \to -\infty\) (Leontief), a parcela \(s_1\) converge para:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(\alpha = 0{,}6\), por analogia com CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(0\) — consumidor prefere o bem barato.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(p_1 / (p_1 + p_2) = 2/3\), porque consome em proporção 1:1.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) \(1/2\) — proporção igualitária imposta pela complementaridade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="e"> (v) \(\alpha\, p_1 / p_2 = 1{,}2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Qual das seguintes é <strong>verdadeira</strong> sobre a <em>monotonia</em> de \(s_1(\rho)\) em \(\rho \in (-\infty, 1)\) para os valores dados?</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(s_1\) é estritamente crescente em \(\rho\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(s_1\) é estritamente decrescente em \(\rho\) — parte de \(2/3\) (Leontief), passa por \(0{,}6\) (CD) e cai a \(0\) (substitutos perfeitos).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(s_1\) é constante em \(\rho\) — CES é ordinalmente idêntica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) \(s_1\) tem máximo interno em algum \(\rho \in (0,1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="e"> (v) \(s_1\) tem mínimo interno em \(\rho = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> "O <em>ranking</em> das parcelas \(s_1\) nos três limites canônicos depende crucialmente de \(\alpha, p_1, p_2\)." Essa afirmação é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) Verdadeira — basta trocar \(p_1\) por um valor menor que \(p_2\) para inverter a ordem do item (d).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) Falsa — ordenamento é universal: Leontief sempre dá parcela maior que CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) Falsa — ordenamento depende só de \(\alpha\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) Verdadeira, mas apenas se \(\alpha\) ultrapassar \(0{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="e"> (v) Verdadeira, mas apenas se as parcelas forem medidas por <em>quantidade</em> em vez de <em>gasto</em>.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> As parcelas de gasto em CES são <strong>convexamente dependentes de \(\sigma\) e preços</strong> — só em \(\sigma = 1\) (CD) a parcela vira constante \(\alpha\). Longe disso, a parcela varia com preços, e o sentido da variação depende se bens são <em>substitutos</em> ou <em>complementos</em> (\(\sigma \gtrless 1\)). Esse é o motivo empírico para CES ser o cavalo de batalha: um parâmetro captura todo o espectro.</p>
+      <p><strong>2. Derivação (item c).</strong> Leontief (\(\rho \to -\infty\), \(\sigma \to 0\)) impõe proporção fixa 1:1 no limite simétrico. \(x_1^* = x_2^* = m/(p_1 + p_2) = 10/3\). Parcela em bem 1: \(p_1 x_1^*/m = 2 \cdot (10/3)/10 = 2/3\). Confirma-se substituindo \(\sigma = 0\) na fórmula fechada: \(s_1(0) = p_1/(p_1+p_2) = 2/3\), pois \(\alpha^0 = (1-\alpha)^0 = 1\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (b) — "\(\alpha\) alto, logo consumidor prefere bem 1, logo parcela \(\to 1\)" (distrator iii) — é a armadilha mais recorrente. No regime de substitutos perfeitos, o que importa é <em>preço por unidade de utilidade</em>: se \(p_1 > p_2 \cdot \alpha/(1-\alpha)\), o bem 2 é mais barato por unidade de utilidade. Com os valores dados: \(p_1/\alpha = 10/3\) vs. \(p_2/(1-\alpha) = 2{,}5\). Bem 2 vence, \(s_1 \to 0\).</p>
+      <p><strong>4. Extensão (Aulas 2/6).</strong> Aula 2: fórmula fechada da Marshalliana CES e identidade \((\sigma - 1)(s_i - 1)\) para elasticidade-preço. Trabalhos empíricos estruturais (Feenstra JIE 1994; Broda-Weinstein QJE 2006). Aula 6: CES com bens contingentes → utilidade esperada CRRA.</p>
+      <p><strong>5. Peer-review.</strong> Risco em (c): aluno que memorizou "Leontief = 1:1" pode acertar por razão errada. Considerei usar \(\alpha\) importando no limite, mas exigiria CES não-padrão. Mantive o padrão do livro-texto. A fórmula fechada no enunciado "estraga" um pouco a exigência de derivação — mas pedir UMP formal aqui seria injusto (Aula 2 ainda não aconteceu).</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Teorema de Debreu em \(\mathbb{R}^3\) e Variantes Topológicas</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Estenda a preferência lexicográfica para \(X = \mathbb{R}^3_+\):</p>
+      \[
+      (x_1, x_2, x_3) \succeq^{L_3} (y_1, y_2, y_3) \iff
+      \begin{cases}
+      x_1 > y_1, \text{ ou} \\
+      x_1 = y_1\ \text{e}\ x_2 > y_2, \text{ ou} \\
+      x_1 = y_1,\ x_2 = y_2\ \text{e}\ x_3 \geq y_3.
+      \end{cases}
+      \]
+      <p>Considere também <strong>duas variantes</strong>:</p>
+      <ul style="margin:0.3em 0 0 1.2em">
+        <li>\(\succeq^C\) — em \(X = \{0, 1, 2\}^3\) (domínio finito), mesma regra lex.</li>
+        <li>\(\succeq^D\) — em \(X = \mathbb{R}^3_+\), representada por \(u_D(x_1, x_2, x_3) = x_1 + \tfrac{1}{10} x_2 + \tfrac{1}{100} x_3\).</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A preferência \(\succeq^{L_3}\) em \(\mathbb{R}^3_+\) admite representação por \(u: \mathbb{R}^3_+ \to \mathbb{R}\)?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Sim — basta adaptar o argumento Debreu.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) Sim — e com \(u\) contínua.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) Não — pelo mesmo argumento de cardinalidade que falha em \(\mathbb{R}^2_+\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Depende do axioma de escolha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="e"> (v) Apenas se restringirmos \(X\) ao simplex unitário.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Sobre \(\succeq^C\) em \(\{0,1,2\}^3\) (domínio finito):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Viola continuidade, como no caso \(\mathbb{R}^3_+\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) É representável por utilidade — em domínio finito, qualquer ordem total admite representação numérica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Viola transitividade por enumeração exaustiva.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Viola monotonicidade porque \(0\) está no domínio.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="e"> (v) Apenas admite representação se a ordem for modificada.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> A preferência \(\succeq^D\) (com \(u_D = x_1 + 0{,}1 x_2 + 0{,}01 x_3\)) vs. \(\succeq^{L_3}\): qual afirmação é correta?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) \(\succeq^D\) é idêntica a \(\succeq^{L_3}\) em todo \(\mathbb{R}^3_+\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) \(\succeq^D\) coincide com \(\succeq^{L_3}\) <em>apenas</em> em domínios limitados (por ex., \([0,1]^3\)). Fora daí, um \(x_2\) ou \(x_3\) grande o bastante "compensa" diferença em \(x_1\), contrariando a lex.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) \(\succeq^D\) é descontínua como \(\succeq^{L_3}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) \(\succeq^{L_3}\) em \([0,1]^3\) é representável; em \(\mathbb{R}^3_+\) não. A ordem difere globalmente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="e"> (v) Nenhuma preferência representada por função contínua pode aproximar a lex em nenhum subdomínio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Suponha uma preferência \(\succeq^E\) em \(\mathbb{R}^2_+\) satisfazendo completude, transitividade e <strong>continuidade</strong>, mas <em>violando</em> monotonicidade e convexidade. O teorema de Debreu garante:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Existência de \(u\) contínua representando \(\succeq^E\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Existência de \(u\) contínua <em>e</em> quasicôncava.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Inexistência de \(u\) — monotonicidade é pré-requisito.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Existência de \(u\) apenas se acrescentarmos convexidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="e"> (v) Inexistência — convexidade é pré-requisito.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Na variante em que o domínio é \(X = \mathbb{Q}^3_+\) (racionais positivos), a preferência \(\succeq^{L_3}\) restrita a \(X\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Viola continuidade, como em \(\mathbb{R}^3_+\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Admite representação por \(u: \mathbb{Q}^3_+ \to \mathbb{R}\) — o argumento de cardinalidade usado em \(\mathbb{R}^3_+\) não se aplica porque \(|\mathbb{Q}^3_+| = |\mathbb{Q}|\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Viola transitividade sobre racionais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) É descontínua porque os racionais não são completos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="e"> (v) Equivale a \(\succeq^D\) restrita a \(\mathbb{Q}^3_+\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Não-representabilidade da lex é <em>um argumento de cardinalidade</em>, não de continuidade. A continuidade é <em>suficiente</em> para representação (Debreu); a ausência de continuidade, por si só, não é <em>necessária</em> para não-representabilidade. Em \(\mathbb{R}^n_+\) (para \(n \geq 2\)), a lex não admite <em>nenhuma</em> representação numérica — contínua ou descontínua. Em domínios contáveis (finito ou enumerável), o argumento não se aplica e a lex é representável. Esse reconhecimento separa quem decorou de quem entendeu.</p>
+      <p><strong>2. Derivação (item c).</strong> \(\succeq^D\) com pesos \(0{,}1\) e \(0{,}01\) ordena lexicograficamente quando os saltos em \(x_2, x_3\) são limitados. Mas em \(\mathbb{R}^3_+\): com \(x = (1, 0, 0)\) e \(y = (0, 100, 0)\), \(u_D(x) = 1\), \(u_D(y) = 10\), logo \(y \succ^D x\). Em \(\succeq^{L_3}\): \(x_1 = 1 > 0 = y_1\), logo \(x \succ^{L_3} y\). Ordens opostas. Nenhuma função de utilidade contínua, com quaisquer pesos finitos, replica globalmente o "\(\varepsilon\) no bem 1 domina tudo no bem 2".</p>
+      <p><strong>3. Armadilha.</strong> Item (d) pega aluno que memorizou "Debreu precisa de monotonicidade e convexidade". Não. Os slides são explícitos: continuidade é a hipótese-chave; monotonicidade e convexidade são <em>acréscimos de regularidade</em>. Uma versão instrutiva — a preferência "anti-2" \(u(x_1, x_2) = x_1 - x_2\) — viola monotonicidade (bem 2 é ruim) mas é Debreu-representável.</p>
+      <p><strong>4. Extensão (Aulas 4/6).</strong> No equilíbrio geral, existência de equilíbrio competitivo requer preferências contínuas, convexas e monotônicas. Debreu sustenta a <em>representação</em> por \(u\); existência do equilíbrio (Arrow-Debreu 1954) usa representação + convexidade para garantir ponto fixo (Kakutani). Os axiomas têm papéis hierárquicos.</p>
+      <p><strong>5. Peer-review.</strong> Item (e) — lex em \(\mathbb{Q}^3_+\) — é a parte mais delicada. A rigor, o argumento de Debreu usa a estrutura ordenada de \(\mathbb{R}\), e a restrição a racionais quebra a <em>continuidade</em> tanto quanto a <em>cardinalidade</em>. A alternativa (ii) é sobre <em>representabilidade</em>, não sobre <em>continuidade</em> da representação — é verdadeira: qualquer ordem total em conjunto contável admite representação numérica. O aluno precisa separar os dois conceitos.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (29 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>30/04 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 29/04 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 2</strong> (UMP, EMP, Dualidade) é liberada em <strong>23/04</strong>. O <strong>quiz pós-aula 1</strong> (5🟡 + 5🔴) também fecha quarta 29/04 18h — não esqueça. Dúvidas conceituais sobre exercícios: monitoria 1 com Alberto em 16/05 já tem na programação revisão da aula 1.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-01-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: libera em 30/04/2026 00:00 BRT.
+  var GABARITO_RELEASE = new Date('2026-04-30T00:00:00-03:00').getTime();
+  var locked = Date.now() < GABARITO_RELEASE;
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    // Mostrar banner de "pending" após o submit — usamos observer no botão
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
