@@ -121,6 +121,53 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .profile-copy-btn{background:#fff;border:1px solid var(--border);padding:0.4rem 0.8rem;border-radius:var(--radius);font-size:0.78rem;cursor:pointer;font-weight:600;color:var(--text)}
 .profile-copy-btn:hover{border-color:var(--accent);color:var(--accent)}
 .profile-copy-ok{color:var(--success);font-size:0.75rem;margin-left:0.5rem;font-weight:600}
+/* Percentile badge no perfil */
+.pct-badge{display:inline-block;padding:0.1rem 0.45rem;border-radius:8px;font-size:0.6rem;font-weight:700;margin-left:0.3rem;letter-spacing:0.03em}
+.pct-badge.pct-top{background:#D1FAE5;color:#065F46}
+.pct-badge.pct-mid{background:#FEF3C7;color:#92400E}
+.pct-badge.pct-low{background:#FEE2E2;color:#991B1B}
+/* Psicometria */
+#psi-table tr{cursor:pointer}
+#psi-table tr.psi-row:hover{background:var(--accent-soft)}
+#psi-table td{font-size:0.78rem;padding:0.45rem 0.5rem}
+.psi-flag{display:inline-block;padding:0.15rem 0.5rem;border-radius:10px;font-size:0.68rem;font-weight:700;white-space:nowrap}
+.psi-flag.ok{background:#D1FAE5;color:#065F46}
+.psi-flag.easy{background:#E0F2FE;color:#075985}
+.psi-flag.hard{background:#FEE2E2;color:#991B1B}
+.psi-flag.lowdisc{background:#FEF3C7;color:#92400E}
+.psi-flag.neg{background:#FCE7F3;color:#831843;border:1px solid #BE185D}
+.psi-pvalue{font-weight:700;font-variant-numeric:tabular-nums}
+.psi-pvalue.p-hard{color:#991B1B}
+.psi-pvalue.p-easy{color:#075985}
+.psi-pvalue.p-ok{color:#065F46}
+.psi-rpb{font-weight:600;font-variant-numeric:tabular-nums}
+.psi-rpb.neg{color:#991B1B}
+.psi-rpb.low{color:#B45309}
+.psi-rpb.good{color:#065F46}
+.psi-difficulty-badge{display:inline-block;padding:0.1rem 0.4rem;border-radius:4px;font-size:0.63rem;font-weight:700}
+.psi-difficulty-badge.yellow{background:#FEF3C7;color:#92400E}
+.psi-difficulty-badge.red{background:#FEE2E2;color:#991B1B}
+.psi-difficulty-badge.green{background:#D1FAE5;color:#065F46}
+.psi-difficulty-badge.none{background:#E5E5E5;color:#525252}
+/* Distractor rows (no modal) */
+.distractor-row{display:flex;align-items:center;gap:0.8rem;padding:0.6rem 0.8rem;border-radius:6px;margin-bottom:0.3rem;border:1px solid var(--border);font-size:0.82rem}
+.distractor-row.correct{background:#D1FAE5;border-color:#A7F3D0}
+.distractor-row.wrong{background:#FAFAF8}
+.distractor-row .d-letter{font-weight:700;font-size:1rem;min-width:1.4rem;text-align:center;color:var(--primary)}
+.distractor-row .d-bar{flex:1;height:8px;background:var(--border);border-radius:4px;overflow:hidden;position:relative}
+.distractor-row .d-bar-fill{height:100%;border-radius:4px}
+.distractor-row.correct .d-bar-fill{background:#15803D}
+.distractor-row.wrong .d-bar-fill{background:#C8102E;opacity:0.7}
+.distractor-row .d-count{min-width:3rem;text-align:right;font-weight:600}
+.distractor-row .d-rest{min-width:7rem;text-align:right;font-size:0.72rem;color:var(--text-muted)}
+/* Tag cloud */
+.tag-cloud-tag{display:inline-block;margin:0.15rem 0.3rem;padding:0.1rem 0.35rem;border-radius:4px;cursor:pointer;color:var(--primary);transition:0.15s}
+.tag-cloud-tag:hover{background:var(--accent);color:#fff}
+.tag-cloud-tag.active{background:var(--accent);color:#fff}
+.reflection-item{padding:0.7rem 0.9rem;background:#fff;border-left:3px solid var(--accent);border-radius:0 4px 4px 0;margin-bottom:0.4rem;font-size:0.82rem}
+.reflection-item .r-meta{font-size:0.7rem;color:var(--text-muted);margin-bottom:0.3rem;font-weight:600}
+.reflection-item .r-text{line-height:1.5;color:var(--text)}
+.reflection-item .r-highlight{background:#FEF3C7;padding:0 0.15rem;border-radius:2px;font-weight:600}
 </style>
 </head>
 <body>
@@ -153,6 +200,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="tab" data-tab="heatmap">Mapa de Completude</div>
     <div class="tab" data-tab="alunos">Por Aluno</div>
     <div class="tab" data-tab="quizzes">Quizzes</div>
+    <div class="tab" data-tab="psicometria">Psicometria</div>
     <div class="tab" data-tab="avancadas">Métricas Avançadas</div>
     <div class="tab" data-tab="export">Exportar / Gerenciar</div>
   </div>
@@ -245,6 +293,69 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     </div>
   </div>
 
+  <!-- TAB: PSICOMETRIA -->
+  <div class="admin-card tab-content" id="tab-psicometria" style="display:none">
+    <h3>Psicometria das questões</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">
+      Para cada questão de quiz (🟡/🔴/🟢), computa <strong>dificuldade (p-value)</strong>,
+      <strong>discriminação (point-biserial)</strong> e <strong>análise de distratores</strong> com base
+      na <em>1ª tentativa</em> de cada aluno. Padrão IRT/CTT (Classical Test Theory).
+      Click em uma linha para ver o breakdown dos distratores.
+    </p>
+    <div class="tab-alunos-toolbar">
+      <label for="psi-filter-page">Aula</label>
+      <select id="psi-filter-page"><option value="">Todas</option></select>
+      <label for="psi-filter-phase">Fase</label>
+      <select id="psi-filter-phase">
+        <option value="">Todas</option>
+        <option value="pre_review">Pré-aula</option>
+        <option value="post">Pós-aula</option>
+        <option value="graded_exercise">Avaliativo</option>
+      </select>
+      <label for="psi-filter-flag">Flag</label>
+      <select id="psi-filter-flag">
+        <option value="">Todas</option>
+        <option value="neg">🔴 Discriminação negativa (BUG?)</option>
+        <option value="hard">🔴 Muito difícil</option>
+        <option value="easy">🟢 Muito fácil</option>
+        <option value="lowdisc">⚠️ Baixa discriminação</option>
+        <option value="ok">✅ OK</option>
+      </select>
+      <label for="psi-sort">Ordenar</label>
+      <select id="psi-sort">
+        <option value="p-asc">Dificuldade crescente (p asc)</option>
+        <option value="p-desc">Dificuldade decrescente (p desc)</option>
+        <option value="rpb-asc">Discriminação pior primeiro</option>
+        <option value="rpb-desc">Discriminação melhor primeiro</option>
+        <option value="page" selected>Por aula/fase</option>
+      </select>
+      <div class="toolbar-spacer"></div>
+      <button class="btn-export btn-csv" onclick="exportPsychometricsCSV()">📤 Exportar CSV</button>
+    </div>
+    <div style="overflow-x:auto">
+      <table id="psi-table">
+        <thead><tr>
+          <th>Aula/Fase</th><th>Q</th><th>Decl.</th>
+          <th>N</th><th>p-value</th><th>rpb</th>
+          <th>Distrator-top</th><th>Flag</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="psi-result-count" style="margin-top:0.6rem;font-size:0.72rem;color:var(--text-muted)"></div>
+    <div style="margin-top:1rem;padding:0.8rem 1rem;background:var(--accent-soft);border-radius:6px;font-size:0.75rem;color:var(--text-muted);line-height:1.45">
+      <strong>Leitura rápida:</strong>
+      <strong>p-value</strong> = % que acertou em 1ª tentativa. Ideal 0.4–0.8.
+      <strong>rpb</strong> (discriminação point-biserial) = correlação entre acertar essa questão e acertar o resto; &lt;0.15 = questão não separa top de bottom; &lt;0 = alunos fortes erram mais (possível bug de gabarito ou alternativa ambígua).
+      <strong>Distrator-top</strong> = alternativa errada mais escolhida + perfil médio de quem marcou (se quem marcou é top-performer, é armadilha pedagógica legítima; se é bottom, é ruído).
+    </div>
+  </div>
+
+  <!-- MODAL: DETALHE DE QUESTÃO (distractor breakdown) -->
+  <div class="profile-modal-backdrop" id="question-modal-backdrop" onclick="if(event.target===this) closeQuestionModal()">
+    <div class="profile-modal" id="question-modal-content"></div>
+  </div>
+
   <!-- TAB: MÉTRICAS AVANÇADAS -->
   <div class="tab-content" id="tab-avancadas" style="display:none">
     <div class="admin-card">
@@ -290,6 +401,25 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
           <h4>Top alunos por tempo efetivo</h4>
           <div class="metric-desc">Alunos que mais dedicaram tempo à plataforma (sessão ativa, não aba aberta).</div>
           <div id="m-top-time" style="font-size:0.8rem"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Tag cloud das reflexões qualitativas</h4>
+          <div class="metric-desc">Temas recorrentes nas reflexões da seção 8 de cada pré-aula (campos abertos). Stopwords PT-BR removidas. Tamanho proporcional à frequência; clique em termo para filtrar as reflexões abaixo.</div>
+          <div class="tab-alunos-toolbar" style="margin-bottom:0.5rem">
+            <label for="tag-filter-page">Aula</label>
+            <select id="tag-filter-page"><option value="">Todas</option></select>
+            <label for="tag-top-n">Top-N</label>
+            <select id="tag-top-n">
+              <option value="30">30</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+            </select>
+            <div class="toolbar-spacer"></div>
+            <span id="tag-count" style="font-size:0.7rem;color:var(--text-muted)"></span>
+          </div>
+          <div id="m-tagcloud" style="line-height:1.9;padding:0.8rem 1rem;background:var(--accent-soft);border-radius:6px;min-height:80px;text-align:center"></div>
+          <div id="m-tag-reflections" style="margin-top:0.8rem"></div>
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
@@ -661,13 +791,28 @@ function showStudentProfile(matricula) {
   var bench = window._alunosBench || {};
   var data = window._alunosData || {};
   var studentData = data[matricula] || {};
+  var allRows = window._alunosRows || [];
 
-  function cmpToP50(v, p50, unit) {
-    if (p50 == null) return '';
-    var diff = v - p50;
-    var cls = diff > 0 ? 'above' : diff < 0 ? 'below' : '';
-    var sign = diff > 0 ? '+' : '';
-    return '<div class="profile-benchmark ' + cls + '">' + sign + diff + ' ' + unit + ' vs P50 turma</div>';
+  // Arrays da turma inteira para cada métrica, usados para calcular percentil exato.
+  var _arr = {
+    aulas: allRows.map(function(x){return x.s.pagesVisited||0}),
+    quiz: allRows.map(function(x){return x.s.quizzesCompleted||0}),
+    tempo: allRows.map(function(x){return x.s.totalTimeMin||0}),
+    media: allRows.filter(function(x){return x.s.quizzesCompleted>0}).map(function(x){return x.s.avgQuizScore||0}),
+    ft: allRows.filter(function(x){return x.ftPct!==null}).map(function(x){return x.ftPct})
+  };
+
+  function cmpWithPercentile(v, p50, unit, arrKey) {
+    var parts = [];
+    if (p50 != null) {
+      var diff = v - p50;
+      var cls = diff > 0 ? 'above' : diff < 0 ? 'below' : '';
+      var sign = diff > 0 ? '+' : '';
+      parts.push('<span class="' + cls + '">' + sign + diff + ' ' + unit + ' vs P50</span>');
+    }
+    var pct = percentileOf(v, _arr[arrKey]);
+    if (pct != null) parts.push(pctBadge(pct));
+    return '<div class="profile-benchmark">' + parts.join(' ') + '</div>';
   }
 
   var riskClass = { inactive:'r-high', high:'r-high', med:'r-med', low:'r-low' }[r.risk.level] || '';
@@ -734,12 +879,12 @@ function showStudentProfile(matricula) {
     + '<h3>Resumo & Risco</h3>'
     + '<div class="profile-summary-grid">'
       + '<div class="profile-kpi ' + riskClass + '"><div class="v">' + r.risk.score + '</div><div class="l">Risco (0-100)</div><div class="b">' + riskLabel(r.risk.level) + '</div></div>'
-      + '<div class="profile-kpi"><div class="v">' + r.s.pagesVisited + '/' + (window._totalItems||'?') + '</div><div class="l">Aulas abertas</div>' + cmpToP50(r.s.pagesVisited, bench.p50Aulas, '') + '</div>'
-      + '<div class="profile-kpi"><div class="v">' + r.s.quizzesCompleted + '</div><div class="l">Quizzes feitos</div>' + cmpToP50(r.s.quizzesCompleted, bench.p50Quiz, '') + '</div>'
-      + '<div class="profile-kpi"><div class="v">' + r.s.totalTimeMin + '</div><div class="l">Min totais</div>' + cmpToP50(r.s.totalTimeMin, bench.p50Tempo, 'min') + '</div>'
-      + '<div class="profile-kpi"><div class="v">' + r.s.avgQuizScore + '%</div><div class="l">Média quiz</div>' + cmpToP50(r.s.avgQuizScore, bench.p50Media, 'pp') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.pagesVisited + '/' + (window._totalItems||'?') + '</div><div class="l">Aulas abertas</div>' + cmpWithPercentile(r.s.pagesVisited, bench.p50Aulas, '', 'aulas') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.quizzesCompleted + '</div><div class="l">Quizzes feitos</div>' + cmpWithPercentile(r.s.quizzesCompleted, bench.p50Quiz, '', 'quiz') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.totalTimeMin + '</div><div class="l">Min totais</div>' + cmpWithPercentile(r.s.totalTimeMin, bench.p50Tempo, 'min', 'tempo') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.avgQuizScore + '%</div><div class="l">Média quiz</div>' + cmpWithPercentile(r.s.avgQuizScore, bench.p50Media, 'pp', 'media') + '</div>'
       + '<div class="profile-kpi"><div class="v">' + (r.ftPct == null ? '—' : r.ftPct + '%') + '</div><div class="l">Acerto 1ª</div>'
-        + (r.ftPct !== null ? cmpToP50(r.ftPct, bench.p50Ft, 'pp') : '<div class="profile-benchmark">Ainda sem itens suficientes</div>') + '</div>'
+        + (r.ftPct !== null ? cmpWithPercentile(r.ftPct, bench.p50Ft, 'pp', 'ft') : '<div class="profile-benchmark">Ainda sem itens suficientes</div>') + '</div>'
       + '<div class="profile-kpi"><div class="v">' + (r.streak || 0) + '🔥</div><div class="l">Streak (dias)</div></div>'
       + '<div class="profile-kpi"><div class="v">' + (r.cv == null ? '—' : r.cv.toFixed(2)) + '</div><div class="l">CV semanal</div><div class="b">' + (r.nWeeks || 0) + ' semanas ativas</div></div>'
     + '</div>'
@@ -770,8 +915,451 @@ function showStudentProfile(matricula) {
 
 // Fecha modal ao teclar ESC
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') closeProfileModal();
+  if (e.key === 'Escape') { closeProfileModal(); closeQuestionModal(); }
 });
+
+// ============ PSICOMETRIA (p-value, discriminação, distractor analysis) ============
+
+// Computa psicometria para cada (page_id, question_id) a partir de raw.quizQA.
+// Retorna: [{ page_id, question_id, difficulty, phase, n, pValue, discrimination,
+//            distractors: {letra: {count, avgRestScore}}, correctAnswer, flag }]
+function computeQuestionPsychometrics(raw) {
+  if (!raw || !raw.quizQA || !raw.quizQA.length) return [];
+
+  // 1) Agrupar por (page_id, question_id)
+  var byQ = {};
+  raw.quizQA.forEach(function(q) {
+    var key = q.page_id + '::' + q.question_id;
+    if (!byQ[key]) {
+      byQ[key] = {
+        page_id: q.page_id, question_id: q.question_id,
+        difficulty: q.difficulty, phase: q.phase,
+        byUser: {}
+      };
+    }
+    var entry = byQ[key];
+    if (!entry.byUser[q.user_id]) {
+      entry.byUser[q.user_id] = { first: { correct: !!q.correct, answer: q.answer } };
+    }
+    // Mantém o primeiro (menor answered_at) como "first"
+    if (!entry.firstTs || (q.answered_at && q.answered_at < entry.byUser[q.user_id].firstTs)) {
+      if (!entry.byUser[q.user_id].firstTs || (q.answered_at && q.answered_at < entry.byUser[q.user_id].firstTs)) {
+        entry.byUser[q.user_id].first = { correct: !!q.correct, answer: q.answer };
+        entry.byUser[q.user_id].firstTs = q.answered_at;
+      }
+    }
+  });
+
+  // 2) Para cada (page_id, user_id): contar total_correct e total em 1ª tentativa (para discriminação)
+  var userPageTotals = {}; // page_id → user_id → {correct, total}
+  Object.values(byQ).forEach(function(entry) {
+    Object.keys(entry.byUser).forEach(function(uid) {
+      var f = entry.byUser[uid].first;
+      if (!userPageTotals[entry.page_id]) userPageTotals[entry.page_id] = {};
+      if (!userPageTotals[entry.page_id][uid]) userPageTotals[entry.page_id][uid] = { correct: 0, total: 0 };
+      userPageTotals[entry.page_id][uid].total++;
+      if (f.correct) userPageTotals[entry.page_id][uid].correct++;
+    });
+  });
+
+  // 3) Computar p-value, discriminação, distratores para cada questão
+  var results = [];
+  Object.values(byQ).forEach(function(entry) {
+    var users = Object.keys(entry.byUser);
+    var n = users.length;
+    if (n < 3) return; // amostra insuficiente
+
+    // pValue
+    var corrArr = users.map(function(uid){ return entry.byUser[uid].first.correct ? 1 : 0; });
+    var nCorrect = corrArr.reduce(function(a,b){return a+b},0);
+    var pValue = nCorrect / n;
+
+    // Discriminação (point-biserial): correlação entre acertar essa questão (binário 0/1)
+    // e o acerto nas OUTRAS questões do mesmo quiz (score 0..1)
+    var xRest = users.map(function(uid){
+      var tot = userPageTotals[entry.page_id][uid];
+      var thisQ = entry.byUser[uid].first.correct ? 1 : 0;
+      var denom = Math.max(1, tot.total - 1);
+      return (tot.correct - thisQ) / denom;
+    });
+    var meanY = pValue;
+    var meanX = xRest.reduce(function(a,b){return a+b},0) / n;
+    var num = 0, sxx = 0, syy = 0;
+    for (var i = 0; i < n; i++) {
+      var dx = xRest[i] - meanX;
+      var dy = corrArr[i] - meanY;
+      num += dx * dy;
+      sxx += dx * dx;
+      syy += dy * dy;
+    }
+    var rpb = (sxx * syy > 0) ? num / Math.sqrt(sxx * syy) : 0;
+
+    // Distratores
+    var distractors = {}, correctAnswer = null;
+    users.forEach(function(uid) {
+      var f = entry.byUser[uid].first;
+      var ans = f.answer || '?';
+      if (f.correct && !correctAnswer) correctAnswer = ans;
+      if (!distractors[ans]) distractors[ans] = { count: 0, correct: f.correct, restScores: [] };
+      distractors[ans].count++;
+      var tot = userPageTotals[entry.page_id][uid];
+      var thisQ = f.correct ? 1 : 0;
+      var rest = (tot.correct - thisQ) / Math.max(1, tot.total - 1);
+      distractors[ans].restScores.push(rest);
+    });
+    Object.keys(distractors).forEach(function(k) {
+      var d = distractors[k];
+      d.avgRestScore = d.restScores.length > 0 ? d.restScores.reduce(function(a,b){return a+b},0) / d.restScores.length : 0;
+      d.pct = d.count / n;
+    });
+
+    // Distrator-top: alternativa errada mais escolhida
+    var topDistractor = null;
+    Object.keys(distractors).forEach(function(k) {
+      var d = distractors[k];
+      if (!d.correct) {
+        if (!topDistractor || d.count > topDistractor.count) {
+          topDistractor = { letter: k, count: d.count, pct: d.pct, avgRestScore: d.avgRestScore };
+        }
+      }
+    });
+
+    // Flag baseada em combinação de p-value e rpb
+    var flag;
+    if (rpb < 0 && n >= 5)          flag = { code: 'neg',     label: 'Discrim. negativa' };
+    else if (pValue < 0.20)          flag = { code: 'hard',    label: 'Muito difícil' };
+    else if (pValue > 0.90)          flag = { code: 'easy',    label: 'Muito fácil' };
+    else if (rpb < 0.15)             flag = { code: 'lowdisc', label: 'Baixa discrim.' };
+    else                             flag = { code: 'ok',      label: 'OK' };
+
+    results.push({
+      page_id: entry.page_id,
+      question_id: entry.question_id,
+      difficulty: entry.difficulty,
+      phase: entry.phase,
+      n: n,
+      pValue: pValue,
+      discrimination: rpb,
+      distractors: distractors,
+      correctAnswer: correctAnswer,
+      topDistractor: topDistractor,
+      flag: flag
+    });
+  });
+
+  return results;
+}
+
+function _pageLabel(pid) {
+  // aula-01-pre → A01 Pré · aula-01-pos → A01 Pós · aula-01-exerc → A01 Exerc · aula-01 → A01 · monitoria-01 → M01
+  var m = pid.match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+  if (m) return 'A' + m[1] + (m[2] ? (m[2] === 'pre' ? ' Pré' : m[2] === 'pos' ? ' Pós' : ' Exerc') : '');
+  var mm = pid.match(/^monitoria-(\d+)$/);
+  if (mm) return 'M' + mm[1];
+  return pid;
+}
+
+function _phaseLabel(ph) {
+  return { pre_review: 'Pré-aula', post: 'Pós-aula', graded_exercise: 'Avaliativo', embedded: 'Embedded' }[ph] || ph || '—';
+}
+
+function showQuestionDetail(page_id, question_id) {
+  var rows = window._psiRows || [];
+  var r = rows.filter(function(x){return x.page_id===page_id && x.question_id===question_id})[0];
+  if (!r) return;
+
+  // Lista ordenada de alternativas (correta primeiro)
+  var letters = Object.keys(r.distractors).sort(function(a,b){
+    var da = r.distractors[a], db = r.distractors[b];
+    if (da.correct !== db.correct) return da.correct ? -1 : 1;
+    return db.count - da.count;
+  });
+
+  var rowsHtml = letters.map(function(l){
+    var d = r.distractors[l];
+    var pctStr = Math.round(d.pct * 100) + '%';
+    var wid = Math.round(d.pct * 100);
+    var restPct = (d.avgRestScore * 100).toFixed(0);
+    var restColor = d.avgRestScore > 0.6 ? '#065F46' : d.avgRestScore > 0.4 ? '#B45309' : '#991B1B';
+    var hint = d.correct
+      ? '(gabarito)'
+      : (d.avgRestScore > 0.55
+         ? '— atraiu top-performers (armadilha pedagógica legítima)'
+         : (d.avgRestScore < 0.35 ? '— atraiu bottom (distrator sem função)' : '— misto'));
+    return '<div class="distractor-row ' + (d.correct ? 'correct' : 'wrong') + '">'
+      + '<span class="d-letter">' + l.toUpperCase() + '</span>'
+      + '<div class="d-bar"><div class="d-bar-fill" style="width:' + wid + '%"></div></div>'
+      + '<div class="d-count">' + d.count + ' (' + pctStr + ')</div>'
+      + '<div class="d-rest" style="color:' + restColor + ';font-weight:600">rest ≈ ' + restPct + '%<br><span style="color:var(--text-muted);font-weight:400">' + hint + '</span></div>'
+      + '</div>';
+  }).join('');
+
+  var pvalueColor = r.pValue < 0.2 ? '#991B1B' : r.pValue > 0.9 ? '#075985' : '#065F46';
+  var rpbColor = r.discrimination < 0 ? '#991B1B' : r.discrimination < 0.15 ? '#B45309' : '#065F46';
+
+  var html =
+    '<button class="close-btn" onclick="closeQuestionModal()" aria-label="Fechar">×</button>'
+    + '<h2>' + _pageLabel(r.page_id) + ' · ' + r.question_id.toUpperCase() + '</h2>'
+    + '<div class="profile-meta">Fase: <strong>' + _phaseLabel(r.phase) + '</strong>'
+      + (r.difficulty ? ' · Dificuldade declarada: <span class="psi-difficulty-badge ' + r.difficulty + '">' + r.difficulty.toUpperCase() + '</span>' : '')
+      + ' · N respondeu: <strong>' + r.n + '</strong>'
+      + '</div>'
+    + '<h3>Resumo psicométrico</h3>'
+    + '<div class="profile-summary-grid">'
+      + '<div class="profile-kpi"><div class="v" style="color:' + pvalueColor + '">' + r.pValue.toFixed(2) + '</div><div class="l">p-value (dificuldade)</div><div class="b">' + Math.round(r.pValue*100) + '% acertou em 1ª tentativa</div></div>'
+      + '<div class="profile-kpi"><div class="v" style="color:' + rpbColor + '">' + r.discrimination.toFixed(2) + '</div><div class="l">rpb (discriminação)</div><div class="b">' + (r.discrimination >= 0.3 ? 'Boa separação' : r.discrimination >= 0.15 ? 'Razoável' : r.discrimination >= 0 ? 'Baixa' : 'Negativa — revisar') + '</div></div>'
+      + '<div class="profile-kpi"><div class="v">' + r.flag.label + '</div><div class="l">Veredito</div></div>'
+    + '</div>'
+    + '<h3>Distratores — quem marcou e perfil geral</h3>'
+    + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.5rem">'
+      + '<strong>rest</strong> = acerto médio nas <em>outras</em> questões do mesmo quiz, entre quem marcou esta alternativa. Alto = top-performer; baixo = bottom.'
+      + '</div>'
+    + rowsHtml;
+
+  document.getElementById('question-modal-content').innerHTML = html;
+  document.getElementById('question-modal-backdrop').classList.add('active');
+}
+
+function closeQuestionModal() {
+  var bd = document.getElementById('question-modal-backdrop');
+  if (bd) bd.classList.remove('active');
+}
+
+function _sortPsi(rows, key) {
+  var c = rows.slice();
+  var cmp = {
+    'p-asc':    function(a,b){return a.pValue - b.pValue || a.page_id.localeCompare(b.page_id)},
+    'p-desc':   function(a,b){return b.pValue - a.pValue || a.page_id.localeCompare(b.page_id)},
+    'rpb-asc':  function(a,b){return a.discrimination - b.discrimination},
+    'rpb-desc': function(a,b){return b.discrimination - a.discrimination},
+    'page':     function(a,b){
+      // página → fase (pre antes de pos antes de exerc) → qnum
+      var pc = a.page_id.localeCompare(b.page_id);
+      if (pc !== 0) return pc;
+      var an = parseInt(a.question_id.replace(/\D/g,''),10) || 0;
+      var bn = parseInt(b.question_id.replace(/\D/g,''),10) || 0;
+      return an - bn;
+    }
+  };
+  c.sort(cmp[key] || cmp['page']);
+  return c;
+}
+
+function renderPsychometrics() {
+  var rows = window._psiRows || [];
+  if (!rows.length) {
+    document.querySelector('#psi-table tbody').innerHTML = '<tr><td colspan="8" style="text-align:center;color:#aaa;padding:1.5rem">Nenhuma tentativa de quiz registrada ainda. A psicometria precisa de pelo menos 3 alunos respondendo a mesma questão.</td></tr>';
+    var cnt = document.getElementById('psi-result-count');
+    if (cnt) cnt.textContent = '';
+    return;
+  }
+  var page = (document.getElementById('psi-filter-page')||{}).value || '';
+  var phase = (document.getElementById('psi-filter-phase')||{}).value || '';
+  var flag = (document.getElementById('psi-filter-flag')||{}).value || '';
+  var sortKey = (document.getElementById('psi-sort')||{}).value || 'page';
+
+  var filtered = rows.filter(function(r){
+    if (page && r.page_id !== page) return false;
+    if (phase && r.phase !== phase) return false;
+    if (flag && r.flag.code !== flag) return false;
+    return true;
+  });
+  var sorted = _sortPsi(filtered, sortKey);
+
+  var tbody = sorted.map(function(r){
+    var pClass = r.pValue < 0.2 ? 'p-hard' : r.pValue > 0.9 ? 'p-easy' : 'p-ok';
+    var rpbClass = r.discrimination < 0 ? 'neg' : r.discrimination < 0.15 ? 'low' : 'good';
+    var diffBadge = r.difficulty
+      ? '<span class="psi-difficulty-badge ' + r.difficulty + '">' + r.difficulty.substring(0,3).toUpperCase() + '</span>'
+      : '<span class="psi-difficulty-badge none">—</span>';
+    var topStr = r.topDistractor
+      ? r.topDistractor.letter.toUpperCase() + ' (' + Math.round(r.topDistractor.pct*100) + '%, rest ' + Math.round(r.topDistractor.avgRestScore*100) + '%)'
+      : '—';
+    var safePid = r.page_id.replace(/'/g,"\\'");
+    return '<tr class="psi-row" onclick="showQuestionDetail(\''+safePid+'\', \''+r.question_id+'\')">'
+      + '<td>' + _pageLabel(r.page_id) + ' · <span style="color:var(--text-muted);font-size:0.7rem">' + _phaseLabel(r.phase) + '</span></td>'
+      + '<td><strong>' + r.question_id.toUpperCase() + '</strong></td>'
+      + '<td>' + diffBadge + '</td>'
+      + '<td>' + r.n + '</td>'
+      + '<td class="psi-pvalue ' + pClass + '">' + r.pValue.toFixed(2) + '</td>'
+      + '<td class="psi-rpb ' + rpbClass + '">' + r.discrimination.toFixed(2) + '</td>'
+      + '<td style="font-size:0.72rem">' + topStr + '</td>'
+      + '<td><span class="psi-flag ' + r.flag.code + '">' + r.flag.label + '</span></td>'
+      + '</tr>';
+  }).join('');
+  document.querySelector('#psi-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa;padding:1rem">Sem questões com os filtros atuais.</td></tr>';
+
+  var cnt2 = document.getElementById('psi-result-count');
+  if (cnt2) {
+    var nOk = sorted.filter(function(r){return r.flag.code==='ok'}).length;
+    var nProb = sorted.filter(function(r){return ['hard','easy','lowdisc','neg'].indexOf(r.flag.code)>=0}).length;
+    cnt2.textContent = sorted.length + ' questões · ' + nOk + ' OK · ' + nProb + ' com flag';
+  }
+}
+
+function exportPsychometricsCSV() {
+  var rows = window._psiRows || [];
+  if (!rows.length) return alert('Sem dados de psicometria.');
+  var sorted = _sortPsi(rows, 'page');
+  var header = ['Aula/Fase','Questão','Fase','Dificuldade declarada','N respondeu','p-value','Discriminação (rpb)','Alt. correta','Distrator-top','Distrator-top %','Distrator-top avg-rest','Flag'];
+  var lines = [header.map(csvq).join(',')];
+  sorted.forEach(function(r){
+    var t = r.topDistractor || { letter:'', pct:0, avgRestScore:0 };
+    lines.push([
+      _pageLabel(r.page_id), r.question_id, _phaseLabel(r.phase),
+      r.difficulty || '', r.n,
+      r.pValue.toFixed(3), r.discrimination.toFixed(3),
+      r.correctAnswer || '',
+      t.letter, (t.pct*100).toFixed(0), (t.avgRestScore*100).toFixed(0),
+      r.flag.label
+    ].map(csvq).join(','));
+  });
+  var csv = '﻿' + lines.join('\n');
+  var blob = new Blob([csv], {type:'text/csv;charset=utf-8'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'psicometria-mpe-2026-32-' + new Date().toISOString().substring(0,10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ============ COHORT PERCENTILE (upgrade do perfil individual) ============
+
+function percentileOf(value, arr) {
+  if (!arr || !arr.length) return null;
+  if (value == null) return null;
+  var sorted = arr.slice().sort(function(a,b){return a-b});
+  var below = 0;
+  for (var i = 0; i < sorted.length; i++) if (sorted[i] < value) below++; else break;
+  return Math.round(below / sorted.length * 100);
+}
+
+function pctBadge(pct) {
+  if (pct == null) return '';
+  var cls = pct >= 70 ? 'pct-top' : pct >= 30 ? 'pct-mid' : 'pct-low';
+  return '<span class="pct-badge ' + cls + '">P' + pct + '</span>';
+}
+
+// ============ TAG CLOUD DAS REFLEXÕES ============
+
+var _PT_STOPWORDS = ('a,à,ao,aos,aquela,aquelas,aquele,aqueles,aquilo,as,até,até,com,como,da,das,de,dela,delas,dele,deles,depois,do,dos,e,é,ela,elas,ele,eles,em,entre,era,eram,éramos,essa,essas,esse,esses,esta,estas,este,estes,estou,está,estão,estamos,eu,foi,fomos,for,fora,foram,hajam,há,haja,houve,houver,isso,isto,já,lhe,lhes,mais,mas,me,mesmo,meu,meus,minha,minhas,muito,na,nas,nem,no,nos,nós,num,numa,o,os,ou,para,pela,pelas,pelo,pelos,perante,pode,por,porém,qual,quando,que,quem,se,sem,seja,sejam,sem,ser,será,seria,seu,seus,si,sim,só,sou,sua,suas,também,te,tem,temos,tenho,teu,teus,tu,tua,tuas,um,uma,umas,uns,vos,vós,eles,estes,esses,aquele,aqueles,isto,aquilo,quem,cujo,onde,quanto,assim,então,somente,bem,mal,aqui,ali,acolá,cá,agora,hoje,ontem,amanhã,sempre,nunca,talvez,muito,pouco,bastante,demais,melhor,pior,maior,menor,algo,alguém,alguma,algum,algumas,alguns,nada,ninguém,nenhum,nenhuma,outro,outra,outros,outras,todo,toda,todos,todas,vários,várias,ter,tinha,ir,foi,fazer,faz,pode,podem,deve,devem,está,estão,estava,estavam,seja,sejam,foi,fossem,fosse,uns,eu,me,mim,comigo,você,te,ti,contigo,se,si,consigo,nós,vós,eles,elas,os,as,lo,la,los,las,mesmo,mesma,mesmos,mesmas,próprio,própria,próprios,próprias,tu,tua,tuas,teu,teus,nosso,nossa,nossos,nossas,vosso,vossa,vossos,vossas,cada,qualquer,quaisquer,tudo,outrem,onde,quando,quanto,como,enquanto,conforme,porque,pois,logo,portanto,contudo,porém,entretanto,todavia,ainda,já,sempre,nunca,jamais,também,não,ok,vou,foi,ser,tem,tenho,nunca').split(',');
+var _STOP = {};
+_PT_STOPWORDS.forEach(function(w){ _STOP[w.trim().toLowerCase()] = true; });
+
+function _tokenize(text) {
+  if (!text) return [];
+  // Normaliza: lowercase, mantém letras+números+acentos, quebra em espaços/pontuação
+  var norm = text.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, ' ').replace(/\s+/g, ' ').trim();
+  var tokens = norm.split(' ').filter(function(t){
+    if (!t || t.length < 3) return false;   // palavras muito curtas
+    if (_STOP[t]) return false;
+    if (/^\d+$/.test(t)) return false;       // só números
+    return true;
+  });
+  return tokens;
+}
+
+function computeTagCloud(raw, data, pageFilter) {
+  var freq = {};
+  var reflections = []; // para listar abaixo do cloud
+
+  if (raw && raw.reflections && raw.reflections.length) {
+    raw.reflections.forEach(function(r) {
+      if (pageFilter && r.page_id !== pageFilter) return;
+      var toks = _tokenize(r.text || '');
+      toks.forEach(function(t){ freq[t] = (freq[t]||0) + 1; });
+      reflections.push({
+        page_id: r.page_id,
+        prompt_id: r.prompt_id,
+        text: r.text || '',
+        submittedAt: r.submitted_at,
+        user_id: r.user_id
+      });
+    });
+  } else if (data) {
+    // Fallback localStorage
+    Object.keys(data).forEach(function(mat){
+      var s = data[mat];
+      Object.keys(s.reflections || {}).forEach(function(pid) {
+        if (pageFilter && pid !== pageFilter) return;
+        Object.keys(s.reflections[pid]).forEach(function(promptId){
+          var r = s.reflections[pid][promptId];
+          var toks = _tokenize(r.text || '');
+          toks.forEach(function(t){ freq[t] = (freq[t]||0) + 1; });
+          reflections.push({ page_id: pid, prompt_id: promptId, text: r.text||'', submittedAt: r.submittedAt, nome: r._nome || s.nome });
+        });
+      });
+    });
+  }
+
+  var terms = Object.keys(freq).map(function(w){return {word:w, count:freq[w]}}).sort(function(a,b){return b.count-a.count});
+  return { terms: terms, reflections: reflections };
+}
+
+function renderTagCloud() {
+  var raw = window._adminRaw;
+  var data = window._alunosData;
+  var pageFilter = (document.getElementById('tag-filter-page')||{}).value || '';
+  var topN = parseInt((document.getElementById('tag-top-n')||{}).value || '50', 10);
+  var res = computeTagCloud(raw, data, pageFilter);
+
+  var container = document.getElementById('m-tagcloud');
+  var countEl = document.getElementById('tag-count');
+  var reflEl = document.getElementById('m-tag-reflections');
+
+  if (!res.terms.length) {
+    container.innerHTML = '<span style="color:var(--text-muted);font-size:0.85rem">Sem reflexões com os filtros atuais.</span>';
+    if (countEl) countEl.textContent = '';
+    if (reflEl) reflEl.innerHTML = '';
+    return;
+  }
+
+  var top = res.terms.slice(0, topN);
+  var max = top[0].count;
+  var min = top[top.length-1].count;
+  var rng = Math.max(1, max - min);
+
+  var activeTerm = window._tagCloudActiveTerm || null;
+  var html = top.map(function(t){
+    var ratio = (t.count - min) / rng;
+    var fontSize = 0.72 + ratio * 1.35; // 0.72rem — 2.07rem
+    var safe = t.word.replace(/'/g, "\\'");
+    var isActive = activeTerm === t.word;
+    return '<span class="tag-cloud-tag' + (isActive?' active':'') + '" style="font-size:' + fontSize.toFixed(2) + 'rem" onclick="toggleTagFilter(\''+safe+'\')" title="'+t.count+' ocorrências">' + t.word + '</span>';
+  }).join('');
+  container.innerHTML = html;
+
+  if (countEl) countEl.textContent = res.terms.length + ' termos únicos · ' + res.reflections.length + ' reflexões';
+
+  // Listagem de reflexões (filtradas por termo ativo se houver)
+  var matched = activeTerm
+    ? res.reflections.filter(function(r){ return _tokenize(r.text).indexOf(activeTerm) >= 0; })
+    : res.reflections.slice(0, 10); // sem filtro, mostra 10 mais recentes
+
+  var reflMap = matched
+    .sort(function(a,b){ return (b.submittedAt||'').localeCompare(a.submittedAt||''); })
+    .slice(0, 20)
+    .map(function(r){
+      var hl = activeTerm
+        ? r.text.replace(new RegExp('\\b(' + activeTerm.replace(/[-.*+?^${}()|[\]\\]/g, '\\$&') + ')\\b', 'gi'), '<span class="r-highlight">$1</span>')
+        : r.text;
+      return '<div class="reflection-item"><div class="r-meta">' + _pageLabel(r.page_id) + ' · ' + r.prompt_id
+        + (r.submittedAt ? ' · ' + r.submittedAt.substring(0,10) : '') + '</div>'
+        + '<div class="r-text">' + hl.substring(0, 400) + (hl.length>400?'…':'') + '</div>'
+        + '</div>';
+    }).join('');
+
+  if (reflEl) reflEl.innerHTML = activeTerm
+    ? '<div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.4rem">Reflexões mencionando <strong>"' + activeTerm + '"</strong> (' + matched.length + ')</div>' + reflMap
+    : '<div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:0.4rem">Reflexões recentes (clique em um termo acima para filtrar)</div>' + reflMap;
+}
+
+function toggleTagFilter(term) {
+  if (window._tagCloudActiveTerm === term) window._tagCloudActiveTerm = null;
+  else window._tagCloudActiveTerm = term;
+  renderTagCloud();
+}
 
 // ============ RENDER ============
 
@@ -1200,6 +1788,50 @@ async function renderAdmin() {
     if (el) el.addEventListener('change', renderAlunos);
   });
   document.getElementById('search-alunos').addEventListener('input', renderAlunos);
+
+  // === TAB: PSICOMETRIA ===
+  window._adminRaw = raw;
+  window._psiRows = computeQuestionPsychometrics(raw);
+
+  // Popular select de páginas (união dos page_ids que têm psicometria)
+  var psiPages = {};
+  (window._psiRows || []).forEach(function(r){ psiPages[r.page_id] = _pageLabel(r.page_id) + ' — ' + _phaseLabel(r.phase); });
+  var psiSel = document.getElementById('psi-filter-page');
+  if (psiSel) {
+    var psiOrdered = Object.keys(psiPages).sort();
+    psiOrdered.forEach(function(pid){
+      var opt = document.createElement('option');
+      opt.value = pid; opt.textContent = psiPages[pid];
+      psiSel.appendChild(opt);
+    });
+  }
+
+  // Popular select de páginas do tag cloud (union dos page_ids com reflexões)
+  var refPages = new Set();
+  if (raw && raw.reflections) raw.reflections.forEach(function(r){ refPages.add(r.page_id); });
+  Object.keys(data).forEach(function(mat){
+    Object.keys((data[mat].reflections||{})).forEach(function(pid){ refPages.add(pid); });
+  });
+  var tagSel = document.getElementById('tag-filter-page');
+  if (tagSel) {
+    Array.from(refPages).sort().forEach(function(pid){
+      var opt = document.createElement('option');
+      opt.value = pid; opt.textContent = _pageLabel(pid);
+      tagSel.appendChild(opt);
+    });
+  }
+
+  renderPsychometrics();
+  ['psi-filter-page','psi-filter-phase','psi-filter-flag','psi-sort'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('change', renderPsychometrics);
+  });
+
+  renderTagCloud();
+  ['tag-filter-page','tag-top-n'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('change', function(){ window._tagCloudActiveTerm = null; renderTagCloud(); });
+  });
 
   // === TAB: QUIZZES ===
   var qRows = [];
