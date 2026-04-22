@@ -310,6 +310,10 @@ Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado, tudo bem
 Depois desse corte: sem entrada, sem resubmissão. Gabaritos 5-passos saem logo em seguida.
 :::
 
+::: {.callout style="margin-top: 0.8em; background:#fefcbf; border-left-color:#B8860B;"}
+**Exceção pontual — calendário Aula 1 ∪ Aula 2.** Só nesta turma e só na primeira semana, as Aulas 1 e 2 compartilham uma única janela de entrega (união dos dois calendários). Tudo — pré-aulas, pós-aulas e exercícios avaliativos das duas — fecha em **quarta 06/05 às 18:00**, 1h30 antes da Aula 3. **Da Aula 3 em diante, a regra semanal acima volta a valer.**
+:::
+
 ::: {.bridge}
 Sem prazos móveis sem aviso. Quem precisar de extensão por motivo justo fala comigo por email **antes** do prazo, não depois.
 :::

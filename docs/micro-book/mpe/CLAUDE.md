@@ -201,6 +201,24 @@ Estrutura de **9 seções sequenciais** com gating:
 
 **Regra única:** tudo fecha junto, quarta 18h, 1h30 antes da próxima aula.
 
+#### Exceção pontual: calendário unificado Aula 1 ∪ Aula 2 (MPE 2026/32)
+
+**Válida apenas para este semestre**, como concessão à turma na primeira semana (alunos ainda se adaptando à plataforma).
+
+Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
+
+- **Marco de início:** aula 1 acontece (quarta 22/04).
+- **Marco de fim:** prazo da aula 2 fecha (quarta 06/05 18:00 — 1h30 antes da aula 3).
+- **Tudo fecha junto em 06/05 18h**: pré-aula 1, quiz pré-aula 1, quiz pós-aula 1, exercícios avaliativos 1, pré-aula 2, quiz pré-aula 2, quiz pós-aula 2, exercícios avaliativos 2.
+- **Gabarito dos avaliativos 1 e 2**: libera quinta 07/05 00:00 BRT (dia seguinte ao fechamento unificado).
+
+**Da Aula 3 em diante, ciclo volta ao normal** (1 semana por aula, conforme cadência canônica acima).
+
+**Implementação:**
+- `platform/aula-01-exerc.html` — `GABARITO_RELEASE = new Date('2026-05-07T00:00:00-03:00')` (não 2026-04-30).
+- Textos de prazo em `aula-01-exerc.html` (e equivalentes da aula 2 quando forem criados) mencionam explicitamente "calendário unificado Aula 1 ∪ Aula 2".
+- Para todas as próximas aulas (3 em diante), **seguir o padrão canônico** sem extensão.
+
 ### Calibre dos conteúdos
 
 - **Nicholson & Snyder 12ª ed.** (Cengage 2017, ISBN 978-1-305-50579-7) é o **piso obrigatório**.

@@ -39,12 +39,12 @@
 <div class="admonition info" style="margin-top:1.5rem">
 <div class="admonition-title">Como estes exercícios funcionam</div>
 <p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, 29 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong> — responda com calma, sem chute.</p>
-<p style="margin-top:0.6rem"><strong>Prazo: quarta 29/04 às 18:00</strong> — 1h30 antes da Aula 2. Depois disso, a submissão trava.</p>
+<p style="margin-top:0.6rem"><strong>Prazo estendido: quarta 06/05 às 18:00</strong> — 1h30 antes da Aula 3. <em>Exceção para a turma</em>: o calendário das Aulas 1 e 2 é unificado (união das duas janelas), dando uma semana extra para entrega do material da Aula 1. Da Aula 3 em diante, o ciclo volta ao normal (1 semana por aula).</p>
 </div>
 
 <div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
 <div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
-<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 30/04 às 00:00</strong>, um dia após o fechamento. Isso preserva a integridade do exercício para toda a turma. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 07/05 às 00:00</strong>, um dia após o fechamento. Isso preserva a integridade do exercício para toda a turma. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
 </div>
 
 <!-- ================= QUIZ GRADED BLOCK ================= -->
@@ -532,12 +532,12 @@
 <!-- ================= /QUIZ GRADED BLOCK ================= -->
 
 <div class="gabarito-pending-banner">
-  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>30/04 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 29/04 18:00). Volte aqui nesse momento para revisar.
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>07/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 06/05 18:00, com prazo estendido pela exceção do calendário unificado Aula 1 ∪ Aula 2). Volte aqui nesse momento para revisar.
 </div>
 
 <div class="admonition note" style="margin-top:2rem">
 <div class="admonition-title">Próximos passos</div>
-<p>Feitos os exercícios, a <strong>Pré-aula 2</strong> (UMP, EMP, Dualidade) é liberada em <strong>23/04</strong>. O <strong>quiz pós-aula 1</strong> (5🟡 + 5🔴) também fecha quarta 29/04 18h — não esqueça. Dúvidas conceituais sobre exercícios: monitoria 1 com Alberto em 16/05 já tem na programação revisão da aula 1.</p>
+<p>Feitos os exercícios, a <strong>Pré-aula 2</strong> (UMP, EMP, Dualidade) é liberada em <strong>23/04</strong>. Com o <em>calendário unificado Aula 1 ∪ Aula 2</em>, o <strong>quiz pós-aula 1</strong> (5🟡 + 5🔴), estes exercícios avaliativos e todo o material da Aula 2 fecham juntos em <strong>quarta 06/05 18h</strong>. Dúvidas conceituais sobre exercícios: monitoria 1 com Alberto em 16/05 já tem na programação revisão das Aulas 1 e 2.</p>
 </div>
 
 </div>
@@ -554,8 +554,10 @@
   MicroTracker.startPage('aula-01-exerc');
   MicroQuizGraded.init();
 
-  // Gate de liberação do gabarito: libera em 30/04/2026 00:00 BRT.
-  var GABARITO_RELEASE = new Date('2026-04-30T00:00:00-03:00').getTime();
+  // Gate de liberação do gabarito: libera em 07/05/2026 00:00 BRT.
+  // Calendário unificado Aula 1 ∪ Aula 2 (excecao pontual):
+  // fechamento 06/05 18h -> gabarito abre 07/05 00:00.
+  var GABARITO_RELEASE = new Date('2026-05-07T00:00:00-03:00').getTime();
   var locked = Date.now() < GABARITO_RELEASE;
   if (locked) {
     document.body.classList.add('gabarito-locked');
