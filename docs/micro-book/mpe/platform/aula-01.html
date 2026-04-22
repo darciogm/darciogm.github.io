@@ -67,7 +67,10 @@
   <p>Abra a 12ª edição de Nicholson &amp; Snyder e leia as seções <em>Axioms of Rational Choice</em>, <em>Utility</em>, <em>Trades and Substitution</em>, <em>The Mathematics of Indifference Curves</em> e <em>Utility Functions for Specific Preferences</em>.</p>
   <p><strong>Foco da leitura:</strong> cotejamento de notação. N&amp;S é mais enxuto em axiomas e mais gráfico em TMS. Anote onde a notação difere de ZaE.</p>
   <p>Use também o <strong>Capítulo 2</strong> (Mathematics for Microeconomics) apenas pontualmente se precisar revisar quasiconcavidade, Lagrangiano ou envelope.</p>
-  <p style="margin-top:1rem"><a href="https://blackboard.insper.edu.br/" target="_blank" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:600">Abrir N&amp;S Cap. 3 (Blackboard) →</a> <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">PDF do capítulo disponibilizado na área da disciplina.</span></p>
+  <p style="margin-top:1rem">
+    <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap3.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir N&amp;S Cap. 3 (PDF) →</button>
+    <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login da plataforma.</span>
+  </p>
   <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei a leitura de N&amp;S</button>
 </section>
 
@@ -590,6 +593,25 @@ var MPE = {
     // Inicializa start da primeira seção active
     var firstActive = document.querySelector('.section-block.active');
     if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  },
+
+  // Abre PDF de material do curso via signed URL gerada on-click (bucket
+  // privado 'course-materials'). Da feedback visual no botao para evitar
+  // duplo-clique / impressao de travamento.
+  openMaterial: function(fileName, btnEl) {
+    if (!window.MpeDB || !window.MpeDB.enabled) {
+      alert('Conexao com a plataforma indisponivel. Recarregue a pagina.');
+      return;
+    }
+    var originalText = btnEl ? btnEl.innerHTML : null;
+    if (btnEl) { btnEl.disabled = true; btnEl.innerHTML = 'Abrindo...'; }
+    window.MpeDB.openCourseMaterial(fileName).then(function(res) {
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = originalText; }
+      if (!res.ok) {
+        console.error('[openMaterial] falha:', res.error);
+        alert('Nao foi possivel abrir o material. Verifique se voce esta logado e tente novamente.');
+      }
+    });
   }
 };
 

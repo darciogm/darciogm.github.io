@@ -362,6 +362,30 @@
       } catch(e) { return { ok:false, error:e }; }
     },
 
+    // ==================== COURSE MATERIALS (Storage) ====================
+
+    // Gera signed URL on-demand para um arquivo do bucket privado
+    // 'course-materials' e abre em nova aba. A URL expira em 5 min (sobra
+    // enorme para o uso imediato). Requer que o aluno esteja autenticado —
+    // a policy de storage (migration 2026-04-21_course_materials_storage.sql)
+    // bloqueia anon.
+    openCourseMaterial: async function(fileName, opts) {
+      if (!fileName) return { ok:false, error:'fileName obrigatorio' };
+      try {
+        var ttl = (opts && opts.ttlSeconds) || 300;
+        var res = await client.storage
+          .from('course-materials')
+          .createSignedUrl(fileName, ttl);
+        if (res.error || !res.data || !res.data.signedUrl) {
+          return { ok:false, error: res.error || 'signed URL nao gerada' };
+        }
+        window.open(res.data.signedUrl, '_blank', 'noopener,noreferrer');
+        return { ok:true, url: res.data.signedUrl };
+      } catch(e) {
+        return { ok:false, error:e };
+      }
+    },
+
     // ==================== TEST (saude da conexao) ====================
 
     testConnection: async function() {

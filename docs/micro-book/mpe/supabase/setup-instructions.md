@@ -53,7 +53,34 @@ WHERE email = 'darciogm1@insper.edu.br';
 
 Se preferir aguardar, a próxima fase do plano inclui importar toda a turma via script. Você cria sua conta admin nesse mesmo passo.
 
-## Passo 4: Me avisa aqui
+## Passo 4 (opcional): Bucket de materiais proprietários
+
+Para hospedar PDFs proprietários (N&S, Jehle-Reny, MWG, slides PDF) acessíveis só para alunos autenticados:
+
+### 4.1 Rodar a migration do bucket
+
+No **SQL Editor**, rodar o conteúdo de `migrations/2026-04-21_course_materials_storage.sql`. Cria o bucket privado `course-materials` + policies (alunos leem, apenas admin escreve).
+
+### 4.2 Upload do PDF pelo dashboard
+
+1. Supabase Dashboard → **Storage** (ícone de caixa no menu lateral)
+2. Clicar no bucket **course-materials**
+3. Arrastar o PDF (ou **Upload file**)
+4. **Nome do arquivo importa**: usar exatamente `nicholson-snyder-12e-cap3.pdf` para bater com o botão em `platform/aula-01.html`
+5. Para outros materiais, basta colar o nome no botão correspondente (ex.: `MPE.openMaterial('jehle-reny-3e-cap2.pdf', this)`)
+
+### 4.3 Testar
+
+1. Logar na plataforma como aluno
+2. Abrir pré-aula 01, seção 2 (leitura N&S)
+3. Clicar no botão "Abrir N&S Cap. 3 (PDF)" → PDF abre em nova aba
+
+Se der erro no console do navegador, conferir:
+- O nome do arquivo bate (case-sensitive)
+- A migration do bucket foi aplicada (`select * from storage.buckets where id = 'course-materials'` deve retornar 1 linha)
+- O aluno está autenticado (não-anon)
+
+## Passo 5: Me avisa aqui
 
 Quando tudo estiver rodando sem erro, me mande uma mensagem simples ("schema aplicado, N tabelas criadas") e eu sigo para a Fase 2 (integrar o cliente Supabase na plataforma).
 
