@@ -22,14 +22,14 @@
 <h1>Pré-Aula 01 — Teoria do Consumidor I: Preferências, Axiomas e Utilidade</h1>
 
 <div class="progress-header">
-  <div class="progress-label" id="progress-label">Progresso: 0 / 8</div>
+  <div class="progress-label" id="progress-label">Progresso: 0 / 9</div>
   <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   <div class="progress-meta" id="progress-meta">0 min</div>
 </div>
 
 <div class="admonition info">
 <div class="admonition-title">Como esta pré-aula funciona</div>
-<p>A pré-aula está dividida em <strong>8 seções sequenciais</strong>. Cada seção se desbloqueia quando você marca a anterior como concluída. Nas seções conceituais, uma auto-avaliação de confiança antes e depois + um micro-checkpoint obrigatório (até 3 tentativas) medem sua preparação real. Tempo-alvo total: 75–90min.</p>
+<p>A pré-aula está dividida em <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção se desbloqueia quando você marca a anterior como concluída. Nas seções conceituais, uma auto-avaliação de confiança antes e depois + um micro-checkpoint obrigatório (até 3 tentativas) medem sua preparação real. Tempo-alvo total: 75–90min.</p>
 </div>
 
 <!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
@@ -67,7 +67,8 @@
   <p>Abra a 12ª edição de Nicholson &amp; Snyder e leia as seções <em>Axioms of Rational Choice</em>, <em>Utility</em>, <em>Trades and Substitution</em>, <em>The Mathematics of Indifference Curves</em> e <em>Utility Functions for Specific Preferences</em>.</p>
   <p><strong>Foco da leitura:</strong> cotejamento de notação. N&amp;S é mais enxuto em axiomas e mais gráfico em TMS. Anote onde a notação difere de ZaE.</p>
   <p>Use também o <strong>Capítulo 2</strong> (Mathematics for Microeconomics) apenas pontualmente se precisar revisar quasiconcavidade, Lagrangiano ou envelope.</p>
-  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')">Terminei a leitura de N&amp;S</button>
+  <p style="margin-top:1rem"><a href="https://blackboard.insper.edu.br/" target="_blank" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:600">Abrir N&amp;S Cap. 3 (Blackboard) →</a> <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">PDF do capítulo disponibilizado na área da disciplina.</span></p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei a leitura de N&amp;S</button>
 </section>
 
 <!-- ==================== SECTION 3: AXIOMAS (conceitual) ==================== -->
@@ -102,7 +103,14 @@
 
     <p>A ideia da prova: para cada \(\mathbf{x}\), acha-se \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\). Esse \(t\) é a utilidade. A monotonicidade garante unicidade; a continuidade, continuidade de \(u\).</p>
 
-    <p><strong>Contraexemplo canônico — preferências lexicográficas:</strong> priorizam \(x_1\) e, em empate, \(x_2\). Satisfazem completude, transitividade e monotonicidade. <em>Violam continuidade.</em> Conjuntos \(\{\mathbf{y} : \mathbf{y} \succsim (1,1)\}\) não são fechados — há pontos de acumulação fora do conjunto. Não há representação por função contínua.</p>
+    <p><strong>Contraexemplo canônico — preferências lexicográficas:</strong> priorizam \(x_1\) e, em empate, \(x_2\). Satisfazem completude, transitividade e monotonicidade. <em>Violam continuidade.</em></p>
+
+    <p><strong>Sequência que quebra continuidade.</strong> Considere a sequência \(\mathbf{x}^n = \left(1 + \tfrac{1}{n},\, 0\right)\) e compare com \(\mathbf{y} = (1, 1)\):</p>
+    <ul>
+      <li>Para todo \(n\): \(\mathbf{x}^n \succ \mathbf{y}\), porque \(1 + \tfrac{1}{n} > 1\) (lex decide no primeiro componente).</li>
+      <li>No limite, \(\mathbf{x}^n \to (1, 0)\). Mas \((1, 0) \prec (1, 1) = \mathbf{y}\) (empate em \(x_1\), lex vai ao segundo).</li>
+    </ul>
+    <p>Ou seja: o conjunto \(\{\mathbf{x} : \mathbf{x} \succsim \mathbf{y}\}\) contém toda a sequência, mas <em>não contém</em> o limite. Não é fechado — logo não há representação por função contínua.</p>
 
     <div class="micro-checkpoint" id="micro-s3">
       <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
@@ -237,6 +245,11 @@
     <h3>Quasilinear</h3>
     <p>\(u = v(x_1) + x_2\) → \(\mathrm{TMS} = v'(x_1)\), depende só de \(x_1\). Efeito-renda zero no bem 1 interior. Excedente do consumidor bem-definido.</p>
 
+    <div class="admonition note" style="margin-top:1rem">
+    <div class="admonition-title">🇧🇷 Box Brasil — teaser para o Bloco 3</div>
+    <p>Em sala vamos aplicar essas quatro famílias a dados reais brasileiros: parcelas de gasto estáveis em <em>alimentação fora do domicílio</em> (Cobb-Douglas como aproximação), receita da gasolina <em>com e sem etanol</em> (substitutos — CES com \(\rho\) alto), pacote de frango congelado (Leontief aproximado), e compras de energia elétrica (quasilinear, via tarifa fixa + variável). Traga exemplos do seu dia a dia profissional para colar com a teoria.</p>
+    </div>
+
     <div class="micro-checkpoint" id="micro-s5">
       <h3>Micro-checkpoint (2 itens)</h3>
 
@@ -279,7 +292,7 @@
 <section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="6">
   <div class="section-meta">Seção 6 · Exercícios de papel · 15 min</div>
   <h2>Prestação de contas</h2>
-  <p>Resolva os dois exercícios abaixo no papel. Serão retomados em dupla no Bloco 4 da aula presencial. Para concluir a seção: marque <em>concluí</em> e descreva sua abordagem em 1-3 linhas.</p>
+  <p>Resolva os <strong>dois primeiros</strong> exercícios abaixo no papel (obrigatórios). O terceiro (3.7, CES) é <em>bônus</em> e ajuda a fechar a família das formas funcionais — fortemente recomendado se você tiver fôlego. Serão retomados em dupla no Bloco 4 da aula presencial. Para concluir a seção: marque <em>concluí</em> e descreva sua abordagem em 1-3 linhas nos dois primeiros.</p>
 
   <div class="paper-exercise">
     <h3>N&amp;S 12e 3.1</h3>
@@ -289,10 +302,17 @@
   </div>
 
   <div class="paper-exercise">
-    <h3>N&amp;S 12e 3.3</h3>
+    <h3>N&amp;S 12e 3.5</h3>
     <p class="ex-statement">Para \(u = xy\), \(u = x^2 y^2\) e \(u = \ln x + \ln y\), mostrar que as três têm a mesma TMS mas utilidade marginal constante/crescente/decrescente. Articular a conclusão em termos de ordinalidade.</p>
     <label class="done-check"><input type="checkbox" id="ex33-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
     <textarea id="ex33-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>N&amp;S 12e 3.7 (bônus — CES e limites)</h3>
+    <p class="ex-statement">Para \(u = (x_1^\rho + x_2^\rho)^{1/\rho}\), calcule a TMS em função de \((x_1, x_2, \rho)\) e verifique o comportamento em três regimes: \(\rho = 1\) (substitutos perfeitos), \(\rho \to 0\) (Cobb-Douglas) e \(\rho \to -\infty\) (Leontief). Apenas anote a intuição — o cálculo formal do limite \(\rho \to 0\) via L'Hôpital fica para a Monitoria 1.</p>
+    <label class="done-check"><input type="checkbox" id="ex37-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
+    <textarea id="ex37-approach" placeholder="Opcional — 1-3 linhas sobre TMS e os 3 regimes..." oninput="MPE.updatePaperState()"></textarea>
   </div>
 
   <button class="section-complete-btn" id="complete-s6-exercicios" disabled onclick="MPE.completePaperExercises()">Registrar e avançar</button>
