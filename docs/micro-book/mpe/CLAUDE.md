@@ -11,7 +11,7 @@ mpe/
 ├── platform/          # Frontend estático (HTML/JS/CSS puros, sem framework)
 │   ├── index.html     # Capa (login/reset)
 │   ├── portal.html    # Portal do aluno (pós-login)
-│   ├── admin.html     # Dashboard admin (consome dados reais Supabase)
+│   ├── admin.html     # Dashboard admin (Onda 1+2: sort/filter/risco/perfil, psicometria, tag cloud, intervention tracking)
 │   ├── privacidade.html
 │   ├── reset-password.html
 │   ├── aula-XX.html   # Páginas de aula com checkpoints
@@ -54,20 +54,51 @@ mpe/
 - `profiles` — perfil do usuário, papel (`role`), `consented_lgpd`, `password_changed_at`.
 - `page_visits`, `section_progress`, `confidence_ratings` — tracker de engajamento.
 - `micro_attempts` — respostas de micro-checkpoints ao longo das páginas.
-- `quiz_aggregates` — estado agregado por `(user_id, page_id)`. Coluna descritiva `phase IN ('embedded','pre_review','post')` marca a natureza do quiz (legado embutido, revisão pré-aula, pós-aula). UNIQUE permanece em `(user_id, page_id)` porque cada fase vive em `page_id` distinto (`aula-XX`, `aula-XX-pre`, `aula-XX-pos`).
-- `quiz_question_attempts` — histórico por questão; além de `phase`, carrega `difficulty IN ('yellow','red')` (NULL em `embedded`/`pre_review`, obrigatório por convenção em `post`).
-- `paper_exercises` — exercícios avaliativos (30% da nota).
-- `reflections` — reflexões qualitativas do aluno.
+- `quiz_aggregates` — estado agregado por `(user_id, page_id)`. Coluna descritiva `phase IN ('embedded','pre_review','post','graded_exercise')` marca a natureza do quiz (legado embutido, revisão pré-aula, pós-aula, exercícios avaliativos). UNIQUE permanece em `(user_id, page_id)` porque cada fase vive em `page_id` distinto (`aula-XX`, `aula-XX-pre`, `aula-XX-pos`, `aula-XX-exerc`).
+- `quiz_question_attempts` — histórico por questão; além de `phase`, carrega `difficulty IN ('yellow','red','green')` (NULL em `embedded`/`pre_review`, obrigatório por convenção em `post` e `graded_exercise`).
+- `paper_exercises` — exercícios em papel da pré-aula (N&S); telemetria de abordagem declarada.
+- `reflections` — reflexões qualitativas do aluno (seção 8 da pré-aula).
+- `admin_interventions` — registro de conversas/emails/meetings professor↔aluno (Onda 2B). Timeline de cuidado + base para delta de comportamento pós-intervenção. CRUD exclusivo de admin via RLS.
 
 ## Email templates
 
 5 templates PT-BR com branding Insper em `supabase/email-templates/` (Confirm signup, Magic Link, Change Email, Invite user, Reset Password). SSOT versionada — se editar no Supabase Dashboard, atualizar aqui também. Ver `email-templates/README.md` para aplicação.
 
+## Dashboard admin — funcionalidades (Onda 1 + 2)
+
+O `platform/admin.html` é o instrumento operacional do professor. Calibrado para turma de 50 alunos, 9 aulas + prova. Toda a computação é client-side sobre dados do Supabase carregados via `MpeDB.adminFetchAll` (10 tabelas em paralelo).
+
+### Onda 1 — Tab "Por Aluno" (produção desde 2026-04-22)
+- **Sort** por 15 chaves (Nome A-Z default, matrícula, risco, dias sem acesso, aulas, quizzes, tempo, média, acerto 1ª, streak) com asc/desc onde cabe.
+- **Filtro** por status: Todos / ⚫ Nunca acessou / 🔴 Em risco / 🟡 Atenção / 🟢 Em dia.
+- **Export CSV** respeitando sort + filtro + search, com BOM UTF-8.
+- **Risk score rule-based (0–100)** composto por 5 features: dias desde último acesso, acerto 1ª tentativa, aulas abertas vs P25, tempo vs P25, consistência semanal CV. Thresholds: <30 em dia, 30–59 atenção, ≥60 em risco. Caso especial "inactive" (nunca acessou) → 100.
+- **Perfil individual (modal)**: 8 KPIs com delta vs P50 + percentil exato (badge colorido), bandeiras de risco, trajetória aula-por-aula, botão "copiar resumo" para colar em email/WhatsApp.
+
+### Onda 2A — Psicometria + tag cloud (produção desde 2026-04-22)
+- **Tab "Psicometria"**: para cada questão de quiz (🟡/🔴/🟢), computa dificuldade (p-value), discriminação (rpb = point-biserial) e distractor analysis em 1ª tentativa. Flags automáticas: 🔴 discrim. negativa (possível bug de gabarito), 🔴 muito difícil (p<0.20), 🟢 muito fácil (p>0.90), ⚠️ baixa discrim. (rpb<0.15), ✅ OK. Click na linha abre modal com breakdown por alternativa + `avg-rest` (perfil de quem marcou cada distrator). Export CSV. Padrão CTT/IRT (USMLE, AP, PISA, CMU OLI).
+- **Tag cloud das reflexões** (em Métricas avançadas): tokenização PT-BR com ~150 stopwords, click em termo filtra reflexões com highlight. Fallback localStorage quando Supabase off.
+- **Cohort enriquecido** no perfil: cada KPI mostra percentil exato além do delta vs P50.
+
+### Onda 2B — Intervention tracking (produção desde 2026-04-22)
+- **Tabela `admin_interventions`** (migration: `supabase/migrations/2026-04-22_admin_interventions.sql`). CRUD exclusivo de admin via RLS.
+- **Helpers em `mpe-db.js`**: `addIntervention`, `updateInterventionOutcome`, `deleteIntervention`.
+- **UI no modal do perfil**: form inline (kind, topic, note) + timeline cronológica com cards (tipo, data, tópico, nota, outcome opcional).
+- **Delta de comportamento pós-intervenção**: cada card mostra comparação 14d pré vs 14d pós em eventos (quiz attempts + section completions) e acerto 1ª. Classificação visual: 🔵 pending / 🟢 improved / 🔴 declined / ⚫ stable / ⚪ empty. Referências: Purdue Signals, Michigan ECoach, EAB Navigate, Starfish.
+
+### Ondas futuras (pensadas, não implementadas)
+- **Heatmap slide × erro na questão pós** (exige retro-tagging questão→slide).
+- **IRT scoring** (requer n maior de respondentes por questão).
+- **Sentiment trajectory** das reflexões (NLP além da tag cloud).
+- **Mastery tracking por learning objective** (exige taxonomia formal).
+- **Longitudinal quality trend** (requer ≥3 semestres).
+
 ## Turma MPE 2026/32
 
+- **50 alunos.** PII (nome, email, matrícula) em `supabase/scripts/import-turma.js` e `lista_alunos_csv.csv` (gitignored).
 - **9 aulas de conteúdo + 1 avaliação final** (70% da nota; 30% = engajamento na plataforma).
-- Sextas-feiras, 22/04 a 17/06. Avaliação: 24/06.
-- Monitoria com **Alberto Nishikawa** em datas-chave (16/05, 23/05, 30/05, 13/06, 20/06).
+- **Quartas-feiras 19:30–22:30**, presencial Insper, 22/04 a 17/06. Avaliação Final: qua 24/06 · 19:00 · 3h · consulta A4 permitida.
+- **Monitoria com Alberto Nishikawa** — 5 encontros aos sábados (16/05, 23/05, 30/05, 13/06, 20/06), precedidos por pré-monitorias formativas (não contam nota) na plataforma.
 - Ementa: Preferências → UMP/EMP/Dualidade → Slutsky/Elasticidades → EG trocas/produção → Arrow-Debreu (I e II) → Externalidades/Bens públicos → Seleção adversa/Risco moral → Sinalização/Matching.
 
 ## Bundle de aula (contrato do agente prof-mpe-micro)
@@ -290,6 +321,7 @@ Toda questão 🟡/🔴 e todo exercício avaliativo tem gabarito em 5 passos:
 - `paper_exercises` para exercícios de papel da pré-aula (ex: `ns-3-5`, `ns-3-7`).
 - `reflections` para campos qualitativos do fim da pré-aula.
 - `confidence_ratings.phase IN ('pre','post')` por seção.
+- `admin_interventions` para timeline de cuidado do admin; `kind IN ('conversation','email','whatsapp','meeting','nudge','other')`. Delta de comportamento computado client-side no dashboard a partir de `quiz_question_attempts.answered_at` e `section_progress.completed_at`.
 
 ### Portal — CTAs por aula
 
