@@ -191,6 +191,17 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .iv-item .iv-outcome{background:#D1FAE5;border-left:3px solid #15803D;padding:0.4rem 0.6rem;margin-top:0.4rem;font-size:0.78rem;color:#065F46;border-radius:0 4px 4px 0}
 .iv-btn{background:#fff;border:1px solid var(--border);padding:0.3rem 0.7rem;border-radius:var(--radius);font-size:0.72rem;cursor:pointer;color:var(--text);margin-top:0.3rem;font-weight:600}
 .iv-btn:hover{border-color:var(--success);color:var(--success)}
+.iv-delta{margin-top:0.4rem;padding:0.4rem 0.7rem;border-radius:0 4px 4px 0;font-size:0.75rem;line-height:1.45;border-left:3px solid var(--border);background:#FAFAF8;color:var(--text)}
+.iv-delta.improved{border-left-color:#15803D;background:#ECFDF5;color:#065F46}
+.iv-delta.declined{border-left-color:#C8102E;background:#FEF2F2;color:#991B1B}
+.iv-delta.stable{border-left-color:#6B7280;background:#F3F4F6;color:#374151}
+.iv-delta.pending{border-left-color:#3B82F6;background:#EFF6FF;color:#1E40AF}
+.iv-delta.empty{border-left-color:#9CA3AF;background:#F9FAFB;color:#6B7280;font-style:italic}
+.iv-delta strong{font-weight:700}
+.iv-delta .delta-sep{color:var(--text-muted);margin:0 0.4rem}
+.iv-delta .delta-up{color:#15803D;font-weight:700}
+.iv-delta.declined .delta-up{color:#991B1B}
+.iv-delta .delta-down{color:#991B1B;font-weight:700}
 </style>
 </head>
 <body>
@@ -960,9 +971,115 @@ function _fmtDate(ts) {
   catch(e) { return String(ts).substring(0,16).replace('T',' '); }
 }
 
+// Computa delta de comportamento: 14d antes vs 14d depois da intervenção.
+// Usa timestamps de quiz_question_attempts (raw.quizQA) e section_progress
+// (raw.sectionProgress) — únicas duas tabelas com evento discreto+timestamp.
+// Retorna null se dados ausentes; senão {daysPost, preEvents, postEvents,
+//   prePct, postPct, deltaPct, eventsDeltaPct, classification}.
+function computeInterventionDelta(iv, profileId) {
+  var raw = window._adminRaw;
+  if (!raw || !profileId) return null;
+  var ivMs = new Date(iv.createdAt).getTime();
+  if (!isFinite(ivMs)) return null;
+
+  var WIN = 14 * 86400000;
+  var nowMs = Date.now();
+  var preStart = ivMs - WIN;
+  var postEnd  = Math.min(nowMs, ivMs + WIN);
+  var daysPost = Math.max(0, Math.floor((nowMs - ivMs) / 86400000));
+
+  var pre = { events: 0, total: 0, correct: 0 };
+  var post = { events: 0, total: 0, correct: 0 };
+
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== profileId) return;
+    if (!q.answered_at) return;
+    var ts = new Date(q.answered_at).getTime();
+    if (!isFinite(ts)) return;
+    if (ts >= preStart && ts < ivMs) {
+      pre.events++; pre.total++; if (q.correct) pre.correct++;
+    } else if (ts >= ivMs && ts <= postEnd) {
+      post.events++; post.total++; if (q.correct) post.correct++;
+    }
+  });
+
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (sp.user_id !== profileId) return;
+    if (!sp.completed_at) return;
+    var ts = new Date(sp.completed_at).getTime();
+    if (!isFinite(ts)) return;
+    if (ts >= preStart && ts < ivMs) pre.events++;
+    else if (ts >= ivMs && ts <= postEnd) post.events++;
+  });
+
+  var prePct = pre.total > 0 ? Math.round(pre.correct / pre.total * 100) : null;
+  var postPct = post.total > 0 ? Math.round(post.correct / post.total * 100) : null;
+  var deltaPct = (prePct != null && postPct != null) ? (postPct - prePct) : null;
+
+  var eventsDeltaPct = null;
+  if (pre.events > 0) eventsDeltaPct = Math.round((post.events - pre.events) / pre.events * 100);
+  else if (post.events > 0) eventsDeltaPct = 999; // acima de zero absoluto
+
+  var classification;
+  if (daysPost < 3) classification = 'pending';
+  else if (pre.events === 0 && post.events === 0) classification = 'empty';
+  else if (post.events > pre.events && (deltaPct == null || deltaPct >= -5)) classification = 'improved';
+  else if (pre.events > 0 && post.events < pre.events * 0.75) classification = 'declined';
+  else classification = 'stable';
+
+  return {
+    daysPost: daysPost,
+    preEvents: pre.events,
+    postEvents: post.events,
+    prePct: prePct,
+    postPct: postPct,
+    deltaPct: deltaPct,
+    eventsDeltaPct: eventsDeltaPct,
+    classification: classification
+  };
+}
+
+function _formatDeltaHtml(d) {
+  if (!d) return '';
+  var daysRemain = 14 - d.daysPost;
+  if (d.classification === 'pending') {
+    return '<div class="iv-delta pending">📊 <strong>Janela pós-intervenção em aberto</strong> · '
+      + d.daysPost + ' dia(s) desde a intervenção · faltam ' + Math.max(0, daysRemain) + ' para fechar janela de 14d e gerar delta estável</div>';
+  }
+  if (d.classification === 'empty') {
+    return '<div class="iv-delta empty">📊 Sem eventos na janela de 14 dias (nem pré nem pós). Aluno pouco ativo na plataforma no período.</div>';
+  }
+
+  function fmtEvArrow() {
+    if (d.eventsDeltaPct == null) return '';
+    if (d.eventsDeltaPct === 999) return '<span class="delta-up">(surgiu do zero)</span>';
+    var sign = d.eventsDeltaPct >= 0 ? '+' : '';
+    var cls = d.eventsDeltaPct >= 0 ? 'delta-up' : 'delta-down';
+    return '<span class="' + cls + '">(' + sign + d.eventsDeltaPct + '%)</span>';
+  }
+  function fmtAccArrow() {
+    if (d.deltaPct == null) return ''; // sem dados de acerto nas 2 janelas
+    var sign = d.deltaPct >= 0 ? '+' : '';
+    var cls = d.deltaPct >= 0 ? 'delta-up' : 'delta-down';
+    return '<span class="' + cls + '">(' + sign + d.deltaPct + 'pp)</span>';
+  }
+
+  var windowLabel = d.daysPost < 14 ? (d.daysPost + 'd pós (janela parcial)') : '14d pós';
+  var eventsStr = '<strong>' + d.preEvents + '</strong> → <strong>' + d.postEvents + '</strong> ' + fmtEvArrow();
+  var accStr = (d.prePct != null && d.postPct != null)
+    ? '<strong>' + d.prePct + '%</strong> → <strong>' + d.postPct + '%</strong> ' + fmtAccArrow()
+    : '<em style="color:var(--text-muted);font-weight:400">sem acerto registrado em ambas as janelas</em>';
+
+  return '<div class="iv-delta ' + d.classification + '">📊 <strong>14d pré → ' + windowLabel + ':</strong> '
+    + 'eventos ' + eventsStr + '<span class="delta-sep">·</span>'
+    + 'acerto 1ª ' + accStr
+    + '</div>';
+}
+
 function _renderInterventionsSection(matricula, studentData) {
   var ivs = (studentData && studentData.interventions) || [];
   var safeMat = matricula.replace(/'/g, "\\'");
+  var profileId = _profileIdFromMatricula(matricula);
 
   var items = ivs.slice().sort(function(a,b){ return (b.createdAt||'').localeCompare(a.createdAt||''); }).map(function(iv){
     var kindLabel = _KIND_LABEL[iv.kind] || iv.kind;
@@ -970,6 +1087,8 @@ function _renderInterventionsSection(matricula, studentData) {
       ? '<div class="iv-outcome"><strong>Resultado:</strong> ' + _escapeHtml(iv.outcome)
         + '<span style="color:var(--text-muted);font-size:0.7rem;margin-left:0.5rem">(' + _fmtDate(iv.outcomeAt) + ')</span></div>'
       : '<button class="iv-btn" onclick="recordInterventionOutcome(\'' + iv.id + '\', \'' + safeMat + '\')">✓ Marcar resultado</button>';
+    var delta = computeInterventionDelta(iv, profileId);
+    var deltaHtml = _formatDeltaHtml(delta);
     return '<div class="iv-item">'
       + '<div class="iv-header">'
         + '<span class="iv-kind">' + kindLabel + '</span>'
@@ -979,6 +1098,7 @@ function _renderInterventionsSection(matricula, studentData) {
       + '</div>'
       + '<div class="iv-note">' + _escapeHtml(iv.note).replace(/\n/g,'<br>') + '</div>'
       + outcomeHtml
+      + deltaHtml
       + '</div>';
   }).join('');
 
