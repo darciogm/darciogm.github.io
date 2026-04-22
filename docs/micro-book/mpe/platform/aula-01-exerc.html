@@ -545,6 +545,7 @@
 <script src="js/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
 <script src="js/tracker.js"></script>
 <script>
 (function() {
@@ -554,11 +555,15 @@
   MicroTracker.startPage('aula-01-exerc');
   MicroQuizGraded.init();
 
-  // Gate de liberação do gabarito: libera em 07/05/2026 00:00 BRT.
-  // Calendário unificado Aula 1 ∪ Aula 2 (excecao pontual):
-  // fechamento 06/05 18h -> gabarito abre 07/05 00:00.
-  var GABARITO_RELEASE = new Date('2026-05-07T00:00:00-03:00').getTime();
-  var locked = Date.now() < GABARITO_RELEASE;
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  // Fallback para data hard-coded se calendario.js nao carregou por algum motivo.
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(1, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-07T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
   if (locked) {
     document.body.classList.add('gabarito-locked');
     // Mostrar banner de "pending" após o submit — usamos observer no botão

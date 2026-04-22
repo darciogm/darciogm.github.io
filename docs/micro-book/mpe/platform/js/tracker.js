@@ -782,7 +782,42 @@
         try { rehydrated = await _gradedRehydrate(block); }
         catch(e) { console.warn('[MicroQuizGraded] rehydrate falhou:', e); }
 
-        if (!rehydrated) {
+        // Gate de prazo: se MPE_CALENDARIO esta carregado e o componente
+        // fechou, desabilita submit e mostra banner "Prazo encerrado".
+        // Aluno ainda pode ler tudo. Se rehydrated (ja submetido), nao faz nada.
+        var gateAplicado = false;
+        if (!rehydrated && window.MPE_CALENDARIO) {
+          var pageId = block.dataset.page;
+          var pctx = MPE_CALENDARIO.parsePageId(pageId);
+          if (pctx && MPE_CALENDARIO.isClosed(pctx.aula_n, pctx.componente)) {
+            var btnLock = block.querySelector('.quizg-submit');
+            var prazo = MPE_CALENDARIO.getPrazo(pctx.aula_n, pctx.componente);
+            if (btnLock) {
+              btnLock.disabled = true;
+              btnLock.textContent = 'Prazo encerrado';
+              btnLock.style.cursor = 'not-allowed';
+              btnLock.style.opacity = '0.6';
+            }
+            var warn = block.querySelector('.quizg-warn');
+            var msg = 'Prazo encerrado em ' + MPE_CALENDARIO.fmt(prazo.fecha) +
+                      '. Submissao bloqueada. Gabarito libera em ' +
+                      MPE_CALENDARIO.fmt(prazo.gabarito) + '.';
+            if (warn) { warn.textContent = msg; warn.hidden = false; warn.style.background = '#fed7d7'; warn.style.color = '#742a2a'; warn.style.padding = '0.8rem'; warn.style.borderRadius = '4px'; warn.style.marginTop = '0.8rem'; }
+            gateAplicado = true;
+          } else if (pctx && MPE_CALENDARIO.isNotYetOpen(pctx.aula_n, pctx.componente)) {
+            var btnLock2 = block.querySelector('.quizg-submit');
+            var prazo2 = MPE_CALENDARIO.getPrazo(pctx.aula_n, pctx.componente);
+            if (btnLock2) {
+              btnLock2.disabled = true;
+              btnLock2.textContent = 'Abre em ' + MPE_CALENDARIO.fmt(prazo2.abre);
+              btnLock2.style.cursor = 'not-allowed';
+              btnLock2.style.opacity = '0.6';
+            }
+            gateAplicado = true;
+          }
+        }
+
+        if (!rehydrated && !gateAplicado) {
           var btn = block.querySelector('.quizg-submit');
           if (btn) {
             (function(b, blk) {

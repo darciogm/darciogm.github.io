@@ -151,6 +151,7 @@
 <script src="js/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
 <script src="js/tracker.js"></script>
 <script>
 if (!MicroAuth.requireAuth()) throw 'redirect';
@@ -450,22 +451,47 @@ function renderPortal() {
       + '<span class="badge ' + badgeClass + '">' + badge + '</span></div>';
 
     if (a.available) {
-      // Barra de CTAs: pré-aula · material · pós-aula
+      // Barra de CTAs: pré-aula · material · pós-aula · exercícios.
+      // Estado de cada CTA derivado do MPE_CALENDARIO (SSOT). Fallback
+      // nas flags manuais de AULAS[] se o calendario.js nao carregou ou
+      // a aula nao esta no calendario.
       var ctaStyleBase = 'display:inline-block;padding:0.35rem 0.6rem;margin:0.15rem 0.2rem 0 0;border-radius:4px;font-size:0.72rem;font-weight:600;text-decoration:none;line-height:1.2;';
       var ctaActive = ctaStyleBase + 'background:var(--accent);color:#fff;';
       var ctaMain = ctaStyleBase + 'background:var(--primary);color:#fff;';
       var ctaLocked = ctaStyleBase + 'background:#e2e8f0;color:#64748b;cursor:not-allowed;';
+      var ctaClosed = ctaStyleBase + 'background:#f5f5f4;color:#a8a29e;cursor:not-allowed;text-decoration:line-through;';
 
-      var preBtn = a.preAvailable
-        ? '<a href="aula-' + pid2 + '-pre.html" style="' + ctaActive + '" title="Quiz de revisão pré-aula (10 questões 🟡)">📝 Pré-aula</a>'
-        : '<span style="' + ctaLocked + '">📝 Pré-aula</span>';
+      var cal = window.MPE_CALENDARIO;
+      function stateOf(comp, legacyFlag) {
+        if (cal && a.n <= 9) {
+          if (cal.isOpen(a.n, comp)) return { state: 'open', prazo: cal.getPrazo(a.n, comp) };
+          if (cal.isClosed(a.n, comp)) return { state: 'closed', prazo: cal.getPrazo(a.n, comp) };
+          if (cal.isNotYetOpen(a.n, comp)) return { state: 'locked', prazo: cal.getPrazo(a.n, comp) };
+        }
+        return { state: legacyFlag ? 'open' : 'locked', prazo: null };
+      }
+
+      var preS = stateOf('pre', a.preAvailable);
+      var posS = stateOf('pos', a.posAvailable);
+      var exercS = stateOf('exerc', a.exercAvailable);
+
+      function btn(label, comp, suffix, statusObj) {
+        var href = 'aula-' + pid2 + (suffix ? '-' + suffix : '') + '.html';
+        if (statusObj.state === 'open') {
+          return '<a href="' + href + '" style="' + ctaActive + '" title="Fecha em ' + cal.fmt(statusObj.prazo.fecha) + '">' + label + '</a>';
+        }
+        if (statusObj.state === 'closed') {
+          return '<a href="' + href + '" style="' + ctaClosed + '" title="Prazo encerrado em ' + cal.fmt(statusObj.prazo.fecha) + '">' + label + ' (encerrado)</a>';
+        }
+        // locked
+        var dt = statusObj.prazo ? cal.fmtData(statusObj.prazo.abre) : 'em breve';
+        return '<span style="' + ctaLocked + '" title="Abre em ' + dt + '">' + label + ' (' + dt + ')</span>';
+      }
+
+      var preBtn = btn('📝 Pré-aula', 'pre', 'pre', preS);
       var materialBtn = '<a href="aula-' + pid2 + '.html" style="' + ctaMain + '" title="Material de leitura + micro-checkpoints">📖 Material</a>';
-      var posBtn = a.posAvailable
-        ? '<a href="aula-' + pid2 + '-pos.html" style="' + ctaActive + '" title="Quiz pós-aula (5🟡 + 5🔴)">✍ Pós-aula</a>'
-        : '<span style="' + ctaLocked + '" title="Abre em ' + (a.posOpensOn || 'data a definir') + '">✍ Pós-aula (' + (a.posOpensOn || 'em breve') + ')</span>';
-      var exercBtn = a.exercAvailable
-        ? '<a href="aula-' + pid2 + '-exerc.html" style="' + ctaActive + '" title="Exercícios avaliativos (6 exerc · 1🟢 + 3🟡 + 2🔴)">📋 Exercícios</a>'
-        : '<span style="' + ctaLocked + '" title="Em breve">📋 Exercícios</span>';
+      var posBtn = btn('✍ Pós-aula', 'pos', 'pos', posS);
+      var exercBtn = btn('📋 Exercícios', 'exerc', 'exerc', exercS);
       var ctaRow = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #e2e8f0;">' + preBtn + materialBtn + posBtn + exercBtn + '</div>';
 
       gridHtml += '<div class="aula-card">' + cardHeader + ctaRow + '</div>';
