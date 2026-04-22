@@ -73,6 +73,54 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .search-input{width:100%;padding:0.55rem 0.8rem;border:1px solid var(--border);border-radius:var(--radius);font-size:0.85rem;margin-bottom:0.8rem}
 .search-input:focus{outline:none;border-color:var(--accent)}
 @media(max-width:768px){.admin-grid{grid-template-columns:1fr}}
+
+/* Tab Por Aluno — toolbar, risk badges, modal */
+.tab-alunos-toolbar{display:flex;gap:0.6rem;align-items:center;margin-bottom:0.8rem;flex-wrap:wrap}
+.tab-alunos-toolbar label{font-size:0.7rem;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:0.05em}
+.tab-alunos-toolbar select{padding:0.4rem 0.6rem;border:1px solid var(--border);border-radius:var(--radius);font-size:0.82rem;background:#fff;color:var(--text);cursor:pointer}
+.tab-alunos-toolbar select:focus{outline:none;border-color:var(--accent)}
+.tab-alunos-toolbar .btn-export{margin:0;padding:0.45rem 0.85rem;font-size:0.78rem}
+.tab-alunos-toolbar .toolbar-spacer{flex:1}
+.risk-cell{display:inline-flex;align-items:center;gap:0.35rem;font-weight:700;font-size:0.76rem;white-space:nowrap}
+.risk-dot{display:inline-block;width:9px;height:9px;border-radius:50%}
+.risk-low{color:#15803D} .risk-low .risk-dot{background:#15803D}
+.risk-med{color:#B45309} .risk-med .risk-dot{background:#D97706}
+.risk-high{color:#991B1B} .risk-high .risk-dot{background:#C8102E}
+.risk-inactive{color:#525252} .risk-inactive .risk-dot{background:#525252}
+.days-stale{color:#991B1B;font-weight:700}
+.days-fresh{color:#15803D;font-weight:600}
+.days-neutral{color:var(--text-muted)}
+.name-link{color:var(--accent);cursor:pointer;text-decoration:none;font-weight:600}
+.name-link:hover{text-decoration:underline}
+.profile-modal-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:1000;padding:1.5rem;overflow-y:auto}
+.profile-modal-backdrop.active{display:block}
+.profile-modal{max-width:960px;margin:1.5rem auto;background:#fff;border-radius:12px;padding:1.8rem 2rem;box-shadow:0 20px 60px rgba(0,0,0,0.35);position:relative}
+.profile-modal .close-btn{position:absolute;top:0.7rem;right:1rem;background:none;border:none;font-size:1.8rem;color:var(--text-muted);cursor:pointer;line-height:1;padding:0.3rem 0.7rem;border-radius:6px}
+.profile-modal .close-btn:hover{color:var(--accent);background:var(--accent-soft)}
+.profile-modal h2{color:var(--primary);margin-bottom:0.15rem;font-size:1.3rem}
+.profile-modal .profile-meta{font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem}
+.profile-modal h3{color:var(--primary);margin:1.3rem 0 0.55rem;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;border-bottom:1px solid var(--border);padding-bottom:0.35rem}
+.profile-summary-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(135px,1fr));gap:0.6rem;margin-bottom:0.8rem}
+.profile-kpi{background:var(--accent-soft);border-radius:6px;padding:0.7rem 0.9rem;border:1px solid var(--border)}
+.profile-kpi .v{font-size:1.15rem;font-weight:700;color:var(--accent);line-height:1.1}
+.profile-kpi .l{font-size:0.63rem;color:var(--text-muted);margin-top:0.25rem;text-transform:uppercase;letter-spacing:0.05em}
+.profile-kpi .b{font-size:0.7rem;color:var(--text-muted);margin-top:0.2rem}
+.profile-kpi.r-high{background:#FEE2E2;border-color:#FCA5A5}.profile-kpi.r-high .v{color:#991B1B}
+.profile-kpi.r-med{background:#FEF3C7;border-color:#FDE68A}.profile-kpi.r-med .v{color:#B45309}
+.profile-kpi.r-low{background:#D1FAE5;border-color:#A7F3D0}.profile-kpi.r-low .v{color:#15803D}
+.risk-flags{list-style:none;padding:0;margin:0.3rem 0}
+.risk-flags li{padding:0.35rem 0.75rem;background:#FEF3C7;border-left:3px solid #D97706;margin-bottom:0.3rem;font-size:0.78rem;border-radius:0 4px 4px 0;color:#78350F}
+.risk-flags li.flag-high{background:#FEE2E2;border-left-color:#C8102E;color:#991B1B}
+.profile-actions{display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap}
+.profile-journey{font-size:0.78rem;width:100%;border-collapse:collapse}
+.profile-journey th{background:#FAFAF8;padding:0.4rem;text-align:left;font-size:0.63rem;text-transform:uppercase;color:var(--primary);border-bottom:1px solid var(--border)}
+.profile-journey td{padding:0.35rem 0.4rem;border-bottom:1px solid #f0ebe8}
+.profile-journey .cell-done{background:#D1FAE5;color:#065F46;font-weight:700;text-align:center}
+.profile-journey .cell-prog{background:#FEF3C7;color:#92400E;text-align:center}
+.profile-journey .cell-empty{background:#FAFAF8;color:#cbc9c5;text-align:center}
+.profile-copy-btn{background:#fff;border:1px solid var(--border);padding:0.4rem 0.8rem;border-radius:var(--radius);font-size:0.78rem;cursor:pointer;font-weight:600;color:var(--text)}
+.profile-copy-btn:hover{border-color:var(--accent);color:var(--accent)}
+.profile-copy-ok{color:var(--success);font-size:0.75rem;margin-left:0.5rem;font-weight:600}
 </style>
 </head>
 <body>
@@ -133,16 +181,53 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
   <!-- TAB: POR ALUNO -->
   <div class="admin-card tab-content" id="tab-alunos" style="display:none">
     <h3>Dados por aluno</h3>
+    <div class="tab-alunos-toolbar">
+      <label for="sort-alunos">Ordenar</label>
+      <select id="sort-alunos">
+        <option value="nome-asc" selected>Nome (A–Z)</option>
+        <option value="nome-desc">Nome (Z–A)</option>
+        <option value="matricula">Matrícula</option>
+        <option value="risco-desc">Risco (maior primeiro)</option>
+        <option value="dias-desc">Dias sem acesso (desc)</option>
+        <option value="aulas-desc">Aulas visitadas (desc)</option>
+        <option value="aulas-asc">Aulas visitadas (asc)</option>
+        <option value="quizzes-desc">Quizzes feitos (desc)</option>
+        <option value="tempo-desc">Tempo (desc)</option>
+        <option value="tempo-asc">Tempo (asc)</option>
+        <option value="media-desc">Média quiz (desc)</option>
+        <option value="media-asc">Média quiz (asc)</option>
+        <option value="ft-desc">Acerto 1ª (desc)</option>
+        <option value="ft-asc">Acerto 1ª (asc)</option>
+        <option value="streak-desc">Streak (desc)</option>
+      </select>
+      <label for="filter-status">Status</label>
+      <select id="filter-status">
+        <option value="">Todos</option>
+        <option value="inactive">⚫ Nunca acessou</option>
+        <option value="high">🔴 Em risco</option>
+        <option value="med">🟡 Atenção</option>
+        <option value="low">🟢 Em dia</option>
+      </select>
+      <div class="toolbar-spacer"></div>
+      <button class="btn-export btn-csv" onclick="exportAlunosCSV()">📤 Exportar CSV</button>
+    </div>
     <input type="text" class="search-input" id="search-alunos" placeholder="Filtrar por nome ou matrícula">
     <div style="overflow-x:auto">
       <table id="detail-table">
         <thead><tr>
-          <th>Matrícula</th><th>Nome</th><th>Aulas visitadas</th><th>Quizzes feitos</th>
+          <th>Matrícula</th><th>Nome</th><th>Aulas</th><th>Quizzes</th>
           <th>Tempo (min)</th><th>Média quiz</th><th>Acerto 1ª</th><th>Streak</th>
+          <th>Último acesso</th><th>Risco</th>
         </tr></thead>
         <tbody></tbody>
       </table>
     </div>
+    <div id="alunos-result-count" style="margin-top:0.6rem;font-size:0.72rem;color:var(--text-muted)"></div>
+  </div>
+
+  <!-- MODAL: PERFIL INDIVIDUAL DO ALUNO -->
+  <div class="profile-modal-backdrop" id="profile-modal-backdrop" onclick="if(event.target===this) closeProfileModal()">
+    <div class="profile-modal" id="profile-modal-content"></div>
   </div>
 
   <!-- TAB: QUIZZES -->
@@ -423,6 +508,270 @@ function daysSinceLastActivity(studentData) {
   if (!last) return null;
   return Math.round((Date.now() - last.getTime()) / 86400000);
 }
+
+// ============ RISK SCORE, BENCHMARKS, EXPORT, PROFILE ============
+
+function computeBenchmarks(rows) {
+  function pctl(arr, p) {
+    if (!arr.length) return 0;
+    var s = arr.slice().sort(function(a,b){return a-b});
+    var idx = Math.floor((s.length - 1) * p);
+    return s[idx];
+  }
+  var tempos = rows.map(function(r){return r.s.totalTimeMin||0});
+  var aulas = rows.map(function(r){return r.s.pagesVisited||0});
+  var quizzes = rows.map(function(r){return r.s.quizzesCompleted||0});
+  var medias = rows.filter(function(r){return r.s.quizzesCompleted>0}).map(function(r){return r.s.avgQuizScore||0});
+  var fts = rows.filter(function(r){return r.ftPct!==null}).map(function(r){return r.ftPct});
+  return {
+    p25Tempo: pctl(tempos,0.25), p50Tempo: pctl(tempos,0.50), p75Tempo: pctl(tempos,0.75),
+    p25Aulas: pctl(aulas,0.25), p50Aulas: pctl(aulas,0.50),
+    p25Quiz: pctl(quizzes,0.25), p50Quiz: pctl(quizzes,0.50),
+    p50Media: medias.length ? pctl(medias,0.50) : 0,
+    p50Ft: fts.length ? pctl(fts,0.50) : 0,
+  };
+}
+
+// Risk score rule-based 0-100, composto por features de engajamento.
+// Retorna {score, level: 'inactive'|'high'|'med'|'low', flags: [{msg, severity:'high'|'med'}]}
+function computeRiskScore(r, bench) {
+  var score = 0;
+  var flags = [];
+  var neverAccessed = (r.s.pagesVisited||0) === 0 && (r.s.quizzesCompleted||0) === 0;
+
+  if (neverAccessed) {
+    return { score: 100, level: 'inactive', flags: [{msg:'Nunca acessou a plataforma', severity:'high'}] };
+  }
+
+  // Feature 1: dias desde último acesso
+  if (r.daysSince != null) {
+    if (r.daysSince > 7)      { score += 35; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'high'}); }
+    else if (r.daysSince > 3) { score += 15; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'med'}); }
+  }
+
+  // Feature 2: acerto 1ª tentativa (requer n mínimo de 5 itens)
+  if (r.ftPct !== null && r.ftTotal >= 5) {
+    if (r.ftPct < 40)      { score += 30; flags.push({msg:'Acerto 1ª baixo: ' + r.ftPct + '% (< 40)', severity:'high'}); }
+    else if (r.ftPct < 60) { score += 15; flags.push({msg:'Acerto 1ª mediano: ' + r.ftPct + '%', severity:'med'}); }
+  }
+
+  // Feature 3: aulas visitadas abaixo do P25
+  if (bench.p25Aulas > 0 && (r.s.pagesVisited||0) < bench.p25Aulas) {
+    score += 15;
+    flags.push({msg:'Aulas abertas abaixo do P25 da turma (' + (r.s.pagesVisited||0) + ' vs ' + bench.p25Aulas + ')', severity:'med'});
+  }
+
+  // Feature 4: tempo total muito baixo (<50% do P25)
+  if (bench.p25Tempo > 0 && (r.s.totalTimeMin||0) < bench.p25Tempo * 0.5) {
+    score += 20;
+    flags.push({msg:'Tempo total < 50% do P25 da turma (' + r.s.totalTimeMin + ' vs ' + Math.round(bench.p25Tempo*0.5) + ' min)', severity:'high'});
+  }
+
+  // Feature 5: consistência semanal (CV > 1.5 = estudo em picos)
+  if (r.cv != null && r.nWeeks >= 3 && r.cv > 1.5) {
+    score += 10;
+    flags.push({msg:'Estudo concentrado (CV=' + r.cv.toFixed(2) + ' em ' + r.nWeeks + ' semanas)', severity:'med'});
+  }
+
+  score = Math.min(100, score);
+  var level = score >= 60 ? 'high' : score >= 30 ? 'med' : 'low';
+  return { score: score, level: level, flags: flags };
+}
+
+function riskLabel(level) {
+  return { inactive:'⚫ Nunca acessou', high:'🔴 Em risco', med:'🟡 Atenção', low:'🟢 Em dia' }[level] || '—';
+}
+
+function sortAlunos(rows, key) {
+  var c = rows.slice();
+  var cmp = {
+    'nome-asc':    function(a,b){return a.s.nome.localeCompare(b.s.nome,'pt-BR')},
+    'nome-desc':   function(a,b){return b.s.nome.localeCompare(a.s.nome,'pt-BR')},
+    'matricula':   function(a,b){return String(a.s.matricula).localeCompare(String(b.s.matricula))},
+    'risco-desc':  function(a,b){return (b.risk.score||0) - (a.risk.score||0)},
+    'dias-desc':   function(a,b){return (b.daysSince==null?-1:b.daysSince) - (a.daysSince==null?-1:a.daysSince)},
+    'aulas-desc':  function(a,b){return (b.s.pagesVisited||0) - (a.s.pagesVisited||0)},
+    'aulas-asc':   function(a,b){return (a.s.pagesVisited||0) - (b.s.pagesVisited||0)},
+    'quizzes-desc':function(a,b){return (b.s.quizzesCompleted||0) - (a.s.quizzesCompleted||0)},
+    'tempo-desc':  function(a,b){return (b.s.totalTimeMin||0) - (a.s.totalTimeMin||0)},
+    'tempo-asc':   function(a,b){return (a.s.totalTimeMin||0) - (b.s.totalTimeMin||0)},
+    'media-desc':  function(a,b){return (b.s.avgQuizScore||0) - (a.s.avgQuizScore||0)},
+    'media-asc':   function(a,b){return (a.s.avgQuizScore||0) - (b.s.avgQuizScore||0)},
+    'ft-desc':     function(a,b){return (b.ftPct==null?-1:b.ftPct) - (a.ftPct==null?-1:a.ftPct)},
+    'ft-asc':      function(a,b){return (a.ftPct==null?999:a.ftPct) - (b.ftPct==null?999:b.ftPct)},
+    'streak-desc': function(a,b){return (b.streak||0) - (a.streak||0)}
+  };
+  c.sort(cmp[key] || cmp['nome-asc']);
+  return c;
+}
+
+function csvq(s) {
+  s = String(s == null ? '' : s);
+  if (s.indexOf(',') >= 0 || s.indexOf('"') >= 0 || s.indexOf('\n') >= 0) {
+    return '"' + s.replace(/"/g, '""') + '"';
+  }
+  return s;
+}
+
+// Exports staged CSV — respeita sort + filtros atuais da tabela "Por Aluno"
+function exportAlunosCSV() {
+  if (!window._alunosRows) return alert('Dados ainda não carregados.');
+  var sortKey  = (document.getElementById('sort-alunos')||{}).value || 'nome-asc';
+  var stKey    = (document.getElementById('filter-status')||{}).value || '';
+  var filter   = ((document.getElementById('search-alunos')||{}).value || '').toLowerCase();
+  var filtered = window._alunosRows.filter(function(r){
+    if (filter && r.s.nome.toLowerCase().indexOf(filter) < 0 && r.s.matricula.toLowerCase().indexOf(filter) < 0) return false;
+    if (stKey && r.risk.level !== stKey) return false;
+    return true;
+  });
+  var sorted = sortAlunos(filtered, sortKey);
+  var header = ['Matrícula','Nome','Email','Aulas visitadas (de '+(window._totalItems||0)+')','Quizzes feitos','Tempo (min)','Média quiz (%)','Acerto 1ª tentativa (%)','N itens para acerto 1ª','Streak (dias)','Dias desde último acesso','CV semanal','N semanas ativas','Risco (0-100)','Status'];
+  var lines = [header.map(csvq).join(',')];
+  sorted.forEach(function(r){
+    lines.push([
+      r.s.matricula, r.s.nome, r.email||'',
+      r.s.pagesVisited, r.s.quizzesCompleted, r.s.totalTimeMin, r.s.avgQuizScore,
+      r.ftPct !== null ? r.ftPct : '', r.ftTotal || 0,
+      r.streak || 0,
+      r.daysSince == null ? '' : r.daysSince,
+      r.cv == null ? '' : r.cv.toFixed(3),
+      r.nWeeks || 0,
+      r.risk.score, riskLabel(r.risk.level).replace(/^[^\s]+\s/, '')
+    ].map(csvq).join(','));
+  });
+  var csv = '﻿' + lines.join('\n');
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  a.download = 'alunos-mpe-2026-32-' + new Date().toISOString().substring(0,10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function closeProfileModal() {
+  var bd = document.getElementById('profile-modal-backdrop');
+  if (bd) bd.classList.remove('active');
+}
+
+function showStudentProfile(matricula) {
+  if (!window._alunosRows) return;
+  var r = window._alunosRows.filter(function(x){return x.s.matricula===matricula})[0];
+  if (!r) return;
+  var bench = window._alunosBench || {};
+  var data = window._alunosData || {};
+  var studentData = data[matricula] || {};
+
+  function cmpToP50(v, p50, unit) {
+    if (p50 == null) return '';
+    var diff = v - p50;
+    var cls = diff > 0 ? 'above' : diff < 0 ? 'below' : '';
+    var sign = diff > 0 ? '+' : '';
+    return '<div class="profile-benchmark ' + cls + '">' + sign + diff + ' ' + unit + ' vs P50 turma</div>';
+  }
+
+  var riskClass = { inactive:'r-high', high:'r-high', med:'r-med', low:'r-low' }[r.risk.level] || '';
+
+  // Journey: linha por aula/monitoria
+  var journeyRows = '';
+  var items = (window._itemsForJourney || []);
+  items.forEach(function(it) {
+    var pg = (studentData.pages || {})[it.pid] || {};
+    var qz = (studentData.quizzes || {})[it.pid];
+    var visited = pg.visits > 0;
+    var quizDone = qz && qz.attempts > 0;
+    var score = quizDone ? qz.bestScore : null;
+    var tempo = pg.totalTime ? Math.round(pg.totalTime / 60000) : 0;
+    var lastVis = pg.lastVisit ? pg.lastVisit.substring(0,10) : '—';
+
+    // Acerto 1ª por questão dentro desse quiz
+    var ftN = 0, ftR = 0;
+    if (qz && qz.questions) {
+      Object.keys(qz.questions).forEach(function(qid){
+        var att = (qz.questions[qid].attempts || []);
+        if (att.length > 0) { ftN++; if (att[0].correct) ftR++; }
+      });
+    }
+    var ftPctItem = ftN > 0 ? Math.round(ftR / ftN * 100) : null;
+
+    var cellStatus = quizDone
+      ? '<td class="cell-done">' + score + '%</td>'
+      : (visited ? '<td class="cell-prog">visitou</td>' : '<td class="cell-empty">—</td>');
+
+    journeyRows += '<tr>'
+      + '<td style="font-weight:600">' + it.label + '</td>'
+      + '<td style="font-size:0.7rem;color:var(--text-muted)">' + it.title.substring(0,50) + '</td>'
+      + cellStatus
+      + '<td>' + tempo + ' min</td>'
+      + '<td>' + (ftPctItem == null ? '—' : ftPctItem + '% (' + ftR + '/' + ftN + ')') + '</td>'
+      + '<td style="font-size:0.72rem;color:var(--text-muted)">' + lastVis + '</td>'
+      + '</tr>';
+  });
+
+  var flagsHtml = '';
+  if (r.risk.flags && r.risk.flags.length > 0) {
+    flagsHtml = '<ul class="risk-flags">' + r.risk.flags.map(function(f){
+      return '<li class="flag-' + f.severity + '">' + f.msg + '</li>';
+    }).join('') + '</ul>';
+  } else {
+    flagsHtml = '<div style="color:var(--success);font-size:0.82rem">Nenhuma bandeira de risco ativa.</div>';
+  }
+
+  // Texto para copiar (pro prof colar em email/WhatsApp quando conversar com o aluno)
+  var copyTxt = r.s.nome + ' (' + r.s.matricula + ') — ' + riskLabel(r.risk.level) + ' — '
+    + 'Aulas abertas: ' + r.s.pagesVisited + '/' + (window._totalItems||'?') + ' · '
+    + 'Tempo: ' + r.s.totalTimeMin + ' min · '
+    + 'Acerto 1ª: ' + (r.ftPct == null ? '—' : r.ftPct + '%') + ' · '
+    + 'Último acesso: ' + (r.daysSince == null ? 'nunca' : r.daysSince + ' dias atrás');
+
+  var html =
+    '<button class="close-btn" onclick="closeProfileModal()" aria-label="Fechar">×</button>'
+    + '<h2>' + r.s.nome + '</h2>'
+    + '<div class="profile-meta">Matrícula: <strong>' + r.s.matricula + '</strong>'
+      + (r.email ? ' · ' + r.email : '')
+      + ' · Último acesso: ' + (r.daysSince == null ? 'nunca' : r.daysSince + ' dias atrás')
+      + '</div>'
+    + '<h3>Resumo & Risco</h3>'
+    + '<div class="profile-summary-grid">'
+      + '<div class="profile-kpi ' + riskClass + '"><div class="v">' + r.risk.score + '</div><div class="l">Risco (0-100)</div><div class="b">' + riskLabel(r.risk.level) + '</div></div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.pagesVisited + '/' + (window._totalItems||'?') + '</div><div class="l">Aulas abertas</div>' + cmpToP50(r.s.pagesVisited, bench.p50Aulas, '') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.quizzesCompleted + '</div><div class="l">Quizzes feitos</div>' + cmpToP50(r.s.quizzesCompleted, bench.p50Quiz, '') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.totalTimeMin + '</div><div class="l">Min totais</div>' + cmpToP50(r.s.totalTimeMin, bench.p50Tempo, 'min') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + r.s.avgQuizScore + '%</div><div class="l">Média quiz</div>' + cmpToP50(r.s.avgQuizScore, bench.p50Media, 'pp') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + (r.ftPct == null ? '—' : r.ftPct + '%') + '</div><div class="l">Acerto 1ª</div>'
+        + (r.ftPct !== null ? cmpToP50(r.ftPct, bench.p50Ft, 'pp') : '<div class="profile-benchmark">Ainda sem itens suficientes</div>') + '</div>'
+      + '<div class="profile-kpi"><div class="v">' + (r.streak || 0) + '🔥</div><div class="l">Streak (dias)</div></div>'
+      + '<div class="profile-kpi"><div class="v">' + (r.cv == null ? '—' : r.cv.toFixed(2)) + '</div><div class="l">CV semanal</div><div class="b">' + (r.nWeeks || 0) + ' semanas ativas</div></div>'
+    + '</div>'
+    + '<h3>Bandeiras de risco</h3>'
+    + flagsHtml
+    + '<h3>Trajetória por aula/monitoria</h3>'
+    + '<div style="overflow-x:auto"><table class="profile-journey"><thead><tr>'
+      + '<th>Item</th><th>Título</th><th>Status</th><th>Tempo</th><th>Acerto 1ª</th><th>Último acesso</th>'
+    + '</tr></thead><tbody>' + journeyRows + '</tbody></table></div>'
+    + '<div class="profile-actions">'
+      + '<button class="profile-copy-btn" id="profile-copy-btn" data-txt="' + copyTxt.replace(/"/g, '&quot;') + '">📋 Copiar resumo</button>'
+      + '<span class="profile-copy-ok" id="profile-copy-ok" style="display:none">Copiado!</span>'
+    + '</div>';
+
+  var modal = document.getElementById('profile-modal-content');
+  modal.innerHTML = html;
+  document.getElementById('profile-modal-backdrop').classList.add('active');
+  var copyBtn = document.getElementById('profile-copy-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function() {
+      navigator.clipboard.writeText(copyBtn.dataset.txt).then(function() {
+        var ok = document.getElementById('profile-copy-ok');
+        if (ok) { ok.style.display = 'inline'; setTimeout(function(){ok.style.display='none'}, 1800); }
+      });
+    });
+  }
+}
+
+// Fecha modal ao teclar ESC
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeProfileModal();
+});
 
 // ============ RENDER ============
 
@@ -772,33 +1121,85 @@ async function renderAdmin() {
   document.getElementById('heatmap-table').innerHTML = hmHead + hmBody;
 
   // === TAB: POR ALUNO ===
+  // 1) Enriquecer rows com todas as métricas computadas uma vez só.
+  var cvByMat = {};
+  weeklyCV(data).forEach(function(x){ cvByMat[x.mat] = x; });
+
   var rows = [];
   summary.forEach(function(s) {
     if (s.matricula.toLowerCase().indexOf('prof') === 0) return;
-    var ftAcc = firstTryAccuracyPerStudent(data[s.matricula] || {});
-    var streak = streakForStudent(data[s.matricula] || {});
+    var sd = data[s.matricula] || {};
+    var ftAcc = firstTryAccuracyPerStudent(sd);
+    var streak = streakForStudent(sd);
+    var daysSince = daysSinceLastActivity(sd);
+    var cvRec = cvByMat[s.matricula] || null;
     rows.push({
-      s: s, ftPct: ftAcc.pct, ftTotal: ftAcc.total, streak: streak
+      s: s,
+      email: (users[s.matricula] || {}).email || '',
+      ftPct: ftAcc.pct, ftTotal: ftAcc.total,
+      streak: streak,
+      daysSince: daysSince,
+      cv: cvRec ? cvRec.cv : null,
+      nWeeks: cvRec ? cvRec.nWeeks : 0,
+      risk: { score: 0, level: 'low', flags: [] }  // preenche após benchmarks
     });
   });
-  rows.sort(function(a,b){return b.s.totalTimeMin - a.s.totalTimeMin});
-  function renderAlunos(filter) {
-    filter = (filter || '').toLowerCase();
-    var tbody = '';
-    rows.forEach(function(r) {
-      if (filter && r.s.nome.toLowerCase().indexOf(filter) < 0 && r.s.matricula.toLowerCase().indexOf(filter) < 0) return;
-      tbody += '<tr><td>'+r.s.matricula+'</td><td>'+r.s.nome+'</td>'
-        +'<td>'+r.s.pagesVisited+'/'+totalItems+'</td>'
-        +'<td>'+r.s.quizzesCompleted+'/'+totalItems+'</td>'
-        +'<td>'+r.s.totalTimeMin+'</td>'
-        +'<td>'+r.s.avgQuizScore+'%</td>'
-        +'<td>'+(r.ftPct !== null ? r.ftPct+'% ('+r.ftTotal+' itens)' : '—')+'</td>'
-        +'<td>'+(r.streak > 0 ? '🔥'+r.streak : '—')+'</td></tr>';
+
+  // 2) Computar benchmarks P25/P50 e aplicar risk score em cada row.
+  var bench = computeBenchmarks(rows);
+  rows.forEach(function(r){ r.risk = computeRiskScore(r, bench); });
+
+  // 3) Itens para o modal de perfil (journey)
+  var itemsForJourney = [];
+  AULAS.forEach(function(a){ itemsForJourney.push({ n:a.n, label:'A'+String(a.n).padStart(2,'0'), title:a.title, pid:aulaPid(a.n) }); });
+  MONITORIAS.forEach(function(m){ itemsForJourney.push({ n:m.n, label:'M'+String(m.n).padStart(2,'0'), title:m.title, pid:monPid(m.n) }); });
+
+  // 4) Expor no window para export CSV / modal (mesma convenção do projeto para callbacks inline)
+  window._alunosRows = rows;
+  window._alunosBench = bench;
+  window._alunosData = data;
+  window._totalItems = totalItems;
+  window._itemsForJourney = itemsForJourney;
+
+  // 5) Render com sort + status + search
+  function renderAlunos() {
+    var sortKey = (document.getElementById('sort-alunos')||{}).value || 'nome-asc';
+    var stKey   = (document.getElementById('filter-status')||{}).value || '';
+    var filter  = ((document.getElementById('search-alunos')||{}).value || '').toLowerCase();
+    var filtered = rows.filter(function(r){
+      if (filter && r.s.nome.toLowerCase().indexOf(filter) < 0 && r.s.matricula.toLowerCase().indexOf(filter) < 0) return false;
+      if (stKey && r.risk.level !== stKey) return false;
+      return true;
     });
-    document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum aluno encontrado</td></tr>';
+    var sorted = sortAlunos(filtered, sortKey);
+    var tbody = '';
+    sorted.forEach(function(r) {
+      var daysCls = r.daysSince == null ? 'days-neutral' : (r.daysSince > 7 ? 'days-stale' : (r.daysSince <= 2 ? 'days-fresh' : 'days-neutral'));
+      var daysTxt = r.daysSince == null ? 'nunca' : (r.daysSince === 0 ? 'hoje' : r.daysSince + 'd');
+      var riskCls = 'risk-' + r.risk.level;
+      tbody += '<tr>'
+        + '<td>'+r.s.matricula+'</td>'
+        + '<td><a class="name-link" onclick="showStudentProfile(\''+r.s.matricula.replace(/\'/g,"\\\'")+'\')">'+r.s.nome+'</a></td>'
+        + '<td>'+r.s.pagesVisited+'/'+totalItems+'</td>'
+        + '<td>'+r.s.quizzesCompleted+'/'+totalItems+'</td>'
+        + '<td>'+r.s.totalTimeMin+'</td>'
+        + '<td>'+r.s.avgQuizScore+'%</td>'
+        + '<td>'+(r.ftPct !== null ? r.ftPct+'% ('+r.ftTotal+')' : '—')+'</td>'
+        + '<td>'+(r.streak > 0 ? '🔥'+r.streak : '—')+'</td>'
+        + '<td class="'+daysCls+'">'+daysTxt+'</td>'
+        + '<td><span class="risk-cell '+riskCls+'"><span class="risk-dot"></span>'+r.risk.score+' · '+riskLabel(r.risk.level)+'</span></td>'
+        + '</tr>';
+    });
+    document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="10" style="text-align:center;color:#aaa">Nenhum aluno encontrado</td></tr>';
+    var cnt = document.getElementById('alunos-result-count');
+    if (cnt) cnt.textContent = sorted.length + ' de ' + rows.length + ' alunos · P50 turma: '+bench.p50Aulas+' aulas abertas · '+bench.p50Tempo+' min · acerto 1ª '+bench.p50Ft+'%';
   }
-  renderAlunos('');
-  document.getElementById('search-alunos').addEventListener('input', function(e){ renderAlunos(e.target.value); });
+  renderAlunos();
+  ['sort-alunos','filter-status'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('change', renderAlunos);
+  });
+  document.getElementById('search-alunos').addEventListener('input', renderAlunos);
 
   // === TAB: QUIZZES ===
   var qRows = [];
