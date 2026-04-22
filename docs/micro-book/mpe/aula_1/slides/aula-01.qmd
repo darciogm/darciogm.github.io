@@ -848,18 +848,6 @@ Axioma de convexidade → representação Cobb-Douglas → TMS fechada → núme
 
 ---
 
-## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
-
-::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
-*Voltamos às 21:40 — direto na prática em dupla.*
-:::
-
-::: {style="text-align: center; font-size: 0.85em; color: #2A2F36; margin-top: 1.5em;"}
-Se alguém precisar rever N&S 3.5/3.7, este é o momento.
-:::
-
----
-
 ## Bloco 3 — Box Brasil · POF/IBGE {background-color="#1B3A5C" .section-divider}
 
 ::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
@@ -929,7 +917,7 @@ Se o consumidor representativo existisse, a tabela seria plana. Não é. **O que
 :::
 
 ::: {.fragment}
-**Resposta curta:** provavelmente **sim na agregação** (curvas de indiferença suaves em dados cross-section), mas **vulnerável em subsistência** — em faixas de renda muito baixas, preferências quase lexicográficas (comida > tudo) ameaçam a convexidade estrita. Heterogeneidade é regra, não exceção.
+**Resposta curta:** **sim na agregação** (curvas de indiferença suaves em dados cross-section da classe média). Mas **vulnerável em subsistência**: em faixas de renda muito baixas, há **não-convexidade estrita** em torno do patamar de necessidades básicas — modelos Stone-Geary e linhas de pobreza capturam esse efeito. (Cuidado: isso *não* é lexicografia no sentido técnico — lex estrita é convexa fraca; o problema empírico é outro.) Heterogeneidade é regra, não exceção.
 :::
 
 ---
@@ -955,6 +943,18 @@ Se o consumidor representativo existisse, a tabela seria plana. Não é. **O que
 
 ::: {.callout .callout-warn}
 **Takeaway, sem moralismo:** utilidade ordinal *limita* comparações interpessoais — mas não as impede, desde que hipóteses de comparabilidade sejam explícitas. Aqui política pública e teoria se encontram.
+:::
+
+---
+
+## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 21:40 — direto na prática em dupla.*
+:::
+
+::: {style="text-align: center; font-size: 0.85em; color: #2A2F36; margin-top: 1.5em;"}
+Se alguém precisar rever N&S 3.5/3.7, este é o momento.
 :::
 
 ---

@@ -92,17 +92,17 @@
   </div>
 
   <div class="section-content" id="content-s3" style="display:none">
-    <p>Os <strong>5 axiomas</strong> sobre a relação de preferência \(\succsim\) (ordem ZaE):</p>
+    <p>Os <strong>5 axiomas</strong> sobre a relação de preferência \(\succeq\) (ordem ZaE):</p>
     <ol>
-      <li><strong>Completude:</strong> dados \(\mathbf{x}, \mathbf{y}\), vale \(\mathbf{x} \succsim \mathbf{y}\) ou \(\mathbf{y} \succsim \mathbf{x}\). O consumidor consegue comparar qualquer par.</li>
-      <li><strong>Transitividade:</strong> \(\mathbf{x} \succsim \mathbf{y}\) e \(\mathbf{y} \succsim \mathbf{z}\) implicam \(\mathbf{x} \succsim \mathbf{z}\). Bloqueia ciclos.</li>
-      <li><strong>Continuidade:</strong> conjuntos \(\{\mathbf{y} : \mathbf{y} \succsim \mathbf{x}\}\) e \(\{\mathbf{y} : \mathbf{x} \succsim \mathbf{y}\}\) são fechados. Viabiliza representação contínua.</li>
+      <li><strong>Completude:</strong> dados \(\mathbf{x}, \mathbf{y}\), vale \(\mathbf{x} \succeq \mathbf{y}\) ou \(\mathbf{y} \succeq \mathbf{x}\). O consumidor consegue comparar qualquer par.</li>
+      <li><strong>Transitividade:</strong> \(\mathbf{x} \succeq \mathbf{y}\) e \(\mathbf{y} \succeq \mathbf{z}\) implicam \(\mathbf{x} \succeq \mathbf{z}\). Bloqueia ciclos.</li>
+      <li><strong>Continuidade:</strong> conjuntos \(\{\mathbf{y} : \mathbf{y} \succeq \mathbf{x}\}\) e \(\{\mathbf{y} : \mathbf{x} \succeq \mathbf{y}\}\) são fechados. Viabiliza representação contínua.</li>
       <li><strong>Monotonicidade:</strong> "mais é melhor" (forte / fraca / NSL).</li>
       <li><strong>Convexidade:</strong> médias são fracamente preferidas a extremos. Dá TMS decrescente.</li>
     </ol>
 
-    <p><strong>Teorema (Debreu):</strong> se \(\succsim\) é completa, transitiva e contínua, existe \(u: X \to \mathbb{R}\) contínua tal que</p>
-    \[ \mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \]
+    <p><strong>Teorema (Debreu):</strong> se \(\succeq\) é completa, transitiva e contínua, existe \(u: X \to \mathbb{R}\) contínua tal que</p>
+    \[ \mathbf{x} \succeq \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y}). \]
 
     <p>A ideia da prova: para cada \(\mathbf{x}\), acha-se \(t\) tal que \(\mathbf{x} \sim t \cdot \mathbf{1}\). Esse \(t\) é a utilidade. A monotonicidade garante unicidade; a continuidade, continuidade de \(u\).</p>
 
@@ -113,7 +113,7 @@
       <li>Para todo \(n\): \(\mathbf{x}^n \succ \mathbf{y}\), porque \(1 + \tfrac{1}{n} > 1\) (lex decide no primeiro componente).</li>
       <li>No limite, \(\mathbf{x}^n \to (1, 0)\). Mas \((1, 0) \prec (1, 1) = \mathbf{y}\) (empate em \(x_1\), lex vai ao segundo).</li>
     </ul>
-    <p>Ou seja: o conjunto \(\{\mathbf{x} : \mathbf{x} \succsim \mathbf{y}\}\) contém toda a sequência, mas <em>não contém</em> o limite. Não é fechado — logo não há representação por função contínua.</p>
+    <p>Ou seja: o conjunto \(\{\mathbf{x} : \mathbf{x} \succeq \mathbf{y}\}\) contém toda a sequência, mas <em>não contém</em> o limite. Não é fechado — logo não há representação por função contínua.</p>
 
     <div class="micro-checkpoint" id="micro-s3">
       <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
@@ -172,7 +172,7 @@
   </div>
 
   <div class="section-content" id="content-s4" style="display:none">
-    <p>A utilidade é um objeto <strong>ordinal</strong>: o que importa é a ordem, não a magnitude. Se \(u\) representa \(\succsim\) e \(f\) é qualquer transformação estritamente crescente, então \(v = f \circ u\) representa a mesma \(\succsim\):</p>
+    <p>A utilidade é um objeto <strong>ordinal</strong>: o que importa é a ordem, não a magnitude. Se \(u\) representa \(\succeq\) e \(f\) é qualquer transformação estritamente crescente, então \(v = f \circ u\) representa a mesma \(\succeq\):</p>
     \[ f'(t) > 0 \text{ em todo } t \implies v \sim u \text{ (mesma preferência).} \]
     <p><strong>Exemplo:</strong> \(u(x,y) = xy\) e \(v(x,y) = \ln x + \ln y\) representam a <em>mesma</em> preferência Cobb-Douglas. Os valores numéricos são totalmente diferentes, mas a TMS é a mesma.</p>
     <p><strong>Consequência operacional:</strong></p>
@@ -190,7 +190,7 @@
     <div class="micro-checkpoint" id="micro-s4">
       <h3>Micro-checkpoint (1 item)</h3>
       <div class="micro-q" data-q="s4q1" data-correct="a">
-        <div class="q-text">Se \(u\) representa \(\succsim\), qual condição mínima em \(f\) faz \(v = f \circ u\) representar a <em>mesma</em> preferência?</div>
+        <div class="q-text">Se \(u\) representa \(\succeq\), qual condição mínima em \(f\) faz \(v = f \circ u\) representar a <em>mesma</em> preferência?</div>
         <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-ordinalidade','s4q1','a',this)">(a) \(f\) estritamente crescente em todo o domínio</div>
         <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-ordinalidade','s4q1','b',this)">(b) \(f\) é afim</div>
         <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-ordinalidade','s4q1','c',this)">(c) \(f\) é a identidade</div>
