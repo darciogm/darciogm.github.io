@@ -168,6 +168,29 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .reflection-item .r-meta{font-size:0.7rem;color:var(--text-muted);margin-bottom:0.3rem;font-weight:600}
 .reflection-item .r-text{line-height:1.5;color:var(--text)}
 .reflection-item .r-highlight{background:#FEF3C7;padding:0 0.15rem;border-radius:2px;font-weight:600}
+/* Interventions timeline */
+.iv-form{background:#FAFAF8;border:1px solid var(--border);border-radius:8px;padding:0.8rem 1rem;margin-bottom:1rem}
+.iv-form-row{display:flex;gap:0.5rem;margin-bottom:0.5rem;flex-wrap:wrap}
+.iv-input{padding:0.45rem 0.7rem;border:1px solid var(--border);border-radius:var(--radius);font-size:0.82rem;background:#fff;font-family:inherit}
+.iv-input:focus{outline:none;border-color:var(--accent)}
+.iv-input-topic{flex:1;min-width:180px}
+.iv-input-note{width:100%;resize:vertical;line-height:1.4}
+.iv-form-actions{display:flex;align-items:center;gap:0.6rem;margin-top:0.5rem}
+.iv-submit-btn{background:var(--accent);color:#fff;border:none;padding:0.5rem 1rem;border-radius:var(--radius);font-size:0.82rem;font-weight:600;cursor:pointer}
+.iv-submit-btn:hover{filter:brightness(0.92)}
+.iv-form-msg{font-size:0.75rem;font-weight:600}
+.iv-list{margin-top:0.5rem}
+.iv-item{border-left:3px solid var(--accent);background:#fff;padding:0.7rem 1rem;margin-bottom:0.6rem;border-radius:0 6px 6px 0;border-top:1px solid var(--border);border-right:1px solid var(--border);border-bottom:1px solid var(--border)}
+.iv-item .iv-header{display:flex;align-items:center;gap:0.55rem;font-size:0.75rem;color:var(--text-muted);margin-bottom:0.4rem;flex-wrap:wrap}
+.iv-item .iv-kind{font-weight:700;color:var(--primary)}
+.iv-item .iv-date{font-variant-numeric:tabular-nums}
+.iv-item .iv-topic{font-style:italic}
+.iv-item .iv-delete{margin-left:auto;background:none;border:none;color:var(--text-muted);cursor:pointer;font-size:0.9rem;padding:0.15rem 0.35rem;border-radius:4px;line-height:1}
+.iv-item .iv-delete:hover{background:#FEE2E2;color:#991B1B}
+.iv-item .iv-note{font-size:0.85rem;line-height:1.45;color:var(--text);margin-bottom:0.35rem}
+.iv-item .iv-outcome{background:#D1FAE5;border-left:3px solid #15803D;padding:0.4rem 0.6rem;margin-top:0.4rem;font-size:0.78rem;color:#065F46;border-radius:0 4px 4px 0}
+.iv-btn{background:#fff;border:1px solid var(--border);padding:0.3rem 0.7rem;border-radius:var(--radius);font-size:0.72rem;cursor:pointer;color:var(--text);margin-top:0.3rem;font-weight:600}
+.iv-btn:hover{border-color:var(--success);color:var(--success)}
 </style>
 </head>
 <body>
@@ -894,6 +917,7 @@ function showStudentProfile(matricula) {
     + '<div style="overflow-x:auto"><table class="profile-journey"><thead><tr>'
       + '<th>Item</th><th>Título</th><th>Status</th><th>Tempo</th><th>Acerto 1ª</th><th>Último acesso</th>'
     + '</tr></thead><tbody>' + journeyRows + '</tbody></table></div>'
+    + _renderInterventionsSection(matricula, studentData)
     + '<div class="profile-actions">'
       + '<button class="profile-copy-btn" id="profile-copy-btn" data-txt="' + copyTxt.replace(/"/g, '&quot;') + '">📋 Copiar resumo</button>'
       + '<span class="profile-copy-ok" id="profile-copy-ok" style="display:none">Copiado!</span>'
@@ -911,6 +935,177 @@ function showStudentProfile(matricula) {
       });
     });
   }
+}
+
+// ============ INTERVENTIONS (Onda 2B — timeline de cuidado) ============
+
+var _KIND_LABEL = {
+  conversation: '💬 Conversa',
+  email:        '📧 E-mail',
+  whatsapp:     '📱 WhatsApp',
+  meeting:      '🤝 Reunião',
+  nudge:        '🔔 Nudge',
+  other:        '📝 Outro'
+};
+
+function _escapeHtml(s) {
+  return String(s==null?'':s).replace(/[&<>"']/g, function(c){
+    return { '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c];
+  });
+}
+
+function _fmtDate(ts) {
+  if (!ts) return '';
+  try { return new Date(ts).toLocaleString('pt-BR', { dateStyle:'short', timeStyle:'short' }); }
+  catch(e) { return String(ts).substring(0,16).replace('T',' '); }
+}
+
+function _renderInterventionsSection(matricula, studentData) {
+  var ivs = (studentData && studentData.interventions) || [];
+  var safeMat = matricula.replace(/'/g, "\\'");
+
+  var items = ivs.slice().sort(function(a,b){ return (b.createdAt||'').localeCompare(a.createdAt||''); }).map(function(iv){
+    var kindLabel = _KIND_LABEL[iv.kind] || iv.kind;
+    var outcomeHtml = iv.outcome
+      ? '<div class="iv-outcome"><strong>Resultado:</strong> ' + _escapeHtml(iv.outcome)
+        + '<span style="color:var(--text-muted);font-size:0.7rem;margin-left:0.5rem">(' + _fmtDate(iv.outcomeAt) + ')</span></div>'
+      : '<button class="iv-btn" onclick="recordInterventionOutcome(\'' + iv.id + '\', \'' + safeMat + '\')">✓ Marcar resultado</button>';
+    return '<div class="iv-item">'
+      + '<div class="iv-header">'
+        + '<span class="iv-kind">' + kindLabel + '</span>'
+        + '<span class="iv-date">' + _fmtDate(iv.createdAt) + '</span>'
+        + (iv.topic ? '<span class="iv-topic">· ' + _escapeHtml(iv.topic) + '</span>' : '')
+        + '<button class="iv-delete" onclick="deleteInterventionConfirm(\'' + iv.id + '\', \'' + safeMat + '\')" title="Remover intervenção">🗑</button>'
+      + '</div>'
+      + '<div class="iv-note">' + _escapeHtml(iv.note).replace(/\n/g,'<br>') + '</div>'
+      + outcomeHtml
+      + '</div>';
+  }).join('');
+
+  if (!items) {
+    items = '<div style="color:var(--text-muted);font-size:0.82rem;padding:0.5rem 0.2rem">Nenhuma intervenção registrada com este aluno.</div>';
+  }
+
+  var form = '<div class="iv-form">'
+    + '<div class="iv-form-row">'
+      + '<select id="iv-form-kind" class="iv-input">'
+        + Object.keys(_KIND_LABEL).map(function(k){ return '<option value="'+k+'">'+_KIND_LABEL[k]+'</option>'; }).join('')
+      + '</select>'
+      + '<input type="text" id="iv-form-topic" class="iv-input iv-input-topic" placeholder="Tópico (opcional): ex. Dificuldade em UMP">'
+    + '</div>'
+    + '<textarea id="iv-form-note" class="iv-input iv-input-note" placeholder="Nota obrigatória: o que foi conversado, próximos passos, impressão geral..." rows="3"></textarea>'
+    + '<div class="iv-form-actions">'
+      + '<button class="iv-submit-btn" onclick="submitNewIntervention(\'' + safeMat + '\')">+ Registrar intervenção</button>'
+      + '<span class="iv-form-msg" id="iv-form-msg"></span>'
+    + '</div>'
+    + '</div>';
+
+  return '<h3>Histórico de intervenções <span style="color:var(--text-muted);font-weight:400;font-size:0.72rem">(' + ivs.length + ' registradas)</span></h3>'
+    + form
+    + '<div class="iv-list">' + items + '</div>';
+}
+
+async function submitNewIntervention(matricula) {
+  var kind  = (document.getElementById('iv-form-kind') || {}).value || 'conversation';
+  var topic = ((document.getElementById('iv-form-topic') || {}).value || '').trim();
+  var note  = ((document.getElementById('iv-form-note') || {}).value || '').trim();
+  var msg   = document.getElementById('iv-form-msg');
+
+  if (note.length < 3) {
+    if (msg) { msg.textContent = 'Nota é obrigatória (mín. 3 caracteres).'; msg.style.color = '#991B1B'; }
+    return;
+  }
+
+  if (!window.MpeDB || !window.MpeDB.addIntervention) {
+    if (msg) { msg.textContent = 'Supabase offline — intervention tracking exige backend.'; msg.style.color = '#991B1B'; }
+    return;
+  }
+
+  // Recuperar student_id pelo matricula → profile.id
+  var studentId = _profileIdFromMatricula(matricula);
+  if (!studentId) {
+    if (msg) { msg.textContent = 'Não encontrei o perfil do aluno.'; msg.style.color = '#991B1B'; }
+    return;
+  }
+
+  if (msg) { msg.textContent = 'Registrando…'; msg.style.color = 'var(--text-muted)'; }
+  var res = await window.MpeDB.addIntervention({ studentId: studentId, kind: kind, topic: topic || null, note: note });
+  if (!res.ok) {
+    if (msg) { msg.textContent = 'Erro: ' + (res.error.message || res.error); msg.style.color = '#991B1B'; }
+    return;
+  }
+
+  // Atualizar in-memory e re-renderizar modal
+  var data = window._alunosData || {};
+  if (data[matricula]) {
+    data[matricula].interventions.unshift({
+      id: res.data.id,
+      adminId: res.data.admin_id,
+      adminName: (await _getAdminNameCached()) || '(você)',
+      kind: res.data.kind,
+      topic: res.data.topic,
+      note: res.data.note,
+      outcome: null,
+      outcomeAt: null,
+      createdAt: res.data.created_at
+    });
+  }
+  showStudentProfile(matricula);
+}
+
+async function recordInterventionOutcome(id, matricula) {
+  var txt = prompt('Qual foi o resultado da intervenção?\n\nEx: "voltou a estudar regularmente", "encaminhado para monitoria", "sem mudança", "precisa nova conversa"');
+  if (!txt) return;
+  txt = String(txt).trim();
+  if (!txt) return;
+  if (!window.MpeDB || !window.MpeDB.updateInterventionOutcome) return alert('Supabase offline.');
+
+  var res = await window.MpeDB.updateInterventionOutcome(id, txt);
+  if (!res.ok) return alert('Erro: ' + (res.error.message || res.error));
+
+  // Atualizar in-memory
+  var data = window._alunosData || {};
+  if (data[matricula]) {
+    data[matricula].interventions.forEach(function(iv){
+      if (iv.id === id) { iv.outcome = res.data.outcome; iv.outcomeAt = res.data.outcome_recorded_at; }
+    });
+  }
+  showStudentProfile(matricula);
+}
+
+async function deleteInterventionConfirm(id, matricula) {
+  if (!confirm('Remover esta intervenção?\nEssa ação não pode ser desfeita.')) return;
+  if (!window.MpeDB || !window.MpeDB.deleteIntervention) return alert('Supabase offline.');
+
+  var res = await window.MpeDB.deleteIntervention(id);
+  if (!res.ok) return alert('Erro: ' + (res.error.message || res.error));
+
+  var data = window._alunosData || {};
+  if (data[matricula]) {
+    data[matricula].interventions = data[matricula].interventions.filter(function(iv){ return iv.id !== id; });
+  }
+  showStudentProfile(matricula);
+}
+
+function _profileIdFromMatricula(matricula) {
+  // _adminRaw.profiles tem {id, matricula, ...}
+  var raw = window._adminRaw;
+  if (raw && raw.profiles) {
+    for (var i = 0; i < raw.profiles.length; i++) {
+      if (raw.profiles[i].matricula === matricula) return raw.profiles[i].id;
+    }
+  }
+  return null;
+}
+
+var _adminNameCache = null;
+async function _getAdminNameCached() {
+  if (_adminNameCache) return _adminNameCache;
+  try {
+    var sess = window.MicroAuth && window.MicroAuth.getSession();
+    if (sess && sess.nome) { _adminNameCache = sess.nome; return _adminNameCache; }
+  } catch(e) {}
+  return null;
 }
 
 // Fecha modal ao teclar ESC
@@ -1373,7 +1568,7 @@ function _tx(supabaseData) {
   d.profiles.forEach(function(p) {
     byId[p.id] = p.matricula;
     users[p.matricula] = { nome: p.nome, senha: '', createdAt: p.created_at, email: p.email, role: p.role };
-    data[p.matricula] = { nome: p.nome, pages: {}, quizzes: {}, sections: {}, paperExercises: {}, reflections: {} };
+    data[p.matricula] = { nome: p.nome, pages: {}, quizzes: {}, sections: {}, paperExercises: {}, reflections: {}, interventions: [] };
   });
 
   d.pageVisits.forEach(function(pv) {
@@ -1450,6 +1645,22 @@ function _tx(supabaseData) {
       text: r.text, submittedAt: r.submitted_at,
       _nome: data[mat].nome, _matricula: mat  // helpers para render de reflexoes
     };
+  });
+
+  // Interventions (Onda 2B) — agrupa por student_id (que é o UUID do profile)
+  (d.interventions || []).forEach(function(iv) {
+    var mat = byId[iv.student_id]; if (!mat) return;
+    data[mat].interventions.push({
+      id: iv.id,
+      adminId: iv.admin_id,
+      adminName: byId[iv.admin_id] ? (data[byId[iv.admin_id]] || {}).nome : '(admin)',
+      kind: iv.kind,
+      topic: iv.topic,
+      note: iv.note,
+      outcome: iv.outcome,
+      outcomeAt: iv.outcome_recorded_at,
+      createdAt: iv.created_at
+    });
   });
 
   // Build summary (same shape as MicroTracker.getSummary)

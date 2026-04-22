@@ -257,11 +257,15 @@
           client.from('quiz_aggregates').select('*'),
           client.from('quiz_question_attempts').select('*'),
           client.from('paper_exercises').select('*'),
-          client.from('reflections').select('*').order('submitted_at', { ascending: false })
+          client.from('reflections').select('*').order('submitted_at', { ascending: false }),
+          // admin_interventions é opcional — se migration não foi aplicada ainda,
+          // devolve erro silenciosamente. Tratamento tolerante abaixo.
+          client.from('admin_interventions').select('*').order('created_at', { ascending: false })
         ]);
-        for (var i = 0; i < queries.length; i++) {
+        for (var i = 0; i < queries.length - 1; i++) { // não trava se a última (interventions) falhar
           if (queries[i].error) return { ok:false, error: queries[i].error };
         }
+        var interventions = (queries[9].error ? [] : (queries[9].data || []));
         return {
           ok: true,
           data: {
@@ -273,12 +277,44 @@
             quizAggregates:  queries[5].data || [],
             quizQA:          queries[6].data || [],
             paperExercises:  queries[7].data || [],
-            reflections:     queries[8].data || []
-          }
+            reflections:     queries[8].data || [],
+            interventions:   interventions
+          },
+          interventionsMigrationMissing: !!(queries[9].error)
         };
       } catch(e) {
         return { ok:false, error:e };
       }
+    },
+
+    // ==================== INTERVENTIONS (Onda 2B) ====================
+
+    addIntervention: async function(payload) {
+      var sess = await client.auth.getSession();
+      var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+      var row = {
+        student_id: payload.studentId,
+        admin_id:   uid,
+        kind:       payload.kind || 'conversation',
+        topic:      payload.topic || null,
+        note:       payload.note
+      };
+      var res = await client.from('admin_interventions').insert(row).select().single();
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
+    },
+
+    updateInterventionOutcome: async function(id, outcome) {
+      var res = await client.from('admin_interventions')
+        .update({ outcome: outcome, outcome_recorded_at: new Date().toISOString() })
+        .eq('id', id)
+        .select().single();
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
+    },
+
+    deleteIntervention: async function(id) {
+      var res = await client.from('admin_interventions').delete().eq('id', id);
+      return res.error ? { ok:false, error:res.error } : { ok:true };
     },
 
     // ==================== LGPD ====================
