@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 01 — Preferências, Axiomas e Utilidade — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 01 — Preferências, Axiomas e Utilidade</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões distribuídas: 5 intermediárias 🟡 (calibre N&amp;S) + 5 avançadas 🔴 (calibre Jehle-Reny / qualifier).</strong> Objetivo: ponte entre a aula presencial de hoje e a lista de exercícios avaliativos. Use-o como calibre: se fechar as cinco 🟡, você consolidou o essencial; se chegar confortavelmente nas 🔴, está pronto para a lista. <strong>Uma única submissão</strong> — responda com calma, sem chutes. Tempo estimado: <strong>40–60 min</strong> (a leitura dos gabaritos 5-passos conta).</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-01-pos" data-phase="post" data-title="Pós-Aula 01">
+
+  <h3>Pós-Aula 01 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início de cada enunciado indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 (intermediárias — calibre N&S 12e cap. 3) ========== -->
+
+  <!-- Q1 🟡 — Axiomas: qual garante existência vs. regularidade -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> No teorema de Debreu, os três axiomas <em>completude, transitividade e continuidade</em> são necessários para a existência de \(u:X\to\mathbb{R}\) contínua representando \(\succeq\). Qual deles é o axioma <strong>topológico</strong> cuja violação é exatamente ilustrada pelo contraexemplo da <strong>preferência lexicográfica</strong> (que satisfaz completude e transitividade, mas não admite representação por utilidade)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Completude — o agente não decidir entre pares torna \(u\) indeterminada.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Transitividade — ciclos em \(\succeq\) são incompatíveis com qualquer ordenação numérica.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) Continuidade — é o axioma topológico que separa as preferências representáveis das não-representáveis; sua falha é precisamente o que a lexicográfica exibe.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Monotonicidade — sem ela, curvas de indiferença seriam "faixas" e \(u\) não poderia ser contínua.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Completude e transitividade por si só já são compatíveis com representabilidade em espaços finitos/enumeráveis — o que derruba a existência em \(\mathbb{R}^n_+\) é a falta de continuidade. A preferência lexicográfica satisfaz (1) e (2), falha (3), e é o contraexemplo canônico de Debreu (1954).</p>
+      <p><strong>2. Derivação.</strong> Se \(u\) existe e é contínua, os conjuntos \(\{x: x\succeq y\}=u^{-1}([u(y),\infty))\) e \(\{x: y\succeq x\}=u^{-1}((-\infty,u(y)])\) são fechados (pré-imagem de fechado por contínua). Logo continuidade de \(\succeq\) é <em>necessária</em>. E Debreu mostra que junto com (1) e (2) também é <em>suficiente</em>.</p>
+      <p><strong>3. Armadilha.</strong> (d) é tentador: muitos alunos acham que monotonicidade é essencial para "bens serem bens". Ela dá regularidade útil (CIs finas, \(u\) bem-comportada) mas não é necessária para a <em>existência</em>. O teorema destranca a porta; monotonicidade/convexidade decoram a sala.</p>
+      <p><strong>4. Extensão.</strong> E se o espaço de escolhas fosse finito? Então (1)+(2) bastam — pode-se atribuir \(u(x)=|\{y: x\succeq y\}|\) e pronto. Continuidade só é necessária em espaços com topologia não-trivial.</p>
+      <p><strong>5. Peer-review.</strong> Completude e transitividade também são necessárias, mas são axiomas <em>de ordem</em> — sua falha ataca a própria estrutura de \(\succeq\), não a representabilidade topológica. O enunciado pergunta especificamente pelo axioma <em>topológico</em>, e é continuidade que carrega essa natureza. O contraexemplo lexicográfico é a prova empírica: completude ✓ + transitividade ✓ + continuidade ✗ ⟹ sem \(u\).</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — TMS Cobb-Douglas num ponto -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Um consumidor tem preferências representadas por \(u(x_1,x_2)=x_1^{0{,}25}\,x_2^{0{,}75}\). No pacote \((x_1,x_2)=(2,\,6)\), qual é a <strong>taxa marginal de substituição</strong> \(\text{TMS}_{12}\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\text{TMS}_{12}=3\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) \(\text{TMS}_{12}=1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\text{TMS}_{12}=\tfrac{1}{9}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(\text{TMS}_{12}=9\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em Cobb-Douglas \(u=x_1^{\alpha}x_2^{1-\alpha}\), a TMS fechada é \(\text{TMS}_{12}=\tfrac{\alpha}{1-\alpha}\cdot\tfrac{x_2}{x_1}\). Com \(\alpha=0{,}25\), o coeficiente é \(\tfrac{0{,}25}{0{,}75}=\tfrac{1}{3}\).</p>
+      <p><strong>2. Derivação.</strong> \(\text{TMS}_{12}=\tfrac{1}{3}\cdot\tfrac{6}{2}=\tfrac{1}{3}\cdot 3 = 1\).</p>
+      <p><strong>3. Armadilha.</strong> (a) resulta de ler \(\alpha=0{,}75\) (expoente do segundo bem e não do primeiro) — erro clássico de associar \(\alpha\) ao expoente "maior". (d) sai de inverter a razão \(x_2/x_1\) para \(x_1/x_2\). (c) é o recíproco de (d). Todas as três são rastros de conta mal colocada.</p>
+      <p><strong>4. Extensão.</strong> Se o aluno trocasse \(u\) pela sua transformação log \(\ln u=0{,}25\ln x_1+0{,}75\ln x_2\), a TMS daria o mesmo número — ordinalidade em ação. É por isso que preferimos a versão log para derivar.</p>
+      <p><strong>5. Peer-review.</strong> Um colega pediria checagem dimensional: TMS é adimensional quando \(x_1,x_2\) estão na mesma unidade, e é em "unidades de \(x_2\) por unidade de \(x_1\)" no caso geral. Aqui o "1" lê-se como: <em>na margem, o consumidor troca 1 unidade de \(x_2\) por 1 unidade de \(x_1\)</em>. Faz sentido econômico porque no ponto \((2,6)\) o bem 2 é abundante e o bem 1 escasso — mas \(\alpha\) pequeno puxa a troca em direção a 1.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Ordinalidade: mesmas preferências -->
+  <div class="quizg-q" data-qid="q3" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Considere quatro funções candidatas a representar preferências sobre \(\mathbb{R}^2_{++}\):
+      \[
+      u_1=x_1x_2,\quad u_2=\ln x_1 + \ln x_2,\quad u_3=(x_1x_2)^2,\quad u_4=x_1+x_2.
+      \]
+      Quais delas representam <strong>exatamente a mesma preferência</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Somente \(u_1\) e \(u_2\) — pois \(u_4\) é linear e \(u_3\) "distorce" magnitudes.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Todas as quatro — transformações monotônicas preservam preferência.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Somente \(u_1\) e \(u_3\) — ambas são polinômios em \(x_1x_2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) \(u_1\), \(u_2\) e \(u_3\) — diferem entre si por transformações estritamente crescentes; \(u_4\) induz preferência distinta (substitutos perfeitos).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Duas funções representam a mesma preferência sse uma é transformação estritamente crescente da outra (em todo \(\mathbb{R}^2_{++}\)). \(u_2=\ln u_1\) (log é estritamente crescente); \(u_3=u_1^2\) e \(u_1>0\) no ortante positivo, então \(t\mapsto t^2\) é estritamente crescente em \(u_1\). Já \(u_4=x_1+x_2\) define preferência com TMS constante igual a 1 — substitutos perfeitos —, não Cobb-Douglas.</p>
+      <p><strong>2. Derivação.</strong> Verificação via TMS:
+      \[
+      \text{TMS}(u_1)=\tfrac{x_2}{x_1},\quad \text{TMS}(u_2)=\tfrac{1/x_1}{1/x_2}=\tfrac{x_2}{x_1},\quad \text{TMS}(u_3)=\tfrac{2(x_1x_2)\cdot x_2}{2(x_1x_2)\cdot x_1}=\tfrac{x_2}{x_1},\quad \text{TMS}(u_4)=1.
+      \]
+      As três primeiras coincidem; a quarta não.</p>
+      <p><strong>3. Armadilha.</strong> (b) confunde transformação monotônica com <em>qualquer</em> mudança de forma funcional — \(u_4\) muda a estrutura. (c) exclui \(u_2\) por ser "logarítmica demais", o que é superstição algébrica; log é o exemplo paradigmático de transformação crescente. (a) acerta que \(u_4\) está fora mas tropeça em \(u_3\) achando que potência "mudou magnitudes" — magnitudes não importam, só ordem.</p>
+      <p><strong>4. Extensão.</strong> Se trocássemos \(u_3\) por \((x_1x_2)^{-1}\), aí sim a preferência inverteria: \(t\mapsto 1/t\) é estritamente <em>decrescente</em> em \(t>0\). Detalhe ordinal que separa crescente de decrescente.</p>
+      <p><strong>5. Peer-review.</strong> Um colega checaria a condição de <em>estritamente</em> crescente: \(u_3=u_1^2\) só é estritamente crescente em \(u_1\) quando \(u_1>0\), o que vale em \(\mathbb{R}^2_{++}\). Se o domínio incluísse zero ou negativos, \(t\mapsto t^2\) deixaria de ser injetora. O enunciado restringiu \(\mathbb{R}^2_{++}\) exatamente por isso.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Leontief + sigma -->
+  <div class="quizg-q" data-qid="q4" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Uma família de utilidades é dada por \(u(x_1,x_2)=\min\{2x_1,\,3x_2\}\). Qual das afirmações abaixo é <strong>correta</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) São preferências de Leontief (complementaridade perfeita) com \(\sigma=0\); no ramo \(2x_1<3x_2\) a CI é vertical e \(\text{TMS}=+\infty\); no ramo \(2x_1>3x_2\) a CI é horizontal e \(\text{TMS}=0\); no vértice \(2x_1=3x_2\) a utilidade não é diferenciável.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) São preferências CES com \(\rho=1\) (substitutos perfeitos); TMS é constante.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) São Cobb-Douglas com \(\alpha=2/5\); \(\sigma=1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) São Leontief, mas com \(\sigma=+\infty\) — consumidor é indiferente a proporções.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A forma \(u=\min\{ax_1, bx_2\}\) é a <em>definição</em> de Leontief. O vértice de cada CI "L" ocorre onde \(ax_1=bx_2\), ou seja, \(x_2=\tfrac{a}{b}x_1=\tfrac{2}{3}x_1\). Não há substituição na margem — \(\sigma=0\).</p>
+      <p><strong>2. Derivação.</strong> Se \(2x_1<3x_2\), o bem 2 é abundante — \(u=2x_1\) vincula, \(u_1=2,\,u_2=0\), \(\text{TMS}=u_1/u_2\to+\infty\). Geometricamente, para manter \(u\) constante basta manter \(x_1\) fixo (\(x_2\) livre acima do vértice) — CI é <strong>vertical</strong>. Se \(2x_1>3x_2\), simetricamente \(u=3x_2\) vincula, \(u_1=0,\,u_2=3\), \(\text{TMS}=0\) e a CI é <strong>horizontal</strong>. No vértice \(2x_1=3x_2\), utilidade não é diferenciável (canto em L). \(\sigma=\tfrac{d\ln(x_2/x_1)}{d\ln\text{TMS}}=0\) porque a proporção ótima \(x_2/x_1=2/3\) é rígida.</p>
+      <p><strong>3. Armadilha.</strong> (d) é o pior distrator: mistura Leontief com elasticidade infinita — erro canônico de decorar "0 e infinito" sem saber qual é qual. Leontief = sem substituibilidade = \(\sigma=0\). Substitutos perfeitos = substituibilidade infinita = \(\sigma=+\infty\). (b) inverte completamente: \(\rho=1\) em CES dá retas, não L's.</p>
+      <p><strong>4. Extensão.</strong> Se trocássemos \(\min\) por \(\max\), a utilidade viraria não-quasiconcava e a convexidade das preferências quebraria — CIs seriam côncavas, o que contraria o axioma (5). Detalhe que a turma pode explorar: \(\max\) representa um consumidor que "prefere extremos" (pacote todo em um só bem).</p>
+      <p><strong>5. Peer-review.</strong> A convenção "TMS \(= +\infty\) no ramo onde \(u_2=0\)" é delicada — alguns textos (MWG) definem TMS apenas em pontos interiores diferenciáveis. O enunciado usa a convenção operacional dos slides (N&amp;S / ZaE cap. 3) e nomeia explicitamente o vértice como não-diferenciável. Associação CI vertical ↔ \(u_2=0\) ↔ TMS \(+\infty\) é o que separa quem entendeu Leontief geometricamente de quem decorou "0 e infinito".</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Lei de Engel / POF -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> A POF 2017–2018 (IBGE) mostra que <em>alimentação</em> cai de 22,0% da despesa total (faixa até R$ 1.908/mês) para 7,6% (faixa acima de R$ 23.850/mês), enquanto <em>educação</em> sobe de 1,6% para 6,2% ao longo da mesma escala. Qual é a leitura <strong>correta</strong> em termos de elasticidade-renda?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Alimentação tem \(\eta>1\) e educação tem \(\eta<1\) — ambas são bens de luxo, uma mais que a outra.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Ambas têm \(\eta=1\) — parcelas mudam, mas demanda é unitariamente elástica em renda em qualquer Cobb-Douglas.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) Alimentação tem \(\eta<1\) (bem necessário, Engel) e educação tem \(\eta>1\) (bem de luxo) — queda/subida da <em>parcela</em> implica elasticidade-renda menor/maior que 1.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Nada se pode concluir sobre \(\eta\) a partir de parcelas orçamentárias — é preciso estimar demanda de cada bem separadamente.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Parcela orçamentária \(w_i=\tfrac{p_ix_i}{m}\) e elasticidade-renda \(\eta_i=\tfrac{\partial x_i}{\partial m}\tfrac{m}{x_i}\) relacionam-se por \(\tfrac{\partial w_i}{\partial \ln m}=w_i(\eta_i-1)\). Parcela cai com \(m\) ⇔ \(\eta_i<1\) (necessário); parcela sobe com \(m\) ⇔ \(\eta_i>1\) (luxo). É a Lei de Engel em forma operacional.</p>
+      <p><strong>2. Derivação.</strong> Alimentação: \(w\) cai de 0,22 para 0,076 conforme \(m\) cresce → \(\eta_{\text{alim}}<1\). Educação: \(w\) sobe de 0,016 para 0,062 → \(\eta_{\text{edu}}>1\). A POF 2017–2018 é o caso-livro brasileiro clássico.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte os dois — erro de associar "parcela maior = luxo", sem pensar na <em>direção</em> da mudança. (b) é a clássica confusão: Cobb-Douglas <em>tem</em> \(w_i\) constante, não as próprias quantidades com \(\eta=1\); ou seja, \(\eta=1\) em Cobb-Douglas é resultado de \(w\) constante, não o contrário. (d) é o cético exagerado: com dados cross-section e pressuposto de preferências estáveis, a leitura qualitativa é válida.</p>
+      <p><strong>4. Extensão.</strong> Transporte na mesma POF é <em>não-monotônico</em> (11,5 → 18,8 → 15,4): composição muda (público → privado → privado+ativos) com a renda. Esse caso foge do diagnóstico simples de Engel e motivará a discussão de heterogeneidade em sistemas de demanda (Aulas 3–4).</p>
+      <p><strong>5. Peer-review.</strong> Um colega cauteloso diria: POF é cross-section, não painel — o que medimos é variação <em>entre</em> faixas de renda, não a resposta dinâmica da mesma família a um choque de renda. Assumimos preferências homogêneas entre faixas para traduzir isso em \(\eta\). É uma hipótese razoável para o diagnóstico qualitativo, mas gera viés ao quantificar.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 (avançadas — calibre Jehle-Reny / qualifier) ========== -->
+
+  <!-- Q6 🔴 — Lexicográfica viola continuidade via sequência -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> Considere \(\succeq^L\) em \(\mathbb{R}^2_+\) (lexicográfica, bem 1 prioritário). Para mostrar que \(\succeq^L\) <strong>viola continuidade</strong>, qual das construções abaixo <strong>funciona como contraexemplo rigoroso</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Tome \(x^n=(1,\,1-\tfrac{1}{n})\to (1,1)\) e \(y=(1,1)\). Ao longo de \(n\), \(y\succeq^L x^n\); no limite, \(y\sim x\). Logo a preferência "pula" — continuidade falha.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Tome \(x^n=(1-\tfrac{1}{n},\,2)\to x=(1,2)\) e \(y=(1,1)\). Para todo \(n\), \(y\succ^L x^n\) (porque \(x_1^n<1=y_1\)), logo \(x^n\in\{z: y\succeq^L z\}\); no limite \(x\succ^L y\), então \(x\notin\{z: y\succeq^L z\}\). O conjunto inferior fraco não é fechado — continuidade falha.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Observe que \(\succeq^L\) é total e transitiva, mas não tem representação contínua (Debreu 1954). Isso <em>é</em> a violação de continuidade — não precisa de sequência.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Tome \(x=(2,0)\) e \(y=(1,100)\). Como \(x\succ^L y\), mas "intuitivamente" \(y\) deveria ser preferido, a ordem viola continuidade por absurdo intuitivo.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Continuidade de \(\succeq\) significa: para todo \(y\), \(\{z: z\succeq y\}\) e \(\{z: y\succeq z\}\) são <strong>fechados</strong>. Para violar, basta exibir uma sequência inteiramente em um desses conjuntos cujo limite escape. A construção (b) faz exatamente isso: \(x^n\) convergindo para \(x\) com \(y\succ^L x^n\) para todo \(n\), mas \(y\not\succeq^L x\) no limite. O mecanismo é que "um \(\varepsilon\) no bem 1 domina qualquer quantidade do bem 2": a fronteira entre as duas regiões é aberta.</p>
+      <p><strong>2. Derivação.</strong> Com \(x^n=(1-\tfrac{1}{n},\,2)\) e \(y=(1,1)\): como \(x_1^n=1-\tfrac{1}{n}<1=y_1\), a regra lex diz \(y\succ^L x^n\) para todo \(n\). No limite, \(x_1=1=y_1\) e \(x_2=2>1=y_2\), então \(x\succ^L y\). Logo \(x^n\in\{z: y\succeq^L z\}\) para todo \(n\), mas \(x\notin\{z: y\succeq^L z\}\) — conjunto não-fechado.</p>
+      <p><strong>3. Armadilha.</strong> (a) falha porque ao longo da sequência \(x_1^n=1=y_1\) e \(x_2^n=1-\tfrac{1}{n}<1=y_2\), logo \(y\succ^L x^n\). No limite \(x=(1,1)=y\), logo \(y\sim x\). Não há "pulo" — a preferência é contínua <em>ao longo desse eixo</em>. O contraexemplo precisa forçar o pulo entre "bem 1 menor" (preferência dominada) e "bem 1 igual" (critério passa para o bem 2). (c) inverte a ordem lógica: a não-representabilidade é <em>consequência</em> da violação de continuidade, não a própria violação. (d) é argumento de apelo intuitivo, não prova.</p>
+      <p><strong>4. Extensão.</strong> O argumento de (b) generaliza: para <em>qualquer</em> lexicográfica (em \(n\) bens), a fronteira do conjunto inferior fraco é aberta do lado "bem 1 estritamente menor". O salto acontece exatamente no ponto onde o "critério de desempate" entra em cena.</p>
+      <p><strong>5. Peer-review.</strong> Um colega cético pediria: o enunciado de continuidade pede conjuntos fechados <em>para todo</em> \(y\). Mostrar que falha para um \(y\) específico (\(y=(1,1)\)) basta — violação pontual basta para falsificar o quantificador universal. Está rigorosamente correto.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — CES → Cobb-Douglas via L'Hôpital -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Seja \(u_{\rho}(x_1,x_2)=\big(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho}\big)^{1/\rho}\) com \(\alpha\in(0,1)\) e \(\rho\in(-\infty,1]\setminus\{0\}\). Passando a \(\ln u_{\rho}\) e aplicando L'Hôpital em \(\rho\to 0\), qual é o <strong>limite de \(u_{\rho}\)</strong> (a menos de transformação monotônica)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) \(\lim_{\rho\to 0} u_{\rho}=\alpha x_1+(1-\alpha)x_2\) — substitutos perfeitos.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) \(\lim_{\rho\to 0} u_{\rho}=\min\{x_1,\,x_2\}\) — Leontief.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) \(\lim_{\rho\to 0} u_{\rho}=x_1^{\alpha}\,x_2^{1-\alpha}\) — Cobb-Douglas com os mesmos pesos \(\alpha,1-\alpha\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) O limite não existe — L'Hôpital falha porque o denominador (o \(\rho\)) vai a zero.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(\ln u_{\rho}=\tfrac{1}{\rho}\ln(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho})\) tem forma indeterminada \(\tfrac{0}{0}\) em \(\rho\to 0\) (numerador \(\ln 1=0\), denominador \(\rho=0\)). L'Hôpital em \(\rho\) aplica-se diretamente.</p>
+      <p><strong>2. Derivação.</strong> Defina \(f(\rho)=\ln(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho})\) e \(g(\rho)=\rho\). Então
+      \[
+      f'(\rho)=\frac{\alpha x_1^{\rho}\ln x_1+(1-\alpha)x_2^{\rho}\ln x_2}{\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho}},\quad g'(\rho)=1.
+      \]
+      Em \(\rho\to 0\): \(x_i^{\rho}\to 1\), numerador de \(f'\to \alpha\ln x_1+(1-\alpha)\ln x_2\), denominador \(\to \alpha+(1-\alpha)=1\). Logo
+      \[
+      \lim_{\rho\to 0}\ln u_{\rho}=\alpha\ln x_1+(1-\alpha)\ln x_2\;\Rightarrow\;\lim u_{\rho}=x_1^{\alpha}x_2^{1-\alpha}.\ \square
+      \]</p>
+      <p><strong>3. Armadilha.</strong> (a) é o limite <em>oposto</em> \(\rho\to 1\). (b) é o limite \(\rho\to-\infty\) (Leontief) — erro de confundir "o que acontece quando \(\rho\) é pequeno" com "o que acontece quando \(\rho\) é muito negativo". (d) é pânico: L'Hôpital se aplica <em>exatamente</em> quando a forma é \(\tfrac{0}{0}\). O aluno que marca (d) não reconheceu a indeterminação.</p>
+      <p><strong>4. Extensão.</strong> O mesmo mecanismo gera Leontief em \(\rho\to-\infty\): reescrever \(u_{\rho}=(\min_i x_i)\cdot(\cdots)^{1/\rho}\) com o termo entre parênteses indo a 1, e o \(\min\) dominando. Alberto vai detalhar esse limite na monitoria.</p>
+      <p><strong>5. Peer-review.</strong> Um colega pediria: a convergência é pontual ou uniforme em compactos? Pontual basta para igualdade de preferências representadas (é uma convergência de <em>funções</em> que representam a mesma preferência no limite). Mas se quisermos continuidade do limite como função de \((\rho,x)\), precisamos de uniformidade — o que vale em compactos de \(\mathbb{R}^2_{++}\). Está certo no escopo da pergunta.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — Convexidade estrita vs fraca -->
+  <div class="quizg-q" data-qid="q8" data-correct="a" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Considere três propriedades sobre \(u:\mathbb{R}^2_{++}\to\mathbb{R}\) diferenciável e com \(\nabla u\neq 0\):
+      (P1) \(u\) é quasiconcava;
+      (P2) \(u\) é estritamente quasiconcava;
+      (P3) A TMS ao longo de cada curva de indiferença é <em>estritamente decrescente</em> em \(x_1\).
+      Qual é a <strong>correspondência correta</strong> com axiomas de convexidade da preferência \(\succeq\) (fraca vs. estrita)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(\succeq\) convexa (fraca) \(\Leftrightarrow\) P1. \(\succeq\) estritamente convexa \(\Leftrightarrow\) P2 \(\Leftrightarrow\) P3 (com diferenciabilidade e unicidade de TMS). Convexidade fraca garante TMS decrescente não-estritamente; a estrita é quem dá P3.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) \(\succeq\) convexa (fraca) \(\Leftrightarrow\) P3 — TMS decrescente é o que "define" convexidade econômica. P1 e P2 são meras reformulações em linguagem de conjuntos.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(\succeq\) estritamente convexa \(\Leftrightarrow\) P1. P2 e P3 são condições <em>mais fracas</em>, que permitem CIs com trechos lineares.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) As três propriedades são equivalentes entre si e equivalentes a \(\succeq\) estritamente convexa — convexidade fraca exige algo <em>diferente</em> (concavidade de \(u\), por exemplo).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A escada hierárquica é: \(\succeq\) convexa fraca \(\Leftrightarrow\) \(u\) quasiconcava \(\Leftrightarrow\) conjuntos superiores de nível \(\{x: u(x)\geq \bar u\}\) convexos \(\Leftrightarrow\) TMS <em>não-crescente</em> (não estritamente) em \(x_1\) ao longo de CI. A versão estrita de cada elo casa com a outra: \(\succeq\) estritamente convexa \(\Leftrightarrow\) \(u\) estritamente quasiconcava \(\Leftrightarrow\) TMS <em>estritamente</em> decrescente.</p>
+      <p><strong>2. Derivação.</strong> Esboço: \(u\) quasiconcava significa que o conjunto \(\{x: u(x)\geq u(\bar x)\}\) é convexo. Se \(x,y\) estão nesse conjunto, o segmento \(\lambda x+(1-\lambda)y\) também está — em termos de preferência, se \(x\succeq \bar x\) e \(y\succeq \bar x\) então \(\lambda x+(1-\lambda)y\succeq \bar x\). Isso é exatamente \(\succeq\) convexa fraca. A versão estrita exige \(>\) para \(\lambda\in(0,1)\) e \(x\neq y\), o que corresponde a \(u\) <em>estritamente</em> quasiconcava. Diferenciabilidade + unicidade de TMS traduz "conjunto estritamente convexo" em "TMS estritamente monótona".</p>
+      <p><strong>3. Armadilha.</strong> (b) diz que P3 caracteriza convexidade fraca — erro de confundir "TMS decrescente" com "TMS <em>estritamente</em> decrescente". Substitutos perfeitos têm TMS constante (decrescente não-estritamente), preferência é convexa fraca mas não estrita. (c) inverte P1/P2 — P2 é a versão mais forte. (d) confunde concavidade (cardinal, não preservada por transformação monótona) com quasiconcavidade.</p>
+      <p><strong>4. Extensão.</strong> Por que o curso trabalha com convexidade <em>fraca</em> como default? Porque ela basta para o UMP ter solução (conjunto de soluções convexo e não-vazio) e para os teoremas de bem-estar. A estrita é o que garante <em>unicidade</em> da demanda — útil para diferenciabilidade da \(x^M(p,m)\).</p>
+      <p><strong>5. Peer-review.</strong> Um colega formal observaria: "TMS estritamente decrescente em \(x_1\)" precisa da qualificação <em>ao longo da curva de indiferença</em>. Se lêssemos "em \(x_1\) para \(x_2\) fixo", obteríamos outra propriedade (concavidade em \(x_1\), que é cardinal). O enunciado traz a qualificação correta.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — Quasilinear e excedente bem-definido -->
+  <div class="quizg-q" data-qid="q9" data-correct="d" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Seja \(u(x_1,x_2)=v(x_1)+x_2\) com \(v'>0\), \(v''<0\). Em <strong>soluções interiores</strong>, por que o <strong>excedente do consumidor</strong> definido pela área sob a demanda Marshalliana do bem 1 coincide com a <strong>variação equivalente</strong> (Hicks)?
+      <br><span style="font-size:0.82em;color:#4A5568"><em>Pré-requisito:</em> familiaridade com a decomposição de Slutsky Marshalliana — \(\partial x^M/\partial p = \partial h/\partial p - x^M \cdot \partial x^M/\partial m\) — antecipada no slide "Excedente do consumidor" e formalizada na Aula 3.</em></span>
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Porque \(v\) é estritamente côncava — concavidade de \(u\) é o que garante áreas bem-definidas sob demanda.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Porque o bem 2 é <em>numerário</em> (preço normalizado a 1) e isso, por si só, já identifica Marshalliana com Hicksiana.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) Porque \(x_1^M(p_1,p_2,m)\) é homogênea de grau 0 — propriedade que só preferências quasilineares têm.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Porque em solução interior \(\partial x_1^M/\partial m=0\): Slutsky implica \(\partial x_1^M/\partial p_1=\partial h_1/\partial p_1\), logo as curvas de demanda ordinária e compensada coincidem no bem 1 — a área sob uma é a área sob a outra.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A razão pela qual três medidas de bem-estar (CS-Marshalliana, CV, EV) divergem em geral é o <em>efeito-renda</em>. Em quasilinear interior, o efeito-renda sobre o bem não-numerário é zero, então Slutsky \(\partial x_1^M/\partial p_1=\partial h_1/\partial p_1-x_1^M\cdot\partial x_1^M/\partial m\) colapsa para \(\partial x_1^M/\partial p_1=\partial h_1/\partial p_1\). Demanda ordinária = demanda compensada no bem 1.</p>
+      <p><strong>2. Derivação.</strong> CPO interior: \(v'(x_1)=p_1/p_2\), independente de \(m\). Logo \(x_1^M=(v')^{-1}(p_1/p_2)\), não depende de \(m\). Diferenciando em \(m\): \(\partial x_1^M/\partial m=0\). Substituindo em Slutsky, \(\partial x_1^M/\partial p_1=\partial h_1/\partial p_1\). Integrando \(-\partial x_1^M/\partial p_1\) em \(p_1\), a área sob a Marshalliana (entre os preços pré e pós-choque) é <em>exatamente</em> a EV — o agente precisaria dessa transferência em renda para ficar indiferente ao choque.</p>
+      <p><strong>3. Armadilha.</strong> (a) troca concavidade por quasiconcavidade — "áreas sob demanda" são bem-definidas para qualquer demanda mensurável, não exigem concavidade de \(u\). (b) é o erro mais sedutor: achar que basta normalizar o preço do bem 2 para ter Hicksiana = Marshalliana. Em preferências não-quasilineares, mesmo com numerário, CV e EV diferem. (c) inverte o teorema: homogeneidade de grau 0 vale para <em>toda</em> demanda Marshalliana (não só quasilinear) e não tem nada a ver com identificação com Hicksiana.</p>
+      <p><strong>4. Extensão.</strong> Willig (1976) quantifica o erro de usar CS-Marshalliana em preferências não-quasilineares: é de ordem \((\eta\cdot w_i)/2\) onde \(\eta\) é elasticidade-renda e \(w_i\) parcela orçamentária. Quando ambos são pequenos, o erro é de segunda ordem — daí a prática de usar CS mesmo fora de QL em política pública. Em QL é exato, não aproximação.</p>
+      <p><strong>5. Peer-review.</strong> Um colega observaria: a condição "solução interior" é carga. Se renda é baixa o bastante para \(x_2^M=0\) ser ótima, o consumidor gasta tudo no bem 1 e o efeito-renda sobre \(x_1\) reaparece. O enunciado explicita "soluções interiores" exatamente por isso — o mesmo cuidado que os slides destacam ao anunciar "efeito-renda zero <em>desde que solução interior</em>".</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴 — Debreu: qual axioma é necessário -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴</strong> O teorema de Debreu estabelece: se \(\succeq\) sobre \(X\subseteq\mathbb{R}^n_+\) é completa, transitiva e contínua, então existe \(u\) contínua representando \(\succeq\). Considere agora as <strong>recíprocas</strong>: se \(\succeq\) admite representação por \(u\) contínua, o que pode-se concluir dos axiomas (1)–(5)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Completude, transitividade, continuidade, monotonicidade e convexidade — todos cinco são necessários.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Apenas completude, transitividade e continuidade são necessários. Monotonicidade e convexidade <strong>não</strong> seguem da existência de \(u\) contínua — o teorema destranca a porta, mas não decora a sala.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Apenas continuidade é necessária; completude e transitividade são consequências automáticas de qualquer \(u:X\to\mathbb{R}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Nenhum axioma é estritamente necessário — Debreu dá apenas condição suficiente, não necessária.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> (1)–(3) são <em>necessários e suficientes</em> para representação contínua (com \(X\) conexo e separável — hipóteses naturalmente satisfeitas em \(\mathbb{R}^n_+\)). (4) e (5) são <em>hipóteses adicionais</em> que trazem regularidade econômica útil (CIs finas, TMS decrescente), mas não são implicadas pela mera existência de \(u\) contínua.</p>
+      <p><strong>2. Derivação.</strong> Se \(u\) contínua representa \(\succeq\):
+      <br>— <em>Completude</em>: para qualquer \(x,y\), ou \(u(x)\geq u(y)\) ou \(u(y)\geq u(x)\) (ordem total em \(\mathbb{R}\)). ✓
+      <br>— <em>Transitividade</em>: \(\geq\) em \(\mathbb{R}\) é transitiva. ✓
+      <br>— <em>Continuidade</em>: \(\{x: x\succeq y\}=u^{-1}([u(y),\infty))\) é fechado (pré-imagem de fechado). ✓
+      <br>Mas \(u(x_1,x_2)=-x_1-x_2\) é contínua e representa preferências <em>anti-monotônicas</em> (menos é melhor) — viola (4). E \(u(x_1,x_2)=-\min\{(x_1-1)^2+(x_2-1)^2\}\) representa preferência por um ponto fixo — conjuntos superiores não-convexos, viola (5). Então (4) e (5) não seguem.</p>
+      <p><strong>3. Armadilha.</strong> (a) é o erro mais frequente: o aluno vê os cinco axiomas no Panorama e assume que todos fazem parte do "pacote necessário". O próprio slide "o que o teorema diz e não diz" alerta contra isso. (c) pula completude e transitividade como "automáticas" — são necessárias de verdade, só são triviais de verificar para \(u\) dada. (d) é ceticismo exagerado: Debreu dá <em>iff</em> (no escopo de \(X\) conexo separável), não só "se".</p>
+      <p><strong>4. Extensão.</strong> Preferências monotônicas e convexas são escolhas de <em>modelagem</em> — o modelador impõe por corresponder à situação econômica (bens que são bens, diversificação preferida). Não são verdades universais sobre consumidores. Aula 3 retoma isso ao discutir preferências reveladas: se as escolhas são inconsistentes com monotonicidade, precisamos mudar o modelo, não acusar o dado.</p>
+      <p><strong>5. Peer-review.</strong> Um colega exigente perguntaria: o teorema original de Debreu (1954) exige \(X\) conexo e separável em segundo sentido (segundo-enumerável). Em \(\mathbb{R}^n_+\) isso vale trivialmente. Em espaços mais exóticos (ex.: preferências sobre distribuições de probabilidade com topologia forte), pode ser que (1)+(2)+(3) não bastem sem hipótese de separabilidade adicional — o enunciado foi cuidadoso ao restringir a \(\mathbb{R}^n_+\).</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 1 (se disponível) ou volte ao <a href="aula-01.html">material da aula</a> para revisar os pontos que ficaram imprecisos. A <strong>Pré-aula 2</strong> é liberada em <strong>23/04</strong>: tema UMP, EMP e Dualidade.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-01-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

@@ -655,8 +655,8 @@ $$
 ::: {}
 **TMS:**
 
-- No ramo horizontal ($a x_1 < b x_2$): $\text{TMS} = 0$.
-- No ramo vertical ($a x_1 > b x_2$): $\text{TMS} = \infty$.
+- Ramo $a x_1 < b x_2$ (bem 2 abundante; CI **vertical**): $\text{TMS} = +\infty$.
+- Ramo $a x_1 > b x_2$ (bem 1 abundante; CI **horizontal**): $\text{TMS} = 0$.
 - No **vértice** ($a x_1 = b x_2$): **não-diferenciável**.
 
 :::
