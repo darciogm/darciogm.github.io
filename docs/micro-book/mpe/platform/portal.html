@@ -308,7 +308,7 @@ async function downloadMyData() {
 setTimeout(checkPasswordGate, 400);
 
 var AULAS = [
-  {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true},
+  {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true, preAvailable:true, posAvailable:false, posOpensOn:'23/04'},
   {n:2,  title:'Maximização, Minimização de Gasto e Dualidade', desc:'UMP e EMP, demandas Marshalliana e Hicksiana, identidades de Roy e Shephard, dualidade', cap:'ZaE 4 · N&S 12e 4', time:90, available:false},
   {n:3,  title:'Slutsky, Elasticidades e Princípios de Estimação', desc:'Decomposição de Slutsky, bens normais/inferiores/Giffen, matriz e propriedades, identificação em demanda', cap:'ZaE 5 · N&S 12e 5-6', time:90, available:false},
   {n:4,  title:'Equilíbrio Geral: Trocas e Produção', desc:'Caixa de Edgeworth, núcleo, equilíbrio walrasiano, extensão para economia com produção', cap:'ZaE EG · N&S 12e 13', time:75, available:false},
@@ -442,16 +442,32 @@ function renderPortal() {
     if (pg.totalTime) totalTime += pg.totalTime;
     if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
 
-    var cardBody = '<div class="aula-num">Aula ' + String(a.n).padStart(2,'0') + ' &middot; ' + a.cap + '</div>'
+    var pid2 = String(a.n).padStart(2,'0');
+    var cardHeader = '<div class="aula-num">Aula ' + pid2 + ' &middot; ' + a.cap + '</div>'
       + '<div class="aula-title">' + a.title + '</div>'
       + '<div class="aula-desc">' + a.desc + '</div>'
       + '<div class="aula-meta"><span class="time">&#9201; ' + a.time + ' min</span>'
       + '<span class="badge ' + badgeClass + '">' + badge + '</span></div>';
 
     if (a.available) {
-      gridHtml += '<div class="aula-card"><a href="aula-' + String(a.n).padStart(2,'0') + '.html">' + cardBody + '</a></div>';
+      // Barra de CTAs: pré-aula · material · pós-aula
+      var ctaStyleBase = 'display:inline-block;padding:0.35rem 0.6rem;margin:0.15rem 0.2rem 0 0;border-radius:4px;font-size:0.72rem;font-weight:600;text-decoration:none;line-height:1.2;';
+      var ctaActive = ctaStyleBase + 'background:var(--accent);color:#fff;';
+      var ctaMain = ctaStyleBase + 'background:var(--primary);color:#fff;';
+      var ctaLocked = ctaStyleBase + 'background:#e2e8f0;color:#64748b;cursor:not-allowed;';
+
+      var preBtn = a.preAvailable
+        ? '<a href="aula-' + pid2 + '-pre.html" style="' + ctaActive + '" title="Quiz de revisão pré-aula (10 questões 🟡)">📝 Pré-aula</a>'
+        : '<span style="' + ctaLocked + '">📝 Pré-aula</span>';
+      var materialBtn = '<a href="aula-' + pid2 + '.html" style="' + ctaMain + '" title="Material de leitura + micro-checkpoints">📖 Material</a>';
+      var posBtn = a.posAvailable
+        ? '<a href="aula-' + pid2 + '-pos.html" style="' + ctaActive + '" title="Quiz pós-aula (5🟡 + 5🔴)">✍ Pós-aula</a>'
+        : '<span style="' + ctaLocked + '" title="Abre em ' + (a.posOpensOn || 'data a definir') + '">✍ Pós-aula (' + (a.posOpensOn || 'em breve') + ')</span>';
+      var ctaRow = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #e2e8f0;">' + preBtn + materialBtn + posBtn + '</div>';
+
+      gridHtml += '<div class="aula-card">' + cardHeader + ctaRow + '</div>';
     } else {
-      gridHtml += '<div class="aula-card" style="opacity:0.5;cursor:not-allowed">' + cardBody + '</div>';
+      gridHtml += '<div class="aula-card" style="opacity:0.5;cursor:not-allowed">' + cardHeader + '</div>';
     }
   });
 
