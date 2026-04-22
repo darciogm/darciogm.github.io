@@ -96,8 +96,8 @@ Professor, monitor, matéria, espaço-tempo.
 
 **Darcio Genicolo-Martins**
 
-- PhD em Economia (USP / Chicago visiting)
-- Linhas: microeconomia aplicada, organização industrial, direito & economia
+- PhD em Economia pelo Insper
+- Linhas: microeconomia aplicada e *law and economics*
 - No Insper desde 2019 — graduação, mestrado profissional, executivo
 - Autor do livro *Microeconomia: do Zero ao Equilíbrio (e além)* — o "ZaE" que aparece nas leituras
 
@@ -127,11 +127,12 @@ Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitori
 
 **Alberto Nishikawa**
 
-- Doutorando em Economia
+- Doutorando em Economia pelo Insper
 - Experiência de monitoria em microeconomia intermediária e avançada
 - Vai conduzir **5 monitorias-chave** aos sábados (ver calendário adiante), com foco em:
   - Resolução comentada de exercícios
-  - Passagens técnicas que a aula magistral resvala de leve
+  - Passagens técnicas que a aula resvala de leve
+  - **Ocasionalmente** introduz matéria nova e extensões além do que cobrimos em sala
   - Preparação para a avaliação final
 
 :::
@@ -139,7 +140,7 @@ Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitori
 ::: {}
 
 ::: {.callout-note}
-Presença em monitoria **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula magistral e nunca vai na monitoria termina o curso entendendo, mas não dominando.
+Presença em monitoria **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai na monitoria termina o curso entendendo, mas não dominando.
 :::
 
 :::
@@ -170,33 +171,16 @@ O curso fecha Micro I para quem vai fazer Macro, Econometria ou Finanças no MPE
 
 ## Quando, onde, por quanto tempo {background-color="#FFFFFF"}
 
-::: {.cols}
-
-::: {}
-
-### Aulas magistrais
-
-- **Sextas-feiras**, 22/04 a 17/06
-- **19:30 – 22:30** (3h com 1 intervalo de 10 min)
-- Presencial no Insper — sala confirmada no Blackboard
-- **9 encontros**
-
+::: {.compact-table}
+| Componente | Frequência | Horário | Formato |
+|---|---|---|---|
+| **Aulas** (9 encontros) | Quartas, 22/04 – 17/06 | 19:30 – 22:30 (3h) | Presencial, Insper |
+| **Monitorias** (5 encontros) | Sábados: 16/05, 23/05, 30/05, 13/06, 20/06 | ~2h | Virtual (link no portal) |
+| **Avaliação final** | 24/06 (quarta) | 3h | Presencial, Insper |
 :::
 
-::: {}
-
-### Monitorias
-
-- Sábados-chave com Alberto:
-  - 16/05, 23/05, 30/05, 13/06, 20/06
-- ~2h cada, **virtual** (link no portal)
-
-### Avaliação final
-
-- 24/06/2026 (quarta) — **presencial**, 3h
-
-:::
-
+::: {.bridge}
+Sala confirmada no Blackboard. Datas são fixas — conflitos pessoais para mim, por email.
 :::
 
 ---
@@ -226,12 +210,12 @@ Nota final = 0.70 × Prova Final + 0.30 × Engajamento
 |---|---|---|
 | **Pré-aulas** | 30% | Seções completadas + micro-checkpoints + quiz de revisão (10🟡) |
 | **Quizzes pós-aula** | 30% | 10 questões cada (5🟡 + 5🔴), 1 por aula |
-| **Listas de exercícios** | 30% | 5–8 exercícios 🟢/🟡/🔴 por aula, gabarito 5-passos pós-prazo |
+| **Exercícios avaliativos** | 30% | 5–8 exercícios 🟢/🟡/🔴 por aula, tudo **dentro da plataforma**, gabarito 5-passos após prazo |
 | **Reflexões qualitativas** | 10% | Texto curto ao fim de cada pré-aula — alimenta o Bloco 0 da aula seguinte |
 :::
 
 ::: {.bridge}
-Tudo é rastreado automaticamente pela plataforma. Você não precisa entregar nada por email — só fazer o que pede na página.
+Tudo é rastreado e avaliado automaticamente pela plataforma. Nada por email, nada em papel. Correção e gabaritos saem com as respostas registradas.
 :::
 
 ---
@@ -291,7 +275,7 @@ Dá para tirar nota boa com prova ok + engajamento forte, e vice-versa. O sistem
 
 ## Bloco C — O fluxo semanal {.section-divider background-color="#1B3A5C"}
 
-Cadência pensada para 4–6h/semana fora da aula magistral.
+Cadência pensada para 4–6h/semana fora da aula.
 
 ---
 
@@ -300,12 +284,12 @@ Cadência pensada para 4–6h/semana fora da aula magistral.
 ::: {.compact-table}
 | Quando | O que fazer | Tempo-alvo |
 |---|---|---|
-| **Sexta à noite após a aula** | Descansar. Sério. | — |
-| **Sáb/dom** | Pré-aula da próxima semana: leitura dirigida + micro-checkpoints | 75–90 min |
-| **Seg/ter** | Lista de exercícios da aula recém-encerrada (para nota) | 2–3 h |
-| **Qua** | Quiz pós-aula (10 questões) — **abre quarta, fecha sexta 18h** | 30 min |
-| **Qui** | Quiz de revisão da pré-aula (10🟡) + reflexão | 30 min |
-| **Sexta 19:30** | Aula magistral nova | 3 h |
+| **Quarta à noite após a aula** | Descansar. Sério. | — |
+| **Qui/sex/sáb** | Pré-aula da próxima semana: leitura dirigida + micro-checkpoints | 75–90 min |
+| **Dom/seg** | Exercícios avaliativos da aula recém-encerrada (na plataforma) | 2–3 h |
+| **Terça** | Quiz pós-aula (10 questões) — **abre qui, fecha qua 18h** | 30 min |
+| **Terça** | Quiz de revisão da pré-aula (10🟡) + reflexão | 30 min |
+| **Quarta 19:30** | Aula nova | 3 h |
 :::
 
 ::: {.bridge}
@@ -317,13 +301,13 @@ Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado de manhã
 ## Prazos — a parte que importa {background-color="#FFFFFF"}
 
 ::: {.callout-warn}
-**Regra de fechamento:** cada ciclo fecha na **sexta 18:00** (1h30 antes da próxima aula magistral).
+**Regra de fechamento:** cada ciclo fecha na **quarta 18:00** (1h30 antes da próxima aula).
 
 Depois disso:
 
 - Pré-aula da semana: **trava para entrada** no tracker
 - Quiz pós-aula da aula anterior: **fecha**
-- Lista de exercícios: prazo estendido declarado no próprio arquivo (tipicamente 1 semana após aula)
+- Exercícios avaliativos: prazo declarado no próprio item da plataforma (tipicamente 1 semana após aula)
 :::
 
 ::: {.bridge}
@@ -340,32 +324,16 @@ Onde tudo acontece fora da sala de aula.
 
 ## Portal do aluno {background-color="#FFFFFF"}
 
-::: {.cols-2-3}
+**Cards das 9 aulas** com 3 estados: cinza (não liberada) · vermelho "Nova" · verde "Concluída".
 
-::: {}
-
-**Ao logar**, você cai no portal — a página com os cards das 9 aulas. Cada card em estado:
-
-- **Cinza** — aula ainda não liberada
-- **Vermelho "Nova"** — aula disponível agora
-- **Verde "Concluída"** — pré-aula + pós-aula entregues
-
-Cada card tem três botões quando a aula está ativa:
+Quando a aula está ativa, o card mostra **3 botões**:
 
 - **📝 Pré-aula** — quiz de revisão (10🟡)
 - **📖 Material** — leitura dirigida + micro-checkpoints
 - **✍ Pós-aula** — quiz avaliativo (5🟡 + 5🔴)
 
-:::
-
-::: {}
-
-::: {.callout-note}
-**Senha inicial** é a parte do seu email antes do `@`. Na primeira vez que logar, a plataforma **força** troca de senha. Escolha uma forte — ela dá acesso às suas notas.
-:::
-
-:::
-
+::: {.callout-note style="margin-top: 0.8em;"}
+**Senha inicial** = parte do seu email antes do `@`. No primeiro login, a plataforma **força** troca de senha.
 :::
 
 ---
@@ -416,10 +384,10 @@ Bilateral. Cada lado assume a parte dele.
 ## Eu, aluno, me comprometo a... {background-color="#FFFFFF"}
 
 ::: {.incremental}
-1. Fazer a **pré-aula antes** da aula magistral — não como tarefa, como leitura real que prepara o terreno.
+1. Fazer a **pré-aula antes** da aula — não como tarefa, como leitura real que prepara o terreno.
 2. Tentar os micro-checkpoints **sem consultar** primeiro. Errar na primeira tentativa é dado útil, não vergonha.
 3. Registrar dúvidas na reflexão final da pré-aula. Elas alimentam o Bloco 0 da aula seguinte.
-4. Entregar as **listas de exercícios no prazo** — sem esperar o gabarito circular pra "entregar depois".
+4. Entregar os **exercícios avaliativos na plataforma** dentro do prazo — sem esperar o gabarito sair pra "entregar depois".
 5. **Participar** em sala. MPE que vem só para escutar sai pela metade.
 6. Ir nas monitorias relevantes pro meu nível. Se não for necessário, combino com o Alberto.
 :::
@@ -431,8 +399,8 @@ Bilateral. Cada lado assume a parte dele.
 ::: {.incremental}
 1. **Aula preparada**, cronometrada, com material disponibilizado com antecedência.
 2. Usar as **reflexões qualitativas** para abrir a aula seguinte (Bloco 0 de ~10 min focado no que travou mais gente).
-3. Dar **feedback individual** ao fim do ciclo de 4 aulas (meio do curso) pra quem estiver abaixo da média.
-4. Devolver **listas corrigidas em até 1 semana** — com comentário onde for preciso, gabarito 5-passos onde for procedimento.
+3. Dar **feedback individual** ao fim do ciclo de 4 aulas (meio do curso) pra quem estiver abaixo da média — baseado no que o tracker registra.
+4. Liberar o **gabarito 5-passos** de cada lote de exercícios avaliativos logo após o prazo fechar.
 5. Responder **emails em até 48h úteis**. Se for demorar mais, aviso.
 6. Abrir exceções com base em **motivo, não em quantidade** de pedido. Quem pedir com justificativa razoável tem.
 :::
@@ -445,20 +413,20 @@ As 15 datas que importam.
 
 ---
 
-## As 9 aulas magistrais {background-color="#FFFFFF"}
+## As 9 aulas {background-color="#FFFFFF"}
 
-::: {.compact-table}
-| Aula | Data | Tema | Leitura-piso N&S |
+::: {.compact-table style="font-size: 0.62em;"}
+| # | Data | Tema | N&S |
 |---|---|---|---|
-| 1 | 22/04 | Preferências, axiomas, utilidade | Cap. 3 |
-| 2 | 29/04 | UMP, EMP, dualidade | Cap. 4 |
-| 3 | 06/05 | Slutsky, elasticidades, demanda de mercado | Caps. 5–6 |
-| 4 | 13/05 | Equilíbrio geral em trocas (Edgeworth) | Cap. 13 |
-| 5 | 20/05 | Equilíbrio geral com produção | Cap. 13 |
-| 6 | 27/05 | Arrow-Debreu I — incerteza, utilidade esperada | Cap. 7 |
-| 7 | 03/06 | Arrow-Debreu II — mercados completos, ativos | Cap. 18 |
-| 8 | 10/06 | Externalidades, bens públicos, Coase | Cap. 19 |
-| 9 | 17/06 | Informação assimétrica — adversa, moral, sinalização | Cap. 18 + extras |
+| 1 | 22/04 | Preferências, axiomas, utilidade | 3 |
+| 2 | 29/04 | UMP, EMP, dualidade | 4 |
+| 3 | 06/05 | Slutsky, elasticidades, demanda | 5–6 |
+| 4 | 13/05 | Equilíbrio geral em trocas (Edgeworth) | 13 |
+| 5 | 20/05 | Equilíbrio geral com produção | 13 |
+| 6 | 27/05 | Arrow-Debreu I — incerteza | 7 |
+| 7 | 03/06 | Arrow-Debreu II — ativos, mercados completos | 18 |
+| 8 | 10/06 | Externalidades, bens públicos, Coase | 19 |
+| 9 | 17/06 | Informação assimétrica — adversa, moral, sinalização | 18+ |
 :::
 
 ---
@@ -509,7 +477,7 @@ Três livros, um piso, um teto, um mapa.
 
 Leia linearmente, parando em cada equação numerada. Reproduza no papel pelo menos as equações que a pré-aula destaca.
 
-Volte ao capítulo depois da aula magistral — pontos que pareciam enjoativos costumam ficar claros.
+Volte ao capítulo depois da aula — pontos que pareciam enjoativos costumam ficar claros.
 :::
 
 :::
@@ -560,49 +528,7 @@ Pedagogicamente: leio N&S para formar o modelo mental, Jehle-Reny quando quero e
 
 ---
 
-## Bloco H — LGPD {.section-divider background-color="#1B3A5C"}
-
-Seus dados, seus direitos, minha responsabilidade.
-
----
-
-## O que é coletado, para que {background-color="#FFFFFF"}
-
-**Controlador dos dados:** Prof. Darcio Genicolo-Martins (`darciogm1@insper.edu.br`)
-
-::: {.compact-table}
-| Dado | Para que | Quem vê |
-|---|---|---|
-| Nome, email, matrícula | Identificar você na plataforma | Você, professor, Insper |
-| Respostas de quiz/micro-checkpoint | Calibrar ensino + nota de engajamento | Você, professor |
-| Reflexões qualitativas | Abrir Bloco 0 da aula seguinte | Você, professor (anonimizadas em sala) |
-| Tempo nas páginas, cliques | Calcular componente de engajamento | Você, professor |
-| Confidence ratings | Detectar descompasso entre sentir e saber | Você, professor |
-:::
-
-::: {.bridge}
-Nada disso é compartilhado com terceiros. Nada disso vira publicação sem seu consentimento explícito.
-:::
-
----
-
-## Seus direitos (e como exercer) {background-color="#FFFFFF"}
-
-::: {.incremental}
-1. **Acesso** — exportar todos seus dados: botão "Meus dados" no portal gera JSON completo.
-2. **Retificação** — email pedindo correção (ex.: nome errado).
-3. **Eliminação** — ao fim do curso, pedir exclusão dos registros. Nota final é preservada por 5 anos (exigência institucional).
-4. **Revogação de consentimento** — pode revogar a qualquer momento. Para a coleta futura. Dados já coletados ficam (já foram usados para compor nota).
-5. **Política completa** — link `/privacidade.html` no portal, base legal de cada tratamento.
-:::
-
-::: {.callout-warn style="margin-top: 1em;"}
-**Sem consentimento → sem telemetria.** Seu login funciona, você vê os materiais, mas nada é gravado no servidor — e sem registro, o componente de engajamento fica zerado. Preferência sua, respeitada.
-:::
-
----
-
-## Bloco I — Contato {.section-divider background-color="#4A0E15"}
+## Bloco H — Contato {.section-divider background-color="#4A0E15"}
 
 Um canal oficial. Use bem.
 
@@ -649,7 +575,7 @@ Resposta em até 48h úteis. Se demorar mais, reenvie — pode ter caído em fil
 
 ---
 
-## Bloco J — Próximos passos {.section-divider background-color="#1B3A5C"}
+## Bloco I — Próximos passos {.section-divider background-color="#1B3A5C"}
 
 Começamos agora. Aula 1 já liberada.
 
@@ -658,18 +584,17 @@ Começamos agora. Aula 1 já liberada.
 ## O que fazer ao sair daqui {background-color="#FFFFFF"}
 
 ::: {.incremental}
-1. **Logar no portal** — `darciogm.github.io/mpe-platform/` — trocar a senha.
-2. **Consentir** a política LGPD se ainda não tiver consentido (modal aparece no primeiro login após este consent).
-3. **Entrar na Pré-aula 1** — "📝 Pré-aula" no card da Aula 1.
+1. **Logar no portal** — `darciogm.github.io/mpe-platform/` — trocar a senha no primeiro acesso.
+2. **Entrar na Pré-aula 1** — "📝 Pré-aula" no card da Aula 1.
    - Leitura dirigida (ZaE Cap. 3 + N&S Cap. 3)
    - 9 seções sequenciais, 75–90 min
    - Micro-checkpoints obrigatórios com até 3 tentativas
-4. **Fechar a pré-aula** antes da aula magistral de sexta (22/04 19:30).
-5. **Anotar a dúvida mais forte** na reflexão final — ela entra no Bloco 0 da aula.
+3. **Fechar a pré-aula** antes da aula de quarta (22/04 19:30).
+4. **Anotar a dúvida mais forte** na reflexão final — ela entra no Bloco 0 da aula.
 :::
 
 ::: {.bridge}
-Se você terminou a pré-aula e ainda sobrou tempo: o quiz de revisão (10🟡) está lá para verificar que sedimentou. Fecha em sexta 18h.
+Se você terminou a pré-aula e ainda sobrou tempo: o quiz de revisão (10🟡) está lá para verificar que sedimentou. Fecha em quarta 18h.
 :::
 
 ---
