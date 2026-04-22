@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 02 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 02</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">UMP, EMP e Dualidade (Marshalliana, Hicksiana, Roy, Shephard)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~29 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong> — responda com calma, sem chute.</p>
+<p style="margin-top:0.6rem"><strong>Prazo unificado: quarta 06/05 às 18:00</strong> — 1h30 antes da Aula 3. <em>Exceção pontual do semestre</em>: o calendário das Aulas 1 e 2 é unificado (união das duas janelas). Da Aula 3 em diante, o ciclo volta ao normal (1 semana por aula).</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 07/05 às 00:00</strong>, um dia após o fechamento. Isso preserva a integridade do exercício para toda a turma. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-02-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 02">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">UMP em Cobb-Douglas: tangência, parcelas, verificação</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor tem preferência em \(\mathbb{R}^2_{++}\) representada por</p>
+      \[
+      u(x_1, x_2) = x_1^{1/3}\,x_2^{2/3}.
+      \]
+      <p>Enfrenta preços \(p = (p_1, p_2) = (3, 2)\) e renda \(m = 36\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A condição de tangência no ótimo interior do UMP estabelece:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(\text{TMS}_{12} = (p_1 + p_2)/(p_1 - p_2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(\text{TMS}_{12} = p_1/p_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(\text{TMS}_{12} = p_2/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) \(\text{TMS}_{12} = \lambda\,(p_1 - p_2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="e"> (v) \(\text{TMS}_{12} = u_1\cdot u_2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> A demanda Marshalliana \(x_1^M(p, m)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) \(x_1^M = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) \(x_1^M = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(x_1^M = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) \(x_1^M = 24\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="e"> (v) \(x_1^M = 2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> A parcela de gasto em bem 1, \(s_1 = p_1 x_1^M/m\), vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(s_1 = 1/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(s_1 = 2/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \(s_1 = 1/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(s_1\) depende de \((p, m)\) de forma não-trivial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="e"> (v) \(s_1 = p_1/p_2 = 3/2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> A função utilidade indireta \(v(p, m)\) em CD fatoriza como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(v = m/(p_1 + p_2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \(v = m\cdot \phi(p)\) com \(\phi(p) = \alpha^\alpha(1-\alpha)^{1-\alpha}/(p_1^\alpha p_2^{1-\alpha})\) — linear em \(m\), assinatura de homotetia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \(v = \max\{m/p_1, m/p_2\}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) \(v = m^\alpha/p_1^\alpha + m^{1-\alpha}/p_2^{1-\alpha}\) (soma, não produto).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="e"> (v) \(v = \alpha\cdot m + (1-\alpha)\cdot m = m\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> UMP Cobb-Douglas resolve-se em 3 passos: tangência \(\text{TMS} = p_1/p_2\) combinada com restrição orçamentária fecha o sistema; as parcelas de gasto no ótimo são <em>os próprios expoentes</em>. Assinatura empírica de CD.</p>
+      <p><strong>2. Derivação.</strong> TMS = \((\alpha/(1-\alpha))(x_2/x_1)\). Igual a \(p_1/p_2\): \(x_2/x_1 = ((1-\alpha)/\alpha)(p_1/p_2) = (2)(3/2) = 3\). Combinada com \(3x_1 + 2x_2 = 36\): \(3x_1 + 6x_1 = 36\), \(x_1^M = 4\). \(x_2^M = 12\). Parcelas: \(s_1 = 3(4)/36 = 1/3 = \alpha\); \(s_2 = 2(12)/36 = 2/3 = 1-\alpha\).</p>
+      <p><strong>3. Armadilha.</strong> Em (a), inverter para \(p_2/p_1\) é erro clássico de ordenação. Em (c), confundir parcela em gasto com quantidades. Em (d), (iv) "soma de razões" é o distrator estrutural — \(v\) em CD é <em>produto</em> (fatora como \(m\cdot \phi(p)\)), não soma; aluno que marca (iv) não internalizou a assinatura homotética.</p>
+      <p><strong>4. Extensão (Aulas 3/4).</strong> Constância da parcela é o benchmark de homotetia. Parcelas variáveis nos dados (POF 2017–18 para alimentação) rejeitam CD e motivam AIDS/PIGLOG. Aula 4 (EG) explora consequências agregadas de parcelas constantes.</p>
+      <p><strong>5. Peer-review.</strong> Item (d) separa "calcular" de "ler estrutura". Quem marcou (a)(b)(c) por cálculo e (d) por reconhecer a fatoração \(v = m\cdot \phi(p)\) dominou os dois registros. A verificação de Walras (\(3\cdot 4 + 2\cdot 12 = 36\)) é o filtro canônico de sanidade.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">CES: UMP, Marshalliana, indireta, parcela variável com preços</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a preferência CES em \(\mathbb{R}^2_{++}\):</p>
+      \[
+      u(x_1, x_2) = \big(\alpha\,x_1^\rho + (1-\alpha)\,x_2^\rho\big)^{1/\rho}, \quad \alpha \in (0,1),\; \rho < 1,\; \rho \neq 0.
+      \]
+      <p>Use \(\alpha = 1/2\), \(\rho = -1\) (portanto \(\sigma = 1/2\)), preços \(p = (1, 4)\) e renda \(m = 10\).</p>
+      <p><strong>Fórmula fechada (use como atalho):</strong>
+      \[
+      s_i(p) = \frac{\alpha_i^\sigma\,p_i^{1-\sigma}}{\sum_j \alpha_j^\sigma\,p_j^{1-\sigma}}, \qquad x_i^M = \frac{s_i\,m}{p_i}.
+      \]
+      </p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A função indireta \(v(p, m)\) em CES genérica é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \(v = m / \big[\alpha^\sigma p_1^{1-\sigma} + (1-\alpha)^\sigma p_2^{1-\sigma}\big]^{1/(1-\sigma)}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(v = m\cdot \alpha^\sigma p_1^\sigma + (1-\alpha)^\sigma p_2^\sigma\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(v = m/(p_1^\alpha p_2^{1-\alpha})\) (sem dependência em \(\rho\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \(v = m^\sigma\cdot (p_1 + p_2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="e"> (v) \(v\) não tem forma fechada em CES.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Com \(\sigma = 1/2\), \(\alpha = 1/2\) e \(p = (1, 4)\), a parcela \(s_1\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) 2/3.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) 1/2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) 1/3.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) 3/4.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="e"> (v) 1/4.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="e" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Logo \(x_1^M\) nesse ponto vale aproximadamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) 10.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) 6,67.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) 5.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) 2,5.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="e"> (v) \(\approx 3{,}33\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (v).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A parcela \(s_2\) nesse ponto é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) 1/3.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) 1/2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) 2/3.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) 1/4.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="e"> (v) 3/4.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Em CES com \(\sigma = 1/2 < 1\) (bens complementares), a parcela no bem <strong>caro</strong> \(p_2 = 4\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Maior que no bem barato — o consumidor precisa comprar os dois em proporções semi-rígidas, gastando proporcionalmente mais no caro. Aqui \(s_2 = 2/3\) contra \(s_1 = 1/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Igual ao bem barato — em CES simétrica (\(\alpha = 1/2\)), parcelas são sempre iguais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Menor — bens complementares geram parcela decrescente com preço.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Indeterminado sem conhecer renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="e"> (v) A pergunta não se aplica em CES — só em preferências homotéticas.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> Em CES, a Marshalliana tem forma fechada \(x_i^M = s_i(p)\cdot m/p_i\) com \(s_i(p) = \alpha_i^\sigma p_i^{1-\sigma}/\sum_j \alpha_j^\sigma p_j^{1-\sigma}\). A parcela <em>varia com preços</em> quando \(\sigma \neq 1\). Esse é o diagnóstico empírico central: parcelas constantes ⇒ CD; parcelas crescentes em preço ⇒ CES complementar (\(\sigma < 1\)); decrescentes em preço ⇒ CES substituta (\(\sigma > 1\)).</p>
+      <p><strong>2. Derivação.</strong> Com \(\alpha = 1/2\), \(\sigma = 1/2\), \(\alpha^\sigma = (1/2)^{1/2} = 0{,}7071\); \(p_i^{1-\sigma} = p_i^{1/2}\). \(s_1 = (0{,}7071)(1)/[(0{,}7071)(1) + (0{,}7071)(2)] = 1/(1+2) = 1/3\). \(x_1^M = s_1 m/p_1 = (1/3)(10)/1 = 10/3 \approx 3{,}33\). \(s_2 = 2/3\). Verifique: \(p_1 x_1 + p_2 x_2 = 1(10/3) + 4(x_2)\). Com \(x_2 = s_2 m/p_2 = (2/3)(10)/4 = 5/3\): \(10/3 + 20/3 = 30/3 = 10 = m\). ✓</p>
+      <p><strong>3. Armadilha.</strong> A intuição ingênua "preço subiu, parcela cai" é <em>falsa</em> em bens complementares (\(\sigma < 1\)). Dois bens em proporção semi-rígida ⇒ alta de \(p_2\) obriga o consumidor a gastar relativamente mais em \(p_2\) (porque substituir é caro). Armadilha típica em item (e): escolher (iii) por reflexo.</p>
+      <p><strong>4. Extensão (Aula 3).</strong> A elasticidade-preço compensada é \(\varepsilon^c_{ii} = -(1-s_i)\sigma\). Aqui \(\varepsilon^c_{11} = -(1-1/3)(1/2) = -1/3\) — "10% alta em \(p_1\) reduz \(h_1\) em 3,33%". Essa formula conecta CES a política comercial (Feenstra, Broda-Weinstein).</p>
+      <p><strong>5. Peer-review.</strong> O exercício testa <em>identificação</em> do sentido de \(\sigma\) vs. parcela. Um aluno que marcou (a-i), (b-iii), (c-v), (d-iii), (e-i) saiu fluentíssimo. Errar (e) e marcar (iii) é sinal de que o aluno ainda pensa "preço caro = gasto cai" — precisa rever o sentido de \(\sigma\) na monitoria.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">EMP e Lema de Shephard em Cobb-Douglas 3D</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor tem preferência em \(\mathbb{R}^3_{++}\) representada por</p>
+      \[
+      u(x_1, x_2, x_3) = x_1^{1/2}\,x_2^{1/4}\,x_3^{1/4},
+      \]
+      <p>e deseja atingir \(\bar u = 4\). Preços \(p = (1, 2, 4)\).</p>
+      <p><strong>Fórmula fechada (use como atalho):</strong>
+      \[
+      e(p, \bar u) = K\,\bar u\,\prod_i p_i^{\alpha_i}, \quad K = \frac{1}{\prod_i \alpha_i^{\alpha_i}}, \qquad h_i(p, \bar u) = \alpha_i\,\frac{e}{p_i}.
+      \]
+      </p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A constante \(K\) nesse problema vale aproximadamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(K \approx 1{,}41\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(K \approx 2{,}83\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(K = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) \(K = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="e"> (v) \(K \approx 0{,}35\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> O valor de \(e(p, \bar u)\) é aproximadamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(e \approx 11{,}3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(e \approx 19{,}0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(e = 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) \(e = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="e"> (v) \(e = 32\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Aplicando Shephard para obter \(h_2\), a fórmula direta é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(h_2 = e/p_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(h_2 = \alpha_2\cdot e/p_2 = (1/4)\cdot e/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(h_2 = e - p_1 - p_3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) \(h_2 = \bar u/p_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="e"> (v) Shephard não se aplica em 3D.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O valor numérico de \(h_2\) é aproximadamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) \(h_2 \approx 1{,}4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(h_2 = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(h_2 \approx 2{,}4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) \(h_2 = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="e"> (v) \(h_2\) não está definido.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A verificação \(u(h_1, h_2, h_3) = \bar u\) com os valores calculados (\(h_1 \approx 9{,}5\), \(h_2 \approx 2{,}4\), \(h_3 \approx 1{,}2\)) dá:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) \(\bar u = 4\) exatamente (a menos de erro numérico).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) Aproximadamente \(2\bar u\), com fator-2 oculto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) \(\bar u/2\) — consequência de expoentes fracionários.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) \(\bar u^{1/3}\) (apenas a média geométrica).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="e"> (v) Depende dos preços; verificação varia com \(p\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> CD em \(n\) dimensões: \(e(p, \bar u) = K\bar u\prod p_i^{\alpha_i}\) com \(K = 1/\prod \alpha_i^{\alpha_i}\). Shephard: \(h_i = \alpha_i\,e/p_i\). A fórmula fechada generaliza o caso 2D trivialmente.</p>
+      <p><strong>2. Derivação.</strong> \(K = 1/((1/2)^{1/2}(1/4)^{1/4}(1/4)^{1/4})\). \((1/2)^{1/2} = 0{,}7071\); \((1/4)^{1/4} = 0{,}7071\). Produto: \(0{,}7071^3 = 0{,}3536\). \(K = 1/0{,}3536 = 2{,}828\). \(e = 2{,}828\cdot 4\cdot 1^{1/2}\cdot 2^{1/4}\cdot 4^{1/4} = 11{,}31\cdot 1\cdot 1{,}189\cdot 1{,}414 = 11{,}31\cdot 1{,}682 \approx 19{,}02\). \(h_2 = (1/4)(19{,}02)/2 = 2{,}378\). Verificação: \(h_1 = (1/2)(19{,}02)/1 = 9{,}51\), \(h_3 = (1/4)(19{,}02)/4 = 1{,}189\). \(u(h) = 9{,}51^{1/2}\cdot 2{,}378^{1/4}\cdot 1{,}189^{1/4} \approx 3{,}084\cdot 1{,}241\cdot 1{,}044 \approx 4{,}00 = \bar u\). ✓</p>
+      <p><strong>3. Armadilha.</strong> O aluno pode tentar Lagrangiano com 4 CPOs e se perder em álgebra. Atalho: fórmula fechada CD + Shephard. A armadilha oposta: aplicar Shephard sem calcular \(K\) corretamente, errando por fator constante. Item (a) com \(K\approx 1{,}41\) é o erro de calcular só \((1/2)^{-1/2} = 1{,}414\) sem multiplicar pelos outros fatores.</p>
+      <p><strong>4. Extensão.</strong> Em dimensões \(n \geq 3\), a estrutura multiplicativa de CD permite generalização limpa. Ubiquidade de CD em equilíbrio geral vem da escala trivial em \(n\). Em aplicações CGE (Computable General Equilibrium), CD é muitas vezes o default para funções consumer-agent.</p>
+      <p><strong>5. Peer-review.</strong> Exercício puramente aritmético — testa se o aluno decorou a fórmula fechada em 2D e sabe estender para 3D. Quem chega sem \(K\) e tenta Lagrangiano, demora 30 min; quem usa atalho, 5 min. A verificação \(u(h) = \bar u\) é o filtro de sanidade final.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Roy aplicado a indireta log-linear (PIGLOG-lite)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor tem função utilidade indireta</p>
+      \[
+      v(p, m) = \exp\!\left[\ln m - 0{,}3\ln p_1 - 0{,}5\ln p_2 - 0{,}2\ln p_3\right] = \frac{m}{p_1^{0{,}3}\,p_2^{0{,}5}\,p_3^{0{,}2}}.
+      \]
+      <p>Esta é a forma CD em logs — PIGLOG em sua forma mais simples.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Aplicando Roy, \(x_1^M(p, m)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(x_1^M = 0{,}3\cdot m/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(x_1^M = 0{,}5\cdot m/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(x_1^M = m/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(x_1^M = 0{,}7\cdot m/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="e"> (v) \(x_1^M = 0{,}3\cdot m\) (sem divisão por preço).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A parcela de gasto \(s_2 = p_2 x_2^M/m\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) 0,3.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) 0,5.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) 0,2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) 1,0.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="e"> (v) Depende de \(p\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Em \(m = 100\), \(p = (1, 2, 5)\), qual é \(v\)?</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) \(v = 100\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) \(v \approx 12{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) \(v \approx 51{,}2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) \(v = 100/(1 + 2 + 5) = 12{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="e"> (v) \(v = 100^{0{,}5}/(1\cdot 2\cdot 5)^{0{,}2}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Se \(p_1\) sobe de 1 para 1,1 (alta de 10%), \(v\) cai aproximadamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) 10% — linear no preço.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) 3% — proporcional à parcela \(s_1 = 0{,}3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) 30% — proporcional a \(1/s_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Não muda — indireta é homogênea grau 0.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="e"> (v) Depende de \(p_2, p_3\) de forma não-linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="d" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre a forma dessa preferência, qual afirmação <strong>é verdadeira</strong>?</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) \(u\) é Cobb-Douglas com expoentes permutados \((0{,}5; \, 0{,}3; \, 0{,}2)\) — a indireta só "esconde" a ordem.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) \(u\) é Leontief com coeficientes \((0{,}3; \, 0{,}5; \, 0{,}2)\) — a soma 1 sugere pesos de proporção fixa.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) \(u\) é CES com \(\sigma \neq 1\) — a presença de expoentes fracionários na indireta identifica \(\sigma\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) A preferência é <strong>homotética</strong> (\(v = m\cdot \phi(p)\), linear em \(m\)); a primal correspondente é Cobb-Douglas \(u = x_1^{0{,}3}\,x_2^{0{,}5}\,x_3^{0{,}2}\), com expoentes <em>alinhados a \(p_i\)</em> exatamente como na fórmula de \(v\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="e"> (v) A fórmula não representa preferência bem-definida (viola quasiconcavidade).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iv).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> Roy aplicado a \(v\) em forma log-linear é atalho: coeficiente negativo de \(\ln p_i\) na fórmula é diretamente a <em>parcela</em> \(s_i\). Essa é a lógica empírica de PIGLOG (Muellbauer 1976): parametrizar \(\ln v\) como log-linear em \(\ln m\) e \(\ln p_i\) torna demanda Marshalliana <em>estimável por OLS</em>.</p>
+      <p><strong>2. Derivação.</strong> \(\partial v/\partial p_1 = -0{,}3\,v/p_1\); \(\partial v/\partial m = v/m\). Roy: \(x_1^M = -(-0{,}3\,v/p_1)/(v/m) = 0{,}3\,m/p_1\). Parcela: \(s_1 = 0{,}3\). Idem \(s_2 = 0{,}5\), \(s_3 = 0{,}2\); soma = 1. ✓ Para (c): \(v = 100/(1^{0{,}3}\cdot 2^{0{,}5}\cdot 5^{0{,}2}) = 100/(1\cdot 1{,}414\cdot 1{,}380) = 100/1{,}951 \approx 51{,}2\).</p>
+      <p><strong>3. Armadilha.</strong> Item (d): o efeito de preço sobre \(v\) é <em>proporcional à parcela</em> — não a "1/preço" nem a "1". \(v = m\cdot p_1^{-s_1}\cdot (\ldots)\). Uma alta de \(\Delta p_1/p_1 = 10\%\) induz queda de \(s_1\cdot 10\% = 3\%\) em \(v\). Armadilha: marcar 10% por reflexo.</p>
+      <p><strong>4. Extensão (Aula 3 + estimação).</strong> AIDS (Deaton-Muellbauer 1980) parametriza \(\ln e = \alpha_0 + \sum_i \alpha_i\ln p_i + (1/2)\sum_{ij}\gamma_{ij}\ln p_i\ln p_j + \beta\ln m\,\ldots\). Via Shephard/dualidade, \(s_i = \alpha_i + \sum_j \gamma_{ij}\ln p_j + \beta_i\ln m\) — estimável por regressão linear. A versão PIGLOG-simples aqui é o caso \(\gamma_{ij} = 0\), \(\beta_i = 0\).</p>
+      <p><strong>5. Peer-review.</strong> Item (e) exige leitura <em>estrutural</em> da indireta. (i) é distrator apertado — permuta os expoentes \((0{,}3; 0{,}5; 0{,}2) \to (0{,}5; 0{,}3; 0{,}2)\), que <em>não</em> é a primal correta, pois o expoente de \(x_i\) em \(u\) tem que bater com o expoente de \(p_i\) (com sinal trocado) em \(v\). (iv) é a resposta certa porque nomeia a característica estrutural (homotetia + fator de renda linear em \(m\)) <em>e</em> dá a primal com expoentes corretamente alinhados. Em prova ANPEC, reconhecer esse alinhamento em 30s é calibre de qualificação.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Dualidade completa: identidades recíprocas, Shephard cruzado e simetria</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Em \(\mathbb{R}^2_{++}\), considere \(u(x_1, x_2) = x_1^{2/3}\,x_2^{1/3}\), preços \(p = (p_1, p_2) = (1, 4)\) e renda \(m = 12\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A demanda Marshalliana e a indireta são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) \(x^M = (8, 1)\), \(v = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) \(x^M = (6, 3/2)\), \(v \approx 3{,}8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) \(x^M = (4, 2)\), \(v \approx 3{,}18\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) \(x^M = (12, 0)\), \(v \approx 5{,}24\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="e"> (v) \(x^M = (10, 1/2)\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Com \(\bar u = v = 4\), as Hicksianas e o gasto mínimo:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(h = (8, 1)\), \(e = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(h = (4, 2)\), \(e = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(h = (6, 3/2)\), \(e = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(h = (8, 1)\), \(e = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="e"> (v) Impossível sem CPO do EMP explícito.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="d" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Verificando as identidades da dualidade:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) Ambas falham — dualidade não vale em CD assimétrica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(x^M = h\) vale; \(e = m\) falha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(e = m\) vale; \(x^M = h\) falha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) Ambas valem: \(x^M = h = (8, 1)\) e \(e = m = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="e"> (v) Valem apenas em preferências homotéticas.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iv).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Aplicando Shephard duas vezes, calcule \(\partial h_1/\partial p_2\) <strong>diretamente</strong> (cross-price hicksiano — <em>pura dualidade</em>, sem Slutsky). Com \(h_1 = (2/3)\,K\,\bar u\,p_1^{-1/3}\,p_2^{1/3}\), \(K \approx 1{,}890\), \(\bar u = 4\), \(p = (1, 4)\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(\partial h_1/\partial p_2 = 0\) — CD não tem efeito-preço cruzado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(\partial h_1/\partial p_2 = 2/3\) (efeito-substituição cruzado positivo em CD).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(\partial h_1/\partial p_2 = -2/3\) (substituição sempre negativa).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) \(\partial h_1/\partial p_2 = 4/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="e"> (v) Shephard não permite calcular cruzado — precisa resolver o EMP em cada preço.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> <strong>Simetria de Shephard.</strong> Pela aplicação de Young à função gasto (\(\partial^2 e/\partial p_i\partial p_j = \partial^2 e/\partial p_j\partial p_i\)) e pelo Lema de Shephard, conclui-se que:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) \(\partial h_1/\partial p_2 = -\partial h_2/\partial p_1\) (anti-simetria).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) \(\partial h_1/\partial p_2 = \partial h_2/\partial p_1\) apenas em preferências homotéticas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) \(\partial h_1/\partial p_2 = \partial h_2/\partial p_1\) sempre que \(e \in C^2\) — e neste problema ambas valem \(2/3\), o que confirma a simetria numericamente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) A igualdade vale apenas quando \(u\) é quasicôncava estrita.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="e"> (v) Nada segue de Young aqui — simetria exige hipótese adicional sobre o Hessiano bordado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> Este exercício integra todo o aparato da <strong>Aula 2</strong>: UMP → Marshalliana → indireta → EMP → Shephard → verificação recíproca → <em>derivadas do gasto em preços cruzados</em>. Tudo permanece <strong>dentro da dualidade</strong> — Slutsky (que mistura Marshalliana + renda) fica para a Aula 3. Aqui, \(\partial h_i/\partial p_j\) é a <em>matriz de efeito-substituição pura</em>, obtida como Hessiano de \(e\) em \(p\).</p>
+      <p><strong>2. Derivação.</strong> UMP: \(x_1^M = (2/3)(12)/1 = 8\); \(x_2^M = (1/3)(12)/4 = 1\). Walras: \(8 + 4 = 12\). ✓ \(v = 8^{2/3}\cdot 1^{1/3} = 4\). EMP: \(K = 1/((2/3)^{2/3}(1/3)^{1/3}) \approx 1{,}890\); \(e = 1{,}890\cdot 4\cdot 1^{2/3}\cdot 4^{1/3} = 7{,}56\cdot 1{,}587 \approx 12{,}00\). \(h_1 = (2/3)(12)/1 = 8\); \(h_2 = (1/3)(12)/4 = 1\). Cross-price via Shephard: \(h_1 = (2/3)\,K\bar u\,p_1^{-1/3}\,p_2^{1/3}\) ⇒ \(\partial h_1/\partial p_2 = (2/3)(1/3)K\bar u\, p_1^{-1/3}\,p_2^{-2/3} = (2/9)(1{,}890)(4)(1)(4^{-2/3}) = (2/9)(7{,}56)(1/2{,}520) \approx 2/3\). Analogamente, \(h_2 = (1/3)\,K\bar u\,p_1^{2/3}\,p_2^{-2/3}\) ⇒ \(\partial h_2/\partial p_1 = (1/3)(2/3)K\bar u\, p_1^{-1/3}\,p_2^{-2/3} = 2/3\). <strong>Simetria bate numericamente.</strong> ✓</p>
+      <p><strong>3. Armadilha.</strong> Em (d), é tentador marcar (i) "\(= 0\)" por analogia espúria com o fato de que \(x_1^M\) Marshalliana <em>não</em> depende de \(p_2\) em CD. Mas a Hicksiana <em>sim</em> depende — ela mantém \(\bar u\) fixo, então exige recomposição quando \(p_2\) muda. A confusão Marshalliana-vs-Hicksiana aqui é cirúrgica: Marshalliana tem efeito-renda que "cancela" a cruzada (a ser visto na Aula 3 via Slutsky); Hicksiana não tem efeito-renda e a cruzada sobrevive. Em (e), o distrator (ii) "só homotética" confunde simetria de \(S\) (que vale sempre que \(e\in C^2\)) com propriedades específicas de homotetia.</p>
+      <p><strong>4. Extensão (Aula 3).</strong> A matriz \(S_{ij} = \partial h_i/\partial p_j\) é <em>a</em> matriz de Slutsky compensada — simétrica (Young), semidefinida negativa (concavidade de \(e\)), e com \(Sp = 0\) (homogeneidade grau 0 de \(h\)). Na Aula 3, a equação de Slutsky justapõe \(S\) à Marshalliana via \(\partial x_i^M/\partial p_j = S_{ij} - x_j^M\,\partial x_i^M/\partial m\). Em CD, \(x_1^M\) não depende de \(p_2\), então \(0 = S_{12} - x_2^M\cdot \partial x_1^M/\partial m = 2/3 - 1\cdot(2/3)\) — cancelamento exato. Esse <em>é</em> o resultado central da próxima aula, já antecipado pelas contas feitas aqui.</p>
+      <p><strong>5. Peer-review.</strong> Exercício integra as ferramentas da Aula 2 sem importar nada da Aula 3. O aluno que resolve \((x^M, v, h, e, \partial h/\partial p)\) limpa toda a dualidade. Ambiguidade residual: a distinção Hicksiana-Marshalliana em cruzadas é sutil — quem errou (d) escolhendo \(0\) provavelmente confundiu com \(\partial x_1^M/\partial p_2\) (que <em>é</em> zero em CD). Essa confusão é exatamente o que a Aula 3 vai dissipar via Slutsky. Risco: aluno pode se frustrar em (e) se não aceitar que simetria vem de Young "de graça" — se insistir em derivar \(h_1, h_2\) a partir de \(e\) e conferir à mão (como fizemos), a simetria vira teorema vivido. Versão mais difícil: pedir também \(\partial h_1/\partial p_1\) e verificar que é negativa (concavidade de \(e\) em \(p_1\)).</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Propriedades estruturais: concavidade, Sp=0 e recíproca da dualidade</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere três afirmações sobre a estrutura da dualidade UMP↔EMP:</p>
+      <ul style="margin:0.3em 0 0 1.2em">
+        <li><strong>A.</strong> A matriz de Slutsky compensada \(S_{ij}(p, \bar u) = \partial h_i/\partial p_j\) é <em>simétrica</em>, <em>semidefinida negativa</em>, e satisfaz \(Sp = \mathbf{0}\).</li>
+        <li><strong>B.</strong> A função gasto \(e(p, \bar u)\) é <em>côncava</em> em \(p\), mesmo quando a preferência não é convexa estrita.</li>
+        <li><strong>C.</strong> Dada uma função \(e\) satisfazendo as 5 propriedades estruturais (homog. grau 1, côncava em \(p\), monotônica em \(p\) e em \(\bar u\), contínua), existe <em>exatamente uma</em> preferência cuja função gasto é \(e\) — caracterização unívoca.</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> Afirmação A (propriedades de S) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Verdadeira — as três propriedades seguem de \(e\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) Verdadeira, exceto \(Sp = 0\) (específico a preferências homotéticas).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) Verdadeira, exceto simetria (que exige preferência diferenciável).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Falsa — \(S\) é em geral semidef. positiva.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="e"> (v) Falsa — \(S\) é assimétrica quando \(u\) não é quasicôncava.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Afirmação B (concavidade de \(e\) em \(p\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Verdadeira sempre — \(e\) é ínfimo de funções lineares em \(p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Verdadeira apenas se \(u\) é estritamente quasicôncava.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Verdadeira apenas em CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Falsa — \(e\) é convexa em \(p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="e"> (v) Depende da forma funcional.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Afirmação C (recíproca da dualidade) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Verdadeira — teorema da recíproca (Diewert 1974, Jehle-Reny §2.1).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Verdadeira apenas para preferências homotéticas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) Falsa — \(e\) não identifica preferência univocamente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Verdadeira mas exige também conhecer \(v\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="e"> (v) Verdadeira apenas em \(\mathbb{R}^2_+\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> A reconstrução geométrica de \(U(\bar u) = \{x : u(x)\geq \bar u\}\) a partir de \(e\) usa:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Integração de \(h(p, \bar u)\) em \(p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) \(U(\bar u) = \bigcap_{p\gg 0}\{x : p\cdot x \geq e(p, \bar u)\}\), via teorema de separação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Inversão direta \(x(p, \bar u) = e(p, \bar u)/p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Transformação monótona de \(e\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="e"> (v) Sistema de \(n\) equações diferenciais.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> A relevância empírica combinada de A, B e C é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Permitem parametrizar \(e\) empiricamente (AIDS, PIGLOG) e recuperar demanda via Shephard + preferência via reconstrução convexa — base teórica de estimação estrutural.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Curiosidades matemáticas sem consequência empírica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Restringem estimação empírica a casos homotéticos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Invalidam Roy em casos não-CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="e"> (v) Consequência do axioma de continuidade, equivalente a Debreu.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> As três afirmações formam o <em>núcleo estrutural</em> da dualidade: simetria + semidef. neg. + \(Sp = 0\) para Slutsky compensada; concavidade de \(e\) em \(p\); recuperação unívoca de preferência a partir de \(e\). Núcleo teórico de Jehle-Reny §2.1 e fundação empírica de AIDS.</p>
+      <p><strong>2. Derivação.</strong> <em>A:</em> \(S_{ij} = \partial^2 e/\partial p_i\partial p_j\) por Shephard; Young ⇒ simetria; concavidade de \(e\) ⇒ Hessiano semidef. neg.; homog. grau 0 de \(h\) (via Euler em \(e\)) ⇒ \(Sp = 0\). <em>B:</em> \(e = \min_{u(x)\geq\bar u} p\cdot x\); ínfimo de funções lineares em \(p\) ⇒ côncavo. Sem precisar convexidade estrita de \(u\). <em>C:</em> Teorema de Diewert 1974 / Rockafellar 1970 / Jehle-Reny 2.1: toda \(e\) com (E1–E5) vem de uma única preferência; reconstrução via intersecção de semi-espaços suporte.</p>
+      <p><strong>3. Armadilha.</strong> A mais sutil é subestimar a força de C (item c): muitos acham que \(e\) é "resumo estatístico" de preferência em vez de <em>representação dual completa</em>. Marcar (c-iii) sinaliza que o aluno não assimilou a simetria estrutural UMP↔EMP.</p>
+      <p><strong>4. Extensão.</strong> Diewert (1974) operacionaliza: qualquer \(e\) com (E1–E5) gera preferência "flexível" estimável. Deaton-Muellbauer (1980): AIDS via \(\ln e = \alpha_0 + \sum_i \alpha_i\ln p_i + (1/2)\sum_{ij}\gamma_{ij}\ln p_i\ln p_j + \ldots\). Shephard → demanda Marshalliana estimável por regressão linear. Fundamentação teórica está em C.</p>
+      <p><strong>5. Peer-review.</strong> Exercício conceitualmente denso — faz o aluno <em>ver</em> a arquitetura em vez de aplicá-la. Risco: aluno marca por reflexo sem entender. O item (e) ancora teoria em prática (AIDS), mostrando que o aparato é operacional. Aluno que acerta (a)(b)(c)(d)(e) está pronto para welfare rigoroso (Harberger, Konüs, Willig) na Aula 3 e segue sem obstáculos.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (29 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>07/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 06/05 18:00, com prazo estendido pela exceção do calendário unificado Aula 1 ∪ Aula 2). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 3</strong> (Slutsky + elasticidades + estimação) é liberada na madrugada de <strong>30/04</strong>. Com o <em>calendário unificado Aula 1 ∪ Aula 2</em>, todo o material da Aula 1 (quiz pós, exercícios) + da Aula 2 fecha junto em <strong>quarta 06/05 18h</strong>. Dúvidas conceituais: monitoria 1 com Alberto em 16/05 já tem na programação revisão das Aulas 1–3.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-02-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  // Fallback para data hard-coded se calendario.js não carregou.
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(2, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-07T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

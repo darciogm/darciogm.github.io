@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- SKELETON B2 — conteúdo real vem em B3 (prof-mpe-micro preenche UMP/EMP/Dualidade) -->
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -20,154 +19,247 @@
 
 <div class="content-wrapper">
 
-<div style="background:#FEF3C7;border-left:4px solid #D97706;color:#78350F;padding:1rem 1.2rem;border-radius:6px;margin-bottom:1.5rem;font-size:0.9rem;line-height:1.5">
-  <strong>⚠️ Página em desenvolvimento.</strong> Este é um <em>skeleton</em> estrutural com questões <strong>placeholder</strong> (5🟡 + 5🔴) usado para validar o engine <code>MicroQuizGraded</code>. O conteúdo real (UMP/EMP/Dualidade, calibre N&amp;S 11ª ed. cap. 4 / J&amp;R 3ª ed. §1.4–§2.2) será preenchido em rodada dedicada antes da Aula 2 (29/04). Se você é aluno e chegou aqui por engano, volte ao <a href="portal.html" style="color:#78350F;font-weight:600;text-decoration:underline">portal</a>.
-</div>
-
 <h1>Quiz Pós-Aula 02 — UMP, EMP e Dualidade</h1>
 
 <div class="admonition info">
 <div class="admonition-title">Como este quiz funciona</div>
-<p><strong>10 questões distribuídas: 5 intermediárias 🟡 (N&amp;S) + 5 avançadas 🔴 (Jehle-Reny / qualifier).</strong> Objetivo: ponte entre a aula presencial e a lista avaliativa. Use-o como calibre: se fechar as 5 🟡 você consolidou o essencial; se chegar nas 🔴, está pronto para a lista. <strong>Uma única submissão</strong> — revise com calma. Tempo estimado: 30–40min.</p>
+<p><strong>10 questões distribuídas: 5 intermediárias 🟡 (calibre N&amp;S 12e cap. 4) + 5 avançadas 🔴 (calibre Jehle-Reny §1.4–§2.1 / qualifier).</strong> Objetivo: ponte entre a aula de 29/04 e a lista de exercícios avaliativos. Use-o como calibre: se fechar as cinco 🟡, consolidou o essencial; se chegar confortavelmente nas 🔴, está pronto para a lista. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong> (a leitura dos gabaritos 5-passos conta).</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo unificado:</strong> fecha em <strong>quarta 06/05 às 18:00 BRT</strong> — junto com todo o material da Aula 1 e da Aula 2 (exceção pontual deste semestre).</p>
 </div>
 
 <!-- ================= QUIZ GRADED BLOCK ================= -->
 <div class="quizg-block" data-page="aula-02-pos" data-phase="post" data-title="Pós-Aula 02">
 
-  <h3>Pós-Aula — UMP, EMP e Dualidade (5🟡 + 5🔴)</h3>
-  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. A dificuldade está marcada com o ícone ao início de cada enunciado.</div>
+  <h3>Pós-Aula 02 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início de cada enunciado indica o calibre.</div>
 
-  <!-- ========== YELLOW 1..5 (intermediárias N&S) ========== -->
+  <!-- ========== YELLOW 1..5 (intermediárias — calibre N&S 12e cap. 4) ========== -->
 
-  <!-- Q1 🟡 -->
+  <!-- Q1 🟡 — UMP em CD assimétrica, v direto -->
   <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
-    <div class="quizg-qtext">Q1. [PLACEHOLDER 🟡 — Aplicação direta da identidade de Roy em \(V(p,m) = m/\sqrt{p_1 p_2}\). Marshalliana \(x_1^M = ?\)]</div>
-    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) [correta: \(x_1^M = m/(2p_1)\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) [distrator]</label>
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Um consumidor tem \(u(x_1, x_2) = x_1^{0{,}4}\,x_2^{0{,}6}\) com preços \(p_1 = 2, p_2 = 3\) e renda \(m = 30\). Qual é o nível de utilidade indireta \(v(p, m)\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(v = 30\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) \(v = 6\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \(v = 15\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(v = 5\).</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (b).
-      <div class="peer-review">Peer-review: [forma Cobb-Douglas implícita com \(\alpha = 1/2\)].</div>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD, calcular \(v\) em dois passos: (i) achar a Marshalliana pela fórmula fechada; (ii) avaliar \(u\) no ponto ótimo.</p>
+      <p><strong>2. Derivação.</strong> \(x_1^M = 0{,}4\cdot 30/2 = 6\); \(x_2^M = 0{,}6\cdot 30/3 = 6\). Walras: \(2(6) + 3(6) = 30\). ✓ Utilidade: \(v = 6^{0{,}4}\cdot 6^{0{,}6} = 6^{0{,}4+0{,}6} = 6^1 = 6\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde utilidade com renda — erro de quem acha que "ganhar mais = utilidade igual a renda". A utilidade é ordinal, não a "moeda da renda". (c) é \(m/2 = 15\) — outra confusão aritmética. (d) inventa.</p>
+      <p><strong>4. Extensão.</strong> A fórmula fechada da indireta CD: \(v(p, m) = m\cdot \alpha^\alpha (1-\alpha)^{1-\alpha}/(p_1^\alpha p_2^{1-\alpha})\). Verificar com esses números: constante \(K = 0{,}4^{0{,}4}\cdot 0{,}6^{0{,}6} \approx 0{,}696\cdot 0{,}736 \approx 0{,}512\). Denominador \(p_1^{0{,}4}\cdot p_2^{0{,}6} = 2^{0{,}4}\cdot 3^{0{,}6} \approx 1{,}320\cdot 1{,}933 \approx 2{,}551\). \(v = 30\cdot 0{,}512/2{,}551 \approx 6{,}02\). ✓ Ambos os caminhos batem.</p>
+      <p><strong>5. Peer-review.</strong> A questão admite dois caminhos: (i) direto via \(x^M\) e substituição; (ii) fórmula fechada. O segundo é mais rápido em exercício de papel; o primeiro é mais transparente. Alunos cadentes ao cálculo "de cor" perdem tempo — ensinar ao qual \(\alpha\) liga \(p_i\) é um passe-de-mágica que economiza minutos por prova.</p>
     </div>
   </div>
 
-  <!-- Q2 🟡 -->
+  <!-- Q2 🟡 — Shephard → Hicksiana (CD assimétrica) -->
   <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
-    <div class="quizg-qtext">Q2. [PLACEHOLDER 🟡 — Dado \(e(p,\bar u) = \bar u (p_1^{1/2} + p_2^{1/2})^2\), use Shephard para achar \(h_1(p,\bar u)\)]</div>
-    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) [correta: \(\bar u (p_1^{1/2}+p_2^{1/2})/p_1^{1/2}\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) [distrator]</label>
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Para \(u(x_1, x_2) = x_1^{1/4}\,x_2^{3/4}\) com preços \(p_1 = 2, p_2 = 4\) e utilidade-alvo \(\bar u = 8\), a função gasto pode ser escrita como \(e(p, \bar u) = K\,\bar u\, p_1^{1/4}\, p_2^{3/4}\) com \(K = 1/((1/4)^{1/4}(3/4)^{3/4}) \approx 1{,}755\). Qual é a Hicksiana \(h_2(p, \bar u)\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(h_2 = 2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) \(h_2 = 6\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(h_2 \approx 8{,}85\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(h_2 \approx 11{,}80\).</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (c) [\(\partial e/\partial p_1\) via regra da cadeia].
-      <div class="peer-review">Peer-review: [verificar homogeneidade 1 em p — checagem dimensional passa].</div>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Shephard em Cobb-Douglas: \(h_i = \alpha_i\,e/p_i\). Aplicar a fórmula direta em vez de re-derivar.</p>
+      <p><strong>2. Derivação.</strong> \(e(p, 8) = 1{,}755\cdot 8\cdot 2^{1/4}\cdot 4^{3/4} = 14{,}04\cdot 1{,}189\cdot 2{,}828 \approx 47{,}20\). \(h_2 = (3/4)\cdot e/p_2 = 0{,}75\cdot 47{,}20/4 \approx 8{,}85\). Verificação: \(h_1 = (1/4)\cdot e/p_1 = 0{,}25\cdot 47{,}20/2 \approx 5{,}90\). Confere \(u(h_1, h_2) = 5{,}90^{1/4}\cdot 8{,}85^{3/4} \approx 1{,}558\cdot 5{,}13 \approx 8{,}00 = \bar u\). ✓ Walras: \(2(5{,}90) + 4(8{,}85) = 11{,}80 + 35{,}40 = 47{,}20\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) é chute "baixo" baseado no preço. (b) é distrator estrutural (\(\bar u - 2\), sem sentido). (d) é \(p_1\cdot h_1\) — gasto em bem 1, não quantidade de bem 2; confunde dimensões.</p>
+      <p><strong>4. Extensão.</strong> Repare que \(h_2 > h_1\) porque a parcela em bem 2 é maior (\(\alpha_2 = 3/4\)) e o preço relativo \(p_2/p_1 = 2\) não é alto o suficiente para inverter. Regra geral em CD: a razão de quantidades \(h_2/h_1 = (\alpha_2/\alpha_1)(p_1/p_2) = (3/1)(1/2) = 3/2 = 8{,}85/5{,}90\). ✓</p>
+      <p><strong>5. Peer-review.</strong> Questão mecânica de aplicação. Se o aluno chegou em \(h_2 \approx 8{,}85\) pela fórmula Shephard direta em menos de 90s, domina. Se fez tangência + CPO do EMP, chegou mas demorou — é aceitável, mas Shephard atalha. Sanidade dimensional: \(h_i\) tem unidade "quantidade"; qualquer resposta em "moeda" (como 11,80) falha no teste.</p>
     </div>
   </div>
 
-  <!-- Q3 🟡 -->
+  <!-- Q3 🟡 — Identidade recíproca numérica -->
   <div class="quizg-q" data-qid="q3" data-correct="a" data-difficulty="yellow">
-    <div class="quizg-qtext">Q3. [PLACEHOLDER 🟡 — Quasilinear \(U = x_1 + \ln x_2\), preços \((p_1,p_2)=(1,1)\), \(m=2\). A marshalliana \(x_2^M\) é…]</div>
-    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) [correta: \(x_2^M = 1\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) [distrator]</label>
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Um consumidor tem \(u(x_1, x_2) = x_1^{1/2}\,x_2^{1/2}\), \(p_1 = 2, p_2 = 8\) e \(m = 16\). Calcule \(v(p, m)\); depois, com \(\bar u = v\), calcule \(e(p, \bar u)\). Confirme \(e = m\). Marque a afirmação correta:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) \(v = 2\), \(e(p, 2) = 16 = m\). Identidade recíproca \(e(p, v(p, m)) = m\) verificada.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) \(v = 4\), \(e(p, 4) = 32 \neq m\) — a identidade falha em CD simétrica.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) \(v = m = 16\) — indireta em CD é sempre a renda.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) \(v = 8\), \(e = 64\) — a identidade vale mas com fator multiplicativo.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (a) [TMS = \(1/x_2 = p_1/p_2 = 1\)].
-      <div class="peer-review">Peer-review: [independência de renda em \(x_2\) é a marca do quasilinear].</div>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A identidade \(e(p, v(p, m)) = m\) é tautológica: se \(v\) é o máximo de \(u\) sob \(p\cdot x \leq m\), e \(e\) é o mínimo de \(p\cdot x\) para atingir \(v\), o gasto é exatamente \(m\) — o mesmo ponto geométrico.</p>
+      <p><strong>2. Derivação.</strong> Marshalliana CD simétrica (\(\alpha = 1/2\)): \(x_1^M = 0{,}5\cdot 16/2 = 4\); \(x_2^M = 0{,}5\cdot 16/8 = 1\). Walras: \(2(4) + 8(1) = 16\). ✓ Utilidade: \(v = \sqrt{4\cdot 1} = 2\). EMP com \(\bar u = 2\): tangência \(x_2/x_1 = p_1/p_2 = 1/4\); com \(\sqrt{x_1 x_2} = 2\): \(x_2 = x_1/4\), \(\sqrt{x_1\cdot x_1/4} = x_1/2 = 2\) ⇒ \(x_1 = 4, x_2 = 1\). Gasto: \(2(4) + 8(1) = 16 = m\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (b) e (d) tentam induzir a pensar em fator multiplicativo extra na identidade. (c) confunde \(v\) com \(m\) — erro canônico de quem não distingue "utilidade" de "moeda".</p>
+      <p><strong>4. Extensão.</strong> Essa identidade é o <em>contrato operacional</em> da dualidade. Cada passagem entre UMP e EMP faz a calibração automática; os dois problemas são o mesmo ponto por construção.</p>
+      <p><strong>5. Peer-review.</strong> A questão exige executar UMP + EMP num caso limpo. Quem sai sem confusão, tem a dualidade <em>no corpo</em>; se errar, é diagnóstico de que "identidade recíproca" ainda soa como fórmula, não como tautologia.</p>
     </div>
   </div>
 
-  <!-- Q4 🟡 -->
+  <!-- Q4 🟡 — Roy em v log -->
   <div class="quizg-q" data-qid="q4" data-correct="d" data-difficulty="yellow">
-    <div class="quizg-qtext">Q4. [PLACEHOLDER 🟡 — Qual identidade conecta \(V\) e \(e\)?]</div>
-    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) [distrator: \(V = 1/e\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) [correta: \(V(p, e(p,\bar u)) = \bar u\)]</label>
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Dada a função indireta \(v(p_1, p_2, m) = \ln m - \tfrac{2}{3}\ln p_1 - \tfrac{1}{3}\ln p_2\) (forma log-linear), aplicando Roy, a demanda Marshalliana \(x_1^M\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(x_1^M = \tfrac{1}{3}\cdot m/p_1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) \(x_1^M = m/p_1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(x_1^M = \tfrac{2}{3}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) \(x_1^M = \tfrac{2}{3}\cdot m/p_1\).</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (d) [inversão dual em \(\bar u\)].
-      <div class="peer-review">Peer-review: [simétrica: \(e(p, V(p,m)) = m\)].</div>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Roy: \(x_i^M = -(\partial v/\partial p_i)/(\partial v/\partial m)\). Funciona em qualquer transformação monótona de \(v\) — inclusive em log.</p>
+      <p><strong>2. Derivação.</strong> \(\partial v/\partial p_1 = -(2/3)/p_1\); \(\partial v/\partial m = 1/m\). Logo \(x_1^M = -(-(2/3)/p_1)/(1/m) = (2/3)\cdot m/p_1\).</p>
+      <p><strong>3. Armadilha.</strong> (a) troca os expoentes de \(p_1\) e \(p_2\) — erro de reconhecimento. (b) é CD com \(\alpha = 1\). (c) esquece de dividir por \(\partial v/\partial m\) — pega só o numerador.</p>
+      <p><strong>4. Extensão.</strong> A forma log-linear de \(v\) é a <em>assinatura</em> de preferências CD. Verificamos: \(v = \ln m - (2/3)\ln p_1 - (1/3)\ln p_2 = \ln(m/(p_1^{2/3} p_2^{1/3}))\) — transformação monotônica de \(m\cdot \phi(p) = m\cdot p_1^{-2/3} p_2^{-1/3}\). Representa preferência CD com expoentes \((2/3, 1/3)\).</p>
+      <p><strong>5. Peer-review.</strong> Roy em log é a fórmula que vai para o código em AIDS/PIGLOG. Aluno que não aplica em 30 segundos ainda não está fluente na forma estrutural.</p>
     </div>
   </div>
 
-  <!-- Q5 🟡 -->
+  <!-- Q5 🟡 — Propriedades de curvatura: qual é verdadeira -->
   <div class="quizg-q" data-qid="q5" data-correct="b" data-difficulty="yellow">
-    <div class="quizg-qtext">Q5. [PLACEHOLDER 🟡 — Homogeneidade: \(x^M(\lambda p, \lambda m) = ?\)]</div>
-    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) [distrator: \(\lambda x^M\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) [correta: \(x^M(p,m)\) — grau 0]</label>
-    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) [distrator]</label>
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Qual das afirmações abaixo é <strong>verdadeira</strong> sobre propriedades estruturais da dualidade?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) A Hicksiana \(h(p, \bar u)\) é homogênea de grau 1 em \(p\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) A função gasto \(e(p, \bar u)\) é homogênea grau 1 em \(p\); a Hicksiana \(h(p, \bar u)\) é homogênea grau 0 em \(p\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) Ambas \(v(p, m)\) e \(e(p, \bar u)\) são homogêneas grau 1 em \(p\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) A matriz \(\partial h_i/\partial p_j\) é semidefinida positiva e simétrica.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (b) [ausência de ilusão monetária].
-      <div class="peer-review">Peer-review: [decorre da restrição orçamentária escalar].</div>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Por Shephard, \(h_i = \partial e/\partial p_i\). A derivada de uma função homogênea de grau 1 em \(p\) é homogênea de grau 0 em \(p\). Daí o grau 1 de \(e\) e o grau 0 de \(h\).</p>
+      <p><strong>2. Derivação.</strong> \(e(\lambda p, \bar u) = \lambda e(p, \bar u)\) (grau 1) — escala de preços escala o gasto. Diferenciando em \(p_i\): \(\lambda \cdot h_i(\lambda p, \bar u) = \lambda\cdot h_i(p, \bar u)\), logo \(h_i(\lambda p, \bar u) = h_i(p, \bar u)\) — grau 0 como afirmado.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte graus. (c) é falso — \(v\) é homogênea grau 0 em \((p, m)\) conjuntamente, não grau 1 em \(p\) só. (d) troca sinal: a matriz é semidef. <em>negativa</em> (concavidade de \(e\)).</p>
+      <p><strong>4. Extensão.</strong> Homogeneidade grau 0 de \(h\) é operacionalmente importante para Slutsky: garante que \(Sp = 0\), uma das três restrições estruturais da matriz de Slutsky.</p>
+      <p><strong>5. Peer-review.</strong> Questão de reconhecimento. Se o aluno hesitou entre (b) e (d), ainda não consolidou sinal de concavidade. A tarefa pedagógica: fixar que concavidade ⇒ Hessiano semidef. <em>negativo</em>; convexidade ⇒ <em>positivo</em>. Sem isso, Slutsky na Aula 3 vira salada.</p>
     </div>
   </div>
 
-  <!-- ========== RED 6..10 (avançadas Jehle-Reny / qualifier) ========== -->
+  <!-- ========== RED 6..10 (avançadas — calibre Jehle-Reny / qualifier) ========== -->
 
-  <!-- Q6 🔴 -->
-  <div class="quizg-q" data-qid="q6" data-correct="c" data-difficulty="red">
-    <div class="quizg-qtext">Q6. [PLACEHOLDER 🔴 — Sob quais hipóteses mínimas a hicksiana é uma função (vs. correspondência)? Relacionar com convexidade estrita de preferências.]</div>
-    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) [só continuidade]</label>
-    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) [só monotonicidade forte]</label>
-    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) [correta: continuidade + convexidade estrita]</label>
-    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) [todas as hipóteses walrasianas]</label>
+  <!-- Q6 🔴 — Derivar Slutsky da identidade -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> A partir da identidade \(x_i^M(p, m) = h_i(p, v(p, m))\), aplicando \(\partial/\partial p_j\) em ambos os lados e usando Roy, deriva-se a <strong>Equação de Slutsky</strong>. Qual é a forma correta?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \(\partial x_i^M/\partial p_j = \partial h_i/\partial p_j + x_i^M\cdot \partial x_j^M/\partial m\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) \(\partial x_i^M/\partial p_j = \partial h_i/\partial p_j - x_j^M\cdot \partial x_i^M/\partial m\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(\partial x_i^M/\partial p_j = \partial h_i/\partial p_j + x_j^M\cdot \partial x_i^M/\partial m\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \(\partial x_i^M/\partial p_j = -\partial h_i/\partial p_j + x_j^M\cdot \partial x_i^M/\partial m\).</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (c) [JR Teorema 1.8].
-      <div class="peer-review">Peer-review: [convexidade não-estrita já permite múltiplos minimizadores — hicksiana vira correspondência].</div>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Slutsky sai da dualidade em 3 linhas: derivar identidade em \(p_j\), usar Roy para substituir \(\partial v/\partial p_j\), e simplificar usando \(\partial h_i/\partial \bar u = (1/\lambda^*)\cdot \partial x_i^M/\partial m\).</p>
+      <p><strong>2. Derivação.</strong> Começando de \(x_i^M(p, m) = h_i(p, v(p, m))\), derivar em \(p_j\):
+      \[
+      \frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v} + \frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+      \]
+      Por Roy, \(\partial v/\partial p_j = -\lambda^* x_j^M\). Pela segunda identidade dual, \(h_i(p, \bar u) = x_i^M(p, e(p, \bar u))\), derivar em \(\bar u\): \(\partial h_i/\partial \bar u = (\partial x_i^M/\partial m)\cdot (\partial e/\partial \bar u) = (\partial x_i^M/\partial m)/\lambda^*\) (pois \(\partial e/\partial \bar u = 1/\lambda^*\)). Substituir:
+      \[
+      \frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j} + \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}\cdot (-\lambda^* x_j^M) = \frac{\partial h_i}{\partial p_j} - x_j^M\cdot \frac{\partial x_i^M}{\partial m}.\ \blacksquare
+      \]
+      </p>
+      <p><strong>3. Armadilha.</strong> (a) inverte índices: \(x_i^M\) em vez de \(x_j^M\) no efeito-renda. Slutsky é assimétrica: efeito de \(p_j\) sobre \(x_i\) tem renda proporcional ao consumo do <em>bem cujo preço mudou</em>, isto é, \(x_j\). (c) erra o sinal do efeito-renda. (d) erra sinal do efeito-substituição.</p>
+      <p><strong>4. Extensão.</strong> Em forma de elasticidades: \(\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\eta_i\). Essa é a identidade que ANPEC e qualifiers de mestrado exigem na cabeça. Decompor Marshalliana em Hicksiana (substituição compensada) e efeito-renda é o coração de Slutsky.</p>
+      <p><strong>5. Peer-review.</strong> Questão no fronteira da Aula 2/Aula 3. Incluí aqui para o aluno sair capaz de derivar Slutsky no caderno dele. Se precisar ficar colando na fórmula decorada, não aprendeu dualidade de verdade; se derivou sozinho, dominou.</p>
     </div>
   </div>
 
-  <!-- Q7 🔴 -->
-  <div class="quizg-q" data-qid="q7" data-correct="a" data-difficulty="red">
-    <div class="quizg-qtext">Q7. [PLACEHOLDER 🔴 — Derive a equação de Slutsky a partir da identidade \(h_i(p,\bar u) = x_i^M(p, e(p,\bar u))\) diferenciando em \(p_j\).]</div>
-    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) [correta: \(\partial x_i^M/\partial p_j = \partial h_i/\partial p_j - x_j^M \partial x_i^M/\partial m\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) [sinal trocado no termo de renda]</label>
-    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) [distrator]</label>
-    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) [distrator]</label>
+  <!-- Q7 🔴 — 3 propriedades da matriz de Slutsky compensada -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> A matriz \(S\) com entradas \(S_{ij} = \partial h_i(p, \bar u)/\partial p_j\) herda três propriedades estruturais da função gasto \(e(p, \bar u)\). Quais?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Simétrica, semidefinida positiva, e \(Sp = \mathbf{0}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Simétrica, semidefinida negativa, e \(Sp = \mathbf{1}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) <strong>Simétrica</strong> (Young aplicado a \(e\)), <strong>semidefinida negativa</strong> (concavidade de \(e\) em \(p\)) e <strong>\(Sp = \mathbf{0}\)</strong> (homogeneidade grau 0 de \(h\), via Euler em \(e\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Assimétrica em geral; semidefinida negativa.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (a) [Shephard + cadeia].
-      <div class="peer-review">Peer-review: [a pegadinha (b) inverte o sinal — erro mais comum em qualifier].</div>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Três propriedades, três teoremas de análise: Young, concavidade, Euler.</p>
+      <p><strong>2. Derivação.</strong> (i) Por Shephard, \(S_{ij} = \partial^2 e/\partial p_j\partial p_i\) — cruzadas iguais por Young ⇒ <em>simetria</em>. (ii) Concavidade de \(e\) em \(p\) ⇒ Hessiano <em>semidef. negativo</em>. (iii) \(e\) é homogênea grau 1 em \(p\), logo \(h\) (=\(\partial e/\partial p\)) é grau 0. Euler em \(e\): \(\sum_j p_j\, h_j = e\). Derivando em \(p_i\): \(h_i + \sum_j p_j S_{ji} = h_i\) ⇒ \(\sum_j p_j S_{ji} = 0\), isto é <em>\(Sp = \mathbf{0}\)</em>.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte sinal. (b) inventa \(Sp = \mathbf{1}\). (d) esquece simetria — a matriz <em>compensada</em> é simétrica; a <em>não-compensada</em> (Marshalliana, \(\partial x^M/\partial p\)) é que pode ser assimétrica.</p>
+      <p><strong>4. Extensão.</strong> Essas 3 propriedades são os <em>três testes empíricos</em> da teoria da demanda. Violações (simetria, semidef. neg., adição) indicam: má especificação, viés de agregação, ou preferências <em>incoerentes</em> (não representáveis por \(u\)). GARP (Varian 1982) é o equivalente <em>discreto</em> desse teste.</p>
+      <p><strong>5. Peer-review.</strong> Questão exigente — pede três coisas com três justificativas distintas. O aluno que memoriza só "simetria e semidef. neg." e esquece \(Sp = 0\) não captou a estrutura. O \(Sp = 0\) é o elemento menos lembrado em N&S (raramente enfatizado); J-R §2.1 discute.</p>
     </div>
   </div>
 
-  <!-- Q8 🔴 -->
+  <!-- Q8 🔴 — Engel + Cournot -->
   <div class="quizg-q" data-qid="q8" data-correct="d" data-difficulty="red">
-    <div class="quizg-qtext">Q8. [PLACEHOLDER 🔴 — Prove que \(e(p,\bar u)\) é côncava em p. Qual é o passo-chave?]</div>
-    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) [concavidade de \(U\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) [compacidade de orçamento]</label>
-    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) [argumento via dual da utilidade]</label>
-    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) [correta: \(e\) é mínimo de funções lineares em p]</label>
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Walras (\(p\cdot x^M = m\)) combinada com homogeneidade grau 0 de \(x^M\) gera duas <strong>restrições de adição</strong> em elasticidades. Quais?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(\sum_i s_i\eta_i = m\); \(\sum_i s_i\varepsilon_{ij} = -s_j\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) \(\sum_i \eta_i = 1\); \(\sum_i \varepsilon_{ij} = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(\sum_i s_i\eta_i = 1\); \(\sum_i \varepsilon_{ij} = -1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) \(\sum_i s_i\eta_i = 1\) (Engel); \(\sum_i s_i\varepsilon_{ij} = -s_j\) (Cournot), onde \(s_i = p_ix_i^M/m\), \(\eta_i\) elasticidade-renda, \(\varepsilon_{ij}\) elasticidade-preço cruzada.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (d) [min de lineares é côncavo; não depende de propriedades de \(U\)].
-      <div class="peer-review">Peer-review: [dual: \(V\) é quasiconvexa em p — mesma estrutura, outro caminho].</div>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> <em>Engel</em> (soma ponderada de elasticidades-renda = 1) nasce de derivar Walras em \(m\). <em>Cournot</em> (soma ponderada de elasticidades-preço cruzadas dá menos a parcela) nasce de derivar Walras em \(p_j\).</p>
+      <p><strong>2. Derivação.</strong></p>
+      <p style="margin-left:1em"><em>Engel (derivada em \(m\)).</em> Parte de Walras: \(\sum_i p_i x_i^M(p, m) = m\). Derive em \(m\):
+      \[
+      \sum_i p_i\,\frac{\partial x_i^M}{\partial m} = 1.
+      \]
+      Multiplique cada termo por \(\frac{x_i^M}{x_i^M}\cdot \frac{m}{m}\), reagrupando como \(s_i \cdot \eta_i\):
+      \[
+      \sum_i \underbrace{\frac{p_i x_i^M}{m}}_{s_i}\cdot \underbrace{\frac{m}{x_i^M}\cdot \frac{\partial x_i^M}{\partial m}}_{\eta_i} = 1
+      \;\Longrightarrow\; \sum_i s_i\eta_i = 1.
+      \]
+      </p>
+      <p style="margin-left:1em"><em>Cournot (derivada em \(p_j\)).</em> Derive Walras em \(p_j\):
+      \[
+      x_j^M + \sum_i p_i\,\frac{\partial x_i^M}{\partial p_j} = 0.
+      \]
+      Divida tudo por \(m\):
+      \[
+      \frac{x_j^M}{m} \;+\; \sum_i \frac{p_i}{m}\,\frac{\partial x_i^M}{\partial p_j} = 0.
+      \]
+      No primeiro termo, \(x_j^M/m = s_j/p_j\) (basta multiplicar por \(p_j/p_j\)) — mas preferimos \(s_j\), então multiplique por \(p_j\) os dois lados da última identidade e nomeie \(s_j = p_j x_j^M/m\); simultaneamente, no segundo termo, multiplique e divida cada parcela por \(p_j\cdot x_i^M\) para formar \(s_i\) e \(\varepsilon_{ij}\):
+      \[
+      s_j \;+\; \sum_i \underbrace{\frac{p_i x_i^M}{m}}_{s_i}\cdot \underbrace{\frac{p_j}{x_i^M}\,\frac{\partial x_i^M}{\partial p_j}}_{\varepsilon_{ij}} = 0
+      \;\Longrightarrow\; \sum_i s_i\varepsilon_{ij} = -s_j.
+      \]
+      </p>
+      <p><strong>3. Armadilha.</strong> (a) erra unidade em Engel ("\(= m\)" mistura elasticidade com moeda). (b) esquece peso \(s_i\) — mistura "derivada" com "elasticidade". (c) simplifica Cournot para \(-1\) ignorando \(s_j\).</p>
+      <p><strong>4. Extensão.</strong> Em AIDS e PIGLOG, Engel e Cournot são <em>impostas</em> na parametrização. Violações amostrais disparam diagnóstico: (i) má especificação funcional; (ii) viés de agregação; (iii) preferências não-maximizadoras (comportamental). Questão de prova ANPEC quase todo ano.</p>
+      <p><strong>5. Peer-review.</strong> Restrições de adição são consequência trivial de Walras — por isso "qualquer" modelo de demanda razoável as satisfaz. Elas servem como <em>testes de sanidade</em>: dados que violam são ou ruidosos ou refutam o modelo.</p>
     </div>
   </div>
 
-  <!-- Q9 🔴 -->
-  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="red">
-    <div class="quizg-qtext">Q9. [PLACEHOLDER 🔴 — Matriz de Slutsky \(S_{ij} = \partial h_i/\partial p_j\): simetria exige diferenciabilidade de qual objeto?]</div>
-    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) [\(U\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) [correta: \(e(p,\bar u)\) \(C^2\) em p — Young]</label>
-    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) [\(V\)]</label>
-    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) [\(x^M\)]</label>
+  <!-- Q9 🔴 — Dualidade em homotéticas -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Seja \(u\) contínua, monotônica, quasicôncava e <strong>homotética</strong>. A função gasto fatoriza como \(e(p, \bar u) = c(p)\cdot f(\bar u)\) com \(f\) crescente e \(c(\cdot)\) específica. Qual é a propriedade estrutural de \(c(p)\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) \(c(p)\) é convexa em \(p\) e homogênea grau 1.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) \(c(p)\) é homogênea grau 1 mas nem côncava nem convexa em geral.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) \(c(p)\) é côncava em \(p\) e homogênea grau 1 em \(p\); interpreta-se como <em>índice de custo de vida</em> para 1 unidade de utilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) \(c(p)\) é côncava em \(p\) mas não tem homogeneidade fixa.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (b) [\(S_{ij} = \partial^2 e/\partial p_i \partial p_j\) via Shephard + Young].
-      <div class="peer-review">Peer-review: [equivalente à ausência de efeitos de caminho no excedente do consumidor].</div>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Homotetia ⇒ \(h(p, \bar u) = f(\bar u)\cdot h(p, 1)\) (demanda radial em \(\bar u\)). Logo \(e(p, \bar u) = p\cdot h = f(\bar u)\cdot p\cdot h(p, 1) = f(\bar u)\cdot c(p)\), com \(c(p) = e(p, 1)\). \(c\) herda homogeneidade grau 1 e concavidade em \(p\) de \(e\).</p>
+      <p><strong>2. Derivação.</strong> Como \(c(p) = e(p, 1)\), \(c(\lambda p) = e(\lambda p, 1) = \lambda\,e(p, 1) = \lambda c(p)\) (grau 1). Concavidade: \(e\) é côncava em \(p\) para cada \(\bar u\), incluindo \(\bar u = 1\). Logo \(c\) é côncava.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte sinal. (b) esquece que \(e\) é sempre côncava em \(p\) — logo \(c\) é. (d) confunde homogeneidade com propriedade de \(f\).</p>
+      <p><strong>4. Extensão.</strong> \(c(p)\) é a fundação do <strong>índice de preço de Konüs</strong>. A razão \(c(p^1)/c(p^0)\) é o custo-de-vida estrutural exato (mesmo nível de utilidade, dois vetores de preços). IPCA/CPI aproximam isso via Laspeyres/Paasche/Fisher. Essa aproximação tem viés bem-conhecido que Konüs quantifica em preferências não-homotéticas.</p>
+      <p><strong>5. Peer-review.</strong> Questão conceitual importante. Aparece em J-R §2.1 com demonstração; em N&S é passada mais ligeiramente. Útil para quem quer fazer índice de preços ou economia de bem-estar (Harberger triangles).</p>
     </div>
   </div>
 
-  <!-- Q10 🔴 -->
-  <div class="quizg-q" data-qid="q10" data-correct="c" data-difficulty="red">
-    <div class="quizg-qtext">Q10. [PLACEHOLDER 🔴 — Aplicação: se \(x_i\) é Giffen, o que isso implica sobre o sinal de \(\partial x_i^M/\partial m\) e \(\partial h_i/\partial p_i\)?]</div>
-    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) [ambos positivos]</label>
-    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) [ambos negativos]</label>
-    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) [correta: \(\partial x_i/\partial m < 0\) (inferior forte) e \(\partial h_i/\partial p_i \leq 0\) (sempre)]</label>
-    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) [nenhum dos acima]</label>
+  <!-- Q10 🔴🔴 — Recíproca da dualidade -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <span style="font-size:0.85em;color:#64748b">(difícil mesmo para 🔴 — exige raciocinar na <em>recíproca</em> da dualidade)</span><br>Um economista empírico observa \(e(p, \bar u)\) (por exemplo, consegue medir o gasto mínimo para atingir um padrão de vida \(\bar u\) via cesta de referência). É possível <strong>recuperar</strong> a preferência \(\succeq\) (e, equivalentemente, \(u\) a menos de transformação monótona) a partir de \(e\) sozinha?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Sim — aplicar Shephard recupera \(h\); integrar \(h\) recupera \(u\) explicitamente.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Sim — toda \(e\) contínua, côncava grau 1 em \(p\), crescente em \(\bar u\) é <strong>dual a uma única preferência</strong>. Os conjuntos superiores \(\{x : u(x)\geq \bar u\}\) reconstroem-se como \(\bigcap_{p\gg 0}\{x : p\cdot x \geq e(p, \bar u)\}\), pela teoria dos conjuntos convexos suportáveis.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Não — \(e\) é resumo insuficiente; sem \(h\) ou \(x^M\) separadamente, \(u\) permanece não-identificada.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Sim, mas apenas para preferências <em>homotéticas</em>.</label>
     <div class="quizg-feedback" hidden>
-      <strong>Gabarito:</strong> (c) [Giffen exige efeito-renda negativo forte o bastante para dominar o efeito-substituição, que é sempre não-positivo].
-      <div class="peer-review">Peer-review: [distrator (d) testa se o aluno sabe que Slutsky sempre dá \(S_{ii} \leq 0\) — mesmo em Giffen].</div>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Dualidade é um mapa <em>bijetivo</em> entre preferências bem-comportadas e funções \(e\) que satisfazem os axiomas estruturais (E1–E5). Dada \(e\), recupera-se a preferência uniquamente. É o teorema da recíproca (J-R §2.1).</p>
+      <p><strong>2. Derivação (esboço).</strong> O conjunto superior de nível \(U(\bar u) = \{x : u(x)\geq \bar u\}\) é fechado e convexo (sob quasiconcavidade). Pelo teorema de separação (Hahn-Banach / Minkowski), cada conjunto convexo fechado é a <em>intersecção dos semi-espaços suportes</em>. O semi-espaço suporte em \(p\) é \(H(p, \bar u) = \{x : p\cdot x \geq e(p, \bar u)\}\), pois \(e\) é o <em>menor</em> valor \(p\cdot x\) sobre \(U(\bar u)\). Logo:
+      \[
+      U(\bar u) = \bigcap_{p\gg 0}\{x : p\cdot x \geq e(p, \bar u)\}.
+      \]
+      Conhecido \(U(\bar u)\) para cada \(\bar u\), a preferência está caracterizada (relação de nível é tudo o que importa ordinalmente).</p>
+      <p><strong>3. Armadilha.</strong> (a) é parcialmente correto — Shephard recupera \(h\) sim, mas "integrar \(h\)" para obter \(u\) é técnico e exige simetria de Slutsky compensada (automática se \(e\) satisfaz as propriedades). Não é o argumento <em>canônico</em> do teorema. (c) é o erro de quem pensa em \(e\) como "resumo" em vez de "caracterização completa". (d) restringe desnecessariamente: recíproca vale para qualquer preferência convexa quasicôncava, homotética ou não.</p>
+      <p><strong>4. Extensão.</strong> Esse teorema é a <em>justificativa teórica</em> de estimação estrutural via função gasto. AIDS parametriza \(\ln e(p, \bar u)\) e extrai demanda via Shephard (consistente com teoria). A recuperação de \(u\) a partir de \(\hat{e}\) estimada é o que torna AIDS compatível com welfare analysis rigoroso.</p>
+      <p><strong>5. Peer-review.</strong> 🔴🔴 porque testa internalização de <em>recíproca</em> da dualidade — não é derivada em aula presencial (só mencionada). J-R §2.1 dá o argumento em 1 página; N&S omite. Esse conteúdo separa quem entendeu dualidade <em>como simetria</em> de quem memorizou "UMP dá \(x^M\), EMP dá \(h\)". A armadilha mais sutil é (c) pelo ceticismo performático — rejeitar por incapacidade de recuperar \(u\) <em>exatamente</em>, quando o teorema dá a preferência (ordinal, que é o que importa). Risco residual da questão: aluno mais literal pode achar que "recuperar \(u\)" exige fórmula fechada — não exige; basta caracterizar os conjuntos superiores, que é o que a união de semi-espaços faz.</p>
     </div>
   </div>
 
@@ -182,7 +274,7 @@
 
 <div class="admonition note" style="margin-top:2rem">
 <div class="admonition-title">Próximos passos</div>
-<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 2. Dúvidas que apareceram aqui viram prioridade na monitoria do Alberto (16/05).</p>
+<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 2. A <strong>Pré-aula 3</strong> (Slutsky + elasticidades + estimação) é liberada em <strong>qui 30/04 madrugada</strong>; com o calendário unificado deste semestre, todo material das Aulas 1 e 2 fecha em <strong>qua 06/05 às 18h</strong>.</p>
 </div>
 
 </div>
