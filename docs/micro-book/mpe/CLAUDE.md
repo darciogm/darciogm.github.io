@@ -81,7 +81,7 @@ Cada aula entrega o pacote completo:
 6. **Quiz pós-aula**: **10 questões — 5 intermediárias 🟡 + 5 avançadas 🔴**, gabarito 5-passos com peer-review.
 7. **Roteiro de monitoria**: Darcio prepara; agente auxilia quando chamado.
 
-Calibre: Nicholson & Snyder 11ª ed. é o piso; Jehle & Reny 3ª ed. é o teto de conforto; MWG citado cirurgicamente. Gold standard estrutural = Cap 3 do livro *Microeconomia: Do Zero ao Equilíbrio*.
+Calibre: Nicholson & Snyder **12ª ed.** (Cengage, 2017, ISBN 978-1-305-50579-7) é o piso; Jehle & Reny 3ª ed. é o teto de conforto; MWG citado cirurgicamente. Gold standard estrutural = Cap 3 do livro *Microeconomia: Do Zero ao Equilíbrio*.
 
 ## Como ativar o agente
 

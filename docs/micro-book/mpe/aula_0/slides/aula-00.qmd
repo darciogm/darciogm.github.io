@@ -426,10 +426,10 @@ As 15 datas que importam.
 | 3 | 06/05 | Slutsky, elasticidades, demanda | 5–6 |
 | 4 | 13/05 | Equilíbrio geral em trocas (Edgeworth) | 13 |
 | 5 | 20/05 | Equilíbrio geral com produção | 13 |
-| 6 | 27/05 | Arrow-Debreu I — incerteza | 7 |
-| 7 | 03/06 | Arrow-Debreu II — ativos, mercados completos | 18 |
+| 6 | 27/05 | Arrow-Debreu I — incerteza, utilidade esperada | 7 |
+| 7 | 03/06 | Arrow-Debreu II — state-preference, ativos, mercados completos | 7§ + extras |
 | 8 | 10/06 | Externalidades, bens públicos, Coase | 19 |
-| 9 | 17/06 | Informação assimétrica — adversa, moral, sinalização | 18+ |
+| 9 | 17/06 | Informação assimétrica — adversa, moral, sinalização | 18 |
 :::
 
 ---
