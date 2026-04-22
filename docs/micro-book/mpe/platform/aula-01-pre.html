@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 01 — Preferências, Axiomas e Utilidade — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 01 — Preferências, Axiomas e Utilidade</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (Nicholson &amp; Snyder).</strong> Objetivo: consolidar o que você leu na pré-aula (ZaE cap. 3 + N&amp;S 12e cap. 3) antes de entrar em sala amanhã. <strong>Uma única submissão</strong> — revise com calma antes de clicar em <em>Submeter</em>. Após submeter, o gabarito 5-passos (com peer-review) fica visível para estudo, mas não há nova tentativa. Tempo estimado: <strong>25–40 min</strong>.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-01-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 01">
+
+  <h3>Revisão — Preferências, Axiomas e Utilidade (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Diagnóstico do axioma faltante -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Considere uma relação \(\succeq\) em \(\mathbb{R}^2_+\) que é <em>completa</em>, <em>transitiva</em>, <em>monotônica</em> (mais é melhor) e <em>convexa</em>, mas tal que, para algum \(y\in\mathbb{R}^2_+\), o conjunto \(\{z\in\mathbb{R}^2_+ : y\succeq z\}\) <strong>não é fechado</strong>. Nesse caso, qual axioma está faltando — e qual é a consequência direta?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Falta completude — e sem ela não se pode atribuir número real a cada cesta.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Falta transitividade — e sem ela \(u:\mathbb{R}^2_+\to\mathbb{R}\) geraria ciclos.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) Falta continuidade — e por isso não se garante representação por \(u\) contínua (Debreu).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Falta convexidade — conjunto inferior não-fechado é o diagnóstico geométrico de curvas de indiferença côncavas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Continuidade é, operacionalmente, o axioma que pede que os conjuntos \(\{z:z\succeq y\}\) e \(\{z:y\succeq z\}\) sejam <em>fechados</em> para todo \(y\). O enunciado explicita a falha exatamente nesse objeto — logo é o axioma de continuidade que está ausente. É o mesmo mecanismo que a lexicográfica exibe.</p>
+      <p><strong>2. Derivação.</strong> Pelo teorema de Debreu, (1) completude + (2) transitividade + (3) continuidade são suficientes para existir \(u\) contínua com \(x\succeq y\iff u(x)\geq u(y)\). Se \(u\) contínua representasse \(\succeq\), então \(\{z: y\succeq z\}=u^{-1}((-\infty,u(y)])\) seria fechado (pré-imagem de fechado por contínua). O enunciado diz que esse conjunto não é fechado — contradição com existência de \(u\) contínua. Logo quem falha é a continuidade de \(\succeq\).</p>
+      <p><strong>3. Armadilha.</strong> (d) associa "não-fechado" a "côncavo" por confusão geométrica: convexidade de preferências diz respeito a <em>convexidade</em> dos conjuntos superiores \(\{z: z\succeq y\}\), não a seu fechamento. São propriedades ortogonais — um conjunto pode ser convexo e não-fechado, fechado e não-convexo. (a) e (b) também seriam falhas graves, mas o enunciado explicitamente afirma completude e transitividade como dadas.</p>
+      <p><strong>4. Extensão.</strong> Sem continuidade, a representação por utilidade contínua desaparece, mas pode haver representação por uma \(u\) <em>não-contínua</em> — a lexicográfica em \(\mathbb{R}^2_+\) não admite sequer isso (Debreu 1954). O axioma (3) é topológico, não meramente lógico como (1)–(2).</p>
+      <p><strong>5. Peer-review.</strong> Um colega cético perguntaria: "e a monotonicidade, por onde entra?" Entra na suficiência (não necessidade) para a construção padrão da \(u\) via "puxar de volta para a diagonal" \(\{t\cdot \mathbf{1} : t\geq 0\}\). Na prova de Debreu em versão mais geral (\(X\) conexo, separável), mesmo sem monotonicidade vale o teorema — monotonicidade é conveniência pedagógica, não ingrediente lógico.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Lex em R^3 satisfaz transitividade (corrigindo o distractor comum) -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Defina a preferência lexicográfica em \(\mathbb{R}^3_+\): \(x\succeq^L y\) sse (i) \(x_1>y_1\), ou (ii) \(x_1=y_1\) e \(x_2>y_2\), ou (iii) \(x_1=y_1,\,x_2=y_2\) e \(x_3\geq y_3\). Quais axiomas ela <strong>satisfaz</strong> e quais <strong>viola</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) Satisfaz completude; viola transitividade e continuidade — em \(\mathbb{R}^3\) o critério de desempate gera ciclos.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) Satisfaz completude e transitividade; viola continuidade — é o mesmo diagnóstico de \(\mathbb{R}^2\), só com um bem a mais na hierarquia.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Satisfaz transitividade; viola completude — existem pares em \(\mathbb{R}^3\) que não podem ser comparados lexicograficamente.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Satisfaz os cinco axiomas; apenas falha em admitir \(u\) contínua por uma razão técnica alheia à axiomática.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A lex em qualquer dimensão \(n\geq 2\) é um modelo clássico de ordem total: para quaisquer \(x,y\), ou \(x\succ^L y\), ou \(y\succ^L x\), ou \(x=y\). Isso dá <em>completude</em>. E a hierarquia de desempates não produz ciclos: se \(x\succ^L y\) e \(y\succ^L z\), então \(x\succ^L z\) — basta rastrear o primeiro bem em que há diferença. Logo <em>transitividade</em> também é satisfeita. O que falha é a continuidade (exatamente como em \(\mathbb{R}^2\)).</p>
+      <p><strong>2. Derivação.</strong> Transitividade em passos: se \(x\succ^L y\), existe índice \(k\) mínimo onde \(x_k>y_k\) e \(x_j=y_j\) para \(j<k\). Se \(y\succ^L z\), existe \(\ell\) análogo. No índice \(m=\min\{k,\ell\}\) tem-se \(x_m\geq y_m\geq z_m\) com pelo menos uma desigualdade estrita — e antes de \(m\) tudo é igual. Logo \(x\succ^L z\). Para completude: se \(x\neq y\), existe um primeiro índice em que diferem, e ele dita quem "ganha". Para continuidade: o argumento da sequência \(x^n=(1-1/n,\,2,\,0)\to(1,2,0)\) com \(y=(1,1,0)\) falha continuidade igual ao caso \(\mathbb{R}^2\).</p>
+      <p><strong>3. Armadilha.</strong> (a) é o erro de "quanto mais bens, mais ciclos" — intuição econômica mal aplicada. A lex é total e acíclica em qualquer \(\mathbb{R}^n\); a patologia não está nos ciclos, está no salto. (c) troca a letra do diagnóstico: completude é <em>a</em> virtude da lex, não sua falha. (d) é o erro inverso — despreza a razão axiomática clara (continuidade falha) e apela a "tecnicalidade alheia".</p>
+      <p><strong>4. Extensão.</strong> Dimensão não afeta o diagnóstico. O que afeta é a <em>cardinalidade</em> do espaço: em \(X\) enumerável (por exemplo \(\mathbb{Q}^2_+\)), a lex admite representação por uma \(u\) perfeitamente comportada (só não-contínua na topologia usual). É a cardinalidade do contínuo que rompe a representabilidade.</p>
+      <p><strong>5. Peer-review.</strong> O argumento completo que mostra "nenhuma \(u\) representa \(\succeq^L\) em \(\mathbb{R}^2_+\)" — a injeção \(\mathbb{R}\hookrightarrow\mathbb{Q}\) forçada pelos intervalos abertos \((u(\underline{x},0),\,u(\underline{x},1))\) — é conteúdo de aula presencial, não desta revisão. Aqui o aluno só precisa reconhecer que completude e transitividade sobrevivem e continuidade não.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — O que Debreu garante e NÃO garante -->
+  <div class="quizg-q" data-qid="q3" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Dadas \(\succeq\) completa, transitiva e contínua sobre \(\mathbb{R}^2_+\), o teorema de Debreu garante a existência de \(u:\mathbb{R}^2_+\to\mathbb{R}\). Qual é a <strong>regularidade</strong> de \(u\) que o teorema dá — e qual ele <strong>não</strong> dá?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Dá \(u\) contínua <strong>e</strong> diferenciável; não dá monotonicidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Dá \(u\) diferenciável; continuidade é consequência lateral e não requer hipótese própria.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Dá \(u\) contínua <strong>e</strong> quasiconcava; não dá diferenciabilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Dá apenas \(u\) contínua; diferenciabilidade, monotonicidade e quasiconcavidade <em>não</em> seguem do teorema — são hipóteses adicionais sobre \(\succeq\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Debreu entrega <em>continuidade</em> de \(u\), e só. Diferenciabilidade é propriedade mais forte, não embutida em (1)+(2)+(3). Monotonicidade (4) e convexidade (5) são axiomas <em>adicionais</em> sobre \(\succeq\) — quando impostos, transferem-se para \(u\) como monotonicidade e quasiconcavidade.</p>
+      <p><strong>2. Derivação.</strong> Prova-esqueleto: para cada \(x\in\mathbb{R}^2_+\), pegue \(t(x)\) tal que \(t(x)\cdot\mathbf{1}\sim x\) (existe por continuidade + monotonicidade da ray diagonal, ou uma construção equivalente). Defina \(u(x)=t(x)\). A continuidade de \(\succeq\) força \(t(\cdot)\) contínua. Não há passo na construção que exija ou produza diferenciabilidade — pense numa \(u\) tipo "função zig-zag de Lipschitz" representando preferências perfeitamente lícitas.</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) anexam diferenciabilidade "de graça" — erro clássico de quem confunde "suaviza-se o gráfico" com "é derivável". Em N&amp;S o autor frequentemente assume diferenciabilidade implícita nas contas de TMS, o que induz o engano. (c) anexa quasiconcavidade — ela só vale se \(\succeq\) for convexa (axioma 5), que <em>não</em> está entre os três suficientes para Debreu.</p>
+      <p><strong>4. Extensão.</strong> Para trabalhar com TMS como derivada parcial, precisa-se de diferenciabilidade de \(u\). Isso é suposto pragmaticamente no curso (e em N&amp;S) — mas é suposição de <em>modelagem</em>, não resultado do teorema. Rigor estrito: Debreu-Eilenberg (1954) dá continuidade; diferenciabilidade exige hipóteses extras (preferências "suaves" no sentido de Debreu 1972 ou Mas-Colell 1985).</p>
+      <p><strong>5. Peer-review.</strong> Um cético perguntaria: "e unicidade?" Debreu dá existência; unicidade é <em>a menos de transformação estritamente crescente</em>, que é exatamente o espaço onde ordinalidade opera (próxima questão). Separar "que \(u\) existe" de "qual \(u\) é" é parte do rigor que o curso cobra desde o primeiro dia.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Ordinalidade: quais transformações preservam preferência -->
+  <div class="quizg-q" data-qid="q4" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Seja \(u:\mathbb{R}^2_{++}\to\mathbb{R}\) representando \(\succeq\). Considere cinco transformações aplicadas a \(u\):
+      \[
+      v_1=e^{u},\quad v_2=u^3,\quad v_3=u^2\ (\text{para } u\geq 0),\quad v_4=-u,\quad v_5=\alpha u+\beta\ (\alpha>0).
+      \]
+      <strong>Quantas</strong> delas representam exatamente <em>a mesma</em> preferência \(\succeq\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Duas: \(v_1\) e \(v_5\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) Três: \(v_1\), \(v_2\) e \(v_5\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Quatro: \(v_1\), \(v_2\), \(v_3\) e \(v_5\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Cinco: todas preservam.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(v\) representa \(\succeq\) sse \(v=f\circ u\) com \(f\) <em>estritamente crescente</em> no intervalo \(u(\mathbb{R}^2_{++})\). Basta checar o sinal de \(f'\) (ou monotonicidade equivalente) caso a caso.</p>
+      <p><strong>2. Derivação.</strong> \(v_1=e^u\): \((e^t)'=e^t>0\) — estritamente crescente, preserva. \(v_2=u^3\): \((t^3)'=3t^2\geq 0\), zero só em \(t=0\) mas função \(t\mapsto t^3\) é estritamente crescente em \(\mathbb{R}\) — preserva. \(v_3=u^2\) no domínio \(u\geq 0\): derivada \(2t\geq 0\) com zero isolado em \(t=0\); função \(t\mapsto t^2\) é estritamente crescente em \([0,\infty)\) — preserva (o enunciado restringe explicitamente a \(u\geq 0\)). \(v_4=-u\): \(f(t)=-t\) é estritamente <em>decrescente</em> — inverte \(\succeq\), <strong>não</strong> preserva. \(v_5=\alpha u+\beta\) com \(\alpha>0\): \(f'=\alpha>0\) — preserva. Total: 4 preservam.</p>
+      <p><strong>3. Armadilha.</strong> (a) descarta \(v_2\) e \(v_3\) por superstição ("potência distorce magnitudes") — só o que importa é a ordem. (b) descarta só \(v_3\), esquecendo que o enunciado limitou \(u\geq 0\) justamente para \(t\mapsto t^2\) ser injetora. (d) inclui \(v_4=-u\) como se decrescência também valesse — erro canônico de "transformação monótona" confundida com "estritamente crescente".</p>
+      <p><strong>4. Extensão.</strong> Atenção à hipótese "\(u\geq 0\)" de \(v_3\): sem ela, \(t\mapsto t^2\) em \(\mathbb{R}\) <em>não</em> é injetora e destrói a ordem (\(u=-1\) e \(u=1\) dão \(v_3=1\) ambos). Esse é um exemplo clássico de por que o <em>domínio</em> da transformação importa — ordinalidade é uma propriedade <em>global</em>.</p>
+      <p><strong>5. Peer-review.</strong> Nota sutil: \(v_2=u^3\) é estritamente crescente em todo \(\mathbb{R}\), mas sua derivada zera em \(u=0\) — isso não contradiz "estritamente crescente". Confundir "derivada positiva em todo ponto" com "estritamente crescente" é erro pequeno, mas aparece em qualifier. A definição correta é via \(t_1<t_2\Rightarrow f(t_1)<f(t_2)\), não via \(f'>0\) em todo ponto.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — TMS numérico em sqrt(xy) -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Seja \(u(x,y)=\sqrt{xy}\). Qual é a TMS \(\text{TMS}_{xy}=-\tfrac{dy}{dx}\big|_{u=\bar u}\) no pacote \((x,y)=(4,16)\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) \(\tfrac{1}{2}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) \(\tfrac{1}{4}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) \(4\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) \(8\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(u=\sqrt{xy}\) é transformação monótona de \(xy\) (raiz quadrada em \(\mathbb{R}_+\) é estritamente crescente), logo tem a mesma TMS que a Cobb-Douglas simétrica \(u'=xy\). Para CD simétrica, \(\text{TMS}=y/x\).</p>
+      <p><strong>2. Derivação.</strong> Via cálculo direto: \(u_x=\tfrac{1}{2}(xy)^{-1/2}\cdot y\), \(u_y=\tfrac{1}{2}(xy)^{-1/2}\cdot x\). Razão: \(\text{TMS}=u_x/u_y=y/x\). Em \((4,16)\): \(\text{TMS}=16/4=4\).</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte a razão: \(x/y=4/16=1/4\) e multiplica por algum fator espúrio. (b) é literalmente \(x/y\) — erro canônico de trocar \(y/x\) por \(x/y\), que muitos alunos cometem por "alfabetizar" a fração. (d) calcula \(\sqrt{xy}=\sqrt{64}=8\), confundindo o <em>valor</em> da utilidade com a TMS. A questão é pensada para punir exatamente esse atalho.</p>
+      <p><strong>4. Extensão.</strong> Que quantidade de bem \(y\) o consumidor está disposto a abrir mão de por uma unidade adicional de bem \(x\)? No ponto \((4,16)\), quatro unidades — faz sentido: \(y\) é muito abundante comparado a \(x\). Se ele estivesse em \((16,4)\), a TMS cairia para \(4/16=1/4\). A TMS viaja ao longo da CI e é justamente por isso que ela decresce em \(x\) (convexidade).</p>
+      <p><strong>5. Peer-review.</strong> Um colega perguntaria: "mas \(u=\sqrt{xy}\) pode ser substituída por \(u=xy\) sem perda?" Sim — TMS é invariante sob transformação monótona (Q4). Se tivesse calculado a TMS a partir de \(u=xy\) diretamente (\(u_x=y\), \(u_y=x\)), teria saído \(y/x=4\) em duas linhas. Chamar ordinalidade para simplificar conta é economia de esforço que o curso premia.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — u=xy vs v=2ln x + 2ln y — POR QUÊ representam a mesma preferência -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> As funções \(u(x_1,x_2)=x_1 x_2\) e \(v(x_1,x_2)=2\ln x_1+2\ln x_2\) em \(\mathbb{R}^2_{++}\) representam a <em>mesma</em> preferência. Qual é a <strong>justificativa correta</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Porque ambas são Cobb-Douglas com expoentes \((1,1)\) e \((2,2)\) respectivamente — e o produto dos expoentes define a preferência.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Porque \(v=2\ln u\): a função \(f(t)=2\ln t\) é estritamente crescente em \(\mathbb{R}_{++}\), logo transformação monótona de \(u\) preserva \(\succeq\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Porque \(u\) e \(v\) têm a mesma utilidade marginal em todo ponto, o que caracteriza a preferência.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Porque calcularam-se os coeficientes de modo que \(u(1,1)=v(1,1)\) — coincidência em um ponto basta para equivaler preferências.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(v(x_1,x_2)=2\ln x_1+2\ln x_2=2(\ln x_1+\ln x_2)=2\ln(x_1 x_2)=2\ln u\). Como \(f(t)=2\ln t\) tem \(f'(t)=2/t>0\) em \(t>0\), \(f\) é estritamente crescente no domínio relevante. Logo \(v=f\circ u\) representa a mesma \(\succeq\) que \(u\).</p>
+      <p><strong>2. Derivação.</strong> Verificação cruzada via TMS. Para \(u=x_1x_2\): \(u_1=x_2\), \(u_2=x_1\), \(\text{TMS}=x_2/x_1\). Para \(v=2\ln x_1+2\ln x_2\): \(v_1=2/x_1\), \(v_2=2/x_2\), \(\text{TMS}=(2/x_1)/(2/x_2)=x_2/x_1\). Idêntica em todo ponto de \(\mathbb{R}^2_{++}\) — como tem que ser.</p>
+      <p><strong>3. Armadilha.</strong> (a) inventa regra "produto dos expoentes" que não existe — expoentes de CD não são cardinalmente comparáveis assim. (c) é o mais perigoso: <em>utilidade marginal não é invariante</em> sob transformação monótona. Aqui \(u_1=x_2\) e \(v_1=2/x_1\) são diferentes em todo ponto — apesar disso as preferências são iguais. É a assimetria entre TMS (invariante, razão) e utilidade marginal (não-invariante, nível) que define ordinalidade. (d) reduz equivalência a coincidência pontual — erro elementar.</p>
+      <p><strong>4. Extensão.</strong> Essa equivalência é exatamente a razão pela qual é comum trabalhar com "\(\log u\)" em Cobb-Douglas: o log separa a multiplicação em soma, tornando CPO do UMP lineares em logs. Mesma preferência, álgebra mais leve. Deve-se apenas lembrar que o <em>valor</em> de \(v\) não tem significado — só a ordem.</p>
+      <p><strong>5. Peer-review.</strong> Cuidado: o fator "\(2\)" multiplicando é inócuo (\(\alpha\ln u\) com \(\alpha>0\) é estritamente crescente), mas se fosse \(-2\ln u\), aí sim inverteria a ordem. Peer-reviewer atento confere o sinal de \(\alpha\), não só que a função "parece um log".</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — Leontief: proporção ótima + onde fica o vértice -->
+  <div class="quizg-q" data-qid="q7" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Seja \(u(x_1,x_2)=\min\{2x_1,\,3x_2\}\). Qual é a <strong>proporção de consumo</strong> \(x_2/x_1\) ao longo da qual ficam os vértices das curvas de indiferença (ou seja, a linha de "uso eficiente" sem desperdício de bem)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) \(x_2/x_1=2/3\) — no vértice vale \(2x_1=3x_2\), e daí \(x_2=(2/3)x_1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) \(x_2/x_1=3/2\) — o bem 2 tem coeficiente maior, então se consome mais dele por unidade de bem 1.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) \(x_2/x_1=1\) — Leontief sempre implica proporção 1:1 entre os bens.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) \(x_2/x_1=6\) — produto dos coeficientes \(2\cdot 3\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em \(u=\min\{a x_1, b x_2\}\), o vértice de cada CI ocorre onde os dois argumentos do min são iguais: \(a x_1=b x_2\), ou seja, \(x_2/x_1=a/b\). Qualquer ponto fora dessa linha gasta recurso no bem "abundante" sem aumentar \(u\) — é desperdício.</p>
+      <p><strong>2. Derivação.</strong> Aqui \(a=2,\,b=3\), então \(2x_1=3x_2\Rightarrow x_2=(2/3)x_1\). Isso dá a "linha de ofertas contínuas de Leontief": se o consumidor está com \(x_1=3\), o ponto ótimo vem com \(x_2=2\); se \(x_1=6\), \(x_2=4\). À direita dessa linha (\(3x_2<2x_1\)) sobra bem 1; à esquerda (\(2x_1<3x_2\)) sobra bem 2.</p>
+      <p><strong>3. Armadilha.</strong> (b) inverte intuitivamente os coeficientes — erro de quem "associa maior coeficiente a maior consumo". Ao contrário: coeficiente maior no min significa que <em>menos unidade</em> daquele bem rende o mesmo. Pense em receitas: se "3 unidades de \(x_2\) rendem tanto quanto 2 de \(x_1\)", então o bem 2 é mais "potente" e precisa-se de menos dele. (c) generaliza Leontief para 1:1 incorretamente — a proporção depende dos coeficientes. (d) é mistura aleatória de números do enunciado.</p>
+      <p><strong>4. Extensão.</strong> Com restrição orçamentária \(p_1 x_1+p_2 x_2=m\) e a CPO Leontief \(x_2=(2/3)x_1\), substitui-se para obter a demanda: \(x_1=m/(p_1+(2/3)p_2)=3m/(3p_1+2p_2)\), \(x_2=2m/(3p_1+2p_2)\). Ambas as demandas são proporcionais à renda (parcelas constantes em cada bem — como em Cobb-Douglas, curiosamente, mas por razão diferente).</p>
+      <p><strong>5. Peer-review.</strong> Parecido mas diferente: em CD \(u=x_1^{\alpha}x_2^{1-\alpha}\), o expoente maior é do bem "mais desejado" (parcela orçamentária maior). Em Leontief \(\min\{ax_1,bx_2\}\), o coeficiente maior é do bem "menos necessário por unidade". As intuições são opostas. Manter os dois mapas mentais separados é um dos testes deste quiz.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — CES: rho = -1 => sigma = 1/2 -->
+  <div class="quizg-q" data-qid="q8" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Considere a CES \(u(x_1,x_2)=\big(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho}\big)^{1/\rho}\) com \(\rho=-1\). Qual é a <strong>elasticidade de substituição</strong> \(\sigma\)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(\sigma=2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) \(\sigma=-1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(\sigma=1/2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) \(\sigma=1\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A fórmula \(\sigma=1/(1-\rho)\) é o único fato operacional que a pré-aula cobra. Com \(\rho=-1\): \(\sigma=1/(1-(-1))=1/2\).</p>
+      <p><strong>2. Derivação.</strong> Partindo de \(\text{TMS}=\tfrac{\alpha}{1-\alpha}(x_2/x_1)^{1-\rho}\), aplique \(\ln\) e derive: \(\ln\text{TMS}=\text{const}+(1-\rho)\ln(x_2/x_1)\). Invertendo: \(\ln(x_2/x_1)=\text{const}'+\tfrac{1}{1-\rho}\ln\text{TMS}\). Por definição \(\sigma=\tfrac{d\ln(x_2/x_1)}{d\ln\text{TMS}}=\tfrac{1}{1-\rho}\). Com \(\rho=-1\), \(\sigma=1/2\).</p>
+      <p><strong>3. Armadilha.</strong> (a) é \(1/\rho=1/(-1)=-1\) re-somado com 1 pelo aluno que esqueceu o sinal negativo do \(\rho\): ele calcula \(1/(1+1)=1/2\) corretamente mas marca 2 por reflexo. (b) confunde \(\sigma\) com \(\rho\) (erro cru). (d) é o valor de \(\sigma\) para CD (\(\rho\to 0\)), mostrando aluno que "sabe o limite" mas não o caso geral.</p>
+      <p><strong>4. Extensão.</strong> \(\sigma=1/2\) significa que um aumento de 1% na TMS (bem 1 fica relativamente mais desejável) gera aumento de só 0,5% na razão \(x_2/x_1\) — substituição mais difícil que em CD. O mapa mental do curso: \(\rho\) negativo ⇔ \(\sigma<1\) ⇔ bens <em>complementares</em> (tendência a Leontief); \(\rho\) positivo ⇔ \(\sigma>1\) ⇔ bens <em>substitutos</em> (tendência a lineares).</p>
+      <p><strong>5. Peer-review.</strong> Cuidado: a fórmula \(\sigma=1/(1-\rho)\) é válida para \(\rho\leq 1\), \(\rho\neq 0\). No limite \(\rho\to 0\) usa-se continuidade de \(\sigma\) para recuperar 1 (Cobb-Douglas), e a <em>demonstração</em> desse limite por L'Hôpital é conteúdo da monitoria 1. Para esta questão basta aplicar a fórmula — o limite não entra.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — CES no limite rho -> 0: qual não é verdade (sem pisar no argumento L'Hopital do pós-aula) -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> Ainda sobre \(u_{\rho}(x_1,x_2)=\big(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho}\big)^{1/\rho}\). Qual afirmação sobre o <strong>limite \(\rho\to 0\)</strong> é <strong>FALSA</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) A elasticidade de substituição converge para \(\sigma=1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) A preferência limite é Cobb-Douglas \(u(x_1,x_2)=x_1^{\alpha}x_2^{1-\alpha}\) (a menos de transformação monótona).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) As curvas de indiferença tendem a formar <em>vértices</em> tipo "L", como em Leontief.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) As parcelas de gasto \(w_1=p_1 x_1/m\) ficam constantes na solução do UMP associada.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(\rho\to 0\) dá Cobb-Douglas — \(\sigma=1\), CIs suaves, parcelas constantes. As CIs em "L" são o limite <em>oposto</em>: \(\rho\to-\infty\) dá Leontief. Trocar os dois limites é o erro que (c) captura.</p>
+      <p><strong>2. Derivação.</strong> (a) Fórmula \(\sigma=1/(1-\rho)\) → \(\sigma=1/(1-0)=1\). (b) \(u_{\rho}\to x_1^{\alpha}x_2^{1-\alpha}\) via transformação monótona: trabalha-se em \(\ln u_{\rho}=\tfrac{1}{\rho}\ln(\alpha x_1^{\rho}+(1-\alpha)x_2^{\rho})\) e aplica-se L'Hôpital no numerador-denominador (tema da monitoria 1). Resultado limite: \(\alpha\ln x_1+(1-\alpha)\ln x_2\), que é CD transformada monotonicamente. (d) CD tem demanda \(x_1^M=\alpha m/p_1\), logo \(w_1=p_1 x_1^M/m=\alpha\) constante. (c) é falsa porque as CIs de CD são hipérboles suaves, não L's.</p>
+      <p><strong>3. Armadilha.</strong> (c) é falsa <em>e</em> é a resposta que confunde os dois extremos da família CES. Quem decorou "\(\rho=0\) dá Cobb-Douglas" e "vértice em L = sem substituição" mas esqueceu qual é qual marca (c) pensando que está certa. O mapa do eixo \(\rho\) — \(\rho=1\) lineares, \(\rho\to 0\) CD, \(\rho\to -\infty\) Leontief — precisa ser decorado na ordem.</p>
+      <p><strong>4. Extensão.</strong> O limite \(\rho\to 0\) é contínuo na topologia das preferências; \(\rho\to-\infty\) requer mais cuidado analítico (a convergência é pontual, não uniforme). O argumento completo é tema de monitoria 1 — aqui basta saber onde <em>cada</em> forma funcional fica no eixo.</p>
+      <p><strong>5. Peer-review.</strong> Sutileza: a convergência de \(u_{\rho}\to x_1^{\alpha}x_2^{1-\alpha}\) é "a menos de transformação monótona" porque \(\ln u_{\rho}\) converge para \(\alpha\ln x_1+(1-\alpha)\ln x_2\), não \(u_{\rho}\) diretamente para \(x_1^\alpha x_2^{1-\alpha}\). A distinção é legítima e cobrada em provas mais rigorosas; aqui o enunciado já incluiu a expressão "a menos de transformação monótona" em (b) para ser preciso.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — Quasilinear: TMS em (4,7) + leitura da propriedade (sem pisar em CPO/excedente do pós-aula) -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Seja \(u(x_1,x_2)=\sqrt{x_1}+x_2\) (quasilinear em \(x_2\)). No pacote \((x_1,x_2)=(4,\,7)\), qual é a TMS \(\text{TMS}_{12}\) <strong>e</strong> qual afirmação sobre efeito-renda está correta?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) TMS \(=1/2\) em \((4,7)\); o efeito-renda é positivo e grande no bem 1 porque \(\sqrt{\cdot}\) é côncava.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) TMS \(=1/4\) em \((4,7)\); a TMS depende só de \(x_1\), indício de que o bem 2 absorve variações de renda em soluções interiores.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) TMS \(=4\) em \((4,7)\); em quasilinear a TMS depende do nível de \(x_2\), por isso "absorve renda" nele.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) TMS \(=7\) em \((4,7)\); ambos bens têm efeito-renda positivo e de magnitudes comparáveis.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em \(u=v(x_1)+x_2\), utilidades marginais são \(u_1=v'(x_1)\) e \(u_2=1\). Logo \(\text{TMS}_{12}=u_1/u_2=v'(x_1)\) — função <em>só</em> de \(x_1\). Esse é o traço estrutural da quasilinearidade.</p>
+      <p><strong>2. Derivação.</strong> Com \(v(x_1)=\sqrt{x_1}\): \(v'(x_1)=\tfrac{1}{2\sqrt{x_1}}\). Em \(x_1=4\): \(v'(4)=\tfrac{1}{2\cdot 2}=\tfrac{1}{4}\). O valor \(x_2=7\) é informação distractora — não entra na fórmula. A leitura econômica: TMS independente de \(x_2\) implica que a inclinação das CIs é <em>a mesma em cada vertical</em>; CIs são translações verticais umas das outras. Isso, por sua vez, é o ingrediente geométrico que faz o bem 2 absorver variações de renda em soluções interiores do UMP.</p>
+      <p><strong>3. Armadilha.</strong> (a) calcula \(v'(4)\) errado (pula o fator \(1/2\) ou confunde \(\sqrt{4}=2\) com algum outro número) e, pior, inventa "efeito-renda grande no bem 1". Justamente o oposto: a propriedade diagnóstica de QL é efeito-renda <em>nulo</em> no bem 1 (interior). (c) e (d) falham tanto no cálculo quanto na leitura — (c) diz que TMS depende de \(x_2\), o que é falso em QL por definição; (d) despreza a derivada e usa o próprio \(x_2=7\) como TMS.</p>
+      <p><strong>4. Extensão.</strong> A cadeia lógica completa "TMS depende só de \(x_1\) ⇒ bem 2 absorve renda no interior ⇒ excedente do consumidor bem-definido como CS = EV" é desenvolvida na aula presencial e no quiz pós-aula (Q9 do pós-aula 1). Aqui basta identificar o <em>sintoma</em> (TMS função só de \(x_1\)) e o <em>indício</em> de que o bem 2 é o amortecedor — sem ainda derivar excedente.</p>
+      <p><strong>5. Peer-review.</strong> A expressão "em soluções interiores" é hipótese não-trivial. Se a renda é baixa o bastante para que \(x_2^M=0\), a CPO \(v'(x_1)=p_1/p_2\) deixa de valer (não há mais margem em \(x_2\)) e o efeito-renda no bem 1 reaparece. Um peer-reviewer cauteloso flagraria a afirmação "bem 2 absorve renda" como válida <em>condicionalmente</em> — algo que a turma vai dissecar na aula presencial. O enunciado coloca "em soluções interiores" em (b) para ser honesto sobre isso.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 1 presencial</strong> (quarta, 22/04, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-01.html">material da pré-aula</a> e relea a seção correspondente antes de sair de casa. O <strong>quiz pós-aula</strong> (com metade em calibre avançado 🔴) abre após a aula presencial.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-01-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>
