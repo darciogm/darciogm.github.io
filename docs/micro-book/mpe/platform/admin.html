@@ -270,6 +270,34 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .sankey-link.same{stroke:#9CA3AF}
 .sankey-link:hover{stroke-opacity:0.75}
 .sankey-label{font-size:10px;fill:#1F2937;font-family:Calibri,sans-serif;font-weight:600}
+/* Wright map (IRT) */
+.wright-axis{stroke:#525252;stroke-width:1.5}
+.wright-student{fill:#3B82F6;opacity:0.75;cursor:pointer}
+.wright-student:hover{opacity:1;stroke:#1F2937;stroke-width:1}
+.wright-item{fill:#C8102E;opacity:0.75;cursor:pointer}
+.wright-item:hover{opacity:1;stroke:#1F2937;stroke-width:1}
+.wright-label-col{font-size:10px;fill:#1F2937;font-family:Calibri,sans-serif;font-weight:700}
+.wright-tick{font-size:9px;fill:#6B7280;font-family:Calibri,sans-serif}
+.wright-side-label{font-size:8px;fill:#525252;font-family:Calibri,sans-serif}
+/* Topic clusters */
+.topic-cluster{background:#fff;border:1px solid var(--border);border-radius:8px;padding:0.8rem 1rem;margin-bottom:0.6rem;border-left:4px solid var(--accent)}
+.topic-cluster.c0{border-left-color:#3B82F6}
+.topic-cluster.c1{border-left-color:#15803D}
+.topic-cluster.c2{border-left-color:#D97706}
+.topic-cluster.c3{border-left-color:#C8102E}
+.topic-cluster-header{display:flex;align-items:baseline;gap:0.5rem;margin-bottom:0.4rem;flex-wrap:wrap}
+.topic-cluster-name{font-size:0.9rem;font-weight:700;color:var(--primary)}
+.topic-cluster-size{font-size:0.72rem;color:var(--text-muted)}
+.topic-terms{display:flex;gap:0.35rem;flex-wrap:wrap;margin-bottom:0.3rem}
+.topic-term{padding:0.1rem 0.5rem;background:var(--accent-soft);border-radius:10px;font-size:0.76rem;color:var(--primary);font-weight:600}
+.topic-sample{font-size:0.78rem;color:var(--text);line-height:1.4;padding:0.4rem 0.6rem;background:#FAFAF8;border-radius:4px;margin-top:0.25rem;border-left:2px solid var(--border);font-style:italic}
+/* Co-error network */
+.coerr-edge{stroke:#9CA3AF;stroke-opacity:0.25;fill:none}
+.coerr-edge.strong{stroke-opacity:0.5;stroke:#C8102E}
+.coerr-node{fill:#3B82F6;opacity:0.85;cursor:pointer;stroke:#fff;stroke-width:1}
+.coerr-node.center{fill:#C8102E}
+.coerr-node:hover{opacity:1;stroke:#000;stroke-width:1.5}
+.coerr-label{font-size:9px;fill:#1F2937;font-family:Calibri,sans-serif;pointer-events:none}
 </style>
 </head>
 <body>
@@ -303,6 +331,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="tab" data-tab="alunos">Por Aluno</div>
     <div class="tab" data-tab="quizzes">Quizzes</div>
     <div class="tab" data-tab="psicometria">Psicometria</div>
+    <div class="tab" data-tab="irt">IRT / Wright</div>
     <div class="tab" data-tab="nudges">Nudge Queue</div>
     <div class="tab" data-tab="avancadas">Métricas Avançadas</div>
     <div class="tab" data-tab="export">Exportar / Gerenciar</div>
@@ -459,6 +488,33 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="profile-modal" id="question-modal-content"></div>
   </div>
 
+  <!-- TAB: IRT / WRIGHT MAP (Onda 3C) -->
+  <div class="admin-card tab-content" id="tab-irt" style="display:none">
+    <h3>IRT 2-PL — Wright map</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.45">
+      Modelo <strong>2-PL</strong>: \(P(\text{acerto} \mid \theta, b, a) = \frac{1}{1 + e^{-a(\theta - b)}}\).
+      <strong>θ</strong> = ability do aluno; <strong>b</strong> = dificuldade da questão; <strong>a</strong> = discriminação.
+      Joint MLE por <em>alternating optimization</em> (gradient ascent alternado entre θ e (b, a)).
+      Mesma escala para alunos e questões — aluno com θ=1 acerta com 50% de probabilidade uma questão com b=1.
+      Padrão UChicago Booth, edX Insights. Requer ≥ 3 alunos × 3 questões de sobreposição.
+    </p>
+    <div class="tab-alunos-toolbar">
+      <label for="irt-filter-phase">Fase</label>
+      <select id="irt-filter-phase">
+        <option value="">Todas</option>
+        <option value="pre_review">Pré-aula</option>
+        <option value="post">Pós-aula</option>
+        <option value="graded_exercise">Avaliativo</option>
+      </select>
+      <div class="toolbar-spacer"></div>
+      <span id="irt-diag" style="font-size:0.72rem;color:var(--text-muted)"></span>
+    </div>
+    <div id="m-wright-map" class="dash-chart" style="width:100%;height:500px"></div>
+    <div style="margin-top:1rem;padding:0.8rem 1rem;background:var(--accent-soft);border-radius:6px;font-size:0.75rem;color:var(--text-muted);line-height:1.45">
+      <strong>Leitura:</strong> aluno alinhado com questão tem ~50% de chance de acertar. Questão <em>acima</em> de todos os alunos = teto (quase ninguém acerta); <em>abaixo</em> de todos = piso (quase todos acertam). Bom teste cobre o range de θ da turma. Discriminação <strong>a</strong> alta = questão separa bem; a ≈ 0 = questão ruim.
+    </div>
+  </div>
+
   <!-- TAB: NUDGE QUEUE (Onda 3B) -->
   <div class="admin-card tab-content" id="tab-nudges" style="display:none">
     <h3>Fila inteligente de intervenções</h3>
@@ -603,6 +659,39 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
             Quadrante superior-esquerdo = rende muito dedicando pouco (atenção: chute?). Inferior-direito = dedica mas não rende (merece intervenção <em>pedagógica</em>, não motivacional).
           </div>
           <div id="m-tp-scatter" class="dash-chart" style="width:100%;height:340px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Topic clusters das reflexões (TF-IDF + k-means)</h4>
+          <div class="metric-desc">
+            Clusterização semântica leve sobre as reflexões qualitativas.
+            <strong>Passo 1:</strong> tokenização PT-BR + stopwords. <strong>Passo 2:</strong> matriz doc×termo com TF-IDF. <strong>Passo 3:</strong> k-means em k=3 (inicialização Forgy, ~15 iterações).
+            Cada cluster é rotulado pelos 4 termos de maior score agregado. Quando um mesmo termo domina vários clusters, reduza k. Zero deps externas — tudo JS puro.
+            Padrão Princeton Course Analytics, Stanford CS106.
+          </div>
+          <div class="tab-alunos-toolbar" style="margin-bottom:0.5rem">
+            <label for="topic-filter-page">Aula</label>
+            <select id="topic-filter-page"><option value="">Todas</option></select>
+            <label for="topic-k">k</label>
+            <select id="topic-k">
+              <option value="2">2</option>
+              <option value="3" selected>3</option>
+              <option value="4">4</option>
+            </select>
+            <div class="toolbar-spacer"></div>
+            <span id="topic-count" style="font-size:0.7rem;color:var(--text-muted)"></span>
+          </div>
+          <div id="m-topic-clusters"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Co-error network — quem erra junto</h4>
+          <div class="metric-desc">
+            Grafo force-directed: cada nó é um aluno, cada aresta é # questões em que <em>ambos erraram na 1ª tentativa</em> (peso ≥ 2 para aparecer).
+            Clusters revelam grupos no mesmo ponto da curva de aprendizado — candidatos a estudo em grupo ou intervenção temática. Simulação física leve (repulsão Coulomb + atração Hooke, 300 iterações).
+            Padrão Princeton, MIT TEAL.
+          </div>
+          <div id="m-coerror-net" class="dash-chart" style="width:100%;height:500px"></div>
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
@@ -2628,6 +2717,546 @@ function renderSankey() {
     + '</div>';
 }
 
+// ============ ONDA 3C — IRT 2-PL / Topic Modeling / Co-error Network ============
+
+// --------- IRT 2-PL: joint MLE via alternating gradient ascent ---------
+function fitIRT2PL(opts) {
+  opts = opts || {};
+  var raw = window._adminRaw;
+  if (!raw || !raw.quizQA || !raw.quizQA.length) return null;
+
+  // 1) Construir matriz X[i][j] = {0,1,null} a partir da 1ª tentativa por (user, page, qid)
+  var firstAttempt = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (opts.phase && q.phase !== opts.phase) return;
+    var key = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (firstAttempt[key] && q.answered_at >= firstAttempt[key].ts) return;
+    firstAttempt[key] = { ts: q.answered_at, correct: !!q.correct, user_id: q.user_id, page_id: q.page_id, qid: q.question_id };
+  });
+
+  // 2) Set de usuários e itens com observações suficientes
+  var userCount = {}, itemCount = {};
+  Object.values(firstAttempt).forEach(function(f){
+    userCount[f.user_id] = (userCount[f.user_id] || 0) + 1;
+    var ik = f.page_id + '::' + f.qid;
+    itemCount[ik] = (itemCount[ik] || 0) + 1;
+  });
+  var validUsers = Object.keys(userCount).filter(function(u){return userCount[u] >= 3});
+  var validItems = Object.keys(itemCount).filter(function(k){return itemCount[k] >= 3});
+  if (validUsers.length < 3 || validItems.length < 3) return null;
+
+  var userIdx = {}; validUsers.forEach(function(u,i){userIdx[u]=i});
+  var itemIdx = {}; validItems.forEach(function(k,i){itemIdx[k]=i});
+  var N = validUsers.length, M = validItems.length;
+
+  // Matriz densa de observações (null = missing)
+  var X = new Array(N);
+  for (var i = 0; i < N; i++) { X[i] = new Array(M).fill(null); }
+  Object.values(firstAttempt).forEach(function(f){
+    if (userIdx[f.user_id] == null) return;
+    var ik = f.page_id + '::' + f.qid;
+    if (itemIdx[ik] == null) return;
+    X[userIdx[f.user_id]][itemIdx[ik]] = f.correct ? 1 : 0;
+  });
+
+  // 3) Inicialização
+  // θ_i inicial = probit do acerto médio do aluno, centrado em 0
+  var theta = new Array(N).fill(0);
+  for (var i = 0; i < N; i++) {
+    var n = 0, s = 0;
+    for (var j = 0; j < M; j++) if (X[i][j] != null) { n++; s += X[i][j]; }
+    var p = n > 0 ? Math.max(0.05, Math.min(0.95, s / n)) : 0.5;
+    theta[i] = Math.log(p / (1 - p)); // logit inicial
+  }
+  var b = new Array(M).fill(0), a = new Array(M).fill(1);
+  for (var j = 0; j < M; j++) {
+    var n = 0, s = 0;
+    for (var i = 0; i < N; i++) if (X[i][j] != null) { n++; s += X[i][j]; }
+    var p = n > 0 ? Math.max(0.05, Math.min(0.95, s / n)) : 0.5;
+    b[j] = -Math.log(p / (1 - p)); // dificuldade inicial
+  }
+
+  // 4) Alternating gradient ascent com step adaptativo
+  function sigmoid(z) { return 1 / (1 + Math.exp(-Math.max(-40, Math.min(40, z)))); }
+  var MAX_ITER = 60;
+  var lr_theta = 0.15, lr_b = 0.15, lr_a = 0.08;
+
+  for (var iter = 0; iter < MAX_ITER; iter++) {
+    // Update θ
+    for (var i = 0; i < N; i++) {
+      var g = 0;
+      for (var j = 0; j < M; j++) {
+        var x = X[i][j]; if (x == null) continue;
+        var p = sigmoid(a[j] * (theta[i] - b[j]));
+        g += a[j] * (x - p);
+      }
+      g -= 0.05 * theta[i]; // leve regularização (prior N(0,1))
+      theta[i] += lr_theta * g / Math.max(1, M / 4);
+    }
+    // Normalizar θ para média 0, sd 1 (identificabilidade)
+    var mu = theta.reduce(function(s,v){return s+v},0) / N;
+    var sd = Math.sqrt(theta.reduce(function(s,v){return s+(v-mu)*(v-mu)},0) / N) || 1;
+    for (var i = 0; i < N; i++) theta[i] = (theta[i] - mu) / sd;
+
+    // Update b e a
+    for (var j = 0; j < M; j++) {
+      var gb = 0, ga = 0;
+      for (var i = 0; i < N; i++) {
+        var x = X[i][j]; if (x == null) continue;
+        var p = sigmoid(a[j] * (theta[i] - b[j]));
+        var err = x - p;
+        gb += -a[j] * err;
+        ga += (theta[i] - b[j]) * err;
+      }
+      b[j] -= lr_b * gb / Math.max(1, N / 4); // subtrair pois gb é gradiente descendo
+      a[j] += lr_a * ga / Math.max(1, N / 4);
+      // Clampar a > 0 (discriminação positiva)
+      if (a[j] < 0.1) a[j] = 0.1;
+      if (a[j] > 3.5) a[j] = 3.5;
+      if (b[j] < -3.5) b[j] = -3.5;
+      if (b[j] > 3.5) b[j] = 3.5;
+    }
+  }
+
+  // 5) Metadata
+  var profileName = {};
+  (raw.profiles || []).forEach(function(p){ profileName[p.id] = p.nome; });
+  var students = validUsers.map(function(u, i){
+    return { user_id: u, nome: profileName[u] || u.substring(0,6), theta: theta[i], n: userCount[u] };
+  }).sort(function(a,b){return a.theta - b.theta});
+  var items = validItems.map(function(k, j){
+    var parts = k.split('::');
+    return { key: k, page_id: parts[0], question_id: parts[1], b: b[j], a: a[j], n: itemCount[k] };
+  }).sort(function(a,b){return a.b - b.b});
+
+  return { students: students, items: items, N: N, M: M, iter: MAX_ITER };
+}
+
+function renderWrightMap() {
+  var container = document.getElementById('m-wright-map');
+  var diagEl = document.getElementById('irt-diag');
+  if (!container) return;
+  var phase = (document.getElementById('irt-filter-phase')||{}).value || '';
+  var fit = fitIRT2PL({ phase: phase });
+  if (!fit) {
+    container.innerHTML = '<div class="dash-chart-empty">Amostra insuficiente. IRT 2-PL exige ≥ 3 alunos e ≥ 3 questões, cada um com ≥ 3 observações na fase escolhida.</div>';
+    if (diagEl) diagEl.textContent = '';
+    return;
+  }
+  if (diagEl) diagEl.textContent = 'Ajuste com ' + fit.N + ' alunos × ' + fit.M + ' itens em ' + fit.iter + ' iterações';
+
+  var W = 900, H = 480, PT = 24, PB = 28, PL = 200, PR = 200;
+  var plotH = H - PT - PB;
+  var plotW = W - PL - PR;
+  // Eixo θ vertical (alto = fácil pra aluno, questão difícil; baixo = difícil pra aluno, questão fácil)
+  var thetaMin = -3, thetaMax = 3;
+  function y(t) { return PT + (thetaMax - t) / (thetaMax - thetaMin) * plotH; }
+
+  // Ticks do eixo θ
+  var ticks = '';
+  for (var t = -3; t <= 3; t += 1) {
+    ticks += '<line class="grid" x1="' + (PL - 10) + '" y1="' + y(t) + '" x2="' + (W - PR + 10) + '" y2="' + y(t) + '"/>';
+    ticks += '<text class="wright-tick" x="' + (PL/2) + '" y="' + (y(t) + 3) + '" text-anchor="middle">θ=' + t + '</text>';
+    ticks += '<text class="wright-tick" x="' + (W - PR/2) + '" y="' + (y(t) + 3) + '" text-anchor="middle">b=' + t + '</text>';
+  }
+
+  // Header labels
+  var headers = '<text class="wright-label-col" x="' + (PL/2) + '" y="' + (PT - 8) + '" text-anchor="middle">Alunos (θ)</text>'
+    + '<text class="wright-label-col" x="' + (PL + plotW/2) + '" y="' + (PT - 8) + '" text-anchor="middle">escala</text>'
+    + '<text class="wright-label-col" x="' + (W - PR/2) + '" y="' + (PT - 8) + '" text-anchor="middle">Itens (b)</text>'
+    + '<text class="wright-side-label" x="' + (PL/2) + '" y="' + (PT + 14) + '" text-anchor="middle">↑ mais hábil</text>'
+    + '<text class="wright-side-label" x="' + (PL/2) + '" y="' + (H - PB + 2) + '" text-anchor="middle">↓ menos hábil</text>'
+    + '<text class="wright-side-label" x="' + (W - PR/2) + '" y="' + (PT + 14) + '" text-anchor="middle">↑ mais difícil</text>'
+    + '<text class="wright-side-label" x="' + (W - PR/2) + '" y="' + (H - PB + 2) + '" text-anchor="middle">↓ mais fácil</text>';
+
+  // Deduplicate θ (se dois alunos têm θ muito próximo, jitter horizontal)
+  // Agrupa por faixa de 0.1 no θ, empilha na horizontal
+  function jitterCol(items, field, xCenter) {
+    var byBin = {};
+    items.forEach(function(p){
+      var bin = Math.round(p[field] * 8);
+      if (!byBin[bin]) byBin[bin] = [];
+      byBin[bin].push(p);
+    });
+    var laid = [];
+    Object.keys(byBin).forEach(function(bin){
+      var arr = byBin[bin];
+      var mid = (arr.length - 1) / 2;
+      arr.forEach(function(p, k){
+        p._x = xCenter + (k - mid) * 14;
+      });
+      laid = laid.concat(arr);
+    });
+    return laid;
+  }
+
+  var studentsLaid = jitterCol(fit.students.slice(), 'theta', PL/2);
+  var itemsLaid = jitterCol(fit.items.slice(), 'b', W - PR/2);
+
+  var studentsHtml = studentsLaid.map(function(s){
+    var firstName = (s.nome || '').split(' ')[0];
+    return '<circle class="wright-student" cx="' + s._x.toFixed(1) + '" cy="' + y(s.theta).toFixed(1) + '" r="5">'
+      + '<title>' + s.nome + ' · θ=' + s.theta.toFixed(2) + ' · ' + s.n + ' respostas</title>'
+      + '</circle>'
+      + '<text class="wright-side-label" x="' + (s._x + 7).toFixed(1) + '" y="' + (y(s.theta) + 3).toFixed(1) + '" text-anchor="start">' + firstName + '</text>';
+  }).join('');
+
+  var itemsHtml = itemsLaid.map(function(it){
+    var aClass = it.a < 0.5 ? 'opacity:0.35' : it.a < 1 ? 'opacity:0.6' : 'opacity:0.85';
+    var radius = Math.min(8, Math.max(3, 3 + it.a * 1.5));
+    return '<circle class="wright-item" cx="' + it._x.toFixed(1) + '" cy="' + y(it.b).toFixed(1) + '" r="' + radius + '" style="' + aClass + '">'
+      + '<title>' + _pageLabel(it.page_id) + ' · ' + it.question_id.toUpperCase() + ' · b=' + it.b.toFixed(2) + ' · a=' + it.a.toFixed(2) + ' · ' + it.n + ' respostas</title>'
+      + '</circle>'
+      + '<text class="wright-side-label" x="' + (it._x - radius - 3).toFixed(1) + '" y="' + (y(it.b) + 3).toFixed(1) + '" text-anchor="end">' + _pageLabel(it.page_id).replace(' ','') + ':' + it.question_id.replace(/\D/g,'') + '</text>';
+  }).join('');
+
+  // Eixos centrais
+  var axes = '<line class="wright-axis" x1="' + PL + '" y1="' + PT + '" x2="' + PL + '" y2="' + (H - PB) + '"/>'
+    + '<line class="wright-axis" x1="' + (W - PR) + '" y1="' + PT + '" x2="' + (W - PR) + '" y2="' + (H - PB) + '"/>';
+
+  container.innerHTML =
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + ticks + axes + headers + studentsHtml + itemsHtml
+    + '</svg>'
+    + '<div class="dash-legend">'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#3B82F6"></span>Aluno (θ)</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#C8102E"></span>Item (b) · raio ∝ discriminação (a)</span>'
+    + '</div>';
+}
+
+// --------- TF-IDF + k-means sobre reflexões ---------
+function computeTopicClusters(opts) {
+  opts = opts || {};
+  var k = opts.k || 3;
+  var pageFilter = opts.pageFilter || '';
+  var raw = window._adminRaw;
+  var data = window._alunosData;
+
+  // 1) Coletar documentos (reflexões)
+  var docs = [];
+  if (raw && raw.reflections && raw.reflections.length) {
+    raw.reflections.forEach(function(r){
+      if (pageFilter && r.page_id !== pageFilter) return;
+      var tokens = _tokenize(r.text || '');
+      if (tokens.length < 3) return;
+      docs.push({ tokens: tokens, text: r.text, page_id: r.page_id, user_id: r.user_id });
+    });
+  } else if (data) {
+    Object.keys(data).forEach(function(mat){
+      var s = data[mat];
+      Object.keys(s.reflections || {}).forEach(function(pid){
+        if (pageFilter && pid !== pageFilter) return;
+        Object.keys(s.reflections[pid]).forEach(function(promptId){
+          var r = s.reflections[pid][promptId];
+          var tokens = _tokenize(r.text || '');
+          if (tokens.length < 3) return;
+          docs.push({ tokens: tokens, text: r.text, page_id: pid });
+        });
+      });
+    });
+  }
+  if (docs.length < k) return null;
+
+  // 2) Vocabulário global (top 200 termos mais frequentes, para acelerar)
+  var df = {};
+  docs.forEach(function(d){
+    var seen = {};
+    d.tokens.forEach(function(t){ if (!seen[t]) { df[t] = (df[t]||0)+1; seen[t]=true; } });
+  });
+  var vocab = Object.keys(df).filter(function(t){return df[t] >= 2}).sort(function(a,b){return df[b]-df[a]}).slice(0, 200);
+  if (vocab.length < k) return null;
+  var vocabIdx = {}; vocab.forEach(function(t,i){vocabIdx[t]=i});
+
+  // 3) Matriz TF-IDF
+  var V = vocab.length, D = docs.length;
+  var M = new Array(D);
+  for (var i = 0; i < D; i++) {
+    M[i] = new Float32Array(V);
+    var tf = {};
+    docs[i].tokens.forEach(function(t){ if (vocabIdx[t]!=null) tf[t]=(tf[t]||0)+1; });
+    var total = Object.values(tf).reduce(function(a,b){return a+b},0) || 1;
+    Object.keys(tf).forEach(function(t){
+      var idf = Math.log(D / (df[t] || 1));
+      M[i][vocabIdx[t]] = (tf[t]/total) * idf;
+    });
+    // L2 normalize (para cosine = dot)
+    var norm = 0;
+    for (var v = 0; v < V; v++) norm += M[i][v] * M[i][v];
+    norm = Math.sqrt(norm) || 1;
+    for (var v = 0; v < V; v++) M[i][v] /= norm;
+  }
+
+  // 4) K-means (Forgy init + 15 iterações)
+  var centroids = new Array(k);
+  // Init: escolher k docs bem diferentes (greedy max-dist)
+  var chosen = [0];
+  while (chosen.length < k) {
+    var best = -1, bestD = -1;
+    for (var i = 0; i < D; i++) {
+      if (chosen.indexOf(i) >= 0) continue;
+      var minD = Infinity;
+      chosen.forEach(function(ci){
+        var dot = 0;
+        for (var v = 0; v < V; v++) dot += M[i][v] * M[ci][v];
+        var d2 = 2 - 2 * dot;
+        if (d2 < minD) minD = d2;
+      });
+      if (minD > bestD) { bestD = minD; best = i; }
+    }
+    if (best < 0) break;
+    chosen.push(best);
+  }
+  for (var c = 0; c < k; c++) {
+    centroids[c] = new Float32Array(V);
+    for (var v = 0; v < V; v++) centroids[c][v] = M[chosen[c]][v];
+  }
+
+  var assign = new Array(D).fill(0);
+  for (var iter = 0; iter < 15; iter++) {
+    // Atribuir
+    var changed = 0;
+    for (var i = 0; i < D; i++) {
+      var best = 0, bestSim = -Infinity;
+      for (var c = 0; c < k; c++) {
+        var dot = 0;
+        for (var v = 0; v < V; v++) dot += M[i][v] * centroids[c][v];
+        if (dot > bestSim) { bestSim = dot; best = c; }
+      }
+      if (assign[i] !== best) { assign[i] = best; changed++; }
+    }
+    if (changed === 0) break;
+    // Recomputar centróides
+    for (var c = 0; c < k; c++) {
+      centroids[c] = new Float32Array(V);
+      var n = 0;
+      for (var i = 0; i < D; i++) {
+        if (assign[i] !== c) continue;
+        n++;
+        for (var v = 0; v < V; v++) centroids[c][v] += M[i][v];
+      }
+      if (n > 0) {
+        for (var v = 0; v < V; v++) centroids[c][v] /= n;
+        var norm = 0;
+        for (var v = 0; v < V; v++) norm += centroids[c][v] * centroids[c][v];
+        norm = Math.sqrt(norm) || 1;
+        for (var v = 0; v < V; v++) centroids[c][v] /= norm;
+      }
+    }
+  }
+
+  // 5) Top-4 termos por cluster + sample doc
+  var clusters = [];
+  for (var c = 0; c < k; c++) {
+    var indices = []; for (var v = 0; v < V; v++) indices.push(v);
+    indices.sort(function(a,b){return centroids[c][b] - centroids[c][a]});
+    var topTerms = indices.slice(0, 4).map(function(vi){return {term: vocab[vi], weight: centroids[c][vi]}});
+    var docIndices = [];
+    for (var i = 0; i < D; i++) if (assign[i] === c) docIndices.push(i);
+    // Doc mais próximo do centróide como representante
+    var repIdx = -1, repSim = -Infinity;
+    docIndices.forEach(function(i){
+      var dot = 0;
+      for (var v = 0; v < V; v++) dot += M[i][v] * centroids[c][v];
+      if (dot > repSim) { repSim = dot; repIdx = i; }
+    });
+    clusters.push({
+      k: c,
+      size: docIndices.length,
+      topTerms: topTerms,
+      sample: repIdx >= 0 ? docs[repIdx].text.substring(0, 240) : '',
+      samplePage: repIdx >= 0 ? docs[repIdx].page_id : null
+    });
+  }
+  clusters.sort(function(a,b){return b.size - a.size});
+  return { clusters: clusters, totalDocs: D, vocabSize: V };
+}
+
+function renderTopicClusters() {
+  var container = document.getElementById('m-topic-clusters');
+  var countEl = document.getElementById('topic-count');
+  if (!container) return;
+  var pageFilter = (document.getElementById('topic-filter-page')||{}).value || '';
+  var k = parseInt((document.getElementById('topic-k')||{}).value || '3', 10);
+  var res = computeTopicClusters({ pageFilter: pageFilter, k: k });
+  if (!res) {
+    container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem;padding:0.5rem">Reflexões insuficientes para clusterizar (precisa de pelo menos ' + k + ' docs com ≥3 tokens cada).</div>';
+    if (countEl) countEl.textContent = '';
+    return;
+  }
+  if (countEl) countEl.textContent = res.totalDocs + ' reflexões · vocab ' + res.vocabSize + ' termos · k=' + k;
+
+  container.innerHTML = res.clusters.map(function(c, idx){
+    var termsHtml = c.topTerms.map(function(t){ return '<span class="topic-term">' + t.term + '</span>'; }).join('');
+    var sampleHtml = c.sample ? '<div class="topic-sample">"' + _escapeHtml(c.sample) + (c.sample.length >= 240 ? '…' : '') + '"' + (c.samplePage ? ' <span style="color:var(--text-muted);font-style:normal">— ' + _pageLabel(c.samplePage) + '</span>' : '') + '</div>' : '';
+    return '<div class="topic-cluster c' + (idx % 4) + '">'
+      + '<div class="topic-cluster-header">'
+        + '<span class="topic-cluster-name">Cluster ' + (idx + 1) + '</span>'
+        + '<span class="topic-cluster-size">' + c.size + ' reflexões (' + Math.round(c.size/res.totalDocs*100) + '%)</span>'
+      + '</div>'
+      + '<div class="topic-terms">' + termsHtml + '</div>'
+      + sampleHtml
+      + '</div>';
+  }).join('');
+}
+
+// --------- Co-error network: force-directed simples ---------
+function computeCoErrorGraph() {
+  var raw = window._adminRaw;
+  if (!raw || !raw.quizQA || !raw.quizQA.length) return null;
+
+  // 1ª tentativa por (user, page, qid)
+  var firstAttempt = {};
+  (raw.quizQA || []).forEach(function(q){
+    var key = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (firstAttempt[key] && q.answered_at >= firstAttempt[key].ts) return;
+    firstAttempt[key] = { ts: q.answered_at, correct: !!q.correct, user_id: q.user_id, page_id: q.page_id, qid: q.question_id };
+  });
+
+  // Agrupar erros por questão
+  var wrongByItem = {};
+  Object.values(firstAttempt).forEach(function(f){
+    if (f.correct) return;
+    var ik = f.page_id + '::' + f.qid;
+    if (!wrongByItem[ik]) wrongByItem[ik] = {};
+    wrongByItem[ik][f.user_id] = true;
+  });
+
+  // Contar co-ocorrência
+  var pair = {};
+  Object.keys(wrongByItem).forEach(function(ik){
+    var users = Object.keys(wrongByItem[ik]);
+    for (var i = 0; i < users.length; i++) {
+      for (var j = i + 1; j < users.length; j++) {
+        var a = users[i], b = users[j];
+        var k = a < b ? a + '::' + b : b + '::' + a;
+        pair[k] = (pair[k] || 0) + 1;
+      }
+    }
+  });
+
+  // Arestas com peso ≥ 2
+  var edges = [];
+  Object.keys(pair).forEach(function(k){
+    if (pair[k] < 2) return;
+    var parts = k.split('::');
+    edges.push({ source: parts[0], target: parts[1], weight: pair[k] });
+  });
+  if (!edges.length) return null;
+
+  // Nós que aparecem em pelo menos uma aresta
+  var nodeSet = {};
+  edges.forEach(function(e){ nodeSet[e.source] = true; nodeSet[e.target] = true; });
+  var profileName = {};
+  (raw.profiles || []).forEach(function(p){ profileName[p.id] = { nome: p.nome, matricula: p.matricula }; });
+
+  var nodes = Object.keys(nodeSet).map(function(uid){
+    var p = profileName[uid] || { nome: uid.substring(0,6), matricula: '?' };
+    var deg = 0;
+    edges.forEach(function(e){ if (e.source===uid || e.target===uid) deg += e.weight; });
+    return { id: uid, nome: p.nome, matricula: p.matricula, degree: deg };
+  });
+
+  return { nodes: nodes, edges: edges };
+}
+
+function layoutForceDirected(nodes, edges, W, H, iter) {
+  iter = iter || 300;
+  var nodeById = {};
+  nodes.forEach(function(n, i){
+    // Posição inicial circular
+    var ang = 2 * Math.PI * i / nodes.length;
+    n.x = W/2 + Math.cos(ang) * Math.min(W,H) * 0.3;
+    n.y = H/2 + Math.sin(ang) * Math.min(W,H) * 0.3;
+    n.vx = 0; n.vy = 0;
+    nodeById[n.id] = n;
+  });
+
+  var k = Math.sqrt((W * H) / nodes.length); // constante de Fruchterman-Reingold
+  var temperature = W / 10;
+
+  for (var t = 0; t < iter; t++) {
+    // Repulsão O(N²)
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].vx = 0; nodes[i].vy = 0;
+      for (var j = 0; j < nodes.length; j++) {
+        if (i === j) continue;
+        var dx = nodes[i].x - nodes[j].x;
+        var dy = nodes[i].y - nodes[j].y;
+        var dist = Math.sqrt(dx*dx + dy*dy) + 0.01;
+        var f = k * k / dist;
+        nodes[i].vx += (dx / dist) * f;
+        nodes[i].vy += (dy / dist) * f;
+      }
+    }
+    // Atração por aresta
+    edges.forEach(function(e){
+      var a = nodeById[e.source], b = nodeById[e.target];
+      var dx = a.x - b.x, dy = a.y - b.y;
+      var dist = Math.sqrt(dx*dx + dy*dy) + 0.01;
+      var f = (dist * dist) / k * Math.min(1, e.weight / 3);
+      a.vx -= (dx / dist) * f;
+      a.vy -= (dy / dist) * f;
+      b.vx += (dx / dist) * f;
+      b.vy += (dy / dist) * f;
+    });
+    // Mover com cooling
+    nodes.forEach(function(n){
+      var v = Math.sqrt(n.vx*n.vx + n.vy*n.vy) + 0.01;
+      var disp = Math.min(v, temperature);
+      n.x += (n.vx / v) * disp;
+      n.y += (n.vy / v) * disp;
+      // Bound
+      n.x = Math.max(30, Math.min(W - 30, n.x));
+      n.y = Math.max(30, Math.min(H - 30, n.y));
+    });
+    temperature *= 0.97; // cooling
+  }
+}
+
+function renderCoErrorNetwork() {
+  var container = document.getElementById('m-coerror-net');
+  if (!container) return;
+  var g = computeCoErrorGraph();
+  if (!g) {
+    container.innerHTML = '<div class="dash-chart-empty">Sem co-ocorrências suficientes. Precisa de pelo menos 2 questões erradas em comum entre 2 alunos.</div>';
+    return;
+  }
+
+  var W = 900, H = 460;
+  layoutForceDirected(g.nodes, g.edges, W, H, 300);
+
+  var maxDeg = Math.max.apply(null, g.nodes.map(function(n){return n.degree}));
+  var maxW = Math.max.apply(null, g.edges.map(function(e){return e.weight}));
+  var nodeById = {}; g.nodes.forEach(function(n){nodeById[n.id] = n});
+
+  var edgesHtml = g.edges.map(function(e){
+    var a = nodeById[e.source], b = nodeById[e.target];
+    var thick = 0.5 + (e.weight / maxW) * 2.5;
+    var cls = e.weight >= Math.max(3, maxW * 0.6) ? 'coerr-edge strong' : 'coerr-edge';
+    return '<line class="' + cls + '" x1="' + a.x.toFixed(1) + '" y1="' + a.y.toFixed(1) + '" x2="' + b.x.toFixed(1) + '" y2="' + b.y.toFixed(1) + '" stroke-width="' + thick.toFixed(1) + '"><title>' + a.nome + ' ↔ ' + b.nome + ': ' + e.weight + ' erros em comum</title></line>';
+  }).join('');
+
+  var nodesHtml = g.nodes.map(function(n){
+    var r = 5 + (n.degree / maxDeg) * 8;
+    var cls = 'coerr-node' + (n.degree >= maxDeg * 0.75 ? ' center' : '');
+    var safeMat = (n.matricula || '').replace(/'/g, "\\'");
+    var firstName = (n.nome || '').split(' ')[0];
+    return '<circle class="' + cls + '" cx="' + n.x.toFixed(1) + '" cy="' + n.y.toFixed(1) + '" r="' + r.toFixed(1) + '" onclick="showStudentProfile(\'' + safeMat + '\')"><title>' + n.nome + ' · ' + n.degree + ' erros compartilhados (soma de pesos)</title></circle>'
+      + '<text class="coerr-label" x="' + (n.x + r + 3).toFixed(1) + '" y="' + (n.y + 3).toFixed(1) + '">' + firstName + '</text>';
+  }).join('');
+
+  container.innerHTML =
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + edgesHtml + nodesHtml
+    + '</svg>'
+    + '<div class="dash-legend">'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#C8102E"></span>Nó central (alto grau)</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#3B82F6"></span>Nó normal</span>'
+      + '<span class="leg-item"><span style="display:inline-block;width:18px;height:2px;background:#C8102E;vertical-align:middle"></span>Laço forte (≥60% do max)</span>'
+      + '<span class="leg-item"><span style="display:inline-block;width:18px;height:1px;background:#9CA3AF;vertical-align:middle"></span>Laço fraco</span>'
+      + '</div>';
+}
+
 function renderTimePerformanceScatter() {
   var rows = window._alunosRows || [];
   var pts = rows
@@ -3317,6 +3946,26 @@ async function renderAdmin() {
   renderNudgeQueue();
   var nudgeSel = document.getElementById('nudge-category');
   if (nudgeSel) nudgeSel.addEventListener('change', renderNudgeQueue);
+
+  // 11) Onda 3C — IRT / topic / co-error
+  // Popular select topic-filter-page (reflexões) e wire IRT
+  var topicSel = document.getElementById('topic-filter-page');
+  if (topicSel && topicSel.options.length < 2) {
+    Array.from(refPages).sort().forEach(function(pid){
+      var opt = document.createElement('option');
+      opt.value = pid; opt.textContent = _pageLabel(pid);
+      topicSel.appendChild(opt);
+    });
+  }
+  renderWrightMap();
+  renderTopicClusters();
+  renderCoErrorNetwork();
+  var irtSel = document.getElementById('irt-filter-phase');
+  if (irtSel) irtSel.addEventListener('change', renderWrightMap);
+  ['topic-filter-page','topic-k'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.addEventListener('change', renderTopicClusters);
+  });
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
