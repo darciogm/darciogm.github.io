@@ -299,7 +299,7 @@ Esta é a forma CD em logs — PIGLOG em sua forma mais simples.
 - (iv) Ambas valem: \(x^M = h = (8, 1)\) e \(e = m = 12\). **← CORRETA**
 - (v) Valem apenas em preferências homotéticas.
 
-### (d) Aplicando Shephard duas vezes, calcule \(\partial h_1/\partial p_2\) **diretamente** (cross-price hicksiano — *pura dualidade*, sem Slutsky). Com \(h_1 = (2/3)\,K\,\bar u\,p_1^{-1/3}\,p_2^{1/3}\), \(K \approx 1{,}890\), \(\bar u = 4\), \(p = (1, 4)\):
+### (d) Aplicando Shephard duas vezes, calcule \(\partial h_1/\partial p_2\) **diretamente** (cross-price hicksiano — *pura dualidade*, sem Slutsky). Use o item (b) para extrair \(h_1(p, \bar u)\) como função explícita de \(p_1\) e \(p_2\); em seguida avalie em \(\bar u = 4\), \(p = (1, 4)\):
 
 - (i) \(\partial h_1/\partial p_2 = 0\) — CD não tem efeito-preço cruzado.
 - (ii) \(\partial h_1/\partial p_2 = 2/3\) (efeito-substituição cruzado positivo em CD). **← CORRETA**
@@ -333,7 +333,7 @@ Esta é a forma CD em logs — PIGLOG em sua forma mais simples.
 
 **Enunciado.** Considere três afirmações sobre a estrutura da dualidade UMP↔EMP:
 
-- **A.** A matriz de Slutsky compensada \(S_{ij}(p, \bar u) = \partial h_i/\partial p_j\) é *simétrica*, *semidefinida negativa*, e satisfaz \(Sp = \mathbf{0}\).
+- **A.** A matriz de efeito-substituição compensada (o nome *Slutsky* é consolidado só na Aula 3) \(S_{ij}(p, \bar u) = \partial h_i/\partial p_j\) é *simétrica*, *semidefinida negativa*, e satisfaz \(Sp = \mathbf{0}\).
 - **B.** A função gasto \(e(p, \bar u)\) é *côncava* em \(p\), mesmo quando a preferência não é convexa estrita.
 - **C.** Dada uma função \(e\) satisfazendo as 5 propriedades estruturais (homog. grau 1, côncava em \(p\), monotônica em \(p\) e em \(\bar u\), contínua), existe *exatamente uma* preferência cuja função gasto é \(e\) — caracterização unívoca.
 
@@ -355,7 +355,7 @@ Esta é a forma CD em logs — PIGLOG em sua forma mais simples.
 
 ### (c) Afirmação C (recíproca da dualidade) é:
 
-- (i) Verdadeira — teorema da recíproca (Diewert 1974; Jehle-Reny §2.1). **← CORRETA**
+- (i) Verdadeira — teorema da recíproca da dualidade. **← CORRETA**
 - (ii) Verdadeira apenas para preferências homotéticas.
 - (iii) Falsa — \(e\) não identifica preferência univocamente.
 - (iv) Verdadeira mas exige também conhecer \(v\).

@@ -11,7 +11,7 @@
 - **Horário:** 19:30–22:30 (180 min)
 - **Tema:** Teoria do Consumidor II — UMP, EMP e Dualidade
 - **Objetivo de aprendizagem:** derivar com rigor o par UMP/EMP; extrair \(x^M, v, h, e\) como objetos de primeira classe; aplicar Roy e Shephard como *derivadas*, não *mágicas*; ler os **três diagramas** de dualidade (Marshalliana↔Hicksiana; \(v\)↔\(e\); identidades recíprocas).
-- **Pré-requisitos assumidos:** Aula 1 consolidada (preferências, axiomas, \(u\), TMS), pré-aula 2 concluída (ZaE cap. 4, N&S 12e cap. 4, checkpoint conceitual, N&S 4.1 e 4.3 no papel).
+- **Pré-requisitos assumidos:** Aula 1 consolidada (preferências, axiomas, \(u\), TMS), pré-aula 2 concluída (ZaE cap. 4, N&S 12e cap. 4, checkpoint conceitual, **Exercícios propostos 1 e 2** no papel).
 - **Nível pedagógico:** meio-termo entre graduação avançada e *qualifier* diluído. Piso N&S; teto de conforto J-R §1.4 e §2.1.
 
 ---
