@@ -290,9 +290,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>O problema primal — UMP</h2>
 <div class="card">
-<p><strong>Enunciado.</strong> <span class="math display">\[
-\max_{x \in \mathbb{R}^n_+} u(x) \quad \text{s.a.} \quad p \cdot x \leq m.
-\]</span></p>
+<p><strong>Enunciado.</strong> [ <em>{x ^n</em>+} u(x) p x m. ]</p>
 </div>
 <p><strong>Hipóteses standard:</strong></p>
 <ul>
@@ -308,19 +306,13 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Lagrangiano e CPO</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-\mathcal{L}(x, \lambda) = u(x) + \lambda\,(m - p \cdot x).
-\]</span></p>
+<p>[ (x, ) = u(x) + ,(m - p x). ]</p>
 </div>
 <p><strong>CPO interiores:</strong></p>
-<p><span class="math display">\[
-\frac{\partial u}{\partial x_i} = \lambda\, p_i \quad (\forall i), \qquad p \cdot x = m.
-\]</span></p>
+<p>[ = , p_i (i), p x = m. ]</p>
 <p><strong>Razão entre duas CPOs</strong> (a equação que entra no bolso):</p>
 <div class="eq-key">
-<p><span class="math display">\[
-\frac{u_i}{u_j} = \frac{p_i}{p_j} \iff \text{TMS}_{ij} = \frac{p_i}{p_j}. \tag{tangência}
-\]</span></p>
+<p>[ = _{ij} = . ]</p>
 </div>
 <div class="fragment">
 <p>**(^*) tem leitura econômica:<strong> utilidade marginal da renda. Aparece na </strong>Identidade de Roy** (Bloco 2).</p>
@@ -347,28 +339,26 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <div class="card">
 <p><strong>Função.</strong> (u(x_1, x_2) = x_1^{} x_2^{1-}, (0, 1).)</p>
 </div>
-<p><strong>Caminho 1 — tangência:</strong> <span class="math display">\[
-\frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
-\]</span></p>
+<p><strong>Caminho 1 — tangência:</strong> [ = . ]</p>
 <p>Combine com (p_1 x_1 + p_2 x_2 = m):</p>
 <div class="eq-key">
-<p><span class="math display">\[
-\boxed{\;x_1^M(p, m) = \frac{\alpha\, m}{p_1}, \qquad x_2^M(p, m) = \frac{(1-\alpha)\,m}{p_2}.\;}
-\]</span></p>
+<p>[ ]</p>
 </div>
 <p><strong>Parcelas de gasto:</strong> (p_i x_i^M / m = , 1-) — <strong>constantes</strong>. Rastro de homotetia.</p>
 </section>
 <section class="slide level2 center">
-<h2>Cobb-Douglas via log — ordinalidade de novo</h2>
+<h2>Cobb-Douglas via log — ordinalidade de novo (1/2)</h2>
 <p>Lembra da Aula 1? (v = u) representa a <strong>mesma</strong> preferência. Lagrangiano vira linear em logs:</p>
-<p><span class="math display">\[
-\mathcal{L} = \alpha \ln x_1 + (1-\alpha) \ln x_2 + \lambda\,(m - p_1 x_1 - p_2 x_2).
-\]</span></p>
-<p>CPO é divisão limpa: <span class="math display">\[
-\frac{\alpha}{x_1} = \lambda p_1, \qquad \frac{1-\alpha}{x_2} = \lambda p_2.
-\]</span></p>
+<p>[ = x_1 + (1-) x_2 + ,(m - p_1 x_1 - p_2 x_2). ]</p>
+<p>CPO é divisão limpa: [ = p_1, = p_2. ]</p>
 <p>Somando após multiplicar por (x_i): (+ (1-) = m) ⇒ (^* = 1/m).</p>
-<div style="font-size: 0.78em; margin-top: 0.6em;">
+<div class="eq-punch">
+<p>Ordinalidade não é luxo — é como a álgebra fica calma.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Cobb-Douglas via log — ordinalidade de novo (2/2)</h2>
+<p>**Por que o (^*) mudou?** Porque a escala cardinal mudou.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -378,17 +368,23 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Esse (^* = 1/m) é o multiplicador da <strong>log-forma</strong> (u). Na forma direta (u = x_1<sup>x_2</sup>{1-}), o (^<em>) canônico vale (v/m). Ordinalidade preserva o ótimo (x^M), não o valor numérico de (^</em>) — o que sobrevive intacto é a razão (u_i/u_j) (tangência) e a Identidade de Roy (Bloco 2) via Envelope.</p>
+<p>Esse (^* = 1/m) é o multiplicador da <strong>log-forma</strong> (u).</p>
+<p>Na forma direta (u = x_1<sup>x_2</sup>{1-}), o (^*) canônico vale (v/m).</p>
+<p>Ordinalidade preserva o ótimo (x^M), <strong>não</strong> o valor numérico de (^*).</p>
 </div>
 </div>
 </div>
-</div>
-<div class="eq-punch">
-<p>Ordinalidade não é luxo — é como a álgebra fica calma.</p>
+<p><strong>O que sobrevive intacto à transformação monotônica:</strong></p>
+<ul>
+<li>A razão (u_i/u_j) (condição de tangência).</li>
+<li>A Identidade de Roy (Bloco 2), via Teorema do Envelope.</li>
+</ul>
+<div class="bridge">
+<p>Valor absoluto de (^*) é calibração. Tangência e Roy são <strong>estrutura</strong>.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Propriedades da Marshalliana (x^M(p, m))</h2>
+<h2>Propriedades da Marshalliana (x^M(p, m)) (1/2)</h2>
 <div class="card">
 <p><strong>(M1) Homogeneidade de grau 0</strong> em ((p, m)): (x^M(p, m) = x^M(p, m)).</p>
 </div>
@@ -396,20 +392,28 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <div class="card">
 <p><strong>(M2) Walras (lei de ocupação):</strong> (p x^M(p, m) = m).</p>
 </div>
-<p><strong>Por quê:</strong> monotonicidade de (u) (ou NSL) ⇒ aluno gasta tudo no ótimo.</p>
-<div class="card">
-<p><strong>(M3) Continuidade:</strong> onde (u) quasicôncava estrita e solução única, (x^M) é contínua em ((p, m)) (Teorema do Máximo, Berge).</p>
-</div>
+<p><strong>Por quê:</strong> monotonicidade de (u) (ou NSL) ⇒ consumidor gasta tudo no ótimo.</p>
 <div class="bridge">
-<p>Diferenciabilidade de (x^M) é um passo a mais — exige Hessiano bordado não-degenerado. Assumido no curso; justificado em J-R §1.4.</p>
+<p>M1 é simetria. M2 é esgotamento. Juntas, são a geometria da tangência.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Propriedades da Marshalliana (x^M(p, m)) (2/2)</h2>
+<div class="card">
+<p><strong>(M3) Continuidade:</strong> onde (u) é quasicôncava estrita e a solução é única, (x^M) é contínua em ((p, m)) (Teorema do Máximo, Berge).</p>
+</div>
+<p><strong>Por quê:</strong> pequenas perturbações em (p) ou (m) movem o ótimo continuamente — não há saltos, sob unicidade.</p>
+<div class="bridge">
+<p><strong>Diferenciabilidade</strong> de (x^M) é um passo a mais — exige Hessiano bordado não-degenerado. Assumido no curso; justificado em J-R §1.4.</p>
+</div>
+<div class="eq-punch">
+<p>Homogeneidade, Walras, continuidade. Três escudos básicos — todo resto deriva daqui.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Da Marshalliana à função indireta</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
-\]</span></p>
+<p>[ v(p, m) = u(x^M(p, m)) = _{p x m} u(x). ]</p>
 </div>
 <p><strong>Leitura:</strong> (x^M) é <em>a escolha</em>; (v) é <em>o nível</em> de utilidade que essa escolha atinge.</p>
 <div class="fragment">
@@ -491,9 +495,7 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 <section class="slide level2 center">
 <h2>Identidade de Roy — enunciado</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-\boxed{\; x_i^M(p, m) = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}. \;}
-\]</span></p>
+<p>[ ]</p>
 </div>
 <p><strong>O que ela faz:</strong> extrai a <strong>demanda</strong> diretamente da função <strong>indireta</strong> — sem passar pela preferência.</p>
 <p><strong>Onde importa:</strong> econometria estrutural (estima-se (v) paramétrica, recupera-se (x^M) via derivada). Deaton-Muellbauer e AIDS são construções dessa família.</p>
@@ -504,16 +506,10 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 <section class="slide level2 center">
 <h2>Identidade de Roy — prova em 4 linhas</h2>
 <p><strong>Envelope aplicado ao Lagrangiano ( = u(x) + (m - p x)):</strong></p>
-<p><span class="math display">\[
-\frac{\partial v}{\partial p_i} = \frac{\partial \mathcal{L}}{\partial p_i}\bigg|_{x = x^M, \lambda = \lambda^*} = -\,\lambda^*\, x_i^M.
-\]</span></p>
-<p><span class="math display">\[
-\frac{\partial v}{\partial m} = \frac{\partial \mathcal{L}}{\partial m}\bigg|_{x = x^M, \lambda = \lambda^*} = \lambda^*.
-\]</span></p>
+<p>[ = |_{x = x^M, = ^<em>} = -,^</em>, x_i^M. ]</p>
+<p>[ = |_{x = x^M, = ^<em>} = ^</em>. ]</p>
 <p><strong>Divida:</strong></p>
-<p><span class="math display">\[
--\,\frac{\partial v/\partial p_i}{\partial v/\partial m} = -\,\frac{-\lambda^* x_i^M}{\lambda^*} = x_i^M. \quad \blacksquare
-\]</span></p>
+<p>[ -, = -, = x_i^M. ]</p>
 <div class="bridge">
 <p>O (^*) <strong>cancela</strong> — é por isso que Roy “funciona” sem precisar calcular multiplicador. Envelope em ação.</p>
 </div>
@@ -522,17 +518,11 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 <h2>Roy em Cobb-Douglas — verificar a mão</h2>
 <p><strong>Passo 1 — achar (v).</strong> Substituir (x^M = (m / p_1, (1-)m / p_2)) em (u = x_1<sup>x_2</sup>{1-}):</p>
 <div class="eq-key">
-<p><span class="math display">\[
-v(p, m) = m \cdot \frac{\alpha^\alpha (1-\alpha)^{1-\alpha}}{p_1^\alpha\, p_2^{1-\alpha}}.
-\]</span></p>
+<p>[ v(p, m) = m . ]</p>
 </div>
 <p><strong>Passo 2 — aplicar Roy para recuperar (x_1^M):</strong></p>
-<p><span class="math display">\[
-\partial v / \partial p_1 = -\alpha \cdot \frac{v}{p_1}, \qquad \partial v / \partial m = \frac{v}{m}.
-\]</span></p>
-<p><span class="math display">\[
-x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmark
-\]</span></p>
+<p>[ v / p_1 = -, v / m = . ]</p>
+<p>[ x_1^M = -, = . ]</p>
 </section>
 <section class="slide level2 center">
 <h2>Por que (v) fatoriza em Cobb-Douglas?</h2>
@@ -573,28 +563,18 @@ x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmar
 <section class="slide level2 center">
 <h2>O problema dual — EMP</h2>
 <div class="card">
-<p><strong>Enunciado.</strong> <span class="math display">\[
-\min_{x \in \mathbb{R}^n_+} p \cdot x \quad \text{s.a.} \quad u(x) \geq \bar{u}.
-\]</span></p>
+<p><strong>Enunciado.</strong> [ <em>{x ^n</em>+} p x u(x) {u}. ]</p>
 </div>
 <p><strong>Hipóteses:</strong> mesma família do UMP (continuidade, quasiconcavidade, monotonicidade).</p>
 <p><strong>Saídas:</strong></p>
-<p><span class="math display">\[
-h(p, \bar{u}) = \arg\min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(Hicksiana / compensada)}.
-\]</span></p>
-<p><span class="math display">\[
-e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(função gasto)}.
-\]</span></p>
+<p>[ h(p, {u}) = _{u(x) {u}} p x . ]</p>
+<p>[ e(p, {u}) = p h(p, {u}) = _{u(x) {u}} p x . ]</p>
 </section>
 <section class="slide level2 center">
 <h2>EMP — Lagrangiano e CPO</h2>
-<p><span class="math display">\[
-\mathcal{L}^*(x, \mu) = p \cdot x + \mu\,(\bar{u} - u(x)).
-\]</span></p>
+<p>[ ^{}(x, ) = p x + ,({u} - u(x)). ]</p>
 <p><strong>CPO interiores:</strong></p>
-<p><span class="math display">\[
-p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
-\]</span></p>
+<p>[ p_i = , u_i (i), u(x) = {u}. ]</p>
 <p><strong>Razão de duas CPOs:</strong> () — <strong>a mesma</strong> condição de tangência do UMP.</p>
 <div class="eq-punch">
 <p>Mesma tangência, problema diferente. O ponto geométrico é o mesmo.</p>
@@ -656,9 +636,7 @@ p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
 <h2>Concavidade de (e) em (p) — intuição</h2>
 <p><strong>Ínfimo de lineares é côncavo:</strong> para cada (x) fixo, (p p x) é <strong>linear</strong> em (p). O mínimo sobre (x) (com (u(x) u)) é o <strong>envelope inferior</strong> dessa família de retas — sempre côncavo.</p>
 <div class="eq-key">
-<p><span class="math display">\[
-e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \quad e \text{ côncava em } p.
-\]</span></p>
+<p>[ e(p, u) = _{x {u(x) u}} p x e p. ]</p>
 </div>
 <p><strong>Consequência direta para Slutsky (Aula 3):</strong> a matriz (h_i / p_j) é <strong>semidefinida negativa</strong> (diagonal (), “lei da demanda compensada”).</p>
 <div class="fragment bridge">
@@ -668,14 +646,10 @@ e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \qu
 <section class="slide level2 center">
 <h2>Lema de Shephard — enunciado</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-\boxed{\; h_i(p, \bar{u}) = \frac{\partial e(p, \bar{u})}{\partial p_i}. \;}
-\]</span></p>
+<p>[ ]</p>
 </div>
 <p><strong>Prova via Envelope:</strong></p>
-<p><span class="math display">\[
-\frac{\partial e}{\partial p_i} = \frac{\partial \mathcal{L}^*}{\partial p_i}\bigg|_{x = h, \mu = \mu^*} = h_i.
-\]</span></p>
+<p>[ = |_{x = h, = ^*} = h_i. ]</p>
 <p><strong>Intuição econômica em uma frase:</strong></p>
 <div class="eq-punch">
 <p>Subir (p_i) em (); consumidor ajusta (x_i) para manter (u). O ajuste é segunda-ordem — muda só (h_i ) no gasto.</p>
@@ -685,14 +659,10 @@ e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \qu
 <h2>Shephard em Cobb-Douglas — verificar a mão</h2>
 <p><strong>Passo 1 — achar (e) por <em>inversão de Roy</em>.</strong> Use (v = m (p)) e imponha (v(p, e) = u):</p>
 <div class="eq-key">
-<p><span class="math display">\[
-e(p, \bar u) = \bar u \cdot \frac{p_1^{\alpha}\, p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}.
-\]</span></p>
+<p>[ e(p, u) = u . ]</p>
 </div>
 <p><strong>Passo 2 — aplicar Shephard:</strong></p>
-<p><span class="math display">\[
-h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha - 1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}} = \alpha\, \frac{e}{p_1}.
-\]</span></p>
+<p>[ h_1 = = u = , . ]</p>
 <p><strong>Compare com (x_1^M = m / p_1):</strong> quando (u = v(p, m)), (e = m), logo (h_1 = x_1^M). <em>Prévia da dualidade.</em></p>
 </section>
 <section class="slide level2 pause-slide center" data-background-color="#F7F7F5">
@@ -716,9 +686,7 @@ h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha 
 <section class="slide level2 center">
 <h2>Diagrama 1 — identidades recíprocas</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-e(p,\ v(p, m)) = m, \qquad v(p,\ e(p, \bar u)) = \bar u.
-\]</span></p>
+<p>[ e(p,&nbsp;v(p, m)) = m, v(p,&nbsp;e(p, u)) = u. ]</p>
 </div>
 <p><strong>Leitura:</strong> ((x^M, v)) no UMP e ((h, e)) no EMP são <strong>o mesmo ponto físico</strong> — calibrado de um lado pela renda, do outro pela utilidade.</p>
 <div class="eq-punch">
@@ -731,12 +699,8 @@ e(p,\ v(p, m)) = m, \qquad v(p,\ e(p, \bar u)) = \bar u.
 <section class="slide level2 center">
 <h2>Diagrama 2 — Marshalliana ↔︎ Hicksiana</h2>
 <div class="eq-key">
-<p><span class="math display">\[
-x_i^M(p, m) = h_i\big(p,\ v(p, m)\big),
-\]</span></p>
-<p><span class="math display">\[
-h_i(p, \bar u) = x_i^M\big(p,\ e(p, \bar u)\big).
-\]</span></p>
+<p>[ x_i^M(p, m) = h_i(p,&nbsp;v(p, m)), ]</p>
+<p>[ h_i(p, u) = x_i^M(p,&nbsp;e(p, u)). ]</p>
 </div>
 <p><strong>Leitura:</strong> a <strong>Marshalliana</strong> é a <strong>Hicksiana calibrada</strong> ao nível de utilidade que a renda compra. E vice-versa.</p>
 <p><strong>Como é usado em Slutsky (Aula 3):</strong> derivar a primeira identidade em (p_j); substituir Roy; rearrumar. Sai a equação de Slutsky quase sozinha.</p>
@@ -745,14 +709,10 @@ h_i(p, \bar u) = x_i^M\big(p,\ e(p, \bar u)\big).
 <h2>Diagrama 3 — recuperações via derivada</h2>
 <div class="cols">
 <div>
-<p><strong>Roy</strong> (da indireta à Marshalliana): <span class="math display">\[
-x_i^M = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}.
-\]</span></p>
+<p><strong>Roy</strong> (da indireta à Marshalliana): [ x_i^M = -,. ]</p>
 </div>
 <div>
-<p><strong>Shephard</strong> (do gasto à Hicksiana): <span class="math display">\[
-h_i = \frac{\partial e}{\partial p_i}.
-\]</span></p>
+<p><strong>Shephard</strong> (do gasto à Hicksiana): [ h_i = . ]</p>
 </div>
 </div>
 <div class="compact-table" style="margin-top: 0.8em;">
@@ -832,39 +792,41 @@ h_i = \frac{\partial e}{\partial p_i}.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (1/3)</h2>
-<p><strong>Item 1 — UMP.</strong> Com (= 1/2): <span class="math display">\[
-x_1^M = \frac{\alpha m}{p_1} = \frac{10}{4} = 2{,}5, \quad x_2^M = \frac{(1-\alpha) m}{p_2} = \frac{10}{1} = 10.
-\]</span></p>
-<p><strong>Utilidade indireta:</strong> (v = (2{,}5)^{1/2} (10)^{1/2} = = 5).</p>
-<p><strong>Item 2 — Roy.</strong> (v(p, m) = m (p)) com ((p) = = ).</p>
-<p>Em (p = (4, 1)), (m = 20): (v = 20 = 20 25 = 5). ✓</p>
-<p><span class="math display">\[
--\frac{\partial v/\partial p_1}{\partial v/\partial m} = -\frac{-\frac{v}{2 p_1}}{v/m} = \frac{m}{2 p_1} = \frac{20}{8} = 2{,}5 = x_1^M. \checkmark
-\]</span></p>
+<h2>Prática — resposta completa (1/4)</h2>
+<p><strong>Item 1 — UMP.</strong> Com (= 1/2):</p>
+<p>[ x_1^M = = = 2{,}5, x_2^M = = = 10. ]</p>
+<p><strong>Utilidade indireta no ótimo:</strong></p>
+<p>[ v = (2{,}5)^{1/2} (10)^{1/2} = = 5. ]</p>
+<div class="bridge">
+<p>Próximo passo: confirmar (x_1^M = 2{,}5) via derivada de (v) (Roy).</p>
+</div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (2/3)</h2>
-<p><strong>Item 3 — EMP com (u = 5).</strong> Função gasto em CD com (= 1/2): <span class="math display">\[
-e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} = 2\bar u\,\sqrt{p_1 p_2}.
-\]</span></p>
-<p>Em (p = (4, 1)), (u = 5): (e = 2 = 10 = 20 = m). ✓</p>
+<h2>Prática — resposta completa (2/4)</h2>
+<p><strong>Item 2 — Roy.</strong> Fator de renda na indireta:</p>
+<p>[ v(p, m) = m (p), (p) = = . ]</p>
+<p><strong>Checagem numérica</strong> em (p = (4, 1)), (m = 20): (v = 20 = 20 25 = 5). ✓</p>
+<p><strong>Roy aplicado a (x_1^M):</strong></p>
+<p>[ - = - = = = 2{,}5 = x_1^M. ; ]</p>
+</section>
+<section class="slide level2 center">
+<h2>Prática — resposta completa (3/4)</h2>
+<p><strong>Item 3 — EMP com (u = 5).</strong> Função gasto em CD com (= 1/2):</p>
+<p>[ e(p, u) = u = 2u,. ]</p>
+<p><strong>Checagem numérica</strong> em (p = (4, 1)), (u = 5): (e = 2 = 10 = 20 = m). ✓</p>
 <p><strong>Hicksianas via fórmula fechada:</strong> (h_1 = , e/p_1 = 0{,}5 / 4 = 2{,}5 = x_1^M). ✓</p>
 <div class="bridge">
 <p>Dualidade em ação: (e = m), (h = x^M). Falta conferir <strong>Shephard</strong> na derivada.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (3/3)</h2>
+<h2>Prática — resposta completa (4/4)</h2>
 <p><strong>Item 4 — Shephard.</strong> Com (e = 2u, p_1^{1/2}, p_2^{1/2}), derive em (p_1):</p>
 <div class="eq-key">
-<p><span class="math display">\[
-\frac{\partial e}{\partial p_1} \;=\; 2\bar u \cdot \tfrac{1}{2}\, p_1^{-1/2}\, p_2^{1/2} \;=\; \bar u\,\sqrt{\frac{p_2}{p_1}}.
-\]</span></p>
+<p>[ ;=; 2u , p_1^{-1/2}, p_2^{1/2} ;=; u,. ]</p>
 </div>
-<p>Em (p = (4, 1)), (u = 5): <span class="math display">\[
-\frac{\partial e}{\partial p_1} = 5\cdot \sqrt{\tfrac{1}{4}} = 5\cdot \tfrac{1}{2} = 2{,}5 = h_1. \quad \checkmark
-\]</span></p>
+<p><strong>Checagem numérica</strong> em (p = (4, 1)), (u = 5):</p>
+<p>[ = 5 = 5 = 2{,}5 = h_1. ; ]</p>
 <p><strong>Mesmo resultado</strong> da fórmula fechada (h_1 = ,e/p_1). Shephard <strong>é</strong> derivada — não truque paralelo.</p>
 <div class="eq-punch">
 <p>UMP e EMP são o mesmo ponto físico. Roy e Shephard são as derivadas que provam.</p>
@@ -898,9 +860,7 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} =
 <h2>Ponte para a Aula 3 — Slutsky</h2>
 <p><strong>Pergunta motor:</strong> Marshalliana e Hicksiana satisfazem a <em>mesma</em> tangência. Mas quando preço muda, elas <strong>não</strong> movem igual.</p>
 <div class="eq-key">
-<p><span class="math display">\[
-\frac{\partial x_i^M}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M \cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
-\]</span></p>
+<p>[ = <em>{} ;-; </em>{}. ]</p>
 </div>
 <div class="fragment">
 <p><strong>Isto é Slutsky.</strong> Três leituras:</p>
