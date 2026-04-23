@@ -232,18 +232,27 @@ A melhor cesta está onde a preferência toca a restrição.
 
 ---
 
-## UMP em Cobb-Douglas — template canônico
+## UMP em Cobb-Douglas — tangência (1/2)
 
 ::: {.card}
 **Função.** $u(x_1, x_2) = x_1^{\alpha} x_2^{1-\alpha}, \quad \alpha \in (0, 1).$
 :::
 
 **Caminho 1 — tangência:**
+
 $$
 \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
 $$
 
-Combine com $p_1 x_1 + p_2 x_2 = m$:
+Combine com a restrição $p_1 x_1 + p_2 x_2 = m$.
+
+::: {.bridge}
+Duas equações, duas incógnitas — no próximo slide, a solução fechada e a leitura como parcelas de gasto.
+:::
+
+---
+
+## UMP em Cobb-Douglas — Marshalliana fechada (2/2)
 
 ::: {.eq-key}
 $$
@@ -251,24 +260,41 @@ $$
 $$
 :::
 
-**Parcelas de gasto:** $p_i x_i^M / m = \alpha, 1-\alpha$ — **constantes**. Rastro de homotetia.
+**Parcelas de gasto:** $p_i x_i^M / m = \alpha,\; 1-\alpha$ — **constantes**. Rastro de homotetia.
+
+::: {.bridge}
+Parcela constante em $m$ é a marca da homotetia. Quasilinear, Leontief e CES vão quebrar (ou reforçar) essa marca nos próximos slides.
+:::
 
 ---
 
-## Cobb-Douglas via log — ordinalidade de novo (1/2)
+## Cobb-Douglas via log — Lagrangiano linear (1/3)
 
-Lembra da Aula 1? $v = \ln u$ representa a **mesma** preferência. Lagrangiano vira linear em logs:
+Lembra da Aula 1? $v = \ln u$ representa a **mesma** preferência. Aplicar $\ln$ torna o Lagrangiano linear em logs:
 
 $$
 \mathcal{L} = \alpha \ln x_1 + (1-\alpha) \ln x_2 + \lambda\,(m - p_1 x_1 - p_2 x_2).
 $$
 
-CPO é divisão limpa:
+::: {.bridge}
+Cobb-Douglas multiplicativa vira soma quando você toma log. O Lagrangiano muda de cara — o ótimo, não.
+:::
+
+---
+
+## Cobb-Douglas via log — CPO e $\lambda^*$ (2/3)
+
+**CPO é divisão limpa:**
+
 $$
 \frac{\alpha}{x_1} = \lambda p_1, \qquad \frac{1-\alpha}{x_2} = \lambda p_2.
 $$
 
-Somando após multiplicar por $x_i$: $\alpha + (1-\alpha) = \lambda \cdot m$ ⇒ $\lambda^* = 1/m$.
+**Truque:** multiplique cada CPO por $x_i$ e some. Como $p_1 x_1 + p_2 x_2 = m$:
+
+$$
+\alpha + (1-\alpha) = \lambda \cdot m \;\Rightarrow\; \lambda^* = 1/m.
+$$
 
 ::: {.eq-punch}
 Ordinalidade não é luxo — é como a álgebra fica calma.
@@ -276,7 +302,7 @@ Ordinalidade não é luxo — é como a álgebra fica calma.
 
 ---
 
-## Cobb-Douglas via log — ordinalidade de novo (2/2)
+## Cobb-Douglas via log — ordinalidade em ação (3/3)
 
 **Por que o $\lambda^*$ mudou?** Porque a escala cardinal mudou.
 
@@ -566,7 +592,7 @@ $$
 
 ---
 
-## EMP — Lagrangiano e CPO
+## EMP — Lagrangiano e CPO (1/2)
 
 $$
 \mathcal{L}^{\text{EMP}}(x, \mu) = p \cdot x + \mu\,(\bar{u} - u(x)).
@@ -578,15 +604,21 @@ $$
 p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
 $$
 
+::: {.bridge}
+Minimiza gasto, utilidade como restrição ativa. Próximo passo: mesma razão, mesma tangência.
+:::
+
+---
+
+## EMP — tangência e leitura de $\mu^*$ (2/2)
+
 **Razão de duas CPOs:** $\boxed{\;\text{TMS}_{ij} = p_i / p_j\;}$ — **a mesma** condição de tangência do UMP.
 
 ::: {.eq-punch}
 Mesma tangência, problema diferente. O ponto geométrico é o mesmo.
 :::
 
-::: {.fragment}
 $\mu^*$ tem leitura dual: **custo marginal de utilidade**. É o recíproco de $\lambda^*$ do UMP.
-:::
 
 ---
 
@@ -797,7 +829,7 @@ Armadilhas canônicas que vou olhar: sinal em Roy, confundir Shephard com $\part
 
 ---
 
-## Prática — resposta completa (1/4)
+## Prática — resposta completa (1/5)
 
 **Item 1 — UMP.** Com $\alpha = 1/2$:
 
@@ -817,7 +849,7 @@ Próximo passo: confirmar $x_1^M = 2{,}5$ via derivada de $v$ (Roy).
 
 ---
 
-## Prática — resposta completa (2/4)
+## Prática — resposta completa (2/5)
 
 **Item 2 — Roy.** Fator de renda na indireta:
 
@@ -835,7 +867,7 @@ $$
 
 ---
 
-## Prática — resposta completa (3/4)
+## Prática — resposta completa (3/5)
 
 **Item 3 — EMP com $\bar u = 5$.** Função gasto em CD com $\alpha = 1/2$:
 
@@ -853,7 +885,7 @@ Dualidade em ação: $e = m$, $h = x^M$. Falta conferir **Shephard** na derivada
 
 ---
 
-## Prática — resposta completa (4/4)
+## Prática — resposta completa (4/5)
 
 **Item 4 — Shephard.** Com $e = 2\bar u\, p_1^{1/2}\, p_2^{1/2}$, derive em $p_1$:
 
@@ -862,6 +894,14 @@ $$
 \frac{\partial e}{\partial p_1} \;=\; 2\bar u \cdot \tfrac{1}{2}\, p_1^{-1/2}\, p_2^{1/2} \;=\; \bar u\,\sqrt{\frac{p_2}{p_1}}.
 $$
 :::
+
+::: {.bridge}
+Fórmula analítica pronta. Próximo slide: substitui os números e confirma que bate com $h_1$.
+:::
+
+---
+
+## Prática — resposta completa (5/5)
 
 **Checagem numérica** em $p = (4, 1)$, $\bar u = 5$:
 
@@ -901,7 +941,7 @@ UMP e EMP são o mesmo ponto físico. Roy e Shephard são as derivadas que prova
 
 ---
 
-## Ponte para a Aula 3 — Slutsky
+## Ponte para a Aula 3 — Slutsky (1/2)
 
 **Pergunta motor:** Marshalliana e Hicksiana satisfazem a *mesma* tangência. Mas quando preço muda, elas **não** movem igual.
 
@@ -911,12 +951,20 @@ $$
 $$
 :::
 
-::: {.fragment}
-**Isto é Slutsky.** Três leituras:
+::: {.bridge}
+Isto é Slutsky. Próximo slide: três leituras da equação — e o que cada uma herda desta aula.
+:::
 
-- A Hicksiana *é* a "Marshalliana sem efeito-renda".
-- O efeito-substituição vem da **concavidade de $e$** (matriz de Slutsky simétrica, semi-def. negativa).
-- O efeito-renda vem da **derivada da Marshalliana em $m$** (curvas de Engel).
+---
+
+## Ponte para a Aula 3 — três leituras (2/2)
+
+- A **Hicksiana** é a "Marshalliana sem efeito-renda".
+- O **efeito-substituição** vem da **concavidade de $e$** (matriz de Slutsky simétrica, semi-def. negativa).
+- O **efeito-renda** vem da **derivada da Marshalliana em $m$** (curvas de Engel).
+
+::: {.eq-punch}
+Slutsky é a soma de Shephard (substituição) com Engel (renda). Nada novo — só bem contabilizado.
 :::
 
 ---

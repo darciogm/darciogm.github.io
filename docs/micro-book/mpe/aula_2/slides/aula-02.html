@@ -29,7 +29,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="aula-02_files/libs/revealjs/dist/theme/quarto-f7e969b06c24886ff9b4ca9e9a39b1f4.css">
+  <link rel="stylesheet" href="aula-02_files/libs/revealjs/dist/theme/quarto-87a608a81874da82182f304e7e286fd3.css">
   <link href="aula-02_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="aula-02_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="aula-02_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -349,37 +349,57 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>UMP em Cobb-Douglas — template canônico</h2>
+<h2>UMP em Cobb-Douglas — tangência (1/2)</h2>
 <div class="card">
 <p><strong>Função.</strong> <span class="math inline">\(u(x_1, x_2) = x_1^{\alpha} x_2^{1-\alpha}, \quad \alpha \in (0, 1).\)</span></p>
 </div>
-<p><strong>Caminho 1 — tangência:</strong> <span class="math display">\[
+<p><strong>Caminho 1 — tangência:</strong></p>
+<p><span class="math display">\[
 \frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
 \]</span></p>
-<p>Combine com <span class="math inline">\(p_1 x_1 + p_2 x_2 = m\)</span>:</p>
+<p>Combine com a restrição <span class="math inline">\(p_1 x_1 + p_2 x_2 = m\)</span>.</p>
+<div class="bridge">
+<p>Duas equações, duas incógnitas — no próximo slide, a solução fechada e a leitura como parcelas de gasto.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>UMP em Cobb-Douglas — Marshalliana fechada (2/2)</h2>
 <div class="eq-key">
 <p><span class="math display">\[
 \boxed{\;x_1^M(p, m) = \frac{\alpha\, m}{p_1}, \qquad x_2^M(p, m) = \frac{(1-\alpha)\,m}{p_2}.\;}
 \]</span></p>
 </div>
-<p><strong>Parcelas de gasto:</strong> <span class="math inline">\(p_i x_i^M / m = \alpha, 1-\alpha\)</span> — <strong>constantes</strong>. Rastro de homotetia.</p>
+<p><strong>Parcelas de gasto:</strong> <span class="math inline">\(p_i x_i^M / m = \alpha,\; 1-\alpha\)</span> — <strong>constantes</strong>. Rastro de homotetia.</p>
+<div class="bridge">
+<p>Parcela constante em <span class="math inline">\(m\)</span> é a marca da homotetia. Quasilinear, Leontief e CES vão quebrar (ou reforçar) essa marca nos próximos slides.</p>
+</div>
 </section>
 <section class="slide level2 center">
-<h2>Cobb-Douglas via log — ordinalidade de novo (1/2)</h2>
-<p>Lembra da Aula 1? <span class="math inline">\(v = \ln u\)</span> representa a <strong>mesma</strong> preferência. Lagrangiano vira linear em logs:</p>
+<h2>Cobb-Douglas via log — Lagrangiano linear (1/3)</h2>
+<p>Lembra da Aula 1? <span class="math inline">\(v = \ln u\)</span> representa a <strong>mesma</strong> preferência. Aplicar <span class="math inline">\(\ln\)</span> torna o Lagrangiano linear em logs:</p>
 <p><span class="math display">\[
 \mathcal{L} = \alpha \ln x_1 + (1-\alpha) \ln x_2 + \lambda\,(m - p_1 x_1 - p_2 x_2).
 \]</span></p>
-<p>CPO é divisão limpa: <span class="math display">\[
+<div class="bridge">
+<p>Cobb-Douglas multiplicativa vira soma quando você toma log. O Lagrangiano muda de cara — o ótimo, não.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Cobb-Douglas via log — CPO e <span class="math inline">\(\lambda^*\)</span> (2/3)</h2>
+<p><strong>CPO é divisão limpa:</strong></p>
+<p><span class="math display">\[
 \frac{\alpha}{x_1} = \lambda p_1, \qquad \frac{1-\alpha}{x_2} = \lambda p_2.
 \]</span></p>
-<p>Somando após multiplicar por <span class="math inline">\(x_i\)</span>: <span class="math inline">\(\alpha + (1-\alpha) = \lambda \cdot m\)</span> ⇒ <span class="math inline">\(\lambda^* = 1/m\)</span>.</p>
+<p><strong>Truque:</strong> multiplique cada CPO por <span class="math inline">\(x_i\)</span> e some. Como <span class="math inline">\(p_1 x_1 + p_2 x_2 = m\)</span>:</p>
+<p><span class="math display">\[
+\alpha + (1-\alpha) = \lambda \cdot m \;\Rightarrow\; \lambda^* = 1/m.
+\]</span></p>
 <div class="eq-punch">
 <p>Ordinalidade não é luxo — é como a álgebra fica calma.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Cobb-Douglas via log — ordinalidade de novo (2/2)</h2>
+<h2>Cobb-Douglas via log — ordinalidade em ação (3/3)</h2>
 <p><strong>Por que o <span class="math inline">\(\lambda^*\)</span> mudou?</strong> Porque a escala cardinal mudou.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
@@ -636,7 +656,7 @@ e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad
 <p><strong>Paralelo com o UMP:</strong> <span class="math inline">\(h\)</span> é <em>a escolha</em> (como <span class="math inline">\(x^M\)</span>); <span class="math inline">\(e\)</span> é <em>o valor</em> do problema (como <span class="math inline">\(v\)</span>). Mesma estrutura — direção oposta.</p>
 </section>
 <section class="slide level2 center">
-<h2>EMP — Lagrangiano e CPO</h2>
+<h2>EMP — Lagrangiano e CPO (1/2)</h2>
 <p><span class="math display">\[
 \mathcal{L}^{\text{EMP}}(x, \mu) = p \cdot x + \mu\,(\bar{u} - u(x)).
 \]</span></p>
@@ -644,13 +664,17 @@ e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad
 <p><span class="math display">\[
 p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
 \]</span></p>
+<div class="bridge">
+<p>Minimiza gasto, utilidade como restrição ativa. Próximo passo: mesma razão, mesma tangência.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>EMP — tangência e leitura de <span class="math inline">\(\mu^*\)</span> (2/2)</h2>
 <p><strong>Razão de duas CPOs:</strong> <span class="math inline">\(\boxed{\;\text{TMS}_{ij} = p_i / p_j\;}\)</span> — <strong>a mesma</strong> condição de tangência do UMP.</p>
 <div class="eq-punch">
 <p>Mesma tangência, problema diferente. O ponto geométrico é o mesmo.</p>
 </div>
-<div class="fragment">
 <p><span class="math inline">\(\mu^*\)</span> tem leitura dual: <strong>custo marginal de utilidade</strong>. É o recíproco de <span class="math inline">\(\lambda^*\)</span> do UMP.</p>
-</div>
 </section>
 <section class="slide level2 center">
 <h2>Propriedades da função gasto <span class="math inline">\(e(p, \bar{u})\)</span></h2>
@@ -893,7 +917,7 @@ h_i = \frac{\partial e}{\partial p_i}.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (1/4)</h2>
+<h2>Prática — resposta completa (1/5)</h2>
 <p><strong>Item 1 — UMP.</strong> Com <span class="math inline">\(\alpha = 1/2\)</span>:</p>
 <p><span class="math display">\[
 x_1^M = \frac{\alpha m}{p_1} = \frac{10}{4} = 2{,}5, \quad x_2^M = \frac{(1-\alpha) m}{p_2} = \frac{10}{1} = 10.
@@ -907,7 +931,7 @@ v = (2{,}5)^{1/2} (10)^{1/2} = \sqrt{25} = 5.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (2/4)</h2>
+<h2>Prática — resposta completa (2/5)</h2>
 <p><strong>Item 2 — Roy.</strong> Fator de renda na indireta:</p>
 <p><span class="math display">\[
 v(p, m) = m \cdot \phi(p), \qquad \phi(p) = \frac{(1/2)^{1/2}(1/2)^{1/2}}{p_1^{1/2} p_2^{1/2}} = \frac{1/2}{\sqrt{p_1 p_2}}.
@@ -919,7 +943,7 @@ v(p, m) = m \cdot \phi(p), \qquad \phi(p) = \frac{(1/2)^{1/2}(1/2)^{1/2}}{p_1^{1
 \]</span></p>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (3/4)</h2>
+<h2>Prática — resposta completa (3/5)</h2>
 <p><strong>Item 3 — EMP com <span class="math inline">\(\bar u = 5\)</span>.</strong> Função gasto em CD com <span class="math inline">\(\alpha = 1/2\)</span>:</p>
 <p><span class="math display">\[
 e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} = 2\bar u\,\sqrt{p_1 p_2}.
@@ -931,13 +955,19 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} =
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Prática — resposta completa (4/4)</h2>
+<h2>Prática — resposta completa (4/5)</h2>
 <p><strong>Item 4 — Shephard.</strong> Com <span class="math inline">\(e = 2\bar u\, p_1^{1/2}\, p_2^{1/2}\)</span>, derive em <span class="math inline">\(p_1\)</span>:</p>
 <div class="eq-key">
 <p><span class="math display">\[
 \frac{\partial e}{\partial p_1} \;=\; 2\bar u \cdot \tfrac{1}{2}\, p_1^{-1/2}\, p_2^{1/2} \;=\; \bar u\,\sqrt{\frac{p_2}{p_1}}.
 \]</span></p>
 </div>
+<div class="bridge">
+<p>Fórmula analítica pronta. Próximo slide: substitui os números e confirma que bate com <span class="math inline">\(h_1\)</span>.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Prática — resposta completa (5/5)</h2>
 <p><strong>Checagem numérica</strong> em <span class="math inline">\(p = (4, 1)\)</span>, <span class="math inline">\(\bar u = 5\)</span>:</p>
 <p><span class="math display">\[
 \frac{\partial e}{\partial p_1} = 5\cdot \sqrt{\tfrac{1}{4}} = 5\cdot \tfrac{1}{2} = 2{,}5 = h_1. \;\checkmark
@@ -972,20 +1002,26 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} =
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Ponte para a Aula 3 — Slutsky</h2>
+<h2>Ponte para a Aula 3 — Slutsky (1/2)</h2>
 <p><strong>Pergunta motor:</strong> Marshalliana e Hicksiana satisfazem a <em>mesma</em> tangência. Mas quando preço muda, elas <strong>não</strong> movem igual.</p>
 <div class="eq-key">
 <p><span class="math display">\[
 \frac{\partial x_i^M}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M \cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
 \]</span></p>
 </div>
-<div class="fragment">
-<p><strong>Isto é Slutsky.</strong> Três leituras:</p>
+<div class="bridge">
+<p>Isto é Slutsky. Próximo slide: três leituras da equação — e o que cada uma herda desta aula.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Ponte para a Aula 3 — três leituras (2/2)</h2>
 <ul>
-<li>A Hicksiana <em>é</em> a “Marshalliana sem efeito-renda”.</li>
-<li>O efeito-substituição vem da <strong>concavidade de <span class="math inline">\(e\)</span></strong> (matriz de Slutsky simétrica, semi-def. negativa).</li>
-<li>O efeito-renda vem da <strong>derivada da Marshalliana em <span class="math inline">\(m\)</span></strong> (curvas de Engel).</li>
+<li>A <strong>Hicksiana</strong> é a “Marshalliana sem efeito-renda”.</li>
+<li>O <strong>efeito-substituição</strong> vem da <strong>concavidade de <span class="math inline">\(e\)</span></strong> (matriz de Slutsky simétrica, semi-def. negativa).</li>
+<li>O <strong>efeito-renda</strong> vem da <strong>derivada da Marshalliana em <span class="math inline">\(m\)</span></strong> (curvas de Engel).</li>
 </ul>
+<div class="eq-punch">
+<p>Slutsky é a soma de Shephard (substituição) com Engel (renda). Nada novo — só bem contabilizado.</p>
 </div>
 </section>
 <section class="slide level2 center">

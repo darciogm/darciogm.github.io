@@ -39,12 +39,14 @@ $codeFont: "JetBrains Mono", "Menlo", "Consolas", monospace;
   line-height: 1.45;
 }
 
-// Padrão de margens — 60/80/100/80 (top/right/bottom/left).
-// Bottom maior para acomodar footer + logo + slide number sem colisão.
+// Padrão de margens — 60/80/160/80 (top/right/bottom/left).
+// Bottom 160px para acomodar footer + logo + slide number com folga ampla
+// (canvas útil vertical ~580px; subiu de 100→160 em 2026-04-23 após estouros
+// reportados na Aula 2).
 // box-sizing garante que o padding não extrapole os 1280x800.
 .reveal .slides > section,
 .reveal .slides > section > section {
-  padding: 60px 80px 100px 80px !important;
+  padding: 60px 80px 160px 80px !important;
   box-sizing: border-box;
 }
 // Section dividers e pause-slides: background preenche toda a área,
