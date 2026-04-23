@@ -150,7 +150,7 @@ platform/
 ### Slides reveal.js (`.qmd`)
 
 - Copiar YAML header da `aula_1/slides/aula-01.qmd` (inclui kill do title-block via MutationObserver).
-- Tema: `[default, theme.scss]` (scss idêntico ao da Aula 1 — branding Insper #C8102E).
+- Tema: `[default, theme.scss]`. **`aula_1/slides/theme.scss` e `aula_2/slides/theme.scss` são cópias idênticas** (paridade canônica — edição num ponto replica no outro, diff deve permanecer zero).
 - **Delimitadores de math — depende do contexto (não confundir!):**
   - **Slides Quarto reveal.js (`aula_X/slides/*.qmd`)**: usar `$...$` inline e `$$...$$` display. É o formato canônico do pandoc, que converte para `<span class="math inline">\(...\)</span>` no HTML final com MathJax funcionando. **Nunca usar `\(...\)` / `\[...\]` crus no `.qmd`** — o pandoc não reconhece como math e renderiza como texto bruto.
   - **Páginas HTML em `platform/*.html` (MathJax via CDN)**: usar `\(...\)` inline e `\[...\]` display. O MathJax está configurado no HTML para esses delimitadores.
@@ -168,6 +168,55 @@ platform/
   - `.bridge` — transições em itálico
 - **Speaker notes** (`::: {.notes}`): em slides densos, incluir resolução completa como fallback. Reveal tecla `S`.
 - **Ordem dos slides**: conferir roteiro (tabela de tempo no slide ~3) vs. ordem de aparição. Auditoria pegou erro grave de Pausa 2 antes do Bloco 3 na Aula 1.
+
+#### Canvas e margens (calibrado pós-Aula 2, 2026-04-23)
+
+- **Canvas reveal:** 1280×800 (YAML `width:1280, height:800, margin:0, center:true, min-scale:0.3, max-scale:1.8`). Não tocar no YAML sem motivo forte.
+- **Padding do `<section>`** (em `theme.scss`): `60px 80px 160px 80px !important` + `box-sizing: border-box`. Bottom foi **subido de 100→160px** para evitar que conteúdo denso encoste no footer/logo absolutos.
+- **Canvas útil** (subtraindo padding e header h2 ~80px): **~1120×500px** para corpo do slide.
+- **Buffer defensivo para `.eq-punch` e `.eq-key` terminais:** regra em `theme.scss` adiciona `margin-bottom: 2.6em` em `.reveal .slides > section > .eq-punch:last-child` (e `.eq-key:last-child`). Default de `.eq-punch` subiu de `margin: 0.9em 0` para `margin: 1.2em 0 2.4em 0`. Buffer efetivo ~78px acima do footer.
+
+#### Auditoria de densidade (métrica ponderada)
+
+Para cada slide, somar o *score* de densidade:
+
+| Elemento | Peso |
+|---|---|
+| Header `h2` (título) | 1,8 |
+| Bullet de 1º nível | 1,0 |
+| Sub-bullet | 0,6 |
+| Parágrafo | 1,5 |
+| Display equation (`$$...$$`) | 2,5 |
+| `.eq-punch` | 2,2 |
+| `.eq-key` boxed | 2,2 |
+| `.callout` / `.card` | 2,0 |
+| Linha de `.compact-table` | 0,8 |
+| `.bridge` (itálico final) | 0,7 |
+
+Thresholds (canvas útil 580px vertical):
+
+- **Score ≤ 8** → OK, conteúdo folga visual clara.
+- **Score 8–10** → MARGEM, cabe mas aperta.
+- **Score 10–12** → APERTADO, **candidato a quebrar**.
+- **Score > 12** → ESTOURA, **quebrar obrigatoriamente**.
+
+Speaker notes (`::: {.notes}`) **não entram** no score.
+
+#### Padrão de quebra
+
+- Numerar **(1/N)...(N/N)** no título do slide (ex.: `Lagrangiano e CPO (1/2)` + `Tangência e λ* (2/2)`).
+- **Bridges e `.eq-punch`** ficam **preferencialmente no último slide** da série (N/N) apontando ao próximo bloco.
+- **Isolar `.eq-punch` em slide próprio** quando o slide-pai fica APERTADO ou quando o punch merece destaque pedagógico (regra descoberta no slide 35 Shephard — isolar a intuição "segunda-ordem" num slide sozinho reforçou o ponto).
+- **Seções-divider, pausa e title-slide** nunca são quebradas.
+
+#### Anti-hacks de compressão (proibidos)
+
+- **Jamais** `.smaller` em slide matemático.
+- **Jamais** `font-size: 0.Xem` em bloco de conteúdo (equação, bullet, callout, eq-*).
+- **Jamais** comprimir `margin`/`padding` interno para espremer mais linhas.
+- A regra canônica: **quebrar em mais slides, nunca apertar** (memória `feedback_slides_compactos.md`).
+
+Os únicos `font-size: 0.Xem` tolerados são em elementos **decorativos** da capa, `section-divider`, `pause-slide`, subtítulos secundários da title-slide — esses estão no padrão já auditado da Aula 1 (~8 ocorrências).
 
 ### Pré-aula material (`platform/aula-0X.html`)
 
