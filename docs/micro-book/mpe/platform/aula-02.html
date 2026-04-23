@@ -638,10 +638,10 @@ var MPE = {
     document.getElementById('complete-s6-exercicios').disabled = !ok;
   },
   completePaperExercises: function() {
-    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-4-1', document.getElementById('ex41-approach').value.trim());
-    MicroTracker.recordPaperExercise(PAGE_ID, 'ns-4-3', document.getElementById('ex43-approach').value.trim());
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-1', document.getElementById('ex41-approach').value.trim());
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-2', document.getElementById('ex43-approach').value.trim());
     var app45 = document.getElementById('ex45-approach').value.trim();
-    if (app45.length > 0) MicroTracker.recordPaperExercise(PAGE_ID, 'ns-4-5', app45);
+    if (app45.length > 0) MicroTracker.recordPaperExercise(PAGE_ID, 'ep-3', app45);
     this.completeSection('s6-exercicios');
   },
 

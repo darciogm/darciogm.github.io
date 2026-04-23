@@ -39,6 +39,7 @@
 
 - [ ] **Check-in (3 min):** confirmar chamada, reafirmar contrato ("papel e caneta, o micromovimento do Lagrangiano não entra pelo ouvido").
 - [ ] **Triagem de dúvidas agregadas da Aula 1 (4 min):** puxar do dashboard as 2 dúvidas agregadas mais comuns. Anunciar se serão resolvidas em bloco, em pausa, ou em monitoria. *Não* abrir resolução agora.
+  - **Check específico Q10 pré-quiz:** tema novo é Envelope aplicado ao EMP (\(\partial e/\partial \bar u = \mu^*\), custo marginal de utilidade — multiplicador dual). Se a taxa de acerto no dashboard ficou &lt;50%, reservar 3 min de revisão na **Pausa 1** (não abrir aqui).
 - [ ] **Recall de 60 segundos (3 min):**
   - No quadro, um único diagrama: \(\succeq\) → (axiomas 1–3) → \(u\) → (axiomas 4–5 + preços + renda) → **UMP**.
   - "Saímos de axioma e chegamos num problema de otimização. Hoje: esse problema tem quatro filhos — \(x^M, v, h, e\) — e duas identidades que fazem eles conversarem."

@@ -52,7 +52,7 @@ Enfrenta preços \(p = (p_1, p_2) = (3, 2)\) e renda \(m = 36\).
 - (i) \(v = m/(p_1 + p_2)\).
 - (ii) \(v = m\cdot \phi(p)\) com \(\phi(p) = \alpha^\alpha(1-\alpha)^{1-\alpha}/(p_1^\alpha\,p_2^{1-\alpha})\) — linear em \(m\), assinatura de homotetia. **← CORRETA**
 - (iii) \(v = \max\{m/p_1,\; m/p_2\}\).
-- (iv) \(v = m^\alpha/p_1^\alpha + m^{1-\alpha}/p_2^{1-\alpha}\) (soma, não produto).
+- (iv) \(v = m^\alpha/p_1^\alpha + m^{1-\alpha}/p_2^{1-\alpha}\).
 - (v) \(v = \alpha\cdot m + (1-\alpha)\cdot m = m\).
 
 ### Gabarito 5-passos — Exercício 1
@@ -118,7 +118,7 @@ s_i(p) = \frac{\alpha_i^\sigma\,p_i^{1-\sigma}}{\sum_j \alpha_j^\sigma\,p_j^{1-\
 
 ### (e) Em CES com \(\sigma = 1/2 < 1\) (bens complementares), a parcela no bem **caro** \(p_2 = 4\) é:
 
-- (i) Maior que no bem barato — o consumidor precisa comprar os dois em proporções semi-rígidas, gastando proporcionalmente mais no caro. Aqui \(s_2 = 2/3\) contra \(s_1 = 1/3\). **← CORRETA**
+- (i) Maior que no bem barato — \(s_2 = 2/3 > s_1 = 1/3\). **← CORRETA**
 - (ii) Igual ao bem barato — em CES simétrica (\(\alpha = 1/2\)), parcelas são sempre iguais.
 - (iii) Menor — bens complementares geram parcela decrescente com preço.
 - (iv) Indeterminado sem conhecer renda.
