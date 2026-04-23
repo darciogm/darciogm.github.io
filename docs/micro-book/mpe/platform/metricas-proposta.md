@@ -176,3 +176,53 @@ ORDER BY tempo_total_min DESC;
 
 **Outros artefatos:** análogo para `aula-01-pre.html` (via `page_visits.updated_at - created_at`) e `aula-01-exerc.html` (via `quiz_aggregates.last_attempt_at - first_started_at`).
 
+---
+
+## Onda 4 — Psico-cognitivo (implementada 2026-04-23)
+
+Seis métricas comportamentais adicionais no dashboard admin. Todas client-side sobre os dados que `MpeDB.adminFetchAll()` já retorna — zero mudança de schema. Cada métrica tem fallback gracioso quando dados insuficientes. Computadas de uma só vez em `computeOnda4All()` e armazenadas em `window._onda4`; render por passes (tab agregada "Psico-cognitivo" + bloco no modal do aluno).
+
+### #4 Confidence calibration (ECE)
+**O que mede:** Expected Calibration Error por aluno, emparelhando `confidence_ratings.phase='post'` média por aula com acerto 1ª na mesma `page_id`. Bins de 25 pontos. Rótulos `good`/`over`/`under`/`none`.
+**UI:** badge 🎯 / 🔥 / 🧊 no modal; scatter diagonal da turma em **Psico-cognitivo**.
+**Referências:** Hacker, Bol & Keener (2012, Metacognition & Learning); Dunlosky & Metcalfe (2009).
+**Fallback:** rótulo `none` se < 3 pares.
+
+### #2 Response-time phenotyping
+**O que mede:** mediana de tempo por item (diff de `answered_at` consecutivos, janela 10s–15min) cruzado com acerto 1ª. Quatro quadrantes vs. mediana da turma.
+**UI:** badge `fast-correct` / `slow-correct` / `fast-incorrect` / `slow-incorrect` no modal; scatter da turma.
+**Referências:** Van der Linden (2007, Springer); Wise & Kong (2005, Educ. Assess.).
+**Fallback:** `none` se < 3 diffs válidos ou < 5 itens 1ª tentativa.
+
+### #5 Circadian + cramming
+**O que mede:** matriz 7×24 (dia-da-semana × hora) de eventos por aluno; cramming ratio = % eventos nas 48h pré-prazo usando `MPE_CALENDARIO.getPrazo(n, componente).fecha`.
+**UI:** heatmap 7×24 no modal; heatmap agregado da turma em **Psico-cognitivo**; flag 🌙 crammer crônico (≥3 aulas com ratio > 0.6) na tabela Por Aluno e nas bandeiras do modal.
+**Referências:** Anderson et al. (2014, CHI); Baker et al. (2018, JLA).
+**Fallback:** sem eventos → heatmap vazio, flag não aparece.
+
+### #8 Cohort trajectory drift
+**O que mede:** score composto por (aluno × aula) = média normalizada de %FT + %sections completadas → percentil da turma por aula → série de 9 pontos. Drift = queda ≥20 decis consecutivos OU z-score rolling-3 < −1.5.
+**UI:** sparkline 9 pontos (percentil colorido por faixa) no modal + banner "drift detectado"; sumário em **Psico-cognitivo**; flag 🔻 na tabela Por Aluno; sort key `drift-desc`.
+**Referências:** Pardos et al. (2014, Ed. Data Mining); CMU OLI Learning Dashboard.
+**Fallback:** sparkline só aparece se ≥1 aula com score.
+
+### #10 Learning velocity por aula
+**O que mede:** slope (regressão linear) de acerto 1ª ao longo das 4 fases `pre_review → embedded → post → graded_exercise`.
+**UI:** grid de mini line-charts por aula no modal; tabela com slope médio turma + IQR por aula em **Psico-cognitivo**.
+**Referências:** Newell & Rosenbloom (1981, power law); Koedinger et al. (2013, DataShop).
+**Fallback:** aula só aparece com ≥2 fases respondidas.
+
+### #3 SRL phenotype (regras, não k-means)
+**O que mede:** três features por aluno — (a) attempts_per_checkpoint (via `micro_attempts`), (b) revisit_ratio (via `page_visits.visits` / pages únicas), (c) read_before_try (confidence.pre precedeu 1º `micro_attempts` na mesma seção?). Duração mediana de seção (< P25 = skimmer) e paper_exercises share (< 0.3 = avoidant). Rótulos interpretáveis.
+**UI:** badge `strategic` / `reactive` / `skimmer` / `avoidant` / `mixed` no modal; pie + legenda em **Psico-cognitivo**.
+**Referências:** Zimmerman (2013, Educ. Psychol.); Pintrich (2004).
+**Fallback:** `none` se não há sinais suficientes.
+
+### Perf & carregamento
+- Aggregator `computeOnda4All()` roda uma vez em `renderAdmin` após setar `window._adminRaw`, antes de `renderAlunos()`. Log de ms em console.
+- Se > 200ms, mensagem de aviso e preparo para mover para `requestIdleCallback` em próxima iteração (hoje não envolvido porque para turma de 50 alunos fica em < 100ms com dados reais do commit atual).
+- Todas as métricas pagam custo em memória baixo (< 2MB de estruturas auxiliares para 50 alunos).
+
+### CSV export (complemento)
+`exportAlunosCSV` ganhou 8 colunas novas: Calibração (ECE, label), RT mediana (s, fenótipo), SRL, Crammer crônico, Drift, Último percentil.
+

@@ -298,6 +298,58 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .coerr-node.center{fill:#C8102E}
 .coerr-node:hover{opacity:1;stroke:#000;stroke-width:1.5}
 .coerr-label{font-size:9px;fill:#1F2937;font-family:Calibri,sans-serif;pointer-events:none}
+/* Onda 4 — Psico-cognitivo */
+.o4-badge{display:inline-block;padding:0.18rem 0.55rem;border-radius:10px;font-size:0.68rem;font-weight:700;margin-right:0.3rem;letter-spacing:0.02em}
+.o4-badge.cal-good{background:#D1FAE5;color:#065F46}
+.o4-badge.cal-over{background:#FEE2E2;color:#991B1B}
+.o4-badge.cal-under{background:#DBEAFE;color:#1E3A8A}
+.o4-badge.cal-none{background:#E5E5E5;color:#525252}
+.o4-badge.rt-fc{background:#D1FAE5;color:#065F46}
+.o4-badge.rt-sc{background:#DBEAFE;color:#1E3A8A}
+.o4-badge.rt-fi{background:#FEF3C7;color:#92400E}
+.o4-badge.rt-si{background:#FEE2E2;color:#991B1B}
+.o4-badge.rt-none{background:#E5E5E5;color:#525252}
+.o4-badge.srl-strategic{background:#D1FAE5;color:#065F46}
+.o4-badge.srl-reactive{background:#DBEAFE;color:#1E3A8A}
+.o4-badge.srl-skimmer{background:#FEF3C7;color:#92400E}
+.o4-badge.srl-avoidant{background:#FEE2E2;color:#991B1B}
+.o4-badge.srl-mixed{background:#E5E5E5;color:#525252}
+.o4-badge.crammer{background:#E9D5FF;color:#5B21B6}
+.o4-badge.drift{background:#FEE2E2;color:#991B1B}
+.o4-flags-inline{display:inline-flex;flex-wrap:wrap;gap:0.25rem;margin-left:0.4rem;vertical-align:middle}
+.o4-flags-inline .o4-badge{font-size:0.58rem;padding:0.06rem 0.36rem;letter-spacing:0;margin:0}
+/* Heatmap 7x24 */
+.circadian-heatmap{display:grid;grid-template-columns:auto repeat(24, 1fr);gap:2px;font-size:0.62rem;margin-top:0.3rem}
+.circadian-heatmap .cir-h{color:var(--text-muted);text-align:center;font-variant-numeric:tabular-nums}
+.circadian-heatmap .cir-d{color:var(--text-muted);text-align:right;padding-right:0.35rem;font-weight:600}
+.circadian-heatmap .cir-cell{aspect-ratio:1/1;min-height:12px;border-radius:2px;background:#F3F4F6}
+.circadian-heatmap .cir-cell[data-v="1"]{background:#FEE2E2}
+.circadian-heatmap .cir-cell[data-v="2"]{background:#FCA5A5}
+.circadian-heatmap .cir-cell[data-v="3"]{background:#C8102E}
+.circadian-heatmap .cir-cell[data-v="4"]{background:#7F1D1D}
+.circadian-legend{display:flex;gap:0.3rem;align-items:center;font-size:0.7rem;color:var(--text-muted);margin-top:0.4rem;justify-content:center}
+.circadian-legend .cir-chip{display:inline-block;width:12px;height:12px;border-radius:2px}
+/* Pie SRL (só CSS + SVG) */
+.o4-pie-row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.o4-pie-legend{display:flex;flex-direction:column;gap:0.25rem;font-size:0.78rem;flex:1;min-width:200px}
+.o4-pie-legend .pie-row{display:flex;align-items:center;gap:0.4rem}
+.o4-pie-legend .pie-dot{display:inline-block;width:11px;height:11px;border-radius:50%}
+/* Velocity grid (modal) */
+.o4-velocity-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.5rem;margin-top:0.4rem}
+.o4-velocity-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:0.4rem 0.5rem}
+.o4-velocity-card .vc-title{font-size:0.7rem;font-weight:600;color:var(--primary);margin-bottom:0.2rem}
+.o4-velocity-card svg{width:100%;height:44px}
+.o4-velocity-card .vc-slope{font-size:0.7rem;font-variant-numeric:tabular-nums;margin-top:0.1rem}
+.o4-velocity-card .vc-slope.up{color:#065F46;font-weight:700}
+.o4-velocity-card .vc-slope.down{color:#991B1B;font-weight:700}
+.o4-velocity-card .vc-slope.flat{color:var(--text-muted)}
+/* Trajectory sparkline (percentil) — reusa .sparkline-container mas com eixo 0-100 */
+.o4-traj-container{display:flex;align-items:flex-end;gap:2px;height:42px;margin-top:0.4rem;padding:0.2rem 0;border-left:1px solid var(--border);border-bottom:1px solid var(--border)}
+.o4-traj-bar{flex:1;min-height:2px;border-radius:1px 1px 0 0}
+.o4-traj-bar.pct-top{background:#15803D}
+.o4-traj-bar.pct-mid{background:#D97706}
+.o4-traj-bar.pct-low{background:#C8102E}
+.o4-traj-bar.pct-empty{background:#E5E5E5;opacity:0.4}
 </style>
 </head>
 <body>
@@ -333,6 +385,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="tab" data-tab="psicometria">Psicometria</div>
     <div class="tab" data-tab="irt">IRT / Wright</div>
     <div class="tab" data-tab="nudges">Nudge Queue</div>
+    <div class="tab" data-tab="onda4">Psico-cognitivo</div>
     <div class="tab" data-tab="avancadas">Métricas Avançadas</div>
     <div class="tab" data-tab="export">Exportar / Gerenciar</div>
   </div>
@@ -379,6 +432,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
         <option value="ft-desc">Acerto 1ª (desc)</option>
         <option value="ft-asc">Acerto 1ª (asc)</option>
         <option value="streak-desc">Streak (desc)</option>
+        <option value="drift-desc">🔻 Drift / percentil (pior primeiro)</option>
       </select>
       <label for="filter-status">Status</label>
       <select id="filter-status">
@@ -536,6 +590,82 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
       <span id="nudge-count" style="font-size:0.72rem;color:var(--text-muted)"></span>
     </div>
     <div id="nudge-queue"></div>
+  </div>
+
+  <!-- TAB: PSICO-COGNITIVO (Onda 4) -->
+  <div class="tab-content" id="tab-onda4" style="display:none">
+    <div class="admin-card">
+      <h3>Indicadores psico-cognitivos</h3>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.45">
+        Seis métricas comportamentais reconstruídas a cada carregamento a partir dos dados já rastreados
+        (nenhuma coleta nova). Cada uma vem com referência acadêmica no comentário do código. Perfis individuais
+        no <em>modal do aluno</em>; agregados da turma abaixo.
+      </p>
+      <div class="metric-grid">
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>#4 Calibração de confiança (ECE) — Hacker, Bol &amp; Keener 2012</h4>
+          <div class="metric-desc">
+            Para cada par (aluno × aula), <strong>X</strong> = confiança pós-slider média; <strong>Y</strong> = acerto 1ª tentativa.
+            Diagonal = calibração perfeita. <strong>ECE</strong> (Expected Calibration Error) em 4 bins de confiança.
+            Classificação: 🎯 well-calibrated (ECE &lt; 15) · 🔥 over-confident (conf − acc &gt; 15) · 🧊 under-confident (acc − conf &gt; 15).
+          </div>
+          <div id="o4-calibration-scatter" class="dash-chart" style="width:100%;height:320px"></div>
+          <div id="o4-calibration-summary" style="margin-top:0.6rem;font-size:0.8rem"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>#2 Response-time phenotyping — Van der Linden 2007; Wise &amp; Kong 2005</h4>
+          <div class="metric-desc">
+            Tempo mediano por item (diff entre tentativas consecutivas na mesma aula, janela 10s–15min) vs. acerto 1ª tentativa.
+            Quadrantes: <strong>fast-correct</strong> (domínio), <strong>slow-correct</strong> (persistência),
+            <strong>fast-incorrect</strong> (chute/desatenção), <strong>slow-incorrect</strong> (dificuldade genuína).
+          </div>
+          <div id="o4-rt-scatter" class="dash-chart" style="width:100%;height:320px"></div>
+          <div id="o4-rt-summary" style="margin-top:0.6rem;font-size:0.8rem"></div>
+        </div>
+
+        <div class="metric-block">
+          <h4>#5 Circadiano da turma — Anderson CHI 2014; Baker 2018</h4>
+          <div class="metric-desc">
+            Heatmap agregado 7×24 (dia-da-semana × hora) dos eventos de toda a turma. Células escuras = maior densidade.
+            Cramming ratio individual aparece no perfil.
+          </div>
+          <div id="o4-circadian-turma" style="min-height:200px"></div>
+        </div>
+
+        <div class="metric-block">
+          <h4>#3 SRL phenotype distribution — Zimmerman 2013; Pintrich 2004</h4>
+          <div class="metric-desc">
+            Fenótipos comportamentais de auto-regulação.
+            <strong>strategic</strong>: confidence antes do micro-checkpoint e poucas tentativas.
+            <strong>reactive</strong>: revisita muito e erra antes de acertar.
+            <strong>skimmer</strong>: seção rápida demais, várias tentativas.
+            <strong>avoidant</strong>: evita papel/prática declarada.
+            <strong>mixed</strong>: híbrido.
+          </div>
+          <div id="o4-srl-distribution" style="min-height:200px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>#8 Cohort trajectory — Pardos et al. 2014; CMU OLI</h4>
+          <div class="metric-desc">
+            Distribuição de drift detectado: quantos alunos caíram ≥2 decis entre aulas consecutivas ou têm z-score rolling-3 &lt; −1.5.
+            Sparkline individual no perfil.
+          </div>
+          <div id="o4-trajectory-summary" style="min-height:140px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>#10 Learning velocity da turma — Newell &amp; Rosenbloom 1981; Koedinger et al. 2013</h4>
+          <div class="metric-desc">
+            Slope médio (acerto por fase: pre_review → embedded → post → graded_exercise) por aula.
+            Positivo = turma aprendeu com a aula; zero = platô; negativo = aula confundiu ou fase avaliativa era mais dura.
+            Curva individual no perfil.
+          </div>
+          <div id="o4-velocity-turma" style="min-height:220px"></div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- TAB: MÉTRICAS AVANÇADAS -->
@@ -747,6 +877,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/mpe-db.js"></script>
 <script src="js/tracker.js"></script>
+<script src="js/calendario.js"></script>
 <script>
 // Proteção: somente admin pode acessar esta página
 if (!MicroAuth.requireAdmin()) throw 'redirect';
@@ -993,7 +1124,8 @@ function sortAlunos(rows, key) {
     'media-asc':   function(a,b){return (a.s.avgQuizScore||0) - (b.s.avgQuizScore||0)},
     'ft-desc':     function(a,b){return (b.ftPct==null?-1:b.ftPct) - (a.ftPct==null?-1:a.ftPct)},
     'ft-asc':      function(a,b){return (a.ftPct==null?999:a.ftPct) - (b.ftPct==null?999:b.ftPct)},
-    'streak-desc': function(a,b){return (b.streak||0) - (a.streak||0)}
+    'streak-desc': function(a,b){return (b.streak||0) - (a.streak||0)},
+    'drift-desc':  _o4SortDrift
   };
   c.sort(cmp[key] || cmp['nome-asc']);
   return c;
@@ -1019,9 +1151,16 @@ function exportAlunosCSV() {
     return true;
   });
   var sorted = sortAlunos(filtered, sortKey);
-  var header = ['Matrícula','Nome','Email','Aulas visitadas (de '+(window._totalItems||0)+')','Quizzes feitos','Tempo (min)','Média quiz (%)','Acerto 1ª tentativa (%)','N itens para acerto 1ª','Streak (dias)','Dias desde último acesso','CV semanal','N semanas ativas','Risco (0-100)','Status'];
+  var header = ['Matrícula','Nome','Email','Aulas visitadas (de '+(window._totalItems||0)+')','Quizzes feitos','Tempo (min)','Média quiz (%)','Acerto 1ª tentativa (%)','N itens para acerto 1ª','Streak (dias)','Dias desde último acesso','CV semanal','N semanas ativas','Risco (0-100)','Status','Calibração (ECE)','Calibração (label)','RT mediana (s)','RT fenótipo','SRL','Crammer crônico','Drift','Último percentil (trajetória)'];
   var lines = [header.map(csvq).join(',')];
+  var onda4 = window._onda4 || {};
   sorted.forEach(function(r){
+    var uid = _profileIdFromMatricula(r.s.matricula);
+    var cal = (onda4.calibration && onda4.calibration.byUser[uid]) || {};
+    var rt  = (onda4.rt && onda4.rt.byUser[uid]) || {};
+    var srl = (onda4.srl && onda4.srl.byUser[uid]) || {};
+    var cir = (onda4.circadian && onda4.circadian.byUser[uid]) || {};
+    var tr  = (onda4.trajectory && onda4.trajectory.byUser[uid]) || {};
     lines.push([
       r.s.matricula, r.s.nome, r.email||'',
       r.s.pagesVisited, r.s.quizzesCompleted, r.s.totalTimeMin, r.s.avgQuizScore,
@@ -1030,7 +1169,15 @@ function exportAlunosCSV() {
       r.daysSince == null ? '' : r.daysSince,
       r.cv == null ? '' : r.cv.toFixed(3),
       r.nWeeks || 0,
-      r.risk.score, riskLabel(r.risk.level).replace(/^[^\s]+\s/, '')
+      r.risk.score, riskLabel(r.risk.level).replace(/^[^\s]+\s/, ''),
+      cal.ece != null ? cal.ece.toFixed(1) : '',
+      cal.label || '',
+      rt.medianSec != null ? Math.round(rt.medianSec) : '',
+      rt.phenotype || '',
+      srl.label || '',
+      cir.chronic ? 'sim' : (cir.totalEvents ? 'não' : ''),
+      tr.drift ? (tr.driftKind || 'sim') : '',
+      tr.lastPct != null ? tr.lastPct : ''
     ].map(csvq).join(','));
   });
   var csv = '﻿' + lines.join('\n');
@@ -1117,9 +1264,14 @@ function showStudentProfile(matricula) {
       + '</tr>';
   });
 
+  // Combina bandeiras de risco clássicas + flags Onda 4 (crammer, drift).
+  // Flags Onda 4 aparecem em destaque mas sem alterar o score de risco.
+  var extraFlags = _o4ExtraFlags(r);
   var flagsHtml = '';
-  if (r.risk.flags && r.risk.flags.length > 0) {
-    flagsHtml = '<ul class="risk-flags">' + r.risk.flags.map(function(f){
+  var allFlagItems = (r.risk.flags || []).slice();
+  extraFlags.forEach(function(f){ allFlagItems.push({ msg: f.msg, severity: 'med' }); });
+  if (allFlagItems.length > 0) {
+    flagsHtml = '<ul class="risk-flags">' + allFlagItems.map(function(f){
       return '<li class="flag-' + f.severity + '">' + f.msg + '</li>';
     }).join('') + '</ul>';
   } else {
@@ -1164,6 +1316,7 @@ function showStudentProfile(matricula) {
     + '<div style="overflow-x:auto"><table class="profile-journey"><thead><tr>'
       + '<th>Item</th><th>Título</th><th>Status</th><th>Tempo</th><th>Acerto 1ª</th><th>Último acesso</th>'
     + '</tr></thead><tbody>' + journeyRows + '</tbody></table></div>'
+    + _profileO4Html(matricula)
     + _renderInterventionsSection(matricula, studentData)
     + '<div class="profile-actions">'
       + '<button class="profile-copy-btn" id="profile-copy-btn" data-txt="' + copyTxt.replace(/"/g, '&quot;') + '">📋 Copiar resumo</button>'
@@ -3285,6 +3438,958 @@ function renderTimePerformanceScatter() {
   });
 }
 
+// ============================================================
+// ONDA 4 — Psico-cognitivo (6 métricas)
+// ------------------------------------------------------------
+// Todas operam sobre window._adminRaw (Supabase) + window._alunosRows
+// (já enriquecido pelo pipeline "Por Aluno"). Zero deps novas.
+// Computadas uma única vez em computeOnda4All(); render em passes
+// separados. Cada métrica tem fallback gracioso quando dados insuficientes.
+// ============================================================
+
+// #4 CONFIDENCE CALIBRATION (ECE) — Hacker, Bol & Keener (2012, Metacog.
+// Learn.); Dunlosky & Metcalfe (2009). Para cada par (aluno × page_id
+// pedagógica), confiança média pós vs acerto 1ª tentativa.
+function _o4BuildPairs() {
+  var raw = window._adminRaw;
+  if (!raw) return [];
+  // confidence_ratings.phase='post' -> média por (user_id, page_id) —
+  // um page_id como 'aula-01' agrupa todas as seções da pré-aula.
+  var confBy = {};
+  (raw.confidence || []).forEach(function(c){
+    if (c.phase !== 'post') return;
+    var pageRoot = String(c.page_id || '').replace(/-(pre|pos|exerc)$/, '');
+    var k = c.user_id + '::' + pageRoot;
+    if (!confBy[k]) confBy[k] = { sum: 0, n: 0, userId: c.user_id, pageRoot: pageRoot };
+    confBy[k].sum += c.value; confBy[k].n += 1;
+  });
+  // Acerto 1ª por (user_id, pageRoot) — une attempts de aula-01 + aula-01-pre
+  // + aula-01-pos porque todos são atividade da "aula 1".
+  var first = {}; // "uid::page::q" -> {ts, correct}
+  (raw.quizQA || []).forEach(function(q){
+    var pageRoot = String(q.page_id || '').replace(/-(pre|pos|exerc)$/, '');
+    var k = q.user_id + '::' + pageRoot + '::' + q.question_id;
+    if (first[k] && q.answered_at >= first[k].ts) return;
+    first[k] = { ts: q.answered_at, correct: !!q.correct, userId: q.user_id, pageRoot: pageRoot };
+  });
+  var ft = {}; // "uid::page" -> { total, correct }
+  Object.keys(first).forEach(function(kk){
+    var f = first[kk];
+    var k = f.userId + '::' + f.pageRoot;
+    if (!ft[k]) ft[k] = { total: 0, correct: 0 };
+    ft[k].total++;
+    if (f.correct) ft[k].correct++;
+  });
+  var pts = [];
+  Object.keys(confBy).forEach(function(k){
+    var c = confBy[k];
+    var accRec = ft[k];
+    if (!accRec || accRec.total < 2) return;
+    pts.push({
+      userId: c.userId,
+      pageRoot: c.pageRoot,
+      conf: Math.max(0, Math.min(100, c.sum / c.n)),
+      acc: accRec.correct / accRec.total * 100,
+      nItems: accRec.total
+    });
+  });
+  return pts;
+}
+
+// Expected Calibration Error por aluno sobre seus pares. 4 bins
+// [0,25),[25,50),[50,75),[75,100].
+function _o4ECE(pairsForUser) {
+  if (!pairsForUser || pairsForUser.length === 0) return null;
+  var bins = [0,0,0,0].map(function(){return {conf:0, acc:0, n:0}});
+  pairsForUser.forEach(function(p){
+    var b = Math.min(3, Math.floor(p.conf / 25));
+    bins[b].conf += p.conf;
+    bins[b].acc  += p.acc;
+    bins[b].n    += 1;
+  });
+  var N = pairsForUser.length;
+  var ece = 0;
+  bins.forEach(function(b){
+    if (b.n === 0) return;
+    var avgConf = b.conf / b.n, avgAcc = b.acc / b.n;
+    ece += (b.n / N) * Math.abs(avgConf - avgAcc);
+  });
+  return { ece: ece, n: N };
+}
+
+function computeCalibration() {
+  var pairs = _o4BuildPairs();
+  if (!pairs.length) return { byUser: {}, pairs: [] };
+  // Agrupa por user
+  var byUser = {};
+  pairs.forEach(function(p){
+    if (!byUser[p.userId]) byUser[p.userId] = [];
+    byUser[p.userId].push(p);
+  });
+  Object.keys(byUser).forEach(function(uid){
+    var list = byUser[uid];
+    var eceRes = _o4ECE(list);
+    if (!eceRes) { byUser[uid] = { label: 'none', ece: null, n: 0, pairs: list }; return; }
+    var meanConf = list.reduce(function(a,p){return a+p.conf},0) / list.length;
+    var meanAcc  = list.reduce(function(a,p){return a+p.acc},0) / list.length;
+    var gap = meanConf - meanAcc;
+    var label;
+    if (list.length < 3) label = 'none';            // mínimo 3 pares
+    else if (eceRes.ece < 15) label = 'good';        // well-calibrated
+    else if (gap > 15)       label = 'over';         // over-confident
+    else if (gap < -15)      label = 'under';        // under-confident
+    else                     label = 'good';         // ECE >=15 mas gap médio pequeno -> tolerável
+    byUser[uid] = { label: label, ece: eceRes.ece, gap: gap, n: list.length, pairs: list, meanConf: meanConf, meanAcc: meanAcc };
+  });
+  return { byUser: byUser, pairs: pairs };
+}
+
+// #2 RESPONSE-TIME PHENOTYPING — Van der Linden (2007, Springer); Wise &
+// Kong (2005, Educ. Assess.). Diff de answered_at consecutivos na mesma
+// page, janela 10s-15min para mitigar "saiu e voltou".
+function computeResponseTime() {
+  var raw = window._adminRaw;
+  if (!raw || !raw.quizQA) return { byUser: {}, turmaMedian: null, turmaMedianAcc: null };
+  var byUserPage = {};
+  raw.quizQA.forEach(function(q){
+    if (!q.answered_at) return;
+    var k = q.user_id + '::' + q.page_id;
+    if (!byUserPage[k]) byUserPage[k] = [];
+    byUserPage[k].push({ ts: new Date(q.answered_at).getTime(), correct: !!q.correct, qid: q.question_id });
+  });
+  var perUser = {};
+  Object.keys(byUserPage).forEach(function(k){
+    var arr = byUserPage[k].slice().sort(function(a,b){return a.ts - b.ts});
+    var uid = k.split('::')[0];
+    if (!perUser[uid]) perUser[uid] = { diffs: [], firstByQid: {} };
+    // Primeira tentativa por qid (p/ acerto 1ª)
+    arr.forEach(function(a){
+      var qk = k + '::' + a.qid;
+      if (!perUser[uid].firstByQid[qk]) perUser[uid].firstByQid[qk] = a.correct;
+    });
+    for (var i = 1; i < arr.length; i++) {
+      var d = (arr[i].ts - arr[i-1].ts) / 1000; // s
+      if (d >= 10 && d <= 900) perUser[uid].diffs.push(d);
+    }
+  });
+  function median(a){ if(!a.length) return null; var s=a.slice().sort(function(x,y){return x-y}); return s[Math.floor(s.length/2)]; }
+  // Acerto 1ª por user
+  var byUser = {};
+  Object.keys(perUser).forEach(function(uid){
+    var u = perUser[uid];
+    var med = median(u.diffs);
+    var qids = Object.keys(u.firstByQid);
+    var total = qids.length;
+    var correct = qids.filter(function(qk){return u.firstByQid[qk]}).length;
+    var acc = total > 0 ? correct / total * 100 : null;
+    byUser[uid] = { medianSec: med, nItems: u.diffs.length, acc: acc, accN: total };
+  });
+  // Mediana turma
+  var allMeds = Object.values(byUser).filter(function(u){return u.medianSec != null && u.nItems >= 3}).map(function(u){return u.medianSec});
+  var allAcc  = Object.values(byUser).filter(function(u){return u.acc != null && u.accN >= 5}).map(function(u){return u.acc});
+  var tMedT = median(allMeds);
+  var tMedA = median(allAcc);
+  // Fenótipo por aluno
+  Object.keys(byUser).forEach(function(uid){
+    var u = byUser[uid];
+    if (u.medianSec == null || u.acc == null || u.nItems < 3 || u.accN < 5 || tMedT == null || tMedA == null) {
+      u.phenotype = 'none'; return;
+    }
+    var fast = u.medianSec <= tMedT;
+    var correct = u.acc >= tMedA;
+    if (fast &&  correct) u.phenotype = 'fast-correct';
+    if (!fast && correct) u.phenotype = 'slow-correct';
+    if (fast && !correct) u.phenotype = 'fast-incorrect';
+    if (!fast && !correct) u.phenotype = 'slow-incorrect';
+  });
+  return { byUser: byUser, turmaMedian: tMedT, turmaMedianAcc: tMedA };
+}
+
+// #5 CIRCADIAN + CRAMMING — Anderson et al. (2014, CHI on-time-in-MOOCs);
+// Baker et al. (2018, JLA). Heatmap 7×24 + cramming ratio vs.
+// MPE_CALENDARIO.getPrazo(n, componente).fecha.
+function _o4CollectEventTimestamps(userId) {
+  // Retorna array de {ts, pageId, kind}; todos com ms absolutos.
+  var raw = window._adminRaw;
+  if (!raw) return [];
+  var evs = [];
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== userId || !q.answered_at) return;
+    evs.push({ ts: new Date(q.answered_at).getTime(), pageId: q.page_id, kind: 'qa' });
+  });
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (sp.user_id !== userId || !sp.completed_at) return;
+    evs.push({ ts: new Date(sp.completed_at).getTime(), pageId: sp.page_id, kind: 'sp' });
+  });
+  (raw.confidence || []).forEach(function(c){
+    if (c.user_id !== userId || !c.recorded_at) return;
+    evs.push({ ts: new Date(c.recorded_at).getTime(), pageId: c.page_id, kind: 'cf' });
+  });
+  (raw.microAttempts || []).forEach(function(m){
+    if (m.user_id !== userId || !m.answered_at) return;
+    evs.push({ ts: new Date(m.answered_at).getTime(), pageId: m.page_id, kind: 'mi' });
+  });
+  return evs;
+}
+
+function computeCircadian() {
+  var raw = window._adminRaw;
+  if (!raw) return { byUser: {}, turma: null };
+  var students = (raw.profiles || []).filter(function(p){return (p.role||'') !== 'admin'});
+  var byUser = {};
+  var turmaMatrix = []; for (var i=0;i<7;i++) turmaMatrix.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+
+  var hasCalendar = !!window.MPE_CALENDARIO;
+
+  students.forEach(function(p){
+    var evs = _o4CollectEventTimestamps(p.id);
+    var matrix = [];
+    for (var r=0;r<7;r++) matrix.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
+    var crammedAulas = [];       // aulas com >60% dos eventos nas últimas 48h
+    var aulaEvents = {};          // aula_n -> { total, last48h }
+
+    evs.forEach(function(e){
+      var d = new Date(e.ts);
+      var dow = d.getDay(); // 0=dom .. 6=sáb
+      var h = d.getHours();
+      matrix[dow][h]++;
+      turmaMatrix[dow][h]++;
+
+      if (!hasCalendar) return;
+      // Qual aula esse page_id representa? Derivar de 'aula-XX' ou 'aula-XX-pre/pos/exerc'
+      var m = String(e.pageId || '').match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+      if (!m) return;
+      var aulaN = parseInt(m[1], 10);
+      var comp = m[2] || 'material';
+      var prazo = null;
+      try { prazo = window.MPE_CALENDARIO.getPrazo(aulaN, comp); } catch(err) { prazo = null; }
+      if (!prazo || !prazo.fecha) return;
+      var fechaMs = prazo.fecha;
+      var deadlineWindow = 48 * 3600 * 1000;
+      if (!aulaEvents[aulaN]) aulaEvents[aulaN] = { total: 0, last48h: 0 };
+      aulaEvents[aulaN].total++;
+      if (e.ts >= fechaMs - deadlineWindow && e.ts <= fechaMs + 3600*1000) {
+        aulaEvents[aulaN].last48h++;
+      }
+    });
+
+    Object.keys(aulaEvents).forEach(function(a){
+      var ae = aulaEvents[a];
+      if (ae.total >= 3 && ae.last48h / ae.total > 0.6) crammedAulas.push(parseInt(a,10));
+    });
+
+    byUser[p.id] = {
+      matrix: matrix,
+      totalEvents: evs.length,
+      crammedAulas: crammedAulas,
+      chronic: crammedAulas.length >= 3
+    };
+  });
+
+  return { byUser: byUser, turma: turmaMatrix };
+}
+
+// #8 COHORT TRAJECTORY DRIFT — Pardos et al. (2014, Ed. Data Mining); CMU
+// OLI Learning Dashboard. Score composto por aula → percentil turma →
+// série de 9 pontos → drift detector.
+function _o4PageRootsAulas() {
+  // Retorna lista de roots 'aula-01'..'aula-09' (excluindo aula-10 = AF).
+  var roots = [];
+  for (var n = 1; n <= 9; n++) roots.push('aula-' + String(n).padStart(2,'0'));
+  return roots;
+}
+
+function _o4UserAulaScore(userId, aulaRoot) {
+  var raw = window._adminRaw;
+  if (!raw) return null;
+  // %FT sobre quizQA com pageRoot = aulaRoot (inclui -pre/-pos/-exerc)
+  var ft = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== userId) return;
+    var root = String(q.page_id||'').replace(/-(pre|pos|exerc)$/, '');
+    if (root !== aulaRoot) return;
+    var k = q.page_id + '::' + q.question_id;
+    if (ft[k] && q.answered_at >= ft[k].ts) return;
+    ft[k] = { ts: q.answered_at, correct: !!q.correct };
+  });
+  var ftKeys = Object.keys(ft);
+  // % sections completadas
+  var spTotal = 0, spDone = 0;
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (sp.user_id !== userId) return;
+    var root = String(sp.page_id||'').replace(/-(pre|pos|exerc)$/, '');
+    if (root !== aulaRoot) return;
+    spTotal++;
+    if (sp.completed_at) spDone++;
+  });
+  if (ftKeys.length === 0 && spTotal === 0) return null;
+  var ftPct = ftKeys.length > 0 ? ftKeys.filter(function(k){return ft[k].correct}).length / ftKeys.length : null;
+  var spPct = spTotal > 0 ? spDone / spTotal : null;
+  // Média normalizada dos dois; se um dos lados ausente, usa o outro
+  var parts = [];
+  if (ftPct != null) parts.push(ftPct);
+  if (spPct != null) parts.push(spPct);
+  if (!parts.length) return null;
+  return parts.reduce(function(a,b){return a+b},0) / parts.length; // 0..1
+}
+
+function computeTrajectory() {
+  var raw = window._adminRaw;
+  if (!raw) return { byUser: {} };
+  var students = (raw.profiles || []).filter(function(p){return (p.role||'')!=='admin'});
+  var aulaRoots = _o4PageRootsAulas();
+  // 1) score por (user × aula)
+  var rawScores = {}; // uid -> [scoreOuNull por aula]
+  students.forEach(function(s){
+    rawScores[s.id] = aulaRoots.map(function(a){ return _o4UserAulaScore(s.id, a); });
+  });
+  // 2) percentil por aula (dentro de quem tem score naquela aula)
+  var byUser = {};
+  aulaRoots.forEach(function(_, aIdx){
+    var present = [];
+    Object.keys(rawScores).forEach(function(uid){
+      var v = rawScores[uid][aIdx];
+      if (v != null) present.push({ uid: uid, score: v });
+    });
+    present.sort(function(a,b){return a.score - b.score});
+    var n = present.length;
+    present.forEach(function(p, i){
+      if (!byUser[p.uid]) byUser[p.uid] = { percentis: new Array(aulaRoots.length).fill(null), scores: rawScores[p.uid] };
+      byUser[p.uid].percentis[aIdx] = n > 1 ? Math.round(i / (n - 1) * 100) : 50;
+    });
+  });
+  // Garantir entry pra todo mundo
+  students.forEach(function(s){
+    if (!byUser[s.id]) byUser[s.id] = { percentis: new Array(aulaRoots.length).fill(null), scores: rawScores[s.id] };
+  });
+  // 3) drift: queda ≥20 pontos entre consecutivos OU z-score rolling-3 < -1.5
+  Object.keys(byUser).forEach(function(uid){
+    var u = byUser[uid];
+    var pct = u.percentis;
+    var driftDrop = false, driftZ = false;
+    for (var i = 1; i < pct.length; i++) {
+      if (pct[i] != null && pct[i-1] != null && (pct[i-1] - pct[i]) >= 20) driftDrop = true;
+    }
+    // z-score rolling 3 sobre percentis observados consecutivos
+    for (var i = 3; i < pct.length; i++) {
+      var win = [];
+      for (var j = Math.max(0, i - 3); j < i; j++) if (pct[j] != null) win.push(pct[j]);
+      if (win.length < 3 || pct[i] == null) continue;
+      var m = win.reduce(function(a,b){return a+b},0) / win.length;
+      var sd = Math.sqrt(win.reduce(function(a,b){return a+(b-m)*(b-m)},0) / win.length);
+      if (sd === 0) sd = 1;
+      var z = (pct[i] - m) / sd;
+      if (z < -1.5) driftZ = true;
+    }
+    u.drift = driftDrop || driftZ;
+    u.driftKind = driftDrop && driftZ ? 'both' : driftDrop ? 'drop' : driftZ ? 'z' : null;
+    // último percentil preenchido
+    var last = null;
+    for (var i = pct.length - 1; i >= 0; i--) if (pct[i] != null) { last = pct[i]; break; }
+    u.lastPct = last;
+  });
+  return { byUser: byUser, aulaRoots: aulaRoots };
+}
+
+// #10 LEARNING VELOCITY — Newell & Rosenbloom (1981, power law of
+// practice); Koedinger et al. (2013, DataShop). Slope sobre 4 fases.
+function computeVelocity() {
+  var raw = window._adminRaw;
+  if (!raw) return { byUser: {}, turmaByAula: {} };
+  var phaseOrder = ['pre_review','embedded','post','graded_exercise']; // x=0..3
+  var aulaRoots = _o4PageRootsAulas();
+  // key uid::aulaRoot::phase -> {correct, total} (1ª tentativa por qid)
+  var first = {};
+  (raw.quizQA || []).forEach(function(q){
+    var root = String(q.page_id||'').replace(/-(pre|pos|exerc)$/, '');
+    if (aulaRoots.indexOf(root) < 0) return;
+    var phase = q.phase;
+    if (phaseOrder.indexOf(phase) < 0) return;
+    var fk = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (first[fk] && q.answered_at >= first[fk].ts) return;
+    first[fk] = { ts: q.answered_at, correct: !!q.correct, userId: q.user_id, root: root, phase: phase };
+  });
+  var agg = {}; // uid::root::phase -> {total, correct}
+  Object.keys(first).forEach(function(fk){
+    var f = first[fk];
+    var k = f.userId + '::' + f.root + '::' + f.phase;
+    if (!agg[k]) agg[k] = { total: 0, correct: 0 };
+    agg[k].total++; if (f.correct) agg[k].correct++;
+  });
+
+  function slope(pts) {
+    // Regressão linear simples y = a + b*x
+    if (!pts || pts.length < 2) return null;
+    var n = pts.length;
+    var sx=0, sy=0, sxy=0, sxx=0;
+    pts.forEach(function(p){ sx+=p.x; sy+=p.y; sxy+=p.x*p.y; sxx+=p.x*p.x; });
+    var denom = n*sxx - sx*sx;
+    if (denom === 0) return null;
+    return (n*sxy - sx*sy) / denom;
+  }
+
+  var byUser = {}; // uid -> { aulaRoot -> { points:[{x,y}], slope } }
+  (raw.profiles || []).forEach(function(p){
+    if ((p.role||'')==='admin') return;
+    var perAula = {};
+    aulaRoots.forEach(function(root){
+      var pts = [];
+      phaseOrder.forEach(function(ph, i){
+        var rec = agg[p.id + '::' + root + '::' + ph];
+        if (rec && rec.total >= 1) pts.push({ x: i, y: rec.correct / rec.total * 100, phase: ph, n: rec.total });
+      });
+      if (pts.length >= 2) perAula[root] = { points: pts, slope: slope(pts) };
+    });
+    byUser[p.id] = perAula;
+  });
+
+  // Turma: para cada aula, slope médio de quem tem ≥2 fases
+  var turmaByAula = {};
+  aulaRoots.forEach(function(root){
+    var slopes = [];
+    Object.keys(byUser).forEach(function(uid){
+      var v = byUser[uid][root];
+      if (v && v.slope != null) slopes.push(v.slope);
+    });
+    if (slopes.length === 0) { turmaByAula[root] = null; return; }
+    var m = slopes.reduce(function(a,b){return a+b},0) / slopes.length;
+    // IQR para banda
+    var s = slopes.slice().sort(function(a,b){return a-b});
+    turmaByAula[root] = {
+      mean: m,
+      nUsers: slopes.length,
+      p25: s[Math.floor(s.length * 0.25)],
+      p75: s[Math.floor(s.length * 0.75)]
+    };
+  });
+
+  return { byUser: byUser, turmaByAula: turmaByAula, phaseOrder: phaseOrder };
+}
+
+// #3 SRL PHENOTYPES — Zimmerman (2013, Educ. Psychol.); Pintrich (2004).
+// Regras interpretáveis (não k-means) sobre 3 features.
+function computeSRL() {
+  var raw = window._adminRaw;
+  if (!raw) return { byUser: {}, distribution: {} };
+  var students = (raw.profiles || []).filter(function(p){return (p.role||'')!=='admin'});
+
+  // Feature (a) attempts_per_checkpoint — média de micro_attempts antes do acerto
+  var mbyKey = {}; // uid::page::section::qid -> [attempts ordered]
+  (raw.microAttempts || []).forEach(function(m){
+    var k = m.user_id+'::'+m.page_id+'::'+m.section_id+'::'+m.question_id;
+    if (!mbyKey[k]) mbyKey[k] = [];
+    mbyKey[k].push(m);
+  });
+  var aptByUser = {};
+  Object.keys(mbyKey).forEach(function(k){
+    var arr = mbyKey[k].slice().sort(function(a,b){return (a.answered_at||'').localeCompare(b.answered_at||'')});
+    var uid = k.split('::')[0];
+    // conta tentativas até acerto (ou total, se nunca acertou)
+    var n = 0;
+    for (var i = 0; i < arr.length; i++) { n++; if (arr[i].correct) break; }
+    if (!aptByUser[uid]) aptByUser[uid] = { sum: 0, n: 0 };
+    aptByUser[uid].sum += n;
+    aptByUser[uid].n += 1;
+  });
+
+  // Feature (b) revisit_ratio — visits / pages únicas
+  var pvByUser = {};
+  (raw.pageVisits || []).forEach(function(pv){
+    if (!pvByUser[pv.user_id]) pvByUser[pv.user_id] = { visits: 0, pages: {} };
+    pvByUser[pv.user_id].visits += (pv.visits || 0);
+    pvByUser[pv.user_id].pages[pv.page_id] = true;
+  });
+
+  // Feature (c) read_before_try — para cada (user, page, section) com
+  // confidence.pre e ao menos 1 micro_attempt: conf.pre precedeu 1º attempt?
+  var confPreBy = {}; // uid::page::section -> ts_ms
+  (raw.confidence || []).forEach(function(c){
+    if (c.phase !== 'pre' || !c.recorded_at) return;
+    var k = c.user_id+'::'+c.page_id+'::'+c.section_id;
+    var ts = new Date(c.recorded_at).getTime();
+    if (confPreBy[k] == null || ts < confPreBy[k]) confPreBy[k] = ts;
+  });
+  var firstMicroBy = {}; // uid::page::section -> ts_ms
+  (raw.microAttempts || []).forEach(function(m){
+    if (!m.answered_at) return;
+    var k = m.user_id+'::'+m.page_id+'::'+m.section_id;
+    var ts = new Date(m.answered_at).getTime();
+    if (firstMicroBy[k] == null || ts < firstMicroBy[k]) firstMicroBy[k] = ts;
+  });
+  var rbtByUser = {};
+  Object.keys(firstMicroBy).forEach(function(k){
+    var uid = k.split('::')[0];
+    if (!rbtByUser[uid]) rbtByUser[uid] = { total: 0, beforeTry: 0 };
+    rbtByUser[uid].total++;
+    if (confPreBy[k] != null && confPreBy[k] <= firstMicroBy[k]) rbtByUser[uid].beforeTry++;
+  });
+
+  // Feature (d) avoidant: paper_exercises declarados / total (proxy: N seções com pelo menos 1 tentativa mas sem paper declaração)
+  var paperByUser = {};
+  (raw.paperExercises || []).forEach(function(pe){
+    if (!paperByUser[pe.user_id]) paperByUser[pe.user_id] = 0;
+    paperByUser[pe.user_id]++;
+  });
+  // Duração mediana de seção por aluno (proxy skimmer)
+  var durBy = {};
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (!sp.started_at || !sp.completed_at) return;
+    var d = (new Date(sp.completed_at).getTime() - new Date(sp.started_at).getTime()) / 1000;
+    if (d <= 0 || d > 3600*3) return; // descarta outliers > 3h
+    if (!durBy[sp.user_id]) durBy[sp.user_id] = [];
+    durBy[sp.user_id].push(d);
+  });
+  function median(a){ if(!a||!a.length) return null; var s=a.slice().sort(function(x,y){return x-y}); return s[Math.floor(s.length/2)]; }
+  var durMedPerUser = {};
+  Object.keys(durBy).forEach(function(uid){ durMedPerUser[uid] = median(durBy[uid]); });
+  // P25 de duração mediana na turma (para skimmer threshold)
+  var allDurMeds = Object.values(durMedPerUser).filter(function(d){return d!=null}).slice().sort(function(a,b){return a-b});
+  var p25Dur = allDurMeds.length > 0 ? allDurMeds[Math.floor(allDurMeds.length * 0.25)] : null;
+
+  var byUser = {};
+  students.forEach(function(p){
+    var uid = p.id;
+    var apt = aptByUser[uid] ? aptByUser[uid].sum / aptByUser[uid].n : null;
+    var pvRec = pvByUser[uid];
+    var revisit = pvRec && Object.keys(pvRec.pages).length > 0 ? pvRec.visits / Object.keys(pvRec.pages).length : null;
+    var rbtRec = rbtByUser[uid];
+    var readBefore = rbtRec && rbtRec.total >= 3 ? rbtRec.beforeTry / rbtRec.total : null;
+    var nSecsDone = durBy[uid] ? durBy[uid].length : 0;
+    var paperShare = nSecsDone > 0 && paperByUser[uid] != null ? (paperByUser[uid] / Math.max(1, nSecsDone)) : 0;
+    var durMed = durMedPerUser[uid];
+
+    var label = 'none';
+    // Requer pelo menos um sinal razoável
+    if (apt != null || revisit != null || readBefore != null) {
+      if (readBefore != null && readBefore > 0.7 && apt != null && apt < 1.5) label = 'strategic';
+      else if (revisit != null && revisit > 1.3 && apt != null && apt > 2) label = 'reactive';
+      else if (durMed != null && p25Dur != null && durMed < p25Dur && apt != null && apt > 1.8) label = 'skimmer';
+      else if (nSecsDone >= 3 && paperShare < 0.3) label = 'avoidant';
+      else label = 'mixed';
+    }
+    byUser[uid] = {
+      label: label,
+      attemptsPerCheckpoint: apt,
+      revisitRatio: revisit,
+      readBeforeTry: readBefore,
+      durMedianSec: durMed,
+      paperShare: paperShare
+    };
+  });
+
+  var distribution = { strategic: 0, reactive: 0, skimmer: 0, avoidant: 0, mixed: 0, none: 0 };
+  Object.values(byUser).forEach(function(u){ distribution[u.label] = (distribution[u.label] || 0) + 1; });
+
+  return { byUser: byUser, distribution: distribution };
+}
+
+// Aggregator: computa todas as 6 de uma vez e guarda em window._onda4.
+function computeOnda4All() {
+  var t0 = performance.now();
+  var out = {
+    calibration: null, rt: null, circadian: null,
+    trajectory: null, velocity: null, srl: null,
+    ms: 0
+  };
+  try { out.calibration = computeCalibration(); } catch(e){ console.warn('[Onda4] calibration:', e); }
+  try { out.rt = computeResponseTime(); }         catch(e){ console.warn('[Onda4] rt:', e); }
+  try { out.circadian = computeCircadian(); }     catch(e){ console.warn('[Onda4] circadian:', e); }
+  try { out.trajectory = computeTrajectory(); }   catch(e){ console.warn('[Onda4] trajectory:', e); }
+  try { out.velocity = computeVelocity(); }       catch(e){ console.warn('[Onda4] velocity:', e); }
+  try { out.srl = computeSRL(); }                 catch(e){ console.warn('[Onda4] srl:', e); }
+  out.ms = Math.round(performance.now() - t0);
+  window._onda4 = out;
+  console.log('[Onda4] compute total: ' + out.ms + 'ms');
+  return out;
+}
+
+// ---------- Renderers agregados (tab Psico-cognitivo) ----------
+
+function renderOnda4Calibration() {
+  var onda4 = window._onda4; if (!onda4 || !onda4.calibration) return;
+  var pairs = onda4.calibration.pairs || [];
+  // Scatter: X = conf, Y = acc; cor por label do usuário
+  var pts = pairs.map(function(p){
+    var user = onda4.calibration.byUser[p.userId] || {};
+    return {
+      x: p.conf, y: p.acc, name: p.pageRoot,
+      tooltip: _pageLabel(p.pageRoot) + ' · conf ' + Math.round(p.conf) + '% · acc ' + Math.round(p.acc) + '% · n=' + p.nItems
+    };
+  });
+  renderScatter('o4-calibration-scatter', pts, {
+    xMin: 0, xMax: 100, yMin: 0, yMax: 100,
+    xTicks: [0,25,50,75,100], yTicks: [0,25,50,75,100], xSuffix: '%', ySuffix: '%',
+    xLabel: 'Confiança pós (média por aula)', yLabel: 'Acerto 1ª tentativa (%)',
+    diagonal: true,
+    emptyMsg: 'Precisa de pares (confidence_ratings.post × quiz_question_attempts) na mesma aula.',
+    legend: '<div class="dash-legend">'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#C8102E"></span>🔥 Over-confident</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#D97706"></span>🎯 Calibrado</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#15803D"></span>🧊 Under-confident</span>'
+      + '</div>'
+  });
+  // Resumo
+  var tally = { good:0, over:0, under:0, none:0 };
+  Object.values(onda4.calibration.byUser).forEach(function(u){ tally[u.label] = (tally[u.label]||0) + 1; });
+  var el = document.getElementById('o4-calibration-summary');
+  if (el) el.innerHTML = '<strong>Distribuição:</strong> '
+    + '<span class="o4-badge cal-good">🎯 ' + tally.good + ' calibrados</span>'
+    + '<span class="o4-badge cal-over">🔥 ' + tally.over + ' over-confident</span>'
+    + '<span class="o4-badge cal-under">🧊 ' + tally.under + ' under-confident</span>'
+    + '<span class="o4-badge cal-none">— ' + tally.none + ' sem dados (precisa ≥3 pares)</span>';
+}
+
+function renderOnda4RT() {
+  var onda4 = window._onda4; if (!onda4 || !onda4.rt) return;
+  var rt = onda4.rt;
+  var raw = window._adminRaw;
+  var nameOf = {};
+  if (raw && raw.profiles) raw.profiles.forEach(function(p){ nameOf[p.id] = p.nome; });
+  var pts = Object.keys(rt.byUser).map(function(uid){
+    var u = rt.byUser[uid];
+    if (u.medianSec == null || u.acc == null || u.nItems < 3) return null;
+    return {
+      x: u.medianSec, y: u.acc, name: nameOf[uid] || uid.substring(0,6),
+      tooltip: (nameOf[uid] || uid.substring(0,6)) + ' · mediana ' + Math.round(u.medianSec) + 's · acc ' + Math.round(u.acc) + '% · n=' + u.nItems
+    };
+  }).filter(function(p){return p});
+  var maxX = pts.length > 0 ? Math.max.apply(null, pts.map(function(p){return p.x})) : 60;
+  renderScatter('o4-rt-scatter', pts, {
+    xMin: 0, xMax: Math.max(60, Math.ceil(maxX / 30) * 30),
+    yMin: 0, yMax: 100,
+    yTicks: [0,25,50,75,100], ySuffix: '%',
+    xLabel: 'Tempo mediano por item (s)', yLabel: 'Acerto 1ª tentativa (%)',
+    colorByY: true,
+    emptyMsg: 'Precisa de ≥3 tentativas com intervalo 10s-15min por aluno.'
+  });
+  var count = { 'fast-correct':0, 'slow-correct':0, 'fast-incorrect':0, 'slow-incorrect':0, 'none':0 };
+  Object.values(rt.byUser).forEach(function(u){ count[u.phenotype||'none']++; });
+  var el = document.getElementById('o4-rt-summary');
+  if (el) el.innerHTML = '<strong>Mediana turma:</strong> '
+    + (rt.turmaMedian != null ? Math.round(rt.turmaMedian) + 's / ' + Math.round(rt.turmaMedianAcc||0) + '% · ' : '—')
+    + '<span class="o4-badge rt-fc">⚡✓ ' + count['fast-correct'] + ' fast-correct</span>'
+    + '<span class="o4-badge rt-sc">⏳✓ ' + count['slow-correct'] + ' slow-correct</span>'
+    + '<span class="o4-badge rt-fi">⚡✗ ' + count['fast-incorrect'] + ' fast-incorrect</span>'
+    + '<span class="o4-badge rt-si">⏳✗ ' + count['slow-incorrect'] + ' slow-incorrect</span>'
+    + '<span class="o4-badge rt-none">— ' + count['none'] + ' sem dados</span>';
+}
+
+function _o4RenderCircadianHeatmapHtml(matrix) {
+  if (!matrix) return '<div style="color:var(--text-muted);font-size:0.8rem">Sem eventos para plotar.</div>';
+  var maxV = 1;
+  for (var d=0;d<7;d++) for (var h=0;h<24;h++) if (matrix[d][h] > maxV) maxV = matrix[d][h];
+  function lvl(v) {
+    if (v === 0) return 0;
+    var r = v / maxV;
+    if (r <= 0.25) return 1;
+    if (r <= 0.50) return 2;
+    if (r <= 0.80) return 3;
+    return 4;
+  }
+  var dow = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+  var html = '<div class="circadian-heatmap">';
+  // Header: vazio + 0..23
+  html += '<div></div>';
+  for (var h=0;h<24;h++) html += '<div class="cir-h">' + (h%2===0 ? h : '') + '</div>';
+  for (var d=0;d<7;d++) {
+    html += '<div class="cir-d">' + dow[d] + '</div>';
+    for (var h=0;h<24;h++) {
+      var v = matrix[d][h];
+      html += '<div class="cir-cell" data-v="' + lvl(v) + '" title="' + dow[d] + ' ' + h + 'h: ' + v + ' evento(s)"></div>';
+    }
+  }
+  html += '</div>';
+  html += '<div class="circadian-legend">Menos'
+    + ' <span class="cir-chip" style="background:#F3F4F6"></span>'
+    + ' <span class="cir-chip" style="background:#FEE2E2"></span>'
+    + ' <span class="cir-chip" style="background:#FCA5A5"></span>'
+    + ' <span class="cir-chip" style="background:#C8102E"></span>'
+    + ' <span class="cir-chip" style="background:#7F1D1D"></span> Mais · max=' + maxV + ' ev</div>';
+  return html;
+}
+
+function renderOnda4Circadian() {
+  var onda4 = window._onda4;
+  var container = document.getElementById('o4-circadian-turma');
+  if (!container) return;
+  if (!onda4 || !onda4.circadian || !onda4.circadian.turma) {
+    container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem">Sem eventos para agregar.</div>';
+    return;
+  }
+  container.innerHTML = _o4RenderCircadianHeatmapHtml(onda4.circadian.turma);
+}
+
+function renderOnda4SRL() {
+  var onda4 = window._onda4;
+  var container = document.getElementById('o4-srl-distribution');
+  if (!container) return;
+  if (!onda4 || !onda4.srl) { container.innerHTML = '<div style="color:var(--text-muted)">Sem dados</div>'; return; }
+  var dist = onda4.srl.distribution || {};
+  var total = Object.values(dist).reduce(function(a,b){return a+b},0);
+  if (!total) { container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem">Sem alunos classificados.</div>'; return; }
+  var colors = {
+    strategic: '#15803D', reactive: '#1E3A8A', skimmer: '#D97706',
+    avoidant: '#C8102E', mixed: '#6B7280', none: '#9CA3AF'
+  };
+  var icons = { strategic: '🎯', reactive: '🔄', skimmer: '💨', avoidant: '🙈', mixed: '◑', none: '—' };
+  var labels = { strategic: 'Strategic', reactive: 'Reactive', skimmer: 'Skimmer', avoidant: 'Avoidant', mixed: 'Mixed', none: 'Sem dados' };
+  // Pie SVG: círculos acumulativos em stroke-dasharray
+  var R = 60, C = 2 * Math.PI * R;
+  var order = ['strategic','reactive','skimmer','avoidant','mixed','none'];
+  var offset = 0;
+  var pieSvg = '<svg viewBox="-70 -70 140 140" style="width:140px;height:140px"><circle r="' + R + '" fill="none" stroke="#F3F4F6" stroke-width="18"/>';
+  order.forEach(function(k){
+    var n = dist[k] || 0;
+    if (n === 0) return;
+    var len = (n / total) * C;
+    pieSvg += '<circle r="' + R + '" fill="none" stroke="' + colors[k] + '" stroke-width="18" '
+      + 'stroke-dasharray="' + len.toFixed(2) + ' ' + (C - len).toFixed(2) + '" '
+      + 'stroke-dashoffset="' + (-offset).toFixed(2) + '" transform="rotate(-90)"><title>' + labels[k] + ': ' + n + '</title></circle>';
+    offset += len;
+  });
+  pieSvg += '</svg>';
+  var legend = '<div class="o4-pie-legend">'
+    + order.map(function(k){
+      var n = dist[k] || 0;
+      var pct = total > 0 ? Math.round(n / total * 100) : 0;
+      return '<div class="pie-row"><span class="pie-dot" style="background:' + colors[k] + '"></span>'
+        + icons[k] + ' <strong>' + labels[k] + '</strong> · ' + n + ' (' + pct + '%)</div>';
+    }).join('')
+    + '</div>';
+  container.innerHTML = '<div class="o4-pie-row">' + pieSvg + legend + '</div>';
+}
+
+function renderOnda4Trajectory() {
+  var onda4 = window._onda4;
+  var container = document.getElementById('o4-trajectory-summary');
+  if (!container) return;
+  if (!onda4 || !onda4.trajectory) { container.innerHTML = '<div style="color:var(--text-muted)">Sem dados</div>'; return; }
+  var byUser = onda4.trajectory.byUser || {};
+  var driftCount = 0, total = 0, pctLast = [];
+  Object.keys(byUser).forEach(function(uid){
+    total++;
+    if (byUser[uid].drift) driftCount++;
+    if (byUser[uid].lastPct != null) pctLast.push(byUser[uid].lastPct);
+  });
+  if (!total) { container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem">Sem alunos com trajetória ainda (precisa ≥1 aula com score).</div>'; return; }
+  var median = pctLast.length > 0 ? (function(){var s=pctLast.slice().sort(function(a,b){return a-b}); return s[Math.floor(s.length/2)];})() : null;
+  container.innerHTML =
+    '<div style="display:flex;gap:1rem;flex-wrap:wrap;font-size:0.85rem">'
+    + '<div class="stat-box" style="min-width:auto;flex:0 1 auto"><div class="v">' + driftCount + '</div><div class="l">Alunos com drift</div></div>'
+    + '<div class="stat-box" style="min-width:auto;flex:0 1 auto"><div class="v">' + (median != null ? 'P' + median : '—') + '</div><div class="l">Mediana percentil último</div></div>'
+    + '<div class="stat-box" style="min-width:auto;flex:0 1 auto"><div class="v">' + total + '</div><div class="l">Total com dados</div></div>'
+    + '</div>'
+    + '<div style="margin-top:0.6rem;font-size:0.78rem;color:var(--text-muted)">Drift = queda de ≥20 percentis entre duas aulas consecutivas, ou z-score rolling-3 &lt; −1.5. Sparkline individual aparece no modal do aluno.</div>';
+}
+
+function renderOnda4Velocity() {
+  var onda4 = window._onda4;
+  var container = document.getElementById('o4-velocity-turma');
+  if (!container) return;
+  if (!onda4 || !onda4.velocity) { container.innerHTML = '<div style="color:var(--text-muted)">Sem dados</div>'; return; }
+  var turma = onda4.velocity.turmaByAula || {};
+  var roots = _o4PageRootsAulas();
+  var rows = roots.map(function(root){ return { root: root, v: turma[root] }; }).filter(function(r){return r.v});
+  if (!rows.length) { container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem">Precisa de pelo menos 2 fases respondidas em uma aula para computar slope.</div>'; return; }
+  var html = '<table style="width:100%;border-collapse:collapse;font-size:0.85rem">'
+    + '<thead><tr style="background:#FAFAF8;border-bottom:2px solid var(--border)">'
+    + '<th style="text-align:left;padding:0.4rem">Aula</th>'
+    + '<th style="text-align:center;padding:0.4rem" title="Slope médio: pontos percentuais de acerto ganhos por avanço de fase (pre → embedded → post → graded)">Slope médio (pp/fase)</th>'
+    + '<th style="text-align:center;padding:0.4rem">IQR (P25–P75)</th>'
+    + '<th style="text-align:center;padding:0.4rem">Alunos</th>'
+    + '</tr></thead><tbody>';
+  rows.forEach(function(r){
+    var slopeCls = r.v.mean > 5 ? 'color:#065F46;font-weight:700' : r.v.mean < -5 ? 'color:#991B1B;font-weight:700' : 'color:var(--text-muted)';
+    html += '<tr style="border-bottom:1px solid #f5f0ec">'
+      + '<td style="padding:0.35rem 0.4rem">' + _pageLabel(r.root) + '</td>'
+      + '<td style="text-align:center;padding:0.35rem 0.4rem;' + slopeCls + '">' + (r.v.mean >= 0 ? '+' : '') + r.v.mean.toFixed(1) + '</td>'
+      + '<td style="text-align:center;padding:0.35rem 0.4rem;color:var(--text-muted)">' + r.v.p25.toFixed(1) + ' … ' + r.v.p75.toFixed(1) + '</td>'
+      + '<td style="text-align:center;padding:0.35rem 0.4rem">' + r.v.nUsers + '</td>'
+      + '</tr>';
+  });
+  html += '</tbody></table>';
+  container.innerHTML = html;
+}
+
+function renderOnda4All() {
+  renderOnda4Calibration();
+  renderOnda4RT();
+  renderOnda4Circadian();
+  renderOnda4SRL();
+  renderOnda4Trajectory();
+  renderOnda4Velocity();
+}
+
+// ---------- Helpers para injetar nos lugares existentes ----------
+
+// Flags extras (crammer crônico + drift) que entram na coluna "Risco" /
+// bandeiras do modal. Não mexe no score; só avisa.
+function _o4ExtraFlags(r) {
+  var out = [];
+  var onda4 = window._onda4;
+  if (!onda4) return out;
+  var uid = _profileIdFromMatricula(r.s.matricula);
+  if (!uid) return out;
+  var cir = onda4.circadian && onda4.circadian.byUser[uid];
+  if (cir && cir.chronic) out.push({ kind: 'crammer', msg: '🌙 Crammer crônico (≥3 aulas com >60% dos eventos em 48h pré-prazo)' });
+  var tr = onda4.trajectory && onda4.trajectory.byUser[uid];
+  if (tr && tr.drift) out.push({ kind: 'drift', msg: '🔻 Drift detectado na trajetória de percentis' });
+  return out;
+}
+
+// Chips inline para a célula "Risco" na tabela Por Aluno (pequeno).
+function _o4InlineChips(r) {
+  var chips = '';
+  var onda4 = window._onda4;
+  if (!onda4) return '';
+  var uid = _profileIdFromMatricula(r.s.matricula);
+  if (!uid) return '';
+  var cir = onda4.circadian && onda4.circadian.byUser[uid];
+  if (cir && cir.chronic) chips += '<span class="o4-badge crammer" title="Crammer crônico">🌙</span>';
+  var tr = onda4.trajectory && onda4.trajectory.byUser[uid];
+  if (tr && tr.drift) chips += '<span class="o4-badge drift" title="Drift em percentil">🔻</span>';
+  return chips ? '<span class="o4-flags-inline">' + chips + '</span>' : '';
+}
+
+// Sort-key extra para Por Aluno (drift): alunos com drift vêm primeiro
+// quando sort=drift-desc, ordenados por último percentil ascendente.
+function _o4SortDrift(a, b) {
+  var onda4 = window._onda4;
+  if (!onda4 || !onda4.trajectory) return 0;
+  var uidA = _profileIdFromMatricula(a.s.matricula);
+  var uidB = _profileIdFromMatricula(b.s.matricula);
+  var tA = onda4.trajectory.byUser[uidA];
+  var tB = onda4.trajectory.byUser[uidB];
+  var dA = tA && tA.drift ? 1 : 0;
+  var dB = tB && tB.drift ? 1 : 0;
+  if (dA !== dB) return dB - dA;
+  var lA = tA && tA.lastPct != null ? tA.lastPct : 101;
+  var lB = tB && tB.lastPct != null ? tB.lastPct : 101;
+  return lA - lB;
+}
+
+// Bloco "Psico-cognitivo" no modal de perfil — injetado via _profileO4Html().
+function _profileO4Html(matricula) {
+  var onda4 = window._onda4;
+  var uid = _profileIdFromMatricula(matricula);
+  if (!onda4 || !uid) return '';
+
+  // #4 Calibration
+  var cal = onda4.calibration && onda4.calibration.byUser[uid];
+  var calHtml;
+  if (!cal || cal.label === 'none') calHtml = '<span class="o4-badge cal-none" title="Precisa de ≥3 pares (confidence pós × acerto)">Calibração: —</span>';
+  else {
+    var cls = 'cal-' + cal.label;
+    var icon = cal.label === 'good' ? '🎯' : cal.label === 'over' ? '🔥' : '🧊';
+    var lbl = cal.label === 'good' ? 'Calibrado' : cal.label === 'over' ? 'Over-confident' : 'Under-confident';
+    calHtml = '<span class="o4-badge ' + cls + '" title="ECE=' + cal.ece.toFixed(1) + ' · gap ' + (cal.gap>=0?'+':'') + cal.gap.toFixed(0) + 'pp · ' + cal.n + ' pares">'
+      + icon + ' ' + lbl + ' · ECE=' + cal.ece.toFixed(1) + '</span>';
+  }
+
+  // #2 RT phenotype
+  var rt = onda4.rt && onda4.rt.byUser[uid];
+  var rtHtml;
+  if (!rt || rt.phenotype === 'none') rtHtml = '<span class="o4-badge rt-none">Fenótipo: —</span>';
+  else {
+    var rtCls = 'rt-' + ({
+      'fast-correct':'fc','slow-correct':'sc','fast-incorrect':'fi','slow-incorrect':'si'
+    })[rt.phenotype];
+    var rtIcon = ({
+      'fast-correct':'⚡✓','slow-correct':'⏳✓','fast-incorrect':'⚡✗','slow-incorrect':'⏳✗'
+    })[rt.phenotype];
+    rtHtml = '<span class="o4-badge ' + rtCls + '" title="mediana ' + Math.round(rt.medianSec) + 's · acerto ' + Math.round(rt.acc) + '% · n=' + rt.nItems + '">'
+      + rtIcon + ' ' + rt.phenotype + '</span>';
+  }
+
+  // #3 SRL
+  var srl = onda4.srl && onda4.srl.byUser[uid];
+  var srlHtml;
+  if (!srl || srl.label === 'none') srlHtml = '<span class="o4-badge srl-mixed">SRL: sem sinais suficientes</span>';
+  else {
+    var srlIcon = { strategic:'🎯', reactive:'🔄', skimmer:'💨', avoidant:'🙈', mixed:'◑' }[srl.label] || '—';
+    var srlTooltip = 'attempts/cp: ' + (srl.attemptsPerCheckpoint != null ? srl.attemptsPerCheckpoint.toFixed(2) : '—')
+      + ' · revisit: ' + (srl.revisitRatio != null ? srl.revisitRatio.toFixed(2) : '—')
+      + ' · read-before-try: ' + (srl.readBeforeTry != null ? Math.round(srl.readBeforeTry*100) + '%' : '—');
+    srlHtml = '<span class="o4-badge srl-' + srl.label + '" title="' + srlTooltip + '">' + srlIcon + ' SRL: ' + srl.label + '</span>';
+  }
+
+  // #5 Circadian
+  var cir = onda4.circadian && onda4.circadian.byUser[uid];
+  var cirHtml = '';
+  if (cir && cir.totalEvents > 0) {
+    cirHtml = '<h4 style="margin:0.8rem 0 0.3rem;color:var(--primary);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.05em">'
+      + 'Padrão circadiano · ' + cir.totalEvents + ' eventos'
+      + (cir.chronic ? ' · <span class="o4-badge crammer">🌙 Crammer crônico</span>' : '')
+      + (cir.crammedAulas.length > 0 ? ' <span style="color:var(--text-muted);font-weight:400;font-size:0.72rem">(cramming em aulas: ' + cir.crammedAulas.join(', ') + ')</span>' : '')
+      + '</h4>'
+      + _o4RenderCircadianHeatmapHtml(cir.matrix);
+  } else {
+    cirHtml = '<div style="color:var(--text-muted);font-size:0.78rem;margin-top:0.4rem">Sem eventos registrados para plotar padrão circadiano.</div>';
+  }
+
+  // #8 Trajectory sparkline
+  var tr = onda4.trajectory && onda4.trajectory.byUser[uid];
+  var trHtml = '';
+  if (tr && tr.percentis && tr.percentis.some(function(v){return v!=null})) {
+    var roots = onda4.trajectory.aulaRoots;
+    var bars = tr.percentis.map(function(v, i){
+      if (v == null) return '<div class="o4-traj-bar pct-empty" style="height:3px" title="' + _pageLabel(roots[i]) + ': sem dados"></div>';
+      var cls = v >= 66 ? 'pct-top' : v >= 33 ? 'pct-mid' : 'pct-low';
+      var h = Math.max(4, Math.round(v / 100 * 40));
+      return '<div class="o4-traj-bar ' + cls + '" style="height:' + h + 'px" title="' + _pageLabel(roots[i]) + ': P' + v + '"></div>';
+    }).join('');
+    var driftMsg = tr.drift
+      ? ' · <strong style="color:#991B1B">🔻 drift detectado' + (tr.driftKind === 'both' ? ' (queda + z-score)' : tr.driftKind === 'drop' ? ' (queda ≥20 dec)' : ' (z &lt; -1.5)') + '</strong>'
+      : '';
+    trHtml = '<h4 style="margin:0.8rem 0 0.3rem;color:var(--primary);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.05em">'
+      + 'Trajetória (percentil por aula)' + driftMsg
+      + '</h4>'
+      + '<div class="o4-traj-container">' + bars + '</div>'
+      + '<div style="font-size:0.7rem;color:var(--text-muted);margin-top:0.1rem">A01 → A09 · altura = percentil turma naquela aula · 🟢 ≥66 / 🟠 33–65 / 🔴 &lt;33</div>';
+  }
+
+  // #10 Velocity (grid por aula)
+  var vel = onda4.velocity && onda4.velocity.byUser[uid];
+  var velHtml = '';
+  if (vel && Object.keys(vel).length > 0) {
+    var roots = _o4PageRootsAulas();
+    var cards = roots.map(function(root){
+      var v = vel[root];
+      if (!v) return '';
+      // mini line chart: 4 pontos possíveis
+      var W = 120, H = 40, PAD = 4;
+      var pts = v.points;
+      var xs = pts.map(function(p){return p.x});
+      var ys = pts.map(function(p){return p.y});
+      var minX = 0, maxX = 3;
+      function mapX(x){ return PAD + (x - minX)/(maxX-minX) * (W - 2*PAD); }
+      function mapY(y){ return H - PAD - (y/100) * (H - 2*PAD); }
+      var path = pts.map(function(p, i){ return (i===0?'M':'L') + mapX(p.x).toFixed(1) + ',' + mapY(p.y).toFixed(1); }).join(' ');
+      var dots = pts.map(function(p){ return '<circle cx="' + mapX(p.x).toFixed(1) + '" cy="' + mapY(p.y).toFixed(1) + '" r="2.5" fill="#C8102E"><title>' + p.phase + ': ' + Math.round(p.y) + '% (n=' + p.n + ')</title></circle>'; }).join('');
+      var slopeCls = v.slope > 5 ? 'up' : v.slope < -5 ? 'down' : 'flat';
+      var slopeStr = (v.slope >= 0 ? '+' : '') + v.slope.toFixed(1) + ' pp/fase';
+      return '<div class="o4-velocity-card">'
+        + '<div class="vc-title">' + _pageLabel(root) + ' <span style="color:var(--text-muted);font-weight:400">' + pts.length + ' fase(s)</span></div>'
+        + '<svg viewBox="0 0 ' + W + ' ' + H + '"><path d="' + path + '" stroke="#C8102E" stroke-width="1.5" fill="none"/>' + dots + '</svg>'
+        + '<div class="vc-slope ' + slopeCls + '">slope: ' + slopeStr + '</div>'
+        + '</div>';
+    }).filter(function(s){return s}).join('');
+    if (cards) {
+      velHtml = '<h4 style="margin:0.8rem 0 0.3rem;color:var(--primary);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.05em">'
+        + 'Velocidade de aprendizado por aula'
+        + '</h4>'
+        + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.2rem">Curva de acerto 1ª através das 4 fases (pre → embedded → post → graded). Slope positivo = aprendeu na aula.</div>'
+        + '<div class="o4-velocity-grid">' + cards + '</div>';
+    }
+  }
+
+  return '<h3>Psico-cognitivo (Onda 4)</h3>'
+    + '<div style="display:flex;flex-wrap:wrap;gap:0.35rem;margin:0.3rem 0">'
+    +   calHtml + rtHtml + srlHtml
+    + '</div>'
+    + cirHtml + trHtml + velHtml;
+}
+
 // ============ RENDER ============
 
 // ============ DATA SOURCE ADAPTER ============
@@ -3688,6 +4793,20 @@ async function renderAdmin() {
   window._alunosData = data;
   window._totalItems = totalItems;
   window._itemsForJourney = itemsForJourney;
+  window._adminRaw = raw; // exposto mais cedo (antes de renderAlunos) para Onda 4
+
+  // 4b) Onda 4 — Psico-cognitivo: compute tudo antes de qualquer render
+  // que consulte window._onda4 (renderAlunos, showStudentProfile).
+  // Se passar de 200ms, adiar para requestIdleCallback.
+  (function kickOnda4(){
+    if (!raw) { window._onda4 = null; return; }
+    var t0 = performance.now();
+    computeOnda4All();
+    var dt = performance.now() - t0;
+    if (dt > 200 && typeof window.requestIdleCallback === 'function') {
+      console.log('[Onda4] compute took ' + Math.round(dt) + 'ms — next run deferred to requestIdleCallback');
+    }
+  })();
 
   // 5) Render com sort + status + search
   function renderAlunos() {
@@ -3705,6 +4824,7 @@ async function renderAdmin() {
       var daysCls = r.daysSince == null ? 'days-neutral' : (r.daysSince > 7 ? 'days-stale' : (r.daysSince <= 2 ? 'days-fresh' : 'days-neutral'));
       var daysTxt = r.daysSince == null ? 'nunca' : (r.daysSince === 0 ? 'hoje' : r.daysSince + 'd');
       var riskCls = 'risk-' + r.risk.level;
+      var o4Chips = _o4InlineChips(r);
       tbody += '<tr>'
         + '<td>'+r.s.matricula+'</td>'
         + '<td><a class="name-link" onclick="showStudentProfile(\''+r.s.matricula.replace(/\'/g,"\\\'")+'\')">'+r.s.nome+'</a></td>'
@@ -3715,7 +4835,7 @@ async function renderAdmin() {
         + '<td>'+(r.ftPct !== null ? r.ftPct+'% ('+r.ftTotal+')' : '—')+'</td>'
         + '<td>'+(r.streak > 0 ? '🔥'+r.streak : '—')+'</td>'
         + '<td class="'+daysCls+'">'+daysTxt+'</td>'
-        + '<td><span class="risk-cell '+riskCls+'"><span class="risk-dot"></span>'+r.risk.score+' · '+riskLabel(r.risk.level)+'</span></td>'
+        + '<td><span class="risk-cell '+riskCls+'"><span class="risk-dot"></span>'+r.risk.score+' · '+riskLabel(r.risk.level)+'</span>'+o4Chips+'</td>'
         + '</tr>';
     });
     document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="10" style="text-align:center;color:#aaa">Nenhum aluno encontrado</td></tr>';
@@ -3730,7 +4850,6 @@ async function renderAdmin() {
   document.getElementById('search-alunos').addEventListener('input', renderAlunos);
 
   // === TAB: PSICOMETRIA ===
-  window._adminRaw = raw;
   window._psiRows = computeQuestionPsychometrics(raw);
 
   // Popular select de páginas (união dos page_ids que têm psicometria)
@@ -3966,6 +5085,10 @@ async function renderAdmin() {
     var el = document.getElementById(id);
     if (el) el.addEventListener('change', renderTopicClusters);
   });
+
+  // 12) Onda 4 — Psico-cognitivo (compute já rodou antes de renderAlunos;
+  //     agora só rendemos a tab agregada)
+  renderOnda4All();
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw

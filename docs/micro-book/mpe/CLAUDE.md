@@ -86,6 +86,18 @@ O `platform/admin.html` é o instrumento operacional do professor. Calibrado par
 - **UI no modal do perfil**: form inline (kind, topic, note) + timeline cronológica com cards (tipo, data, tópico, nota, outcome opcional).
 - **Delta de comportamento pós-intervenção**: cada card mostra comparação 14d pré vs 14d pós em eventos (quiz attempts + section completions) e acerto 1ª. Classificação visual: 🔵 pending / 🟢 improved / 🔴 declined / ⚫ stable / ⚪ empty. Referências: Purdue Signals, Michigan ECoach, EAB Navigate, Starfish.
 
+### Onda 4 — Psico-cognitivo (produção desde 2026-04-23)
+Seis métricas comportamentais sobre os dados já rastreados (zero mudança de schema). Computadas em `computeOnda4All()` → `window._onda4`; render agregado na tab "Psico-cognitivo" + bloco no modal do aluno.
+
+- **#4 Confidence calibration (ECE)** — `confidence_ratings.post` × acerto 1ª. Labels: 🎯 calibrated / 🔥 over-confident / 🧊 under-confident. Ref: Hacker, Bol & Keener 2012.
+- **#2 Response-time phenotyping** — diff de `answered_at` (janela 10s–15min), mediana por aluno vs. turma. 4 quadrantes. Ref: Van der Linden 2007.
+- **#5 Circadian + cramming** — heatmap 7×24 de eventos; cramming ratio vs. `MPE_CALENDARIO.getPrazo().fecha`. Flag 🌙 crammer crônico. Ref: Anderson CHI 2014.
+- **#8 Cohort trajectory drift** — score composto por aula → percentil turma → 9 pontos → drift (queda ≥20 decis OU z-score rolling-3 < −1.5). Sparkline no modal. Flag 🔻 e sort `drift-desc`. Ref: Pardos 2014.
+- **#10 Learning velocity** — slope (regressão linear) de acerto através de 4 fases (pre_review → embedded → post → graded_exercise). Ref: Newell & Rosenbloom 1981; Koedinger 2013.
+- **#3 SRL phenotype** — 3 features (attempts/cp, revisit_ratio, read_before_try) + regras interpretáveis → strategic/reactive/skimmer/avoidant/mixed. Ref: Zimmerman 2013.
+
+Exportação CSV ganhou 8 colunas Onda 4. Tab agregada e modal têm fallback gracioso ("—" + tooltip) quando dados insuficientes. Requer `<script src="js/calendario.js">` no `admin.html` para cramming ratio.
+
 ### Ondas futuras (pensadas, não implementadas)
 - **Heatmap slide × erro na questão pós** (exige retro-tagging questão→slide).
 - **IRT scoring** (requer n maior de respondentes por questão).
