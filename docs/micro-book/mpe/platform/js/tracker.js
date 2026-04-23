@@ -166,6 +166,87 @@
     }
   };
 
+  // ---- Sync write + deteccao de falha ----
+  // Quando RLS rejeita write (codigo 42501 ou similar), o aluno nao percebe.
+  // Contamos falhas consecutivas; a partir da 2a, mostramos um toast fixo
+  // orientando o aluno a ir ao portal trocar a senha inicial.
+  // Flag sessionStorage evita re-mostrar o toast no mesmo session.
+  var _syncFailureCount = 0;
+  var _syncBlockerToastShown = false;
+  var TOAST_DISMISS_KEY = 'mpe_blocker_toast_dismissed';
+
+  function _lookRLSBlock(err) {
+    if (!err) return false;
+    // Supabase/Postgres codigos conhecidos de RLS/insufficient_privilege
+    var code = err.code || '';
+    var msg = (err.message || err.msg || '') + '';
+    if (code === '42501' || code === 'PGRST301' || code === 'PGRST204') return true;
+    if (/row-level security|violates row-level|insufficient_privilege|not allowed|permission denied/i.test(msg)) return true;
+    return false;
+  }
+
+  function _showBlockerToast() {
+    if (_syncBlockerToastShown) return;
+    try { if (sessionStorage.getItem(TOAST_DISMISS_KEY) === '1') return; } catch(e) {}
+    _syncBlockerToastShown = true;
+
+    if (typeof document === 'undefined' || !document.body) return;
+
+    var toast = document.createElement('div');
+    toast.id = 'mpe-sync-blocker-toast';
+    toast.setAttribute('role', 'alert');
+    toast.style.cssText = 'position:fixed;bottom:18px;right:18px;z-index:9999;'
+      + 'max-width:360px;background:#FEF3C7;border:1px solid #D97706;border-left:5px solid #B45309;'
+      + 'color:#78350F;padding:0.9rem 1rem 0.9rem 1.1rem;border-radius:6px;font-size:0.85rem;line-height:1.4;'
+      + 'box-shadow:0 10px 30px rgba(0,0,0,0.18);font-family:Calibri,Arial,sans-serif';
+
+    var title = document.createElement('div');
+    title.style.cssText = 'font-weight:700;font-size:0.9rem;margin-bottom:0.3rem;color:#78350F';
+    title.textContent = '⚠️  Seu progresso não está indo ao servidor';
+    toast.appendChild(title);
+
+    var body = document.createElement('div');
+    body.style.cssText = 'margin-bottom:0.6rem';
+    body.innerHTML = 'Detectamos que o servidor está recusando salvar suas respostas. '
+      + 'Isso geralmente acontece quando você ainda não trocou a <strong>senha inicial</strong>. '
+      + 'Por favor, acesse o <strong>Portal</strong> e siga a instrução de troca de senha. '
+      + 'Depois, volte a esta página e refaça (ou continue) as atividades — seu progresso voltará a ser salvo.';
+    toast.appendChild(body);
+
+    var btnWrap = document.createElement('div');
+    btnWrap.style.cssText = 'display:flex;gap:0.5rem;justify-content:flex-end;align-items:center';
+
+    var goBtn = document.createElement('a');
+    goBtn.href = 'portal.html';
+    goBtn.textContent = 'Ir ao Portal';
+    goBtn.style.cssText = 'background:#B45309;color:#fff;padding:0.38rem 0.8rem;border-radius:4px;'
+      + 'text-decoration:none;font-weight:600;font-size:0.78rem';
+    btnWrap.appendChild(goBtn);
+
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.textContent = 'Fechar';
+    closeBtn.style.cssText = 'background:transparent;border:1px solid #B45309;color:#78350F;'
+      + 'padding:0.35rem 0.7rem;border-radius:4px;cursor:pointer;font-weight:600;font-size:0.78rem;font-family:inherit';
+    closeBtn.onclick = function() {
+      try { sessionStorage.setItem(TOAST_DISMISS_KEY, '1'); } catch(e) {}
+      toast.parentNode && toast.parentNode.removeChild(toast);
+    };
+    btnWrap.appendChild(closeBtn);
+
+    toast.appendChild(btnWrap);
+    document.body.appendChild(toast);
+  }
+
+  function _onSyncFailure(fnName, err) {
+    var isBlock = _lookRLSBlock(err);
+    console.warn('[MpeDB sync] ' + fnName + ' falhou:', err, '(rls_blocked=' + isBlock + ')');
+    if (isBlock) {
+      _syncFailureCount++;
+      if (_syncFailureCount >= 2) _showBlockerToast();
+    }
+  }
+
   // Helper: dispara write Supabase se flag ligada, sem lancar
   function _syncWrite(fnName, args) {
     if (!window.MPE_CONFIG || !window.MPE_CONFIG.USE_SUPABASE_WRITES) return;
@@ -174,13 +255,18 @@
       var p = window.MpeDB[fnName].apply(window.MpeDB, args);
       if (p && typeof p.then === 'function') {
         p.then(function(r) {
-          if (!r || !r.ok) console.warn('[MpeDB sync] ' + fnName + ' falhou:', r && r.error);
+          if (!r || !r.ok) {
+            _onSyncFailure(fnName, r && r.error);
+          } else {
+            // Sucesso — reset contador (impede flicker entre conexoes)
+            if (_syncFailureCount > 0) _syncFailureCount = 0;
+          }
         }).catch(function(e) {
-          console.warn('[MpeDB sync] ' + fnName + ' erro:', e);
+          _onSyncFailure(fnName, e);
         });
       }
     } catch(e) {
-      console.warn('[MpeDB sync] ' + fnName + ' exception:', e);
+      _onSyncFailure(fnName, e);
     }
   }
 
