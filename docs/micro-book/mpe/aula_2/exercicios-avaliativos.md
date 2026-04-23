@@ -69,7 +69,7 @@ Enfrenta preços \(p = (p_1, p_2) = (3, 2)\) e renda \(m = 36\).
 
 ---
 
-## Exercício 2 🟡 — CES: indireta, Marshalliana, parcela variável com preços
+## Exercício 2 🟡 — CES: UMP, indireta, Marshalliana, parcela variável com preços
 
 **Enunciado.** Considere a preferência CES em \(\mathbb{R}^2_{++}\):
 
