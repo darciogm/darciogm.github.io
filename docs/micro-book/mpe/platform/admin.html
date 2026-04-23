@@ -230,6 +230,46 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .sparkline-bar.zero{background:#E5E5E5;opacity:0.35;min-height:2px}
 .sparkline-bar.intervention{background:#3B82F6;opacity:0.9}
 .sparkline-meta{font-size:0.7rem;color:var(--text-muted);margin-top:0.15rem;display:flex;justify-content:space-between}
+/* Nudge queue (Onda 3B) */
+.nudge-card{display:grid;grid-template-columns:auto 1fr auto;gap:0.9rem;align-items:center;padding:0.9rem 1rem;background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:0 8px 8px 0;margin-bottom:0.55rem}
+.nudge-card.critical{border-left-color:#C8102E;background:#FEF2F2}
+.nudge-card.inactive{border-left-color:#525252;background:#F5F5F5}
+.nudge-card.silent{border-left-color:#D97706;background:#FFFBEB}
+.nudge-card.star{border-left-color:#15803D;background:#ECFDF5}
+.nudge-card .nudge-badge{font-size:1.5rem;line-height:1}
+.nudge-card .nudge-body{min-width:0}
+.nudge-card .nudge-name{font-size:0.95rem;font-weight:700;color:var(--primary);margin-bottom:0.15rem}
+.nudge-card .nudge-name .nudge-mat{color:var(--text-muted);font-weight:400;font-size:0.72rem;margin-left:0.4rem}
+.nudge-card .nudge-diag{font-size:0.78rem;color:var(--text);line-height:1.4;margin-bottom:0.25rem}
+.nudge-card .nudge-tmpl{font-size:0.7rem;color:var(--text-muted);font-style:italic}
+.nudge-card .nudge-actions{display:flex;flex-direction:column;gap:0.3rem;min-width:170px}
+.nudge-card .nudge-btn{background:var(--accent);color:#fff;border:none;padding:0.45rem 0.8rem;border-radius:var(--radius);font-size:0.76rem;font-weight:600;cursor:pointer;text-align:center}
+.nudge-card .nudge-btn:hover{filter:brightness(0.92)}
+.nudge-card .nudge-btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
+.nudge-card .nudge-btn.secondary:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:768px){.nudge-card{grid-template-columns:auto 1fr}.nudge-card .nudge-actions{grid-column:1/-1;flex-direction:row}}
+/* Anomaly rows */
+.anomaly-row{display:flex;align-items:center;gap:0.8rem;padding:0.55rem 0.8rem;background:#fff;border:1px solid var(--border);border-left:4px solid #D97706;border-radius:0 4px 4px 0;margin-bottom:0.35rem;font-size:0.82rem}
+.anomaly-row.severe{border-left-color:#C8102E;background:#FEF2F2}
+.anomaly-row .anom-z{font-weight:700;font-variant-numeric:tabular-nums;color:#991B1B;min-width:55px}
+.anomaly-row .anom-name{font-weight:600;color:var(--primary);flex:1;cursor:pointer}
+.anomaly-row .anom-name:hover{color:var(--accent);text-decoration:underline}
+.anomaly-row .anom-stats{font-size:0.72rem;color:var(--text-muted);text-align:right}
+/* Trajetória do risk no perfil */
+.risk-trajectory{background:#fff;border:1px solid var(--border);border-radius:6px;padding:0.5rem;margin-top:0.4rem;position:relative}
+.risk-trajectory svg{width:100%;height:120px;display:block}
+/* Sankey */
+.sankey-node{fill:var(--accent-soft);stroke:#A38A80;stroke-width:0.5}
+.sankey-node.state-green{fill:#D1FAE5;stroke:#15803D}
+.sankey-node.state-amber{fill:#FEF3C7;stroke:#D97706}
+.sankey-node.state-red{fill:#FEE2E2;stroke:#C8102E}
+.sankey-node.state-gray{fill:#E5E5E5;stroke:#525252}
+.sankey-link{fill:none;stroke-opacity:0.45}
+.sankey-link.up{stroke:#15803D}
+.sankey-link.down{stroke:#C8102E}
+.sankey-link.same{stroke:#9CA3AF}
+.sankey-link:hover{stroke-opacity:0.75}
+.sankey-label{font-size:10px;fill:#1F2937;font-family:Calibri,sans-serif;font-weight:600}
 </style>
 </head>
 <body>
@@ -263,6 +303,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="tab" data-tab="alunos">Por Aluno</div>
     <div class="tab" data-tab="quizzes">Quizzes</div>
     <div class="tab" data-tab="psicometria">Psicometria</div>
+    <div class="tab" data-tab="nudges">Nudge Queue</div>
     <div class="tab" data-tab="avancadas">Métricas Avançadas</div>
     <div class="tab" data-tab="export">Exportar / Gerenciar</div>
   </div>
@@ -418,6 +459,29 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
     <div class="profile-modal" id="question-modal-content"></div>
   </div>
 
+  <!-- TAB: NUDGE QUEUE (Onda 3B) -->
+  <div class="admin-card tab-content" id="tab-nudges" style="display:none">
+    <h3>Fila inteligente de intervenções</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">
+      Alunos que <strong>precisam de um sinal seu</strong> com base em regras automáticas. Cada card traz diagnóstico,
+      sugestão de template (do <code>templates-email-intervencoes.docx</code>) e botão para abrir email pré-preenchido
+      e registrar a intervenção de uma vez só.
+    </p>
+    <div class="tab-alunos-toolbar">
+      <label for="nudge-category">Filtrar</label>
+      <select id="nudge-category">
+        <option value="">Todas as categorias</option>
+        <option value="critical">🔴 Crítico — risco ≥60 + sem intervenção há ≥14d</option>
+        <option value="inactive">⚫ Nunca acessou</option>
+        <option value="silent">🟡 Inativo ≥5 dias (com histórico)</option>
+        <option value="star">⭐ Alta performance (P75+ reconhecer)</option>
+      </select>
+      <div class="toolbar-spacer"></div>
+      <span id="nudge-count" style="font-size:0.72rem;color:var(--text-muted)"></span>
+    </div>
+    <div id="nudge-queue"></div>
+  </div>
+
   <!-- TAB: MÉTRICAS AVANÇADAS -->
   <div class="tab-content" id="tab-avancadas" style="display:none">
     <div class="admin-card">
@@ -509,6 +573,27 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
             Referências: Cornell, Yale (Stat/Econ).
           </div>
           <div id="m-confidence-scatter" class="dash-chart" style="width:100%;height:340px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Anomaly detection — quedas atípicas de atividade</h4>
+          <div class="metric-desc">
+            Para cada aluno, z-score rolling 4 semanas sobre atividade semanal (quiz + sections).
+            Sinaliza queda > 2σ da própria média (não do threshold global). Menos falso-positivo que regra fixa —
+            captura aluno que <em>sempre</em> foi ativo e sumiu, separando do aluno que <em>nunca</em> foi ativo.
+            Padrão em monitoria clínica (CMS) e MLOps (Prometheus).
+          </div>
+          <div id="m-anomaly-list"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Sankey de estados — fluxo da turma entre categorias de risco</h4>
+          <div class="metric-desc">
+            Fluxo de alunos entre estados (🟢 Em dia / 🟡 Atenção / 🔴 Risco / ⚫ Inativo) em duas fotografias:
+            <strong>há 7 dias</strong> vs. <strong>agora</strong>. Barras verticais = tamanho do grupo; fitas = transições.
+            Verde = migração para melhor; vermelho = piora; cinza = sem mudança. Padrão Stanford CSET / Georgia State EAB.
+          </div>
+          <div id="m-sankey" class="dash-chart" style="width:100%;height:320px"></div>
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
@@ -981,6 +1066,9 @@ function showStudentProfile(matricula) {
     + '<h3>Atividade nos últimos 30 dias</h3>'
     + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.2rem">1 barra = 1 dia · altura = N eventos (quiz + section) · azul = dia com intervenção registrada</div>'
     + renderSparklineHtml(_profileIdFromMatricula(matricula), 30)
+    + '<h3>Trajetória do risk score</h3>'
+    + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.2rem">Risk score reconstruído semana a semana · zonas: 🟢 &lt;30 / 🟡 30–59 / 🔴 ≥60</div>'
+    + renderRiskTrajectoryHtml(_profileIdFromMatricula(matricula))
     + '<h3>Bandeiras de risco</h3>'
     + flagsHtml
     + '<h3>Trajetória por aula/monitoria</h3>'
@@ -2041,6 +2129,505 @@ function renderConfidenceScatter() {
   });
 }
 
+// ============ ONDA 3B — trajetória / anomaly / nudges / sankey ============
+
+// Reconstrói o estado de um aluno num instante específico (asOfMs).
+// Computa risk score retrospectivo usando os mesmos 5 features do computeRiskScore,
+// mas considerando apenas eventos ≤ asOfMs.
+function _retroScore(profileId, asOfMs, bench, allRows) {
+  var raw = window._adminRaw;
+  if (!raw) return null;
+  var events = [];
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== profileId || !q.answered_at) return;
+    var ts = new Date(q.answered_at).getTime();
+    if (ts <= asOfMs) events.push({ts:ts, kind:'qa', correct: !!q.correct, pageId: q.page_id, qid: q.question_id});
+  });
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (sp.user_id !== profileId || !sp.completed_at) return;
+    var ts = new Date(sp.completed_at).getTime();
+    if (ts <= asOfMs) events.push({ts:ts, kind:'sp', pageId: sp.page_id});
+  });
+  (raw.pageVisits || []).forEach(function(pv){
+    if (pv.user_id !== profileId || !pv.last_visit_at) return;
+    var ts = new Date(pv.last_visit_at).getTime();
+    if (ts <= asOfMs) events.push({ts:ts, kind:'pv', pageId: pv.page_id, totalTime: pv.total_time_ms || 0});
+  });
+
+  if (!events.length) return { score: 100, level: 'inactive', daysSince: null };
+
+  // Features retrospectivas
+  var pagesVisited = {};
+  events.forEach(function(e){ if (e.kind === 'pv') pagesVisited[e.pageId] = true; });
+  var pageCount = Object.keys(pagesVisited).length;
+
+  var totalTimeMin = 0;
+  (raw.pageVisits || []).forEach(function(pv){
+    if (pv.user_id === profileId && pv.last_visit_at && new Date(pv.last_visit_at).getTime() <= asOfMs) {
+      totalTimeMin += (pv.total_time_ms || 0) / 60000;
+    }
+  });
+  totalTimeMin = Math.round(totalTimeMin);
+
+  // firstTry retrospectivo: agrupar por (page, qid), pegar primeira tentativa
+  var firstTry = {};
+  events.forEach(function(e){
+    if (e.kind !== 'qa') return;
+    var k = e.pageId + '::' + e.qid;
+    if (!firstTry[k] || e.ts < firstTry[k].ts) firstTry[k] = { ts: e.ts, correct: e.correct };
+  });
+  var ftTotal = Object.keys(firstTry).length;
+  var ftCorrect = Object.values(firstTry).filter(function(x){return x.correct}).length;
+  var ftPct = ftTotal > 0 ? Math.round(ftCorrect / ftTotal * 100) : null;
+
+  var lastTs = events.reduce(function(m,e){return Math.max(m, e.ts)}, 0);
+  var daysSince = lastTs > 0 ? Math.floor((asOfMs - lastTs) / 86400000) : null;
+
+  // Replicar heurística de computeRiskScore com bench estático
+  var score = 0;
+  if (pageCount === 0 && ftTotal === 0) return { score: 100, level: 'inactive', daysSince: daysSince };
+  if (daysSince != null) {
+    if (daysSince > 7)      score += 35;
+    else if (daysSince > 3) score += 15;
+  }
+  if (ftPct !== null && ftTotal >= 5) {
+    if (ftPct < 40)      score += 30;
+    else if (ftPct < 60) score += 15;
+  }
+  if (bench.p25Aulas > 0 && pageCount < bench.p25Aulas) score += 15;
+  if (bench.p25Tempo > 0 && totalTimeMin < bench.p25Tempo * 0.5) score += 20;
+
+  score = Math.min(100, score);
+  var level = score >= 60 ? 'high' : score >= 30 ? 'med' : 'low';
+  return { score: score, level: level, daysSince: daysSince };
+}
+
+function renderRiskTrajectoryHtml(profileId) {
+  if (!profileId) return '';
+  var bench = window._alunosBench || {};
+  var allRows = window._alunosRows || [];
+  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00').getTime();
+  var now = Date.now();
+  var nWeeks = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
+  if (nWeeks > 12) nWeeks = 12;
+  if (nWeeks < 2) return '<div style="color:var(--text-muted);font-size:0.75rem;padding:0.3rem 0">Ainda é cedo — trajetória aparece a partir da 2ª semana.</div>';
+
+  var points = [];
+  for (var w = 1; w <= nWeeks; w++) {
+    var asOfMs = Math.min(now, SEMESTER_START + w * 7 * 86400000);
+    var r = _retroScore(profileId, asOfMs, bench, allRows);
+    if (r) points.push({ week: w, score: r.score, level: r.level });
+  }
+  if (!points.length) return '<div style="color:var(--text-muted);font-size:0.75rem">Sem dados</div>';
+
+  var W = 600, H = 120, PL = 32, PR = 12, PT = 10, PB = 22;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  function x(i) { return PL + (points.length > 1 ? (i / (points.length - 1)) * plotW : plotW / 2); }
+  function y(s) { return PT + (100 - s) / 100 * plotH; }
+
+  var grid = '';
+  [0, 30, 60, 100].forEach(function(t){
+    grid += '<line class="grid" x1="' + PL + '" y1="' + y(t) + '" x2="' + (W - PR) + '" y2="' + y(t) + '"/>';
+    grid += '<text class="axis-tick" x="' + (PL - 4) + '" y="' + (y(t) + 3) + '" text-anchor="end">' + t + '</text>';
+  });
+  // Banda de risco (60-100) em tom vermelho leve
+  grid += '<rect x="' + PL + '" y="' + y(100) + '" width="' + plotW + '" height="' + (y(60) - y(100)) + '" fill="#FEE2E2" opacity="0.5"/>';
+  grid += '<rect x="' + PL + '" y="' + y(60) + '" width="' + plotW + '" height="' + (y(30) - y(60)) + '" fill="#FEF3C7" opacity="0.5"/>';
+  grid += '<rect x="' + PL + '" y="' + y(30) + '" width="' + plotW + '" height="' + (y(0) - y(30)) + '" fill="#D1FAE5" opacity="0.5"/>';
+
+  var linePath = points.map(function(p, i){
+    return (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(p.score).toFixed(1);
+  }).join(' ');
+
+  var dots = points.map(function(p, i){
+    var cls = p.level === 'inactive' ? 'dot' : p.level === 'high' ? 'dot dot-low' : p.level === 'med' ? 'dot dot-mid' : 'dot dot-high';
+    return '<circle class="' + cls + '" cx="' + x(i).toFixed(1) + '" cy="' + y(p.score).toFixed(1) + '" r="4"><title>Semana ' + p.week + ': risco ' + p.score + ' (' + riskLabel(p.level) + ')</title></circle>';
+  }).join('');
+
+  var xticks = points.map(function(p, i){
+    if (i === 0 || i === points.length - 1 || i % 2 === 0) {
+      return '<text class="axis-tick" x="' + x(i) + '" y="' + (H - PB + 12) + '" text-anchor="middle">S' + p.week + '</text>';
+    }
+    return '';
+  }).join('');
+
+  return '<div class="risk-trajectory">'
+    + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + grid + '<path class="line" d="' + linePath + '"/>' + dots + xticks
+    + '</svg></div>';
+}
+
+// ---------- Anomaly detection rolling (z-score 4-semanas) ----------
+function computeAnomalies() {
+  var raw = window._adminRaw;
+  if (!raw) return [];
+  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00').getTime();
+  var now = Date.now();
+  var currentWeek = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
+  if (currentWeek < 3) return []; // precisa de 3+ semanas para ter baseline
+
+  // Coleta contagem semanal de eventos por aluno
+  var byUser = {};
+  function add(uid, ts) {
+    if (!ts) return;
+    var t = new Date(ts).getTime();
+    if (t < SEMESTER_START) return;
+    var week = Math.floor((t - SEMESTER_START) / (7 * 86400000)) + 1;
+    if (week > currentWeek) return;
+    if (!byUser[uid]) byUser[uid] = {};
+    byUser[uid][week] = (byUser[uid][week] || 0) + 1;
+  }
+  (raw.quizQA || []).forEach(function(q){ add(q.user_id, q.answered_at); });
+  (raw.sectionProgress || []).forEach(function(sp){ add(sp.user_id, sp.completed_at); });
+
+  var results = [];
+  Object.keys(byUser).forEach(function(uid){
+    var weekly = [];
+    for (var w = 1; w <= currentWeek; w++) weekly.push(byUser[uid][w] || 0);
+    var currentVal = weekly[weekly.length - 1];
+    // Janela retrospectiva de até 4 semanas (excluindo a atual)
+    var hist = weekly.slice(Math.max(0, weekly.length - 5), weekly.length - 1);
+    if (hist.length < 3) return;
+    var mean = hist.reduce(function(a,b){return a+b},0) / hist.length;
+    if (mean === 0) return; // aluno que nunca foi ativo não é anomalia
+    var variance = hist.reduce(function(a,b){return a+(b-mean)*(b-mean)},0) / hist.length;
+    var sd = Math.sqrt(variance);
+    if (sd === 0) sd = Math.max(0.5, mean * 0.2); // piso pra evitar divisão por zero
+    var z = (currentVal - mean) / sd;
+    if (z < -1.5) {
+      results.push({
+        user_id: uid,
+        z: z, mean: mean, currentVal: currentVal,
+        severe: z < -2.5
+      });
+    }
+  });
+  return results.sort(function(a,b){return a.z - b.z});
+}
+
+function renderAnomalyList() {
+  var container = document.getElementById('m-anomaly-list');
+  if (!container) return;
+  var raw = window._adminRaw;
+  var anoms = computeAnomalies();
+  if (!anoms.length) {
+    container.innerHTML = '<div style="color:var(--text-muted);font-size:0.82rem;padding:0.5rem">Nenhuma queda atípica detectada. Cada aluno está dentro de ±1.5σ da sua própria média das últimas semanas (requer ≥3 semanas de baseline).</div>';
+    return;
+  }
+  var matByUser = {};
+  (raw.profiles || []).forEach(function(p){ matByUser[p.id] = p; });
+
+  container.innerHTML = anoms.map(function(a){
+    var p = matByUser[a.user_id] || { nome: a.user_id.substring(0,8), matricula: '?' };
+    var safeMat = (p.matricula || '').replace(/'/g, "\\'");
+    return '<div class="anomaly-row ' + (a.severe ? 'severe' : '') + '">'
+      + '<span class="anom-z">z=' + a.z.toFixed(1) + 'σ</span>'
+      + '<span class="anom-name" onclick="showStudentProfile(\'' + safeMat + '\')">' + p.nome + '</span>'
+      + '<span class="anom-stats">média 4 semanas: ' + a.mean.toFixed(1) + ' ev · esta semana: <strong>' + a.currentVal + '</strong></span>'
+      + '</div>';
+  }).join('');
+}
+
+// ---------- Smart nudge queue ----------
+function computeNudgeQueue() {
+  var rows = window._alunosRows || [];
+  var queue = [];
+  var now = Date.now();
+
+  rows.forEach(function(r){
+    var studentData = (window._alunosData || {})[r.s.matricula] || {};
+    var ivs = (studentData.interventions || []);
+    var lastIv = ivs.length ? new Date(ivs.reduce(function(m, iv){
+      var t = iv.createdAt ? new Date(iv.createdAt).getTime() : 0;
+      return t > m ? t : m;
+    }, 0)) : null;
+    var daysSinceIv = lastIv ? Math.floor((now - lastIv.getTime()) / 86400000) : Infinity;
+
+    // Categorias (mutuamente exclusivas — primeira match vence)
+    if (r.risk.level === 'inactive') {
+      queue.push({
+        category: 'inactive',
+        badge: '⚫',
+        r: r,
+        diag: 'Aluno nunca acessou a plataforma. 0 aulas, 0 tempo, 0 quizzes.',
+        template: 'Template 2 — "Nunca acessou"',
+        subject: r.s.nome + ', precisamos te trazer pra plataforma — MPE Microeconomia I'
+      });
+      return;
+    }
+    if (r.risk.level === 'high' && daysSinceIv >= 14) {
+      queue.push({
+        category: 'critical',
+        badge: '🔴',
+        r: r,
+        diag: 'Risco ' + r.risk.score + '/100. ' + (r.risk.flags[0] ? r.risk.flags[0].msg + '.' : '') + (ivs.length ? ' Última intervenção há ' + daysSinceIv + 'd.' : ' Nunca houve intervenção.'),
+        template: 'Template 1 — "Aluno em risco"',
+        subject: 'Posso te ajudar em algo, ' + r.s.nome.split(' ')[0] + '? — Microeconomia I MPE'
+      });
+      return;
+    }
+    if (r.daysSince != null && r.daysSince >= 5 && r.daysSince <= 14 && (r.s.pagesVisited||0) >= 1 && daysSinceIv >= 10) {
+      queue.push({
+        category: 'silent',
+        badge: '🟡',
+        r: r,
+        diag: 'Tinha histórico (' + (r.s.pagesVisited||0) + ' aulas abertas, ' + (r.s.totalTimeMin||0) + ' min) e sumiu há ' + r.daysSince + ' dias.',
+        template: 'Template 3 — "Inativo com histórico"',
+        subject: 'Senti sua falta esta semana, ' + r.s.nome.split(' ')[0] + ' — MPE Microeconomia I'
+      });
+      return;
+    }
+    // Alta performance: percentil ≥75 em FT e acertos significativos + nenhuma intervenção ainda
+    if (r.ftPct != null && r.ftTotal >= 10 && r.ftPct >= 75 && ivs.length === 0) {
+      queue.push({
+        category: 'star',
+        badge: '⭐',
+        r: r,
+        diag: 'Acerto 1ª de ' + r.ftPct + '% (' + r.ftTotal + ' itens). ' + (r.s.totalTimeMin||0) + ' min dedicados. Reconhecer + oferecer extensão.',
+        template: 'Template 4 — "Performance alta"',
+        subject: r.s.nome.split(' ')[0] + ', que trajeto — Microeconomia I MPE'
+      });
+      return;
+    }
+  });
+
+  return queue.sort(function(a,b){
+    var ordem = { critical: 0, inactive: 1, silent: 2, star: 3 };
+    return (ordem[a.category] || 9) - (ordem[b.category] || 9);
+  });
+}
+
+function _buildEmailBody(item) {
+  var r = item.r;
+  var firstName = r.s.nome.split(' ')[0];
+  if (item.category === 'critical') {
+    return 'Olá, ' + firstName + ',\n\n'
+      + 'Estou acompanhando a turma pela plataforma e percebi que [SINAL OBSERVADO — EDITAR]. Não é pra te cobrar nem julgar — é só pra perguntar se tem algo que eu possa fazer.\n\n'
+      + 'Microeconomia no nível do MPE exige tempo de maturação, e no ritmo de mestrado profissional é muito comum ter semanas em que a vida profissional toma conta. Se for esse o caso, me avise — a gente adapta o que dá.\n\n'
+      + 'Algumas opções concretas:\n'
+      + '- Me responder com uma frase sobre o que está travando — eu ajusto expectativa ou aponto caminho mais curto.\n'
+      + '- Marcarmos 20 minutos online numa quinta ou sexta para revisar os pontos críticos junto.\n'
+      + '- Você usar a monitoria do Alberto (sábado de manhã) como reforço — é informal, sem cobrança.\n\n'
+      + 'O objetivo do curso é que você saia com o ferramental, não que você passe ileso. Se um conceito específico está embaralhando (Lagrange? TMS? dualidade?), me diga — tenho material extra para cada ponto.\n\n'
+      + 'Fico no aguardo.\n\nUm abraço,\nDarcio';
+  }
+  if (item.category === 'inactive') {
+    return 'Olá, ' + firstName + ',\n\n'
+      + 'Vou direto ao ponto porque vi que você ainda não acessou a plataforma da disciplina, e ela responde por 30% da nota (engajamento em pré-aulas, quizzes e exercícios avaliativos). Os outros 70% são a avaliação final de 24/06. Quero garantir que você não está sem acesso por problema técnico.\n\n'
+      + 'Checklist rápido pra destravar:\n'
+      + '- Endereço: https://darciogm.github.io/mpe-platform/\n'
+      + '- Login: seu e-mail institucional completo (ex.: joao.silva@al.insper.edu.br).\n'
+      + '- Senha inicial: Mpe + parte do seu e-mail antes de @al.insper.edu.br (sem espaços). Ex.: Mpejoao.silva\n'
+      + '- No primeiro login a plataforma vai pedir que você troque a senha.\n\n'
+      + 'Se alguma etapa falhar, me responda com um print e eu conserto do meu lado.\n\nAguardo sua resposta.\n\nUm abraço,\nDarcio';
+  }
+  if (item.category === 'silent') {
+    return 'Olá, ' + firstName + ',\n\n'
+      + 'Vi que você teve um início firme na plataforma mas sumiu dos últimos ' + r.daysSince + ' dias. Pode ser só um pico de trabalho (acontece com todo mundo no MPE) ou pode ser que travou em algum tópico específico — se for esse segundo caso, me avise.\n\n'
+      + 'Não é catástrofe se você perder uma rodada pontual, mas três semanas sem engajamento viram bola de neve. Se precisar, eu prefiro conversar agora (antes de acumular) a ter que remediar depois. Me responda com uma frase — mesmo que seja só "tô apertado esta semana, volto na próxima".\n\nAbraço.\nDarcio';
+  }
+  if (item.category === 'star') {
+    return 'Olá, ' + firstName + ',\n\n'
+      + 'Queria te escrever uma linha fora do fluxo normal. Sua performance nas primeiras semanas do curso está bem acima do que a turma normalmente traz — acerto 1ª de ' + r.ftPct + '% em ' + r.ftTotal + ' itens, ' + (r.s.totalTimeMin||0) + ' min dedicados. Isso não é pouco.\n\n'
+      + 'Quero te oferecer duas coisas:\n\n'
+      + '1. Exercícios de teto — [JEHLE-RENY CAP X.Y — EDITAR] — que vão além do que a avaliação final vai exigir.\n\n'
+      + '2. Um papel mais ativo na monitoria do Alberto. Se você topar, em uma das monitorias você apresenta a solução de um exercício e explica pra turma.\n\n'
+      + 'Sem pressão — é só uma porta que abro. Se preferir manter no ritmo atual, 100% ok; só queria que você soubesse que o trabalho está sendo notado.\n\nAbraço.\nDarcio';
+  }
+  return '';
+}
+
+function openNudgeEmail(matricula) {
+  var item = (window._nudgeQueue || []).filter(function(it){return it.r.s.matricula===matricula})[0];
+  if (!item) return;
+  var email = item.r.email || '';
+  var subject = encodeURIComponent(item.subject);
+  var body = encodeURIComponent(_buildEmailBody(item));
+  var mailto = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  window.location.href = mailto;
+}
+
+async function logNudgeIntervention(matricula) {
+  var item = (window._nudgeQueue || []).filter(function(it){return it.r.s.matricula===matricula})[0];
+  if (!item) return;
+  if (!confirm('Registrar intervenção "' + item.category + '" para ' + item.r.s.nome + '?\n\n(Opcional — use depois de enviar o email)')) return;
+  if (!window.MpeDB || !window.MpeDB.addIntervention) return alert('Supabase offline.');
+  var studentId = _profileIdFromMatricula(matricula);
+  if (!studentId) return alert('Perfil não encontrado.');
+  var res = await window.MpeDB.addIntervention({
+    studentId: studentId,
+    kind: 'email',
+    topic: 'Nudge queue · ' + item.category,
+    note: 'Email enviado via nudge queue.\n\nDiagnóstico: ' + item.diag + '\nTemplate usado: ' + item.template
+  });
+  if (!res.ok) return alert('Erro: ' + (res.error.message || res.error));
+  alert('Intervenção registrada. A próxima carga do dashboard atualizará o delta.');
+}
+
+function renderNudgeQueue() {
+  var container = document.getElementById('nudge-queue');
+  var countEl = document.getElementById('nudge-count');
+  if (!container) return;
+  var queue = computeNudgeQueue();
+  window._nudgeQueue = queue;
+
+  var filterCat = (document.getElementById('nudge-category') || {}).value || '';
+  var filtered = filterCat ? queue.filter(function(q){return q.category===filterCat}) : queue;
+
+  if (countEl) countEl.textContent = filtered.length + ' de ' + queue.length + ' sinalizados';
+  if (!queue.length) {
+    container.innerHTML = '<div style="padding:1.5rem;text-align:center;color:var(--success);font-size:0.92rem">✅ Ninguém na fila. Turma em dia.</div>';
+    return;
+  }
+  if (!filtered.length) {
+    container.innerHTML = '<div style="padding:1rem;text-align:center;color:var(--text-muted);font-size:0.85rem">Nenhum aluno nesta categoria.</div>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(function(item){
+    var r = item.r;
+    var safeMat = r.s.matricula.replace(/'/g, "\\'");
+    return '<div class="nudge-card ' + item.category + '">'
+      + '<div class="nudge-badge">' + item.badge + '</div>'
+      + '<div class="nudge-body">'
+        + '<div class="nudge-name">' + r.s.nome + ' <span class="nudge-mat">' + r.s.matricula + '</span></div>'
+        + '<div class="nudge-diag">' + item.diag + '</div>'
+        + '<div class="nudge-tmpl">📧 ' + item.template + (r.email ? ' · ' + r.email : '') + '</div>'
+      + '</div>'
+      + '<div class="nudge-actions">'
+        + '<button class="nudge-btn" onclick="openNudgeEmail(\'' + safeMat + '\')">📤 Enviar email</button>'
+        + '<button class="nudge-btn secondary" onclick="showStudentProfile(\'' + safeMat + '\')">Ver perfil</button>'
+        + '<button class="nudge-btn secondary" onclick="logNudgeIntervention(\'' + safeMat + '\')">✓ Registrar</button>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+// ---------- Sankey de estados (7 dias atrás vs agora) ----------
+// Categorias: green, amber, red, gray (inactive/never).
+// Cada aluno tem estado(t0=há 7 dias) e estado(t1=agora). Reconstrói t0 via _retroScore.
+function computeSankeyFlows() {
+  var rows = window._alunosRows || [];
+  var bench = window._alunosBench || {};
+  var now = Date.now();
+  var weekAgo = now - 7 * 86400000;
+
+  function stateOf(level) {
+    if (level === 'inactive') return 'gray';
+    if (level === 'high')     return 'red';
+    if (level === 'med')      return 'amber';
+    return 'green';
+  }
+
+  var flows = {}; // "from::to" → count
+  var nodeCounts = { t0: {green:0, amber:0, red:0, gray:0}, t1: {green:0, amber:0, red:0, gray:0} };
+
+  rows.forEach(function(r){
+    var profileId = _profileIdFromMatricula(r.s.matricula);
+    var retro = profileId ? _retroScore(profileId, weekAgo, bench, rows) : null;
+    var s0 = retro ? stateOf(retro.level) : 'gray';
+    var s1 = stateOf(r.risk.level);
+    nodeCounts.t0[s0] = (nodeCounts.t0[s0] || 0) + 1;
+    nodeCounts.t1[s1] = (nodeCounts.t1[s1] || 0) + 1;
+    var key = s0 + '::' + s1;
+    flows[key] = (flows[key] || 0) + 1;
+  });
+
+  return { flows: flows, nodeCounts: nodeCounts, totalN: rows.length };
+}
+
+function renderSankey() {
+  var container = document.getElementById('m-sankey');
+  if (!container) return;
+  var data = computeSankeyFlows();
+  if (!data.totalN) {
+    container.innerHTML = '<div class="dash-chart-empty">Sem alunos para plotar.</div>';
+    return;
+  }
+
+  var W = 900, H = 300, PL = 80, PR = 80, PT = 20, PB = 20;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  var NODE_W = 18;
+  var nodeOrder = ['green','amber','red','gray'];
+  var nodeLabel = { green:'🟢 Em dia', amber:'🟡 Atenção', red:'🔴 Risco', gray:'⚫ Inativo' };
+  var stateRank = { green:0, amber:1, red:2, gray:3 };
+
+  function nodeHeight(count) { return Math.max(1, (count / data.totalN) * plotH * 0.85); }
+
+  // Layout: empilha nodes por coluna na ordem green→gray
+  function buildColumn(counts, xPos) {
+    var nodes = {};
+    var yPos = PT;
+    var gap = 8;
+    nodeOrder.forEach(function(s){
+      var c = counts[s] || 0;
+      var h = c > 0 ? nodeHeight(c) : 3;
+      nodes[s] = { x: xPos, y: yPos, w: NODE_W, h: h, count: c };
+      yPos += h + gap;
+    });
+    return nodes;
+  }
+
+  var col0 = buildColumn(data.nodeCounts.t0, PL);
+  var col1 = buildColumn(data.nodeCounts.t1, W - PR - NODE_W);
+
+  // Renderizar links
+  var linksHtml = '';
+  // Ordenar flows por tamanho decrescente para sobreposição
+  var flowEntries = Object.keys(data.flows).map(function(k){
+    var parts = k.split('::');
+    return { from: parts[0], to: parts[1], count: data.flows[k] };
+  }).sort(function(a,b){return b.count - a.count});
+
+  // Offsets para distribuir múltiplas fitas saindo do mesmo node
+  var fromOffsets = {}, toOffsets = {};
+  nodeOrder.forEach(function(s){ fromOffsets[s] = 0; toOffsets[s] = 0; });
+
+  flowEntries.forEach(function(f){
+    if (!f.count) return;
+    var n0 = col0[f.from], n1 = col1[f.to];
+    if (!n0 || !n1) return;
+    var thickness = nodeHeight(f.count);
+    var y0 = n0.y + fromOffsets[f.from] + thickness / 2;
+    var y1 = n1.y + toOffsets[f.to] + thickness / 2;
+    fromOffsets[f.from] += thickness;
+    toOffsets[f.to] += thickness;
+
+    var x0 = n0.x + n0.w, x1 = n1.x;
+    var cx0 = x0 + (x1 - x0) * 0.5;
+    var cx1 = x1 - (x1 - x0) * 0.5;
+    var path = 'M' + x0 + ',' + y0 + ' C' + cx0 + ',' + y0 + ' ' + cx1 + ',' + y1 + ' ' + x1 + ',' + y1;
+
+    var direction = stateRank[f.to] < stateRank[f.from] ? 'up' : stateRank[f.to] > stateRank[f.from] ? 'down' : 'same';
+    linksHtml += '<path class="sankey-link ' + direction + '" d="' + path + '" stroke-width="' + thickness.toFixed(1) + '"><title>' + nodeLabel[f.from] + ' → ' + nodeLabel[f.to] + ': ' + f.count + ' aluno(s)</title></path>';
+  });
+
+  // Renderizar nodes
+  var nodesHtml = '';
+  function renderCol(col, labelX, labelAnchor, headerText, headerX) {
+    nodesHtml += '<text class="sankey-label" x="' + headerX + '" y="' + (PT - 6) + '" text-anchor="middle" style="font-weight:700">' + headerText + '</text>';
+    nodeOrder.forEach(function(s){
+      var n = col[s];
+      if (!n.count) return;
+      nodesHtml += '<rect class="sankey-node state-' + s + '" x="' + n.x + '" y="' + n.y + '" width="' + n.w + '" height="' + n.h + '"/>';
+      var ty = n.y + n.h / 2 + 3;
+      nodesHtml += '<text class="sankey-label" x="' + labelX + '" y="' + ty + '" text-anchor="' + labelAnchor + '">' + nodeLabel[s] + ' (' + n.count + ')</text>';
+    });
+  }
+  renderCol(col0, PL - 6, 'end', 'Há 7 dias', PL + NODE_W / 2);
+  renderCol(col1, W - PR - NODE_W + NODE_W + 6, 'start', 'Agora', W - PR - NODE_W + NODE_W / 2);
+
+  container.innerHTML =
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + linksHtml + nodesHtml
+    + '</svg>'
+    + '<div class="dash-legend">'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#15803D"></span>Migração para melhor</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#9CA3AF"></span>Sem mudança</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#C8102E"></span>Piora</span>'
+    + '</div>';
+}
+
 function renderTimePerformanceScatter() {
   var rows = window._alunosRows || [];
   var pts = rows
@@ -2723,6 +3310,13 @@ async function renderAdmin() {
   renderCohortSurvival();
   renderConfidenceScatter();
   renderTimePerformanceScatter();
+
+  // 10) Onda 3B — anomaly / sankey / nudge
+  renderAnomalyList();
+  renderSankey();
+  renderNudgeQueue();
+  var nudgeSel = document.getElementById('nudge-category');
+  if (nudgeSel) nudgeSel.addEventListener('change', renderNudgeQueue);
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
