@@ -128,9 +128,11 @@
           <text x="285" y="205" font-size="12" font-style="italic">x</text>
           <text x="35" y="12" font-size="12" font-style="italic">y</text>
           <text x="28" y="205" font-size="10" fill="#666">0</text>
-          <!-- CI y=64/x (xy=64, ou seja u=8). Path via polyline de (2,32)→(16,4) -->
-          <path d="M 57,26 Q 90,50 100,85 Q 115,120 160,155 Q 200,175 270,190" fill="none" stroke="#C8102E" stroke-width="2"/>
-          <text x="195" y="165" font-size="11" fill="#C8102E" font-style="italic">CI: xy = 64</text>
+          <!-- CI: xy = 64 (u = sqrt(64) = 8). Polyline sobre y = 64/x de x=2 a x=16.
+               Escala: x→40+15x, y→200-5.5y. Estritamente convexa: y''(x)=128/x^3>0.
+               Passa exatamente por A=(4,16)→(100,112). -->
+          <path d="M 70,24 L 77.5,59.2 L 85,82.7 L 92.5,99.4 L 100,112 L 107.5,121.8 L 115,129.6 L 130,141.3 L 145,149.7 L 160,156 L 175,160.9 L 190,164.8 L 205,168 L 220,170.7 L 235,172.9 L 250,174.9 L 265,176.6 L 280,178" fill="none" stroke="#C8102E" stroke-width="2"/>
+          <text x="200" y="115" font-size="11" fill="#C8102E" font-style="italic">CI: xy = 64</text>
           <!-- Reta tangente: y = -4x + 32. Em x=0: y=32; em x=8: y=0. Escala x: 1un=15px; y: 1un=5.5px. Origem (40,200). Ponto x=0,y=32 → (40, 200-32*5.5)=(40, 24). x=8,y=0 → (40+8*15,200)=(160,200). -->
           <line x1="40" y1="24" x2="160" y2="200" stroke="#1B3A5C" stroke-width="1.5" stroke-dasharray="3,3"/>
           <text x="60" y="65" font-size="10" fill="#1B3A5C">tangente (coef: −4)</text>
