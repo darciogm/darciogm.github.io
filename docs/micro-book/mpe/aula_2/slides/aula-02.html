@@ -306,7 +306,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Lagrangiano e CPO</h2>
+<h2>Lagrangiano e CPO (1/2)</h2>
 <div class="eq-key">
 <p><span class="math display">\[
 \mathcal{L}(x, \lambda) = u(x) + \lambda\,(m - p \cdot x).
@@ -316,6 +316,12 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <p><span class="math display">\[
 \frac{\partial u}{\partial x_i} = \lambda\, p_i \quad (\forall i), \qquad p \cdot x = m.
 \]</span></p>
+<div class="bridge">
+<p><span class="math inline">\(n+1\)</span> equações em <span class="math inline">\(n+1\)</span> incógnitas <span class="math inline">\((x_1, \dots, x_n, \lambda)\)</span>. Próximo passo: ler a razão.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Tangência e leitura de <span class="math inline">\(\lambda^*\)</span> (2/2)</h2>
 <p><strong>Razão entre duas CPOs</strong> (a equação que entra no bolso):</p>
 <div class="eq-key">
 <p><span class="math display">\[
@@ -524,7 +530,7 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Identidade de Roy — prova em 4 linhas</h2>
+<h2>Roy — envelope (1/2)</h2>
 <p><strong>Envelope aplicado ao Lagrangiano <span class="math inline">\(\mathcal{L} = u(x) + \lambda(m - p \cdot x)\)</span>:</strong></p>
 <p><span class="math display">\[
 \frac{\partial v}{\partial p_i} = \frac{\partial \mathcal{L}}{\partial p_i}\bigg|_{x = x^M, \lambda = \lambda^*} = -\,\lambda^*\, x_i^M.
@@ -532,6 +538,12 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 <p><span class="math display">\[
 \frac{\partial v}{\partial m} = \frac{\partial \mathcal{L}}{\partial m}\bigg|_{x = x^M, \lambda = \lambda^*} = \lambda^*.
 \]</span></p>
+<div class="bridge">
+<p>Duas derivadas parciais de <span class="math inline">\(v\)</span> pela conta do envelope. Próximo: dividir e ver a mágica acontecer.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Roy — divisão cancela <span class="math inline">\(\lambda^*\)</span> (2/2)</h2>
 <p><strong>Divida:</strong></p>
 <p><span class="math display">\[
 -\,\frac{\partial v/\partial p_i}{\partial v/\partial m} = -\,\frac{-\lambda^* x_i^M}{\lambda^*} = x_i^M. \quad \blacksquare
@@ -541,20 +553,28 @@ v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Roy em Cobb-Douglas — verificar a mão</h2>
-<p><strong>Passo 1 — achar <span class="math inline">\(v\)</span>.</strong> Substituir <span class="math inline">\(x^M = (\alpha m / p_1, (1-\alpha)m / p_2)\)</span> em <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>:</p>
+<h2>Roy em Cobb-Douglas (1/2) — achar <span class="math inline">\(v\)</span></h2>
+<p><strong>Passo 1 — substituir <span class="math inline">\(x^M\)</span> em <span class="math inline">\(u\)</span>.</strong> Com <span class="math inline">\(x^M = (\alpha m / p_1, (1-\alpha)m / p_2)\)</span> e <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>:</p>
 <div class="eq-key">
 <p><span class="math display">\[
 v(p, m) = m \cdot \frac{\alpha^\alpha (1-\alpha)^{1-\alpha}}{p_1^\alpha\, p_2^{1-\alpha}}.
 \]</span></p>
 </div>
-<p><strong>Passo 2 — aplicar Roy para recuperar <span class="math inline">\(x_1^M\)</span>:</strong></p>
+<div class="bridge">
+<p>Observe a forma: <span class="math inline">\(v = m \cdot \phi(p)\)</span> — a renda sai como fator multiplicativo. Voltamos a isso no próximo slide; aqui, só precisamos da fórmula para derivar.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Roy em Cobb-Douglas (2/2) — aplicar a derivada</h2>
+<p><strong>Passo 2 — as duas parciais:</strong></p>
 <p><span class="math display">\[
 \partial v / \partial p_1 = -\alpha \cdot \frac{v}{p_1}, \qquad \partial v / \partial m = \frac{v}{m}.
 \]</span></p>
+<p><strong>Passo 3 — dividir conforme Roy:</strong></p>
 <p><span class="math display">\[
 x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmark
 \]</span></p>
+<p><strong>Bate com a Marshalliana direta</strong> do bloco anterior. Derivada ≠ truque: <strong>é</strong> a demanda.</p>
 </section>
 <section class="slide level2 center">
 <h2>Por que <span class="math inline">\(v\)</span> fatoriza em Cobb-Douglas?</h2>
@@ -593,20 +613,27 @@ x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmar
 </div>
 </section>
 <section class="slide level2 center">
-<h2>O problema dual — EMP</h2>
+<h2>O problema dual — EMP (1/2)</h2>
 <div class="card">
 <p><strong>Enunciado.</strong> <span class="math display">\[
 \min_{x \in \mathbb{R}^n_+} p \cdot x \quad \text{s.a.} \quad u(x) \geq \bar{u}.
 \]</span></p>
 </div>
 <p><strong>Hipóteses:</strong> mesma família do UMP (continuidade, quasiconcavidade, monotonicidade).</p>
-<p><strong>Saídas:</strong></p>
+<div class="bridge">
+<p>O EMP inverte o papel: agora utilidade é <em>restrição</em> (piso <span class="math inline">\(\bar u\)</span>) e o gasto é o <em>objeto</em> a minimizar. Duas saídas novas, no próximo slide.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>EMP — Hicksiana e gasto (2/2)</h2>
+<p><strong>Saídas do EMP:</strong></p>
 <p><span class="math display">\[
 h(p, \bar{u}) = \arg\min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(Hicksiana / compensada)}.
 \]</span></p>
 <p><span class="math display">\[
 e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(função gasto)}.
 \]</span></p>
+<p><strong>Paralelo com o UMP:</strong> <span class="math inline">\(h\)</span> é <em>a escolha</em> (como <span class="math inline">\(x^M\)</span>); <span class="math inline">\(e\)</span> é <em>o valor</em> do problema (como <span class="math inline">\(v\)</span>). Mesma estrutura — direção oposta.</p>
 </section>
 <section class="slide level2 center">
 <h2>EMP — Lagrangiano e CPO</h2>
@@ -704,18 +731,24 @@ e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \qu
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Shephard em Cobb-Douglas — verificar a mão</h2>
-<p><strong>Passo 1 — achar <span class="math inline">\(e\)</span> por <em>inversão de Roy</em>.</strong> Use <span class="math inline">\(v = m \cdot \phi(p)\)</span> e imponha <span class="math inline">\(v(p, e) = \bar u\)</span>:</p>
+<h2>Shephard em Cobb-Douglas (1/2) — achar <span class="math inline">\(e\)</span></h2>
+<p><strong>Passo 1 — inversão de Roy.</strong> Use <span class="math inline">\(v = m \cdot \phi(p)\)</span> e imponha <span class="math inline">\(v(p, e) = \bar u\)</span>. Isolando <span class="math inline">\(e\)</span>:</p>
 <div class="eq-key">
 <p><span class="math display">\[
 e(p, \bar u) = \bar u \cdot \frac{p_1^{\alpha}\, p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}.
 \]</span></p>
 </div>
-<p><strong>Passo 2 — aplicar Shephard:</strong></p>
+<div class="bridge">
+<p>É a imagem-espelho de <span class="math inline">\(v\)</span>: troque <span class="math inline">\(m \leftrightarrow \bar u\)</span> e inverta <span class="math inline">\(\phi(p)\)</span>. A homotetia de CD faz o trabalho pesado.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Shephard em Cobb-Douglas (2/2) — aplicar a derivada</h2>
+<p><strong>Passo 2 — derivar <span class="math inline">\(e\)</span> em <span class="math inline">\(p_1\)</span>:</strong></p>
 <p><span class="math display">\[
 h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha - 1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}} = \alpha\, \frac{e}{p_1}.
 \]</span></p>
-<p><strong>Compare com <span class="math inline">\(x_1^M = \alpha m / p_1\)</span>:</strong> quando <span class="math inline">\(\bar u = v(p, m)\)</span>, <span class="math inline">\(e = m\)</span>, logo <span class="math inline">\(h_1 = x_1^M\)</span>. <em>Prévia da dualidade.</em></p>
+<p><strong>Compare com <span class="math inline">\(x_1^M = \alpha m / p_1\)</span>:</strong> quando <span class="math inline">\(\bar u = v(p, m)\)</span>, <span class="math inline">\(e = m\)</span>, logo <span class="math inline">\(h_1 = x_1^M\)</span>. <em>Prévia da dualidade</em> — essa calibração é o tema do Bloco 4.</p>
 </section>
 <section class="slide level2 pause-slide center" data-background-color="#F7F7F5">
 <h2>Pausa 2 — 10 minutos</h2>
@@ -764,7 +797,7 @@ h_i(p, \bar u) = x_i^M\big(p,\ e(p, \bar u)\big).
 <p><strong>Como é usado em Slutsky (Aula 3):</strong> derivar a primeira identidade em <span class="math inline">\(p_j\)</span>; substituir Roy; rearrumar. Sai a equação de Slutsky quase sozinha.</p>
 </section>
 <section class="slide level2 center">
-<h2>Diagrama 3 — recuperações via derivada</h2>
+<h2>Diagrama 3 — Roy e Shephard lado a lado (1/2)</h2>
 <div class="cols">
 <div>
 <p><strong>Roy</strong> (da indireta à Marshalliana): <span class="math display">\[
@@ -777,7 +810,13 @@ h_i = \frac{\partial e}{\partial p_i}.
 \]</span></p>
 </div>
 </div>
-<div class="compact-table" style="margin-top: 0.8em;">
+<div class="eq-punch">
+<p>Duas funções “resumo”, duas derivadas, duas demandas.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Diagrama 3 — quadro-resumo (2/2)</h2>
+<div class="compact-table">
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -803,8 +842,8 @@ h_i = \frac{\partial e}{\partial p_i}.
 </tbody>
 </table>
 </div>
-<div class="eq-punch">
-<p>Duas funções “resumo”, duas derivadas, duas demandas.</p>
+<div class="bridge">
+<p><strong>Operacionalmente:</strong> em econometria estrutural, estima-se <span class="math inline">\(v\)</span> (ou <span class="math inline">\(e\)</span>) paramétrica e <strong>recupera</strong> a demanda por derivada. É o esqueleto da AIDS, QUAIDS, translog. Álgebra hoje, papers amanhã.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -950,7 +989,7 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} =
 </div>
 </section>
 <section class="slide level2 center">
-<h2>O que o Alberto vai aprofundar na Monitoria 1</h2>
+<h2>Monitoria 1 — extensões teóricas (1/2)</h2>
 <div class="cols">
 <div>
 <p><strong>1. Dualidade em CES completa</strong></p>
@@ -961,7 +1000,13 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} =
 <p>Derivar a equação de Slutsky a partir da identidade <span class="math inline">\(x^M(p, m) = h(p, v(p, m))\)</span> + Roy + Shephard. Duas linhas.</p>
 </div>
 </div>
-<div class="cols" style="margin-top: 0.8em;">
+<div class="bridge">
+<p>Teoria pura: CES fecha o ciclo da álgebra de hoje; Slutsky <em>derivada</em> é o elo entre Aula 2 e Aula 3.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Monitoria 1 — extensões aplicadas (2/2)</h2>
+<div class="cols">
 <div>
 <p><strong>3. Quasilinear em canto</strong></p>
 <p>O que sobrevive de Roy/Shephard quando <span class="math inline">\(x_2^M = 0\)</span>. Fronteira do interior.</p>

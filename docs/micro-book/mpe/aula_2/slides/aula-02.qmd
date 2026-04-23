@@ -175,7 +175,7 @@ Sem continuidade, o supremo pode não ser atingido — lembram da lex? É onde o
 
 ---
 
-## Lagrangiano e CPO
+## Lagrangiano e CPO (1/2)
 
 ::: {.eq-key}
 $$
@@ -188,6 +188,14 @@ $$
 $$
 \frac{\partial u}{\partial x_i} = \lambda\, p_i \quad (\forall i), \qquad p \cdot x = m.
 $$
+
+::: {.bridge}
+$n+1$ equações em $n+1$ incógnitas $(x_1, \dots, x_n, \lambda)$. Próximo passo: ler a razão.
+:::
+
+---
+
+## Tangência e leitura de $\lambda^*$ (2/2)
 
 **Razão entre duas CPOs** (a equação que entra no bolso):
 
@@ -410,7 +418,7 @@ Se você tem $v$, você tem a demanda.
 
 ---
 
-## Identidade de Roy — prova em 4 linhas
+## Roy — envelope (1/2)
 
 **Envelope aplicado ao Lagrangiano $\mathcal{L} = u(x) + \lambda(m - p \cdot x)$:**
 
@@ -421,6 +429,14 @@ $$
 $$
 \frac{\partial v}{\partial m} = \frac{\partial \mathcal{L}}{\partial m}\bigg|_{x = x^M, \lambda = \lambda^*} = \lambda^*.
 $$
+
+::: {.bridge}
+Duas derivadas parciais de $v$ pela conta do envelope. Próximo: dividir e ver a mágica acontecer.
+:::
+
+---
+
+## Roy — divisão cancela $\lambda^*$ (2/2)
 
 **Divida:**
 
@@ -434,9 +450,9 @@ O $\lambda^*$ **cancela** — é por isso que Roy "funciona" sem precisar calcul
 
 ---
 
-## Roy em Cobb-Douglas — verificar a mão
+## Roy em Cobb-Douglas (1/2) — achar $v$
 
-**Passo 1 — achar $v$.** Substituir $x^M = (\alpha m / p_1, (1-\alpha)m / p_2)$ em $u = x_1^\alpha x_2^{1-\alpha}$:
+**Passo 1 — substituir $x^M$ em $u$.** Com $x^M = (\alpha m / p_1, (1-\alpha)m / p_2)$ e $u = x_1^\alpha x_2^{1-\alpha}$:
 
 ::: {.eq-key}
 $$
@@ -444,15 +460,27 @@ v(p, m) = m \cdot \frac{\alpha^\alpha (1-\alpha)^{1-\alpha}}{p_1^\alpha\, p_2^{1
 $$
 :::
 
-**Passo 2 — aplicar Roy para recuperar $x_1^M$:**
+::: {.bridge}
+Observe a forma: $v = m \cdot \phi(p)$ — a renda sai como fator multiplicativo. Voltamos a isso no próximo slide; aqui, só precisamos da fórmula para derivar.
+:::
+
+---
+
+## Roy em Cobb-Douglas (2/2) — aplicar a derivada
+
+**Passo 2 — as duas parciais:**
 
 $$
 \partial v / \partial p_1 = -\alpha \cdot \frac{v}{p_1}, \qquad \partial v / \partial m = \frac{v}{m}.
 $$
 
+**Passo 3 — dividir conforme Roy:**
+
 $$
 x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmark
 $$
+
+**Bate com a Marshalliana direta** do bloco anterior. Derivada ≠ truque: **é** a demanda.
 
 ---
 
@@ -505,7 +533,7 @@ Primal → dual · Hicksiana $h$ · gasto $e$ · Shephard como derivada.
 
 ---
 
-## O problema dual — EMP
+## O problema dual — EMP (1/2)
 
 ::: {.card}
 **Enunciado.**
@@ -516,7 +544,15 @@ $$
 
 **Hipóteses:** mesma família do UMP (continuidade, quasiconcavidade, monotonicidade).
 
-**Saídas:**
+::: {.bridge}
+O EMP inverte o papel: agora utilidade é *restrição* (piso $\bar u$) e o gasto é o *objeto* a minimizar. Duas saídas novas, no próximo slide.
+:::
+
+---
+
+## EMP — Hicksiana e gasto (2/2)
+
+**Saídas do EMP:**
 
 $$
 h(p, \bar{u}) = \arg\min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(Hicksiana / compensada)}.
@@ -525,6 +561,8 @@ $$
 $$
 e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(função gasto)}.
 $$
+
+**Paralelo com o UMP:** $h$ é *a escolha* (como $x^M$); $e$ é *o valor* do problema (como $v$). Mesma estrutura — direção oposta.
 
 ---
 
@@ -610,9 +648,9 @@ Subir $p_i$ em $\Delta$; consumidor ajusta $x_i$ para manter $\bar u$. O ajuste 
 
 ---
 
-## Shephard em Cobb-Douglas — verificar a mão
+## Shephard em Cobb-Douglas (1/2) — achar $e$
 
-**Passo 1 — achar $e$ por *inversão de Roy*.** Use $v = m \cdot \phi(p)$ e imponha $v(p, e) = \bar u$:
+**Passo 1 — inversão de Roy.** Use $v = m \cdot \phi(p)$ e imponha $v(p, e) = \bar u$. Isolando $e$:
 
 ::: {.eq-key}
 $$
@@ -620,13 +658,21 @@ e(p, \bar u) = \bar u \cdot \frac{p_1^{\alpha}\, p_2^{1-\alpha}}{\alpha^\alpha (
 $$
 :::
 
-**Passo 2 — aplicar Shephard:**
+::: {.bridge}
+É a imagem-espelho de $v$: troque $m \leftrightarrow \bar u$ e inverta $\phi(p)$. A homotetia de CD faz o trabalho pesado.
+:::
+
+---
+
+## Shephard em Cobb-Douglas (2/2) — aplicar a derivada
+
+**Passo 2 — derivar $e$ em $p_1$:**
 
 $$
 h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha - 1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}} = \alpha\, \frac{e}{p_1}.
 $$
 
-**Compare com $x_1^M = \alpha m / p_1$:** quando $\bar u = v(p, m)$, $e = m$, logo $h_1 = x_1^M$. *Prévia da dualidade.*
+**Compare com $x_1^M = \alpha m / p_1$:** quando $\bar u = v(p, m)$, $e = m$, logo $h_1 = x_1^M$. *Prévia da dualidade* — essa calibração é o tema do Bloco 4.
 
 ---
 
@@ -692,7 +738,7 @@ $$
 
 ---
 
-## Diagrama 3 — recuperações via derivada
+## Diagrama 3 — Roy e Shephard lado a lado (1/2)
 
 ::: {.cols}
 ::: {}
@@ -709,15 +755,23 @@ $$
 :::
 :::
 
-::: {.compact-table style="margin-top: 0.8em;"}
+::: {.eq-punch}
+Duas funções "resumo", duas derivadas, duas demandas.
+:::
+
+---
+
+## Diagrama 3 — quadro-resumo (2/2)
+
+::: {.compact-table}
 | Função | Dado | Derivada extrai | Identidade |
 |:---|:---|:---|:---|
 | $v(p, m)$ | preços + renda | $x^M$ | Roy |
 | $e(p, \bar u)$ | preços + utilidade | $h$ | Shephard |
 :::
 
-::: {.eq-punch}
-Duas funções "resumo", duas derivadas, duas demandas.
+::: {.bridge}
+**Operacionalmente:** em econometria estrutural, estima-se $v$ (ou $e$) paramétrica e **recupera** a demanda por derivada. É o esqueleto da AIDS, QUAIDS, translog. Álgebra hoje, papers amanhã.
 :::
 
 ---
@@ -867,7 +921,7 @@ $$
 
 ---
 
-## O que o Alberto vai aprofundar na Monitoria 1
+## Monitoria 1 — extensões teóricas (1/2)
 
 ::: {.cols}
 ::: {}
@@ -882,7 +936,15 @@ Derivar a equação de Slutsky a partir da identidade $x^M(p, m) = h(p, v(p, m))
 :::
 :::
 
-::: {.cols style="margin-top: 0.8em;"}
+::: {.bridge}
+Teoria pura: CES fecha o ciclo da álgebra de hoje; Slutsky *derivada* é o elo entre Aula 2 e Aula 3.
+:::
+
+---
+
+## Monitoria 1 — extensões aplicadas (2/2)
+
+::: {.cols}
 ::: {}
 **3. Quasilinear em canto**
 
