@@ -183,7 +183,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <div class="callout callout-none no-icon callout-style-simple">
 <div class="callout-body">
 <div class="callout-content">
-<p>Na Aula 1, existe (u). Hoje, (u) vira problema de otimização — e o problema tem quatro filhos.</p>
+<p>Na Aula 1, existe <span class="math inline">\(u\)</span>. Hoje, <span class="math inline">\(u\)</span> vira problema de otimização — e o problema tem quatro filhos.</p>
 </div>
 </div>
 </div>
@@ -193,14 +193,14 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <h2>Contrato da aula</h2>
 <h3>Objetivo único</h3>
 <blockquote>
-<p>Derivar com rigor UMP e EMP, reconhecer (x^M, v, h, e) como objetos de primeira classe, e aplicar <strong>Roy</strong> e <strong>Shephard</strong> como derivadas — não como mágica.</p>
+<p>Derivar com rigor UMP e EMP, reconhecer <span class="math inline">\(x^M, v, h, e\)</span> como objetos de primeira classe, e aplicar <strong>Roy</strong> e <strong>Shephard</strong> como derivadas — não como mágica.</p>
 </blockquote>
 <div class="fragment">
 <h3>O que assumo da pré-aula 2</h3>
 <ul>
 <li>ZaE cap. 4 lido com <strong>papel e caneta</strong>.</li>
 <li>N&amp;S 12e §§4.1–4.7 visitado.</li>
-<li>Exercícios propostos 1 e 2 (CES (/2), CD 3D) <strong>no papel</strong> — conferimos rapidamente hoje.</li>
+<li>Exercícios propostos 1 e 2 (CES <span class="math inline">\(\rho=1/2\)</span>, CD 3D) <strong>no papel</strong> — conferimos rapidamente hoje.</li>
 <li>9 seções da plataforma concluídas + quiz pré-aula (10🟡) submetido.</li>
 </ul>
 </div>
@@ -236,12 +236,12 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </tr>
 <tr class="even">
 <td style="text-align: left;">2</td>
-<td style="text-align: left;">(v(p,m)) e Identidade de <strong>Roy</strong></td>
+<td style="text-align: left;"><span class="math inline">\(v(p,m)\)</span> e Identidade de <strong>Roy</strong></td>
 <td style="text-align: right;">20:35–21:10</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">3</td>
-<td style="text-align: left;">EMP, (e(p,u)), Hicksiana e lema de <strong>Shephard</strong></td>
+<td style="text-align: left;">EMP, <span class="math inline">\(e(p,u)\)</span>, Hicksiana e lema de <strong>Shephard</strong></td>
 <td style="text-align: right;">21:10–21:40</td>
 </tr>
 <tr class="even">
@@ -268,9 +268,9 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Recall da Aula 1 em 60 segundos</h2>
 <div class="eq-key">
-<p>Preferência () axiomas (1)–(3) () existe (u: X ) contínua representando ().</p>
+<p>Preferência <span class="math inline">\(\succeq\)</span> axiomas (1)–(3) <span class="math inline">\(\xrightarrow{\text{Debreu}}\)</span> existe <span class="math inline">\(u: X \to \mathbb{R}\)</span> contínua representando <span class="math inline">\(\succeq\)</span>.</p>
 </div>
-<p><strong>Passo que falta:</strong> dar a (u) <strong>preços</strong> e <strong>renda</strong>, e pedir o melhor pacote.</p>
+<p><strong>Passo que falta:</strong> dar a <span class="math inline">\(u\)</span> <strong>preços</strong> e <strong>renda</strong>, e pedir o melhor pacote.</p>
 <div class="eq-punch">
 <p>Axiomas entregam a função. Mercado entrega o problema.</p>
 </div>
@@ -290,14 +290,16 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>O problema primal — UMP</h2>
 <div class="card">
-<p><strong>Enunciado.</strong> [ <em>{x ^n</em>+} u(x) p x m. ]</p>
+<p><strong>Enunciado.</strong> <span class="math display">\[
+\max_{x \in \mathbb{R}^n_+} u(x) \quad \text{s.a.} \quad p \cdot x \leq m.
+\]</span></p>
 </div>
 <p><strong>Hipóteses standard:</strong></p>
 <ul>
-<li>(p ), (m &gt; 0) (preços e renda positivos).</li>
-<li>(u) <strong>contínua</strong> (axioma 3): garante Weierstrass — máximo <em>é atingido</em>.</li>
-<li>(u) <strong>quasicôncava</strong>: conjunto superior convexo — solução interior única (sob hipóteses extras).</li>
-<li>(u) <strong>monotônica</strong> (ou NSL): restrição <strong>ativa</strong> no ótimo — (p x^* = m).</li>
+<li><span class="math inline">\(p \gg 0\)</span>, <span class="math inline">\(m &gt; 0\)</span> (preços e renda positivos).</li>
+<li><span class="math inline">\(u\)</span> <strong>contínua</strong> (axioma 3): garante Weierstrass — máximo <em>é atingido</em>.</li>
+<li><span class="math inline">\(u\)</span> <strong>quasicôncava</strong>: conjunto superior convexo — solução interior única (sob hipóteses extras).</li>
+<li><span class="math inline">\(u\)</span> <strong>monotônica</strong> (ou NSL): restrição <strong>ativa</strong> no ótimo — <span class="math inline">\(p \cdot x^* = m\)</span>.</li>
 </ul>
 <div class="bridge">
 <p>Sem continuidade, o supremo pode não ser atingido — lembram da lex? É onde o modelo “escorrega” numericamente.</p>
@@ -306,25 +308,31 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Lagrangiano e CPO</h2>
 <div class="eq-key">
-<p>[ (x, ) = u(x) + ,(m - p x). ]</p>
+<p><span class="math display">\[
+\mathcal{L}(x, \lambda) = u(x) + \lambda\,(m - p \cdot x).
+\]</span></p>
 </div>
 <p><strong>CPO interiores:</strong></p>
-<p>[ = , p_i (i), p x = m. ]</p>
+<p><span class="math display">\[
+\frac{\partial u}{\partial x_i} = \lambda\, p_i \quad (\forall i), \qquad p \cdot x = m.
+\]</span></p>
 <p><strong>Razão entre duas CPOs</strong> (a equação que entra no bolso):</p>
 <div class="eq-key">
-<p>[ = _{ij} = . ]</p>
+<p><span class="math display">\[
+\frac{u_i}{u_j} = \frac{p_i}{p_j} \iff \text{TMS}_{ij} = \frac{p_i}{p_j}. \tag{tangência}
+\]</span></p>
 </div>
 <div class="fragment">
-<p>**(^*) tem leitura econômica:<strong> utilidade marginal da renda. Aparece na </strong>Identidade de Roy** (Bloco 2).</p>
+<p><strong><span class="math inline">\(\lambda^*\)</span> tem leitura econômica:</strong> utilidade marginal da renda. Aparece na <strong>Identidade de Roy</strong> (Bloco 2).</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Geometria da tangência</h2>
 <div class="cols">
 <div>
-<p><strong>Reta orçamentária:</strong> (p_1 x_1 + p_2 x_2 = m).</p>
-<p><strong>Curva de indiferença:</strong> (u(x_1, x_2) = {u}).</p>
-<p><strong>Ótimo interior:</strong> as duas se tocam com a mesma inclinação — ( = p_1/p_2).</p>
+<p><strong>Reta orçamentária:</strong> <span class="math inline">\(p_1 x_1 + p_2 x_2 = m\)</span>.</p>
+<p><strong>Curva de indiferença:</strong> <span class="math inline">\(u(x_1, x_2) = \bar{u}\)</span>.</p>
+<p><strong>Ótimo interior:</strong> as duas se tocam com a mesma inclinação — <span class="math inline">\(\text{TMS} = p_1/p_2\)</span>.</p>
 </div>
 <div>
 <div class="eq-punch">
@@ -337,28 +345,36 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>UMP em Cobb-Douglas — template canônico</h2>
 <div class="card">
-<p><strong>Função.</strong> (u(x_1, x_2) = x_1^{} x_2^{1-}, (0, 1).)</p>
+<p><strong>Função.</strong> <span class="math inline">\(u(x_1, x_2) = x_1^{\alpha} x_2^{1-\alpha}, \quad \alpha \in (0, 1).\)</span></p>
 </div>
-<p><strong>Caminho 1 — tangência:</strong> [ = . ]</p>
-<p>Combine com (p_1 x_1 + p_2 x_2 = m):</p>
+<p><strong>Caminho 1 — tangência:</strong> <span class="math display">\[
+\frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
+\]</span></p>
+<p>Combine com <span class="math inline">\(p_1 x_1 + p_2 x_2 = m\)</span>:</p>
 <div class="eq-key">
-<p>[ ]</p>
+<p><span class="math display">\[
+\boxed{\;x_1^M(p, m) = \frac{\alpha\, m}{p_1}, \qquad x_2^M(p, m) = \frac{(1-\alpha)\,m}{p_2}.\;}
+\]</span></p>
 </div>
-<p><strong>Parcelas de gasto:</strong> (p_i x_i^M / m = , 1-) — <strong>constantes</strong>. Rastro de homotetia.</p>
+<p><strong>Parcelas de gasto:</strong> <span class="math inline">\(p_i x_i^M / m = \alpha, 1-\alpha\)</span> — <strong>constantes</strong>. Rastro de homotetia.</p>
 </section>
 <section class="slide level2 center">
 <h2>Cobb-Douglas via log — ordinalidade de novo (1/2)</h2>
-<p>Lembra da Aula 1? (v = u) representa a <strong>mesma</strong> preferência. Lagrangiano vira linear em logs:</p>
-<p>[ = x_1 + (1-) x_2 + ,(m - p_1 x_1 - p_2 x_2). ]</p>
-<p>CPO é divisão limpa: [ = p_1, = p_2. ]</p>
-<p>Somando após multiplicar por (x_i): (+ (1-) = m) ⇒ (^* = 1/m).</p>
+<p>Lembra da Aula 1? <span class="math inline">\(v = \ln u\)</span> representa a <strong>mesma</strong> preferência. Lagrangiano vira linear em logs:</p>
+<p><span class="math display">\[
+\mathcal{L} = \alpha \ln x_1 + (1-\alpha) \ln x_2 + \lambda\,(m - p_1 x_1 - p_2 x_2).
+\]</span></p>
+<p>CPO é divisão limpa: <span class="math display">\[
+\frac{\alpha}{x_1} = \lambda p_1, \qquad \frac{1-\alpha}{x_2} = \lambda p_2.
+\]</span></p>
+<p>Somando após multiplicar por <span class="math inline">\(x_i\)</span>: <span class="math inline">\(\alpha + (1-\alpha) = \lambda \cdot m\)</span> ⇒ <span class="math inline">\(\lambda^* = 1/m\)</span>.</p>
 <div class="eq-punch">
 <p>Ordinalidade não é luxo — é como a álgebra fica calma.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Cobb-Douglas via log — ordinalidade de novo (2/2)</h2>
-<p>**Por que o (^*) mudou?** Porque a escala cardinal mudou.</p>
+<p><strong>Por que o <span class="math inline">\(\lambda^*\)</span> mudou?</strong> Porque a escala cardinal mudou.</p>
 <div class="callout callout-note callout-titled callout-style-default">
 <div class="callout-body">
 <div class="callout-title">
@@ -368,43 +384,43 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <p><strong>Nota</strong></p>
 </div>
 <div class="callout-content">
-<p>Esse (^* = 1/m) é o multiplicador da <strong>log-forma</strong> (u).</p>
-<p>Na forma direta (u = x_1<sup>x_2</sup>{1-}), o (^*) canônico vale (v/m).</p>
-<p>Ordinalidade preserva o ótimo (x^M), <strong>não</strong> o valor numérico de (^*).</p>
+<p>Esse <span class="math inline">\(\lambda^* = 1/m\)</span> é o multiplicador da <strong>log-forma</strong> <span class="math inline">\(\ln u\)</span>.</p>
+<p>Na forma direta <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>, o <span class="math inline">\(\lambda^*\)</span> canônico vale <span class="math inline">\(v/m\)</span>.</p>
+<p>Ordinalidade preserva o ótimo <span class="math inline">\(x^M\)</span>, <strong>não</strong> o valor numérico de <span class="math inline">\(\lambda^*\)</span>.</p>
 </div>
 </div>
 </div>
 <p><strong>O que sobrevive intacto à transformação monotônica:</strong></p>
 <ul>
-<li>A razão (u_i/u_j) (condição de tangência).</li>
+<li>A razão <span class="math inline">\(u_i/u_j\)</span> (condição de tangência).</li>
 <li>A Identidade de Roy (Bloco 2), via Teorema do Envelope.</li>
 </ul>
 <div class="bridge">
-<p>Valor absoluto de (^*) é calibração. Tangência e Roy são <strong>estrutura</strong>.</p>
+<p>Valor absoluto de <span class="math inline">\(\lambda^*\)</span> é calibração. Tangência e Roy são <strong>estrutura</strong>.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Propriedades da Marshalliana (x^M(p, m)) (1/2)</h2>
+<h2>Propriedades da Marshalliana <span class="math inline">\(x^M(p, m)\)</span> (1/2)</h2>
 <div class="card">
-<p><strong>(M1) Homogeneidade de grau 0</strong> em ((p, m)): (x^M(p, m) = x^M(p, m)).</p>
+<p><strong>(M1) Homogeneidade de grau 0</strong> em <span class="math inline">\((p, m)\)</span>: <span class="math inline">\(x^M(\lambda p, \lambda m) = x^M(p, m)\)</span>.</p>
 </div>
-<p><strong>Por quê:</strong> escalar preços e renda por () não muda o conjunto orçamentário. Escolha ótima é a mesma.</p>
+<p><strong>Por quê:</strong> escalar preços e renda por <span class="math inline">\(\lambda\)</span> não muda o conjunto orçamentário. Escolha ótima é a mesma.</p>
 <div class="card">
-<p><strong>(M2) Walras (lei de ocupação):</strong> (p x^M(p, m) = m).</p>
+<p><strong>(M2) Walras (lei de ocupação):</strong> <span class="math inline">\(p \cdot x^M(p, m) = m\)</span>.</p>
 </div>
-<p><strong>Por quê:</strong> monotonicidade de (u) (ou NSL) ⇒ consumidor gasta tudo no ótimo.</p>
+<p><strong>Por quê:</strong> monotonicidade de <span class="math inline">\(u\)</span> (ou NSL) ⇒ consumidor gasta tudo no ótimo.</p>
 <div class="bridge">
 <p>M1 é simetria. M2 é esgotamento. Juntas, são a geometria da tangência.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Propriedades da Marshalliana (x^M(p, m)) (2/2)</h2>
+<h2>Propriedades da Marshalliana <span class="math inline">\(x^M(p, m)\)</span> (2/2)</h2>
 <div class="card">
-<p><strong>(M3) Continuidade:</strong> onde (u) é quasicôncava estrita e a solução é única, (x^M) é contínua em ((p, m)) (Teorema do Máximo, Berge).</p>
+<p><strong>(M3) Continuidade:</strong> onde <span class="math inline">\(u\)</span> é quasicôncava estrita e a solução é única, <span class="math inline">\(x^M\)</span> é contínua em <span class="math inline">\((p, m)\)</span> (Teorema do Máximo, Berge).</p>
 </div>
-<p><strong>Por quê:</strong> pequenas perturbações em (p) ou (m) movem o ótimo continuamente — não há saltos, sob unicidade.</p>
+<p><strong>Por quê:</strong> pequenas perturbações em <span class="math inline">\(p\)</span> ou <span class="math inline">\(m\)</span> movem o ótimo continuamente — não há saltos, sob unicidade.</p>
 <div class="bridge">
-<p><strong>Diferenciabilidade</strong> de (x^M) é um passo a mais — exige Hessiano bordado não-degenerado. Assumido no curso; justificado em J-R §1.4.</p>
+<p><strong>Diferenciabilidade</strong> de <span class="math inline">\(x^M\)</span> é um passo a mais — exige Hessiano bordado não-degenerado. Assumido no curso; justificado em J-R §1.4.</p>
 </div>
 <div class="eq-punch">
 <p>Homogeneidade, Walras, continuidade. Três escudos básicos — todo resto deriva daqui.</p>
@@ -413,14 +429,16 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Da Marshalliana à função indireta</h2>
 <div class="eq-key">
-<p>[ v(p, m) = u(x^M(p, m)) = _{p x m} u(x). ]</p>
+<p><span class="math display">\[
+v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
+\]</span></p>
 </div>
-<p><strong>Leitura:</strong> (x^M) é <em>a escolha</em>; (v) é <em>o nível</em> de utilidade que essa escolha atinge.</p>
+<p><strong>Leitura:</strong> <span class="math inline">\(x^M\)</span> é <em>a escolha</em>; <span class="math inline">\(v\)</span> é <em>o nível</em> de utilidade que essa escolha atinge.</p>
 <div class="fragment">
-<p><strong>Pergunta útil:</strong> como varia (v) com preços e renda?</p>
+<p><strong>Pergunta útil:</strong> como varia <span class="math inline">\(v\)</span> com preços e renda?</p>
 <ul>
-<li>(v/m &gt; 0): mais renda ⇒ mais bem-estar.</li>
-<li>(v/p_i &lt; 0): preço maior ⇒ menos bem-estar.</li>
+<li><span class="math inline">\(\partial v/\partial m &gt; 0\)</span>: mais renda ⇒ mais bem-estar.</li>
+<li><span class="math inline">\(\partial v/\partial p_i &lt; 0\)</span>: preço maior ⇒ menos bem-estar.</li>
 </ul>
 <p>E uma combinação específica dessas duas derivadas <strong>é</strong> a Marshalliana.</p>
 </div>
@@ -435,7 +453,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </div>
 </section>
 <section class="slide level2 section-divider center" data-background-color="#C8102E">
-<h2>Bloco 2 — Indireta (v(p,m)) e Roy</h2>
+<h2>Bloco 2 — Indireta <span class="math inline">\(v(p,m)\)</span> e Roy</h2>
 <div style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;">
 <p>35 min · 20:35–21:10</p>
 </div>
@@ -444,7 +462,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>As cinco propriedades de (v(p, m))</h2>
+<h2>As cinco propriedades de <span class="math inline">\(v(p, m)\)</span></h2>
 <div class="compact-table">
 <table class="caption-top">
 <colgroup>
@@ -462,22 +480,22 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <tbody>
 <tr class="odd">
 <td>P1</td>
-<td><strong>Homogênea de grau 0</strong> em ((p, m))</td>
-<td>herda de (x^M)</td>
+<td><strong>Homogênea de grau 0</strong> em <span class="math inline">\((p, m)\)</span></td>
+<td>herda de <span class="math inline">\(x^M\)</span></td>
 </tr>
 <tr class="even">
 <td>P2</td>
-<td><strong>Decrescente em cada (p_i), crescente em (m)</strong></td>
+<td><strong>Decrescente em cada <span class="math inline">\(p_i\)</span>, crescente em <span class="math inline">\(m\)</span></strong></td>
 <td>inclusão de conjuntos orçamentários</td>
 </tr>
 <tr class="odd">
 <td>P3</td>
-<td><strong>Quasiconvexa em (p)</strong></td>
+<td><strong>Quasiconvexa em <span class="math inline">\(p\)</span></strong></td>
 <td>minimax na preferência</td>
 </tr>
 <tr class="even">
 <td>P4</td>
-<td><strong>Contínua</strong> em ((p, m)) onde (p , m &gt; 0)</td>
+<td><strong>Contínua</strong> em <span class="math inline">\((p, m)\)</span> onde <span class="math inline">\(p \gg 0, m &gt; 0\)</span></td>
 <td>Berge</td>
 </tr>
 <tr class="odd">
@@ -489,102 +507,126 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </table>
 </div>
 <div class="bridge">
-<p>P1–P4 são “carta de apresentação” da (v). P5 é a <strong>ferramenta operacional</strong> — a razão pela qual (v) vira a protagonista em aplicações.</p>
+<p>P1–P4 são “carta de apresentação” da <span class="math inline">\(v\)</span>. P5 é a <strong>ferramenta operacional</strong> — a razão pela qual <span class="math inline">\(v\)</span> vira a protagonista em aplicações.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Identidade de Roy — enunciado</h2>
 <div class="eq-key">
-<p>[ ]</p>
+<p><span class="math display">\[
+\boxed{\; x_i^M(p, m) = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}. \;}
+\]</span></p>
 </div>
 <p><strong>O que ela faz:</strong> extrai a <strong>demanda</strong> diretamente da função <strong>indireta</strong> — sem passar pela preferência.</p>
-<p><strong>Onde importa:</strong> econometria estrutural (estima-se (v) paramétrica, recupera-se (x^M) via derivada). Deaton-Muellbauer e AIDS são construções dessa família.</p>
+<p><strong>Onde importa:</strong> econometria estrutural (estima-se <span class="math inline">\(v\)</span> paramétrica, recupera-se <span class="math inline">\(x^M\)</span> via derivada). Deaton-Muellbauer e AIDS são construções dessa família.</p>
 <div class="eq-punch">
-<p>Se você tem (v), você tem a demanda.</p>
+<p>Se você tem <span class="math inline">\(v\)</span>, você tem a demanda.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Identidade de Roy — prova em 4 linhas</h2>
-<p><strong>Envelope aplicado ao Lagrangiano ( = u(x) + (m - p x)):</strong></p>
-<p>[ = |_{x = x^M, = ^<em>} = -,^</em>, x_i^M. ]</p>
-<p>[ = |_{x = x^M, = ^<em>} = ^</em>. ]</p>
+<p><strong>Envelope aplicado ao Lagrangiano <span class="math inline">\(\mathcal{L} = u(x) + \lambda(m - p \cdot x)\)</span>:</strong></p>
+<p><span class="math display">\[
+\frac{\partial v}{\partial p_i} = \frac{\partial \mathcal{L}}{\partial p_i}\bigg|_{x = x^M, \lambda = \lambda^*} = -\,\lambda^*\, x_i^M.
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial v}{\partial m} = \frac{\partial \mathcal{L}}{\partial m}\bigg|_{x = x^M, \lambda = \lambda^*} = \lambda^*.
+\]</span></p>
 <p><strong>Divida:</strong></p>
-<p>[ -, = -, = x_i^M. ]</p>
+<p><span class="math display">\[
+-\,\frac{\partial v/\partial p_i}{\partial v/\partial m} = -\,\frac{-\lambda^* x_i^M}{\lambda^*} = x_i^M. \quad \blacksquare
+\]</span></p>
 <div class="bridge">
-<p>O (^*) <strong>cancela</strong> — é por isso que Roy “funciona” sem precisar calcular multiplicador. Envelope em ação.</p>
+<p>O <span class="math inline">\(\lambda^*\)</span> <strong>cancela</strong> — é por isso que Roy “funciona” sem precisar calcular multiplicador. Envelope em ação.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Roy em Cobb-Douglas — verificar a mão</h2>
-<p><strong>Passo 1 — achar (v).</strong> Substituir (x^M = (m / p_1, (1-)m / p_2)) em (u = x_1<sup>x_2</sup>{1-}):</p>
+<p><strong>Passo 1 — achar <span class="math inline">\(v\)</span>.</strong> Substituir <span class="math inline">\(x^M = (\alpha m / p_1, (1-\alpha)m / p_2)\)</span> em <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>:</p>
 <div class="eq-key">
-<p>[ v(p, m) = m . ]</p>
+<p><span class="math display">\[
+v(p, m) = m \cdot \frac{\alpha^\alpha (1-\alpha)^{1-\alpha}}{p_1^\alpha\, p_2^{1-\alpha}}.
+\]</span></p>
 </div>
-<p><strong>Passo 2 — aplicar Roy para recuperar (x_1^M):</strong></p>
-<p>[ v / p_1 = -, v / m = . ]</p>
-<p>[ x_1^M = -, = . ]</p>
+<p><strong>Passo 2 — aplicar Roy para recuperar <span class="math inline">\(x_1^M\)</span>:</strong></p>
+<p><span class="math display">\[
+\partial v / \partial p_1 = -\alpha \cdot \frac{v}{p_1}, \qquad \partial v / \partial m = \frac{v}{m}.
+\]</span></p>
+<p><span class="math display">\[
+x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmark
+\]</span></p>
 </section>
 <section class="slide level2 center">
-<h2>Por que (v) fatoriza em Cobb-Douglas?</h2>
+<h2>Por que <span class="math inline">\(v\)</span> fatoriza em Cobb-Douglas?</h2>
 <div class="cols">
 <div>
-<p><strong>Observação:</strong> (v(p, m) = m (p)) — a renda sai como <strong>fator multiplicativo</strong>.</p>
-<p><strong>Consequência:</strong> a utilidade indireta é <strong>linear</strong> em (m). Dobre a renda, dobre (v).</p>
+<p><strong>Observação:</strong> <span class="math inline">\(v(p, m) = m \cdot \phi(p)\)</span> — a renda sai como <strong>fator multiplicativo</strong>.</p>
+<p><strong>Consequência:</strong> a utilidade indireta é <strong>linear</strong> em <span class="math inline">\(m\)</span>. Dobre a renda, dobre <span class="math inline">\(v\)</span>.</p>
 </div>
 <div>
-<p><strong>Estrutural:</strong> Cobb-Douglas é <strong>homotética</strong> — escalar a cesta por () escala (u) por (^{+(1-)} = ).</p>
-<p>Homotetia ⇒ <em>path de expansão radial</em> ⇒ (v) separável em renda.</p>
+<p><strong>Estrutural:</strong> Cobb-Douglas é <strong>homotética</strong> — escalar a cesta por <span class="math inline">\(\lambda\)</span> escala <span class="math inline">\(u\)</span> por <span class="math inline">\(\lambda^{\alpha+(1-\alpha)} = \lambda\)</span>.</p>
+<p>Homotetia ⇒ <em>path de expansão radial</em> ⇒ <span class="math inline">\(v\)</span> separável em renda.</p>
 </div>
 </div>
 <div class="bridge">
-<p>Fator de renda em (v) é assinatura de homotetia. Preferências quasilineares, Leontief, CES (sem deslocamento) também fatorizam.</p>
+<p>Fator de renda em <span class="math inline">\(v\)</span> é assinatura de homotetia. Preferências quasilineares, Leontief, CES (sem deslocamento) também fatorizam.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>O dual — pergunta invertida</h2>
 <div class="eq-punch">
-<p>O UMP pergunta: dado <strong>(m)</strong>, qual o maior <strong>(u)</strong>?</p>
-<p>O EMP pergunta: dado <strong>({u})</strong>, qual o menor <strong>gasto</strong>?</p>
+<p>O UMP pergunta: dado <strong><span class="math inline">\(m\)</span></strong>, qual o maior <strong><span class="math inline">\(u\)</span></strong>?</p>
+<p>O EMP pergunta: dado <strong><span class="math inline">\(\bar{u}\)</span></strong>, qual o menor <strong>gasto</strong>?</p>
 </div>
-<p><strong>Por que dualizar?</strong> Porque Slutsky — na Aula 3 — precisa <em>isolar</em> o efeito-substituição do efeito-renda. O jeito limpo de fazer isso é fixar (u) e variar (p) — exatamente o que o EMP faz.</p>
+<p><strong>Por que dualizar?</strong> Porque Slutsky — na Aula 3 — precisa <em>isolar</em> o efeito-substituição do efeito-renda. O jeito limpo de fazer isso é fixar <span class="math inline">\(u\)</span> e variar <span class="math inline">\(p\)</span> — exatamente o que o EMP faz.</p>
 <div class="fragment bridge">
-<p>Abre o Bloco 3: enunciar EMP, calcular (h, e), enunciar Shephard, fechar dualidade.</p>
+<p>Abre o Bloco 3: enunciar EMP, calcular <span class="math inline">\(h, e\)</span>, enunciar Shephard, fechar dualidade.</p>
 </div>
 </section>
 <section class="slide level2 section-divider center" data-background-color="#C8102E">
-<h2>Bloco 3 — EMP, (e(p,u)), Shephard</h2>
+<h2>Bloco 3 — EMP, <span class="math inline">\(e(p,u)\)</span>, Shephard</h2>
 <div style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;">
 <p>30 min · 21:10–21:40</p>
 </div>
 <div style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;">
-<p>Primal → dual · Hicksiana (h) · gasto (e) · Shephard como derivada.</p>
+<p>Primal → dual · Hicksiana <span class="math inline">\(h\)</span> · gasto <span class="math inline">\(e\)</span> · Shephard como derivada.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>O problema dual — EMP</h2>
 <div class="card">
-<p><strong>Enunciado.</strong> [ <em>{x ^n</em>+} p x u(x) {u}. ]</p>
+<p><strong>Enunciado.</strong> <span class="math display">\[
+\min_{x \in \mathbb{R}^n_+} p \cdot x \quad \text{s.a.} \quad u(x) \geq \bar{u}.
+\]</span></p>
 </div>
 <p><strong>Hipóteses:</strong> mesma família do UMP (continuidade, quasiconcavidade, monotonicidade).</p>
 <p><strong>Saídas:</strong></p>
-<p>[ h(p, {u}) = _{u(x) {u}} p x . ]</p>
-<p>[ e(p, {u}) = p h(p, {u}) = _{u(x) {u}} p x . ]</p>
+<p><span class="math display">\[
+h(p, \bar{u}) = \arg\min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(Hicksiana / compensada)}.
+\]</span></p>
+<p><span class="math display">\[
+e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(função gasto)}.
+\]</span></p>
 </section>
 <section class="slide level2 center">
 <h2>EMP — Lagrangiano e CPO</h2>
-<p>[ ^{}(x, ) = p x + ,({u} - u(x)). ]</p>
+<p><span class="math display">\[
+\mathcal{L}^{\text{EMP}}(x, \mu) = p \cdot x + \mu\,(\bar{u} - u(x)).
+\]</span></p>
 <p><strong>CPO interiores:</strong></p>
-<p>[ p_i = , u_i (i), u(x) = {u}. ]</p>
-<p><strong>Razão de duas CPOs:</strong> () — <strong>a mesma</strong> condição de tangência do UMP.</p>
+<p><span class="math display">\[
+p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
+\]</span></p>
+<p><strong>Razão de duas CPOs:</strong> <span class="math inline">\(\boxed{\;\text{TMS}_{ij} = p_i / p_j\;}\)</span> — <strong>a mesma</strong> condição de tangência do UMP.</p>
 <div class="eq-punch">
 <p>Mesma tangência, problema diferente. O ponto geométrico é o mesmo.</p>
 </div>
 <div class="fragment">
-<p>(^<em>) tem leitura dual: <strong>custo marginal de utilidade</strong>. É o recíproco de (^</em>) do UMP.</p>
+<p><span class="math inline">\(\mu^*\)</span> tem leitura dual: <strong>custo marginal de utilidade</strong>. É o recíproco de <span class="math inline">\(\lambda^*\)</span> do UMP.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Propriedades da função gasto (e(p, {u}))</h2>
+<h2>Propriedades da função gasto <span class="math inline">\(e(p, \bar{u})\)</span></h2>
 <div class="compact-table">
 <table class="caption-top">
 <colgroup>
@@ -602,22 +644,22 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <tbody>
 <tr class="odd">
 <td>E1</td>
-<td><strong>Homogênea de grau 1</strong> em (p)</td>
+<td><strong>Homogênea de grau 1</strong> em <span class="math inline">\(p\)</span></td>
 <td>escala de preços ⇒ escala do gasto</td>
 </tr>
 <tr class="even">
 <td>E2</td>
-<td><strong>Crescente em (p_i) e em ({u})</strong></td>
+<td><strong>Crescente em <span class="math inline">\(p_i\)</span> e em <span class="math inline">\(\bar{u}\)</span></strong></td>
 <td>mais caro, mais gasto; mais utilidade exigida, mais gasto</td>
 </tr>
 <tr class="odd">
 <td>E3</td>
-<td><strong>Côncava em (p)</strong></td>
-<td>é ínfimo de funções lineares em (p)</td>
+<td><strong>Côncava em <span class="math inline">\(p\)</span></strong></td>
+<td>é ínfimo de funções lineares em <span class="math inline">\(p\)</span></td>
 </tr>
 <tr class="even">
 <td>E4</td>
-<td><strong>Contínua</strong> em (p, {u}) onde (p )</td>
+<td><strong>Contínua</strong> em <span class="math inline">\(p, \bar{u}\)</span> onde <span class="math inline">\(p \gg 0\)</span></td>
 <td>Berge</td>
 </tr>
 <tr class="odd">
@@ -629,41 +671,51 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </table>
 </div>
 <div class="fragment bridge">
-<p><strong>Pergunta para o aluno:</strong> por que (v) é <em>quasiconvexa</em> em (p) e (e) é <em>côncava</em> em (p)? Porque uma é <em>máximo</em> sob restrição linear em (p), outra é <em>mínimo</em>. Minimax inverte a curvatura.</p>
+<p><strong>Pergunta para o aluno:</strong> por que <span class="math inline">\(v\)</span> é <em>quasiconvexa</em> em <span class="math inline">\(p\)</span> e <span class="math inline">\(e\)</span> é <em>côncava</em> em <span class="math inline">\(p\)</span>? Porque uma é <em>máximo</em> sob restrição linear em <span class="math inline">\(p\)</span>, outra é <em>mínimo</em>. Minimax inverte a curvatura.</p>
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Concavidade de (e) em (p) — intuição</h2>
-<p><strong>Ínfimo de lineares é côncavo:</strong> para cada (x) fixo, (p p x) é <strong>linear</strong> em (p). O mínimo sobre (x) (com (u(x) u)) é o <strong>envelope inferior</strong> dessa família de retas — sempre côncavo.</p>
+<h2>Concavidade de <span class="math inline">\(e\)</span> em <span class="math inline">\(p\)</span> — intuição</h2>
+<p><strong>Ínfimo de lineares é côncavo:</strong> para cada <span class="math inline">\(x\)</span> fixo, <span class="math inline">\(p \mapsto p \cdot x\)</span> é <strong>linear</strong> em <span class="math inline">\(p\)</span>. O mínimo sobre <span class="math inline">\(x\)</span> (com <span class="math inline">\(u(x) \geq \bar u\)</span>) é o <strong>envelope inferior</strong> dessa família de retas — sempre côncavo.</p>
 <div class="eq-key">
-<p>[ e(p, u) = _{x {u(x) u}} p x e p. ]</p>
+<p><span class="math display">\[
+e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \quad e \text{ côncava em } p.
+\]</span></p>
 </div>
-<p><strong>Consequência direta para Slutsky (Aula 3):</strong> a matriz (h_i / p_j) é <strong>semidefinida negativa</strong> (diagonal (), “lei da demanda compensada”).</p>
+<p><strong>Consequência direta para Slutsky (Aula 3):</strong> a matriz <span class="math inline">\(\partial h_i / \partial p_j\)</span> é <strong>semidefinida negativa</strong> (diagonal <span class="math inline">\(\leq 0\)</span>, “lei da demanda compensada”).</p>
 <div class="fragment bridge">
-<p>A concavidade de (e) <strong>é</strong> o teorema — tudo que vem da matriz de Slutsky herda daí.</p>
+<p>A concavidade de <span class="math inline">\(e\)</span> <strong>é</strong> o teorema — tudo que vem da matriz de Slutsky herda daí.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Lema de Shephard — enunciado</h2>
 <div class="eq-key">
-<p>[ ]</p>
+<p><span class="math display">\[
+\boxed{\; h_i(p, \bar{u}) = \frac{\partial e(p, \bar{u})}{\partial p_i}. \;}
+\]</span></p>
 </div>
 <p><strong>Prova via Envelope:</strong></p>
-<p>[ = |_{x = h, = ^*} = h_i. ]</p>
+<p><span class="math display">\[
+\frac{\partial e}{\partial p_i} = \frac{\partial \mathcal{L}^{\text{EMP}}}{\partial p_i}\bigg|_{x = h, \mu = \mu^*} = h_i.
+\]</span></p>
 <p><strong>Intuição econômica em uma frase:</strong></p>
 <div class="eq-punch">
-<p>Subir (p_i) em (); consumidor ajusta (x_i) para manter (u). O ajuste é segunda-ordem — muda só (h_i ) no gasto.</p>
+<p>Subir <span class="math inline">\(p_i\)</span> em <span class="math inline">\(\Delta\)</span>; consumidor ajusta <span class="math inline">\(x_i\)</span> para manter <span class="math inline">\(\bar u\)</span>. O ajuste é segunda-ordem — muda só <span class="math inline">\(h_i \cdot \Delta\)</span> no gasto.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Shephard em Cobb-Douglas — verificar a mão</h2>
-<p><strong>Passo 1 — achar (e) por <em>inversão de Roy</em>.</strong> Use (v = m (p)) e imponha (v(p, e) = u):</p>
+<p><strong>Passo 1 — achar <span class="math inline">\(e\)</span> por <em>inversão de Roy</em>.</strong> Use <span class="math inline">\(v = m \cdot \phi(p)\)</span> e imponha <span class="math inline">\(v(p, e) = \bar u\)</span>:</p>
 <div class="eq-key">
-<p>[ e(p, u) = u . ]</p>
+<p><span class="math display">\[
+e(p, \bar u) = \bar u \cdot \frac{p_1^{\alpha}\, p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}.
+\]</span></p>
 </div>
 <p><strong>Passo 2 — aplicar Shephard:</strong></p>
-<p>[ h_1 = = u = , . ]</p>
-<p><strong>Compare com (x_1^M = m / p_1):</strong> quando (u = v(p, m)), (e = m), logo (h_1 = x_1^M). <em>Prévia da dualidade.</em></p>
+<p><span class="math display">\[
+h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha - 1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}} = \alpha\, \frac{e}{p_1}.
+\]</span></p>
+<p><strong>Compare com <span class="math inline">\(x_1^M = \alpha m / p_1\)</span>:</strong> quando <span class="math inline">\(\bar u = v(p, m)\)</span>, <span class="math inline">\(e = m\)</span>, logo <span class="math inline">\(h_1 = x_1^M\)</span>. <em>Prévia da dualidade.</em></p>
 </section>
 <section class="slide level2 pause-slide center" data-background-color="#F7F7F5">
 <h2>Pausa 2 — 10 minutos</h2>
@@ -686,33 +738,43 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Diagrama 1 — identidades recíprocas</h2>
 <div class="eq-key">
-<p>[ e(p,&nbsp;v(p, m)) = m, v(p,&nbsp;e(p, u)) = u. ]</p>
+<p><span class="math display">\[
+e(p,\ v(p, m)) = m, \qquad v(p,\ e(p, \bar u)) = \bar u.
+\]</span></p>
 </div>
-<p><strong>Leitura:</strong> ((x^M, v)) no UMP e ((h, e)) no EMP são <strong>o mesmo ponto físico</strong> — calibrado de um lado pela renda, do outro pela utilidade.</p>
+<p><strong>Leitura:</strong> <span class="math inline">\((x^M, v)\)</span> no UMP e <span class="math inline">\((h, e)\)</span> no EMP são <strong>o mesmo ponto físico</strong> — calibrado de um lado pela renda, do outro pela utilidade.</p>
 <div class="eq-punch">
 <p>UMP e EMP são o mesmo ponto, vistos de direções opostas.</p>
 </div>
 <div class="fragment bridge">
-<p>Calibração é o detalhe técnico: dado (m), calibra-se com (u = v(p, m)). Dado (u), calibra-se com (m = e(p, u)).</p>
+<p>Calibração é o detalhe técnico: dado <span class="math inline">\(m\)</span>, calibra-se com <span class="math inline">\(\bar u = v(p, m)\)</span>. Dado <span class="math inline">\(\bar u\)</span>, calibra-se com <span class="math inline">\(m = e(p, \bar u)\)</span>.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Diagrama 2 — Marshalliana ↔︎ Hicksiana</h2>
 <div class="eq-key">
-<p>[ x_i^M(p, m) = h_i(p,&nbsp;v(p, m)), ]</p>
-<p>[ h_i(p, u) = x_i^M(p,&nbsp;e(p, u)). ]</p>
+<p><span class="math display">\[
+x_i^M(p, m) = h_i\big(p,\ v(p, m)\big),
+\]</span></p>
+<p><span class="math display">\[
+h_i(p, \bar u) = x_i^M\big(p,\ e(p, \bar u)\big).
+\]</span></p>
 </div>
 <p><strong>Leitura:</strong> a <strong>Marshalliana</strong> é a <strong>Hicksiana calibrada</strong> ao nível de utilidade que a renda compra. E vice-versa.</p>
-<p><strong>Como é usado em Slutsky (Aula 3):</strong> derivar a primeira identidade em (p_j); substituir Roy; rearrumar. Sai a equação de Slutsky quase sozinha.</p>
+<p><strong>Como é usado em Slutsky (Aula 3):</strong> derivar a primeira identidade em <span class="math inline">\(p_j\)</span>; substituir Roy; rearrumar. Sai a equação de Slutsky quase sozinha.</p>
 </section>
 <section class="slide level2 center">
 <h2>Diagrama 3 — recuperações via derivada</h2>
 <div class="cols">
 <div>
-<p><strong>Roy</strong> (da indireta à Marshalliana): [ x_i^M = -,. ]</p>
+<p><strong>Roy</strong> (da indireta à Marshalliana): <span class="math display">\[
+x_i^M = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}.
+\]</span></p>
 </div>
 <div>
-<p><strong>Shephard</strong> (do gasto à Hicksiana): [ h_i = . ]</p>
+<p><strong>Shephard</strong> (do gasto à Hicksiana): <span class="math display">\[
+h_i = \frac{\partial e}{\partial p_i}.
+\]</span></p>
 </div>
 </div>
 <div class="compact-table" style="margin-top: 0.8em;">
@@ -727,15 +789,15 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">(v(p, m))</td>
+<td style="text-align: left;"><span class="math inline">\(v(p, m)\)</span></td>
 <td style="text-align: left;">preços + renda</td>
-<td style="text-align: left;">(x^M)</td>
+<td style="text-align: left;"><span class="math inline">\(x^M\)</span></td>
 <td style="text-align: left;">Roy</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">(e(p, u))</td>
+<td style="text-align: left;"><span class="math inline">\(e(p, \bar u)\)</span></td>
 <td style="text-align: left;">preços + utilidade</td>
-<td style="text-align: left;">(h)</td>
+<td style="text-align: left;"><span class="math inline">\(h\)</span></td>
 <td style="text-align: left;">Shephard</td>
 </tr>
 </tbody>
@@ -747,7 +809,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </section>
 <section class="slide level2 center">
 <h2>Prática em dupla — exercício</h2>
-<p><strong>Dado:</strong> (u(x_1, x_2) = x_1^{1/2} x_2^{1/2}), (p = (4, 1)), (m = 20).</p>
+<p><strong>Dado:</strong> <span class="math inline">\(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\)</span>, <span class="math inline">\(p = (4, 1)\)</span>, <span class="math inline">\(m = 20\)</span>.</p>
 <div class="compact-table">
 <table class="caption-top">
 <colgroup>
@@ -765,69 +827,83 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>Resolver UMP: (x^M, v)</td>
+<td>Resolver UMP: <span class="math inline">\(x^M, v\)</span></td>
 <td>CPO + tangência</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>Verificar <strong>Roy</strong> em (x_1^M)</td>
-<td>derivada de (v)</td>
+<td>Verificar <strong>Roy</strong> em <span class="math inline">\(x_1^M\)</span></td>
+<td>derivada de <span class="math inline">\(v\)</span></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>Com (u = v), resolver EMP: (h, e). Confirmar (e = m)</td>
+<td>Com <span class="math inline">\(\bar u = v\)</span>, resolver EMP: <span class="math inline">\(h, e\)</span>. Confirmar <span class="math inline">\(e = m\)</span></td>
 <td>inversão / Lagrangiano dual</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>Verificar <strong>Shephard</strong> em (h_1)</td>
-<td>derivada de (e)</td>
+<td>Verificar <strong>Shephard</strong> em <span class="math inline">\(h_1\)</span></td>
+<td>derivada de <span class="math inline">\(e\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 <p><strong>Regras:</strong> duplas aleatórias · 18 min · papel e caneta · professor circula · Alberto no apoio (se presente).</p>
 <div class="bridge">
-<p>Armadilhas canônicas que vou olhar: sinal em Roy, confundir Shephard com (e/m), errar parcela CD (() vs.&nbsp;(1-)).</p>
+<p>Armadilhas canônicas que vou olhar: sinal em Roy, confundir Shephard com <span class="math inline">\(\partial e/\partial m\)</span>, errar parcela CD (<span class="math inline">\(\alpha\)</span> vs.&nbsp;<span class="math inline">\(1-\alpha\)</span>).</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Prática — resposta completa (1/4)</h2>
-<p><strong>Item 1 — UMP.</strong> Com (= 1/2):</p>
-<p>[ x_1^M = = = 2{,}5, x_2^M = = = 10. ]</p>
+<p><strong>Item 1 — UMP.</strong> Com <span class="math inline">\(\alpha = 1/2\)</span>:</p>
+<p><span class="math display">\[
+x_1^M = \frac{\alpha m}{p_1} = \frac{10}{4} = 2{,}5, \quad x_2^M = \frac{(1-\alpha) m}{p_2} = \frac{10}{1} = 10.
+\]</span></p>
 <p><strong>Utilidade indireta no ótimo:</strong></p>
-<p>[ v = (2{,}5)^{1/2} (10)^{1/2} = = 5. ]</p>
+<p><span class="math display">\[
+v = (2{,}5)^{1/2} (10)^{1/2} = \sqrt{25} = 5.
+\]</span></p>
 <div class="bridge">
-<p>Próximo passo: confirmar (x_1^M = 2{,}5) via derivada de (v) (Roy).</p>
+<p>Próximo passo: confirmar <span class="math inline">\(x_1^M = 2{,}5\)</span> via derivada de <span class="math inline">\(v\)</span> (Roy).</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Prática — resposta completa (2/4)</h2>
 <p><strong>Item 2 — Roy.</strong> Fator de renda na indireta:</p>
-<p>[ v(p, m) = m (p), (p) = = . ]</p>
-<p><strong>Checagem numérica</strong> em (p = (4, 1)), (m = 20): (v = 20 = 20 25 = 5). ✓</p>
-<p><strong>Roy aplicado a (x_1^M):</strong></p>
-<p>[ - = - = = = 2{,}5 = x_1^M. ; ]</p>
+<p><span class="math display">\[
+v(p, m) = m \cdot \phi(p), \qquad \phi(p) = \frac{(1/2)^{1/2}(1/2)^{1/2}}{p_1^{1/2} p_2^{1/2}} = \frac{1/2}{\sqrt{p_1 p_2}}.
+\]</span></p>
+<p><strong>Checagem numérica</strong> em <span class="math inline">\(p = (4, 1)\)</span>, <span class="math inline">\(m = 20\)</span>: <span class="math inline">\(v = 20 \cdot \frac{0{,}5}{\sqrt{4}} = 20 \cdot 0{,}25 = 5\)</span>. ✓</p>
+<p><strong>Roy aplicado a <span class="math inline">\(x_1^M\)</span>:</strong></p>
+<p><span class="math display">\[
+-\frac{\partial v/\partial p_1}{\partial v/\partial m} = -\frac{-\,v/(2 p_1)}{v/m} = \frac{m}{2 p_1} = \frac{20}{8} = 2{,}5 = x_1^M. \;\checkmark
+\]</span></p>
 </section>
 <section class="slide level2 center">
 <h2>Prática — resposta completa (3/4)</h2>
-<p><strong>Item 3 — EMP com (u = 5).</strong> Função gasto em CD com (= 1/2):</p>
-<p>[ e(p, u) = u = 2u,. ]</p>
-<p><strong>Checagem numérica</strong> em (p = (4, 1)), (u = 5): (e = 2 = 10 = 20 = m). ✓</p>
-<p><strong>Hicksianas via fórmula fechada:</strong> (h_1 = , e/p_1 = 0{,}5 / 4 = 2{,}5 = x_1^M). ✓</p>
+<p><strong>Item 3 — EMP com <span class="math inline">\(\bar u = 5\)</span>.</strong> Função gasto em CD com <span class="math inline">\(\alpha = 1/2\)</span>:</p>
+<p><span class="math display">\[
+e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} = 2\bar u\,\sqrt{p_1 p_2}.
+\]</span></p>
+<p><strong>Checagem numérica</strong> em <span class="math inline">\(p = (4, 1)\)</span>, <span class="math inline">\(\bar u = 5\)</span>: <span class="math inline">\(e = 2\cdot 5\cdot \sqrt{4} = 10\cdot 2 = 20 = m\)</span>. ✓</p>
+<p><strong>Hicksianas via fórmula fechada:</strong> <span class="math inline">\(h_1 = \alpha\, e/p_1 = 0{,}5 \cdot 20 / 4 = 2{,}5 = x_1^M\)</span>. ✓</p>
 <div class="bridge">
-<p>Dualidade em ação: (e = m), (h = x^M). Falta conferir <strong>Shephard</strong> na derivada.</p>
+<p>Dualidade em ação: <span class="math inline">\(e = m\)</span>, <span class="math inline">\(h = x^M\)</span>. Falta conferir <strong>Shephard</strong> na derivada.</p>
 </div>
 </section>
 <section class="slide level2 center">
 <h2>Prática — resposta completa (4/4)</h2>
-<p><strong>Item 4 — Shephard.</strong> Com (e = 2u, p_1^{1/2}, p_2^{1/2}), derive em (p_1):</p>
+<p><strong>Item 4 — Shephard.</strong> Com <span class="math inline">\(e = 2\bar u\, p_1^{1/2}\, p_2^{1/2}\)</span>, derive em <span class="math inline">\(p_1\)</span>:</p>
 <div class="eq-key">
-<p>[ ;=; 2u , p_1^{-1/2}, p_2^{1/2} ;=; u,. ]</p>
+<p><span class="math display">\[
+\frac{\partial e}{\partial p_1} \;=\; 2\bar u \cdot \tfrac{1}{2}\, p_1^{-1/2}\, p_2^{1/2} \;=\; \bar u\,\sqrt{\frac{p_2}{p_1}}.
+\]</span></p>
 </div>
-<p><strong>Checagem numérica</strong> em (p = (4, 1)), (u = 5):</p>
-<p>[ = 5 = 5 = 2{,}5 = h_1. ; ]</p>
-<p><strong>Mesmo resultado</strong> da fórmula fechada (h_1 = ,e/p_1). Shephard <strong>é</strong> derivada — não truque paralelo.</p>
+<p><strong>Checagem numérica</strong> em <span class="math inline">\(p = (4, 1)\)</span>, <span class="math inline">\(\bar u = 5\)</span>:</p>
+<p><span class="math display">\[
+\frac{\partial e}{\partial p_1} = 5\cdot \sqrt{\tfrac{1}{4}} = 5\cdot \tfrac{1}{2} = 2{,}5 = h_1. \;\checkmark
+\]</span></p>
+<p><strong>Mesmo resultado</strong> da fórmula fechada <span class="math inline">\(h_1 = \alpha\,e/p_1\)</span>. Shephard <strong>é</strong> derivada — não truque paralelo.</p>
 <div class="eq-punch">
 <p>UMP e EMP são o mesmo ponto físico. Roy e Shephard são as derivadas que provam.</p>
 </div>
@@ -842,7 +918,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <h2>Síntese — se você sair com isto, a aula valeu</h2>
 <div class="fragment">
 <ol type="1">
-<li><strong>UMP e EMP são o mesmo ponto físico</strong>, visto de duas direções. Quatro funções ((x^M, v, h, e)), duas identidades recíprocas, uma tangência comum.</li>
+<li><strong>UMP e EMP são o mesmo ponto físico</strong>, visto de duas direções. Quatro funções (<span class="math inline">\(x^M, v, h, e\)</span>), duas identidades recíprocas, uma tangência comum.</li>
 </ol>
 </div>
 <div class="fragment">
@@ -860,14 +936,16 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <h2>Ponte para a Aula 3 — Slutsky</h2>
 <p><strong>Pergunta motor:</strong> Marshalliana e Hicksiana satisfazem a <em>mesma</em> tangência. Mas quando preço muda, elas <strong>não</strong> movem igual.</p>
 <div class="eq-key">
-<p>[ = <em>{} ;-; </em>{}. ]</p>
+<p><span class="math display">\[
+\frac{\partial x_i^M}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M \cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+\]</span></p>
 </div>
 <div class="fragment">
 <p><strong>Isto é Slutsky.</strong> Três leituras:</p>
 <ul>
 <li>A Hicksiana <em>é</em> a “Marshalliana sem efeito-renda”.</li>
-<li>O efeito-substituição vem da <strong>concavidade de (e)</strong> (matriz de Slutsky simétrica, semi-def. negativa).</li>
-<li>O efeito-renda vem da <strong>derivada da Marshalliana em (m)</strong> (curvas de Engel).</li>
+<li>O efeito-substituição vem da <strong>concavidade de <span class="math inline">\(e\)</span></strong> (matriz de Slutsky simétrica, semi-def. negativa).</li>
+<li>O efeito-renda vem da <strong>derivada da Marshalliana em <span class="math inline">\(m\)</span></strong> (curvas de Engel).</li>
 </ul>
 </div>
 </section>
@@ -876,21 +954,21 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <div class="cols">
 <div>
 <p><strong>1. Dualidade em CES completa</strong></p>
-<p>(x^M, v, h, e) para (u = (x_1^+ (1-) x_2<sup>)</sup>{1/}) genérico. Verificação das quatro identidades.</p>
+<p><span class="math inline">\(x^M, v, h, e\)</span> para <span class="math inline">\(u = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}\)</span> genérico. Verificação das quatro identidades.</p>
 </div>
 <div>
 <p><strong>2. Slutsky derivada</strong></p>
-<p>Derivar a equação de Slutsky a partir da identidade (x^M(p, m) = h(p, v(p, m))) + Roy + Shephard. Duas linhas.</p>
+<p>Derivar a equação de Slutsky a partir da identidade <span class="math inline">\(x^M(p, m) = h(p, v(p, m))\)</span> + Roy + Shephard. Duas linhas.</p>
 </div>
 </div>
 <div class="cols" style="margin-top: 0.8em;">
 <div>
 <p><strong>3. Quasilinear em canto</strong></p>
-<p>O que sobrevive de Roy/Shephard quando (x_2^M = 0). Fronteira do interior.</p>
+<p>O que sobrevive de Roy/Shephard quando <span class="math inline">\(x_2^M = 0\)</span>. Fronteira do interior.</p>
 </div>
 <div>
 <p><strong>4. Restrições de adição</strong></p>
-<p>Walras ⇒ (_i s_i _i = 1) e (<em>i s_i </em>{ij} = -s_j). Testes empíricos.</p>
+<p>Walras ⇒ <span class="math inline">\(\sum_i s_i \eta_i = 1\)</span> e <span class="math inline">\(\sum_i s_i \varepsilon_{ij} = -s_j\)</span>. Testes empíricos.</p>
 </div>
 </div>
 <div class="bridge">

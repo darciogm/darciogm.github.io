@@ -151,7 +151,10 @@ platform/
 
 - Copiar YAML header da `aula_1/slides/aula-01.qmd` (inclui kill do title-block via MutationObserver).
 - Tema: `[default, theme.scss]` (scss idêntico ao da Aula 1 — branding Insper #C8102E).
-- MathJax: `\(...\)` inline, `\[...\]` display. **Nunca usar `$...$`**.
+- **Delimitadores de math — depende do contexto (não confundir!):**
+  - **Slides Quarto reveal.js (`aula_X/slides/*.qmd`)**: usar `$...$` inline e `$$...$$` display. É o formato canônico do pandoc, que converte para `<span class="math inline">\(...\)</span>` no HTML final com MathJax funcionando. **Nunca usar `\(...\)` / `\[...\]` crus no `.qmd`** — o pandoc não reconhece como math e renderiza como texto bruto.
+  - **Páginas HTML em `platform/*.html` (MathJax via CDN)**: usar `\(...\)` inline e `\[...\]` display. O MathJax está configurado no HTML para esses delimitadores.
+  - **Nunca misturar** os dois dialetos dentro do mesmo arquivo.
 - Classes CSS úteis (definidas em theme.scss):
   - `.title-slide` — capa com border vermelho
   - `.section-divider` — divisor de bloco (fundo vermelho #C8102E ou azul #1B3A5C)
