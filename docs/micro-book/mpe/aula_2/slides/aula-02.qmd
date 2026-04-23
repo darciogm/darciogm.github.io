@@ -296,8 +296,16 @@ $$
 \alpha + (1-\alpha) = \lambda \cdot m \;\Rightarrow\; \lambda^* = 1/m.
 $$
 
+---
+
+## Cobb-Douglas via log — punch
+
 ::: {.eq-punch}
 Ordinalidade não é luxo — é como a álgebra fica calma.
+:::
+
+::: {.bridge}
+Tomamos log sem pedir licença a ninguém. A Aula 1 autoriza — qualquer transformação monotônica serve. O que muda é só a calibração, nunca a escolha.
 :::
 
 ---
@@ -672,11 +680,21 @@ $$
 \frac{\partial e}{\partial p_i} = \frac{\partial \mathcal{L}^{\text{EMP}}}{\partial p_i}\bigg|_{x = h, \mu = \mu^*} = h_i.
 $$
 
-**Intuição econômica em uma frase:**
+::: {.bridge}
+Uma derivada parcial — uma demanda. O "porquê" econômico está no próximo slide.
+:::
+
+---
+
+## Lema de Shephard — intuição
+
+**A frase que eu queria ter escrito no quadro da pós:**
 
 ::: {.eq-punch}
 Subir $p_i$ em $\Delta$; consumidor ajusta $x_i$ para manter $\bar u$. O ajuste é segunda-ordem — muda só $h_i \cdot \Delta$ no gasto.
 :::
+
+**Por que "segunda-ordem"?** Porque no ótimo a CPO vale — a variação de primeira ordem no gasto via reajuste de $x$ é zero. Sobra apenas o efeito direto do preço sobre a quantidade já escolhida.
 
 ---
 

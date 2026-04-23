@@ -235,13 +235,18 @@ $codeFont: "JetBrains Mono", "Menlo", "Consolas", monospace;
 // Frases-martelo — slab tipográfico editorial (estilo pull-quote).
 // Distinto de .eq-key: fundo escuro, texto branco, sem border-left vermelho.
 // Uso: afirmações conceituais que precisam ressoar. NÃO usar em equações.
+//
+// Margin-bottom: 1.2em top / 2.4em bottom — o buffer inferior de 2.4em
+// evita que o bloco preto denso encoste no .footer / .insper-logo quando
+// é o último elemento do slide (reportado em 35 "Lema de Shephard" em
+// 2026-04-23). Aplica-se sempre; é inofensivo quando não é último filho.
 .reveal .eq-punch {
   background: #1A1A1A;
   color: #F7F7F5;
   border: none;
   border-radius: 2px;
   padding: 0.9em 1.4em;
-  margin: 0.9em 0;
+  margin: 1.2em 0 2.4em 0;
   font-size: 1.12em;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -256,6 +261,19 @@ $codeFont: "JetBrains Mono", "Menlo", "Consolas", monospace;
 .reveal .eq-punch em {
   color: #E8E6E1;
   font-style: italic;
+}
+
+// Safety buffer reforçado quando .eq-punch ou .eq-key é o último filho
+// direto de um <section>: garante que o bloco não encoste no footer
+// (bottom 10px) nem no logo (bottom 8px). Pandoc gera `<div class="eq-*">`
+// filho direto de `<section>` em fences `::: {.eq-*} ... :::` no topo
+// do slide. Quando Quarto envolve em `<div>` extra (casos raros com
+// atributos especiais), a regra aninhada cobre.
+.reveal .slides > section > .eq-punch:last-child,
+.reveal .slides > section > div > .eq-punch:last-child,
+.reveal .slides > section > .eq-key:last-child,
+.reveal .slides > section > div > .eq-key:last-child {
+  margin-bottom: 2.6em;
 }
 
 // Ponte/transição entre blocos — sóbrio, sem border-top agressivo (Sprint D)
