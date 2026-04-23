@@ -202,6 +202,34 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .iv-delta .delta-up{color:#15803D;font-weight:700}
 .iv-delta.declined .delta-up{color:#991B1B}
 .iv-delta .delta-down{color:#991B1B;font-weight:700}
+/* Dashboard charts SVG */
+.dash-chart{background:#fff;border:1px solid var(--border);border-radius:6px;padding:0.5rem;position:relative}
+.dash-chart svg{width:100%;height:100%;display:block;overflow:visible}
+.dash-chart .axis{stroke:#CBC9C5;stroke-width:1}
+.dash-chart .grid{stroke:#F0EBE8;stroke-width:1;stroke-dasharray:2,3}
+.dash-chart .axis-label{font-size:10px;fill:#6B7280;font-family:Calibri,sans-serif}
+.dash-chart .axis-tick{font-size:9px;fill:#6B7280;font-family:Calibri,sans-serif}
+.dash-chart .diagonal{stroke:#D97706;stroke-width:1.5;stroke-dasharray:4,4;opacity:0.6}
+.dash-chart .line{fill:none;stroke:var(--accent);stroke-width:2}
+.dash-chart .area{fill:var(--accent);opacity:0.1}
+.dash-chart .dot{fill:var(--accent);opacity:0.7;cursor:pointer;transition:all 0.15s}
+.dash-chart .dot:hover{opacity:1;stroke:#000;stroke-width:1}
+.dash-chart .dot.dot-high{fill:#15803D}
+.dash-chart .dot.dot-low{fill:#C8102E}
+.dash-chart .dot.dot-mid{fill:#D97706}
+.dash-chart-tip{position:absolute;background:#1F2937;color:#fff;padding:0.35rem 0.55rem;border-radius:4px;font-size:0.72rem;pointer-events:none;opacity:0;transition:opacity 0.1s;z-index:10;white-space:nowrap;line-height:1.35}
+.dash-chart-tip.show{opacity:1}
+.dash-legend{display:flex;gap:0.8rem;font-size:0.7rem;color:var(--text-muted);margin-top:0.3rem;flex-wrap:wrap;justify-content:center}
+.dash-legend .leg-item{display:inline-flex;align-items:center;gap:0.3rem}
+.dash-legend .leg-swatch{display:inline-block;width:10px;height:10px;border-radius:50%}
+.dash-chart-empty{display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:0.82rem;font-style:italic;text-align:center;padding:1rem}
+/* Sparkline (no perfil) */
+.sparkline-container{display:flex;align-items:flex-end;gap:1px;height:36px;margin-top:0.4rem;padding:0.2rem 0;border-left:1px solid var(--border);border-bottom:1px solid var(--border)}
+.sparkline-bar{flex:1;background:var(--accent);opacity:0.7;min-height:1px;border-radius:1px 1px 0 0;transition:opacity 0.15s}
+.sparkline-bar:hover{opacity:1}
+.sparkline-bar.zero{background:#E5E5E5;opacity:0.35;min-height:2px}
+.sparkline-bar.intervention{background:#3B82F6;opacity:0.9}
+.sparkline-meta{font-size:0.7rem;color:var(--text-muted);margin-top:0.15rem;display:flex;justify-content:space-between}
 </style>
 </head>
 <body>
@@ -462,6 +490,34 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
             % acerto na <strong>1ª metade</strong> (Q1–Q5) vs <strong>2ª metade</strong> (Q6–Q10) de cada quiz estruturado. Δ positivo = turma "aquece" (sinal de aprendizado no próprio bloco); Δ negativo = fadiga ou dificuldade crescente. Para quizzes pós-aula (phase=<code>post</code>), colunas <strong>🟡</strong> e <strong>🔴</strong> separam por calibre. Baseline heurístico: Δ entre ±5 p.p. é ruído amostral.
           </div>
           <div id="m-learning-curve" style="font-size:0.82rem;overflow-x:auto"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Cohort survival — % da turma ativa por semana</h4>
+          <div class="metric-desc">
+            Para cada semana desde o início, % de alunos com pelo menos um evento (quiz attempt, section completion, page visit).
+            Queda semanal = churn em formação. Padrão Kaplan-Meier, usado em MOOCs (HarvardX, Coursera).
+          </div>
+          <div id="m-cohort-survival" class="dash-chart" style="width:100%;height:220px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Calibração de confiança — scatter Dunning-Kruger</h4>
+          <div class="metric-desc">
+            Cada ponto é um par (aluno × aula): <strong>X</strong> = confiança pós-slider declarada; <strong>Y</strong> = acerto 1ª tentativa real no quiz daquela aula.
+            Diagonal = calibração ideal. Acima da diagonal = <em>Dunning-Kruger</em> (acha que sabe mais do que sabe). Abaixo = <em>inseguro competente</em> (sabe mais do que acha).
+            Referências: Cornell, Yale (Stat/Econ).
+          </div>
+          <div id="m-confidence-scatter" class="dash-chart" style="width:100%;height:340px"></div>
+        </div>
+
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Tempo vs performance — scatter</h4>
+          <div class="metric-desc">
+            Cada ponto é um aluno: <strong>X</strong> = min totais dedicados à plataforma; <strong>Y</strong> = acerto 1ª tentativa agregado.
+            Quadrante superior-esquerdo = rende muito dedicando pouco (atenção: chute?). Inferior-direito = dedica mas não rende (merece intervenção <em>pedagógica</em>, não motivacional).
+          </div>
+          <div id="m-tp-scatter" class="dash-chart" style="width:100%;height:340px"></div>
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
@@ -922,6 +978,9 @@ function showStudentProfile(matricula) {
       + '<div class="profile-kpi"><div class="v">' + (r.streak || 0) + '🔥</div><div class="l">Streak (dias)</div></div>'
       + '<div class="profile-kpi"><div class="v">' + (r.cv == null ? '—' : r.cv.toFixed(2)) + '</div><div class="l">CV semanal</div><div class="b">' + (r.nWeeks || 0) + ' semanas ativas</div></div>'
     + '</div>'
+    + '<h3>Atividade nos últimos 30 dias</h3>'
+    + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.2rem">1 barra = 1 dia · altura = N eventos (quiz + section) · azul = dia com intervenção registrada</div>'
+    + renderSparklineHtml(_profileIdFromMatricula(matricula), 30)
     + '<h3>Bandeiras de risco</h3>'
     + flagsHtml
     + '<h3>Trajetória por aula/monitoria</h3>'
@@ -1676,6 +1735,340 @@ function toggleTagFilter(term) {
   renderTagCloud();
 }
 
+// ============ CHARTS (Onda 3A) — SVG leves, zero deps ============
+
+function _dayKey(d) {
+  d = d instanceof Date ? d : new Date(d);
+  return d.toISOString().substring(0, 10);
+}
+
+// Coleta eventos diários (quiz attempts + section completions + page visits)
+// para um aluno específico, nos últimos N dias. Retorna array de
+// {date: 'YYYY-MM-DD', count, hasIntervention}.
+function buildDailyEventMap(profileId, daysBack) {
+  daysBack = daysBack || 30;
+  var raw = window._adminRaw;
+  if (!raw || !profileId) return [];
+
+  var now = new Date(); now.setHours(0,0,0,0);
+  var byDay = {};
+  for (var i = daysBack - 1; i >= 0; i--) {
+    var d = new Date(now.getTime() - i * 86400000);
+    byDay[_dayKey(d)] = { count: 0, hasIntervention: false };
+  }
+
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== profileId) return;
+    if (!q.answered_at) return;
+    var k = _dayKey(q.answered_at);
+    if (byDay[k]) byDay[k].count++;
+  });
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (sp.user_id !== profileId) return;
+    if (!sp.completed_at) return;
+    var k = _dayKey(sp.completed_at);
+    if (byDay[k]) byDay[k].count++;
+  });
+  (raw.interventions || []).forEach(function(iv){
+    if (iv.student_id !== profileId) return;
+    var k = _dayKey(iv.created_at);
+    if (byDay[k]) byDay[k].hasIntervention = true;
+  });
+
+  return Object.keys(byDay).sort().map(function(k){
+    return { date: k, count: byDay[k].count, hasIntervention: byDay[k].hasIntervention };
+  });
+}
+
+function renderSparklineHtml(profileId, daysBack) {
+  var series = buildDailyEventMap(profileId, daysBack || 30);
+  if (!series.length) return '<div style="color:var(--text-muted);font-size:0.75rem">Sem dados temporais disponíveis</div>';
+  var max = series.reduce(function(a,s){return Math.max(a, s.count)}, 1);
+  var totalEvents = series.reduce(function(a,s){return a + s.count}, 0);
+  var activeDays = series.filter(function(s){return s.count > 0}).length;
+
+  var bars = series.map(function(s){
+    var h = s.count === 0 ? 2 : Math.max(3, Math.round(s.count / max * 32));
+    var cls = s.hasIntervention ? 'sparkline-bar intervention' : (s.count === 0 ? 'sparkline-bar zero' : 'sparkline-bar');
+    var tip = s.date + ': ' + s.count + ' evento(s)' + (s.hasIntervention ? ' · intervenção' : '');
+    return '<div class="' + cls + '" style="height:' + h + 'px" title="' + tip + '"></div>';
+  }).join('');
+
+  return '<div>'
+    + '<div class="sparkline-container">' + bars + '</div>'
+    + '<div class="sparkline-meta">'
+      + '<span>' + series[0].date.substring(5) + '</span>'
+      + '<span style="color:var(--text);font-weight:600">' + totalEvents + ' eventos · ' + activeDays + ' dias ativos (' + daysBack + 'd)</span>'
+      + '<span>' + series[series.length-1].date.substring(5) + '</span>'
+    + '</div>'
+    + '</div>';
+}
+
+// Computa survival: para cada semana desde o início do semestre,
+// % de alunos com ≥1 evento na semana.
+function computeCohortSurvival() {
+  var raw = window._adminRaw;
+  if (!raw) return null;
+  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00');
+  var now = new Date();
+  var nWeeks = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
+  if (nWeeks > 12) nWeeks = 12;
+
+  var studentIds = new Set();
+  (raw.profiles || []).forEach(function(p){
+    if ((p.role || '') !== 'admin') studentIds.add(p.id);
+  });
+  var totalStudents = studentIds.size;
+  if (!totalStudents) return null;
+
+  // Coletar timestamps por user_id
+  var eventsByUser = {};
+  function addTs(uid, ts) {
+    if (!ts || !studentIds.has(uid)) return;
+    if (!eventsByUser[uid]) eventsByUser[uid] = [];
+    eventsByUser[uid].push(new Date(ts).getTime());
+  }
+  (raw.quizQA || []).forEach(function(q){ addTs(q.user_id, q.answered_at); });
+  (raw.sectionProgress || []).forEach(function(sp){ addTs(sp.user_id, sp.completed_at); });
+  (raw.pageVisits || []).forEach(function(pv){ addTs(pv.user_id, pv.last_visit_at); });
+
+  var weeks = [];
+  for (var w = 0; w < nWeeks; w++) {
+    var ws = SEMESTER_START.getTime() + w * 7 * 86400000;
+    var we = ws + 7 * 86400000;
+    var active = 0;
+    studentIds.forEach(function(uid){
+      var evs = eventsByUser[uid] || [];
+      for (var j = 0; j < evs.length; j++) {
+        if (evs[j] >= ws && evs[j] < we) { active++; break; }
+      }
+    });
+    weeks.push({ week: w + 1, start: new Date(ws), active: active, pct: Math.round(active / totalStudents * 100) });
+  }
+  return { total: totalStudents, weeks: weeks };
+}
+
+function renderCohortSurvival() {
+  var container = document.getElementById('m-cohort-survival');
+  if (!container) return;
+  var data = computeCohortSurvival();
+  if (!data || !data.weeks.length) {
+    container.innerHTML = '<div class="dash-chart-empty">Sem dados suficientes. Precisa de pelo menos 1 semana de atividade para desenhar a curva.</div>';
+    return;
+  }
+
+  var W = 900, H = 200, PL = 48, PR = 20, PT = 16, PB = 34;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  var nW = data.weeks.length;
+  var stepX = nW > 1 ? plotW / (nW - 1) : plotW;
+
+  function x(i) { return PL + i * stepX; }
+  function y(pct) { return PT + (100 - pct) / 100 * plotH; }
+
+  // Path da linha
+  var linePath = data.weeks.map(function(w, i){
+    return (i === 0 ? 'M' : 'L') + x(i).toFixed(1) + ',' + y(w.pct).toFixed(1);
+  }).join(' ');
+  var areaPath = linePath + ' L' + x(nW-1).toFixed(1) + ',' + y(0) + ' L' + x(0).toFixed(1) + ',' + y(0) + ' Z';
+
+  // Grid + ticks Y (0, 25, 50, 75, 100)
+  var grid = '';
+  [0, 25, 50, 75, 100].forEach(function(t){
+    grid += '<line class="grid" x1="' + PL + '" y1="' + y(t) + '" x2="' + (W - PR) + '" y2="' + y(t) + '"/>';
+    grid += '<text class="axis-tick" x="' + (PL - 6) + '" y="' + (y(t) + 3) + '" text-anchor="end">' + t + '%</text>';
+  });
+
+  // Ticks X
+  var xticks = data.weeks.map(function(w, i){
+    var lbl = 'S' + w.week;
+    return '<text class="axis-tick" x="' + x(i) + '" y="' + (H - PB + 14) + '" text-anchor="middle">' + lbl + '</text>';
+  }).join('');
+
+  // Dots
+  var dots = data.weeks.map(function(w, i){
+    return '<circle class="dot" cx="' + x(i).toFixed(1) + '" cy="' + y(w.pct).toFixed(1) + '" r="4"><title>Semana ' + w.week + ' · ' + w.active + ' de ' + data.total + ' (' + w.pct + '%)</title></circle>';
+  }).join('');
+
+  container.innerHTML =
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + grid
+    + '<path class="area" d="' + areaPath + '"/>'
+    + '<path class="line" d="' + linePath + '"/>'
+    + dots
+    + xticks
+    + '<text class="axis-label" x="' + (PL + plotW/2) + '" y="' + (H - 4) + '" text-anchor="middle">Semana</text>'
+    + '<text class="axis-label" transform="rotate(-90) translate(' + (-H/2 + 16) + ',14)" text-anchor="middle">% turma ativa</text>'
+    + '</svg>';
+}
+
+// Confidence gap scatter — X = confiança pós, Y = acerto 1ª na aula
+function computeConfidencePoints() {
+  var raw = window._adminRaw;
+  var data = window._alunosData;
+  if (!raw || !data) return [];
+  // Para cada (user_id, page_id): média de confidence.post (se existir) e acerto 1ª.
+  // confidence_ratings: phase='post' é o que interessa aqui.
+  var conf = {}; // key "uid::page" → { sum, n }
+  (raw.confidence || []).forEach(function(c){
+    if (c.phase !== 'post') return;
+    var k = c.user_id + '::' + c.page_id;
+    if (!conf[k]) conf[k] = { sum: 0, n: 0 };
+    conf[k].sum += c.value; conf[k].n += 1;
+  });
+  // 1st try accuracy por (uid, page)
+  var firstSeen = {};
+  var ft = {}; // key → { total, correct }
+  (raw.quizQA || []).forEach(function(q){
+    var kk = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (firstSeen[kk] && q.answered_at >= firstSeen[kk].ts) return;
+    firstSeen[kk] = { correct: !!q.correct, ts: q.answered_at };
+  });
+  Object.keys(firstSeen).forEach(function(kk){
+    var parts = kk.split('::');
+    var k = parts[0] + '::' + parts[1];
+    if (!ft[k]) ft[k] = { total: 0, correct: 0 };
+    ft[k].total++;
+    if (firstSeen[kk].correct) ft[k].correct++;
+  });
+
+  var profileNome = {};
+  (raw.profiles || []).forEach(function(p){ profileNome[p.id] = p.nome; });
+
+  var pts = [];
+  Object.keys(conf).forEach(function(k){
+    var c = conf[k];
+    var avgConf = c.sum / c.n;
+    var accRec = ft[k];
+    if (!accRec || accRec.total < 2) return;
+    var parts = k.split('::');
+    pts.push({
+      uid: parts[0],
+      page: parts[1],
+      x: Math.max(0, Math.min(100, avgConf)),
+      y: Math.round(accRec.correct / accRec.total * 100),
+      name: profileNome[parts[0]] || parts[0].substring(0,6),
+      n: accRec.total
+    });
+  });
+  return pts;
+}
+
+function renderScatter(containerId, points, opts) {
+  opts = opts || {};
+  var container = document.getElementById(containerId);
+  if (!container) return;
+  if (!points.length) {
+    container.innerHTML = '<div class="dash-chart-empty">' + (opts.emptyMsg || 'Sem pontos para plotar.') + '</div>';
+    return;
+  }
+
+  var W = 900, H = 320, PL = 56, PR = 24, PT = 20, PB = 44;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  var xMin = opts.xMin != null ? opts.xMin : Math.min.apply(null, points.map(function(p){return p.x}));
+  var xMax = opts.xMax != null ? opts.xMax : Math.max.apply(null, points.map(function(p){return p.x}));
+  var yMin = opts.yMin != null ? opts.yMin : Math.min.apply(null, points.map(function(p){return p.y}));
+  var yMax = opts.yMax != null ? opts.yMax : Math.max.apply(null, points.map(function(p){return p.y}));
+  if (xMax === xMin) xMax = xMin + 1;
+  if (yMax === yMin) yMax = yMin + 1;
+
+  function x(v) { return PL + (v - xMin) / (xMax - xMin) * plotW; }
+  function y(v) { return PT + (yMax - v) / (yMax - yMin) * plotH; }
+
+  // Grid
+  var gridLines = '';
+  var xTickValues = opts.xTicks || [0, 25, 50, 75, 100];
+  var yTickValues = opts.yTicks || [0, 25, 50, 75, 100];
+  xTickValues.forEach(function(t){
+    if (t < xMin || t > xMax) return;
+    gridLines += '<line class="grid" x1="' + x(t) + '" y1="' + PT + '" x2="' + x(t) + '" y2="' + (PT + plotH) + '"/>';
+    gridLines += '<text class="axis-tick" x="' + x(t) + '" y="' + (PT + plotH + 14) + '" text-anchor="middle">' + (opts.xSuffix ? t + opts.xSuffix : t) + '</text>';
+  });
+  yTickValues.forEach(function(t){
+    if (t < yMin || t > yMax) return;
+    gridLines += '<line class="grid" x1="' + PL + '" y1="' + y(t) + '" x2="' + (W - PR) + '" y2="' + y(t) + '"/>';
+    gridLines += '<text class="axis-tick" x="' + (PL - 6) + '" y="' + (y(t) + 3) + '" text-anchor="end">' + (opts.ySuffix ? t + opts.ySuffix : t) + '</text>';
+  });
+
+  // Diagonal (só se opts.diagonal for true e xMin/xMax/yMin/yMax forem comparáveis)
+  var diagonal = '';
+  if (opts.diagonal) {
+    var xy1 = Math.max(xMin, yMin);
+    var xy2 = Math.min(xMax, yMax);
+    diagonal = '<line class="diagonal" x1="' + x(xy1) + '" y1="' + y(xy1) + '" x2="' + x(xy2) + '" y2="' + y(xy2) + '"/>';
+  }
+
+  // Dots com classe por quadrante (se diagonal ativa) ou por Y (se não)
+  var dots = points.map(function(p){
+    var cls = 'dot';
+    if (opts.diagonal) {
+      if (p.x - p.y > 15) cls += ' dot-low';       // acima da diagonal (confiante mas erra)
+      else if (p.y - p.x > 15) cls += ' dot-high'; // abaixo (inseguro competente)
+      else cls += ' dot-mid';                      // calibrado
+    } else if (opts.colorByY) {
+      cls += p.y >= 70 ? ' dot-high' : p.y >= 40 ? ' dot-mid' : ' dot-low';
+    }
+    var title = (p.tooltip || (p.name + (p.page ? ' · ' + _pageLabel(p.page) : '') + ' · (' + Math.round(p.x) + ', ' + Math.round(p.y) + ')'));
+    return '<circle class="' + cls + '" cx="' + x(p.x).toFixed(1) + '" cy="' + y(p.y).toFixed(1) + '" r="' + (opts.radius || 5) + '"><title>' + title + '</title></circle>';
+  }).join('');
+
+  container.innerHTML =
+    '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + gridLines
+    + diagonal
+    + dots
+    + '<text class="axis-label" x="' + (PL + plotW/2) + '" y="' + (H - 8) + '" text-anchor="middle">' + (opts.xLabel || 'X') + '</text>'
+    + '<text class="axis-label" transform="rotate(-90) translate(' + (-H/2 + 16) + ',14)" text-anchor="middle">' + (opts.yLabel || 'Y') + '</text>'
+    + '</svg>';
+
+  if (opts.legend) container.innerHTML += opts.legend;
+}
+
+function renderConfidenceScatter() {
+  var pts = computeConfidencePoints();
+  renderScatter('m-confidence-scatter', pts, {
+    xMin: 0, xMax: 100, yMin: 0, yMax: 100,
+    xTicks: [0,25,50,75,100], yTicks: [0,25,50,75,100],
+    xSuffix: '%', ySuffix: '%',
+    xLabel: 'Confiança declarada (pós-slider)',
+    yLabel: 'Acerto 1ª tentativa (%)',
+    diagonal: true,
+    emptyMsg: 'Precisa de confidence_ratings (phase=post) + quiz respondido na mesma aula. Ainda sem pares suficientes.',
+    legend: '<div class="dash-legend">'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#C8102E"></span>Dunning-Kruger (acima da diagonal)</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#D97706"></span>Calibrado (±15pp)</span>'
+      + '<span class="leg-item"><span class="leg-swatch" style="background:#15803D"></span>Inseguro competente (abaixo)</span>'
+      + '</div>'
+  });
+}
+
+function renderTimePerformanceScatter() {
+  var rows = window._alunosRows || [];
+  var pts = rows
+    .filter(function(r){ return (r.s.totalTimeMin||0) > 0 && r.ftPct != null && r.ftTotal >= 5; })
+    .map(function(r){
+      return {
+        x: r.s.totalTimeMin || 0,
+        y: r.ftPct,
+        name: r.s.nome,
+        tooltip: r.s.nome + ' · ' + r.s.totalTimeMin + ' min · acerto 1ª ' + r.ftPct + '% (' + r.ftTotal + ' itens)'
+      };
+    });
+  if (!pts.length) {
+    var container = document.getElementById('m-tp-scatter');
+    if (container) container.innerHTML = '<div class="dash-chart-empty">Ainda sem alunos com ≥ 5 itens respondidos em 1ª tentativa.</div>';
+    return;
+  }
+  var maxX = Math.max.apply(null, pts.map(function(p){return p.x}));
+  renderScatter('m-tp-scatter', pts, {
+    xMin: 0, xMax: Math.max(30, Math.ceil(maxX / 30) * 30),
+    yMin: 0, yMax: 100,
+    yTicks: [0,25,50,75,100], ySuffix: '%',
+    xLabel: 'Min totais dedicados',
+    yLabel: 'Acerto 1ª tentativa (%)',
+    colorByY: true
+  });
+}
+
 // ============ RENDER ============
 
 // ============ DATA SOURCE ADAPTER ============
@@ -2325,6 +2718,11 @@ async function renderAdmin() {
 
   // 8) Curva de aprendizado dentro do quiz — requer raw.quizQA (Supabase).
   renderLearningCurve(raw);
+
+  // 9) Onda 3A — charts temporais e scatters
+  renderCohortSurvival();
+  renderConfidenceScatter();
+  renderTimePerformanceScatter();
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
