@@ -236,18 +236,38 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .nudge-card.inactive{border-left-color:#525252;background:#F5F5F5}
 .nudge-card.silent{border-left-color:#D97706;background:#FFFBEB}
 .nudge-card.star{border-left-color:#15803D;background:#ECFDF5}
+.nudge-card.reflection{border-left-color:#1B3A5C;background:#EFF6FF}
 .nudge-card .nudge-badge{font-size:1.5rem;line-height:1}
 .nudge-card .nudge-body{min-width:0}
 .nudge-card .nudge-name{font-size:0.95rem;font-weight:700;color:var(--primary);margin-bottom:0.15rem}
 .nudge-card .nudge-name .nudge-mat{color:var(--text-muted);font-weight:400;font-size:0.72rem;margin-left:0.4rem}
+.nudge-card .nudge-name .nudge-page{color:#1B3A5C;font-weight:600;font-size:0.7rem;margin-left:0.4rem;background:#DBEAFE;padding:0.1rem 0.4rem;border-radius:4px}
 .nudge-card .nudge-diag{font-size:0.78rem;color:var(--text);line-height:1.4;margin-bottom:0.25rem}
 .nudge-card .nudge-tmpl{font-size:0.7rem;color:var(--text-muted);font-style:italic}
 .nudge-card .nudge-actions{display:flex;flex-direction:column;gap:0.3rem;min-width:170px}
 .nudge-card .nudge-btn{background:var(--accent);color:#fff;border:none;padding:0.45rem 0.8rem;border-radius:var(--radius);font-size:0.76rem;font-weight:600;cursor:pointer;text-align:center}
 .nudge-card .nudge-btn:hover{filter:brightness(0.92)}
+.nudge-card .nudge-btn:disabled{opacity:0.45;cursor:not-allowed}
 .nudge-card .nudge-btn.secondary{background:#fff;color:var(--text);border:1px solid var(--border)}
 .nudge-card .nudge-btn.secondary:hover{border-color:var(--accent);color:var(--accent)}
-@media(max-width:768px){.nudge-card{grid-template-columns:auto 1fr}.nudge-card .nudge-actions{grid-column:1/-1;flex-direction:row}}
+.nudge-card .nudge-btn.muted{background:#fff;color:var(--text-muted);border:1px solid var(--border);font-weight:500}
+.nudge-card .nudge-btn.muted:hover{color:var(--text);border-color:var(--text-muted)}
+.nudge-card .nudge-btn.danger-ghost{background:#fff;color:#991B1B;border:1px solid #FCA5A5;font-weight:500}
+.nudge-card .nudge-btn.danger-ghost:hover{background:#FEF2F2}
+/* Reflection-specific */
+.nudge-card.reflection .nudge-refl-text{font-size:0.82rem;line-height:1.5;color:#1F2937;background:#fff;border:1px solid #BFDBFE;border-radius:4px;padding:0.5rem 0.65rem;margin:0.3rem 0;max-height:120px;overflow-y:auto;white-space:pre-wrap}
+.nudge-card.reflection .nudge-refl-prompt{font-size:0.7rem;color:#1B3A5C;font-weight:600;margin-bottom:0.15rem}
+.nudge-card.reflection .nudge-refl-resp{margin-top:0.4rem;display:flex;flex-direction:column;gap:0.3rem}
+.nudge-card.reflection .nudge-refl-resp textarea{width:100%;min-height:70px;max-height:220px;border:1px solid var(--border);border-radius:4px;padding:0.45rem 0.55rem;font-family:inherit;font-size:0.82rem;line-height:1.45;resize:vertical;box-sizing:border-box}
+.nudge-card.reflection .nudge-refl-resp textarea:focus{outline:none;border-color:#1B3A5C;box-shadow:0 0 0 2px rgba(27,58,92,0.12)}
+.nudge-card.reflection .nudge-refl-ctrls{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;font-size:0.75rem}
+.nudge-card.reflection .nudge-refl-ctrls label{display:inline-flex;align-items:center;gap:0.3rem;color:var(--text);cursor:pointer}
+.nudge-card.reflection .nudge-refl-msg{font-size:0.72rem;color:var(--text-muted);margin-left:auto}
+.nudge-card.reflection .nudge-refl-actions{display:flex;gap:0.4rem;flex-wrap:wrap}
+.nudge-card.reflection .nudge-refl-actions .nudge-btn{font-size:0.74rem;padding:0.4rem 0.7rem}
+.nudge-card.reflection .nudge-refl-actions .nudge-btn.primary{background:#1B3A5C}
+.nudge-card.reflection .nudge-refl-actions .nudge-btn.primary:hover{background:#13283F}
+@media(max-width:768px){.nudge-card{grid-template-columns:auto 1fr}.nudge-card .nudge-actions{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
 /* Anomaly rows */
 .anomaly-row{display:flex;align-items:center;gap:0.8rem;padding:0.55rem 0.8rem;background:#fff;border:1px solid var(--border);border-left:4px solid #D97706;border-radius:0 4px 4px 0;margin-bottom:0.35rem;font-size:0.82rem}
 .anomaly-row.severe{border-left-color:#C8102E;background:#FEF2F2}
@@ -584,6 +604,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
         <option value="critical">🔴 Crítico — risco ≥60 + sem intervenção há ≥14d</option>
         <option value="inactive">⚫ Nunca acessou</option>
         <option value="silent">🟡 Inativo ≥5 dias (com histórico)</option>
+        <option value="reflection">📝 Reflexões a responder</option>
         <option value="star">⭐ Alta performance (P75+ reconhecer)</option>
       </select>
       <div class="toolbar-spacer"></div>
@@ -2571,10 +2592,49 @@ function renderAnomalyList() {
 }
 
 // ---------- Smart nudge queue ----------
+
+// Disposition TTL para kind='resolved'. Passado isso, o item volta ao feed se
+// a condicao ainda valer. kind='ignored' nunca volta (ttl efetivo infinito).
+var NUDGE_RESOLVED_TTL_DAYS = 14;
+// Janela para reflexoes "a responder". Reflexao enviada ha mais do que isso
+// sai da fila (tempo de aula ja passou; respostas tardias tem menos utilidade).
+var NUDGE_REFLECTION_WINDOW_DAYS = 21;
+
+// Constroi indice de dispositions ativas em:
+//   - byStudent[student_id][category] -> {id, kind, at}
+//   - byReflection[reflection_id]     -> {id, kind, at}
+// Uma disposition kind='resolved' com idade >= NUDGE_RESOLVED_TTL_DAYS deixa
+// de contar (item pode voltar ao feed). kind='ignored' sempre conta.
+function _indexNudgeDispositions() {
+  var raw = window._adminRaw || {};
+  var list = raw.nudgeDispositions || [];
+  var now = Date.now();
+  var byStudent = {}, byReflection = {};
+
+  list.forEach(function(d){
+    var at = d.dispositioned_at ? new Date(d.dispositioned_at).getTime() : 0;
+    var ageDays = at ? Math.floor((now - at) / 86400000) : Infinity;
+    if (d.kind === 'resolved' && ageDays >= NUDGE_RESOLVED_TTL_DAYS) return; // expirou
+    var rec = { id: d.id, kind: d.kind, at: d.dispositioned_at, ageDays: ageDays, note: d.note };
+    if (d.category === 'reflection') {
+      if (d.reflection_id && !byReflection[d.reflection_id]) byReflection[d.reflection_id] = rec;
+    } else {
+      if (!d.student_id) return;
+      if (!byStudent[d.student_id]) byStudent[d.student_id] = {};
+      // primeira disposition vista vence (ordenadas desc por dispositioned_at
+      // em adminFetchAll, entao a mais recente ja esta em list[0]).
+      if (!byStudent[d.student_id][d.category]) byStudent[d.student_id][d.category] = rec;
+    }
+  });
+
+  return { byStudent: byStudent, byReflection: byReflection };
+}
+
 function computeNudgeQueue() {
   var rows = window._alunosRows || [];
   var queue = [];
   var now = Date.now();
+  var disp = _indexNudgeDispositions();
 
   rows.forEach(function(r){
     var studentData = (window._alunosData || {})[r.s.matricula] || {};
@@ -2584,13 +2644,18 @@ function computeNudgeQueue() {
       return t > m ? t : m;
     }, 0)) : null;
     var daysSinceIv = lastIv ? Math.floor((now - lastIv.getTime()) / 86400000) : Infinity;
+    var profileId = _profileIdFromMatricula(r.s.matricula);
+    var studentDisp = (profileId && disp.byStudent[profileId]) || {};
 
     // Categorias (mutuamente exclusivas — primeira match vence)
     if (r.risk.level === 'inactive') {
+      if (studentDisp['inactive']) return; // ja resolvido/ignorado
       queue.push({
+        key: 'student:' + (profileId || r.s.matricula) + ':inactive',
         category: 'inactive',
         badge: '⚫',
         r: r,
+        studentId: profileId,
         diag: 'Aluno nunca acessou a plataforma. 0 aulas, 0 tempo, 0 quizzes.',
         template: 'Template 2 — "Nunca acessou"',
         subject: r.s.nome + ', precisamos te trazer pra plataforma — MPE Microeconomia I'
@@ -2598,10 +2663,13 @@ function computeNudgeQueue() {
       return;
     }
     if (r.risk.level === 'high' && daysSinceIv >= 14) {
+      if (studentDisp['critical']) return;
       queue.push({
+        key: 'student:' + (profileId || r.s.matricula) + ':critical',
         category: 'critical',
         badge: '🔴',
         r: r,
+        studentId: profileId,
         diag: 'Risco ' + r.risk.score + '/100. ' + (r.risk.flags[0] ? r.risk.flags[0].msg + '.' : '') + (ivs.length ? ' Última intervenção há ' + daysSinceIv + 'd.' : ' Nunca houve intervenção.'),
         template: 'Template 1 — "Aluno em risco"',
         subject: 'Posso te ajudar em algo, ' + r.s.nome.split(' ')[0] + '? — Microeconomia I MPE'
@@ -2609,10 +2677,13 @@ function computeNudgeQueue() {
       return;
     }
     if (r.daysSince != null && r.daysSince >= 5 && r.daysSince <= 14 && (r.s.pagesVisited||0) >= 1 && daysSinceIv >= 10) {
+      if (studentDisp['silent']) return;
       queue.push({
+        key: 'student:' + (profileId || r.s.matricula) + ':silent',
         category: 'silent',
         badge: '🟡',
         r: r,
+        studentId: profileId,
         diag: 'Tinha histórico (' + (r.s.pagesVisited||0) + ' aulas abertas, ' + (r.s.totalTimeMin||0) + ' min) e sumiu há ' + r.daysSince + ' dias.',
         template: 'Template 3 — "Inativo com histórico"',
         subject: 'Senti sua falta esta semana, ' + r.s.nome.split(' ')[0] + ' — MPE Microeconomia I'
@@ -2621,10 +2692,13 @@ function computeNudgeQueue() {
     }
     // Alta performance: percentil ≥75 em FT e acertos significativos + nenhuma intervenção ainda
     if (r.ftPct != null && r.ftTotal >= 10 && r.ftPct >= 75 && ivs.length === 0) {
+      if (studentDisp['star']) return;
       queue.push({
+        key: 'student:' + (profileId || r.s.matricula) + ':star',
         category: 'star',
         badge: '⭐',
         r: r,
+        studentId: profileId,
         diag: 'Acerto 1ª de ' + r.ftPct + '% (' + r.ftTotal + ' itens). ' + (r.s.totalTimeMin||0) + ' min dedicados. Reconhecer + oferecer extensão.',
         template: 'Template 4 — "Performance alta"',
         subject: r.s.nome.split(' ')[0] + ', que trajeto — Microeconomia I MPE'
@@ -2633,10 +2707,72 @@ function computeNudgeQueue() {
     }
   });
 
-  return queue.sort(function(a,b){
-    var ordem = { critical: 0, inactive: 1, silent: 2, star: 3 };
-    return (ordem[a.category] || 9) - (ordem[b.category] || 9);
+  // Reflexoes a responder (um item por reflexao; nao agrupa por aluno).
+  // Fonte: window._adminRaw.reflections (array flat do Supabase). Filtra:
+  //   - sem response_text (ainda nao respondida)
+  //   - dentro da janela NUDGE_REFLECTION_WINDOW_DAYS
+  //   - sem disposition ativa pelo reflection_id
+  var raw = window._adminRaw || {};
+  var reflections = (raw.reflections || []);
+  var profileById = {};
+  (raw.profiles || []).forEach(function(p){ profileById[p.id] = p; });
+  var WINDOW_MS = NUDGE_REFLECTION_WINDOW_DAYS * 86400000;
+
+  reflections.forEach(function(refl){
+    if (refl.response_text && String(refl.response_text).trim().length) return;
+    var submittedAt = refl.submitted_at ? new Date(refl.submitted_at).getTime() : 0;
+    if (!submittedAt) return;
+    var ageDays = Math.floor((now - submittedAt) / 86400000);
+    if (now - submittedAt > WINDOW_MS) return; // fora da janela
+    if (disp.byReflection[refl.id]) return;    // ja resolvido/ignorado
+
+    var p = profileById[refl.user_id];
+    if (!p) return;
+    // rowLite mimica o shape de r.s usado em renderNudgeQueue (para botao "Ver perfil")
+    var rowLite = {
+      s: { matricula: p.matricula, nome: p.nome, pagesVisited: 0, totalTimeMin: 0 },
+      email: p.email || '',
+      ftPct: null, ftTotal: 0, daysSince: null,
+      risk: { level: 'unknown', score: 0, flags: [] }
+    };
+    queue.push({
+      key: 'reflection:' + refl.id,
+      category: 'reflection',
+      badge: '📝',
+      r: rowLite,
+      studentId: refl.user_id,
+      reflectionId: refl.id,
+      reflection: {
+        id: refl.id,
+        text: String(refl.text || ''),
+        pageId: refl.page_id,
+        promptId: refl.prompt_id,
+        submittedAt: refl.submitted_at,
+        ageDays: ageDays,
+        citedInClass: !!refl.cited_in_class
+      },
+      diag: 'Reflexão enviada há ' + ageDays + 'd em ' + (refl.page_id || '—') + ' (prompt "' + (refl.prompt_id || '') + '"). Ainda sem resposta sua.',
+      template: 'Resposta individual — opcional citar em aula',
+      subject: r_ReflSubject(p.nome, refl.page_id)
+    });
   });
+
+  return queue.sort(function(a,b){
+    var ordem = { critical: 0, inactive: 1, silent: 2, reflection: 3, star: 4 };
+    var da = ordem[a.category]; if (da == null) da = 9;
+    var db = ordem[b.category]; if (db == null) db = 9;
+    if (da !== db) return da - db;
+    // dentro de reflexoes, mais antiga primeiro (mais urgente responder)
+    if (a.category === 'reflection' && b.category === 'reflection') {
+      return (b.reflection.ageDays || 0) - (a.reflection.ageDays || 0);
+    }
+    return 0;
+  });
+}
+
+function r_ReflSubject(nome, pageId) {
+  var firstName = (nome || '').split(' ')[0];
+  return 'Sobre sua reflexão' + (pageId ? ' em ' + pageId : '') + ', ' + firstName + ' — Microeconomia I MPE';
 }
 
 function _buildEmailBody(item) {
@@ -2676,11 +2812,29 @@ function _buildEmailBody(item) {
       + '2. Um papel mais ativo na monitoria do Alberto. Se você topar, em uma das monitorias você apresenta a solução de um exercício e explica pra turma.\n\n'
       + 'Sem pressão — é só uma porta que abro. Se preferir manter no ritmo atual, 100% ok; só queria que você soubesse que o trabalho está sendo notado.\n\nAbraço.\nDarcio';
   }
+  if (item.category === 'reflection') {
+    var refl = item.reflection || {};
+    var pageTxt = refl.pageId ? ' (página ' + refl.pageId + ')' : '';
+    return 'Olá, ' + firstName + ',\n\n'
+      + 'Li sua reflexão' + pageTxt + ' e quis te responder individualmente.\n\n'
+      + '--- Sua reflexão:\n'
+      + (refl.text || '') + '\n---\n\n'
+      + '[SUA RESPOSTA AQUI — já gravada na plataforma se você usou o botão "Salvar resposta". Este email é só para reforçar o canal direto.]\n\n'
+      + 'Se quiser aprofundar, me responda — posso usar o ponto na próxima aula (com ou sem citar seu nome, você escolhe).\n\nAbraço.\nDarcio';
+  }
   return '';
 }
 
-function openNudgeEmail(matricula) {
-  var item = (window._nudgeQueue || []).filter(function(it){return it.r.s.matricula===matricula})[0];
+function _nudgeItemByKey(key) {
+  var queue = window._nudgeQueue || [];
+  for (var i = 0; i < queue.length; i++) {
+    if (queue[i].key === key) return queue[i];
+  }
+  return null;
+}
+
+function openNudgeEmail(key) {
+  var item = _nudgeItemByKey(key);
   if (!item) return;
   var email = item.r.email || '';
   var subject = encodeURIComponent(item.subject);
@@ -2689,12 +2843,12 @@ function openNudgeEmail(matricula) {
   window.location.href = mailto;
 }
 
-async function logNudgeIntervention(matricula) {
-  var item = (window._nudgeQueue || []).filter(function(it){return it.r.s.matricula===matricula})[0];
+async function logNudgeIntervention(key) {
+  var item = _nudgeItemByKey(key);
   if (!item) return;
   if (!confirm('Registrar intervenção "' + item.category + '" para ' + item.r.s.nome + '?\n\n(Opcional — use depois de enviar o email)')) return;
   if (!window.MpeDB || !window.MpeDB.addIntervention) return alert('Supabase offline.');
-  var studentId = _profileIdFromMatricula(matricula);
+  var studentId = item.studentId || _profileIdFromMatricula(item.r.s.matricula);
   if (!studentId) return alert('Perfil não encontrado.');
   var res = await window.MpeDB.addIntervention({
     studentId: studentId,
@@ -2704,6 +2858,135 @@ async function logNudgeIntervention(matricula) {
   });
   if (!res.ok) return alert('Erro: ' + (res.error.message || res.error));
   alert('Intervenção registrada. A próxima carga do dashboard atualizará o delta.');
+}
+
+// ---------- Nudge: resposta a reflexao ----------
+
+// Lê textarea+checkbox, chama MpeDB.respondReflection, atualiza _adminRaw,
+// opcionalmente registra intervencao (topic="Reflexão respondida") e depois
+// re-renderiza a queue. Se opts.alsoEmail=true, dispara mailto pre-preenchido
+// apos o save.
+async function saveReflectionResponse(key, opts) {
+  var item = _nudgeItemByKey(key);
+  if (!item || item.category !== 'reflection') return;
+  var refl = item.reflection || {};
+  var textEl = document.getElementById('refl-resp-' + refl.id);
+  var citeEl = document.getElementById('refl-cite-' + refl.id);
+  var msgEl  = document.getElementById('refl-msg-'  + refl.id);
+  var responseText = (textEl && textEl.value || '').trim();
+  var citedInClass = !!(citeEl && citeEl.checked);
+
+  if (!responseText) {
+    if (msgEl) { msgEl.textContent = 'Digite uma resposta antes de salvar.'; msgEl.style.color = '#991B1B'; }
+    return;
+  }
+  if (!window.MpeDB || !window.MpeDB.respondReflection) {
+    if (msgEl) { msgEl.textContent = 'Supabase offline — não é possível salvar.'; msgEl.style.color = '#991B1B'; }
+    return;
+  }
+
+  if (msgEl) { msgEl.textContent = 'Salvando…'; msgEl.style.color = 'var(--text-muted)'; }
+  var res = await window.MpeDB.respondReflection({
+    reflectionId: refl.id,
+    responseText: responseText,
+    citedInClass: citedInClass
+  });
+  if (!res.ok) {
+    if (msgEl) { msgEl.textContent = 'Erro: ' + ((res.error && res.error.message) || res.error); msgEl.style.color = '#991B1B'; }
+    return;
+  }
+
+  // Atualiza _adminRaw.reflections in-memory para a queue/tagcloud refletirem o novo estado
+  var raw = window._adminRaw || {};
+  (raw.reflections || []).forEach(function(r){
+    if (r.id === refl.id) {
+      r.response_text   = res.data ? res.data.response_text   : responseText;
+      r.responded_at    = res.data ? res.data.responded_at    : new Date().toISOString();
+      r.responded_by    = res.data ? res.data.responded_by    : null;
+      r.cited_in_class  = res.data ? res.data.cited_in_class  : citedInClass;
+    }
+  });
+
+  // Registra intervencao "nudge" pra aparecer na timeline do aluno (silencioso)
+  if (item.studentId && window.MpeDB.addIntervention) {
+    try {
+      var ivRes = await window.MpeDB.addIntervention({
+        studentId: item.studentId,
+        kind: 'nudge',
+        topic: 'Reflexão respondida · ' + (refl.pageId || ''),
+        note: 'Respondi a reflexão do aluno em "' + (refl.pageId || '—') + '" (prompt "' + (refl.promptId || '') + '")'
+          + (citedInClass ? '. Marcada para citar em aula.' : '.')
+          + '\n\nResposta enviada:\n' + responseText
+      });
+      if (ivRes && ivRes.ok && ivRes.data) {
+        // espelha no _alunosData pra timeline aparecer sem reload
+        var byId = {};
+        (raw.profiles || []).forEach(function(p){ byId[p.id] = p.matricula; });
+        var mat = byId[item.studentId];
+        var data = window._alunosData || {};
+        if (mat && data[mat]) {
+          data[mat].interventions.unshift({
+            id: ivRes.data.id,
+            adminId: ivRes.data.admin_id,
+            adminName: (await _getAdminNameCached()) || '(você)',
+            kind: ivRes.data.kind,
+            topic: ivRes.data.topic,
+            note: ivRes.data.note,
+            outcome: null, outcomeAt: null,
+            createdAt: ivRes.data.created_at
+          });
+        }
+      }
+    } catch(e) { /* silencioso — intervention é bonus */ }
+  }
+
+  if (opts && opts.alsoEmail) {
+    // abre email pre-preenchido (o admin continua editando ali)
+    openNudgeEmail(key);
+  }
+
+  // Re-renderiza queue: reflexao some (has response_text agora)
+  renderNudgeQueue();
+}
+
+// ---------- Nudge: resolver / ignorar (disposition) ----------
+
+async function _disposeNudgeAction(key, kind) {
+  var item = _nudgeItemByKey(key);
+  if (!item) return;
+  if (!window.MpeDB || !window.MpeDB.disposeNudge) return alert('Supabase offline.');
+
+  var payload = {
+    category: item.category,
+    kind: kind,
+    studentId:    (item.category === 'reflection') ? null : (item.studentId || _profileIdFromMatricula(item.r.s.matricula)),
+    reflectionId: (item.category === 'reflection') ? (item.reflectionId || null) : null
+  };
+  if (!payload.studentId && !payload.reflectionId) return alert('Não identifiquei o alvo da disposition.');
+
+  var res = await window.MpeDB.disposeNudge(payload);
+  if (!res.ok) return alert('Erro: ' + ((res.error && res.error.message) || res.error));
+
+  // Espelha localmente pra queue filtrar ja na proxima render
+  var raw = window._adminRaw || {};
+  if (!raw.nudgeDispositions) raw.nudgeDispositions = [];
+  raw.nudgeDispositions.unshift(res.data);
+
+  renderNudgeQueue();
+}
+
+function resolveNudge(key) {
+  // kind='resolved' volta apos NUDGE_RESOLVED_TTL_DAYS se condicao persistir.
+  _disposeNudgeAction(key, 'resolved');
+}
+
+function ignoreNudge(key) {
+  var item = _nudgeItemByKey(key);
+  if (!item) return;
+  var who = item.r && item.r.s && item.r.s.nome ? item.r.s.nome : 'este item';
+  var cat = item.category === 'reflection' ? 'esta reflexão' : 'este sinal (' + item.category + ') para ' + who;
+  if (!confirm('Ignorar permanentemente ' + cat + '?\n\nSó volta se você apagar manualmente no Supabase.')) return;
+  _disposeNudgeAction(key, 'ignored');
 }
 
 function renderNudgeQueue() {
@@ -2716,7 +2999,19 @@ function renderNudgeQueue() {
   var filterCat = (document.getElementById('nudge-category') || {}).value || '';
   var filtered = filterCat ? queue.filter(function(q){return q.category===filterCat}) : queue;
 
-  if (countEl) countEl.textContent = filtered.length + ' de ' + queue.length + ' sinalizados';
+  // Breakdown por categoria, util pra ter noção do stock
+  var counts = { critical:0, inactive:0, silent:0, reflection:0, star:0 };
+  queue.forEach(function(q){ if (counts[q.category] != null) counts[q.category]++; });
+  var countTxt = filtered.length + ' de ' + queue.length + ' sinalizados';
+  if (queue.length) {
+    countTxt += ' · ' + (counts.critical ? '🔴' + counts.critical + ' ' : '')
+      + (counts.inactive   ? '⚫' + counts.inactive   + ' ' : '')
+      + (counts.silent     ? '🟡' + counts.silent     + ' ' : '')
+      + (counts.reflection ? '📝' + counts.reflection + ' ' : '')
+      + (counts.star       ? '⭐' + counts.star       + ' ' : '');
+  }
+  if (countEl) countEl.textContent = countTxt.trim();
+
   if (!queue.length) {
     container.innerHTML = '<div style="padding:1.5rem;text-align:center;color:var(--success);font-size:0.92rem">✅ Ninguém na fila. Turma em dia.</div>';
     return;
@@ -2726,20 +3021,64 @@ function renderNudgeQueue() {
     return;
   }
 
+  var online = !!(window.MpeDB && window.MpeDB.enabled);
+  var offAttr = online ? '' : ' disabled title="Supabase offline"';
+
   container.innerHTML = filtered.map(function(item){
     var r = item.r;
     var safeMat = r.s.matricula.replace(/'/g, "\\'");
+    var safeKey = item.key.replace(/'/g, "\\'");
+
+    // Card de reflexao usa layout proprio (texto longo + textarea)
+    if (item.category === 'reflection') {
+      var refl = item.reflection;
+      var pageBadge = refl.pageId ? '<span class="nudge-page">' + _escapeHtml(refl.pageId) + '</span>' : '';
+      var citedAttr = refl.citedInClass ? ' checked' : '';
+      return '<div class="nudge-card ' + item.category + '">'
+        + '<div class="nudge-badge">' + item.badge + '</div>'
+        + '<div class="nudge-body">'
+          + '<div class="nudge-name">' + _escapeHtml(r.s.nome)
+            + ' <span class="nudge-mat">' + _escapeHtml(r.s.matricula) + '</span>'
+            + pageBadge
+          + '</div>'
+          + '<div class="nudge-diag">' + _escapeHtml(item.diag) + '</div>'
+          + '<div class="nudge-refl-prompt">Prompt: ' + _escapeHtml(refl.promptId || '—') + ' · ' + refl.ageDays + 'd atrás</div>'
+          + '<div class="nudge-refl-text">' + _escapeHtml(refl.text) + '</div>'
+          + '<div class="nudge-refl-resp">'
+            + '<textarea id="refl-resp-' + refl.id + '" placeholder="Sua resposta aparecerá no portal do aluno (E6) e pode ser usada na próxima aula."></textarea>'
+            + '<div class="nudge-refl-ctrls">'
+              + '<label><input type="checkbox" id="refl-cite-' + refl.id + '"' + citedAttr + '> Citar em aula</label>'
+              + '<span class="nudge-refl-msg" id="refl-msg-' + refl.id + '"></span>'
+            + '</div>'
+            + '<div class="nudge-refl-actions">'
+              + '<button class="nudge-btn primary" onclick="saveReflectionResponse(\'' + safeKey + '\')"' + offAttr + '>💾 Salvar resposta</button>'
+              + '<button class="nudge-btn secondary" onclick="saveReflectionResponse(\'' + safeKey + '\', {alsoEmail:true})"' + offAttr + '>💾 Salvar + enviar email</button>'
+              + '<button class="nudge-btn muted" onclick="showStudentProfile(\'' + safeMat + '\')">Ver perfil</button>'
+            + '</div>'
+          + '</div>'
+        + '</div>'
+        + '<div class="nudge-actions">'
+          + '<button class="nudge-btn muted" onclick="resolveNudge(\'' + safeKey + '\')"' + offAttr + ' title="Marcado como resolvido; some da fila. Reflexões não voltam automaticamente.">✓ Resolver</button>'
+          + '<button class="nudge-btn danger-ghost" onclick="ignoreNudge(\'' + safeKey + '\')"' + offAttr + ' title="Remove permanentemente. Só volta se você apagar manualmente no Supabase.">✕ Ignorar</button>'
+        + '</div>'
+        + '</div>';
+    }
+
+    // Cards "classicos" (inactive/critical/silent/star) — mantem layout original
+    // e ganham 2 botoes novos de disposition no fim das acoes.
     return '<div class="nudge-card ' + item.category + '">'
       + '<div class="nudge-badge">' + item.badge + '</div>'
       + '<div class="nudge-body">'
-        + '<div class="nudge-name">' + r.s.nome + ' <span class="nudge-mat">' + r.s.matricula + '</span></div>'
-        + '<div class="nudge-diag">' + item.diag + '</div>'
-        + '<div class="nudge-tmpl">📧 ' + item.template + (r.email ? ' · ' + r.email : '') + '</div>'
+        + '<div class="nudge-name">' + _escapeHtml(r.s.nome) + ' <span class="nudge-mat">' + _escapeHtml(r.s.matricula) + '</span></div>'
+        + '<div class="nudge-diag">' + _escapeHtml(item.diag) + '</div>'
+        + '<div class="nudge-tmpl">📧 ' + _escapeHtml(item.template) + (r.email ? ' · ' + _escapeHtml(r.email) : '') + '</div>'
       + '</div>'
       + '<div class="nudge-actions">'
-        + '<button class="nudge-btn" onclick="openNudgeEmail(\'' + safeMat + '\')">📤 Enviar email</button>'
+        + '<button class="nudge-btn" onclick="openNudgeEmail(\'' + safeKey + '\')">📤 Enviar email</button>'
         + '<button class="nudge-btn secondary" onclick="showStudentProfile(\'' + safeMat + '\')">Ver perfil</button>'
-        + '<button class="nudge-btn secondary" onclick="logNudgeIntervention(\'' + safeMat + '\')">✓ Registrar</button>'
+        + '<button class="nudge-btn secondary" onclick="logNudgeIntervention(\'' + safeKey + '\')">✓ Registrar</button>'
+        + '<button class="nudge-btn muted" onclick="resolveNudge(\'' + safeKey + '\')"' + offAttr + ' title="Some da fila; volta em ' + NUDGE_RESOLVED_TTL_DAYS + ' dias se a condição persistir.">✓ Resolver</button>'
+        + '<button class="nudge-btn danger-ghost" onclick="ignoreNudge(\'' + safeKey + '\')"' + offAttr + ' title="Remove permanentemente. Só volta se você apagar manualmente no Supabase.">✕ Ignorar</button>'
       + '</div>'
       + '</div>';
   }).join('');

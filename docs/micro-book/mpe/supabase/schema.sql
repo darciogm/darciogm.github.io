@@ -207,17 +207,33 @@ CREATE INDEX IF NOT EXISTS idx_paper_exercises_user_page ON public.paper_exercis
 
 
 -- 11. REFLECTIONS - respostas qualitativas
+-- Colunas response_* permitem o admin (Darcio) responder a reflexao diretamente
+-- no dashboard (Nudge Queue) e o aluno ver a resposta no portal (E6).
+-- cited_in_class sinaliza que a reflexao foi mencionada em aula (reforco
+-- explicito do valor pedagogico de refletir com profundidade).
 
 CREATE TABLE IF NOT EXISTS public.reflections (
-  id            uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
-  user_id       uuid        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
-  page_id       text        NOT NULL,
-  prompt_id     text        NOT NULL,
-  text          text        NOT NULL,
-  submitted_at  timestamptz NOT NULL DEFAULT now(),
+  id              uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id         uuid        NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
+  page_id         text        NOT NULL,
+  prompt_id       text        NOT NULL,
+  text            text        NOT NULL,
+  submitted_at    timestamptz NOT NULL DEFAULT now(),
+  response_text   text,
+  responded_at    timestamptz,
+  responded_by    uuid        REFERENCES public.profiles(id) ON DELETE SET NULL,
+  cited_in_class  boolean     NOT NULL DEFAULT false,
   UNIQUE (user_id, page_id, prompt_id)
 );
 CREATE INDEX IF NOT EXISTS idx_reflections_user_page ON public.reflections (user_id, page_id);
+
+-- Backfill para instalacoes existentes onde a tabela ja foi criada sem as
+-- colunas de resposta.
+ALTER TABLE public.reflections
+  ADD COLUMN IF NOT EXISTS response_text   text,
+  ADD COLUMN IF NOT EXISTS responded_at    timestamptz,
+  ADD COLUMN IF NOT EXISTS responded_by    uuid REFERENCES public.profiles(id) ON DELETE SET NULL,
+  ADD COLUMN IF NOT EXISTS cited_in_class  boolean NOT NULL DEFAULT false;
 
 
 -- 11. admin_interventions - registro de conversas/ações do admin com alunos
@@ -239,6 +255,35 @@ CREATE INDEX IF NOT EXISTS idx_admin_interventions_student ON public.admin_inter
 CREATE INDEX IF NOT EXISTS idx_admin_interventions_admin   ON public.admin_interventions (admin_id, created_at DESC);
 
 
+-- 12. nudge_dispositions - registro de "resolvido" / "ignorado" por item da
+--     Nudge Queue do dashboard admin. Evita que o mesmo card volte a aparecer
+--     imediatamente apos o Darcio cuidar dele (ou decidir nao cuidar).
+--     - category='reflection' aponta para uma reflexao especifica (reflection_id).
+--     - demais categorias (inactive/critical/silent/star) sao por aluno (student_id).
+--     - kind='resolved' some do feed por 14 dias; se a condicao persistir,
+--       o aluno volta automaticamente (computacao client-side em admin.html).
+--     - kind='ignored' some permanentemente (ate reset manual no SQL Editor).
+
+CREATE TABLE IF NOT EXISTS public.nudge_dispositions (
+  id                  uuid        PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_id          uuid        REFERENCES public.profiles(id) ON DELETE CASCADE,
+  reflection_id       uuid        REFERENCES public.reflections(id) ON DELETE CASCADE,
+  category            text        NOT NULL
+                                  CHECK (category IN ('inactive','critical','silent','star','reflection')),
+  kind                text        NOT NULL DEFAULT 'resolved'
+                                  CHECK (kind IN ('resolved','ignored')),
+  note                text,
+  dispositioned_by    uuid        REFERENCES public.profiles(id) ON DELETE SET NULL,
+  dispositioned_at    timestamptz NOT NULL DEFAULT now(),
+  CHECK (
+    (category = 'reflection' AND reflection_id IS NOT NULL)
+    OR (category <> 'reflection' AND student_id IS NOT NULL)
+  )
+);
+CREATE INDEX IF NOT EXISTS idx_nudge_disp_student ON public.nudge_dispositions (student_id, category, dispositioned_at DESC);
+CREATE INDEX IF NOT EXISTS idx_nudge_disp_refl    ON public.nudge_dispositions (reflection_id);
+
+
 -- ROW-LEVEL SECURITY - ativa em todas as tabelas
 
 ALTER TABLE public.profiles               ENABLE ROW LEVEL SECURITY;
@@ -251,6 +296,7 @@ ALTER TABLE public.quiz_question_attempts ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.paper_exercises        ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.reflections            ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.admin_interventions    ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.nudge_dispositions     ENABLE ROW LEVEL SECURITY;
 
 
 -- Policies: profiles
@@ -303,6 +349,21 @@ BEGIN
 END $$;
 
 
+-- RLS adicional: reflections - admin atualiza colunas de resposta
+-- Obs: a policy reflections_own_update (gerada no loop acima) permanece ativa
+-- e continua restringindo o aluno ao proprio registro. Esta policy soma um
+-- caminho exclusivo para admin, sem afrouxar as garantias do aluno.
+-- Admin pode atualizar qualquer linha (no app, so tocamos em response_text,
+-- responded_at, responded_by, cited_in_class — o campo `text` do aluno e
+-- preservado pelo codigo client-side em mpe-db.js).
+
+DROP POLICY IF EXISTS "reflections_admin_update" ON public.reflections;
+CREATE POLICY "reflections_admin_update"
+  ON public.reflections FOR UPDATE
+  USING (public.is_admin())
+  WITH CHECK (public.is_admin());
+
+
 -- RLS: admin_interventions - CRUD exclusivo de admins
 
 DROP POLICY IF EXISTS "admin_interventions_admin_select" ON public.admin_interventions;
@@ -324,6 +385,31 @@ CREATE POLICY "admin_interventions_admin_update"
 DROP POLICY IF EXISTS "admin_interventions_admin_delete" ON public.admin_interventions;
 CREATE POLICY "admin_interventions_admin_delete"
   ON public.admin_interventions FOR DELETE
+  USING (public.is_admin());
+
+
+-- RLS: nudge_dispositions - CRUD exclusivo de admins (mesma regra de
+-- admin_interventions; dispositions sao decisoes operacionais do professor).
+
+DROP POLICY IF EXISTS "nudge_disp_admin_select" ON public.nudge_dispositions;
+CREATE POLICY "nudge_disp_admin_select"
+  ON public.nudge_dispositions FOR SELECT
+  USING (public.is_admin());
+
+DROP POLICY IF EXISTS "nudge_disp_admin_insert" ON public.nudge_dispositions;
+CREATE POLICY "nudge_disp_admin_insert"
+  ON public.nudge_dispositions FOR INSERT
+  WITH CHECK (public.is_admin() AND (dispositioned_by IS NULL OR dispositioned_by = auth.uid()));
+
+DROP POLICY IF EXISTS "nudge_disp_admin_update" ON public.nudge_dispositions;
+CREATE POLICY "nudge_disp_admin_update"
+  ON public.nudge_dispositions FOR UPDATE
+  USING (public.is_admin())
+  WITH CHECK (public.is_admin());
+
+DROP POLICY IF EXISTS "nudge_disp_admin_delete" ON public.nudge_dispositions;
+CREATE POLICY "nudge_disp_admin_delete"
+  ON public.nudge_dispositions FOR DELETE
   USING (public.is_admin());
 
 

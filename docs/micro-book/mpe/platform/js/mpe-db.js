@@ -244,8 +244,11 @@
       return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
     },
 
-    // Busca TUDO em paralelo (9 tabelas). Retorna {ok, data:{...}, error}.
+    // Busca TUDO em paralelo (11 tabelas). Retorna {ok, data:{...}, error}.
     // Usado pelo dashboard admin para montar uma visao completa da turma.
+    // As duas ultimas (admin_interventions, nudge_dispositions) sao opcionais:
+    // se a migration correspondente ainda nao foi aplicada, a query retorna
+    // erro silenciosamente e tratamos como array vazio.
     adminFetchAll: async function() {
       try {
         var queries = await Promise.all([
@@ -258,29 +261,33 @@
           client.from('quiz_question_attempts').select('*'),
           client.from('paper_exercises').select('*'),
           client.from('reflections').select('*').order('submitted_at', { ascending: false }),
-          // admin_interventions é opcional — se migration não foi aplicada ainda,
-          // devolve erro silenciosamente. Tratamento tolerante abaixo.
-          client.from('admin_interventions').select('*').order('created_at', { ascending: false })
+          // opcionais (migrations posteriores):
+          client.from('admin_interventions').select('*').order('created_at', { ascending: false }),
+          client.from('nudge_dispositions').select('*').order('dispositioned_at', { ascending: false })
         ]);
-        for (var i = 0; i < queries.length - 1; i++) { // não trava se a última (interventions) falhar
+        // Trava apenas se as 9 primeiras (core) falharem.
+        for (var i = 0; i < 9; i++) {
           if (queries[i].error) return { ok:false, error: queries[i].error };
         }
-        var interventions = (queries[9].error ? [] : (queries[9].data || []));
+        var interventions       = (queries[9].error  ? [] : (queries[9].data  || []));
+        var nudgeDispositions   = (queries[10].error ? [] : (queries[10].data || []));
         return {
           ok: true,
           data: {
-            profiles:        queries[0].data || [],
-            pageVisits:      queries[1].data || [],
-            sectionProgress: queries[2].data || [],
-            confidence:      queries[3].data || [],
-            microAttempts:   queries[4].data || [],
-            quizAggregates:  queries[5].data || [],
-            quizQA:          queries[6].data || [],
-            paperExercises:  queries[7].data || [],
-            reflections:     queries[8].data || [],
-            interventions:   interventions
+            profiles:          queries[0].data || [],
+            pageVisits:        queries[1].data || [],
+            sectionProgress:   queries[2].data || [],
+            confidence:        queries[3].data || [],
+            microAttempts:     queries[4].data || [],
+            quizAggregates:    queries[5].data || [],
+            quizQA:            queries[6].data || [],
+            paperExercises:    queries[7].data || [],
+            reflections:       queries[8].data || [],
+            interventions:     interventions,
+            nudgeDispositions: nudgeDispositions
           },
-          interventionsMigrationMissing: !!(queries[9].error)
+          interventionsMigrationMissing:      !!(queries[9].error),
+          nudgeDispositionsMigrationMissing:  !!(queries[10].error)
         };
       } catch(e) {
         return { ok:false, error:e };
@@ -314,6 +321,65 @@
 
     deleteIntervention: async function(id) {
       var res = await client.from('admin_interventions').delete().eq('id', id);
+      return res.error ? { ok:false, error:res.error } : { ok:true };
+    },
+
+    // ==================== REFLECTION RESPONSE (Nudge Queue) ====================
+
+    // Admin responde a uma reflexao. Passa responseText vazio/null para
+    // "descartar" a resposta (zera responded_at). citedInClass marca a
+    // reflexao como mencionada em aula.
+    // Nao toca em `text` (campo do aluno) — so grava colunas de resposta.
+    respondReflection: async function(payload) {
+      if (!payload || !payload.reflectionId) return { ok:false, error:'reflectionId obrigatorio' };
+      var sess = await client.auth.getSession();
+      var uid  = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+
+      var txt  = (payload.responseText == null) ? null : String(payload.responseText).trim();
+      var has  = !!(txt && txt.length);
+      var row  = {
+        response_text:  has ? txt : null,
+        responded_at:   has ? new Date().toISOString() : null,
+        responded_by:   has ? uid : null,
+        cited_in_class: !!payload.citedInClass
+      };
+      var res = await client.from('reflections')
+        .update(row)
+        .eq('id', payload.reflectionId)
+        .select()
+        .maybeSingle();
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
+    },
+
+    // ==================== NUDGE DISPOSITIONS ====================
+
+    // Marca um item da Nudge Queue como resolvido (some por 14d, volta se a
+    // condicao persistir) ou ignorado (some permanentemente). category deve
+    // ser uma das cinco (inactive/critical/silent/star/reflection). Quando
+    // category='reflection', passar reflectionId; senao, studentId.
+    disposeNudge: async function(payload) {
+      if (!payload || !payload.category) return { ok:false, error:'category obrigatoria' };
+      var sess = await client.auth.getSession();
+      var uid  = sess.data.session && sess.data.session.user && sess.data.session.user.id;
+      if (!uid) return { ok:false, error:'no session' };
+
+      var row = {
+        student_id:        payload.studentId    || null,
+        reflection_id:     payload.reflectionId || null,
+        category:          payload.category,
+        kind:              payload.kind || 'resolved',
+        note:              payload.note || null,
+        dispositioned_by:  uid
+      };
+      var res = await client.from('nudge_dispositions').insert(row).select().single();
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
+    },
+
+    // Remove uma disposition (reabilita o item na queue imediatamente).
+    undisposeNudge: async function(id) {
+      if (!id) return { ok:false, error:'id obrigatorio' };
+      var res = await client.from('nudge_dispositions').delete().eq('id', id);
       return res.error ? { ok:false, error:res.error } : { ok:true };
     },
 
