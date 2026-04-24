@@ -64,25 +64,12 @@ const AULAS: Record<string, { n: number; tema: string }> = {
   'aula-09':      { n: 9, tema: 'Sinalização e Matching' },
 };
 
-// System prompt (lido do filesystem no boot; ~3000 tokens).
-// Em Deno/Edge Function, o arquivo fica embedded via Deno.readTextFileSync
-// relativo ao modulo.
-let SYSTEM_PROMPT: string | null = null;
+// System prompt importado como modulo TS para o bundler do Supabase CLI incluir.
+// A fonte canonica eh system-prompt.md; system-prompt.ts eh gerado com
+// JSON.stringify pra evitar problemas de escape com backticks do markdown.
+import { SYSTEM_PROMPT as SYSTEM_PROMPT_TEXT } from './system-prompt.ts';
 async function getSystemPrompt(): Promise<string> {
-  if (SYSTEM_PROMPT) return SYSTEM_PROMPT;
-  try {
-    const url = new URL('./system-prompt.md', import.meta.url);
-    SYSTEM_PROMPT = await Deno.readTextFile(url);
-    return SYSTEM_PROMPT;
-  } catch (e) {
-    // Fallback minimo: se o arquivo sumir, pelo menos devolve algo sensato.
-    console.error('[generate-reflection-draft] Falha ao ler system-prompt.md:', e);
-    return (
-      'Voce e o Prof. Darcio, da disciplina de Microeconomia I do MPE Insper. ' +
-      'Responda em portugues a reflexao do aluno em 200-400 palavras, prosa, ' +
-      'sem cliche motivacional, e assine "—Darcio".'
-    );
-  }
+  return SYSTEM_PROMPT_TEXT;
 }
 
 // -----------------------------------------------------------------------------
