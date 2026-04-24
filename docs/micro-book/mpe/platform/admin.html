@@ -2749,7 +2749,13 @@ function computeNudgeQueue() {
         promptId: refl.prompt_id,
         submittedAt: refl.submitted_at,
         ageDays: ageDays,
-        citedInClass: !!refl.cited_in_class
+        citedInClass: !!refl.cited_in_class,
+        // Rascunho IA (feature 2026-04-24):
+        draftText:        refl.response_draft_text || '',
+        isAiDraft:        !!refl.is_ai_draft,
+        draftGeneratedAt: refl.draft_generated_at || null,
+        draftModel:       refl.draft_model || null,
+        draftError:       refl.draft_error || null
       },
       diag: 'Reflexão enviada há ' + ageDays + 'd em ' + (refl.page_id || '—') + ' (prompt "' + (refl.prompt_id || '') + '"). Ainda sem resposta sua.',
       template: 'Resposta individual — opcional citar em aula',
@@ -2858,6 +2864,71 @@ async function logNudgeIntervention(key) {
   });
   if (!res.ok) return alert('Erro: ' + (res.error.message || res.error));
   alert('Intervenção registrada. A próxima carga do dashboard atualizará o delta.');
+}
+
+// ---------- Nudge: badge "Rascunho IA" muda para "Editado" ao digitar ----------
+
+// Quando o admin comeca a editar o textarea pre-populado com rascunho IA,
+// troca o badge amarelo "✨ Rascunho IA — revise" por um verde "✏ Editado".
+// Chamado uma unica vez por card (depois o badge ja esta no estado final).
+function _reflMarkEdited(reflId) {
+  var badge = document.getElementById('refl-draft-badge-' + reflId);
+  if (!badge) return;
+  if (badge.getAttribute('data-edited') === '1') return;
+  badge.setAttribute('data-edited', '1');
+  badge.style.background = '#D1FAE5';
+  badge.style.color = '#065F46';
+  badge.textContent = '✏ Editado';
+  badge.title = 'Você editou o rascunho original.';
+}
+
+// ---------- Nudge: regenerar rascunho IA ----------
+
+// Dispara a edge function generate-reflection-draft e re-renderiza o card
+// com o novo rascunho. Confirm se ja existia rascunho (sobrescreve).
+async function regenerateReflectionDraft(key) {
+  var item = _nudgeItemByKey(key);
+  if (!item || item.category !== 'reflection') return;
+  var refl = item.reflection || {};
+  if (!window.MpeDB || !window.MpeDB.generateReflectionDraft) {
+    return alert('Supabase offline — não é possível gerar rascunho.');
+  }
+
+  var hadDraft = !!(refl.draftText && refl.draftText.length);
+  var msgStart = hadDraft ? 'Substituir rascunho atual?' : 'Gerar rascunho agora?';
+  if (!confirm(msgStart)) return;
+
+  var btn = document.getElementById('refl-regen-btn-' + refl.id);
+  var msgEl = document.getElementById('refl-msg-' + refl.id);
+  var origLabel = btn ? btn.textContent : '';
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Gerando…'; }
+  if (msgEl) { msgEl.textContent = 'Chamando Claude Opus 4.7…'; msgEl.style.color = 'var(--text-muted)'; }
+
+  var res = await window.MpeDB.generateReflectionDraft(refl.id);
+  if (!res.ok) {
+    if (btn) { btn.disabled = false; btn.textContent = origLabel || '🔄 Regenerar rascunho'; }
+    if (msgEl) {
+      msgEl.textContent = 'Erro: ' + ((res.error && res.error.message) || res.error);
+      msgEl.style.color = '#991B1B';
+    }
+    return;
+  }
+
+  // Re-fetch da reflexao e atualiza _adminRaw + re-render
+  var fetched = await window.MpeDB.fetchReflectionById(refl.id);
+  if (fetched && fetched.ok && fetched.data) {
+    var raw = window._adminRaw || {};
+    (raw.reflections || []).forEach(function(r){
+      if (r.id === refl.id) {
+        r.response_draft_text = fetched.data.response_draft_text;
+        r.is_ai_draft         = fetched.data.is_ai_draft;
+        r.draft_generated_at  = fetched.data.draft_generated_at;
+        r.draft_model         = fetched.data.draft_model;
+        r.draft_error         = fetched.data.draft_error;
+      }
+    });
+  }
+  renderNudgeQueue();
 }
 
 // ---------- Nudge: resposta a reflexao ----------
@@ -3034,18 +3105,42 @@ function renderNudgeQueue() {
       var refl = item.reflection;
       var pageBadge = refl.pageId ? '<span class="nudge-page">' + _escapeHtml(refl.pageId) + '</span>' : '';
       var citedAttr = refl.citedInClass ? ' checked' : '';
+
+      // ---- Rascunho IA (feature 2026-04-24) ----
+      // Estados possiveis:
+      //   (a) Tem draft e is_ai_draft=true    -> pre-popula textarea + badge amarelo
+      //   (b) Tem draft_error                 -> aviso vermelho com tooltip
+      //   (c) Sem draft e sem erro            -> "sendo gerado..." + botao "gerar agora"
+      // Sempre: botao regenerar (copy varia conforme estado).
+      var hasDraft    = !!(refl.draftText && refl.draftText.length);
+      var hasDraftErr = !!refl.draftError;
+      var draftBadge  = '';
+      if (hasDraft && refl.isAiDraft) {
+        var ts = refl.draftGeneratedAt ? new Date(refl.draftGeneratedAt).toLocaleString('pt-BR', { hour:'2-digit', minute:'2-digit', day:'2-digit', month:'2-digit' }) : '';
+        draftBadge = '<span id="refl-draft-badge-' + refl.id + '" class="refl-ai-badge" title="Gerado por Claude Opus 4.7 em ' + _escapeHtml(ts) + '. Edite livremente antes de salvar." style="background:#FEF3C7;color:#92400E;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:6px;font-weight:600;vertical-align:middle">✨ Rascunho IA — revise</span>';
+      } else if (hasDraftErr) {
+        draftBadge = '<span class="refl-ai-badge-err" title="' + _escapeHtml(refl.draftError) + '" style="background:#FEE2E2;color:#991B1B;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:6px;font-weight:600;vertical-align:middle">⚠ Falha no rascunho IA</span>';
+      } else {
+        draftBadge = '<span id="refl-draft-badge-' + refl.id + '" class="refl-ai-pending" style="background:#E0E7FF;color:#3730A3;padding:2px 8px;border-radius:4px;font-size:11px;margin-left:6px;font-weight:600;vertical-align:middle">⏳ Rascunho IA sendo gerado…</span>';
+      }
+
+      // Texto do textarea: se tem rascunho IA, pre-popula (admin edita).
+      var preFill = hasDraft ? _escapeHtml(refl.draftText) : '';
+      var regenLabel = hasDraft ? '🔄 Regenerar rascunho' : '🔄 Gerar rascunho agora';
+
       return '<div class="nudge-card ' + item.category + '">'
         + '<div class="nudge-badge">' + item.badge + '</div>'
         + '<div class="nudge-body">'
           + '<div class="nudge-name">' + _escapeHtml(r.s.nome)
             + ' <span class="nudge-mat">' + _escapeHtml(r.s.matricula) + '</span>'
             + pageBadge
+            + draftBadge
           + '</div>'
           + '<div class="nudge-diag">' + _escapeHtml(item.diag) + '</div>'
           + '<div class="nudge-refl-prompt">Prompt: ' + _escapeHtml(refl.promptId || '—') + ' · ' + refl.ageDays + 'd atrás</div>'
           + '<div class="nudge-refl-text">' + _escapeHtml(refl.text) + '</div>'
           + '<div class="nudge-refl-resp">'
-            + '<textarea id="refl-resp-' + refl.id + '" placeholder="Sua resposta aparecerá no portal do aluno (E6) e pode ser usada na próxima aula."></textarea>'
+            + '<textarea id="refl-resp-' + refl.id + '" oninput="_reflMarkEdited(\'' + refl.id + '\')" placeholder="Sua resposta aparecerá no portal do aluno (E6) e pode ser usada na próxima aula.">' + preFill + '</textarea>'
             + '<div class="nudge-refl-ctrls">'
               + '<label><input type="checkbox" id="refl-cite-' + refl.id + '"' + citedAttr + '> Citar em aula</label>'
               + '<span class="nudge-refl-msg" id="refl-msg-' + refl.id + '"></span>'
@@ -3053,6 +3148,7 @@ function renderNudgeQueue() {
             + '<div class="nudge-refl-actions">'
               + '<button class="nudge-btn primary" onclick="saveReflectionResponse(\'' + safeKey + '\')"' + offAttr + '>💾 Salvar resposta</button>'
               + '<button class="nudge-btn secondary" onclick="saveReflectionResponse(\'' + safeKey + '\', {alsoEmail:true})"' + offAttr + '>💾 Salvar + enviar email</button>'
+              + '<button class="nudge-btn muted" id="refl-regen-btn-' + refl.id + '" onclick="regenerateReflectionDraft(\'' + safeKey + '\')"' + offAttr + '>' + regenLabel + '</button>'
               + '<button class="nudge-btn muted" onclick="showStudentProfile(\'' + safeMat + '\')">Ver perfil</button>'
             + '</div>'
           + '</div>'

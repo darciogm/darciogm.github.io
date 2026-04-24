@@ -235,6 +235,28 @@ ALTER TABLE public.reflections
   ADD COLUMN IF NOT EXISTS responded_by    uuid REFERENCES public.profiles(id) ON DELETE SET NULL,
   ADD COLUMN IF NOT EXISTS cited_in_class  boolean NOT NULL DEFAULT false;
 
+-- Campos de rascunho IA (feature 2026-04-24): edge function
+-- generate-reflection-draft grava aqui um rascunho de resposta gerado por
+-- Claude Opus 4.7 para o Darcio revisar no dashboard admin.
+-- Ver migrations/2026-04-24_reflection_ai_draft.sql para contexto.
+ALTER TABLE public.reflections
+  ADD COLUMN IF NOT EXISTS response_draft_text   text,
+  ADD COLUMN IF NOT EXISTS is_ai_draft           boolean NOT NULL DEFAULT false,
+  ADD COLUMN IF NOT EXISTS draft_generated_at    timestamptz,
+  ADD COLUMN IF NOT EXISTS draft_model           text,
+  ADD COLUMN IF NOT EXISTS draft_error           text;
+
+COMMENT ON COLUMN public.reflections.response_draft_text IS
+  'Rascunho de resposta gerado por IA (Claude Opus 4.7). Admin revisa e edita para virar response_text.';
+COMMENT ON COLUMN public.reflections.is_ai_draft IS
+  'True se response_draft_text foi gerado por IA e ainda nao virou response_text.';
+COMMENT ON COLUMN public.reflections.draft_generated_at IS
+  'Timestamp da ultima geracao bem-sucedida do rascunho.';
+COMMENT ON COLUMN public.reflections.draft_model IS
+  'Identificador do modelo usado (ex: claude-opus-4-7).';
+COMMENT ON COLUMN public.reflections.draft_error IS
+  'Mensagem curta de erro da ultima tentativa (null em sucesso).';
+
 
 -- 11. admin_interventions - registro de conversas/ações do admin com alunos
 --     Onda 2B: timeline de cuidado + base para delta de comportamento pós-intervenção.

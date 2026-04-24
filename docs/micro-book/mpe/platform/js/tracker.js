@@ -530,7 +530,31 @@
         submittedAt: new Date().toISOString()
       };
       this._save(data);
-      _syncWrite('upsertReflection', [pageId, promptId, text]);
+
+      // Write para Supabase + fire-and-forget da edge function de IA que
+      // gera rascunho de resposta pro Darcio. Em caso de qualquer falha,
+      // nao trava o aluno — a reflexao ja esta gravada localmente.
+      if (window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_WRITES
+          && window.MpeDB && window.MpeDB.enabled
+          && window.MpeDB.upsertReflection) {
+        try {
+          var p = window.MpeDB.upsertReflection(pageId, promptId, text);
+          if (p && typeof p.then === 'function') {
+            p.then(function(r) {
+              if (r && r.ok) {
+                if (_syncFailureCount > 0) _syncFailureCount = 0;
+                // Dispara geracao de rascunho IA (fire-and-forget).
+                var reflId = r.data && r.data.id;
+                if (reflId && window.MpeDB.generateReflectionDraft) {
+                  window.MpeDB.generateReflectionDraft(reflId).catch(function(){ /* silencioso */ });
+                }
+              } else {
+                _onSyncFailure('upsertReflection', r && r.error);
+              }
+            }).catch(function(e) { _onSyncFailure('upsertReflection', e); });
+          }
+        } catch(e) { _onSyncFailure('upsertReflection', e); }
+      }
     },
 
     // ==================== EXPORT ====================

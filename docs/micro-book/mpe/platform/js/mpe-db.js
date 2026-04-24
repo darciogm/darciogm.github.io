@@ -233,8 +233,37 @@
       var res = await client.from('reflections').upsert({
         user_id: uid, page_id: pageId, prompt_id: promptId,
         text: text, submitted_at: new Date().toISOString()
-      }, { onConflict: 'user_id,page_id,prompt_id' });
-      return res.error ? { ok:false, error:res.error } : { ok:true };
+      }, { onConflict: 'user_id,page_id,prompt_id' })
+        .select('id')
+        .maybeSingle();
+      if (res.error) return { ok:false, error:res.error };
+      return { ok:true, data: res.data || null };
+    },
+
+    // ==================== AI DRAFT (generate-reflection-draft) ====================
+
+    // Dispara a edge function que gera rascunho de resposta com Claude Opus 4.7.
+    // Fire-and-forget quando chamada pelo aluno (portal, pos-submit da reflexao);
+    // await quando chamada pelo admin (botao "Regenerar rascunho").
+    // Retorna {ok, data:{reflection_id, draft_generated_at, model}} ou {ok:false, error}.
+    generateReflectionDraft: async function(reflectionId) {
+      if (!reflectionId) return { ok:false, error:'reflectionId obrigatorio' };
+      try {
+        var res = await client.functions.invoke('generate-reflection-draft', {
+          body: { reflection_id: reflectionId }
+        });
+        if (res.error) return { ok:false, error:res.error };
+        return { ok:true, data: res.data || null };
+      } catch(e) {
+        return { ok:false, error:e };
+      }
+    },
+
+    // Re-fetch de uma reflexao especifica (usado apos regenerar rascunho no admin).
+    fetchReflectionById: async function(reflectionId) {
+      if (!reflectionId) return { ok:false, error:'reflectionId obrigatorio' };
+      var res = await client.from('reflections').select('*').eq('id', reflectionId).maybeSingle();
+      return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
     },
 
     // ==================== ADMIN READS (Fase 5) ====================
@@ -444,7 +473,12 @@
           client.from('quiz_aggregates').select('*').eq('user_id', uid),
           client.from('quiz_question_attempts').select('*').eq('user_id', uid),
           client.from('paper_exercises').select('*').eq('user_id', uid),
-          client.from('reflections').select('*').eq('user_id', uid)
+          // Para o titular (LGPD direito de acesso), seleciona apenas as
+          // colunas publicas da reflexao. response_draft_text/is_ai_draft/
+          // draft_* sao rascunhos internos do admin (nao sao dado pessoal
+          // do aluno, e sim a resposta que o Darcio ainda nao enviou),
+          // entao nao entram no export do titular.
+          client.from('reflections').select('id,user_id,page_id,prompt_id,text,submitted_at,response_text,responded_at,responded_by,cited_in_class').eq('user_id', uid)
         ]);
         return {
           ok: true,
