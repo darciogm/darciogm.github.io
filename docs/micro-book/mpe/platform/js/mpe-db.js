@@ -266,6 +266,84 @@
       return res.error ? { ok:false, error:res.error } : { ok:true, data:res.data };
     },
 
+    // Strippa marcacoes markdown comum que a IA (Claude Opus) as vezes gera
+    // no rascunho, apesar do system prompt pedir prosa limpa. Preserva o texto
+    // e equacoes ($...$ / $$...$$ / \(...\) / \[...\]) intactos — so remove
+    // os marcadores de formatacao. Nao e aplicado no DB (mantem bruto pra
+    // auditoria/fine-tune); so na hidratacao do textarea e na composicao do
+    // email.
+    //
+    // Exemplos:
+    //   "**bold** e *italic*"          -> "bold e italic"
+    //   "### Cabecalho"                -> "Cabecalho"
+    //   "- bullet\n- outro"            -> "bullet\noutro"
+    //   "[link](http://x)"             -> "link"
+    //   "`inline_code`"                -> "inline_code"
+    //   "texto $u(x,y)=xy$"            -> "texto $u(x,y)=xy$"    (equacao preservada)
+    //   "snake_case"                   -> "snake_case"           (underscores pareados no meio de palavra)
+    cleanAiMarkup: function(text) {
+      if (text == null) return '';
+      var s = String(text);
+
+      // 1) Protege blocos de math: $$...$$, $...$, \(...\), \[...\].
+      //    Troca por tokens __MATHn__ antes de strippar e restaura no fim.
+      //    Ordem importa: display math primeiro (maior match), depois inline.
+      var stash = [];
+      // Usa sentinela improvavel em texto normal: MATHn (SOH).
+      // Assim o restore nao interfere em espacos adjacentes.
+      var SENT = '';
+      function stashRx(rx) {
+        s = s.replace(rx, function(m){
+          var idx = stash.length;
+          stash.push(m);
+          return SENT + 'MATH' + idx + SENT;
+        });
+      }
+      stashRx(/\$\$[\s\S]+?\$\$/g);                    // $$...$$
+      stashRx(/\\\[[\s\S]+?\\\]/g);                    // \[...\]
+      stashRx(/\$(?!\s)[^\$\n]+?(?<!\s)\$/g);          // $...$ (sem espaco na borda)
+      stashRx(/\\\([\s\S]+?\\\)/g);                    // \(...\)
+      // Code inline: `...` -> conteudo sem backticks (tratar tambem antes de underscores
+      // pra nao confundir com snake_case dentro de code).
+      s = s.replace(/`([^`\n]+)`/g, '$1');
+
+      // 2) Headers: linhas comecando com 1-6 # seguidos de espaco.
+      s = s.replace(/^[ \t]{0,3}#{1,6}[ \t]+(.*)$/gm, '$1');
+
+      // 3) Bullets: "- ", "* ", "+ " ou "• " no inicio de linha (com indent tolerado).
+      s = s.replace(/^[ \t]*[-*+•][ \t]+/gm, '');
+
+      // 4) Blockquote: "> " ou ">" no inicio de linha.
+      s = s.replace(/^[ \t]*>[ \t]?/gm, '');
+
+      // 5) Linha de regua horizontal: --- ou *** ou ___ sozinhos.
+      s = s.replace(/^[ \t]*(---+|\*\*\*+|___+)[ \t]*$/gm, '');
+
+      // 6) Links [texto](url) -> texto  (descarta a URL; admin pode reintroduzir).
+      s = s.replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, '$1');
+      // Imagens ![alt](url) -> alt  (idem)
+      s = s.replace(/!\[([^\]]*)\]\(([^)\s]+)(?:\s+"[^"]*")?\)/g, '$1');
+
+      // 7) Bold/italic. Ordem: **bold** e __bold__ primeiro (mais especificos),
+      //    depois *italic* e _italic_.
+      s = s.replace(/\*\*([^\*\n]+?)\*\*/g, '$1');     // **X**
+      s = s.replace(/__([^_\n]+?)__/g, '$1');          // __X__
+      // *italic*: unico par, sem espaco na borda, nao pareado com ** (ja removidos).
+      s = s.replace(/(^|[\s(\[{])\*([^\*\n]+?)\*(?=[\s)\]}\.,;:!\?]|$)/g, '$1$2');
+      // _italic_: so em contexto word-boundary (nao tocar snake_case no meio de palavra).
+      s = s.replace(/(^|[\s(\[{])_([^_\n]+?)_(?=[\s)\]}\.,;:!\?]|$)/g, '$1$2');
+
+      // 8) Normaliza: espacos duplos (nao em linha em branco) e multiplas linhas em branco.
+      s = s.replace(/[ \t]{2,}/g, ' ');
+      s = s.replace(/\n{3,}/g, '\n\n');
+
+      // 9) Restaura blocos de math (sentinela SOH em torno do token).
+      s = s.replace(/\x01MATH(\d+)\x01/g, function(_, i){ return stash[Number(i)] || ''; });
+
+      // 10) Trim final (mas preserva quebras internas).
+      return s.replace(/^[ \t\n]+|[ \t\n]+$/g, '');
+    },
+
     // ==================== ADMIN READS (Fase 5) ====================
 
     adminFetchAllStudents: async function() {
