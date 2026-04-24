@@ -21,8 +21,6 @@
   <p>Leia as referências indicadas e resolva o <em>checkpoint</em> antes de cada aula. Cada acesso é registrado e alimenta tanto este painel quanto o <em>dashboard</em> do professor.</p>
   <div class="portal-stats">
     <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Aulas completas</div></div>
-    <div class="stat-badge"><div class="val" id="stat-time">0</div><div class="lbl">Min. estudados</div></div>
-    <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Média quizzes</div></div>
     <div class="stat-badge"><div class="val" id="stat-first">—</div><div class="lbl">Acerto 1ª tentativa</div></div>
     <div class="stat-badge"><div class="val" id="stat-streak">0</div><div class="lbl">Dias consecutivos</div></div>
   </div>
@@ -30,30 +28,13 @@
   <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem" id="progress-label">0 de 0 aulas disponíveis</div>
 </div>
 
-<div class="my-performance">
-  <h3>Meu desempenho</h3>
-  <div class="perf-grid">
-    <div class="perf-card wide">
-      <div class="perf-title">Tempo por aula (minutos)</div>
-      <div class="spark-container" id="spark-time"></div>
-      <div class="spark-legend"><span>Aula 1</span><span>Aula 10</span></div>
-    </div>
-    <div class="perf-card">
-      <div class="perf-title">Tempo médio por aula concluída</div>
-      <div class="perf-value" id="perf-avgtime">—</div>
-      <div class="perf-sub">Minutos efetivos de sessão (heartbeat 30s)</div>
-    </div>
-    <div class="perf-card">
-      <div class="perf-title">Total de tentativas de quiz</div>
-      <div class="perf-value" id="perf-attempts">0</div>
-      <div class="perf-sub">Inclui todas as tentativas submetidas</div>
-    </div>
-    <div class="perf-card">
-      <div class="perf-title">Próxima ação</div>
-      <div class="perf-value" id="perf-next" style="font-size:1rem;line-height:1.3">—</div>
-      <div class="perf-sub" id="perf-next-sub">&nbsp;</div>
-    </div>
+<!-- E3 — Caminho ate a proxima aula -->
+<div class="path-card" id="path-card" style="display:none">
+  <div class="path-header">
+    <h3 class="path-title" id="path-title">Caminho até a próxima aula</h3>
+    <span class="path-sub" id="path-sub"></span>
   </div>
+  <div id="path-body"></div>
 </div>
 
 <div class="my-performance" style="margin-top:0.5rem">
@@ -61,11 +42,67 @@
 </div>
 <div class="aulas-grid" id="aulas-grid"></div>
 
+<!-- Meu perfil de aprendizagem (E2 + E4 + E8) -->
+<div class="my-performance" style="margin-top:1.5rem">
+  <h3>Meu perfil de aprendizagem</h3>
+  <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.8rem">Três leituras sobre <em>como</em> você está aprendendo — não sobre quem é melhor ou pior. Atualizadas a cada nova resposta que você registra.</p>
+</div>
+<div class="profile-grid">
+  <div class="profile-card">
+    <h4>Calibração da sua confiança <button class="help-link" onclick="PortalOndax.showCalibHelp()">?</button></h4>
+    <div id="calib-body"></div>
+  </div>
+  <div class="profile-card">
+    <h4>Quando você estuda</h4>
+    <div id="circadian-body"></div>
+  </div>
+  <div class="profile-card">
+    <h4>O que revisar agora</h4>
+    <div id="nudges-wrap"></div>
+  </div>
+</div>
+
 <div class="my-performance" style="margin-top:2rem">
   <h3>Monitorias — pré-monitoria</h3>
   <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Encontros de sábado à tarde com o monitor Alberto. A pré-monitoria é opcional, mas recomendada — chegar preparado multiplica o valor do encontro.</p>
 </div>
 <div class="aulas-grid" id="monitorias-grid"></div>
+
+<!-- Acordeao "Metricas detalhadas" (ex-stat-badges "min. estudados", "media quizzes"; ex-cards "tempo medio", "total tentativas", sparkline) -->
+<div class="detail-section" style="margin-top:2rem">
+  <details>
+    <summary>Métricas detalhadas</summary>
+    <div class="detail-body">
+      <div class="perf-grid" style="margin-top:0.3rem">
+        <div class="perf-card wide">
+          <div class="perf-title">Tempo por aula (minutos)</div>
+          <div class="spark-container" id="spark-time"></div>
+          <div class="spark-legend"><span>Aula 1</span><span>Aula 10</span></div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-title">Tempo médio por aula concluída</div>
+          <div class="perf-value" id="perf-avgtime">—</div>
+          <div class="perf-sub">Minutos efetivos de sessão (heartbeat 30s)</div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-title">Total de tentativas de quiz</div>
+          <div class="perf-value" id="perf-attempts">0</div>
+          <div class="perf-sub">Inclui todas as tentativas submetidas</div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-title">Minutos totais estudados</div>
+          <div class="perf-value" id="stat-time-detail">0</div>
+          <div class="perf-sub">Soma de todas as páginas de aula (material + quizzes)</div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-title">Média dos quizzes</div>
+          <div class="perf-value" id="stat-avg-detail">—</div>
+          <div class="perf-sub">Média simples dos melhores scores por quiz</div>
+        </div>
+      </div>
+    </div>
+  </details>
+</div>
 
 <!-- LGPD: controles do titular (direitos Art. 18) -->
 <div class="my-performance" style="margin-top:2rem">
@@ -153,6 +190,7 @@
 <script src="js/mpe-db.js"></script>
 <script src="js/calendario.js"></script>
 <script src="js/tracker.js"></script>
+<script src="js/portal-ondax.js"></script>
 <script>
 if (!MicroAuth.requireAuth()) throw 'redirect';
 
@@ -402,24 +440,7 @@ function renderSparkline(studentData) {
   container.innerHTML = html;
 }
 
-function recommendNext(studentData) {
-  // Qual aula o aluno deveria fazer em seguida
-  for (var i = 0; i < AULAS.length; i++) {
-    var a = AULAS[i];
-    if (!a.available) continue;
-    var pid = 'aula-' + String(a.n).padStart(2,'0');
-    var pg = (studentData.pages || {})[pid] || {};
-    var qz = (studentData.quizzes || {})[pid] || {};
-    if (!qz.attempts) {
-      return {
-        action: 'Aula ' + String(a.n).padStart(2,'0') + ' — ' + (pg.visits ? 'continuar' : 'começar'),
-        sub: pg.visits ? 'Você já visitou. Faltam exercícios e checkpoint.' : 'Leitura + checkpoint de 6 itens.',
-        link: 'aula-' + String(a.n).padStart(2,'0') + '.html'
-      };
-    }
-  }
-  return { action: 'Em dia!', sub: 'Aguarde a próxima aula ser liberada.', link: null };
-}
+// recommendNext() removido: substituido por E3 (Caminho ate a proxima aula) via PortalOndax.pickFocusAula + renderPath.
 
 function renderPortal() {
   var data = MicroTracker.getData();
@@ -530,11 +551,8 @@ function renderPortal() {
   });
   document.getElementById('monitorias-grid').innerHTML = monHtml;
 
-  // Stats principais
+  // Stats principais (topo: 3 badges)
   document.getElementById('stat-done').textContent = done;
-  document.getElementById('stat-time').textContent = Math.round(totalTime / 60000);
-  document.getElementById('stat-avg').textContent = quizScores.length > 0
-    ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
   var firstTry = computeFirstTryAccuracy(studentData);
   document.getElementById('stat-first').textContent = firstTry !== null ? firstTry + '%' : '—';
   var streak = computeStreak(studentData);
@@ -544,23 +562,82 @@ function renderPortal() {
   document.getElementById('progress-fill').style.width = Math.round(done / availableCount * 100) + '%';
   document.getElementById('progress-label').textContent = done + ' de ' + availableCount + ' aulas disponíveis';
 
-  // Meu desempenho — cards
+  // Metricas detalhadas (acordeao) — renderizadas mesmo fechado, baratas
   renderSparkline(studentData);
   var avgCompletedMin = completedTimes.length > 0 ? Math.round(completedTimes.reduce(function(a,b){return a+b},0) / completedTimes.length / 60000) : null;
-  document.getElementById('perf-avgtime').textContent = avgCompletedMin !== null ? avgCompletedMin + ' min' : '—';
-  document.getElementById('perf-attempts').textContent = totalQuizAttempts(studentData);
-
-  var next = recommendNext(studentData);
-  var nextEl = document.getElementById('perf-next');
-  if (next.link) {
-    nextEl.innerHTML = '<a href="' + next.link + '" style="color:var(--accent);text-decoration:none">→ ' + next.action + '</a>';
-  } else {
-    nextEl.textContent = next.action;
-  }
-  document.getElementById('perf-next-sub').textContent = next.sub;
+  var elAvg = document.getElementById('perf-avgtime'); if (elAvg) elAvg.textContent = avgCompletedMin !== null ? avgCompletedMin + ' min' : '—';
+  var elAtt = document.getElementById('perf-attempts'); if (elAtt) elAtt.textContent = totalQuizAttempts(studentData);
+  var elTime = document.getElementById('stat-time-detail'); if (elTime) elTime.textContent = Math.round(totalTime / 60000);
+  var elAvgQ = document.getElementById('stat-avg-detail'); if (elAvgQ) elAvgQ.textContent = quizScores.length > 0
+    ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
 }
 
 renderPortal();
+
+// Onda 1 — render async (Supabase com fallback para local via tracker)
+async function renderOnda1() {
+  if (!window.PortalOndax) return;
+  var myData;
+  try { myData = await window.PortalOndax.loadMyData(); }
+  catch(e) { console.warn('[portal] loadMyData falhou:', e); return; }
+
+  // Percentis de tempo da turma (k-anon >=5). Se Supabase off/RLS nega/
+  // turma sem n suficiente, devolve {} e o nudge R3 cai no P25 proprio.
+  var classP = {};
+  if (window.MpeDB && window.MpeDB.enabled && window.MpeDB.getClassTimePercentiles) {
+    try { classP = await window.MpeDB.getClassTimePercentiles() || {}; }
+    catch(e) { classP = {}; }
+  }
+
+  // E3 — Caminho ate a proxima aula
+  var focus = window.PortalOndax.pickFocusAula(AULAS);
+  if (focus) {
+    var path = window.PortalOndax.computePath(focus, myData);
+    document.getElementById('path-card').style.display = 'block';
+    document.getElementById('path-title').textContent = 'Caminho até a Aula ' + String(focus.n).padStart(2,'0');
+    document.getElementById('path-sub').textContent = focus.title;
+    document.getElementById('path-body').innerHTML = window.PortalOndax.renderPath(path);
+  }
+
+  // E2 — Calibracao de confianca
+  var cal = window.PortalOndax.buildCalibration(myData);
+  var elCalib = document.getElementById('calib-body');
+  if (elCalib) elCalib.innerHTML = window.PortalOndax.renderCalibration(cal);
+
+  // E4 — Heatmap 7x24 pessoal
+  var cir = window.PortalOndax.buildCircadian(myData);
+  var elCirc = document.getElementById('circadian-body');
+  if (elCirc) elCirc.innerHTML = window.PortalOndax.renderCircadian(cir);
+
+  // E8 — Nudges (depende de focusAula para R4 + classP para R3 turma)
+  var nudges = window.PortalOndax.buildNudges(myData, focus, classP);
+  var elNud = document.getElementById('nudges-wrap');
+  if (elNud) elNud.innerHTML = window.PortalOndax.renderNudges(nudges);
+}
+
+renderOnda1();
+
+// Re-render em visibilitychange/focus (debounced 500ms).
+// Guards: nao re-renderiza se ha modal aberto (pmi-modal-back) — evita
+// explodir UI do aluno mid-interacao com help/calibracao.
+(function() {
+  var _reTimer = null;
+  function hasOpenModal() {
+    return !!document.querySelector('.pmi-modal-back');
+  }
+  function scheduleReRender() {
+    if (_reTimer) clearTimeout(_reTimer);
+    _reTimer = setTimeout(function() {
+      _reTimer = null;
+      if (hasOpenModal()) return;
+      renderOnda1();
+    }, 500);
+  }
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') scheduleReRender();
+  });
+  window.addEventListener('focus', scheduleReRender);
+})();
 </script>
 </body>
 </html>

@@ -343,3 +343,39 @@ SELECT
 FROM public.profiles p
 LEFT JOIN public.page_visits pv ON pv.user_id = p.id
 GROUP BY p.id, p.matricula, p.nome, p.email, p.role;
+
+
+-- RPC: percentis de tempo de seção por página (para nudges de ritmo no portal).
+-- Retorna APENAS agregados — zero PII. Usa SECURITY DEFINER para ler
+-- section_progress por baixo da RLS (aluno não pode ler tempo de colegas
+-- diretamente, mas pode consumir o agregado k-anônimo).
+-- Gate de privacidade: HAVING COUNT(DISTINCT user_id) >= 5 (k-anonymity).
+-- Janela 30s–7200s filtra sessões órfãs/abandonadas.
+
+CREATE OR REPLACE FUNCTION public.get_class_time_percentiles()
+RETURNS TABLE(
+  page_id         text,
+  n_students      int,
+  p25_seconds     int,
+  p50_seconds     int,
+  p75_seconds     int
+)
+LANGUAGE sql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+  SELECT
+    sp.page_id,
+    COUNT(DISTINCT sp.user_id)::int                                                                                    AS n_students,
+    PERCENTILE_CONT(0.25) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (sp.completed_at - sp.started_at)))::int            AS p25_seconds,
+    PERCENTILE_CONT(0.50) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (sp.completed_at - sp.started_at)))::int            AS p50_seconds,
+    PERCENTILE_CONT(0.75) WITHIN GROUP (ORDER BY EXTRACT(EPOCH FROM (sp.completed_at - sp.started_at)))::int            AS p75_seconds
+  FROM public.section_progress sp
+  WHERE sp.completed_at IS NOT NULL
+    AND sp.started_at   IS NOT NULL
+    AND EXTRACT(EPOCH FROM (sp.completed_at - sp.started_at)) BETWEEN 30 AND 7200
+  GROUP BY sp.page_id
+  HAVING COUNT(DISTINCT sp.user_id) >= 5;
+$$;
+
+GRANT EXECUTE ON FUNCTION public.get_class_time_percentiles() TO authenticated;

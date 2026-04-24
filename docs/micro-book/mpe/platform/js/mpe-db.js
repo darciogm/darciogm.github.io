@@ -422,6 +422,36 @@
       }
     },
 
+    // ==================== CLASS AGGREGATES (agregados k-anônimos) ====================
+
+    // Retorna percentis de tempo (segundos) por page_id, agregados pela
+    // turma. Consome o RPC SECURITY DEFINER get_class_time_percentiles,
+    // cujo gate HAVING COUNT(DISTINCT user_id) >= 5 garante k-anonymity
+    // (k=5) — zero PII no payload. Usado pelo nudge R3 do portal Onda 1.
+    //
+    // Formato de retorno: { 'aula-01': {p25, p50, p75, n}, ... }.
+    // Em erro/RPC indisponível, devolve {} (não lança) — o chamador cai
+    // no fallback de P25 individual do próprio aluno.
+    getClassTimePercentiles: async function() {
+      try {
+        var r = await client.rpc('get_class_time_percentiles');
+        if (r.error || !Array.isArray(r.data)) return {};
+        var out = {};
+        r.data.forEach(function(row) {
+          if (!row || !row.page_id) return;
+          out[row.page_id] = {
+            p25: row.p25_seconds,
+            p50: row.p50_seconds,
+            p75: row.p75_seconds,
+            n:   row.n_students
+          };
+        });
+        return out;
+      } catch(e) {
+        return {};
+      }
+    },
+
     // ==================== TEST (saude da conexao) ====================
 
     testConnection: async function() {
