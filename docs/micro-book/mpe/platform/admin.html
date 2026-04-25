@@ -589,7 +589,28 @@ window.MathJax = {
   <!-- TAB: QUIZZES -->
   <div class="admin-card tab-content" id="tab-quizzes" style="display:none">
     <h3>Detalhamento de quizzes (por tentativa)</h3>
-    <input type="text" class="search-input" id="search-quizzes" placeholder="Filtrar por nome, matrícula ou encontro">
+    <div class="quiz-toolbar" style="display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;margin-bottom:0.6rem;font-size:0.85rem">
+      <input type="text" class="search-input" id="search-quizzes" placeholder="Filtrar por nome, matrícula ou encontro" style="flex:1 1 220px;min-width:200px">
+      <label for="sort-quizzes" style="font-weight:600">Ordenar</label>
+      <select id="sort-quizzes" style="padding:0.3rem 0.5rem;border-radius:5px;border:1px solid var(--border);font-size:0.85rem">
+        <option value="nome-asc" selected>Nome (A–Z)</option>
+        <option value="nome-desc">Nome (Z–A)</option>
+        <option value="matricula-asc">Matrícula (asc)</option>
+        <option value="matricula-desc">Matrícula (desc)</option>
+        <option value="encontro-asc">Encontro (A01 → M05)</option>
+        <option value="encontro-desc">Encontro (M05 → A01)</option>
+        <option value="attempts-desc">Tentativas (desc)</option>
+        <option value="attempts-asc">Tentativas (asc)</option>
+        <option value="best-desc">Melhor score (desc)</option>
+        <option value="best-asc">Melhor score (asc)</option>
+        <option value="ft-desc">Acerto 1ª (desc)</option>
+        <option value="ft-asc">Acerto 1ª (asc)</option>
+        <option value="total-desc">Total Q (desc)</option>
+        <option value="last-desc">Último acesso (mais recente)</option>
+        <option value="last-asc">Último acesso (mais antigo)</option>
+      </select>
+      <span id="quiz-count" style="font-size:0.78rem;color:var(--text-muted);margin-left:auto"></span>
+    </div>
     <div style="overflow-x:auto">
       <table id="quiz-table">
         <thead><tr>
@@ -6548,34 +6569,94 @@ async function renderAdmin() {
       var q = (s.quizzes||{})[pid];
       if (q && q.attempts > 0) {
         var total = Object.keys(q.questions||{}).length;
-        var right = Object.values(q.questions||{}).filter(function(x){return x.correct}).length;
         var ftTotal = 0, ftFirst = 0;
         Object.values(q.questions||{}).forEach(function(it) {
           var atts = it.attempts || []; if (atts.length) { ftTotal++; if (atts[0].correct) ftFirst++; }
         });
         var ftPct = ftTotal > 0 ? Math.round(ftFirst / ftTotal * 100) : 0;
         var label = (isMon ? 'M' : 'A') + String(item.n).padStart(2,'0') + ' — ' + item.title.substring(0,40);
+        var lastTsRaw = q.lastAttempt || null;
+        var lastTs = lastTsRaw ? new Date(lastTsRaw).getTime() : null;
+        if (lastTs != null && !isFinite(lastTs)) lastTs = null;
+        // Chave para sort por encontro (ordena aulas antes das monitorias)
+        var encontroKey = (isMon ? 'M' : 'A') + String(item.n).padStart(2,'0');
         qRows.push({
-          mat: mat, nome: s.nome, label: label, attempts: q.attempts,
-          bestScore: q.bestScore, ftPct: ftPct, total: total,
-          last: q.lastAttempt ? q.lastAttempt.substring(0,16).replace('T',' ') : '—'
+          mat: mat, nome: s.nome || mat, label: label, encontroKey: encontroKey,
+          attempts: q.attempts || 0, bestScore: q.bestScore || 0,
+          ftPct: ftPct, total: total,
+          last: lastTsRaw ? lastTsRaw.substring(0,16).replace('T',' ') : '—',
+          lastTs: lastTs
         });
       }
     });
   });
-  function renderQuizzes(filter) {
+
+  var quizSorters = {
+    'nome-asc':       function(a,b){ return (a.nome||'').localeCompare(b.nome||'','pt-BR',{sensitivity:'base'}); },
+    'nome-desc':      function(a,b){ return (b.nome||'').localeCompare(a.nome||'','pt-BR',{sensitivity:'base'}); },
+    'matricula-asc':  function(a,b){ return String(a.mat).localeCompare(String(b.mat),'pt-BR',{numeric:true}); },
+    'matricula-desc': function(a,b){ return String(b.mat).localeCompare(String(a.mat),'pt-BR',{numeric:true}); },
+    'encontro-asc':   function(a,b){ return a.encontroKey.localeCompare(b.encontroKey) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'encontro-desc':  function(a,b){ return b.encontroKey.localeCompare(a.encontroKey) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'attempts-desc':  function(a,b){ return (b.attempts||0) - (a.attempts||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'attempts-asc':   function(a,b){ return (a.attempts||0) - (b.attempts||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'best-desc':      function(a,b){ return (b.bestScore||0) - (a.bestScore||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'best-asc':       function(a,b){ return (a.bestScore||0) - (b.bestScore||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'ft-desc':        function(a,b){ return (b.ftPct||0) - (a.ftPct||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'ft-asc':         function(a,b){ return (a.ftPct||0) - (b.ftPct||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'total-desc':     function(a,b){ return (b.total||0) - (a.total||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'last-desc':      function(a,b){
+      var av = a.lastTs || 0, bv = b.lastTs || 0;
+      return bv - av || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    },
+    'last-asc':       function(a,b){
+      var av = a.lastTs || Infinity, bv = b.lastTs || Infinity;
+      return av - bv || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    }
+  };
+
+  function renderQuizzes(filter, sortKey) {
     filter = (filter || '').toLowerCase();
+    var sorter = quizSorters[sortKey] || quizSorters['nome-asc'];
+    var filtered = qRows.filter(function(r) {
+      if (!filter) return true;
+      return r.nome.toLowerCase().indexOf(filter) >= 0
+          || r.mat.toLowerCase().indexOf(filter) >= 0
+          || r.label.toLowerCase().indexOf(filter) >= 0;
+    }).slice().sort(sorter);
     var tbody = '';
-    qRows.forEach(function(r) {
-      if (filter && r.nome.toLowerCase().indexOf(filter) < 0 && r.mat.toLowerCase().indexOf(filter) < 0 && r.label.toLowerCase().indexOf(filter) < 0) return;
+    filtered.forEach(function(r) {
       tbody += '<tr><td>'+r.mat+'</td><td>'+r.nome+'</td><td>'+r.label+'</td>'
         +'<td>'+r.attempts+'</td><td>'+r.bestScore+'%</td><td>'+r.ftPct+'%</td>'
         +'<td>'+r.total+'</td><td>'+r.last+'</td></tr>';
     });
     document.querySelector('#quiz-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa">Nenhum quiz</td></tr>';
+    var counter = document.getElementById('quiz-count');
+    if (counter) counter.textContent = filtered.length + ' tentativa' + (filtered.length === 1 ? '' : 's');
   }
-  renderQuizzes('');
-  document.getElementById('search-quizzes').addEventListener('input', function(e){ renderQuizzes(e.target.value); });
+
+  // Render inicial respeitando sort persistido em localStorage.
+  var qSel = document.getElementById('sort-quizzes');
+  var savedQSort = null;
+  try { savedQSort = localStorage.getItem('mpe_admin_quizzes_sort'); } catch(e) {}
+  if (qSel && savedQSort && quizSorters[savedQSort]) qSel.value = savedQSort;
+  var qSearch = document.getElementById('search-quizzes');
+  renderQuizzes((qSearch && qSearch.value) || '', (qSel && qSel.value) || 'nome-asc');
+
+  // Listeners idempotentes (flag _mpeBound).
+  if (qSearch && !qSearch._mpeBound) {
+    qSearch.addEventListener('input', function(e){
+      renderQuizzes(e.target.value, (qSel && qSel.value) || 'nome-asc');
+    });
+    qSearch._mpeBound = true;
+  }
+  if (qSel && !qSel._mpeBound) {
+    qSel.addEventListener('change', function() {
+      try { localStorage.setItem('mpe_admin_quizzes_sort', qSel.value); } catch(e) {}
+      renderQuizzes((qSearch && qSearch.value) || '', qSel.value);
+    });
+    qSel._mpeBound = true;
+  }
 
   // === TAB: AVANÇADAS ===
   // 1) Acerto 1ª tentativa — turma
