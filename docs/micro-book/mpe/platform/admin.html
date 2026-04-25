@@ -3077,7 +3077,25 @@ function _buildReflectionEmailBody(item, responseText) {
   // 2) Remove despedida da IA (—Darcio / - Darcio) p/ nao duplicar
   body = body.replace(/\n?[ \t]*[—–\-]\s*Darcio\.?\s*$/i, '').replace(/\s+$/,'');
 
-  var plainFull = 'Olá, ' + firstName + ',\n\n' + body + '\n\nAbraço,\nDarcio';
+  // Reflexao original do aluno (pergunta + texto) para ecoar antes da resposta.
+  // promptId 'nebulosa' = "conceito nebuloso"; 'aula' = "ponto a discutir em sala";
+  // outros sao raros — fallback para o id cru.
+  var refl = item.reflection || {};
+  var promptId = refl.promptId || '';
+  var promptLabel = (promptId === 'nebulosa') ? 'Conceito ainda nebuloso'
+                  : (promptId === 'aula')     ? 'Ponto que quer discutir em sala'
+                  : (promptId || 'Reflexão');
+  var pageLabel = refl.pageId ? (' (' + refl.pageId + ')') : '';
+  var studentText = String(refl.text || '').replace(/\s+$/,'');
+
+  // Plain-text: cita reflexao acima da resposta (mailto fallback).
+  var plainQuote = '';
+  if (studentText) {
+    plainQuote = 'Sua reflexão' + pageLabel + ' — ' + promptLabel + ':\n'
+               + studentText.split('\n').map(function(l){ return '> ' + l; }).join('\n')
+               + '\n\n';
+  }
+  var plainFull = 'Olá, ' + firstName + ',\n\n' + plainQuote + body + '\n\nAbraço,\nDarcio';
 
   // 3) Escapa HTML mas preserva delimitadores de math
   function escapeButKeepMath(txt) {
@@ -3099,8 +3117,22 @@ function _buildReflectionEmailBody(item, responseText) {
     return '<p style="margin:0 0 0.9em">' + p.replace(/\n/g, '<br>') + '</p>';
   }).join('');
 
+  // Bloco com a reflexao original do aluno (citacao em blockquote).
+  var quoteHtml = '';
+  if (studentText) {
+    var escStudent = escapeButKeepMath(studentText).replace(/\n/g, '<br>');
+    quoteHtml = '<p style="margin:0 0 0.4em;color:#555;font-size:0.92em">'
+              + '<strong>Sua reflexão' + _escapeHtml(pageLabel) + ':</strong> '
+              + _escapeHtml(promptLabel)
+              + '</p>'
+              + '<blockquote style="margin:0 0 1em;padding:0.6em 0.9em;border-left:3px solid #C8102E;background:#FAFAF8;color:#333;font-size:0.95em;line-height:1.5">'
+              + escStudent
+              + '</blockquote>';
+  }
+
   // Miolo com math ainda em $...$ / \(...\) — sera tipeset pelo MathJax
   var bodyHtml = '<p style="margin:0 0 0.9em">Olá, ' + _escapeHtml(firstName) + ',</p>'
+    + quoteHtml
     + paragraphs
     + '<p style="margin:1em 0 0">Abraço,<br>Darcio</p>';
 
