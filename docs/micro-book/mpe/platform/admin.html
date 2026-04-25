@@ -515,6 +515,123 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .knower-legend{display:flex;gap:0.7rem;flex-wrap:wrap;font-size:0.72rem;color:var(--text-muted);margin-top:0.4rem;justify-content:center}
 .knower-legend .leg-item{display:inline-flex;align-items:center;gap:0.3rem}
 .knower-legend .leg-swatch{display:inline-block;width:10px;height:10px;border-radius:50%}
+
+/* ============================================================
+   ONDA DE MODERNIZACAO VISUAL #2 (2026-04-25) — 9 viz adicionais
+   bullet charts, likert, calendar, funnel, slope, gap, wardley,
+   sankey de jornada, story panel (perfil)
+   ============================================================ */
+/* Bullet charts (Stephen Few) — substituem stat-boxes do topo */
+.bullet-row{display:grid;grid-template-columns:repeat(4,1fr);gap:0.85rem;margin:0.4rem 0 0.2rem}
+@media(max-width:900px){.bullet-row{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.bullet-row{grid-template-columns:1fr}}
+.bullet-cell{display:flex;align-items:center;gap:0.85rem;padding:0.6rem 0.85rem;background:var(--accent-soft);border:1px solid var(--border);border-radius:var(--radius)}
+.bullet-cell .bv-num{font-size:1.55rem;font-weight:700;color:var(--accent);line-height:1;min-width:55px;text-align:right;font-variant-numeric:tabular-nums}
+.bullet-cell .bv-num .bv-unit{font-size:0.7rem;font-weight:600;color:var(--text-muted);margin-left:0.1rem}
+.bullet-cell .bv-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:0.2rem}
+.bullet-cell .bv-label{font-size:0.66rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;font-weight:600}
+.bullet-cell svg{width:100%;height:24px;display:block;overflow:visible}
+.bullet-cell .bv-zone-bad{fill:#FEE2E2}
+.bullet-cell .bv-zone-mid{fill:#FEF3C7}
+.bullet-cell .bv-zone-good{fill:#D1FAE5}
+.bullet-cell .bv-bar{fill:#1F2937}
+.bullet-cell .bv-target{stroke:#0F172A;stroke-width:2}
+
+/* Diverging stacked bar (Likert) */
+.likert-row{display:grid;grid-template-columns:74px 1fr 220px;gap:0.6rem;align-items:center;font-size:0.78rem;padding:0.25rem 0;border-bottom:1px solid #F3F4F6}
+.likert-row:last-child{border-bottom:none}
+.likert-row .lk-label{font-weight:600;color:var(--primary);font-size:0.78rem}
+.likert-row .lk-bar{height:18px;display:flex;align-items:center;position:relative;background:#FAFAF8;border-radius:3px}
+.likert-row .lk-stat{font-size:0.7rem;color:var(--text-muted);font-variant-numeric:tabular-nums;text-align:right}
+.likert-axis{display:grid;grid-template-columns:74px 1fr 220px;gap:0.6rem;font-size:0.62rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em;padding:0.3rem 0;font-weight:600}
+.likert-axis .lk-axis-mid{display:flex;justify-content:space-between}
+
+/* Calendar heatmap (GitHub-style) */
+.cal-wrap{display:flex;flex-direction:column;gap:0.3rem;font-size:0.62rem}
+.cal-months{display:flex;font-size:0.65rem;color:var(--text-muted);font-weight:600;padding-left:32px;gap:14px}
+.cal-grid{display:flex;gap:3px}
+.cal-day-labels{display:flex;flex-direction:column;justify-content:space-between;gap:3px;padding-right:6px;color:var(--text-muted);font-size:0.6rem;height:108px}
+.cal-cols{display:flex;gap:3px}
+.cal-col{display:flex;flex-direction:column;gap:3px}
+.cal-cell{width:14px;height:14px;border-radius:2px;background:#F3F4F6;cursor:pointer;transition:0.15s}
+.cal-cell:hover{transform:scale(1.4);z-index:2;position:relative;box-shadow:0 0 0 1px #1F2937}
+.cal-cell[data-v="1"]{background:#FEE2E2}
+.cal-cell[data-v="2"]{background:#FCA5A5}
+.cal-cell[data-v="3"]{background:#C8102E}
+.cal-cell[data-v="4"]{background:#7F1D1D}
+.cal-cell.is-aula{box-shadow:inset 0 0 0 2px #B45309}
+.cal-legend{display:flex;align-items:center;gap:0.4rem;margin-top:0.3rem;font-size:0.7rem;color:var(--text-muted);justify-content:flex-end}
+.cal-legend .cal-chip{display:inline-block;width:12px;height:12px;border-radius:2px}
+
+/* Funnel chart */
+.funnel-toolbar{display:flex;gap:0.6rem;align-items:center;margin-bottom:0.7rem;flex-wrap:wrap;font-size:0.85rem}
+.funnel-row{display:grid;grid-template-columns:170px 1fr 320px;gap:0.6rem;align-items:center;margin-bottom:0.4rem}
+.funnel-row .fn-stage{font-size:0.78rem;color:var(--primary);font-weight:600}
+.funnel-row .fn-bar{height:24px;background:#F3F4F6;border-radius:4px;overflow:hidden;position:relative}
+.funnel-row .fn-bar-fill{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:0.4rem;color:#fff;font-size:0.72rem;font-weight:600;font-variant-numeric:tabular-nums;transition:width 0.3s}
+.funnel-row .fn-meta{font-size:0.72rem;color:var(--text-muted);font-variant-numeric:tabular-nums}
+.funnel-row.fn-biggest-drop .fn-meta::after{content:" 🩹 maior queda";color:#991B1B;font-weight:700}
+
+/* Slope chart */
+.slope-grid-empty{padding:1rem;text-align:center;color:var(--text-muted);font-style:italic;font-size:0.85rem}
+
+/* Gap matrix (BCG-style) */
+.gap-quad-q1{fill:#FEE2E2}
+.gap-quad-q2{fill:#D1FAE5}
+.gap-quad-q3{fill:#FEF3C7}
+.gap-quad-q4{fill:#F3F4F6}
+.gap-dot{fill:#1F2937;cursor:pointer;transition:0.15s}
+.gap-dot:hover{fill:#C8102E}
+.gap-dot.q1{fill:#991B1B}
+.gap-dot.q2{fill:#15803D}
+.gap-dot.q3{fill:#B45309}
+.gap-dot.q4{fill:#525252}
+.gap-label{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none;font-family:Calibri,sans-serif}
+.gap-quad-name{font-size:11px;font-weight:700;fill:#1F2937;font-family:Calibri,sans-serif;opacity:0.8;pointer-events:none}
+.gap-axis{stroke:#525252;stroke-width:1.2}
+.gap-axis-label{font-size:11px;fill:#374151;font-family:Calibri,sans-serif}
+.gap-tick{font-size:9px;fill:#6B7280;font-family:Calibri,sans-serif}
+.gap-mid-line{stroke:#9CA3AF;stroke-width:1;stroke-dasharray:3,3}
+
+/* Wardley map */
+.wardley-axis{stroke:#374151;stroke-width:1.5}
+.wardley-phase-divider{stroke:#9CA3AF;stroke-width:1;stroke-dasharray:2,3}
+.wardley-phase-label{font-size:9px;fill:#6B7280;font-family:Calibri,sans-serif;text-transform:uppercase;letter-spacing:0.05em;font-weight:600}
+.wardley-dep{fill:none;stroke:#9CA3AF;stroke-width:1;stroke-opacity:0.5}
+.wardley-dot{fill:#C8102E;cursor:pointer;transition:0.15s;stroke:#fff;stroke-width:1}
+.wardley-dot:hover{stroke:#1F2937;stroke-width:2}
+.wardley-label{font-size:9px;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none;font-family:Calibri,sans-serif}
+.wardley-axis-label{font-size:11px;fill:#374151;font-family:Calibri,sans-serif;font-weight:600}
+.wardley-note{font-size:9.5px;fill:#525252;font-family:Calibri,sans-serif;font-style:italic}
+
+/* Sankey-jornada (multi-aula horizontal) */
+.sj-stage-label{font-size:10px;fill:#1F2937;font-family:Calibri,sans-serif;font-weight:700;text-anchor:middle}
+.sj-node-pass{fill:#D1FAE5;stroke:#15803D;stroke-width:1}
+.sj-node-stop{fill:#FEE2E2;stroke:#C8102E;stroke-width:1}
+.sj-node-count{font-size:9px;fill:#1F2937;font-family:Calibri,sans-serif}
+.sj-link-pass{fill:#9CA3AF;opacity:0.35}
+.sj-link-pass:hover{opacity:0.6}
+.sj-link-stop{fill:#C8102E;opacity:0.25}
+.sj-link-stop:hover{opacity:0.5}
+
+/* Story panel no perfil do aluno */
+.story-panel{display:flex;flex-direction:column;gap:0.5rem;margin:0.4rem 0 1rem}
+.story-panel-empty{font-size:0.82rem;color:var(--text-muted);font-style:italic;padding:0.5rem 0.2rem}
+.story-card-act{display:grid;grid-template-columns:auto 1fr auto;gap:0.7rem;align-items:center;padding:0.55rem 0.85rem;border-left:3px solid var(--accent);background:#FAFAF8;border-radius:0 5px 5px 0;font-size:0.82rem}
+.story-card-act .sa-icon{font-size:1.2rem;line-height:1}
+.story-card-act .sa-body{line-height:1.4}
+.story-card-act .sa-h{font-size:0.62rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--text-muted);margin-bottom:0.15rem}
+.story-card-act .sa-text{color:#1F2937}
+.story-card-act .sa-date{font-size:0.7rem;color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.story-card-act.act-exposition{border-left-color:#1B3A5C;background:#EFF6FF}
+.story-card-act.act-rising{border-left-color:#D97706;background:#FFFBEB}
+.story-card-act.act-climax{border-left-color:#C8102E;background:#FEF2F2}
+.story-card-act.act-falling{border-left-color:#525252;background:#F5F5F5}
+.story-card-act.act-resolution{border-left-color:#15803D;background:#ECFDF5}
+
+/* Tooltip generico para SVG (reuso) */
+.svg-tip{position:absolute;background:#1F2937;color:#fff;padding:0.35rem 0.55rem;border-radius:4px;font-size:0.72rem;pointer-events:none;opacity:0;transition:opacity 0.1s;z-index:20;white-space:nowrap;line-height:1.35}
+.svg-tip.show{opacity:1}
 </style>
 
 <!-- MathJax v3 (SVG output, sobrevive copy/paste como SVG inline) -->
@@ -553,6 +670,7 @@ window.MathJax = {
       </div>
     </div>
     <div class="stat-row" id="admin-stats"></div>
+    <div class="bullet-row" id="admin-bullets"></div>
   </div>
 
   <!-- HUB "HOJE" / INBOX UNIFICADO (sugestao #1) -->
@@ -586,6 +704,9 @@ window.MathJax = {
     <div class="tab" data-tab="quizzes">Quizzes</div>
     <div class="tab" data-tab="psicometria">Psicometria</div>
     <div class="tab" data-tab="knower">Conhecimento</div>
+    <div class="tab" data-tab="funnel">Funil</div>
+    <div class="tab" data-tab="gap">Gap das aulas</div>
+    <div class="tab" data-tab="sankey">Jornada da turma</div>
     <div class="tab" data-tab="irt">IRT / Wright</div>
     <div class="tab" data-tab="nudges">Nudge Queue</div>
     <div class="tab" data-tab="onda4">Psico-cognitivo</div>
@@ -831,6 +952,58 @@ window.MathJax = {
     <div class="knower-strip" id="kn-strip" style="display:none"></div>
   </div>
 
+  <!-- TAB: FUNIL — etapas por aula (Stephen Few) -->
+  <div class="admin-card tab-content" id="tab-funnel" style="display:none">
+    <h3>Funil pedagógico — etapas por aula</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.5">
+      Cinco etapas do ciclo da aula: <strong>abriu material → completou ≥7 seções → fez quiz pré → fez quiz pós → submeteu exercícios</strong>.
+      Cada barra mostra <em>quantos chegaram lá</em> e o <em>drop-off</em> em relação à etapa anterior. A maior queda ganha 🩹.
+    </p>
+    <div class="funnel-toolbar">
+      <label for="funnel-aula-sel" style="font-weight:600">Aula</label>
+      <select id="funnel-aula-sel" style="padding:0.35rem 0.6rem;border-radius:5px;border:1px solid var(--border);font-size:0.85rem"></select>
+      <div style="flex:1"></div>
+      <span id="funnel-info" style="font-size:0.72rem;color:var(--text-muted)"></span>
+    </div>
+    <div id="funnel-body"></div>
+  </div>
+
+  <!-- TAB: GAP DAS AULAS (BCG) + WARDLEY -->
+  <div class="admin-card tab-content" id="tab-gap" style="display:none">
+    <h3>Gap matrix das aulas (BCG-style)</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.5">
+      Quatro quadrantes pelas medianas. <strong>X</strong> = % da turma com domínio (acerto 1ª ≥ 70% no quiz pós).
+      <strong>Y</strong> = peso pedagógico estimado (proxy: nº de sub-itens nos exercícios avaliativos).
+      Click no ponto pula pra small multiples.
+    </p>
+    <div id="gap-matrix-container" style="position:relative"></div>
+
+    <h3 style="margin-top:2rem">Mapa de evolução pedagógica (Wardley)</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.5">
+      Eixo X = comoditização (quanto mais à direita, mais a turma consolidou). Eixo Y = valor pedagógico.
+      Quatro fases: <em>Genesis</em> (exploratório) → <em>Custom</em> → <em>Product</em> → <em>Commodity</em>.
+      Decision rule: <em>Genesis</em> + alto valor = mais aula; <em>Commodity</em> + baixo valor = mover pra exercício.
+      Referência: Berengueres §Cap 4 (Wardley mapping).
+    </p>
+    <div id="wardley-container" style="position:relative"></div>
+  </div>
+
+  <!-- TAB: SANKEY DA JORNADA -->
+  <div class="admin-card tab-content" id="tab-sankey" style="display:none">
+    <h3>Jornada da turma (Sankey)</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.5">
+      5 estágios = mesmas etapas do funil. Fluxos cinza-claro = <em>completou e seguiu</em>; vermelho-fade = <em>parou aqui</em>.
+      Larguras proporcionais ao nº de alunos. Filtre por aula para ver a jornada de uma aula específica ou agregue todas.
+    </p>
+    <div class="funnel-toolbar">
+      <label for="sankey-aula-sel" style="font-weight:600">Filtrar aula</label>
+      <select id="sankey-aula-sel" style="padding:0.35rem 0.6rem;border-radius:5px;border:1px solid var(--border);font-size:0.85rem"></select>
+      <div style="flex:1"></div>
+      <span id="sankey-info" style="font-size:0.72rem;color:var(--text-muted)"></span>
+    </div>
+    <div id="sankey-journey-container" style="position:relative"></div>
+  </div>
+
   <!-- TAB: IRT / WRIGHT MAP (Onda 3C) -->
   <div class="admin-card tab-content" id="tab-irt" style="display:none">
     <h3>IRT 2-PL — Wright map</h3>
@@ -967,6 +1140,38 @@ window.MathJax = {
         Convenções de classificação ficam a cargo do professor — aqui só vemos os números.
       </p>
       <div class="metric-grid">
+
+        <!-- Likert diverging stacked bar (confiança pós-seção, 1-5) -->
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Calibração da turma — slider de confiança pós-seção (1–5)</h4>
+          <div class="metric-desc">
+            Diverging stacked bar por aula. À <strong>esquerda do zero</strong>: % de respostas <em>1+2</em> (perdido).
+            <strong>Centro</strong>: % de <em>3</em> (neutro). À <strong>direita</strong>: % de <em>4+5</em> (confiante).
+            Mínimo 5 respostas pra aula entrar. Ordem fixa Aula 1 → Aula 9.
+          </div>
+          <div id="m-likert-confidence" style="margin-top:0.4rem"></div>
+        </div>
+
+        <!-- Calendar heatmap GitHub-style -->
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Ritmo do semestre — submissões por dia</h4>
+          <div class="metric-desc">
+            Cada célula = 1 dia. Intensidade = nº de eventos (quiz attempts + section completions + micro-checkpoints).
+            Borda dourada = dia de aula presencial. Hover mostra contagem + alunos distintos.
+          </div>
+          <div id="m-calendar-heatmap" style="margin-top:0.4rem;position:relative"></div>
+        </div>
+
+        <!-- Slope chart antes/depois por aula -->
+        <div class="metric-block" style="grid-column:1/-1">
+          <h4>Aprendizado entre quiz pré e pós (slope)</h4>
+          <div class="metric-desc">
+            Para cada aula com ambos quizzes (pré e pós) ≥5 respostas, conecta acerto 1ª pré (esquerda) → pós (direita).
+            <span style="color:#15803D;font-weight:600">Verde</span> = subiu &gt; +5pp; <span style="color:#C8102E;font-weight:600">vermelho</span> = caiu; cinza = ±5pp (ruído).
+          </div>
+          <div id="m-slope-pre-post" style="margin-top:0.4rem;position:relative"></div>
+        </div>
+
         <div class="metric-block">
           <h4>Acerto em 1ª tentativa — turma</h4>
           <div class="metric-desc">% de itens onde a 1ª resposta foi correta, agregado sobre todos os alunos e encontros. Distingue preparação real de tentativa-e-erro.</div>
@@ -7859,6 +8064,1212 @@ async function askClearUsers() {
   });
   if (ok) { localStorage.removeItem('mpe_microI_users'); location.reload(); }
 }
+
+// ============================================================================
+// ONDA DE MODERNIZACAO VISUAL #2 (2026-04-25) — 9 viz adicionais
+//   6) Bullet charts (Stephen Few) — substituem stat-boxes do topo
+//   7) Diverging stacked bar (Likert) — confiança por aula
+//   8) Calendar heatmap GitHub-style — submissões por dia
+//   9) Funnel chart por aula
+//   3) Slope chart — antes/depois quiz pré→pós
+//  11) Gap matrix BCG-style das aulas
+//  12) Wardley map dos tópicos
+//   2) Class journey map (Sankey horizontal)
+//   4) Story panel no perfil do aluno (Pollock)
+// 100% SVG inline puro, derivam de _adminRaw / _alunosRows / _psiRows / _onda4.
+// Cada renderer tem guard "se sem dados, mostra Aguardando dados".
+// ============================================================================
+
+// ---------- helpers genericos ----------
+function _vizSafePid(n) { return 'aula-' + String(n).padStart(2,'0'); }
+function _vizPidPre(n)   { return _vizSafePid(n) + '-pre'; }
+function _vizPidPos(n)   { return _vizSafePid(n) + '-pos'; }
+function _vizPidExerc(n) { return _vizSafePid(n) + '-exerc'; }
+function _vizPidRoot(pid) {
+  // 'aula-01-pre' -> 'aula-01'; 'aula-01' -> 'aula-01'; 'monitoria-01-pre' -> null
+  if (!pid) return null;
+  var m = String(pid).match(/^aula-(\d{2})/);
+  return m ? 'aula-' + m[1] : null;
+}
+function _vizPidNum(pid) {
+  var r = _vizPidRoot(pid);
+  return r ? parseInt(r.split('-')[1], 10) : null;
+}
+function _vizMedian(arr) {
+  if (!arr.length) return null;
+  var s = arr.slice().sort(function(a,b){return a-b});
+  var n = s.length;
+  return n % 2 ? s[(n-1)/2] : (s[n/2-1] + s[n/2]) / 2;
+}
+function _vizFirstTryByPage(raw) {
+  // {pageRoot: {n_correct, n_total, byUser: {uid: {c, t}}}} — 1ª tentativa por (uid, page, qid)
+  var firstSeen = {};
+  (raw.quizQA || []).forEach(function(q){
+    var k = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    var ts = q.answered_at ? new Date(q.answered_at).getTime() : 0;
+    if (firstSeen[k] && firstSeen[k].ts <= ts) return;
+    firstSeen[k] = { ts: ts, correct: !!q.correct, page: q.page_id, uid: q.user_id };
+  });
+  var byPage = {};
+  Object.keys(firstSeen).forEach(function(k){
+    var r = firstSeen[k];
+    if (!byPage[r.page]) byPage[r.page] = { c: 0, t: 0, byUser: {} };
+    byPage[r.page].t++;
+    if (r.correct) byPage[r.page].c++;
+    if (!byPage[r.page].byUser[r.uid]) byPage[r.page].byUser[r.uid] = { c: 0, t: 0 };
+    byPage[r.page].byUser[r.uid].t++;
+    if (r.correct) byPage[r.page].byUser[r.uid].c++;
+  });
+  return byPage;
+}
+function _vizNonAdminUserIds(raw) {
+  var s = {};
+  (raw.profiles || []).forEach(function(p){ if (p.role !== 'admin') s[p.id] = true; });
+  return s;
+}
+
+// ============================================================================
+// 6) BULLET CHARTS — substituem stat-boxes do topo
+// ============================================================================
+function _vizComputeTopBulletData() {
+  var raw = window._adminRaw || {};
+  var rows = window._alunosRows || [];
+  var onda4 = window._onda4 || {};
+
+  // Completude: % média aluno-aula visitada (de todos os 9+5 = 14 itens)
+  var totalItems = (typeof TOTAL_AULAS === 'number' ? TOTAL_AULAS : 9) + (typeof TOTAL_MONITORIAS === 'number' ? TOTAL_MONITORIAS : 5);
+  var nonAdmin = rows.filter(function(r){ return r.s.matricula && r.s.matricula.toLowerCase().indexOf('prof') !== 0; });
+  var completude = null;
+  if (nonAdmin.length > 0 && totalItems > 0) {
+    var sum = nonAdmin.reduce(function(a, r){ return a + (r.s.pagesVisited || 0); }, 0);
+    completude = Math.round(sum / (nonAdmin.length * totalItems) * 100);
+  }
+
+  // Acerto 1ª turma: média ponderada de ftPct
+  var ftN = 0, ftR = 0;
+  nonAdmin.forEach(function(r){ if (r.ftPct != null && r.ftTotal) { ftN += r.ftTotal; ftR += Math.round(r.ftPct/100 * r.ftTotal); } });
+  var acertoFT = ftN > 0 ? Math.round(ftR / ftN * 100) : null;
+
+  // Streak médio (mediana é mais robusta) — só não-admin
+  var streaks = nonAdmin.map(function(r){ return r.streak || 0; });
+  var streakMedian = streaks.length ? _vizMedian(streaks) : null;
+
+  // ECE turma: média do |conf - acc| dos pares (onda4.calibration.pairs)
+  var ece = null;
+  try {
+    var pairs = (onda4.calibration && onda4.calibration.pairs) || [];
+    if (pairs.length >= 3) {
+      var s = 0;
+      pairs.forEach(function(p){ s += Math.abs((p.conf||0) - (p.acc||0)); });
+      ece = Math.round(s / pairs.length);
+    }
+  } catch(e) {}
+
+  return {
+    completude: { value: completude, target: 80, zones: [50, 70], unit: '%', label: 'Completude média' },
+    acertoFT:   { value: acertoFT,   target: 70, zones: [50, 65], unit: '%', label: 'Acerto 1ª (turma)' },
+    streak:     { value: streakMedian, target: 3, zones: [2, 5], unit: 'd', label: 'Streak mediano (dias)' },
+    // ECE invertido: menor é melhor, max 25 -> alto risco. zonas vermelha 100->15, amarela 15->5, verde 5->0 (mas display é 0..40)
+    ece:        { value: ece, target: 15, zones: [15, 25], unit: 'pp', label: 'ECE turma (|conf−acc|)', inverted: true, max: 40 }
+  };
+}
+
+function _vizRenderBullet(spec) {
+  // SVG largura responsiva (viewBox 200x42), valor + bullet bar
+  var v = spec.value;
+  var max = spec.max != null ? spec.max : 100;
+  var W = 200, H = 26, padL = 0, padR = 0;
+  function pos(x){ return padL + Math.max(0, Math.min(1, x / max)) * (W - padL - padR); }
+  var bad = spec.inverted ? [pos(spec.zones[0]), pos(max)] : [0, pos(spec.zones[0])];
+  var mid = spec.inverted ? [pos(spec.zones[0]), pos(spec.zones[1])] : [pos(spec.zones[0]), pos(spec.zones[1])];
+  var good = spec.inverted ? [0, pos(spec.zones[0])] : [pos(spec.zones[1]), pos(max)];
+  if (spec.inverted) {
+    // Inverted: bad é zona alta (>zones[1]), mid entre, good zona baixa
+    bad  = [pos(spec.zones[1]), pos(max)];
+    mid  = [pos(spec.zones[0]), pos(spec.zones[1])];
+    good = [0, pos(spec.zones[0])];
+  }
+  var barW = v == null ? 0 : pos(v);
+  var tx = pos(spec.target);
+  var zoneLabelGood = spec.inverted ? '< ' + spec.zones[0] + spec.unit + ' (verde)' : '> ' + spec.zones[1] + spec.unit + ' (verde)';
+  var ttip = spec.label + ': ' + (v == null ? '—' : v + spec.unit) + ' · meta ' + spec.target + spec.unit + ' · ' + zoneLabelGood;
+  var html = ''
+    + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">'
+    + '<title>' + ttip.replace(/</g,'&lt;') + '</title>'
+    + '<rect class="bv-zone-bad"  x="' + bad[0]  + '" y="6" width="' + (bad[1]-bad[0])   + '" height="14" rx="2"/>'
+    + '<rect class="bv-zone-mid"  x="' + mid[0]  + '" y="6" width="' + (mid[1]-mid[0])   + '" height="14" rx="2"/>'
+    + '<rect class="bv-zone-good" x="' + good[0] + '" y="6" width="' + (good[1]-good[0]) + '" height="14" rx="2"/>'
+    + (v != null ? '<rect class="bv-bar" x="0" y="10" width="' + barW + '" height="6" rx="1"/>' : '')
+    + '<line class="bv-target" x1="' + tx + '" y1="2" x2="' + tx + '" y2="24"/>'
+    + '</svg>';
+  var displayV = v == null ? '—' : v;
+  return ''
+    + '<div class="bullet-cell" title="' + ttip.replace(/"/g,'&quot;') + '">'
+      + '<div class="bv-num">' + displayV + (v == null ? '' : '<span class="bv-unit">' + spec.unit + '</span>') + '</div>'
+      + '<div class="bv-body">'
+        + '<div class="bv-label">' + spec.label + '</div>'
+        + html
+      + '</div>'
+    + '</div>';
+}
+
+function renderTopBullets() {
+  var host = document.getElementById('admin-bullets');
+  if (!host) return;
+  try {
+    var d = _vizComputeTopBulletData();
+    host.innerHTML = ''
+      + _vizRenderBullet(d.completude)
+      + _vizRenderBullet(d.acertoFT)
+      + _vizRenderBullet(d.streak)
+      + _vizRenderBullet(d.ece);
+  } catch (e) {
+    console.error('[viz-bullet] falhou:', e);
+    host.innerHTML = '<div style="grid-column:1/-1;color:var(--text-muted);font-size:0.8rem;font-style:italic;padding:0.5rem">Bullet charts indisponíveis (modo offline?).</div>';
+  }
+}
+
+// ============================================================================
+// 7) DIVERGING STACKED BAR (Likert) — confiança pós-seção por aula
+// ============================================================================
+function _vizComputeLikert() {
+  var raw = window._adminRaw;
+  if (!raw || !raw.confidence) return [];
+  var nonAdmin = _vizNonAdminUserIds(raw);
+  var byAula = {};
+  raw.confidence.forEach(function(c){
+    if (c.phase !== 'post') return;
+    if (!nonAdmin[c.user_id]) return;
+    var root = _vizPidRoot(c.page_id);
+    if (!root) return;
+    if (!byAula[root]) byAula[root] = { '1':0, '2':0, '3':0, '4':0, '5':0, total:0 };
+    var v = c.value;
+    if (v == null) return;
+    var bucket = null;
+    if (typeof v === 'number') {
+      if (v >= 1 && v <= 5) bucket = String(Math.round(v));
+      else if (v >= 0 && v <= 100) bucket = String(Math.max(1, Math.min(5, Math.ceil(v / 20))));
+    }
+    if (!bucket) return;
+    byAula[root][bucket]++;
+    byAula[root].total++;
+  });
+  var rows = [];
+  for (var n = 1; n <= 9; n++) {
+    var r = 'aula-' + String(n).padStart(2,'0');
+    var b = byAula[r] || null;
+    rows.push({ n: n, root: r, bins: b, total: b ? b.total : 0 });
+  }
+  return rows;
+}
+
+function renderLikertConfidence() {
+  var host = document.getElementById('m-likert-confidence');
+  if (!host) return;
+  var rows = _vizComputeLikert();
+  var anyData = rows.some(function(r){ return r.total >= 5; });
+  if (!anyData) {
+    host.innerHTML = '<div style="color:var(--text-muted);font-style:italic;padding:0.7rem">Aguardando dados — mínimo 5 sliders pós por aula.</div>';
+    return;
+  }
+  var html = '<div class="likert-axis"><span></span><span class="lk-axis-mid"><span>← perdido (1+2)</span><span>neutro (3)</span><span>confiante (4+5) →</span></span><span style="text-align:right">n / %</span></div>';
+  rows.forEach(function(r){
+    if (!r.bins || r.total < 5) {
+      html += '<div class="likert-row"><span class="lk-label">A' + String(r.n).padStart(2,'0') + '</span><span class="lk-bar" style="opacity:0.4"></span><span class="lk-stat" style="color:var(--text-muted);font-style:italic">— sem dados</span></div>';
+      return;
+    }
+    var lo = (r.bins['1'] + r.bins['2']) / r.total * 100;
+    var mid = r.bins['3'] / r.total * 100;
+    var hi = (r.bins['4'] + r.bins['5']) / r.total * 100;
+    // Axis: zero no centro do bar; extremos = 100% lo OR 100% hi.
+    // half-width 50%. lo bar grows leftward from center; hi grows rightward.
+    var midLeft  = mid / 2; // metade do neutro à esquerda
+    var midRight = mid / 2; // metade à direita
+    // SVG approach pra precisão. W=100% ; centro x=50%
+    var svg = ''
+      + '<svg viewBox="0 0 200 18" preserveAspectRatio="none" style="width:100%;height:100%;display:block">'
+      // bar de fundo
+      + '<rect x="0" y="3" width="200" height="12" fill="#FAFAF8"/>'
+      // lo (esquerda do centro): width = lo, end at center
+      + '<rect x="' + (100 - lo - midLeft) + '" y="3" width="' + lo + '" height="12" fill="#94A3B8" rx="1.5"/>'
+      // mid esquerda
+      + '<rect x="' + (100 - midLeft) + '" y="3" width="' + midLeft + '" height="12" fill="#CBD5E1"/>'
+      // mid direita
+      + '<rect x="100" y="3" width="' + midRight + '" height="12" fill="#CBD5E1"/>'
+      // hi (direita do centro)
+      + '<rect x="' + (100 + midRight) + '" y="3" width="' + hi + '" height="12" fill="#15803D" rx="1.5"/>'
+      // linha do zero
+      + '<line x1="100" y1="0" x2="100" y2="18" stroke="#1F2937" stroke-width="1"/>'
+      + '</svg>';
+    var stat = 'n=' + r.total + ' · '
+      + Math.round(lo) + '% lo · '
+      + Math.round(mid) + '% n · '
+      + Math.round(hi) + '% hi';
+    html += '<div class="likert-row" title="A' + String(r.n).padStart(2,'0') + ': ' + stat + '">'
+      + '<span class="lk-label">A' + String(r.n).padStart(2,'0') + '</span>'
+      + '<span class="lk-bar">' + svg + '</span>'
+      + '<span class="lk-stat">' + stat + '</span>'
+      + '</div>';
+  });
+  host.innerHTML = html;
+}
+
+// ============================================================================
+// 8) CALENDAR HEATMAP — GitHub-style, submissões por dia
+// ============================================================================
+function _vizDateKey(d) {
+  var y = d.getFullYear();
+  var m = String(d.getMonth() + 1).padStart(2, '0');
+  var dd = String(d.getDate()).padStart(2, '0');
+  return y + '-' + m + '-' + dd;
+}
+function _vizComputeCalendar() {
+  var raw = window._adminRaw || {};
+  var nonAdmin = _vizNonAdminUserIds(raw);
+  // Eventos agregados
+  var byDay = {}; // {dayKey: {events: n, users: Set}}
+  function add(uid, ts) {
+    if (!ts || !nonAdmin[uid]) return;
+    var d = new Date(ts);
+    if (!isFinite(d.getTime())) return;
+    var k = _vizDateKey(d);
+    if (!byDay[k]) byDay[k] = { events: 0, users: {} };
+    byDay[k].events++;
+    byDay[k].users[uid] = true;
+  }
+  (raw.quizQA || []).forEach(function(q){ add(q.user_id, q.answered_at); });
+  (raw.sectionProgress || []).forEach(function(sp){ add(sp.user_id, sp.completed_at); });
+  (raw.microAttempts || []).forEach(function(m){ add(m.user_id, m.answered_at); });
+
+  // Range: do início (22/04/2026) até hoje + ate última aula+1 ou 12 semanas
+  var startMs;
+  try {
+    if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.AULAS_DATAS) {
+      startMs = window.MPE_CALENDARIO.AULAS_DATAS[0];
+    } else {
+      startMs = new Date('2026-04-22T00:00:00').getTime();
+    }
+  } catch(e) { startMs = new Date('2026-04-22T00:00:00').getTime(); }
+  var startD = new Date(startMs);
+  // Snap pra domingo da semana de start (col 0 sempre começa em domingo)
+  var sunStart = new Date(startD);
+  sunStart.setDate(startD.getDate() - startD.getDay());
+  sunStart.setHours(0,0,0,0);
+
+  var todayMs = Date.now();
+  // Mostra 12 semanas garantido (pode passar de hoje se semestre ainda em curso)
+  var totalWeeks = 12;
+  // Flag dias-de-aula
+  var aulaDays = {};
+  try {
+    if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.AULAS_DATAS) {
+      window.MPE_CALENDARIO.AULAS_DATAS.forEach(function(ms){
+        aulaDays[_vizDateKey(new Date(ms))] = true;
+      });
+    }
+  } catch(e) {}
+  // Determina max para escala
+  var maxEv = 0;
+  Object.keys(byDay).forEach(function(k){ if (byDay[k].events > maxEv) maxEv = byDay[k].events; });
+
+  return { byDay: byDay, sunStart: sunStart, totalWeeks: totalWeeks, todayMs: todayMs, maxEv: maxEv, aulaDays: aulaDays };
+}
+
+function renderCalendarHeatmap() {
+  var host = document.getElementById('m-calendar-heatmap');
+  if (!host) return;
+  var d = _vizComputeCalendar();
+  if (d.maxEv === 0 && Object.keys(d.byDay).length === 0) {
+    host.innerHTML = '<div style="color:var(--text-muted);font-style:italic;padding:0.7rem">Aguardando dados — sem eventos rastreados ainda.</div>';
+    return;
+  }
+  // Escala 5 níveis: 0 / 1-25% / 26-50% / 51-75% / 76-100% do max
+  function level(n) {
+    if (n === 0) return 0;
+    if (d.maxEv <= 1) return 1;
+    var pct = n / d.maxEv;
+    if (pct <= 0.25) return 1;
+    if (pct <= 0.50) return 2;
+    if (pct <= 0.75) return 3;
+    return 4;
+  }
+  var meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  var dias  = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+
+  // Para o header de meses: detectar transições de mês ao longo das semanas
+  var monthLabels = [];
+  var lastMonth = -1;
+  for (var w = 0; w < d.totalWeeks; w++) {
+    var dWeek = new Date(d.sunStart);
+    dWeek.setDate(d.sunStart.getDate() + w * 7);
+    var m = dWeek.getMonth();
+    if (m !== lastMonth) { monthLabels.push({ w: w, label: meses[m] }); lastMonth = m; }
+  }
+  var monthsHtml = '<div class="cal-months">';
+  monthLabels.forEach(function(ml){
+    monthsHtml += '<span style="margin-left:' + (ml.w === 0 ? 0 : 2) + 'px">' + ml.label + '</span>';
+  });
+  monthsHtml += '</div>';
+
+  // Day labels
+  var dayLabelsHtml = '<div class="cal-day-labels">';
+  for (var dy = 0; dy < 7; dy++) dayLabelsHtml += '<span style="height:14px">' + (dy % 2 === 1 ? dias[dy] : '') + '</span>';
+  dayLabelsHtml += '</div>';
+
+  // Grid: para cada coluna (semana), 7 cells (domingo..sábado)
+  var colsHtml = '<div class="cal-cols">';
+  for (var w2 = 0; w2 < d.totalWeeks; w2++) {
+    var col = '<div class="cal-col">';
+    for (var dy2 = 0; dy2 < 7; dy2++) {
+      var cellDate = new Date(d.sunStart);
+      cellDate.setDate(d.sunStart.getDate() + w2 * 7 + dy2);
+      var k = _vizDateKey(cellDate);
+      var info = d.byDay[k];
+      var lvl = info ? level(info.events) : 0;
+      var nUsers = info ? Object.keys(info.users).length : 0;
+      var dom = dias[cellDate.getDay()];
+      var ddmm = String(cellDate.getDate()).padStart(2,'0') + '/' + String(cellDate.getMonth()+1).padStart(2,'0');
+      var labelTxt = dom + ' ' + ddmm + ': ' + (info ? (info.events + ' eventos · ' + nUsers + ' alunos') : 'sem eventos');
+      var aulaCls = d.aulaDays[k] ? ' is-aula' : '';
+      var futCls = cellDate.getTime() > d.todayMs ? ' style="opacity:0.35"' : '';
+      col += '<div class="cal-cell' + aulaCls + '" data-v="' + lvl + '" title="' + labelTxt + '"' + futCls + '></div>';
+    }
+    col += '</div>';
+    colsHtml += col;
+  }
+  colsHtml += '</div>';
+  host.innerHTML = ''
+    + '<div class="cal-wrap">'
+      + monthsHtml
+      + '<div class="cal-grid">' + dayLabelsHtml + colsHtml + '</div>'
+      + '<div class="cal-legend">'
+        + '<span>menos</span>'
+        + '<span class="cal-chip" style="background:#F3F4F6"></span>'
+        + '<span class="cal-chip" data-v="1" style="background:#FEE2E2"></span>'
+        + '<span class="cal-chip" data-v="2" style="background:#FCA5A5"></span>'
+        + '<span class="cal-chip" data-v="3" style="background:#C8102E"></span>'
+        + '<span class="cal-chip" data-v="4" style="background:#7F1D1D"></span>'
+        + '<span>mais</span>'
+        + '<span style="margin-left:1rem;display:inline-flex;align-items:center;gap:0.2rem"><span class="cal-chip" style="box-shadow:inset 0 0 0 2px #B45309;background:#fff"></span>dia de aula</span>'
+      + '</div>'
+    + '</div>';
+}
+
+// ============================================================================
+// 9) FUNNEL CHART por aula
+// ============================================================================
+function _vizComputeFunnel(aulaN) {
+  var raw = window._adminRaw || {};
+  var nonAdmin = _vizNonAdminUserIds(raw);
+  var nTotal = Object.keys(nonAdmin).length;
+  if (nTotal === 0) return null;
+  var pidMat = _vizSafePid(aulaN);
+  var pidPre = _vizPidPre(aulaN);
+  var pidPos = _vizPidPos(aulaN);
+  var pidExc = _vizPidExerc(aulaN);
+
+  // Etapa 1: abriu material (page_visits[pidMat].visits > 0 OR section_progress on pidMat)
+  var visited = {};
+  (raw.pageVisits || []).forEach(function(pv){
+    if (!nonAdmin[pv.user_id]) return;
+    if (pv.page_id === pidMat) visited[pv.user_id] = true;
+  });
+  // Etapa 2: completou ≥7 seções únicas no material
+  var secCount = {};
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (!nonAdmin[sp.user_id]) return;
+    if (sp.page_id !== pidMat) return;
+    if (!sp.completed_at) return;
+    if (!secCount[sp.user_id]) secCount[sp.user_id] = {};
+    secCount[sp.user_id][sp.section_id] = true;
+  });
+  var sec7 = {};
+  Object.keys(secCount).forEach(function(uid){
+    if (Object.keys(secCount[uid]).length >= 7) sec7[uid] = true;
+  });
+  // Etapa 3: fez quiz pré (quiz_aggregates ou quizQA)
+  var didPre = {};
+  (raw.quizAggregates || []).forEach(function(qa){
+    if (!nonAdmin[qa.user_id]) return;
+    if (qa.page_id === pidPre && (qa.attempts > 0 || qa.submitted_at)) didPre[qa.user_id] = true;
+  });
+  (raw.quizQA || []).forEach(function(q){
+    if (q.page_id === pidPre && nonAdmin[q.user_id]) didPre[q.user_id] = true;
+  });
+  // Etapa 4: fez quiz pós
+  var didPos = {};
+  (raw.quizAggregates || []).forEach(function(qa){
+    if (!nonAdmin[qa.user_id]) return;
+    if (qa.page_id === pidPos && (qa.attempts > 0 || qa.submitted_at)) didPos[qa.user_id] = true;
+  });
+  (raw.quizQA || []).forEach(function(q){
+    if (q.page_id === pidPos && nonAdmin[q.user_id]) didPos[q.user_id] = true;
+  });
+  // Etapa 5: submeteu exercícios
+  var didExerc = {};
+  (raw.quizAggregates || []).forEach(function(qa){
+    if (!nonAdmin[qa.user_id]) return;
+    if (qa.page_id === pidExc && (qa.attempts > 0 || qa.submitted_at)) didExerc[qa.user_id] = true;
+  });
+  (raw.quizQA || []).forEach(function(q){
+    if (q.page_id === pidExc && nonAdmin[q.user_id]) didExerc[q.user_id] = true;
+  });
+
+  return {
+    nTotal: nTotal,
+    stages: [
+      { label: '1. Abriu material',          n: Object.keys(visited).length, icon: '👀' },
+      { label: '2. Completou ≥7 seções',    n: Object.keys(sec7).length,    icon: '📖' },
+      { label: '3. Fez quiz pré (revisão)', n: Object.keys(didPre).length,  icon: '📝' },
+      { label: '4. Fez quiz pós',           n: Object.keys(didPos).length,  icon: '✍' },
+      { label: '5. Submeteu exercícios',    n: Object.keys(didExerc).length,icon: '📋' }
+    ]
+  };
+}
+
+function renderFunnelChart() {
+  var sel = document.getElementById('funnel-aula-sel');
+  var body = document.getElementById('funnel-body');
+  var info = document.getElementById('funnel-info');
+  if (!sel || !body) return;
+  if (sel.options.length === 0) {
+    var aulasArr = (typeof AULAS !== 'undefined') ? AULAS : [];
+    aulasArr.slice(0, 9).forEach(function(a){
+      var opt = document.createElement('option');
+      opt.value = String(a.n); opt.textContent = 'Aula ' + String(a.n).padStart(2,'0') + ' · ' + a.title;
+      sel.appendChild(opt);
+    });
+  }
+  // Restaura preferência
+  var adminMat = (typeof _adminMat === 'function') ? _adminMat() : 'default';
+  var lsKey = 'mpe_admin_funnel:' + adminMat;
+  try {
+    var saved = localStorage.getItem(lsKey);
+    if (saved && sel.value !== saved) sel.value = saved;
+  } catch(e) {}
+
+  function paint() {
+    var n = parseInt(sel.value || '1', 10);
+    var data = _vizComputeFunnel(n);
+    if (!data || data.nTotal === 0) {
+      body.innerHTML = '<div class="dash-chart-empty" style="height:80px">Sem alunos cadastrados ainda.</div>';
+      if (info) info.textContent = '';
+      return;
+    }
+    if (data.stages.every(function(s){ return s.n === 0; })) {
+      body.innerHTML = '<div class="dash-chart-empty" style="height:80px">Aguardando dados desta aula.</div>';
+      if (info) info.textContent = 'turma de ' + data.nTotal + ' alunos';
+      return;
+    }
+    // Encontra etapa de maior queda relativa (vs etapa anterior)
+    var biggestDropIdx = -1, biggestDrop = 0;
+    for (var i = 1; i < data.stages.length; i++) {
+      var prev = data.stages[i-1].n;
+      var cur = data.stages[i].n;
+      if (prev <= 0) continue;
+      var drop = prev - cur;
+      if (drop > biggestDrop) { biggestDrop = drop; biggestDropIdx = i; }
+    }
+    var firstN = Math.max(1, data.stages[0].n || 1);
+    var html = '';
+    data.stages.forEach(function(s, i){
+      var pctTurma = Math.round(s.n / data.nTotal * 100);
+      var widthPct = data.nTotal > 0 ? (s.n / data.nTotal * 100) : 0;
+      // Gradient cinza→accent: índice 0 é mais cinza, 4 é mais accent
+      var ratio = i / (data.stages.length - 1);
+      var bg = 'linear-gradient(90deg, hsl(0,0%,' + (60 - 25*ratio) + '%) 0%, hsl(355,77%,' + (50 - 8*ratio) + '%) 100%)';
+      var dropTxt = '';
+      if (i > 0) {
+        var prev = data.stages[i-1].n;
+        var dropPct = prev > 0 ? Math.round(s.n / prev * 100) : 0;
+        dropTxt = ' · ' + dropPct + '% da etapa anterior';
+      }
+      var dropCls = (i === biggestDropIdx) ? ' fn-biggest-drop' : '';
+      html += '<div class="funnel-row' + dropCls + '">'
+        + '<span class="fn-stage">' + s.icon + ' ' + s.label + '</span>'
+        + '<span class="fn-bar"><span class="fn-bar-fill" style="width:' + widthPct + '%;background:' + bg + '">' + (widthPct > 8 ? s.n : '') + '</span></span>'
+        + '<span class="fn-meta">' + s.n + ' alunos · ' + pctTurma + '% turma' + dropTxt + '</span>'
+        + '</div>';
+    });
+    body.innerHTML = html;
+    if (info) info.textContent = 'turma de ' + data.nTotal + ' alunos';
+  }
+  paint();
+  if (!sel._mpeBound) {
+    sel.addEventListener('change', function(){
+      try { localStorage.setItem(lsKey, sel.value); } catch(e) {}
+      paint();
+    });
+    sel._mpeBound = true;
+  }
+}
+
+// ============================================================================
+// 3) SLOPE CHART — antes/depois quiz pré → pós (turma)
+// ============================================================================
+function _vizComputeSlopes() {
+  var raw = window._adminRaw;
+  if (!raw) return [];
+  var ftByPage = _vizFirstTryByPage(raw);
+  var out = [];
+  for (var n = 1; n <= 9; n++) {
+    var pre = ftByPage[_vizPidPre(n)];
+    var pos = ftByPage[_vizPidPos(n)];
+    if (!pre || !pos) { out.push({ n: n, pre: null, pos: null, gated: true }); continue; }
+    if (pre.t < 5 || pos.t < 5) { out.push({ n: n, pre: null, pos: null, gated: true }); continue; }
+    out.push({
+      n: n,
+      pre: pre.t > 0 ? pre.c / pre.t * 100 : null,
+      pos: pos.t > 0 ? pos.c / pos.t * 100 : null,
+      preN: pre.t, posN: pos.t,
+      gated: false
+    });
+  }
+  return out;
+}
+
+function renderSlopePrePost() {
+  var host = document.getElementById('m-slope-pre-post');
+  if (!host) return;
+  var slopes = _vizComputeSlopes();
+  var hasAny = slopes.some(function(s){ return !s.gated && s.pre != null && s.pos != null; });
+  if (!hasAny) {
+    host.innerHTML = '<div class="slope-grid-empty">Aguardando dados — precisa de pelo menos uma aula com ≥5 respostas em ambos pré e pós.</div>';
+    return;
+  }
+  var W = 480, H = 320, PL = 50, PR = 30, PT = 28, PB = 50;
+  var nAulas = slopes.length;
+  var colW = (W - PL - PR) / nAulas;
+  function py(v) { return PT + (1 - v / 100) * (H - PT - PB); }
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;max-height:340px;display:block">';
+  // Eixo Y com ticks 0/25/50/75/100
+  [0, 25, 50, 75, 100].forEach(function(t){
+    var y = py(t);
+    svg += '<line x1="' + PL + '" y1="' + y + '" x2="' + (W - PR) + '" y2="' + y + '" stroke="#F0EBE8" stroke-width="1" stroke-dasharray="2,3"/>';
+    svg += '<text x="' + (PL - 6) + '" y="' + (y + 3) + '" text-anchor="end" font-size="9" fill="#6B7280">' + t + '%</text>';
+  });
+  // Eixos
+  svg += '<line x1="' + PL + '" y1="' + PT + '" x2="' + PL + '" y2="' + (H - PB) + '" stroke="#9CA3AF" stroke-width="1"/>';
+  svg += '<line x1="' + PL + '" y1="' + (H - PB) + '" x2="' + (W - PR) + '" y2="' + (H - PB) + '" stroke="#9CA3AF" stroke-width="1"/>';
+  // Y label
+  svg += '<text x="14" y="' + (H/2) + '" font-size="10" fill="#374151" transform="rotate(-90 14 ' + (H/2) + ')" text-anchor="middle">Acerto 1ª (%)</text>';
+  // X labels: aula + pre/pos sub-labels
+  slopes.forEach(function(s, i){
+    var cx = PL + colW * (i + 0.5);
+    var preX = cx - colW * 0.28;
+    var posX = cx + colW * 0.28;
+    svg += '<text x="' + cx + '" y="' + (H - PB + 14) + '" text-anchor="middle" font-size="10" fill="#1F2937" font-weight="600">A' + String(s.n).padStart(2,'0') + '</text>';
+    svg += '<text x="' + preX + '" y="' + (H - PB + 26) + '" text-anchor="middle" font-size="8" fill="#6B7280">pré</text>';
+    svg += '<text x="' + posX + '" y="' + (H - PB + 26) + '" text-anchor="middle" font-size="8" fill="#6B7280">pós</text>';
+    if (s.gated || s.pre == null || s.pos == null) {
+      svg += '<text x="' + cx + '" y="' + (H/2) + '" text-anchor="middle" font-size="9" fill="#CBC9C5">—</text>';
+      return;
+    }
+    var y1 = py(s.pre), y2 = py(s.pos);
+    var slope = s.pos - s.pre;
+    var color = slope > 5 ? '#15803D' : slope < -5 ? '#C8102E' : '#6B7280';
+    svg += '<line x1="' + preX + '" y1="' + y1 + '" x2="' + posX + '" y2="' + y2 + '" stroke="' + color + '" stroke-width="2.2" stroke-linecap="round"/>';
+    svg += '<circle cx="' + preX + '" cy="' + y1 + '" r="4" fill="' + color + '"><title>A' + s.n + ' pré: ' + Math.round(s.pre) + '% (n=' + s.preN + ')</title></circle>';
+    svg += '<circle cx="' + posX + '" cy="' + y2 + '" r="4" fill="' + color + '"><title>A' + s.n + ' pós: ' + Math.round(s.pos) + '% (n=' + s.posN + ')</title></circle>';
+    // Annotation: Δ
+    var dyTxt = (slope >= 0 ? '+' : '') + Math.round(slope);
+    svg += '<text x="' + posX + '" y="' + (y2 - 8) + '" text-anchor="middle" font-size="9" fill="' + color + '" font-weight="700">' + dyTxt + 'pp</text>';
+  });
+  svg += '</svg>';
+  host.innerHTML = svg;
+}
+
+// ============================================================================
+// 11) GAP MATRIX BCG-style das aulas
+// ============================================================================
+function _vizComputeGapMatrix() {
+  var raw = window._adminRaw;
+  if (!raw) return [];
+  var ftByPage = _vizFirstTryByPage(raw);
+  // Peso = nº de question_ids distintos em quizQA com page_id=aula-XX-exerc
+  var weightByAula = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (!/^aula-\d{2}-exerc$/.test(q.page_id)) return;
+    var n = _vizPidNum(q.page_id);
+    if (!n) return;
+    if (!weightByAula[n]) weightByAula[n] = {};
+    weightByAula[n][q.question_id] = true;
+  });
+  var items = [];
+  for (var n = 1; n <= 9; n++) {
+    var pos = ftByPage[_vizPidPos(n)];
+    if (!pos || !pos.byUser) continue;
+    // % alunos com domínio (≥70% acerto 1ª no pós)
+    var users = Object.keys(pos.byUser);
+    if (users.length < 3) continue; // mínimo de 3 alunos
+    var dom = 0;
+    users.forEach(function(uid){
+      var u = pos.byUser[uid];
+      if (u.t > 0 && u.c / u.t >= 0.7) dom++;
+    });
+    var pctDom = dom / users.length * 100;
+    var weight = weightByAula[n] ? Object.keys(weightByAula[n]).length : 1;
+    items.push({ n: n, x: pctDom, y: weight, dom: dom, users: users.length });
+  }
+  return items;
+}
+
+function renderGapMatrix() {
+  var host = document.getElementById('gap-matrix-container');
+  if (!host) return;
+  var items = _vizComputeGapMatrix();
+  if (items.length === 0) {
+    host.innerHTML = '<div class="dash-chart-empty" style="height:120px">Aguardando dados — precisa de quiz pós com ≥3 alunos em pelo menos uma aula.</div>';
+    return;
+  }
+  var W = 700, H = 500, PL = 65, PR = 25, PT = 28, PB = 60;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  // Mediana X (% domínio) e Y (peso)
+  var medX = _vizMedian(items.map(function(i){return i.x;})) || 50;
+  var medY = _vizMedian(items.map(function(i){return i.y;})) || 1;
+  // Range Y baseado nos dados (0 a max+1)
+  var maxY = Math.max.apply(null, items.map(function(i){return i.y})) || 1;
+  function px(v){ return PL + (v / 100) * plotW; }
+  function py(v){ return PT + (1 - v / Math.max(maxY, 1)) * plotH; }
+  var qX = px(medX), qY = py(medY);
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;max-height:540px;display:block">';
+  // Quadrantes (cores soft)
+  // Q1 = top-left (alto-Y, baixo-X) "Investir mais" vermelho
+  svg += '<rect class="gap-quad-q1" x="' + PL + '" y="' + PT + '" width="' + (qX - PL) + '" height="' + (qY - PT) + '" opacity="0.4"/>';
+  // Q2 = top-right (alto-Y, alto-X) "Solidificar" verde
+  svg += '<rect class="gap-quad-q2" x="' + qX + '" y="' + PT + '" width="' + (PL + plotW - qX) + '" height="' + (qY - PT) + '" opacity="0.4"/>';
+  // Q3 = bottom-left (baixo-Y, baixo-X) "Revisar formato" âmbar
+  svg += '<rect class="gap-quad-q3" x="' + PL + '" y="' + qY + '" width="' + (qX - PL) + '" height="' + (PT + plotH - qY) + '" opacity="0.4"/>';
+  // Q4 = bottom-right (baixo-Y, alto-X) "OK consolidado" cinza
+  svg += '<rect class="gap-quad-q4" x="' + qX + '" y="' + qY + '" width="' + (PL + plotW - qX) + '" height="' + (PT + plotH - qY) + '" opacity="0.4"/>';
+  // Linhas de mediana
+  svg += '<line class="gap-mid-line" x1="' + qX + '" y1="' + PT + '" x2="' + qX + '" y2="' + (PT + plotH) + '"/>';
+  svg += '<line class="gap-mid-line" x1="' + PL + '" y1="' + qY + '" x2="' + (PL + plotW) + '" y2="' + qY + '"/>';
+  // Eixos
+  svg += '<line class="gap-axis" x1="' + PL + '" y1="' + PT + '" x2="' + PL + '" y2="' + (PT + plotH) + '"/>';
+  svg += '<line class="gap-axis" x1="' + PL + '" y1="' + (PT + plotH) + '" x2="' + (PL + plotW) + '" y2="' + (PT + plotH) + '"/>';
+  // Ticks X (0,25,50,75,100)
+  [0,25,50,75,100].forEach(function(t){
+    svg += '<text class="gap-tick" x="' + px(t) + '" y="' + (PT + plotH + 14) + '" text-anchor="middle">' + t + '%</text>';
+  });
+  // Ticks Y (0..maxY com 4 marcas)
+  for (var ti = 0; ti <= 4; ti++) {
+    var v = ti / 4 * maxY;
+    svg += '<text class="gap-tick" x="' + (PL - 6) + '" y="' + (py(v) + 3) + '" text-anchor="end">' + Math.round(v) + '</text>';
+  }
+  // Axis labels
+  svg += '<text class="gap-axis-label" x="' + (PL + plotW/2) + '" y="' + (PT + plotH + 36) + '" text-anchor="middle">% turma com domínio (≥70% no pós)</text>';
+  svg += '<text class="gap-axis-label" x="20" y="' + (PT + plotH/2) + '" text-anchor="middle" transform="rotate(-90 20 ' + (PT + plotH/2) + ')">Peso pedagógico (sub-itens nos exercícios)</text>';
+  // Quadrant labels nos cantos
+  svg += '<text class="gap-quad-name" x="' + (PL + 10) + '" y="' + (PT + 16) + '" fill="#991B1B">⚠ Investir mais</text>';
+  svg += '<text class="gap-quad-name" x="' + (PL + plotW - 10) + '" y="' + (PT + 16) + '" text-anchor="end" fill="#15803D">✓ Solidificar</text>';
+  svg += '<text class="gap-quad-name" x="' + (PL + 10) + '" y="' + (PT + plotH - 8) + '" fill="#B45309">↻ Revisar formato</text>';
+  svg += '<text class="gap-quad-name" x="' + (PL + plotW - 10) + '" y="' + (PT + plotH - 8) + '" text-anchor="end" fill="#374151">OK consolidado</text>';
+  // Pontos
+  items.forEach(function(it){
+    var x = px(it.x), y = py(it.y);
+    var quad = (it.x >= medX && it.y >= medY) ? 'q2' : (it.x < medX && it.y >= medY) ? 'q1' : (it.x < medX && it.y < medY) ? 'q3' : 'q4';
+    var quadName = { q1:'Investir mais', q2:'Solidificar', q3:'Revisar formato', q4:'OK consolidado' }[quad];
+    var label = 'A' + String(it.n).padStart(2,'0');
+    svg += '<g style="cursor:pointer" onclick="_vizGapClick(' + it.n + ')">';
+    svg += '<circle class="gap-dot ' + quad + '" cx="' + x + '" cy="' + y + '" r="14"><title>' + label + ' · ' + Math.round(it.x) + '% domínio · peso ' + it.y + ' · ' + quadName + ' · ' + it.dom + '/' + it.users + ' alunos</title></circle>';
+    svg += '<text class="gap-label" x="' + x + '" y="' + (y + 4) + '">' + label + '</text>';
+    svg += '</g>';
+  });
+  svg += '</svg>';
+  host.innerHTML = svg;
+}
+function _vizGapClick(aulaN) {
+  // Pula pra small multiples e flasha o card (reusa inbox-flash da onda anterior)
+  try {
+    if (typeof showTab === 'function') showTab('multiples');
+    setTimeout(function(){
+      var grid = document.getElementById('sm-grid');
+      if (!grid) return;
+      // O card é um sm-card cujo onclick referencia aula-XX.html
+      var pid = _vizSafePid(aulaN);
+      var cards = grid.querySelectorAll('.sm-card');
+      cards.forEach(function(c){
+        if (c.outerHTML.indexOf("'" + pid + ".html'") >= 0 || c.outerHTML.indexOf('"' + pid + '.html"') >= 0) {
+          c.scrollIntoView({behavior:'smooth', block:'center'});
+          c.classList.add('inbox-flash');
+          setTimeout(function(){ c.classList.remove('inbox-flash'); }, 2200);
+        }
+      });
+    }, 250);
+  } catch(e) { console.warn('[gap-click]', e); }
+}
+window._vizGapClick = _vizGapClick;
+
+// ============================================================================
+// 12) WARDLEY MAP dos tópicos (estratégico)
+// ============================================================================
+function renderWardleyMap() {
+  var host = document.getElementById('wardley-container');
+  if (!host) return;
+  var items = _vizComputeGapMatrix();
+  if (items.length === 0) {
+    host.innerHTML = '<div class="dash-chart-empty" style="height:100px">Aguardando dados — mesmo gating do gap matrix.</div>';
+    return;
+  }
+  var W = 800, H = 400, PL = 70, PR = 40, PT = 30, PB = 80;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  // X = % domínio (acerto 1ª) — direita = comoditizado
+  // Y = peso pedagógico (mesmo do gap)
+  var maxY = Math.max.apply(null, items.map(function(i){return i.y})) || 1;
+  function px(v){ return PL + (v / 100) * plotW; }
+  function py(v){ return PT + (1 - v / Math.max(maxY,1)) * plotH; }
+  var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;max-height:430px;display:block">';
+  // Eixos
+  svg += '<line class="wardley-axis" x1="' + PL + '" y1="' + PT + '" x2="' + PL + '" y2="' + (PT + plotH) + '"/>';
+  svg += '<line class="wardley-axis" x1="' + PL + '" y1="' + (PT + plotH) + '" x2="' + (PL + plotW) + '" y2="' + (PT + plotH) + '"/>';
+  // Faixas das 4 fases
+  var phases = [
+    { from: 0,  to: 25,  name: 'Genesis',   note: 'exploratório' },
+    { from: 25, to: 50,  name: 'Custom',    note: 'feito sob medida' },
+    { from: 50, to: 75,  name: 'Product',   note: 'produto / replicável' },
+    { from: 75, to: 100, name: 'Commodity', note: 'pronto p/ exercício' }
+  ];
+  phases.forEach(function(p, i){
+    var x1 = px(p.from), x2 = px(p.to);
+    if (i > 0) svg += '<line class="wardley-phase-divider" x1="' + x1 + '" y1="' + PT + '" x2="' + x1 + '" y2="' + (PT + plotH) + '"/>';
+    var midX = (x1 + x2) / 2;
+    svg += '<text class="wardley-phase-label" x="' + midX + '" y="' + (PT - 12) + '" text-anchor="middle">' + p.name + '</text>';
+    svg += '<text class="wardley-note" x="' + midX + '" y="' + (PT + plotH + 16) + '" text-anchor="middle">' + p.note + '</text>';
+  });
+  // Axis labels
+  svg += '<text class="wardley-axis-label" x="' + (PL + plotW/2) + '" y="' + (PT + plotH + 56) + '" text-anchor="middle">Evolução / consolidação (% domínio →)</text>';
+  svg += '<text class="wardley-axis-label" x="20" y="' + (PT + plotH/2) + '" text-anchor="middle" transform="rotate(-90 20 ' + (PT + plotH/2) + ')">Valor pedagógico</text>';
+  // Setas dependência (aula N → aula N+1) — curva sutil
+  var byN = {}; items.forEach(function(it){ byN[it.n] = it; });
+  for (var n = 1; n <= 8; n++) {
+    var a = byN[n], b = byN[n+1];
+    if (!a || !b) continue;
+    var x1 = px(a.x), y1 = py(a.y);
+    var x2 = px(b.x), y2 = py(b.y);
+    var mx = (x1 + x2) / 2;
+    var my = (y1 + y2) / 2 - 12;
+    svg += '<path class="wardley-dep" d="M' + x1 + ',' + y1 + ' Q' + mx + ',' + my + ' ' + x2 + ',' + y2 + '"/>';
+  }
+  // Pontos
+  items.forEach(function(it){
+    var x = px(it.x), y = py(it.y);
+    var phaseI = it.x < 25 ? 0 : it.x < 50 ? 1 : it.x < 75 ? 2 : 3;
+    var phaseName = phases[phaseI].name;
+    var sugestao = (phaseI <= 1 && it.y > maxY/2) ? 'mais aula magistral' :
+                   (phaseI >= 2 && it.y <= maxY/2) ? 'mover pra exercício' :
+                   (phaseI <= 1) ? 'reforço breve' : 'manter';
+    var label = 'A' + String(it.n).padStart(2,'0');
+    svg += '<g><circle class="wardley-dot" cx="' + x + '" cy="' + y + '" r="13"><title>' + label + ' · ' + phaseName + ' · ' + Math.round(it.x) + '% consolidação · peso ' + it.y + ' · sugestão: ' + sugestao + '</title></circle>';
+    svg += '<text class="wardley-label" x="' + x + '" y="' + (y + 4) + '">' + label + '</text></g>';
+  });
+  svg += '</svg>';
+  host.innerHTML = svg;
+}
+
+// ============================================================================
+// 2) CLASS JOURNEY MAP — Sankey horizontal (5 estágios = etapas do funil)
+// ============================================================================
+function _vizComputeSankeyJourney(filterAulaN) {
+  // Para cada aluno, marca quais das 5 etapas atingiu (em uma aula específica
+  // ou agregado em qualquer aula). Conta fluxos:
+  //   completou(i) → completou(i+1)
+  //   completou(i) → parou(i+1)
+  // Filtro:
+  //   filterAulaN === null → agregado por aluno (atingiu em PELO MENOS uma aula)
+  //   filterAulaN === N    → da aula N
+  var raw = window._adminRaw;
+  if (!raw) return null;
+  var nonAdmin = _vizNonAdminUserIds(raw);
+  var nTotal = Object.keys(nonAdmin).length;
+  if (nTotal === 0) return null;
+  // Função: dado uid + aulaN, retorna array boolean de 5 etapas
+  function stagesForUserAula(uid, aulaN) {
+    var pidMat = _vizSafePid(aulaN), pidPre = _vizPidPre(aulaN), pidPos = _vizPidPos(aulaN), pidExc = _vizPidExerc(aulaN);
+    var visited = (raw.pageVisits || []).some(function(pv){ return pv.user_id === uid && pv.page_id === pidMat; });
+    var secs = {};
+    (raw.sectionProgress || []).forEach(function(sp){
+      if (sp.user_id === uid && sp.page_id === pidMat && sp.completed_at) secs[sp.section_id] = true;
+    });
+    var sec7 = Object.keys(secs).length >= 7;
+    function didQuiz(pid) {
+      var qa = (raw.quizAggregates || []).some(function(a){ return a.user_id === uid && a.page_id === pid && (a.attempts > 0 || a.submitted_at); });
+      if (qa) return true;
+      return (raw.quizQA || []).some(function(q){ return q.user_id === uid && q.page_id === pid; });
+    }
+    return [visited, sec7, didQuiz(pidPre), didQuiz(pidPos), didQuiz(pidExc)];
+  }
+  var stagesByUser = {};
+  Object.keys(nonAdmin).forEach(function(uid){ stagesByUser[uid] = [false,false,false,false,false]; });
+  var aulasArr = filterAulaN ? [filterAulaN] : [1,2,3,4,5,6,7,8,9];
+  aulasArr.forEach(function(n){
+    Object.keys(nonAdmin).forEach(function(uid){
+      var s = stagesForUserAula(uid, n);
+      for (var i = 0; i < 5; i++) if (s[i]) stagesByUser[uid][i] = true;
+    });
+  });
+  // Conta por estágio: nº que atingiu, nº que parou aqui (atingiu i mas não i+1)
+  var passCount = [0,0,0,0,0];
+  Object.keys(stagesByUser).forEach(function(uid){
+    for (var i = 0; i < 5; i++) if (stagesByUser[uid][i]) passCount[i]++;
+  });
+  // Fluxos i → i+1: pass(i)→pass(i+1) ou pass(i)→stop(i+1)
+  var flows = []; // {from:i, toPass:n, toStop:n}
+  for (var i = 0; i < 4; i++) {
+    var toPass = 0, toStop = 0;
+    Object.keys(stagesByUser).forEach(function(uid){
+      if (stagesByUser[uid][i]) {
+        if (stagesByUser[uid][i+1]) toPass++;
+        else toStop++;
+      }
+    });
+    flows.push({ from: i, toPass: toPass, toStop: toStop });
+  }
+  return { nTotal: nTotal, passCount: passCount, flows: flows };
+}
+
+function renderSankeyJourney() {
+  var sel = document.getElementById('sankey-aula-sel');
+  var host = document.getElementById('sankey-journey-container');
+  var info = document.getElementById('sankey-info');
+  if (!sel || !host) return;
+  if (sel.options.length === 0) {
+    var optAll = document.createElement('option');
+    optAll.value = ''; optAll.textContent = 'Todas as aulas (atingiu em ≥1)';
+    sel.appendChild(optAll);
+    var aulasArr = (typeof AULAS !== 'undefined') ? AULAS : [];
+    aulasArr.slice(0, 9).forEach(function(a){
+      var opt = document.createElement('option');
+      opt.value = String(a.n); opt.textContent = 'Aula ' + String(a.n).padStart(2,'0');
+      sel.appendChild(opt);
+    });
+  }
+  var adminMat = (typeof _adminMat === 'function') ? _adminMat() : 'default';
+  var lsKey = 'mpe_admin_sankey_journey:' + adminMat;
+  try { var saved = localStorage.getItem(lsKey); if (saved != null && sel.value !== saved) sel.value = saved; } catch(e) {}
+
+  function paint() {
+    var fa = sel.value === '' ? null : parseInt(sel.value, 10);
+    var d = _vizComputeSankeyJourney(fa);
+    if (!d || d.nTotal === 0) {
+      host.innerHTML = '<div class="dash-chart-empty" style="height:140px">Sem alunos na turma.</div>';
+      if (info) info.textContent = '';
+      return;
+    }
+    if (d.passCount[0] === 0) {
+      host.innerHTML = '<div class="dash-chart-empty" style="height:140px">Aguardando dados — ninguém atingiu nem a 1ª etapa ainda.</div>';
+      if (info) info.textContent = 'turma de ' + d.nTotal + ' alunos';
+      return;
+    }
+    var W = 980, H = 380, PL = 30, PR = 30, PT = 40, PB = 30;
+    var stages = ['Material', 'Seções ≥7', 'Quiz pré', 'Quiz pós', 'Exercícios'];
+    var nStages = 5;
+    var colW = (W - PL - PR) / (nStages - 1);
+    // Y: passCount mapeia altura. Eixo Y total é nTotal.
+    var yScale = (H - PT - PB) / d.nTotal;
+    function nodeRect(stageI, isPass) {
+      // No estágio i, o nó "pass" tem altura passCount[i] * yScale, "stop" = (nTotal - passCount[i]) * yScale
+      var hPass = d.passCount[stageI] * yScale;
+      var hStop = (d.nTotal - d.passCount[stageI]) * yScale;
+      var x = PL + colW * stageI - 14;
+      var y = isPass ? PT : (PT + hPass);
+      var h = isPass ? hPass : hStop;
+      return { x: x, y: y, w: 28, h: Math.max(2, h) };
+    }
+    var svg = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet" style="width:100%;height:auto;max-height:430px;display:block">';
+    // Stage headers
+    stages.forEach(function(name, i){
+      var x = PL + colW * i;
+      svg += '<text class="sj-stage-label" x="' + x + '" y="' + 22 + '">' + name + '</text>';
+      svg += '<text x="' + x + '" y="' + 36 + '" text-anchor="middle" font-size="9" fill="#6B7280">' + d.passCount[i] + ' / ' + d.nTotal + '</text>';
+    });
+    // Fluxos: para cada par (i, i+1)
+    d.flows.forEach(function(f, i){
+      // pass→pass: gray-light, pass→stop: red-fade
+      var fromPassBox = nodeRect(i, true);
+      var toPassBox = nodeRect(i+1, true);
+      var toStopBox = nodeRect(i+1, false);
+
+      var x1 = fromPassBox.x + fromPassBox.w; // saída do bloco pass
+      var x2 = toPassBox.x;                   // entrada
+      // pass→pass: usa altura proporcional toPass / passCount[i]
+      var ratioPass = d.passCount[i] > 0 ? f.toPass / d.passCount[i] : 0;
+      var ratioStop = d.passCount[i] > 0 ? f.toStop / d.passCount[i] : 0;
+      // Heights: o bloco fonte (pass[i]) é dividido em duas faixas: topo = pass→pass, baixo = pass→stop
+      var fromTopY = fromPassBox.y;
+      var fromMidY = fromPassBox.y + fromPassBox.h * ratioPass;
+      var fromBotY = fromPassBox.y + fromPassBox.h;
+      // Destino pass→pass = topo do bloco pass[i+1]
+      var toPassY1 = toPassBox.y;
+      var toPassY2 = toPassBox.y + toPassBox.h;
+      // pass→stop = topo do bloco stop[i+1] (justo abaixo do pass[i+1])
+      var toStopY1 = toStopBox.y;
+      var toStopY2 = toStopBox.y + toStopBox.h;
+      // Curvas Bézier
+      function bezier(x1, y1a, y1b, x2, y2a, y2b) {
+        var cx = (x1 + x2) / 2;
+        return 'M' + x1 + ',' + y1a
+             + ' C' + cx + ',' + y1a + ' ' + cx + ',' + y2a + ' ' + x2 + ',' + y2a
+             + ' L' + x2 + ',' + y2b
+             + ' C' + cx + ',' + y2b + ' ' + cx + ',' + y1b + ' ' + x1 + ',' + y1b
+             + ' Z';
+      }
+      if (f.toPass > 0) {
+        svg += '<path class="sj-link-pass" d="' + bezier(x1, fromTopY, fromMidY, x2, toPassY1, toPassY2) + '"><title>' + stages[i] + ' → ' + stages[i+1] + ': ' + f.toPass + ' alunos passaram</title></path>';
+      }
+      if (f.toStop > 0) {
+        svg += '<path class="sj-link-stop" d="' + bezier(x1, fromMidY, fromBotY, x2, toStopY1, toStopY2) + '"><title>Pararam após ' + stages[i] + ': ' + f.toStop + ' alunos</title></path>';
+      }
+    });
+    // Nodes
+    for (var st = 0; st < nStages; st++) {
+      var passBox = nodeRect(st, true);
+      var stopBox = nodeRect(st, false);
+      svg += '<rect class="sj-node-pass" x="' + passBox.x + '" y="' + passBox.y + '" width="' + passBox.w + '" height="' + passBox.h + '" rx="2"><title>Completou ' + stages[st] + ': ' + d.passCount[st] + '</title></rect>';
+      if (d.passCount[st] < d.nTotal) {
+        svg += '<rect class="sj-node-stop" x="' + stopBox.x + '" y="' + stopBox.y + '" width="' + stopBox.w + '" height="' + stopBox.h + '" rx="2"><title>Não atingiu ' + stages[st] + ': ' + (d.nTotal - d.passCount[st]) + '</title></rect>';
+      }
+    }
+    svg += '</svg>';
+    host.innerHTML = svg;
+    if (info) info.textContent = 'turma de ' + d.nTotal + ' alunos · ' + (fa ? 'Aula ' + fa : 'agregado');
+  }
+  paint();
+  if (!sel._mpeBound) {
+    sel.addEventListener('change', function(){
+      try { localStorage.setItem(lsKey, sel.value); } catch(e) {}
+      paint();
+    });
+    sel._mpeBound = true;
+  }
+}
+
+// ============================================================================
+// 4) STORY PANEL no perfil do aluno (Pollock)
+// ============================================================================
+function buildStudentStoryArc(rowAluno, raw) {
+  if (!rowAluno || !rowAluno.s) return null;
+  var matricula = rowAluno.s.matricula;
+  var profileId = (typeof _profileIdFromMatricula === 'function') ? _profileIdFromMatricula(matricula) : null;
+  var nonAdmin = _vizNonAdminUserIds(raw || {});
+  // Eventos com timestamp do aluno
+  var events = []; // {ts, type, page}
+  function add(uid, ts, type, page) {
+    if (!uid || uid !== profileId || !ts) return;
+    var t = new Date(ts).getTime();
+    if (!isFinite(t)) return;
+    events.push({ ts: t, type: type, page: page });
+  }
+  (raw.quizQA || []).forEach(function(q){ add(q.user_id, q.answered_at, 'quiz', q.page_id); });
+  (raw.sectionProgress || []).forEach(function(sp){ add(sp.user_id, sp.completed_at, 'section', sp.page_id); });
+  (raw.microAttempts || []).forEach(function(m){ add(m.user_id, m.answered_at, 'micro', m.page_id); });
+  (raw.pageVisits || []).forEach(function(pv){ add(pv.user_id, pv.last_visit_at, 'visit', pv.page_id); });
+  if (events.length < 3) {
+    return { insufficient: true, nEvents: events.length, profileId: profileId };
+  }
+  events.sort(function(a,b){ return a.ts - b.ts; });
+  function fmtBR(ms) {
+    var d = new Date(ms);
+    return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0');
+  }
+  // 1) Exposição: primeira atividade
+  var firstEv = events[0];
+  // 2) Rising action: dia com maior atividade
+  var byDay = {};
+  events.forEach(function(e){
+    var k = _vizDateKey(new Date(e.ts));
+    if (!byDay[k]) byDay[k] = { n: 0, ts: e.ts };
+    byDay[k].n++;
+    if (e.ts < byDay[k].ts) byDay[k].ts = e.ts;
+  });
+  var peakDay = null;
+  Object.keys(byDay).forEach(function(k){
+    if (!peakDay || byDay[k].n > peakDay.n) peakDay = { key: k, n: byDay[k].n, ts: byDay[k].ts };
+  });
+  // 3) Climax: maior delta de performance entre quiz pré e pós (qualquer aula)
+  // Computa acerto 1ª por (page) só desse aluno
+  var ftByPage = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (q.user_id !== profileId) return;
+    var k = q.page_id + '::' + q.question_id;
+    if (!ftByPage[q.page_id]) ftByPage[q.page_id] = {};
+    if (ftByPage[q.page_id][q.question_id] && new Date(ftByPage[q.page_id][q.question_id].ts).getTime() <= new Date(q.answered_at || 0).getTime()) return;
+    ftByPage[q.page_id][q.question_id] = { ts: q.answered_at, correct: !!q.correct };
+  });
+  function pctFt(pid) {
+    var qs = ftByPage[pid] || {};
+    var t = 0, c = 0;
+    Object.keys(qs).forEach(function(qid){ t++; if (qs[qid].correct) c++; });
+    return t >= 3 ? { pct: c / t * 100, n: t } : null;
+  }
+  var bestClimax = null;
+  for (var n = 1; n <= 9; n++) {
+    var pre = pctFt(_vizPidPre(n));
+    var pos = pctFt(_vizPidPos(n));
+    if (pre && pos) {
+      var delta = pos.pct - pre.pct;
+      if (!bestClimax || Math.abs(delta) > Math.abs(bestClimax.delta)) {
+        bestClimax = { aulaN: n, delta: delta, pre: pre.pct, pos: pos.pct };
+      }
+    }
+  }
+  // 4) Falling action: última intervenção registrada
+  var lastIv = null;
+  (raw.interventions || []).forEach(function(iv){
+    if (iv.profile_id === profileId) {
+      var t = new Date(iv.created_at).getTime();
+      if (!lastIv || t > lastIv.ts) lastIv = { ts: t, kind: iv.kind, topic: iv.topic, outcome: iv.outcome };
+    }
+  });
+  // 5) Resolution: status atual
+  var risk = rowAluno.risk || {};
+  return {
+    insufficient: false,
+    nEvents: events.length,
+    matricula: matricula,
+    nome: rowAluno.s.nome,
+    exposition: { ts: firstEv.ts, fmt: fmtBR(firstEv.ts) },
+    rising: peakDay ? { ts: peakDay.ts, fmt: fmtBR(peakDay.ts), n: peakDay.n } : null,
+    climax: bestClimax,
+    falling: lastIv,
+    resolution: {
+      level: risk.level || 'low',
+      pagesVisited: rowAluno.s.pagesVisited || 0,
+      totalItems: window._totalItems || ((typeof TOTAL_AULAS === 'number' ? TOTAL_AULAS : 9) + (typeof TOTAL_MONITORIAS === 'number' ? TOTAL_MONITORIAS : 5))
+    }
+  };
+}
+
+function renderStudentStoryPanel(matricula) {
+  // Retorna HTML inteiro do panel para injetar no modal
+  var rowAluno = (window._alunosRows || []).filter(function(x){return x.s.matricula === matricula})[0];
+  if (!rowAluno) return '';
+  var raw = window._adminRaw || {};
+  var arc;
+  try { arc = buildStudentStoryArc(rowAluno, raw); }
+  catch(e) { console.warn('[story-panel]', e); return ''; }
+  if (!arc) return '';
+  var html = '<h3>📖 História do aluno</h3>';
+  if (arc.insufficient) {
+    html += '<div class="story-panel-empty">'
+         + '🏁 Primeira atividade registrada' + (arc.nEvents > 0 ? ' (' + arc.nEvents + ' evento' + (arc.nEvents !== 1 ? 's' : '') + ')' : '')
+         + '. <em>História insuficiente para narrar arco completo.</em></div>';
+    return html;
+  }
+  html += '<div class="story-panel">';
+  // Ato 1 - Exposição
+  html += '<div class="story-card-act act-exposition">'
+       + '<span class="sa-icon">🏁</span>'
+       + '<div class="sa-body"><div class="sa-h">Exposição</div>'
+         + '<div class="sa-text">' + arc.nome + ' começou a ativar a plataforma. Primeira atividade registrada.</div></div>'
+       + '<span class="sa-date">' + arc.exposition.fmt + '</span>'
+       + '</div>';
+  // Ato 2 - Rising action
+  if (arc.rising) {
+    html += '<div class="story-card-act act-rising">'
+         + '<span class="sa-icon">📈</span>'
+         + '<div class="sa-body"><div class="sa-h">Rising action</div>'
+           + '<div class="sa-text">Pico de atividade: <strong>' + arc.rising.n + ' eventos</strong> em um único dia.</div></div>'
+         + '<span class="sa-date">' + arc.rising.fmt + '</span>'
+         + '</div>';
+  }
+  // Ato 3 - Climax
+  if (arc.climax) {
+    var deltaTxt = (arc.climax.delta >= 0 ? '+' : '') + Math.round(arc.climax.delta) + 'pp';
+    var label = arc.climax.delta >= 5 ? 'subiu' : arc.climax.delta <= -5 ? 'caiu' : 'oscilou';
+    html += '<div class="story-card-act act-climax">'
+         + '<span class="sa-icon">⚡</span>'
+         + '<div class="sa-body"><div class="sa-h">Climax</div>'
+           + '<div class="sa-text">Aula ' + String(arc.climax.aulaN).padStart(2,'0') + ': acerto 1ª ' + label + ' de <strong>' + Math.round(arc.climax.pre) + '%</strong> (pré) para <strong>' + Math.round(arc.climax.pos) + '%</strong> (pós) — Δ <strong>' + deltaTxt + '</strong>.</div></div>'
+         + '<span class="sa-date">A' + String(arc.climax.aulaN).padStart(2,'0') + '</span>'
+         + '</div>';
+  }
+  // Ato 4 - Falling action
+  if (arc.falling) {
+    var ivKind = (typeof _KIND_LABEL !== 'undefined' && _KIND_LABEL[arc.falling.kind]) || arc.falling.kind;
+    var fmtTs = (function(ms){ var d = new Date(ms); return String(d.getDate()).padStart(2,'0') + '/' + String(d.getMonth()+1).padStart(2,'0'); })(arc.falling.ts);
+    var ivBody = ivKind + (arc.falling.topic ? ' · ' + arc.falling.topic : '');
+    if (arc.falling.outcome) ivBody += ' (resolvido: ' + arc.falling.outcome + ')';
+    html += '<div class="story-card-act act-falling">'
+         + '<span class="sa-icon">🛠</span>'
+         + '<div class="sa-body"><div class="sa-h">Falling action</div>'
+           + '<div class="sa-text">Última intervenção: ' + ivBody + '</div></div>'
+         + '<span class="sa-date">' + fmtTs + '</span>'
+         + '</div>';
+  } else {
+    html += '<div class="story-card-act act-falling">'
+         + '<span class="sa-icon">🛠</span>'
+         + '<div class="sa-body"><div class="sa-h">Falling action</div>'
+           + '<div class="sa-text" style="color:var(--text-muted);font-style:italic">Sem intervenções registradas.</div></div>'
+         + '<span class="sa-date">—</span>'
+         + '</div>';
+  }
+  // Ato 5 - Resolution
+  var lvlLabel = { inactive: 'inativo total', high: 'em risco', med: 'atenção', low: 'em dia' }[arc.resolution.level] || arc.resolution.level;
+  html += '<div class="story-card-act act-resolution">'
+       + '<span class="sa-icon">✅</span>'
+       + '<div class="sa-body"><div class="sa-h">Resolution / Status atual</div>'
+         + '<div class="sa-text">Hoje: <strong>' + lvlLabel + '</strong> · ' + arc.resolution.pagesVisited + ' de ' + arc.resolution.totalItems + ' aulas/encontros abertos.</div></div>'
+       + '<span class="sa-date">hoje</span>'
+       + '</div>';
+  html += '</div>';
+  return html;
+}
+
+// ============================================================================
+// HOOK no showStudentProfile — injeta Story panel ANTES dos KPIs detalhados
+// ============================================================================
+(function _patchProfileWithStory(){
+  if (typeof window.showStudentProfile !== 'function') return;
+  if (window._mpeStoryPatched) return;
+  var orig = window.showStudentProfile;
+  window.showStudentProfile = function(matricula) {
+    orig(matricula);
+    try {
+      var modal = document.getElementById('profile-modal-content');
+      if (!modal) return;
+      // Inserir antes do primeiro h3 (que é "Resumo & Risco")
+      var firstH3 = modal.querySelector('h3');
+      if (!firstH3) return;
+      // Evita injetar duas vezes
+      if (modal.querySelector('.story-panel, .story-panel-empty, h3._story-mark')) return;
+      var html = renderStudentStoryPanel(matricula);
+      if (!html) return;
+      var wrapper = document.createElement('div');
+      wrapper.innerHTML = html;
+      // marca o h3 inserido
+      var newH3 = wrapper.querySelector('h3');
+      if (newH3) newH3.classList.add('_story-mark');
+      while (wrapper.firstChild) firstH3.parentNode.insertBefore(wrapper.firstChild, firstH3);
+    } catch(e) { console.warn('[story-panel-patch]', e); }
+  };
+  window._mpeStoryPatched = true;
+})();
+
+// ============================================================================
+// REGISTRO DOS RENDER CALLS no fluxo de renderAdmin().
+// renderAdmin() já rodou seu try/catch dos 3 charts da onda anterior; nós
+// monkey-patcham para invocar os novos depois. Idempotente.
+// ============================================================================
+(function _patchRenderAdminViz(){
+  if (typeof window.renderAdmin !== 'function') return;
+  if (window._mpeViz9Patched) return;
+  var orig = window.renderAdmin;
+  window.renderAdmin = async function() {
+    var r = await orig.apply(this, arguments);
+    // Top bullets primeiro (substituem stat-row visualmente)
+    try { renderTopBullets(); }       catch(e){ console.error('[viz-bullets] falhou:', e); }
+    try { renderLikertConfidence(); } catch(e){ console.error('[viz-likert] falhou:', e); }
+    try { renderCalendarHeatmap(); }  catch(e){ console.error('[viz-calendar] falhou:', e); }
+    try { renderSlopePrePost(); }     catch(e){ console.error('[viz-slope] falhou:', e); }
+    try { renderFunnelChart(); }      catch(e){ console.error('[viz-funnel] falhou:', e); }
+    try { renderGapMatrix(); }        catch(e){ console.error('[viz-gap] falhou:', e); }
+    try { renderWardleyMap(); }       catch(e){ console.error('[viz-wardley] falhou:', e); }
+    try { renderSankeyJourney(); }    catch(e){ console.error('[viz-sankey-journey] falhou:', e); }
+    return r;
+  };
+  window._mpeViz9Patched = true;
+})();
 
 renderAdmin();
 </script>
