@@ -304,6 +304,7 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 
 - **Marco de início:** aula 1 acontece (quarta 22/04).
 - **Marco de fim:** prazo da aula 2 fecha (quarta 06/05 18:00 — 1h30 antes da aula 3).
+- **Abertura unificada**: pos-aula 2 e exerc-aula 2 também abrem na quinta 23/04 (mesmo timing que pos/exerc Aula 1), em vez de aguardar 30/04 após a aula presencial. Bundle Aula 2 inteiro fica disponível desde 23/04.
 - **Tudo fecha junto em 06/05 18h**: pré-aula 1, quiz pré-aula 1, quiz pós-aula 1, exercícios avaliativos 1, pré-aula 2, quiz pré-aula 2, quiz pós-aula 2, exercícios avaliativos 2.
 - **Gabarito dos avaliativos 1 e 2**: libera quinta 07/05 00:00 BRT (dia seguinte ao fechamento unificado).
 
@@ -321,7 +322,7 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 | # | Dia da aula | Material + Pré-quiz abrem | Pós-quiz + Exerc abrem | Fechamento | Gabarito |
 |---|---|---|---|---|---|
 | 1 | qua 22/04 · 19:30 | qua 15/04 (antecipada) | qui 23/04 madrugada | **qua 06/05 · 18:00** ⚠️ | qui 07/05 · 00:00 |
-| 2 | qua 29/04 · 19:30 | qui 23/04 madrugada | qui 30/04 madrugada | **qua 06/05 · 18:00** ⚠️ | qui 07/05 · 00:00 |
+| 2 | qua 29/04 · 19:30 | qui 23/04 madrugada | qui 23/04 madrugada ⚠️ (unificado) | **qua 06/05 · 18:00** ⚠️ | qui 07/05 · 00:00 |
 | 3 | qua 06/05 · 19:30 | qui 30/04 madrugada | qui 07/05 madrugada | qua 13/05 · 18:00 | qui 14/05 · 00:00 |
 | 4 | qua 13/05 · 19:30 | qui 07/05 madrugada | qui 14/05 madrugada | qua 20/05 · 18:00 | qui 21/05 · 00:00 |
 | 5 | qua 20/05 · 19:30 | qui 14/05 madrugada | qui 21/05 madrugada | qua 27/05 · 18:00 | qui 28/05 · 00:00 |

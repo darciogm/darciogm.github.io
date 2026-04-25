@@ -94,6 +94,13 @@
     } else {
       // pos-aula e exerc abrem apos a propria aula N
       abre = aula + 6 * UMA_HORA; // ~01:30 da quinta apos a aula
+
+      // Excecao Aula 1 ∪ Aula 2: pos/exerc da Aula 2 ja abrem na quinta
+      // apos a Aula 1 (mesmo timing que pos/exerc da Aula 1). Tudo do
+      // bundle Aula 2 tem o mesmo calendario do bundle Aula 1.
+      if (EXCECAO_AULA1_AULA2 && aula_n === 2) {
+        abre = AULAS_DATAS[0] + 6 * UMA_HORA;
+      }
     }
 
     // === Fechamento ===
