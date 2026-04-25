@@ -508,6 +508,26 @@ window.MathJax = {
     <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.5rem">
       &#9989; = quiz feito (mostra score) &nbsp; &#128260; = visitou &nbsp; &#11035; = não acessou. Colunas com borda dourada = monitorias.
     </p>
+    <div class="heatmap-toolbar" style="margin-bottom:0.6rem;display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;font-size:0.85rem">
+      <label for="sort-heatmap" style="font-weight:600">Ordenar</label>
+      <select id="sort-heatmap" style="padding:0.3rem 0.5rem;border-radius:5px;border:1px solid var(--border);font-size:0.85rem">
+        <option value="nome-asc" selected>Nome (A–Z)</option>
+        <option value="nome-desc">Nome (Z–A)</option>
+        <option value="matricula-asc">Matrícula (asc)</option>
+        <option value="matricula-desc">Matrícula (desc)</option>
+        <option value="pct-desc">% completude (maior primeiro)</option>
+        <option value="pct-asc">% completude (menor primeiro)</option>
+        <option value="quizzes-desc">Quizzes feitos (desc)</option>
+        <option value="quizzes-asc">Quizzes feitos (asc)</option>
+        <option value="visits-desc">Encontros visitados (desc)</option>
+        <option value="visits-asc">Encontros visitados (asc)</option>
+        <option value="avg-desc">Média de score (desc)</option>
+        <option value="avg-asc">Média de score (asc)</option>
+        <option value="last-desc">Última atividade (mais recente)</option>
+        <option value="last-asc">Última atividade (mais antiga)</option>
+      </select>
+      <span id="heatmap-count" style="font-size:0.78rem;color:var(--text-muted);margin-left:auto"></span>
+    </div>
     <div class="heatmap-wrap">
       <table class="heatmap" id="heatmap-table"></table>
     </div>
@@ -6255,7 +6275,9 @@ async function renderAdmin() {
   renderMiniCards(MONITORIAS, monPid, 'monitorias-summary', 'monitoria');
 
   // === TAB: HEATMAP ===
-  var allMats = Object.keys(users).filter(function(m){return m.toLowerCase().indexOf('prof')!==0}).sort();
+  var allMats = Object.keys(users).filter(function(m){return m.toLowerCase().indexOf('prof')!==0});
+
+  // Header construido uma vez
   var hmHead = '<thead><tr><th>Aluno</th>';
   AULAS.forEach(function(a) {
     hmHead += '<th class="aula-header" onclick="window.open(\''+aulaPid(a.n)+'.html\',\'_blank\')" title="'+a.title+'">A'+String(a.n).padStart(2,'0')+'</th>';
@@ -6266,25 +6288,115 @@ async function renderAdmin() {
   });
   hmHead += '<th>%</th></tr></thead>';
 
-  var hmBody = '<tbody>';
-  allMats.forEach(function(mat) {
+  // Pre-computa metricas por aluno para sort multiplo (uma passada).
+  var hmRows = allMats.map(function(mat) {
     var u = users[mat];
     var s = data[mat] || {pages:{}, quizzes:{}};
-    var done = 0;
-    hmBody += '<tr><td class="name-cell" title="'+mat+'">'+u.nome+'</td>';
-    function cell(pid, extraClass) {
+    var done = 0, visits = 0, scoreSum = 0, scoreN = 0, lastActivity = 0;
+    function tickPid(pid) {
       var pg = (s.pages||{})[pid]; var qz = (s.quizzes||{})[pid];
-      if (qz && qz.attempts > 0) { done++; return '<td class="cell-done '+(extraClass||'')+'" title="Quiz: '+qz.bestScore+'%">'+qz.bestScore+'</td>'; }
-      if (pg && pg.visits > 0) return '<td class="cell-progress '+(extraClass||'')+'" title="Visitou '+pg.visits+'x">&#128260;</td>';
-      return '<td class="cell-empty '+(extraClass||'')+'">&#11035;</td>';
+      if (pg && pg.visits > 0) {
+        visits++;
+        if (pg.lastVisit) {
+          var t = new Date(pg.lastVisit).getTime();
+          if (isFinite(t) && t > lastActivity) lastActivity = t;
+        }
+      }
+      if (qz && qz.attempts > 0) {
+        done++;
+        if (typeof qz.bestScore === 'number') { scoreSum += qz.bestScore; scoreN++; }
+        if (qz.lastAttempt) {
+          var t2 = new Date(qz.lastAttempt).getTime();
+          if (isFinite(t2) && t2 > lastActivity) lastActivity = t2;
+        }
+      }
     }
-    AULAS.forEach(function(a) { hmBody += cell(aulaPid(a.n), ''); });
-    MONITORIAS.forEach(function(m, i) { hmBody += cell(monPid(m.n), i === 0 ? 'col-mon' : ''); });
-    var pctStudent = Math.round(done / totalItems * 100);
-    hmBody += '<td style="font-weight:700">'+pctStudent+'%</td></tr>';
+    AULAS.forEach(function(a){ tickPid(aulaPid(a.n)); });
+    MONITORIAS.forEach(function(m){ tickPid(monPid(m.n)); });
+    return {
+      mat: mat,
+      nome: u.nome || mat,
+      s: s,
+      done: done,
+      visits: visits,
+      avgScore: scoreN > 0 ? scoreSum / scoreN : null,
+      lastActivity: lastActivity || null,
+      pct: totalItems > 0 ? Math.round(done / totalItems * 100) : 0
+    };
   });
-  hmBody += '</tbody>';
-  document.getElementById('heatmap-table').innerHTML = hmHead + hmBody;
+
+  var heatmapSorters = {
+    'nome-asc':       function(a,b){ return (a.nome||'').localeCompare(b.nome||'','pt-BR',{sensitivity:'base'}); },
+    'nome-desc':      function(a,b){ return (b.nome||'').localeCompare(a.nome||'','pt-BR',{sensitivity:'base'}); },
+    'matricula-asc':  function(a,b){ return String(a.mat).localeCompare(String(b.mat),'pt-BR',{numeric:true}); },
+    'matricula-desc': function(a,b){ return String(b.mat).localeCompare(String(a.mat),'pt-BR',{numeric:true}); },
+    'pct-desc':       function(a,b){ return (b.pct||0) - (a.pct||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'pct-asc':        function(a,b){ return (a.pct||0) - (b.pct||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'quizzes-desc':   function(a,b){ return (b.done||0) - (a.done||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'quizzes-asc':    function(a,b){ return (a.done||0) - (b.done||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'visits-desc':    function(a,b){ return (b.visits||0) - (a.visits||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'visits-asc':     function(a,b){ return (a.visits||0) - (b.visits||0) || (a.nome||'').localeCompare(b.nome||'','pt-BR'); },
+    'avg-desc':       function(a,b){
+      var av = a.avgScore == null ? -1 : a.avgScore;
+      var bv = b.avgScore == null ? -1 : b.avgScore;
+      return bv - av || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    },
+    'avg-asc':        function(a,b){
+      var av = a.avgScore == null ? Infinity : a.avgScore;
+      var bv = b.avgScore == null ? Infinity : b.avgScore;
+      return av - bv || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    },
+    'last-desc':      function(a,b){
+      // Mais recente primeiro; nulos vao pro fim
+      var av = a.lastActivity || 0, bv = b.lastActivity || 0;
+      return bv - av || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    },
+    'last-asc':       function(a,b){
+      // Mais antiga primeiro; nulos vao pro fim (tratados como Infinity)
+      var av = a.lastActivity || Infinity, bv = b.lastActivity || Infinity;
+      return av - bv || (a.nome||'').localeCompare(b.nome||'','pt-BR');
+    }
+  };
+
+  function renderHeatmapBody(sortKey) {
+    var sorter = heatmapSorters[sortKey] || heatmapSorters['nome-asc'];
+    var sorted = hmRows.slice().sort(sorter);
+    var hmBody = '<tbody>';
+    sorted.forEach(function(row) {
+      var s = row.s;
+      var doneRow = 0;
+      hmBody += '<tr><td class="name-cell" title="'+row.mat+'">'+row.nome+'</td>';
+      function cell(pid, extraClass) {
+        var pg = (s.pages||{})[pid]; var qz = (s.quizzes||{})[pid];
+        if (qz && qz.attempts > 0) { doneRow++; return '<td class="cell-done '+(extraClass||'')+'" title="Quiz: '+qz.bestScore+'%">'+qz.bestScore+'</td>'; }
+        if (pg && pg.visits > 0) return '<td class="cell-progress '+(extraClass||'')+'" title="Visitou '+pg.visits+'x">&#128260;</td>';
+        return '<td class="cell-empty '+(extraClass||'')+'">&#11035;</td>';
+      }
+      AULAS.forEach(function(a) { hmBody += cell(aulaPid(a.n), ''); });
+      MONITORIAS.forEach(function(m, i) { hmBody += cell(monPid(m.n), i === 0 ? 'col-mon' : ''); });
+      hmBody += '<td style="font-weight:700">'+row.pct+'%</td></tr>';
+    });
+    hmBody += '</tbody>';
+    document.getElementById('heatmap-table').innerHTML = hmHead + hmBody;
+    var counter = document.getElementById('heatmap-count');
+    if (counter) counter.textContent = sorted.length + ' aluno' + (sorted.length === 1 ? '' : 's');
+  }
+
+  // Render inicial respeitando preferencia salva.
+  var hmSel = document.getElementById('sort-heatmap');
+  var savedHmSort = null;
+  try { savedHmSort = localStorage.getItem('mpe_admin_heatmap_sort'); } catch(e) {}
+  if (hmSel && savedHmSort && heatmapSorters[savedHmSort]) hmSel.value = savedHmSort;
+  renderHeatmapBody((hmSel && hmSel.value) || 'nome-asc');
+
+  // Event listener idempotente: re-anexa, sem duplicar.
+  if (hmSel && !hmSel._mpeBound) {
+    hmSel.addEventListener('change', function() {
+      try { localStorage.setItem('mpe_admin_heatmap_sort', hmSel.value); } catch(e) {}
+      renderHeatmapBody(hmSel.value);
+    });
+    hmSel._mpeBound = true;
+  }
 
   // === TAB: POR ALUNO ===
   // 1) Enriquecer rows com todas as métricas computadas uma vez só.
