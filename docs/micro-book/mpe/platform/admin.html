@@ -268,6 +268,56 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .nudge-card.reflection .nudge-refl-actions .nudge-btn.primary{background:#1B3A5C}
 .nudge-card.reflection .nudge-refl-actions .nudge-btn.primary:hover{background:#13283F}
 @media(max-width:768px){.nudge-card{grid-template-columns:auto 1fr}.nudge-card .nudge-actions{grid-column:1/-1;flex-direction:row;flex-wrap:wrap}}
+/* Hub "Hoje" / Inbox unificado (sugestao #1) ---------------------------------- */
+.inbox-card{background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.inbox-card.empty{border-left-color:#9CA3AF}
+.inbox-banner{display:flex;align-items:center;gap:0.7rem;flex-wrap:wrap;padding-bottom:0.7rem;margin-bottom:0.85rem;border-bottom:1px solid var(--border)}
+.inbox-banner-icon{font-size:1.4rem;line-height:1}
+.inbox-banner-title{font-weight:700;font-size:0.95rem;color:var(--primary);margin-right:0.4rem}
+.inbox-banner-subtitle{font-size:0.78rem;color:var(--text-muted)}
+.inbox-banner-metrics{display:flex;flex-wrap:wrap;gap:0.45rem;margin-left:0.2rem}
+.inbox-metric{display:inline-flex;align-items:center;gap:0.3rem;padding:0.25rem 0.6rem;background:#F5F5F5;border:1px solid var(--border);border-radius:14px;font-size:0.78rem;color:var(--text);cursor:pointer;transition:0.15s}
+.inbox-metric:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.inbox-metric.muted{cursor:default;color:var(--text-muted)}
+.inbox-metric.muted:hover{background:#F5F5F5;border-color:var(--border);color:var(--text-muted)}
+.inbox-metric-num{font-weight:700}
+.inbox-banner-actions{margin-left:auto;display:flex;gap:0.4rem;align-items:center;flex-wrap:wrap}
+.inbox-btn{padding:0.35rem 0.75rem;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;font-size:0.74rem;color:var(--text);font-weight:600}
+.inbox-btn:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--accent)}
+.inbox-btn.muted{color:var(--text-muted)}
+.inbox-empty{padding:0.7rem 0.3rem;font-size:0.85rem;color:var(--text-muted);font-style:italic}
+.inbox-list{display:flex;flex-direction:column;gap:0.45rem}
+.inbox-item{display:grid;grid-template-columns:auto 1fr auto;gap:0.7rem;align-items:center;padding:0.6rem 0.75rem;background:#FAFAF8;border:1px solid var(--border);border-left:3px solid var(--text-muted);border-radius:0 5px 5px 0;font-size:0.84rem}
+.inbox-item.prio-red{border-left-color:#C8102E;background:#FEF2F2}
+.inbox-item.prio-amber{border-left-color:#D97706;background:#FFFBEB}
+.inbox-item.prio-green{border-left-color:#15803D;background:#F0FDF4}
+.inbox-item-icon{font-size:1.15rem;line-height:1;width:1.5rem;text-align:center}
+.inbox-item-body{min-width:0}
+.inbox-item-title{font-weight:600;color:var(--primary);font-size:0.86rem;margin-bottom:0.15rem;display:flex;align-items:center;gap:0.4rem;flex-wrap:wrap}
+.inbox-item-sub{font-size:0.74rem;color:var(--text-muted);line-height:1.4}
+.inbox-prio-chip{display:inline-block;padding:0.08rem 0.42rem;border-radius:9px;font-size:0.66rem;font-weight:700;letter-spacing:0.02em}
+.inbox-prio-chip.prio-red{background:#FEE2E2;color:#991B1B}
+.inbox-prio-chip.prio-amber{background:#FEF3C7;color:#92400E}
+.inbox-prio-chip.prio-green{background:#D1FAE5;color:#065F46}
+.inbox-time-chip{font-size:0.66rem;color:var(--text-muted);font-weight:600;background:#F0F0F0;border-radius:9px;padding:0.08rem 0.42rem;letter-spacing:0.02em}
+.inbox-item-actions{display:flex;align-items:center;gap:0.3rem;position:relative}
+.inbox-cta{padding:0.32rem 0.75rem;border:1px solid var(--accent);border-radius:5px;background:var(--accent);color:#fff;cursor:pointer;font-size:0.76rem;font-weight:600;text-decoration:none}
+.inbox-cta:hover{filter:brightness(0.92)}
+.inbox-cta.secondary{background:#fff;color:var(--accent)}
+.inbox-cta.secondary:hover{background:var(--accent-soft)}
+.inbox-menu-btn{padding:0.3rem 0.55rem;border:1px solid var(--border);border-radius:5px;background:#fff;cursor:pointer;font-size:0.85rem;color:var(--text-muted);line-height:1}
+.inbox-menu-btn:hover{background:#F5F5F5;color:var(--text)}
+.inbox-menu{position:absolute;right:0;top:calc(100% + 4px);background:#fff;border:1px solid var(--border);border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,0.12);min-width:170px;z-index:30;padding:0.3rem 0;display:none}
+.inbox-menu.open{display:block}
+.inbox-menu-item{display:block;width:100%;text-align:left;padding:0.4rem 0.7rem;font-size:0.78rem;background:none;border:0;cursor:pointer;color:var(--text)}
+.inbox-menu-item:hover{background:var(--accent-soft);color:var(--accent)}
+.inbox-menu-item.danger{color:#991B1B}
+.inbox-menu-item.danger:hover{background:#FEE2E2;color:#7F1D1D}
+.inbox-shown-ignored{margin-top:0.6rem;padding-top:0.6rem;border-top:1px dashed var(--border);font-size:0.74rem;color:var(--text-muted)}
+.inbox-footer{display:flex;justify-content:space-between;align-items:center;margin-top:0.7rem;font-size:0.72rem;color:var(--text-muted);flex-wrap:wrap;gap:0.4rem}
+.inbox-flash{animation:inboxFlash 2s ease-out}
+@keyframes inboxFlash{0%{box-shadow:0 0 0 3px rgba(200,16,46,0.45)}100%{box-shadow:0 0 0 0 rgba(200,16,46,0)}}
+@media(max-width:900px){.inbox-banner{flex-direction:column;align-items:flex-start}.inbox-banner-actions{margin-left:0}.inbox-item{grid-template-columns:auto 1fr;grid-template-rows:auto auto}.inbox-item-actions{grid-column:1/-1;justify-content:flex-end}}
 /* Anomaly rows */
 .anomaly-row{display:flex;align-items:center;gap:0.8rem;padding:0.55rem 0.8rem;background:#fff;border:1px solid var(--border);border-left:4px solid #D97706;border-radius:0 4px 4px 0;margin-bottom:0.35rem;font-size:0.82rem}
 .anomaly-row.severe{border-left-color:#C8102E;background:#FEF2F2}
@@ -416,6 +466,16 @@ window.MathJax = {
       </div>
     </div>
     <div class="stat-row" id="admin-stats"></div>
+  </div>
+
+  <!-- HUB "HOJE" / INBOX UNIFICADO (sugestao #1) -->
+  <div class="inbox-card" id="admin-inbox" style="display:none">
+    <div class="inbox-banner" id="admin-inbox-banner"></div>
+    <div id="admin-inbox-list" class="inbox-list"></div>
+    <div class="inbox-footer">
+      <span id="admin-inbox-footer-msg"></span>
+      <span id="admin-inbox-ignored-toggle"></span>
+    </div>
   </div>
 
   <!-- TABS -->
@@ -5448,6 +5508,681 @@ function renderLearningCurve(raw) {
   container.innerHTML = html;
 }
 
+// ============ HUB "HOJE" / INBOX UNIFICADO (sugestao #1) ============
+// Tracker de "ultima visita do admin" + banner "desde sua ultima visita" +
+// action queue de ate 8 itens priorizados. Toda persistencia em localStorage
+// (sem schema novo). Reaproveita computeNudgeQueue para nao duplicar geradores.
+//
+// Storage keys (todas namespaced por matricula do admin):
+//   mpe_admin_last_visit:<mat>      ISO string da visita anterior
+//   mpe_admin_risk_snapshot:<mat>   { matricula -> level } da visita anterior
+//   mpe_admin_inbox_state:<mat>     { itemKey -> {state, until, savedAt} }
+//
+// state pode ser: 'done' (volta amanha 00:00), 'snooze' (volta apos until),
+// 'ignore' (so volta com clear manual). 'done' eh resetado a meia-noite local.
+
+var INBOX_MAX_ITEMS              = 8;
+var INBOX_FALLBACK_DAYS          = 7;        // primeira visita ou clamp
+var INBOX_INTERVENTION_STALE_DAYS = 7;
+var INBOX_GABARITO_LOOKAHEAD_HRS = 48;
+
+function _inboxAdminKey() {
+  try {
+    var sess = window.MicroAuth && window.MicroAuth.getSession();
+    var mat = (sess && sess.matricula) ? sess.matricula : '__anon__';
+    return mat;
+  } catch(e) { return '__anon__'; }
+}
+
+function _inboxLs(suffix) {
+  return 'mpe_admin_' + suffix + ':' + _inboxAdminKey();
+}
+
+function _inboxReadLastVisit() {
+  try {
+    var raw = localStorage.getItem(_inboxLs('last_visit'));
+    if (!raw) return null;
+    var t = new Date(raw).getTime();
+    if (isNaN(t)) return null;
+    var now = Date.now();
+    // Clamp futuro (relogio errado) -> now - 7d
+    if (t > now) return new Date(now - INBOX_FALLBACK_DAYS * 86400000);
+    return new Date(t);
+  } catch(e) { return null; }
+}
+
+function _inboxWriteLastVisit(d) {
+  try { localStorage.setItem(_inboxLs('last_visit'), d.toISOString()); }
+  catch(e) {}
+}
+
+function _inboxReadRiskSnapshot() {
+  try {
+    var raw = localStorage.getItem(_inboxLs('risk_snapshot'));
+    if (!raw) return null;
+    var snap = JSON.parse(raw);
+    return (snap && typeof snap === 'object') ? snap : null;
+  } catch(e) { return null; }
+}
+
+function _inboxWriteRiskSnapshot(rows) {
+  try {
+    var snap = {};
+    (rows || []).forEach(function(r){
+      if (r && r.s && r.s.matricula) snap[r.s.matricula] = r.risk ? r.risk.level : 'low';
+    });
+    localStorage.setItem(_inboxLs('risk_snapshot'), JSON.stringify(snap));
+  } catch(e) {}
+}
+
+function _inboxReadState() {
+  try {
+    var raw = localStorage.getItem(_inboxLs('inbox_state'));
+    if (!raw) return {};
+    var st = JSON.parse(raw);
+    return (st && typeof st === 'object') ? st : {};
+  } catch(e) { return {}; }
+}
+
+function _inboxWriteState(st) {
+  try { localStorage.setItem(_inboxLs('inbox_state'), JSON.stringify(st)); }
+  catch(e) {}
+}
+
+// 'done' expira a meia-noite local. 'snooze' tem `until` ISO. 'ignore' eh perpetuo.
+function _inboxItemHidden(state, showIgnored) {
+  if (!state) return false;
+  var now = Date.now();
+  if (state.state === 'ignore') return !showIgnored;
+  if (state.state === 'snooze') return state.until && new Date(state.until).getTime() > now;
+  if (state.state === 'done') {
+    if (!state.savedAt) return true;
+    var saved = new Date(state.savedAt);
+    var midnight = new Date(saved.getFullYear(), saved.getMonth(), saved.getDate() + 1, 0, 0, 0);
+    return midnight.getTime() > now;
+  }
+  return false;
+}
+
+function _inboxRiskRank(level) {
+  return ({ low: 0, med: 1, high: 2, inactive: 2, unknown: 0 })[level] != null
+    ? ({ low: 0, med: 1, high: 2, inactive: 2, unknown: 0 })[level] : 0;
+}
+
+// "Risk-flags escalaram" desde a ultima visita
+function _inboxRiskEscalations(rows, snapshot) {
+  if (!snapshot) return { count: 0, mats: [] };
+  var n = 0, mats = [];
+  rows.forEach(function(r){
+    var prev = snapshot[r.s.matricula];
+    var cur = r.risk ? r.risk.level : 'low';
+    if (!prev) return; // aluno novo; nao conta como escalada
+    if (_inboxRiskRank(cur) > _inboxRiskRank(prev)) {
+      n++;
+      mats.push(r.s.matricula);
+    }
+  });
+  return { count: n, mats: mats };
+}
+
+function _inboxFmtDelta(d) {
+  var ms = Date.now() - d.getTime();
+  var hrs = Math.floor(ms / 3600000);
+  if (hrs < 1) return 'agora';
+  if (hrs < 24) return hrs + 'h';
+  var dys = Math.floor(hrs / 24);
+  if (dys < 30) return dys + 'd';
+  var mo = Math.floor(dys / 30);
+  return mo + 'mes';
+}
+
+// ---- Geradores de itens da action queue ------------------------------------
+
+// Categoria: reflexoes mais antigas sem resposta (top 3 ordenadas por idade)
+function _inboxGenReflectionItems(queue) {
+  return queue
+    .filter(function(q){ return q.category === 'reflection'; })
+    .slice(0, 3)
+    .map(function(q){
+      var refl = q.reflection;
+      var ageDays = refl.ageDays || 0;
+      return {
+        key: 'inbox:refl:' + refl.id,
+        srcKey: q.key,
+        category: 'reflection',
+        icon: '📝',
+        title: 'Responder reflexao de ' + (q.r.s.nome || '—').split(' ')[0],
+        sub: (refl.pageId || '—') + ' · ha ' + ageDays + 'd · prompt "' + (refl.promptId || '') + '"',
+        urgencyDays: Math.max(0, 5 - Math.min(ageDays, 14)), // ageDays>=5 vira <=2 -> urgente
+        impactWeight: 2,
+        cost: 5,
+        ageDays: ageDays,
+        ctaLabel: 'Abrir em Nudges',
+        ctaTab: 'nudges',
+        ctaScrollKey: q.key,
+        meta: { reflectionId: refl.id, matricula: q.r.s.matricula }
+      };
+    });
+}
+
+// Categoria: alunos criticos (high/inactive) que nao tem disposition ativa
+function _inboxGenCriticalItems(queue) {
+  return queue
+    .filter(function(q){ return q.category === 'critical' || q.category === 'inactive'; })
+    .map(function(q){
+      var nome = (q.r.s.nome || '—').split(' ')[0];
+      var diag = q.diag || '';
+      var isInactive = q.category === 'inactive';
+      return {
+        key: 'inbox:crit:' + q.r.s.matricula + ':' + q.category,
+        srcKey: q.key,
+        category: q.category,
+        icon: '🚨',
+        title: (isInactive ? 'Aluno nunca acessou: ' : 'Aluno em risco critico: ') + nome,
+        sub: diag.length > 110 ? diag.slice(0, 107) + '...' : diag,
+        urgencyDays: isInactive ? 1 : 3, // inativo eh sempre urgente
+        impactWeight: 3,
+        cost: 8,
+        ageDays: q.r.daysSince || 0,
+        ctaLabel: 'Ver perfil',
+        ctaAction: 'profile',
+        ctaTab: 'alunos',
+        ctaProfileMat: q.r.s.matricula,
+        meta: { matricula: q.r.s.matricula }
+      };
+    });
+}
+
+// Categoria: questoes com discrim < 0 (possivel bug de gabarito) - usa _psiRows.
+// Schema dos rows: { page_id, question_id, n, pValue, discrimination, flag:{code,label}, ... }
+function _inboxGenPsiItems() {
+  var rows = window._psiRows || [];
+  return rows.filter(function(r){
+    return (r.flag && r.flag.code === 'neg') || (r.discrimination != null && r.discrimination < 0 && (r.n || 0) >= 5);
+  }).slice(0, 3).map(function(r){
+    var label = (typeof _pageLabel === 'function' ? _pageLabel(r.page_id) : r.page_id) || r.page_id;
+    return {
+      key: 'inbox:psi:' + r.page_id + ':' + r.question_id,
+      category: 'psi',
+      icon: '🔧',
+      title: 'Questao ' + r.question_id + ' em ' + label + ': discriminacao negativa',
+      sub: 'p=' + (r.pValue != null ? r.pValue.toFixed(2) : '—')
+         + ' · rpb=' + (r.discrimination != null ? r.discrimination.toFixed(2) : '—')
+         + ' · n=' + (r.n || '?') + ' · revisar gabarito ou enunciado.',
+      urgencyDays: 4,
+      impactWeight: 2,
+      cost: 5,
+      ageDays: 0,
+      ctaLabel: 'Abrir Psicometria',
+      ctaTab: 'psicometria',
+      meta: { pageId: r.page_id, qid: r.question_id }
+    };
+  });
+}
+
+// Categoria: intervencoes abertas ha >7d sem outcome
+function _inboxGenStaleInterventionItems() {
+  var raw = window._adminRaw || {};
+  var profileById = {};
+  (raw.profiles || []).forEach(function(p){ profileById[p.id] = p; });
+  var ivs = raw.interventions || [];
+  var now = Date.now();
+  var threshold = INBOX_INTERVENTION_STALE_DAYS * 86400000;
+  var stale = [];
+  ivs.forEach(function(iv){
+    if (iv.outcome != null && String(iv.outcome).trim().length) return; // ja tem outcome
+    var created = iv.created_at ? new Date(iv.created_at).getTime() : 0;
+    if (!created) return;
+    if (now - created < threshold) return;
+    var p = profileById[iv.student_id];
+    if (!p) return;
+    stale.push({
+      key: 'inbox:iv:' + iv.id,
+      category: 'iv-stale',
+      icon: '⏳',
+      title: 'Intervencao sem outcome: ' + (p.nome || '—').split(' ')[0],
+      sub: (iv.kind || 'conversation') + ' ha ' + Math.floor((now - created) / 86400000) + 'd' + (iv.topic ? ' · ' + iv.topic : '') + ' · fechar o loop.',
+      urgencyDays: 5,
+      impactWeight: 1.5,
+      cost: 3,
+      ageDays: Math.floor((now - created) / 86400000),
+      ctaLabel: 'Ver perfil',
+      ctaAction: 'profile',
+      ctaTab: 'alunos',
+      ctaProfileMat: p.matricula,
+      meta: { interventionId: iv.id, matricula: p.matricula }
+    });
+  });
+  // Ordena por idade desc; corta top 3
+  stale.sort(function(a,b){ return b.ageDays - a.ageDays; });
+  return stale.slice(0, 3);
+}
+
+// Categoria: gabaritos a liberar nas proximas 48h (operacional)
+function _inboxGenGabaritoItems() {
+  if (!window.MPE_CALENDARIO || !window.MPE_CALENDARIO.getPrazo) return [];
+  var now = Date.now();
+  var horizon = now + INBOX_GABARITO_LOOKAHEAD_HRS * 3600000;
+  var items = [];
+  for (var n = 1; n <= 9; n++) {
+    ['pos', 'exerc'].forEach(function(comp){
+      try {
+        var p = window.MPE_CALENDARIO.getPrazo(n, comp);
+        if (!p || !p.gabarito) return;
+        var t = p.gabarito.getTime();
+        if (t < now || t > horizon) return;
+        var hoursTo = Math.round((t - now) / 3600000);
+        var label = comp === 'pos' ? 'Quiz pos-aula' : 'Exercicios avaliativos';
+        items.push({
+          key: 'inbox:gab:' + n + ':' + comp,
+          category: 'gabarito',
+          icon: '📅',
+          title: 'Gabarito libera em ' + hoursTo + 'h: ' + label + ' Aula ' + n,
+          sub: 'Libera automaticamente em ' + p.gabarito.toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' }) + '. Revise se quer ajustar feedback antes.',
+          urgencyDays: hoursTo <= 24 ? 1 : 2,
+          impactWeight: 1,
+          cost: 5,
+          ageDays: 0,
+          ctaLabel: 'Abrir aula',
+          ctaAction: 'open-aula',
+          ctaPid: 'aula-' + String(n).padStart(2, '0') + '-' + (comp === 'pos' ? 'pos' : 'exerc') + '.html',
+          meta: { aulaN: n, comp: comp }
+        });
+      } catch(err) {}
+    });
+  }
+  return items;
+}
+
+// Score: urgencia(0-10) * (cost <= 5 ? 1.5 : 1) + impactWeight * peso_categoria
+function _inboxScore(item) {
+  var urg;
+  if (item.urgencyDays <= 1) urg = 10;
+  else if (item.urgencyDays <= 2) urg = 10;
+  else if (item.urgencyDays <= 5) urg = 6;
+  else if (item.urgencyDays <= 7) urg = 3;
+  else urg = 1;
+  var costBoost = (item.cost != null && item.cost <= 5) ? 1.5 : 1;
+  var imp = (item.impactWeight || 1) * 5; // peso_categoria base = 5
+  return urg * costBoost + imp;
+}
+
+function _inboxPriorityClass(score) {
+  if (score >= 30) return 'red';
+  if (score >= 15) return 'amber';
+  return 'green';
+}
+
+function _inboxPriorityLabel(score) {
+  if (score >= 30) return 'Alta';
+  if (score >= 15) return 'Media';
+  return 'Baixa';
+}
+
+function _inboxEstimMin(item) {
+  return item.cost != null ? item.cost + ' min' : '—';
+}
+
+// ---- Render principal ------------------------------------------------------
+
+function renderAdminInbox() {
+  var card = document.getElementById('admin-inbox');
+  if (!card) return;
+
+  // Garante namespace
+  window._mpeAdmin = window._mpeAdmin || {};
+
+  var rows = window._alunosRows || [];
+  var raw = window._adminRaw || {};
+  var queue = (typeof computeNudgeQueue === 'function') ? computeNudgeQueue() : (window._nudgeQueue || []);
+  // Se renderNudgeQueue ja correu, _nudgeQueue ja esta populado; usamos ele se computeNudgeQueue falhar.
+  if (!queue.length && window._nudgeQueue) queue = window._nudgeQueue;
+
+  // 1) Tracker de ultima visita.
+  // Importante: so escreve o "agora" UMA VEZ por sessao da pagina (no primeiro
+  // render). Re-renders subsequentes (ex: clique no Atualizar) reutilizam o
+  // lastVisitAt computado na primeira chamada — caso contrario, o usuario
+  // perderia o ponto de referencia ao apertar Atualizar.
+  var lastVisitAt;
+  var firstVisit = false;
+  if (window._mpeAdmin.lastVisitAt) {
+    lastVisitAt = window._mpeAdmin.lastVisitAt;
+    firstVisit = !!window._mpeAdmin.firstVisit;
+  } else {
+    var prevVisit = _inboxReadLastVisit();
+    firstVisit = !prevVisit;
+    lastVisitAt = prevVisit || new Date(Date.now() - INBOX_FALLBACK_DAYS * 86400000);
+    window._mpeAdmin.lastVisitAt = lastVisitAt;
+    window._mpeAdmin.firstVisit = firstVisit;
+    // Sobrescreve para a proxima sessao (apenas no 1o render)
+    _inboxWriteLastVisit(new Date());
+  }
+
+  // 2) Banner "desde sua ultima visita"
+  // Quizzes novos
+  var quizAggs = (raw.quizAggregates || raw.quiz_aggregates || []);
+  var newQuizzes = 0, newQuizMats = {};
+  quizAggs.forEach(function(qa){
+    var t = qa.last_attempt_at ? new Date(qa.last_attempt_at).getTime()
+          : qa.submitted_at    ? new Date(qa.submitted_at).getTime() : 0;
+    if (t && t >= lastVisitAt.getTime()) {
+      newQuizzes++;
+      if (qa.user_id) newQuizMats[qa.user_id] = true;
+    }
+  });
+
+  // Reflexoes novas sem resposta
+  var newRefls = 0;
+  (raw.reflections || []).forEach(function(refl){
+    var t = refl.submitted_at ? new Date(refl.submitted_at).getTime() : 0;
+    if (!t || t < lastVisitAt.getTime()) return;
+    if (refl.response_text && String(refl.response_text).trim().length) return;
+    newRefls++;
+  });
+
+  // Risk-flags escalaram (vs snapshot anterior)
+  // Snapshot anterior fica em window._mpeAdmin.prevRiskSnapshot apos o 1o render
+  // pra que re-renders nao sobrescrevam o ponto de referencia.
+  var prevSnap;
+  if (window._mpeAdmin.prevRiskSnapshot !== undefined) {
+    prevSnap = window._mpeAdmin.prevRiskSnapshot;
+  } else {
+    prevSnap = _inboxReadRiskSnapshot();
+    window._mpeAdmin.prevRiskSnapshot = prevSnap;
+    // Atualiza snapshot do localStorage agora (pra proxima sessao da pagina)
+    _inboxWriteRiskSnapshot(rows);
+  }
+  var esc = _inboxRiskEscalations(rows, prevSnap);
+
+  // Intervencoes stale > 7d sem outcome
+  var staleCount = 0;
+  var nowMs = Date.now();
+  var threshMs = INBOX_INTERVENTION_STALE_DAYS * 86400000;
+  (raw.interventions || []).forEach(function(iv){
+    if (iv.outcome && String(iv.outcome).trim().length) return;
+    var t = iv.created_at ? new Date(iv.created_at).getTime() : 0;
+    if (t && nowMs - t >= threshMs) staleCount++;
+  });
+
+  // 3) Action queue (compor + dedupar + priorizar)
+  var seenKeys = {};
+  var pool = [];
+  function pushDedup(arr) {
+    arr.forEach(function(it){
+      if (seenKeys[it.key]) return;
+      seenKeys[it.key] = true;
+      it.score = _inboxScore(it);
+      pool.push(it);
+    });
+  }
+  pushDedup(_inboxGenReflectionItems(queue));
+  pushDedup(_inboxGenCriticalItems(queue));
+  pushDedup(_inboxGenPsiItems());
+  pushDedup(_inboxGenStaleInterventionItems());
+  pushDedup(_inboxGenGabaritoItems());
+
+  // Aplica state (done/snooze/ignore) — filtra fora exceto os ignorados (mostrados por toggle)
+  var state = _inboxReadState();
+  var showIgnored = !!window._inboxShowIgnored;
+  var ignoredCount = 0;
+  var visiblePool = [];
+  pool.forEach(function(it){
+    var s = state[it.key];
+    if (s && s.state === 'ignore') ignoredCount++;
+    if (_inboxItemHidden(s, showIgnored)) return;
+    it.disposition = s || null;
+    visiblePool.push(it);
+  });
+
+  // Ordena por score desc, corta INBOX_MAX_ITEMS
+  visiblePool.sort(function(a,b){ return b.score - a.score; });
+  var items = visiblePool.slice(0, INBOX_MAX_ITEMS);
+
+  // 4) Render banner
+  var deltaTxt = _inboxFmtDelta(lastVisitAt);
+  var totalSignal = newQuizzes + newRefls + esc.count + staleCount;
+  var bannerEl = document.getElementById('admin-inbox-banner');
+  var listEl = document.getElementById('admin-inbox-list');
+  var footerEl = document.getElementById('admin-inbox-footer-msg');
+  var ignToggleEl = document.getElementById('admin-inbox-ignored-toggle');
+
+  card.style.display = '';
+
+  if (firstVisit) {
+    bannerEl.innerHTML =
+      '<span class="inbox-banner-icon">👋</span>'
+      + '<span class="inbox-banner-title">Bem-vindo(a) ao hub.</span>'
+      + '<span class="inbox-banner-subtitle">Carregando linha de base — primeira visita registrada agora. A partir da proxima sessao, este banner sumariza o que mudou.</span>';
+  } else if (window.MpeDB && window.MpeDB.enabled === false) {
+    bannerEl.innerHTML =
+      '<span class="inbox-banner-icon">📡</span>'
+      + '<span class="inbox-banner-title">Modo offline</span>'
+      + '<span class="inbox-banner-subtitle">Supabase indisponivel — metricas podem estar desatualizadas. Action queue usa fallback local.</span>'
+      + '<div class="inbox-banner-actions">'
+        + '<button class="inbox-btn" onclick="_inboxMarkAllSeen()">Marcar tudo como visto</button>'
+      + '</div>';
+  } else if (totalSignal === 0) {
+    card.classList.add('empty');
+    bannerEl.innerHTML =
+      '<span class="inbox-banner-icon">✨</span>'
+      + '<span class="inbox-banner-title">Tudo silencioso desde sua ultima visita ha ' + deltaTxt + '.</span>'
+      + '<span class="inbox-banner-subtitle">Bom momento pra revisar Psicometria ou rodar uma pesquisa de anomalias.</span>'
+      + '<div class="inbox-banner-actions">'
+        + '<button class="inbox-btn" onclick="showTab(\'psicometria\')">Abrir Psicometria</button>'
+        + '<button class="inbox-btn" onclick="showTab(\'avancadas\')">Anomaly digest</button>'
+      + '</div>';
+  } else {
+    card.classList.remove('empty');
+    var metrics = '';
+    function metric(num, label, onclick, opts) {
+      opts = opts || {};
+      if (!num && !opts.alwaysShow) return '';
+      var cls = num > 0 ? '' : ' muted';
+      var click = (num > 0 && onclick) ? ' onclick="' + onclick + '"' : '';
+      return '<span class="inbox-metric' + cls + '"' + click + ' title="' + (opts.title || label) + '">'
+        + '<span class="inbox-metric-num">' + num + '</span> ' + label
+        + '</span>';
+    }
+    metrics += metric(newQuizzes, 'quizzes novos', '_inboxJumpTab(\'alunos\')', { title: 'Quizzes (qualquer fase) com last_attempt_at >= ultima visita' });
+    metrics += metric(newRefls, 'reflexoes novas', '_inboxJumpReflectionsNew()', { title: 'Reflexoes submetidas desde sua ultima visita e ainda sem resposta' });
+    metrics += metric(esc.count, 'risk-flags escalaram', '_inboxJumpTab(\'alunos\')', { title: 'Alunos cujo nivel de risco piorou desde a ultima visita' });
+    metrics += metric(staleCount, 'intervencoes >7d sem outcome', '_inboxJumpTab(\'alunos\')', { title: 'Intervencoes registradas ha mais de 7 dias sem outcome preenchido' });
+
+    bannerEl.innerHTML =
+      '<span class="inbox-banner-icon">🆕</span>'
+      + '<span class="inbox-banner-title">Desde sua ultima visita (ha ' + deltaTxt + '):</span>'
+      + '<div class="inbox-banner-metrics">' + metrics + '</div>'
+      + '<div class="inbox-banner-actions">'
+        + '<button class="inbox-btn" onclick="_inboxMarkAllSeen()" title="Avanca o marcador de ultima visita pra agora sem recarregar">✓ Marcar tudo como visto</button>'
+      + '</div>';
+  }
+
+  // 5) Render action queue
+  if (!items.length) {
+    listEl.innerHTML = '<div class="inbox-empty">Nenhuma acao priorizada agora — fila vazia ou tudo marcado como feito/adiado.</div>';
+  } else {
+    listEl.innerHTML = items.map(function(it){
+      var prioClass = _inboxPriorityClass(it.score);
+      var prioLabel = _inboxPriorityLabel(it.score);
+      var safeKey = it.key.replace(/'/g, "\\'");
+      var ctaHtml = '';
+      if (it.ctaAction === 'profile') {
+        ctaHtml = '<button class="inbox-cta" onclick="_inboxItemCta(\'' + safeKey + '\')">' + (it.ctaLabel || 'Abrir') + '</button>';
+      } else if (it.ctaAction === 'open-aula') {
+        ctaHtml = '<button class="inbox-cta" onclick="_inboxItemCta(\'' + safeKey + '\')">' + (it.ctaLabel || 'Abrir') + '</button>';
+      } else {
+        ctaHtml = '<button class="inbox-cta" onclick="_inboxItemCta(\'' + safeKey + '\')">' + (it.ctaLabel || 'Abrir') + '</button>';
+      }
+      return '<div class="inbox-item prio-' + prioClass + '" data-key="' + _escapeHtml(it.key) + '">'
+        + '<div class="inbox-item-icon">' + it.icon + '</div>'
+        + '<div class="inbox-item-body">'
+          + '<div class="inbox-item-title">'
+            + _escapeHtml(it.title)
+            + ' <span class="inbox-prio-chip prio-' + prioClass + '">' + prioLabel + '</span>'
+            + ' <span class="inbox-time-chip">' + _inboxEstimMin(it) + '</span>'
+          + '</div>'
+          + '<div class="inbox-item-sub">' + _escapeHtml(it.sub || '') + '</div>'
+        + '</div>'
+        + '<div class="inbox-item-actions">'
+          + ctaHtml
+          + '<button class="inbox-menu-btn" title="Mais acoes" onclick="_inboxToggleMenu(\'' + safeKey + '\', event)">⋮</button>'
+          + '<div class="inbox-menu" id="inbox-menu-' + _inboxSafeId(it.key) + '">'
+            + '<button class="inbox-menu-item" onclick="_inboxDispose(\'' + safeKey + '\', \'done\')">✓ Feito hoje</button>'
+            + '<button class="inbox-menu-item" onclick="_inboxDispose(\'' + safeKey + '\', \'snooze\', 1)">⏰ Adiar 1 dia</button>'
+            + '<button class="inbox-menu-item" onclick="_inboxDispose(\'' + safeKey + '\', \'snooze\', 3)">⏰ Adiar 3 dias</button>'
+            + '<button class="inbox-menu-item danger" onclick="_inboxDispose(\'' + safeKey + '\', \'ignore\')">✕ Ignorar</button>'
+          + '</div>'
+        + '</div>'
+      + '</div>';
+    }).join('');
+  }
+
+  // Footer + ignorados toggle
+  var totalCounted = pool.length;
+  var hidden = totalCounted - visiblePool.length;
+  footerEl.textContent = totalCounted
+    ? (visiblePool.length + ' de ' + totalCounted + ' acoes priorizadas' + (hidden ? ' · ' + hidden + ' filtradas (feito/adiada/ignorada)' : ''))
+    : 'Sem itens na fila.';
+  if (ignoredCount > 0) {
+    ignToggleEl.innerHTML = '<button class="inbox-btn muted" onclick="_inboxToggleIgnored()">'
+      + (showIgnored ? '✕ Ocultar ignorados' : '👁 Ver ' + ignoredCount + ' ignorado(s)')
+      + '</button>';
+  } else {
+    ignToggleEl.innerHTML = '';
+  }
+
+  // Salva estado para o resto do codigo
+  window._mpeAdmin.inboxItems = items;
+  window._mpeAdmin.inboxPool = pool;
+}
+
+function _inboxSafeId(k) { return k.replace(/[^a-zA-Z0-9]/g, '_'); }
+
+function _inboxToggleMenu(key, ev) {
+  if (ev) { ev.stopPropagation(); ev.preventDefault(); }
+  var id = 'inbox-menu-' + _inboxSafeId(key);
+  // Fecha outros menus
+  document.querySelectorAll('.inbox-menu.open').forEach(function(m){
+    if (m.id !== id) m.classList.remove('open');
+  });
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+// Fecha menu de inbox no click fora
+document.addEventListener('click', function(e){
+  if (!e.target.closest || !e.target.closest('.inbox-item-actions')) {
+    document.querySelectorAll('.inbox-menu.open').forEach(function(m){ m.classList.remove('open'); });
+  }
+});
+
+function _inboxDispose(key, st, days) {
+  var state = _inboxReadState();
+  var rec = { state: st, savedAt: new Date().toISOString() };
+  if (st === 'snooze') {
+    var d = days || 1;
+    rec.until = new Date(Date.now() + d * 86400000).toISOString();
+  }
+  state[key] = rec;
+  _inboxWriteState(state);
+  renderAdminInbox();
+}
+
+function _inboxToggleIgnored() {
+  window._inboxShowIgnored = !window._inboxShowIgnored;
+  renderAdminInbox();
+}
+
+// Avanca lastVisitAt pra agora sem reload, e re-renderiza banner zerado.
+function _inboxMarkAllSeen() {
+  var now = new Date();
+  _inboxWriteLastVisit(now);
+  window._mpeAdmin = window._mpeAdmin || {};
+  window._mpeAdmin.lastVisitAt = now;
+  window._mpeAdmin.firstVisit = false;
+  // Tambem atualiza snapshot de risco para a janela seguinte
+  _inboxWriteRiskSnapshot(window._alunosRows || []);
+  // Re-renderiza: lastVisitAt = now -> totalSignal vai ser 0 -> branch "tudo
+  // silencioso" mostra mensagem certa automaticamente.
+  renderAdminInbox();
+}
+
+// CTA do item: dispara navegacao + scroll + highlight
+function _inboxItemCta(key) {
+  var items = (window._mpeAdmin && window._mpeAdmin.inboxItems) || [];
+  var it = null;
+  for (var i = 0; i < items.length; i++) { if (items[i].key === key) { it = items[i]; break; } }
+  if (!it) return;
+  if (it.ctaAction === 'profile' && it.ctaProfileMat && typeof showStudentProfile === 'function') {
+    showStudentProfile(it.ctaProfileMat);
+    return;
+  }
+  if (it.ctaAction === 'open-aula' && it.ctaPid) {
+    window.open(it.ctaPid, '_blank');
+    return;
+  }
+  // Default: trocar de tab + tentar scroll/highlight
+  var tab = it.ctaTab || 'nudges';
+  if (typeof showTab === 'function') showTab(tab);
+  // Scroll/highlight especifico
+  if (it.category === 'reflection' && it.srcKey) {
+    setTimeout(function(){ _inboxScrollHighlightNudge(it.srcKey); }, 80);
+  } else if (it.category === 'psi' && it.meta && it.meta.qid) {
+    // Tab psicometria nao tem ancora por qid; deixa o usuario localizar.
+    var tabEl = document.getElementById('tab-psicometria');
+    if (tabEl) tabEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  } else if (it.category === 'iv-stale' && it.meta && it.meta.matricula) {
+    if (typeof showStudentProfile === 'function') showStudentProfile(it.meta.matricula);
+  }
+}
+
+function _inboxJumpTab(tab) {
+  if (typeof showTab === 'function') showTab(tab);
+  var el = document.getElementById('tab-' + tab);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Pula pra tab Nudges com filtro reflection + highlight de itens novos
+function _inboxJumpReflectionsNew() {
+  if (typeof showTab === 'function') showTab('nudges');
+  var sel = document.getElementById('nudge-category');
+  if (sel && sel.value !== 'reflection') {
+    sel.value = 'reflection';
+    if (typeof renderNudgeQueue === 'function') renderNudgeQueue();
+  }
+  setTimeout(function(){
+    // Highlight de cards de reflexao com submitted_at >= lastVisitAt
+    var lv = (window._mpeAdmin && window._mpeAdmin.lastVisitAt) ? window._mpeAdmin.lastVisitAt.getTime() : 0;
+    var queue = window._nudgeQueue || [];
+    queue.forEach(function(q){
+      if (q.category !== 'reflection') return;
+      var t = q.reflection && q.reflection.submittedAt ? new Date(q.reflection.submittedAt).getTime() : 0;
+      if (t < lv) return;
+      _inboxScrollHighlightNudge(q.key, /*scrollFirst*/ false);
+    });
+    // Scroll na tab
+    var tabEl = document.getElementById('tab-nudges');
+    if (tabEl) tabEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 100);
+}
+
+// Da highlight CSS de 2s no card de nudge correspondente a key
+function _inboxScrollHighlightNudge(nudgeKey, scrollFirst) {
+  var queue = document.getElementById('nudge-queue');
+  if (!queue) return;
+  // Busca o card que tenha botao com onclick referenciando essa key
+  var cards = queue.querySelectorAll('.nudge-card');
+  var target = null;
+  cards.forEach(function(card){
+    var html = card.innerHTML || '';
+    if (html.indexOf(nudgeKey) >= 0 && !target) target = card;
+  });
+  if (!target) return;
+  if (scrollFirst !== false) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  target.classList.add('inbox-flash');
+  setTimeout(function(){ target.classList.remove('inbox-flash'); }, 2200);
+}
+
 async function _loadAdminData() {
   var badge = document.getElementById('data-source-badge');
   if (window.MpeDB && window.MpeDB.enabled) {
@@ -5887,6 +6622,11 @@ async function renderAdmin() {
   // 12) Onda 4 — Psico-cognitivo (compute já rodou antes de renderAlunos;
   //     agora só rendemos a tab agregada)
   renderOnda4All();
+
+  // 13) Hub "Hoje" / Inbox unificado (sugestao #1) — banner "desde sua ultima
+  //     visita" + action queue priorizada. Roda depois que tudo ja foi calculado
+  //     porque consome _alunosRows, _adminRaw, _nudgeQueue.
+  try { renderAdminInbox(); } catch (e) { console.error('[admin-inbox] render falhou:', e); }
 
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
