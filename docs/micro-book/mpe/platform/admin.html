@@ -428,6 +428,93 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .mpe-toast .hint{display:block;font-size:0.76rem;opacity:0.85;margin-top:0.3rem;font-weight:400}
 /* Container oculto onde renderizamos HTML pra MathJax antes de converter pra PNG */
 .eml-staging{position:fixed;left:-20000px;top:0;width:640px;background:#fff;color:#111;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:14px;line-height:1.55;padding:1rem;visibility:hidden;pointer-events:none}
+
+/* ============================================================
+   STORY OF THE WEEK — narrative timeline (Pollock 2025)
+   ============================================================ */
+.story-card{background:#fff;border:1px solid var(--border);border-left:4px solid #1B3A5C;border-radius:var(--radius);padding:1rem 1.2rem;margin-bottom:1rem;box-shadow:var(--shadow)}
+.story-card.empty{border-left-color:#9CA3AF}
+.story-header{display:flex;align-items:center;gap:0.6rem;margin-bottom:0.7rem;flex-wrap:wrap}
+.story-header h3{margin:0;font-size:0.95rem;color:var(--primary)}
+.story-header .story-sub{font-size:0.75rem;color:var(--text-muted);margin-right:auto}
+.story-acts{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem}
+.story-act{padding:0.7rem 0.85rem;border-radius:6px;border:1px solid var(--border);font-size:0.82rem;line-height:1.4;display:flex;flex-direction:column;gap:0.3rem;min-height:90px}
+.story-act .story-act-h{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;display:flex;align-items:center;gap:0.3rem}
+.story-act .story-act-body{font-size:0.8rem;color:#1F2937}
+.story-act .story-act-link{font-size:0.72rem;font-weight:600;cursor:pointer;align-self:flex-start;background:none;border:none;padding:0;text-decoration:underline}
+.story-act.knot{background:#FEF2F2;border-color:#FCA5A5}
+.story-act.knot .story-act-h{color:#991B1B}
+.story-act.knot .story-act-link{color:#991B1B}
+.story-act.rising{background:#FFFBEB;border-color:#FCD34D}
+.story-act.rising .story-act-h{color:#B45309}
+.story-act.rising .story-act-link{color:#B45309}
+.story-act.climax{background:#ECFDF5;border-color:#86EFAC}
+.story-act.climax .story-act-h{color:#065F46}
+.story-act.climax .story-act-link{color:#065F46}
+.story-act.resolution{background:#EFF6FF;border-color:#93C5FD}
+.story-act.resolution .story-act-h{color:#1B3A5C}
+.story-act.resolution .story-act-link{color:#1B3A5C}
+.story-act.empty{background:#FAFAF8;border-style:dashed;color:var(--text-muted);font-style:italic}
+.story-empty-msg{padding:0.5rem 0.2rem;font-size:0.85rem;color:var(--text-muted);font-style:italic}
+@media(max-width:900px){.story-acts{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.story-acts{grid-template-columns:1fr}}
+
+/* ============================================================
+   SMALL MULTIPLES — 1 mini-painel por aula
+   ============================================================ */
+.sm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem;margin-top:0.4rem}
+@media(max-width:900px){.sm-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.sm-grid{grid-template-columns:1fr}}
+.sm-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:0.85rem 0.95rem;cursor:pointer;transition:0.18s;display:flex;flex-direction:column;gap:0.55rem;min-height:170px}
+.sm-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(200,16,46,0.10);transform:translateY(-1px)}
+.sm-card.muted{opacity:0.45;cursor:default}
+.sm-card.muted:hover{transform:none;box-shadow:none;border-color:var(--border)}
+.sm-card .sm-title{font-size:0.78rem;font-weight:700;color:var(--primary);line-height:1.25}
+.sm-card .sm-sub{font-size:0.66rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.05em;margin-top:-0.3rem}
+.sm-card .sm-row{display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 0.7rem}
+.sm-card .sm-metric{display:flex;flex-direction:column;gap:0.15rem}
+.sm-card .sm-metric .sm-l{font-size:0.6rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.04em}
+.sm-card .sm-metric .sm-v{font-size:0.95rem;font-weight:700;line-height:1;color:#1F2937;font-variant-numeric:tabular-nums}
+.sm-card .sm-metric .sm-v.high{color:#15803D}
+.sm-card .sm-metric .sm-v.med{color:#B45309}
+.sm-card .sm-metric .sm-v.low{color:#991B1B}
+.sm-card .sm-bar{height:5px;background:#F3F4F6;border-radius:3px;overflow:hidden;margin-top:0.2rem}
+.sm-card .sm-bar-fill{height:100%;background:#9CA3AF;border-radius:3px;transition:width 0.3s}
+.sm-card .sm-bar-fill.accent{background:var(--accent)}
+.sm-card .sm-spark{display:flex;align-items:flex-end;gap:1px;height:18px;margin-top:0.25rem}
+.sm-card .sm-spark-bar{flex:1;min-height:2px;background:#9CA3AF;border-radius:1px 1px 0 0}
+.sm-card .sm-spark-bar.self{background:var(--accent)}
+.sm-card .sm-foot{font-size:0.7rem;color:var(--text-muted);border-top:1px solid #F3F4F6;padding-top:0.4rem;line-height:1.35}
+.sm-card .sm-foot.flag-bug{color:#991B1B;font-weight:600}
+.sm-card .sm-foot.flag-top{color:#15803D;font-weight:600}
+
+/* ============================================================
+   KNOWER'S QUADRANT — confidence × accuracy (Dunning-Kruger)
+   ============================================================ */
+.knower-toolbar{display:flex;gap:0.6rem;align-items:center;flex-wrap:wrap;margin-bottom:0.6rem;font-size:0.85rem}
+.knower-help{font-size:0.78rem;color:var(--text-muted);line-height:1.5;background:var(--accent-soft);padding:0.7rem 0.95rem;border-radius:6px;margin-bottom:0.8rem}
+.knower-help a{color:var(--accent);cursor:pointer;text-decoration:underline}
+.knower-stage{position:relative;width:100%;background:#fff;border:1px solid var(--border);border-radius:6px;padding:0.5rem;height:540px}
+.knower-stage svg{width:100%;height:100%;display:block}
+.knower-stage .kn-grid{stroke:#F0EBE8;stroke-width:1;stroke-dasharray:2,3}
+.knower-stage .kn-axis{stroke:#9CA3AF;stroke-width:1.2}
+.knower-stage .kn-quad-rect{opacity:0.10;pointer-events:none}
+.knower-stage .kn-quad-label{font-size:11px;fill:#94A3B8;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;pointer-events:none}
+.knower-stage .kn-quad-count{font-size:9px;fill:#94A3B8;pointer-events:none}
+.knower-stage .kn-axis-label{font-size:11px;fill:#6B7280;font-family:Calibri,sans-serif}
+.knower-stage .kn-axis-tick{font-size:9px;fill:#6B7280;font-family:Calibri,sans-serif}
+.knower-stage .kn-dot{cursor:pointer;opacity:0.85;transition:0.15s;stroke:#fff;stroke-width:1}
+.knower-stage .kn-dot:hover{opacity:1;stroke:#000;stroke-width:2}
+.knower-stage .kn-dot.q-domain{fill:#065F46}
+.knower-stage .kn-dot.q-illusion{fill:#7A1F1F;stroke:#C8102E;stroke-width:1.5}
+.knower-stage .kn-dot.q-illusion:hover{stroke-width:2.5}
+.knower-stage .kn-dot.q-conscious{fill:#B45309}
+.knower-stage .kn-dot.q-humble{fill:#1B3A5C}
+.knower-strip{margin-top:0.7rem;font-size:0.78rem;color:var(--text-muted);padding:0.55rem 0.75rem;background:#FAFAF8;border:1px dashed var(--border);border-radius:5px}
+.knower-strip strong{color:var(--text);font-weight:700}
+.knower-legend{display:flex;gap:0.7rem;flex-wrap:wrap;font-size:0.72rem;color:var(--text-muted);margin-top:0.4rem;justify-content:center}
+.knower-legend .leg-item{display:inline-flex;align-items:center;gap:0.3rem}
+.knower-legend .leg-swatch{display:inline-block;width:10px;height:10px;border-radius:50%}
 </style>
 
 <!-- MathJax v3 (SVG output, sobrevive copy/paste como SVG inline) -->
@@ -478,13 +565,27 @@ window.MathJax = {
     </div>
   </div>
 
+  <!-- STORY OF THE WEEK — narrative timeline auto-gerada (Pollock 2025) -->
+  <div class="story-card" id="admin-story" style="display:none">
+    <div class="story-header">
+      <h3>📖 Histórico da semana — turma MPE 2026/32</h3>
+      <span class="story-sub" id="admin-story-sub"></span>
+      <button class="inbox-btn" id="admin-story-refresh">↻ atualizar</button>
+      <button class="inbox-btn muted" id="admin-story-dismiss">fechar 24h</button>
+    </div>
+    <div class="story-acts" id="admin-story-acts"></div>
+    <div class="story-empty-msg" id="admin-story-empty" style="display:none"></div>
+  </div>
+
   <!-- TABS -->
   <div class="tabs">
     <div class="tab active" data-tab="aulas">Por Aula/Monitoria</div>
+    <div class="tab" data-tab="multiples">Visão por Aula</div>
     <div class="tab" data-tab="heatmap">Mapa de Completude</div>
     <div class="tab" data-tab="alunos">Por Aluno</div>
     <div class="tab" data-tab="quizzes">Quizzes</div>
     <div class="tab" data-tab="psicometria">Psicometria</div>
+    <div class="tab" data-tab="knower">Conhecimento</div>
     <div class="tab" data-tab="irt">IRT / Wright</div>
     <div class="tab" data-tab="nudges">Nudge Queue</div>
     <div class="tab" data-tab="onda4">Psico-cognitivo</div>
@@ -500,6 +601,16 @@ window.MathJax = {
     <div class="aula-summary" id="aulas-summary"></div>
     <h4>Monitorias</h4>
     <div class="aula-summary" id="monitorias-summary"></div>
+  </div>
+
+  <!-- TAB: SMALL MULTIPLES — 1 mini-painel por aula (Berengueres 2019, declutter via repetition) -->
+  <div class="admin-card tab-content" id="tab-multiples" style="display:none">
+    <h3>Visão por aula — small multiples</h3>
+    <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.7rem;line-height:1.5">
+      Mesma estrutura visual repetida 9 vezes (princípio de Tufte / Berengueres). Eixos são implícitos — comparação acontece pelo olho.
+      <strong>% completude</strong> = alunos com pelo menos 1 evento na aula. <strong>Acerto 1ª</strong> = média da turma. <strong>ECE</strong> = Expected Calibration Error médio. <strong>Sparkline</strong> = N submissões dessa aula vs. as outras 8 (acento vermelho = essa aula).
+    </p>
+    <div class="sm-grid" id="sm-grid"></div>
   </div>
 
   <!-- TAB: HEATMAP -->
@@ -690,6 +801,35 @@ window.MathJax = {
 
   <!-- Toast de confirmacao (download .eml, etc) -->
   <div class="mpe-toast" id="mpe-toast" role="status" aria-live="polite"></div>
+
+  <!-- TAB: KNOWER'S QUADRANT — confidence × accuracy (Dunning-Kruger) -->
+  <div class="admin-card tab-content" id="tab-knower" style="display:none">
+    <h3>Conhecimento — confiança × acerto (Dunning-Kruger)</h3>
+    <div class="knower-help">
+      Cada ponto é um aluno. <strong>X</strong> = confiança média declarada nos sliders pós-seção (0–100). <strong>Y</strong> = acerto 1ª tentativa (%).
+      Quadrantes (rotacionados pela mediana da turma ou pelo eixo fixo 50/50): <em>Domínio</em>, <em>Ilusão</em> (Dunning-Kruger), <em>Consciente da lacuna</em>, <em>Humilde</em>.
+      ECE (Expected Calibration Error) é a métrica correlata, granular por aula, na tab <em>Psico-cognitivo</em>.
+      <a id="kn-help-link">Como ler</a>.
+    </div>
+    <div class="knower-toolbar">
+      <label for="kn-threshold" style="font-weight:600">Quadrantes por</label>
+      <select id="kn-threshold" style="padding:0.3rem 0.55rem;border-radius:5px;border:1px solid var(--border);font-size:0.85rem">
+        <option value="median" selected>Mediana da turma</option>
+        <option value="fixed">Eixo fixo 50/50</option>
+      </select>
+      <span id="kn-thresh-info" style="font-size:0.72rem;color:var(--text-muted);margin-left:0.4rem"></span>
+      <div style="flex:1"></div>
+      <span id="kn-count" style="font-size:0.72rem;color:var(--text-muted)"></span>
+    </div>
+    <div class="knower-stage" id="kn-stage"></div>
+    <div class="knower-legend">
+      <span class="leg-item"><span class="leg-swatch" style="background:#065F46"></span>Domínio (alta conf, alto acerto)</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#7A1F1F"></span>Ilusão / Dunning-Kruger</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#B45309"></span>Consciente da lacuna</span>
+      <span class="leg-item"><span class="leg-swatch" style="background:#1B3A5C"></span>Humilde (baixa conf, alto acerto)</span>
+    </div>
+    <div class="knower-strip" id="kn-strip" style="display:none"></div>
+  </div>
 
   <!-- TAB: IRT / WRIGHT MAP (Onda 3C) -->
   <div class="admin-card tab-content" id="tab-irt" style="display:none">
@@ -6821,10 +6961,831 @@ async function renderAdmin() {
   //     porque consome _alunosRows, _adminRaw, _nudgeQueue.
   try { renderAdminInbox(); } catch (e) { console.error('[admin-inbox] render falhou:', e); }
 
+  // 14) Visualizacoes novas (Pollock 2025 + Berengueres 2019). Cada uma
+  //     em try/catch independente — uma quebrar nao derruba as outras.
+  try { renderAdminStory(); }      catch (e) { console.error('[admin-story] render falhou:', e); }
+  try { renderSmallMultiples(); }  catch (e) { console.error('[small-multiples] render falhou:', e); }
+  try { renderKnowerQuadrant(); }  catch (e) { console.error('[knower-quadrant] render falhou:', e); }
+
   // === JSON ===
   document.getElementById('json-preview').textContent = raw
     ? JSON.stringify({ alunos: raw.profiles.length, page_visits: raw.pageVisits.length, sections: raw.sectionProgress.length, reflections: raw.reflections.length }, null, 2)
     : MicroTracker.exportJSON();
+}
+
+// ============================================================
+// VISUALIZACOES NOVAS (onda de modernizacao visual, 2026-04-25)
+// 1) Story-of-week — narrative timeline (Pollock 2025)
+// 2) Small multiples — 1 mini-painel por aula (Berengueres 2019)
+// 3) Knower's quadrant — confidence x accuracy (Dunning-Kruger)
+// Todas SVG inline puro, zero deps, derivam de _adminRaw/_alunosRows/_psiRows.
+// ============================================================
+
+// ---------- Helper: matricula do admin para namespacing localStorage ----------
+function _adminMat() {
+  try {
+    var sess = window.MicroAuth && window.MicroAuth.getSession();
+    if (sess && sess.matricula) return String(sess.matricula);
+  } catch(e) {}
+  return 'unknown';
+}
+
+// =========================================================
+// 1) STORY OF THE WEEK
+// =========================================================
+function buildStoryOfWeek(raw, lastVisitAtMs) {
+  // Coleta eventos novos (>= lastVisitAtMs) dos canais relevantes.
+  var acts = { knot: null, rising: null, climax: null, resolution: null };
+  if (!raw) return { acts: acts, totalEvents: 0 };
+
+  var newQA = [], newSP = [], newRefl = [];
+  (raw.quizQA || []).forEach(function(q){
+    if (!q.answered_at) return;
+    var t = new Date(q.answered_at).getTime();
+    if (t >= lastVisitAtMs) newQA.push({ ts: t, q: q });
+  });
+  (raw.sectionProgress || []).forEach(function(sp){
+    if (!sp.completed_at) return;
+    var t = new Date(sp.completed_at).getTime();
+    if (t >= lastVisitAtMs) newSP.push({ ts: t, sp: sp });
+  });
+  (raw.reflections || []).forEach(function(r){
+    if (!r.submitted_at) return;
+    var t = new Date(r.submitted_at).getTime();
+    if (t >= lastVisitAtMs) newRefl.push({ ts: t, r: r });
+  });
+
+  var totalEvents = newQA.length + newSP.length + newRefl.length;
+
+  // ---- KNOT (tensão) ----
+  // Heurística:
+  //   1. _psiRows com flag.code === 'neg' (discriminacao negativa)
+  //   2. risk escalado (snapshot prev vs. agora) — só se _mpeAdmin.prevRiskSnapshot existir
+  //   3. cobertura <60% em aula recém-fechada
+  var psiRows = window._psiRows || [];
+  var negQ = psiRows.filter(function(p){ return p && p.flag && p.flag.code === 'neg' && p.n >= 5; })
+                    .sort(function(a,b){ return a.discrimination - b.discrimination; });
+  if (negQ.length) {
+    var w = negQ[0];
+    var pageLab = (typeof _pageLabel === 'function') ? _pageLabel(w.page_id) : w.page_id;
+    var phaseLab = (typeof _phaseLabel === 'function') ? _phaseLabel(w.phase) : (w.phase || '');
+    acts.knot = {
+      text: 'Questão <strong>' + w.question_id + '</strong> em ' + pageLab + ' ' + phaseLab
+            + ' está com discriminação negativa (rpb=' + w.discrimination.toFixed(2)
+            + ', n=' + w.n + ') — possível bug de gabarito ou item ambíguo.',
+      cta: 'tab:psicometria'
+    };
+  } else {
+    // Risco escalou
+    var prevSnap = (window._mpeAdmin && window._mpeAdmin.prevRiskSnapshot) || {};
+    var curRows = window._alunosRows || [];
+    var escalated = [];
+    curRows.forEach(function(r){
+      var prevLvl = prevSnap[r.s.matricula]; // valor armazenado é string ('low'/'med'/'high'/'inactive')
+      if (!prevLvl) return;
+      var levels = { low: 0, med: 1, high: 2, inactive: 3 };
+      if (levels[r.risk.level] > levels[prevLvl]) {
+        escalated.push({ nome: r.s.nome, mat: r.s.matricula, from: prevLvl, to: r.risk.level });
+      }
+    });
+    if (escalated.length) {
+      var first = escalated[0];
+      var nMore = escalated.length > 1 ? ' (+' + (escalated.length - 1) + ' outro' + (escalated.length > 2 ? 's' : '') + ')' : '';
+      acts.knot = {
+        text: '<strong>' + first.nome + '</strong> migrou de <em>' + first.from + '</em> para <em>' + first.to + '</em> desde sua última visita' + nMore + '.',
+        cta: 'profile:' + first.mat
+      };
+    } else if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.getPrazo) {
+      // Aula com cobertura <60% recém-fechada (ou aproximando)
+      var nowMs = Date.now();
+      var lowCov = null;
+      for (var n = 1; n <= 9; n++) {
+        try {
+          var p = window.MPE_CALENDARIO.getPrazo(n, 'pos');
+          if (!p) continue;
+          var diff = (nowMs - p.fecha) / 86400000;
+          if (diff < -2 || diff > 14) continue;
+          var pid = aulaPid(n) + '-pos';
+          var didIt = {};
+          (raw.quizQA || []).forEach(function(q){ if (q.page_id === pid) didIt[q.user_id] = true; });
+          var nDid = Object.keys(didIt).length;
+          var nTotal = (raw.profiles || []).filter(function(pr){ return pr.role !== 'admin'; }).length;
+          if (nTotal === 0) continue;
+          var pct = Math.round(nDid / nTotal * 100);
+          if (pct < 60 && (!lowCov || pct < lowCov.pct)) lowCov = { aula: n, pct: pct, nDid: nDid, nTotal: nTotal };
+        } catch(e) {}
+      }
+      if (lowCov) {
+        acts.knot = {
+          text: 'Cobertura de quiz pós-aula da <strong>Aula ' + lowCov.aula + '</strong> está em '
+                + lowCov.pct + '% (' + lowCov.nDid + '/' + lowCov.nTotal + '), abaixo do piso de 60%.',
+          cta: 'tab:multiples'
+        };
+      }
+    }
+  }
+
+  // ---- RISING ACTION (escalada) ----
+  // Volume novo e sinal de tempo (cramming)
+  var nQuiz = newQA.length;
+  if (nQuiz >= 5) {
+    // Mediana de tempo entre tentativas consecutivas (proxy do o4-rt)
+    var byUser = {};
+    newQA.forEach(function(e){
+      var k = e.q.user_id + '::' + e.q.page_id;
+      if (!byUser[k]) byUser[k] = [];
+      byUser[k].push(e.ts);
+    });
+    var diffs = [];
+    Object.keys(byUser).forEach(function(k){
+      var arr = byUser[k].sort(function(a,b){return a-b});
+      for (var i = 1; i < arr.length; i++) {
+        var d = (arr[i] - arr[i-1]) / 1000;
+        if (d >= 10 && d <= 900) diffs.push(d);
+      }
+    });
+    var medNew = diffs.length ? diffs.slice().sort(function(a,b){return a-b})[Math.floor(diffs.length/2)] : null;
+    // Comparar com mediana global do _onda4.rt (se existir)
+    var medGlobal = (window._onda4 && window._onda4.rt && window._onda4.rt.turmaMedian) || null;
+    var deltaTxt = '';
+    if (medNew != null && medGlobal != null && medGlobal > 0) {
+      var pctDelta = Math.round((medNew - medGlobal) / medGlobal * 100);
+      if (Math.abs(pctDelta) >= 15) {
+        deltaTxt = ' Tempo mediano por item ' + (pctDelta < 0 ? 'caiu' : 'subiu') + ' '
+                 + Math.abs(pctDelta) + '% vs. baseline da turma'
+                 + (pctDelta < 0 ? ' — sinal possível de cramming.' : ' — sinal de leitura mais cuidadosa.');
+      }
+    }
+    acts.rising = {
+      text: '<strong>' + nQuiz + '</strong> tentativas de quiz e <strong>' + newSP.length + '</strong> seções concluídas desde sua última visita.' + deltaTxt
+    };
+  } else if (totalEvents > 0) {
+    acts.rising = {
+      text: 'Atividade leve no período: <strong>' + nQuiz + '</strong> quizzes, <strong>' + newSP.length + '</strong> seções, <strong>' + newRefl.length + '</strong> reflexões.'
+    };
+  }
+
+  // ---- CLIMAX (pico) ----
+  // (a) Aluno migrou de inactive → low/med em <= 4d e fez >= 3 quizzes
+  // (b) fallback: maior delta de acerto pré→pós da última aula
+  var prevSnapC = (window._mpeAdmin && window._mpeAdmin.prevRiskSnapshot) || {};
+  var rowsC = window._alunosRows || [];
+  var bestRecover = null;
+  rowsC.forEach(function(r){
+    var prevLvl = prevSnapC[r.s.matricula]; // string com nivel anterior
+    if (!prevLvl) return;
+    if (prevLvl === 'inactive' && r.risk.level !== 'inactive' && r.risk.level !== 'high') {
+      // Conta quizzes feitos por esse aluno desde lastVisitAt
+      var profId = (function(){
+        var p = (raw.profiles || []).filter(function(x){ return x.matricula === r.s.matricula; })[0];
+        return p ? p.id : null;
+      })();
+      if (!profId) return;
+      var n = newQA.filter(function(e){ return e.q.user_id === profId; }).length;
+      if (n >= 3) {
+        if (!bestRecover || n > bestRecover.n) bestRecover = { nome: r.s.nome, mat: r.s.matricula, n: n, to: r.risk.level };
+      }
+    }
+  });
+  if (bestRecover) {
+    acts.climax = {
+      text: '<strong>' + bestRecover.nome + '</strong> migrou de <em>inactive</em> para <em>' + bestRecover.to + '</em> com '
+            + bestRecover.n + ' quizzes nessa janela.',
+      cta: 'profile:' + bestRecover.mat
+    };
+  } else if (newQA.length >= 3) {
+    // Fallback: maior delta de acerto pre vs pos da última aula com dados
+    var perPagePerUser = {};
+    newQA.forEach(function(e){
+      var pid = e.q.page_id;
+      var m = pid.match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+      if (!m) return;
+      var aulaN = +m[1]; var stage = m[2] || 'mat';
+      if (stage !== 'pre' && stage !== 'pos') return;
+      var k = aulaN + '::' + e.q.user_id + '::' + stage;
+      if (!perPagePerUser[k]) perPagePerUser[k] = { c: 0, t: 0 };
+      perPagePerUser[k].t++;
+      if (e.q.correct) perPagePerUser[k].c++;
+    });
+    var aulaDeltas = {};
+    Object.keys(perPagePerUser).forEach(function(k){
+      var parts = k.split('::'); var aulaN = parts[0]; var uid = parts[1]; var st = parts[2];
+      var rec = perPagePerUser[k]; if (rec.t < 2) return;
+      var pct = rec.c / rec.t * 100;
+      if (!aulaDeltas[aulaN]) aulaDeltas[aulaN] = { pre: [], pos: [] };
+      aulaDeltas[aulaN][st].push(pct);
+    });
+    var bestA = null;
+    Object.keys(aulaDeltas).forEach(function(aN){
+      var d = aulaDeltas[aN];
+      if (!d.pre.length || !d.pos.length) return;
+      var avg = function(a){ return a.reduce(function(x,y){return x+y},0)/a.length; };
+      var delta = avg(d.pos) - avg(d.pre);
+      if (Math.abs(delta) >= 5) {
+        if (!bestA || Math.abs(delta) > Math.abs(bestA.delta)) bestA = { aula: aN, delta: delta };
+      }
+    });
+    if (bestA) {
+      var sign = bestA.delta > 0 ? '+' : '';
+      acts.climax = {
+        text: 'Aula ' + bestA.aula + ': delta de acerto pré→pós = <strong>' + sign + bestA.delta.toFixed(0)
+              + ' p.p.</strong> ' + (bestA.delta > 0 ? '— turma aprendeu com a aula.' : '— a aula confundiu mais do que ensinou nessas questões.')
+      };
+    }
+  }
+
+  // ---- RESOLUTION (ação imediata) ----
+  // Reflexões pendentes >5d, ou nudges criticos
+  var nReflPending = 0;
+  if (raw.reflections) {
+    var nowR = Date.now();
+    raw.reflections.forEach(function(r){
+      if (r.responded_at) return;
+      if (!r.submitted_at) return;
+      var ageD = (nowR - new Date(r.submitted_at).getTime()) / 86400000;
+      if (ageD > 5) nReflPending++;
+    });
+  }
+  if (nReflPending > 0) {
+    acts.resolution = {
+      text: '<strong>' + nReflPending + '</strong> reflexão' + (nReflPending > 1 ? 'ões' : '')
+            + ' sem resposta há mais de 5 dias — abra o Hub Hoje.',
+      cta: 'tab:nudges'
+    };
+  } else {
+    var queue = [];
+    try { queue = (typeof computeNudgeQueue === 'function') ? computeNudgeQueue() : (window._nudgeQueue || []); } catch(e) {}
+    var nCrit = queue.filter(function(q){ return q && q.category === 'critical'; }).length;
+    if (nCrit > 0) {
+      acts.resolution = {
+        text: '<strong>' + nCrit + '</strong> aluno' + (nCrit > 1 ? 's' : '')
+              + ' em risco crítico há ≥14 dias sem intervenção — fila de nudges montada.',
+        cta: 'tab:nudges'
+      };
+    } else if (totalEvents > 0) {
+      acts.resolution = { text: 'Sem ações urgentes além do já registrado no Hub Hoje.', cta: 'tab:aulas' };
+    }
+  }
+
+  return { acts: acts, totalEvents: totalEvents };
+}
+
+function _storyDismissedActive(adminMat) {
+  try {
+    var key = 'mpe_admin_story_dismissed:' + adminMat;
+    var raw = localStorage.getItem(key);
+    if (!raw) return false;
+    var rec = JSON.parse(raw);
+    if (!rec || !rec.until) return false;
+    return new Date(rec.until).getTime() > Date.now();
+  } catch(e) { return false; }
+}
+
+function renderAdminStory() {
+  var card = document.getElementById('admin-story');
+  if (!card) return;
+  var adminMat = _adminMat();
+  if (_storyDismissedActive(adminMat)) { card.style.display = 'none'; return; }
+
+  var raw = window._adminRaw;
+  if (!raw) { card.style.display = 'none'; return; }
+
+  var lastVisitAt = (window._mpeAdmin && window._mpeAdmin.lastVisitAt) ? window._mpeAdmin.lastVisitAt.getTime() : null;
+  if (!lastVisitAt) {
+    card.style.display = '';
+    card.classList.add('empty');
+    document.getElementById('admin-story-acts').innerHTML = '';
+    var emptyEl = document.getElementById('admin-story-empty');
+    emptyEl.style.display = '';
+    emptyEl.innerHTML = 'Bem-vindo. Não há marca de "última visita" ainda — volte após 24h de atividade da turma para ver a história.';
+    return;
+  }
+
+  var story = buildStoryOfWeek(raw, lastVisitAt);
+
+  // Edge case: <3 eventos -> esconde
+  if (story.totalEvents < 3) {
+    if (story.totalEvents === 0) {
+      card.style.display = 'none';
+    } else {
+      card.style.display = '';
+      card.classList.add('empty');
+      document.getElementById('admin-story-acts').innerHTML = '';
+      var em = document.getElementById('admin-story-empty');
+      em.style.display = '';
+      em.innerHTML = 'Apenas ' + story.totalEvents + ' evento(s) novo(s) desde sua última visita — pouco material para narrar. Volte mais tarde.';
+    }
+    return;
+  }
+
+  card.classList.remove('empty');
+  card.style.display = '';
+  document.getElementById('admin-story-empty').style.display = 'none';
+
+  var sub = document.getElementById('admin-story-sub');
+  if (sub) {
+    var hoursSince = Math.round((Date.now() - lastVisitAt) / 3600000);
+    var sinceTxt = hoursSince < 24 ? hoursSince + 'h' : Math.round(hoursSince / 24) + 'd';
+    sub.textContent = '— ' + story.totalEvents + ' evento(s) nas últimas ' + sinceTxt;
+  }
+
+  function actHtml(kind, icon, label, payload) {
+    if (!payload) return '<div class="story-act ' + kind + ' empty"><div class="story-act-h">' + icon + ' ' + label + '</div><div class="story-act-body">— sem sinal claro nesse arco.</div></div>';
+    var linkHtml = '';
+    if (payload.cta) {
+      var safeCta = String(payload.cta).replace(/"/g,'&quot;');
+      linkHtml = '<button class="story-act-link" data-cta="' + safeCta + '">→ ver</button>';
+    }
+    return '<div class="story-act ' + kind + '">'
+         + '<div class="story-act-h">' + icon + ' ' + label + '</div>'
+         + '<div class="story-act-body">' + payload.text + '</div>'
+         + linkHtml
+         + '</div>';
+  }
+
+  var html = ''
+    + actHtml('knot',       '⚡', 'Knot',       story.acts.knot)
+    + actHtml('rising',     '📈', 'Rising',     story.acts.rising)
+    + actHtml('climax',     '🎯', 'Climax',     story.acts.climax)
+    + actHtml('resolution', '✅', 'Resolution', story.acts.resolution);
+
+  var holder = document.getElementById('admin-story-acts');
+  holder.innerHTML = html;
+
+  // Listeners idempotentes em cards (delegado uma vez no holder)
+  if (!holder._mpeBound) {
+    holder.addEventListener('click', function(ev){
+      var btn = ev.target.closest('.story-act-link');
+      if (!btn) return;
+      var cta = btn.getAttribute('data-cta') || '';
+      if (cta.indexOf('tab:') === 0) {
+        var tabName = cta.substring(4);
+        if (typeof showTab === 'function') { try { showTab(tabName); } catch(e) {} }
+        var el = document.getElementById('tab-' + tabName);
+        if (el) el.scrollIntoView({behavior: 'smooth', block: 'start'});
+      } else if (cta.indexOf('profile:') === 0) {
+        var mat = cta.substring(8);
+        if (typeof showStudentProfile === 'function') showStudentProfile(mat);
+      }
+    });
+    holder._mpeBound = true;
+  }
+
+  // Header buttons (idempotentes)
+  var refreshBtn = document.getElementById('admin-story-refresh');
+  if (refreshBtn && !refreshBtn._mpeBound) {
+    refreshBtn.addEventListener('click', function(){ renderAdminStory(); });
+    refreshBtn._mpeBound = true;
+  }
+  var dismissBtn = document.getElementById('admin-story-dismiss');
+  if (dismissBtn && !dismissBtn._mpeBound) {
+    dismissBtn.addEventListener('click', function(){
+      try {
+        var key = 'mpe_admin_story_dismissed:' + adminMat;
+        localStorage.setItem(key, JSON.stringify({ until: new Date(Date.now() + 86400000).toISOString() }));
+      } catch(e) {}
+      card.style.display = 'none';
+    });
+    dismissBtn._mpeBound = true;
+  }
+}
+
+// =========================================================
+// 2) SMALL MULTIPLES — 1 mini-painel por aula
+// =========================================================
+function _smProfileNonAdminCount() {
+  var raw = window._adminRaw;
+  if (!raw || !raw.profiles) return 0;
+  return raw.profiles.filter(function(p){ return p.role !== 'admin'; }).length;
+}
+
+function computeSmallMultiplesData() {
+  var raw = window._adminRaw;
+  var rows = window._alunosRows || [];
+  var psi = window._psiRows || [];
+  var onda4 = window._onda4 || null;
+  if (!raw) return null;
+
+  var totalStudents = _smProfileNonAdminCount() || rows.length || 1;
+
+  // Submissions per aula (todas as fases relevantes)
+  var subsByAula = {};        // n -> total quizQA
+  var firstByAulaUser = {};   // "n::uid::pid::qid" -> bool correct (1ª tentativa)
+  var coverageByAula = {};    // n -> Set of user_ids com pelo menos 1 evento
+  var pageVisitsByAula = {};  // n -> Set of user_ids com page_visit em qualquer pagina-aula
+
+  function ensureCov(n){ if(!coverageByAula[n]) coverageByAula[n] = {}; return coverageByAula[n]; }
+
+  (raw.quizQA || []).forEach(function(q){
+    var m = q.page_id && q.page_id.match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+    if (!m) return;
+    var n = +m[1];
+    subsByAula[n] = (subsByAula[n] || 0) + 1;
+    ensureCov(n)[q.user_id] = true;
+    var k = n + '::' + q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (firstByAulaUser[k] === undefined) firstByAulaUser[k] = !!q.correct;
+    else {
+      // mantém primeira (assume já sorted; defensive)
+    }
+  });
+  (raw.sectionProgress || []).forEach(function(sp){
+    var m = sp.page_id && sp.page_id.match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+    if (!m) return;
+    var n = +m[1];
+    ensureCov(n)[sp.user_id] = true;
+  });
+  (raw.pageVisits || []).forEach(function(pv){
+    var m = pv.page_id && pv.page_id.match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
+    if (!m) return;
+    var n = +m[1];
+    ensureCov(n)[pv.user_id] = true;
+  });
+
+  // Acerto 1ª por aula
+  var ftByAula = {}; // n -> {c, t}
+  Object.keys(firstByAulaUser).forEach(function(k){
+    var n = +k.split('::')[0];
+    if (!ftByAula[n]) ftByAula[n] = { c: 0, t: 0 };
+    ftByAula[n].t++;
+    if (firstByAulaUser[k]) ftByAula[n].c++;
+  });
+
+  // ECE médio por aula via _onda4.calibration.pairs (cada par tem pageRoot)
+  var eceByAula = {}; // n -> [eces]
+  if (onda4 && onda4.calibration && onda4.calibration.byUser) {
+    // Cada user.byUser[uid].pairs tem itens com pageRoot ('aula-XX').
+    // O label='none' significa <3 pares para ECE confiável, mas os pares
+    // ainda existem e podem ser usados como proxy local de calibração.
+    Object.values(onda4.calibration.byUser).forEach(function(u){
+      if (!u || !u.pairs || !u.pairs.length) return;
+      u.pairs.forEach(function(p){
+        if (!p || !p.pageRoot) return;
+        var m = p.pageRoot.match(/^aula-(\d+)/);
+        if (!m) return;
+        var n = +m[1];
+        if (!eceByAula[n]) eceByAula[n] = [];
+        // Usa |conf - acc| do par individual como proxy local (não é ECE
+        // formal por aula, mas é a melhor leitura agregável aqui).
+        eceByAula[n].push(Math.abs(p.conf - p.acc));
+      });
+    });
+  }
+
+  // Flags: psi com discrim < 0
+  var negFlagByAula = {}; // n -> [{qid, page, rpb}]
+  psi.forEach(function(r){
+    if (!r || !r.flag || r.flag.code !== 'neg') return;
+    var m = r.page_id && r.page_id.match(/^aula-(\d+)/);
+    if (!m) return;
+    var n = +m[1];
+    if (!negFlagByAula[n]) negFlagByAula[n] = [];
+    negFlagByAula[n].push({ qid: r.question_id, page: r.page_id, rpb: r.discrimination });
+  });
+
+  // Top-3 por acerto 1ª (turma)
+  var ftSorted = Object.keys(ftByAula).map(function(n){
+    return { n: +n, pct: ftByAula[n].t > 0 ? ftByAula[n].c / ftByAula[n].t * 100 : null };
+  }).filter(function(x){ return x.pct != null; }).sort(function(a,b){ return b.pct - a.pct; });
+  var top3 = ftSorted.slice(0, 3).map(function(x){ return x.n; });
+
+  // Para sparkline: maxSubs
+  var maxSubs = 1;
+  for (var n = 1; n <= 9; n++) maxSubs = Math.max(maxSubs, subsByAula[n] || 0);
+
+  // Compila result por aula
+  var out = [];
+  for (var n2 = 1; n2 <= 9; n2++) {
+    var aulaInfo = AULAS.filter(function(a){ return a.n === n2; })[0] || { n: n2, title: 'Aula ' + n2, cap: '' };
+    var covCount = Object.keys(coverageByAula[n2] || {}).length;
+    var ftRec = ftByAula[n2];
+    var ftPct = ftRec && ftRec.t > 0 ? Math.round(ftRec.c / ftRec.t * 100) : null;
+    var eces = eceByAula[n2] || [];
+    var eceMean = eces.length ? Math.round(eces.reduce(function(a,b){return a+b},0) / eces.length) : null;
+    var subs = subsByAula[n2] || 0;
+    var negs = negFlagByAula[n2] || [];
+
+    // Tem dados?
+    var hasData = (covCount > 0) || subs > 0;
+
+    // Flag textual
+    var flag = '—', flagCls = '';
+    if (negs.length) {
+      flag = '🔴 ' + negs[0].qid + ' com rpb=' + negs[0].rpb.toFixed(2);
+      flagCls = 'flag-bug';
+    } else if (top3.indexOf(n2) >= 0 && ftPct != null) {
+      flag = '🟢 acerto top-3 da turma';
+      flagCls = 'flag-top';
+    }
+
+    out.push({
+      n: n2,
+      title: aulaInfo.title,
+      cap: aulaInfo.cap || '',
+      hasData: hasData,
+      coverage: hasData ? Math.round(covCount / Math.max(1, totalStudents) * 100) : 0,
+      ftPct: ftPct,
+      eceMean: eceMean,
+      subs: subs,
+      maxSubs: maxSubs,
+      flag: flag,
+      flagCls: flagCls
+    });
+  }
+  return { aulas: out };
+}
+
+function renderSmallMultiples() {
+  var grid = document.getElementById('sm-grid');
+  if (!grid) return;
+  var data = computeSmallMultiplesData();
+  if (!data) {
+    grid.innerHTML = '<div class="dash-chart-empty" style="grid-column:1/-1;height:120px">Sem dados ainda. Aguardando submissões da turma.</div>';
+    return;
+  }
+
+  function vCls(v) {
+    if (v == null) return '';
+    if (v >= 70) return 'high';
+    if (v >= 50) return 'med';
+    return 'low';
+  }
+
+  var html = data.aulas.map(function(a){
+    if (!a.hasData) {
+      return '<div class="sm-card muted">'
+           + '<div class="sm-title">Aula ' + String(a.n).padStart(2,'0') + ' · ' + a.title + '</div>'
+           + '<div class="sm-sub">' + a.cap + '</div>'
+           + '<div style="font-size:0.78rem;color:var(--text-muted);font-style:italic;margin-top:0.4rem">Aguardando dados</div>'
+           + '</div>';
+    }
+    var ftTxt   = a.ftPct  != null ? a.ftPct  + '%' : '—';
+    var eceTxt  = a.eceMean != null ? Math.round(a.eceMean) : '—';
+    var ftCls   = vCls(a.ftPct);
+    // Sparkline: a aula corrente em accent, demais em cinza, altura proporcional a subs
+    var sparkBars = '';
+    for (var k = 1; k <= 9; k++) {
+      var subsK = (data.aulas[k-1] || {}).subs || 0;
+      var hPct = a.maxSubs > 0 ? Math.max(8, Math.round(subsK / a.maxSubs * 100)) : 8;
+      var selfCls = (k === a.n) ? ' self' : '';
+      sparkBars += '<div class="sm-spark-bar' + selfCls + '" style="height:' + hPct + '%" title="Aula ' + k + ': ' + subsK + ' submissões"></div>';
+    }
+    var pid = aulaPid(a.n);
+    var safe = pid.replace(/'/g, "\\'");
+    return '<div class="sm-card" onclick="window.open(\'' + safe + '.html\',\'_blank\')">'
+         + '<div class="sm-title">Aula ' + String(a.n).padStart(2,'0') + ' · ' + a.title + '</div>'
+         + '<div class="sm-sub">' + a.cap + '</div>'
+         + '<div class="sm-row">'
+           + '<div class="sm-metric">'
+             + '<span class="sm-l">Completude</span>'
+             + '<span class="sm-v">' + a.coverage + '%</span>'
+             + '<div class="sm-bar"><div class="sm-bar-fill accent" style="width:' + a.coverage + '%"></div></div>'
+           + '</div>'
+           + '<div class="sm-metric">'
+             + '<span class="sm-l">Acerto 1ª (turma)</span>'
+             + '<span class="sm-v ' + ftCls + '">' + ftTxt + '</span>'
+           + '</div>'
+           + '<div class="sm-metric">'
+             + '<span class="sm-l">|conf − acc| médio</span>'
+             + '<span class="sm-v">' + eceTxt + (eceTxt !== '—' ? 'pp' : '') + '</span>'
+           + '</div>'
+           + '<div class="sm-metric">'
+             + '<span class="sm-l">Submissões (vs turma)</span>'
+             + '<span class="sm-v" style="font-size:0.85rem">' + a.subs + '</span>'
+             + '<div class="sm-spark">' + sparkBars + '</div>'
+           + '</div>'
+         + '</div>'
+         + '<div class="sm-foot ' + a.flagCls + '">' + a.flag + '</div>'
+         + '</div>';
+  }).join('');
+
+  grid.innerHTML = html;
+}
+
+// =========================================================
+// 3) KNOWER'S QUADRANT — confidence x accuracy
+// =========================================================
+function computeKnowerPoints() {
+  var raw = window._adminRaw;
+  if (!raw) return { points: [], gated: 0, totalNonAdmin: 0 };
+
+  // Mapeamento profile_id → (matricula, nome). Filtra admin.
+  var prof = {};
+  (raw.profiles || []).forEach(function(p){
+    if (p.role === 'admin') return;
+    prof[p.id] = { matricula: p.matricula, nome: p.nome };
+  });
+  var totalNonAdmin = Object.keys(prof).length;
+
+  // Acerto 1ª por aluno (todas as questões; 1ª tentativa por (page, qid))
+  var firstSeen = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (!prof[q.user_id]) return;
+    var k = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (firstSeen[k] && q.answered_at >= firstSeen[k].ts) return;
+    firstSeen[k] = { ts: q.answered_at, correct: !!q.correct };
+  });
+  var byUser = {};
+  Object.keys(firstSeen).forEach(function(k){
+    var uid = k.split('::')[0];
+    if (!byUser[uid]) byUser[uid] = { c: 0, t: 0 };
+    byUser[uid].t++;
+    if (firstSeen[k].correct) byUser[uid].c++;
+  });
+
+  // Confiança média declarada (post) por aluno
+  var confByUser = {};
+  (raw.confidence || []).forEach(function(c){
+    if (c.phase !== 'post') return;
+    if (!prof[c.user_id]) return;
+    if (!confByUser[c.user_id]) confByUser[c.user_id] = { sum: 0, n: 0 };
+    confByUser[c.user_id].sum += c.value;
+    confByUser[c.user_id].n++;
+  });
+
+  var points = [];
+  var gated = 0;
+  Object.keys(prof).forEach(function(uid){
+    var ft = byUser[uid];
+    var cf = confByUser[uid];
+    var nItems = ft ? ft.t : 0;
+    var nConf = cf ? cf.n : 0;
+    if (!ft || nItems < 6 || !cf || nConf < 3) {
+      gated++;
+      return;
+    }
+    var x = cf.sum / cf.n;
+    var y = ft.c / ft.t * 100;
+    points.push({
+      uid: uid,
+      mat: prof[uid].matricula,
+      nome: prof[uid].nome,
+      x: Math.max(0, Math.min(100, x)),
+      y: Math.max(0, Math.min(100, y)),
+      nItems: nItems,
+      nConf: nConf
+    });
+  });
+
+  return { points: points, gated: gated, totalNonAdmin: totalNonAdmin };
+}
+
+function renderKnowerQuadrant() {
+  var stage = document.getElementById('kn-stage');
+  if (!stage) return;
+  var adminMat = _adminMat();
+  var key = 'mpe_admin_knower_threshold:' + adminMat;
+  var thresholdSel = document.getElementById('kn-threshold');
+  // Restaura preferência
+  try {
+    var saved = localStorage.getItem(key);
+    if (saved && thresholdSel && (saved === 'median' || saved === 'fixed')) thresholdSel.value = saved;
+  } catch(e) {}
+
+  var dataset = computeKnowerPoints();
+  var pts = dataset.points;
+  var info = document.getElementById('kn-thresh-info');
+  var countEl = document.getElementById('kn-count');
+  var strip = document.getElementById('kn-strip');
+
+  if (!pts.length) {
+    stage.innerHTML = '<div class="dash-chart-empty">Precisa de ≥6 itens com acerto registrado e ≥3 sliders pós por aluno. Ainda sem ninguém qualificado.</div>';
+    if (info) info.textContent = '';
+    if (countEl) countEl.textContent = '0 alunos no scatter';
+    if (strip) {
+      if (dataset.gated > 0) {
+        strip.style.display = '';
+        strip.innerHTML = '<strong>' + dataset.gated + ' aluno' + (dataset.gated > 1 ? 's' : '') + '</strong> sem dados suficientes ainda (mín. 6 itens com gabarito + 3 sliders pós).';
+      } else strip.style.display = 'none';
+    }
+    return;
+  }
+
+  // Threshold: mediana ou fixo
+  var mode = (thresholdSel && thresholdSel.value) || 'median';
+  var thrX, thrY;
+  if (mode === 'fixed') {
+    thrX = 50; thrY = 50;
+  } else {
+    var xs = pts.map(function(p){return p.x}).sort(function(a,b){return a-b});
+    var ys = pts.map(function(p){return p.y}).sort(function(a,b){return a-b});
+    thrX = xs[Math.floor(xs.length / 2)];
+    thrY = ys[Math.floor(ys.length / 2)];
+  }
+
+  if (info) {
+    if (mode === 'fixed') info.textContent = 'eixo fixo · X=50, Y=50';
+    else info.textContent = 'mediana turma · X=' + Math.round(thrX) + ', Y=' + Math.round(thrY);
+  }
+
+  // Layout SVG
+  var W = 920, H = 520, PL = 64, PR = 24, PT = 24, PB = 56;
+  var plotW = W - PL - PR, plotH = H - PT - PB;
+  function px(v) { return PL + v / 100 * plotW; }
+  function py(v) { return PT + (100 - v) / 100 * plotH; }
+
+  // Quadrantes (clip pelas medianas/eixos fixos)
+  var q1x = px(thrX), q1y = py(thrY);
+  // Q1 (alta conf, alto acerto) — Domínio — top-right
+  // Q2 (alta conf, baixo acerto) — Ilusão — bottom-right
+  // Q3 (baixa conf, baixo acerto) — Consciente — bottom-left
+  // Q4 (baixa conf, alto acerto) — Humilde — top-left
+  var rectsHtml = ''
+    + '<rect class="kn-quad-rect" x="' + q1x + '" y="' + PT + '" width="' + (PL + plotW - q1x) + '" height="' + (q1y - PT) + '" fill="#065F46"/>'
+    + '<rect class="kn-quad-rect" x="' + q1x + '" y="' + q1y + '" width="' + (PL + plotW - q1x) + '" height="' + (PT + plotH - q1y) + '" fill="#7A1F1F"/>'
+    + '<rect class="kn-quad-rect" x="' + PL + '" y="' + q1y + '" width="' + (q1x - PL) + '" height="' + (PT + plotH - q1y) + '" fill="#B45309"/>'
+    + '<rect class="kn-quad-rect" x="' + PL + '" y="' + PT + '" width="' + (q1x - PL) + '" height="' + (q1y - PT) + '" fill="#1B3A5C"/>';
+
+  // Eixos divisores
+  var axesHtml = ''
+    + '<line class="kn-axis" x1="' + q1x + '" y1="' + PT + '" x2="' + q1x + '" y2="' + (PT + plotH) + '"/>'
+    + '<line class="kn-axis" x1="' + PL + '" y1="' + q1y + '" x2="' + (PL + plotW) + '" y2="' + q1y + '"/>';
+
+  // Grid suave
+  var gridHtml = '';
+  [0, 25, 50, 75, 100].forEach(function(t){
+    gridHtml += '<line class="kn-grid" x1="' + px(t) + '" y1="' + PT + '" x2="' + px(t) + '" y2="' + (PT + plotH) + '"/>';
+    gridHtml += '<line class="kn-grid" x1="' + PL + '" y1="' + py(t) + '" x2="' + (PL + plotW) + '" y2="' + py(t) + '"/>';
+    gridHtml += '<text class="kn-axis-tick" x="' + px(t) + '" y="' + (PT + plotH + 14) + '" text-anchor="middle">' + t + '</text>';
+    gridHtml += '<text class="kn-axis-tick" x="' + (PL - 6) + '" y="' + (py(t) + 3) + '" text-anchor="end">' + t + '</text>';
+  });
+
+  // Contagens por quadrante
+  var counts = { domain:0, illusion:0, conscious:0, humble:0 };
+  pts.forEach(function(p){
+    var hi_x = p.x >= thrX, hi_y = p.y >= thrY;
+    if (hi_x && hi_y) counts.domain++;
+    else if (hi_x && !hi_y) counts.illusion++;
+    else if (!hi_x && !hi_y) counts.conscious++;
+    else counts.humble++;
+  });
+
+  // Labels dos quadrantes — colocados nos cantos relativos a cada quadrante
+  function midX(a, b){ return (a + b) / 2; }
+  function midY(a, b){ return (a + b) / 2; }
+  // Posicionar labels com pequenos offsets para os cantos exteriores de cada quadrante
+  var labelsHtml = ''
+    + '<text class="kn-quad-label" x="' + (PL + plotW - 8) + '" y="' + (PT + 14) + '" text-anchor="end">Domínio</text>'
+    + '<text class="kn-quad-count" x="' + (PL + plotW - 8) + '" y="' + (PT + 26) + '" text-anchor="end">' + counts.domain + ' alunos</text>'
+    + '<text class="kn-quad-label" x="' + (PL + plotW - 8) + '" y="' + (PT + plotH - 18) + '" text-anchor="end">Ilusão (DK)</text>'
+    + '<text class="kn-quad-count" x="' + (PL + plotW - 8) + '" y="' + (PT + plotH - 6) + '" text-anchor="end">' + counts.illusion + ' alunos</text>'
+    + '<text class="kn-quad-label" x="' + (PL + 8) + '" y="' + (PT + plotH - 18) + '" text-anchor="start">Consciente da lacuna</text>'
+    + '<text class="kn-quad-count" x="' + (PL + 8) + '" y="' + (PT + plotH - 6) + '" text-anchor="start">' + counts.conscious + ' alunos</text>'
+    + '<text class="kn-quad-label" x="' + (PL + 8) + '" y="' + (PT + 14) + '" text-anchor="start">Humilde</text>'
+    + '<text class="kn-quad-count" x="' + (PL + 8) + '" y="' + (PT + 26) + '" text-anchor="start">' + counts.humble + ' alunos</text>';
+
+  // Pontos
+  var dotsHtml = pts.map(function(p){
+    var cls = 'kn-dot';
+    var hi_x = p.x >= thrX, hi_y = p.y >= thrY;
+    if (hi_x && hi_y) cls += ' q-domain';
+    else if (hi_x && !hi_y) cls += ' q-illusion';
+    else if (!hi_x && !hi_y) cls += ' q-conscious';
+    else cls += ' q-humble';
+    var label = (hi_x && hi_y) ? 'Domínio' : (hi_x && !hi_y) ? 'Ilusão (DK)' : (!hi_x && !hi_y) ? 'Consciente' : 'Humilde';
+    var safeMat = String(p.mat).replace(/'/g, "\\'");
+    var tip = p.nome + ' · conf ' + Math.round(p.x) + '% · acerto ' + Math.round(p.y) + '% · ' + p.nItems + ' itens, ' + p.nConf + ' sliders · ' + label;
+    return '<circle class="' + cls + '" cx="' + px(p.x).toFixed(1) + '" cy="' + py(p.y).toFixed(1) + '" r="5" onclick="showStudentProfile(\'' + safeMat + '\')"><title>' + tip + '</title></circle>';
+  }).join('');
+
+  // Axis labels
+  var axisLabels = ''
+    + '<text class="kn-axis-label" x="' + (PL + plotW / 2) + '" y="' + (H - 14) + '" text-anchor="middle">Confiança média declarada (%)</text>'
+    + '<text class="kn-axis-label" transform="rotate(-90) translate(' + (-H/2 + 14) + ',16)" text-anchor="middle">Acerto 1ª tentativa (%)</text>';
+
+  stage.innerHTML = '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
+    + rectsHtml + gridHtml + axesHtml + labelsHtml + dotsHtml + axisLabels
+    + '</svg>';
+
+  if (countEl) countEl.textContent = pts.length + ' alunos no scatter · ' + dataset.gated + ' fora do gate';
+  if (strip) {
+    if (dataset.gated > 0) {
+      strip.style.display = '';
+      strip.innerHTML = '<strong>' + dataset.gated + ' aluno' + (dataset.gated > 1 ? 's' : '') + '</strong> sem dados suficientes ainda (gate: ≥6 itens com gabarito + ≥3 sliders pós-seção).';
+    } else {
+      strip.style.display = 'none';
+    }
+  }
+
+  // Listener idempotente no select
+  if (thresholdSel && !thresholdSel._mpeBound) {
+    thresholdSel.addEventListener('change', function(){
+      try { localStorage.setItem(key, thresholdSel.value); } catch(e) {}
+      renderKnowerQuadrant();
+    });
+    thresholdSel._mpeBound = true;
+  }
+  // Listener idempotente no link "como ler"
+  var helpLink = document.getElementById('kn-help-link');
+  if (helpLink && !helpLink._mpeBound) {
+    helpLink.addEventListener('click', function(){
+      if (typeof showCalibHelp === 'function') {
+        try { showCalibHelp(); return; } catch(e) {}
+      }
+      // Fallback: alert leve com explicação inline
+      alert('Knower’s quadrant\n\nX = confiança média declarada (sliders pós).\nY = acerto 1ª tentativa real.\n\nIlusão (Dunning-Kruger) = alta conf, baixo acerto — alvo de feedback calibrador.\nDomínio = alta conf, alto acerto.\nHumilde = baixa conf, alto acerto — vale dizer "tá indo bem".\nConsciente da lacuna = baixa conf, baixo acerto — alvo de monitoria/intervenção.');
+    });
+    helpLink._mpeBound = true;
+  }
 }
 
 // Export functions
