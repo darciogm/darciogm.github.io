@@ -60,8 +60,8 @@ body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);co
 .stat-badge .val{font-size:1.8rem;font-weight:700;color:var(--accent)}
 .stat-badge .lbl{font-size:0.75rem;color:var(--text-muted)}
 
-.aulas-grid{max-width:1000px;margin:0 auto;padding:0 1rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
-.aula-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.2rem;transition:0.2s;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.aulas-grid{max-width:1000px;margin:0 auto;padding:0 1rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1rem;align-items:stretch}
+.aula-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.25rem 1.3rem;transition:0.2s;box-shadow:var(--shadow);display:flex;flex-direction:column;min-height:240px}
 .aula-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(200,16,46,0.15);transform:translateY(-2px)}
 .aula-card .aula-num{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:0.3rem}
 .aula-card .aula-title{font-size:1rem;font-weight:600;margin-bottom:0.3rem}
@@ -383,6 +383,183 @@ details .solution-body{padding:1rem}
 .detail-section details summary{padding:0.8rem 1rem;font-weight:600;font-size:0.9rem;color:var(--primary);cursor:pointer;background:#FAFAF8;border-radius:var(--radius)}
 .detail-section details[open] summary{border-bottom:1px solid var(--border);border-radius:var(--radius) var(--radius) 0 0}
 .detail-section .detail-body{padding:1rem 1.2rem}
+
+/* ============================================================ */
+/* DASHBOARD ALUNO — refactor pendencias multi-aula + estados CTA */
+/* ============================================================ */
+
+/* Banner de urgência sticky no topo do portal */
+.urgency-banner{
+  position:sticky;top:48px;z-index:90;
+  background:linear-gradient(90deg,#7A1F1F,#C8102E);color:#fff;
+  display:flex;align-items:center;justify-content:center;gap:0.8rem;
+  padding:0.7rem 1.2rem;font-size:0.88rem;line-height:1.35;
+  box-shadow:0 2px 6px rgba(122,31,31,0.25);
+}
+.urgency-banner strong{font-weight:700}
+.urgency-banner .urgency-cta{
+  background:rgba(255,255,255,0.18);color:#fff;text-decoration:none;
+  padding:0.3rem 0.7rem;border-radius:4px;font-weight:600;font-size:0.82rem;
+  border:1px solid rgba(255,255,255,0.3);transition:0.15s;
+  white-space:nowrap;
+}
+.urgency-banner .urgency-cta:hover{background:rgba(255,255,255,0.3)}
+
+/* Indicador de ritmo (4° stat-badge) */
+.stat-badge.rhythm-badge{padding:0.1rem 0.6rem;border-radius:8px;border:1px solid transparent}
+.stat-badge.rhythm-badge .val{font-size:1.5rem;line-height:1.1}
+.stat-badge.rhythm-em-dia{background:#F0FDF4;border-color:#BBF7D0}
+.stat-badge.rhythm-em-dia .val{color:#15803D}
+.stat-badge.rhythm-pegando{background:#FFFBEB;border-color:#FDE68A}
+.stat-badge.rhythm-pegando .val{color:#B45309}
+.stat-badge.rhythm-atrasado{background:#FEF2F2;border-color:#FECACA}
+.stat-badge.rhythm-atrasado .val{color:#B91C1C}
+.stat-badge.rhythm-novo{background:#F1F5F9;border-color:#E2E8F0}
+
+/* Próximo passo recomendado (entre stats e pendências) */
+.next-step-card{
+  max-width:1000px;margin:0.6rem auto 1rem;padding:0.85rem 1.1rem;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  display:flex;align-items:center;gap:0.9rem;
+  box-shadow:var(--shadow);
+}
+.next-step-card.next-step-critica{border-left:4px solid var(--danger);background:#FFF5F5}
+.next-step-card.next-step-alta{border-left:4px solid var(--warning);background:#FFFBEB}
+.next-step-card.next-step-normal{border-left:4px solid var(--accent);background:#FAFAF8}
+.next-step-card.next-step-zen{border-left:4px solid var(--success);background:#F3FBF6}
+.next-step-card .next-step-icon{font-size:1.5rem;flex:0 0 auto}
+.next-step-card .next-step-body{flex:1 1 auto;font-size:0.88rem;line-height:1.4}
+.next-step-card .next-step-text{color:var(--text)}
+.next-step-card .next-step-text strong{color:var(--primary)}
+.next-step-card .next-step-hint{font-size:0.76rem;color:var(--text-muted);margin-top:0.2rem}
+.next-step-card .next-step-cta{
+  flex:0 0 auto;background:var(--accent);color:#fff;text-decoration:none;
+  padding:0.55rem 0.95rem;border-radius:var(--radius);font-size:0.85rem;font-weight:600;
+  display:inline-flex;align-items:center;white-space:nowrap;transition:0.15s;
+}
+.next-step-card .next-step-cta:hover{background:var(--accent-hover)}
+@media(max-width:640px){
+  .next-step-card{flex-direction:column;align-items:stretch;text-align:center}
+  .next-step-card .next-step-cta{align-self:center}
+}
+
+/* Pendências: card + buckets + items */
+.pend-card{
+  max-width:1000px;margin:0 auto 1.5rem;padding:1rem 1.3rem;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.pend-card .pend-header{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;flex-wrap:wrap;margin-bottom:0.8rem}
+.pend-card .pend-title{font-size:1rem;font-weight:700;color:var(--primary);margin:0}
+.pend-card .pend-sub{font-size:0.78rem;color:var(--text-muted)}
+.pend-bucket{margin-bottom:1rem}
+.pend-bucket:last-child{margin-bottom:0}
+.pend-bucket-head{font-size:0.78rem;font-weight:700;color:var(--primary);padding:0.3rem 0;margin-bottom:0.4rem;border-bottom:1px dashed var(--border);display:flex;align-items:baseline;gap:0.4rem}
+.pend-bucket-head .pend-count{color:var(--text-muted);font-weight:500;font-size:0.74rem}
+.pend-bucket-now .pend-bucket-head{color:#B91C1C;border-bottom-color:#FECACA}
+.pend-bucket-soon .pend-bucket-head{color:#B45309;border-bottom-color:#FDE68A}
+.pend-bucket-later .pend-bucket-head{color:var(--text-muted)}
+.pend-item{
+  display:flex;align-items:center;gap:0.7rem;padding:0.6rem 0.75rem;margin:0.3rem 0;
+  background:#FAFAF8;border:1px solid var(--border);border-radius:var(--radius);
+  text-decoration:none;color:var(--text);transition:0.15s;
+}
+.pend-item:hover{background:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(200,16,46,0.08);transform:translateX(2px)}
+.pend-item .pend-icon{font-size:1.05rem;flex:0 0 auto}
+.pend-item .pend-info{flex:1 1 auto;display:flex;flex-direction:column;gap:0.1rem;min-width:0}
+.pend-item .pend-title{font-size:0.85rem;font-weight:600;color:var(--text);overflow:hidden;text-overflow:ellipsis}
+.pend-item .pend-sub{font-size:0.72rem;color:var(--text-muted)}
+.pend-item .pend-prazo{margin-right:0.3rem}
+.pend-item .pend-arrow{flex:0 0 auto;color:var(--accent);font-weight:600;opacity:0.5;transition:0.15s}
+.pend-item:hover .pend-arrow{opacity:1;transform:translateX(2px)}
+.pend-badge{
+  flex:0 0 auto;display:inline-block;padding:0.2rem 0.55rem;border-radius:10px;
+  font-size:0.72rem;font-weight:700;white-space:nowrap;
+}
+.pend-badge.pend-urg-critica{background:#FED7D7;color:#7A1F1F}
+.pend-badge.pend-urg-alta{background:#FEF3C7;color:#78350F}
+.pend-badge.pend-urg-normal{background:#D1FAE5;color:#065F46}
+.pend-empty{font-size:0.85rem;color:var(--text-muted);padding:1.2rem;text-align:center}
+@media(max-width:520px){
+  .pend-item{flex-wrap:wrap}
+  .pend-item .pend-info{flex-basis:60%}
+}
+
+/* Aulas section head com toggle */
+.my-performance.aulas-section-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem}
+.my-performance.aulas-section-head h3{margin-bottom:0}
+.hide-done-toggle{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-muted);cursor:pointer;user-select:none}
+.hide-done-toggle input{margin:0;cursor:pointer}
+.aulas-empty-state{grid-column:1/-1;padding:1.5rem;text-align:center;color:var(--text-muted);font-size:0.88rem;font-style:italic}
+
+/* Aula card refactor — bordas por estado + altura alinhada */
+.aula-card .aula-card-head{flex:1;display:flex;flex-direction:column}
+.aula-card .aula-title{font-size:1.05rem;font-weight:600;line-height:1.35;margin-bottom:0.35rem;color:var(--primary)}
+.aula-card .aula-desc{font-size:0.8rem;color:var(--text-muted);line-height:1.45;flex:1;margin-bottom:0.7rem}
+.aula-card.aula-all-done{border-left:4px solid var(--success);background:#F7FBF9}
+.aula-card.aula-has-late{border-left:4px solid var(--danger)}
+.aula-card.aula-has-open{border-left:4px solid var(--accent)}
+.aula-card.aula-locked,.aula-card.aula-em-breve{opacity:0.55}
+.aula-card.aula-em-breve:hover{transform:none;border-color:var(--border);box-shadow:var(--shadow)}
+
+.aula-status-badge{display:inline-block;padding:0.2rem 0.55rem;border-radius:10px;font-size:0.65rem;font-weight:700;text-transform:none;letter-spacing:0;white-space:nowrap}
+.aula-status-badge.badge-all-done{background:#D1FAE5;color:#065F46}
+.aula-status-badge.badge-late{background:#FED7D7;color:#7A1F1F}
+.aula-status-badge.badge-open{background:#FEF3C7;color:#78350F}
+.aula-status-badge.badge-soon{background:#E2E8F0;color:#475569}
+
+/* Linha de CTAs por componente */
+.aula-cta-row{
+  display:grid;grid-template-columns:1fr 1fr;gap:0.4rem;
+  margin-top:0.7rem;padding-top:0.65rem;border-top:1px solid var(--border);
+}
+@media(min-width:520px){.aula-cta-row{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:340px){.aula-cta-row{grid-template-columns:1fr}}
+
+.cta-btn{
+  display:inline-flex;align-items:center;justify-content:flex-start;gap:0.35rem;
+  min-height:2.4rem;padding:0.45rem 0.55rem;
+  font-size:0.78rem;font-weight:600;line-height:1.2;
+  text-decoration:none;border-radius:5px;border:1px solid transparent;
+  transition:0.15s;white-space:nowrap;overflow:hidden;
+}
+.cta-btn .cta-icon{flex:0 0 auto;font-size:0.95rem}
+.cta-btn .cta-label{overflow:hidden;text-overflow:ellipsis}
+.cta-btn .cta-when{font-weight:500;opacity:0.85;font-size:0.7rem}
+
+/* CTA done (verde) */
+.cta-btn.cta-done{
+  background:#065F46;color:#fff;border-color:#065F46;
+}
+.cta-btn.cta-done:hover{background:#047857;border-color:#047857}
+
+/* CTA done-but-closed (verde escuro com leve risco) */
+.cta-btn.cta-closed-done{
+  background:#0F4434;color:#A7F3D0;border-color:#0F4434;
+}
+.cta-btn.cta-closed-done .cta-label{text-decoration:line-through;text-decoration-color:rgba(167,243,208,0.5)}
+.cta-btn.cta-closed-done:hover{background:#065F46;color:#fff}
+
+/* CTA active/open (vermelho Insper) */
+.cta-btn.cta-active{
+  background:var(--accent);color:#fff;border-color:var(--accent);
+  box-shadow:0 1px 3px rgba(200,16,46,0.2);
+}
+.cta-btn.cta-active:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+
+/* CTA locked (cinza claro) */
+.cta-btn.cta-locked{
+  background:#F1F5F9;color:#94A3B8;border-color:#E2E8F0;
+  cursor:not-allowed;
+}
+.cta-btn.cta-locked .cta-when{color:#64748B}
+
+/* CTA closed (cinza escuro riscado) */
+.cta-btn.cta-closed{
+  background:#F5F5F4;color:#A8A29E;border-color:#E7E5E4;
+  cursor:not-allowed;
+}
+.cta-btn.cta-closed .cta-label{text-decoration:line-through}
 
 /* Modal generico leve para "como ler" */
 .pmi-modal-back{position:fixed;inset:0;background:rgba(26,10,10,0.7);z-index:9998;display:flex;align-items:center;justify-content:center;padding:1rem}

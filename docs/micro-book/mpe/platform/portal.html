@@ -16,6 +16,9 @@
   </div>
 </div>
 
+<!-- Banner sticky de urgencia (≤48h) -->
+<div class="urgency-banner" id="urgency-banner" style="display:none" role="alert"></div>
+
 <div class="portal-header">
   <h2>Meu painel</h2>
   <p>Leia as referências indicadas e resolva o <em>checkpoint</em> antes de cada aula. Cada acesso é registrado e alimenta tanto este painel quanto o <em>dashboard</em> do professor.</p>
@@ -23,22 +26,37 @@
     <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Aulas completas</div></div>
     <div class="stat-badge"><div class="val" id="stat-first">—</div><div class="lbl">Acerto 1ª tentativa</div></div>
     <div class="stat-badge"><div class="val" id="stat-streak">0</div><div class="lbl">Dias consecutivos</div></div>
+    <div class="stat-badge rhythm-badge" id="rhythm-badge" style="display:none"><div class="val" id="rhythm-val">—</div><div class="lbl" id="rhythm-lbl">Ritmo</div></div>
   </div>
   <div class="progress-bar" style="max-width:400px;margin:0.5rem auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem" id="progress-label">0 de 0 aulas disponíveis</div>
 </div>
 
-<!-- E3 — Caminho ate a proxima aula -->
-<div class="path-card" id="path-card" style="display:none">
-  <div class="path-header">
-    <h3 class="path-title" id="path-title">Caminho até a próxima aula</h3>
-    <span class="path-sub" id="path-sub"></span>
+<!-- Próximo passo recomendado -->
+<div class="next-step-card" id="next-step-card" style="display:none">
+  <div class="next-step-icon">🎯</div>
+  <div class="next-step-body">
+    <div class="next-step-text" id="next-step-text"></div>
+    <div class="next-step-hint" id="rhythm-hint"></div>
   </div>
-  <div id="path-body"></div>
+  <a class="next-step-cta" id="next-step-cta" href="#">abrir agora →</a>
 </div>
 
-<div class="my-performance" style="margin-top:0.5rem">
+<!-- Pendências multi-aula (substitui o antigo path-card) -->
+<div class="pend-card" id="pendencias-card" style="display:none">
+  <div class="pend-header">
+    <h3 class="pend-title">Suas pendências</h3>
+    <span class="pend-sub" id="pend-sub"></span>
+  </div>
+  <div id="pend-body"></div>
+</div>
+
+<div class="my-performance aulas-section-head">
   <h3>Aulas</h3>
+  <label class="hide-done-toggle">
+    <input type="checkbox" id="hide-done-toggle">
+    <span>Ocultar aulas concluídas</span>
+  </label>
 </div>
 <div class="aulas-grid" id="aulas-grid"></div>
 
@@ -442,88 +460,126 @@ function renderSparkline(studentData) {
 
 // recommendNext() removido: substituido por E3 (Caminho ate a proxima aula) via PortalOndax.pickFocusAula + renderPath.
 
-function renderPortal() {
-  var data = MicroTracker.getData();
-  var mat = session.matricula;
-  var studentData = data[mat] || { pages: {}, quizzes: {} };
+// HTML de um CTA individual (botao de componente da aula).
+// Estados: 'done' | 'open' (active) | 'locked' | 'closed' | 'closed-done'
+function renderCTA(label, icon, href, summaryComp, opts) {
+  opts = opts || {};
+  var cal = window.MPE_CALENDARIO;
+  var st = summaryComp; // { state, prazo, pageId } de PortalOndax.stepStatus
+  var isDone = st.state === 'done';
+  var isClosed = st.state === 'closed';
+  var isLocked = st.state === 'locked';
+  var isOpen = st.state === 'open' || st.state === 'active';
 
-  var done = 0, totalTime = 0, quizScores = [], completedTimes = [];
+  var cls = 'cta-btn';
+  var prefix = '';
+  var suffix = '';
+  var title = '';
+  var disabled = false;
+
+  if (isDone && isClosed) {
+    cls += ' cta-closed-done';
+    prefix = '✓ ';
+    suffix = '';
+    title = 'Concluído (prazo já encerrado em ' + (cal && st.prazo ? cal.fmt(st.prazo.fecha) : '') + ')';
+  } else if (isDone) {
+    cls += ' cta-done';
+    prefix = '✓ ';
+    if (st.prazo && cal) title = 'Concluído. Prazo: ' + cal.fmt(st.prazo.fecha);
+  } else if (isOpen) {
+    cls += ' cta-active';
+    if (st.prazo && cal) {
+      var diasR = Math.ceil((st.prazo.fecha - Date.now()) / 86400000);
+      title = 'Fecha em ' + cal.fmt(st.prazo.fecha) + (diasR > 0 ? ' (' + diasR + ' dia(s))' : ' (fecha hoje)');
+    }
+  } else if (isLocked) {
+    cls += ' cta-locked';
+    var dt = (st.prazo && cal) ? cal.fmtData(st.prazo.abre) : 'em breve';
+    suffix = ' <span class="cta-when">(abre ' + dt + ')</span>';
+    title = 'Abre em ' + dt;
+    disabled = true;
+  } else if (isClosed) {
+    cls += ' cta-closed';
+    suffix = ' <span class="cta-when">(encerrado)</span>';
+    title = 'Prazo encerrado em ' + (cal && st.prazo ? cal.fmt(st.prazo.fecha) : '');
+  }
+
+  var content = '<span class="cta-icon">' + icon + '</span><span class="cta-label">' + prefix + label + suffix + '</span>';
+  if (disabled) {
+    return '<span class="' + cls + '" title="' + title + '">' + content + '</span>';
+  }
+  return '<a class="' + cls + '" href="' + href + '" title="' + title + '">' + content + '</a>';
+}
+
+function renderAulasGrid(myData, hideDone) {
+  var grid = document.getElementById('aulas-grid');
   var availableCount = AULAS.filter(function(a){return a.available}).length;
-  var gridHtml = '';
-  AULAS.forEach(function(a) {
-    var pageId = 'aula-' + String(a.n).padStart(2,'0');
-    var pg = studentData.pages[pageId] || {};
-    var qz = studentData.quizzes[pageId] || {};
-    var visited = pg.visits > 0;
-    var quizDone = qz.attempts > 0;
-    var badge, badgeClass;
-    if (!a.available) { badge = 'Em breve'; badgeClass = 'badge-new'; }
-    else if (quizDone) { badge = 'Completa'; badgeClass = 'badge-done'; done++; completedTimes.push(pg.totalTime || 0); }
-    else if (visited) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
-    else { badge = 'Nova'; badgeClass = 'badge-new'; }
-    if (pg.totalTime) totalTime += pg.totalTime;
-    if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
+  var aulasFullyDoneCount = 0;
+  var html = '';
+  var hiddenByToggle = 0;
 
+  AULAS.forEach(function(a) {
     var pid2 = String(a.n).padStart(2,'0');
-    var cardHeader = '<div class="aula-num">Aula ' + pid2 + ' &middot; ' + a.cap + '</div>'
+    var summary = a.available ? PortalOndax.aulaSummary(a, myData) : null;
+    if (summary && summary.allDone) aulasFullyDoneCount++;
+
+    if (a.available && hideDone && summary.allDone) { hiddenByToggle++; return; }
+
+    var cardCls = 'aula-card';
+    var statusBadge = '';
+    if (!a.available) {
+      cardCls += ' aula-em-breve';
+      statusBadge = '<span class="aula-status-badge badge-soon">Em breve</span>';
+    } else if (summary.allDone) {
+      cardCls += ' aula-all-done';
+      statusBadge = '<span class="aula-status-badge badge-all-done">✓ ' + summary.done + '/' + summary.total + ' concluídas</span>';
+    } else if (summary.hasLate) {
+      cardCls += ' aula-has-late';
+      statusBadge = '<span class="aula-status-badge badge-late">⚠ ' + summary.closed + ' perdida(s) · ' + summary.done + '/' + summary.total + '</span>';
+    } else if (summary.hasOpen) {
+      cardCls += ' aula-has-open';
+      statusBadge = '<span class="aula-status-badge badge-open">' + summary.open + ' aberta(s) · ' + summary.done + '/' + summary.total + '</span>';
+    } else {
+      cardCls += ' aula-locked';
+      statusBadge = '<span class="aula-status-badge badge-soon">Aguardando abertura</span>';
+    }
+
+    var cardHeader = '<div class="aula-card-head">'
+      + '<div class="aula-num">Aula ' + pid2 + ' &middot; ' + a.cap + '</div>'
       + '<div class="aula-title">' + a.title + '</div>'
       + '<div class="aula-desc">' + a.desc + '</div>'
-      + '<div class="aula-meta"><span class="time">&#9201; ' + a.time + ' min</span>'
-      + '<span class="badge ' + badgeClass + '">' + badge + '</span></div>';
+      + '<div class="aula-meta">'
+      +   '<span class="time">&#9201; ' + a.time + ' min</span>'
+      +   statusBadge
+      + '</div>'
+      + '</div>';
 
     if (a.available) {
-      // Barra de CTAs: pré-aula · material · pós-aula · exercícios.
-      // Estado de cada CTA derivado do MPE_CALENDARIO (SSOT). Fallback
-      // nas flags manuais de AULAS[] se o calendario.js nao carregou ou
-      // a aula nao esta no calendario.
-      var ctaStyleBase = 'display:inline-block;padding:0.35rem 0.6rem;margin:0.15rem 0.2rem 0 0;border-radius:4px;font-size:0.72rem;font-weight:600;text-decoration:none;line-height:1.2;';
-      var ctaActive = ctaStyleBase + 'background:var(--accent);color:#fff;';
-      var ctaMain = ctaStyleBase + 'background:var(--primary);color:#fff;';
-      var ctaLocked = ctaStyleBase + 'background:#e2e8f0;color:#64748b;cursor:not-allowed;';
-      var ctaClosed = ctaStyleBase + 'background:#f5f5f4;color:#a8a29e;cursor:not-allowed;text-decoration:line-through;';
-
-      var cal = window.MPE_CALENDARIO;
-      function stateOf(comp, legacyFlag) {
-        if (cal && a.n <= 9) {
-          if (cal.isOpen(a.n, comp)) return { state: 'open', prazo: cal.getPrazo(a.n, comp) };
-          if (cal.isClosed(a.n, comp)) return { state: 'closed', prazo: cal.getPrazo(a.n, comp) };
-          if (cal.isNotYetOpen(a.n, comp)) return { state: 'locked', prazo: cal.getPrazo(a.n, comp) };
-        }
-        return { state: legacyFlag ? 'open' : 'locked', prazo: null };
-      }
-
-      var preS = stateOf('pre', a.preAvailable);
-      var posS = stateOf('pos', a.posAvailable);
-      var exercS = stateOf('exerc', a.exercAvailable);
-
-      function btn(label, comp, suffix, statusObj) {
-        var href = 'aula-' + pid2 + (suffix ? '-' + suffix : '') + '.html';
-        if (statusObj.state === 'open') {
-          return '<a href="' + href + '" style="' + ctaActive + '" title="Fecha em ' + cal.fmt(statusObj.prazo.fecha) + '">' + label + '</a>';
-        }
-        if (statusObj.state === 'closed') {
-          return '<a href="' + href + '" style="' + ctaClosed + '" title="Prazo encerrado em ' + cal.fmt(statusObj.prazo.fecha) + '">' + label + ' (encerrado)</a>';
-        }
-        // locked
-        var dt = statusObj.prazo ? cal.fmtData(statusObj.prazo.abre) : 'em breve';
-        return '<span style="' + ctaLocked + '" title="Abre em ' + dt + '">' + label + ' (' + dt + ')</span>';
-      }
-
-      var preBtn = btn('📝 Pré-aula', 'pre', 'pre', preS);
-      var materialBtn = '<a href="aula-' + pid2 + '.html" style="' + ctaMain + '" title="Material de leitura + micro-checkpoints">📖 Material</a>';
-      var posBtn = btn('✍ Pós-aula', 'pos', 'pos', posS);
-      var exercBtn = btn('📋 Exercícios', 'exerc', 'exerc', exercS);
-      var ctaRow = '<div style="margin-top:0.5rem;padding-top:0.5rem;border-top:1px solid #e2e8f0;">' + preBtn + materialBtn + posBtn + exercBtn + '</div>';
-
-      gridHtml += '<div class="aula-card">' + cardHeader + ctaRow + '</div>';
+      var preBtn = renderCTA('Pré-aula', '📝', 'aula-' + pid2 + '-pre.html', summary.byComp.pre);
+      var matBtn = renderCTA('Material', '📖', 'aula-' + pid2 + '.html', summary.byComp.material);
+      var posBtn = renderCTA('Pós-aula', '✍', 'aula-' + pid2 + '-pos.html', summary.byComp.pos);
+      var exBtn  = renderCTA('Exercícios', '📋', 'aula-' + pid2 + '-exerc.html', summary.byComp.exerc);
+      html += '<div class="' + cardCls + '">'
+            + cardHeader
+            + '<div class="aula-cta-row">' + preBtn + matBtn + posBtn + exBtn + '</div>'
+            + '</div>';
     } else {
-      gridHtml += '<div class="aula-card" style="opacity:0.5;cursor:not-allowed">' + cardHeader + '</div>';
+      html += '<div class="' + cardCls + '">' + cardHeader + '</div>';
     }
   });
 
-  document.getElementById('aulas-grid').innerHTML = gridHtml;
+  if (html === '' && hiddenByToggle > 0) {
+    html = '<div class="aulas-empty-state">Todas as ' + hiddenByToggle + ' aulas disponíveis estão concluídas. Desative o filtro para vê-las.</div>';
+  }
+  grid.innerHTML = html;
 
-  // Monitorias grid
+  // Stats topo: aulas integralmente concluídas (4/4)
+  document.getElementById('stat-done').textContent = aulasFullyDoneCount;
+  document.getElementById('progress-fill').style.width = Math.round(aulasFullyDoneCount / availableCount * 100) + '%';
+  document.getElementById('progress-label').textContent = aulasFullyDoneCount + ' de ' + availableCount + ' aulas integralmente concluídas';
+}
+
+function renderMonitoriasGrid(studentData) {
   var monHtml = '';
   MONITORIAS.forEach(function(m) {
     var pageId = 'monitoria-' + String(m.n).padStart(2,'0');
@@ -550,19 +606,32 @@ function renderPortal() {
     }
   });
   document.getElementById('monitorias-grid').innerHTML = monHtml;
+}
 
-  // Stats principais (topo: 3 badges)
-  document.getElementById('stat-done').textContent = done;
+function renderBasicStats() {
+  var data = MicroTracker.getData();
+  var mat = session.matricula;
+  var studentData = data[mat] || { pages: {}, quizzes: {} };
+
+  var totalTime = 0, quizScores = [], completedTimes = [];
+  AULAS.forEach(function(a) {
+    var pageId = 'aula-' + String(a.n).padStart(2,'0');
+    var pg = studentData.pages[pageId] || {};
+    var qz = studentData.quizzes[pageId] || {};
+    if (qz.attempts > 0) completedTimes.push(pg.totalTime || 0);
+    if (pg.totalTime) totalTime += pg.totalTime;
+    if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
+  });
+
   var firstTry = computeFirstTryAccuracy(studentData);
   document.getElementById('stat-first').textContent = firstTry !== null ? firstTry + '%' : '—';
   var streak = computeStreak(studentData);
   document.getElementById('stat-streak').innerHTML = streak > 0 ? '<span class="streak-flame">🔥</span>' + streak : '0';
 
-  // Progress
-  document.getElementById('progress-fill').style.width = Math.round(done / availableCount * 100) + '%';
-  document.getElementById('progress-label').textContent = done + ' de ' + availableCount + ' aulas disponíveis';
+  // Monitorias
+  renderMonitoriasGrid(studentData);
 
-  // Metricas detalhadas (acordeao) — renderizadas mesmo fechado, baratas
+  // Métricas detalhadas (acordeão) — renderizadas mesmo fechado, baratas
   renderSparkline(studentData);
   var avgCompletedMin = completedTimes.length > 0 ? Math.round(completedTimes.reduce(function(a,b){return a+b},0) / completedTimes.length / 60000) : null;
   var elAvg = document.getElementById('perf-avgtime'); if (elAvg) elAvg.textContent = avgCompletedMin !== null ? avgCompletedMin + ' min' : '—';
@@ -572,14 +641,17 @@ function renderPortal() {
     ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
 }
 
-renderPortal();
+renderBasicStats();
 
 // Onda 1 — render async (Supabase com fallback para local via tracker)
+var _portalCache = { myData: null, circadian: null, pendings: null };
+
 async function renderOnda1() {
   if (!window.PortalOndax) return;
   var myData;
   try { myData = await window.PortalOndax.loadMyData(); }
   catch(e) { console.warn('[portal] loadMyData falhou:', e); return; }
+  _portalCache.myData = myData;
 
   // Percentis de tempo da turma (k-anon >=5). Se Supabase off/RLS nega/
   // turma sem n suficiente, devolve {} e o nudge R3 cai no P25 proprio.
@@ -589,31 +661,126 @@ async function renderOnda1() {
     catch(e) { classP = {}; }
   }
 
-  // E3 — Caminho ate a proxima aula
-  var focus = window.PortalOndax.pickFocusAula(AULAS);
-  if (focus) {
-    var path = window.PortalOndax.computePath(focus, myData);
-    document.getElementById('path-card').style.display = 'block';
-    document.getElementById('path-title').textContent = 'Caminho até a Aula ' + String(focus.n).padStart(2,'0');
-    document.getElementById('path-sub').textContent = focus.title;
-    document.getElementById('path-body').innerHTML = window.PortalOndax.renderPath(path);
-  }
+  // Grid de aulas com estado por componente (done/open/locked/closed)
+  var hideDone = document.getElementById('hide-done-toggle');
+  renderAulasGrid(myData, hideDone && hideDone.checked);
+
+  // Pendências multi-aula
+  var pendings = window.PortalOndax.buildPendings(myData, AULAS);
+  _portalCache.pendings = pendings;
+  document.getElementById('pendencias-card').style.display = 'block';
+  document.getElementById('pend-sub').textContent = pendings.length === 0
+    ? 'tudo em dia'
+    : pendings.length + ' atividade(s) abertas';
+  document.getElementById('pend-body').innerHTML = window.PortalOndax.renderPendings(pendings);
+
+  // Banner de urgência (≤48h)
+  renderUrgencyBanner(pendings);
+
+  // Indicador de ritmo
+  var rhythm = window.PortalOndax.computeRhythm(myData, AULAS);
+  renderRhythm(rhythm);
+
+  // E4 — Heatmap 7x24 pessoal (precisa antes do nextStep para horaPico)
+  var cir = window.PortalOndax.buildCircadian(myData);
+  _portalCache.circadian = cir;
+  var elCirc = document.getElementById('circadian-body');
+  if (elCirc) elCirc.innerHTML = window.PortalOndax.renderCircadian(cir);
+
+  // Próximo passo recomendado (usa pendings + circadian)
+  var nextStep = window.PortalOndax.buildNextStep(pendings, cir);
+  renderNextStep(nextStep, rhythm);
 
   // E2 — Calibracao de confianca
   var cal = window.PortalOndax.buildCalibration(myData);
   var elCalib = document.getElementById('calib-body');
   if (elCalib) elCalib.innerHTML = window.PortalOndax.renderCalibration(cal);
 
-  // E4 — Heatmap 7x24 pessoal
-  var cir = window.PortalOndax.buildCircadian(myData);
-  var elCirc = document.getElementById('circadian-body');
-  if (elCirc) elCirc.innerHTML = window.PortalOndax.renderCircadian(cir);
-
-  // E8 — Nudges (depende de focusAula para R4 + classP para R3 turma)
+  // E8 — Nudges (R4 ainda usa focusAula só para o nudge de "em dia → desafio")
+  var focus = window.PortalOndax.pickFocusAula(AULAS);
   var nudges = window.PortalOndax.buildNudges(myData, focus, classP);
   var elNud = document.getElementById('nudges-wrap');
   if (elNud) elNud.innerHTML = window.PortalOndax.renderNudges(nudges);
 }
+
+function renderUrgencyBanner(pendings) {
+  var banner = document.getElementById('urgency-banner');
+  if (!banner) return;
+  if (!pendings || pendings.length === 0) { banner.style.display = 'none'; return; }
+  var critical = pendings.filter(function(p) { return p.urgencia === 'critica'; });
+  if (critical.length === 0) { banner.style.display = 'none'; return; }
+  var first = critical[0];
+  var cal = window.MPE_CALENDARIO;
+  var fechaStr = first.prazo && cal ? cal.fmt(first.prazo) : '';
+  var label;
+  if (critical.length === 1) {
+    label = '⚠ <strong>' + first.label + ' da Aula ' + String(first.aulaN).padStart(2,'0') + '</strong> fecha em '
+          + (first.diasRestantes <= 0 ? '<strong>menos de 24h</strong>' : '<strong>' + first.diasRestantes + ' dia(s)</strong>')
+          + (fechaStr ? ' (' + fechaStr + ')' : '');
+  } else {
+    label = '⚠ <strong>' + critical.length + ' atividades</strong> fecham em ≤2 dias. Comece pela mais urgente: '
+          + first.label + ' da Aula ' + String(first.aulaN).padStart(2,'0');
+  }
+  banner.innerHTML = label + ' <a class="urgency-cta" href="' + first.href + '">abrir →</a>';
+  banner.style.display = 'flex';
+}
+
+function renderRhythm(rhythm) {
+  var badge = document.getElementById('rhythm-badge');
+  if (!badge || !rhythm) return;
+  if (rhythm.totalCount === 0) { badge.style.display = 'none'; return; }
+  badge.style.display = 'block';
+  badge.classList.remove('rhythm-em-dia','rhythm-pegando','rhythm-atrasado','rhythm-novo');
+  var cls = rhythm.state === 'em-dia' ? 'rhythm-em-dia'
+          : rhythm.state === 'pegando-ritmo' ? 'rhythm-pegando'
+          : rhythm.state === 'atrasado' ? 'rhythm-atrasado'
+          : 'rhythm-novo';
+  badge.classList.add(cls);
+  var icon = rhythm.state === 'em-dia' ? '🟢'
+           : rhythm.state === 'pegando-ritmo' ? '🟡'
+           : rhythm.state === 'atrasado' ? '🔴'
+           : '⚪';
+  document.getElementById('rhythm-val').innerHTML = icon;
+  document.getElementById('rhythm-lbl').textContent = rhythm.label;
+}
+
+function renderNextStep(nextStep, rhythm) {
+  var card = document.getElementById('next-step-card');
+  if (!card) return;
+  if (!nextStep) {
+    // sem pendência: mostra mensagem positiva apenas se rhythm tem dados
+    if (rhythm && rhythm.totalCount > 0) {
+      card.style.display = 'flex';
+      card.classList.remove('next-step-critica','next-step-alta','next-step-normal');
+      card.classList.add('next-step-zen');
+      document.getElementById('next-step-text').innerHTML = '<strong>Você está em dia.</strong> Use o tempo livre para revisar gabaritos das pós-aulas ou explorar exercícios 🔴.';
+      document.getElementById('rhythm-hint').textContent = rhythm ? rhythm.hint : '';
+      var ctaEl = document.getElementById('next-step-cta');
+      ctaEl.style.display = 'none';
+    } else {
+      card.style.display = 'none';
+    }
+    return;
+  }
+  card.style.display = 'flex';
+  card.classList.remove('next-step-zen','next-step-critica','next-step-alta','next-step-normal');
+  card.classList.add('next-step-' + nextStep.urgencia);
+  document.getElementById('next-step-text').innerHTML = nextStep.text;
+  document.getElementById('rhythm-hint').textContent = rhythm ? rhythm.hint : '';
+  var cta = document.getElementById('next-step-cta');
+  cta.style.display = 'inline-flex';
+  cta.href = nextStep.href;
+  cta.textContent = nextStep.cta;
+}
+
+// Toggle "ocultar concluídas" — re-renderiza apenas a grid usando cache.
+document.addEventListener('change', function(ev) {
+  if (ev.target && ev.target.id === 'hide-done-toggle') {
+    if (_portalCache.myData) {
+      renderAulasGrid(_portalCache.myData, ev.target.checked);
+    }
+  }
+});
 
 renderOnda1();
 

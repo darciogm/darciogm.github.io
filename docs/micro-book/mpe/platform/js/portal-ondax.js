@@ -351,6 +351,245 @@
   };
 
   // ===================================================================
+  // ESTADO POR AULA — agregado dos 4 componentes
+  // ===================================================================
+
+  /**
+   * Estado agregado da aula para renderizar borda/badge do card:
+   *   { done, open, locked, closed, total, hasOpen, hasLate, allDone }
+   * onde 'closed' conta apenas componentes fechados SEM done (perdidos).
+   */
+  PortalOndax.aulaSummary = function(aula, myData) {
+    var COMPS = ['pre','material','pos','exerc'];
+    var s = { done: 0, open: 0, locked: 0, closed: 0, total: 0, byComp: {} };
+    COMPS.forEach(function(c) {
+      var st = PortalOndax.stepStatus(aula, c, myData);
+      s.byComp[c] = st;
+      s.total++;
+      if (st.state === 'done') s.done++;
+      else if (st.state === 'open') s.open++;
+      else if (st.state === 'locked') s.locked++;
+      else if (st.state === 'closed') s.closed++;
+    });
+    s.hasOpen = s.open > 0;
+    s.hasLate = s.closed > 0;
+    s.allDone = s.done === s.total;
+    return s;
+  };
+
+  // ===================================================================
+  // PENDÊNCIAS MULTI-AULA — lista plana de tudo que está aberto e não-done
+  // ===================================================================
+
+  /**
+   * Constrói lista plana de pendências (componentes em estado 'open' OU
+   * 'active' que ainda não foram concluídas) através de TODAS as aulas
+   * available. Cada item:
+   * {
+   *   aulaN, comp ('material'|'pre'|'pos'|'exerc'), pageId, href,
+   *   label, icon, prazo (ms ou null), diasRestantes, urgencia,
+   *   est (string), aulaTitle
+   * }
+   *
+   * urgencia ∈ {'critica','alta','normal'}:
+   *   - critica: ≤2 dias do fechamento
+   *   - alta:    ≤5 dias
+   *   - normal:  >5 dias
+   *
+   * Ordenadas por prazo ascendente. Componentes sem prazo (calendário
+   * indisponível) vão para o fim com diasRestantes=null.
+   */
+  PortalOndax.buildPendings = function(myData, aulas) {
+    if (!aulas) return [];
+    var COMPS = [
+      { key: 'pre',      label: 'Quiz pré-aula',  icon: '📝', est: '30–45 min', sufix: 'pre' },
+      { key: 'material', label: 'Material',       icon: '📖', est: '90–120 min', sufix: '' },
+      { key: 'pos',      label: 'Quiz pós-aula',  icon: '✍', est: '45–70 min', sufix: 'pos' },
+      { key: 'exerc',    label: 'Exercícios',     icon: '📋', est: '2h30–3h', sufix: 'exerc' }
+    ];
+    var now = Date.now();
+    var out = [];
+    aulas.forEach(function(a) {
+      if (!a.available) return;
+      COMPS.forEach(function(c) {
+        var st = PortalOndax.stepStatus(a, c.key, myData);
+        // Só incluir o que está realmente "para fazer": open (calendário aberto, não-done)
+        // OU sem calendário mas considerado open por legado.
+        if (st.state !== 'open') return;
+        var prazo = st.prazo && st.prazo.fecha ? st.prazo.fecha : null;
+        var diasRestantes = prazo != null ? Math.ceil((prazo - now) / 86400000) : null;
+        var urgencia = 'normal';
+        if (diasRestantes != null) {
+          if (diasRestantes <= 2) urgencia = 'critica';
+          else if (diasRestantes <= 5) urgencia = 'alta';
+        }
+        var href = 'aula-' + pad2(a.n) + (c.sufix ? '-' + c.sufix : '') + '.html';
+        out.push({
+          aulaN: a.n,
+          aulaTitle: a.title,
+          comp: c.key,
+          pageId: st.pageId,
+          href: href,
+          label: c.label,
+          icon: c.icon,
+          prazo: prazo,
+          diasRestantes: diasRestantes,
+          urgencia: urgencia,
+          est: c.est
+        });
+      });
+    });
+    out.sort(function(a, b) {
+      var pa = a.prazo == null ? Infinity : a.prazo;
+      var pb = b.prazo == null ? Infinity : b.prazo;
+      if (pa !== pb) return pa - pb;
+      return a.aulaN - b.aulaN;
+    });
+    return out;
+  };
+
+  /**
+   * Renderiza painel de pendências em 3 buckets temporais.
+   */
+  PortalOndax.renderPendings = function(pendings) {
+    if (!pendings || pendings.length === 0) {
+      return '<div class="empty-state pend-empty">'
+           + '<span style="font-size:1.4rem">🎉</span><br>'
+           + 'Você está em dia. Aproveite para revisar conceitos ou avançar nos exercícios 🔴 desafio.'
+           + '</div>';
+    }
+    var cal = window.MPE_CALENDARIO;
+    var fmt = function(ts) { return cal && cal.fmt ? cal.fmt(ts) : new Date(ts).toLocaleString('pt-BR'); };
+
+    // 3 buckets: ≤7d, 8–14d, >14d (sem prazo cai em "outras")
+    var b1 = [], b2 = [], b3 = [];
+    pendings.forEach(function(p) {
+      var d = p.diasRestantes;
+      if (d == null) { b3.push(p); return; }
+      if (d <= 7) b1.push(p);
+      else if (d <= 14) b2.push(p);
+      else b3.push(p);
+    });
+
+    function renderItem(p) {
+      var urgClass = 'pend-urg-' + p.urgencia;
+      var badge;
+      if (p.diasRestantes == null) badge = '<span class="pend-badge ' + urgClass + '">sem prazo</span>';
+      else if (p.diasRestantes <= 0) badge = '<span class="pend-badge pend-urg-critica">fecha hoje</span>';
+      else if (p.diasRestantes === 1) badge = '<span class="pend-badge pend-urg-critica">1 dia</span>';
+      else badge = '<span class="pend-badge ' + urgClass + '">' + p.diasRestantes + ' dias</span>';
+
+      var prazoStr = p.prazo ? '<span class="pend-prazo">fecha ' + fmt(p.prazo) + '</span>' : '';
+      return '<a class="pend-item" href="' + p.href + '">'
+           + '<span class="pend-icon">' + p.icon + '</span>'
+           + '<span class="pend-info">'
+           +   '<span class="pend-title">Aula ' + pad2(p.aulaN) + ' · ' + p.label + '</span>'
+           +   '<span class="pend-sub">' + prazoStr + ' · ' + p.est + '</span>'
+           + '</span>'
+           + badge
+           + '<span class="pend-arrow">→</span>'
+           + '</a>';
+    }
+
+    var html = '';
+    if (b1.length) {
+      html += '<div class="pend-bucket pend-bucket-now">'
+            + '<div class="pend-bucket-head">⏰ Fecha esta semana <span class="pend-count">(' + b1.length + ')</span></div>'
+            + b1.map(renderItem).join('') + '</div>';
+    }
+    if (b2.length) {
+      html += '<div class="pend-bucket pend-bucket-soon">'
+            + '<div class="pend-bucket-head">📅 Próxima semana <span class="pend-count">(' + b2.length + ')</span></div>'
+            + b2.map(renderItem).join('') + '</div>';
+    }
+    if (b3.length) {
+      html += '<div class="pend-bucket pend-bucket-later">'
+            + '<div class="pend-bucket-head">🗓️ Mais adiante <span class="pend-count">(' + b3.length + ')</span></div>'
+            + b3.map(renderItem).join('') + '</div>';
+    }
+    return html;
+  };
+
+  /**
+   * Computa indicador de ritmo do aluno: 'em-dia', 'pegando-ritmo',
+   * 'atrasado'. Heurística simples que não depende do tamanho da turma:
+   *   - atrasado: ≥1 componente com prazo já vencido (closed) E não-done
+   *   - em-dia: nenhum componente vencido E ≥50% dos componentes
+   *     já abertos foram concluídos
+   *   - pegando-ritmo: caso intermediário
+   *
+   * Retorna { state, doneCount, openCount, lateCount, label, hint }.
+   */
+  PortalOndax.computeRhythm = function(myData, aulas) {
+    if (!aulas) return null;
+    var COMPS = ['pre','material','pos','exerc'];
+    var doneCount = 0, openCount = 0, lateCount = 0, totalCount = 0;
+    aulas.forEach(function(a) {
+      if (!a.available) return;
+      COMPS.forEach(function(c) {
+        var st = PortalOndax.stepStatus(a, c, myData);
+        if (st.state === 'locked') return; // ainda não conta
+        totalCount++;
+        if (st.state === 'done') doneCount++;
+        else if (st.state === 'open') openCount++;
+        else if (st.state === 'closed') lateCount++; // não-done E fechado = perdeu prazo
+      });
+    });
+    var state, label, hint;
+    if (lateCount >= 1) {
+      state = 'atrasado';
+      label = 'Recuperando o passo';
+      hint = lateCount + ' atividade(s) fechou(aram) sem submissão. Foque nas pendências abertas — ainda dá pra zerar a próxima semana.';
+    } else if (totalCount === 0) {
+      state = 'novo';
+      label = 'Começando agora';
+      hint = 'Bem-vindo. Comece pelo Material ou Quiz pré-aula para registrar sua linha de base.';
+    } else if (doneCount / totalCount >= 0.5) {
+      state = 'em-dia';
+      label = 'Em dia';
+      hint = 'Você concluiu mais da metade do que abriu. Mantém o ritmo.';
+    } else {
+      state = 'pegando-ritmo';
+      label = 'Pegando o ritmo';
+      hint = 'Ainda há margem para concluir antes do prazo. Comece pela pendência mais próxima.';
+    }
+    return {
+      state: state, label: label, hint: hint,
+      doneCount: doneCount, openCount: openCount, lateCount: lateCount, totalCount: totalCount
+    };
+  };
+
+  /**
+   * Recomendação textual de "próximo passo": pega a pendência mais
+   * urgente e devolve uma frase pedagógica curta. Considera horaPico
+   * do circadian quando disponível.
+   */
+  PortalOndax.buildNextStep = function(pendings, circadian) {
+    if (!pendings || pendings.length === 0) return null;
+    var p = pendings[0];
+    var dias = p.diasRestantes;
+    var quando;
+    if (dias == null) quando = 'quando puder';
+    else if (dias <= 0) quando = 'hoje mesmo';
+    else if (dias === 1) quando = 'até amanhã';
+    else if (dias <= 3) quando = 'nos próximos ' + dias + ' dias';
+    else if (dias <= 7) quando = 'esta semana';
+    else quando = 'antes de ' + (window.MPE_CALENDARIO && window.MPE_CALENDARIO.fmtData ? window.MPE_CALENDARIO.fmtData(p.prazo) : '');
+
+    var sugestao = '';
+    if (circadian && circadian.horaPico && circadian.horaPico.acc >= 0.66 && circadian.horaPico.n >= 3) {
+      var dow = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+      sugestao = ' Seu melhor horário até aqui é ' + dow[circadian.horaPico.dow] + ' por volta das ' + circadian.horaPico.hour + 'h.';
+    }
+    return {
+      text: 'Próximo passo: <strong>' + p.icon + ' ' + p.label + ' da Aula ' + pad2(p.aulaN) + '</strong> — ' + quando + '.' + sugestao,
+      href: p.href,
+      cta: 'abrir agora →',
+      urgencia: p.urgencia
+    };
+  };
+
+  // ===================================================================
   // E2 — CALIBRAÇÃO DE CONFIANÇA PESSOAL (ECE)
   // ===================================================================
 
