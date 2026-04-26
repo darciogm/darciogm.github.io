@@ -13,7 +13,7 @@ with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conheciment
 
 ---
 
-### [The Intensive Margin of Small-Firm Protection: Bidding, Rents, and the Fiscal Cost of Public Procurement Set-Asides](sme-public/index.md)
+### [The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement](sme-public/index.md)
 
 (updated April, 2026 — submission-ready, JPubE format) | [PDF](sme-public/assets/sme_public_procurement.pdf) | [Online appendix](sme-public/assets/sme_public_online_appendix.pdf) | [Highlights](sme-public/assets/sme_public_highlights.pdf)
 

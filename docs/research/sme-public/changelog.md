@@ -21,7 +21,7 @@ paper: sme-public
 
 **Online appendix.** 15 sections including IPV-relaxation Gaussian copula sensitivity, Maskin--Riley FPSB calibration of V3, full λ-grid welfare CIs, Convite cross-modality consistency, Conley--Decarolis collusion screen, primitive-invariance KS tests.
 
-**Title.** Renamed from *The Price of Protecting Small Firms* to **The Intensive Margin of Small-Firm Protection**, reflecting the structural focus on within-auction (sheltered bidding) vs. participation-margin decomposition.
+**Title.** Renamed from *The Price of Protecting Small Firms* to **The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement**, reflecting the structural focus on within-auction (sheltered bidding) vs. participation-margin decomposition.
 
 ---
 

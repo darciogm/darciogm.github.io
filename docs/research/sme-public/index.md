@@ -6,9 +6,9 @@ paper: sme-public
 
 <div class="hero-section" markdown>
 
-# The Intensive Margin of Small-Firm Protection
+# The Cost of Inclusion
 
-<p class="subtitle">Bidding, Rents, and the Fiscal Cost of Public Procurement Set-Asides</p>
+<p class="subtitle">Decomposing Bidder Exclusion in Public Procurement</p>
 <p class="authors">Darcio Genicolo-Martins</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
