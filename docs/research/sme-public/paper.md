@@ -4,6 +4,14 @@ paper: sme-public
 
 # Manuscript
 
+## Download
+
+- [Main paper (v5, JPubE format) — PDF](assets/sme_public_procurement.pdf)
+- [Online appendix — PDF](assets/sme_public_online_appendix.pdf)
+- [Highlights — PDF](assets/sme_public_highlights.pdf)
+
+Submission-ready version, April 2026.
+
 ## Contribution
 
 This paper makes three main contributions:

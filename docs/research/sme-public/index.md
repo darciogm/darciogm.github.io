@@ -23,7 +23,11 @@ paper: sme-public
 
 Governments worldwide restrict public tenders to small and medium-sized enterprises (SMEs), yet the fiscal cost of this policy is virtually unknown. I exploit a natural experiment in Sao Paulo, Brazil, where the policy operates through opt-out costs: public buyers that wish to conduct open tenders must justify their choice to audit courts, effectively penalizing the efficient procurement decision. Until March 2018, medical supplies were uniquely exempt from these costs. When a legal reinterpretation---unrelated to procurement outcomes---ended this exemption, it created a clean difference-in-differences in reverse (DiDiR) design. Open tenders yielded prices 7--13% lower (12--13% nominal, 7--10% in real terms) and attracted 19% more firms, but a Gelbach decomposition reveals that increased participation explains only 6% of the price reduction---most of the savings come from fiercer competition among bidders. The fiscal cost for one product group alone is R\$50--85 million over 18 months, depending on the inflation adjustment. These costs are concentrated among standardized goods; for specialized items, restrictions appear less distortionary. The one clear benefit: SME-only tenders successfully promote local sourcing.
 
-[:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary }
+[:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary } &nbsp;
+[:material-book-open-variant: Online appendix](assets/sme_public_online_appendix.pdf){ .md-button } &nbsp;
+[:material-star-outline: Highlights](assets/sme_public_highlights.pdf){ .md-button }
+
+*Submission-ready version (v5, JPubE format) — April 2026.*
 
 **JEL Classification:**
 <span class="badge">H32</span>
