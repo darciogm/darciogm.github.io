@@ -4,152 +4,121 @@ paper: sme-public
 
 # Main Results
 
-## Event Study: Log Prices
-
-The event study plots semester-by-semester differences between group 65 (switched) and other groups (always treated). The parallel trends assumption requires that the difference is stable in the post-period (after March 2018).
-
-<figure>
-  <img src="../assets/figures/fig_01_logprices_es.png" alt="Event study: Log prices">
-  <figcaption>Figure 1. Log Prices: Difference between the always treated group and the switched group</figcaption>
-</figure>
-
-The difference between the two groups narrows dramatically after the policy change and then stabilizes in subsequent periods, supporting the parallel trends assumption.
-
-<figure>
-  <img src="../assets/figures/fig_02_distance_es.png" alt="Event study: Distance">
-  <figcaption>Figure A.1. Distance from PBUs to Winner Firms</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_03_numfirms_es.png" alt="Event study: Number of firms">
-  <figcaption>Figure A.2. Number of Participant Firms (log)</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_04_numbids_es.png" alt="Event study: Number of bids">
-  <figcaption>Figure A.3. Number of Valid Bids (log)</figcaption>
-</figure>
+The results organize around three findings. **First**, the simulated set-aside price effect is mostly within-auction: the within-auction share is 74.5% in non-pharma and 73.3% in pharma, and stays in the 73--85% range across cost-distribution estimators. **Second**, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be 50--60% larger. **Third**, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.
 
 ---
 
-## Descriptive Statistics
+## 1. Entry response
 
-|  | Group 65, Pre |  | Group 65, Post |  | Others, Pre |  | Others, Post |  |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  | Mean | SD | Mean | SD | Mean | SD | Mean | SD |
-| Price (levels) | 1,402 | 20,564 | 1,508 | 25,872 | 1,466 | 50,386 | 1,291 | 68,043 |
-| Log price | 1.72 | 2.84 | 1.91 | 2.81 | 2.85 | 2.12 | 2.78 | 2.07 |
-| Number of firms | 3.17 | 2.52 | 3.02 | 2.40 | 4.66 | 3.27 | 4.69 | 3.28 |
-| Log firms | 0.88 | 0.73 | 0.84 | 0.71 | 1.30 | 0.72 | 1.30 | 0.72 |
-| Number of valid bids | 11.10 | 15.49 | 10.99 | 16.51 | 10.13 | 15.74 | 10.47 | 16.87 |
-| Log bids | 1.64 | 1.24 | 1.61 | 1.23 | 1.69 | 1.06 | 1.70 | 1.08 |
-| Distance (km) | 238.54 | 270.42 | 215.08 | 239.63 | 164.78 | 182.23 | 170.28 | 186.07 |
-| N (completed / all) | 65,606 | 77,206 | 66,822 | 85,181 | 246,277 | 287,500 | 271,011 | 323,836 |
-
-*Price and distance computed on completed items. Firm and bid statistics computed on all items.*
-
----
-
-## DiDiR Results: Log Prices
-
-|  | 6-month | 6-month | 12-month | 12-month | 18-month | 18-month |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **g65 x Pre** | **-0.1311\*\*\*** | **-0.1441\*\*\*** | **-0.1370\*\*\*** | **-0.1369\*\*\*** | **-0.1309\*\*\*** | **-0.1330\*\*\*** |
-|  | (0.0121) | (0.0116) | (0.0107) | (0.0104) | (0.0096) | (0.0094) |
-| Sealed bids | -0.1461\*\*\* | -0.2216\*\*\* | -0.1430\*\*\* | -0.2025\*\*\* | -0.1501\*\*\* | -0.2048\*\*\* |
-|  | (0.0088) | (0.0131) | (0.0079) | (0.0123) | (0.0079) | (0.0116) |
-| Log quantity | -0.2598\*\*\* | -0.2972\*\*\* | -0.2611\*\*\* | -0.2956\*\*\* | -0.2597\*\*\* | -0.2934\*\*\* |
-|  | (0.0082) | (0.0089) | (0.0075) | (0.0080) | (0.0073) | (0.0077) |
-| Observations | 219,535 | 219,535 | 439,054 | 439,054 | 649,714 | 649,714 |
-| R-squared | 0.191 | 0.212 | 0.193 | 0.211 | 0.193 | 0.211 |
-| Item FE | YES | YES | YES | YES | YES | YES |
-| PBU FE | NO | YES | NO | YES | NO | YES |
-
-*Standard errors clustered at the item level. \*\*\* p<0.01, \*\* p<0.05, \* p<0.1.*
-
-Negotiated prices are **4.6--8.1% lower** in group 65 open tenders across all specifications and time windows.
-
----
-
-## DiDiR Results: Number of Participant Firms
-
-|  | 6-month | 6-month | 12-month | 12-month | 18-month | 18-month |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **g65 x Pre** | **0.1776\*\*\*** | **0.1821\*\*\*** | **0.1495\*\*\*** | **0.1540\*\*\*** | **0.0926\*\*\*** | **0.1004\*\*\*** |
-|  | (0.0079) | (0.0081) | (0.0062) | (0.0063) | (0.0059) | (0.0060) |
-| Observations | 261,450 | 261,450 | 524,745 | 524,745 | 773,263 | 773,263 |
-| R-squared | 0.214 | 0.167 | 0.210 | 0.165 | 0.206 | 0.163 |
-| Item FE | YES | YES | YES | YES | YES | YES |
-| PBU FE | NO | YES | NO | YES | NO | YES |
-
-*Standard errors clustered at the item level. \*\*\* p<0.01.*
-
-Open tenders attract **~22% more firms** in the short term, attenuating to **~10%** in the 18-month window.
-
----
-
-## Heterogeneous Effects by Item Value
-
-|  | Log prices | Log firms | Log bids | Distance |
+| Pregao | **SMEs Pre** | **SMEs Post** | **Non-SMEs Pre** | **Non-SMEs Post** |
 |---|:---:|:---:|:---:|:---:|
-| **Panel A: High-value items (above median)** | | | | |
-| g65 x Pre | -0.1369\*\*\* | 0.1075\*\*\* | 0.0456\*\*\* | 12.0849\*\*\* |
-|  | (0.0103) | (0.0072) | (0.0093) | (2.9018) |
-| Observations | 383,949 | 445,903 | 445,903 | 383,949 |
-| **Panel B: Low-value items (below median)** | | | | |
-| g65 x Pre | -0.0981\*\*\* | 0.0592\*\*\* | 0.0577\*\*\* | 2.8312 |
-|  | (0.0086) | (0.0075) | (0.0110) | (2.2944) |
-| Observations | 265,765 | 327,360 | 327,360 | 265,765 |
+| Non-pharma | 0.94 | **1.87** | 2.68 | **1.50** |
+| Pharma | 0.55 | **1.22** | 2.61 | **1.66** |
 
-*18-month window, base specification. Sample split at median reference value.*
-
-The price effect is **40% larger for high-value items** (-0.137 vs. -0.098). The distance effect is significant only for high-value items (12.1 km).
+SMEs roughly double in both classes; non-SMEs fall sharply. The set-aside changes both the admissible pool and the equilibrium participation response.
 
 ---
 
-## Fiscal Cost Quantification
+## 2. Structural decomposition of the set-aside
 
-Translating the estimated price effects into monetary terms provides a concrete measure of the policy's fiscal burden. The calculation applies the implied percentage price effect ($e^{\hat{\beta}} - 1$) to the total procurement value of group 65 completed items in the pre-period (Sep 2016--Feb 2018).
+Define p<sub>S<sub>1</sub></sub> as the simulated winning price under the pre-policy open regime, p<sub>S<sub>2</sub></sub> as the SME-only counterfactual at the pre-policy SME pool, and p<sub>S<sub>3</sub></sub> as the SME-only counterfactual at the observed post-policy SME pool. All numbers are normalized by the item reference price p<sup>ref</sup>.
 
-| Component | Baseline spec. | PBU FE spec. |
-|-----------|:--------------:|:------------:|
-| Price coefficient (18m) | -0.1309 | -0.1330 |
-| Implied price effect | -12.27% | -12.45% |
-| G65 pre-period total value | R$ 689.0 million | R$ 689.0 million |
-| **Estimated fiscal saving** | **R$ 84.5 million** | **R$ 85.8 million** |
+| | **p<sub>S<sub>1</sub></sub>** (open) | **p<sub>S<sub>2</sub></sub>** (SME-only, fixed pool) | **p<sub>S<sub>3</sub></sub>** (SME-only, post pool) | **Within-auction** (S<sub>2</sub>−S<sub>1</sub>) | **Entry offset** (S<sub>3</sub>−S<sub>2</sub>) | **Total** (S<sub>3</sub>−S<sub>1</sub>) |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Non-pharma | 0.759 | 1.152 | 1.018 | **+0.393** | −0.135 | **+0.259** |
+| Pharma | 0.656 | 1.141 | 0.964 | **+0.485** | −0.177 | **+0.308** |
 
-<div class="key-result" markdown>
-<span class="number">R$ 84.5--85.8 million</span>
-<span class="label">Fiscal cost of restricting tenders to SMEs for group 65 in the pre-period (18-month window, ~US$17 million)</span>
-</div>
+The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **74.5% in non-pharma** and **73.3% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset.
 
-This represents about **12% of total procurement value** for group 65. The estimate is conservative: group 65 accounts for only 27% of total BEC procurement, so the aggregate fiscal cost across all product groups subject to SME restrictions is likely several times larger. The heterogeneity results further indicate that these costs are disproportionately concentrated among high-value items.
+<figure>
+  <img src="../assets/figures/fig_v3_decomposition.png" alt="BNE counterfactual decomposition by class">
+  <figcaption>Figure 1. Bayes-Nash counterfactual price decomposition by class, under observed equilibrium entry. Bars report the simulated second-order statistic c̄<sub>(2)</sub> normalized by the item reference price under three counterfactual scenarios. The within-auction component dominates the simulated total effect in both classes; the pharmaceutical decomposition is more model-sensitive.</figcaption>
+</figure>
 
 ---
 
-## Raw Trends
+## 3. Endogenous entry as a partial offset
+
+V2 imposes the full set-aside while holding the SME pool at its pre-policy size. Relative to the realized full-set-aside counterfactual V0:
+
+| | **V2 / V0** |
+|---|:---:|
+| Non-pharma | 152.0% |
+| Pharma | 157.4% |
+
+The fixed-pool simulated effect exceeds the realized one by roughly 50--60%. Both terms in the welfare formula load on this simulated price margin, so a fixed-pool welfare arithmetic would materially overstate the burden of the policy under the model's main specification.
+
+The 50--60% attenuation is conditional on the policy instrument: under V3 (10% price preference) the analogous fixed-pool-vs-realized comparison delivers an attenuation close to zero, since non-SMEs remain in the auction and the participation margin barely moves. The entry response is therefore a property of the full-set-aside instrument, not a free-standing feature of the SME population.
 
 <figure>
-  <img src="../assets/figures/fig_05_trends_prices.png" alt="Raw trends: prices">
-  <figcaption>Figure A.4. Raw Trends: Mean Log Price by Month</figcaption>
+  <img src="../assets/figures/fig_v3_entry_insurance.png" alt="Simulated participation-margin offset">
+  <figcaption>Figure 2. Simulated price effect under the realized (V0) vs. fixed-pool (V2) counterfactuals. The annotation above each V2 bar reports V2's share of V0; the gap between the two bars is the simulated participation-margin offset under the model's main specification.</figcaption>
 </figure>
 
-<figure>
-  <img src="../assets/figures/fig_06_trends_firms.png" alt="Raw trends: firms">
-  <figcaption>Figure A.5. Raw Trends: Mean Log Number of Firms by Month</figcaption>
-</figure>
+---
+
+## 4. Sources of the departure from earlier estimates
+
+A 2 × 2 grid in which each axis is a methodological choice — cost distributions raw vs. UH-clean, and entry fixed vs. endogenous — shows the relative gap between the clean-and-endogenous main spec and the raw-and-fixed-pool reduced-form-style proxy is **about 72% in non-pharma and about 44% in pharma**. UH correction accounts for more than half of the gap by changing the right tail of the recovered cost distribution; endogenous entry accounts for the rest by recognizing the policy-induced thickening of the SME pool.
+
+A second decomposition bridges the DiD coefficient itself to the structural counterfactual through four mechanical sources of divergence:
+
+| Source of divergence | Non-pharma | Pharma |
+|---|:---:|:---:|
+| (a) Sample restriction (Pregao only, c<sub>ε</sub> ≤ 3, n ≥ 2) | +0.025 | +0.060 |
+| (b) UH cleaning (Krasnokutskaya scale shrinkage) | +0.040 | +0.075 |
+| (c) Functional form (c<sub>(2)</sub> vs. linear log-mean) | +0.050 | +0.045 |
+| (d) Conditioning set (counterfactual vs. realized entry) | +0.020 | +0.005 |
+| **Sum of contributions** | **+0.135** | **+0.185** |
+| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.259 | +0.308 |
+
+The four contributions cumulate against the DiD baseline of approximately +0.06 (DiD on p<sup>final</sup>/p<sup>ref</sup>) to deliver the structural object up to non-linear interaction residuals of +0.004 and +0.003 in non-pharma and pharma respectively. The 3--4× gap between the structural and the DiD is informally attributable to the four sources documented above and is predictable in direction under the maintained structural assumptions.
+
+---
+
+## 5. Confidence intervals
+
+Cluster bootstrap at the auction level with B = 500 replicates gives the following 95% CIs on p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> under the all-bidders regime:
+
+| Class | Bootstrap mean | 95% CI |
+|---|:---:|:---:|
+| Non-pharma | +0.236 | [0.186, 0.289] |
+| Pharma | +0.305 | [0.247, 0.364] |
+
+The bootstrap within-auction-share CI is **[64.9%, 88.1%] in non-pharma** and **[62.5%, 82.9%] in pharma**. Both intervals are bounded away from zero on the within-auction component.
+
+---
+
+## 6. Entry cost calibration
+
+Zero-profit implied entry cost per bidder, by class:
+
+| | **κ<sup>SME</sup>** | **κ<sup>¬</sup>** | **κ<sup>¬</sup> / κ<sup>SME</sup>** |
+|---|:---:|:---:|:---:|
+| Non-pharma | R\$0.55 | R\$2.46 | 4.5× |
+| Pharma | R\$0.11 | R\$0.51 | 4.6× |
+
+The roughly 4.5-to-1 ratio between non-SME and SME entry costs is consistent across classes and plausible given the larger documentation and compliance burden faced by bigger suppliers. These magnitudes are a calibration check on the assumed Poisson primitives rather than a structural estimate.
+
+---
+
+## 7. Policy comparison and goods characteristics
+
+Under a 10% SME price preference (V3), SME bids are scored with a 10% discount for winner selection but the government pays the actual bid:
+
+| | **V0 total effect** (full set-aside) | **V3 total effect** (10% preference) |
+|---|:---:|:---:|
+| Non-pharma | +0.259 | −0.004 |
+| Pharma | +0.308 | +0.002 |
+
+The preference rule shifts price by essentially zero in both classes because non-SMEs remain in the auction and continue to discipline the second-order statistic even when an SME wins.
+
+What differs across classes is the **stability of the ranking against the full set-aside**:
+
+- **Non-pharma:** the preference rule dominates V0 under both the main equilibrium-selection specification and the strict-invariance benchmark. Bidder exclusion is robustly dominated by a moderate preference rule in thick standardized markets.
+- **Pharma:** the preference rule dominates V0 under the main specification, but the ranking **reverses under strict invariance** — V0's total price effect rises to +0.47, and the implied welfare weight needed to justify it falls to **0.7**. The bifurcation is diagnostic of market structure: in thicker, more standardized markets, bidder exclusion is robustly dominated by a moderate preference rule; in thinner, more heterogeneous markets, the ranking is more sensitive because the identity of the induced entrants matters for equilibrium price formation.
 
 <figure>
-  <img src="../assets/figures/fig_07_trends_bids.png" alt="Raw trends: bids">
-  <figcaption>Figure A.6. Raw Trends: Mean Log Number of Valid Bids by Month</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_08_trends_distance.png" alt="Raw trends: distance">
-  <figcaption>Figure A.7. Raw Trends: Mean Distance (km) by Month</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_10_sme_share.png" alt="SME participation share">
-  <figcaption>Figure A.9. SME Participation Share Among Firms by Month</figcaption>
+  <img src="../assets/figures/fig_v3_optimal_preference.png" alt="Optimal preference instrument">
+  <figcaption>Figure 3. Optimal preference instrument by class. The 10% preference is approximately welfare-optimal in non-pharma and lies near the knife-edge in pharma under the main specification.</figcaption>
 </figure>

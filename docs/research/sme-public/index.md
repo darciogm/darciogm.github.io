@@ -6,22 +6,22 @@ paper: sme-public
 
 <div class="hero-section" markdown>
 
-# The Price of Protecting Small Firms
+# The Intensive Margin of Small-Firm Protection
 
-<p class="subtitle">Evidence from Public Procurement</p>
+<p class="subtitle">Bidding, Rents, and the Fiscal Cost of Public Procurement Set-Asides</p>
 <p class="authors">Darcio Genicolo-Martins</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">R$ 50--85 million</span>
-<span class="label">Fiscal cost of SME-only tender restrictions for group 65 alone (18-month pre-period, real to nominal range)</span>
+<span class="number">73--85%</span>
+<span class="label">Share of the simulated SME-only price effect that operates within the auction (sheltered bidding) rather than through endogenous SME entry, across cost-distribution estimators and across both the equilibrium-selection and strict-invariance specifications</span>
 </div>
 
 ## Abstract
 
-Governments worldwide restrict public tenders to small and medium-sized enterprises (SMEs), yet the fiscal cost of this policy is virtually unknown. I exploit a natural experiment in Sao Paulo, Brazil, where the policy operates through opt-out costs: public buyers that wish to conduct open tenders must justify their choice to audit courts, effectively penalizing the efficient procurement decision. Until March 2018, medical supplies were uniquely exempt from these costs. When a legal reinterpretation---unrelated to procurement outcomes---ended this exemption, it created a clean difference-in-differences in reverse (DiDiR) design. Open tenders yielded prices 7--13% lower (12--13% nominal, 7--10% in real terms) and attracted 19% more firms, but a Gelbach decomposition reveals that increased participation explains only 6% of the price reduction---most of the savings come from fiercer competition among bidders. The fiscal cost for one product group alone is R\$50--85 million over 18 months, depending on the inflation adjustment. These costs are concentrated among standardized goods; for specialized items, restrictions appear less distortionary. The one clear benefit: SME-only tenders successfully promote local sourcing.
+SME set-asides are a default procurement-preference instrument worldwide. Their welfare turns on whether the price cost flows through the change in admissible bidders or through how each remaining bidder bids — a question price regressions cannot answer. I exploit a March 2018 administrative reversal that extended an SME-only rule to medical supplies on Sao Paulo's centralized R\$13 billion procurement platform. A difference-in-differences against 76 never-treated product groups estimates a 10--11 percent rise in absolute winning prices, with SME participation roughly doubling. An asymmetric IPV model identified from Pregao drop-out bids decomposes the price response under observed equilibrium entry: the within-auction component accounts for 74 percent of the simulated effect in non-pharmaceuticals and 73 percent in pharmaceuticals; endogenous SME entry attenuates a 50--60 percent larger latent shock. The structural counterfactual on its own normalization is three to four times the DiD coefficient because the two objects average over related but distinct primitives. A 10 percent SME price preference welfare-dominates the set-aside in thick standardized markets at near-zero fiscal cost; the comparison reverses in thin pharmaceutical markets under strict primitive invariance. The conditional ranking is itself the policy-design statement.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary } &nbsp;
 [:material-book-open-variant: Online appendix](assets/sme_public_online_appendix.pdf){ .md-button } &nbsp;
@@ -30,38 +30,56 @@ Governments worldwide restrict public tenders to small and medium-sized enterpri
 *Submission-ready version (v5, JPubE format) — April 2026.*
 
 **JEL Classification:**
+<span class="badge">D44</span>
 <span class="badge">H32</span>
 <span class="badge">H57</span>
 <span class="badge">L26</span>
 <span class="badge">L53</span>
-<span class="badge">O12</span>
-<span class="badge">R12</span>
 
 **Keywords:**
 <span class="badge badge-kw">public procurement</span>
-<span class="badge badge-kw">SMEs</span>
-<span class="badge badge-kw">policy costs</span>
-<span class="badge badge-kw">restricted tenders</span>
-<span class="badge badge-kw">Brazil</span>
+<span class="badge badge-kw">SME set-asides</span>
+<span class="badge badge-kw">asymmetric auctions</span>
+<span class="badge badge-kw">structural estimation</span>
+<span class="badge badge-kw">welfare</span>
+<span class="badge badge-kw">marginal cost of public funds</span>
+
+---
+
+## Headline magnitudes
+
+| | **Non-pharma** | **Pharma** |
+|---|:---:|:---:|
+| DiD on log p<sup>final</sup> (absolute) | +0.10 to +0.11 | +0.10 to +0.11 |
+| DiD on p<sup>final</sup> / p<sup>ref</sup> | +0.06 | +0.06 |
+| Simulated p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub>, units of p<sup>ref</sup> | +0.259 | +0.308 |
+| Within-auction share, main spec | 74.5% | 73.3% |
+| Within-auction share, Turnbull NPMLE | 74.0% | 82.0% |
+| Within-auction share, strict invariance | 85.0% | 79.0% |
+| Welfare cost (% of p<sub>S<sub>1</sub></sub>, λ = 0.30) | 28.7% | 47.0% |
+| w<sup>SME</sup><sub>★</sub> to prefer set-aside, main spec | 2.42 | 2.61 |
+| w<sup>SME</sup><sub>★</sub>, strict invariance | > 1 | 0.7 |
+
+*DiD against 76 never-treated product groups, 18-month symmetric window around March 2018. Structural magnitudes from the asymmetric IPV counterfactual under observed equilibrium entry.*
 
 ---
 
 ## Key Findings
 
-!!! success "SME restrictions raise procurement prices by 7--13%"
-    Open tenders for Group 65 yielded **7--13% lower prices** (12--13% nominal, 7--10% IPCA-deflated) compared to SME-restricted tenders, after controlling for item and buyer fixed effects.
+!!! success "The price effect is mostly within the auction"
+    The within-auction component — *sheltered bidding* — is **74.5% of the simulated total effect in non-pharma** and 73.3% in pharma. The share stays in the **73--85% range** across cost-distribution estimators (Turnbull NPMLE: 74, 82) and across the two specifications of the post-policy SME pool (strict invariance: 85, 79). The set-aside's price cost is mostly a property of how the surviving pool bids, not of how many firms it contains.
 
-!!! danger "R$ 84.5--85.8 million in fiscal costs (one product group)"
-    The fiscal cost of SME-only restrictions for **Group 65 alone** amounts to ~12% of this product group's total procurement value over 18 months (~US\$17 million). A rough extrapolation to all product groups yields ~R\$310 million (~US\$62 million).
+!!! warning "Endogenous SME entry attenuates a 50--60% larger latent shock"
+    Holding the SME pool at its pre-policy size raises the simulated price effect to **152% of the realized one in non-pharma** and 157% in pharma. Without endogenous entry, the set-aside would cost 50--60% more in price and welfare. Participation is the government's partial offset, not the source of the markup.
 
-!!! warning "Competition declines under SME restrictions"
-    Open tenders attracted **19--20% more participating firms** and **16--17% more valid bids** in the short term, with effects attenuating as PBUs adapt to restricted tender rules.
+!!! danger "A 10% price preference welfare-dominates the set-aside in non-pharma"
+    In thick standardized markets the preference shifts simulated prices by **−0.004 against +0.259** under the set-aside, at essentially zero fiscal cost. The preference dominates under both the main equilibrium-selection specification and the strict-invariance benchmark.
 
-!!! danger "Costs concentrated in high-value items"
-    The price effect is **40% larger for high-value items** (above median), where the pool of capable non-SME suppliers is broader. Quantile DiD reveals costs concentrated at lower price quantiles.
+!!! info "The pharmaceutical comparison bifurcates — and the bifurcation is the diagnostic"
+    In thin heterogeneous pharma markets the preference dominates under the main specification, but the ranking flips under strict invariance, with the implicit welfare weight required to prefer the set-aside falling to **0.7** (vs. 2.61 under the main specification). The bifurcation pins down where the modeling treatment of the protected pool is first-order.
 
-!!! info "Local suppliers benefit from the policy"
-    Before the policy change, winning firms for Group 65 were **5--11 km more distant** from PBUs, suggesting that SME-only tenders successfully encouraged local supplier participation.
+!!! note "Three magnitudes that should not be confused"
+    The DiD coefficient (10--11%) is the average effect on observed log winning prices. The structural counterfactual (+0.259/+0.308 of p<sup>ref</sup>) is the simulated mean of the second-order statistic under each counterfactual entry profile, three to four times the DiD coefficient on the structural normalization. The welfare cost (28.7% of p<sub>S<sub>1</sub></sub> in non-pharma, 47.0% in pharma at λ = 0.30) adds the marginal-cost-of-public-funds distortion on top of the allocative wedge.
 
 ---
 
@@ -71,10 +89,14 @@ Governments worldwide restrict public tenders to small and medium-sized enterpri
 
 [**Paper** <br> Manuscript description and methodology](paper.md)
 
-[**Results** <br> Main tables, event studies, and trends](results.md)
+[**Results** <br> Structural decomposition, entry response, policy comparison](results.md)
 
-[**Robustness** <br> Placebo tests, alternative clustering, permutation inference](robustness.md)
+[**Robustness** <br> Strict invariance, F<sub>c</sub> regime, window, sample filter](robustness.md)
 
-[**Replication** <br> Code, data, and software requirements](replication.md)
+[**Extensions** <br> Welfare arithmetic, MCPF sensitivity, furosemida vignette](extensions.md)
+
+[**Advanced Methods** <br> Asymmetric IPV, drop-out point ID, UH cleaning, BNE simulation](advanced.md)
+
+[**Replication** <br> Code, data, software requirements](replication.md)
 
 </div>
