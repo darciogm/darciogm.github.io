@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 03 — Slutsky e Elasticidades — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 03 — Slutsky e Elasticidades</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (Nicholson &amp; Snyder 12e cap. 5).</strong> Objetivo: consolidar o que você leu na pré-aula (ZaE cap. 4 + N&amp;S 12e §§5.1–5.6) antes de entrar em sala no dia 06/05. <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 13/05 às 18:00 BRT</strong>, 1h30 antes da Aula 4.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-03-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 03">
+
+  <h3>Revisão — Slutsky e Elasticidades (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Slutsky em CD: identificar termos -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Para \(u(x_1, x_2) = x_1^{1/2} x_2^{1/2}\), em \((p_1, p_2, m) = (2, 1, 12)\), aplicar a equação de Slutsky a \(\partial x_1^M/\partial p_2\). O termo de **substituição** \(\partial h_1/\partial p_2\), em \(\bar u = v(p, m) = \sqrt{18}\), vale aproximadamente:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(0\) — em CD, Hicksiana cruzada zera.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) \(\bar u/(2\sqrt{p_1 p_2}) = \sqrt{18}/(2\sqrt{2}) = 3/2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \(-3/2\) (substituição cruzada negativa).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(+3\) (sem dividir por 2).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD simétrica, \(h_1 = \bar u\sqrt{p_2/p_1}\). Derivando em \(p_2\): \(\partial h_1/\partial p_2 = \bar u/(2\sqrt{p_1 p_2})\), positivo. Não é zero — bens são <em>substitutos líquidos</em> em CD.</p>
+      <p><strong>2. Derivação.</strong> \(v = \sqrt{x_1^M x_2^M} = \sqrt{3\cdot 6} = \sqrt{18}\). \(\partial h_1/\partial p_2 = \sqrt{18}/(2\sqrt{2}) = \sqrt{18/8} = \sqrt{9/4} = 3/2\).</p>
+      <p><strong>3. Armadilha.</strong> (a) "se Marshalliana cruzada é zero, Hicksiana cruzada também é" — falso. Marshalliana zera por <em>cancelamento</em> de substituição (positiva) e renda (negativa). (c) inverte sinal — substituição própria é negativa (concavidade de \(e\)), mas cruzada não.</p>
+      <p><strong>4. Extensão.</strong> O fato de Hicksiana cruzada ser positiva e Marshalliana cruzada zero mostra que <strong>"independente bruto" \(\neq\) "independente líquido"</strong>. Distinção crítica em política tributária: bruto move escolha, líquido mede compensação.</p>
+      <p><strong>5. Peer-review.</strong> Questão fundamental para entender Slutsky em CD. Aluno que confunde Hicksiana com Marshalliana cruzada não internalizou dualidade. Sanidade: \(\partial h_1/\partial p_2 = 3/2 > 0\), efeito-renda \(-x_2^M\,\partial x_1^M/\partial m = -6\cdot 1/4 = -3/2\). Soma: \(0 = \partial x_1^M/\partial p_2\). ✓</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Slutsky para próprio preço, sinal -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Considere a equação de Slutsky para o próprio preço: \(\partial x_i^M/\partial p_i = \partial h_i/\partial p_i - x_i^M\,\partial x_i^M/\partial m\). Para um bem **normal** (\(\partial x_i^M/\partial m > 0\)), o sinal estrutural da Marshalliana \(\partial x_i^M/\partial p_i\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) Estritamente positivo — bem normal sempre tem demanda crescente em preço.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) Indeterminado — depende de magnitudes.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Não-positivo (\(\leq 0\)) — substituição é \(\leq 0\) (sempre) e renda subtraída entra como \(-x_i^M\cdot(>0) < 0\). Os dois efeitos têm o mesmo sinal, reforçando-se.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Estritamente negativo — substituição é estritamente negativa para todo bem normal.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Para bem normal, **substituição e renda têm o mesmo sinal** (ambos negativos em Slutsky), e a lei da demanda Marshalliana vale firme: \(\partial x_i^M/\partial p_i \leq 0\).</p>
+      <p><strong>2. Derivação.</strong> \(\partial h_i/\partial p_i \leq 0\) (concavidade de \(e\), Aula 2). \(-x_i^M\cdot \partial x_i^M/\partial m\): se bem normal, \(\partial x_i^M/\partial m > 0\), e o sinal final é \(-(positivo)(positivo) < 0\). Soma: \(\leq 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte completamente. (b) "indeterminado" é a resposta para bem inferior, não normal. (d) é forte demais — em CD com bem normal, \(\partial h_i/\partial p_i\) pode ser zero (caso degenerado se \(\bar u = 0\), ignorável); ou em quase-linear no canto, idem. "Não-positivo" é correto, "estritamente negativo" é genérico mas não universal.</p>
+      <p><strong>4. Extensão.</strong> Para bem inferior, o sinal pode virar (Giffen) se \(|x_i^M\,\partial x_i^M/\partial m| > |\partial h_i/\partial p_i|\). Aí Slutsky de fato dá \(\partial x_i^M/\partial p_i > 0\). Por isso "lei da demanda" Marshalliana é tendência, não teorema.</p>
+      <p><strong>5. Peer-review.</strong> Questão sobre o "porquê" da lei da demanda. Se o aluno marcou (a) ou (d), ainda confunde teorema (Hicksiana, sempre \(\leq 0\) no próprio preço) com regra empírica (Marshalliana, em geral \(\leq 0\) mas pode quebrar).</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Elasticidade-preço própria: distratores conceituais
+       NOTA EDITORIAL: Q3 deliberadamente com 5 alternativas (a–e) vs. 4 nas demais.
+       Cada distrator nomeia um erro conceitual identificável (sinal, multiplicador
+       p/x, ponto-vs-arco, razão invertida); o gabarito 5-passos explora esse
+       mapeamento como diagnóstico de turma. NÃO fundir para 4 alternativas — a
+       variância cosmética é intencional e tem valor pedagógico real. -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3.</strong> A demanda Marshalliana de um bem em torno de \((p, x) = (10;\,200)\) é localmente \(x(p) = 400 - 20\,p\). Calcule a <strong>elasticidade-preço própria (em ponto)</strong> da Marshalliana nesse ponto e marque a alternativa <em>correta</em> entre as quatro opções de cálculo abaixo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) \(\varepsilon = +1\) — substitui \(\partial x/\partial p = -20\) e \(p/x = 10/200\), mas reporta sem o sinal negativo herdado do próprio preço.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) \(\varepsilon = -1\) — \(\dfrac{\partial x}{\partial p}\cdot\dfrac{p}{x} = -20\cdot \dfrac{10}{200} = -1\); demanda <em>unitariamente elástica</em> nesse ponto.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) \(\varepsilon = -20\) — usa \(\partial x/\partial p = -20\) diretamente, sem multiplicar por \(p/x\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) \(\varepsilon \approx -0{,}826\) — calcula \((x_2 - x_1)/x_1\) entre \(p_1 = 9\) e \(p_2 = 11\) e divide por \((p_2 - p_1)/p_1\), sem usar a média de Allen.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="e"> (e) \(\varepsilon = -0{,}05\) — calcula \(\dfrac{\Delta p}{\Delta x}\cdot\dfrac{x}{p}\), inverte a razão.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Elasticidade-preço própria <em>em ponto</em> é \(\varepsilon = \dfrac{\partial x}{\partial p}\cdot\dfrac{p}{x}\). Três coisas têm que estar certas <em>simultaneamente</em>: (i) o <strong>sinal</strong> negativo herdado da inclinação da demanda em bem normal; (ii) o <strong>multiplicador</strong> \(p/x\) (sem ele a "elasticidade" tem unidade — e elasticidade tem que ser adimensional); (iii) a <strong>razão</strong> \(\partial x/\partial p\), não a inversa. Trocar qualquer uma das três entrega um dos quatro distratores.</p>
+      <p><strong>2. Derivação.</strong> Em \((p, x) = (10;\,200)\) com \(x = 400 - 20p\): \(\partial x/\partial p = -20\). Logo \(\varepsilon = -20\cdot (10/200) = -20/20 = -1\). Bem unitariamente elástico — receita do produtor é localmente insensível a \(p\).</p>
+      <p><strong>3. Armadilha.</strong> Cada distrator é um erro conceitual <em>nomeado</em>: (a) <strong>sinal trocado</strong> — esquecer o sinal negativo da elasticidade-preço própria é a falha clássica de aluno que confunde "magnitude" com "elasticidade". (c) <strong>esqueceu o multiplicador \(p/x\)</strong> — entregar \(\partial x/\partial p\) e chamar de "elasticidade" é erro de definição. (d) <strong>confundiu ponto com arco</strong> — usar \((x_2-x_1)/x_1\) sem média de Allen dá assimetria entre subir e descer preço; elasticidade-arco correta usa \((x_1+x_2)/2\) e \((p_1+p_2)/2\). (e) <strong>razão invertida</strong> — \(\Delta p/\Delta x\) é o inverso da inclinação da demanda; multiplicar pelo inverso de \(p/x\) também troca o sentido. Sinal negativo nesse caso é coincidência de sorte (mesma direção); a magnitude está completamente errada.</p>
+      <p><strong>4. Extensão.</strong> Em sistemas empíricos (AIDS, QUAIDS), elasticidades vêm como <em>derivada de log-demanda em log-preço</em>: \(\varepsilon = \partial\ln x/\partial\ln p\) — equivalente à fórmula \((\partial x/\partial p)(p/x)\) por regra da cadeia, e <strong>imune</strong> a (c) e (e) por construção (logs absorvem escalas). Por isso a literatura aplicada quase sempre trabalha em logs. Aula 4 (EG): cuidado com agregação — \(\varepsilon\) de demanda agregada não é média simples das \(\varepsilon_i\) individuais; entram covariâncias entre renda e parcelas (Theil).</p>
+      <p><strong>5. Peer-review.</strong> 🟡 — questão é deliberadamente sobre <strong>diagnóstico de erro conceitual</strong>, não cálculo aritmético. Cada distrator nomeia um erro identificável: aluno que marca (a) tem dúvida com sinal, (c) com unidades, (d) com diferença ponto/arco, (e) com qual razão usar. Esse mapeamento permite ao professor ler o histograma de respostas como diagnóstico de turma. Risco residual: alternativa (d) usa números específicos para parecer "quase certa" — quem decora a fórmula sem entender o porquê de cada peça pode marcar.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Slutsky em elasticidades -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> A equação de Slutsky em **elasticidades** é \(\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\,\eta_i\). Para um bem com \(s_j = 0{,}10\), \(\eta_i = 1{,}5\) (luxo), \(\varepsilon^c_{ij} = 0{,}25\) (substituto líquido), a elasticidade-preço cruzada Marshalliana \(\varepsilon_{ij}\) vale:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(0{,}25 + 0{,}10\cdot 1{,}5 = 0{,}40\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) \(0{,}25 - 0{,}10\cdot 1{,}5 = 0{,}10\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(0{,}25 - 0{,}15\cdot 1 = 0{,}10\) (apenas com normalização).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) \(0{,}25\) — Slutsky em elasticidades só vale para próprio preço.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Slutsky em elasticidades vale para qualquer par \((i, j)\), próprio ou cruzado. Subtrair, não somar: \(\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\eta_i\).</p>
+      <p><strong>2. Derivação.</strong> \(0{,}25 - 0{,}10\cdot 1{,}5 = 0{,}25 - 0{,}15 = 0{,}10\). Bens permanecem substitutos brutos (\(\varepsilon_{ij} > 0\)), mas com magnitude reduzida pela contribuição do efeito-renda.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte sinal — somar dá Marshalliana mais positiva, errado. (c) confunde \(s_j\) com algo. (d) limita Slutsky ao próprio preço — falso, vale para todos os pares.</p>
+      <p><strong>4. Extensão.</strong> Em sistema de demanda, conhecer \(\varepsilon^c_{ij}\) (compensada, do dual) e \(\eta_i\) e \(s_j\) (Marshalliana, de Walras) permite reconstruir \(\varepsilon_{ij}\) inteira. AIDS faz exatamente isso.</p>
+      <p><strong>5. Peer-review.</strong> Mecânica de aplicação. Se o aluno errou sinal em (a), provavelmente também erra Slutsky em derivada — voltar à derivação completa.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Bens normal/inferior/Giffen -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Sobre Giffen, qual afirmação é <strong>verdadeira</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Todo bem inferior é Giffen.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Giffen pode ocorrer em bens normais com substituição forte.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) Giffen requer simultaneamente: (i) inferioridade; (ii) parcela alta; (iii) substituição em magnitude menor que o efeito-renda.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Giffen é fenômeno teórico — nunca observado em dados empíricos.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Giffen requer **três condições simultâneas**, não uma. Inferioridade é necessária mas longe de suficiente.</p>
+      <p><strong>2. Derivação.</strong> Slutsky no próprio preço: \(\partial x_i^M/\partial p_i = \partial h_i/\partial p_i - x_i^M\,\partial x_i^M/\partial m\). Para vir positivo: (i) \(\partial x_i^M/\partial m < 0\) (inferior); (ii) \(x_i^M\) grande (parcela alta amplifica); (iii) \(|x_i^M\,\partial x_i^M/\partial m| > |\partial h_i/\partial p_i|\) (renda domina substituição).</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) confundem necessidade com suficiência. (d) é falso — Jensen-Miller (AER 2008) documentaram Giffen em arroz Hunan via experimento de campo.</p>
+      <p><strong>4. Extensão.</strong> Em política pública, Giffen é importante teoricamente (mostra os limites da "lei da demanda") mas raro empiricamente. O caso típico é regressividade tributária via parcela alta nos pobres — não Giffen propriamente, mas fenômeno aparentado em CV/EV.</p>
+      <p><strong>5. Peer-review.</strong> Questão fundamental para distinguir conceitualmente os 3 fenômenos. Quem marca (a) ou (d) precisa revisar a Aula 3 inteira.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — Substitutos brutos vs. líquidos -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> Em Cobb-Douglas \(u = x_1^{0{,}4} x_2^{0{,}6}\), os bens são:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Substitutos brutos e substitutos líquidos.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Independentes brutos (\(\partial x_1^M/\partial p_2 = 0\)) e substitutos líquidos (\(\partial h_1/\partial p_2 > 0\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Complementos brutos e complementos líquidos.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Substitutos brutos e independentes líquidos.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD, \(x_1^M = \alpha m/p_1\) — não depende de \(p_2\), logo cruzada Marshalliana zera. Mas Hicksiana cruzada é positiva (substituição pura). **Independentes brutos, substitutos líquidos.**</p>
+      <p><strong>2. Derivação.</strong> \(\partial x_1^M/\partial p_2 = \partial(0{,}4\,m/p_1)/\partial p_2 = 0\). Hicksiana \(h_1 = \bar u\,(\alpha/p_1)^{1-\alpha}((1-\alpha)/p_2)^{-(1-\alpha)}\) — ou equivalentemente \(h_1 = \alpha\,e/p_1\) com \(e\) crescente em \(p_2\). Logo \(\partial h_1/\partial p_2 > 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) e (c) ignoram o cancelamento de Slutsky em CD. (d) inverte os papéis. A distinção bruto/líquido é específica de CD — em CES com \(\sigma \neq 1\), parcelas variam com preços, e Marshalliana cruzada não zera.</p>
+      <p><strong>4. Extensão.</strong> Em política tributária, "complementos brutos" (\(\partial x_i^M/\partial p_j < 0\)) são alvo natural de imposto cruzado — alta de \(p_j\) reduz consumo de \(x_i\). "Substitutos líquidos" só importam para CV/EV. CD é exemplo limítrofe: nenhuma reação Marshalliana, plena reação Hicksiana.</p>
+      <p><strong>5. Peer-review.</strong> Questão estruturalmente importante. Se o aluno marca (a) por "intuição", não internalizou Slutsky em CD. A distinção bruto/líquido é uma das contribuições teóricas mais subutilizadas em microeconomia aplicada.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — Curvas de Engel (luxo/necessidade) -->
+  <div class="quizg-q" data-qid="q7" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Um bem com elasticidade-renda \(\eta_i = 1{,}5\) é classificado como:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Luxo — \(\eta_i > 1\), parcela cresce com renda.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Necessidade — \(0 < \eta_i < 1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Inferior — \(\eta_i < 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Giffen — \(\eta_i > 1\) implica reação anômala em preço.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Classificação canônica por elasticidade-renda: \(\eta_i < 0\) inferior; \(0 < \eta_i < 1\) necessidade (parcela cai com renda); \(\eta_i > 1\) luxo (parcela sobe com renda). Engel ainda exige \(\sum_i s_i\eta_i = 1\) — luxos compensam necessidades.</p>
+      <p><strong>2. Derivação.</strong> Parcela \(s_i = p_i x_i^M/m\). \(d\ln s_i/d\ln m = \eta_i - 1\). Se \(\eta_i > 1\): parcela cresce com \(m\); se \(\eta_i < 1\): parcela cai. Em \(\eta_i = 1\): parcela constante (homotetia, ex. CD).</p>
+      <p><strong>3. Armadilha.</strong> (b) confunde "necessidade" com "todo bem positivo \(\eta\)". (c) e (d) fundem categorias diferentes. (d) em particular é erro grave — \(\eta\) é renda; Giffen é preço.</p>
+      <p><strong>4. Extensão.</strong> Em sistemas empíricos, distinção luxo vs. necessidade é base para política tributária progressiva. Imposto sobre luxo (consumo de luxo) é progressivo na medida em que parcela de luxo é maior em decis altos.</p>
+      <p><strong>5. Peer-review.</strong> Questão de definição. Se o aluno trocou luxo por necessidade, é falha de notação básica que precisa ser corrigida antes do Bloco 3 da aula.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — CV vs. EV vs. EC: ordem -->
+  <div class="quizg-q" data-qid="q8" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Para uma alta de preço de um bem normal, qual é a ordem canônica das três medidas de bem-estar?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) CV \(\leq\) EC \(\leq\) EV.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) CV \(=\) EC \(=\) EV em qualquer preferência.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) EC \(\leq\) EV \(\leq\) CV.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) EV \(\leq\) EC \(\leq\) CV. Em quase-linear, todos coincidem.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Para alta de preço com bem normal: EV usa \(u^1 < u^0\), Hicksiana é menor (compra menos a cada preço); CV usa \(u^0\), Hicksiana é maior. EC fica entre os dois (Hicksiana = Marshalliana em \(u\) intermediária).</p>
+      <p><strong>2. Derivação.</strong> Pela definição, \(\text{CV} = \int_{p^0}^{p^1} h(p, u^0)dp\) e \(\text{EV} = \int_{p^0}^{p^1} h(p, u^1)dp\). Se bem normal, Hicksiana cresce com \(\bar u\) (em níveis), portanto integral em \(u^0\) (alto) > integral em \(u^1\) (baixo). EC fica entre.</p>
+      <p><strong>3. Armadilha.</strong> (a) e (c) invertem ordem. (b) é o caso especial quase-linear — é verdade *lá*, mas não em geral. Willig 1976 quantifica o erro de aproximação por EC.</p>
+      <p><strong>4. Extensão.</strong> A diferença CV − EV mede o "tamanho" do efeito-renda na mudança. Em quase-linear, CV − EV = 0 (Hicksiana = Marshalliana). Em CD com mudança grande, CV − EV pode ser substancial.</p>
+      <p><strong>5. Peer-review.</strong> Questão fundamental — define o vocabulário operacional de bem-estar. Se o aluno hesita ou confunde CV com EV, precisa revisar definições antes do Bloco 4 da aula.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — Excedente em CD: integral -->
+  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> Em CD com \(u = x_1^{1/2} x_2^{1/2}\), \(m = 16\), \(p_2 = 1\), \(p_1\) sobe de 1 a 4. O excedente do consumidor (Marshalliano) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) \(8\) — Marshalliana avaliada no ponto médio.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) \(8\ln 4 \approx 11{,}09\) — integral de \(8/p_1\) entre 1 e 4.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) \(16\) — coincide com CV.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) \(24\) — área retangular \(8\times 3\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(\Delta\text{EC} = \int_{p^0}^{p^1} x_1^M(p, m)\,dp_1\). Em CD, \(x_1^M(p_1) = m/(2 p_1)\), com \(m = 16\): \(\int_1^4 8/p_1\,dp_1\).</p>
+      <p><strong>2. Derivação.</strong> \(\int 8/p_1\,dp_1 = 8\ln p_1\). Avaliando entre 1 e 4: \(8\ln 4 - 8\ln 1 = 8\cdot 2\ln 2 = 16\cdot 0{,}693 \approx 11{,}09\).</p>
+      <p><strong>3. Armadilha.</strong> (a) avalia em ponto médio sem integrar — aproximação grosseira. (c) confunde EC com CV. (d) calcula área retangular ignorando que demanda decresce.</p>
+      <p><strong>4. Extensão.</strong> Em quase-linear, \(\Delta\text{EC} = \text{CV} = \text{EV}\) e a integral é exata como medida de bem-estar. Em CD, \(\Delta\text{EC} \approx 11{,}09\) fica entre EV \(= 8\) e CV \(= 16\) — Willig 1976.</p>
+      <p><strong>5. Peer-review.</strong> Questão de cálculo + leitura. Se o aluno marcou (c), confundiu medidas; se (d), não internalizou que demanda \(8/p\) decresce. Marca de quem domina é chegar em \(8\ln 4\) sem hesitar.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — Quase-linear vs. CD em bem-estar -->
+  <div class="quizg-q" data-qid="q10" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Em preferências **quase-lineares** \(u(x_1, x_2) = v(x_1) + x_2\) (com \(x_2\) numerário, \(p_2 = 1\)), qual afirmação é correta sobre as 3 medidas de bem-estar?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) CV \(<\) EV — bem-estar discrepante.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) CV \(>\) EV — efeito-renda forte.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) CV \(=\) EV \(=\) ΔEC, porque \(\partial x_1^M/\partial m = 0\) (interior) implica Hicksiana = Marshalliana.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) ΔEC \(=\) área de Harberger; CV e EV não se aplicam.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Quase-linear (no interior) ⇒ \(\partial x_1^M/\partial m = 0\) ⇒ Hicksiana e Marshalliana **coincidem** ⇒ as 3 medidas são iguais.</p>
+      <p><strong>2. Derivação.</strong> CPO do UMP: \(v'(x_1) = \lambda p_1\), \(\lambda = 1\) (numerário gasto-1), logo \(v'(x_1) = p_1\) — independente de \(m\). \(x_1^M\) só depende de \(p_1\); idem \(h_1\). Logo \(\partial x_1^M/\partial m = 0\), e \(\Delta\text{EC} = \int_{p^0}^{p^1} x_1^M(p_1)\,dp_1 = \int_{p^0}^{p^1} h_1(p_1)\,dp_1 = \text{CV} = \text{EV}\).</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) supõem que CV \(\neq\) EV — erro estrutural em quase-linear. (d) "CV/EV não se aplicam" é falso — coincidem com EC, não desaparecem.</p>
+      <p><strong>4. Extensão.</strong> Por isso o "triângulo de Harberger" (área entre demanda e oferta no preço de equilíbrio vs. preço pós-imposto) é medida de welfare standard em economia pública: assume implicitamente quase-linearidade ou, mais fracamente, que \(\eta\) é desprezível na faixa relevante. Willig (AER 1976) faz a generalização rigorosa.</p>
+      <p><strong>5. Peer-review.</strong> Questão central para entender o "porquê" do uso de áreas em economia pública. Aluno que marcou (a) ou (b) ainda não internalizou que sem efeito-renda, Hicksiana e Marshalliana viram sinônimos.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 3 presencial</strong> (quarta, 06/05, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-03.html">material da pré-aula</a> e relea a seção correspondente. O <strong>quiz pós-aula 3</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 3</strong> abrem na madrugada de quinta 07/05 — todos fecham em <strong>quarta 13/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-03-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

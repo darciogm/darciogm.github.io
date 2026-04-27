@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 03 — Slutsky e Elasticidades — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 03 — Slutsky e Elasticidades</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S 12e cap. 5) + 5 avançadas 🔴 (calibre Jehle-Reny §1.5–§2.1 / qualifier).</strong> Objetivo: ponte entre a aula de 06/05 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong> (a leitura dos gabaritos 5-passos conta).</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 13/05 às 18:00 BRT</strong>, 1h30 antes da Aula 4.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-03-pos" data-phase="post" data-title="Pós-Aula 03">
+
+  <h3>Pós-Aula 03 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Slutsky em CD: confirmação numérica -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Em CD \(u = x_1^{1/3} x_2^{2/3}\), \((p_1, p_2, m) = (1, 2, 30)\). A Marshalliana é \(x^M = (10, 10)\). Aplique Slutsky para \(\partial x_1^M/\partial p_2\) e identifique o sinal correto de cada termo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Marshalliana cruzada \(= 0\); substituição \(<0\); renda \(>0\) — soma negativa.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Marshalliana cruzada \(>0\); substituição e renda ambas positivas.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) Marshalliana cruzada \(= 0\); substituição \(>0\) (substitutos líquidos); renda em Slutsky entra como \(-x_2^M\,\partial x_1^M/\partial m < 0\). Os dois cancelam.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Slutsky não vale para Marshalliana cruzada zero.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD, Marshalliana cruzada zera por **cancelamento exato** entre Hicksiana cruzada (positiva, substitutos líquidos) e efeito-renda (entra com sinal de menos em Slutsky).</p>
+      <p><strong>2. Derivação.</strong> Marshalliana: \(x_1^M = (1/3)\,m/p_1\), independente de \(p_2\), logo \(\partial x_1^M/\partial p_2 = 0\). Hicksiana: \(h_1 = (1/3)\,e/p_1\) com \(e = K\bar u\,p_1^{1/3}p_2^{2/3}\), logo \(h_1 = (1/3)K\bar u\,p_1^{-2/3}p_2^{2/3}\) e \(\partial h_1/\partial p_2 = (2/9)K\bar u\,p_1^{-2/3}p_2^{-1/3} > 0\). Efeito-renda: \(\partial x_1^M/\partial m = (1/3)/p_1 > 0\); \(-x_2^M\cdot 1/(3 p_1) < 0\). Soma: zero. ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte o sinal da substituição. (b) é Marshalliana com fórmula errada. (d) é falso conceitualmente — Slutsky é identidade.</p>
+      <p><strong>4. Extensão.</strong> Em CES com \(\sigma \neq 1\), parcelas dependem de preços e Marshalliana cruzada NÃO zera — o cancelamento perfeito é assinatura de CD.</p>
+      <p><strong>5. Peer-review.</strong> Questão de aplicação direta. Quem domina Slutsky termo-a-termo deveria fechar em 90 segundos. Sanidade dimensional: substituição e renda têm a mesma dimensão (quantidade/preço), e ambos são números.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Engel/Cournot/Homog: identificar restrição -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Sistema de demanda com 3 bens. Estimam-se: \(s = (0{,}2; 0{,}3; 0{,}5)\); \(\eta = (0{,}5; 1{,}0; 1{,}3)\); \(\varepsilon_{i1}\) Marshalliana cruzadas \(= (-0{,}9, +0{,}2, +0{,}1)\) (próprio do bem 1 incluído). Verifique **Cournot** \((\sum_i s_i\varepsilon_{i1} = -s_1)\):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\sum = -0{,}10\), Cournot exige \(-s_1 = -0{,}20\). Falha — sistema mal-especificado.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) \(\sum = +0{,}30\), Cournot exige \(-s_1\). Falha grosseiramente — provavelmente erro de sinal.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\sum = 0{,}2(-0{,}9) + 0{,}3(+0{,}2) + 0{,}5(+0{,}1) = -0{,}07\), Cournot exige \(-s_1 = -0{,}2\). Diferença grande — sistema viola Cournot.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Cournot só exige \(\sum_i \varepsilon_{i1} = 0\) — não envolve parcelas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cournot é **soma ponderada por parcelas** das elasticidades-preço Marshallianas, igualando a menos a parcela do bem cujo preço varia.</p>
+      <p><strong>2. Derivação.</strong> \(\sum_i s_i\varepsilon_{i1} = 0{,}2(-0{,}9) + 0{,}3(+0{,}2) + 0{,}5(+0{,}1) = -0{,}18 + 0{,}06 + 0{,}05 = -0{,}07\). Cournot exige \(-s_1 = -0{,}20\). Diferença \(0{,}13\) — violação substancial.</p>
+      <p><strong>3. Armadilha.</strong> (a) erra na soma. (b) erra grosseiramente. (d) confunde Cournot com homogeneidade — homogeneidade é \(\sum_j \varepsilon_{ij} + \eta_i = 0\), Cournot é diferente.</p>
+      <p><strong>4. Extensão.</strong> Em sistema empírico, violação de Cournot sinaliza: (i) má especificação funcional; (ii) viés de agregação (heterogeneidade entre consumidores); (iii) erro de medida nas elasticidades. Em AIDS, Cournot é IMPOSTO na parametrização — violação da estimativa indica que a forma funcional não fecha.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 porque exige cálculo direto e leitura do diagnóstico. Aluno que marca (a) por descuido aritmético precisa revisar; quem marca (b) ou (d) tem confusão estrutural.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — CV em CD com mudança de preço -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Em \(u = x_1^{1/2} x_2^{1/2}\), \(m = 36\), \(p_2 = 1\). Preço \(p_1\) sobe de 1 a 9. A função gasto é \(e(p_1, p_2, \bar u) = 2\bar u\sqrt{p_1 p_2}\). A variação compensatória CV vale:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) \(36\) — diferença simples \(e(9, 1, 18) - e(1, 1, 18) = 108 - 36\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) \(72\) — \(2(18)(3) - 2(18)(1) = 108 - 36 = 72\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) \(108\) — apenas o gasto novo, ignorando o gasto antigo.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) \(36\ln 9 \approx 79{,}1\) — esse é o EC, não CV.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CV usa **utilidade antiga** \(u^0\). Calcular: (i) \(u^0\) no preço antigo; (ii) gasto para atingir \(u^0\) no preço novo; (iii) diferença.</p>
+      <p><strong>2. Derivação.</strong> Antes: \(x^M = (m/(2 p_1), m/(2 p_2)) = (18, 18)\); \(u^0 = \sqrt{18\cdot 18} = 18\). \(e(p^0, u^0) = 2(18)\sqrt{1\cdot 1} = 36\) (= \(m\), por dualidade). \(e(p^1, u^0) = 2(18)\sqrt{9\cdot 1} = 2(18)(3) = 108\). CV \(= 108 - 36 = 72\).</p>
+      <p><strong>3. Armadilha.</strong> (a) calcula apenas a parcela em \(p_1\sqrt{p_1 p_2}\) sem fator multiplicativo. (c) confunde "gasto novo" com "CV". (d) é EC. Cuidado em CD — conta um a um, sem chutar.</p>
+      <p><strong>4. Extensão.</strong> CV \(= 72\) corresponde a \(2m\) — CV é o dobro da renda original. Isso porque \(p_1\) quadruplicou (de 1 para 9 multiplica por 9, mas \(\sqrt{9} = 3\) — fator de aumento de gasto Hicksiano em CD simétrica).</p>
+      <p><strong>5. Peer-review.</strong> Aritmética + dualidade. Aluno que erra magnitude (item a) tem dificuldade em manipular CD; aluno que erra item (c) ou (d) confunde medidas. CD permite contas redondas — é o caso ideal de exercício mecânico.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Identificar Giffen na elasticidade -->
+  <div class="quizg-q" data-qid="q4" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Um bem tem \(s_i = 0{,}40\), \(\eta_i = -0{,}50\) (inferior moderado), \(\varepsilon^c_{ii} = -0{,}15\). É Giffen?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Sim — \(\varepsilon_{ii} = -0{,}15 - 0{,}40\cdot (-0{,}50) = -0{,}15 + 0{,}20 = +0{,}05 > 0\). **← CORRETA**.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) Não — efeito-renda fraco demais.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Não — substituição \(< 0\) sempre vence.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Indeterminado sem conhecer renda absoluta.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Slutsky em elasticidades: \(\varepsilon_{ii} = \varepsilon^c_{ii} - s_i\eta_i\). Se \(s_i\eta_i < \varepsilon^c_{ii}\) (ambos negativos, magnitude do efeito-renda \(>\) substituição), Marshalliana fica positiva — Giffen.</p>
+      <p><strong>2. Derivação.</strong> \(s_i\eta_i = 0{,}40\cdot (-0{,}50) = -0{,}20\). Comparar com \(\varepsilon^c_{ii} = -0{,}15\): \(|{-0{,}20}| > |{-0{,}15}|\) ⇒ renda domina. \(\varepsilon_{ii} = -0{,}15 - (-0{,}20) = +0{,}05\). Giffen marginal.</p>
+      <p><strong>3. Armadilha.</strong> (b) "fraco demais" — não, é forte o suficiente para inverter o sinal. (c) "substituição sempre vence" — falso, é **regra empírica** mas pode quebrar. (d) "renda absoluta" não importa — a fórmula trabalha em elasticidades, sem nível.</p>
+      <p><strong>4. Extensão.</strong> Aplicação prática: arroz Hunan tem \(s \approx 0{,}5\) e \(\eta < 0\); a faixa em que Giffen aparece é estreita (renda muito baixa, sem substituto barato em jogo). Em populações urbanas brasileiras, \(\eta\) de arroz é positiva — não há Giffen mesmo com parcela alta.</p>
+      <p><strong>5. Peer-review.</strong> Questão diagnóstica. O número \(0{,}05\) é pequeno — Giffen *marginal*, ainda dentro do intervalo de erro estatístico em estimações empíricas. Em prova ANPEC, a forma é "mecânica", mas requer atenção aos sinais.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Bem-estar quase-linear -->
+  <div class="quizg-q" data-qid="q5" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Em preferências quase-lineares \(u(x_1, x_2) = v(x_1) + x_2\) (com \(x_2\) numerário), uma alta de \(p_1\) de 1 para 4 produz \(\Delta\text{EC} = -3{,}0\) (calculado pela área entre Marshalliana). O valor de CV é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) CV \(= -3{,}0\cdot (1 + \eta_1) = -3{,}0\cdot (1 + 0)\) — depende de \(\eta_1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) CV \(> -3{,}0\) (em magnitude maior) por causa do efeito-renda.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) CV \(< -3{,}0\) (em magnitude menor) — Hicksiana é menor que Marshalliana.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) CV \(= -3{,}0 = \Delta\text{EC} = \text{EV}\) — em quase-linear, todas as 3 medidas coincidem.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em quase-linear (interior), \(\partial x_1^M/\partial m = 0\) ⇒ Hicksiana \(=\) Marshalliana ⇒ ΔEC \(=\) CV \(=\) EV.</p>
+      <p><strong>2. Derivação.</strong> CPO do UMP em quase-linear: \(v'(x_1) = p_1\) (com \(\lambda = 1\) no numerário). Logo \(x_1^M = (v')^{-1}(p_1)\) — só depende de \(p_1\), não de \(m\). \(\partial x_1^M/\partial m = 0\). Por Slutsky, \(\partial h_1/\partial p_1 = \partial x_1^M/\partial p_1\) — Hicksiana e Marshalliana coincidem como funções de \(p_1\). Integrais idênticas.</p>
+      <p><strong>3. Armadilha.</strong> (a), (b), (c) supõem \(\eta_1 \neq 0\) ou Hicksiana \(\neq\) Marshalliana. Em quase-linear interior, ambas são zero — o "triângulo de Harberger" é a medida exata.</p>
+      <p><strong>4. Extensão.</strong> Em economia pública (Aula 4 e em diante), o "triângulo de Harberger" assume implicitamente quase-linearidade ou \(\eta\) desprezível na faixa relevante. Willig (AER 1976) calibra rigorosamente quando essa aproximação é válida.</p>
+      <p><strong>5. Peer-review.</strong> Questão central — define o "porquê" do uso de áreas em economia pública e justifica o triângulo de Harberger. Aluno que marca (b) ou (c) ainda confunde Hicksiana com Marshalliana em quase-linear; aluno que marca (a) tenta aplicar fórmula sem entender estrutura.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Slutsky vs. simetria -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> A matriz de Slutsky compensada \(S\) tem entradas \(S_{ij} = \partial h_i/\partial p_j\). É **simétrica** (\(S_{ij} = S_{ji}\)) por Young aplicado a \(e\). Para a matriz de Slutsky **não-compensada** (Marshalliana), \(M_{ij} = \partial x_i^M/\partial p_j\), qual afirmação é correta?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \(M\) é sempre simétrica — herda de \(S\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) \(M\) é em geral **assimétrica**: \(M_{ij} - M_{ji} = -x_j^M\,\partial x_i^M/\partial m + x_i^M\,\partial x_j^M/\partial m\), só zerando se as elasticidades-renda forem iguais (homotética).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(M\) é simétrica em CD apenas.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \(M\) é simétrica em quasilinear.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Slutsky compensada \(S\) é simétrica (Young + Shephard); Slutsky não-compensada \(M\) **não é em geral**. A diferença \(M_{ij} - M_{ji}\) mede a discrepância entre as duas elasticidades-renda \(\partial x_i^M/\partial m\) e \(\partial x_j^M/\partial m\).</p>
+      <p><strong>2. Derivação.</strong> Slutsky: \(M_{ij} = S_{ij} - x_j^M\,\partial x_i^M/\partial m\); \(M_{ji} = S_{ji} - x_i^M\,\partial x_j^M/\partial m\). Como \(S_{ij} = S_{ji}\): \(M_{ij} - M_{ji} = -x_j^M\,\partial x_i^M/\partial m + x_i^M\,\partial x_j^M/\partial m\). Em geral, \(\neq 0\) — **assimetria** (diferença entre os dois termos cruzados).</p>
+      <p><strong>3. Armadilha.</strong> (a) é o erro mais sutil — "se simetria de S, então M também" — falso. (c) e (d) dão casos especiais (CD e quasilinear) onde até pode parecer simétrica, mas a estrutura é heterogênea: em quasilinear, \(\partial x_2^M/\partial m = 1\) e \(\partial x_1^M/\partial m = 0\), assimetria total.</p>
+      <p><strong>4. Extensão.</strong> Implicação prática: para estimar simetria de Slutsky empiricamente, **deve-se trabalhar com Hicksiana** (calibrada via dualidade) ou subtrair o efeito-renda. Trabalhar diretamente com Marshalliana cruzada não permite testar simetria.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 porque exige distinguir compensada vs. não-compensada estruturalmente. Em prova de qualifying, "demonstre que \(M\) não é simétrica em geral" é exercício canônico — a derivação é uma linha mas exige clareza de simetria \(S\).</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — CV/EV em sistema com 2 preços -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Em sistema com 2 bens e CV/EV calculadas para alta simultânea de \(p_1\) e \(p_2\). A integral de **CV** ao longo do path \(p^0 \to p^1\) é (Hicksiana avaliada em \(u^0\)):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) \(\text{CV} = \int_{p^0_1}^{p^1_1} h_1(p, u^0)\,dp_1 + \int_{p^0_2}^{p^1_2} h_2(p, u^0)\,dp_2\) — soma ingênua de univariadas.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) \(\text{CV} = \int_{u^0}^{u^1} \mu^*(p, u)\,du\) — integração no espaço de utilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) \(\text{CV} = e(p^1, u^0) - e(p^0, u^0)\) — depende apenas dos pontos extremos. **Path-independent** porque \(e\) é função de estado.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Path-dependent — CV varia com a ordem em que \(p_1\) e \(p_2\) sobem.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CV é **path-independent** porque é definida pela diferença de \(e\) em dois pontos. \(e\) é função de \(p\) e \(\bar u\) — depende apenas do estado, não do caminho.</p>
+      <p><strong>2. Derivação.</strong> \(\text{CV} = e(p^1, u^0) - e(p^0, u^0)\). Por Shephard, \(\nabla_p e = h\), então:
+      \[
+      e(p^1, u^0) - e(p^0, u^0) = \int_{p^0}^{p^1} h(p, u^0)\cdot dp,
+      \]
+      que é integral de linha. Como \(h = \nabla e\) é gradiente de \(e\), o campo é **conservativo** (rotacional zero, por Young), e a integral é path-independent. Logo, qualquer caminho dá o mesmo resultado.</p>
+      <p><strong>3. Armadilha.</strong> (a) é correta como expressão **se** o caminho é "primeiro \(p_1\), depois \(p_2\)" mas a notação tradicional escreve cada integral em cima do gradiente — **ambígua**. (b) confunde \(\mu^* = \partial e/\partial \bar u\) (multiplicador dual) com integração em \(p\). (d) é falso — path-dependence é o problema do **excedente do consumidor** (Marshalliana), não da CV.</p>
+      <p><strong>4. Extensão.</strong> Por que EC pode ser path-dependent? Porque Marshalliana NÃO é gradiente de função de estado — fora do caso quase-linear. A integral \(\int x^M\,dp\) depende do caminho de \(p\) entre \(p^0\) e \(p^1\). Diewert (Econometrica 1974) discute o problema rigorosamente.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 porque exige internalizar que CV é função de **estado** (definida por \(e\)), enquanto EC é integral de **fluxo** (depende do caminho). Essa distinção é o ponto de Willig 1976. Aluno que marca (a) pelo formato familiar perde a estrutura; quem marca (d) confunde com EC.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — Restrição agregada via Sum Rule (independência de Cournot) -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Considere as 4 restrições agregadas: Engel, Cournot, Homogeneidade, Simetria. Quantas delas são <strong>funcionalmente independentes</strong> (no sentido de que conhecer 3 não basta para deduzir a 4ª)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) 4 — cada restrição vem de uma fonte lógica distinta (Walras-em-\(m\), Walras-em-\(p_j\), grau-0, Young+Shephard), logo todas independentes.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) 3 — Cournot é implicada por Engel + Homogeneidade + Simetria, via Slutsky em elasticidades + adding-up. Em AIDS/QUAIDS, basta impor as outras três e Cournot sai "de graça": \(\sum_i s_i\varepsilon_{ij} = \sum_i s_i\varepsilon^c_{ij} - s_j\sum_i s_i\eta_i = 0 - s_j\cdot 1 = -s_j\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) 2 — Engel e Cournot são "duas faces" de Walras, então se reduzem a uma; Simetria e Homogeneidade idem por dualidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Depende — em CD são todas redundantes (homotetia colapsa); em sistemas heterogêneos as 4 são independentes.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> "Fontes lógicas distintas" \(\neq\) "funcionalmente independentes". Apesar de cada restrição vir de uma operação diferente sobre \(x^M\) ou \(h\), <strong>Cournot é redundante</strong>: dadas Engel (\(\sum_i s_i\eta_i = 1\)), Homogeneidade combinada com Simetria (que entrega \(\sum_j \varepsilon^c_{ij} = 0\) e, somado com pesos \(s_i\), \(\sum_i s_i\varepsilon^c_{ij} = 0\)) e Slutsky-em-elasticidades (\(\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\eta_i\)), Cournot cai como corolário. Resultado canônico: Deaton-Muellbauer (1980) §3.1.</p>
+      <p><strong>2. Derivação.</strong> Aplicar Slutsky-em-elasticidades \(\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\eta_i\) e somar em \(i\) com pesos \(s_i\):
+      \[
+      \sum_i s_i\varepsilon_{ij} = \sum_i s_i\varepsilon^c_{ij} \;-\; s_j\sum_i s_i\eta_i.
+      \]
+      Pela <strong>Engel agregada</strong>: \(\sum_i s_i\eta_i = 1\). Pela <strong>Simetria + Homogeneidade da Hicksiana grau 0 em \(p\)</strong>: \(\sum_j \varepsilon^c_{ij} = 0\); aplicando simetria canônica \(s_i\varepsilon^c_{ij} = s_j\varepsilon^c_{ji}\) (N&S 12e Eq. 5.51), tem-se \(\sum_i s_i\varepsilon^c_{ij} = \sum_i s_j\varepsilon^c_{ji} = s_j\sum_i\varepsilon^c_{ji} = s_j\cdot 0 = 0\). Substituindo: \(\sum_i s_i\varepsilon_{ij} = 0 - s_j\cdot 1 = -s_j\), que é exatamente <strong>Cournot</strong>. Portanto: 3 independentes, 4ª implicada.</p>
+      <p><strong>3. Armadilha.</strong> (a) é a armadilha clássica: confunde <em>origem lógica distinta</em> (cada restrição vem de uma operação diferente) com <em>independência funcional</em> (resolução do sistema). São coisas distintas — D-M 1980 separa explicitamente as duas leituras. (c) compacta demais: Engel e Cournot são derivações de Walras em variáveis distintas, sim, mas isso não as torna a mesma restrição (Engel diz algo sobre elasticidades-renda; Cournot sobre elasticidades-preço cruzadas) — só que, dadas as outras 3, Cournot vira corolário. (d) inverte a lógica: em CD, as restrições continuam todas válidas (homotetia faz \(\eta_i = 1\) para todo \(i\), o que satisfaz Engel automaticamente, mas não "colapsa" o sistema).</p>
+      <p><strong>4. Extensão.</strong> Em <strong>estimação estrutural</strong> (AIDS de Deaton-Muellbauer 1980, QUAIDS de Banks-Blundell-Lewbel 1997), o econometrista impõe Engel + Homogeneidade + Simetria como restrições paramétricas no sistema de equações de gasto, e <strong>não impõe Cournot separadamente</strong> — porque sabe que ela sai de graça. Phlips (1983, <em>Applied Consumption Analysis</em>) tem a derivação completa em algumas linhas; ANPEC 2018 cobrou exatamente este ponto numa questão de demanda. Para a Aula 4 (EG): a redundância vira útil quando se passa para condições de agregação Sonnenschein-Mantel-Debreu — quanto menos restrições "de dentro do consumidor", mais flexibilidade no agregado.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (qualifier-level). A questão pune memorização da lista "as 4 restrições" e premia quem entendeu que dependência funcional não respeita a origem lógica. Aluno MPE com base ANPEC reconhece a redundância imediatamente; aluno que decorou N&S 12e §5.5 sem relacionar com Slutsky-em-elasticidades pode marcar (a) "todas independentes". A alternativa (b) é deliberadamente <em>educativa</em> — traz a micro-prova in-line, tornando-a a alternativa correta E a alternativa que ensina. Risco residual: aluno pode argumentar que "redundância funcional depende de qual base se escolhe" — argumento válido, mas a literatura padrão (D-M, Phlips) escolhe a base canônica em que Cournot é a redundante.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴🔴 — CV, EV, EC em quase-linear (caminho de Willig 1976) -->
+  <div class="quizg-q" data-qid="q9" data-correct="a" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴🔴</strong> <em>(Questão de calibração-teto do quiz. Custa 10–15 min de papel para fechar com clareza — exige amarrar três passos: ∂x₁/∂m=0, h₁=x₁ᴹ via Slutsky, igualdade das três integrais.)</em><br>
+      Considere preferências <strong>quase-lineares</strong> na direção do bem 2: \(u(x_1, x_2) = v(x_1) + x_2\), com \(v\) suavemente côncava, \(p_2 = 1\). O preço \(p_1\) sobe de \(p_1^0\) para \(p_1^1 > p_1^0\). Sobre as três medidas de bem-estar — variação compensatória CV, variação equivalente EV, e variação no excedente do consumidor \(\Delta\text{EC}\) (calculada com a Marshalliana) — qual afirmação está <strong>correta</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) \(\text{CV} = \text{EV} = \Delta\text{EC}\): em quase-linear na direção 2, o efeito-renda em \(x_1\) é nulo, então \(h_1 = x_1^M\) e as três integrais coincidem.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) \(\text{CV} > \Delta\text{EC} > \text{EV}\) em qualquer caso, e a desigualdade é estrita mesmo em quase-linear.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) \(\Delta\text{EC}\) subestima CV se \(x_1\) é normal, e a quase-linearidade não altera essa ordem.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) CV e EV coincidem mas \(\Delta\text{EC}\) só coincide com elas se \(p_1\) <em>cair</em>.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Quase-linearidade em \(x_2\) ("renda marginal constante" na direção 2) significa que \(\partial x_1/\partial m = 0\) na região interior — toda renda marginal vai para \(x_2\). Como o efeito-renda em \(x_1\) é zero, Slutsky entrega \(\partial x_1^M/\partial p_1 = \partial h_1/\partial p_1\), ou seja \(h_1(p, \bar u) = x_1^M(p, m)\) (Marshalliana e Hicksiana coincidem em \(x_1\)). Então as integrais que definem CV, EV e \(\Delta\text{EC}\) avaliam o <em>mesmo</em> integrando em \(p_1\), e os limites também coincidem — as três medidas batem.</p>
+      <p><strong>2. Derivação.</strong> Da CPO interior do UMP com \(u = v(x_1) + x_2\): \(v'(x_1) = p_1/p_2 = p_1\). A demanda \(x_1^M(p_1)\) é função apenas de \(p_1\) (não de \(m\)) — confirma \(\partial x_1^M/\partial m = 0\). Por dualidade, Hicksiana \(h_1(p_1, \bar u)\) também é função apenas de \(p_1\) (o nível \(\bar u\) é absorvido em \(x_2\), via \(x_2 = \bar u - v(x_1^*(p_1))\)). Logo \(h_1 \equiv x_1^M\). Daí:
+      \[
+      \text{CV} = \int_{p_1^0}^{p_1^1} h_1(p_1, \bar u^0)\,dp_1 = \int_{p_1^0}^{p_1^1} x_1^M(p_1)\,dp_1 = \Delta\text{EC},
+      \]
+      e o mesmo para EV (com \(\bar u^1\)). A famosa "ambiguidade" CV vs. EV vs. EC desaparece — o efeito-renda é o que separa as três, e aqui ele é zero por construção.</p>
+      <p><strong>3. Armadilha.</strong> Confundir <em>quase-linear na direção 1</em> (\(u = x_1 + w(x_2)\), em que \(\partial x_1/\partial m = 1\) e o resultado <em>não</em> vale para \(x_1\)) com <em>quase-linear na direção 2</em> (que é o caso aqui, e dá o resultado). A direção em que a utilidade é linear é a direção que <em>absorve</em> a renda; o efeito-renda zero aparece nas <em>outras</em> direções. (b) e (c) ignoram que a ordem CV \(\ge\) EC \(\ge\) EV (em alta de preço, bem normal) é estrita só quando há efeito-renda; aqui colapsam. (d) confunde direção da mudança com identidade entre medidas.</p>
+      <p><strong>4. Extensão.</strong> Willig (AER 1976) dá a cota geral em forma assintótica: \(|\text{CV} - \Delta\text{EC}|/m \le (1/2)\,\eta_1\,s_1\,(\Delta p_1/p_1)^2\). É uma cota <strong>de segunda ordem</strong> em \(\Delta p/p\); a leitura linear simplificada \(\eta\,s\,\Delta p/(2p)\) que aparece no Ex 5 dos avaliativos é a versão <em>first-order</em> da mesma estimativa (basta multiplicar o limite por \(\Delta p/p\) para passar de cota relativa a cota absoluta — em \(\Delta p/p\) moderado, ambas dão estimativa próxima). Em quase-linear, \(\eta_1 = 0\) na direção interior, a cota colapsa para zero, e a igualdade é <strong>exata</strong> — não aproximação. Esse é o caso de partida usado em Aula 4 (welfare aplicado a equilíbrio geral): em modelos de tributação ótima com utilidade quase-linear no numerário, CV agregada é <em>literalmente</em> excedente do consumidor agregado, sem correção. É também o motivo pelo qual livros de IO e finanças públicas se permitem usar "CS" sem se preocupar com efeito-renda.</p>
+      <p><strong>5. Peer-review.</strong> 🔴 — exige amarrar três coisas: (i) reconhecer que quase-linear em \(x_2\) implica \(\partial x_1/\partial m = 0\); (ii) usar Slutsky para concluir \(h_1 = x_1^M\); (iii) traduzir isso em igualdade das três integrais. Distratores são "quase certos" — (b) e (c) descrevem o caso geral (bem normal, com efeito-renda), e quem decora a hierarquia CV \(\ge\) EC \(\ge\) EV pode marcá-las sem perceber que a hipótese da questão zera a hierarquia. A questão pune memorização e premia leitura cuidadosa de hipóteses. Risco residual: aluno pode se perder em qual direção é "linear" — pelo enunciado, é \(x_2\) (entra linear na utilidade); o resultado vale para a <em>outra</em> direção, \(x_1\), que é o que a pergunta sobre alta de \(p_1\) coloca em jogo.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴 — Simetria de Slutsky via dualidade (Young + Shephard) -->
+  <div class="quizg-q" data-qid="q10" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10.</strong> A matriz de Slutsky compensada \(S(p, \bar u) = [\partial h_i/\partial p_j]\) é <strong>simétrica</strong>. Qual é o argumento mais limpo para essa simetria, partindo do que a Aula 2 estabeleceu sobre dualidade?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Simetria segue de \(\sum_i p_i\,\partial h_i/\partial p_j = 0\) (homogeneidade grau 1 de \(e\) em \(p\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Simetria segue de \(h_i\) ser não-crescente em \(p_i\) (lei da demanda compensada).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Por Shephard, \(h_i = \partial e/\partial p_i\); então \(\partial h_i/\partial p_j = \partial^2 e/\partial p_j\partial p_i\), e o teorema de Young (igualdade das derivadas mistas para \(e\) suavemente concava em \(p\)) entrega \(\partial^2 e/\partial p_j\partial p_i = \partial^2 e/\partial p_i\partial p_j = \partial h_j/\partial p_i\).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Simetria vale apenas em preferências homotéticas; em geral, \(\partial h_i/\partial p_j \neq \partial h_j/\partial p_i\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A simetria de Slutsky (\(S = S^\top\)) é uma <em>consequência</em> da dualidade — não um axioma adicional. O caminho é: lema de Shephard \(\Rightarrow\) Hicksiana é gradiente de \(e\) em \(p\) \(\Rightarrow\) Hessiano de \(e\) é simétrico (Young) \(\Rightarrow\) matriz de Slutsky é simétrica. Essa cadeia é o "valor agregado" da função gasto: amarra simetria + NSD + \(Sp=0\) numa única identidade \(S = \nabla^2_p e\).</p>
+      <p><strong>2. Derivação.</strong> Shephard (Aula 2): \(h_i(p, \bar u) = \dfrac{\partial e}{\partial p_i}(p, \bar u)\). Diferenciando em \(p_j\): \(\dfrac{\partial h_i}{\partial p_j} = \dfrac{\partial^2 e}{\partial p_j\,\partial p_i}\). Como \(e(\cdot, \bar u)\) é \(C^2\) (suficiente: preferências regulares + \(u\) \(C^2\) estritamente quase-côncava), Young dá \(\dfrac{\partial^2 e}{\partial p_j\,\partial p_i} = \dfrac{\partial^2 e}{\partial p_i\,\partial p_j} = \dfrac{\partial h_j}{\partial p_i}\). Logo \(S\) é simétrica. <em>Bonus:</em> a mesma identidade \(S = \nabla^2_p e\) entrega NSD (de concavidade de \(e\)) e \(Sp=0\) (de homogeneidade grau 1, via Euler aplicado a \(\nabla_p e\)).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde uma propriedade <em>distinta</em> (\(Sp=0\), homogeneidade) com simetria. (b) confunde NSD (diagonal \(\le 0\)) com simetria. (d) é falso: simetria vale para qualquer preferência regular, não apenas homotéticas — homotetia adiciona estrutura sobre <em>magnitudes</em> (escalonamento em renda), não sobre simetria.</p>
+      <p><strong>4. Extensão.</strong> Em estimação estrutural (AIDS, QUAIDS), simetria vira <strong>restrição testável</strong>: \(\hat\gamma_{ij} = \hat\gamma_{ji}\) no sistema de equações de gasto. Rejeição empírica sinaliza má especificação ou agregação enviesada. N&amp;S 12e §5.5 trata como propriedade-resumo de Slutsky; J-R §2.1 deriva via dualidade no mesmo espírito desta questão.</p>
+      <p><strong>5. Peer-review.</strong> 🔴 — exige reconhecer Shephard (Aula 2) <em>aplicado dentro</em> da Aula 3, e invocar Young sem hesitar. Distratores são todos "verdades vizinhas" sobre \(S\) (NSD, \(Sp=0\), homogeneidade) — quem decora "as 3 propriedades de Slutsky" sem amarrar à dualidade pode marcar (a) ou (b). A questão pune memorização de lista e premia quem entendeu o mecanismo.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 3 (também disponível desde 07/05). A <strong>Pré-aula 4</strong> (Equilíbrio Geral em trocas) é liberada na madrugada de <strong>07/05</strong>; tudo da Aula 3 fecha em <strong>quarta 13/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-03-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

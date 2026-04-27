@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 03 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 03</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Slutsky, Elasticidades, Bem-estar do Consumidor (CV, EV, EC)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, 29 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 13/05 às 18:00</strong> — 1h30 antes da Aula 4. <em>Calendário canônico restaurado</em> a partir desta aula (1 semana por aula).</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 14/05 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-03-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 03">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Slutsky em Cobb-Douglas: sinais e cancelamento canônico</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor tem preferência em \(\mathbb{R}^2_{++}\) representada por</p>
+      \[
+      u(x_1, x_2) = x_1^{1/2}\,x_2^{1/2}.
+      \]
+      <p>Em \(p = (p_1, p_2) = (2, 1)\) e \(m = 12\), você quer aplicar a equação de Slutsky em \(\partial x_1^M/\partial p_2\). Use \(e(p, \bar u) = 2\bar u\sqrt{p_1 p_2}\) e \(h_1(p, \bar u) = \bar u\sqrt{p_2/p_1}\) (CD simétrica).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A demanda Marshalliana \((x_1^M, x_2^M)\) e a derivada \(\partial x_1^M/\partial p_2\) valem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(x^M = (3, 6), \partial x_1^M/\partial p_2 = -1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(x^M = (3, 6), \partial x_1^M/\partial p_2 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(x^M = (6, 3), \partial x_1^M/\partial p_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) \(x^M = (3, 6), \partial x_1^M/\partial p_2 = +6\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="c" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> Em \(p = (2, 1)\) e \(\bar u = v = \sqrt{18}\), a Hicksiana cruzada \(\partial h_1/\partial p_2\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) \(0\) — em CD, Hicksiana cruzada também zera.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) Negativa — substitutos brutos sempre se traduzem em \(\partial h/\partial p < 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(\bar u/(2\sqrt{p_1 p_2}) = \sqrt{18}/(2\sqrt{2}) = 3/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) \(+1\) — efeito de substituição é unitário em CD.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> O efeito-renda em Slutsky, \(-x_2^M\cdot \partial x_1^M/\partial m\), em \((p, m) = (2, 1, 12)\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(-3/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \(+3/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(-6\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> Confirma-se Slutsky?</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) Sim: \(0 = 3/2 + (-3/2)\), com \(\partial h_1/\partial p_2 = 3/2\) e \(-x_2^M\cdot \partial x_1^M/\partial m = -3/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) Não: substitutos brutos não cancelam exatamente em CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) Sim, mas com fator multiplicativo \(\alpha\): \(0 = \alpha\cdot 3/2 - \alpha\cdot 3/2\) só vale para \(\alpha = 1/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) Não, porque o sinal do efeito-renda é \(+\) em CD.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Em CD, \(x_1^M = m/(2 p_1)\) não depende de \(p_2\) ⇒ \(\partial x_1^M/\partial p_2 = 0\). Slutsky entrega esse zero como **soma de duas peças não-nulas que se cancelam**: substituição (Hicksiana cruzada \(>0\)) compensada por efeito-renda (\(<0\) com sinal de Slutsky).</p>
+      <p><strong>2. Derivação.</strong> \(x_1^M = 12/4 = 3\); \(x_2^M = 6\). Walras: \(2(3) + 1(6) = 12\). ✓ \(v = \sqrt{18}\); \(\partial h_1/\partial p_2 = \sqrt{18}/(2\sqrt{2}) = 3/2\). ✓ \(\partial x_1^M/\partial m = 1/4\); \(-x_2^M(1/4) = -3/2\). ✓ Soma: \(3/2 - 3/2 = 0\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (b)(i): "Marshalliana cruzada zero ⇒ Hicksiana cruzada zero" é confusão clássica. Hicksiana isola substituição — nunca zero entre bens substituíveis. Item (c)(iii): inverter sinal de Slutsky.</p>
+      <p><strong>4. Extensão (Aulas 3+4).</strong> Matriz \(S\) é simétrica, semidef. neg., \(Sp = 0\). Em CD, \(S\) tem fator \(\bar u\) explícito. Aula 4 (EG): demanda agregada via Walras, equilíbrio competitivo.</p>
+      <p><strong>5. Peer-review.</strong> Exercício de "calibração do termômetro" — testa Slutsky termo-a-termo em caso onde resultado é conhecido (zero). Aluno que reportou (b)(i) ainda confunde dualidade Aula 2.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Stone-Geary: elasticidade-renda flexível, luxo</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a forma <em>Stone-Geary</em> \(u(x_1, x_2) = (x_1 - \gamma_1)^{\alpha}(x_2 - \gamma_2)^{1-\alpha}\) com \(\alpha = 1/2\), \(\gamma_1 = -2\), \(\gamma_2 = 0\).</p>
+
+      <div class="callout callout-note" style="margin: 0.8em 0; padding: 0.8em 1em; background: #f5f7fa; border-left: 3px solid #1B3A5C;">
+        <p style="margin: 0 0 0.4em 0;"><strong>Fato dado (forma fechada da demanda LES):</strong></p>
+        \[
+        x_i(p, m) \;=\; \gamma_i \;+\; \dfrac{\beta_i}{p_i}\,\Bigl(m - \textstyle\sum_k p_k\gamma_k\Bigr), \qquad \sum_i \beta_i = 1,\ m > \textstyle\sum_k p_k\gamma_k.
+        \]
+        <p style="margin: 0.4em 0 0 0;">Os parâmetros \(\gamma_i \ge 0\) representam <strong>mínimos de subsistência</strong> (consumo de "piso") e \(\beta_i\) é a <strong>propensão marginal a consumir</strong> o gasto excedente em \(i\). Aqui \(\beta_1 = \alpha\), \(\beta_2 = 1-\alpha\); permite-se \(\gamma_i < 0\) (interpretado como "ponto de saturação" em vez de subsistência) desde que \(m > \sum_k p_k \gamma_k\). <em>Referência: N&amp;S 12e §4.4 (Apêndice de formas funcionais); Deaton &amp; Muellbauer (1980).</em></p>
+        <p style="margin: 0.4em 0 0 0;"><strong>Você não precisa derivar essa fórmula a partir da utilidade — opere diretamente sobre ela.</strong></p>
+      </div>
+
+      <p>Em \(p = (1, 1)\), \(m = 8\):</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A Marshalliana \((x_1^M, x_2^M)\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \((-2 + 5, 0 + 5) = (3, 5)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \((4, 4)\) — Cobb-Douglas pura.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \((-2, 0)\) — apenas as constantes.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \((5, 5)\) — \(m/2\) em cada bem.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade-renda \(\eta_1 = (m/x_1^M)\cdot \partial x_1^M/\partial m\) em \((1, 1, 8)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) \(\eta_1 = 1\) — homotetia CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(\eta_1 = (8/3)\cdot (1/2) = 4/3 \approx 1{,}33\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(\eta_1 = 0{,}5\) — apenas o expoente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) \(\eta_1\) é negativa — bem inferior.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Em Stone-Geary com \(\gamma_1 < 0\), o bem 1 é classificado como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) <strong>Luxo</strong> — \(\eta_1 > 1\) acima do nível de saturação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) Necessidade — \(\eta_1 \in (0, 1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Inferior — \(\gamma_1 < 0\) implica \(\eta_1 < 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Giffen — \(\gamma_1 < 0\) implica reação anômala em preço.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Aplicando Slutsky em \(\partial x_1^M/\partial p_2\), o sinal de cada termo é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) Marshalliana cruzada zero, substituição zero, renda zero — independente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) Marshalliana cruzada \(< 0\), substituição \(> 0\), renda \(< 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) Marshalliana cruzada \(\neq 0\) em geral; aqui particularmente \(\gamma_2 = 0\) zera. Substituição \(> 0\), renda \(< 0\). Os dois quase-cancelam.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Marshalliana cruzada \(> 0\), substituição zero, renda \(> 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre a estrutura de Stone-Geary como modelo empírico:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) É forma funcional rica que permite \(\eta_i \neq 1\) por bem (não-homotética) preservando integração de Slutsky.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) É equivalente a CD com mudança de variável trivial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Implica \(\eta_i = \alpha_i\) por bem.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Não é compatível com restrição orçamentária.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> O exercício pede para <strong>trabalhar dentro da forma LES sem precisar derivar a partir da utilidade</strong>: a fórmula fechada \(x_i = \gamma_i + (\beta_i/p_i)(m - \sum_k p_k\gamma_k)\) é dada, e basta substituir/diferenciar. A leitura conceitual é que Stone-Geary generaliza CD de forma <strong>não-homotética</strong>: os \(\gamma_i\) deslocam o "piso" de consumo e fazem com que \(\eta_i\) deixe de ser \(1\). Com \(\gamma_1 < 0\) (e \(m\) suficientemente alto para o sistema ficar bem definido), o bem 1 vira luxo (\(\eta_1 > 1\)). Modelo base do <em>Linear Expenditure System</em> (Stone 1954).</p>
+      <p><strong>2. Derivação.</strong> \(x_1^M = -2 + (1/2)(8 + 2)/1 = -2 + 5 = 3\); \(x_2^M = (1/2)(10)/1 = 5\). Walras: \(3 + 5 = 8\). ✓ \(\partial x_1^M/\partial m = 1/(2 p_1) = 1/2\); \(\eta_1 = (8/3)(1/2) = 4/3\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (b)(i): assumir homotetia automática. Stone-Geary é não-homotética por construção — \(\gamma_i\) quebram homotetia. Item (c)(iii): confundir \(\gamma_1 < 0\) com inferioridade. Inferioridade é \(\eta < 0\); aqui \(\eta_1 = 4/3 > 1\), normal e luxo.</p>
+      <p><strong>4. Extensão (Aula 3 + AIDS).</strong> Em sistemas modernos AIDS/QUAIDS, flexibilidade estendida com termos quadráticos em log-renda. Empiricamente, \(\gamma_i\) é interpretado como "demanda de subsistência" se \(\gamma_i > 0\), ou "elasticidade luxo" se \(\gamma_i < 0\). POF brasileira tem dados para essa estimação.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 — testa Stone-Geary como extensão funcional não-homotética. Aluno que assume \(\eta = 1\) por reflexo errou (b)(i). Quem chega em \(\eta_1 = 4/3\) demonstra fluência em formas funcionais. Risco residual: depende de o aluno conhecer fórmula fechada de Stone-Geary; alternativa pedagógica é derivar via Lagrangiano.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Restrições agregadas em CD 3D</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um consumidor tem preferência</p>
+      \[
+      u(x_1, x_2, x_3) = x_1^{0{,}3}\,x_2^{0{,}5}\,x_3^{0{,}2}, \qquad p = (1, 2, 5),\; m = 100.
+      \]
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> As parcelas \((s_1, s_2, s_3)\) valem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \((0{,}3, 0{,}5, 0{,}2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \((1/3, 1/3, 1/3)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \((0{,}5, 0{,}3, 0{,}2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) Dependem de \((p, m)\) de forma não-trivial.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> As elasticidades-renda \((\eta_1, \eta_2, \eta_3)\) valem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \((0{,}3, 0{,}5, 0{,}2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \((1, 1, 1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \((1/0{,}3, 1/0{,}5, 1/0{,}2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) \((0{,}3/0{,}5, 0{,}5/0{,}5, 0{,}2/0{,}5)\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> <strong>Engel</strong> (\(\sum_i s_i\eta_i = 1\)) verifica-se em CD como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(0{,}3\cdot 1 + 0{,}5\cdot 1 + 0{,}2\cdot 1 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(0{,}3 + 0{,}5 + 0{,}2 = 1\) (apenas porque expoentes somam 1).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(1\cdot 1\cdot 1 = 1\) (multiplicativo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) Engel viola em CD com \(n \geq 3\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> <strong>Cournot</strong> (\(\sum_i s_i\varepsilon_{i1} = -s_1 = -0{,}3\)). Em CD, \(\varepsilon_{i1} = -\delta_{i1}\). Confirme:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) \(0{,}3\cdot (-1) + 0{,}5\cdot 0 + 0{,}2\cdot 0 = -0{,}3 = -s_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(0{,}3 + 0{,}5 + 0{,}2 = 1\) — Cournot é sobre soma de parcelas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(0{,}3\cdot 1 + 0{,}5\cdot 1 + 0{,}2\cdot 1 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) Cournot exige Hicksiana, não vale para Marshalliana em CD.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> <strong>Homogeneidade</strong> (\(\sum_j \varepsilon_{1j} + \eta_1 = 0\)) verifica-se como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) \(-1 + 0 + 0 + 1 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) \(-1 + 1 = 0\) — apenas próprio preço e renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) \(-0{,}3 + 0{,}3 = 0\) — usa parcelas, não elasticidades.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) Homogeneidade só vale em sistemas com \(\eta_i \neq 1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Em CD, parcelas iguais aos expoentes; elasticidades-renda todas 1 (homotetia); Marshalliana cruzada zero; próprio preço Marshalliano \(-1\). Todas as 3 restrições agregadas (Engel, Cournot, homogeneidade) verificam-se trivialmente.</p>
+      <p><strong>2. Derivação.</strong> \(s_i = \alpha_i\). \(\eta_i = 1\). \(\varepsilon_{ii} = -1\), \(\varepsilon_{ij} = 0\). Engel: \(\sum_i \alpha_i\cdot 1 = 1\). ✓ Cournot em \(j=1\): \(\alpha_1(-1) + \alpha_2(0) + \alpha_3(0) = -\alpha_1 = -s_1\). ✓ Homogeneidade em \(i=1\): \(\sum_j \varepsilon_{1j} + \eta_1 = -1 + 0 + 0 + 1 = 0\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (b)(i): expoente \(\neq\) elasticidade-renda. Item (d)(ii) e (e)(iii): confunde restrições agregadas (elasticidades) com somas de parcelas (Walras).</p>
+      <p><strong>4. Extensão.</strong> Restrições verificam em CD por construção. Em sistema empírico, violações sinalizam má especificação ou viés. ANPEC pede em formato fechado quase todo ano.</p>
+      <p><strong>5. Peer-review.</strong> Mecânico de aplicação. Calibre 🟡 porque exige fluência em **ler** restrições agregadas em forma de conta. Item (e)(ii) é distrator delicado para quem esquece que Cournot envolve cruzadas (zero em CD).</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Bens normais, inferiores, Giffen como condição</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere as seguintes afirmações sobre Slutsky no próprio preço, \(\partial x_i^M/\partial p_i = \partial h_i/\partial p_i - x_i^M\,\partial x_i^M/\partial m\):</p>
+      <ul>
+        <li><strong>A.</strong> Para qualquer preferência regular, \(\partial h_i/\partial p_i \leq 0\) (lei da demanda compensada).</li>
+        <li><strong>B.</strong> Bem inferior é condição **necessária** para Giffen.</li>
+        <li><strong>C.</strong> Bem inferior é condição **suficiente** para Giffen.</li>
+        <li><strong>D.</strong> Inferioridade alta combinada com parcela alta gera Giffen.</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Afirmação A é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) Verdadeira — concavidade de \(e\) em \(p\) garante diagonal do Hessiano \(\leq 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) Verdadeira apenas em CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) Falsa — substituição pode ser positiva em casos especiais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) Verdadeira apenas para bens normais.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Afirmação B é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) Verdadeira — sem inferioridade, efeito-renda em Slutsky entra como \(<0\) (subtraindo um \(>0\) dá \(<0\) firme).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) Falsa — Giffen pode ocorrer em normais, basta substituição forte.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) Verdadeira apenas em economia fechada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) Falsa — inferioridade não é nem necessária nem suficiente.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Afirmação C é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Verdadeira — bem inferior implica Giffen.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Falsa — inferioridade leve com parcela baixa e substituição forte resulta em Marshalliana ainda decrescente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Verdadeira em CES com \(\sigma > 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Verdadeira apenas em quase-linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Afirmação D é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) Verdadeira — quando \(|x_i^M\,\partial x_i^M/\partial m| > |\partial h_i/\partial p_i|\), o sinal vira.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) Falsa — parcela alta amortece efeito-renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Verdadeira apenas em domicílios pobres.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Verdadeira mas exige \(\sigma > 1\) em CES.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Para um bem com \(s_i = 0{,}6\), \(\eta_i = -0{,}8\), \(\varepsilon^c_{ii} = -0{,}3\), a elasticidade-preço Marshalliana \(\varepsilon_{ii}\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) \(-0{,}30 - 0{,}6\cdot (-0{,}8) = -0{,}30 + 0{,}48 = +0{,}18\) (Giffen — sinal positivo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) \(-0{,}30 + 0{,}6\cdot 0{,}8 = +0{,}18\) (mesmo valor mas via cálculo trocado).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) \(-0{,}30 - 0{,}48 = -0{,}78\) (lei da demanda preservada).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) \(-0{,}30\) — efeito-renda zero.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> Giffen requer **3 condições simultâneas**: (i) inferioridade (\(\eta < 0\)); (ii) parcela alta (\(s_i\) grande); (iii) substituição compensada de magnitude baixa (\(|\varepsilon^c_{ii}|\) pequena). Inferioridade é necessária mas longe de suficiente.</p>
+      <p><strong>2. Derivação.</strong> Slutsky em elasticidades: \(\varepsilon_{ii} = \varepsilon^c_{ii} - s_i\eta_i\). Para Giffen (\(\varepsilon_{ii} > 0\)), exige \(s_i\eta_i < \varepsilon^c_{ii}\) (ambos negativos, magnitude renda \(>\) substituição). Com \(s_i = 0{,}6\), \(\eta_i = -0{,}8\), \(\varepsilon^c_{ii} = -0{,}3\): \(s_i\eta_i = -0{,}48\); \(\varepsilon_{ii} = -0{,}3 - (-0{,}48) = +0{,}18\). Giffen confirmado.</p>
+      <p><strong>3. Armadilha.</strong> Confundir necessária com suficiente. Hunan (Jensen-Miller AER 2008) ilustra: arroz inferior + parcela altíssima + substitutos baratos. Em qualquer arranjo onde só uma condição é satisfeita, Giffen não aparece.</p>
+      <p><strong>4. Extensão (Aula 3 + estimação).</strong> POF brasileira raramente identifica Giffen — mesmo arroz tem \(\eta\) modestamente negativa só no decil mais baixo. Em política pública, alta de bem essencial é regressiva (Aula 3 Bloco 4 — CV) muito antes de virar Giffen.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que decora "inferior + parcela alta = Giffen" pode pular sobre a sutileza de \(|\varepsilon^c|\) baixo também. Item (e) força explicitar.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">CV, EV, EC em Cobb-Douglas com mudança de preço grande</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Em \(\mathbb{R}^2_{++}\), \(u(x_1, x_2) = x_1^{1/2}\,x_2^{1/2}\), \(m = 16\). \(p_2 = 1\) fixo. \(p_1\) sobe de \(p^0_1 = 1\) para \(p^1_1 = 4\). Função gasto \(e = 2\bar u\sqrt{p_1 p_2}\); Marshalliana \(x_1^M = m/(2 p_1)\); Hicksiana \(h_1 = \bar u\sqrt{p_2/p_1}\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> As Marshallianas \((x^{M,0}, x^{M,1})\) e utilidades \((u^0, u^1)\) são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) \((8, 8)\) e \((2, 8)\); \(u^0 = 8\), \(u^1 = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) \((8, 8)\) e \((2, 8)\); \(u^0 = 16\), \(u^1 = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) \((4, 4)\) e \((2, 4)\); \(u^0 = 4\), \(u^1 = \sqrt{8}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) \((16, 16)\) e \((4, 16)\); \(u^0 = 16\), \(u^1 = 8\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> A <strong>variação compensatória</strong> CV — quanta moeda tirar **depois** da alta para manter \(u^0\) — é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(24\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> A <strong>variação equivalente</strong> EV — quanta moeda dar **antes** da alta para evitar a mudança — é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) \(16\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> O excedente do consumidor exato \(\Delta\text{EC} = \int_1^4 8/p_1\,dp_1\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(8\,\ln 4 \approx 11{,}09\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(24\) — área de retângulo \(8\times 3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(15\) — média dos extremos de \(p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) \(16\) — sem efeito-renda corrigido.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre a ordem **EV \(\leq\) ΔEC \(\leq\) CV** para alta de preço:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) Falsa em CD — a ordem inverte.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) Verdadeira: \(8 \leq 11{,}09 \leq 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) Verdadeira apenas para mudanças pequenas (Willig 1976 fronteira).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) A ordem só vale em quase-linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> CV usa \(u^0\) (utilidade antiga); EV usa \(u^1\) (utilidade nova). Para alta de preço com bem normal, \(\text{EV} < \text{CV}\). \(\Delta\text{EC}\) (Marshalliana) fica entre os dois — Willig 1976.</p>
+      <p><strong>2. Derivação.</strong> Antes: \(x_1^M = 8\), \(x_2^M = 8\), \(u^0 = 8\). Depois: \(x_1^M = 2\), \(x_2^M = 8\), \(u^1 = 4\). CV: \(e(4,1,8) - e(1,1,8) = 32 - 16 = 16\). EV: \(e(4,1,4) - e(1,1,4) = 16 - 8 = 8\). EC: \(\int_1^4 8/p\,dp = 8\ln 4 \approx 11{,}09\). Ordem: \(8 \leq 11{,}09 \leq 16\). ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (b)(i) confunde com EV. Item (d)(ii) calcula área retangular ignorando que demanda decresce. Item (d)(iv) confunde EC com CV.</p>
+      <p><strong>4. Extensão.</strong> CV \(-\) EV \(= 8\) mede o "tamanho" do efeito-renda. Em CD com mudança grande, é substancial. Willig (AER 1976) dá a cota first-order \(|\Delta\text{EC} - \text{CV}|/\Delta\text{EC} \leq \eta\,s\,\Delta p/(2 p)\) — forma simplificada da cota assintótica completa em \((\Delta p/p)^2\); em política tributária real (\(\Delta p/p \approx 10\%\)), o erro relativo fica \(< 1\%\). Em quase-linear, \(\eta = 0\) e a cota colapsa para zero (igualdade exata).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Mnemônico: "<strong>CV: u-velha, p-nova; EV: u-nova, p-velha</strong>". Aluno que confunde sentido inverte os números.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Análise de incidência tributária com sistema de elasticidades</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Um governo introduz imposto específico sobre o bem 1 (combustível). Estimativas estruturais (sistema AIDS calibrado em POF):</p>
+      <ul>
+        <li>Parcelas: \(s_1 = 0{,}08\), \(s_2 = 0{,}30\) (transporte público), \(s_3 = 0{,}62\) (resto).</li>
+        <li>Elasticidades-renda: \(\eta_1 = 0{,}3\) (necessidade), \(\eta_2 = 1{,}2\) (luxo), \(\eta_3 = 0{,}97\) (mediana).</li>
+        <li>Elasticidades compensadas: \(\varepsilon^c_{11} = -0{,}25\), \(\varepsilon^c_{21} = +0{,}10\), \(\varepsilon^c_{31} = +0{,}05\).</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A elasticidade-preço Marshalliana de combustível \(\varepsilon_{11}\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) \(-0{,}25 - 0{,}08\cdot 0{,}3 = -0{,}274\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) \(-0{,}25 + 0{,}08\cdot 0{,}3 = -0{,}226\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) \(-0{,}25\) — sem ajuste de Slutsky.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) \(-0{,}25 - 0{,}30\cdot 0{,}3 = -0{,}340\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade cruzada \(\varepsilon_{21}\) (transporte público em relação a combustível):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) \(+0{,}10 - 0{,}08\cdot 1{,}2 = +0{,}004\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) \(+0{,}10 + 0{,}08\cdot 1{,}2 = +0{,}196\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) \(+0{,}10\) — Marshalliana = Hicksiana em cruzadas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) \(0\) — combustível e transporte público são independentes brutos.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Para alta de combustível de 10%, a queda percentual em consumo Marshalliano:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) \(-0{,}25\%\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) \(-2{,}74\%\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) \(-7{,}40\%\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) \(-25\%\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Aproximação linearizada de **CV** por unidade de gasto, para a alta de 10% no combustível:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) \(\approx 0{,}80\%\,m\) — \(s_1\Delta p_1/p_1 = 0{,}008\) e termo de 2ª ordem desprezível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) \(\approx 8\%\,m\) — usar Marshalliana sem corrigir.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) \(\approx 0\%\,m\) — \(s_1\) muito pequeno.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) \(\approx 2{,}74\%\,m\) — confunde \(\varepsilon\) com CV.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre regressividade, considerando \(s_1 \approx 0{,}15\) no 1º decil; \(s_1 \approx 0{,}05\) no 9º:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) A política é progressiva — combustível é luxo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) A política é regressiva — CV/m é maior nos decis pobres porque \(s_1\) é maior.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) A política é neutra — \(\varepsilon^c\) é constante por decil.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Não há informação suficiente.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Análise de incidência: (i) Slutsky (compensada → Marshalliana); (ii) integração de Hicksiana para CV. Regressividade vem da heterogeneidade de \(s_i\) entre decis — não dos parâmetros estruturais.</p>
+      <p><strong>2. Derivação.</strong> \(\varepsilon_{11} = -0{,}25 - 0{,}024 = -0{,}274\). \(\varepsilon_{21} = +0{,}10 - 0{,}096 = +0{,}004\) (independente bruto, substituto líquido). \(\Delta\ln x_1^M = -0{,}0274 = -2{,}74\%\). CV/m \(\approx 0{,}008(1 - 0{,}0125) \approx 0{,}79\%\). 1º decil: CV/m \(\approx 0{,}15\%\). 9º decil: CV/m \(\approx 0{,}05\%\). 1º decil paga 3× mais em proporção da renda.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(ii) erra sinal. Item (b)(iii) "Marshalliana = Hicksiana em cruzadas" é grave. Item (c)(iii) erra escala. Item (d)(ii) usa Marshalliana sem corrigir.</p>
+      <p><strong>4. Extensão.</strong> Em AIDS calibrado, parcelas variam por decil via termos quadráticos em log-renda. Política compensatória ("cashback") zera regressividade. EC 132/2023 (reforma tributária) tem mecanismo de cashback explícito.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Integra Slutsky em sistema, Marshalliana cruzada, CV linearizada com 2ª ordem, regressividade. Pacote operacional de welfare aplicado — Banco Mundial, FMI, Tesouro Nacional usam exatamente esses cálculos.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (29 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>14/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 13/05 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 4</strong> (Equilíbrio Geral em trocas) é liberada na madrugada de <strong>07/05</strong>. <strong>Pré-monitoria 1</strong> com Alberto abre <strong>sáb 09/05</strong> (cobre Aulas 1–3). Tudo da Aula 3 fecha em <strong>quarta 13/05 18h</strong>; gabarito quinta 14/05 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-03-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  // Fallback para data hard-coded se calendario.js não carregou.
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(3, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-14T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
