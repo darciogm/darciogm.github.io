@@ -16,7 +16,7 @@ typography and palette.
 <video controls preload="metadata"
        style="width:100%; max-width:1200px; display:block; margin:0 auto;
               border:1px solid #e0e0e0; border-radius:12px;">
-  <source src="assets/cost_of_inclusion.mp4" type="video/mp4">
+  <source src="../assets/cost_of_inclusion.mp4" type="video/mp4">
   Your browser does not support embedded video.
 </video>
 
@@ -28,7 +28,7 @@ Sound on recommended. ~17 minutes. Genicolo-Martins, 2026.
 
 ## Earlier interactive overview
 
-<iframe src="assets/storytelling_video.html"
+<iframe src="../assets/storytelling_video.html"
         style="width:100%; height:60vh; border:1px solid #e0e0e0; border-radius:12px;"
         allowfullscreen>
 </iframe>
