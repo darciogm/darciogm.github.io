@@ -15,8 +15,8 @@ paper: sme-public
 </div>
 
 <div class="key-result" markdown>
-<span class="number">73--85%</span>
-<span class="label">Share of the simulated SME-only price effect that operates within the auction (sheltered bidding) rather than through endogenous SME entry, across cost-distribution estimators and across both the equilibrium-selection and strict-invariance specifications</span>
+<span class="number">R$55--128M / yr</span>
+<span class="label">(US$16--37M) annual welfare loss imposed by the SME-only set-aside on a single product group of São Paulo's R$13 billion procurement platform &mdash; roughly three-quarters of it attributable to sheltered bidding rather than to entry response. A 10% SME price preference welfare-dominates the set-aside on the same metric in standardized markets, at essentially zero fiscal cost.</span>
 </div>
 
 ## Abstract
