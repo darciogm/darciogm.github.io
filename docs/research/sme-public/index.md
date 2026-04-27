@@ -15,8 +15,8 @@ paper: sme-public
 </div>
 
 <div class="key-result" markdown>
-<span class="number">R$55--128M / yr</span>
-<span class="label">(US$16--37M) annual welfare loss imposed by the SME-only set-aside on a single product group of São Paulo's R$13 billion procurement platform &mdash; roughly three-quarters of it attributable to sheltered bidding rather than to entry response. A 10% SME price preference welfare-dominates the set-aside on the same metric in standardized markets, at essentially zero fiscal cost.</span>
+<span class="number">R&#36;55&ndash;128M / yr</span>
+<span class="label">(US&#36;16&ndash;37M) annual welfare loss imposed by the SME-only set-aside on a single product group of S&atilde;o Paulo's R&#36;13 billion procurement platform &mdash; roughly three-quarters of it attributable to sheltered bidding rather than to entry response. A 10% SME price preference welfare-dominates the set-aside on the same metric in standardized markets, at essentially zero fiscal cost.</span>
 </div>
 
 ## Abstract
