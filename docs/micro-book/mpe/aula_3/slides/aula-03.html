@@ -303,7 +303,11 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <h2>Recall da Aula 2 em 60 segundos</h2>
 <div class="eq-key">
 <p><span class="math display">\[
-x_i^M(p, m) = h_i\big(p, v(p, m)\big), \qquad h_i(p, \bar u) = \frac{\partial e}{\partial p_i}, \qquad x_i^M = -\frac{\partial v/\partial p_i}{\partial v/\partial m}.
+\begin{aligned}
+x_i^M(p, m) &amp;= h_i\big(p, v(p, m)\big), \\
+h_i(p, \bar u) &amp;= \frac{\partial e}{\partial p_i}, \\
+x_i^M &amp;= -\frac{\partial v/\partial p_i}{\partial v/\partial m}.
+\end{aligned}
 \]</span></p>
 </div>
 <p><strong>Três peças</strong>: identidade calibrada, Shephard, Roy.</p>
@@ -349,7 +353,10 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 <h2>Derivação de Slutsky (2a/3) — regra da cadeia</h2>
 <p><strong>Derivar (*) em <span class="math inline">\(p_j\)</span>, lembrando que <span class="math inline">\(\bar u = v(p, m)\)</span> depende de <span class="math inline">\(p_j\)</span>:</strong></p>
 <p><span class="math display">\[
-\frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v} + \frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_j} \;=\;&amp; \frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v} \\
+&amp;+\; \frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+\end{aligned}
 \]</span></p>
 <div class="bridge">
 <p>Próximo slide: Roy + identidade dual fecham os termos restantes — e os <span class="math inline">\(\lambda^*\)</span> cancelam.</p>
@@ -360,7 +367,11 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 <p><strong>Roy:</strong> <span class="math inline">\(\partial v/\partial p_j = -\lambda^* x_j^M\)</span>.</p>
 <p><strong>Identidade dual</strong> <span class="math inline">\(h_i(p, \bar u) = x_i^M(p, e(p, \bar u))\)</span>, derivada em <span class="math inline">\(\bar u\)</span>:</p>
 <p><span class="math display">\[
-\frac{\partial h_i}{\partial \bar u} = \frac{\partial x_i^M}{\partial m}\cdot \frac{\partial e}{\partial \bar u} = \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}.
+\begin{aligned}
+\frac{\partial h_i}{\partial \bar u}
+&amp;= \frac{\partial x_i^M}{\partial m}\cdot \frac{\partial e}{\partial \bar u} \\
+&amp;= \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}.
+\end{aligned}
 \]</span></p>
 <div class="bridge">
 <p>Substituir os dois na equação anterior: os <span class="math inline">\(\lambda^*\)</span> cancelam — punch no próximo.</p>
@@ -370,7 +381,13 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 <h2>Derivação de Slutsky (3/3) — punch</h2>
 <div class="eq-key">
 <p><span class="math display">\[
-\boxed{\;\frac{\partial x_i^M}{\partial p_j} \;=\; \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M\cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.\;}
+\boxed{\;
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_j}
+\;=\;&amp; \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \\
+\;-\;&amp; \underbrace{x_j^M\cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+\end{aligned}
+\;}
 \]</span></p>
 </div>
 <div class="eq-punch">
@@ -425,7 +442,7 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em Cobb-Douglas (1/2)</h2>
+<h2>Sanidade em Cobb-Douglas (1/3)</h2>
 <p><strong>Setup:</strong> <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>, <span class="math inline">\(\alpha = 1/2\)</span>. Marshalliana <span class="math inline">\(x_1^M = m/(2 p_1)\)</span> — não depende de <span class="math inline">\(p_2\)</span>.</p>
 <p><strong>Aplicar Slutsky em <span class="math inline">\(\partial x_1^M/\partial p_2\)</span>:</strong></p>
 <ul>
@@ -442,12 +459,19 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em Cobb-Douglas (2/2)</h2>
+<h2>Sanidade em Cobb-Douglas (2/3) — Hicksiana cruzada</h2>
 <p><strong>Hicksiana:</strong> <span class="math inline">\(h_1 = (1/2)\cdot e/p_1\)</span> com <span class="math inline">\(e = 2\bar u\sqrt{p_1 p_2}\)</span>, logo <span class="math inline">\(h_1 = \bar u\sqrt{p_2/p_1}\)</span>.</p>
 <p><span class="math display">\[
-\frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2}\quad\text{(usando } \bar u = v = m/(2\sqrt{p_1 p_2})\text{)}.
+\frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2},
 \]</span></p>
-<p><strong>Soma de Slutsky:</strong></p>
+<p>substituindo <span class="math inline">\(\bar u = v = m/(2\sqrt{p_1 p_2})\)</span> da Aula 2.</p>
+<div class="bridge">
+<p>Substituição compensada <span class="math inline">\(&gt; 0\)</span>. Próximo: somar com o efeito-renda e ler o cancelamento.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Sanidade em Cobb-Douglas (3/3) — soma e leitura</h2>
+<p><strong>Soma de Slutsky em <span class="math inline">\(\partial x_1^M/\partial p_2\)</span>:</strong></p>
 <p><span class="math display">\[
 \frac{\partial x_1^M}{\partial p_2} = \frac{m}{4 p_1 p_2} - \frac{m}{4 p_1 p_2} = 0. \;\checkmark
 \]</span></p>
@@ -527,7 +551,11 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 <p><strong>Slutsky em <span class="math inline">\(\partial x_i^M / \partial p_i\)</span>:</strong></p>
 <div class="eq-key">
 <p><span class="math display">\[
-\frac{\partial x_i^M}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\text{normal}\,&gt;0,\,\text{inferior}\,&lt;0}.
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_i}
+\;=\;&amp; \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} \\
+\;-\;&amp; x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\text{normal}\,&gt;0,\;\text{inferior}\,&lt;0}.
+\end{aligned}
 \]</span></p>
 </div>
 <p><strong>Para Giffen</strong> (<span class="math inline">\(\partial x_i^M/\partial p_i &gt; 0\)</span>):</p>
@@ -602,8 +630,10 @@ x_i^M(p, m) = h_i\big(p, v(p, m)\big). \tag{identidade calibrada}
 <h2>Definições básicas (1/2) — elasticidades</h2>
 <div class="eq-key">
 <p><span class="math display">\[
-\varepsilon_{ij} = \frac{\partial \ln x_i^M}{\partial \ln p_j} = \frac{p_j}{x_i^M}\cdot \frac{\partial x_i^M}{\partial p_j},
-\qquad \eta_i = \frac{\partial \ln x_i^M}{\partial \ln m} = \frac{m}{x_i^M}\cdot \frac{\partial x_i^M}{\partial m}.
+\begin{aligned}
+\varepsilon_{ij} &amp;= \frac{\partial \ln x_i^M}{\partial \ln p_j} = \frac{p_j}{x_i^M}\cdot \frac{\partial x_i^M}{\partial p_j}, \\
+\eta_i &amp;= \frac{\partial \ln x_i^M}{\partial \ln m} = \frac{m}{x_i^M}\cdot \frac{\partial x_i^M}{\partial m}.
+\end{aligned}
 \]</span></p>
 </div>
 <p><strong>Elasticidade-preço compensada (Hicksiana):</strong></p>

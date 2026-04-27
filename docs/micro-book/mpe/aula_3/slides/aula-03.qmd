@@ -143,7 +143,11 @@ Os pontos de pico viram exemplos guiados. Quem registrou dúvida específica, a 
 
 ::: {.eq-key}
 $$
-x_i^M(p, m) = h_i\big(p, v(p, m)\big), \qquad h_i(p, \bar u) = \frac{\partial e}{\partial p_i}, \qquad x_i^M = -\frac{\partial v/\partial p_i}{\partial v/\partial m}.
+\begin{aligned}
+x_i^M(p, m) &= h_i\big(p, v(p, m)\big), \\
+h_i(p, \bar u) &= \frac{\partial e}{\partial p_i}, \\
+x_i^M &= -\frac{\partial v/\partial p_i}{\partial v/\partial m}.
+\end{aligned}
 $$
 :::
 
@@ -206,7 +210,10 @@ Próximo slide: aplicar $\partial/\partial p_j$ no lado direito, regra da cadeia
 **Derivar (\*) em $p_j$, lembrando que $\bar u = v(p, m)$ depende de $p_j$:**
 
 $$
-\frac{\partial x_i^M}{\partial p_j} = \frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v} + \frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_j} \;=\;& \frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v} \\
+&+\; \frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+\end{aligned}
 $$
 
 ::: {.bridge}
@@ -222,7 +229,11 @@ Próximo slide: Roy + identidade dual fecham os termos restantes — e os $\lamb
 **Identidade dual** $h_i(p, \bar u) = x_i^M(p, e(p, \bar u))$, derivada em $\bar u$:
 
 $$
-\frac{\partial h_i}{\partial \bar u} = \frac{\partial x_i^M}{\partial m}\cdot \frac{\partial e}{\partial \bar u} = \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}.
+\begin{aligned}
+\frac{\partial h_i}{\partial \bar u}
+&= \frac{\partial x_i^M}{\partial m}\cdot \frac{\partial e}{\partial \bar u} \\
+&= \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}.
+\end{aligned}
 $$
 
 ::: {.bridge}
@@ -235,7 +246,13 @@ Substituir os dois na equação anterior: os $\lambda^*$ cancelam — punch no p
 
 ::: {.eq-key}
 $$
-\boxed{\;\frac{\partial x_i^M}{\partial p_j} \;=\; \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M\cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.\;}
+\boxed{\;
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_j}
+\;=\;& \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \\
+\;-\;& \underbrace{x_j^M\cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+\end{aligned}
+\;}
 $$
 :::
 
@@ -266,7 +283,7 @@ Duas linhas de cadeia + Roy. Toda a Aula 2 trabalha aqui.
 
 ---
 
-## Sanidade em Cobb-Douglas (1/2)
+## Sanidade em Cobb-Douglas (1/3)
 
 **Setup:** $u = x_1^\alpha x_2^{1-\alpha}$, $\alpha = 1/2$. Marshalliana $x_1^M = m/(2 p_1)$ — não depende de $p_2$.
 
@@ -288,15 +305,25 @@ Substituição compensada cancela exatamente o efeito-renda. Próximo slide: con
 
 ---
 
-## Sanidade em Cobb-Douglas (2/2)
+## Sanidade em Cobb-Douglas (2/3) — Hicksiana cruzada
 
 **Hicksiana:** $h_1 = (1/2)\cdot e/p_1$ com $e = 2\bar u\sqrt{p_1 p_2}$, logo $h_1 = \bar u\sqrt{p_2/p_1}$.
 
 $$
-\frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2}\quad\text{(usando } \bar u = v = m/(2\sqrt{p_1 p_2})\text{)}.
+\frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2},
 $$
 
-**Soma de Slutsky:**
+substituindo $\bar u = v = m/(2\sqrt{p_1 p_2})$ da Aula 2.
+
+::: {.bridge}
+Substituição compensada $> 0$. Próximo: somar com o efeito-renda e ler o cancelamento.
+:::
+
+---
+
+## Sanidade em Cobb-Douglas (3/3) — soma e leitura
+
+**Soma de Slutsky em $\partial x_1^M/\partial p_2$:**
 
 $$
 \frac{\partial x_1^M}{\partial p_2} = \frac{m}{4 p_1 p_2} - \frac{m}{4 p_1 p_2} = 0. \;\checkmark
@@ -356,7 +383,11 @@ Inferioridade é *necessária* para Giffen, mas **não suficiente**. Próximo sl
 
 ::: {.eq-key}
 $$
-\frac{\partial x_i^M}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\text{normal}\,>0,\,\text{inferior}\,<0}.
+\begin{aligned}
+\frac{\partial x_i^M}{\partial p_i}
+\;=\;& \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} \\
+\;-\;& x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\text{normal}\,>0,\;\text{inferior}\,<0}.
+\end{aligned}
 $$
 :::
 
@@ -459,8 +490,10 @@ Definições · 4 restrições · Marshalliana vs. Hicksiana · substitutos brut
 
 ::: {.eq-key}
 $$
-\varepsilon_{ij} = \frac{\partial \ln x_i^M}{\partial \ln p_j} = \frac{p_j}{x_i^M}\cdot \frac{\partial x_i^M}{\partial p_j},
-\qquad \eta_i = \frac{\partial \ln x_i^M}{\partial \ln m} = \frac{m}{x_i^M}\cdot \frac{\partial x_i^M}{\partial m}.
+\begin{aligned}
+\varepsilon_{ij} &= \frac{\partial \ln x_i^M}{\partial \ln p_j} = \frac{p_j}{x_i^M}\cdot \frac{\partial x_i^M}{\partial p_j}, \\
+\eta_i &= \frac{\partial \ln x_i^M}{\partial \ln m} = \frac{m}{x_i^M}\cdot \frac{\partial x_i^M}{\partial m}.
+\end{aligned}
 $$
 :::
 
