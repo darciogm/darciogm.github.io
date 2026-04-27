@@ -23,16 +23,3 @@ typography and palette.
 <p style="text-align:center; margin-top:1em; font-size:0.85em; color:#999;">
 Sound on recommended. ~17 minutes. Genicolo-Martins, 2026.
 </p>
-
----
-
-## Earlier interactive overview
-
-<iframe src="../assets/storytelling_video.html"
-        style="width:100%; height:60vh; border:1px solid #e0e0e0; border-radius:12px;"
-        allowfullscreen>
-</iframe>
-
-<p style="text-align:center; margin-top:1em; font-size:0.85em; color:#999;">
-Slide-based walkthrough. ~5 minutes.
-</p>
