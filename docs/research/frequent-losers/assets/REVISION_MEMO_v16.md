@@ -87,7 +87,7 @@
 
 3. **The strict pre-2020 contemporaneous AUC of $0.748$ is computed on $30$ firm-defendants and $210$ cobidder labels.** This is small-sample territory. The DeLong $95\%$ CI of $[0.713, 0.783]$ is informative but not tight. Replication on a larger contemporaneous portfolio (e.g., adding $2014$--$2015$ adjudications if they are recoverable) would strengthen the conservative benchmark.
 
-4. **The construct's stability under deliberate adversarial adaptation is untested.** A sophisticated cartel could rotate cover bidders or let them win occasionally to stay below the IQR threshold; the threshold sensitivity in §9.1 already shows the coefficient declines as the cutoff tightens. Whether a strategic actor could push the construct into Type II error is not something we can answer with the current data.
+4. ~~**The construct's stability under deliberate adversarial adaptation is untested.**~~ **RESOLVED in v16.1.** Adversarial-adaptation simulation in Online Appendix~G (Table~\ref{tab:adversarial_adaptation}) reports the AUC degradation profile under four strategic adaptations: rotation, occasional wins, CNPJ splitting, threshold capping. The construct is resilient to rotation and occasional wins (AUC essentially unchanged), degrades modestly under CNPJ splitting ($-3.7$ pp), is substantially vulnerable to threshold capping ($-12.7$ pp), and severely degraded under the combined attack (threshold capping with rotation: AUC $0.928 \to 0.632$). The threshold rule is the construct's most exposed margin; deployment requires periodic recalibration.
 
 5. **The framework's prediction $\partial m^*/\partial\theta_k < 0$ is satisfied directionally by the buyer-size gradient, but the framework also predicts $\partial m^*/\partial c_1 < 0$, which we do not test.** The framework should be presented as having at least one prediction in the data and at least one prediction we cannot evaluate, not as having a track record.
 
@@ -101,7 +101,7 @@
 
 2. **Bid-level investigation of selection in the BEC sample.** For the items where frequent losers participate, compare the bid distribution conditional on within-cell observables. This would tell us whether the unobserved features that drive selection are bid-distributional (e.g., higher CV, kurtosis) or non-bid (e.g., procurement-officer identity, supplier-pool depth). If the BEC bid-level data become extractable at scale, this is the most informative single addition.
 
-3. **Adversarial-adaptation simulation.** Holding the construct fixed, simulate strategic actors who optimize the trade-off between participation count and threshold avoidance. Report the construct's degradation under simulated adaptation. This addresses an obvious referee question we currently do not address.
+3. ~~**Adversarial-adaptation simulation.**~~ **DONE in v16.1.** See `scripts/55_adversarial_adaptation.R`, Online Appendix~G, Table~\ref{tab:adversarial_adaptation}, and §10.2 disclosure paragraph.
 
 4. **Mechanism identification using regulatory shocks.** TCE-SP audit-court coverage was extended to certain procuring units in specific years. If the rollout is plausibly orthogonal to bidder-pool characteristics, this gives variation in oversight that is separable from buyer size. Difference-in-differences with TCE-SP coverage as treatment would identify the oversight channel separately. Estimated effort: 2--3 months including data acquisition. Risk: identifying assumption (orthogonal rollout) may not hold.
 
