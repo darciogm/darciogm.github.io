@@ -21,7 +21,7 @@ paper: frequent-losers
 
 ## Abstract
 
-Can we detect bid-rigging cartels in jurisdictions where bid
+Can we screen for bid-rigging cartels in jurisdictions where bid
 microdata are not centrally collected? São Paulo's electronic
 procurement platform reveals a peculiar pattern that suggests we
 can. In BEC (2009&ndash;2019), of 16,843 firms that bid without ever
