@@ -6,9 +6,9 @@ paper: frequent-losers
 
 <div class="hero-section" markdown>
 
-# Frequent Losers as a Cartel Screen
+# Loser-Side Participation as a Procurement Risk Signal
 
-<p class="subtitle">Detecting Cover Bidding Without Bid Microdata</p>
+<p class="subtitle">Award-Record Screening of Cartel-Adjacent Environments</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
@@ -21,28 +21,31 @@ paper: frequent-losers
 
 ## Abstract
 
-Can we screen for bid-rigging cartels in jurisdictions where bid
-microdata are not centrally collected? We document a peculiar
-pattern in public-procurement records from the State of São
-Paulo, Brazil (2009&ndash;2019), that suggests we can. Of 16,843
-firms that bid without ever winning, 2,735 participated in 14 or
-more tender-items&mdash;a population we call *frequent losers*.
-Their behavior is hard to square with expected-profit competition
-and reads naturally as the cover-bidder side of bid-rigging
-arrangements. Within-item, within-year, within-procuring-unit
-comparisons across 1,654,401 items associate frequent-loser
-presence with a +3.6 to +7.7% higher negotiated unit price across
-estimators. The price gap shrinks as buyers grow&mdash;from +21.4%
-in the smallest procuring-unit-size quartile to +1.7% in the
-largest&mdash;a 12.6&times; ratio that is the strongest source of
-heterogeneity, larger than the pregão&ndash;convite gap. We read
-the pattern through a separating-equilibrium framework with cover
-bidders and genuine entrants. Against CADE's adjudicated cartel
-portfolio, the construct discriminates cobidder firms at AUC 0.864
-under temporal holdout. Identification is descriptive by design.
-Built from contract-award records, the construct translates into a
-three-stage administrative pathway&mdash;Screen, Triage,
-Forensic&mdash;deployable where bid microdata are absent.
+What signal can oversight bodies extract from contract-award
+records when bid microdata are unavailable? We document, in
+public-procurement records of the State of São Paulo, Brazil
+(2009&ndash;2019), that loser-side participation patterns carry
+usable signal for screening suspicious procurement environments.
+Of 16,843 firms that bid without ever winning, 2,735 participated
+in 14 or more tender-items&mdash;a population we call *frequent
+losers*. Their participation associates with a +3.6 to +7.7%
+higher negotiated unit price across estimators in the broad
+sample, but the conditional association reverses sign under
+strict-overlap matching (&minus;9.7% to &minus;30.7%): the broad
+and overlap-restricted estimates describe the same population at
+different scopes of selection, and we treat the screen's signal
+as partly about which environments frequent losers select into
+rather than as a uniform descriptive effect. The price imprint
+shrinks across procuring-unit size quartiles (from +21.4% to
++1.7%; ratio 12.6&times;), consistent with thinner institutional
+capacity moderating the imprint, though buyer size proxies for
+several institutional features and we do not identify oversight
+as the operative channel. Against CADE's adjudicated cartel
+records, the screen reaches AUC 0.748 on a strict contemporaneous
+validation and 0.864 on temporal holdout against cobidder
+labels&mdash;an indirect benchmark of cartel adjacency, not proof
+of cartel membership. The screen is intended as a triage tool for
+procurement oversight where bid microdata are absent.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 [:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
