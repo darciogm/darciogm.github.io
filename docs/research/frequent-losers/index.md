@@ -21,28 +21,28 @@ paper: frequent-losers
 
 ## Abstract
 
-Most tools for detecting bid-rigging cartels need bid microdata,
-which few jurisdictions audit at scale. A peculiar pattern shows
-up in São Paulo's electronic procurement platform (BEC,
-2009&ndash;2019): out of 16,843 firms that bid without ever
-winning, 2,735 participated in 14 or more tender-items. We call
-this group *frequent losers*. Their behavior is hard to square
-with expected-profit competition and reads naturally as the
-cover-bidder side of bid-rigging arrangements. Comparing items
-within the same product code, year, and procuring unit
-(1,654,401 tender-items in total), the presence of a frequent
-loser is associated with a +3.6 to +7.7% higher negotiated unit
-price across five estimators (full-sample OLS, PBU fixed effects,
-IPW, CEM, cross-fit). The price gap shrinks as buyers grow: from
-+21.4% in the smallest procuring-unit-size quartile to +1.7% in
-the largest, a 12.6&times; ratio that is the strongest source of
-heterogeneity in the data. We read the pattern through a
-separating-equilibrium framework with cover bidders and genuine
-entrants. Identification is descriptive by design. Because the
-construct is computed entirely from contract-award records, we
-translate it into a three-stage administrative pathway---Screen,
-Triage, Forensic---that oversight bodies can deploy where bid
-microdata are not centrally collected.
+Can we detect bid-rigging cartels in jurisdictions where bid
+microdata are not centrally collected? São Paulo's electronic
+procurement platform reveals a peculiar pattern that suggests we
+can. In BEC (2009&ndash;2019), of 16,843 firms that bid without ever
+winning, 2,735 participated in 14 or more tender-items&mdash;a
+population we call *frequent losers*. Their behavior is hard to
+square with expected-profit competition and reads naturally as the
+cover-bidder side of bid-rigging arrangements. Within-item,
+within-year, within-procuring-unit comparisons across 1,654,401
+tender-items associate frequent-loser presence with a +3.6 to
++7.7% higher negotiated unit price across five estimators. The
+price gap shrinks as buyers grow&mdash;from +21.4% in the smallest
+procuring-unit-size quartile to +1.7% in the largest&mdash;a
+12.6&times; ratio that is the strongest source of heterogeneity in
+the data, larger than the pregão&ndash;convite gap. We read the
+pattern through a separating-equilibrium framework with cover
+bidders and genuine entrants. Against CADE's adjudicated cartel
+portfolio, the construct discriminates cobidder firms at AUC 0.864
+under temporal holdout. Identification is descriptive by design.
+Built from contract-award records, the construct translates into a
+three-stage administrative pathway&mdash;Screen, Triage,
+Forensic&mdash;deployable where bid microdata are absent.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 
