@@ -8,7 +8,7 @@ Interactive overview of the paper's logical structure. Click and drag to explore
 
 ```mermaid
 mindmap
-  root((Screening for<br/>Bid Rigging with<br/>Frequent Losers))
+  root((Frequent Losers<br/>as a Cartel Screen))
     **Institutional Setting**
       BEC Platform
         Sao Paulo state
@@ -17,14 +17,14 @@ mindmap
       41K unique firms
       Two modalities
         Convite sealed bid
-          3-bidder minimum
-          Signal dilution 3.8%
+          3-bidder rule context
+          Price imprint 3.8%
         Pregao e-auction
           No bidder minimum
-          Voluntary 9.3%
+          Price imprint 9.3%
       Lei 14.133/2021
-        Eliminates convite
-        Testable predictions
+        Consolidates pregao
+        Favorable to portability
     **FL Definition**
       Always-losers
         win rate = 0%
@@ -35,72 +35,99 @@ mindmap
       2,735 FL firms
         Treatment: tender has >= 1 FL
     **Conceptual Framework**
-      Two regimes
-        Regime 1 complementary
-        Regime 2 coordinated
-          BIC favors by 91,473
-          sigma_c/sigma_g = 0.72
-      Strategic complementarity
-        gamma = 0.69 > 0
-        More cover bidders in competitive markets
-      Market selection
-        FL concentrates in low HHI
-    **Detection Performance**
-      AUC = 0.94 vs CADE
-      Youden J = 0.84 at 1.45x
-      Horse-race
-        Correlation 0.06 with CV
-        FL rises to 0.084
-      CADE validation
-        3.5x overrepresentation
-        193/2,735 co-participate
-        3 convicted FL firms
-    **Price Association**
-      3.6-7.7% range
+      Three formal results
+        Lemma wins=0
+          Equilibrium choice of cover bidders
+        Prop log(1+t) sufficient
+          Ranking statistic for type C
+        Prop dm*/dtheta_k less than 0
+          Comparative static
+      Cover bidders + genuine entrants
+        Separating equilibrium
+        Organizing device, not identification
+    **Within-Item Price Gap**
+      Headline range +3.6 to +7.7%
         Cross-fit 3.6%
         IPW 5.5%
-        OLS 6.4%
+        OLS within-PBU 6.4%
         CEM 7.7%
-      Network split
-        Competitive 0.126
-        Concentrated -0.018
-      Bajari-Ye tests
-        KS D = 0.15
-        Pairwise product 4.28
-        Tender FE reversal
+      Modal split
+        Pregao 9.3%
+        Convite 3.8%
+        Ratio 2.5x
       IV diagnostic
         0.194 F=396
-        Lambda = 0.33
-    **Diagnostics M1-M5**
-      M1 No displacement
-        +0.19 non-FL firms
-      M2 Reference anchoring
-        -4.1% to ref price
-      M3 Reverse causality
-        Elasticity ~ 0.002
-      M4 Dyadic linkage
-        4,696 pairs p<0.001
-      M5 Exit hazard
-        HR = 0.60
+        OLS conservative
+      Strict overlap
+        ATT -9.7%
+        PS-trimmed -30.7%
+        Different angle, same population
+    **Oversight Gradient**
+      12.6x ratio Q1 to Q4
+        Q1 +21.4%
+        Q2 +9.8%
+        Q3 +4.5%
+        Q4 +1.7%
+      Strongest heterogeneity in data
+        Larger than modal gap
+        Larger than cross-sector
+      Framework prediction match
+        dm*/dtheta_k less than 0
+    **CADE Validation**
+      12 cases 65 defendants
+        47 BEC-active
+        193 cobidders
+      Market proximity 3.5x
+        Permutation stratified
+      Within-firm 2.6x
+        3 named firms flagged
+      Discrimination bounds
+        Lower 0.748 contemporaneous
+        Upper 0.924 in-sample
+        Upper 0.864 temporal holdout
+      Direct CADE 47 firms
+        AUC 0.49 by design
+      Robustness to enforcement
+        Drop CADE tenders
+        beta 0.062 vs 0.064
+    **Mechanisms**
+      Continuous dominates binary
+        AUC 0.939 vs 0.911
+        DeLong p=2e-5
+      Modal asymmetry
+        Pregao deeper than convite
+        Scope, not institutional ID
+      What data dont support
+        Cell-heterogeneity scope
+        First-time-FL compresses
     **Robustness**
       Threshold sensitivity
-        36 cells all significant
-      Cinelli-Hazlett
-        RV = 17.5%
-      Oster delta
-        Degenerate R2 gap ~ 0
-      DiD pre-trends
-        Non-causal framing
-      Oversight heterogeneity
-        12.5x gradient Q1 to Q4
-    **Enforcement Pathway**
+        Five multipliers all significant
+      Identification audits
+        Cinelli RV 17.5%
+        Oster delta 261.6
+        Strict overlap reversal
+        Leakage audit 0.864
+        Placebo IV
+      Operational metrics
+        In-sample 0.132 at 500
+        Holdout 0.070 retention 53%
+        AUC holdout 0.864
+      Imhof comparison
+        Comparable at lower data cost
+        Combined +0.096 AUC
+        Complementarity not dominance
+      Staggered designs
+        RDD null at caps
+        DiD pre-trends fail
+    **Three-Stage Pathway**
       Screen
-        Participation records only
-        SQL query or spreadsheet
+        Award records only
+        log(1+tenders_count)
       Triage
-        Network metrics
-        PBU size quartile
-      Investigate
-        Bid-level forensics
-        On triaged subset
+        Cross-ref CADE CGU TCE
+        Operational priors
+      Forensic
+        Imhof Wallimann methods
+        Where bid microdata available
 ```

@@ -6,119 +6,61 @@ paper: frequent-losers
 
 ---
 
-## v5.1 --- April 2026 (Current)
+## v15 — May 2026 (current)
 
-**Referee-report edits (mr-frequent review):**
+**Single-thesis rewrite for JLEO.**
 
-- Fixed combined AUC (0.502 → 0.608): included omitted z_skew component in combined score
-- Added "Why combination degrades" paragraph explaining AUC = 0.61 as empirical signature of Regime 2
-- "nearly orthogonal" → "largely non-overlapping" with theoretical ceiling note (corr/max ≈ 1/5)
-- "lower bound" → "conservative estimate" for cross-fit
-- Sample size clarified: body reports 1,654,447 (full sample) with footnote explaining 1,654,401 (prices) and 1,653,156 (non-FL firms)
-- AUC interpretation: added sentences clarifying AUC reflects high-participation proximity, not conditional discrimination
-- Measurement error: "Classical binary ME" → explicit assumption that FP > FN justifies attenuation direction
-- Bajari--Ye tender FE: acknowledged ambiguity ("suggestive but not definitive")
-- Fixed pre-existing LaTeX bug in `tab_fl_crossfit.tex` (unescaped underscores)
-- Updated MkDocs site to reflect all changes
-
----
-
-## v5 --- April 2026
-
-**JLE repositioning and institutional framing:**
-
-- Repositioned for Journal of Law and Economics (institutional framing throughout)
-- Abstract leads with minimum-bidder rules giving cartels a reason to deploy cover bidders
-- Price range narrowed to **3.6--7.7%** (cross-fit, OLS, matching), replacing 4--21% from v4
-- IV (19.4%) reframed as **measurement-error diagnostic**, not a primary estimate
-- Finding now Regime 2 (coordinated), not Regime 1 (complementary): $\sigma_c / \sigma_g = 0.72$
-- $\gamma > 0$: strategic complementarity (more cover bidders in MORE competitive tenders)
-- Convite 3.8% vs pregao 9.3% --- larger where voluntary, signal dilution in convite
-- AUC = 0.94 against CADE convictions (primary validation)
-- Horse-race: correlation 0.06 with Imhof-style CV proxy; FL rises to 0.084 when CV added
-
-**New content:**
-
-- Three new figures: corner solution, dispersion paradox, enforcement flowchart
-- Five JLE-relevant references added (Posner 1970, Caoui 2022, Ghosal & Sokol 2014, Harrington 2015, Baranek & Titl 2024)
-- Lei 14.133/2021 discussion with two testable predictions
-- Three-stage enforcement pathway (screen, triage, investigate)
-- Welfare reframed as cost-benefit of screening deployment
-- 12.5x gradient in oversight heterogeneity across PBU size quartiles
-- Minimum-bidder constraint variation: 7.6% voluntary premium vs. $-0.160$ forced interaction
-- Five supporting diagnostics (M1--M5) with joint assessment
-- Non-claims paragraph and explicit limitations section
-
-**Tables and figures:**
-
-- 35+ tables, 26 figures
-- ~56 pages, natbib/bibtex compilation
-
-**Pipeline:**
-
-- 24 R scripts (22 numbered + `figures_new.R` + `00_setup.R`), full pipeline in ~8 minutes
-- New scripts: `14_quality_checks.R` through `22_threshold_heatmap.R` plus `figures_new.R`
-
----
-
-## v4 --- March 2026
+- Title realigned with body: *Frequent Losers as a Cartel Screen: Detecting Cover Bidding Without Bid Microdata*. Construct scope explicit (cover-bidder population, not cartel ringleaders).
+- Abstract reframed in eight sentences: problem, puzzle, construct, headline range, oversight gradient, framework, identification stance, three-stage administrative pathway.
+- Identification scope made explicit and descriptive throughout. RDD at the convite/pregão statutory caps and DiD using Decreto 9.412/2018 both return null at the available bandwidths and are reported openly.
+- Headline range reported as **+3.6% to +7.7%** across five estimators (full-sample OLS, PBU fixed effects, IPW, CEM, cross-fit), with the cross-fit decomposition isolating a structural component (+3.6%) from within-sample classification noise (~+2.8 percentage points).
+- Procuring-unit-size oversight gradient reported as **12.6×** between extreme quartiles (+21.4% in Q1 to +1.7% in Q4), the strongest source of heterogeneity in the data.
+- Minimum-bidder rule (convite Article 22 §3) treated as institutional context rather than as the channel the construct exploits. The data flatly reverse the institutional reading: the construct's signal is sharper in pregão (no minimum-bidder rule) than in convite. We read this as scope information about where the construct fires most cleanly, not as positive evidence for any institutional theory.
+- CADE validation reframed as bounded discrimination: lower bound AUC 0.748 (4 cases pre-2020, 210 cobidders, 108 frequent losers; contemporaneous reading) and upper bound AUC 0.924 in-sample / 0.864 temporal holdout (full 12 cases, 193 cobidders; prospective reading). Three named firms (Sol Tecnologia, Nova Esperança Locadora, Jofran Comércio) flagged before their cartel adjudications.
+- Operational metrics reported under temporal holdout (train 2009–2016, test 2017–2019) as the deployable projection. In-sample precision overstates the holdout column by ~50% at top-500 (0.132 vs 0.070, retention 53%); the gap is disclosed explicitly and the holdout column carries all operational claims.
+- Horse race against bid-distribution detectors reframed as informational complementarity, not dominance. The construct reaches AUC 0.903 against the full Imhof–Wallimann pipeline's AUC 0.888 at substantially lower data cost; combined classifiers reach AUC 0.955–0.962, with the gain identifying non-redundant signal in participation-only and bid-distribution dimensions.
+- Mechanism heterogeneity reorganized into three subsections by interpretive stake: continuous loss intensity dominates the binary cutoff (DeLong *p* = 2×10⁻⁵), modal asymmetry between pregão and convite as scope information, and what the data do not support (cell-heterogeneity grid not a positive test of cartel rotation; first-time-FL prediction in the predicted direction but compresses substantially under propensity-score matching).
+- Limitations section reorganized into three subsections by stake: identification scope, construct scope (with three competing readings of the participation footprint), external validity and portability (with three structural prerequisites: commodity-heavy item composition, electronic platforms with publicly auditable participant lists, institutional asymmetry between winner and loser sides).
+- Cover-bidding framework compressed to three formal results: a lemma establishing `wins=0` as the equilibrium choice of cover bidders, a proposition identifying `log(1+tenders_count)` as a sufficient ranking statistic for the cover-bidder type, and a proposition delivering ∂m\*/∂θ\_k < 0 as the comparative static the procuring-unit-size oversight gradient instantiates.
 
 **Manuscript:**
 
-- Rewrote contributions paragraph with explicit H1/H2 structure and scope limitation
-- Softened over-claims throughout (9 instances: "establish" to "show", "confirming" to "indicating")
-- Expanded IV section: preferred spec declaration, lambda interpretation, LATE discussion
-- Bajari--Ye restructured around 3 sequential claims with magnitude hedge
-- DiD shrunk to 2 paragraphs (complementary, underpowered)
-- Mechanisms: added connective sentences and bridge paragraph
-- Heterogeneity: relabeled "high/low-suspicion" to "concentrated/competitive-market FL"
-- Added robustness roadmap paragraph (6 groups)
-- Added implementation blueprint (Flag, Triage, Investigate, Monitor)
-- Added enforcement integration and legal boundary sentences
-- Abstract trimmed to 136 words with policy contribution sentence
-- Broader implications paragraph added to conclusion
-- Float numbering fixed: appendix counters reset (A.1, B.1, etc.)
-- Added missing cross-references for 3 main-body floats
-
-**Tables and figures:**
-
-- 35 tables (12 main body, 23 appendix)
-- 14 figures (6 main body, 8 appendix)
-- 59 pages, 0 errors, 0 undefined references
-
-**Pipeline:**
-
-- 13 R scripts, full pipeline in ~8 minutes
-- New tables: IV balance, IV Panel C, Bajari--Ye tender FE, network interactions, homogeneous CV, welfare bounds (updated)
+- 60 pages, single-thesis discipline, lean appendix.
+- Bid-level structural mixture, Bajari–Ye coordination tests, network-split heterogeneity, dyadic-linkage permutation, Cox survival, market-selection / Regime 1 / Regime 2 cover-bid-distribution propositions, welfare illustrative calculations, and cross-sector replication removed: not used by the v15 main body.
+- Manuscript pipeline preserved; analysis blocks mapped to v15 sections in [Replication](replication.md).
 
 ---
 
-## v3 --- February 2026
+## v5.1 — April 2026
 
-- CADE validation section with CNPJ enrichment (3 FL firms matched)
-- Network-split IV regressions
-- Bajari--Ye tender fixed effects specification
-- Homogeneous sub-samples via price-CV approach
-- Welfare analysis with cross-fit bounds
-- Staggered DiD with MDE and Rambachan--Roth sensitivity
+Final referee-report edits before the JLEO repositioning. Combined-AUC fix, sample-size clarifications, measurement-error wording tightened, Bajari–Ye tender FE reframed, MkDocs site updated.
 
 ---
 
-## v2 --- January 2026
+## v5 — April 2026
 
-- Bajari--Ye exchangeability and conditional independence tests
-- Network-based FL classification (winner HHI, repeat partners)
-- Regime test: complementary vs. coordinated cover bidding
-- Sensitivity analysis (Cinelli & Hazlett, 2020)
-- Matching estimators (CEM and IPW)
-- Year-by-year coefficient stability
+JLE repositioning and institutional framing. Headline narrowed to +3.6 to +7.7%. AUC = 0.94 against CADE cobidders. Strategic complementarity, regime selection, three-stage enforcement pathway introduced. **Subsequently superseded by the v15 single-thesis rewrite.**
 
 ---
 
-## v1 --- December 2025
+## v4 — March 2026
 
-- Initial manuscript with OLS and IV regressions
-- FL definition (always-losers + IQR threshold)
-- Leave-one-out instrumental variable
-- 18 tables, 6 figures
-- Threshold sensitivity and cross-fitting robustness
+Manuscript polished with H1/H2 contributions, expanded IV section, Bajari–Ye restructured, DiD as complementary exercise, implementation blueprint added.
+
+---
+
+## v3 — February 2026
+
+CADE validation with CNPJ enrichment. Network-split IV regressions. Bajari–Ye tender fixed effects. Welfare with cross-fit bounds. Staggered DiD with Rambachan–Roth sensitivity.
+
+---
+
+## v2 — January 2026
+
+Bajari–Ye coordination tests. Network-based FL classification. Regime test (complementary vs coordinated). Cinelli–Hazlett sensitivity. CEM and IPW matching.
+
+---
+
+## v1 — December 2025
+
+Initial manuscript: OLS, IV, FL definition (always-losers + IQR threshold), leave-one-out instrument, threshold sensitivity, cross-fitting robustness.
