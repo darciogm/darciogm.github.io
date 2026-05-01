@@ -4,158 +4,163 @@ paper: frequent-losers
 
 # Replication
 
-Everything is reproducible---from raw data to final PDF. Start here.
+Everything is reproducible from raw data to the final PDF. The construct is built entirely from contract-award records, and the analytical pipeline runs on a single workstation in roughly ten minutes.
 
 ---
 
 ## Replication Package
 
-The replication package contains all code, processed datasets, and manuscript sources needed to reproduce every table and figure from scratch.
+The replication archive contains the analysis pipeline (R + Python), the construction scripts for the derived datasets, and the LaTeX sources for the manuscript. It will be released through the journal's data-availability portal at publication.
 
-!!! info "Repository Structure"
-    The replication materials are organized under `papers_finais/paper1_screening/`. The `code/` directory contains the analysis pipeline, `manuscript/v4/` the LaTeX source, and `output/` the generated tables and figures.
+The repository is organized under `paper3-frequent-losers/` in the source monorepo:
+
+| Directory | Contents |
+|---|---|
+| `scripts/` | Python data-build scripts (numbered `00_*.py`) and R analysis scripts (numbered `01_*.R` through `54_*.R`) |
+| `data/processed/` | Parquet files produced by the data build (git-ignored; built from raw inputs) |
+| `output/tables/` | All regression tables in LaTeX |
+| `output/figures/` | All figures in PDF |
+| `work/v15-editor/` | LaTeX manuscript sources for the published version |
 
 ---
 
 ## Software Requirements
 
-### Python (Data Build)
+### Python (data build)
 
 | Software | Version | Purpose |
-|----------|---------|---------|
-| **Python** | 3.10+ | Data preprocessing |
+|---|---|---|
+| Python | 3.10+ | Data preprocessing |
 | `pandas` | latest | Data manipulation |
 | `pyarrow` | latest | Parquet I/O |
 
-### R (Analysis Pipeline)
+### R (analysis pipeline)
 
 | Software | Version | Purpose |
-|----------|---------|---------|
-| **R** | 4.5+ | Statistical computing |
-| `fixest` | latest | High-dimensional fixed effects, IV, Sun & Abraham |
+|---|---|---|
+| R | 4.5+ | Statistical computing |
+| `fixest` | latest | High-dimensional fixed effects, IV, two-way clustering |
 | `data.table` | latest | Fast data manipulation |
-| `arrow` | latest | Reading Parquet files |
+| `arrow` | latest | Parquet readers |
 | `modelsummary` | latest | Regression tables |
 | `kableExtra` | latest | LaTeX table formatting |
-| `ggplot2` | latest | Publication-quality figures |
-| `sensemakr` | latest | Cinelli & Hazlett (2020) sensitivity |
-| `did` | latest | Callaway & Sant'Anna (2021) DiD |
-| `HonestDiD` | latest | Rambachan & Roth (2023) bounds |
-| `MatchIt` | latest | Matching estimators |
-| `survival` | latest | Cox proportional hazards |
+| `ggplot2` | latest | Figures |
+| `sensemakr` | latest | Cinelli–Hazlett robustness value |
+| `MatchIt` | latest | CEM matching, IPW, common-support trimming |
+| `pROC` | latest | ROC curves and DeLong AUC tests |
+| `randomForest` | latest | Imhof full-pipeline classifier |
 
 ### Manuscript
 
 | Software | Version | Purpose |
-|----------|---------|---------|
-| **LaTeX** | TeX Live 2024+ | Document typesetting |
-| `elsarticle` | latest | Journal document class |
-| `chicago` | latest | Bibliography style (natbib) |
+|---|---|---|
+| LaTeX | TeX Live 2024+ | Document typesetting |
+| `elsarticle` | latest | Document class |
+| `chicago` | latest | Bibliography style (natbib + bibtex) |
 
 ---
 
 ## Data Sources
 
-### Primary Datasets
+### Primary datasets
 
 The pipeline reads from `data/processed/`:
 
 | File | Rows | Description |
-|------|------|-------------|
+|---|---|---|
+| `firm_loss_stats.parquet` | 41,444 | Per-firm aggregated stats (win rate, tenders count, always-loser flag) |
+| `firm_tender_map.parquet` | 16.8M | Firm × tender-item participation with win flag |
+| `LOSERS_rebuilt.parquet` | 85K | Frequent-loser counts per (OC, item) |
+| `FREQ_PARTICIP_rebuilt.parquet` | 16,843 | Always-losers with participation counts |
 | `BEC_collapse_final.parquet` | 4.5M | Collapsed tender-item dataset |
-| `Firms_final.parquet` | 39.6K | Firm registry (CNPJ, CNAE, size) |
-| `LOSERS_rebuilt.parquet` | 85K | FL counts per tender-item |
-| `FREQ_PARTICIP_rebuilt.parquet` | 16.8K | Always-losers with participation counts |
-| `firm_tender_map.parquet` | 16.8M | Firm x tender participation + won flag |
-| `firm_loss_stats.parquet` | 41K | Per-firm aggregated stats |
-| `bid_level_full.parquet` | 40M | Raw bid-level data |
+| `Firms_final.parquet` | 39.6K | Firm registry (CNPJ, CNAE, size, location) |
+| `bid_level_full.parquet` | 40M | Raw bid-level data (used by some robustness checks) |
 
-### CADE Validation Data
+### CADE validation data
 
 | File | Rows | Description |
-|------|------|-------------|
-| `cade_carteis_licitacoes_2009_2019.csv` | 65 | CADE cartel convictions |
-| `cade_bec_crossmatch.csv` | 49 | CADE firms matched to BEC |
-| `cade_fl_cobidders.csv` | 193 | FL firms co-bidding with CADE cartelists |
+|---|---|---|
+| `cade_carteis_licitacoes_2009_2019.csv` | 65 | CADE cartel-defendant firm records relevant to the BEC sample |
+| `cade_bec_crossmatch.csv` | 47 | CADE-defendant firms active in BEC during the sample window |
+| `cade_fl_cobidders.csv` | 193 | Always-loser firms that co-participate with CADE defendants in the same tender-items |
 
-!!! warning "Data Access"
-    The BEC procurement data is publicly available through the Sao Paulo state transparency portal. The processed Parquet files are built from raw Stata `.dta` files via `00_build_bidlevel.py`.
+!!! warning "Data access"
+    The BEC procurement records are publicly available through the São Paulo state transparency portal. CADE adjudications are public records hosted at gov.br/cade. The processed Parquet files are built from raw `.dta` and `.csv` exports via `scripts/00_build_bidlevel.py`.
 
-### Key Variables
+### Key variables
 
 | Variable | Description |
-|----------|-------------|
-| `losers` | FL presence indicator (1 = at least one FL bidder) |
-| `lneg_price` | Log negotiated price (DV) |
-| `ln_firms` | Log number of firms |
-| `ln_bids` | Log number of bids |
-| `ln_firms_excl` | Log number of non-FL firms |
-| `fl_supply_loo` | Leave-one-out FL supply instrument |
-| `item_f` | Item fixed effect |
-| `year_f` | Year fixed effect |
-| `pbu_f` | PBU fixed effect |
-| `convite` | Procurement modality indicator |
+|---|---|
+| `losers` | Frequent-loser presence indicator (1 if at least one FL participant in the tender-item) |
+| `lneg_price` | Log negotiated unit price (headline DV) |
+| `ln_firms`, `ln_bids`, `ln_firms_excl` | Auxiliary outcomes (number of firms, number of bids, number of non-FL firms) |
+| `tenders_count` | Per-firm participation count over the sample window |
+| `win_rate` | Per-firm wins divided by participations |
+| `item_f`, `year_f`, `pbu_f` | Item, year, and procuring-unit fixed effects |
+| `convite` | Procurement modality indicator (1 = convite, 0 = pregão) |
 
 ---
 
 ## Running the Analysis
 
-### Step 1: Data Build (Python, ~6 min)
+### Step 1 — data build (Python, ~6 min)
 
 ```bash
-# Only needed if Parquet files are missing
 cd paper3-frequent-losers
 python3 scripts/00_build_bidlevel.py
 ```
 
-### Step 2: Full R Pipeline (~8 min on 16 cores)
+Only needed when the Parquet files in `data/processed/` are missing. The script reads the raw exports from BEC and writes the four primary parquets plus the bid-level archive.
+
+### Step 2 — analysis pipeline (R, ~10 min on 16 cores)
 
 ```bash
-cd papers_finais/paper1_screening
-Rscript code/00_master_v4.R
+cd paper3-frequent-losers
+Rscript scripts/00_master.R
 ```
 
-This executes 22 scripts sequentially, plus `figures_new.R` for the v5 figures:
+The master script runs the analysis blocks in order. The blocks below correspond to the v15 manuscript sections:
 
-| Script | Purpose | Key Output |
-|--------|---------|------------|
-| `00_setup.R` | Package loading, thread config, paths | Environment setup |
-| `01_data_prep.R` | Load Parquets, merge, filter | `/tmp/p3v4_prepared.rds` |
-| `02_network_analysis.R` | Co-bidding networks, FL classification | Network metrics |
-| `03_iv_construction.R` | Build leave-one-out instrument | IV variables |
-| `04_iv_regressions.R` | 2SLS, balance tests, placebo IV | `tab_iv_main.tex`, `tab_iv_balance.tex` |
-| `05_main_regressions.R` | OLS, network split, interactions | `tab_prices.tex`, `tab_network_split.tex` |
-| `06_bajari_ye_test.R` | Exchangeability, independence, placebo | `tab_bajari_ye_corrected.tex` |
-| `07_mechanism_tests.R` | Selection, calibration, reverse causality | `tab_mechanisms.tex` |
-| `08_did_revised.R` | Callaway & Sant'Anna, Rambachan--Roth | `tab_did_revised.tex` |
-| `09_cade_permutation.R` | CADE cross-match, permutation test | `tab_cade_permutation.tex` |
-| `10_robustness.R` | Threshold, matching, clustering, CV | Multiple tables |
-| `11_welfare_bounds.R` | Cost-benefit calculations | `tab_welfare_bounds.tex` |
-| `12_tables.R` | Compile publication-ready tables | All `.tex` tables |
-| `13_figures.R` | Generate all figures | All `.pdf` figures |
-| `14_quality_checks.R` | Consistency diagnostics | Validation logs |
-| `15_fl_definition_robustness.R` | Low-win-rate variants, cross-fit | `tab_fl_lowwinrate.tex` |
-| `16_regime_test.R` | Regime 1 vs 2 simulation and BIC | `tab_structural_params.tex` |
-| `17_stacked_did.R` | Stacked DiD estimator | `tab_stacked_did.tex` |
-| `18_oster_delta.R` | Oster coefficient stability | `tab_oster_delta.tex` |
-| `19_dyadic_permutation.R` | FL--winner pair permutation test | `tab_dyadic_permutation.tex` |
-| `20_cox_survival.R` | Cox proportional hazards model | `tab_cox_survival.tex` |
-| `21_network_graph.R` | Network visualization | `fig_network_graph.pdf` |
-| `22_threshold_heatmap.R` | 2D threshold sensitivity heatmap | `fig_threshold_heatmap.pdf` |
-| `figures_new.R` | Corner solution, dispersion paradox | New v5 figures |
+| Block | Scripts | Manuscript section |
+|---|---|---|
+| Data prep + FL classification | `01_clean.R` | §4 (data) |
+| Headline regressions (4 specs, 4 DVs) | `02_analysis.R`, `03_tables.R` | §7.1 (within-item conditional gap) |
+| Figures (FL distribution, IQR, oversight gradient) | `04_figures.R`, `41_fix_figures.R` | §7, appendix |
+| Threshold and clustering robustness | `05_robustness.R` | §9.1 |
+| Modal falsification + within-PBU oversight | `07_heterogeneity.R` | §7.1, §7.2 |
+| Auxiliary outcomes | `08_additional_dvs.R` | §7 (auxiliary) |
+| CEM, IPW, IV diagnostics | `09_matching.R` | §9.1, §9.2 |
+| FL firm characteristics | `10_fl_characteristics.R` | §4.4 |
+| Item-value panel + RDD diagnostic | `12_build_item_value.R`, `13_rdd_cap.R` | §5.1 |
+| DiD with 2018 cap raise | `14_did_decreto_2018.R` | §5.1, appendix F |
+| First-time-FL matching | `15_first_time_fl.R`, `30_first_time_fl_matching.R` | §8.3 |
+| Imhof full-pipeline horse race | `31_imhof_full_pipeline.R`, `49_imhof_incremental_value.R` | §9.4 |
+| Cell-heterogeneity audit (HHI × pairs) | `32_matched_heterogeneity.R`, `50_negative_cell_audit.R` | §8.3 |
+| Direct-CADE AUC (47 defendants) | `33_auc_direct_cade.R` | §6, §10.2 |
+| Horse race binary vs continuous | `34_horse_race_fl_continuous.R`, `36_gate_d1_harmonized.R` | §8.1, §9.1 |
+| Modal-by-modal AUC (gate D2) | `37_gate_d2_modal_auc.R` | §8.2 |
+| Continuous loser-side discrimination (gate D3) | `38_gate_d3_continuous_only.R` | §8.1 |
+| CADE winner-heavy diagnostic (gate D4) | `39_gate_d4_cade_winner_heavy.R` | §6 |
+| Anti-leakage audit | `40_leakage_audit_d3.R` | §9.2 |
+| Operational metrics (in-sample + temporal holdout) | `42_operational_metrics.R`, `43_precision_at_k_audit.R` | §9.3 |
+| Strict-overlap matching | `51_item_level_scope_match.R` | §7.1, §9.2, §10.1 |
+| Strict-train threshold (temporal) | `53_strict_train_period_threshold.R` | §4.2 |
+| Threshold table (Q3 IQR alt) | `54_threshold_table_q3iqr.R` | §9.1, appendix |
 
-### Step 3: Manuscript Compilation
+### Step 3 — manuscript compilation
 
 ```bash
-cd manuscript/v4
-pdflatex -interaction=nonstopmode paper_screening_v4.tex
-bibtex paper_screening_v4
-pdflatex paper_screening_v4.tex
-pdflatex paper_screening_v4.tex
+cd paper3-frequent-losers/work/v15-editor
+pdflatex -interaction=nonstopmode paper_v15editor.tex
+bibtex paper_v15editor
+pdflatex paper_v15editor.tex
+pdflatex paper_v15editor.tex
 ```
 
 !!! note "Bibliography"
-    The manuscript uses **natbib/bibtex** (NOT biblatex/biber). Use `bibtex` for the bibliography pass.
+    The manuscript uses **natbib + bibtex** (not biblatex/biber). Run `bibtex` for the bibliography pass.
+
+The output is `paper_v15editor.pdf` (60 pages, including a lean appendix with the three formal results, supporting tables, identification audits, and the staggered-design failures).
 
 ---
 
@@ -163,37 +168,47 @@ pdflatex paper_screening_v4.tex
 
 ### Tables
 
-| Directory | Format | Count | Description |
-|-----------|--------|-------|-------------|
-| `output/tables/` | LaTeX (.tex) | 35+ | All regression tables (booktabs + threeparttable) |
+`output/tables/` contains 30+ LaTeX table fragments (booktabs + threeparttable). The tables actually input by the v15 manuscript and appendix are listed in the manuscript source under `\input{...}` directives.
 
 ### Figures
 
-| Directory | Format | Count | Description |
-|-----------|--------|-------|-------------|
-| `output/figures/` | PDF | 26 | All publication-quality figures |
+`output/figures/` contains the PDF figures. The two figures included in the published manuscript are:
+
+| Figure | File | Manuscript section |
+|---|---|---|
+| FL participation distribution | `fig_01_losses_distribution.pdf` | Appendix B |
+| IQR threshold identification | `fig_02_iqr_identification.pdf` | Appendix B |
 
 ### Manuscript
 
 | File | Pages | Description |
-|------|-------|-------------|
-| `manuscript/v4/paper_screening_v4.pdf` | ~56 | Complete manuscript with appendix |
+|---|---|---|
+| `work/v15-editor/paper_v15editor.pdf` | 60 | Complete manuscript with lean appendix |
 
 ---
 
 ## Computational Environment
 
 | Component | Specification |
-|-----------|--------------|
-| **OS** | Ubuntu 24.04 (WSL2 on Windows) |
-| **CPU** | 16 cores |
-| **RAM** | 15 GB |
-| **R** | 4.5 |
-| **fixest** | OpenMP for parallel estimation (16 threads) |
-| **data.table** | Multi-threaded (`setDTthreads(16)`) |
+|---|---|
+| OS | Ubuntu 24.04 (WSL2 on Windows) |
+| CPU | 14 threads (Intel i7-1260P, 4 P-cores + 8 E-cores) |
+| RAM | 21 GB |
+| R | 4.5+ |
+| `fixest` | OpenMP, 12 threads (saturating CPU within the workstation budget) |
+| `data.table` | Multi-threaded via `setDTthreads(12)` |
+| Parquet | DuckDB engine (`PRAGMA threads=12, memory_limit='14GB'`) for any non-trivial read/filter/join |
 
 !!! note "Runtime"
-    The full pipeline takes approximately 8 minutes on the reference system. The most time-intensive steps are `06_bajari_ye_test.R` (bid-level analysis on 40M rows) and `08_did_revised.R` (staggered DiD with 144K market-year observations).
+    The full pipeline takes approximately 10 minutes on the reference workstation. The most time-intensive steps are the bid-level horse race (`31_imhof_full_pipeline.R`) and the strict-overlap matching (`51_item_level_scope_match.R`), each of which processes a few million rows under random forests or propensity-score trimming.
 
 !!! tip "Caching"
-    Intermediate data is cached at `/tmp/` for fast reload. The prepared dataset (`/tmp/p3v4_prepared.rds`, ~800 MB) is created by `01_data_prep.R` and reused by all subsequent scripts.
+    Intermediate data is cached at `/tmp/` for fast reload. The prepared dataset (`/tmp/p3_prepared.rds`) is created by `01_clean.R` and reused by all subsequent scripts. Cache invalidation is manual: delete the rds files when the underlying parquets change.
+
+---
+
+## Reproducibility Note
+
+The numerical claims in the paper come from a single pipeline run on the canonical 2009–2019 BEC parquet files plus the CADE crossmatch CSV. The pipeline applies a strict 14-character CNPJ zero-padding convention before every merge: this padding is required to recover the full 193 FL–CADE co-bidder set, and alternative conventions yield a smaller subset that appears in earlier draft tables. The convention is flagged at the top of `scripts/00_build_bidlevel.py` so future replications reproduce either count deterministically.
+
+The headline AUC of 0.924 against 193 cobidders corresponds to point estimate 0.9389 on the always-loser pool of 16,843 firms; the 95% confidence interval [0.921, 0.926] uses DeLong's method, with stratified percentile and BCa bootstrap intervals (B = 5,000 and 2,000 respectively) agreeing to three decimal places. The temporal-holdout AUC of 0.864 (train 2009–2016, test 2017–2019) is computed in `40_leakage_audit_d3.R`. The full sequence of commits that produced the final tables and figures is preserved in the replication archive's git log.
