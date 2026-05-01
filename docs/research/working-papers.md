@@ -25,7 +25,7 @@ with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conheciment
 
 ---
 
-### [Loser-Side Participation as a Procurement Risk Signal: Award-Record Screening of Cartel-Adjacent Environments](frequent-losers/index.md)
+### [Frequent Losers: A Participation-Based Screen for Public Procurement](frequent-losers/index.md)
 
 with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026) | [PDF](frequent-losers/assets/paper_v15.pdf) | [Online appendix](frequent-losers/assets/paper_v15_online_appendix.pdf) | [Highlights](frequent-losers/assets/paper_v15_highlights.pdf)
 

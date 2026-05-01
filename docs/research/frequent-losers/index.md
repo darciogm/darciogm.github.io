@@ -6,9 +6,9 @@ paper: frequent-losers
 
 <div class="hero-section" markdown>
 
-# Loser-Side Participation as a Procurement Risk Signal
+# Frequent Losers
 
-<p class="subtitle">Award-Record Screening of Cartel-Adjacent Environments</p>
+<p class="subtitle">A Participation-Based Screen for Public Procurement</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
