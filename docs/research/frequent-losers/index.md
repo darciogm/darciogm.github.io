@@ -6,41 +6,43 @@ paper: frequent-losers
 
 <div class="hero-section" markdown>
 
-# Screening for Bid Rigging with Frequent Losers
+# Frequent Losers as a Cartel Screen
 
-<p class="subtitle">A Participation-Based Screen for Public Procurement</p>
+<p class="subtitle">Detecting Cover Bidding Without Bid Microdata</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
-<p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
+<p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">3.6--7.7%</span>
-<span class="label">Conditional price association with frequent-loser presence (cross-fit to CEM matching)</span>
+<span class="number">+3.6 to +7.7%</span>
+<span class="label">Conditional within-item price gap associated with frequent-loser presence, across five estimators</span>
 </div>
 
 ## Abstract
 
-Minimum-bidder rules in public procurement give cartels a reason to
-deploy cover bidders---firms that show up repeatedly with no
-intention of winning. We exploit this behavioral footprint to build
-a participation-based screen: frequent losers (FL), firms
-that never win yet bid abnormally often. The screen requires only
-win/loss records, making it deployable in settings where bid
-microdata are unavailable. In Sao Paulo's electronic procurement
-(4.5 million tender-items, 2009--2019), it achieves
-AUC = 0.94 against competition-authority co-participation
-(0.54 within participation-count bands, confirming that volume
-contributes substantially to the unconditional figure), complements
-bid-level tools (correlation 0.06), and flags environments with
-3.6--7.7% higher conditional prices. The price association is
-concentrated in competitive markets and where cover bidding is
-voluntary rather than forced by the minimum-bidder
-constraint---suggesting strategic deployment, not mere rule
-compliance. We propose a three-stage enforcement pathway (screen,
-triage, investigate) that allocates investigative resources toward
-the procurement environments where the association is strongest and
-oversight weakest.
+Most tools for detecting bid-rigging cartels need bid microdata,
+which few jurisdictions audit at scale. A peculiar pattern shows
+up in São Paulo's electronic procurement platform (BEC,
+2009&ndash;2019): out of 16,843 firms that bid without ever
+winning, 2,735 participated in 14 or more tender-items. We call
+this group *frequent losers*. Their behavior is hard to square
+with expected-profit competition and reads naturally as the
+cover-bidder side of bid-rigging arrangements. Comparing items
+within the same product code, year, and procuring unit
+(1,654,401 tender-items in total), the presence of a frequent
+loser is associated with a +3.6 to +7.7% higher negotiated unit
+price across five estimators (full-sample OLS, PBU fixed effects,
+IPW, CEM, cross-fit). The price gap shrinks as buyers grow: from
++21.4% in the smallest procuring-unit-size quartile to +1.7% in
+the largest, a 12.6&times; ratio that is the strongest source of
+heterogeneity in the data. We read the pattern through a
+separating-equilibrium framework with cover bidders and genuine
+entrants. Identification is descriptive by design. Because the
+construct is computed entirely from contract-award records, we
+translate it into a three-stage administrative pathway---Screen,
+Triage, Forensic---that oversight bodies can deploy where bid
+microdata are not centrally collected.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 
@@ -52,27 +54,64 @@ oversight weakest.
 <span class="badge">L41</span>
 
 **Keywords:**
-<span class="badge badge-kw">bid rigging</span>
+<span class="badge badge-kw">frequent losers</span>
+<span class="badge badge-kw">cartel screen</span>
 <span class="badge badge-kw">cover bidding</span>
 <span class="badge badge-kw">public procurement</span>
-<span class="badge badge-kw">cartel screening</span>
-<span class="badge badge-kw">frequent losers</span>
+<span class="badge badge-kw">bid rigging</span>
+<span class="badge badge-kw">separating equilibrium</span>
 
 ---
 
 ## Key Findings
 
-!!! success "3.6--7.7% conditional price association"
-    FL-present tenders exhibit **3.6--7.7% higher conditional prices** across four estimation approaches: cross-fit (3.6%), IPW (5.5%), OLS with item + year + PBU FE (6.4%), and CEM matching (7.7%). The estimates cluster rather than scatter, indicating a stable association across designs.
+!!! success "+3.6 to +7.7% conditional price gap across five estimators"
+    Frequent-loser-present tenders are associated with a higher
+    log negotiated unit price across full-sample OLS (+6.8%),
+    within-PBU OLS (+6.4%), IPW (+5.5%), CEM matching (+7.7%),
+    and cross-fit (+3.6%). The cross-fit decomposition isolates
+    the structural component (+3.6%) from within-sample
+    classification noise (~+2.8 percentage points), and we adopt
+    the resulting +3.6 to +7.7% range as the headline reference.
 
-!!! warning "AUC = 0.94 against CADE convictions"
-    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens capture largely non-overlapping information (correlation 0.06); naively combining them into a single score degrades detection to AUC = 0.61, confirming that they operate on different dimensions and are best deployed sequentially.
+!!! success "12.6&times; oversight gradient across procuring-unit size"
+    The price gap collapses monotonically as buyers grow: +21.4%
+    in the smallest procuring-unit-size quartile, +9.8% in the
+    second, +4.5% in the third, and +1.7% in the largest. The
+    12.6&times; ratio between the extreme quartiles is the
+    strongest source of heterogeneity in the data, larger than
+    the pregão&ndash;convite gap or any cross-sector spread, and
+    consistent with the framework's comparative static
+    &part;m*/&part;&theta;<sub>k</sub> < 0&mdash;cover bidders
+    deploy more aggressively where oversight is thinner.
 
-!!! danger "Coordinated cover bidding (Regime 2)"
-    BIC strongly favors coordinated cover bidding ($\Delta$BIC = $-91{,}473$): FL bids are 28% **less** dispersed than non-FL bids ($\sigma_c / \sigma_g = 0.72$). The price association concentrates in **competitive markets** (0.126) and vanishes in concentrated ones ($-0.018$), consistent with strategic complementarity ($\hat{\gamma} = 0.69 > 0$).
+!!! info "Validation against CADE adjudications: bounded 0.748&ndash;0.924"
+    Inside the always-loser stratum, the construct discriminates
+    193 adjudicated CADE-cobidder firms at firm-level AUC 0.924
+    (in-sample) and 0.864 (temporal holdout, train 2009&ndash;2016
+    / test 2017&ndash;2019). Restricted to four cases adjudicated
+    pre-2020, the contemporaneous lower bound is AUC 0.748. The
+    construct flags cover bidders, not cartel ringleaders: against
+    47 direct CADE defendants in the broader BEC firm universe,
+    AUC is 0.49 by design.
 
-!!! info "Three-stage enforcement pathway"
-    The FL screen requires only **participation and outcome data** (no bid values). We propose a screen--triage--investigate pathway that exploits a **12.5x gradient** in the FL--price association across PBU size quartiles to direct investigative resources where oversight is weakest.
+!!! warning "Comparable accuracy at lower data cost than bid-distribution detectors"
+    The construct reaches AUC 0.903 on the full always-loser pool,
+    comparable to the full Imhof&ndash;Wallimann pipeline (AUC
+    0.888) which requires per-bid offer values. Combined, the
+    classifiers reach AUC 0.955&ndash;0.962, with the gain
+    indicating non-redundant signal in the participation-only and
+    bid-distribution dimensions. We do not claim dominance; we
+    claim informational complementarity.
+
+!!! info "Three-stage administrative pathway"
+    *Screen* computes log(1+tenders_count) on award records and
+    flags top-*k* environments. *Triage* cross-references flagged
+    firms with adjudication records (CADE, CGU, TCE) and the
+    operational priors of the oversight body. *Forensic* deploys
+    bid-distribution methods where bid microdata are available.
+    The construct narrows the case-load that reaches the forensic
+    stage at near-zero marginal data cost.
 
 ---
 
@@ -84,9 +123,9 @@ oversight weakest.
 
 [**Paper** <br> Contribution, institutional setting, and empirical strategy](paper.md)
 
-[**Results** <br> Classification, detection, price association, and diagnostics](results.md)
+[**Results** <br> Within-item price gap, oversight gradient, and CADE validation](results.md)
 
-[**Robustness** <br> Threshold sensitivity, DiD, IV diagnostic, and extensions](robustness.md)
+[**Robustness** <br> Threshold sensitivity, identification audits, operational metrics](robustness.md)
 
 [**Replication** <br> Code, data, and pipeline](replication.md)
 
