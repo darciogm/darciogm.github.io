@@ -45,6 +45,8 @@ three-stage administrative pathway&mdash;Screen, Triage,
 Forensic&mdash;deployable where bid microdata are absent.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
+[:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
+[:material-format-list-bulleted: Highlights](assets/paper_v15_highlights.pdf){ .md-button }
 
 **JEL Classification:**
 <span class="badge">D44</span>
