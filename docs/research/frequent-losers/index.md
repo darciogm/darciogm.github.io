@@ -6,9 +6,9 @@ paper: frequent-losers
 
 <div class="hero-section" markdown>
 
-# Screening Under Incomplete Observability
+# Frequent Losers
 
-<p class="subtitle">Equilibrium Loser-Side Participation as an Award-Layer Signal of Cartel Activity</p>
+<p class="subtitle">Screening Cartels Without Bid Microdata</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
