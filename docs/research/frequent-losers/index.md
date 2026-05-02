@@ -29,8 +29,8 @@ tender-items; we call these firms *frequent losers*. Their
 presence associates with a +3.6 to +7.7% higher negotiated unit
 price across estimators in the broad sample. The conditional
 association reverses sign when restricted to items that overlap
-on observables (overlap-cell ATT &minus;9.7%,
-propensity-score-trimmed &minus;30.7%): the two estimates answer
+on observables (overlap-cell ATT &minus;9.72%,
+propensity-score-trimmed &minus;30.67%): the two estimates answer
 different questions about the same population. We report the
 broad-sample range as the headline because it maps to the
 deployment question&mdash;which environments to flag&mdash;and
