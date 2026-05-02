@@ -6,7 +6,21 @@ paper: frequent-losers
 
 ---
 
-## v15 — May 2026 (current)
+## v17 — May 2026 (current)
+
+**Route 2 substantive revision push and storytelling polish for JLEO.**
+
+- Title: *Frequent Losers: A Cover-Bidder Screen Without Bid Microdata*. Cunha "Frequent Losers" as a noun-phrase technical term and promises the most original methodological move (operating without bid microdata at the operational layer).
+- New section §`forensic` carries the architectural test as the contribution-central section. Three findings: same-target AUC comparison (FL alone 0.881 vs Imhof full 0.846), non-redundant signal in combination (+0.096 AUC, DeLong *p* = 1.2 × 10&minus;26), and the sequential gatekeeper rule that delivers an 83% bid-microdata footprint reduction at an 8% recall cost relative to joint scoring.
+- Temporal-holdout audit of the gatekeeper added (script 64): the sequential rule matches or exceeds joint scoring under temporal holdout in absolute true-positive count, so the data-envelope reduction does not trade off against out-of-time recall.
+- Bid-level extension of the within-stratum theory bridge (script 62): per-bid `Valor Unitário Proposta` and `Flag Vencedor` from the LANCES export, restricted to losing bids in convite or pregão. Cobidders bid plausibly close to winners (median gap *d* = &minus;0.28) with elevated within-firm dispersion (*d* = +0.15). Multivariate logit holding `log(1+tenders_count)` constant confirms both signs at *p* &lt; 10&minus;3. The signs adopt the credible-cover-bidding (R2) reading of Marshall&ndash;Marx and Asker over the textbook (R1) reading of Porter&ndash;Bajari&ndash;Ye.
+- Sign-reversal segment-level decomposition (script 61): the broad-sample positive concentrates in tender-value Q4 (+0.046, robust to overlap restriction and ATT reweighting). Trim sensitivity *strengthens* the negative ATT estimate (from &minus;0.097 to &minus;0.118 at top-decile trim), foreclosing the few-cell-artefact reading.
+- Observability framing reframed: distinction between *operational layer* (audit-court-queryable in minutes; carries award envelope only) and *forensic-recoverable layer* (per-bidder bid amounts, accessible through administrative request with weeks of latency). The screen operates on the operational layer; the bid-microdata pipeline appears in §`forensic` as the benchmark and as the Stage-2 input the screen triages, never as a screening input itself.
+- Online Appendix A formal R1/R2 distinction added at the end of the proof appendix; framework predictions about firm-level participation intensity, deployment proximity, and portfolio specialisation are unaffected by R1/R2; only the bid-level reading of $b_C$ is.
+- Manuscript: 47 pp body + 20 pp online appendix. All thirteen main sections and seven OA sections at storytelling 9.5. Disclosure footnote on LANCES export access embedded in §`emp_estimand`.
+- v16 byte-frozen as recoverable hedge under `work/v16-editor/`.
+
+## v15 — May 2026
 
 **Single-thesis rewrite for JLEO.**
 

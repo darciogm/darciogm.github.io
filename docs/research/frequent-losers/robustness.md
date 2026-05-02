@@ -136,7 +136,11 @@ The two pipelines reach comparable discrimination on different data envelopes. W
 
 Both combined classifiers gain 5–7 AUC points over either single construct, indicating non-redundant signal in the participation-only and bid-distribution information sources. Restricting attention to a same-sample audit, the construct adds **+0.035 AUC** over the Imhof full pipeline alone (DeLong *p* = 0.014), and the combined model adds **+0.096 to +0.098** over Imhof full alone (DeLong *p* < 0.001).
 
-The administrative pathway integrates the construct with the bid-distribution stage rather than substituting for it: the **Screen** stage runs on award records, the **Forensic** stage deploys bid-distribution methods, and the gain from running both is identifiable in the data.
+### Sequential gatekeeper: 83% bid-microdata footprint reduction
+
+The architecture's operational reading: the award-layer screen functions as a Stage-1 gatekeeper that narrows the pool of firms whose bid microdata the forensic stage needs to interrogate. At top-1,000 flags on the same evaluation pool of 11,676 firms (193 cobidders), the sequential rule (FL → Imhof, K₁ = 2,000) catches 131 cobidders while interrogating bid microdata for 2,000 firms instead of the 11,676 the joint scoring requires—an **83% data-envelope reduction at an 8% recall cost**. Under the temporal-holdout audit (train 2009–2016 features), the sequential rule matches or exceeds joint scoring in absolute true-positive count out-of-time: at top-500 it recovers 87 cobidders versus 85 for joint scoring; at top-1,000 it recovers 114 versus 111. The data-envelope reduction does not trade off against out-of-time recall.
+
+Architecture is sequenced, not substituted: the screen runs on award records, the forensic stage deploys bid-distribution methods on the screen's survivor pool, and the gain from running both is identifiable in the data.
 
 ---
 
@@ -163,4 +167,4 @@ We report the failures openly and treat the empirical content as descriptive thr
 
 ## Summary
 
-The headline range +3.6 to +7.7% holds across estimators, threshold multipliers, clustering schemes, binary-vs-continuous specifications, and rich sensitivity bounds. Strict-overlap matching reverses the sign as a different angle on the same population. Under temporal holdout, AUC settles at 0.864 (vs in-sample 0.939) and precision at top-500 attenuates by ~50%; we adopt the holdout column for all operational claims. Against bid-distribution detectors, the construct reaches comparable accuracy at lower data cost and adds non-redundant signal in combination. Causal identification was attempted and is not available at the bandwidths the data support.
+The headline range +3.6 to +7.7% holds across estimators, threshold multipliers, clustering schemes, binary-vs-continuous specifications, and rich sensitivity bounds. The segment-level decomposition further locates the broad-sample positive in tender-value Q4 (robust to overlap restriction and to ATT reweighting) with negatives in Q1–Q3 also robust to design choice; trim sensitivity strengthens the negative ATT estimate, foreclosing the few-cell-artifact reading. Under temporal holdout, AUC settles at 0.864 (vs in-sample 0.939) and precision at top-500 attenuates by ~50%; the holdout column carries all operational claims. Against bid-distribution detectors, the construct reaches comparable accuracy on a thinner envelope, adds non-redundant signal in combination, and the sequential gatekeeper rule delivers an 83% bid-microdata footprint reduction at an 8% recall cost whose relative robustness survives temporal holdout. Causal identification was attempted and is not available at the bandwidths the data support.

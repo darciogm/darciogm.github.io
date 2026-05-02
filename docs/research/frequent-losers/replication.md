@@ -16,11 +16,12 @@ The repository is organized under `paper3-frequent-losers/` in the source monore
 
 | Directory | Contents |
 |---|---|
-| `scripts/` | Python data-build scripts (numbered `00_*.py`) and R analysis scripts (numbered `01_*.R` through `54_*.R`) |
+| `scripts/` | Python data-build scripts (numbered `00_*.py`) and R analysis scripts (numbered `01_*.R` through `64_*.R`) |
 | `data/processed/` | Parquet files produced by the data build (git-ignored; built from raw inputs) |
 | `output/tables/` | All regression tables in LaTeX |
 | `output/figures/` | All figures in PDF |
-| `work/v15-editor/` | LaTeX manuscript sources for the published version |
+| `work/v17-editor/` | LaTeX manuscript sources for the current version (v17) |
+| `work/v16-editor/` | v16 byte-frozen as recoverable hedge |
 
 ---
 
@@ -119,48 +120,54 @@ cd paper3-frequent-losers
 Rscript scripts/00_master.R
 ```
 
-The master script runs the analysis blocks in order. The blocks below correspond to the v15 manuscript sections:
+The master script runs the analysis blocks in order. The blocks below correspond to the v17 manuscript sections:
 
 | Block | Scripts | Manuscript section |
 |---|---|---|
 | Data prep + FL classification | `01_clean.R` | §4 (data) |
-| Headline regressions (4 specs, 4 DVs) | `02_analysis.R`, `03_tables.R` | §7.1 (within-item conditional gap) |
-| Figures (FL distribution, IQR, oversight gradient) | `04_figures.R`, `41_fix_figures.R` | §7, appendix |
+| Headline regressions (4 specs, 4 DVs) | `02_analysis.R`, `03_tables.R` | §6.1 (broad-sample β) |
+| Figures (FL distribution, IQR, oversight gradient) | `04_figures.R`, `41_fix_figures.R` | §6, appendix |
 | Threshold and clustering robustness | `05_robustness.R` | §9.1 |
-| Modal falsification + within-PBU oversight | `07_heterogeneity.R` | §7.1, §7.2 |
-| Auxiliary outcomes | `08_additional_dvs.R` | §7 (auxiliary) |
+| Modal falsification + within-PBU oversight | `07_heterogeneity.R` | §6.1, §6.3 |
+| Auxiliary outcomes | `08_additional_dvs.R` | §6 (auxiliary) |
 | CEM, IPW, IV diagnostics | `09_matching.R` | §9.1, §9.2 |
 | FL firm characteristics | `10_fl_characteristics.R` | §4.4 |
 | Item-value panel + RDD diagnostic | `12_build_item_value.R`, `13_rdd_cap.R` | §5.1 |
 | DiD with 2018 cap raise | `14_did_decreto_2018.R` | §5.1, appendix F |
-| First-time-FL matching | `15_first_time_fl.R`, `30_first_time_fl_matching.R` | §8.3 |
-| Imhof full-pipeline horse race | `31_imhof_full_pipeline.R`, `49_imhof_incremental_value.R` | §9.4 |
-| Cell-heterogeneity audit (HHI × pairs) | `32_matched_heterogeneity.R`, `50_negative_cell_audit.R` | §8.3 |
-| Direct-CADE AUC (47 defendants) | `33_auc_direct_cade.R` | §6, §10.2 |
+| Imhof full-pipeline horse race | `31_imhof_full_pipeline.R`, `49_imhof_incremental_value.R` | §10 (architecture) |
+| Direct-CADE AUC (47 defendants) | `33_auc_direct_cade.R` | §7, §10.2 |
 | Horse race binary vs continuous | `34_horse_race_fl_continuous.R`, `36_gate_d1_harmonized.R` | §8.1, §9.1 |
 | Modal-by-modal AUC (gate D2) | `37_gate_d2_modal_auc.R` | §8.2 |
 | Continuous loser-side discrimination (gate D3) | `38_gate_d3_continuous_only.R` | §8.1 |
-| CADE winner-heavy diagnostic (gate D4) | `39_gate_d4_cade_winner_heavy.R` | §6 |
+| CADE winner-heavy diagnostic (gate D4) | `39_gate_d4_cade_winner_heavy.R` | §7 |
 | Anti-leakage audit | `40_leakage_audit_d3.R` | §9.2 |
 | Operational metrics (in-sample + temporal holdout) | `42_operational_metrics.R`, `43_precision_at_k_audit.R` | §9.3 |
-| Strict-overlap matching | `51_item_level_scope_match.R` | §7.1, §9.2, §10.1 |
+| Strict-overlap matching | `51_item_level_scope_match.R` | §6.2, §9.2 |
 | Strict-train threshold (temporal) | `53_strict_train_period_threshold.R` | §4.2 |
 | Threshold table (Q3 IQR alt) | `54_threshold_table_q3iqr.R` | §9.1, appendix |
+| **Sign-reversal segment decomposition** (Q4 finding + trim sensitivity) | `61_sign_reversal_segment_decomp.R` | §6.2 (segment-level decomposition) |
+| **Bid-level theory bridge** (R1/R2 distinction) | `62_theory_bridge_bidlevel.R` | §7 (within-stratum bid-level bridge) |
+| **Architecture / sequential gatekeeper** (precision/recall envelope) | `63_architecture_gatekeeper.R` | §10 (gatekeeper rule) |
+| **Temporal-holdout audit of the gatekeeper** | `64_gatekeeper_temporal_holdout.R` | §10 (out-of-time robustness) |
 
 ### Step 3 — manuscript compilation
 
 ```bash
-cd paper3-frequent-losers/work/v15-editor
-pdflatex -interaction=nonstopmode paper_v15editor.tex
-bibtex paper_v15editor
-pdflatex paper_v15editor.tex
-pdflatex paper_v15editor.tex
+cd paper3-frequent-losers/work/v17-editor
+pdflatex -interaction=nonstopmode paper_v17editor_online_appendix.tex
+bibtex paper_v17editor_online_appendix
+pdflatex paper_v17editor_online_appendix.tex
+pdflatex paper_v17editor.tex
+bibtex paper_v17editor
+pdflatex paper_v17editor.tex
+pdflatex paper_v17editor.tex
+pdflatex paper_v17editor_online_appendix.tex
 ```
 
-!!! note "Bibliography"
-    The manuscript uses **natbib + bibtex** (not biblatex/biber). Run `bibtex` for the bibliography pass.
+!!! note "Bibliography and cross-references"
+    The manuscript uses **natbib + bibtex** (not biblatex/biber). Run `bibtex` for the bibliography pass. The `xr` package cross-references between main paper and online appendix require the OA `.aux` to exist before the main paper compiles for the first time, hence the OA-then-main sequence above.
 
-The output is `paper_v15editor.pdf` (60 pages, including a lean appendix with the three formal results, supporting tables, identification audits, and the staggered-design failures).
+The outputs are `paper_v17editor.pdf` (47 pages, body) and `paper_v17editor_online_appendix.pdf` (20 pages, online appendix containing the four formal results, supporting tables, identification audits, threshold robustness, generalisation audits, adversarial-adaptation simulation, and the staggered-design failures).
 
 ---
 
@@ -183,7 +190,9 @@ The output is `paper_v15editor.pdf` (60 pages, including a lean appendix with th
 
 | File | Pages | Description |
 |---|---|---|
-| `work/v15-editor/paper_v15editor.pdf` | 60 | Complete manuscript with lean appendix |
+| `work/v17-editor/paper_v17editor.pdf` | 47 | Main manuscript (current version) |
+| `work/v17-editor/paper_v17editor_online_appendix.pdf` | 20 | Online appendix |
+| `work/v16-editor/paper_v16editor.pdf` | 47 | v16 byte-frozen as recoverable hedge |
 
 ---
 
