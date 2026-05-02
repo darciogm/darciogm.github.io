@@ -6745,7 +6745,7 @@
 <tbody>
 <tr>
 <td><code>scripts/</code></td>
-<td>Python data-build scripts (numbered <code>00_*.py</code>) and R analysis scripts (numbered <code>01_*.R</code> through <code>54_*.R</code>)</td>
+<td>Python data-build scripts (numbered <code>00_*.py</code>) and R analysis scripts (numbered <code>01_*.R</code> through <code>64_*.R</code>)</td>
 </tr>
 <tr>
 <td><code>data/processed/</code></td>
@@ -6760,8 +6760,12 @@
 <td>All figures in PDF</td>
 </tr>
 <tr>
-<td><code>work/v15-editor/</code></td>
-<td>LaTeX manuscript sources for the published version</td>
+<td><code>work/v17-editor/</code></td>
+<td>LaTeX manuscript sources for the current version (v17)</td>
+</tr>
+<tr>
+<td><code>work/v16-editor/</code></td>
+<td>v16 byte-frozen as recoverable hedge</td>
 </tr>
 </tbody>
 </table>
@@ -7019,7 +7023,7 @@ python3<span class="w"> </span>scripts/00_build_bidlevel.py
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers
 Rscript<span class="w"> </span>scripts/00_master.R
 </code></pre></div>
-<p>The master script runs the analysis blocks in order. The blocks below correspond to the v15 manuscript sections:</p>
+<p>The master script runs the analysis blocks in order. The blocks below correspond to the v17 manuscript sections:</p>
 <table>
 <thead>
 <tr>
@@ -7037,12 +7041,12 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <tr>
 <td>Headline regressions (4 specs, 4 DVs)</td>
 <td><code>02_analysis.R</code>, <code>03_tables.R</code></td>
-<td>§7.1 (within-item conditional gap)</td>
+<td>§6.1 (broad-sample β)</td>
 </tr>
 <tr>
 <td>Figures (FL distribution, IQR, oversight gradient)</td>
 <td><code>04_figures.R</code>, <code>41_fix_figures.R</code></td>
-<td>§7, appendix</td>
+<td>§6, appendix</td>
 </tr>
 <tr>
 <td>Threshold and clustering robustness</td>
@@ -7052,12 +7056,12 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <tr>
 <td>Modal falsification + within-PBU oversight</td>
 <td><code>07_heterogeneity.R</code></td>
-<td>§7.1, §7.2</td>
+<td>§6.1, §6.3</td>
 </tr>
 <tr>
 <td>Auxiliary outcomes</td>
 <td><code>08_additional_dvs.R</code></td>
-<td>§7 (auxiliary)</td>
+<td>§6 (auxiliary)</td>
 </tr>
 <tr>
 <td>CEM, IPW, IV diagnostics</td>
@@ -7080,24 +7084,14 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <td>§5.1, appendix F</td>
 </tr>
 <tr>
-<td>First-time-FL matching</td>
-<td><code>15_first_time_fl.R</code>, <code>30_first_time_fl_matching.R</code></td>
-<td>§8.3</td>
-</tr>
-<tr>
 <td>Imhof full-pipeline horse race</td>
 <td><code>31_imhof_full_pipeline.R</code>, <code>49_imhof_incremental_value.R</code></td>
-<td>§9.4</td>
-</tr>
-<tr>
-<td>Cell-heterogeneity audit (HHI × pairs)</td>
-<td><code>32_matched_heterogeneity.R</code>, <code>50_negative_cell_audit.R</code></td>
-<td>§8.3</td>
+<td>§10 (architecture)</td>
 </tr>
 <tr>
 <td>Direct-CADE AUC (47 defendants)</td>
 <td><code>33_auc_direct_cade.R</code></td>
-<td>§6, §10.2</td>
+<td>§7, §10.2</td>
 </tr>
 <tr>
 <td>Horse race binary vs continuous</td>
@@ -7117,7 +7111,7 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <tr>
 <td>CADE winner-heavy diagnostic (gate D4)</td>
 <td><code>39_gate_d4_cade_winner_heavy.R</code></td>
-<td>§6</td>
+<td>§7</td>
 </tr>
 <tr>
 <td>Anti-leakage audit</td>
@@ -7132,7 +7126,7 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <tr>
 <td>Strict-overlap matching</td>
 <td><code>51_item_level_scope_match.R</code></td>
-<td>§7.1, §9.2, §10.1</td>
+<td>§6.2, §9.2</td>
 </tr>
 <tr>
 <td>Strict-train threshold (temporal)</td>
@@ -7144,20 +7138,44 @@ Rscript<span class="w"> </span>scripts/00_master.R
 <td><code>54_threshold_table_q3iqr.R</code></td>
 <td>§9.1, appendix</td>
 </tr>
+<tr>
+<td><strong>Sign-reversal segment decomposition</strong> (Q4 finding + trim sensitivity)</td>
+<td><code>61_sign_reversal_segment_decomp.R</code></td>
+<td>§6.2 (segment-level decomposition)</td>
+</tr>
+<tr>
+<td><strong>Bid-level theory bridge</strong> (R1/R2 distinction)</td>
+<td><code>62_theory_bridge_bidlevel.R</code></td>
+<td>§7 (within-stratum bid-level bridge)</td>
+</tr>
+<tr>
+<td><strong>Architecture / sequential gatekeeper</strong> (precision/recall envelope)</td>
+<td><code>63_architecture_gatekeeper.R</code></td>
+<td>§10 (gatekeeper rule)</td>
+</tr>
+<tr>
+<td><strong>Temporal-holdout audit of the gatekeeper</strong></td>
+<td><code>64_gatekeeper_temporal_holdout.R</code></td>
+<td>§10 (out-of-time robustness)</td>
+</tr>
 </tbody>
 </table>
 <h3 id="step-3-manuscript-compilation">Step 3 — manuscript compilation<a class="headerlink" href="#step-3-manuscript-compilation" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers/work/v15-editor
-pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>paper_v15editor.tex
-bibtex<span class="w"> </span>paper_v15editor
-pdflatex<span class="w"> </span>paper_v15editor.tex
-pdflatex<span class="w"> </span>paper_v15editor.tex
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers/work/v17-editor
+pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>paper_v17editor_online_appendix.tex
+bibtex<span class="w"> </span>paper_v17editor_online_appendix
+pdflatex<span class="w"> </span>paper_v17editor_online_appendix.tex
+pdflatex<span class="w"> </span>paper_v17editor.tex
+bibtex<span class="w"> </span>paper_v17editor
+pdflatex<span class="w"> </span>paper_v17editor.tex
+pdflatex<span class="w"> </span>paper_v17editor.tex
+pdflatex<span class="w"> </span>paper_v17editor_online_appendix.tex
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">Bibliography</p>
-<p>The manuscript uses <strong>natbib + bibtex</strong> (not biblatex/biber). Run <code>bibtex</code> for the bibliography pass.</p>
+<p class="admonition-title">Bibliography and cross-references</p>
+<p>The manuscript uses <strong>natbib + bibtex</strong> (not biblatex/biber). Run <code>bibtex</code> for the bibliography pass. The <code>xr</code> package cross-references between main paper and online appendix require the OA <code>.aux</code> to exist before the main paper compiles for the first time, hence the OA-then-main sequence above.</p>
 </div>
-<p>The output is <code>paper_v15editor.pdf</code> (60 pages, including a lean appendix with the three formal results, supporting tables, identification audits, and the staggered-design failures).</p>
+<p>The outputs are <code>paper_v17editor.pdf</code> (47 pages, body) and <code>paper_v17editor_online_appendix.pdf</code> (20 pages, online appendix containing the four formal results, supporting tables, identification audits, threshold robustness, generalisation audits, adversarial-adaptation simulation, and the staggered-design failures).</p>
 <hr>
 <h2 id="output-files">Output Files<a class="headerlink" href="#output-files" title="Permanent link">¶</a></h2>
 <h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">¶</a></h3>
@@ -7196,9 +7214,19 @@ pdflatex<span class="w"> </span>paper_v15editor.tex
 </thead>
 <tbody>
 <tr>
-<td><code>work/v15-editor/paper_v15editor.pdf</code></td>
-<td>60</td>
-<td>Complete manuscript with lean appendix</td>
+<td><code>work/v17-editor/paper_v17editor.pdf</code></td>
+<td>47</td>
+<td>Main manuscript (current version)</td>
+</tr>
+<tr>
+<td><code>work/v17-editor/paper_v17editor_online_appendix.pdf</code></td>
+<td>20</td>
+<td>Online appendix</td>
+</tr>
+<tr>
+<td><code>work/v16-editor/paper_v16editor.pdf</code></td>
+<td>47</td>
+<td>v16 byte-frozen as recoverable hedge</td>
 </tr>
 </tbody>
 </table>

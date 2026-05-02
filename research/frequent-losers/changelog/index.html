@@ -6731,7 +6731,20 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h1>
 <hr>
-<h2 id="v15-may-2026-current">v15 — May 2026 (current)<a class="headerlink" href="#v15-may-2026-current" title="Permanent link">¶</a></h2>
+<h2 id="v17-may-2026-current">v17 — May 2026 (current)<a class="headerlink" href="#v17-may-2026-current" title="Permanent link">¶</a></h2>
+<p><strong>Route 2 substantive revision push and storytelling polish for JLEO.</strong></p>
+<ul>
+<li>Title: <em>Frequent Losers: A Cover-Bidder Screen Without Bid Microdata</em>. Cunha "Frequent Losers" as a noun-phrase technical term and promises the most original methodological move (operating without bid microdata at the operational layer).</li>
+<li>New section §<code>forensic</code> carries the architectural test as the contribution-central section. Three findings: same-target AUC comparison (FL alone 0.881 vs Imhof full 0.846), non-redundant signal in combination (+0.096 AUC, DeLong <em>p</em> = 1.2 × 10−26), and the sequential gatekeeper rule that delivers an 83% bid-microdata footprint reduction at an 8% recall cost relative to joint scoring.</li>
+<li>Temporal-holdout audit of the gatekeeper added (script 64): the sequential rule matches or exceeds joint scoring under temporal holdout in absolute true-positive count, so the data-envelope reduction does not trade off against out-of-time recall.</li>
+<li>Bid-level extension of the within-stratum theory bridge (script 62): per-bid <code>Valor Unitário Proposta</code> and <code>Flag Vencedor</code> from the LANCES export, restricted to losing bids in convite or pregão. Cobidders bid plausibly close to winners (median gap <em>d</em> = −0.28) with elevated within-firm dispersion (<em>d</em> = +0.15). Multivariate logit holding <code>log(1+tenders_count)</code> constant confirms both signs at <em>p</em> &lt; 10−3. The signs adopt the credible-cover-bidding (R2) reading of Marshall–Marx and Asker over the textbook (R1) reading of Porter–Bajari–Ye.</li>
+<li>Sign-reversal segment-level decomposition (script 61): the broad-sample positive concentrates in tender-value Q4 (+0.046, robust to overlap restriction and ATT reweighting). Trim sensitivity <em>strengthens</em> the negative ATT estimate (from −0.097 to −0.118 at top-decile trim), foreclosing the few-cell-artefact reading.</li>
+<li>Observability framing reframed: distinction between <em>operational layer</em> (audit-court-queryable in minutes; carries award envelope only) and <em>forensic-recoverable layer</em> (per-bidder bid amounts, accessible through administrative request with weeks of latency). The screen operates on the operational layer; the bid-microdata pipeline appears in §<code>forensic</code> as the benchmark and as the Stage-2 input the screen triages, never as a screening input itself.</li>
+<li>Online Appendix A formal R1/R2 distinction added at the end of the proof appendix; framework predictions about firm-level participation intensity, deployment proximity, and portfolio specialisation are unaffected by R1/R2; only the bid-level reading of <span class="arithmatex">\(b_C\)</span> is.</li>
+<li>Manuscript: 47 pp body + 20 pp online appendix. All thirteen main sections and seven OA sections at storytelling 9.5. Disclosure footnote on LANCES export access embedded in §<code>emp_estimand</code>.</li>
+<li>v16 byte-frozen as recoverable hedge under <code>work/v16-editor/</code>.</li>
+</ul>
+<h2 id="v15-may-2026">v15 — May 2026<a class="headerlink" href="#v15-may-2026" title="Permanent link">¶</a></h2>
 <p><strong>Single-thesis rewrite for JLEO.</strong></p>
 <ul>
 <li>Title realigned with body: <em>Frequent Losers as a Cartel Screen: Detecting Cover Bidding Without Bid Microdata</em>. Construct scope explicit (cover-bidder population, not cartel ringleaders).</li>

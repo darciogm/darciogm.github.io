@@ -6732,26 +6732,22 @@
 <h1 id="mind-map">Mind Map<a class="headerlink" href="#mind-map" title="Permanent link">¶</a></h1>
 <p>Interactive overview of the paper's logical structure. Click and drag to explore.</p>
 <pre class="mermaid"><code>mindmap
-  root((Frequent Losers&lt;br/&gt;as a Cartel Screen))
-    **Institutional Setting**
-      BEC Platform
-        Sao Paulo state
-        2009-2019
-      4.5M tender-items
-      41K unique firms
-      Two modalities
-        Convite sealed bid
-          3-bidder rule context
-          Price imprint 3.8%
-        Pregao e-auction
-          No bidder minimum
-          Price imprint 9.3%
-      Lei 14.133/2021
-        Consolidates pregao
-        Favorable to portability
+  root((Frequent Losers&lt;br/&gt;A Cover-Bidder Screen&lt;br/&gt;Without Bid Microdata))
+    **Two Observability Layers**
+      Operational layer
+        Award envelope
+        Audit-court queryable in minutes
+        Winner + participants + item + price
+      Forensic-recoverable layer
+        Per-bidder bid amounts
+        Bid timestamps and sequences
+        Administrative request weeks of latency
+      Asymmetry is structural
+        Not Brazil-specific
+        FPDS-NG TED UK Contracts Finder
     **FL Definition**
       Always-losers
-        win rate = 0%
+        win rate = 0
         16,843 firms
       IQR threshold
         median + 1.5 x IQR
@@ -6759,101 +6755,82 @@
       2,735 FL firms
         Treatment: tender has &gt;= 1 FL
     **Conceptual Framework**
-      Three formal results
-        Lemma wins=0
-          Equilibrium choice of cover bidders
-        Prop log(1+t) sufficient
-          Ranking statistic for type C
+      Four formal results
+        Lemma wins=0 separating equilibrium
+        Prop log(1+t) sufficient ranking statistic
         Prop dm*/dtheta_k less than 0
-          Comparative static
-      Cover bidders + genuine entrants
-        Separating equilibrium
-        Organizing device, not identification
-    **Within-Item Price Gap**
+        Prop beta vs beta-ov different objects
+      R1 vs R2 cover bidding
+        R1 textbook visibly uncompetitive
+        R2 credible phantom competition
+        Bid-level evidence adopts R2
+    **Discrimination Against CADE**
+      Cobidders 193 in always-loser stratum
+      Conservative AUC 0.748 pre-2020
+      Prospective AUC 0.864 temporal holdout
+      Direct defendants AUC 0.491 by design
+        Loser-side recovery not winner-side
+      Within-stratum bridge
+        Firm-level d up to 1.0
+        Bid-level median gap d -0.28
+        Multivariate logit p less than 1e-3
+    **Architectural Test**
+      Same target different envelopes
+        FL alone AUC 0.881
+        Imhof full AUC 0.846
+        Comparable on thinner envelope
+      Non-redundant signal
+        Combined AUC 0.942
+        Delta +0.096 DeLong p 1e-26
+      Sequential gatekeeper
+        K1=2000 catches 131 of 193
+        Bid-microdata footprint -83%
+        Recall cost only -8%
+      Temporal-holdout robustness
+        Sequential matches joint scoring
+        Out-of-time TP at 1000 114 vs 111
+    **Pricing Imprint**
       Headline range +3.6 to +7.7%
         Cross-fit 3.6%
         IPW 5.5%
         OLS within-PBU 6.4%
         CEM 7.7%
-      Modal split
-        Pregao 9.3%
-        Convite 3.8%
-        Ratio 2.5x
-      IV diagnostic
-        0.194 F=396
-        OLS conservative
-      Strict overlap
-        ATT -9.7%
-        PS-trimmed -30.7%
-        Different angle, same population
-    **Oversight Gradient**
-      12.6x ratio Q1 to Q4
-        Q1 +21.4%
-        Q2 +9.8%
-        Q3 +4.5%
-        Q4 +1.7%
-      Strongest heterogeneity in data
-        Larger than modal gap
-        Larger than cross-sector
-      Framework prediction match
-        dm*/dtheta_k less than 0
-    **CADE Validation**
-      12 cases 65 defendants
-        47 BEC-active
-        193 cobidders
-      Market proximity 3.5x
-        Permutation stratified
-      Within-firm 2.6x
-        3 named firms flagged
-      Discrimination bounds
-        Lower 0.748 contemporaneous
-        Upper 0.924 in-sample
-        Upper 0.864 temporal holdout
-      Direct CADE 47 firms
-        AUC 0.49 by design
-      Robustness to enforcement
-        Drop CADE tenders
-        beta 0.062 vs 0.064
-    **Mechanisms**
-      Continuous dominates binary
-        AUC 0.939 vs 0.911
-        DeLong p=2e-5
+      Segment decomposition
+        Q1-Q3 negative robust to specs
+        Q4 positive robust to specs
+        Aggregate is volume-weighted average
+      Trim sensitivity
+        Trim top decile -0.118
+        Negative is structural not few-cell
       Modal asymmetry
+        Pregao 9.3% Convite 3.8%
+        Quorum-filler reading falsified
+    **Heterogeneity**
+      Oversight gradient 12.6x
+        Q1 +21.4% Q4 +1.7%
+      Modal contrast
         Pregao deeper than convite
-        Scope, not institutional ID
-      What data dont support
-        Cell-heterogeneity scope
+        Active vs passive cover bidding
+      What data do not support
+        Cell-heterogeneity grid
         First-time-FL compresses
     **Robustness**
       Threshold sensitivity
         Five multipliers all significant
       Identification audits
-        Cinelli RV 17.5%
+        Cinelli RV 0.207
         Oster delta 261.6
-        Strict overlap reversal
-        Leakage audit 0.864
-        Placebo IV
+        Anti-leakage AUC 0.864 holdout
       Operational metrics
-        In-sample 0.132 at 500
-        Holdout 0.070 retention 53%
-        AUC holdout 0.864
-      Imhof comparison
-        Comparable at lower data cost
-        Combined +0.096 AUC
-        Complementarity not dominance
+        In-sample inflates 50% at 500
+        Holdout the deployable column
+      Adversarial adaptation
+        Resilient to rotation and wins
+        Vulnerable to threshold capping
+        Combined attack AUC 0.81
       Staggered designs
-        RDD null at caps
-        DiD pre-trends fail
-    **Three-Stage Pathway**
-      Screen
-        Award records only
-        log(1+tenders_count)
-      Triage
-        Cross-ref CADE CGU TCE
-        Operational priors
-      Forensic
-        Imhof Wallimann methods
-        Where bid microdata available</code></pre>
+        RDD null at caps no bunching
+        DiD pre-trends fail</code></pre>
 
 
 
