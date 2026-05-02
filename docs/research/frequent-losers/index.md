@@ -6,9 +6,9 @@ paper: frequent-losers
 
 <div class="hero-section" markdown>
 
-# Frequent Losers
+# Screening Under Incomplete Observability
 
-<p class="subtitle">A Participation-Based Screen for Public Procurement</p>
+<p class="subtitle">Equilibrium Loser-Side Participation as an Award-Layer Signal of Cartel Activity</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
@@ -16,34 +16,39 @@ paper: frequent-losers
 
 <div class="key-result" markdown>
 <span class="number">+3.6 to +7.7%</span>
-<span class="label">Conditional within-item price gap associated with frequent-loser presence, across five estimators</span>
+<span class="label">Broad-sample conditional within-item price gap associated with frequent-loser presence, across four estimators</span>
 </div>
 
 ## Abstract
 
-What signal can oversight bodies extract from contract-award
-records when bid microdata are unavailable? In São Paulo's
-electronic procurement platform (2009&ndash;2019), 2,735 of 16,843
-firms with persistent zero wins participated in 14 or more
-tender-items; we call these firms *frequent losers*. Their
-presence associates with a +3.6 to +7.7% higher negotiated unit
-price across estimators in the broad sample, and reverses sign
-once the comparison is restricted to items where treated and
-control overlap on observables (overlap-cell ATT &minus;9.72%;
-propensity-score-trimmed &minus;30.67%). The two estimates
-answer different empirical questions: the broad-sample range
-captures deployment-relevant selection, while overlap-restricted
-estimates isolate within-support comparisons. We report the
-broad-sample range as the headline because triage operates on
-the population frequent losers select into. The price imprint
-shrinks 12.6&times; across procuring-unit-size quartiles,
-consistent with thinner institutional capacity at smaller
-buyers. Against CADE's cartel records, the construct reaches
-AUC 0.748 on a strict contemporaneous benchmark and 0.864 on
-temporal holdout against cobidder labels&mdash;an indirect
-benchmark of cartel adjacency, not membership. The result is a
-triage tool for procurement oversight where bid microdata are
-absent.
+Cartel-screening methods in the empirical literature presuppose
+bid-level observability. In many enforcement environments only
+the contract-award layer survives, and the question of what
+collusion-relevant information remains under that coarsening is
+open. We study the screening value of endogenous loser-side
+participation. A separating-equilibrium framework identifies
+log(1+tenders_count) together with the wins=0 filter as a
+sufficient ranking statistic for cover-bidder type given
+award-record data; the median+1.5&times;IQR binary rule is its
+information-coarsening. In São Paulo's Bolsa Eletrônica de
+Compras (2009&ndash;2019), 2,735 of 16,843 persistent zero-win
+firms cross this rule. Their presence associates with a
++3.6 to +7.7% higher conditional log negotiated unit price
+across estimators. Forcing overlap on observables reverses the
+sign (overlap-cell ATT &minus;9.72%; propensity-score-trimmed
+&minus;30.67%). We read the reversal as the signature of a
+screening-value object rather than a treatment-effect object:
+overlap restrictions strip the endogenous sorting that generates
+the screen's economic content. Against CADE's cartel records the
+construct reaches AUC 0.748 on a contemporaneous benchmark
+restricted to four pre-2020 cases and 0.864 under temporal
+holdout against cobidder labels; against direct defendants in
+the broader BEC firm universe AUC is 0.491. The exercise locates
+the construct as cartel-adjacency evidence under coarsened
+observability, separates an award-layer screening stage from a
+bid-layer forensic stage, and frames the heterogeneity across
+buyer size as variation in the detection regime rather than as
+identification of an institutional channel.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 [:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
@@ -57,12 +62,12 @@ absent.
 <span class="badge">L41</span>
 
 **Keywords:**
-<span class="badge badge-kw">frequent losers</span>
-<span class="badge badge-kw">participation-based screen</span>
-<span class="badge badge-kw">public procurement</span>
+<span class="badge badge-kw">screening under incomplete observability</span>
+<span class="badge badge-kw">cover bidding</span>
 <span class="badge badge-kw">cartel adjacency</span>
-<span class="badge badge-kw">triage</span>
+<span class="badge badge-kw">award-layer enforcement</span>
 <span class="badge badge-kw">separating equilibrium</span>
+<span class="badge badge-kw">participation-based statistics</span>
 
 ---
 
