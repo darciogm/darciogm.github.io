@@ -32,9 +32,11 @@ presence associates with a +3.6 to +7.7% higher negotiated unit
 price across estimators in the broad sample, but the conditional
 association reverses sign under strict-overlap matching
 (&minus;9.7% to &minus;30.7%): the two estimates describe the
-same population at different scopes of selection, and we treat
-the screen's signal as partly about which environments frequent
-losers select into rather than as a uniform descriptive effect.
+same population at different scopes of selection. We report the
+broad-sample range as headline because it maps to the deployment
+question (which environments to flag), and treat the screen's
+signal as partly about selection rather than as a uniform
+descriptive effect.
 The price imprint shrinks across procuring-unit size quartiles
 (from +21.4% to +1.7%; ratio 12.6&times;), consistent with
 thinner institutional capacity moderating the imprint, though
