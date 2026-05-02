@@ -8,46 +8,46 @@ paper: frequent-losers
 
 # Frequent Losers
 
-<p class="subtitle">Screening Cartels Without Bid Microdata</p>
+<p class="subtitle">A Cover-Bidder Screen Without Bid Microdata</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">+3.6 to +7.7%</span>
-<span class="label">Broad-sample conditional within-item price gap associated with frequent-loser presence, across four estimators</span>
+<span class="number">AUC 0.864</span>
+<span class="label">Firm-level discrimination of CADE cobidders inside the always-loser stratum under temporal holdout (train 2009&ndash;2016, test 2017&ndash;2019)</span>
 </div>
 
 ## Abstract
 
-Can cartels be screened without bid-level data? Most
-cartel-detection methods read collusion off the distribution of
-submitted bids; many enforcement environments preserve only the
-contract-award layer. We study what survives that coarsening.
-A separating-equilibrium framework identifies log(1+tenders_count)
-together with the wins=0 filter as a sufficient ranking
-statistic for cover-bidder type given award-record data. In
-São Paulo's electronic procurement platform (2009&ndash;2019),
-2,735 of 16,843 persistent zero-win firms cross the resulting
-threshold&mdash;*frequent losers*. Their presence associates
-with a +3.6 to +7.7% higher conditional log negotiated unit
-price across four estimators. The sign reverses once the
-comparison is restricted to items where treated and control
-overlap on observables (&minus;9.72% to &minus;30.67%). The
-framework reads the reversal as a feature: the overlap
-restriction strips precisely the equilibrium sorting the
-screening statistic is designed to capture. Against CADE's
-cartel records, the construct discriminates cobidders at AUC
-0.748 on a strict pre-2020 benchmark and 0.864 under temporal
-holdout; AUC against direct defendants is 0.491, the design's
-empirical signature. The result is an award-layer screening
-stage that runs ahead of the bid-layer forensic stage the prior
-literature requires.
+Can a cartel-detection screen built on the contract-award
+envelope identify cartel-adjacent firms when per-bidder bid
+amounts are not routinely observable? A separating-equilibrium
+argument with cover bidders identifies endogenous loser-side
+participation as a sufficient ranking statistic given
+award-record data, and a binary *frequent-loser* flag makes the
+statistic operational. On São Paulo's BEC platform
+(2009&ndash;2019), the flag discriminates 193 adjudicated
+cobidders inside the always-loser stratum at AUC 0.864 under
+temporal holdout. Compared with the seven-feature
+Imhof&ndash;Wallimann pipeline trained on bid microdata, it
+matches AUC on a thinner envelope and adds non-redundant signal
+in combination (+0.096 AUC, DeLong p&lt;10&minus;25). A
+sequential rule that uses the flag to filter the bid-microdata
+interrogation down to 2,000 of 11,676 firms still recovers 131
+of 193 cobidders, an 83% footprint reduction whose recall
+robustness survives the temporal-holdout audit. Cobidders bid
+plausibly close to winners with elevated within-firm dispersion,
+the signature of credible cover bidding rather than the textbook
+deliberately-uncompetitive form. The implication is
+architectural. Screening and forensic stages belong in sequence,
+not in competition: the screen runs on the layer audit courts
+already query, and the forensic stage inherits a much smaller
+pool to interrogate.
 
-[:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
-[:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
-[:material-format-list-bulleted: Highlights](assets/paper_v15_highlights.pdf){ .md-button }
+[:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v17.pdf){ .md-button .md-button--primary }
+[:material-file-document-outline: Online appendix](assets/paper_v17_online_appendix.pdf){ .md-button }
 
 **JEL Classification:**
 <span class="badge">D44</span>
