@@ -6730,39 +6730,11 @@
 
 
 <h1 id="main-results">Main Results<a class="headerlink" href="#main-results" title="Permanent link">¶</a></h1>
-<p>This page presents the core empirical findings: classification diagnostics, price association, detection performance, network-split heterogeneity, Bajari--Ye tests, structural estimation, and supporting mechanism evidence.</p>
+<p>Two findings carry the empirical case: the within-item conditional price gap and its sharp heterogeneity in procuring-unit size. We then validate the construct against CADE adjudications.</p>
 <hr>
-<h2 id="classification-diagnostics">Classification Diagnostics<a class="headerlink" href="#classification-diagnostics" title="Permanent link">¶</a></h2>
-<p>Before the price regressions, three checks verify that the binary FL classification captures a real behavioral pattern.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Check</th>
-<th style="text-align: left;">Result</th>
-<th style="text-align: left;">Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Zero-win bright line</strong></td>
-<td style="text-align: left;">Relaxing to 1% or 2% attenuates coefficient substantially</td>
-<td style="text-align: left;">The zero-win condition does real work</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Continuous measure</strong></td>
-<td style="text-align: left;">0.022 per log-point (SE = 0.005); implied value at threshold <span class="arithmatex">\(\approx\)</span> 5.8%</td>
-<td style="text-align: left;">Binary OLS of 6.4% reflects continuous relationship evaluated at threshold</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Permutation placebo</strong></td>
-<td style="text-align: left;">Mean 0.001, SD 0.003 over 20 replications; none reaches 0.064</td>
-<td style="text-align: left;">Association reflects specific FL allocation, not chance</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="ols-and-matching-results">OLS and Matching Results<a class="headerlink" href="#ols-and-matching-results" title="Permanent link">¶</a></h2>
-<p>FL presence is associated with significantly higher negotiated prices across all specifications.</p>
+<h2 id="within-item-conditional-price-gap">Within-Item Conditional Price Gap<a class="headerlink" href="#within-item-conditional-price-gap" title="Permanent link">¶</a></h2>
+<p>Comparing tender-items in the same product code, year, and procuring unit, the presence of at least one frequent loser is associated with a higher log negotiated unit price. The estimate is positive and significant under every estimator we deploy.</p>
+<h3 id="four-specifications-of-the-headline-regression">Four specifications of the headline regression<a class="headerlink" href="#four-specifications-of-the-headline-regression" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6770,335 +6742,223 @@
 <th style="text-align: center;">Coefficient</th>
 <th style="text-align: center;">SE</th>
 <th style="text-align: center;">Effect (%)</th>
-<th style="text-align: center;"><span class="arithmatex">\(N\)</span></th>
+<th style="text-align: center;"><em>N</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">(1) Item + Year FE</td>
-<td style="text-align: center;"><strong>0.068</strong>*</td>
+<td style="text-align: left;">(1) Item + year FE</td>
+<td style="text-align: center;"><strong>+0.068</strong>*</td>
 <td style="text-align: center;">(0.022)</td>
-<td style="text-align: center;">+6.8%</td>
+<td style="text-align: center;"><strong>+6.8%</strong></td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
-<td style="text-align: left;">(2) Item + Year + PBU FE</td>
-<td style="text-align: center;"><strong>0.064</strong>*</td>
+<td style="text-align: left;">(2) Item + year + PBU FE</td>
+<td style="text-align: center;"><strong>+0.064</strong>*</td>
 <td style="text-align: center;">(0.020)</td>
-<td style="text-align: center;">+6.4%</td>
+<td style="text-align: center;"><strong>+6.4%</strong></td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
-<td style="text-align: left;">(3) Pregao only (all FE)</td>
-<td style="text-align: center;"><strong>0.089</strong>*</td>
+<td style="text-align: left;">(3) Pregão only (all FE)</td>
+<td style="text-align: center;"><strong>+0.089</strong>*</td>
 <td style="text-align: center;">(0.025)</td>
-<td style="text-align: center;">+9.3%</td>
-<td style="text-align: center;">1,334,729</td>
+<td style="text-align: center;"><strong>+9.3%</strong></td>
+<td style="text-align: center;">543,752</td>
 </tr>
 <tr>
 <td style="text-align: left;">(4) Convite only (all FE)</td>
-<td style="text-align: center;"><strong>0.037</strong></td>
+<td style="text-align: center;"><strong>+0.037</strong></td>
 <td style="text-align: center;">(0.022)</td>
-<td style="text-align: center;">+3.8%</td>
-<td style="text-align: center;">319,718</td>
+<td style="text-align: center;"><strong>+3.8%</strong></td>
+<td style="text-align: center;">1,105,852</td>
 </tr>
 </tbody>
 </table>
+<p>The within-PBU shift from +6.8% to +6.4% is small enough to be inconsistent with concentration in high-cost buyers as the operating mechanism. The modal subsamples bracket the within-PBU estimate: the price imprint is sharper in pregão (no minimum-bidder rule) than in convite, ruling out the convite quorum rule as the channel.</p>
+<h3 id="headline-range-across-estimators">Headline range across estimators<a class="headerlink" href="#headline-range-across-estimators" title="Permanent link">¶</a></h3>
 <div class="admonition success">
-<p class="admonition-title">Price range: 3.6--7.7%</p>
-<p>Four estimation approaches produce a consistent range: cross-fit (3.6%), IPW (5.5%), OLS (6.4%), CEM (7.7%). The estimates cluster rather than scatter, indicating a stable conditional association across designs.</p>
+<p class="admonition-title">+3.6 to +7.7% across five estimators</p>
+<p>Cross-fit estimation (defining the frequent-loser list on odd years and estimating on even, then reversing) yields <strong>+3.6%</strong>. Applying the odd-year list to the full panel returns +4.3%, midway between full-PBU OLS (+6.4%) and clean cross-fit (+3.6%). The OLS estimate decomposes into a structural component (+3.6%, recovered by cross-fit) and a within-sample classification component (~+2.8 percentage points). Across the four estimators we report (cross-fit, IPW, OLS, CEM), the conditional range is +3.6 to +7.7%, and we adopt this range as the headline reference rather than any single point estimate.</p>
 </div>
-<h3 id="matching-and-cross-fit">Matching and Cross-Fit<a class="headerlink" href="#matching-and-cross-fit" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Estimator</th>
 <th style="text-align: center;">Coefficient</th>
-<th style="text-align: center;">SE</th>
-<th style="text-align: center;"><span class="arithmatex">\(N\)</span></th>
+<th style="text-align: center;"><em>N</em></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td style="text-align: left;">Cross-fit</td>
-<td style="text-align: center;">0.036</td>
-<td style="text-align: center;">(0.019)</td>
+<td style="text-align: center;">+3.6%</td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
 <td style="text-align: left;">IPW</td>
-<td style="text-align: center;">0.055</td>
-<td style="text-align: center;">(0.021)</td>
+<td style="text-align: center;">+5.5%</td>
 <td style="text-align: center;">830,194</td>
 </tr>
 <tr>
-<td style="text-align: left;">OLS (all FE)</td>
-<td style="text-align: center;">0.064</td>
-<td style="text-align: center;">(0.020)</td>
+<td style="text-align: left;">OLS within-PBU</td>
+<td style="text-align: center;">+6.4%</td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
-<td style="text-align: left;">CEM</td>
-<td style="text-align: center;">0.077</td>
-<td style="text-align: center;">(0.024)</td>
+<td style="text-align: left;">CEM matching</td>
+<td style="text-align: center;">+7.7%</td>
 <td style="text-align: center;">969,751</td>
 </tr>
 </tbody>
 </table>
-<p>The cross-fit defines FL using odd years and estimates on even years (and vice versa), breaking any mechanical link between classification and outcomes. The attenuation from 0.064 to 0.036 reflects classification noise from the smaller subsample (1,885--2,153 vs. 2,735 FL firms), not mechanical bias---a decomposition exercise yields 0.043 (SE = 0.019).</p>
-<h3 id="non-fl-genuine-firms">Non-FL (Genuine) Firms<a class="headerlink" href="#non-fl-genuine-firms" title="Permanent link">¶</a></h3>
-<p>FL-present tenders have <strong>+0.19 more non-FL firms</strong> (PBU FE specification, <span class="arithmatex">\(p &lt; 0.01\)</span>), contradicting crowding-out and consistent with FL selection into competitive markets.</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_03_coef_summary.png" data-desc-position="bottom"><img src="../assets/figures/fig_03_coef_summary.png" alt="Coefficient summary"></a>
-  <figcaption><strong>Figure 4.</strong> Coefficient on FL presence across outcomes, specifications, and estimation methods. OLS estimates in gray; IV estimates in red.</figcaption>
-</figure>
-
+<h3 id="iv-diagnostic-confirms-ols-is-conservative">IV diagnostic confirms OLS is conservative<a class="headerlink" href="#iv-diagnostic-confirms-ols-is-conservative" title="Permanent link">¶</a></h3>
+<p>A leave-one-out IV specification using the supply of frequent losers active in other procuring units within the same product market and year yields <strong>+0.194</strong> (<em>F</em> = 396), three times the within-PBU OLS. The direction is what classical attenuation predicts when a binary indicator proxies for an underlying continuous participation count. We treat the IV as a measurement-error diagnostic, not a primary estimator.</p>
+<h3 id="strict-overlap-matching-an-angle-not-a-refutation">Strict-overlap matching: an angle, not a refutation<a class="headerlink" href="#strict-overlap-matching-an-angle-not-a-refutation" title="Permanent link">¶</a></h3>
+<p>Restricted to cells in which frequent-loser-present and -absent items genuinely overlap on observables, the conditional coefficient reverses (overlap-cell ATT −9.7%, PS-trimmed ATT −30.7%). We read the reversal as informative about selection within the always-loser stratum: strict-overlap matching restricts comparisons to the items frequent losers <em>would</em> have entered with high probability, removing precisely the systematic differences that the broad-sample association captures. Both estimates describe the same population from different angles; neither carries causal weight on its own.</p>
 <hr>
-<h2 id="detection-performance">Detection Performance<a class="headerlink" href="#detection-performance" title="Permanent link">¶</a></h2>
-<p>This is the paper's primary validation exercise.</p>
-<h3 id="roc-analysis">ROC Analysis<a class="headerlink" href="#roc-analysis" title="Permanent link">¶</a></h3>
+<h2 id="procuring-unit-size-oversight-gradient">Procuring-Unit-Size Oversight Gradient<a class="headerlink" href="#procuring-unit-size-oversight-gradient" title="Permanent link">¶</a></h2>
+<p>The strongest piece of evidence in the paper that the price gap reflects institutional structure rather than statistical noise.</p>
+<h3 id="monotonic-gradient-across-quartiles">Monotonic gradient across quartiles<a class="headerlink" href="#monotonic-gradient-across-quartiles" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AUC (FL screen)</td>
-<td><strong>0.94</strong> (95% CI: 0.91--0.94)</td>
-</tr>
-<tr>
-<td>AUC (Imhof-style CV proxy)</td>
-<td>0.79</td>
-</tr>
-<tr>
-<td>DeLong <span class="arithmatex">\(p\)</span>-value</td>
-<td><span class="arithmatex">\(&lt; 0.001\)</span></td>
-</tr>
-<tr>
-<td>Youden <span class="arithmatex">\(J\)</span></td>
-<td>0.84 at 1.45x IQR</td>
-</tr>
-<tr>
-<td>TPR at optimal threshold</td>
-<td>1.00</td>
-</tr>
-<tr>
-<td>FPR at optimal threshold</td>
-<td>0.16</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">AUC = 0.94 against CADE convictions</p>
-<p>The data-driven optimal threshold (Youden <span class="arithmatex">\(J = 0.84\)</span>) falls at 1.45x IQR---nearly identical to the 1.5x rule chosen <em>a priori</em> on economic grounds. The convergence is striking: the participation intensity at which profit-maximizing entry becomes hard to rationalize is also the intensity that best discriminates cartel-linked environments.</p>
-</div>
-<h3 id="horse-race-regression">Horse-Race Regression<a class="headerlink" href="#horse-race-regression" title="Permanent link">¶</a></h3>
-<p>The FL screen and an Imhof-style CV flag capture nearly orthogonal information (correlation <strong>0.06</strong>). When both are included as regressors:</p>
-<ul>
-<li>FL coefficient <strong>rises</strong> from 0.064 to <strong>0.084</strong> (<span class="arithmatex">\(p &lt; 0.01\)</span>)---a suppression effect predicted by the framework (coordinated cover bidding produces low dispersion while maintaining FL participation)</li>
-<li>Imhof CV flag enters at 0.021 (<span class="arithmatex">\(p &lt; 0.01\)</span>)</li>
-</ul>
-<h3 id="cade-external-validation">CADE External Validation<a class="headerlink" href="#cade-external-validation" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FL firms co-participating with CADE convicts</td>
-<td>193 / 2,735 (7.1%)</td>
-</tr>
-<tr>
-<td>Expected rate (permutation, 1,000 draws)</td>
-<td>2.0%</td>
-</tr>
-<tr>
-<td><strong>Ratio</strong></td>
-<td><strong>3.5x</strong></td>
-</tr>
-<tr>
-<td>Permutation <span class="arithmatex">\(p\)</span>-value</td>
-<td><span class="arithmatex">\(&lt; 0.001\)</span></td>
-</tr>
-<tr>
-<td>CADE-convicted firms classified as FL</td>
-<td>3</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">FL detects beyond known cartels</p>
-<p>Excluding all CADE-involved markets, the FL coefficient is 0.062 (vs. 0.064 baseline)---virtually identical. The FL screen captures price anomalies beyond the cases already prosecuted by CADE.</p>
-</div>
-<hr>
-<h2 id="network-split-heterogeneity">Network-Split Heterogeneity<a class="headerlink" href="#network-split-heterogeneity" title="Permanent link">¶</a></h2>
-<p>FL firms are classified into <strong>concentrated-market</strong> (high winner HHI) and <strong>competitive-market</strong> (low winner HHI) subgroups based on co-bidding networks.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Group</th>
-<th style="text-align: center;"><span class="arithmatex">\(N\)</span> FL firms</th>
+<th style="text-align: left;">Procuring-unit-size quartile</th>
 <th style="text-align: center;">Coefficient</th>
-<th style="text-align: center;">SE</th>
 <th style="text-align: center;">Effect (%)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">All FL</td>
-<td style="text-align: center;">2,735</td>
-<td style="text-align: center;"><strong>0.064</strong>*</td>
-<td style="text-align: center;">(0.020)</td>
-<td style="text-align: center;">+6.4%</td>
+<td style="text-align: left;">Q1 (smallest)</td>
+<td style="text-align: center;">+0.214</td>
+<td style="text-align: center;"><strong>+21.4%</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">Concentrated-market FL</td>
-<td style="text-align: center;">1,356</td>
-<td style="text-align: center;"><span class="arithmatex">\(-0.018\)</span></td>
-<td style="text-align: center;">(0.024)</td>
-<td style="text-align: center;"><span class="arithmatex">\(-1.8\)</span>%</td>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: center;">+0.098</td>
+<td style="text-align: center;">+9.8%</td>
 </tr>
 <tr>
-<td style="text-align: left;">Competitive-market FL</td>
-<td style="text-align: center;">1,379</td>
-<td style="text-align: center;"><strong>0.126</strong>*</td>
-<td style="text-align: center;">(0.031)</td>
-<td style="text-align: center;">+13.4%</td>
+<td style="text-align: left;">Q3</td>
+<td style="text-align: center;">+0.045</td>
+<td style="text-align: center;">+4.5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q4 (largest)</td>
+<td style="text-align: center;">+0.017</td>
+<td style="text-align: center;"><strong>+1.7%</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition danger">
-<p class="admonition-title">Price association concentrates in competitive markets</p>
-<p>Nearly all of the association comes from competitive-market FL firms. In concentrated markets, where dominant firms already sustain high prices through market power, the coefficient is indistinguishable from zero. Cover bidders are redundant where market power already exists---and most valuable where genuine competitive threat exists. For enforcement, the screen is most informative precisely in the markets where undetected collusion would be costliest.</p>
+<div class="admonition success">
+<p class="admonition-title">12.6× ratio between extreme quartiles</p>
+<p>The ratio is the largest source of heterogeneity in the data—larger than the pregão–convite gap, larger than any cross-sector spread—and is preserved across alternative measures of buyer size (annual contract volume, cumulative item count, headcount of distinct purchasers).</p>
 </div>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_11_network_split.png" data-desc-position="bottom"><img src="../assets/figures/fig_11_network_split.png" alt="Network split"></a>
-  <figcaption><strong>Figure 5.</strong> FL price coefficient by market concentration level. The price effect concentrates among FL firms operating in competitive markets (low winner HHI).</figcaption>
-</figure>
-
+<h3 id="framework-prediction-matches-direction-and-monotonicity">Framework prediction matches direction and monotonicity<a class="headerlink" href="#framework-prediction-matches-direction-and-monotonicity" title="Permanent link">¶</a></h3>
+<p>The framework yields the comparative static <strong>∂m*/∂θ<sub>k</sub> &lt; 0</strong>: where the procuring unit's principal cost of detection θ<sub>k</sub> is lower, cover-bidder deployment is higher. Procuring-unit size is not identical to detection cost, but the empirical association between buyer size and oversight infrastructure is well documented in decentralized procurement systems—large state agencies and state-level secretariats employ dedicated procurement staff and internal-audit units; small municipalities and decentralized purchasing units typically lack them. Read through this institutional mapping, the monotonic gradient is what the framework predicts.</p>
+<p>Three features distinguish the gradient from a mechanical artifact: monotonicity across all four quartiles, a magnitude beyond what fixed-effect noise typically produces, and a direction matching ∂m*/∂θ<sub>k</sub> &lt; 0.</p>
 <hr>
-<h2 id="bajari-ye-tests">Bajari--Ye Tests<a class="headerlink" href="#bajari-ye-tests" title="Permanent link">¶</a></h2>
-<h3 id="exchangeability">Exchangeability<a class="headerlink" href="#exchangeability" title="Permanent link">¶</a></h3>
-<p>KS test rejects the null that FL and non-FL bid residuals share the same distribution: <span class="arithmatex">\(D = 0.15\)</span> (<span class="arithmatex">\(p &lt; 0.001\)</span>). FL bids appear to be drawn from a different process.</p>
-<h3 id="conditional-independence">Conditional Independence<a class="headerlink" href="#conditional-independence" title="Permanent link">¶</a></h3>
-<p>Mean pairwise product of FL residuals: <strong>4.28</strong> (<span class="arithmatex">\(t = 81.0\)</span>, <span class="arithmatex">\(p &lt; 0.001\)</span>), with the bootstrap FL--non-FL difference excluding zero. Enriching the first stage with firm age and CNAE sector dummies leaves <span class="arithmatex">\(R^2\)</span> virtually unchanged (0.770) and does not alter the results.</p>
-<h3 id="tender-fe-reversal">Tender FE Reversal<a class="headerlink" href="#tender-fe-reversal" title="Permanent link">¶</a></h3>
-<p>Under tender FE, both products drop substantially:</p>
+<h2 id="validation-against-cade-adjudications">Validation Against CADE Adjudications<a class="headerlink" href="#validation-against-cade-adjudications" title="Permanent link">¶</a></h2>
+<p>CADE's procurement-cartel portfolio relevant to the sample comprises 12 adjudicated cases covering 65 firm-defendants in total, of which 47 are active in BEC. The validation operates against two distinct populations:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Group</th>
-<th style="text-align: center;">Without tender FE</th>
-<th style="text-align: center;">With tender FE</th>
+<th style="text-align: left;">Population</th>
+<th style="text-align: center;">Size</th>
+<th style="text-align: left;">Construct target?</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">FL pairwise product</td>
-<td style="text-align: center;">5.16</td>
-<td style="text-align: center;"><strong>0.38</strong></td>
+<td style="text-align: left;">Direct defendants in BEC</td>
+<td style="text-align: center;">47</td>
+<td style="text-align: left;"><strong>No</strong> — typically frequent winners; AUC 0.49 by design</td>
 </tr>
 <tr>
-<td style="text-align: left;">Non-FL pairwise product</td>
-<td style="text-align: center;">2.21</td>
-<td style="text-align: center;">0.86</td>
+<td style="text-align: left;">Cobidders inside the always-loser stratum</td>
+<td style="text-align: center;">193</td>
+<td style="text-align: left;"><strong>Yes</strong> — cover-bidder candidates by structure</td>
 </tr>
 </tbody>
 </table>
-<p>The FL product falls <strong>below</strong> non-FL---a reversal predicted by Regime 2. Under the coordinated regime, cover bids cluster near <span class="arithmatex">\(b^* + \epsilon\)</span>; removing the tender mean strips out the shared focal-point component.</p>
-<hr>
-<h2 id="structural-diagnostic">Structural Diagnostic<a class="headerlink" href="#structural-diagnostic" title="Permanent link">¶</a></h2>
-<p>BIC strongly favors Regime 2 (<span class="arithmatex">\(\Delta\)</span>BIC <span class="arithmatex">\(= -91{,}473\)</span>).</p>
+<h3 id="market-proximity-test">Market-proximity test<a class="headerlink" href="#market-proximity-test" title="Permanent link">¶</a></h3>
+<p>Among 2,735 frequent-loser firms, <strong>193 (7.1%)</strong> co-participate with at least one of the 47 BEC-active CADE-defendants in the same tender-item. A permutation test stratified by participation-count quartile (1,000 iterations) yields a baseline of <strong>1.24%</strong>.</p>
+<div class="admonition success">
+<p class="admonition-title">3.5× the participation-stratified baseline (<em>p</em> &lt; 0.001)</p>
+<p>The participation-stratification is the identifying move: it removes the alternative reading that the overlap is mechanical exposure through high tender-count, and isolates the residual concentration of co-participation among flagged firms.</p>
+</div>
+<h3 id="within-firm-enrichment">Within-firm enrichment<a class="headerlink" href="#within-firm-enrichment" title="Permanent link">¶</a></h3>
+<p>Of the 47 direct CADE defendants, 7 are always-losers in BEC. Of those 7, <strong>3 (43%)</strong> cross the frequent-loser threshold, against a population baseline of 16.2%—a 2.6× firm-level enrichment.</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Estimate</th>
+<th style="text-align: left;">Firm</th>
+<th style="text-align: left;">Cartel</th>
+<th style="text-align: center;">Tenders</th>
+<th style="text-align: center;">Wins</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><span class="arithmatex">\(\hat{\sigma}_c / \hat{\sigma}_g\)</span></td>
-<td>0.72</td>
+<td style="text-align: left;">Sol Tecnologia</td>
+<td style="text-align: left;">Solar water heaters</td>
+<td style="text-align: center;">84</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr>
-<td>Interpretation</td>
-<td>FL bids are 28% <strong>less</strong> dispersed than non-FL bids</td>
+<td style="text-align: left;">Nova Esperança Locadora</td>
+<td style="text-align: left;">School transportation</td>
+<td style="text-align: center;">97</td>
+<td style="text-align: center;">0</td>
 </tr>
 <tr>
-<td><span class="arithmatex">\(n\)</span>-conditional markup</td>
-<td>6.4% (close to OLS baseline)</td>
+<td style="text-align: left;">Jofran Comércio</td>
+<td style="text-align: left;">Trash bags (Op. Colludium)</td>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">0</td>
 </tr>
 </tbody>
 </table>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_dispersion_paradox.png" data-desc-position="bottom"><img src="../assets/figures/fig_dispersion_paradox.png" alt="Dispersion paradox"></a>
-  <figcaption><strong>Figure 6.</strong> Distribution of log bid spread above winning price for FL and non-FL losing bids. FL bids concentrate above the winner with overall $\sigma = 1.19$. Within-tender dispersion is <em>lower</em> for FL bids (CV 0.57 vs. 1.65; structural $\hat{\sigma}_c / \hat{\sigma}_g = 0.72$), rendering dispersion-based screens ineffective under coordinated cover bidding (Regime 2).</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_regime_densities.png" data-desc-position="bottom"><img src="../assets/figures/fig_regime_densities.png" alt="Regime densities"></a>
-  <figcaption><strong>Figure 7.</strong> Bid spread densities: simulated Regime 1 (complementary), simulated Regime 2 (coordinated), and empirical FL distribution. The empirical pattern matches Regime 2.</figcaption>
-</figure>
-
-<hr>
-<h2 id="supporting-diagnostics-m1-m5">Supporting Diagnostics (M1--M5)<a class="headerlink" href="#supporting-diagnostics-m1-m5" title="Permanent link">¶</a></h2>
+<p>Eight of the twelve cases were adjudicated after the 2019 sample window closes, so the within-firm enrichment is genuinely prospective: the construct flagged firms whose collusive role enforcement confirmed years later, on participation patterns observable years earlier.</p>
+<h3 id="discrimination-bounded-between-two-regimes">Discrimination bounded between two regimes<a class="headerlink" href="#discrimination-bounded-between-two-regimes" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Diagnostic</th>
-<th style="text-align: left;">Test</th>
-<th style="text-align: left;">Result</th>
-<th style="text-align: left;">Interpretation</th>
+<th style="text-align: left;">Reading</th>
+<th style="text-align: left;">Sample</th>
+<th style="text-align: center;">AUC</th>
+<th style="text-align: center;">95% CI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>M1: Competitive displacement</strong></td>
-<td style="text-align: left;">Non-FL firm count</td>
-<td style="text-align: left;">+0.19 more non-FL firms (<span class="arithmatex">\(p &lt; 0.01\)</span>)</td>
-<td style="text-align: left;">FL adds to, not displaces, genuine bidders</td>
+<td style="text-align: left;">Lower bound (contemporaneous)</td>
+<td style="text-align: left;">4 cases pre-2020, 210 cobidders, 108 frequent losers</td>
+<td style="text-align: center;"><strong>0.748</strong></td>
+<td style="text-align: center;">[0.713, 0.783]</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>M2: Reference price anchoring</strong></td>
-<td style="text-align: left;">Winning-bid-to-ref-price ratio</td>
-<td style="text-align: left;"><span class="arithmatex">\(-\)</span>4.1% closer to reference (<span class="arithmatex">\(p &lt; 0.01\)</span>)</td>
-<td style="text-align: left;">Consistent with coordination anchor</td>
+<td style="text-align: left;">Upper bound (prospective in-sample)</td>
+<td style="text-align: left;">Full 12 cases, 193 cobidders</td>
+<td style="text-align: center;"><strong>0.924</strong></td>
+<td style="text-align: center;">[0.921, 0.926]</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>M3: Reverse causality</strong></td>
-<td style="text-align: left;">Lagged price on FL entry</td>
-<td style="text-align: left;">Elasticity <span class="arithmatex">\(= 0.002\)</span> (SE <span class="arithmatex">\(= 0.0008\)</span>)</td>
-<td style="text-align: left;">Two orders of magnitude too small to explain 6.4%</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>M4: Dyadic linkage</strong></td>
-<td style="text-align: left;">Stratified permutation</td>
-<td style="text-align: left;">4,696 high-frequency pairs vs. 3,271 expected (<span class="arithmatex">\(p &lt; 0.001\)</span>)</td>
-<td style="text-align: left;">Excess persistent FL--winner pairs</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>M5: Firm exit</strong></td>
-<td style="text-align: left;">Cox model</td>
-<td style="text-align: left;">HR <span class="arithmatex">\(= 0.60\)</span> (<span class="arithmatex">\(p &lt; 0.01\)</span>)</td>
-<td style="text-align: left;">FL-exposed firms survive <strong>longer</strong> (opposite of crowding-out)</td>
+<td style="text-align: left;">Upper bound under temporal holdout</td>
+<td style="text-align: left;">Train 2009–2016 / test 2017–2019</td>
+<td style="text-align: center;"><strong>0.864</strong></td>
+<td style="text-align: center;">[0.859, 0.870]</td>
 </tr>
 </tbody>
 </table>
-<h3 id="bid-rotation-and-bid-inflation">Bid Rotation and Bid Inflation<a class="headerlink" href="#bid-rotation-and-bid-inflation" title="Permanent link">¶</a></h3>
-<ul>
-<li>FL firms' winner HHI: 0.178 (14.3 unique winners) vs. non-FL always-losers: 0.303 (5.0 winners; <span class="arithmatex">\(p &lt; 0.001\)</span>). FL firms co-participate with a wider range of winners.</li>
-<li>Among 38,941 FL--winner pairs, 4,696 share <span class="arithmatex">\(\geq 5\)</span> tenders and 379 share <span class="arithmatex">\(\geq 20\)</span> (max: 177).</li>
-<li>FL median bid-to-winner ratio: 1.85 (85% above winner) vs. 1.43 for non-FL losers. Controlling for item and year FE, FL bids are 15.4% higher (<span class="arithmatex">\(p &lt; 0.001\)</span>).</li>
-</ul>
-<h3 id="joint-assessment">Joint Assessment<a class="headerlink" href="#joint-assessment" title="Permanent link">¶</a></h3>
-<p>Each diagnostic, taken alone, admits other readings. Taken together---entry without displacement, reference-price anchoring, small reverse-causality elasticity, excess dyadic linkage, and lower exit hazard in FL-exposed markets---the pattern is hard to square with a simple competitive account and consistent with coordinated cover bidding. The diagnostics do not prove the mechanism; they strengthen the case that the screen is worth deploying.</p>
+<p>We adopt the prospective reading as the headline (the deployable projection an oversight body would compute on award-record data alone) and the contemporaneous AUC of 0.748 as the conservative discriminating reference.</p>
+<h3 id="robustness-to-the-enforcement-record">Robustness to the enforcement record<a class="headerlink" href="#robustness-to-the-enforcement-record" title="Permanent link">¶</a></h3>
+<p>Dropping all 31,447 CADE-involved tender-items and re-estimating the within-PBU baseline yields <strong>β̂ = 0.062</strong> (vs full-sample 0.064). The construct's price imprint operates independently of the enforcement record. Either the residual sample contains undetected cartels that the construct identifies before enforcement does, or frequent-loser presence correlates with high-price environments through channels orthogonal to documented collusion. Both are consistent with the diagnostic-screen claim of the paper.</p>
+<hr>
+<h2 id="what-the-joint-evidence-supports">What the Joint Evidence Supports<a class="headerlink" href="#what-the-joint-evidence-supports" title="Permanent link">¶</a></h2>
+<p>The conjunction of the four pieces—the 3.5× market-proximity excess, the 2.6× within-firm enrichment with three named firms flagged before their adjudications, the bounded 0.748–0.924 discriminating range, and the price-gap insensitivity to the enforcement record—supports a market-level triage interpretation. The construct prioritizes procurement environments connected to adjudicated collusion at rates well above random matching at comparable participation volume; it does not validate firm-level cartel guilt, and the 47 direct-defendant AUC of 0.49 places a hard upper bound on broader detection claims outside the always-loser stratum.</p>
 
 
 
@@ -7130,6 +6990,12 @@
     <li class="md-nav__item ">
       <a href="/research/frequent-losers/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

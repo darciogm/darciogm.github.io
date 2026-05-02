@@ -6730,57 +6730,53 @@
 
 
 <h1 id="manuscript">Manuscript<a class="headerlink" href="#manuscript" title="Permanent link">¶</a></h1>
-<p>This page summarizes the contribution, institutional setting, conceptual framework, and empirical strategy of the paper.</p>
+<p>How we built the construct, what it claims, and why it works on a data envelope existing detectors cannot use.</p>
 <hr>
 <h2 id="contribution">Contribution<a class="headerlink" href="#contribution" title="Permanent link">¶</a></h2>
-<p>The paper makes three contributions:</p>
+<p>The paper makes three contributions, ordered by what we sell hardest.</p>
 <ol>
 <li>
-<p><strong>Participation-based screen.</strong> We introduce a screen that runs on win/loss records alone---no bid microdata, no enforcement priors, no supervised training---and can be deployed by any procurement agency that records who bid and who won. Against competition-authority convictions, the screen achieves AUC <span class="arithmatex">\(= 0.94\)</span>, flags environments with 3.6--7.7% higher conditional prices, and complements bid-level tools that capture different collusion signatures (correlation 0.06).</p>
+<p><strong>Deployable.</strong> The frequent-loser construct is computed entirely from contract-award records—winner identity, participant identity, item identifier—at near-zero marginal data cost. We translate it into a three-stage administrative pathway (Screen, Triage, Forensic) that oversight bodies can deploy in jurisdictions where bid microdata are not centrally collected.</p>
 </li>
 <li>
-<p><strong>Five supporting diagnostics.</strong> Bajari--Ye bid-coordination tests, network-split heterogeneity, regime selection, dyadic linkage, and minimum-bidder constraint variation are jointly consistent with coordinated cover bidding.</p>
+<p><strong>Empirically grounded.</strong> Within-item, within-year, within-procuring-unit comparisons across 1,654,401 tender-items associate frequent-loser presence with a <strong>+3.6 to +7.7%</strong> higher negotiated unit price across five estimators. The price gap collapses monotonically across procuring-unit-size quartiles to a <strong>12.6×</strong> gradient—the strongest source of heterogeneity in the data.</p>
 </li>
 <li>
-<p><strong>Institutional tie-in.</strong> The price association concentrates where cover bidding is a strategic choice (7.6% voluntary premium) and where oversight is weakest (12.5x gradient across purchasing-unit size quartiles), tying the screen's empirical performance to the institutional features that make cover bidding profitable.</p>
+<p><strong>Theoretically grounded.</strong> We derive the construct from a separating-equilibrium framework with cover bidders and genuine entrants, under which <code>log(1+tenders_count)</code> is a sufficient ranking statistic for the cover-bidder type given award-record data, and the bright-line filter <code>wins=0</code> is the equilibrium choice of cover bidders themselves.</p>
 </li>
 </ol>
-<p><strong>Non-claims.</strong> The conditional price association is not a causal estimate of the effect of collusion on prices; the FL classification flags suspicious environments, not guilty firms; and the diagnostics, while consistent with coordinated cover bidding, fall short of sanction-grade evidence. What the paper contributes is the screen itself---how to build it, how it performs against external enforcement data, and why the diagnostic pattern supports its use as a first-stage investigative tool.</p>
+<p><strong>What we do not claim.</strong> Identification is descriptive throughout. The conditional price gap is not a causal estimate of cover bidding's effect on prices. The construct flags cover bidders, not cartel ringleaders: against 47 direct CADE defendants in the broader BEC firm universe, AUC is 0.49 by design. Capacity-transfer and market-intelligence motives remain observationally compatible at the firm level.</p>
 <hr>
 <h2 id="institutional-background">Institutional Background<a class="headerlink" href="#institutional-background" title="Permanent link">¶</a></h2>
 <h3 id="bec-platform">BEC Platform<a class="headerlink" href="#bec-platform" title="Permanent link">¶</a></h3>
-<p>The <strong>Bolsa Eletronica de Compras (BEC)</strong> is Sao Paulo state's centralized electronic procurement platform, used by 1,308 public buying units (PBUs) from 2009 to 2019.</p>
-<p>Two procurement modalities are relevant:</p>
+<p>The <strong>Bolsa Eletrônica de Compras (BEC)</strong> is São Paulo state's centralized electronic procurement platform, used by 1,308 procuring units (PBUs) from 2009 to 2019. Two procurement modalities dominate the sample:</p>
 <table>
 <thead>
 <tr>
 <th>Modality</th>
 <th>Format</th>
-<th>Key Feature</th>
+<th>Key feature</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><strong>Convite</strong></td>
-<td>Sealed-bid</td>
-<td>Requires minimum 3 bidders (Lei 8.666/93); threshold R$ 80,000</td>
+<td>Sealed-bid invitation</td>
+<td>Lei 8.666/93, Art. 22; statutory minimum of three qualified bidders</td>
 </tr>
 <tr>
-<td><strong>Pregao</strong></td>
+<td><strong>Pregão</strong></td>
 <td>Electronic reverse auction</td>
-<td>Standard modality; no bidder minimum; real-time bids</td>
+<td>Lei 10.520/2002; no minimum-bidder requirement</td>
 </tr>
 </tbody>
 </table>
-<h3 id="cover-bidding-incentives">Cover Bidding Incentives<a class="headerlink" href="#cover-bidding-incentives" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Convite</strong>: the 3-bidder minimum creates direct demand for cover bidders---a cartel with fewer than 3 members needs cover bidders to meet the quorum rule. The constraint forces some participation regardless of market conditions, <strong>diluting</strong> the FL signal (3.8% price association).</li>
-<li><strong>Pregao</strong>: no minimum-bidder rule means cover bidding is purely voluntary. The FL screen picks it up more cleanly (<strong>9.3% price association</strong>)---larger where cover bidding is a strategic choice rather than rule compliance.</li>
-</ul>
+<h3 id="modal-contrast-as-institutional-context-not-exploited-channel">Modal contrast as institutional context, not exploited channel<a class="headerlink" href="#modal-contrast-as-institutional-context-not-exploited-channel" title="Permanent link">¶</a></h3>
+<p>The two modalities provide a within-platform institutional contrast. The construct's empirical signal does <em>not</em> match a minimum-bidder-rule reading: the price imprint and the discrimination of adjudicated CADE-cobidder firms are sharper in pregão (no minimum-bidder rule) than in convite. We present the convite statute as institutional context rather than as the channel the construct exploits.</p>
 <h3 id="lei-141332021">Lei 14.133/2021<a class="headerlink" href="#lei-141332021" title="Permanent link">¶</a></h3>
-<p>Brazil's new procurement law eliminates the convite modality and with it the minimum-bidder rule. Two testable predictions follow: the constraint-binding channel (<span class="arithmatex">\(\hat{\beta}_{\text{FL} \times (n&lt;3)} = -0.160\)</span>) should disappear; the voluntary channel (7.6% premium where <span class="arithmatex">\(n \geq 3\)</span>) should survive.</p>
+<p>Brazil's new procurement law consolidates pregão-style electronic auctions as the institutional default. Because the construct's signal-to-noise is highest in pregão environments, the policy direction is favorable to the construct's portability, not adversarial.</p>
 <hr>
-<h2 id="fl-definition-two-step">FL Definition (Two-Step)<a class="headerlink" href="#fl-definition-two-step" title="Permanent link">¶</a></h2>
+<h2 id="frequent-losers-definition-two-steps">Frequent Losers Definition (Two Steps)<a class="headerlink" href="#frequent-losers-definition-two-steps" title="Permanent link">¶</a></h2>
 <h3 id="sample">Sample<a class="headerlink" href="#sample" title="Permanent link">¶</a></h3>
 <table>
 <thead>
@@ -6791,162 +6787,132 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Source</strong></td>
-<td>BEC (Sao Paulo, 2009--2019)</td>
+<td>Source</td>
+<td>BEC (São Paulo, 2009–2019)</td>
 </tr>
 <tr>
-<td><strong>Tender-items</strong></td>
-<td>4.5 million (raw); 1,654,401 (analysis sample)</td>
+<td>Tender-items</td>
+<td>4.5 million raw; 1,654,401 in regression sample</td>
 </tr>
 <tr>
-<td><strong>Bids</strong></td>
-<td>40 million (bid-level)</td>
+<td>Bids</td>
+<td>40 million bid-level</td>
 </tr>
 <tr>
-<td><strong>Firms</strong></td>
-<td>41,000 total; 16,843 always-losers</td>
+<td>Firms</td>
+<td>41,444 total; 16,843 always-losers</td>
 </tr>
 <tr>
-<td><strong>PBUs</strong></td>
-<td>1,308 public buying units</td>
+<td>Procuring units</td>
+<td>1,308</td>
 </tr>
 <tr>
-<td><strong>Item types</strong></td>
+<td>Item types</td>
 <td>18,783</td>
 </tr>
 </tbody>
 </table>
-<h3 id="step-1-always-losers">Step 1 --- Always-losers<a class="headerlink" href="#step-1-always-losers" title="Permanent link">¶</a></h3>
-<p>16,843 firms with win rate = 0 across all 2009--2019 tenders. The zero-win condition is strict: relaxing it to 1% or 2% attenuates the coefficient substantially, so the bright line at zero is doing real work.</p>
-<h3 id="step-2-iqr-threshold">Step 2 --- IQR threshold<a class="headerlink" href="#step-2-iqr-threshold" title="Permanent link">¶</a></h3>
-<p>Among always-losers, compute median + 1.5 <span class="arithmatex">\(\times\)</span> IQR of participation counts <span class="arithmatex">\(\approx\)</span> 14 tenders. Firms above this threshold are classified as FL.</p>
-<p><strong>Result:</strong> <strong>2,735 FL firms</strong> (16.2% of always-losers).</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_01_losses_distribution.png" data-desc-position="bottom"><img src="../assets/figures/fig_01_losses_distribution.png" alt="FL distribution"></a>
-  <figcaption><strong>Figure 1.</strong> Distribution of tender participations among always-loser firms. The dashed line indicates the IQR threshold separating FL firms (right) from non-FL always-losers (left).</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_02_iqr_identification.png" data-desc-position="bottom"><img src="../assets/figures/fig_02_iqr_identification.png" alt="IQR identification"></a>
-  <figcaption><strong>Figure 2.</strong> IQR identification of frequent losers. The threshold at median + 1.5 x IQR classifies firms to the right as FL.</figcaption>
-</figure>
-
-<div class="admonition note">
-<p class="admonition-title">Treatment variable</p>
-<p><code>losers = 1</code> if a tender-item has at least one FL participant. FL presence occurs in 4.8% of analysis-sample tenders.</p>
-</div>
+<h3 id="step-1-always-losers">Step 1 — always-losers<a class="headerlink" href="#step-1-always-losers" title="Permanent link">¶</a></h3>
+<p>16,843 firms with win rate = 0 across all 2009–2019 BEC tenders.</p>
+<h3 id="step-2-iqr-threshold">Step 2 — IQR threshold<a class="headerlink" href="#step-2-iqr-threshold" title="Permanent link">¶</a></h3>
+<p>Among always-losers, compute median + 1.5 × IQR of participation counts ≈ 14 tenders. Firms above this threshold are classified as frequent losers.</p>
+<p><strong>Result: 2,735 frequent-loser firms (16.2% of always-losers).</strong></p>
+<p>The treatment variable is <code>losers = 1</code> if a tender-item has at least one frequent-loser participant. Frequent-loser presence occurs in 4.8% of analysis-sample tenders.</p>
 <hr>
 <h2 id="conceptual-framework">Conceptual Framework<a class="headerlink" href="#conceptual-framework" title="Permanent link">¶</a></h2>
-<p>The framework organizes the screening intuition and generates five diagnostic implications. Full assumptions, proofs, and the structural likelihood are in the Appendix.</p>
-<p>A cartel controls a designated winner and deploys <span class="arithmatex">\(m \geq 0\)</span> cover bidders (FL firms), each bidding above the winning bid <span class="arithmatex">\(b^*\)</span>. The optimal <span class="arithmatex">\(m^*\)</span> falls with detection probability <span class="arithmatex">\(\theta_k\)</span> and per-bidder cost <span class="arithmatex">\(c_1\)</span>. Under convite, the minimum-bidder rule (<span class="arithmatex">\(\underline{n} = 3\)</span>) can force participation, mixing mandatory and voluntary deployments and diluting the FL--price signal.</p>
-<h3 id="two-regimes-of-cover-bidding">Two Regimes of Cover Bidding<a class="headerlink" href="#two-regimes-of-cover-bidding" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>Regime 1: Complementary</th>
-<th>Regime 2: Coordinated</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Bid distribution</strong></td>
-<td><span class="arithmatex">\(U[\bar{b}, \bar{b}+\delta]\)</span> (wide, above winner)</td>
-<td><span class="arithmatex">\(N(\mu_c, \sigma_c^2)\)</span> (tight, near winner)</td>
-</tr>
-<tr>
-<td><strong>Coordination</strong></td>
-<td>Minimal (just "show up and lose")</td>
-<td>Precise calibration required</td>
-</tr>
-<tr>
-<td><strong>Testable signature</strong></td>
-<td>Wide FL bid dispersion</td>
-<td>Narrow FL bid dispersion</td>
-</tr>
-<tr>
-<td><strong>Dispersion screens</strong></td>
-<td>Effective</td>
-<td>Lose power</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition danger">
-<p class="admonition-title">Regime 2 is empirically dominant</p>
-<p>BIC strongly favors Regime 2 (<span class="arithmatex">\(\Delta\)</span>BIC = <span class="arithmatex">\(-91{,}473\)</span>). FL bids are 28% <strong>less</strong> dispersed than non-FL bids (<span class="arithmatex">\(\hat{\sigma}_c / \hat{\sigma}_g = 0.72\)</span>), rendering dispersion-based screens ineffective. A participation-based screen sidesteps this problem---it does not care how cover bids are distributed, only that cover bidders must show up.</p>
-</div>
-<h3 id="strategic-complementarity-gamma-0">Strategic Complementarity (<span class="arithmatex">\(\gamma &gt; 0\)</span>)<a class="headerlink" href="#strategic-complementarity-gamma-0" title="Permanent link">¶</a></h3>
-<p>The model permits strategic complementarity: if the marginal return to cover bidding is higher in competitive tenders (many genuine bidders), then <span class="arithmatex">\(m^*\)</span> <em>increases</em> in <span class="arithmatex">\(n\)</span>. The calibrated model confirms this pattern (<span class="arithmatex">\(\hat{\gamma} = 0.69 &gt; 0\)</span>): cartels deploy more cover bidders precisely where genuine competition is strongest.</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_corner_solution.png" data-desc-position="bottom"><img src="../assets/figures/fig_corner_solution.png" alt="Corner solution"></a>
-  <figcaption><strong>Figure 3.</strong> Optimal number of cover bidders $m^*$ as a function of genuine bidders $n$. Dotted region ($n &lt; 3$): constraint-binding corner solution under the minimum-bidder rule. Solid curve: calibrated interior solution ($\hat{\gamma} = 0.69$). Points: empirical binned means with 95% CIs.</figcaption>
-</figure>
-
-<h3 id="five-diagnostic-implications">Five Diagnostic Implications<a class="headerlink" href="#five-diagnostic-implications" title="Permanent link">¶</a></h3>
+<p>The framework is an organizing device, not the source of identification. Three formal results anchor the construct (proofs in the appendix):</p>
 <table>
 <thead>
 <tr>
 <th>#</th>
-<th>Diagnostic implication</th>
-<th>Empirical test</th>
-<th>Section</th>
+<th>Result</th>
+<th>Role</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>D1</td>
-<td>FL associated with higher prices</td>
-<td>Conditional price comparison</td>
-<td>Results</td>
+<td>Lemma 1</td>
+<td><code>wins=0</code> is the equilibrium choice of the cover-bidder type</td>
+<td>Establishes the bright-line filter as the empirical separating condition</td>
 </tr>
 <tr>
-<td>D2</td>
-<td>FL adds to, not displaces, genuine bidders</td>
-<td>Non-FL bidder count</td>
-<td>Results</td>
+<td>Proposition 1</td>
+<td><code>log(1+tenders_count)</code> is a sufficient ranking statistic for cover-bidder type given award-record data</td>
+<td>Establishes the continuous primitive; the binary FL14 rule is its information-coarsening</td>
 </tr>
 <tr>
-<td>D3</td>
-<td>Coordinated regime: <span class="arithmatex">\(\sigma_c &lt; \sigma_g\)</span></td>
-<td>BIC model selection</td>
-<td>Structural</td>
-</tr>
-<tr>
-<td>D4</td>
-<td>FL association decreases in HHI</td>
-<td>Network split</td>
-<td>Results</td>
-</tr>
-<tr>
-<td>D5</td>
-<td>FL residuals non-exchangeable</td>
-<td>Bajari--Ye KS + pairwise</td>
-<td>Results</td>
+<td>Proposition 2</td>
+<td>∂m*/∂θ<sub>k</sub> &lt; 0</td>
+<td>Generates the comparative static the procuring-unit-size oversight gradient instantiates</td>
 </tr>
 </tbody>
 </table>
+<p>Cover bidders are firms a cartel deploys to fill participant slots without intending to win. They satisfy two equilibrium conditions: their bid is above the designated winner's bid (<code>wins=0</code> in equilibrium), and their participation rate exceeds that of genuine entrants (because the cartel demands cover, while genuine entry does not respond to that demand). The construct flags this footprint.</p>
 <hr>
 <h2 id="empirical-strategy">Empirical Strategy<a class="headerlink" href="#empirical-strategy" title="Permanent link">¶</a></h2>
-<p>The empirical strategy operates in three tiers: price association, detection performance, and supporting diagnostics.</p>
-<h3 id="tier-1-conditional-price-comparison">Tier 1: Conditional Price Comparison<a class="headerlink" href="#tier-1-conditional-price-comparison" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[y_{igt} = \beta \cdot \text{losers}_{igt} + \mathbf{x}_{igt}' \boldsymbol{\delta} + \alpha_g + \lambda_t + \gamma_k + \varepsilon_{igt}\]</div>
-<p>where <span class="arithmatex">\(y_{igt}\)</span> is the outcome for tender-item <span class="arithmatex">\(i\)</span> in item group <span class="arithmatex">\(g\)</span> at time <span class="arithmatex">\(t\)</span> and purchasing unit <span class="arithmatex">\(k\)</span>; <span class="arithmatex">\(\alpha_g\)</span>, <span class="arithmatex">\(\lambda_t\)</span>, <span class="arithmatex">\(\gamma_k\)</span> are item, year, and PBU fixed effects; errors clustered at item level.</p>
-<p><strong>Four specifications:</strong> (1) item + year FE, (2) + PBU FE, (3) pregao only, (4) convite only.</p>
-<p><strong>Four DVs:</strong> log negotiated price, log firms, log bids, log non-FL firms.</p>
-<p><strong>Matching:</strong> CEM (0.077, <span class="arithmatex">\(N = 969{,}751\)</span>) and IPW (0.055, <span class="arithmatex">\(N = 830{,}194\)</span>) bracket the OLS and cross-fit estimates.</p>
-<h3 id="tier-2-detection-performance">Tier 2: Detection Performance<a class="headerlink" href="#tier-2-detection-performance" title="Permanent link">¶</a></h3>
-<p>ROC analysis against CADE cartel co-participation. AUC = 0.94, Youden <span class="arithmatex">\(J = 0.84\)</span> at 1.45x IQR. Horse-race regression against Imhof-style CV proxy.</p>
-<h3 id="tier-3-supporting-diagnostics">Tier 3: Supporting Diagnostics<a class="headerlink" href="#tier-3-supporting-diagnostics" title="Permanent link">¶</a></h3>
-<ul>
-<li><strong>Network-split heterogeneity:</strong> competitive vs. concentrated markets</li>
-<li><strong>Bajari--Ye tests:</strong> exchangeability and conditional independence of bid residuals</li>
-<li><strong>Structural estimation:</strong> BIC model selection between Regime 1 and Regime 2</li>
-<li><strong>Dyadic linkage:</strong> stratified permutation test on FL--winner pair frequency</li>
-<li><strong>Minimum-bidder constraint variation:</strong> voluntary vs. forced cover bidding</li>
-</ul>
-<h3 id="measurement-error-diagnostic-iv">Measurement-Error Diagnostic (IV)<a class="headerlink" href="#measurement-error-diagnostic-iv" title="Permanent link">¶</a></h3>
-<div class="arithmatex">\[Z_{kgt} = \sum_{j \neq k} \mathbf{1}[\text{FL firm active at PBU } j \text{ in group } g, \text{ year } t]\]</div>
-<p>The <strong>leave-one-out instrument</strong> counts FL firms active at <em>other</em> PBUs in the same product market and year. The IV estimate (0.194, <span class="arithmatex">\(F = 396\)</span>) exceeds OLS by a factor of three, consistent with attenuation in the binary FL indicator. Exclusion-restriction concerns keep it off the primary range---it is reported as a measurement-error diagnostic, not a preferred estimate.</p>
+<h3 id="reduced-form-specification">Reduced-form specification<a class="headerlink" href="#reduced-form-specification" title="Permanent link">¶</a></h3>
+<div class="arithmatex">\[y_{igt} = \beta \cdot \mathrm{losers}_{igt} + \mathbf{x}_{igt}' \boldsymbol{\delta} + \alpha_g + \lambda_t + \gamma_k + \varepsilon_{igt}\]</div>
+<p>where <code>y_{igt}</code> is the log negotiated unit price for tender-item <em>i</em> in item group <em>g</em> at time <em>t</em> and procuring unit <em>k</em>; α<sub>g</sub>, λ<sub>t</sub>, γ<sub>k</sub> are item, year, and procuring-unit fixed effects; errors clustered at item level.</p>
+<p><strong>Four specifications:</strong> general within-item-and-year, within-PBU, pregão-only, convite-only.
+<strong>Four estimators:</strong> OLS, IPW, CEM matching, cross-fit (odd/even years).</p>
+<h3 id="heterogeneity-specifications">Heterogeneity specifications<a class="headerlink" href="#heterogeneity-specifications" title="Permanent link">¶</a></h3>
+<p>The procuring-unit-size quartile split anchors the oversight gradient (the strongest result). The HHI × repeated-pair density grid characterizes whether the conditional price gap varies across cells; we adopt the cell interpretation as descriptive scope, not as a positive test of cartel-rotation predictions.</p>
+<h3 id="identifying-stance">Identifying stance<a class="headerlink" href="#identifying-stance" title="Permanent link">¶</a></h3>
+<p>Identification is descriptive throughout. Two design-based strategies that would extract a causal estimate return null at the available bandwidths: a sharp regression discontinuity at the convite/pregão statutory caps (gated by the absence of bunching) and a difference-in-differences using the 2018 cap raise (gated by parallel-trends failure). We report the failures openly. The descriptive claim is calibrated through four identification audits—Cinelli robustness value, Oster δ, strict-overlap matching, anti-leakage audit—and a placebo specification using sub-threshold always-losers as instrument.</p>
+<hr>
+<h2 id="validation-against-cade-adjudications">Validation Against CADE Adjudications<a class="headerlink" href="#validation-against-cade-adjudications" title="Permanent link">¶</a></h2>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">¶</a></h3>
+<p>CADE's procurement-cartel portfolio relevant to the sample comprises 12 adjudicated cases covering 65 firm-defendants in total, of which <strong>47</strong> are active in BEC during the sample window. Eight of the twelve cases were adjudicated after 2019, so the construct's discrimination was computed on participation patterns observable years before enforcement confirmed those patterns.</p>
+<h3 id="two-ground-truth-populations">Two ground-truth populations<a class="headerlink" href="#two-ground-truth-populations" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Population</th>
+<th>Size</th>
+<th>Who</th>
+<th>Construct target?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct defendants</td>
+<td>47</td>
+<td>Firms named in CADE rulings as cartel members</td>
+<td><strong>No</strong> (typically frequent winners; AUC 0.49 by design)</td>
+</tr>
+<tr>
+<td>Cobidders</td>
+<td>193</td>
+<td>Always-loser firms that participated alongside direct defendants in BEC tenders</td>
+<td><strong>Yes</strong> (cover-bidder candidates by structure)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bounds-on-discrimination">Bounds on discrimination<a class="headerlink" href="#bounds-on-discrimination" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Reading</th>
+<th>Sample</th>
+<th>AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lower bound (contemporaneous)</td>
+<td>4 cases adjudicated pre-2020, 210 cobidders, 108 frequent losers</td>
+<td><strong>0.748</strong> [0.713, 0.783]</td>
+</tr>
+<tr>
+<td>Upper bound (prospective)</td>
+<td>Full 12 cases, 193 cobidders</td>
+<td><strong>0.924</strong> [0.921, 0.926] (in-sample); <strong>0.864</strong> [0.859, 0.870] (temporal holdout)</td>
+</tr>
+</tbody>
+</table>
+<p>Both readings answer different questions. We adopt the prospective reading as the headline (deployable projection) and the contemporaneous reading as the conservative discriminating reference.</p>
+<h3 id="robustness-to-the-enforcement-record">Robustness to the enforcement record<a class="headerlink" href="#robustness-to-the-enforcement-record" title="Permanent link">¶</a></h3>
+<p>Dropping all 31,447 CADE-involved tender-items and re-estimating the within-PBU baseline yields β̂ = 0.062 (vs full-sample 0.064). The construct's price imprint operates independently of the enforcement record.</p>
 <hr>
 <h2 id="software-and-estimation">Software and Estimation<a class="headerlink" href="#software-and-estimation" title="Permanent link">¶</a></h2>
 <table>
@@ -6958,32 +6924,32 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Language</strong></td>
-<td>R 4.5+</td>
+<td>Languages</td>
+<td>R 4.5+, Python 3.11, LaTeX</td>
 </tr>
 <tr>
-<td><strong>Fixed effects</strong></td>
-<td><code>fixest</code> (OpenMP, 16 threads)</td>
+<td>Fixed effects</td>
+<td><code>fixest</code> (16 threads)</td>
 </tr>
 <tr>
-<td><strong>Data</strong></td>
-<td><code>data.table</code> + <code>arrow</code> (Parquet format)</td>
+<td>Data</td>
+<td><code>data.table</code> + <code>arrow</code> (Parquet)</td>
 </tr>
 <tr>
-<td><strong>Tables</strong></td>
+<td>Tables</td>
 <td><code>modelsummary</code> + <code>kableExtra</code></td>
 </tr>
 <tr>
-<td><strong>Figures</strong></td>
+<td>Figures</td>
 <td><code>ggplot2</code></td>
 </tr>
 <tr>
-<td><strong>Clustering</strong></td>
-<td>Item level (baseline); PBU and two-way robustness</td>
+<td>Clustering</td>
+<td>Item level (baseline); PBU and two-way Cameron–Miller robustness</td>
 </tr>
 <tr>
-<td><strong>Pipeline</strong></td>
-<td>24 R scripts via <code>00_master_v4.R</code> + <code>figures_new.R</code></td>
+<td>Pipeline</td>
+<td>Master script <code>00_master.R</code>; replication archive available upon publication</td>
 </tr>
 </tbody>
 </table>
@@ -7018,6 +6984,12 @@
     <li class="md-nav__item md-nav__item--active">
       <a href="/research/frequent-losers/paper/" class="md-nav__link md-nav__link--active">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

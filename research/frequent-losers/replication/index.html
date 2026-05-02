@@ -6730,17 +6730,44 @@
 
 
 <h1 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">¶</a></h1>
-<p>This page describes how to replicate the results presented in the paper.</p>
+<p>Everything is reproducible from raw data to the final PDF. The construct is built entirely from contract-award records, and the analytical pipeline runs on a single workstation in roughly ten minutes.</p>
 <hr>
 <h2 id="replication-package">Replication Package<a class="headerlink" href="#replication-package" title="Permanent link">¶</a></h2>
-<p>The full replication package includes all code, processed datasets, and manuscript source files needed to reproduce every table and figure in the paper.</p>
-<div class="admonition info">
-<p class="admonition-title">Repository Structure</p>
-<p>The replication materials are organized under <code>papers_finais/paper1_screening/</code>. The <code>code/</code> directory contains the analysis pipeline, <code>manuscript/v4/</code> the LaTeX source, and <code>output/</code> the generated tables and figures.</p>
-</div>
+<p>The replication archive contains the analysis pipeline (R + Python), the construction scripts for the derived datasets, and the LaTeX sources for the manuscript. It will be released through the journal's data-availability portal at publication.</p>
+<p>The repository is organized under <code>paper3-frequent-losers/</code> in the source monorepo:</p>
+<table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scripts/</code></td>
+<td>Python data-build scripts (numbered <code>00_*.py</code>) and R analysis scripts (numbered <code>01_*.R</code> through <code>54_*.R</code>)</td>
+</tr>
+<tr>
+<td><code>data/processed/</code></td>
+<td>Parquet files produced by the data build (git-ignored; built from raw inputs)</td>
+</tr>
+<tr>
+<td><code>output/tables/</code></td>
+<td>All regression tables in LaTeX</td>
+</tr>
+<tr>
+<td><code>output/figures/</code></td>
+<td>All figures in PDF</td>
+</tr>
+<tr>
+<td><code>work/v15-editor/</code></td>
+<td>LaTeX manuscript sources for the published version</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="software-requirements">Software Requirements<a class="headerlink" href="#software-requirements" title="Permanent link">¶</a></h2>
-<h3 id="python-data-build">Python (Data Build)<a class="headerlink" href="#python-data-build" title="Permanent link">¶</a></h3>
+<h3 id="python-data-build">Python (data build)<a class="headerlink" href="#python-data-build" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6751,7 +6778,7 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>Python</strong></td>
+<td>Python</td>
 <td>3.10+</td>
 <td>Data preprocessing</td>
 </tr>
@@ -6767,7 +6794,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="r-analysis-pipeline">R (Analysis Pipeline)<a class="headerlink" href="#r-analysis-pipeline" title="Permanent link">¶</a></h3>
+<h3 id="r-analysis-pipeline">R (analysis pipeline)<a class="headerlink" href="#r-analysis-pipeline" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6778,14 +6805,14 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>R</strong></td>
+<td>R</td>
 <td>4.5+</td>
 <td>Statistical computing</td>
 </tr>
 <tr>
 <td><code>fixest</code></td>
 <td>latest</td>
-<td>High-dimensional fixed effects, IV, Sun &amp; Abraham</td>
+<td>High-dimensional fixed effects, IV, two-way clustering</td>
 </tr>
 <tr>
 <td><code>data.table</code></td>
@@ -6795,7 +6822,7 @@
 <tr>
 <td><code>arrow</code></td>
 <td>latest</td>
-<td>Reading Parquet files</td>
+<td>Parquet readers</td>
 </tr>
 <tr>
 <td><code>modelsummary</code></td>
@@ -6810,32 +6837,27 @@
 <tr>
 <td><code>ggplot2</code></td>
 <td>latest</td>
-<td>Publication-quality figures</td>
+<td>Figures</td>
 </tr>
 <tr>
 <td><code>sensemakr</code></td>
 <td>latest</td>
-<td>Cinelli &amp; Hazlett (2020) sensitivity</td>
-</tr>
-<tr>
-<td><code>did</code></td>
-<td>latest</td>
-<td>Callaway &amp; Sant'Anna (2021) DiD</td>
-</tr>
-<tr>
-<td><code>HonestDiD</code></td>
-<td>latest</td>
-<td>Rambachan &amp; Roth (2023) bounds</td>
+<td>Cinelli–Hazlett robustness value</td>
 </tr>
 <tr>
 <td><code>MatchIt</code></td>
 <td>latest</td>
-<td>Matching estimators</td>
+<td>CEM matching, IPW, common-support trimming</td>
 </tr>
 <tr>
-<td><code>survival</code></td>
+<td><code>pROC</code></td>
 <td>latest</td>
-<td>Cox proportional hazards</td>
+<td>ROC curves and DeLong AUC tests</td>
+</tr>
+<tr>
+<td><code>randomForest</code></td>
+<td>latest</td>
+<td>Imhof full-pipeline classifier</td>
 </tr>
 </tbody>
 </table>
@@ -6850,25 +6872,25 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>LaTeX</strong></td>
+<td>LaTeX</td>
 <td>TeX Live 2024+</td>
 <td>Document typesetting</td>
 </tr>
 <tr>
 <td><code>elsarticle</code></td>
 <td>latest</td>
-<td>Journal document class</td>
+<td>Document class</td>
 </tr>
 <tr>
 <td><code>chicago</code></td>
 <td>latest</td>
-<td>Bibliography style (natbib)</td>
+<td>Bibliography style (natbib + bibtex)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">¶</a></h2>
-<h3 id="primary-datasets">Primary Datasets<a class="headerlink" href="#primary-datasets" title="Permanent link">¶</a></h3>
+<h3 id="primary-datasets">Primary datasets<a class="headerlink" href="#primary-datasets" title="Permanent link">¶</a></h3>
 <p>The pipeline reads from <code>data/processed/</code>:</p>
 <table>
 <thead>
@@ -6880,6 +6902,26 @@
 </thead>
 <tbody>
 <tr>
+<td><code>firm_loss_stats.parquet</code></td>
+<td>41,444</td>
+<td>Per-firm aggregated stats (win rate, tenders count, always-loser flag)</td>
+</tr>
+<tr>
+<td><code>firm_tender_map.parquet</code></td>
+<td>16.8M</td>
+<td>Firm × tender-item participation with win flag</td>
+</tr>
+<tr>
+<td><code>LOSERS_rebuilt.parquet</code></td>
+<td>85K</td>
+<td>Frequent-loser counts per (OC, item)</td>
+</tr>
+<tr>
+<td><code>FREQ_PARTICIP_rebuilt.parquet</code></td>
+<td>16,843</td>
+<td>Always-losers with participation counts</td>
+</tr>
+<tr>
 <td><code>BEC_collapse_final.parquet</code></td>
 <td>4.5M</td>
 <td>Collapsed tender-item dataset</td>
@@ -6887,36 +6929,16 @@
 <tr>
 <td><code>Firms_final.parquet</code></td>
 <td>39.6K</td>
-<td>Firm registry (CNPJ, CNAE, size)</td>
-</tr>
-<tr>
-<td><code>LOSERS_rebuilt.parquet</code></td>
-<td>85K</td>
-<td>FL counts per tender-item</td>
-</tr>
-<tr>
-<td><code>FREQ_PARTICIP_rebuilt.parquet</code></td>
-<td>16.8K</td>
-<td>Always-losers with participation counts</td>
-</tr>
-<tr>
-<td><code>firm_tender_map.parquet</code></td>
-<td>16.8M</td>
-<td>Firm x tender participation + won flag</td>
-</tr>
-<tr>
-<td><code>firm_loss_stats.parquet</code></td>
-<td>41K</td>
-<td>Per-firm aggregated stats</td>
+<td>Firm registry (CNPJ, CNAE, size, location)</td>
 </tr>
 <tr>
 <td><code>bid_level_full.parquet</code></td>
 <td>40M</td>
-<td>Raw bid-level data</td>
+<td>Raw bid-level data (used by some robustness checks)</td>
 </tr>
 </tbody>
 </table>
-<h3 id="cade-validation-data">CADE Validation Data<a class="headerlink" href="#cade-validation-data" title="Permanent link">¶</a></h3>
+<h3 id="cade-validation-data">CADE validation data<a class="headerlink" href="#cade-validation-data" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6929,25 +6951,25 @@
 <tr>
 <td><code>cade_carteis_licitacoes_2009_2019.csv</code></td>
 <td>65</td>
-<td>CADE cartel convictions</td>
+<td>CADE cartel-defendant firm records relevant to the BEC sample</td>
 </tr>
 <tr>
 <td><code>cade_bec_crossmatch.csv</code></td>
-<td>49</td>
-<td>CADE firms matched to BEC</td>
+<td>47</td>
+<td>CADE-defendant firms active in BEC during the sample window</td>
 </tr>
 <tr>
 <td><code>cade_fl_cobidders.csv</code></td>
 <td>193</td>
-<td>FL firms co-bidding with CADE cartelists</td>
+<td>Always-loser firms that co-participate with CADE defendants in the same tender-items</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition warning">
-<p class="admonition-title">Data Access</p>
-<p>The BEC procurement data is publicly available through the Sao Paulo state transparency portal. The processed Parquet files are built from raw Stata <code>.dta</code> files via <code>00_build_bidlevel.py</code>.</p>
+<p class="admonition-title">Data access</p>
+<p>The BEC procurement records are publicly available through the São Paulo state transparency portal. CADE adjudications are public records hosted at gov.br/cade. The processed Parquet files are built from raw <code>.dta</code> and <code>.csv</code> exports via <code>scripts/00_build_bidlevel.py</code>.</p>
 </div>
-<h3 id="key-variables">Key Variables<a class="headerlink" href="#key-variables" title="Permanent link">¶</a></h3>
+<h3 id="key-variables">Key variables<a class="headerlink" href="#key-variables" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -6958,237 +6980,208 @@
 <tbody>
 <tr>
 <td><code>losers</code></td>
-<td>FL presence indicator (1 = at least one FL bidder)</td>
+<td>Frequent-loser presence indicator (1 if at least one FL participant in the tender-item)</td>
 </tr>
 <tr>
 <td><code>lneg_price</code></td>
-<td>Log negotiated price (DV)</td>
+<td>Log negotiated unit price (headline DV)</td>
 </tr>
 <tr>
-<td><code>ln_firms</code></td>
-<td>Log number of firms</td>
+<td><code>ln_firms</code>, <code>ln_bids</code>, <code>ln_firms_excl</code></td>
+<td>Auxiliary outcomes (number of firms, number of bids, number of non-FL firms)</td>
 </tr>
 <tr>
-<td><code>ln_bids</code></td>
-<td>Log number of bids</td>
+<td><code>tenders_count</code></td>
+<td>Per-firm participation count over the sample window</td>
 </tr>
 <tr>
-<td><code>ln_firms_excl</code></td>
-<td>Log number of non-FL firms</td>
+<td><code>win_rate</code></td>
+<td>Per-firm wins divided by participations</td>
 </tr>
 <tr>
-<td><code>fl_supply_loo</code></td>
-<td>Leave-one-out FL supply instrument</td>
-</tr>
-<tr>
-<td><code>item_f</code></td>
-<td>Item fixed effect</td>
-</tr>
-<tr>
-<td><code>year_f</code></td>
-<td>Year fixed effect</td>
-</tr>
-<tr>
-<td><code>pbu_f</code></td>
-<td>PBU fixed effect</td>
+<td><code>item_f</code>, <code>year_f</code>, <code>pbu_f</code></td>
+<td>Item, year, and procuring-unit fixed effects</td>
 </tr>
 <tr>
 <td><code>convite</code></td>
-<td>Procurement modality indicator</td>
+<td>Procurement modality indicator (1 = convite, 0 = pregão)</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="running-the-analysis">Running the Analysis<a class="headerlink" href="#running-the-analysis" title="Permanent link">¶</a></h2>
-<h3 id="step-1-data-build-python-6-min">Step 1: Data Build (Python, ~6 min)<a class="headerlink" href="#step-1-data-build-python-6-min" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Only needed if Parquet files are missing</span>
-<span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers
+<h3 id="step-1-data-build-python-6-min">Step 1 — data build (Python, ~6 min)<a class="headerlink" href="#step-1-data-build-python-6-min" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers
 python3<span class="w"> </span>scripts/00_build_bidlevel.py
 </code></pre></div>
-<h3 id="step-2-full-r-pipeline-8-min-on-16-cores">Step 2: Full R Pipeline (~8 min on 16 cores)<a class="headerlink" href="#step-2-full-r-pipeline-8-min-on-16-cores" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>papers_finais/paper1_screening
-Rscript<span class="w"> </span>code/00_master_v4.R
+<p>Only needed when the Parquet files in <code>data/processed/</code> are missing. The script reads the raw exports from BEC and writes the four primary parquets plus the bid-level archive.</p>
+<h3 id="step-2-analysis-pipeline-r-10-min-on-16-cores">Step 2 — analysis pipeline (R, ~10 min on 16 cores)<a class="headerlink" href="#step-2-analysis-pipeline-r-10-min-on-16-cores" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers
+Rscript<span class="w"> </span>scripts/00_master.R
 </code></pre></div>
-<p>This executes 22 scripts sequentially, plus <code>figures_new.R</code> for the v5 figures:</p>
+<p>The master script runs the analysis blocks in order. The blocks below correspond to the v15 manuscript sections:</p>
 <table>
 <thead>
 <tr>
-<th>Script</th>
-<th>Purpose</th>
-<th>Key Output</th>
+<th>Block</th>
+<th>Scripts</th>
+<th>Manuscript section</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>00_setup.R</code></td>
-<td>Package loading, thread config, paths</td>
-<td>Environment setup</td>
+<td>Data prep + FL classification</td>
+<td><code>01_clean.R</code></td>
+<td>§4 (data)</td>
 </tr>
 <tr>
-<td><code>01_data_prep.R</code></td>
-<td>Load Parquets, merge, filter</td>
-<td><code>/tmp/p3v4_prepared.rds</code></td>
+<td>Headline regressions (4 specs, 4 DVs)</td>
+<td><code>02_analysis.R</code>, <code>03_tables.R</code></td>
+<td>§7.1 (within-item conditional gap)</td>
 </tr>
 <tr>
-<td><code>02_network_analysis.R</code></td>
-<td>Co-bidding networks, FL classification</td>
-<td>Network metrics</td>
+<td>Figures (FL distribution, IQR, oversight gradient)</td>
+<td><code>04_figures.R</code>, <code>41_fix_figures.R</code></td>
+<td>§7, appendix</td>
 </tr>
 <tr>
-<td><code>03_iv_construction.R</code></td>
-<td>Build leave-one-out instrument</td>
-<td>IV variables</td>
+<td>Threshold and clustering robustness</td>
+<td><code>05_robustness.R</code></td>
+<td>§9.1</td>
 </tr>
 <tr>
-<td><code>04_iv_regressions.R</code></td>
-<td>2SLS, balance tests, placebo IV</td>
-<td><code>tab_iv_main.tex</code>, <code>tab_iv_balance.tex</code></td>
+<td>Modal falsification + within-PBU oversight</td>
+<td><code>07_heterogeneity.R</code></td>
+<td>§7.1, §7.2</td>
 </tr>
 <tr>
-<td><code>05_main_regressions.R</code></td>
-<td>OLS, network split, interactions</td>
-<td><code>tab_prices.tex</code>, <code>tab_network_split.tex</code></td>
+<td>Auxiliary outcomes</td>
+<td><code>08_additional_dvs.R</code></td>
+<td>§7 (auxiliary)</td>
 </tr>
 <tr>
-<td><code>06_bajari_ye_test.R</code></td>
-<td>Exchangeability, independence, placebo</td>
-<td><code>tab_bajari_ye_corrected.tex</code></td>
+<td>CEM, IPW, IV diagnostics</td>
+<td><code>09_matching.R</code></td>
+<td>§9.1, §9.2</td>
 </tr>
 <tr>
-<td><code>07_mechanism_tests.R</code></td>
-<td>Selection, calibration, reverse causality</td>
-<td><code>tab_mechanisms.tex</code></td>
+<td>FL firm characteristics</td>
+<td><code>10_fl_characteristics.R</code></td>
+<td>§4.4</td>
 </tr>
 <tr>
-<td><code>08_did_revised.R</code></td>
-<td>Callaway &amp; Sant'Anna, Rambachan--Roth</td>
-<td><code>tab_did_revised.tex</code></td>
+<td>Item-value panel + RDD diagnostic</td>
+<td><code>12_build_item_value.R</code>, <code>13_rdd_cap.R</code></td>
+<td>§5.1</td>
 </tr>
 <tr>
-<td><code>09_cade_permutation.R</code></td>
-<td>CADE cross-match, permutation test</td>
-<td><code>tab_cade_permutation.tex</code></td>
+<td>DiD with 2018 cap raise</td>
+<td><code>14_did_decreto_2018.R</code></td>
+<td>§5.1, appendix F</td>
 </tr>
 <tr>
-<td><code>10_robustness.R</code></td>
-<td>Threshold, matching, clustering, CV</td>
-<td>Multiple tables</td>
+<td>First-time-FL matching</td>
+<td><code>15_first_time_fl.R</code>, <code>30_first_time_fl_matching.R</code></td>
+<td>§8.3</td>
 </tr>
 <tr>
-<td><code>11_welfare_bounds.R</code></td>
-<td>Cost-benefit calculations</td>
-<td><code>tab_welfare_bounds.tex</code></td>
+<td>Imhof full-pipeline horse race</td>
+<td><code>31_imhof_full_pipeline.R</code>, <code>49_imhof_incremental_value.R</code></td>
+<td>§9.4</td>
 </tr>
 <tr>
-<td><code>12_tables.R</code></td>
-<td>Compile publication-ready tables</td>
-<td>All <code>.tex</code> tables</td>
+<td>Cell-heterogeneity audit (HHI × pairs)</td>
+<td><code>32_matched_heterogeneity.R</code>, <code>50_negative_cell_audit.R</code></td>
+<td>§8.3</td>
 </tr>
 <tr>
-<td><code>13_figures.R</code></td>
-<td>Generate all figures</td>
-<td>All <code>.pdf</code> figures</td>
+<td>Direct-CADE AUC (47 defendants)</td>
+<td><code>33_auc_direct_cade.R</code></td>
+<td>§6, §10.2</td>
 </tr>
 <tr>
-<td><code>14_quality_checks.R</code></td>
-<td>Consistency diagnostics</td>
-<td>Validation logs</td>
+<td>Horse race binary vs continuous</td>
+<td><code>34_horse_race_fl_continuous.R</code>, <code>36_gate_d1_harmonized.R</code></td>
+<td>§8.1, §9.1</td>
 </tr>
 <tr>
-<td><code>15_fl_definition_robustness.R</code></td>
-<td>Low-win-rate variants, cross-fit</td>
-<td><code>tab_fl_lowwinrate.tex</code></td>
+<td>Modal-by-modal AUC (gate D2)</td>
+<td><code>37_gate_d2_modal_auc.R</code></td>
+<td>§8.2</td>
 </tr>
 <tr>
-<td><code>16_regime_test.R</code></td>
-<td>Regime 1 vs 2 simulation and BIC</td>
-<td><code>tab_structural_params.tex</code></td>
+<td>Continuous loser-side discrimination (gate D3)</td>
+<td><code>38_gate_d3_continuous_only.R</code></td>
+<td>§8.1</td>
 </tr>
 <tr>
-<td><code>17_stacked_did.R</code></td>
-<td>Stacked DiD estimator</td>
-<td><code>tab_stacked_did.tex</code></td>
+<td>CADE winner-heavy diagnostic (gate D4)</td>
+<td><code>39_gate_d4_cade_winner_heavy.R</code></td>
+<td>§6</td>
 </tr>
 <tr>
-<td><code>18_oster_delta.R</code></td>
-<td>Oster coefficient stability</td>
-<td><code>tab_oster_delta.tex</code></td>
+<td>Anti-leakage audit</td>
+<td><code>40_leakage_audit_d3.R</code></td>
+<td>§9.2</td>
 </tr>
 <tr>
-<td><code>19_dyadic_permutation.R</code></td>
-<td>FL--winner pair permutation test</td>
-<td><code>tab_dyadic_permutation.tex</code></td>
+<td>Operational metrics (in-sample + temporal holdout)</td>
+<td><code>42_operational_metrics.R</code>, <code>43_precision_at_k_audit.R</code></td>
+<td>§9.3</td>
 </tr>
 <tr>
-<td><code>20_cox_survival.R</code></td>
-<td>Cox proportional hazards model</td>
-<td><code>tab_cox_survival.tex</code></td>
+<td>Strict-overlap matching</td>
+<td><code>51_item_level_scope_match.R</code></td>
+<td>§7.1, §9.2, §10.1</td>
 </tr>
 <tr>
-<td><code>21_network_graph.R</code></td>
-<td>Network visualization</td>
-<td><code>fig_network_graph.pdf</code></td>
+<td>Strict-train threshold (temporal)</td>
+<td><code>53_strict_train_period_threshold.R</code></td>
+<td>§4.2</td>
 </tr>
 <tr>
-<td><code>22_threshold_heatmap.R</code></td>
-<td>2D threshold sensitivity heatmap</td>
-<td><code>fig_threshold_heatmap.pdf</code></td>
-</tr>
-<tr>
-<td><code>figures_new.R</code></td>
-<td>Corner solution, dispersion paradox</td>
-<td>New v5 figures</td>
+<td>Threshold table (Q3 IQR alt)</td>
+<td><code>54_threshold_table_q3iqr.R</code></td>
+<td>§9.1, appendix</td>
 </tr>
 </tbody>
 </table>
-<h3 id="step-3-manuscript-compilation">Step 3: Manuscript Compilation<a class="headerlink" href="#step-3-manuscript-compilation" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>manuscript/v4
-pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>paper_screening_v4.tex
-bibtex<span class="w"> </span>paper_screening_v4
-pdflatex<span class="w"> </span>paper_screening_v4.tex
-pdflatex<span class="w"> </span>paper_screening_v4.tex
+<h3 id="step-3-manuscript-compilation">Step 3 — manuscript compilation<a class="headerlink" href="#step-3-manuscript-compilation" title="Permanent link">¶</a></h3>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>paper3-frequent-losers/work/v15-editor
+pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>paper_v15editor.tex
+bibtex<span class="w"> </span>paper_v15editor
+pdflatex<span class="w"> </span>paper_v15editor.tex
+pdflatex<span class="w"> </span>paper_v15editor.tex
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Bibliography</p>
-<p>The manuscript uses <strong>natbib/bibtex</strong> (NOT biblatex/biber). Use <code>bibtex</code> for the bibliography pass.</p>
+<p>The manuscript uses <strong>natbib + bibtex</strong> (not biblatex/biber). Run <code>bibtex</code> for the bibliography pass.</p>
 </div>
+<p>The output is <code>paper_v15editor.pdf</code> (60 pages, including a lean appendix with the three formal results, supporting tables, identification audits, and the staggered-design failures).</p>
 <hr>
 <h2 id="output-files">Output Files<a class="headerlink" href="#output-files" title="Permanent link">¶</a></h2>
 <h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Directory</th>
-<th>Format</th>
-<th>Count</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>output/tables/</code></td>
-<td>LaTeX (.tex)</td>
-<td>35+</td>
-<td>All regression tables (booktabs + threeparttable)</td>
-</tr>
-</tbody>
-</table>
+<p><code>output/tables/</code> contains 30+ LaTeX table fragments (booktabs + threeparttable). The tables actually input by the v15 manuscript and appendix are listed in the manuscript source under <code>\input{...}</code> directives.</p>
 <h3 id="figures">Figures<a class="headerlink" href="#figures" title="Permanent link">¶</a></h3>
+<p><code>output/figures/</code> contains the PDF figures. The two figures included in the published manuscript are:</p>
 <table>
 <thead>
 <tr>
-<th>Directory</th>
-<th>Format</th>
-<th>Count</th>
-<th>Description</th>
+<th>Figure</th>
+<th>File</th>
+<th>Manuscript section</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>output/figures/</code></td>
-<td>PDF</td>
-<td>26</td>
-<td>All publication-quality figures</td>
+<td>FL participation distribution</td>
+<td><code>fig_01_losses_distribution.pdf</code></td>
+<td>Appendix B</td>
+</tr>
+<tr>
+<td>IQR threshold identification</td>
+<td><code>fig_02_iqr_identification.pdf</code></td>
+<td>Appendix B</td>
 </tr>
 </tbody>
 </table>
@@ -7203,9 +7196,9 @@ pdflatex<span class="w"> </span>paper_screening_v4.tex
 </thead>
 <tbody>
 <tr>
-<td><code>manuscript/v4/paper_screening_v4.pdf</code></td>
-<td>~56</td>
-<td>Complete manuscript with appendix</td>
+<td><code>work/v15-editor/paper_v15editor.pdf</code></td>
+<td>60</td>
+<td>Complete manuscript with lean appendix</td>
 </tr>
 </tbody>
 </table>
@@ -7220,39 +7213,47 @@ pdflatex<span class="w"> </span>paper_screening_v4.tex
 </thead>
 <tbody>
 <tr>
-<td><strong>OS</strong></td>
+<td>OS</td>
 <td>Ubuntu 24.04 (WSL2 on Windows)</td>
 </tr>
 <tr>
-<td><strong>CPU</strong></td>
-<td>16 cores</td>
+<td>CPU</td>
+<td>14 threads (Intel i7-1260P, 4 P-cores + 8 E-cores)</td>
 </tr>
 <tr>
-<td><strong>RAM</strong></td>
-<td>15 GB</td>
+<td>RAM</td>
+<td>21 GB</td>
 </tr>
 <tr>
-<td><strong>R</strong></td>
-<td>4.5</td>
+<td>R</td>
+<td>4.5+</td>
 </tr>
 <tr>
-<td><strong>fixest</strong></td>
-<td>OpenMP for parallel estimation (16 threads)</td>
+<td><code>fixest</code></td>
+<td>OpenMP, 12 threads (saturating CPU within the workstation budget)</td>
 </tr>
 <tr>
-<td><strong>data.table</strong></td>
-<td>Multi-threaded (<code>setDTthreads(16)</code>)</td>
+<td><code>data.table</code></td>
+<td>Multi-threaded via <code>setDTthreads(12)</code></td>
+</tr>
+<tr>
+<td>Parquet</td>
+<td>DuckDB engine (<code>PRAGMA threads=12, memory_limit='14GB'</code>) for any non-trivial read/filter/join</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Runtime</p>
-<p>The full pipeline takes approximately 8 minutes on the reference system. The most time-intensive steps are <code>06_bajari_ye_test.R</code> (bid-level analysis on 40M rows) and <code>08_did_revised.R</code> (staggered DiD with 144K market-year observations).</p>
+<p>The full pipeline takes approximately 10 minutes on the reference workstation. The most time-intensive steps are the bid-level horse race (<code>31_imhof_full_pipeline.R</code>) and the strict-overlap matching (<code>51_item_level_scope_match.R</code>), each of which processes a few million rows under random forests or propensity-score trimming.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Caching</p>
-<p>Intermediate data is cached at <code>/tmp/</code> for fast reload. The prepared dataset (<code>/tmp/p3v4_prepared.rds</code>, ~800 MB) is created by <code>01_data_prep.R</code> and reused by all subsequent scripts.</p>
+<p>Intermediate data is cached at <code>/tmp/</code> for fast reload. The prepared dataset (<code>/tmp/p3_prepared.rds</code>) is created by <code>01_clean.R</code> and reused by all subsequent scripts. Cache invalidation is manual: delete the rds files when the underlying parquets change.</p>
 </div>
+<hr>
+<h2 id="reproducibility-note">Reproducibility Note<a class="headerlink" href="#reproducibility-note" title="Permanent link">¶</a></h2>
+<p>The numerical claims in the paper come from a single pipeline run on the canonical 2009–2019 BEC parquet files plus the CADE crossmatch CSV. The pipeline applies a strict 14-character CNPJ zero-padding convention before every merge: this padding is required to recover the full 193 FL–CADE co-bidder set, and alternative conventions yield a smaller subset that appears in earlier draft tables. The convention is flagged at the top of <code>scripts/00_build_bidlevel.py</code> so future replications reproduce either count deterministically.</p>
+<p>The headline AUC of 0.924 against 193 cobidders corresponds to point estimate 0.9389 on the always-loser pool of 16,843 firms; the 95% confidence interval [0.921, 0.926] uses DeLong's method, with stratified percentile and BCa bootstrap intervals (B = 5,000 and 2,000 respectively) agreeing to three decimal places. The temporal-holdout AUC of 0.864 (train 2009–2016, test 2017–2019) is computed in <code>40_leakage_audit_d3.R</code>. The full sequence of commits that produced the final tables and figures is preserved in the replication archive's git log.</p>
 
 
 
@@ -7284,6 +7285,12 @@ pdflatex<span class="w"> </span>paper_screening_v4.tex
     <li class="md-nav__item ">
       <a href="/research/frequent-losers/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

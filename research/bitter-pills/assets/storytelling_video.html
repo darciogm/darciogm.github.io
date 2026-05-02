@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bitter Pills — The Enforcement Costs of Health Litigation</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --bg: #080a0f;
+    --surface: #0f1219;
+    --surface2: #141824;
+    --border: rgba(255,255,255,0.05);
+    --border2: rgba(255,255,255,0.08);
+    --text: #c8cdd8;
+    --text-dim: #4f5570;
+    --text-bright: #e8eaf0;
+    --accent: #5b9cf5;
+    --accent-dim: rgba(91,156,245,0.15);
+    --accent2: #a78bfa;
+    --red: #ef4444;
+    --red-dim: rgba(239,68,68,0.12);
+    --green: #22c55e;
+    --green-dim: rgba(34,197,94,0.12);
+    --orange: #f59e0b;
+    --pink: #ec4899;
+    --gold: #eab308;
+    --cyan: #06b6d4;
+    --warm: #f97316;
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif;
+    overflow: hidden; width: 100vw; height: 100vh; -webkit-font-smoothing: antialiased; }
+
+  #ambient { position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.35; }
+  .amb-orb { position: absolute; border-radius: 50%; filter: blur(100px);
+    animation: orbDrift 25s ease-in-out infinite alternate; }
+
+  #particles { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
+
+  #progress { position: fixed; top: 0; left: 0; height: 2px; z-index: 300;
+    background: linear-gradient(90deg, var(--red), var(--warm), var(--gold));
+    transition: width 0.8s cubic-bezier(0.4,0,0.2,1); width: 0;
+    box-shadow: 0 0 12px rgba(239,68,68,0.3); }
+
+  #counter { position: fixed; top: 16px; left: 20px; z-index: 300;
+    font: 500 0.68rem/1 'JetBrains Mono', monospace; color: var(--text-dim); letter-spacing: 2px; }
+
+  #controls { position: fixed; top: 14px; right: 20px; z-index: 300; display: flex; gap: 6px; }
+  .btn { background: rgba(255,255,255,0.03); border: 1px solid var(--border);
+    color: var(--text-dim); border-radius: 10px; padding: 7px 16px;
+    font: 500 0.72rem/1 'Inter', sans-serif; cursor: pointer;
+    transition: all 0.3s; backdrop-filter: blur(16px); }
+  .btn:hover { background: rgba(255,255,255,0.08); color: #fff; border-color: var(--border2); }
+
+  .scene { position: absolute; inset: 0; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; padding: 60px 40px;
+    opacity: 0; pointer-events: none; transition: opacity 1s ease; z-index: 2; }
+  .scene.active { opacity: 1; pointer-events: auto; }
+  .scene > * { position: relative; z-index: 1; }
+
+  #subtitle { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    max-width: 72%; background: rgba(8,10,15,0.88); backdrop-filter: blur(20px);
+    border: 1px solid var(--border); border-radius: 16px;
+    padding: 16px 28px; text-align: center; z-index: 200;
+    font: 400 clamp(0.8rem,1.15vw,1rem)/1.65 'Crimson Pro', serif;
+    color: rgba(200,205,216,0.85); opacity: 0; transition: opacity 0.5s; }
+  #subtitle.visible { opacity: 1; }
+
+  #overlay { position: fixed; inset: 0; z-index: 500;
+    background: rgba(8,10,15,0.97); backdrop-filter: blur(40px);
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; cursor: pointer; transition: opacity 1s; }
+  #overlay.hidden { opacity: 0; pointer-events: none; }
+  .ov-title { font: 900 clamp(1.8rem,4vw,3.2rem)/1.1 'Playfair Display', serif;
+    text-align: center; margin-bottom: 8px;
+    background: linear-gradient(135deg, #fff 20%, var(--red) 60%, var(--warm));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .ov-sub { font: 400 italic clamp(0.85rem,1.3vw,1.1rem)/1.4 'Crimson Pro', serif;
+    color: var(--text-dim); margin-bottom: 40px; text-align: center; }
+  .play-circle { width: 86px; height: 86px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--red), var(--warm));
+    display: grid; place-items: center; margin-bottom: 20px;
+    animation: breathe 3s ease infinite; box-shadow: 0 0 40px rgba(239,68,68,0.2); }
+  .play-circle svg { margin-left: 4px; }
+  .play-hint { font: 400 0.85rem/1 'Inter', sans-serif; color: var(--text-dim); }
+  .play-sub { font: 300 0.68rem/1 'Inter', sans-serif; color: var(--text-dim); margin-top: 8px; opacity: 0.4; }
+
+  .hook { font: 900 clamp(1.8rem,4vw,3.4rem)/1.2 'Playfair Display', serif;
+    text-align: center; max-width: 820px;
+    background: linear-gradient(135deg, #fff 30%, var(--red) 70%, var(--warm));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .st { font: 700 clamp(1.2rem,2.5vw,2rem)/1.15 'Inter', sans-serif;
+    text-align: center; margin-bottom: 24px; letter-spacing: -0.5px; }
+  .body { font: 400 clamp(0.9rem,1.35vw,1.1rem)/1.7 'Crimson Pro', serif;
+    text-align: center; max-width: 700px; color: var(--text); }
+  .em { color: var(--accent); font-weight: 600; }
+  .em-r { color: var(--red); font-weight: 600; }
+  .em-g { color: var(--green); font-weight: 600; }
+  .em-o { color: var(--orange); font-weight: 600; }
+  .em-p { color: var(--accent2); font-weight: 600; }
+  .em-w { color: var(--warm); font-weight: 600; }
+  .em-k { color: var(--gold); font-weight: 600; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  .fu { opacity: 0; transform: translateY(22px);
+    transition: all 0.8s cubic-bezier(0.22,1,0.36,1); }
+  .fu.on { opacity: 1; transform: translateY(0); }
+  .si { opacity: 0; transform: scale(0.55);
+    transition: all 0.6s cubic-bezier(0.34,1.56,0.64,1); }
+  .si.on { opacity: 1; transform: scale(1); }
+  .sr { opacity: 0; transform: translateX(-28px); transition: all 0.8s ease; }
+  .sr.on { opacity: 1; transform: translateX(0); }
+  .bi { opacity: 0; filter: blur(12px); transition: all 1s ease; }
+  .bi.on { opacity: 1; filter: blur(0); }
+
+  .big-num { font: 700 clamp(3rem,8vw,5.5rem)/1 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, var(--red), var(--warm));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .cards { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .card { width: 140px; padding: 20px 14px; border-radius: 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border); }
+  .card-icon { font-size: 2.2rem; }
+  .card-label { font: 600 0.6rem/1.2 'Inter', sans-serif; text-transform: uppercase;
+    letter-spacing: 1.5px; text-align: center; }
+
+  .stats { display: flex; gap: 32px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .stat { text-align: center; }
+  .stat-v { font: 700 clamp(1.8rem,3.5vw,2.6rem)/1 'JetBrains Mono', monospace; }
+  .stat-l { font: 500 0.65rem/1.2 'Inter', sans-serif; color: var(--text-dim);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+  .regimes { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .regime { width: 200px; padding: 22px 16px; border-radius: 16px; text-align: center;
+    background: var(--surface); border: 1px solid var(--border); }
+  .regime-tag { font: 700 0.6rem/1 'Inter', sans-serif; text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 6px; }
+  .regime-num { font: 700 2.2rem/1 'JetBrains Mono', monospace; margin: 6px 0; }
+  .regime-desc { font: 400 0.72rem/1.4 'Crimson Pro', serif; color: var(--text-dim); }
+
+  .quote { font: 400 italic clamp(1.1rem,2.2vw,1.7rem)/1.6 'Playfair Display', serif;
+    max-width: 700px; color: #e2e4ea;
+    border-left: 3px solid var(--red); padding-left: 24px; text-align: left; }
+
+  .sep { width: 40px; height: 2px; margin: 16px auto;
+    background: linear-gradient(90deg, var(--red), var(--warm)); border-radius: 2px; }
+
+  @keyframes breathe { 0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.3); }
+    50% { box-shadow: 0 0 0 20px rgba(239,68,68,0); } }
+  @keyframes orbDrift { 0% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(30px,-20px) scale(1.1); }
+    66% { transform: translate(-20px,15px) scale(0.9); }
+    100% { transform: translate(10px,-10px) scale(1.05); } }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<div id="counter"></div>
+<div id="controls">
+  <button class="btn" onclick="prev()">&#9664;</button>
+  <button class="btn" id="ppBtn" onclick="pp()">&#10074;&#10074;</button>
+  <button class="btn" onclick="next()">&#9654;</button>
+</div>
+
+<div id="ambient">
+  <div class="amb-orb" style="width:400px;height:400px;top:-10%;left:-5%;background:rgba(239,68,68,0.06);animation-delay:0s"></div>
+  <div class="amb-orb" style="width:350px;height:350px;bottom:-5%;right:-5%;background:rgba(245,158,11,0.05);animation-delay:-8s"></div>
+  <div class="amb-orb" style="width:300px;height:300px;top:40%;left:60%;background:rgba(167,139,250,0.04);animation-delay:-16s"></div>
+</div>
+
+<canvas id="particles"></canvas>
+
+<div id="overlay" onclick="start()">
+  <div class="ov-title">Bitter Pills to Swallow</div>
+  <div class="ov-sub">The enforcement costs of health litigation</div>
+  <div class="play-circle">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="white"><polygon points="6,3 20,12 6,21"/></svg>
+  </div>
+  <div class="play-hint">Click to play</div>
+  <div class="play-sub">Narrated &middot; ~5 min &middot; Sound on &middot; Arrows to navigate</div>
+</div>
+
+<!-- 0: COLD OPEN -->
+<div class="scene" id="s0">
+  <div class="hook bi" data-d="0">A judge orders the government<br>to buy a cancer drug<br>within 72 hours.</div>
+  <div class="sep fu" data-d="1200"></div>
+  <div class="body fu" data-d="1500" style="color:var(--text-dim);font-style:italic">The drug arrives. At a 30% premium.</div>
+</div>
+
+<!-- 1: RIGHT TO HEALTH -->
+<div class="scene" id="s1">
+  <div class="st fu" data-d="0">Health Is a Constitutional Right</div>
+  <div class="stats">
+    <div class="stat si" data-d="200"><div class="stat-v" style="color:var(--accent)">&#9878;</div><div class="stat-l">Article 196<br>1988 Constitution</div></div>
+    <div class="stat si" data-d="500"><div class="stat-v" style="color:var(--warm)">96K</div><div class="stat-l">Court orders<br>nationally (2017)</div></div>
+    <div class="stat si" data-d="800"><div class="stat-v" style="color:var(--red)">913%</div><div class="stat-l">Growth in<br>S&atilde;o Paulo</div></div>
+  </div>
+  <div class="body fu" data-d="500">Brazil&rsquo;s constitution says health is &ldquo;a right of all and a duty of the state.&rdquo; Courts have interpreted this literally: any citizen can obtain virtually any medication through a lawsuit. <span class="em-r">85% of claims are granted.</span> The system saves lives. But it has a cost.</div>
+</div>
+
+<!-- 2: THE SQUEEZE -->
+<div class="scene" id="s2">
+  <div class="st fu" data-d="0" style="color:var(--red)">How Courts Squeeze Procurement</div>
+  <div class="cards">
+    <div class="card si" data-d="200" style="border-color:rgba(239,68,68,0.15)"><div class="card-icon">&#9200;</div><div class="card-label" style="color:var(--red)">Timeline<br>crushed</div></div>
+    <div class="card si" data-d="400" style="border-color:rgba(239,68,68,0.15)"><div class="card-icon">&#128230;</div><div class="card-label" style="color:var(--warm)">Can't<br>aggregate</div></div>
+    <div class="card si" data-d="600" style="border-color:rgba(239,68,68,0.15)"><div class="card-icon">&#128176;</div><div class="card-label" style="color:var(--orange)">Reference price<br>rushed</div></div>
+    <div class="card si" data-d="800" style="border-color:rgba(239,68,68,0.15)"><div class="card-icon">&#128101;</div><div class="card-label" style="color:var(--accent2)">Fewer<br>bidders</div></div>
+  </div>
+  <div class="body fu" data-d="500">Ordinary purchases take 30 to 180 days. Court orders compress this to <span class="em-r">1 to 10 days</span>. Officials can&rsquo;t aggregate demand, can&rsquo;t research prices, and attract fewer competing firms. The result: <span class="em-r">everything gets more expensive</span>.</div>
+</div>
+
+<!-- 3: THE DATA -->
+<div class="scene" id="s3">
+  <div class="st fu" data-d="0">479,000 Purchases. One Platform.</div>
+  <div class="stats">
+    <div class="stat si" data-d="200"><div class="stat-v" style="color:var(--accent)">479K</div><div class="stat-l">Purchase-offer<br>observations</div></div>
+    <div class="stat si" data-d="500"><div class="stat-v" style="color:var(--green)">32K</div><div class="stat-l">Distinct<br>items</div></div>
+    <div class="stat si" data-d="800"><div class="stat-v" style="color:var(--accent2)">11</div><div class="stat-l">Years<br>(2009&ndash;2019)</div></div>
+  </div>
+  <div class="body fu" data-d="500">Every pharmaceutical purchase by S&atilde;o Paulo&rsquo;s Department of Health, through a single electronic platform. Bid amounts. Reference prices. Quantities. Winner identities. And crucially: <span class="em">whether a court ordered it</span>.</div>
+</div>
+
+<!-- 4: THREE TYPES -->
+<div class="scene" id="s4">
+  <div class="st fu" data-d="0">Three Types of Purchase</div>
+  <div class="regimes">
+    <div class="regime si" data-d="200" style="border-color:rgba(34,197,94,0.2)">
+      <div class="regime-tag" style="color:var(--green)">Ordinary</div>
+      <div class="regime-num" style="color:var(--green)">&#128197;</div>
+      <div class="regime-desc">Standard timeline.<br>Dedicated budget.<br>No penalty.</div>
+    </div>
+    <div class="regime si" data-d="500" style="border-color:rgba(245,158,11,0.2)">
+      <div class="regime-tag" style="color:var(--orange)">Administrative</div>
+      <div class="regime-num" style="color:var(--orange)">&#9889;</div>
+      <div class="regime-desc">Compressed timeline.<br>Small quantities.<br><strong>No penalty.</strong></div>
+    </div>
+    <div class="regime si" data-d="800" style="border-color:rgba(239,68,68,0.2)">
+      <div class="regime-tag" style="color:var(--red)">Litigated</div>
+      <div class="regime-num" style="color:var(--red)">&#9878;</div>
+      <div class="regime-desc">Compressed timeline.<br>Small quantities.<br><strong>Fines. Liability. Fund seizure.</strong></div>
+    </div>
+  </div>
+  <div class="body fu" data-d="500">Administrative and litigated purchases share <span class="em">identical planning constraints</span>. They differ in one thing only: <span class="em-r">what happens if the official fails</span>.</div>
+</div>
+
+<!-- 5: THE PRICE IMPACT -->
+<div class="scene" id="s5">
+  <div class="st fu" data-d="0">Follow the Money</div>
+  <div class="stats">
+    <div class="stat si" data-d="200"><div class="stat-v" style="color:var(--red)">+5.4%</div><div class="stat-l">Negotiated<br>prices</div></div>
+    <div class="stat si" data-d="500"><div class="stat-v" style="color:var(--warm)">+2.7%</div><div class="stat-l">Reference<br>prices</div></div>
+    <div class="stat si" data-d="800"><div class="stat-v" style="color:var(--accent)">&minus;5.4%</div><div class="stat-l">Fewer<br>bidders</div></div>
+  </div>
+  <div class="body fu" data-d="500">Same drug. Same year. Same purchasing unit. Court-mandated purchases cost <span class="em-r">5.4% more</span> and attract <span class="em">5.4% fewer firms</span>. Yet they succeed <span class="em-g">more often</span> &mdash; officials accept worse terms to ensure compliance.</div>
+</div>
+
+<!-- 6: UNDER THE GUN -->
+<div class="scene" id="s6">
+  <div class="st fu" data-d="0" style="color:var(--red)">&ldquo;Under the Gun&rdquo;</div>
+  <div class="big-num si" data-d="300">23&ndash;30%</div>
+  <div class="body fu" data-d="600" style="font-size:clamp(0.85rem,1.2vw,1.05rem)">Comparing litigated and administrative purchases &mdash; same planning pressure, same timeline, same items &mdash; judicial sanctions <span class="em-r">alone</span> raise total procurement costs by <span class="em-r">23 to 30 percent</span>. Not a small effect. A fundamental distortion.</div>
+</div>
+
+<!-- 7: THE TWIST -->
+<div class="scene" id="s7">
+  <div class="st fu" data-d="0">The Surprising Mechanism</div>
+  <div class="body fu" data-d="200" style="max-width:640px">
+    <div style="text-align:left; display:flex; flex-direction:column; gap:14px; font-size:clamp(0.88rem,1.2vw,1.05rem)">
+      <div class="sr" data-d="300"><span class="em-r">&#10007;</span> &ensp;Officials don&rsquo;t accept higher <em>unit prices</em> under sanctions.</div>
+      <div class="sr" data-d="600"><span class="em-g">&#10003;</span> &ensp;Sanctions prevent <em>demand aggregation</em> &mdash; orders are fragmented.</div>
+      <div class="sr" data-d="900"><span class="em-g">&#10003;</span> &ensp;Smaller orders forgo bulk discounts &mdash; <em>that</em> is the 30%.</div>
+      <div class="sr" data-d="1200"><span class="em">&#9660;</span> &ensp;Admin orders for the same drug, same month: <span class="em">120% larger</span>.</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="1500" style="font-style:italic;color:var(--text-dim);margin-top:18px;font-size:0.9rem">The direct price effect is <em>zero</em>. The entire premium is demand fragmentation.</div>
+</div>
+
+<!-- 8: WHO PROFITS -->
+<div class="scene" id="s8">
+  <div class="st fu" data-d="0">Where Does the Money Go?</div>
+  <div style="display:flex;gap:40px;flex-wrap:wrap;justify-content:center;margin:20px 0">
+    <div class="si" data-d="300" style="text-align:center;padding:24px;background:var(--surface);border-radius:16px;border:1px solid var(--border);width:200px">
+      <div style="font:600 0.6rem/1 'Inter',sans-serif;text-transform:uppercase;letter-spacing:1.5px;color:var(--warm);margin-bottom:8px">Demand Side</div>
+      <div style="font:700 2rem/1 'JetBrains Mono',monospace;color:var(--warm)">~50%</div>
+      <div style="font:400 0.72rem/1.3 'Crimson Pro',serif;color:var(--text-dim);margin-top:6px">Officials accept<br>worse matches</div>
+    </div>
+    <div class="si" data-d="600" style="text-align:center;padding:24px;background:var(--surface);border-radius:16px;border:1px solid var(--border);width:200px">
+      <div style="font:600 0.6rem/1 'Inter',sans-serif;text-transform:uppercase;letter-spacing:1.5px;color:var(--red);margin-bottom:8px">Supply Side</div>
+      <div style="font:700 2rem/1 'JetBrains Mono',monospace;color:var(--red)">~50%</div>
+      <div style="font:400 0.72rem/1.3 'Crimson Pro',serif;color:var(--text-dim);margin-top:6px">Firms charge more<br>when courts are involved</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="400">92% of winning firms serve both ordinary and urgent tenders. The same companies charge more when they know the government has no choice. The other half: officials selecting worse suppliers under time pressure.</div>
+</div>
+
+<!-- 9: COMPETITIVE MARKETS -->
+<div class="scene" id="s9">
+  <div class="st fu" data-d="0">Where It Hurts Most</div>
+  <div class="stats">
+    <div class="stat si" data-d="200"><div class="stat-v" style="color:var(--red)">14.3%</div><div class="stat-l">Competitive<br>markets</div></div>
+    <div class="stat si" data-d="500"><div style="font:500 1rem/1 'Inter',sans-serif;color:var(--text-dim);display:flex;align-items:center;height:100%">vs</div></div>
+    <div class="stat si" data-d="700"><div class="stat-v" style="color:var(--green)">4.6%</div><div class="stat-l">Concentrated<br>markets</div></div>
+  </div>
+  <div class="body fu" data-d="500">The premium is <span class="em-r">three times larger</span> where competition is strong. In concentrated markets, fewer bidders leave less room for urgency to erode bargaining. In competitive markets, <span class="em">compressed timelines destroy the gains from competition</span>.</div>
+</div>
+
+<!-- 10: PLACEBO -->
+<div class="scene" id="s10">
+  <div class="st fu" data-d="0" style="color:var(--text-dim)">The Placebo Test</div>
+  <div class="stats">
+    <div class="stat si" data-d="300"><div class="stat-v" style="color:var(--green)">&minus;0.020</div><div class="stat-l">Negotiated<br>price premium</div></div>
+    <div class="stat si" data-d="600"><div class="stat-v" style="color:var(--green)">&minus;0.031</div><div class="stat-l">Reference<br>price premium</div></div>
+  </div>
+  <div class="body fu" data-d="500">For items that are <span class="em">never subject to litigation</span>, the urgency premium is <span class="em-g">zero</span>. Both coefficients are economically small and statistically insignificant. The premium exists <span class="em">only</span> where courts are involved.</div>
+</div>
+
+<!-- 11: HONESTY -->
+<div class="scene" id="s11">
+  <div class="st fu" data-d="0" style="color:var(--text-dim)">What We Don&rsquo;t Claim</div>
+  <div class="body fu" data-d="200" style="max-width:620px">
+    <div style="text-align:left;display:flex;flex-direction:column;gap:12px;font-size:clamp(0.85rem,1.2vw,1rem)">
+      <div class="sr" data-d="300"><span class="em-r">&#10007;</span> &ensp;This is not a randomized experiment &mdash; it&rsquo;s conditional on high-dimensional fixed effects.</div>
+      <div class="sr" data-d="600"><span class="em-r">&#10007;</span> &ensp;The direct price effect of sanctions is zero &mdash; the 30% is entirely quantity.</div>
+      <div class="sr" data-d="900"><span class="em-g">&#10003;</span> &ensp;An event study shows prices <em>declining</em> before litigation &mdash; ruling out reverse causality.</div>
+      <div class="sr" data-d="1200"><span class="em-g">&#10003;</span> &ensp;The placebo confirms the premium is absent where courts play no role.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 12: POLICY -->
+<div class="scene" id="s12">
+  <div class="st fu" data-d="0">Two Reforms, One Problem</div>
+  <div class="regimes">
+    <div class="regime si" data-d="300" style="border-color:rgba(245,158,11,0.2);width:240px">
+      <div class="regime-tag" style="color:var(--orange)">Demand Side</div>
+      <div style="font:400 0.8rem/1.5 'Crimson Pro',serif;color:var(--text);margin-top:8px">Expand administrative requests to other states &mdash; procurement <em>without</em> judicial sanctions. Already reduces costs 23&ndash;30%.</div>
+    </div>
+    <div class="regime si" data-d="700" style="border-color:rgba(239,68,68,0.2);width:240px">
+      <div class="regime-tag" style="color:var(--red)">Supply Side</div>
+      <div style="font:400 0.8rem/1.5 'Crimson Pro',serif;color:var(--text);margin-top:8px">Remove court-order references from tender notices. Establish framework agreements for commonly litigated items.</div>
+    </div>
+  </div>
+  <div class="body fu" data-d="500"><span class="em-k">US$16&ndash;18 million</span> in annual excess costs in S&atilde;o Paulo alone. Brazil&rsquo;s new procurement law (Lei 14.133/2021) introduces framework agreements that could address the demand-fragmentation channel directly.</div>
+</div>
+
+<!-- 13: CLOSING -->
+<div class="scene" id="s13">
+  <div class="quote sr" data-d="0">&ldquo;Judicial enforcement is essential for the rule of law. Yet the form of enforcement can generate economic inefficiency. When non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency.&rdquo;</div>
+  <div class="sep fu" data-d="2000"></div>
+  <div class="fu" data-d="2200" style="text-align:center">
+    <div style="font:500 1rem/1 Inter,sans-serif;color:var(--text-dim)">Genicolo-Martins &amp; Furquim de Azevedo</div>
+    <div style="font:300 0.78rem/1 Inter,sans-serif;color:var(--text-dim);margin-top:6px;opacity:0.5">INSPER &bull; S&atilde;o Paulo, Brazil &bull; 2026</div>
+  </div>
+  <div class="fu" data-d="3000" style="margin-top:28px;text-align:center">
+    <div style="font:400 italic clamp(0.85rem,1.3vw,1.05rem)/1.4 'Crimson Pro',serif;color:var(--text-dim);opacity:0.5">
+      Sometimes the pill that saves one patient<br>costs the system that serves everyone.
+    </div>
+  </div>
+</div>
+
+<div id="subtitle"></div>
+
+<script>
+const S = [
+  { // 0
+    text: "A judge orders the government to buy a cancer drug within seventy-two hours. The procurement officer has no time to aggregate demand, no time to research market prices, and faces personal fines if the purchase fails. The drug arrives — but at a thirty percent premium over what the same agency pays when no court is watching.",
+    dur: 16000
+  },
+  { // 1
+    text: "Brazil's nineteen eighty-eight Constitution enshrines health as a right of all and a duty of the state. Courts have taken this literally: any citizen can obtain virtually any medication through a lawsuit — from common pain relievers to rare-disease treatments costing over four hundred thousand dollars a year. Eighty-five percent of claims are granted. By twenty seventeen, health court orders reached ninety-six thousand nationally — a nine hundred and thirteen percent increase in São Paulo since two thousand eight. The system saves lives. But every court order compresses the procurement timeline from months to days.",
+    dur: 32000
+  },
+  { // 2
+    text: "Here's what happens when a court order hits a procurement office. The timeline collapses from thirty to a hundred eighty days down to one to ten days. Officials can't aggregate demand across patients. They can't research market prices properly. Reference prices are set in a rush, often too high. And fewer firms bother to bid on small, urgent orders. Every stage of procurement gets worse — and more expensive.",
+    dur: 24000
+  },
+  { // 3
+    text: "We study this using every pharmaceutical purchase by São Paulo's Department of Health from two thousand nine through two thousand nineteen. Four hundred seventy-nine thousand purchase-offer observations. Thirty-two thousand distinct items. All conducted through a single electronic platform. We observe bid amounts, reference prices, quantities, winner identities — and crucially, whether a court ordered the purchase.",
+    dur: 22000
+  },
+  { // 4
+    text: "The identification strategy exploits an institutional distinction that is central to the paper. There are three types of purchases. Ordinary purchases follow standard timelines with dedicated budgets and no penalties. Administrative requests are urgent — compressed timelines, small quantities — but carry no sanctions if the purchase fails. Litigated purchases face identical planning constraints to administrative ones, but with a critical difference: officials face fines, personal liability, and fund seizure if the tender fails. Same urgency. Same constraints. Different consequences. This is the under-the-gun comparison.",
+    dur: 34000
+  },
+  { // 5
+    text: "The headline results. With item, year, and buyer fixed effects — comparing the same drug, in the same year, bought by the same agency — court-mandated purchases carry negotiated prices five-point-four percent higher, reference prices two-point-seven percent higher, and attract five-point-four percent fewer bidding firms. Yet urgent tenders succeed more often — two-point-one percentage points — consistent with officials accepting worse terms to ensure compliance rather than risk failure.",
+    dur: 28000
+  },
+  { // 6
+    text: "Now for the paper's sharpest result. Comparing litigated and administrative urgent purchases — which share identical planning constraints but differ only in penalty exposure — judicial sanctions alone raise total procurement costs by twenty-three to thirty percent. This survives item-times-year-month fixed effects — comparing the same drug in the same month — with virtually no attenuation. The magnitude is large, robust, and speaks to a fundamental distortion in how accountability mechanisms interact with procurement incentives.",
+    dur: 30000
+  },
+  { // 7
+    text: "But here's the twist — and it's the most important finding in the paper. When you control for order quantity, the under-the-gun coefficient drops to zero. Statistically insignificant. The entire thirty percent premium operates through demand fragmentation — sanctions prevent officials from aggregating orders across patients and over time, yielding smaller purchases that forgo bulk discounts. For the same drug in the same month, administrative orders are a hundred and twenty percent larger than litigated ones. Officials under judicial pressure don't pay higher unit prices — they just can't buy in bulk.",
+    dur: 34000
+  },
+  { // 8
+    text: "Where does the money go? Supplier fixed effects split the premium roughly in half. Fifty percent reflects within-firm pricing: the same companies — ninety-two percent of winners serve both ordinary and urgent tenders — charge more when they know the government has no choice. The other fifty percent reflects officials selecting worse supplier matches under time pressure. Two channels, two policy responses.",
+    dur: 26000
+  },
+  { // 9
+    text: "The premium is three times larger in competitive markets — fourteen-point-three percent versus four-point-six percent — with a highly significant interaction. This makes economic sense: in concentrated markets, fewer bidders leave less room for urgency to erode bargaining power. In competitive markets, compressed timelines destroy precisely the gains that competition would normally deliver. The enforcement cost is highest where the loss of competition matters most.",
+    dur: 28000
+  },
+  { // 10
+    text: "The placebo test seals it. For items that are never subject to litigation — never once ordered by a court across the entire decade — the urgency premium is zero. Minus zero-point-zero-two for negotiated prices, minus zero-point-zero-three for reference prices. Both insignificant. The premium exists only where courts are involved, ruling out the possibility that the estimates reflect a generic correlation between urgency and prices.",
+    dur: 24000
+  },
+  { // 11
+    text: "What the paper does not claim. This is not a randomized experiment — identification relies on high-dimensional fixed effects and institutional variation. The direct price effect of sanctions is zero — the thirty percent is entirely demand fragmentation. But an event study shows prices declining before the first court order for each item, ruling out the reverse-causality story that high prices attract lawsuits. And the placebo confirms the premium is absent where courts play no role.",
+    dur: 26000
+  },
+  { // 12
+    text: "Two reforms follow from the decomposition. On the demand side: São Paulo's administrative request mechanism — which since two thousand nine has allowed procurement without judicial sanctions — already eliminates the under-the-gun premium. Expanding it to other states would save twenty-three to thirty percent on litigated purchases. On the supply side: removing court-order references from tender notices and establishing framework agreements for commonly litigated items would curtail supplier exploitation. The estimated excess costs: sixteen to eighteen million dollars annually in São Paulo alone. Brazil's new procurement law introduces framework agreements that could address the demand-fragmentation channel directly.",
+    dur: 36000
+  },
+  { // 13
+    text: "Judicial enforcement is essential for the rule of law. Yet the form of enforcement can generate economic inefficiency. When non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency. Sometimes the pill that saves one patient costs the system that serves everyone.",
+    dur: 18000
+  }
+];
+
+let cur = 0, paused = false, tmr = null;
+const synth = window.speechSynthesis;
+let utt = null, bestVoice = null;
+
+function pickVoice() {
+  const v = synth.getVoices();
+  const tiers = [
+    vv => /Google US English/i.test(vv.name),
+    vv => /Google UK English (Male|Female)/i.test(vv.name),
+    vv => /Microsoft.*Online.*Natural/i.test(vv.name) && vv.lang.startsWith('en'),
+    vv => /Samantha/i.test(vv.name),
+    vv => /Daniel/i.test(vv.name) && vv.lang.startsWith('en'),
+    vv => /Alex/i.test(vv.name),
+    vv => vv.lang === 'en-US' && !vv.localService,
+    vv => vv.lang === 'en-US',
+    vv => vv.lang === 'en-GB',
+    vv => vv.lang.startsWith('en')
+  ];
+  for (const fn of tiers) { const m = v.find(fn); if (m) return m; }
+  return v[0] || null;
+}
+
+const cvs = document.getElementById('particles'), ctx = cvs.getContext('2d');
+let pts = [];
+function initP() {
+  cvs.width = innerWidth; cvs.height = innerHeight; pts = [];
+  for (let i = 0; i < 60; i++) pts.push({
+    x: Math.random()*cvs.width, y: Math.random()*cvs.height,
+    r: Math.random()*1.2+0.2, dx: (Math.random()-0.5)*0.2, dy: (Math.random()-0.5)*0.2,
+    a: Math.random()*0.12+0.02
+  });
+}
+function drawP() {
+  ctx.clearRect(0,0,cvs.width,cvs.height);
+  for (const p of pts) {
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(239,68,68,${p.a})`; ctx.fill();
+    p.x+=p.dx; p.y+=p.dy;
+    if(p.x<0||p.x>cvs.width) p.dx*=-1;
+    if(p.y<0||p.y>cvs.height) p.dy*=-1;
+  }
+  requestAnimationFrame(drawP);
+}
+initP(); drawP(); addEventListener('resize', initP);
+
+let _sceneCleanup = null;
+
+function show(idx) {
+  if (idx < 0 || idx >= S.length) return;
+  cleanup();
+  cur = idx;
+  document.getElementById('progress').style.width = ((idx+1)/S.length*100)+'%';
+  document.getElementById('counter').textContent = `${String(idx+1).padStart(2,'0')} / ${S.length}`;
+  document.querySelectorAll('.scene').forEach(s => {
+    s.classList.remove('active');
+    s.querySelectorAll('.on').forEach(e => e.classList.remove('on'));
+  });
+  const el = document.getElementById('s'+idx);
+  el.classList.add('active');
+  const items = el.querySelectorAll('[data-d]');
+  const timeouts = [];
+  items.forEach(it => {
+    const t = setTimeout(() => it.classList.add('on'), parseInt(it.dataset.d));
+    timeouts.push(t);
+  });
+  const sub = document.getElementById('subtitle');
+  sub.textContent = S[idx].text;
+  sub.classList.add('visible');
+  if (synth && !paused) {
+    synth.cancel();
+    utt = new SpeechSynthesisUtterance(S[idx].text);
+    if (!bestVoice) bestVoice = pickVoice();
+    if (bestVoice) utt.voice = bestVoice;
+    utt.rate = 0.95; utt.pitch = 1;
+    synth.speak(utt);
+  }
+  const pollDone = () => {
+    if (paused) { tmr = setTimeout(pollDone, 200); return; }
+    if (synth && synth.speaking) { tmr = setTimeout(pollDone, 200); return; }
+    tmr = setTimeout(() => { if (!paused) show(cur + 1); }, 1500);
+  };
+  tmr = setTimeout(pollDone, Math.min(S[idx].dur, 4000));
+  _sceneCleanup = () => { timeouts.forEach(clearTimeout); sub.classList.remove('visible'); };
+}
+
+function cleanup() {
+  if (tmr) { clearTimeout(tmr); tmr = null; }
+  if (synth) synth.cancel();
+  if (_sceneCleanup) { _sceneCleanup(); _sceneCleanup = null; }
+}
+
+function start() {
+  document.getElementById('overlay').classList.add('hidden');
+  if (synth) { bestVoice = pickVoice(); }
+  show(0);
+}
+function next() { cleanup(); show(cur + 1); }
+function prev() { cleanup(); show(Math.max(0, cur - 1)); }
+function pp() {
+  paused = !paused;
+  document.getElementById('ppBtn').innerHTML = paused ? '&#9654;' : '&#10074;&#10074;';
+  if (paused && synth) synth.pause();
+  else if (!paused && synth) synth.resume();
+}
+
+if (synth) synth.onvoiceschanged = () => { bestVoice = pickVoice(); };
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') next();
+  else if (e.key === 'ArrowLeft') prev();
+  else if (e.key === ' ') { e.preventDefault(); pp(); }
+});
+</script>
+</body>
+</html>

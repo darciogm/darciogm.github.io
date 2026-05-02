@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: JSXGraph excels at 2D geometric/algebraic visualizations with native
+  support for draggable points, implicit curves, and real-time coordinate display.
+  Ideal for plotting families of indifference curves with interactive parameter control.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa de Curvas de Indiferenca</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 400px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    select {
+      width: 100%;
+      padding: 0.4rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .info-box .eq { text-align: center; margin: 0.3rem 0; color: #333; }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+
+      <div class="slider-group">
+        <label>Tipo de preferência:</label>
+        <select id="sel-type">
+          <option value="cobb-douglas">Cobb-Douglas</option>
+          <option value="substitutos">Substitutos Perfeitos</option>
+          <option value="complementos">Complementos Perfeitos</option>
+          <option value="ces">CES</option>
+          <option value="quase-linear">Quase-linear</option>
+        </select>
+      </div>
+
+      <div class="slider-group" id="grp-alpha">
+        <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
+        <input type="range" id="slider-alpha" min="0.1" max="0.9" step="0.05" value="0.5">
+      </div>
+
+      <div class="slider-group" id="grp-rho" style="display:none;">
+        <label>\(\rho\): <span class="val" id="val-rho">0.50</span></label>
+        <input type="range" id="slider-rho" min="-5" max="0.95" step="0.05" value="0.5">
+      </div>
+
+      <div class="slider-group" id="grp-a">
+        <label>\(a\): <span class="val" id="val-a">1.00</span></label>
+        <input type="range" id="slider-a" min="0.2" max="3" step="0.1" value="1">
+      </div>
+
+      <div class="slider-group" id="grp-b">
+        <label>\(b\): <span class="val" id="val-b">1.00</span></label>
+        <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+      </div>
+
+      <div class="info-box" id="info">
+        <div class="eq" id="eq-func"></div>
+        <div class="eq" id="eq-tms"></div>
+        <div id="info-point" style="margin-top:0.4rem;"></div>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-1.8, 12, 11.5, -1.5],
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[10,0]], {
+      ticks: { drawLabels: true, label: { fontSize: 11 } },
+      name: '', withLabel: false
+    });
+    board.create('axis', [[0,0],[0,10]], {
+      ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+
+    // Y-axis label: centered vertically, rotated 90°, bold italic
+    board.create('text', [
+      -1.8 * 0.55, 12 / 2,
+      '<b><i>x</i><sub>2</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+    // X-axis label: centered horizontally, below ticks, bold italic
+    board.create('text', [
+      11.5 / 2, -1.5 * 0.65,
+      '<b><i>x</i><sub>1</sub></b>'
+    ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+    var colors = ['#C8102E', '#1565c0', '#00897b', '#e65100', '#6a1b9a'];
+    var utilLevels = [2, 4, 6, 8, 10];
+    var curves = [];
+    var tangentLine = null;
+    var tmsText = null;
+
+    // Draggable point
+    var dragPt = board.create('point', [3, 3], {
+      name: '', size: 5, color: '#C8102E',
+      strokeColor: '#C8102E', fillColor: '#C8102E',
+      attractors: [], snatchDistance: 0
+    });
+
+    function getType() { return document.getElementById('sel-type').value; }
+    function getAlpha() { return parseFloat(document.getElementById('slider-alpha').value); }
+    function getRho() { return parseFloat(document.getElementById('slider-rho').value); }
+    function getA() { return parseFloat(document.getElementById('slider-a').value); }
+    function getB() { return parseFloat(document.getElementById('slider-b').value); }
+
+    function utilFunc(x1, x2) {
+      var type = getType();
+      var a = getA(), b = getB(), alpha = getAlpha(), rho = getRho();
+      if (x1 <= 0 || x2 <= 0) return 0;
+      switch(type) {
+        case 'cobb-douglas':
+          return Math.pow(x1, a) * Math.pow(x2, b);
+        case 'substitutos':
+          return a * x1 + b * x2;
+        case 'complementos':
+          return Math.min(a * x1, b * x2);
+        case 'ces':
+          if (rho === 0) return Math.pow(x1, 0.5) * Math.pow(x2, 0.5);
+          return Math.pow(Math.pow(x1, rho) + Math.pow(x2, rho), 1/rho);
+        case 'quase-linear':
+          return a * Math.sqrt(x1) + x2;
+      }
+    }
+
+    // Solve x2 given x1 and utility level U
+    function solveX2(x1, U) {
+      var type = getType();
+      var a = getA(), b = getB(), alpha = getAlpha(), rho = getRho();
+      if (x1 <= 0.01) return NaN;
+      switch(type) {
+        case 'cobb-douglas':
+          if (U <= 0) return NaN;
+          var val = U / Math.pow(x1, a);
+          if (val <= 0) return NaN;
+          return Math.pow(val, 1/b);
+        case 'substitutos':
+          var r = (U - a * x1) / b;
+          return r > 0 ? r : NaN;
+        case 'complementos':
+          // U = min(a*x1, b*x2) => b*x2 >= U and a*x1 >= U
+          if (a * x1 < U) return NaN;
+          if (a * x1 === U) return U / b; // at the corner, vertical segment above
+          return U / b; // horizontal segment
+        case 'ces':
+          if (rho === 0) {
+            var v2 = U / Math.pow(x1, 0.5);
+            return v2 > 0 ? v2 * v2 : NaN;
+          }
+          var Ur = Math.pow(U, rho);
+          var x1r = Math.pow(x1, rho);
+          var diff = Ur - x1r;
+          if (diff <= 0) return NaN;
+          return Math.pow(diff, 1/rho);
+        case 'quase-linear':
+          var val = U - a * Math.sqrt(x1);
+          return val >= 0 ? val : NaN;
+      }
+    }
+
+    function computeTMS(x1, x2) {
+      var type = getType();
+      var a = getA(), b = getB(), rho = getRho();
+      if (x1 <= 0.01 || x2 <= 0.01) return NaN;
+      switch(type) {
+        case 'cobb-douglas':
+          return (a * x2) / (b * x1);
+        case 'substitutos':
+          return a / b;
+        case 'complementos':
+          if (Math.abs(a * x1 - b * x2) < 0.1) return NaN; // at vertex
+          return a * x1 < b * x2 ? Infinity : 0;
+        case 'ces':
+          if (rho === 0) return x2 / x1;
+          return Math.pow(x1 / x2, rho - 1);
+        case 'quase-linear':
+          return a / (2 * Math.sqrt(x1));
+      }
+    }
+
+    function drawCurves() {
+      // Remove old curves
+      for (var i = curves.length - 1; i >= 0; i--) {
+        board.removeObject(curves[i]);
+      }
+      curves = [];
+      if (tangentLine) { board.removeObject(tangentLine); tangentLine = null; }
+      if (tmsText) { board.removeObject(tmsText); tmsText = null; }
+
+      var type = getType();
+
+      // Compute utility at drag point to determine levels
+      var ptU = utilFunc(dragPt.X(), dragPt.Y());
+      var levels;
+      if (type === 'complementos') {
+        levels = [1, 2, 3, 4, 5, 6, 7, 8];
+      } else {
+        // Create levels spread around the point's utility
+        levels = [];
+        for (var k = 0; k < 5; k++) {
+          var lev;
+          if (type === 'substitutos') {
+            lev = 2 + k * 3;
+          } else if (type === 'cobb-douglas') {
+            lev = 1 + k * 2;
+          } else if (type === 'quase-linear') {
+            lev = 2 + k * 2;
+          } else {
+            lev = 1 + k * 2;
+          }
+          levels.push(lev);
+        }
+      }
+
+      for (var i = 0; i < levels.length; i++) {
+        var U = levels[i];
+        var col = colors[i % colors.length];
+
+        if (type === 'complementos') {
+          // Draw L-shaped curves
+          var a = getA(), b = getB();
+          var cx = U / a; // vertex x1
+          var cy = U / b; // vertex x2
+          // Vertical segment
+          var seg1 = board.create('segment', [[cx, cy], [cx, 10.5]], {
+            strokeColor: col, strokeWidth: 2, fixed: true
+          });
+          // Horizontal segment
+          var seg2 = board.create('segment', [[cx, cy], [10.5, cy]], {
+            strokeColor: col, strokeWidth: 2, fixed: true
+          });
+          // Vertex point
+          var vp = board.create('point', [cx, cy], {
+            size: 3, color: col, fixed: true, name: '',
+            strokeColor: col, fillColor: col
+          });
+          curves.push(seg1, seg2, vp);
+        } else {
+          // Parametric / function curve
+          var curve = board.create('curve', [
+            function(U_val) {
+              return function(t) { return t; };
+            }(U),
+            function(U_val) {
+              return function(t) { return solveX2(t, U_val); };
+            }(U),
+            0.05, 10.5
+          ], {
+            strokeColor: col, strokeWidth: 2, numberPointsHigh: 400
+          });
+          curves.push(curve);
+        }
+      }
+
+      // TMS tangent line at drag point
+      var px = dragPt.X(), py = dragPt.Y();
+      var tms = computeTMS(px, py);
+
+      if (isFinite(tms) && !isNaN(tms)) {
+        var slope = -tms;
+        var x1a = Math.max(0.1, px - 2);
+        var x1b = Math.min(10, px + 2);
+        var y1a = py + slope * (x1a - px);
+        var y1b = py + slope * (x1b - px);
+
+        tangentLine = board.create('line', [[px, py], [px + 1, py - tms]], {
+          strokeColor: '#00897b', strokeWidth: 2, dash: 2,
+          straightFirst: true, straightLast: true, fixed: true
+        });
+        curves.push(tangentLine);
+      }
+    }
+
+    function updateInfo() {
+      var type = getType();
+      var a = getA(), b = getB(), rho = getRho(), alpha = getAlpha();
+      var px = dragPt.X().toFixed(2), py = dragPt.Y().toFixed(2);
+      var tms = computeTMS(dragPt.X(), dragPt.Y());
+      var U = utilFunc(dragPt.X(), dragPt.Y());
+
+      var eqFunc = '', eqTms = '';
+      switch(type) {
+        case 'cobb-douglas':
+          eqFunc = '\\(u(x_1, x_2) = x_1^{' + a.toFixed(1) + '} \\cdot x_2^{' + b.toFixed(1) + '}\\)';
+          eqTms = '\\(\\text{TMS}_{12} = \\frac{' + a.toFixed(1) + ' \\cdot x_2}{' + b.toFixed(1) + ' \\cdot x_1}\\)';
+          break;
+        case 'substitutos':
+          eqFunc = '\\(u(x_1, x_2) = ' + a.toFixed(1) + 'x_1 + ' + b.toFixed(1) + 'x_2\\)';
+          eqTms = '\\(\\text{TMS}_{12} = \\frac{' + a.toFixed(1) + '}{' + b.toFixed(1) + '} = ' + (a/b).toFixed(2) + '\\)';
+          break;
+        case 'complementos':
+          eqFunc = '\\(u(x_1, x_2) = \\min\\{' + a.toFixed(1) + 'x_1,\\; ' + b.toFixed(1) + 'x_2\\}\\)';
+          eqTms = '\\(\\text{TMS}_{12}\\) indefinida no vértice';
+          break;
+        case 'ces':
+          eqFunc = '\\(u(x_1, x_2) = (x_1^{' + rho.toFixed(2) + '} + x_2^{' + rho.toFixed(2) + '})^{1/' + rho.toFixed(2) + '}\\)';
+          var sigma = 1 / (1 - rho);
+          eqTms = '\\(\\text{TMS}_{12} = (x_1/x_2)^{\\rho-1}, \\quad \\sigma = ' + sigma.toFixed(2) + '\\)';
+          break;
+        case 'quase-linear':
+          eqFunc = '\\(u(x_1, x_2) = ' + a.toFixed(1) + '\\sqrt{x_1} + x_2\\)';
+          eqTms = '\\(\\text{TMS}_{12} = \\frac{' + a.toFixed(1) + '}{2\\sqrt{x_1}}\\) (indep. de \\(x_2\\))';
+          break;
+      }
+
+      document.getElementById('eq-func').innerHTML = eqFunc;
+      document.getElementById('eq-tms').innerHTML = eqTms;
+
+      var tmsStr = isFinite(tms) && !isNaN(tms) ? tms.toFixed(3) : 'indef.';
+      document.getElementById('info-point').innerHTML =
+        'Ponto: \\((' + px + ',\\; ' + py + ')\\)<br>' +
+        'Utilidade: \\(U = ' + U.toFixed(3) + '\\)<br>' +
+        'TMS no ponto: \\(' + tmsStr + '\\)';
+
+      if (window.MathJax && MathJax.typesetPromise) {
+        MathJax.typesetPromise([document.getElementById('info')]);
+      }
+    }
+
+    function showHideControls() {
+      var type = getType();
+      document.getElementById('grp-rho').style.display = type === 'ces' ? '' : 'none';
+      document.getElementById('grp-b').style.display = type === 'quase-linear' ? 'none' : '';
+    }
+
+    function update() {
+      document.getElementById('val-alpha').textContent = getAlpha().toFixed(2);
+      document.getElementById('val-rho').textContent = getRho().toFixed(2);
+      document.getElementById('val-a').textContent = getA().toFixed(2);
+      document.getElementById('val-b').textContent = getB().toFixed(2);
+      showHideControls();
+      drawCurves();
+      updateInfo();
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sel-type').value = 'cobb-douglas';
+      document.getElementById('slider-alpha').value = 0.5;
+      document.getElementById('slider-rho').value = 0.5;
+      document.getElementById('slider-a').value = 1;
+      document.getElementById('slider-b').value = 1;
+      dragPt.moveTo([3, 3]);
+      update();
+    }
+
+    // Event listeners
+    document.getElementById('sel-type').addEventListener('change', update);
+    document.getElementById('slider-alpha').addEventListener('input', update);
+    document.getElementById('slider-rho').addEventListener('input', update);
+    document.getElementById('slider-a').addEventListener('input', update);
+    document.getElementById('slider-b').addEventListener('input', update);
+    dragPt.on('drag', function() { drawCurves(); updateInfo(); });
+
+    update();
+  </script>
+</body>
+</html>

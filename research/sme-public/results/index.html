@@ -6730,467 +6730,239 @@
 
 
 <h1 id="main-results">Main Results<a class="headerlink" href="#main-results" title="Permanent link">¶</a></h1>
-<h2 id="event-study-log-prices">Event Study: Log Prices<a class="headerlink" href="#event-study-log-prices" title="Permanent link">¶</a></h2>
-<p>The event study plots semester-by-semester differences between group 65 (switched) and other groups (always treated). The parallel trends assumption requires that the difference is stable in the post-period (after March 2018).</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_01_logprices_es.png" data-desc-position="bottom"><img src="../assets/figures/fig_01_logprices_es.png" alt="Event study: Log prices"></a>
-  <figcaption>Figure 1. Log Prices: Difference between the always treated group and the switched group</figcaption>
-</figure>
-
-<p>The difference between the two groups narrows dramatically after the policy change and then stabilizes in subsequent periods, supporting the parallel trends assumption.</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_02_distance_es.png" data-desc-position="bottom"><img src="../assets/figures/fig_02_distance_es.png" alt="Event study: Distance"></a>
-  <figcaption>Figure A.1. Distance from PBUs to Winner Firms</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_03_numfirms_es.png" data-desc-position="bottom"><img src="../assets/figures/fig_03_numfirms_es.png" alt="Event study: Number of firms"></a>
-  <figcaption>Figure A.2. Number of Participant Firms (log)</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_04_numbids_es.png" data-desc-position="bottom"><img src="../assets/figures/fig_04_numbids_es.png" alt="Event study: Number of bids"></a>
-  <figcaption>Figure A.3. Number of Valid Bids (log)</figcaption>
-</figure>
-
+<p>The results organize around three findings. <strong>First</strong>, the simulated set-aside price effect is mostly within-auction: the within-auction share is 74.5% in non-pharma and 73.3% in pharma, and stays in the 73--85% range across cost-distribution estimators. <strong>Second</strong>, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be 50--60% larger. <strong>Third</strong>, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.</p>
 <hr>
-<h2 id="descriptive-statistics">Descriptive Statistics<a class="headerlink" href="#descriptive-statistics" title="Permanent link">¶</a></h2>
+<h2 id="1-entry-response">1. Entry response<a class="headerlink" href="#1-entry-response" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Pregao</th>
+<th style="text-align: center;"><strong>SMEs Pre</strong></th>
+<th style="text-align: center;"><strong>SMEs Post</strong></th>
+<th style="text-align: center;"><strong>Non-SMEs Pre</strong></th>
+<th style="text-align: center;"><strong>Non-SMEs Post</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-pharma</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;"><strong>1.87</strong></td>
+<td style="text-align: center;">2.68</td>
+<td style="text-align: center;"><strong>1.50</strong></td>
+</tr>
+<tr>
+<td>Pharma</td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;"><strong>1.22</strong></td>
+<td style="text-align: center;">2.61</td>
+<td style="text-align: center;"><strong>1.66</strong></td>
+</tr>
+</tbody>
+</table>
+<p>SMEs roughly double in both classes; non-SMEs fall sharply. The set-aside changes both the admissible pool and the equilibrium participation response.</p>
+<hr>
+<h2 id="2-structural-decomposition-of-the-set-aside">2. Structural decomposition of the set-aside<a class="headerlink" href="#2-structural-decomposition-of-the-set-aside" title="Permanent link">¶</a></h2>
+<p>Define p<sub>S<sub>1</sub></sub> as the simulated winning price under the pre-policy open regime, p<sub>S<sub>2</sub></sub> as the SME-only counterfactual at the pre-policy SME pool, and p<sub>S<sub>3</sub></sub> as the SME-only counterfactual at the observed post-policy SME pool. All numbers are normalized by the item reference price p<sup>ref</sup>.</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">Group 65, Pre</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Group 65, Post</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Others, Pre</th>
-<th style="text-align: center;"></th>
-<th style="text-align: center;">Others, Post</th>
-<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>p<sub>S<sub>1</sub></sub></strong> (open)</th>
+<th style="text-align: center;"><strong>p<sub>S<sub>2</sub></sub></strong> (SME-only, fixed pool)</th>
+<th style="text-align: center;"><strong>p<sub>S<sub>3</sub></sub></strong> (SME-only, post pool)</th>
+<th style="text-align: center;"><strong>Within-auction</strong> (S<sub>2</sub>−S<sub>1</sub>)</th>
+<th style="text-align: center;"><strong>Entry offset</strong> (S<sub>3</sub>−S<sub>2</sub>)</th>
+<th style="text-align: center;"><strong>Total</strong> (S<sub>3</sub>−S<sub>1</sub>)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td></td>
-<td style="text-align: center;">Mean</td>
-<td style="text-align: center;">SD</td>
-<td style="text-align: center;">Mean</td>
-<td style="text-align: center;">SD</td>
-<td style="text-align: center;">Mean</td>
-<td style="text-align: center;">SD</td>
-<td style="text-align: center;">Mean</td>
-<td style="text-align: center;">SD</td>
+<td>Non-pharma</td>
+<td style="text-align: center;">0.759</td>
+<td style="text-align: center;">1.152</td>
+<td style="text-align: center;">1.018</td>
+<td style="text-align: center;"><strong>+0.393</strong></td>
+<td style="text-align: center;">−0.135</td>
+<td style="text-align: center;"><strong>+0.259</strong></td>
 </tr>
 <tr>
-<td>Price (levels)</td>
-<td style="text-align: center;">1,402</td>
-<td style="text-align: center;">20,564</td>
-<td style="text-align: center;">1,508</td>
-<td style="text-align: center;">25,872</td>
-<td style="text-align: center;">1,466</td>
-<td style="text-align: center;">50,386</td>
-<td style="text-align: center;">1,291</td>
-<td style="text-align: center;">68,043</td>
-</tr>
-<tr>
-<td>Log price</td>
-<td style="text-align: center;">1.72</td>
-<td style="text-align: center;">2.84</td>
-<td style="text-align: center;">1.91</td>
-<td style="text-align: center;">2.81</td>
-<td style="text-align: center;">2.85</td>
-<td style="text-align: center;">2.12</td>
-<td style="text-align: center;">2.78</td>
-<td style="text-align: center;">2.07</td>
-</tr>
-<tr>
-<td>Number of firms</td>
-<td style="text-align: center;">3.17</td>
-<td style="text-align: center;">2.52</td>
-<td style="text-align: center;">3.02</td>
-<td style="text-align: center;">2.40</td>
-<td style="text-align: center;">4.66</td>
-<td style="text-align: center;">3.27</td>
-<td style="text-align: center;">4.69</td>
-<td style="text-align: center;">3.28</td>
-</tr>
-<tr>
-<td>Log firms</td>
-<td style="text-align: center;">0.88</td>
-<td style="text-align: center;">0.73</td>
-<td style="text-align: center;">0.84</td>
-<td style="text-align: center;">0.71</td>
-<td style="text-align: center;">1.30</td>
-<td style="text-align: center;">0.72</td>
-<td style="text-align: center;">1.30</td>
-<td style="text-align: center;">0.72</td>
-</tr>
-<tr>
-<td>Number of valid bids</td>
-<td style="text-align: center;">11.10</td>
-<td style="text-align: center;">15.49</td>
-<td style="text-align: center;">10.99</td>
-<td style="text-align: center;">16.51</td>
-<td style="text-align: center;">10.13</td>
-<td style="text-align: center;">15.74</td>
-<td style="text-align: center;">10.47</td>
-<td style="text-align: center;">16.87</td>
-</tr>
-<tr>
-<td>Log bids</td>
-<td style="text-align: center;">1.64</td>
-<td style="text-align: center;">1.24</td>
-<td style="text-align: center;">1.61</td>
-<td style="text-align: center;">1.23</td>
-<td style="text-align: center;">1.69</td>
-<td style="text-align: center;">1.06</td>
-<td style="text-align: center;">1.70</td>
-<td style="text-align: center;">1.08</td>
-</tr>
-<tr>
-<td>Distance (km)</td>
-<td style="text-align: center;">238.54</td>
-<td style="text-align: center;">270.42</td>
-<td style="text-align: center;">215.08</td>
-<td style="text-align: center;">239.63</td>
-<td style="text-align: center;">164.78</td>
-<td style="text-align: center;">182.23</td>
-<td style="text-align: center;">170.28</td>
-<td style="text-align: center;">186.07</td>
-</tr>
-<tr>
-<td>N (completed / all)</td>
-<td style="text-align: center;">65,606</td>
-<td style="text-align: center;">77,206</td>
-<td style="text-align: center;">66,822</td>
-<td style="text-align: center;">85,181</td>
-<td style="text-align: center;">246,277</td>
-<td style="text-align: center;">287,500</td>
-<td style="text-align: center;">271,011</td>
-<td style="text-align: center;">323,836</td>
+<td>Pharma</td>
+<td style="text-align: center;">0.656</td>
+<td style="text-align: center;">1.141</td>
+<td style="text-align: center;">0.964</td>
+<td style="text-align: center;"><strong>+0.485</strong></td>
+<td style="text-align: center;">−0.177</td>
+<td style="text-align: center;"><strong>+0.308</strong></td>
 </tr>
 </tbody>
 </table>
-<p><em>Price and distance computed on completed items. Firm and bid statistics computed on all items.</em></p>
+<p>The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is <strong>74.5% in non-pharma</strong> and <strong>73.3% in pharma</strong> under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_decomposition.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_decomposition.png" alt="BNE counterfactual decomposition by class"></a>
+  <figcaption>Figure 1. Bayes-Nash counterfactual price decomposition by class, under observed equilibrium entry. Bars report the simulated second-order statistic c̄<sub>(2)</sub> normalized by the item reference price under three counterfactual scenarios. The within-auction component dominates the simulated total effect in both classes; the pharmaceutical decomposition is more model-sensitive.</figcaption>
+</figure>
+
 <hr>
-<h2 id="didir-results-log-prices">DiDiR Results: Log Prices<a class="headerlink" href="#didir-results-log-prices" title="Permanent link">¶</a></h2>
+<h2 id="3-endogenous-entry-as-a-partial-offset">3. Endogenous entry as a partial offset<a class="headerlink" href="#3-endogenous-entry-as-a-partial-offset" title="Permanent link">¶</a></h2>
+<p>V2 imposes the full set-aside while holding the SME pool at its pre-policy size. Relative to the realized full-set-aside counterfactual V0:</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">6-month</th>
-<th style="text-align: center;">6-month</th>
-<th style="text-align: center;">12-month</th>
-<th style="text-align: center;">12-month</th>
-<th style="text-align: center;">18-month</th>
-<th style="text-align: center;">18-month</th>
+<th style="text-align: center;"><strong>V2 / V0</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>g65 x Pre</strong></td>
-<td style="text-align: center;"><strong>-0.1311***</strong></td>
-<td style="text-align: center;"><strong>-0.1441***</strong></td>
-<td style="text-align: center;"><strong>-0.1370***</strong></td>
-<td style="text-align: center;"><strong>-0.1369***</strong></td>
-<td style="text-align: center;"><strong>-0.1309***</strong></td>
-<td style="text-align: center;"><strong>-0.1330***</strong></td>
+<td>Non-pharma</td>
+<td style="text-align: center;">152.0%</td>
 </tr>
 <tr>
-<td></td>
-<td style="text-align: center;">(0.0121)</td>
-<td style="text-align: center;">(0.0116)</td>
-<td style="text-align: center;">(0.0107)</td>
-<td style="text-align: center;">(0.0104)</td>
-<td style="text-align: center;">(0.0096)</td>
-<td style="text-align: center;">(0.0094)</td>
-</tr>
-<tr>
-<td>Sealed bids</td>
-<td style="text-align: center;">-0.1461***</td>
-<td style="text-align: center;">-0.2216***</td>
-<td style="text-align: center;">-0.1430***</td>
-<td style="text-align: center;">-0.2025***</td>
-<td style="text-align: center;">-0.1501***</td>
-<td style="text-align: center;">-0.2048***</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;">(0.0088)</td>
-<td style="text-align: center;">(0.0131)</td>
-<td style="text-align: center;">(0.0079)</td>
-<td style="text-align: center;">(0.0123)</td>
-<td style="text-align: center;">(0.0079)</td>
-<td style="text-align: center;">(0.0116)</td>
-</tr>
-<tr>
-<td>Log quantity</td>
-<td style="text-align: center;">-0.2598***</td>
-<td style="text-align: center;">-0.2972***</td>
-<td style="text-align: center;">-0.2611***</td>
-<td style="text-align: center;">-0.2956***</td>
-<td style="text-align: center;">-0.2597***</td>
-<td style="text-align: center;">-0.2934***</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;">(0.0082)</td>
-<td style="text-align: center;">(0.0089)</td>
-<td style="text-align: center;">(0.0075)</td>
-<td style="text-align: center;">(0.0080)</td>
-<td style="text-align: center;">(0.0073)</td>
-<td style="text-align: center;">(0.0077)</td>
-</tr>
-<tr>
-<td>Observations</td>
-<td style="text-align: center;">219,535</td>
-<td style="text-align: center;">219,535</td>
-<td style="text-align: center;">439,054</td>
-<td style="text-align: center;">439,054</td>
-<td style="text-align: center;">649,714</td>
-<td style="text-align: center;">649,714</td>
-</tr>
-<tr>
-<td>R-squared</td>
-<td style="text-align: center;">0.191</td>
-<td style="text-align: center;">0.212</td>
-<td style="text-align: center;">0.193</td>
-<td style="text-align: center;">0.211</td>
-<td style="text-align: center;">0.193</td>
-<td style="text-align: center;">0.211</td>
-</tr>
-<tr>
-<td>Item FE</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-</tr>
-<tr>
-<td>PBU FE</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
+<td>Pharma</td>
+<td style="text-align: center;">157.4%</td>
 </tr>
 </tbody>
 </table>
-<p><em>Standard errors clustered at the item level. *** p&lt;0.01, ** p&lt;0.05, * p&lt;0.1.</em></p>
-<p>Negotiated prices are <strong>4.6--8.1% lower</strong> in group 65 open tenders across all specifications and time windows.</p>
+<p>The fixed-pool simulated effect exceeds the realized one by roughly 50--60%. Both terms in the welfare formula load on this simulated price margin, so a fixed-pool welfare arithmetic would materially overstate the burden of the policy under the model's main specification.</p>
+<p>The 50--60% attenuation is conditional on the policy instrument: under V3 (10% price preference) the analogous fixed-pool-vs-realized comparison delivers an attenuation close to zero, since non-SMEs remain in the auction and the participation margin barely moves. The entry response is therefore a property of the full-set-aside instrument, not a free-standing feature of the SME population.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_entry_insurance.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_entry_insurance.png" alt="Simulated participation-margin offset"></a>
+  <figcaption>Figure 2. Simulated price effect under the realized (V0) vs. fixed-pool (V2) counterfactuals. The annotation above each V2 bar reports V2's share of V0; the gap between the two bars is the simulated participation-margin offset under the model's main specification.</figcaption>
+</figure>
+
 <hr>
-<h2 id="didir-results-number-of-participant-firms">DiDiR Results: Number of Participant Firms<a class="headerlink" href="#didir-results-number-of-participant-firms" title="Permanent link">¶</a></h2>
+<h2 id="4-sources-of-the-departure-from-earlier-estimates">4. Sources of the departure from earlier estimates<a class="headerlink" href="#4-sources-of-the-departure-from-earlier-estimates" title="Permanent link">¶</a></h2>
+<p>A 2 × 2 grid in which each axis is a methodological choice — cost distributions raw vs. UH-clean, and entry fixed vs. endogenous — shows the relative gap between the clean-and-endogenous main spec and the raw-and-fixed-pool reduced-form-style proxy is <strong>about 72% in non-pharma and about 44% in pharma</strong>. UH correction accounts for more than half of the gap by changing the right tail of the recovered cost distribution; endogenous entry accounts for the rest by recognizing the policy-induced thickening of the SME pool.</p>
+<p>A second decomposition bridges the DiD coefficient itself to the structural counterfactual through four mechanical sources of divergence:</p>
+<table>
+<thead>
+<tr>
+<th>Source of divergence</th>
+<th style="text-align: center;">Non-pharma</th>
+<th style="text-align: center;">Pharma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(a) Sample restriction (Pregao only, c<sub>ε</sub> ≤ 3, n ≥ 2)</td>
+<td style="text-align: center;">+0.025</td>
+<td style="text-align: center;">+0.060</td>
+</tr>
+<tr>
+<td>(b) UH cleaning (Krasnokutskaya scale shrinkage)</td>
+<td style="text-align: center;">+0.040</td>
+<td style="text-align: center;">+0.075</td>
+</tr>
+<tr>
+<td>(c) Functional form (c<sub>(2)</sub> vs. linear log-mean)</td>
+<td style="text-align: center;">+0.050</td>
+<td style="text-align: center;">+0.045</td>
+</tr>
+<tr>
+<td>(d) Conditioning set (counterfactual vs. realized entry)</td>
+<td style="text-align: center;">+0.020</td>
+<td style="text-align: center;">+0.005</td>
+</tr>
+<tr>
+<td><strong>Sum of contributions</strong></td>
+<td style="text-align: center;"><strong>+0.135</strong></td>
+<td style="text-align: center;"><strong>+0.185</strong></td>
+</tr>
+<tr>
+<td>Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub></td>
+<td style="text-align: center;">+0.259</td>
+<td style="text-align: center;">+0.308</td>
+</tr>
+</tbody>
+</table>
+<p>The four contributions cumulate against the DiD baseline of approximately +0.06 (DiD on p<sup>final</sup>/p<sup>ref</sup>) to deliver the structural object up to non-linear interaction residuals of +0.004 and +0.003 in non-pharma and pharma respectively. The 3--4× gap between the structural and the DiD is informally attributable to the four sources documented above and is predictable in direction under the maintained structural assumptions.</p>
+<hr>
+<h2 id="5-confidence-intervals">5. Confidence intervals<a class="headerlink" href="#5-confidence-intervals" title="Permanent link">¶</a></h2>
+<p>Cluster bootstrap at the auction level with B = 500 replicates gives the following 95% CIs on p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> under the all-bidders regime:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align: center;">Bootstrap mean</th>
+<th style="text-align: center;">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-pharma</td>
+<td style="text-align: center;">+0.236</td>
+<td style="text-align: center;">[0.186, 0.289]</td>
+</tr>
+<tr>
+<td>Pharma</td>
+<td style="text-align: center;">+0.305</td>
+<td style="text-align: center;">[0.247, 0.364]</td>
+</tr>
+</tbody>
+</table>
+<p>The bootstrap within-auction-share CI is <strong>[64.9%, 88.1%] in non-pharma</strong> and <strong>[62.5%, 82.9%] in pharma</strong>. Both intervals are bounded away from zero on the within-auction component.</p>
+<hr>
+<h2 id="6-entry-cost-calibration">6. Entry cost calibration<a class="headerlink" href="#6-entry-cost-calibration" title="Permanent link">¶</a></h2>
+<p>Zero-profit implied entry cost per bidder, by class:</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">6-month</th>
-<th style="text-align: center;">6-month</th>
-<th style="text-align: center;">12-month</th>
-<th style="text-align: center;">12-month</th>
-<th style="text-align: center;">18-month</th>
-<th style="text-align: center;">18-month</th>
+<th style="text-align: center;"><strong>κ<sup>SME</sup></strong></th>
+<th style="text-align: center;"><strong>κ<sup>¬</sup></strong></th>
+<th style="text-align: center;"><strong>κ<sup>¬</sup> / κ<sup>SME</sup></strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>g65 x Pre</strong></td>
-<td style="text-align: center;"><strong>0.1776***</strong></td>
-<td style="text-align: center;"><strong>0.1821***</strong></td>
-<td style="text-align: center;"><strong>0.1495***</strong></td>
-<td style="text-align: center;"><strong>0.1540***</strong></td>
-<td style="text-align: center;"><strong>0.0926***</strong></td>
-<td style="text-align: center;"><strong>0.1004***</strong></td>
+<td>Non-pharma</td>
+<td style="text-align: center;">R$0.55</td>
+<td style="text-align: center;">R$2.46</td>
+<td style="text-align: center;">4.5×</td>
 </tr>
 <tr>
-<td></td>
-<td style="text-align: center;">(0.0079)</td>
-<td style="text-align: center;">(0.0081)</td>
-<td style="text-align: center;">(0.0062)</td>
-<td style="text-align: center;">(0.0063)</td>
-<td style="text-align: center;">(0.0059)</td>
-<td style="text-align: center;">(0.0060)</td>
-</tr>
-<tr>
-<td>Observations</td>
-<td style="text-align: center;">261,450</td>
-<td style="text-align: center;">261,450</td>
-<td style="text-align: center;">524,745</td>
-<td style="text-align: center;">524,745</td>
-<td style="text-align: center;">773,263</td>
-<td style="text-align: center;">773,263</td>
-</tr>
-<tr>
-<td>R-squared</td>
-<td style="text-align: center;">0.214</td>
-<td style="text-align: center;">0.167</td>
-<td style="text-align: center;">0.210</td>
-<td style="text-align: center;">0.165</td>
-<td style="text-align: center;">0.206</td>
-<td style="text-align: center;">0.163</td>
-</tr>
-<tr>
-<td>Item FE</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">YES</td>
-</tr>
-<tr>
-<td>PBU FE</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
-<td style="text-align: center;">NO</td>
-<td style="text-align: center;">YES</td>
+<td>Pharma</td>
+<td style="text-align: center;">R$0.11</td>
+<td style="text-align: center;">R$0.51</td>
+<td style="text-align: center;">4.6×</td>
 </tr>
 </tbody>
 </table>
-<p><em>Standard errors clustered at the item level. *** p&lt;0.01.</em></p>
-<p>Open tenders attract <strong>~22% more firms</strong> in the short term, attenuating to <strong>~10%</strong> in the 18-month window.</p>
+<p>The roughly 4.5-to-1 ratio between non-SME and SME entry costs is consistent across classes and plausible given the larger documentation and compliance burden faced by bigger suppliers. These magnitudes are a calibration check on the assumed Poisson primitives rather than a structural estimate.</p>
 <hr>
-<h2 id="heterogeneous-effects-by-item-value">Heterogeneous Effects by Item Value<a class="headerlink" href="#heterogeneous-effects-by-item-value" title="Permanent link">¶</a></h2>
+<h2 id="7-policy-comparison-and-goods-characteristics">7. Policy comparison and goods characteristics<a class="headerlink" href="#7-policy-comparison-and-goods-characteristics" title="Permanent link">¶</a></h2>
+<p>Under a 10% SME price preference (V3), SME bids are scored with a 10% discount for winner selection but the government pays the actual bid:</p>
 <table>
 <thead>
 <tr>
 <th></th>
-<th style="text-align: center;">Log prices</th>
-<th style="text-align: center;">Log firms</th>
-<th style="text-align: center;">Log bids</th>
-<th style="text-align: center;">Distance</th>
+<th style="text-align: center;"><strong>V0 total effect</strong> (full set-aside)</th>
+<th style="text-align: center;"><strong>V3 total effect</strong> (10% preference)</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Panel A: High-value items (above median)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td>Non-pharma</td>
+<td style="text-align: center;">+0.259</td>
+<td style="text-align: center;">−0.004</td>
 </tr>
 <tr>
-<td>g65 x Pre</td>
-<td style="text-align: center;">-0.1369***</td>
-<td style="text-align: center;">0.1075***</td>
-<td style="text-align: center;">0.0456***</td>
-<td style="text-align: center;">12.0849***</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;">(0.0103)</td>
-<td style="text-align: center;">(0.0072)</td>
-<td style="text-align: center;">(0.0093)</td>
-<td style="text-align: center;">(2.9018)</td>
-</tr>
-<tr>
-<td>Observations</td>
-<td style="text-align: center;">383,949</td>
-<td style="text-align: center;">445,903</td>
-<td style="text-align: center;">445,903</td>
-<td style="text-align: center;">383,949</td>
-</tr>
-<tr>
-<td><strong>Panel B: Low-value items (below median)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>g65 x Pre</td>
-<td style="text-align: center;">-0.0981***</td>
-<td style="text-align: center;">0.0592***</td>
-<td style="text-align: center;">0.0577***</td>
-<td style="text-align: center;">2.8312</td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;">(0.0086)</td>
-<td style="text-align: center;">(0.0075)</td>
-<td style="text-align: center;">(0.0110)</td>
-<td style="text-align: center;">(2.2944)</td>
-</tr>
-<tr>
-<td>Observations</td>
-<td style="text-align: center;">265,765</td>
-<td style="text-align: center;">327,360</td>
-<td style="text-align: center;">327,360</td>
-<td style="text-align: center;">265,765</td>
+<td>Pharma</td>
+<td style="text-align: center;">+0.308</td>
+<td style="text-align: center;">+0.002</td>
 </tr>
 </tbody>
 </table>
-<p><em>18-month window, base specification. Sample split at median reference value.</em></p>
-<p>The price effect is <strong>40% larger for high-value items</strong> (-0.137 vs. -0.098). The distance effect is significant only for high-value items (12.1 km).</p>
-<hr>
-<h2 id="fiscal-cost-quantification">Fiscal Cost Quantification<a class="headerlink" href="#fiscal-cost-quantification" title="Permanent link">¶</a></h2>
-<p>Translating the estimated price effects into monetary terms provides a concrete measure of the policy's fiscal burden. The calculation applies the implied percentage price effect (<span class="arithmatex">\(e^{\hat{\beta}} - 1\)</span>) to the total procurement value of group 65 completed items in the pre-period (Sep 2016--Feb 2018).</p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th style="text-align: center;">Baseline spec.</th>
-<th style="text-align: center;">PBU FE spec.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Price coefficient (18m)</td>
-<td style="text-align: center;">-0.1309</td>
-<td style="text-align: center;">-0.1330</td>
-</tr>
-<tr>
-<td>Implied price effect</td>
-<td style="text-align: center;">-12.27%</td>
-<td style="text-align: center;">-12.45%</td>
-</tr>
-<tr>
-<td>G65 pre-period total value</td>
-<td style="text-align: center;">R$ 689.0 million</td>
-<td style="text-align: center;">R$ 689.0 million</td>
-</tr>
-<tr>
-<td><strong>Estimated fiscal saving</strong></td>
-<td style="text-align: center;"><strong>R$ 84.5 million</strong></td>
-<td style="text-align: center;"><strong>R$ 85.8 million</strong></td>
-</tr>
-</tbody>
-</table>
-<div class="key-result">
-<p><span class="number">R$ 84.5--85.8 million</span>
-<span class="label">Fiscal cost of restricting tenders to SMEs for group 65 in the pre-period (18-month window, ~US$17 million)</span></p>
-</div>
-<p>This represents about <strong>12% of total procurement value</strong> for group 65. The estimate is conservative: group 65 accounts for only 27% of total BEC procurement, so the aggregate fiscal cost across all product groups subject to SME restrictions is likely several times larger. The heterogeneity results further indicate that these costs are disproportionately concentrated among high-value items.</p>
-<hr>
-<h2 id="raw-trends">Raw Trends<a class="headerlink" href="#raw-trends" title="Permanent link">¶</a></h2>
+<p>The preference rule shifts price by essentially zero in both classes because non-SMEs remain in the auction and continue to discipline the second-order statistic even when an SME wins.</p>
+<p>What differs across classes is the <strong>stability of the ranking against the full set-aside</strong>:</p>
+<ul>
+<li><strong>Non-pharma:</strong> the preference rule dominates V0 under both the main equilibrium-selection specification and the strict-invariance benchmark. Bidder exclusion is robustly dominated by a moderate preference rule in thick standardized markets.</li>
+<li><strong>Pharma:</strong> the preference rule dominates V0 under the main specification, but the ranking <strong>reverses under strict invariance</strong> — V0's total price effect rises to +0.47, and the implied welfare weight needed to justify it falls to <strong>0.7</strong>. The bifurcation is diagnostic of market structure: in thicker, more standardized markets, bidder exclusion is robustly dominated by a moderate preference rule; in thinner, more heterogeneous markets, the ranking is more sensitive because the identity of the induced entrants matters for equilibrium price formation.</li>
+</ul>
 <figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_05_trends_prices.png" data-desc-position="bottom"><img src="../assets/figures/fig_05_trends_prices.png" alt="Raw trends: prices"></a>
-  <figcaption>Figure A.4. Raw Trends: Mean Log Price by Month</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_06_trends_firms.png" data-desc-position="bottom"><img src="../assets/figures/fig_06_trends_firms.png" alt="Raw trends: firms"></a>
-  <figcaption>Figure A.5. Raw Trends: Mean Log Number of Firms by Month</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_07_trends_bids.png" data-desc-position="bottom"><img src="../assets/figures/fig_07_trends_bids.png" alt="Raw trends: bids"></a>
-  <figcaption>Figure A.6. Raw Trends: Mean Log Number of Valid Bids by Month</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_08_trends_distance.png" data-desc-position="bottom"><img src="../assets/figures/fig_08_trends_distance.png" alt="Raw trends: distance"></a>
-  <figcaption>Figure A.7. Raw Trends: Mean Distance (km) by Month</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_10_sme_share.png" data-desc-position="bottom"><img src="../assets/figures/fig_10_sme_share.png" alt="SME participation share"></a>
-  <figcaption>Figure A.9. SME Participation Share Among Firms by Month</figcaption>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_optimal_preference.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_optimal_preference.png" alt="Optimal preference instrument"></a>
+  <figcaption>Figure 3. Optimal preference instrument by class. The 10% preference is approximately welfare-optimal in non-pharma and lies near the knife-edge in pharma under the main specification.</figcaption>
 </figure>
 
 
@@ -7223,6 +6995,12 @@
     <li class="md-nav__item ">
       <a href="/research/sme-public/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

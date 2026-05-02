@@ -6730,7 +6730,7 @@
 
 
 <h1 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">¶</a></h1>
-<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
+<h2 id="software-requirements">Software requirements<a class="headerlink" href="#software-requirements" title="Permanent link">¶</a></h2>
 <table>
 <thead>
 <tr>
@@ -6756,6 +6756,10 @@
 <td>14+</td>
 </tr>
 <tr>
+<td><code>duckdb</code></td>
+<td>0.10+</td>
+</tr>
+<tr>
 <td><code>ggplot2</code></td>
 <td>3.5+</td>
 </tr>
@@ -6764,133 +6768,173 @@
 <td>1.3+</td>
 </tr>
 <tr>
-<td><code>grf</code></td>
-<td>2.3+</td>
+<td><code>Rcpp</code> / <code>RcppArmadillo</code></td>
+<td>(BNE Monte Carlo)</td>
 </tr>
 <tr>
-<td><code>quantreg</code></td>
-<td>5.98+</td>
+<td><code>interval</code></td>
+<td>(Turnbull NPMLE)</td>
 </tr>
 <tr>
-<td><code>gridExtra</code></td>
-<td>2.3+</td>
+<td><code>boot</code></td>
+<td>(cluster bootstrap)</td>
+</tr>
+<tr>
+<td><code>kdensity</code> / <code>np</code></td>
+<td>(GPV kernel inversion)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="data">Data<a class="headerlink" href="#data" title="Permanent link">¶</a></h2>
-<p>The primary dataset is administrative data from BEC (Bolsa Eletronica de Compras), the electronic procurement platform for the state of Sao Paulo. The data contains 373 columns covering all standardized goods procurement from January 2016 to December 2019.</p>
+<p>The structural sample is derived from the BEC (Bolsa Eletronica de Compras) administrative microdata, accessed through a research agreement with the Secretaria da Fazenda e Planejamento do Estado de Sao Paulo (Sefaz-SP). The raw extract is <strong>not publicly redistributable</strong> under the access agreement.</p>
+<table>
+<thead>
+<tr>
+<th>Sample</th>
+<th>Window</th>
+<th>Auctions</th>
+<th>Bids</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full DiD sample</td>
+<td>Jan 2016 -- Dec 2019</td>
+<td>832,984</td>
+<td>~3.7M</td>
+</tr>
+<tr>
+<td>Structural sample (Pregao, Group 65)</td>
+<td>Sep 2016 -- Aug 2019</td>
+<td>97,993</td>
+<td>297,967</td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">Data access</p>
-<p>The raw data files are not publicly available due to confidentiality agreements. Researchers interested in replication should contact the authors directly.</p>
+<p>The raw extract is not publicly redistributable. Researchers interested in replication should contact the author. Aggregated cell-level data, the structural-sample auction-level cleaned residuals, and replication code in R are available on request and at the project replication repository (URL on acceptance).</p>
 </div>
 <h2 id="pipeline">Pipeline<a class="headerlink" href="#pipeline" title="Permanent link">¶</a></h2>
-<p>The full analysis pipeline runs from a single master script:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># From the project root directory</span>
-Rscript<span class="w"> </span>scripts/00_master.R
+<p>The full v5 structural analysis runs from a single master script:</p>
+<div class="highlight"><pre><span></span><code>Rscript<span class="w"> </span>scripts/00_master.R
 </code></pre></div>
-<p>This executes the following scripts in sequence, each as a separate R subprocess:</p>
+<p>Sequence of subprocesses:</p>
 <table>
 <thead>
 <tr>
 <th>Script</th>
 <th>Purpose</th>
-<th>Duration</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>01_clean.R</code></td>
-<td>CSV to parquet conversion, variable creation</td>
-<td>~5 min (first run)</td>
+<td>CSV → parquet conversion, variable creation, sample filters</td>
 </tr>
 <tr>
-<td><code>02_analysis.R</code></td>
-<td>24 DiDiR regressions + 4 event studies</td>
-<td>~30 sec</td>
+<td><code>02_did.R</code></td>
+<td>Reduced-form DiD against 76 never-treated product groups (Appendix B)</td>
 </tr>
 <tr>
-<td><code>05_robustness.R</code></td>
-<td>Placebo, alt. clustering, winsorization, permutation</td>
-<td>~45 sec</td>
+<td><code>10_uh_decomposition.R</code></td>
+<td>Method-of-moments σ<sub>a</sub><sup>2</sup>/σ<sub>e</sub><sup>2</sup> + Krasnokutskaya shrinkage</td>
 </tr>
 <tr>
-<td><code>06_extensions.R</code></td>
-<td>Real prices, extensive margin, efficiency, heterogeneity</td>
-<td>~30 sec</td>
+<td><code>11_fc_estimation.R</code></td>
+<td>Type-specific F<sub>c</sub><sup>k</sup> via all-bidders ECDF + Turnbull NPMLE</td>
 </tr>
 <tr>
-<td><code>07_advanced.R</code></td>
-<td>HonestDiD, Lee bounds, causal forest, quantile DiD, Gelbach</td>
-<td>~3 min</td>
+<td><code>12_gpv_convite.R</code></td>
+<td>Cross-modality GPV inversion on Convite first-price sealed-bid auctions</td>
+</tr>
+<tr>
+<td><code>13_entry_rates.R</code></td>
+<td>Stratum-specific Poisson arrival rate calibration</td>
+</tr>
+<tr>
+<td><code>14_bne_simulation.R</code></td>
+<td>Bayes-Nash counterfactual Monte Carlo (B = 2,000) over scenarios S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, V0--V3</td>
+</tr>
+<tr>
+<td><code>15_bootstrap.R</code></td>
+<td>Cluster bootstrap at the auction level (B<sub>bs</sub> = 500)</td>
+</tr>
+<tr>
+<td><code>16_welfare.R</code></td>
+<td>DWL<sub>alloc</sub> + MCPF arithmetic, λ-grid, Saez--Stantcheva weights</td>
+</tr>
+<tr>
+<td><code>17_robustness.R</code></td>
+<td>Strict invariance, F<sub>c</sub> regime, kernel bandwidth, sample filter, window</td>
 </tr>
 <tr>
 <td><code>03_tables.R</code></td>
-<td>18 LaTeX tables</td>
-<td>~5 sec</td>
+<td>LaTeX tables (threeparttable + booktabs)</td>
 </tr>
 <tr>
 <td><code>04_figures.R</code></td>
-<td>15 PDF figures</td>
-<td>~10 sec</td>
+<td>PDF figures (grayscale, cairo)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="output-structure">Output Structure<a class="headerlink" href="#output-structure" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code>output/
-├── tables/           # 18 .tex files (threeparttable + booktabs)
-│   ├── tab_desc_stats.tex
-│   ├── tab_prices.tex
-│   ├── tab_participants.tex
-│   ├── tab_validbids.tex
-│   ├── tab_distance.tex
-│   ├── tab_placebo.tex
-│   ├── tab_altcluster.tex
-│   ├── tab_winsorize.tex
-│   ├── tab_prices_real.tex
-│   ├── tab_extensive.tex
-│   ├── tab_efficiency.tex
-│   ├── tab_sme_winner.tex
-│   ├── tab_heterog_pbu.tex
-│   ├── tab_heterog_value.tex
-│   ├── tab_lee_bounds.tex
-│   ├── tab_cforest.tex
-│   ├── tab_quantile_did.tex
-│   └── tab_mediation.tex
-└── figures/          # 15 .pdf files (grayscale, cairo)
-    ├── fig_01_logprices_es.pdf
-    ├── fig_02_distance_es.pdf
-    ├── fig_03_numfirms_es.pdf
-    ├── fig_04_numbids_es.pdf
-    ├── fig_05_trends_prices.pdf
-    ├── fig_06_trends_firms.pdf
-    ├── fig_07_trends_bids.pdf
-    ├── fig_08_trends_distance.pdf
-    ├── fig_09_permutation.pdf
-    ├── fig_10_sme_share.pdf
-    ├── fig_11_honestdid.pdf
-    ├── fig_12_cforest_varimp.pdf
-    ├── fig_13_cforest_gate.pdf
-    ├── fig_14_quantile_did.pdf
-    └── fig_15_mediation.pdf
+<h2 id="output-structure">Output structure<a class="headerlink" href="#output-structure" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>v5-jpube/output/
+├── tables/             # threeparttable + booktabs
+│   ├── tab_v3_bne_decomp.tex
+│   ├── tab_v3_apv.tex
+│   ├── tab_v3_strict_invariance.tex
+│   ├── tab_v3_sensitivity_fc.tex
+│   ├── tab_v3_decomp_grid.tex
+│   ├── tab_did_structural_bridge.tex
+│   ├── tab_v3_bootstrap_ci.tex
+│   ├── tab_v3_entry_cost.tex
+│   ├── tab_v3_welfare.tex
+│   ├── tab_v3_welfare_ci.tex
+│   ├── tab_welfare_ranking_lambda.tex
+│   ├── tab_v3_window_sensitivity.tex
+│   ├── tab_v3_filter_sensitivity.tex
+│   ├── tab_v3_bandwidth_grid.tex
+│   ├── tab_v3_pregao_fc_summary.tex
+│   ├── tab_v3_turnbull_fc.tex
+│   ├── tab_v3_uh_variance.tex
+│   ├── tab_v3_primitive_invariance.tex
+│   ├── tab_v3_uh_invariance.tex
+│   ├── tab_v3_cross_modality.tex
+│   └── tab_preview.tex
+└── figures/            # cairo_pdf, grayscale
+    ├── fig_v3_decomposition.pdf
+    ├── fig_v3_entry_insurance.pdf
+    ├── fig_v3_welfare_forest.pdf
+    ├── fig_v3_welfare_weight.pdf
+    ├── fig_v3_cross_modality_uh.pdf
+    ├── fig_v3_bne_prices.pdf
+    ├── fig_v3_pregao_fc_by_stratum.pdf
+    ├── fig_v3_pregao_ht_bands.pdf
+    ├── fig_v3_optimal_preference.pdf
+    ├── fig_v3_gelbach_waterfall.pdf
+    └── fig_eventstudy_prices.pdf
 </code></pre></div>
-<h2 id="manuscript-compilation">Manuscript Compilation<a class="headerlink" href="#manuscript-compilation" title="Permanent link">¶</a></h2>
-<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>manuscript
-pdflatex<span class="w"> </span>main.tex
-bibtex<span class="w"> </span>main
-pdflatex<span class="w"> </span>main.tex
-pdflatex<span class="w"> </span>main.tex
+<h2 id="manuscript-compilation">Manuscript compilation<a class="headerlink" href="#manuscript-compilation" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>v5-jpube/manuscript
+pdflatex<span class="w"> </span>paper_v5.tex
+bibtex<span class="w"> </span>paper_v5
+pdflatex<span class="w"> </span>paper_v5.tex
+pdflatex<span class="w"> </span>paper_v5.tex
+<span class="c1"># online appendix</span>
+pdflatex<span class="w"> </span>online_appendix.tex
+bibtex<span class="w"> </span>online_appendix
+pdflatex<span class="w"> </span>online_appendix.tex
+pdflatex<span class="w"> </span>online_appendix.tex
 </code></pre></div>
-<h2 id="technical-notes">Technical Notes<a class="headerlink" href="#technical-notes" title="Permanent link">¶</a></h2>
+<p>The manuscript uses the <code>elsarticle</code> document class and follows JPubE submission formatting.</p>
+<h2 id="technical-notes">Technical notes<a class="headerlink" href="#technical-notes" title="Permanent link">¶</a></h2>
 <ul>
-<li>
-<p><strong>Memory management:</strong> Each pipeline script runs as a separate R subprocess to prevent OOM on systems with 15 GB RAM. The <code>fixest</code> lean estimation mode (<code>setFixest_estimation(lean = TRUE)</code>) reduces model storage from ~4 GB to ~2.5 MB.</p>
-</li>
-<li>
-<p><strong>Parquet cache:</strong> The first run reads the 6.4 GB CSV file and creates a parquet cache (~73 columns). Subsequent runs load directly from parquet (~5 seconds vs. ~5 minutes).</p>
-</li>
-<li>
-<p><strong>Thread configuration:</strong> Both <code>fixest</code> and <code>data.table</code> use 16 threads by default. Adjust in <code>scripts/utils.R</code> if running on a machine with fewer cores.</p>
-</li>
+<li><strong>Memory management.</strong> Pipeline scripts run as separate R subprocesses to prevent OOM on systems with 16 GB RAM. The Krasnokutskaya shrinkage step holds the full bid-level table only briefly; intermediate state is cached as <code>.rds</code> at <code>/tmp/p2_v3_*.rds</code>.</li>
+<li><strong>Parquet cache.</strong> First run reads the 6.4 GB CSV file and creates a parquet cache (~73 columns of the original 373). Subsequent runs load from parquet (~5 seconds vs. ~5 minutes).</li>
+<li><strong>DuckDB for parquet workflows.</strong> Read/filter/join/aggregate operations on the parquet cache use DuckDB with <code>PRAGMA threads=12; PRAGMA memory_limit='14GB'</code>. Polars/pandas only as hand-off to model fitting.</li>
+<li><strong>BNE Monte Carlo.</strong> B = 2,000 simulated auctions per (class × scenario) cell. The cluster bootstrap (B<sub>bs</sub> = 500) is the dominant compute cost; runs in ~15 minutes on a 12-thread machine.</li>
+<li><strong>Thread configuration.</strong> Both <code>fixest</code> and <code>data.table</code> use 12 threads by default (deferring 2 threads for the OS / IDE). Adjust in <code>scripts/00_setup.R</code> if running on a machine with fewer cores.</li>
 </ul>
 
 
@@ -6923,6 +6967,12 @@ pdflatex<span class="w"> </span>main.tex
     <li class="md-nav__item ">
       <a href="/research/sme-public/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

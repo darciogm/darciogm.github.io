@@ -1,0 +1,1070 @@
+---
+title: "Slutsky e Elasticidades"
+subtitle: "Aula 3 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-05-06"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 06/05/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Slutsky e Elasticidades {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 3 — Teoria do Consumidor III**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+06 de maio de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 2 fechou a dualidade. Hoje a dualidade *trabalha*: decompõe efeito-preço, calcula elasticidades, mede bem-estar.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Decompor $\partial x_i^M / \partial p_j$ em **substituição** + **renda** (Slutsky), reconhecer Giffen, ler a álgebra das elasticidades e calcular **CV/EV**.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE cap. 4 com papel e caneta.
+- N&S 12e Cap 5 visitado.
+- 9 seções da plataforma + quiz pré-aula 10🟡.
+:::
+
+::: {.fragment}
+[Sair sem entender por que $\partial h_i/\partial p_j$ é o núcleo de Slutsky = Aula 4 lerá Pareto como hieróglifo.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura + reflexões + recall | 19:30–19:35 |
+| 1 | Slutsky: derivação e intuição | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Normais, inferiores, Giffen | 20:25–21:00 |
+| 3 | Elasticidades + restrições | 21:00–21:40 |
+| — | *Pausa* | 21:40–21:50 |
+| 4 | Bem-estar: CV, EV, excedente | 21:50–22:25 |
+| 5 | Síntese + ponte Aula 4 | 22:25–22:30 |
+
+::: {.bridge}
+3h cheias, duas pausas. Bloco 1 é onde a álgebra trava — defendo o tempo.
+:::
+
+---
+
+## Reflexões da pré-aula 3
+
+::: {.compact-table}
+| Top-3 do dashboard | Onde a aula responde |
+|:---|:---|
+| Sinal de $-x_j (\partial x_i/\partial m)$ | Bloco 1 — derivação completa |
+| Hicksiana cruzada $\neq 0$ vs. Marshalliana cruzada $= 0$ em CD | Bloco 1 + Box CD |
+| "Giffen real existe?" | Box Mundo (arroz Hunan) |
+:::
+
+::: {.bridge}
+Pontos de pico viram exemplos guiados. Quem registrou dúvida específica, a aula responde.
+:::
+
+---
+
+## Recall da Aula 2 (1/2)
+
+::: {.eq-key}
+$$
+\begin{aligned}
+x_i^M(p, m) &= h_i\big(p, v(p, m)\big), \\
+h_i(p, \bar u) &= \partial e/\partial p_i.
+\end{aligned}
+$$
+:::
+
+**Identidade calibrada + Shephard.** Os dois lados são o mesmo ponto físico.
+
+::: {.bridge}
+Próximo: Roy fecha o trio, e a dualidade está pronta para virar Slutsky.
+:::
+
+---
+
+## Recall da Aula 2 (2/2)
+
+::: {.eq-key}
+$$
+x_i^M = -\frac{\partial v/\partial p_i}{\partial v/\partial m}. \quad \text{(Roy)}
+$$
+:::
+
+::: {.eq-punch}
+A dualidade da Aula 2 *é* a álgebra que decompõe Slutsky.
+:::
+
+::: {.bridge}
+Próximo passo: derivar a identidade calibrada em $p_j$ — Slutsky em duas linhas.
+:::
+
+---
+
+## Bloco 1 — Slutsky: derivação e intuição {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Identidade calibrada · derivação · sinais · Cobb-Douglas como sanidade.
+:::
+
+---
+
+## A pergunta-motor
+
+::: {.eq-punch}
+Marshalliana e Hicksiana têm a *mesma tangência*. Por que respondem diferente a $\Delta p_j$?
+:::
+
+**Em uma frase:** Hicksiana fixa $\bar u$; Marshalliana deixa o poder de compra real escorrer. A diferença é o **efeito-renda**.
+
+::: {.bridge}
+Próximo: traduzir essa intuição em álgebra. Ponto de partida — identidade calibrada.
+:::
+
+---
+
+## Derivação de Slutsky (1/4) — partida
+
+::: {.eq-key}
+$$
+x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
+$$
+:::
+
+**Idéia:** os dois lados são o mesmo ponto físico. Diferenciar em $p_j$ dá a *mesma* derivada — escrita de duas formas.
+
+::: {.bridge}
+Próximo: aplicar $\partial/\partial p_j$ no lado direito, regra da cadeia em $\bar u = v(p, m)$.
+:::
+
+---
+
+## Derivação de Slutsky (2/4) — regra da cadeia
+
+**Derivar $(*)$ em $p_j$, com $\bar u = v(p, m)$:**
+
+$$
+\frac{\partial x_i^M}{\partial p_j}
+\;=\;
+\frac{\partial h_i}{\partial p_j}\bigg|_{\bar u = v}
++\;
+\frac{\partial h_i}{\partial \bar u}\cdot \frac{\partial v}{\partial p_j}.
+$$
+
+::: {.bridge}
+Próximo: Roy + identidade dual fecham os termos restantes — os $\lambda^*$ cancelam.
+:::
+
+---
+
+## Derivação de Slutsky (3/4) — Roy + dual
+
+**Roy:** $\partial v/\partial p_j = -\lambda^* x_j^M$.
+
+**Dual** $h_i = x_i^M(p, e(p, \bar u))$, derivada em $\bar u$:
+
+$$
+\frac{\partial h_i}{\partial \bar u}
+= \frac{\partial x_i^M}{\partial m}\cdot \frac{\partial e}{\partial \bar u}
+= \frac{1}{\lambda^*}\cdot \frac{\partial x_i^M}{\partial m}.
+$$
+
+::: {.bridge}
+Substituir os dois na cadeia da etapa 2: os $\lambda^*$ cancelam — punch a seguir.
+:::
+
+---
+
+## Derivação de Slutsky (4/4) — punch
+
+::: {.eq-key}
+$$
+\boxed{\;
+\frac{\partial x_i^M}{\partial p_j}
+\;=\;
+\underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}}
+\;-\;
+\underbrace{x_j^M\cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+\;}
+$$
+:::
+
+::: {.eq-punch}
+Substituição vem de Shephard. Renda vem de Engel. Slutsky soma os dois.
+:::
+
+---
+
+## Ler os sinais
+
+::: {.compact-table}
+| Termo | Sinal | Origem |
+|:---|:---:|:---|
+| $\partial h_i/\partial p_i$ | $\leq 0$ | concavidade de $e$ |
+| $\partial h_i/\partial p_j$ ($j\neq i$) | $\gtrless 0$ | substitutos/complementos líquidos |
+| $\partial x_i^M/\partial m$ | $\gtrless 0$ | normais ($>0$) / inferiores ($<0$) |
+| $-x_j^M\cdot \partial x_i^M/\partial m$ | depende | sinal contrário ao da renda |
+:::
+
+::: {.bridge}
+Lei da demanda compensada é **teorema**. Lei da Marshalliana é **tendência** — quebra quando renda morde mais que substituição.
+:::
+
+---
+
+## Sanidade em CD (1/4) — setup
+
+**Setup:** $u = x_1^\alpha x_2^{1-\alpha}$, $\alpha = 1/2$, $m$ qualquer.
+
+**Marshalliana:** $x_1^M = m/(2 p_1)$ — não depende de $p_2$.
+
+**Pergunta:** se $\partial x_1^M/\partial p_2 = 0$, como Slutsky bate?
+
+::: {.bridge}
+Próximo: aplicar Slutsky em $\partial x_1^M/\partial p_2$ e ler termo a termo.
+:::
+
+---
+
+## Sanidade em CD (2/4) — Slutsky termo a termo
+
+**Slutsky em $\partial x_1^M/\partial p_2$:**
+
+- LHS: $\partial x_1^M/\partial p_2 = 0$.
+- Substituição: $\partial h_1/\partial p_2 > 0$ (substitutos líquidos).
+- Renda: $-x_2^M\cdot \partial x_1^M/\partial m$.
+
+**Conta da renda:** $x_2^M = m/(2 p_2)$, $\partial x_1^M/\partial m = 1/(2 p_1)$.
+
+$$
+-x_2^M\cdot \frac{\partial x_1^M}{\partial m} = -\frac{m}{4 p_1 p_2}.
+$$
+
+::: {.bridge}
+Próximo: confirmar a substituição via Hicksiana e somar.
+:::
+
+---
+
+## Sanidade em CD (3/4) — Hicksiana cruzada
+
+**Hicksiana:** $h_1 = \bar u\sqrt{p_2/p_1}$ (de $e = 2\bar u\sqrt{p_1 p_2}$).
+
+$$
+\frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2},
+$$
+
+substituindo $\bar u = v = m/(2\sqrt{p_1 p_2})$.
+
+::: {.bridge}
+Substituição $> 0$. Próximo: somar com renda — cancelamento exato.
+:::
+
+---
+
+## Sanidade em CD (4/4) — soma e leitura
+
+**Slutsky em $\partial x_1^M/\partial p_2$:**
+
+$$
+\frac{\partial x_1^M}{\partial p_2} = \frac{m}{4 p_1 p_2} - \frac{m}{4 p_1 p_2} = 0. \;\checkmark
+$$
+
+::: {.eq-punch}
+Em CD, substituição cruzada e renda se cancelam. Marshalliana cruzada zera *por compensação*, não por ausência.
+:::
+
+---
+
+## Pausa 1 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 20:25.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Estique. Água. Releia Slutsky se precisar.
+:::
+
+---
+
+## Bloco 2 — Normais, inferiores, Giffen {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 20:25–21:00
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Sinais do efeito-renda · curvas de Engel · Giffen como inferioridade forte.
+:::
+
+---
+
+## Taxonomia em uma linha
+
+::: {.compact-table}
+| Tipo | Definição | Engel |
+|:---|:---|:---|
+| **Normal** | $\partial x_i^M/\partial m > 0$ | crescente |
+| **Inferior** | $\partial x_i^M/\partial m < 0$ | decrescente |
+| **Luxo** | $\eta_i > 1$ | superlinear |
+| **Necessidade** | $0 < \eta_i < 1$ | sublinear |
+| **Giffen** | $\partial x_i^M/\partial p_i > 0$ | inferior *forte* |
+:::
+
+::: {.bridge}
+Inferioridade é *necessária* para Giffen, mas não suficiente. Próximo: por quê.
+:::
+
+---
+
+## Quando Giffen aparece (1/2)
+
+**Slutsky em $\partial x_i^M / \partial p_i$:**
+
+::: {.eq-key}
+$$
+\frac{\partial x_i^M}{\partial p_i}
+=
+\underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq\, 0}
+\;-\;
+x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
+$$
+:::
+
+::: {.bridge}
+Próximo: condições para que o sinal *vire* — bem inferior + parcela alta.
+:::
+
+---
+
+## Quando Giffen aparece (2/2)
+
+**Para $\partial x_i^M/\partial p_i > 0$, é preciso:**
+
+1. Bem **inferior**: $\partial x_i^M/\partial m < 0$.
+2. Efeito-renda $\,|x_i^M\cdot \partial x_i^M/\partial m|\,$ > $\,|\partial h_i/\partial p_i|$.
+
+::: {.eq-punch}
+Inferior é necessário, parcela alta é amplificador, e só então o sinal de Slutsky vira.
+:::
+
+---
+
+## Geometria do efeito-renda (1/2)
+
+**Decomposição em 2 movimentos no espaço de bens:**
+
+1. **Substituição (Hicks):** $\bar u$ fixo, preço relativo muda. Move-se *ao longo* da curva.
+2. **Renda:** $p$ fixo, $m$ "real" muda. Move-se *para outra* curva.
+
+::: {.bridge}
+Próximo: punch geométrico + leitura para normais e inferiores.
+:::
+
+---
+
+## Geometria do efeito-renda (2/2)
+
+::: {.eq-punch}
+Substituição é tangência girando. Renda é o nível subindo ou descendo.
+:::
+
+**Para bem normal**, os dois apontam *na mesma direção* contra $\Delta p_i$. **Para inferior**, podem brigar — e às vezes a renda vence.
+
+---
+
+## Box Mundo — Giffen e arroz em Hunan {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**Jensen & Miller (AER 2008).** Experimento de campo em Hunan: subsidiar o **arroz** levou famílias pobres a *reduzir* o consumo de arroz e diversificar para carne.
+
+**Por quê:** arroz era >50% das calorias e da despesa. Subsídio ⇒ "renda" extra. Como arroz é inferior em renda mais alta, o efeito-renda dominou.
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.8em;"}
+Jensen & Miller (2008), *AER* 98(4), 1553–77. DOI: 10.1257/aer.98.4.1553.
+:::
+
+---
+
+## Box Mundo — o que Hunan *não* prova {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.6em;"}
+
+Giffen é fenômeno **raro**, restrito a três condições simultâneas:
+
+1. Bem com **parcela altíssima** de gasto.
+2. **Substitutos inferiores acessíveis** na cesta.
+3. **Renda baixa** o suficiente para a inferioridade morder.
+
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.9; margin-top: 0.8em;"}
+Fora desse triângulo de condições, Marshalliana segue inclinação negativa.
+:::
+
+---
+
+## Box Brasil — feijão e arroz {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**POF 2017–2018 (IBGE).** Feijão + arroz somam ~12% da despesa alimentar no 1º quintil de renda; ~3% no 5º quintil.
+
+**Curva de Engel decrescente em parcela** = assinatura de **necessidade**, não inferioridade plena.
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.8em;"}
+IBGE (2020), *POF 2017–2018: Análise do Consumo Alimentar* (id 2101742) e *Despesas, Rendimentos e Condições de Vida* (id 2101678).
+:::
+
+---
+
+## Box Brasil — alta de preço 2020–22 {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.6em;"}
+
+A alta do arroz no Brasil de 2020–22 (gargalo logístico + câmbio) foi sentida desproporcionalmente pelos pobres — não como Giffen, mas como **regressividade de imposto implícito** sobre alimentação.
+
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.9; margin-top: 0.8em;"}
+Para quantificar bem-estar dessa alta, Bloco 4 (CV/EV) é exatamente a ferramenta.
+:::
+
+---
+
+## Síntese Bloco 2
+
+::: {.eq-punch}
+Inferior é necessário, parcela alta amplifica, e só então o sinal de Slutsky vira.
+:::
+
+**Marshalliana subindo com preço:** primeira hipótese é *erro de medida*; depois, *efeito-renda dominante*. Nunca acredite em Giffen sem checar parcela e $\eta_i$.
+
+::: {.bridge}
+Próximo bloco: a álgebra das elasticidades — onde decomposições viram restrições estimáveis.
+:::
+
+---
+
+## Bloco 3 — Elasticidades e restrições agregadas {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 21:00–21:40
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Definições · 4 restrições · Marshalliana vs. Hicksiana · bruto vs. líquido.
+:::
+
+---
+
+## Definições (1/3) — elasticidades Marshallianas
+
+::: {.eq-key}
+$$
+\begin{aligned}
+\varepsilon_{ij} &= \frac{\partial \ln x_i^M}{\partial \ln p_j} = \frac{p_j}{x_i^M}\,\frac{\partial x_i^M}{\partial p_j}, \\
+\eta_i &= \frac{\partial \ln x_i^M}{\partial \ln m} = \frac{m}{x_i^M}\,\frac{\partial x_i^M}{\partial m}.
+\end{aligned}
+$$
+:::
+
+::: {.bridge}
+Próximo: a versão compensada (Hicksiana) — peça que entra em Slutsky em log.
+:::
+
+---
+
+## Definições (2/3) — Hicksiana compensada
+
+::: {.eq-key}
+$$
+\varepsilon^c_{ij} = \frac{p_j}{h_i}\cdot \frac{\partial h_i}{\partial p_j}.
+$$
+:::
+
+**Adimensional**, como as Marshallianas. Mantém $\bar u$ fixo enquanto $p_j$ varia.
+
+::: {.bridge}
+Próximo: Slutsky em log — multiplicação por $p_j/x_i$ converte derivadas em elasticidades.
+:::
+
+---
+
+## Definições (3/3) — Slutsky em elasticidades
+
+::: {.eq-key}
+$$
+\boxed{\;\varepsilon_{ij} = \varepsilon^c_{ij} - s_j\,\eta_i,\;}
+$$
+:::
+
+com $s_j = p_j x_j^M/m$.
+
+**Mesma equação de Slutsky**, em unidade adimensional. O efeito-renda passa a ser ponderado pela parcela de gasto $s_j$.
+
+::: {.bridge}
+Pronto para impor as 4 restrições agregadas — Walras + dualidade as garantem.
+:::
+
+---
+
+## Quatro restrições agregadas (1/3) — formas
+
+::: {.compact-table}
+| Restrição | Forma |
+|:---|:---|
+| **Engel** | $\sum_i s_i\,\eta_i = 1$ |
+| **Cournot** | $\sum_i s_i\,\varepsilon_{ij} = -s_j$ |
+| **Homogeneidade** | $\sum_j \varepsilon_{ij} + \eta_i = 0$ |
+| **Simetria** | $s_i\,\varepsilon^c_{ij} = s_j\,\varepsilon^c_{ji}$ |
+:::
+
+::: {.bridge}
+Próximo: de onde vem cada uma — três da Marshalliana, uma da Hicksiana.
+:::
+
+---
+
+## Quatro restrições agregadas (2/3) — origem
+
+::: {.compact-table}
+| Restrição | Origem |
+|:---|:---|
+| **Engel** | derivar Walras em $m$ |
+| **Cournot** | derivar Walras em $p_j$ |
+| **Homogeneidade** | grau-0 de $x^M$ + Euler |
+| **Simetria** | simetria de Slutsky (concavidade de $e$) |
+:::
+
+::: {.bridge}
+Próximo: a leitura econômica de cada uma.
+:::
+
+---
+
+## Quatro restrições agregadas (3/3) — leituras
+
+::: {.compact-table}
+| Restrição | Leitura |
+|:---|:---|
+| **Engel** | Em média ponderada por parcela, $\eta = 1$. Luxos compensam necessidades. |
+| **Cournot** | Quando $p_j$ sobe 1%, gasto agregado cai $s_j$%. |
+| **Homogeneidade** | Sem ilusão monetária. |
+| **Simetria** | Compensada cruzada simétrica em pesos $s_i, s_j$. |
+:::
+
+::: {.eq-punch}
+Quatro restrições, quatro testes. Demanda estimada que viola = mal-especificada ou rejeita teoria.
+:::
+
+---
+
+## Bruto vs. líquido (1/3) — definições
+
+::: {.compact-table}
+| Conceito | Critério | Tipo |
+|:---|:---|:---:|
+| **Substitutos brutos** | $\partial x_i^M/\partial p_j > 0$ | Marshalliana |
+| **Complementos brutos** | $\partial x_i^M/\partial p_j < 0$ | Marshalliana |
+| **Substitutos líquidos** | $\partial h_i/\partial p_j > 0$ | Hicksiana |
+| **Complementos líquidos** | $\partial h_i/\partial p_j < 0$ | Hicksiana |
+:::
+
+::: {.bridge}
+"Bruto" inclui efeito-renda; "líquido" só substituição.
+:::
+
+---
+
+## Bruto vs. líquido (2/3) — CD como contraexemplo
+
+**Em Cobb-Douglas:**
+
+- $\partial x_1^M/\partial p_2 = 0$ → Marshalliana cruzada zera.
+- $\partial h_1/\partial p_2 > 0$ → Hicksiana cruzada positiva.
+
+**Conclusão:** em CD, bens são **substitutos líquidos** mas **independentes brutos**.
+
+::: {.bridge}
+Próximo: implicação prática para política e bem-estar.
+:::
+
+---
+
+## Bruto vs. líquido (3/3) — qual usar
+
+::: {.eq-punch}
+Para testar complementaridade empiricamente, decida primeiro qual conceito você está medindo.
+:::
+
+::: {.bridge}
+Política de preços (imposto, subsídio): conta o **bruto** — Marshalliana move escolha. Bem-estar: conta o **líquido** — Hicksiana mede compensação.
+:::
+
+---
+
+## Aplicação — alta de ICMS (1/2) — setup
+
+**Combustível, parâmetros estilizados:**
+
+- $s_{\text{comb}} = 0{,}08$
+- $\eta_{\text{comb}} = 0{,}3$ (necessidade fraca)
+- $\varepsilon^c_{\text{comb,comb}} = -0{,}25$
+
+::: {.bridge}
+Próximo: aplicar Slutsky em log e ler arrecadação.
+:::
+
+---
+
+## Aplicação — alta de ICMS (2/2) — Slutsky em log
+
+**Slutsky para próprio preço:**
+
+$$
+\varepsilon_{\text{cc}} = \varepsilon^c_{\text{cc}} - s\,\eta = -0{,}25 - 0{,}08 \cdot 0{,}3 = -0{,}274.
+$$
+
+**Leitura:** $+10\%$ no preço $\Rightarrow$ $-2{,}74\%$ no consumo. Receita aproximada (Laffer fraco): sobe ~$7{,}3\%$ por unidade de tributo.
+
+::: {.bridge}
+Análise de incidência exige Hicksiana — CV/EV no Bloco 4. Marshalliana só conta arrecadação.
+:::
+
+---
+
+## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 21:50.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Última pausa. Confira se as 4 restrições estão na cabeça.
+:::
+
+---
+
+## Bloco 4 — Bem-estar: CV, EV, excedente {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 21:50–22:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Três medidas · Hicksiana é a "honesta" · quase-linear como caso especial.
+:::
+
+---
+
+## A pergunta de bem-estar
+
+::: {.eq-punch}
+Preço $p^0 \to p^1$. Quanto vale, *em moeda*, essa mudança para o consumidor?
+:::
+
+**Três candidatos:**
+
+1. **Excedente do consumidor** — área sob Marshalliana.
+2. **Variação compensatória (CV)** — quanta moeda *tirar* depois.
+3. **Variação equivalente (EV)** — quanta moeda *dar* antes.
+
+---
+
+## Definições formais (1/3) — diferenças de gasto
+
+::: {.eq-key}
+$$
+\begin{aligned}
+\text{CV} &= e(p^1, u^0) - e(p^0, u^0), \\
+\text{EV} &= e(p^1, u^1) - e(p^0, u^1).
+\end{aligned}
+$$
+:::
+
+::: {.bridge}
+Próximo: o que cada uma quer dizer em palavras de moeda.
+:::
+
+---
+
+## Definições formais (2/3) — em palavras
+
+- **CV**: gasto extra no preço *novo* para manter utilidade *antiga*. "Quanto dar de volta para compensar."
+- **EV**: gasto extra no preço *antigo* para atingir utilidade *nova*. "Quanto pagaria para evitar."
+
+::: {.bridge}
+Próximo: forma integral via Shephard — CV e EV são integrais da Hicksiana.
+:::
+
+---
+
+## Definições formais (3/3) — forma integral
+
+**Aplicando Shephard** ($\partial e/\partial p_i = h_i$):
+
+$$
+\text{CV} = \int_{p^0_i}^{p^1_i} h_i(p, u^0)\,dp_i,
+\quad
+\text{EV} = \int_{p^0_i}^{p^1_i} h_i(p, u^1)\,dp_i.
+$$
+
+::: {.eq-punch}
+CV e EV são integrais da Hicksiana — em níveis $u^0$ vs. $u^1$. Diferem em geral.
+:::
+
+---
+
+## Excedente do consumidor (1/2) — definição
+
+**Marshalliana é o que se observa nos dados.** Define-se:
+
+::: {.eq-key}
+$$
+\Delta\text{EC} = \int_{p^0_i}^{p^1_i} x_i^M(p, m)\,dp_i.
+$$
+:::
+
+**Problema teórico:** com efeito-renda, o resultado depende do *path* de integração — não é objeto bem-definido.
+
+::: {.bridge}
+Próximo: quão ruim é a aproximação na prática (Willig).
+:::
+
+---
+
+## Excedente do consumidor (2/2) — aproximação Willig
+
+**Willig (AER 1976).** Se $\eta_i$ é pequena e $\Delta p$ moderado:
+
+$$
+|\Delta\text{EC} - \text{CV}| \;\sim\; \eta_i\cdot s_i\cdot (\Delta p)^2.
+$$
+
+**Erro desprezível** para muitos exercícios aplicados.
+
+::: {.bridge}
+Em quase-linear, $\eta_i = 0$ para todos exceto numerário — EC, CV e EV coincidem exatamente.
+:::
+
+---
+
+## Caso especial: quase-linear (1/2) — setup
+
+**Setup:** $u(x_1, x_2) = v(x_1) + x_2$, com $x_2$ numerário ($p_2 = 1$).
+
+**Propriedades:**
+
+1. $\partial x_1^M/\partial m = 0$ no interior (sem efeito-renda em $x_1$).
+2. $h_1(p_1, \bar u) = x_1^M(p_1)$ — Hicksiana = Marshalliana.
+
+::: {.bridge}
+Próximo: o que isso implica para CV, EV e EC.
+:::
+
+---
+
+## Caso especial: quase-linear (2/2) — punch
+
+**Implicação direta:**
+
+$$
+\text{CV} = \text{EV} = \Delta\text{EC}.
+$$
+
+::: {.eq-punch}
+Quase-linear é o exemplo onde Harberger encontra Willig: a área é a medida.
+:::
+
+::: {.bridge}
+Triângulo de Harberger num livro = está implicitamente quase-linear ou efeito-renda desprezível.
+:::
+
+---
+
+## CV/EV em CD (1/3) — setup numérico
+
+**Setup:** $u = x_1^{1/2} x_2^{1/2}$, $m = 16$, $p_2 = 1$. $p_1: 1 \to 4$.
+
+**Antes** ($p_1=1$): $x_1^M = 8,\, x_2^M = 8,\, u^0 = 8$.
+
+**Depois** ($p_1=4$): $x_1^M = 2,\, x_2^M = 8,\, u^1 = 4$.
+
+**Função gasto (CD):** $e(p_1, p_2, \bar u) = 2\bar u\sqrt{p_1 p_2}$.
+
+::: {.bridge}
+Próximo: aplicar fórmulas em CV e EV.
+:::
+
+---
+
+## CV/EV em CD (2/3) — calcular CV
+
+**CV** (manter $u^0 = 8$ no preço novo):
+
+$$
+\text{CV} = e(4, 1, 8) - e(1, 1, 8).
+$$
+
+$$
+\text{CV} = 2\cdot 8\cdot 2 \;-\; 2\cdot 8\cdot 1 \;=\; 32 - 16 = 16.
+$$
+
+::: {.bridge}
+Próximo: EV — gasto avaliado em $u^1$.
+:::
+
+---
+
+## CV/EV em CD (2b/3) — calcular EV
+
+**EV** (atingir $u^1 = 4$ no preço antigo):
+
+$$
+\text{EV} = e(4, 1, 4) - e(1, 1, 4).
+$$
+
+$$
+\text{EV} = 2\cdot 4\cdot 2 \;-\; 2\cdot 4\cdot 1 \;=\; 16 - 8 = 8.
+$$
+
+::: {.bridge}
+Próximo: ler $\text{CV} \neq \text{EV}$ e posicionar EC.
+:::
+
+---
+
+## CV/EV em CD (3/3) — leitura
+
+::: {.eq-punch}
+$\text{CV} = 16 \neq \text{EV} = 8$. A diferença mede o efeito-renda em $x_1$.
+:::
+
+::: {.bridge}
+Em geral, para alta de preço de bem normal: $\text{EV} \leq \Delta\text{EC} \leq \text{CV}$. Em CD, valor exato sai do path-dependence numericamente.
+:::
+
+---
+
+## Box Brasil — reforma tributária (1/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**EC 132/2023** unifica ICMS/ISS/IPI em IBS+CBS. Em transição: bens essenciais ganham alíquota reduzida; supérfluos sobem.
+
+**Aplicação direta:**
+
+$$
+\text{CV}_{\text{estrato}} = \sum_i \int h_i\, dp_i,
+$$
+
+avaliada em $\bar u^0$ do estrato. Exige sistema de demanda (AIDS) calibrado em POF.
+
+:::
+
+---
+
+## Box Brasil — reforma tributária (2/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**Resultado típico** (estimativas SPE/MF, 2023):
+
+- **Curto prazo:** efeito de bem-estar **regressivo** (necessidades pesam mais nos pobres).
+- **Longo prazo:** **progressivo**, via mecanismo de cashback.
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.6em;"}
+Banco Mundial (2022), *Brazil's Tax Reform: A Welfare Analysis* — CV por decil usando este aparato.
+<!-- [VERIFICAR DOI/link permanente Banco Mundial 2022 + Nota Técnica SPE/MF 2023] -->
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 4 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+---
+
+## Síntese — três frases
+
+::: {.fragment}
+1. **Slutsky** decompõe efeito-preço em substituição (sempre $\leq 0$ no próprio) + renda (sinal incerto). Giffen = renda domina substituição.
+:::
+
+::: {.fragment}
+2. **Quatro restrições** (Engel, Cournot, homogeneidade, simetria) seguem de Walras + dualidade. Toda demanda estimada deve passar.
+:::
+
+::: {.fragment}
+3. **Bem-estar:** integral de Hicksiana (CV, EV) é exata. EC vale quando $\eta_i$ pequena (Willig). Em quase-linear, todos coincidem.
+:::
+
+---
+
+## Ponte para Aula 4 (1/2) — pergunta motor
+
+**Pergunta da próxima aula:** se cada consumidor maximiza, e cada produtor maximiza, *quando* o sistema fecha?
+
+::: {.eq-key}
+$$
+\text{Demanda agregada}(p) = \text{Oferta agregada}(p) \quad \forall i.
+$$
+:::
+
+::: {.bridge}
+Equilíbrio é ponto-fixo no espaço de preços. Próximo: o que da Aula 3 entra na Aula 4.
+:::
+
+---
+
+## Ponte para Aula 4 (2/2) — o que vai junto
+
+**Da Aula 3 para Aula 4:**
+
+- Marshalliana de cada consumidor — **bruta** (escolha agregada).
+- 4 restrições agregadas — consistência da demanda agregada.
+- CV/EV — bem-estar do equilíbrio (1º e 2º teoremas).
+
+::: {.bridge}
+Aula 4: trocas (Edgeworth) + produção. Aula 5: tempo, contingência, risco. Aula 6: Arrow-Debreu fecha.
+:::
+
+---
+
+## Pré-monitoria 1 — quando e o quê
+
+**Sábado 16/05 · 10:00 · Insper** — cobre Aulas 1–3.
+
+**Pré-monitoria abre sáb 09/05** (formativa, não conta nota).
+
+**Foco do Alberto:**
+
+- CES dualidade completa.
+- Slutsky a partir da identidade dual.
+- Restrições agregadas em sistema empírico.
+
+::: {.bridge}
+Próximo: por que ir.
+:::
+
+---
+
+## Pré-monitoria 1 — por que ir
+
+A álgebra das Aulas 1–3 fica no corpo só com prática. A monitoria é onde a prática vira cotidiana — antes de Arrow-Debreu, vale ouro.
+
+::: {.eq-punch}
+Quem domina Slutsky, sobrevive ao resto do curso. Quem não, paga juros compostos.
+:::
+
+---
+
+## Obrigado. {.title-slide}
+
+::: {style="margin-top: 3em; text-align: center;"}
+
+::: {style="color: #C8102E; font-size: 1.8em; font-weight: 700;"}
+Perguntas?
+:::
+
+<br/>
+
+<br/>
+
+::: {style="font-size: 0.85em; color: #2A2F36;"}
+Quiz pós-aula 3 e exercícios avaliativos: abertos desde 07/05.  \
+Prazo: **quarta 13/05 · 18:00 BRT**.  \
+Gabarito: quinta 14/05 · 00:00.
+:::
+
+:::

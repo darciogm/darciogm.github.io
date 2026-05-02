@@ -19,7 +19,7 @@
     
     
       
-        <title>Extensions - Darcio Genicolo-Martins</title>
+        <title>Welfare and Extensions - Darcio Genicolo-Martins</title>
       
     
     
@@ -135,7 +135,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#extensions" class="md-skip">
+        <a href="#welfare-and-extensions" class="md-skip">
           Skip to content
         </a>
       
@@ -169,7 +169,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Extensions
+              Welfare and Extensions
             
           </span>
         </div>
@@ -6729,60 +6729,192 @@
                   
 
 
-<h1 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">¶</a></h1>
-<h2 id="ipca-deflated-real-prices">IPCA-Deflated Real Prices<a class="headerlink" href="#ipca-deflated-real-prices" title="Permanent link">¶</a></h2>
-<p>Using IPCA-deflated (real) prices yields patterns virtually identical to the nominal results, confirming that the price effects reflect real differences in procurement costs rather than differential inflation across product groups.</p>
+<h1 id="welfare-and-extensions">Welfare and Extensions<a class="headerlink" href="#welfare-and-extensions" title="Permanent link">¶</a></h1>
+<p>The welfare consequences of the set-aside are class-heterogeneous from the start. Under the main equilibrium-selection specification, the welfare cost is <strong>28.7% of p<sub>S<sub>1</sub></sub> in non-pharma</strong> and <strong>47.0% in pharma</strong> at λ = 0.30. The price effect is therefore only the beginning of the welfare account.</p>
 <hr>
-<h2 id="extensive-margin-tender-completion">Extensive Margin: Tender Completion<a class="headerlink" href="#extensive-margin-tender-completion" title="Permanent link">¶</a></h2>
-<p>The probability that a procurement item is successfully completed may also be affected by the policy. Point estimates suggest that open tenders may improve completion rates, though the effects are less precisely estimated due to the use of group-level (rather than item-level) fixed effects.</p>
-<hr>
-<h2 id="procurement-efficiency">Procurement Efficiency<a class="headerlink" href="#procurement-efficiency" title="Permanent link">¶</a></h2>
-<p>Procurement efficiency, measured as the ratio of the final negotiated price to the government's reference price, improves under open tenders. Lower ratios indicate that the government obtained better deals relative to its own expectations.</p>
-<hr>
-<h2 id="winner-composition">Winner Composition<a class="headerlink" href="#winner-composition" title="Permanent link">¶</a></h2>
-<p>The probability that the winning firm is an SME decreases under open tenders, directly supporting the competition mechanism: open tenders attract larger firms that outbid SMEs on price.</p>
-<hr>
-<h2 id="heterogeneity-by-pbu-type">Heterogeneity by PBU Type<a class="headerlink" href="#heterogeneity-by-pbu-type" title="Permanent link">¶</a></h2>
-<p>Interacting the treatment indicator with a direct administration dummy reveals broadly similar effects across buyer types (direct administration vs. indirect administration entities), suggesting that the competition channel operates consistently across the institutional landscape.</p>
-<hr>
-<h2 id="fiscal-cost-quantification">Fiscal Cost Quantification<a class="headerlink" href="#fiscal-cost-quantification" title="Permanent link">¶</a></h2>
-<p>A back-of-the-envelope calculation using the estimated price effect and the total procurement volume for group 65 in the pre-period quantifies the fiscal burden of SME-only tenders.</p>
+<h2 id="1-welfare-arithmetic">1. Welfare arithmetic<a class="headerlink" href="#1-welfare-arithmetic" title="Permanent link">¶</a></h2>
+<p>Per-auction welfare loss of the SME-only set-aside relative to the open regime:</p>
+<div class="arithmatex">\[\text{Loss} = \underbrace{c_{(1)}^{S_3} - c_{(1)}^{S_1}}_{\text{DWL}_{\text{alloc}}} + \underbrace{\lambda \cdot (p_{S_3} - p_{S_1})}_{\text{MCPF distortion}}\]</div>
+<p>The first term is the <strong>allocative wedge</strong>: by how much the winner's production cost is higher in the restricted regime than in the open regime. The second term is the <strong>tax-distortion loss</strong> on the government's extra outlay Δ<sub>gov</sub>, scaled by the marginal cost of public funds λ. The transfer from government to SMEs (Δ<sub>gov</sub> minus the allocative wedge) is zero-sum in a social-planner ledger and is not destruction.</p>
+<h3 id="point-estimates-at-030-ballard-shoven-and-whalley-1985-benchmark">Point estimates at λ = 0.30 (Ballard, Shoven, and Whalley 1985 benchmark)<a class="headerlink" href="#point-estimates-at-030-ballard-shoven-and-whalley-1985-benchmark" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Component</th>
-<th style="text-align: center;">Baseline spec.</th>
-<th style="text-align: center;">PBU FE spec.</th>
+<th></th>
+<th style="text-align: center;"><strong>Δ<sub>gov</sub></strong></th>
+<th style="text-align: center;"><strong>DWL<sub>alloc</sub></strong></th>
+<th style="text-align: center;"><strong>Implicit transfer</strong></th>
+<th style="text-align: center;"><strong>MCPF distortion</strong></th>
+<th style="text-align: center;"><strong>Total Loss / p<sub>S<sub>1</sub></sub></strong></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Price coefficient (18m)</td>
-<td style="text-align: center;">-0.1309</td>
-<td style="text-align: center;">-0.1330</td>
+<td>Non-pharma</td>
+<td style="text-align: center;">0.242</td>
+<td style="text-align: center;">0.150</td>
+<td style="text-align: center;">0.092</td>
+<td style="text-align: center;">0.073</td>
+<td style="text-align: center;"><strong>28.7%</strong></td>
 </tr>
 <tr>
-<td>Implied price effect</td>
-<td style="text-align: center;">-12.27%</td>
-<td style="text-align: center;">-12.45%</td>
-</tr>
-<tr>
-<td>G65 pre-period total value</td>
-<td style="text-align: center;">R$ 689.0 million</td>
-<td style="text-align: center;">R$ 689.0 million</td>
-</tr>
-<tr>
-<td><strong>Estimated fiscal saving</strong></td>
-<td style="text-align: center;"><strong>R$ 84.5 million</strong></td>
-<td style="text-align: center;"><strong>R$ 85.8 million</strong></td>
+<td>Pharma</td>
+<td style="text-align: center;">0.328</td>
+<td style="text-align: center;">0.210</td>
+<td style="text-align: center;">0.118</td>
+<td style="text-align: center;">0.098</td>
+<td style="text-align: center;"><strong>47.0%</strong></td>
 </tr>
 </tbody>
 </table>
-<div class="key-result">
-<p><span class="number">R$ 84.5--85.8 million</span>
-<span class="label">Estimated fiscal cost of restricting tenders to SMEs for group 65 in the pre-period (18-month window)</span></p>
-</div>
-<p>The calculation applies the percentage price effect (<span class="arithmatex">\(e^{\beta} - 1\)</span>) to the total procurement value of group 65 completed items in the pre-period (Sep 2016--Feb 2018). This is a conservative estimate as it considers only one product group; extrapolating to all groups subject to SME restrictions would yield substantially larger figures. These fiscal costs reinforce the conclusion that policymakers should carefully weigh the benefits of SME promotion against the efficiency losses in public procurement.</p>
+<p>The allocative component dominates in both classes, but especially in pharma, where a thin SME pool and higher goods heterogeneity make bidder exclusion more likely to route the contract to a high-cost protected winner.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_welfare_forest.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_welfare_forest.png" alt="Welfare loss intervals"></a>
+  <figcaption>Figure 1. Welfare loss as % of p<sub>S<sub>1</sub></sub>, by class and MCPF λ. Circles and horizontal whiskers report cluster-bootstrap mean and 95% CI under the main specification; triangles report the strict-invariance benchmark. The dotted vertical line marks the 11.8% benchmark implied by the DiD coefficient of −0.11 in absolute log-prices.</figcaption>
+</figure>
+
+<hr>
+<h2 id="2-endogenous-entry-as-a-partial-offset-in-welfare-units">2. Endogenous entry as a partial offset in welfare units<a class="headerlink" href="#2-endogenous-entry-as-a-partial-offset-in-welfare-units" title="Permanent link">¶</a></h2>
+<p>The fixed-pool counterfactual exceeds the realized post-policy counterfactual by 52% in non-pharma and 57% in pharma. Both terms in the welfare formula load on the simulated price margin, so a fixed-pool welfare calculation would be roughly 50--60% larger than the realized one in normalized units. Endogenous entry does not change the ranking against the preference rule in non-pharma; it does materially reduce the welfare burden of bidder exclusion under the model's main specification.</p>
+<hr>
+<h2 id="3-confidence-intervals">3. Confidence intervals<a class="headerlink" href="#3-confidence-intervals" title="Permanent link">¶</a></h2>
+<p>Cluster bootstrap with B = 500 replicates delivers 95% CIs on Loss / p<sub>S<sub>1</sub></sub> at λ = 0.30:</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align: center;"><strong>Bootstrap mean</strong></th>
+<th style="text-align: center;"><strong>95% CI</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-pharma</td>
+<td style="text-align: center;">28.1%</td>
+<td style="text-align: center;">[21.3%, 35.3%]</td>
+</tr>
+<tr>
+<td>Pharma</td>
+<td style="text-align: center;">45.6%</td>
+<td style="text-align: center;">[35.1%, 56.2%]</td>
+</tr>
+</tbody>
+</table>
+<p>The intervals leave no doubt about the ordering. Even the lower bound in pharma is above the non-pharma point estimate. The class heterogeneity is not sampling noise around a common welfare effect; it is a structural feature of the protected pool and the good being procured.</p>
+<hr>
+<h2 id="4-sensitivity-to-mcpf">4. Sensitivity to λ (MCPF)<a class="headerlink" href="#4-sensitivity-to-mcpf" title="Permanent link">¶</a></h2>
+<p>For λ ∈ {0.20, 0.30, 0.40} (point estimates):</p>
+<table>
+<thead>
+<tr>
+<th>Class</th>
+<th style="text-align: center;">λ = 0.20</th>
+<th style="text-align: center;">λ = 0.30</th>
+<th style="text-align: center;">λ = 0.40</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-pharma</td>
+<td style="text-align: center;">25.6%</td>
+<td style="text-align: center;"><strong>28.7%</strong></td>
+<td style="text-align: center;">31.8%</td>
+</tr>
+<tr>
+<td>Pharma</td>
+<td style="text-align: center;">42.0%</td>
+<td style="text-align: center;"><strong>47.0%</strong></td>
+<td style="text-align: center;">52.0%</td>
+</tr>
+</tbody>
+</table>
+<p>Each 0.10 increment in λ adds about 3 percentage points in non-pharma and about 5 points in pharma. The level moves, but the <strong>class ranking does not</strong>. The non-pharma V3 &gt; V0 ranking holds across λ ∈ [0.15, 0.45] under both specifications; the pharma V3 &gt; V0 ranking holds across the same range under the main specification but reverses to V0 &gt; V3 under strict invariance.</p>
+<hr>
+<h2 id="5-welfare-weight-implicit-in-the-current-regime">5. Welfare-weight implicit in the current regime<a class="headerlink" href="#5-welfare-weight-implicit-in-the-current-regime" title="Permanent link">¶</a></h2>
+<p>Following the generalized social-marginal-welfare-weight framework of Saez and Stantcheva (2016), a planner aggregating producer and consumer surplus with weight w<sup>SME</sup> on SME producer surplus is indifferent between the full set-aside (V0) and the 10% price preference (V3) when</p>
+<div class="arithmatex">\[w^{\text{SME}}_\star = \frac{\text{Loss}(V_0) - \text{Loss}(V_3)}{\text{SMESurplus}(V_0) - \text{SMESurplus}(V_3)}.\]</div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Loss differential</strong></th>
+<th style="text-align: center;"><strong>SME-surplus differential</strong></th>
+<th style="text-align: center;"><strong>w<sup>SME</sup><sub>★</sub></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Non-pharma</td>
+<td style="text-align: center;">0.223</td>
+<td style="text-align: center;">0.092</td>
+<td style="text-align: center;"><strong>2.42</strong></td>
+</tr>
+<tr>
+<td>Pharma</td>
+<td style="text-align: center;">0.308</td>
+<td style="text-align: center;">0.118</td>
+<td style="text-align: center;"><strong>2.61</strong></td>
+</tr>
+</tbody>
+</table>
+<p>A planner willing to pay the non-pharma fiscal cost of bidder exclusion would have to value one real of SME surplus at <strong>more than twice a real of general welfare</strong>, even in a thick market where a preference rule achieves nearly the same allocative objective. Under strict invariance, the non-pharma preference ranking is unchanged; the pharmaceutical indifference weight falls to <strong>0.7</strong>, below the utilitarian benchmark.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_welfare_weight.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_welfare_weight.png" alt="Implicit welfare weight"></a>
+  <figcaption>Figure 2. Implicit welfare weight w<sup>SME</sup><sub>★</sub> required to prefer the full set-aside over a 10% price preference, by class and specification. The grey band marks the 1.2--1.5 range typical of Brazilian cash-transfer programs; the dashed vertical line marks the utilitarian benchmark w = 1.</figcaption>
+</figure>
+
+<hr>
+<h2 id="6-scaling-to-the-furosemida-vignette">6. Scaling to the furosemida vignette<a class="headerlink" href="#6-scaling-to-the-furosemida-vignette" title="Permanent link">¶</a></h2>
+<p>A pair of furosemida 40 mg purchases by the same Sao Paulo public buyer in February 2018 (open regime, ten firms bidding, clearing price ~12% below reference) and October 2018 (post-cutoff, three SMEs, clearing price just above reference) anchors the magnitudes.</p>
+<p>Applying the pharmaceutical-class point estimates to that single purchase:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Value (units of p<sup>ref</sup>)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Government's extra outlay Δ<sub>gov</sub></td>
+<td style="text-align: center;">+0.328</td>
+</tr>
+<tr>
+<td>of which: allocative DWL</td>
+<td style="text-align: center;">0.210</td>
+</tr>
+<tr>
+<td>of which: implicit transfer to SME winner</td>
+<td style="text-align: center;">0.118</td>
+</tr>
+<tr>
+<td>Tax-distortion welfare cost (λ = 0.30)</td>
+<td style="text-align: center;">0.098</td>
+</tr>
+<tr>
+<td><strong>Total welfare loss / p<sub>S<sub>1</sub></sub></strong></td>
+<td style="text-align: center;"><strong>47.0%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The per-auction number scales; the group-level fiscal consequence is substantial, and the welfare consequence is larger still.</p>
+<hr>
+<h2 id="7-why-the-structural-welfare-loss-exceeds-the-did-benchmark">7. Why the structural welfare loss exceeds the DiD benchmark<a class="headerlink" href="#7-why-the-structural-welfare-loss-exceeds-the-did-benchmark" title="Permanent link">¶</a></h2>
+<p>Two mechanical features drive the departure from the DiD benchmark of 11.8%:</p>
+<ul>
+<li><strong>Different functionals on different conditioning sets.</strong> The DiD recovers the average log-price difference between regimes conditional on item and month fixed effects, on completed transactions only. The structural object is the simulated mean of c<sub>(2)</sub> under each counterfactual entry profile, on UH-clean cost residuals, expressed as a ratio of the reference price. The two functionals differ both in transformation (log-price difference vs. level of c<sub>(2)</sub>/p<sup>ref</sup>) and in conditioning set.</li>
+<li><strong>Tax distortion was not priced in the DiD benchmark.</strong> The MCPF term λ · Δ<sub>gov</sub> adds about nine percentage points of p<sub>S<sub>1</sub></sub> in non-pharma and fifteen in pharma at λ = 0.30.</li>
+</ul>
+<p>The 3--4× gap between the structural and the DiD is informally attributable to these differences and is <strong>predictable in direction</strong> under the maintained assumptions: the second-order statistic of an SME-only draw, expressed as a level relative to the open-regime baseline, is necessarily larger than the average log-price change averaged over the realized distribution conditional on item fixed effects. A misspecified model would not be guaranteed to deliver a gap of either consistent sign or consistent magnitude.</p>
+<hr>
+<h2 id="8-extensions-the-paper-does-not-attempt">8. Extensions the paper does not attempt<a class="headerlink" href="#8-extensions-the-paper-does-not-attempt" title="Permanent link">¶</a></h2>
+<p>Three extensions represent natural follow-on work:</p>
+<ul>
+<li><strong>Quantity response.</strong> The buyer's adjustment to higher prices is treated as inelastic at observed values. At a typical demand elasticity for essential medical supplies ε ∈ [0.1, 0.3], the quantity adjustment to the simulated 11% log-price increase would shave the fiscal cost by roughly 1--3 percentage points of p<sub>S<sub>1</sub></sub>.</li>
+<li><strong>Dynamic capacity accumulation.</strong> SME firms protected by the rule may build production capacity that persists beyond the policy window — an externally validated mechanism in Ferraz et al. (2016) and Szerman (2023).</li>
+<li><strong>General-equilibrium SME surplus.</strong> The partial-equilibrium SMESurplus measure used in the welfare-weight identity could be extended to a GE framework with option value, capacity persistence, and private-sector spillovers.</li>
+</ul>
+<p>Each is a margin a fully dynamic-general-equilibrium model would price; each would tend to enlarge the SME-side benefit and could shift the welfare-weight comparison. None changes the organizing lesson: the welfare ranking of bidder-exclusion rules is conditional on market structure.</p>
 
 
 
@@ -6814,6 +6946,12 @@
     <li class="md-nav__item ">
       <a href="/research/sme-public/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

@@ -6730,23 +6730,35 @@
 
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h1>
-<h2 id="march-2026-current-version">March 2026 (Current Version)<a class="headerlink" href="#march-2026-current-version" title="Permanent link">¶</a></h2>
+<h2 id="v5-april-2026-submission-ready-jpube-format">v5 — April 2026 (Submission-ready, JPubE format)<a class="headerlink" href="#v5-april-2026-submission-ready-jpube-format" title="Permanent link">¶</a></h2>
+<p><strong>Structural decomposition</strong> of the SME set-aside replaces the v1--v3 reduced-form headline:</p>
 <ul>
-<li><strong>Fiscal Cost Quantification</strong>: new subsection in the manuscript with formula, table (R$84.5--85.8 million), and discussion; result integrated into abstract, introduction, and conclusion</li>
-<li>5 advanced econometric methods: parallel trends sensitivity (HonestDiD), Lee bounds, causal forest, quantile DiD, Gelbach decomposition</li>
-<li>4 new tables + 5 new figures (18 tables / 15 figures total)</li>
-<li>Expanded appendix with organized subsections and explanatory paragraphs</li>
-<li>Polished main body text (~10% expansion with references to advanced methods)</li>
-<li>New MkDocs page for advanced methods</li>
+<li>Asymmetric IPV reading of the Pregao auction; type-specific cost distributions point-identified from drop-out bids (Haile and Tamer 2003)</li>
+<li>Krasnokutskaya (2011) auction-level UH correction via method-of-moments + best-linear-predictor shrinkage</li>
+<li>Athey--Seira (2011) treatment of equilibrium SME entry as observed Poisson arrival rates</li>
+<li>BNE Monte Carlo (B = 2,000) over scenarios S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, V0--V3</li>
+<li>Cluster bootstrap at the auction level (B<sub>bs</sub> = 500)</li>
+<li>Saez--Stantcheva (2016) generalized social-marginal-welfare-weight identity</li>
 </ul>
-<h2 id="march-2025">March 2025<a class="headerlink" href="#march-2025" title="Permanent link">¶</a></h2>
+<p><strong>Headline magnitudes.</strong> Within-auction share of the simulated total effect: 74.5% (non-pharma), 73.3% (pharma), stable in the 73--85% range across cost-distribution estimators and across the strict-invariance benchmark. Welfare cost at λ = 0.30: 28.7% of p<sub>S<sub>1</sub></sub> (non-pharma), 47.0% (pharma). 10% price preference welfare-dominates the set-aside in non-pharma under both specifications; ranking bifurcates in pharma.</p>
+<p><strong>Robustness.</strong> Strict primitive invariance, F<sub>c</sub> regime (losers-only / all-bidders / Turnbull NPMLE), kernel bandwidth, sample filter, temporal window (6m / 12m / 18m), alternative policy variants (V0--V3).</p>
+<p><strong>Online appendix.</strong> 15 sections including IPV-relaxation Gaussian copula sensitivity, Maskin--Riley FPSB calibration of V3, full λ-grid welfare CIs, Convite cross-modality consistency, Conley--Decarolis collusion screen, primitive-invariance KS tests.</p>
+<p><strong>Title.</strong> Renamed from <em>The Price of Protecting Small Firms</em> to <strong>The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement</strong>, reflecting the structural focus on within-auction (sheltered bidding) vs. participation-margin decomposition.</p>
+<hr>
+<h2 id="march-2026-v4">March 2026 (v4)<a class="headerlink" href="#march-2026-v4" title="Permanent link">¶</a></h2>
+<ul>
+<li><em>Fiscal Cost Quantification</em> subsection added to reduced-form manuscript (R$84.5--85.8 million)</li>
+<li>5 advanced econometric methods bolted onto DiDiR: HonestDiD, Lee bounds, causal forest, quantile DiD, Gelbach decomposition</li>
+<li>18 tables / 15 figures total</li>
+</ul>
+<h2 id="march-2025-v2-v3">March 2025 (v2--v3)<a class="headerlink" href="#march-2025-v2-v3" title="Permanent link">¶</a></h2>
 <ul>
 <li>Full R/fixest pipeline with 14 tables and 10 figures</li>
-<li>Robustness checks: placebo tests, alternative clustering, winsorization, randomization inference</li>
+<li>Robustness: placebo tests, alternative clustering, winsorization, randomization inference</li>
 <li>Extensions: real prices, extensive margin, efficiency, winner composition, heterogeneity by item value and PBU type</li>
 <li>MkDocs documentation site</li>
 </ul>
-<h2 id="january-2021-first-version">January 2021 (First Version)<a class="headerlink" href="#january-2021-first-version" title="Permanent link">¶</a></h2>
+<h2 id="january-2021-v1-first-version">January 2021 (v1, first version)<a class="headerlink" href="#january-2021-v1-first-version" title="Permanent link">¶</a></h2>
 <ul>
 <li>Initial manuscript with core DiDiR results</li>
 <li>4 main outcome variables: prices, firms, bids, distance</li>
@@ -6783,6 +6795,12 @@
     <li class="md-nav__item ">
       <a href="/research/sme-public/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

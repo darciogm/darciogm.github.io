@@ -6730,23 +6730,33 @@
 
 
 <h1 id="manuscript">Manuscript<a class="headerlink" href="#manuscript" title="Permanent link">¶</a></h1>
+<h2 id="download">Download<a class="headerlink" href="#download" title="Permanent link">¶</a></h2>
+<ul>
+<li><a href="../assets/sme_public_procurement.pdf">Main paper (v5, JPubE format) — PDF</a></li>
+<li><a href="../assets/sme_public_online_appendix.pdf">Online appendix — PDF</a></li>
+<li><a href="../assets/sme_public_highlights.pdf">Highlights — PDF</a></li>
+<li><a href="../assets/cost_of_inclusion.mp4">Video — <em>The Cost of Inclusion</em> (17 min, MP4)</a></li>
+</ul>
+<p>Submission-ready version, April 2026.</p>
+<hr>
 <h2 id="contribution">Contribution<a class="headerlink" href="#contribution" title="Permanent link">¶</a></h2>
-<p>This paper makes three main contributions:</p>
+<p>The paper makes three contributions to the literature on procurement-preference rules.</p>
 <ol>
 <li>
-<p><strong>Cost estimation of SME set-asides:</strong> Provides credible causal estimates of the procurement costs imposed by restricting public tenders to SMEs, using a quasi-experimental variation in Sao Paulo, Brazil.</p>
+<p><strong>Methodology — within-auction structural decomposition from a clean legal trigger.</strong> The paper combines five conditions rare in the procurement-preference literature: a total-exclusion legal trigger (clean separation of regimes), a Pregao drop-out auction format (point-identification of cost distributions following Haile and Tamer 2003), an auction-level unobserved-heterogeneity correction (Krasnokutskaya 2011), an observed-equilibrium-entry treatment in the spirit of Athey, Coey, and Levin (2013) and Athey and Seira (2011), and a Saez and Stantcheva (2016) welfare-weight identity. Each component is established; the combination delivers a within-auction decomposition of an SME procurement preference where the partial-preference structural literature identifies the two margins jointly with cross-equation constraints rather than from a single legal trigger.</p>
 </li>
 <li>
-<p><strong>Heterogeneity analysis:</strong> Demonstrates that the costs of restricting competition are not uniform---they are approximately 40% larger for high-value items, offering guidance for differentiated policy design.</p>
+<p><strong>Endogenous SME entry as a welfare object, not a side issue.</strong> A fixed-pool counterfactual — the standard reduced-form shortcut — misstates the realized policy cost by roughly 50--60%. The participation response is the government's partial offset to a larger latent within-auction shock, not the source of the markup.</p>
 </li>
 <li>
-<p><strong>Competition mechanism:</strong> Documents the full causal chain from restricted tenders to reduced competition (fewer firms and bids) to higher prices, with supporting evidence from winner composition and procurement efficiency analyses.</p>
+<p><strong>A market-design statement, not a universal ranking.</strong> A 10% price preference welfare-dominates the set-aside in thick, standardized markets across both the main and the strict-invariance specifications. In thin, heterogeneous markets the comparison depends on how entry selection is modeled. The bifurcation identifies precisely where equilibrium-selection vs. primitive-invariance treatment of the protected pool is first-order, and converts a sensitivity check into a substantive claim about where bidder exclusion delivers proportional returns and where it does not.</p>
 </li>
 </ol>
 <hr>
 <h2 id="institutional-background">Institutional Background<a class="headerlink" href="#institutional-background" title="Permanent link">¶</a></h2>
-<p>Since 2005, all public buyer units (PBUs) in the state of Sao Paulo have been required to purchase common goods and services through <strong>Bolsa Eletronica de Compras (BEC)</strong>, an electronic procurement platform. In 2014, the federal SME law made it mandatory to execute exclusive public tenders for SMEs for items valued at R$80,000 or less.</p>
-<p>However, between 2014 and 2018, the state of Sao Paulo exempted <strong>group 65</strong> (medical, dental, and hospital supplies) from this requirement, based on a joint agreement that health items were strategic goods warranting open competition. In <strong>March 2018</strong>, a legal opinion from PGE-SP reversed this interpretation, subjecting group 65 to the same SME-favoring rules as all other product groups.</p>
+<p>Brazil's federal SME statute (Complementary Law 123/2006, amended 2014) defines micro- and small enterprises by annual gross revenue (R$360,000 and R$4,800,000 ceilings, respectively) and mandates exclusive SME tenders for items valued at R$80,000 or less. Public buyer units (PBUs) can avoid the SME-only default only by formally justifying the departure to the audit courts — a costly and scrutinized process. State-level adherence to SME-only tendering for eligible items rose from roughly 13% to nearly 70% in the years following the 2014 amendment.</p>
+<p>Since 2005, all public procurement in Sao Paulo passes through <strong>Bolsa Eletronica de Compras (BEC)</strong>, a centralized electronic reverse-auction platform that handled approximately R$13 billion (US$3.7 billion) in 2019 alone and has cumulatively moved more than R$105 billion (US$30 billion) since implementation, spanning 860,000 purchase offers and 4.8 million item-level transactions.</p>
+<p><strong>Group 65</strong> (medical, dental, and hospital supplies) was a singular exception to the 2014 rule. Between August 2014 and February 2018, the state government and the Tribunal de Contas (TCE-SP) operated under a joint interpretation that medical supplies were strategic goods requiring open competition. In November 2017, the Procuradoria-Geral do Estado (PGE-SP) issued a legal opinion reversing the exception on isonomy grounds, arguing that no substantive feature of medical supplies justified procedural distinctions from other product groups. <strong>Effective March 2018</strong>, opt-out costs extended to Group 65.</p>
 <table>
 <thead>
 <tr>
@@ -6768,6 +6778,7 @@
 </tr>
 </tbody>
 </table>
+<p>The change was triggered by a legalistic reinterpretation of the isonomy principle inside PGE-SP, not by anything happening in the Group-65 procurement market. Public documentation turns up no sign that the decision was a response to price levels, competition patterns, or supplier complaints specific to Group 65 in 2017.</p>
 <hr>
 <h2 id="data-and-sample">Data and Sample<a class="headerlink" href="#data-and-sample" title="Permanent link">¶</a></h2>
 <table>
@@ -6780,54 +6791,106 @@
 <tbody>
 <tr>
 <td><strong>Source</strong></td>
-<td>BEC administrative records (SEFAZ/SP)</td>
+<td>BEC administrative records (Sefaz-SP)</td>
 </tr>
 <tr>
 <td><strong>Coverage</strong></td>
 <td>All standardized goods procurement in Sao Paulo state</td>
 </tr>
 <tr>
-<td><strong>Period</strong></td>
+<td><strong>Window (full)</strong></td>
 <td>January 2016 -- December 2019</td>
 </tr>
 <tr>
-<td><strong>PBUs</strong></td>
-<td>1,344 public buyer units</td>
+<td><strong>Window (structural)</strong></td>
+<td>September 2016 -- August 2019 (18 months on each side of the March 2018 cutoff)</td>
 </tr>
 <tr>
-<td><strong>Items</strong></td>
-<td>82,569 distinct items across 76 groups</td>
+<td><strong>Treated group</strong></td>
+<td>Group 65 (medical/hospital supplies, ~27% of transactions)</td>
 </tr>
 <tr>
-<td><strong>Transactions</strong></td>
-<td>832,984 successful transactions</td>
+<td><strong>Control set (DiD)</strong></td>
+<td>76 never-treated product groups</td>
 </tr>
 <tr>
-<td><strong>Treatment group</strong></td>
-<td>Group 65 (medical/hospital supplies, ~27% of purchases)</td>
+<td><strong>Auction format (structural)</strong></td>
+<td>Pregao only (descending-clock electronic English-reverse)</td>
 </tr>
 <tr>
-<td><strong>Treatment date</strong></td>
-<td>March 2018</td>
+<td><strong>Structural sample</strong></td>
+<td>297,967 firm-auction observations, 97,993 distinct auctions</td>
+</tr>
+<tr>
+<td><strong>Pre vs Post</strong></td>
+<td>48,740 vs 49,253 auctions (balanced)</td>
+</tr>
+<tr>
+<td><strong>Bid filter</strong></td>
+<td>c<sub>ε</sub> = b/p<sup>ref</sup> ∈ (0, 3]; n ≥ 2 firms per auction</td>
+</tr>
+<tr>
+<td><strong>Type flag</strong></td>
+<td>SME / non-SME from BEC registry, validated against historical bidding</td>
+</tr>
+<tr>
+<td><strong>Pharma flag</strong></td>
+<td>CADMAT classes 6531, 6532, 6536, 6581 (CMED-regulated pharmaceuticals and biologicals)</td>
 </tr>
 </tbody>
 </table>
+<p>The structural narrowing to Pregao is methodological: the descending-clock format admits point identification of cost distributions from drop-out bids (Haile and Tamer 2003), which the smaller-value Convite first-price sealed-bid format does not afford in the same form. Convite is reserved for a cross-modality consistency check via Guerre, Perrigne, and Vuong (2000) inversion.</p>
+<h3 id="entry-response-pregao">Entry response (Pregao)<a class="headerlink" href="#entry-response-pregao" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;"><strong>Non-pharma Pre</strong></th>
+<th style="text-align: center;"><strong>Non-pharma Post</strong></th>
+<th style="text-align: center;"><strong>Pharma Pre</strong></th>
+<th style="text-align: center;"><strong>Pharma Post</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SMEs per auction</td>
+<td style="text-align: center;">0.94</td>
+<td style="text-align: center;"><strong>1.87</strong></td>
+<td style="text-align: center;">0.55</td>
+<td style="text-align: center;"><strong>1.22</strong></td>
+</tr>
+<tr>
+<td>Non-SMEs per auction</td>
+<td style="text-align: center;">2.68</td>
+<td style="text-align: center;"><strong>1.50</strong></td>
+<td style="text-align: center;">2.61</td>
+<td style="text-align: center;"><strong>1.66</strong></td>
+</tr>
+</tbody>
+</table>
+<p>SMEs roughly double in both classes; non-SMEs fall sharply. The set-aside changes both the admissible pool and the equilibrium participation response.</p>
 <hr>
 <h2 id="empirical-strategy">Empirical Strategy<a class="headerlink" href="#empirical-strategy" title="Permanent link">¶</a></h2>
-<p>The identification strategy exploits the timing of the policy change (March 2018) that affected only group 65, using a <strong>difference-in-differences in reverse (DiDiR)</strong> design. DiDiR identifies pre-switch-period effects by comparing the switched group (group 65) with the always-treated group (all other groups).</p>
-<p>The main specification is:</p>
-<div class="arithmatex">\[y_{pigt} = \eta_i + \gamma\,\text{Pre}_t + \beta\,(g65_{pgt} \times \text{Pre}_t) + x\,\delta + \varepsilon_{pigt}\]</div>
-<p>where:</p>
+<p>The structural model reads the BEC platform's Pregao auction as an <strong>asymmetric independent-private-values (IPV)</strong> environment. Bidders draw costs from type-specific distributions F<sub>c</sub><sup>SME</sup> and F<sub>c</sub><sup>¬</sup> and compete under a descending clock; under IPV the weakly dominant strategy is to exit when the running clock price reaches one's own cost (Haile and Tamer 2003). Drop-out prices of losers therefore <strong>point-identify</strong> F<sub>c</sub><sup>k</sup>, without inverting a bid function or imposing parametric structure on bidding.</p>
+<p>Three substantive restrictions discipline the model:</p>
 <ul>
-<li><span class="arithmatex">\(y\)</span> is the outcome (log price, log firms, log bids, or distance)</li>
-<li><span class="arithmatex">\(\eta_i\)</span> are item fixed effects</li>
-<li><span class="arithmatex">\(\text{Pre}_t = 1\)</span> if month &lt; March 2018</li>
-<li><span class="arithmatex">\(g65_{pgt} = 1\)</span> if item belongs to group 65</li>
-<li><span class="arithmatex">\(x\)</span> includes log quantity and tender type (sealed bid/auction)</li>
-<li><span class="arithmatex">\(\varepsilon_{pigt}\)</span> is clustered at the item level</li>
+<li><strong>Asymmetric IPV.</strong> Costs are drawn independently across bidders; conditional on type, c<sub>i</sub> ~ F<sub>c</sub><sup>k</sup>. SME and non-SME distributions are not constrained to coincide.</li>
+<li><strong>Multiplicative auction-level heterogeneity.</strong> Normalized log-bid decomposes as y<sub>it</sub> = a<sub>t</sub> + e<sub>it</sub>, with auction-level scale a<sub>t</sub> common to all bidders in auction t (Krasnokutskaya 2011). A best-linear-predictor shrinkage strips a<sub>t</sub> out of every log-bid; the cleaned residuals enter all downstream structural estimation.</li>
+<li><strong>Set-aside with equilibrium SME selection.</strong> Under the open regime both types enter; under SME-only, only SMEs are admissible. Within a short window around the cutoff, the underlying technology of supply is stable, but the equilibrium distribution of active SMEs under the restricted regime may differ from its pre-regime counterpart (Athey and Seira 2011 reading).</li>
 </ul>
-<p>The coefficient <span class="arithmatex">\(\beta\)</span> captures the pre-switch-period effect of the SME policy on group 65 outcomes.</p>
-<p><strong>Time windows:</strong> 6 months (Sep 2017--Aug 2018), 12 months (Mar 2017--Feb 2019), and 18 months (Sep 2016--Aug 2019).</p>
+<p>A Turnbull NPMLE that treats the winner formally as left-censored at c<sub>(2)</sub> dispenses with the multiplicative-heterogeneity assumption altogether and corroborates the baseline numbers within 16% of the total effect across classes.</p>
+<h3 id="the-decomposition">The decomposition<a class="headerlink" href="#the-decomposition" title="Permanent link">¶</a></h3>
+<p>Three counterfactual scenarios anchor the exercise:</p>
+<ul>
+<li><strong>S<sub>1</sub></strong> — open regime at the pre-period pool (baseline)</li>
+<li><strong>S<sub>2</sub></strong> — SME-only at the pre-period SME pool (within-auction component isolated)</li>
+<li><strong>S<sub>3</sub></strong> — SME-only at the observed post-period SME pool (full policy effect with endogenous entry)</li>
+</ul>
+<p>The simulated total effect on the second-order statistic decomposes arithmetically as</p>
+<div class="arithmatex">\[\underbrace{p_{S_3} - p_{S_1}}_{\text{simulated total}} = \underbrace{(p_{S_2} - p_{S_1})}_{\text{within-auction (sheltered bidding)}} + \underbrace{(p_{S_3} - p_{S_2})}_{\text{participation-margin}}.\]</div>
+<p>The within-auction component captures equilibrium price formation under reduced competition; under ascending-clock IPV, the dominant strategy is exit-at-cost regardless of pool composition, and the within-auction component is mechanically a property of which order statistic is realized at each pool composition. The decomposition is a counterfactual-simulation accounting under the modeling assumptions stated, not a separation of independently identified structural channels.</p>
+<h3 id="what-the-model-does-not-attempt">What the model does <em>not</em> attempt<a class="headerlink" href="#what-the-model-does-not-attempt" title="Permanent link">¶</a></h3>
+<p>Five extensions are bracketed below or in robustness rather than imposed as the central exercise: (i) entry is taken as observed Poisson arrival rates, not solved jointly with bidding under a free-entry condition; (ii) implied κ<sup>k</sup> are zero-profit margins at the entry margin, not structurally identified fixed costs; (iii) procurement quantity is treated as inelastic; (iv) the 10% preference V3 is computed under Vickrey-equivalent translation, with the FPSB equivalent under Maskin and Riley (2000) bracketed; (v) asymmetric IPV is assumed.</p>
 <hr>
 <h2 id="software-and-estimation">Software and Estimation<a class="headerlink" href="#software-and-estimation" title="Permanent link">¶</a></h2>
 <table>
@@ -6843,24 +6906,44 @@
 <td>R 4.5</td>
 </tr>
 <tr>
-<td><strong>Fixed effects</strong></td>
+<td><strong>Reduced-form FE</strong></td>
 <td><code>fixest::feols()</code> with lean estimation</td>
 </tr>
 <tr>
-<td><strong>Data handling</strong></td>
-<td><code>data.table</code> + <code>arrow</code> (parquet cache)</td>
+<td><strong>Cost distributions</strong></td>
+<td>All-bidders ECDF on UH-cleaned residuals; Turnbull NPMLE robustness</td>
 </tr>
 <tr>
-<td><strong>Clustering</strong></td>
-<td>Item-level (main), group-level (event study)</td>
+<td><strong>UH correction</strong></td>
+<td>Method-of-moments + best-linear-predictor shrinkage (Krasnokutskaya 2011)</td>
+</tr>
+<tr>
+<td><strong>Cross-modality check</strong></td>
+<td>GPV (2000) inversion on Convite first-price sealed-bid auctions</td>
+</tr>
+<tr>
+<td><strong>BNE simulation</strong></td>
+<td>Monte Carlo, B = 2,000 simulated auctions per scenario</td>
+</tr>
+<tr>
+<td><strong>Standard errors</strong></td>
+<td>Cluster bootstrap at the auction level, B<sub>bs</sub> = 500</td>
+</tr>
+<tr>
+<td><strong>Welfare arithmetic</strong></td>
+<td 0.20_="0.20," 0.30_="0.30," 0.40="0.40">DWL<sub>alloc</sub> + λ · Δ<sub>gov</sub> with λ ∈</td>
+</tr>
+<tr>
+<td><strong>Welfare weights</strong></td>
+<td>Saez--Stantcheva (2016) generalized social-marginal-welfare-weight identity</td>
+</tr>
+<tr>
+<td><strong>Data handling</strong></td>
+<td>DuckDB / <code>data.table</code> / <code>arrow</code> (parquet cache)</td>
 </tr>
 <tr>
 <td><strong>Figures</strong></td>
 <td><code>ggplot2</code> with <code>cairo_pdf</code>, grayscale theme</td>
-</tr>
-<tr>
-<td><strong>Threads</strong></td>
-<td>16 (fixest and data.table)</td>
 </tr>
 </tbody>
 </table>
@@ -6895,6 +6978,12 @@
     <li class="md-nav__item md-nav__item--active">
       <a href="/research/sme-public/paper/" class="md-nav__link md-nav__link--active">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

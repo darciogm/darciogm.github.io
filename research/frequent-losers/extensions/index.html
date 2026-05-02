@@ -6730,169 +6730,99 @@
 
 
 <h1 id="extensions">Extensions<a class="headerlink" href="#extensions" title="Permanent link">¶</a></h1>
-<p>This page presents additional analyses: structural diagnostic, supporting diagnostics, bid rotation and inflation, strategic adaptation, and the Lei 14.133/2021 discussion.</p>
+<p>Material that complements the main text without crowding it: institutional context for Brazil's new procurement law, scope conditions for portability, and a few diagnostic patterns the construct surfaces beyond the headline price gap.</p>
 <hr>
-<h2 id="structural-diagnostic">Structural Diagnostic<a class="headerlink" href="#structural-diagnostic" title="Permanent link">¶</a></h2>
-<h3 id="bic-model-selection">BIC Model Selection<a class="headerlink" href="#bic-model-selection" title="Permanent link">¶</a></h3>
-<p>BIC strongly favors Regime 2 (coordinated cover bidding) over Regime 1 (complementary): <span class="arithmatex">\(\Delta\)</span>BIC <span class="arithmatex">\(= -91{,}473\)</span>.</p>
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th>Estimate</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><span class="arithmatex">\(\hat{\sigma}_c / \hat{\sigma}_g\)</span></td>
-<td>0.72</td>
-<td>FL bids are 28% less dispersed than non-FL bids</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(\hat{\gamma}\)</span></td>
-<td>0.69</td>
-<td>Strategic complementarity: more cover bidders in more competitive tenders</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(n\)</span>-conditional markup</td>
-<td>6.4%</td>
-<td>Close to OLS baseline</td>
-</tr>
-</tbody>
-</table>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_dispersion_paradox.png" data-desc-position="bottom"><img src="../assets/figures/fig_dispersion_paradox.png" alt="Dispersion paradox"></a>
-  <figcaption><strong>Figure 12.</strong> The "dispersion paradox": FL bids are less dispersed than non-FL bids within tenders (CV 0.57 vs. 1.65), rendering dispersion-based screens ineffective under Regime 2.</figcaption>
-</figure>
-
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_05_regime_boxplot.png" data-desc-position="bottom"><img src="../assets/figures/fig_05_regime_boxplot.png" alt="Regime boxplot"></a>
-  <figcaption><strong>Figure 13.</strong> Bid spread comparison across simulated regimes and empirical FL data.</figcaption>
-</figure>
-
-<div class="admonition danger">
-<p class="admonition-title">Dispersion-based screens lose power under Regime 2</p>
-<p>When cover bids cluster near the winning bid rather than scattering above it, variance-based screens interpret FL tenders as competitive. A participation-based screen sidesteps this problem entirely.</p>
-</div>
-<hr>
-<h2 id="supporting-diagnostics-m1-m5">Supporting Diagnostics (M1--M5)<a class="headerlink" href="#supporting-diagnostics-m1-m5" title="Permanent link">¶</a></h2>
-<h3 id="m1-competitive-displacement">M1: Competitive Displacement<a class="headerlink" href="#m1-competitive-displacement" title="Permanent link">¶</a></h3>
-<p>FL-present tenders have +0.19 more non-FL firms (<span class="arithmatex">\(p &lt; 0.01\)</span>). FL firms add to participation rather than substitute for it. A Cox model shows FL exposure is associated with <em>lower</em> exit hazard (HR = 0.60, <span class="arithmatex">\(p &lt; 0.01\)</span>): firms in FL-exposed markets survive longer, the opposite of crowding-out.</p>
-<h3 id="m2-reference-price-anchoring">M2: Reference Price Anchoring<a class="headerlink" href="#m2-reference-price-anchoring" title="Permanent link">¶</a></h3>
-<p>In FL-present tenders, winners bid 4% closer to the BEC reference price (<span class="arithmatex">\(-0.041\)</span>, <span class="arithmatex">\(p &lt; 0.01\)</span>), consistent with calibration around a public anchor.</p>
-<h3 id="m3-reverse-causality">M3: Reverse Causality<a class="headerlink" href="#m3-reverse-causality" title="Permanent link">¶</a></h3>
-<p>Within item markets, a 10% lagged-price increase raises FL entry probability by 0.02 pp (<span class="arithmatex">\(\hat{\beta} = 0.0021\)</span>, SE = 0.0008). The elasticity is too small to explain much of the 6.4% price association.</p>
-<h3 id="m4-dyadic-linkage">M4: Dyadic Linkage<a class="headerlink" href="#m4-dyadic-linkage" title="Permanent link">¶</a></h3>
-<p>A stratified permutation test (1,000 iterations, preserving participation quartiles) shows FL firms form 4,696 high-frequency co-bidding pairs (<span class="arithmatex">\(\geq 5\)</span> shared tenders) versus a permuted mean of 3,271 (<span class="arithmatex">\(p &lt; 0.001\)</span>).</p>
-<h3 id="m5-firm-exit">M5: Firm Exit<a class="headerlink" href="#m5-firm-exit" title="Permanent link">¶</a></h3>
-<p>Cox model: HR = 0.60 (<span class="arithmatex">\(p &lt; 0.01\)</span>). FL-exposed firms survive <em>longer</em>---the opposite of crowding-out. Together with M1, the result suggests FL firms add noise rather than competition.</p>
-<hr>
-<h2 id="bid-rotation-and-bid-inflation">Bid Rotation and Bid Inflation<a class="headerlink" href="#bid-rotation-and-bid-inflation" title="Permanent link">¶</a></h2>
-<h3 id="winner-persistence">Winner Persistence<a class="headerlink" href="#winner-persistence" title="Permanent link">¶</a></h3>
-<p>FL firms' winner HHI: 0.178 (14.3 unique winners) vs. non-FL always-losers: 0.303 (5.0 winners; <span class="arithmatex">\(p &lt; 0.001\)</span>). FL firms co-participate with a wider range of winners, consistent with rotation of designated winners across competitive markets.</p>
-<h3 id="repeated-fl-winner-pairs">Repeated FL--Winner Pairs<a class="headerlink" href="#repeated-fl-winner-pairs" title="Permanent link">¶</a></h3>
-<p>Among 38,941 FL--winner pairs, 4,696 share <span class="arithmatex">\(\geq 5\)</span> tenders and 379 share <span class="arithmatex">\(\geq 20\)</span> (maximum: 177). Non-FL pairs average only 1.46 shared tenders with 494 pairs reaching <span class="arithmatex">\(\geq 5\)</span>. The heavy right tail is consistent with persistent co-bidding relationships.</p>
-<h3 id="bid-inflation">Bid Inflation<a class="headerlink" href="#bid-inflation" title="Permanent link">¶</a></h3>
-<p>FL median bid-to-winner ratio: 1.85 (85% above the winner) vs. 1.43 for non-FL losers. Controlling for item and year FE, FL bids are 15.4% higher (<span class="arithmatex">\(p &lt; 0.001\)</span>).</p>
-<hr>
-<h2 id="strategic-adaptation">Strategic Adaptation<a class="headerlink" href="#strategic-adaptation" title="Permanent link">¶</a></h2>
-<p>A sophisticated cartel could rotate its cover bidders or let them win occasionally to stay below the threshold---and the threshold sensitivity analysis already suggests some do. Any operational deployment would need periodic recalibration alongside bid-level tools, which is why the three-stage workflow treats the screen as a first stage rather than a final word.</p>
-<hr>
-<h2 id="minimum-bidder-constraint-variation">Minimum-Bidder Constraint Variation<a class="headerlink" href="#minimum-bidder-constraint-variation" title="Permanent link">¶</a></h2>
-<p>Interacting FL with a constraint-binding indicator yields:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Channel</th>
-<th style="text-align: center;">Coefficient</th>
-<th style="text-align: center;">SE</th>
-<th style="text-align: left;">Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">FL (<span class="arithmatex">\(n \geq 3\)</span>, voluntary)</td>
-<td style="text-align: center;"><strong>0.076</strong></td>
-<td style="text-align: center;">(0.021)</td>
-<td style="text-align: left;">7.6% voluntary premium</td>
-</tr>
-<tr>
-<td style="text-align: left;">FL <span class="arithmatex">\(\times\)</span> (<span class="arithmatex">\(n &lt; 3\)</span>, forced)</td>
-<td style="text-align: center;"><strong><span class="arithmatex">\(-0.160\)</span></strong></td>
-<td style="text-align: center;">--</td>
-<td style="text-align: left;">Negative interaction (<span class="arithmatex">\(p &lt; 0.001\)</span>)</td>
-</tr>
-</tbody>
-</table>
-<p>The price association concentrates where cover bidding is a strategic choice. The convite rule forces some participation regardless of market conditions, diluting the signal.</p>
-<hr>
-<h2 id="lei-141332021-predictions">Lei 14.133/2021 Predictions<a class="headerlink" href="#lei-141332021-predictions" title="Permanent link">¶</a></h2>
-<p>Brazil's recent procurement reform offers a natural laboratory. Two predictions follow:</p>
+<h2 id="lei-141332021-and-portability">Lei 14.133/2021 and Portability<a class="headerlink" href="#lei-141332021-and-portability" title="Permanent link">¶</a></h2>
+<p>Brazil's new procurement law (Lei 14.133/2021) replaces Lei 8.666/93 for new contracts, restricts the convite modality, and tightens habilitation requirements (mandatory federal qualified-supplier registry, integrity programs above a value threshold). The reform postdates our 2009–2019 sample but shapes the policy direction.</p>
+<p>The headline modal asymmetry pushes in a favorable direction. The construct's signal-to-noise is highest in pregão, where the price imprint is +9.3% and within-modal AUC against adjudicated cobidders is 0.952; in convite, the price imprint is +3.8% and within-modal AUC is 0.816. Lei 14.133/2021 consolidates pregão-style electronic auctions as the institutional default for federal and inter-state procurement, so the reform moves Brazilian procurement toward the modal regime in which the construct fires most cleanly.</p>
+<p>Portability is contingent, not free. Three structural prerequisites are diagnostic conditions that any candidate jurisdiction needs to satisfy before deployment:</p>
 <ol>
-<li>
-<p><strong>Constraint-binding channel disappears.</strong> The reform eliminates convite and with it the minimum-bidder rule. The negative FL interaction with the quorum binding indicator (<span class="arithmatex">\(-0.160\)</span>) should vanish.</p>
-</li>
-<li>
-<p><strong>Voluntary channel survives.</strong> The 7.6% premium where <span class="arithmatex">\(n \geq 3\)</span> reflects strategic choice rather than rule compliance. This channel should persist since the behavioral footprint the screen exploits (cover bidders must participate) does not depend on the procurement format.</p>
-</li>
+<li><strong>Commodity-heavy item composition</strong> that supports within-product-code price comparisons.</li>
+<li><strong>Electronic platforms with publicly auditable participant lists</strong>, so participation counts can be computed without privileged data access.</li>
+<li><strong>Institutional asymmetry between the winner and loser sides</strong> of the bidding pool, so persistent zero wins are informative about strategic non-competitive participation rather than about randomized matching outcomes.</li>
 </ol>
-<p>The reform also introduces new modalities (dialogo competitivo, concorrencia eletronica) with different participation incentives. The transition period, with federal, state, and municipal entities adopting the new law at different speeds, creates quasi-experimental variation for testing portability.</p>
+<p>The contingencies are recognizable, observable, and—in the institutional direction the country is moving—increasingly satisfied.</p>
 <hr>
-<h2 id="three-stage-enforcement-pathway">Three-Stage Enforcement Pathway<a class="headerlink" href="#three-stage-enforcement-pathway" title="Permanent link">¶</a></h2>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_enforcement_flowchart.png" data-desc-position="bottom"><img src="../assets/figures/fig_enforcement_flowchart.png" alt="Enforcement flowchart"></a>
-  <figcaption><strong>Figure 14.</strong> Three-stage enforcement pathway. Stage 1 reduces 41,000 firms to 2,735 FL-flagged firms using participation records alone. Stage 2 prioritizes by network structure and oversight capacity. Stage 3 deploys bid-level forensics on the triaged subset.</figcaption>
-</figure>
-
+<h2 id="settings-not-tested-directly">Settings Not Tested Directly<a class="headerlink" href="#settings-not-tested-directly" title="Permanent link">¶</a></h2>
+<p>The construct's logical scope extends beyond what the published paper validates empirically. We catalog three classes of untested deployment contexts:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: center;">Stage</th>
-<th style="text-align: left;">Action</th>
-<th style="text-align: left;">Data Required</th>
+<th style="text-align: left;">Context</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Replication path</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">1. <strong>Screen</strong></td>
-<td style="text-align: left;">Apply FL rule to participation records</td>
-<td style="text-align: left;">Firm, tender, outcome</td>
+<td style="text-align: left;">Federal Brazilian procurement (ComprasNet)</td>
+<td style="text-align: left;">Untested</td>
+<td style="text-align: left;">Same award-record envelope as BEC; replication is technically straightforward and substantively pending</td>
 </tr>
 <tr>
-<td style="text-align: center;">2. <strong>Triage</strong></td>
-<td style="text-align: left;">Cross-reference with network metrics and oversight indicators</td>
-<td style="text-align: left;">Co-bidding data, PBU size</td>
+<td style="text-align: left;">Other state-level platforms (Banco do Brasil, individual UFs)</td>
+<td style="text-align: left;">Untested</td>
+<td style="text-align: left;">Same envelope, accessible through the same legal regime</td>
 </tr>
 <tr>
-<td style="text-align: center;">3. <strong>Investigate</strong></td>
-<td style="text-align: left;">Deploy bid-level forensic tools on triaged subset</td>
-<td style="text-align: left;">Bid microdata</td>
+<td style="text-align: left;">Non-commodity settings (services, infrastructure, public works)</td>
+<td style="text-align: left;">Untested</td>
+<td style="text-align: left;">Within the framework's logical scope but the within-item identifying variation that underwrites the headline price gap is not equally available</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time periods outside 2009–2019</td>
+<td style="text-align: left;">Untested</td>
+<td style="text-align: left;">Pre-2009 precedes BEC operational stabilization; post-2019 transitions to Lei 14.133/2021</td>
 </tr>
 </tbody>
 </table>
-<p>Two features make the screen administrable:</p>
-<ul>
-<li><strong>Threshold robustness:</strong> varying the IQR multiplier from 1.0x to 3.0x and the win-rate cutoff from 0% to 5% yields significant coefficients across all 36 combinations.</li>
-<li><strong>Minimal data:</strong> participation and outcome records that every procurement system already collects.</li>
-</ul>
+<p>The replication archive (see <a href="../replication/">Replication</a>) is structured so the same pipeline can be run on any award-record dataset that conforms to the contract-record envelope.</p>
 <hr>
-<h2 id="year-by-year-stability">Year-by-Year Stability<a class="headerlink" href="#year-by-year-stability" title="Permanent link">¶</a></h2>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_10_year_coefficients.png" data-desc-position="bottom"><img src="../assets/figures/fig_10_year_coefficients.png" alt="Year-by-year coefficients"></a>
-  <figcaption><strong>Figure 15.</strong> Year-by-year FL coefficients. The coefficient is stable across years for log prices and log firms.</figcaption>
-</figure>
-
-<div class="admonition success">
-<p class="admonition-title">Stable across time</p>
-<p>The FL--price association is not driven by a particular time period. Coefficients are positive and significant in most years, with no clear trend.</p>
-</div>
+<h2 id="modal-asymmetry-as-scope-information">Modal Asymmetry as Scope Information<a class="headerlink" href="#modal-asymmetry-as-scope-information" title="Permanent link">¶</a></h2>
+<p>The construct fires with sharper signal-to-noise in pregão than in convite on two independent dimensions. The price imprint is +9.3% in pregão versus +3.8% in convite (ratio 2.5×). The discrimination AUC against adjudicated cobidders is 0.952 in pregão-primary auctions versus 0.816 in convite-primary auctions (bootstrap difference −0.136, <em>p</em> ≈ 0).</p>
+<p>A naive reading would invoke convite's minimum-bidder rule (Lei 8.666/93, Article 22 §3) as the institutional driver: if statutorily mandated quorum-fillers are the mechanism, the construct should fire <em>more</em> cleanly in convite, not less. The data flatly reverse this prediction. We do not read the reversal as positive evidence for any specific institutional theory of where cover bidding originates; we read it as scope information about where the construct's signal-to-noise is highest.</p>
+<p>Two competing readings remain observationally compatible: pregão's open electronic structure may expose loser-side participation footprints more visibly than convite's sealed-bid invitation procedure, or convite's smaller and more homogeneous bidder pools may compress the discriminating gap. We do not adjudicate between them.</p>
 <hr>
-<h2 id="network-diagnostics">Network Diagnostics<a class="headerlink" href="#network-diagnostics" title="Permanent link">¶</a></h2>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_network_hhi.png" data-desc-position="bottom"><img src="../assets/figures/fig_network_hhi.png" alt="Network HHI"></a>
-  <figcaption><strong>Figure 16.</strong> Distribution of winner HHI across FL firms. Higher HHI indicates that the FL firm consistently loses to the same winners.</figcaption>
-</figure>
+<h2 id="construct-scope-what-the-footprint-does-not-identify">Construct Scope: What the Footprint Does Not Identify<a class="headerlink" href="#construct-scope-what-the-footprint-does-not-identify" title="Permanent link">¶</a></h2>
+<p>The construct flags a participation footprint that admits at least three non-competitive readings. We adopt cover bidding as the working interpretation because the framework derives from it and because the strongest heterogeneity dimensions (modal asymmetry, oversight gradient) match its comparative statics most directly. The other readings remain observationally compatible at the firm level:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Reading</th>
+<th style="text-align: left;">Behavioral story</th>
+<th style="text-align: left;">Observational compatibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Cover bidding</strong> (working interpretation)</td>
+<td style="text-align: left;">Firms deployed by a cartel to fill participant slots without intending to win</td>
+<td style="text-align: left;">Matches the framework's separating equilibrium and both modal/oversight comparative statics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Capacity-transfer</strong></td>
+<td style="text-align: left;">Firms maintaining bidding presence to signal capacity availability for subcontracting or for affiliate consortia</td>
+<td style="text-align: left;">Compatible with persistent zero-win participation; not testable at the firm level on award-record data alone</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Market-intelligence</strong></td>
+<td style="text-align: left;">Firms participating to observe prices, identify procurement schedules, or build operational priors on competitor behavior</td>
+<td style="text-align: left;">Compatible with the participation footprint; would not generate the conditional price gap unless paired with a behavioral mechanism</td>
+</tr>
+</tbody>
+</table>
+<p>The construct's empirical content is the participation footprint these readings share, not the specific identification of any one of them. Adjudication among readings at the firm level requires evidence the award-record envelope does not contain.</p>
+<hr>
+<h2 id="future-directions">Future Directions<a class="headerlink" href="#future-directions" title="Permanent link">¶</a></h2>
+<p>Three directions for follow-up work follow naturally from the construct's design:</p>
+<ol>
+<li><strong>Inter-jurisdictional replication.</strong> The federal Brazilian procurement registry (ComprasNet) preserves the same award-record envelope as BEC and is accessible through the same legal regime. The construct can be tested on ComprasNet with no modification.</li>
+<li><strong>Integration with bid-distribution detectors.</strong> Where bid microdata are available, the construct serves as a pre-screen that raises the prior of detectors in the Imhof–Wallimann family on the case-load to which those methods are applied. The administrative pathway integrates the construct as Stage 1 (Screen) and bid-distribution methods as Stage 3 (Forensic).</li>
+<li><strong>Non-commodity settings.</strong> The framework's comparative static does not depend on commodity composition, but the empirical scope of this paper does. Whether the gradient survives in services, infrastructure, or public-works procurement is an open empirical question.</li>
+</ol>
+<hr>
+<h2 id="replication-and-transparency">Replication and Transparency<a class="headerlink" href="#replication-and-transparency" title="Permanent link">¶</a></h2>
+<p>The replication archive includes the construction scripts for the derived datasets, the analysis pipeline, and the LaTeX sources for the manuscript. The CADE adjudication records used as ground truth are public and accessible through the <em>Conselho Administrativo de Defesa Econômica</em> portal at gov.br/cade. The São Paulo BEC contract awards are administrative records maintained by the State of São Paulo Treasury and obtained through institutional channels. See <a href="../replication/">Replication</a> for the full pipeline.</p>
 
 
 
@@ -6924,6 +6854,12 @@
     <li class="md-nav__item ">
       <a href="/research/frequent-losers/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

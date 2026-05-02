@@ -6730,217 +6730,159 @@
 
 
 <h1 id="advanced-methods">Advanced Methods<a class="headerlink" href="#advanced-methods" title="Permanent link">¶</a></h1>
-<p>This page documents five advanced econometric methods that complement the main DiDiR analysis. Each method addresses a specific concern or deepens the understanding of the treatment effect.</p>
+<p>This page documents the structural-econometric machinery underlying the v5 (JPubE submission-ready) version of the paper. Five components combine: (1) drop-out point identification of type-specific cost distributions; (2) auction-level unobserved-heterogeneity correction; (3) Athey--Seira treatment of equilibrium entry; (4) Bayes--Nash counterfactual simulation; (5) Saez--Stantcheva welfare weights.</p>
 <hr>
-<h2 id="1-parallel-trends-sensitivity-honestdid">1. Parallel Trends Sensitivity (HonestDiD)<a class="headerlink" href="#1-parallel-trends-sensitivity-honestdid" title="Permanent link">¶</a></h2>
-<p>The HonestDiD method (Rambachan and Roth, 2023) constructs robust confidence intervals for the treatment effect under controlled violations of the parallel trends assumption. The parameter <span class="arithmatex">\(\bar{M}\)</span> governs the maximum amount by which the post-treatment trend may deviate from the pre-treatment path.</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_11_honestdid.png" data-desc-position="bottom"><img src="../assets/figures/fig_11_honestdid.png" alt="HonestDiD sensitivity analysis"></a>
-  <figcaption>Figure A.10. HonestDiD Sensitivity Analysis: Robust confidence intervals under violations of parallel trends. The price effect remains significant even for large values of M̄.</figcaption>
-</figure>
-
-<div class="admonition success">
-<p class="admonition-title">Key finding</p>
-<p>The main price effect remains statistically significant even under substantial deviations from strict parallel trends, providing strong evidence that the results are not an artifact of pre-existing differential trends.</p>
-</div>
-<hr>
-<h2 id="2-sample-selection-correction-lee-bounds">2. Sample Selection Correction (Lee Bounds)<a class="headerlink" href="#2-sample-selection-correction-lee-bounds" title="Permanent link">¶</a></h2>
-<p>The price and distance regressions condition on item completion. If the treatment affects completion rates, this creates sample selection bias. Lee (2009) bounds correct for this by trimming the outcome distribution in the excess-selected cell.</p>
+<h2 id="1-type-specific-cost-distributions-haile-and-tamer-2003">1. Type-specific cost distributions (Haile and Tamer 2003)<a class="headerlink" href="#1-type-specific-cost-distributions-haile-and-tamer-2003" title="Permanent link">¶</a></h2>
+<p>The Pregao auction is a descending-clock electronic English-reverse auction. Under independent private values, the weakly dominant strategy is to <strong>exit when the running clock price reaches one's own cost</strong>. Drop-out prices of losers therefore <em>point-identify</em> their costs, without requiring inversion of a bid function or parametric assumptions on bidding.</p>
+<p>Three estimators of F<sub>c</sub><sup>k</sup> are used:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th style="text-align: center;">Log prices (lower)</th>
-<th style="text-align: center;">Log prices (upper)</th>
-<th style="text-align: center;">Distance (lower)</th>
-<th style="text-align: center;">Distance (upper)</th>
+<th>Estimator</th>
+<th>Bias</th>
+<th>Use</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>g65 x Pre</strong></td>
-<td style="text-align: center;"><strong>-0.1306***</strong></td>
-<td style="text-align: center;"><strong>-0.1227***</strong></td>
-<td style="text-align: center;"><strong>10.775***</strong></td>
-<td style="text-align: center;"><strong>10.804***</strong></td>
+<td><strong>Losers-only</strong></td>
+<td>Overstates F<sub>c</sub><sup>k</sup> in the left tail (omits the lowest cost draw per auction)</td>
+<td>Reference / DiD-equivalent</td>
 </tr>
 <tr>
-<td></td>
-<td style="text-align: center;">(0.0096)</td>
-<td style="text-align: center;">(0.0085)</td>
-<td style="text-align: center;">(2.232)</td>
-<td style="text-align: center;">(2.233)</td>
+<td><strong>All-bidders (baseline)</strong></td>
+<td>Slight downward bias throughout (treats winner's final clock price ≈ c<sub>(2)</sub> as their cost)</td>
+<td>Main specification</td>
 </tr>
 <tr>
-<td>Trimming proportion</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">8.82%</td>
-<td style="text-align: center;"></td>
+<td><strong>Turnbull NPMLE</strong></td>
+<td>Point-identified (treats winner formally as left-censored at c<sub>(2)</sub>)</td>
+<td>Robustness benchmark</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition success">
-<p class="admonition-title">Key finding</p>
-<p>The bounds for log prices range from -0.131 to -0.123, both highly significant. The tightness of the bounds indicates that sample selection has a negligible impact on the main price estimates.</p>
-</div>
+<p>Across the eight (class × type × period) strata, the median estimates satisfy Turnbull ≤ all-bidders ≤ losers-only in all 8 strata. The BNE decomposition computed on the Turnbull input differs from the all-bidders baseline by <strong>at most 16% of the total effect</strong> across classes.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_pregao_fc_by_stratum.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_pregao_fc_by_stratum.png" alt="Recovered cost distributions by stratum"></a>
+  <figcaption>Figure 1. Recovered type-specific cost distributions F<sub>c</sub><sup>k</sup> by (class × type × period) stratum, normalized by the item reference price.</figcaption>
+</figure>
+
+<h3 id="cross-modality-consistency-check">Cross-modality consistency check<a class="headerlink" href="#cross-modality-consistency-check" title="Permanent link">¶</a></h3>
+<p>Convite auctions in the same sample are first-price sealed-bid; the Guerre, Perrigne, and Vuong (2000) inversion recovers F<sub>c</sub><sup>k</sup> from the Convite bid distribution. The Convite GPV and Pregao drop-out estimates <strong>coincide to approximately one percentage point at the median in pharma non-SME Pre</strong> — the stratum where the comparison is least confounded by the policy reform. The check also serves as an indirect collusion screen: the bidder-group detection tests of Conley and Decarolis (2016) would flag systematic divergence between GPV-inverted bids and drop-out exits in collusive settings; the convergence reported here is consistent with non-collusive equilibrium play.</p>
+<figure>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_cross_modality_uh.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_cross_modality_uh.png" alt="Cross-modality identification check"></a>
+  <figcaption>Figure 2. Cross-modality identification check on UH-clean residuals. Each panel plots the type-specific cost distribution two ways: GPV (2000) inversion on Convite first-price sealed-bid auctions (solid) and Haile and Tamer (2003) drop-out point-ID on Pregao descending-clock auctions (dashed). Convergence in the pharma non-SME Pre panel supports the IPV restriction in that stratum.</figcaption>
+</figure>
+
 <hr>
-<h2 id="3-heterogeneous-treatment-effects-causal-forest">3. Heterogeneous Treatment Effects (Causal Forest)<a class="headerlink" href="#3-heterogeneous-treatment-effects-causal-forest" title="Permanent link">¶</a></h2>
-<p>A causal forest (Athey, Tibshirani, and Wager, 2019) estimates individualized treatment effects using an honest, doubly-robust random forest on FWL-residualized outcomes.</p>
-<h3 id="variable-importance">Variable Importance<a class="headerlink" href="#variable-importance" title="Permanent link">¶</a></h3>
+<h2 id="2-auction-level-heterogeneity-correction-krasnokutskaya-2011">2. Auction-level heterogeneity correction (Krasnokutskaya 2011)<a class="headerlink" href="#2-auction-level-heterogeneity-correction-krasnokutskaya-2011" title="Permanent link">¶</a></h2>
+<p>The normalized log-bid is decomposed as</p>
+<div class="arithmatex">\[y_{it} = \log(b_{it} / p_t^{\mathrm{ref}}) = a_t + e_{it}\]</div>
+<p>where a<sub>t</sub> is an auction-level scale common to all bidders in auction t, and e<sub>it</sub> is bidder-specific. Method-of-moments variance decomposition delivers stratum-specific σ<sub>a</sub><sup>2,k</sup> and σ<sub>e</sub><sup>2,k</sup>, and a best-linear-predictor shrinkage strips a<sub>t</sub> out of every log-bid:</p>
+<div class="arithmatex">\[\hat{a}_t = \frac{\hat\sigma_a^2 N_t}{\hat\sigma_a^2 N_t + \hat\sigma_e^2} (\bar y_t - \bar y), \qquad \hat e_{it} = y_{it} - \hat a_t.\]</div>
+<p>Intraclass correlation ρ<sup>k</sup> ranges from approximately <strong>0.36 to 0.59</strong> across the three Pregao cells outside the low-n pharma-SME-Pre stratum — comparable to the <strong>0.50--0.70 range Krasnokutskaya (2011) reports</strong> for California highway contracts.</p>
+<p>The correction closes <strong>93% of the cross-modality median gap in pharma SME Post</strong>, 23% in pharma non-SME Post, and leaves the non-pharma gap largely intact — evidence that auction-level heterogeneity is the binding constraint in pharma but only part of the story in non-pharma.</p>
 <figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_12_cforest_varimp.png" data-desc-position="bottom"><img src="../assets/figures/fig_12_cforest_varimp.png" alt="Causal forest variable importance"></a>
-  <figcaption>Figure A.11. Variable importance ranking: item quantity dominates (0.486), followed by tender type (0.183) and supplier location (0.156).</figcaption>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_pregao_ht_bands.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_pregao_ht_bands.png" alt="Pregao Haile-Tamer bounds"></a>
+  <figcaption>Figure 3. Pregao Haile-Tamer bounds on the recovered cost CDFs by stratum. Bands show the gap between the losers-only upper bound and the all-bidders / Turnbull lower bound.</figcaption>
 </figure>
 
-<h3 id="group-average-treatment-effects-gate">Group Average Treatment Effects (GATE)<a class="headerlink" href="#group-average-treatment-effects-gate" title="Permanent link">¶</a></h3>
+<hr>
+<h2 id="3-equilibrium-entry-athey-and-seira-2011-spirit">3. Equilibrium entry (Athey and Seira 2011 spirit)<a class="headerlink" href="#3-equilibrium-entry-athey-and-seira-2011-spirit" title="Permanent link">¶</a></h2>
+<p>Entry is modeled as Poisson arrivals with stratum-specific rates. The Bayes-Nash counterfactual takes equilibrium arrival rates as primitives rather than solving for them explicitly:</p>
+<ul>
+<li>Pre-period counts (N<sup>SME</sup><sub>Pre</sub>, N<sup>¬</sup><sub>Pre</sub>) — status-quo arrival rates under the open regime</li>
+<li>Post-period counts (N<sup>SME</sup><sub>Post</sub>, 0) — equilibrium arrival under the restricted regime</li>
+</ul>
+<p>In the <strong>main specification</strong>, F<sub>c</sub><sup>SME,Post</sup> is treated as an equilibrium-selection object generated by the protected regime rather than forced to equal F<sub>c</sub><sup>SME,Pre</sup>. The Online Appendix reports the <strong>strict-invariance limiting case</strong> in which that equality is imposed as a benchmark — the same rule, but with the protected SME pool drawn from the open-regime primitive.</p>
+<p>A KS test on UH-cleaned non-SME F<sub>c</sub> rejects strict invariance in three of the four Pregao strata (KS distances 0.06--0.14), providing the empirical foundation for adopting equilibrium selection as the main specification rather than strict invariance.</p>
+<p>A zero-profit calculation applied to the simulated winning-margin profit distribution delivers an implied entry cost per bidder in the <strong>R$0.11--R$2.46 range</strong>, with non-SMEs facing roughly 4.5 times the SME entry cost across both classes.</p>
+<hr>
+<h2 id="4-bayes-nash-counterfactual-simulation">4. Bayes-Nash counterfactual simulation<a class="headerlink" href="#4-bayes-nash-counterfactual-simulation" title="Permanent link">¶</a></h2>
+<p>With F<sub>c</sub><sup>k</sup> and entry counts in hand, the BNE counterfactual is a Monte Carlo over draws from the estimated primitives. For each of B = 2,000 simulated auctions:</p>
+<ol>
+<li>Draw n<sup>SME</sup> ~ Poisson(N̄<sup>SME</sup>) and analogously for non-SMEs.</li>
+<li>Sample costs from the corresponding F<sub>c</sub><sup>k</sup>.</li>
+<li>Sort the realized costs.</li>
+<li>Record c<sub>(1)</sub> (production cost of the lowest-cost firm), c<sub>(2)</sub> (expected transaction price under revenue equivalence), and the winner's type.</li>
+</ol>
+<p>Aggregating over draws yields the means, quantiles, and decompositions reported in <a href="../results/">Results</a>. Standard errors come from a <strong>cluster bootstrap at the auction level with B<sub>bs</sub> = 500 replicates</strong>, which preserves within-auction correlation through the auction-level scale a<sub>t</sub>.</p>
+<p>The simulated total effect on the second-order statistic decomposes arithmetically as</p>
+<div class="arithmatex">\[\underbrace{p_{S_3} - p_{S_1}}_{\text{simulated total effect}} = \underbrace{(p_{S_2} - p_{S_1})}_{\text{within-auction (sheltered bidding)}} + \underbrace{(p_{S_3} - p_{S_2})}_{\text{participation-margin}}.\]</div>
 <figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_13_cforest_gate.png" data-desc-position="bottom"><img src="../assets/figures/fig_13_cforest_gate.png" alt="Causal forest GATE"></a>
-  <figcaption>Figure A.12. Group Average Treatment Effects by CATE quartile. The heterogeneity across quartiles is modest.</figcaption>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_bne_prices.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_bne_prices.png" alt="BNE simulated prices"></a>
+  <figcaption>Figure 4. BNE simulated transaction prices by counterfactual scenario and class.</figcaption>
 </figure>
 
+<hr>
+<h2 id="5-welfare-weights-saez-and-stantcheva-2016">5. Welfare weights (Saez and Stantcheva 2016)<a class="headerlink" href="#5-welfare-weights-saez-and-stantcheva-2016" title="Permanent link">¶</a></h2>
+<p>A social planner aggregating producer and consumer surplus with weight w<sup>SME</sup> on SME producer surplus is indifferent between V0 (full set-aside) and V3 (10% price preference) when</p>
+<div class="arithmatex">\[w^{\text{SME}}_\star = \frac{\text{Loss}(V_0) - \text{Loss}(V_3)}{\text{SMESurplus}(V_0) - \text{SMESurplus}(V_3)}.\]</div>
+<p>The Loss term combines allocative DWL and the marginal-cost-of-public-funds distortion from the welfare arithmetic of <a href="../extensions/">Extensions</a>:</p>
+<div class="arithmatex">\[\text{Loss} = \underbrace{c_{(1)}^{S_3} - c_{(1)}^{S_1}}_{\text{DWL}_{\text{alloc}}} + \underbrace{\lambda \cdot (p_{S_3} - p_{S_1})}_{\text{MCPF distortion}}.\]</div>
+<p>The implied weights w<sup>SME</sup><sub>★</sub> = <strong>2.42 (non-pharma)</strong> and <strong>2.61 (pharma)</strong> under the main specification sit above the 1.2--1.5 range typical of Brazilian cash-transfer programs. Under strict invariance the pharmaceutical weight falls to <strong>0.7</strong>, below the utilitarian benchmark — the diagnostic bifurcation that organizes the policy discussion.</p>
+<hr>
+<h2 id="6-bridging-the-structural-counterfactual-to-the-did-coefficient">6. Bridging the structural counterfactual to the DiD coefficient<a class="headerlink" href="#6-bridging-the-structural-counterfactual-to-the-did-coefficient" title="Permanent link">¶</a></h2>
+<p>Four mechanical sources of divergence account for the structural object via additive contributions against the DiD baseline:</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th style="text-align: center;">Q1 (lowest)</th>
-<th style="text-align: center;">Q2</th>
-<th style="text-align: center;">Q3</th>
-<th style="text-align: center;">Q4 (highest)</th>
+<th>Source</th>
+<th style="text-align: center;">Non-pharma</th>
+<th style="text-align: center;">Pharma</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>GATE</strong></td>
-<td style="text-align: center;">0.391</td>
-<td style="text-align: center;">-0.114</td>
-<td style="text-align: center;">1.048</td>
-<td style="text-align: center;">-0.824</td>
+<td>(a) Sample restriction (Pregao only, c<sub>ε</sub> ≤ 3, n ≥ 2)</td>
+<td style="text-align: center;">+0.025</td>
+<td style="text-align: center;">+0.060</td>
 </tr>
 <tr>
-<td></td>
-<td style="text-align: center;">(0.941)</td>
-<td style="text-align: center;">(1.363)</td>
-<td style="text-align: center;">(1.374)</td>
-<td style="text-align: center;">(0.844)</td>
+<td>(b) UH cleaning (Krasnokutskaya scale shrinkage)</td>
+<td style="text-align: center;">+0.040</td>
+<td style="text-align: center;">+0.075</td>
 </tr>
 <tr>
-<td><strong>ATE (full sample)</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">0.125 (0.578)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
+<td>(c) Functional form (c<sub>(2)</sub> vs. linear log-mean)</td>
+<td style="text-align: center;">+0.050</td>
+<td style="text-align: center;">+0.045</td>
+</tr>
+<tr>
+<td>(d) Conditioning set (counterfactual vs. realized entry)</td>
+<td style="text-align: center;">+0.020</td>
+<td style="text-align: center;">+0.005</td>
+</tr>
+<tr>
+<td><strong>Sum + DiD baseline ≈</strong></td>
+<td style="text-align: center;"><strong>+0.255</strong></td>
+<td style="text-align: center;"><strong>+0.305</strong></td>
+</tr>
+<tr>
+<td>Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub></td>
+<td style="text-align: center;">+0.259</td>
+<td style="text-align: center;">+0.308</td>
+</tr>
+<tr>
+<td>Residuals (non-linear interactions)</td>
+<td style="text-align: center;">+0.004</td>
+<td style="text-align: center;">+0.003</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition info">
-<p class="admonition-title">Interpretation</p>
-<p>The causal forest reveals modest heterogeneity in treatment effects, with item quantity as the key moderator. The imprecise GATE estimates reflect the challenge of detecting heterogeneity in residualized data with substantial within-item variation.</p>
-</div>
-<hr>
-<h2 id="4-distributional-effects-quantile-did">4. Distributional Effects (Quantile DiD)<a class="headerlink" href="#4-distributional-effects-quantile-did" title="Permanent link">¶</a></h2>
-<p>Quantile difference-in-differences (Canay, 2011) estimates how the treatment effect varies across the price distribution, going beyond the mean effect captured by OLS.</p>
+<p>The 3--4× gap between the structural and the DiD is informally attributable to the four sources above and is predictable in direction under the maintained structural assumptions. A misspecified model would not be guaranteed to deliver a gap of either consistent sign or consistent magnitude. The fact that the gap obtains in the same direction and at comparable magnitude in both classes is consistent with correct specification of asymmetric IPV with type-removal.</p>
 <figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_14_quantile_did.png" data-desc-position="bottom"><img src="../assets/figures/fig_14_quantile_did.png" alt="Quantile DiD"></a>
-  <figcaption>Figure A.13. Quantile DiD coefficients across the price distribution. Effects are strongly negative at lower quantiles and turn positive at the upper tail.</figcaption>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_v3_gelbach_waterfall.png" data-desc-position="bottom"><img src="../assets/figures/fig_v3_gelbach_waterfall.png" alt="Gelbach-style decomposition"></a>
+  <figcaption>Figure 5. Gelbach-style waterfall decomposition of the structural object onto its four mechanical sources of divergence from the DiD coefficient.</figcaption>
 </figure>
 
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align: center;"><span class="arithmatex">\(\tau = 0.10\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\tau = 0.25\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\tau = 0.50\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\tau = 0.75\)</span></th>
-<th style="text-align: center;"><span class="arithmatex">\(\tau = 0.90\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>g65 x Pre</strong></td>
-<td style="text-align: center;"><strong>-0.623***</strong></td>
-<td style="text-align: center;"><strong>-0.543***</strong></td>
-<td style="text-align: center;"><strong>-0.356***</strong></td>
-<td style="text-align: center;">0.031</td>
-<td style="text-align: center;"><strong>0.445***</strong></td>
-</tr>
-<tr>
-<td></td>
-<td style="text-align: center;">(0.028)</td>
-<td style="text-align: center;">(0.023)</td>
-<td style="text-align: center;">(0.024)</td>
-<td style="text-align: center;">(0.032)</td>
-<td style="text-align: center;">(0.045)</td>
-</tr>
-<tr>
-<td><strong>OLS benchmark</strong></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">-0.124 (0.017)</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;"></td>
-</tr>
-</tbody>
-</table>
-<div class="admonition warning">
-<p class="admonition-title">Key finding</p>
-<p>The benefits of open competition are concentrated at the lower quantiles of the price distribution (<span class="arithmatex">\(\tau \leq 0.50\)</span>), where competitive bidding drives prices down most effectively. At the upper tail (<span class="arithmatex">\(\tau = 0.90\)</span>), prices are actually higher under open tenders, possibly reflecting specialized items with thin supplier markets.</p>
-</div>
 <hr>
-<h2 id="5-mechanism-decomposition-gelbach">5. Mechanism Decomposition (Gelbach)<a class="headerlink" href="#5-mechanism-decomposition-gelbach" title="Permanent link">¶</a></h2>
-<p>The Gelbach (2016) decomposition partitions the total price effect into contributions from observable channels by comparing a "short" regression (treatment + controls) with a "full" regression that adds mediators.</p>
+<h2 id="7-appendix-did-validation-not-main-object">7. Appendix DiD (validation, not main object)<a class="headerlink" href="#7-appendix-did-validation-not-main-object" title="Permanent link">¶</a></h2>
+<p>The reduced-form DiD against the 76 never-treated product groups serves as design validation rather than the main object. With item and month fixed effects, the 18-month coefficient on absolute log-price is <strong>−0.10 to −0.11</strong>, and on the price-to-reference ratio approximately <strong>−0.06</strong>. These magnitudes are reported in Appendix B of the manuscript.</p>
 <figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_15_mediation.png" data-desc-position="bottom"><img src="../assets/figures/fig_15_mediation.png" alt="Gelbach decomposition"></a>
-  <figcaption>Figure A.14. Channel contributions to the price effect. Competition and composition operate as partially offsetting mechanisms.</figcaption>
+  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_eventstudy_prices.png" data-desc-position="bottom"><img src="../assets/figures/fig_eventstudy_prices.png" alt="DiD event study"></a>
+  <figcaption>Figure 6. Event study on log winning prices for Group 65 vs. the 76 never-treated product groups (Appendix DiD validation).</figcaption>
 </figure>
-
-<table>
-<thead>
-<tr>
-<th>Channel</th>
-<th style="text-align: center;">Coefficient</th>
-<th style="text-align: center;">SE</th>
-<th style="text-align: center;">% of gap</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Short regression</strong> (g65 x Pre)</td>
-<td style="text-align: center;">-0.1318***</td>
-<td style="text-align: center;">(0.0096)</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td><strong>Full regression</strong> (g65 x Pre)</td>
-<td style="text-align: center;">-0.1227***</td>
-<td style="text-align: center;">(0.0101)</td>
-<td style="text-align: center;"></td>
-</tr>
-<tr>
-<td>Gap (short - full)</td>
-<td style="text-align: center;">-0.0091</td>
-<td style="text-align: center;"></td>
-<td style="text-align: center;">100%</td>
-</tr>
-<tr>
-<td>Competition (log firms)</td>
-<td style="text-align: center;">0.0078***</td>
-<td style="text-align: center;">(0.0010)</td>
-<td style="text-align: center;">-85%</td>
-</tr>
-<tr>
-<td>Composition (SME winner)</td>
-<td style="text-align: center;">-0.0169***</td>
-<td style="text-align: center;">(0.0014)</td>
-<td style="text-align: center;">185%</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">Interpretation</p>
-<p>The competition and composition channels operate as partially offsetting mechanisms. Open tenders increase competition (lowering prices), but also attract non-SME winners whose conditional pricing effects partially offset the competition gains. The large unexplained component (-0.123) indicates that most of the price effect operates through channels not captured by these two mediators.</p>
-</div>
 
 
 
@@ -6972,6 +6914,12 @@
     <li class="md-nav__item ">
       <a href="/research/sme-public/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/sme-public/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

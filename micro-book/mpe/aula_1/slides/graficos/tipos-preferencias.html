@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!--
+  Library: JSXGraph
+  Reason: JSXGraph enables side-by-side geometric panels with distinct coordinate
+  systems, making it ideal for comparing different preference types (Cobb-Douglas,
+  perfect substitutes, perfect complements, quasi-linear) in a unified interface.
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tipos de Preferencias</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .panel {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 0.5rem;
+      background: #fafafa;
+    }
+    .panel-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+    .panel-eq {
+      font-size: 0.8rem;
+      text-align: center;
+      margin-bottom: 0.3rem;
+      color: #555;
+    }
+    .panel-note {
+      font-size: 0.75rem;
+      text-align: center;
+      color: #888;
+      margin-top: 0.2rem;
+      font-style: italic;
+    }
+    .jxg-panel {
+      width: 100%;
+      height: 300px;
+    }
+    .btn-reset {
+      display: block;
+      width: 200px;
+      margin: 1rem auto 0;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 768px) {
+      .panels { grid-template-columns: 1fr; }
+      .jxg-panel { height: 280px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="panels">
+    <!-- Cobb-Douglas -->
+    <div class="panel">
+      <div class="panel-title" style="color:#C8102E;">Cobb-Douglas</div>
+      <div class="panel-eq">\(u = x_1^{0.5} x_2^{0.5}\)</div>
+      <div id="box-cd" class="jxg-panel"></div>
+      <div class="panel-note">Hiperboles convexas, TMS decrescente, \(\sigma = 1\)</div>
+    </div>
+
+    <!-- Substitutos Perfeitos -->
+    <div class="panel">
+      <div class="panel-title" style="color:#1565c0;">Substitutos Perfeitos</div>
+      <div class="panel-eq">\(u = x_1 + x_2\)</div>
+      <div id="box-sp" class="jxg-panel"></div>
+      <div class="panel-note">Retas paralelas, TMS constante, \(\sigma = \infty\)</div>
+    </div>
+
+    <!-- Complementos Perfeitos -->
+    <div class="panel">
+      <div class="panel-title" style="color:#00897b;">Complementos Perfeitos</div>
+      <div class="panel-eq">\(u = \min\{x_1, x_2\}\)</div>
+      <div id="box-cp" class="jxg-panel"></div>
+      <div class="panel-note">Ângulo reto (L), TMS indefinida no vértice, \(\sigma = 0\)</div>
+    </div>
+
+    <!-- Quase-linear -->
+    <div class="panel">
+      <div class="panel-title" style="color:#e65100;">Quase-linear</div>
+      <div class="panel-eq">\(u = \sqrt{x_1} + x_2\)</div>
+      <div id="box-ql" class="jxg-panel"></div>
+      <div class="panel-note">Translações verticais, TMS depende so de \(x_1\)</div>
+    </div>
+  </div>
+
+  <button class="btn-reset" onclick="drawAll()">Resetar</button>
+
+  <script>
+    var BB = [-1.8, 12, 11.5, -1.5];
+    var boardOpts = {
+      boundingbox: BB,
+      axis: false,
+      showCopyright: false,
+      showNavigation: false,
+      keepAspectRatio: false
+    };
+
+    function addAxes(brd) {
+      brd.create('axis', [[0,0],[10,0]], {
+        ticks: { drawLabels: true, label: { fontSize: 9 } },
+        name: '', withLabel: false
+      });
+      brd.create('axis', [[0,0],[0,10]], {
+        ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-8, 0] } },
+        name: '', withLabel: false
+      });
+
+      // Y-axis label: centered vertically, rotated 90°, bold italic
+      brd.create('text', [
+        BB[0] * 0.55, BB[1] / 2,
+        '<b><i>x</i><sub>2</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+      // X-axis label: centered horizontally, below ticks, bold italic
+      brd.create('text', [
+        BB[2] / 2, BB[3] * 0.65,
+        '<b><i>x</i><sub>1</sub></b>'
+      ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+    }
+
+    // ========== Cobb-Douglas ==========
+    var bCD = JXG.JSXGraph.initBoard('box-cd', boardOpts);
+    addAxes(bCD);
+
+    var cdLevels = [1, 2, 3, 4, 5, 6, 7];
+    var cdColors = ['#C8102E', '#d84040', '#e06060', '#C8102E', '#d84040', '#e06060', '#C8102E'];
+    for (var i = 0; i < cdLevels.length; i++) {
+      (function(U, col) {
+        bCD.create('curve', [
+          function(t) { return t; },
+          function(t) {
+            if (t <= 0.01) return NaN;
+            var val = (U*U) / t; // u = x1^0.5 * x2^0.5 => x2 = U^2 / x1
+            return val > 10.5 ? NaN : val;
+          },
+          0.05, 10.5
+        ], { strokeColor: col, strokeWidth: 1.8, numberPointsHigh: 200 });
+      })(cdLevels[i], cdColors[i % cdColors.length]);
+    }
+    // Label
+    bCD.create('text', [7.5, 1, '\\(U\\) cresc.'], { fontSize: 10, color: '#C8102E', fixed: true });
+    bCD.create('arrow', [[6.5, 1.5], [8.5, 3.5]], {
+      strokeColor: '#C8102E', strokeWidth: 1, fixed: true,
+      lastArrow: { type: 2, size: 4 }
+    });
+
+    // ========== Substitutos Perfeitos ==========
+    var bSP = JXG.JSXGraph.initBoard('box-sp', boardOpts);
+    addAxes(bSP);
+
+    var spLevels = [2, 4, 6, 8, 10, 12, 14];
+    for (var i = 0; i < spLevels.length; i++) {
+      (function(U) {
+        // u = x1 + x2 => x2 = U - x1
+        bSP.create('segment', [
+          [0, U], [U, 0]
+        ], {
+          strokeColor: '#1565c0', strokeWidth: 1.8, fixed: true
+        });
+      })(spLevels[i]);
+    }
+    bSP.create('text', [0.5, 9.5, 'TMS constante'], { fontSize: 10, color: '#1565c0', fixed: true });
+    bSP.create('text', [5, 0.8, '\\(\\text{TMS} = a/b = 1\\)'], {
+      fontSize: 10, color: '#1565c0', fixed: true
+    });
+
+    // ========== Complementos Perfeitos ==========
+    var bCP = JXG.JSXGraph.initBoard('box-cp', boardOpts);
+    addAxes(bCP);
+
+    var cpLevels = [1, 2, 3, 4, 5, 6, 7, 8];
+    for (var i = 0; i < cpLevels.length; i++) {
+      (function(U) {
+        // u = min(x1, x2), vertex at (U, U)
+        bCP.create('segment', [[U, U], [U, 10.5]], {
+          strokeColor: '#00897b', strokeWidth: 1.8, fixed: true
+        });
+        bCP.create('segment', [[U, U], [10.5, U]], {
+          strokeColor: '#00897b', strokeWidth: 1.8, fixed: true
+        });
+        bCP.create('point', [U, U], {
+          size: 2, color: '#00897b', fixed: true, name: '',
+          strokeColor: '#00897b', fillColor: '#00897b'
+        });
+      })(cpLevels[i]);
+    }
+    // 45-degree line through vertices
+    bCP.create('line', [[0,0],[1,1]], {
+      strokeColor: '#888', strokeWidth: 1, dash: 3, fixed: true,
+      straightFirst: true, straightLast: true,
+      point1: { visible: false }, point2: { visible: false }
+    });
+    bCP.create('text', [7.5, 8.5, '\\(x_1 = x_2\\)'], {
+      fontSize: 10, color: '#888', fixed: true
+    });
+    bCP.create('text', [0.5, 9.5, 'Ângulo reto'], {
+      fontSize: 10, color: '#00897b', fixed: true
+    });
+
+    // ========== Quase-linear ==========
+    var bQL = JXG.JSXGraph.initBoard('box-ql', boardOpts);
+    addAxes(bQL);
+
+    var qlLevels = [1, 2, 3, 4, 5, 6, 7];
+    var qlColors = ['#e65100', '#f57c00', '#fb8c00', '#e65100', '#f57c00', '#fb8c00', '#e65100'];
+    for (var i = 0; i < qlLevels.length; i++) {
+      (function(U, col) {
+        // u = sqrt(x1) + x2 => x2 = U - sqrt(x1)
+        bQL.create('curve', [
+          function(t) { return t; },
+          function(t) {
+            if (t < 0) return NaN;
+            var val = U - Math.sqrt(t);
+            return val >= 0 ? val : NaN;
+          },
+          0.01, 10.5
+        ], { strokeColor: col, strokeWidth: 1.8, numberPointsHigh: 200 });
+      })(qlLevels[i], qlColors[i % qlColors.length]);
+    }
+    // Show vertical translation annotation
+    bQL.create('text', [5.5, 9.5, 'Translações verticais'], {
+      fontSize: 10, color: '#e65100', fixed: true
+    });
+    bQL.create('arrow', [[7, 2], [7, 5.5]], {
+      strokeColor: '#e65100', strokeWidth: 1, dash: 2, fixed: true,
+      lastArrow: { type: 2, size: 4 }
+    });
+
+    function drawAll() {
+      bCD.update();
+      bSP.update();
+      bCP.update();
+      bQL.update();
+    }
+
+    drawAll();
+  </script>
+</body>
+</html>

@@ -6730,379 +6730,345 @@
 
 
 <h1 id="robustness">Robustness<a class="headerlink" href="#robustness" title="Permanent link">¶</a></h1>
-<p>This page summarizes the five groups of robustness checks reported in the paper.</p>
+<p>We stress-test the within-item price gap and the procuring-unit-size oversight gradient against four distinct concerns: design sensitivity, identification, deployment honesty, and comparative scope against bid-distribution detectors.</p>
 <hr>
-<h2 id="1-fl-definition-robustness">1. FL Definition Robustness<a class="headerlink" href="#1-fl-definition-robustness" title="Permanent link">¶</a></h2>
-<h3 id="iqr-threshold-sensitivity">IQR Threshold Sensitivity<a class="headerlink" href="#iqr-threshold-sensitivity" title="Permanent link">¶</a></h3>
-<p>The coefficient decreases monotonically with stricter thresholds, most likely reflecting classification noise as the treated group shrinks. A two-dimensional sensitivity analysis varying both the IQR multiplier and win-rate cutoff produces significant coefficients across <strong>all 36 cells</strong>.</p>
+<h2 id="1-threshold-and-specification-sensitivity">1. Threshold and Specification Sensitivity<a class="headerlink" href="#1-threshold-and-specification-sensitivity" title="Permanent link">¶</a></h2>
+<p>The headline range holds across the design choices that define the construct: the IQR threshold multiplier, the clustering of standard errors, and the binary-versus-continuous specification of loss intensity.</p>
+<h3 id="iqr-threshold">IQR threshold<a class="headerlink" href="#iqr-threshold" title="Permanent link">¶</a></h3>
+<p>The price coefficient is positive and significant across five multipliers, declining monotonically as the cutoff tightens. The decline is a feature, not a defect: as the cutoff tightens, the binary indicator filters fewer firms with high loss-intensity. The underlying primitive is the continuous <code>log(1+tenders_count)</code> statistic.</p>
 <table>
 <thead>
 <tr>
 <th style="text-align: center;">Multiplier</th>
-<th style="text-align: center;">FL Firms</th>
+<th style="text-align: center;">Threshold</th>
+<th style="text-align: center;">FL firms</th>
 <th style="text-align: center;">Coefficient</th>
 <th style="text-align: center;">SE</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">1.0x</td>
+<td style="text-align: center;">1.0× IQR</td>
+<td style="text-align: center;">10</td>
 <td style="text-align: center;">3,442</td>
-<td style="text-align: center;">0.079</td>
+<td style="text-align: center;"><strong>+0.079</strong>*</td>
 <td style="text-align: center;">(0.023)</td>
 </tr>
 <tr>
-<td style="text-align: center;"><strong>1.5x (baseline)</strong></td>
-<td style="text-align: center;"><strong>2,735</strong></td>
-<td style="text-align: center;"><strong>0.064</strong></td>
-<td style="text-align: center;"><strong>(0.020)</strong></td>
+<td style="text-align: center;"><strong>1.5× IQR (baseline)</strong></td>
+<td style="text-align: center;">14</td>
+<td style="text-align: center;">2,735</td>
+<td style="text-align: center;"><strong>+0.064</strong>*</td>
+<td style="text-align: center;">(0.020)</td>
 </tr>
 <tr>
-<td style="text-align: center;">2.0x</td>
+<td style="text-align: center;">2.0× IQR</td>
+<td style="text-align: center;">17</td>
 <td style="text-align: center;">2,093</td>
-<td style="text-align: center;">0.060</td>
+<td style="text-align: center;">+0.060***</td>
 <td style="text-align: center;">(0.022)</td>
 </tr>
 <tr>
-<td style="text-align: center;">3.0x</td>
+<td style="text-align: center;">2.5× IQR</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1,778</td>
+<td style="text-align: center;">+0.054**</td>
+<td style="text-align: center;">(0.023)</td>
+</tr>
+<tr>
+<td style="text-align: center;">3.0× IQR</td>
+<td style="text-align: center;">24</td>
 <td style="text-align: center;">1,456</td>
-<td style="text-align: center;">0.050</td>
+<td style="text-align: center;">+0.050**</td>
 <td style="text-align: center;">(0.024)</td>
 </tr>
 </tbody>
 </table>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_07_threshold_stability.png" data-desc-position="bottom"><img src="../assets/figures/fig_07_threshold_stability.png" alt="Threshold stability"></a>
-  <figcaption><strong>Figure 8.</strong> FL price coefficient across IQR multiplier thresholds. Error bars show 95% confidence intervals.</figcaption>
-</figure>
-
-<h3 id="cross-fitting">Cross-Fitting<a class="headerlink" href="#cross-fitting" title="Permanent link">¶</a></h3>
-<p>FL firms defined using odd years, regressions estimated on even years (and vice versa). The cross-fold average (0.036) is attenuated relative to full-sample OLS (0.064) but remains positive. A decomposition exercise yields 0.043 (SE = 0.019), indicating roughly two-thirds of the attenuation reflects classification noise from the smaller subsample, not mechanical bias.</p>
-<h3 id="continuous-treatment">Continuous Treatment<a class="headerlink" href="#continuous-treatment" title="Permanent link">¶</a></h3>
-<p>A continuous measure---log of the most active always-loser's participation count---yields 0.022 (SE = 0.005, <span class="arithmatex">\(p &lt; 0.01\)</span>) per log-point.</p>
-<hr>
-<h2 id="2-sample-and-specification-robustness">2. Sample and Specification Robustness<a class="headerlink" href="#2-sample-and-specification-robustness" title="Permanent link">¶</a></h2>
+<h3 id="standard-error-clustering">Standard-error clustering<a class="headerlink" href="#standard-error-clustering" title="Permanent link">¶</a></h3>
+<p>The point estimate is mechanical to clustering choice; only inference moves.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Check</th>
+<th style="text-align: left;">Clustering</th>
 <th style="text-align: center;">Coefficient</th>
-<th style="text-align: center;"><span class="arithmatex">\(N\)</span></th>
-<th style="text-align: left;">Note</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">OLS (item + year + PBU FE)</td>
-<td style="text-align: center;">0.064</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Baseline</td>
-</tr>
-<tr>
-<td style="text-align: left;">CEM matching</td>
-<td style="text-align: center;">0.077</td>
-<td style="text-align: center;">969,751</td>
-<td style="text-align: left;">Coarsened exact matching</td>
-</tr>
-<tr>
-<td style="text-align: left;">IPW matching</td>
-<td style="text-align: center;">0.055</td>
-<td style="text-align: center;">830,194</td>
-<td style="text-align: left;">Inverse probability weighting</td>
-</tr>
-<tr>
-<td style="text-align: left;">Item x year FE</td>
-<td style="text-align: center;">0.074</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Tighter controls</td>
-</tr>
-<tr>
-<td style="text-align: left;">Two-way clustering (item + PBU)</td>
-<td style="text-align: center;">0.064 (SE = 0.024)</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Significant under all clustering</td>
-</tr>
-<tr>
-<td style="text-align: left;">Horse-race (FL + Imhof CV)</td>
-<td style="text-align: center;">0.084</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Suppression effect</td>
-</tr>
-<tr>
-<td style="text-align: left;">Decomposition (odd-yr FL)</td>
-<td style="text-align: center;">0.043</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Intermediate</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="3-sensitivity-to-unobservables-cinelli-hazlett">3. Sensitivity to Unobservables (Cinelli--Hazlett)<a class="headerlink" href="#3-sensitivity-to-unobservables-cinelli-hazlett" title="Permanent link">¶</a></h2>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_08_sensitivity_contour.png" data-desc-position="bottom"><img src="../assets/figures/fig_08_sensitivity_contour.png" alt="Sensitivity contour"></a>
-  <figcaption><strong>Figure 9.</strong> Sensitivity contour plot (Cinelli &amp; Hazlett, 2020). The robustness value RV = 17.5% means an unobserved confounder would need to explain at least 17.5% of the residual variation in both FL presence and log prices to reduce the coefficient to zero.</figcaption>
-</figure>
-
-<div class="admonition success">
-<p class="admonition-title">Robust to omitted variable bias</p>
-<p>The robustness value <span class="arithmatex">\(RV_{q=1} = 17.5\%\)</span> is a stringent requirement given the rich fixed effects structure (item + year + PBU).</p>
-</div>
-<h3 id="oster-coefficient-stability">Oster Coefficient Stability<a class="headerlink" href="#oster-coefficient-stability" title="Permanent link">¶</a></h3>
-<p>The Oster (2019) bound is <strong>degenerate</strong> (<span class="arithmatex">\(\hat{\delta} = 261.6\)</span>) because PBU FE barely move <span class="arithmatex">\(R^2\)</span> (0.879 to 0.886)---a design strength, not fragility. The Cinelli--Hazlett framework (<span class="arithmatex">\(RV = 17.5\%\)</span>) is the appropriate sensitivity metric.</p>
-<hr>
-<h2 id="4-staggered-difference-in-differences">4. Staggered Difference-in-Differences<a class="headerlink" href="#4-staggered-difference-in-differences" title="Permanent link">¶</a></h2>
-<p>The staggered DiD is reported as a <strong>complementary exercise</strong>. Positive pre-trends at <span class="arithmatex">\(t = -2\)</span> and <span class="arithmatex">\(t = -3\)</span> preclude a causal reading, consistent with strategic market selection.</p>
-<h3 id="callaway-santanna">Callaway &amp; Sant'Anna<a class="headerlink" href="#callaway-santanna" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ATT (log prices)</td>
-<td>0.014 (SE = 0.039)</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>Positive but insignificant</td>
-</tr>
-</tbody>
-</table>
-<h3 id="stacked-did">Stacked DiD<a class="headerlink" href="#stacked-did" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Metric</th>
-<th>Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Coefficient</td>
-<td><span class="arithmatex">\(-0.006\)</span> (SE = 0.014)</td>
-</tr>
-<tr>
-<td><span class="arithmatex">\(N\)</span></td>
-<td>715,116</td>
-</tr>
-<tr>
-<td>Status</td>
-<td>Pre-trends preclude causal reading</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">Non-causal framing</p>
-<p>The pre-trends are consistent with strategic market selection but equally compatible with unobserved confounding. The paper relies on within-item conditional comparisons for this reason, not on the DiD.</p>
-</div>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_06_event_study.png" data-desc-position="bottom"><img src="../assets/figures/fig_06_event_study.png" alt="Event study"></a>
-  <figcaption><strong>Figure 10.</strong> TWFE event study: coefficients on years relative to first FL entry, by outcome variable.</figcaption>
-</figure>
-
-<hr>
-<h2 id="5-iv-as-measurement-error-diagnostic">5. IV as Measurement-Error Diagnostic<a class="headerlink" href="#5-iv-as-measurement-error-diagnostic" title="Permanent link">¶</a></h2>
-<p>The leave-one-out IV is reported as a measurement-error diagnostic, not a preferred estimate. Exclusion-restriction concerns keep it off the primary 3.6--7.7% range.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">DV</th>
-<th style="text-align: center;">OLS</th>
-<th style="text-align: center;">IV</th>
-<th style="text-align: center;">First-stage <span class="arithmatex">\(F\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Log price</td>
-<td style="text-align: center;">0.064</td>
-<td style="text-align: center;"><strong>0.194</strong></td>
-<td style="text-align: center;">396</td>
-</tr>
-<tr>
-<td style="text-align: left;">Log firms</td>
-<td style="text-align: center;">0.167</td>
-<td style="text-align: center;">0.501</td>
-<td style="text-align: center;">396</td>
-</tr>
-<tr>
-<td style="text-align: left;">Log bids</td>
-<td style="text-align: center;">0.169</td>
-<td style="text-align: center;">0.614</td>
-<td style="text-align: center;">396</td>
-</tr>
-<tr>
-<td style="text-align: left;">Log non-FL firms</td>
-<td style="text-align: center;">0.143</td>
-<td style="text-align: center;">0.404</td>
-<td style="text-align: center;">396</td>
-</tr>
-</tbody>
-</table>
-<p>The implied signal-to-total-variance ratio:</p>
-<div class="arithmatex">\[\hat{\lambda} = \frac{\hat{\beta}_{\text{OLS}}}{\hat{\beta}_{\text{IV}}} = \frac{0.064}{0.194} \approx 0.33\]</div>
-<div class="admonition info">
-<p class="admonition-title">Measurement-error interpretation</p>
-<p>Given that the FL dummy is a deliberately coarse screen defined by a distributional threshold, a signal-to-noise ratio of one-third is plausible. The OLS estimate captures the conditional association; the IV points to attenuation in the binary indicator. Neither is causal.</p>
-</div>
-<h3 id="balance-tests">Balance Tests<a class="headerlink" href="#balance-tests" title="Permanent link">¶</a></h3>
-<p>Pre-determined observables regressed on the LOO instrument with item, year, and PBU FE yield standardized differences below 0.03<span class="arithmatex">\(\sigma\)</span>---statistically significant but <strong>economically negligible</strong> (<span class="arithmatex">\(&lt; 0.001\)</span>).</p>
-<hr>
-<h2 id="6-oversight-heterogeneity">6. Oversight Heterogeneity<a class="headerlink" href="#6-oversight-heterogeneity" title="Permanent link">¶</a></h2>
-<p>The FL--price association varies sharply with PBU size: a <strong>12.5x gradient</strong> across quartiles.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">PBU Size Quartile</th>
-<th style="text-align: center;">Coefficient</th>
-<th style="text-align: left;">Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Q1 (smallest)</td>
-<td style="text-align: center;">0.214</td>
-<td style="text-align: left;">Weakest oversight</td>
-</tr>
-<tr>
-<td style="text-align: center;">Q2</td>
-<td style="text-align: center;">0.098</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">Q3</td>
-<td style="text-align: center;">0.045</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: center;">Q4 (largest)</td>
-<td style="text-align: center;">0.017</td>
-<td style="text-align: left;">Strongest oversight</td>
-</tr>
-</tbody>
-</table>
-<p>The monotonic decline matches the framework's comparative static (<span class="arithmatex">\(\partial m^*/\partial \theta_k &lt; 0\)</span>): where oversight is weaker, the screen bites harder. Smaller PBUs also have thinner fixed-effect cells, so part of the gradient could be mechanical, but the monotonic decline across all four quartiles is hard to attribute to noise alone.</p>
-<figure>
-  <a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_14_oversight_heterogeneity.png" data-desc-position="bottom"><img src="../assets/figures/fig_14_oversight_heterogeneity.png" alt="Oversight heterogeneity"></a>
-  <figcaption><strong>Figure 11.</strong> FL price coefficient by oversight proxy (PBU size quartile and procedure type).</figcaption>
-</figure>
-
-<hr>
-<h2 id="robustness-summary-table">Robustness Summary Table<a class="headerlink" href="#robustness-summary-table" title="Permanent link">¶</a></h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Check</th>
-<th style="text-align: center;">Coeff.</th>
 <th style="text-align: center;">SE</th>
-<th style="text-align: center;"><span class="arithmatex">\(N\)</span></th>
-<th style="text-align: left;">Assumption</th>
+<th style="text-align: center;">95% CI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">OLS (item + year + PBU FE)</td>
-<td style="text-align: center;">0.064</td>
-<td style="text-align: center;">0.020</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Item level (baseline)</td>
+<td style="text-align: center;">+0.0636</td>
+<td style="text-align: center;">(0.0215)</td>
+<td style="text-align: center;">[0.0214, 0.1058]</td>
 </tr>
 <tr>
-<td style="text-align: left;">CEM</td>
-<td style="text-align: center;">0.077</td>
-<td style="text-align: center;">0.024</td>
-<td style="text-align: center;">969,751</td>
-<td style="text-align: left;">Sel. on obs.</td>
+<td style="text-align: left;">Procuring-unit level</td>
+<td style="text-align: center;">+0.0636</td>
+<td style="text-align: center;">(0.0144)</td>
+<td style="text-align: center;">[0.0353, 0.0919]</td>
 </tr>
 <tr>
-<td style="text-align: left;">IPW</td>
-<td style="text-align: center;">0.055</td>
-<td style="text-align: center;">0.021</td>
-<td style="text-align: center;">830,194</td>
-<td style="text-align: left;">Sel. on obs.</td>
+<td style="text-align: left;">Two-way (item + PBU, Cameron–Miller)</td>
+<td style="text-align: center;">+0.0636</td>
+<td style="text-align: center;">(0.0240)</td>
+<td style="text-align: center;">[0.0165, 0.1107]</td>
+</tr>
+</tbody>
+</table>
+<p>The coefficient is significant at <em>p</em> &lt; 0.01 under all three regimes; item-level is the conservative middle choice.</p>
+<h3 id="binary-vs-continuous-loss-intensity">Binary vs continuous loss intensity<a class="headerlink" href="#binary-vs-continuous-loss-intensity" title="Permanent link">¶</a></h3>
+<p>The continuous <code>log(1+tenders_count)</code> score discriminates the same adjudicated CADE-cobidder population at AUC <strong>0.939</strong> [0.932, 0.946] versus <strong>0.911</strong> [0.898, 0.925] for the binary FL14 indicator (DeLong <em>Z</em> = −4.30, <em>p</em> = 2×10<sup>−5</sup>). The headline price gap is not an artifact of binary discretization.</p>
+<hr>
+<h2 id="2-identification-audits">2. Identification Audits<a class="headerlink" href="#2-identification-audits" title="Permanent link">¶</a></h2>
+<p>Four audits calibrate the strength of the descriptive claim.</p>
+<h3 id="cinellihazlett-robustness-value">Cinelli–Hazlett robustness value<a class="headerlink" href="#cinellihazlett-robustness-value" title="Permanent link">¶</a></h3>
+<p><strong>RV<sub>q=1</sub> = 17.5%.</strong> An unobserved confounder would need to explain at least 17.5% of the residual variation in both frequent-loser presence and log price to drive the coefficient to zero, given the item, year, and procuring-unit fixed effects.</p>
+<h3 id="oster-2019-bounds">Oster (2019) bounds<a class="headerlink" href="#oster-2019-bounds" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sample</th>
+<th style="text-align: center;">δ̂</th>
+<th style="text-align: center;">β*(δ=1)</th>
+<th style="text-align: left;">Reading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Full</td>
+<td style="text-align: center;">261.64</td>
+<td style="text-align: center;">−0.0005</td>
+<td style="text-align: left;">Unobservables would need to be more than 200× as important as the observables already captured to overturn the result</td>
 </tr>
 <tr>
-<td style="text-align: left;">Cross-fit</td>
-<td style="text-align: center;">0.036</td>
-<td style="text-align: center;">0.019</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE; no mechanical link</td>
+<td style="text-align: left;">Pregão</td>
+<td style="text-align: center;">634.00</td>
+<td style="text-align: center;">+0.0643</td>
+<td style="text-align: left;">Even larger margin</td>
 </tr>
 <tr>
-<td style="text-align: left;">IQR 1.0x</td>
-<td style="text-align: center;">0.079</td>
-<td style="text-align: center;">0.023</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Convite</td>
+<td style="text-align: center;">43.62</td>
+<td style="text-align: center;">−0.1395</td>
+<td style="text-align: left;">Smaller margin—consistent with the construct's signal-to-noise being highest in pregão environments</td>
+</tr>
+</tbody>
+</table>
+<h3 id="strict-overlap-matching">Strict-overlap matching<a class="headerlink" href="#strict-overlap-matching" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Specification</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;"><em>N</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Within-PBU baseline</td>
+<td style="text-align: center;">+0.064</td>
+<td style="text-align: center;">1,653,658</td>
 </tr>
 <tr>
-<td style="text-align: left;">IQR 2.0x</td>
-<td style="text-align: center;">0.060</td>
-<td style="text-align: center;">0.022</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Overlap-cell ATT</td>
+<td style="text-align: center;"><strong>−0.097</strong></td>
+<td style="text-align: center;">1,517,066</td>
 </tr>
 <tr>
-<td style="text-align: left;">IQR 3.0x</td>
-<td style="text-align: center;">0.050</td>
-<td style="text-align: center;">0.024</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">PS-trimmed ATT (common support)</td>
+<td style="text-align: center;"><strong>−0.307</strong></td>
+<td style="text-align: center;">400,687</td>
+</tr>
+</tbody>
+</table>
+<p>We read the reversal as informative about selection within the always-loser stratum: strict-overlap matching restricts comparisons to the items frequent losers <em>would</em> have entered with high probability, removing precisely the systematic differences that the broad-sample association captures. Both estimates describe the same population from different angles; neither carries causal weight on its own.</p>
+<h3 id="anti-leakage-audit-item-level-auc">Anti-leakage audit (item-level AUC)<a class="headerlink" href="#anti-leakage-audit-item-level-auc" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Audit</th>
+<th style="text-align: left;">What it tests</th>
+<th style="text-align: center;">AUC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Reference (in-sample, full pool)</td>
+<td style="text-align: left;">log(1+max tc) predicting any-cobidder participation</td>
+<td style="text-align: center;">0.995</td>
 </tr>
 <tr>
-<td style="text-align: left;">Item x year FE</td>
-<td style="text-align: center;">0.074</td>
-<td style="text-align: center;">0.022</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Audit 1: same score → direct-CADE label</td>
+<td style="text-align: left;">Whether the screen also flags items with direct CADE defendants</td>
+<td style="text-align: center;"><strong>0.506</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">Two-way clustering</td>
-<td style="text-align: center;">0.064</td>
-<td style="text-align: center;">0.024</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Audit 2: 5-fold CV at cobidder-firm level</td>
+<td style="text-align: left;">Hold out cobidders, recompute score, predict on held out</td>
+<td style="text-align: center;"><strong>0.891</strong> [0.887, 0.894]</td>
 </tr>
 <tr>
-<td style="text-align: left;">Horse-race (FL + CV)</td>
-<td style="text-align: center;">0.084</td>
-<td style="text-align: center;">0.023</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: left;">Audit 3: temporal holdout (train 2009–2016, test 2017–2019)</td>
+<td style="text-align: left;">Score from past data only</td>
+<td style="text-align: center;"><strong>0.864</strong> [0.859, 0.870]</td>
+</tr>
+</tbody>
+</table>
+<p>The screen retains discriminating power above 0.85 under both audits. The drop of 0.10 to 0.13 is the pure-leakage component, and we adopt the temporal-holdout AUC of <strong>0.864</strong> as the conservative discriminating reference.</p>
+<h3 id="placebo-iv">Placebo IV<a class="headerlink" href="#placebo-iv" title="Permanent link">¶</a></h3>
+<p>A leave-one-out IV using the supply of sub-threshold always-losers (firms with persistent zero wins but below the IQR cutoff) yields a 2SLS coefficient of <strong>+5.24</strong> with first-stage <em>F</em> = 33—an implausible magnitude that signals the placebo instrument operates through channels other than cover bidding. The construct's price imprint draws on the above-threshold cover-bidder population we identify, not on generic always-loser supply.</p>
+<hr>
+<h2 id="3-operational-metrics-in-sample-vs-temporal-holdout">3. Operational Metrics: In-Sample vs Temporal Holdout<a class="headerlink" href="#3-operational-metrics-in-sample-vs-temporal-holdout" title="Permanent link">¶</a></h2>
+<p>The deployment claim rests on operational metrics computed under the temporal-holdout regime, not in-sample.</p>
+<h3 id="discriminating-performance-under-temporal-holdout">Discriminating performance under temporal holdout<a class="headerlink" href="#discriminating-performance-under-temporal-holdout" title="Permanent link">¶</a></h3>
+<p>Firm-level AUC against 193 adjudicated CADE-cobidder labels, score from 2009–2016 only, evaluated 2017–2019: <strong>0.864</strong> [0.859, 0.870]. This is the operationally honest projection for a screening tool built on past participation data and deployed against a future case-load.</p>
+<h3 id="precision-and-lift-in-the-deployable-region">Precision and lift in the deployable region<a class="headerlink" href="#precision-and-lift-in-the-deployable-region" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Top-<em>k</em></th>
+<th style="text-align: center;">Precision (in-sample)</th>
+<th style="text-align: center;">Precision (temporal holdout)</th>
+<th style="text-align: center;">Lift (in-sample)</th>
+<th style="text-align: center;">Lift (holdout)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">100</td>
+<td style="text-align: center;">0.170</td>
+<td style="text-align: center;"><strong>0.070</strong></td>
+<td style="text-align: center;">14.8×</td>
+<td style="text-align: center;"><strong>6.1×</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">Continuous (log max AL)</td>
-<td style="text-align: center;">0.022</td>
-<td style="text-align: center;">0.005</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Sel. on obs. + FE</td>
+<td style="text-align: center;">250</td>
+<td style="text-align: center;">0.160</td>
+<td style="text-align: center;"><strong>0.076</strong></td>
+<td style="text-align: center;">14.0×</td>
+<td style="text-align: center;"><strong>6.6×</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">IV (leave-one-out)</td>
-<td style="text-align: center;">0.194</td>
-<td style="text-align: center;">0.077</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;">Excl. restriction</td>
+<td style="text-align: center;">500</td>
+<td style="text-align: center;">0.132</td>
+<td style="text-align: center;"><strong>0.070</strong></td>
+<td style="text-align: center;">11.5×</td>
+<td style="text-align: center;"><strong>6.1×</strong></td>
+</tr>
+<tr>
+<td style="text-align: center;">1,000</td>
+<td style="text-align: center;">0.097</td>
+<td style="text-align: center;"><strong>0.066</strong></td>
+<td style="text-align: center;">8.5×</td>
+<td style="text-align: center;"><strong>5.8×</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">In-sample precision overstates the deployable projection</p>
+<p>At top-500, in-sample precision is <strong>+50% higher</strong> than under temporal holdout (0.132 vs 0.070, retention 53%). The inflation arises because roughly <strong>47% of the top-500 in-sample ranking</strong> comes from 2017–2019 participation, after CADE adjudications were already underway for some of the cartels—the in-sample score is partly retrospective rather than purely prospective. We disclose the gap explicitly and operate on the temporal-holdout column for all operational claims.</p>
+</div>
+<h3 id="three-operational-implications">Three operational implications<a class="headerlink" href="#three-operational-implications" title="Permanent link">¶</a></h3>
+<ol>
+<li><strong>Deployable.</strong> AUC 0.864 and lifts of 5.8× to 6.6× in the top-100 to top-1,000 region are operationally meaningful for a screening tool that runs on contract-award records alone.</li>
+<li><strong>Temporal holdout is the honest reference.</strong> Any operational claim in the paper that requires a precision or lift number is computed on the holdout column.</li>
+<li><strong>Periodic rescoring matters.</strong> An oversight body running the screen in production should refresh the score window as new years of contract-award data arrive.</li>
+</ol>
+<hr>
+<h2 id="4-horse-race-against-bid-distribution-detectors">4. Horse Race Against Bid-Distribution Detectors<a class="headerlink" href="#4-horse-race-against-bid-distribution-detectors" title="Permanent link">¶</a></h2>
+<p>The relevant comparison is at fixed <em>data cost</em>, not at fixed sample, because the two pipelines operate on different data envelopes: the construct uses award-record fields only, while the bid-distribution pipeline requires per-bid offer values.</p>
+<h3 id="discrimination-at-native-data-envelopes">Discrimination at native data envelopes<a class="headerlink" href="#discrimination-at-native-data-envelopes" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Features required</th>
+<th style="text-align: center;">AUC</th>
+<th style="text-align: center;">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FL flag (binary)</td>
+<td style="text-align: left;">participation count, win flag</td>
+<td style="text-align: center;"><strong>0.903</strong></td>
+<td style="text-align: center;">[0.884, 0.923]</td>
+</tr>
+<tr>
+<td style="text-align: left;">log(1+tenders_count)</td>
+<td style="text-align: left;">participation count, win flag</td>
+<td style="text-align: center;">0.884</td>
+<td style="text-align: center;">[0.860, 0.908]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Imhof full pipeline</td>
+<td style="text-align: left;">5 within-tender bid features (CV, skew, kurt, spread, second-low)</td>
+<td style="text-align: center;">0.888</td>
+<td style="text-align: center;">[0.865, 0.911]</td>
+</tr>
+</tbody>
+</table>
+<p>The two pipelines reach comparable discrimination on different data envelopes. We do not claim that the construct outperforms the bid-distribution pipeline; we claim that it reaches comparable accuracy on a substantially thinner data envelope.</p>
+<h3 id="combined-complementarity-not-dominance">Combined: complementarity, not dominance<a class="headerlink" href="#combined-complementarity-not-dominance" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Combined model</th>
+<th style="text-align: center;">AUC</th>
+<th style="text-align: center;">95% CI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">FL flag + Imhof full</td>
+<td style="text-align: center;"><strong>0.955</strong></td>
+<td style="text-align: center;">[0.943, 0.967]</td>
+</tr>
+<tr>
+<td style="text-align: left;">log(1+tenders_count) + Imhof full</td>
+<td style="text-align: center;"><strong>0.962</strong></td>
+<td style="text-align: center;">[0.954, 0.969]</td>
+</tr>
+</tbody>
+</table>
+<p>Both combined classifiers gain 5–7 AUC points over either single construct, indicating non-redundant signal in the participation-only and bid-distribution information sources. Restricting attention to a same-sample audit, the construct adds <strong>+0.035 AUC</strong> over the Imhof full pipeline alone (DeLong <em>p</em> = 0.014), and the combined model adds <strong>+0.096 to +0.098</strong> over Imhof full alone (DeLong <em>p</em> &lt; 0.001).</p>
+<p>The administrative pathway integrates the construct with the bid-distribution stage rather than substituting for it: the <strong>Screen</strong> stage runs on award records, the <strong>Forensic</strong> stage deploys bid-distribution methods, and the gain from running both is identifiable in the data.</p>
+<hr>
+<h2 id="5-staggered-designs-attempted-and-rejected">5. Staggered Designs Attempted and Rejected<a class="headerlink" href="#5-staggered-designs-attempted-and-rejected" title="Permanent link">¶</a></h2>
+<p>Two design-based strategies that would extract a causal estimate return null at the available bandwidths.</p>
+<h3 id="rdd-at-the-convitepregao-statutory-caps">RDD at the convite/pregão statutory caps<a class="headerlink" href="#rdd-at-the-convitepregao-statutory-caps" title="Permanent link">¶</a></h3>
+<p>McCrary-style density tests around the R$80,000 cap return a left/right ratio of <strong>0.94</strong> and a log-density discontinuity of <strong>−0.063</strong>; the convite share drops cleanly across the cap from 69% below to 59% above, consistent with rule-driven assignment rather than strategic gaming. The local first-stage power is too weak to support a fuzzy RDD at standard bandwidths (Stock–Yogo <em>F</em> below threshold).</p>
+<h3 id="did-using-decreto-94122018-cap-raise">DiD using Decreto 9.412/2018 cap raise<a class="headerlink" href="#did-using-decreto-94122018-cap-raise" title="Permanent link">¶</a></h3>
+<p>A difference-in-differences design fails the parallel-trends diagnostic at the available pre-treatment window. Two attempted estimators show the failure:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Estimator</th>
+<th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Sun–Abraham interaction-weighted</td>
+<td style="text-align: center;">+0.014</td>
+<td style="text-align: center;">(0.039)</td>
+<td style="text-align: left;">Imprecise; non-monotone dynamics</td>
 </tr>
 <tr>
 <td style="text-align: left;">Stacked DiD</td>
-<td style="text-align: center;"><span class="arithmatex">\(-0.006\)</span></td>
-<td style="text-align: center;">0.014</td>
-<td style="text-align: center;">715,116</td>
-<td style="text-align: left;">Parallel trends</td>
-</tr>
-<tr>
-<td style="text-align: left;">Oster <span class="arithmatex">\(\hat{\delta}\)</span></td>
-<td style="text-align: center;">degen.</td>
-<td style="text-align: center;">--</td>
-<td style="text-align: center;">1,654,401</td>
-<td style="text-align: left;"><span class="arithmatex">\(R^2\)</span> gap <span class="arithmatex">\(\approx\)</span> 0</td>
+<td style="text-align: center;">−0.006</td>
+<td style="text-align: center;">(0.014)</td>
+<td style="text-align: left;">Pre-trends preclude causal reading</td>
 </tr>
 </tbody>
 </table>
+<p>We report the failures openly and treat the empirical content as descriptive throughout. The conditional within-item association is the empirical claim; the design-based strategies were attempted, did not pass their diagnostic gates, and are reported in the appendix to substantiate the descriptive stance.</p>
+<hr>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<p>The headline range +3.6 to +7.7% holds across estimators, threshold multipliers, clustering schemes, binary-vs-continuous specifications, and rich sensitivity bounds. Strict-overlap matching reverses the sign as a different angle on the same population. Under temporal holdout, AUC settles at 0.864 (vs in-sample 0.939) and precision at top-500 attenuates by ~50%; we adopt the holdout column for all operational claims. Against bid-distribution detectors, the construct reaches comparable accuracy at lower data cost and adds non-redundant signal in combination. Causal identification was attempted and is not available at the bandwidths the data support.</p>
 
 
 
@@ -7134,6 +7100,12 @@
     <li class="md-nav__item ">
       <a href="/research/frequent-losers/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     

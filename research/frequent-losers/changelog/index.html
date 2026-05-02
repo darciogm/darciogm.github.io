@@ -6731,100 +6731,46 @@
 
 <h1 id="changelog">Changelog<a class="headerlink" href="#changelog" title="Permanent link">¶</a></h1>
 <hr>
-<h2 id="v5-april-2026-current">v5 --- April 2026 (Current)<a class="headerlink" href="#v5-april-2026-current" title="Permanent link">¶</a></h2>
-<p><strong>JLE repositioning and institutional framing:</strong></p>
+<h2 id="v15-may-2026-current">v15 — May 2026 (current)<a class="headerlink" href="#v15-may-2026-current" title="Permanent link">¶</a></h2>
+<p><strong>Single-thesis rewrite for JLEO.</strong></p>
 <ul>
-<li>Repositioned for Journal of Law and Economics (institutional framing throughout)</li>
-<li>Abstract leads with minimum-bidder rules giving cartels a reason to deploy cover bidders</li>
-<li>Price range narrowed to <strong>3.6--7.7%</strong> (cross-fit, OLS, matching), replacing 4--21% from v4</li>
-<li>IV (19.4%) reframed as <strong>measurement-error diagnostic</strong>, not a primary estimate</li>
-<li>Finding now Regime 2 (coordinated), not Regime 1 (complementary): <span class="arithmatex">\(\sigma_c / \sigma_g = 0.72\)</span></li>
-<li><span class="arithmatex">\(\gamma &gt; 0\)</span>: strategic complementarity (more cover bidders in MORE competitive tenders)</li>
-<li>Convite 3.8% vs pregao 9.3% --- larger where voluntary, signal dilution in convite</li>
-<li>AUC = 0.94 against CADE convictions (primary validation)</li>
-<li>Horse-race: correlation 0.06 with Imhof-style CV proxy; FL rises to 0.084 when CV added</li>
+<li>Title realigned with body: <em>Frequent Losers as a Cartel Screen: Detecting Cover Bidding Without Bid Microdata</em>. Construct scope explicit (cover-bidder population, not cartel ringleaders).</li>
+<li>Abstract reframed in eight sentences: problem, puzzle, construct, headline range, oversight gradient, framework, identification stance, three-stage administrative pathway.</li>
+<li>Identification scope made explicit and descriptive throughout. RDD at the convite/pregão statutory caps and DiD using Decreto 9.412/2018 both return null at the available bandwidths and are reported openly.</li>
+<li>Headline range reported as <strong>+3.6% to +7.7%</strong> across five estimators (full-sample OLS, PBU fixed effects, IPW, CEM, cross-fit), with the cross-fit decomposition isolating a structural component (+3.6%) from within-sample classification noise (~+2.8 percentage points).</li>
+<li>Procuring-unit-size oversight gradient reported as <strong>12.6×</strong> between extreme quartiles (+21.4% in Q1 to +1.7% in Q4), the strongest source of heterogeneity in the data.</li>
+<li>Minimum-bidder rule (convite Article 22 §3) treated as institutional context rather than as the channel the construct exploits. The data flatly reverse the institutional reading: the construct's signal is sharper in pregão (no minimum-bidder rule) than in convite. We read this as scope information about where the construct fires most cleanly, not as positive evidence for any institutional theory.</li>
+<li>CADE validation reframed as bounded discrimination: lower bound AUC 0.748 (4 cases pre-2020, 210 cobidders, 108 frequent losers; contemporaneous reading) and upper bound AUC 0.924 in-sample / 0.864 temporal holdout (full 12 cases, 193 cobidders; prospective reading). Three named firms (Sol Tecnologia, Nova Esperança Locadora, Jofran Comércio) flagged before their cartel adjudications.</li>
+<li>Operational metrics reported under temporal holdout (train 2009–2016, test 2017–2019) as the deployable projection. In-sample precision overstates the holdout column by ~50% at top-500 (0.132 vs 0.070, retention 53%); the gap is disclosed explicitly and the holdout column carries all operational claims.</li>
+<li>Horse race against bid-distribution detectors reframed as informational complementarity, not dominance. The construct reaches AUC 0.903 against the full Imhof–Wallimann pipeline's AUC 0.888 at substantially lower data cost; combined classifiers reach AUC 0.955–0.962, with the gain identifying non-redundant signal in participation-only and bid-distribution dimensions.</li>
+<li>Mechanism heterogeneity reorganized into three subsections by interpretive stake: continuous loss intensity dominates the binary cutoff (DeLong <em>p</em> = 2×10⁻⁵), modal asymmetry between pregão and convite as scope information, and what the data do not support (cell-heterogeneity grid not a positive test of cartel rotation; first-time-FL prediction in the predicted direction but compresses substantially under propensity-score matching).</li>
+<li>Limitations section reorganized into three subsections by stake: identification scope, construct scope (with three competing readings of the participation footprint), external validity and portability (with three structural prerequisites: commodity-heavy item composition, electronic platforms with publicly auditable participant lists, institutional asymmetry between winner and loser sides).</li>
+<li>Cover-bidding framework compressed to three formal results: a lemma establishing <code>wins=0</code> as the equilibrium choice of cover bidders, a proposition identifying <code>log(1+tenders_count)</code> as a sufficient ranking statistic for the cover-bidder type, and a proposition delivering ∂m*/∂θ_k &lt; 0 as the comparative static the procuring-unit-size oversight gradient instantiates.</li>
 </ul>
-<p><strong>New content:</strong></p>
-<ul>
-<li>Three new figures: corner solution, dispersion paradox, enforcement flowchart</li>
-<li>Five JLE-relevant references added (Posner 1970, Caoui 2022, Ghosal &amp; Sokol 2014, Harrington 2015, Baranek &amp; Titl 2024)</li>
-<li>Lei 14.133/2021 discussion with two testable predictions</li>
-<li>Three-stage enforcement pathway (screen, triage, investigate)</li>
-<li>Welfare reframed as cost-benefit of screening deployment</li>
-<li>12.5x gradient in oversight heterogeneity across PBU size quartiles</li>
-<li>Minimum-bidder constraint variation: 7.6% voluntary premium vs. <span class="arithmatex">\(-0.160\)</span> forced interaction</li>
-<li>Five supporting diagnostics (M1--M5) with joint assessment</li>
-<li>Non-claims paragraph and explicit limitations section</li>
-</ul>
-<p><strong>Tables and figures:</strong></p>
-<ul>
-<li>35+ tables, 26 figures</li>
-<li>~56 pages, natbib/bibtex compilation</li>
-</ul>
-<p><strong>Pipeline:</strong></p>
-<ul>
-<li>24 R scripts (22 numbered + <code>figures_new.R</code> + <code>00_setup.R</code>), full pipeline in ~8 minutes</li>
-<li>New scripts: <code>14_quality_checks.R</code> through <code>22_threshold_heatmap.R</code> plus <code>figures_new.R</code></li>
-</ul>
-<hr>
-<h2 id="v4-march-2026">v4 --- March 2026<a class="headerlink" href="#v4-march-2026" title="Permanent link">¶</a></h2>
 <p><strong>Manuscript:</strong></p>
 <ul>
-<li>Rewrote contributions paragraph with explicit H1/H2 structure and scope limitation</li>
-<li>Softened over-claims throughout (9 instances: "establish" to "show", "confirming" to "indicating")</li>
-<li>Expanded IV section: preferred spec declaration, lambda interpretation, LATE discussion</li>
-<li>Bajari--Ye restructured around 3 sequential claims with magnitude hedge</li>
-<li>DiD shrunk to 2 paragraphs (complementary, underpowered)</li>
-<li>Mechanisms: added connective sentences and bridge paragraph</li>
-<li>Heterogeneity: relabeled "high/low-suspicion" to "concentrated/competitive-market FL"</li>
-<li>Added robustness roadmap paragraph (6 groups)</li>
-<li>Added implementation blueprint (Flag, Triage, Investigate, Monitor)</li>
-<li>Added enforcement integration and legal boundary sentences</li>
-<li>Abstract trimmed to 136 words with policy contribution sentence</li>
-<li>Broader implications paragraph added to conclusion</li>
-<li>Float numbering fixed: appendix counters reset (A.1, B.1, etc.)</li>
-<li>Added missing cross-references for 3 main-body floats</li>
-</ul>
-<p><strong>Tables and figures:</strong></p>
-<ul>
-<li>35 tables (12 main body, 23 appendix)</li>
-<li>14 figures (6 main body, 8 appendix)</li>
-<li>59 pages, 0 errors, 0 undefined references</li>
-</ul>
-<p><strong>Pipeline:</strong></p>
-<ul>
-<li>13 R scripts, full pipeline in ~8 minutes</li>
-<li>New tables: IV balance, IV Panel C, Bajari--Ye tender FE, network interactions, homogeneous CV, welfare bounds (updated)</li>
+<li>60 pages, single-thesis discipline, lean appendix.</li>
+<li>Bid-level structural mixture, Bajari–Ye coordination tests, network-split heterogeneity, dyadic-linkage permutation, Cox survival, market-selection / Regime 1 / Regime 2 cover-bid-distribution propositions, welfare illustrative calculations, and cross-sector replication removed: not used by the v15 main body.</li>
+<li>Manuscript pipeline preserved; analysis blocks mapped to v15 sections in <a href="../replication/">Replication</a>.</li>
 </ul>
 <hr>
-<h2 id="v3-february-2026">v3 --- February 2026<a class="headerlink" href="#v3-february-2026" title="Permanent link">¶</a></h2>
-<ul>
-<li>CADE validation section with CNPJ enrichment (3 FL firms matched)</li>
-<li>Network-split IV regressions</li>
-<li>Bajari--Ye tender fixed effects specification</li>
-<li>Homogeneous sub-samples via price-CV approach</li>
-<li>Welfare analysis with cross-fit bounds</li>
-<li>Staggered DiD with MDE and Rambachan--Roth sensitivity</li>
-</ul>
+<h2 id="v51-april-2026">v5.1 — April 2026<a class="headerlink" href="#v51-april-2026" title="Permanent link">¶</a></h2>
+<p>Final referee-report edits before the JLEO repositioning. Combined-AUC fix, sample-size clarifications, measurement-error wording tightened, Bajari–Ye tender FE reframed, MkDocs site updated.</p>
 <hr>
-<h2 id="v2-january-2026">v2 --- January 2026<a class="headerlink" href="#v2-january-2026" title="Permanent link">¶</a></h2>
-<ul>
-<li>Bajari--Ye exchangeability and conditional independence tests</li>
-<li>Network-based FL classification (winner HHI, repeat partners)</li>
-<li>Regime test: complementary vs. coordinated cover bidding</li>
-<li>Sensitivity analysis (Cinelli &amp; Hazlett, 2020)</li>
-<li>Matching estimators (CEM and IPW)</li>
-<li>Year-by-year coefficient stability</li>
-</ul>
+<h2 id="v5-april-2026">v5 — April 2026<a class="headerlink" href="#v5-april-2026" title="Permanent link">¶</a></h2>
+<p>JLE repositioning and institutional framing. Headline narrowed to +3.6 to +7.7%. AUC = 0.94 against CADE cobidders. Strategic complementarity, regime selection, three-stage enforcement pathway introduced. <strong>Subsequently superseded by the v15 single-thesis rewrite.</strong></p>
 <hr>
-<h2 id="v1-december-2025">v1 --- December 2025<a class="headerlink" href="#v1-december-2025" title="Permanent link">¶</a></h2>
-<ul>
-<li>Initial manuscript with OLS and IV regressions</li>
-<li>FL definition (always-losers + IQR threshold)</li>
-<li>Leave-one-out instrumental variable</li>
-<li>18 tables, 6 figures</li>
-<li>Threshold sensitivity and cross-fitting robustness</li>
-</ul>
+<h2 id="v4-march-2026">v4 — March 2026<a class="headerlink" href="#v4-march-2026" title="Permanent link">¶</a></h2>
+<p>Manuscript polished with H1/H2 contributions, expanded IV section, Bajari–Ye restructured, DiD as complementary exercise, implementation blueprint added.</p>
+<hr>
+<h2 id="v3-february-2026">v3 — February 2026<a class="headerlink" href="#v3-february-2026" title="Permanent link">¶</a></h2>
+<p>CADE validation with CNPJ enrichment. Network-split IV regressions. Bajari–Ye tender fixed effects. Welfare with cross-fit bounds. Staggered DiD with Rambachan–Roth sensitivity.</p>
+<hr>
+<h2 id="v2-january-2026">v2 — January 2026<a class="headerlink" href="#v2-january-2026" title="Permanent link">¶</a></h2>
+<p>Bajari–Ye coordination tests. Network-based FL classification. Regime test (complementary vs coordinated). Cinelli–Hazlett sensitivity. CEM and IPW matching.</p>
+<hr>
+<h2 id="v1-december-2025">v1 — December 2025<a class="headerlink" href="#v1-december-2025" title="Permanent link">¶</a></h2>
+<p>Initial manuscript: OLS, IV, FL definition (always-losers + IQR threshold), leave-one-out instrument, threshold sensitivity, cross-fitting robustness.</p>
 
 
 
@@ -6856,6 +6802,12 @@
     <li class="md-nav__item ">
       <a href="/research/frequent-losers/paper/" class="md-nav__link ">
         Paper
+      </a>
+    </li>
+    
+    <li class="md-nav__item ">
+      <a href="/research/frequent-losers/video/" class="md-nav__link ">
+        Video
       </a>
     </li>
     
