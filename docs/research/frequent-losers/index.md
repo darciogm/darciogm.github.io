@@ -27,13 +27,15 @@ electronic procurement platform (2009&ndash;2019), 2,735 of 16,843
 firms with persistent zero wins participated in 14 or more
 tender-items; we call these firms *frequent losers*. Their
 presence associates with a +3.6 to +7.7% higher negotiated unit
-price across estimators in the broad sample, but reverses sign
-under strict-overlap matching (&minus;9.7% to &minus;30.7%). The
-two estimates describe the same population at different scopes
-of selection. We report the broad-sample range as the headline
-because it maps to the deployment question&mdash;which
-environments to flag&mdash;and we treat the screen's signal as
-partly about selection rather than a uniform descriptive effect.
+price across estimators in the broad sample. The conditional
+association reverses sign when restricted to items that overlap
+on observables (overlap-cell ATT &minus;9.7%,
+propensity-score-trimmed &minus;30.7%): the two estimates answer
+different questions about the same population. We report the
+broad-sample range as the headline because it maps to the
+deployment question&mdash;which environments to flag&mdash;and
+treat the screen's signal as partly about selection rather than
+a uniform descriptive effect.
 The price imprint shrinks 12.6&times; across procuring-unit-size
 quartiles, consistent with thinner institutional capacity at
 smaller buyers, though we do not identify oversight as the
