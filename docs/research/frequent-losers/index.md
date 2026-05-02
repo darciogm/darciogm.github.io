@@ -22,32 +22,27 @@ paper: frequent-losers
 ## Abstract
 
 What signal can oversight bodies extract from contract-award
-records when bid microdata are unavailable? We document, in
-public-procurement records of the State of São Paulo, Brazil
-(2009&ndash;2019), that *frequent losers*&mdash;firms that bid
-without ever winning&mdash;carry usable participation-based
-signal for procurement screening. Of 16,843 firms with persistent
-zero wins, 2,735 participated in 14 or more tender-items. Their
+records when bid microdata are unavailable? In São Paulo's
+electronic procurement platform (2009&ndash;2019), 2,735 of 16,843
+firms with persistent zero wins participated in 14 or more
+tender-items; we call these firms *frequent losers*. Their
 presence associates with a +3.6 to +7.7% higher negotiated unit
-price across estimators in the broad sample, but the conditional
-association reverses sign under strict-overlap matching
-(&minus;9.7% to &minus;30.7%): the two estimates describe the
-same population at different scopes of selection. We report the
-broad-sample range as headline because it maps to the deployment
-question (which environments to flag), and treat the screen's
-signal as partly about selection rather than as a uniform
-descriptive effect.
-The price imprint shrinks across procuring-unit size quartiles
-(from +21.4% to +1.7%; ratio 12.6&times;), consistent with
-thinner institutional capacity moderating the imprint, though
-buyer size proxies for several institutional features and we do
-not identify oversight as the operative channel. Against CADE's
-adjudicated cartel records, the screen reaches AUC 0.748 on a
-strict contemporaneous benchmark and 0.864 on temporal holdout
-against cobidder labels&mdash;an indirect benchmark of cartel
-adjacency, not proof of cartel membership. The
-participation-based screen is intended as a triage tool for
-procurement oversight where bid microdata are absent.
+price across estimators in the broad sample, but reverses sign
+under strict-overlap matching (&minus;9.7% to &minus;30.7%). The
+two estimates describe the same population at different scopes
+of selection. We report the broad-sample range as the headline
+because it maps to the deployment question&mdash;which
+environments to flag&mdash;and we treat the screen's signal as
+partly about selection rather than a uniform descriptive effect.
+The price imprint shrinks 12.6&times; across procuring-unit-size
+quartiles, consistent with thinner institutional capacity at
+smaller buyers, though we do not identify oversight as the
+operative channel. Against CADE's cartel records, the screen
+reaches AUC 0.748 on a strict contemporaneous benchmark and
+0.864 on temporal holdout against cobidder labels&mdash;an
+indirect benchmark of cartel adjacency, not membership. The
+screen is a triage tool for procurement oversight where bid
+microdata are absent.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 [:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
