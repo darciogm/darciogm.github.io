@@ -23,25 +23,26 @@ paper: frequent-losers
 
 Can cartels be screened without bid-level data? Most
 cartel-detection methods read collusion off the distribution of
-submitted bids, but many enforcement environments preserve only
-the contract-award layer. We study what survives that
-coarsening. A separating-equilibrium framework identifies
-log(1+tenders_count) together with the wins=0 filter as a
-sufficient ranking statistic for cover-bidder type given
-award-record data. In São Paulo's electronic procurement
-platform (2009&ndash;2019), 2,735 of 16,843 persistent zero-win
-firms cross the resulting threshold; we call them
-*frequent losers*. Their presence associates with a
-+3.6 to +7.7% higher conditional log negotiated unit price
-across estimators. Forcing overlap on observables reverses the
-sign (overlap-cell ATT &minus;9.72%; propensity-score-trimmed
-&minus;30.67%): a signature of a screening-value object, not a
-treatment effect. Against CADE's cartel records the construct
-reaches AUC 0.748 on a contemporaneous benchmark and 0.864 under
-temporal holdout against cobidder labels; AUC is 0.491 against
-direct defendants, by design. The construct supplies an
-award-layer screening stage that runs ahead of the bid-layer
-forensic stage the prior literature requires.
+submitted bids; many enforcement environments preserve only the
+contract-award layer. We study what survives that coarsening.
+A separating-equilibrium framework identifies log(1+tenders_count)
+together with the wins=0 filter as a sufficient ranking
+statistic for cover-bidder type given award-record data. In
+São Paulo's electronic procurement platform (2009&ndash;2019),
+2,735 of 16,843 persistent zero-win firms cross the resulting
+threshold&mdash;*frequent losers*. Their presence associates
+with a +3.6 to +7.7% higher conditional log negotiated unit
+price across four estimators. Restricting to items where
+treated and control overlap on observables reverses the sign
+(&minus;9.72% to &minus;30.67%): diagnostic, under the
+framework, of equilibrium sorting that the screening statistic
+captures and overlap matching strips. Against CADE's cartel
+records the construct discriminates cobidders at AUC 0.748 on a
+strict pre-2020 benchmark and 0.864 under temporal holdout;
+AUC against direct defendants is 0.491, the design's empirical
+signature. The result is an award-layer screening stage that
+runs ahead of the bid-layer forensic stage the prior literature
+requires.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 [:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
