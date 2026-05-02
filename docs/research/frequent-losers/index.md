@@ -32,17 +32,18 @@ São Paulo's electronic procurement platform (2009&ndash;2019),
 2,735 of 16,843 persistent zero-win firms cross the resulting
 threshold&mdash;*frequent losers*. Their presence associates
 with a +3.6 to +7.7% higher conditional log negotiated unit
-price across four estimators. Restricting to items where
-treated and control overlap on observables reverses the sign
-(&minus;9.72% to &minus;30.67%): diagnostic, under the
-framework, of equilibrium sorting that the screening statistic
-captures and overlap matching strips. Against CADE's cartel
-records the construct discriminates cobidders at AUC 0.748 on a
-strict pre-2020 benchmark and 0.864 under temporal holdout;
-AUC against direct defendants is 0.491, the design's empirical
-signature. The result is an award-layer screening stage that
-runs ahead of the bid-layer forensic stage the prior literature
-requires.
+price across four estimators. The sign reverses once the
+comparison is restricted to items where treated and control
+overlap on observables (&minus;9.72% to &minus;30.67%). The
+framework reads the reversal as a feature: the overlap
+restriction strips precisely the equilibrium sorting the
+screening statistic is designed to capture. Against CADE's
+cartel records, the construct discriminates cobidders at AUC
+0.748 on a strict pre-2020 benchmark and 0.864 under temporal
+holdout; AUC against direct defendants is 0.491, the design's
+empirical signature. The result is an award-layer screening
+stage that runs ahead of the bid-layer forensic stage the prior
+literature requires.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v15.pdf){ .md-button .md-button--primary }
 [:material-file-document-outline: Online appendix](assets/paper_v15_online_appendix.pdf){ .md-button }
