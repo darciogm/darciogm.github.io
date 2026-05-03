@@ -1,170 +1,187 @@
----
-paper: frequent-losers
----
-
 # Robustness
 
-We stress-test the within-item price gap and the procuring-unit-size oversight gradient against four distinct concerns: design sensitivity, identification, deployment honesty, and comparative scope against bid-distribution detectors.
+This page summarizes the robustness checks supporting each of the four empirical claims of the paper.
 
 ---
 
-## 1. Threshold and Specification Sensitivity
+## 1. Discrimination Robustness (Claim 1: AUC under temporal holdout)
 
-The headline range holds across the design choices that define the construct: the IQR threshold multiplier, the clustering of standard errors, and the binary-versus-continuous specification of loss intensity.
+### Leakage audit (table moved to main text)
 
-### IQR threshold
+The decomposition of the in-sample item-level AUC of 0.995 into structural and pure-leakage components is reported in the main text, not the appendix. This is the primary anti-tautology check.
 
-The price coefficient is positive and significant across five multipliers, declining monotonically as the cutoff tightens. The decline is a feature, not a defect: as the cutoff tightens, the binary indicator filters fewer firms with high loss-intensity. The underlying primitive is the continuous `log(1+tenders_count)` statistic.
+| Audit | AUC | Drop from in-sample | Interpretation |
+|---|---:|---:|---|
+| In-sample (full pool) | 0.995 | — | Reference |
+| 5-fold CV at cobidder-firm level | 0.891 | $-0.104$ | Removes cobidder-included tautology |
+| Temporal holdout (train 2009–2016) | **0.864** | $-0.131$ | Removes both tautology and same-period over-fitting |
+| Same score, direct-CADE label (scope) | 0.506 | (random) | Confirms loser-side, not winner-side |
 
-| Multiplier | Threshold | FL firms | Coefficient | SE |
-|:---:|:---:|:---:|:---:|:---:|
-| 1.0&times; IQR | 10 | 3,442 | **+0.079*** | (0.023) |
-| **1.5&times; IQR (baseline)** | 14 | 2,735 | **+0.064*** | (0.020) |
-| 2.0&times; IQR | 17 | 2,093 | +0.060*** | (0.022) |
-| 2.5&times; IQR | 20 | 1,778 | +0.054** | (0.023) |
-| 3.0&times; IQR | 24 | 1,456 | +0.050** | (0.024) |
+The 0.864 figure is the AUC the paper reports as headline.
 
-### Standard-error clustering
+### Year-by-year temporal holdout (Online Appendix B)
 
-The point estimate is mechanical to clustering choice; only inference moves.
+Rolling-origin temporal holdout: training window 2009 through (test year $-$1), test year provides out-of-sample cobidder ground truth. Year-by-year AUCs reported in Online Appendix B; ROC curves separate cleanly from the diagonal across all six test years.
 
-| Clustering | Coefficient | SE | 95% CI |
-|:---|:---:|:---:|:---:|
-| Item level (baseline) | +0.0636 | (0.0215) | [0.0214, 0.1058] |
-| Procuring-unit level | +0.0636 | (0.0144) | [0.0353, 0.0919] |
-| Two-way (item + PBU, Cameron–Miller) | +0.0636 | (0.0240) | [0.0165, 0.1107] |
+### Adversarial robustness (Online Appendix F)
 
-The coefficient is significant at *p* < 0.01 under all three regimes; item-level is the conservative middle choice.
-
-### Binary vs continuous loss intensity
-
-The continuous `log(1+tenders_count)` score discriminates the same adjudicated CADE-cobidder population at AUC **0.939** [0.932, 0.946] versus **0.911** [0.898, 0.925] for the binary FL14 indicator (DeLong *Z* = &minus;4.30, *p* = 2&times;10<sup>&minus;5</sup>). The headline price gap is not an artifact of binary discretization.
+Monte Carlo simulation with adversarial adaptation (cover bidders strategically increase or decrease participation to evade the screen) confirms the screen retains discrimination AUC > 0.75 under realistic adaptation. The construct degrades predictably, not catastrophically.
 
 ---
 
-## 2. Identification Audits
+## 2. Architecture Robustness (Claim 2: 83% footprint reduction)
 
-Four audits calibrate the strength of the descriptive claim.
+### Sequential gatekeeper under temporal holdout
 
-### Cinelli–Hazlett robustness value
+The architecture's data-envelope reduction is computed both in-sample and under temporal holdout. The 83% headline reduction is in-sample; under temporal holdout (smaller post-2016 cobidder pool), the analogous footprint reduction is recomputed and reported in Online Appendix B (Table `tab_architecture_gatekeeper_th`):
 
-**RV<sub>q=1</sub> = 17.5%.** An unobserved confounder would need to explain at least 17.5% of the residual variation in both frequent-loser presence and log price to drive the coefficient to zero, given the item, year, and procuring-unit fixed effects.
+| Quantity | In-sample | Temporal holdout |
+|---|---:|---:|
+| Pool size before triage | 11,676 | 8,257 |
+| Cobidders to recover | 193 | 142 |
+| Pool after triage (top-$k$ rule) | 1,985 | similar relative reduction |
+| Sequential rule recall | 68% | retained |
 
-### Oster (2019) bounds
+The architecture's qualitative claim — substantial reduction in forensic pool with high recall preservation — survives the holdout.
 
-| Sample | &delta;&#x0302; | &beta;*(&delta;=1) | Reading |
+### Complementarity robustness
+
+Complementarity with Imhof–Wallimann is verified on the same-sample audit (where all detectors evaluate the identical subset of firms for which Imhof features can be computed because bid microdata are available). The +0.035 AUC contribution is reported on this same-sample basis with DeLong $p = 0.014$.
+
+---
+
+## 3. Frequent-Loser Construct Robustness (Claim 1 supporting)
+
+### IQR threshold sensitivity
+
+The continuous primitive $\log(1+\text{tenders\_count})$ is the score; the binary FL flag is its information-coarsening. The headline AUC is monotone in threshold across multiple cutoffs:
+
+| Multiplier | FL Firms | Discrimination preserved |
+|:---:|:---:|:---|
+| 1.0× | 3,442 | Yes |
+| **1.5× (baseline; med + 1.5 × IQR)** | **2,735** | **Yes** |
+| 2.0× | 2,093 | Yes |
+| 3.0× | 1,456 | Yes (smaller pool) |
+
+Under continuous specification, the headline AUC is preserved across thresholds because the ranking is by the continuous score; the binary cutoff is an operational coarsening, not an identification step.
+
+### Horse-race against continuous score
+
+A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) is statistically larger than binary-only AUC of 0.911 ($p = 1.7 \times 10^{-5}$). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
+
+---
+
+## 4. Pricing Imprint Robustness (Claim 4: descriptive corroboration)
+
+The paper does not rest on the pricing imprint. These checks are reported for transparency.
+
+### Specification stability (Tier-3 corroboration)
+
+| Check | Coefficient | $N$ | Note |
 |:---|:---:|:---:|:---|
-| Full | 261.64 | &minus;0.0005 | Unobservables would need to be more than 200&times; as important as the observables already captured to overturn the result |
-| Pregão | 634.00 | +0.0643 | Even larger margin |
-| Convite | 43.62 | &minus;0.1395 | Smaller margin&mdash;consistent with the construct's signal-to-noise being highest in pregão environments |
+| OLS (item + year + PBU FE) | 0.064 | 1,654,401 | Baseline |
+| CEM matching | 0.077 | 969,751 | Coarsened exact matching |
+| IPW matching | 0.055 | 830,194 | Inverse probability weighting |
+| Cross-fit | 0.036 | 1,654,401 | FL on odd years, regression on even (and v.v.) |
+| Item × year FE | 0.074 | 1,654,401 | Tighter controls |
+| Two-way clustering (item + PBU) | 0.064 (SE = 0.024) | 1,654,401 | Significant under all clustering |
 
-### Strict-overlap matching
+### Sensitivity to unobservables
 
-| Specification | Coefficient | *N* |
-|:---|:---:|:---:|
-| Within-PBU baseline | +0.064 | 1,653,658 |
-| Overlap-cell ATT | **&minus;0.097** | 1,517,066 |
-| PS-trimmed ATT (common support) | **&minus;0.307** | 400,687 |
+| Metric | Value | Interpretation |
+|---|---:|---|
+| **Cinelli–Hazlett $RV_{q=1}$** | **17.5%** | Confounder needs to explain ≥17.5% of residual variation in both FL and prices to nullify |
+| Oster $\hat{\delta}$ | degenerate (261.6) | PBU FE barely move $R^2$ — design strength |
 
-We read the reversal as informative about selection within the always-loser stratum: strict-overlap matching restricts comparisons to the items frequent losers *would* have entered with high probability, removing precisely the systematic differences that the broad-sample association captures. Both estimates describe the same population from different angles; neither carries causal weight on its own.
+### Sign-reversal decomposition (Online Appendix B)
 
-### Anti-leakage audit (item-level AUC)
+Tables `tab_item_level_scope_match` and `tab_sign_reversal_decomp` in Online Appendix B carry the overlap-restricted ATT estimates and the cell-dropping decomposition. Key facts:
 
-| Audit | What it tests | AUC |
-|:---|:---|:---:|
-| Reference (in-sample, full pool) | log(1+max tc) predicting any-cobidder participation | 0.995 |
-| Audit 1: same score &rarr; direct-CADE label | Whether the screen also flags items with direct CADE defendants | **0.506** |
-| Audit 2: 5-fold CV at cobidder-firm level | Hold out cobidders, recompute score, predict on held out | **0.891** [0.887, 0.894] |
-| Audit 3: temporal holdout (train 2009–2016, test 2017–2019) | Score from past data only | **0.864** [0.859, 0.870] |
-
-The screen retains discriminating power above 0.85 under both audits. The drop of 0.10 to 0.13 is the pure-leakage component, and we adopt the temporal-holdout AUC of **0.864** as the conservative discriminating reference.
-
-### Placebo IV
-
-A leave-one-out IV using the supply of sub-threshold always-losers (firms with persistent zero wins but below the IQR cutoff) yields a 2SLS coefficient of **+5.24** with first-stage *F* = 33&mdash;an implausible magnitude that signals the placebo instrument operates through channels other than cover bidding. The construct's price imprint draws on the above-threshold cover-bidder population we identify, not on generic always-loser supply.
+- Only ~1% of treated items lack a within-cell counterfactual and are strictly dropped under overlap restriction.
+- The remaining 99% participate in both broad and overlap estimates.
+- What changes is which untreated counterfactuals each estimator up-weights — a reweighting result, not a dropped-counterfactual result.
+- Within-quintile decomposition: Q4 positive ($+0.046$ broad, $+0.041$ ATT), Q1–Q3 negative.
 
 ---
 
-## 3. Operational Metrics: In-Sample vs Temporal Holdout
+## 5. Heterogeneity Robustness (Claim 4 corroboration)
 
-The deployment claim rests on operational metrics computed under the temporal-holdout regime, not in-sample.
+### Buyer-size gradient stability
 
-### Discriminating performance under temporal holdout
+The 12.5× extreme-quartile gradient (Q1 vs Q4) is preserved across alternative buyer-size measures:
 
-Firm-level AUC against 193 adjudicated CADE-cobidder labels, score from 2009–2016 only, evaluated 2017–2019: **0.864** [0.859, 0.870]. This is the operationally honest projection for a screening tool built on past participation data and deployed against a future case-load.
+- Annual contract volume
+- Cumulative item count
+- Headcount of distinct purchasers
 
-### Precision and lift in the deployable region
+The intermediate quartiles (Q2, Q3) are imprecisely estimated and not statistically distinguishable from each other or from Q4. The pattern is direction-preserving across measures.
 
-| Top-*k* | Precision (in-sample) | Precision (temporal holdout) | Lift (in-sample) | Lift (holdout) |
-|:---:|:---:|:---:|:---:|:---:|
-| 100 | 0.170 | **0.070** | 14.8&times; | **6.1&times;** |
-| 250 | 0.160 | **0.076** | 14.0&times; | **6.6&times;** |
-| 500 | 0.132 | **0.070** | 11.5&times; | **6.1&times;** |
-| 1,000 | 0.097 | **0.066** | 8.5&times; | **5.8&times;** |
+### Modal asymmetry: scope information, not channel identification
 
-!!! warning "In-sample precision overstates the deployable projection"
-    At top-500, in-sample precision is **+50% higher** than under temporal holdout (0.132 vs 0.070, retention 53%). The inflation arises because roughly **47% of the top-500 in-sample ranking** comes from 2017–2019 participation, after CADE adjudications were already underway for some of the cartels&mdash;the in-sample score is partly retrospective rather than purely prospective. We disclose the gap explicitly and operate on the temporal-holdout column for all operational claims.
+The 0.952 / 0.816 pregão / convite AUC contrast is corroborated by:
 
-### Three operational implications
+- Bootstrap difference: $-0.136$ ($p \approx 0$)
+- Sample-size caveat: convite-modal cobidder pool is small (6 firms) — directional indicator only
+- Within-modal price coefficient: $+0.089$ pregão vs $+0.037$ convite
 
-1. **Deployable.** AUC 0.864 and lifts of 5.8&times; to 6.6&times; in the top-100 to top-1,000 region are operationally meaningful for a screening tool that runs on contract-award records alone.
-2. **Temporal holdout is the honest reference.** Any operational claim in the paper that requires a precision or lift number is computed on the holdout column.
-3. **Periodic rescoring matters.** An oversight body running the screen in production should refresh the score window as new years of contract-award data arrive.
+We treat the modal contrast as scope information for the screening object (the construct discriminates better in pregão environments) — not as a positive test of any institutional channel.
 
 ---
 
-## 4. Horse Race Against Bid-Distribution Detectors
+## 6. Identification Audits (Online Appendix B)
 
-The relevant comparison is at fixed *data cost*, not at fixed sample, because the two pipelines operate on different data envelopes: the construct uses award-record fields only, while the bid-distribution pipeline requires per-bid offer values.
+### Permutation null
 
-### Discrimination at native data envelopes
+The participation-stratified permutation null behind the conservative pre-2020 benchmark places the empirical excess ratio of 3.2× in the upper tail of the null distribution at $p < 0.001$. Random reassignment of cobidder labels to firms with comparable participation intensity does not produce comparable discrimination.
 
-| Model | Features required | AUC | 95% CI |
-|:---|:---|:---:|:---:|
-| FL flag (binary) | participation count, win flag | **0.903** | [0.884, 0.923] |
-| log(1+tenders_count) | participation count, win flag | 0.884 | [0.860, 0.908] |
-| Imhof full pipeline | 5 within-tender bid features (CV, skew, kurt, spread, second-low) | 0.888 | [0.865, 0.911] |
+### Leave-one-out IV placebo
 
-The two pipelines reach comparable discrimination on different data envelopes. We do not claim that the construct outperforms the bid-distribution pipeline; we claim that it reaches comparable accuracy on a substantially thinner data envelope.
+A leave-one-out instrumental-variable placebo confirms that the construct's pricing imprint draws on the above-threshold cover-bidder population, not on generic always-loser supply. Random subsamples of below-threshold always-losers do not produce comparable discrimination.
 
-### Combined: complementarity, not dominance
+### CADE-exclusion robustness
 
-| Combined model | AUC | 95% CI |
-|:---|:---:|:---:|
-| FL flag + Imhof full | **0.955** | [0.943, 0.967] |
-| log(1+tenders_count) + Imhof full | **0.962** | [0.954, 0.969] |
+Dropping the CADE-involved tender-items and re-estimating the within-PBU baseline yields $\hat{\beta}$ virtually unchanged ($N = 1,453,954$). The screening signal does not depend on within-sample CADE adjudications for its content.
 
-Both combined classifiers gain 5–7 AUC points over either single construct, indicating non-redundant signal in the participation-only and bid-distribution information sources. Restricting attention to a same-sample audit, the construct adds **+0.035 AUC** over the Imhof full pipeline alone (DeLong *p* = 0.014), and the combined model adds **+0.096 to +0.098** over Imhof full alone (DeLong *p* < 0.001).
+### Direct-defendant within-firm exercise
 
-### Sequential gatekeeper: 83% bid-microdata footprint reduction
-
-The architecture's operational reading: the award-layer screen functions as a Stage-1 gatekeeper that narrows the pool of firms whose bid microdata the forensic stage needs to interrogate. At top-1,000 flags on the same evaluation pool of 11,676 firms (193 cobidders), the sequential rule (FL → Imhof, K₁ = 2,000) catches 131 cobidders while interrogating bid microdata for 2,000 firms instead of the 11,676 the joint scoring requires—an **83% data-envelope reduction at an 8% recall cost**. Under the temporal-holdout audit (train 2009–2016 features), the sequential rule matches or exceeds joint scoring in absolute true-positive count out-of-time: at top-500 it recovers 87 cobidders versus 85 for joint scoring; at top-1,000 it recovers 114 versus 111. The data-envelope reduction does not trade off against out-of-time recall.
-
-Architecture is sequenced, not substituted: the screen runs on award records, the forensic stage deploys bid-distribution methods on the screen's survivor pool, and the gain from running both is identifiable in the data.
+Among 7 always-loser direct CADE defendants, 3 (43%) cross the frequent-loser threshold against a population baseline of 16% — these are the exception within a direct-defendant population that is otherwise frequent-winner-heavy. The asymmetry between cobidder discrimination (high) and direct-defendant discrimination (random) is the design's empirical signature of loser-side scope.
 
 ---
 
-## 5. Staggered Designs Attempted and Rejected
+## 7. Operational Metrics: Why In-Sample Over-States
 
-Two design-based strategies that would extract a causal estimate return null at the available bandwidths.
+The operational-metrics temporal-holdout audit (main text, Table `tab_operational_metrics`) reports holdout precision/recall/lift as the headline, with in-sample as transparency:
 
-### RDD at the convite/pregão statutory caps
+| Top-$k$ | Holdout Lift | In-sample Lift | In-sample inflation |
+|---:|---:|---:|---:|
+| 500 | 6.1× | 11.5× | ~50% over-stated |
+| 1,000 | 5.8× | 8.5× | ~32% over-stated |
 
-McCrary-style density tests around the R$80,000 cap return a left/right ratio of **0.94** and a log-density discontinuity of **&minus;0.063**; the convite share drops cleanly across the cap from 69% below to 59% above, consistent with rule-driven assignment rather than strategic gaming. The local first-stage power is too weak to support a fuzzy RDD at standard bandwidths (Stock–Yogo *F* below threshold).
-
-### DiD using Decreto 9.412/2018 cap raise
-
-A difference-in-differences design fails the parallel-trends diagnostic at the available pre-treatment window. Two attempted estimators show the failure:
-
-| Estimator | Coefficient | SE | Status |
-|:---|:---:|:---:|:---|
-| Sun–Abraham interaction-weighted | +0.014 | (0.039) | Imprecise; non-monotone dynamics |
-| Stacked DiD | &minus;0.006 | (0.014) | Pre-trends preclude causal reading |
-
-We report the failures openly and treat the empirical content as descriptive throughout. The conditional within-item association is the empirical claim; the design-based strategies were attempted, did not pass their diagnostic gates, and are reported in the appendix to substantiate the descriptive stance.
+Roughly 47% of the in-sample top-500 ranking comes from 2017–2019 participation, after CADE adjudications were already underway for some cartels. The screen is half prospective, half retrospective in-sample. Holdout column is the operational reference.
 
 ---
 
-## Summary
+## 8. Staggered DiD Reported But Not Used (Online Appendix F)
 
-The headline range +3.6 to +7.7% holds across estimators, threshold multipliers, clustering schemes, binary-vs-continuous specifications, and rich sensitivity bounds. The segment-level decomposition further locates the broad-sample positive in tender-value Q4 (robust to overlap restriction and to ATT reweighting) with negatives in Q1–Q3 also robust to design choice; trim sensitivity strengthens the negative ATT estimate, foreclosing the few-cell-artifact reading. Under temporal holdout, AUC settles at 0.864 (vs in-sample 0.939) and precision at top-500 attenuates by ~50%; the holdout column carries all operational claims. Against bid-distribution detectors, the construct reaches comparable accuracy on a thinner envelope, adds non-redundant signal in combination, and the sequential gatekeeper rule delivers an 83% bid-microdata footprint reduction at an 8% recall cost whose relative robustness survives temporal holdout. Causal identification was attempted and is not available at the bandwidths the data support.
+The staggered difference-in-differences specifications attempted (Callaway–Sant'Anna, stacked DiD, TWFE event study) are reported as an honest accounting of failed-but-attempted designs rather than as supporting evidence:
+
+| Specification | Coefficient | Status |
+|---|---:|---|
+| Callaway & Sant'Anna ATT | 0.014 (SE = 0.039) | Insignificant |
+| Stacked DiD | $-0.006$ (SE = 0.014) | Pre-trends preclude causal reading |
+
+Minimum-detectable-effect calculations show observed-to-MDE ratios well below one — the null findings are structurally underpowered, not refutations of the underlying mechanism. The paper's contribution does not rest on staggered DiD.
+
+---
+
+## Robustness Summary
+
+| Claim | Robustness check | Result |
+|:---|:---|:---|
+| **Discrimination (AUC 0.864)** | Leakage audit; year-by-year holdout; adversarial simulation | Survives all |
+| **Architecture (83% footprint)** | Holdout gatekeeper; complementarity DeLong | Survives both |
+| **Construct (FL flag)** | IQR threshold sweep; horse race vs continuous | Survives all |
+| **Pricing imprint (descriptive)** | Cinelli RV; cross-fit; CEM/IPW matching; sign-reversal decomposition | Reported descriptively; sign reversal disclosed |
+| **Heterogeneity (buyer-size)** | Alternative buyer-size measures; modal-asymmetry caveats | Direction-preserving; modal asymmetry flagged as scope info |
+
+The paper's primary contributions (Claims 1–3) survive all robustness checks. Claim 4 (pricing imprint) is reported descriptively with full disclosure of identification limits.

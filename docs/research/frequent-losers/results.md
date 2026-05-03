@@ -1,221 +1,189 @@
----
-paper: frequent-losers
----
-
 # Main Results
 
-The empirical case rests on three pieces of evidence. The
-discrimination of adjudicated CADE cobidders is the primary
-result. The architectural test against the bid-distribution
-literature is the contribution most readers will read the paper
-for. The pricing imprint enters as descriptive corroboration,
-not as a treatment-effect estimate.
+This page presents the empirical findings in the order the paper now privileges: discrimination first, architectural complementarity second, pricing imprint third (descriptive corroboration only).
 
 ---
 
-## 1. Discrimination Against CADE Cobidders
+## 1. Discrimination Against the Cobidder Population
 
-The frequent-loser flag discriminates 193 always-loser firms
-that participated alongside CADE direct defendants from the
-broader always-loser pool. Two readings of the AUC bracket the
-result.
+The screen's primary validation is firm-level discrimination of cobidders inside the always-loser stratum.
 
-| Reading | Sample | AUC |
-|:---|:---|:---:|
-| Conservative (contemporaneous) | 4 cases adjudicated pre-2020, 210 cobidders, 108 frequent losers | **0.748** [0.713, 0.783] |
-| Prospective in-sample | Full 12 cases, 193 cobidders | **0.924** [0.921, 0.926] |
-| **Prospective under temporal holdout** | Train 2009&ndash;2016 / test 2017&ndash;2019 | **0.864** [0.859, 0.870] |
+### Headline AUC
+
+| Metric | Value |
+|---|---|
+| **Firm-level AUC, temporal holdout (train 2009–2016, test 2017–2019)** | **0.864** [95% CI: 0.858, 0.870] |
+| Firm-level AUC, in-sample | 0.939 |
+| AUC, strict pre-2020 benchmark with participation-stratified permutation null | corroborated by 3.2× excess over random-matching baseline ($p < 0.001$) |
+| AUC against direct CADE defendants in broader BEC firm universe | ≈ 0.49 (random — by design; loser-side scope, not winner-side identity) |
 
 !!! success "AUC 0.864 under temporal holdout"
-    Constructing the score on 2009&ndash;2016 participation only
-    and evaluating on 2017&ndash;2019 cobidder labels yields
-    AUC 0.864. Eight of the twelve CADE cases were adjudicated
-    after the sample window closes, so the discrimination is
-    computed on participation patterns observable years before
-    enforcement confirmed them. We adopt this number as the
-    deployable projection an oversight body would compute on
-    award-record data alone.
+    The temporal-holdout AUC is the headline reference for all operational claims. The construct is not retrofit on post-2020 data; the score is computed using only 2009–2016 participation and evaluated on items in 2017–2019. Out-of-fold CV at cobidder-firm level returns 0.891 [0.887, 0.894], confirming the structural component dominates.
 
-### Within-stratum theory bridge
+### Leakage audit (decomposition of in-sample item-level AUC)
 
-Cobidders behave like the modelled cover-bidder type. Within the
-always-loser stratum, cobidders deploy at higher intensity than
-FL non-cobidders (Cohen's *d* = +1.00 on unique winners faced),
-are deployed proximally to direct CADE defendants
-(*d* = +0.46 on direct-CADE share), and concentrate participation
-in narrower markets (*d* = +0.39 on portfolio item-group HHI).
+The raw in-sample item-level AUC of 0.995 is partly tautological by construction. The audit decomposes it into structural and leakage components:
 
-At the bid level, they bid plausibly close to winners
-(*d* = &minus;0.28 on per-firm median gap to winner,
-*p* &lt; 10&minus;6) with elevated within-firm cross-bid
-dispersion (*d* = +0.15, *p* = 0.05). A multivariate logit on
-cobidder status within the FL stratum, holding
-`log(1+tenders_count)` constant, returns a median-gap
-coefficient of &minus;0.71 (*p* &lt; 10&minus;4) and a
-within-firm dispersion coefficient of +0.44 (*p* &lt; 10&minus;3).
-Both bid-level signs survive controlling for participation
-intensity. The pattern matches *credible cover bidding*
-(Marshall&ndash;Marx, Asker)---bids low enough to be plausible,
-dispersed enough to track rotation across cover roles---rather
-than the textbook deliberately-uncompetitive cover bid the early
-literature described.
+| Audit | Specification | AUC | 95% CI |
+|---|---|---|---|
+| Original | In-sample, full pool | 0.995 | [0.995, 0.995] |
+| Audit 1 — scope | Same score, swapped to direct-CADE label | 0.506 | [0.505, 0.507] |
+| Audit 2 — tautology | 5-fold CV at cobidder-firm level | 0.891 | [0.887, 0.894] |
+| Audit 3 — generalization | Train 2009–2016 → test 2017–2019, any-cobidder | 0.864 | [0.859, 0.870] |
+| Audit 3 — direct-CADE label | Same temporal split, against direct-CADE label | 0.511 | [0.510, 0.513] |
 
-### Direct-defendant AUC as design signature
+The 0.10–0.13 drop from in-sample to audit-corrected AUC is the pure-leakage component. Audits against direct-CADE labels return random AUC, consistent with the loser-side scope.
 
-Against the 47 direct CADE defendants in the broader BEC firm
-universe, AUC is **0.491**---random discrimination by design.
-The screen recovers loser-side participation footprints; direct
-defendants are by construction the winner side of the same
-arrangements and lie outside the target population.
+### Why direct-CADE AUC ≈ 0.49 is the design's empirical signature
+
+The flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the winner side of the same arrangements. The asymmetry between cobidder discrimination (0.864) and direct-defendant discrimination (≈ 0.49) is not a failure of validation but the empirical fingerprint of what a screen built on the loser side can and cannot do.
 
 ---
 
-## 2. The Architectural Test
+## 2. Architecture: Award-Layer Triage Before Bid-Layer Forensics
 
-The screening statistic and the bid-distribution moment battery
-are informational complements, not substitutes. Three pieces fit
-together.
+This is the paper's headline contribution.
 
-### Same target, different envelopes
+### Sequential gatekeeper rule
 
-On the same evaluation pool of 11,676 always-loser firms with
-full Imhof features (193 cobidders, base rate 0.0165):
+| Quantity | Without architecture | With award-layer triage | Improvement |
+|---|---|---|---|
+| Firms entering forensic stage | 11,676 (all always-losers) | **1,985** (top-1,000 flag list extended) | **83% reduction in bid-microdata pool** |
+| Cobidders recovered (of 193 adjudicated) | 193 (full coverage) | **131** | 68% recall preserved |
+| Bid-microdata interrogation cost | full | ~17% of full | ~83% saving |
 
-| Rule | Data envelope | AUC |
-|:---|:---|:---:|
-| Award-layer screen alone (FL log_tc) | Award records only | **0.881** |
-| Bid-layer Imhof full pipeline alone | Per-bid prices required | 0.846 |
-| Joint single-model scoring | Both | **0.942** |
+!!! success "83% footprint reduction"
+    Routing forensic interrogation through the screen reduces the bid-microdata pool the forensic stage must work on by 83% while still recovering 131 of 193 adjudicated cobidders. The recall robustness survives the temporal-holdout audit.
 
-The award-layer rule matches the bid-layer pipeline AUC on a
-substantially thinner data envelope. Combining the two adds
-**+0.096 AUC** (DeLong *p* = 1.2 × 10&minus;26)---the two carry
-non-redundant information about the same target.
+### Complementarity with bid-distribution screens
 
-### Sequential gatekeeper: the operational reading
+Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable layer:
 
-The screen functions as a Stage-1 gatekeeper, narrowing the pool
-of firms whose bid microdata the forensic stage needs to
-interrogate. At top-1,000 flags:
+| Comparison | Result |
+|---|---|
+| Award-layer flag (alone), AUC | 0.864 |
+| Imhof–Wallimann pipeline (alone), AUC | 0.829 |
+| Combined (same-sample audit) | **+0.035 AUC over Imhof alone** |
+| DeLong test for combination improvement | $p = 0.014$ |
+| Combined model, additional improvement over Imhof full alone | +0.096 to +0.098 AUC ($p < 0.001$) |
 
-| Rule | Cobidders captured | Bid-microdata firms required |
-|:---|:---:|:---:|
-| Joint single-model scoring | 142 / 193 (recall 0.736) | **11,676** (full pool) |
-| Sequential FL → Imhof, K₁ = 2,000 | **131 / 193** (recall 0.679) | **2,000** |
+!!! warning "Informational complements, not substitutes"
+    The two screens carry non-redundant information about the same target. The screening stage functions as a credible Stage-1 gatekeeper for the forensic stage. Reforms that mandate operational bid-microdata archival expand the forensic stage, not the screening one.
 
-!!! success "83% bid-microdata footprint reduction at 8% recall cost"
-    The sequential rule catches 131 of 193 adjudicated cobidders
-    while interrogating bid microdata for 2,000 firms instead of
-    11,676 the joint scoring would require. Recall costs ~8% vs
-    joint scoring; bid-microdata footprint drops by 83%.
+### Operational metrics under temporal holdout
 
-### Temporal holdout: the gatekeeper's relative robustness
+The temporal-holdout column is the headline reference (in-sample reported only for transparency):
 
-Restricting every per-firm feature to participation observed in
-2009&ndash;2016 (cobidder labels stay anchored on full-window
-adjudications), precision compresses asymmetrically across the
-four rules. The award-layer screen alone loses 47% at top-500;
-joint scoring loses 24%; **the sequential gatekeeper loses
-9%**. In absolute true-positive count, the sequential rule
-matches or exceeds joint scoring out-of-time: at top-500 the
-sequential rule recovers 87 cobidders versus 85 for joint
-scoring; at top-1,000 it recovers 114 versus 111. The 83%
-data-envelope reduction does not trade off against out-of-time
-recall.
+| Top-$k$ | Holdout TP | Holdout Precision | Holdout Recall | Holdout Lift | In-sample Lift |
+|---:|---:|---:|---:|---:|---:|
+| 50 | 1 | 0.020 | 0.005 | 1.7× | 26.2× |
+| 100 | 7 | 0.070 | 0.036 | 6.1× | 14.8× |
+| 250 | 19 | 0.076 | 0.098 | 6.6× | 14.0× |
+| 500 | 35 | 0.070 | 0.181 | **6.1×** | 11.5× |
+| 1,000 | 66 | 0.066 | 0.342 | **5.8×** | 8.5× |
+
+The in-sample columns over-state precision by approximately 50% at top-500 because roughly 47% of the in-sample top-500 ranking comes from 2017–2019 participation, after CADE adjudications were already underway for some cartels. All operational claims in the paper are read off the holdout column.
 
 ---
 
-## 3. Pricing Imprint as Descriptive Corroboration
+## 3. Within-Stratum Bridge: How Cobidders Behave
 
-If the screen flags cartel-adjacent environments, do those
-environments also carry a price imprint? The answer is yes, but
-descriptively so---not as a treatment-effect estimate.
+The cobidder population behaves like the modeled cover-bidder type along five firm-level and bid-level predictions.
 
-### Broad-sample conditional association
+### Firm-level (4 of 5 predictions confirmed)
 
-| Specification | Coefficient | Effect (%) | *N* |
-|:---|:---:|:---:|:---:|
-| (1) Item + year FE | +0.068*** | +6.8% | 1,654,401 |
-| (2) Item + year + PBU FE | +0.064*** | **+6.4%** | 1,654,401 |
-| (3) Pregão only (all FE) | +0.089*** | +9.3% | 543,752 |
-| (4) Convite only (all FE) | +0.037 | +3.8% | 1,105,852 |
+| Prediction | Cohen's $d$ | Interpretation |
+|---|---|---|
+| Cobidders deploy at higher intensity than FL non-cobidders | $d = 0.97$ on unique winners faced | Confirmed |
+| Cobidders bid proximally to direct CADE defendants | $d = 1.49$ | Confirmed |
+| Cobidders concentrate in narrower markets (portfolio HHI) | $d = 0.61$ | Confirmed |
+| Cobidders show repeat-pair structure with adjudicated firms | excess persistent pairs $p < 0.001$ | Confirmed |
+| Cobidders' tenure distribution distinguishes from FL non-cobidders | small effect | Mixed |
 
-Across four estimators (cross-fit, IPW, OLS within-PBU, CEM),
-the conditional range is **+3.6% to +7.7%**.
+### Bid-level (signature of credible cover bidding)
 
-### Segment-level decomposition: the broad-sample positive is a Q4 phenomenon
+At the bid level, cobidders bid **plausibly close to winners** with **elevated within-firm cross-bid dispersion**:
 
-Re-estimating the headline regression within tender-value
-quintiles reveals a sharper structure. In Q1&ndash;Q3 the
-broad-sample coefficient is already *negative* (&minus;0.065,
-&minus;0.057, &minus;0.040, *p* &lt; 10&minus;15 in each); in
-Q4 it is **+0.046** (*p* = 0.012). Both the overlap restriction
-and the ATT reweighting leave each within-quintile estimate
-essentially unchanged: the Q4 positive survives all three
-specifications, and the Q1&ndash;Q3 negatives survive at
-quantitatively similar magnitudes.
+| Statistic | Cobidders | FL non-cobidders | Gap (Cohen's $d$) |
+|---|---:|---:|---:|
+| Median per-firm gap to winner (log) | 0.582 | 0.809 | $d = -0.281$ ($p < 10^{-6}$) |
+| Per-firm bid SD | 1.207 | 1.099 | $d = +0.147$ |
 
-The aggregate +0.064 broad-sample coefficient is the
-population-weighted average of three negative within-quintile
-coefficients and one positive Q4 coefficient, with Q4's 40,878
-treated items dominating the volume-weighted mean.
-
-### Trim sensitivity: not a few-cell artefact
-
-Trimming the most heavily ATT-weighted cells *strengthens* the
-negative ATT estimate---from &minus;0.097 at no trim to
-&minus;0.118 at the top-decile trim and &minus;0.133 at the
-median. The ATT-weighted negative is a structural property of
-the bulk of the overlap sample, not extreme leverage on cells
-with thin counterfactuals.
-
-### Identification scope
-
-Identification is descriptive throughout. Two design-based
-strategies that would extract a causal estimate return null at
-the available bandwidths: a sharp regression discontinuity at
-the convite/pregão statutory caps (gated by the absence of
-bunching in the McCrary density test), and a
-difference-in-differences using the 2018 cap raise (gated by
-parallel-trends failure). Sensitivity bounds: Cinelli's
-*RV*<sub>q=1</sub> = 0.207; Oster's δ&#x0302; = 261.64.
+A multivariate logit holding $\log(1+\text{tenders\_count})$ constant confirms both signs at $p < 10^{-3}$. The directions are consistent with **credible cover bidding** (Marshall & Marx 2012, Asker 2010) — bids low enough to be plausible, dispersed enough to track rotation across cover roles — rather than the textbook deliberately-uncompetitive cover bid the early literature described.
 
 ---
 
-## 4. Heterogeneity Across Detection Regimes
+## 4. Pricing Imprint as Descriptive Corroboration
 
-Splitting the sample into quartiles of procuring-unit size
-produces a sharp extreme-quartile contrast: **+21.4% at the
-smallest-buyer quartile (Q1)**, **+1.7% at the largest (Q4)**,
-a 12.6× extreme-quartile gradient preserved across alternative
-size measures. The framework predicts the contrast direction
-through the detection-cost comparative static
-&part;m\*/&part;&theta;<sub>k</sub> &lt; 0: cover-bidder
-deployment is more aggressive where the principal cost of
-detection is lower. Buyer size proxies for several correlated
-institutional features (procurement-officer tenure,
-internal-audit infrastructure, item composition, discretionary
-procedure use) that the design cannot separate.
+The paper does not rest on this section. The screening contribution is carried by Sections 1 and 2 above. The pricing imprint is reported because the cover-bidding literature would expect a price footprint, but the available identification cannot settle whether the association is causal.
+
+### Broad-sample association
+
+| Specification | Coefficient | SE | Effect (%) | $N$ |
+|:---|:---:|:---:|:---:|:---:|
+| (1) Item + Year FE | 0.068*** | (0.022) | +6.8% | 1,654,401 |
+| (2) Item + Year + PBU FE | 0.064*** | (0.020) | +6.4% | 1,654,401 |
+| (3) Pregão only (all FE) | 0.089*** | (0.025) | +9.3% | 1,334,729 |
+| (4) Convite only (all FE) | 0.037 | (0.022) | +3.8% | 319,718 |
+
+Cross-fit (0.036), CEM matching (0.077), IPW (0.055), and a leave-one-out IV bound the conditional range at +3.6% to +7.7%.
+
+### Sign reversal under overlap restriction
+
+Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables and reweighting to the average treatment effect on the treated produces a reversed coefficient: overlap-cell ATT $-0.032$, propensity-score-trimmed ATT $-0.021$ (full coefficients in Online Appendix B). The reversal is real; the paper does not rest on either sign.
+
+The within-quintile decomposition:
+
+| Quintile | Broad-sample $\beta$ | $p$-value | ATT |
+|---|---:|---:|---:|
+| Q1 | $-0.065$ | $< 10^{-15}$ | similar |
+| Q2 | $-0.057$ | $< 10^{-15}$ | similar |
+| Q3 | $-0.040$ | $< 10^{-15}$ | similar |
+| **Q4 (largest tender value)** | **+0.046** | 0.012 | **+0.041** ($p = 0.045$) |
+
+Q4 — the segment where deployment value is highest a priori on contract size — carries the positive imprint that the framework predicts the cartel concentrates on. Q1–Q3 carry negative imprints consistent with several non-exclusive non-screening mechanisms (thin-market price formation, item-characteristic selection, composition heterogeneity in the firm pool).
+
+The discrimination evidence (Section 1) and the architectural test (Section 2) carry the contribution; the broad-sample imprint is bracketed by Cinelli–Hazlett $RV_{q=1} = 17.5\%$ and Oster $\hat{\delta}$ against selection on observables already absorbed by the fixed effects.
+
+!!! info "Why this section is descriptive"
+    The screening-value formalization that motivates why the broad-sample $\beta$ remains an economic object under coarsened observability is in Online Appendix A (Proposition 3); the body of the paper does not lean on that formalization. The screen is validated in Sections 1–2; the price imprint here is corroboration that the construct also tracks an outcome the cover-bidding literature would expect, not identification of a causal effect.
 
 ---
 
-## What the Joint Evidence Supports
+## 5. Heterogeneity Across Detection Regimes
 
-Three findings together identify the sequencing structure the
-paper proposes. The discrimination at AUC 0.864 (temporal
-holdout) and 0.748 (conservative pre-2020) establishes that the
-screen flags cartel-adjacent environments. The architectural
-test shows the screen and the bid-distribution moment battery
-discriminate the same labels at comparable AUC on different
-observability layers, with the sequential rule reducing the
-bid-microdata footprint by 83% at 8% recall cost. And the
-pricing imprint enters as descriptive corroboration that the
-flagged environments also carry a price signal, with the sign
-reversal localised to Q1&ndash;Q3 and a positive Q4 coefficient
-robust to design choice.
+Where the screening signal varies tells us something the level does not. Splitting the sample into quartiles of procuring-unit size:
 
-What the joint evidence does *not* support: firm-level cartel
-guilt. The construct flags cover bidders, not cartel
-ringleaders, and the 47 direct-defendant AUC of 0.491 is the
-hard upper bound on broader detection claims outside the
-always-loser stratum.
+| Quartile | FL price coefficient | Interpretation |
+|---|---:|---|
+| Q1 (smallest buyers, weakest oversight) | +21.4% | Strongest signal |
+| Q2 | +9.8% | |
+| Q3 | +4.5% | |
+| Q4 (largest buyers, strongest oversight) | +1.7% | Weakest signal |
+
+A 12.5× extreme-quartile gradient. The framework predicts the contrast direction through the detection-cost comparative static $\partial m^*/\partial \theta_k < 0$: cover-bidder deployment is more aggressive where the principal cost of detection is lower.
+
+!!! warning "Scope information, not institutional channel identification"
+    Buyer size proxies for several correlated institutional features — procurement-officer tenure (Coviello & Mariniello 2014), internal-audit infrastructure, item composition, discretionary procedure use (Decarolis et al. 2025) — none separable with the variation we have. We read the gradient as heterogeneity in the screening object across the monitoring environment, in the framework's predicted direction, with the magnitude concentrated at the extremes — not as identification of an institutional channel.
+
+---
+
+## 6. Modal Asymmetry: Pregão vs. Convite (Scope Information)
+
+On the discrimination side, the modal-by-modal AUC against the 193 adjudicated cobidders is 0.952 in pregão primary auctions versus 0.816 in convite primary auctions (bootstrap difference $-0.136$, $p \approx 0$).
+
+!!! warning "Scope information for the screen, not a positive test of any institutional mechanism"
+    The convite minimum-bidder rule (Lei 8.666/93, Art. 22 §3) would predict a sharper screening signal where the rule binds (convite). The data reverse this prediction. We do not read the reversal as a positive test of any alternative institutional theory. The modal asymmetry is reported as scope information for the screening object — the construct discriminates better in pregão environments — and not as a positive test of the minimum-bidder-rule mechanism, which would require institutional variation the BEC setting does not deliver.
+
+---
+
+## Summary: What the Empirical Strategy Establishes
+
+The paper makes four empirical claims, in declining order of confidence:
+
+1. **The architecture works.** 83% reduction in forensic pool with 68% recall preserved. (Headline.)
+2. **The screen discriminates.** Firm-level AUC 0.864 under temporal holdout against adjudicated cobidders.
+3. **The screen complements bid-distribution methods.** +0.035 AUC over Imhof–Wallimann pipeline ($p = 0.014$).
+4. **A pricing imprint is present in the broad sample.** +3.6% to +7.7% across four estimators, with sign reversal under overlap and Q4-concentrated positive — reported descriptively, not causally.
+
+Claims 1–3 are the paper. Claim 4 is corroboration.

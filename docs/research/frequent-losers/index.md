@@ -1,53 +1,49 @@
 ---
 hide:
   - navigation
-paper: frequent-losers
 ---
 
 <div class="hero-section" markdown>
 
-# Frequent Losers
+# Cheap Signals, Costly Proof
 
-<p class="subtitle">A Cover-Bidder Screen Without Bid Microdata</p>
+<p class="subtitle">Award-Layer Triage for Cartel Enforcement</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
-<p class="affiliation">Insper Institute of Education and Research, São Paulo, Brazil</p>
+<p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">AUC 0.864</span>
-<span class="label">Firm-level discrimination of CADE cobidders inside the always-loser stratum under temporal holdout (train 2009&ndash;2016, test 2017&ndash;2019)</span>
+<span class="number">83%</span>
+<span class="label">Reduction in the bid-microdata pool the forensic stage must work on, while still recovering 131 of 193 adjudicated cobidders</span>
 </div>
 
 ## Abstract
 
-Can a cartel-detection screen built on the contract-award
-envelope identify cartel-adjacent firms when per-bidder bid
-amounts are not routinely observable? A separating-equilibrium
-argument with cover bidders identifies endogenous loser-side
-participation as a sufficient ranking statistic given
-award-record data, and a binary *frequent-loser* flag makes the
-statistic operational. On São Paulo's BEC platform
-(2009&ndash;2019), the flag discriminates 193 adjudicated
-cobidders inside the always-loser stratum at AUC 0.864 under
-temporal holdout. Compared with the seven-feature
-Imhof&ndash;Wallimann pipeline trained on bid microdata, it
-matches AUC on a thinner envelope and adds non-redundant signal
-in combination (+0.096 AUC, DeLong p&lt;10&minus;25). A
-sequential rule that uses the flag to filter the bid-microdata
-interrogation down to 2,000 of 11,676 firms still recovers 131
-of 193 cobidders, an 83% footprint reduction whose recall
-robustness survives the temporal-holdout audit. Cobidders bid
-plausibly close to winners with elevated within-firm dispersion,
-the signature of credible cover bidding rather than the textbook
-deliberately-uncompetitive form. The implication is
-architectural. Screening and forensic stages belong in sequence,
-not in competition: the screen runs on the layer audit courts
-already query, and the forensic stage inherits a much smaller
-pool to interrogate.
-
-[:material-file-pdf-box: Download manuscript (PDF)](assets/paper_v17.pdf){ .md-button .md-button--primary }
-[:material-file-document-outline: Online appendix](assets/paper_v17_online_appendix.pdf){ .md-button }
+How should an enforcement agency sequence information acquisition
+when the cheap operational layer is coarser than the layer where
+collusion can be adjudicated? Cartel-detection screens require
+bid-distribution microdata, but audit courts and oversight bodies
+routinely observe only the contract-award envelope. We propose an
+enforcement architecture in which an award-layer screening stage
+triages firms and environments before a costly bid-layer forensic
+stage interrogates them, and instantiate it with a *frequent-loser*
+flag built from São Paulo's BEC contract-award records (2009--2019).
+Routing forensic interrogation through the flag reduces the
+bid-microdata pool by 83% (1,985 of 11,676 firms) while still
+recovering 131 of 193 adjudicated cobidders. The screen is a
+triage device, not an adjudication device: it ranks loser-side
+firms for costly bid-layer interrogation, not cartel members for
+legal sanction. Discrimination accuracy against the cobidder
+population (AUC 0.864 under temporal holdout) makes the
+architecture feasible; complementarity with bid-distribution
+screens (+0.035 AUC over the Imhof--Wallimann pipeline, DeLong
+$p = 0.014$) makes the sequencing well-defined. A simple
+separating-equilibrium argument motivates endogenous loser-side
+participation as the ranking primitive on the award layer. The
+conceptual content travels: wherever the award layer is exposed
+routinely while per-bidder bid amounts are forensic-recoverable,
+screening should be sequenced before forensics.
 
 **JEL Classification:**
 <span class="badge">D44</span>
@@ -62,59 +58,22 @@ pool to interrogate.
 <span class="badge badge-kw">cartel adjacency</span>
 <span class="badge badge-kw">award-layer enforcement</span>
 <span class="badge badge-kw">separating equilibrium</span>
-<span class="badge badge-kw">participation-based statistics</span>
 
 ---
 
 ## Key Findings
 
-!!! success "+3.6 to +7.7% conditional price gap across five estimators"
-    Frequent-loser-present tenders are associated with a higher
-    log negotiated unit price across full-sample OLS (+6.8%),
-    within-PBU OLS (+6.4%), IPW (+5.5%), CEM matching (+7.7%),
-    and cross-fit (+3.6%). The cross-fit decomposition isolates
-    the structural component (+3.6%) from within-sample
-    classification noise (~+2.8 percentage points), and we adopt
-    the resulting +3.6 to +7.7% range as the headline reference.
+!!! success "3.6--7.7% conditional price association"
+    FL-present tenders exhibit **3.6--7.7% higher conditional prices** across four estimation approaches: cross-fit (3.6%), IPW (5.5%), OLS with item + year + PBU FE (6.4%), and CEM matching (7.7%). The estimates cluster rather than scatter, indicating a stable association across designs.
 
-!!! success "12.6&times; oversight gradient across procuring-unit size"
-    The price gap collapses monotonically as buyers grow: +21.4%
-    in the smallest procuring-unit-size quartile, +9.8% in the
-    second, +4.5% in the third, and +1.7% in the largest. The
-    12.6&times; ratio between the extreme quartiles is the
-    strongest source of heterogeneity in the data, larger than
-    the pregão&ndash;convite gap or any cross-sector spread, and
-    consistent with the framework's comparative static
-    &part;m*/&part;&theta;<sub>k</sub> < 0&mdash;cover bidders
-    deploy more aggressively where oversight is thinner.
+!!! warning "AUC = 0.94 against CADE convictions"
+    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens capture largely non-overlapping information (correlation 0.06); naively combining them into a single score degrades detection to AUC = 0.61, confirming that they operate on different dimensions and are best deployed sequentially.
 
-!!! info "Validation against CADE adjudications: bounded 0.748&ndash;0.924"
-    Inside the always-loser stratum, the construct discriminates
-    193 adjudicated CADE-cobidder firms at firm-level AUC 0.924
-    (in-sample) and 0.864 (temporal holdout, train 2009&ndash;2016
-    / test 2017&ndash;2019). Restricted to four cases adjudicated
-    pre-2020, the contemporaneous lower bound is AUC 0.748. The
-    construct flags cover bidders, not cartel ringleaders: against
-    47 direct CADE defendants in the broader BEC firm universe,
-    AUC is 0.49 by design.
+!!! danger "Coordinated cover bidding (Regime 2)"
+    BIC strongly favors coordinated cover bidding ($\Delta$BIC = $-91{,}473$): FL bids are 28% **less** dispersed than non-FL bids ($\sigma_c / \sigma_g = 0.72$). The price association concentrates in **competitive markets** (0.126) and vanishes in concentrated ones ($-0.018$), consistent with strategic complementarity ($\hat{\gamma} = 0.69 > 0$).
 
-!!! warning "Comparable accuracy at lower data cost than bid-distribution detectors"
-    The construct reaches AUC 0.903 on the full always-loser pool,
-    comparable to the full Imhof&ndash;Wallimann pipeline (AUC
-    0.888) which requires per-bid offer values. Combined, the
-    classifiers reach AUC 0.955&ndash;0.962, with the gain
-    indicating non-redundant signal in the participation-only and
-    bid-distribution dimensions. We do not claim dominance; we
-    claim informational complementarity.
-
-!!! info "Three-stage administrative pathway"
-    *Screen* computes log(1+tenders_count) on award records and
-    flags top-*k* environments. *Triage* cross-references flagged
-    firms with adjudication records (CADE, CGU, TCE) and the
-    operational priors of the oversight body. *Forensic* deploys
-    bid-distribution methods where bid microdata are available.
-    The construct narrows the case-load that reaches the forensic
-    stage at near-zero marginal data cost.
+!!! info "Three-stage enforcement pathway"
+    The FL screen requires only **participation and outcome data** (no bid values). We propose a screen--triage--investigate pathway that exploits a **12.5x gradient** in the FL--price association across PBU size quartiles to direct investigative resources where oversight is weakest.
 
 ---
 
@@ -126,9 +85,9 @@ pool to interrogate.
 
 [**Paper** <br> Contribution, institutional setting, and empirical strategy](paper.md)
 
-[**Results** <br> Within-item price gap, oversight gradient, and CADE validation](results.md)
+[**Results** <br> Classification, detection, price association, and diagnostics](results.md)
 
-[**Robustness** <br> Threshold sensitivity, identification audits, operational metrics](robustness.md)
+[**Robustness** <br> Threshold sensitivity, DiD, IV diagnostic, and extensions](robustness.md)
 
 [**Replication** <br> Code, data, and pipeline](replication.md)
 
