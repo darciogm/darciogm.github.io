@@ -6740,21 +6740,23 @@
 <span class="label">Reduction in the bid-microdata pool the forensic stage must work on, while still recovering 131 of 193 adjudicated cobidders</span></p>
 </div>
 <h2 id="abstract">Abstract<a class="headerlink" href="#abstract" title="Permanent link">¶</a></h2>
-<p>Most antitrust enforcers see who won a public contract and at
-what price---not what every bidder offered. We show this
-thinner data layer is enough to triage which firms warrant
-costly forensic investigation. We propose an enforcement
-architecture in which an award-layer screening stage runs
-before a costly bid-layer forensic stage, and instantiate it
-with a <em>frequent-loser</em> flag built from São Paulo's BEC
-contract-award records (2009--2019). The flag cuts the
-bid-microdata pool the forensic stage must work on by 83%
-(1,985 of 11,676 firms) while recovering 131 of 193
-adjudicated cobidders. The screen is a triage device, not an
-adjudication device. Discrimination accuracy is AUC 0.864 under
-temporal holdout; the screen adds non-redundant signal to the
-Imhof--Wallimann bid-distribution pipeline (+0.035 AUC, DeLong
-<span class="arithmatex">\(p = 0.014\)</span>). A simple separating-equilibrium argument motivates
+<p>Can cheap data triage cartel investigations before costly
+forensics? Most antitrust enforcers see who won a public
+contract and at what price---not what every bidder offered.
+This thinner data is enough to flag which firms warrant costly
+forensic investigation. Our architecture sequences an
+award-layer screening stage before a costly bid-layer forensic
+stage, instantiated with a <em>frequent-loser</em> flag on São Paulo's
+BEC (2009--2019). Three findings. First, the flag cuts the
+forensic stage's bid-microdata pool by 83% while still flagging
+two-thirds of adjudicated cobidders. Second, using only
+contract-award data, the screen matches the seven-feature
+Imhof--Wallimann bid-distribution pipeline that requires bid
+microdata, and adds non-redundant signal in combination.
+Third, built on 2009--2016 participation
+only, the screen prospectively flags adjudicated cobidders in
+2017--2019. The screen is a triage device, not an adjudication
+device. A simple separating-equilibrium argument motivates
 endogenous loser-side participation as the ranking primitive.
 Wherever award records are routinely available while bid
 microdata are forensic-recoverable, screening should be
