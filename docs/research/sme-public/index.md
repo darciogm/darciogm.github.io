@@ -6,9 +6,9 @@ paper: sme-public
 
 <div class="hero-section" markdown>
 
-# The Cost of Inclusion
+# Sheltered Bidding
 
-<p class="subtitle">Decomposing Bidder Exclusion in Public Procurement</p>
+<p class="subtitle">The Within-Auction Cost of SME Set-Asides</p>
 <p class="authors">Darcio Genicolo-Martins</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
@@ -21,7 +21,7 @@ paper: sme-public
 
 ## Abstract
 
-SME set-asides are a default procurement-preference instrument worldwide. Their welfare turns on whether the price cost flows through the change in admissible bidders or through how each remaining bidder bids — a question price regressions cannot answer. I exploit a March 2018 administrative reversal that extended an SME-only rule to medical supplies on Sao Paulo's centralized R\$13 billion procurement platform. A difference-in-differences against 76 never-treated product groups estimates a 10--11 percent rise in absolute winning prices, with SME participation roughly doubling. An asymmetric IPV model identified from Pregao drop-out bids decomposes the price response under observed equilibrium entry: the within-auction component accounts for 74 percent of the simulated effect in non-pharmaceuticals and 66 percent in pharmaceuticals; endogenous SME entry attenuates a 59 percent larger latent shock in non-pharmaceuticals and an 81 percent larger one in pharmaceuticals. The structural counterfactual on its own normalization is three to four times the DiD coefficient because the two objects average over related but distinct primitives. A 10 percent SME price preference welfare-dominates the set-aside in thick standardized markets at near-zero fiscal cost; the comparison reverses in thin pharmaceutical markets under strict primitive invariance. The conditional ranking is itself the policy-design statement.
+Why do SME set-asides raise procurement prices — because the bidder pool shrinks, or because the surviving firms bid differently? The answer reorders the welfare ranking against alternative instruments, and price regressions cannot deliver it. A March 2018 reversal extended an SME-only rule to medical supplies on São Paulo's centralized procurement platform (4.8 million item-level transactions). A difference-in-differences against 76 never-treated product groups recovers a 10–11 percent rise in winning prices and a doubling of SME participation. An asymmetric IPV model identified from Pregão drop-out bids then decomposes that response. The within-auction component — *sheltered bidding* — accounts for 74 percent of the simulated effect in non-pharmaceuticals and 66 percent in pharmaceuticals; endogenous SME entry attenuates a 59-to-81 percent larger latent shock. The implied welfare cost is R\$55–128 million per year on Group-65 procurement alone (29 percent of baseline in non-pharma, 45 percent in pharma at λ = 0.30). A 10 percent price preference welfare-dominates the set-aside in thick standardized markets at near-zero fiscal cost; the ranking reverses in thin pharmaceutical markets under strict primitive invariance. The conditional ranking is itself the policy-design statement.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary } &nbsp;
 [:material-book-open-variant: Online appendix](assets/sme_public_online_appendix.pdf){ .md-button } &nbsp;
