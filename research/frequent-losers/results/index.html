@@ -6723,287 +6723,444 @@
               <article class="md-content__inner md-typeset">
                 
   
-    <div class="paper-layout">
-      <div class="paper-content">
-        
+    
                   
 
 
 <h1 id="main-results">Main Results<a class="headerlink" href="#main-results" title="Permanent link">¶</a></h1>
-<p>The empirical case rests on three pieces of evidence. The
-discrimination of adjudicated CADE cobidders is the primary
-result. The architectural test against the bid-distribution
-literature is the contribution most readers will read the paper
-for. The pricing imprint enters as descriptive corroboration,
-not as a treatment-effect estimate.</p>
+<p>This page presents the empirical findings in the order the paper now privileges: discrimination first, architectural complementarity second, pricing imprint third (descriptive corroboration only).</p>
 <hr>
-<h2 id="1-discrimination-against-cade-cobidders">1. Discrimination Against CADE Cobidders<a class="headerlink" href="#1-discrimination-against-cade-cobidders" title="Permanent link">¶</a></h2>
-<p>The frequent-loser flag discriminates 193 always-loser firms
-that participated alongside CADE direct defendants from the
-broader always-loser pool. Two readings of the AUC bracket the
-result.</p>
+<h2 id="1-discrimination-against-the-cobidder-population">1. Discrimination Against the Cobidder Population<a class="headerlink" href="#1-discrimination-against-the-cobidder-population" title="Permanent link">¶</a></h2>
+<p>The screen's primary validation is firm-level discrimination of cobidders inside the always-loser stratum.</p>
+<h3 id="headline-auc">Headline AUC<a class="headerlink" href="#headline-auc" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Reading</th>
-<th style="text-align: left;">Sample</th>
-<th style="text-align: center;">AUC</th>
+<th>Metric</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Conservative (contemporaneous)</td>
-<td style="text-align: left;">4 cases adjudicated pre-2020, 210 cobidders, 108 frequent losers</td>
-<td style="text-align: center;"><strong>0.748</strong> [0.713, 0.783]</td>
+<td><strong>Firm-level AUC, temporal holdout (train 2009–2016, test 2017–2019)</strong></td>
+<td><strong>0.864</strong> [95% CI: 0.858, 0.870]</td>
 </tr>
 <tr>
-<td style="text-align: left;">Prospective in-sample</td>
-<td style="text-align: left;">Full 12 cases, 193 cobidders</td>
-<td style="text-align: center;"><strong>0.924</strong> [0.921, 0.926]</td>
+<td>Firm-level AUC, in-sample</td>
+<td>0.939</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Prospective under temporal holdout</strong></td>
-<td style="text-align: left;">Train 2009–2016 / test 2017–2019</td>
-<td style="text-align: center;"><strong>0.864</strong> [0.859, 0.870]</td>
+<td>AUC, strict pre-2020 benchmark with participation-stratified permutation null</td>
+<td>corroborated by 3.2× excess over random-matching baseline (<span class="arithmatex">\(p &lt; 0.001\)</span>)</td>
+</tr>
+<tr>
+<td>AUC against direct CADE defendants in broader BEC firm universe</td>
+<td>≈ 0.49 (random — by design; loser-side scope, not winner-side identity)</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition success">
 <p class="admonition-title">AUC 0.864 under temporal holdout</p>
-<p>Constructing the score on 2009–2016 participation only
-and evaluating on 2017–2019 cobidder labels yields
-AUC 0.864. Eight of the twelve CADE cases were adjudicated
-after the sample window closes, so the discrimination is
-computed on participation patterns observable years before
-enforcement confirmed them. We adopt this number as the
-deployable projection an oversight body would compute on
-award-record data alone.</p>
+<p>The temporal-holdout AUC is the headline reference for all operational claims. The construct is not retrofit on post-2020 data; the score is computed using only 2009–2016 participation and evaluated on items in 2017–2019. Out-of-fold CV at cobidder-firm level returns 0.891 [0.887, 0.894], confirming the structural component dominates.</p>
 </div>
-<h3 id="within-stratum-theory-bridge">Within-stratum theory bridge<a class="headerlink" href="#within-stratum-theory-bridge" title="Permanent link">¶</a></h3>
-<p>Cobidders behave like the modelled cover-bidder type. Within the
-always-loser stratum, cobidders deploy at higher intensity than
-FL non-cobidders (Cohen's <em>d</em> = +1.00 on unique winners faced),
-are deployed proximally to direct CADE defendants
-(<em>d</em> = +0.46 on direct-CADE share), and concentrate participation
-in narrower markets (<em>d</em> = +0.39 on portfolio item-group HHI).</p>
-<p>At the bid level, they bid plausibly close to winners
-(<em>d</em> = −0.28 on per-firm median gap to winner,
-<em>p</em> &lt; 10−6) with elevated within-firm cross-bid
-dispersion (<em>d</em> = +0.15, <em>p</em> = 0.05). A multivariate logit on
-cobidder status within the FL stratum, holding
-<code>log(1+tenders_count)</code> constant, returns a median-gap
-coefficient of −0.71 (<em>p</em> &lt; 10−4) and a
-within-firm dispersion coefficient of +0.44 (<em>p</em> &lt; 10−3).
-Both bid-level signs survive controlling for participation
-intensity. The pattern matches <em>credible cover bidding</em>
-(Marshall–Marx, Asker)---bids low enough to be plausible,
-dispersed enough to track rotation across cover roles---rather
-than the textbook deliberately-uncompetitive cover bid the early
-literature described.</p>
-<h3 id="direct-defendant-auc-as-design-signature">Direct-defendant AUC as design signature<a class="headerlink" href="#direct-defendant-auc-as-design-signature" title="Permanent link">¶</a></h3>
-<p>Against the 47 direct CADE defendants in the broader BEC firm
-universe, AUC is <strong>0.491</strong>---random discrimination by design.
-The screen recovers loser-side participation footprints; direct
-defendants are by construction the winner side of the same
-arrangements and lie outside the target population.</p>
-<hr>
-<h2 id="2-the-architectural-test">2. The Architectural Test<a class="headerlink" href="#2-the-architectural-test" title="Permanent link">¶</a></h2>
-<p>The screening statistic and the bid-distribution moment battery
-are informational complements, not substitutes. Three pieces fit
-together.</p>
-<h3 id="same-target-different-envelopes">Same target, different envelopes<a class="headerlink" href="#same-target-different-envelopes" title="Permanent link">¶</a></h3>
-<p>On the same evaluation pool of 11,676 always-loser firms with
-full Imhof features (193 cobidders, base rate 0.0165):</p>
+<h3 id="leakage-audit-decomposition-of-in-sample-item-level-auc">Leakage audit (decomposition of in-sample item-level AUC)<a class="headerlink" href="#leakage-audit-decomposition-of-in-sample-item-level-auc" title="Permanent link">¶</a></h3>
+<p>The raw in-sample item-level AUC of 0.995 is partly tautological by construction. The audit decomposes it into structural and leakage components:</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Rule</th>
-<th style="text-align: left;">Data envelope</th>
-<th style="text-align: center;">AUC</th>
+<th>Audit</th>
+<th>Specification</th>
+<th>AUC</th>
+<th>95% CI</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Award-layer screen alone (FL log_tc)</td>
-<td style="text-align: left;">Award records only</td>
-<td style="text-align: center;"><strong>0.881</strong></td>
+<td>Original</td>
+<td>In-sample, full pool</td>
+<td>0.995</td>
+<td>[0.995, 0.995]</td>
 </tr>
 <tr>
-<td style="text-align: left;">Bid-layer Imhof full pipeline alone</td>
-<td style="text-align: left;">Per-bid prices required</td>
-<td style="text-align: center;">0.846</td>
+<td>Audit 1 — scope</td>
+<td>Same score, swapped to direct-CADE label</td>
+<td>0.506</td>
+<td>[0.505, 0.507]</td>
 </tr>
 <tr>
-<td style="text-align: left;">Joint single-model scoring</td>
-<td style="text-align: left;">Both</td>
-<td style="text-align: center;"><strong>0.942</strong></td>
+<td>Audit 2 — tautology</td>
+<td>5-fold CV at cobidder-firm level</td>
+<td>0.891</td>
+<td>[0.887, 0.894]</td>
+</tr>
+<tr>
+<td>Audit 3 — generalization</td>
+<td>Train 2009–2016 → test 2017–2019, any-cobidder</td>
+<td>0.864</td>
+<td>[0.859, 0.870]</td>
+</tr>
+<tr>
+<td>Audit 3 — direct-CADE label</td>
+<td>Same temporal split, against direct-CADE label</td>
+<td>0.511</td>
+<td>[0.510, 0.513]</td>
 </tr>
 </tbody>
 </table>
-<p>The award-layer rule matches the bid-layer pipeline AUC on a
-substantially thinner data envelope. Combining the two adds
-<strong>+0.096 AUC</strong> (DeLong <em>p</em> = 1.2 × 10−26)---the two carry
-non-redundant information about the same target.</p>
-<h3 id="sequential-gatekeeper-the-operational-reading">Sequential gatekeeper: the operational reading<a class="headerlink" href="#sequential-gatekeeper-the-operational-reading" title="Permanent link">¶</a></h3>
-<p>The screen functions as a Stage-1 gatekeeper, narrowing the pool
-of firms whose bid microdata the forensic stage needs to
-interrogate. At top-1,000 flags:</p>
+<p>The 0.10–0.13 drop from in-sample to audit-corrected AUC is the pure-leakage component. Audits against direct-CADE labels return random AUC, consistent with the loser-side scope.</p>
+<h3 id="why-direct-cade-auc-049-is-the-designs-empirical-signature">Why direct-CADE AUC ≈ 0.49 is the design's empirical signature<a class="headerlink" href="#why-direct-cade-auc-049-is-the-designs-empirical-signature" title="Permanent link">¶</a></h3>
+<p>The flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the winner side of the same arrangements. The asymmetry between cobidder discrimination (0.864) and direct-defendant discrimination (≈ 0.49) is not a failure of validation but the empirical fingerprint of what a screen built on the loser side can and cannot do.</p>
+<hr>
+<h2 id="2-architecture-award-layer-triage-before-bid-layer-forensics">2. Architecture: Award-Layer Triage Before Bid-Layer Forensics<a class="headerlink" href="#2-architecture-award-layer-triage-before-bid-layer-forensics" title="Permanent link">¶</a></h2>
+<p>This is the paper's headline contribution.</p>
+<h3 id="sequential-gatekeeper-rule">Sequential gatekeeper rule<a class="headerlink" href="#sequential-gatekeeper-rule" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Rule</th>
-<th style="text-align: center;">Cobidders captured</th>
-<th style="text-align: center;">Bid-microdata firms required</th>
+<th>Quantity</th>
+<th>Without architecture</th>
+<th>With award-layer triage</th>
+<th>Improvement</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Joint single-model scoring</td>
-<td style="text-align: center;">142 / 193 (recall 0.736)</td>
-<td style="text-align: center;"><strong>11,676</strong> (full pool)</td>
+<td>Firms entering forensic stage</td>
+<td>11,676 (all always-losers)</td>
+<td><strong>1,985</strong> (top-1,000 flag list extended)</td>
+<td><strong>83% reduction in bid-microdata pool</strong></td>
 </tr>
 <tr>
-<td style="text-align: left;">Sequential FL → Imhof, K₁ = 2,000</td>
-<td style="text-align: center;"><strong>131 / 193</strong> (recall 0.679)</td>
-<td style="text-align: center;"><strong>2,000</strong></td>
+<td>Cobidders recovered (of 193 adjudicated)</td>
+<td>193 (full coverage)</td>
+<td><strong>131</strong></td>
+<td>68% recall preserved</td>
+</tr>
+<tr>
+<td>Bid-microdata interrogation cost</td>
+<td>full</td>
+<td>~17% of full</td>
+<td>~83% saving</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition success">
-<p class="admonition-title">83% bid-microdata footprint reduction at 8% recall cost</p>
-<p>The sequential rule catches 131 of 193 adjudicated cobidders
-while interrogating bid microdata for 2,000 firms instead of
-11,676 the joint scoring would require. Recall costs ~8% vs
-joint scoring; bid-microdata footprint drops by 83%.</p>
+<p class="admonition-title">83% footprint reduction</p>
+<p>Routing forensic interrogation through the screen reduces the bid-microdata pool the forensic stage must work on by 83% while still recovering 131 of 193 adjudicated cobidders. The recall robustness survives the temporal-holdout audit.</p>
 </div>
-<h3 id="temporal-holdout-the-gatekeepers-relative-robustness">Temporal holdout: the gatekeeper's relative robustness<a class="headerlink" href="#temporal-holdout-the-gatekeepers-relative-robustness" title="Permanent link">¶</a></h3>
-<p>Restricting every per-firm feature to participation observed in
-2009–2016 (cobidder labels stay anchored on full-window
-adjudications), precision compresses asymmetrically across the
-four rules. The award-layer screen alone loses 47% at top-500;
-joint scoring loses 24%; <strong>the sequential gatekeeper loses
-9%</strong>. In absolute true-positive count, the sequential rule
-matches or exceeds joint scoring out-of-time: at top-500 the
-sequential rule recovers 87 cobidders versus 85 for joint
-scoring; at top-1,000 it recovers 114 versus 111. The 83%
-data-envelope reduction does not trade off against out-of-time
-recall.</p>
+<h3 id="complementarity-with-bid-distribution-screens">Complementarity with bid-distribution screens<a class="headerlink" href="#complementarity-with-bid-distribution-screens" title="Permanent link">¶</a></h3>
+<p>Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable layer:</p>
+<table>
+<thead>
+<tr>
+<th>Comparison</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Award-layer flag (alone), AUC</td>
+<td>0.864</td>
+</tr>
+<tr>
+<td>Imhof–Wallimann pipeline (alone), AUC</td>
+<td>0.829</td>
+</tr>
+<tr>
+<td>Combined (same-sample audit)</td>
+<td><strong>+0.035 AUC over Imhof alone</strong></td>
+</tr>
+<tr>
+<td>DeLong test for combination improvement</td>
+<td><span class="arithmatex">\(p = 0.014\)</span></td>
+</tr>
+<tr>
+<td>Combined model, additional improvement over Imhof full alone</td>
+<td>+0.096 to +0.098 AUC (<span class="arithmatex">\(p &lt; 0.001\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Informational complements, not substitutes</p>
+<p>The two screens carry non-redundant information about the same target. The screening stage functions as a credible Stage-1 gatekeeper for the forensic stage. Reforms that mandate operational bid-microdata archival expand the forensic stage, not the screening one.</p>
+</div>
+<h3 id="operational-metrics-under-temporal-holdout">Operational metrics under temporal holdout<a class="headerlink" href="#operational-metrics-under-temporal-holdout" title="Permanent link">¶</a></h3>
+<p>The temporal-holdout column is the headline reference (in-sample reported only for transparency):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Top-<span class="arithmatex">\(k\)</span></th>
+<th style="text-align: right;">Holdout TP</th>
+<th style="text-align: right;">Holdout Precision</th>
+<th style="text-align: right;">Holdout Recall</th>
+<th style="text-align: right;">Holdout Lift</th>
+<th style="text-align: right;">In-sample Lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">50</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">0.020</td>
+<td style="text-align: right;">0.005</td>
+<td style="text-align: right;">1.7×</td>
+<td style="text-align: right;">26.2×</td>
+</tr>
+<tr>
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.036</td>
+<td style="text-align: right;">6.1×</td>
+<td style="text-align: right;">14.8×</td>
+</tr>
+<tr>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">19</td>
+<td style="text-align: right;">0.076</td>
+<td style="text-align: right;">0.098</td>
+<td style="text-align: right;">6.6×</td>
+<td style="text-align: right;">14.0×</td>
+</tr>
+<tr>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.181</td>
+<td style="text-align: right;"><strong>6.1×</strong></td>
+<td style="text-align: right;">11.5×</td>
+</tr>
+<tr>
+<td style="text-align: right;">1,000</td>
+<td style="text-align: right;">66</td>
+<td style="text-align: right;">0.066</td>
+<td style="text-align: right;">0.342</td>
+<td style="text-align: right;"><strong>5.8×</strong></td>
+<td style="text-align: right;">8.5×</td>
+</tr>
+</tbody>
+</table>
+<p>The in-sample columns over-state precision by approximately 50% at top-500 because roughly 47% of the in-sample top-500 ranking comes from 2017–2019 participation, after CADE adjudications were already underway for some cartels. All operational claims in the paper are read off the holdout column.</p>
 <hr>
-<h2 id="3-pricing-imprint-as-descriptive-corroboration">3. Pricing Imprint as Descriptive Corroboration<a class="headerlink" href="#3-pricing-imprint-as-descriptive-corroboration" title="Permanent link">¶</a></h2>
-<p>If the screen flags cartel-adjacent environments, do those
-environments also carry a price imprint? The answer is yes, but
-descriptively so---not as a treatment-effect estimate.</p>
-<h3 id="broad-sample-conditional-association">Broad-sample conditional association<a class="headerlink" href="#broad-sample-conditional-association" title="Permanent link">¶</a></h3>
+<h2 id="3-within-stratum-bridge-how-cobidders-behave">3. Within-Stratum Bridge: How Cobidders Behave<a class="headerlink" href="#3-within-stratum-bridge-how-cobidders-behave" title="Permanent link">¶</a></h2>
+<p>The cobidder population behaves like the modeled cover-bidder type along five firm-level and bid-level predictions.</p>
+<h3 id="firm-level-4-of-5-predictions-confirmed">Firm-level (4 of 5 predictions confirmed)<a class="headerlink" href="#firm-level-4-of-5-predictions-confirmed" title="Permanent link">¶</a></h3>
+<table>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>Cohen's <span class="arithmatex">\(d\)</span></th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cobidders deploy at higher intensity than FL non-cobidders</td>
+<td><span class="arithmatex">\(d = 0.97\)</span> on unique winners faced</td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Cobidders bid proximally to direct CADE defendants</td>
+<td><span class="arithmatex">\(d = 1.49\)</span></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Cobidders concentrate in narrower markets (portfolio HHI)</td>
+<td><span class="arithmatex">\(d = 0.61\)</span></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Cobidders show repeat-pair structure with adjudicated firms</td>
+<td>excess persistent pairs <span class="arithmatex">\(p &lt; 0.001\)</span></td>
+<td>Confirmed</td>
+</tr>
+<tr>
+<td>Cobidders' tenure distribution distinguishes from FL non-cobidders</td>
+<td>small effect</td>
+<td>Mixed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bid-level-signature-of-credible-cover-bidding">Bid-level (signature of credible cover bidding)<a class="headerlink" href="#bid-level-signature-of-credible-cover-bidding" title="Permanent link">¶</a></h3>
+<p>At the bid level, cobidders bid <strong>plausibly close to winners</strong> with <strong>elevated within-firm cross-bid dispersion</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Statistic</th>
+<th style="text-align: right;">Cobidders</th>
+<th style="text-align: right;">FL non-cobidders</th>
+<th style="text-align: right;">Gap (Cohen's <span class="arithmatex">\(d\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Median per-firm gap to winner (log)</td>
+<td style="text-align: right;">0.582</td>
+<td style="text-align: right;">0.809</td>
+<td style="text-align: right;"><span class="arithmatex">\(d = -0.281\)</span> (<span class="arithmatex">\(p &lt; 10^{-6}\)</span>)</td>
+</tr>
+<tr>
+<td>Per-firm bid SD</td>
+<td style="text-align: right;">1.207</td>
+<td style="text-align: right;">1.099</td>
+<td style="text-align: right;"><span class="arithmatex">\(d = +0.147\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>A multivariate logit holding <span class="arithmatex">\(\log(1+\text{tenders\_count})\)</span> constant confirms both signs at <span class="arithmatex">\(p &lt; 10^{-3}\)</span>. The directions are consistent with <strong>credible cover bidding</strong> (Marshall &amp; Marx 2012, Asker 2010) — bids low enough to be plausible, dispersed enough to track rotation across cover roles — rather than the textbook deliberately-uncompetitive cover bid the early literature described.</p>
+<hr>
+<h2 id="4-pricing-imprint-as-descriptive-corroboration">4. Pricing Imprint as Descriptive Corroboration<a class="headerlink" href="#4-pricing-imprint-as-descriptive-corroboration" title="Permanent link">¶</a></h2>
+<p>The paper does not rest on this section. The screening contribution is carried by Sections 1 and 2 above. The pricing imprint is reported because the cover-bidding literature would expect a price footprint, but the available identification cannot settle whether the association is causal.</p>
+<h3 id="broad-sample-association">Broad-sample association<a class="headerlink" href="#broad-sample-association" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
 <th style="text-align: left;">Specification</th>
 <th style="text-align: center;">Coefficient</th>
+<th style="text-align: center;">SE</th>
 <th style="text-align: center;">Effect (%)</th>
-<th style="text-align: center;"><em>N</em></th>
+<th style="text-align: center;"><span class="arithmatex">\(N\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">(1) Item + year FE</td>
-<td style="text-align: center;">+0.068***</td>
+<td style="text-align: left;">(1) Item + Year FE</td>
+<td style="text-align: center;">0.068***</td>
+<td style="text-align: center;">(0.022)</td>
 <td style="text-align: center;">+6.8%</td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
-<td style="text-align: left;">(2) Item + year + PBU FE</td>
-<td style="text-align: center;">+0.064***</td>
-<td style="text-align: center;"><strong>+6.4%</strong></td>
+<td style="text-align: left;">(2) Item + Year + PBU FE</td>
+<td style="text-align: center;">0.064***</td>
+<td style="text-align: center;">(0.020)</td>
+<td style="text-align: center;">+6.4%</td>
 <td style="text-align: center;">1,654,401</td>
 </tr>
 <tr>
 <td style="text-align: left;">(3) Pregão only (all FE)</td>
-<td style="text-align: center;">+0.089***</td>
+<td style="text-align: center;">0.089***</td>
+<td style="text-align: center;">(0.025)</td>
 <td style="text-align: center;">+9.3%</td>
-<td style="text-align: center;">543,752</td>
+<td style="text-align: center;">1,334,729</td>
 </tr>
 <tr>
 <td style="text-align: left;">(4) Convite only (all FE)</td>
-<td style="text-align: center;">+0.037</td>
+<td style="text-align: center;">0.037</td>
+<td style="text-align: center;">(0.022)</td>
 <td style="text-align: center;">+3.8%</td>
-<td style="text-align: center;">1,105,852</td>
+<td style="text-align: center;">319,718</td>
 </tr>
 </tbody>
 </table>
-<p>Across four estimators (cross-fit, IPW, OLS within-PBU, CEM),
-the conditional range is <strong>+3.6% to +7.7%</strong>.</p>
-<h3 id="segment-level-decomposition-the-broad-sample-positive-is-a-q4-phenomenon">Segment-level decomposition: the broad-sample positive is a Q4 phenomenon<a class="headerlink" href="#segment-level-decomposition-the-broad-sample-positive-is-a-q4-phenomenon" title="Permanent link">¶</a></h3>
-<p>Re-estimating the headline regression within tender-value
-quintiles reveals a sharper structure. In Q1–Q3 the
-broad-sample coefficient is already <em>negative</em> (−0.065,
-−0.057, −0.040, <em>p</em> &lt; 10−15 in each); in
-Q4 it is <strong>+0.046</strong> (<em>p</em> = 0.012). Both the overlap restriction
-and the ATT reweighting leave each within-quintile estimate
-essentially unchanged: the Q4 positive survives all three
-specifications, and the Q1–Q3 negatives survive at
-quantitatively similar magnitudes.</p>
-<p>The aggregate +0.064 broad-sample coefficient is the
-population-weighted average of three negative within-quintile
-coefficients and one positive Q4 coefficient, with Q4's 40,878
-treated items dominating the volume-weighted mean.</p>
-<h3 id="trim-sensitivity-not-a-few-cell-artefact">Trim sensitivity: not a few-cell artefact<a class="headerlink" href="#trim-sensitivity-not-a-few-cell-artefact" title="Permanent link">¶</a></h3>
-<p>Trimming the most heavily ATT-weighted cells <em>strengthens</em> the
-negative ATT estimate---from −0.097 at no trim to
-−0.118 at the top-decile trim and −0.133 at the
-median. The ATT-weighted negative is a structural property of
-the bulk of the overlap sample, not extreme leverage on cells
-with thin counterfactuals.</p>
-<h3 id="identification-scope">Identification scope<a class="headerlink" href="#identification-scope" title="Permanent link">¶</a></h3>
-<p>Identification is descriptive throughout. Two design-based
-strategies that would extract a causal estimate return null at
-the available bandwidths: a sharp regression discontinuity at
-the convite/pregão statutory caps (gated by the absence of
-bunching in the McCrary density test), and a
-difference-in-differences using the 2018 cap raise (gated by
-parallel-trends failure). Sensitivity bounds: Cinelli's
-<em>RV</em><sub>q=1</sub> = 0.207; Oster's δ̂ = 261.64.</p>
+<p>Cross-fit (0.036), CEM matching (0.077), IPW (0.055), and a leave-one-out IV bound the conditional range at +3.6% to +7.7%.</p>
+<h3 id="sign-reversal-under-overlap-restriction">Sign reversal under overlap restriction<a class="headerlink" href="#sign-reversal-under-overlap-restriction" title="Permanent link">¶</a></h3>
+<p>Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables and reweighting to the average treatment effect on the treated produces a reversed coefficient: overlap-cell ATT <span class="arithmatex">\(-0.032\)</span>, propensity-score-trimmed ATT <span class="arithmatex">\(-0.021\)</span> (full coefficients in Online Appendix B). The reversal is real; the paper does not rest on either sign.</p>
+<p>The within-quintile decomposition:</p>
+<table>
+<thead>
+<tr>
+<th>Quintile</th>
+<th style="text-align: right;">Broad-sample <span class="arithmatex">\(\beta\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(p\)</span>-value</th>
+<th style="text-align: right;">ATT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1</td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.065\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(&lt; 10^{-15}\)</span></td>
+<td style="text-align: right;">similar</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.057\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(&lt; 10^{-15}\)</span></td>
+<td style="text-align: right;">similar</td>
+</tr>
+<tr>
+<td>Q3</td>
+<td style="text-align: right;"><span class="arithmatex">\(-0.040\)</span></td>
+<td style="text-align: right;"><span class="arithmatex">\(&lt; 10^{-15}\)</span></td>
+<td style="text-align: right;">similar</td>
+</tr>
+<tr>
+<td><strong>Q4 (largest tender value)</strong></td>
+<td style="text-align: right;"><strong>+0.046</strong></td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: right;"><strong>+0.041</strong> (<span class="arithmatex">\(p = 0.045\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>Q4 — the segment where deployment value is highest a priori on contract size — carries the positive imprint that the framework predicts the cartel concentrates on. Q1–Q3 carry negative imprints consistent with several non-exclusive non-screening mechanisms (thin-market price formation, item-characteristic selection, composition heterogeneity in the firm pool).</p>
+<p>The discrimination evidence (Section 1) and the architectural test (Section 2) carry the contribution; the broad-sample imprint is bracketed by Cinelli–Hazlett <span class="arithmatex">\(RV_{q=1} = 17.5\%\)</span> and Oster <span class="arithmatex">\(\hat{\delta}\)</span> against selection on observables already absorbed by the fixed effects.</p>
+<div class="admonition info">
+<p class="admonition-title">Why this section is descriptive</p>
+<p>The screening-value formalization that motivates why the broad-sample <span class="arithmatex">\(\beta\)</span> remains an economic object under coarsened observability is in Online Appendix A (Proposition 3); the body of the paper does not lean on that formalization. The screen is validated in Sections 1–2; the price imprint here is corroboration that the construct also tracks an outcome the cover-bidding literature would expect, not identification of a causal effect.</p>
+</div>
 <hr>
-<h2 id="4-heterogeneity-across-detection-regimes">4. Heterogeneity Across Detection Regimes<a class="headerlink" href="#4-heterogeneity-across-detection-regimes" title="Permanent link">¶</a></h2>
-<p>Splitting the sample into quartiles of procuring-unit size
-produces a sharp extreme-quartile contrast: <strong>+21.4% at the
-smallest-buyer quartile (Q1)</strong>, <strong>+1.7% at the largest (Q4)</strong>,
-a 12.6× extreme-quartile gradient preserved across alternative
-size measures. The framework predicts the contrast direction
-through the detection-cost comparative static
-∂m*/∂θ<sub>k</sub> &lt; 0: cover-bidder
-deployment is more aggressive where the principal cost of
-detection is lower. Buyer size proxies for several correlated
-institutional features (procurement-officer tenure,
-internal-audit infrastructure, item composition, discretionary
-procedure use) that the design cannot separate.</p>
+<h2 id="5-heterogeneity-across-detection-regimes">5. Heterogeneity Across Detection Regimes<a class="headerlink" href="#5-heterogeneity-across-detection-regimes" title="Permanent link">¶</a></h2>
+<p>Where the screening signal varies tells us something the level does not. Splitting the sample into quartiles of procuring-unit size:</p>
+<table>
+<thead>
+<tr>
+<th>Quartile</th>
+<th style="text-align: right;">FL price coefficient</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q1 (smallest buyers, weakest oversight)</td>
+<td style="text-align: right;">+21.4%</td>
+<td>Strongest signal</td>
+</tr>
+<tr>
+<td>Q2</td>
+<td style="text-align: right;">+9.8%</td>
+<td></td>
+</tr>
+<tr>
+<td>Q3</td>
+<td style="text-align: right;">+4.5%</td>
+<td></td>
+</tr>
+<tr>
+<td>Q4 (largest buyers, strongest oversight)</td>
+<td style="text-align: right;">+1.7%</td>
+<td>Weakest signal</td>
+</tr>
+</tbody>
+</table>
+<p>A 12.5× extreme-quartile gradient. The framework predicts the contrast direction through the detection-cost comparative static <span class="arithmatex">\(\partial m^*/\partial \theta_k &lt; 0\)</span>: cover-bidder deployment is more aggressive where the principal cost of detection is lower.</p>
+<div class="admonition warning">
+<p class="admonition-title">Scope information, not institutional channel identification</p>
+<p>Buyer size proxies for several correlated institutional features — procurement-officer tenure (Coviello &amp; Mariniello 2014), internal-audit infrastructure, item composition, discretionary procedure use (Decarolis et al. 2025) — none separable with the variation we have. We read the gradient as heterogeneity in the screening object across the monitoring environment, in the framework's predicted direction, with the magnitude concentrated at the extremes — not as identification of an institutional channel.</p>
+</div>
 <hr>
-<h2 id="what-the-joint-evidence-supports">What the Joint Evidence Supports<a class="headerlink" href="#what-the-joint-evidence-supports" title="Permanent link">¶</a></h2>
-<p>Three findings together identify the sequencing structure the
-paper proposes. The discrimination at AUC 0.864 (temporal
-holdout) and 0.748 (conservative pre-2020) establishes that the
-screen flags cartel-adjacent environments. The architectural
-test shows the screen and the bid-distribution moment battery
-discriminate the same labels at comparable AUC on different
-observability layers, with the sequential rule reducing the
-bid-microdata footprint by 83% at 8% recall cost. And the
-pricing imprint enters as descriptive corroboration that the
-flagged environments also carry a price signal, with the sign
-reversal localised to Q1–Q3 and a positive Q4 coefficient
-robust to design choice.</p>
-<p>What the joint evidence does <em>not</em> support: firm-level cartel
-guilt. The construct flags cover bidders, not cartel
-ringleaders, and the 47 direct-defendant AUC of 0.491 is the
-hard upper bound on broader detection claims outside the
-always-loser stratum.</p>
+<h2 id="6-modal-asymmetry-pregao-vs-convite-scope-information">6. Modal Asymmetry: Pregão vs. Convite (Scope Information)<a class="headerlink" href="#6-modal-asymmetry-pregao-vs-convite-scope-information" title="Permanent link">¶</a></h2>
+<p>On the discrimination side, the modal-by-modal AUC against the 193 adjudicated cobidders is 0.952 in pregão primary auctions versus 0.816 in convite primary auctions (bootstrap difference <span class="arithmatex">\(-0.136\)</span>, <span class="arithmatex">\(p \approx 0\)</span>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Scope information for the screen, not a positive test of any institutional mechanism</p>
+<p>The convite minimum-bidder rule (Lei 8.666/93, Art. 22 §3) would predict a sharper screening signal where the rule binds (convite). The data reverse this prediction. We do not read the reversal as a positive test of any alternative institutional theory. The modal asymmetry is reported as scope information for the screening object — the construct discriminates better in pregão environments — and not as a positive test of the minimum-bidder-rule mechanism, which would require institutional variation the BEC setting does not deliver.</p>
+</div>
+<hr>
+<h2 id="summary-what-the-empirical-strategy-establishes">Summary: What the Empirical Strategy Establishes<a class="headerlink" href="#summary-what-the-empirical-strategy-establishes" title="Permanent link">¶</a></h2>
+<p>The paper makes four empirical claims, in declining order of confidence:</p>
+<ol>
+<li><strong>The architecture works.</strong> 83% reduction in forensic pool with 68% recall preserved. (Headline.)</li>
+<li><strong>The screen discriminates.</strong> Firm-level AUC 0.864 under temporal holdout against adjudicated cobidders.</li>
+<li><strong>The screen complements bid-distribution methods.</strong> +0.035 AUC over Imhof–Wallimann pipeline (<span class="arithmatex">\(p = 0.014\)</span>).</li>
+<li><strong>A pricing imprint is present in the broad sample.</strong> +3.6% to +7.7% across four estimators, with sign reversal under overlap and Q4-concentrated positive — reported descriptively, not causally.</li>
+</ol>
+<p>Claims 1–3 are the paper. Claim 4 is corroboration.</p>
 
 
 
 
 
 
-
-  
-  
 
 
 
@@ -7011,116 +7168,6 @@ always-loser stratum.</p>
 
 
                 
-      </div>
-      <div class="paper-nav-col">
-        <nav class="paper-sidebar md-nav md-nav--secondary">
-  <label class="md-nav__title">This Paper</label>
-  <ul class="md-nav__list">
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/" class="md-nav__link ">
-        Summary
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/paper/" class="md-nav__link ">
-        Paper
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/video/" class="md-nav__link ">
-        Video
-      </a>
-    </li>
-    
-    <li class="md-nav__item md-nav__item--active">
-      <a href="/research/frequent-losers/results/" class="md-nav__link md-nav__link--active">
-        Results
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/robustness/" class="md-nav__link ">
-        Robustness
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/extensions/" class="md-nav__link ">
-        Extensions
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/replication/" class="md-nav__link ">
-        Replication
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/authors/" class="md-nav__link ">
-        Authors
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/mindmap/" class="md-nav__link ">
-        Mind Map
-      </a>
-    </li>
-    
-    <li class="md-nav__item ">
-      <a href="/research/frequent-losers/changelog/" class="md-nav__link ">
-        Changelog
-      </a>
-    </li>
-    
-  </ul>
-</nav>
-
-<style>
-  .paper-sidebar {
-    position: sticky;
-    top: 4rem;
-    max-height: calc(100vh - 5rem);
-    overflow-y: auto;
-    padding: 0.8rem 0;
-    border-left: 1px solid var(--md-default-fg-color--lightest);
-  }
-  .paper-sidebar .md-nav__title {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0 0.8rem 0.5rem;
-    color: var(--md-default-fg-color--light);
-  }
-  .paper-sidebar .md-nav__link--active {
-    color: var(--md-primary-fg-color);
-    font-weight: 600;
-  }
-</style>
-      </div>
-    </div>
-    <style>
-      .paper-layout {
-        display: flex;
-        gap: 2rem;
-      }
-      .paper-content {
-        flex: 1;
-        min-width: 0;
-      }
-      .paper-nav-col {
-        width: 180px;
-        flex-shrink: 0;
-      }
-      @media (max-width: 76.1875em) {
-        .paper-nav-col { display: none; }
-      }
-    </style>
   
 
               </article>
