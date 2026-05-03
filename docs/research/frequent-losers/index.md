@@ -20,30 +20,25 @@ hide:
 
 ## Abstract
 
-How should an enforcement agency sequence information acquisition
-when the cheap operational layer is coarser than the layer where
-collusion can be adjudicated? Cartel-detection screens require
-bid-distribution microdata, but audit courts and oversight bodies
-routinely observe only the contract-award envelope. We propose an
-enforcement architecture in which an award-layer screening stage
-triages firms and environments before a costly bid-layer forensic
-stage interrogates them, and instantiate it with a *frequent-loser*
-flag built from São Paulo's BEC contract-award records (2009--2019).
-Routing forensic interrogation through the flag reduces the
-bid-microdata pool by 83% (1,985 of 11,676 firms) while still
-recovering 131 of 193 adjudicated cobidders. The screen is a
-triage device, not an adjudication device: it ranks loser-side
-firms for costly bid-layer interrogation, not cartel members for
-legal sanction. Discrimination accuracy against the cobidder
-population (AUC 0.864 under temporal holdout) makes the
-architecture feasible; complementarity with bid-distribution
-screens (+0.035 AUC over the Imhof--Wallimann pipeline, DeLong
-$p = 0.014$) makes the sequencing well-defined. A simple
-separating-equilibrium argument motivates endogenous loser-side
-participation as the ranking primitive on the award layer. The
-conceptual content travels: wherever the award layer is exposed
-routinely while per-bidder bid amounts are forensic-recoverable,
-screening should be sequenced before forensics.
+Most antitrust enforcers see who won a public contract and at
+what price---not what every bidder offered. We show this
+thinner data layer is enough to triage which firms warrant
+costly forensic investigation. We propose an enforcement
+architecture in which an award-layer screening stage runs
+before a costly bid-layer forensic stage, and instantiate it
+with a *frequent-loser* flag built from São Paulo's BEC
+contract-award records (2009--2019). The flag cuts the
+bid-microdata pool the forensic stage must work on by 83%
+(1,985 of 11,676 firms) while recovering 131 of 193
+adjudicated cobidders. The screen is a triage device, not an
+adjudication device. Discrimination accuracy is AUC 0.864 under
+temporal holdout; the screen adds non-redundant signal to the
+Imhof--Wallimann bid-distribution pipeline (+0.035 AUC, DeLong
+$p = 0.014$). A simple separating-equilibrium argument motivates
+endogenous loser-side participation as the ranking primitive.
+Wherever award records are routinely available while bid
+microdata are forensic-recoverable, screening should be
+sequenced before forensics.
 
 **JEL Classification:**
 <span class="badge">D44</span>
