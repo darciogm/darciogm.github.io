@@ -4,6 +4,19 @@ paper: bitter-pills
 
 # Changelog
 
+## v6-jpub-short — macroization pass (2026-05-04)
+
+- **Title finalized:** "Bitter Pills: Judicial Enforcement and the Cost of Public Procurement in Brazil" (replaces working title "Bitter Pills to Swallow: The Enforcement Costs of Health Litigation").
+- **Macroized manuscript:** every numerical claim, sample size, table input and figure path resolves through `manuscript/paper/values.tex`. Each analysis script (v4: 00, 01, 03, 04, 06, 08, 11; v6: 20, 30, 31, 32, 33, 34) emits its block at end of run; manuscript prose is regenerable from code with zero hand-editing. 173 unique macros referenced, 11 auto-generated blocks, 0 TBD leaks across 4 PDFs (main, submission, OnlineAppendix, cover_letter).
+- **Drift bugs closed by macroization:**
+    - `qty-on-admin` coef cited in prose was 0.787 (item+year, no PBU FE) but the paper reports preferred = item+year+PBU everywhere else. Preferred coef is **1.203** (administrative orders are roughly **3.3× the size of litigated orders**).
+    - Dose-response prose claimed a **monotonic-then-plateau** pattern that the data did not support; refreshed run gives **6.8% / 12.4% / 10.5%** with mid-vs-hi $z = 0.60$ (overlapping ICs). Reframed as a **saturating dose-response**, with the indistinguishability test moved to a footnote.
+    - UTG range "23–30%" was a loose claim. Now computed as min..max sweep across 4 specs (col 1 item only → col 4 item+ym+PBU = **23.2%–30.4%**). Total effect paragraph rewritten to expose the sweep.
+- **New §A.7 Regex Classifier Validation** in Online Appendix; `\BPregexValidationStatus` placeholder is promoted to a quantified F1 sentence once `validation_sample.csv` is hand-labeled.
+- **Cross-ref bugs fixed:**
+    - `tab_placebo.tex` and `tab_supplier_fe.tex` were emitted by `etable` without `\caption`/`\label`, so `\ref{tab:placebo}` and `\ref{tab:supplier_fe}` rendered as `Table ??`. Script 20 now wraps in `\begin{table}` + `\caption` + `\label`.
+    - OnlineAppendix referenced `sec:institutional` from the main paper without `xr-hyper`, rendering `Section ??`. Added `\externaldocument{main}`.
+
 ## v6-jpub-short (2026-04-03)
 
 - **Target:** Journal of Public Economics short paper format.

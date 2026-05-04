@@ -2,12 +2,12 @@
 
 ## Working Papers
 
-### [Bitter Pills to Swallow: the Enforcement Costs of Health Litigation](bitter-pills/index.md)
+### [Bitter Pills: Judicial Enforcement and the Cost of Public Procurement in Brazil](bitter-pills/index.md)
 
-with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated April, 2026) | [PDF](bitter-pills/assets/bitter_pills_v6_jpub.pdf)
+with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026 — v6 macroized, drift bugs closed, JPubE Short Paper format) | [PDF](bitter-pills/assets/bitter_pills_v6_jpub.pdf)
 
 ??? abstract "Abstract"
-    Judicial enforcement is essential for the rule of law, yet the *form* of enforcement can generate economic inefficiency. We study this tension using bid-level data on court-mandated pharmaceutical procurement in Sao Paulo, Brazil (2009--2019). With item, time, and buyer fixed effects, court orders raise prices by 5.4% and reduce competition by 5.4%. Exploiting an institutional distinction between urgent purchases that share planning constraints but differ in penalty exposure, we isolate the "under the gun" effect: judicial sanctions alone raise costs by 23--30%. This premium operates entirely through demand fragmentation---sanctions prevent order aggregation---not through officials accepting higher unit prices. The finding speaks to a general asymmetry in accountability design: when non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency.
+    Judicial enforcement is essential for the rule of law, yet the *design* of enforcement can generate economic inefficiency. We study this tension using bid-level data on court-mandated pharmaceutical procurement in Sao Paulo, Brazil (2009--2019). With item, time, and buyer fixed effects, court orders raise prices by 5.4% and reduce competition by 5.4%. Exploiting an institutional distinction between urgent purchases that share planning constraints but differ in penalty exposure, we isolate the "under the gun" effect: judicial sanctions alone raise costs by 23--30%. The premium works largely through demand fragmentation---sanctions prevent order aggregation---rather than through officials accepting higher unit prices. The finding speaks to a general asymmetry in accountability design: when non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency.
 
 ??? note "Media coverage"
     - [Insper Knowledge](https://www.insper.edu.br/conhecimento/direito/remedio-judicializacao-orcamento/)
