@@ -4,6 +4,16 @@ paper: bitter-pills
 
 # Changelog
 
+## v7-r2round1 — three-channel decomposition rewrite (2026-05-04)
+
+- **New thesis:** The procurement cost of judicial enforcement decomposes into three distinct channels under the under-the-gun umbrella: (i) **demand fragmentation** (C1), the dominant channel — smaller orders that forgo bulk discounts; (ii) **reduced bidder participation** (C2) — at identical order size, urgent tenders attract 4.2% fewer bidders; (iii) **supplier composition shift** (C3) — the supplier mix changes under urgency, with no within-firm markup.
+- **Headline figure replaced:** the v6 coefficient plot is replaced by a two-panel cascade waterfall (`fig_three_channel_cascade.pdf`) decomposing the urgency premium and the UTG gap across four canonical specifications, attributing each pp drop to a named channel.
+- **Within-firm markup hypothesis directly refuted:** the within firm-buyer-item triple regression (8,232 triples observed in both regimes) yields a **negative** urgency coefficient (−2.67%, *p* < 0.01). Same firm, same buyer, same item, charges *less* under urgency, not more. The 52% supplier-FE attenuation in v6 was therefore selection (composition shift), not markup.
+- **Welfare bound replaces v6 point estimate:** $16M lower bound (5.4% × $300M) → $74-88M upper bound (UTG-pct × $250-300M sanction-exposed). Publishable range: **$16-88M/yr** on the per-unit-price margin.
+- **Quantified policy counterfactuals:** admin-channel expansion at 50% target = ~$44M/yr recovery; framework-agreements at 40% feasibility = ~$36M/yr recovery (each addresses a distinct channel).
+- **Identification defended candidly:** new paragraph in §Empirical Strategy on scientific-committee selection bias direction (theoretically ambiguous, not "conservative" as v6 claimed).
+- **Dose-response demoted:** the v6 saturating-dose-response paragraph drops from main text to footnote (mid and high bins indistinguishable, *z* = 0.60).
+
 ## v6-jpub-short — macroization pass (2026-05-04)
 
 - **Title finalized:** "Bitter Pills: Judicial Enforcement and the Cost of Public Procurement in Brazil" (replaces working title "Bitter Pills to Swallow: The Enforcement Costs of Health Litigation").

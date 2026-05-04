@@ -8,7 +8,7 @@ paper: bitter-pills
 
 **Authors:** Darcio Genicolo-Martins and Paulo Furquim de Azevedo
 **Affiliation:** Insper Institute of Education and Research, Sao Paulo, Brazil
-**Version:** May 2026 (v6 macroized, JPubE Short Paper format)
+**Version:** May 2026 (v7 r2-round1, three-channel decomposition rewrite)
 
 !!! abstract "Download"
     The latest version of the paper is available as a PDF in the manuscript directory of the replication package.
