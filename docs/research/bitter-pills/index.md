@@ -6,9 +6,9 @@ paper: bitter-pills
 
 <div class="hero-section" markdown>
 
-# Bitter Pills to Swallow
+# Bitter Pills
 
-<p class="subtitle">The Enforcement Costs of Health Litigation</p>
+<p class="subtitle">Judicial Enforcement and the Cost of Public Procurement in Brazil</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
@@ -21,7 +21,7 @@ paper: bitter-pills
 
 ## Abstract
 
-Judicial enforcement is essential for the rule of law, yet the *form* of enforcement can generate economic inefficiency. We study this tension using bid-level data on court-mandated pharmaceutical procurement in Sao Paulo, Brazil (2009--2019). With item, time, and buyer fixed effects, court orders raise prices by 5.4% and reduce competition by 5.4%. Exploiting an institutional distinction between urgent purchases that share planning constraints but differ in penalty exposure, we isolate the "under the gun" effect: judicial sanctions alone raise costs by 23--30%. This premium operates entirely through demand fragmentation---sanctions prevent order aggregation---not through officials accepting higher unit prices. The finding speaks to a general asymmetry in accountability design: when non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency.
+Judicial enforcement is essential for the rule of law, yet the *design* of enforcement can generate economic inefficiency. We study this tension using bid-level data on court-mandated pharmaceutical procurement in Sao Paulo, Brazil (2009--2019). With item, time, and buyer fixed effects, court orders raise prices by 5.4% and reduce competition by 5.4%. Exploiting an institutional distinction between urgent purchases that share planning constraints but differ in penalty exposure, we isolate the "under the gun" effect: judicial sanctions alone raise costs by 23--30%. The premium works largely through demand fragmentation---sanctions prevent order aggregation---rather than through officials accepting higher unit prices. The finding speaks to a general asymmetry in accountability design: when non-completion is punished more severely than overpayment, compliance crowds out cost-efficiency.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/bitter_pills_v6_jpub.pdf){ .md-button .md-button--primary }
 
