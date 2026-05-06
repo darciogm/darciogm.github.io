@@ -688,9 +688,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comparison-panel-all-purchase-types" class="md-nav__link">
+  <a href="#three-panel-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Comparison Panel: All Purchase Types
+      Three-Panel Comparison
     </span>
   </a>
   
@@ -716,9 +716,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#administrative-purchases-per-1000-inhabitants" class="md-nav__link">
+  <a href="#administrative-urgent-purchases-per-1000-inhabitants" class="md-nav__link">
     <span class="md-ellipsis">
-      Administrative Purchases per 1,000 Inhabitants
+      Administrative Urgent Purchases per 1,000 Inhabitants
     </span>
   </a>
   
@@ -819,30 +819,41 @@
 
 
 <h1 id="geographic-distribution-maps">Geographic Distribution Maps<a class="headerlink" href="#geographic-distribution-maps" title="Permanent link">¶</a></h1>
-<h2 id="comparison-panel-all-purchase-types">Comparison Panel: All Purchase Types<a class="headerlink" href="#comparison-panel-all-purchase-types" title="Permanent link">¶</a></h2>
-<p>The panel below shows the geographic distribution of purchases per 1,000 inhabitants across Sao Paulo municipalities (2009-2019), using common quintile breaks for comparability.</p>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_map_panel_comparison_v8.png" data-desc-position="bottom"><img alt="Comparison Panel" src="../assets/figures/fig_map_panel_comparison_v8.png"></a></p>
-<p><em>Quintile breaks; SIRGAS 2000 / UTM Zone 23S projection. Source: BEC procurement data and IBGE population estimates (SIDRA table 6579).</em></p>
+<p>These maps describe where each procurement channel — litigated, administrative urgent, and ordinary — operates across São Paulo state municipalities (2009–2019). Geography is not part of the v8 identification strategy (which is within firm-buyer-item, not cross-municipality), but the spatial heterogeneity contextualizes the institutional asset: the dual urgent channel covers the entire state, with neither litigated nor administrative procurement concentrated to a degree that would compromise within-cell variation.</p>
+<hr>
+<h2 id="three-panel-comparison">Three-Panel Comparison<a class="headerlink" href="#three-panel-comparison" title="Permanent link">¶</a></h2>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_map_panel_comparison_v8.png" data-desc-position="bottom"><img alt="Comparison Panel" src="../assets/figures/fig_map_panel_comparison_v8.png"></a>
+  </p>
+<figcaption>Per-capita procurement intensity by purchase type, common quintile breaks for comparability. SIRGAS 2000 / UTM Zone 23S (EPSG:31983). Source: BEC procurement data and IBGE population estimates (SIDRA table 6579).</figcaption>
+</figure>
 <div class="admonition info">
-<p class="admonition-title">Key Pattern</p>
-<p>Litigated purchases are geographically concentrated around the state capital and major urban centers, while ordinary purchases are more evenly distributed. Administrative purchases show the most sparse distribution, reflecting the limited adoption of the administrative request mechanism.</p>
+<p class="admonition-title">Reading the panel</p>
+<p>Litigated procurement concentrates in municipalities with stronger judicial infrastructure (state capital and major urban centers). Ordinary procurement is more uniformly distributed, reflecting baseline demand. Administrative urgent purchases follow the SES/SP scientific committee's admissibility decisions and concentrate where committee capacity is most active. The distinct geographies confirm that the within firm-buyer-item triples — which require both regimes for the same firm × item × buyer — are not driven by a small number of cells, but draw on variation across the state's procurement infrastructure.</p>
 </div>
 <hr>
 <h2 id="individual-maps">Individual Maps<a class="headerlink" href="#individual-maps" title="Permanent link">¶</a></h2>
 <h3 id="litigated-purchases-per-1000-inhabitants">Litigated Purchases per 1,000 Inhabitants<a class="headerlink" href="#litigated-purchases-per-1000-inhabitants" title="Permanent link">¶</a></h3>
+<figure>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_map_litigated_per_capita_v8.png" data-desc-position="bottom"><img alt="Litigated per capita" src="../assets/figures/fig_map_litigated_per_capita_v8.png"></a></p>
-<h3 id="administrative-purchases-per-1000-inhabitants">Administrative Purchases per 1,000 Inhabitants<a class="headerlink" href="#administrative-purchases-per-1000-inhabitants" title="Permanent link">¶</a></h3>
+</figure>
+<h3 id="administrative-urgent-purchases-per-1000-inhabitants">Administrative Urgent Purchases per 1,000 Inhabitants<a class="headerlink" href="#administrative-urgent-purchases-per-1000-inhabitants" title="Permanent link">¶</a></h3>
+<figure>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_map_admin_per_capita_v8.png" data-desc-position="bottom"><img alt="Admin per capita" src="../assets/figures/fig_map_admin_per_capita_v8.png"></a></p>
+</figure>
 <h3 id="ordinary-purchases-per-1000-inhabitants">Ordinary Purchases per 1,000 Inhabitants<a class="headerlink" href="#ordinary-purchases-per-1000-inhabitants" title="Permanent link">¶</a></h3>
+<figure>
 <p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_map_ordinary_per_capita_v8.png" data-desc-position="bottom"><img alt="Ordinary per capita" src="../assets/figures/fig_map_ordinary_per_capita_v8.png"></a></p>
+</figure>
 <hr>
 <h2 id="technical-notes">Technical Notes<a class="headerlink" href="#technical-notes" title="Permanent link">¶</a></h2>
 <ul>
-<li><strong>Projection:</strong> SIRGAS 2000 / UTM Zone 23S (EPSG:31983)</li>
-<li><strong>Breaks:</strong> Quintile (5 equal-frequency categories)</li>
-<li><strong>Population:</strong> IBGE SIDRA table 6579, 2009-2019 average</li>
-<li><strong>Shapefile:</strong> IBGE via <code>geobr</code> R package (2010 municipal boundaries)</li>
-<li><strong>Color palette:</strong> Sequential grayscale (5 levels), print-friendly</li>
+<li><strong>Projection:</strong> SIRGAS 2000 / UTM Zone 23S (EPSG:31983) — equal-area at São Paulo's latitude.</li>
+<li><strong>Breaks:</strong> Quintile (5 equal-frequency categories) within each panel; common breaks across panels in the comparison figure for direct readability.</li>
+<li><strong>Population denominator:</strong> IBGE SIDRA table 6579, 2009–2019 average.</li>
+<li><strong>Shapefile:</strong> IBGE municipal boundaries via the <code>geobr</code> R package (2010 reference).</li>
+<li><strong>Color palette:</strong> Sequential grayscale (5 levels), print-friendly.</li>
+<li><strong>What these maps are not:</strong> they are <strong>not</strong> a causal identification strategy. The v8 paper relies on within firm-buyer-item triples, not cross-municipality comparisons. The maps are descriptive — they document the institutional reach of each channel.</li>
 </ul>
 
 

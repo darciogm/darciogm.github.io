@@ -618,18 +618,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#overview" class="md-nav__link">
+  <a href="#why-this-comparison-matters-in-v8" class="md-nav__link">
     <span class="md-ellipsis">
-      Overview
+      Why this comparison matters in v8
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#key-results-preferred-specification-item-year-pbu-fe" class="md-nav__link">
+  <a href="#admin-vs-ordinary-preferred-specification" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Results (Preferred Specification: Item + Year + PBU FE)
+      Admin vs Ordinary: Preferred Specification
     </span>
   </a>
   
@@ -645,9 +645,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#comparison-across-all-groups" class="md-nav__link">
+  <a href="#cross-group-comparison" class="md-nav__link">
     <span class="md-ellipsis">
-      Comparison Across All Groups
+      Cross-Group Comparison
     </span>
   </a>
   
@@ -795,9 +795,16 @@
 
 
 <h1 id="administrative-vs-ordinary-purchases">Administrative vs Ordinary Purchases<a class="headerlink" href="#administrative-vs-ordinary-purchases" title="Permanent link">¶</a></h1>
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
-<p>This analysis compares <strong>administrative</strong> purchases (urgency without judicial sanctions) to <strong>ordinary</strong> purchases, excluding litigated purchases entirely. The sample includes items with both administrative and ordinary purchase types (196,988 observations; 168,814 winners).</p>
-<h2 id="key-results-preferred-specification-item-year-pbu-fe">Key Results (Preferred Specification: Item + Year + PBU FE)<a class="headerlink" href="#key-results-preferred-specification-item-year-pbu-fe" title="Permanent link">¶</a></h2>
+<h2 id="why-this-comparison-matters-in-v8">Why this comparison matters in v8<a class="headerlink" href="#why-this-comparison-matters-in-v8" title="Permanent link">¶</a></h2>
+<p>In the v8 sourcing-reframe, the <strong>administrative</strong> channel is not an independent finding — it is the <strong>selection-corrected control group</strong> that identifies the under-the-gun gap. The comparison between administrative and ordinary purchases serves two purposes:</p>
+<ol>
+<li><strong>Diagnostic for admin-channel selection.</strong> The SES/SP scientific committee admits items that are naturally more sourceable. Comparing admin to ordinary identifies the wedge that the Manski-Lee bounds correct for in the main UTG analysis.</li>
+<li><strong>Validates the institutional asset.</strong> Administrative purchases share all planning constraints of litigated procurement (compressed timelines, small quantities, urgent budget) but carry <strong>no sanction exposure</strong>. The price gap between litigated and administrative thus isolates the sanction channel net of urgency.</li>
+</ol>
+<p>This page reports the descriptive admin-vs-ordinary comparison; for the main UTG analysis (litigated vs administrative), see <a href="../results/">Results</a>.</p>
+<hr>
+<h2 id="admin-vs-ordinary-preferred-specification">Admin vs Ordinary: Preferred Specification<a class="headerlink" href="#admin-vs-ordinary-preferred-specification" title="Permanent link">¶</a></h2>
+<p>Sample: items with both administrative and ordinary purchase types (litigated purchases excluded). Item + Year + PBU fixed effects; SE clustered at PBU.</p>
 <table>
 <thead>
 <tr>
@@ -810,8 +817,8 @@
 <tbody>
 <tr>
 <td>Reference Price</td>
-<td style="text-align: center;">-0.095</td>
-<td style="text-align: center;">-9.1%</td>
+<td style="text-align: center;">−0.095</td>
+<td style="text-align: center;">−9.1%</td>
 <td style="text-align: center;">*</td>
 </tr>
 <tr>
@@ -821,59 +828,66 @@
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
-<td>Neg. Price (Total)</td>
-<td style="text-align: center;">-0.062</td>
-<td style="text-align: center;">-6.0%</td>
+<td>Negotiated Price (Total)</td>
+<td style="text-align: center;">−0.062</td>
+<td style="text-align: center;">−6.0%</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
-<td>Neg. Price (Direct)</td>
+<td>Negotiated Price (Direct)</td>
 <td style="text-align: center;">+0.109</td>
 <td style="text-align: center;">+11.5%</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
 <td>Firms (Total)</td>
-<td style="text-align: center;">-0.027</td>
-<td style="text-align: center;">-2.6%</td>
+<td style="text-align: center;">−0.027</td>
+<td style="text-align: center;">−2.6%</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
 <td>Firms (Direct)</td>
-<td style="text-align: center;">-0.037</td>
-<td style="text-align: center;">-3.6%</td>
+<td style="text-align: center;">−0.037</td>
+<td style="text-align: center;">−3.6%</td>
 <td style="text-align: center;">*</td>
 </tr>
 <tr>
-<td>Success (Total)</td>
+<td>Tender Success (Total)</td>
 <td style="text-align: center;">+0.009</td>
 <td style="text-align: center;">+0.9 pp</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
-<td>Success (Direct)</td>
+<td>Tender Success (Direct)</td>
 <td style="text-align: center;">+0.001</td>
 <td style="text-align: center;">+0.1 pp</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition info">
-<p class="admonition-title">Interpretation</p>
-<p>Administrative purchases carry <strong>lower</strong> reference prices than ordinary purchases (-9.1%, p &lt; 0.10), a striking contrast with litigated purchases which carry +7.6% higher prices. Most other effects are imprecisely estimated. This confirms that administrative purchases occupy an <strong>intermediate position</strong>: they share urgency constraints but lack the price-inflating effects of judicial sanctions.</p>
+<p><small><strong>Notes:</strong> * p &lt; 0.10. Administrative urgent purchases (1) vs ordinary purchases (0). Effects computed as exp(β) − 1.</small></p>
+<div class="admonition warning">
+<p class="admonition-title">Selection bias is the headline reading, not a causal effect</p>
+<p>Administrative purchases carry <strong>lower</strong> reference prices than ordinary purchases (−9.1%, p &lt; 0.10). In v7 framing this looked like a counterintuitive "admin is cheaper" effect; in v8 framing <strong>this is exactly the selection wedge</strong> — the scientific committee admits items that are easier to source and naturally cheaper, which biases admin toward lower observed prices regardless of treatment effect. The Manski-Lee bounds [15.9%, 21.1%] in the main UTG analysis correct for this wedge.</p>
 </div>
+<hr>
 <h2 id="coefficient-plot">Coefficient Plot<a class="headerlink" href="#coefficient-plot" title="Permanent link">¶</a></h2>
-<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_coef_adm_vs_ord_v8.png" data-desc-position="bottom"><img alt="Administrative vs Ordinary Coefficient Plot" src="../assets/figures/fig_coef_adm_vs_ord_v8.png"></a></p>
-<p><em>Preferred specification (Item + Year + PBU FE). Thick bars = 90% CI; thin bars = 95% CI. SE clustered at PBU level.</em></p>
-<h2 id="comparison-across-all-groups">Comparison Across All Groups<a class="headerlink" href="#comparison-across-all-groups" title="Permanent link">¶</a></h2>
+<figure>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="../assets/figures/fig_coef_adm_vs_ord_v8.png" data-desc-position="bottom"><img alt="Administrative vs Ordinary Coefficient Plot" src="../assets/figures/fig_coef_adm_vs_ord_v8.png"></a>
+  </p>
+<figcaption>Admin vs ordinary coefficients with 90% (thick) and 95% (thin) confidence intervals. Preferred specification (Item + Year + PBU FE), SE clustered at PBU.</figcaption>
+</figure>
+<hr>
+<h2 id="cross-group-comparison">Cross-Group Comparison<a class="headerlink" href="#cross-group-comparison" title="Permanent link">¶</a></h2>
+<p>The full gradient across comparison groups, juxtaposed:</p>
 <table>
 <thead>
 <tr>
 <th>Outcome</th>
-<th style="text-align: center;">Urgent vs Ord</th>
-<th style="text-align: center;">Litigated vs Ord</th>
-<th style="text-align: center;">Admin vs Ord</th>
-<th style="text-align: center;">UTG (Admin vs Lit)</th>
+<th style="text-align: center;">Urgent vs Ordinary</th>
+<th style="text-align: center;">Litigated vs Ordinary</th>
+<th style="text-align: center;">Admin vs Ordinary</th>
+<th style="text-align: center;">UTG (Admin vs Litigated)</th>
 </tr>
 </thead>
 <tbody>
@@ -881,35 +895,35 @@
 <td>Ref. Price</td>
 <td style="text-align: center;">+2.7%*</td>
 <td style="text-align: center;">+7.6%**</td>
-<td style="text-align: center;"><strong>-9.1%</strong>*</td>
-<td style="text-align: center;">-27.3%***</td>
+<td style="text-align: center;"><strong>−9.1%</strong>*</td>
+<td style="text-align: center;">naïve −27.3%; <strong>Lee-bounded [−21.1%, −15.9%]</strong></td>
 </tr>
 <tr>
 <td>Neg. Price (Total)</td>
 <td style="text-align: center;">+5.4%***</td>
 <td style="text-align: center;">+9.1%***</td>
-<td style="text-align: center;">-6.0%</td>
-<td style="text-align: center;">-30.0%**</td>
+<td style="text-align: center;">−6.0%</td>
+<td style="text-align: center;">naïve −30.0%; Lee-bounded as above</td>
 </tr>
 <tr>
 <td>Firms (Total)</td>
-<td style="text-align: center;">-5.5%***</td>
-<td style="text-align: center;">-7.9%***</td>
-<td style="text-align: center;">-2.6%</td>
+<td style="text-align: center;">−5.5%***</td>
+<td style="text-align: center;">−7.9%***</td>
+<td style="text-align: center;">−2.6%</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 <tr>
-<td>Success</td>
-<td style="text-align: center;">+2.1pp***</td>
-<td style="text-align: center;">+2.4pp***</td>
-<td style="text-align: center;">+0.9pp</td>
+<td>Tender Success</td>
+<td style="text-align: center;">+2.1 pp***</td>
+<td style="text-align: center;">+2.4 pp***</td>
+<td style="text-align: center;">+0.9 pp</td>
 <td style="text-align: center;">n.s.</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition success">
-<p class="admonition-title">Key Takeaway</p>
-<p>The gradient of effects across comparison groups—largest for litigated vs ordinary, moderate for urgent (pooled), and <strong>reversed</strong> for admin vs ordinary—confirms that <strong>judicial sanctions, not urgency per se</strong>, drive the procurement cost premium.</p>
+<div class="admonition info">
+<p class="admonition-title">v8 reading of this gradient</p>
+<p>The naïve UTG gap (admin vs litigated; 27–30%) overstates the treatment effect because admin disproportionately admits the more sourceable items (the −9.1% admin-vs-ordinary reference-price effect). After Manski-Lee bounding, the <strong>net sanction premium is [15.9%, 21.1%]</strong> — modest, not headline-grabbing, and consistent with within-buyer dispersion in comparable settings (Best et al. 2023; Bosio et al. 2022). The remaining premium operates through demand fragmentation and a sourcing shift, not through within-firm pricing — see <a href="../results/">Results</a>.</p>
 </div>
 
 
