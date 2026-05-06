@@ -117,18 +117,18 @@
     <div class="ex-header">
       <h2>Exercício 2</h2>
       <span class="ex-calibre">🟡</span>
-      <span class="ex-title">Stone-Geary: elasticidade-renda flexível, luxo</span>
+      <span class="ex-title">Stone-Geary com subsistência genuína: necessidade não-homotética</span>
     </div>
 
     <div class="ex-enunciado">
-      <p><strong>Enunciado.</strong> Considere a forma <em>Stone-Geary</em> \(u(x_1, x_2) = (x_1 - \gamma_1)^{\alpha}(x_2 - \gamma_2)^{1-\alpha}\) com \(\alpha = 1/2\), \(\gamma_1 = -2\), \(\gamma_2 = 0\).</p>
+      <p><strong>Enunciado.</strong> Considere a forma <em>Stone-Geary</em> \(u(x_1, x_2) = (x_1 - \gamma_1)^{\alpha}(x_2 - \gamma_2)^{1-\alpha}\) com \(\alpha = 1/2\), \(\gamma_1 = 1\), \(\gamma_2 = 0{,}5\) (ambos positivos — subsistência genuína).</p>
 
       <div class="callout callout-note" style="margin: 0.8em 0; padding: 0.8em 1em; background: #f5f7fa; border-left: 3px solid #1B3A5C;">
         <p style="margin: 0 0 0.4em 0;"><strong>Fato dado (forma fechada da demanda LES):</strong></p>
         \[
         x_i(p, m) \;=\; \gamma_i \;+\; \dfrac{\beta_i}{p_i}\,\Bigl(m - \textstyle\sum_k p_k\gamma_k\Bigr), \qquad \sum_i \beta_i = 1,\ m > \textstyle\sum_k p_k\gamma_k.
         \]
-        <p style="margin: 0.4em 0 0 0;">Os parâmetros \(\gamma_i \ge 0\) representam <strong>mínimos de subsistência</strong> (consumo de "piso") e \(\beta_i\) é a <strong>propensão marginal a consumir</strong> o gasto excedente em \(i\). Aqui \(\beta_1 = \alpha\), \(\beta_2 = 1-\alpha\); permite-se \(\gamma_i < 0\) (interpretado como "ponto de saturação" em vez de subsistência) desde que \(m > \sum_k p_k \gamma_k\). <em>Referência: N&amp;S 12e §4.4 (Apêndice de formas funcionais); Deaton &amp; Muellbauer (1980).</em></p>
+        <p style="margin: 0.4em 0 0 0;">Os parâmetros \(\gamma_i \ge 0\) representam <strong>mínimos de subsistência</strong> (consumo de "piso") e \(\beta_i\) é a <strong>propensão marginal a consumir</strong> o gasto excedente em \(i\). Aqui \(\beta_1 = \alpha\), \(\beta_2 = 1-\alpha\). <em>Referência: N&amp;S 12e §4.4 (Apêndice de formas funcionais); Stone (1954, Economic Journal).</em></p>
         <p style="margin: 0.4em 0 0 0;"><strong>Você não precisa derivar essa fórmula a partir da utilidade — opere diretamente sobre ela.</strong></p>
       </div>
 
@@ -137,56 +137,56 @@
 
     <div class="quizg-q" data-qid="ex2a" data-correct="a" data-difficulty="yellow">
       <div class="quizg-qtext"><strong>(a)</strong> A Marshalliana \((x_1^M, x_2^M)\) vale:</div>
-      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \((-2 + 5, 0 + 5) = (3, 5)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \((4{,}25,\; 3{,}75)\) — \(\sum p_k\gamma_k = 1{,}5\), residual \(6{,}5\); cada bem ganha \(0{,}5\cdot 6{,}5 = 3{,}25\) sobre seu piso.</label>
       <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \((4, 4)\) — Cobb-Douglas pura.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \((-2, 0)\) — apenas as constantes.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \((5, 5)\) — \(m/2\) em cada bem.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \((1,\; 0{,}5)\) — apenas as constantes \(\gamma_i\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \((5, 3)\) — chute "renda dividida em duas".</label>
       <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
     </div>
 
     <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade-renda \(\eta_1 = (m/x_1^M)\cdot \partial x_1^M/\partial m\) em \((1, 1, 8)\) é:</div>
+      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade-renda \(\eta_1 = (m/x_1^M)\cdot \partial x_1^M/\partial m\) em \((p, m) = (1, 1, 8)\) é:</div>
       <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) \(\eta_1 = 1\) — homotetia CD.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(\eta_1 = (8/3)\cdot (1/2) = 4/3 \approx 1{,}33\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(\eta_1 = 0{,}5\) — apenas o expoente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(\eta_1 = (8/4{,}25)\cdot 0{,}5 \approx 0{,}941\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(\eta_1 = 0{,}5\) — apenas o \(\beta_1\).</label>
       <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) \(\eta_1\) é negativa — bem inferior.</label>
       <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
     </div>
 
     <div class="quizg-q" data-qid="ex2c" data-correct="a" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(c)</strong> Em Stone-Geary com \(\gamma_1 < 0\), o bem 1 é classificado como:</div>
-      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) <strong>Luxo</strong> — \(\eta_1 > 1\) acima do nível de saturação.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) Necessidade — \(\eta_1 \in (0, 1)\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Inferior — \(\gamma_1 < 0\) implica \(\eta_1 < 0\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Giffen — \(\gamma_1 < 0\) implica reação anômala em preço.</label>
+      <div class="quizg-qtext"><strong>(c)</strong> Com \(\gamma_1, \gamma_2 > 0\) e \(\eta_1 \approx 0{,}94\) na faixa avaliada, o bem 1 é classificado como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) <strong>Necessidade</strong> — \(\eta_1 \in (0, 1)\); subsistência genuína "amortece" a resposta de \(x_1\) à renda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) Luxo — \(\eta_1 > 1\) em qualquer Stone-Geary com \(\gamma > 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Inferior — \(\gamma_1 > 0\) implica \(\eta_1 < 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Homotético — Stone-Geary com \(\gamma > 0\) preserva homotetia.</label>
       <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
     </div>
 
-    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(d)</strong> Aplicando Slutsky em \(\partial x_1^M/\partial p_2\), o sinal de cada termo é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) Marshalliana cruzada zero, substituição zero, renda zero — independente.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) Marshalliana cruzada \(< 0\), substituição \(> 0\), renda \(< 0\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) Marshalliana cruzada \(\neq 0\) em geral; aqui particularmente \(\gamma_2 = 0\) zera. Substituição \(> 0\), renda \(< 0\). Os dois quase-cancelam.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Marshalliana cruzada \(> 0\), substituição zero, renda \(> 0\).</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    <div class="quizg-q" data-qid="ex2d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Aplicando Slutsky em \(\partial x_1^M/\partial p_2\) (cruzada Marshalliana, com \(\gamma_2 > 0\)):</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(\partial x_1^M/\partial p_2 = 0\) — independência marshalliana automática em LES.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) \(\partial x_1^M/\partial p_2 = -\beta_1\gamma_2/p_1 = -0{,}25\); substituição \(\partial h_1/\partial p_2 > 0\); renda \(-x_2^M(\partial x_1^M/\partial m) = -3{,}75\cdot 0{,}5 = -1{,}875 < 0\). O termo "subsistência cruzada" \(-\beta_1\gamma_2\) entra na cruzada Marshalliana mesmo após Slutsky.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) Marshalliana cruzada \(> 0\); substituição zero; renda \(> 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Marshalliana cruzada zero; substituição zero; renda zero — independente em todos os níveis.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
     </div>
 
     <div class="quizg-q" data-qid="ex2e" data-correct="a" data-difficulty="yellow">
       <div class="quizg-qtext"><strong>(e)</strong> Sobre a estrutura de Stone-Geary como modelo empírico:</div>
-      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) É forma funcional rica que permite \(\eta_i \neq 1\) por bem (não-homotética) preservando integração de Slutsky.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) É forma funcional <strong>não-homotética</strong> que permite \(\eta_i \neq 1\) por bem, preservando integração de Slutsky.</label>
       <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) É equivalente a CD com mudança de variável trivial.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Implica \(\eta_i = \alpha_i\) por bem.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Não é compatível com restrição orçamentária.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Implica \(\eta_i = \alpha_i\) por bem (parcela = elasticidade-renda).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Não é compatível com restrição orçamentária quando \(\gamma_i > 0\).</label>
       <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
     </div>
 
     <div class="ex-gabarito-5passos quizg-feedback" hidden>
       <h4>Gabarito 5-passos — Exercício 2</h4>
-      <p><strong>1. Ponto-chave.</strong> O exercício pede para <strong>trabalhar dentro da forma LES sem precisar derivar a partir da utilidade</strong>: a fórmula fechada \(x_i = \gamma_i + (\beta_i/p_i)(m - \sum_k p_k\gamma_k)\) é dada, e basta substituir/diferenciar. A leitura conceitual é que Stone-Geary generaliza CD de forma <strong>não-homotética</strong>: os \(\gamma_i\) deslocam o "piso" de consumo e fazem com que \(\eta_i\) deixe de ser \(1\). Com \(\gamma_1 < 0\) (e \(m\) suficientemente alto para o sistema ficar bem definido), o bem 1 vira luxo (\(\eta_1 > 1\)). Modelo base do <em>Linear Expenditure System</em> (Stone 1954).</p>
-      <p><strong>2. Derivação.</strong> \(x_1^M = -2 + (1/2)(8 + 2)/1 = -2 + 5 = 3\); \(x_2^M = (1/2)(10)/1 = 5\). Walras: \(3 + 5 = 8\). ✓ \(\partial x_1^M/\partial m = 1/(2 p_1) = 1/2\); \(\eta_1 = (8/3)(1/2) = 4/3\). ✓</p>
-      <p><strong>3. Armadilha.</strong> Item (b)(i): assumir homotetia automática. Stone-Geary é não-homotética por construção — \(\gamma_i\) quebram homotetia. Item (c)(iii): confundir \(\gamma_1 < 0\) com inferioridade. Inferioridade é \(\eta < 0\); aqui \(\eta_1 = 4/3 > 1\), normal e luxo.</p>
-      <p><strong>4. Extensão (Aula 3 + AIDS).</strong> Em sistemas modernos AIDS/QUAIDS, flexibilidade estendida com termos quadráticos em log-renda. Empiricamente, \(\gamma_i\) é interpretado como "demanda de subsistência" se \(\gamma_i > 0\), ou "elasticidade luxo" se \(\gamma_i < 0\). POF brasileira tem dados para essa estimação.</p>
-      <p><strong>5. Peer-review.</strong> Calibre 🟡 — testa Stone-Geary como extensão funcional não-homotética. Aluno que assume \(\eta = 1\) por reflexo errou (b)(i). Quem chega em \(\eta_1 = 4/3\) demonstra fluência em formas funcionais. Risco residual: depende de o aluno conhecer fórmula fechada de Stone-Geary; alternativa pedagógica é derivar via Lagrangiano.</p>
+      <p><strong>1. Ponto-chave.</strong> Stone-Geary com \(\gamma_1, \gamma_2 > 0\) é o caso clássico de <strong>subsistência genuína</strong>: cada bem tem um "piso" \(\gamma_i\) que o consumidor compra antes de alocar o resíduo \(m - \sum p_k\gamma_k\) no formato CD. A consequência operacional é que <strong>\(\eta_i\) deixa de ser 1</strong> — a parcela CD \(\beta_i\) só governa o gasto <em>acima</em> do piso. Quando \(\gamma_i\) é importante na cesta (como aqui, com \(\gamma_1/x_1 \approx 0{,}24\)), \(\eta_i\) cai abaixo de 1 e o bem se comporta como <strong>necessidade</strong>: alguém que dobra a renda <em>não</em> dobra o consumo de \(x_1\), porque o piso já estava coberto.</p>
+      <p><strong>2. Derivação.</strong> Soma de pisos: \(\sum p_k\gamma_k = 1\cdot 1 + 1\cdot 0{,}5 = 1{,}5\); residual \(m - \sum p_k\gamma_k = 6{,}5\). \(x_1^M = 1 + (0{,}5/1)(6{,}5) = 4{,}25\); \(x_2^M = 0{,}5 + (0{,}5/1)(6{,}5) = 3{,}75\). Walras: \(4{,}25 + 3{,}75 = 8\). ✓ \(\partial x_1^M/\partial m = \beta_1/p_1 = 0{,}5\); \(\eta_1 = (8/4{,}25)(0{,}5) = 4/4{,}25 \approx 0{,}941 < 1\) — necessidade. Cruzada Marshalliana: \(\partial x_1^M/\partial p_2 = -\beta_1\gamma_2/p_1 = -0{,}25\). Slutsky: substituição \(\partial h_1/\partial p_2 > 0\); renda \(-x_2^M(\partial x_1^M/\partial m) = -1{,}875\). Os dois somam exatamente \(-0{,}25\) (substituição compensa parcialmente o efeito-renda, mas não chega ao cancelamento perfeito da CD pura).</p>
+      <p><strong>3. Armadilha.</strong> Item (b)(i): "qualquer extensão de CD é homotética". Falso — \(\gamma_i > 0\) quebra homotetia, é por isso que LES existe. Item (c)(ii): "Stone-Geary com \(\gamma > 0\) ⇒ luxo". Errado — com \(\gamma_i > 0\), o piso "rouba" parte da renda e \(\eta_i\) tipicamente fica <strong>abaixo</strong> de 1 (necessidade). Item (d)(i): aluno confunde com CD pura, onde a cruzada zera. Aqui \(\gamma_2 > 0\) entra explicitamente no termo \(-\beta_1\gamma_2\) da Marshalliana cruzada — <em>não</em> zera.</p>
+      <p><strong>4. Extensão (Aula 3 + sistemas empíricos).</strong> Stone-Geary é o ponto de partida do <em>Linear Expenditure System</em> (Stone 1954, <em>Economic Journal</em>) e antecessor estrutural do AIDS (Deaton &amp; Muellbauer 1980). Em estimação empírica com POF, calibra-se \(\gamma_i\) e \(\beta_i\) por bem; \(\gamma_i > 0\) gera \(\eta_i < 1\) tipicamente para alimentos básicos (necessidade), e \(\beta_i\) ganha leitura de "fração marginal do excedente". Em política tributária (Bloco 4 desta aula), CV depende crucialmente da heterogeneidade de \(\gamma_i\) entre decis — pobres têm \(\gamma_i\) relativo maior na cesta básica, daí a regressividade discutida no Box Brasil.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 — testa três pontos: (i) Stone-Geary é <strong>não-homotética</strong> mesmo com \(\gamma > 0\) (não confundir com luxo/saturação); (ii) elasticidade-renda na faixa avaliada é função explícita de \((m, \gamma, \beta)\), não do parâmetro CD sozinho; (iii) cruzada Marshalliana <strong>não zera</strong> quando \(\gamma_2 > 0\). Aluno que decora "Stone-Geary = CD com pequena correção" perde o (b) e o (d). Risco residual: a fórmula fechada é dada como fato — quem quiser mais rigor pode derivar via Lagrangiano sobre \((x_1 - \gamma_1, x_2 - \gamma_2)\), exercício rotineiro mas longo.</p>
     </div>
   </div>
 
@@ -411,9 +411,9 @@
     <div class="ex-enunciado">
       <p><strong>Enunciado.</strong> Um governo introduz imposto específico sobre o bem 1 (combustível). Estimativas estruturais (sistema AIDS calibrado em POF):</p>
       <ul>
-        <li>Parcelas: \(s_1 = 0{,}08\), \(s_2 = 0{,}30\) (transporte público), \(s_3 = 0{,}62\) (resto).</li>
-        <li>Elasticidades-renda: \(\eta_1 = 0{,}3\) (necessidade), \(\eta_2 = 1{,}2\) (luxo), \(\eta_3 = 0{,}97\) (mediana).</li>
-        <li>Elasticidades compensadas: \(\varepsilon^c_{11} = -0{,}25\), \(\varepsilon^c_{21} = +0{,}10\), \(\varepsilon^c_{31} = +0{,}05\).</li>
+        <li>Parcelas: \(s_1 = 0{,}08\), \(s_2 = 0{,}30\) (viagens de lazer), \(s_3 = 0{,}62\) (resto).</li>
+        <li>Elasticidades-renda: \(\eta_1 = 0{,}3\) (necessidade), \(\eta_2 = 1{,}2\) (luxo — viagens crescem mais que renda), \(\eta_3 = 0{,}97\) (mediana).</li>
+        <li>Elasticidades compensadas: \(\varepsilon^c_{11} = -0{,}25\), \(\varepsilon^c_{21} = +0{,}10\) (lazer e combustível são substitutos líquidos — viagem de carro vs. avião/ônibus), \(\varepsilon^c_{31} = +0{,}05\).</li>
       </ul>
     </div>
 
@@ -427,11 +427,11 @@
     </div>
 
     <div class="quizg-q" data-qid="ex6b" data-correct="a" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade cruzada \(\varepsilon_{21}\) (transporte público em relação a combustível):</div>
+      <div class="quizg-qtext"><strong>(b)</strong> A elasticidade cruzada \(\varepsilon_{21}\) (viagens de lazer em relação a combustível):</div>
       <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) \(+0{,}10 - 0{,}08\cdot 1{,}2 = +0{,}004\).</label>
       <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) \(+0{,}10 + 0{,}08\cdot 1{,}2 = +0{,}196\).</label>
       <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) \(+0{,}10\) — Marshalliana = Hicksiana em cruzadas.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) \(0\) — combustível e transporte público são independentes brutos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) \(0\) — combustível e viagens de lazer são independentes brutos.</label>
       <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
     </div>
 
@@ -465,7 +465,7 @@
     <div class="ex-gabarito-5passos quizg-feedback" hidden>
       <h4>Gabarito 5-passos — Exercício 6</h4>
       <p><strong>1. Ponto-chave.</strong> Análise de incidência: (i) Slutsky (compensada → Marshalliana); (ii) integração de Hicksiana para CV. Regressividade vem da heterogeneidade de \(s_i\) entre decis — não dos parâmetros estruturais.</p>
-      <p><strong>2. Derivação.</strong> \(\varepsilon_{11} = -0{,}25 - 0{,}024 = -0{,}274\). \(\varepsilon_{21} = +0{,}10 - 0{,}096 = +0{,}004\) (independente bruto, substituto líquido). \(\Delta\ln x_1^M = -0{,}0274 = -2{,}74\%\). CV/m \(\approx 0{,}008(1 - 0{,}0125) \approx 0{,}79\%\). 1º decil: CV/m \(\approx 0{,}15\%\). 9º decil: CV/m \(\approx 0{,}05\%\). 1º decil paga 3× mais em proporção da renda.</p>
+      <p><strong>2. Derivação.</strong> \(\varepsilon_{11} = -0{,}25 - 0{,}024 = -0{,}274\). \(\varepsilon_{21} = +0{,}10 - 0{,}096 = +0{,}004\) (combustível e viagens de lazer: independentes brutos, substitutos líquidos — viajar de avião em vez de carro é o canal pelo qual o efeito-renda quase compensa a substituição líquida). \(\Delta\ln x_1^M = -0{,}0274 = -2{,}74\%\). CV/m \(\approx 0{,}008(1 - 0{,}0125) \approx 0{,}79\%\). 1º decil: CV/m \(\approx 0{,}15\%\). 9º decil: CV/m \(\approx 0{,}05\%\). 1º decil paga 3× mais em proporção da renda.</p>
       <p><strong>3. Armadilha.</strong> Item (a)(ii) erra sinal. Item (b)(iii) "Marshalliana = Hicksiana em cruzadas" é grave. Item (c)(iii) erra escala. Item (d)(ii) usa Marshalliana sem corrigir.</p>
       <p><strong>4. Extensão.</strong> Em AIDS calibrado, parcelas variam por decil via termos quadráticos em log-renda. Política compensatória ("cashback") zera regressividade. EC 132/2023 (reforma tributária) tem mecanismo de cashback explícito.</p>
       <p><strong>5. Peer-review.</strong> Calibre 🔴. Integra Slutsky em sistema, Marshalliana cruzada, CV linearizada com 2ª ordem, regressividade. Pacote operacional de welfare aplicado — Banco Mundial, FMI, Tesouro Nacional usam exatamente esses cálculos.</p>

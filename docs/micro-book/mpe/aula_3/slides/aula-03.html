@@ -220,7 +220,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">0</td>
-<td style="text-align: left;">Abertura + reflexões + recall</td>
+<td style="text-align: left;">Abertura + recall</td>
 <td style="text-align: right;">19:30–19:35</td>
 </tr>
 <tr class="even">
@@ -262,40 +262,6 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 </table>
 <div class="bridge">
 <p>3h cheias, duas pausas. Bloco 1 é onde a álgebra trava — defendo o tempo.</p>
-</div>
-</section>
-<section class="slide level2 center">
-<h2>Reflexões da pré-aula 3</h2>
-<div class="compact-table">
-<table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: left;">Top-3 do dashboard</th>
-<th style="text-align: left;">Onde a aula responde</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">Sinal de <span class="math inline">\(-x_j (\partial x_i/\partial m)\)</span></td>
-<td style="text-align: left;">Bloco 1 — derivação completa</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Hicksiana cruzada <span class="math inline">\(\neq 0\)</span> vs.&nbsp;Marshalliana cruzada <span class="math inline">\(= 0\)</span> em CD</td>
-<td style="text-align: left;">Bloco 1 + Box CD</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">“Giffen real existe?”</td>
-<td style="text-align: left;">Box Mundo (arroz Hunan)</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="bridge">
-<p>Pontos de pico viram exemplos guiados. Quem registrou dúvida específica, a aula responde.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -374,7 +340,7 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </section>
 <section class="slide level2 center">
 <h2>Derivação de Slutsky (3/4) — Roy + dual</h2>
-<p><strong>Roy:</strong> <span class="math inline">\(\partial v/\partial p_j = -\lambda^* x_j^M\)</span>.</p>
+<p><strong>Roy:</strong> <span class="math inline">\(\partial v/\partial p_j = -\lambda^* x_j^M\)</span> — <em>(reescrita do recall com <span class="math inline">\(\lambda^* = \partial v/\partial m\)</span>, fechando o loop da Aula 2).</em></p>
 <p><strong>Dual</strong> <span class="math inline">\(h_i = x_i^M(p, e(p, \bar u))\)</span>, derivada em <span class="math inline">\(\bar u\)</span>:</p>
 <p><span class="math display">\[
 \frac{\partial h_i}{\partial \bar u}
@@ -400,6 +366,15 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </div>
 <div class="eq-punch">
 <p>Substituição vem de Shephard. Renda vem de Engel. Slutsky soma os dois.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Armadilha — índice no efeito-renda da cruzada</h2>
+<p><strong>Slutsky cruzada (<span class="math inline">\(i \neq j\)</span>):</strong> <span class="math inline">\(\;\partial x_i^M/\partial p_j = \partial h_i/\partial p_j - x_j^M\cdot \partial x_i^M/\partial m\)</span>.</p>
+<p><strong>Atenção ao índice:</strong> o efeito-renda multiplica <span class="math inline">\(x_j^M\)</span> — <em>o bem cujo preço mudou</em> — não <span class="math inline">\(x_i^M\)</span>.</p>
+<p><strong>Razão:</strong> uma alta de <span class="math inline">\(p_j\)</span> “rouba” poder de compra proporcional a <span class="math inline">\(x_j^M\)</span> unidades.</p>
+<div class="bridge">
+<p>Erro clássico em prova: trocar <span class="math inline">\(x_j\)</span> por <span class="math inline">\(x_i\)</span> no termo de renda. Próximo: ler os sinais.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -447,8 +422,8 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em CD (1/4) — setup</h2>
-<p><strong>Setup:</strong> <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>, <span class="math inline">\(\alpha = 1/2\)</span>, <span class="math inline">\(m\)</span> qualquer.</p>
+<h2>Sanidade em CD com <span class="math inline">\(\alpha = 1/2\)</span> (1/4) — setup</h2>
+<p><strong>Setup:</strong> <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span>, <span class="math inline">\(\alpha = 1/2\)</span> (caso simétrico), <span class="math inline">\(m\)</span> qualquer.</p>
 <p><strong>Marshalliana:</strong> <span class="math inline">\(x_1^M = m/(2 p_1)\)</span> — não depende de <span class="math inline">\(p_2\)</span>.</p>
 <p><strong>Pergunta:</strong> se <span class="math inline">\(\partial x_1^M/\partial p_2 = 0\)</span>, como Slutsky bate?</p>
 <div class="bridge">
@@ -456,7 +431,7 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em CD (2/4) — Slutsky termo a termo</h2>
+<h2>Sanidade em CD com <span class="math inline">\(\alpha = 1/2\)</span> (2/4) — Slutsky termo a termo</h2>
 <p><strong>Slutsky em <span class="math inline">\(\partial x_1^M/\partial p_2\)</span>:</strong></p>
 <ul>
 <li>LHS: <span class="math inline">\(\partial x_1^M/\partial p_2 = 0\)</span>.</li>
@@ -472,7 +447,7 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em CD (3/4) — Hicksiana cruzada</h2>
+<h2>Sanidade em CD com <span class="math inline">\(\alpha = 1/2\)</span> (3/4) — Hicksiana cruzada</h2>
 <p><strong>Hicksiana:</strong> <span class="math inline">\(h_1 = \bar u\sqrt{p_2/p_1}\)</span> (de <span class="math inline">\(e = 2\bar u\sqrt{p_1 p_2}\)</span>).</p>
 <p><span class="math display">\[
 \frac{\partial h_1}{\partial p_2} = \frac{\bar u}{2\sqrt{p_1 p_2}} = \frac{m}{4 p_1 p_2},
@@ -483,7 +458,7 @@ x_i^M(p, m) = h_i\big(p,\, v(p, m)\big). \tag{$*$}
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Sanidade em CD (4/4) — soma e leitura</h2>
+<h2>Sanidade em CD com <span class="math inline">\(\alpha = 1/2\)</span> (4/4) — soma e leitura</h2>
 <p><strong>Slutsky em <span class="math inline">\(\partial x_1^M/\partial p_2\)</span>:</strong></p>
 <p><span class="math display">\[
 \frac{\partial x_1^M}{\partial p_2} = \frac{m}{4 p_1 p_2} - \frac{m}{4 p_1 p_2} = 0. \;\checkmark
@@ -580,6 +555,32 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 <div class="eq-punch">
 <p>Inferior é necessário, parcela alta é amplificador, e só então o sinal de Slutsky vira.</p>
 </div>
+</section>
+<section class="slide level2 center">
+<h2>Giffen unificado em uma condição</h2>
+<p><strong>Slutsky em elasticidades</strong> (próprio preço):</p>
+<div class="eq-key">
+<p><span class="math display">\[
+\varepsilon_{ii} \;=\; \varepsilon^c_{ii} \;-\; s_i\,\eta_i.
+\]</span></p>
+</div>
+<p><strong>Giffen</strong> <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(\varepsilon_{ii} &gt; 0\)</span> <span class="math inline">\(\Leftrightarrow\)</span> <span class="math inline">\(s_i\,|\eta_i| &gt; |\varepsilon^c_{ii}|\)</span> (com <span class="math inline">\(\eta_i &lt; 0\)</span>).</p>
+<div class="bridge">
+<p>As “três alavancas” (parcela alta, inferior forte, compensada baixa) são leituras dessa única desigualdade.</p>
+</div>
+<aside class="notes">
+<p>Recolocar para o aluno: tudo que vimos no slide anterior é uma decomposição qualitativa de uma única condição quantitativa. <span class="math inline">\(s_i\)</span> alto multiplica o efeito-renda; <span class="math inline">\(|\eta_i|\)</span> alto também; <span class="math inline">\(|\varepsilon^c_{ii}|\)</span> baixo deixa o efeito-renda dominar. Não são três condições independentes — é uma única desigualdade, lida em três direções.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Geometria do efeito-renda (1/2)</h2>
@@ -852,12 +853,25 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 </section>
 <section class="slide level2 center">
 <h2>Bruto vs.&nbsp;líquido (2/3) — CD como contraexemplo</h2>
-<p><strong>Em Cobb-Douglas:</strong></p>
+<p><strong>Em Cobb-Douglas com qualquer <span class="math inline">\(\alpha \in (0, 1)\)</span>:</strong></p>
 <ul>
-<li><span class="math inline">\(\partial x_1^M/\partial p_2 = 0\)</span> → Marshalliana cruzada zera.</li>
-<li><span class="math inline">\(\partial h_1/\partial p_2 &gt; 0\)</span> → Hicksiana cruzada positiva.</li>
+<li>Marshalliana cruzada <span class="math inline">\(\partial x_1^M/\partial p_2 = 0\)</span> — não depende de <span class="math inline">\(\alpha\)</span>.</li>
+<li>Hicksiana cruzada <span class="math inline">\(\partial h_1/\partial p_2 &gt; 0\)</span> — substitutos líquidos sempre.</li>
 </ul>
-<p><strong>Conclusão:</strong> em CD, bens são <strong>substitutos líquidos</strong> mas <strong>independentes brutos</strong>.</p>
+<p><strong>Conclusão:</strong> em CD, bens são <strong>substitutos líquidos sempre</strong> e <strong>brutos nunca</strong> — independente de <span class="math inline">\(\alpha\)</span>.</p>
+<aside class="notes">
+<p>Forma específica para o caso simétrico (<span class="math inline">\(\alpha = 1/2\)</span>, <span class="math inline">\(u^0 = m/(2\sqrt{p_1 p_2})\)</span>): <span class="math inline">\(\partial h_1/\partial p_2 = m/(4 p_1 p_2)\)</span> avaliada na utilidade marshalliana — número que sai da sanidade do Bloco 1. Para <span class="math inline">\(\alpha\)</span> geral, a forma é <span class="math inline">\(\alpha(1-\alpha)\,m/(p_1 p_2)\)</span> avaliada na utilidade marshalliana — sempre positiva.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <div class="bridge">
 <p>Próximo: implicação prática para política e bem-estar.</p>
 </div>
@@ -889,7 +903,7 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 <p><span class="math display">\[
 \varepsilon_{\text{cc}} = \varepsilon^c_{\text{cc}} - s\,\eta = -0{,}25 - 0{,}08 \cdot 0{,}3 = -0{,}274.
 \]</span></p>
-<p><strong>Leitura:</strong> <span class="math inline">\(+10\%\)</span> no preço <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(-2{,}74\%\)</span> no consumo. Receita aproximada (Laffer fraco): sobe ~<span class="math inline">\(7{,}3\%\)</span> por unidade de tributo.</p>
+<p><strong>Leitura:</strong> <span class="math inline">\(+10\%\)</span> no preço <span class="math inline">\(\Rightarrow\)</span> <span class="math inline">\(-2{,}74\%\)</span> no consumo. Gasto agregado do consumidor com o bem sobe <span class="math inline">\(\sim 7{,}3\%\)</span> (<span class="math inline">\(\Delta\ln p + \Delta\ln x\)</span>). Receita tributária depende da estrutura de imposto pré-existente — discutimos no Bloco 4 com CV.</p>
 <div class="bridge">
 <p>Análise de incidência exige Hicksiana — CV/EV no Bloco 4. Marshalliana só conta arrecadação.</p>
 </div>
@@ -975,11 +989,11 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 </section>
 <section class="slide level2 center">
 <h2>Excedente do consumidor (2/2) — aproximação Willig</h2>
-<p><strong>Willig (AER 1976).</strong> Se <span class="math inline">\(\eta_i\)</span> é pequena e <span class="math inline">\(\Delta p\)</span> moderado:</p>
+<p><strong>Willig (AER 1976) — cota de 2ª ordem, forma adimensional.</strong> Se <span class="math inline">\(\eta_i\)</span> é pequena e <span class="math inline">\(\Delta p\)</span> moderado:</p>
 <p><span class="math display">\[
-|\Delta\text{EC} - \text{CV}| \;\sim\; \eta_i\cdot s_i\cdot (\Delta p)^2.
+\frac{|\Delta\text{EC} - \text{CV}|}{m} \;\sim\; \frac{s_i\,|\eta_i|}{2}\left(\frac{\Delta p}{p}\right)^2.
 \]</span></p>
-<p><strong>Erro desprezível</strong> para muitos exercícios aplicados.</p>
+<p><strong>Erro de 2ª ordem</strong> em <span class="math inline">\(\Delta p/p\)</span>: desprezível para mudanças de preço pequenas; cresce quadraticamente conforme <span class="math inline">\(\Delta p/p\)</span> aumenta.</p>
 <div class="bridge">
 <p>Em quase-linear, <span class="math inline">\(\eta_i = 0\)</span> para todos exceto numerário — EC, CV e EV coincidem exatamente.</p>
 </div>
@@ -1012,8 +1026,9 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 <section class="slide level2 center">
 <h2>CV/EV em CD (1/3) — setup numérico</h2>
 <p><strong>Setup:</strong> <span class="math inline">\(u = x_1^{1/2} x_2^{1/2}\)</span>, <span class="math inline">\(m = 16\)</span>, <span class="math inline">\(p_2 = 1\)</span>. <span class="math inline">\(p_1: 1 \to 4\)</span>.</p>
-<p><strong>Antes</strong> (<span class="math inline">\(p_1=1\)</span>): <span class="math inline">\(x_1^M = 8,\, x_2^M = 8,\, u^0 = 8\)</span>.</p>
-<p><strong>Depois</strong> (<span class="math inline">\(p_1=4\)</span>): <span class="math inline">\(x_1^M = 2,\, x_2^M = 8,\, u^1 = 4\)</span>.</p>
+<p><strong>Notação:</strong> <span class="math inline">\(x^{M,0}\)</span> = cesta marshalliana em <span class="math inline">\((p^0, m)\)</span> (antes do choque); <span class="math inline">\(x^{M,1}\)</span> = cesta marshalliana em <span class="math inline">\((p^1, m)\)</span> (depois). Análogo para <span class="math inline">\(u^0, u^1\)</span>.</p>
+<p><strong>Antes</strong> (<span class="math inline">\(p_1=1\)</span>): <span class="math inline">\(x^{M,0} = (8, 8),\; u^0 = 8\)</span>.</p>
+<p><strong>Depois</strong> (<span class="math inline">\(p_1=4\)</span>): <span class="math inline">\(x^{M,1} = (2, 8),\; u^1 = 4\)</span>.</p>
 <p><strong>Função gasto (CD):</strong> <span class="math inline">\(e(p_1, p_2, \bar u) = 2\bar u\sqrt{p_1 p_2}\)</span>.</p>
 <div class="bridge">
 <p>Próximo: aplicar fórmulas em CV e EV.</p>
@@ -1051,7 +1066,7 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 <p><span class="math inline">\(\text{CV} = 16 \neq \text{EV} = 8\)</span>. A diferença mede o efeito-renda em <span class="math inline">\(x_1\)</span>.</p>
 </div>
 <div class="bridge">
-<p>Em geral, para alta de preço de bem normal: <span class="math inline">\(\text{EV} \leq \Delta\text{EC} \leq \text{CV}\)</span>. Em CD, valor exato sai do path-dependence numericamente.</p>
+<p>Em CD, <span class="math inline">\(\Delta\text{EC} = 8\ln 4 \approx 11{,}09\)</span> via integração direta. Está estritamente entre <span class="math inline">\(\text{EV} = 8\)</span> e <span class="math inline">\(\text{CV} = 16\)</span>, refletindo o efeito-renda não-trivial em CD simétrica com <span class="math inline">\(\Delta p_1/p_1 = 3\)</span>.</p>
 </div>
 </section>
 <section class="slide level2 section-divider center" data-background-color="#1B3A5C">
@@ -1123,7 +1138,7 @@ x_i^M\cdot \underbrace{\frac{\partial x_i^M}{\partial m}}_{\gtrless\, 0}.
 <li>CV/EV — bem-estar do equilíbrio (1º e 2º teoremas).</li>
 </ul>
 <div class="bridge">
-<p>Aula 4: trocas (Edgeworth) + produção. Aula 5: tempo, contingência, risco. Aula 6: Arrow-Debreu fecha.</p>
+<p>Aula 4: trocas (Edgeworth) + produção (1º TFB). Aula 5: Arrow-Debreu I — bens contingentes, tempo, risco. Aula 6: Arrow-Debreu II — existência, equilíbrio competitivo.</p>
 </div>
 </section>
 <section class="slide level2 center">

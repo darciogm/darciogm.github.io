@@ -20,7 +20,7 @@
 
 | Bloco | Conteúdo | Início | Fim | Duração |
 |---|---|---|---|---|
-| 0 | Abertura + reflexões da pré-aula + recall | 19:30 | 19:35 | 5 min |
+| 0 | Abertura + recall | 19:30 | 19:35 | 5 min |
 | 1 | Slutsky: derivação e intuição | 19:35 | 20:15 | 40 min |
 | P1 | Pausa | 20:15 | 20:25 | 10 min |
 | 2 | Bens normais, inferiores, Giffen | 20:25 | 21:00 | 35 min |
@@ -38,7 +38,7 @@
 ## Bloco 0 — Abertura (5 min, 19:30–19:35)
 
 - [ ] **Check-in (1 min):** chamada, "papel e caneta — Slutsky se aprende com a mão".
-- [ ] **Triagem das reflexões (3 min):** puxar do dashboard as 2-3 dúvidas agregadas mais comuns da pré-aula 3. Slides já têm o quadro de "tema mais nebuloso → ação na aula".
+- [ ] **Triagem oral das reflexões (3 min):** puxar do dashboard as 2-3 dúvidas agregadas mais comuns da pré-aula 3 (D-1) e anunciar onde a aula resolve cada uma. Sem slide dedicado — comentar oralmente e seguir.
   - Se "por que o sinal de \(-x_j(\partial x_i/\partial m)\) é o certo" estiver no top, anunciar que vai ser resolvido **na derivação completa do Bloco 1**, não agora.
   - Se "Hicksiana cruzada \(\neq 0\) em CD" aparece, anunciar que o Box-CD do Bloco 1 fecha.
   - Se "Giffen real existe" estiver no topo, anunciar Box Mundo do Bloco 2 (Hunan).
@@ -184,7 +184,7 @@ Tabela no quadro (ou slide compact-table):
 
 - [ ] **Setup:** \(s = 0{,}08\), \(\eta = 0{,}3\), \(\varepsilon^c = -0{,}25\).
 - [ ] **Slutsky:** \(\varepsilon = -0{,}25 - 0{,}08\cdot 0{,}3 = -0{,}274\).
-- [ ] **Receita:** alta 10% no preço, queda 2,74% na quantidade ⇒ receita por unidade tributária sobe ~7,3% (Laffer fraco).
+- [ ] **Gasto agregado** do consumidor com o bem sobe ~7,3% (\(\Delta\ln p + \Delta\ln x = 10\% - 2{,}74\%\)). Receita tributária depende da estrutura de imposto pré-existente — discutimos no Bloco 4 com CV. (Não invocar "Laffer fraco" — confunde campo da arrecadação com campo do gasto do consumidor.)
 - [ ] **Caveat:** análise de incidência exige Hicksiana — Bloco 4. A Marshalliana só conta arrecadação, não bem-estar.
 
 ---

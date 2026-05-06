@@ -107,7 +107,7 @@ Aula 2 fechou a dualidade. Hoje a dualidade *trabalha*: decompõe efeito-preço,
 
 | Bloco | Conteúdo | Tempo |
 |:---|:---|---:|
-| 0 | Abertura + reflexões + recall | 19:30–19:35 |
+| 0 | Abertura + recall | 19:30–19:35 |
 | 1 | Slutsky: derivação e intuição | 19:35–20:15 |
 | — | *Pausa* | 20:15–20:25 |
 | 2 | Normais, inferiores, Giffen | 20:25–21:00 |
@@ -118,22 +118,6 @@ Aula 2 fechou a dualidade. Hoje a dualidade *trabalha*: decompõe efeito-preço,
 
 ::: {.bridge}
 3h cheias, duas pausas. Bloco 1 é onde a álgebra trava — defendo o tempo.
-:::
-
----
-
-## Reflexões da pré-aula 3
-
-::: {.compact-table}
-| Top-3 do dashboard | Onde a aula responde |
-|:---|:---|
-| Sinal de $-x_j (\partial x_i/\partial m)$ | Bloco 1 — derivação completa |
-| Hicksiana cruzada $\neq 0$ vs. Marshalliana cruzada $= 0$ em CD | Bloco 1 + Box CD |
-| "Giffen real existe?" | Box Mundo (arroz Hunan) |
-:::
-
-::: {.bridge}
-Pontos de pico viram exemplos guiados. Quem registrou dúvida específica, a aula responde.
 :::
 
 ---
@@ -237,7 +221,7 @@ Próximo: Roy + identidade dual fecham os termos restantes — os $\lambda^*$ ca
 
 ## Derivação de Slutsky (3/4) — Roy + dual
 
-**Roy:** $\partial v/\partial p_j = -\lambda^* x_j^M$.
+**Roy:** $\partial v/\partial p_j = -\lambda^* x_j^M$ — *(reescrita do recall com $\lambda^* = \partial v/\partial m$, fechando o loop da Aula 2).*
 
 **Dual** $h_i = x_i^M(p, e(p, \bar u))$, derivada em $\bar u$:
 
@@ -273,6 +257,20 @@ Substituição vem de Shephard. Renda vem de Engel. Slutsky soma os dois.
 
 ---
 
+## Armadilha — índice no efeito-renda da cruzada
+
+**Slutsky cruzada ($i \neq j$):** $\;\partial x_i^M/\partial p_j = \partial h_i/\partial p_j - x_j^M\cdot \partial x_i^M/\partial m$.
+
+**Atenção ao índice:** o efeito-renda multiplica $x_j^M$ — *o bem cujo preço mudou* — não $x_i^M$.
+
+**Razão:** uma alta de $p_j$ "rouba" poder de compra proporcional a $x_j^M$ unidades.
+
+::: {.bridge}
+Erro clássico em prova: trocar $x_j$ por $x_i$ no termo de renda. Próximo: ler os sinais.
+:::
+
+---
+
 ## Ler os sinais
 
 ::: {.compact-table}
@@ -290,9 +288,9 @@ Lei da demanda compensada é **teorema**. Lei da Marshalliana é **tendência** 
 
 ---
 
-## Sanidade em CD (1/4) — setup
+## Sanidade em CD com $\alpha = 1/2$ (1/4) — setup
 
-**Setup:** $u = x_1^\alpha x_2^{1-\alpha}$, $\alpha = 1/2$, $m$ qualquer.
+**Setup:** $u = x_1^\alpha x_2^{1-\alpha}$, $\alpha = 1/2$ (caso simétrico), $m$ qualquer.
 
 **Marshalliana:** $x_1^M = m/(2 p_1)$ — não depende de $p_2$.
 
@@ -304,7 +302,7 @@ Próximo: aplicar Slutsky em $\partial x_1^M/\partial p_2$ e ler termo a termo.
 
 ---
 
-## Sanidade em CD (2/4) — Slutsky termo a termo
+## Sanidade em CD com $\alpha = 1/2$ (2/4) — Slutsky termo a termo
 
 **Slutsky em $\partial x_1^M/\partial p_2$:**
 
@@ -324,7 +322,7 @@ Próximo: confirmar a substituição via Hicksiana e somar.
 
 ---
 
-## Sanidade em CD (3/4) — Hicksiana cruzada
+## Sanidade em CD com $\alpha = 1/2$ (3/4) — Hicksiana cruzada
 
 **Hicksiana:** $h_1 = \bar u\sqrt{p_2/p_1}$ (de $e = 2\bar u\sqrt{p_1 p_2}$).
 
@@ -340,7 +338,7 @@ Substituição $> 0$. Próximo: somar com renda — cancelamento exato.
 
 ---
 
-## Sanidade em CD (4/4) — soma e leitura
+## Sanidade em CD com $\alpha = 1/2$ (4/4) — soma e leitura
 
 **Slutsky em $\partial x_1^M/\partial p_2$:**
 
@@ -425,6 +423,28 @@ Próximo: condições para que o sinal *vire* — bem inferior + parcela alta.
 
 ::: {.eq-punch}
 Inferior é necessário, parcela alta é amplificador, e só então o sinal de Slutsky vira.
+:::
+
+---
+
+## Giffen unificado em uma condição
+
+**Slutsky em elasticidades** (próprio preço):
+
+::: {.eq-key}
+$$
+\varepsilon_{ii} \;=\; \varepsilon^c_{ii} \;-\; s_i\,\eta_i.
+$$
+:::
+
+**Giffen** $\Leftrightarrow$ $\varepsilon_{ii} > 0$ $\Leftrightarrow$ $s_i\,|\eta_i| > |\varepsilon^c_{ii}|$ (com $\eta_i < 0$).
+
+::: {.bridge}
+As "três alavancas" (parcela alta, inferior forte, compensada baixa) são leituras dessa única desigualdade.
+:::
+
+::: {.notes}
+Recolocar para o aluno: tudo que vimos no slide anterior é uma decomposição qualitativa de uma única condição quantitativa. $s_i$ alto multiplica o efeito-renda; $|\eta_i|$ alto também; $|\varepsilon^c_{ii}|$ baixo deixa o efeito-renda dominar. Não são três condições independentes — é uma única desigualdade, lida em três direções.
 :::
 
 ---
@@ -663,12 +683,16 @@ Quatro restrições, quatro testes. Demanda estimada que viola = mal-especificad
 
 ## Bruto vs. líquido (2/3) — CD como contraexemplo
 
-**Em Cobb-Douglas:**
+**Em Cobb-Douglas com qualquer $\alpha \in (0, 1)$:**
 
-- $\partial x_1^M/\partial p_2 = 0$ → Marshalliana cruzada zera.
-- $\partial h_1/\partial p_2 > 0$ → Hicksiana cruzada positiva.
+- Marshalliana cruzada $\partial x_1^M/\partial p_2 = 0$ — não depende de $\alpha$.
+- Hicksiana cruzada $\partial h_1/\partial p_2 > 0$ — substitutos líquidos sempre.
 
-**Conclusão:** em CD, bens são **substitutos líquidos** mas **independentes brutos**.
+**Conclusão:** em CD, bens são **substitutos líquidos sempre** e **brutos nunca** — independente de $\alpha$.
+
+::: {.notes}
+Forma específica para o caso simétrico ($\alpha = 1/2$, $u^0 = m/(2\sqrt{p_1 p_2})$): $\partial h_1/\partial p_2 = m/(4 p_1 p_2)$ avaliada na utilidade marshalliana — número que sai da sanidade do Bloco 1. Para $\alpha$ geral, a forma é $\alpha(1-\alpha)\,m/(p_1 p_2)$ avaliada na utilidade marshalliana — sempre positiva.
+:::
 
 ::: {.bridge}
 Próximo: implicação prática para política e bem-estar.
@@ -710,7 +734,7 @@ $$
 \varepsilon_{\text{cc}} = \varepsilon^c_{\text{cc}} - s\,\eta = -0{,}25 - 0{,}08 \cdot 0{,}3 = -0{,}274.
 $$
 
-**Leitura:** $+10\%$ no preço $\Rightarrow$ $-2{,}74\%$ no consumo. Receita aproximada (Laffer fraco): sobe ~$7{,}3\%$ por unidade de tributo.
+**Leitura:** $+10\%$ no preço $\Rightarrow$ $-2{,}74\%$ no consumo. Gasto agregado do consumidor com o bem sobe $\sim 7{,}3\%$ ($\Delta\ln p + \Delta\ln x$). Receita tributária depende da estrutura de imposto pré-existente — discutimos no Bloco 4 com CV.
 
 ::: {.bridge}
 Análise de incidência exige Hicksiana — CV/EV no Bloco 4. Marshalliana só conta arrecadação.
@@ -820,13 +844,13 @@ Próximo: quão ruim é a aproximação na prática (Willig).
 
 ## Excedente do consumidor (2/2) — aproximação Willig
 
-**Willig (AER 1976).** Se $\eta_i$ é pequena e $\Delta p$ moderado:
+**Willig (AER 1976) — cota de 2ª ordem, forma adimensional.** Se $\eta_i$ é pequena e $\Delta p$ moderado:
 
 $$
-|\Delta\text{EC} - \text{CV}| \;\sim\; \eta_i\cdot s_i\cdot (\Delta p)^2.
+\frac{|\Delta\text{EC} - \text{CV}|}{m} \;\sim\; \frac{s_i\,|\eta_i|}{2}\left(\frac{\Delta p}{p}\right)^2.
 $$
 
-**Erro desprezível** para muitos exercícios aplicados.
+**Erro de 2ª ordem** em $\Delta p/p$: desprezível para mudanças de preço pequenas; cresce quadraticamente conforme $\Delta p/p$ aumenta.
 
 ::: {.bridge}
 Em quase-linear, $\eta_i = 0$ para todos exceto numerário — EC, CV e EV coincidem exatamente.
@@ -871,9 +895,11 @@ Triângulo de Harberger num livro = está implicitamente quase-linear ou efeito-
 
 **Setup:** $u = x_1^{1/2} x_2^{1/2}$, $m = 16$, $p_2 = 1$. $p_1: 1 \to 4$.
 
-**Antes** ($p_1=1$): $x_1^M = 8,\, x_2^M = 8,\, u^0 = 8$.
+**Notação:** $x^{M,0}$ = cesta marshalliana em $(p^0, m)$ (antes do choque); $x^{M,1}$ = cesta marshalliana em $(p^1, m)$ (depois). Análogo para $u^0, u^1$.
 
-**Depois** ($p_1=4$): $x_1^M = 2,\, x_2^M = 8,\, u^1 = 4$.
+**Antes** ($p_1=1$): $x^{M,0} = (8, 8),\; u^0 = 8$.
+
+**Depois** ($p_1=4$): $x^{M,1} = (2, 8),\; u^1 = 4$.
 
 **Função gasto (CD):** $e(p_1, p_2, \bar u) = 2\bar u\sqrt{p_1 p_2}$.
 
@@ -926,7 +952,7 @@ $\text{CV} = 16 \neq \text{EV} = 8$. A diferença mede o efeito-renda em $x_1$.
 :::
 
 ::: {.bridge}
-Em geral, para alta de preço de bem normal: $\text{EV} \leq \Delta\text{EC} \leq \text{CV}$. Em CD, valor exato sai do path-dependence numericamente.
+Em CD, $\Delta\text{EC} = 8\ln 4 \approx 11{,}09$ via integração direta. Está estritamente entre $\text{EV} = 8$ e $\text{CV} = 16$, refletindo o efeito-renda não-trivial em CD simétrica com $\Delta p_1/p_1 = 3$.
 :::
 
 ---
@@ -1016,7 +1042,7 @@ Equilíbrio é ponto-fixo no espaço de preços. Próximo: o que da Aula 3 entra
 - CV/EV — bem-estar do equilíbrio (1º e 2º teoremas).
 
 ::: {.bridge}
-Aula 4: trocas (Edgeworth) + produção. Aula 5: tempo, contingência, risco. Aula 6: Arrow-Debreu fecha.
+Aula 4: trocas (Edgeworth) + produção (1º TFB). Aula 5: Arrow-Debreu I — bens contingentes, tempo, risco. Aula 6: Arrow-Debreu II — existência, equilíbrio competitivo.
 :::
 
 ---

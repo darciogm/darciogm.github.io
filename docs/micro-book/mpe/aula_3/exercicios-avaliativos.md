@@ -65,9 +65,9 @@ Em \(p = (p_1, p_2) = (2, 1)\) e \(m = 12\), você quer aplicar a equação de S
 
 ---
 
-## Exercício 2 🟡 — Slutsky em Cobb-Douglas com bem inferior simulado
+## Exercício 2 🟡 — Stone-Geary com subsistência genuína: necessidade não-homotética
 
-**Enunciado.** Considere a forma **Stone-Geary** \(u(x_1, x_2) = (x_1 - \gamma_1)^{\alpha}(x_2 - \gamma_2)^{1-\alpha}\) com \(\alpha = 1/2\), \(\gamma_1 = -2\) e \(\gamma_2 = 0\).
+**Enunciado.** Considere a forma **Stone-Geary** \(u(x_1, x_2) = (x_1 - \gamma_1)^{\alpha}(x_2 - \gamma_2)^{1-\alpha}\) com \(\alpha = 1/2\), \(\gamma_1 = 1\) e \(\gamma_2 = 0{,}5\) (ambos positivos — subsistência genuína).
 
 > **Fato dado (forma fechada da demanda LES):**
 >
@@ -75,58 +75,58 @@ Em \(p = (p_1, p_2) = (2, 1)\) e \(m = 12\), você quer aplicar a equação de S
 > x_i(p, m) \;=\; \gamma_i \;+\; \dfrac{\beta_i}{p_i}\,\Bigl(m - \textstyle\sum_k p_k\gamma_k\Bigr), \qquad \sum_i \beta_i = 1,\ m > \textstyle\sum_k p_k\gamma_k.
 > \]
 >
-> Os parâmetros \(\gamma_i\ge 0\) representam **mínimos de subsistência** (consumo de "piso") e \(\beta_i\) é a **propensão marginal a consumir** o gasto excedente em \(i\). Aqui \(\beta_1 = \alpha\), \(\beta_2 = 1-\alpha\); o exercício admite \(\gamma_1 < 0\) (lido como "ponto de saturação" em vez de subsistência) desde que \(m > \sum_k p_k \gamma_k\). Referência: N&S 12e §4.4 (Apêndice de formas funcionais); Deaton & Muellbauer (1980).
+> Os parâmetros \(\gamma_i \ge 0\) representam **mínimos de subsistência** (consumo de "piso") e \(\beta_i\) é a **propensão marginal a consumir** o gasto excedente em \(i\). Aqui \(\beta_1 = \alpha\), \(\beta_2 = 1-\alpha\). Referência: N&S 12e §4.4 (Apêndice de formas funcionais); Stone (1954, *EJ*).
 >
 > **Você não precisa derivar essa fórmula a partir da utilidade — opere diretamente sobre ela.**
 
-Em \(p = (1, 1)\), \(m = 8\), com \(\gamma_1 = -2\), \(\gamma_2 = 0\), \(\alpha = 1/2\):
+Em \(p = (1, 1)\), \(m = 8\), com \(\gamma_1 = 1\), \(\gamma_2 = 0{,}5\), \(\alpha = 0{,}5\):
 
 ### (a) A Marshalliana \((x_1^M, x_2^M)\) vale:
 
-- (i) \((-2 + 5, 0 + 5) = (3, 5)\). **← CORRETA**
+- (i) \((4{,}25,\; 3{,}75)\) — \(\sum p_k\gamma_k = 1{,}5\), residual \(6{,}5\); cada bem ganha \(0{,}5\cdot 6{,}5 = 3{,}25\) sobre seu piso. **← CORRETA**
 - (ii) \((4, 4)\) — Cobb-Douglas pura.
-- (iii) \((-2, 0)\) — apenas as constantes.
-- (iv) \((5, 5)\) — \(m/2\) em cada bem.
+- (iii) \((1,\; 0{,}5)\) — apenas as constantes \(\gamma_i\).
+- (iv) \((5, 3)\) — chute "renda dividida em duas".
 
-### (b) A elasticidade-renda \(\eta_1 = (m/x_1^M)\cdot \partial x_1^M/\partial m\) em \((1, 1, 8)\) é:
+### (b) A elasticidade-renda \(\eta_1 = (m/x_1^M)\cdot \partial x_1^M/\partial m\) em \((p, m) = (1, 1, 8)\) é:
 
 - (i) \(\eta_1 = 1\) — homotetia CD.
-- (ii) \(\eta_1 = (8/3)\cdot (1/2) = 4/3 \approx 1{,}33\). **← CORRETA**
-- (iii) \(\eta_1 = 0{,}5\) — apenas o expoente.
+- (ii) \(\eta_1 = (8/4{,}25)\cdot 0{,}5 \approx 0{,}941\). **← CORRETA**
+- (iii) \(\eta_1 = 0{,}5\) — apenas o \(\beta_1\).
 - (iv) \(\eta_1\) é negativa — bem inferior.
 
-### (c) Em Stone-Geary com \(\gamma_1 < 0\), o bem 1 é classificado como:
+### (c) Com \(\gamma_1, \gamma_2 > 0\) e \(\eta_1 \approx 0{,}94\) na faixa avaliada, o bem 1 é classificado como:
 
-- (i) **Luxo** — \(\eta_1 > 1\) acima do nível de saturação. **← CORRETA**
-- (ii) Necessidade — \(\eta_1 \in (0, 1)\).
-- (iii) Inferior — \(\gamma_1 < 0\) implica \(\eta_1 < 0\).
-- (iv) Giffen — \(\gamma_1 < 0\) implica reação anômala em preço.
+- (i) **Necessidade** — \(\eta_1 \in (0, 1)\); subsistência genuína "amortece" a resposta de \(x_1\) à renda. **← CORRETA**
+- (ii) Luxo — \(\eta_1 > 1\) em qualquer Stone-Geary com \(\gamma > 0\).
+- (iii) Inferior — \(\gamma_1 > 0\) implica \(\eta_1 < 0\).
+- (iv) Homotético — Stone-Geary com \(\gamma > 0\) preserva homotetia.
 
-### (d) Aplicando Slutsky em \(\partial x_1^M/\partial p_2\) (cruzada Marshalliana), o sinal de cada termo é:
+### (d) Aplicando Slutsky em \(\partial x_1^M/\partial p_2\) (cruzada Marshalliana, com \(\gamma_2 > 0\)):
 
-- (i) Marshalliana cruzada zero, substituição zero, renda zero — independente.
-- (ii) Marshalliana cruzada \(< 0\) (de fato, \(\partial x_1^M/\partial p_2 = -\alpha\gamma_2/p_1 = 0\) aqui), substituição \(> 0\), renda \(< 0\).
-- (iii) Marshalliana cruzada \(\neq 0\) em geral; aqui particularmente \(\gamma_2 = 0\) zera. Substituição \(> 0\), renda \(< 0\). Os dois quase-cancelam. **← CORRETA**
-- (iv) Marshalliana cruzada \(> 0\), substituição zero, renda \(> 0\).
+- (i) \(\partial x_1^M/\partial p_2 = 0\) — independência marshalliana automática em LES.
+- (ii) \(\partial x_1^M/\partial p_2 = -\beta_1\gamma_2/p_1 = -0{,}25\) (negativo); substituição \(\partial h_1/\partial p_2 > 0\); renda \(-x_2^M(\partial x_1^M/\partial m) = -3{,}75\cdot 0{,}5 = -1{,}875 < 0\). Os dois efeitos não se cancelam: o termo "subsistência cruzada" \(-\beta_1\gamma_2\) entra na cruzada Marshalliana mesmo após Slutsky. **← CORRETA**
+- (iii) Marshalliana cruzada \(> 0\); substituição zero; renda \(> 0\).
+- (iv) Marshalliana cruzada zero; substituição zero; renda zero — independente em todos os níveis.
 
 ### (e) Sobre a estrutura de Stone-Geary como modelo empírico:
 
-- (i) É forma funcional rica que permite \(\eta_i \neq 1\) por bem (não-homotética) preservando integração de Slutsky. **← CORRETA**
+- (i) É forma funcional **não-homotética** que permite \(\eta_i \neq 1\) por bem, preservando integração de Slutsky. **← CORRETA**
 - (ii) É equivalente a CD com mudança de variável trivial.
-- (iii) Implica \(\eta_i = \alpha_i\) por bem.
-- (iv) Não é compatível com restrição orçamentária.
+- (iii) Implica \(\eta_i = \alpha_i\) por bem (parcela = elasticidade-renda).
+- (iv) Não é compatível com restrição orçamentária quando \(\gamma_i > 0\).
 
 ### Gabarito 5-passos — Exercício 2
 
-**1. Ponto-chave.** O exercício pede para **trabalhar dentro da forma LES sem precisar derivar a partir da utilidade** — a fórmula fechada \(x_i = \gamma_i + (\beta_i/p_i)(m - \sum_k p_k\gamma_k)\) é dada como "fato", e o aluno apenas substitui e diferencia. A leitura conceitual é que Stone-Geary é uma generalização **não-homotética** de CD: os \(\gamma_i\) deslocam o "piso" de consumo e tornam a elasticidade-renda **dependente do nível de renda** (ao contrário da CD homotética, onde \(\eta_i = 1\) por construção). Se \(\gamma_1 < 0\), o bem 1 vira luxo (\(\eta_1 > 1\)) — útil para modelar bens cujo consumo cresce mais que proporcional à renda. Em prova ANPEC, Stone-Geary aparece quando se quer "elasticidades flexíveis" sem perder integração de Slutsky.
+**1. Ponto-chave.** Stone-Geary com \(\gamma_1, \gamma_2 > 0\) é o caso clássico de **subsistência genuína**: cada bem tem um "piso" \(\gamma_i\) que o consumidor compra antes de alocar o resíduo \(m - \sum p_k\gamma_k\) no formato CD. A consequência operacional é que **\(\eta_i\) deixa de ser 1** — a parcela CD \(\beta_i\) só governa o gasto *acima* do piso. Quando \(\gamma_i\) é importante na cesta (como aqui, com \(\gamma_1/x_1 \approx 0{,}24\)), \(\eta_i\) cai abaixo de 1 e o bem se comporta como **necessidade**: alguém que dobra a renda *não* dobra o consumo de \(x_1\), porque o piso já estava coberto.
 
-**2. Derivação.** \(x_1^M = -2 + (1/2)(8 + 2)/1 = -2 + 5 = 3\); \(x_2^M = (1/2)(10)/1 = 5\). Walras: \(3 + 5 = 8\). ✓ \(\partial x_1^M/\partial m = 1/(2 p_1) = 1/2\); \(\eta_1 = (8/3)(1/2) = 4/3\). ✓ \(\eta_1 > 1\): luxo.
+**2. Derivação.** Soma de pisos: \(\sum p_k\gamma_k = 1\cdot 1 + 1\cdot 0{,}5 = 1{,}5\); residual \(m - \sum p_k\gamma_k = 6{,}5\). \(x_1^M = 1 + (0{,}5/1)(6{,}5) = 4{,}25\); \(x_2^M = 0{,}5 + (0{,}5/1)(6{,}5) = 3{,}75\). Walras: \(4{,}25 + 3{,}75 = 8\). ✓ \(\partial x_1^M/\partial m = \beta_1/p_1 = 0{,}5\); \(\eta_1 = (8/4{,}25)(0{,}5) = 4/4{,}25 \approx 0{,}941 < 1\) — necessidade. Cruzada Marshalliana: \(\partial x_1^M/\partial p_2 = -\beta_1\gamma_2/p_1 = -0{,}25\). Slutsky: substituição \(\partial h_1/\partial p_2 > 0\); renda \(-x_2^M(\partial x_1^M/\partial m) = -1{,}875\). Os dois somam exatamente \(-0{,}25\) (substituição compensa parcialmente o efeito-renda, mas não chega ao cancelamento perfeito da CD pura).
 
-**3. Armadilha.** Item (b)(i): assumir homotetia automática em qualquer extensão de CD. Stone-Geary é não-homotética por construção — \(\gamma_i\) quebram homotetia. Item (c)(iii): confundir \(\gamma_1 < 0\) com inferioridade. Inferioridade é \(\eta < 0\); Stone-Geary com \(\gamma_1 < 0\) e \(\alpha = 0{,}5\) dá \(\eta_1 = 4/3 > 0\), bem normal e luxo.
+**3. Armadilha.** Item (b)(i): "qualquer extensão de CD é homotética". Falso — \(\gamma_i > 0\) quebra homotetia, é por isso que LES existe. Item (c)(ii): "Stone-Geary com \(\gamma > 0\) ⇒ luxo". Errado — com \(\gamma_i > 0\), o piso "rouba" parte da renda e \(\eta_i\) tipicamente fica **abaixo** de 1 (necessidade). Item (d)(i): aluno confunde com CD pura, onde a cruzada zera. Aqui \(\gamma_2 > 0\) entra explicitamente no termo \(-\beta_1\gamma_2\) da Marshalliana cruzada — *não* zera.
 
-**4. Extensão (Aula 3 + AIDS).** Stone-Geary é base do "Linear Expenditure System" (LES) de Stone (1954). Em sistemas modernos AIDS/QUAIDS, a flexibilidade é estendida para incluir termos quadráticos em log-renda (luxo "saturando"). Empiricamente, calibra-se \(\gamma_i\) por bem — interpretado como "demanda de subsistência" se \(\gamma_i > 0\), ou "elasticidade luxo" se \(\gamma_i < 0\). POF brasileira tem dados ricos para essa estimação.
+**4. Extensão (Aula 3 + sistemas empíricos).** Stone-Geary é o ponto de partida do *Linear Expenditure System* (Stone 1954, *Economic Journal*) e antecessor estrutural do AIDS (Deaton & Muellbauer 1980). Em estimação empírica com POF, calibra-se \(\gamma_i\) e \(\beta_i\) por bem; \(\gamma_i > 0\) gera \(\eta_i < 1\) tipicamente para alimentos básicos (necessidade), e \(\beta_i\) ganha leitura de "fração marginal do excedente". Em política tributária (Bloco 4 desta aula), CV depende crucialmente da heterogeneidade de \(\gamma_i\) entre decis — pobres têm \(\gamma_i\) relativo maior na cesta básica, daí a regressividade discutida no Box Brasil.
 
-**5. Peer-review.** Calibre 🟡 — testa Stone-Geary como extensão funcional não-homotética. Aluno que assume \(\eta = 1\) por reflexo errou (i)/(b)(i). Quem chega em \(\eta_1 = 4/3\) demonstra fluência em manipular formas funcionais. **Risco residual:** o exercício depende de o aluno conhecer a fórmula fechada de Stone-Geary; alternativa pedagógica é derivar via Lagrangiano (mais trabalhoso, mas instrutivo).
+**5. Peer-review.** Calibre 🟡 — testa três pontos: (i) Stone-Geary é **não-homotética** mesmo com \(\gamma > 0\) (não confundir com luxo/saturação); (ii) elasticidade-renda na faixa avaliada é função explícita de \((m, \gamma, \beta)\), não do parâmetro CD sozinho; (iii) cruzada Marshalliana **não zera** quando \(\gamma_2 > 0\). Aluno que decora "Stone-Geary = CD com pequena correção" perde o (b) e o (d). Risco residual: a fórmula fechada é dada como fato — quem quiser mais rigor pode derivar via Lagrangiano sobre \((x_1 - \gamma_1, x_2 - \gamma_2)\), exercício rotineiro mas longo.
 
 ---
 
@@ -304,10 +304,10 @@ u(x_1, x_2, x_3) = x_1^{0{,}3}\,x_2^{0{,}5}\,x_3^{0{,}2}, \qquad p = (1, 2, 5),\
 
 **Enunciado.** Um governo introduz imposto específico \(t\) sobre o bem 1 (combustível), elevando seu preço pré-imposto \(p_1\) em \(\Delta p_1 = t\). Estimativas estruturais (sistema AIDS calibrado em POF):
 
-- Parcela: \(s_1 = 0{,}08\), \(s_2 = 0{,}30\) (transporte público), \(s_3 = 0{,}62\) (resto).
-- Elasticidade-renda: \(\eta_1 = 0{,}3\) (necessidade), \(\eta_2 = 1{,}2\) (luxo), \(\eta_3 = 0{,}97\) (mediana).
+- Parcela: \(s_1 = 0{,}08\), \(s_2 = 0{,}30\) (viagens de lazer), \(s_3 = 0{,}62\) (resto).
+- Elasticidade-renda: \(\eta_1 = 0{,}3\) (necessidade), \(\eta_2 = 1{,}2\) (luxo — viagens crescem mais que renda), \(\eta_3 = 0{,}97\) (mediana).
 - Elasticidades compensadas (estimadas; verificam Engel, Cournot, simetria, semidef. neg.):
-  \(\varepsilon^c_{11} = -0{,}25\), \(\varepsilon^c_{21} = +0{,}10\), \(\varepsilon^c_{31} = +0{,}05\).
+  \(\varepsilon^c_{11} = -0{,}25\), \(\varepsilon^c_{21} = +0{,}10\) (lazer e combustível são substitutos líquidos — viagem de carro vs. avião/ônibus), \(\varepsilon^c_{31} = +0{,}05\).
 
 ### (a) A elasticidade-preço Marshalliana de combustível \(\varepsilon_{11}\) é:
 
@@ -316,12 +316,12 @@ u(x_1, x_2, x_3) = x_1^{0{,}3}\,x_2^{0{,}5}\,x_3^{0{,}2}, \qquad p = (1, 2, 5),\
 - (iii) \(-0{,}25\) — sem ajuste de Slutsky.
 - (iv) \(-0{,}25 - 0{,}30\cdot 0{,}3 = -0{,}340\).
 
-### (b) A elasticidade-preço cruzada Marshalliana, transporte público em relação a combustível, \(\varepsilon_{21}\), via Slutsky:
+### (b) A elasticidade-preço cruzada Marshalliana, viagens de lazer em relação a combustível, \(\varepsilon_{21}\), via Slutsky:
 
 - (i) \(+0{,}10 - 0{,}08\cdot 1{,}2 = +0{,}004\). **← CORRETA**
 - (ii) \(+0{,}10 + 0{,}08\cdot 1{,}2 = +0{,}196\).
 - (iii) \(+0{,}10\) — Marshalliana = Hicksiana em cruzadas.
-- (iv) \(0\) — combustível e transporte público são independentes brutos.
+- (iv) \(0\) — combustível e viagens de lazer são independentes brutos.
 
 ### (c) Para uma alta de combustível de 10% (\(\Delta\ln p_1 = 0{,}10\)), a queda percentual em consumo Marshalliano de combustível é:
 
@@ -348,7 +348,7 @@ u(x_1, x_2, x_3) = x_1^{0{,}3}\,x_2^{0{,}5}\,x_3^{0{,}2}, \qquad p = (1, 2, 5),\
 
 **1. Ponto-chave.** Análise de incidência tributária requer **dois passos**: (i) Slutsky para passar de elasticidade compensada estimável (Hicksiana) para elasticidade Marshalliana observável; (ii) integração da Hicksiana para CV exato (ou aproximação linear). **Regressividade** vem da heterogeneidade de \(s_i\) entre decis — não dos parâmetros estruturais. Em qualquer alta de preço de bem essencial, CV/m é maior onde \(s_i\) é maior.
 
-**2. Derivação.** Slutsky: \(\varepsilon_{11} = -0{,}25 - 0{,}08(0{,}3) = -0{,}274\). Cruzada: \(\varepsilon_{21} = +0{,}10 - 0{,}08(1{,}2) = +0{,}004\) (combustível e transporte público são quase **independentes brutos** mesmo sendo **substitutos líquidos** — efeito-renda quase compensa). Queda percentual: \(\Delta\ln x_1^M = \varepsilon_{11}\cdot \Delta\ln p_1 = -0{,}274\cdot 0{,}10 = -0{,}0274\) ⇒ \(-2{,}74\%\). CV linearizada: 1ª ordem \(s_1\Delta p_1/p_1 = 0{,}08(0{,}10) = 0{,}008 = 0{,}8\%\) de \(m\); 2ª ordem \((1/2)(-0{,}25)(0{,}10) = -0{,}0125\) — multiplicando, correção de \(0{,}008(1 - 0{,}0125) \approx 0{,}79\%\). Regressividade: 1º decil tem \(s_1 \approx 0{,}15\), CV/m \(\approx 0{,}015\cdot 0{,}10 = 0{,}15\%\); 9º decil tem \(s_1 \approx 0{,}05\), CV/m \(\approx 0{,}05\%\). 1º decil paga **3× mais** em proporção da renda.
+**2. Derivação.** Slutsky: \(\varepsilon_{11} = -0{,}25 - 0{,}08(0{,}3) = -0{,}274\). Cruzada: \(\varepsilon_{21} = +0{,}10 - 0{,}08(1{,}2) = +0{,}004\) (combustível e viagens de lazer são quase **independentes brutos** mesmo sendo **substitutos líquidos** — viajar de avião em vez de carro é o canal pelo qual o efeito-renda quase compensa a substituição líquida). Queda percentual: \(\Delta\ln x_1^M = \varepsilon_{11}\cdot \Delta\ln p_1 = -0{,}274\cdot 0{,}10 = -0{,}0274\) ⇒ \(-2{,}74\%\). CV linearizada: 1ª ordem \(s_1\Delta p_1/p_1 = 0{,}08(0{,}10) = 0{,}008 = 0{,}8\%\) de \(m\); 2ª ordem \((1/2)(-0{,}25)(0{,}10) = -0{,}0125\) — multiplicando, correção de \(0{,}008(1 - 0{,}0125) \approx 0{,}79\%\). Regressividade: 1º decil tem \(s_1 \approx 0{,}15\), CV/m \(\approx 0{,}015\cdot 0{,}10 = 0{,}15\%\); 9º decil tem \(s_1 \approx 0{,}05\), CV/m \(\approx 0{,}05\%\). 1º decil paga **3× mais** em proporção da renda.
 
 **3. Armadilha.** Item (a)(ii) erra sinal de Slutsky. Item (b)(iii) "Marshalliana = Hicksiana em cruzadas" é erro grave — sempre há ajuste de renda (\(s_j\eta_i\)) na Slutsky cruzada. Item (c)(iii) "-7,4%" calcula \(\varepsilon\cdot (10\cdot \Delta p)\) — confunde fator de 10 nas escalas. Item (d)(ii) usa Marshalliana sem corrigir — aproximação grosseira que ignora 2ª ordem.
 
