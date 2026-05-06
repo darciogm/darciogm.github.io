@@ -713,9 +713,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#replication-package" class="md-nav__link">
+  <a href="#repository-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      Replication Package
+      Repository Structure
     </span>
   </a>
   
@@ -732,18 +732,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#primary-analysis-v4-r" class="md-nav__link">
+  <a href="#primary-analysis-v8-r" class="md-nav__link">
     <span class="md-ellipsis">
-      Primary Analysis (v4 -- R)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#legacy-analysis-v2v3-stata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legacy Analysis (v2/v3 -- Stata)
+      Primary Analysis (v8 — R)
     </span>
   </a>
   
@@ -783,9 +774,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#key-variables" class="md-nav__link">
+  <a href="#selection-probit-admin-channel-selection" class="md-nav__link">
     <span class="md-ellipsis">
-      Key Variables
+      Selection Probit (admin-channel selection)
     </span>
   </a>
   
@@ -797,44 +788,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-the-analysis" class="md-nav__link">
+  <a href="#pipeline-v8" class="md-nav__link">
     <span class="md-ellipsis">
-      Running the Analysis
+      Pipeline (v8)
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Running the Analysis">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#quick-start-v4-r" class="md-nav__link">
-    <span class="md-ellipsis">
-      Quick Start (v4 -- R)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#running-individual-scripts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Individual Scripts
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#legacy-analysis-stata" class="md-nav__link">
-    <span class="md-ellipsis">
-      Legacy Analysis (Stata)
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -844,39 +802,6 @@
       Output Files
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Output Files">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#tables" class="md-nav__link">
-    <span class="md-ellipsis">
-      Tables
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#figures" class="md-nav__link">
-    <span class="md-ellipsis">
-      Figures
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#manuscript_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Manuscript
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -933,283 +858,200 @@
 
 
 <h1 id="replication">Replication<a class="headerlink" href="#replication" title="Permanent link">¶</a></h1>
-<p>This page describes how to replicate the results presented in the paper.</p>
+<p>This page describes how to replicate the v8 sourcing-reframe results. The active version of the paper is <strong>v8-sourcing-reframe</strong> (JPubE Short paper, May 2026).</p>
 <hr>
-<h2 id="replication-package">Replication Package<a class="headerlink" href="#replication-package" title="Permanent link">¶</a></h2>
-<p>The full replication package includes all code, processed datasets, and manuscript source files needed to reproduce every table and figure in the paper.</p>
-<div class="admonition info">
-<p class="admonition-title">Repository Structure</p>
-<p>The replication materials are organized in version-specific directories. The <strong>v4</strong> directory contains the current primary analysis in R, while <strong>v2</strong> and <strong>v3</strong> contain legacy Stata implementations.</p>
-</div>
+<h2 id="repository-structure">Repository Structure<a class="headerlink" href="#repository-structure" title="Permanent link">¶</a></h2>
+<div class="highlight"><pre><span></span><code>paper1-bitter-pills/
+├── v8-sourcing-reframe/        # ACTIVE (JPubE Short)
+│   ├── analysis/               # R scripts 40_… 48_… + _macros.R
+│   ├── manuscript/paper/       # main.tex, submission.tex, *.tex sections
+│   ├── output/figures/         # 7 v8 PDFs (event study, sourcing-vs-pricing, …)
+│   └── output/tables/          # 16 v8 .tex / .csv tables
+├── v7-r2round1/                # frozen — referee R2 round 1 audit baseline
+├── v6-jpub-short/              # frozen — first JPubE Short attempt
+├── v4/                         # legacy R pipeline (still referenced for input data)
+├── docs/                       # MkDocs site source (this site)
+└── deploy.sh                   # build + push to darciogm.github.io
+</code></pre></div>
+<p>The <strong>v4 pipeline</strong> prepares the input data cache (<code>/tmp/v4_prepared.rds</code>) used by all v8 scripts; v8 builds analysis on top of that prepared dataset rather than re-deriving it from raw BEC.</p>
 <hr>
 <h2 id="software-requirements">Software Requirements<a class="headerlink" href="#software-requirements" title="Permanent link">¶</a></h2>
-<h3 id="primary-analysis-v4-r">Primary Analysis (v4 -- R)<a class="headerlink" href="#primary-analysis-v4-r" title="Permanent link">¶</a></h3>
+<h3 id="primary-analysis-v8-r">Primary Analysis (v8 — R)<a class="headerlink" href="#primary-analysis-v8-r" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Software</th>
-<th>Version</th>
+<th>Package</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>R</strong></td>
-<td>4.5+</td>
+<td><code>R</code> 4.5+</td>
 <td>Statistical computing</td>
 </tr>
 <tr>
 <td><code>fixest</code></td>
-<td>latest</td>
-<td>High-dimensional fixed effects estimation</td>
+<td>High-dimensional fixed-effects estimation (preferred FE specs, <code>lean=TRUE</code> default)</td>
+</tr>
+<tr>
+<td><code>did</code> / <code>csdid</code></td>
+<td>Borusyak-Jaravel-Spiess event study</td>
 </tr>
 <tr>
 <td><code>data.table</code></td>
-<td>latest</td>
 <td>Fast data manipulation</td>
 </tr>
 <tr>
-<td><code>modelsummary</code></td>
-<td>latest</td>
-<td>Regression tables</td>
+<td><code>arrow</code> / <code>duckdb</code></td>
+<td>Parquet I/O (DuckDB is the default engine for parquet)</td>
+</tr>
+<tr>
+<td><code>modelsummary</code> / <code>kableExtra</code> / <code>gt</code></td>
+<td>Regression and balance tables</td>
 </tr>
 <tr>
 <td><code>ggplot2</code></td>
-<td>latest</td>
-<td>Publication-quality figures</td>
+<td>Publication figures</td>
 </tr>
 <tr>
-<td><code>arrow</code></td>
-<td>latest</td>
-<td>Reading Parquet files</td>
+<td><code>binsreg</code></td>
+<td>Binscatters for diagnostic plots</td>
+</tr>
+<tr>
+<td><code>sf</code> / <code>tmap</code></td>
+<td>SIRGAS 2000 maps for São Paulo state</td>
 </tr>
 </tbody>
 </table>
-<p>Additional R packages: <code>kableExtra</code>, <code>sandwich</code>, <code>lmtest</code>, <code>broom</code>, <code>scales</code>, <code>sf</code>, <code>viridis</code>.</p>
-<h3 id="legacy-analysis-v2v3-stata">Legacy Analysis (v2/v3 -- Stata)<a class="headerlink" href="#legacy-analysis-v2v3-stata" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Software</th>
-<th>Version</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Stata/SE</strong></td>
-<td>17+</td>
-<td>Statistical computing</td>
-</tr>
-<tr>
-<td><code>reghdfe</code></td>
-<td>latest</td>
-<td>High-dimensional fixed effects</td>
-</tr>
-<tr>
-<td><code>ftools</code></td>
-<td>latest</td>
-<td>Fast Stata tools</td>
-</tr>
-</tbody>
-</table>
+<p>Manski-Lee bounds and the Rademacher wild cluster bootstrap (B = 999) are implemented manually in the v8 scripts. The <code>fwildclusterboot</code> package is archived for R 4.5 and <code>HonestDiD</code> requires <code>CVXR</code>/<code>clarabel</code> system deps; both are bypassed in v8 with hand-rolled equivalents that produce JPubE-grade inference.</p>
 <h3 id="manuscript">Manuscript<a class="headerlink" href="#manuscript" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
-<th>Software</th>
-<th>Version</th>
+<th>Tool</th>
 <th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>LaTeX</strong></td>
 <td>TeX Live 2024+</td>
-<td>Document typesetting</td>
+<td>LaTeX typesetting</td>
 </tr>
 <tr>
 <td><code>elsarticle</code></td>
-<td>latest</td>
-<td>Journal document class</td>
+<td>Journal class (review format for <code>main.tex</code>, single-column for <code>submission.tex</code>)</td>
 </tr>
 <tr>
-<td><code>chicago</code></td>
-<td>latest</td>
-<td>Bibliography style</td>
+<td><code>natbib</code> + <code>bibtex</code></td>
+<td>Bibliography (NOT biblatex/biber in this project)</td>
+</tr>
+<tr>
+<td><code>booktabs</code> + <code>threeparttable</code></td>
+<td>Tables</td>
 </tr>
 </tbody>
 </table>
 <hr>
 <h2 id="data-sources">Data Sources<a class="headerlink" href="#data-sources" title="Permanent link">¶</a></h2>
 <h3 id="primary-dataset">Primary Dataset<a class="headerlink" href="#primary-dataset" title="Permanent link">¶</a></h3>
-<p><strong>BEC-G65-WORK1.parquet</strong></p>
-<ul>
-<li><strong>Source:</strong> Bolsa Eletronica de Compras (BEC), Sao Paulo state electronic procurement platform</li>
-<li><strong>Format:</strong> Apache Parquet (~125 MB)</li>
-<li><strong>Observations:</strong> 479,330 bids</li>
-<li><strong>Variables:</strong> 180 columns</li>
-<li><strong>Coverage:</strong> All bids for BEC Group 65 (medical, dental, and hospital supplies), January 2009 -- December 2019</li>
-<li><strong>Unit:</strong> Bid level (firm x item x procurement event)</li>
-</ul>
-<div class="admonition warning">
-<p class="admonition-title">Data Access</p>
-<p>The BEC procurement data is publicly available through the Sao Paulo state transparency portal. The processed dataset used in the analysis is included in the replication package.</p>
-</div>
-<h3 id="key-variables">Key Variables<a class="headerlink" href="#key-variables" title="Permanent link">¶</a></h3>
+<p><strong>BEC-G65</strong> — bid-level pharmaceutical procurement on the São Paulo state electronic procurement platform.</p>
 <table>
 <thead>
 <tr>
-<th>Variable</th>
+<th>Feature</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>purchase_type</code></td>
-<td>0 = Ordinary, 1 = Administrative, 2 = Litigated</td>
+<td>Source</td>
+<td>Bolsa Eletrônica de Compras (BEC), São Paulo state</td>
 </tr>
 <tr>
-<td><code>bid_price_ref</code></td>
-<td>Reference price (maximum the government will pay), in BRL</td>
+<td>Coverage</td>
+<td>All bids for BEC Group 65 (medical, dental, hospital supplies)</td>
 </tr>
 <tr>
-<td><code>bid_price</code></td>
-<td>Negotiated (final) bid price, in BRL</td>
+<td>Period</td>
+<td>January 2009 – December 2019</td>
 </tr>
 <tr>
-<td><code>bid_qty</code></td>
-<td>Quantity demanded in tender notice</td>
+<td>Observations</td>
+<td>479,330 purchase-offer-item observations (bid level)</td>
 </tr>
 <tr>
-<td><code>n_firms_bids</code></td>
-<td>Number of distinct firms submitting bids</td>
-</tr>
-<tr>
-<td><code>po_item_winner</code></td>
-<td>Tender success indicator (1 = successful purchase)</td>
-</tr>
-<tr>
-<td><code>item_id</code></td>
-<td>Product identifier (used for item FE)</td>
-</tr>
-<tr>
-<td><code>pbu_code</code></td>
-<td>Public buyer unit code (used for PBU FE and clustering)</td>
-</tr>
-<tr>
-<td><code>year_n</code></td>
-<td>Year (used for time FE)</td>
+<td>Treatment classes</td>
+<td>Ordinary; Administrative urgent; Litigated</td>
 </tr>
 </tbody>
 </table>
-<p>A full data dictionary is available in the replication package (<code>DATA_DICTIONARY.md</code>).</p>
+<p>The processed dataset (parquet) is included in the replication package; raw BEC data is publicly available through the São Paulo state transparency portal.</p>
+<h3 id="selection-probit-admin-channel-selection">Selection Probit (admin-channel selection)<a class="headerlink" href="#selection-probit-admin-channel-selection" title="Permanent link">¶</a></h3>
+<p>The Manski-Lee bounds rely on a pre-period probit on admin-channel admissibility, predicting <code>admin = 1</code> on <code>litigated = 1</code> items using:</p>
+<ul>
+<li>Pre-period log reference price (coef ≈ −0.05, p &lt; 0.001)</li>
+<li>SUS-formulary status (coef ≈ −0.27, p &lt; 0.001)</li>
+<li>Item-class dummies, year-of-onset</li>
+</ul>
+<p>This probit identifies the wedge that the Lee bound corrects.</p>
 <hr>
-<h2 id="running-the-analysis">Running the Analysis<a class="headerlink" href="#running-the-analysis" title="Permanent link">¶</a></h2>
-<h3 id="quick-start-v4-r">Quick Start (v4 -- R)<a class="headerlink" href="#quick-start-v4-r" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># 1. Clone the repository and navigate to the project</span>
-<span class="nb">cd</span><span class="w"> </span>paper1-bitter-pills
-
-<span class="c1"># 2. Run the full v4 pipeline (~5 minutes on 16 cores)</span>
-Rscript<span class="w"> </span>v4/run_all.R
-</code></pre></div>
-<p>This single command executes all analysis scripts in sequence:</p>
-<ol>
-<li><code>00_prepare_data.R</code> -- Load and prepare the dataset (cached at <code>/tmp/v4_prepared.rds</code>)</li>
-<li><code>01_desc_stats.R</code> -- Descriptive statistics</li>
-<li><code>02_balance_table.R</code> -- Balance table for urgent subsample</li>
-<li><code>03_main_regressions.R</code> -- Main regression tables (4 FE specs x 3 clustering variants)</li>
-<li><code>04_heterogeneity.R</code> -- Heterogeneous effects analysis</li>
-<li><code>05_fiscal_costs.R</code> -- Fiscal cost estimates</li>
-<li><code>06_robustness.R</code> -- Robustness checks (120+ regressions)</li>
-<li><code>07_graphs.R</code> -- Generate all figures</li>
-<li><code>08_pub_tables.R</code> -- Publication-ready LaTeX tables</li>
-<li><code>09_pub_figures.R</code> -- Publication-ready PDF figures</li>
-</ol>
-<h3 id="running-individual-scripts">Running Individual Scripts<a class="headerlink" href="#running-individual-scripts" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Must run data preparation first</span>
+<h2 id="pipeline-v8">Pipeline (v8)<a class="headerlink" href="#pipeline-v8" title="Permanent link">¶</a></h2>
+<p>The v8 analysis runs on top of the v4 prepared cache. The numbered scripts emit macros into <code>manuscript/paper/values.tex</code>, which the LaTeX manuscript reads.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># 1. Prepare input data (one-off; ~1 minute)</span>
 Rscript<span class="w"> </span>v4/analysis/00_prepare_data.R
 
-<span class="c1"># Then any individual analysis script</span>
-Rscript<span class="w"> </span>v4/analysis/03_main_regressions.R
-Rscript<span class="w"> </span>v4/analysis/07_graphs.R
-</code></pre></div>
-<h3 id="legacy-analysis-stata">Legacy Analysis (Stata)<a class="headerlink" href="#legacy-analysis-stata" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Install required Stata packages</span>
-stata-se<span class="w"> </span>-b<span class="w"> </span>-q<span class="w"> </span><span class="k">do</span><span class="w"> </span>v2/analysis/install_packages.do
+<span class="c1"># 2. Run v8 analysis scripts in order</span>
+<span class="nb">cd</span><span class="w"> </span>v8-sourcing-reframe/analysis
+Rscript<span class="w"> </span>40_utg_lee_bounds.R<span class="w">       </span><span class="c1"># Manski-Lee bounds → tab_utg_lee_bounds</span>
+Rscript<span class="w"> </span>41_utg_heckman.R<span class="w">          </span><span class="c1"># Heckman parametric (degenerate; sensitivity)</span>
+Rscript<span class="w"> </span>42_both_types_cells.R<span class="w">     </span><span class="c1"># Both-types-cell representativeness</span>
+Rscript<span class="w"> </span>43_rambachan_roth.R<span class="w">       </span><span class="c1"># Honest sensitivity on BJS event study</span>
+Rscript<span class="w"> </span>44_wild_bootstrap.R<span class="w">       </span><span class="c1"># Manual Rademacher bootstrap</span>
+Rscript<span class="w"> </span>45_reconciliation.R<span class="w">       </span><span class="c1"># UTG decomposition + headline figure</span>
+Rscript<span class="w"> </span>46_balance_descriptive.R<span class="w">  </span><span class="c1"># Within-cell balance + descriptives</span>
+Rscript<span class="w"> </span>46_welfare_bound.R<span class="w">        </span><span class="c1"># Single welfare bound</span>
+Rscript<span class="w"> </span>47_regen_fig1.R<span class="w">           </span><span class="c1"># Regenerate Figure 1 in serif font</span>
+Rscript<span class="w"> </span>48_mechanism_evidence.R<span class="w">   </span><span class="c1"># Modal-winner switch, Jaccard, supplier FE</span>
 
-<span class="c1"># Run the v3 pipeline</span>
-bash<span class="w"> </span>v3/analysis/run_all.sh
-</code></pre></div>
-<hr>
-<h2 id="output-files">Output Files<a class="headerlink" href="#output-files" title="Permanent link">¶</a></h2>
-<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Directory</th>
-<th>Format</th>
-<th>Count</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>v4/pub/tables/</code></td>
-<td>LaTeX (.tex)</td>
-<td>17</td>
-<td>Publication-ready tables (booktabs + threeparttable)</td>
-</tr>
-<tr>
-<td><code>v4/manuscript/</code></td>
-<td>LaTeX (.tex)</td>
-<td>59</td>
-<td>Full regression tables (tabularray format)</td>
-</tr>
-<tr>
-<td><code>v4/results/</code></td>
-<td>HTML (.html)</td>
-<td>59</td>
-<td>Browser-viewable tables</td>
-</tr>
-</tbody>
-</table>
-<h3 id="figures">Figures<a class="headerlink" href="#figures" title="Permanent link">¶</a></h3>
-<table>
-<thead>
-<tr>
-<th>Directory</th>
-<th>Format</th>
-<th>Count</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>v4/pub/figures/</code></td>
-<td>PDF</td>
-<td>8</td>
-<td>Publication-ready figures (grayscale, 6.5 x 4 in)</td>
-</tr>
-<tr>
-<td><code>v4/graphs/</code></td>
-<td>PDF</td>
-<td>8</td>
-<td>Color figures for presentations</td>
-</tr>
-</tbody>
-</table>
-<h3 id="manuscript_1">Manuscript<a class="headerlink" href="#manuscript_1" title="Permanent link">¶</a></h3>
-<div class="highlight"><pre><span></span><code><span class="c1"># Compile the manuscript</span>
-<span class="nb">cd</span><span class="w"> </span>v5/manuscript/paper
+<span class="c1"># 3. Compile manuscript (clean 4-pass)</span>
+<span class="nb">cd</span><span class="w"> </span>../manuscript/paper
 pdflatex<span class="w"> </span>-interaction<span class="o">=</span>nonstopmode<span class="w"> </span>main.tex
 bibtex<span class="w"> </span>main
 pdflatex<span class="w"> </span>main.tex
 pdflatex<span class="w"> </span>main.tex
 </code></pre></div>
+<p>Each numbered script emits a block into <code>values.tex</code> (auto-generated section delimited by markers). The manuscript reads those macros — every numerical claim, table input, and figure path is regenerated by the script that owns it. <strong>No hardcoded numerals in the manuscript.</strong></p>
+<hr>
+<h2 id="output-files">Output Files<a class="headerlink" href="#output-files" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Path</th>
+<th>Content</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>v8-sourcing-reframe/output/figures/</code></td>
+<td>7 PDFs: event-study (BJS, honest-sensitivity, item, qty), sourcing-vs-pricing decomposition, qty-ratio density, three-channel cascade</td>
+</tr>
+<tr>
+<td><code>v8-sourcing-reframe/output/tables/</code></td>
+<td>16 tables: Lee bounds, Heckman sensitivity, both-types-cell, placebo, RR sensitivity, supplier FE, three-channel cascade, UTG bootstrap, UTG reconciliation, welfare bound, winner switch, within-firm robustness, descriptive balance</td>
+</tr>
+<tr>
+<td><code>v8-sourcing-reframe/manuscript/paper/main.pdf</code></td>
+<td>Compiled manuscript (35pp, JPubE Short review format, double-spaced)</td>
+</tr>
+<tr>
+<td><code>v8-sourcing-reframe/manuscript/paper/submission.pdf</code></td>
+<td>Single-column compiled version (17pp)</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2 id="computational-environment">Computational Environment<a class="headerlink" href="#computational-environment" title="Permanent link">¶</a></h2>
-<p>The analysis was developed and tested on the following system:</p>
+<p>The analysis was developed and tested on <strong>DarcioWork</strong> (a dual-CPU WSL2 development workstation):</p>
 <table>
 <thead>
 <tr>
@@ -1219,30 +1061,42 @@ pdflatex<span class="w"> </span>main.tex
 </thead>
 <tbody>
 <tr>
-<td><strong>OS</strong></td>
+<td>OS</td>
 <td>Ubuntu 24.04 (WSL2 on Windows)</td>
 </tr>
 <tr>
-<td><strong>CPU</strong></td>
-<td>16 cores</td>
+<td>CPU</td>
+<td>Intel i7-1260P (12 cores / 14 threads visible to WSL2)</td>
 </tr>
 <tr>
-<td><strong>RAM</strong></td>
-<td>15 GB</td>
+<td>RAM</td>
+<td>21 GB</td>
 </tr>
 <tr>
-<td><strong>R</strong></td>
+<td>GPU</td>
+<td>None (CPU-only)</td>
+</tr>
+<tr>
+<td>R</td>
 <td>4.5</td>
 </tr>
 <tr>
-<td><strong>fixest</strong></td>
-<td>Uses OpenMP for parallel estimation (16 threads)</td>
+<td><code>fixest</code> threads</td>
+<td><code>setFixest_nthreads(12)</code></td>
+</tr>
+<tr>
+<td>DuckDB threads</td>
+<td><code>PRAGMA threads=12; PRAGMA memory_limit='14GB'</code></td>
 </tr>
 </tbody>
 </table>
 <div class="admonition note">
 <p class="admonition-title">Runtime</p>
-<p>The full v4 pipeline (<code>run_all.R</code>) takes approximately 5 minutes on the reference system. The most time-intensive step is the robustness analysis (<code>06_robustness.R</code>), which estimates 120+ regressions across three winsorization levels.</p>
+<p>The full v8 analysis pipeline (scripts 40 through 48) runs in approximately <strong>3 minutes</strong> on the reference system, after the v4 prepared cache is in place. The slowest step is the Rademacher wild bootstrap (<code>44_wild_bootstrap.R</code> — ~30 s for B = 999).</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Reproducibility seeds</p>
+<p>All scripts that draw random numbers (bootstrap, simulation, train/test splits) set <code>set.seed(20260504)</code> at the top. Re-running the pipeline produces byte-identical <code>values.tex</code> blocks.</p>
 </div>
 
 
