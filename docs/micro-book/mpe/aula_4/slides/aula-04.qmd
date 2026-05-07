@@ -531,7 +531,8 @@ Próximo: fechar mercado 1 e ler preço relativo.
 
 $x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$ — **cancelamento**.
 
-**Mercado 1:** $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7$.
+**Mercado 1:**
+$$2/3 + 8/(3 p_1) + 1 = 4 \;\implies\; p_1^* = 8/7.$$
 
 **Alocação:** $x^A = (3,\; 12/7)$, $x^B = (1,\; 16/7)$. Soma bem 2: $28/7 = 4$. ✓ $\text{TMS}^* = 8/7$ em ambos.
 
@@ -878,12 +879,18 @@ Edgeworth → bens entre consumidores. PPF → fatores entre produtos.
 ## Taxa marginal de transformação (TMT)
 
 ::: {.eq-key}
-$$\text{TMT}_{12} = -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} = \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.$$
+$$
+\begin{aligned}
+\text{TMT}_{12} &= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} \\
+&= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+\end{aligned}
+$$
 :::
 
 **Em equilíbrio, mercado força** $\text{TMT}_{12} = p_1/p_2$:
 
-CPO da firma: $p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \implies \text{TMT} = p_1/p_2$.
+CPO da firma:
+$$p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT} = p_1/p_2.$$
 
 **Numérico** em $(q_1, q_2) = (2, 2\sqrt{3})$, $L_1=4$, $L_2=12$:
 
@@ -925,14 +932,16 @@ Próximo: solução do planejador como referência, depois o EC descentralizado.
 ## Planejador — TMS = TMT
 
 ::: {.eq-key}
-$$\max_L \; u(f(L), \bar L - L). \qquad \text{CPO:} \quad \boxed{\;\text{TMS}_{\ell, q} = f'(L) = \text{TMT}_{L,q}\;}$$
+$$\max_L \; u(f(L), \bar L - L).$$
+$$\boxed{\;\text{TMS}_{\ell, q} \;=\; f'(L) \;=\; \text{TMT}_{L,q}\;}$$
 :::
 
 **Numérico canônico:** $u = q^{1/2}\ell^{1/2}$, $f = \sqrt{L}$, $\bar L = 16$.
 
 $\max_L L^{1/4}(16-L)^{1/2}$. CPO: $\frac{1}{4L} = \frac{1}{2(16-L)} \Rightarrow 2(16-L) = 4L$.
 
-$$L^* = \frac{16}{3}, \quad \ell^* = \frac{32}{3}, \quad q^* = \sqrt{16/3} = \frac{4}{\sqrt{3}} \approx 2{,}31.$$
+$$L^* = \frac{16}{3}, \quad \ell^* = \frac{32}{3},$$
+$$q^* = \sqrt{16/3} = \frac{4}{\sqrt{3}} \approx 2{,}31.$$
 
 **Verificação:** $\text{TMS} = q^*/\ell^* = \sqrt{3}/8$. $\text{TMT} = f'(L^*) = \sqrt{3}/8$. ✓
 
@@ -975,9 +984,11 @@ $$\boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w^*}{p^*} \;=\; \text{TMT}_{L, q}.\;
 
 **Verificação numérica** (Robinson canônico, $p = 1$):
 
-$w^* = p\, f'(L^*) = \sqrt{3}/8$. $\pi^* = q^* - w^*\, L^* = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}$.
+$w^* = p\, f'(L^*) = \sqrt{3}/8$.
+$\pi^* = q^* - w^*\, L^* = 2/\sqrt{3}$.
 
-$m^* = w^*\bar L + \pi^* = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3$. $q^* = m^*/(2p) = 4/\sqrt{3}$ ✓; $\ell^* = m^*/(2w^*) = 32/3$ ✓.
+$m^* = w^*\bar L + \pi^* = 8\sqrt{3}/3$.
+$q^* = 4/\sqrt{3}$ ✓; $\ell^* = 32/3$ ✓.
 
 ::: {.eq-punch}
 Mercado descentralizado replica planejador. **1º TBE no caso mínimo: 1 consumidor + 1 firma.**
@@ -1007,7 +1018,7 @@ Próximo: 1º TBE com produção como **corolário** — só um passo a mais.
 
 1. *Consumidor $j$ estritamente melhor:* $p^*\cdot \tilde x^j > m^{*j}$. (UMP de $x^{*j}$.)
 2. *LNS para $i \neq j$:* $p^*\cdot \tilde x^i \ge m^{*i}$. (idêntico à Aula 4 §3.)
-3. **NOVO — firmas:** $\tilde y^j \in Y^j \Rightarrow p^*\cdot \tilde y^j \le \pi^{*j} = p^*\cdot y^{*j}$. (max-lucro.)
+3. **NOVO — firmas:** $p^* \cdot \tilde y^j \le p^* \cdot y^{*j}$ por max-lucro.
 4. Soma + viabilidade $\sum_i \tilde x^i = \sum_i \omega^i + \sum_j \tilde y^j$ ⇒ contradição. $\blacksquare$
 
 ::: {.eq-punch}

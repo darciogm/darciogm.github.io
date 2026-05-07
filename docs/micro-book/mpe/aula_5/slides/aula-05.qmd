@@ -338,7 +338,8 @@ UMP, Walras estendido, equação fundamental do SDF.
 
 **Dotação:** $\omega^i \in \mathbb{R}^{LS}_+$ — "o que recebo em cada estado".
 
-**Renda:** $m^i(p) = p \cdot \omega^i = \sum_{(\ell, s)} p_{\ell, s} \omega^i_{\ell, s}$.
+**Renda:**
+$$m^i(p) = p \cdot \omega^i = \sum_{(\ell, s)} p_{\ell, s}\, \omega^i_{\ell, s}.$$
 
 **UMP:**
 
@@ -493,14 +494,14 @@ O argumento usa apenas (i) UMP exausta orçamento, (ii) LNS dá vizinhança pref
 ## 1º TBE — prova reaproveitada (1/2)
 
 ::: {.compact-table}
-| Aula 4 — em $\mathbb{R}^L$ | Aula 5 — em $\mathbb{R}^{LS}$ |
-|:---|:---|
-| $(p^*, x^*)$ EC com LNS | $(p^*, x^*)$ EC AD com LNS |
-| Suponha $\tilde x$ Pareto-superior | Suponha $\tilde x$ Pareto-superior |
-| $j$ estritamente: $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ | $j$ estritamente: $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ |
-| $i$ fracamente + LNS: $p^* \cdot \tilde x^i \ge p^* \cdot \omega^i$ | $i$ fracamente + LNS: $p^* \cdot \tilde x^i \ge p^* \cdot \omega^i$ |
-| Soma: $p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i$ | Idem |
-| Viabilidade $\Rightarrow$ contradição | Viabilidade $\Rightarrow$ contradição |
+| Passo | Aula 4 ($\mathbb{R}^L$) | Aula 5 ($\mathbb{R}^{LS}$) |
+|:---|:---|:---|
+| EC + LNS | $(p^*, x^*)$ | idem em $\mathbb{R}^{LS}$ |
+| Hipótese | $\tilde x$ Pareto-superior | idem |
+| $j$ estrito | $p^* \tilde x^j > p^* \omega^j$ | idem |
+| $i$ + LNS | $p^* \tilde x^i \ge p^* \omega^i$ | idem |
+| Soma | $\sum p^* \tilde x^i > \sum p^* \omega^i$ | idem |
+| Viabilidade | $\Rightarrow$ contradição | idem |
 :::
 
 ---
@@ -520,7 +521,8 @@ p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i.
 $$
 
 ::: {.eq-punch}
-$\underbrace{p^* \cdot \sum_i \tilde x^i}_{\text{soma estrita}} > \underbrace{p^* \cdot \sum_i \omega^i}_{\text{viabilidade}} \Rightarrow$ contradição.
+$$p^* \cdot \sum_i \tilde x^i \;>\; p^* \cdot \sum_i \omega^i.$$
+Contradição com viabilidade.
 :::
 
 ---

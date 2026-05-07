@@ -620,7 +620,7 @@ p\cdot z^i(p) = p\cdot x^i - p\cdot \omega^i = 0 \quad\forall i.
 <section class="slide level2 center">
 <h2>Cálculo em CD assimétrica (2/2) — punch</h2>
 <p><span class="math inline">\(x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)\)</span>. <span class="math inline">\(x_1^B = (1/3)\cdot 3 p_1/p_1 = 1\)</span> — <strong>cancelamento</strong>.</p>
-<p><strong>Mercado 1:</strong> <span class="math inline">\(2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7\)</span>.</p>
+<p><strong>Mercado 1:</strong> <span class="math display">\[2/3 + 8/(3 p_1) + 1 = 4 \;\implies\; p_1^* = 8/7.\]</span></p>
 <p><strong>Alocação:</strong> <span class="math inline">\(x^A = (3,\; 12/7)\)</span>, <span class="math inline">\(x^B = (1,\; 16/7)\)</span>. Soma bem 2: <span class="math inline">\(28/7 = 4\)</span>. ✓ <span class="math inline">\(\text{TMS}^* = 8/7\)</span> em ambos.</p>
 <div class="eq-punch">
 <p>Preço relativo no EC reflete preferências <strong>e</strong> dotações. Não há mágica — é álgebra de market-clearing.</p>
@@ -902,10 +902,15 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <section class="slide level2 center">
 <h2>Taxa marginal de transformação (TMT)</h2>
 <div class="eq-key">
-<p><span class="math display">\[\text{TMT}_{12} = -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} = \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{TMT}_{12} &amp;= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} \\
+&amp;= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+\end{aligned}
+\]</span></p>
 </div>
 <p><strong>Em equilíbrio, mercado força</strong> <span class="math inline">\(\text{TMT}_{12} = p_1/p_2\)</span>:</p>
-<p>CPO da firma: <span class="math inline">\(p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \implies \text{TMT} = p_1/p_2\)</span>.</p>
+<p>CPO da firma: <span class="math display">\[p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT} = p_1/p_2.\]</span></p>
 <p><strong>Numérico</strong> em <span class="math inline">\((q_1, q_2) = (2, 2\sqrt{3})\)</span>, <span class="math inline">\(L_1=4\)</span>, <span class="math inline">\(L_2=12\)</span>:</p>
 <p><span class="math inline">\(\text{PMa}_L^1 = 1/(2\sqrt{4}) = 1/4\)</span>. <span class="math inline">\(\text{PMa}_L^2 = 1/(2\sqrt{12}) = 1/(4\sqrt{3})\)</span>. <span class="math inline">\(\text{TMT}_{12} = 1/\sqrt{3} \approx 0{,}577\)</span>. ✓</p>
 <div class="bridge">
@@ -937,11 +942,11 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <section class="slide level2 center">
 <h2>Planejador — TMS = TMT</h2>
 <div class="eq-key">
-<p><span class="math display">\[\max_L \; u(f(L), \bar L - L). \qquad \text{CPO:} \quad \boxed{\;\text{TMS}_{\ell, q} = f'(L) = \text{TMT}_{L,q}\;}\]</span></p>
+<p><span class="math display">\[\max_L \; u(f(L), \bar L - L).\]</span> <span class="math display">\[\boxed{\;\text{TMS}_{\ell, q} \;=\; f'(L) \;=\; \text{TMT}_{L,q}\;}\]</span></p>
 </div>
 <p><strong>Numérico canônico:</strong> <span class="math inline">\(u = q^{1/2}\ell^{1/2}\)</span>, <span class="math inline">\(f = \sqrt{L}\)</span>, <span class="math inline">\(\bar L = 16\)</span>.</p>
 <p><span class="math inline">\(\max_L L^{1/4}(16-L)^{1/2}\)</span>. CPO: <span class="math inline">\(\frac{1}{4L} = \frac{1}{2(16-L)} \Rightarrow 2(16-L) = 4L\)</span>.</p>
-<p><span class="math display">\[L^* = \frac{16}{3}, \quad \ell^* = \frac{32}{3}, \quad q^* = \sqrt{16/3} = \frac{4}{\sqrt{3}} \approx 2{,}31.\]</span></p>
+<p><span class="math display">\[L^* = \frac{16}{3}, \quad \ell^* = \frac{32}{3},\]</span> <span class="math display">\[q^* = \sqrt{16/3} = \frac{4}{\sqrt{3}} \approx 2{,}31.\]</span></p>
 <p><strong>Verificação:</strong> <span class="math inline">\(\text{TMS} = q^*/\ell^* = \sqrt{3}/8\)</span>. <span class="math inline">\(\text{TMT} = f'(L^*) = \sqrt{3}/8\)</span>. ✓</p>
 </section>
 <section class="slide level2 center">
@@ -978,8 +983,8 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <p><span class="math display">\[\boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w^*}{p^*} \;=\; \text{TMT}_{L, q}.\;}\]</span></p>
 </div>
 <p><strong>Verificação numérica</strong> (Robinson canônico, <span class="math inline">\(p = 1\)</span>):</p>
-<p><span class="math inline">\(w^* = p\, f'(L^*) = \sqrt{3}/8\)</span>. <span class="math inline">\(\pi^* = q^* - w^*\, L^* = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}\)</span>.</p>
-<p><span class="math inline">\(m^* = w^*\bar L + \pi^* = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3\)</span>. <span class="math inline">\(q^* = m^*/(2p) = 4/\sqrt{3}\)</span> ✓; <span class="math inline">\(\ell^* = m^*/(2w^*) = 32/3\)</span> ✓.</p>
+<p><span class="math inline">\(w^* = p\, f'(L^*) = \sqrt{3}/8\)</span>. <span class="math inline">\(\pi^* = q^* - w^*\, L^* = 2/\sqrt{3}\)</span>.</p>
+<p><span class="math inline">\(m^* = w^*\bar L + \pi^* = 8\sqrt{3}/3\)</span>. <span class="math inline">\(q^* = 4/\sqrt{3}\)</span> ✓; <span class="math inline">\(\ell^* = 32/3\)</span> ✓.</p>
 <div class="eq-punch">
 <p>Mercado descentralizado replica planejador. <strong>1º TBE no caso mínimo: 1 consumidor + 1 firma.</strong></p>
 </div>
@@ -1005,7 +1010,7 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <ol type="1">
 <li><em>Consumidor <span class="math inline">\(j\)</span> estritamente melhor:</em> <span class="math inline">\(p^*\cdot \tilde x^j &gt; m^{*j}\)</span>. (UMP de <span class="math inline">\(x^{*j}\)</span>.)</li>
 <li><em>LNS para <span class="math inline">\(i \neq j\)</span>:</em> <span class="math inline">\(p^*\cdot \tilde x^i \ge m^{*i}\)</span>. (idêntico à Aula 4 §3.)</li>
-<li><strong>NOVO — firmas:</strong> <span class="math inline">\(\tilde y^j \in Y^j \Rightarrow p^*\cdot \tilde y^j \le \pi^{*j} = p^*\cdot y^{*j}\)</span>. (max-lucro.)</li>
+<li><strong>NOVO — firmas:</strong> <span class="math inline">\(p^* \cdot \tilde y^j \le p^* \cdot y^{*j}\)</span> por max-lucro.</li>
 <li>Soma + viabilidade <span class="math inline">\(\sum_i \tilde x^i = \sum_i \omega^i + \sum_j \tilde y^j\)</span> ⇒ contradição. <span class="math inline">\(\blacksquare\)</span></li>
 </ol>
 <div class="eq-punch">

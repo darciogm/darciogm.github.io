@@ -478,7 +478,7 @@ u^i(x^i) = \sum_{s \in S} \pi^i_s\, v^i(x^i_s).
 <section class="slide level2 center">
 <h2>Dotações e UMP em <span class="math inline">\(\mathbb{R}^{LS}\)</span></h2>
 <p><strong>Dotação:</strong> <span class="math inline">\(\omega^i \in \mathbb{R}^{LS}_+\)</span> — “o que recebo em cada estado”.</p>
-<p><strong>Renda:</strong> <span class="math inline">\(m^i(p) = p \cdot \omega^i = \sum_{(\ell, s)} p_{\ell, s} \omega^i_{\ell, s}\)</span>.</p>
+<p><strong>Renda:</strong> <span class="math display">\[m^i(p) = p \cdot \omega^i = \sum_{(\ell, s)} p_{\ell, s}\, \omega^i_{\ell, s}.\]</span></p>
 <p><strong>UMP:</strong></p>
 <p><span class="math display">\[
 \max_{x^i \in \mathbb{R}^{LS}_+}\, u^i(x^i) \quad \text{s.a.} \quad p \cdot x^i \le p \cdot \omega^i.
@@ -650,40 +650,43 @@ P_0 = E^\pi [m \cdot D] = \sum_s \pi_s\, m_s\, D_s.
 <h2>1º TBE — prova reaproveitada (1/2)</h2>
 <div class="compact-table">
 <table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">Aula 4 — em <span class="math inline">\(\mathbb{R}^L\)</span></th>
-<th style="text-align: left;">Aula 5 — em <span class="math inline">\(\mathbb{R}^{LS}\)</span></th>
+<th style="text-align: left;">Passo</th>
+<th style="text-align: left;">Aula 4 (<span class="math inline">\(\mathbb{R}^L\)</span>)</th>
+<th style="text-align: left;">Aula 5 (<span class="math inline">\(\mathbb{R}^{LS}\)</span>)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\((p^*, x^*)\)</span> EC com LNS</td>
-<td style="text-align: left;"><span class="math inline">\((p^*, x^*)\)</span> EC AD com LNS</td>
+<td style="text-align: left;">EC + LNS</td>
+<td style="text-align: left;"><span class="math inline">\((p^*, x^*)\)</span></td>
+<td style="text-align: left;">idem em <span class="math inline">\(\mathbb{R}^{LS}\)</span></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Suponha <span class="math inline">\(\tilde x\)</span> Pareto-superior</td>
-<td style="text-align: left;">Suponha <span class="math inline">\(\tilde x\)</span> Pareto-superior</td>
+<td style="text-align: left;">Hipótese</td>
+<td style="text-align: left;"><span class="math inline">\(\tilde x\)</span> Pareto-superior</td>
+<td style="text-align: left;">idem</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"><span class="math inline">\(j\)</span> estritamente: <span class="math inline">\(p^* \cdot \tilde x^j &gt; p^* \cdot \omega^j\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(j\)</span> estritamente: <span class="math inline">\(p^* \cdot \tilde x^j &gt; p^* \cdot \omega^j\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(j\)</span> estrito</td>
+<td style="text-align: left;"><span class="math inline">\(p^* \tilde x^j &gt; p^* \omega^j\)</span></td>
+<td style="text-align: left;">idem</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"><span class="math inline">\(i\)</span> fracamente + LNS: <span class="math inline">\(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\)</span></td>
-<td style="text-align: left;"><span class="math inline">\(i\)</span> fracamente + LNS: <span class="math inline">\(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(i\)</span> + LNS</td>
+<td style="text-align: left;"><span class="math inline">\(p^* \tilde x^i \ge p^* \omega^i\)</span></td>
+<td style="text-align: left;">idem</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Soma: <span class="math inline">\(p^* \cdot \sum_i \tilde x^i &gt; p^* \cdot \sum_i \omega^i\)</span></td>
-<td style="text-align: left;">Idem</td>
+<td style="text-align: left;">Soma</td>
+<td style="text-align: left;"><span class="math inline">\(\sum p^* \tilde x^i &gt; \sum p^* \omega^i\)</span></td>
+<td style="text-align: left;">idem</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Viabilidade <span class="math inline">\(\Rightarrow\)</span> contradição</td>
-<td style="text-align: left;">Viabilidade <span class="math inline">\(\Rightarrow\)</span> contradição</td>
+<td style="text-align: left;">Viabilidade</td>
+<td style="text-align: left;"><span class="math inline">\(\Rightarrow\)</span> contradição</td>
+<td style="text-align: left;">idem</td>
 </tr>
 </tbody>
 </table>
@@ -700,7 +703,7 @@ P_0 = E^\pi [m \cdot D] = \sum_s \pi_s\, m_s\, D_s.
 p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i.
 \]</span></p>
 <div class="eq-punch">
-<p><span class="math inline">\(\underbrace{p^* \cdot \sum_i \tilde x^i}_{\text{soma estrita}} &gt; \underbrace{p^* \cdot \sum_i \omega^i}_{\text{viabilidade}} \Rightarrow\)</span> contradição.</p>
+<p><span class="math display">\[p^* \cdot \sum_i \tilde x^i \;&gt;\; p^* \cdot \sum_i \omega^i.\]</span> Contradição com viabilidade.</p>
 </div>
 </section>
 <section class="slide level2 center">
