@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Monitoria 2 — Extensões da Aula 4 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Monitoria 2 — Extensões da Aula 4 (EG em Trocas)</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 7</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-monitoria funciona</div>
+<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>7 seções</strong> (orientação + recap + 4 extensões + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>50–60 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Não é repetição da aula — é o passo seguinte.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> abre sábado <strong>16/05 12:00</strong>, fecha sexta <strong>22/05 22:00</strong>. Monitoria presencial: <strong>sábado 23/05 10:00</strong>.</p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 1 min</div>
+  <h2>O que esperar do sábado</h2>
+  <ul>
+    <li>Esta pré-monitoria <strong>não conta nota</strong>. É preparação.</li>
+    <li>O Alberto vai usar suas reflexões finais (Seção 6) para calibrar a monitoria de sábado.</li>
+    <li>Tente os micro-checkpoints sem consultar primeiro. Errar é dado útil.</li>
+    <li>Foco em <em>extensões</em>: cálculos com formas funcionais alternativas, núcleo em \(I=3\), contraexemplos do 1º/2º TBE.</li>
+  </ul>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: RECAP AULA 4 ==================== -->
+<section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
+  <div class="section-meta">Seção 1 · Recap · 5 min</div>
+  <h2>Recap rápido da Aula 4</h2>
+  <p>Antes das extensões, ancore mentalmente os 5 pontos da Aula 4:</p>
+  <ol>
+    <li><strong>Identidade contábil de Walras.</strong> \(p \cdot z(p) = 0\) vale por LNS, em <em>qualquer</em> \(p\) onde demandas estão definidas — <em>fora</em> de equilíbrio.</li>
+    <li><strong>Curva de contrato.</strong> Lugar geométrico de \(\text{TMS}^A = \text{TMS}^B\) na caixa de Edgeworth (interior).</li>
+    <li><strong>Núcleo em \(2\times 2\).</strong> Subconjunto da contract curve dentro da lente de melhoria mútua passando pela dotação.</li>
+    <li><strong>EC CD assimétrica.</strong> Em \(u^A = x_1^{2/3}x_2^{1/3}\), \(u^B = x_1^{1/3}x_2^{2/3}\), \(\omega^A=(1,4)\), \(\omega^B=(3,0)\): \(p_1^*/p_2^* = 8/7\), \(x^A=(3, 12/7)\), \(x^B=(1, 16/7)\).</li>
+    <li><strong>1º TBE.</strong> EC + LNS \(\Rightarrow\) Pareto. Prova por contradição em 3 passos (LNS aparece no passo 2). 2º TBE: precisa convexidade adicional.</li>
+  </ol>
+  <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne ao material da Aula 4 (<a href="aula-04.html" style="color:var(--accent)">aula-04.html</a>) ou ZaE Cap. 14 antes de avançar.</p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
+</section>
+
+<!-- ==================== SECTION 2: EXTENSÃO 1 — Formas funcionais ==================== -->
+<section class="section-block locked" id="s2-formas" data-section="s2-formas" data-order="2">
+  <div class="section-meta">Seção 2 · Extensão 1 · 15 min</div>
+  <h2>EC variando formas funcionais</h2>
+
+  <div class="confidence-block" id="conf-s2-pre">
+    <label>Antes de estudar: quão confortável você está calculando EC em <strong>diferentes formas funcionais</strong> (CD assimétrica, simétrica, Leontief)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s2-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s2-formas','pre','s2-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s2" style="display:none">
+    <p><strong>Setup base.</strong> \(\omega^A = (1, 4)\), \(\omega^B = (3, 0)\), \(\bar\omega = (4, 4)\). Variamos a forma funcional das preferências mantendo dotação.</p>
+
+    <p><strong>Exercício 1 — CD simétrica.</strong> Com \(u^A = u^B = x_1^{1/2}x_2^{1/2}\), mesmas dotações. Sigá o mesmo roteiro da aula:</p>
+    <ol>
+      <li>Renda \(m^i(p) = p\cdot \omega^i\).</li>
+      <li>Demanda CD: \(x_1^i(p) = \tfrac{1}{2}\, m^i / p_1\).</li>
+      <li>Soma: \(x_1^A + x_1^B = \tfrac{1}{2}(m^A + m^B)/p_1 = \tfrac{p\cdot \bar\omega}{2 p_1}\).</li>
+      <li>Iguale a \(\bar\omega_1 = 4\), normalize \(p_2 = 1\), resolva.</li>
+    </ol>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Pegadinha</div>
+    <p>Em CD simétrica com dotação <em>simétrica</em> (\(\omega^A = (3,1)\), \(\omega^B = (1,3)\), por exemplo), há dois "puxões" simétricos. Em CD simétrica com a dotação assimétrica acima (\(\omega^A=(1,4)\), \(\omega^B=(3,0)\)), o EC <em>continua existindo</em> mas o cálculo final dá \(p_1^*/p_2^* \neq 1\). Refaça com cuidado.</p>
+    </div>
+
+    <p><strong>Exercício 2 — Leontief.</strong> Com \(u^A = u^B = \min\{x_1, x_2\}\), qualquer \(p \gg 0\) leva a demanda na linha \(x_1 = x_2\). Onde está o EC?</p>
+
+    <p style="font-size:0.9rem;color:#64748b">Dica: somar as demandas e impor \(x_1^A + x_1^B = 4\) <em>e</em> \(x_2^A + x_2^B = 4\). Em Leontief, é a 1ª restrição que aperta — a 2ª segue por Walras.</p>
+
+    <div class="micro-checkpoint" id="micro-s2">
+      <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s2q1" data-correct="b">
+        <div class="q-text">1. Em CD simétrica com \(u^A=u^B=x_1^{1/2}x_2^{1/2}\), \(\omega^A=(3,1)\), \(\omega^B=(1,3)\), o EC tem:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-formas','s2q1','a',this)">(a) \(p_1^*/p_2^* = 1/2\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-formas','s2q1','b',this)">(b) \(p_1^*/p_2^* = 1\). Por simetria das preferências e dotações invertidas, \(p_1 = p_2\) é a única solução.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-formas','s2q1','c',this)">(c) \(p_1^*/p_2^* = 2\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-formas','s2q1','d',this)">(d) Não tem EC — preferências CD não admitem.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s2q2" data-correct="c">
+        <div class="q-text">2. Em economia Leontief simétrica com \(\bar\omega = (4, 4)\), no EC a alocação \((x^A, x^B)\) satisfaz:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-formas','s2q2','a',this)">(a) Algum consumidor recebe um bem em quantidade nula.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-formas','s2q2','b',this)">(b) Os dois recebem metade da dotação total: \(x^A=x^B=(2,2)\), independentemente do preço.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-formas','s2q2','c',this)">(c) Cada consumidor escolhe \(x_1^i = x_2^i\) (canto da L); a divisão final depende da dotação inicial via \(m^i\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-formas','s2q2','d',this)">(d) EC não existe em Leontief porque demanda é descontínua.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s2-post" style="display:none">
+      <label>Agora, depois de explorar formas funcionais:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s2-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s2-formas','post','s2-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s2-formas" disabled onclick="MPE.completeSection('s2-formas')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 3: EXTENSÃO 2 — Núcleo em I=3 ==================== -->
+<section class="section-block locked" id="s3-nucleo3" data-section="s3-nucleo3" data-order="3">
+  <div class="section-meta">Seção 3 · Extensão 2 · 10 min</div>
+  <h2>Núcleo em economia \(I = 3\)</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes: quão confortável está com a noção de <strong>bloqueio coalizional</strong> em economia com \(I = 3\)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-nucleo3','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Setup.</strong> Três consumidores (\(A\), \(B\), \(C\)), dois bens. Coalizões possíveis (não-vazias): \(\{A\}, \{B\}, \{C\}, \{A,B\}, \{A,C\}, \{B,C\}, \{A,B,C\}\).</p>
+
+    <p><strong>Bloqueio por coalizão \(S\).</strong> A alocação \(x\) é bloqueada por \(S\) se existe alocação \(\tilde x_S = (\tilde x^i)_{i \in S}\) usando <em>apenas</em> as dotações dos membros de \(S\), com \(u^i(\tilde x^i) \ge u^i(x^i)\) para todo \(i \in S\) e \(u^j(\tilde x^j) > u^j(x^j)\) para algum \(j \in S\).</p>
+
+    <p><strong>Núcleo \(C(\mathcal{E})\).</strong> Conjunto das alocações viáveis que não são bloqueadas por nenhuma coalizão. Em \(I=3\), são <em>sete</em> condições de não-bloqueio.</p>
+
+    <p><strong>Por que isso importa.</strong> Em \(I=2\), núcleo é tipicamente um <em>intervalo</em> da contract curve. Em \(I=3\), núcleo encolhe — agora há coalizões intermediárias (\(\{A,B\}\), \(\{A,C\}\), \(\{B,C\}\)) que podem bloquear pontos sustentáveis em \(I=2\). Anúncio do slide #29: na <strong>réplica</strong>, à medida que \(r \to \infty\), núcleo \(\to\) EC (<em>Debreu-Scarf 1963</em>).</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai construir um exemplo numérico explícito mostrando uma alocação que é Pareto-eficiente e está no núcleo em \(I=2\) (com \(\{A,B\}\)), mas é <em>bloqueada</em> em \(I=3\) pela coalizão \(\{A,C\}\) ou \(\{B,C\}\). Anote suas dúvidas.</p>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s3q1" data-correct="b">
+        <div class="q-text">1. Quando o número de consumidores cresce de \(I=2\) para \(I=3\) (sem mudar bens), em geral:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-nucleo3','s3q1','a',this)">(a) Núcleo cresce porque há mais agentes.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-nucleo3','s3q1','b',this)">(b) Núcleo encolhe — mais coalizões possíveis = mais oportunidades de bloqueio.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-nucleo3','s3q1','c',this)">(c) Núcleo não muda — só depende das preferências.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-nucleo3','s3q1','d',this)">(d) Núcleo se torna vazio.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-nucleo3','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-nucleo3" disabled onclick="MPE.completeSection('s3-nucleo3')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EXTENSÃO 3 — Contraexemplo do 1º TBE (LNS falha) ==================== -->
+<section class="section-block locked" id="s4-lns" data-section="s4-lns" data-order="4">
+  <div class="section-meta">Seção 4 · Extensão 3 · 10 min</div>
+  <h2>Onde LNS morde no 1º TBE</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes: você sabe identificar <strong>exatamente em qual passo</strong> da prova do 1º TBE a hipótese de LNS é usada?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-lns','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Recap da prova (3 passos).</strong></p>
+    <ul>
+      <li><strong>Passo 1.</strong> Para o \(j\) estritamente melhor em \(\tilde x\): \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\) (vem de UMP).</li>
+      <li><strong>Passo 2.</strong> Para \(i \neq j\) com \(u^i(\tilde x^i) \ge u^i(x^{*i})\): \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\). <strong>Aqui usamos LNS.</strong></li>
+      <li><strong>Passo 3.</strong> Soma \(\Rightarrow\) contradição com viabilidade.</li>
+    </ul>
+
+    <p><strong>Por que LNS é necessária no Passo 2.</strong> Sem LNS, alguém com \(u^i(\tilde x^i) = u^i(x^{*i})\) (igualdade) e \(p^* \cdot \tilde x^i < p^* \cdot \omega^i\) poderia "preferir" um bundle dentro do orçamento que <em>não tem</em> nada melhor na vizinhança. UMP não força esse \(i\) a gastar tudo. A desigualdade do Passo 2 quebra, soma do Passo 3 não fecha.</p>
+
+    <p><strong>Contraexemplo intuitivo.</strong> Imagine \(u^A\) com <em>ponto de saciedade</em> \(\bar x^A\): além de \(\bar x^A\), mais bem reduz utilidade. Curvas de indiferença viram <em>fechadas</em> (ovais). Em vizinhança do "topo", LNS falha — não há \(\tilde x\) próximo com utilidade estritamente maior. O 1º TBE pode falhar localmente.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto desenha as curvas fechadas e mostra concretamente onde o argumento da prova quebra.</p>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s4q1" data-correct="b">
+        <div class="q-text">1. A hipótese de não-saciedade local (LNS) é invocada explicitamente em qual passo da prova do 1º TBE?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-lns','s4q1','a',this)">(a) Passo 1, para mostrar \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\) no consumidor estritamente melhor.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-lns','s4q1','b',this)">(b) Passo 2, para garantir \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\) nos demais consumidores (não estritamente melhores).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-lns','s4q1','c',this)">(c) Passo 3, ao somar sobre \(i\) e usar viabilidade.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-lns','s4q1','d',this)">(d) LNS não é necessária; basta monotonicidade estrita.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-lns','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-lns" disabled onclick="MPE.completeSection('s4-lns')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: EXTENSÃO 4 — 2º TBE e convexidade ==================== -->
+<section class="section-block locked" id="s5-tbe2" data-section="s5-tbe2" data-order="5">
+  <div class="section-meta">Seção 5 · Extensão 4 · 10 min</div>
+  <h2>2º TBE com transferências e papel da convexidade</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes: por que <strong>convexidade de preferências</strong> aparece no 2º TBE mas não no 1º?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-tbe2','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <p><strong>Enunciado canônico.</strong> Dada economia de troca pura com preferências <em>convexas</em>, contínuas e LNS, e dada uma alocação Pareto-eficiente \(x^*\) com \(x^{*i} \gg 0\), existem preços \(p^* \ge 0\) e transferências lump-sum \(T^i\) tais que \((p^*, x^*)\) é EC com dotações \(\hat\omega^i = \omega^i + T^i\) (com \(\sum_i T^i = 0\)).</p>
+
+    <p><strong>Por que convexidade.</strong> A prova usa um teorema de <em>separação por hiperplano</em> (Minkowski / Hahn-Banach finito-dimensional): se \(V^i = \{x : x \succ^i x^{*i}\}\) é convexo (sai da convexidade da preferência) e \(\sum_i V^i\) não intersecta \(\{\bar\omega\}\), existe \(p^*\) que separa. Esse \(p^*\) é o vetor de preços.</p>
+
+    <p><strong>Quando falha.</strong> Se preferências são <em>não-convexas</em> (indivisibilidades, retornos crescentes locais), \(V^i\) pode não ser convexo, separação não vale e ponto Pareto-eficiente pode não ser sustentável como EC mesmo com transferências. Exemplo clássico: indivisibilidades em capital humano (Aula 5 toca o tema com produção).</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto desenha um par de IC não-convexas em \(2\times 2\) tangentes em ponto Pareto-eficiente que <em>nenhuma</em> reta de preço sustenta como EC.</p>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s5q1" data-correct="c">
+        <div class="q-text">1. A hipótese de convexidade de preferências aparece no 2º TBE mas não no 1º porque:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe2','s5q1','a',this)">(a) Sem convexidade, demanda Marshalliana é descontínua e não há EC.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe2','s5q1','b',this)">(b) Convexidade é hipótese implícita do 1º TBE também — só não é mencionada.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe2','s5q1','c',this)">(c) A prova do 2º TBE usa separação por hiperplano (Minkowski), que exige conjuntos convexos. O 1º TBE só argumenta por contradição contábil — convexidade não aparece.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe2','s5q1','d',this)">(d) Convexidade não muda nada; é só elegância matemática.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-tbe2','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-tbe2" disabled onclick="MPE.completeSection('s5-tbe2')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s6-reflexao" data-section="s6-reflexao" data-order="6">
+  <div class="section-meta">Seção 6 · Reflexão · 3 min</div>
+  <h2>Foco do Alberto no sábado</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas vão diretamente para o Alberto montar a monitoria.</p>
+
+  <div class="reflection-block">
+    <label>O que ficou <strong>claro</strong> nesta pré-monitoria que estava nebuloso na aula?</label>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Agora entendi por que LNS é o passo 2 da prova, não o passo 1' ou 'A intuição de núcleo encolhendo com \(I\) ficou concreta com a Extensão 2'"></textarea>
+    <div class="help">Diz pro Alberto qual extensão funcionou — ele revisita rápido em sala.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>O que você quer que o <strong>Alberto cubra no sábado</strong>?</label>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Quero ver o cálculo numérico do núcleo em \(I=3\)' ou 'Como construo curva de indiferença com saciedade?'"></textarea>
+    <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s6-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-monitoria</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-monitoria 2 concluída</h2>
+  <p>Boa. O Alberto vai ler suas reflexões antes do sábado.</p>
+  <p style="margin-top:1rem"><strong>Monitoria presencial:</strong> sábado, 23/05/2026, 10:00, Insper.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Esta pré-monitoria é <strong>formativa</strong> — não conta nota.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('pre-monitoria-02');
+
+var PAGE_ID = 'pre-monitoria-02';
+var TOTAL_SECTIONS = 7; // s0..s6
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-claro').value.trim();
+    var b = document.getElementById('refl-alberto').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s6-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'claro', document.getElementById('refl-claro').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'alberto', document.getElementById('refl-alberto').value.trim());
+    this.completeSection('s6-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>
