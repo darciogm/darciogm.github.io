@@ -1,6 +1,8 @@
 # Pré-Aula 4 — Material-Fonte (interno)
 
-> **Status:** material-fonte em Markdown da pré-aula 4. É o "esqueleto narrativo" do `platform/aula-04.html`. Quando o aluno abre a plataforma, vê o HTML; este MD é a referência de revisão e auditoria. Tema: **Equilíbrio Geral em Trocas Puras** (Edgeworth, contract curve, equilíbrio competitivo, lei de Walras, 1º TBE, 2º TBE preliminar).
+> **Status:** material-fonte em Markdown da pré-aula 4. É o "esqueleto narrativo" do `platform/aula-04.html`. Quando o aluno abre a plataforma, vê o HTML; este MD é a referência de revisão e auditoria. **Atualizado em 07/05/2026** (cirurgia de produção): tema agora é **Equilíbrio Geral em Trocas Puras + Produção** (Edgeworth, contract curve, equilíbrio competitivo, lei de Walras, 1º TBE em troca, **PPF + Robinson Crusoe + 1º TBE com produção como corolário**, 2º TBE preliminar, ponte AD-I).
+>
+> **Adição não-destrutiva.** A estrutura original (S0–S8) foi preservada com os mesmos `data-section` IDs; foram adicionadas duas seções novas, **S5b (Conjunto de produção, PPF, Robinson Crusoe)** e **S6b (TMS=TMT, 1º TBE com produção)**, posicionadas entre S5 e S6 com `data-order` 6 e 7. Isso renumera S6/S7/S8 para `data-order` 8/9/10 (TOTAL_SECTIONS = 11), mas **não muda os IDs lógicos** — quem completou S6/S7/S8 antes da cirurgia continua com esses estados preservados em `section_progress`. **Risco operacional declarado:** alunos que já fizeram a pré-aula original (07/05–07/05) verão "Progresso: X/11" em vez de "X/9" e precisarão fazer S5b e S6b adicionalmente. Nenhum dado é apagado; nenhum quiz é re-submetido.
 
 ---
 
@@ -35,21 +37,25 @@ Não-objetivos (para a Aula 5 e seguintes):
 
 ---
 
-## Estrutura das 9 seções
+## Estrutura das 11 seções (atualizada 07/05)
 
-| # | Seção | Tipo | Tempo |
+| # | Seção (data-section) | Tipo | Tempo |
 |---|---|---|---|
-| 0 | Orientação | Contrato com aluno | 2 min |
-| 1 | Leitura ZaE — Cap. 14 §14.1–§14.7 | Leitura dirigida | 25 min |
-| 2 | Leitura N&S 12e Cap. 13 (§13.1, §13.2) | Leitura dirigida (PDF) | 25 min |
-| 3 | Conceitual 1 — Edgeworth e Pareto | Texto + 2 micro-checkpoints | 12 min |
-| 4 | Conceitual 2 — Equilíbrio competitivo e lei de Walras | Texto + 2 micro-checkpoints | 12 min |
-| 5 | Conceitual 3 — 1º TBE e teaser do 2º TBE | Texto + 3 micro-checkpoints | 18 min |
-| 6 | Exercícios de papel (N&S 13.1, 13.2 + bônus) | 3 itens | 15 min |
-| 7 | Checkpoint final de síntese | 3 questões | 10 min |
-| 8 | Reflexão qualitativa | 2 campos abertos | 3 min |
+| 0 | Orientação (`s0-orientacao`) | Contrato com aluno | 2 min |
+| 1 | Leitura ZaE — Cap. 14 §14.1–§14.7 (`s1-leitura-zae`) | Leitura dirigida | 25 min |
+| 2 | Leitura N&S 12e Cap. 13 (§13.1, §13.2) (`s2-leitura-ns`) | Leitura dirigida (PDF) | 20 min |
+| 3 | Conceitual 1 — Edgeworth e Pareto (`s3-edgeworth`) | Texto + 2 micro-checkpoints | 12 min |
+| 4 | Conceitual 2 — EC e lei de Walras (`s4-walras`) | Texto + 2 micro-checkpoints | 12 min |
+| 5 | Conceitual 3 — 1º TBE e teaser do 2º TBE (`s5-tbe`) | Texto + 3 micro-checkpoints | 18 min |
+| **5b** | **Conceitual 4 — Produção, PPF, Robinson Crusoe** (`s5b-producao`) ✦ NOVO | Texto + 2 micro-checkpoints | **15 min** |
+| **6b** | **Conceitual 5 — TMS=TMT + 1º TBE com produção** (`s6b-1tbe-prod`) ✦ NOVO | Texto + 2 micro-checkpoints | **10 min** |
+| 6 | Exercícios de papel (N&S 13.1, 13.2 + bônus) (`s6-exercicios`) | 3 itens | 15 min |
+| 7 | Checkpoint final de síntese (`s7-checkpoint`) | 3 questões | 10 min |
+| 8 | Reflexão qualitativa (`s8-reflexao`) | 2 campos abertos | 3 min |
 
-Total: ~120 min material; quiz pré (10 🟡) à parte (30–45 min).
+Total: ~140 min material (era ~120); quiz pré (10 🟡: **6 trocas + 4 produção**) à parte (30–45 min).
+
+**Trade-off declarado:** o tempo-alvo subiu 90–120 → **115–145 min** de material. Quiz pré subiu de 30–45 para 35–50 min (porque tem 4 questões novas de produção). Total da pré-aula sobe ~25 min. **Política para alunos que já completaram seções 1–5 antes de 07/05:** mantêm progresso original; só precisam fazer S5b e S6b (telemetria de tempo das seções antigas é preservada em `section_progress`).
 
 ---
 
@@ -341,6 +347,117 @@ Se preferências têm um "platô" de saciedade <em>completa</em> num ponto — u
 
 ---
 
+## Seção 5b — Conceitual 4: Conjunto de produção, PPF, Robinson Crusoe ✦ NOVO
+
+### Setup
+
+Adicionamos firmas. **Conjunto de produção** $Y \subseteq \mathbb{R}^L$: cada $y \in Y$ é um vetor input-output, com convenção $y_\ell > 0$ se $\ell$ é produto e $y_\ell < 0$ se $\ell$ é insumo. Hipóteses canônicas: $0 \in Y$ (inação), livre descarte, $Y \cap \mathbb{R}^L_+ = \{0\}$ (sem free-lunch), fechamento, **convexidade** (chave do 2º TBE; quebra com retornos crescentes — Aula 7).
+
+**Caso particular — função de produção:** $Y = \{(-z, q) : z \ge 0,\, q \le f(z)\}$ com $f$ côncava, $f(0)=0$, $f' > 0$.
+
+### Fronteira de Possibilidades de Produção (PPF)
+
+Setup didático: $\bar L$ unidades de trabalho; dois setores produtivos com $f_1(L_1)$, $f_2(L_2)$, e restrição $L_1 + L_2 = \bar L$. PPF = lugar geométrico de $(q_1, q_2)$ com alocação eficiente de fatores.
+
+**Caso canônico (use no papel):** $f_1(L_1) = \sqrt{L_1}$, $f_2(L_2) = \sqrt{L_2}$, $\bar L = 16$. Substituir $L_\ell = q_\ell^2$:
+
+$$
+q_1^2 + q_2^2 = 16 \qquad \Longrightarrow \qquad \text{PPF é arco de círculo de raio 4 no quadrante positivo.}
+$$
+
+**PPF é côncava** (rendimentos decrescentes setoriais). Marcar pontos $(0, 4)$, $(4, 0)$, $(2, 2\sqrt{3}) \approx (2, 3{,}46)$ em $L_1 = 4$.
+
+### Taxa marginal de transformação (TMT)
+
+$$
+\text{TMT}_{12} \;=\; -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} \;=\; \frac{\text{PMa}_L^2}{\text{PMa}_L^1}.
+$$
+
+"Quantas unidades de bem 2 a economia desiste para 1 unidade extra de bem 1, mantida eficiência produtiva."
+
+Verificação alternativa via derivada implícita de $q_1^2 + q_2^2 = 16$: $\text{TMT}_{12} = q_1/q_2$ neste exemplo.
+
+### Robinson Crusoe — setup mínimo
+
+Robinson é simultaneamente **dono da firma** e **consumidor**. Variáveis: trabalho $L$ (insumo), bem de consumo $q$ (produto), lazer $\ell = \bar L - L$. Tecnologia: $q = f(L)$. Preferências: $u(q, \ell)$.
+
+**Solução do planejador.** $\max_L u(f(L),\, \bar L - L)$. CPO interior:
+
+$$
+\frac{\partial u/\partial \ell}{\partial u/\partial q} \;=\; f'(L), \qquad \text{ou seja} \qquad \text{TMS}_{\ell, q} \;=\; \text{TMT}_{L, q}.
+$$
+
+**Numérico canônico.** $u = q^{1/2}\ell^{1/2}$, $f(L) = \sqrt{L}$, $\bar L = 16$. Substituindo: $\max_L L^{1/4}(16-L)^{1/2}$. CPO $\Rightarrow L^* = 16/3$, $\ell^* = 32/3$, $q^* = \sqrt{16/3} = 4/\sqrt{3} \approx 2{,}31$. Verificação: $\text{TMS} = q/\ell = \sqrt{3}/8 = f'(L^*) = \text{TMT}$. ✓
+
+> **Trade-off declarado.** Esta seção apresenta Robinson na forma simplificada (1 consumidor + 1 firma + 2 bens via $L/q$), sem $J$ firmas variáveis nem cota $\theta^{ij}$ explicitada algebricamente. A versão com $I$ consumidores + $J$ firmas é tratada em S6b como corolário; a construção numérica completa fica na pré-monitoria 2 com Alberto.
+
+### Micro-checkpoints
+
+**Q1 (s5bq1).** Em $f(L) = \sqrt{L}$, a produtividade marginal $\text{PMa}_L$ em $L = 4$ vale:
+- (a) $1/2$.
+- (b) $1/4$. **← CORRETA** (porque $f'(L) = 1/(2\sqrt{L})$, em $L=4$ dá $1/(2\cdot 2) = 1/4$).
+- (c) $2$.
+- (d) $0$ — fronteira.
+
+**Q2 (s5bq2).** Na economia canônica $\bar L = 16$, $f_1 = f_2 = \sqrt{\cdot}$, qual a TMT em $q_1 = 2$, $q_2 = 2\sqrt{3}$?
+- (a) $1$ — TMT é sempre 1 quando os setores têm a mesma tecnologia.
+- (b) $1/\sqrt{3} \approx 0{,}577$ — usando $\text{TMT}_{12} = q_1/q_2 = 2/(2\sqrt{3})$. **← CORRETA**
+- (c) $\sqrt{3} \approx 1{,}732$ — inverso da resposta correta.
+- (d) Indefinido — TMT só existe em economia $L = 1$.
+
+---
+
+## Seção 6b — Conceitual 5: Equilíbrio com firmas + 1º TBE com produção (corolário) ✦ NOVO
+
+### Equilíbrio descentralizado de Robinson — os dois chapéus
+
+Introduzir $(p, w)$. **Chapéu da firma:** $\pi(p, w) = \max_L p\, f(L) - w\, L$. CPO: $f'(L^*) = w/p$. Saída: $L^d(p,w)$, $q^s = f(L^d)$, lucro $\pi^* = p\, q^s - w\, L^d$.
+
+**Chapéu do consumidor:** renda $m = w\, \bar L + \pi^*$ (salário pelas $\bar L$ horas + lucro como dividendo, já que $\theta = 1$ — Robinson é único dono). $\max u(q, \ell)$ s.a. $p\, q + w\, \ell \le m$. CPO: $\text{TMS}_{\ell, q} = w/p$.
+
+> *Por que Robinson "paga salário a si mesmo"?* O salário é **conta interna** da economia descentralizada: a firma paga $w$ pela hora; o consumidor recebe $w\,L$ (salário) + $\pi^*$ (lucro) = $w\,L + p\,q - w\,L = p\,q$. A separação contábil é o que permite estender para $J$ firmas e $I$ consumidores com cotas $\theta^{ij}$ explicitamente parametrizadas (pré-monitoria 2).
+
+### A igualdade canônica
+
+Combinando as CPOs da firma e do consumidor:
+
+$$
+\boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w}{p} \;=\; \text{TMT}_{L, q}\;}
+$$
+
+**Interpretação.** Mercado descentralizado replica solução do planejador. **Verificação numérica** (continuação do exemplo): com $p = 1$, $w^* = \sqrt{3}/8$. Lucro $\pi^* = q^* - w^* L^* = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}$. Renda $m^* = w^* \bar L + \pi^* = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3$. CD ⇒ $q^* = m^*/(2 p) = 4/\sqrt{3}$ ✓; $\ell^* = m^*/(2 w^*) = 32/3$ ✓.
+
+### Generalização rápida e 1º TBE com produção
+
+**Setup geral.** $I$ consumidores ($i = 1, \ldots, I$) com preferências $\succeq^i$, dotações $\omega^i$, **cotas de propriedade** $\theta^{ij} \ge 0$, $\sum_i \theta^{ij} = 1$ para cada firma $j$. $J$ firmas com $Y^j$. Renda do consumidor: $m^i(p) = p\cdot \omega^i + \sum_j \theta^{ij} \pi^j(p)$.
+
+**Equilíbrio competitivo com produção.** Terna $(p^*, x^*, y^*)$ com (i) cada $y^{*j}$ maximizando lucro em $Y^j$; (ii) cada $x^{*i}$ resolvendo UMP em $p^*$ com renda $m^{*i}$; (iii) viabilidade $\sum_i x^{*i} = \sum_i \omega^i + \sum_j y^{*j}$.
+
+**1º TBE com produção (esquema da prova — corolário direto da Aula 4).** Por contradição: suponha $(\tilde x, \tilde y)$ viável, $u^i(\tilde x^i) \ge u^i(x^{*i})$ ∀ $i$, e estrita para algum $j$.
+
+1. **Passo 1 (consumidor estritamente melhor):** $p^*\cdot \tilde x^j > m^{*j}$. (UMP de $x^{*j}$.)
+2. **Passo 2 (LNS, demais consumidores):** $p^*\cdot \tilde x^i \ge m^{*i}$. (Mesmo argumento da Aula 4 §5.)
+3. **Passo 3 (NOVO — firmas):** cada $\tilde y^j \in Y^j$, então $p^*\cdot \tilde y^j \le \pi^{*j}(p^*) = p^*\cdot y^{*j}$, **por definição de $y^{*j}$ como maximizador de lucro**.
+4. **Passo 4 (somar e contradizer):** $\sum_i p^*\cdot \tilde x^i > \sum_i m^{*i} = \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot y^{*j} \ge \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot \tilde y^j$. Mas viabilidade força igualdade. Contradição. $\blacksquare$
+
+**Mensagem.** A prova é a mesma da Aula 4 §5 com **um passo a mais** (passo 3 das firmas). LNS continua sendo a hipótese-chave do consumidor; max-lucro é o que se exige da firma. Convexidade não aparece (é hipótese do **2º** TBE).
+
+### Micro-checkpoints
+
+**Q1 (s6bq1).** No equilíbrio descentralizado de Robinson canônico ($u = q^{1/2}\ell^{1/2}$, $f = \sqrt{L}$, $\bar L = 16$, $p = 1$ numerário), o salário de equilíbrio $w^*$ vale:
+- (a) $1$ — salário e preço sempre coincidem.
+- (b) $\sqrt{3}/8 \approx 0{,}217$ — porque $w^* = p\cdot f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8$. **← CORRETA**
+- (c) $16/3$ — confunde $L^*$ com $w^*$.
+- (d) $0$ — Robinson não paga a si mesmo.
+
+**Q2 (s6bq2).** No 1º TBE com produção, a hipótese **nova** (relativa ao 1º TBE em troca pura) é:
+- (a) Convexidade do conjunto de produção $Y$.
+- (b) Maximização de lucro pelas firmas (cada $y^{*j} \in \arg\max_{y \in Y^j} p^*\cdot y$). **← CORRETA** (entra no passo 3.)
+- (c) LNS dos consumidores — antes não existia.
+- (d) Homogeneidade grau 0 da função de produção.
+
+---
+
 ## Seção 6 — Exercícios de papel
 
 Análogos a N&S 12e §13.1 e §13.2 (e bônus de J-R §5.1).
@@ -384,11 +501,11 @@ Dois campos abertos obrigatórios:
 
 ---
 
-## Calibre — checagem
+## Calibre — checagem (atualizado pós-cirurgia)
 
-- **N&S 12e:** §13.1 (Walras, normalização) + §13.2 (1º TBE em troca, teaser 2º TBE). Piso obrigatório.
-- **J-R 3e:** §5.1 (troca pura, Edgeworth, núcleo) + parte de §5.2 (1º TBE). Sem entrar em existência (Kakutani).
-- **MWG:** Cap. 15 (troca puro), Cap. 16 §16.B–§16.C (1º TBE). Citado cirurgicamente apenas se aluno mais maduro perguntar.
-- **ZaE:** Cap. de EG (trocas), parte da consolidação narrativa.
+- **N&S 12e:** §13.1 (Walras, normalização) + §13.2 (1º TBE em troca, teaser 2º TBE) — **piso obrigatório, trocas**. + **§11 (intro a produção, função de produção, isoquantas) + §13.3 (production economy intro)** — **piso obrigatório, produção**. Sem §13.4–§13.5 (existência) que vai para Aula 6.
+- **J-R 3e:** §5.1 (troca pura, Edgeworth, núcleo) + parte de §5.2 (1º TBE) + **§5.4 (produção, Robinson, 1º TBE com produção, sem Hahn-Banach)**. Sem invocar Kakutani.
+- **MWG:** Cap. 15 (troca puro), Cap. 16 §16.B–§16.C (1º TBE em troca), **Cap. 17 §17.B–§17.C (produção, 1º TBE com produção)**. Citado cirurgicamente apenas se aluno mais maduro perguntar.
+- **ZaE:** Cap. 14 (EG trocas) — leitura principal. Apêndice de produção (se existir capítulo equivalente do livro do Darcio cobrindo PPF/Robinson) **[verificar com Darcio]**.
 
-Calibre da pré-aula: **definicional + 1 cálculo numérico + intuição do 1º TBE**. Não exigir prova rigorosa (essa é da aula presencial).
+Calibre da pré-aula: **definicional + 2 cálculos numéricos (CD assimétrica em troca + Robinson canônico em produção) + intuição do 1º TBE em ambas as versões**. Não exigir prova rigorosa do 2º TBE (Hahn-Banach é da Aula 6).

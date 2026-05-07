@@ -28,3 +28,7 @@ docs/micro-book/mpe/lista_alunos*.xlsx
 docs/micro-book/mpe/credenciais-*.csv
 docs/micro-book/mpe/supabase/scripts/node_modules/
 docs/micro-book/mpe/supabase/scripts/package-lock.json
+
+# MPE course — Quarto reveal.js runtime (gerado por quarto render; padrão aula_1: não commitar)
+docs/micro-book/mpe/aula_*/slides/*_files/
+docs/micro-book/mpe/aula_*/_archive_*/slides/*_files/

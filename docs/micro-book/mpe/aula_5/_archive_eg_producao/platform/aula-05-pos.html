@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 05 — Equilíbrio Geral em Produção — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 05 — Equilíbrio Geral em Produção</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S 12e §9 + §13.3–13.5) + 5 avançadas 🔴 (calibre Jehle-Reny §5.4 / qualifier).</strong> Objetivo: ponte entre a aula de 20/05 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong> (a leitura dos gabaritos 5-passos conta).</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 27/05 às 18:00 BRT</strong>, 1h30 antes da Aula 6.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-05-pos" data-phase="post" data-title="Pós-Aula 05">
+
+  <h3>Pós-Aula 05 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Robinson Crusoe assimétrico (composição mata expoente) -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Robinson Crusoe com \(u(q, \ell) = q^{2/3}\ell^{1/3}\) (consumidor "viciado em consumo"), \(f(L) = L^{1/2}\), \(\bar L = 9\). O trabalho ofertado em equilíbrio é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(L^* = 6\) (intuição: peso 2/3 no consumo ⇒ trabalha 2/3 do tempo).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) \(L^* = 9/2 = 4{,}5\) — composição \(q = L^{1/2}\) "mata" o expoente 2/3, função reduzida \(L^{1/3}(9-L)^{1/3}\) é simétrica.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \(L^* = 9\) (especialização total).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(L^* = 3\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A composição \(q = f(L) = L^{1/2}\) muda o expoente efetivo na função objetivo. Substituindo: \(u(L) = (L^{1/2})^{2/3}(9-L)^{1/3} = L^{1/3}(9-L)^{1/3}\) — função simétrica. Ótimo em \(L^* = \bar L/2 = 4{,}5\). A intuição "trabalha mais porque ama consumir" falha aqui.</p>
+      <p><strong>2. Derivação.</strong> CPO de \(L^{1/3}(9-L)^{1/3}\): derivar e igualar a zero entrega \((9-L) - L = 0 \implies L^* = 4{,}5\). ✓ \(\ell^* = 4{,}5\), \(q^* = \sqrt{4{,}5} = 3/\sqrt{2}\). Verificação \(\text{TMS} = \text{TMT} = w/p\): todos iguais a \(\sqrt{2}/6 \approx 0{,}236\). Fórmula geral: \(L^* = \alpha\beta\bar L/(\alpha\beta + 1 - \alpha)\) com \(\alpha = 2/3, \beta = 1/2\) entrega \((1/3)\cdot 9/(1/3 + 1/3) = 4{,}5\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) é o "intuitivo errado" — \(L^* = (2/3)\bar L = 6\) só vale se \(\beta = 1\) (linear). (c) e (d) são corners ou erros de fração. (b) entrega o cálculo correto.</p>
+      <p><strong>4. Extensão.</strong> Lição: <strong>fazer a substituição antes de intuir</strong>. Em modelos com composição \(q = f(L)\) e \(u(q, \ell)\), o efeito da preferência sobre o trabalho é mediado pela tecnologia. **Conexão com Aula 6:** em utilidade esperada com tecnologia contingente, mesma lição vale.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que marca (a) usa intuição em vez de álgebra — exatamente o erro que Aula 5 pretende corrigir. Distrator deliberado.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Maximização de lucro (CPO) -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Firma com tecnologia \(f(L) = L^{1/2}\) enfrenta preço de produto \(p\) e salário \(w\), maximiza \(p\, L^{1/2} - w\, L\). A demanda de trabalho \(L^d(p, w)\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(L^d = p/(2 w)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) \(L^d = (p/w)^2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(L^d = p^2/(4 w^2) = (p/(2w))^2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(L^d = w/p\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CPO de max-lucro: \(p\, f'(L) = w \implies p\cdot \frac{1}{2\sqrt{L}} = w \implies \sqrt{L} = p/(2w) \implies L = p^2/(4w^2)\).</p>
+      <p><strong>2. Derivação.</strong> \(d/dL[p L^{1/2} - w L] = p/(2\sqrt{L}) - w = 0\). Resolver para \(L\): \(p/(2\sqrt{L}) = w \implies \sqrt{L} = p/(2w) \implies L^d = p^2/(4 w^2)\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde fórmula linear com \(\sqrt{L}\). (b) erra fator. (d) é a CPO mas com sinal trocado. (c) entrega o quadrado correto.</p>
+      <p><strong>4. Extensão.</strong> Oferta de produto: \(q^s(p, w) = f(L^d) = \sqrt{L^d} = p/(2w)\). Função de lucro: \(\pi(p, w) = p\cdot p/(2w) - w\cdot p^2/(4w^2) = p^2/(2w) - p^2/(4w) = p^2/(4w)\). Verifica homogeneidade grau 1 em \((p, w)\) ✓.</p>
+      <p><strong>5. Peer-review.</strong> Cálculo direto. Quem erra ainda não internalizou CPO de max-lucro com tecnologia côncava.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Cotas theta e neutralidade da distribuição -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Em economia EG com \(I\) consumidores, \(J\) firmas, e cotas de propriedade \(\theta^{ij}\) com \(\sum_i \theta^{ij} = 1\) para cada firma \(j\). Mudar as cotas \(\theta^{ij}\) (mantendo a soma) afeta:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Tanto a alocação de fatores entre firmas quanto a distribuição de renda entre consumidores.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Apenas a distribuição de renda entre consumidores; alocação de fatores e preços relativos permanecem inalterados.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Apenas a alocação de fatores; distribuição de renda permanece igual.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Apenas o lucro agregado.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Versão produção do 2º TBE preliminar: alocação de cotas é "redistribuição lump-sum implícita" — afeta distribuição (renda dos consumidores) mas não eficiência (alocação de fatores entre firmas).</p>
+      <p><strong>2. Derivação.</strong> Demanda agregada de cada bem depende da renda agregada \(\sum_i m^i = \sum_i (p\cdot \omega^i + \sum_j \theta^{ij}\pi^j) = p\cdot \sum_i \omega^i + \sum_j (\sum_i \theta^{ij})\pi^j = p\cdot \sum_i \omega^i + \sum_j \pi^j\). A soma sobre \(i\) cancela cada \(\theta^{ij}\) individualmente — só lucro agregado importa. Logo demanda agregada e \(p^*\) são invariantes a \(\theta\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde \(\theta\) com tecnologia. (c) é o oposto. (d) é falso — lucro agregado é invariante.</p>
+      <p><strong>4. Extensão.</strong> Implicação política: cotas representam "propriedade do capital" (acionistas, posseiros) — afetam quem fica rico, não eficiência. Reforma agrária ou "popular capitalism" altera \(\theta\). Mercado eficiente independente.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que marca (a) ainda não separou eficiência (estrutura de produção) de equidade (distribuição via cotas).</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Eficiência produtiva e distorção tributária -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em economia \(2 \times 2\) com mobilidade de trabalho, suponha que o setor 1 paga imposto \(\tau\) sobre cada unidade de produto. O preço efetivo recebido pela firma do setor 1 é \(p_1(1-\tau)\). Em EC com tributação, a TMT entre os bens é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(\text{TMT}_{12} = p_1/p_2\) — tributo não afeta TMT.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) \(\text{TMT}_{12} = p_1(1-\tau)/p_2\) — alocação reflete preço pós-imposto. Mercado de bem ainda enxerga \(p_1/p_2\), criando wedge entre TMT-produção e TMS-consumo.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(\text{TMT}_{12} = p_2/p_1\) — inverte direção.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Indeterminado.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Tributo cria wedge entre preço do produtor e preço do consumidor. Firma 1 enxerga \(p_1(1-\tau)\), aloca trabalho até \(\text{PMa}_L^1 = w/[p_1(1-\tau)]\) — menos que sem tributo. TMT do agregado fica deslocada.</p>
+      <p><strong>2. Derivação.</strong> Firma 1: \(f_1' = w/[p_1(1-\tau)]\). Firma 2: \(f_2' = w/p_2\). \(\text{TMT}_{12} = f_2'/f_1' = (w/p_2)/(w/(p_1(1-\tau))) = p_1(1-\tau)/p_2\). Consumidor: \(\text{TMS}_{12} = p_1/p_2\) (UMP usa preço do consumidor). Wedge: \(\text{TMS} \neq \text{TMT}\) ⇒ ineficiência alocativa de Pareto.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora pass-through do imposto. (c) inverte direção. (d) é falso — é determinado.</p>
+      <p><strong>4. Extensão.</strong> Implicação política: imposto seletivo distorce alocação intersetorial. 1º TBE quebra parcialmente. **Conexão com Box ZFM (Aula 5):** subsídio fiscal regional cria distorção análoga; pode ser "second-best" justificável por externalidade positiva (Aula 7).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que marca (a) ignora distorção tributária; (c)/(d) confundem direção.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — 1º TBE com produção, papel do passo 3 -->
+  <div class="quizg-q" data-qid="q5" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Sobre o 1º TBE com produção, qual afirmação é <strong>falsa</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Em economia com firmas, a prova padrão tem 4 passos: contradição → UMP do consumidor estritamente melhor → LNS dos consumidores fracamente melhores → max-lucro das firmas → soma e contradiz viabilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) O passo 3 (max-lucro) é o único novo em relação à prova da Aula 4 (troca pura).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) LNS é hipótese sobre consumidores; max-lucro é hipótese sobre firmas. Combo mínimo.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Convexidade dos \(Y^j\) é hipótese-mínima do 1º TBE com produção — sem ela o passo 3 não funciona.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d) — afirmação falsa.</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Convexidade dos \(Y^j\) é hipótese do **2º TBE** com produção, não do 1º. O passo 3 do 1º TBE usa apenas a definição de max-lucro: \(y^{*j}\) é maximizador, então \(p^*\cdot \tilde y^j \le p^*\cdot y^{*j}\). Não exige que \(Y^j\) seja convexo — qualquer conjunto serve, contanto que \(y^{*j}\) seja max-lucro a \(p^*\).</p>
+      <p><strong>2. Derivação.</strong> Em \(Y^j\) não-convexo, EC pode existir em "canto" do conjunto. Se existir, \(y^{*j}\) é max-lucro e o argumento do passo 3 funciona. O problema é que **EC pode não existir** em \(Y^j\) não-convexo (lucro infinito, p.ex. retornos crescentes) — mas isso é problema de existência, não de eficiência.</p>
+      <p><strong>3. Armadilha.</strong> (d) é o erro clássico de juntar 1º e 2º TBE. (a), (b), (c) são todas verdadeiras.</p>
+      <p><strong>4. Extensão.</strong> Comparação 1º TBE Aula 4 vs. Aula 5: hipóteses adicionais é apenas max-lucro. **Conexão com Aula 7 (externalidades):** mesmo com 1º TBE valendo formalmente, se há externalidades, eficiência **social** pode quebrar — porque preço de mercado não internaliza efeito social.</p>
+      <p><strong>5. Peer-review.</strong> Questão de "qual é falsa" — exige distinguir hipóteses entre os dois teoremas. Quem marca (a)/(b)/(c) confunde "verdade" com "afirmação falsa".</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Lema de Hotelling -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> A função de lucro \(\pi(p, w) = \max_{z \ge 0} p\cdot f(z) - w\cdot z\) tem como propriedade central:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Côncava em \((p, w)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Convexa em \((p, w)\), homogênea grau 1, e satisfaz <strong>lema de Hotelling</strong>: \(\partial \pi/\partial p = q^s(p, w)\) (oferta), \(\partial \pi/\partial w_\ell = -z^d_\ell(p, w)\) (demanda condicional do insumo).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Linear em \(p\) sempre.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Constante em \(w\) sempre.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Função de lucro como dual da função de produção tem propriedades análogas à função despesa do consumidor (Aula 2): convexidade, homogeneidade, e teorema do envelope (lema de Hotelling).</p>
+      <p><strong>2. Derivação.</strong> Convexidade em \((p, w)\): vem do "máximo de funções lineares é convexa" (cada \(p f(z) - w z\) é linear em \((p, w)\) para \(z\) fixo; máximo sobre \(z\) é convexa). Homogeneidade grau 1: escalar todos os preços por \(\lambda\) escala lucro por \(\lambda\). Lema de Hotelling: \(\partial \pi/\partial p = f(z^*) + p\cdot 0 = q^s\) (envelope, derivativa de \(z^*\) zera).</p>
+      <p><strong>3. Armadilha.</strong> (a) Confunde com função de utilidade (não com lucro). (c) e (d) são casos particulares triviais.</p>
+      <p><strong>4. Extensão.</strong> Em economia com \(J\) firmas, \(\Pi(p, w) = \sum_j \pi^j\) herda as mesmas propriedades. Análise de bem-estar via excedente do produtor (área entre \(p\) e curva de oferta) é Aplicação direta do lema de Hotelling. **Conexão com Aula 2:** dualidade Roy/Shephard no consumidor é análoga.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (qualifier). Aluno deve reconhecer estrutura dual da função de lucro. Quem marca (a) confunde com \(u\); (c)/(d) são chutes.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — Existência via Brouwer (anúncio) -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Para provar <strong>existência</strong> de EC em economia com produção (consumidores + firmas + cotas), qual estratégia é canônica (Aula 6 detalhará)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Construção direta via Lagrangiano de cada agente.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Indução em \(I\) ou \(J\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Aplicar teorema de ponto fixo de <strong>Kakutani</strong> (extensão de Brouwer para correspondências) ao mapa que ajusta preços conforme excesso de demanda agregado, no simplex normalizado. Kakutani é necessário (não Brouwer simples) porque demanda/oferta podem ser correspondências (Leontief, retornos constantes).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Programação linear.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Existência de EC com produção exige Kakutani (extensão de Brouwer para correspondências) porque demanda agregada pode ser correspondência: em retornos constantes ou Leontief, demanda pode ser segmento, não ponto único.</p>
+      <p><strong>2. Derivação (esboço, Aula 6).</strong> Define-se mapa \(T: \Delta \to 2^\Delta\) (de simplex de preços para subconjuntos do simplex), tal que \(T(p) = \{p' : p' \text{ ajusta preços conforme excesso}\}\). Hipóteses para Kakutani: \(T\) tem valores convexos, fechados, e gráfico fechado. Sob convexidade dos \(Y^j\) e preferências, \(T\) satisfaz. Ponto fixo: \(p^* \in T(p^*)\) ⇒ \(z(p^*) \le 0\) com igualdade onde \(p^*_\ell &gt; 0\) — EC.</p>
+      <p><strong>3. Armadilha.</strong> (a) Lagrangiano resolve UMP/max-lucro individual, não existência agregada. (b) indução não funciona. (d) PL é caso muito particular.</p>
+      <p><strong>4. Extensão.</strong> Em Aula 6 (Arrow-Debreu), Kakutani é aplicado em \(\mathbb{R}^{LS}\) (bens contingentes em estados \(S\)). A estrutura sobrevive — convexidade ainda é hipótese-chave. **Sem convexidade**, Kakutani falha; não há garantia de existência (e há contraexemplos clássicos).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (qualifier-level). Aluno MPE deve reconhecer Kakutani como ferramenta canônica em economia com produção, mesmo sem ter visto detalhes — vai entrar em Aula 6.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — Retornos crescentes quebram 2º TBE -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Considere firma com tecnologia \(f(L) = L^2\) (retornos crescentes). O conjunto de produção \(Y = \{(-L, q) : L \ge 0, q \le L^2\}\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) Convexo, então 2º TBE vale.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) Não-convexo: combinação convexa de \((0, 0)\) e \((-2, 4)\) é \((-1, 2)\), mas \(f(1) = 1 &lt; 2\), logo \((-1, 2) \notin Y\). 2º TBE com produção quebra.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Compacto.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Convexo se \(L \le 1\), não-convexo se \(L &gt; 1\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Retornos crescentes (função convexa) ⇒ conjunto sub-gráfico não-convexo ⇒ separação por hiperplano-preço (Hahn-Banach) pode falhar ⇒ 2º TBE quebra.</p>
+      <p><strong>2. Derivação.</strong> Pontos \((-L, q) \in Y\): \((0, 0) \in Y\) (inação) e \((-2, 4) \in Y\) (com \(f(2) = 4\)). Combinação convexa com \(\alpha = 1/2\): \((-1, 2)\). Mas \(f(1) = 1 &lt; 2\), logo \((-1, 2)\) **não** está em \(Y\). Conjunto não-convexo. Geometricamente: \(Y\) tem "buraco" abaixo de \(f\) na região onde \(f\) é convexa.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "monotônica" com "convexa" — \(f\) é monotônica crescente, mas a sub-gráfica não é convexa. (c) compacidade exige limitação. (d) é falso — não-convexidade existe globalmente.</p>
+      <p><strong>4. Extensão.</strong> Conexão com problema de max-lucro: \(\max_L p L^2 - w L\). CPO: \(2pL = w \implies L = w/(2p)\), mas é mínimo (segunda derivada \(2p &gt; 0\)). Máximo está em \(L \to \infty\) — não há EC clássico. **Resposta de "second-best":** regulação tarifária (Coase), tarifa em duas partes. Telecomunicações, eletricidade são exemplos reais.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Aluno deve reconhecer que retornos crescentes = não-convexidade tecnológica = 2º TBE com produção falha. Conexão com Aulas 5 e 7.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — Aggregation problem em economia com J firmas -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Em economia com \(J\) firmas heterogêneas e fator único trabalho, suponha que cada firma \(j\) tem tecnologia \(f^j(L^j)\) côncava. O conjunto de produção agregado é \(Y^{\text{agg}} = \sum_j Y^j\). Com \(J = 2\) firmas idênticas \((f^1 = f^2 = f)\), \(Y^{\text{agg}}\):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) É \(\{2 y : y \in Y\}\) — apenas escalar por 2.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Coincide com \(Y\) (agregação por replicação não muda).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) É a soma de Minkowski \(\{y^1 + y^2 : y^1, y^2 \in Y\}\), com fronteira eficiente caracterizada por \(\text{PMa}_L^1 = \text{PMa}_L^2\) — mesma marginal nos dois sub-setores.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) É vazio.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Agregação de conjuntos de produção é via soma de Minkowski. Eficiência produtiva agregada exige equiparação de PMa entre firmas — vem da CPO de "qual firma alocar a unidade marginal de fator".</p>
+      <p><strong>2. Derivação.</strong> \(Y^{\text{agg}} = \{y^1 + y^2 : y^1 \in Y^1, y^2 \in Y^2\}\) é a soma de Minkowski. Em fronteira eficiente: maximizar produto agregado dado fator agregado \(\bar L\). Lagrangiano: \(\max f^1(L^1) + f^2(L^2)\) s.a. \(L^1 + L^2 \le \bar L\). CPO: \(\partial f^j/\partial L^j = \lambda\) para todo \(j\). Logo PMa equiparada — versão produção da igualdade \(\text{TMS}^A = \text{TMS}^B\) da Aula 4.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde soma de Minkowski com escalonamento. (b) é falso — agregação aumenta o conjunto. (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Em economia com firmas heterogêneas (\(f^1 \neq f^2\)), eficiência produtiva ainda exige PMa equiparada; mas alocação ótima de fator entre firmas pode ser não-trivial. **Conexão com Aula 7:** se há externalidade entre firmas (firma 1 polui, afeta firma 2), agregação muda — \(Y^{\text{agg}}\) depende de \(y^1\) via efeito externo, e a eficiência social \(\neq\) eficiência de mercado.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Aluno deve internalizar agregação por Minkowski + eficiência via PMa equiparada. **Risco residual:** "Edgeworth-da-produção" — análogo da Aula 4 mas no lado da produção. Quem entende a estrutura passa.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴🔴 — Recíproca 2º TBE: hipóteses críticas -->
+  <div class="quizg-q" data-qid="q10" data-correct="d" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <em>(Questão-teto. Custa 8–12 min de papel para fechar — exige distinguir hipóteses canônicas, hipóteses opcionais e o que é necessário vs. suficiente.)</em><br>
+      Considere o 2º TBE com produção. Sob quais condições a recíproca "Pareto ⇒ EC após redistribuição lump-sum" vale?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Sob LNS dos consumidores apenas (igual à hipótese-mínima do 1º TBE).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Sob convexidade dos \(Y^j\) apenas, sem hipóteses sobre preferências.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Sob LNS + preferências contínuas, mas sem convexidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Sob LNS dos consumidores + preferências convexas + conjuntos de produção \(Y^j\) convexos. Convexidade é a hipótese **adicional** (em comparação com o 1º TBE) que permite separação por hiperplano-preço (Hahn-Banach).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="e"> (e) Sob mercados completos apenas (Aula 6).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> 2º TBE com produção exige <strong>combo de convexidades</strong>: preferências convexas (consumidor) + \(Y^j\) convexos (firma) + LNS para garantir orçamento exausto. Sem qualquer um, separação por hiperplano-preço (Hahn-Banach) pode falhar e 2º TBE quebra.</p>
+      <p><strong>2. Derivação (esboço, Aula 6).</strong> Dado \((x^*, y^*)\) Pareto, definir \(V^i = \{x : u^i(x) > u^i(x^{*i})\}\) (preferido estrito). Convexidade preferências ⇒ \(V^i\) convexo. Soma \(\sum_i V^i\) convexa. Conjunto viável \(\sum_i \omega^i + \sum_j Y^j\) convexo (soma de convexos). Pareto ⇒ os dois conjuntos não se intersectam. Hahn-Banach ⇒ existe hiperplano-preço \(p^*\) que separa. \(p^*\) sustenta cada \(x^{*i}\) como UMP (LNS faz orçamento exausto) e cada \(y^{*j}\) como max-lucro (suporte de \(Y^j\) por \(p^*\)).</p>
+      <p><strong>3. Armadilha.</strong> (a) é hipótese do 1º TBE, não 2º. (b) ignora preferências. (c) ignora convexidade — Hahn-Banach falha. (e) confunde 2º TBE com mercados contingentes (Aula 6 detalha, mas convexidade já é necessária aqui).</p>
+      <p><strong>4. Extensão.</strong> **Onde quebra:** retornos crescentes (Aula 7), externalidades (Aula 7), informação assimétrica (Aula 8). Brasil real: monopólio natural em telecomunicações, eletricidade — solução "second-best" é regulação tarifária. **Conexão com 1º TBE:** o 1º precisa apenas de LNS + max-lucro; o 2º precisa de convexidade adicionalmente. A diferença de hipóteses é exatamente o "preço da recíproca".</p>
+      <p><strong>5. Peer-review.</strong> 🔴🔴 — exige distinguir hipóteses entre os dois teoremas e entre consumidores/firmas. Aluno MPE deve consolidar isso após Aula 5; vai aparecer no quiz pós-aula 6 com Hahn-Banach formal. Distrator (a) atrai quem mistura hipóteses do 1º; (c) atrai quem subestima papel da convexidade.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 5 (também disponível desde 21/05). A <strong>Pré-aula 6</strong> (Arrow-Debreu I — bens contingentes) é liberada na madrugada de <strong>21/05</strong>; tudo da Aula 5 fecha em <strong>quarta 27/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-05-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

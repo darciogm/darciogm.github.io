@@ -1,6 +1,8 @@
 # Aula 4 — Durante a Aula
 
-> **Status:** roteiro operacional minuto-a-minuto para a aula presencial de 13/05/2026. Estrutura paralela ao `durante_aula.md` da Aula 3, calibrada após auditorias das Aulas 1–3.
+> **Status:** roteiro operacional minuto-a-minuto para a aula presencial de 13/05/2026. **Recalibrado em 07/05/2026** após mudança de ementa: a Aula 4 agora cobre **trocas + produção** (120 min trocas + 50 min produção + 10 min ponte AD-I). Estrutura paralela aos `durante_aula.md` das Aulas 1–3.
+
+> **Trade-off declarado.** Os 50 min para produção são **piso**, não conforto. Robinson Crusoe é apresentado em forma simplificada (1 consumidor + 1 firma + 2 bens via $L/q$), sem $J$ firmas variáveis nem cota $\theta^{ij}$ explicitada algebricamente. A generalização para $J$ firmas é citada como corolário no Bloco 3.5.d em ~5 min, sem cálculo. Quem quiser ver a versão completa: pré-monitoria 2 com Alberto (sáb 23/05). **Bloco 4 (Box Brasil/Mundo) foi cortado de 30 → 15 min** — corte cirúrgico do Box ZFM/Manaus para abrir espaço; Box EU ETS foi comprimido a 1 slide condensado.
 
 ---
 
@@ -9,10 +11,10 @@
 - **Curso:** Microeconomia I — MPE 2026/32
 - **Data:** 13/05/2026 (quarta-feira)
 - **Horário:** 19:30–22:30 (180 min)
-- **Tema:** Equilíbrio Geral em Trocas Puras — Edgeworth, Pareto, equilíbrio competitivo, Walras, 1º TBE, 2º TBE preliminar
-- **Objetivo de aprendizagem:** dominar a representação Edgeworth de uma economia $2\times 2$ de troca pura; calcular equilíbrio competitivo em CD; aplicar a lei de Walras como ferramenta operacional e como consequência de UMP/LNS; demonstrar o 1º TBE pedagogicamente; compreender o teaser do 2º TBE como ponto de partida da Aula 5/6.
-- **Pré-requisitos assumidos:** Aulas 1–3 consolidadas (UMP, demanda Marshalliana, Walras a nível individual, dualidade, elasticidades). Pré-aula 4 concluída (ZaE EG, N&S 12e §13.1–13.2).
-- **Nível pedagógico:** meio-termo entre graduação avançada e qualifier diluído. Piso N&S 12e §13.1–13.2; teto J-R §5.1 (sem invocar Kakutani).
+- **Tema:** Equilíbrio Geral em Trocas Puras **e Produção** — Edgeworth, Pareto, equilíbrio competitivo, Walras, 1º TBE em troca, **PPF + Robinson Crusoe + 1º TBE com produção como corolário**, ponte AD-I
+- **Objetivo de aprendizagem:** dominar a representação Edgeworth de uma economia $2\times 2$ de troca pura; calcular equilíbrio competitivo em CD; aplicar a lei de Walras; demonstrar o 1º TBE pedagogicamente; **construir a PPF a partir de duas funções de produção**; **calcular o equilíbrio descentralizado de Robinson Crusoe e ler $\text{TMS} = \text{TMT} = w/p$ como assinatura do 1º TBE com produção**; antecipar o 2º TBE e a ponte para Arrow-Debreu I.
+- **Pré-requisitos assumidos:** Aulas 1–3 consolidadas (UMP, demanda Marshalliana, Walras a nível individual, dualidade, elasticidades). Pré-aula 4 concluída (ZaE EG, N&S 12e §13.1–§13.2; Apêndice de produção §11/§13.3 leitura passiva).
+- **Nível pedagógico:** meio-termo entre graduação avançada e qualifier diluído. Piso N&S 12e §13.1–13.2 + §11 (intro a produção); teto J-R §5.1 (sem invocar Kakutani, sem Hahn-Banach formal).
 
 ---
 
@@ -20,39 +22,46 @@
 
 | Bloco | Conteúdo | Início | Fim | Duração |
 |---|---|---|---|---|
-| 0 | Abertura + recall + triagem reflexões | 19:30 | 19:35 | 5 min |
-| 1 | Edgeworth, Pareto, contract curve, núcleo | 19:35 | 20:15 | 40 min |
-| P1 | Pausa | 20:15 | 20:25 | 10 min |
-| 2 | Equilíbrio competitivo + lei de Walras + cálculo CD | 20:25 | 21:00 | 35 min |
-| 3 | 1º TBE (prova pedagógica) + 2º TBE preliminar | 21:00 | 21:35 | 35 min |
-| P2 | Pausa | 21:35 | 21:45 | 10 min |
-| 4 | Box Brasil/Mundo + síntese aplicada | 21:45 | 22:15 | 30 min |
-| 5 | Síntese + ponte Aula 5 (produção) | 22:15 | 22:30 | 15 min |
+| 0 | Abertura + recall + triagem reflexões | 19:30 | 19:35 | **5 min** |
+| 1 | Edgeworth, Pareto, contract curve, núcleo (núcleo em 6 min) | 19:35 | 20:13 | **38 min** |
+| P1 | Pausa | 20:13 | 20:23 | **10 min** |
+| 2 | EC + lei de Walras + cálculo CD (Leontief opcional) | 20:23 | 20:55 | **32 min** |
+| 3 | 1º TBE prova + 2º TBE preliminar | 20:55 | 21:23 | **28 min** |
+| P2 | Pausa curta | 21:23 | 21:30 | **7 min** |
+| **3.5** | **Tecnologia + PPF + Robinson Crusoe + 1º TBE c/ produção** ✦ NOVO | **21:30** | **22:20** | **50 min** |
+| 4' | Box único condensado (RenovaBio como TMS=TMT) | 22:20 | 22:25 | **5 min** |
+| 5 | Síntese (1 min) + ponte AD-I (4 min) | 22:25 | 22:30 | **5 min** |
 
-**Checagem de soma:** 5 + 40 + 10 + 35 + 35 + 10 + 30 + 15 = **180 min**. ✓
+**Checagem de soma:** $5 + 38 + 10 + 32 + 28 + 7 + 50 + 5 + 5 = 180$ min. ✓
 
-*Lição das Aulas 1–3:* Bloco 1 (Edgeworth) é onde a turma trava se mal-conduzida. A construção *visual* tem que ser feita ao vivo no quadro — não apenas projetada. 40 min é defensável; menos disso, monitoria 1 paga o juro.
+> **Trade-off explícito (Referee 2):** os Boxes Brasil/Mundo originais (EU ETS + RenovaBio, 30 min) foram comprimidos para **um único Box ultracurto (5 min)**. EU ETS é citado como "estrutura matemática idêntica" sem desenvolvimento. Box ZFM cortado integralmente — material reaproveitado em pré-monitoria 2 ou Aula 7 (externalidades regionais). **Perda real:** aplicação federalismo fiscal brasileiro perde tração. **Ganho real:** PPF + Robinson Crusoe entram com integridade matemática mínima.
+
+> **Trade-off explícito do Bloco 3 (1º TBE):** comprimido em 5 min via supressão da discussão de "saturação direcional ≠ violação de LNS" (que migra integralmente para a pré-aula §5 e o quiz pós-aula Q6 🔴). A prova padrão fica intacta. Sinalizar em sala: "saturação direcional não derruba LNS — ver pré-aula e Q6".
+
+> **Histórico de calibragem.** O timing acima foi resultado de 3 passadas iterativas durante a cirurgia da Aula 4 (07/05/2026). Versões intermediárias e cálculos de soma estão preservados em `aula_4/cirurgia-producao.md` (seção "Histórico de aritmética do roteiro") para auditoria.
+
+*Lição das Aulas 1–3:* Bloco 1 (Edgeworth) é onde a turma trava se mal-conduzida. A construção *visual* tem que ser feita ao vivo no quadro — não apenas projetada. 38 min é o piso. Núcleo (1.d) reduzido a 6 min, sem cálculo de bloqueio em $I=3$ (vai para pré-monitoria 2).
 
 ---
 
 ## Bloco 0 — Abertura (5 min, 19:30–19:35)
 
-- [ ] **Check-in (1 min):** chamada, "papel, caneta e lápis de cor — Edgeworth se aprende com mão".
+- [ ] **Check-in (1 min):** chamada, "papel, caneta e lápis de cor — Edgeworth se aprende com mão. **Hoje a aula tem mais conteúdo: terminamos com firmas e produção.**"
 - [ ] **Triagem oral das reflexões (3 min):** puxar do dashboard as 2-3 dúvidas agregadas mais comuns da pré-aula 4 (D-1) e anunciar onde a aula resolve cada uma.
   - Se "por que LNS é necessário?" estiver no top, anunciar que vai ser resolvido **na demonstração do 1º TBE no Bloco 3**.
   - Se "EC é único?" aparece, anunciar que entra em Bloco 2 (em CD sim; em geral, não — Aula 6).
-  - Se "Pareto não é justo?" estiver no topo, anunciar que o 1º TBE separa eficiência de equidade explicitamente.
-- [ ] **Recall da Aula 3 (1 min):** quadro com Slutsky em elasticidades + lei de Walras a nível individual ($p\cdot x^M = m$) + as 4 restrições agregadas. "Hoje, o $p$ deixa de ser exógeno. É preço de equilíbrio."
+  - Se "PPF é como Edgeworth?" aparece, anunciar Bloco 3.5.
+- [ ] **Recall da Aula 3 (1 min):** quadro com Slutsky em elasticidades + lei de Walras a nível individual ($p\cdot x^M = m$) + as 4 restrições agregadas. "Hoje, o $p$ deixa de ser exógeno. É preço de equilíbrio. **No fim da aula, $p$ vai equilibrar não só consumo, mas também produção.**"
 
 ---
 
-## Bloco 1 — Edgeworth, Pareto, contract curve, núcleo (40 min, 19:35–20:15)
+## Bloco 1 — Edgeworth, Pareto, contract curve, núcleo (38 min, 19:35–20:13)
 
 ### 1.a. Setup da economia de troca pura (~5 min)
 
 - [ ] **Quadro:** $I=2$ consumidores ($A$, $B$), $L=2$ bens ($1$, $2$). Cada $i$ com $u^i: \mathbb{R}^2_+ \to \mathbb{R}$ contínua, monotônica, estritamente quase-côncava. Dotação $\omega^i \in \mathbb{R}^2_{++}$.
 - [ ] **Alocação:** $x = (x^A, x^B)$. **Viável:** $x^A + x^B = \omega^A + \omega^B = \bar\omega$.
-- [ ] **Frase-martelo:** "Não há produção. Recursos são fixos. A pergunta é: como redistribuir entre os agentes?"
+- [ ] **Frase-martelo:** "Não há produção *ainda*. Recursos fixos. Como redistribuir? **No Bloco 3.5 voltamos a essa frase para apagar 'ainda'**."
 
 ### 1.b. Caixa de Edgeworth — construção ao vivo no quadro (~12 min)
 
@@ -70,212 +79,244 @@
 - [ ] **Contract curve:** lugar geométrico das alocações Pareto-eficientes. Curva contínua que conecta origem $A$ e origem $B$ (em economias suaves).
 - [ ] **Frase-martelo:** "Tangência é a fronteira do que mercado pode fazer sem redistribuir."
 
-### 1.d. Núcleo (~8 min)
+### 1.d. Núcleo (~6 min)
 
-- [ ] **Definição operacional:** alocação $x$ está no **núcleo** se (i) é individualmente racional ($u^i(x^i) \ge u^i(\omega^i)$ para todo $i$) e (ii) não pode ser bloqueada por nenhuma coalizão.
-- [ ] **Em $I=2$:** "coalizão" = ou um ou outro consumidor sozinho ou os dois juntos. Bloqueio individual = $u^i(x^i) < u^i(\omega^i)$. Bloqueio do par = existe $\tilde x$ Pareto-superior.
+- [ ] **Definição operacional:** alocação $x$ está no **núcleo** se (i) é individualmente racional ($u^i(x^i) \ge u^i(\omega^i)$) e (ii) não pode ser bloqueada por nenhuma coalizão.
+- [ ] **Em $I=2$:** "coalizão" = ou um, ou outro, ou os dois. Bloqueio individual = $u^i(x^i) < u^i(\omega^i)$. Bloqueio do par = existe $\tilde x$ Pareto-superior.
 - [ ] **Núcleo em economia $2\times 2$ = parte da contract curve dentro da lente de melhoria mútua passando pela dotação.** Subconjunto da contract curve.
 - [ ] **Frase-martelo:** "Núcleo é Pareto + voluntariedade. Mais restrito que Pareto puro."
-- [ ] **[30s extras — anunciar slide "Núcleo (2/2) — leitura visual" (núcleo encolhe com réplica):**] *"Debreu-Scarf (1963), com intuição original em Edgeworth (1881) — quando $I$ cresce via réplica, núcleo $\subseteq$ EC no limite. Não vamos provar; vai aparecer no quiz pós-aula 🔴🔴 (Q9). Quem quiser ver a prova: J-R §5.3."* Função: dar âncora pública para a Q9 da pós-aula sem alongar Bloco 1.
+- [ ] **[15s extras — anunciar slide "Núcleo (2/2) — leitura visual" (núcleo encolhe com réplica):**] *"Debreu-Scarf (1963), com intuição original em Edgeworth (1881) — núcleo $\subseteq$ EC no limite. Quem quiser ver a prova: J-R §5.3. Na monitoria 2 com Alberto, **núcleo em $I=3$ explicitamente**."*
 
 ### 1.e. Ponte (~5 min)
 
-- [ ] "Pareto e núcleo são *conjuntos* de alocações. Mercado escolhe **uma** dessas alocações via *preços*. Bloco 2."
+- [ ] "Pareto e núcleo são *conjuntos* de alocações. Mercado escolhe **uma** delas via *preços*. Bloco 2."
 
-> **Armadilha a sinalizar (Bloco 1.c):** alunos confundem "tangência ⇒ Pareto" (sentido pleno) com "Pareto ⇒ tangência" (vale apenas no interior). Em fronteira (algum $x_i = 0$), Pareto pode não ter tangência. Sinalizar e seguir.
-
----
-
-## Pausa 1 (10 min, 20:15–20:25)
+> **Armadilha a sinalizar (Bloco 1.c):** alunos confundem "tangência ⇒ Pareto" com "Pareto ⇒ tangência". Em fronteira Pareto pode não ter tangência. Sinalizar e seguir.
 
 ---
 
-## Bloco 2 — Equilíbrio competitivo + Walras + cálculo CD (35 min, 20:25–21:00)
+## Pausa 1 (10 min, 20:13–20:23)
 
-### 2.a. Tomadores de preço, UMP individual, excesso de demanda (~7 min)
+---
+
+## Bloco 2 — EC + lei de Walras + cálculo CD (32 min, 20:23–20:55)
+
+### 2.a. Tomadores de preço, UMP individual, excesso de demanda (~5 min)
 
 - [ ] **Quadro:** preço $p = (p_1, p_2) \ge 0$, $p \neq 0$. Renda inicial $m^i = p\cdot \omega^i$.
 - [ ] **UMP em $i$:** $x^i(p) \in \arg\max u^i(x^i)$ s.a. $p\cdot x^i \le p\cdot \omega^i$, $x^i \ge 0$.
-- [ ] **Excesso de demanda individual:** $z^i(p) = x^i(p) - \omega^i$.
-- [ ] **Excesso agregado:** $z(p) = \sum_i z^i(p)$.
-- [ ] **Frase-martelo:** "Excesso de demanda é um vetor: positivo onde quer comprar mais; negativo onde quer vender."
+- [ ] **Excesso de demanda individual:** $z^i(p) = x^i(p) - \omega^i$. **Excesso agregado:** $z(p) = \sum_i z^i(p)$.
 
-### 2.b. Lei de Walras — derivação rápida (~6 min)
+### 2.b. Lei de Walras — derivação rápida (~5 min)
 
-- [ ] **Quadro:** assumir LNS ⇒ cada UMP individual exausta orçamento: $p\cdot x^i(p) = p\cdot \omega^i$.
-- [ ] **Logo:** $p\cdot z^i(p) = p\cdot x^i(p) - p\cdot \omega^i = 0$ para cada $i$.
-- [ ] **Somar:** $p\cdot z(p) = \sum_i p\cdot z^i(p) = 0$. **Lei de Walras.**
-- [ ] **Implicação operacional em $L=2$:** zerar $z_1 = 0$ ⇒ $z_2 = 0$ automaticamente. **"Em $L$ bens, $L-1$ equações de market-clearing são suficientes."**
-- [ ] **Homogeneidade grau 0:** $z(\lambda p) = z(p)$ ⇒ podemos normalizar (ex.: $p_2 = 1$ numerário).
+- [ ] **Quadro:** assumir LNS ⇒ $p\cdot x^i(p) = p\cdot \omega^i$. Logo $p\cdot z^i(p) = 0$ e por soma $p\cdot z(p) = 0$.
+- [ ] **Implicação operacional em $L=2$:** zerar $z_1 = 0$ ⇒ $z_2 = 0$. Em $L$ bens, $L-1$ equações suficientes.
+- [ ] **Homogeneidade grau 0:** podemos normalizar (ex.: $p_2 = 1$).
 
-### 2.c. Equilíbrio competitivo — definição (~5 min)
+### 2.c. Equilíbrio competitivo — definição (~4 min)
 
-- [ ] **Definição.** EC = par $(p^*, x^*)$ com $p^* \ge 0$, $p^* \neq 0$, tal que: (i) cada $x^{*i}$ resolve UMP em $p^*$; (ii) $\sum_i x^{*i} = \sum_i \omega^i$.
-- [ ] **Equivalente:** $z(p^*) = 0$ (em $L=2$, basta um mercado por Walras).
+- [ ] **Definição:** EC = $(p^*, x^*)$ com cada $x^{*i}$ resolvendo UMP em $p^*$ e $\sum_i x^{*i} = \sum_i \omega^i$. Em $L=2$, $z(p^*) = 0$ via Walras = zerar 1 mercado.
 - [ ] **Frase-martelo:** "Tomadores de preço + viabilidade. Não há leiloeiro implícito; o $p^*$ é objeto matemático."
 
-### 2.d. Cálculo numérico em CD simétrica (~10 min)
+### 2.d. Cálculo numérico em CD simétrica (~8 min)
 
 - [ ] **Setup:** $u^A = u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (3, 1)$, $\omega^B = (1, 3)$. Total $\bar\omega = (4, 4)$.
-- [ ] **Demanda CD:** $x_1^A(p) = m^A/(2 p_1) = (3 p_1 + p_2)/(2 p_1)$. Idem para $B$.
-- [ ] **Mercado 1:** $x_1^A + x_1^B = 4$. Substitui:
-  $$\frac{3 p_1 + p_2}{2 p_1} + \frac{p_1 + 3 p_2}{2 p_1} = \frac{4 p_1 + 4 p_2}{2 p_1} = 2 + \frac{2 p_2}{p_1} = 4 \implies \frac{p_2}{p_1} = 1.$$
-- [ ] **Equilíbrio:** $p^* = (1, 1)$ (numerário $p_2 = 1$). Alocação: $x^{A*} = (2, 2)$, $x^{B*} = (2, 2)$.
-- [ ] **Verificação:** $\text{TMS}^A = x_2^A/x_1^A = 1$. $\text{TMS}^B = 1$. Tangência. ✓ Walras: $z_1 = 0$ implica $z_2 = 0$. ✓
+- [ ] **Demanda CD:** $x_1^A(p) = m^A/(2 p_1)$. Mercado 1 fecha em $p_2/p_1 = 1$ ⇒ $p^* = (1,1)$, $x^{A*} = x^{B*} = (2, 2)$.
+- [ ] **Verificação:** $\text{TMS}^A = \text{TMS}^B = 1$. Walras ✓.
 
 ### 2.e. Cálculo numérico em CD assimétrica (~7 min)
 
-- [ ] **Setup canônico do bundle:** $u^A = x_1^{2/3}x_2^{1/3}$, $u^B = x_1^{1/3}x_2^{2/3}$. $\omega^A = (1, 4)$, $\omega^B = (3, 0)$. Total $(4, 4)$. Numerário $p_2 = 1$.
-- [ ] **Demanda:** $x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$ — **destacar o cancelamento** ($B$ só tem bem 1, então renda é proporcional a $p_1$ e demanda fica constante).
-- [ ] **Mercado 1:** $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7$.
-- [ ] **Alocação:** $x^A = (3,\; 12/7)$, $x^B = (1,\; 16/7)$. Verificar bem 2: $12/7 + 16/7 = 4$. ✓ $\text{TMS}^* = 8/7$ em ambos. ✓
-- [ ] **Frase-martelo:** "Preço relativo no EC reflete preferências **e** dotações. Não há mágica — é a álgebra do market-clearing."
+- [ ] **Setup canônico do bundle:** $u^A = x_1^{2/3}x_2^{1/3}$, $u^B = x_1^{1/3}x_2^{2/3}$. $\omega^A = (1, 4)$, $\omega^B = (3, 0)$. Numerário $p_2 = 1$.
+- [ ] **Demanda:** $x_1^A = 2/3 + 8/(3 p_1)$. $x_1^B = 1$ — destacar cancelamento.
+- [ ] **Mercado 1:** $p_1^* = 8/7$. Alocação $x^A = (3, 12/7)$, $x^B = (1, 16/7)$. $\text{TMS}^* = 8/7$ em ambos.
+- [ ] **Frase-martelo:** "Preço relativo no EC reflete preferências **e** dotações."
 
-### 2.f. Cálculo numérico em CD + Leontief (~5 min)
+### 2.f. Leontief — opcional (~3 min, se sobrar tempo)
 
-- [ ] **Setup:** $u^A = x_1^{1/2}x_2^{1/2}$ (CD), $u^B = \min\{x_1, x_2\}$ (Leontief). $\omega^A = (10, 0)$, $\omega^B = (0, 10)$. $p_2 = 1$.
-- [ ] **Demanda CD:** $x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5$ — **constante** (porque toda renda de $A$ vem do bem 1, igualando o efeito-preço).
-- [ ] **Demanda Leontief:** $x_1^B = x_2^B$ por UMP em forma de "L"; orçamento ⇒ $(p_1 + 1)x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)$.
-- [ ] **Mercado 1:** $5 + 10/(p_1 + 1) = 10 \implies p_1^* = 1$. Alocação: $x^A = x^B = (5, 5)$.
-- [ ] **Por que esse exemplo:** prepara Q4 do quiz pós (Leontief) e Exercício avaliativo 3, sem deixar Leontief "novo" em prova.
+- [ ] Comentário rápido: $u^A = x_1^{1/2}x_2^{1/2}$, $u^B = \min\{x_1, x_2\}$, $\omega^A = (10, 0)$, $\omega^B = (0, 10)$ ⇒ $p_1^* = 1$, ambos consomem $(5, 5)$. Se faltar tempo, **migrar para slide só com resultado** e remeter ao Exercício avaliativo 3.
 
-> **Armadilha a sinalizar (Bloco 2.b):** "lei de Walras vale só em equilíbrio". **Falso.** Walras vale em todo $p \gg 0$ (ou onde demandas estão definidas), porque vem do exauste do orçamento individual. EC exige $z(p^*) = 0$, que é mais forte. Walras é identidade; EC é solução.
+> **Armadilha (Bloco 2.b):** "lei de Walras vale só em equilíbrio". **Falso.** Walras é identidade.
 
 ---
 
-## Bloco 3 — 1º TBE + 2º TBE preliminar (35 min, 21:00–21:35)
+## Bloco 3 — 1º TBE + 2º TBE preliminar (28 min, 20:55–21:23)
 
-### 3.a. Hipóteses (~5 min)
+### 3.a. Hipóteses (~3 min, ⬇ −2)
 
-- [ ] **Não-saciedade local (LNS):** definição + intuição. Mais geral que monotonicidade estrita.
-- [ ] **Por que LNS?** Para garantir exauste do orçamento individual + impossibilidade de "saciedade" em pacote viável.
-- [ ] **Frase-martelo:** "LNS é o mínimo axiomático. Sem ela, mercado pode não esgotar valor."
+- [ ] **LNS** + intuição. "Mais geral que monotonicidade estrita."
 
-### 3.b. Demonstração do 1º TBE — linha-a-linha (~15 min)
+### 3.b. Demonstração do 1º TBE — linha-a-linha (~14 min, ⬇ −1)
 
-- [ ] **Enunciado.** Em troca pura com LNS, todo EC $(p^*, x^*)$ é Pareto-eficiente.
-- [ ] **Por contradição.** Suponha que ∃ $\tilde x$ viável com $u^i(\tilde x^i) \ge u^i(x^{*i})$ para todo $i$, com desigualdade estrita para algum $j$.
-- [ ] **Passo 1.** Para o $j$ estritamente melhor: $\tilde x^j$ deve estar fora do orçamento, ou seja $p^*\cdot \tilde x^j > p^*\cdot \omega^j$. Razão: se cabia no orçamento ($p^*\cdot \tilde x^j \le p^*\cdot \omega^j$), então $x^{*j}$ não maximizava. **Quadro: escrever isso explícito.**
-- [ ] **Passo 2.** Para $i \neq j$ (fracamente melhores): $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. **Aqui LNS entra**: se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, vizinhança de $\tilde x^i$ tem $\hat x^i$ estritamente preferida por LNS, com $p^*\cdot \hat x^i \le p^*\cdot \omega^i$ (continuidade). Mas $u^i(\hat x^i) > u^i(\tilde x^i) \ge u^i(x^{*i})$, contradiz UMP de $x^{*i}$.
-- [ ] **Passo 3.** Somar passos 1 e 2: $\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i$. Mas $\tilde x$ viável: $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i$. **Contradição.** $\blacksquare$
-- [ ] **Frase-martelo:** "Pareto-superior precisa custar mais que dotação para todos. Mas tudo somado custa exatamente a dotação. Contradição."
+- [ ] **Enunciado.** Em troca pura com LNS, todo EC é Pareto-eficiente.
+- [ ] **Por contradição.** ∃ $\tilde x$ viável com $u^i(\tilde x^i) \ge u^i(x^{*i})$ ∀ $i$, e estrita para algum $j$.
+- [ ] **Passo 1.** $p^*\cdot \tilde x^j > p^*\cdot \omega^j$ (se cabia, $x^{*j}$ não maximizaria).
+- [ ] **Passo 2 (LNS).** Para $i \neq j$: se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, LNS ⇒ vizinho $\hat x^i$ preferido, com $p^*\cdot \hat x^i \le p^*\cdot \omega^i$ por continuidade. Contradiz UMP. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$.
+- [ ] **Passo 3.** Soma: $\sum p^*\cdot \tilde x^i > \sum p^*\cdot \omega^i$. Mas viabilidade força igualdade. Contradição. $\blacksquare$
+- [ ] **Frase-martelo:** "Pareto-superior precisa custar mais que dotação. Mas tudo somado custa exatamente a dotação. Contradição."
 
-### 3.c. O papel exato de LNS (~5 min)
+### 3.c. O papel exato de LNS (~3 min, ⬇ −2)
 
-- [ ] **Onde LNS aparece:** apenas no passo 2 — para os $i$ fracamente melhores. Sem LNS (i.e., num ponto onde <em>nenhuma</em> direção de melhora existe na vizinhança), o passo 2 quebra; o agregado falha.
-- [ ] **Calibração honesta em quadro:** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ — bem 1 satura em $x_1 = 1$, **mas LNS continua valendo globalmente** porque $\partial u^A/\partial x_2 = 1 > 0$ entrega vizinho preferido em qualquer ponto. Saturação direcional ≠ violação de LNS. EC nessa economia: $((1,1),(1,1))$ a $p^* = (1,1)$, Pareto-eficiente — 1º TBE vale.
-- [ ] **Para falhar LNS de fato:** bliss-point interior, $u = -[(x_1-a)^2 + (x_2-b)^2]$ — saturação total num ponto. MWG §16.D. Calibração numérica fina; deixar com Alberto na pré-monitoria 2.
-- [ ] **Frase-martelo:** "LNS é hipótese de vizinhança, não direção a direção. Saturação direcional não derruba o teorema; bliss-point sim."
+- [ ] **Onde LNS aparece:** apenas no passo 2.
+- [ ] **Sinalizar em sala (sem desenvolver):** "Saturação direcional ≠ violação de LNS — exemplo $u = \min\{x_1,1\} + x_2$ no §5 da pré-aula e Q6 do quiz pós. Para violar LNS de fato: bliss-point interior, MWG §16.D — pré-monitoria 2."
 
-### 3.d. 2º TBE preliminar (~10 min)
+### 3.d. 2º TBE preliminar (~8 min, ⬇ −2)
 
-- [ ] **Enunciado intuitivo.** Sob convexidade (preferências convexas + viabilidade convexa), toda alocação Pareto-eficiente é EC após **redistribuição lump-sum** das dotações.
-- [ ] **Implicação.** Mercado pode atingir qualquer Pareto-eficiente desejado, contanto que se aceite redistribuir lump-sum.
-- [ ] **Hipótese-chave: convexidade** — necessária para Hahn-Banach (separação de conjuntos convexos por hiperplano = preço). Sem convexidade, contraexemplos: retornos crescentes, indivisibilidades.
-- [ ] **Frase-martelo:** "1º TBE: mercado é Pareto. 2º TBE: Pareto pode ser implementado por mercado — se você puder redistribuir a dotação inicial."
-- [ ] **Sinalizar:** prova rigorosa via Hahn-Banach é Aula 6. Hoje é teaser.
+- [ ] **Enunciado intuitivo.** Sob convexidade, todo Pareto-eficiente é EC após **redistribuição lump-sum** das dotações.
+- [ ] **Hipótese-chave:** convexidade. Sem ela: retornos crescentes, indivisibilidades.
+- [ ] **Frase-martelo:** "1º TBE: mercado é Pareto. 2º TBE: Pareto pode ser implementado por mercado — se você puder redistribuir."
+- [ ] **Sinalizar:** prova rigorosa via Hahn-Banach é Aula 6.
 
-> **Armadilha a sinalizar (Bloco 3.d):** "1º TBE diz que EC é justo." **Falso.** 1º TBE diz que EC é eficiente; eficiência ≠ justiça. EC com $\omega^A = (10, 0)$, $\omega^B = (0, 10)$ é Pareto-eficiente, mas pode ser muito desigual. 2º TBE separa eficiência de equidade explicitamente.
+> **Armadilha (3.d):** "1º TBE diz que EC é justo." Falso — eficiência ≠ justiça.
 
 ---
 
-## Pausa 2 (10 min, 21:35–21:45)
+## Pausa 2 — curta (5 min, 21:23–21:30)
+
+> **Pausa cortada de 10 → 5 min.** Sinalizar: "Pausa rápida; voltamos com firmas." Quem precisar de banheiro vai antes, sem cerimônia. Aviso explícito: "as últimas 50 min são dense — recomendo ficar."
 
 ---
 
-## Bloco 4 — Box Brasil/Mundo + síntese aplicada (30 min, 21:45–22:15)
+## Bloco 3.5 — Tecnologia + PPF + Robinson Crusoe + 1º TBE com produção (50 min, 21:30–22:20) ✦
 
-### 4.a. Box Mundo — Mercado de cotas de carbono (cap-and-trade) como troca pura (~10 min)
+> **Conteúdo NOVO da Aula 4 (cirurgia 07/05).** Comprimido a partir do material de produção pré-existente (`aula_5/_archive_eg_producao/durante_aula.md`). Mantém integridade matemática mínima.
 
-- [ ] **Setup.** EU ETS (European Emissions Trading System), criado em 2005, é o mais antigo grande sistema de cotas. Empresas recebem dotação inicial de cotas de emissão; podem vender/comprar entre si.
-- [ ] **Estrutura Edgeworth:** dois tipos de empresas — "limpas" (custo marginal de redução baixo, vendem cotas) e "sujas" (custo marginal alto, compram cotas). Total de cotas é fixo (recurso). Preço de mercado equilibra.
-- [ ] **Lei de Walras opera:** quem vende cotas com $p\cdot z < 0$ em "cota" deve ter $p\cdot z > 0$ em algum outro bem (insumo, produto). Equilíbrio agregado.
-- [ ] **1º TBE aplicado:** alocação resultante é Pareto-eficiente ENTRE as empresas (custo marginal de redução iguala-se ao preço de cota). Cap total é a "dotação de bem ambiental".
-- [ ] **Crítica:** 2º TBE diz que pode-se atingir Pareto-eficiência diferente redistribuindo as cotas iniciais (grandfathering vs. leilão). Implicação política real.
-- [ ] **Referência:** Ellerman & Buchner (2007), *Review of Environmental Economics and Policy* 1(1): 66–87. doi:10.1093/reep/rem003
+### 3.5.a. Conjunto de produção, função de produção, PPF (~12 min, 21:30–21:42)
 
-### 4.b. Box Brasil — RenovaBio / CBIOs (~8 min)
+- [ ] **Quadro (3 min):** $y \in \mathbb{R}^L$ vetor de produção, sinais ($y_\ell > 0$ produto, $y_\ell < 0$ insumo). $Y \subseteq \mathbb{R}^L$ = conjunto de produção. Hipóteses canônicas listadas em uma linha: $0 \in Y$, livre descarte, sem free lunch, fechamento, **convexidade** (destacar — chave do 2º TBE; quebra aparece com retornos crescentes).
+- [ ] **Função de produção como caso particular (1 min):** $Y = \{(-z, q) : z \ge 0, q \le f(z)\}$.
+- [ ] **PPF — construção ao vivo no quadro (8 min).** Setup didático canônico: $\bar L = 16$ unidades de trabalho; dois setores com $f_1(L_1) = \sqrt{L_1}$, $f_2(L_2) = \sqrt{L_2}$, restrição $L_1 + L_2 = \bar L$.
+  - Substituir $L_\ell = q_\ell^2$: $q_1^2 + q_2^2 = 16$ ⇒ **PPF = arco de círculo de raio 4 no quadrante positivo**.
+  - **Desenhar com lápis vermelho.** Marcar $(0, 4)$, $(4, 0)$, $(2, 2\sqrt{3}) \approx (2, 3{,}46)$ em $L_1 = 4$.
+  - **PPF côncava** = rendimentos decrescentes nos setores. Comparação Edgeworth: "Onde a Aula 4 alocava bens entre **consumidores**, hoje alocamos fatores entre **produtos**."
 
-- [ ] **Setup.** RenovaBio (Lei 13.576/2017): distribuidoras de combustíveis fósseis (Petrobras Distribuidora, Raízen Distribuição, Ipiranga, etc.) têm meta anual obrigatória de descarbonização; cumprem comprando **CBIOs** (Créditos de Descarbonização) emitidos por produtores de etanol/biodiesel.
-- [ ] **Estrutura Edgeworth bipartido genuína:** distribuidoras = "consumidoras" de CBIOs (precisam para cumprir meta); produtores de etanol = "ofertantes" (geram CBIOs na produção sustentável). Preço único em **leilão B3** = $p^*$ walrasiano. Total de CBIOs no ano é função da produção sustentável agregada.
-- [ ] **1º TBE em ação:** mercado descentralizado replica solução do planejador central — é mais barato cumprir meta agregada via troca do que cada distribuidora reduzir emissão própria. CBIO equilibra custo marginal de descarbonização entre os agentes.
-- [ ] **2º TBE político:** alocação inicial das metas (proporcional à participação no mercado de combustíveis) é redistribuição lump-sum — afeta distribuição, não eficiência.
-- [ ] **Conexão com EU ETS (slide anterior):** estrutura matemática idêntica; RenovaBio é a versão brasileira aplicada a transporte. Volume 2024: ~46 milhões de CBIOs negociados. Preço médio R$ 90–120/CBIO.
-- [ ] **Honestidade da abstração (se aluno perguntar):** RenovaBio não é Edgeworth puro — produção de CBIOs é **endógena** (responde a preço; produtores de etanol investem mais quando $p_{CBIO}$ sobe). Tratamos como troca pura na Aula 4 para o ferramental ficar nítido. **Aula 5 retoma com produção endógena** e mostra que a estrutura sobrevive (com 1º TBE estendido), só ganha um lado de oferta. Sinalizar isso ao vivo se aluno perguntar; senão, deixar para Aula 5.
-- [ ] **Referência:** ANP — `gov.br/anp` (Programa Nacional de Política de Biocombustíveis). Ribeiro et al. (2022), *Biofuels, Bioproducts and Biorefining*, doi:10.1002/bbb.2326.
+### 3.5.b. Taxa marginal de transformação (TMT) (~10 min, 21:42–21:52)
 
-### 4.c. Síntese aplicada (~7 min)
+- [ ] **Definição (1 min):** $\text{TMT}_{12} = -dq_2/dq_1|_{\text{PPF}}$ — quantas unidades de bem 2 a economia desiste para 1 unidade extra de bem 1, mantendo eficiência produtiva.
+- [ ] **Caracterização via PMa (3 min):** derivar no quadro
 
-- [ ] **Quadro-resumo:** lei de Walras = identidade contábil. 1º TBE = eficiência de mercado. 2º TBE = mercado pode ser direcionado via redistribuição de dotações. **Os três pilares da Aula 4.**
-- [ ] **Limites já anunciados:** sem LNS, 1º TBE falha. Sem convexidade, 2º TBE falha. Aulas 5–9 vão completar com produção, contingência, externalidades.
-- [ ] **Frase-martelo:** "EG é a estrutura. Aplicações empíricas mostram que estrutura tem corpo."
+  $$\text{TMT}_{12} = \frac{\text{PMa}_L^2}{\text{PMa}_L^1}$$
+
+  via regra da cadeia. Vem da CPO da firma sob mobilidade do fator $L$.
+- [ ] **Numérico no exemplo (3 min):** em $q_1 = 2$, $L_1 = 4$, $L_2 = 12$, $q_2 = 2\sqrt{3}$. $\text{PMa}_L^1 = 1/(2\sqrt{4}) = 1/4$, $\text{PMa}_L^2 = 1/(2\sqrt{12}) = 1/(4\sqrt{3})$. $\text{TMT}_{12} = (1/(4\sqrt{3}))/(1/4) = 1/\sqrt{3} \approx 0{,}577$. **Verificação alternativa:** derivada implícita de $q_1^2 + q_2^2 = 16$ ⇒ $\text{TMT}_{12} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}$. ✓
+- [ ] **Eficiência produtiva ⇔ TMT = $p_1/p_2$ (3 min):** CPO da firma: $p_1 \cdot \text{PMa}_L^1 = w = p_2 \cdot \text{PMa}_L^2$ ⇒ $\text{TMT}_{12} = p_1/p_2$. Mercado descentralizado iguala TMT setorial via mobilidade do fator.
+- [ ] **Frase-martelo:** "TMT é 'preço relativo na produção'. TMS é 'preço relativo no consumo'. Em equilíbrio, mercado força os dois a coincidir."
+
+### 3.5.c. Robinson Crusoe — equilíbrio competitivo descentralizado (~20 min, 21:52–22:12)
+
+> **Trade-off declarado em sala:** "Vamos ver Robinson na forma simplificada — 1 consumidor + 1 firma + 2 bens (lazer/produto). É o caso mínimo onde TMS=TMT=$w/p$ se materializa. A versão com $J$ firmas e cotas $\theta^{ij}$ vai para a pré-monitoria 2 com Alberto." **Não venda Robinson aqui como 'completo'**.
+
+- [ ] **3.5.c.1 — Setup (3 min):** Robinson é simultaneamente **dono da firma** e **consumidor**. Variáveis: trabalho $L$ (insumo), bem de consumo $q$ (produto), lazer $\ell = \bar L - L$. Tecnologia: $q = f(L)$, $f$ côncava, $f(0) = 0$, $f' > 0$. Preferências: $u(q, \ell)$ monotônica, quase-côncava.
+  - **Frase-martelo:** "Mesmo agente, dois chapéus separados. Mercado finge que é entre 'duas pessoas'."
+
+- [ ] **3.5.c.2 — Solução do planejador (5 min, ao vivo no quadro):** $\max_L u(f(L), \bar L - L)$. CPO interior:
+
+  $$\frac{\partial u/\partial \ell}{\partial u/\partial q} = f'(L), \qquad \text{ou seja} \qquad \text{TMS}_{\ell, q} = \text{TMT}_{L, q}.$$
+
+  Numérico canônico: $u = q^{1/2}\ell^{1/2}$, $f(L) = \sqrt{L}$, $\bar L = 16$.
+  - Substituir: $\max_L L^{1/4}(16 - L)^{1/2}$. CPO ⇒ $L^* = 16/3 \approx 5{,}33$. $\ell^* = 32/3$. $q^* = \sqrt{16/3} = 4/\sqrt{3} \approx 2{,}31$.
+  - Verificação: $\text{TMS}_{\ell, q} = q/\ell = (4/\sqrt 3)/(32/3) = \sqrt{3}/8$. $\text{TMT} = f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8$. ✓
+
+- [ ] **3.5.c.3 — Equilíbrio descentralizado: os dois chapéus (8 min):**
+  - **Chapéu da firma:** $\pi(p, w) = \max_L p\, f(L) - w\, L$. CPO: $p \cdot f'(L^*) = w$, ou seja $f'(L^*) = w/p$. Saída: $L^d(p, w)$, $q^s = f(L^d)$, lucro $\pi^* = p\, q^s - w\, L^d$.
+  - **Chapéu do consumidor:** renda $m = w\, \bar L + \pi^*$. UMP: $\max u(q, \ell)$ s.a. $p\, q + w\, \ell \le m$. CPO: $\text{TMS}_{\ell, q} = w/p$.
+  - **Pergunta para a turma:** *"Se Robinson é dono da firma, por que ele paga salário a si mesmo?"* — **Resposta:** salário é **conta interna**. Firma paga $w$ pela hora; consumidor recebe $w\bar L + \pi^*$ = $w\bar L + p\, q - w\, L$. Renda total fechada. **A separação contábil é o que permite estender para $J$ firmas e $I$ consumidores** — pré-monitoria.
+  - **Cálculo numérico do EC** (continuação): com $p = 1$ numerário, $w^* = \sqrt{3}/8 \approx 0{,}217$. Lucro: $\pi^* = q^* - w^*\, L^* = 4/\sqrt{3} - (\sqrt{3}/8)(16/3) = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}$.
+  - Renda: $m^* = w^*\bar L + \pi^* = (\sqrt{3}/8)(16) + 2/\sqrt{3} = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3$.
+  - CD: $q^* = m^*/(2p) = 4\sqrt{3}/3 = 4/\sqrt{3}$ ✓; $\ell^* = m^*/(2 w^*) = 32/3$ ✓.
+
+- [ ] **3.5.c.4 — A igualdade canônica $\text{TMS} = \text{TMT} = w/p$ (4 min):**
+  $$\boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w}{p} \;=\; \text{TMT}_{L, q}\;}$$
+  **Mercado descentralizado replica solução do planejador.** Verificação no exemplo: os três valem $\sqrt{3}/8$. Frase-martelo: "1º TBE no caso mais simples: 1 consumidor + 1 firma. Preços fazem todo o trabalho."
+
+> **Armadilha (3.5.c):** "renda do consumidor inclui lucro" ≠ "consumidor recebe lucro como salário". $w\bar L$ é o salário pelas horas; $\pi^*$ é o resíduo da firma que volta via cota $\theta=1$. **Duas componentes separadas**.
+
+### 3.5.d. 1º TBE com produção como corolário + ponte (~8 min, 22:12–22:20)
+
+- [ ] **Generalização rápida (3 min):** $I$ consumidores + $J$ firmas com cotas $\theta^{ij} \ge 0$, $\sum_i \theta^{ij} = 1$. Renda do consumidor: $m^i(p) = p\cdot \omega^i + \sum_j \theta^{ij}\pi^j(p)$. EC = $(p^*, x^*, y^*)$ com firmas maximizando lucro + UMP individual + viabilidade $\sum_i x^{*i} = \sum_i \omega^i + \sum_j y^{*j}$. **Robinson é o caso $I = J = 1$, $\theta = 1$.** "Detalhes de cota $\theta^{ij}$ explicítos: pré-monitoria."
+
+- [ ] **1º TBE com produção como corolário (3 min) — não reprovar:** "A prova do 1º TBE em troca pura tem 3 passos. Com produção, ganha um quarto passo: cada $\tilde y^j \in Y^j$ ⇒ $p^*\cdot \tilde y^j \le \pi^{*j} = p^*\cdot y^{*j}$, **por definição de $y^{*j}$ como maximizador**. Soma os 4 passos, contradiz viabilidade. **Mesma estrutura, um passo a mais.**" Sinalizar: "passo 3 das firmas é o único novo. Ver pré-monitoria 2 e pré-aula §6b."
+
+- [ ] **Box ÚNICO condensado (já aqui, embutido) — RenovaBio/CBIOs como TMS=TMT na produção (2 min):** "RenovaBio: distribuidoras compram CBIOs (créditos de descarbonização) emitidos por etanol/biodiesel. Preço único leiloado em B3 = $p^*$ walrasiano. Estrutura matemática **identica** ao EU ETS. **1º TBE em ação:** mercado replica solução do planejador — descarbonizar onde é mais barato. **2º TBE político:** alocação inicial das metas é redistribuição lump-sum entre distribuidoras. **Lado de produção (Aula 4 estendida):** produtores de etanol respondem a $p_{\text{CBIO}}$ — TMT (etanol vs. fóssil) iguala-se ao preço relativo. Sem produção essa parte da história fica truncada — por isso ela está aqui hoje."
+
+> **Armadilha (3.5.d):** "1º TBE precisa de convexidade do $Y$." **Falso** — 1º TBE precisa apenas de LNS + max-lucro. Convexidade é hipótese do **2º** TBE.
 
 ---
 
-## Bloco 5 — Síntese + ponte para Aula 5 (15 min, 22:15–22:30)
+## Bloco 4' — *(absorvido em 3.5.d)*
 
-### 5.a. Síntese em 3 frases (~5 min)
+> Bloco 4 original (Box Brasil/Mundo, 30 min) foi absorvido no Bloco 3.5.d como **Box único de 2 min**. EU ETS citado como "estrutura matemática idêntica" sem desenvolvimento. Box ZFM cortado.
 
-- [ ] **(1)** Edgeworth: visualização $2\times 2$ da economia de troca pura. Pareto = tangência. Núcleo = Pareto + voluntariedade.
-- [ ] **(2)** Walras: $p\cdot z(p) = 0$ é identidade contábil que segue de UMP individual + LNS. EC: $z(p^*) = 0$.
-- [ ] **(3)** 1º TBE: EC é Pareto-eficiente sob LNS. 2º TBE preliminar: Pareto-eficiente é EC após redistribuição lump-sum, sob convexidade.
+---
 
-### 5.b. Ponte para Aula 5 — produção (~7 min)
+## Bloco 5 — Síntese + ponte Aula 5 (5 min, 22:20–22:25 / margem 22:25–22:30)
 
-- [ ] **Pergunta da próxima aula.** "Adicionamos firmas. Cada firma tem tecnologia $Y_f \subset \mathbb{R}^L$ (input-output). Equilíbrio agora é $(p^*, x^*, y^*)$ com firmas maximizando lucro e consumidores recebendo dividendos."
-- [ ] **Quadro: estrutura.** Demanda agregada $\sum x^i$ vs. dotação + oferta $\sum \omega^i + \sum y^f$. Walras estendido. Preços guiam tanto consumo quanto produção.
-- [ ] **1º TBE com produção** sobrevive sob LNS + tecnologias com algumas hipóteses (não retornos crescentes na agregada). Aula 5 detalha.
-- [ ] **Aula 6:** Arrow-Debreu fechado — bens contingentes, mercados completos, existência via Brouwer.
-- [ ] **Frase-martelo:** "Aula 4 abre o ferramental. Aula 5 acrescenta produção. Aula 6 fecha com existência."
+### 5.a. Síntese em 4 frases (~2 min)
 
-### 5.c. Lembretes operacionais (~3 min)
+- [ ] **(1)** Edgeworth: visualização $2\times 2$ da troca pura. Pareto = tangência. Núcleo = Pareto + voluntariedade.
+- [ ] **(2)** Walras: $p\cdot z(p) = 0$ é identidade. EC: $z(p^*) = 0$.
+- [ ] **(3)** 1º TBE: EC é Pareto sob LNS. 2º TBE preliminar: Pareto é EC após lump-sum sob convexidade.
+- [ ] **(4)** **Produção:** PPF = "Edgeworth da produção". Robinson: $\text{TMS} = \text{TMT} = w/p$ no EC. 1º TBE com produção é corolário. 2º TBE estende com convexidade do $Y$.
 
-- [ ] **Calendário:** quiz pós-aula 4 + exercícios avaliativos abertos desde 14/05 madrugada. **Prazo: quarta 20/05 18h.** Gabarito quinta 21/05 00:00.
-- [ ] **Pré-monitoria 2** (cobre Aula 4 — EG trocas) abre **sáb 16/05 12h**. Monitoria sáb 23/05 10h.
-- [ ] **Pré-aula 5** (EG com produção) abre **qui 14/05 madrugada**.
+### 5.b. Ponte para Aula 5 — Arrow-Debreu I (~3 min)
+
+- [ ] **A pergunta da próxima aula.** "Adicionamos **incerteza**: estados da natureza $s = 1, \ldots, S$. Bens viram **bens contingentes** $(\ell, s)$ — mesmo bem físico em estados diferentes é **bem diferente**. Espaço de bens vira $\mathbb{R}^{LS}$. **Mercado completo = um preço para cada $(\ell, s)$.**"
+- [ ] **Quadro: estrutura.** Equilíbrio walrasiano em $\mathbb{R}^{LS}$. Robinson de hoje vira "Robinson contingente". 1º TBE sobrevive sob mercados completos.
+- [ ] **Frase-martelo:** "Aula 4 abriu com $p$ exógeno virando endógeno em consumo. Fechou com $p$ endógeno em consumo + produção. Aula 5: $p$ endógeno em consumo + produção + estados. Cada aula é uma camada."
+
+### 5.c. Lembretes operacionais (~30s)
+
+- [ ] **Calendário:** prazo Aula 4 — quarta 20/05 18h. Gabarito quinta 21/05 00:00. **Pré-aula 4 foi atualizada** em 07/05 com seções 5b e 6b (PPF + Robinson). Quem fez antes da atualização **não perdeu progresso**, mas precisa fazer 5b e 6b.
+- [ ] **Pré-monitoria 2** (Aula 4 — trocas + produção) abre **sáb 16/05 12h**. Monitoria sáb 23/05 10h. Foco do Alberto: extensões — núcleo $I=3$, contraexemplo LNS bliss-point, 2º TBE com retornos crescentes, Robinson com $J=2$ firmas e cotas $\theta^{ij}$ explícitas.
 
 ---
 
 ## Materiais e recursos (checklist do professor)
 
-- [ ] Slides `reveal.js` (`aula_4/slides/aula-04.html` renderizado).
-- [ ] Quadro com 3 cores: verde para curvas de indiferença, vermelho para preços/orçamento, preto para argumentos do 1º TBE.
-- [ ] **Lápis de cor para a turma** (azul para $A$, vermelho para $B$) — distribui na entrada para Bloco 1.
-- [ ] Acesso ao dashboard da plataforma para triagem do Bloco 0.
+- [ ] Slides `reveal.js` (`aula_4/slides/aula-04.html` re-renderizado após cirurgia).
+- [ ] Quadro com 3 cores: verde para curvas de indiferença, **vermelho para PPF e curvas de produção**, preto para argumentos do 1º TBE.
+- [ ] **Lápis de cor para a turma** (azul para $A$, vermelho para $B$, e **verde para PPF**).
+- [ ] Acesso ao dashboard.
 - [ ] Lista de chamada.
 
 ---
 
 ## Notas para o professor (autocalibração em tempo real)
 
-- **Se Bloco 1 (Edgeworth) trava:** reduzir 1.d (núcleo) para 4 min e preservar tangência. Núcleo pode ser cortado para a monitoria.
-- **Se Walras (Bloco 2.b) gera dúvida:** parar e refazer no caso $L=2$ explícito. "Demanda total = dotação total" é o que acontece; Walras é a identidade dual a isso.
-- **Se a prova do 1º TBE (Bloco 3.b) trava:** simplificar para $I=2$ e fazer no quadro com nomes ($A$, $B$) em vez de índices. A estrutura é igual; só é mais palpável.
-- **Se Box Brasil/Mundo estoura:** cortar Box-Mundo (EU ETS) e manter só Box-Brasil (RenovaBio/CBIOs) — concreto, brasileiro, e estrutura Edgeworth genuína.
-- **Se Alberto está presente:** ele cobre Bloco 1.d (núcleo) enquanto Darcio circula; em troca, Darcio cobre o passo 3 da prova do 1º TBE com mais profundidade.
-- **Sobre o 2º TBE:** anunciar e seguir. Aula 6 prova rigorosamente. Hoje é teaser, não treino.
-- **Sobre o iframe Edgeworth (slide #12 da apresentação):** se Bloco 1 fluir, voltar ao iframe no Bloco 2.f como visualização interativa do EC em $p_1 = 8/7$ — slider varre $p_1/p_2 \in [0{,}5; 2{,}0]$ e mostra como a tangência em $p_1 = 8/7$ é o único ponto onde demanda de $A$ e $B$ coincidem na contract curve. Não substitui o desenho ao vivo; é checagem visual depois da álgebra.
+- **Se Bloco 1 trava:** reduzir 1.d (núcleo) para 4 min. Núcleo migra integralmente para a monitoria.
+- **Se Walras gera dúvida:** parar e refazer no caso $L=2$. "Demanda total = dotação total" + identidade dual.
+- **Se Bloco 2.f (Leontief) faltar tempo:** cortar — sai como exercício avaliativo 3.
+- **Se prova do 1º TBE trava:** simplificar para $I=2$ com nomes ($A$, $B$).
+- **Se Bloco 3.5.a (PPF visual) trava:** reduzir 3.5.b (TMT formal) para 6 min e preservar construção da PPF; max-lucro pode ser visado na monitoria. **Não cortar Robinson Crusoe** — é o ponto pedagógico de toda a inserção.
+- **Se Robinson Crusoe (3.5.c) gera dúvida:** parar e refazer no caso $u = q\ell$ + $f(L) = L$ + $\bar L = 1$ ⇒ $L^* = 1/2, q^* = 1/2, \ell^* = 1/2, w^* = p^* = 1$. Caso aritmeticamente trivial.
+- **Se 3.5.d (1º TBE com produção) faltar tempo:** cortar até frase-martelo "passo 3 das firmas é o único novo" + lembrete da pré-monitoria. **Não tente ensaiar a prova de 4 passos no quadro.** Pré-aula §6b cobre.
+- **Se Box ZFM aparecer no recall:** "ficou para Aula 7 (externalidades regionais)". Não improvise.
 
 ---
 
-## Ganchos explícitos para a Pré-Monitoria 2 (com Alberto, sáb 23/05)
+## Ganchos explícitos para a Pré-Monitoria 2 (com Alberto, sáb 23/05) — atualizado pós-cirurgia
 
-A monitoria 2 cobre Aula 4 (EG trocas). Da Aula 4 especificamente, deixar para Alberto:
+A monitoria 2 cobre Aula 4 (EG **trocas + produção**). Da Aula 4 especificamente, deixar para Alberto:
 
-- **Cálculo de EC em economia $2\times 2$ com várias formas funcionais** (CD assimétrica, Leontief, CES) — efeito comparativo de preferências.
-- **Núcleo em economia com $I = 3$ consumidores e $L = 2$ bens** — coalizões não-triviais; mostrar shrinking do núcleo conforme cresce $I$.
-- **Construção numérica fechada do contraexemplo de LNS** com bliss-point interior (MWG §16.D) — calibrar dotações + preferências para que o EC encontrado caia no bliss-point com sobra de renda só no agente saciado, e exibir alocação Pareto-superior.
-- **2º TBE preliminar** com discussão informal das hipóteses de convexidade — o que significa "lump-sum" na prática (e por que não é implementável).
-- **Aplicações empíricas**: leilão do Tesouro como mecanismo de price discovery; mercado de cotas de carbono como Edgeworth com bem-ambiental.
+- **Trocas (já contemplado):** EC com várias formas funcionais (CD assimétrica, Leontief, CES); núcleo em $I=3$ explicitamente; contraexemplo LNS bliss-point.
+- **Produção (NOVO pós-cirurgia):**
+  - Robinson Crusoe com tecnologia CES (em vez de $\sqrt{L}$) — paramétrico em $\sigma$.
+  - **EG completo $2\times 2 \times J$**: $J = 2$ firmas com $\theta^{ij}$ não-trivial; mostrar sensibilidade a $\theta$.
+  - **2º TBE com retornos crescentes** — função $f(L) = L^2$ não-convexa, mostrar que nenhum $p^*$ sustenta Pareto-eficiente interior.
+  - **Eficiência produtiva via dual:** $C(q) = \min w\cdot z$ s.a. $f(z) \ge q$. Conexão TMST = razão de preços de fator.
+  - **Robinson com lazer endógeno** como caso especial de UMP + lucro (lado da oferta).
+- **Aplicação:** efeito do RenovaBio na PPF nacional (deslocamento etanol/biodiesel) + indústria automotiva pós-MERCOSUL como vantagem comparativa endógena.
 
 ---
 
 ## Checagem cruzada com pré-aula
 
-A pré-aula 4 cobre exatamente os mesmos conceitos em ritmo diferente. Aula presencial:
-- **Aprofunda** a prova do 1º TBE (passos detalhados).
-- **Contrasta** CD simétrica (saída clean) vs. assimétrica (preço relativo informativo).
-- **Aplica** com Box Brasil/Mundo concretos.
-- **Antecipa** Aula 5 (produção) e Aula 6 (Arrow-Debreu).
+A pré-aula 4 foi atualizada (07/05) para cobrir o conteúdo novo:
 
-Quem fez a pré-aula entrega o Bloco 1 em 30 min e usa os 10 min restantes para discussão. Quem não fez, perde Bloco 1.b (construção da caixa).
+- **S0–S5 (inalterado):** preferências, Edgeworth, Pareto, contract curve, núcleo, Walras, EC, 1º TBE em troca, 2º TBE preliminar.
+- **S5b (NOVO):** Conjunto de produção, função de produção, **PPF + Robinson Crusoe**.
+- **S6b (NOVO):** **TMS = TMT = $p_1/p_2$ + 1º TBE com produção como corolário**.
+- **S6 (Exercícios), S7 (Checkpoint), S8 (Reflexão):** preservados.
+
+Aula presencial **aprofunda** a prova do 1º TBE (passos detalhados), **constrói** a PPF ao vivo, **calcula** Robinson em CD canônico, **antecipa** Aula 5 (Arrow-Debreu I).
+
+Quem fez a pré-aula entrega o Bloco 1 em 30 min e reduz a chance de Bloco 3.5 estourar. Quem não fez S5b/S6b, perde o conteúdo de produção em sala — mas o material consolidativo está na plataforma.

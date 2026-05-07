@@ -34,11 +34,17 @@
 <div class="content-wrapper">
 
 <h1>Exercícios Avaliativos — Aula 04</h1>
-<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Equilíbrio Geral em Trocas Puras (Edgeworth, EC, lei de Walras, 1º TBE, 2º TBE preliminar)</p>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Equilíbrio Geral em Trocas Puras + Produção (Edgeworth, EC, lei de Walras, 1º TBE em troca, PPF + Robinson Crusoe + 1º TBE com produção, 2º TBE preliminar)</p>
 
-<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition warn" style="border-left:4px solid #C8102E;background:#fef2f2;margin-top:1.5rem">
+<div class="admonition-title" style="color:#7c2d2d">📌 Lista atualizada em 07/05/2026 — agora cobre produção</div>
+<p>A ementa foi recalibrada. Calibragem nova: <strong>1🟢 trocas + 2🟡 trocas + 1🟡 produção + 1🔴 trocas + 1🔴 trocas+produção</strong>. <strong>Exercício 4</strong> substituído por PPF + Robinson Crusoe; <strong>Exercício 6</strong> agora é a meta-questão econômica 2×2×2 com TMS=TMT=p₁/p₂ (substitui o 2º TBE preliminar isolado, que ficou como item dentro do Ex 6).</p>
+<p><strong>Política para quem submeteu antes de 07/05:</strong> a plataforma é configurada para uma única submissão; a submissão antiga continua válida e contabilizada. A calibragem nova passa a valer para quem ainda não submeteu.</p>
+</div>
+
+<div class="admonition info" style="margin-top:1rem">
 <div class="admonition-title">Como estes exercícios funcionam</div>
-<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28–30 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h30</strong> (subiu por causa do Ex4 e Ex6 novos). Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
 <p style="margin-top:0.6rem"><strong>Prazo: quarta 20/05 às 18:00</strong> — 1h30 antes da Aula 5. <em>Calendário canônico</em>.</p>
 </div>
 
@@ -242,77 +248,70 @@
     </div>
   </div>
 
-  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <!-- ===================== EXERCÍCIO 4 🟡 (NOVO 07/05 — produção) ===================== -->
   <div class="ex-divider">
     <div class="ex-header">
       <h2>Exercício 4</h2>
       <span class="ex-calibre">🟡</span>
-      <span class="ex-title">1º TBE: estrutura da prova e papel exato de LNS</span>
+      <span class="ex-title">PPF + Robinson Crusoe canônico (produção básica)</span>
     </div>
 
     <div class="ex-enunciado">
-      <p><strong>Enunciado.</strong> Considere a prova padrão do 1º Teorema do Bem-Estar (1º TBE) em economia de troca pura. Cada uma das afirmações abaixo refere-se a um aspecto da estrutura ou do papel das hipóteses.</p>
-      <ul>
-        <li><strong>A.</strong> A prova é por contradição: assume-se \(\exists \tilde x\) viável e Pareto-superior, e mostra-se que \(\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i\), contradizendo viabilidade.</li>
-        <li><strong>B.</strong> Para o \(j\) estritamente melhor: o argumento é "se \(\tilde x^j\) cabia no orçamento, \(x^{*j}\) não maximizava".</li>
-        <li><strong>C.</strong> Para os \(i \neq j\) fracamente melhores: <strong>LNS é necessária</strong>; sem ela, \(i\) pode ter \(\tilde x^i\) indiferente a \(x^{*i}\) com gasto estritamente menor.</li>
-        <li><strong>D.</strong> A hipótese de <strong>convexidade</strong> das preferências é essencial para o 1º TBE.</li>
-      </ul>
+      <p><strong>Enunciado.</strong> Economia com 1 consumidor (Robinson) + 1 firma + 2 bens (consumo \(q\), lazer \(\ell\)). Variáveis: trabalho \(L \ge 0\), lazer \(\ell = \bar L - L\). Tecnologia: \(q = f(L) = \sqrt{L}\). Preferências: \(u(q, \ell) = q^{1/2}\ell^{1/2}\). Dotação total de tempo: \(\bar L = 16\). Use \(p = 1\) numerário (preço do bem de consumo).</p>
     </div>
 
-    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(a)</strong> A afirmação A é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) Verdadeira — é o esqueleto da prova padrão.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) Verdadeira em CD apenas.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) Falsa — a prova é construtiva, não por contradição.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) Verdadeira em economia \(2\times 2\) apenas.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    <div class="quizg-q" data-qid="ex4a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Considere também uma <em>segunda</em> firma simétrica produzindo um bem 2 a partir do mesmo trabalho \(\bar L = 16\): \(f_2(L_2) = \sqrt{L_2}\). Então a PPF de produção sobre os dois bens é descrita por:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(q_1 + q_2 = 4\) — reta.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(q_1^2 + q_2^2 = 16\) — arco de círculo, raio 4.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(q_1\, q_2 = 16\) — hipérbole.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(\max\{q_1, q_2\} = 4\) — fronteira tipo Leontief.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> Substituir \(L_\ell = q_\ell^2\) na restrição \(L_1 + L_2 = 16\).</div>
     </div>
 
-    <div class="quizg-q" data-qid="ex4b" data-correct="a" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(b)</strong> A afirmação B é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) Verdadeira — segue diretamente da definição de UMP.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) Falsa — UMP não impede que cestas mais preferidas estejam no orçamento.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) Verdadeira apenas em quase-linear.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) Falsa — argumento exige LNS para \(j\) também.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    <div class="quizg-q" data-qid="ex4b" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Voltando à economia de 1 firma (\(q = \sqrt{L}\)) e Robinson com \(u = q^{1/2}\ell^{1/2}\). A solução do <em>planejador</em> resolve \(\max_L L^{1/4}(\bar L - L)^{1/2}\). O \(L^*\) ótimo é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) \(L^* = 8\) — metade do tempo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) \(L^* = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) \(L^* = 16/3 \approx 5{,}33\) — vem de CPO \(1/(4 L) = 1/(2(16-L)) \Rightarrow 2(16-L) = 4L \Rightarrow L = 16/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) \(L^* = 16\) — Robinson trabalha tudo.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
     </div>
 
-    <div class="quizg-q" data-qid="ex4c" data-correct="a" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(c)</strong> A afirmação C é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Verdadeira — LNS é hipótese-mínima precisamente para fechar o passo 2.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Falsa — passo 2 não exige LNS, basta UMP.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Verdadeira em CD apenas.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Falsa — passo 2 segue da convexidade.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
-    </div>
-
-    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(d)</strong> A afirmação D é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) Verdadeira — convexidade entra no 1º TBE.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) Falsa — convexidade é hipótese do 2º TBE, não do 1º. 1º TBE precisa apenas de LNS.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Verdadeira em troca pura, falsa em produção.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Verdadeira em \(L = 2\).</label>
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Em equilíbrio competitivo descentralizado, com \(p = 1\) numerário, o salário de equilíbrio \(w^*\) e o lucro \(\pi^*\) valem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) \(w^* = 1\), \(\pi^* = 0\) — economia "lucro zero".</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) \(w^* = \sqrt{3}/8 \approx 0{,}217\), \(\pi^* = 2/\sqrt{3} \approx 1{,}155\) — vem de \(w^* = p\, f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8\) e \(\pi^* = p\, q^* - w^*\, L^* = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) \(w^* = 1/2\), \(\pi^* = 1/2\) — pesos da utilidade CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) \(w^* = 16/3\), \(\pi^* = 0\) — confunde \(L^*\) com \(w^*\).</label>
       <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
     </div>
 
-    <div class="quizg-q" data-qid="ex4e" data-correct="b" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(e)</strong> Considere economia onde \(A\) tem \(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\) (saturação em bem 1 acima de \(x_1 = 1\)) e \(B\) tem CD usual; \(\omega^A = (2, 0)\), \(\omega^B = (0, 2)\). Sobre LNS de \(A\) e o 1º TBE nessa economia:</div>
-      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) LNS falha em todo \(\{x_1 \ge 1\}\), logo o 1º TBE não se aplica.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) <strong>LNS vale globalmente</strong> (\(\partial u^A/\partial x_2 = 1 > 0\) entrega vizinho preferido em qualquer ponto); o 1º TBE se aplica e o EC \(((1,1),(1,1))\) a \(p^* = (1,1)\) é Pareto-eficiente. Saturação em bem 1 é apenas <em>direcional</em>.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) LNS vale só em \(\{x_1 < 1\}\); o 1º TBE só se aplica se o EC cair nessa região.</label>
-      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) LNS é hipótese irrelevante aqui — basta convexidade das preferências de \(A\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex4e" value="e"> (v) Para violar LNS de fato, é preciso saturação <em>total</em> num ponto (bliss-point interior), como em \(u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]\); saturação só em bem 1 não basta.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> A alternativa (v) também é uma observação verdadeira, mas é apenas a <em>justificativa complementar</em> de (ii) — ela diz "para falhar LNS precisaria bliss-point", o que é o argumento por trás de (ii). Pedimos a afirmação mais completa sobre a economia <em>desta</em> questão; (ii) responde diretamente. (v) é a generalização canônica que aparece em MWG §16.D.</div>
+    <div class="quizg-q" data-qid="ex4d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A renda total do consumidor é \(m^* = w^*\, \bar L + \pi^*\). Verificando a UMP, \(q^* = m^*/(2 p)\) e \(\ell^* = m^*/(2 w^*)\). Os valores são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) \(q^* = 4/\sqrt{3} \approx 2{,}31\), \(\ell^* = 32/3 \approx 10{,}67\) — coincidem com a solução do planejador.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) \(q^* = 8\), \(\ell^* = 8\) — simétrico.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) \(q^* = 4\), \(\ell^* = 12\) — usando \(L = 4\) errado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) \(q^*\) e \(\ell^*\) não são únicos — Robinson pode escolher outras combinações.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong> EC descentralizado replica o planejador.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A "assinatura algébrica" do 1º TBE com produção neste exemplo se manifesta como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) \(\text{TMS} = w/p\) apenas — só a margem de consumo é atada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) \(\text{TMT} = w/p\) apenas — só a margem de produção é atada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) \(\text{TMS} = w/p = \text{TMT}\) — todas as margens valem \(\sqrt{3}/8\). Mercado descentralizado replica solução do planejador via uma única ponte de preço.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) \(\text{TMS}\cdot \text{TMT} = 1\) — produto é unitário.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
     </div>
 
     <div class="ex-gabarito-5passos quizg-feedback" hidden>
       <h4>Gabarito 5-passos — Exercício 4</h4>
-      <p><strong>1. Ponto-chave.</strong> 1º TBE tem 3 passos: contradição → passo 1 (UMP para \(j\) estritamente melhor) → passo 2 (LNS para \(i\) fracamente melhor) → soma e contradiz viabilidade. LNS é hipótese de <em>vizinhança</em> (existe alguma direção de melhora em qualquer entorno), não condição direção-a-direção. Convexidade é do 2º TBE, não 1º.</p>
-      <p><strong>2. Derivação.</strong> Passos 1–3 como já vistos. Em \(u^A = \min\{x_1, 1\} + x_2\): para qualquer \((x_1^0, x_2^0) \in \mathbb{R}^2_+\), o vizinho \((x_1^0, x_2^0 + \delta)\) tem utilidade estritamente maior porque \(\partial u^A/\partial x_2 = 1 > 0\) em todo o domínio. Logo LNS vale globalmente — inclusive em \(x_1^0 \ge 1\). EC desta economia: \(A\) a \(p^* = (1,1)\) tem renda \(m^A = 2\) e demanda indiferente em \(x_1 \in [0, 1]\); \(B\) tem CD com \(m^B = 2\) e demanda \((1, 1)\). Mercado fecha em \(x^A = x^B = (1, 1)\). Por 1º TBE (LNS vale), Pareto-eficiente. Verificação direta: \((1,1)\) está na quina do "joelho" de \(A\) — qualquer redistribuição que dê mais bem 2 a \(A\) tem que tirar de \(B\) (monotônico estrito) e vice-versa.</p>
-      <p><strong>3. Armadilha.</strong> (d)(i) — erro clássico "convexidade ⇒ 1º TBE": falso, convexidade é hipótese do 2º. (e)(i) e (e)(iii) — confundem <em>saturação direcional</em> (derivada parcial nula em uma região) com <em>saciedade local</em> no sentido de LNS (vizinhança inteira sem direção de melhora). Bem 2 garante a direção em todos os pontos. (e)(iv) — LNS é precisamente a hipótese-mínima. (e)(v) — afirmação verdadeira mas é a justificativa por trás de (ii); a alternativa pedida é a que descreve o que <em>vale</em> nesta economia.</p>
-      <p><strong>4. Extensão.</strong> O contraexemplo <em>genuíno</em> do 1º TBE sem LNS exige saturação <em>total</em> num ponto: bliss-point interior em <strong>MWG §16.D</strong> (paraboloide invertido \(u = -[(x_1-a)^2 + (x_2-b)^2]\)). A construção numérica fechada é delicada (calibrar dotações + preferências para que o EC caia exatamente no bliss-point com sobra de renda só no agente saciado) — fica como gancho da pré-monitoria 2 (sáb 23/05, com Alberto).</p>
-      <p><strong>5. Peer-review.</strong> Calibre 🟡 — exige distinção limpa entre 1º e 2º TBE <em>e</em> entre saturação direcional e saciedade local. Aluno que marca (d)(i) ainda não separou os dois teoremas; quem marca (e)(i) ou (e)(iii) ainda lê LNS como condição direção-a-direção. (e)(v) é o distrator <em>quase-correto</em> — quem marca está mais perto do certo do que parece, mas confundiu "afirmação descritiva da economia" com "generalização canônica"; a correção fica clara no feedback.</p>
+      <p><strong>1. Ponto-chave.</strong> Robinson canônico é o caso mínimo onde toda a maquinaria de produção (PPF, TMT, max-lucro, EC descentralizado, 1º TBE com produção) se materializa com um único consumidor e uma única firma. A assinatura é \(\text{TMS} = \text{TMT} = w/p\) — três margens, uma ponte de preço.</p>
+      <p><strong>2. Derivação.</strong> (a) PPF: \(L_\ell = q_\ell^2\), restrição \(L_1 + L_2 = 16\) ⇒ \(q_1^2 + q_2^2 = 16\), arco de círculo. (b) Planejador: \(\max L^{1/4}(16-L)^{1/2}\). \(\log u = (1/4)\log L + (1/2)\log(16-L)\). CPO: \(1/(4L) = 1/(2(16-L))\) ⇒ \(2(16-L) = 4L\) ⇒ \(L^* = 16/3\). (c) Salário: \(w^* = p\, f'(L^*) = 1\cdot 1/(2\sqrt{16/3}) = 1/(2\cdot 4/\sqrt{3}) = \sqrt{3}/8\). Lucro: \(\pi^* = p\, q^* - w^*\, L^* = 4/\sqrt{3} - (\sqrt{3}/8)(16/3) = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}\). (d) Renda: \(m^* = (\sqrt{3}/8)(16) + 2/\sqrt{3} = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3\). \(q^* = m^*/(2 p) = 4\sqrt{3}/3 = 4/\sqrt{3}\) ✓; \(\ell^* = m^*/(2 w^*) = (8\sqrt{3}/3)/(2\sqrt{3}/8) = 32/3\) ✓. (e) Verificar: \(\text{TMS} = q^*/\ell^* = (4/\sqrt{3})/(32/3) = \sqrt{3}/8\); \(\text{TMT} = f'(L^*) = \sqrt{3}/8\); \(w^*/p^* = \sqrt{3}/8\). Iguais. ✓</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i) confunde retornos constantes (\(f = L\)) com decrescentes (\(f = \sqrt{L}\)). Item (b)(i) usa simetria do consumidor (\(u = q^{1/2}\ell^{1/2}\)) e ignora a curvatura da tecnologia. Item (c)(iii) confunde pesos da utilidade com preços de equilíbrio. Item (e)(i)/(ii) cortam metade da estrutura.</p>
+      <p><strong>4. Extensão.</strong> Generalização para economia com \(I\) consumidores e \(J\) firmas: cada consumidor ganha cota \(\theta^{ij}\) de cada firma, renda inclui salário + dividendo. EC ainda força \(\text{TMS}^i = w^*/p^* = \text{TMT}^j\) (todas as margens individuais e setoriais). Pré-monitoria 2 (sáb 23/05) cobre Robinson com tecnologia CES e EG completo $2\times 2 \times 2$. Aula 5 (AD-I) estende para bens contingentes — a estrutura sobrevive com índice de estado.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 — exige fluência em (i) inverter \(f\) para construir PPF, (ii) resolver Lagrangiano em forma reduzida \(L^{1/4}(16-L)^{1/2}\), (iii) ler salário como produtividade marginal, (iv) verificar consistência demanda-CPO. Risco residual: aluno pode confundir os pesos \(1/4\) e \(1/2\) que aparecem em \(L^{1/4}(\bar L - L)^{1/2}\) com pesos CD originais — atenção. <em>Trade-off declarado:</em> exercício mantém Robinson em forma simplificada (1 firma, 1 consumidor, sem cota \(\theta^{ij}\) parametrizada). Versão completa (com $J=2$ firmas e cotas explícitas) é Ex 6 e pré-monitoria 2.</p>
     </div>
   </div>
 
@@ -383,70 +382,70 @@
     </div>
   </div>
 
-  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <!-- ===================== EXERCÍCIO 6 🔴 (NOVO 07/05 — produção + trocas) ===================== -->
   <div class="ex-divider">
     <div class="ex-header">
       <h2>Exercício 6</h2>
       <span class="ex-calibre">🔴</span>
-      <span class="ex-title">2º TBE preliminar e implicação política da redistribuição lump-sum</span>
+      <span class="ex-title">Economia 2×2×2: TMS=TMT=p₁/p₂ + 2º TBE com produção</span>
     </div>
 
     <div class="ex-enunciado">
-      <p><strong>Enunciado.</strong> Considere economia \(2\times 2\) com \(u^A = u^B = x_1^{1/2}x_2^{1/2}\), \(\bar\omega = (4, 4)\). O "planejador social" deseja a alocação Pareto-eficiente assimétrica \(\tilde x = ((3, 3), (1, 1))\). Considere o 2º TBE preliminar.</p>
+      <p><strong>Enunciado.</strong> Economia 2×2×2: \(I=2\) consumidores \((A, B)\), \(J=2\) firmas (\(F_1\) produz bem 1, \(F_2\) produz bem 2), \(L=2\) bens. Tecnologia: \(f_1(L_1) = \sqrt{L_1}\), \(f_2(L_2) = \sqrt{L_2}\), oferta agregada de trabalho \(\bar L = 16\), restrição \(L_1 + L_2 \le \bar L\). Preferências CD simétricas: \(u^A = u^B = x_1^{1/2}x_2^{1/2}\). Cada consumidor possui \(\bar L/2 = 8\) horas de trabalho como dotação <em>de fator</em>; cotas das firmas \(\theta^{Aj} = \theta^{Bj} = 1/2\) para \(j = 1, 2\). Use \(p_2 = 1\) numerário. Considere o equilíbrio competitivo \((p^*, w^*, x^*, y^*)\).</p>
     </div>
 
     <div class="quizg-q" data-qid="ex6a" data-correct="a" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(a)</strong> A alocação \(\tilde x = ((3, 3), (1, 1))\) é Pareto-eficiente?</div>
-      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Sim — \(\text{TMS}^A(\tilde x^A) = 3/3 = 1 = 1/1 = \text{TMS}^B(\tilde x^B)\), tangência.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) Não — assimetria entre \(A\) e \(B\) viola Pareto.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) Sim, mas só porque utilidades CD são iguais.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Indeterminado.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+      <div class="quizg-qtext"><strong>(a)</strong> No equilíbrio competitivo, a CPO de cada firma (max-lucro a preço dado) implica \(p_\ell\, f_\ell'(L_\ell^*) = w^*\). A taxa marginal de transformação entre os dois bens, em equilíbrio, vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) \(\text{TMT}_{12} = p_1^*/p_2^*\) — segue diretamente das duas CPOs combinadas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) \(\text{TMT}_{12} = w^*/p_1^*\) — só envolve firma \(F_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) \(\text{TMT}_{12} = 1\) — tecnologias simétricas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) \(\text{TMT}_{12} = \theta^{Aj}/\theta^{Bj} = 1\) — cotas iguais.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong> \(p_1\,\text{PMa}_L^1 = w = p_2\,\text{PMa}_L^2\) ⇒ \(\text{TMT}_{12} = \text{PMa}_L^2/\text{PMa}_L^1 = p_1/p_2\).</div>
     </div>
 
-    <div class="quizg-q" data-qid="ex6b" data-correct="c" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(b)</strong> Para implementar \(\tilde x\) como EC via 2º TBE preliminar, é necessário:</div>
-      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Mudar preferências para que \(\tilde x\) seja "natural".</label>
-      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Mudar preços de mercado para favorecer \(A\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Redistribuir as dotações iniciais via transferência <strong>lump-sum</strong>; por exemplo, \(\hat\omega^A = (3, 3)\), \(\hat\omega^B = (1, 1)\) (mesmo total).</label>
-      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Impor preço fixo administrado pelo governo.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> A CPO de cada consumidor no UMP em \((p_1^*, p_2^*)\) com renda \(m^{*i}\) implica:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) \(\text{TMS}^A = w^*/p_1^*\), \(\text{TMS}^B = w^*/p_2^*\) — diferentes entre consumidores.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) \(\text{TMS}^A = \text{TMS}^B = p_1^*/p_2^*\) — mesma margem para os dois, igual ao preço relativo dos bens.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) \(\text{TMS}^A\, \text{TMS}^B = 1\) — produto unitário.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) \(\text{TMS}\) depende das cotas \(\theta^{ij}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> CPO do UMP em economia com bens \((x_1, x_2)\) e preço \((p_1, p_2)\) iguala TMS ao preço relativo, independentemente da composição da renda.</div>
     </div>
 
-    <div class="quizg-q" data-qid="ex6c" data-correct="a" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(c)</strong> Considere \(\hat\omega^A = (3, 3)\), \(\hat\omega^B = (1, 1)\) (mesmo total \((4, 4)\)). Em CD simétrica com essas dotações, o EC tem:</div>
-      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) \(p_1^*/p_2^* = 1\), \(x^{A*} = (3, 3)\), \(x^{B*} = (1, 1)\) — autarquia eficiente.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) \(p_1^*/p_2^* = 3\), com alocação não-trivial.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) \(p_1^*/p_2^* = 1/3\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Não há EC — desigualdade impede fechamento.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (i). Verifique: \(\text{TMS}^A(\hat\omega^A) = 1 = \text{TMS}^B(\hat\omega^B)\), já está em tangência; não há ganhos de troca; \(p^* = (1, 1)\) não desencadeia comércio.</strong></div>
+    <div class="quizg-q" data-qid="ex6c" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Combinando as duas CPOs (item a + item b), a "assinatura algébrica" do EC nesta economia 2×2×2 é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Apenas \(\text{TMS}^A = \text{TMS}^B\) — eficiência de troca.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Apenas \(\text{TMT}_{12} = p_1^*/p_2^*\) — eficiência produtiva.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) <strong>Igualdade tripla</strong>: \(\text{TMS}^A = \text{TMS}^B = \text{TMT}_{12} = p_1^*/p_2^*\). Mercado força simultaneamente eficiência de troca (margens iguais entre consumidores), eficiência produtiva (margem setorial = preço relativo), e eficiência alocativa (consumo "vale" o mesmo que produzir).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Nenhuma igualdade vale em geral.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Esta é a marca do 1º TBE com produção em economia 2×2×2 — a generalização canônica da igualdade \(\text{TMS} = \text{TMT} = w/p\) de Robinson.</div>
     </div>
 
-    <div class="quizg-q" data-qid="ex6d" data-correct="c" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(d)</strong> A "redistribuição lump-sum" no 2º TBE significa:</div>
-      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Imposto sobre cada compra/venda no mercado.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Tributação proporcional à renda observada.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) <strong>Transferência fixa, independente de comportamento</strong> — não distorce decisões marginais (não-distorcionária).</label>
-      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Multa por desvio do "ótimo social".</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Pela simetria total do problema (CD simétrica + tecnologias simétricas + dotações de fator iguais + cotas iguais), o preço relativo de equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) \(p_1^*/p_2^* = 2\) — bem 1 mais escasso.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) \(p_1^*/p_2^* = 1\) — todas as simetrias colapsam o preço relativo a 1; em \(p_2 = 1\), \(p_1^* = 1\). Pela igualdade tripla, \(\text{TMS}^A = \text{TMS}^B = \text{TMT} = 1\). Como \(\text{TMT} = q_1/q_2 = 1\) ⇒ \(q_1 = q_2\); como \(L_1 + L_2 = 16\) e \(L_\ell = q_\ell^2\) ⇒ \(L_1 = L_2 = 8\), \(q_1 = q_2 = \sqrt{8} = 2\sqrt{2}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) \(p_1^*/p_2^* = 1/2\) — bem 1 abundante.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Indeterminado — múltiplos equilíbrios.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
     </div>
 
     <div class="quizg-q" data-qid="ex6e" data-correct="c" data-difficulty="red">
-      <div class="quizg-qtext"><strong>(e)</strong> A hipótese-chave do 2º TBE (e que faz a separação por hiperplano-preço funcionar) é:</div>
-      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Continuidade das preferências.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Monotonicidade.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) <strong>Convexidade das preferências</strong> (e tecnologia, em economia com produção). Sem convexidade, Hahn-Banach falha.</label>
-      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) LNS — mesma do 1º TBE.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+      <div class="quizg-qtext"><strong>(e)</strong> Suponha agora que o "planejador social" deseja implementar uma alocação Pareto-eficiente <em>assimétrica</em> em que \(A\) consome mais que \(B\). Pelo 2º TBE com produção, isto é alcançável via:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Mudar preços de mercado para favorecer \(A\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Subsídio à produção do bem que \(A\) prefere.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) <strong>Redistribuição lump-sum das dotações iniciais</strong> (de fator e/ou cotas \(\theta^{ij}\)), de modo que \(A\) tenha mais "patrimônio" inicial. <strong>Hipótese-chave:</strong> convexidade das preferências <em>e</em> dos conjuntos de produção \(Y^j\) — sem isso, Hahn-Banach falha e o 2º TBE não constrói o hiperplano-preço de suporte.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Impor um teto de preços.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Em economia com produção, o "patrimônio" inclui dotação de fatores E cotas \(\theta^{ij}\) das firmas — duas dimensões redistribuíveis lump-sum.</div>
     </div>
 
     <div class="ex-gabarito-5passos quizg-feedback" hidden>
-      <h4>Gabarito 5-passos — Exercício 6</h4>
-      <p><strong>1. Ponto-chave.</strong> 2º TBE preliminar permite implementar qualquer Pareto-eficiente como EC via redistribuição lump-sum. Hipótese-chave: convexidade. Implicação política central: separa eficiência (via mercado) de equidade (via redistribuição).</p>
-      <p><strong>2. Derivação.</strong> \(\tilde x\) Pareto: \(\text{TMS}^A = 1 = \text{TMS}^B\). ✓ Para implementar, escolher \(\hat\omega^A = (3, 3)\) — em CD com essa dotação, \(\text{TMS}^A(\hat\omega^A) = 1\), e \(A\) não tem incentivo a trocar; idem \(B\). Equilíbrio: autarquia em \(\hat\omega\), \(p^* = (1, 1)\). Lump-sum: transferência fixa, não distorce escolhas marginais. Convexidade entra na separação por hiperplano (Hahn-Banach): conjunto preferido \(\sum_i V^i\) convexo + viabilidade convexa ⇒ existe hiperplano-preço suporte.</p>
-      <p><strong>3. Armadilha.</strong> (b)(i)/(ii)/(iv) confundem 2º TBE com manipulação de preferências, preços ou regulação. (d)(i)/(ii) descrevem instrumentos *distorcionários* — 2º TBE exige *não-distorção*. (e)(iv) confunde 1º com 2º TBE.</p>
-      <p><strong>4. Extensão.</strong> Em prática, lump-sum é não-implementável: governo não observa habilidade individual; daí imposto distorcionário sobre renda + tradeoff equidade-eficiência (Mirrlees, Saez — fora desta ementa). Reforma tributária EC 132/2023 no Brasil aproxima lump-sum via cashback, mas não é estritamente lump-sum. Aula 6: prova rigorosa do 2º TBE via Hahn-Banach.</p>
-      <p><strong>5. Peer-review.</strong> Calibre 🔴. Exige fluência em (i) verificar Pareto via tangência; (ii) reconhecer mecanismo de implementação (mudar dotação); (iii) distinguir lump-sum de imposto distorcionário; (iv) identificar convexidade como hipótese-chave do 2º TBE. Quem marca (d)(i)/(ii) ainda confunde 2º TBE com tributação distorcionária.</p>
+      <h4>Gabarito 5-passos — Exercício 6 (meta-questão)</h4>
+      <p><strong>1. Ponto-chave.</strong> Esta é a meta-questão da Aula 4: economia 2×2×2 ($I=J=L=2$) com tecnologias côncavas e preferências convexas materializa <em>simultaneamente</em> as três margens da Aula 4 — TMS individual, TMS entre indivíduos, TMT setorial — todas coladas no mesmo preço relativo \(p_1^*/p_2^*\). É o resultado do 1º TBE com produção em forma algébrica condensada. O 2º TBE estende a discussão: redistribuição lump-sum atua agora em <em>duas dimensões</em> (dotação de fator e cotas \(\theta^{ij}\)).</p>
+      <p><strong>2. Derivação.</strong> <em>(a)</em> Da firma: \(p_\ell \, f_\ell'(L_\ell^*) = w^*\), uma equação por firma. Razão: \(p_1/p_2 = f_2'(L_2^*)/f_1'(L_1^*) = \text{PMa}_L^2/\text{PMa}_L^1 = \text{TMT}_{12}\). <em>(b)</em> Do consumidor (UMP em \((p_1, p_2)\)): \(\text{TMS}^i = p_1/p_2\) ∀ \(i\). <em>(c)</em> Combinando: \(\text{TMS}^A = \text{TMS}^B = \text{TMT}_{12} = p_1^*/p_2^*\). <em>(d)</em> Simetria: \(p_1 = p_2 = 1\) ⇒ \(\text{TMT} = q_1/q_2 = 1\) ⇒ \(L_1 = L_2 = 8\) e \(q_1 = q_2 = 2\sqrt{2} \approx 2{,}83\). Cada consumidor recebe metade da produção total: \(x_\ell^A = x_\ell^B = \sqrt{2}\) (verificar via UMP em \(p^* = (1,1)\) e renda \(m^{*A} = m^{*B} = \) salário \((\sqrt{3}/8 \times 8) = \sqrt{3}\) — checar com cuidado: na verdade \(w^* = p\cdot f'(L^*) = 1\cdot 1/(2\sqrt{8}) = 1/(4\sqrt{2})\); renda do consumidor \(= w^*\cdot 8 + (1/2)\pi_1^* + (1/2)\pi_2^*\). Pela simetria, \(\pi_1^* = \pi_2^*\). Cálculo completo deixado ao aluno; a estrutura é o que importa.) <em>(e)</em> 2º TBE com produção: redistribuir dotação de fator e/ou cotas \(\theta^{ij}\); convexidade de \(Y^j\) (\(f_\ell\) côncava ✓) e de preferências (\(u^i\) CD ✓) garante separação por hiperplano-preço.</p>
+      <p><strong>3. Armadilha.</strong> <em>(a)(iii)</em> tecnologias simétricas <em>não</em> implicam TMT=1 — só implicam quando alocação também é simétrica (mas alocação só é simétrica em equilíbrio porque preferências são simétricas). <em>(b)(i)</em> ainda separa "renda salarial" e "renda de dividendo" — confunde composição da renda com margem marginal. <em>(c)(i)/(ii)</em> cortam metade da estrutura. <em>(e)(i)/(ii)/(iv)</em> são instrumentos distorcionários: preço administrado ou subsídio quebra max-lucro/UMP em equilíbrio; só transferência lump-sum preserva eficiência marginal.</p>
+      <p><strong>4. Extensão.</strong> <em>Por que a alocação é Pareto-eficiente:</em> as três margens iguais simultaneamente <em>são</em> a definição de Pareto-eficiente interior em 2×2×2. Em economia $2\times 2 \times J$ generalizada, a estrutura sobrevive — basta cada firma maximizar lucro e cada consumidor seguir UMP a tomadores de preço. Em Aula 5 (Arrow-Debreu I), a estrutura ganha índice de estado: \(\text{TMS}^i_{(1, s), (2, s)} = \text{TMT}_{12, s} = p^*_{(1, s)}/p^*_{(2, s)}\) condicionalmente a \(s\). Em Aula 7 (externalidades), TMS individual diverge de TMT social — wedge pigouviano. <em>2º TBE com produção</em>: prova rigorosa via Hahn-Banach é Aula 6 (rigorosa) ou MWG §16.D. Em prática, lump-sum sobre fatores é difícil (governo não observa habilidade pura); lump-sum sobre cotas é mais factível (alocação inicial de ações de empresa estatal, por exemplo). Reforma tributária EC 132/2023 aproxima lump-sum via cashback, mas não estritamente.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (meta-questão). Junta UMP (Aulas 1–3), Walras (Aula 4 trocas), max-lucro (Aula 4 produção), 1º TBE em ambas as versões, e teaser de 2º TBE. Aluno que marca (a)(iii) ainda confunde simetria de tecnologia com simetria de alocação; (b)(i) ainda separa "lado consumidor" e "lado firma"; (e)(i)/(ii)/(iv) ainda confunde 2º TBE com instrumento distorcionário. <em>Risco residual:</em> o item (d) exige cálculo do equilíbrio sob simetria total — aluno menos disciplinado pode tentar achar a alocação completa numericamente; basta perceber que simetria força \(p_1 = p_2\). <em>Trade-off declarado:</em> economia $2\times 2\times 2$ com cotas \(\theta^{ij} = 1/2\) é o caso mais simples; com cotas heterogêneas, a alocação \(x^A\) pode diferir de \(x^B\) mesmo em equilíbrio simétrico, mas as <em>margens</em> (TMS, TMT, preço) ainda colam. Pré-monitoria 2 explora o caso de cotas \(\theta^{ij}\) heterogêneas explicitamente.</p>
     </div>
   </div>
 

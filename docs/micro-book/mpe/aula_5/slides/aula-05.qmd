@@ -1,0 +1,762 @@
+---
+title: "Arrow-Debreu I — Mercados Completos"
+subtitle: "Aula 5 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-05-20"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 20/05/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Arrow-Debreu I — Mercados Completos {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 5 — Equilíbrio Geral em Mercados Completos**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+20 de maio de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 4 fechou trocas + produção + 1º TBE. Hoje **estendemos o espaço de bens** para cobrir incerteza e tempo. O ferramental sobrevive intacto.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Estender Walras + 1º TBE da Aula 4 para o espaço $\mathbb{R}^{LS}$ (bens contingentes), aplicar ao seguro completo e ler a equação fundamental do SDF.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE Cap. 14 + N&S 12e §7.5 + §13.6 visitados.
+- 9 seções da plataforma + quiz pré-aula 10🟡.
+- $\mathbb{R}^{LS}$ na ponta da língua: $L$ bens × $S$ estados.
+:::
+
+::: {.fragment}
+[Sair sem entender por que **viabilidade é estado-a-estado** = Aulas 6–8 ficam soltas.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura + recall Aula 4 | 19:30–19:35 |
+| 1 | Estados, bens contingentes, $\mathbb{R}^{LS}$ | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Equilíbrio AD em mercados completos | 20:25–21:05 |
+| 3 | 1º TBE estendido + 2º TBE estendido | 21:05–21:40 |
+| — | *Pausa* | 21:40–21:50 |
+| 4 | Seguro completo + Boxes Brasil/Mundo | 21:50–22:20 |
+| 5 | Síntese + ponte Aula 6 | 22:20–22:30 |
+
+::: {.bridge}
+180 min cheios. Duas pausas firmes. O Bloco 4 é onde o aluno sai com músculo aplicado — defendemos o tempo.
+:::
+
+---
+
+## Bloco 1 — Estados, bens contingentes, $\mathbb{R}^{LS}$ {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+A surpresa é conceitual, não técnica. Mais bens, mesma álgebra.
+:::
+
+---
+
+## Por que estender o espaço?
+
+### A pergunta de abertura
+
+> O ferramental Walras + 1º TBE da Aula 4 lida com produção e bem físico. **Como acomodamos incerteza e tempo?**
+
+**Resposta econômica:** uma maçã hoje $\neq$ uma maçã amanhã se chover.
+
+::: {.bridge}
+Se cada par (bem físico, contingência) é um **bem distinto**, o espaço de bens cresce. **Tudo o resto fica.**
+:::
+
+::: {.eq-punch}
+Mais bens. Mesma álgebra.
+:::
+
+---
+
+## Estado da natureza
+
+::: {.card}
+**Definição.** Um conjunto finito $S = \{1, 2, \ldots, |S|\}$ de **estados da natureza** — configurações exclusivas e exaustivas do mundo amanhã.
+:::
+
+**Exemplos:**
+
+- $S = \{\text{chuva}, \text{sol}\}$, $|S| = 2$.
+- $S = \{\text{recessão}, \text{normal}, \text{boom}\}$, $|S| = 3$.
+
+**Probabilidades subjetivas.** Cada agente $i$ tem $\pi^i_s \ge 0$, $\sum_s \pi^i_s = 1$.
+
+::: {.callout-note .callout}
+Heterogeneidade de crenças permitida: $\pi^A \neq \pi^B$ é caso genuíno, não anomalia.
+:::
+
+---
+
+## Bem contingente
+
+::: {.card}
+**Definição.** Um **bem contingente** é o par $(\ell, s)$: "$\ell$ unidades **se** o estado for $s$".
+:::
+
+**Espaço de bens estendido:**
+
+$$
+\mathbb{R}^{LS} \cong \mathbb{R}^L \times \cdots \times \mathbb{R}^L \quad (S \text{ cópias}).
+$$
+
+Vetor de consumo de $i$:
+
+$$
+x^i = (x^i_{\ell, s})_{\ell \in L, s \in S} \in \mathbb{R}^{LS}_+.
+$$
+
+::: {.bridge}
+Em $L = 1, S = 2$: $x^i = (x^i_{\text{chuva}}, x^i_{\text{sol}}) \in \mathbb{R}^2_+$.
+:::
+
+---
+
+## Diagrama em $L = 1, S = 2$
+
+::: {.cols}
+::: {}
+**Eixo horizontal:** $x_1$ (consumo se chover).
+
+**Eixo vertical:** $x_2$ (consumo se sol).
+
+**Reta de 45°:** consumo idêntico nos dois estados — *sem risco*.
+
+**Distância à 45°:** exposição ao risco.
+:::
+::: {}
+```
+   x_2 (sol)
+   |
+160 ┤    ◇45°
+   |   /
+100 ┤◆ /  ← dotação (60,100)
+   | /
+ 60 ┤/
+   +────────── x_1 (chuva)
+   0   60  100  160
+```
+:::
+:::
+
+::: {.eq-punch}
+Quanto mais longe da 45°, mais arriscado.
+:::
+
+---
+
+## Tempo é caso particular de estado
+
+Defina $s = (t, \omega)$, $t \in T$, $\omega \in \Omega$.
+
+| Caso | Espaço | Modelo |
+|:---|:---|:---|
+| $|\Omega| = 1$ | $\mathbb{R}^{LT}$ | Bens datados, sem risco |
+| $|T| = 1$ | $\mathbb{R}^{LS}$ | Bens contingentes, 1 período |
+| Ambos | $\mathbb{R}^{LTS}$ | Datados + contingentes |
+
+::: {.bridge}
+Aparelho EG **não distingue tempo de risco**. Ambos são "estados".
+:::
+
+::: {.eq-punch}
+Black-Scholes vive aqui. Aula 6 toca.
+:::
+
+---
+
+## Preferências sobre $\mathbb{R}^{LS}_+$
+
+**Continuidade, monotonicidade, convexidade:** mesmas definições, espaço novo.
+
+**Caso particular pedagógico — utilidade esperada (EU):**
+
+$$
+u^i(x^i) = \sum_{s \in S} \pi^i_s\, v^i(x^i_s).
+$$
+
+::: {.callout-note .callout}
+**Aversão ao risco** $\Leftrightarrow$ Bernoulli $v^i$ côncava.
+:::
+
+**Pontos de citação (sem ensino formal hoje):**
+
+- VNM (1944): axiomatização de EU.
+- Allais, Ellsberg: anomalias documentadas.
+- N&S Cap. 7 / J-R §2 / MWG §6 cobrem com rigor.
+
+::: {.bridge}
+EU entra como **ferramenta**. Não é pré-requisito.
+:::
+
+---
+
+## Bloco 1 — Síntese
+
+::: {.eq-key}
+**O que cravamos:**
+
+- Estados $s \in S$ ($|S| < \infty$); probabilidades $\pi^i_s$.
+- Bens contingentes $(\ell, s)$.
+- Espaço $\mathbb{R}^{LS}$.
+- Tempo como caso particular.
+- EU como caso particular pedagógico.
+:::
+
+::: {.bridge}
+Pausa de 10 min. Quando voltarem, **Walras** vai morar em $\mathbb{R}^{LS}$.
+:::
+
+---
+
+## Pausa 1 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+20:15 – 20:25 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Café, banheiro, ar.
+:::
+
+:::
+
+---
+
+## Bloco 2 — Equilíbrio AD em mercados completos {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 20:25–21:05
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+UMP, Walras estendido, equação fundamental do SDF.
+:::
+
+---
+
+## Mercado completo
+
+::: {.card}
+**Definição.** Existe um preço $p_{\ell, s} \ge 0$ para **cada** par $(\ell, s)$. Vetor $p \in \mathbb{R}^{LS}_+ \setminus \{0\}$.
+:::
+
+**Tempo do mercado.** Tudo negociado **ex-ante** ($t = 0$). Quando $s$ se realiza, contratos executam.
+
+::: {.callout-warn .callout}
+**Não confundir com Radner sequencial.** Hoje é AD canônico. Radner = Aula 6.
+:::
+
+---
+
+## Dotações e UMP em $\mathbb{R}^{LS}$
+
+**Dotação:** $\omega^i \in \mathbb{R}^{LS}_+$ — "o que recebo em cada estado".
+
+**Renda:** $m^i(p) = p \cdot \omega^i = \sum_{(\ell, s)} p_{\ell, s} \omega^i_{\ell, s}$.
+
+**UMP:**
+
+$$
+\max_{x^i \in \mathbb{R}^{LS}_+}\, u^i(x^i) \quad \text{s.a.} \quad p \cdot x^i \le p \cdot \omega^i.
+$$
+
+::: {.bridge}
+**Tudo idêntico à Aula 1**, só com mais bens.
+:::
+
+---
+
+## Caracterização interior da UMP
+
+Sob LNS + diferenciabilidade + ótimo interior:
+
+::: {.eq-key}
+$$
+\frac{\partial u^i / \partial x^i_{\ell, s}}{\partial u^i / \partial x^i_{\ell', s'}} = \frac{p_{\ell, s}}{p_{\ell', s'}}.
+$$
+:::
+
+**Em palavras:** TMS entre quaisquer dois bens contingentes = razão de preços.
+
+::: {.eq-punch}
+A álgebra é a mesma. Só multiplicaram o número de bens por $S$.
+:::
+
+---
+
+## Equilíbrio Arrow-Debreu
+
+::: {.eq-key}
+**Definição.** $(p^*, x^*)$ com $p^* \in \mathbb{R}^{LS}_{++}$ e $x^* = (x^{1*}, \ldots, x^{I*})$ tal que:
+
+1. **Otimalidade:** cada $x^{i*}$ resolve UMP em $p^*$.
+2. **Viabilidade ponto-a-ponto:** $\sum_i x^{i*}_{\ell, s} = \sum_i \omega^i_{\ell, s}$ para cada $(\ell, s)$.
+:::
+
+::: {.callout .callout-warn}
+A viabilidade é **estado-a-estado**. Não há transferência inter-estado de bem físico — só de promessas via preços.
+:::
+
+---
+
+## Lei de Walras estendida
+
+Sob LNS, UMP exausta orçamento individual. Subtraindo dotação e somando agentes:
+
+$$
+p^* \cdot z(p^*) = 0, \quad z(p) = \sum_i (x^i(p) - \omega^i) \in \mathbb{R}^{LS}.
+$$
+
+**Reduções dimensionais:**
+
+- Walras: subtrai 1 equação (uma redundância).
+- Homogeneidade: subtrai 1 incógnita (normalização).
+- Restam $LS - 1$ equações independentes para $LS - 1$ preços livres.
+
+::: {.bridge}
+Em $L = 1, S = 2$: 1 mercado independente, 1 razão $p_1/p_2$ livre.
+:::
+
+---
+
+## Equação fundamental do SDF (1/2)
+
+Caso $\ell = \ell'$ (mesmo bem físico, dois estados $s, s'$):
+
+$$
+\frac{\partial u^i / \partial x^i_{\ell, s}}{\partial u^i / \partial x^i_{\ell, s'}} = \frac{p^*_{\ell, s}}{p^*_{\ell, s'}}.
+$$
+
+**Sob EU:**
+
+::: {.eq-key}
+$$
+\frac{p^*_{\ell, s}}{p^*_{\ell, s'}} = \frac{\pi^i_s\, (v^i)'(x^{i*}_{\ell, s})}{\pi^i_{s'}\, (v^i)'(x^{i*}_{\ell, s'})} \quad \forall i.
+$$
+:::
+
+---
+
+## Equação fundamental do SDF (2/2)
+
+**Em equilíbrio, todos os agentes veem o mesmo preço.** Logo o lado direito é o mesmo para todos.
+
+::: {.callout-note .callout}
+Esta é a **equação central das finanças neoclássicas** — Stochastic Discount Factor.
+:::
+
+**Aplicação direta — precificação de qualquer ativo:**
+
+$$
+P_0 = E^\pi [m \cdot D] = \sum_s \pi_s\, m_s\, D_s.
+$$
+
+::: {.eq-punch}
+Lucas (1978) deriva precificação de ativos a partir desta equação.
+:::
+
+---
+
+## Cálculo numérico — seguro com agente neutro
+
+**Setup:** $L = 1, S = 2, I = 2$. $A$ avesso ($v_A = \ln$), $B$ neutro ($v_B = c$). $\pi_1 = \pi_2 = 1/2$. $\omega^A = (60, 100)$, $\omega^B = (100, 60)$.
+
+::: {.compact-table}
+| Passo | Conta | Resultado |
+|:---|:---|:---|
+| Neutro $B$ → $p^*_1/p^*_2$ | $\pi_1/\pi_2$ | $1$ |
+| CPO $A$ ($\ln$) | $x^A_2/x^A_1 = (p^*_1/p^*_2)(\pi_2/\pi_1)$ | $1$ |
+| Orçamento $A$ em $p^* = (1, 1)$ | $x^A_1 + x^A_2 = 60 + 100$ | $x^A_1 = x^A_2 = 80$ |
+| Viabilidade | $x^B_s = 160 - 80$ | $(80, 80)$ |
+:::
+
+::: {.eq-punch}
+$A$ totalmente segurado pela neutralidade de $B$ + concorrência.
+:::
+
+---
+
+## Bloco 3 — 1º TBE estendido + 2º TBE estendido {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 21:05–21:40
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Mesma prova da Aula 4. Espaço novo. Pareto-eficiência preservada.
+:::
+
+---
+
+## 1º TBE estendido — enunciado
+
+::: {.eq-key}
+**Teorema.** Sob LNS de cada $\succeq^i$ em $\mathbb{R}^{LS}_+$, todo equilíbrio Arrow-Debreu $(p^*, x^*)$ é Pareto-eficiente.
+:::
+
+::: {.bridge}
+**A prova é a da Aula 4.** Linha-por-linha. Substitua $L$ por $LS$.
+:::
+
+::: {.callout-note .callout}
+O argumento usa apenas (i) UMP exausta orçamento, (ii) LNS dá vizinhança preferida, (iii) viabilidade é igualdade agregada. As três valem em qualquer $\mathbb{R}^N$.
+:::
+
+---
+
+## 1º TBE — prova reaproveitada (1/2)
+
+::: {.compact-table}
+| Aula 4 — em $\mathbb{R}^L$ | Aula 5 — em $\mathbb{R}^{LS}$ |
+|:---|:---|
+| $(p^*, x^*)$ EC com LNS | $(p^*, x^*)$ EC AD com LNS |
+| Suponha $\tilde x$ Pareto-superior | Suponha $\tilde x$ Pareto-superior |
+| $j$ estritamente: $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ | $j$ estritamente: $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ |
+| $i$ fracamente + LNS: $p^* \cdot \tilde x^i \ge p^* \cdot \omega^i$ | $i$ fracamente + LNS: $p^* \cdot \tilde x^i \ge p^* \cdot \omega^i$ |
+| Soma: $p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i$ | Idem |
+| Viabilidade $\Rightarrow$ contradição | Viabilidade $\Rightarrow$ contradição |
+:::
+
+---
+
+## 1º TBE — prova reaproveitada (2/2)
+
+**O passo crítico:** viabilidade é **estado-a-estado**.
+
+$$
+\sum_i \tilde x^i_{\ell, s} = \sum_i \omega^i_{\ell, s} \quad \forall (\ell, s).
+$$
+
+Logo:
+
+$$
+p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i.
+$$
+
+::: {.eq-punch}
+$\underbrace{p^* \cdot \sum_i \tilde x^i}_{\text{soma estrita}} > \underbrace{p^* \cdot \sum_i \omega^i}_{\text{viabilidade}} \Rightarrow$ contradição.
+:::
+
+---
+
+## 2º TBE estendido (sem prova hoje)
+
+::: {.eq-key}
+**Teorema.** Sob convexidade de $\succeq^i$ em $\mathbb{R}^{LS}_+$, toda alocação Pareto-eficiente é EC AD após redistribuição lump-sum em $t = 0$.
+:::
+
+**Implicação política:**
+
+- Mercado completo + lump-sum factível $\Rightarrow$ qualquer Pareto desejado.
+- Sem lump-sum (info assimétrica, Aula 8) $\Rightarrow$ teoria de imposto ótimo (Mirrlees).
+
+::: {.bridge}
+Prova via Hahn-Banach — Aula 6.
+:::
+
+---
+
+## Por que isso importa
+
+::: {.eq-punch}
+1º TBE em AD é a **melhor versão possível do mercado**: tempo + risco + finanças no mesmo aparelho.
+:::
+
+::: {.fragment}
+**Quando falha:** Aulas 7–9 catalogam.
+
+- **Aula 7:** externalidades, bens públicos.
+- **Aula 8:** seleção adversa, risco moral.
+- **Aula 9:** sinalização, matching.
+- **Aula 6:** mercados incompletos.
+:::
+
+---
+
+## Pausa 2 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+21:40 – 21:50 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Bloco 4 dá vida ao formalismo.
+:::
+
+:::
+
+---
+
+## Bloco 4 — Seguro completo + Boxes Brasil/Mundo {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+30 min · 21:50–22:20
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Aplicação canônica. Proagro. EU ETS.
+:::
+
+---
+
+## Seguro completo — setup
+
+**Economia:** $L = 1, S = 2, I = 2$.
+
+- $A$ avesso (Bernoulli $v_A$ estritamente côncava).
+- $B$ neutro ($v_B(c) = c$).
+- Probabilidades de consenso $\pi_1, \pi_2$.
+
+**Dotações:**
+
+- $\omega^A$ pode ser arriscada (ex.: agricultor em ano de sol/chuva).
+- $\omega^B$ — pense em seguradora "grande" diversificável.
+
+::: {.bridge}
+Pergunta-driver: que prêmio justo $A$ paga para $B$ assumir o risco?
+:::
+
+---
+
+## Resultado canônico (1/2)
+
+**(1) Neutralidade de $B$ + ótimo interior + concorrência:**
+
+$$
+\frac{p^*_1}{p^*_2} = \frac{\pi_1}{\pi_2}.
+$$
+
+**Preços atuarialmente justos** — proporcionais às probabilidades.
+
+**(2) CPO de $A$ ($v_A$ côncava, ótimo interior):**
+
+$$
+\frac{\pi_1\, v_A'(x^A_1)}{\pi_2\, v_A'(x^A_2)} = \frac{p^*_1}{p^*_2} = \frac{\pi_1}{\pi_2}.
+$$
+
+---
+
+## Resultado canônico (2/2)
+
+Cancelando $\pi_1/\pi_2$:
+
+$$
+v_A'(x^A_1) = v_A'(x^A_2) \;\Longrightarrow\; x^A_1 = x^A_2.
+$$
+
+::: {.eq-key}
+**$A$ totalmente segurado.** Concavidade estrita $\Rightarrow$ marginais distintas em valores distintos.
+:::
+
+::: {.eq-punch}
+Em mercado completo + segurador neutro, o seguro é atuarialmente justo e a alocação é Pareto-eficiente.
+:::
+
+---
+
+## Box Brasil — Proagro
+
+**Programa de Garantia da Atividade Agropecuária**
+
+- Cobre lavouras de agricultores familiares contra perdas climáticas.
+- Estado faz papel do "agente neutro $B$": diversifica risco entre milhões de agricultores.
+- Sob AD ideal: prêmio cobrado = valor esperado da perda.
+
+::: {.callout-warn .callout}
+**Na prática:** subsídio cruzado, seleção adversa (áreas mais arriscadas aderem mais). Aulas 7–8 vão diagnosticar a falha.
+:::
+
+::: {.bridge}
+Pergunta para Aula 8: se o Estado não consegue tipo o agricultor, *fair insurance* deixa de ser equilíbrio?
+:::
+
+---
+
+## Box Mundo — EU ETS e SDF aplicado
+
+**European Union Emissions Trading System**
+
+- Permissão de emissão = **direito contingente ao cenário climático**.
+- Preço da permissão $\equiv \sum_s \pi_s\, m_s\, (\text{benefício marginal})_s$.
+- SDF $m$ aplicado fora de finanças tradicionais.
+
+::: {.callout-note .callout}
+Hansen-Jagannathan (1991): SDF estimado empiricamente. **Equity premium puzzle** (Mehra-Prescott 1985) é a anomalia residual.
+:::
+
+::: {.bridge}
+EU ETS é mercado completo? Resposta: **não**. Apenas spans um subespaço. **Aula 6** retoma.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 6 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+10 min · 22:20–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Equação-martelo + 3 perguntas que ficam.
+:::
+
+---
+
+## Tabela síntese — Aula 4 vs. Aula 5
+
+::: {.compact-table}
+| Conceito | Aula 4 (sem incerteza) | Aula 5 (com incerteza) |
+|:---|:---|:---|
+| Espaço de bens | $\mathbb{R}^L$ | $\mathbb{R}^{LS}$ |
+| Bens | $L$ | $LS$ |
+| Preços | $p \in \mathbb{R}^L$ | $p \in \mathbb{R}^{LS}$ |
+| Walras | $p \cdot z = 0$ | $p \cdot z = 0$ |
+| 1º TBE | LNS $\Rightarrow$ Pareto | **mesma prova** |
+| 2º TBE | Convexidade $\Rightarrow$ EC | **mesma estrutura** |
+:::
+
+::: {.bridge}
+A surpresa é o tamanho da extensão: tempo, risco, finanças — tudo no mesmo aparelho.
+:::
+
+---
+
+## Equação-martelo
+
+::: {.eq-key}
+$$
+\frac{p^*_s}{p^*_{s'}} = \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\pi^i_{s'}\, (v^i)'(x^{i*}_{s'})} \quad \forall i.
+$$
+:::
+
+::: {.eq-punch}
+Stochastic Discount Factor. Toda finança derivativa é uma conta sobre essa equação.
+:::
+
+---
+
+## Ponte Aula 6 — três perguntas que ficam
+
+::: {.fragment}
+**1. Existência.** Sob que hipóteses existe equilíbrio AD? Brouwer / Kakutani.
+:::
+
+::: {.fragment}
+**2. Radner sequencial.** Mercado spot estado-a-estado + ativos. Quando replica AD canônico?
+:::
+
+::: {.fragment}
+**3. Mercados incompletos.** Quando ativos não spannam $\mathbb{R}^S$, alocação é genericamente Pareto-ineficiente. **1º TBE falha.** Hart (1975).
+:::
+
+::: {.bridge}
+Aula 6 fecha o EG. Aula 7 abre as falhas. Boa noite — sábado 30/05 com Alberto na Pré-M3.
+:::
+
+---
+
+## Encerramento {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.6em; font-weight: 600; margin-top: 0.8em;"}
+Arrow-Debreu I — Mercados Completos
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
+**Pré-monitoria 3** abre sábado 23/05 · fecha sexta 29/05.
+
+**Quiz pós-aula 5** + **Exercícios avaliativos 5** abrem qui 21/05 · fecham qua 27/05 às 18h.
+
+**Gabarito dos avaliativos:** qui 28/05 · 00:00.
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.85; margin-top: 0.8em;"}
+Aula 6 (qua 27/05 · 19:30): existência + Radner sequencial + mercados incompletos.
+:::

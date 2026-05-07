@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 05 — Arrow-Debreu I — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 05 — Arrow-Debreu I (Mercados Completos)</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (Nicholson &amp; Snyder 12e §7.5 + §13.6).</strong> Objetivo: consolidar o que você leu na pré-aula (ZaE Cap. 14 + N&amp;S 12e §7.5 + §13.6) antes de entrar em sala no dia 20/05. <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 27/05 às 18:00 BRT</strong>, 1h30 antes da Aula 6.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-05-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 05">
+
+  <h3>Revisão — Arrow-Debreu I (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Dimensão do espaço de bens -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Em economia com \(L = 4\) bens físicos e \(S = 3\) estados da natureza, a dimensão do espaço de bens contingentes é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(L + S = 7\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) \(L \cdot S = 12\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \(L = 4\) — apenas os bens físicos contam.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(S = 3\) — apenas os estados.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O espaço de bens contingentes é o produto cartesiano de bens físicos por estados: cada par \((\ell, s)\) é um bem distinto. Daí dimensão \(L \cdot S\).</p>
+      <p><strong>2. Derivação.</strong> \(\mathbb{R}^{LS} \cong \mathbb{R}^L \times \cdots \times \mathbb{R}^L\) (\(S\) cópias). Em \(L = 4\), \(S = 3\): \(4 \cdot 3 = 12\). Vetor \((x_{1,1}, x_{2,1}, x_{3,1}, x_{4,1}, x_{1,2}, \ldots, x_{4,3})\) tem 12 coordenadas.</p>
+      <p><strong>3. Armadilha.</strong> (a) soma quando deveria multiplicar. (c)/(d) ignoram que cada bem aparece em <em>cada</em> estado distintamente — uma maçã hoje se chover é diferente de uma maçã hoje se fizer sol.</p>
+      <p><strong>4. Extensão.</strong> Em \(|S|\) gigante (cenários macroeconômicos com milhões de configurações), a dimensão do espaço explode. Por isso modelos aplicados usam estrutura paramétrica (CARA, CRRA) ou agregação.</p>
+      <p><strong>5. Peer-review.</strong> Calibração. Aluno que erra (a) ainda confunde produto cartesiano com soma; (c)/(d) ainda não internalizou que bem contingente é um par.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Probabilidades subjetivas heterogêneas -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Em modelo Arrow-Debreu canônico com 2 agentes, é correto que:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) Probabilidades subjetivas devem ser idênticas: \(\pi^A_s = \pi^B_s\) para todo \(s\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) Probabilidades devem coincidir com frequências objetivas observadas.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Probabilidades subjetivas \(\pi^i_s\) podem diferir entre agentes — o modelo aceita heterogeneidade de crenças.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Probabilidades só são bem-definidas sob EU.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Heterogeneidade de crenças é caso genuíno em AD canônico, não anomalia. Cada agente tem sua \(\pi^i\). O equilíbrio reconcilia as divergências via preço.</p>
+      <p><strong>2. Derivação.</strong> A definição mínima exige apenas \(\pi^i_s \ge 0\), \(\sum_s \pi^i_s = 1\). Não há requisito de coincidência inter-agente. Em equilíbrio, todos enxergam o <em>mesmo \(p^*\)</em>, mas as marginais individuais (\((v^i)'(x^{i*}_s)\)) se ajustam para que a equação SDF \((p^*_s/p^*_{s'}) = \pi^i_s (v^i)'(x^{i*}_s) / [\pi^i_{s'} (v^i)'(x^{i*}_{s'})]\) valha simultaneamente para cada \(i\).</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) confundem AD com modelos de "agente representativo". (d) confunde probabilidade subjetiva (primitiva do modelo) com sua representação por EU.</p>
+      <p><strong>4. Extensão.</strong> Quando crenças são heterogêneas <strong>e</strong> vêm de informação privada, **No-Trade Theorem (Milgrom-Stokey 1982)**: comércio puramente especulativo desaparece sob common knowledge de racionalidade. Aprofunda-se na pré-monitoria 3.</p>
+      <p><strong>5. Peer-review.</strong> Questão conceitual de fundação. Aluno que marca (a) tem visão errada de "racionalidade".</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Tempo como caso particular de estado -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Sobre a relação entre <strong>bens datados</strong> (consumo intertemporal sem incerteza) e <strong>bens contingentes</strong> em AD:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) São conceitos disjuntos — AD trata só bens contingentes; modelos intertemporais usam outro aparelho.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Bens datados são <strong>caso particular</strong> de bens contingentes (com \(|\Omega| = 1\), apenas datas mudam). O aparelho EG não distingue tempo de incerteza.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Bens datados são caso particular, mas só se as taxas de juros forem zero.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) AD requer hipótese adicional para acomodar tempo.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Definindo \(s = (t, \omega)\) com \(t\) data e \(\omega\) realização aleatória, tempo entra como caso particular de estado. Não há necessidade de aparelho separado.</p>
+      <p><strong>2. Derivação.</strong> Em \(|\Omega| = 1\) (sem incerteza), \(s = t\) e o espaço \(\mathbb{R}^{LT}\) é o de bens datados. Em \(|T| = 1\) (1 período), \(s = \omega\) e o espaço é o de bens contingentes. Geral: \(\mathbb{R}^{LTS}\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde modelos pedagógicos com a estrutura matemática. (c) é reificação errada: a taxa de juros é determinada endogenamente em equilíbrio. (d) é falso — a unificação é o ponto central.</p>
+      <p><strong>4. Extensão.</strong> Lucas (1978) usa esta unificação para precificar ativos como reivindicações sobre consumo futuro contingente. Black-Scholes-Merton (1973) também. Aula 6 detalha Radner sequencial — outro modo de modelar.</p>
+      <p><strong>5. Peer-review.</strong> Questão estrutural fundamental. Aluno que erra ainda não viu que AD <strong>é</strong> a teoria de finanças neoclássicas em forma minimalista.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Viabilidade estado-a-estado -->
+  <div class="quizg-q" data-qid="q4" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em economia AD com \(I\) agentes, \(L\) bens físicos, \(S\) estados, viabilidade da alocação \(x = (x^1, \ldots, x^I)\) requer:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(p \cdot \sum_i x^i = p \cdot \sum_i \omega^i\) (Walras).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) \(\sum_i \sum_{(\ell, s)} x^i_{\ell, s} = \sum_i \sum_{(\ell, s)} \omega^i_{\ell, s}\) (uma única equação agregada).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(\sum_i x^i_{\ell, s} = \sum_i \omega^i_{\ell, s}\) <strong>para cada par \((\ell, s)\)</strong> — total de \(LS\) equações.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) \(x^i = \omega^i\) para cada \(i\) (autarquia).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Viabilidade em AD é <strong>ponto a ponto</strong>: o que se entrega no estado \(s\) vem do que está disponível no estado \(s\). Bens físicos não se transferem entre estados — só promessas de pagamento, via preços.</p>
+      <p><strong>2. Derivação.</strong> Em \(L = 1, S = 2, I = 2\): \(x^A_1 + x^B_1 = \omega^A_1 + \omega^B_1\) <strong>e</strong> \(x^A_2 + x^B_2 = \omega^A_2 + \omega^B_2\) — duas equações. Não é \(x^A_1 + x^A_2 + x^B_1 + x^B_2 = \omega^A_1 + \omega^A_2 + \omega^B_1 + \omega^B_2\) (uma equação só, item (b)).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde viabilidade com Walras (Walras é identidade contábil em equilíbrio; viabilidade é restrição mais forte). (b) é o erro pedagógico mais comum — "tudo se balança no agregado". (d) é autarquia, que é caso particular muito restrito.</p>
+      <p><strong>4. Extensão.</strong> O passo crítico da prova do 1º TBE em AD usa precisamente essa viabilidade estado-a-estado. Sem ela, a contradição "soma estritamente maior" \(\Leftrightarrow\) "viabilidade" quebra.</p>
+      <p><strong>5. Peer-review.</strong> Questão central. Aluno que marca (b) não vai sustentar a prova do 1º TBE em \(\mathbb{R}^{LS}\). Voltar à pré-aula §4.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — UMP em R^{LS} e CPO -->
+  <div class="quizg-q" data-qid="q5" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Para \(u^A(x) = 0{,}3 \ln x_1 + 0{,}7 \ln x_2\) (\(L = 1\), \(S = 2\), \(\pi^A = (0{,}3, 0{,}7)\), Bernoulli \(\ln\)) em ótimo interior, a CPO entrega:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) \(p_1/p_2 = 0{,}3/0{,}7 = 3/7\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) \(p_1/p_2 = (0{,}3/x^A_1)/(0{,}7/x^A_2) = (0{,}3/0{,}7)(x^A_2/x^A_1)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) \(p_1/p_2 = x^A_1/x^A_2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) \(p_1 = p_2\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A equação fundamental do SDF: \(p^*_s/p^*_{s'} = \pi^i_s (v^i)'(x^{i*}_s) / [\pi^i_{s'} (v^i)'(x^{i*}_{s'})]\). Com \(v = \ln\): \((v)'(c) = 1/c\). A CPO sob EU mistura probabilidades com marginais.</p>
+      <p><strong>2. Derivação.</strong> \(\partial u^A / \partial x_1 = 0{,}3/x_1\); \(\partial u^A / \partial x_2 = 0{,}7/x_2\). Razão: \((0{,}3/x_1)/(0{,}7/x_2) = (0{,}3/0{,}7)(x_2/x_1)\). Em ótimo interior, isso iguala \(p_1/p_2\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde \(p_1/p_2 = \pi_1/\pi_2\) — válido apenas se \(x^A_1 = x^A_2\) (totalmente segurado); aqui o consumo depende dos preços. (c) inverte a razão. (d) é caso particular ($\pi$ iguais e $x$ iguais).</p>
+      <p><strong>4. Extensão.</strong> Em equilíbrio, esse \(p_1/p_2\) é o mesmo para todos os agentes. Se \(B\) tem \(\pi^B \neq \pi^A\) ou Bernoulli diferente, suas marginais e consumos se ajustam para que a equação SDF valha simultaneamente.</p>
+      <p><strong>5. Peer-review.</strong> Questão de leitura da CPO. Aluno que marca (a) salta para o caso particular do agente neutro; quem marca (c) inverte derivada.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — Equilíbrio AD: definição -->
+  <div class="quizg-q" data-qid="q6" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> Um par \((p^*, x^*)\) com \(p^* \in \mathbb{R}^{LS}_{++}\) é equilíbrio Arrow-Debreu se e somente se:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Cada \(x^{i*}\) é viável individualmente (ou seja, \(p^* \cdot x^{i*} = p^* \cdot \omega^i\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Cada \(x^{i*}\) resolve UMP de \(i\) em \(p^*\) — apenas otimalidade individual.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(\sum_i x^{i*} = \sum_i \omega^i\) — apenas viabilidade ponto a ponto.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Cada \(x^{i*}\) resolve UMP de \(i\) em \(p^*\) <strong>e</strong> \(\sum_i x^{i*}_{\ell, s} = \sum_i \omega^i_{\ell, s}\) para cada \((\ell, s)\) — otimalidade individual + viabilidade ponto a ponto.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Equilíbrio AD = otimalidade + viabilidade. Ambas necessárias. Otimalidade individual sem viabilidade agregada é só "decisão individual"; viabilidade sem otimalidade é só "alocação possível".</p>
+      <p><strong>2. Derivação.</strong> A definição é canônica — N&amp;S §7.5, J-R §5.5, MWG §19.B. Em equilíbrio: cada agente está em UMP individual <strong>e</strong> mercados fecham estado-a-estado.</p>
+      <p><strong>3. Armadilha.</strong> (a) é apenas "exauste de orçamento individual" — válido sob LNS, mas insuficiente. (b) ignora viabilidade. (c) ignora otimalidade.</p>
+      <p><strong>4. Extensão.</strong> A existência de equilíbrio AD requer continuidade do excesso de demanda \(z(p)\) + Brouwer/Kakutani. Aula 6 detalha. Existência é hipótese aqui (assumida).</p>
+      <p><strong>5. Peer-review.</strong> Questão definicional. Aluno que marca (a) ou (b) confunde "condição necessária individual" com "definição de equilíbrio".</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — Walras estendido -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Em economia AD com \(L = 2\), \(S = 3\), \(LS = 6\) bens contingentes, a lei de Walras \(p \cdot z(p) = 0\) implica que para resolver EC basta zerar:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Os 6 mercados simultaneamente — seis equações independentes.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Apenas 3 mercados (um por estado), e os bens dentro do estado fecham por simetria.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Quaisquer 5 dos 6 — o sexto fecha automaticamente por Walras. Há 5 equações independentes para 5 razões de preço livres.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Apenas o bem numerário no estado de referência.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Walras \(p \cdot z = 0\) é identidade contábil que vem de UMP individual + LNS. Subtrai 1 equação independente. Homogeneidade grau 0 subtrai 1 incógnita (normalização). Restam \(LS - 1\) equações para \(LS - 1\) preços livres.</p>
+      <p><strong>2. Derivação.</strong> Em \(LS = 6\): 6 equações originais (mercado fecha em cada \((\ell, s)\)), Walras retira 1 — restam 5 independentes. Homogeneidade subtrai 1 grau (normalização) — 5 razões livres. Sistema bem-posto.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora Walras. (b) confunde dimensão (não há simetria intra-estado em geral). (d) é absurdo — são vários bens contingentes.</p>
+      <p><strong>4. Extensão.</strong> Em \(LS\) gigante (modelos macro), o sistema é de dimensão alta. Solucionar requer estrutura paramétrica (CARA, CRRA) ou simulação numérica. A redução por Walras é matemática — vale identicamente.</p>
+      <p><strong>5. Peer-review.</strong> Questão dimensional. Aluno que marca (a) ainda não internalizou Walras como redução estrutural.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — 1º TBE em AD: hipótese -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> O 1º Teorema do Bem-Estar em economia Arrow-Debreu canônica afirma: "todo equilíbrio AD é Pareto-eficiente". A hipótese estrutural <strong>essencial</strong> sobre preferências é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) Convexidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) Não-saciedade local (LNS).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Utilidade esperada (EU).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Probabilidades subjetivas idênticas (\(\pi^A = \pi^B\)).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> LNS é a hipótese-mínima do 1º TBE, em qualquer espaço (\(\mathbb{R}^L\), \(\mathbb{R}^{LS}\), \(\mathbb{R}^{LTS}\)). Garante que UMP exausta orçamento individual e que o argumento "Pareto-superior custa mais que dotação" funciona.</p>
+      <p><strong>2. Derivação.</strong> A prova do 1º TBE em AD reaproveita a da Aula 4. Os passos só usam (i) UMP exausta orçamento, (ii) LNS dá vizinhança preferida, (iii) viabilidade é igualdade agregada. Os três valem em qualquer \(\mathbb{R}^N\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde 1º com 2º TBE — convexidade é hipótese-chave do 2º TBE (separação de Hahn-Banach). (c) confunde EU com $\succeq$ genérico — o ferramental funciona com $\succeq$ qualquer; EU é refinement. (d) confunde com hipótese de "agente representativo" — não é necessária.</p>
+      <p><strong>4. Extensão.</strong> Em mercados <strong>incompletos</strong> (Aula 6), o 1º TBE falha mesmo com LNS — porque a alocação alternativa pode não estar no span de ativos disponíveis. Hart (1975) é o resultado central.</p>
+      <p><strong>5. Peer-review.</strong> Questão central. Aluno que marca (a) ou (c) ainda não distingue 1º de 2º TBE, ou EU de $\succeq$.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — Seguro completo: resultado canônico -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> Em economia \(L = 1, S = 2\) com \(A\) avesso ao risco (Bernoulli côncava \(v_A\)) e \(B\) neutro (\(v_B(c) = c\)), em equilíbrio AD com mercado completo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) \(p_1/p_2 = 1\) (preços iguais).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) \(A\) consome a sua dotação (autarquia) — é o estado-puro de equilíbrio.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) \(p^*_1/p^*_2 = \pi_1/\pi_2\) (preços atuarialmente justos) <strong>e</strong> \(A\) fica totalmente segurado (\(x^{A*}_1 = x^{A*}_2\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) \(B\) compra todo o consumo de \(A\) e \(A\) consome 0.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Resultado canônico do seguro completo: agente neutro + concorrência perfeita + ótimo interior implica preços atuarialmente justos. CPO de \(A\) com Bernoulli côncava cancela \(\pi\) e força \(v_A'(x_1) = v_A'(x_2) \Rightarrow x_1 = x_2\) (totalmente segurado).</p>
+      <p><strong>2. Derivação.</strong> Neutralidade + ótimo interior: \(p_s\) proporcional a \(\pi_s\) (porque a função objetivo de \(B\) é linear). CPO de \(A\): \((\pi_1/\pi_2)(v_A'(x^A_1)/v_A'(x^A_2)) = p_1/p_2 = \pi_1/\pi_2\). Cancela: \(v_A'(x^A_1)/v_A'(x^A_2) = 1\). Concavidade estrita injetora: \(x^A_1 = x^A_2\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "atuarialmente justo" com "preços iguais" — só são iguais quando \(\pi\) é uniforme. (b) ignora benefícios da troca. (d) ignora racionalidade individual de \(A\).</p>
+      <p><strong>4. Extensão.</strong> Aula 8 (seleção adversa, risco moral) vai mostrar que <em>fair insurance</em> deixa de ser equilíbrio quando a seguradora não observa o tipo do segurado ou as ações dele afetam a probabilidade do estado.</p>
+      <p><strong>5. Peer-review.</strong> Questão central da aula. Aluno que marca (a) ou (b) ainda não internalizou o resultado canônico — voltar ao §5 da pré-aula.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — SDF e precificação -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Em economia AD com \(|S| = 2\), preços de equilíbrio \(p^* = (p^*_1, p^*_2)\), probabilidades de consenso \(\pi = (\pi_1, \pi_2)\). Considere um ativo arbitrário com payoff \(D = (D_1, D_2)\). Seu preço em \(t = 0\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) \(P_0 = \pi_1 D_1 + \pi_2 D_2\) — valor esperado simples.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) \(P_0 = p^*_1 D_1 + p^*_2 D_2\) — combinação linear via preços de Arrow.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) \(P_0 = D_1 + D_2\) — soma simples dos payoffs.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) \(P_0 = (p^*_1 D_1)(p^*_2 D_2)\) — produto dos termos.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em mercado completo AD, qualquer ativo é precificado por arbitragem como combinação linear de ações Arrow: \(P_0 = \sum_s p^*_s D_s\). Os preços \(p^*_s\) são as ações Arrow (paga 1 em \(s\), 0 em \(s' \neq s\)).</p>
+      <p><strong>2. Derivação.</strong> Equivalentemente: \(P_0 = \sum_s \pi_s m_s D_s = E^\pi[m \cdot D]\), onde \(m_s = p^*_s/\pi_s\) é o SDF. (a) é caso particular se \(m\) for constante (neutralidade ao risco no agregado). (b) é mais geral.</p>
+      <p><strong>3. Armadilha.</strong> (a) é a "expectativa neutra" — válida só sob neutralidade. (c) ignora preços completamente. (d) é não-linear, errado.</p>
+      <p><strong>4. Extensão.</strong> Lucas (1978) deriva precificação de ações via SDF. Black-Scholes-Merton (1973) deriva precificação de opções via portfolio replicador. Hansen-Jagannathan (1991) testaram empiricamente o SDF. <em>Equity premium puzzle</em> (Mehra-Prescott 1985) é a anomalia residual.</p>
+      <p><strong>5. Peer-review.</strong> Questão de aplicação da equação SDF. Aluno que marca (a) ainda não viu o ajuste por aversão ao risco; (c) e (d) confundem fórmulas.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 5 presencial</strong> (quarta, 20/05, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-05.html">material da pré-aula</a> e relê a seção correspondente. O <strong>quiz pós-aula 5</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 5</strong> abrem na madrugada de quinta 21/05 — todos fecham em <strong>quarta 27/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-05-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

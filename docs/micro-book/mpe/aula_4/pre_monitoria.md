@@ -1,19 +1,21 @@
-# Pré-Monitoria 2 — Aula 4 (EG em Trocas) · Extensões refinadas
+# Pré-Monitoria 2 — Aula 4 (EG em Trocas + Produção) · Extensões refinadas
 
-> **Status:** REFINADA (2026-05-06). Conteúdo concreto nas 4 extensões; pronta para revisão final do Darcio antes de habilitar no portal.
+> **Status:** REFINADA (2026-05-06), **recalibrada para incluir produção (07/05)**. Conteúdo concreto nas 4 extensões originais (trocas) + ganchos novos para produção. Pronta para revisão final do Darcio antes de habilitar no portal.
 > **Página HTML:** `platform/pre-monitoria-02.html`.
 > **Calendário (em `platform/js/calendario.js`):**
 > - Pré-M2 abre **sáb 16/05 12:00**, fecha **sex 22/05 22:00**.
 > - Monitoria presencial: **sáb 23/05 10:00** (Insper, Alberto Nishikawa).
 
+> **Atualização 07/05/2026 (cirurgia de produção).** A Aula 4 ganhou produção (PPF + Robinson + 1º TBE com produção como corolário). A pré-monitoria 2, que originalmente cobria só trocas, agora **estende com extensões de produção** que o Alberto vai aprofundar — mantendo o calibre de "extensões pós-aula", não repetição. Estrutura física da pré-monitoria (7 seções, ~60–70 min) preservada; as extensões de produção entram nas seções S2–S5 como variantes, não como novas seções (para não inflar tempo). **Itens de produção concretos no fim do documento (seção "Ganchos para Aula 4 — produção, novo pós-cirurgia").**
+
 ## Contrato pedagógico
 
 - **Formativa, não conta nota.**
 - Tempo-alvo: **60–70 min** (ajustado após refinamento — antes 50–60).
-- Cobre **extensões** da Aula 4 que o Alberto vai aprofundar no sábado. Não é repetição da aula magistral.
+- Cobre **extensões** da Aula 4 (trocas + produção) que o Alberto vai aprofundar no sábado. Não é repetição da aula magistral.
 - Sem quiz avaliativo, sem exercícios para nota.
 - Estrutura: 7 seções (S0 orientação, S1 recap, S2–S5 extensões, S6 reflexão), com micro-checkpoints (3 tentativas, cooldown 10s) + slider de confiança pré/pós.
-- **Calibre:** teto Jehle-Reny §5.1–5.2; tocamos §5.3 (núcleo, Debreu-Scarf) **cirurgicamente**, sem Hahn-Banach formal, sem Kakutani.
+- **Calibre:** teto Jehle-Reny §5.1–5.4; tocamos §5.3 (núcleo, Debreu-Scarf) e §5.4 (produção) **cirurgicamente**, sem Hahn-Banach formal, sem Kakutani.
 
 ## S1 — Recap da Aula 4 (5 min)
 
@@ -255,3 +257,31 @@ Lista do que **não** esgotamos — gancho para o sábado:
 3. **Habilitar no portal:** entrada `PRE_MONITORIAS[1]` em `portal.html` com `available: true`, `availableOn: '2026-05-16T12:00:00-03:00'`, `closesOn: '2026-05-22T22:00:00-03:00'`.
 4. **Notação canônica seguida:** $\succeq$, $\text{TMS}$, vírgula decimal $0{,}25$. ✓
 5. **Math delimiters:** `.md` usa `$...$` e `$$...$$`; HTML usa `\(...\)` e `\[...\]`. ✓
+
+---
+
+## Ganchos para Aula 4 — produção, novo pós-cirurgia (07/05) ✦
+
+A cirurgia 07/05 estendeu Aula 4 para cobrir produção (PPF + Robinson Crusoe + 1º TBE com produção). A pré-monitoria 2 herda esses tópicos como **extensões para o Alberto cobrir presencialmente** — não como repetição. Itens concretos abaixo. **Trade-off declarado:** estes ganchos são para o Alberto desenvolver no sábado 23/05, não para inflar a pré-monitoria com novas seções obrigatórias (que estouraria os 60–70 min do contrato).
+
+### Gancho A — Robinson Crusoe com tecnologia CES
+
+Substituir $f(L) = \sqrt{L}$ por $f(L) = (\alpha L^\rho + (1-\alpha))^{1/\rho}$ (formalmente, CES com fator único), variando $\sigma = 1/(1-\rho)$. Em $\sigma \to 1$: CD. Em $\sigma \to 0$: Leontief. Em $\sigma \to \infty$: linear (problema da firma colapsa). Pedir ao Alberto cobrir **paramétrico em $\sigma$** e mostrar como $L^*$, $w^*$, $\pi^*$ variam. Conexão com elasticidade de substituição capital-trabalho (Aula 5/AD-I).
+
+### Gancho B — EG completo $2\times 2 \times J$ com cotas heterogêneas
+
+Variante do Ex 6 dos avaliativos: $I=2$ consumidores, $J=2$ firmas, $L=2$ bens, mas com **cotas $\theta^{ij}$ heterogêneas** (e.g., $\theta^{A1} = 0{,}8$, $\theta^{A2} = 0{,}2$, $\theta^{B1} = 0{,}2$, $\theta^{B2} = 0{,}8$ — cada consumidor é "dono majoritário" de uma firma). Mostrar que (i) margens marginais (TMS, TMT) ainda colam pelo preço relativo (1º TBE com produção sobrevive); (ii) **distribuição da torta** depende fortemente das cotas — \(x^A \neq x^B\) em geral; (iii) implicação política: redistribuição lump-sum sobre cotas é instrumento legítimo do 2º TBE (mais factível na prática que redistribuição sobre habilidade individual). Cálculo numérico fechado em sala.
+
+### Gancho C — Violação do 2º TBE com retornos crescentes
+
+Tecnologia $f(L) = L^2$ (retornos crescentes na escala). Mostrar que: (i) o problema da firma a preço dado **não tem máximo interior** ($\partial^2 \pi/\partial L^2 = 2 p > 0$ ⇒ minimizador, não maximizador); (ii) o conjunto de produção $Y = \{(-L, q) : q \le L^2\}$ é **não-convexo**; (iii) Pareto-eficiente exige produção em ponto onde nenhum hiperplano de suporte existe — falha de Hahn-Banach. Exemplo paradigmático: monopólios naturais (eletricidade, ferrovia, telecom). Conexão com Coase 1946 (tarifa em duas partes), Hotelling 1938 (preço marginal), e Aula 7 (regulação tarifária Ramsey-Boiteux como "second-best"). **Construção numérica fechada em sala.**
+
+### Gancho D — Eficiência produtiva via dual
+
+Problema da minimização de custo: $C(q) = \min_z w\cdot z$ s.a. $f(z) \ge q$. Dualidade com max-lucro. Mostrar que **TMST = razão de preços de fator** (análogo à TMS = razão de preços de bens no consumo). Em economia com vários fatores ($K, L$), a margem de substituição de capital por trabalho é colada por $w/r$. Esta é a "metade que falta" da Aula 4 — a aula presencial só cobriu fator único $L$. Pré-monitoria deixa para Alberto a discussão de mais fatores.
+
+### Gancho E — Aplicações empíricas de produção
+
+(i) **Efeito do RenovaBio na PPF nacional:** quantificar o deslocamento da PPF brasileira na direção etanol/biodiesel, 2017–2024 (volume CBIOs, preço médio R\$ 90–120). Conectar com 2º TBE político (alocação inicial das metas de descarbonização entre distribuidoras = redistribuição lump-sum). (ii) **Indústria automotiva pós-MERCOSUL:** vantagem comparativa endógena (Brasil-Argentina como economia integrada de produção), com interferência de política industrial. Conexão com Aula 7 (externalidades de aprendizado/Wright's law).
+
+> **Limitação operacional para o Alberto:** os 5 ganchos acima podem ser cobertos em ~50 min de monitoria presencial — escolher 3 (não 5) é mais realista. Sugestão de seleção: **A + B + C** (cobre forma funcional, distribuição, e contraexemplo de não-convexidade). D e E ficam como leitura sugerida ou aulão de revisão.

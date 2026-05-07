@@ -338,9 +338,9 @@ Os calendários das Aulas 1 e 2 são **unificados em uma só janela** (união):
 | Pré-M | Cobertura | Abre | Fecha | Monitoria presencial |
 |---|---|---|---|---|
 | Pré-M1 | Aulas 1–3 | sáb 09/05 · 00:00 | sex 15/05 · 22:00 | **sáb 16/05 · 10:00** |
-| Pré-M2 | Aula 4 (EG trocas) | sáb 16/05 · 12:00 | sex 22/05 · 22:00 | **sáb 23/05 · 10:00** |
-| Pré-M3 | Aula 5 (EG produção) | sáb 23/05 · 12:00 | sex 29/05 · 22:00 | **sáb 30/05 · 10:00** |
-| Pré-M4 | Aulas 6–7 (Arrow-Debreu) | sáb 30/05 · 12:00 | sex 12/06 · 22:00 | **sáb 13/06 · 10:00** |
+| Pré-M2 | Aula 4 (EG trocas + produção) | sáb 16/05 · 12:00 | sex 22/05 · 22:00 | **sáb 23/05 · 10:00** |
+| Pré-M3 | Aula 5 (Arrow-Debreu I) | sáb 23/05 · 12:00 | sex 29/05 · 22:00 | **sáb 30/05 · 10:00** |
+| Pré-M4 | Aulas 6–7 (Arrow-Debreu II + Externalidades/BP) | sáb 30/05 · 12:00 | sex 12/06 · 22:00 | **sáb 13/06 · 10:00** |
 | Pré-M5 | Aulas 8–9 + revisão AF | sáb 13/06 · 12:00 | sex 19/06 · 22:00 | **sáb 20/06 · 10:00** |
 
 **Pré-monitoria — conteúdo padrão:**

@@ -19,17 +19,24 @@
 
 <div class="content-wrapper">
 
-<h1>Pré-Aula 04 — Equilíbrio Geral em Trocas Puras</h1>
+<h1>Pré-Aula 04 — Equilíbrio Geral em Trocas Puras + Produção</h1>
 
 <div class="progress-header">
-  <div class="progress-label" id="progress-label">Progresso: 0 / 9</div>
+  <div class="progress-label" id="progress-label">Progresso: 0 / 11</div>
   <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
   <div class="progress-meta" id="progress-meta">0 min</div>
 </div>
 
+<div class="admonition warn" style="border-left:4px solid #C8102E;background:#fef2f2;margin-bottom:1.2rem">
+<div class="admonition-title" style="color:#7c2d2d">📌 Material atualizado em 07/05/2026 — agora cobre trocas <em>e</em> produção</div>
+<p>A ementa do MPE 2026/32 foi recalibrada: a <strong>Aula 4 agora cobre EG em trocas + EG com produção</strong> (PPF, Robinson Crusoe, 1º TBE com produção como corolário). Foram <strong>adicionadas duas seções novas</strong>: <strong>§5b (Produção, PPF, Robinson Crusoe)</strong> e <strong>§6b (TMS=TMT, 1º TBE com produção)</strong>, posicionadas entre §5 e os Exercícios de Papel.</p>
+<p><strong>Quem já tinha começado a pré-aula antes de 07/05</strong> mantém integralmente o progresso registrado nas seções 1–8: o que você completou, ficou completo. As novas seções §5b e §6b passam a aparecer como obrigatórias para concluir a pré-aula. Não há nada para refazer.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.6em">Tempo-alvo subiu de 90–120 min para <strong>~115–145 min</strong> (15+10 min das duas novas seções).</p>
+</div>
+
 <div class="admonition info">
 <div class="admonition-title">Como esta pré-aula funciona</div>
-<p>Estrutura de <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção libera a próxima quando marcada como concluída. Nas conceituais, você registra confiança pré/pós e responde um micro-checkpoint obrigatório (até 3 tentativas cada item). Tempo-alvo total: <strong>90–120 min</strong>.</p>
+<p>Estrutura de <strong>11 seções sequenciais</strong> (orientação + 2 leituras + 5 conceituais [3 sobre trocas, 2 sobre produção] + exercícios de papel + checkpoint + reflexão). Cada seção libera a próxima quando marcada como concluída. Nas conceituais, você registra confiança pré/pós e responde um micro-checkpoint obrigatório (até 3 tentativas cada item). Tempo-alvo total: <strong>~115–145 min</strong>.</p>
 <p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><em>Nota:</em> o tempo real depende do seu ritmo de papel-e-caneta — medimos por telemetria, sem julgar.</p>
 <p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário canônico:</strong> tudo (material, quiz pré, quiz pós, exercícios avaliativos) fecha em <strong>quarta 20/05 às 18:00 BRT</strong>, 1h30 antes da Aula 5. Gabarito dos avaliativos: quinta 21/05 · 00:00.</p>
 </div>
@@ -375,8 +382,233 @@
   <button class="section-complete-btn" id="complete-s5-tbe" disabled onclick="MPE.completeSection('s5-tbe')" style="margin-top:1.2rem">Concluir seção</button>
 </section>
 
+<!-- ==================== SECTION 5b (NOVA — 07/05): PRODUÇÃO, PPF, ROBINSON CRUSOE ==================== -->
+<section class="section-block locked" id="s5b-producao" data-section="s5b-producao" data-order="6">
+  <div class="section-meta">Seção 5b · Conceitual ✦ NOVO · 15 min</div>
+  <h2>Conjunto de produção, PPF, Robinson Crusoe</h2>
+
+  <div class="confidence-block" id="conf-s5b-pre">
+    <label>Antes de ler: quão confortável está com <strong>função de produção, PPF</strong> e a leitura de <strong>Robinson Crusoe</strong> (1 consumidor + 1 firma + 2 bens)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5b-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5b-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5b-producao','pre','s5b-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5b" style="display:none">
+    <p><strong>Adicionamos firmas.</strong> O ferramental construído nas §§3–5 (Edgeworth, Walras, EC, 1º TBE) cobre <em>troca pura</em> — recursos fixos, redistribuídos. Agora vamos permitir que insumos sejam transformados em produtos. A estrutura sobrevive; ganha um lado de oferta.</p>
+
+    <p><strong>Conjunto de produção \(Y\).</strong> \(y \in \mathbb{R}^L\) é vetor input-output, com convenção \(y_\ell &gt; 0\) se \(\ell\) é produto e \(y_\ell &lt; 0\) se \(\ell\) é insumo. \(Y \subseteq \mathbb{R}^L\) é o conjunto de planos tecnologicamente factíveis. Hipóteses canônicas: \(0 \in Y\) (inação), livre descarte, \(Y \cap \mathbb{R}^L_+ = \{0\}\) (sem free-lunch), fechamento, <strong>convexidade</strong> (chave do 2º TBE; quebra com retornos crescentes — Aula 7).</p>
+
+    <p><strong>Caso particular — função de produção.</strong> Com 1 insumo (trabalho \(z\)) e 1 produto:</p>
+    \[
+    Y = \{(-z, q) : z \ge 0,\; q \le f(z)\},
+    \]
+    <p>com \(f\) côncava, \(f(0) = 0\), \(f' &gt; 0\). Esta é a forma que vamos usar nos exemplos.</p>
+
+    <h3>Fronteira de Possibilidades de Produção (PPF)</h3>
+
+    <p>Setup didático: \(\bar L\) unidades de trabalho; dois setores produtivos com \(f_1(L_1)\), \(f_2(L_2)\), restrição \(L_1 + L_2 = \bar L\). PPF = lugar geométrico de \((q_1, q_2)\) com alocação eficiente de fatores.</p>
+
+    <p><strong>Caso canônico — use no papel.</strong> \(f_1(L_1) = \sqrt{L_1}\), \(f_2(L_2) = \sqrt{L_2}\), \(\bar L = 16\). Substituindo \(L_\ell = q_\ell^2\):</p>
+    \[
+    \boxed{\; q_1^2 + q_2^2 = 16 \;\Longrightarrow\; \text{PPF é arco de círculo de raio 4 no quadrante positivo.}\;}
+    \]
+    <p>Marque os pontos \((0, 4)\), \((4, 0)\) e \((2, 2\sqrt{3}) \approx (2,\, 3{,}46)\) — este último em \(L_1 = 4\), \(L_2 = 12\). <strong>PPF é côncava</strong> (rendimentos decrescentes setoriais).</p>
+
+    <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;font-size:0.95rem"><em>Comparação Edgeworth ↔ PPF:</em> a caixa de Edgeworth aloca <strong>bens entre consumidores</strong> sob recursos fixos. A PPF aloca <strong>fatores entre produtos</strong> sob tecnologia fixa. Mesma família matemática, dois objetos pedagogicamente complementares.</p>
+
+    <h3>Taxa marginal de transformação (TMT)</h3>
+
+    \[
+    \text{TMT}_{12} = -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} = \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+    \]
+    <p>"Quantas unidades de bem 2 a economia desiste para 1 unidade extra de bem 1, mantendo eficiência produtiva." Vem da CPO da firma sob mobilidade do fator \(L\): \(p_1\,\text{PMa}_L^1 = w = p_2\,\text{PMa}_L^2\) ⇒ \(\text{TMT}_{12} = p_1/p_2\).</p>
+
+    <p><strong>Verificação alternativa via derivada implícita</strong> de \(q_1^2 + q_2^2 = 16\): \(\text{TMT}_{12} = q_1/q_2\) neste exemplo. Em \((q_1, q_2) = (2, 2\sqrt{3})\): \(\text{TMT} = 2/(2\sqrt{3}) = 1/\sqrt{3} \approx 0{,}577\). ✓</p>
+
+    <h3>Robinson Crusoe — setup mínimo</h3>
+
+    <p>Robinson é simultaneamente <strong>dono da firma</strong> e <strong>consumidor</strong>. Variáveis: trabalho \(L\) (insumo), bem de consumo \(q\) (produto), lazer \(\ell = \bar L - L\). Tecnologia: \(q = f(L)\). Preferências: \(u(q, \ell)\) monotônica, quase-côncava.</p>
+
+    <p><strong>Solução do planejador.</strong> \(\max_L u(f(L),\, \bar L - L)\). CPO interior:</p>
+    \[
+    \frac{\partial u/\partial \ell}{\partial u/\partial q} = f'(L), \qquad \text{ou seja} \qquad \boxed{\;\text{TMS}_{\ell, q} = \text{TMT}_{L, q}.\;}
+    \]
+
+    <p><strong>Numérico canônico — calcule no papel.</strong> \(u(q, \ell) = q^{1/2}\ell^{1/2}\), \(f(L) = \sqrt{L}\), \(\bar L = 16\). Substituindo: \(\max_L L^{1/4}(16-L)^{1/2}\). CPO ⇒</p>
+    \[
+    L^* = \tfrac{16}{3}, \qquad \ell^* = \tfrac{32}{3}, \qquad q^* = \sqrt{\tfrac{16}{3}} = \tfrac{4}{\sqrt{3}} \approx 2{,}31.
+    \]
+    <p>Verificação: \(\text{TMS}_{\ell, q} = q^*/\ell^* = (4/\sqrt{3})/(32/3) = \sqrt{3}/8\); \(\text{TMT}_{L, q} = f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8\). Iguais. ✓</p>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Trade-off declarado — Robinson simplificado</div>
+    <p>Esta seção apresenta Robinson na forma mínima (1 consumidor + 1 firma + 2 bens via \(L/q\)), <strong>sem</strong> \(J\) firmas variáveis nem cota \(\theta^{ij}\) explicitada algebricamente. A versão com \(I\) consumidores + \(J\) firmas é tratada na §6b como <em>corolário</em>; a construção numérica completa fica na pré-monitoria 2 com Alberto (sáb 23/05).</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s5b">
+      <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s5bq1" data-correct="b">
+        <div class="q-text">1. Em \(f(L) = \sqrt{L}\), a produtividade marginal \(\text{PMa}_L = f'(L)\) avaliada em \(L = 4\) vale:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5b-producao','s5bq1','a',this)">(a) \(1/2\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5b-producao','s5bq1','b',this)">(b) \(1/4\) — porque \(f'(L) = 1/(2\sqrt{L})\), em \(L = 4\) dá \(1/(2\cdot 2) = 1/4\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5b-producao','s5bq1','c',this)">(c) \(2\) — confunde \(f(4) = 2\) com \(f'(4)\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5b-producao','s5bq1','d',this)">(d) \(0\) — fronteira de PPF anula PMa.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s5bq2" data-correct="b">
+        <div class="q-text">2. Na economia canônica \(\bar L = 16\), \(f_1 = f_2 = \sqrt{\,\cdot\,}\), qual a TMT em \((q_1, q_2) = (2, 2\sqrt{3})\)?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5b-producao','s5bq2','a',this)">(a) \(1\) — TMT é sempre 1 quando os setores têm a mesma tecnologia.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5b-producao','s5bq2','b',this)">(b) \(1/\sqrt{3} \approx 0{,}577\) — usando \(\text{TMT}_{12} = q_1/q_2 = 2/(2\sqrt{3})\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5b-producao','s5bq2','c',this)">(c) \(\sqrt{3} \approx 1{,}732\) — inverso da resposta correta.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5b-producao','s5bq2','d',this)">(d) Indefinido — TMT só existe em economia \(L = 1\).</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5b-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5b-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5b-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5b-producao','post','s5b-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5b-producao" disabled onclick="MPE.completeSection('s5b-producao')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6b (NOVA — 07/05): TMS=TMT + 1º TBE com produção ==================== -->
+<section class="section-block locked" id="s6b-1tbe-prod" data-section="s6b-1tbe-prod" data-order="7">
+  <div class="section-meta">Seção 6b · Conceitual ✦ NOVO · 10 min</div>
+  <h2>Equilíbrio com firmas + 1º TBE com produção (corolário)</h2>
+
+  <div class="confidence-block" id="conf-s6b-pre">
+    <label>Antes de ler: quão confortável está com a igualdade <strong>\(\text{TMS} = \text{TMT} = w/p\)</strong> e a versão do <strong>1º TBE com produção</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s6b-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s6b-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s6b-1tbe-prod','pre','s6b-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s6b" style="display:none">
+    <h3>Equilíbrio descentralizado de Robinson — os dois chapéus</h3>
+
+    <p>Introduza preços \((p, w)\) — preço do produto e salário. Robinson age em <em>dois papéis separados</em>:</p>
+
+    <p><strong>Chapéu da firma.</strong> Resolve o problema de maximização de lucro:</p>
+    \[
+    \pi(p, w) = \max_{L \ge 0}\; p\, f(L) - w\, L.
+    \]
+    <p>CPO interior: \(p\cdot f'(L^*) = w\), ou seja \(f'(L^*) = w/p\). Saída: demanda de trabalho \(L^d(p,w)\), oferta de produto \(q^s = f(L^d)\), lucro \(\pi^* = p\, q^s - w\, L^d\).</p>
+
+    <p><strong>Chapéu do consumidor.</strong> Renda \(m = w\, \bar L + \pi^*\) (salário pelas \(\bar L\) horas + lucro como dividendo, já que \(\theta = 1\) — Robinson é o único dono). UMP:</p>
+    \[
+    \max_{q, \ell}\; u(q, \ell) \;\;\text{s.a.}\;\; p\, q + w\, \ell \le m.
+    \]
+    <p>CPO: \(\text{TMS}_{\ell, q} = w/p\).</p>
+
+    <div class="admonition note">
+    <div class="admonition-title">Por que Robinson "paga salário a si mesmo"?</div>
+    <p>O salário é <strong>conta interna</strong> da economia descentralizada. A firma paga \(w\) pela hora trabalhada; o consumidor recebe \(w\,L\) (salário) + \(\pi^*\) (lucro) = \(w\,L + p\,q - w\,L = p\,q\). Renda total fechada — equivale ao caso integrado. A separação contábil é o que permite estender para \(J\) firmas e \(I\) consumidores com cotas \(\theta^{ij}\) explicitamente parametrizadas (pré-monitoria 2 com Alberto).</p>
+    </div>
+
+    <h3>A igualdade canônica</h3>
+
+    <p>Combinando as duas CPOs:</p>
+    \[
+    \boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w}{p} \;=\; \text{TMT}_{L, q}.\;}
+    \]
+    <p><strong>Mercado descentralizado replica solução do planejador.</strong></p>
+
+    <p><strong>Verificação numérica</strong> (continuação do exemplo da §5b). Com \(p = 1\) numerário: \(w^* = \sqrt{3}/8\). Lucro \(\pi^* = q^* - w^*\, L^* = 4/\sqrt{3} - (\sqrt{3}/8)(16/3) = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}\). Renda \(m^* = w^*\bar L + \pi^* = (\sqrt{3}/8)(16) + 2/\sqrt{3} = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3\). CD: \(q^* = m^*/(2 p) = 4\sqrt{3}/3 = 4/\sqrt{3}\) ✓; \(\ell^* = m^*/(2 w^*) = 32/3\) ✓.</p>
+
+    <h3>Generalização rápida e 1º TBE com produção</h3>
+
+    <p><strong>Setup geral.</strong> \(I\) consumidores com preferências \(\succeq^i\), dotações \(\omega^i\), <strong>cotas de propriedade</strong> \(\theta^{ij} \ge 0\) com \(\sum_i \theta^{ij} = 1\) para cada firma \(j\). \(J\) firmas com conjuntos de produção \(Y^j\). Renda do consumidor:</p>
+    \[
+    m^i(p) = p\cdot \omega^i + \sum_j \theta^{ij}\,\pi^j(p).
+    \]
+
+    <p><strong>Equilíbrio competitivo com produção.</strong> Terna \((p^*, x^*, y^*)\) com (i) cada \(y^{*j}\) maximizando lucro em \(Y^j\) ao preço \(p^*\); (ii) cada \(x^{*i}\) resolvendo UMP em \(p^*\) com renda \(m^{*i}\); (iii) viabilidade \(\sum_i x^{*i} = \sum_i \omega^i + \sum_j y^{*j}\).</p>
+
+    <p><strong>1º TBE com produção (esquema da prova — corolário direto da §5).</strong> Por contradição: suponha \((\tilde x, \tilde y)\) viável com \(u^i(\tilde x^i) \ge u^i(x^{*i})\) ∀ \(i\) e estrita para algum \(j\) (consumidor).</p>
+
+    <ol>
+      <li><strong>Passo 1 (consumidor estritamente melhor):</strong> \(p^*\cdot \tilde x^j &gt; m^{*j}\). (UMP de \(x^{*j}\).)</li>
+      <li><strong>Passo 2 (LNS, demais consumidores):</strong> \(p^*\cdot \tilde x^i \ge m^{*i}\). (Argumento idêntico ao da §5.)</li>
+      <li><strong>Passo 3 (NOVO — firmas):</strong> cada \(\tilde y^j \in Y^j\), então \(p^*\cdot \tilde y^j \le \pi^{*j}(p^*) = p^*\cdot y^{*j}\), <strong>por definição de \(y^{*j}\) como maximizador de lucro</strong>.</li>
+      <li><strong>Passo 4 (somar e contradizer):</strong>
+      \[
+      \sum_i p^*\cdot \tilde x^i \;>\; \sum_i m^{*i} = \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot y^{*j} \;\ge\; \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot \tilde y^j.
+      \]
+      Mas viabilidade força \(\sum_i \tilde x^i = \sum_i \omega^i + \sum_j \tilde y^j\), logo \(\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot \tilde y^j\). <strong>Contradição.</strong> \(\blacksquare\)
+      </li>
+    </ol>
+
+    <p><strong>Mensagem.</strong> A prova é a mesma da §5 com <strong>um passo a mais</strong> (passo 3 das firmas). LNS continua sendo a hipótese-chave do consumidor; max-lucro é o que se exige da firma. <strong>Convexidade não aparece</strong> aqui — é hipótese do <em>2º</em> TBE.</p>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Armadilha — convexidade do \(Y\) é hipótese do 2º TBE, não 1º</div>
+    <p>Aluno tende a confundir: "1º TBE com produção precisa de convexidade do conjunto de produção". <strong>Falso.</strong> 1º TBE precisa apenas de LNS dos consumidores + max-lucro das firmas. A convexidade entra no 2º TBE (Hahn-Banach para construir o hiperplano-preço de suporte). Aula 7 mostra contraexemplos: retornos crescentes, indivisibilidades.</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s6b">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s6bq1" data-correct="b">
+        <div class="q-text">1. No equilíbrio descentralizado de Robinson canônico (\(u = q^{1/2}\ell^{1/2}\), \(f(L) = \sqrt{L}\), \(\bar L = 16\), \(p = 1\) numerário), o salário de equilíbrio \(w^*\) vale:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq1','a',this)">(a) \(1\) — salário e preço do produto sempre coincidem.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq1','b',this)">(b) \(\sqrt{3}/8 \approx 0{,}217\) — porque \(w^* = p\cdot f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq1','c',this)">(c) \(16/3 \approx 5{,}33\) — confunde \(L^*\) com \(w^*\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq1','d',this)">(d) \(0\) — Robinson não paga a si mesmo.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s6bq2" data-correct="b">
+        <div class="q-text">2. No 1º TBE com produção, a hipótese <strong>nova</strong> (relativa ao 1º TBE em troca pura) é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq2','a',this)">(a) Convexidade do conjunto de produção \(Y\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq2','b',this)">(b) Maximização de lucro pelas firmas (cada \(y^{*j} \in \arg\max_{y \in Y^j} p^*\cdot y\)) — entra no passo 3.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq2','c',this)">(c) LNS dos consumidores — antes não existia.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s6b-1tbe-prod','s6bq2','d',this)">(d) Homogeneidade grau 0 da função de produção.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s6b-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s6b-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s6b-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s6b-1tbe-prod','post','s6b-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s6b-1tbe-prod" disabled onclick="MPE.completeSection('s6b-1tbe-prod')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
 <!-- ==================== SECTION 6: EXERCÍCIOS DE PAPEL ==================== -->
-<section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="6">
+<section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="8">
   <div class="section-meta">Seção 6 · Exercícios de papel · 15 min</div>
   <h2>Prestação de contas</h2>
   <p>Resolva os <strong>dois primeiros</strong> exercícios propostos abaixo no papel — são <em>obrigatórios</em>. O terceiro (verificação do 1º TBE numérica) é <em>bônus</em>. Marque <em>concluí</em> e descreva sua abordagem em 1–3 linhas.</p>
@@ -406,7 +638,7 @@
 </section>
 
 <!-- ==================== SECTION 7: CHECKPOINT FINAL ==================== -->
-<section class="section-block locked" id="s7-checkpoint" data-section="s7-checkpoint" data-order="7">
+<section class="section-block locked" id="s7-checkpoint" data-section="s7-checkpoint" data-order="9">
   <div class="section-meta">Seção 7 · Checkpoint de síntese · 10 min</div>
   <h2>Checkpoint final — 3 itens de síntese</h2>
   <p>Estes 3 itens conectam <strong>Edgeworth + Walras + 1º TBE</strong>. Fechado, sem consulta.</p>
@@ -447,7 +679,7 @@
 </section>
 
 <!-- ==================== SECTION 8: REFLEXÃO ==================== -->
-<section class="section-block locked" id="s8-reflexao" data-section="s8-reflexao" data-order="8">
+<section class="section-block locked" id="s8-reflexao" data-section="s8-reflexao" data-order="10">
   <div class="section-meta">Seção 8 · Reflexão qualitativa · 3 min</div>
   <h2>Fechamento — suas dúvidas alimentam o Bloco 0 da aula</h2>
   <p>Os dois campos abaixo são obrigatórios. Suas respostas entram no <em>dashboard</em> do professor e orientam a triagem na abertura da Aula 4.</p>
@@ -490,7 +722,7 @@ MicroTracker.startPage('aula-04');
 MicroQuiz.init('aula-04');
 
 var PAGE_ID = 'aula-04';
-var TOTAL_SECTIONS = 9; // s0..s8
+var TOTAL_SECTIONS = 11; // s0..s8 + s5b + s6b (cirurgia 07/05 — produção)
 var MICRO_MAX_ATTEMPTS = 3;
 var MICRO_COOLDOWN_MS = 10000;
 

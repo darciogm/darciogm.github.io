@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 05 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 05</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Arrow-Debreu I — Mercados Completos (estados, bens contingentes, \(\mathbb{R}^{LS}\), equilíbrio AD, 1º TBE estendido, seguro completo, SDF)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~26 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 27/05 às 18:00</strong> — 1h30 antes da Aula 6. <em>Calendário canônico</em>.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 28/05 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-05-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 05">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">EC AD com agente neutro: o caso canônico</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia de troca pura com \(L = 1\) bem físico, \(S = 2\) estados (chuva/sol), \(I = 2\) agentes. Probabilidades de consenso \(\pi_1 = 0{,}4\), \(\pi_2 = 0{,}6\). Preferências: \(A\) com EU \(v_A(c) = \ln c\) (avesso, CRRA \(\gamma = 1\)); \(B\) com EU \(v_B(c) = c\) (neutro). Dotações \(\omega^A = (40, 100)\), \(\omega^B = (60, 60)\). Total \(\bar\omega = (100, 160)\). Numerário \(p_2 = 1\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A condição que \(B\) (neutro) impõe sobre os preços de equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(p^*_1 = p^*_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(p^*_1/p^*_2 = \pi_1/\pi_2 = 2/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(p^*_1/p^*_2 = \omega^B_1/\omega^B_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) \(p^*_1/p^*_2\) indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> Neutralidade + ótimo interior + concorrência ⇒ preços proporcionais a probabilidades.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> Em \(p^*_1 = 2/3\), a renda de \(A\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) \(40\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) \(m^A = (2/3) \cdot 40 + 1 \cdot 100 = 80/3 + 100 = 380/3 \approx 126{,}67\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(140\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) \(100\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="c" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> Em equilíbrio com Bernoulli \(v_A = \ln\), a CPO de \(A\) implica:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(x^{A*}_1 = x^{A*}_2\) — totalmente segurado, sem precisar de cálculo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(x^{A*}_1 = (\pi_1/\pi_2)\, x^{A*}_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \((\pi_1/x^{A*}_1)/(\pi_2/x^{A*}_2) = p^*_1/p^*_2 \Rightarrow x^{A*}_2/x^{A*}_1 = (p^*_1/p^*_2)\cdot (\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1\) ⇒ \(x^{A*}_1 = x^{A*}_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(x^{A*}_1 \neq x^{A*}_2\) — A não consegue se segurar.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Derivação canônica: marginais $\pi_s/x_s$, razão de marginais = razão de preços.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> O consumo de equilíbrio \(x^{A*} = (x^{A*}_1, x^{A*}_2)\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(x^{A*}_1 = x^{A*}_2 = m^A/(p^*_1 + p^*_2) = (380/3)/(5/3) = 76\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \((40, 100)\) — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \((76, 76)\), mas calculado por outro caminho.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) \((50, 50)\) — meio do caminho.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1e" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(e)</strong> O consumo de equilíbrio de \(B\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="a"> (i) \((60, 60)\) — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="b"> (ii) \(x^{B*}_1 = 100 - 76 = 24\), \(x^{B*}_2 = 160 - 76 = 84\) (por viabilidade).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="c"> (iii) \((76, 76)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="d"> (iv) \((40, 100)\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Quando há agente neutro ao risco em equilíbrio AD com mercado completo, os preços contingentes saem <strong>atuarialmente justos</strong> (\(p^*_s/p^*_{s'} = \pi_s/\pi_{s'}\)), e o agente avesso fica <strong>totalmente segurado</strong> (\(x^{A*}_s\) não depende de \(s\)).</p>
+      <p><strong>2. Derivação.</strong> Neutralidade de \(B\): \(u^B(x) = \pi_1 x_1 + \pi_2 x_2\) — função linear. Em ótimo interior, marginais (\(\pi_s\)) têm que ser proporcionais a \(p_s\), daí \(p^*_1/p^*_2 = \pi_1/\pi_2 = 2/3\). CPO de \(A\) com \(v = \ln\): \((\pi_1/x^A_1)/(\pi_2/x^A_2) = p^*_1/p^*_2\) ⇒ \(x^A_2/x^A_1 = (p^*_1/p^*_2)(\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1\). Logo \(x^A_1 = x^A_2 = \bar c^A\). Renda \(m^A = (2/3)(40) + 1(100) = 380/3\). Orçamento: \((p^*_1 + p^*_2)\bar c^A = m^A\) ⇒ \((5/3)\bar c^A = 380/3\) ⇒ \(\bar c^A = 76\). Por viabilidade: \(x^B = (100 - 76, 160 - 76) = (24, 84)\). <strong>Verificação:</strong> 76 + 24 = 100 ✓; 76 + 84 = 160 ✓. Ambos \(\ge 0\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> Item (a): aluno marca (i) "\(p^*_1 = p^*_2\)" achando que neutralidade implica preços iguais — falso, neutralidade implica que preços são proporcionais a probabilidades, e probabilidades são desiguais aqui. Item (d): aluno calcula \(\bar c = 380/3 / 1 = 126{,}67\) esquecendo que \(p^*_1 + p^*_2 = 5/3 \neq 1\).</p>
+      <p><strong>4. Extensão.</strong> Pareto: o equilíbrio é Pareto-eficiente pelo 1º TBE. Verifique TMS: TMS\(^A = (\pi_1 v'_A(76))/(\pi_2 v'_A(76)) = \pi_1/\pi_2 = 2/3 = p^*_1/p^*_2\) ✓. \(B\) neutro tem TMS constante \(= \pi_1/\pi_2\). Tangência ✓. Em <strong>Aula 6</strong>, este resultado se reproduz com Radner sequencial se houver \(|S| = 2\) ativos linearmente independentes; com apenas 1 ativo (mercado incompleto), \(A\) não conseguiria se segurar.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟢. Aluno que erra (a) ou (c) ainda confunde "agente neutro" com "preços iguais" — voltar à pré-aula 5 §5. Aluno que erra (d) tem aritmética. Distratores plausíveis. Não há ambiguidade no enunciado; o exercício é didático e calibrador.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">SDF e equação fundamental sob heterogeneidade de crenças</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia \(L = 1\), \(S = 2\), \(I = 2\). Bernoullis idênticas \(v_A = v_B = \ln c\). <strong>Crenças heterogêneas:</strong> \(\pi^A_1 = 0{,}3\), \(\pi^A_2 = 0{,}7\); \(\pi^B_1 = 0{,}5\), \(\pi^B_2 = 0{,}5\). Dotações \(\omega^A = (50, 50)\), \(\omega^B = (50, 50)\) (ambos sem risco individual; agregado também sem risco: \(\bar\omega = (100, 100)\)).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A CPO de \(A\) em ótimo interior é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \(p^*_1/p^*_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(p^*_1/p^*_2 = (\pi^A_1/\pi^A_2)(x^{A*}_2/x^{A*}_1) = (0{,}3/0{,}7)(x^{A*}_2/x^{A*}_1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(p^*_1/p^*_2 = \pi^A_1/\pi^A_2 = 3/7\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \(p^*_1/p^*_2 = x^{A*}_1/x^{A*}_2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A CPO análoga para \(B\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) \(p^*_1/p^*_2 = (\pi^B_1/\pi^B_2)(x^{B*}_2/x^{B*}_1) = (1)(x^{B*}_2/x^{B*}_1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(p^*_1/p^*_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(p^*_1/p^*_2 = \pi^B_1/\pi^B_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) \(p^*_1/p^*_2 = x^{B*}_1/x^{B*}_2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong> \(\pi^B_1/\pi^B_2 = 1\), então a expressão simplifica para \(x^{B*}_2/x^{B*}_1\), mas a forma geral está correta.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Combinando (a), (b), e usando viabilidade \(x^A_s + x^B_s = 100\) para cada \(s\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) \(x^{A*} = x^{B*} = (50, 50)\) — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) \(x^{A*}_1 < 50\) e \(x^{A*}_2 > 50\) (\(A\) vende reivindicação-estado-1 a \(B\) porque acha estado 2 mais provável); por simetria invertida, \(B\) faz o oposto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) \(x^{A*}_1 > 50\) e \(x^{A*}_2 < 50\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Não existe equilíbrio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O preço relativo \(p^*_1/p^*_2\) em equilíbrio satisfaz:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) \(p^*_1/p^*_2 = 1\) porque o agregado é livre de risco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) \(p^*_1/p^*_2\) é determinado pelo sistema (CPOs + Walras + viabilidade). Razão \(\in (\pi^A_1/\pi^A_2, \pi^B_1/\pi^B_2) = (3/7, 1)\) — calculável mas não trivial; reflete média ponderada das crenças.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) \(p^*_1/p^*_2 = \pi^A_1 \cdot \pi^B_1 = 0{,}15\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Sem fórmula fechada simples; ponto pedagógico é reconhecer a faixa.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> O fato de o agregado ser livre de risco (\(\bar\omega_1 = \bar\omega_2 = 100\)) <strong>não</strong> implica \(p^*_1 = p^*_2\) (em geral) porque:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Os agentes têm Bernoullis diferentes.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Os agentes têm <strong>crenças diferentes</strong>; o preço relativo reflete uma média ponderada das crenças. Quando crenças coincidem, o agregado livre de risco implica \(p_1 = p_2\); com crenças divergentes, isso falha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Não há agente neutro.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) O equilíbrio é Pareto-ineficiente.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> A equação fundamental do SDF, \(p^*_s/p^*_{s'} = (\pi^i_s v_s')/(\pi^i_{s'} v_{s'}')\), tem que valer <strong>para cada agente</strong> em equilíbrio. Quando crenças são heterogêneas, marginais individuais (\(v_s'/v_{s'}'\)) <strong>se ajustam endogenamente</strong> para que a equação valha simultaneamente. Mesmo com agregado livre de risco, agentes com crenças divergentes apostam endogenamente entre si.</p>
+      <p><strong>2. Derivação.</strong> CPO de \(A\) (\(v = \ln\)): \((p^*_1/p^*_2) = (\pi^A_1/\pi^A_2)(x^A_2/x^A_1)\). CPO de \(B\): \((p^*_1/p^*_2) = (\pi^B_1/\pi^B_2)(x^B_2/x^B_1) = (x^B_2/x^B_1)\). Igualando: \((\pi^A_1/\pi^A_2)(x^A_2/x^A_1) = (x^B_2/x^B_1)\). Com viabilidade \(x^A + x^B = (100, 100)\), e orçamento \(p^*_1 x^A_1 + p^*_2 x^A_2 = p^*_1 \cdot 50 + p^*_2 \cdot 50\) — sistema de 4 equações, 4 incógnitas. Razão de equilíbrio fica entre \(3/7\) e \(1\) (limites das CPOs individuais).</p>
+      <p><strong>3. Armadilha.</strong> Item (d): aluno marca (i) achando que se faz média simples — falso, depende dos pesos individuais e do \(v\). Item (e): aluno marca (i) "Bernoullis diferentes" — falso, Bernoullis são idênticas; o que difere são crenças.</p>
+      <p><strong>4. Extensão.</strong> Quando \(\pi^A = \pi^B\) e \(\omega^A = \omega^B\), o equilíbrio é autarquia. Heterogeneidade gera comércio. <strong>No-trade theorem (Milgrom-Stokey 1982):</strong> se a heterogeneidade vier de informação privada e houver common knowledge, comércio puramente especulativo desaparece. <em>Pré-monitoria 3 detalha.</em></p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Item (d) é o mais sutil — exige reconhecer que "calculável mas não trivial" é a resposta certa. Risco residual: aluno meticuloso pode tentar calcular numericamente. Mantemos a redação porque o ponto pedagógico é a <em>ausência de fórmula fechada simples</em>, em contraste com o Exercício 1.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Equilíbrio AD com 2 agentes avessos e agregado livre de risco</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia \(L = 1\), \(S = 2\). Probabilidades de consenso \(\pi_1 = \pi_2 = 1/2\). Bernoullis idênticas \(v_A = v_B = \ln c\). Dotações <em>espelhadas</em>: \(\omega^A = (60, 100)\), \(\omega^B = (100, 60)\). Total \(\bar\omega = (160, 160)\) — agregado livre de risco.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> <strong>Sob \(\pi_1 = \pi_2 = 1/2\)</strong>, por simetria, em equilíbrio:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(x^{A*} = (60, 100), x^{B*} = (100, 60)\) — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(x^{A*} = x^{B*} = (80, 80)\) — ambos totalmente segurados, igualmente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(x^{A*} = (160, 0), x^{B*} = (0, 160)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) Indefinido sem mais informação.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> <strong>Sob \(\pi_1 = \pi_2 = 1/2\)</strong>, a razão de equilíbrio \(p^*_1/p^*_2\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(1/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(1\). CPO em \(\pi_1 = \pi_2\) e \(x^{A*}_1 = x^{A*}_2\): \((p^*_1/p^*_2) = (\pi_1/\pi_2)(x^{A*}_2/x^{A*}_1) = 1 \cdot 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(\pi_1/\pi_2 = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) Depende da Bernoulli específica.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A razão \(1\) obtida em (b) <strong>não</strong> depende crucialmente de qual Bernoulli usamos (CRRA com \(\gamma = 1\), CARA, etc.) porque:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) Bernoullis log são especiais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) O resultado vem de <strong>simetria total</strong> (probabilidades iguais + dotações espelhadas + Bernoullis idênticas), não da forma específica de \(v\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) Probabilidades equiprováveis sempre dão preço unitário.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) Agregado livre de risco implica preços iguais sempre.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Modificação: \(\pi_1 = 0{,}3\), \(\pi_2 = 0{,}7\) (probabilidades <strong>desiguais</strong>), dotações espelhadas como antes. Em equilíbrio:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) Continua \(x^{A*} = x^{B*} = (80, 80)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(x^{A*}_1 < x^{A*}_2\) porque o estado 1 é menos provável (intuição "consumo segue probabilidade").</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(x^{A*} = (88, 88)\) e \(x^{B*} = (72, 72)\) — <strong>cada agente individualmente fica livre de risco</strong> (\(x^i_1 = x^i_2\)), mas em <strong>níveis diferentes</strong>: \(A\) se beneficia porque sua dotação \((60, 100)\) está concentrada no estado mais provável (mais caro).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) Não há equilíbrio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Da viabilidade do estado 2 + CPO comum, \(r = x^i_2/x^i_1 = 1\). Da CPO + \(r=1\): \(p^*_1/p^*_2 = \pi_1/\pi_2 = 3/7\). Renda de \(A\): \(60 p_1 + 100 p_2\); com \(c^A(p_1+p_2) = m^A\) e \(p_2=1, p_1=3/7\): \(c^A = 60\pi_1 + 100\pi_2 = 18 + 70 = 88\). Análogo: \(c^B = 100\pi_1 + 60\pi_2 = 72\).</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> No caso (d), com \(\pi_1 = 0{,}3\), a razão \(p^*_1/p^*_2\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) \(\pi_1/\pi_2 = 3/7 \approx 0{,}429\) — direto da CPO com \(r = x^*_2/x^*_1 = 1\) (livre de risco individual): \((p^*_1/p^*_2) = (\pi_1/\pi_2) \cdot r = \pi_1/\pi_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) \(1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) \(0{,}3\) (confunde \(\pi_1\) com a razão).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) Depende da Bernoulli específica.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Quando o <strong>agregado é livre de risco</strong> (\(\bar\omega_s\) constante em \(s\)) e os agentes têm Bernoullis idênticas, o mercado completo permite que <strong>cada agente individualmente fique livre de risco</strong> (\(x^i_1 = x^i_2\)), mesmo sem agente neutro. As probabilidades aparecem em \(p^*_s/p^*_{s'}\) via SDF; o <strong>nível</strong> de consumo de cada agente depende de quão correlacionada sua dotação é com os estados mais valorados (mais prováveis sob \(\pi\) comum).</p>
+      <p><strong>2. Derivação rigorosa.</strong> Da CPO em \(\ln\) aplicada a \(i = A, B\): a razão \(r := x^i_2/x^i_1 = (\pi_1/\pi_2)(p_2/p_1)\) é <strong>a mesma</strong> para os dois agentes (depende só de preços e crenças comuns). Da viabilidade do estado 2: \(x^A_2 + x^B_2 = 160\). Substituindo \(x^i_2 = r \cdot x^i_1\): \(r (x^A_1 + x^B_1) = 160\). Da viabilidade do estado 1: \(x^A_1 + x^B_1 = 160\). Logo \(r = 1 \Rightarrow x^A_1 = x^A_2\) e \(x^B_1 = x^B_2\) (livre de risco individual). Da CPO + \(r = 1\): \(\boxed{p^*_1/p^*_2 = \pi_1/\pi_2}\). Renda de \(A\): \(m^A = 60 p_1 + 100 p_2\). Com \(x^A_1 = x^A_2 \equiv c^A\): \(c^A (p_1 + p_2) = 60 p_1 + 100 p_2\). Normalizando \(p_2 = 1\), \(p_1 = \pi_1/\pi_2\), e usando \(\pi_1 + \pi_2 = 1\): \(c^A = 60 \pi_1 + 100 \pi_2\). Analogamente \(c^B = 100 \pi_1 + 60 \pi_2\). Verificação: \(c^A + c^B = 160 (\pi_1 + \pi_2) = 160\) ✓.</p>
+      <p><strong>Casos numéricos:</strong></p>
+      <ul>
+        <li>\(\pi_1 = \pi_2 = 0{,}5\): \(c^A = 30 + 50 = 80\); \(c^B = 50 + 30 = 80\) → alocação \((80,80)/(80,80)\).</li>
+        <li>\(\pi_1 = 0{,}3, \pi_2 = 0{,}7\): \(c^A = 18 + 70 = 88\); \(c^B = 30 + 42 = 72\) → alocação \((88,88)/(72,72)\).</li>
+        <li>\(\pi_1 = 0{,}7, \pi_2 = 0{,}3\): \(c^A = 42 + 30 = 72\); \(c^B = 70 + 18 = 88\) → alocação \((72,72)/(88,88)\).</li>
+      </ul>
+      <p><strong>3. Armadilha.</strong> Distrator (i) "\(x^A = (80,80)\) ainda" é a <strong>intuição rápida</strong> de que simetria entre agentes sobrevive a \(\pi\) assimétrica — falso. A simetria \(A \leftrightarrow B\) do problema <strong>só</strong> é simétrica sob \(\pi_1 = \pi_2\) (a transformação "trocar \(A\) com \(B\) e estado 1 com estado 2" deixa o problema invariante apenas se \(\pi\) for simétrico). Sob \(\pi\) assimétrica, \(A\) se beneficia da concentração de sua dotação no estado mais provável (= mais caro em equilíbrio). Distrator (ii) "\(x^A_1 < x^A_2\)" também é falso: o <strong>agregado livre de risco</strong> + Bernoullis idênticas força \(r = 1\) para cada agente individualmente, mesmo sob \(\pi\) assimétrica.</p>
+      <p><strong>4. Extensão.</strong> Este exercício isola um ponto pedagógico não-óbvio: probabilidades subjetivas afetam <strong>não só preços, mas também a distribuição de riqueza entre agentes</strong>. Em equilíbrio AD, o agente cuja dotação é mais correlacionada com o estado mais provável consome em nível mais alto. A alocação resultante é <strong>Pareto-eficiente</strong> (1º TBE), mas <strong>não igualitária</strong>. O 2º TBE diz que qualquer Pareto-eficiente desejada (ex: \(c^A = c^B = 80\) sob \(\pi\) assimétrica) é alcançável via redistribuição lump-sum em \(t = 0\). Aulas 7-8 mostrarão que info assimétrica torna lump-sum infactível.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 confirmado. <strong>Bug detectado e corrigido em pass-2 (07/05/2026):</strong> versão original do gabarito (escrita pelo agente em primeira passagem) afirmava incorretamente que \(x^A = x^B = (80, 80)\) sobrevive sob \(\pi\) assimétrica. Auditoria rigorosa pelo Darcio mostrou que a viabilidade do estado 2 + CPO força \(r = 1\) (livre de risco individual) MAS níveis de consumo dependentes de \(\pi\) via \(c^i = \omega^i \cdot \pi\) (produto interno entre dotação e crenças). Distratores no item (d) recalibrados para refletir a álgebra correta; resposta correta agora é \((88, 88)/(72, 72)\). Bernoulli \(\ln\) funciona perfeitamente — não há motivo para trocar para CARA (CARA tem a mesma estrutura sob agregado livre de risco). <strong>Sem risco residual de ambiguidade após pass-2.</strong></p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">EC AD com 2 períodos, agentes com \(\beta\) heterogêneos (intertemporal)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia intertemporal: \(L = 1\) bem (consumo), \(T = 2\) períodos (\(t = 1\) e \(t = 2\)), <strong>sem incerteza</strong> (\(|S| = 1\) por período). Espaço de bens: \(\mathbb{R}^2_+\) (\(t = 1\) e \(t = 2\)). \(I = 2\) agentes. Preferências: \(u^i(c^i_1, c^i_2) = \ln c^i_1 + \beta^i \ln c^i_2\). Agente \(A\) paciente: \(\beta^A = 0{,}9\). Agente \(B\) impaciente: \(\beta^B = 0{,}5\). Dotações: \(\omega^A = \omega^B = (50, 50)\). Numerário \(p_2 = 1\). \(p_1\) é o preço relativo de consumo no período 1 vs. período 2.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A taxa de juros \(r\) definida por \(1 + r = p_1/p_2 = p_1\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) Determinada exogenamente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) Determinada endogenamente pelo equilíbrio competitivo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) Sempre igual a \(\beta\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) Não existe em economia sem moeda.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A CPO de \(A\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) \(c^A_1 = c^A_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) \(c^A_2/c^A_1 = \beta^A (1 + r) = 0{,}9 \cdot p_1\), ou equivalentemente \(p_1/p_2 = (1/\beta^A)(c^A_2/c^A_1)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) \(c^A_1 = (1 + \beta^A)/(2 + \beta^A) \cdot \text{renda}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) \(c^A_2 = \beta^A c^A_1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Por simetria de dotações + assimetria de \(\beta\), em equilíbrio:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) \(c^A = c^B = (50, 50)\) — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) \(c^A_1 < c^B_1\) e \(c^A_2 > c^B_2\) — paciente \(A\) vende consumo no período 1 (poupa) para impaciente \(B\) (consome mais cedo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) \(c^A_1 > c^B_1\) e \(c^A_2 < c^B_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O preço \(p_1\) de equilíbrio (taxa bruta de juros) satisfaz <strong>qual desigualdade</strong>?</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) \(p_1 = 1/\beta^A = 1{,}11\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) \(p_1 = 1/\beta^B = 2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) \(1/\beta^A < p_1 < 1/\beta^B\), ou seja \(1{,}11 < p_1 < 2\). Numericamente, \(p_1 \approx 1{,}48\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) \(p_1 = (\beta^A + \beta^B)/2 = 0{,}7\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A direção da troca depende exclusivamente de:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) A renda inicial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) A diferença de \(\beta^i\) — paciente vende presente, compra futuro; impaciente faz o oposto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) A inflação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) A taxa de juros nominal.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> Bens datados são caso particular de bens contingentes (\(|S| = 1\) por período). O equilíbrio AD em economia intertemporal endogeniza a taxa de juros pelo mercado: agentes pacientes oferecem poupança, impacientes demandam, e \(p_1\) reflete a média ponderada dos descontos \(1/\beta^i\).</p>
+      <p><strong>2. Derivação.</strong> UMP de \(i\): max \(\ln c_1 + \beta^i \ln c_2\) s.a. \(p_1 c_1 + p_2 c_2 = p_1 \omega^i_1 + p_2 \omega^i_2 = 50 (p_1 + p_2)\). CPO: \(1/c_1 = \lambda p_1\), \(\beta^i/c_2 = \lambda p_2\). Razão: \(c_2/(c_1 \beta^i) = p_1/p_2\) ⇒ \(c^i_2 = \beta^i c^i_1 (p_1/p_2)\). Soma com orçamento: \(c^i_1 [p_1(1 + \beta^i)] = 50(p_1 + p_2)\) ⇒ \(c^i_1 = 50(p_1 + 1)/[p_1(1 + \beta^i)]\) (em \(p_2 = 1\)). Viabilidade \(t = 1\): soma dos dois agentes \(= 100\). Resolvendo: \((p_1 + 1)/p_1 \cdot [1/1{,}9 + 1/1{,}5] = 2\). Aritmética: \(1/1{,}9 + 1/1{,}5 \approx 1{,}19\). Equação: \((p_1 + 1)/p_1 \approx 1{,}68\) ⇒ \(p_1 \approx 1{,}48\). Verifica: \(1{,}11 < 1{,}48 < 2\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> Item (b): aluno marca (i) achando que paciência implica suavização perfeita — falso. Item (d): aluno marca (i) ou (ii) achando que o equilíbrio é uma das taxas individuais — errado, é média. Item (e): aluno marca (i) "renda" — falso, dotações são iguais; só \(\beta\) difere.</p>
+      <p><strong>4. Extensão.</strong> Em economia com <strong>incerteza intertemporal</strong> (Aula 6 via Radner sequencial), \(p_1\) é substituído por conjunto de preços contingentes datados \(p_{1,s}\) para cada estado. AD canônico precifica todos simultaneamente. Lucas (1978) usa este modelo para precificar ativos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Risco residual no item (d): aluno meticuloso pode calcular \(p_1 \approx 1{,}48\) e estranhar a desigualdade. Mantemos a desigualdade porque o ponto pedagógico é a média ponderada.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">1º TBE em AD com 3 estados e 2 agentes</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia \(L = 1\), \(S = 3\), \(I = 2\). Probabilidades de consenso \(\pi = (0{,}3, 0{,}5, 0{,}2)\). Bernoullis: \(v_A(c) = \ln c\), \(v_B(c) = c\) (B neutro). Dotações: \(\omega^A = (10, 30, 20)\), \(\omega^B = (20, 10, 30)\). Total \(\bar\omega = (30, 40, 50)\). Numerário \(p_3 = 1\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> Pelo argumento padrão (B neutro + ótimo interior + concorrência), as razões de preço de equilíbrio satisfazem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) \(p^*_1/p^*_3 = \pi_1/\pi_3 = 0{,}3/0{,}2 = 1{,}5\) e \(p^*_2/p^*_3 = \pi_2/\pi_3 = 0{,}5/0{,}2 = 2{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) \(p^*_1/p^*_3 = \omega^A_1/\omega^A_3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) \(p^*_1 = p^*_2 = p^*_3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) Não há restrição: agente neutro não impõe condição sobre 3 preços.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> A CPO de \(A\) (\(v = \ln\)) implica:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(x^{A*}_1 = x^{A*}_2 = x^{A*}_3 = \bar c^A\), totalmente segurado nos 3 estados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(x^{A*}_1 = (\pi_1/\pi_2) x^{A*}_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(x^{A*}\) depende dos preços individualmente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(A\) não consegue se segurar com 3 estados.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> O nível de consumo \(\bar c^A\) que \(A\) atinge em equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(\bar c^A = \omega^A_1 + \omega^A_2 + \omega^A_3 = 60\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(\bar c^A = (\omega^A_1 + \omega^A_2 + \omega^A_3)/3 = 20\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(\bar c^A = 22\), tal que \(\bar c^A \cdot (p^*_1 + p^*_2 + p^*_3) = p^*_1 \omega^A_1 + p^*_2 \omega^A_2 + p^*_3 \omega^A_3\): em \(p^* = (1{,}5, 2{,}5, 1)\), \(\bar c^A \cdot 5 = 1{,}5 \cdot 10 + 2{,}5 \cdot 30 + 1 \cdot 20 = 110\) ⇒ \(\bar c^A = 22\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) \(\bar c^A\) depende da Bernoulli específica.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Aplicando o argumento do 1º TBE, a linha-chave da prova é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) Por construção é Pareto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) A prova é a mesma da Aula 4 substituindo \(L\) por \(LS\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) Suponha por contradição que existe \(\tilde x\) Pareto-superior. UMP em \(p^*\) ⇒ \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\) para o \(j\) estritamente melhor; LNS ⇒ \(p^* \cdot \tilde x^A \ge p^* \cdot \omega^A\) e \(p^* \cdot \tilde x^B \ge p^* \cdot \omega^B\). Soma: \(p^* \cdot (\tilde x^A + \tilde x^B) > p^* \cdot \bar\omega\), contradizendo viabilidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) Vem do 2º TBE.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> O <strong>passo crítico da prova</strong> em \(\mathbb{R}^{LS}\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) A continuidade de \(u^i\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) A LNS de \(\succeq^i\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) A viabilidade ser <strong>estado-a-estado</strong> (\(\sum_i \tilde x^i_s = \bar\omega_s\) para cada \(s\)), não soma agregada — se fosse só soma, \(\tilde x\) Pareto-superior poderia satisfazer \(\sum_s \sum_i \tilde x_s = \sum_s \sum_i \omega_s\) sem satisfazer \(\sum_i \tilde x_s = \bar\omega_s\) para cada \(s\), e a contradição quebra.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) A convexidade da preferência.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> Em mercado completo AD com agente neutro, independentemente de quantos estados há, preços saem atuarialmente justos e o agente avesso fica totalmente segurado em todos os estados. O 1º TBE estende sem alteração — só substituindo \(\mathbb{R}^L\) por \(\mathbb{R}^{LS}\). O passo crítico é a viabilidade estado-a-estado.</p>
+      <p><strong>2. Derivação.</strong> Item (a): linearidade de \(v_B = c\) + ótimo interior + concorrência ⇒ marginais de \(B\) (\(\pi_s\)) proporcionais aos preços ⇒ \(p^*_s/p^*_{s'} = \pi_s/\pi_{s'}\). Item (b): CPO de \(A\) (\(v = \ln\)) cancela \(\pi\) ⇒ \(x^A_s\) constante em \(s\). Item (c): orçamento em \(\bar c^A\) constante: \(\bar c^A = 22\). Por viabilidade: \(x^B_s = (\bar\omega_s - 22)\) ⇒ \(x^B = (8, 18, 28)\).</p>
+      <p><strong>3. Armadilha.</strong> Item (a): aluno marca (iv) — falso, neutro impõe \(|S| - 1\) razões. Item (e) é o mais sutil — aluno apressado marca (i) ou (ii) (clichê de bem-estar), mas a especificidade de \(\mathbb{R}^{LS}\) é precisamente estado-a-estado.</p>
+      <p><strong>4. Extensão.</strong> Em mercado <strong>incompleto</strong> (Aula 6, Aula 8), os passos (a) e (b) falham: B neutro não está numa "cesta interior" do mercado completo, e A não consegue se segurar. O equilíbrio resultante é constrained Pareto-eficient mas genericamente Pareto-ineficient (Hart 1975). Esta é a fronteira teórica que define todas as falhas de mercado de Aulas 7–9.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Itens (d) e (e) são as questões-mestras — testam se o aluno entende que a prova do 1º TBE em AD é ipsis litteris a da Aula 4. Sem ambiguidade no enunciado.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Mercados incompletos: ineficiência fora da fronteira</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a economia do Exercício 5 (3 estados, 2 agentes), mas agora suponha que <strong>só existe um ativo</strong>: um título que paga 1 unidade de bem se o estado for 1, e 0 nos demais estados. Não há ativos para os estados 2 e 3 separadamente. O bem físico em \(t = 0\) pode ser trocado por unidades desse título a um preço \(q_1\). Os agentes recebem dotação <strong>diretamente</strong> em cada estado e podem comprar/vender o título apenas para reorganizar consumo no estado 1. Note: este exercício <strong>introduz informalmente</strong> mercados incompletos, preview de Aula 6.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> O agente \(A\) avesso ao risco gostaria de comprar seguro nos estados 2 e 3 para suavizar consumo. Com apenas o título do estado 1:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Pode comprar seguro contra o estado 1 e isso suaviza consumo nos 3 estados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) <strong>Não</strong> pode suavizar consumo nos estados 2 e 3 — o ativo não cobre essas dimensões.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) O equilíbrio é o mesmo do Exercício 5.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Pode replicar o mercado completo via combinação linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Pelo argumento de span, o subespaço de payoffs replicáveis com o ativo do estado 1 é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Todo \(\mathbb{R}^3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) O subespaço \(\{(x, 0, 0) : x \in \mathbb{R}\}\) — só 1 dimensão.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) O subespaço \(\{(x, y, z) : x + y + z = 0\}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) O subespaço \(\{(x, y, z) : x = y = z\}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Para spanning \(\mathbb{R}^3\) com mercado completo, são necessários quantos ativos linearmente independentes?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) 1.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) 2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) 3 — uma base de \(\mathbb{R}^3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Mais de 3.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Em equilíbrio com mercado incompleto (apenas 1 ativo), \(A\) atinge consumo:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Igual ao do Exercício 5: \((22, 22, 22)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Próximo do Exercício 5, com pequeno desvio.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Genericamente diferente do Exercício 5: \(A\) ajusta consumo no estado 1 (via título), mas fica preso nas dotações \(\omega^A_2 = 30\), \(\omega^A_3 = 20\) — não atinge alocação livre de risco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Nulo.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> O equilíbrio resultante é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Pareto-eficiente — qualquer equilíbrio é Pareto pelo 1º TBE.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Pareto-eficiente, mas apenas em {estado 1}.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) <strong>Constrained Pareto-eficiente</strong> (eficiente dentro do que o mercado pode replicar) <strong>mas genericamente Pareto-ineficiente</strong> comparado ao mercado completo. Resultado de Hart (1975).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Não existe equilíbrio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Mercados completos requerem \(|S|\) ativos linearmente independentes para spannar \(\mathbb{R}^S\). Quando há menos ativos, o equilíbrio resultante é genericamente Pareto-ineficiente — agentes avessos não conseguem se segurar contra estados não cobertos. Hart (1975), a fronteira que define falhas de mercado das Aulas 7–9.</p>
+      <p><strong>2. Derivação.</strong> Item (b): com 1 ativo \((1, 0, 0)\), span = 1 dimensão. Item (c): para spannar \(\mathbb{R}^3\), 3 ativos lineamente independentes. Item (d): com apenas o ativo do estado 1, A pode escolher \(x^A_1\), mas não pode reorganizar \(x^A_2\) nem \(x^A_3\). Em equilíbrio, \(x^A = (\hat x^A_1, 30, 20)\) — não é (22, 22, 22). Item (e): equilíbrio é constrained Pareto (eficiente dentro do span), mas genericamente Pareto-ineficiente comparado ao mercado completo. Hart (1975).</p>
+      <p><strong>3. Armadilha.</strong> Item (e): aluno desinformado marca (i) — falso, o 1º TBE da Aula 5 requer mercado completo. Quando incompleto (Aula 6+), o teorema falha. Item (a): aluno apressado marca (iv) "combinação linear" — falso, com 1 ativo apenas, sem combinação possível para outros estados.</p>
+      <p><strong>4. Extensão.</strong> Aula 6 vai derivar equilíbrio de Radner formalmente. Implicação política: introduzir um novo ativo financeiro pode ser Pareto-melhorador se preencher dimensão faltante do span. Justificativa neoclássica para expansão de derivativos. <strong>Mas:</strong> Aulas 7–9 mostram que com externalidade/info assimétrica, mais ativos não bastam (Akerlof 1970, Stiglitz-Weiss 1981).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Este é o exercício mais ambicioso da lista, deliberadamente preview de Aula 6. Aluno que faz este exercício chega a Aula 6 já com framework. Sub-itens (a), (b), (c) são calibradores; (d), (e) separam quem entendeu de quem não. Sem ambiguidade.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (~26 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>28/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 27/05 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 6</strong> (Arrow-Debreu II — existência + Radner sequencial + mercados incompletos) é liberada na madrugada de <strong>21/05</strong>. <strong>Pré-monitoria 3</strong> com Alberto abre <strong>sáb 23/05</strong> (cobre Aula 5 — Arrow-Debreu I). Tudo da Aula 5 fecha em <strong>quarta 27/05 18h</strong>; gabarito quinta 28/05 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-05-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(5, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-28T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

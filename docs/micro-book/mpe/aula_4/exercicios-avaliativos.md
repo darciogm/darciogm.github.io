@@ -1,15 +1,17 @@
 # Exercícios Avaliativos — Aula 4
 
-**Tema:** Equilíbrio Geral em Trocas Puras (Edgeworth, contract curve, EC, lei de Walras, 1º TBE, 2º TBE preliminar)
-**Calibre:** 1 🟢 + 3 🟡 + 2 🔴 (nesta ordem)
-**Tempo-alvo:** 2h30–3h
+**Tema:** Equilíbrio Geral em Trocas Puras + Produção (Edgeworth, contract curve, EC, lei de Walras, 1º TBE em troca, **PPF + Robinson Crusoe + 1º TBE com produção como corolário**, 2º TBE preliminar)
+**Calibre (atualizado 07/05):** 1 🟢 trocas + 2 🟡 trocas + 1 🟡 **produção** + 1 🔴 trocas + 1 🔴 **trocas+produção** (meta-questão)
+**Tempo-alvo:** 2h30–3h30 (subiu por causa do Ex4 e Ex6 novos)
 **Formato:** Múltipla escolha pura, auto-grade (uma correta por sub-item)
 **Prazo:** **quarta 20/05 às 18h BRT** (calendário canônico)
 **Gabarito:** libera quinta 21/05 · 00:00 BRT
 
+> **Atualização 07/05/2026 (cirurgia de produção).** Ex4 antigo (1º TBE estrutura — afirmações A, B, C, D + LNS direcional) foi substituído por **PPF + Robinson Crusoe canônico** (calibre 🟡 produção). Ex6 antigo (2º TBE preliminar isolado em trocas) foi substituído pela **meta-questão 2×2×2** que junta trocas + produção ($\text{TMS}^A = \text{TMS}^B = \text{TMT} = p_1^*/p_2^*$, com 2º TBE com produção em (e)). O conteúdo "saturação direcional vs. saciedade local" do Ex4 antigo migrou para Q6🔴 do quiz pós-aula e seção 5 da pré-aula material; o "2º TBE preliminar" agora aparece como Q10🟡 do quiz pré-aula e (e) do Ex6 novo. Nada perdido.
+
 > **Orientações.** Cada exercício é autocontido: leia o enunciado, responda aos sub-itens, e **só então** consulte o gabarito 5-passos ao final (libera em 21/05). Distratores são plausíveis — se errou, articule *por que* o distrator parecia razoável.
 
-> **Pré-requisito respeitado.** Tudo aqui usa exclusivamente conceitos da Aula 4: Edgeworth, Pareto, núcleo, lei de Walras, EC, 1º TBE e 2º TBE preliminar. Produção, contingência, externalidades **não aparecem** como exigência.
+> **Pré-requisito respeitado.** Tudo aqui usa exclusivamente conceitos da Aula 4 (trocas + produção): Edgeworth, Pareto, núcleo, lei de Walras, EC, 1º TBE em troca, PPF, Robinson Crusoe, 1º TBE com produção, 2º TBE preliminar. Contingência (Aula 5) e externalidades (Aula 7) **não aparecem** como exigência.
 
 ---
 
@@ -167,64 +169,58 @@
 
 ---
 
-## Exercício 4 🟡 — 1º TBE: argumento e papel exato de LNS
+## Exercício 4 🟡 — PPF + Robinson Crusoe canônico (produção básica) ✦ NOVO 07/05
 
-**Enunciado.** Considere a prova padrão do 1º TBE em economia de troca pura. Cada uma das afirmações abaixo refere-se a um aspecto da estrutura ou do papel das hipóteses.
+**Enunciado.** Economia com 1 consumidor (Robinson) + 1 firma + 2 bens (consumo $q$, lazer $\ell$). Variáveis: trabalho $L \ge 0$, lazer $\ell = \bar L - L$. Tecnologia: $q = f(L) = \sqrt{L}$. Preferências: $u(q, \ell) = q^{1/2}\ell^{1/2}$. Dotação total de tempo: $\bar L = 16$. Use $p = 1$ numerário (preço do bem de consumo).
 
-- **A.** A prova é por contradição: assume-se $\exists \tilde x$ viável e Pareto-superior, e se mostra que $\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i$, contradizendo viabilidade.
-- **B.** Para o consumidor $j$ estritamente melhor ($u^j(\tilde x^j) > u^j(x^{*j})$): o argumento é "se $\tilde x^j$ cabia no orçamento, $x^{*j}$ não maximizava".
-- **C.** Para os consumidores $i \neq j$ fracamente melhores: LNS é necessária; sem ela, $i$ pode ter $\tilde x^i$ indiferente a $x^{*i}$ com gasto estritamente menor, sem contradição com UMP.
-- **D.** A hipótese de convexidade das preferências é essencial para o 1º TBE — sem ela, mercado pode atingir alocação não-Pareto.
+### (a) Considere também uma *segunda* firma simétrica produzindo um bem 2 a partir do mesmo trabalho $\bar L = 16$: $f_2(L_2) = \sqrt{L_2}$. Então a PPF de produção sobre os dois bens é descrita por:
 
-### (a) A afirmação A é:
+- (i) $q_1 + q_2 = 4$ — reta.
+- (ii) $q_1^2 + q_2^2 = 16$ — arco de círculo, raio 4. **← CORRETA** (Substituir $L_\ell = q_\ell^2$ na restrição $L_1 + L_2 = 16$.)
+- (iii) $q_1\, q_2 = 16$ — hipérbole.
+- (iv) $\max\{q_1, q_2\} = 4$ — fronteira tipo Leontief.
 
-- (i) Verdadeira — é o esqueleto da prova padrão. **← CORRETA**
-- (ii) Verdadeira em CD apenas.
-- (iii) Falsa — a prova é construtiva, não por contradição.
-- (iv) Verdadeira em economia $2\times 2$ apenas.
+### (b) Voltando à economia de 1 firma ($q = \sqrt{L}$) e Robinson com $u = q^{1/2}\ell^{1/2}$. A solução do *planejador* resolve $\max_L L^{1/4}(\bar L - L)^{1/2}$. O $L^*$ ótimo é:
 
-### (b) A afirmação B é:
+- (i) $L^* = 8$ — metade do tempo.
+- (ii) $L^* = 4$.
+- (iii) $L^* = 16/3 \approx 5{,}33$ — vem de CPO $1/(4 L) = 1/(2(16-L)) \Rightarrow 2(16-L) = 4L \Rightarrow L = 16/3$. **← CORRETA**
+- (iv) $L^* = 16$ — Robinson trabalha tudo.
 
-- (i) Verdadeira — segue diretamente da definição de UMP. **← CORRETA**
-- (ii) Falsa — UMP não impede que cestas mais preferidas estejam no orçamento.
-- (iii) Verdadeira apenas em quase-linear.
-- (iv) Falsa — argumento exige LNS para $j$ também.
+### (c) Em equilíbrio competitivo descentralizado, com $p = 1$ numerário, o salário de equilíbrio $w^*$ e o lucro $\pi^*$ valem:
 
-### (c) A afirmação C é:
+- (i) $w^* = 1$, $\pi^* = 0$ — economia "lucro zero".
+- (ii) $w^* = \sqrt{3}/8 \approx 0{,}217$, $\pi^* = 2/\sqrt{3} \approx 1{,}155$ — vem de $w^* = p\, f'(L^*) = 1/(2\sqrt{16/3}) = \sqrt{3}/8$ e $\pi^* = p\, q^* - w^*\, L^* = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}$. **← CORRETA**
+- (iii) $w^* = 1/2$, $\pi^* = 1/2$ — pesos da utilidade CD.
+- (iv) $w^* = 16/3$, $\pi^* = 0$ — confunde $L^*$ com $w^*$.
 
-- (i) Verdadeira — LNS é hipótese-mínima precisamente para fechar o passo 2. **← CORRETA**
-- (ii) Falsa — passo 2 não exige LNS, basta UMP.
-- (iii) Verdadeira em CD apenas.
-- (iv) Falsa — passo 2 segue da convexidade.
+### (d) A renda total do consumidor é $m^* = w^*\, \bar L + \pi^*$. Verificando a UMP, $q^* = m^*/(2 p)$ e $\ell^* = m^*/(2 w^*)$. Os valores são:
 
-### (d) A afirmação D é:
+- (i) $q^* = 4/\sqrt{3} \approx 2{,}31$, $\ell^* = 32/3 \approx 10{,}67$ — coincidem com a solução do planejador. **← CORRETA**
+- (ii) $q^* = 8$, $\ell^* = 8$ — simétrico.
+- (iii) $q^* = 4$, $\ell^* = 12$ — usando $L = 4$ errado.
+- (iv) $q^*$ e $\ell^*$ não são únicos — Robinson pode escolher outras combinações.
 
-- (i) Verdadeira — convexidade entra no 1º TBE.
-- (ii) Falsa — convexidade é hipótese do 2º TBE, não do 1º. 1º TBE precisa apenas de LNS. **← CORRETA**
-- (iii) Verdadeira em troca pura, falsa em produção.
-- (iv) Verdadeira em $L = 2$.
+### (e) A "assinatura algébrica" do 1º TBE com produção neste exemplo se manifesta como:
 
-### (e) Considere economia onde $A$ tem $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (saturação em bem 1 acima de $x_1 = 1$) e $B$ tem CD usual; $\omega^A = (2, 0)$, $\omega^B = (0, 2)$. Sobre LNS de $A$ e o 1º TBE nessa economia:
+- (i) $\text{TMS} = w/p$ apenas — só a margem de consumo é atada.
+- (ii) $\text{TMT} = w/p$ apenas — só a margem de produção é atada.
+- (iii) $\text{TMS} = w/p = \text{TMT}$ — todas as margens valem $\sqrt{3}/8$. Mercado descentralizado replica solução do planejador via uma única ponte de preço. **← CORRETA**
+- (iv) $\text{TMS}\cdot \text{TMT} = 1$ — produto é unitário.
 
-- (i) LNS falha em todo $\{x_1 \ge 1\}$, logo o 1º TBE não se aplica.
-- (ii) **LNS vale globalmente** ($\partial u^A/\partial x_2 = 1 > 0$ entrega vizinho preferido em qualquer ponto); o 1º TBE se aplica e o EC $((1,1),(1,1))$ a $p^* = (1,1)$ é Pareto-eficiente. Saturação em bem 1 é apenas *direcional*. **← CORRETA**
-- (iii) LNS vale só em $\{x_1 < 1\}$; o 1º TBE só se aplica se o EC cair nessa região.
-- (iv) LNS é hipótese irrelevante aqui — basta convexidade das preferências de $A$.
-- (v) Para violar LNS de fato, é preciso saturação *total* num ponto (bliss-point interior), como em $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$; saturação só em bem 1 não basta.
+### Gabarito 5-passos — Exercício 4 (novo)
 
-> **Nota pedagógica.** A alternativa (v) é uma observação verdadeira, mas é apenas a *justificativa complementar* de (ii) — diz "para falhar LNS precisaria bliss-point", o que é o argumento por trás de (ii). Pedimos a afirmação mais completa sobre a economia *desta* questão; (ii) responde diretamente. (v) é a generalização canônica que aparece em **MWG §16.D**.
+**1. Ponto-chave.** Robinson canônico é o caso mínimo onde toda a maquinaria de produção (PPF, TMT, max-lucro, EC descentralizado, 1º TBE com produção) se materializa com um único consumidor e uma única firma. A assinatura é $\text{TMS} = \text{TMT} = w/p$ — três margens, uma ponte de preço.
 
-### Gabarito 5-passos — Exercício 4
+**2. Derivação.** (a) PPF: $L_\ell = q_\ell^2$, restrição $L_1 + L_2 = 16$ ⇒ $q_1^2 + q_2^2 = 16$, arco de círculo. (b) Planejador: $\max L^{1/4}(16-L)^{1/2}$. $\log u = (1/4)\log L + (1/2)\log(16-L)$. CPO: $1/(4L) = 1/(2(16-L))$ ⇒ $2(16-L) = 4L$ ⇒ $L^* = 16/3$. (c) Salário: $w^* = p\, f'(L^*) = 1\cdot 1/(2\sqrt{16/3}) = 1/(2\cdot 4/\sqrt{3}) = \sqrt{3}/8$. Lucro: $\pi^* = p\, q^* - w^*\, L^* = 4/\sqrt{3} - (\sqrt{3}/8)(16/3) = 4/\sqrt{3} - 2/\sqrt{3} = 2/\sqrt{3}$. (d) Renda: $m^* = (\sqrt{3}/8)(16) + 2/\sqrt{3} = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3$. $q^* = m^*/(2 p) = 4\sqrt{3}/3 = 4/\sqrt{3}$ ✓; $\ell^* = m^*/(2 w^*) = (8\sqrt{3}/3)/(2\sqrt{3}/8) = 32/3$ ✓. (e) Verificar: $\text{TMS} = q^*/\ell^* = (4/\sqrt{3})/(32/3) = \sqrt{3}/8$; $\text{TMT} = f'(L^*) = \sqrt{3}/8$; $w^*/p^* = \sqrt{3}/8$. Iguais. ✓
 
-**1. Ponto-chave.** A prova do 1º TBE tem três passos: contradição → passo 1 (UMP para $j$) → passo 2 (LNS para $i \neq j$) → soma e contradiz viabilidade. **LNS é hipótese de *vizinhança*** (existe alguma direção de melhora em qualquer entorno), não condição direção-a-direção. Convexidade é hipótese do **2º TBE**, não 1º.
+**3. Armadilha.** Item (a)(i) confunde retornos constantes ($f = L$) com decrescentes ($f = \sqrt{L}$). Item (b)(i) usa simetria do consumidor ($u = q^{1/2}\ell^{1/2}$) e ignora a curvatura da tecnologia. Item (c)(iii) confunde pesos da utilidade com preços de equilíbrio. Item (e)(i)/(ii) cortam metade da estrutura.
 
-**2. Derivação.** Passo 1: $u^j(\tilde x^j) > u^j(x^{*j})$ + UMP de $x^{*j}$ ⇒ $p^*\cdot \tilde x^j > p^*\cdot \omega^j$. Passo 2: $u^i(\tilde x^i) \ge u^i(x^{*i})$. Por LNS, vizinhança de $\tilde x^i$ tem $\hat x^i$ estritamente preferida. Se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, por continuidade $\hat x^i$ ainda cabe no orçamento e contradiz UMP. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. Soma + viabilidade ⇒ contradição. **Aplicação a (e):** em $u^A = \min\{x_1, 1\} + x_2$, o vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$ — estritamente maior em todo ponto. LNS vale globalmente. EC: $A$ a $p^* = (1,1)$ tem $m^A = 2$, indiferente em $x_1 \in [0, 1]$ com $x_2 = 2 - x_1$; $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x^A = x^B = (1, 1)$. Pareto por 1º TBE.
+**4. Extensão.** Generalização para economia com $I$ consumidores e $J$ firmas: cada consumidor ganha cota $\theta^{ij}$ de cada firma, renda inclui salário + dividendo. EC ainda força $\text{TMS}^i = w^*/p^* = \text{TMT}^j$ (todas as margens individuais e setoriais). Pré-monitoria 2 (sáb 23/05) cobre Robinson com tecnologia CES e EG completo $2\times 2 \times 2$. Aula 5 (AD-I) estende para bens contingentes — a estrutura sobrevive com índice de estado.
 
-**3. Armadilha.** (d)(i): erro clássico "convexidade ⇒ 1º TBE" — falso, convexidade é hipótese do 2º. (e)(i) e (e)(iii): confundem *saturação direcional* (uma derivada parcial nula numa região) com *saciedade local* no sentido de LNS (vizinhança inteira sem direção de melhora) — bem 2 garante a direção em todos os pontos. (e)(iv): LNS é precisamente a hipótese-mínima do 1º TBE. (e)(v): afirmação verdadeira, mas é a generalização que justifica (ii); a alternativa pedida é a que descreve o que *vale* nesta economia.
+**5. Peer-review.** Calibre 🟡 — exige fluência em (i) inverter $f$ para construir PPF, (ii) resolver Lagrangiano em forma reduzida $L^{1/4}(16-L)^{1/2}$, (iii) ler salário como produtividade marginal, (iv) verificar consistência demanda-CPO. Risco residual: aluno pode confundir os pesos $1/4$ e $1/2$ que aparecem em $L^{1/4}(\bar L - L)^{1/2}$ com pesos CD originais — atenção. *Trade-off declarado:* exercício mantém Robinson em forma simplificada (1 firma, 1 consumidor, sem cota $\theta^{ij}$ parametrizada). Versão completa (com $J=2$ firmas e cotas explícitas) é Ex 6 e pré-monitoria 2.
 
-**4. Extensão.** Para construir o contraexemplo *genuíno* do 1º TBE sem LNS, o caminho canônico é **bliss-point interior** — $u^A(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, paraboloide invertido. Em $(a, b)$ o conjunto preferido estrito é vazio: nenhuma direção melhora. Aí LNS falha de verdade e a contrapositiva do passo 2 fica sem testemunha. **MWG §16.D** traz a construção canônica; calibrar dotações + preferências para que o EC encontrado caia em $(a, b)$ com sobra de renda só no agente saciado é trabalho fino — gancho da pré-monitoria 2 (sáb 23/05, com Alberto). **Aula 5/6:** com produção, a estrutura da prova é a mesma + termo de lucro; LNS continua hipótese-mínima do consumidor.
-
-**5. Peer-review.** Calibre 🟡 — exige distinção limpa entre 1º e 2º TBE *e* entre saturação direcional e saciedade local. Aluno que marca (d)(i) ainda não separou os dois teoremas; quem marca (e)(i) ou (e)(iii) ainda lê LNS como condição direção-a-direção. (e)(v) é o distrator *quase-correto* — quem marca está mais perto do certo do que parece, mas confundiu "afirmação descritiva da economia em (e)" com "generalização canônica"; o feedback corrige.
+> **Nota pedagógica — onde foi o conteúdo "1º TBE estrutura + LNS direcional" do Ex4 antigo?** Ele migrou para: Q6🔴 do quiz pós-aula (saturação direcional vs. saciedade local) e Seção 5 da pré-aula material (`platform/aula-04.html`). A discussão de "convexidade é hipótese do 2º TBE, não do 1º" aparece em Q6 da pré-aula, em (d) do Ex 6 novo, e em Q5🟡 do quiz pós-aula. Nada perdido — apenas redistribuído para abrir espaço para produção.
 
 ---
 
@@ -281,53 +277,55 @@
 
 ---
 
-## Exercício 6 🔴 — 2º TBE preliminar e implicação política
+## Exercício 6 🔴 — Economia 2×2×2: TMS=TMT=p₁/p₂ + 2º TBE com produção (meta-questão) ✦ NOVO 07/05
 
-**Enunciado.** Considere economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\bar\omega = (4, 4)$. Suponha que o "planejador social" deseja a alocação Pareto-eficiente $\tilde x = (\tilde x^A, \tilde x^B) = ((3, 3), (1, 1))$ (assimétrica, com $A$ ficando melhor). Considere o 2º TBE preliminar.
+**Enunciado.** Economia 2×2×2: $I=2$ consumidores $(A, B)$, $J=2$ firmas ($F_1$ produz bem 1, $F_2$ produz bem 2), $L=2$ bens. Tecnologia: $f_1(L_1) = \sqrt{L_1}$, $f_2(L_2) = \sqrt{L_2}$, oferta agregada de trabalho $\bar L = 16$, restrição $L_1 + L_2 \le \bar L$. Preferências CD simétricas: $u^A = u^B = x_1^{1/2}x_2^{1/2}$. Cada consumidor possui $\bar L/2 = 8$ horas de trabalho como dotação *de fator*; cotas das firmas $\theta^{Aj} = \theta^{Bj} = 1/2$ para $j = 1, 2$. Use $p_2 = 1$ numerário. Considere o equilíbrio competitivo $(p^*, w^*, x^*, y^*)$.
 
-### (a) Verificar que $\tilde x$ é Pareto-eficiente:
+### (a) No equilíbrio competitivo, a CPO de cada firma (max-lucro a preço dado) implica $p_\ell\, f_\ell'(L_\ell^*) = w^*$. A taxa marginal de transformação entre os dois bens, em equilíbrio, vale:
 
-- (i) Sim — $\text{TMS}^A(\tilde x^A) = 3/3 = 1 = 1/1 = \text{TMS}^B(\tilde x^B)$, tangência. **← CORRETA**
-- (ii) Não — alocação assimétrica viola Pareto.
-- (iii) Sim — utilidades são iguais.
-- (iv) Indeterminado — depende de preferências.
+- (i) $\text{TMT}_{12} = p_1^*/p_2^*$ — segue diretamente das duas CPOs combinadas. **← CORRETA**
+- (ii) $\text{TMT}_{12} = w^*/p_1^*$ — só envolve firma $F_1$.
+- (iii) $\text{TMT}_{12} = 1$ — tecnologias simétricas.
+- (iv) $\text{TMT}_{12} = \theta^{Aj}/\theta^{Bj} = 1$ — cotas iguais.
 
-### (b) Para implementar $\tilde x$ como EC via 2º TBE preliminar, é necessário:
+### (b) A CPO de cada consumidor no UMP em $(p_1^*, p_2^*)$ com renda $m^{*i}$ implica:
 
-- (i) Mudar preferências para que $\tilde x$ seja "natural".
-- (ii) Mudar preços de mercado para favorecer $A$.
-- (iii) Redistribuir as dotações iniciais via transferência lump-sum: por exemplo, dar $A$ uma dotação $\hat\omega^A = (3, 3)$ (zerar troca) ou alguma dotação que, em conjunto com o EC competitivo, leve à alocação $\tilde x$. **← CORRETA**
-- (iv) Impor preço fixo administrado pelo governo.
+- (i) $\text{TMS}^A = w^*/p_1^*$, $\text{TMS}^B = w^*/p_2^*$ — diferentes entre consumidores.
+- (ii) $\text{TMS}^A = \text{TMS}^B = p_1^*/p_2^*$ — mesma margem para os dois, igual ao preço relativo dos bens. **← CORRETA**
+- (iii) $\text{TMS}^A\, \text{TMS}^B = 1$ — produto unitário.
+- (iv) $\text{TMS}$ depende das cotas $\theta^{ij}$.
 
-### (c) Considere $\hat\omega^A = (3, 3)$, $\hat\omega^B = (1, 1)$ (mesmo total $(4, 4)$). Em CD simétrica com essas dotações, o EC tem:
+### (c) Combinando as duas CPOs (item a + item b), a "assinatura algébrica" do EC nesta economia 2×2×2 é:
 
-- (i) $p_1^*/p_2^* = 1$, $x^{A*} = (3, 3)$, $x^{B*} = (1, 1)$ — autarquia. **← CORRETA**
-- (ii) $p_1^*/p_2^* = 3$, alocação não-trivial.
-- (iii) $p_1^*/p_2^* = 1/3$, alocação inversa.
-- (iv) Não há EC — desigualdade de dotação impede fechamento.
+- (i) Apenas $\text{TMS}^A = \text{TMS}^B$ — eficiência de troca.
+- (ii) Apenas $\text{TMT}_{12} = p_1^*/p_2^*$ — eficiência produtiva.
+- (iii) **Igualdade tripla**: $\text{TMS}^A = \text{TMS}^B = \text{TMT}_{12} = p_1^*/p_2^*$. Mercado força simultaneamente eficiência de troca (margens iguais entre consumidores), eficiência produtiva (margem setorial = preço relativo), e eficiência alocativa (consumo "vale" o mesmo que produzir). **← CORRETA**
+- (iv) Nenhuma igualdade vale em geral.
 
-### (d) A "redistribuição lump-sum" no 2º TBE significa:
+### (d) Pela simetria total do problema (CD simétrica + tecnologias simétricas + dotações de fator iguais + cotas iguais), o preço relativo de equilíbrio é:
 
-- (i) Imposto sobre cada compra/venda no mercado.
-- (ii) Tributação proporcional à renda.
-- (iii) **Transferência fixa, independente de comportamento** — não distorce decisões marginais. Não-distorcionária. **← CORRETA**
-- (iv) Multa por desvio do "ótimo social".
+- (i) $p_1^*/p_2^* = 2$ — bem 1 mais escasso.
+- (ii) $p_1^*/p_2^* = 1$ — todas as simetrias colapsam o preço relativo a 1; em $p_2 = 1$, $p_1^* = 1$. Pela igualdade tripla, $\text{TMS}^A = \text{TMS}^B = \text{TMT} = 1$. Como $\text{TMT} = q_1/q_2 = 1$ ⇒ $q_1 = q_2$; como $L_1 + L_2 = 16$ e $L_\ell = q_\ell^2$ ⇒ $L_1 = L_2 = 8$, $q_1 = q_2 = \sqrt{8} = 2\sqrt{2}$. **← CORRETA**
+- (iii) $p_1^*/p_2^* = 1/2$ — bem 1 abundante.
+- (iv) Indeterminado — múltiplos equilíbrios.
 
-### (e) A hipótese-chave do 2º TBE é:
+### (e) Suponha agora que o "planejador social" deseja implementar uma alocação Pareto-eficiente *assimétrica* em que $A$ consome mais que $B$. Pelo 2º TBE com produção, isto é alcançável via:
 
-- (i) Continuidade das preferências.
-- (ii) Monotonicidade.
-- (iii) **Convexidade das preferências (e tecnologia, em economia com produção).** Sem convexidade, a separação por hiperplano-preço (Hahn-Banach) falha. **← CORRETA**
-- (iv) LNS — mesma do 1º TBE.
+- (i) Mudar preços de mercado para favorecer $A$.
+- (ii) Subsídio à produção do bem que $A$ prefere.
+- (iii) **Redistribuição lump-sum das dotações iniciais** (de fator e/ou cotas $\theta^{ij}$), de modo que $A$ tenha mais "patrimônio" inicial. **Hipótese-chave:** convexidade das preferências *e* dos conjuntos de produção $Y^j$ — sem isso, Hahn-Banach falha e o 2º TBE não constrói o hiperplano-preço de suporte. **← CORRETA**
+- (iv) Impor um teto de preços.
 
-### Gabarito 5-passos — Exercício 6
+### Gabarito 5-passos — Exercício 6 (novo, meta-questão)
 
-**1. Ponto-chave.** 2º TBE preliminar permite implementar qualquer Pareto-eficiente como EC via redistribuição lump-sum. A hipótese-chave é convexidade (preferências convexas, tecnologia convexa em economia com produção). Implicação política central: separa eficiência (via mercado) de equidade (via redistribuição).
+**1. Ponto-chave.** Esta é a meta-questão da Aula 4: economia 2×2×2 ($I=J=L=2$) com tecnologias côncavas e preferências convexas materializa *simultaneamente* as três margens da Aula 4 — TMS individual, TMS entre indivíduos, TMT setorial — todas coladas no mesmo preço relativo $p_1^*/p_2^*$. É o resultado do 1º TBE com produção em forma algébrica condensada. O 2º TBE estende a discussão: redistribuição lump-sum atua agora em *duas dimensões* (dotação de fator e cotas $\theta^{ij}$).
 
-**2. Derivação.** $\tilde x^A = (3, 3)$, $\tilde x^B = (1, 1)$. Pareto verifica via tangência: $\text{TMS}^i = x_2^i/x_1^i$. $\text{TMS}^A = 1$, $\text{TMS}^B = 1$. ✓ (a). Para implementar como EC, escolher $\hat\omega^A = (3, 3)$ — então $A$ não tem incentivo a trocar (já está no ponto desejado), idem para $B$. EC autarquia: $p_1^*/p_2^* = 1$ (qualquer preço, na verdade — resultado de fronteira). ✓ (c). Lump-sum: transferência fixa que não muda incentivos marginais. Convexidade entra em Hahn-Banach: separação de "conjunto preferido $\sum_i V^i$" do "conjunto viável $\{\sum_i \omega^i\}$" por hiperplano = preço-suporte.
+**2. Derivação.** *(a)* Da firma: $p_\ell \, f_\ell'(L_\ell^*) = w^*$, uma equação por firma. Razão: $p_1/p_2 = f_2'(L_2^*)/f_1'(L_1^*) = \text{PMa}_L^2/\text{PMa}_L^1 = \text{TMT}_{12}$. *(b)* Do consumidor (UMP em $(p_1, p_2)$): $\text{TMS}^i = p_1/p_2$ ∀ $i$. *(c)* Combinando: $\text{TMS}^A = \text{TMS}^B = \text{TMT}_{12} = p_1^*/p_2^*$. *(d)* Simetria: $p_1 = p_2 = 1$ ⇒ $\text{TMT} = q_1/q_2 = 1$ ⇒ $L_1 = L_2 = 8$ e $q_1 = q_2 = 2\sqrt{2} \approx 2{,}83$. *(e)* 2º TBE com produção: redistribuir dotação de fator e/ou cotas $\theta^{ij}$; convexidade de $Y^j$ ($f_\ell$ côncava ✓) e de preferências ($u^i$ CD ✓) garante separação por hiperplano-preço.
 
-**3. Armadilha.** (b)(i) "mudar preferências" é absurdo. (b)(ii)/(iv) confundem 2º TBE com regulação tarifária. (d)(i)/(ii) descrevem instrumentos *distorcionários* (imposto sobre transação, sobre renda) — 2º TBE exige *não-distorção*. (e)(iv) confunde 1º com 2º TBE.
+**3. Armadilha.** *(a)(iii)* tecnologias simétricas *não* implicam TMT=1 — só implicam quando alocação também é simétrica (mas alocação só é simétrica em equilíbrio porque preferências são simétricas). *(b)(i)* ainda separa "renda salarial" e "renda de dividendo" — confunde composição da renda com margem marginal. *(c)(i)/(ii)* cortam metade da estrutura. *(e)(i)/(ii)/(iv)* são instrumentos distorcionários: preço administrado ou subsídio quebra max-lucro/UMP em equilíbrio; só transferência lump-sum preserva eficiência marginal.
 
-**4. Extensão (limites do 2º TBE).** Em prática, lump-sum é não-implementável: governo não observa habilidade individual; daí imposto distorcionário sobre renda + tradeoff equidade-eficiência (Mirrlees, Saez — fora desta ementa). Reforma tributária EC 132/2023 no Brasil *aproxima* lump-sum via cashback baseado em renda+CPF, mas não é estritamente lump-sum.
+**4. Extensão.** *Por que a alocação é Pareto-eficiente:* as três margens iguais simultaneamente *são* a definição de Pareto-eficiente interior em 2×2×2. Em economia $2\times 2 \times J$ generalizada, a estrutura sobrevive — basta cada firma maximizar lucro e cada consumidor seguir UMP a tomadores de preço. Em Aula 5 (Arrow-Debreu I), a estrutura ganha índice de estado: $\text{TMS}^i_{(1, s), (2, s)} = \text{TMT}_{12, s} = p^*_{(1, s)}/p^*_{(2, s)}$ condicionalmente a $s$. Em Aula 7 (externalidades), TMS individual diverge de TMT social — wedge pigouviano. *2º TBE com produção:* prova rigorosa via Hahn-Banach é Aula 6 (rigorosa) ou MWG §16.D. Em prática, lump-sum sobre fatores é difícil (governo não observa habilidade pura); lump-sum sobre cotas é mais factível. Reforma tributária EC 132/2023 aproxima lump-sum via cashback, mas não estritamente.
 
-**5. Peer-review.** Calibre 🔴. Exige fluência em (i) verificar Pareto via tangência; (ii) reconhecer mecanismo de implementação (mudar dotação); (iii) distinguir lump-sum de imposto distorcionário; (iv) identificar convexidade como hipótese-chave do 2º TBE. Quem marca (d)(i)/(ii) ainda confunde 2º TBE com tributação distorcionária.
+**5. Peer-review.** Calibre 🔴 (meta-questão). Junta UMP (Aulas 1–3), Walras (Aula 4 trocas), max-lucro (Aula 4 produção), 1º TBE em ambas as versões, e teaser de 2º TBE. Aluno que marca (a)(iii) ainda confunde simetria de tecnologia com simetria de alocação; (b)(i) ainda separa "lado consumidor" e "lado firma"; (e)(i)/(ii)/(iv) ainda confunde 2º TBE com instrumento distorcionário. *Risco residual:* o item (d) exige cálculo do equilíbrio sob simetria total — aluno menos disciplinado pode tentar achar a alocação completa numericamente; basta perceber que simetria força $p_1 = p_2$. *Trade-off declarado:* economia $2\times 2\times 2$ com cotas $\theta^{ij} = 1/2$ é o caso mais simples; com cotas heterogêneas, a alocação $x^A$ pode diferir de $x^B$ mesmo em equilíbrio simétrico, mas as *margens* (TMS, TMT, preço) ainda colam. Pré-monitoria 2 explora o caso de cotas $\theta^{ij}$ heterogêneas explicitamente.
+
+> **Nota pedagógica — onde foi o conteúdo do Ex6 antigo (2º TBE preliminar isolado em trocas)?** Migrou para: Q10🟡 do quiz pré-aula (2º TBE preliminar, definição), Q5🟡 do quiz pós-aula (1º vs. 2º TBE), e (e) do Ex6 novo (2º TBE com produção). A discussão de redistribuição lump-sum + Hahn-Banach + EC 132/2023 está agora distribuída entre esses pontos. O sub-item (e) do Ex6 novo cobre 2º TBE com produção (extensão natural).
