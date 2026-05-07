@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 04 — Equilíbrio Geral em Trocas — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Aula 04 — Equilíbrio Geral em Trocas Puras</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 9</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-aula funciona</div>
+<p>Estrutura de <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção libera a próxima quando marcada como concluída. Nas conceituais, você registra confiança pré/pós e responde um micro-checkpoint obrigatório (até 3 tentativas cada item). Tempo-alvo total: <strong>90–120 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><em>Nota:</em> o tempo real depende do seu ritmo de papel-e-caneta — medimos por telemetria, sem julgar.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário canônico:</strong> tudo (material, quiz pré, quiz pós, exercícios avaliativos) fecha em <strong>quarta 20/05 às 18:00 BRT</strong>, 1h30 antes da Aula 5. Gabarito dos avaliativos: quinta 21/05 · 00:00.</p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>Seu contrato com esta pré-aula</h2>
+  <ol>
+    <li>Papel, caneta e <strong>lápis de cor</strong>. A caixa de Edgeworth se aprende com mão; pelo menos uma você desenha.</li>
+    <li>Tente os micro-checkpoints <strong>sem consultar</strong> primeiro. Errar na 1ª é dado útil.</li>
+    <li>Não pule seções. Edgeworth → Walras → 1º TBE é cadeia lógica; cortar a cadeia perde o sinal.</li>
+    <li>Se travar, registre na reflexão final. Alimenta a triagem (Bloco 0) da Aula 4 presencial.</li>
+  </ol>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi o contrato — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: LEITURA ZAE ==================== -->
+<section class="section-block locked" id="s1-leitura-zae" data-section="s1-leitura-zae" data-order="1">
+  <div class="section-meta">Seção 1 · Leitura dirigida · 25 min</div>
+  <h2>ZaE — Capítulo 14 (§14.1 a §14.7)</h2>
+  <p>Abra o <strong>Capítulo 14 — Equilíbrio Geral</strong> do livro do Prof. Darcio (<em>Microeconomia: Do Zero ao Equilíbrio (e Além)</em>). Para esta aula, foco em <strong>§14.1 a §14.7</strong>:</p>
+  <ul>
+    <li><strong>§14.1–§14.2</strong> — Sistema de Preços + Caixa de Edgeworth. Construção em $2\times 2$: dois eixos, duas origens (uma rotacionada 180°), curvas de indiferença convexas para cada origem; alocação viável $\sum_i x^i = \sum_i \omega^i$.</li>
+    <li><strong>§14.3–§14.5</strong> — Pareto-eficiência como tangência $\text{TMS}^A = \text{TMS}^B$ (interior); Curva de Contrato (lugar geométrico das alocações Pareto-eficientes; conecta as duas origens); Núcleo (subconjunto da contract curve dentro da lente de melhoria mútua passando pela dotação).</li>
+    <li><strong>§14.6–§14.7</strong> — 1º e 2º Teoremas do Bem-Estar: enunciado, hipóteses (LNS / convexidade), intuição da prova.</li>
+  </ul>
+  <p><strong>Pulam (vão para Aulas 5–6):</strong> §14.8–§14.10 (modelo matemático formal), §14.11 (CGE), §14.12 (Escolha Social — Arrow, fora da ementa MPE).</p>
+  <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.95rem"><strong>Fallback escrito da aula:</strong> se a construção da caixa de Edgeworth na aula presencial estiver visualmente acelerada, a §14.2 do ZaE tem o desenho passo-a-passo que substitui o gráfico interativo (JSXGraph para esta aula ainda não-implementado).</p>
+  <p style="margin-top:1rem"><a href="https://darciogm.github.io/micro-book/cap14/sistema-precos/" target="_blank" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:600">Abrir ZaE — Cap. 14 §14.1–§14.7 →</a></p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-leitura-zae')" style="margin-top:1.5rem">Terminei a leitura do ZaE</button>
+</section>
+
+<!-- ==================== SECTION 2: LEITURA N&S ==================== -->
+<section class="section-block locked" id="s2-leitura-ns" data-section="s2-leitura-ns" data-order="2">
+  <div class="section-meta">Seção 2 · Leitura dirigida · 25 min</div>
+  <h2>N&amp;S 12e — Capítulo 13 (§13.1, §13.2)</h2>
+  <p>Abra a 12ª edição de Nicholson &amp; Snyder. <strong>Seções obrigatórias</strong>:</p>
+  <ul>
+    <li><strong>§13.1 Perfectly Competitive Price System</strong> — definição de equilíbrio competitivo, lei de Walras, normalização de preços.</li>
+    <li><strong>§13.2 The Efficiency of Perfect Competition</strong> — 1º TBE em troca pura, enunciado do 2º TBE, hipóteses (LNS, convexidade).</li>
+  </ul>
+  <p><strong>Pulam (vão para Aulas 5 e 6):</strong> §13.3 (Production), §13.4–§13.5 (general equilibrium with production), §13.6+ (existence via Brouwer/Kakutani).</p>
+  <p><strong>Foco da leitura:</strong> em N&amp;S, a notação usa "demand functions" para Marshallianas (já vistas nas Aulas 1–3). A novidade desta aula é que <em>preço deixa de ser exógeno</em>: $p^*$ é objeto matemático que zera todos os mercados simultaneamente. Compare com ZaE — as duas formulações são equivalentes.</p>
+  <p style="margin-top:1rem">
+    <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap13.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir N&amp;S Cap. 13 (PDF) →</button>
+    <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login da plataforma.</span>
+  </p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei a leitura de N&amp;S</button>
+</section>
+
+<!-- ==================== SECTION 3: EDGEWORTH E PARETO (conceitual) ==================== -->
+<section class="section-block locked" id="s3-edgeworth" data-section="s3-edgeworth" data-order="3">
+  <div class="section-meta">Seção 3 · Conceitual · 12 min</div>
+  <h2>Caixa de Edgeworth e Pareto-eficiência</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes de estudar: quão confortável você está com a leitura da <strong>caixa de Edgeworth</strong> e a caracterização de Pareto-eficiência via tangência?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-edgeworth','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Setup.</strong> Economia de troca pura com $I = 2$ consumidores ($A$, $B$) e $L = 2$ bens. Cada consumidor $i$ tem:</p>
+    <ul>
+      <li>Preferências $\succeq^i$ representadas por $u^i: \mathbb{R}^2_+ \to \mathbb{R}$ contínua, monotônica, estritamente quase-côncava.</li>
+      <li>Dotação $\omega^i = (\omega_1^i, \omega_2^i) \in \mathbb{R}^2_{++}$.</li>
+    </ul>
+    <p>Total da economia: $\bar\omega = \omega^A + \omega^B$.</p>
+
+    <p><strong>Alocação viável.</strong> Uma alocação é $x = (x^A, x^B)$ com $x^i \in \mathbb{R}^2_+$. É <em>viável</em> se</p>
+    \[
+    x^A + x^B = \bar\omega.
+    \]
+    <p>Mercados fecham — não há criação nem destruição de recurso.</p>
+
+    <p><strong>Pareto-eficiência.</strong> Uma alocação viável $x$ é <em>Pareto-eficiente</em> se não existir outra alocação viável $\tilde x$ tal que $u^i(\tilde x^i) \ge u^i(x^i)$ para todo $i$ e $u^j(\tilde x^j) > u^j(x^j)$ para algum $j$.</p>
+
+    <p><strong>Caracterização interior.</strong> Com utilidades suaves, estritamente quase-côncavas, $x^i \gg 0$:</p>
+    \[
+    \boxed{\;x \text{ é Pareto-eficiente interior} \iff \text{TMS}^A(x^A) = \text{TMS}^B(x^B).\;}
+    \]
+    <p>Tangência das curvas de indiferença na caixa de Edgeworth.</p>
+
+    <p><strong>Caixa de Edgeworth — leitura visual.</strong></p>
+    <ul>
+      <li>Eixo horizontal: bem 1, comprimento $\bar\omega_1$.</li>
+      <li>Eixo vertical: bem 2, comprimento $\bar\omega_2$.</li>
+      <li>Origem $A$ no canto inferior-esquerdo; origem $B$ no canto superior-direito (rotacionado 180°).</li>
+      <li>Cada ponto interior $(x_1^A, x_2^A)$ é uma alocação viável; $B$ recebe $\bar\omega - x^A$.</li>
+      <li>Curvas de indiferença de $A$ são convexas para $A$; de $B$ são convexas para $B$ (parecem côncavas a olhos de $A$).</li>
+    </ul>
+
+    <p><strong>Contract curve.</strong> Conjunto das alocações Pareto-eficientes na caixa. Em economias suaves, é uma curva contínua que conecta as duas origens.</p>
+
+    <p><strong>Núcleo.</strong> Subconjunto da contract curve composto pelas alocações que (i) são individualmente racionais ($u^i(x^i) \ge u^i(\omega^i)$) e (ii) não podem ser bloqueadas por nenhuma coalizão. Em $2\times 2$, núcleo = parte da contract curve <em>dentro</em> da lente formada pelas duas curvas de indiferença passando pela dotação $\omega$.</p>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Armadilha — Pareto vs. núcleo</div>
+    <p>Pareto-eficiência só requer "ninguém pode melhorar sem outro piorar". <strong>Núcleo</strong> exige adicionalmente que cada um esteja pelo menos tão bem quanto na dotação inicial (voluntariedade). Toda alocação no núcleo é Pareto, mas nem toda Pareto está no núcleo (pode haver alguém pior que na dotação).</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s3q1" data-correct="c">
+        <div class="q-text">1. Em economia de troca pura $2\times 2$ com utilidades CD diferentes (\(u^A = x_1^{0{,}3}x_2^{0{,}7}\) e \(u^B = x_1^{0{,}7}x_2^{0{,}3}\)), a contract curve geralmente:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-edgeworth','s3q1','a',this)">(a) É a diagonal da caixa.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-edgeworth','s3q1','b',this)">(b) Contém apenas o ponto de dotação inicial.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-edgeworth','s3q1','c',this)">(c) É curva contínua dentro da caixa, conectando as duas origens; ponto a ponto satisfaz \(\text{TMS}^A = \text{TMS}^B\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-edgeworth','s3q1','d',this)">(d) Coincide com a fronteira inferior da caixa.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s3q2" data-correct="b">
+        <div class="q-text">2. Sobre a relação entre <strong>núcleo</strong> e <strong>Pareto-eficiência</strong> em economia $2\times 2$:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-edgeworth','s3q2','a',this)">(a) Coincidem sempre — todo Pareto-eficiente está no núcleo.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-edgeworth','s3q2','b',this)">(b) Núcleo \(\subseteq\) Pareto. Núcleo adiciona racionalidade individual e impossibilidade de bloqueio coalizional.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-edgeworth','s3q2','c',this)">(c) Pareto \(\subseteq\) Núcleo. Pareto é mais restritivo.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-edgeworth','s3q2','d',this)">(d) São conceitos não-relacionados.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-edgeworth','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-edgeworth" disabled onclick="MPE.completeSection('s3-edgeworth')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EQUILÍBRIO COMPETITIVO E WALRAS (conceitual) ==================== -->
+<section class="section-block locked" id="s4-walras" data-section="s4-walras" data-order="4">
+  <div class="section-meta">Seção 4 · Conceitual · 12 min</div>
+  <h2>Equilíbrio competitivo e lei de Walras</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes de ler: quão confortável está com a definição de <strong>equilíbrio competitivo</strong> e a <strong>lei de Walras</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-walras','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Tomadores de preço.</strong> Cada consumidor $i$ enfrenta preço $p = (p_1, p_2) \ge 0$, $p \neq 0$. Renda inicial: $m^i = p\cdot \omega^i$.</p>
+
+    <p><strong>UMP individual:</strong></p>
+    \[
+    x^i(p) \in \arg\max_{x \ge 0} u^i(x) \;\;\text{s.a.}\;\; p\cdot x \le p\cdot \omega^i.
+    \]
+
+    <p><strong>Excesso de demanda individual:</strong> $z^i(p) = x^i(p) - \omega^i$ (vetor; positivo onde quer comprar, negativo onde quer vender).</p>
+    <p><strong>Excesso agregado:</strong> $z(p) = \sum_i z^i(p)$.</p>
+
+    <p><strong>Lei de Walras.</strong> Por LNS, cada UMP exausta orçamento: $p\cdot x^i(p) = p\cdot \omega^i$. Então</p>
+    \[
+    p\cdot z^i(p) = 0 \;\;\forall i \implies p\cdot z(p) = \sum_i p\cdot z^i(p) = 0.
+    \]
+    <p>É <strong>identidade contábil</strong> — vale para todo $p$ onde demandas estão definidas, não apenas em equilíbrio.</p>
+
+    <p><strong>Implicação operacional.</strong> Em $L = 2$, $p_1 z_1 + p_2 z_2 = 0$. Se $p \gg 0$ e $z_1 = 0$, então $z_2 = 0$. Em geral: zerar $L - 1$ mercados ⇒ o $L$-ésimo zera. Reduz dimensão do problema.</p>
+
+    <p><strong>Homogeneidade grau 0:</strong> $z(\lambda p) = z(p)$ ⇒ podemos normalizar (ex.: $p_2 = 1$ numerário).</p>
+
+    <p><strong>Equilíbrio competitivo (EC).</strong> Par $(p^*, x^*)$ com $p^* \ge 0$, $p^* \neq 0$, tal que:</p>
+    <ol>
+      <li>Para cada $i$, $x^{*i}$ resolve o UMP em $p^*$.</li>
+      <li>$\sum_i x^{*i} = \sum_i \omega^i$ (mercados fecham).</li>
+    </ol>
+    <p>Equivalente: $z(p^*) = 0$.</p>
+
+    <p><strong>Cálculo numérico — CD simétrica.</strong> Setup: $u^A = u^B = x_1^{1/2}x_2^{1/2}$; $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, total $\bar\omega = (4, 4)$.</p>
+    <p>Demanda CD: $x_1^i = m^i/(2 p_1)$. Soma:</p>
+    \[
+    x_1^A + x_1^B = \frac{m^A + m^B}{2 p_1} = \frac{p\cdot \bar\omega}{2 p_1} = \frac{4 p_1 + 4 p_2}{2 p_1} = 2 + \frac{2 p_2}{p_1}.
+    \]
+    <p>Mercado 1 fecha em $\bar\omega_1 = 4$:</p>
+    \[
+    2 + \frac{2 p_2}{p_1} = 4 \implies \frac{p_2}{p_1} = 1.
+    \]
+    <p>Equilíbrio: $p^* = (1, 1)$ (com $p_2 = 1$). Alocação: $x^{A*} = (2, 2)$, $x^{B*} = (2, 2)$.</p>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Armadilha — Walras vale só em equilíbrio?</div>
+    <p>Não. Walras $p\cdot z(p) = 0$ é <strong>identidade contábil</strong> que vem do exauste orçamentário individual (LNS). Vale em qualquer $p \gg 0$ onde demandas estão definidas. Equilíbrio é mais forte: $z(p^*) = 0$ (cada componente, não só o produto interno).</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s4q1" data-correct="b">
+        <div class="q-text">1. A lei de Walras $p\cdot z(p) = 0$ vale porque:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q1','a',this)">(a) Mercados sempre fecham — oferta = demanda em qualquer $p$.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q1','b',this)">(b) Cada consumidor exausta orçamento ($p\cdot x^i = p\cdot \omega^i$) por monotonicidade/LNS, então $p\cdot z^i = 0$ e a soma agregada também.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-walras','s4q1','c',this)">(c) Preços são positivos.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-walras','s4q1','d',this)">(d) Bens são todos normais.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s4q2" data-correct="a">
+        <div class="q-text">2. Em $L = 2$ bens com preços estritamente positivos, qual a implicação operacional da lei de Walras para encontrar EC?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q2','a',this)">(a) Basta resolver $z_1(p) = 0$ — a lei de Walras garante que $z_2(p) = 0$ automaticamente.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q2','b',this)">(b) Precisa-se resolver as duas equações $z_1 = 0$ e $z_2 = 0$ simultaneamente.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-walras','s4q2','c',this)">(c) É preciso impor adicionalmente $\sum p_\ell = 1$.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-walras','s4q2','d',this)">(d) Walras só vale em CD.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-walras','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-walras" disabled onclick="MPE.completeSection('s4-walras')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: 1º TBE e teaser do 2º TBE (conceitual) ==================== -->
+<section class="section-block locked" id="s5-tbe" data-section="s5-tbe" data-order="5">
+  <div class="section-meta">Seção 5 · Conceitual · 18 min</div>
+  <h2>1º Teorema do Bem-Estar e teaser do 2º TBE</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes de estudar: quão confortável está com a <strong>demonstração</strong> do 1º TBE e a distinção entre 1º e 2º TBE?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-tbe','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <p><strong>Não-saciedade local (LNS).</strong> Para todo $x^i$ e toda vizinhança $U$ de $x^i$, existe $\tilde x^i \in U$ com $u^i(\tilde x^i) > u^i(x^i)$. Mais geral que monotonicidade estrita, mas suficiente para garantir exauste de orçamento individual.</p>
+
+    <p><strong>1º Teorema do Bem-Estar (1º TBE).</strong> Em troca pura com LNS, todo equilíbrio competitivo $(p^*, x^*)$ é Pareto-eficiente.</p>
+
+    <p><strong>Demonstração linha-a-linha.</strong> Por contradição. Suponha que $x^*$ NÃO é Pareto. Então existe alocação viável $\tilde x$ tal que $u^i(\tilde x^i) \ge u^i(x^{*i})$ para todo $i$ e $u^j(\tilde x^j) > u^j(x^{*j})$ para algum $j$.</p>
+
+    <p><strong>Passo 1.</strong> Para o $j$ estritamente melhor: $\tilde x^j$ deve estar fora do orçamento, ou seja</p>
+    \[
+    p^*\cdot \tilde x^j > p^*\cdot \omega^j.
+    \]
+    <p>(Razão: se cabia no orçamento, então $x^{*j}$ não maximizaria — contradição com UMP de $x^{*j}$.)</p>
+
+    <p><strong>Passo 2 (LNS aqui).</strong> Para $i \neq j$: $u^i(\tilde x^i) \ge u^i(x^{*i})$, podemos ter igualdade. Por LNS, existe $\hat x^i$ próximo de $\tilde x^i$ com $u^i(\hat x^i) > u^i(\tilde x^i)$. Se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, por continuidade $\hat x^i$ ainda cabe no orçamento, e $u^i(\hat x^i) > u^i(x^{*i})$ — contradiz UMP. Logo</p>
+    \[
+    p^*\cdot \tilde x^i \ge p^*\cdot \omega^i \;\;\forall i \neq j.
+    \]
+
+    <p><strong>Passo 3.</strong> Somando passos 1 e 2:</p>
+    \[
+    \sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i.
+    \]
+    <p>Mas $\tilde x$ viável: $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i$. <strong>Contradição.</strong> $\blacksquare$</p>
+
+    <p><strong>Onde LNS é insubstituível.</strong> Apenas no passo 2. Sem LNS, alguém pode ser indiferente entre $\tilde x^i$ e $x^{*i}$ sem que vizinhança preferida exista, e o argumento quebra. Construção típica de contraexemplo: utilidade satura localmente em algum bem.</p>
+
+    <p><strong>2º Teorema do Bem-Estar — teaser preliminar.</strong> Sob convexidade (preferências convexas + viabilidade convexa), toda alocação Pareto-eficiente $x^*$ pode ser implementada como equilíbrio competitivo de uma economia obtida por <strong>redistribuição lump-sum</strong> das dotações iniciais. Hipótese-chave: convexidade. Sem ela: retornos crescentes, indivisibilidades — Aulas 5–9 discutem.</p>
+
+    <div class="admonition note" style="border-left:4px solid #1B3A5C">
+    <div class="admonition-title">🇧🇷 Box Brasil — eficiência ≠ equidade</div>
+    <p>Reforma tributária (EC 132/2023) opera no espírito do 2º TBE: "preserve eficiência de mercado" (1º TBE) "mas redistribua lump-sum via cashback" (2º TBE preliminar). Implementação real é imperfeita (cashback não é estritamente lump-sum), mas o esqueleto teórico é claro: eficiência via mercado + redistribuição via instrumento separado.</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (3 itens)</h3>
+
+      <div class="micro-q" data-q="s5q1" data-correct="b">
+        <div class="q-text">1. O 1º TBE em troca pura usa qual hipótese estrutural sobre preferências?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe','s5q1','a',this)">(a) Convexidade.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe','s5q1','b',this)">(b) Não-saciedade local (LNS).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe','s5q1','c',this)">(c) Homotetia.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe','s5q1','d',this)">(d) Continuidade apenas.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s5q2" data-correct="b">
+        <div class="q-text">2. Sobre o 2º TBE preliminar:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe','s5q2','a',this)">(a) Diz que toda alocação Pareto já é EC sem mexer em nada.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe','s5q2','b',this)">(b) Diz que toda alocação Pareto pode ser implementada como EC após redistribuição lump-sum, sob convexidade.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe','s5q2','c',this)">(c) É consequência direta do 1º TBE — sai de graça.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe','s5q2','d',this)">(d) Vale apenas em CD.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s5q3" data-correct="b">
+        <div class="q-text">3. Em CD simétrica $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, o equilíbrio competitivo tem:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe','s5q3','a',this)">(a) $p_1^*/p_2^* = 3$ (escassez relativa de bem 1 para $A$).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe','s5q3','b',this)">(b) $p_1^*/p_2^* = 1$ — total simétrico, preferências simétricas.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe','s5q3','c',this)">(c) $p_1^*/p_2^* = 1/3$.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe','s5q3','d',this)">(d) Não há EC — apenas núcleo.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-tbe','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-tbe" disabled onclick="MPE.completeSection('s5-tbe')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: EXERCÍCIOS DE PAPEL ==================== -->
+<section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="6">
+  <div class="section-meta">Seção 6 · Exercícios de papel · 15 min</div>
+  <h2>Prestação de contas</h2>
+  <p>Resolva os <strong>dois primeiros</strong> exercícios propostos abaixo no papel — são <em>obrigatórios</em>. O terceiro (verificação do 1º TBE numérica) é <em>bônus</em>. Marque <em>concluí</em> e descreva sua abordagem em 1–3 linhas.</p>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 1 — EC em CD com dotação extrema (obrigatório)</h3>
+    <p class="ex-statement">Considere economia de troca pura com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (10, 0)$ (só tem bem 1), $\omega^B = (0, 10)$ (só tem bem 2). (a) Encontre o EC (preço relativo + alocação $x^{A*}$ e $x^{B*}$). (b) Esboce na caixa de Edgeworth: dotação inicial, alocação de equilíbrio, curvas de indiferença em ambos os pontos. (c) Verifique numericamente que $\text{TMS}^A(x^{A*}) = \text{TMS}^B(x^{B*})$.</p>
+    <label class="done-check"><input type="checkbox" id="ex61-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
+    <textarea id="ex61-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 2 — EC em economia com Leontief (obrigatório)</h3>
+    <p class="ex-statement">Mesma economia do Ex 1, mas agora $u^A = x_1^{1/2}x_2^{1/2}$ e $u^B = \min\{x_1, x_2\}$ (Leontief). (a) Calcule a demanda Marshalliana de cada consumidor como função de $p_1/p_2$. (b) Encontre o EC. (c) Comente sobre a unicidade — é única, há multiplicidade, ou degenera?</p>
+    <label class="done-check"><input type="checkbox" id="ex62-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
+    <textarea id="ex62-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 3 (bônus) — Verificação numérica do 1º TBE</h3>
+    <p class="ex-statement">No EC do Exercício 1, mostre passo-a-passo o argumento do 1º TBE: assuma $\exists \tilde x$ viável e Pareto-superior; aplique passo 1 (custa mais para o $j$ estritamente melhor) e passo 2 (LNS para os $i$ fracamente melhores); some e contradiga viabilidade.</p>
+    <label class="done-check"><input type="checkbox" id="ex63-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
+    <textarea id="ex63-approach" placeholder="Opcional — 1-3 linhas (ex.: 'Construo $\\tilde x = (\\hat x^A, \\hat x^B)$, mostro que $p^*\\cdot \\hat x^j > p^*\\cdot \\omega^j$ por UMP...')." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s6-exercicios" disabled onclick="MPE.completePaperExercises()">Registrar e avançar</button>
+</section>
+
+<!-- ==================== SECTION 7: CHECKPOINT FINAL ==================== -->
+<section class="section-block locked" id="s7-checkpoint" data-section="s7-checkpoint" data-order="7">
+  <div class="section-meta">Seção 7 · Checkpoint de síntese · 10 min</div>
+  <h2>Checkpoint final — 3 itens de síntese</h2>
+  <p>Estes 3 itens conectam <strong>Edgeworth + Walras + 1º TBE</strong>. Fechado, sem consulta.</p>
+
+  <div class="quiz-container">
+    <div class="quiz-header"><h3>Checkpoint Pré-Aula 04</h3>
+    <div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+
+    <div class="quiz-question" data-question="q1" data-correct="b">
+    <div class="q-text">Q1 (síntese — Edgeworth/Pareto). Em economia $2\times 2$ de troca pura com utilidades suaves estritamente quase-côncavas, a contract curve geralmente:</div>
+    <div class="quiz-option" data-value="a">(a) É segmento de reta ligando os dois cantos da caixa.</div>
+    <div class="quiz-option" data-value="b">(b) É curva contínua dentro da caixa, conectando as duas origens; ponto a ponto satisfaz \(\text{TMS}^A = \text{TMS}^B\).</div>
+    <div class="quiz-option" data-value="c">(c) É o ponto único de tangência.</div>
+    <div class="quiz-option" data-value="d">(d) Coincide com a diagonal da caixa.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-question" data-question="q2" data-correct="b">
+    <div class="q-text">Q2 (síntese — Walras/EC). Em $L = 3$ bens com $p \gg 0$, a lei de Walras implica que para resolver EC basta zerar:</div>
+    <div class="quiz-option" data-value="a">(a) Os 3 mercados simultaneamente — três equações independentes.</div>
+    <div class="quiz-option" data-value="b">(b) Quaisquer 2 dos 3 mercados — o terceiro fecha automaticamente por Walras.</div>
+    <div class="quiz-option" data-value="c">(c) Apenas o bem numerário.</div>
+    <div class="quiz-option" data-value="d">(d) A média $(z_1 + z_2 + z_3)/3 = 0$.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-question" data-question="q3" data-correct="b">
+    <div class="q-text">Q3 (síntese — 1º TBE). Em economia de troca pura com LNS, o argumento do 1º TBE consiste em:</div>
+    <div class="quiz-option" data-value="a">(a) Mostrar que toda alocação Pareto-eficiente é EC (essa é a recíproca — 2º TBE).</div>
+    <div class="quiz-option" data-value="b">(b) Assumir contradição: \(\exists \tilde x\) Pareto-superior; usar UMP individual + LNS para mostrar que custa mais que dotação para todos; agregar e contradizer viabilidade.</div>
+    <div class="quiz-option" data-value="c">(c) Provar existência via Brouwer.</div>
+    <div class="quiz-option" data-value="d">(d) Aplicar Slutsky agregada.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-04'); MPE.completeSection('s7-checkpoint')">Enviar Checkpoint</button></div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 8: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s8-reflexao" data-section="s8-reflexao" data-order="8">
+  <div class="section-meta">Seção 8 · Reflexão qualitativa · 3 min</div>
+  <h2>Fechamento — suas dúvidas alimentam o Bloco 0 da aula</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas entram no <em>dashboard</em> do professor e orientam a triagem na abertura da Aula 4.</p>
+
+  <div class="reflection-block">
+    <label>Que conceito ou passagem ainda está <strong>nebuloso</strong> pra você?</label>
+    <textarea id="refl-nebulosa" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Não consigo justificar por que LNS aparece no passo 2 do 1º TBE' ou 'Como lê tangência $\text{TMS}^A = \text{TMS}^B$ na caixa rotacionada?'"></textarea>
+    <div class="help">Seja específico: cite conceito, equação ou passagem. Respostas tipo "nada" ou "tudo ok" zeram o campo.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>Qual ponto você quer ver <strong>discutido em sala</strong>?</label>
+    <textarea id="refl-aula" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'EC é único?' ou 'Exemplo brasileiro de troca pura concreto'"></textarea>
+    <div class="help">Essa resposta informa a agenda do Bloco 0. Quanto mais aparece, mais tempo ocupa em sala.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s8-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-aula</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-aula 4 concluída</h2>
+  <p>Você cumpriu o contrato: leitura, conceitual, exercícios de papel, checkpoint, reflexão. O dashboard do professor registrou tudo.</p>
+  <p style="margin-top:1rem"><strong>Próxima aula:</strong> quarta, 13/05/2026, 19:30. Chegue 5 minutos antes.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Não esqueça do <a href="aula-04-pre.html" style="color:#fff;text-decoration:underline">quiz de revisão pré-aula 4</a> (10 questões 🟡). Prazo canônico: 20/05 às 18h.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-04');
+MicroQuiz.init('aula-04');
+
+var PAGE_ID = 'aula-04';
+var TOTAL_SECTIONS = 9; // s0..s8
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updatePaperState: function() {
+    var done61 = document.getElementById('ex61-done').checked;
+    var done62 = document.getElementById('ex62-done').checked;
+    var app61 = document.getElementById('ex61-approach').value.trim();
+    var app62 = document.getElementById('ex62-approach').value.trim();
+    var ok = done61 && done62 && app61.length >= 10 && app62.length >= 10;
+    document.getElementById('complete-s6-exercicios').disabled = !ok;
+  },
+  completePaperExercises: function() {
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-1', document.getElementById('ex61-approach').value.trim());
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-2', document.getElementById('ex62-approach').value.trim());
+    var app63 = document.getElementById('ex63-approach').value.trim();
+    if (app63.length > 0) MicroTracker.recordPaperExercise(PAGE_ID, 'ep-3', app63);
+    this.completeSection('s6-exercicios');
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-nebulosa').value.trim();
+    var b = document.getElementById('refl-aula').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s8-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'nebulosa', document.getElementById('refl-nebulosa').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'aula', document.getElementById('refl-aula').value.trim());
+    this.completeSection('s8-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    var completedCount = 0;
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+        completedCount++;
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  },
+
+  openMaterial: function(fileName, btnEl) {
+    if (!window.MpeDB || !window.MpeDB.enabled) {
+      alert('Conexao com a plataforma indisponivel. Recarregue a pagina.');
+      return;
+    }
+    var originalText = btnEl ? btnEl.innerHTML : null;
+    if (btnEl) { btnEl.disabled = true; btnEl.innerHTML = 'Abrindo...'; }
+    window.MpeDB.openCourseMaterial(fileName).then(function(res) {
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = originalText; }
+      if (!res.ok) {
+        console.error('[openMaterial] falha:', res.error);
+        alert('Nao foi possivel abrir o material. Verifique se voce esta logado e tente novamente.');
+      }
+    });
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>

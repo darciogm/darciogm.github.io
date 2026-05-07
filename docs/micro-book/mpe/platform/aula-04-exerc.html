@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 04 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 04</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Equilíbrio Geral em Trocas Puras (Edgeworth, EC, lei de Walras, 1º TBE, 2º TBE preliminar)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 20/05 às 18:00</strong> — 1h30 antes da Aula 5. <em>Calendário canônico</em>.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 21/05 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-04-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 04">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">EC em Cobb-Douglas simétrica: o caso canônico</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia de troca pura com $I = 2$ consumidores e $L = 2$ bens. Preferências $u^A = u^B = x_1^{1/2}\,x_2^{1/2}$. Dotações $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, total $\bar\omega = (4, 4)$. Numerário $p_2 = 1$.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A demanda Marshalliana de $A$ como função de $p_1$ (com $p_2 = 1$) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) $x_1^A = 3$, $x_2^A = 1$ (autarquia).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) $x_1^A = (3 p_1 + 1)/(2 p_1)$, $x_2^A = (3 p_1 + 1)/2$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) $x_1^A = 1/p_1$, $x_2^A = 1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) $x_1^A = 4$, $x_2^A = 0$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> Resolvendo o mercado 1, o preço de equilíbrio $p_1^*$ vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) $p_1^* = 1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) $p_1^* = 3$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) $p_1^* = 1/3$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) Não existe — economia inviável.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> A alocação de equilíbrio $(x^{A*}, x^{B*})$ é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) $(3, 1), (1, 3)$ — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) $(2, 2), (2, 2)$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) $(4, 0), (0, 4)$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) Indeterminada — múltiplos equilíbrios.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> A alocação $(2, 2), (2, 2)$ está na contract curve porque:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) $\text{TMS}^A = x_2^A/x_1^A = 1 = x_2^B/x_1^B = \text{TMS}^B$ — tangência das IC.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) $u^A = u^B$ — utilidades iguais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) $x^A = x^B$ — alocações iguais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) Está na fronteira da caixa.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> EC em CD simétrica com dotações invertidas: simetria total leva a preço relativo unitário e alocação igualitária. Cada um troca uma unidade do bem que tem mais. Verificação Pareto via tangência ($\text{TMS}^A = \text{TMS}^B$).</p>
+      <p><strong>2. Derivação.</strong> Demanda CD: $x_\ell^i = (1/2)\,m^i/p_\ell$, $m^A = 3 p_1 + 1$ (em $p_2 = 1$). $x_1^A = (3 p_1 + 1)/(2 p_1)$. Mercado 1: soma $A + B = (3 p_1 + 1)/(2 p_1) + (p_1 + 3)/(2 p_1) = (4 p_1 + 4)/(2 p_1) = 2 + 2/p_1$. Igualar a 4: $p_1^* = 1$. Em $p_1^* = 1$: $x_1^A = 4/2 = 2$, $x_2^A = 4/2 = 2$. $\text{TMS}^A = x_2^A/x_1^A = 1 = \text{TMS}^B$.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i) confunde dotação com EC. Item (b)(ii)/(iii) usa fórmulas erradas. Item (c)(iii) extrapola para fronteira. Item (d)(ii)/(iii) confundem Pareto com igualdade — Pareto é tangência, não igualdade.</p>
+      <p><strong>4. Extensão.</strong> Verificação por Walras: $z_1 = 0$ ⇒ $z_2 = 0$ automaticamente. Em CD com $\alpha$ assimétrico ou dotações desbalanceadas (Exercício 2), $p_1^* \neq 1$.</p>
+      <p><strong>5. Peer-review.</strong> Exercício de calibração — testa toda a maquinaria da Aula 4 num caso onde a resposta sai limpa. Aluno que erra (a) tem dificuldade com demanda CD (Aula 1); quem erra (d) confunde Pareto com igualdade. Calibre 🟢.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">EC em CD assimétrica: preço relativo informativo</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Mesma economia básica, agora com $u^A = x_1^{2/3} x_2^{1/3}$ ($A$ valoriza relativamente mais o bem 1) e $u^B = x_1^{1/3} x_2^{2/3}$ ($B$ valoriza relativamente mais o bem 2). Dotações $\omega^A = (1, 4)$, $\omega^B = (3, 0)$. Total $\bar\omega = (4, 4)$. Numerário $p_2 = 1$.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A renda de $B$ em equilíbrio (em função de $p_1$, com $p_2 = 1$) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) $m^B = 4$ — só tem bem 1.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) $m^B = 3 p_1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) $m^B = p_1 + 4$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) $m^B = 4$ — independente de preços.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A demanda Marshalliana de $A$ pelo bem 1, como função de $p_1$ (com $p_2 = 1$), é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) $x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) $x_1^A = (1/3)(p_1 + 4)/p_1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) $x_1^A = 1$ — só tem 1 unidade na dotação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) $x_1^A = 4/p_1$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A demanda Marshalliana de $B$ pelo bem 1, como função de $p_1$, é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) $x_1^B = 3$ (toda a dotação).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) $x_1^B = (1/3)\cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — constante (não depende de $p_1$).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) $x_1^B$ depende de $p_2$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii). [Nota: alternativas (ii) e (iii) chegam ao mesmo valor numérico, mas (iii) explicita que a dependência de $p_1$ se cancela.]</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Fechando mercado 1 ($x_1^A + x_1^B = 4$), o preço $p_1^*$ é (com $p_2 = 1$):</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) $p_1^* = 1$ — simetria.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) $p_1^* = 8/7 \approx 1{,}143$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) $p_1^* = 8/5 = 1{,}6$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) $p_1^* = 4$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii). Mercado 1: $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7$.</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Por que $p_1^* > 1$ neste caso?</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) $A$ tem mais renda que $B$ — só por isso.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Demanda relativa por bem 1 é "alta" (porque $A$ ama bem 1 e tem pouco) e a oferta agregada é fixa em $\bar\omega_1 = 4$. O ajuste ocorre via preço relativo: $p_1$ sobe relativo a $p_2$ para zerar excesso.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Walras é violada — sistema não fecha em $p_1 = 1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) CD com $\alpha \neq 1/2$ sempre tem $p_1 \neq p_2$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> Preço relativo no EC reflete demanda (preferências) e oferta (dotações). Quando o consumidor que mais valoriza um bem é também o que tem menos dele, preço relativo sobe. Aqui, $A$ adora bem 1 ($\alpha_1^A = 2/3$) mas só tem 1 unidade na dotação; $B$ tem 3 unidades de bem 1 mas valoriza menos ($\alpha_1^B = 1/3$). Resultado: $p_1$ caro.</p>
+      <p><strong>2. Derivação.</strong> $m^A = p_1 + 4$. $x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $m^B = 3 p_1$. $x_1^B = (1/3)(3 p_1)/p_1 = 1$ — observe o cancelamento de $p_1$. Mercado 1: $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7 \approx 1{,}143$. Alocação: $x_1^A = 2/3 + 8/(3\cdot 8/7) = 2/3 + 7/3 = 3$. $x_2^A = (1/3)\,m^A = (1/3)(8/7 + 4) = (1/3)(36/7) = 12/7 \approx 1{,}71$. $x_1^B = 1$. $x_2^B = (2/3)\,m^B = (2/3)(3\cdot 8/7) = 16/7 \approx 2{,}29$. Verificação: $3 + 1 = 4$ ✓; $12/7 + 16/7 = 28/7 = 4$ ✓.</p>
+      <p><strong>3. Armadilha.</strong> (a)(i) confunde renda com utilidade marginal. (b)(ii) usa $\alpha$ de $B$ no consumo de $A$. (c) é sutil: a alternativa (iii) explicita que $x_1^B$ não depende de $p_1$ — observação-chave para fechar o mercado. (d)(iii) é distrator com aritmética alternativa que parece plausível.</p>
+      <p><strong>4. Extensão.</strong> Verificação Pareto: $\text{TMS}^A = (\alpha_1^A/\alpha_2^A)(x_2^A/x_1^A) = 2\cdot (12/7)/3 = 24/21 = 8/7$. $\text{TMS}^B = (1/2)(16/7)/1 = 8/7$. ✓ Tangência. Coincidência: $\text{TMS}^* = p_1^*/p_2^* = 8/7$ — propriedade canônica de UMP em ponto interior.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno deve fluir em CD com $\alpha$ assimétrico e dotação extrema. O cancelamento de $p_1$ no $x_1^B$ é o ponto sutil — quem perde isso, erra (c) ou (d). Aritmética cuidadosa para chegar em $p_1^* = 8/7$.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">EC com preferências Leontief: o caso degenerado</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia $2\times 2$ com $u^A = x_1^{1/2}x_2^{1/2}$ (CD) e $u^B = \min\{x_1, x_2\}$ (Leontief). Dotações $\omega^A = (10, 0)$, $\omega^B = (0, 10)$. Total $\bar\omega = (10, 10)$. Numerário $p_2 = 1$.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A demanda Marshalliana de $A$ (CD) com $m^A = 10 p_1$, $p_2 = 1$:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) $x_1^A = 10$, $x_2^A = 0$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) $x_1^A = 5$, $x_2^A = 5 p_1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) $x_1^A = 5/p_1$, $x_2^A = 5$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) $x_1^A = 10/(2 p_1)$, $x_2^A = 10$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii). $x_1^A = (1/2)\,m^A/p_1 = (10 p_1)/(2 p_1) = 5$; $x_2^A = (1/2)\,m^A/p_2 = 10 p_1/2 = 5 p_1$.</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A demanda Marshalliana de $B$ (Leontief), com $m^B = 10$ (em $p_2 = 1$, $\omega^B = (0, 10)$):</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) $x_1^B = x_2^B = 5$ — independente de $p_1$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) $x_1^B = x_2^B = 10/(p_1 + 1)$ (Leontief escolhe $x_1 = x_2$, restrição orçamentária $p_1 x_1 + 1\cdot x_1 = 10$).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) $x_1^B = 10/p_1$, $x_2^B = 10$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) $x_1^B = 0$, $x_2^B = 10$ — autarquia.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Fechando mercado 1 ($x_1^A + x_1^B = 10$), o preço de equilíbrio $p_1^*$ é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) $p_1^* = 1$ — simetria total entre os dois consumidores.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) $p_1^* = 2$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) $p_1^* = 1/2$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) Não há EC.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i). Mercado 1: $5 + 10/(p_1 + 1) = 10 \implies 10/(p_1 + 1) = 5 \implies p_1 + 1 = 2 \implies p_1^* = 1$.</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A alocação de equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) $x^A = (10, 0)$, $x^B = (0, 10)$ — autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) $x^A = (10, 10)$, $x^B = (0, 0)$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) $x^A = (5, 5)$, $x^B = (5, 5)$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) $x^A = (3, 7)$, $x^B = (7, 3)$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii). Em $p_1^* = 1$: $x_1^A = 5$, $x_2^A = 5\cdot 1 = 5$; $x_1^B = x_2^B = 10/2 = 5$.</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre a unicidade do EC nesta economia:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) Múltiplos equilíbrios — Leontief gera multiplicidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) Único — em $p_1^* = 1$, ambas as demandas são bem-definidas e o sistema fecha; preferências CD garantem singularidade do EC interior.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) Não-existente — Leontief impede EC.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) Único apenas se $\alpha = 1/2$ na CD.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Misturar CD com Leontief é exercício canônico de EC heterogêneo. CD entrega forma fechada parametrizada por $p$; Leontief entrega proporcionalidade $x_1 = x_2$ via UMP em forma "L". Equilíbrio fecha quando os dois bem-respeitam Walras.</p>
+      <p><strong>2. Derivação.</strong> $A$ (CD): $x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5$ (constante!), $x_2^A = m^A/(2 p_2) = 5 p_1$. $B$ (Leontief): $x_1^B = x_2^B$ + restrição orçamentária $p_1 x_1^B + p_2 x_2^B = m^B \implies (p_1 + 1) x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)$. Mercado 1: $5 + 10/(p_1 + 1) = 10 \implies p_1^* = 1$. Alocação: ambos consomem $(5, 5)$.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i) ignora estrutura CD. Item (b)(i) ignora dependência de $p_1$. Item (d)(i) ou (ii) ignoram que comércio acontece. Item (e)(i) confunde Leontief com não-unicidade — em $L = 2$ com Leontief num único consumidor e CD no outro, EC é único.</p>
+      <p><strong>4. Extensão.</strong> Em economia com vários consumidores Leontief com proporções diferentes, multiplicidade pode aparecer (curva de oferta-demanda agregada com "platô"). Aula 6 detalha.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Mistura de formas funcionais. Quem marca (a)(i) ou (e)(i) ainda não internalizou o algoritmo de EC: (1) escrever demandas individuais, (2) somar e igualar à dotação total, (3) resolver para $p$.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">1º TBE: estrutura da prova e papel exato de LNS</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a prova padrão do 1º Teorema do Bem-Estar (1º TBE) em economia de troca pura. Cada uma das afirmações abaixo refere-se a um aspecto da estrutura ou do papel das hipóteses.</p>
+      <ul>
+        <li><strong>A.</strong> A prova é por contradição: assume-se $\exists \tilde x$ viável e Pareto-superior, e mostra-se que $\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i$, contradizendo viabilidade.</li>
+        <li><strong>B.</strong> Para o $j$ estritamente melhor: o argumento é "se $\tilde x^j$ cabia no orçamento, $x^{*j}$ não maximizava".</li>
+        <li><strong>C.</strong> Para os $i \neq j$ fracamente melhores: <strong>LNS é necessária</strong>; sem ela, $i$ pode ter $\tilde x^i$ indiferente a $x^{*i}$ com gasto estritamente menor.</li>
+        <li><strong>D.</strong> A hipótese de <strong>convexidade</strong> das preferências é essencial para o 1º TBE.</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A afirmação A é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) Verdadeira — é o esqueleto da prova padrão.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) Verdadeira em CD apenas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) Falsa — a prova é construtiva, não por contradição.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) Verdadeira em economia $2\times 2$ apenas.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A afirmação B é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) Verdadeira — segue diretamente da definição de UMP.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) Falsa — UMP não impede que cestas mais preferidas estejam no orçamento.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) Verdadeira apenas em quase-linear.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) Falsa — argumento exige LNS para $j$ também.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A afirmação C é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Verdadeira — LNS é hipótese-mínima precisamente para fechar o passo 2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Falsa — passo 2 não exige LNS, basta UMP.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Verdadeira em CD apenas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Falsa — passo 2 segue da convexidade.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A afirmação D é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) Verdadeira — convexidade entra no 1º TBE.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) Falsa — convexidade é hipótese do 2º TBE, não do 1º. 1º TBE precisa apenas de LNS.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Verdadeira em troca pura, falsa em produção.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Verdadeira em $L = 2$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="d" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Considere economia onde $A$ tem $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (saciada em bem 1 acima de 1). Sobre o 1º TBE:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) Vale sem ressalvas — utilidade é contínua.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) Vale por convexidade — preferências de $A$ são convexas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) Não se aplica — preferências precisam ser estritamente quase-côncavas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) <strong>Pode falhar se a alocação de equilíbrio cair na região saciada</strong> ($x_1^{A*} > 1$); LNS é violada lá. Se o EC ocorre em $x_1^{A*} \le 1$, o teorema permanece válido (LNS é hipótese local).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iv).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> 1º TBE tem 3 passos: contradição → passo 1 (UMP para $j$ estritamente melhor) → passo 2 (LNS para $i$ fracamente melhor) → soma e contradiz viabilidade. LNS aparece exatamente no passo 2 e é hipótese local. Convexidade é do 2º TBE, não 1º.</p>
+      <p><strong>2. Derivação.</strong> Passo 1: $u^j(\tilde x^j) > u^j(x^{*j})$ + UMP de $x^{*j}$ ⇒ $p^*\cdot \tilde x^j > p^*\cdot \omega^j$. Passo 2: por LNS, vizinhança de $\tilde x^i$ contém $\hat x^i$ estritamente preferida; se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, continuidade ⇒ $\hat x^i$ ainda no orçamento ⇒ contradiz UMP de $x^{*i}$. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. Soma + viabilidade ⇒ contradição.</p>
+      <p><strong>3. Armadilha.</strong> (d)(i): erro mais comum, "convexidade ⇒ 1º TBE" — falso. Convexidade entra apenas no 2º TBE (Hahn-Banach). (e)(i): ignora violação de LNS na saciedade. (e)(iv) é a leitura correta — LNS é local.</p>
+      <p><strong>4. Extensão.</strong> Construções limpas de contraexemplo do 1º TBE sem LNS exigem que o EC caia precisamente na região saciada. MWG §16.D fornece exemplos. No mestrado profissional, lição metodológica (LNS local) é mais relevante que construção.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 — exige distinção limpa entre 1º e 2º TBE e fluência com a estrutura da prova. Aluno que marca (d)(i) ainda não separou os dois teoremas.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Lei de Walras, normalização e dimensionalidade do sistema</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Em economia de troca pura com $L = 3$ bens, $I$ consumidores quaisquer, preferências satisfazendo LNS. Considere o sistema $z(p) = (z_1, z_2, z_3) = 0$ ($L = 3$ equações, $L = 3$ incógnitas $p_1, p_2, p_3$).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A lei de Walras, em sua forma genérica, diz:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) $z_1(p) + z_2(p) + z_3(p) = 0$ — soma simples zera.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) $p_1 z_1(p) + p_2 z_2(p) + p_3 z_3(p) = 0$ para todo $p \gg 0$ — combinação ponderada por preços zera.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) $z(p) = 0$ identicamente — todos os mercados sempre fechados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) $\sum_i p\cdot \omega^i = m_{\text{total}}$.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Se em $\hat p \gg 0$ temos $z_1(\hat p) = 0$ e $z_2(\hat p) = 0$:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) $\hat p$ é necessariamente um EC: $z_3(\hat p) = 0$ por Walras.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) $z_3(\hat p)$ pode ser qualquer valor — Walras não pinned $z_3$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) $\hat p$ é EC só se $\hat p_3 = 0$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) Walras é violada — sistema é inconsistente.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> A homogeneidade grau 0 de $z(p)$ implica que o conjunto de EC é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) Sempre único.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) Cone aberto: se $p^*$ é EC, então $\lambda p^*$ também é, para $\lambda > 0$. Por isso normaliza-se ($p_3 = 1$ ou $\sum p_\ell = 1$).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) Sempre vazio em $L \ge 3$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) Toda a região positiva — todos os $p \gg 0$ são EC.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Em $L = 3$ bens com normalização $p_3 = 1$, o sistema $z(p) = 0$ tem efetivamente:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) 3 equações independentes em 3 incógnitas livres.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) 3 equações em 2 incógnitas livres ($p_1, p_2$ — $p_3$ fixo) — sistema sobre-determinado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) 2 equações independentes (Walras remove 1) em 2 incógnitas livres ($p_1, p_2$) — sistema bem-posto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) 1 equação em 3 incógnitas — sub-determinado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Em economia com $L = 100$ bens, com $p \gg 0$ no EC, o número de equações independentes que precisam ser resolvidas para encontrar EC é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) 100 — todos os mercados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) 99 — Walras remove 1; normalizar (ex.: $p_{100} = 1$) deixa 99 incógnitas livres.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) 50 — metade dos mercados.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) 1 — apenas o numerário.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> Walras é identidade contábil que vem do exauste do orçamento individual; reduz dimensão do sistema $z(p) = 0$ em 1. Homogeneidade grau 0 reduz mais 1 dimensão (normalização). Em $L$ bens: $L - 1$ equações independentes para $L - 1$ preços livres.</p>
+      <p><strong>2. Derivação.</strong> Walras: por LNS, $p\cdot x^i(p) = p\cdot \omega^i$ ⇒ $p\cdot z(p) = 0$ identicamente. Implicação: zerar $L - 1$ ⇒ o $L$-ésimo zera. Homogeneidade: $z(\lambda p) = z(p)$ ⇒ $\{ \lambda p^* : \lambda > 0 \}$ é cone de equilíbrios; normalizar ($p_L = 1$) escolhe representante. Em $L = 3$ com $p_3 = 1$: $z_1(p_1, p_2, 1) = 0$ e $z_2(p_1, p_2, 1) = 0$ — 2 equações para 2 incógnitas. Por Walras, $z_3 = 0$ automaticamente. Em $L = 100$: 99 equações para 99 preços relativos.</p>
+      <p><strong>3. Armadilha.</strong> (a)(i): confunde Walras com soma simples. (a)(iii): confunde identidade com EC. (b)(ii): ignora redundância. (c)(i): ignora cone (homogeneidade). (d)(ii): conta equações vs. incógnitas sem aplicar Walras. (e)(iv): confunde "numerário" (livre escolha) com "fechamento" (Walras).</p>
+      <p><strong>4. Extensão.</strong> Em economia com produção (Aula 5), Walras estende com lucros das firmas. Em Arrow-Debreu (Aula 6), Walras estende para bens contingentes. A redução dimensional via Walras + homogeneidade é estrutura universal de teoria de equilíbrio (MWG cap. 17).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Mecânica de Walras + homogeneidade. Aluno que marca (a)(i) confunde Walras com soma simples; quem marca (d)(i) ou (d)(ii) não internalizou Walras como redutor dimensional. Resultado canônico em qualquer texto de teoria de equilíbrio.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">2º TBE preliminar e implicação política da redistribuição lump-sum</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\bar\omega = (4, 4)$. O "planejador social" deseja a alocação Pareto-eficiente assimétrica $\tilde x = ((3, 3), (1, 1))$. Considere o 2º TBE preliminar.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A alocação $\tilde x = ((3, 3), (1, 1))$ é Pareto-eficiente?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Sim — $\text{TMS}^A(\tilde x^A) = 3/3 = 1 = 1/1 = \text{TMS}^B(\tilde x^B)$, tangência.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) Não — assimetria entre $A$ e $B$ viola Pareto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) Sim, mas só porque utilidades CD são iguais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Para implementar $\tilde x$ como EC via 2º TBE preliminar, é necessário:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Mudar preferências para que $\tilde x$ seja "natural".</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Mudar preços de mercado para favorecer $A$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Redistribuir as dotações iniciais via transferência <strong>lump-sum</strong>; por exemplo, $\hat\omega^A = (3, 3)$, $\hat\omega^B = (1, 1)$ (mesmo total).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Impor preço fixo administrado pelo governo.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Considere $\hat\omega^A = (3, 3)$, $\hat\omega^B = (1, 1)$ (mesmo total $(4, 4)$). Em CD simétrica com essas dotações, o EC tem:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) $p_1^*/p_2^* = 1$, $x^{A*} = (3, 3)$, $x^{B*} = (1, 1)$ — autarquia eficiente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) $p_1^*/p_2^* = 3$, com alocação não-trivial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) $p_1^*/p_2^* = 1/3$.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Não há EC — desigualdade impede fechamento.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i). Verifique: $\text{TMS}^A(\hat\omega^A) = 1 = \text{TMS}^B(\hat\omega^B)$, já está em tangência; não há ganhos de troca; $p^* = (1, 1)$ não desencadeia comércio.</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> A "redistribuição lump-sum" no 2º TBE significa:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Imposto sobre cada compra/venda no mercado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Tributação proporcional à renda observada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) <strong>Transferência fixa, independente de comportamento</strong> — não distorce decisões marginais (não-distorcionária).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Multa por desvio do "ótimo social".</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> A hipótese-chave do 2º TBE (e que faz a separação por hiperplano-preço funcionar) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Continuidade das preferências.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Monotonicidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) <strong>Convexidade das preferências</strong> (e tecnologia, em economia com produção). Sem convexidade, Hahn-Banach falha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) LNS — mesma do 1º TBE.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> 2º TBE preliminar permite implementar qualquer Pareto-eficiente como EC via redistribuição lump-sum. Hipótese-chave: convexidade. Implicação política central: separa eficiência (via mercado) de equidade (via redistribuição).</p>
+      <p><strong>2. Derivação.</strong> $\tilde x$ Pareto: $\text{TMS}^A = 1 = \text{TMS}^B$. ✓ Para implementar, escolher $\hat\omega^A = (3, 3)$ — em CD com essa dotação, $\text{TMS}^A(\hat\omega^A) = 1$, e $A$ não tem incentivo a trocar; idem $B$. Equilíbrio: autarquia em $\hat\omega$, $p^* = (1, 1)$. Lump-sum: transferência fixa, não distorce escolhas marginais. Convexidade entra na separação por hiperplano (Hahn-Banach): conjunto preferido $\sum_i V^i$ convexo + viabilidade convexa ⇒ existe hiperplano-preço suporte.</p>
+      <p><strong>3. Armadilha.</strong> (b)(i)/(ii)/(iv) confundem 2º TBE com manipulação de preferências, preços ou regulação. (d)(i)/(ii) descrevem instrumentos *distorcionários* — 2º TBE exige *não-distorção*. (e)(iv) confunde 1º com 2º TBE.</p>
+      <p><strong>4. Extensão.</strong> Em prática, lump-sum é não-implementável: governo não observa habilidade individual; daí imposto distorcionário sobre renda + tradeoff equidade-eficiência (Mirrlees, Saez — fora desta ementa). Reforma tributária EC 132/2023 no Brasil aproxima lump-sum via cashback, mas não é estritamente lump-sum. Aula 6: prova rigorosa do 2º TBE via Hahn-Banach.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Exige fluência em (i) verificar Pareto via tangência; (ii) reconhecer mecanismo de implementação (mudar dotação); (iii) distinguir lump-sum de imposto distorcionário; (iv) identificar convexidade como hipótese-chave do 2º TBE. Quem marca (d)(i)/(ii) ainda confunde 2º TBE com tributação distorcionária.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (~28 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>21/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 20/05 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 5</strong> (EG com produção) é liberada na madrugada de <strong>14/05</strong>. <strong>Pré-monitoria 2</strong> com Alberto abre <strong>sáb 16/05</strong> (cobre Aula 4 — EG trocas). Tudo da Aula 4 fecha em <strong>quarta 20/05 18h</strong>; gabarito quinta 21/05 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-04-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(4, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-21T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

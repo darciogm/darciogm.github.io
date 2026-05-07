@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 04 — Equilíbrio Geral em Trocas — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 04 — Equilíbrio Geral em Trocas Puras</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S 12e §13.1–13.2) + 5 avançadas 🔴 (calibre Jehle-Reny §5.1 / qualifier).</strong> Objetivo: ponte entre a aula de 13/05 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong> (a leitura dos gabaritos 5-passos conta).</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 20/05 às 18:00 BRT</strong>, 1h30 antes da Aula 5.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-04-pos" data-phase="post" data-title="Pós-Aula 04">
+
+  <h3>Pós-Aula 04 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Cálculo numérico EC em CD assimétrica -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Em economia $2\times 2$ com $u^A = x_1^{2/3}x_2^{1/3}$, $u^B = x_1^{1/3}x_2^{2/3}$, $\omega^A = (1, 4)$, $\omega^B = (3, 0)$, total $\bar\omega = (4, 4)$. Com $p_2 = 1$ numerário, o preço de equilíbrio $p_1^*$ vale:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) $p_1^* = 7/8$ — bem 1 fica barato relativo a bem 2.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) $p_1^* = 8/7$ — bem 1 fica caro porque $A$ ama bem 1 e tem pouco; $B$ tem muito mas valoriza menos.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) $p_1^* = 4/3$ — proporção simples bem 1 / bem 2 na demanda agregada.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) $p_1^* = 32/17 \approx 1{,}88$ — vem de $\alpha^A = 0{,}8, \alpha^B = 0{,}5$.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Preço relativo no EC reflete tanto preferências quanto dotações. Quando demanda relativa por bem 1 é alta (via $\alpha_1^A = 2/3$) mas oferta relativa é desbalanceada (apenas $B$ tem bem 1, com 3 unidades), preço de bem 1 sobe.</p>
+      <p><strong>2. Derivação.</strong> Demandas CD: $x_1^A = (2/3)\cdot m^A/p_1$, com $m^A = p_1 + 4$ (em $p_2 = 1$). $x_1^B = (1/3)\cdot m^B/p_1 = (1/3)\cdot 3 p_1/p_1 = 1$ — observe o cancelamento de $p_1$. Mercado 1: $x_1^A + x_1^B = 4 \implies (2/3)(p_1 + 4)/p_1 + 1 = 4 \implies 2/3 + 8/(3 p_1) = 3 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7 \approx 1{,}143$.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte a razão (sinal de viés trocado). (c) usa $\alpha$ inteiros sem normalizar pela demanda CD. (d) é a resposta de uma versão antiga do problema com expoentes decimais $0{,}8/0{,}5$ — agora os expoentes são $2/3$ e $1/3$.</p>
+      <p><strong>4. Extensão.</strong> Alocação completa: $x_1^A = 2/3 + 8/(3\cdot 8/7) = 2/3 + 7/3 = 3$. $x_2^A = (1/3)\, m^A/p_2 = (1/3)(8/7 + 4) = 12/7$. $x_1^B = 1$. $x_2^B = (2/3)\, m^B/p_2 = (2/3)\cdot 3\cdot 8/7 = 16/7$. Verificação Walras: $x_1^A + x_1^B = 4$ ✓; $x_2^A + x_2^B = 12/7 + 16/7 = 28/7 = 4$ ✓. $\text{TMS}^A = (\alpha_1^A/\alpha_2^A)(x_2^A/x_1^A) = 2\cdot (12/7)/3 = 8/7 = p_1^*/p_2^*$ ✓.</p>
+      <p><strong>5. Peer-review.</strong> Cálculo de EC em CD assimétrica. Aluno que marca (d) está vendo um número antigo do problema; aluno que marca (a) inverte sinal do viés. Distratores calibrados para pegar erros típicos.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Núcleo em CD simétrica -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Em economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, sobre o núcleo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) Núcleo é vazio — preferências simétricas eliminam ganhos de troca.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) Núcleo coincide com a contract curve inteira (a diagonal).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Núcleo é o segmento da diagonal entre as duas curvas de indiferença que passam por $\omega = (3, 1)$ (em coordenadas de $A$); contém a alocação $(2, 2), (2, 2)$ que é o EC.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Núcleo coincide com o ponto único da dotação inicial.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Núcleo = parte da contract curve dentro da lente de melhoria mútua passando por $\omega$. Em CD simétrica, contract curve = diagonal; lente é definida pelas IC em $\omega$. Núcleo = segmento da diagonal entre as duas IC.</p>
+      <p><strong>2. Derivação.</strong> $u^A(\omega^A) = u^A(3, 1) = \sqrt{3}$. $u^B(\omega^B) = \sqrt{3}$. Na diagonal $x_1^A = x_2^A = t$, $u^A = t$, então $u^A \ge \sqrt{3} \iff t \ge \sqrt{3}$. Idem para $B$ via $x^B = (4-t, 4-t)$, $u^B = 4-t \ge \sqrt{3} \iff t \le 4 - \sqrt{3} \approx 2{,}27$. Núcleo é segmento $t \in [\sqrt{3}, 4 - \sqrt{3}] \approx [1{,}73, 2{,}27]$. EC $(2, 2)$ está dentro.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora ganhos genuínos de troca: $\text{TMS}^A(\omega^A) = 1/3 \neq 3 = \text{TMS}^B(\omega^B)$. (b) coincide núcleo com contract curve toda — ignora IR. (d) confunde dotação com núcleo.</p>
+      <p><strong>4. Extensão.</strong> Em economias grandes ($I \to \infty$), núcleo encolhe e converge ao conjunto de EC (Debreu-Scarf 1963; intuição original Edgeworth 1881). Em $I = 2$, núcleo é genericamente intervalo, com EC ponto interior.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que marca (b) ignora individual rationality; (a) e (d) confundem conceitos.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — 1º TBE: passo 2 (LNS) -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Na prova do 1º TBE, o <strong>passo 2</strong> (para os $i$ fracamente melhores) usa LNS para concluir que $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. O argumento é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Por contradição: se $p^*\cdot \tilde x^i = p^*\cdot \omega^i$, $\tilde x^i$ é viável e $u^i(\tilde x^i) > u^i(x^{*i})$ — contradiz UMP.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Por contradição: se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, LNS garante vizinho $\hat x^i$ estritamente preferido com $p^*\cdot \hat x^i \le p^*\cdot \omega^i$ por continuidade — contradiz UMP de $x^{*i}$.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Diretamente da definição de equilíbrio competitivo.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Por viabilidade da alocação $\tilde x$.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O argumento sutil do passo 2: para $i$ fracamente melhor, podemos ter $u^i(\tilde x^i) = u^i(x^{*i})$. Não dá para usar diretamente UMP. LNS entra: vizinhança contém estritamente preferida; continuidade do produto interno transfere a desigualdade orçamentária.</p>
+      <p><strong>2. Derivação.</strong> Suponha $p^*\cdot \tilde x^i < p^*\cdot \omega^i$. LNS dá $\hat x^i$ próximo de $\tilde x^i$ com $u^i(\hat x^i) > u^i(\tilde x^i) \ge u^i(x^{*i})$. Continuidade ⇒ $p^*\cdot \hat x^i$ próximo de $p^*\cdot \tilde x^i < p^*\cdot \omega^i$. Logo $\hat x^i$ ainda cabe no orçamento: $p^*\cdot \hat x^i \le p^*\cdot \omega^i$. Mas $u^i(\hat x^i) > u^i(x^{*i})$ — contradiz UMP de $x^{*i}$ em $p^*$.</p>
+      <p><strong>3. Armadilha.</strong> (a) descreve passo 1 (para o $j$ estritamente melhor), não passo 2. (c) e (d) são imprecisos.</p>
+      <p><strong>4. Extensão.</strong> Sem LNS, passo 2 quebra. Construção de contraexemplo: utilidade satura localmente em algum bem; pode haver $\tilde x^i$ indiferente a $x^{*i}$ com gasto estritamente menor, sem que vizinhança preferida exista.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aluno que marca (a) confunde passo 1 e passo 2 — leitura cuidadosa da prova padrão é necessária.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Excesso de demanda em economia com Leontief -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em economia $2\times 2$ com $u^A = x_1^{1/2}x_2^{1/2}$, $u^B = \min\{x_1, x_2\}$ (Leontief), $\omega^A = (10, 0)$, $\omega^B = (0, 10)$. Em equilíbrio competitivo, $B$ consome:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) $x^B = (10, 0)$ — autarquia.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) $x^B = (x_1^B, x_2^B)$ com $x_1^B = x_2^B = m^B/(p_1 + p_2)$, ou seja, consumo igual dos dois bens.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) $x^B = (0, 10)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) $x^B$ depende de $\bar u$ — Leontief não tem demanda Marshalliana fechada.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Leontief $u = \min\{x_1, x_2\}$ ⇒ consumidor escolhe $x_1 = x_2$ (sem desperdício). Demanda Marshalliana: $x_1^B = x_2^B = m^B/(p_1 + p_2)$.</p>
+      <p><strong>2. Derivação.</strong> CPO Leontief: $x_1 = x_2$ no ótimo. Restrição orçamentária: $p_1 x_1^B + p_2 x_2^B = m^B \implies (p_1 + p_2) x_1^B = m^B \implies x_1^B = m^B/(p_1 + p_2)$. Em equilíbrio com $\omega^B = (0, 10)$: $m^B = 10 p_2$, então $x_1^B = 10 p_2/(p_1 + p_2)$, e idem para $x_2^B$.</p>
+      <p><strong>3. Armadilha.</strong> (a) e (c) ignoram que $B$ tem incentivo a comprar bem 1 (que dá utilidade até a quantidade do bem 2). (d) é falso — Leontief tem demanda fechada.</p>
+      <p><strong>4. Extensão.</strong> Para fechar EC, precisa demanda de $A$: CD com $\alpha = 1/2$ ⇒ $x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5$, $x_2^A = m^A/(2 p_2) = 5 p_1/p_2$. Mercado 1: $5 + 10 p_2/(p_1 + p_2) = 10 \implies p_2/(p_1 + p_2) = 1/2 \implies p_2 = p_1$. Em $p_2 = 1$: $p_1^* = 1$. Alocação: $x^A = (5, 5)$, $x^B = (5, 5)$.</p>
+      <p><strong>5. Peer-review.</strong> Mecânica de Leontief. Aluno que marca (a) ou (c) ignora que utilidade depende dos dois bens; (d) é genericamente falso.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — 1º TBE: o que ele NÃO diz -->
+  <div class="quizg-q" data-qid="q5" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Sobre o 1º TBE, qual afirmação é <strong>falsa</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Se $(p^*, x^*)$ é EC em economia com LNS, então $x^*$ é Pareto-eficiente.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) A prova padrão usa contradição: se $\exists$ Pareto-superior, custa mais que dotação no preço $p^*$, contradizendo viabilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) LNS é hipótese-mínima sobre preferências; sem ela o argumento quebra.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) O 1º TBE garante que toda alocação Pareto-eficiente é EC — ou seja, mercado atinge qualquer ponto da contract curve sem redistribuição.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d) — afirmação falsa.</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A afirmação (d) é a <strong>recíproca</strong> do 1º TBE — e essa é o 2º TBE, com hipóteses adicionais (convexidade) e exigência de redistribuição lump-sum. 1º TBE diz "EC ⇒ Pareto", não "Pareto ⇒ EC".</p>
+      <p><strong>2. Derivação.</strong> 1º TBE: dado EC, a alocação é Pareto. Ou seja, mercado escolhe UM ponto da contract curve, determinado pelas dotações. 2º TBE preliminar: outros pontos podem ser implementados, mas exigem mudar dotações lump-sum.</p>
+      <p><strong>3. Armadilha.</strong> (d) é o erro mais comum: pensar que mercado "escolhe automaticamente" qualquer Pareto desejado. Falso — mercado escolhe o EC associado às dotações iniciais.</p>
+      <p><strong>4. Extensão.</strong> Implicação política: se a alocação de mercado é "injusta", não basta confiar em equilíbrio competitivo — é necessário redistribuir as dotações iniciais (ou usar imposto + transferência). Eficiência via mercado, equidade via redistribuição.</p>
+      <p><strong>5. Peer-review.</strong> Questão de inversão deliberada. Aluno que marca (a), (b), ou (c) confunde "verdade" com "falsidade da pergunta". Distinção fundamental entre 1º e 2º TBE.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Contraexemplo do 1º TBE sem LNS -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> Considere economia $2\times 2$ onde $A$ tem utilidade $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (saciada em bem 1 acima de $x_1 = 1$) e $B$ tem CD usual. Suponha $\omega^A = (2, 0)$, $\omega^B = (0, 2)$. Sobre o 1º TBE nessa economia:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) 1º TBE vale — todo EC é Pareto-eficiente, independente das hipóteses.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) 1º TBE pode falhar — $A$ pode estar saciada em bem 1 em equilíbrio, com LNS violada localmente; existe alocação Pareto-superior que mercado não atinge.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) 1º TBE vale por convexidade — preferências de $A$ são convexas.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Não há EC nessa economia.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A utilidade $\min\{x_1, 1\} + x_2$ é localmente saciada em bem 1 quando $x_1 \ge 1$ — aumentar bem 1 acima de 1 não muda utilidade. LNS exige que toda vizinhança contenha cesta estritamente preferida, e isso falha em $(x_1, x_2)$ com $x_1 > 1$, fixando $x_2$, se variar $x_1$.</p>
+      <p><strong>2. Derivação.</strong> Em equilíbrio com $A$ tendo $\omega^A = (2, 0)$, $A$ tem 2 unidades do bem 1 mas sua utilidade só depende de $\min\{x_1, 1\}$. Pode haver $p^*$ tal que $A$ não venda bem 1 (preço baixo) e $B$ não compre tudo que poderia; alocação resultante deixa $A$ com $x_1 > 1$ e $B$ subutilizado. Pareto-superior: $A$ dá $x_1 - 1$ unidades de bem 1 a $B$ em troca de qualquer quantidade positiva de bem 2 — $A$ não perde (saciado), $B$ ganha. Mercado pode não atingir essa transferência se $p^*$ não incentivar $A$ a vender (utilidade marginal nula em bem 1 acima de 1 ⇒ qualquer $p_1 > 0$ teoricamente vende, mas o argumento padrão da prova quebra na continuidade do passo 2).</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora a hipótese-mínima. (c) confunde 1º com 2º TBE — convexidade é hipótese do 2º, não 1º. (d) é tipicamente falso — EC pode existir, só não é Pareto.</p>
+      <p><strong>4. Extensão.</strong> Construções rigorosas de contraexemplos do 1º TBE sem LNS aparecem em MWG cap. 16 e Jehle-Reny §5.2 (notas). A intuição é universal: sem LNS, mercado pode "deixar dinheiro na mesa" porque alguém é localmente saciado e não tem incentivo a trocar.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 — exige reconhecer que LNS é hipótese-mínima e que sua violação em ponto de equilíbrio gera contraexemplo. Aluno MPE com base ANPEC pode marcar (a) por hábito ("teoremas valem"); precisa internalizar que teoremas têm hipóteses.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — Existência via Brouwer (anúncio) -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Para provar <strong>existência</strong> de EC em economia de troca pura com $L$ bens, qual estratégia é canônica (a ser detalhada na Aula 6)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Construção direta via Lagrangiano — basta resolver o sistema de CPOs.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Indução em $L$ — provar para $L = 2$ e estender.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Aplicar teorema de ponto fixo de Brouwer (ou Kakutani) ao mapa $T(p) \to p'$ que ajusta preços conforme excesso de demanda, no simplex normalizado.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Programação linear — EC é sempre solução de PL.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Existência de EC em economia geral exige teorema de ponto fixo: define-se mapa $T$ que leva preços para preços ajustados (preço sobe onde excesso de demanda é positivo, cai onde negativo); preço fixo desse mapa é EC. Brouwer requer continuidade + simplex compacto convexo.</p>
+      <p><strong>2. Derivação (esboço, Aula 6).</strong> Normalizar preços no simplex $\Delta = \{p \ge 0 : \sum p_\ell = 1\}$. Definir $T_\ell(p) = (p_\ell + \max\{z_\ell(p), 0\})/Z(p)$, com $Z$ normalizando. Mostrar: $T: \Delta \to \Delta$ contínuo (sob hipóteses). Brouwer ⇒ existe $p^* \in \Delta$ com $T(p^*) = p^*$. Mostrar: ponto fixo + Walras + homogeneidade ⇒ $z(p^*) \le 0$ com igualdade onde $p^*_\ell > 0$ — EC.</p>
+      <p><strong>3. Armadilha.</strong> (a) Lagrangiano resolve UMP individual, não existência agregada. (b) indução não funciona — $L = 2$ não implica $L = 100$. (d) PL é caso muito particular (preferências lineares, não-lineares).</p>
+      <p><strong>4. Extensão.</strong> Em economia com produção (Aula 5) e contingência (Aula 6, Arrow-Debreu), Kakutani (extensão de Brouwer para correspondências) é necessário porque demanda agregada pode ser correspondência (em Leontief, por exemplo). Aula 6 detalha.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (qualifier-level). Aluno MPE deve reconhecer Brouwer como ferramenta canônica, mesmo sem ter visto detalhes — vai entrar em Aula 6. Quem marca (a) confunde UMP com EC; (b) e (d) são chutes plausíveis mas errados.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — 2º TBE: convexidade quebra -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> O 2º TBE preliminar requer <strong>convexidade</strong>. Qual cenário viola convexidade e potencialmente faz o 2º TBE falhar?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) Preferências quase-lineares em um numerário.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) Tecnologia com retornos crescentes de escala (custo médio decrescente) — conjunto de produção não-convexo. (Aula 5 detalha.)</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Cobb-Douglas com $\alpha + (1-\alpha) = 1$.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Preferências CES com $\sigma > 1$.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> 2º TBE usa Hahn-Banach (separação de conjuntos convexos por hiperplano) para construir o vetor de preços. Se algum conjunto relevante (preferências individuais ou tecnologias) é não-convexo, a separação pode falhar — preço de "suporte" não existe ou não dá EC.</p>
+      <p><strong>2. Derivação.</strong> Retornos crescentes ⇒ função de custo $C(y)$ subaditiva ⇒ conjunto de produção $Y = \{(y, -C(y)) : y \ge 0\}$ não-convexo. Em economia agregada, $Y_{\text{agg}} = \sum_f Y_f$ herda não-convexidade. Pareto-eficiente pode exigir produção em ponto de "ruptura" do conjunto de produção, sem hiperplano de suporte ⇒ não há $p^*$ que implemente.</p>
+      <p><strong>3. Armadilha.</strong> (a), (c), (d) são todos casos convexos: quase-linear é (estritamente) quase-côncava em $x_1$ e linear em $x_2$ — preferência convexa. CD com expoentes positivos somando 1 é estritamente quase-côncava — convexa. CES com $\sigma > 1$ tem preferência convexa.</p>
+      <p><strong>4. Extensão.</strong> Em economia com retornos crescentes (telecomunicações, eletricidade), 1º TBE também tende a falhar (firma tem incentivo a monopolizar). Solução de "second-best": regulação tarifária, tarifa em duas partes (Coase, Aula 7).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Aluno deve reconhecer que retornos crescentes = não-convexidade tecnológica = quebra de convexidade agregada. Conexão com Aula 5 e 7.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴🔴 — Núcleo encolhe com I -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴🔴</strong> <em>(Questão-teto. Custa 8–12 min de papel para fechar — exige relacionar replicação, coalizões e o teorema de Debreu-Scarf.)</em><br>
+      Considere a "réplica" de uma economia $2\times 2$: agora há $r$ "cópias" de cada tipo $A$ e $B$, com mesmas preferências e dotações dentro de cada tipo. Quando $r$ cresce (economia "grande"), o que acontece com o conjunto de núcleos?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Núcleo cresce — mais agentes, mais coalizões, mais alocações no núcleo.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Núcleo permanece constante — replicação não muda a estrutura.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) Núcleo encolhe e converge ao conjunto de equilíbrios competitivos da economia base, conforme $r \to \infty$. Teorema de <strong>Debreu-Scarf (1963)</strong> (intuição original em Edgeworth 1881). Mais coalizões = mais possibilidades de bloqueio = mais alocações eliminadas do núcleo.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Núcleo se torna toda a caixa — replicação remove restrições.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Mais agentes do mesmo tipo permitem coalizões mais sofisticadas — sub-coalizões internas a cada tipo podem bloquear alocações que seriam aceitas em $r = 1$. Resultado canônico de <strong>Debreu-Scarf (1963)</strong> (intuição original em Edgeworth 1881): núcleo encolhe e, no limite $r \to \infty$, coincide com o conjunto de EC da economia base.</p>
+      <p><strong>2. Derivação (esboço).</strong> Em $r = 1$, núcleo é tipicamente intervalo na contract curve. Em $r = 2$, alocação no núcleo precisa não ser bloqueada por: (i) coalizão $\{A_1\}$, $\{A_2\}$ (IR); (ii) coalizão $\{A_1, A_2\}$ (sub-bloqueio); (iii) coalizão $\{A_1, B_1\}$, etc.; (iv) coalizão completa. Cada tipo de coalizão remove pontos do núcleo. Conforme $r$ cresce, o conjunto remanescente afunila para o EC.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte intuição — mais agentes restringem, não relaxam. (b) ignora replicação. (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Implicação fundamental: em economias "grandes", a noção de núcleo (cooperativa) coincide com a de equilíbrio competitivo (não-cooperativa, com tomadores de preço). É um dos resultados mais elegantes da teoria de equilíbrio. <strong>Aumann</strong> (1964) generalizou para continuum de agentes via integral (Robert J. Aumann, Nobel 2005). Detalhes em MWG cap. 18 — fora desta ementa, mas vale conhecer.</p>
+      <p><strong>5. Peer-review.</strong> 🔴🔴 — exige conhecer/inferir o resultado de Debreu-Scarf. Aluno MPE pode não ter visto explicitamente, mas a intuição "mais coalizões = mais bloqueios = núcleo menor" é alcançável (anunciada no slide #29 da aula). Alternativa correta detalha por isso. Risco residual: questão exige um salto de "economia $2\times 2$" para "economia replicada" — aluno menos maduro pode marcar (b) por inércia.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴 — Walras + homogeneidade: redundância -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴</strong> Em economia de troca pura com $L$ bens, considere o sistema $z(p) = 0$ ($L$ equações, $L$ incógnitas $p_1, ..., p_L$). Levando em conta lei de Walras (1 equação dependente) e homogeneidade grau 0 (1 dimensão livre), o número de equações independentes vs. incógnitas livres é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) $L$ equações independentes vs. $L$ incógnitas — sistema bem-posto sem ajuste.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) $L - 1$ equações independentes (Walras remove 1) vs. $L - 1$ incógnitas livres (normalização remove 1) — sistema bem-posto após ajustes.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) $L - 2$ equações vs. $L$ incógnitas — sistema sub-determinado.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) $L$ equações vs. $L - 2$ incógnitas — sistema sobre-determinado.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O sistema $z(p) = 0$ tem aparentemente $L$ equações para $L$ incógnitas, mas duas degenerescências reduzem a contagem: Walras dá redundância (1 equação dependente); homogeneidade grau 0 dá liberdade (1 dimensão indeterminada). Restam $L - 1$ equações independentes para $L - 1$ incógnitas livres — sistema generic bem-posto.</p>
+      <p><strong>2. Derivação.</strong> Walras: $p\cdot z(p) = 0$ ⇒ se $p_\ell > 0$ e $z_k(p) = 0$ para $k \neq \ell$, então $z_\ell(p) = 0$ automaticamente. Logo só $L - 1$ das $L$ equações são "novas". Homogeneidade: $z(\lambda p) = z(p)$ ⇒ uma dimensão de $p$ é livre; normalizar (ex.: $p_L = 1$) elimina. Restam $L - 1$ preços livres. Match.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora as duas degenerescências. (c) e (d) confundem direções (sub vs. sobre).</p>
+      <p><strong>4. Extensão.</strong> Em $L = 2$: 1 equação independente ($z_1 = 0$) para 1 incógnita ($p_1/p_2$). Em $L = 100$: 99 equações independentes para 99 razões $p_\ell/p_L$. Em economias regulares, soluções são genericamente isoladas (resultado de Debreu sobre regularidade). Existência via Brouwer: Aula 6.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Aluno deve internalizar a redução dimensional via Walras + homogeneidade. Resultado canônico em qualquer texto de teoria de equilíbrio (MWG cap. 17). Quem marca (a) ignora a estrutura.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Com este quiz como calibre, abra a <strong>lista de exercícios avaliativos</strong> da Aula 4 (também disponível desde 14/05). A <strong>Pré-aula 5</strong> (EG com produção) é liberada na madrugada de <strong>14/05</strong>; tudo da Aula 4 fecha em <strong>quarta 20/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-04-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

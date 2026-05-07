@@ -1042,7 +1042,7 @@ Equilíbrio é ponto-fixo no espaço de preços. Próximo: o que da Aula 3 entra
 - CV/EV — bem-estar do equilíbrio (1º e 2º teoremas).
 
 ::: {.bridge}
-Aula 4: trocas (Edgeworth) + produção (1º TFB). Aula 5: Arrow-Debreu I — bens contingentes, tempo, risco. Aula 6: Arrow-Debreu II — existência, equilíbrio competitivo.
+Aula 4: EG de trocas puras — caixa de Edgeworth, contract curve, equilíbrio competitivo, lei de Walras, 1º TBE. Aula 5: EG com produção. Aulas 6–7: Arrow-Debreu I e II (contingência, tempo, risco; existência).
 :::
 
 ---

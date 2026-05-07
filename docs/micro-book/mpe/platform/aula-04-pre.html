@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 04 — Equilíbrio Geral em Trocas — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 04 — Equilíbrio Geral em Trocas</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (Nicholson &amp; Snyder 12e §13.1, §13.2).</strong> Objetivo: consolidar o que você leu na pré-aula (ZaE EG-trocas + N&amp;S 12e §13.1–13.2) antes de entrar em sala no dia 13/05. <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 20/05 às 18:00 BRT</strong>, 1h30 antes da Aula 5.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-04-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 04">
+
+  <h3>Revisão — Equilíbrio Geral em Trocas (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Alocação viável -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Em economia de troca pura com $I = 2$ consumidores, $L = 2$ bens, dotações $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, qual das alocações abaixo é <strong>viável</strong>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) $x^A = (2, 2)$, $x^B = (3, 3)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) $x^A = (2, 3)$, $x^B = (2, 1)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) $x^A = (5, 0)$, $x^B = (0, 5)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) $x^A = (3, 1)$, $x^B = (1, 4)$.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Alocação viável satisfaz $x^A + x^B = \bar\omega = \omega^A + \omega^B = (4, 4)$. É contabilidade: nada se cria nem se destrói, só se redistribui.</p>
+      <p><strong>2. Derivação.</strong> Em (b): $x^A_1 + x^B_1 = 2 + 2 = 4$. ✓ $x^A_2 + x^B_2 = 3 + 1 = 4$. ✓ Soma com a dotação total. Em (a): $2+3 = 5 \neq 4$ — extrapola o bem 1. Em (c): aparentemente $5 + 0 = 5 \neq 4$ — também extrapola. Em (d): $3 + 1 = 4$ ok no bem 1; $1 + 4 = 5 \neq 4$ — extrapola bem 2.</p>
+      <p><strong>3. Armadilha.</strong> Aluno tende a confundir "alocação possível para um indivíduo" (cada $x^i \ge 0$, dentro do orçamento) com "alocação viável" (soma = dotação total). São conceitos distintos: a primeira é restrição individual; a segunda é fechamento agregado.</p>
+      <p><strong>4. Extensão.</strong> O conjunto das alocações viáveis em $L = 2$ é parametrizado por $(x_1^A, x_2^A) \in [0, \bar\omega_1]\times [0, \bar\omega_2]$ — exatamente a caixa de Edgeworth.</p>
+      <p><strong>5. Peer-review.</strong> Calibração do termômetro. Aluno que erra aqui ainda confunde restrição individual com fechamento agregado — voltar à definição.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Pareto-eficiência (caracterização) -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Em economia $2\times 2$ de troca pura, com utilidades suaves estritamente quase-côncavas e alocação interior, Pareto-eficiência equivale a:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) $u^A(x^A) = u^B(x^B)$ — ambos atingem o mesmo nível de utilidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) $\omega^A = \omega^B$ — dotações iguais.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) $\text{TMS}^A(x^A) = \text{TMS}^B(x^B)$ — tangência das curvas de indiferença.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) $x^A = x^B$ — alocações iguais.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Pareto-eficiência interior em $2\times 2$ exige tangência das curvas de indiferença: o trade-off marginal entre os dois bens é o mesmo para ambos os consumidores. Caso contrário, há troca infinitesimal que melhora ambos.</p>
+      <p><strong>2. Derivação.</strong> Suponha $\text{TMS}^A > \text{TMS}^B$. Então $A$ valoriza relativamente mais o bem 1 que $B$. Troca infinitesimal: $A$ cede $\epsilon$ de bem 2, $B$ cede $\delta$ de bem 1, com $\delta/\epsilon$ entre $\text{TMS}^B$ e $\text{TMS}^A$. Ambos melhoram ⇒ ponto inicial não era Pareto. Logo Pareto exige $\text{TMS}^A = \text{TMS}^B$.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde Pareto com utilidades iguais — irrelevante (utilidade é ordinal, não cardinal). (b) e (d) impõem uniformidade que não é exigida.</p>
+      <p><strong>4. Extensão.</strong> Em alocação de fronteira ($x^i = 0$ em alguma componente), Pareto não exige tangência — o argumento da troca infinitesimal pode ser bloqueado pela restrição $x^i \ge 0$.</p>
+      <p><strong>5. Peer-review.</strong> Questão definicional. Quem marca (a) ainda não internalizou que utilidade é ordinal; quem marca (b) ou (d) confunde Pareto com igualdade.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Contract curve em CD simétrica -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Em economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$ (CD simétrica), a contract curve coincide com:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Apenas a dotação inicial $\omega$.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) A diagonal da caixa que vai da origem $A$ à origem $B$, ou seja, $x_2^A/x_1^A = \bar\omega_2/\bar\omega_1$.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) A fronteira inferior da caixa, $x_2^A = 0$.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Toda a caixa — em CD, qualquer ponto é Pareto.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD simétrica, $\text{TMS}^i = x_2^i/x_1^i$. Tangência $\text{TMS}^A = \text{TMS}^B$ ⇒ $x_2^A/x_1^A = x_2^B/x_1^B$. Por viabilidade ($x^A + x^B = \bar\omega$), isso colapsa em $x_2^A/x_1^A = \bar\omega_2/\bar\omega_1$.</p>
+      <p><strong>2. Derivação.</strong> Seja $r = x_2^A/x_1^A = x_2^B/x_1^B$. Então $x_2^A = r x_1^A$ e $x_2^B = r x_1^B$. Soma: $\bar\omega_2 = r(x_1^A + x_1^B) = r \bar\omega_1$, logo $r = \bar\omega_2/\bar\omega_1$. Em $\bar\omega = (4, 4)$: $r = 1$, e a contract curve é a diagonal principal.</p>
+      <p><strong>3. Armadilha.</strong> (d) "tudo é Pareto em CD" é falso — CD tem contract curve estrita. (c) confunde fronteira com Pareto. (a) ignora que dotação geralmente não é Pareto-eficiente.</p>
+      <p><strong>4. Extensão.</strong> Em CD com $\alpha \neq 1/2$, ou utilidades assimétricas, a contract curve deixa de ser reta — vira curva côncava ou convexa dentro da caixa. Em CES com $\sigma \neq 1$, ainda mais geral.</p>
+      <p><strong>5. Peer-review.</strong> Cálculo + visualização. Quem marca (d) ignora a estrutura da caixa; (a) e (c) confundem dotação ou fronteira com Pareto.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Lei de Walras -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> A lei de Walras $p\cdot z(p) = 0$ em economia de troca pura com LNS:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Vale apenas em equilíbrio competitivo.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) Vale para todo $p \gg 0$ onde demandas estão definidas — é identidade contábil que segue do exauste do orçamento individual.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Vale apenas em CD por causa da forma fechada da demanda.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Vale apenas se preferências forem homotéticas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Walras é identidade que segue de UMP individual + LNS. Cada consumidor exausta orçamento ($p\cdot x^i(p) = p\cdot \omega^i$), logo $p\cdot z^i = 0$ para cada $i$, e a soma agregada é zero.</p>
+      <p><strong>2. Derivação.</strong> Sob LNS, UMP em interior tem $p\cdot x^i = p\cdot \omega^i$. Subtrair: $p\cdot z^i = p\cdot x^i - p\cdot \omega^i = 0$. Somar sobre $i$: $p\cdot z(p) = \sum_i p\cdot z^i = 0$. Sem nenhuma exigência sobre $p$ ser de equilíbrio.</p>
+      <p><strong>3. Armadilha.</strong> (a) é o erro mais comum — confunde Walras (identidade) com EC (solução). EC exige $z(p^*) = 0$, mais forte que $p\cdot z(p^*) = 0$. (c) e (d) impõem hipóteses sobre forma funcional ou homogeneidade que não são necessárias.</p>
+      <p><strong>4. Extensão.</strong> A implicação operacional é: em $L$ bens, zerar $L-1$ mercados ⇒ o $L$-ésimo zera por Walras. Em $L = 2$, basta um mercado. Em $L = 100$, basta 99. Reduz dimensão do problema de buscar EC.</p>
+      <p><strong>5. Peer-review.</strong> Questão central. Aluno que confunde Walras com EC ainda não entendeu a estrutura da Aula 4.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Cálculo de EC em CD simétrica -->
+  <div class="quizg-q" data-qid="q5" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Em economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, o equilíbrio competitivo (com $p_2 = 1$ numerário) tem:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) $p_1^* = 1$, $x^{A*} = x^{B*} = (2, 2)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) $p_1^* = 3$, $x^{A*} = (3, 1)$, $x^{B*} = (1, 3)$ (autarquia).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) $p_1^* = 1/3$, $x^{A*} = (4, 0)$, $x^{B*} = (0, 4)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Não há EC — preços não fecham simultaneamente.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em CD com expoentes simétricos $\alpha = 1/2$ e total $\bar\omega = (4, 4)$ simétrico, a álgebra do market-clearing entrega $p_1^*/p_2^* = 1$. Cada um troca uma unidade do bem que tem mais.</p>
+      <p><strong>2. Derivação.</strong> Demanda CD: $x_\ell^i = m^i/(2 p_\ell)$, $m^i = p\cdot \omega^i$. Mercado 1: $x_1^A + x_1^B = (m^A + m^B)/(2 p_1) = (p\cdot \bar\omega)/(2 p_1) = (4 p_1 + 4 p_2)/(2 p_1) = 2 + 2(p_2/p_1)$. Igualar a $\bar\omega_1 = 4$: $p_2/p_1 = 1$. Em $p_2 = 1$: $p_1^* = 1$. Renda $A$: $m^A = 3 + 1 = 4$. $x^{A*} = (4/2, 4/2) = (2, 2)$. Análogo para $B$.</p>
+      <p><strong>3. Armadilha.</strong> (b) "autarquia" — cada um fica com sua dotação — não é equilíbrio competitivo aqui (pois $\text{TMS}^A(\omega^A) = 1/3 \neq 3 = \text{TMS}^B(\omega^B)$, há ganhos de troca). (c) extrapola para fronteira sem justificativa. (d) é falso — EC existe.</p>
+      <p><strong>4. Extensão.</strong> Em CD com $\alpha$ assimétrico ou dotações desbalanceadas, $p_1^*/p_2^* \neq 1$. A simetria total ⇒ $p$ unitário é assinatura desta economia particular.</p>
+      <p><strong>5. Peer-review.</strong> Questão de cálculo direto. Quem marca (b) confunde dotação com EC; quem marca (c) extrapola.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — 1º TBE: hipótese -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> O 1º Teorema do Bem-Estar (em economia de troca pura) afirma: "todo equilíbrio competitivo é Pareto-eficiente". Qual hipótese estrutural sobre preferências é <strong>essencial</strong> para a prova padrão?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Convexidade (preferências convexas).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Não-saciedade local (LNS).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Homotetia.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Continuidade apenas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> LNS é a hipótese-mínima. Garante que UMP exausta orçamento individual e que o argumento "Pareto-superior custa mais que dotação" funciona para todos os consumidores.</p>
+      <p><strong>2. Derivação.</strong> Onde LNS aparece exatamente: no passo 2 da prova, para os $i$ fracamente melhores. Sem LNS, $i$ pode ter $u^i(\tilde x^i) = u^i(x^{*i})$ e $p^*\cdot \tilde x^i < p^*\cdot \omega^i$ sem que vizinhança preferida exista — argumento quebra. (Convexidade é necessária para o 2º TBE, não 1º.)</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde 1º com 2º TBE: convexidade é hipótese-chave do 2º (separação por hiperplano = preço). (c) e (d) são insuficientes para a prova padrão.</p>
+      <p><strong>4. Extensão.</strong> Em economias com produção (Aula 5), 1º TBE estende com LNS + maximização de lucro pelas firmas. Em externalidades (Aula 7), 1º TBE pode falhar mesmo com LNS — a hipótese de "preferências individuais sem efeitos cruzados" entra implicitamente.</p>
+      <p><strong>5. Peer-review.</strong> Questão central. Aluno que marca (a) confunde 1º com 2º TBE — voltar à pré-aula 4 §5.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — Núcleo vs. Pareto -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Sobre a relação entre <strong>núcleo</strong> e <strong>Pareto-eficiência</strong> em economia $2\times 2$ de troca pura:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) São conceitos não-relacionados.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Núcleo $\supseteq$ Pareto — núcleo é mais inclusivo.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Núcleo $\subseteq$ Pareto. Núcleo adiciona racionalidade individual ($u^i(x^i) \ge u^i(\omega^i)$) e impossibilidade de bloqueio coalizional.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Coincidem sempre — todo Pareto é núcleo e vice-versa.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Núcleo é Pareto + voluntariedade. Toda alocação no núcleo é Pareto-eficiente, mas nem toda Pareto-eficiente está no núcleo — pode haver alguém em pior situação que na dotação inicial.</p>
+      <p><strong>2. Derivação.</strong> Núcleo: (i) viável; (ii) IR (cada $i$ pelo menos tão bem quanto na dotação); (iii) não-bloqueável por coalizão. Em $I = 2$, "não-bloqueável pela coalizão $\{A, B\}$" = Pareto-eficiente. Adiciona IR ⇒ subconjunto. Geometricamente: parte da contract curve dentro da lente de melhoria mútua passando por $\omega$.</p>
+      <p><strong>3. Armadilha.</strong> (b) inverte ordem. (d) ignora que Pareto pode incluir alocação onde alguém perde vs. dotação.</p>
+      <p><strong>4. Extensão.</strong> Em economia "grande" (Debreu-Scarf 1963; intuição original Edgeworth 1881), núcleo encolhe com $I$ e converge ao conjunto de equilíbrios competitivos — resultado central da teoria de equilíbrio.</p>
+      <p><strong>5. Peer-review.</strong> Questão estrutural. Quem confunde ordem (b) ou identifica os conjuntos (d) precisa revisar a definição de núcleo.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — Excesso de demanda -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Em economia $2\times 2$ com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, o excesso de demanda agregado do bem 1 em $p = (p_1, p_2)$ é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) $z_1(p) = 4 - 2(p_2/p_1)$.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) $z_1(p) = 2(p_2/p_1) - 2$.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) $z_1(p) = 4 p_1$.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) $z_1(p) = 0$ identicamente — Walras.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Excesso de demanda agregado = demanda agregada $-$ dotação total. Cálculo direto a partir de demandas Marshallianas individuais.</p>
+      <p><strong>2. Derivação.</strong> Demanda CD: $x_1^i = m^i/(2 p_1)$. $m^A = 3 p_1 + p_2$, $m^B = p_1 + 3 p_2$. Soma: $x_1^A + x_1^B = (4 p_1 + 4 p_2)/(2 p_1) = 2 + 2(p_2/p_1)$. Excesso: $z_1 = (x_1^A + x_1^B) - \bar\omega_1 = 2 + 2(p_2/p_1) - 4 = 2(p_2/p_1) - 2$.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte sinal. (c) confunde valor agregado ($p\cdot \bar\omega$) com excesso. (d) confunde Walras ($p\cdot z(p) = 0$) com $z_1 = 0$. Walras é produto interno; só zera identicamente em equilíbrio.</p>
+      <p><strong>4. Extensão.</strong> Em $p_2/p_1 = 1$ (equilíbrio): $z_1 = 2 - 2 = 0$. ✓ E por Walras, $z_2 = 0$ também. Confirmação numérica.</p>
+      <p><strong>5. Peer-review.</strong> Questão de cálculo e leitura de Walras. Quem marca (d) confunde Walras com market-clearing.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — Homogeneidade grau 0 da demanda agregada -->
+  <div class="quizg-q" data-qid="q9" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> A função de excesso de demanda agregada $z(p)$ em economia de troca pura é <strong>homogênea de grau 0</strong> em $p$, ou seja, $z(\lambda p) = z(p)$ para todo $\lambda > 0$. Isso permite:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Normalizar preços (ex.: $p_2 = 1$ numerário, ou $\sum_\ell p_\ell = 1$).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Concluir que EC existe sempre, independente de hipóteses.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) Resolver EC apenas em CD.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Garantir que $p_1^* = p_2^*$.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Homogeneidade grau 0 vem de UMP individual: demanda Marshalliana é homogênea grau 0 em $(p, m)$, e $m^i = p\cdot \omega^i$ é grau 1 em $p$ — então $x^i(\lambda p) = x^i(\lambda p, \lambda m) = x^i(p, m) = x^i(p)$. Como $z = x - \omega$, idem.</p>
+      <p><strong>2. Derivação.</strong> Implicação: o sistema $z(p) = 0$ tem $L$ equações para $L$ incógnitas, mas uma é redundante (Walras) e outra é livre (homogeneidade) — só $L - 2$ equações independentes, $L - 1$ incógnitas livres após normalização. Em $L = 2$: 0 equações independentes após Walras, 1 incógnita livre ($p_1/p_2$).</p>
+      <p><strong>3. Armadilha.</strong> (b) "EC existe sempre" é falso — exige hipóteses adicionais (preferências contínuas, convexas, dotação interior). (c) limita demais. (d) confunde existência com igualdade.</p>
+      <p><strong>4. Extensão.</strong> Em $L = N$ bens, a normalização "simplex" $\sum_\ell p_\ell = 1$ define um conjunto compacto onde se pode aplicar Brouwer/Kakutani para provar existência (Aula 6). Sem normalização, o conjunto de preços é cone aberto, e teoremas de ponto fixo não se aplicam diretamente.</p>
+      <p><strong>5. Peer-review.</strong> Questão estrutural sobre a álgebra de preços. Quem marca (b) ou (d) confunde forma com substância.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — 2º TBE (preliminar) -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Sobre o <strong>2º Teorema do Bem-Estar (preliminar)</strong>, qual afirmação é <em>correta</em>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Diz que toda alocação Pareto-eficiente já é EC sem necessidade de mexer em dotações.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Sob convexidade, toda alocação Pareto-eficiente pode ser implementada como EC após redistribuição lump-sum das dotações.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) É consequência direta do 1º TBE — sai de graça.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Vale apenas em CD.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> 2º TBE separa eficiência (atingida via mercado) de equidade (atingida via redistribuição). Hipótese-chave: <strong>convexidade</strong> de preferências (e tecnologia, em economia com produção). Sem convexidade, a separação por hiperplano-preço (Hahn-Banach) falha.</p>
+      <p><strong>2. Derivação.</strong> Dado $x^*$ Pareto-eficiente em economia convexa, define-se $V^i = \{x : u^i(x) > u^i(x^{*i})\}$ (conjunto preferido). Cada $V^i$ é convexo. Soma $\sum_i V^i$ é convexa. Pareto ⇒ $\sum_i V^i$ não intersecta $\{\sum_i \omega^i\}$. Hahn-Banach ⇒ existe hiperplano (preço $p^*$) que separa. Detalhes na Aula 6.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora a redistribuição. (c) "sai de graça" do 1º — falso, é teorema independente com hipóteses adicionais. (d) limita demais.</p>
+      <p><strong>4. Extensão.</strong> Implicação política: mercado pode atingir qualquer Pareto-eficiente desejado, contanto que se aceite redistribuição lump-sum. Em prática, lump-sum é não-implementável (informação privada sobre habilidade); daí a teoria de imposto ótimo (Mirrlees, Saez) — fora desta ementa.</p>
+      <p><strong>5. Peer-review.</strong> Questão definicional do 2º TBE. Quem marca (a) confunde "Pareto = EC" com "Pareto pode ser EC após mudança de dotação". Distinção fundamental.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 4 presencial</strong> (quarta, 13/05, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-04.html">material da pré-aula</a> e relea a seção correspondente. O <strong>quiz pós-aula 4</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 4</strong> abrem na madrugada de quinta 14/05 — todos fecham em <strong>quarta 20/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-04-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>
