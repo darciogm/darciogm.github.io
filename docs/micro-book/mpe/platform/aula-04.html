@@ -53,8 +53,8 @@
   <h2>ZaE — Capítulo 14 (§14.1 a §14.7)</h2>
   <p>Abra o <strong>Capítulo 14 — Equilíbrio Geral</strong> do livro do Prof. Darcio (<em>Microeconomia: Do Zero ao Equilíbrio (e Além)</em>). Para esta aula, foco em <strong>§14.1 a §14.7</strong>:</p>
   <ul>
-    <li><strong>§14.1–§14.2</strong> — Sistema de Preços + Caixa de Edgeworth. Construção em $2\times 2$: dois eixos, duas origens (uma rotacionada 180°), curvas de indiferença convexas para cada origem; alocação viável $\sum_i x^i = \sum_i \omega^i$.</li>
-    <li><strong>§14.3–§14.5</strong> — Pareto-eficiência como tangência $\text{TMS}^A = \text{TMS}^B$ (interior); Curva de Contrato (lugar geométrico das alocações Pareto-eficientes; conecta as duas origens); Núcleo (subconjunto da contract curve dentro da lente de melhoria mútua passando pela dotação).</li>
+    <li><strong>§14.1–§14.2</strong> — Sistema de Preços + Caixa de Edgeworth. Construção em \(2\times 2\): dois eixos, duas origens (uma rotacionada 180°), curvas de indiferença convexas para cada origem; alocação viável \(\sum_i x^i = \sum_i \omega^i\).</li>
+    <li><strong>§14.3–§14.5</strong> — Pareto-eficiência como tangência \(\text{TMS}^A = \text{TMS}^B\) (interior); Curva de Contrato (lugar geométrico das alocações Pareto-eficientes; conecta as duas origens); Núcleo (subconjunto da contract curve dentro da lente de melhoria mútua passando pela dotação).</li>
     <li><strong>§14.6–§14.7</strong> — 1º e 2º Teoremas do Bem-Estar: enunciado, hipóteses (LNS / convexidade), intuição da prova.</li>
   </ul>
   <p><strong>Pulam (vão para Aulas 5–6):</strong> §14.8–§14.10 (modelo matemático formal), §14.11 (CGE), §14.12 (Escolha Social — Arrow, fora da ementa MPE).</p>
@@ -73,7 +73,7 @@
     <li><strong>§13.2 The Efficiency of Perfect Competition</strong> — 1º TBE em troca pura, enunciado do 2º TBE, hipóteses (LNS, convexidade).</li>
   </ul>
   <p><strong>Pulam (vão para Aulas 5 e 6):</strong> §13.3 (Production), §13.4–§13.5 (general equilibrium with production), §13.6+ (existence via Brouwer/Kakutani).</p>
-  <p><strong>Foco da leitura:</strong> em N&amp;S, a notação usa "demand functions" para Marshallianas (já vistas nas Aulas 1–3). A novidade desta aula é que <em>preço deixa de ser exógeno</em>: $p^*$ é objeto matemático que zera todos os mercados simultaneamente. Compare com ZaE — as duas formulações são equivalentes.</p>
+  <p><strong>Foco da leitura:</strong> em N&amp;S, a notação usa "demand functions" para Marshallianas (já vistas nas Aulas 1–3). A novidade desta aula é que <em>preço deixa de ser exógeno</em>: \(p^*\) é objeto matemático que zera todos os mercados simultaneamente. Compare com ZaE — as duas formulações são equivalentes.</p>
   <p style="margin-top:1rem">
     <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap13.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir N&amp;S Cap. 13 (PDF) →</button>
     <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login da plataforma.</span>
@@ -99,22 +99,22 @@
   </div>
 
   <div class="section-content" id="content-s3" style="display:none">
-    <p><strong>Setup.</strong> Economia de troca pura com $I = 2$ consumidores ($A$, $B$) e $L = 2$ bens. Cada consumidor $i$ tem:</p>
+    <p><strong>Setup.</strong> Economia de troca pura com \(I = 2\) consumidores (\(A\), \(B\)) e \(L = 2\) bens. Cada consumidor \(i\) tem:</p>
     <ul>
-      <li>Preferências $\succeq^i$ representadas por $u^i: \mathbb{R}^2_+ \to \mathbb{R}$ contínua, monotônica, estritamente quase-côncava.</li>
-      <li>Dotação $\omega^i = (\omega_1^i, \omega_2^i) \in \mathbb{R}^2_{++}$.</li>
+      <li>Preferências \(\succeq^i\) representadas por \(u^i: \mathbb{R}^2_+ \to \mathbb{R}\) contínua, monotônica, estritamente quase-côncava.</li>
+      <li>Dotação \(\omega^i = (\omega_1^i, \omega_2^i) \in \mathbb{R}^2_{++}\).</li>
     </ul>
-    <p>Total da economia: $\bar\omega = \omega^A + \omega^B$.</p>
+    <p>Total da economia: \(\bar\omega = \omega^A + \omega^B\).</p>
 
-    <p><strong>Alocação viável.</strong> Uma alocação é $x = (x^A, x^B)$ com $x^i \in \mathbb{R}^2_+$. É <em>viável</em> se</p>
+    <p><strong>Alocação viável.</strong> Uma alocação é \(x = (x^A, x^B)\) com \(x^i \in \mathbb{R}^2_+\). É <em>viável</em> se</p>
     \[
     x^A + x^B = \bar\omega.
     \]
     <p>Mercados fecham — não há criação nem destruição de recurso.</p>
 
-    <p><strong>Pareto-eficiência.</strong> Uma alocação viável $x$ é <em>Pareto-eficiente</em> se não existir outra alocação viável $\tilde x$ tal que $u^i(\tilde x^i) \ge u^i(x^i)$ para todo $i$ e $u^j(\tilde x^j) > u^j(x^j)$ para algum $j$.</p>
+    <p><strong>Pareto-eficiência.</strong> Uma alocação viável \(x\) é <em>Pareto-eficiente</em> se não existir outra alocação viável \(\tilde x\) tal que \(u^i(\tilde x^i) \ge u^i(x^i)\) para todo \(i\) e \(u^j(\tilde x^j) > u^j(x^j)\) para algum \(j\).</p>
 
-    <p><strong>Caracterização interior.</strong> Com utilidades suaves, estritamente quase-côncavas, $x^i \gg 0$:</p>
+    <p><strong>Caracterização interior.</strong> Com utilidades suaves, estritamente quase-côncavas, \(x^i \gg 0\):</p>
     \[
     \boxed{\;x \text{ é Pareto-eficiente interior} \iff \text{TMS}^A(x^A) = \text{TMS}^B(x^B).\;}
     \]
@@ -122,16 +122,16 @@
 
     <p><strong>Caixa de Edgeworth — leitura visual.</strong></p>
     <ul>
-      <li>Eixo horizontal: bem 1, comprimento $\bar\omega_1$.</li>
-      <li>Eixo vertical: bem 2, comprimento $\bar\omega_2$.</li>
-      <li>Origem $A$ no canto inferior-esquerdo; origem $B$ no canto superior-direito (rotacionado 180°).</li>
-      <li>Cada ponto interior $(x_1^A, x_2^A)$ é uma alocação viável; $B$ recebe $\bar\omega - x^A$.</li>
-      <li>Curvas de indiferença de $A$ são convexas para $A$; de $B$ são convexas para $B$ (parecem côncavas a olhos de $A$).</li>
+      <li>Eixo horizontal: bem 1, comprimento \(\bar\omega_1\).</li>
+      <li>Eixo vertical: bem 2, comprimento \(\bar\omega_2\).</li>
+      <li>Origem \(A\) no canto inferior-esquerdo; origem \(B\) no canto superior-direito (rotacionado 180°).</li>
+      <li>Cada ponto interior \((x_1^A, x_2^A)\) é uma alocação viável; \(B\) recebe \(\bar\omega - x^A\).</li>
+      <li>Curvas de indiferença de \(A\) são convexas para \(A\); de \(B\) são convexas para \(B\) (parecem côncavas a olhos de \(A\)).</li>
     </ul>
 
     <p><strong>Contract curve.</strong> Conjunto das alocações Pareto-eficientes na caixa. Em economias suaves, é uma curva contínua que conecta as duas origens.</p>
 
-    <p><strong>Núcleo.</strong> Subconjunto da contract curve composto pelas alocações que (i) são individualmente racionais ($u^i(x^i) \ge u^i(\omega^i)$) e (ii) não podem ser bloqueadas por nenhuma coalizão. Em $2\times 2$, núcleo = parte da contract curve <em>dentro</em> da lente formada pelas duas curvas de indiferença passando pela dotação $\omega$.</p>
+    <p><strong>Núcleo.</strong> Subconjunto da contract curve composto pelas alocações que (i) são individualmente racionais (\(u^i(x^i) \ge u^i(\omega^i)\)) e (ii) não podem ser bloqueadas por nenhuma coalizão. Em \(2\times 2\), núcleo = parte da contract curve <em>dentro</em> da lente formada pelas duas curvas de indiferença passando pela dotação \(\omega\).</p>
 
     <div class="admonition warn">
     <div class="admonition-title">Armadilha — Pareto vs. núcleo</div>
@@ -143,7 +143,7 @@
       <div class="micro-desc">Até 3 tentativas por questão.</div>
 
       <div class="micro-q" data-q="s3q1" data-correct="c">
-        <div class="q-text">1. Em economia de troca pura $2\times 2$ com utilidades CD diferentes (\(u^A = x_1^{0{,}3}x_2^{0{,}7}\) e \(u^B = x_1^{0{,}7}x_2^{0{,}3}\)), a contract curve geralmente:</div>
+        <div class="q-text">1. Em economia de troca pura \(2\times 2\) com utilidades CD diferentes (\(u^A = x_1^{0{,}3}x_2^{0{,}7}\) e \(u^B = x_1^{0{,}7}x_2^{0{,}3}\)), a contract curve geralmente:</div>
         <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-edgeworth','s3q1','a',this)">(a) É a diagonal da caixa.</div>
         <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-edgeworth','s3q1','b',this)">(b) Contém apenas o ponto de dotação inicial.</div>
         <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-edgeworth','s3q1','c',this)">(c) É curva contínua dentro da caixa, conectando as duas origens; ponto a ponto satisfaz \(\text{TMS}^A = \text{TMS}^B\).</div>
@@ -152,7 +152,7 @@
       </div>
 
       <div class="micro-q" data-q="s3q2" data-correct="b">
-        <div class="q-text">2. Sobre a relação entre <strong>núcleo</strong> e <strong>Pareto-eficiência</strong> em economia $2\times 2$:</div>
+        <div class="q-text">2. Sobre a relação entre <strong>núcleo</strong> e <strong>Pareto-eficiência</strong> em economia \(2\times 2\):</div>
         <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-edgeworth','s3q2','a',this)">(a) Coincidem sempre — todo Pareto-eficiente está no núcleo.</div>
         <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-edgeworth','s3q2','b',this)">(b) Núcleo \(\subseteq\) Pareto. Núcleo adiciona racionalidade individual e impossibilidade de bloqueio coalizional.</div>
         <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-edgeworth','s3q2','c',this)">(c) Pareto \(\subseteq\) Núcleo. Pareto é mais restritivo.</div>
@@ -195,66 +195,66 @@
   </div>
 
   <div class="section-content" id="content-s4" style="display:none">
-    <p><strong>Tomadores de preço.</strong> Cada consumidor $i$ enfrenta preço $p = (p_1, p_2) \ge 0$, $p \neq 0$. Renda inicial: $m^i = p\cdot \omega^i$.</p>
+    <p><strong>Tomadores de preço.</strong> Cada consumidor \(i\) enfrenta preço \(p = (p_1, p_2) \ge 0\), \(p \neq 0\). Renda inicial: \(m^i = p\cdot \omega^i\).</p>
 
     <p><strong>UMP individual:</strong></p>
     \[
     x^i(p) \in \arg\max_{x \ge 0} u^i(x) \;\;\text{s.a.}\;\; p\cdot x \le p\cdot \omega^i.
     \]
 
-    <p><strong>Excesso de demanda individual:</strong> $z^i(p) = x^i(p) - \omega^i$ (vetor; positivo onde quer comprar, negativo onde quer vender).</p>
-    <p><strong>Excesso agregado:</strong> $z(p) = \sum_i z^i(p)$.</p>
+    <p><strong>Excesso de demanda individual:</strong> \(z^i(p) = x^i(p) - \omega^i\) (vetor; positivo onde quer comprar, negativo onde quer vender).</p>
+    <p><strong>Excesso agregado:</strong> \(z(p) = \sum_i z^i(p)\).</p>
 
-    <p><strong>Lei de Walras.</strong> Por LNS, cada UMP exausta orçamento: $p\cdot x^i(p) = p\cdot \omega^i$. Então</p>
+    <p><strong>Lei de Walras.</strong> Por LNS, cada UMP exausta orçamento: \(p\cdot x^i(p) = p\cdot \omega^i\). Então</p>
     \[
     p\cdot z^i(p) = 0 \;\;\forall i \implies p\cdot z(p) = \sum_i p\cdot z^i(p) = 0.
     \]
-    <p>É <strong>identidade contábil</strong> — vale para todo $p$ onde demandas estão definidas, não apenas em equilíbrio.</p>
+    <p>É <strong>identidade contábil</strong> — vale para todo \(p\) onde demandas estão definidas, não apenas em equilíbrio.</p>
 
-    <p><strong>Implicação operacional.</strong> Em $L = 2$, $p_1 z_1 + p_2 z_2 = 0$. Se $p \gg 0$ e $z_1 = 0$, então $z_2 = 0$. Em geral: zerar $L - 1$ mercados ⇒ o $L$-ésimo zera. Reduz dimensão do problema.</p>
+    <p><strong>Implicação operacional.</strong> Em \(L = 2\), \(p_1 z_1 + p_2 z_2 = 0\). Se \(p \gg 0\) e \(z_1 = 0\), então \(z_2 = 0\). Em geral: zerar \(L - 1\) mercados ⇒ o \(L\)-ésimo zera. Reduz dimensão do problema.</p>
 
-    <p><strong>Homogeneidade grau 0:</strong> $z(\lambda p) = z(p)$ ⇒ podemos normalizar (ex.: $p_2 = 1$ numerário).</p>
+    <p><strong>Homogeneidade grau 0:</strong> \(z(\lambda p) = z(p)\) ⇒ podemos normalizar (ex.: \(p_2 = 1\) numerário).</p>
 
-    <p><strong>Equilíbrio competitivo (EC).</strong> Par $(p^*, x^*)$ com $p^* \ge 0$, $p^* \neq 0$, tal que:</p>
+    <p><strong>Equilíbrio competitivo (EC).</strong> Par \((p^*, x^*)\) com \(p^* \ge 0\), \(p^* \neq 0\), tal que:</p>
     <ol>
-      <li>Para cada $i$, $x^{*i}$ resolve o UMP em $p^*$.</li>
-      <li>$\sum_i x^{*i} = \sum_i \omega^i$ (mercados fecham).</li>
+      <li>Para cada \(i\), \(x^{*i}\) resolve o UMP em \(p^*\).</li>
+      <li>\(\sum_i x^{*i} = \sum_i \omega^i\) (mercados fecham).</li>
     </ol>
-    <p>Equivalente: $z(p^*) = 0$.</p>
+    <p>Equivalente: \(z(p^*) = 0\).</p>
 
-    <p><strong>Cálculo numérico — CD simétrica.</strong> Setup: $u^A = u^B = x_1^{1/2}x_2^{1/2}$; $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, total $\bar\omega = (4, 4)$.</p>
-    <p>Demanda CD: $x_1^i = m^i/(2 p_1)$. Soma:</p>
+    <p><strong>Cálculo numérico — CD simétrica.</strong> Setup: \(u^A = u^B = x_1^{1/2}x_2^{1/2}\); \(\omega^A = (3, 1)\), \(\omega^B = (1, 3)\), total \(\bar\omega = (4, 4)\).</p>
+    <p>Demanda CD: \(x_1^i = m^i/(2 p_1)\). Soma:</p>
     \[
     x_1^A + x_1^B = \frac{m^A + m^B}{2 p_1} = \frac{p\cdot \bar\omega}{2 p_1} = \frac{4 p_1 + 4 p_2}{2 p_1} = 2 + \frac{2 p_2}{p_1}.
     \]
-    <p>Mercado 1 fecha em $\bar\omega_1 = 4$:</p>
+    <p>Mercado 1 fecha em \(\bar\omega_1 = 4\):</p>
     \[
     2 + \frac{2 p_2}{p_1} = 4 \implies \frac{p_2}{p_1} = 1.
     \]
-    <p>Equilíbrio: $p^* = (1, 1)$ (com $p_2 = 1$). Alocação: $x^{A*} = (2, 2)$, $x^{B*} = (2, 2)$.</p>
+    <p>Equilíbrio: \(p^* = (1, 1)\) (com \(p_2 = 1\)). Alocação: \(x^{A*} = (2, 2)\), \(x^{B*} = (2, 2)\).</p>
 
     <div class="admonition warn">
     <div class="admonition-title">Armadilha — Walras vale só em equilíbrio?</div>
-    <p>Não. Walras $p\cdot z(p) = 0$ é <strong>identidade contábil</strong> que vem do exauste orçamentário individual (LNS). Vale em qualquer $p \gg 0$ onde demandas estão definidas. Equilíbrio é mais forte: $z(p^*) = 0$ (cada componente, não só o produto interno).</p>
+    <p>Não. Walras \(p\cdot z(p) = 0\) é <strong>identidade contábil</strong> que vem do exauste orçamentário individual (LNS). Vale em qualquer \(p \gg 0\) onde demandas estão definidas. Equilíbrio é mais forte: \(z(p^*) = 0\) (cada componente, não só o produto interno).</p>
     </div>
 
     <div class="micro-checkpoint" id="micro-s4">
       <h3>Micro-checkpoint (2 itens)</h3>
 
       <div class="micro-q" data-q="s4q1" data-correct="b">
-        <div class="q-text">1. A lei de Walras $p\cdot z(p) = 0$ vale porque:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q1','a',this)">(a) Mercados sempre fecham — oferta = demanda em qualquer $p$.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q1','b',this)">(b) Cada consumidor exausta orçamento ($p\cdot x^i = p\cdot \omega^i$) por monotonicidade/LNS, então $p\cdot z^i = 0$ e a soma agregada também.</div>
+        <div class="q-text">1. A lei de Walras \(p\cdot z(p) = 0\) vale porque:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q1','a',this)">(a) Mercados sempre fecham — oferta = demanda em qualquer \(p\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q1','b',this)">(b) Cada consumidor exausta orçamento (\(p\cdot x^i = p\cdot \omega^i\)) por monotonicidade/LNS, então \(p\cdot z^i = 0\) e a soma agregada também.</div>
         <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-walras','s4q1','c',this)">(c) Preços são positivos.</div>
         <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-walras','s4q1','d',this)">(d) Bens são todos normais.</div>
         <div class="micro-feedback"></div>
       </div>
 
       <div class="micro-q" data-q="s4q2" data-correct="a">
-        <div class="q-text">2. Em $L = 2$ bens com preços estritamente positivos, qual a implicação operacional da lei de Walras para encontrar EC?</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q2','a',this)">(a) Basta resolver $z_1(p) = 0$ — a lei de Walras garante que $z_2(p) = 0$ automaticamente.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q2','b',this)">(b) Precisa-se resolver as duas equações $z_1 = 0$ e $z_2 = 0$ simultaneamente.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-walras','s4q2','c',this)">(c) É preciso impor adicionalmente $\sum p_\ell = 1$.</div>
+        <div class="q-text">2. Em \(L = 2\) bens com preços estritamente positivos, qual a implicação operacional da lei de Walras para encontrar EC?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-walras','s4q2','a',this)">(a) Basta resolver \(z_1(p) = 0\) — a lei de Walras garante que \(z_2(p) = 0\) automaticamente.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-walras','s4q2','b',this)">(b) Precisa-se resolver as duas equações \(z_1 = 0\) e \(z_2 = 0\) simultaneamente.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-walras','s4q2','c',this)">(c) É preciso impor adicionalmente \(\sum p_\ell = 1\).</div>
         <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-walras','s4q2','d',this)">(d) Walras só vale em CD.</div>
         <div class="micro-feedback"></div>
       </div>
@@ -294,19 +294,19 @@
   </div>
 
   <div class="section-content" id="content-s5" style="display:none">
-    <p><strong>Não-saciedade local (LNS).</strong> Para todo $x^i$ e toda vizinhança $U$ de $x^i$, existe $\tilde x^i \in U$ com $u^i(\tilde x^i) > u^i(x^i)$. Mais geral que monotonicidade estrita, mas suficiente para garantir exauste de orçamento individual.</p>
+    <p><strong>Não-saciedade local (LNS).</strong> Para todo \(x^i\) e toda vizinhança \(U\) de \(x^i\), existe \(\tilde x^i \in U\) com \(u^i(\tilde x^i) > u^i(x^i)\). Mais geral que monotonicidade estrita, mas suficiente para garantir exauste de orçamento individual.</p>
 
-    <p><strong>1º Teorema do Bem-Estar (1º TBE).</strong> Em troca pura com LNS, todo equilíbrio competitivo $(p^*, x^*)$ é Pareto-eficiente.</p>
+    <p><strong>1º Teorema do Bem-Estar (1º TBE).</strong> Em troca pura com LNS, todo equilíbrio competitivo \((p^*, x^*)\) é Pareto-eficiente.</p>
 
-    <p><strong>Demonstração linha-a-linha.</strong> Por contradição. Suponha que $x^*$ NÃO é Pareto. Então existe alocação viável $\tilde x$ tal que $u^i(\tilde x^i) \ge u^i(x^{*i})$ para todo $i$ e $u^j(\tilde x^j) > u^j(x^{*j})$ para algum $j$.</p>
+    <p><strong>Demonstração linha-a-linha.</strong> Por contradição. Suponha que \(x^*\) NÃO é Pareto. Então existe alocação viável \(\tilde x\) tal que \(u^i(\tilde x^i) \ge u^i(x^{*i})\) para todo \(i\) e \(u^j(\tilde x^j) > u^j(x^{*j})\) para algum \(j\).</p>
 
-    <p><strong>Passo 1.</strong> Para o $j$ estritamente melhor: $\tilde x^j$ deve estar fora do orçamento, ou seja</p>
+    <p><strong>Passo 1.</strong> Para o \(j\) estritamente melhor: \(\tilde x^j\) deve estar fora do orçamento, ou seja</p>
     \[
     p^*\cdot \tilde x^j > p^*\cdot \omega^j.
     \]
-    <p>(Razão: se cabia no orçamento, então $x^{*j}$ não maximizaria — contradição com UMP de $x^{*j}$.)</p>
+    <p>(Razão: se cabia no orçamento, então \(x^{*j}\) não maximizaria — contradição com UMP de \(x^{*j}\).)</p>
 
-    <p><strong>Passo 2 (LNS aqui).</strong> Para $i \neq j$: $u^i(\tilde x^i) \ge u^i(x^{*i})$, podemos ter igualdade. Por LNS, existe $\hat x^i$ próximo de $\tilde x^i$ com $u^i(\hat x^i) > u^i(\tilde x^i)$. Se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, por continuidade $\hat x^i$ ainda cabe no orçamento, e $u^i(\hat x^i) > u^i(x^{*i})$ — contradiz UMP. Logo</p>
+    <p><strong>Passo 2 (LNS aqui).</strong> Para \(i \neq j\): \(u^i(\tilde x^i) \ge u^i(x^{*i})\), podemos ter igualdade. Por LNS, existe \(\hat x^i\) próximo de \(\tilde x^i\) com \(u^i(\hat x^i) > u^i(\tilde x^i)\). Se \(p^*\cdot \tilde x^i < p^*\cdot \omega^i\), por continuidade \(\hat x^i\) ainda cabe no orçamento, e \(u^i(\hat x^i) > u^i(x^{*i})\) — contradiz UMP. Logo</p>
     \[
     p^*\cdot \tilde x^i \ge p^*\cdot \omega^i \;\;\forall i \neq j.
     \]
@@ -315,13 +315,13 @@
     \[
     \sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i.
     \]
-    <p>Mas $\tilde x$ viável: $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i$. <strong>Contradição.</strong> $\blacksquare$</p>
+    <p>Mas \(\tilde x\) viável: \(\sum_i \tilde x^i = \sum_i \omega^i\), logo \(\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i\). <strong>Contradição.</strong> \(\blacksquare\)</p>
 
-    <p><strong>Onde LNS é insubstituível.</strong> Apenas no passo 2. Sem LNS — i.e., num ponto onde <em>nenhuma</em> direção de melhora existe na vizinhança — alguém pode ser indiferente entre $\tilde x^i$ e $x^{*i}$ sem que vizinhança preferida exista, e o argumento quebra.</p>
+    <p><strong>Onde LNS é insubstituível.</strong> Apenas no passo 2. Sem LNS — i.e., num ponto onde <em>nenhuma</em> direção de melhora existe na vizinhança — alguém pode ser indiferente entre \(\tilde x^i\) e \(x^{*i}\) sem que vizinhança preferida exista, e o argumento quebra.</p>
 
-    <p><strong>Cuidado: saturação direcional ≠ violação de LNS.</strong> Utilidade do tipo $u(x_1, x_2) = \min\{x_1, 1\} + x_2$ — onde bem 1 satura em $x_1 = 1$ — <em>satisfaz LNS globalmente</em>, porque bem 2 entrega $\partial u/\partial x_2 = 1 > 0$ em todo $\mathbb{R}^2_+$, oferecendo direção de melhora em qualquer ponto. LNS é hipótese de <em>vizinhança</em> (basta uma direção), não de <em>cada bem separadamente</em>. Para falhar LNS de fato, é preciso saturação <em>total</em> num ponto: bliss-point interior, $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$ — conjunto preferido estrito vazio em $(a, b)$. <strong>MWG §16.D</strong> traz a construção canônica; o cálculo numérico fechado fica como gancho da pré-monitoria 2 (sáb 23/05, com Alberto).</p>
+    <p><strong>Cuidado: saturação direcional ≠ violação de LNS.</strong> Utilidade do tipo \(u(x_1, x_2) = \min\{x_1, 1\} + x_2\) — onde bem 1 satura em \(x_1 = 1\) — <em>satisfaz LNS globalmente</em>, porque bem 2 entrega \(\partial u/\partial x_2 = 1 > 0\) em todo \(\mathbb{R}^2_+\), oferecendo direção de melhora em qualquer ponto. LNS é hipótese de <em>vizinhança</em> (basta uma direção), não de <em>cada bem separadamente</em>. Para falhar LNS de fato, é preciso saturação <em>total</em> num ponto: bliss-point interior, \(u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]\) — conjunto preferido estrito vazio em \((a, b)\). <strong>MWG §16.D</strong> traz a construção canônica; o cálculo numérico fechado fica como gancho da pré-monitoria 2 (sáb 23/05, com Alberto).</p>
 
-    <p><strong>2º Teorema do Bem-Estar — teaser preliminar.</strong> Sob convexidade (preferências convexas + viabilidade convexa), toda alocação Pareto-eficiente $x^*$ pode ser implementada como equilíbrio competitivo de uma economia obtida por <strong>redistribuição lump-sum</strong> das dotações iniciais. Hipótese-chave: convexidade. Sem ela: retornos crescentes, indivisibilidades — Aulas 5–9 discutem.</p>
+    <p><strong>2º Teorema do Bem-Estar — teaser preliminar.</strong> Sob convexidade (preferências convexas + viabilidade convexa), toda alocação Pareto-eficiente \(x^*\) pode ser implementada como equilíbrio competitivo de uma economia obtida por <strong>redistribuição lump-sum</strong> das dotações iniciais. Hipótese-chave: convexidade. Sem ela: retornos crescentes, indivisibilidades — Aulas 5–9 discutem.</p>
 
     <div class="admonition note" style="border-left:4px solid #1B3A5C">
     <div class="admonition-title">🇧🇷 Box Brasil — eficiência ≠ equidade</div>
@@ -350,10 +350,10 @@
       </div>
 
       <div class="micro-q" data-q="s5q3" data-correct="b">
-        <div class="q-text">3. Em CD simétrica $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (3, 1)$, $\omega^B = (1, 3)$, o equilíbrio competitivo tem:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe','s5q3','a',this)">(a) $p_1^*/p_2^* = 3$ (escassez relativa de bem 1 para $A$).</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe','s5q3','b',this)">(b) $p_1^*/p_2^* = 1$ — total simétrico, preferências simétricas.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe','s5q3','c',this)">(c) $p_1^*/p_2^* = 1/3$.</div>
+        <div class="q-text">3. Em CD simétrica \(u^A = u^B = x_1^{1/2}x_2^{1/2}\), \(\omega^A = (3, 1)\), \(\omega^B = (1, 3)\), o equilíbrio competitivo tem:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe','s5q3','a',this)">(a) \(p_1^*/p_2^* = 3\) (escassez relativa de bem 1 para \(A\)).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe','s5q3','b',this)">(b) \(p_1^*/p_2^* = 1\) — total simétrico, preferências simétricas.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe','s5q3','c',this)">(c) \(p_1^*/p_2^* = 1/3\).</div>
         <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe','s5q3','d',this)">(d) Não há EC — apenas núcleo.</div>
         <div class="micro-feedback"></div>
       </div>
@@ -383,23 +383,23 @@
 
   <div class="paper-exercise">
     <h3>Exercício proposto 1 — EC em CD com dotação extrema (obrigatório)</h3>
-    <p class="ex-statement">Considere economia de troca pura com $u^A = u^B = x_1^{1/2}x_2^{1/2}$, $\omega^A = (10, 0)$ (só tem bem 1), $\omega^B = (0, 10)$ (só tem bem 2). (a) Encontre o EC (preço relativo + alocação $x^{A*}$ e $x^{B*}$). (b) Esboce na caixa de Edgeworth: dotação inicial, alocação de equilíbrio, curvas de indiferença em ambos os pontos. (c) Verifique numericamente que $\text{TMS}^A(x^{A*}) = \text{TMS}^B(x^{B*})$.</p>
+    <p class="ex-statement">Considere economia de troca pura com \(u^A = u^B = x_1^{1/2}x_2^{1/2}\), \(\omega^A = (10, 0)\) (só tem bem 1), \(\omega^B = (0, 10)\) (só tem bem 2). (a) Encontre o EC (preço relativo + alocação \(x^{A*}\) e \(x^{B*}\)). (b) Esboce na caixa de Edgeworth: dotação inicial, alocação de equilíbrio, curvas de indiferença em ambos os pontos. (c) Verifique numericamente que \(\text{TMS}^A(x^{A*}) = \text{TMS}^B(x^{B*})\).</p>
     <label class="done-check"><input type="checkbox" id="ex61-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
     <textarea id="ex61-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
   </div>
 
   <div class="paper-exercise">
     <h3>Exercício proposto 2 — EC em economia com Leontief (obrigatório)</h3>
-    <p class="ex-statement">Mesma economia do Ex 1, mas agora $u^A = x_1^{1/2}x_2^{1/2}$ e $u^B = \min\{x_1, x_2\}$ (Leontief). (a) Calcule a demanda Marshalliana de cada consumidor como função de $p_1/p_2$. (b) Encontre o EC. (c) Comente sobre a unicidade — é única, há multiplicidade, ou degenera?</p>
+    <p class="ex-statement">Mesma economia do Ex 1, mas agora \(u^A = x_1^{1/2}x_2^{1/2}\) e \(u^B = \min\{x_1, x_2\}\) (Leontief). (a) Calcule a demanda Marshalliana de cada consumidor como função de \(p_1/p_2\). (b) Encontre o EC. (c) Comente sobre a unicidade — é única, há multiplicidade, ou degenera?</p>
     <label class="done-check"><input type="checkbox" id="ex62-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
     <textarea id="ex62-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
   </div>
 
   <div class="paper-exercise">
     <h3>Exercício proposto 3 (bônus) — Verificação numérica do 1º TBE</h3>
-    <p class="ex-statement">No EC do Exercício 1, mostre passo-a-passo o argumento do 1º TBE: assuma $\exists \tilde x$ viável e Pareto-superior; aplique passo 1 (custa mais para o $j$ estritamente melhor) e passo 2 (LNS para os $i$ fracamente melhores); some e contradiga viabilidade.</p>
+    <p class="ex-statement">No EC do Exercício 1, mostre passo-a-passo o argumento do 1º TBE: assuma \(\exists \tilde x\) viável e Pareto-superior; aplique passo 1 (custa mais para o \(j\) estritamente melhor) e passo 2 (LNS para os \(i\) fracamente melhores); some e contradiga viabilidade.</p>
     <label class="done-check"><input type="checkbox" id="ex63-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
-    <textarea id="ex63-approach" placeholder="Opcional — 1-3 linhas (ex.: 'Construo $\\tilde x = (\\hat x^A, \\hat x^B)$, mostro que $p^*\\cdot \\hat x^j > p^*\\cdot \\omega^j$ por UMP...')." oninput="MPE.updatePaperState()"></textarea>
+    <textarea id="ex63-approach" placeholder="Opcional — 1-3 linhas (ex.: 'Construo \(\\tilde x = (\\hat x^A, \\hat x^B)\), mostro que \(p^*\\cdot \\hat x^j > p^*\\cdot \\omega^j\) por UMP...')." oninput="MPE.updatePaperState()"></textarea>
   </div>
 
   <button class="section-complete-btn" id="complete-s6-exercicios" disabled onclick="MPE.completePaperExercises()">Registrar e avançar</button>
@@ -416,7 +416,7 @@
     <div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
 
     <div class="quiz-question" data-question="q1" data-correct="b">
-    <div class="q-text">Q1 (síntese — Edgeworth/Pareto). Em economia $2\times 2$ de troca pura com utilidades suaves estritamente quase-côncavas, a contract curve geralmente:</div>
+    <div class="q-text">Q1 (síntese — Edgeworth/Pareto). Em economia \(2\times 2\) de troca pura com utilidades suaves estritamente quase-côncavas, a contract curve geralmente:</div>
     <div class="quiz-option" data-value="a">(a) É segmento de reta ligando os dois cantos da caixa.</div>
     <div class="quiz-option" data-value="b">(b) É curva contínua dentro da caixa, conectando as duas origens; ponto a ponto satisfaz \(\text{TMS}^A = \text{TMS}^B\).</div>
     <div class="quiz-option" data-value="c">(c) É o ponto único de tangência.</div>
@@ -425,11 +425,11 @@
     </div>
 
     <div class="quiz-question" data-question="q2" data-correct="b">
-    <div class="q-text">Q2 (síntese — Walras/EC). Em $L = 3$ bens com $p \gg 0$, a lei de Walras implica que para resolver EC basta zerar:</div>
+    <div class="q-text">Q2 (síntese — Walras/EC). Em \(L = 3\) bens com \(p \gg 0\), a lei de Walras implica que para resolver EC basta zerar:</div>
     <div class="quiz-option" data-value="a">(a) Os 3 mercados simultaneamente — três equações independentes.</div>
     <div class="quiz-option" data-value="b">(b) Quaisquer 2 dos 3 mercados — o terceiro fecha automaticamente por Walras.</div>
     <div class="quiz-option" data-value="c">(c) Apenas o bem numerário.</div>
-    <div class="quiz-option" data-value="d">(d) A média $(z_1 + z_2 + z_3)/3 = 0$.</div>
+    <div class="quiz-option" data-value="d">(d) A média \((z_1 + z_2 + z_3)/3 = 0\).</div>
     <div class="quiz-feedback"></div>
     </div>
 
@@ -454,7 +454,7 @@
 
   <div class="reflection-block">
     <label>Que conceito ou passagem ainda está <strong>nebuloso</strong> pra você?</label>
-    <textarea id="refl-nebulosa" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Não consigo justificar por que LNS aparece no passo 2 do 1º TBE' ou 'Como lê tangência $\text{TMS}^A = \text{TMS}^B$ na caixa rotacionada?'"></textarea>
+    <textarea id="refl-nebulosa" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Não consigo justificar por que LNS aparece no passo 2 do 1º TBE' ou 'Como lê tangência \(\text{TMS}^A = \text{TMS}^B\) na caixa rotacionada?'"></textarea>
     <div class="help">Seja específico: cite conceito, equação ou passagem. Respostas tipo "nada" ou "tudo ok" zeram o campo.</div>
   </div>
 
