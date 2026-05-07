@@ -29,8 +29,8 @@
 
 <div class="admonition info">
 <div class="admonition-title">Como esta pré-monitoria funciona</div>
-<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>7 seções</strong> (orientação + recap + 4 extensões + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>50–60 min</strong>.</p>
-<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Não é repetição da aula — é o passo seguinte.</p>
+<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>7 seções</strong> (orientação + recap + 4 extensões + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>60–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Não é repetição da aula — é o passo seguinte. Várias extensões são <em>servidas, não esgotadas</em> — propositalmente deixam pontas para o sábado.</p>
 <p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> abre sábado <strong>16/05 12:00</strong>, fecha sexta <strong>22/05 22:00</strong>. Monitoria presencial: <strong>sábado 23/05 10:00</strong>.</p>
 </div>
 
@@ -51,13 +51,13 @@
 <section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
   <div class="section-meta">Seção 1 · Recap · 5 min</div>
   <h2>Recap rápido da Aula 4</h2>
-  <p>Antes das extensões, ancore mentalmente os 5 pontos da Aula 4:</p>
+  <p>Antes das extensões, ancore mentalmente os 5 pontos da Aula 4. Cada um vai ser estendido depois:</p>
   <ol>
-    <li><strong>Identidade contábil de Walras.</strong> \(p \cdot z(p) = 0\) vale por LNS, em <em>qualquer</em> \(p\) onde demandas estão definidas — <em>fora</em> de equilíbrio.</li>
-    <li><strong>Curva de contrato.</strong> Lugar geométrico de \(\text{TMS}^A = \text{TMS}^B\) na caixa de Edgeworth (interior).</li>
-    <li><strong>Núcleo em \(2\times 2\).</strong> Subconjunto da contract curve dentro da lente de melhoria mútua passando pela dotação.</li>
-    <li><strong>EC CD assimétrica.</strong> Em \(u^A = x_1^{2/3}x_2^{1/3}\), \(u^B = x_1^{1/3}x_2^{2/3}\), \(\omega^A=(1,4)\), \(\omega^B=(3,0)\): \(p_1^*/p_2^* = 8/7\), \(x^A=(3, 12/7)\), \(x^B=(1, 16/7)\).</li>
-    <li><strong>1º TBE.</strong> EC + LNS \(\Rightarrow\) Pareto. Prova por contradição em 3 passos (LNS aparece no passo 2). 2º TBE: precisa convexidade adicional.</li>
+    <li><strong>Identidade contábil de Walras (agregada).</strong> Pela LNS, \(p \cdot x^i(p, m^i) = m^i\) para todo \(i\). Logo \(p \cdot z(p) = p \cdot \big(\sum_i x^i - \bar\omega\big) = 0\) vale em <em>qualquer</em> \(p\) onde demandas estão definidas — <em>fora</em> de equilíbrio também. Walras não é uma condição de mercado fechado; é uma identidade contábil.</li>
+    <li><strong>Curva de contrato.</strong> Lugar geométrico das alocações Pareto-eficientes interiores na caixa de Edgeworth, caracterizado por \(\text{TMS}^A(x^A) = \text{TMS}^B(\bar\omega - x^A)\).</li>
+    <li><strong>Núcleo em \(2 \times 2\).</strong> Subconjunto da contract curve dentro da lente de melhoria mútua que passa pela dotação. Em \(2 \times 2\) é tipicamente um intervalo. <em>Extensão 2</em> mostra o que muda em \(I = 3\).</li>
+    <li><strong>EC CD assimétrica (base da aula).</strong> \(u^A = x_1^{2/3}x_2^{1/3}\), \(u^B = x_1^{1/3}x_2^{2/3}\), \(\omega^A = (1,4)\), \(\omega^B = (3,0)\) \(\Rightarrow\) \(p_1^*/p_2^* = 8/7\), \(x^{A*} = (3, 12/7)\), \(x^{B*} = (1, 16/7)\). <em>Extensão 1</em> varia formas funcionais nesse mesmo arcabouço.</li>
+    <li><strong>1º TBE.</strong> EC + LNS \(\Rightarrow\) Pareto-eficiente. Prova por contradição em 3 passos: (1) UMP no estritamente melhor; (2) LNS nos demais; (3) soma e contradiz \(\sum_i x^i = \bar\omega\). <em>Extensão 3</em> mostra o que falha sem LNS. <strong>2º TBE</strong>: dado \(x^*\) PE com preferências convexas, existe \(p^*\) e transferências lump-sum que descentralizam. <em>Extensão 4</em> mostra por que convexidade entra aí mas não no 1º.</li>
   </ol>
   <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne ao material da Aula 4 (<a href="aula-04.html" style="color:var(--accent)">aula-04.html</a>) ou ZaE Cap. 14 antes de avançar.</p>
   <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
@@ -81,44 +81,45 @@
   </div>
 
   <div class="section-content" id="content-s2" style="display:none">
-    <p><strong>Setup base.</strong> \(\omega^A = (1, 4)\), \(\omega^B = (3, 0)\), \(\bar\omega = (4, 4)\). Variamos a forma funcional das preferências mantendo dotação.</p>
+    <p><strong>Pergunta-mãe.</strong> Quão sensível é \(p_1^*/p_2^*\) à forma funcional, mantida a estrutura de mercado? Vamos variar três famílias.</p>
 
-    <p><strong>Exercício 1 — CD simétrica.</strong> Com \(u^A = u^B = x_1^{1/2}x_2^{1/2}\), mesmas dotações. Sigá o mesmo roteiro da aula:</p>
-    <ol>
-      <li>Renda \(m^i(p) = p\cdot \omega^i\).</li>
-      <li>Demanda CD: \(x_1^i(p) = \tfrac{1}{2}\, m^i / p_1\).</li>
-      <li>Soma: \(x_1^A + x_1^B = \tfrac{1}{2}(m^A + m^B)/p_1 = \tfrac{p\cdot \bar\omega}{2 p_1}\).</li>
-      <li>Iguale a \(\bar\omega_1 = 4\), normalize \(p_2 = 1\), resolva.</li>
-    </ol>
+    <h3 style="margin-top:1.2rem">(a) CD com peso variável</h3>
+    <p>Setup base: \(\omega^A = (1, 4)\), \(\omega^B = (3, 0)\), \(\bar\omega = (4, 4)\).</p>
+    <ul>
+      <li><strong>Caso 1 — original (recap):</strong> \(u^A = x_1^{2/3}x_2^{1/3}\), \(u^B = x_1^{1/3}x_2^{2/3}\). \(\;p_1^*/p_2^* = 8/7\).</li>
+      <li><strong>Caso 2 — pesos simétricos:</strong> \(u^A = u^B = x_1^{1/2}x_2^{1/2}\). Demanda CD: \(x_1^i = m^i/(2 p_1)\). Renda: \(m^A = p_1 + 4 p_2\), \(m^B = 3 p_1\). Mercado bem 1, com \(p_2 = 1\):
+        \[
+          \frac{p_1 + 4}{2 p_1} + \frac{3 p_1}{2 p_1} = 4 \;\Leftrightarrow\; 4 p_1 + 4 = 8 p_1 \;\Leftrightarrow\; p_1^* = 1.
+        \]
+        Logo \(p_1^*/p_2^* = 1\). Tirar o viés de peso de \(A\) elimina o prêmio do bem 1.</li>
+      <li><strong>Caso 3 — dotações idênticas:</strong> \(\omega^A = \omega^B = (2, 2)\). Por simetria pura, \(p_1^*/p_2^* = 1\) e a alocação é a própria dotação.</li>
+    </ul>
+    <p><em>Mensagem.</em> O viés de preço vem da combinação <strong>preferência + dotação assimétricas</strong>. Tirar qualquer uma das duas mata o prêmio.</p>
 
-    <div class="admonition warn">
-    <div class="admonition-title">Pegadinha</div>
-    <p>Em CD simétrica com dotação <em>simétrica</em> (\(\omega^A = (3,1)\), \(\omega^B = (1,3)\), por exemplo), há dois "puxões" simétricos. Em CD simétrica com a dotação assimétrica acima (\(\omega^A=(1,4)\), \(\omega^B=(3,0)\)), o EC <em>continua existindo</em> mas o cálculo final dá \(p_1^*/p_2^* \neq 1\). Refaça com cuidado.</p>
-    </div>
+    <h3 style="margin-top:1.2rem">(b) Leontief simétrico</h3>
+    <p>\(u^A = u^B = \min\{x_1, x_2\}\), \(\omega^A = (4, 2)\), \(\omega^B = (2, 4)\), \(\bar\omega = (6, 6)\).</p>
+    <p>Demanda Leontief: \(x_1^i = x_2^i = m^i/(p_1 + p_2)\). Mercado bem 1:
+    \[
+      \sum_i \frac{m^i}{p_1 + p_2} = \frac{p_1 \cdot 6 + p_2 \cdot 6}{p_1 + p_2} = 6 = \bar\omega_1 \quad \text{para qualquer } (p_1, p_2) \gg 0.
+    \]
+    "Qualquer preço fecha o mercado". <strong>O quociente \(p_1/p_2\) fica indeterminado</strong>; o EC tem alocação única (\(x^A = x^B = (3,3)\)) mas preço relativo livre. Em Leontief, a tangência \(\text{TMS} = p_1/p_2\) <em>não está definida</em> no canto da L.</p>
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Para o sábado: o que muda se as dotações forem \((4, 0), (0, 4)\) (corner)? Aí <em>múltiplas alocações</em> de equilíbrio aparecem, não só preço relativo indeterminado. Ponto que o Alberto fecha em sala.</p>
 
-    <p><strong>Exercício 2 — Leontief.</strong> Com \(u^A = u^B = \min\{x_1, x_2\}\), qualquer \(p \gg 0\) leva a demanda na linha \(x_1 = x_2\). Onde está o EC?</p>
-
-    <p style="font-size:0.9rem;color:#64748b">Dica: somar as demandas e impor \(x_1^A + x_1^B = 4\) <em>e</em> \(x_2^A + x_2^B = 4\). Em Leontief, é a 1ª restrição que aperta — a 2ª segue por Walras.</p>
+    <h3 style="margin-top:1.2rem">(c) CES com \(\rho = 1/2\) <span style="font-size:0.85rem;color:#64748b">(opcional, exigente)</span></h3>
+    <p>\(u^A = u^B = (x_1^{1/2} + x_2^{1/2})^2\), \(\omega^A = (4, 0)\), \(\omega^B = (0, 4)\). Aqui \(\sigma = 1/(1-\rho) = 2\) — substituição maior que CD (\(\sigma = 1\)), menor que linear (\(\sigma = \infty\)).</p>
+    <p>Demanda CES: \(x_i = m \cdot p_i^{-\sigma}/\sum_j p_j^{1-\sigma}\). Por simetria estrutural, \(p_1 = p_2 = 1\). Verificação: \(m^A = m^B = 4\); \(x_1^A = 4 \cdot 1/(1+1) = 2\); soma \(= 4 = \bar\omega_1\) ✓.</p>
+    <p><em>Conexão.</em> CES com \(\rho \to 0\) gera CD (caso (a)); \(\rho \to -\infty\) gera Leontief (caso (b)); \(\rho \to 1\) gera linear. Um único parâmetro varre o leque inteiro.</p>
 
     <div class="micro-checkpoint" id="micro-s2">
-      <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
-      <div class="micro-desc">Até 3 tentativas por questão.</div>
+      <h3>Micro-checkpoint (1 item — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas.</div>
 
-      <div class="micro-q" data-q="s2q1" data-correct="b">
-        <div class="q-text">1. Em CD simétrica com \(u^A=u^B=x_1^{1/2}x_2^{1/2}\), \(\omega^A=(3,1)\), \(\omega^B=(1,3)\), o EC tem:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-formas','s2q1','a',this)">(a) \(p_1^*/p_2^* = 1/2\).</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-formas','s2q1','b',this)">(b) \(p_1^*/p_2^* = 1\). Por simetria das preferências e dotações invertidas, \(p_1 = p_2\) é a única solução.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-formas','s2q1','c',this)">(c) \(p_1^*/p_2^* = 2\).</div>
-        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-formas','s2q1','d',this)">(d) Não tem EC — preferências CD não admitem.</div>
-        <div class="micro-feedback"></div>
-      </div>
-
-      <div class="micro-q" data-q="s2q2" data-correct="c">
-        <div class="q-text">2. Em economia Leontief simétrica com \(\bar\omega = (4, 4)\), no EC a alocação \((x^A, x^B)\) satisfaz:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-formas','s2q2','a',this)">(a) Algum consumidor recebe um bem em quantidade nula.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-formas','s2q2','b',this)">(b) Os dois recebem metade da dotação total: \(x^A=x^B=(2,2)\), independentemente do preço.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-formas','s2q2','c',this)">(c) Cada consumidor escolhe \(x_1^i = x_2^i\) (canto da L); a divisão final depende da dotação inicial via \(m^i\).</div>
-        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-formas','s2q2','d',this)">(d) EC não existe em Leontief porque demanda é descontínua.</div>
+      <div class="micro-q" data-q="s2q1" data-correct="a">
+        <div class="q-text">1. Em CD com \(\alpha^A = 1/2\) (peso simétrico em \(A\)) e dotações \(\omega^A = (1, 4)\), \(\omega^B = (3, 0)\), \(\bar\omega = (4, 4)\), qual é \(p_1^*/p_2^*\)?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-formas','s2q1','a',this)">(a) \(1\)</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-formas','s2q1','b',this)">(b) \(8/7\)</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-formas','s2q1','c',this)">(c) \(4/7\)</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-formas','s2q1','d',this)">(d) \(\sqrt{4/7}\)</div>
         <div class="micro-feedback"></div>
       </div>
     </div>
@@ -157,24 +158,36 @@
   </div>
 
   <div class="section-content" id="content-s3" style="display:none">
-    <p><strong>Setup.</strong> Três consumidores (\(A\), \(B\), \(C\)), dois bens. Coalizões possíveis (não-vazias): \(\{A\}, \{B\}, \{C\}, \{A,B\}, \{A,C\}, \{B,C\}, \{A,B,C\}\).</p>
+    <p><strong>Setup canônico.</strong> \(I = 3\), \(L = 2\). Preferências CD simétricas: \(u^i(x_1, x_2) = x_1^{1/2} x_2^{1/2}\) para \(i \in \{A, B, C\}\). Dotações: \(\omega^A = (2, 0)\), \(\omega^B = (0, 2)\), \(\omega^C = (1, 1)\). Total: \(\bar\omega = (3, 3)\).</p>
 
-    <p><strong>Bloqueio por coalizão \(S\).</strong> A alocação \(x\) é bloqueada por \(S\) se existe alocação \(\tilde x_S = (\tilde x^i)_{i \in S}\) usando <em>apenas</em> as dotações dos membros de \(S\), com \(u^i(\tilde x^i) \ge u^i(x^i)\) para todo \(i \in S\) e \(u^j(\tilde x^j) > u^j(x^j)\) para algum \(j \in S\).</p>
+    <p><strong>Equilíbrio competitivo.</strong> Demanda CD: \(x_1^i = m^i/(2 p_1)\), \(x_2^i = m^i/(2 p_2)\). Renda: \(m^A = 2 p_1\), \(m^B = 2 p_2\), \(m^C = p_1 + p_2\). Mercado bem 1:
+    \[
+      \sum_i \frac{m^i}{2 p_1} = \frac{2 p_1 + 2 p_2 + (p_1 + p_2)}{2 p_1} = \frac{3(p_1 + p_2)}{2 p_1} = 3 \;\Leftrightarrow\; p_1 = p_2.
+    \]
+    Normalize \(p^* = (1, 1)\). Renda: \(m^A = m^B = m^C = 2\). Alocação: \(x^{A*} = x^{B*} = x^{C*} = (1, 1)\). Cada \(i\) atinge \(u^i = 1\).</p>
 
-    <p><strong>Núcleo \(C(\mathcal{E})\).</strong> Conjunto das alocações viáveis que não são bloqueadas por nenhuma coalizão. Em \(I=3\), são <em>sete</em> condições de não-bloqueio.</p>
+    <p><strong>Bloqueio por coalizão \(S\).</strong> Alocação \(x\) é bloqueada por \(S\) se existe \(\tilde x_S = (\tilde x^i)_{i \in S}\) com \(\sum_{i \in S} \tilde x^i \le \sum_{i \in S} \omega^i\) (usa só dotações de \(S\)), \(u^i(\tilde x^i) \ge u^i(x^i)\) para todo \(i \in S\) e desigualdade estrita para algum \(j \in S\).</p>
 
-    <p><strong>Por que isso importa.</strong> Em \(I=2\), núcleo é tipicamente um <em>intervalo</em> da contract curve. Em \(I=3\), núcleo encolhe — agora há coalizões intermediárias (\(\{A,B\}\), \(\{A,C\}\), \(\{B,C\}\)) que podem bloquear pontos sustentáveis em \(I=2\). Anúncio do slide #29: na <strong>réplica</strong>, à medida que \(r \to \infty\), núcleo \(\to\) EC (<em>Debreu-Scarf 1963</em>).</p>
+    <p><strong>Núcleo \(C(\mathcal{E})\).</strong> Conjunto das alocações viáveis não bloqueadas por nenhuma das sete coalizões não-vazias. Por 1º TBE, todo EC \(\subseteq C(\mathcal{E})\); a inclusão é típicamente estrita.</p>
 
-    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai construir um exemplo numérico explícito mostrando uma alocação que é Pareto-eficiente e está no núcleo em \(I=2\) (com \(\{A,B\}\)), mas é <em>bloqueada</em> em \(I=3\) pela coalizão \(\{A,C\}\) ou \(\{B,C\}\). Anote suas dúvidas.</p>
+    <p><strong>Exemplo 1 — Pareto-eficiente NÃO no núcleo.</strong> Considere \(x^A = (3, 0)\), \(x^B = (0, 3)\), \(x^C = (0, 0)\). Viável (\(\sum = (3, 3)\)) e Pareto-eficiente entre alocações com \(u^C = 0\). Mas a coalizão \(\{C\}\) bloqueia: na autarquia, \(u^C(\omega^C) = u^C(1, 1) = 1 > 0\). <strong>Bloqueada por \(\{C\}\)</strong>. Logo, fora do núcleo.</p>
+
+    <p><em>Lição.</em> Pareto-eficiência não basta. Núcleo exige racionalidade individual e, mais geral, racionalidade de toda subcoalizão.</p>
+
+    <p><strong>Exemplo 2 — viável em \(I = 3\) mas bloqueada por singleton.</strong> Considere \(x^A = (1.5, 1.5)\), \(x^B = (1.5, 1.5)\), \(x^C = (0, 0)\). Viável e Pareto-eficiente. Em \(I = 2\) sem o \(C\), \(\{A, B\}\) sozinhos têm dotação total \((2, 2)\) — não conseguiriam essa alocação. Em \(I = 3\), \(\{C\}\) bloqueia (autarquia dá \(u^C = 1 > 0\)). Fora do núcleo.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai construir uma alocação concreta bloqueada por <strong>coalizão intermediária</strong> \(\{A, C\}\) ou \(\{B, C\}\) — bloqueio por par, não por singleton. Esse é o caso geometricamente rico do "núcleo encolhe".</p>
+
+    <p><strong>Réplica e Debreu-Scarf (anúncio).</strong> Para \(r\) cópias de cada tipo, \(C(r)\) é decrescente em \(r\) e \(\bigcap_{r \ge 1} C(r) = \) EC. Não vamos provar; Alberto pode esquematizar sábado.</p>
 
     <div class="micro-checkpoint" id="micro-s3">
       <h3>Micro-checkpoint (1 item)</h3>
-      <div class="micro-q" data-q="s3q1" data-correct="b">
-        <div class="q-text">1. Quando o número de consumidores cresce de \(I=2\) para \(I=3\) (sem mudar bens), em geral:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-nucleo3','s3q1','a',this)">(a) Núcleo cresce porque há mais agentes.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-nucleo3','s3q1','b',this)">(b) Núcleo encolhe — mais coalizões possíveis = mais oportunidades de bloqueio.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-nucleo3','s3q1','c',this)">(c) Núcleo não muda — só depende das preferências.</div>
-        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-nucleo3','s3q1','d',this)">(d) Núcleo se torna vazio.</div>
+      <div class="micro-q" data-q="s3q1" data-correct="a">
+        <div class="q-text">1. Na economia \(I = 3\) com \(u^i\) CD simétrica e dotações \(\omega^A = (2, 0)\), \(\omega^B = (0, 2)\), \(\omega^C = (1, 1)\), a alocação \(x^A = x^B = x^C = (1, 1)\):</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-nucleo3','s3q1','a',this)">(a) é EC e está no núcleo.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-nucleo3','s3q1','b',this)">(b) é Pareto-eficiente mas não é EC.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-nucleo3','s3q1','c',this)">(c) é bloqueada por \(\{C\}\) (autarquia melhora estritamente).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-nucleo3','s3q1','d',this)">(d) é bloqueada por \(\{A, B\}\).</div>
         <div class="micro-feedback"></div>
       </div>
     </div>
@@ -213,27 +226,38 @@
   </div>
 
   <div class="section-content" id="content-s4" style="display:none">
-    <p><strong>Recap da prova (3 passos).</strong></p>
+    <p><strong>Pergunta-mãe.</strong> Se o consumidor está saciado, em qual passo da prova do 1º TBE o argumento quebra?</p>
+
+    <p><strong>Recap da prova (3 passos).</strong> Suponha que \((p^*, x^*)\) é EC mas não é Pareto. Existe \(\tilde x\) viável com \(u^i(\tilde x^i) \ge u^i(x^{*i})\) para todo \(i\) e estrita para algum \(j\).</p>
     <ul>
-      <li><strong>Passo 1.</strong> Para o \(j\) estritamente melhor em \(\tilde x\): \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\) (vem de UMP).</li>
-      <li><strong>Passo 2.</strong> Para \(i \neq j\) com \(u^i(\tilde x^i) \ge u^i(x^{*i})\): \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\). <strong>Aqui usamos LNS.</strong></li>
-      <li><strong>Passo 3.</strong> Soma \(\Rightarrow\) contradição com viabilidade.</li>
+      <li><strong>Passo 1 (UMP no \(j\)).</strong> Como \(u^j(\tilde x^j) > u^j(x^{*j})\) e \(x^{*j}\) resolve UMP em \(p^*\) com renda \(p^* \cdot \omega^j\): \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\).</li>
+      <li><strong>Passo 2 (LNS nos demais \(i \neq j\)).</strong> Para todo \(i\) com \(u^i(\tilde x^i) \ge u^i(x^{*i})\): \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\). <strong>Aqui usamos LNS.</strong></li>
+      <li><strong>Passo 3 (somar).</strong> \(\sum_i p^* \cdot \tilde x^i > \sum_i p^* \cdot \omega^i\), mas \(\sum_i \tilde x^i = \bar\omega = \sum_i \omega^i\). Contradição.</li>
     </ul>
 
-    <p><strong>Por que LNS é necessária no Passo 2.</strong> Sem LNS, alguém com \(u^i(\tilde x^i) = u^i(x^{*i})\) (igualdade) e \(p^* \cdot \tilde x^i < p^* \cdot \omega^i\) poderia "preferir" um bundle dentro do orçamento que <em>não tem</em> nada melhor na vizinhança. UMP não força esse \(i\) a gastar tudo. A desigualdade do Passo 2 quebra, soma do Passo 3 não fecha.</p>
+    <p><strong>Onde LNS é decisiva.</strong> No Passo 2 queremos: "se \(\tilde x^i\) é tão bom quanto \(x^{*i}\), então \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\)". Por contrapositiva: "se \(p^* \cdot \tilde x^i < p^* \cdot \omega^i\) (sobra renda), então \(u^i(\tilde x^i) < u^i(x^{*i})\)". A justificativa precisa de um <strong>vizinho</strong> \(\tilde x^i + \varepsilon\) ainda no orçamento e com utilidade maior — isso é exatamente LNS. Sem ela, o vizinho não existe e a contrapositiva colapsa.</p>
 
-    <p><strong>Contraexemplo intuitivo.</strong> Imagine \(u^A\) com <em>ponto de saciedade</em> \(\bar x^A\): além de \(\bar x^A\), mais bem reduz utilidade. Curvas de indiferença viram <em>fechadas</em> (ovais). Em vizinhança do "topo", LNS falha — não há \(\tilde x\) próximo com utilidade estritamente maior. O 1º TBE pode falhar localmente.</p>
+    <p><strong>Contraexemplo qualitativo (curvas de indiferença fechadas).</strong> Considere
+    \[
+      u^A(x_1, x_2) = -[(x_1 - 1)^2 + (x_2 - 1)^2]
+    \]
+    — paraboloide invertido com <em>bliss point</em> em \((1, 1)\). Curvas de indiferença = círculos centrados em \((1, 1)\). \(A\) tem saciedade local exatamente em \((1, 1)\): nenhum vizinho dá utilidade maior. O conjunto preferido estrito a \((1, 1)\) é <strong>vazio</strong>.</p>
 
-    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto desenha as curvas fechadas e mostra concretamente onde o argumento da prova quebra.</p>
+    <p>Combinando com \(u^B = x_1 x_2\), \(\omega^A = (2, 0)\), \(\omega^B = (0, 2)\), em \(p^* = (1, 1)\): \(A\) demanda \((1, 1)\) (cabe na renda 2), \(B\) demanda \((1, 1)\). Mercado fecha. <em>Mas a alavanca usada na prova do 1º TBE — "se há algo melhor, custa mais" — perde força quando o "se" sequer se ativa.</em></p>
+
+    <div class="admonition warn">
+    <div class="admonition-title">Limite metodológico</div>
+    <p>Construir um setup numérico fechado em que o EC encontrado é <em>de fato</em> não-Pareto-eficiente exige calibração delicada (preferências e dotações precisam coordenar para que sobre renda só no agente saciado). Pré-monitoria deixa o argumento qualitativo (saciedade \(\Rightarrow\) Passo 2 falha). <strong>Alberto fecha o exemplo numérico no sábado</strong> — anote sua dúvida na Seção 6 se quiser que ele insista.</p>
+    </div>
 
     <div class="micro-checkpoint" id="micro-s4">
       <h3>Micro-checkpoint (1 item)</h3>
       <div class="micro-q" data-q="s4q1" data-correct="b">
-        <div class="q-text">1. A hipótese de não-saciedade local (LNS) é invocada explicitamente em qual passo da prova do 1º TBE?</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-lns','s4q1','a',this)">(a) Passo 1, para mostrar \(p^* \cdot \tilde x^j > p^* \cdot \omega^j\) no consumidor estritamente melhor.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-lns','s4q1','b',this)">(b) Passo 2, para garantir \(p^* \cdot \tilde x^i \ge p^* \cdot \omega^i\) nos demais consumidores (não estritamente melhores).</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-lns','s4q1','c',this)">(c) Passo 3, ao somar sobre \(i\) e usar viabilidade.</div>
-        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-lns','s4q1','d',this)">(d) LNS não é necessária; basta monotonicidade estrita.</div>
+        <div class="q-text">1. Em economia em que o consumidor \(A\) tem preferências saciadas com bliss point interior, qual passo da prova do 1º TBE pode falhar?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-lns','s4q1','a',this)">(a) Passo 1 (UMP no consumidor estritamente melhor).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-lns','s4q1','b',this)">(b) Passo 2 (LNS — alocação tão boa quanto a do EC implica gasto pelo menos igual à renda).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-lns','s4q1','c',this)">(c) Passo 3 (somar e contradizer viabilidade).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-lns','s4q1','d',this)">(d) Nenhum — a prova vale sem LNS.</div>
         <div class="micro-feedback"></div>
       </div>
     </div>
@@ -272,22 +296,40 @@
   </div>
 
   <div class="section-content" id="content-s5" style="display:none">
-    <p><strong>Enunciado canônico.</strong> Dada economia de troca pura com preferências <em>convexas</em>, contínuas e LNS, e dada uma alocação Pareto-eficiente \(x^*\) com \(x^{*i} \gg 0\), existem preços \(p^* \ge 0\) e transferências lump-sum \(T^i\) tais que \((p^*, x^*)\) é EC com dotações \(\hat\omega^i = \omega^i + T^i\) (com \(\sum_i T^i = 0\)).</p>
+    <p><strong>Pergunta-mãe.</strong> Por que convexidade aparece no 2º TBE mas não no 1º?</p>
 
-    <p><strong>Por que convexidade.</strong> A prova usa um teorema de <em>separação por hiperplano</em> (Minkowski / Hahn-Banach finito-dimensional): se \(V^i = \{x : x \succ^i x^{*i}\}\) é convexo (sai da convexidade da preferência) e \(\sum_i V^i\) não intersecta \(\{\bar\omega\}\), existe \(p^*\) que separa. Esse \(p^*\) é o vetor de preços.</p>
+    <p><strong>Enunciado preciso (caso troca pura).</strong> Sejam preferências contínuas, monotônicas (ou LNS) e <em>estritamente convexas</em> para todo \(i\). Seja \(x^*\) alocação Pareto-eficiente com \(x^{*i} \gg 0\). Então existe vetor de preços \(p^* \ge 0\) (não nulo) e transferências lump-sum \(T = (T^1, \ldots, T^I)\) com \(\sum_i T^i = 0\) tais que \((p^*, x^*)\) é EC da economia com dotações redistribuídas \(\hat\omega^i = \omega^i + T^i\).</p>
 
-    <p><strong>Quando falha.</strong> Se preferências são <em>não-convexas</em> (indivisibilidades, retornos crescentes locais), \(V^i\) pode não ser convexo, separação não vale e ponto Pareto-eficiente pode não ser sustentável como EC mesmo com transferências. Exemplo clássico: indivisibilidades em capital humano (Aula 5 toca o tema com produção).</p>
+    <p><strong>Mecanismo da transferência.</strong> \(T^i\) desloca riqueza entre agentes sem afetar preços relativos. Mercado descentralizado então acha \(x^*\).</p>
 
-    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto desenha um par de IC não-convexas em \(2\times 2\) tangentes em ponto Pareto-eficiente que <em>nenhuma</em> reta de preço sustenta como EC.</p>
+    <p><strong>Onde a convexidade entra.</strong> A prova constrói \(p^*\) por <em>teorema de separação</em>. Para cada \(i\), defina o conjunto preferido estrito:
+    \[
+      V^i = \{ x \in \mathbb{R}_+^L : u^i(x) > u^i(x^{*i}) \}.
+    \]
+    Convexidade da preferência \(\Rightarrow V^i\) é convexo. Pareto-eficiência de \(x^*\) \(\Rightarrow\) \(\sum_i V^i\) não intersecta \(\{\bar\omega\}\) (se intersectasse, haveria melhoria viável). Como \(\sum_i V^i\) é convexo (soma de convexos é convexo) e \(\{\bar\omega\}\) é convexo, <strong>existe hiperplano separador</strong>: encontramos \(p^*\) tal que \(p^* \cdot z \ge p^* \cdot \bar\omega\) para todo \(z \in \sum_i V^i\). Esse \(p^*\) é o vetor de preços que sustenta \(x^*\).</p>
+
+    <p style="font-size:0.85rem;color:#64748b">Nomenclatura formal: <em>teorema de separação de Minkowski</em> (versão finito-dimensional). Não vamos formalizar.</p>
+
+    <p><strong>Quando falha — preferências não-convexas.</strong> Considere \(u^A(x_1, x_2) = x_1^2 + x_2^2\). Curvas de indiferença = arcos de círculo <em>côncavos</em> (vistos do conjunto preferido). \(V^A\) não é convexo: combinar \((2, 0)\) e \((0, 2)\) (ambos com \(u = 4\)) dá \((1, 1)\) com \(u = 2 < 4\) — combinação interior é <strong>estritamente pior</strong> que os extremos.</p>
+
+    <p>Com preferência assim, a tangência usual \(\text{TMS}^A = p_1/p_2\) gera ponto de utilidade <em>mínima</em> local na restrição orçamentária, não máxima. Demanda \(A\) vai aos extremos (cantos). <strong>Não há \(p^*\) que sustente alocação interior \(x^{*A}\) Pareto-eficiente como EC</strong> — qualquer reta tangente faz \(A\) querer fugir do interior.</p>
+
+    <p><strong>Onde mais a convexidade aparece.</strong></p>
+    <ul>
+      <li><strong>Aula 5 (produção):</strong> retornos crescentes a escala \(\Rightarrow\) conjunto de produção não-convexo. 2º TBE pode falhar mesmo com preferências bem-comportadas.</li>
+      <li><strong>Aula 7 (externalidades):</strong> mesmo com convexidade individual, o conjunto agregado pode ser não-convexo por causa do externo.</li>
+    </ul>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto desenha um par de IC não-convexas em \(2 \times 2\) tangentes em ponto Pareto-eficiente que <em>nenhuma</em> reta de preço sustenta como EC. Vê-se com os olhos.</p>
 
     <div class="micro-checkpoint" id="micro-s5">
       <h3>Micro-checkpoint (1 item)</h3>
       <div class="micro-q" data-q="s5q1" data-correct="c">
-        <div class="q-text">1. A hipótese de convexidade de preferências aparece no 2º TBE mas não no 1º porque:</div>
-        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe2','s5q1','a',this)">(a) Sem convexidade, demanda Marshalliana é descontínua e não há EC.</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe2','s5q1','b',this)">(b) Convexidade é hipótese implícita do 1º TBE também — só não é mencionada.</div>
-        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe2','s5q1','c',this)">(c) A prova do 2º TBE usa separação por hiperplano (Minkowski), que exige conjuntos convexos. O 1º TBE só argumenta por contradição contábil — convexidade não aparece.</div>
-        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe2','s5q1','d',this)">(d) Convexidade não muda nada; é só elegância matemática.</div>
+        <div class="q-text">1. Na economia de troca pura, se as preferências de \(A\) são não-convexas (curvas de indiferença côncavas vistas do conjunto preferido), o 2º TBE pode falhar porque:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-tbe2','s5q1','a',this)">(a) o 1º TBE não vale, então o 2º também não.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-tbe2','s5q1','b',this)">(b) Pareto-eficiência deixa de existir.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-tbe2','s5q1','c',this)">(c) o teorema de separação que constrói \(p^*\) pode falhar (conjunto preferido \(V^A\) deixa de ser convexo).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-tbe2','s5q1','d',this)">(d) transferências lump-sum alteram preços relativos.</div>
         <div class="micro-feedback"></div>
       </div>
     </div>
@@ -316,13 +358,13 @@
 
   <div class="reflection-block">
     <label>O que ficou <strong>claro</strong> nesta pré-monitoria que estava nebuloso na aula?</label>
-    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Agora entendi por que LNS é o passo 2 da prova, não o passo 1' ou 'A intuição de núcleo encolhendo com \(I\) ficou concreta com a Extensão 2'"></textarea>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Por que LNS é decisiva no Passo 2 e não no Passo 1' ou 'Como o núcleo encolhe concretamente em I=3 — a coalizão {C} bloqueando alocações que pareciam Pareto-eficientes'"></textarea>
     <div class="help">Diz pro Alberto qual extensão funcionou — ele revisita rápido em sala.</div>
   </div>
 
   <div class="reflection-block">
     <label>O que você quer que o <strong>Alberto cubra no sábado</strong>?</label>
-    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Quero ver o cálculo numérico do núcleo em \(I=3\)' ou 'Como construo curva de indiferença com saciedade?'"></textarea>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Cálculo numérico do contraexemplo de saciedade (Ext. 3 ficou no qualitativo)' ou 'Coalizão intermediária {A,C} bloqueando alocação não trivial em I=3'"></textarea>
     <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva.</div>
   </div>
 
