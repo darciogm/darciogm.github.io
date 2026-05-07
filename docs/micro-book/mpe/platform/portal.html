@@ -81,8 +81,14 @@
 </div>
 
 <div class="my-performance" style="margin-top:2rem">
-  <h3>Monitorias — pré-monitoria</h3>
-  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Encontros de sábado à tarde com o monitor Alberto. A pré-monitoria é opcional, mas recomendada — chegar preparado multiplica o valor do encontro.</p>
+  <h3>Pré-monitorias (online, formativas)</h3>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Material de preparação que abre na plataforma <em>antes</em> de cada encontro presencial com o Alberto. <strong>Não conta nota</strong> — é opcional, mas chegar preparado multiplica o valor do sábado.</p>
+</div>
+<div class="aulas-grid" id="pre-monitorias-grid"></div>
+
+<div class="my-performance" style="margin-top:2rem">
+  <h3>Monitorias presenciais — Alberto</h3>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Encontros de sábado de manhã com o monitor Alberto Nishikawa. Espelho dos tópicos da semana, com extensões.</p>
 </div>
 <div class="aulas-grid" id="monitorias-grid"></div>
 
@@ -377,6 +383,19 @@ var AULAS = [
   {n:10, title:'Avaliação Final Presencial', desc:'Prova escrita cumulativa, 3h, cobertura integrada dos 9 tópicos, 70% da nota', cap:'Ementa completa', time:180, available:false}
 ];
 
+// Pré-monitorias online (formativas, não contam nota). Linkam para
+// pre-monitoria-0N.html. Disponibilidade gateada pelo calendário.
+// fileReady = página HTML já produzida; quando false, mesmo que o
+// calendário a marque como "aberta", mostramos como "em produção" para
+// não gerar 404.
+var PRE_MONITORIAS_LIST = [
+  {n:1, title:'Pré-M1 — extensões das Aulas 1-3', desc:'Limites CES, lexicográfica, dualidade Roy/Shephard, decomposição Slutsky em formas raras.', cobertura:'Aulas 1-3', monitoria:'sáb 16/05 10:00', time:60, fileReady:false},
+  {n:2, title:'Pré-M2 — extensões da Aula 4 (EG trocas)', desc:'Edgeworth com CD, Leontief simétrico, contraexemplo de LNS, núcleo e Debreu-Scarf, 2º TBE preliminar.', cobertura:'Aula 4', monitoria:'sáb 23/05 10:00', time:60, fileReady:true},
+  {n:3, title:'Pré-M3 — extensões da Aula 5 (EG produção)', desc:'Frontier de produção, eficiência produtiva, agregação, EG com firmas.', cobertura:'Aula 5', monitoria:'sáb 30/05 10:00', time:60, fileReady:false},
+  {n:4, title:'Pré-M4 — extensões das Aulas 6-7 (Arrow-Debreu)', desc:'Existência via Brouwer, completude de mercados, externalidades em EG.', cobertura:'Aulas 6-7', monitoria:'sáb 13/06 10:00', time:60, fileReady:false},
+  {n:5, title:'Pré-M5 — extensões das Aulas 8-9 + revisão AF', desc:'Rothschild-Stiglitz, single-crossing em Spence, matching estável, simulado dirigido.', cobertura:'Aulas 8-9 + AF', monitoria:'sáb 20/06 10:00', time:60, fileReady:false}
+];
+
 var MONITORIAS = [
   {n:1, title:'M1 — Aulas 3 e 4 + revisão relâmpago 1-2', desc:'Slutsky, EG 2×2 Cobb-Douglas em Edgeworth, dualidade. Exercícios-âncora N&S 3.5, 3.7, 4.10, 5.4, 13.2 + J-R 1.38 (teto). Tópicos extras: limites CES, σ direto, lexicográfica.', data:'sáb 16/05', time:60, available:true},
   {n:2, title:'M2 — Arrow-Debreu I', desc:'Estados da natureza, preços de Arrow, state-preference, utilidade esperada. Exercícios-âncora N&S 7.13 + J-R 5.34 (Arrow Securities).', data:'sáb 23/05', time:60, available:false},
@@ -579,6 +598,86 @@ function renderAulasGrid(myData, hideDone) {
   document.getElementById('progress-label').textContent = aulasFullyDoneCount + ' de ' + availableCount + ' aulas integralmente concluídas';
 }
 
+function renderPreMonitoriasGrid(studentData) {
+  var grid = document.getElementById('pre-monitorias-grid');
+  if (!grid) return;
+  var cal = window.MPE_CALENDARIO;
+  var html = '';
+  PRE_MONITORIAS_LIST.forEach(function(pm) {
+    var n2 = String(pm.n).padStart(2, '0');
+    var pageId = 'pre-monitoria-' + n2;
+    var pg = (studentData.pages || {})[pageId] || {};
+    var qz = (studentData.quizzes || {})[pageId] || {};
+    var visited = pg.visits > 0;
+    var hasActivity = visited || (qz.attempts && qz.attempts > 0);
+
+    var prazo = cal && cal.getPreMonitoriaPrazo ? cal.getPreMonitoriaPrazo(pm.n) : null;
+    var isOpen = cal && cal.isPreMonitoriaOpen ? cal.isPreMonitoriaOpen(pm.n) : false;
+    var isClosed = cal && cal.isPreMonitoriaClosed ? cal.isPreMonitoriaClosed(pm.n) : false;
+    var isLocked = cal && cal.isPreMonitoriaNotYetOpen ? cal.isPreMonitoriaNotYetOpen(pm.n) : true;
+
+    var badge, badgeClass, ctaLabel, ctaCls, prazoLine = '';
+    var fileReady = pm.fileReady !== false;
+    if (!fileReady) {
+      // Página ainda não produzida — exibe placeholder mesmo se o
+      // calendário sinalizar abertura. Evita 404 silencioso.
+      badge = 'Em produção';
+      badgeClass = 'badge-new';
+      ctaLabel = 'Em produção';
+      ctaCls = 'cta-btn cta-locked';
+    } else if (isLocked) {
+      badge = 'Abre ' + (prazo ? cal.fmt(prazo.abre) : 'em breve');
+      badgeClass = 'badge-new';
+      ctaLabel = 'Abre em ' + (prazo ? cal.fmtData(prazo.abre) : '—');
+      ctaCls = 'cta-btn cta-locked';
+    } else if (isClosed) {
+      badge = hasActivity ? 'Fechada — concluída' : 'Fechada';
+      badgeClass = hasActivity ? 'badge-done' : 'badge-new';
+      ctaLabel = 'Encerrada';
+      ctaCls = 'cta-btn cta-closed';
+    } else if (isOpen) {
+      if (hasActivity) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
+      else { badge = 'Aberta'; badgeClass = 'badge-new'; }
+      ctaLabel = hasActivity ? 'Continuar' : 'Abrir pré-monitoria';
+      ctaCls = 'cta-btn cta-active';
+    } else {
+      badge = 'Em breve';
+      badgeClass = 'badge-new';
+      ctaLabel = 'Em breve';
+      ctaCls = 'cta-btn cta-locked';
+    }
+
+    if (prazo) {
+      var label = isLocked ? ('Abre ' + cal.fmt(prazo.abre)) : (isClosed ? ('Fechou ' + cal.fmt(prazo.fecha)) : ('Fecha ' + cal.fmt(prazo.fecha)));
+      prazoLine = '<div class="aula-meta" style="margin-top:0.3rem"><span class="time" style="font-size:0.72rem">⏱ ' + label + ' · monitoria ' + pm.monitoria + '</span></div>';
+    }
+
+    var cardCls = 'aula-card';
+    if (isLocked) cardCls += ' aula-em-breve';
+    else if (isClosed && !hasActivity) cardCls += ' aula-em-breve';
+
+    var cardBody = '<div class="aula-num">Pré-Monitoria ' + n2 + ' &middot; ' + pm.cobertura + '</div>'
+      + '<div class="aula-title">' + pm.title + '</div>'
+      + '<div class="aula-desc">' + pm.desc + '</div>'
+      + '<div class="aula-meta">'
+      +   '<span class="time">&#9201; ' + pm.time + ' min · formativa (não conta nota)</span>'
+      +   '<span class="badge ' + badgeClass + '">' + badge + '</span>'
+      + '</div>'
+      + prazoLine;
+
+    var ctaContent = '<span class="cta-icon">📚</span><span class="cta-label">' + ctaLabel + '</span>';
+    var ctaRow;
+    if (isOpen && fileReady) {
+      ctaRow = '<div class="aula-cta-row"><a class="' + ctaCls + '" href="' + pageId + '.html">' + ctaContent + '</a></div>';
+    } else {
+      ctaRow = '<div class="aula-cta-row"><span class="' + ctaCls + '">' + ctaContent + '</span></div>';
+    }
+
+    html += '<div class="' + cardCls + '">' + cardBody + ctaRow + '</div>';
+  });
+  grid.innerHTML = html;
+}
+
 function renderMonitoriasGrid(studentData) {
   var monHtml = '';
   MONITORIAS.forEach(function(m) {
@@ -628,7 +727,8 @@ function renderBasicStats() {
   var streak = computeStreak(studentData);
   document.getElementById('stat-streak').innerHTML = streak > 0 ? '<span class="streak-flame">🔥</span>' + streak : '0';
 
-  // Monitorias
+  // Pré-monitorias online (formativas) e monitorias presenciais (Alberto)
+  renderPreMonitoriasGrid(studentData);
   renderMonitoriasGrid(studentData);
 
   // Métricas detalhadas (acordeão) — renderizadas mesmo fechado, baratas
