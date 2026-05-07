@@ -360,6 +360,24 @@ x = (x^A, x^B) \;\;\text{viável}\;\;\Leftrightarrow\;\; x^A + x^B = \bar\omega.
       }</style></aside>
 </section>
 <section class="slide level2 center">
+<h2>Caixa de Edgeworth — interativa (CD assimétrica)</h2>
+<iframe src="graficos/edgeworth.html" class="graph-iframe" width="100%" height="470" style="border:none;border-radius:6px">
+</iframe>
+<aside class="notes">
+<p>Apoio visual para o cálculo CD assimétrica do Bloco 2: <span class="math inline">\(u^A = x_1^{2/3}x_2^{1/3}\)</span>, <span class="math inline">\(\omega^A=(1,4)\)</span>; <span class="math inline">\(u^B = x_1^{1/3}x_2^{2/3}\)</span>, <span class="math inline">\(\omega^B=(3,0)\)</span>. Slider varre <span class="math inline">\(p_1/p_2 \in [0{,}5; 2{,}0]\)</span>. Em <span class="math inline">\(p_1^*/p_2^* = 8/7\)</span> os dois pontos de demanda coincidem na contract curve. Use rapidamente em sala (30s) — o desenho ao vivo no quadro continua sendo a aula central.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 center">
 <h2>Pareto-eficiência (1/3) — definição</h2>
 <div class="eq-key">
 <p><span class="math display">\[
@@ -596,13 +614,26 @@ p\cdot z^i(p) = p\cdot x^i - p\cdot \omega^i = 0 \quad\forall i.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>CD + Leontief — outra forma funcional</h2>
+<h2>CD + Leontief (1/2) — setup e demandas</h2>
 <p><strong>Setup:</strong> <span class="math inline">\(u^A = x_1^{1/2}x_2^{1/2}\)</span> (CD), <span class="math inline">\(u^B = \min\{x_1, x_2\}\)</span> (Leontief). <span class="math inline">\(\omega^A = (10, 0)\)</span>, <span class="math inline">\(\omega^B = (0, 10)\)</span>. <span class="math inline">\(p_2 = 1\)</span>.</p>
-<p><strong>Demanda CD:</strong> <span class="math inline">\(x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5\)</span> — <strong>constante</strong>.</p>
-<p><strong>Demanda Leontief:</strong> <span class="math inline">\(x_1^B = x_2^B\)</span> + orçamento ⇒ <span class="math inline">\((p_1 + 1)x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)\)</span>.</p>
-<p><strong>Mercado 1:</strong> <span class="math inline">\(5 + 10/(p_1 + 1) = 10 \implies p_1^* = 1\)</span>. Alocação: <span class="math inline">\(x^A = x^B = (5, 5)\)</span>.</p>
+<p><strong>Demanda CD (<span class="math inline">\(A\)</span>):</strong> <span class="math inline">\(m^A = 10\, p_1\)</span>. Logo <span class="math inline">\(x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5\)</span> — <strong>constante</strong> (cancelamento porque <span class="math inline">\(A\)</span> só tem bem 1).</p>
+<p><strong>Demanda Leontief (<span class="math inline">\(B\)</span>):</strong> UMP em “L” exige <span class="math inline">\(x_1^B = x_2^B\)</span> (sem desperdício). Orçamento: <span class="math inline">\(p_1 x_1^B + p_2 x_2^B = m^B = 10\)</span>. Substituindo <span class="math inline">\(x_1^B = x_2^B\)</span>: <span class="math inline">\((p_1 + 1) x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)\)</span>.</p>
 <div class="bridge">
-<p>Leontief: utilidade em “L”; UMP escolhe <span class="math inline">\(x_1 = x_2\)</span> sem desperdício. Próximo bloco: 1º TBE.</p>
+<p>Próximo: fechar mercado 1 e ler alocação.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>CD + Leontief (2/2) — fechar mercado e alocação</h2>
+<p><strong>Mercado 1:</strong> <span class="math inline">\(x_1^A + x_1^B = \bar\omega_1 = 10\)</span>:</p>
+<p><span class="math display">\[
+5 + \frac{10}{p_1 + 1} = 10 \implies \frac{10}{p_1 + 1} = 5 \implies p_1^* = 1.
+\]</span></p>
+<p><strong>Alocação:</strong> <span class="math inline">\(x_1^A = 5\)</span>, <span class="math inline">\(x_1^B = 10/2 = 5\)</span>. Por Walras (zerar mercado 1 ⇒ mercado 2 zera): <span class="math inline">\(x_2^A = m^A/(2 p_2) = 5\)</span>, <span class="math inline">\(x_2^B = x_1^B = 5\)</span>. Portanto <span class="math inline">\(x^{A*} = x^{B*} = (5, 5)\)</span>.</p>
+<div class="eq-punch">
+<p>Leontief no EC: <span class="math inline">\(x_1 = x_2\)</span> sem desperdício. CD com toda dotação num bem: demanda no outro bem é constante. Mercado fecha em <span class="math inline">\(p^* = (1,1)\)</span>.</p>
+</div>
+<div class="bridge">
+<p>Próximo bloco: 1º TBE — por que esta alocação é Pareto-eficiente.</p>
 </div>
 </section>
 <section class="slide level2 section-divider center" data-background-color="#C8102E">
@@ -680,11 +711,13 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 </section>
 <section class="slide level2 center">
 <h2>O papel exato de LNS</h2>
-<p><strong>LNS aparece</strong> apenas no passo 2 — para os <span class="math inline">\(i\)</span> fracamente melhores.</p>
-<p><strong>Sem LNS:</strong> passo 2 quebra. Pode haver <span class="math inline">\(i\)</span> com <span class="math inline">\(u^i(\tilde x^i) = u^i(x^{*i})\)</span> e <span class="math inline">\(p^*\cdot \tilde x^i &lt; p^*\cdot \omega^i\)</span>, sem que vizinhança preferida exista.</p>
-<p><strong>Contraexemplo construtivo:</strong> <span class="math inline">\(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\)</span> — bem 1 satura em <span class="math inline">\(x_1 = 1\)</span>. EC pode existir com alocação não-Pareto.</p>
+<p><strong>LNS aparece</strong> apenas no passo 2 — para os <span class="math inline">\(i\)</span> fracamente melhores. <strong>Sem LNS:</strong> passo 2 quebra.</p>
+<p><strong>Contraexemplo numérico.</strong> <span class="math inline">\(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\)</span> (bem 1 satura em <span class="math inline">\(x_1 = 1\)</span>); <span class="math inline">\(u^B = x_1^{1/2}x_2^{1/2}\)</span>. <span class="math inline">\(\omega^A = (2, 0)\)</span>, <span class="math inline">\(\omega^B = (0, 2)\)</span>. Em <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> é indiferente entre vender ou não bem 1 acima de 1 (utilidade marginal nula); EC com <span class="math inline">\(x^A = (2, 0), x^B = (0, 2)\)</span> é <strong>possível</strong>, mas a alocação <span class="math inline">\(\tilde x^A = (1, 1), \tilde x^B = (1, 1)\)</span> é viável e <strong>Pareto-superior</strong> (<span class="math inline">\(A\)</span> inalterado por saciedade; <span class="math inline">\(B\)</span> melhora de <span class="math inline">\(0\)</span> para <span class="math inline">\(1\)</span>).</p>
+<div class="eq-punch">
+<p>EC sem LNS pode “deixar dinheiro na mesa” — patologia genuína.</p>
+</div>
 <div class="bridge">
-<p>LNS é o mínimo axiomático. Patologia é teórica, mas a hipótese é genuína.</p>
+<p>LNS é o mínimo axiomático. Próximo: 2º TBE (preliminar).</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -703,9 +736,10 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <h2>2º TBE — onde quebra</h2>
 <p><strong>Convexidade é a hipótese-chave.</strong> Sem ela:</p>
 <ul>
-<li><strong>Retornos crescentes</strong> na produção (Aula 5): tecnologia não-convexa.</li>
-<li><strong>Indivisibilidades</strong>: bens discretos.</li>
-<li><strong>Externalidades</strong> (Aula 7): preferências individuais não capturam efeitos cruzados.</li>
+<li><strong>Retornos crescentes</strong> na produção (<strong>Aula 5</strong>): tecnologia não-convexa.</li>
+<li><strong>Indivisibilidades</strong> (<strong>Aula 9 — matching</strong>): bens discretos.</li>
+<li><strong>Externalidades</strong> (<strong>Aula 7</strong>): preferências individuais não capturam efeitos cruzados.</li>
+<li><strong>Informação assimétrica</strong> (<strong>Aula 8</strong>): “preço único” pressupõe contratos que não existem.</li>
 </ul>
 <div class="eq-punch">
 <p>1º TBE: mercado é Pareto. 2º TBE: Pareto é mercado — <em>se</em> dotação puder ser redistribuída e tudo for convexo.</p>

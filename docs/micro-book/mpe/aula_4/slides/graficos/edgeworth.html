@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!--
+  Caixa de Edgeworth — Aula 4 MPE 2026/32 (EG em trocas)
+  Setup: CD assimétrica
+    u^A = x1^(2/3) x2^(1/3)
+    u^B = x1^(1/3) x2^(2/3)
+    omega^A = (1, 4), omega^B = (3, 0), omega_bar = (4, 4)
+  EC: p1*/p2* = 8/7  ⇒  x^A* = (3, 12/7) ≈ (3,00; 1,71)
+                        x^B* = (1, 16/7) ≈ (1,00; 2,29)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caixa de Edgeworth — Aula 4 MPE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#222;padding:0.6rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:0.9rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 520px;max-width:640px;height:430px;border:1px solid #ddd;border-radius:6px;background:#fafafa}
+    .controls{flex:0 1 280px;padding:0.85rem;background:#f7f7f7;border-radius:6px;border:1px solid #eee;font-size:0.85rem}
+    .controls h3{font-size:0.95rem;color:#C8102E;margin-bottom:0.6rem;border-bottom:1px solid #ddd;padding-bottom:0.3rem}
+    .slider-group{margin-bottom:0.6rem}
+    .slider-group label{display:flex;justify-content:space-between;margin-bottom:0.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:0.6rem;padding:0.6rem;background:#fff;border:1px solid #ddd;border-radius:4px;line-height:1.55}
+    .info-box .eq{text-align:center;margin:0.25rem 0;font-size:0.92em}
+    .info-box .row{display:flex;justify-content:space-between;font-size:0.82em;margin:0.15rem 0}
+    .info-box .row .lbl{color:#555}
+    .info-box .row .val{font-weight:700}
+    .info-box .row .val.zero{color:#0a7d2c}
+    .info-box .row .val.pos{color:#C8102E}
+    .info-box .row .val.neg{color:#1B3A5C}
+    .btn-eq{display:block;width:100%;margin-top:0.55rem;padding:0.45rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-family:inherit;font-size:0.85rem}
+    .btn-eq:hover{background:#9a0c23}
+    .btn-eq.secondary{background:#1B3A5C}
+    .btn-eq.secondary:hover{background:#13294a}
+    @media (max-width:860px){.graph-container{flex-direction:column;align-items:center}#jxgbox{flex-basis:100%;width:100%}.controls{flex-basis:100%;width:100%;max-width:520px}}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Caixa de Edgeworth — CD assimétrica</h3>
+    <div class="slider-group">
+      <label>Razão de preços <span>\(p_1/p_2\)</span>: <span class="val" id="val-pp">1,143</span></label>
+      <input type="range" id="slider-pp" min="0.5" max="2.0" step="0.01" value="1.143">
+    </div>
+    <div class="info-box">
+      <div class="eq">\(u^A = x_1^{2/3} x_2^{1/3}\), \(\omega^A = (1, 4)\)</div>
+      <div class="eq">\(u^B = x_1^{1/3} x_2^{2/3}\), \(\omega^B = (3, 0)\)</div>
+      <hr style="margin:0.4rem 0;border:none;border-top:1px solid #eee">
+      <div class="row"><span class="lbl">\(p_1\) (com \(p_2 = 1\))</span><span class="val" id="val-p1">1,143</span></div>
+      <div class="row"><span class="lbl">Excesso bem 1 \(z_1(p)\)</span><span class="val" id="val-z1">0,000</span></div>
+      <div class="row"><span class="lbl">Excesso bem 2 \(z_2(p)\)</span><span class="val" id="val-z2">0,000</span></div>
+      <div class="row"><span class="lbl">Status</span><span class="val" id="val-eq">EC \(p^* = 8/7\)</span></div>
+    </div>
+    <button class="btn-eq" onclick="setEq()">Ir para EC \(p_1^*/p_2^* = 8/7\)</button>
+    <button class="btn-eq secondary" onclick="setDot()">Voltar à dotação \(\omega\)</button>
+  </div>
+</div>
+
+<script>
+// --- Parâmetros do problema ---
+var W1 = 4, W2 = 4;             // dotação total
+var WA = [1, 4], WB = [3, 0];   // dotações individuais
+var aA = 2/3, aB = 1/3;         // expoentes CD: u^A = x1^aA x2^(1-aA), u^B = x1^aB x2^(1-aB)
+
+// --- Board: caixa 4x4 ---
+var board = JXG.JSXGraph.initBoard('jxgbox', {
+  boundingbox: [-0.6, 4.7, 4.9, -0.7],
+  axis: false,
+  showCopyright: false,
+  showNavigation: false,
+  keepaspectratio: true
+});
+
+// Caixa retangular (origem A em (0,0); origem B em (W1, W2))
+board.create('polygon', [[0,0],[W1,0],[W1,W2],[0,W2]],
+  {borders:{strokeColor:'#333',strokeWidth:2}, fillOpacity:0, vertices:{visible:false}, withLines:true});
+
+// Labels das origens
+board.create('text', [-0.35, -0.3, '\\(O_A\\)'], {fontSize:14, color:'#C8102E', fixed:true, anchorX:'left'});
+board.create('text', [W1+0.05, W2+0.15, '\\(O_B\\)'], {fontSize:14, color:'#1B3A5C', fixed:true, anchorX:'left'});
+
+// Eixos rotulados
+board.create('text', [W1/2, -0.55, 'bem 1'], {fontSize:11, color:'#555', fixed:true, anchorX:'middle'});
+board.create('text', [-0.5, W2/2, 'bem 2'], {fontSize:11, color:'#555', fixed:true, anchorX:'middle'});
+
+// --- Demanda Marshalliana CD ---
+// Para A: x1 = aA * mA / p1; x2 = (1-aA) * mA / p2; mA = p1*WA[0] + p2*WA[1]
+// Idem B com aB e WB.
+function demand(p1, p2, alpha, omega){
+  var m = p1*omega[0] + p2*omega[1];
+  return [alpha * m / p1, (1-alpha) * m / p2];
+}
+
+// Estado dinâmico
+var state = { p1: 8/7, p2: 1 };
+
+// Dotação omega no espaço de A (mesma posição vista por B é (W1-WA[0], W2-WA[1]))
+board.create('point', [WA[0], WA[1]], {
+  name:'\\(\\omega\\)', size:4, color:'#222', fixed:true, label:{offset:[8,12], fontSize:13}
+});
+
+// Reta orçamentária passando por omega: x2 = WA[1] + (p1/p2)*(WA[0]-x1)
+// Implementada como segmento entre as bordas da caixa.
+var budgetLine = board.create('functiongraph', [
+  function(x){ var pp = state.p1/state.p2; return WA[1] + pp*(WA[0]-x); },
+  0, W1
+], {strokeColor:'#888', strokeWidth:1.6, dash:2});
+
+// Pontos de demanda dinâmicos
+var dA = board.create('point', [
+  function(){ return demand(state.p1, state.p2, aA, WA)[0]; },
+  function(){ return demand(state.p1, state.p2, aA, WA)[1]; }
+], {name:'\\(x^A(p)\\)', size:5, color:'#C8102E', fixed:true, label:{offset:[8,-12], fontSize:12}});
+
+// Demanda de B (no sistema de A, é W - x^B)
+var dBinA = board.create('point', [
+  function(){ var d = demand(state.p1, state.p2, aB, WB); return W1 - d[0]; },
+  function(){ var d = demand(state.p1, state.p2, aB, WB); return W2 - d[1]; }
+], {name:'\\(x^B(p)\\)', size:5, color:'#1B3A5C', fixed:true, label:{offset:[8,12], fontSize:12}});
+
+// Curvas de indiferença passando pelos pontos de demanda
+// IC de A: u^A(x1,x2) = u^A(dA) ⇒ x2 = (uA / x1^aA)^(1/(1-aA))
+function uA(x1,x2){ return Math.pow(x1, aA) * Math.pow(x2, 1-aA); }
+function uB(x1,x2){ return Math.pow(x1, aB) * Math.pow(x2, 1-aB); }
+
+board.create('functiongraph', [
+  function(x){
+    var d = demand(state.p1, state.p2, aA, WA);
+    var u = uA(d[0], d[1]);
+    if (x < 0.05) return W2 + 1; // off-screen
+    return Math.pow(u / Math.pow(x, aA), 1/(1-aA));
+  }, 0.05, W1
+], {strokeColor:'#C8102E', strokeWidth:1.4, strokeOpacity:0.6});
+
+// IC de B no sistema de A: B vê (W1-x1, W2-x2). u^B = uB(W1-x1, W2-x2) = const
+// ⇒ W2-x2 = (uB / (W1-x1)^aB)^(1/(1-aB)) ⇒ x2 = W2 - (...)
+board.create('functiongraph', [
+  function(x){
+    var d = demand(state.p1, state.p2, aB, WB);
+    var u = uB(d[0], d[1]);
+    if ((W1-x) < 0.05) return -1;
+    return W2 - Math.pow(u / Math.pow(W1-x, aB), 1/(1-aB));
+  }, 0.05, W1-0.05
+], {strokeColor:'#1B3A5C', strokeWidth:1.4, strokeOpacity:0.6});
+
+// Setas de excesso de demanda em omega — visualizam direção do mercado
+// (z1, z2) agregados; quando p = p*, ambos zeram.
+
+// --- Atualização ---
+function pretty(x){
+  if (Math.abs(x) < 0.0005) x = 0;
+  var s = x.toFixed(3).replace('.', ',');
+  return s;
+}
+
+function update(){
+  var pp = parseFloat(document.getElementById('slider-pp').value);
+  state.p1 = pp;  // p2 = 1 fixo
+  state.p2 = 1;
+  document.getElementById('val-pp').textContent = pretty(pp);
+  document.getElementById('val-p1').textContent = pretty(pp);
+
+  var xA = demand(state.p1, state.p2, aA, WA);
+  var xB = demand(state.p1, state.p2, aB, WB);
+  var z1 = (xA[0] + xB[0]) - W1;
+  var z2 = (xA[1] + xB[1]) - W2;
+
+  var z1El = document.getElementById('val-z1');
+  var z2El = document.getElementById('val-z2');
+  z1El.textContent = pretty(z1);
+  z2El.textContent = pretty(z2);
+  z1El.className = 'val ' + (Math.abs(z1) < 0.005 ? 'zero' : (z1 > 0 ? 'pos' : 'neg'));
+  z2El.className = 'val ' + (Math.abs(z2) < 0.005 ? 'zero' : (z2 > 0 ? 'pos' : 'neg'));
+
+  var eqEl = document.getElementById('val-eq');
+  if (Math.abs(pp - 8/7) < 0.005) {
+    eqEl.textContent = '✓ EC: \\(p_1/p_2 = 8/7\\)';
+    eqEl.style.color = '#0a7d2c';
+  } else if (z1 > 0.005) {
+    eqEl.textContent = 'excesso de bem 1';
+    eqEl.style.color = '#C8102E';
+  } else {
+    eqEl.textContent = 'excesso de bem 2';
+    eqEl.style.color = '#1B3A5C';
+  }
+  board.update();
+  if (window.MathJax && window.MathJax.typesetPromise) MathJax.typesetPromise([document.querySelector('.controls')]);
+}
+
+function setEq(){ document.getElementById('slider-pp').value = (8/7).toFixed(3); update(); }
+function setDot(){ document.getElementById('slider-pp').value = 1.0; update(); }
+
+document.getElementById('slider-pp').addEventListener('input', update);
+update();
+</script>
+</body>
+</html>

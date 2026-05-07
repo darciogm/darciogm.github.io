@@ -63,11 +63,11 @@
 
 **Enunciado.** Mesma economia básica, agora com $u^A = x_1^{2/3} x_2^{1/3}$ ($A$ valoriza relativamente mais o bem 1) e $u^B = x_1^{1/3} x_2^{2/3}$ ($B$ valoriza relativamente mais o bem 2). Dotações $\omega^A = (1, 4)$, $\omega^B = (3, 0)$. Total $\bar\omega = (4, 4)$. Numerário $p_2 = 1$.
 
-### (a) A renda de $B$ em equilíbrio (em função de $p_1, p_2$) é:
+### (a) A renda de $B$ em equilíbrio (em função de $p_1$, com $p_2 = 1$) é:
 
-- (i) $m^B = 4 p_2$ — só tem bem 2.
-- (ii) $m^B = 3 p_1 + 0\cdot p_2 = 3 p_1$. **← CORRETA**
-- (iii) $m^B = p_1 + 4 p_2$.
+- (i) $m^B = 4$ — só tem bem 1.
+- (ii) $m^B = 3 p_1$. **← CORRETA**
+- (iii) $m^B = p_1 + 4$.
 - (iv) $m^B = 4$ — independente de preços.
 
 ### (b) A demanda Marshalliana de $A$ pelo bem 1, como função de $p_1$ (com $p_2 = 1$), é:
@@ -75,26 +75,28 @@
 - (i) $x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. **← CORRETA**
 - (ii) $x_1^A = (1/3)(p_1 + 4)/p_1$.
 - (iii) $x_1^A = 1$ — só tem 1 unidade na dotação.
-- (iv) $x_1^A = 4/p_1$ — proporcional ao bem 2 da dotação.
+- (iv) $x_1^A = 4/p_1$.
 
-### (c) Fechando mercado 1 ($x_1^A + x_1^B = 4$), o preço $p_1^*$ é (com $p_2 = 1$):
+### (c) A demanda Marshalliana de $B$ pelo bem 1, como função de $p_1$, é:
+
+- (i) $x_1^B = 3$ (toda a dotação).
+- (ii) $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$.
+- (iii) $x_1^B = (1/3)\cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — constante (não depende de $p_1$). **← CORRETA**
+- (iv) $x_1^B$ depende de $p_2$.
+
+> **Nota pedagógica.** As alternativas (ii) e (iii) chegam ao mesmo valor numérico, mas (iii) explicita o **cancelamento** $\alpha_1^B \cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — propriedade do agente que tem todas as unidades concentradas em um único bem.
+
+### (d) Fechando mercado 1 ($x_1^A + x_1^B = 4$), o preço $p_1^*$ é (com $p_2 = 1$):
 
 - (i) $p_1^* = 1$ — simetria.
-- (ii) $p_1^* = 2$ — bem 1 dobra de valor.
-- (iii) $p_1^* = 8/5 = 1{,}6$. **← CORRETA**
+- (ii) $p_1^* = 8/7 \approx 1{,}143$. **← CORRETA**
+- (iii) $p_1^* = 8/5 = 1{,}6$.
 - (iv) $p_1^* = 4$.
-
-### (d) A alocação de equilíbrio $(x^{A*}, x^{B*})$ tem aproximadamente:
-
-- (i) $x^{A*} = (2{,}33,\; 3{,}73)$, $x^{B*} = (1{,}67,\; 0{,}27)$. **← CORRETA**
-- (ii) $x^{A*} = (1, 4)$, $x^{B*} = (3, 0)$ — autarquia.
-- (iii) $x^{A*} = (2, 2)$, $x^{B*} = (2, 2)$.
-- (iv) $x^{A*} = (4, 0)$, $x^{B*} = (0, 4)$.
 
 ### (e) Por que $p_1^* > 1$ neste caso?
 
 - (i) $A$ tem mais renda que $B$ — só por isso.
-- (ii) Demanda relativa por bem 1 é "alta" (porque $A$ ama bem 1) mas a oferta agregada de bem 1 (= $\bar\omega_1 = 4$) é tomada como dada; o ajuste ocorre via preço relativo. Como $A$ é o "comprador-alvo" do bem 1 e $B$ é o "fornecedor", $p_1$ sobe relativo a $p_2$. **← CORRETA**
+- (ii) Demanda relativa por bem 1 é "alta" (porque $A$ ama bem 1 e tem pouco) e a oferta agregada é fixa em $\bar\omega_1 = 4$. O ajuste ocorre via preço relativo: $p_1$ sobe relativo a $p_2$ para zerar excesso. **← CORRETA**
 - (iii) Walras é violada — sistema não fecha em $p_1 = 1$.
 - (iv) CD com $\alpha \neq 1/2$ sempre tem $p_1 \neq p_2$.
 
@@ -102,13 +104,13 @@
 
 **1. Ponto-chave.** Preço relativo no EC reflete *demanda* (preferências) e *oferta* (dotações). Quando o consumidor que mais valoriza um bem é também o que tem menos dele, preço relativo sobe. Aqui, $A$ adora bem 1 ($\alpha_1^A = 2/3$) mas só tem 1 unidade na dotação; $B$ tem 3 unidades de bem 1 mas valoriza menos ($\alpha_1^B = 1/3$). Resultado: $p_1$ caro.
 
-**2. Derivação.** $m^A = p_1 + 4$ (em $p_2 = 1$). $x_1^A = (2/3)\, m^A/p_1 = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $m^B = 3 p_1$. $x_1^B = (1/3)\, m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — **observe o cancelamento de $p_1$**. Mercado 1: $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7 \approx 1{,}143$. Alocação: $x_1^A = 2/3 + 8/(3\cdot 8/7) = 2/3 + 7/3 = 3$. $x_2^A = (1/3)\, m^A = (1/3)(8/7 + 4) = (1/3)(36/7) = 12/7 \approx 1{,}71$. $x_1^B = 1$. $x_2^B = (2/3)\, m^B = (2/3)(3\cdot 8/7) = 16/7 \approx 2{,}29$. Verificação: $x_1^A + x_1^B = 3 + 1 = 4 = \bar\omega_1$ ✓; $x_2^A + x_2^B = 12/7 + 16/7 = 28/7 = 4 = \bar\omega_2$ ✓.
+**2. Derivação.** $m^A = p_1 + 4$ (em $p_2 = 1$). $x_1^A = (2/3)\, m^A/p_1 = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $m^B = 3 p_1$. $x_1^B = (1/3)\, m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — **observe o cancelamento de $p_1$** (sub-item c). Mercado 1: $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7 \approx 1{,}143$. Alocação: $x_1^A = 2/3 + 8/(3\cdot 8/7) = 2/3 + 7/3 = 3$. $x_2^A = (1/3)\, m^A = (1/3)(8/7 + 4) = (1/3)(36/7) = 12/7 \approx 1{,}71$. $x_1^B = 1$. $x_2^B = (2/3)\, m^B = (2/3)(3\cdot 8/7) = 16/7 \approx 2{,}29$. Verificação: $x_1^A + x_1^B = 3 + 1 = 4 = \bar\omega_1$ ✓; $x_2^A + x_2^B = 12/7 + 16/7 = 28/7 = 4 = \bar\omega_2$ ✓.
 
-**3. Armadilha.** (a)(i) confunde renda com utilidade marginal. (a)(iii) usa fórmula errada da renda. (b)(ii) usa $\alpha = 1/3$ (parametrização de $B$) na demanda de $A$. (b)(iii) confunde renda Marshalliana com dotação. (c)(i) supõe simetria que não vale. (c)(iii) é o distrator-armadilha: número alternativo plausível, mas vem da álgebra errada. (e) opções (i) e (iii) confundem direção de causalidade.
+**3. Armadilha.** (a)(i) e (a)(iv) ignoram que $m^B$ depende de $p_1$ (única fonte de renda de $B$). (a)(iii) inverte: essa é a fórmula de $m^A$. (b)(ii) usa $\alpha = 1/3$ (parametrização de $B$) na demanda de $A$. (b)(iii) confunde demanda Marshalliana com dotação. (c)(ii) chega à resposta correta numericamente, mas oculta o passo do cancelamento — preferimos (iii) por explicitar a estrutura. (d)(iii) `$p_1^* = 8/5$` é o **distrator-armadilha**: número alternativo plausível, mas vem de álgebra errada (esquecer o $1/3$ na demanda de B ou trocar o `$7/3$` por `$5/3$`); aritmética disciplinada entrega `$p_1^* = 8/7$`. (e) opções (i) e (iii) confundem direção de causalidade.
 
-**4. Extensão.** Verificação Pareto: $\text{TMS}^A = (\alpha_1^A/\alpha_2^A)(x_2^A/x_1^A) = 2\cdot (12/7)/3 = 24/21 = 8/7$. $\text{TMS}^B = (1/2)\cdot (16/7)/1 = 8/7$. ✓ Tangência. **Coincidência canônica:** $\text{TMS}^* = p_1^*/p_2^* = 8/7$ — propriedade da UMP em ponto interior.
+**4. Extensão.** Verificação Pareto: $\text{TMS}^A = (\alpha_1^A/\alpha_2^A)(x_2^A/x_1^A) = 2\cdot (12/7)/3 = 24/21 = 8/7$. $\text{TMS}^B = (1/2)\cdot (16/7)/1 = 8/7$. ✓ Tangência. **Coincidência canônica:** $\text{TMS}^* = p_1^*/p_2^* = 8/7$ — propriedade da UMP em ponto interior. Esta é a alocação Pareto-eficiente que o mercado seleciona, dadas as dotações `$\omega^A = (1, 4)$` e `$\omega^B = (3, 0)$`.
 
-**5. Peer-review.** Calibre 🟡. Aluno deve fluir em CD com $\alpha$ assimétrico e dotação extrema. O cancelamento de $p_1$ no termo de $x_1^B$ (porque $B$ só tem bem 1, então a renda dele cresce na mesma proporção que o preço, anulando o efeito) é o ponto sutil — quem perde isso, erra (b) ou (c). Aritmética cuidadosa entrega o número limpo $p_1^* = 8/7$.
+**5. Peer-review.** Calibre 🟡. Aluno deve fluir em CD com $\alpha$ assimétrico e dotação extrema. O cancelamento de $p_1$ no termo de $x_1^B$ (porque $B$ só tem bem 1, então a renda dele cresce na mesma proporção que o preço, anulando o efeito) é o ponto sutil — quem perde isso, erra (c) ou (d). Aritmética cuidadosa entrega o número limpo $p_1^* = 8/7$. **Risco residual** do exercício: o aluno que faz 3 ou 4 sub-itens corretos mas erra (d) por troca aritmética é o aluno que **entendeu** a estrutura — armadilha (d)(iii) `$8/5$` é deliberada nesse sentido.
 
 ---
 

@@ -76,6 +76,7 @@
 - [ ] **Em $I=2$:** "coalizão" = ou um ou outro consumidor sozinho ou os dois juntos. Bloqueio individual = $u^i(x^i) < u^i(\omega^i)$. Bloqueio do par = existe $\tilde x$ Pareto-superior.
 - [ ] **Núcleo em economia $2\times 2$ = parte da contract curve dentro da lente de melhoria mútua passando pela dotação.** Subconjunto da contract curve.
 - [ ] **Frase-martelo:** "Núcleo é Pareto + voluntariedade. Mais restrito que Pareto puro."
+- [ ] **[30s extras — anunciar slide #29 (núcleo encolhe com réplica):**] *"Debreu & Scarf 1963 — quando $I$ cresce via réplica, núcleo $\subseteq$ EC no limite. Não vamos provar; vai aparecer no quiz pós-aula 🔴🔴 (Q9). Quem quiser ver a prova: J-R §5.3."* Função: dar âncora pública para a Q9 da pós-aula sem alongar Bloco 1.
 
 ### 1.e. Ponte (~5 min)
 
