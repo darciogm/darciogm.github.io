@@ -230,11 +230,11 @@ A maioria dos exercícios avaliativos da Aula 5 usa $v = \ln$ (CRRA com $\gamma 
 
 ### MC4
 
-Em economia AD com $I = 2$ agentes idênticos CARA $v(c) = -e^{-c}/1$ ($\gamma = 1$), $\bar\omega = (40, 60)$, dotações iguais $\omega^A = \omega^B = (20, 30)$. Em equilíbrio:
+Em economia AD com $I = 2$ agentes CARA $v(c) = -e^{-c}$ (mesmo $\gamma = 1$), $\bar\omega = (40, 60)$ (agregado **arriscado**), dotações **assimétricas** $\omega^A = (10, 40)$, $\omega^B = (30, 20)$. Em equilíbrio:
 
-- (a) Cada agente consome $\bar\omega_s/2 = (20, 30)$ — autarquia, porque dotações são iguais.
-- (b) **Cada agente consome $(20, 30)$ — autarquia coincide com EC porque agentes idênticos não trocam, mas o "preço sombra" $p^*_2/p^*_1$ ainda é informativo via $\pi (v)'$.** [correta] Pena pedagógica: agentes idênticos ⇒ não trocam, mas equação SDF ainda determina preços.
-- (c) $A$ consome todo o estado 1, $B$ consome todo o estado 2.
+- (a) Cada agente consome $\bar\omega_s/2 = (20, 30)$ — autarquia.
+- (b) Cada agente consome sua dotação $\omega^i$ — não há ganho de troca.
+- (c) **Cada agente carrega fração igual ($1/2$) do risco agregado: $x^{i*}_s = \bar\omega_s/2 + k^i$ onde $k^A + k^B = 0$, com $k^i$ refletindo a heterogeneidade de dotações iniciais via transferência lump-sum.** [correta] Resultado canônico de Wilson (1968) — CARA tem variação aditiva.
 - (d) Não há equilíbrio.
 
 ---

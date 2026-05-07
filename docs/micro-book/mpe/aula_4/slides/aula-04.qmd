@@ -1085,6 +1085,8 @@ $$\text{Espaço de bens:} \quad \mathbb{R}^L \;\to\; \mathbb{R}^{LS}.$$
 
 **Robinson de hoje** vira "Robinson contingente". 1º TBE sobrevive sob **mercados completos** (um preço por $(\ell, s)$).
 
+**Reuso integral:** PPF, $\text{TMS} = \text{TMT}$, max-lucro, 1º TBE — toda a maquinaria do Bloco 3.5 vive em $\mathbb{R}^{LS}$ sem alteração de prova.
+
 ::: {.eq-punch}
 Aula 4: $p$ endógeno em consumo + produção. Aula 5: $p$ endógeno em consumo + produção + estados.
 :::

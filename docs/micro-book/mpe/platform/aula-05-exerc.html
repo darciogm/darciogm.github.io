@@ -82,11 +82,11 @@
 
     <div class="quizg-q" data-qid="ex1c" data-correct="c" data-difficulty="green">
       <div class="quizg-qtext"><strong>(c)</strong> Em equilíbrio com Bernoulli \(v_A = \ln\), a CPO de \(A\) implica:</div>
-      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(x^{A*}_1 = x^{A*}_2\) — totalmente segurado, sem precisar de cálculo.</label>
-      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(x^{A*}_1 = (\pi_1/\pi_2)\, x^{A*}_2\).</label>
-      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \((\pi_1/x^{A*}_1)/(\pi_2/x^{A*}_2) = p^*_1/p^*_2 \Rightarrow x^{A*}_2/x^{A*}_1 = (p^*_1/p^*_2)\cdot (\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1\) ⇒ \(x^{A*}_1 = x^{A*}_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(x^{A*}_1 < x^{A*}_2\) — A consome menos no estado menos provável (intuição "consumo segue probabilidade").</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(x^{A*}_1 = (\pi_1/\pi_2)\, x^{A*}_2 = (2/3)\, x^{A*}_2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \((\pi_1/x^{A*}_1)/(\pi_2/x^{A*}_2) = p^*_1/p^*_2 \Rightarrow x^{A*}_2/x^{A*}_1 = (p^*_1/p^*_2)\cdot (\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1\) ⇒ \(x^{A*}_1 = x^{A*}_2\) (totalmente segurado pela igualdade preço-probabilidade que vem do agente neutro).</label>
       <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(x^{A*}_1 \neq x^{A*}_2\) — A não consegue se segurar.</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Derivação canônica: marginais \(\pi_s/x_s\), razão de marginais = razão de preços.</div>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Derivação canônica: marginais \(\pi_s/x_s\), razão de marginais = razão de preços. A conclusão \(x^{A*}_1 = x^{A*}_2\) só vem porque o agente neutro \(B\) força \(p_1/p_2 = \pi_1/\pi_2\), cancelando a heterogeneidade na CPO de \(A\). Distrator (i) confunde "estado mais provável" com "consumo maior" — falso aqui.</div>
     </div>
 
     <div class="quizg-q" data-qid="ex1d" data-correct="a" data-difficulty="green">
@@ -156,13 +156,13 @@
       <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
     </div>
 
-    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
-      <div class="quizg-qtext"><strong>(d)</strong> O preço relativo \(p^*_1/p^*_2\) em equilíbrio satisfaz:</div>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3\).</label>
+    <div class="quizg-q" data-qid="ex2d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O preço relativo \(p^*_1/p^*_2\) em equilíbrio satisfaz (use Cobb-Douglas/log: cada \(i\) tem demanda \(x^i_s = \pi^i_s\, m^i / p_s\)):</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3\) — média das crenças ponderada pelas rendas (aqui rendas iguais).</label>
       <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) \(p^*_1/p^*_2 = 1\) porque o agregado é livre de risco.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) \(p^*_1/p^*_2\) é determinado pelo sistema (CPOs + Walras + viabilidade). Razão \(\in (\pi^A_1/\pi^A_2, \pi^B_1/\pi^B_2) = (3/7, 1)\) — calculável mas não trivial; reflete média ponderada das crenças.</label>
-      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) \(p^*_1/p^*_2 = \pi^A_1 \cdot \pi^B_1 = 0{,}15\).</label>
-      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Sem fórmula fechada simples; ponto pedagógico é reconhecer a faixa.</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) \(p^*_1/p^*_2 = \pi^A_1 \cdot \pi^B_1 = 0{,}15\) (produto das probabilidades subjetivas do estado 1).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Indefinido sem informação adicional sobre a riqueza inicial dos agentes.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong> Em log, \(x^i_s = \pi^i_s m^i / p_s\). Viabilidade \(s=1\): \((\pi^A_1 m^A + \pi^B_1 m^B)/p_1 = 100\). Com rendas iguais \(m^A = m^B = 50(p_1+p_2)\), o sistema simplifica para \(p_1/p_2 = (\pi^A_1+\pi^B_1)/(\pi^A_2+\pi^B_2) = 0{,}8/1{,}2 = 2/3\).</div>
     </div>
 
     <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
@@ -176,11 +176,11 @@
 
     <div class="ex-gabarito-5passos quizg-feedback" hidden>
       <h4>Gabarito 5-passos — Exercício 2</h4>
-      <p><strong>1. Ponto-chave.</strong> A equação fundamental do SDF, \(p^*_s/p^*_{s'} = (\pi^i_s v_s')/(\pi^i_{s'} v_{s'}')\), tem que valer <strong>para cada agente</strong> em equilíbrio. Quando crenças são heterogêneas, marginais individuais (\(v_s'/v_{s'}'\)) <strong>se ajustam endogenamente</strong> para que a equação valha simultaneamente. Mesmo com agregado livre de risco, agentes com crenças divergentes apostam endogenamente entre si.</p>
-      <p><strong>2. Derivação.</strong> CPO de \(A\) (\(v = \ln\)): \((p^*_1/p^*_2) = (\pi^A_1/\pi^A_2)(x^A_2/x^A_1)\). CPO de \(B\): \((p^*_1/p^*_2) = (\pi^B_1/\pi^B_2)(x^B_2/x^B_1) = (x^B_2/x^B_1)\). Igualando: \((\pi^A_1/\pi^A_2)(x^A_2/x^A_1) = (x^B_2/x^B_1)\). Com viabilidade \(x^A + x^B = (100, 100)\), e orçamento \(p^*_1 x^A_1 + p^*_2 x^A_2 = p^*_1 \cdot 50 + p^*_2 \cdot 50\) — sistema de 4 equações, 4 incógnitas. Razão de equilíbrio fica entre \(3/7\) e \(1\) (limites das CPOs individuais).</p>
-      <p><strong>3. Armadilha.</strong> Item (d): aluno marca (i) achando que se faz média simples — falso, depende dos pesos individuais e do \(v\). Item (e): aluno marca (i) "Bernoullis diferentes" — falso, Bernoullis são idênticas; o que difere são crenças.</p>
-      <p><strong>4. Extensão.</strong> Quando \(\pi^A = \pi^B\) e \(\omega^A = \omega^B\), o equilíbrio é autarquia. Heterogeneidade gera comércio. <strong>No-trade theorem (Milgrom-Stokey 1982):</strong> se a heterogeneidade vier de informação privada e houver common knowledge, comércio puramente especulativo desaparece. <em>Pré-monitoria 3 detalha.</em></p>
-      <p><strong>5. Peer-review.</strong> Calibre 🟡. Item (d) é o mais sutil — exige reconhecer que "calculável mas não trivial" é a resposta certa. Risco residual: aluno meticuloso pode tentar calcular numericamente. Mantemos a redação porque o ponto pedagógico é a <em>ausência de fórmula fechada simples</em>, em contraste com o Exercício 1.</p>
+      <p><strong>1. Ponto-chave.</strong> A equação fundamental do SDF, \(p^*_s/p^*_{s'} = (\pi^i_s v_s')/(\pi^i_{s'} v_{s'}')\), tem que valer <strong>para cada agente</strong> em equilíbrio. Quando crenças são heterogêneas, marginais individuais (\(v_s'/v_{s'}'\)) <strong>se ajustam endogenamente</strong>. Para Bernoullis log + dotações iguais, há fórmula fechada limpa: <strong>\(p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2)\)</strong> — média das crenças ponderada pelas rendas (aqui rendas idênticas, então pesos iguais).</p>
+      <p><strong>2. Derivação rigorosa.</strong> Em \(v = \ln c\), a UMP de \(i\) com renda \(m^i\) entrega demandas Cobb-Douglas em log: \(x^i_s = \pi^i_s\, m^i/p_s\) (multiplicador \(\lambda^i = 1/m^i\) e \(p_s x^i_s = \pi^i_s m^i\)). Some viabilidade \(s = 1\): \(\sum_i x^i_1 = (\sum_i \pi^i_1\, m^i)/p_1 = 100\). Análogo \(s = 2\): \((\sum_i \pi^i_2 m^i)/p_2 = 100\). Razão: \(\boxed{\;p^*_1/p^*_2 = \dfrac{\sum_i \pi^i_1 m^i}{\sum_i \pi^i_2 m^i}\;}\). Com \(\omega^A = \omega^B = (50, 50)\), \(m^A = m^B = 50(p_1+p_2)\) (rendas iguais), os \(m^i\) cancelam: \(p^*_1/p^*_2 = (\pi^A_1+\pi^B_1)/(\pi^A_2+\pi^B_2) = 0{,}8/1{,}2 = 2/3\). <strong>Verificação numérica.</strong> Em \(p_2=1, p_1=2/3\): \(m^i = 50 \cdot 5/3 = 250/3\). \(x^A_1 = 0{,}3 \cdot (250/3)/(2/3) = 0{,}3 \cdot 125 = 37{,}5\); \(x^A_2 = 0{,}7 \cdot (250/3)/1 = 175/3 \approx 58{,}33\); \(x^B_1 = 0{,}5 \cdot 125 = 62{,}5\); \(x^B_2 = 0{,}5 \cdot 250/3 \approx 41{,}67\). Soma \(s=1\): \(37{,}5+62{,}5=100\) ✓; \(s=2\): \(58{,}33+41{,}67=100\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> Item (d): aluno marca (ii) achando que agregado livre de risco \(\Rightarrow p_1=p_2\) — <em>falso</em>, isso só vale com crenças iguais. (iii) é o produto das probabilidades — combinação errada. (iv) ignora que rendas se cancelam por simetria de dotação. Item (e): aluno marca (i) "Bernoullis diferentes" — falso, Bernoullis são idênticas; o que difere são crenças.</p>
+      <p><strong>4. Extensão.</strong> Quando \(\pi^A = \pi^B\) e \(\omega^A = \omega^B\), o equilíbrio é autarquia. Heterogeneidade gera comércio. A fórmula \((\sum_i \pi^i_s m^i)/p_s = \bar\omega_s\) generaliza para qualquer Bernoulli homotética com mesma elasticidade entre agentes. <strong>No-trade theorem (Milgrom-Stokey 1982):</strong> se a heterogeneidade vier de informação privada e houver common knowledge, comércio puramente especulativo desaparece. <em>Pré-monitoria 3 detalha.</em></p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. <strong>Bug detectado e corrigido em pass-3 (Referee 2):</strong> versões anteriores marcavam (iii) "calculável mas não trivial" como correta e (i) com fórmula fechada como distrator. Auditoria refez a álgebra com Cobb-Douglas log e mostrou que <em>existe</em> fórmula fechada simples; (i) é a verdade. Distratores recalibrados; resposta correta agora é (i). Sem risco residual de ambiguidade.</p>
     </div>
   </div>
 

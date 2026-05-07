@@ -55,7 +55,7 @@ Demanda Leontief: a $p \gg 0$ e renda $m$, $x_1 = x_2 = m/(p_1 + p_2)$. Logo cad
 
 Mercado bem 1: $\sum_i m^i/(p_1+p_2) = (p_1 \cdot 6 + p_2 \cdot 6)/(p_1+p_2) = 6 = \bar\omega_1$ ✓ **para qualquer** $(p_1, p_2) \gg 0$ — pois $\bar\omega_1 = \bar\omega_2 = 6$ é o que faz a aritmética dar igual nos dois mercados.
 
-**O que esse "fecha para qualquer $p$" esconde:** **a alocação NÃO é única**. Cada quociente $p_1/p_2$ produz uma cesta diferente para cada agente. Verificação concreta:
+**O que esse "fecha para qualquer $p$" esconde:** **o EC não é único** — há um continuum de equilíbrios competitivos parametrizado por $p_1/p_2 \in (0, \infty)$. Cada quociente $p_1/p_2$ produz uma cesta diferente para cada agente. Verificação concreta:
 
 - Em $p_1 = p_2 = 1$: $m^A = 6$, $x^A = (3, 3)$; $m^B = 6$, $x^B = (3, 3)$.
 - Em $p_1 = 2, p_2 = 1$: $m^A = 2 \cdot 4 + 1 \cdot 2 = 10$, $x^A = (10/3, 10/3) \approx (3{,}33; 3{,}33)$. $m^B = 2 \cdot 2 + 1 \cdot 4 = 8$, $x^B = (8/3, 8/3) \approx (2{,}67; 2{,}67)$. Soma bem 1: $10/3 + 8/3 = 18/3 = 6$ ✓.

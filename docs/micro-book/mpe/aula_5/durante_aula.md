@@ -306,7 +306,7 @@ Quadro, em paralelo (duas colunas):
 | Soma: $p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i$. | Soma: $p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i$. |
 | Viabilidade $\Rightarrow$ contradição. | Viabilidade $\Rightarrow$ contradição. |
 
-> *"Linha por linha. O produto interno em $\mathbb{R}^{LS}$ é apenas mais coordenadas. A prova só usa que (a) UMP exausta orçamento, (b) LNS dá vizinhança preferida, (c) viabilidade é igualdade agregada. As três valem em qualquer $\mathbb{R}^N$."*
+> *"Linha por linha. O produto interno em $\mathbb{R}^{LS}$ é apenas mais coordenadas. A prova só usa que (a) UMP exausta orçamento, (b) LNS dá vizinhança preferida, (c) viabilidade é igualdade vetorial ponto a ponto (em $\mathbb{R}^{LS}$, isso é estado-a-estado). As três valem em qualquer $\mathbb{R}^N$."*
 
 **Discussão de 3 min sobre LNS na nova versão:** o que é LNS em $\mathbb{R}^{LS}$? Em toda vizinhança de $x \in \mathbb{R}^{LS}_+$, existe $\tilde x$ estritamente preferido. Sob EU com $v$ estritamente crescente, vale automaticamente.
 

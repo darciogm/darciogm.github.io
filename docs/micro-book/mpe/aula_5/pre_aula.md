@@ -360,11 +360,11 @@ Ações Arrow para o estado $s$: ativo que paga 1 em $s$ e 0 em $s' \neq s$. Em 
 - (c) Total da economia ser igual nos dois estados.
 - (d) Estados serem equiprováveis.
 
-**MC7.** Em $A$ avesso e $B$ avesso (ambos não neutros), com $\pi_1 = \pi_2 = 1/2$, $\omega^A = (60, 100)$, $\omega^B = (100, 60)$:
+**MC7.** Em $A$ avesso e $B$ avesso (ambos com Bernoulli **idêntica** $v_A = v_B = \ln c$), com $\pi_1 = \pi_2 = 1/2$, $\omega^A = (60, 100)$, $\omega^B = (100, 60)$ (agregado $\bar\omega = (160, 160)$ — **livre de risco**):
 
-- (a) Em equilíbrio, $A$ continua totalmente segurado.
-- (b) Em equilíbrio, $B$ continua totalmente segurado.
-- (c) **Ambos diversificam**, mas nenhum chega a $x^i_1 = x^i_2$ em geral. **[correta]** O equilíbrio é Pareto-eficiente, mas não há agente "infinitamente paciente" para absorver todo o risco.
+- (a) Em equilíbrio, **ambos** ficam totalmente segurados em $x^i_1 = x^i_2 = 80$. **[correta]** Agregado livre de risco + Bernoullis idênticas $\Rightarrow$ a razão $r := x^i_2/x^i_1 = (\pi_1/\pi_2)(p_2/p_1)$ é a mesma para cada agente; viabilidade nos dois estados força $r = 1$.
+- (b) Apenas $A$ fica segurado.
+- (c) Ambos diversificam, mas nenhum chega a $x^i_1 = x^i_2$ em geral.
 - (d) Não existe equilíbrio.
 
 ---

@@ -486,7 +486,7 @@ Mesma prova da Aula 4. Espaço novo. Pareto-eficiência preservada.
 :::
 
 ::: {.callout-note .callout}
-O argumento usa apenas (i) UMP exausta orçamento, (ii) LNS dá vizinhança preferida, (iii) viabilidade é igualdade agregada. As três valem em qualquer $\mathbb{R}^N$.
+O argumento usa apenas (i) UMP exausta orçamento, (ii) LNS dá vizinhança preferida, (iii) viabilidade é igualdade vetorial **ponto a ponto** (em $\mathbb{R}^L$ é bem-a-bem; em $\mathbb{R}^{LS}$ é bem-a-bem **e** estado-a-estado). As três valem em qualquer $\mathbb{R}^N$.
 :::
 
 ---

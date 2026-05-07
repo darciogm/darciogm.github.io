@@ -54,9 +54,9 @@ Total $\bar\omega = (100, 160)$. Numerário: $p_2 = 1$.
 
 **(c)** Em equilíbrio com Bernoulli $v_A = \ln$, a CPO de $A$ implica:
 
-- (i) $x^{A*}_1 = x^{A*}_2$ — totalmente segurado.
-- (ii) $x^{A*}_1 = (\pi_1/\pi_2)\, x^{A*}_2$.
-- (iii) $\mathbf{(\pi_1/x^{A*}_1)/(\pi_2/x^{A*}_2) = p^*_1/p^*_2 \Rightarrow x^{A*}_2/x^{A*}_1 = (p^*_1/p^*_2)\cdot (\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1}$. **[correta]** $x^{A*}_1 = x^{A*}_2$. 
+- (i) $x^{A*}_1 < x^{A*}_2$ — A consome menos no estado menos provável (intuição "consumo segue probabilidade").
+- (ii) $x^{A*}_1 = (\pi_1/\pi_2)\, x^{A*}_2 = (2/3)\, x^{A*}_2$.
+- (iii) $\mathbf{(\pi_1/x^{A*}_1)/(\pi_2/x^{A*}_2) = p^*_1/p^*_2 \Rightarrow x^{A*}_2/x^{A*}_1 = (p^*_1/p^*_2)\cdot (\pi_2/\pi_1) = (2/3)(0{,}6/0{,}4) = 1}$. **[correta]** $x^{A*}_1 = x^{A*}_2$ (totalmente segurado pela igualdade preço-probabilidade que vem do agente neutro).
 - (iv) $x^{A*}_1 \neq x^{A*}_2$ — A não consegue se segurar com $B$ neutro.
 
 **(d)** O consumo de equilíbrio $x^{A*} = (x^{A*}_1, x^{A*}_2)$ vale:
@@ -116,12 +116,12 @@ Economia $L = 1$, $S = 2$, $I = 2$. Bernoullis idênticas $v_A = v_B = \ln c$. *
 - (iii) $x^{A*}_1 > 50$ e $x^{A*}_2 < 50$.
 - (iv) Não existe equilíbrio.
 
-**(d)** O preço relativo $p^*_1/p^*_2$ em equilíbrio satisfaz:
+**(d)** O preço relativo $p^*_1/p^*_2$ em equilíbrio satisfaz (use Cobb-Douglas/log: cada $i$ tem demanda $x^i_s = \pi^i_s\, m^i/p_s$):
 
-- (i) $p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3$.
+- (i) $\mathbf{p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3}$. **[correta]** Média das crenças ponderada pelas rendas; aqui rendas iguais por simetria de dotação.
 - (ii) $p^*_1/p^*_2 = 1$ porque o agregado é livre de risco.
-- (iii) $\mathbf{p^*_1/p^*_2}$ é determinado pelo sistema (ambas CPOs + Walras + viabilidade). Resolvendo: razão $\in (\pi^A_1/\pi^A_2, \pi^B_1/\pi^B_2) = (3/7, 1)$. Por simetria das dotações, deve ser média ponderada — **calculável mas não trivial**. **[correta]**
-- (iv) $p^*_1/p^*_2 = \pi^A_1 \cdot \pi^B_1 = 0{,}15$.
+- (iii) $p^*_1/p^*_2 = \pi^A_1 \cdot \pi^B_1 = 0{,}15$ (produto das probabilidades subjetivas do estado 1).
+- (iv) Indefinido sem informação adicional sobre a riqueza inicial dos agentes.
 
 **(e)** O fato de o agregado ser livre de risco ($\bar\omega_1 = \bar\omega_2 = 100$) **não** implica $p^*_1 = p^*_2$ (em geral) porque:
 
@@ -132,15 +132,27 @@ Economia $L = 1$, $S = 2$, $I = 2$. Bernoullis idênticas $v_A = v_B = \ln c$. *
 
 ### Gabarito 5-passos — Exercício 2
 
-**1. Ponto-chave.** A equação fundamental do SDF, $p^*_s/p^*_{s'} = (\pi^i_s v_s')/(\pi^i_{s'} v_{s'}')$, tem que valer **para cada agente** em equilíbrio — todos veem o mesmo preço. Quando crenças são heterogêneas, as marginais individuais ($v_s'/v_{s'}'$) **se ajustam endogenamente** para que a equação valha simultaneamente. O resultado é que **mesmo com agregado livre de risco, agentes com crenças divergentes apostam endogenamente entre si**.
+**1. Ponto-chave.** A equação fundamental do SDF, $p^*_s/p^*_{s'} = (\pi^i_s v_s')/(\pi^i_{s'} v_{s'}')$, tem que valer **para cada agente** em equilíbrio — todos veem o mesmo preço. Quando crenças são heterogêneas, as marginais individuais ($v_s'/v_{s'}'$) **se ajustam endogenamente**. Para Bernoullis log + dotações iguais, há **fórmula fechada limpa**: $p^*_1/p^*_2 = (\pi^A_1+\pi^B_1)/(\pi^A_2+\pi^B_2)$ — média das crenças ponderada pelas rendas (aqui pesos iguais por simetria).
 
-**2. Derivação.** CPO de $A$ ($v = \ln$): $(p^*_1/p^*_2) = (\pi^A_1/\pi^A_2)(x^A_2/x^A_1)$. CPO de $B$: $(p^*_1/p^*_2) = (\pi^B_1/\pi^B_2)(x^B_2/x^B_1) = (x^B_2/x^B_1)$. Igualando: $(\pi^A_1/\pi^A_2)(x^A_2/x^A_1) = (x^B_2/x^B_1)$. Com viabilidade $x^A + x^B = (100, 100)$, e orçamento $p^*_1 x^A_1 + p^*_2 x^A_2 = p^*_1 \cdot 50 + p^*_2 \cdot 50$ — sistema de 4 equações, 4 incógnitas ($p^*_1/p^*_2$, $x^A_1$, $x^A_2$, e por exemplo $\lambda^A$). Numericamente: razão de equilíbrio fica entre $(3/7, 1)$. Pelo critério de média geométrica das crenças (Wilson 1968 *[verificar]*), aproximadamente $\sqrt{(3/7)(1)} \approx 0{,}65$.
+**2. Derivação rigorosa.** Em $v = \ln c$, a UMP de $i$ com renda $m^i$ entrega demandas Cobb-Douglas em log: $x^i_s = \pi^i_s\, m^i/p_s$ (multiplicador $\lambda^i = 1/m^i$, e $p_s x^i_s = \pi^i_s m^i$). Some viabilidade $s = 1$: $\sum_i x^i_1 = (\sum_i \pi^i_1 m^i)/p_1 = 100$. Análogo para $s=2$. Razão:
 
-**3. Armadilha.** Item (d): aluno marca (i) "$p^*_1/p^*_2 = 0{,}8/1{,}2$" achando que se faz média simples das crenças — falso, o "averaging" depende dos pesos individuais e do $v$. Item (e): aluno marca (i) "Bernoullis diferentes" — falso, Bernoullis são idênticas; o que difere são crenças. Item (a): aluno marca (iii) "$p^*_1/p^*_2 = \pi^A_1/\pi^A_2$" esquecendo a marginal $v'$.
+$$
+\boxed{\;\frac{p^*_1}{p^*_2} = \frac{\sum_i \pi^i_1\, m^i}{\sum_i \pi^i_2\, m^i}\;}
+$$
 
-**4. Extensão.** Quando $\pi^A = \pi^B$ (crenças idênticas) e $\omega^A = \omega^B$ (dotações idênticas), o equilíbrio é **autarquia** ($x^i = \omega^i$) — sem comércio. **Heterogeneidade** (de crença ou de dotação) gera comércio. **No-trade theorem (Milgrom-Stokey 1982)**: se a heterogeneidade vier de informação privada e houver common knowledge, o comércio puramente especulativo desaparece. **Cita-se** mas não prova nesta aula. Aula 6 detalha quando $|S|$ ativos $\neq |S|$ estados.
+Com $\omega^A = \omega^B = (50, 50)$: $m^A = m^B = 50(p_1+p_2)$ (rendas iguais), os $m^i$ cancelam:
 
-**5. Peer-review.** Calibre 🟡. Item (d) é o mais sutil — exige reconhecer que "calculável mas não trivial" é a resposta correta (não há fórmula fechada limpa, contrariamente ao Exercício 1). **Risco residual:** o aluno meticuloso pode tentar calcular numericamente e obter algo como $0{,}65$, o que **é a resposta** (a (iii) está em redação propositadamente cautelosa). Se quisermos eliminar essa ambiguidade, podemos reescrever (iii) como "$p^*_1/p^*_2 \approx 0{,}65$, calculado pelo sistema". **Decisão:** mantemos a redação como está, porque o ponto pedagógico é que **o aluno reconheça que o sistema não tem fórmula fechada simples**, em contraste com o Exercício 1. Risco residual aceitável.
+$$
+\frac{p^*_1}{p^*_2} = \frac{\pi^A_1+\pi^B_1}{\pi^A_2+\pi^B_2} = \frac{0{,}8}{1{,}2} = \frac{2}{3}.
+$$
+
+**Verificação numérica.** Em $p_2=1, p_1=2/3$: $m^i = 50 \cdot 5/3 = 250/3$. Logo $x^A_1 = 0{,}3 \cdot 125 = 37{,}5$; $x^A_2 = 0{,}7 \cdot 250/3 = 175/3 \approx 58{,}33$; $x^B_1 = 0{,}5 \cdot 125 = 62{,}5$; $x^B_2 = 0{,}5 \cdot 250/3 \approx 41{,}67$. Viabilidades: $37{,}5 + 62{,}5 = 100$ ✓; $58{,}33 + 41{,}67 = 100$ ✓. Note $x^A_1 < 50 < x^A_2$: A acha estado 1 menos provável e por isso vende reivindicação-estado-1; B acha estado 2 menos provável e vende reivindicação-estado-2.
+
+**3. Armadilha.** Item (d): aluno marca (ii) achando que "agregado livre de risco $\Rightarrow p_1=p_2$" — falso, isso só vale quando crenças coincidem. Marca (iii) (produto das probabilidades) — combinação errada de crenças. Marca (iv) — ignora que sob simetria de dotação as rendas se cancelam, fechando a fórmula. Item (e): aluno marca (i) "Bernoullis diferentes" — falso, Bernoullis são idênticas; o que difere são crenças.
+
+**4. Extensão.** Quando $\pi^A = \pi^B$ (crenças idênticas) e $\omega^A = \omega^B$ (dotações idênticas), o equilíbrio é **autarquia** ($x^i = \omega^i$) — sem comércio. **Heterogeneidade** (de crença ou de dotação) gera comércio. A fórmula fechada $p^*_1/p^*_2 = (\sum_i \pi^i_1 m^i)/(\sum_i \pi^i_2 m^i)$ generaliza para qualquer Bernoulli homotética com mesma elasticidade entre agentes (Cobb-Douglas/log dá pesos pelas rendas; CRRA com $\gamma$ comum também). **No-trade theorem (Milgrom-Stokey 1982)**: se a heterogeneidade vier de informação privada e houver common knowledge, o comércio puramente especulativo desaparece. Aula 6 detalha quando $|S|$ ativos $\neq |S|$ estados.
+
+**5. Peer-review.** Calibre 🟡 confirmado. **Bug detectado e corrigido em pass-3 (Referee 2, 07/05/2026):** versões anteriores afirmavam que "$p^*_1/p^*_2$ é calculável mas não trivial" e marcavam o distrator com fórmula fechada $(0{,}8/1{,}2 = 2/3)$ como **incorreto**. Auditoria rigorosa refez a álgebra usando a estrutura Cobb-Douglas em log e mostrou que **existe fórmula fechada simples** — exatamente $0{,}8/1{,}2 = 2/3$. A alternativa marcada como correta agora é a (i). Distratores recalibrados. **Sem risco residual de ambiguidade após pass-3.**
 
 ---
 
@@ -429,7 +441,7 @@ Todos os 6 exercícios usam **apenas** ferramentas que estão na pré-aula 5 ou 
 
 ### Risco residual declarado
 
-- **Ex 2 (d):** aluno meticuloso pode calcular numericamente e questionar a redação "calculável mas não trivial". Aceitamos o risco — ponto pedagógico é o sistema sem fórmula fechada simples.
+- **Ex 2 (d):** corrigido em pass-3 (Referee 2). Existe fórmula fechada $p^*_1/p^*_2 = 2/3$ (média das crenças sob simetria de dotação) — distratores recalibrados; resposta correta agora é (i).
 - **Ex 4 (d):** desigualdade em vez de número específico. Aceitamos — ponto pedagógico é a média ponderada.
 - **Ex 6:** preview de Aula 6. Aceitamos — declarado no enunciado.
 
