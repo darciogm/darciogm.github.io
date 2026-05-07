@@ -788,8 +788,7 @@ ANP — gov.br/anp (Programa RenovaBio). Volume 2024: ~46 milhões CBIOs negocia
 :::
 
 ::: {style="color: white; font-size: 0.85em; opacity: 0.9; margin-top: 0.6em;"}
-Cunha et al. (2022), *Energy Policy*, sobre eficácia do RenovaBio nos primeiros anos.
-<!-- [VERIFICAR DOI antes da aula] -->
+Ribeiro et al. (2022), *Biofuels, Bioproducts and Biorefining*, doi:10.1002/bbb.2326 — impactos econômico-ambientais do RenovaBio.
 :::
 
 ---

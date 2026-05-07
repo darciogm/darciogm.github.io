@@ -199,7 +199,7 @@
 - [ ] **1º TBE em ação:** mercado descentralizado replica solução do planejador central — é mais barato cumprir meta agregada via troca do que cada distribuidora reduzir emissão própria. CBIO equilibra custo marginal de descarbonização entre os agentes.
 - [ ] **2º TBE político:** alocação inicial das metas (proporcional à participação no mercado de combustíveis) é redistribuição lump-sum — afeta distribuição, não eficiência.
 - [ ] **Conexão com EU ETS (slide anterior):** estrutura matemática idêntica; RenovaBio é a versão brasileira aplicada a transporte. Volume 2024: ~46 milhões de CBIOs negociados. Preço médio R$ 90–120/CBIO.
-- [ ] **Referência:** ANP — `gov.br/anp` (Programa Nacional de Política de Biocombustíveis). Cunha et al. (2022), *Energy Policy*. <!-- [VERIFICAR DOI antes da aula] -->
+- [ ] **Referência:** ANP — `gov.br/anp` (Programa Nacional de Política de Biocombustíveis). Ribeiro et al. (2022), *Biofuels, Bioproducts and Biorefining*, doi:10.1002/bbb.2326.
 
 ### 4.c. Síntese aplicada (~7 min)
 
