@@ -51,11 +51,15 @@ $u^A = u^B = \min\{x_1, x_2\}$, $\omega^A = (4, 2)$, $\omega^B = (2, 4)$, $\bar\
 
 Demanda Leontief: a $p \gg 0$ e renda $m$, $x_1 = x_2 = m/(p_1 + p_2)$. Logo cada $i$ pede $x_1^i = x_2^i = m^i/(p_1 + p_2)$.
 
-Mercado bem 1: $\sum_i m^i/(p_1+p_2) = (p_1 \cdot 6 + p_2 \cdot 6)/(p_1+p_2) = 6 = \bar\omega_1$ ✓ **para qualquer** $(p_1, p_2) \gg 0$. Mesmo para bem 2.
+Mercado bem 1: $\sum_i m^i/(p_1+p_2) = (p_1 \cdot 6 + p_2 \cdot 6)/(p_1+p_2) = 6 = \bar\omega_1$ ✓ **para qualquer** $(p_1, p_2) \gg 0$ — pois $\bar\omega_1 = \bar\omega_2 = 6$ é o que faz a aritmética dar igual nos dois mercados.
 
-**Aparência paradoxal:** "qualquer preço fecha o mercado". O que está rolando é que **só o quociente $p_1/p_2$ importa para alocação real**, e em Leontief simétrico o quociente é livre — o problema não pinou um quociente único só pelas demandas.
+**O que esse "fecha para qualquer $p$" esconde:** **a alocação NÃO é única**. Cada quociente $p_1/p_2$ produz uma cesta diferente para cada agente. Verificação concreta:
 
-**Resolução:** com Leontief, demandas são iguais ao longo da diagonal $x_1 = x_2$ qualquer que seja $p$. A tangência usual ($\text{TMS} = p_1/p_2$) **não está definida** no canto da L. Qualquer $p_1/p_2$ é compatível com $x^A = (3,3), x^B = (3,3)$. Em Leontief simétrico com dotação simétrica, **o EC tem alocação única mas preço relativo indeterminado** — qualquer $p_1/p_2 \in (0, \infty)$ funciona. Isso prefigura discussões sobre unicidade que volta na Aula 6 (Arrow-Debreu).
+- Em $p_1 = p_2 = 1$: $m^A = 6$, $x^A = (3, 3)$; $m^B = 6$, $x^B = (3, 3)$.
+- Em $p_1 = 2, p_2 = 1$: $m^A = 2 \cdot 4 + 1 \cdot 2 = 10$, $x^A = (10/3, 10/3) \approx (3{,}33; 3{,}33)$. $m^B = 2 \cdot 2 + 1 \cdot 4 = 8$, $x^B = (8/3, 8/3) \approx (2{,}67; 2{,}67)$. Soma bem 1: $10/3 + 8/3 = 18/3 = 6$ ✓.
+- Em $p_1 = 1, p_2 = 2$: por simetria do setup, troca os papéis de $A$ e $B$.
+
+**Resolução:** com Leontief, a demanda só vive sobre a diagonal $x_1 = x_2$ — a TMS canônica ($p_1/p_2$) **não está definida no canto da L**. Como o problema não fixa o quociente, **cada $p_1/p_2 \in (0, \infty)$ gera um EC distinto: continuum de equilíbrios parametrizado por preços relativos**. Em Leontief simétrico com dotação simétrica nos dois bens (mesmo total $\bar\omega_1 = \bar\omega_2$), a "unicidade" do EC quebra — existe família a 1 parâmetro. Isso prefigura discussões sobre unicidade que volta na Aula 6 (Arrow-Debreu).
 
 > **Aviso de limite:** para o Alberto cobrir presencialmente — o que muda se as dotações forem $(4, 0), (0, 4)$ (corner)? Aí Leontief gera *múltiplas* alocações de equilíbrio, não só preço indeterminado. Fica em aberto.
 
@@ -124,7 +128,7 @@ Agora coloque $C$ de volta com $\omega^C = (1,1)$ e considere a alocação de $I
 
 ### Réplica e Debreu-Scarf
 
-Anúncio do slide #29: para $r$ cópias de cada tipo (economia $r$-replicada), núcleo $C(r)$ é decrescente em $r$, e $\bigcap_{r \ge 1} C(r) = $ EC. **Debreu-Scarf 1963.**
+Anúncio do slide "Núcleo (2/2) — leitura visual": para $r$ cópias de cada tipo (economia $r$-replicada), núcleo $C(r)$ é decrescente em $r$, e $\bigcap_{r \ge 1} C(r) = $ EC. **Debreu-Scarf (1963), com intuição original em Edgeworth (1881).**
 
 Não vamos provar — pré-monitoria deixa o anúncio. Alberto pode esquematizar sábado.
 
@@ -167,7 +171,7 @@ Combine com $u^B = x_1 x_2$ (CD padrão), $\omega^A = (2, 0), \omega^B = (0, 2),
 
 Em $p^* = (1, 1)$, $A$ tem renda $m^A = 2$ e o bundle preferido é $(1, 1)$ — cabe exatamente. $B$ com renda $2$ demanda $(1, 1)$. Mercado fecha. Mas o ponto crítico é geométrico: o conjunto preferido de $A$ a $(1, 1)$ é... *vazio*. Não há nada estritamente melhor. O EC existe, mas a alavanca usada na prova ("se há algo melhor, custa mais") perde força quando o "se" sequer se ativa.
 
-> **Limite metodológico (TODO Alberto refinar — exemplo numérico fechado).** Construir um setup concreto em que o EC encontrado é *de fato* não-Pareto-eficiente exige cuidado: se ambos os consumidores são satisfeitos com sobra de renda no EC, é fácil mostrar Pareto-superior por redistribuição; mas calibrar dotações + preferências para garantir sobra de renda só em $A$ (saciado) e demanda esgotada em $B$ é trabalho de papel-e-lápis com calibração delicada. **Pré-monitoria deixa o argumento qualitativo (saciedade $\Rightarrow$ Passo 2 falha) e marca o construído numérico como ponto que o Alberto completa em sala.** Referência: MWG Cap. 16 §B traz o construto canônico (não citaremos por nome ao aluno).
+> **Limite metodológico — exemplo numérico fechado é o gancho para sábado.** Construir um setup concreto em que o EC encontrado é *de fato* não-Pareto-eficiente exige cuidado: se ambos os consumidores são satisfeitos com sobra de renda no EC, é fácil mostrar Pareto-superior por redistribuição; mas calibrar dotações + preferências para garantir sobra de renda só em $A$ (saciado) e demanda esgotada em $B$ é trabalho de papel-e-lápis com calibração delicada. **Pré-monitoria deixa o argumento qualitativo (saciedade $\Rightarrow$ Passo 2 falha) e marca o construído numérico como ponto que o Alberto completa em sala.** Referência: MWG Cap. 16 §B traz o construto canônico (não citaremos por nome ao aluno).
 
 **Micro-checkpoint S4 (1 item obrigatório):**
 
@@ -240,7 +244,7 @@ Lista do que **não** esgotamos — gancho para o sábado:
 1. **Ext. 1 — Leontief com dotação corner** ($\omega^A = (4, 0), \omega^B = (0, 4)$): aí *múltiplas alocações* de equilíbrio aparecem, não só preço relativo indeterminado. Construir e discutir.
 2. **Ext. 2 — Bloqueio por coalizão intermediária $\{A, C\}$** numa alocação que sobrevive a singletons mas é bloqueada por par. É o caso geometricamente rico do "núcleo encolhe".
 3. **Ext. 2 — Réplica e Debreu-Scarf:** esquematizar a prova de que $C(r) \to \{x_{EC}\}$ quando $r \to \infty$. Sem formalismo, com diagrama.
-4. **Ext. 3 — Contraexemplo numérico fechado de saciedade:** construir explicitamente $(\omega, u)$ tais que o EC encontrado **não** seja Pareto-eficiente. Pré-monitoria deixou no qualitativo.
+4. **Ext. 3 — Contraexemplo numérico fechado com bliss-point interior (MWG §16.D):** construir explicitamente $(\omega, u)$ tais que o EC encontrado caia no bliss-point com sobra de renda só no agente saciado, e exibir alocação Pareto-superior — i.e., violação *genuína* de LNS (saturação total num ponto, não só direcional). Pré-monitoria deixou no qualitativo.
 5. **Ext. 4 — Preferência não-convexa em $2 \times 2$:** desenhar caixa de Edgeworth com IC côncavas e mostrar geometricamente que nenhuma reta de preço sustenta alocação Pareto-eficiente.
 6. **(Bônus se sobrar tempo)** Conexão com a Aula 5: retornos crescentes na produção como instância natural de não-convexidade — o 2º TBE no caso geral exige convexidade *do conjunto de produção agregado*, não só das preferências.
 

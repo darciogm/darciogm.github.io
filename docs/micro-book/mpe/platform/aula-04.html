@@ -317,7 +317,9 @@
     \]
     <p>Mas $\tilde x$ viável: $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i$. <strong>Contradição.</strong> $\blacksquare$</p>
 
-    <p><strong>Onde LNS é insubstituível.</strong> Apenas no passo 2. Sem LNS, alguém pode ser indiferente entre $\tilde x^i$ e $x^{*i}$ sem que vizinhança preferida exista, e o argumento quebra. Construção típica de contraexemplo: utilidade satura localmente em algum bem.</p>
+    <p><strong>Onde LNS é insubstituível.</strong> Apenas no passo 2. Sem LNS — i.e., num ponto onde <em>nenhuma</em> direção de melhora existe na vizinhança — alguém pode ser indiferente entre $\tilde x^i$ e $x^{*i}$ sem que vizinhança preferida exista, e o argumento quebra.</p>
+
+    <p><strong>Cuidado: saturação direcional ≠ violação de LNS.</strong> Utilidade do tipo $u(x_1, x_2) = \min\{x_1, 1\} + x_2$ — onde bem 1 satura em $x_1 = 1$ — <em>satisfaz LNS globalmente</em>, porque bem 2 entrega $\partial u/\partial x_2 = 1 > 0$ em todo $\mathbb{R}^2_+$, oferecendo direção de melhora em qualquer ponto. LNS é hipótese de <em>vizinhança</em> (basta uma direção), não de <em>cada bem separadamente</em>. Para falhar LNS de fato, é preciso saturação <em>total</em> num ponto: bliss-point interior, $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$ — conjunto preferido estrito vazio em $(a, b)$. <strong>MWG §16.D</strong> traz a construção canônica; o cálculo numérico fechado fica como gancho da pré-monitoria 2 (sáb 23/05, com Alberto).</p>
 
     <p><strong>2º Teorema do Bem-Estar — teaser preliminar.</strong> Sob convexidade (preferências convexas + viabilidade convexa), toda alocação Pareto-eficiente $x^*$ pode ser implementada como equilíbrio competitivo de uma economia obtida por <strong>redistribuição lump-sum</strong> das dotações iniciais. Hipótese-chave: convexidade. Sem ela: retornos crescentes, indivisibilidades — Aulas 5–9 discutem.</p>
 

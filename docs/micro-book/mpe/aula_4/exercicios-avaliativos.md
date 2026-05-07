@@ -79,12 +79,12 @@
 
 ### (c) A demanda Marshalliana de $B$ pelo bem 1, como função de $p_1$, é:
 
-- (i) $x_1^B = 3$ (toda a dotação).
-- (ii) $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$.
-- (iii) $x_1^B = (1/3)\cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — constante (não depende de $p_1$). **← CORRETA**
-- (iv) $x_1^B$ depende de $p_2$.
+- (i) $x_1^B = 3$ (toda a dotação — $B$ não troca).
+- (ii) $x_1^B = m^B/p_1 = 3$ — esquecendo o expoente $\alpha_1^B = 1/3$ (toda a renda em bem 1).
+- (iii) $x_1^B = \alpha_1^B \cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — constante (o $p_1$ se cancela porque a renda de $B$ é $p_1$-linear). **← CORRETA**
+- (iv) $x_1^B = (1/3)(p_1 + 4)/p_1$ — usando a renda de $A$ por engano.
 
-> **Nota pedagógica.** As alternativas (ii) e (iii) chegam ao mesmo valor numérico, mas (iii) explicita o **cancelamento** $\alpha_1^B \cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — propriedade do agente que tem todas as unidades concentradas em um único bem.
+> **Nota pedagógica.** O cancelamento $\alpha_1^B \cdot m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ é a propriedade-chave: como $B$ só tem bem 1 na dotação, sua renda escala linearmente com $p_1$, e a fórmula da demanda CD ($x_\ell = \alpha_\ell m/p_\ell$) absorve esse fator. Distrator (ii) erra ao ignorar o $\alpha_1^B = 1/3$; (iv) erra ao usar $m^A$ no lugar de $m^B$.
 
 ### (d) Fechando mercado 1 ($x_1^A + x_1^B = 4$), o preço $p_1^*$ é (com $p_2 = 1$):
 
@@ -106,7 +106,7 @@
 
 **2. Derivação.** $m^A = p_1 + 4$ (em $p_2 = 1$). $x_1^A = (2/3)\, m^A/p_1 = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $m^B = 3 p_1$. $x_1^B = (1/3)\, m^B/p_1 = (1/3)(3 p_1)/p_1 = 1$ — **observe o cancelamento de $p_1$** (sub-item c). Mercado 1: $2/3 + 8/(3 p_1) + 1 = 4 \implies 8/(3 p_1) = 7/3 \implies p_1^* = 8/7 \approx 1{,}143$. Alocação: $x_1^A = 2/3 + 8/(3\cdot 8/7) = 2/3 + 7/3 = 3$. $x_2^A = (1/3)\, m^A = (1/3)(8/7 + 4) = (1/3)(36/7) = 12/7 \approx 1{,}71$. $x_1^B = 1$. $x_2^B = (2/3)\, m^B = (2/3)(3\cdot 8/7) = 16/7 \approx 2{,}29$. Verificação: $x_1^A + x_1^B = 3 + 1 = 4 = \bar\omega_1$ ✓; $x_2^A + x_2^B = 12/7 + 16/7 = 28/7 = 4 = \bar\omega_2$ ✓.
 
-**3. Armadilha.** (a)(i) e (a)(iv) ignoram que $m^B$ depende de $p_1$ (única fonte de renda de $B$). (a)(iii) inverte: essa é a fórmula de $m^A$. (b)(ii) usa $\alpha = 1/3$ (parametrização de $B$) na demanda de $A$. (b)(iii) confunde demanda Marshalliana com dotação. (c)(ii) chega à resposta correta numericamente, mas oculta o passo do cancelamento — preferimos (iii) por explicitar a estrutura. (d)(iii) `$p_1^* = 8/5$` é o **distrator-armadilha**: número alternativo plausível, mas vem de álgebra errada (esquecer o $1/3$ na demanda de B ou trocar o `$7/3$` por `$5/3$`); aritmética disciplinada entrega `$p_1^* = 8/7$`. (e) opções (i) e (iii) confundem direção de causalidade.
+**3. Armadilha.** (a)(i) e (a)(iv) ignoram que $m^B$ depende de $p_1$ (única fonte de renda de $B$). (a)(iii) inverte: essa é a fórmula de $m^A$. (b)(ii) usa $\alpha = 1/3$ (parametrização de $B$) na demanda de $A$. (b)(iii) confunde demanda Marshalliana com dotação. (c)(ii) esquece o expoente $\alpha_1^B = 1/3$ na fórmula CD — chega em $3$ em vez de $1$; (c)(iv) usa a renda de $A$ no lugar da de $B$. A correta (c)(iii) explicita o cancelamento do $p_1$. (d)(iii) `$p_1^* = 8/5$` é o **distrator-armadilha**: número alternativo plausível, mas vem de álgebra errada (esquecer o $1/3$ na demanda de B ou trocar o `$7/3$` por `$5/3$`); aritmética disciplinada entrega `$p_1^* = 8/7$`. (e) opções (i) e (iii) confundem direção de causalidade.
 
 **4. Extensão.** Verificação Pareto: $\text{TMS}^A = (\alpha_1^A/\alpha_2^A)(x_2^A/x_1^A) = 2\cdot (12/7)/3 = 24/21 = 8/7$. $\text{TMS}^B = (1/2)\cdot (16/7)/1 = 8/7$. ✓ Tangência. **Coincidência canônica:** $\text{TMS}^* = p_1^*/p_2^* = 8/7$ — propriedade da UMP em ponto interior. Esta é a alocação Pareto-eficiente que o mercado seleciona, dadas as dotações `$\omega^A = (1, 4)$` e `$\omega^B = (3, 0)$`.
 
@@ -114,49 +114,56 @@
 
 ---
 
-## Exercício 3 🟡 — Lei de Walras como ferramenta operacional
+## Exercício 3 🟡 — EC com preferências Leontief: o caso degenerado
 
-**Enunciado.** Em economia de troca pura com $L = 3$ bens, $I$ consumidores quaisquer, preferências satisfazendo LNS. Sistema de excessos de demanda $z(p) = (z_1, z_2, z_3)$.
+**Enunciado.** Economia $2\times 2$ com $u^A = x_1^{1/2}x_2^{1/2}$ (CD) e $u^B = \min\{x_1, x_2\}$ (Leontief). Dotações $\omega^A = (10, 0)$, $\omega^B = (0, 10)$. Total $\bar\omega = (10, 10)$. Numerário $p_2 = 1$.
 
-### (a) A lei de Walras estabelece que, para todo $p \gg 0$ onde demandas estão definidas:
+### (a) A demanda Marshalliana de $A$ (CD) com $m^A = 10 p_1$, $p_2 = 1$:
 
-- (i) $z_1(p) + z_2(p) + z_3(p) = 0$ — soma de excessos zera.
-- (ii) $p_1 z_1(p) + p_2 z_2(p) + p_3 z_3(p) = 0$ — combinação ponderada por preços zera. **← CORRETA**
-- (iii) $z(p) = 0$ — todo mercado está em equilíbrio.
-- (iv) $\max_\ell |z_\ell(p)| = 0$.
+- (i) $x_1^A = 10$, $x_2^A = 0$.
+- (ii) $x_1^A = 5$, $x_2^A = 5 p_1$. **← CORRETA**
+- (iii) $x_1^A = 5/p_1$, $x_2^A = 5$.
+- (iv) $x_1^A = 10/(2 p_1)$, $x_2^A = 10$.
 
-### (b) Se em algum $\hat p \gg 0$ temos $z_1(\hat p) = 0$ e $z_2(\hat p) = 0$, então:
+### (b) A demanda Marshalliana de $B$ (Leontief), com $m^B = 10$ (em $p_2 = 1$, $\omega^B = (0, 10)$):
 
-- (i) $\hat p$ é necessariamente um equilíbrio: $z_3(\hat p) = 0$ por Walras. **← CORRETA**
-- (ii) $z_3(\hat p)$ pode ser qualquer valor — Walras não pinned $z_3$.
-- (iii) $\hat p$ é equilíbrio só se $\hat p_3 = 0$.
-- (iv) Walras é violada — sistema é inconsistente.
+- (i) $x_1^B = x_2^B = 5$ — independente de $p_1$.
+- (ii) $x_1^B = x_2^B = 10/(p_1 + 1)$ — Leontief escolhe $x_1 = x_2$, restrição orçamentária $p_1 x_1 + 1 \cdot x_1 = 10 \implies x_1 = 10/(p_1 + 1)$. **← CORRETA**
+- (iii) $x_1^B = 10/p_1$, $x_2^B = 10$.
+- (iv) $x_1^B = 0$, $x_2^B = 10$ — autarquia.
 
-### (c) Em $L = 100$ bens com $p \gg 0$ no EC, o número mínimo de mercados que precisa-se zerar para concluir EC é:
+### (c) Fechando mercado 1 ($x_1^A + x_1^B = 10$), o preço de equilíbrio $p_1^*$ é:
 
-- (i) Todos os 100.
-- (ii) 99 (zerar 99 ⇒ o 100º zera por Walras). **← CORRETA**
-- (iii) 50 (metade dos mercados).
-- (iv) 1 (apenas o numerário).
+- (i) $p_1^* = 1$ — simetria total entre os dois consumidores. **← CORRETA**
+- (ii) $p_1^* = 2$.
+- (iii) $p_1^* = 1/2$.
+- (iv) Não há EC.
 
-### (d) A homogeneidade grau 0 de $z(p)$ ($z(\lambda p) = z(p)$) implica que o conjunto de preços de equilíbrio é:
+### (d) A alocação de equilíbrio é:
 
-- (i) Único ponto.
-- (ii) Vazio em geral.
-- (iii) Cone aberto: se $p^*$ é EC, então $\lambda p^*$ também é, para $\lambda > 0$. Por isso normaliza-se. **← CORRETA**
-- (iv) Toda a positiva — todos os $p \gg 0$ são EC.
+- (i) $x^A = (10, 0)$, $x^B = (0, 10)$ — autarquia.
+- (ii) $x^A = (10, 10)$, $x^B = (0, 0)$.
+- (iii) $x^A = (5, 5)$, $x^B = (5, 5)$. **← CORRETA**
+- (iv) $x^A = (3, 7)$, $x^B = (7, 3)$.
+
+### (e) Sobre a unicidade do EC nesta economia:
+
+- (i) Múltiplos equilíbrios — Leontief gera multiplicidade.
+- (ii) Único — em $p_1^* = 1$, ambas as demandas são bem-definidas e o sistema fecha; preferências CD garantem singularidade do EC interior. **← CORRETA**
+- (iii) Não-existente — Leontief impede EC.
+- (iv) Único apenas se $\alpha = 1/2$ na CD.
 
 ### Gabarito 5-passos — Exercício 3
 
-**1. Ponto-chave.** Walras é identidade contábil que vem do exauste do orçamento individual; reduz dimensão do sistema $z(p) = 0$ em 1. Homogeneidade grau 0 reduz mais 1 dimensão (normalização). Em $L$ bens: $L - 1$ equações independentes para $L - 1$ preços livres.
+**1. Ponto-chave.** Misturar CD com Leontief é exercício canônico de EC heterogêneo. CD entrega forma fechada parametrizada por $p$; Leontief entrega proporcionalidade $x_1 = x_2$ via UMP em forma "L" (vértice da indiferença). Equilíbrio fecha quando os dois respeitam Walras simultaneamente.
 
-**2. Derivação.** Walras: por LNS, $p\cdot x^i(p) = p\cdot \omega^i$ ⇒ $p\cdot z^i(p) = 0$ ⇒ $p\cdot z(p) = 0$. ✓ (a). Se $z_1 = z_2 = 0$ em $\hat p \gg 0$: $p_1\cdot 0 + p_2\cdot 0 + p_3 z_3 = 0 \implies p_3 z_3 = 0 \implies z_3 = 0$ (já que $p_3 > 0$). ✓ (b). Em $L$ geral: zerar $L - 1$ ⇒ o $L$-ésimo zera. ✓ (c). Homogeneidade: $z(\lambda p) = z(p)$ ⇒ se $z(p^*) = 0$, então $z(\lambda p^*) = 0$ para todo $\lambda > 0$. ✓ (d).
+**2. Derivação.** $A$ (CD com $\alpha = 1/2$): $x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5$ — **constante!** (porque $A$ só tem bem 1 na dotação, renda escala em $p_1$ e cancela). $x_2^A = m^A/(2 p_2) = 5 p_1$. $B$ (Leontief): UMP entrega $x_1^B = x_2^B$ (consumir nas proporções fixas); restrição orçamentária $p_1 x_1^B + p_2 x_2^B = m^B \implies (p_1 + 1) x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)$. Mercado 1: $5 + 10/(p_1 + 1) = 10 \implies 10/(p_1 + 1) = 5 \implies p_1 + 1 = 2 \implies p_1^* = 1$. Em $p_1^* = 1$: $x^A = (5, 5)$, $x^B = (5, 5)$.
 
-**3. Armadilha.** Item (a)(i) confunde Walras (combinação ponderada) com soma simples — erro estrutural. Item (a)(iii) confunde Walras com EC. Item (b)(ii) ignora a redundância de Walras. Item (c)(iv) confunde "numerário" (livre escolha) com "fechamento" (Walras). Item (d)(iv) é absurdo.
+**3. Armadilha.** (a)(i) ignora estrutura CD (vê $A$ vendendo bem 1 e ficando com nada). (b)(i) ignora dependência de $p_1$ na restrição orçamentária de $B$. (b)(iii) confunde Leontief com CD. (c)(iv) é o erro de "Leontief não tem demanda contínua, logo não tem EC" — falso; demanda de Leontief é função contínua de $p$ (valor único no vértice). (d)(i) confunde dotação inicial com EC. (e)(i) confunde Leontief com não-unicidade — em $L = 2$ com Leontief num único consumidor e CD no outro, EC é único; multiplicidade aparece com vários consumidores Leontief de proporções diferentes.
 
-**4. Extensão.** Em prática numérica, EC é resolvido por: (i) normalizar (ex.: $p_L = 1$); (ii) escrever $L - 1$ equações de market-clearing; (iii) buscar solução. Existência via Brouwer: Aula 6.
+**4. Extensão.** Em economia com vários consumidores Leontief com proporções diferentes (ex.: um aceita só nas proporções $1{:}1$, outro nas proporções $2{:}1$), a curva de excesso de demanda agregada pode ter "platô" — multiplicidade local. Aula 6 retoma com Arrow-Debreu. A coincidência $\text{TMS}^A = 1 = p_1^*/p_2^*$ aqui não vale para $B$ (Leontief não tem TMS no vértice) — Pareto-eficiência de $B$ se verifica direto: $u^B(5, 5) = 5$ é máximo dado o agregado, qualquer realocação que dê mais a $A$ tira de $B$.
 
-**5. Peer-review.** Calibre 🟡. Mecânica de Walras + homogeneidade. Aluno que confunde "soma de excessos" com "produto interno ponderado por preços" ainda não internalizou o que Walras diz. Item (b) é diagnóstico claro.
+**5. Peer-review.** Calibre 🟡. Mistura de formas funcionais. Quem marca (a)(i) ou (e)(i) ainda não internalizou o algoritmo de EC: (1) escrever demandas individuais, (2) somar e igualar à dotação total, (3) resolver para $p$. (b) é o ponto técnico — quem entende a restrição orçamentária com ratio fixo passa.
 
 ---
 
@@ -197,24 +204,27 @@
 - (iii) Verdadeira em troca pura, falsa em produção.
 - (iv) Verdadeira em $L = 2$.
 
-### (e) Considere economia onde $A$ tem $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (saciada em bem 1 acima de 1) e $B$ tem CD usual. Sobre o 1º TBE nessa economia:
+### (e) Considere economia onde $A$ tem $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (saturação em bem 1 acima de $x_1 = 1$) e $B$ tem CD usual; $\omega^A = (2, 0)$, $\omega^B = (0, 2)$. Sobre LNS de $A$ e o 1º TBE nessa economia:
 
-- (i) Vale sem ressalvas — utilidade é contínua.
-- (ii) Pode falhar — a saciedade local em bem 1 viola LNS no ramo $x_1 > 1$, e existe contraexemplo onde EC não é Pareto-eficiente. **← CORRETA**
-- (iii) Não se aplica — preferências precisam ser estritamente quase-côncavas.
-- (iv) Vale por convexidade — preferências de $A$ são convexas.
+- (i) LNS falha em todo $\{x_1 \ge 1\}$, logo o 1º TBE não se aplica.
+- (ii) **LNS vale globalmente** ($\partial u^A/\partial x_2 = 1 > 0$ entrega vizinho preferido em qualquer ponto); o 1º TBE se aplica e o EC $((1,1),(1,1))$ a $p^* = (1,1)$ é Pareto-eficiente. Saturação em bem 1 é apenas *direcional*. **← CORRETA**
+- (iii) LNS vale só em $\{x_1 < 1\}$; o 1º TBE só se aplica se o EC cair nessa região.
+- (iv) LNS é hipótese irrelevante aqui — basta convexidade das preferências de $A$.
+- (v) Para violar LNS de fato, é preciso saturação *total* num ponto (bliss-point interior), como em $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$; saturação só em bem 1 não basta.
+
+> **Nota pedagógica.** A alternativa (v) é uma observação verdadeira, mas é apenas a *justificativa complementar* de (ii) — diz "para falhar LNS precisaria bliss-point", o que é o argumento por trás de (ii). Pedimos a afirmação mais completa sobre a economia *desta* questão; (ii) responde diretamente. (v) é a generalização canônica que aparece em **MWG §16.D**.
 
 ### Gabarito 5-passos — Exercício 4
 
-**1. Ponto-chave.** A prova do 1º TBE tem três passos: contradição → passo 1 (UMP para $j$) → passo 2 (LNS para $i \neq j$) → soma e contradiz viabilidade. LNS é hipótese-mínima, e aparece exatamente no passo 2. Convexidade é hipótese do **2º TBE**, não 1º.
+**1. Ponto-chave.** A prova do 1º TBE tem três passos: contradição → passo 1 (UMP para $j$) → passo 2 (LNS para $i \neq j$) → soma e contradiz viabilidade. **LNS é hipótese de *vizinhança*** (existe alguma direção de melhora em qualquer entorno), não condição direção-a-direção. Convexidade é hipótese do **2º TBE**, não 1º.
 
-**2. Derivação.** Passo 1: $u^j(\tilde x^j) > u^j(x^{*j})$ + $x^{*j}$ resolve UMP em $p^*$ ⇒ $\tilde x^j$ não pode estar no orçamento, ou seja, $p^*\cdot \tilde x^j > p^*\cdot \omega^j$. Passo 2: $u^i(\tilde x^i) \ge u^i(x^{*i})$, podemos ter igualdade. Por LNS, vizinhança de $\tilde x^i$ tem $\hat x^i$ estritamente preferida. Se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, por continuidade $p^*\cdot \hat x^i \le p^*\cdot \omega^i$ — $\hat x^i$ cabe no orçamento e é estritamente preferida ⇒ contradiz UMP. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. Soma + viabilidade ⇒ contradição.
+**2. Derivação.** Passo 1: $u^j(\tilde x^j) > u^j(x^{*j})$ + UMP de $x^{*j}$ ⇒ $p^*\cdot \tilde x^j > p^*\cdot \omega^j$. Passo 2: $u^i(\tilde x^i) \ge u^i(x^{*i})$. Por LNS, vizinhança de $\tilde x^i$ tem $\hat x^i$ estritamente preferida. Se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, por continuidade $\hat x^i$ ainda cabe no orçamento e contradiz UMP. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$. Soma + viabilidade ⇒ contradição. **Aplicação a (e):** em $u^A = \min\{x_1, 1\} + x_2$, o vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$ — estritamente maior em todo ponto. LNS vale globalmente. EC: $A$ a $p^* = (1,1)$ tem $m^A = 2$, indiferente em $x_1 \in [0, 1]$ com $x_2 = 2 - x_1$; $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x^A = x^B = (1, 1)$. Pareto por 1º TBE.
 
-**3. Armadilha.** (d)(i) é o erro mais comum: "convexidade é hipótese do 1º TBE" — falso. Convexidade entra apenas no 2º TBE (via Hahn-Banach). 1º TBE só exige LNS. (e)(i) ignora violação de LNS na saciedade.
+**3. Armadilha.** (d)(i): erro clássico "convexidade ⇒ 1º TBE" — falso, convexidade é hipótese do 2º. (e)(i) e (e)(iii): confundem *saturação direcional* (uma derivada parcial nula numa região) com *saciedade local* no sentido de LNS (vizinhança inteira sem direção de melhora) — bem 2 garante a direção em todos os pontos. (e)(iv): LNS é precisamente a hipótese-mínima do 1º TBE. (e)(v): afirmação verdadeira, mas é a generalização que justifica (ii); a alternativa pedida é a que descreve o que *vale* nesta economia.
 
-**4. Extensão (Aula 4 + Aula 5/6).** No 1º TBE com produção (Aula 5), a estrutura da prova é a mesma, com adição de "$\sum_f \pi^f(p^*) \le \sum_f p^*\cdot y^{*f}$" (firmas maximizam lucro). LNS continua hipótese-mínima do consumidor. Convexidade tecnológica entra no 2º TBE com produção, não no 1º.
+**4. Extensão.** Para construir o contraexemplo *genuíno* do 1º TBE sem LNS, o caminho canônico é **bliss-point interior** — $u^A(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, paraboloide invertido. Em $(a, b)$ o conjunto preferido estrito é vazio: nenhuma direção melhora. Aí LNS falha de verdade e a contrapositiva do passo 2 fica sem testemunha. **MWG §16.D** traz a construção canônica; calibrar dotações + preferências para que o EC encontrado caia em $(a, b)$ com sobra de renda só no agente saciado é trabalho fino — gancho da pré-monitoria 2 (sáb 23/05, com Alberto). **Aula 5/6:** com produção, a estrutura da prova é a mesma + termo de lucro; LNS continua hipótese-mínima do consumidor.
 
-**5. Peer-review.** Calibre 🟡 — exige distinção limpa entre 1º e 2º TBE e fluência com a estrutura da prova. Aluno que marca (d)(i) ainda não separou os dois teoremas.
+**5. Peer-review.** Calibre 🟡 — exige distinção limpa entre 1º e 2º TBE *e* entre saturação direcional e saciedade local. Aluno que marca (d)(i) ainda não separou os dois teoremas; quem marca (e)(i) ou (e)(iii) ainda lê LNS como condição direção-a-direção. (e)(v) é o distrator *quase-correto* — quem marca está mais perto do certo do que parece, mas confundiu "afirmação descritiva da economia em (e)" com "generalização canônica"; o feedback corrige.
 
 ---
 
@@ -267,7 +277,7 @@
 
 **4. Extensão.** Em economia com produção (Aula 5), Walras estende com lucros das firmas. Em Arrow-Debreu (Aula 6), Walras estende para bens contingentes. A redução dimensional via Walras + homogeneidade é estrutura **universal** de teoria de equilíbrio (MWG cap. 17). Ferramenta de existência (Brouwer/Kakutani, também Aula 6) opera no simplex normalizado precisamente por causa dessas duas reduções.
 
-**5. Peer-review.** Calibre 🔴. Mecânica de Walras + homogeneidade — exige fluência tanto na identidade quanto na contagem dimensional. Aluno que marca (a)(i) confunde Walras com soma simples; quem marca (d)(i) ou (d)(ii) não internalizou Walras como redutor dimensional. Genuinamente 🔴 porque cobra a estrutura, não só a fórmula. (Nota: o contraexemplo do 1º TBE sem LNS já vive na Q6 do Pós-Aula e na Seção 5 da pré-aula material — não falta.)
+**5. Peer-review.** Calibre 🔴. Mecânica de Walras + homogeneidade — exige fluência tanto na identidade quanto na contagem dimensional. Aluno que marca (a)(i) confunde Walras com soma simples; quem marca (d)(i) ou (d)(ii) não internalizou Walras como redutor dimensional. Genuinamente 🔴 porque cobra a estrutura, não só a fórmula. (Nota: a calibração da hipótese LNS — saturação direcional vs. saciedade local — está na Q6 do Pós-Aula, no Ex 4(e) e na Seção 5 da pré-aula material; o contraexemplo numérico fechado fica para a pré-monitoria 2 com Alberto.)
 
 ---
 

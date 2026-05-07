@@ -239,6 +239,10 @@ Aqui é o momento crítico. Desenhar a caixa ao vivo no quadro com lápis vermel
 
 <iframe src="graficos/edgeworth.html" class="graph-iframe" width="100%" height="470" style="border:none;border-radius:6px"></iframe>
 
+::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.4em;"}
+Volte aqui depois do Bloco 2 (CD assimétrica) — o ponto $p_1 = 8/7$ no slider corresponde ao cálculo simbólico que vamos fazer.
+:::
+
 ::: {.notes}
 Apoio visual para o cálculo CD assimétrica do Bloco 2: $u^A = x_1^{2/3}x_2^{1/3}$, $\omega^A=(1,4)$; $u^B = x_1^{1/3}x_2^{2/3}$, $\omega^B=(3,0)$. Slider varre $p_1/p_2 \in [0{,}5; 2{,}0]$. Em $p_1^*/p_2^* = 8/7$ os dois pontos de demanda coincidem na contract curve. Use rapidamente em sala (30s) — o desenho ao vivo no quadro continua sendo a aula central.
 :::
@@ -316,7 +320,7 @@ Em $I = 2$, coalizões = $\{A\}$, $\{B\}$, $\{A, B\}$. Próximo: visual.
 Núcleo = Pareto + voluntariedade. Mais restrito que Pareto puro.
 :::
 
-**Quando $I$ cresce** (Aula 6, brevemente): núcleo encolhe; em economia "grande", converge ao conjunto de equilíbrios competitivos (**Debreu-Scarf 1963**; intuição original em Edgeworth 1881).
+**Quando $I$ cresce** (Aula 6, brevemente): núcleo encolhe; em economia "grande", converge ao conjunto de equilíbrios competitivos (**Debreu-Scarf (1963), com intuição original em Edgeworth (1881)**).
 
 ---
 
@@ -598,6 +602,24 @@ LNS é o mínimo axiomático para que UMP exausta orçamento. Sem ela, mercado p
 
 ---
 
+## LNS vs. monotonicidade — exemplo concreto
+
+**Considere** $u(x_1, x_2) = x_1$ (utilidade só do bem 1).
+
+**Não é monotônica estrita** em bem 2 — $u(x_1, x_2 + \delta) = u(x_1, x_2)$ para todo $\delta > 0$. Aumentar bem 2 não melhora.
+
+**Mas é LNS** — em qualquer ponto, vizinho com mais bem 1 é estritamente preferido.
+
+::: {.eq-punch}
+LNS é mais fraca que monotonicidade estrita — e ainda assim suficiente para 1º TBE.
+:::
+
+::: {.bridge}
+A Aula 4 usa LNS como hipótese-mínima. Próximo: o teorema.
+:::
+
+---
+
 ## 1º TBE — enunciado
 
 ::: {.eq-punch}
@@ -649,6 +671,10 @@ Próximo: para $i \ne j$ (fracamente melhor), aqui LNS entra.
 
 Por continuidade, $p^*\cdot \hat x^i \le p^*\cdot \omega^i$. Mas $u^i(\hat x^i) > u^i(\tilde x^i) \ge u^i(x^{*i})$ — contradiz UMP de $x^{*i}$. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$.
 
+::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;"}
+*Onde isso quebra sem LNS — slides "O papel exato de LNS (1/2) e (2/2)" mais à frente, com calibração honesta da hipótese.*
+:::
+
 ::: {.bridge}
 Próximo: somar passos 1 e 2 e contradizer viabilidade.
 :::
@@ -671,18 +697,52 @@ Contradição. EC é Pareto-eficiente. $\blacksquare$
 
 ---
 
-## O papel exato de LNS
+## O papel exato de LNS (1/2) — onde aparece
 
-**LNS aparece** apenas no passo 2 — para os $i$ fracamente melhores. **Sem LNS:** passo 2 quebra.
+**LNS aparece** apenas no **passo 2** — para os $i$ que estão fracamente melhor.
 
-**Contraexemplo numérico.** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ (bem 1 satura em $x_1 = 1$); $u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (2, 0)$, $\omega^B = (0, 2)$. Em $p^* = (1, 1)$: $A$ é indiferente entre vender ou não bem 1 acima de 1 (utilidade marginal nula); EC com $x^A = (2, 0), x^B = (0, 2)$ é **possível**, mas a alocação $\tilde x^A = (1, 1), \tilde x^B = (1, 1)$ é viável e **Pareto-superior** ($A$ inalterado por saciedade; $B$ melhora de $0$ para $1$).
+**Contrapositiva do passo 2:** "se sobra renda em $\tilde x^i$, então $u^i(\tilde x^i) < u^i(x^{*i})$". Para sustentar isso precisamos de um **vizinho** $\tilde x^i + \varepsilon$ ainda dentro do orçamento e estritamente preferido — **isso é exatamente LNS**.
 
-::: {.eq-punch}
-EC sem LNS pode "deixar dinheiro na mesa" — patologia genuína.
+::: {.callout .callout-note}
+**Cuidado.** LNS é hipótese de **vizinhança**, não de direção. Basta <em>uma</em> direção de melhora em qualquer entorno. Saturação <em>direcional</em> (uma derivada parcial nula numa região) **não viola LNS** quando outro bem oferece direção positiva.
 :::
 
 ::: {.bridge}
-LNS é o mínimo axiomático. Próximo: 2º TBE (preliminar).
+Próximo: calibrar a hipótese num exemplo concreto.
+:::
+
+---
+
+## O papel exato de LNS (2/2) — calibração num exemplo
+
+**Setup.** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$; $u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (2, 0)$, $\omega^B = (0, 2)$.
+
+**Diagnóstico de LNS em $A$.** Em qualquer $(x_1^0, x_2^0)$, vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$. Como $\partial u^A/\partial x_2 = 1 > 0$ globalmente, **LNS vale** — inclusive em $x_1^0 \ge 1$. A "saturação" em bem 1 é apenas direcional.
+
+**EC desta economia.** A $p^* = (1, 1)$: $A$ é indiferente em $x_1 \in [0, 1]$ (com $x_2 = 2 - x_1$); $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x^A = x^B = (1, 1)$. Por **1º TBE (LNS vale)**, é Pareto-eficiente.
+
+::: {.eq-punch}
+Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.
+:::
+
+::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;"}
+*Para falhar LNS de fato: bliss-point interior — e.g. $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, conjunto preferido estrito vazio em $(a, b)$. **MWG §16.D**. Construção numérica fica para a pré-monitoria 2 (sáb 23/05, com Alberto).*
+:::
+
+::: {.bridge}
+LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. Próximo: 2º TBE (preliminar).
+:::
+
+::: {.notes}
+**Resolução completa (fallback se aluno perguntar).**
+
+(1) **LNS de $A$ globalmente.** Em qualquer $(x_1^0, x_2^0)$, $u^A(x_1^0, x_2^0 + \delta) = \min\{x_1^0, 1\} + x_2^0 + \delta > u^A(x_1^0, x_2^0)$ para todo $\delta > 0$. Logo o vizinho $(x_1^0, x_2^0 + \delta)$ resolve o teste de LNS.
+
+(2) **EC.** A $p^* = (1, 1)$: $A$ tem $m^A = 2$. UMP de $A$: para $x_1 \in [0, 1]$, $u^A = x_1 + (2 - x_1) = 2$; para $x_1 \in [1, 2]$, $u^A = 1 + (2 - x_1) = 3 - x_1 \in [1, 2]$. Máximo em $x_1 \in [0, 1]$ — indiferente nessa faixa. $B$: CD com $m^B = 2$, demanda $(1, 1)$. Mercado: $x_1^A + 1 = 2 \Rightarrow x_1^A = 1$ (compatível com indiferença). EC: $((1,1),(1,1))$.
+
+(3) **Pareto.** Por 1º TBE, é Pareto. Verificação direta: agregado fixo $(2,2)$; tirar bem 2 de $B$ piora $B$ (CD monotônica estrita); dar bem 1 a $B$ acima de seu ponto exige tirar de $A$ que está em $x_1^A = 1$ (no joelho). Trade-off binding nas duas direções.
+
+(4) **O contraste honesto.** Para ter saturação local <em>verdadeira</em> em algum ponto: bliss-point interior em $u^A = -[(x_1-1)^2 + (x_2-1)^2]$ — em $(1,1)$ o conjunto preferido estrito é vazio. Aí LNS falha em $(1,1)$ e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC <em>cai</em> exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.
 :::
 
 ---

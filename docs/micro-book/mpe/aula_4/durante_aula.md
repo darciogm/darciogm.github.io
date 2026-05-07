@@ -76,7 +76,7 @@
 - [ ] **Em $I=2$:** "coalizão" = ou um ou outro consumidor sozinho ou os dois juntos. Bloqueio individual = $u^i(x^i) < u^i(\omega^i)$. Bloqueio do par = existe $\tilde x$ Pareto-superior.
 - [ ] **Núcleo em economia $2\times 2$ = parte da contract curve dentro da lente de melhoria mútua passando pela dotação.** Subconjunto da contract curve.
 - [ ] **Frase-martelo:** "Núcleo é Pareto + voluntariedade. Mais restrito que Pareto puro."
-- [ ] **[30s extras — anunciar slide #29 (núcleo encolhe com réplica):**] *"Debreu & Scarf 1963 — quando $I$ cresce via réplica, núcleo $\subseteq$ EC no limite. Não vamos provar; vai aparecer no quiz pós-aula 🔴🔴 (Q9). Quem quiser ver a prova: J-R §5.3."* Função: dar âncora pública para a Q9 da pós-aula sem alongar Bloco 1.
+- [ ] **[30s extras — anunciar slide "Núcleo (2/2) — leitura visual" (núcleo encolhe com réplica):**] *"Debreu-Scarf (1963), com intuição original em Edgeworth (1881) — quando $I$ cresce via réplica, núcleo $\subseteq$ EC no limite. Não vamos provar; vai aparecer no quiz pós-aula 🔴🔴 (Q9). Quem quiser ver a prova: J-R §5.3."* Função: dar âncora pública para a Q9 da pós-aula sem alongar Bloco 1.
 
 ### 1.e. Ponte (~5 min)
 
@@ -162,9 +162,10 @@
 
 ### 3.c. O papel exato de LNS (~5 min)
 
-- [ ] **Onde LNS aparece:** apenas no passo 2 — para os $i$ fracamente melhores. Sem LNS, o passo 2 quebra; o agregado falha.
-- [ ] **Contraexemplo em quadro:** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ — bem 1 satura em $x_1 = 1$. Em economia patológica, EC pode existir com alocação não-Pareto-eficiente.
-- [ ] **Frase-martelo:** "Sem LNS, mercado não esgota o que vale. Patologia é teórica, mas a hipótese é genuína."
+- [ ] **Onde LNS aparece:** apenas no passo 2 — para os $i$ fracamente melhores. Sem LNS (i.e., num ponto onde <em>nenhuma</em> direção de melhora existe na vizinhança), o passo 2 quebra; o agregado falha.
+- [ ] **Calibração honesta em quadro:** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ — bem 1 satura em $x_1 = 1$, **mas LNS continua valendo globalmente** porque $\partial u^A/\partial x_2 = 1 > 0$ entrega vizinho preferido em qualquer ponto. Saturação direcional ≠ violação de LNS. EC nessa economia: $((1,1),(1,1))$ a $p^* = (1,1)$, Pareto-eficiente — 1º TBE vale.
+- [ ] **Para falhar LNS de fato:** bliss-point interior, $u = -[(x_1-a)^2 + (x_2-b)^2]$ — saturação total num ponto. MWG §16.D. Calibração numérica fina; deixar com Alberto na pré-monitoria 2.
+- [ ] **Frase-martelo:** "LNS é hipótese de vizinhança, não direção a direção. Saturação direcional não derruba o teorema; bliss-point sim."
 
 ### 3.d. 2º TBE preliminar (~10 min)
 
@@ -200,6 +201,7 @@
 - [ ] **1º TBE em ação:** mercado descentralizado replica solução do planejador central — é mais barato cumprir meta agregada via troca do que cada distribuidora reduzir emissão própria. CBIO equilibra custo marginal de descarbonização entre os agentes.
 - [ ] **2º TBE político:** alocação inicial das metas (proporcional à participação no mercado de combustíveis) é redistribuição lump-sum — afeta distribuição, não eficiência.
 - [ ] **Conexão com EU ETS (slide anterior):** estrutura matemática idêntica; RenovaBio é a versão brasileira aplicada a transporte. Volume 2024: ~46 milhões de CBIOs negociados. Preço médio R$ 90–120/CBIO.
+- [ ] **Honestidade da abstração (se aluno perguntar):** RenovaBio não é Edgeworth puro — produção de CBIOs é **endógena** (responde a preço; produtores de etanol investem mais quando $p_{CBIO}$ sobe). Tratamos como troca pura na Aula 4 para o ferramental ficar nítido. **Aula 5 retoma com produção endógena** e mostra que a estrutura sobrevive (com 1º TBE estendido), só ganha um lado de oferta. Sinalizar isso ao vivo se aluno perguntar; senão, deixar para Aula 5.
 - [ ] **Referência:** ANP — `gov.br/anp` (Programa Nacional de Política de Biocombustíveis). Ribeiro et al. (2022), *Biofuels, Bioproducts and Biorefining*, doi:10.1002/bbb.2326.
 
 ### 4.c. Síntese aplicada (~7 min)
@@ -252,6 +254,7 @@
 - **Se Box Brasil/Mundo estoura:** cortar Box-Mundo (EU ETS) e manter só Box-Brasil (RenovaBio/CBIOs) — concreto, brasileiro, e estrutura Edgeworth genuína.
 - **Se Alberto está presente:** ele cobre Bloco 1.d (núcleo) enquanto Darcio circula; em troca, Darcio cobre o passo 3 da prova do 1º TBE com mais profundidade.
 - **Sobre o 2º TBE:** anunciar e seguir. Aula 6 prova rigorosamente. Hoje é teaser, não treino.
+- **Sobre o iframe Edgeworth (slide #12 da apresentação):** se Bloco 1 fluir, voltar ao iframe no Bloco 2.f como visualização interativa do EC em $p_1 = 8/7$ — slider varre $p_1/p_2 \in [0{,}5; 2{,}0]$ e mostra como a tangência em $p_1 = 8/7$ é o único ponto onde demanda de $A$ e $B$ coincidem na contract curve. Não substitui o desenho ao vivo; é checagem visual depois da álgebra.
 
 ---
 
@@ -261,7 +264,7 @@ A monitoria 2 cobre Aula 4 (EG trocas). Da Aula 4 especificamente, deixar para A
 
 - **Cálculo de EC em economia $2\times 2$ com várias formas funcionais** (CD assimétrica, Leontief, CES) — efeito comparativo de preferências.
 - **Núcleo em economia com $I = 3$ consumidores e $L = 2$ bens** — coalizões não-triviais; mostrar shrinking do núcleo conforme cresce $I$.
-- **Construção de contraexemplo** onde 1º TBE falha por violação de LNS.
+- **Construção numérica fechada do contraexemplo de LNS** com bliss-point interior (MWG §16.D) — calibrar dotações + preferências para que o EC encontrado caia no bliss-point com sobra de renda só no agente saciado, e exibir alocação Pareto-superior.
 - **2º TBE preliminar** com discussão informal das hipóteses de convexidade — o que significa "lump-sum" na prática (e por que não é implementável).
 - **Aplicações empíricas**: leilão do Tesouro como mecanismo de price discovery; mercado de cotas de carbono como Edgeworth com bem-ambiental.
 

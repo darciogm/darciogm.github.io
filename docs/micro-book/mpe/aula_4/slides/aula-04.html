@@ -363,6 +363,9 @@ x = (x^A, x^B) \;\;\text{viável}\;\;\Leftrightarrow\;\; x^A + x^B = \bar\omega.
 <h2>Caixa de Edgeworth — interativa (CD assimétrica)</h2>
 <iframe src="graficos/edgeworth.html" class="graph-iframe" width="100%" height="470" style="border:none;border-radius:6px">
 </iframe>
+<div style="font-size: 0.78em; color: #4A5060; margin-top: 0.4em;">
+<p>Volte aqui depois do Bloco 2 (CD assimétrica) — o ponto <span class="math inline">\(p_1 = 8/7\)</span> no slider corresponde ao cálculo simbólico que vamos fazer.</p>
+</div>
 <aside class="notes">
 <p>Apoio visual para o cálculo CD assimétrica do Bloco 2: <span class="math inline">\(u^A = x_1^{2/3}x_2^{1/3}\)</span>, <span class="math inline">\(\omega^A=(1,4)\)</span>; <span class="math inline">\(u^B = x_1^{1/3}x_2^{2/3}\)</span>, <span class="math inline">\(\omega^B=(3,0)\)</span>. Slider varre <span class="math inline">\(p_1/p_2 \in [0{,}5; 2{,}0]\)</span>. Em <span class="math inline">\(p_1^*/p_2^* = 8/7\)</span> os dois pontos de demanda coincidem na contract curve. Use rapidamente em sala (30s) — o desenho ao vivo no quadro continua sendo a aula central.</p>
 <style type="text/css">
@@ -430,7 +433,7 @@ x \text{ Pareto-eficiente interior} \iff \text{TMS}^A(x^A) = \text{TMS}^B(x^B).
 <div class="eq-punch">
 <p>Núcleo = Pareto + voluntariedade. Mais restrito que Pareto puro.</p>
 </div>
-<p><strong>Quando <span class="math inline">\(I\)</span> cresce</strong> (Aula 6, brevemente): núcleo encolhe; em economia “grande”, converge ao conjunto de equilíbrios competitivos (<strong>Debreu-Scarf 1963</strong>; intuição original em Edgeworth 1881).</p>
+<p><strong>Quando <span class="math inline">\(I\)</span> cresce</strong> (Aula 6, brevemente): núcleo encolhe; em economia “grande”, converge ao conjunto de equilíbrios competitivos (<strong>Debreu-Scarf (1963), com intuição original em Edgeworth (1881)</strong>).</p>
 </section>
 <section class="slide level2 center">
 <h2>Síntese Bloco 1</h2>
@@ -658,6 +661,18 @@ p\cdot z^i(p) = p\cdot x^i - p\cdot \omega^i = 0 \quad\forall i.
 </div>
 </section>
 <section class="slide level2 center">
+<h2>LNS vs.&nbsp;monotonicidade — exemplo concreto</h2>
+<p><strong>Considere</strong> <span class="math inline">\(u(x_1, x_2) = x_1\)</span> (utilidade só do bem 1).</p>
+<p><strong>Não é monotônica estrita</strong> em bem 2 — <span class="math inline">\(u(x_1, x_2 + \delta) = u(x_1, x_2)\)</span> para todo <span class="math inline">\(\delta &gt; 0\)</span>. Aumentar bem 2 não melhora.</p>
+<p><strong>Mas é LNS</strong> — em qualquer ponto, vizinho com mais bem 1 é estritamente preferido.</p>
+<div class="eq-punch">
+<p>LNS é mais fraca que monotonicidade estrita — e ainda assim suficiente para 1º TBE.</p>
+</div>
+<div class="bridge">
+<p>A Aula 4 usa LNS como hipótese-mínima. Próximo: o teorema.</p>
+</div>
+</section>
+<section class="slide level2 center">
 <h2>1º TBE — enunciado</h2>
 <div class="eq-punch">
 <p>Em troca pura com <strong>LNS</strong>, todo equilíbrio competitivo <span class="math inline">\((p^*, x^*)\)</span> é Pareto-eficiente.</p>
@@ -694,6 +709,9 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <p><strong>Para <span class="math inline">\(i \neq j\)</span>:</strong> <span class="math inline">\(u^i(\tilde x^i) \ge u^i(x^{*i})\)</span>. Queremos <span class="math inline">\(p^*\cdot \tilde x^i \ge p^*\cdot \omega^i\)</span>.</p>
 <p><strong>Por contradição:</strong> se <span class="math inline">\(p^*\cdot \tilde x^i &lt; p^*\cdot \omega^i\)</span>, <strong>LNS</strong> dá vizinhança de <span class="math inline">\(\tilde x^i\)</span> com <span class="math inline">\(\hat x^i\)</span> estritamente preferida.</p>
 <p>Por continuidade, <span class="math inline">\(p^*\cdot \hat x^i \le p^*\cdot \omega^i\)</span>. Mas <span class="math inline">\(u^i(\hat x^i) &gt; u^i(\tilde x^i) \ge u^i(x^{*i})\)</span> — contradiz UMP de <span class="math inline">\(x^{*i}\)</span>. Logo <span class="math inline">\(p^*\cdot \tilde x^i \ge p^*\cdot \omega^i\)</span>.</p>
+<div style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;">
+<p><em>Onde isso quebra sem LNS — slides “O papel exato de LNS (1/2) e (2/2)” mais à frente, com calibração honesta da hipótese.</em></p>
+</div>
 <div class="bridge">
 <p>Próximo: somar passos 1 e 2 e contradizer viabilidade.</p>
 </div>
@@ -710,15 +728,53 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>O papel exato de LNS</h2>
-<p><strong>LNS aparece</strong> apenas no passo 2 — para os <span class="math inline">\(i\)</span> fracamente melhores. <strong>Sem LNS:</strong> passo 2 quebra.</p>
-<p><strong>Contraexemplo numérico.</strong> <span class="math inline">\(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\)</span> (bem 1 satura em <span class="math inline">\(x_1 = 1\)</span>); <span class="math inline">\(u^B = x_1^{1/2}x_2^{1/2}\)</span>. <span class="math inline">\(\omega^A = (2, 0)\)</span>, <span class="math inline">\(\omega^B = (0, 2)\)</span>. Em <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> é indiferente entre vender ou não bem 1 acima de 1 (utilidade marginal nula); EC com <span class="math inline">\(x^A = (2, 0), x^B = (0, 2)\)</span> é <strong>possível</strong>, mas a alocação <span class="math inline">\(\tilde x^A = (1, 1), \tilde x^B = (1, 1)\)</span> é viável e <strong>Pareto-superior</strong> (<span class="math inline">\(A\)</span> inalterado por saciedade; <span class="math inline">\(B\)</span> melhora de <span class="math inline">\(0\)</span> para <span class="math inline">\(1\)</span>).</p>
-<div class="eq-punch">
-<p>EC sem LNS pode “deixar dinheiro na mesa” — patologia genuína.</p>
+<h2>O papel exato de LNS (1/2) — onde aparece</h2>
+<p><strong>LNS aparece</strong> apenas no <strong>passo 2</strong> — para os <span class="math inline">\(i\)</span> que estão fracamente melhor.</p>
+<p><strong>Contrapositiva do passo 2:</strong> “se sobra renda em <span class="math inline">\(\tilde x^i\)</span>, então <span class="math inline">\(u^i(\tilde x^i) &lt; u^i(x^{*i})\)</span>”. Para sustentar isso precisamos de um <strong>vizinho</strong> <span class="math inline">\(\tilde x^i + \varepsilon\)</span> ainda dentro do orçamento e estritamente preferido — <strong>isso é exatamente LNS</strong>.</p>
+<div class="callout callout-none no-icon callout-style-simple">
+<div class="callout-body">
+<div class="callout-content">
+<p><strong>Cuidado.</strong> LNS é hipótese de <strong>vizinhança</strong>, não de direção. Basta <em>uma</em> direção de melhora em qualquer entorno. Saturação <em>direcional</em> (uma derivada parcial nula numa região) <strong>não viola LNS</strong> quando outro bem oferece direção positiva.</p>
+</div>
+</div>
 </div>
 <div class="bridge">
-<p>LNS é o mínimo axiomático. Próximo: 2º TBE (preliminar).</p>
+<p>Próximo: calibrar a hipótese num exemplo concreto.</p>
 </div>
+</section>
+<section class="slide level2 center">
+<h2>O papel exato de LNS (2/2) — calibração num exemplo</h2>
+<p><strong>Setup.</strong> <span class="math inline">\(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\)</span>; <span class="math inline">\(u^B = x_1^{1/2}x_2^{1/2}\)</span>. <span class="math inline">\(\omega^A = (2, 0)\)</span>, <span class="math inline">\(\omega^B = (0, 2)\)</span>.</p>
+<p><strong>Diagnóstico de LNS em <span class="math inline">\(A\)</span>.</strong> Em qualquer <span class="math inline">\((x_1^0, x_2^0)\)</span>, vizinho <span class="math inline">\((x_1^0, x_2^0 + \delta)\)</span> tem utilidade <span class="math inline">\(\min\{x_1^0, 1\} + x_2^0 + \delta\)</span>. Como <span class="math inline">\(\partial u^A/\partial x_2 = 1 &gt; 0\)</span> globalmente, <strong>LNS vale</strong> — inclusive em <span class="math inline">\(x_1^0 \ge 1\)</span>. A “saturação” em bem 1 é apenas direcional.</p>
+<p><strong>EC desta economia.</strong> A <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> é indiferente em <span class="math inline">\(x_1 \in [0, 1]\)</span> (com <span class="math inline">\(x_2 = 2 - x_1\)</span>); <span class="math inline">\(B\)</span> tem CD com <span class="math inline">\(m^B = 2\)</span>, demanda <span class="math inline">\((1, 1)\)</span>. Mercado fecha em <span class="math inline">\(x^A = x^B = (1, 1)\)</span>. Por <strong>1º TBE (LNS vale)</strong>, é Pareto-eficiente.</p>
+<div class="eq-punch">
+<p>Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.</p>
+</div>
+<div style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;">
+<p><em>Para falhar LNS de fato: bliss-point interior — e.g.&nbsp;<span class="math inline">\(u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]\)</span>, conjunto preferido estrito vazio em <span class="math inline">\((a, b)\)</span>. <strong>MWG §16.D</strong>. Construção numérica fica para a pré-monitoria 2 (sáb 23/05, com Alberto).</em></p>
+</div>
+<div class="bridge">
+<p>LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. Próximo: 2º TBE (preliminar).</p>
+</div>
+<aside class="notes">
+<p><strong>Resolução completa (fallback se aluno perguntar).</strong></p>
+<ol type="1">
+<li><p><strong>LNS de <span class="math inline">\(A\)</span> globalmente.</strong> Em qualquer <span class="math inline">\((x_1^0, x_2^0)\)</span>, <span class="math inline">\(u^A(x_1^0, x_2^0 + \delta) = \min\{x_1^0, 1\} + x_2^0 + \delta &gt; u^A(x_1^0, x_2^0)\)</span> para todo <span class="math inline">\(\delta &gt; 0\)</span>. Logo o vizinho <span class="math inline">\((x_1^0, x_2^0 + \delta)\)</span> resolve o teste de LNS.</p></li>
+<li><p><strong>EC.</strong> A <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> tem <span class="math inline">\(m^A = 2\)</span>. UMP de <span class="math inline">\(A\)</span>: para <span class="math inline">\(x_1 \in [0, 1]\)</span>, <span class="math inline">\(u^A = x_1 + (2 - x_1) = 2\)</span>; para <span class="math inline">\(x_1 \in [1, 2]\)</span>, <span class="math inline">\(u^A = 1 + (2 - x_1) = 3 - x_1 \in [1, 2]\)</span>. Máximo em <span class="math inline">\(x_1 \in [0, 1]\)</span> — indiferente nessa faixa. <span class="math inline">\(B\)</span>: CD com <span class="math inline">\(m^B = 2\)</span>, demanda <span class="math inline">\((1, 1)\)</span>. Mercado: <span class="math inline">\(x_1^A + 1 = 2 \Rightarrow x_1^A = 1\)</span> (compatível com indiferença). EC: <span class="math inline">\(((1,1),(1,1))\)</span>.</p></li>
+<li><p><strong>Pareto.</strong> Por 1º TBE, é Pareto. Verificação direta: agregado fixo <span class="math inline">\((2,2)\)</span>; tirar bem 2 de <span class="math inline">\(B\)</span> piora <span class="math inline">\(B\)</span> (CD monotônica estrita); dar bem 1 a <span class="math inline">\(B\)</span> acima de seu ponto exige tirar de <span class="math inline">\(A\)</span> que está em <span class="math inline">\(x_1^A = 1\)</span> (no joelho). Trade-off binding nas duas direções.</p></li>
+<li><p><strong>O contraste honesto.</strong> Para ter saturação local <em>verdadeira</em> em algum ponto: bliss-point interior em <span class="math inline">\(u^A = -[(x_1-1)^2 + (x_2-1)^2]\)</span> — em <span class="math inline">\((1,1)\)</span> o conjunto preferido estrito é vazio. Aí LNS falha em <span class="math inline">\((1,1)\)</span> e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC <em>cai</em> exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.</p></li>
+</ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>2º TBE preliminar — enunciado</h2>

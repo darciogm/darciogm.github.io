@@ -297,9 +297,13 @@ Mas $\tilde x$ é viável: $\sum_i \tilde x^i = \sum_i \omega^i$. Logo $\sum_i p
 
 ### Onde LNS é insubstituível
 
-Se preferências têm um "platô" de saciedade no qual o consumidor não troca nada por mais (curva de indiferença "espessa" localmente), o argumento do passo 2 quebra: pode-se ter $p^*\cdot \tilde x^i < p^*\cdot \omega^i$ sem contradição, e o agregado falha.
+Se preferências têm um "platô" de saciedade <em>completa</em> num ponto — uma vizinhança em que <em>nenhuma</em> direção de melhora existe — o argumento do passo 2 quebra: pode-se ter $p^*\cdot \tilde x^i < p^*\cdot \omega^i$ sem contradição, e o agregado falha.
 
-**Construção do contraexemplo.** Considere $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ — bem 1 satura em $x_1 = 1$. Em $\omega^A = (2, 2)$, $\omega^B = (0, 0)$ (caso patológico de fronteira), $A$ não tem incentivo a vender bem 1 acima de $1$. Equilíbrio em $p_1 = 0$ pode existir, mas $A$ está "saciado" no bem 1 e poderia trocar com $B$ por mais bem 2 sem perder utilidade — alocação não-Pareto-eficiente. 1º TBE falha por violação de LNS no bem 1 acima de 1.
+**Cuidado clássico — saturação direcional ≠ violação de LNS.** Considere $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$ — $A$ deixa de valorizar bem 1 acima de $x_1 = 1$. É tentador chamar isso de "violação de LNS". **Mas LNS continua valendo globalmente nessa utilidade**: para qualquer $(x_1^0, x_2^0)$, o vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$, estritamente maior que $u^A(x_1^0, x_2^0)$, porque $\partial u^A/\partial x_2 = 1 > 0$ globalmente. A saturação em bem 1 é **direcional** (uma derivada parcial nula numa região), não local; LNS exige apenas que <em>alguma</em> direção de melhora exista em qualquer entorno.
+
+**Cálculo dessa economia (diagnóstico positivo).** Combine $u^A = \min\{x_1, 1\} + x_2$ com $u^B = x_1^{1/2} x_2^{1/2}$, $\omega^A = (2, 0)$, $\omega^B = (0, 2)$. A $p^* = (1, 1)$: $A$ tem renda $m^A = 2$ e UMP entrega $u^A = 2$ tanto em $x_1 = 1, x_2 = 1$ quanto em $x_1 = 0, x_2 = 2$ — indiferente em $x_1 \in [0, 1]$ com $x_2 = 2 - x_1$. $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x_1^A + 1 = 2 \Rightarrow x_1^A = 1$ (compatível com a indiferença de $A$). **EC: $((1,1),(1,1))$ a $p^* = (1,1)$, Pareto-eficiente** por 1º TBE (LNS vale). Esse exemplo é o caso-laboratório do tom honesto: saturação direcional não derruba o teorema.
+
+**Para ter contraexemplo genuíno**, é preciso saturação <em>total</em> num ponto: bliss-point interior, e.g. $u^A(x_1, x_2) = -[(x_1 - a)^2 + (x_2 - b)^2]$ com $(a, b)$ no interior da caixa de Edgeworth — em $(a, b)$ o conjunto preferido estrito é vazio, LNS falha, e a contrapositiva do passo 2 fica sem testemunha. A construção canônica está em **MWG §16.D**; calibrar dotações + preferências para que o EC encontrado caia exatamente em $(a, b)$ com sobra de renda só no agente saciado é trabalho de papel e exige cuidado. A pré-monitoria 2 (sáb 23/05, com Alberto) usa esse construto e fecha o cálculo numérico em sala.
 
 ### 2º Teorema do Bem-Estar — preliminar
 
