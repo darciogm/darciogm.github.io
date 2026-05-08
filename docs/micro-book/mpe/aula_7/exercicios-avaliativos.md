@@ -87,7 +87,7 @@ Duas firmas vizinhas: **A produz** com receita marginal constante \(P^A = 16\) (
 
 **(a)** Sem barganha (A produz livremente, ignora dano em B), o output de A é:
 
-- (i) \(q^p_A = 4\): \(16 = 2q_A \Rightarrow q^p_A = 8\). **Resposta errada (cálculo).**
+- (i) \(q^p_A = 4\): \(q^p_A = P^A/(2 \cdot \text{coef. MC}^A) = 16/(2 \cdot 2) = 4\).
 - (ii) **\(q^p_A = 8\)**: \(P^A = \text{MC}^A \Rightarrow 16 = 2q_A \Rightarrow q^p_A = 8\). **[correta]**
 - (iii) \(q^p_A = 16\).
 - (iv) \(q^p_A = 0\) (B obriga A a parar).
