@@ -1,0 +1,677 @@
+---
+title: "Externalidades e Bens Públicos"
+subtitle: "Aula 7 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-06-03"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 03/06/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Externalidades e Bens Públicos {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 7 — Catálogo de Falhas (II): externalidades não-precificadas**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+3 de junho de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 5 fechou Arrow-Debreu. Aula 6 abriu a primeira falha (incompletude). Hoje: a segunda — externalidades e bens públicos. Aula 8: terceira (informação assimétrica).
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Diagnosticar externalidade como ação fora dos preços, derivar Pigou e Coase, provar Samuelson via Lagrangiano, reconhecer free-rider, e introduzir Lindahl + VCG como mecanismos.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE Cap. 20 + N&S §19.1–§19.6 lidos com calma.
+- $\text{TMS}$, $\text{TMT}$, Lagrangiano operacional na ponta da língua.
+- 1º TBE estendido (Aula 5) na memória.
+:::
+
+::: {.fragment}
+[Sair sem entender que $\sum_i \text{TMS}^i = \text{TMT}$ é a regra-mestra de bem público = Aulas 8–9 ficam soltas.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Recall Aula 6 + ponte falhas | 19:30–19:35 |
+| 1 | Externalidades: diagnóstico + tipologia + Pigou | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Coase + cap-and-trade + Boxes | 20:25–21:00 |
+| 3 | Bens públicos: Samuelson + free-rider | 21:00–21:45 |
+| — | *Pausa* | 21:45–21:55 |
+| 4 | Mecanismos: Lindahl + VCG + Ostrom | 21:55–22:25 |
+| 5 | Síntese + ponte Aula 8 | 22:25–22:30 |
+
+::: {.bridge}
+180 min cheios. Hoje é diagnóstico + ferramental + mecanismos. Aulas 8–9 levam para info assimétrica.
+:::
+
+---
+
+## Bloco 1 — Externalidades + Pigou {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Diagnóstico, tipologia, taxa Pigou que internaliza no ótimo.
+:::
+
+---
+
+## Diagnóstico — quebra do 1º TBE
+
+> Aula 5: 1º TBE valia em economia **sem externalidades**.
+
+::: {.card}
+$$u^i(x^i) \;\;\to\;\; u^i(x^i, x^k), \quad k \neq i.$$
+:::
+
+**Por que isso quebra o 1º TBE.** Argumento de contradição usava: toda interação passa por $p^*$. Com externalidade, há interação fora — argumento não fecha.
+
+::: {.bridge}
+Aula 6 quebrava por dimensão (faltavam ativos). Hoje quebra por escopo da interação (faltam preços para ela).
+:::
+
+---
+
+## Tipologia (em prova)
+
+::: {.compact-table}
+| Eixo | Categorias | Exemplo |
+|:---|:---|:---|
+| Sinal | Positiva / Negativa | Vacinação / Poluição |
+| Origem | Tecnológica / Pecuniária | Fumaça / Subida de preço |
+| Intensidade | Direta / Difusa | Vizinho / Mudança climática |
+:::
+
+::: {.eq-punch}
+Externalidade **pecuniária** NÃO causa ineficiência no 1º TBE. Apenas a tecnológica + via consumo fora-de-preço quebra.
+:::
+
+---
+
+## Pigou (1920) — modelo parcial (1/3)
+
+**Setup.** $P(q) = a - bq$, $\text{MC}_p(q) = c + dq$, $\text{MEC}(q) = eq$ ($e > 0$).
+
+::: {.compact-table}
+| Conceito | Equação |
+|:---|:---|
+| Equilíbrio privado | $P(q^p) = \text{MC}_p(q^p) \;\Rightarrow\; q^p = \dfrac{a-c}{b+d}$ |
+| Custo social marginal | $\text{MC}_s(q) = \text{MC}_p(q) + \text{MEC}(q) = c + (d+e)q$ |
+| Ótimo social | $P(q^*) = \text{MC}_s(q^*) \;\Rightarrow\; q^* = \dfrac{a-c}{b+d+e}$ |
+:::
+
+::: {.bridge}
+$q^* < q^p$ (denominador maior) — produção privada é **excessiva**.
+:::
+
+---
+
+## Pigou (1920) — modelo parcial (2/3)
+
+**Imposto Pigou ótimo:**
+
+::: {.eq-key}
+$$t^* = \text{MEC}(q^*) = e\, q^*.$$
+:::
+
+**Cuidado pedagógico.** Avaliado **no ótimo $q^*$**, não no privado $q^p$. Exigência informacional alta — regulador precisa conhecer $\text{MEC}$ na quantidade que ele próprio quer induzir.
+
+::: {.bridge}
+Próximo: exemplo numérico fechado.
+:::
+
+---
+
+## Pigou (1920) — modelo parcial (3/3)
+
+**Exemplo numérico** ($P = 24 - q$, $\text{MC}_p = 6 + q$, $\text{MEC} = q$):
+
+- Privado: $24 - q = 6 + q \Rightarrow q^p = 9$.
+- Social: $24 - q = 6 + 2q \Rightarrow q^* = 6$.
+- Imposto: $t^* = \text{MEC}(6) = 6$.
+
+::: {.eq-punch}
+Sob $t^* = 6$, produtor escolhe $24 - q = 6 + q + 6 \Rightarrow q = 6 = q^*$. Internalização perfeita.
+:::
+
+---
+
+## Box Brasil — CBio como Pigou descentralizado
+
+> **RenovaBio (Lei 13.576/2017):** Créditos de Descarbonização (CBio).
+
+- Distribuidoras de combustíveis fósseis cumprem meta de descarbonização comprando CBios de produtores certificados (etanol/biodiesel).
+- $p_{\text{CBio}}$ tem o papel de $t^*$ Pigou descentralizado — canal é mercado, não Tesouro.
+
+::: {.callout-note .callout}
+Equivalência teórica entre imposto direto e mercado de permissões sob hipóteses padrão. Diferença é institucional.
+:::
+
+::: {.bridge}
+EU ETS (€25–€100/tCO$_2$ atualmente) é a versão continental do mesmo mecanismo.
+:::
+
+---
+
+## Pausa 1 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+20:15 – 20:25 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Coase + cap-and-trade quando voltarem.
+:::
+
+:::
+
+---
+
+## Bloco 2 — Coase + cap-and-trade {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 20:25–21:00
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Barganha sob direitos. Mercado de permissões. Boxes.
+:::
+
+---
+
+## Coase (1960) — enunciado
+
+::: {.eq-key}
+**Teorema (Coase, informal).** Sob (i) direitos bem-definidos, (ii) custos de transação zero, (iii) sem efeito-renda relevante: barganha privada gera alocação **Pareto-eficiente**, **independente** de quem detém o direito inicialmente.
+:::
+
+::: {.callout-note .callout}
+Coase, R. H. (1960). "The Problem of Social Cost." *J. Law and Economics* 3, 1–44, [DOI 10.1086/466560](https://doi.org/10.1086/466560).
+:::
+
+::: {.bridge}
+Eficiência alocativa indep. de direitos; redistribuição de lucros depende.
+:::
+
+---
+
+## Coase — barganha bilateral (1/2)
+
+**Setup.** Fábrica A: $\text{MC}^A(q_A) = q_A$, $P^A = 20$. Morador B: $\text{MEC}(q_A) = 5$ (constante).
+
+::: {.compact-table}
+| Conceito | Equação |
+|:---|:---|
+| Sem barganha | $q^p_A = 20$ |
+| Ótimo social | $20 = q_A + 5 \;\Rightarrow\; q^*_A = 15$ |
+:::
+
+**Caso 1: B detém direito ao ar limpo.** A paga B por unidade tolerada. Equilíbrio: $20 - q_A = 5 \;\Rightarrow\; q_A = 15$.
+
+**Caso 2: A detém direito a poluir.** B paga A por unidade reduzida. Equilíbrio: mesmo $20 - q_A = 5 \;\Rightarrow\; q_A = 15$.
+
+---
+
+## Coase — barganha bilateral (2/2)
+
+::: {.eq-punch}
+Os dois casos chegam a $q^*_A = 15$. O que muda é **quem paga quem**, não o nível final. Independência da atribuição.
+:::
+
+::: {.callout-warn .callout}
+**Onde Coase falha:** custos de transação positivos (1.000 vizinhos), direitos mal-definidos (clima global), free-rider em barganha, efeito-renda relevante.
+:::
+
+::: {.bridge}
+Coase é teorema de eficiência condicional, não receita política universal.
+:::
+
+---
+
+## Cap-and-trade — Pigou descentralizado
+
+**Mecanismo:** governo define cap; firmas trocam permissões a preço $p$.
+
+$$\min \sum_j C_j(\text{redução}_j) \quad \text{s.a.} \quad \sum_j \text{redução}_j = \text{cap}.$$
+
+CPO: $\text{MC}_j = \lambda$ para todo $j$ — todas as firmas igualam custo marginal de mitigação ao preço da permissão.
+
+::: {.eq-key}
+Meta agregada cumprida ao **custo total mínimo**. Pigou descentralizado via Coase de mercado.
+:::
+
+---
+
+## Box Mundo — Acid Rain Program (US 1990)
+
+> **Clean Air Act 1990:** primeiro grande cap-and-trade institucional (SO$_2$).
+
+- **Resultado empírico:** redução de 50% em emissões de SO$_2$ até 2007.
+- **Custo total:** ~4× menor que estimativas das próprias agências regulatórias para regulação tradicional.
+- **Schmalensee &amp; Stavins (2013, *J. Economic Perspectives*)** documentaram.
+
+::: {.eq-punch}
+Provou empiricamente o argumento Pigou-Coase descentralizado. **EU ETS (2005+)** segue a mesma família institucional.
+:::
+
+---
+
+## Bloco 3 — Bens Públicos: Samuelson {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 21:00–21:45
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+$\sum_i \text{TMS}^i = \text{TMT}$. Free-rider. SUS + Defesa.
+:::
+
+---
+
+## Rival × Excludente
+
+::: {.compact-table}
+| | **Excludente** | **Não-excludente** |
+|:---|:---|:---|
+| **Rival** | Bem privado (pão) | Recurso comum (pesca) |
+| **Não-rival** | Bem-clube (TV cabo) | **Bem público puro** (defesa) |
+:::
+
+::: {.bridge}
+Bem público puro: meu consumo não diminui o seu (não-rival), e não consigo excluí-lo (não-excludente).
+:::
+
+---
+
+## Samuelson (1954) — programa do planejador
+
+**Setup.** $I$ consumidores, 1 bem privado $x$, 1 bem público $G$. $u^i(x^i, G)$. Tecnologia: $\text{TMT} = c$ constante.
+
+$$\max_{\{x^i\}, G} \sum_i \alpha^i u^i(x^i, G) \quad \text{s.a.} \quad \sum_i x^i + cG = \Omega.$$
+
+::: {.fragment}
+**Lagrangiano:** $\mathcal{L} = \sum_i \alpha^i u^i - \lambda(\sum_i x^i + cG - \Omega)$.
+:::
+
+::: {.fragment}
+**CPO em $x^i$:** $\alpha^i u^i_x = \lambda$. **CPO em $G$:** $\sum_i \alpha^i u^i_G = \lambda c$.
+:::
+
+---
+
+## Samuelson — derivação final (1/2)
+
+Substituindo $\alpha^i = \lambda/u^i_x$ na CPO de $G$:
+
+$$\sum_i \frac{u^i_G}{u^i_x} = c.$$
+
+Como $u^i_G/u^i_x = \text{TMS}^i_{G,x}$ e $c = \text{TMT}_{G,x}$:
+
+::: {.eq-key}
+$$\boxed{\;\sum_{i=1}^I \text{TMS}^i_{G,x} = \text{TMT}_{G,x}.\;}$$
+:::
+
+---
+
+## Samuelson — leitura econômica (2/2)
+
+::: {.eq-punch}
+Bem privado: $\text{TMS}^i = \text{TMT}$ agente por agente. Bem público: **soma vertical** das valorações marginais. Diferença vem de não-rivalidade.
+:::
+
+---
+
+## Samuelson — exemplo numérico
+
+$I = 4$ idênticos, $u^i = x^i + 6\sqrt{G}$, $\text{TMT} = 4$.
+
+$\text{TMS}^i = u^i_G/u^i_x = 3/\sqrt{G}$.
+
+Samuelson: $4 \cdot (3/\sqrt{G^*}) = 4 \;\Rightarrow\; G^* = 9$.
+
+::: {.bridge}
+Com 4 agentes, $G^*$ tem que satisfazer "soma vertical das 4 valorações = TMT".
+:::
+
+---
+
+## Free-rider — provisão voluntária Nash
+
+Cada agente escolhe $g^i$ tomando $g_{-i}$ como dado. CPO: $\text{TMS}^i = 1$ **individualmente** (não somada).
+
+**Comparação:**
+
+::: {.compact-table}
+| Critério | Equação |
+|:---|:---|
+| Nash | $\text{TMS}^i = \text{TMT}$ (cada agente) |
+| Samuelson | $\sum_i \text{TMS}^i = \text{TMT}$ |
+:::
+
+::: {.eq-punch}
+Nash entrega $G^N \le G^*$, tipicamente estritamente menor. **Subprovisão.** Mercado descentralizado falha.
+:::
+
+---
+
+## Free-rider — BBV (1986)
+
+::: {.callout-warn .callout}
+**Bergstrom-Blume-Varian (1986, *J. Public Economics*).** Sob assimetria de renda + Bernoullis idênticas, **um único agente provê** todo o bem público em equilíbrio Nash; pequenos pegam carona perfeito.
+:::
+
+> Aplicações: NATO (US carrega), Wikipedia (poucos doadores grandes), open-source (poucos commits dominantes), universidades públicas brasileiras vs. privadas.
+
+::: {.bridge}
+"Os ricos pagam pela festa." Free-rider é estrutural, não comportamental.
+:::
+
+---
+
+## Box Brasil — SUS como bem público
+
+> **Sistema Único de Saúde (1988):** financiamento via tributo geral; universal e gratuito.
+
+**Por Samuelson:**
+
+- **Não-excludente:** princípio constitucional.
+- **Parcialmente rival:** vacinação coletiva (não-rival até capacidade); pronto-socorro (rival).
+
+::: {.callout-note .callout}
+Componente não-rival (vacinação, vigilância, controle de epidemias) tem fortíssimo free-rider em provisão privada → financiamento via tributo é a solução institucional canônica.
+:::
+
+---
+
+## Box Mundo — Defesa nacional
+
+> Bem público canônico: não-rival (não diminui se mais pessoas são protegidas) + não-excludente (não dá para "comprar defesa só para si").
+
+::: {.eq-punch}
+Por Samuelson, financiamento via tributo geral em quase todos os países. **A teoria prevê o que vemos.**
+:::
+
+::: {.bridge}
+SUS, defesa, justiça, infraestrutura básica — todos recaem na mesma família.
+:::
+
+---
+
+## Pausa 2 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+21:45 – 21:55 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Lindahl + VCG + Ostrom — fechamos com mecanismos.
+:::
+
+:::
+
+---
+
+## Bloco 4 — Mecanismos: Lindahl + VCG + Ostrom {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+30 min · 21:55–22:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Preços personalizados. Verdade-dominante. Quarta via.
+:::
+
+---
+
+## Lindahl (1919) — preços personalizados
+
+**Setup.** Cada agente $i$ paga preço pessoal $\tau^i$ por unidade de $G$.
+
+Restrição: $x^i + \tau^i G \le \omega^i$.
+
+CPO em $G$: $\tau^i = \text{TMS}^i_{G,x}$.
+
+Mercado fecha: $\sum_i \tau^i = \text{TMT}$.
+
+::: {.eq-key}
+Substituindo: $\sum_i \text{TMS}^i = \text{TMT}$ — **Samuelson é o equilíbrio de Lindahl**.
+:::
+
+---
+
+## Lindahl — onde falha
+
+::: {.callout-warn .callout}
+**Revelação de preferências.** Para construir $\tau^i$, planejador precisa saber $\text{TMS}^i$ verdadeiro. Mas se $\tau^i$ é cobrado com base em declaração, agente declara $\text{TMS}$ baixo. **Free-rider em forma de revelação.**
+:::
+
+::: {.bridge}
+Existe mecanismo onde declarar verdade é estratégia dominante? Sim — VCG.
+:::
+
+---
+
+## VCG (Vickrey-Clarke-Groves) — Clarke pivot (1/2)
+
+**Setup.** Decisão pública $d \in \mathcal{D}$. Agente $i$ tem valoração $v^i(d)$. $d^* = \arg\max \sum_i v^i(d)$.
+
+**Mecanismo:**
+
+1. Cada agente declara $\hat v^i$.
+2. Mecanismo escolhe $d^* = \arg\max \sum_i \hat v^i(d)$.
+3. Cada agente paga $t^i = h^i(\hat v_{-i}) - \sum_{j \neq i} \hat v^j(d^*)$.
+
+Com $h^i(\hat v_{-i}) = \max_d \sum_{j \neq i} \hat v^j(d)$ (Clarke pivot).
+
+::: {.bridge}
+$i$ paga somente se sua presença mudou a decisão (pivot).
+:::
+
+---
+
+## VCG — Clarke pivot (2/2)
+
+**Sketch dominância.** Utilidade líquida de $i$:
+
+$$v^i(d^*) - t^i = v^i(d^*) - h^i(\hat v_{-i}) + \sum_{j \neq i} \hat v^j(d^*).$$
+
+$h^i$ não depende de $\hat v^i$. Maximizar essa expressão sobre $\hat v^i$ equivale a maximizar $v^i + \sum_{j \neq i} \hat v^j$ — exatamente o critério social.
+
+::: {.eq-punch}
+Verdade $\hat v^i = v^i$ é estratégia dominante. Independente do que outros declarem.
+:::
+
+---
+
+## Box Mundo — FCC Spectrum Auctions (1994+)
+
+> **Federal Communications Commission (US):** leilões de espectro de rádio para telefonia móvel.
+
+- Leilão de segundo preço (Vickrey 1961) é VCG aplicado à decisão "quem leva o item".
+- Variantes combinatórias (CCA) para licenças complementares (FCC Auction 73, 2008+).
+- **Receita acumulada >US$ 100 bi entre 1994–2020** (Milgrom 2000, Cramton 2013).
+
+::: {.bridge}
+VCG: descendente direto de Vickrey 1961. Aplicação real, escala continental.
+:::
+
+---
+
+## Ostrom (1990) — governance institucional
+
+> **Hardin (1968):** "tragédia dos comuns" — recursos comuns sob acesso aberto seriam sobreexplorados.
+
+> **Ostrom (1990):** comunidades reais coordenam soberania local — regras, monitoramento, sanções graduadas — e evitam a tragédia sem privatizar nem nacionalizar.
+
+::: {.callout-note .callout}
+**8 princípios de Ostrom:** limites bem-definidos, regras adaptadas, monitoramento, sanções graduadas, conflitos resolvidos localmente, autonomia, organização aninhada, regras de saída/entrada.
+:::
+
+::: {.eq-punch}
+**A quarta via.** Não Pigou + não Coase + não Estado puro. Governance institucional. Nobel 2009.
+:::
+
+---
+
+## Box Brasil — PMCMV como Lindahl implícito
+
+> **Programa Minha Casa, Minha Vida (2009):** subsídios distintos por faixa de renda.
+
+- **Faixa 1** (até ~3 sm): subsídio integral.
+- **Faixa 2 e 3:** parcela proporcional ao custo.
+
+::: {.callout-note .callout}
+Equivale a **preços personalizados** pelo bem público "habitação social" — Lindahl com renda como proxy de $\text{TMS}$.
+:::
+
+::: {.bridge}
+Não é Lindahl puro (não vem de declaração); funciona se renda e disposição-a-pagar correlacionam.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 8 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Catálogo da segunda falha. Aula 8: terceira (info assimétrica).
+:::
+
+---
+
+## Síntese da Aula 7
+
+::: {.compact-table}
+| Falha | Mecanismo | Solução(ões) |
+|:---|:---|:---|
+| Externalidade tecnológica | Ação fora dos preços | Pigou / Coase / Cap-and-trade |
+| Bem público não-rival | Soma vertical de valorações | Tributo (Samuelson) / Lindahl / VCG |
+| Common-pool | Acesso aberto + tragédia | Ostrom (governance institucional) |
+:::
+
+::: {.bridge}
+Catálogo da segunda falha. Aula 6 = primeira (incompletude). Aula 8 = terceira (info assimétrica).
+:::
+
+---
+
+## Ponte Aula 8 — Seleção adversa + Risco moral
+
+::: {.fragment}
+**Pergunta-driver Aula 8:** e quando agentes têm informação privada que afeta a transação?
+:::
+
+::: {.fragment}
+- **Akerlof (1970)** — lemons.
+- **Rothschild-Stiglitz (1976)** — seguro com tipos heterogêneos.
+- **Holmström (1979)** — principal-agent + risco moral.
+:::
+
+::: {.fragment}
+[Aula 8 (qua 10/06): seleção adversa + risco moral. Pré-monitoria 4 com Alberto, sábado 13/06 (cobre Aulas 6–7).]{.bridge}
+:::
+
+---
+
+## Encerramento {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.6em; font-weight: 600; margin-top: 0.8em;"}
+Externalidades + Bens Públicos — segunda falha do EG
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
+**Quiz pós-aula 7** + **Exercícios avaliativos 7** abrem qui 04/06 · fecham qua 10/06 às 18h.
+
+**Gabarito dos avaliativos:** qui 11/06 · 00:00.
+
+**Pré-monitoria 4** (Aulas 6–7) abre sáb 30/05 · fecha sex 12/06.
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.85; margin-top: 0.8em;"}
+Aula 8 (qua 10/06 · 19:30): seleção adversa + risco moral.
+:::

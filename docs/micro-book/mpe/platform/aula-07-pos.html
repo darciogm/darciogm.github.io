@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 07 — Externalidades + Bens Públicos — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 07 — Externalidades e Bens Públicos</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S Cap. 19) + 5 avançadas 🔴 (calibre N&amp;S §19.5/§19.6 mais profundo + MWG §11 + qualifier).</strong> Objetivo: ponte entre a aula de 03/06 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 10/06 às 18:00 BRT</strong>, 1h30 antes da Aula 8.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-07-pos" data-phase="post" data-title="Pós-Aula 07">
+
+  <h3>Pós-Aula 07 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Pigou parcial cálculo direto -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Mercado parcial: \(P(q) = 40 - 2q\), \(\text{MC}_p(q) = 4 + 2q\), \(\text{MEC}(q) = 2q\). O imposto Pigou ótimo \(t^*\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(t^* = 4\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) \(t^* = 8\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) <strong>\(t^* = 12\)</strong>: \(\text{MC}_s = 4 + 2q + 2q = 4 + 4q\); social \(40 - 2q = 4 + 4q \Rightarrow q^* = 6\); \(t^* = \text{MEC}(6) = 12\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(t^* = 16\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Pigou ótimo \(t^* = \text{MEC}(q^*)\) avaliado no <em>ótimo social</em>, não no privado. Cálculo direto em modelo parcial linear.</p>
+      <p><strong>2. Derivação.</strong> Custo social: \(\text{MC}_s = \text{MC}_p + \text{MEC} = 4 + 2q + 2q = 4 + 4q\). Ótimo: \(P = \text{MC}_s \Rightarrow 40 - 2q = 4 + 4q \Rightarrow 36 = 6q \Rightarrow q^* = 6\). \(t^* = \text{MEC}(q^*) = 2 \cdot 6 = 12\).</p>
+      <p><strong>3. Armadilha.</strong> (a) usa MEC em \(q = 2\) (não-sentido). (b) usa MEC em \(q^p\) (privado): \(40 - 2q = 4 + 2q \Rightarrow q^p = 9\); \(t = \text{MEC}(9) = 18 \neq 8\). (d) erro algébrico.</p>
+      <p><strong>4. Extensão.</strong> Em economia com múltiplos bens externos, Pigou se estende para vetor de impostos coordenados. Em segundo-melhor (info assimétrica), \(t^*\) deixa de coincidir — Lipsey-Lancaster (1956), Aulas 8–9 introduzem.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto. Aluno que erra em (b) usou \(\text{MEC}(q^p)\) — erro pedagógico clássico.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Coase quem ganha mais -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Em barganha Coase bilateral entre fábrica A (gera fumaça) e morador B, sob direitos bem-definidos + custos zero, comparando o caso "B detém direito ao ar limpo" vs. "A detém direito a poluir":
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) A alocação eficiente é diferente em cada caso.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) <strong>A alocação \(q^*_A\) é a mesma; o que muda é apenas <em>quem paga quem</em>: no caso 1, A paga B (B detém direito); no caso 2, B paga A (A detém direito). A redistribuição de lucros depende; a eficiência alocativa não.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Coase quebra em barganha bilateral.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) A sempre paga B independente do direito.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Independência da atribuição é a propriedade central de Coase. Sob hipóteses padrão, alocação Pareto-eficiente independe de quem detém direitos. <strong>Mas a redistribuição de lucros depende</strong> — observação empiricamente importante.</p>
+      <p><strong>2. Derivação.</strong> Caso 1 (B detém direito): A paga B por unidade tolerada um valor entre \(\text{MEC}\) (mínimo aceitável por B) e benefício marginal de A (máximo pagável por A). Equilíbrio: \(\text{MEC} = \text{benefício marginal}\) \(\Rightarrow q^*_A\). Caso 2 (A detém direito): B paga A por unidade reduzida um valor entre lucro perdido por A e dano evitado em B. Mesmo \(q^*_A\) emerge, com fluxo de pagamento invertido.</p>
+      <p><strong>3. Armadilha.</strong> (a) é a tese anti-Coase (errada sob hipóteses). (c) ignora resultado central. (d) confunde os casos.</p>
+      <p><strong>4. Extensão.</strong> Distributivo é tipicamente <strong>importante</strong> em política — embora Pareto seja invariante, dimensão "quem paga" é central no debate. Aplicações: cap-and-trade com permissões alocadas inicialmente (atribuição inicial), Acid Rain Program (alocação grátis vs. leilão).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Distratores plausíveis para alunos que confundem Pareto com distributivo. Item (b) é o canônico.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Bem público matriz canônica -->
+  <div class="quizg-q" data-qid="q3" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Considere os seguintes exemplos: (i) bombeiros militares; (ii) parque público com cobrança de entrada; (iii) lago com pesca livre. Pelos eixos (rivalidade, exclusibilidade), eles correspondem respectivamente a:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Privado puro / Bem-clube / Recurso comum.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Bem público puro / Bem público puro / Bem público puro.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) <strong>Bem público puro / Bem-clube / Recurso comum</strong>: bombeiros (não-rival até saturação, não-excludente); parque com entrada (não-rival até saturação, excludente via entrada); pesca livre em lago (rival na pesca, não-excludente).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Recurso comum / Bem-clube / Bem público puro.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Aplicação direta da matriz 2×2. Cada exemplo testa um dos quadrantes "intermediários" ou puros. Bombeiros = público puro (uma vez serviço prestado, todos beneficiam, sem possibilidade prática de excluir). Parque com entrada = bem-clube (não-rival até capacidade, mas excludente via tarifa). Lago com pesca livre = recurso comum (rival — peixe pescado por A não está disponível para B; não-excludente).</p>
+      <p><strong>2. Derivação.</strong> Critério: rivalidade pergunta "diminui consumo dos outros?"; exclusibilidade pergunta "consigo cobrar?". Bombeiros: ambos não. Parque com tarifa: tarifa cria exclusibilidade; até capacidade, não há rivalidade. Pesca livre: peixe é rival (estoque finito), mas instituição "livre" remove exclusibilidade.</p>
+      <p><strong>3. Armadilha.</strong> (a)/(d) confundem categorias. (b) ignora cobrança de entrada e pesca rival.</p>
+      <p><strong>4. Extensão.</strong> Cada quadrante chama mecanismo institucional diferente: bem público puro → tributo + Samuelson; bem-clube → tarifa de uso (Tiebout 1956); recurso comum → governance (Ostrom 1990) ou direitos (cotas de pesca, Coase). Aula 7 cobre os 3 mecanismos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação da matriz. Distratores plausíveis para quem não diferencia bem-clube de recurso comum.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Samuelson com 2 agentes assimétricos -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Economia com 2 agentes: \(u^A(x^A, G) = x^A + 2\ln G\), \(u^B(x^B, G) = x^B + 4\ln G\). \(\text{TMT}_{G,x} = 1\). O nível socialmente ótimo \(G^*\) (Samuelson com agentes assimétricos):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(G^* = 3\) (média das valorações: usa coeficiente médio \(\bar a = 3\), igualando \(\bar a/G = 1\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) <strong>\(G^* = 6\)</strong>: \(\text{TMS}^A = 2/G\), \(\text{TMS}^B = 4/G\); soma vertical \(2/G + 4/G = 6/G = 1 \Rightarrow G^* = 6\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(G^* = 2\) (cada agente exigiria individualmente \(\text{TMS}^i = \text{TMT}\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) \(G^* = 8\) (multiplicando coeficientes em vez de somar).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Samuelson com agentes assimétricos: regra geral \(\sum_i \text{TMS}^i = \text{TMT}\) — soma vertical, não média. Forma logarítmica torna o cálculo limpo.</p>
+      <p><strong>2. Derivação.</strong> \(u^A_G = 2/G\), \(u^A_x = 1\) ⇒ \(\text{TMS}^A = 2/G\). \(u^B_G = 4/G\), \(u^B_x = 1\) ⇒ \(\text{TMS}^B = 4/G\). Samuelson: \(2/G + 4/G = 6/G = 1 \Rightarrow G^* = 6\). Note: o agente B ("mais intenso" em valoração) carrega mais peso no resultado.</p>
+      <p><strong>3. Armadilha.</strong> (a) usa "média dos coeficientes" \(\bar a = (2+4)/2 = 3\) e calcula \(\bar a/G = 1 \Rightarrow G = 3\) — número distinto do Samuelson (6). É o erro pedagogicamente clássico: confundir <em>média</em> (\(\sum/I\)) com <em>soma vertical</em> (\(\sum\)). (c) confunde com regra individual \(\text{TMS}^i = \text{TMT}\) usando agente A: \(2/G = 1 \Rightarrow G = 2\). (d) erro algébrico (multiplica em vez de somar).</p>
+      <p><strong>4. Extensão.</strong> Em equilíbrio Lindahl com agentes assimétricos, preços pessoais refletem valorações: \(\tau^A = 2/6 = 1/3\), \(\tau^B = 4/6 = 2/3\), \(\sum = 1 = \text{TMT}\) ✓. B paga mais porque valoriza mais — Lindahl é, neste sentido, "justo do ponto de vista do princípio do beneficiário". Limite: revelação estratégica continua sendo o problema operacional. Q5 a seguir cobra esses preços.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto Samuelson + interpretação. Item (a) testa a confusão pedagógica clássica (média vs. soma). Sob forma logarítmica, "média" e "Samuelson" entregam números distintos (3 vs. 6) — bug B1 da forma raiz não reaparece.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Lindahl em 2 agentes -->
+  <div class="quizg-q" data-qid="q5" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> No cenário do Q4 (\(u^A = x^A + 2\ln G, u^B = x^B + 4\ln G, \text{TMT} = 1\), \(G^* = 6\)), os preços de Lindahl \((\tau^A, \tau^B)\) em equilíbrio competitivo são:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) \(\tau^A = \tau^B = 0{,}5\) (preços iguais).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) <strong>\(\tau^A = 1/3, \tau^B = 2/3\)</strong>: cada agente CPO \(\tau^i = \text{TMS}^i\) avaliado em \(G^* = 6\). \(\text{TMS}^A(6) = 2/6 = 1/3\); \(\text{TMS}^B(6) = 4/6 = 2/3\). Soma \(\sum_i \tau^i = 1 = \text{TMT}\) ✓.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) \(\tau^A = 1, \tau^B = 1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) \(\tau^A = 0, \tau^B = 1\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Preços de Lindahl em equilíbrio competitivo igualam \(\text{TMS}^i\) avaliada em \(G^*\). Soma fecha mercado: \(\sum_i \tau^i = \text{TMT}\). É o equivalente de Samuelson via descentralização.</p>
+      <p><strong>2. Derivação.</strong> \(G^* = 6\) (do Q4). \(\text{TMS}^A(G^*) = 2/G^* = 2/6 = 1/3\). \(\text{TMS}^B(G^*) = 4/G^* = 4/6 = 2/3\). Verificação: \(\tau^A + \tau^B = 1/3 + 2/3 = 1 = \text{TMT}\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> (a) preços iguais é regra de bem privado. (c) confunde com TMT total. (d) extremo absurdo.</p>
+      <p><strong>4. Extensão.</strong> Lindahl é Pareto-eficiente em equilíbrio competitivo, mas requer revelação verdadeira de \(\text{TMS}\) — agentes têm incentivo a declarar baixo. VCG resolve isso via mecanismo de transferências dependentes apenas dos relatos dos outros.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto Lindahl. Distrator (a) confunde com regra de bem privado.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Cap-and-trade vs. comando-controle: cálculo de economia -->
+  <div class="quizg-q" data-qid="q6" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> Duas firmas A, B. \(\text{MAC}_A(r) = 4r\), \(\text{MAC}_B(r) = r\). Meta agregada: \(R = 10\) toneladas reduzidas. Compare custo total com (i) <strong>comando-controle uniforme</strong> (cada firma reduz \(R/2 = 5\)) e (ii) <strong>cap-and-trade</strong> (firmas igualam MAC ao preço da permissão):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Comando-controle: 50; cap-and-trade: 50. Iguais.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Comando-controle: 50; cap-and-trade: 70. Cap-and-trade mais caro.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) <strong>Comando-controle: 62,5; cap-and-trade: 40</strong>. Cap-and-trade entrega economia de ~36%, porque firma B (MAC menor) reduz mais.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Indeterminado sem mais informação.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cap-and-trade descentraliza eficientemente: firma com MAC menor reduz mais, custo total de mitigação é minimizado. Comando-controle uniforme falha esse critério Pareto.</p>
+      <p><strong>2. Derivação.</strong> <strong>Comando-controle</strong> (\(r_A = r_B = 5\)): custo \(= \int_0^5 4r dr + \int_0^5 r dr = 2 r^2|_0^5 + r^2/2|_0^5 = 50 + 12{,}5 = 62{,}5\). <strong>Cap-and-trade.</strong> Equilíbrio: \(\text{MAC}_A(r_A) = \text{MAC}_B(r_B) = p\). \(4 r_A = p \Rightarrow r_A = p/4\). \(r_B = p\). Restrição: \(r_A + r_B = 10 \Rightarrow p/4 + p = 10 \Rightarrow 5p/4 = 10 \Rightarrow p = 8\). Logo \(r_A = 2, r_B = 8\). Custo: \(\int_0^2 4r dr + \int_0^8 r dr = 8 + 32 = 40\). <strong>Economia: 62,5 − 40 = 22,5 ou ~36%.</strong></p>
+      <p><strong>3. Armadilha.</strong> (a) confunde economia com igualdade de custo. (b) inverte a comparação. (d) ignora o cálculo direto.</p>
+      <p><strong>4. Extensão.</strong> Resultado generaliza: maior assimetria de MAC entre firmas → maior economia do cap-and-trade. Acid Rain Program (Schmalensee-Stavins 2013) documentou ~4× economia vs. comando-controle. EU ETS opera com lógica similar. Aula 8 cobre como info assimétrica complica esse cenário.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Cálculo de integrais simples + raciocínio econômico. Aluno que erra (a) ainda não internalizou descentralização eficiente. <strong>Tradeoff de tempo:</strong> ~10 min — médio para 🔴.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — Coase com efeito-renda quebra independência -->
+  <div class="quizg-q" data-qid="q7" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> O Teorema de Coase afirma "alocação resultante é <strong>independente</strong> de quem detém o direito" sob 3 hipóteses, incluindo "efeitos-renda desprezíveis". Por que essa hipótese específica importa para a <em>independência</em> (e não apenas para a eficiência)?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Sem ela, a eficiência alocativa não vale.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) <strong>Sem efeitos-renda, a curva de demanda Hicksiana e Marshalliana coincidem (Aula 3); a quantidade ótima socialmente é a mesma sob qualquer atribuição inicial. Com efeitos-renda relevantes, a riqueza inicial das partes (alterada pela atribuição) muda suas decisões marginais — a alocação Pareto-eficiente <em>existe</em>, mas <em>depende</em> de quem detém o direito.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) Efeitos-renda criam externalidades.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Efeitos-renda sempre aumentam custos de transação.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A hipótese "sem efeitos-renda" garante <em>independência</em> da alocação inicial. Sem ela, eficiência ainda pode valer (sob direitos definidos + custos zero), mas <strong>cada atribuição inicial gera uma alocação Pareto-eficiente diferente</strong>. Isso é o "Coase com asterisco".</p>
+      <p><strong>2. Derivação.</strong> Em barganha bilateral com efeitos-renda, MEC (do morador) ou MC (da fábrica) podem depender da riqueza. Atribuir direito a B aumenta riqueza de B → muda a curva de \(\text{MEC}\) que B "cobra"; equilíbrio Coase ainda eficiente, mas em \(q^*_B\) diferente do equilíbrio com direito a A (\(q^*_A\)). Ambos são Pareto-eficientes na sua própria distribuição inicial; não há um único \(q^*\) "social".</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde eficiência com independência. (c) errada — efeitos-renda não criam externalidades, mas mudam comportamento. (d) confusão com custos de transação.</p>
+      <p><strong>4. Extensão.</strong> Em prática, efeitos-renda são desprezíveis quando externalidade é pequena comparada à riqueza dos agentes. Quando é grande (e.g., expropriação massiva, choque ambiental catastrófico), efeitos-renda voltam a importar. Hovenkamp (1999, *Cornell Law Review*) discute aplicação prática. Conexão com Aula 3 (Slutsky com renda variável).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão de raciocínio fino sobre estrutura do teorema. Aluno que marca (a) ainda confunde eficiência com unicidade de alocação. <strong>Tradeoff de tempo:</strong> ~8 min — médio.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — VCG cálculo Clarke pivot 3 agentes -->
+  <div class="quizg-q" data-qid="q8" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Comunidade com 3 agentes decide se constrói uma ponte (\(d \in \{\text{sim}, \text{não}\}\)). Valorações: \(v^A(\text{sim}) = 8, v^B(\text{sim}) = 5, v^C(\text{sim}) = -10\); todos \(v^i(\text{não}) = 0\). Sob mecanismo VCG (Clarke pivot), a decisão e a transferência de cada agente são:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(d^* = \text{sim}\); \(t^A = t^B = t^C = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) \(d^* = \text{sim}\); \(t^A = 5, t^B = 2, t^C = 13\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) <strong>\(d^* = \text{sim}\); \(t^A = 5, t^B = 2, t^C = 0\)</strong>: como \(\sum_i v^i(\text{sim}) = 3 &gt; 0\), \(d^* = \text{sim}\). <em>A é pivot</em>: sem A a soma vira \(5 + (-10) = -5 &lt; 0\), logo a decisão mudaria para "não". Pelo Clarke pivot, com \(h^A(\hat v_{-A}) = 0\), o agente A paga \(t^A = h^A - \sum_{j \neq A} v^j(d^*) = 0 - (5 + (-10)) = 0 - (-5) = 5\). Análogo para B: \(t^B = 0 - (8 + (-10)) = 2\). <em>C não é pivot</em>: sem C, a soma é \(8 + 5 = 13 &gt; 0\), decisão continua sendo "sim" — mesma decisão, então \(t^C = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) \(d^* = \text{não}\); todas as transferências são zero.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cálculo VCG completo: identificar \(d^*\); fazer pivot test para cada agente (sua presença mudou a decisão?); calcular \(t^i\). Apenas pivots pagam.</p>
+      <p><strong>2. Derivação.</strong> \(d^*\): \(\sum v^i(\text{sim}) = 8 + 5 - 10 = 3\); \(\sum v^i(\text{não}) = 0\). Como \(3 &gt; 0\), \(d^* = \text{sim}\). <strong>Pivot test A:</strong> sem A, \(\sum_{j \neq A} v^j(\text{sim}) = 5 - 10 = -5\); \(\sum_{j \neq A} v^j(\text{não}) = 0\). Sem A, \(\arg\max = \text{não}\) (decisão diferente). A é pivot. \(h^A = \max(0, -5) = 0\). \(t^A = 0 - \sum_{j \neq A} v^j(d^*) = 0 - (5 - 10) = 5\). <strong>Pivot test B:</strong> sem B, \(\sum_{j \neq B} v^j(\text{sim}) = 8 - 10 = -2\); sem B, \(\arg\max = \text{não}\). B é pivot. \(h^B = 0\). \(t^B = 0 - (8 - 10) = 2\). <strong>Pivot test C:</strong> sem C, \(\sum_{j \neq C} v^j(\text{sim}) = 8 + 5 = 13\); sem C, \(\arg\max = \text{sim}\) (mesma decisão). C <strong>não</strong> é pivot. \(t^C = 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora pivot test. (b) calcula \(t^C\) como se C fosse pivot. (d) erra a decisão social.</p>
+      <p><strong>4. Extensão.</strong> Note: \(\sum_i t^i = 5 + 2 + 0 = 7 &gt; 0\) — VCG não é orçamento-balanceado. Governo absorve residual em implementações reais. Aplicação: leilão de segundo preço em Google AdWords (até ~2019); FCC spectrum auctions (US 1994+, >US$ 100bi). Limite teórico: Gibbard-Satterthwaite + Roberts (1979) restringem mecanismos dominantes em domínios irrestritos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Cálculo VCG completo testando entendimento de pivot. Distrator (b) é o mais armadilhoso — testa se aluno faz pivot test corretamente para C. <strong>Tradeoff de tempo:</strong> ~12 min, no limite.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — Bergstrom-Blume-Varian único provedor -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Bergstrom, Blume e Varian (1986, <em>J. Public Economics</em>) provaram um resultado mais forte que o de free-rider clássico em provisão voluntária Nash. Em economia com agentes assimétricos em renda (e bem público normal), o resultado é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Todos os agentes contribuem proporcionalmente à renda.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Agentes mais pobres contribuem mais (compensação).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) <strong>Em equilíbrio Nash com assimetria suficiente entre agentes, o conjunto de contribuintes ativos colapsa para um subconjunto pequeno — no limite, <em>um único agente</em> (o de maior valoração marginal por renda) provê todo o bem público e os outros pegam carona perfeito (\(g^j = 0\)). Esse é o resultado de Bergstrom-Blume-Varian (1986) sob preferências quase-lineares ou bens públicos normais.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Provisão voluntária sempre falha completamente (\(G^N = 0\)).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Free-rider em economia assimétrica é mais grave que em simétrica: <strong>concentração total da provisão no agente mais valoroso</strong>. "Os ricos pagam pela festa." Resultado de Bergstrom-Blume-Varian (1986).</p>
+      <p><strong>2. Derivação.</strong> Em economia simétrica, Nash entrega \(\text{TMS}^i = \text{TMT}\) para cada um — distribuição simétrica de contribuição. Em economia assimétrica com agentes \(i\) que diferem em \(u^i\) ou em renda, o equilíbrio Nash genericamente concentra a contribuição no agente com maior <em>willingness-to-pay</em>; outros pegam carona porque sua \(\text{TMS}\) marginal é menor que \(\text{TMT}\) já no nível de \(G\) que o "rico" provê sozinho.</p>
+      <p><strong>3. Armadilha.</strong> (a)/(b) violam free-rider. (d) extremo errado — provisão acontece, só é concentrada e estritamente menor que Samuelson.</p>
+      <p><strong>4. Extensão.</strong> Aplicações canônicas: NATO (US carrega militarmente em escala desproporcional ao tamanho da economia europeia), Wikipedia (poucos doadores grandes), open-source (poucos commits dominam projeto), ONU (financiamento concentrado em poucos países). Implicação política: provisão "voluntária" em escala global é muitas vezes assimétrica, com consequências para barganha. Aulas 8–9 introduzem mecanismos de coordenação (matching, sinalização) que tentam descentralizar coordenação.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Conhecimento da literatura econômica avançada. Distratores plausíveis para alunos que viram só free-rider básico. Bergstrom-Blume-Varian é referência canônica (DOI [10.1016/0047-2727(86)90024-1](https://doi.org/10.1016/0047-2727(86)90024-1)). <strong>Tradeoff de tempo:</strong> ~6 min, conceitual rápido.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴🔴 — META: Coase em economia com 1.000 agentes via Hahn-Banach -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <em>Questão meta — pede raciocínio sobre limites do teorema.</em> Considere a aplicabilidade do Teorema de Coase em economia com \(N = 1.000\) vizinhos afetados por uma fábrica. Mantenha as 3 hipóteses canônicas (direitos bem-definidos, custos de transação zero, sem efeitos-renda relevantes). Pergunta:
+      <p style="margin-top:0.4em;font-style:italic">Sob essas 3 hipóteses estritamente, o Teorema de Coase ainda garante eficiência da barganha em economia com 1.000 agentes? E em prática, por que essa garantia "puramente teórica" é geralmente inútil?</p>
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Não — o resultado de Coase falha imediatamente com 1.000 agentes porque a estrutura formal do teorema depende crucialmente de que cada parte tenha incentivo individual a barganhar até o ponto Pareto-eficiente, e isso só é incentivo-compatível em economia bilateral; com \(N\) grande, mesmo sob as 3 hipóteses canônicas, a barganha "coletiva" passa a depender de hipóteses adicionais (convexidade do core, condição de tratamento simétrico) que o teorema original de 1960 não invoca. Logo, a garantia teórica simplesmente não se aplica fora de \(N=2\), e qualquer extensão exige um aparato distinto (Aumann-Shapley, valor de Shapley, núcleo) — não é Coase.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) <strong>Em sentido estrito do teorema, sim — sob direitos bem-definidos + custos zero + sem efeitos-renda, mesmo com 1.000 agentes, existiria barganha múltipla bilateralmente coordenada que entrega eficiência (e independência da atribuição). Contudo, em prática, a hipótese "custos de transação zero" é a que falha com gravidade crescente em \(N\): organizar coordenação entre 1.000 agentes envolve custo de identificação, comunicação, contratos, e enforcement que cresce ao menos linearmente em \(N\). Além disso, surge problema de free-rider <strong>na própria barganha</strong>: cada vizinho ganha pequena fração do total e tem incentivo a delegar a participação a outros. Por essas duas razões, Coase é teorema de existência sob hipóteses idealizadas que raramente se reproduzem em escala — daí a recomendação prática de Pigou ou cap-and-trade quando \(N\) é grande.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Sim — sob as 3 hipóteses canônicas o teorema vale literalmente para qualquer \(N\) finito, inclusive \(N=1.000\), e na prática a coordenação se viabiliza naturalmente porque os agentes têm incentivo dominante a barganhar até a alocação eficiente; basta que cada um identifique seu valor marginal de poluição (ou de redução) e expresse na barganha. A literatura empírica subsequente (e.g., experimentos em laboratório com até 30 sujeitos) confirma que coordenação descentralizada emerge espontaneamente sem necessidade de instituição mediadora; logo, a recomendação prática de Pigou ou cap-and-trade é supérflua e historicamente justificada apenas por viés institucional pró-Estado.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Sim — sob as 3 hipóteses, eficiência é garantida com 1.000 agentes, e por isso Pigou e Coase são <em>equivalentes</em> em prática: ambos entregam a mesma alocação \(q^*\) com a mesma propriedade de Pareto-eficiência. A diferença é meramente institucional/distributiva (quem paga quem, quem cobra), e do ponto de vista do teorema do bem-estar a escolha entre instrumentos é arbitrária; a literatura aplicada usa Pigou por conveniência administrativa, não por superioridade alocativa. Logo, em economias com \(N\) grande, as duas vias são intercambiáveis sob a mesma garantia teórica.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A questão separa três objetos que alunos costumam confundir: (i) <em>conteúdo formal</em> do teorema (sob 3 hipóteses, eficiência vale); (ii) <em>aplicabilidade prática</em> (em \(N\) grande, hipóteses falham); (iii) <em>recomendação política</em> (qual instrumento usar). Coase é teorema de existência sob idealização; em prática, a hipótese "custos zero" é a que tipicamente falha. Free-rider <em>na própria barganha</em> é argumento secundário mas frequentemente decisivo.</p>
+      <p><strong>2. Derivação.</strong> <em>Sentido formal.</em> Com 1.000 agentes mas custos de transação efetivamente zero, o teorema de Coase generaliza-se via barganha múltipla bilateralmente coordenada (e.g., um "broker" central, um mecanismo de barganha simultânea). Hahn-Banach + ferramentas de existência walrasiana garantem existência teórica sob convexidade. <em>Sentido prático.</em> Custos crescem ao menos linearmente em \(N\): identificar afetados, redigir contratos, monitorar cumprimento, enforcement. Para 1.000 vizinhos, custos típicos são da ordem do dano agregado evitado — o líquido é negativo. Free-rider na barganha: cada vizinho ganha 1/1000 do dano evitado mas tem custo individual ≥ ε de participar; ninguém se mobiliza. Resultado: instituição centralizada (Pigou ou cap-and-trade) é Pareto-superior em prática para \(N\) grande.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "Coase falha em prática" com "teorema falha em teoria" — o teorema é robusto sob hipóteses; a falha é nas hipóteses. (c) é falsa — o teorema generaliza para \(N\) finitos sob hipóteses (com cuidados sobre coordenação). (d) é a confusão pedagógica oposta — Pigou e Coase são distintos institucionalmente: Pigou é centralizado (governo cobra), Coase é descentralizado (agentes barganham).</p>
+      <p><strong>4. Extensão.</strong> A discussão de Coase em economia com \(N\) grande conecta com diversos temas: (i) <strong>cap-and-trade</strong> como Coase parcialmente coordenado (governo define direitos, mercado descentraliza); (ii) <strong>Ostrom (1990)</strong> como quarta via, quando comunidade resolve coordenação via instituições locais; (iii) <strong>Aulas 8–9</strong> sobre informação assimétrica como camada adicional que complica ainda mais coordenação descentralizada (cada vizinho tem info privada sobre seu dano). Importante para política ambiental e regulatória brasileira: por que o IBAMA cobra multa centralizada em vez de exigir barganha entre poluidor e afetados? Porque \(N\) é alto, custos de transação seriam proibitivos, e free-rider na coordenação é estrutural.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴🔴. Questão meta que separa conteúdo formal de aplicabilidade prática + implicação política. A alternativa (b) é deliberadamente longa porque a pergunta exige nuance — resumir mais perderia o ponto. Distratores (a) e (c) atraem alunos que não distinguem "teorema com hipóteses" de "aplicabilidade real"; (d) atrai quem confunde os dois mecanismos. Calibre dentro do teto N&amp;S §19.3 + MWG §11.D, sem invocar Hahn-Banach formal nem Aumann-Shapley. <strong>Tradeoff de tempo:</strong> ~10 min para leitura cuidadosa. <strong>Decisão pedagógica:</strong> "alternativa longa correta" é o padrão para questões meta — preferi clareza a brevidade.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 8 presencial</strong> (quarta, 10/06, 19:30 — Seleção adversa + Risco moral). Os <strong>exercícios avaliativos da Aula 7</strong> também fecham em <strong>quarta 10/06 às 18h</strong>. Gabarito 5-passos: quinta 11/06 · 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-07-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

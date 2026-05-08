@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 07 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 07</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Externalidades (Pigou + Coase + cap-and-trade), bens públicos (Samuelson), mecanismos (Lindahl + VCG + Ostrom)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 10/06 às 18:00</strong> — 1h30 antes da Aula 8. <em>Calendário canônico</em>.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 11/06 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-07-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 07">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Pigou em modelo parcial: derivação da taxa ótima</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Mercado parcial com demanda inversa \(P(q) = 30 - 2q\), curva de custo privado marginal \(\text{MC}_p(q) = 6 + q\), e custo externo marginal \(\text{MEC}(q) = q\). Demanda agregada e oferta agregada são as do mercado todo (não 1 firma só). <strong>Convenção:</strong> \(q\) em milhares de unidades.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A curva de custo social marginal é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(\text{MC}_s(q) = \text{MC}_p(q) = 6 + q\) (sem externalidade).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(\text{MC}_s(q) = \text{MC}_p(q) + \text{MEC}(q) = 6 + q + q = 6 + 2q\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(\text{MC}_s(q) = q^2 + 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) \(\text{MC}_s(q) = \text{MEC}(q) = q\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> O equilíbrio privado (sem intervenção, \(P = \text{MC}_p\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) \(q^p = 4, P^p = 22\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) \(q^p = 8, P^p = 14\): \(30 - 2q = 6 + q \Rightarrow 24 = 3q \Rightarrow q^p = 8\); \(P^p = 30 - 16 = 14\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(q^p = 12, P^p = 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> O ótimo social (\(P = \text{MC}_s\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(q^* = 4, P^* = 22\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(q^* = 6, P^* = 18\): \(30 - 2q = 6 + 2q \Rightarrow 24 = 4q \Rightarrow q^* = 6\); \(P^* = 30 - 12 = 18\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \(q^* = 8\), igual ao privado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(q^* = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> O imposto Pigou ótimo \(t^*\) avaliado <strong>no nível socialmente ótimo</strong> é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(t^* = \text{MEC}(q^p) = 8\) (avaliado no privado).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \(t^* = \text{MEC}(q^*) = q^* = 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \(t^* = \text{MC}_s(q^*) = 18\) (custo social total).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) \(t^* = q^* + q^p = 14\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1e" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(e)</strong> Sob \(t^* = 6\), o produtor enfrenta \(\text{MC}_p(q) + t^* = 12 + q\). Igualando à demanda inversa: \(30 - 2q = 12 + q\). A quantidade resultante é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="a"> (i) \(q = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="b"> (ii) \(q = 6 = q^*\) ✓ — taxa internaliza, produtor escolhe ótimo social.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="c"> (iii) \(q = 8 = q^p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="d"> (iv) \(q = 12\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Pigou (1920) corrige externalidade negativa internalizando o custo externo marginal via imposto. <strong>Crítico:</strong> \(t^* = \text{MEC}(q^*)\) — avaliado no nível <em>socialmente ótimo</em>, não no equilíbrio privado. Sob essa taxa, produtor enfrenta \(\text{MC}_p + t^*\) que coincide pontualmente com \(\text{MC}_s\) em \(q^*\), e por isso escolhe \(q^*\).</p>
+      <p><strong>2. Derivação.</strong> \(\text{MC}_s = \text{MC}_p + \text{MEC} = 6 + q + q = 6 + 2q\) ✓. Privado: \(30 - 2q = 6 + q \Rightarrow q^p = 8\). Social: \(30 - 2q = 6 + 2q \Rightarrow q^* = 6\). \(\text{MEC}(6) = 6\), logo \(t^* = 6\). Verificação: produtor com \(t = 6\) resolve \(30 - 2q = 12 + q \Rightarrow q = 6 = q^*\). ✓ Triângulo de Harberger (perda de bem-estar do não-imposto): área entre \(\text{MC}_s\) e \(P\) entre \(q^*\) e \(q^p\), \(= \frac{1}{2} \cdot (q^p - q^*) \cdot [\text{MC}_s(q^p) - P(q^p)] = \frac{1}{2} \cdot 2 \cdot [22 - 14] = 8\) — em milhares de unidades de bem-estar.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno ignora externalidade. Item (b)(i)/(iii): erro algébrico (sinais ou divisão). Item (d)(i): <strong>erro pedagógico clássico</strong> — avaliar MEC no privado. Pigou pede ótimo. Item (d)(iii): aluno confunde "imposto" com "custo total social".</p>
+      <p><strong>4. Extensão.</strong> Generalizações: imposto não-linear \(t(q)\) quando MEC é não-linear. Em segundo-melhor (informação imperfeita ou múltiplas externalidades), \(t^*\) deixa de coincidir com \(\text{MEC}(q^*)\) — Lipsey-Lancaster (1956). Aplicação: imposto sobre carbono no Canadá (federal carbon pricing 2019+) e Suécia (1991, primeiro do mundo). EU ETS é versão descentralizada via cap-and-trade.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟢. Distratores plausíveis. Item (d) é o mais formativo — separa quem entendeu Pigou de quem decorou \(t = \text{MEC}\). <strong>Sem risco residual.</strong> Aluno que faz tudo deve sair com \(t^* = \text{MEC}(q^*)\) na ponta da língua.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Coase em barganha bilateral: independência da atribuição</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Duas firmas vizinhas: <strong>A produz</strong> com receita marginal constante \(P^A = 16\) (preço fixo), \(\text{MC}^A(q_A) = 2 q_A\). A operação de A gera fumaça unitária linear que reduz lucro de <strong>B</strong> (restaurante a céu aberto) em \(\text{MEC}(q_A) = 4\) por unidade (constante). Custos de transação são zero; direitos de propriedade serão atribuídos como descrito em cada caso.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Sem barganha (A produz livremente, ignora dano em B), o output de A é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \(q^p_A = 4\): \(16 = 2q_A \Rightarrow q^p_A = 8\) — alternativa com cálculo errado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(q^p_A = 8\): \(P^A = \text{MC}^A \Rightarrow 16 = 2q_A \Rightarrow q^p_A = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(q^p_A = 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \(q^p_A = 0\) (B obriga A a parar).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> O nível socialmente ótimo \(q^*_A\) (igualando \(P^A = \text{MC}^A + \text{MEC}\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) \(q^*_A = 8\) (mesmo do privado).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(q^*_A = 6\): \(16 = 2 q_A + 4 \Rightarrow q_A = 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(q^*_A = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) \(q^*_A = 12\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> <strong>Caso 1: B detém o direito ao ar limpo.</strong> A precisa pagar B para tolerar emissões. Em equilíbrio Coase com barganha sem fricção:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) A não opera (\(q_A = 0\)) — B sempre rejeita.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) A opera no nível privado \(q^p_A = 8\); B pega o lucro extra de A.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) A opera no nível socialmente ótimo \(q^*_A = 6\): A paga B por unidade um valor entre \(\text{MEC} = 4\) (mínimo aceitável por B) e lucro adicional de A \(= 16 - 2q_A\) (máximo pagável por A). Curvas se cruzam quando \(16 - 2q_A = 4 \Rightarrow q_A = 6 = q^*_A\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Resultado depende de quem barganha primeiro.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> <strong>Caso 2: A detém o direito a poluir.</strong> B paga A para reduzir output. Em equilíbrio Coase:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) A opera no nível privado \(q^p_A = 8\); B nada paga.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) A opera no nível socialmente ótimo \(q^*_A = 6\): B paga A para reduzir cada unidade um valor entre lucro perdido por A \(= 16 - 2q_A\) e dano evitado em B \(= 4\). Reduções valem enquanto \(16 - 2q_A &lt; 4 \Leftrightarrow q_A &gt; 6\). A reduz até \(q_A = 6 = q^*_A\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) A não reduz porque já tem o direito.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) A reduz a 0 e cobra de B.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A comparação dos dois casos ilustra:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Coase falha — atribuição de direitos importa.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Independência da alocação Pareto-eficiente em relação à atribuição inicial dos direitos (sob direitos bem-definidos, custos de transação zero, sem efeito-renda relevante). <strong>O que muda entre os dois casos é apenas <em>quem paga quem</em>, não o nível final \(q^*_A = 6\)</strong>.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) A sempre ganha mais na barganha.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) B sempre ganha mais na barganha.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> Coase (1960) prova que sob 3 hipóteses (direitos bem-definidos, custos de transação zero, sem efeito-renda relevante) a barganha privada gera alocação Pareto-eficiente, <strong>independente</strong> da atribuição inicial de direitos. <strong>A redistribuição dos lucros muda; a alocação real (output) não.</strong></p>
+      <p><strong>2. Derivação.</strong> Sem barganha: \(q^p_A = P^A/(\text{coef. MC}) = 16/2 = 8\). Socialmente ótimo: \(q^*_A\) tal que \(P^A = \text{MC}^A + \text{MEC} \Rightarrow 16 = 2q_A + 4 \Rightarrow q^*_A = 6\). <strong>Caso 1 (B tem direito):</strong> A paga B por unidade entre \(\text{MEC} = 4\) (mínimo aceitável por B) e \(P^A - \text{MC}^A = 16 - 2q_A\) (máximo pagável por A). Continuar a operação enquanto a 2ª expressão > 1ª: \(16 - 2q_A > 4 \Leftrightarrow q_A < 6\). Em \(q_A = 6\), igualdade — A para. <strong>Caso 2 (A tem direito):</strong> B paga A por unidade reduzida entre \(\text{lucro perdido de A} = 16 - 2q_A\) e \(\text{MEC} = 4\). Reduzir vale enquanto 1ª < 2ª: \(16 - 2q_A < 4 \Leftrightarrow q_A > 6\). Em \(q_A = 6\), igualdade — B para de pagar. <strong>Os dois casos chegam a \(q^*_A = 6\).</strong> Diferença: em Caso 1, A paga B; em Caso 2, B paga A. Eficiência alocativa indep. de direitos; redistribuição depende.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): erro algébrico — \(16/2 = 8\), não 4. Item (b)(i): aluno ignora MEC. Item (c)(i): aluno acha que B sempre rejeita — não, B aceita se compensação \(\ge\) dano. Item (c)(iv): aluno confunde Coase com barganha de Nash de jogo geral; sob hipóteses padrão, ordem da barganha não importa. Item (e)(i): "atribuição importa" é a tese <strong>anti-Coase</strong> — falsa sob hipóteses padrão.</p>
+      <p><strong>4. Extensão.</strong> <strong>Onde Coase falha na prática:</strong> custos de transação positivos (1.000 vizinhos), direitos mal-definidos (clima global), free-rider em barganha (cada vizinho ganha pouco). Não-zero efeito-renda também quebra independência absoluta — Hovenkamp (1999) detalha. Aplicação prática: poluição transfronteiriça pré-Acid Rain Program (US 1990) tinha alta fricção; o Acid Rain Program institucionalizou direitos via cap-and-trade. Schmalensee-Stavins (2013, <em>J. Economic Perspectives</em>) documentam custos 4× menores. <strong>Aula 8</strong> introduz informação assimétrica.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo Coase em economia bilateral simples + interpretação. Itens (c) e (d) testam a mesma ideia em duas direções de direitos — verificação dupla da independência. Distrator (e)(i) é o mais formativo — força aluno a articular <em>por que</em> alocação não depende. <strong>Tradeoff de tempo:</strong> ~12 min, dentro do alvo. <strong>Risco residual:</strong> mínimo; cálculos lineares simples.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Samuelson + comparação Nash subprovisão</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia com \(I = 3\) consumidores <strong>idênticos</strong>. Preferências quase-lineares \(u^i(x^i, G) = x^i + 3 \ln G\) (com \(G &gt; 0\)). Bem público com tecnologia linear: \(\text{TMT}_{G,x} = 1\) (custo marginal constante de 1 unidade de bem privado por 1 unidade de bem público). Dotações \(\omega^i\) suficientemente grandes para ignorar restrição de não-negatividade interna.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A taxa marginal de substituição \(\text{TMS}^i_{G,x} = u^i_G/u^i_x\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(\text{TMS}^i = 3\) (constante).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(\text{TMS}^i = 3/G\) (decrescente em \(G\) — bem público com utilidade marginal decrescente).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(\text{TMS}^i = G/3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) \(\text{TMS}^i = \ln G\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Aplicando a condição de Samuelson \(\sum_i \text{TMS}^i = \text{TMT}\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(G^* = 3\): cada agente exige \(3/G = 1 \Rightarrow G = 3\) individualmente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(G^* = 9\): \(\sum_{i=1}^3 (3/G) = 1 \Rightarrow 9/G = 1 \Rightarrow G^* = 9\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(G^* = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) \(G^*\) indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Em provisão voluntária Nash (cada agente escolhe \(g^i\) tomando \(g_{-i}\) como dado), a CPO é \(\text{TMS}^i = 1\) <strong>individualmente</strong>. Em equilíbrio simétrico onde todos contribuem positivamente, isso implica:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(G^N = 9 = G^*\) (Nash coincide com Samuelson).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(G^N &gt; G^*\) (super-provisão).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(G^N = 3\): cada agente, ao decidir \(g^i\), iguala \(\text{TMS}^i = 1\), o que dá \(3/G = 1 \Rightarrow G = 3\). Como \(G\) é o nível agregado e a CPO é a mesma para os 3, qualquer perfil de \((g^1, g^2, g^3)\) com soma 3 é equilíbrio Nash.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) \(G^N = 27\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A razão \(G^N/G^* = 3/9 = 1/3\). Isso ilustra:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) Provisão voluntária é eficiente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) Free-rider clássico: provisão Nash entrega \(1/I\) do ótimo de Samuelson em economia simétrica com Bernoulli quase-linear logarítmica. Em geral, \(G^N &lt; G^*\) por subprovisão estrita.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) Free-rider não é problema com agentes idênticos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) Sub-provisão é sempre maior que 50%.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Para implementar \(G^* = 9\), o mecanismo de Lindahl exige preços personalizados \(\tau^i\) tais que cada agente, sob restrição \(x^i + \tau^i G \le \omega^i\), escolha \(G = 9\) voluntariamente. Os preços de Lindahl em equilíbrio simétrico são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) \(\tau^i = 1\) para cada agente (igual à TMT total).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) \(\tau^i = 1/3\) para cada agente: cada CPO \(\text{TMS}^i = \tau^i\) com \(\text{TMS}^i = 3/9 = 1/3\); soma \(\sum_i \tau^i = 3 \cdot 1/3 = 1 = \text{TMT}\) ✓.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) \(\tau^i = 3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) \(\tau^i\) indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> A condição de Samuelson \(\sum_i \text{TMS}^i = \text{TMT}\) é a regra-mestra de eficiência para bem público: a <strong>soma vertical</strong> das valorações marginais iguala o custo marginal social. Provisão voluntária Nash entrega \(\text{TMS}^i = \text{TMT}\) <em>agente por agente</em>, gerando subprovisão \(G^N &lt; G^*\). Lindahl com preços personalizados \(\tau^i = \text{TMS}^i\) (em equilíbrio) e \(\sum \tau^i = \text{TMT}\) implementa Samuelson.</p>
+      <p><strong>2. Derivação.</strong> \(u = x + 3\ln G\), \(u_x = 1\), \(u_G = 3/G\). \(\text{TMS}^i = (3/G)/1 = 3/G\). Samuelson: \(3 \cdot (3/G) = 1 \Rightarrow G^* = 9\). Nash: cada agente \(\text{TMS}^i = 3/G = 1 \Rightarrow G^N = 3\). Lindahl em equilíbrio simétrico: \(\tau^i = \text{TMS}^i(G^*) = 3/9 = 1/3\); \(\sum_i \tau^i = 1 = \text{TMT}\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno acha que \(\text{TMS}\) é constante porque \(u\) é "linear-ish" — esquece que \(u_G = 3/G\) decresce. Item (b)(i): aluno aplica regra de bem privado \(\text{TMS}^i = \text{TMT}\). Item (c)(i): aluno confunde Nash com Samuelson — clássico. Item (d)(iii): "free-rider não é problema com idênticos" é falso — simetria não elimina free-rider, só faz a subprovisão simétrica. Item (e)(i): aluno aplica \(\tau^i = \text{TMT}\) (regra de bem privado individual).</p>
+      <p><strong>4. Extensão.</strong> Bergstrom-Blume-Varian (1986, <em>J. Public Economics</em> 29(1): 25–49, <a href="https://doi.org/10.1016/0047-2727(86)90024-1" target="_blank" rel="noopener">DOI 10.1016/0047-2727(86)90024-1</a>) provaram resultado mais forte: com agentes assimétricos (rendas diferentes) e preferências normalmente convexas, <strong>um único agente (o mais rico) provê todo o bem público</strong> em equilíbrio Nash; os pequenos pegam carona perfeito. Aplicações: NATO, Wikipedia, open-source. Aula 9 introduz mecanismos de matching que abordam coordenação descentralizada com revelação. Quem desafiar Lindahl com revelação estratégica vai para VCG (Exercício 5).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto + interpretação econômica. Distratores plausíveis em (a) (constante vs. decrescente) e (b) (regra bem privado vs. público). Item (c) é o mais formativo. Item (e) testa Lindahl como descentralização de Samuelson. <strong>Tradeoff de tempo:</strong> ~14 min, dentro do alvo. <strong>Risco residual:</strong> baixo; aluno que fez Aula 1 sabe \(u_G/u_x\); aluno que fez Aula 2 sabe Lagrangiano.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Cap-and-trade vs. imposto Pigou: equivalência sob certeza</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Indústria com 2 firmas, A e B (não competem entre si), ambas emitem poluente uniforme. Curvas de <strong>custo marginal de redução</strong>: Firma A: \(\text{MAC}_A(r_A) = 2 r_A\); Firma B: \(\text{MAC}_B(r_B) = r_B\). Total de emissões sem regulação: 30 toneladas (15 cada). Governo define meta agregada de redução: \(R = 15\) toneladas.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> <strong>Cenário 1 — Imposto Pigou uniforme \(t\).</strong> Cada firma reduz até \(\text{MAC} = t\). Para induzir \(R_A + R_B = 15\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(t = 5, R_A = 2{,}5, R_B = 5\) (total = 7,5; meta não atingida).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(t = 10\): \(2 r_A = 10 \Rightarrow r_A = 5\); \(r_B = 10\); soma = 15 ✓.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(t = 15\) com \(R_A = 7{,}5, R_B = 15\) (total = 22,5; meta excedida).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(t = 30\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> <strong>Cenário 2 — Cap-and-trade.</strong> Governo distribui 15 permissões totais (7,5 cada firma inicialmente). Firmas trocam permissões a preço \(p\). Em equilíbrio competitivo, cada firma reduz emissões até \(\text{MAC} = p\). O preço de equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) \(p = 5\): meta não atingida.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) \(p = 10\): mesmo cálculo do (a). \(r_A = 5, r_B = 10\); soma = 15 ✓. <strong>A é compradora de permissões</strong> (recebeu 7,5 e reduziu só 5; precisa de 2,5 a mais); <strong>B é vendedora</strong> (recebeu 7,5 e reduziu 10; sobra-lhe 2,5).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) \(p = 15\), com mesma alocação que (a)(iii).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) \(p\) depende da atribuição inicial.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A equivalência \(t = p = 10\) entre Pigou e cap-and-trade ilustra:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Cap-and-trade é mais caro que Pigou.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Sob certeza (curvas MAC conhecidas), o equivalente preço-quantidade vale: imposto Pigou ótimo gera mesma alocação que cap-and-trade com cap apropriado. Ambos descentralizam corretamente o critério de "custo total mínimo de mitigação". Weitzman (1974, <em>Review of Economic Studies</em> 41(4), 477–491, <a href="https://doi.org/10.2307/2296698" target="_blank" rel="noopener">DOI 10.2307/2296698</a>) detalha incerteza.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Cap-and-trade só funciona com firmas idênticas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Imposto Pigou é sempre Pareto-superior.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> <strong>Custo total de mitigação no equilíbrio (Cenário 2 com cap-and-trade):</strong></div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) \(\text{Total} = 12{,}5 + 50 = 62{,}5\) (área errada de \(\text{MAC}_A\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) \(\text{Total} = 75\): \(\int_0^5 2 r dr = r^2|_0^5 = 25\); \(\int_0^{10} r dr = r^2/2|_0^{10} = 50\). Total \(= 25 + 50 = 75\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Total = 100.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Total = 150 (cada firma reduz 7,5 sem trocar).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Comparando o custo total da regulação por <strong>comando-controle uniforme</strong> (cada firma reduz \(R/I = 7{,}5\)) com o custo total <strong>por cap-and-trade</strong>:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) Comando-controle é sempre mais barato.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) Cap-and-trade gera economia: comando-controle force \(\int_0^{7{,}5} 2 r dr + \int_0^{7{,}5} r dr = 56{,}25 + 28{,}125 = 84{,}375\); cap-and-trade entrega 75 (calculado em (d)). Economia ≈ 9,4 unidades, ou ~11%, porque a firma com MAC menor (B) reduz mais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) Os custos são iguais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) Comando-controle não é Pareto-eficiente — verdadeiro mas não responde à pergunta.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> Sob certeza nos custos de mitigação, <strong>imposto Pigou e cap-and-trade são equivalentes</strong> em alocação e custo total. Ambos atingem o critério Pareto-eficiente "todas as firmas igualam custo marginal de mitigação ao mesmo nível", o que implica firma com MAC menor reduzir mais. Comando-controle uniforme falha esse critério e gera custo total maior. Sob incerteza, há tradeoff (Weitzman 1974).</p>
+      <p><strong>2. Derivação.</strong> Pigou: \(\text{MAC}_A = \text{MAC}_B = t \Rightarrow 2r_A = r_B = t\). Total \(r_A + r_B = t/2 + t = 3t/2 = 15 \Rightarrow t = 10\). Logo \(r_A = 5, r_B = 10\). Cap-and-trade: equilíbrio competitivo no mercado de permissões iguala MAC ao preço \(p = 10\); mesma alocação. Custo total: \(\int_0^5 2r\,dr + \int_0^{10} r\,dr = 25 + 50 = 75\). Comando-controle: \(\int_0^{7{,}5} 2r\,dr + \int_0^{7{,}5} r\,dr = 56{,}25 + 28{,}125 = 84{,}375\). Economia: 84,375 − 75 = 9,375 ≈ 11%. <strong>Cap-and-trade descentraliza eficientemente; comando-controle não.</strong></p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno usa \(t = 5\) sem checar que meta não é atingida. Item (b)(iv): aluno acha que cap-and-trade depende da atribuição (não, sob hipóteses padrão de Coase). Item (c)(i): "cap-and-trade mais caro que Pigou" — falso sob certeza. Item (d): aluno erra cálculo de área (esquece que inclinação 2 dobra). Item (e)(i): aluno inverte a comparação.</p>
+      <p><strong>4. Extensão.</strong> Sob <strong>incerteza</strong> nos custos marginais de mitigação ou no benefício marginal social, a escolha entre Pigou (preço) e cap-and-trade (quantidade) depende da inclinação relativa das curvas. <strong>Teorema de Weitzman (1974):</strong> se MAC mais inclinado que MB, prefer impostos; se MB mais inclinado, prefer caps. Aplicação: poluição local com curva de dano íngreme (saúde) → cap. Carbono global → imposto frequentemente preferido. EU ETS adotou cap; Suécia adotou imposto direto sobre carbono (1991, junto com Finlândia 1990 e Holanda como pioneiros; hoje com a maior tarifa do mundo, ~$130/tCO\(_2\)). <strong>Aula 8</strong> introduz informação assimétrica como camada adicional.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo + interpretação Pigou-vs-cap-vs-comando-controle. Item (c) cita Weitzman 1974 — referência DOI verificada. <strong>Tradeoff de tempo:</strong> ~14 min — no topo do alvo. <strong>Risco residual:</strong> moderado — item (d) exige integração simples mas atenção ao fator 2 da inclinação.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">VCG (Clarke pivot) com 3 agentes: cálculo da decisão e transferências</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Comunidade com 3 agentes (\(I = 3\)) decide se constrói uma ponte. Decisão pública \(d \in \{\text{sim}, \text{não}\}\). Valorações privadas (em moeda):</p>
+      <ul>
+        <li>Agente A: \(v^A(\text{sim}) = 10, v^A(\text{não}) = 0\) (quer ponte).</li>
+        <li>Agente B: \(v^B(\text{sim}) = 6, v^B(\text{não}) = 0\) (quer ponte, com menos intensidade).</li>
+        <li>Agente C: \(v^C(\text{sim}) = -20, v^C(\text{não}) = 0\) (não quer ponte).</li>
+      </ul>
+      <p>Custo da ponte (conta agregada): \(K = 0\) (já incluso nas valorações). Aplica-se VCG na versão Clarke pivot: \(t^i = h^i(\hat v_{-i}) - \sum_{j \neq i} \hat v^j(d^*)\), com \(h^i(\hat v_{-i}) = \max_d \sum_{j \neq i} \hat v^j(d)\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A decisão socialmente ótima \(d^* = \arg\max_d \sum_i v^i(d)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) \(\sum v^i(\text{sim}) = 10 + 6 + (-20) = -4\); \(\sum v^i(\text{não}) = 0\). Logo \(d^* = \text{não}\) (\(0 &gt; -4\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) \(d^* = \text{sim}\) porque 2 dos 3 querem.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) \(d^* = \text{sim}\) porque a soma de valorações positivas (16) > única negativa (20).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) Indeterminado por empate.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Calcule \(h^A(\hat v_{-A}) = \max_d \sum_{j \in \{B,C\}} \hat v^j(d)\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(h^A = 0\): \(\sum_{j\neq A}(\text{sim}) = 6 + (-20) = -14\); \(\sum_{j\neq A}(\text{não}) = 0\). Máximo = 0.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(h^A = 16\) (sem agente C).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(h^A = -14\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(h^A = 6\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> A transferência de A é \(t^A = h^A - \sum_{j \neq A} v^j(d^*)\). Substituindo:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(t^A = 16 - 0 = 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(t^A = 0 - 0 = 0\) (\(d^* = \text{não}\), todos \(v^j(\text{não}) = 0\); \(h^A = 0\) calculado em (b)). <strong>A não paga nada — sua presença não foi pivot.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(t^A = -10\) (A é "compensado").</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) \(t^A = -16\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Para o agente C, calcule \(h^C(\hat v_{-C}) = \max_d \sum_{j \in \{A,B\}} \hat v^j(d)\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(h^C = -20\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(h^C = 16\): \(\sum_{j\neq C}(\text{sim}) = 10 + 6 = 16\); \(\sum_{j\neq C}(\text{não}) = 0\). Máximo = 16.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(h^C = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) \(h^C = 4\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> A transferência de C é \(t^C = h^C - \sum_{j \neq C} v^j(d^*)\). Substituindo:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) \(t^C = 16 - 0 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) \(t^C = 16 - 0 = 16\) (\(d^* = \text{não}\); \(\sum_{j\neq C}(\text{não}) = 0\); \(h^C = 16\)). <strong>C paga 16 — ele é pivot: sem sua oposição, a ponte seria construída e os outros teriam ganho 16. Ele "compensa" os outros pelo dano que sua oposição causou na alocação social.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) \(t^C = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) \(t^C = -16\) (C é compensado).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> No mecanismo VCG (Clarke pivot), cada agente paga <strong>somente se sua presença mudou a decisão</strong>. O pagamento é o "custo externo" (em valoração) que sua oposição/apoio causou aos outros. A propriedade central: <strong>declarar verdadeiramente é estratégia dominante</strong>, porque \(h^i(\hat v_{-i})\) descola a declaração do agente do seu pagamento — maximizar utilidade líquida equivale a maximizar critério social.</p>
+      <p><strong>2. Derivação.</strong> Ótimo: comparar \(\sum v^i(\text{sim}) = 10 + 6 - 20 = -4\) vs. \(\sum v^i(\text{não}) = 0\). Como \(0 &gt; -4\), \(d^* = \text{não}\). <strong>Pivot test:</strong> sem A, decisão é \(\arg\max(\text{sim} = 6 - 20 = -14, \text{não} = 0)\) = não. <strong>Mesma decisão</strong> com ou sem A — A não foi pivot. \(t^A = 0\). Sem B, decisão é \(\arg\max(\text{sim} = 10 - 20 = -10, \text{não} = 0)\) = não. <strong>Mesma decisão</strong> com ou sem B — B não foi pivot. \(t^B = 0\). Sem C, decisão é \(\arg\max(\text{sim} = 10 + 6 = 16, \text{não} = 0)\) = sim. <strong>Decisão diferente</strong> com ou sem C — C foi pivot. \(t^C = h^C - \sum_{j\neq C}v^j(d^*) = 16 - 0 = 16\). C paga 16. <strong>Verdade-dominância.</strong></p>
+      <p><strong>3. Armadilha.</strong> Item (a)(ii): aluno aplica regra de "maioria simples" (2 querem). VCG é regra de <strong>soma das valorações</strong>, não votação. Item (a)(iii): aluno soma só valores positivos. Item (b)(ii): aluno esquece de incluir C no cálculo de \(h^A\). Item (e)(iv): aluno acha que C é "compensado" pela perda — não, ele paga porque sua oposição <strong>mudou a decisão</strong>.</p>
+      <p><strong>4. Extensão.</strong> Em geral, com \(I\) agentes, <strong>só os agentes pivot pagam</strong>; os não-pivot pagam zero. Receita do mecanismo é \(\sum_i t^i \ge 0\) (nunca negativa em Clarke pivot), mas tipicamente <strong>não-balanceada</strong>. Para implementação real, governo absorve residual ou usa outra fonte. <strong>Limitação de domínio:</strong> Gibbard-Satterthwaite + Roberts (1979) — em domínios de preferência irrestritos, mecanismos dominantes são ditatoriais. VCG escapa porque opera em domínio quase-linear. <strong>Aplicações reais:</strong> leilão de segundo preço (Vickrey 1961) em propaganda Google AdWords (até ~2019); FCC spectrum auctions (US 1994+, &gt;US$ 100bi via mecanismos VCG-derivados). <strong>Aulas 8–9:</strong> Akerlof, Spence, Rothschild-Stiglitz lidam com info assimétrica via mecanismos relacionados a VCG.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Cálculo VCG completo em economia 3-agentes — o exemplo canônico para internalizar pivot. Item (e) é o mais formativo — separa quem entendeu dominância de quem decorou fórmula. <strong>Tradeoff de tempo:</strong> ~16 min — médio para 🔴. <strong>Risco residual:</strong> baixo se aluno fez Bloco 4 do durante-aula. <strong>Decisão pedagógica explícita:</strong> valor de \(K = 0\) está incluído nas valorações para simplificar — em mecanismo real, \(K\) entraria como termo subtraído na soma. Justificada porque o ponto é o cálculo do pivot.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Tragédia dos comuns (Hardin 1968) + Ostrom: governance institucional</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Lago compartilhado por \(I = 4\) pescadores. Cada pescador escolhe esforço \(e^i \ge 0\) (horas de pesca). Captura individual: \(c^i = e^i \cdot S(E)\), onde \(E = \sum_i e^i\) é o esforço total e \(S(E) = 100 - E\) é o "estoque pesqueiro disponível por hora" (decrescente em \(E\)). Custo unitário do esforço: \(w = 10\) por hora. Lucro individual: \(\pi^i(e^i, e_{-i}) = e^i(100 - E) - 10 e^i\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> No equilíbrio Nash não-cooperativo (cada pescador maximiza \(\pi^i\) tomando \(e_{-i}\) como dado), a CPO é \(\partial \pi^i/\partial e^i = 100 - E - e^i - 10 = 0\). Em equilíbrio simétrico (\(e^i = E/4 = e^*\)):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) \(e^* = 5, E^N = 20\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) \(e^* = 18, E^N = 72\): substituindo \(e^i = E/4\) na CPO: \(90 - E - E/4 = 0 \Rightarrow E (5/4) = 90 \Rightarrow E^N = 72\); \(e^* = 18\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) \(e^* = 25, E^N = 100\) (esforço máximo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) \(e^* = 0\) (ninguém pesca).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> O <strong>socialmente ótimo</strong> maximiza lucro <strong>agregado</strong> \(\Pi = E \cdot S(E) - w \cdot E = E(100 - E) - 10 E\). CPO em \(E\): \(100 - 2E - 10 = 0 \Rightarrow E^* = 45\). Em alocação simétrica:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) \(E^* = 72\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) \(E^* = 45, e^* = 11{,}25\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) \(E^* = 100\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) \(E^* = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> A razão \(E^N/E^* = 72/45 = 1{,}6\) ilustra:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Eficiência do equilíbrio Nash.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Tragédia dos comuns (Hardin 1968): Nash não-cooperativo entrega \(E^N &gt; E^*\) — sobreesforço de 60% relativo ao ótimo. Cada pescador ignora a externalidade que seu esforço impõe aos outros (reduz estoque disponível).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) Sub-pesca por causa de congestão.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) O modelo é mal-especificado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> <strong>Solução tipo Pigou (taxa por hora de esforço).</strong> Para induzir \(E = E^* = 45\) via taxa \(t\), cada pescador resolve \(\max e^i (100 - E) - (10 + t) e^i\). CPO: \(100 - E - e^i - 10 - t = 0\). Em equilíbrio simétrico com \(E = 45\) e \(e^i = 11{,}25\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) \(t = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) \(t = 33{,}75\): \(100 - 45 - 11{,}25 - 10 - t = 0 \Rightarrow t = 33{,}75\). Imposto sobre cada hora de esforço internaliza a externalidade de congestão.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) \(t = 90\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) \(t = 100\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> <strong>Solução tipo Ostrom (governance institucional).</strong> Em vez de imposto centralizado, comunidade pesqueira coordena entre si: estabelece quota agregada (\(E^* = 45\)), divide entre membros (\(11{,}25\) cada), monitora cumprimento via vigilância mútua, sanciona violações graduadamente. <strong>Comparada com a solução Pigou:</strong></div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Solução Ostrom é estritamente Pareto-pior porque exige custos de monitoramento.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Solução Ostrom pode ser Pareto-superior à Pigou se (a) custos de monitoramento mútuo são baixos (comunidade pequena, todos se conhecem), (b) as taxas de Pigou seriam capturadas por governo distante e/ou ineficiente, ou (c) o lago tem características específicas (sazonalidade, espécies) que regulação centralizada não capta. Ostrom (1990) documentou empiricamente: em escala local, governance comunitária supera regulação tipo Pigou em vários casos; em escala global (clima), fica difícil. Análise caso-a-caso.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Solução Ostrom é equivalente a Pigou.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Solução Ostrom não funciona em prática.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> A "tragédia dos comuns" (Hardin 1968) prevê sobreexploração de recurso comum sob acesso aberto: cada agente ignora a externalidade do seu uso sobre os outros. Soluções clássicas: Pigou (taxa centralizada que internaliza congestão) e Coase (atribuição de direitos + barganha). Ostrom (1990, Nobel 2009) documentou empiricamente que <strong>governance institucional descentralizada</strong> pode ser uma quarta via — funciona quando comunidade é pequena, monitoramento mútuo é viável, e regulação centralizada seria ineficiente.</p>
+      <p><strong>2. Derivação.</strong> Lucro individual: \(\pi^i = e^i(100 - E) - 10 e^i\). CPO Nash: \(100 - E - e^i - 10 = 0\). Em simétrico (\(e^i = E/4\)): \(90 - E - E/4 = 0 \Rightarrow E^N = 72\); \(e^* = 18\). Lucro agregado: \(\Pi = E(100 - E) - 10 E\). CPO ótimo: \(100 - 2E - 10 = 0 \Rightarrow E^* = 45\). Razão \(E^N/E^* = 72/45 = 1{,}6\). <strong>Imposto Pigou para induzir \(E^*\) — passo de simetria explícito.</strong> Cada pescador, em sua maximização individual, toma \(e_{-i}\) como dado e escolhe \(e^i\) satisfazendo CPO modificada \(100 - E - e^i - 10 - t = 0\). Pela simetria do problema com \(n=4\) agentes idênticos, em equilíbrio simétrico cada um escolhe o mesmo \(e^i = e^*\), de modo que \(E = 4e^*\) — essa é a condição de auto-consistência (cada agente, em sua melhor resposta, replica o nível agregado induzido). Substituindo \(e^i = E/4\) na CPO: \(100 - E - E/4 - 10 - t = 0 \Rightarrow 90 - (5/4)E - t = 0\). Avaliando no alvo \(E = E^* = 45\) (logo \(e^i = 11{,}25\)): \(90 - (5/4)(45) - t = 0 \Rightarrow 90 - 56{,}25 - t = 0 \Rightarrow t = 33{,}75\). <strong>Verificação direta</strong> (sem usar a forma simétrica reduzida): \(100 - 45 - 11{,}25 - 10 - t = 0 \Rightarrow t = 33{,}75\) ✓. A álgebra fecha em todos os passos.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno usa regra de soma sem CPO Nash. Item (a)(iii): aluno acha que esforço máximo é socialmente ótimo. Item (c)(iii): aluno inverte a tragédia (sub-pesca em vez de sobre-pesca). Item (d)(i)/(iii): aluno calcula \(t\) em \(E^N\) (privado) em vez de \(E^*\) (ótimo). Item (e)(i)/(iv): aluno aplica regra "centralizado é sempre melhor" — contradiz Ostrom + Nobel 2009.</p>
+      <p><strong>4. Extensão.</strong> <strong>Hardin (1968)</strong> descreveu a dinâmica de sobreuso em acesso aberto ("tragédia dos comuns"); <strong>Ostrom (1990)</strong> documentou que comunidades reais frequentemente saem do acesso aberto via instituições locais, evitando assim a dinâmica de Hardin. Os 8 princípios de Ostrom (limites bem-definidos, regras adaptadas, monitoramento, sanções graduadas, resolução de conflitos local, autonomia reconhecida, organização aninhada, regras de saída/entrada) estabelecem framework. <strong>Aplicações brasileiras:</strong> colônias de pescadores artesanais no Pará (manejo de pirarucu via "acordos de pesca", documentado por Almeida et al. 2009 para o Médio Solimões); irrigação compartilhada em comunidades quilombolas. <strong>Limites:</strong> common-pool em escala global (clima, biodiversidade, oceano) escapa governance local — exige Pigou-Coase com mecanismos internacionais (Acordo de Paris, Protocolo de Kyoto) ou cap-and-trade (EU ETS para CO\(_2\)). <strong>Aula 8</strong> detalha info assimétrica como camada adicional para mecanismos centralizados.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Modelo padrão de tragédia dos comuns + solução Pigou + reconhecimento Ostrom. Item (e) é o mais conceitualmente sutil. <strong>Tradeoff de tempo:</strong> ~18 min, no topo do alvo. <strong>Risco residual:</strong> moderado — item (b) exige distinguir soma agregada de soma simétrica; item (d) requer cuidado em substituir corretamente \(E\) e \(e^i\) na CPO modificada. <strong>Decisão pedagógica explícita:</strong> modelo simétrico é simplificação — heterogeneidade de tecnologia entre pescadores quebra simetria mas não muda qualitativamente o resultado.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios avaliativos (6 exercícios, ~28 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>11/06 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 10/06 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 8</strong> (Seleção adversa + Risco moral) é liberada na madrugada de <strong>04/06</strong>. <strong>Pré-monitoria 4</strong> com Alberto abre <strong>sáb 30/05</strong> (cobre Aulas 6 e 7). Tudo da Aula 7 fecha em <strong>quarta 10/06 18h</strong>; gabarito quinta 11/06 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-07-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(7, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-06-11T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
