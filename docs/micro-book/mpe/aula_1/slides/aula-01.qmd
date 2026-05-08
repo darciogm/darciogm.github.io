@@ -732,7 +732,7 @@ Próximo slide: veja com seus olhos — $\rho$ deslizando no eixo, as curvas mor
 <iframe src="graficos/ces-continua.html" title="CES contínua: slider em rho" class="graph-iframe-full" scrolling="no"></iframe>
 
 ::: {.graph-caption}
-Slider em $\rho \in [-5,\ 0.95]$. Observe: em $\rho \to -\infty$ as curvas formam **L**; em $\rho = 0$ são as **hipérboles** de Cobb-Douglas; em $\rho \to 1$ colapsam em **retas**. Um só parâmetro, três famílias.
+Slider em $\rho \in [-5,\ 0{,}95]$. Observe: em $\rho \to -\infty$ as curvas formam **L**; em $\rho = 0$ são as **hipérboles** de Cobb-Douglas; em $\rho \to 1$ colapsam em **retas**. Um só parâmetro, três famílias.
 :::
 
 <!-- layout: 3 opção — grafico em slide separado. Núcleo pedagógico do bloco 2: aqui deixo 2 min de exploração. -->
@@ -826,12 +826,12 @@ Se $u = v(x_1) + x_2$: efeito-renda no bem 1 é **zero** → Marshalliana = Hick
 Teste a cadeia inteira em 30 segundos.
 :::
 
-**Função:** $u(x_1, x_2) = x_1^{0.4}\, x_2^{0.6}$.  \
+**Função:** $u(x_1, x_2) = x_1^{0{,}4}\, x_2^{0{,}6}$.  \
 **Ponto:** $(4, 9)$. Calcule $\text{TMS}$.
 
 ::: {.fragment}
 $$
-\text{TMS} = \tfrac{\alpha}{1-\alpha} \cdot \tfrac{x_2}{x_1} = \tfrac{0.4}{0.6} \cdot \tfrac{9}{4} = \boxed{1.5}.
+\text{TMS} = \tfrac{\alpha}{1-\alpha} \cdot \tfrac{x_2}{x_1} = \tfrac{0{,}4}{0{,}6} \cdot \tfrac{9}{4} = \boxed{1{,}5}.
 $$
 :::
 
