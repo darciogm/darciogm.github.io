@@ -19,7 +19,7 @@ Calibre matemático e fact-checking **muito bons**: 8 DOIs canônicos batem com 
 
 ## 🔴 Blockers (1)
 
-### B1. Q4 pós-aula tem duas alternativas numericamente idênticas; só uma considerada correta — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### B1. Q4 pós-aula tem duas alternativas numericamente idênticas; só uma considerada correta — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** trocada a forma funcional de $\sqrt{G}$ para $\ln G$ — a coincidência "média = soma" para $I=2$ era estrutural na forma raiz (porque $\partial_G(c\sqrt G) = c/(2\sqrt G)$ e o fator $1/2$ converte $\sum c$ em $\bar c \cdot I/2 = \bar c$ quando $I=2$). Sob $\ln G$, $\partial_G(c \ln G) = c/G$ sem fator $1/2$: Samuelson dá $G^* = 6$ (soma $2+4=6$); "média errada" dá $G = 3$ (média $\bar a = 3$). Números distintos. Q5 e Lindahl recalibrados com $G^*=6$, $\tau^A = 1/3$, $\tau^B = 2/3$ — preços iguais aos anteriores por coincidência de razão $a^A/(a^A+a^B) = 1/3$.
 
@@ -41,7 +41,7 @@ O **gabarito reconhece o problema**: "(a) é resposta correta com justificativa 
 
 ## 🟡 Majors (7)
 
-### M1. Slide 7 (Pigou modelo parcial 2/2) estoura score de densidade — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M1. Slide 7 (Pigou modelo parcial 2/2) estoura score de densidade — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** quebrado em (1/3) [setup do modelo, intacto] + (2/3) [regra Pigou + cuidado pedagógico + eq-key + bridge para próximo] + (3/3) [exemplo numérico com 3 bullets + eq-punch terminal isolada]. Score do (2/3) ≈ 7,5 (header + parágrafo + eq-key + parágrafo + bridge); score do (3/3) ≈ 7,7 (header + parágrafo + 3 bullets + eq-punch). Ambos folgam dentro do teto 10.
 
@@ -62,7 +62,7 @@ O **gabarito reconhece o problema**: "(a) é resposta correta com justificativa 
 
 **Severidade:** **major** — viola regra explícita do CLAUDE.md. Aula 2 e 5 cumprem score sem exceção; Aula 7 não pode ficar de fora.
 
-### M2. Slide 21 (Samuelson derivação final) no limite alto da faixa apertada — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M2. Slide 21 (Samuelson derivação final) no limite alto da faixa apertada — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** isolada a `eq-punch` ("Bem privado: TMS=TMT… bem público: soma vertical") em slide próprio "Samuelson — leitura econômica (2/2)". Slide derivação (1/2) fica com header + parágrafo + display equation + parágrafo + eq-key boxed (score ≈ 9,2); slide (2/2) fica com header + eq-punch isolada (score ≈ 4,0). Padrão Shephard (Aula 2 slide 35).
 
@@ -84,7 +84,7 @@ A pré-aula tem **fallback graceful textual**: "Caso indisponível, use a versã
 
 **Severidade:** **major** — afeta operação real; não bloqueia release pedagógico mas bloqueia experiência do aluno.
 
-### M4. Q10 pós-aula com alternativa correta deliberadamente longa, sinalética — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M4. Q10 pós-aula com alternativa correta deliberadamente longa, sinalética — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** estendidas as 3 alternativas erradas com prosa adicional plausível-mas-equivocada (não filler vazio): (a) com 664 chars argumenta que Coase "falha imediatamente" + invoca aparato teórico Aumann-Shapley/núcleo; (c) com 833 chars defende "coordenação descentralizada espontânea" + cita literatura experimental fictícia plausível; (d) com 648 chars defende equivalência formal Pigou-Coase via teorema do bem-estar. Correta (b) mantida em 962 chars — tradeoff de comprimento dentro de fator 1,5x; eliminado o sinal "marque a longa".
 
@@ -98,7 +98,7 @@ O peer-review da própria questão registra: "alternativa longa correta é o pad
 
 **Severidade:** **major** — recorrente nas Aulas 7 (e em produção pode bias acerto 1ª da Q10 para cima sem refletir aprendizado real). A psicometria (`admin.html` tab) vai pegar alta discriminação inflada.
 
-### M5. Ex6(d) gabarito salta passo de equilíbrio simétrico Nash com taxa — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M5. Ex6(d) gabarito salta passo de equilíbrio simétrico Nash com taxa — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** adicionado bloco "Imposto Pigou para induzir $E^*$ — passo de simetria explícito" no passo 2 (Derivação) do gabarito, em ambos os arquivos (MD ↔ HTML). Argumento de auto-consistência ($e^i = e^*$, $E = 4e^*$) explicitado, seguido por substituição $e^i = E/4$ na CPO modificada, simplificação $90 - (5/4)E - t = 0$, avaliação em $E^* = 45$ entregando $t = 33{,}75$. Verificação direta também incluída (sem usar a forma reduzida) para mostrar consistência. Espelhamento MD↔HTML 1:1.
 
@@ -114,7 +114,7 @@ Aluno cuidadoso vai estranhar — a CPO **só vale se cada agente, em sua maximi
 
 **Severidade:** **major** — não é erro de cálculo, é ausência de rigor que aluno 🔴 vai detectar e questionar.
 
-### M6. Q8 pós-aula com explicação dentro da alternativa correta confusa de parsear — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M6. Q8 pós-aula com explicação dentro da alternativa correta confusa de parsear — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** reescrita a alternativa (c) explicitando $h^A(\hat v_{-A}) = 0$ antes da fórmula, escrevendo $t^A = h^A - \sum_{j \neq A} v^j(d^*) = 0 - (5 + (-10)) = 0 - (-5) = 5$, e idem para B. Eliminado o "max(0, -10+5)" intermediário ambíguo; sinais explicitados pela soma $5 + (-10)$ em vez de $5-10$. Conteúdo inalterado, redação direta. Distratores intactos.
 
@@ -130,7 +130,7 @@ A álgebra está correta; a redação está confusa. Em quiz com timer, o aluno 
 
 **Severidade:** **major** — redação opaca em alternativa correta de questão 🔴 prejudica psicometria (rpb pode cair).
 
-### M7. MC4 do material gabarito vago em $G^N$ comparado com Q8 do pré-quiz — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+### M7. MC4 do material gabarito vago em $G^N$ comparado com Q8 do pré-quiz — ✅ **RESOLVIDO em 2026-05-08** (`bb8f8fa`)
 
 **Fix aplicado:** adicionado cálculo explícito na alternativa (c) do MC4 (s4q2): "Cada agente Nash escolhe $g^i$ tal que $\text{TMS}^i = 1$ individualmente: $1/\sqrt{G^N} = 1 \Rightarrow G^N = 1$. Razão $G^N/G^* = 1/9 = 1/I^2$." Aluno fica com a regra geral antes do quiz pré (Q8) cobrar — preserva calibre do quiz e dá ferramenta. Recomendação preferida da revisão (vs. suavizar Q8) implementada.
 
