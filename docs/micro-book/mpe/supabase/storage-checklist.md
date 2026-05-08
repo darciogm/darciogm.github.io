@@ -4,17 +4,17 @@ Lista canônica dos PDFs que o frontend referencia via `MPE.openMaterial(filenam
 
 **Padrão de nomenclatura:** `nicholson-snyder-12e-capN.pdf` (sem zero à esquerda em capítulos < 10) e `jehle-reny-3e-capN.pdf` (mesmo padrão).
 
-## Inventário (atualizado 2026-05-07)
+## Inventário (atualizado 2026-05-08)
 
 | Aula | PDF referenciado | Onde aparece | Status no bucket |
 |---|---|---|---|
-| Aula 1 — Preferências | `nicholson-snyder-12e-cap3.pdf` | `platform/aula-01.html:72` | ☐ presumido OK (em uso desde 22/04) |
-| Aula 2 — UMP/EMP/Dualidade | `nicholson-snyder-12e-cap4.pdf` | `platform/aula-02.html:79` | ☐ presumido OK (em uso desde 22/04) |
-| Aula 3 — Slutsky/Elasticidades | `nicholson-snyder-12e-cap5.pdf` | `platform/aula-03.html:83` | ☐ presumido OK (em uso desde 06/05) |
-| Aula 4 — EG Trocas + Produção | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-04.html:85` | ☐ presumido OK (mesmo PDF da Aula 5) |
+| Aula 1 — Preferências | `nicholson-snyder-12e-cap3.pdf` | `platform/aula-01.html:72` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
+| Aula 2 — UMP/EMP/Dualidade | `nicholson-snyder-12e-cap4.pdf` | `platform/aula-02.html:79` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
+| Aula 3 — Slutsky/Elasticidades | `nicholson-snyder-12e-cap5.pdf` | `platform/aula-03.html:83` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
+| Aula 4 — EG Trocas + Produção | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-04.html:85` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
 | **Aula 5 — Arrow-Debreu I (piso)** | **`jehle-reny-3e-cap5.pdf`** | `platform/aula-05.html:82` | ✅ confirmado 2026-05-07 |
 | Aula 5 — Arrow-Debreu I (complemento N&S) | `nicholson-snyder-12e-cap7.pdf` | `platform/aula-05.html:83` | ✅ confirmado 2026-05-07 |
-| Aula 5 — Arrow-Debreu I (intertemporal N&S) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:84` | ☐ presumido OK (mesmo PDF da Aula 4) |
+| Aula 5 — Arrow-Debreu I (intertemporal N&S) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:84` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
 
 ## Comando para conferir no Supabase
 
@@ -32,13 +32,13 @@ s.storage.from('course-materials').list().then(r => console.log(r.data.map(x => 
 
 ## Pendências de upload
 
-Status em 2026-05-07:
+Status em 2026-05-08:
 
-1. `nicholson-snyder-12e-cap3.pdf` (Aula 1) — presumido OK
-2. `nicholson-snyder-12e-cap4.pdf` (Aula 2) — presumido OK
-3. `nicholson-snyder-12e-cap5.pdf` (Aula 3) — presumido OK
+1. `nicholson-snyder-12e-cap3.pdf` (Aula 1) — ✅ confirmado em 2026-05-08 (via `supabase storage ls course-materials/`).
+2. `nicholson-snyder-12e-cap4.pdf` (Aula 2) — ✅ confirmado em 2026-05-08 (via `supabase storage ls course-materials/`).
+3. `nicholson-snyder-12e-cap5.pdf` (Aula 3) — ✅ confirmado em 2026-05-08 (via `supabase storage ls course-materials/`).
 4. `nicholson-snyder-12e-cap7.pdf` (Aula 5 complemento) — ✅ confirmado pelo Darcio em 2026-05-07
-5. `nicholson-snyder-12e-cap13.pdf` (Aulas 4 e 5) — presumido OK
+5. `nicholson-snyder-12e-cap13.pdf` (Aulas 4 e 5) — ✅ confirmado em 2026-05-08 (via `supabase storage ls course-materials/`).
 6. **`jehle-reny-3e-cap5.pdf` (Aula 5 piso)** — ✅ **confirmado pelo Darcio em 2026-05-07**. Capítulo 5 do Jehle-Reny 3e cobre §5.5 Markets with Uncertainty (núcleo da aula).
 
 ## Histórico de inconsistências corrigidas
