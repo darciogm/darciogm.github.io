@@ -51,39 +51,42 @@
   <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi o contrato — começar</button>
 </section>
 
-<!-- ==================== SECTION 1: LEITURA ZAE ==================== -->
+<!-- ==================== SECTION 1: LEITURA J-R ==================== -->
 <section class="section-block locked" id="s1-leitura-zae" data-section="s1-leitura-zae" data-order="1">
-  <div class="section-meta">Seção 1 · Leitura dirigida · 20 min</div>
-  <h2>ZaE — Capítulo 14 (releitura com olhar AD)</h2>
-  <p>Abra o <strong>Capítulo 14 — Equilíbrio Geral</strong> do livro do Prof. Darcio (<em>Microeconomia: Do Zero ao Equilíbrio (e Além)</em>). Para esta aula, foco em <strong>relê com olhar AD</strong>:</p>
+  <div class="section-meta">Seção 1 · Leitura dirigida · 25 min</div>
+  <h2>Jehle &amp; Reny 3e — §5.5 (Markets with Uncertainty)</h2>
+  <p>Abra o <strong>Jehle &amp; Reny — <em>Advanced Microeconomic Theory</em>, 3rd ed.</strong>, <strong>§5.5 Markets with Uncertainty</strong>. Esta é a <strong>leitura formal principal</strong> desta aula: J-R §5.5 cobre exatamente o que vamos fazer — economia de troca pura com bens contingentes, mercado completo, equilíbrio Walrasiano em \(\mathbb{R}^{LS}\), 1º TBE estendido, e aplicação canônica do seguro completo.</p>
+  <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.95rem"><strong>Por que J-R como referência principal:</strong> ZaE Cap. 14 não tem cobertura formal de incerteza/bens contingentes. N&amp;S §7.5 (state-preference) é tratamento mais panorâmico. <strong>J-R §5.5</strong> oferece o nível de rigor adequado ao MPE — definições formais, prova do 1º TBE estendido, aplicações com VNM citado mas não pré-requisito.</p>
+  <p><strong>O que ler:</strong></p>
   <ul>
-    <li><strong>§14.6–§14.7</strong> — 1º e 2º Teoremas do Bem-Estar. Pergunte-se: <em>"o que essas provas usam que dependem do espaço de bens ser \(\mathbb{R}^L\)?"</em>. Resposta: nada. Por isso vão sobreviver em \(\mathbb{R}^{LS}\).</li>
-    <li>Se houver <strong>seção dedicada a incerteza/bens contingentes</strong> no ZaE Cap. 14 (em redação): leitura completa.</li>
+    <li>Definição formal de estados, bens contingentes, mercado completo, equilíbrio AD.</li>
+    <li>1º Teorema do Bem-Estar com mercados completos (prova). Confirme que o argumento da Aula 4 reaparece sem mudança.</li>
+    <li>Aplicação seguro completo: economia 2 estados, agente avesso + neutro, derivação de seguro atuarialmente justo.</li>
+    <li><strong>Exercícios 5.34, 5.36</strong> (numeração J-R 3e) — equivalentes ao que vamos fazer no quiz pós e exercícios avaliativos.</li>
   </ul>
-  <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.95rem"><strong>Status:</strong> a parte específica de bens contingentes pode estar em redação no ZaE — neste caso, a Seção 2 (N&amp;S 12e §7.5) é a leitura formal principal e o ZaE serve como referência da Aula 4.</p>
-  <p style="margin-top:1rem"><a href="https://darciogm.github.io/micro-book/cap14/teoremas-bem-estar/" target="_blank" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:600">Abrir ZaE — Cap. 14 §14.6–§14.7 →</a></p>
-  <button class="section-complete-btn" onclick="MPE.completeSection('s1-leitura-zae')" style="margin-top:1.5rem">Terminei a leitura do ZaE</button>
+  <p style="margin-top:1rem">
+    <button onclick="MPE.openMaterial('jehle-reny-3e-cap5.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir J-R Cap. 5 (PDF) →</button>
+    <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login.</span>
+  </p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-leitura-zae')" style="margin-top:1.5rem">Terminei a leitura de J-R §5.5</button>
 </section>
 
-<!-- ==================== SECTION 2: LEITURA N&S ==================== -->
+<!-- ==================== SECTION 2: LEITURA N&S (complemento) ==================== -->
 <section class="section-block locked" id="s2-leitura-ns" data-section="s2-leitura-ns" data-order="2">
-  <div class="section-meta">Seção 2 · Leitura dirigida · 25 min</div>
-  <h2>N&amp;S 12e — Cap. 7 (Incerteza) + §13.6 (EG com incerteza)</h2>
-  <p>Abra a 12ª edição de Nicholson &amp; Snyder. <strong>Foco</strong>:</p>
+  <div class="section-meta">Seção 2 · Leitura complementar · 20 min</div>
+  <h2>N&amp;S 12e — §7.5 (complemento panorâmico)</h2>
+  <p>Leitura <strong>complementar opcional</strong> ao J-R §5.5. Use se a notação ou linguagem de J-R estiverem densas demais — N&amp;S é mais "leitor de graduação".</p>
   <ul>
-    <li><strong>§7.1 Mathematical Statistics</strong> — leitura panorâmica (variável aleatória, valor esperado, variância). Não é matemática nova.</li>
-    <li><strong>§7.2 Fair Gambles and the Expected Utility Hypothesis</strong> — leitura conceitual: o que é EU. <em>Citação</em> obrigatória de von Neumann-Morgenstern (1944), mas EU não é o tópico desta aula.</li>
-    <li><strong>§7.3 Risk Aversion</strong> — leitura operacional: definição de aversão ao risco via concavidade da Bernoulli, prêmio de risco, equivalente certo. Será usado na aplicação do seguro completo (Seção 5).</li>
-    <li><strong>§7.5 The State-Preference Approach to Choice Under Uncertainty</strong> — <strong>núcleo desta aula no N&amp;S</strong>. Leitura completa: estados da natureza, bens contingentes (<em>contingent commodities</em>), linhas de preço-estado, <em>fair insurance</em>, prêmio de risco.</li>
-    <li><strong>§13.6 General Equilibrium with Uncertainty</strong> — leitura panorâmica focada em entender que o ferramental EG é o mesmo; o que muda é a contagem de bens.</li>
+    <li><strong>§7.5 The State-Preference Approach to Choice Under Uncertainty</strong> — apresentação alternativa do mesmo conteúdo de J-R §5.5: estados, bens contingentes, <em>fair insurance</em>, prêmio de risco. Boa para fixar terminologia em PT-EN.</li>
+    <li><strong>§7.1–§7.3</strong> (Mathematical Statistics, Fair Gambles, Risk Aversion) — leitura panorâmica se você não viu valor esperado/variância/aversão ao risco recentemente. Não é pré-requisito.</li>
+    <li><strong>§13.6 General Equilibrium with Uncertainty</strong> — leitura panorâmica para ver que o ferramental EG é o mesmo; o que muda é a contagem de bens.</li>
   </ul>
-  <p><strong>Foco da leitura:</strong> em N&amp;S, atenção especial ao §7.5 — <em>State-Preference Approach</em>. É exatamente o conteúdo desta aula. O resto do Cap. 7 é referência de aversão ao risco, que entra na aplicação do seguro completo na Seção 5.</p>
   <p style="margin-top:1rem">
     <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap7.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir N&amp;S Cap. 7 (PDF) →</button>
     <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap13.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit;margin-left:0.5rem">Abrir N&amp;S Cap. 13 (PDF) →</button>
     <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login.</span>
   </p>
-  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei a leitura de N&amp;S</button>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei (N&amp;S é opcional)</button>
 </section>
 
 <!-- ==================== SECTION 3: ESTADOS, BENS CONTINGENTES, R^LS (conceitual) ==================== -->

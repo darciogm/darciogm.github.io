@@ -4,7 +4,7 @@
 
 > **Tema:** Equilíbrio Geral em Mercados Completos (Arrow-Debreu I) — estados, bens contingentes, $\mathbb{R}^{LS}$, equilíbrio AD, 1º TBE estendido, seguro completo, SDF.
 
-> **Calibre:** N&S 12e §7.5 + §13.6 (piso); J-R §5.5 (teto de conforto). MWG §19.B citado como referência opcional.
+> **Calibre:** **Jehle-Reny 3e §5.5 (piso obrigatório)**; N&S 12e §7.5 + §13.6 (complemento panorâmico). MWG §19.B citado como referência opcional. ZaE Cap. 14 fora (não cobre incerteza).
 
 ---
 

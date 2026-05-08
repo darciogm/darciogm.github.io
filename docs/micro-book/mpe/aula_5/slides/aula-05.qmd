@@ -92,7 +92,7 @@ Aula 4 fechou trocas + produção + 1º TBE. Hoje **estendemos o espaço de bens
 ::: {.fragment}
 ### Pré-aula assumida
 
-- ZaE Cap. 14 + N&S 12e §7.5 + §13.6 visitados.
+- Jehle-Reny §5.5 (piso) + N&S §7.5 (complemento panorâmico) visitados.
 - 9 seções da plataforma + quiz pré-aula 10🟡.
 - $\mathbb{R}^{LS}$ na ponta da língua: $L$ bens × $S$ estados.
 :::

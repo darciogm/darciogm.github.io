@@ -66,38 +66,40 @@ Total: ~120 min material; quiz pré (10 🟡) à parte (30–45 min).
 
 ---
 
-## Seção 1 — ZaE Cap. 14 (incerteza e bens contingentes)
+## Seção 1 — Jehle-Reny 3e — §5.5 (Markets with Uncertainty)
 
-Leitura dirigida do livro do Prof. Darcio (*Microeconomia: Do Zero ao Equilíbrio (e Além)*).
+Leitura dirigida do **Jehle & Reny — *Advanced Microeconomic Theory*, 3rd ed.** Esta é a **leitura formal principal** desta aula: J-R §5.5 cobre exatamente o que vamos fazer — economia de troca pura com bens contingentes, mercado completo, equilíbrio Walrasiano em $\mathbb{R}^{LS}$, 1º TBE estendido, e aplicação canônica do seguro completo.
 
-> **Status verificável:** o ZaE Cap. 14 cobre EG em forma canônica. As seções específicas sobre **incerteza** e **bens contingentes** podem ainda estar em redação no livro — *[verificar §]*. Caso o capítulo correspondente do ZaE não cubra formalmente, esta pré-aula usa a **Seção 2 (N&S)** como leitura formal principal e o ZaE Cap. 14 como referência de revisão de EG (Aula 4).
+**Por que J-R e não N&S como referência principal:**
 
-**O que ler no ZaE Cap. 14:**
+- ZaE Cap. 14 (livro do Prof. Darcio) cobre EG canônico mas **não tem cobertura formal de incerteza/bens contingentes** — entra na Seção 1 como complemento opcional para revisão da Aula 4.
+- N&S §7.5 (state-preference approach) é o tratamento "Cap. 7 — Uncertainty" — bem-feito mas mais panorâmico, menos formal que J-R.
+- J-R §5.5 oferece o nível de rigor adequado ao MPE: definições formais, prova do 1º TBE estendido, aplicações com VNM citado mas não pré-requisito.
 
-- §14.6–§14.7 (Teoremas do Bem-Estar) — releitura da Aula 4 com olhar de "o que precisa para isso valer em $\mathbb{R}^{LS}$".
-- Se houver §14.13+ sobre **mercados contingentes**, **expectativas** ou **risco**: leitura completa. *[verificar §]*
+**O que ler em J-R §5.5:**
 
-**Por que revisitar o cap. 14 antes de entrar em AD:** o passo conceitual desta aula é minúsculo do ponto de vista matemático — substituir $L$ por $LS$ no espaço de bens. Tudo o que você consolidou na Aula 4 reaparece aqui.
+- **§5.5.1** (ou seção introdutória) — estados, bens contingentes, mercado completo, equilíbrio AD.
+- **§5.5.2** — 1º Teorema do Bem-Estar com mercados completos (prova). Aqui o argumento da Aula 4 reaparece sem mudança — confirme.
+- **§5.5.3 / aplicação seguro** — economia 2 estados, agente avesso + neutro, derivação de seguro atuarialmente justo.
+- **Exercícios 5.34, 5.36** (numeração J-R 3e) — equivalentes ao que vamos fazer no quiz pós e exercícios avaliativos.
+
+PDF acessado via `MPE.openMaterial('jehle-reny-3e-cap5.pdf', this)` *[verificar arquivo no bucket]*.
 
 ---
 
-## Seção 2 — N&S 12e — §7 (Incerteza) + §13.6 (Intertemporal/Contingente)
+## Seção 2 — N&S 12e — §7.5 (complemento panorâmico)
 
-Leitura dirigida do Nicholson & Snyder 12e. **Foco**:
+Leitura dirigida do Nicholson & Snyder 12e como **complemento opcional** ao J-R §5.5. Use se a notação ou linguagem de J-R estiverem densas demais — N&S é mais "leitor de graduação".
 
-- **§7.1 Mathematical Statistics** — leitura panorâmica (terminologia: variável aleatória, valor esperado, variância). Não é matemática nova para esta turma.
-- **§7.2 Fair Gambles and the Expected Utility Hypothesis** — leitura **conceitual**: o que é EU, por que é refinement de $\succeq^i$ sobre loterias. Aqui está a **citação obrigatória** de von Neumann-Morgenstern (1944), mas EU não é o tópico desta aula.
-- **§7.3 Risk Aversion** — leitura **operacional**: definição de aversão ao risco via concavidade da Bernoulli, prêmio de risco, equivalente certo. Será usado na aplicação do seguro completo (Seção 5).
-- **§7.5 The State-Preference Approach to Choice Under Uncertainty** — *núcleo desta aula no N&S.* Leitura completa. Aqui o N&S apresenta:
-  - Estados da natureza.
-  - Bens contingentes (*"contingent commodities"*).
-  - Linhas de preço-estado e diagrama $(x_{\text{good}}, x_{\text{bad}})$.
-  - **Justa ataque seguro** (*"fair insurance"*) e **prêmio de risco**.
-- **§13.6 General Equilibrium with Uncertainty** *[verificar §; o tratamento intertemporal/contingente do N&S 12e está em §13.6 ou em capítulo dedicado a finanças — confirmar antes de citar com precisão.]* Leitura panorâmica focada em entender que o ferramental EG é o mesmo; o que muda é a contagem de bens.
+**Foco**:
 
-PDF acessado via `MPE.openMaterial('nicholson-snyder-12e-cap7.pdf', this)` e `MPE.openMaterial('nicholson-snyder-12e-cap13.pdf', this)` *[verificar arquivo no bucket — padrão das Aulas 1–3 é sem zero à esquerda]*.
+- **§7.5 The State-Preference Approach to Choice Under Uncertainty** — apresentação alternativa do mesmo conteúdo de J-R §5.5: estados, bens contingentes, *fair insurance*, prêmio de risco. Boa para fixar terminologia em PT-EN.
+- **§7.1–§7.3** (Mathematical Statistics, Fair Gambles, Risk Aversion) — leitura panorâmica se você não viu valor esperado/variância/aversão ao risco recentemente. Não é pré-requisito desta aula.
+- **§13.6 General Equilibrium with Uncertainty** — leitura panorâmica para ver que o ferramental EG é o mesmo; o que muda é a contagem de bens.
 
-> **Calibre.** Esta pré-aula posiciona N&S §7.5 como **piso obrigatório** e ZaE Cap. 14 (revisão de Aula 4) como **base estrutural**. Para aluno motivado: Jehle-Reny §5.5 ("Markets with Uncertainty") é o teto de conforto; MWG §19.B ("A Pure-Exchange Economy with Contingent Commodities") é citado mas não obrigatório.
+PDF acessado via `MPE.openMaterial('nicholson-snyder-12e-cap7.pdf', this)` e `MPE.openMaterial('nicholson-snyder-12e-cap13.pdf', this)`.
+
+> **Calibre.** Esta pré-aula posiciona **Jehle-Reny §5.5 como piso obrigatório** e N&S §7.5 como complemento panorâmico. ZaE Cap. 14 fica fora (não cobre incerteza). MWG §19.B ("A Pure-Exchange Economy with Contingent Commodities") é teto opcional para aluno motivado.
 
 ---
 

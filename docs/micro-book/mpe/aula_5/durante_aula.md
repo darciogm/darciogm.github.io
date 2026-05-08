@@ -13,8 +13,8 @@
 - **Horário:** 19:30–22:30 (180 min)
 - **Tema:** Equilíbrio Geral em Mercados Completos — Arrow-Debreu I
 - **Objetivo de aprendizagem:** entender a extensão do espaço de bens para $\mathbb{R}^{LS}$, definir e calcular um equilíbrio Arrow-Debreu em economia simples ($I = 2$, $L = 1$, $S = 2$), reconhecer que o 1º TBE estende sem alteração estrutural, aplicar o ferramental ao caso canônico do seguro completo e ler a equação fundamental $p_s/p_{s'} = \pi_s v'(x_s)/[\pi_{s'} v'(x_{s'})]$ como SDF.
-- **Pré-requisitos assumidos:** Aulas 1–4 consolidadas. Pré-aula 5 concluída (ZaE Cap. 14, N&S 12e §7.5 + §13.6, 9 seções da plataforma + quiz pré-aula 10🟡).
-- **Nível pedagógico:** meio-termo entre graduação avançada e qualifier diluído. Piso N&S §7.5 + §13.6; teto J-R §5.5 (sem invocar existência via Brouwer/Kakutani — Aula 6).
+- **Pré-requisitos assumidos:** Aulas 1–4 consolidadas. Pré-aula 5 concluída (J-R §5.5 como leitura formal principal, N&S 12e §7.5 + §13.6 como complemento panorâmico, 9 seções da plataforma + quiz pré-aula 10🟡).
+- **Nível pedagógico:** **piso Jehle-Reny §5.5** (Markets with Uncertainty); N&S §7.5 como complemento panorâmico; ZaE Cap. 14 fora (não cobre incerteza). Teto MWG §19.B opcional. Sem invocar existência via Brouwer/Kakutani — Aula 6.
 
 ---
 
