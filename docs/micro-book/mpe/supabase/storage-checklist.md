@@ -8,12 +8,12 @@ Lista canônica dos PDFs que o frontend referencia via `MPE.openMaterial(filenam
 
 | Aula | PDF referenciado | Onde aparece | Status no bucket |
 |---|---|---|---|
-| Aula 1 — Preferências | `nicholson-snyder-12e-cap3.pdf` | `platform/aula-01.html:72` | ☐ confirmar |
-| Aula 2 — UMP/EMP/Dualidade | `nicholson-snyder-12e-cap4.pdf` | `platform/aula-02.html:79` | ☐ confirmar |
-| Aula 3 — Slutsky/Elasticidades | `nicholson-snyder-12e-cap5.pdf` | `platform/aula-03.html:83` | ☐ confirmar |
-| Aula 4 — EG Trocas + Produção | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-04.html:85` | ☐ confirmar |
-| Aula 5 — Arrow-Debreu I | `nicholson-snyder-12e-cap7.pdf` | `platform/aula-05.html:82` | ☐ confirmar |
-| Aula 5 — Arrow-Debreu I (intertemporal) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:83` | ☐ confirmar (mesmo PDF da Aula 4) |
+| Aula 1 — Preferências | `nicholson-snyder-12e-cap3.pdf` | `platform/aula-01.html:72` | ☐ presumido OK (em uso desde 22/04) |
+| Aula 2 — UMP/EMP/Dualidade | `nicholson-snyder-12e-cap4.pdf` | `platform/aula-02.html:79` | ☐ presumido OK (em uso desde 22/04) |
+| Aula 3 — Slutsky/Elasticidades | `nicholson-snyder-12e-cap5.pdf` | `platform/aula-03.html:83` | ☐ presumido OK (em uso desde 06/05) |
+| Aula 4 — EG Trocas + Produção | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-04.html:85` | ☐ presumido OK (mesmo PDF da Aula 5) |
+| Aula 5 — Arrow-Debreu I | `nicholson-snyder-12e-cap7.pdf` | `platform/aula-05.html:82` | ✅ confirmado 2026-05-07 |
+| Aula 5 — Arrow-Debreu I (intertemporal) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:83` | ☐ presumido OK (mesmo PDF da Aula 4) |
 
 ## Comando para conferir no Supabase
 
@@ -31,12 +31,12 @@ s.storage.from('course-materials').list().then(r => console.log(r.data.map(x => 
 
 ## Pendências de upload
 
-Antes da Aula 4 (13/05/2026 19:30), garantir que os 5 PDFs únicos abaixo estejam no bucket:
+Status em 2026-05-07:
 
-1. `nicholson-snyder-12e-cap3.pdf` (Aula 1)
-2. `nicholson-snyder-12e-cap4.pdf` (Aula 2)
-3. `nicholson-snyder-12e-cap5.pdf` (Aula 3)
-4. `nicholson-snyder-12e-cap7.pdf` (Aula 5) — **NOVO, antes da Aula 5 em 20/05**
+1. `nicholson-snyder-12e-cap3.pdf` (Aula 1) — presumido OK (em uso há 2+ semanas sem reports)
+2. `nicholson-snyder-12e-cap4.pdf` (Aula 2) — presumido OK
+3. `nicholson-snyder-12e-cap5.pdf` (Aula 3) — presumido OK
+4. `nicholson-snyder-12e-cap7.pdf` (Aula 5) — ✅ **confirmado pelo Darcio em 2026-05-07**
 5. `nicholson-snyder-12e-cap13.pdf` (Aulas 4 e 5)
 
 ## Histórico de inconsistências corrigidas
