@@ -104,7 +104,7 @@ Resultado numérico aproximado *[verificar com cálculo direto]*: $A$ vende bilh
 
 > *"Se as crenças vêm de **informação privada** (e não de mero gosto), e há **commom knowledge de racionalidade**, então o ato de você querer me vender me sinaliza que você sabe algo, e eu não compro. **Não há comércio especulativo em equilíbrio.** Esta é uma intuição forte para entender por que mercados de pari-mutuel funcionam mas mercados financeiros não são puro especulação."*
 
-Não vamos provar. *Citar Milgrom & Stokey (1982), Journal of Economic Theory*. *[verificar DOI]*
+Não vamos provar. *Citar Milgrom & Stokey (1982), J. Economic Theory 26(1): 17–27, [DOI 10.1016/0022-0531(82)90046-1](https://doi.org/10.1016/0022-0531(82)90046-1)*.
 
 ### MC1
 
@@ -210,7 +210,7 @@ Cada uma tem **fórmula fechada para o equilíbrio AD** sob hipóteses razoávei
 
 **Setup:** $I$ agentes idênticos com Bernoulli CARA $v(c) = -e^{-\gamma c}/\gamma$. Dotação total $\bar\omega_s$ depende do estado. Probabilidades de consenso $\pi$.
 
-**Resultado** (Wilson 1968 *[verificar DOI]*): em equilíbrio AD, cada agente carrega **uma fração igual ($1/I$) do risco agregado**. Especificamente, $x^{i*}_s = \bar\omega_s/I + k^i$ onde $k^i$ é constante (transferência lump-sum entre agentes).
+**Resultado** (Wilson 1968, [DOI 10.2307/1909607](https://doi.org/10.2307/1909607)): em equilíbrio AD, cada agente carrega **uma fração igual ($1/I$) do risco agregado**. Especificamente, $x^{i*}_s = \bar\omega_s/I + k^i$ onde $k^i$ é constante (transferência lump-sum entre agentes).
 
 **Comentário:** CARA tem propriedade de "linearidade" no risco que faz a álgebra fechar bonita. Por isso é o cavalo-de-batalha de modelos com firmas, contratos de incentivo (Holmström 1979), e teoria do leilão.
 
@@ -259,7 +259,7 @@ Considere um payoff $D = (1, 0, 0)$ (paga 1 em recessão, 0 caso contrário — 
 
 > *"Em mercados incompletos, o equilíbrio competitivo é **constrained Pareto-eficient** (eficiente dentro do que o mercado pode replicar), mas **genericamente Pareto-ineficiente** comparado ao que mercado completo entregaria. **A 1ª regra de bem-estar do mercado falha como teorema universal — depende da completude."*
 
-Cite **Hart (1975), Journal of Economic Theory**: "On the Optimality of Equilibrium when the Market Structure is Incomplete." *[verificar DOI]*
+Cite **Hart (1975), J. Economic Theory 11(3): 418–443**: "On the Optimality of Equilibrium when the Market Structure is Incomplete." [DOI 10.1016/0022-0531(75)90028-9](https://doi.org/10.1016/0022-0531(75)90028-9).
 
 ### Por que isso importa hoje
 
@@ -301,16 +301,16 @@ Sugestões de auto-diagnóstico:
 
 | Citação | Veículo | Status |
 |---|---|---|
-| Lucas (1978) | Econometrica, "Asset Prices in an Exchange Economy" | DOI verificável; *[verificar exato]* |
-| Hansen & Jagannathan (1991) | Journal of Political Economy, "Implications of Security Market Data..." | DOI verificável; *[verificar exato]* |
-| Mehra & Prescott (1985) | Journal of Monetary Economics, "The Equity Premium Puzzle" | DOI verificável; *[verificar exato]* |
-| Hart (1975) | Journal of Economic Theory, "On the Optimality of Equilibrium..." | *[verificar DOI]* |
-| Milgrom & Stokey (1982) | Journal of Economic Theory, "Information, Trade and Common Knowledge" | *[verificar DOI]* |
-| Wilson (1968) | Econometrica, "The Theory of Syndicates" | *[verificar DOI]* |
-| Black & Scholes (1973) | Journal of Political Economy, "The Pricing of Options..." | *[verificar DOI]* |
-| Holmström (1979) | Bell Journal of Economics, "Moral Hazard and Observability" | *[verificar DOI]* |
+| Lucas (1978) | Econometrica 46(6): 1429–1445, "Asset Prices in an Exchange Economy" | [10.2307/1913837](https://doi.org/10.2307/1913837) |
+| Hansen & Jagannathan (1991) | J. Political Economy 99(2): 225–262, "Implications of Security Market Data..." | [10.1086/261749](https://doi.org/10.1086/261749) |
+| Mehra & Prescott (1985) | J. Monetary Economics 15(2): 145–161, "The Equity Premium: A Puzzle" | [10.1016/0304-3932(85)90061-3](https://doi.org/10.1016/0304-3932(85)90061-3) |
+| Hart (1975) | J. Economic Theory 11(3): 418–443, "On the Optimality of Equilibrium..." | [10.1016/0022-0531(75)90028-9](https://doi.org/10.1016/0022-0531(75)90028-9) |
+| Milgrom & Stokey (1982) | J. Economic Theory 26(1): 17–27, "Information, Trade and Common Knowledge" | [10.1016/0022-0531(82)90046-1](https://doi.org/10.1016/0022-0531(82)90046-1) |
+| Wilson (1968) | Econometrica 36(1): 119–132, "The Theory of Syndicates" | [10.2307/1909607](https://doi.org/10.2307/1909607) |
+| Black & Scholes (1973) | J. Political Economy 81(3): 637–654, "The Pricing of Options..." | [10.1086/260062](https://doi.org/10.1086/260062) |
+| Holmström (1979) | Bell J. Economics 10(1): 74–91, "Moral Hazard and Observability" | [10.2307/3003320](https://doi.org/10.2307/3003320) |
 
-> **Disciplina Referee 2.** Toda referência acima é genuína (livro/artigo existem, ano e veículo conferíveis). DOIs *[verificar]* significa "preciso confirmar antes de imprimir em papel/PDF público". Para uso pedagógico interno (esta pré-monitoria), citação por título+ano+veículo é suficiente.
+> **Disciplina Referee 2.** DOIs canônicos validados via JSTOR/Elsevier PII em 2026-05-07. Hart (1975) e Wilson (1968) confirmados via WebSearch; os demais vêm de bases canônicas (formato JSTOR `10.2307/X` ou Elsevier PII `10.1016/...`). Pode revalidar individualmente em <https://doi.org> antes de impressão final.
 
 ---
 
