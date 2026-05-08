@@ -355,7 +355,7 @@ Não tente resolver — só plante.
 
 #### B3.d (10 min) — Box Brasil — Tesouro IPCA+ como ativo de hedge inflacionário
 
-> "**Tesouro IPCA+** é um título do governo federal brasileiro que paga IPCA + juro real fixo. Em economia AD, IPCA+ é uma **ação Arrow para o estado de inflação alta** — paga mais quando o estado de natureza é 'inflação acima de X%'. Historicamente, antes de 2002, mercado brasileiro tinha **rank deficiente** para essa contingência: havia LFT (juros pós-fixado), pré-fixado, mas sem instrumento de hedge inflacionário pronto."
+> "**Tesouro IPCA+** é um título do governo federal brasileiro que paga IPCA + juro real fixo. Em economia AD, IPCA+ é uma **ação Arrow para o estado de inflação alta** — paga mais quando o estado de natureza é 'inflação acima de X%'. Historicamente, antes de 2002, o mercado brasileiro tinha **ativo direto de hedge inflacionário ausente**: havia LFT (juros pós-fixado), pré-fixado, mas sem instrumento dedicado de hedge inflacionário pronto."
 
 > "Lançamento do IPCA+ em 2002 foi **completamento parcial** do mercado financeiro brasileiro nessa dimensão. Mais agentes puderam diversificar inflação. Por Hart 1975: foi Pareto-melhorador? **Provavelmente sim**, no agregado — mas teoria GP 1986 alerta que pode haver perdedores (ex.: bancos que tinham exposição inflacionária implícita). Política de Tesouro Nacional dá razão prática a esses argumentos."
 

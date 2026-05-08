@@ -47,7 +47,7 @@ Mercado financeiro de Radner com 2 ativos: **Bond livre de risco** \(D^{\text{bo
 **(c)** Os preços-Arrow de equilíbrio AD (com normalização \(p^*_1 + p^*_2 = 1\)) e os preços dos ativos no mercado de Radner são:
 
 - (i) **\(p^*_1 = p^*_2 = 0{,}5\); \(q^*_{\text{bond}} = p^*_1 + p^*_2 = 1\); \(q^*_{\text{ação}} = 0 \cdot p^*_1 + 2 \cdot p^*_2 = 1\)** (não-arbitragem \(q^*_j = \sum_s p^*_s\, A_{sj}\)). **[correta]**
-- (ii) \(p^*_1 = p^*_2 = 0{,}5\); \(q^*_{\text{bond}} = 2\), \(q^*_{\text{ação}} = 2\) (mistura normalização com \(p^* = (1,1)\)).
+- (ii) \(p^*_1 = p^*_2 = 0{,}5\); \(q^*_{\text{bond}} = 2\), \(q^*_{\text{ação}} = 2\).
 - (iii) \(p^*_1 = 0\), \(p^*_2 = 1\); \(q^*_{\text{bond}} = 1\), \(q^*_{\text{ação}} = 2\).
 - (iv) Indeterminados.
 
