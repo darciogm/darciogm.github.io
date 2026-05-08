@@ -94,7 +94,7 @@ Com orçamento: $p^*_1 x^i_1 + p^*_2 x^i_2 = p^*_1 \cdot 50 + p^*_2 \cdot 50$ (r
 
 **Resolva o sistema** (calculando 1ª passada — a turma faz com Alberto):
 
-Resultado numérico aproximado *[verificar com cálculo direto]*: $A$ vende bilhete-estado-1 e compra bilhete-estado-2 (porque crê menos no estado 1); $B$ faz o contrário.
+**Cálculo direto** (mesmo setup do Ex 2 dos avaliativos): em log/CD, demanda $x^i_s = \pi^i_s\, m^i / p_s$. Viabilidade do estado 1 + dotações iguais ($m^A = m^B$) cancelam as rendas, dando a fórmula fechada $p^*_1/p^*_2 = (\pi^A_1 + \pi^B_1)/(\pi^A_2 + \pi^B_2) = 0{,}8/1{,}2 = 2/3$. Alocações: $x^{A*} = (37{,}5;\ 58{,}33)$, $x^{B*} = (62{,}5;\ 41{,}67)$. Verificação: $\sum x_s = 100$ em ambos os estados ✓. Interpretação: $A$ vende 12,5 unidades de bilhete-estado-1 e compra 8,33 unidades de bilhete-estado-2 (crê menos no estado 1); $B$ faz o oposto.
 
 ### O ponto-conceito
 
@@ -173,7 +173,7 @@ $$
 
 > *"Mercado completo $\equiv$ existem $|S|$ ações Arrow $\equiv$ podemos formar portfolio que replica qualquer payoff $D_s$. Em $|S| = 2$: precisamos de 2 ativos lineamente independentes, e qualquer outro ativo é precificado por arbitragem."*
 
-Cite **Black-Scholes-Merton (1973)** como aplicação famosa: opção é precificada como combinação linear de ações + bond, em mercado completo. *[verificar DOI Black-Scholes 1973 JoP / Merton 1973 Bell J. Econ.]*
+Cite **Black-Scholes (1973)** como aplicação famosa: opção é precificada como combinação linear de ações + bond, em mercado completo. DOI canônico: [10.1086/260062](https://doi.org/10.1086/260062) (J. Political Economy 81(3): 637–654; ver apêndice).
 
 ### MC2
 

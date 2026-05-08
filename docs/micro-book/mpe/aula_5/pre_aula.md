@@ -42,12 +42,12 @@ Ao final desta pré-aula, o aluno deve ser capaz de:
 | # | Seção | Tipo | Tempo |
 |---|---|---|---|
 | 0 | Orientação | Contrato com aluno | 2 min |
-| 1 | Leitura ZaE — Cap. 14 (parte que cobre incerteza/bens contingentes) | Leitura dirigida | 20 min |
-| 2 | Leitura N&S 12e — §7.1, §7.2 (incerteza) + §13.6 (intertemporal/contingent) | Leitura dirigida (PDF) | 25 min |
+| 1 | Leitura J-R 3e — §5.5 (Markets with Uncertainty) — **piso obrigatório** | Leitura dirigida (PDF) | 25 min |
+| 2 | Leitura N&S 12e — §7.5 (state-preference) + §13.6 (EG com incerteza) — **complemento panorâmico** | Leitura dirigida (PDF) | 20 min |
 | 3 | Conceitual 1 — Estados, bens contingentes, espaço $\mathbb{R}^{LS}$ | Texto + 2 micro-checkpoints | 12 min |
 | 4 | Conceitual 2 — Equilíbrio AD em mercados completos | Texto + 2 micro-checkpoints | 14 min |
 | 5 | Conceitual 3 — 1º TBE estendido + seguro completo | Texto + 3 micro-checkpoints | 18 min |
-| 6 | Exercícios de papel (N&S §7.* + §13.6.* / equivalentes inéditos) | 3 itens | 15 min |
+| 6 | Exercícios de papel (equivalentes a J-R §5.5 / N&S §7.5; enunciados auto-contidos) | 3 itens | 15 min |
 | 7 | Checkpoint final de síntese | 3 questões | 10 min |
 | 8 | Reflexão qualitativa | 2 campos abertos | 3 min |
 
@@ -83,7 +83,7 @@ Leitura dirigida do **Jehle & Reny — *Advanced Microeconomic Theory*, 3rd ed.*
 - **§5.5.3 / aplicação seguro** — economia 2 estados, agente avesso + neutro, derivação de seguro atuarialmente justo.
 - **Exercícios 5.34, 5.36** (numeração J-R 3e) — equivalentes ao que vamos fazer no quiz pós e exercícios avaliativos.
 
-PDF acessado via `MPE.openMaterial('jehle-reny-3e-cap5.pdf', this)` *[verificar arquivo no bucket]*.
+PDF acessado via `MPE.openMaterial('jehle-reny-3e-cap5.pdf', this)` (✓ confirmado no bucket Supabase em 2026-05-07).
 
 ---
 
@@ -161,7 +161,7 @@ $$
 
 dizemos que o agente é **VNM-racional** com Bernoulli $v^i: \mathbb{R}^L_+ \to \mathbb{R}$. Aversão ao risco $\Leftrightarrow$ $v^i$ côncava. **Não vamos provar a representação** (von Neumann-Morgenstern, 1944) — só usar como caso particular nas aplicações. O ferramental Arrow-Debreu **não exige** EU; trabalha com $\succeq^i$ genérico em $\mathbb{R}^{LS}_+$.
 
-> **Decisão pedagógica.** EU **não é tópico desta aula**. É refinement de preferências sobre loterias e tem teoria própria (Aula 8 do Jehle-Reny / Cap. 6 do MWG). Aqui entra como ferramenta cirúrgica nas aplicações (Seção 5) e na maioria dos exercícios — exatamente como a maioria dos textos de finanças usa.
+> **Decisão pedagógica.** EU **não é tópico desta aula**. É refinement de preferências sobre loterias e tem teoria própria (J-R 3e §2.4 / N&S 12e Cap. 7 / MWG §6). Aqui entra como ferramenta cirúrgica nas aplicações (Seção 5) e na maioria dos exercícios — exatamente como a maioria dos textos de finanças usa.
 
 ### Micro-checkpoints (2 itens — obrigatórios)
 
@@ -344,7 +344,7 @@ Defina **prêmio** como o que $A$ paga ex-ante para se livrar do risco e obter $
 
 ### Mercados financeiros completos (citação)
 
-Ações Arrow para o estado $s$: ativo que paga 1 em $s$ e 0 em $s' \neq s$. Em $|S|$ estados, $|S|$ ações Arrow geram $\mathbb{R}^S$. Equivalentemente: qualquer conjunto de $|S|$ ativos linearmente independentes (ou seja, *spanning*) implementa AD canônico via portfolio. Esta é a ponte entre Arrow-Debreu e finanças derivativas — Black-Scholes-Merton vive aqui *[verificar §]*. Aula 6 detalha o equivalente sequencial (Radner).
+Ações Arrow para o estado $s$: ativo que paga 1 em $s$ e 0 em $s' \neq s$. Em $|S|$ estados, $|S|$ ações Arrow geram $\mathbb{R}^S$. Equivalentemente: qualquer conjunto de $|S|$ ativos linearmente independentes (ou seja, *spanning*) implementa AD canônico via portfolio. Esta é a ponte entre Arrow-Debreu e finanças derivativas — Black-Scholes (1973, J. Political Economy 81(3): 637–654, [DOI 10.1086/260062](https://doi.org/10.1086/260062)) vive aqui. Aula 6 detalha o equivalente sequencial (Radner).
 
 ### Micro-checkpoints (3 itens — obrigatórios)
 
@@ -375,7 +375,7 @@ Ações Arrow para o estado $s$: ativo que paga 1 em $s$ e 0 em $s' \neq s$. Em 
 
 **Tempo-alvo:** 15 min para abordagem (não para resolução completa). Resolução pode ser feita até a aula presencial.
 
-> **Calibração Referee 2.** Os exercícios canônicos do N&S 12e §7 e §13 cobrem o caso seguro/incerteza, mas a numeração específica pode variar entre edições/impressões. Dei abaixo enunciados auto-contidos, *no estilo do N&S* (compatível com §7.5 e §13.6); o aluno pode resolver direto sem depender da numeração do livro. *[verificar §]*
+> **Calibração Referee 2.** Os enunciados abaixo são **auto-contidos** e calibrados ao **piso J-R 3e §5.5 (Markets with Uncertainty)**, com paridade temática aos exercícios 5.34 e 5.36 do J-R 3e. Quem preferir abordagem panorâmica encontra material equivalente em N&S §7.5 + §13.6. O aluno resolve direto, sem depender da numeração específica do livro.
 
 ### EP-1 (obrigatório, calibre intermediário)
 
