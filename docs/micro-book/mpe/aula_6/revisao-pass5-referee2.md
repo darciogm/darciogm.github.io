@@ -140,7 +140,7 @@ A produção é tecnicamente competente: cobertura J-R §5.5/§5.6 par-Jehle nos
 
 **m2.** `platform/aula-06-pos.html:202` (Q9 gabarito ext.) — afirma "Magill-Quinzii (1996, *Theory of Incomplete Markets*, MIT Press) é o tratamento canônico". O título correto é "*Theory of Incomplete Markets, vol. 1*" (existe um vol. 2 não publicado em formato canônico). **Fix:** trocar para "*Theory of Incomplete Markets*" sem volume, **ou** "*Theory of Incomplete Markets, Vol. 1*" explicitamente. Tempo: ~1 min.
 
-**m3.** `aula_6/slides/aula-06.qmd:480–489` (slide "Box Brasil — Tesouro IPCA+") — afirma "lançado 2002". **Verificável:** Tesouro IPCA+ (NTN-B) foi de fato criada em **2003**, não 2002 (Lei 10.179/2001 → emissão efetiva em meados de 2003). Frase "**Antes de 2002:** mercado brasileiro com rank deficiente" também imprecisa.
+**m3.** ✅ **VERIFICADO-CORRETO em 2026-05-08** (commit pendente). Texto atual ("lançado 2002") confirmado via WebSearch: Lei 10.179 (06/02/2001) autorizou emissão de NTN-B; primeiras emissões + plataforma Tesouro Direto lançados em 2002. Audit inicial sugeria 2003 mas sem fonte autoritativa — múltiplas fontes públicas (Tesouro Direto histórico, ADVFN, Suno) confirmam 2002. Bundle não precisa edição. `aula_6/slides/aula-06.qmd:480–489` (slide "Box Brasil — Tesouro IPCA+") — afirma "lançado 2002". **Verificável:** Tesouro IPCA+ (NTN-B) foi de fato criada em **2003**, não 2002 (Lei 10.179/2001 → emissão efetiva em meados de 2003). Frase "**Antes de 2002:** mercado brasileiro com rank deficiente" também imprecisa.
 
   **Fix:** trocar "2002" → "2003" em duas ocorrências (slide qmd:482 e durante_aula.md:362). Tempo: ~2 min. (Confirmar fonte STN antes de aplicar — sem buscar agora; risco de erro 50/50.)
 
