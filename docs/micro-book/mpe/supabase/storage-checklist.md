@@ -12,7 +12,7 @@ Lista canônica dos PDFs que o frontend referencia via `MPE.openMaterial(filenam
 | Aula 2 — UMP/EMP/Dualidade | `nicholson-snyder-12e-cap4.pdf` | `platform/aula-02.html:79` | ☐ presumido OK (em uso desde 22/04) |
 | Aula 3 — Slutsky/Elasticidades | `nicholson-snyder-12e-cap5.pdf` | `platform/aula-03.html:83` | ☐ presumido OK (em uso desde 06/05) |
 | Aula 4 — EG Trocas + Produção | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-04.html:85` | ☐ presumido OK (mesmo PDF da Aula 5) |
-| **Aula 5 — Arrow-Debreu I (piso)** | **`jehle-reny-3e-cap5.pdf`** | `platform/aula-05.html:82` | ⚠ **NOVO — Darcio sobe antes de 14/05** |
+| **Aula 5 — Arrow-Debreu I (piso)** | **`jehle-reny-3e-cap5.pdf`** | `platform/aula-05.html:82` | ✅ confirmado 2026-05-07 |
 | Aula 5 — Arrow-Debreu I (complemento N&S) | `nicholson-snyder-12e-cap7.pdf` | `platform/aula-05.html:83` | ✅ confirmado 2026-05-07 |
 | Aula 5 — Arrow-Debreu I (intertemporal N&S) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:84` | ☐ presumido OK (mesmo PDF da Aula 4) |
 
@@ -39,7 +39,7 @@ Status em 2026-05-07:
 3. `nicholson-snyder-12e-cap5.pdf` (Aula 3) — presumido OK
 4. `nicholson-snyder-12e-cap7.pdf` (Aula 5 complemento) — ✅ confirmado pelo Darcio em 2026-05-07
 5. `nicholson-snyder-12e-cap13.pdf` (Aulas 4 e 5) — presumido OK
-6. **`jehle-reny-3e-cap5.pdf` (Aula 5 piso)** — ⚠ **NOVO, Darcio sobe antes de 14/05** (abertura da pré-aula 5). Capítulo 5 do Jehle-Reny 3e cobre §5.5 Markets with Uncertainty (núcleo da aula).
+6. **`jehle-reny-3e-cap5.pdf` (Aula 5 piso)** — ✅ **confirmado pelo Darcio em 2026-05-07**. Capítulo 5 do Jehle-Reny 3e cobre §5.5 Markets with Uncertainty (núcleo da aula).
 
 ## Histórico de inconsistências corrigidas
 
