@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Monitoria 3 — Extensões da Aula 5 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Monitoria 3 — Extensões da Aula 5 (Arrow-Debreu I)</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 7</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-monitoria funciona</div>
+<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>7 seções</strong> (orientação + recap + 4 extensões + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>60–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Não é repetição da Aula 5 — é o passo seguinte. Várias extensões são <em>servidas, não esgotadas</em> — propositalmente deixam pontas para o sábado.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calibre.</strong> Sobe um degrau além da Aula 5: SDF aplicado a precificação de ativos, heterogeneidade de crenças com no-trade theorem (Milgrom-Stokey), CARA/CRRA com fórmulas fechadas, e teaser informal sobre mercados incompletos. <strong>Não entra Radner sequencial formal</strong> — isso é Aula 6.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> abre sábado <strong>23/05 12:00</strong>, fecha sexta <strong>29/05 22:00</strong>. Monitoria presencial: <strong>sábado 30/05 10:00</strong>.</p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>O que esperar do sábado</h2>
+  <ul>
+    <li>Esta pré-monitoria <strong>não conta nota</strong>. É preparação para o encontro presencial.</li>
+    <li>O Alberto vai usar suas reflexões finais (Seção 6) para calibrar a monitoria de sábado 30/05.</li>
+    <li>Tente os micro-checkpoints sem consultar primeiro. Errar é dado útil — o admin captura quais distratores atraem mais.</li>
+    <li>Foco em <em>extensões</em>: heterogeneidade de crenças, SDF e precificação, formas funcionais CARA/CRRA, mercados incompletos como teaser.</li>
+    <li>Pré-requisitos: Aulas 1–5 consolidadas. Em particular: \(\mathbb{R}^{LS}\) bens contingentes, equilíbrio AD, 1º TBE estendido, equação SDF.</li>
+  </ul>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: RECAP AULA 5 ==================== -->
+<section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
+  <div class="section-meta">Seção 1 · Recap · 5 min</div>
+  <h2>Recap rápido da Aula 5</h2>
+  <p>Antes das extensões, ancore mentalmente os 5 pontos da Aula 5 (Arrow-Debreu I). Cada um vai ser estendido depois:</p>
+  <ol>
+    <li><strong>Bens contingentes e \(\mathbb{R}^{LS}\).</strong> Cada par \((\ell, s)\) — bem físico \(\ell\) entregue se realizar estado \(s\) — define um bem contingente. O espaço de mercadorias passa de \(\mathbb{R}^L\) para \(\mathbb{R}^{LS}\) com \(L \cdot S\) preços \(p_{\ell, s}\). <em>Extensão 4</em> mostra o que muda quando este espaço não é totalmente "preçado".</li>
+    <li><strong>Estrutura de preferências EU.</strong> \(U^i(x^i) = \sum_s \pi^i_s\, v^i(x^i_s)\) — utilidade esperada com Bernoulli \(v^i\) e crenças \(\pi^i\). <em>Extensões 1 e 3</em> exploram heterogeneidade de \(\pi^i\) e formas funcionais alternativas de \(v^i\).</li>
+    <li><strong>Equilíbrio AD.</strong> Vetor \((p^*, x^*)\) com \(x^{i*}\) resolvendo UMP em \(p^*\) com renda \(p^* \cdot \omega^i\) e \(\sum_i x^{i*} = \bar\omega\). CPO interna: \(\frac{\pi^i_s\,(v^i)'(x^{i*}_s)}{\pi^i_t\,(v^i)'(x^{i*}_t)} = \frac{p^*_s}{p^*_t}\). <em>Extensão 2</em> deriva o SDF a partir desta CPO.</li>
+    <li><strong>1º TBE estendido a estados.</strong> Mercado AD completo + LNS \(\Rightarrow\) alocação Pareto-eficiente em sentido <em>contingente</em> (estado a estado). Risco agregado é alocado eficientemente; sob CARA/CRRA, fórmulas fechadas saem direto. <em>Extensão 3</em> formaliza isso.</li>
+    <li><strong>Seguro completo sob risco idiossincrático.</strong> Quando o agregado é constante (\(\bar\omega_s = \bar\omega\) para todo \(s\)) e crenças são consensuais, o equilíbrio AD descentraliza seguro pleno: \(x^{i*}_s = x^{i*}_t\) para todo \(s, t\) — consumo não depende do estado. <em>Extensão 1</em> mostra que sem consenso de crenças, isso quebra.</li>
+  </ol>
+  <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne ao material da Aula 5 (<a href="aula-05.html" style="color:var(--accent)">aula-05.html</a>) ou ZaE Cap. 16 antes de avançar.</p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
+</section>
+
+<!-- ==================== SECTION 2: EXTENSÃO 1 — Heterogeneidade de crenças e no-trade theorem ==================== -->
+<section class="section-block locked" id="s2-crencas" data-section="s2-crencas" data-order="2">
+  <div class="section-meta">Seção 2 · Extensão 1 · 15 min</div>
+  <h2>Heterogeneidade de crenças e no-trade theorem</h2>
+
+  <div class="confidence-block" id="conf-s2-pre">
+    <label>Antes de estudar: você consegue dizer <strong>se dois agentes com crenças diferentes apostam em equilíbrio AD</strong>, e quanto?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s2-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s2-crencas','pre','s2-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s2" style="display:none">
+    <p><strong>Pergunta-driver.</strong> Se dois agentes têm crenças diferentes sobre o estado da natureza, eles vão querer apostar entre si. <em>Quanto?</em> O equilíbrio AD aceita aposta sem limite?</p>
+
+    <h3 style="margin-top:1.2rem">Setup</h3>
+    <p>Economia \(L = 1\), \(S = 2\), \(I = 2\). Bernoullis comuns: \(v_A = v_B = \ln c\). Crenças heterogêneas: \(\pi^A_1 = 0{,}3\) (\(A\) pessimista sobre estado 1), \(\pi^B_1 = 0{,}5\) (\(B\) neutro). Dotação <strong>idêntica</strong> \(\omega^A = \omega^B = (50, 50)\) — ambos têm o mesmo, sem risco no agregado.</p>
+    <p><strong>Pergunta:</strong> em equilíbrio AD, quem paga quanto a quem para apostar?</p>
+
+    <h3 style="margin-top:1.2rem">Derivação</h3>
+    <p>CPO de cada agente em log/CD:</p>
+    <p>\[ \frac{\pi^i_1\, (v^i)'(x^i_1)}{\pi^i_2\, (v^i)'(x^i_2)} = \frac{p^*_1}{p^*_2}. \]</p>
+    <p>Com \(v = \ln\), \((v)'(c) = 1/c\), reorganizando: \(x^i_2/x^i_1 = (p^*_1/p^*_2) \cdot (\pi^i_2/\pi^i_1)\). Demanda fechada: \(x^i_s = \pi^i_s\, m^i / p_s\). Viabilidade do estado 1 + dotações iguais (\(m^A = m^B\)) cancelam as rendas, dando:</p>
+    <p>\[ \frac{p^*_1}{p^*_2} = \frac{\pi^A_1 + \pi^B_1}{\pi^A_2 + \pi^B_2} = \frac{0{,}8}{1{,}2} = \frac{2}{3}. \]</p>
+    <p>Alocações: \(x^{A*} = (37{,}5;\ 58{,}33)\), \(x^{B*} = (62{,}5;\ 41{,}67)\). Verificação: \(\sum_i x^i_s = 100\) em ambos os estados ✓.</p>
+    <p><strong>Interpretação.</strong> \(A\) vende 12,5 unidades de bilhete-estado-1 (porque crê menos nele) e compra 8,33 unidades de bilhete-estado-2. \(B\) faz exatamente o oposto. <em>Heterogeneidade de crenças gera aposta endógena no equilíbrio AD.</em> Não há paradoxo: o mercado dá o preço que reconcilia divergência. Quem está mais certo (no longo prazo, se o mercado puder reapostar) ganha.</p>
+
+    <h3 style="margin-top:1.2rem">No-trade theorem (Milgrom-Stokey 1982)</h3>
+    <p>Se as crenças vêm de <strong>informação privada</strong> (e não de mero gosto), e há <em>common knowledge</em> de racionalidade, então o ato de você querer me vender me sinaliza que você sabe algo, e eu não compro. <strong>Não há comércio especulativo em equilíbrio.</strong></p>
+    <p>Esta intuição forte explica por que mercados de pari-mutuel funcionam (gostos diferentes) mas mercados financeiros não são pura especulação (informação assimétrica gera unraveling). Não vamos provar; cite Milgrom &amp; Stokey (1982), <em>J. Economic Theory</em> 26(1): 17–27, <a href="https://doi.org/10.1016/0022-0531(82)90046-1" style="color:var(--accent)">DOI 10.1016/0022-0531(82)90046-1</a>.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai resolver o sistema completo passo-a-passo (com Lagrangiano explícito) e discutir o caso \(\bar\omega_s\) variável (risco agregado) — ali a aposta convive com seguro parcial.</p>
+
+    <div class="micro-checkpoint" id="micro-s2">
+      <h3>Micro-checkpoint (1 item — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas.</div>
+
+      <div class="micro-q" data-q="s2q1" data-correct="b">
+        <div class="q-text">1. Em economia \(L = 1\), \(S = 2\), \(I = 2\), com \(v_A = v_B = \ln c\), \(\omega^A = \omega^B = (50, 50)\), mas \(\pi^A_1 = 0{,}3\) e \(\pi^B_1 = 0{,}5\), o que ocorre em equilíbrio AD?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-crencas','s2q1','a',this)">(a) Não há comércio (autarquia) — simetria de dotação implica equilíbrio na própria dotação.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-crencas','s2q1','b',this)">(b) Há comércio: \(A\) entrega bilhete-estado-1 a \(B\) em troca de bilhete-estado-2 (porque suas crenças divergem).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-crencas','s2q1','c',this)">(c) \(A\) e \(B\) atingem \(x^A = x^B\) — mercado completo elimina toda diferença.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-crencas','s2q1','d',this)">(d) Não existe equilíbrio.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s2-post" style="display:none">
+      <label>Agora, depois de ver crenças heterogêneas e no-trade theorem:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s2-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s2-crencas','post','s2-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s2-crencas" disabled onclick="MPE.completeSection('s2-crencas')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 3: EXTENSÃO 2 — SDF e precificação ==================== -->
+<section class="section-block locked" id="s3-sdf" data-section="s3-sdf" data-order="3">
+  <div class="section-meta">Seção 3 · Extensão 2 · 20 min</div>
+  <h2>SDF e precificação de ativos contingentes</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes: dado um ativo com payoff \(D_s\) num mercado AD completo, você sabe escrever <strong>direto</strong> a fórmula do preço \(P_0\)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-sdf','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Pergunta-driver.</strong> Como o equilíbrio AD precifica um ativo arbitrário?</p>
+
+    <h3 style="margin-top:1.2rem">Definição operacional do SDF</h3>
+    <p>Em equilíbrio AD com EU, defina o <strong>stochastic discount factor</strong> (SDF) do agente \(i\):</p>
+    <p>\[ m^i_s = \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\lambda^i} \]</p>
+    <p>onde \(\lambda^i\) é o multiplicador da restrição orçamentária do agente \(i\). <strong>Em equilíbrio, \(m^i_s\) é o mesmo para todo agente \(i\)</strong> — porque \(p^*_s = m_s\) (a menos de normalização). Por isso falamos de "<em>o</em>" SDF.</p>
+
+    <h3 style="margin-top:1.2rem">Precificação de qualquer ativo</h3>
+    <p>Considere um ativo qualquer com payoff \(D_s\) no estado \(s\) (ex.: ação de empresa que paga dividendo \(D_s\)). Seu preço em \(t = 0\) é:</p>
+    <p>\[ P_0 = \sum_s p^*_s\, D_s = \sum_s m_s\, D_s. \]</p>
+    <p>Sob EU + consenso bayesiano (\(\pi^i = \pi\)):</p>
+    <p>\[ \boxed{\;P_0 = E^\pi\!\left[m\, D\right] = \sum_s \pi_s\, m_s\, D_s\;} \]</p>
+    <p><strong>Esta é a equação central das finanças neoclássicas.</strong> Lucas (1978, <em>Econometrica</em> 46(6): 1429–1445, <a href="https://doi.org/10.2307/1913837" style="color:var(--accent)">DOI 10.2307/1913837</a>) deriva o modelo de precificação de ativos a partir dela.</p>
+
+    <h3 style="margin-top:1.2rem">Casos particulares</h3>
+    <p><strong>Ativo livre de risco.</strong> Paga \(D_s = 1\) para todo \(s\) (1 unidade de bem em qualquer estado):</p>
+    <p>\[ P_0^{\text{rf}} = \sum_s \pi_s\, m_s \quad \Rightarrow \quad R_f = \frac{1}{P_0^{\text{rf}}} = \frac{1}{E^\pi[m]}. \]</p>
+    <p>A taxa livre de risco é <em>o inverso da expectativa do SDF</em>.</p>
+
+    <p><strong>Ações Arrow.</strong> Ação Arrow para o estado \(s\): paga 1 em \(s\), 0 em outros. Preço:</p>
+    <p>\[ P_0^{(s)} = p^*_s = m_s. \]</p>
+    <p>Por isso \(m\) é chamado de SDF: cada \(m_s\) é literalmente <em>o preço hoje de "1 unidade de bem se realizar \(s\)"</em>.</p>
+
+    <h3 style="margin-top:1.2rem">Implicação operacional</h3>
+    <p>Mercado completo \(\equiv\) existem \(|S|\) ações Arrow \(\equiv\) podemos formar portfólio que replica qualquer payoff \(D_s\). Em \(|S| = 2\): precisamos de 2 ativos linearmente independentes, e qualquer outro ativo é precificado por arbitragem.</p>
+    <p>Cite <strong>Black &amp; Scholes (1973)</strong> como aplicação famosa: opção europeia é precificada como combinação linear de ações + bond, em mercado completo. <em>J. Political Economy</em> 81(3): 637–654, <a href="https://doi.org/10.1086/260062" style="color:var(--accent)">DOI 10.1086/260062</a>.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode esquematizar a derivação Black-Scholes a partir do SDF (sem a EDP de Itô — só a intuição de replicação em árvore binomial). Pede na reflexão se quiser.</p>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (2 itens — obrigatórios para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s3q1" data-correct="c">
+        <div class="q-text">1. Em mercado AD completo com \(|S| = 3\), agente avesso ao risco com \(v(c) = c^{0{,}5}\), \(\pi = (1/4, 1/2, 1/4)\) e consumo de equilíbrio \(x^* = (4, 9, 16)\). Os preços Arrow \(p^*_s\) (não-normalizados) são proporcionais a:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-sdf','s3q1','a',this)">(a) \(\pi_s\) (apenas as probabilidades).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-sdf','s3q1','b',this)">(b) \(1/\sqrt{x^*_s}\) (apenas a utilidade marginal, sem probabilidade).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-sdf','s3q1','c',this)">(c) \(\pi_s\,(v)'(x^*_s) = \pi_s \cdot \frac{1}{2\sqrt{x^*_s}}\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-sdf','s3q1','d',this)">(d) \(x^*_s/\sum_s x^*_s\).</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s3q2" data-correct="b">
+        <div class="q-text">2. Em mercado AD completo com \(|S| = 2\), \(\pi = (0{,}5;\ 0{,}5)\) e SDF \(m = (1{,}2;\ 0{,}8)\). Um ativo paga \(D = (3, 2)\). Seu preço \(P_0\) é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-sdf','s3q2','a',this)">(a) \(0{,}5 \cdot 3 + 0{,}5 \cdot 2 = 2{,}5\) (média simples sem SDF).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-sdf','s3q2','b',this)">(b) \(0{,}5 \cdot 1{,}2 \cdot 3 + 0{,}5 \cdot 0{,}8 \cdot 2 = 1{,}8 + 0{,}8 = 2{,}6\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-sdf','s3q2','c',this)">(c) \(1{,}2 \cdot 3 + 0{,}8 \cdot 2 = 5{,}2\) (sem ponderar por \(\pi\)).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-sdf','s3q2','d',this)">(d) \(3/1{,}2 + 2/0{,}8 = 5\) (descontando o payoff pelo SDF estado a estado).</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora, depois de ver SDF e precificação:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-sdf','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-sdf" disabled onclick="MPE.completeSection('s3-sdf')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EXTENSÃO 3 — CARA / CRRA ==================== -->
+<section class="section-block locked" id="s4-cara" data-section="s4-cara" data-order="4">
+  <div class="section-meta">Seção 4 · Extensão 3 · 15 min</div>
+  <h2>Aversão ao risco com CARA/CRRA — fórmulas fechadas</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes: você consegue dizer <strong>como o risco agregado é repartido</strong> entre agentes idênticos com CARA, em equilíbrio AD?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-cara','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Por que dedicar uma seção a isso.</strong> A maioria das aplicações em finanças e contratos usa <strong>uma das duas formas funcionais de Bernoulli</strong>:</p>
+    <ul>
+      <li><strong>CARA (Constant Absolute Risk Aversion):</strong> \(v(c) = -e^{-\gamma c}/\gamma\), \(\gamma > 0\).</li>
+      <li><strong>CRRA (Constant Relative Risk Aversion):</strong> \(v(c) = c^{1-\gamma}/(1-\gamma)\) para \(\gamma \neq 1\); \(v(c) = \ln c\) no caso limite \(\gamma = 1\).</li>
+    </ul>
+    <p>Cada uma tem <strong>fórmula fechada para o equilíbrio AD</strong> sob hipóteses razoáveis, e é por isso que a literatura aplicada não desce de lá.</p>
+
+    <h3 style="margin-top:1.2rem">CARA — Resultado canônico</h3>
+    <p><strong>Setup.</strong> \(I\) agentes idênticos com Bernoulli CARA \(v(c) = -e^{-\gamma c}/\gamma\). Dotação total \(\bar\omega_s\) depende do estado (risco agregado existe). Probabilidades de consenso \(\pi\).</p>
+    <p><strong>Resultado</strong> (Wilson 1968, <em>Econometrica</em> 36(1): 119–132, <a href="https://doi.org/10.2307/1909607" style="color:var(--accent)">DOI 10.2307/1909607</a>): em equilíbrio AD, cada agente carrega <strong>uma fração igual (\(1/I\)) do risco agregado</strong>. Especificamente,</p>
+    <p>\[ x^{i*}_s = \frac{\bar\omega_s}{I} + k^i \quad\text{com}\quad \sum_i k^i = 0, \]</p>
+    <p>onde \(k^i\) é constante (transferência <em>lump-sum</em> entre agentes que reflete a heterogeneidade das dotações iniciais).</p>
+    <p><strong>Comentário.</strong> CARA tem propriedade de "linearidade" no risco que faz a álgebra fechar bonita. Por isso é o cavalo-de-batalha de modelos com firmas, contratos de incentivo (Holmström 1979, <a href="https://doi.org/10.2307/3003320" style="color:var(--accent)">DOI 10.2307/3003320</a>) e teoria do leilão.</p>
+
+    <h3 style="margin-top:1.2rem">CRRA — Resultado canônico</h3>
+    <p><strong>Setup.</strong> \(I\) agentes idênticos com Bernoulli CRRA \(v(c) = c^{1-\gamma}/(1-\gamma)\). Dotação total \(\bar\omega_s\). Probabilidades \(\pi\).</p>
+    <p><strong>Resultado.</strong> Em equilíbrio AD, cada agente consome uma <strong>fração proporcional</strong> do agregado:</p>
+    <p>\[ x^{i*}_s = \alpha^i\, \bar\omega_s \quad\text{com}\quad \sum_i \alpha^i = 1, \]</p>
+    <p>e \(\alpha^i\) depende da renda inicial do agente.</p>
+    <p><strong>Comentário.</strong> CRRA tem homotetia, então <em>escala individual</em> se preserva. Por isso é o cavalo-de-batalha de macroeconomia (Lucas, Kydland-Prescott) e finanças de longo prazo.</p>
+
+    <h3 style="margin-top:1.2rem">Implicação para a aula</h3>
+    <p>A maioria dos exercícios avaliativos da Aula 5 usa \(v = \ln\) (CRRA com \(\gamma = 1\)) por elegância algébrica — <strong>não</strong> porque CRRA é mais realista. Os trabalhos empíricos de Hansen-Jagannathan (1991, <em>JPE</em> 99(2): 225–262, <a href="https://doi.org/10.1086/261749" style="color:var(--accent)">DOI 10.1086/261749</a>) mostram que o SDF estimado <strong>não</strong> é consistente com CRRA simples — daí a literatura de "equity premium puzzle" (Mehra-Prescott 1985, <a href="https://doi.org/10.1016/0304-3932(85)90061-3" style="color:var(--accent)">DOI 10.1016/0304-3932(85)90061-3</a>).</p>
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Não vamos entrar no equity premium puzzle aqui. Pré-monitoria 4 (Aulas 6–7) ou 5 pode tocar. O ponto agora é só vocês saberem que <strong>CARA e CRRA não são as únicas opções, e que a escolha tem consequências empíricas</strong>.</p>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s4q1" data-correct="c">
+        <div class="q-text">1. Em economia AD com \(I = 2\) agentes CARA \(v(c) = -e^{-c}\) (mesmo \(\gamma = 1\)), \(\bar\omega = (40, 60)\) (agregado <strong>arriscado</strong>), dotações <strong>assimétricas</strong> \(\omega^A = (10, 40)\), \(\omega^B = (30, 20)\). Em equilíbrio:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-cara','s4q1','a',this)">(a) Cada agente consome \(\bar\omega_s/2 = (20, 30)\) — autarquia.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-cara','s4q1','b',this)">(b) Cada agente consome sua dotação \(\omega^i\) — não há ganho de troca.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-cara','s4q1','c',this)">(c) Cada agente carrega fração igual (\(1/2\)) do risco agregado: \(x^{i*}_s = \bar\omega_s/2 + k^i\) com \(k^A + k^B = 0\), \(k^i\) refletindo a heterogeneidade de dotações via transferência <em>lump-sum</em>.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-cara','s4q1','d',this)">(d) Não há equilíbrio.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora, depois de ver CARA e CRRA:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-cara','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-cara" disabled onclick="MPE.completeSection('s4-cara')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: EXTENSÃO 4 — Mercados incompletos ==================== -->
+<section class="section-block locked" id="s5-incompletos" data-section="s5-incompletos" data-order="5">
+  <div class="section-meta">Seção 5 · Extensão 4 · 15 min</div>
+  <h2>Mercados incompletos — preview informal</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes: você consegue dar um exemplo concreto de <strong>payoff que não pode ser replicado</strong> num mercado com poucos ativos?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-incompletos','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <h3 style="margin-top:1.2rem">O que é um mercado incompleto</h3>
+    <p>Mercado <strong>completo:</strong> existe \(p_{\ell, s}\) para cada bem contingente — todo \((\ell, s)\) tem preço.<br>
+    Mercado <strong>incompleto:</strong> falta algum preço — algum bem contingente não pode ser comprado/vendido.</p>
+
+    <p><strong>Exemplo simples.</strong> Economia \(L = 1\), \(S = 3\) (recessão / normal / boom). <strong>Existem só 2 ativos:</strong> um bond livre de risco (paga 1 em todos os estados) e uma ação que paga \((D_1, D_2, D_3) = (0, 1, 3)\). O <em>span</em> é o subespaço de payoffs replicável por portfólios:</p>
+    <p>\[ \text{span}(\text{bond}, \text{ação}) = \big\{a\cdot(1,1,1) + b\cdot(0,1,3) : a, b \in \mathbb{R}\big\}. \]</p>
+    <p>Este é um subespaço de dimensão 2 em \(\mathbb{R}^3\) — <strong>falta uma dimensão</strong>.</p>
+
+    <h3 style="margin-top:1.2rem">Implicação</h3>
+    <p>Considere um payoff \(D = (1, 0, 0)\) — paga 1 em recessão, 0 caso contrário (uma ação Arrow para o estado 1). Esse payoff <strong>não está no span</strong>: não existe par \((a, b)\) com \(a \cdot (1,1,1) + b \cdot (0,1,3) = (1,0,0)\) (a primeira coordenada exige \(a = 1\), mas então a segunda dá \(1 + b = 0 \Rightarrow b = -1\), e a terceira fica \(1 - 3 = -2 \neq 0\)).</p>
+    <p>Em mercado AD completo, o agente avesso conseguiria comprar "seguro contra recessão". Em mercado incompleto onde só existem bond + ação, <strong>não consegue.</strong> Isso restringe o equilíbrio: a alocação de risco resultante é genericamente Pareto-ineficiente.</p>
+
+    <h3 style="margin-top:1.2rem">Resultado central (Hart 1975)</h3>
+    <p>Em mercados incompletos, o equilíbrio competitivo é <strong>constrained Pareto-eficiente</strong> (eficiente <em>dentro do que o mercado pode replicar</em>), mas <strong>genericamente Pareto-ineficiente</strong> comparado ao que mercado completo entregaria. <strong>A 1ª regra do bem-estar falha como teorema universal — depende da completude.</strong></p>
+    <p>Cite Hart (1975), <em>J. Economic Theory</em> 11(3): 418–443, "On the Optimality of Equilibrium when the Market Structure is Incomplete", <a href="https://doi.org/10.1016/0022-0531(75)90028-9" style="color:var(--accent)">DOI 10.1016/0022-0531(75)90028-9</a>.</p>
+
+    <h3 style="margin-top:1.2rem">Por que isso importa hoje</h3>
+    <p>Mercados financeiros reais <strong>não</strong> são completos:</p>
+    <ul>
+      <li>\(|S|\) é gigantesco (bilhões de cenários macro possíveis).</li>
+      <li>O número de ativos transacionados é finito e cresce devagar.</li>
+      <li>Mesmo com derivativos, há <em>unspanned risks</em> documentados (mortalidade, longevidade, choques tecnológicos não-replicáveis).</li>
+    </ul>
+    <p><strong>Por isso AD canônico é benchmark, não retrato.</strong> A Aula 6 (Radner sequencial) é o mais perto que se chega de modelar isso seriamente.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode esquematizar Radner em duas datas (\(t = 0\) e \(t = 1\)) com poucos ativos, e mostrar como restrição de span se traduz em ineficiência. Pede na reflexão.</p>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s5q1" data-correct="b">
+        <div class="q-text">1. Em economia \(L = 1\), \(S = 3\), com 2 ativos (bond + ação), o equilíbrio competitivo é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-incompletos','s5q1','a',this)">(a) Pareto-eficiente — Hart (1975) provou que mercados incompletos não geram ineficiência.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-incompletos','s5q1','b',this)">(b) Genericamente Pareto-ineficiente — Hart (1975). <em>Constrained</em> eficiente, mas não Pareto-eficiente.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-incompletos','s5q1','c',this)">(c) Não existe — mercados incompletos sempre falham em existência.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-incompletos','s5q1','d',this)">(d) Coincide com mercado completo se houver agente representativo.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora, depois de ver mercados incompletos:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-incompletos','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-incompletos" disabled onclick="MPE.completeSection('s5-incompletos')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s6-reflexao" data-section="s6-reflexao" data-order="6">
+  <div class="section-meta">Seção 6 · Reflexão · 3 min</div>
+  <h2>Foco do Alberto no sábado</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas vão diretamente para o Alberto montar a monitoria de 30/05.</p>
+
+  <div class="reflection-block">
+    <label>O que ficou <strong>claro</strong> nesta pré-monitoria que estava nebuloso na Aula 5?</label>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Por que m_s = pi_s × v'(x*_s) / lambda é literalmente o preço Arrow', ou 'Como crenças heterogêneas geram aposta endógena com fórmula fechada em log/CD'"></textarea>
+    <div class="help">Diz pro Alberto qual extensão funcionou — ele revisita rápido em sala.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>O que você quer que o <strong>Alberto cubra no sábado 30/05</strong>?</label>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Cálculo numérico do equilíbrio com crenças heterogêneas resolvido na lousa, com Lagrangiano explícito', ou 'Derivação Black-Scholes a partir de SDF em árvore binomial', ou 'Radner sequencial em 2 datas com restrição de span'"></textarea>
+    <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s6-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-monitoria</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-monitoria 3 concluída</h2>
+  <p>Boa. O Alberto vai ler suas reflexões antes do sábado.</p>
+  <p style="margin-top:1rem"><strong>Monitoria presencial:</strong> sábado, 30/05/2026, 10:00, Insper.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Esta pré-monitoria é <strong>formativa</strong> — não conta nota.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('pre-monitoria-03');
+
+var PAGE_ID = 'pre-monitoria-03';
+var TOTAL_SECTIONS = 7; // s0..s6
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-claro').value.trim();
+    var b = document.getElementById('refl-alberto').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s6-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'claro', document.getElementById('refl-claro').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'alberto', document.getElementById('refl-alberto').value.trim());
+    this.completeSection('s6-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>
