@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 06 — Arrow-Debreu II — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 06 — Arrow-Debreu II</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre J-R §5.6) + 5 avançadas 🔴 (calibre J-R §5.6 mais profundo + Hart 1975 + Lucas 1978 + qualifier).</strong> Objetivo: ponte entre a aula de 27/05 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 03/06 às 18:00 BRT</strong>, 1h30 antes da Aula 7.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-06-pos" data-phase="post" data-title="Pós-Aula 06">
+
+  <h3>Pós-Aula 06 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Aplicação de Brouwer ao simplex -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Considere o mapa de ajuste de preços de Brouwer \(T_l(p) = (p_l + \max(z_l(p), 0))/(1 + \sum_k \max(z_k(p), 0))\), aplicado ao simplex \(\Delta = \{p \ge 0 : \sum_l p_l = 1\}\). No ponto fixo \(p^*\) com \(p^* > 0\), conclui-se \(z(p^*) = 0\) <strong>combinando</strong>:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Apenas \(z_l(p^*) \le 0\) (vinda da estrutura de \(T\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Apenas \(p^* \cdot z(p^*) = 0\) (Walras).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) <strong>Combinação:</strong> ponto fixo \(p^* = T(p^*)\) implica \(z_l(p^*) \le 0\) para cada \(l\); Walras \(p^* \cdot z(p^*) = 0\) com \(p^* > 0\) e \(z_l \le 0\) força \(z_l(p^*) = 0\) para cada \(l\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Continuidade de \(z\) somente.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A prova de existência tem duas etapas: Brouwer entrega ponto fixo no simplex (com \(z_l \le 0\) por estrutura do mapa); Walras + positividade de \(p^*\) força \(z_l = 0\) (não apenas \(\le 0\)).</p>
+      <p><strong>2. Derivação.</strong> No ponto fixo \(p^* = T(p^*)\): \(p^*_l (1 + \sum_k \max(z_k, 0)) = p^*_l + \max(z_l, 0)\) ⇒ \(p^*_l \sum_k \max(z_k, 0) = \max(z_l, 0)\). Como \(p^* > 0\) e LHS é igual ao RHS, e ambos são não-negativos, conclui-se que \(z_l(p^*) \le 0\). Walras: \(p^* \cdot z = 0\). Combinando \(z \le 0\) coordenada-a-coordenada e \(p^* > 0\) com \(p^* \cdot z = 0\): cada \(z_l = 0\). \(\blacksquare\)</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) são partes individualmente insuficientes; precisa-se das duas. (d) ignora a estrutura do ponto fixo.</p>
+      <p><strong>4. Extensão.</strong> Em economia AD com \(LS\) bens, mesma estrutura. Em economia com produção (Aula 4), excesso de demanda agregada inclui produção líquida; mesma prova, com \(z(p) = \sum_i (x^i(p) - \omega^i) - \sum_j y^j(p)\).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Questão de raciocínio sobre estrutura da prova de existência. Aluno que marca (a) ou (b) ainda não viu o passo "Walras transforma \(\le\) em \(=\)".</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Réplica numérica de portfolio em |S|=2 -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Economia \(|S| = 2\). Bond \(D^{\text{bond}} = (1, 1)\), ação \(D^{\text{ação}} = (2, 0)\). Para implementar a alocação \(x = (5, 3)\) a partir da dotação \(\omega = (3, 5)\), o portfolio é tal que \(A\theta = (2, -2)\). Resolvendo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\theta_{\text{bond}} = 2, \theta_{\text{ação}} = -2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) <strong>\(\theta_{\text{bond}} = -2, \theta_{\text{ação}} = 2\)</strong>: verifique \(-2 \cdot 1 + 2 \cdot 2 = 2\) (estado 1) ✓; \(-2 \cdot 1 + 2 \cdot 0 = -2\) (estado 2) ✓.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\theta_{\text{bond}} = 0, \theta_{\text{ação}} = 1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Não tem solução; \((2, -2) \notin\) span.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> <strong>Lema da implementação Radner ↔ AD (Aula 5 + Aula 6 Bloco 2).</strong> Dado \(x - \omega\) (vetor de troca contingente líquida que o agente quer alcançar via mercado de ativos), o portfolio Radner que <strong>replica</strong> essa troca é \(\theta = A^{-1}(x - \omega)\), onde \(A \in \mathbb{R}^{S \times N}\) é a matriz de payoffs. Existência: \(A\) invertível \(\Leftrightarrow\) mercado completo (\(\text{rank}(A) = |S|\)). Restrição orçamentária em \(t = 0\): \(q \cdot \theta = 0\), o que sob não-arbitragem \(q_j = \sum_s p_s A_{sj}\) é equivalente algebricamente à restrição walrasiana AD individual \(p \cdot (x - \omega) = 0\). Resolva sistema linear \(A\theta = x - \omega = (2, -2)\) com \(A = \begin{pmatrix} 1 &amp; 2 \\ 1 &amp; 0 \end{pmatrix}\). \(\det A = -2 \neq 0\) ⇒ rank 2, mercado completo, solução única.</p>
+      <p><strong>2. Derivação.</strong> Passo 1: <em>identifique a troca líquida.</em> \(x - \omega = (5, 3) - (3, 5) = (2, -2)\) — agente quer ganhar 2 unidades no estado 1 (líquido) e perder 2 no estado 2. Passo 2: <em>aplique o lema.</em> \(A\theta = x - \omega\) ⇒ sistema: \(\theta_{\text{bond}} + 2\theta_{\text{ação}} = 2\) (estado 1); \(\theta_{\text{bond}} + 0 \cdot \theta_{\text{ação}} = -2\) ⇒ \(\theta_{\text{bond}} = -2\) (estado 2). Substituindo: \(-2 + 2\theta_{\text{ação}} = 2 \Rightarrow \theta_{\text{ação}} = 2\). Portfolio: \(\theta = (-2, 2)\). \(A\) <strong>vende 2 bonds e compra 2 ações</strong>.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte sinais. (c) é uma escolha aleatória sem álgebra. (d) é falso — rank 2.</p>
+      <p><strong>4. Extensão.</strong> Esse cálculo se generaliza para \(|S| > 2\) com matrizes maiores. Quando \(|S| = N\) e rank \(= N\), \(\theta = A^{-1}(x - \omega)\). Inversão pode ser cara em economias grandes; modelos macro usam tipicamente formulação dual via SDF.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto. Aluno que erra (a) inverteu sinais ou tem álgebra ruim; (c) chutou; (d) ainda não internalizou rank.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Não-arbitragem em mercado completo -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Em \(|S| = 3\) com mercado completo, preços-Arrow \(p^* = (0{,}3, 0{,}5, 0{,}2)\). Considere ativo com payoff \(D = (10, 5, 20)\). O preço de equilíbrio do ativo em \(t = 0\), por não-arbitragem, é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) \(P_0 = (1/3)(10 + 5 + 20) = 35/3 \approx 11{,}67\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) <strong>\(P_0 = 0{,}3 \cdot 10 + 0{,}5 \cdot 5 + 0{,}2 \cdot 20 = 3 + 2{,}5 + 4 = 9{,}5\)</strong>.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) \(P_0 = \max(10, 5, 20) = 20\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) \(P_0 = \min(10, 5, 20) = 5\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Não-arbitragem em mercado completo: \(P_0 = \sum_s p^*_s\, D_s\). Cada estado contribui com seu payoff ponderado pelo respectivo preço-Arrow.</p>
+      <p><strong>2. Derivação.</strong> Substituindo: \(P_0 = 0{,}3 \cdot 10 + 0{,}5 \cdot 5 + 0{,}2 \cdot 20 = 3 + 2{,}5 + 4 = 9{,}5\).</p>
+      <p><strong>3. Armadilha.</strong> (a) é o caso particular se \(p^*_s = 1/|S|\) (probabilidades uniformes + neutralidade ao risco). (c)/(d) são absurdos — preços de ativos não são extremos.</p>
+      <p><strong>4. Extensão.</strong> Black-Scholes-Merton (1973) é a versão contínua: opção precificada como integral sobre todos os estados. Em mercado incompleto, opções não são unicamente precificadas — admitem intervalo de preços. <strong>Aula 6 Bloco 3</strong>.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto. Aluno que erra (a) ainda confunde "valor esperado" com "preço de equilíbrio".</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Mercado incompleto: span e e_s -->
+  <div class="quizg-q" data-qid="q4" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em \(|S| = 3\), considere matriz de payoffs \(A = \begin{pmatrix} 1 &amp; 2 \\ 1 &amp; 0 \\ 1 &amp; -2 \end{pmatrix}\). A ação Arrow \(e_2 = (0, 1, 0)\) está no span de \(A\) sse o sistema \(A\theta = e_2\) admite solução. Resolva:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Sim — basta \(\theta = (1, -1/2)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) Sim — \(\theta = (0, 1)\) suficiente.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) <strong>Não — sistema \(\theta_{\text{bond}} + 2\theta_{\text{ação}} = 0, \theta_{\text{bond}} = 1, \theta_{\text{bond}} - 2\theta_{\text{ação}} = 0\) é inconsistente. Da segunda: \(\theta_{\text{bond}} = 1\). Substituindo na primeira: \(1 + 2\theta_{\text{ação}} = 0 \Rightarrow \theta_{\text{ação}} = -1/2\). Substituindo na terceira: \(1 - 2(-1/2) = 1 + 1 = 2 \neq 0\). Inconsistente.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Sim — qualquer \(\theta\) funciona.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Span de \(A\) tem dimensão \(\text{rank}(A)\). Em \(\mathbb{R}^{3 \times 2}\) com 2 colunas linearmente independentes, span tem dimensão 2; subespaço próprio de \(\mathbb{R}^3\). A ação Arrow do estado intermediário (\(e_2\)) frequentemente cai fora.</p>
+      <p><strong>2. Derivação.</strong> Acima. Sistema é triplo (3 equações, 2 incógnitas) — sobre-determinado em geral. Solução exige consistência: aqui o sistema é inconsistente, então \(e_2 \notin\) span.</p>
+      <p><strong>3. Armadilha.</strong> (a) testa só primeira equação; (b) não testa nenhuma; (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Em economia real, mercados são frequentemente incompletos para estados específicos: catástrofes naturais (até CAT bonds), pandemias (até 2020), risco político em mercados emergentes. Cada novo derivativo amplia rank em uma direção específica.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo de álgebra linear que requer atenção a todas as 3 equações. Aluno que pula a 3ª pode marcar (a). Distratores plausíveis.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Equação de Euler com CRRA -->
+  <div class="quizg-q" data-qid="q5" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Agente CRRA com \(\gamma = 2\), \(\beta = 0{,}96\), e \(R = 1{,}04\) (4% real bruto). A razão \(c_{t+1}/c_t\) na equação de Euler é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) \(c_{t+1}/c_t = \beta R = 0{,}96 \cdot 1{,}04 = 0{,}9984\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) <strong>\(c_{t+1}/c_t = (\beta R)^{1/\gamma} = (0{,}9984)^{1/2} \approx 0{,}9992\)</strong> — em \(\gamma = 2\), elasticidade de substituição intertemporal é \(1/\gamma = 0{,}5\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) \(c_{t+1}/c_t = R/\beta = 1{,}04/0{,}96 \approx 1{,}083\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) \(c_{t+1}/c_t = 1\) sempre.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CRRA \(u(c) = c^{1-\gamma}/(1-\gamma)\) tem \(u'(c) = c^{-\gamma}\). Equação de Euler: \(c_t^{-\gamma} = \beta R c_{t+1}^{-\gamma}\) ⇒ \((c_{t+1}/c_t)^\gamma = \beta R\) ⇒ \(c_{t+1}/c_t = (\beta R)^{1/\gamma}\). Em \(\gamma = 1\) (log), simplifica para \(\beta R\); em \(\gamma > 1\), elasticidade \(< 1\).</p>
+      <p><strong>2. Derivação.</strong> \(\beta R = 0{,}9984\). Em \(\gamma = 2\): \(c_{t+1}/c_t = (0{,}9984)^{1/2} = \sqrt{0{,}9984} \approx 0{,}9992\). Note que \(\beta R < 1\) ⇒ consumo decresce, mas decresce <em>menos rápido</em> que sob \(\gamma = 1\) (log) — porque o agente é mais avesso à variabilidade intertemporal.</p>
+      <p><strong>3. Armadilha.</strong> (a) é caso \(\gamma = 1\), errado para \(\gamma = 2\). (c) inverte a fórmula. (d) é absurdo (estado estacionário só com \(\beta R = 1\)).</p>
+      <p><strong>4. Extensão.</strong> Macroeconomia (RBC, NK) usa CRRA com \(\gamma\) entre 1 e 5 tipicamente. Calibração canônica: \(\gamma = 2\), \(\beta = 0{,}96\) ano. Equity premium puzzle (Mehra-Prescott 1985) é o desafio empírico.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto. Aluno que marca (a) confunde com log.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Kakutani: hipóteses precisas -->
+  <div class="quizg-q" data-qid="q6" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> O Teorema de Kakutani (1941) requer que a correspondência \(F: K \rightrightarrows K\) (\(K\) compacto convexo \(\neq \emptyset\)) seja:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Apenas semi-contínua superior (gráfico fechado).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) Apenas convexa-valorada (\(F(x)\) convexo para cada \(x\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) <strong>Semi-contínua superior <em>e</em> convexa-valorada</strong> (com \(F(x)\) compacto não-vazio para cada \(x\)). <strong>Sem qualquer uma dessas, ponto fixo pode falhar.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Diferenciável.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Kakutani requer 3 hipóteses sobre \(F\) (além de domínio compacto convexo): valores compactos não-vazios, valores convexos, semi-continuidade superior. Cada uma é necessária — contraexemplos clássicos mostram que omitir qualquer uma quebra o teorema.</p>
+      <p><strong>2. Derivação.</strong> Contraexemplo se valores não são convexos: \(F: [0,1] \rightrightarrows [0,1]\) com \(F(x) = \{1\}\) se \(x &lt; 1/2\), \(F(x) = \{0\}\) se \(x &gt; 1/2\), \(F(1/2) = \{0, 1\}\). Domínio \([0,1]\) compacto convexo ✓; valores não-vazios ✓; semi-continuidade superior ✓ (gráfico fechado em \(\{1/2\}\) graças à inclusão dos dois ramos). Mas \(F(1/2) = \{0, 1\}\) não é convexo. Sem ponto fixo: para \(x &lt; 1/2\), \(F(x) = \{1\} \not\ni x\); para \(x &gt; 1/2\), \(F(x) = \{0\} \not\ni x\); em \(x = 1/2\), \(F(1/2) = \{0, 1\} \not\ni 1/2\). Conclusão: omitir convexidade dos valores quebra o teorema, mesmo com todas as outras hipóteses preservadas.</p>
+      <p><strong>3. Armadilha.</strong> (a) e (b) são partes; precisa-se das duas. (d) confunde diferenciabilidade com continuidade.</p>
+      <p><strong>4. Extensão.</strong> Em economia EG, demanda como correspondência tem todas as 3 propriedades sob hipóteses padrão. Em modelos com não-convexidades (indivisibilidades), pode falhar — mais ferramentas (Schmeidler-Vohra) são necessárias.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão técnica avançada. Aluno que marca (a) ou (b) ainda não internalizou a estrutura precisa de Kakutani; (d) confunde teorema fundamental.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — Equivalência AD↔Radner: prova direta -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Na prova da equivalência AD↔Radner (direção \(\Rightarrow\)), partindo de equilíbrio AD canônico \((p^*, x^*)\), define-se preços de ativos por não-arbitragem (\(q^*_j = \sum_s p^*_s A_{sj}\)) e portfolio \(\theta^{i*} = A^{-1}(x^{i*} - \omega^i)\). Para verificar que esse \(\theta^{i*}\) satisfaz a restrição orçamentária de \(t = 0\) (\(q^* \cdot \theta^{i*} = 0\)), basta usar:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Continuidade da demanda.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Convexidade das preferências.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) <strong>Lei de Walras de \(i\) em equilíbrio AD: \(p^* \cdot x^{i*} = p^* \cdot \omega^i\)</strong>. Substituindo: \(q^* \cdot \theta^{i*} = (\sum_s p^*_s A_{s\cdot}) \cdot A^{-1}(x^{i*} - \omega^i) = p^* \cdot (x^{i*} - \omega^i) = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Hahn-Banach.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A restrição orçamentária de Radner em \(t = 0\) é a "versão Radner" da Walras AD. Sob equivalência via mercado completo (\(\text{rank}(A) = |S|\)), as duas restrições são <strong>algebricamente equivalentes</strong> via não-arbitragem.</p>
+      <p><strong>2. Derivação.</strong> Walras AD individual: \(p^* \cdot x^{i*} = p^* \cdot \omega^i\), ou seja, \(p^* \cdot (x^{i*} - \omega^i) = 0\). Não-arbitragem: \(q^* = A^\top p^*\) (matricial). Restrição em Radner: \(q^* \cdot \theta^{i*} = (A^\top p^*) \cdot \theta^{i*} = p^* \cdot (A\theta^{i*}) = p^* \cdot (x^{i*} - \omega^i) = 0\). \(\blacksquare\)</p>
+      <p><strong>3. Armadilha.</strong> (a)/(b)/(d) são ferramentas que aparecem em outras provas (existência, 2º TBE), mas não nesta — esta é álgebra direta de Walras + não-arbitragem.</p>
+      <p><strong>4. Extensão.</strong> Em mercado <em>incompleto</em>, esta equivalência quebra: a restrição de Radner em \(t = 0\) restringe \(\theta\) ao span de \(A\), enquanto Walras AD restringiria \((x - \omega)\) a qualquer vetor. A diferença é exatamente onde Pareto-ineficiência surge (Hart 1975).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão de demonstração que separa quem entendeu a prova de equivalência de quem só decorou enunciado.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — Hart 1975: passo crítico -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Em mercados incompletos, a prova do 1º TBE da Aula 5 falha. O passo crítico onde quebra é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) UMP não exausta orçamento.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) <strong>A alocação alternativa \(\tilde x\) Pareto-superior precisa estar no span dos ativos disponíveis para ser implementável; com rank deficiente, conjunto de \(\tilde x\) implementáveis é menor que conjunto de \(\tilde x\) Pareto-superiores. O argumento de contradição "\(p^* \cdot \tilde x > p^* \cdot \omega\)" não bloqueia porque o \(\tilde x\) pode estar fora do span.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Lei de Walras quebra.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) LNS deixa de valer.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O argumento de 1º TBE da Aula 5 usa: \(\tilde x\) Pareto-superior <em>e</em> viável <em>e</em> argumento de contradição via Walras. Em mercado incompleto, "viável" institucionalmente exige \(\tilde x \in \omega + \text{span}(A)\), e o conjunto de Pareto-superiores pode estar fora.</p>
+      <p><strong>2. Derivação.</strong> Em equilíbrio Radner com mercado incompleto, cada agente está em UMP individual restrita ao span: \(x^{i*} = \omega^i + A\theta^{i*}\). Para \(\tilde x^i \succ x^{i*}\), UMP implica \(p^* \cdot \tilde x^i > p^* \cdot x^{i*}\) <strong>somente se \(\tilde x^i\) também é implementável via portfolio</strong>, ou seja, \(\tilde x^i \in \omega^i + \text{span}(A)\). Para \(\tilde x^i\) fora do span, não há restrição de orçamento bem-definida via Radner. O argumento de contradição via "\(p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i\)" não bloqueia.</p>
+      <p><strong>3. Armadilha.</strong> (a) UMP exausta orçamento sob LNS sempre. (c) Walras vale (dentro do span). (d) LNS não muda em incompletude.</p>
+      <p><strong>4. Extensão.</strong> Hart (1975) mostra que <em>em equilíbrio Radner</em>, vale uma versão fraca: <strong>constrained Pareto-eficiência</strong> (não há \(\tilde x \in \) span Pareto-superior). Mas Pareto absoluto falha. Magill-Quinzii (1996) detalham. <strong>Aula 8</strong> (sel.adv.) introduz forma específica de incompletude endógena.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão de raciocínio sobre estrutura da prova. Aluno que marca (a)/(c)/(d) ainda não viu que esses passos sobrevivem em incompletude — o que falha é o conjunto onde se busca \(\tilde x\).</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — GP 1986: mais ativos pode piorar -->
+  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Geanakoplos &amp; Polemarchakis (1986) provaram que adicionar um novo ativo financeiro pode piorar o bem-estar de algum agente. A intuição econômica desse resultado é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Custos de transação aumentam com mais ativos.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) <strong>Quando rank é deficiente, alguns agentes se aproveitam da incompletude (e.g., ofertam seguro residual a preço alto via combinação dos ativos existentes). Adicionar um ativo novo redistribui o "poder de mercado implícito": preços se reajustam, e o agente que ganhava perde — e vice-versa. Sem mercado completo (que estabilizaria via 2º TBE), não há garantia de Pareto-melhoria.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) Mais ativos confundem agentes (irracionalidade).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) GP 1986 contradiz o 1º TBE.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O resultado contra-intuitivo de GP 1986 vem da ausência de garantia de Pareto-melhoria fora de mercado completo. Em incompletude, equilíbrios reagem a mudanças no conjunto de ativos via ajuste de preços; o ajuste afeta diferentes agentes diferentemente — sem soma-positiva.</p>
+      <p><strong>2. Derivação.</strong> Considere economia com 2 agentes e 2 ativos cobrindo 3 estados (rank \(= 2\)). Equilíbrio Radner aloca riscos parcialmente. Adicionando 3º ativo (mercado completo agora), preços de equilíbrio se reajustam. O agente que estava "vendendo" seguro residual via combinação dos 2 originais (a preço implícito alto) perde lucro. O outro agente ganha. <strong>Pareto não-comparável.</strong></p>
+      <p><strong>3. Armadilha.</strong> (a) confunde com fricções operacionais (não modeladas no setup canônico). (c) confunde com economia comportamental. (d) é falso — GP 1986 não contradiz 1º TBE; mostra que 1º TBE não estende para incompletude.</p>
+      <p><strong>4. Extensão.</strong> Aplicação prática: regulação de derivativos OTC (over-the-counter). Pré-2008, argumento de "mais ativos sempre melhora" sustentou desregulamentação. Pós-2008 (CDOs sintéticos, AIG), mostrou-se que adicionar ativos novos sob informação assimétrica pode amplificar instabilidade. Aulas 8–9 detalham. Hart-GP é fundamentação parcial.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão conceitual avançada com implicação política forte. Distratores plausíveis para quem não viu GP.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴🔴 — META: unicidade do equilíbrio sob mercados completos -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <em>Questão meta — pede raciocínio de recíproca.</em> Considere economia AD canônica de troca pura com \(I\) agentes, mercado completo (\(\text{rank}(A) = |S|\)), Bernoullis contínuas, dotações estritamente positivas. A teoria padrão (Arrow-Debreu 1954; J-R §5.5) garante <strong>existência</strong> de equilíbrio competitivo. Pergunta:
+      <p style="margin-top:0.4em;font-style:italic">A hipótese de <strong>preferências estritamente convexas</strong> é necessária para garantir a <strong>unicidade</strong> do equilíbrio AD?</p>
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Não — existência implica unicidade automaticamente em economia AD.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) <strong>Estrita convexidade não é suficiente para unicidade global, e sua ausência não impede unicidade em casos especiais.</strong> Sob estritamente convexas + dotações estritamente positivas, demanda individual é função (não correspondência), o que descarta multiplicidade trivial vinda de demanda multivalorada — mas <strong>multiplicidade de equilíbrios</strong> ainda pode ocorrer (efeito-renda agressivo, Sonnenschein-Mantel-Debreu). Sob preferências apenas convexas (não estritamente), demanda pode ser correspondência e multiplicidade fica mais provável; ainda assim, em casos com simetria (agregado livre de risco + Bernoullis idênticas + crenças uniformes), o equilíbrio é único pela simetria. Conclusão: a relação convexidade ↔ unicidade é mais sutil que "estritamente convexas \(\Rightarrow\) único".</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Sim — estrita convexidade implica unicidade do equilíbrio AD em qualquer economia, sempre.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Não — unicidade exige preferências côncavas e dotações idênticas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A pergunta separa três objetos distintos que alunos costumam confundir: <em>existência</em> (Brouwer/Kakutani sobre simplex), <em>unicidade da demanda individual</em> (consequência de estrita convexidade da UMP), e <em>unicidade do equilíbrio walrasiano</em> (que depende do excesso de demanda agregada). J-R §5.5.4 + N&amp;S 12e §13.6 são explícitos: estrita convexidade dos preferências individuais garante apenas que a demanda \(x^i(p, w)\) é função uni-valorada — não impede que existam <strong>múltiplos preços \(p^*\)</strong> que zeram \(z(p)\). O teorema de Sonnenschein-Mantel-Debreu (S-M-D) mostra que \(z(p)\) sobre o simplex pode ter forma "qualquer" (continuidade, Walras, homogeneidade); efeito-renda agressivo nos cruzamentos pode gerar múltiplos zeros.</p>
+      <p><strong>2. Derivação.</strong> <em>Estrita convexidade não é suficiente para unicidade do equilíbrio.</em> Contraexemplo padrão: economia de troca com 2 agentes Cobb-Douglas (estritamente convexas, suaves) e dotações que cruzam — caixa de Edgeworth pode exibir 3 ou mais equilíbrios competitivos quando curvas de oferta se intersectam várias vezes (J-R §5.4 Fig. 5.5; Mas-Colell-Whinston-Green §17.D). <em>Estrita convexidade não é necessária para unicidade.</em> Em economia simétrica (2 agentes, Bernoullis idênticas, dotações espelhadas, agregado livre de risco), a alocação \(x^* = \bar\omega/2\) é o único equilíbrio mesmo se os agentes tivessem preferências apenas convexas — a simetria força a única solução compatível com market-clearing. <em>Condição suficiente clássica para unicidade global:</em> WARP no excesso de demanda agregada (J-R §5.4.4) ou substitutos brutos (gross substitutes; Arrow-Hahn 1971 §9). Ambas são condições <strong>sobre o agregado</strong>, não sobre preferências individuais.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde existência com unicidade — são teoremas distintos. (c) é o erro mais comum: aluno aprende "estrita convexidade ⇒ demanda única" e generaliza para "equilíbrio único"; salto inválido (S-M-D bloqueia a generalização). (d) inverte: concavidade quebra a UMP em vez de garantir unicidade.</p>
+      <p><strong>4. Extensão.</strong> Em macro/finanças, multiplicidade de equilíbrios é fonte de "sunspot equilibria" (Cass-Shell 1983) e de equilíbrios autorrealizáveis em modelos de moeda fiduciária. Quando mercado é incompleto (Aula 6 Bloco 3), multiplicidade ocorre genericamente (Magill-Quinzii 1996, §15). <strong>Aula 7</strong> (externalidades) mostra outra fonte de patologia: equilíbrios competitivos podem nem ser Pareto-eficientes. <strong>Aula 8</strong> (sel.adv.) mostra que info assimétrica também produz múltiplos equilíbrios (pooling vs. separating).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴🔴. Questão de raciocínio meta — testa se aluno distingue três tipos de unicidade (demanda individual, equilíbrio walrasiano, alocação) e reconhece que estrita convexidade só toca o primeiro. Distratores (a) e (c) atraem o aluno que mistura os três; (d) atrai quem confunde concavidade com convexidade. Aluno cuidadoso pode questionar se (b) está "completa" — a alternativa é deliberadamente longa porque a pergunta é fina; resumir mais perderia o ponto-chave. Calibre dentro do teto J-R §5.5/§5.6 (unicidade está em §5.5.4) — sem invocar Stiemke, TFAP nem Harrison-Kreps.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 7 presencial</strong> (quarta, 03/06, 19:30 — Externalidades + Bens Públicos). Os <strong>exercícios avaliativos da Aula 6</strong> também fecham em <strong>quarta 03/06 às 18h</strong>. Gabarito 5-passos: quinta 04/06 · 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-06-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

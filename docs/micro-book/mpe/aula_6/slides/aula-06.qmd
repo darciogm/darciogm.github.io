@@ -1,0 +1,668 @@
+---
+title: "Arrow-Debreu II — Existência, Radner, Mercados Incompletos"
+subtitle: "Aula 6 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-05-27"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 27/05/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Arrow-Debreu II — Existência, Radner, Mercados Incompletos {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 6 — Fechando o Equilíbrio Geral**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+27 de maio de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 5 montou Arrow-Debreu I assumindo existência. Hoje provamos via ponto fixo, separamos AD de Radner, e abrimos a falha que define as Aulas 7–9: mercados incompletos.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Provar (via sketch) existência de equilíbrio AD em $\mathbb{R}^{LS}$, mostrar equivalência AD ↔ Radner sob mercado completo (rank $= |S|$), e diagnosticar ineficiência sob incompletude (Hart 1975).
+
+::: {.fragment}
+### Pré-aula assumida
+
+- J-R §5.6 (existência walrasiana) lido com calma.
+- Equação fundamental do SDF (Aula 5) na ponta da língua.
+- $\mathbb{R}^{LS}$, 1º TBE estendido, equilíbrio AD canônico — tudo consolidado.
+:::
+
+::: {.fragment}
+[Sair sem entender que **rank $(A) = |S|$** é a fronteira entre AD e ineficiência = Aulas 7–9 ficam soltas.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Recall Aula 5 (canônico) | 19:30–19:35 |
+| 1 | Existência via Brouwer/Kakutani (com triagem rápida) | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Radner sequencial + equivalência AD↔Radner | 20:25–21:05 |
+| 3 | Mercados incompletos + Hart (1975) | 21:05–21:45 |
+| — | *Pausa* | 21:45–21:55 |
+| 4 | SDF, Euler + boxes + H-J bounds + Equity premium puzzle | 21:55–22:25 |
+| 5 | Síntese + ponte Aula 7 | 22:25–22:30 |
+
+::: {.bridge}
+180 min cheios. Aula 5 foi conceitual; hoje é técnica + institucional + política.
+:::
+
+---
+
+## Bloco 1 — Existência via Brouwer/Kakutani {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:45–20:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Ponto fixo sobre o simplex. Sem prova rigorosa — uso da ferramenta.
+:::
+
+---
+
+## Por que existência não é grátis
+
+> Aula 5 **assumiu** $(p^*, x^*)$. Hoje provamos.
+
+**Intuição (Walras, 1874):** preços ajustam até zerar excesso de demanda agregada.
+
+**Formalização (Arrow-Debreu, 1954):** ponto fixo sobre o simplex.
+
+::: {.callout-note .callout}
+A álgebra é a mesma da Aula 4/5. O que muda é o aparelho: usamos teoremas de ponto fixo como ferramenta central.
+:::
+
+::: {.bridge}
+Brouwer (1911) para função; Kakutani (1941) para correspondência.
+:::
+
+---
+
+## Excesso de demanda agregada
+
+::: {.card}
+$$z(p) = \sum_i (x^i(p, p \cdot \omega^i) - \omega^i) \in \mathbb{R}^{LS}.$$
+:::
+
+**4 propriedades canônicas:**
+
+1. **Continuidade** (Berge + preferências contínuas).
+2. **Homogeneidade grau 0:** $z(\lambda p) = z(p)$.
+3. **Lei de Walras:** $p \cdot z(p) = 0$.
+4. **Fronteira:** $p_l \to 0 \Rightarrow \|z\| \to \infty$.
+
+::: {.bridge}
+As 4 sobrevivem em $\mathbb{R}^{LS}$ palavra-por-palavra. **Mais bens, mesma estrutura.**
+:::
+
+---
+
+## Brouwer (1911)
+
+::: {.eq-key}
+**Teorema.** $K \subset \mathbb{R}^n$ compacto, convexo, não-vazio. $f: K \to K$ contínua. Então $\exists\, x^* \in K$ com $f(x^*) = x^*$.
+:::
+
+**Aplicação ao simplex de preços:**
+
+$$T_l(p) = \frac{p_l + \max(z_l(p), 0)}{1 + \sum_k \max(z_k(p), 0)}.$$
+
+**Verificação:** $T$ é contínua (porque $z$ é); $T(\Delta) \subset \Delta$. Brouwer entrega $p^*$ com $T(p^*) = p^*$.
+
+::: {.eq-punch}
+Ponto fixo $p^*$ + Walras + monotonicidade $\Rightarrow z(p^*) = 0$.
+:::
+
+---
+
+## Quando Brouwer falha — Kakutani (1/2)
+
+**Situação problemática:** preferências apenas convexas (não estritamente). Exemplo: $u(x_1, x_2) = x_1 + 2 x_2$ com $p_1/p_2 = 1/2$ — TMS = razão de preços, **toda a fronteira da reta orçamentária** é solução.
+
+**Demanda é correspondência $\rightrightarrows$, não função.** Brouwer não se aplica.
+
+::: {.bridge}
+Generalização: ponto fixo de **correspondência**.
+:::
+
+---
+
+## Quando Brouwer falha — Kakutani (2/2)
+
+::: {.eq-key}
+**Teorema (Kakutani 1941).** $K$ compacto convexo $\neq \emptyset$. $F: K \rightrightarrows K$ correspondência **convexa-valorada** e **semi-contínua superior**. Então $\exists\, x^* \in K$ com $x^* \in F(x^*)$.
+:::
+
+**Quando usar:** quando a UMP entrega conjunto de soluções (sob preferências apenas convexas).
+
+::: {.callout-note .callout}
+**Brouwer = Kakutani com correspondência singular.** Use Brouwer quando puder; Kakutani quando precisar.
+:::
+
+---
+
+## Sketch — existência em economia AD
+
+5 passos no quadro:
+
+::: {.compact-table}
+| Passo | Ferramenta |
+|:---|:---|
+| 1. Defina simplex $\Delta = \{p \ge 0 : \sum_{(\ell,s)} p_{\ell,s} = 1\}$ | compacto convexo |
+| 2. $z(p)$ contínua em $\Delta_+$ | Berge |
+| 3. Fronteira $\Rightarrow$ $T(p)$ retorna ao interior | monotonicidade |
+| 4. Brouwer ou Kakutani $\Rightarrow$ $\exists\, p^*$ ponto fixo | teorema |
+| 5. Walras + LNS $\Rightarrow z(p^*) = 0$ | identidade contábil |
+:::
+
+::: {.eq-punch}
+Equilíbrio existe sob hipóteses canônicas. Detalhes: J-R §5.6.
+:::
+
+---
+
+## Onde existência pode falhar
+
+::: {.fragment}
+**Hipóteses que podem quebrar:**
+
+- Dotação zero em algum bem ($\omega^i_\ell = 0$ para todo $i$) → fronteira falha.
+:::
+
+::: {.fragment}
+- Preferências não-monotônicas → LNS / Walras quebram.
+:::
+
+::: {.fragment}
+- **Bens públicos / externalidades** → demanda agregada não bem-definida com individualismo. **Aula 7.**
+:::
+
+::: {.fragment}
+[Aulas 7–9 vão diagnosticar onde existência ou eficiência falham. Hoje: sob hipóteses canônicas, existe.]{.bridge}
+:::
+
+---
+
+## Pausa 1 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+20:25 – 20:35 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+AD canônico vs. Radner: agora a parte institucional.
+:::
+
+:::
+
+---
+
+## Bloco 2 — Radner sequencial + equivalência {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 20:35–21:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+$N$ ativos + spot. AD ↔ Radner sse rank$(A) = |S|$.
+:::
+
+---
+
+## Por que Radner
+
+> AD canônico cota $LS$ preços-Arrow ex-ante simultaneamente. **Não é o que vemos.**
+
+**Mercados financeiros reais:** bonds, ações, opções, futuros. Ativos cujos payoffs dependem dos estados.
+
+::: {.callout-note .callout}
+Radner (1972, *Econometrica*): equilíbrio com **portfolio em $t = 0$** + **mercado spot em cada $s$**. Modelo institucional realista.
+:::
+
+---
+
+## Setup formal de Radner
+
+::: {.cols-2-3}
+::: {}
+**Em $t = 0$:**
+
+- Agente $i$ escolhe $\theta^i \in \mathbb{R}^N$.
+- Restrição: $q \cdot \theta^i = 0$.
+
+**Em cada $s$:**
+
+- Ativo $j$ paga $A_{sj}$.
+- Renda: $\omega^i_s + (A\theta^i)_s$.
+- Spot fecha.
+:::
+::: {}
+**Equilíbrio Radner $(q^*, \theta^*, x^*)$:**
+
+1. Cada $(\theta^{i*}, x^{i*})$ otimiza utilidade.
+2. Mercado de ativos: $\sum_i \theta^{i*} = 0$.
+3. Spot fecha em cada $s$: $\sum_i x^{i,s} = \sum_i \omega^i_s$.
+:::
+:::
+
+---
+
+## Equivalência AD↔Radner — enunciado
+
+::: {.eq-key}
+**Teorema (Arrow 1953, Radner 1972).** Se $\text{rank}(A) = |S|$ (mercado completo via portfolio), equilíbrio Radner = equilíbrio AD canônico. Mesma alocação.
+:::
+
+::: {.bridge}
+A diferença é institucional, não econômica. AD é teoria; Radner é prática.
+:::
+
+---
+
+## Equivalência — sketch (1/2)
+
+**Direção $\Rightarrow$ (AD para Radner):**
+
+Dado $p^*$ AD, defina:
+
+$$q^*_j = \sum_s p^*_s\, A_{sj} \quad \text{(não-arbitragem)}.$$
+
+Defina portfolio $\theta^{i*}$ tal que $A\theta^{i*} = x^{i*} - \omega^i$ (existe pois $\text{rank} = |S|$).
+
+::: {.compact-table}
+| Verificação | Conta |
+|:---|:---|
+| Restrição em $t=0$ | $q^* \cdot \theta^{i*} = p^* \cdot (x^{i*} - \omega^i) = 0$ ✓ |
+| Renda no estado $s$ | $\omega^i_s + (A\theta^{i*})_s = x^{i*}_s$ ✓ |
+:::
+
+---
+
+## Equivalência — sketch (2/2)
+
+**Direção $\Leftarrow$ (Radner para AD):**
+
+Dado $q^*$ com rank$(A) = |S|$, identifique:
+
+$$p^*_s = q^* \cdot (A^{-1})_{\cdot s}.$$
+
+Esse $p^*$ é o vetor de preços-Arrow que sustenta a alocação Radner.
+
+::: {.eq-punch}
+Sob mercado completo, AD canônico e Radner sequencial são **o mesmo equilíbrio**. Diferentes representações da mesma alocação.
+:::
+
+---
+
+## Réplica numérica — bond + ação em $|S| = 2$
+
+**Setup:** $D^{\text{bond}} = (1, 1)$, $D^{\text{ação}} = (D_1, D_2)$ com $D_1 \neq D_2$.
+
+Matriz: $A = \begin{pmatrix} 1 & D_1 \\ 1 & D_2 \end{pmatrix}$, $\det A = D_2 - D_1 \neq 0$.
+
+**Réplica de $e_1 = (1, 0)$:** resolva $A\theta = e_1$.
+
+$$\theta_{\text{ação}} = \frac{1}{D_1 - D_2}, \quad \theta_{\text{bond}} = \frac{D_2}{D_2 - D_1}.$$
+
+::: {.eq-punch}
+Esse portfolio paga 1 em $s = 1$ e 0 em $s = 2$ — replica $e_1$. Black-Scholes-Merton (1973) é a versão contínua.
+:::
+
+---
+
+## Síntese — AD canônico vs. Radner
+
+::: {.compact-table}
+| Aspecto | AD canônico | Radner com rank completo |
+|:---|:---|:---|
+| Cotado em $t=0$ | $LS$ preços-Arrow | $N \ge |S|$ preços de ativos |
+| Implementação | Contratos contingentes | Portfolio + spot |
+| Equilíbrio | $(p^*, x^*)$ | $(q^*, \theta^*, x^*)$ |
+| Equivalência | — | sse rank$(A) = |S|$ |
+:::
+
+::: {.bridge}
+E quando rank é deficiente? **Bloco 3.** Hart (1975).
+:::
+
+---
+
+## Bloco 3 — Mercados incompletos + Hart (1975) {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 21:15–21:55
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Equilíbrio existe; constrained PE; genericamente Pareto-ineficiente.
+:::
+
+---
+
+## Mercado incompleto — exemplo
+
+**$|S| = 3$.** Bond $(1,1,1)$ + ação $(0, 1, 3)$. Matriz:
+
+$$A = \begin{pmatrix} 1 & 0 \\ 1 & 1 \\ 1 & 3 \end{pmatrix}, \quad \text{rank}(A) = 2 < 3.$$
+
+**Span $\mathcal{M}$:** plano em $\mathbb{R}^3$, $\{(a, a+b, a+3b) : a, b \in \mathbb{R}\}$.
+
+**Verificação:** $e_1 = (1, 0, 0)$? $a=1, a+b=0 \Rightarrow b=-1$, $a+3b = -2 \neq 0$. **$e_1 \notin \mathcal{M}$**.
+
+::: {.eq-punch}
+Não existe portfolio que pague 1 em $s = 1$ e 0 nos outros. Mercado falta uma dimensão.
+:::
+
+---
+
+## Equilíbrio incompleto — existência + constrained PE
+
+::: {.fragment}
+**Existência.** Sob hipóteses canônicas, equilíbrio Radner com mercado incompleto **existe** (Magill-Quinzii 1996). Brouwer/Kakutani aplicado ao excesso de demanda de ativos.
+:::
+
+::: {.fragment}
+**Constrained Pareto-eficiência.** Não há realocação Pareto-superior **dentro** do span dos ativos disponíveis.
+:::
+
+::: {.fragment}
+[Mas...]{.bridge}
+:::
+
+---
+
+## Hart (1975) — Pareto-ineficiência genérica
+
+::: {.eq-key}
+**Teorema (Hart 1975, JET).** Em mercados incompletos, equilíbrio competitivo é **genericamente Pareto-ineficiente em sentido absoluto**. Existem alocações Pareto-superiores **fora** do span dos ativos disponíveis.
+:::
+
+**Por quê.** O argumento de 1º TBE da Aula 5 falha: a alocação alternativa $\tilde x$ tem que estar no span para ser implementável. Conjunto restrito $\Rightarrow$ contradição não bloqueia.
+
+::: {.eq-punch}
+1º TBE não estende para mercado incompleto.
+:::
+
+---
+
+## Geanakoplos-Polemarchakis (1986) — mais ativos pode piorar
+
+> "Introduzir um novo ativo financeiro pode **piorar** o bem-estar de alguns agentes."
+
+**Intuição:** quando entra um ativo novo, **todos os preços se reajustam**. O reajuste pode favorecer alguns e prejudicar outros.
+
+::: {.callout-warn .callout}
+Sem mercado completo (que estabilizaria via 2º TBE), **não há garantia de Pareto-melhoria** em completar parcialmente.
+:::
+
+::: {.bridge}
+Implicação política: regulação de derivativos não é trivialmente boa nem má.
+:::
+
+---
+
+## Box Brasil — Tesouro IPCA+
+
+**Tesouro IPCA+** (lançado 2002): título do governo que paga IPCA + juro real fixo.
+
+- **Antes de 2002:** mercado brasileiro com **rank deficiente** para inflação (LFT, pré-fixado, sem hedge inflacionário direto).
+- **Após 2002:** completamento parcial do mercado financeiro nessa dimensão.
+
+::: {.callout-note .callout}
+Por Hart 1975: foi Pareto-melhorador? Provavelmente sim no agregado. Por GP 1986: pode haver perdedores (ex.: agentes com exposição inflacionária implícita).
+:::
+
+::: {.bridge}
+Política do Tesouro Nacional dá razão prática a esses argumentos.
+:::
+
+---
+
+## Pausa 2 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+21:55 – 22:05 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Bloco 4 conecta tudo com macroeconomia aplicada.
+:::
+
+:::
+
+---
+
+## Bloco 4 — SDF + Euler + Brasil/Mundo {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+30 min · 21:55–22:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+SELIC. VIX. H-J bounds. Equity premium puzzle.
+:::
+
+---
+
+## Equação fundamental do SDF — recall
+
+**Aula 5:**
+
+::: {.eq-key}
+$$\frac{p^*_s}{p^*_{s'}} = \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\pi^i_{s'}\, (v^i)'(x^{i*}_{s'})} \quad \forall i.$$
+:::
+
+::: {.bridge}
+Especialização para **tempo + risco**: $s = (t, \omega)$.
+:::
+
+---
+
+## Equação de Euler intertemporal (1/2)
+
+Em $|\Omega| = 1$ (sem incerteza), só $t$ varia. Caso $s = t, s' = t+1$:
+
+$$\frac{p^*_t}{p^*_{t+1}} = \frac{u'(c_t)}{\beta\, u'(c_{t+1})}.$$
+
+Identifique $p^*_t/p^*_{t+1} \equiv R$ (taxa bruta de juros).
+
+::: {.eq-key}
+$$u'(c_t) = \beta\, R\, u'(c_{t+1}).$$
+:::
+
+---
+
+## Equação de Euler intertemporal (2/2)
+
+**Generalização para $|\Omega| > 1$ (Lucas 1978):**
+
+$$1 = E^\pi_t [m_{t+1}\, R_{t+1}], \quad m_{t+1} = \beta\, \frac{u'(c_{t+1})}{u'(c_t)}.$$
+
+::: {.eq-punch}
+SDF $m$ = equação fundamental do Aula 5 vista no tempo. Toda macro-finanças vive nessa equação.
+:::
+
+::: {.callout-note .callout}
+Hansen-Jagannathan (1991) testaram empiricamente. Equity premium puzzle (Mehra-Prescott 1985) é a anomalia.
+:::
+
+---
+
+## Box Brasil — SELIC como SDF macro
+
+> SELIC nominal $\approx \frac{1}{E[m_{t+1}]} \cdot (1 + \pi^e)$.
+
+**Interpretação:**
+
+- **Recessão profunda:** $c_{t+1}$ cai $\Rightarrow u'(c_{t+1})$ sobe $\Rightarrow E[m]$ sobe $\Rightarrow$ **SELIC cai**.
+- **Boom:** inverso.
+
+::: {.callout-note .callout}
+BCB pode ser visto como agente que escolhe SELIC para mover $E[m_{t+1}]$ na direção desejada (estabilização inflação/atividade).
+:::
+
+::: {.bridge}
+Função de reação de Taylor (1993) tem fundamentação microeconômica via SDF.
+:::
+
+---
+
+## Box Mundo — VIX como preço de Arrow do stress
+
+> **VIX** mede volatilidade implícita de opções S&P 500 a 30 dias.
+
+**Interpretação AD:** sob aversão ao risco, $p^*_{\text{stress}}$ é desproporcionalmente alto vs. $\pi_{\text{stress}}$ — agentes pagam prêmio para se proteger.
+
+::: {.callout-note .callout}
+**VIX > 30:** $\pi_s\, m_s$ elevado para estado de stress. Tradução: puts caras, prêmios de risco em ações elevados, fluxo para tesouros.
+:::
+
+::: {.eq-punch}
+Hansen-Jagannathan (1991) bounds. Equity premium puzzle (Mehra-Prescott 1985) é o desafio empírico residual.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 7 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+EG fechado. Aulas 7–9: catálogo de falhas.
+:::
+
+---
+
+## Síntese da Aula 6
+
+::: {.compact-table}
+| Aspecto | Resultado |
+|:---|:---|
+| Existência (mercado completo) | Brouwer/Kakutani sobre simplex |
+| AD canônico ↔ Radner | Equivalente sse rank$(A) = |S|$ |
+| Mercado incompleto | Existe; constrained PE; **genericamente Pareto-ineficiente** (Hart 1975) |
+| Mais ativos sempre melhora? | Não (GP 1986) |
+| SDF intertemporal | Equação de Euler; SELIC e VIX como aplicações |
+:::
+
+::: {.bridge}
+EG está fechado. Aulas 7–9 catalogam as falhas específicas.
+:::
+
+---
+
+## Ponte Aula 7 — externalidades + bens públicos
+
+::: {.fragment}
+**Pergunta-driver Aula 7:** mercado completo + competitivo + LNS implica Pareto. **Mas o que se mercado não consegue precificar todas as interações?**
+:::
+
+::: {.fragment}
+- **Pigou (1932)** — internalização via imposto.
+- **Coase (1960)** — barganha sob direitos bem-definidos.
+- **Samuelson (1954)** — bens públicos, regra de provisão ótima.
+:::
+
+::: {.fragment}
+[Aula 7 (qua 03/06): externalidades + bens públicos. Pré-monitoria 4 com Alberto, sábado 13/06 (cobre Aulas 6–7).]{.bridge}
+:::
+
+---
+
+## Encerramento {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.6em; font-weight: 600; margin-top: 0.8em;"}
+Arrow-Debreu II — fechamos o EG
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
+**Pré-monitoria 4** abre sábado 30/05 · fecha sexta 12/06.
+
+**Quiz pós-aula 6** + **Exercícios avaliativos 6** abrem qui 28/05 · fecham qua 03/06 às 18h.
+
+**Gabarito dos avaliativos:** qui 04/06 · 00:00.
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.85; margin-top: 0.8em;"}
+Aula 7 (qua 03/06 · 19:30): externalidades + bens públicos.
+:::

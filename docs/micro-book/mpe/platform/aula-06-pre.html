@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 06 — Arrow-Debreu II — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 06 — Arrow-Debreu II</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (N&amp;S 12e §13.6 + Brouwer / Kakutani / equivalência AD↔Radner básica).</strong> Objetivo: consolidar o que você leu na pré-aula (J-R §5.6 como leitura formal principal; N&amp;S §13.6 como complemento panorâmico) antes de entrar em sala no dia 27/05. <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 03/06 às 18:00 BRT</strong>, 1h30 antes da Aula 7.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-06-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 06">
+
+  <h3>Revisão — Arrow-Debreu II (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Existência: por que é teorema -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Na Aula 5, assumiu-se existência de equilíbrio AD para provar o 1º TBE. Sobre a relação entre os dois resultados:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) 1º TBE prova existência implicitamente.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) São teoremas <strong>distintos</strong>: existência requer ferramenta de ponto fixo (Brouwer/Kakutani); 1º TBE requer apenas LNS + viabilidade. Ambos são necessários para o uso completo do aparelho.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) Existência é caso particular do 1º TBE.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Existência é axioma; não há prova.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Existência (Arrow-Debreu 1954) e 1º TBE são teoremas independentes do aparelho EG. Existência é construtiva: dado dados primitivos (preferências + dotações), constrói \((p^*, x^*)\). 1º TBE é normativo: dado \((p^*, x^*)\), comprova Pareto-eficiência.</p>
+      <p><strong>2. Derivação.</strong> Existência usa: continuidade + homogeneidade + Walras + fronteira de \(z(p)\), aplicação de Brouwer/Kakutani sobre simplex. 1º TBE usa apenas: UMP exausta orçamento (LNS) + viabilidade vetorial. Os dois conjuntos de hipóteses são distintos.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "existência implícita" com "existência provada". (c) confunde direção da implicação. (d) é falso — existência é teorema com prova rigorosa.</p>
+      <p><strong>4. Extensão.</strong> Existência também não garante <em>unicidade</em>. Equilíbrios múltiplos podem coexistir; Sonnenschein-Mantel-Debreu (1972–74) mostraram que a função de excesso de demanda agregada não tem propriedades especiais além das 4 canônicas — em particular, pode ter múltiplos zeros.</p>
+      <p><strong>5. Peer-review.</strong> Aluno que erra (a) ou (c) ainda confunde a estrutura lógica dos teoremas; (d) ainda acha que axioma e teorema são equivalentes. Distratores plausíveis.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Brouwer enunciado correto -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> O <strong>Teorema do Ponto Fixo de Brouwer</strong> (1911) estabelece que:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) Toda função contínua de \(\mathbb{R}^n\) em \(\mathbb{R}^n\) tem ponto fixo.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) Toda função estritamente decrescente em \([0, 1]\) tem ponto fixo.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) Toda função contínua \(f: K \to K\) com \(K\) compacto, convexo, não-vazio em \(\mathbb{R}^n\) tem ponto fixo.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) Toda função diferenciável tem ponto fixo único.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Brouwer requer 3 hipóteses sobre o domínio: <em>compacto</em> (fechado e limitado em \(\mathbb{R}^n\)), <em>convexo</em>, <em>não-vazio</em>. Sem isso, contraexemplos são fáceis (e.g., \(f(x) = x + 1\) em \(\mathbb{R}\) — sem ponto fixo).</p>
+      <p><strong>2. Derivação.</strong> A prova clássica de Brouwer usa argumento de retração ou homologia. Em economia, aplicação típica: simplex de preços \(\Delta\) é compacto, convexo, não-vazio em \(\mathbb{R}^L\); ajuste de preços \(T(p)\) é função contínua de \(\Delta\) em \(\Delta\).</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora compacidade — \(\mathbb{R}^n\) inteiro não é compacto. (b) é teorema do valor intermediário, ferramenta diferente. (d) confunde diferenciabilidade com continuidade.</p>
+      <p><strong>4. Extensão.</strong> Generalizações: Schauder (espaços de Banach), Tychonoff (espaços localmente convexos). Para correspondências, a generalização padrão é Kakutani.</p>
+      <p><strong>5. Peer-review.</strong> Questão definicional. Aluno que erra (a) ou (b) ainda não internalizou compacidade.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — As 4 propriedades de z(p) -->
+  <div class="quizg-q" data-qid="q3" data-correct="d" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Considere o excesso de demanda agregada \(z(p) = \sum_i (x^i(p, p \cdot \omega^i) - \omega^i)\) em economia AD canônica. Sob hipóteses padrão (preferências contínuas, monotônicas, convexas; dotações estritamente positivas), \(z(p)\) satisfaz simultaneamente:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Apenas continuidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Apenas Lei de Walras.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Continuidade e homogeneidade grau 0, mas não Walras.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) <strong>Continuidade, homogeneidade grau 0, Lei de Walras, e propriedade de fronteira</strong>.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (d).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> As 4 propriedades canônicas — continuidade, homogeneidade grau 0, Walras, fronteira — são pré-requisitos para aplicar Brouwer/Kakutani sobre o simplex. Cada uma vem de uma hipótese diferente sobre primitivos.</p>
+      <p><strong>2. Derivação.</strong> Continuidade: Berge + preferências contínuas. Homogeneidade: restrição orçamentária só vê preços relativos. Walras: \(p \cdot z(p) = 0\) por LNS individual + agregação. Fronteira: monotonicidade + dotação positiva ⇒ demanda explode quando preço \(\to 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a)/(b)/(c) são subconjuntos próprios. Quem marca (c) ignora fronteira — propriedade essencial para a aplicação de Brouwer (sem ela, ponto fixo pode estar na fronteira do simplex, onde \(z\) pode não ser bem-definido).</p>
+      <p><strong>4. Extensão.</strong> Em economia com produção (Aula 4), as 4 propriedades sobrevivem desde que firmas tenham conjuntos de produção convexos e fechados. Em economia incompleta, propriedades sobrevivem para o excesso de demanda de <em>ativos</em> sob hipóteses análogas.</p>
+      <p><strong>5. Peer-review.</strong> Questão fundacional. Aluno que erra (c) está mais perto, mas ainda perde a fronteira — propriedade que o livro do J-R explicita como crucial.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Quando Kakutani é necessária -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em qual situação <strong>Brouwer não é suficiente</strong> e Kakutani é necessária para provar existência de equilíbrio walrasiano?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Preferências estritamente convexas (CRRA com \(\gamma &gt; 0\), CES com \(0 &lt; \sigma &lt; \infty\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) <strong>Preferências apenas convexas (não estritamente)</strong>, gerando demanda como correspondência multivalorada (caso típico: preferências lineares com TMS = razão de preços).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Preferências côncavas (não convexas).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Preferências descontínuas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Brouwer aplica-se a funções (uni-valoradas). Kakutani estende para correspondências (multi-valoradas) com 2 hipóteses adicionais: convexa-valorada e semi-contínua superior. Demanda multivalorada surge quando preferências são apenas convexas (e.g., lineares com TMS = razão de preços).</p>
+      <p><strong>2. Derivação.</strong> Em \(u(x_1, x_2) = x_1 + 2 x_2\) com \(p_1/p_2 = 1/2\): toda combinação convexa \(\alpha (m/p_1, 0) + (1-\alpha) (0, m/p_2)\) é solução da UMP. Demanda é correspondência \(\rightrightarrows \mathbb{R}^2\). Brouwer não se aplica (não há "função"), Kakutani sim.</p>
+      <p><strong>3. Armadilha.</strong> (a) Brouwer suficiente — preferências estritamente convexas dão demanda única. (c) Concavidade quebra muito mais (não há solução de UMP). (d) Descontinuidade quebra hipóteses básicas — nem Brouwer nem Kakutani salvam.</p>
+      <p><strong>4. Extensão.</strong> Em economia EG com agentes representativos CRRA, Brouwer suficiente. Em modelos com indivisibilidades (e.g., decisão discreta de emprego), demanda pode ser multivalorada → Kakutani entra. Em modelos macro/labor, é frequente.</p>
+      <p><strong>5. Peer-review.</strong> Questão técnica que separa quem entendeu a distinção função vs. correspondência.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Setup de Radner: o que é portfolio -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Em equilíbrio Radner sequencial, agente \(i\) escolhe portfolio \(\theta^i = (\theta^i_1, \ldots, \theta^i_N)\) em \(t = 0\) sujeito a restrição orçamentária:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) \(\theta^i_j \ge 0\) para cada ativo \(j\) (não pode vender a descoberto).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) \(\sum_j \theta^i_j = 1\) (portfolio normalizado).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) \(q \cdot \theta^i = 0\) — valor do portfolio em \(t = 0\) é zero (sem dotação inicial em \(t = 0\); toda riqueza vem das dotações estado-contingentes).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Sem restrição em \(t = 0\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> No setup canônico de Radner, agentes não têm dotação em \(t = 0\) — só em estados \(s \in S\). Portanto, qualquer compra de ativo (\(\theta^i_j &gt; 0\)) tem que ser financiada por venda de outro (\(\theta^i_k &lt; 0\)). Restrição: \(q \cdot \theta^i = 0\).</p>
+      <p><strong>2. Derivação.</strong> Em \(t = 0\): \(\sum_j q^*_j \theta^i_j = 0\). Sob não-arbitragem, \(q^*_j = \sum_s p^*_s A_{sj}\), então a restrição é equivalente a \(\sum_s p^*_s (A\theta^i)_s = 0\). Isso é exatamente \(p^* \cdot \omega^i = p^* \cdot x^i\) reescrito (Walras AD), confirmando equivalência sob mercado completo.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde com restrição de short-selling (não está no setup canônico). (b) confunde com fração de portfolio (\(\theta^i_j/\sum_k \theta^i_k\)). (d) ignora a regra fundamental de "self-financing".</p>
+      <p><strong>4. Extensão.</strong> Em modelos com dotação em \(t = 0\), restrição vira \(q \cdot \theta^i = m^i_0\) (dotação inicial). Em modelos com restrição de short-selling, surgem fricções adicionais (e.g., Hindi 1995). Setup canônico simples é \(q \cdot \theta^i = 0\).</p>
+      <p><strong>5. Peer-review.</strong> Questão definicional do setup. Quem erra (a) ou (b) confunde com restrições adicionais não-canônicas.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — Não-arbitragem: preço de ativo via preços-Arrow -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> Em equilíbrio Radner com mercado completo, o preço do ativo \(j\) em \(t = 0\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \(q^*_j = E[A_{\cdot j}] = \sum_s \pi_s\, A_{sj}\) — valor esperado simples sob probabilidades subjetivas.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) <strong>\(q^*_j = \sum_s p^*_s\, A_{sj}\)</strong> — soma ponderada dos payoffs pelos preços-Arrow. Não-arbitragem.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(q^*_j = \min_s A_{sj}\) — pior caso.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \(q^*_j = \max_s A_{sj}\) — melhor caso.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Não-arbitragem garante que o preço de qualquer ativo é a soma ponderada dos payoffs pelos preços-Arrow do estado correspondente. Equivalentemente, \(q^*_j = E^\pi[m \cdot A_{\cdot j}]\) onde \(m_s = p^*_s/\pi_s\) é o SDF.</p>
+      <p><strong>2. Derivação.</strong> Considere ativo replicado por portfolio de ações Arrow: paga \(A_{sj}\) em estado \(s\) ⇒ portfolio \(\theta_{\text{Arrow}, s} = A_{sj}\). Custo do portfolio: \(\sum_s p^*_s A_{sj} = q^*_j\). Não-arbitragem: o ativo tem que custar o mesmo que sua réplica.</p>
+      <p><strong>3. Armadilha.</strong> (a) é o caso particular sob neutralidade ao risco (\(m_s = 1\)). (c)/(d) são absurdos — preços de ativos não são extremos.</p>
+      <p><strong>4. Extensão.</strong> Esta é a equação central de finanças. Black-Scholes-Merton (1973) é a versão contínua: opção precificada como integral sobre estados. Lucas (1978) deriva precificação de ações. Aulas 8–9 não cobrem; pré-monitoria 4 menciona.</p>
+      <p><strong>5. Peer-review.</strong> Questão central. Aluno que marca (a) ainda confunde "valor esperado neutro" com "preço de equilíbrio".</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — Rank e mercado completo -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Considere economia com \(|S| = 5\) estados e \(N = 7\) ativos negociados, com matriz de payoffs \(A \in \mathbb{R}^{5 \times 7}\). Sobre o mercado financeiro:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) É completo automaticamente porque \(N &gt; |S|\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) É incompleto porque \(N &gt; |S|\) gera redundância.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) <strong>É completo se e somente se \(\text{rank}(A) = 5 = |S|\)</strong>. Apenas \(N \ge |S|\) não basta — é preciso que pelo menos \(|S|\) colunas sejam linearmente independentes.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Sempre é incompleto porque \(N &gt; |S|\) é matematicamente impossível.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Rank, não número de ativos, é o que conta. Em \(N &gt; |S|\), há ativos redundantes (combinação linear dos outros) — não contribuem ao span. Em \(N = |S|\) com colunas linearmente independentes, mercado é completo.</p>
+      <p><strong>2. Derivação.</strong> Span\((A) = \{A\theta : \theta \in \mathbb{R}^N\}\) tem dimensão \(\text{rank}(A)\). Para spannar \(\mathbb{R}^S\), precisa-se rank \(= |S|\). Se \(N &gt; |S|\), pelo menos \(N - |S|\) colunas são redundantes (mas o restante pode ainda spannar \(\mathbb{R}^S\)).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "número" com "rank". (b) confunde "redundância" com "incompletude". (d) ignora que mercados podem ter mais ativos que estados; a redundância é teórica, não absurda.</p>
+      <p><strong>4. Extensão.</strong> Em mercados financeiros reais, há muitos ativos (ações, bonds, opções, futuros, swaps) — frequentemente \(N \gg |S|\) (se conceituássemos "estado" granularmente). Mas rank pode ser deficiente em direções específicas (e.g., risco climático antes de derivativos verdes).</p>
+      <p><strong>5. Peer-review.</strong> Questão de álgebra linear básica + interpretação econômica. Distratores plausíveis para aluno que confunde quantidade com dimensão.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — Réplica de ação Arrow com bond+ação -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Em \(|S| = 2\), bond \(D^{\text{bond}} = (1, 1)\) e ação \(D^{\text{ação}} = (3, 1)\). Para replicar a ação Arrow do estado 1, \(e_1 = (1, 0)\), o portfolio é \(\theta\) tal que \(A\theta = e_1\). Resolvendo:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(\theta_{\text{bond}} = 1\), \(\theta_{\text{ação}} = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) <strong>\(\theta_{\text{bond}} = -1/2\), \(\theta_{\text{ação}} = 1/2\)</strong>: verifique \(-1/2 \cdot 1 + 1/2 \cdot 3 = -1/2 + 3/2 = 1\) (estado 1) ✓; \(-1/2 \cdot 1 + 1/2 \cdot 1 = 0\) (estado 2) ✓.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(\theta_{\text{bond}} = 1\), \(\theta_{\text{ação}} = 1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Não tem solução.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Réplica de ação Arrow é exercício de álgebra linear: resolver \(A\theta = e_s\). Em \(|S| = 2\) com 2 ativos linearmente independentes (rank \(= 2\)), solução existe e é única.</p>
+      <p><strong>2. Derivação.</strong> Sistema: \(\theta_{\text{bond}} + 3\, \theta_{\text{ação}} = 1\) (estado 1); \(\theta_{\text{bond}} + 1 \cdot \theta_{\text{ação}} = 0\) (estado 2). Subtraindo: \(2\, \theta_{\text{ação}} = 1 \Rightarrow \theta_{\text{ação}} = 1/2\). Substituindo: \(\theta_{\text{bond}} = -1/2\). Verificação acima confirma.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora que bond paga 1 em ambos estados — não replica \(e_1\). (c) é portfolio aleatório sem álgebra. (d) é falso — rank completo garante solução única.</p>
+      <p><strong>4. Extensão.</strong> Em \(|S|\) maior, sistema linear correspondente. Black-Scholes-Merton (1973) é a versão contínua: portfolio dinâmico replica opção via integração estocástica. Hedge dinâmico em finanças aplicadas é descendente direto.</p>
+      <p><strong>5. Peer-review.</strong> Questão de cálculo direto. Aluno que erra (a) não tentou substituir; (c) chutou; (d) ainda não internalizou álgebra de span.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — Mercado incompleto: ineficiência -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> O resultado central de Hart (1975, <em>JET</em>) sobre mercados incompletos afirma que:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Equilíbrio de Radner com mercado incompleto não existe.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Equilíbrio de Radner com mercado incompleto é Pareto-eficiente, contradizendo o 1º TBE.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) <strong>Equilíbrio de Radner com mercado incompleto existe, é constrained Pareto-eficiente (no span dos ativos), mas genericamente Pareto-ineficiente em sentido absoluto.</strong> Mais ainda: introduzir um novo ativo financeiro pode piorar o bem-estar (GP 1986).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Mercados incompletos sempre Pareto-melhoram quando ativos novos são introduzidos.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Hart (1975) e Geanakoplos-Polemarchakis (1986) caracterizaram a falha do 1º TBE em mercados incompletos. Equilíbrio existe mas é Pareto-ineficiente; completar mercado nem sempre melhora.</p>
+      <p><strong>2. Derivação.</strong> A prova do 1º TBE da Aula 5 falha em mercado incompleto porque a alocação alternativa \(\tilde x\) precisa estar no span dos ativos disponíveis. Sob span deficiente, conjunto de \(\tilde x\) implementáveis é menor que o conjunto Pareto-superior.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde "ineficiente" com "inexistente". (b) é absurdo (contradiz 1º TBE diretamente). (d) é o "mais é sempre melhor" que GP 1986 derruba.</p>
+      <p><strong>4. Extensão.</strong> Magill-Quinzii (1996, <em>Theory of Incomplete Markets</em>, MIT Press) é o tratamento canônico. Aplicações práticas: regulação de derivativos OTC pós-2008 tem fundamentação parcial em Hart-GP. <strong>Aula 8</strong> detalha info assimétrica como fonte adicional de incompletude endógena.</p>
+      <p><strong>5. Peer-review.</strong> Questão central da Aula 6. Aluno que erra (d) ainda acha que regulação financeira é sempre nociva.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — Equação de Euler -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Em economia intertemporal sem incerteza (\(|\Omega| = 1\), só \(t\)), agente com Bernoulli \(u\) côncava, fator de desconto \(\beta\), taxa bruta de juros \(R\). A equação de Euler intertemporal é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) \(c_t = c_{t+1}\) — consumo igualado.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) <strong>\(u'(c_t) = \beta\, R\, u'(c_{t+1})\)</strong> — equação canônica intertemporal.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) \(u(c_t) = \beta\, R\, u(c_{t+1})\) — utilidade direta, não marginal.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) \(c_{t+1} = R\, c_t\) — consumo cresce a juros.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Equação de Euler iguala utilidade marginal hoje à utilidade marginal futura descontada (\(\beta\)) e ajustada pela recompensa de poupar (\(R\)). É caso particular da equação fundamental do SDF (Aula 5) com \(s = (t, \omega)\) sem incerteza.</p>
+      <p><strong>2. Derivação.</strong> UMP intertemporal: \(\max u(c_t) + \beta u(c_{t+1})\) s.a. \(c_t + c_{t+1}/R = m_0\). CPO: \(u'(c_t) = \lambda\); \(\beta u'(c_{t+1}) = \lambda/R\). Combinando: \(u'(c_t) = \beta R u'(c_{t+1})\). Sob CRRA (\(u' = c^{-\gamma}\)): \(c_{t+1}/c_t = (\beta R)^{1/\gamma}\).</p>
+      <p><strong>3. Armadilha.</strong> (a) é caso particular se \(\beta R = 1\). (c) confunde utilidade total com marginal. (d) confunde consumo com riqueza ou tem visão errada de juros.</p>
+      <p><strong>4. Extensão.</strong> Lucas (1978) generaliza para \(|\Omega| &gt; 1\): \(1 = E_t[m_{t+1} R_{t+1}]\), com SDF \(m_{t+1} = \beta u'(c_{t+1})/u'(c_t)\). Hansen-Jagannathan (1991) testaram empiricamente. Equity premium puzzle (Mehra-Prescott 1985) é o desafio residual.</p>
+      <p><strong>5. Peer-review.</strong> Questão clássica de macroeconomia. Aluno que erra (a) ou (d) ainda não viu a CPO direito; (c) confunde derivada com função.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 6 presencial</strong> (quarta, 27/05, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-06.html">material da pré-aula</a> e relê a seção correspondente. O <strong>quiz pós-aula 6</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 6</strong> abrem na madrugada de quinta 28/05 — todos fecham em <strong>quarta 03/06 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-06-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

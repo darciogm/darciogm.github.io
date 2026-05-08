@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 06 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 06</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Arrow-Debreu II — Existência (Brouwer/Kakutani), Radner sequencial, equivalência AD↔Radner, mercados incompletos (Hart 1975), equação de Euler como caso particular do SDF</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 03/06 às 18:00</strong> — 1h30 antes da Aula 7. <em>Calendário canônico</em>.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 04/06 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-06-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 06">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Equivalência AD↔Radner em \(|S| = 2\): bond + ação</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia de troca pura com \(L = 1\), \(|S| = 2\), \(I = 2\). \(\pi_1 = \pi_2 = 1/2\). Bernoullis \(v_A = v_B = \ln c\). Dotações \(\omega^A = (60, 100)\), \(\omega^B = (100, 60)\). Total \(\bar\omega = (160, 160)\). Mercado de Radner: bond \(D^{\text{bond}} = (1, 1)\) e ação \(D^{\text{ação}} = (0, 2)\). <strong>Normalização canônica de preços-Arrow:</strong> \(p^*_1 + p^*_2 = 1\) (mesma convenção da Aula 5).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> O determinante e o rank da matriz de payoffs \(A = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 2 \end{pmatrix}\) são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(\det A = 0\), rank 1 (incompleto).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(\det A = 2\), rank 2 (mercado completo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(\det A = -2\), rank 2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> \(\det A = 1 \cdot 2 - 1 \cdot 0 = 2\).</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> A alocação de equilíbrio AD canônico é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) Autarquia \(x^A = (60, 100), x^B = (100, 60)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) \(x^{A*} = x^{B*} = (80, 80)\) — ambos totalmente segurados (agregado livre de risco + Bernoullis idênticas + crenças uniformes).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(x^A = (100, 60), x^B = (60, 100)\) — troca total.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="a" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> Os preços-Arrow de equilíbrio AD (com normalização \(p^*_1 + p^*_2 = 1\)) e os preços dos ativos no mercado Radner são:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(p^*_1 = p^*_2 = 0{,}5\); \(q^*_{\text{bond}} = p^*_1 + p^*_2 = 1\); \(q^*_{\text{ação}} = 0 \cdot p^*_1 + 2 \cdot p^*_2 = 1\) (não-arbitragem \(q^*_j = \sum_s p^*_s A_{sj}\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(p^*_1 = p^*_2 = 0{,}5\); \(q^*_{\text{bond}} = 2\), \(q^*_{\text{ação}} = 2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \(p^*_1 = 0\), \(p^*_2 = 1\); \(q^*_{\text{bond}} = 1\), \(q^*_{\text{ação}} = 2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) Indeterminados.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong> SDF: \(p^*_1/p^*_2 = (\pi_1/\pi_2)(v'(80)/v'(80)) = 1\); com \(\sum p = 1\), \(p^* = (0{,}5; 0{,}5)\). Daí \(q^*_j = \sum_s p^*_s A_{sj}\).</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> Para implementar \(x^{A*} = (80, 80)\) a partir de \(\omega^A = (60, 100)\), o portfolio \(\theta^A\) tal que \(A\theta^A = (20, -20)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(\theta^A = (20, -20)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \(\theta^A_{\text{bond}} = 20, \theta^A_{\text{ação}} = -20\): verifique \(20 \cdot 1 + (-20) \cdot 0 = 20\) ✓; \(20 \cdot 1 + (-20) \cdot 2 = -20\) ✓.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \(\theta^A = (40, -20)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1e" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(e)</strong> Verificação da restrição em \(t = 0\): \(q^* \cdot \theta^A\) =:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="a"> (i) \(20 \neq 0\) — restrição violada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="b"> (ii) \(1 \cdot 20 + 1 \cdot (-20) = 0\) — restrição satisfeita ✓.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="c"> (iii) \(20 \cdot 20 = 400\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> \(q^* = (1, 1)\) sob normalização \(\sum p = 1\); \(\theta^A = (20, -20)\); produto interno = 0.</div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Equivalência AD↔Radner sob mercado completo (rank = \(|S|\)) é o teorema central da Aula 6. Sob agregado livre de risco + Bernoullis idênticas + crenças uniformes, alocação é AD canônica (totalmente segurados); preços via não-arbitragem; portfolio replicador via \(\theta = A^{-1}(x - \omega)\). Restrição em \(t = 0\) (\(q \cdot \theta = 0\)) é equivalente algebricamente a Walras AD individual.</p>
+      <p><strong>2. Derivação.</strong> \(\det A = 2 \neq 0\), rank 2, mercado completo. Por simetria, \(x^{A*} = x^{B*} = \bar\omega/2 = (80, 80)\). Equação SDF: \(p^*_1/p^*_2 = (\pi_1/\pi_2)(v'(80)/v'(80)) = 1\); sob normalização \(p^*_1 + p^*_2 = 1\) (mesma da Aula 5), obtém-se \(p^* = (0{,}5;\,0{,}5)\). Não-arbitragem \(q^*_j = \sum_s p^*_s A_{sj}\): \(q^*_{\text{bond}} = 0{,}5 + 0{,}5 = 1\); \(q^*_{\text{ação}} = 0 \cdot 0{,}5 + 2 \cdot 0{,}5 = 1\). Portfolio: \(A\theta^A = (20, -20)\). Linha 1: \(\theta_{\text{bond}} = 20\). Linha 2: \(20 + 2\theta_{\text{ação}} = -20 \Rightarrow \theta_{\text{ação}} = -20\). Verificação: \(q^* \cdot \theta^A = 1 \cdot 20 + 1 \cdot (-20) = 0\) ✓ (restrição em \(t = 0\) satisfeita; equivalente algebricamente a Walras AD individual).</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno calcula \(\det A\) errado ou confunde com matriz singular. Item (b)(i): "autarquia" — agregado é livre de risco mas dotações individuais não, agentes <strong>genuinamente</strong> trocam para se segurar. Item (c)(ii): aluno acerta \(p^* = (0{,}5;\,0{,}5)\) mas esquece de aplicar \(q^*_j = \sum_s p^*_s A_{sj}\) e mistura a versão sem normalização (\(p^* = (1,1)\) ⇒ \(q^* = (2,2)\)) com a normalizada — atenção à coerência de uma única convenção. Item (d)(i): aluno confunde \(x - \omega = (20, -20)\) com \(\theta\) diretamente (não vê a operação \(A^{-1}\)).</p>
+      <p><strong>4. Extensão.</strong> Em \(|S|\) maior, mesma estrutura: cada ação Arrow \(e_s\) é replicada por portfolio \(\theta = A^{-1} e_s\) (existe sse rank completo). Black-Scholes-Merton (1973) é a versão contínua: opção replicada por portfolio dinâmico. <strong>Aula 7</strong> vai mostrar que externalidades quebram a estrutura mesmo em mercado completo.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟢. Distratores plausíveis. Não há ambiguidade. <strong>Sem risco residual.</strong> Calibrador para fixar a equivalência AD↔Radner via cálculo numérico. Aluno que faz tudo deve sair confortável com fórmula \(\theta = A^{-1}(x - \omega)\) na ponta da língua.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Mercado incompleto: \(|S| = 3\) com 2 ativos</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia \(L = 1\), \(|S| = 3\), \(I = 2\). \(\pi = (1/3, 1/3, 1/3)\). Bernoullis \(v_A = v_B = \ln c\). Dotações \(\omega^A = (90, 60, 30)\), \(\omega^B = (30, 60, 90)\). Total \(\bar\omega = (120, 120, 120)\) — agregado livre de risco. Mercado de Radner: bond \((1, 1, 1)\) + ação \((0, 1, 3)\), matriz \(A \in \mathbb{R}^{3 \times 2}\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> O rank de \(A = \begin{pmatrix} 1 &amp; 0 \\ 1 &amp; 1 \\ 1 &amp; 3 \end{pmatrix}\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) 2 — colunas linearmente independentes mas em número insuficiente para spannar \(\mathbb{R}^3\). Mercado incompleto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) 3 — mercado completo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) 1 — colunas dependentes.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Em AD canônico (mercado completo), a alocação ideal seria:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) Autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(x^{A*} = x^{B*} = (60, 60, 60)\) — totalmente segurados (agregado livre de risco + Bernoullis idênticas + crenças uniformes).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) Concentração: \(x^A = (120, 0, 0), x^B = (0, 120, 120)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Para implementar \(x^{A*} = (60, 60, 60)\) a partir de \(\omega^A = (90, 60, 30)\), seria necessário portfolio \(\theta^A\) com \(A\theta^A = (-30, 0, 30)\). Sobre essa equação:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) Tem solução \(\theta^A = (-30, 30)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) Não tem solução: resolvendo \(a(1,1,1) + b(0,1,3) = (-30, 0, 30)\), encontra-se \(a = -30\), \(a + b = 0 \Rightarrow b = 30\), mas \(a + 3b = -30 + 90 = 60 \neq 30\). Sistema inconsistente; \((-30, 0, 30) \notin\) span.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Tem infinitas soluções.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Tem solução \(\theta^A = (0, 0)\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A consequência do (c) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) Não existe equilíbrio Radner.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) Equilíbrio Radner coincide com autarquia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) Equilíbrio Radner existe (Magill-Quinzii 1996), é constrained Pareto-eficiente (no span dos ativos), mas Pareto-inferior à alocação AD ideal — Hart (1975).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Preços de equilíbrio são únicos e iguais aos preços-Arrow do AD canônico.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A intuição econômica do (d) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Mercado é eficiente porque rank é máximo possível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Agentes podem trocar fração do risco (no plano gerado por bond + ação) mas não eliminá-lo completamente. A direção \((-30, 0, 30)\) — "transferir consumo do estado 1 para o estado 3 sem mexer no estado 2" — não está no span. Equilíbrio fica Pareto-inferior ao ideal de mercado completo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Agentes são irracionais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Mercado é completo na prática.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> Quando rank \((A) &lt; |S|\), payoff space \(\mathcal{M}\) é subespaço estrito (dimensão menor que \(|S|\)) de \(\mathbb{R}^S\). Alocações fora de \(\mathcal{M}\) não são implementáveis via portfolio. Equilíbrio Radner existe, é constrained Pareto-eficiente, mas Pareto-inferior à alocação AD ideal (Hart 1975). Em economia com agregado livre de risco + Bernoullis idênticas, alocação ideal seria seguro completo (\(60, 60, 60\)) — mas a "transferência \((-30, 0, 30)\)" requerida está fora do span.</p>
+      <p><strong>2. Derivação.</strong> Colunas \((1,1,1)^\top\) e \((0,1,3)^\top\) são linearmente independentes (não múltiplas) ⇒ rank 2. Span = plano 2D. Alocação AD ideal: \((60, 60, 60)\). Vetor de transferência: \((60-90, 60-60, 60-30) = (-30, 0, 30)\). Sistema \(a(1,1,1) + b(0,1,3) = (-30, 0, 30)\): linha 1: \(a = -30\); linha 2: \(a + b = 0 \Rightarrow b = 30\); linha 3: \(a + 3b = -30 + 90 = 60 \neq 30\). Inconsistente. Logo \((-30, 0, 30) \notin\) span. Equilíbrio Radner converge a outra alocação \(\hat x \in \omega + \text{span}(A)\) que satisfaz UMP individual + LNS dada a estrutura de preços de Radner — uma <strong>alocação second-best sob a restrição de spanning</strong> (também chamada <strong>constrained Pareto-eficiente</strong> no sentido de Hart 1975 / Magill-Quinzii §10.3): não Pareto-superável dentro das alocações implementáveis, mas Pareto-inferior à AD ideal \((60, 60, 60)\). Cálculo numérico explícito exige resolver o equilíbrio Radner com 2 ativos (UMP individual + market-clearing simultâneo); ver Magill-Quinzii §10.</p>
+      <p><strong>3. Armadilha.</strong> Item (c)(i): aluno se distrai e marca uma combinação que satisfaz só 1 ou 2 das 3 equações. Item (d)(i): "não existe equilíbrio" é confusão entre "ineficiente" e "inexistente". Item (d)(iv): aluno acha que mercado incompleto preserva preços-Arrow do AD canônico — falso, preços se reajustam.</p>
+      <p><strong>4. Extensão.</strong> GP (1986) refinaram: adicionar 3º ativo (mercado completo) é Pareto-melhorador <em>aqui</em> (porque agregado é livre de risco, alocação ideal é simétrica, ambos ganham). Mas em economia com agregado arriscado, completar pode haver perdedor (Exercício 6). Política prática: regulação de derivativos OTC pós-2008 tem fundamentação parcial em Hart-GP. <strong>Aula 8</strong> detalha info assimétrica como camada adicional de incompletude.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo de álgebra linear que requer atenção a todas as 3 equações + interpretação econômica do span. Distrator (c)(i) é o mais perigoso — força aluno a verificar todas as linhas. <strong>Tradeoff de tempo:</strong> ~12 min, dentro do alvo. <strong>Risco residual:</strong> mínimo; o vetor \((-30, 0, 30)\) foi escolhido especificamente para falhar na 3ª linha — facilita a verificação.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Existência via Brouwer: cálculo numérico em \(|S| = 2\)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia AD canônica com \(L = 1\), \(|S| = 2\), \(I = 2\). \(\pi = (1/2, 1/2)\). Bernoullis \(v_A = v_B = \ln c\). Dotações \(\omega^A = (90, 30)\), \(\omega^B = (30, 90)\) (espelhadas; total \(\bar\omega = (120, 120)\), livre de risco). Preços normalizados \(p_1 + p_2 = 1\) sobre o simplex \(\Delta\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob \(v = \ln c\), demanda do agente \(A\) por bem 1 é Cobb-Douglas (log) com peso \(\pi_1 = 1/2\) na renda:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(x^A_1(p) = \omega^A_1 = 90\) (autarquia).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(x^A_1(p) = \pi_1 m^A/p_1 = (1/2)(90 p_1 + 30 p_2)/p_1 = 45 + 15 p_2/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(x^A_1(p) = m^A/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) \(x^A_1(p) = 90 p_1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Por simetria, \(x^B_1(p) = 15 + 45 p_2/p_1\). A demanda agregada por bem 1 é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(120\) constante.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(x^A_1 + x^B_1 = (45 + 15 p_2/p_1) + (15 + 45 p_2/p_1) = 60 + 60 p_2/p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(120 p_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) Indeterminada sem mais dados.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> O excesso de demanda agregada por bem 1 é \(z_1(p) = (60 + 60 p_2/p_1) - \bar\omega_1 = 60 + 60 p_2/p_1 - 120 = 60(p_2/p_1 - 1)\). O equilíbrio (\(z_1(p^*) = 0\)) ocorre em:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(p^*_1 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(p^*_2/p^*_1 = 1 \Rightarrow p^*_1 = p^*_2 = 1/2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(p^*_1 = 1, p^*_2 = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong> Agregado livre de risco + simetria força preços iguais.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> O mapa de ajuste de Brouwer \(T_l(p) = (p_l + \max(z_l(p), 0))/(1 + \sum_k \max(z_k, 0))\) tem ponto fixo \(p^*\) porque:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) \(T\) é função linear.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(T\) é função contínua de compacto convexo (\(\Delta\)) nele mesmo, e Brouwer garante ponto fixo. Combinado com \(p^* > 0\) (interior de \(\Delta\), por fronteira) e Walras, \(z(p^*) = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(T\) é estritamente decrescente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) Brouwer não se aplica — falta convexidade.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Existência de equilíbrio AD se prova via ponto fixo: Brouwer aplicado ao mapa de ajuste \(T\) sobre o simplex \(\Delta\) entrega \(p^*\) com \(z(p^*) = 0\) (combinado com Walras + monotonicidade de \(p^*\)). Em casos simétricos (Bernoulli idêntica + agregado livre de risco), equilíbrio é direto: preços iguais.</p>
+      <p><strong>2. Derivação.</strong> Demanda log: \(x^i_s(p) = \pi_s m^i/p_s\). Para \(A\): \(m^A = 90 p_1 + 30 p_2\), \(x^A_1 = 45 + 15 p_2/p_1\). Por simetria, \(x^B_1 = 15 + 45 p_2/p_1\). Agregada: \(60 + 60 p_2/p_1\). Excesso: \(z_1 = -120 + 60 + 60 p_2/p_1 = 60(p_2/p_1 - 1)\). Em \(p^*_1 = p^*_2 = 1/2\): \(z_1 = 0\) ✓. Para Brouwer: \(T\) contínua porque \(z\) contínua; \(T(\Delta) \subset \Delta\) por construção. Brouwer entrega \(p^*\). Em \(p^*\): \(z_l \le 0\) (estrutura de \(T\)), Walras \(p^* \cdot z = 0\), \(p^* > 0\) (fronteira) ⇒ \(z(p^*) = 0\).</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): "autarquia" — em economia simétrica + Bernoulli log + dotações desiguais, há gain from trade. Item (c)(iv): aluno marca "indeterminado" sem tentar — simetria + agregado livre de risco força \(p^*_1 = p^*_2\). Item (d)(iii): aluno tenta forçar Brouwer onde não há monotonicidade.</p>
+      <p><strong>4. Extensão.</strong> Em economia com mais agentes, mais bens, mais estados — mesma estrutura. As 4 propriedades canônicas (continuidade, homogeneidade, Walras, fronteira) sobrevivem; Brouwer/Kakutani entrega \(p^*\). <strong>A prova é genuinamente o mesmo argumento da Aula 4 estendido para \(\mathbb{R}^{LS}\).</strong> Casos onde Brouwer falha (preferências apenas convexas, demanda multivalorada): use Kakutani.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Questão de cálculo direto da demanda log + verificação que Brouwer se aplica. Distratores em (a) confundem demanda com dotação. Distrator em (c)(iv) é tentação para aluno que não tentou. Distrator em (d)(iii) é teoria errada. <strong>Tradeoff de tempo:</strong> ~10 min, dentro do alvo. <strong>Risco residual:</strong> baixo; álgebra direta.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Equação de Euler intertemporal sob CRRA</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Agente representativo em economia intertemporal \(t = 0, 1\), sem incerteza (\(|\Omega| = 1\)). Bernoulli CRRA \(u(c) = c^{1-\gamma}/(1-\gamma)\) com \(\gamma = 2\). Fator de desconto \(\beta = 0{,}95\). Taxa bruta de juros \(R = 1{,}05\) (5% real bruto).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A equação de Euler para esse agente é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(c_t = c_{t+1}\) (sem desconto).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(u'(c_t) = \beta R\, u'(c_{t+1})\) — equação canônica intertemporal.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(u'(c_t) = u'(c_{t+1})\) (sem juros).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(u'(c_t) = (\beta + R) u'(c_{t+1})\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Substituindo \(u'(c) = c^{-\gamma} = c^{-2}\), a razão \(c_{t+1}/c_t\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) \(c_{t+1}/c_t = \beta R = 0{,}9975\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) \(c_{t+1}/c_t = R/\beta \approx 1{,}105\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) \(c_{t+1}/c_t = (\beta R)^{1/\gamma} = (0{,}9975)^{1/2} \approx 0{,}9987\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) \(c_{t+1}/c_t = 1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A interpretação do resultado \(c_{t+1}/c_t \approx 0{,}9987 &lt; 1\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Agente está poupando mais do que gastando.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Em \(\beta R &lt; 1\) (\(0{,}9975 &lt; 1\)), consumo decresce no tempo. Agente é "impaciente o suficiente" para que o desconto subjetivo (\(\beta\)) supere a recompensa de poupar (\(R\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Taxa de juros é alta demais.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Agente é averso ao risco.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Sob incerteza (\(|\Omega| = 2\) em \(t+1\)) com retornos brutos \((R_b, R_r) = (1{,}10, 0{,}90)\) e probabilidades \((\pi_b, \pi_r) = (0{,}6, 0{,}4)\), a equação de precificação SDF é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) \(P_0 = 1\) — preço fixo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) \(1 = E_t[m_{t+1} R_{t+1}] = \pi_b m_b R_b + \pi_r m_r R_r\), onde \(m_s = \beta u'(c_{t+1, s})/u'(c_t)\) é o SDF state-by-state — Lucas (1978).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) \(R = 1\) — taxa nula.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Não pode ser escrita.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> Equação de Euler \(u'(c_t) = \beta R u'(c_{t+1})\) é caso particular da equação fundamental do SDF (Aula 5) com \(s = (t, \omega)\), \(p^*_t/p^*_{t+1} = R\), \(\pi_{t+1}/\pi_t = \beta\). Sob CRRA, \(c_{t+1}/c_t = (\beta R)^{1/\gamma}\). Sob incerteza: \(1 = E[m R]\) (Lucas 1978).</p>
+      <p><strong>2. Derivação.</strong> UMP intertemporal: \(\max u(c_t) + \beta u(c_{t+1})\) s.a. \(c_t + c_{t+1}/R = m_0\). Lagrangiano + CPO: \(u'(c_t) = \beta R u'(c_{t+1})\). CRRA: \(c_t^{-\gamma} = \beta R c_{t+1}^{-\gamma}\) ⇒ \((c_{t+1}/c_t)^\gamma = \beta R\) ⇒ \(c_{t+1}/c_t = (\beta R)^{1/\gamma}\). Em \(\gamma = 2, \beta R = 0{,}9975\): \((0{,}9975)^{1/2} \approx 0{,}9987\). Sob incerteza, equação de Lucas: \(1 = E_t[m_{t+1} R_{t+1}]\) com SDF \(m_{t+1} = \beta u'(c_{t+1})/u'(c_t)\). É o caso particular da equação fundamental do SDF da Aula 5 com \(s\) intertemporal.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i)/(iii): aluno esquece \(\beta R\). Item (b)(i): aluno pega o caso log (\(\gamma = 1\)), errado para \(\gamma = 2\). Item (b)(ii): inverte fórmula. Item (c)(iii): "taxa alta demais" não tem sentido — o ponto é \(\beta R\) total. Item (d)(i): preço fixo é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Macroeconomia (RBC, NK, C-CAPM) usa CRRA com \(\gamma\) entre 1 e 5. Equity premium puzzle (Mehra-Prescott 1985): SDFs CRRA empiricamente "razoáveis" não casam com prêmio observado de equity sobre bonds. Hansen-Jagannathan (1991) testaram bounds. Aulas 8-9 não cobrem; pré-monitoria 5 (revisão AF) menciona se houver tempo.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto sob CRRA. Distratores tentam erro de sinal ou estrutural. <strong>Tradeoff de tempo:</strong> ~10 min. <strong>Risco residual:</strong> aluno que decora "\(c_{t+1}/c_t = \beta R\)" sem entender CRRA tropeça em \(\gamma \neq 1\).</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Existência com Kakutani: preferências lineares e demanda multivalorada</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere agente único em economia \(L = 2\) com preferências <strong>lineares</strong> \(u(x_1, x_2) = x_1 + 2 x_2\). Dotação \(\omega = (10, 10)\). Sob preços \(p = (p_1, p_2)\), agente otimiza UMP em \(\mathbb{R}^2_+\). Para análise de existência, considere economia análoga com \(I = 2\) agentes idênticos.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob preços \(p = (1, 1)\), a demanda do agente (sob \(u = x_1 + 2 x_2\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) Demanda multivalorada — todos os pontos da reta orçamentária.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) Canto: \(x^* = (0, m/p_2) = (0, 20)\). TMS \(= 1/2 &lt;\) razão de preços \(= 1\) ⇒ consome só bem 2 (mais utilidade por unidade de moeda).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) Canto: \(x^* = (m/p_1, 0) = (20, 0)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) Indeterminada.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="d" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Sob preços \(p = (1, 2)\) (i.e., \(p_1/p_2 = 1/2 = \) TMS):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) Demanda única \(x^* = (m/p_1, 0)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) Demanda única \(x^* = (0, m/p_2)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) Demanda única no centro \(x^* = (m/(2p_1), m/(2p_2))\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) Demanda multivalorada: <strong>toda a fronteira</strong> da reta orçamentária \(\{(x_1, x_2) \ge 0 : p_1 x_1 + p_2 x_2 = m\}\). TMS = razão de preços ⇒ todas as combinações são igualmente preferidas.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iv).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Para mostrar existência de equilíbrio em economia com agentes com tais preferências lineares, a ferramenta apropriada é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) Brouwer aplicado à demanda \(x(p, m)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) Kakutani aplicado à correspondência de excesso de demanda \(z(p) \rightrightarrows \mathbb{R}^L\), porque demanda linear pode ser multivalorada nos preços degenerados (TMS = razão de preços) — \(z\) também o é. Berge generalizado garante semi-continuidade superior + valores convexos compactos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) Hahn-Banach.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) Existência não pode ser garantida.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Para que Kakutani entregue ponto fixo, \(z(p) \rightrightarrows \mathbb{R}^L\) precisa ter:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) Continuidade no sentido de função.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) Semi-continuidade superior + valores convexos compactos não-vazios. Vem das hipóteses sobre primitivos via Berge generalizado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) Diferenciabilidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) Estrita convexidade (que <em>não</em> temos aqui).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> Preferências apenas convexas (não estritamente convexas) podem gerar demanda multivalorada — caso típico: preferências lineares em situações degeneradas onde TMS = razão de preços. Brouwer não se aplica diretamente; Kakutani entra como extensão. Hipóteses do Berge generalizado (continuidade + convexidade) garantem que \(z(p) \rightrightarrows \mathbb{R}^L\) é compacta-convexa-valorada e semi-contínua superior.</p>
+      <p><strong>2. Derivação.</strong> Para \(u = x_1 + 2 x_2\): TMS \(= u_1/u_2 = 1/2\) constante. Em \(p_1/p_2 \neq 1/2\), demanda canto: ou \(x^* = (m/p_1, 0)\) (se \(p_1/p_2 &lt; 1/2\)) ou \(x^* = (0, m/p_2)\) (se \(>1/2\)). Em \(p_1/p_2 = 1/2\) (degenerado), todo ponto da reta orçamentária é solução. Kakutani: \(z(p)\) é correspondência convexa-valorada (combinação convexa de soluções é solução, sob preferências convexas) e semi-contínua superior (limite de sequências de soluções é solução, sob continuidade + Berge). Ponto fixo \(p^*\) com \(0 \in z(p^*)\) é equilíbrio.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno acha que demanda é sempre multivalorada — não, só em pontos degenerados. Item (a)(iii): inverte qual bem é "mais barato em utilidade por moeda". Item (b)(i)/(ii)/(iii): só seriam corretos se TMS \(\neq\) razão de preços. Item (c)(iii): Hahn-Banach é separação de hiperplanos, ferramenta diferente; aparece em 2º TBE. Item (d)(iv): "estrita convexidade" é exatamente a hipótese que <em>não</em> temos — daí a necessidade de Kakutani.</p>
+      <p><strong>4. Extensão.</strong> Em economia EG com preferências CRRA, CES com \(\sigma &gt; 0\) finito, CES estritamente convexas ⇒ Brouwer suficiente. Preferências lineares ou Leontief não-estritas geram demanda multivalorada em conjuntos de medida zero do simplex — Kakutani garante existência apesar disso. <strong>Maioria dos modelos macro aplicados</strong> usa CRRA/log → Brouwer suficiente. Kakutani entra teoricamente, raramente operacionalmente.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão técnica que separa quem entendeu a distinção Brouwer vs Kakutani de quem só decorou. Distrator (a)(i) é o mais armadilhoso — força aluno a checar a condição de degenerescência. <strong>Tradeoff de tempo:</strong> ~15 min, no limite. <strong>Risco residual:</strong> alto para alunos que não viram a distinção formal entre função e correspondência. Recomenda-se que o aluno volte ao Bloco 1 do durante-aula antes de tentar.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Hart 1975 + GP 1986: completar mercado pode piorar bem-estar</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia \(L = 1\), \(|S| = 3\), \(I = 2\). \(\pi = (1/3, 1/3, 1/3)\). Bernoullis \(v_A = v_B = \ln c\). Dotações \(\omega^A = (90, 60, 30)\), \(\omega^B = (30, 60, 90)\). Total \(\bar\omega = (120, 120, 120)\) — agregado livre de risco. <strong>Cenário 1:</strong> Mercado de Radner com 2 ativos: bond \((1,1,1)\) + ação \((0, 1, 3)\). <strong>Cenário 2:</strong> Adiciona-se opção \(D^{\text{opção}} = (0, 0, 1)\), totalizando 3 ativos.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> O rank da matriz \(A_3 = \begin{pmatrix} 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 0 \\ 1 &amp; 3 &amp; 1 \end{pmatrix}\) (Cenário 2) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) 2 (mesmo que Cenário 1 — opção redundante).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) 3 — colunas linearmente independentes (matriz triangular não-singular: \(\det = 1 \cdot 1 \cdot 1 = 1 \neq 0\)). Mercado completo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) 1.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Sob agregado livre de risco + Bernoullis idênticas + crenças uniformes, comparando os dois cenários:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Cenário 1 \(\succ_{\text{Pareto}}\) Cenário 2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Equivalentes: \(=_{\text{Pareto}}\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Cenário 2 \(\succ_{\text{Pareto}}\) Cenário 1: completar mercados elimina ineficiência. Em Cenário 2, ambos consomem (60,60,60) — totalmente segurados, Pareto-eficiente. Em Cenário 1, alocação está restrita ao span (plano 2D), Pareto-inferior.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Não comparáveis.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Considere agora variação: \(\omega^A = (90, 60, 30)\), \(\omega^B = (60, 60, 60)\) (\(B\) já é livre de risco; <strong>agregado é \(\bar\omega = (150, 120, 90)\) — arriscado</strong>). Sob 2 ativos, agentes atingem certo equilíbrio Radner. Adicionar uma opção (Cenário 2):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Sempre Pareto-melhora (mais ativos, mais bem-estar).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Sempre Pareto-piora.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) Pode Pareto-melhorar OU prejudicar algum agente — Geanakoplos &amp; Polemarchakis (1986). Quando agregado é arriscado, completar mercado redistribui risco entre agentes; o agente que estava "vendendo seguro residual" via incompletude (e.g., \(B\) cobrando "preço de seguro" alto via ação) pode perder lucro.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Não muda alocação.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> A intuição econômica do (c) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Mercados são monótonos em ativos — sempre melhora.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Quando rank é deficiente, alguns agentes têm "poder de mercado implícito" sobre o seguro residual. Adicionar um ativo elimina esse poder (preços se reajustam) — quem ganhava perde, e vice-versa. Sem mercado completo (que estabilizaria via 2º TBE), não há garantia de Pareto-melhoria.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Concorrência perfeita garante Pareto-melhoria sempre.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Resultado contradiz teoria padrão.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Implicação política do resultado de Hart-GP:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Desregulamentar criação de derivativos é sempre Pareto-melhorador.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) Política de "completar mercado" via novos derivativos não é trivialmente boa — análise caso-a-caso é necessária. Justifica regulação financeira em produtos complexos com base em fundamentação teórica de microeconomia rigorosa.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Mercados financeiros são sempre completos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Hart-GP contradiz Pareto.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Hart (1975) provou que equilíbrio em mercado incompleto é genericamente Pareto-ineficiente em sentido absoluto. GP (1986) refinou: <strong>adicionar um novo ativo financeiro pode piorar</strong> o bem-estar de alguns agentes. Implicação política: completar mercado nem sempre é Pareto-melhorador. Justifica regulação de produtos financeiros complexos com base em microeconomia rigorosa.</p>
+      <p><strong>2. Derivação.</strong> Cenário 2: \(A_3\) triangular não-singular (\(\det = 1 \neq 0\)) ⇒ rank 3, mercado completo. Quando agregado é livre de risco + Bernoullis idênticas + crenças uniformes (item b), completar é Pareto-melhorador (ambos preferem (60,60,60) à alocação constrained). Quando agregado é arriscado (item c), completar redistribui risco. Equilíbrios reagem: preços se reajustam; algum agente pode ficar pior.</p>
+      <p style="background:#fef9e7;border-left:3px solid #b7791f;padding:0.5em 0.8em;margin:0.6em 0"><em>Sobre o item (c) — declarativo, não numérico.</em> O exercício afirma como possibilidade teórica que adicionar opção pode prejudicar algum agente, mas <strong>não exibe</strong> o cálculo numérico do equilíbrio Radner constrained antes vs. depois (precisaria resolver UMP individual + market-clearing em \(|S|=3\) com 2 ativos e depois com 3 ativos — ~30 min de álgebra fora do calibre N&amp;S/J-R desta lista). A justificativa formal está em duas referências canônicas: <strong>Hart (1975, J. Economic Theory 11(3): 418–443, Section IV — "Welfare Properties of Equilibrium")</strong> demonstra que equilíbrios de mercado incompleto são <strong>genericamente Pareto-ineficientes em sentido absoluto</strong>; e <strong>Geanakoplos &amp; Polemarchakis (1986, "Existence, Regularity, and Constrained Suboptimality of Competitive Allocations When the Asset Market is Incomplete", em <em>Uncertainty, Information and Communication: Essays in Honor of Kenneth J. Arrow, vol. III</em>, Heller-Starr-Starrett eds., Cambridge UP, Theorem 1)</strong> mostra explicitamente que adicionar um ativo a um mercado já incompleto pode mover o equilíbrio para uma alocação <strong>constrained-Pareto-inferior</strong> sob a nova estrutura.</p>
+      <p><em>Mecanismo intuitivo.</em> Sob \(\bar\omega = (150, 120, 90)\) arriscado, no Cenário 1 (bond + ação) o equilíbrio Radner aloca riscos parcialmente. Os preços-Arrow implícitos cotam o "seguro residual disponível"; quem está short na ação implicitamente vende seguro contra o estado 3 (alta dotação agregada). Quando a opção \((0,0,1)\) entra, o estado 3 passa a ser <strong>diretamente segurado</strong> — o agente que vendia seguro residual via ação perde a renda implícita; preços de bond e ação se reajustam. <strong>Quem ganhava com a incompletude perde</strong>; quem perdia ganha. Pareto não-comparável.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno calcula determinante errado ou confunde rank com algo diferente. Item (b)(i): aluno acha que mercado incompleto é "melhor" — falso. Item (c)(i): "mais é sempre melhor" sem ver GP. Item (d)(iv): aluno acha que Hart-GP é heterodoxia — é teoria neoclássica padrão (citada em MWG §19.E e Magill-Quinzii §10.3).</p>
+      <p><strong>4. Extensão.</strong> Magill-Quinzii (1996, <em>Theory of Incomplete Markets, Vol. 1</em>, MIT Press) §10.3 dá exemplos numéricos completos do mecanismo de GP 1986 — aluno interessado em ver "quem ganha vs. quem perde" com cálculo numérico explícito tem ali a referência. Aplicações: regulação de derivativos OTC pós-2008 (Dodd-Frank, EMIR) tem fundamentação parcial em Hart-GP. <strong>Aula 8</strong> (sel.adv. + risco moral) detalha como info assimétrica adiciona uma camada de incompletude endógena. Akerlof (1970) lemons. <strong>Aula 9</strong> (sinalização) dá pistas de mercados que podem se autocompletar.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Questão de mais alto nível conceitual da Aula 6: integra existência + incompletude + implicações políticas. Distratores (a) e (c) são pegadinhas conceituais sobre o resultado contra-intuitivo. <strong>Tradeoff de tempo:</strong> ~18 min, no topo do alvo. <strong>Risco residual:</strong> moderado. <strong>Decisão pedagógica explícita:</strong> o item (c) é declarativo (sem cálculo numérico do equilíbrio Radner). Justificada porque o cálculo exigiria UMP individual + market-clearing em duas estruturas de ativos — fora do calibre N&amp;S/J-R. O ponto pedagógico é preservado pelas referências exatas a Hart 1975 (Section IV) e GP 1986 (Theorem 1).</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios avaliativos (6 exercícios, ~28 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>04/06 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 03/06 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 7</strong> (Externalidades + Bens Públicos) é liberada na madrugada de <strong>28/05</strong>. <strong>Pré-monitoria 4</strong> com Alberto abre <strong>sáb 30/05</strong> (cobre Aulas 6 e 7). Tudo da Aula 6 fecha em <strong>quarta 03/06 18h</strong>; gabarito quinta 04/06 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-06-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(6, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-06-04T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
