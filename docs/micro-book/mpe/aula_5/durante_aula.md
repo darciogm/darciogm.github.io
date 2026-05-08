@@ -385,7 +385,7 @@ Setup: $L = 1$, $S = 2$, $I = 2$. $A$ avesso (Bernoulli $v_A$ estritamente cônc
 
 > *"O Proagro é um seguro agrícola público que garante o agricultor familiar contra perdas climáticas. Sob a ótica AD: o Estado faz o papel do agente neutro $B$ — pode diversificar risco entre agricultores (lei dos grandes números). Em equilíbrio AD ideal, o prêmio cobrado é atuarialmente justo. Na prática: subsídio cruzado, seleção adversa (agricultores em áreas de mais risco aderem mais), e custo fiscal documentado."*
 
-Cite ordem de grandeza *[verificar fonte]*: cobertura Proagro ~R\$ X bilhões/ano para ~Y mil agricultores.
+Mencione apenas a ordem de grandeza qualitativa: programa público, bilhões de reais por safra, centenas de milhares de agricultores familiares cobertos — Banco Central / MAPA publicam relatórios anuais; o ponto pedagógico é a estrutura AD, não o número exato.
 
 > *"Pergunta para vocês ruminarem: **se o Estado é neutro ao risco** (porque é grande), e **agricultores são avessos**, faz sentido o Estado fazer seguro? AD canônico diz que sim. Aula 8 (seleção adversa) vai dizer "depende"."*
 
@@ -399,7 +399,7 @@ Cite ordem de grandeza *[verificar fonte]*: cobertura Proagro ~R\$ X bilhões/an
 
 ### Saída do Bloco 4
 
-A sala tem que ter visto **dois exemplos concretos** onde o ferramental AD é a linguagem natural — Proagro (Brasil) e EU ETS (Mundo). E tem que ter o diagrama $(x_1, x_2)$ com 45° gravado.
+A sala tem que ter visto **dois exemplos concretos** onde o ferramental AD é a linguagem natural — Proagro (Brasil) e EU ETS (Mundo). E tem que ter o diagrama $(x_{\text{chuva}}, x_{\text{sol}})$ com a reta de 45° gravado (mesmo desenho do Bloco 1, agora reinterpretado como ponto de equilíbrio sobre a 45° quando $A$ está totalmente segurado).
 
 ---
 
@@ -434,7 +434,7 @@ $$
 
 Três perguntas que ficam para a próxima:
 
-1. **Existência.** Sob que hipóteses existe equilíbrio AD? Ferramentas: continuidade do excesso de demanda, Brouwer/Kakutani. *[N&S §13.6 ou capítulo dedicado, J-R §5.2]*
+1. **Existência.** Sob que hipóteses existe equilíbrio AD? Ferramentas: continuidade do excesso de demanda, Brouwer/Kakutani. *[J-R §5.2 (existência walrasiana) + Debreu (1959) Cap. 5 (existência AD com incerteza)]*
 2. **Radner sequencial.** Em vez de **um** mercado completo ex-ante, suponha que há **mercado spot estado-a-estado** + alguns ativos transacionados em $t = 0$. Quando isso replica AD canônico? Quando é estritamente mais restritivo? *(Resposta-curta: replica se ativos *spans* $\mathbb{R}^S$.)*
 3. **Mercados incompletos.** Se não há ações Arrow para todos os estados, a alocação de equilíbrio é genericamente Pareto-ineficiente. **A 1ª regra de bem-estar do mercado falha.** Hart (1975) deu o teorema-chave.
 

@@ -72,7 +72,7 @@ Leitura dirigida do **Jehle & Reny — *Advanced Microeconomic Theory*, 3rd ed.*
 
 **Por que J-R e não N&S como referência principal:**
 
-- ZaE Cap. 14 (livro do Prof. Darcio) cobre EG canônico mas **não tem cobertura formal de incerteza/bens contingentes** — entra na Seção 1 como complemento opcional para revisão da Aula 4.
+- ZaE Cap. 14 (livro do Prof. Darcio) **não cobre incerteza/bens contingentes** — fica fora desta pré-aula. Serve como base de revisão para Aula 4 (EG canônico) se você quiser revisitar.
 - N&S §7.5 (state-preference approach) é o tratamento "Cap. 7 — Uncertainty" — bem-feito mas mais panorâmico, menos formal que J-R.
 - J-R §5.5 oferece o nível de rigor adequado ao MPE: definições formais, prova do 1º TBE estendido, aplicações com VNM citado mas não pré-requisito.
 
@@ -352,13 +352,13 @@ Ações Arrow para o estado $s$: ativo que paga 1 em $s$ e 0 em $s' \neq s$. Em 
 
 - (a) $A$ consome $\omega^A$ — autarquia.
 - (b) $A$ consome $(0, \omega^A_1 + \omega^A_2)$ — concentra tudo no estado 2.
-- (c) $\mathbf{A}$ consome $(\bar c^A, \bar c^A)$ com $\bar c^A$ independente do estado — **totalmente segurado**. **[correta]**
+- (c) $A$ consome $(\bar c^A, \bar c^A)$ com $\bar c^A$ independente do estado — **totalmente segurado**. **[correta]**
 - (d) $A$ consome $\bar\omega/2$ em cada estado — divide a economia.
 
 **MC6.** A relação $p^*_1/p^*_2 = \pi_1/\pi_2$ em equilíbrio com agente neutro depende crucialmente de:
 
 - (a) $A$ ser bayesiano ortodoxo.
-- (b) $\mathbf{A}$ neutralidade ao risco de $B$ + ótimo interior + concorrência (preço-tomador). **[correta]**
+- (b) **A** neutralidade ao risco de $B$ + ótimo interior + concorrência (preço-tomador). **[correta]**
 - (c) Total da economia ser igual nos dois estados.
 - (d) Estados serem equiprováveis.
 
@@ -427,7 +427,7 @@ Mesma economia do EP-1, com uma modificação: agora suponha que **só existe um
 **Q3 (síntese — 1º TBE).** O 1º TBE em mercados completos AD afirma que:
 
 - (a) Sob convexidade, todo Pareto-eficiente é EC AD após redistribuição lump-sum (esta é o **2º** TBE).
-- (b) $\mathbf{Sob}$ LNS, todo EC AD é Pareto-eficiente. A prova reaproveita a da Aula 4 trocando $\mathbb{R}^L$ por $\mathbb{R}^{LS}$. **[correta]**
+- (b) **Sob** LNS, todo EC AD é Pareto-eficiente. A prova reaproveita a da Aula 4 trocando $\mathbb{R}^L$ por $\mathbb{R}^{LS}$. **[correta]**
 - (c) Existe EC AD em qualquer economia (esta é existência, Aula 6).
 - (d) Mercados completos eliminam toda externalidade.
 

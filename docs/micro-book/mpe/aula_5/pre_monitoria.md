@@ -171,7 +171,7 @@ $$
 
 ### Implicação operacional
 
-> *"Mercado completo $\equiv$ existem $|S|$ ações Arrow $\equiv$ podemos formar portfolio que replica qualquer payoff $D_s$. Em $|S| = 2$: precisamos de 2 ativos lineamente independentes, e qualquer outro ativo é precificado por arbitragem."*
+> *"Mercado completo $\equiv$ existem $|S|$ ações Arrow $\equiv$ podemos formar portfolio que replica qualquer payoff $D_s$. Em $|S| = 2$: precisamos de 2 ativos linearmente independentes, e qualquer outro ativo é precificado por arbitragem."*
 
 Cite **Black-Scholes (1973)** como aplicação famosa: opção é precificada como combinação linear de ações + bond, em mercado completo. DOI canônico: [10.1086/260062](https://doi.org/10.1086/260062) (J. Political Economy 81(3): 637–654; ver apêndice).
 
@@ -257,7 +257,7 @@ Considere um payoff $D = (1, 0, 0)$ (paga 1 em recessão, 0 caso contrário — 
 
 ### Resultado central (Hart 1975) — citação
 
-> *"Em mercados incompletos, o equilíbrio competitivo é **constrained Pareto-eficient** (eficiente dentro do que o mercado pode replicar), mas **genericamente Pareto-ineficiente** comparado ao que mercado completo entregaria. **A 1ª regra de bem-estar do mercado falha como teorema universal — depende da completude."*
+> *"Em mercados incompletos, o equilíbrio competitivo é **constrained Pareto-eficiente** (eficiente dentro do que o mercado pode replicar), mas **genericamente Pareto-ineficiente** comparado ao que mercado completo entregaria. **A 1ª regra de bem-estar do mercado falha como teorema universal — depende da completude."*
 
 Cite **Hart (1975), J. Economic Theory 11(3): 418–443**: "On the Optimality of Equilibrium when the Market Structure is Incomplete." [DOI 10.1016/0022-0531(75)90028-9](https://doi.org/10.1016/0022-0531(75)90028-9).
 

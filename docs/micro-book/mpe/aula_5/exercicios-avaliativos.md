@@ -126,7 +126,7 @@ Economia $L = 1$, $S = 2$, $I = 2$. Bernoullis idênticas $v_A = v_B = \ln c$. *
 **(e)** O fato de o agregado ser livre de risco ($\bar\omega_1 = \bar\omega_2 = 100$) **não** implica $p^*_1 = p^*_2$ (em geral) porque:
 
 - (i) Os agentes têm Bernoullis diferentes.
-- (ii) $\mathbf{Os}$ agentes têm **crenças diferentes**, e o preço relativo reflete uma média ponderada das crenças (não a média simples). **[correta]** Quando crenças coincidem, o agregado livre de risco implica $p_1 = p_2$; com crenças divergentes, isso falha.
+- (ii) **Os** agentes têm **crenças diferentes**, e o preço relativo reflete uma média ponderada das crenças (não a média simples). **[correta]** Quando crenças coincidem, o agregado livre de risco implica $p_1 = p_2$; com crenças divergentes, isso falha.
 - (iii) Não há agente neutro.
 - (iv) O equilíbrio é Pareto-ineficiente.
 
@@ -181,7 +181,7 @@ Economia $L = 1$, $S = 2$. Probabilidades de consenso $\pi_1 = \pi_2 = 1/2$. Ber
 **(c)** A razão $1$ obtida em (b) **não** depende crucialmente de qual Bernoulli usamos (CRRA com $\gamma = 1$, CARA com $\gamma$ qualquer, etc.) porque:
 
 - (i) Bernoullis log são especiais.
-- (ii) $\mathbf{O}$ resultado vem de **simetria total** (probabilidades iguais + dotações espelhadas + Bernoullis idênticas), não da forma específica de $v$. **[correta]**
+- (ii) **O** resultado vem de **simetria total** (probabilidades iguais + dotações espelhadas + Bernoullis idênticas), não da forma específica de $v$. **[correta]**
 - (iii) Probabilidades equiprováveis sempre dão preço unitário.
 - (iv) Agregado livre de risco implica preços iguais sempre.
 
@@ -234,7 +234,7 @@ Numerário $p_2 = 1$. O preço $p_1$ é o preço relativo de consumo no período
 **(a)** A taxa de juros $r$ definida por $1 + r = p_1/p_2 = p_1$ é:
 
 - (i) Determinada exogenamente.
-- (ii) $\mathbf{Determinada}$ endogenamente pelo equilíbrio competitivo. **[correta]**
+- (ii) **Determinada** endogenamente pelo equilíbrio competitivo. **[correta]**
 - (iii) Sempre igual a $\beta$.
 - (iv) Não existe em economia sem moeda.
 
@@ -262,7 +262,7 @@ Numerário $p_2 = 1$. O preço $p_1$ é o preço relativo de consumo no período
 **(e)** O resultado canônico do exercício é o **trade entre paciente e impaciente**. A direção da troca depende exclusivamente de:
 
 - (i) A renda inicial.
-- (ii) $\mathbf{A}$ diferença de $\beta^i$ — paciente vende presente, compra futuro; impaciente faz o oposto. **[correta]**
+- (ii) **A** diferença de $\beta^i$ — paciente vende presente, compra futuro; impaciente faz o oposto. **[correta]**
 - (iii) A inflação.
 - (iv) A taxa de juros nominal.
 
@@ -319,14 +319,14 @@ Numerário $p_3 = 1$.
 
 - (i) Por construção é Pareto.
 - (ii) A prova é a mesma da Aula 4 substituindo $L$ por $LS$.
-- (iii) $\mathbf{Suponha}$ por contradição que existe $\tilde x$ Pareto-superior. Pela UMP em $p^*$, $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ para o $j$ estritamente melhor. Por LNS, $p^* \cdot \tilde x^A \ge p^* \cdot \omega^A$ e $p^* \cdot \tilde x^B \ge p^* \cdot \omega^B$. Soma: $p^* \cdot (\tilde x^A + \tilde x^B) > p^* \cdot \bar\omega$, contradizendo viabilidade. **[correta]**
+- (iii) **Suponha** por contradição que existe $\tilde x$ Pareto-superior. Pela UMP em $p^*$, $p^* \cdot \tilde x^j > p^* \cdot \omega^j$ para o $j$ estritamente melhor. Por LNS, $p^* \cdot \tilde x^A \ge p^* \cdot \omega^A$ e $p^* \cdot \tilde x^B \ge p^* \cdot \omega^B$. Soma: $p^* \cdot (\tilde x^A + \tilde x^B) > p^* \cdot \bar\omega$, contradizendo viabilidade. **[correta]**
 - (iv) Vem do 2º TBE.
 
 **(e)** O **passo crítico da prova** que requer mais cuidado em $\mathbb{R}^{LS}$ é:
 
 - (i) A continuidade de $u^i$.
 - (ii) A LNS de $\succeq^i$.
-- (iii) $\mathbf{A}$ viabilidade ser **estado-a-estado**, não em soma agregada — se fosse só soma, $\tilde x$ Pareto-superior poderia satisfazer $\sum_s \sum_i \tilde x_s = \sum_s \sum_i \omega_s$ sem satisfazer $\sum_i \tilde x_s = \bar\omega_s$ para cada $s$, e a contradição quebra. **[correta]**
+- (iii) **A** viabilidade ser **estado-a-estado**, não em soma agregada — se fosse só soma, $\tilde x$ Pareto-superior poderia satisfazer $\sum_s \sum_i \tilde x_s = \sum_s \sum_i \omega_s$ sem satisfazer $\sum_i \tilde x_s = \bar\omega_s$ para cada $s$, e a contradição quebra. **[correta]**
 - (iv) A convexidade da preferência.
 
 ### Gabarito 5-passos — Exercício 5
@@ -337,7 +337,7 @@ Numerário $p_3 = 1$.
 
 **3. Armadilha.** Item (a): aluno marca (iv) "agente neutro não impõe condição sobre 3 preços" — falso, neutro impõe $|S| - 1$ razões (proporcionalidade às probabilidades). Item (e) é o mais sutil — aluno apressado marca (i) ou (ii) (resposta clichê de teoria de bem-estar), mas a **especificidade da extensão a $\mathbb{R}^{LS}$** é precisamente a estado-a-estado.
 
-**4. Extensão.** Em mercado **incompleto** (Aula 6, Aula 8), o passo (a) e (b) falham: B neutro não está numa "cesta interior" do mercado completo (porque o mercado não é completo), e o agente avesso $A$ não consegue se segurar. O equilíbrio resultante (Radner com ativos limitados) é **constrained Pareto-eficient** mas **genericamente Pareto-ineficient** (Hart 1975, [DOI 10.1016/0022-0531(75)90028-9](https://doi.org/10.1016/0022-0531(75)90028-9)). Esta é a fronteira teórica que define todas as falhas de mercado de Aulas 7–9.
+**4. Extensão.** Em mercado **incompleto** (Aula 6, Aula 8), o passo (a) e (b) falham: B neutro não está numa "cesta interior" do mercado completo (porque o mercado não é completo), e o agente avesso $A$ não consegue se segurar. O equilíbrio resultante (Radner com ativos limitados) é **constrained Pareto-eficiente** mas **genericamente Pareto-ineficiente** (Hart 1975, [DOI 10.1016/0022-0531(75)90028-9](https://doi.org/10.1016/0022-0531(75)90028-9)). Esta é a fronteira teórica que define todas as falhas de mercado de Aulas 7–9.
 
 **5. Peer-review.** Calibre 🔴. Item (d) e (e) são as questões-mestras — testam se o aluno entende que **a prova do 1º TBE em AD é ipsis litteris a da Aula 4, substituindo o espaço**. Item (e) é deliberadamente sutil — distinguir "viabilidade agregada" de "viabilidade estado-a-estado" é um ponto frequentemente perdido. **Risco residual:** item (e) pode confundir alunos que não viram a prova com cuidado; recomendo revisar slide 6 do Bloco 3 da aula presencial. **Sem ambiguidade no enunciado.**
 
@@ -358,14 +358,14 @@ Adicionalmente, suponha que cada agente recebe sua dotação **diretamente** em 
 **(a)** O agente $A$ avesso ao risco gostaria de poder **comprar seguro nos estados 2 e 3** para suavizar consumo. Com apenas o título do estado 1 disponível:
 
 - (i) Pode comprar seguro contra o estado 1 e isso suaviza consumo nos 3 estados.
-- (ii) $\mathbf{Não}$ pode suavizar consumo nos estados 2 e 3 — o ativo **não cobre** essas dimensões. **[correta]**
+- (ii) **Não** pode suavizar consumo nos estados 2 e 3 — o ativo **não cobre** essas dimensões. **[correta]**
 - (iii) O equilíbrio é o mesmo do Exercício 5.
 - (iv) Pode replicar o mercado completo via combinação linear.
 
 **(b)** Pelo argumento de **span**: o subespaço de payoffs replicáveis com o ativo do estado 1 é:
 
 - (i) Todo $\mathbb{R}^3$.
-- (ii) $\mathbf{O}$ subespaço $\{(x, 0, 0) : x \in \mathbb{R}\}$ — só 1 dimensão. **[correta]**
+- (ii) **O** subespaço $\{(x, 0, 0) : x \in \mathbb{R}\}$ — só 1 dimensão. **[correta]**
 - (iii) O subespaço $\{(x, y, z) : x + y + z = 0\}$.
 - (iv) O subespaço $\{(x, y, z) : x = y = z\}$.
 
@@ -373,28 +373,28 @@ Adicionalmente, suponha que cada agente recebe sua dotação **diretamente** em 
 
 - (i) 1.
 - (ii) 2.
-- (iii) $\mathbf{3}$. **[correta]** Em $|S| = 3$, são necessários 3 ativos lineamente independentes (uma base de $\mathbb{R}^3$).
+- (iii) $\mathbf{3}$. **[correta]** Em $|S| = 3$, são necessários 3 ativos linearmente independentes (uma base de $\mathbb{R}^3$).
 - (iv) Mais de 3.
 
 **(d)** Em equilíbrio com mercado incompleto (apenas 1 ativo), $A$ atinge consumo:
 
 - (i) Igual ao do Exercício 5: $(22, 22, 22)$.
 - (ii) Próximo do Exercício 5, com pequeno desvio.
-- (iii) $\mathbf{Genericamente}$ diferente do Exercício 5: $A$ pode ajustar consumo no estado 1 (via título), mas fica **preso** nas dotações $\omega^A_2 = 30, \omega^A_3 = 20$ — não atinge alocação livre de risco. **[correta]**
+- (iii) **Genericamente** diferente do Exercício 5: $A$ pode ajustar consumo no estado 1 (via título), mas fica **preso** nas dotações $\omega^A_2 = 30, \omega^A_3 = 20$ — não atinge alocação livre de risco. **[correta]**
 - (iv) Nulo: $A$ não consome nada.
 
 **(e)** O equilíbrio resultante é:
 
 - (i) Pareto-eficiente — qualquer equilíbrio é Pareto pelo 1º TBE.
 - (ii) Pareto-eficiente, **mas** apenas em $\{$estado 1$\}$.
-- (iii) $\mathbf{Constrained Pareto}$-eficiente (eficiente dentro do que o mercado pode replicar) **mas genericamente Pareto-ineficiente** comparado ao mercado completo. **[correta]** Resultado de Hart (1975).
+- (iii) **Constrained Pareto-eficiente** (eficiente dentro do que o mercado pode replicar) **mas genericamente Pareto-ineficiente** comparado ao mercado completo. **[correta]** Resultado de Hart (1975).
 - (iv) Não existe equilíbrio.
 
 ### Gabarito 5-passos — Exercício 6
 
 **1. Ponto-chave.** Mercados completos requerem **$|S|$ ativos linearmente independentes** para spannar $\mathbb{R}^S$. Quando há menos ativos, o equilíbrio resultante é genericamente **Pareto-ineficiente**: agentes avessos não conseguem se segurar contra estados não cobertos por ativos. Este é o resultado de Hart (1975), **a fronteira que define as falhas de mercado das Aulas 7–9**.
 
-**2. Derivação.** Item (b): com 1 ativo que paga $(1, 0, 0)$, span $= \{a (1, 0, 0) : a \in \mathbb{R}\}$ — 1 dimensão. Item (c): para spannar $\mathbb{R}^3$, 3 ativos lineamente independentes. Item (d): com apenas o ativo do estado 1, $A$ pode escolher livremente $x^A_1$, mas não pode reorganizar $x^A_2$ nem $x^A_3$ — fica preso em $\omega^A_2 = 30, \omega^A_3 = 20$. Em equilíbrio, $x^A = (\hat x^A_1, 30, 20)$ onde $\hat x^A_1$ depende de $q_1$ (preço do ativo) que se determina endogenamente. Compare com Exercício 5: $A$ atingia $(22, 22, 22)$ — alocação totalmente segura. Aqui, $A$ permanece exposto ao risco dos estados 2 e 3.
+**2. Derivação.** Item (b): com 1 ativo que paga $(1, 0, 0)$, span $= \{a (1, 0, 0) : a \in \mathbb{R}\}$ — 1 dimensão. Item (c): para spannar $\mathbb{R}^3$, 3 ativos linearmente independentes. Item (d): com apenas o ativo do estado 1, $A$ pode escolher livremente $x^A_1$, mas não pode reorganizar $x^A_2$ nem $x^A_3$ — fica preso em $\omega^A_2 = 30, \omega^A_3 = 20$. Em equilíbrio, $x^A = (\hat x^A_1, 30, 20)$ onde $\hat x^A_1$ depende de $q_1$ (preço do ativo) que se determina endogenamente. Compare com Exercício 5: $A$ atingia $(22, 22, 22)$ — alocação totalmente segura. Aqui, $A$ permanece exposto ao risco dos estados 2 e 3.
 
 **3. Armadilha.** Item (e): aluno desinformado marca (i) "Pareto pelo 1º TBE" — **falso, o 1º TBE de hoje (Aula 5) requer mercado completo**. Quando o mercado é incompleto (Aula 6+), o teorema falha. Item (a): aluno apressado marca (iv) "pode replicar via combinação linear" — falso, com 1 ativo apenas, não há combinação possível para outros estados.
 
@@ -412,7 +412,7 @@ Todos os 6 exercícios usam **apenas** ferramentas que estão na pré-aula 5 ou 
 
 - $\mathbb{R}^{LS}$ + bens contingentes (todos os exercícios).
 - Equilíbrio AD walrasiano + UMP em $\mathbb{R}^{LS}$ (todos).
-- Equação SDF / razão de preços contingentes (Ex 2, 3, 5).
+- Equação SDF / razão de preços contingentes (Ex 2, 3, 5 — em Ex2/Ex3 a razão emerge via Cobb-Douglas direta; o SDF generaliza).
 - 1º TBE estendido (Ex 5, prova reaproveitada).
 - Seguro completo (Ex 1, 5).
 - Tempo como caso particular de estado (Ex 4).
@@ -448,7 +448,7 @@ Todos os 6 exercícios usam **apenas** ferramentas que estão na pré-aula 5 ou 
 ### Notação canônica respeitada
 
 - $\succeq$ (não $\succsim$). ✓
-- $\text{TMS}$ (não $MRS$). ✓ (não usado neste md, mas convenção respeitada na pré-aula e durante_aula).
+- $\text{TMS}$ (não $MRS$). ✓ (usado no gabarito do Ex 1; convenção respeitada em todo o bundle).
 - Decimais com vírgula `\{,\}`. ✓
 - $\pi_s$ (não $p_s$ — colide com preço). ✓
 - Estados $s \in S$. ✓
