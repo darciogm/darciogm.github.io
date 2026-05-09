@@ -125,13 +125,21 @@ Em economia $L = 1$, $S = 2$, $I = 2$, com $v_A = v_B = \ln c$, $\omega^A = \ome
 
 ### Definição operacional do SDF
 
-Em equilíbrio AD com EU, defina o **stochastic discount factor (SDF)** do agente $i$:
+Em equilíbrio AD com EU, defina o **stochastic discount factor (SDF)** do agente $i$ (convenção Cochrane — $\pi$ *fora* da definição):
 
 $$
-m^i_s = \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\lambda^i}
+m^i_s = \frac{(v^i)'(x^{i*}_s)}{\lambda^i}
 $$
 
-onde $\lambda^i$ é o multiplicador da restrição orçamentária. **Em equilíbrio, $m^i_s$ é o mesmo para todo agente $i$** — porque $p^*_s = m_s$ (a menos de normalização). Por isso falamos de "*o*" SDF.
+onde $\lambda^i$ é o multiplicador da restrição orçamentária. A relação com o preço Arrow é:
+
+$$
+p^*_s = \pi^i_s\, m^i_s.
+$$
+
+**Em equilíbrio, $m^i_s$ é o mesmo para todo agente $i$** sob consenso bayesiano ($\pi^i = \pi$) — porque $p^*_s/\pi_s = m_s$ é único (a menos de normalização). Por isso falamos de "*o*" SDF.
+
+> **Nota de convenção.** $\pi$ entra *uma única vez*, ao multiplicar $m_s$ para obter o preço Arrow $p^*_s$. É a convenção do Cochrane (*Asset Pricing*, 2005) e a usada nos slides da Aula 5. Outros textos (ex.: parte da literatura AD pura) embutem $\pi$ na definição de $m$ — aí, para precificar, não se multiplica por $\pi$ de novo. **Não misture as duas convenções no mesmo cálculo** — conta a probabilidade duas vezes.
 
 ### Precificação de qualquer ativo
 
@@ -164,10 +172,10 @@ A taxa livre de risco é o inverso da expectativa do SDF.
 Ação Arrow para o estado $s$: paga 1 em $s$, 0 em outros. Preço:
 
 $$
-P_0^{(s)} = p^*_s = m_s.
+P_0^{(s)} = p^*_s = \pi_s\, m_s.
 $$
 
-**Por isso $m$ é o SDF: cada $m_s$ é o preço de "1 unidade de bem se realizar $s$".**
+**Por isso $m$ é o SDF: $m_s$ é o *preço por unidade de probabilidade* de "1 unidade de bem se realizar $s$" — o preço Arrow nominal $p^*_s$ é a probabilidade ponderada por esse desconto estocástico.**
 
 ### Implicação operacional
 

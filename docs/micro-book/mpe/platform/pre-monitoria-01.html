@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pré-Monitoria 01 — Aulas 3 e 4 + revisão relâmpago — Microeconomia I MPE 2026/32</title>
+<title>Pré-Monitoria 1 — Extensões das Aulas 1-3 — Microeconomia I MPE 2026/32</title>
 <link rel="stylesheet" href="css/platform.css">
 <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
@@ -19,139 +19,449 @@
 
 <div class="content-wrapper">
 
-<h1>Pré-Monitoria 01 — Aulas 3 e 4 com revisão relâmpago de 1 e 2</h1>
+<h1>Pré-Monitoria 1 — Extensões das Aulas 1-3 (Preferências, Dualidade, Slutsky)</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 7</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
 
 <div class="admonition info">
-<div class="admonition-title">Dados do encontro</div>
-<ul>
-  <li><strong>Data:</strong> sábado, 16/05/2026 — à tarde (horário e sala conforme divulgação)</li>
-  <li><strong>Monitor:</strong> Alberto Nishikawa</li>
-  <li><strong>Encontros de referência:</strong> Aulas 3 (Slutsky e Elasticidades) e 4 (Equilíbrio Geral: Trocas e Produção), com revisão relâmpago de Aulas 1 (Preferências) e 2 (UMP/EMP/Dualidade)</li>
-  <li><strong>Formato:</strong> resolução de exercícios no quadro, com participação ativa. Não é reexposição de aula — é extensão e calibre.</li>
-  <li><strong>Tempo-alvo desta pré-monitoria:</strong> 45–60 min (assumindo pré-aulas 1–4 já concluídas)</li>
-</ul>
+<div class="admonition-title">Como esta pré-monitoria funciona</div>
+<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>7 seções</strong> (orientação + recap + 4 extensões + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>60–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Cobre as três primeiras aulas em uma só pré-monitoria, com uma extensão direta por aula (1 → 2 → 3) e uma seção cross-aulas com exercícios-âncora N&amp;S/J-R no calibre teto. Várias extensões são <em>servidas, não esgotadas</em> — propositalmente deixam pontas para o sábado.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> material aberto na plataforma — formativo, não conta nota. Monitoria presencial com Alberto: <strong>sábado 16/05 · 10:00</strong>.</p>
 </div>
 
-<h2>Como a monitoria é estruturada</h2>
-<p>A monitoria tem três camadas de calibre:</p>
-<ol>
-  <li><strong>Piso N&amp;S-difícil:</strong> revisão dos itens mais duros de N&amp;S 12e correspondentes ao material coberto. Consolida o que já foi visto em sala.</li>
-  <li><strong>Teto J-R:</strong> um ou dois exercícios no calibre Jehle-Reny, para quem quer empurrar o rigor.</li>
-  <li><strong>Tópicos extras:</strong> extensões que não couberam na aula — limites CES, cálculo direto de <span class="math inline">\(\sigma\)</span>, contraexemplos clássicos — e sabor ANPEC quando pertinente.</li>
-</ol>
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>O que esperar do sábado</h2>
+  <ul>
+    <li>Esta pré-monitoria <strong>não conta nota</strong>. É preparação.</li>
+    <li>O Alberto vai usar suas reflexões finais (Seção 6) para calibrar a monitoria de sábado.</li>
+    <li>Tente os micro-checkpoints sem consultar primeiro. Errar é dado útil.</li>
+    <li>Foco em <em>extensões</em>: limites CES com prova via L'Hôpital, lexicográfica e continuidade, dualidade Roy/Shephard em formas raras (CES, Stone-Geary), Slutsky com Giffen explícito numericamente, e exercícios-âncora N&amp;S/J-R no calibre teto.</li>
+    <li>Pré-requisito: ter concluído as pré-aulas das Aulas 1, 2 e 3 e assistido às três aulas presenciais.</li>
+  </ul>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi — começar</button>
+</section>
 
-<p>A pré-monitoria existe para você chegar com o ferramental fresco. Não é checkpoint obrigatório da plataforma; é uma chance de garantir que você extrai o máximo do encontro de sábado.</p>
+<!-- ==================== SECTION 1: RECAP AULAS 1-3 ==================== -->
+<section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
+  <div class="section-meta">Seção 1 · Recap · 5 min</div>
+  <h2>Recap rápido das Aulas 1-3</h2>
+  <p>Antes das extensões, ancore mentalmente os pontos-âncora cobrindo as três aulas. Cada um vai ser estendido depois:</p>
+  <ol>
+    <li><strong>Aula 1 — Axiomas e representação.</strong> Preferência \(\succeq\) racional (completude + transitividade) admite representação por \(u: X \to \mathbb{R}\) <em>contínua</em> sob hipótese adicional de <strong>continuidade</strong> da preferência (Debreu, 1954). Sem continuidade, a representação numérica pode falhar — caso canônico: <strong>preferências lexicográficas</strong>.</li>
+    <li><strong>Aula 1 — Famílias canônicas.</strong> Cobb-Douglas, CES, quase-linear e Leontief são os quatro fundamentais. CES com elasticidade de substituição \(\sigma = 1/(1-\rho)\) <strong>aninha</strong> as outras três como casos-limite: \(\rho \to 0\) (CD), \(\rho \to -\infty\) (Leontief), \(\rho \to 1\) (substitutos perfeitos). <em>Extensão 1</em> prova esses limites via L'Hôpital.</li>
+    <li><strong>Aula 2 — UMP/EMP e dualidade.</strong> UMP gera demanda Marshalliana \(x(p, m)\) e indireta \(v(p, m)\); EMP gera Hicksiana \(h(p, u)\) e gasto \(e(p, u)\). Identidades-chave: <strong>Roy</strong> \(x_i = -\frac{\partial v/\partial p_i}{\partial v/\partial m}\), <strong>Shephard</strong> \(h_i = \frac{\partial e}{\partial p_i}\). <em>Extensão 2</em> aplica em formas raras (CES, Stone-Geary).</li>
+    <li><strong>Aula 3 — Slutsky.</strong> \(\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial m}\). Decompõe variação de demanda Marshalliana em <strong>efeito-substituição</strong> (Hicksiana, sempre não-positivo na diagonal) e <strong>efeito-renda</strong> (sinal depende se bem é normal/inferior). <em>Extensão 3</em> constrói Giffen explícito numericamente em Stone-Geary.</li>
+    <li><strong>Bem normal vs. inferior vs. Giffen.</strong> Normal: \(\partial x/\partial m > 0\). Inferior: \(\partial x/\partial m < 0\). Giffen: \(\partial x/\partial p > 0\) (curva de demanda inclinada positivamente). Todo Giffen é inferior, mas nem todo inferior é Giffen — Giffen exige efeito-renda dominar efeito-substituição em magnitude.</li>
+  </ol>
+  <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne aos materiais (<a href="aula-01.html" style="color:var(--accent)">aula-01.html</a>, <a href="aula-02.html" style="color:var(--accent)">aula-02.html</a>, <a href="aula-03.html" style="color:var(--accent)">aula-03.html</a>) ou ZaE caps. 3-5 antes de avançar.</p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
+</section>
 
-<hr>
+<!-- ==================== SECTION 2: EXTENSÃO 1 — Limites CES + Lexicográfica (Aula 1) ==================== -->
+<section class="section-block locked" id="s2-ces-lex" data-section="s2-ces-lex" data-order="2">
+  <div class="section-meta">Seção 2 · Extensão 1 · 15 min</div>
+  <h2>Aula 1 — Limites CES + lexicográfica</h2>
 
-<h2>1. Escopo desta monitoria</h2>
-<p>Como M1 é a primeira e cobre quatro aulas, a estratégia é densa mas linear. Primeiros 20–25 minutos: revisão relâmpago de axiomas → representação → UMP/EMP/dualidade via envelope, fixando esses blocos como <em>fundo</em>. Depois: foco principal em decomposição de Slutsky, propriedades da matriz, paradoxo Giffen, e construção do equilíbrio walrasiano 2×2 Cobb-Douglas na caixa de Edgeworth. Fecha com uma ponte direta para Arrow-Debreu (Aulas 5–6).</p>
+  <div class="confidence-block" id="conf-s2-pre">
+    <label>Antes de estudar: quão confortável você está provando que <strong>CD e Leontief são casos-limite da CES</strong>, e enunciando por que a preferência lexicográfica não admite utilidade contínua?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s2-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s2-ces-lex','pre','s2-pre')">Registrar e continuar</button>
+  </div>
 
-<hr>
+  <div class="section-content" id="content-s2" style="display:none">
+    <p><strong>Pergunta-mãe.</strong> CES é "uma família que aninha tudo" — mas <em>como</em>, formalmente? E onde a representação por utilidade <em>quebra</em>?</p>
 
-<h2>2. Exercícios-âncora</h2>
-<p>Os cinco exercícios abaixo serão resolvidos ao vivo. <strong>Tente antes</strong> — é quando você aprende. Chegar com rascunhos, por mais tortos que estejam, multiplica o valor da monitoria.</p>
+    <h3 style="margin-top:1.2rem">(a) CES \(\to\) Cobb-Douglas quando \(\rho \to 0\)</h3>
+    <p>CES canônica: \(u(x_1, x_2) = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}\) com \(\rho \in (-\infty, 1]\), \(\rho \neq 0\). Tomando log e usando que log é monotônica:
+    \[
+      \ln u = \frac{1}{\rho} \ln\!\big(\alpha x_1^\rho + (1-\alpha) x_2^\rho\big).
+    \]
+    Quando \(\rho \to 0\), o numerador \(\ln(\alpha x_1^\rho + (1-\alpha) x_2^\rho) \to \ln(\alpha + 1 - \alpha) = \ln 1 = 0\), e o denominador também \(\to 0\). Forma indeterminada \(0/0\) — aplicar <strong>L'Hôpital</strong>:
+    \[
+      \lim_{\rho \to 0} \frac{\ln(\alpha x_1^\rho + (1-\alpha) x_2^\rho)}{\rho}
+      = \lim_{\rho \to 0} \frac{\alpha x_1^\rho \ln x_1 + (1-\alpha) x_2^\rho \ln x_2}{\alpha x_1^\rho + (1-\alpha) x_2^\rho}
+      = \alpha \ln x_1 + (1-\alpha) \ln x_2.
+    \]
+    Logo \(u \to x_1^\alpha x_2^{1-\alpha}\) — <strong>Cobb-Douglas exata</strong>. Como utilidade é ordinal, qualquer transformação monotônica funciona; \(\ln u\) só facilita a álgebra.</p>
 
-<ul>
-  <li><strong>N&amp;S 12e 3.5 e 3.7</strong> em versão estendida (revisão). 3.5 cobre Leontief e composite goods; 3.7 cobre identificação de Cobb-Douglas a partir de TMS observada. Integramos com discussão explícita de axiomas violados em cada alternativa.</li>
-  <li><strong>N&amp;S 12e 4.10</strong> (Cobb-Douglas Analytical Problem). Pede: (a) função de utilidade indireta \(V(p,I)\), (b) função gasto \(E(p,u)\), (c) compensação equivalente para aumento no preço de um bem. Derivação completa da dualidade em Cobb-Douglas \(U(x,y) = x^\alpha y^{1-\alpha}\).</li>
-  <li><strong>N&amp;S 12e 5.4</strong> (Cobb-Douglas com verificação explícita da equação de Slutsky). Decomposição efeito-renda × efeito-substituição linha a linha. Consolida a matriz de Slutsky como construção dual.</li>
-  <li><strong>N&amp;S 12e 13.2</strong> (Smith/Jones, produção Cobb-Douglas). Dois consumidores com preferências CD, produção com labor como insumo, resolver razão de preços e alocação de equilíbrio. É o bloco 2×2 do walrasiano que entra na Aula 5 como ponto de partida.</li>
-  <li><strong>J-R 1.38</strong> (teto, para quem quer empurrar). Verificar que a função gasto derivada da utilidade CES do Exemplo 1.3 satisfaz as propriedades do Teorema 1.7 (homogeneidade grau 1 em preços, crescente em \(u\), côncava em \(p\), continua, etc.). Dualidade rigorosa.</li>
-</ul>
+    <h3 style="margin-top:1.2rem">(b) CES \(\to\) Leontief quando \(\rho \to -\infty\)</h3>
+    <p>Sem perda: suponha \(x_1 \le x_2\) (caso simétrico). Fatorando \(x_1\):
+    \[
+      \alpha x_1^\rho + (1-\alpha) x_2^\rho = x_1^\rho \left[\alpha + (1-\alpha) (x_2/x_1)^\rho\right].
+    \]
+    Como \(x_2/x_1 \ge 1\) e \(\rho \to -\infty\), \((x_2/x_1)^\rho \to 0\). Logo \(\alpha x_1^\rho + (1-\alpha) x_2^\rho \sim \alpha \, x_1^\rho\). Tomando \((\cdot)^{1/\rho}\) com \(\rho < 0\):
+    \[
+      u \sim \alpha^{1/\rho} \, x_1.
+    \]
+    Como \(\rho \to -\infty\), \(\alpha^{1/\rho} \to 1\) (qualquer base positiva elevada a 0 vai a 1). Logo \(u \to x_1 = \min\{x_1, x_2\}\) — <strong>Leontief exato</strong>. O termo dominante na soma é o do <em>menor</em> bem porque \(\rho < 0\) inverte o ranking.</p>
 
-<hr>
+    <h3 style="margin-top:1.2rem">(c) CES \(\to\) substitutos perfeitos quando \(\rho \to 1\)</h3>
+    <p>Trivial: \(u = (\alpha x_1 + (1-\alpha) x_2)^1 = \alpha x_1 + (1-\alpha) x_2\). Linear. \(\sigma = 1/(1-\rho) \to \infty\) — bens são perfeitamente substituíveis.</p>
 
-<h2>3. Tópicos extras e extensões</h2>
-<p>Material não coberto em sala que aparece aqui pela primeira vez com rigor:</p>
+    <p style="background:#fff7ed;border-left:3px solid #f97316;padding:0.7rem 0.9rem;font-size:0.9rem"><strong>Mensagem.</strong> Um único parâmetro \(\rho\) varre o espectro completo de substituibilidade — de complementos perfeitos (\(\rho \to -\infty\)) a substitutos perfeitos (\(\rho \to 1\)), passando por CD (\(\rho = 0\)). Por isso CES é o cavalo-de-batalha em macro de crescimento, comércio e estimação estrutural.</p>
 
-<ul>
-  <li><strong>Cobb-Douglas como limite da CES</strong> quando \(\rho \to 0\). Usar \(\ln u = \frac{1}{\rho}\ln\left(\alpha x_1^\rho + (1-\alpha)x_2^\rho\right)\) e L'Hôpital para obter \(\ln u = \alpha \ln x_1 + (1-\alpha)\ln x_2\). Discutir por que \(\sigma = 1\) no limite.</li>
-  <li><strong>Leontief como limite da CES</strong> quando \(\rho \to -\infty\). Argumento heurístico via \(\min\): termo dominante no somatório é o menor \(x_i\). Atenção ao <em>kink</em> — TMS não-diferenciável no vértice.</li>
-  <li><strong>Cálculo direto de \(\sigma\)</strong> pela definição \(\sigma = \dfrac{d\ln(x_2/x_1)}{d\ln \mathrm{TMS}}\) para as quatro famílias (Cobb-Douglas, CES, quasilinear, Leontief). Fecha o passeio.</li>
-  <li><strong>Contraexemplo das preferências lexicográficas</strong> — por que satisfazem completude, transitividade e monotonicidade, mas violam continuidade; construção explícita de conjunto de nível não-fechado; prova (intuitiva) de não-representabilidade por função utilidade contínua. Promessa pendente da Aula 1.</li>
-</ul>
+    <h3 style="margin-top:1.2rem">(d) Lexicográfica — preferência racional sem utilidade contínua</h3>
+    <p>Defina \(\succeq_L\) em \(\mathbb{R}^2_+\) por: \((x_1, x_2) \succ_L (y_1, y_2)\) se \(x_1 > y_1\), <em>ou</em> \(x_1 = y_1\) e \(x_2 > y_2\). Indiferença só vale se \(x = y\).</p>
+    <ul>
+      <li><strong>Completa:</strong> ✓ — para qualquer par, sempre uma das três relações se aplica.</li>
+      <li><strong>Transitiva:</strong> ✓ — verificação direta caso a caso.</li>
+      <li><strong>Monotônica:</strong> ✓ — aumentar \(x_1\) ou \(x_2\) sempre melhora.</li>
+      <li><strong>Contínua?</strong> ✗ — falha. O conjunto inferior \(\{y \in \mathbb{R}^2_+ : y \preceq_L (1, 1)\}\) <em>não é fechado</em>.</li>
+    </ul>
 
-<hr>
+    <p><strong>Construção canônica do contraexemplo.</strong> Considere a sequência \(x^n = (1 - 1/n, \, 2)\). Cada \(x^n\) tem \(x_1^n < 1\), logo \(x^n \prec_L (1, 1)\). Mas o limite é \(\lim_n x^n = (1, 2) \succ_L (1, 1)\) (mesmo bem 1, mais bem 2). O conjunto \(\{y : y \preceq_L (1, 1)\}\) contém todos os \(x^n\) mas não contém o limite — não é fechado. Continuidade exige fechamento dos conjuntos de nível, então \(\succeq_L\) <strong>não é contínua</strong>.</p>
 
-<h2>4. Conexão com o curso</h2>
-<p>Ao fim desta monitoria você deve ter consolidado:</p>
-<ul>
-  <li>A cadeia <strong>axiomas → representação → UMP/EMP → dualidade → Slutsky → equilíbrio walrasiano 2×2</strong>.</li>
-  <li>A mecânica dos três objetos principais: função de utilidade indireta \(V\), função gasto \(E\), demanda Hicksiana \(x^h = \partial E/\partial p\).</li>
-  <li>A caixa de Edgeworth como objeto geométrico que antecipa Arrow-Debreu (Aulas 5–6) quando as cestas são estendidas para bens contingentes.</li>
-</ul>
+    <p><strong>Não-representabilidade.</strong> Teorema (Debreu, 1954, em <em>Decision Processes</em>, Thrall-Coombs-Davis eds., Wiley): \(\succeq\) admite \(u: X \to \mathbb{R}\) contínua se e somente se \(\succeq\) é racional <em>e contínua</em>. Como \(\succeq_L\) viola continuidade, não existe \(u\) contínua. Há prova mais forte (não construtiva): \(\succeq_L\) não admite <strong>nenhuma</strong> representação numérica em \(\mathbb{R}^2\) (mesmo descontínua), por argumento de cardinalidade — exigiria injeção de \(\mathbb{R}\) em \(\mathbb{R}\) preservando ordem para cada \(x_1\) fixo, mas com diferentes \(x_1\) usando intervalos disjuntos densos; impossível.</p>
 
-<p>Se algum desses blocos ainda está gelado quando você chegar na monitoria, fale com o Alberto logo no início. Vale mais admitir 15 minutos que "travar" 3 horas.</p>
+    <p style="font-size:0.85rem;color:#64748b">Refs: Debreu (1954) — chapter, sem DOI canônico. Discussão moderna: J-R 3e §1.2.2 (Theorem 1.1) e MWG §3.C. Tratamento histórico em Wold (1943), <em>Skand. Aktuarietidskr.</em> 26: 85–118, <a href="https://doi.org/10.1080/03461238.1943.10404744" target="_blank" rel="noopener">DOI 10.1080/03461238.1943.10404744</a>, que primeiro caracterizou condições para representabilidade.</p>
 
-<hr>
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Para o sábado: e se relaxarmos para \(\succeq\) racional <em>sem</em> exigir continuidade — quando ainda existe utilidade (não-contínua)? Resposta: sob conjunto enumerável denso em \(X\) (Cantor 1895; ver J-R Theorem 1.2). Alberto pode discutir.</p>
 
-<h2>Checkpoint de pré-monitoria (4 itens)</h2>
+    <div class="micro-checkpoint" id="micro-s2">
+      <h3>Micro-checkpoint (1 item — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas.</div>
 
-<div class="admonition warning">
-<div class="admonition-title">Calibre de aquecimento</div>
-<p>Estes 4 itens testam pré-requisitos. Se errar muito, reveja as pré-aulas 1–4 antes de sábado. Se acertar em 1ª tentativa, chegou com a preparação certa.</p>
-</div>
+      <div class="micro-q" data-q="s2q1" data-correct="c">
+        <div class="q-text">1. Considere a CES \(u(x_1, x_2) = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}\) avaliada em \(x_1 = 1\), \(x_2 = 4\), \(\alpha = 1/2\). No limite \(\rho \to -\infty\), \(u \to ?\)</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-ces-lex','s2q1','a',this)">(a) \(2\) (média geométrica — Cobb-Douglas).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-ces-lex','s2q1','b',this)">(b) \(2{,}5\) (média aritmética — substitutos perfeitos).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-ces-lex','s2q1','c',this)">(c) \(1\) (mínimo — Leontief).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-ces-lex','s2q1','d',this)">(d) \(4\) (máximo).</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
 
-<div class="quiz-container">
-<div class="quiz-header"><h3>Checkpoint Pré-Monitoria 01</h3>
-<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+    <div class="confidence-block" id="conf-s2-post" style="display:none">
+      <label>Agora, depois de provar os limites CES e construir o contraexemplo lex:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s2-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s2-ces-lex','post','s2-post')">Registrar</button>
+    </div>
+  </div>
 
-<div class="quiz-question" data-question="q1" data-correct="b">
-<div class="q-text">Q1 (Limite CES). No limite \(\rho \to 0\), a função CES \(u(x_1, x_2) = \left(\alpha x_1^\rho + (1-\alpha)x_2^\rho\right)^{1/\rho}\) converge (a menos de transformação monótona) para:</div>
-<div class="quiz-option" data-value="a">(a) Substitutos perfeitos: \(u = \alpha x_1 + (1-\alpha)x_2\)</div>
-<div class="quiz-option" data-value="b">(b) Cobb-Douglas: \(u = x_1^\alpha x_2^{1-\alpha}\)</div>
-<div class="quiz-option" data-value="c">(c) Leontief: \(u = \min\{x_1, x_2\}\)</div>
-<div class="quiz-option" data-value="d">(d) Quasilinear: \(u = \ln x_1 + x_2\)</div>
-<div class="quiz-option" data-value="e">(e) Nenhuma das anteriores — o limite não existe</div>
-<div class="quiz-feedback"></div>
-</div>
+  <button class="section-complete-btn" id="complete-s2-ces-lex" disabled onclick="MPE.completeSection('s2-ces-lex')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
 
-<div class="quiz-question" data-question="q2" data-correct="c">
-<div class="q-text">Q2 (Slutsky matricial). A matriz de Slutsky \(S\) de um consumidor racional que maximiza utilidade estritamente quasi-côncava é:</div>
-<div class="quiz-option" data-value="a">(a) Simétrica e definida positiva</div>
-<div class="quiz-option" data-value="b">(b) Assimétrica e semidefinida negativa</div>
-<div class="quiz-option" data-value="c">(c) Simétrica e semidefinida negativa</div>
-<div class="quiz-option" data-value="d">(d) Simétrica, mas com diagonal positiva (pela lei da demanda)</div>
-<div class="quiz-option" data-value="e">(e) Nenhuma restrição geral além de homogeneidade de grau zero</div>
-<div class="quiz-feedback"></div>
-</div>
+<!-- ==================== SECTION 3: EXTENSÃO 2 — Roy/Shephard em CES (Aula 2) ==================== -->
+<section class="section-block locked" id="s3-roy-shephard" data-section="s3-roy-shephard" data-order="3">
+  <div class="section-meta">Seção 3 · Extensão 2 · 15 min</div>
+  <h2>Aula 2 — Roy e Shephard em CES (forma rara)</h2>
 
-<div class="quiz-question" data-question="q3" data-correct="c">
-<div class="q-text">Q3 (Equilíbrio walrasiano 2×2). Numa economia de trocas com dois agentes e dois bens e preferências estritamente monotônicas, o equilíbrio walrasiano é caracterizado por:</div>
-<div class="quiz-option" data-value="a">(a) Alocações idênticas para os dois agentes</div>
-<div class="quiz-option" data-value="b">(b) TMS igual à razão de dotações iniciais</div>
-<div class="quiz-option" data-value="c">(c) TMS de ambos os agentes iguais à razão de preços, com mercados se limpando</div>
-<div class="quiz-option" data-value="d">(d) Preços iguais a zero para um dos bens</div>
-<div class="quiz-option" data-value="e">(e) Existência do núcleo vazio</div>
-<div class="quiz-feedback"></div>
-</div>
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes: quão confortável você está em <strong>aplicar Roy à \(v(p, m)\) da CES</strong> e <strong>Shephard à \(e(p, u)\) da CES</strong>, e verificar a dualidade explicitamente?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-roy-shephard','pre','s3-pre')">Registrar e continuar</button>
+  </div>
 
-<div class="quiz-question" data-question="q4" data-correct="a">
-<div class="q-text">Q4 (Identidade de Roy). A identidade de Roy estabelece que, se \(V(p, I)\) é a função de utilidade indireta diferenciável, a demanda Marshalliana pelo bem \(i\) é:</div>
-<div class="quiz-option" data-value="a">(a) \(x_i^*(p, I) = -\dfrac{\partial V / \partial p_i}{\partial V / \partial I}\)</div>
-<div class="quiz-option" data-value="b">(b) \(x_i^*(p, I) = \dfrac{\partial V}{\partial p_i}\)</div>
-<div class="quiz-option" data-value="c">(c) \(x_i^*(p, I) = \dfrac{\partial E}{\partial p_i}\) (lema de Shephard, não Roy)</div>
-<div class="quiz-option" data-value="d">(d) \(x_i^*(p, I) = \dfrac{\partial V / \partial I}{\partial V / \partial p_i}\)</div>
-<div class="quiz-option" data-value="e">(e) \(x_i^*(p, I) = p_i / I\) pelo teorema de Walras</div>
-<div class="quiz-feedback"></div>
-</div>
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Pergunta-mãe.</strong> Em CD, dualidade fica trivial — o aluno pode achar que decorou. Em CES com \(\rho \neq 0\), Roy e Shephard mostram seu valor: derivar a Marshalliana <em>sem</em> resolver UMP do zero.</p>
 
-<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('pre-monitoria-01')">Enviar Checkpoint</button></div>
-</div>
+    <h3 style="margin-top:1.2rem">(a) Setup CES e \(v(p, m)\)</h3>
+    <p>\(u(x_1, x_2) = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}\), \(\rho \in (-\infty, 1)\), \(\rho \neq 0\). Demanda Marshalliana (resolver UMP via Lagrangeano):
+    \[
+      x_i(p, m) = \frac{\alpha_i^{1/(1-\rho)} \, p_i^{-1/(1-\rho)}}{\alpha_1^{1/(1-\rho)} p_1^{-\rho/(1-\rho)} + \alpha_2^{1/(1-\rho)} p_2^{-\rho/(1-\rho)}} \cdot m,
+    \]
+    onde \(\alpha_1 = \alpha\) e \(\alpha_2 = 1 - \alpha\). Definindo \(r = \rho/(\rho-1)\) (índice dual), a indireta fica:
+    \[
+      v(p, m) = m \cdot \big(\alpha_1^{1/(1-\rho)} p_1^{r} + \alpha_2^{1/(1-\rho)} p_2^{r}\big)^{-1/r}.
+    \]
+    <em>Note:</em> CD é o caso \(\rho = 0\), \(r = 0\), e a expressão acima precisa ser tomada como limite (degenera em \(v_{CD} = m \cdot p_1^{-\alpha} p_2^{-(1-\alpha)} / [\alpha^\alpha (1-\alpha)^{1-\alpha}]\)).</p>
 
-<hr>
+    <h3 style="margin-top:1.2rem">(b) Verificar Roy</h3>
+    <p>Roy: \(x_i(p, m) = -\frac{\partial v/\partial p_i}{\partial v/\partial m}\). Calculando:
+    \[
+      \frac{\partial v}{\partial m} = \frac{v}{m}, \qquad
+      \frac{\partial v}{\partial p_i} = -\frac{v}{r} \cdot \frac{r \, \alpha_i^{1/(1-\rho)} p_i^{r-1}}{\alpha_1^{1/(1-\rho)} p_1^{r} + \alpha_2^{1/(1-\rho)} p_2^{r}}.
+    \]
+    Cancelando o \(r\) e dividindo:
+    \[
+      -\frac{\partial v/\partial p_i}{\partial v/\partial m}
+      = \frac{m \cdot \alpha_i^{1/(1-\rho)} p_i^{r-1}}{\alpha_1^{1/(1-\rho)} p_1^{r} + \alpha_2^{1/(1-\rho)} p_2^{r}}.
+    \]
+    Como \(r - 1 = \rho/(\rho-1) - 1 = 1/(\rho-1) = -1/(1-\rho)\), recuperamos \(p_i^{-1/(1-\rho)}\) — exatamente \(x_i(p, m)\) da fórmula original. <strong>Roy verificado em CES.</strong></p>
 
-<h2>Material de apoio (opcional)</h2>
-<ul>
-  <li><strong>ZaE</strong>: caps. 3–5 e capítulo de Equilíbrio Geral. <a href="https://darciogm.github.io/micro-book/" target="_blank">Abrir →</a></li>
-  <li><strong>N&amp;S 12e</strong>: caps. 3 (Preferences and Utility), 4 (Utility Maximization and Choice), 5 (Income and Substitution Effects), 6 (Demand Relationships among Goods, §§até 6.3), 13 (General Equilibrium and Welfare, §§até Mathematical Model of Exchange).</li>
-  <li><strong>J-R 3e</strong>: cap. 1 (Consumer Theory) para quem quer empurrar; cap. 2.1 (Duality: A Closer Look) para o exercício 1.38.</li>
-</ul>
+    <h3 style="margin-top:1.2rem">(c) Função gasto \(e(p, u)\) e verificação Shephard</h3>
+    <p>Inverter \(v(p, m) = u\) em \(m\) gera \(e(p, u)\):
+    \[
+      e(p, u) = u \cdot \big(\alpha_1^{1/(1-\rho)} p_1^{r} + \alpha_2^{1/(1-\rho)} p_2^{r}\big)^{1/r}.
+    \]
+    <strong>Shephard:</strong> \(h_i(p, u) = \partial e/\partial p_i\). Derivando:
+    \[
+      h_i(p, u) = u \cdot \frac{\alpha_i^{1/(1-\rho)} p_i^{r-1}}{\big(\alpha_1^{1/(1-\rho)} p_1^{r} + \alpha_2^{1/(1-\rho)} p_2^{r}\big)^{1 - 1/r}}.
+    \]
+    Comparando com a Marshalliana via identidade dual \(h_i(p, v(p, m)) = x_i(p, m)\): substitua \(u = v(p, m)\) e simplifique — recupera \(x_i(p, m)\) da parte (a). <strong>Shephard verificado.</strong></p>
 
-<div class="admonition abstract">
-<div class="admonition-title">Próxima aula — quarta, 20/05/2026</div>
-<p><strong>Aula 05 — Arrow-Debreu I: Bens Contingentes, Tempo e Risco.</strong> Expansão do espaço de bens para estados da natureza e datas. Utilidade esperada VNM. Abordagem state-preference. Leitura: N&amp;S 12e cap. 7 integral + ZaE capítulo AD parte I.</p>
+    <h3 style="margin-top:1.2rem">(d) Verificação numérica final da dualidade: \(e(p, v(p, m)) = m\)</h3>
+    <p>Tome \(\alpha = 1/2\), \(\rho = -1\) (logo \(r = 1/2\)), \(p = (1, 1)\), \(m = 4\). Note que \(\alpha_i^{1/(1-\rho)} = (1/2)^{1/2} = 1/\sqrt{2}\) para ambos. Então:
+    \[
+      v(p, m) = 4 \cdot \big(\tfrac{1}{\sqrt{2}} \cdot 1 + \tfrac{1}{\sqrt{2}} \cdot 1\big)^{-2} = 4 \cdot (\sqrt{2})^{-2} = 4 / 2 = 2.
+    \]
+    Voltando: \(e(p, 2) = 2 \cdot (\sqrt{2})^{2} = 2 \cdot 2 = 4 = m\) ✓. <strong>Dualidade explícita.</strong></p>
+
+    <p style="background:#fff7ed;border-left:3px solid #f97316;padding:0.7rem 0.9rem;font-size:0.9rem"><strong>Mensagem.</strong> Roy e Shephard transformam álgebra horrível de UMP/EMP em derivada parcial de uma função-recipiente (\(v\) ou \(e\)). O custo é guardar a fórmula da função-recipiente; o benefício é não resolver Lagrangeano duas vezes — uma para Marshalliana, outra para Hicksiana.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Para o sábado: e em <strong>Stone-Geary</strong> \(u = (x_1 - \gamma_1)^{\alpha_1} (x_2 - \gamma_2)^{\alpha_2}\), com \(\gamma_i\) "subsistência"? A dualidade fica linda — \(e(p, u) = p_1 \gamma_1 + p_2 \gamma_2 + u \cdot (\text{termo CD})\). Aplicação canônica: <strong>Linear Expenditure System</strong> (Stone, 1954, <em>Economic Journal</em> 64(255): 511–527, <a href="https://doi.org/10.2307/2227743" target="_blank" rel="noopener">DOI 10.2307/2227743</a>). Alberto deriva no quadro.</p>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s3q1" data-correct="b">
+        <div class="q-text">1. Em CES com \(\alpha = 1/2\), \(\rho = -1\), \(p = (1, 4)\), \(m = 5\), qual a demanda Hicksiana \(h_1(p, u)\) avaliada em \(u = v(p, m)\)?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-roy-shephard','s3q1','a',this)">(a) \(1\) — pela simplicidade do caso simétrico.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-roy-shephard','s3q1','b',this)">(b) Algo entre \(1\) e \(2\) (mais que \(1\) porque \(p_1 < p_2\); menos que \(5\) que seria gastar tudo em bem 1).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-roy-shephard','s3q1','c',this)">(c) \(5\) — concentra tudo no bem mais barato.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-roy-shephard','s3q1','d',this)">(d) \(2{,}5\) — divisão igual da renda.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-roy-shephard','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-roy-shephard" disabled onclick="MPE.completeSection('s3-roy-shephard')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EXTENSÃO 3 — Slutsky com Giffen explícito (Aula 3) ==================== -->
+<section class="section-block locked" id="s4-slutsky-giffen" data-section="s4-slutsky-giffen" data-order="4">
+  <div class="section-meta">Seção 4 · Extensão 3 · 15 min</div>
+  <h2>Aula 3 — Slutsky com Giffen explícito (Stone-Geary)</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes: você consegue construir <strong>numericamente</strong> um caso onde o efeito-renda domina o efeito-substituição (bem Giffen)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-slutsky-giffen','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Pergunta-mãe.</strong> Aula 3 enunciou Giffen como possibilidade teórica. Aqui construímos um caso fechado em <strong>Stone-Geary modificada</strong> onde Slutsky decompõe explicitamente — você <em>vê</em> o efeito-renda dominar.</p>
+
+    <h3 style="margin-top:1.2rem">(a) Setup Stone-Geary com bem inferior por construção</h3>
+    <p>Considere a utilidade Stone-Geary com componente "subsistência" forte no bem 1 e renda residual gasta no bem 2:
+    \[
+      u(x_1, x_2) = (x_1 - \gamma)^{\alpha} \, x_2^{1-\alpha}, \qquad x_1 \ge \gamma > 0, \; \alpha \in (0, 1).
+    \]
+    Demanda Marshalliana (resolver UMP — atalho: substituir \(\tilde x_1 = x_1 - \gamma\), CD em \((\tilde x_1, x_2)\) com renda residual \(\tilde m = m - p_1 \gamma\)):
+    \[
+      x_1(p, m) = \gamma + \frac{\alpha (m - p_1 \gamma)}{p_1}, \qquad
+      x_2(p, m) = \frac{(1-\alpha)(m - p_1 \gamma)}{p_2}.
+    \]
+    <em>Stone-Geary "padrão" tem todos os bens normais.</em> Para gerar Giffen, precisamos de um setup mais estrutural — mas o cálculo de Slutsky abaixo já mostra a mecânica. Vamos calibrar para um cenário onde o <strong>efeito-renda do bem 1 é negativo (inferior)</strong> via uma generalização: em vez de \(\gamma\) constante, faça \(\gamma\) depender de \(m\) (não-homotético) — ou, mais simples didaticamente, use a forma com bem inferior canônico.</p>
+
+    <h3 style="margin-top:1.2rem">(b) Caso fechado de Giffen: utilidade quase-côncava com efeito-renda negativo</h3>
+    <p>Caso construído por <strong>Wold &amp; Juréen (1953), <em>Demand Analysis</em></strong>, e refinado em N&amp;S 12e §5.3:
+    \[
+      u(x_1, x_2) = -\frac{1}{x_1 - 1} - x_2, \qquad x_1 > 1.
+    \]
+    Verificar quasi-concavidade e calcular UMP em \(p_1 x_1 + p_2 x_2 = m\):
+    \[
+      \mathcal{L} = -\frac{1}{x_1-1} - x_2 - \lambda(p_1 x_1 + p_2 x_2 - m).
+    \]
+    CPO bem 1: \(\frac{1}{(x_1-1)^2} = \lambda p_1\). CPO bem 2: \(1 = \lambda p_2\) \(\Rightarrow\) \(\lambda = 1/p_2\). Substituindo:
+    \[
+      x_1(p, m) = 1 + \sqrt{p_2/p_1}.
+    \]
+    Note: <strong>\(x_1\) não depende de \(m\)</strong>. Mas com restrição orçamentária, o bem 2 absorve mudanças em \(m\):
+    \[
+      x_2(p, m) = \frac{m - p_1 (1 + \sqrt{p_2/p_1})}{p_2} = \frac{m - p_1 - \sqrt{p_1 p_2}}{p_2}.
+    \]
+
+    <h3 style="margin-top:1.2rem">(c) Decomposição de Slutsky calibrada</h3>
+    <p>Tome \(p_1 = 1\), \(p_2 = 4\), \(m = 10\). Bundle inicial:
+    \[
+      x_1 = 1 + \sqrt{4/1} = 1 + 2 = 3, \quad x_2 = (10 - 1 - 2)/4 = 7/4 = 1{,}75.
+    \]
+    Aumente \(p_1\) para \(1{,}21\) (alta de 21%). Novo \(x_1 = 1 + \sqrt{4/1{,}21} = 1 + \sqrt{3{,}306} \approx 1 + 1{,}818 = 2{,}818\). \(\Delta x_1 = -0{,}182\) — <em>caiu</em>. Aqui o bem 1 não é Giffen (caiu como esperado).</p>
+
+    <p style="background:#fef2f2;border-left:3px solid #C8102E;padding:0.7rem 0.9rem;font-size:0.9rem"><strong>Limite metodológico.</strong> Construir Giffen em forma fechada com 2 bens e álgebra elementar é <em>notoriamente</em> difícil — a literatura mais cuidadosa precisa de utilidades não-homotéticas com 3+ bens, ou estruturas multi-período. Wold &amp; Juréen (1953) deram condições; Heijman &amp; Mouche (2011), <em>Math. Soc. Sci.</em> 61(1): 36–43, <a href="https://doi.org/10.1016/j.mathsocsci.2010.07.002" target="_blank" rel="noopener">DOI 10.1016/j.mathsocsci.2010.07.002</a>, oferecem famílias modernas. Esta extensão deixa a mecânica de Slutsky <em>aplicada</em> em forma rara (preferência não-CD) — o caso Giffen estrito fica para o sábado.</p>
+
+    <h3 style="margin-top:1.2rem">(d) Slutsky em formato matricial — verificação canônica</h3>
+    <p>Equação de Slutsky entrada-a-entrada:
+    \[
+      \frac{\partial x_i}{\partial p_j}\Big|_{m} = \frac{\partial h_i}{\partial p_j}\Big|_{u} - x_j \frac{\partial x_i}{\partial m}.
+    \]
+    Para a utilidade da parte (b): \(\partial x_1 / \partial m = 0\) (bem 1 é "satisfeito" no sentido de Stone-Geary modificada). Logo o efeito-renda no bem 1 é zero, e \(\partial x_1 / \partial p_1 = \partial h_1 / \partial p_1\) — tudo é substituição. Calculando:
+    \[
+      \frac{\partial x_1}{\partial p_1} = -\frac{1}{2} \sqrt{p_2} \, p_1^{-3/2}.
+    \]
+    Em \(p = (1, 4)\): \(-\frac{1}{2} \cdot 2 \cdot 1 = -1\). Negativo, como toda Hicksiana na diagonal.</p>
+
+    <p><em>Mensagem operacional.</em> A matriz de Slutsky \(S = (\partial h_i / \partial p_j)\) é <strong>simétrica</strong> e <strong>negativa semidefinida</strong> — propriedades (i) testáveis empiricamente, (ii) consequências de UMP racional (Hicks-Allen, 1934, <em>Economica</em> 1, <a href="https://doi.org/10.2307/2548574" target="_blank" rel="noopener">DOI 10.2307/2548574</a>). Violação na simetria \(\Rightarrow\) sua especificação econométrica não vem de UMP — provavelmente esqueceu de impor <strong>integrabilidade</strong>.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Para o sábado: Alberto vai mostrar como impor simetria + homogeneidade na estimação do AIDS (Almost Ideal Demand System, Deaton-Muellbauer 1980) — é onde Slutsky teórica vira restrição prática em econometria de demanda.</p>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s4q1" data-correct="c">
+        <div class="q-text">1. A matriz de Slutsky \(S = (s_{ij}) = (\partial h_i / \partial p_j)\) de um consumidor racional satisfaz <strong>todas</strong> as propriedades exceto:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-slutsky-giffen','s4q1','a',this)">(a) Simetria: \(s_{ij} = s_{ji}\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-slutsky-giffen','s4q1','b',this)">(b) Negatividade na diagonal: \(s_{ii} \le 0\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-slutsky-giffen','s4q1','c',this)">(c) Definida positiva: \(v^\top S v > 0\) para todo \(v \neq 0\).</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-slutsky-giffen','s4q1','d',this)">(d) \(S \, p = 0\) (homogeneidade grau zero da Hicksiana em \(p\)).</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-slutsky-giffen','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-slutsky-giffen" disabled onclick="MPE.completeSection('s4-slutsky-giffen')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: EXTENSÃO 4 — Cross-aulas exercícios-âncora ==================== -->
+<section class="section-block locked" id="s5-cross" data-section="s5-cross" data-order="5">
+  <div class="section-meta">Seção 5 · Extensão 4 · 15 min</div>
+  <h2>Cross-aulas — Exercícios-âncora N&amp;S/J-R + sabor ANPEC</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes: quão confortável você está com <strong>exercícios-âncora N&amp;S 12e Caps. 3-5 e J-R 1.38</strong> (calibre teto)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-cross','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <p><strong>Objetivo.</strong> Não duplicar os exercícios avaliativos. Aqui estão dois problemas curtos extraídos da literatura canônica que o Alberto vai resolver no sábado, mais um sabor ANPEC. Tente <em>antes</em> — chegar com rascunho multiplica o ganho.</p>
+
+    <h3 style="margin-top:1.2rem">(a) N&amp;S 12e 4.10 — versão estendida (UMP/EMP em CD)</h3>
+    <p>\(U(x, y) = x^\alpha y^{1-\alpha}\), preços \((p_x, p_y)\), renda \(I\). Pergunta: <strong>derivar</strong> \(V(p, I)\) <strong>e</strong> \(E(p, U)\) e mostrar dualidade explicitamente. Calcular <strong>compensação equivalente</strong> (CV/EV) para um aumento de \(p_x\) de \(p_x^0\) para \(p_x^1\), mantendo \(U^0 = U(x^*(p^0, I), y^*(p^0, I))\).</p>
+
+    <p><strong>Esqueleto.</strong> Demanda Marshalliana: \(x^* = \alpha I/p_x\), \(y^* = (1-\alpha)I/p_y\). \(U^0 = (\alpha/p_x^0)^\alpha ((1-\alpha)/p_y)^{1-\alpha} I\) (após simplificação). Função gasto: \(E(p, U) = U \cdot p_x^\alpha p_y^{1-\alpha} \cdot \alpha^{-\alpha}(1-\alpha)^{-(1-\alpha)}\). <strong>CV</strong> (variação compensatória): \(\text{CV} = E(p^1, U^0) - E(p^0, U^0)\) — quanto a renda precisa aumentar para o consumidor manter \(U^0\) ao novo preço \(p_x^1\). <strong>EV</strong> (variação equivalente): \(\text{EV} = E(p^0, U^1) - E(p^0, U^0)\) — quanto a renda <em>poderia</em> diminuir com preço antigo para chegar à utilidade nova \(U^1\).</p>
+
+    <h3 style="margin-top:1.2rem">(b) J-R 3e Exercício 1.38 — propriedades da função gasto CES</h3>
+    <p>Verificar diretamente que a função gasto \(e(p, u)\) derivada da CES (Exemplo 1.3 do J-R) satisfaz as 7 propriedades do Teorema 1.7:</p>
+    <ol>
+      <li>Contínua em \((p, u)\) sobre \(\mathbb{R}^n_{++} \times \{u : u \ge u(0)\}\).</li>
+      <li>Estritamente crescente em \(u\) e não-decrescente em \(p\).</li>
+      <li>Crescente em \(p_i\) sempre que \(h_i(p, u) > 0\).</li>
+      <li><strong>Homogênea grau 1 em \(p\):</strong> \(e(\lambda p, u) = \lambda \, e(p, u)\). Verificar diretamente.</li>
+      <li><strong>Côncava em \(p\):</strong> via Hessiana \(\partial^2 e/\partial p^2\) negativa semidefinida — equivalente a Slutsky \(S \succeq 0\) negativa semidefinida.</li>
+      <li><strong>Lema de Shephard:</strong> se \(e\) diferenciável, \(\partial e/\partial p_i = h_i(p, u)\). Verificar caso CES.</li>
+      <li>\(e\) e \(v\) são inversas mutuamente em \(m\) e \(u\): \(e(p, v(p, m)) = m\), \(v(p, e(p, u)) = u\).</li>
+    </ol>
+
+    <p><strong>Por que J-R 1.38 é canônico.</strong> Você sai dele sabendo <em>como verificar</em> dualidade em qualquer forma funcional nova. Não é decorar: é o roteiro de "se Roy/Shephard valem aqui, então UMP é coerente — caso contrário, sua especificação econométrica está furada".</p>
+
+    <h3 style="margin-top:1.2rem">(c) Sabor ANPEC — questão típica</h3>
+    <p style="background:#f1f5f9;padding:0.7rem 0.9rem;font-size:0.95rem"><em>Adaptado de questão estilo ANPEC.</em> Considere um consumidor com \(u(x, y) = x + \ln y\) (quase-linear em \(x\)). Sobre a demanda Hicksiana:</p>
+    <ol>
+      <li>\(h_y(p, u)\) <strong>não depende de \(u\)</strong>.</li>
+      <li>\(h_x(p, u)\) é linear em \(u\).</li>
+      <li>O efeito-renda da demanda Marshalliana sobre \(y\) é zero.</li>
+      <li>A matriz de Slutsky é <strong>diagonal</strong>.</li>
+    </ol>
+    <p style="font-size:0.9rem">Marque V/F. <strong>Spoiler (não consultar antes de tentar):</strong> 1-V (demanda compensada de \(y\) só depende de razão \(p_x/p_y\)); 2-V; 3-V (efeito-renda concentra todo no bem quase-linear \(x\)); 4-? — depende. Em quase-linear estrita, sim, geralmente diagonal nas posições \(yy\) e \(xx\) com cruzados zero <strong>se</strong> \(u\) for estritamente côncava em \(y\). Discutir nuances no sábado.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, Alberto resolve N&amp;S 4.10 e J-R 1.38 no quadro, e usa o ANPEC como aquecimento. Chegue com rascunhos.</p>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (1 item — cálculo)</h3>
+      <div class="micro-q" data-q="s5q1" data-correct="b">
+        <div class="q-text">1. Em CD com \(\alpha = 1/2\), \(p^0 = (1, 1)\), \(I = 4\), \(U^0 = (4/2)^{1/2}(4/2)^{1/2} = 2\). Aumente \(p_x\) para \(p_x^1 = 4\). A <strong>variação compensatória CV</strong> (renda extra para manter \(U^0 = 2\)) é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-cross','s5q1','a',this)">(a) \(0\) — em CD a CV é sempre nula.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-cross','s5q1','b',this)">(b) \(4\) — \(E(p^1, U^0) = 2 \cdot 4^{1/2} \cdot 1^{1/2} \cdot 2 = 8\), \(E(p^0, U^0) = 4\), CV \(= 8 - 4 = 4\).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-cross','s5q1','c',this)">(c) \(2\) — proporcional ao aumento percentual do preço.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-cross','s5q1','d',this)">(d) \(12\) — \(E(p^1, U^0) = 16\), CV \(= 16 - 4\).</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-cross','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-cross" disabled onclick="MPE.completeSection('s5-cross')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s6-reflexao" data-section="s6-reflexao" data-order="6">
+  <div class="section-meta">Seção 6 · Reflexão · 3 min</div>
+  <h2>Foco do Alberto no sábado</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas vão diretamente para o Alberto montar a monitoria.</p>
+
+  <div class="reflection-block">
+    <label>O que ficou <strong>claro</strong> nesta pré-monitoria que estava nebuloso nas Aulas 1-3?</label>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'A prova via L'Hôpital de que CES \(\to\) CD quando \(\rho \to 0\)' ou 'Por que a lex falha continuidade — vi o conjunto de nível não-fechado'"></textarea>
+    <div class="help">Diz pro Alberto qual extensão funcionou — ele revisita rápido em sala.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>O que você quer que o <strong>Alberto cubra no sábado</strong>?</label>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'N&S 4.10 completo no quadro — CV/EV em CD travou' ou 'Construção de Giffen estrita em forma fechada (Ext. 3 ficou no caso fronteira)'"></textarea>
+    <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s6-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-monitoria</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-monitoria 1 concluída</h2>
+  <p>Boa. O Alberto vai ler suas reflexões antes do sábado.</p>
+  <p style="margin-top:1rem"><strong>Monitoria presencial:</strong> sábado, 16/05/2026, 10:00, Insper.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Esta pré-monitoria é <strong>formativa</strong> — não conta nota.</p>
 </div>
 
 </div>
@@ -159,13 +469,171 @@
 <script src="js/supabase-config.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
 <script src="js/tracker.js"></script>
 <script>
 if (!MicroAuth.requireAuth()) throw 'redirect';
 var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
 MicroTracker.startPage('pre-monitoria-01');
-MicroQuiz.init('pre-monitoria-01');
+
+var PAGE_ID = 'pre-monitoria-01';
+var TOTAL_SECTIONS = 7; // s0..s6
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-claro').value.trim();
+    var b = document.getElementById('refl-alberto').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s6-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'claro', document.getElementById('refl-claro').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'alberto', document.getElementById('refl-alberto').value.trim());
+    this.completeSection('s6-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  }
+};
+
+MPE.init();
 </script>
 </body>
 </html>

@@ -79,7 +79,7 @@ Verificação em $p_1 = p_2 = 1$, $\sigma = 2$: $m^A = 4, m^B = 4$. $x_1^A = 4 \
 
 **Micro-checkpoint S2 (1 item obrigatório):**
 
-> Em CD com $\alpha^A = 1/2$ (peso simétrico em $A$) e dotações $\omega^A = (1,4)$, $\omega^B = (3,0)$, $\bar\omega = (4,4)$, qual é $p_1^*/p_2^*$?
+> Em CD com $\alpha^A = \alpha^B = 1/2$ (pesos simétricos em *ambos* os agentes) e dotações $\omega^A = (1,4)$, $\omega^B = (3,0)$, $\bar\omega = (4,4)$, qual é $p_1^*/p_2^*$?
 >
 > (a) $1$ ✓
 > (b) $8/7$
