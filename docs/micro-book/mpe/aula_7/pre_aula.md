@@ -109,6 +109,8 @@ Leitura dirigida do **Nicholson & Snyder, *Microeconomic Theory: Basic Principle
 
 > **Calibre.** N&S §19.5 deriva Samuelson via Lagrangiano com restrição agregada — **exatamente** o que vamos fazer no Bloco 2 do durante-aula. Quem dominar a derivação até CPO sai pronto. **MWG §11.B–§11.D** (Externalities and Public Goods) aparece cirurgicamente em 🔴 — não é leitura obrigatória.
 
+> **📚 Leitura recomendada — Jehle-Reny 3e.** **J-R 3e §5 (General Equilibrium)** + **§9 (Auctions and Mechanism Design)**. J-R não tem capítulo dedicado a externalidades/bens públicos (N&S Cap. 19 + ZaE Cap. 20 cobrem o tema centralmente), mas duas frentes ajudam o aluno avançado: (i) §5 dá o fundamento formal do 1º TBE — a base sobre a qual identificamos as falhas de externalidade; (ii) §9 cobre formalmente VCG/Groves-Vickrey-Clarke, útil para o Bloco 4 do durante-aula. Sobe o calibre formal sem ser obrigatório.
+
 PDF acessado via `MPE.openMaterial('nicholson-snyder-12e-cap19.pdf', this)`. Bucket: a confirmar — caso o PDF ainda não esteja no Supabase, use a versão impressa do Insper.
 
 ---

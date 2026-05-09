@@ -106,7 +106,9 @@ Leitura dirigida do **Nicholson & Snyder, *Microeconomic Theory: Basic Principle
 - **§18.7 — Auctions.** Conexão com mecanismos VCG (Aula 7) — leitura de aprofundamento, opcional.
 - **§18.8 (se houver) — Mechanism Design Without Information.** Citação cirúrgica para alunos curiosos.
 
-> **Calibre.** N&S §18.6 cobre Spence em nível MPE — é o piso. **Jehle-Reny 3e §7.2** (Signaling Games) sobe um degrau e cobre formalmente PBE + intuitive criterion — é o teto de conforto. **MWG Cap. 13 §C** dá o tratamento mais técnico (cirúrgico em 🔴).
+> **Calibre.** N&S §18.6 cobre Spence em nível MPE — é o piso. **MWG Cap. 13 §C** dá o tratamento mais técnico (cirúrgico em 🔴).
+
+> **📚 Leitura recomendada — Jehle-Reny 3e.** **J-R 3e §7.2 (Signaling Games)** cobre formalmente PBE (Perfect Bayesian Equilibrium) + intuitive criterion de Cho-Kreps. Sobe o calibre de "Spence em nível N&S" para "Spence com PBE rigoroso" — útil para o aluno que vai prestar ANPEC ou seguir IO/teoria dos jogos. Para **matching**, J-R não cobre — Roth-Sotomayor (1990, *Two-Sided Matching*, Cambridge UP) é a referência clássica complementar.
 
 PDF acessado via `MPE.openMaterial('nicholson-snyder-12e-cap18.pdf', this)`. Bucket: PDF é o mesmo que Aula 8 referencia; status no bucket precisa ser confirmado. Caso indisponível, use a versão impressa do Insper.
 

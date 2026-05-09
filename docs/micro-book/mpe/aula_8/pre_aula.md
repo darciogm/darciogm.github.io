@@ -105,7 +105,9 @@ Leitura dirigida do **Nicholson & Snyder, *Microeconomic Theory: Basic Principle
 - **§18.7 — The Lemons Model (Akerlof).** Derivação cuidadosa de unraveling.
 - **§18.8 — Auctions and Mechanism Design.** Aqui aparecem ligações para VCG (Aula 7) e revelação. Leitura opcional para o quiz.
 
-> **Calibre.** N&S §18.2 deriva o principal-agente via Lagrangiano com restrições IC + IR — **exatamente** o que vamos fazer no Bloco 3 do durante-aula. Quem dominar a derivação até CPO sai pronto. **MWG Cap. 13** (Adverse Selection, Signaling, and Screening + Moral Hazard) aparece cirurgicamente em 🔴 — não é leitura obrigatória. **J-R 3e §7.1 (Akerlof) + §7.3 (R-S)** é teto de conforto opcional.
+> **Calibre.** N&S §18.2 deriva o principal-agente via Lagrangiano com restrições IC + IR — **exatamente** o que vamos fazer no Bloco 3 do durante-aula. Quem dominar a derivação até CPO sai pronto. **MWG Cap. 13** (Adverse Selection, Signaling, and Screening + Moral Hazard) aparece cirurgicamente em 🔴 — não é leitura obrigatória.
+
+> **📚 Leitura recomendada — Jehle-Reny 3e.** **J-R 3e §7.1 (Adverse Selection: Akerlof)** + **§7.3 (Moral Hazard)**. Sobe um degrau de formalismo em relação a N&S §18: derivações com Bayesian games explícitos, prova do equilíbrio separador R-S 1976, e principal-agente Holmström tratado com Lagrangiano formal. Útil para o aluno que quer ferramentas de qualifier/ANPEC. Não é obrigatório, mas é a referência canônica do calibre J-R.
 
 PDF acessado via `MPE.openMaterial('nicholson-snyder-12e-cap18.pdf', this)`. Bucket: a confirmar — caso o PDF ainda não esteja no Supabase, use a versão impressa do Insper.
 
