@@ -30,12 +30,12 @@ Ao final desta pré-aula, o aluno deve ser capaz de:
 7. **Enunciar** as duas propriedades de incentivo de DA:
    - **Strategy-proofness assimétrica (Roth 1982):** declarar verdade é estratégia dominante para o lado proponente; **não** é dominante para o receptor (quem recebe tem incentivo a omitir certas alternativas).
    - **Não existe mecanismo estável que seja strategy-proof para ambos os lados** (Roth 1982).
-8. Aplicar o ferramental a casos brasileiros (**SISU** como matching centralizado vagas-candidatos) e mundiais (**NRMP** matching de residência médica nos EUA, Roth-Peranson 1999; **kidney exchange** chains, Roth-Sönmez-Ünver 2004; **Boston/NYC school choice** redesign, Abdulkadiroğlu-Pathak-Roth 2005).
+8. Aplicar o ferramental a casos brasileiros (**SISU** como matching centralizado vagas-candidatos) e mundiais (**NRMP** matching de residência médica nos EUA, Roth-Peranson 1999; **kidney exchange** chains, Roth-Sönmez-Ünver 2004; **Boston/NYC school choice** redesign, Abdulkadiroğlu-Pathak-Roth 2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).
 9. **Sintetizar** o curso inteiro: as 9 aulas como uma sequência canônica — preferências (Aula 1) → escolha (Aula 2) → demanda agregada (Aula 3) → equilíbrio geral parcial e total (Aulas 4–6) → catálogo das 3 falhas do EG (Aulas 6–8) → mecanismos de coordenação descentralizada (Aula 9). Conhecer a estrutura da Avaliação Final (qua 24/06).
 
 **Não-objetivos** (para AF, ANPEC, ou cursos avançados):
 
-- **Sinalização contínua com tipos contínuos** (Mailath 1987 *Econometrica*) — citamos, não derivamos.
+- **Sinalização contínua com tipos contínuos** (Mailath 1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) — citamos, não derivamos.
 - **Matching com transferências monetárias** (Shapley-Shubik 1972 assignment game; Becker 1973 marriage with utility transfer) — citamos como contraponto a matching sem transferências.
 - **Mecanismos de matching com restrições** (capacidades distritais, *match variations* tipo top trading cycles, Boston mechanism) — citamos no Box mas não derivamos.
 - **Equilíbrios sequenciais e perfeição em jogos com tipos contínuos** — fora.
@@ -133,7 +133,7 @@ Utilidade do trabalhador (quase-linear em \(w\)):
 U(e, w; \theta) = w - c(e, \theta) = w - \frac{e}{\theta}.
 \]
 
-> **Hipótese de produtividade exógena.** No modelo canônico de Spence, **educação não muda \(\theta\)** — é puro sinal. Esse é o ponto pedagogicamente provocador: a educação tem valor de mercado mesmo sem efeito direto sobre produtividade, **porque seleciona**. Mailath (1987) e modelos posteriores de "ability + investment" misturam sinalização e capital humano; aqui isolamos o canal de sinalização para ver como funciona.
+> **Hipótese de produtividade exógena.** No modelo canônico de Spence, **educação não muda \(\theta\)** — é puro sinal. Esse é o ponto pedagogicamente provocador: a educação tem valor de mercado mesmo sem efeito direto sobre produtividade, **porque seleciona**. Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) e modelos posteriores de "ability + investment" misturam sinalização e capital humano; aqui isolamos o canal de sinalização para ver como funciona.
 
 ### A condição de single-crossing
 
@@ -176,7 +176,7 @@ Resposta empírica não é trivial — Lange-Topel (2006, *Handbook of Education
 
 ### Box Mundo 🌍 — Spence (1973) e o retorno empírico ao modelo
 
-O modelo canônico de Spence rendeu o Nobel de Economia 2001 (junto com Akerlof e Stiglitz). Décadas depois, Lange-Topel (2006) e Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468 sobre o GED) revisitaram empiricamente: GED (General Educational Development), um diploma alternativo nos EUA, tem **valor de mercado puro de sinalização** — cobre exatamente a mesma matéria que o ensino médio formal mas é obtido em prova. Comparar ganhos salariais de quem fez GED vs. quem fez high school formal isola o componente de sinalização. Resultado: ~20–30% do prêmio do high school é sinalização pura (Tyler et al. 2000). **Spence continua sendo a referência teórica fundamental.**
+O modelo canônico de Spence rendeu o Nobel de Economia 2001 (junto com Akerlof e Stiglitz). Décadas depois, Lange-Topel (2006) e Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827) sobre o GED) revisitaram empiricamente: GED (General Educational Development), um diploma alternativo nos EUA, tem **valor de mercado puro de sinalização** — cobre exatamente a mesma matéria que o ensino médio formal mas é obtido em prova. Comparar ganhos salariais de quem fez GED vs. quem fez high school formal isola o componente de sinalização. Resultado: ~20–30% do prêmio do high school é sinalização pura (Tyler et al. 2000). **Spence continua sendo a referência teórica fundamental.**
 
 ### Micro-checkpoints (2 itens — obrigatórios)
 
@@ -231,7 +231,7 @@ Riley (1979, *Econometrica*) é o equilíbrio separador menos custoso — també
 
 Programas de **MBA executivo** (Insper, FIA, FGV) têm matrículas com perfis amplos: gerentes seniores com 10+ anos de experiência misturados com analistas pleno em transição. Custos de oportunidade variam (gerente sênior abre mão de salário maior + tempo). Em equilíbrio, o sub-mercado se segmenta: **tier-1 schools** atraem o tipo alto via custo elevado (mensalidade + dedicação); **tier-2/3 schools** atraem o tipo médio via custo intermediário; quem fica fora não paga sinal e fica com salário "esperado".
 
-Esse padrão é **pooling-com-separating em sub-mercados**: dentro do tier-1, há pooling parcial (vários tipos de gerentes seniores misturados); entre tiers, há separação. Modelos com tipos contínuos (Mailath 1987) capturam essa estratificação em equilíbrio ótimo. Implicação: ranking de MBAs no Brasil opera como mecanismo de sinalização hierárquica, similar à hierarquia universitária americana — Top-10 vs. tier-2 nos EUA, Insper-FGV-USP vs. demais no Brasil.
+Esse padrão é **pooling-com-separating em sub-mercados**: dentro do tier-1, há pooling parcial (vários tipos de gerentes seniores misturados); entre tiers, há separação. Modelos com tipos contínuos (Mailath 1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) capturam essa estratificação em equilíbrio ótimo. Implicação: ranking de MBAs no Brasil opera como mecanismo de sinalização hierárquica, similar à hierarquia universitária americana — Top-10 vs. tier-2 nos EUA, Insper-FGV-USP vs. demais no Brasil.
 
 ### Micro-checkpoints (2 itens — obrigatórios)
 
@@ -368,7 +368,7 @@ Crítica empírica: estudos do INEP-MEC documentaram que parcela de calouros des
 
 **Kidney exchange (Roth, Sönmez & Ünver 2004, *Quarterly Journal of Economics* 119(2): 457–488, [DOI 10.1162/0033553041382157](https://doi.org/10.1162/0033553041382157)).** Pacientes com doadores incompatíveis (motivos imunológicos) podem fazer **chains de troca**: A doa para B (compatível), B doa para A's amigo, e assim por diante. Mecanismos estilo top trading cycles encontram chains eficientes em segundos. Operação **Northwestern altruistic donor chain** em 2006 fez 10 transplantes encadeados — primeiro chain real significativo, viabilizado por mecanismo de matching.
 
-**Boston/NYC school choice (Abdulkadiroğlu-Pathak-Roth 2005, *AER* 95(2): 364–367).** Boston Public Schools usava "Boston mechanism" pré-2005 — não era strategy-proof, candidatos perdiam vagas por declarar preferências verdadeiras se essas falhassem na 1ª rodada. Redesign 2005 substituiu por DA com candidatos como lado proponente. **Resultado empírico:** menos famílias ficaram fora do top-3 escolhas declaradas.
+**Boston/NYC school choice (Abdulkadiroğlu-Pathak-Roth 2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).** Boston Public Schools usava "Boston mechanism" pré-2005 — não era strategy-proof, candidatos perdiam vagas por declarar preferências verdadeiras se essas falhassem na 1ª rodada. Redesign 2005 substituiu por DA com candidatos como lado proponente. **Resultado empírico:** menos famílias ficaram fora do top-3 escolhas declaradas.
 
 ### Micro-checkpoints (2 itens — obrigatórios)
 
@@ -524,7 +524,7 @@ Dois campos obrigatórios (mín. 10 caracteres cada):
 
 ## Apêndice B — O que esta aula **não** faz (anti-overclaim)
 
-- **Não cobre sinalização contínua** (Mailath 1987 *Econometrica*) — citamos.
+- **Não cobre sinalização contínua** (Mailath 1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) — citamos.
 - **Não cobre matching com transferências** (Shapley-Shubik 1972 assignment, Becker 1973) — citamos.
 - **Não cobre matching dinâmico** (Roth-Peranson 1999 incorporou casais; cursos avançados detalham).
 - **Não derivar a prova rigorosa da estabilidade de DA** (Knuth 1976, livro). Sketch + intuição.

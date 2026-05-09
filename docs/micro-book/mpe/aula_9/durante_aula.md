@@ -150,7 +150,7 @@ Quadro com tabela:
 
 #### B1.e (2 min) — Box Brasil + Mundo (rápido)
 
-**Box Brasil 🇧🇷 (1 min):** PNAD documenta prêmio salarial ~3× ensino superior vs. fundamental. Lange-Topel (2006) revisam: 30%–60% atribuível a sinalização (vs. capital humano). **GED nos EUA** (Tyler-Murnane-Willett 2000, *QJE* 115(2): 431–468) isola componente de sinalização: ~20–30% do prêmio do high school.
+**Box Brasil 🇧🇷 (1 min):** PNAD documenta prêmio salarial ~3× ensino superior vs. fundamental. Lange-Topel (2006) revisam: 30%–60% atribuível a sinalização (vs. capital humano). **GED nos EUA** (Tyler-Murnane-Willett 2000, *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827)) isola componente de sinalização: ~20–30% do prêmio do high school.
 
 **Box Mundo 🌍 (1 min):** Nobel 2001 para Spence + Akerlof + Stiglitz.
 
@@ -238,7 +238,7 @@ Quadro:
 
 > *"Hierarquia de MBAs no Brasil — e nos EUA (Top-10 vs. tier-2) — opera como mecanismo de sinalização hierárquica. Spence ao quadrado: separação dentro do mercado de sinais."*
 
-**Box Mundo 🌍 (4 min):** **Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468)** sobre o GED americano. GED é diploma alternativo a high school formal nos EUA — mesmo conteúdo, prova em vez de 4 anos de aulas. Comparar ganhos salariais isola componente de sinalização vs. capital humano: ~20–30% atribuível a sinalização pura. **Spence empírico.**
+**Box Mundo 🌍 (4 min):** **Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827))** sobre o GED americano. GED é diploma alternativo a high school formal nos EUA — mesmo conteúdo, prova em vez de 4 anos de aulas. Comparar ganhos salariais isola componente de sinalização vs. capital humano: ~20–30% atribuível a sinalização pura. **Spence empírico.**
 
 #### B2.e (2 min) — Síntese do Bloco 2
 
@@ -379,7 +379,7 @@ Cite: Roth, A. E. (1982). "The Economics of Matching: Stability and Incentives."
 **Box Mundo 🌍 (2 min):**
 - **NRMP (US, 1952+).** Roth (1984, *J. Political Economy*) provou que NRMP era estável; **Roth-Peranson (1999, *AER* 89(4), 748–780)** redesenharam para incorporar casais. ~30K médicos / ~5K hospitais / anual.
 - **Kidney exchange (Roth, Sönmez & Ünver 2004, *Quarterly Journal of Economics* 119(2): 457–488, [DOI 10.1162/0033553041382157](https://doi.org/10.1162/0033553041382157)).** Chains de troca via top trading cycles. Northwestern altruistic chain 2006: 10 transplantes encadeados.
-- **School choice (Abdulkadiroğlu-Pathak-Roth 2005).** Boston substituiu Boston-mechanism por DA com candidatos como proponente em 2005.
+- **School choice (Abdulkadiroğlu-Pathak-Roth 2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).** Boston substituiu Boston-mechanism por DA com candidatos como proponente em 2005.
 
 ### Saída do Bloco 3
 
@@ -416,7 +416,7 @@ A sala tem que poder responder:
 
 **Box Brasil 🇧🇷 — Mais Médicos como matching médico-localidade (3 min).** Programa Mais Médicos (2013–2019, retomado 2023+) aloca médicos a postos de saúde em locais carentes. Estrutura: candidatos rankeiam locais; locais aplicam pontuação de critérios. Mecanismo aproxima DA com restrições adicionais (cota por estado, prioridade para SUS-credenciados). Não é DA puro mas pertence à mesma família institucional de NRMP — diferença é o setor (Mais Médicos: público; NRMP: residência hospitalar de mercado livre).
 
-**Box Mundo 🌍 — Boston/NYC school choice (2 min).** Abdulkadiroğlu-Pathak-Roth (2005, *AER* 95(2): 364–367). Boston tinha "Boston mechanism" pré-2005: candidato declara preferências, vagas distribuem por 1ª escolha primeiro; quem não pegou 1ª, vai para 2ª; etc. **Não é strategy-proof** — declarar 1ª escolha "concorrida" e perder pode mandar você para a última disponível. Redesign 2005 substituiu por DA. NYC fez similar em 2003.
+**Box Mundo 🌍 — Boston/NYC school choice (2 min).** Abdulkadiroğlu-Pathak-Roth (2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)). Boston tinha "Boston mechanism" pré-2005: candidato declara preferências, vagas distribuem por 1ª escolha primeiro; quem não pegou 1ª, vai para 2ª; etc. **Não é strategy-proof** — declarar 1ª escolha "concorrida" e perder pode mandar você para a última disponível. Redesign 2005 substituiu por DA. NYC fez similar em 2003.
 
 #### B4.b (10 min) — Síntese das 9 aulas
 
@@ -522,7 +522,7 @@ A sala sai com:
 |---|---|
 | Sala fluindo, Bloco 1 acaba em 30 min | Bloco 4 ganha 10 min para discussão socrática sobre AF |
 | Sala travada em single-crossing | Encolhe Bloco 4 em 5 min; usa para reforçar single-crossing visualmente |
-| Pergunta sobre tipos contínuos em sinalização | "Mailath 1987 *Econometrica* trata. Para AF: 2 tipos basta." |
+| Pergunta sobre tipos contínuos em sinalização | "Mailath 1987 *Econometrica* 55(6): 1349–1365 ([DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) trata. Para AF: 2 tipos basta." |
 | Pergunta sobre matching com transferências | "Shapley-Shubik 1972 (assignment game) e Becker 1973 (marriage). Diferença pedagógica: lá há equilíbrio competitivo de preços; aqui matching é puramente ordinal. AF cobre apenas matching sem transferências." |
 | Pergunta sobre prova rigorosa de DA | "Knuth (1976, livro Marriage Stable). MWG não cobre formalmente. Sketch suficiente para AF: termina porque cada \(m\) propõe no máximo \(k\) vezes; é estável porque \(w\) sempre fica com seu melhor entre os recebidos." |
 | Pergunta sobre Roth-Peranson 1999 com casais | "Casais em NRMP têm preferências sobre **pares de cidades**. DA original assumia preferências individuais. Roth-Peranson 1999 generalizaram via algoritmo modificado que mantém estabilidade na maioria dos casos práticos. Resultado teórico: estabilidade não garantida em geral, mas empiricamente robusto." |
@@ -547,7 +547,7 @@ Após a aula, conferir em `admin.html`:
 - ❌ **Não derivar Knuth Stable Marriage Theorem formalmente.** Sketch + execução é suficiente para MPE.
 - ❌ **Não fazer matching com transferências.** Fora do escopo. Citar Shapley-Shubik 1972 como contraponto.
 - ❌ **Não invocar mecanismos de matching com restrições complexas (top trading cycles, Boston).** Citar como aplicação no Box; não derivar.
-- ❌ **Não derivar Mailath 1987 ou modelos de tipos contínuos.** Para AF: 2 tipos cobrem.
+- ❌ **Não derivar Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) ou modelos de tipos contínuos.** Para AF: 2 tipos cobrem.
 - ❌ **Não citar artigos sem confirmação de DOI.** DOIs validados em 2026-05-08:
   - Spence (1973) [10.2307/1882010](https://doi.org/10.2307/1882010)
   - Cho-Kreps (1987) [10.2307/1885060](https://doi.org/10.2307/1885060)
@@ -556,8 +556,9 @@ Após a aula, conferir em `admin.html`:
   - Roth-Peranson (1999) `<!-- [VERIFICAR DOI] -->` — *AER* 89(4), 748–780; DOI canônico não localizável instantaneamente.
   - Roth, A. E., Sönmez, T. & Ünver, M. U. (2004). "Kidney Exchange." *Quarterly Journal of Economics* 119(2): 457–488. [DOI 10.1162/0033553041382157](https://doi.org/10.1162/0033553041382157).
   - Riley (2001) [10.1257/jel.39.2.432](https://doi.org/10.1257/jel.39.2.432)
-  - Tyler-Murnane-Willett (2000) `<!-- [VERIFICAR DOI] -->` — *QJE* 115(2): 431–468.
-  - Abdulkadiroğlu-Pathak-Roth (2005) `<!-- [VERIFICAR DOI] -->` — *AER* 95(2): 364–367.
+  - Tyler-Murnane-Willett (2000) — *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827).
+  - Abdulkadiroğlu-Pathak-Roth (2005) — *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509).
   - Roth-Sotomayor (1990) é livro: *Two-Sided Matching*, Cambridge UP — sem DOI canônico.
-  - Hardin (1968), Lange-Topel (2006), Mailath (1987), Shapley-Shubik (1972), Becker (1973) — citados como referência cultural; DOIs não são prioritários para esta aula.
+  - Mailath (1987) — *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560).
+  - Hardin (1968), Lange-Topel (2006), Shapley-Shubik (1972), Becker (1973) — citados como referência cultural; DOIs não são prioritários para esta aula.
 - ❌ **Não fechar com "isso resolve coordenação social".** Fechar com **encerramento do curso + AF**.

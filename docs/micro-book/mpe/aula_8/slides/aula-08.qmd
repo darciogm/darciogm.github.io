@@ -488,6 +488,19 @@ $$\frac{1}{u'(w_H)} = \mu + \nu \cdot \frac{\pi_H - \pi_L}{\pi_H},$$
 $$\frac{1}{u'(w_L)} = \mu - \nu \cdot \frac{\pi_H - \pi_L}{1 - \pi_H}.$$
 :::
 
+::: {.notes}
+Lagrangiano completo, com IR e IC já substituídas em forma de utilidade:
+$\mathcal{L} = \pi_H w_H + (1-\pi_H) w_L - \mu[\pi_H u(w_H) + (1-\pi_H)u(w_L) - c(a_H) - \bar U] - \nu[(\pi_H - \pi_L)(u(w_H) - u(w_L)) - (c(a_H) - c(a_L))]$.
+
+CPO em $w_H$: $\partial\mathcal{L}/\partial w_H = \pi_H - \mu \pi_H u'(w_H) - \nu(\pi_H - \pi_L) u'(w_H) = 0$. Dividindo por $u'(w_H)$ e isolando: $1/u'(w_H) = \mu + \nu(\pi_H - \pi_L)/\pi_H$.
+
+CPO em $w_L$: $\partial\mathcal{L}/\partial w_L = (1-\pi_H) - \mu(1-\pi_H) u'(w_L) + \nu(\pi_H - \pi_L) u'(w_L) = 0$. Isolando: $1/u'(w_L) = \mu - \nu(\pi_H - \pi_L)/(1-\pi_H)$.
+
+Subtraindo as duas: $1/u'(w_H) - 1/u'(w_L) = \nu(\pi_H - \pi_L)[1/\pi_H + 1/(1-\pi_H)]/1 > 0$ quando $\nu > 0$. Logo $u'(w_H) < u'(w_L)$ e, com $u$ côncava, $w_H > w_L$.
+
+Quando $\nu = 0$ (IC slack, ação observável ou agente neutro): $w_H = w_L$, salário fixo, first-best replicado. Quando $\nu > 0$ (IC binding, second-best com risco moral): $w_H > w_L$, contrato de incentivo. Esse é o teorema da observabilidade de Holmström: $\nu$ mede o custo informacional do risco moral.
+:::
+
 ---
 
 ## Second-best — interpretação

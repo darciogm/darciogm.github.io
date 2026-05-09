@@ -184,7 +184,7 @@ Retorno esperado bruto pré: \(E[D^{\text{pré}}]/q^{\text{pré}} = 1{,}10/0{,}0
 
 > "**Diferença em retorno esperado é negativa para NTN-B** — investidor aceita **retorno menor** porque o ativo entrega payoff no estado ruim. Isso é a **definição operacional de prêmio negativo de risco** (covariância negativa entre payoff e SDF normalizada). A NTN-B é negociada com prêmio porque é **caro** (em utilidade) — paga pouco quando você não precisa, paga muito quando precisa."
 
-**Box Brasil (rápido, 1 min):** Tesouro Direto IPCA+ vencimentos 2030–2045 historicamente negociado com **juro real** entre 4% e 7% ao ano (faixas observadas em diferentes momentos do ciclo). Esse é o "prêmio inflacionário" descontado do prêmio nominal (SELIC) — alinhado com a teoria SDF. **Confirme taxa atual no Tesouro Direto antes de citar valor específico em sala**.
+**Box Brasil (rápido, 1 min):** Tesouro Direto IPCA+ vencimentos 2030–2045 historicamente negociado com **juro real** entre 4% e 7% ao ano. **Em maio/2026** (dado pré-monitoria), o IPCA+ 2032 abriu o mês com taxa real de **~5,1% a.a.**, e os vencimentos longos (Renda+ 2030+) flutuaram em **6,7%–7,1% a.a.** ao longo de abril/2026 — **patamar real alto** historicamente (ciclo Selic ainda contracionista). Esse é o "prêmio inflacionário" descontado do prêmio nominal (Selic) — alinhado com a teoria SDF. *Fontes: Tesouro Direto / Status Invest, consulta maio/2026.* **Alberto: confirme a taxa do dia da monitoria** (16/05) antes de levar o número ao quadro — taxas mudam rápido em janela curta.
 
 #### A.3 (5 min, opcional) — Sketch do Hansen-Jagannathan bound via Cauchy-Schwarz
 
@@ -258,9 +258,16 @@ Quadro com tabela (cole rápido, 2 min):
 
 Quadro com fatos verificáveis:
 
-> **SBCE — Sistema Brasileiro de Comércio de Emissões.** Instituído pela **Lei 15.042/2024** (sanção dezembro/2024). Estrutura híbrida cap-and-trade com cap setorial e ativos transferíveis (cotas/CBEs e certificados de redução verificada). Implementação faseada com regulamentação infralegal subsequente. **Detalhes operacionais (limiar setorial de emissões anuais, escopo de cobertura, calendário exato de fases)** são definidos pelo decreto regulamentador e portarias do órgão gestor — **confirme números atualizados antes de citar em sala**, evitando afirmar valores específicos cujo decreto possa ter ajustado.
+> **SBCE — Sistema Brasileiro de Comércio de Emissões.** Instituído pela **Lei 15.042, de 11 de dezembro de 2024**. Estrutura híbrida cap-and-trade: cap setorial + ativos transferíveis (CBEs — Cotas Brasileiras de Emissão — e CRVEs, certificados de redução verificada). **Cobertura por limiar de emissão**: instalações com emissão direta **>10 mil tCO₂e/ano** ficam obrigadas a monitorar e relatar; **>25 mil tCO₂e/ano** entram na obrigação de **conciliação periódica** (entregar CBEs equivalentes ao emitido). *Fontes: Lei 15.042/2024 (Planalto); Ministério da Fazenda, "Sancionada a lei…" (dez/2024); Agência Gov, "Cinco fases…" (dez/2024).*
 
-Cite a fonte: Lei nº 15.042, de 2024 — texto disponível no Planalto. **Não invente número de empresas afetadas nem volume de mercado pré-2030** — esses dados são publicados pelo órgão gestor periodicamente.
+**Calendário das 5 fases** (Fazenda):
+1. **Fase 1 — Regulamentação** (12–24 meses): criação do órgão gestor (Comitê Interministerial sobre Mudança do Clima como anteparo + Secretaria Extraordinária do Mercado de Carbono no MF), definição dos setores regulados e do arcabouço infralegal. **Meta governamental: concluir o arcabouço infralegal até dez/2026.**
+2. **Fase 2 — MRV** (12 meses): operacionalização do sistema de Monitoramento, Relato e Verificação de emissões.
+3. **Fase 3 — Relatórios + PNA** (24 meses): início da obrigação de relatos padronizados; geração da base para o **Plano Nacional de Alocação** de CBEs.
+4. **Fase 4 — Alocação + 1º leilão**: publicação do PNA; primeiros leilões de CBEs.
+5. **Fase 5 — Mercado pleno**: operação do mercado secundário de CBEs/CRVEs. **Horizonte: ~2030 para mercado plenamente operacional.**
+
+**Sistemas comparáveis.** EU ETS (UE, desde 2005, na Phase 4 2021–2030); RGGI (nordeste dos EUA, 2009); California Cap-and-Trade (2013); ETS chinês nacional (2021). SBCE entra como o ~30º sistema regulado de cap-and-trade no mundo.
 
 **Estrutura conceitual (no quadro, 5 min):**
 
@@ -552,7 +559,7 @@ Se Bloco 3 fechar adiantado, abrir um destes — **com gabarito 5-passos complet
 **Enunciado.** Agente representativo com \(u(c) = c^{1-\gamma}/(1-\gamma)\), \(\gamma = 2\), \(\beta = 0{,}96\). Em equilíbrio, consumo cresce a taxa esperada \(g_c = 0{,}03\) (3% real anual).
 
 (a) Derive a taxa real bruta \(R\) de equilíbrio implícita pela equação de Euler, em estado determinístico.
-(b) Compare com a taxa de juros real implícita do Tesouro Direto IPCA+ (~4–7% real ao ano historicamente).
+(b) Compare com a taxa de juros real implícita do Tesouro Direto IPCA+ (~4–7% real ao ano historicamente; **em maio/2026, IPCA+ 2032 abriu o mês em ~5,1% e Renda+ longo em ~6,7–7,1%**).
 (c) Discuta o "puzzle" de calibração.
 
 **Gabarito 5-passos.**
@@ -563,7 +570,7 @@ Se Bloco 3 fechar adiantado, abrir um destes — **com gabarito 5-passos complet
 
 3. **Armadilha.** Confundir taxa real com nominal. Confundir \(\gamma\) (CRRA) com elasticidade intertemporal de substituição \((1/\gamma)\). Esquecer que \(g_c\) é **esperado**, não realizado.
 
-4. **Extensão.** Tesouro Direto IPCA+ histórico opera com taxa real de 4 a 7% — **abaixo** de 10,5%. Discrepância indica que ou (a) \(\beta\) brasileiro é mais alto (paciência maior — improvável), ou (b) \(\gamma\) é menor (aversão menor — possível mas força equity premium puzzle a piorar), ou (c) \(g_c\) esperado é menor que 3% (consistente com crescimento real per capita brasileiro 2010–2020). Consensus empírico: combinação de (b) e (c). **Equity premium puzzle (Mehra-Prescott 1985)** é a versão estocástica desse mesmo gap.
+4. **Extensão.** Tesouro Direto IPCA+ histórico opera com taxa real de 4 a 7% (**em maio/2026, IPCA+ 2032 ~5,1% e Renda+ longo ~6,7–7,1%**) — todos **abaixo** de 10,5% derivado por Euler. Discrepância indica que ou (a) \(\beta\) brasileiro é mais alto (paciência maior — improvável), ou (b) \(\gamma\) é menor (aversão menor — possível mas força equity premium puzzle a piorar), ou (c) \(g_c\) esperado é menor que 3% (consistente com crescimento real per capita brasileiro 2010–2020). Consensus empírico: combinação de (b) e (c). **Equity premium puzzle (Mehra-Prescott 1985)** é a versão estocástica desse mesmo gap.
 
 5. **Peer-review.** Calibre 🟡. Aplicação direta de Euler + calibração com dados empíricos brasileiros. **Tradeoff de tempo:** 8 min. **Risco residual:** baixo. **Variante AF:** trocar \(\gamma\) ou \(\beta\) e pedir comparação.
 
@@ -689,7 +696,7 @@ Pontos onde o Darcio gostaria que o Alberto **reforce** ou **mitigue** algum asp
    - **Tesouro IPCA+** — citado no Bloco A.
    - **CBio (Lei 13.576/2017)** — citado na Aula 7. **Alberto pode mencionar de passagem.**
 
-6. **O que NÃO entrar na monitoria:** mecanismos AGV/d'Aspremont-Gérard-Varet, contratos de Crawford-Sobel, Mailath 1987 (tipos contínuos em sinalização), modelos de Bewley/Hansen-Sargent (ambiguity). Citar em 30 segundos máximo se aluno perguntar; redirecionar para Salanié (2003) ou MWG.
+6. **O que NÃO entrar na monitoria:** mecanismos AGV/d'Aspremont-Gérard-Varet, contratos de Crawford-Sobel, Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) — tipos contínuos em sinalização, modelos de Bewley/Hansen-Sargent (ambiguity). Citar em 30 segundos máximo se aluno perguntar; redirecionar para Salanié (2003) ou MWG.
 
 7. **Calibre dos exercícios M4-extra (Apêndice B):** 4 exercícios com gabarito completo. Use **somente** se Bloco 3 fechar adiantado. Senão, ficam como **material de estudo opcional** que o aluno pode consumir após a monitoria — **avise** isso no encerramento se sobrou tempo curto.
 

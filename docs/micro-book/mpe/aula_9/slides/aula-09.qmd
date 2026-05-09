@@ -175,7 +175,7 @@ Spence, M. (1973). "Job Market Signaling." *QJE* 87(3), 355–374, [DOI 10.2307/
 - Sinalização puro: educação tem valor de mercado **porque seleciona**, não porque produz.
 
 ::: {.bridge}
-Mailath (1987 *Econometrica*) mistura sinalização e capital humano. Aqui isolamos para entender como funciona.
+Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) mistura sinalização e capital humano. Aqui isolamos para entender como funciona.
 :::
 
 ---
@@ -306,7 +306,7 @@ Spence está vivo no mercado brasileiro. Diploma seleciona antes de produzir.
 
 ## Box Mundo — GED americano
 
-> Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468).
+> Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827)).
 
 - GED = diploma alternativo, mesmo conteúdo cognitivo, prova em vez de 4 anos.
 - Comparar GED vs. high school formal isola sinalização.
@@ -456,7 +456,7 @@ Para MPE, Cho-Kreps cobre o que precisamos. Fica como pergunta para curso de teo
 - Estratificação hierárquica = **pooling-com-separating em sub-mercados**.
 
 ::: {.bridge}
-Mailath (1987) modela com tipos contínuos. Hierarquia de MBAs no Brasil opera como sinalização hierárquica.
+Mailath (1987, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) modela com tipos contínuos. Hierarquia de MBAs no Brasil opera como sinalização hierárquica.
 :::
 
 ---
@@ -643,6 +643,25 @@ $m_2$ rejeitado em cadeia. Próxima escolha: $w_3$.
 $\mu_M = \{(m_1, w_2),\, (m_2, w_4),\, (m_3, w_1),\, (m_4, w_3)\}.$
 :::
 
+::: {.notes}
+Trace completo das 6 iterações para fallback no quadro. Estado pendente $(m, w)$ ao fim de cada iteração:
+
+- **Iter 1** (todos propõem ao topo): $m_1{\to}w_1$, $m_2{\to}w_1$, $m_3{\to}w_2$, $m_4{\to}w_3$. $w_1$ recebe dois e mantém $m_2$ (prefere $m_2 \succ m_1$). Pendente: $\{(m_2,w_1),(m_3,w_2),(m_4,w_3)\}$; $m_1$ rejeitado.
+- **Iter 2**: $m_1$ propõe a $w_2$ (2ª escolha). $w_2$ tinha $m_3$, prefere $m_1 \succ m_3$, mantém $m_1$. Pendente: $\{(m_1,w_2),(m_2,w_1),(m_4,w_3)\}$; $m_3$ rejeitado.
+- **Iter 3**: $m_3$ propõe a $w_1$ (2ª escolha — $m_3$: $w_2 \succ w_1 \succ \ldots$). $w_1$ tinha $m_2$, prefere $m_3 \succ m_2$, mantém $m_3$. Pendente: $\{(m_1,w_2),(m_3,w_1),(m_4,w_3)\}$; $m_2$ rejeitado.
+- **Iter 4**: $m_2$ propõe a $w_2$ (2ª escolha). $w_2$ tinha $m_1$, prefere $m_1 \succ m_2$, rejeita $m_2$. Estado igual.
+- **Iter 5**: $m_2$ propõe a $w_3$ (3ª escolha). $w_3$ tinha $m_4$, prefere $m_4 \succ m_2$, rejeita $m_2$.
+- **Iter 6**: $m_2$ propõe a $w_4$ (4ª escolha). $w_4$ aceita (estava livre). Sem rejeições — fim.
+
+**Matching final** $\mu_M = \{(m_1,w_2),(m_2,w_4),(m_3,w_1),(m_4,w_3)\}$.
+
+**Verificação dois pares bloqueantes candidatos:**
+- $(m_1, w_1)$: $m_1$ prefere $w_1$ a $w_2$ (sim, é sua 1ª). Mas $w_1$ está com $m_3$ e prefere $m_3 \succ m_1$. Não bloqueia (bilateralidade falha do lado de $w_1$).
+- $(m_3, w_2)$: $m_3$ prefere $w_2$ a $w_1$ (sim, é sua 1ª). Mas $w_2$ está com $m_1$ e prefere $m_1 \succ m_3$. Não bloqueia (bilateralidade falha do lado de $w_2$).
+
+**Para o Prof. Darcio:** se a turma estiver perdida, peça pra rastrear iter 1 → 6 no quadro junto, marca os rejeitados em vermelho a cada passo. A propagação $m_1 \to m_3 \to m_2$ é a chave — uma rejeição em $w_1$ força $m_1$ a $w_2$, que rejeita $m_3$, que vai a $w_1$ e expulsa $m_2$, que cai cascateando até $w_4$. Vale enfatizar que $m_2$ termina com sua **última** escolha — DA é $M$-ótimo no agregado, não significa que cada $m$ ganha bem.
+:::
+
 ---
 
 ## Verificação de estabilidade
@@ -757,7 +776,7 @@ SISU redistribuiu fluxo geográfico — antes inviável institucional/financeira
 
 - Northwestern altruistic chain 2006: 10 transplantes encadeados.
 
-> **School choice.** Abdulkadiroğlu-Pathak-Roth (2005) — Boston e NYC redesignados.
+> **School choice.** Abdulkadiroğlu-Pathak-Roth (2005, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)) — Boston e NYC redesignados.
 
 ::: {.bridge}
 Roth Nobel 2012 (junto com Shapley). Market design como ramo da economia aplicada.
@@ -809,7 +828,7 @@ Não é DA puro mas pertence à mesma família institucional de NRMP. Setor dife
 
 ## Box Mundo — Boston/NYC school choice
 
-> Abdulkadiroğlu-Pathak-Roth (2005, *AER* 95(2): 364–367).
+> Abdulkadiroğlu-Pathak-Roth (2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).
 
 - Boston pré-2005: candidato declara preferências; 1ª escolha primeiro; quem não pegou vai para 2ª; etc.
 - **Boston-mechanism não é strategy-proof.**

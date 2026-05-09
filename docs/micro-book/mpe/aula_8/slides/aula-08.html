@@ -715,6 +715,23 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <p><span class="math display">\[\frac{1}{u'(w_H)} = \mu + \nu \cdot \frac{\pi_H - \pi_L}{\pi_H},\]</span></p>
 <p><span class="math display">\[\frac{1}{u'(w_L)} = \mu - \nu \cdot \frac{\pi_H - \pi_L}{1 - \pi_H}.\]</span></p>
 </div>
+<aside class="notes">
+<p>Lagrangiano completo, com IR e IC já substituídas em forma de utilidade: <span class="math inline">\(\mathcal{L} = \pi_H w_H + (1-\pi_H) w_L - \mu[\pi_H u(w_H) + (1-\pi_H)u(w_L) - c(a_H) - \bar U] - \nu[(\pi_H - \pi_L)(u(w_H) - u(w_L)) - (c(a_H) - c(a_L))]\)</span>.</p>
+<p>CPO em <span class="math inline">\(w_H\)</span>: <span class="math inline">\(\partial\mathcal{L}/\partial w_H = \pi_H - \mu \pi_H u'(w_H) - \nu(\pi_H - \pi_L) u'(w_H) = 0\)</span>. Dividindo por <span class="math inline">\(u'(w_H)\)</span> e isolando: <span class="math inline">\(1/u'(w_H) = \mu + \nu(\pi_H - \pi_L)/\pi_H\)</span>.</p>
+<p>CPO em <span class="math inline">\(w_L\)</span>: <span class="math inline">\(\partial\mathcal{L}/\partial w_L = (1-\pi_H) - \mu(1-\pi_H) u'(w_L) + \nu(\pi_H - \pi_L) u'(w_L) = 0\)</span>. Isolando: <span class="math inline">\(1/u'(w_L) = \mu - \nu(\pi_H - \pi_L)/(1-\pi_H)\)</span>.</p>
+<p>Subtraindo as duas: <span class="math inline">\(1/u'(w_H) - 1/u'(w_L) = \nu(\pi_H - \pi_L)[1/\pi_H + 1/(1-\pi_H)]/1 &gt; 0\)</span> quando <span class="math inline">\(\nu &gt; 0\)</span>. Logo <span class="math inline">\(u'(w_H) &lt; u'(w_L)\)</span> e, com <span class="math inline">\(u\)</span> côncava, <span class="math inline">\(w_H &gt; w_L\)</span>.</p>
+<p>Quando <span class="math inline">\(\nu = 0\)</span> (IC slack, ação observável ou agente neutro): <span class="math inline">\(w_H = w_L\)</span>, salário fixo, first-best replicado. Quando <span class="math inline">\(\nu &gt; 0\)</span> (IC binding, second-best com risco moral): <span class="math inline">\(w_H &gt; w_L\)</span>, contrato de incentivo. Esse é o teorema da observabilidade de Holmström: <span class="math inline">\(\nu\)</span> mede o custo informacional do risco moral.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Second-best — interpretação</h2>

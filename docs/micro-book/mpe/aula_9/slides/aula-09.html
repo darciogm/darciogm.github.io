@@ -354,7 +354,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <li>Sinalização puro: educação tem valor de mercado <strong>porque seleciona</strong>, não porque produz.</li>
 </ul>
 <div class="bridge">
-<p>Mailath (1987 <em>Econometrica</em>) mistura sinalização e capital humano. Aqui isolamos para entender como funciona.</p>
+<p>Mailath (1987, <em>Econometrica</em> 55(6): 1349–1365, <a href="https://doi.org/10.2307/1913560">DOI 10.2307/1913560</a>) mistura sinalização e capital humano. Aqui isolamos para entender como funciona.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -510,7 +510,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <section class="slide level2 center">
 <h2>Box Mundo — GED americano</h2>
 <blockquote>
-<p>Tyler-Murnane-Willett (2000, <em>QJE</em> 115(2): 431–468).</p>
+<p>Tyler-Murnane-Willett (2000, <em>QJE</em> 115(2): 431–468, <a href="https://doi.org/10.1162/003355300554827">DOI 10.1162/003355300554827</a>).</p>
 </blockquote>
 <ul>
 <li>GED = diploma alternativo, mesmo conteúdo cognitivo, prova em vez de 4 anos.</li>
@@ -649,7 +649,7 @@ Microeconomia I · MPE 2026/32 · Insper<br>
 <li>Estratificação hierárquica = <strong>pooling-com-separating em sub-mercados</strong>.</li>
 </ul>
 <div class="bridge">
-<p>Mailath (1987) modela com tipos contínuos. Hierarquia de MBAs no Brasil opera como sinalização hierárquica.</p>
+<p>Mailath (1987, <a href="https://doi.org/10.2307/1913560">DOI 10.2307/1913560</a>) modela com tipos contínuos. Hierarquia de MBAs no Brasil opera como sinalização hierárquica.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -871,6 +871,30 @@ Saída: μ_M(m) = pendente final de m.</code></pre>
 <div class="eq-key">
 <p><span class="math inline">\(\mu_M = \{(m_1, w_2),\, (m_2, w_4),\, (m_3, w_1),\, (m_4, w_3)\}.\)</span></p>
 </div>
+<aside class="notes">
+<p>Trace completo das 6 iterações para fallback no quadro. Estado pendente <span class="math inline">\((m, w)\)</span> ao fim de cada iteração:</p>
+<ul>
+<li><strong>Iter 1</strong> (todos propõem ao topo): <span class="math inline">\(m_1{\to}w_1\)</span>, <span class="math inline">\(m_2{\to}w_1\)</span>, <span class="math inline">\(m_3{\to}w_2\)</span>, <span class="math inline">\(m_4{\to}w_3\)</span>. <span class="math inline">\(w_1\)</span> recebe dois e mantém <span class="math inline">\(m_2\)</span> (prefere <span class="math inline">\(m_2 \succ m_1\)</span>). Pendente: <span class="math inline">\(\{(m_2,w_1),(m_3,w_2),(m_4,w_3)\}\)</span>; <span class="math inline">\(m_1\)</span> rejeitado.</li>
+<li><strong>Iter 2</strong>: <span class="math inline">\(m_1\)</span> propõe a <span class="math inline">\(w_2\)</span> (2ª escolha). <span class="math inline">\(w_2\)</span> tinha <span class="math inline">\(m_3\)</span>, prefere <span class="math inline">\(m_1 \succ m_3\)</span>, mantém <span class="math inline">\(m_1\)</span>. Pendente: <span class="math inline">\(\{(m_1,w_2),(m_2,w_1),(m_4,w_3)\}\)</span>; <span class="math inline">\(m_3\)</span> rejeitado.</li>
+<li><strong>Iter 3</strong>: <span class="math inline">\(m_3\)</span> propõe a <span class="math inline">\(w_1\)</span> (2ª escolha — <span class="math inline">\(m_3\)</span>: <span class="math inline">\(w_2 \succ w_1 \succ \ldots\)</span>). <span class="math inline">\(w_1\)</span> tinha <span class="math inline">\(m_2\)</span>, prefere <span class="math inline">\(m_3 \succ m_2\)</span>, mantém <span class="math inline">\(m_3\)</span>. Pendente: <span class="math inline">\(\{(m_1,w_2),(m_3,w_1),(m_4,w_3)\}\)</span>; <span class="math inline">\(m_2\)</span> rejeitado.</li>
+<li><strong>Iter 4</strong>: <span class="math inline">\(m_2\)</span> propõe a <span class="math inline">\(w_2\)</span> (2ª escolha). <span class="math inline">\(w_2\)</span> tinha <span class="math inline">\(m_1\)</span>, prefere <span class="math inline">\(m_1 \succ m_2\)</span>, rejeita <span class="math inline">\(m_2\)</span>. Estado igual.</li>
+<li><strong>Iter 5</strong>: <span class="math inline">\(m_2\)</span> propõe a <span class="math inline">\(w_3\)</span> (3ª escolha). <span class="math inline">\(w_3\)</span> tinha <span class="math inline">\(m_4\)</span>, prefere <span class="math inline">\(m_4 \succ m_2\)</span>, rejeita <span class="math inline">\(m_2\)</span>.</li>
+<li><strong>Iter 6</strong>: <span class="math inline">\(m_2\)</span> propõe a <span class="math inline">\(w_4\)</span> (4ª escolha). <span class="math inline">\(w_4\)</span> aceita (estava livre). Sem rejeições — fim.</li>
+</ul>
+<p><strong>Matching final</strong> <span class="math inline">\(\mu_M = \{(m_1,w_2),(m_2,w_4),(m_3,w_1),(m_4,w_3)\}\)</span>.</p>
+<p><strong>Verificação dois pares bloqueantes candidatos:</strong> - <span class="math inline">\((m_1, w_1)\)</span>: <span class="math inline">\(m_1\)</span> prefere <span class="math inline">\(w_1\)</span> a <span class="math inline">\(w_2\)</span> (sim, é sua 1ª). Mas <span class="math inline">\(w_1\)</span> está com <span class="math inline">\(m_3\)</span> e prefere <span class="math inline">\(m_3 \succ m_1\)</span>. Não bloqueia (bilateralidade falha do lado de <span class="math inline">\(w_1\)</span>). - <span class="math inline">\((m_3, w_2)\)</span>: <span class="math inline">\(m_3\)</span> prefere <span class="math inline">\(w_2\)</span> a <span class="math inline">\(w_1\)</span> (sim, é sua 1ª). Mas <span class="math inline">\(w_2\)</span> está com <span class="math inline">\(m_1\)</span> e prefere <span class="math inline">\(m_1 \succ m_3\)</span>. Não bloqueia (bilateralidade falha do lado de <span class="math inline">\(w_2\)</span>).</p>
+<p><strong>Para o Prof.&nbsp;Darcio:</strong> se a turma estiver perdida, peça pra rastrear iter 1 → 6 no quadro junto, marca os rejeitados em vermelho a cada passo. A propagação <span class="math inline">\(m_1 \to m_3 \to m_2\)</span> é a chave — uma rejeição em <span class="math inline">\(w_1\)</span> força <span class="math inline">\(m_1\)</span> a <span class="math inline">\(w_2\)</span>, que rejeita <span class="math inline">\(m_3\)</span>, que vai a <span class="math inline">\(w_1\)</span> e expulsa <span class="math inline">\(m_2\)</span>, que cai cascateando até <span class="math inline">\(w_4\)</span>. Vale enfatizar que <span class="math inline">\(m_2\)</span> termina com sua <strong>última</strong> escolha — DA é <span class="math inline">\(M\)</span>-ótimo no agregado, não significa que cada <span class="math inline">\(m\)</span> ganha bem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Verificação de estabilidade</h2>
@@ -1019,7 +1043,7 @@ Saída: μ_M(m) = pendente final de m.</code></pre>
 <li>Northwestern altruistic chain 2006: 10 transplantes encadeados.</li>
 </ul>
 <blockquote>
-<p><strong>School choice.</strong> Abdulkadiroğlu-Pathak-Roth (2005) — Boston e NYC redesignados.</p>
+<p><strong>School choice.</strong> Abdulkadiroğlu-Pathak-Roth (2005, <a href="https://doi.org/10.1257/000282805774670509">DOI 10.1257/000282805774670509</a>) — Boston e NYC redesignados.</p>
 </blockquote>
 <div class="bridge">
 <p>Roth Nobel 2012 (junto com Shapley). Market design como ramo da economia aplicada.</p>
@@ -1061,7 +1085,7 @@ Saída: μ_M(m) = pendente final de m.</code></pre>
 <section class="slide level2 center">
 <h2>Box Mundo — Boston/NYC school choice</h2>
 <blockquote>
-<p>Abdulkadiroğlu-Pathak-Roth (2005, <em>AER</em> 95(2): 364–367).</p>
+<p>Abdulkadiroğlu-Pathak-Roth (2005, <em>AER</em> 95(2): 364–367, <a href="https://doi.org/10.1257/000282805774670509">DOI 10.1257/000282805774670509</a>).</p>
 </blockquote>
 <ul>
 <li>Boston pré-2005: candidato declara preferências; 1ª escolha primeiro; quem não pegou vai para 2ª; etc.</li>

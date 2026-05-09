@@ -746,13 +746,13 @@ Estes exercícios **não cabem no Bloco 3** (apenas 30 min para 2 questões). S�
 
 **Gabarito 5-passos.**
 
-1. **Ponto-chave.** Cho-Kreps em 3+ tipos é mais complexo: refinamento elimina pools mais inclusivos primeiro, depois pools de pares, depois separadores excessivamente custosos. Resultado robusto: separador menos custoso (Mailath 1987, *Econometrica* 55(6): 1349–1365).
+1. **Ponto-chave.** Cho-Kreps em 3+ tipos é mais complexo: refinamento elimina pools mais inclusivos primeiro, depois pools de pares, depois separadores excessivamente custosos. Resultado robusto: separador menos custoso (Mailath 1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)).
 
 2. **Derivação.** TMS: \(1/\theta_i = \{1, 1/3, 1/6\}\). Para 3 tipos, IC pareadas: tipo \(i\) não imita \(j\), para \(i \neq j\). Em separador: \(e^*_1 = 0, e^*_2 = \theta_1(\theta_2 - \theta_1) = 2\), \(e^*_3 = ?\). Aplicação da regra: \(e^*_3 = e^*_2 + \theta_2(\theta_3 - \theta_2)/\theta_2\) — argumento por ordenamento sequencial. Cálculo: \(e^*_3 \ge \theta_2(\theta_3 - \theta_2)/\theta_2 = (\theta_3 - \theta_2) = 3\); mas tem que satisfazer também IC com \(\theta_1\), o que dá cota mais restritiva. Cota efetiva: \(e^*_3 = \theta_1(\theta_3 - \theta_1) = 5\)? **Não exatamente — Mailath mostra que a sequência canônica é \(e^*_i = \theta_{i-1}(\theta_i - \theta_{i-1}) + e^*_{i-1}\)**. Aplicação: \(e^*_2 = \theta_1 \cdot \theta_1 = 2 \cdot 1 = 2\) (correto). \(e^*_3 = \theta_2(\theta_3 - \theta_2) + e^*_2 = 3 \cdot 3 + 2 = 11\).
 
 3. **Armadilha.** Aplicar fórmula 2-tipos diretamente (\(\theta_1 (\theta_3 - \theta_1) = 5\)) — falso, esquece IC intermediária com \(\theta_2\).
 
-4. **Extensão.** Mailath (1987) generaliza para \(n\) tipos via desigualdade diferencial. Em **tipos contínuos**, IC binding entre adjacentes vira ODE; solução é função \(e^*(\theta)\) crescente.
+4. **Extensão.** Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) generaliza para \(n\) tipos via desigualdade diferencial. Em **tipos contínuos**, IC binding entre adjacentes vira ODE; solução é função \(e^*(\theta)\) crescente.
 
 5. **Peer-review.** Calibre 🔴 genuíno. **Tempo:** 18 min. **Aparição em AF:** muito improvável (3 tipos é exigente para AF de 3h). Mais provável aparecer com 2 tipos.
 
@@ -808,7 +808,7 @@ Estes exercícios **não cabem no Bloco 3** (apenas 30 min para 2 questões). S�
 6. **O que NÃO cobrir mesmo se aluno perguntar:**
    - Mecanismos AGV/d'Aspremont-Gérard-Varet (extensão de VCG).
    - Crawford-Sobel cheap talk.
-   - Mailath 1987 (tipos contínuos em sinalização) — exceto sketch.
+   - Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) — tipos contínuos em sinalização, exceto sketch.
    - Modelos de Bewley/Hansen-Sargent (ambiguity).
    - Dynamic mechanism design.
 
