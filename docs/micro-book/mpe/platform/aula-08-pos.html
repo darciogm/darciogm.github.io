@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 08 — Seleção Adversa + Risco Moral — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 08 — Seleção Adversa e Risco Moral</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S Cap. 18) + 5 avançadas 🔴 (calibre N&amp;S §18.2 mais profundo + J-R §7.1/§7.3 + qualifier).</strong> Objetivo: ponte entre a aula de 10/06 e a lista de exercícios avaliativos. Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo:</strong> fecha em <strong>quarta 02/07/2026 às 18:00 BRT</strong> — deadline único de submissão para todo o material avaliativo do curso.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-08-pos" data-phase="post" data-title="Pós-Aula 08">
+
+  <h3>Pós-Aula 08 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Akerlof contínuo cálculo direto -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Akerlof contínuo: \(\theta \sim U[0, 2]\); comprador valoriza \(\beta\theta\) com \(\beta = 1{,}5\); vendedor reserva \(\theta\). Em equilíbrio competitivo, sob distribuição truncada uniforme em \([0, p^*]\) (\(p^* \le 2\)):
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \(p^* = 1\) (= \(\beta\) ajustado).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) <strong>\(p^* = 0\)</strong>: \(p = 1{,}5 \cdot p/2 = 0{,}75 p \Rightarrow p \cdot 0{,}25 = 0 \Rightarrow p = 0\). Único equilíbrio interior; mercado colapsa para \(\beta < 2\) regardless of \([\underline\theta, \overline\theta]\) (a desigualdade \(\beta < 2\) é o threshold operacional).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \(p^* = 0{,}75\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \(p^* = 1{,}5\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O threshold \(\beta = 2\) que separa colapso completo (\(\beta < 2\)) de equilíbrio interior (\(\beta > 2\)) é robusto a mudanças do intervalo de \(\theta\), desde que \(\theta\) seja uniforme em \([\underline\theta, p^*]\) (truncamento). Sob \(\beta = 1{,}5 < 2\), \(p^* = 0\).</p>
+      <p><strong>2. Derivação.</strong> Para uniforme em \([0, p]\), média condicional \(\mathbb{E}[\theta|\theta\le p] = p/2\). Equilíbrio: \(p = \beta p/2\). Algebricamente, idêntico ao caso \([0,1]\); o \(\overline\theta = 2\) só importa para verificar viabilidade do \(p^*\) — em \(p^* = 0\) é trivialmente satisfeita. Verificação: \(\beta = 1{,}5\) entrega \(p \cdot 0{,}25 = 0 \Rightarrow p = 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) aluno acha que \(p^* = \beta\) — confusão. (c) aluno calcula \(p \cdot \beta/2 = p \cdot 0{,}75\) e equilibra em algum ponto sem verificar a equação ponto-fixo. (d) erro grosseiro.</p>
+      <p><strong>4. Extensão.</strong> Sob \(\beta > 2\), o equilíbrio interior é \(p^* = \beta \overline\theta /(2-\beta) > 0\) com truncamento ativo no extremo superior \(\overline\theta\). Distribuições não-uniformes (ex: massa concentrada perto de \(\overline\theta\)) podem entregar unraveling parcial — não-extremo. Para fenômeno geral, ver Stiglitz-Weiss 1981 (racionamento de crédito como variante).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo limpo Akerlof. Aluno que erra (a) ainda confunde \(\beta\) com \(p^*\); (c) ignora a forma da equação.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — R-S separador propriedade central -->
+  <div class="quizg-q" data-qid="q2" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> No equilíbrio separador R-S 1976, qual restrição é binding sob informação assimétrica?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) IR do tipo \(L\) (baixo risco) — \(L\) está exatamente em sua utilidade reservada.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) IR do tipo \(H\) (alto risco) — \(H\) está exatamente em sua utilidade reservada.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) <strong>IC do tipo \(H\)</strong> — tipo \(H\) é indiferente entre seu próprio contrato (cobertura completa, prêmio justo) e o contrato de \(L\) (cobertura parcial). Essa indiferença é o que distorce o contrato de \(L\) para baixo. IC do tipo \(L\) é não-binding (tipo \(L\) prefere o próprio contrato a se passar por \(H\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) IC do tipo \(L\) — tipo \(L\) é indiferente.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> No separador R-S, IC do tipo \(H\) é binding; tipo \(L\) carrega a distorção de cobertura para que \(H\) não seja incentivado a imitar \(L\). É um padrão de "no-distortion at the top, distortion below" — generaliza para Mirrlees com tipos contínuos.</p>
+      <p><strong>2. Derivação.</strong> Single-crossing implica que tipo \(H\) tem maior disposição-marginal-a-pagar por cobertura. Se ambos tivessem cobertura completa a prêmios justos, tipo \(H\) ainda preferiria o contrato de \(L\) (mais barato). IC do \(H\) violada. Para satisfazer, contrato de \(L\) tem que ter cobertura suficientemente baixa para que \(H\) seja indiferente — IC do \(H\) binding com igualdade.</p>
+      <p><strong>3. Armadilha.</strong> (a)/(b) confundem IC com IR — em equilíbrio competitivo, IR é binding em cima de utilidade fora (sem seguro), não em utilidade do outro tipo. (d) inverte os tipos.</p>
+      <p><strong>4. Extensão.</strong> Padrão "no-distortion at the top" se generaliza a tipos contínuos via integração de IC sob single-crossing. Mirrlees 1971 (taxação ótima): alíquota marginal zero no topo. Resultado canônico de teoria de mecanismos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Estrutura do separador R-S. Distrator (b) é o mais sutil — força aluno a distinguir IR (utilidade reservada) de IC (utilidade comparada com outro tipo).</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Holmström first-best vs second-best diferença conceitual -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> A diferença operacional entre o contrato first-best (ação observável) e second-best (ação não-observável) em Holmström com agente avesso é que:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) First-best paga mais que second-best em valor esperado.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) <strong>First-best entrega salário fixo \(w^*\) (P absorve risco); second-best entrega salário variável \(w_H > w_L\) (A carrega risco para sinalizar esforço). Diferença \(\mathbb{E}[w]_{SB} - w^*_{FB}\) é o "prêmio de risco moral" — custo da assimetria.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Os contratos são equivalentes.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) First-best não satisfaz IR.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> First-best (FB): ação observável → IC irrelevante → P pode oferecer salário fixo → A não tem risco residual. Second-best (SB): ação não-observável → IC binding → P força \(w_H > w_L\) → A carrega risco. <strong>Prêmio de risco moral</strong> = compensação que A exige por carregar risco.</p>
+      <p><strong>2. Derivação.</strong> FB: \(w^* = u^{-1}(\bar U + c(a))\). SB com \(u(w) = \sqrt w\), parâmetros do EP-2/EP-3: \(w_L = 1, w_H = 121, \mathbb{E}[w] = 0{,}7 \cdot 121 + 0{,}3 \cdot 1 = 85\). FB: \(w^*_H = 64\). Prêmio = \(85 - 64 = 21\). Em geral, prêmio cresce com aversão ao risco do agente; sob neutralidade, prêmio = 0.</p>
+      <p><strong>3. Armadilha.</strong> (a) generaliza incorretamente — depende de parâmetros. (c) ignora distinção de regimes. (d) FB satisfaz IR binding por definição.</p>
+      <p><strong>4. Extensão.</strong> Holmström-Milgrom (1987) generaliza para domínio contínuo + relative performance evaluation. Stock options para CEO implementa second-best na prática; ajustes (claw-back, ESG-linked) refinam para outras dimensões agency. <strong>Aula 9</strong> introduz sinalização — alternativa descentralizada quando agente é informado.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Distinção central. Aluno que erra (a) confunde valor esperado com estrutura; (c)/(d) ignoram regime.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Aplicação ANS interpretação -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> A regulamentação da <strong>ANS (Lei 9.656/1998)</strong> sobre planos de saúde brasileiros — incluindo rol mínimo de cobertura, faixas etárias máximas, portabilidade — implementa, em termos do modelo R-S:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Equilíbrio separador puro de R-S.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) <strong>Pooling regulado</strong>: ANS impede seguradoras de criar contratos altamente segmentados (separador R-S) via rol mínimo + faixas etárias; portabilidade reduz lock-in. Efeito líquido: ambos os tipos recebem menus parecidos a prêmios menos diferenciados que o separador R-S puro permitiria. Cross-subsidy de baixos para altos riscos. Resolve "inexistência R-S" sob \(\lambda\) baixo, ao custo de Pareto-incomparabilidade com mercado livre.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Mecanismo VCG (revelação dominante).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Coase descentralizado.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> ANS implementa pooling regulado por meio de "regulação de produto" (rol mínimo + padronização) + "barreiras de saída suaves" (portabilidade reduz lock-in). Funcionalmente equivalente a forçar pooling, mas via padronização de oferta em vez de mandato individual (modelo ACA).</p>
+      <p><strong>2. Derivação.</strong> Sem ANS: seguradoras teriam incentivo a separator R-S puro com \(c^L_*\) baixo + \(p^H_* = \pi^H L\); ou tentativa de pooling que quebraria por desviante. Com ANS: rol mínimo limita \(c^L_*\) por baixo (não pode "esculpir" cobertura para extremos); faixas etárias máximas limitam \(p^H_*\) por cima; portabilidade impede lock-in. Resultado: menus mais homogêneos — pooling implícito.</p>
+      <p><strong>3. Armadilha.</strong> (a) ANS distorce em direção contrária ao separador puro. (c) VCG é Aula 7 (bens públicos). (d) Coase também Aula 7.</p>
+      <p><strong>4. Extensão.</strong> Comparação com ACA US 2010: ACA usa "regulação de participação" (mandato + proibição de underwriting) — instrumento mais direto. ANS usa "regulação de produto" — funciona por canal indireto. Resultados empíricos comparáveis em termos de cross-subsidy. Conexão com Stiglitz-Weiss 1981 sobre racionamento de crédito (variante R-S em finanças).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação institucional. Distrator (a) testa se aluno entende que regulação <em>distorce</em> em direção a pooling (não consolida separador).</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Bolsa Família IC -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> O <strong>Bolsa Família</strong> é um contrato condicional do governo brasileiro com famílias de baixa renda. Em termos do principal-agente de Holmström, a transferência \(w\) é condicionada a frequência escolar dos filhos (≥85%) e acompanhamento de saúde. Empiricamente, Glewwe-Olinto (2004) e Soares et al. (2010) documentam efeitos positivos em frequência escolar atribuíveis especificamente à condicionalidade. A interpretação é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Condicionalidade é apenas burocracia.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Condicionalidade implementa IR (participação).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) <strong>Condicionalidade implementa IC formal</strong>: governo (P) deseja induzir esforço educacional/sanitário (\(a\)); ação não diretamente observável, mas frequência escolar é sinal verificável \(y\). Sem condicionalidade, \(w\) constante; agente desviaria (esforço baixo, mantém transferência). Com condicionalidade, \(w(y)\) cria incentivo: \(w_H = w_{\text{alto}}\) se frequência ≥85%; \(w_L = 0\) caso contrário. IC sustenta \(a_H\). Empírico-confirma.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Condicionalidade é Pareto-superior trivialmente.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Bolsa Família é principal-agente clássico aplicado a política social. Transformar transferência fixa em transferência condicional formaliza IC e gera incentivos para "esforço" (educação dos filhos, vacinação). Empírico confirma: frequência escolar sobe especificamente onde condicionalidade é introduzida.</p>
+      <p><strong>2. Derivação.</strong> IC: \((\pi_H - \pi_L)[w_{\text{alto}} - 0] \ge c(a_H) - c(a_L)\). \(\pi_H = \Pr(\text{freq} \ge 85\% | a_H)\); \(\pi_L = \Pr(\cdot | a_L) < \pi_H\). Para \(w_{\text{alto}}\) suficientemente grande, IC binding com \(a_H\) sendo escolhido. Combinada com IR: \(\pi_H w_{\text{alto}} - c(a_H) \ge \bar U\) determina \(w_{\text{alto}}\) ótimo.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora resultado teórico/empírico. (b) confunde IR com IC. (d) ignora cross-subsidy + custo administrativo.</p>
+      <p><strong>4. Extensão.</strong> Variantes internacionais: Progresa/Oportunidades (México 1997+, Skoufias 2005); Familias en Acción (Colômbia 2001+). Comum em América Latina; raro em África subsaariana (problema de monitoramento de frequência). Limites: condicionalidade pode excluir famílias com filhos com necessidades especiais — debate de "condicionalidade rígida" vs. "condicionalidade flexível".</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação canônica do Holmström a política social brasileira. Distratores (a)/(b)/(d) testam confusões clássicas IR-IC.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — R-S inexistência e pooling Pareto-domina -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> Em R-S 1976 com 2 tipos, single-crossing, e proporção \(\lambda\) baixa de altos riscos, suponha que <em>pooling</em> com cobertura completa ao prêmio médio ponderado \(\bar p = \bar\pi L\) com \(\bar\pi = \lambda\pi^H + (1-\lambda)\pi^L\) seja oferecido. Argumente <strong>por que pooling não é Nash</strong> em equilíbrio competitivo, mesmo se Pareto-domina o separador.
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Pooling é Nash; o resultado de inexistência é numericamente impossível.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) <strong>Uma seguradora desviante pode oferecer contrato \((p', c')\) com \(c' < L\) (cobertura parcial) e \(p' < \bar p\) (mais barato) tal que <em>apenas tipo \(L\) prefere o desvio</em> ao pooling — single-crossing garante esse "skimming" do bom risco. Após o desvio, o pool restante consiste apenas em tipo \(H\); seguradora original perde dinheiro (cobrava \(\bar p\) baseada em \(\bar\pi\), mas agora carrega só \(\pi^H > \bar\pi\)). Pool quebra. Não é Nash.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Pooling falha por custo administrativo da seguradora.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Tipo \(H\) sai do pool por preferência intrínseca.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A não-Nash do pooling é o coração do resultado de inexistência R-S. Single-crossing garante que existe sempre um contrato "skimming" que atrai apenas \(L\) — mecanismo central. Daí a impossibilidade de equilibrar pooling.</p>
+      <p><strong>2. Derivação.</strong> Considere pooling \((bar p, L)\) com \(\bar p = \bar\pi L\). Tipo \(L\) tem utilidade \(EU^L(\bar p, L) = u(W - \bar p)\). Tipo \(H\) tem \(EU^H(\bar p, L) = u(W - \bar p)\) (cobertura completa, sem risco residual). Desvio: \((p', c')\) com \(c' < L\) e \(p' = \pi^L c'\) (lucro zero sob \(L\) sozinho). Pelo single-crossing, há um \((p', c')\) tal que: \(EU^L(p', c') > u(W - \bar p)\) (\(L\) prefere) e \(EU^H(p', c') < u(W - \bar p)\) (\(H\) recusa). Desviante atrai apenas \(L\); ganha lucro positivo \(\Pi^L > 0\). Empresa original sobra com tipo \(H\): paga \(\bar p < \pi^H L\), perde dinheiro. Pool quebra.</p>
+      <p><strong>3. Armadilha.</strong> (a) nega resultado canônico. (c) introduz imperfeição irrelevante. (d) confunde desvio do desviante com escolha de tipo.</p>
+      <p><strong>4. Extensão.</strong> Resposta institucional ao impasse: regulação que <em>impede</em> contratos desviantes (rol mínimo, mandato, padronização de produto) — essencialmente Pareto-incomparável com mercado livre, mas sustenta pooling. Aulas 8–9 cobrem ANS (Brasil) e ACA (US).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Argumento estrutural de R-S. Aluno que erra (a)/(c)/(d) ainda não internalizou single-crossing como mecanismo causal do skimming.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — Holmström second-best cálculo numérico -->
+  <div class="quizg-q" data-qid="q7" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> Setup de Holmström com \(u(w) = \sqrt w\), \(\bar U = 4\), \(c(a_H) = 4\), \(c(a_L) = 0\), \(\pi_H = 0{,}7\), \(\pi_L = 0{,}3\), \(y_L = 0\), \(y_H = 100\). Sob ação não-observável, induzindo \(a_H\), com IR e IC ambas binding, calcule \((w_H, w_L)\) e o salário esperado \(\mathbb{E}[w]\).
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) \(w_H = 64, w_L = 16, \mathbb{E}[w] = 50{,}4\) (= first-best).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) <strong>\(w_H = 121, w_L = 1, \mathbb{E}[w] = 85\)</strong>: IC \((\pi_H - \pi_L)[\sqrt{w_H} - \sqrt{w_L}] = c(a_H) \Rightarrow 0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\). IR \(\pi_H \sqrt{w_H} + (1-\pi_H)\sqrt{w_L} - c(a_H) = \bar U \Rightarrow 0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\). Substituindo: \(\sqrt{w_L} = 1, \sqrt{w_H} = 11; w_L = 1, w_H = 121; \mathbb{E}[w] = 0{,}7 \cdot 121 + 0{,}3 \cdot 1 = 85\). Prêmio de risco moral = 21 (vs. \(w^*_H = 64\) first-best).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) \(w_H = 100, w_L = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Sem solução factível.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cálculo direto do second-best: sistema 2×2 linear em \((\sqrt{w_H}, \sqrt{w_L})\) gerado por IR e IC binding. Bernoulli \(\sqrt w\) entrega solução de números inteiros. Comparação com first-best (\(w^*_H = 64\)) revela prêmio de risco moral = 21.</p>
+      <p><strong>2. Derivação.</strong> IC binding: \(0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\). IR binding: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\). Substituindo \(\sqrt{w_H} = 10 + \sqrt{w_L}\): \(0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \Rightarrow 7 + \sqrt{w_L} = 8 \Rightarrow \sqrt{w_L} = 1\). Logo \(\sqrt{w_H} = 11\), \(w_L = 1, w_H = 121\). \(\mathbb{E}[w] = 85\).</p>
+      <p><strong>3. Armadilha.</strong> (a) é first-best (que requer \(w_H = w_L\) sob ação observável). (c)/(d) confundem ou abandonam.</p>
+      <p><strong>4. Extensão.</strong> Prêmio de risco moral = 21 cresce com aversão ao risco do agente. Sob \(u\) linear (neutro): IC pode ser satisfeita sem perda de seguro — second-best = first-best (contrato franchise). Generalização para domínio contínuo: Holmström-Milgrom 1987.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Cálculo completo de second-best. Aluno que faz tudo sai com Lagrangiano de Holmström na ponta da língua. <strong>Tradeoff de tempo:</strong> ~10 min — médio para 🔴.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — R-S separador equilíbrio com fechamento algébrico -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Mercado de seguro com \(W = 100,\ L = 56,\ \pi^H = 0{,}5,\ \pi^L = 0{,}25,\ u(W) = \sqrt W\). No equilíbrio R-S separador: \(c^H_* = L = 56,\ p^H_* = \pi^H L = 28\). Para o tipo \(L\), prêmio justo \(p^L_* = \pi^L c^L_* = 0{,}25 c^L_*\); cobertura \(c^L_*\) com IC do tipo \(H\) binding. A IC do \(H\) binding \(\sqrt{W - p^H_*} = (1-\pi^H)\sqrt{W - p^L_*} + \pi^H\sqrt{W - p^L_* - L + c^L_*}\) entrega:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(c^L_* = 56\) (cobertura completa).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) <strong>\(c^L_* = 8\) (com \(p^L_* = 2\))</strong>: substituindo, a IC vira \(\sqrt{72} = 0{,}5\sqrt{100 - 0{,}25 c^L_*} + 0{,}5\sqrt{44 + 0{,}75 c^L_*}\); elevando ao quadrado e simplificando, reduz à quadrática \((c^L_*)^2 - 400\, c^L_* + 3136 = 0\), com discriminante \(147456 = 384^2\) e raízes \(\{8,\ 392\}\). A solução econômica (\(c^L_* < L\)) é \(c^L_* = 8\). Cobertura severamente parcial — \(c^L_*/L \approx 14\%\) — ilustração quantitativa da distorção de second-best.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(c^L_* = 0\) (sem seguro).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Sistema sem solução real.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A cobertura do tipo \(L\) no separador R-S é estritamente parcial — \(c^L_* < L\) — pela IC do tipo \(H\) binding. A calibração \((W, L, \pi^H, \pi^L) = (100, 56, 1/2, 1/4)\) foi escolhida para que a álgebra feche com raiz <strong>inteira</strong>, deixando o resultado verificável sem método numérico.</p>
+      <p><strong>2. Derivação.</strong> IC do \(H\) binding: \(EU^H(\text{contrato }H) = EU^H(\text{contrato }L)\). LHS: \(\sqrt{100 - 28} = \sqrt{72} = 6\sqrt{2}\) (cobertura completa, sem risco). RHS: riqueza ex-post sem sinistro \(W - p^L_* = 100 - 0{,}25 c^L_*\); com sinistro \(W - p^L_* - L + c^L_* = 100 - 0{,}25 c^L_* - 56 + c^L_* = 44 + 0{,}75 c^L_*\). Sejam \(A = \sqrt{100 - 0{,}25 c^L_*}\) e \(B = \sqrt{44 + 0{,}75 c^L_*}\). De \(A + B = 2\sqrt{72}\) e \(B^2 - A^2 = c^L_* - 56\), tira-se \(B - A = (c^L_* - 56)/(2\sqrt{72})\). Substituindo em \(B^2 = 44 + 0{,}75 c^L_*\) e simplificando, \((c^L_* - 56)^2 = 4 \cdot 72 \cdot c^L_* = 288\, c^L_*\), donde \((c^L_*)^2 - 400\, c^L_* + 3136 = 0\). Discriminante \(160000 - 12544 = 147456 = 384^2\); raízes \((400 \pm 384)/2 \in \{8,\ 392\}\). Apenas \(c^L_* = 8\) satisfaz \(c \le L\); então \(c^L_* = 8,\ p^L_* = 2\). <strong>Verificação:</strong> RHS \(= 0{,}5\sqrt{98} + 0{,}5\sqrt{50} = 0{,}5 \cdot 7\sqrt{2} + 0{,}5 \cdot 5\sqrt{2} = 6\sqrt{2}\) = LHS ✓.</p>
+      <p><strong>3. Armadilha.</strong> (a) é first-best simétrico — não vale sob assimetria, é exatamente o contrato que tipo \(H\) imitaria se \(L\) recebesse cobertura completa. (c) extremo errado — \(L\) ainda compra <em>algum</em> seguro (\(c^L_* = 8 > 0\)); o tipo \(L\) não é expulso do mercado, apenas distorcido. (d) ignora que o discriminante é quadrado perfeito — a quadrática tem solução real e inteira. Armadilha mais sutil: aluno que tenta tentativa-e-erro pode chegar perto de 8 mas não fechar; o caminho canônico é elevar ao quadrado a IC, isolar o termo cruzado e reduzir à quadrática.</p>
+      <p><strong>4. Extensão.</strong> Em modelos com tipos contínuos, distorção é "encadeada" (Mirrlees 1971, Mailath 1987): no topo do tipo, sem distorção; tipos abaixo carregam distorções progressivas. Estrutura <em>"no-distortion at the top, distortion below"</em> — resultado canônico de teoria de mecanismos. A fórmula geral aqui é \((c^L_*)^2 - 4W c^L_* + L^2 = 0\) (válida para \(\pi^H = 1/2,\ \pi^L = 1/4,\ u = \sqrt{\cdot}\)); raízes inteiras quando \((2W)^2 - L^2\) é quadrado perfeito (tripla pitagórica com hipotenusa \(2W\)). <strong>Conexão com Exercício 3 dos avaliativos:</strong> mesmo modelo, mesma calibração — confira lá os outros sub-itens (first-best, interpretação econômica, inexistência sob \(\lambda\) baixo).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴 (mantido). A recalibração \(L = 64 \to 56\) trocou "aproximação numérica frouxa" por "fechamento algébrico exibível" — a dificuldade da Q8 agora está na <em>manipulação algébrica</em> (elevar ao quadrado, isolar termo cruzado, reduzir à quadrática), não no método numérico. <strong>Tradeoff de tempo:</strong> ~10 min se aluno conhece o truque (calibrar quadrática a partir da IC); ~5 min se reconhecer apenas a estrutura "\(c^L_* < L\), cobertura parcial". <strong>Decisão pedagógica:</strong> manter como 🔴 mesmo com fechamento porque a álgebra de raiz quadrada + redução a quadrática + escolha da raiz econômica viável é trabalho não-trivial — está no mesmo nível que Q6 (não-Nash do pooling, argumento estrutural) e Q9 (Stiglitz-Weiss).</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — Stiglitz-Weiss racionamento de crédito como variante R-S -->
+  <div class="quizg-q" data-qid="q9" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> <strong>Stiglitz, J. E., &amp; Weiss, A. (1981).</strong> "Credit Rationing in Markets with Imperfect Information." <em>American Economic Review</em> 71(3), 393–410. Stiglitz-Weiss provam um resultado análogo a Akerlof/R-S em mercado de crédito. O resultado central é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Bancos sempre lucram com taxa de juros mais alta.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) Devedor sempre paga mais com taxas baixas.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) <strong>Bancos podem racionar crédito (recusar empréstimo a taxas mais altas) porque taxas altas geram seleção adversa (atraem riscos altos) e/ou risco moral (induzem risk-shifting). Em equilíbrio, a oferta de crédito agregada não cresce em \(r\) acima de algum \(r^*\); existe excesso de demanda mas bancos não levantam taxa porque isso pioria a qualidade do portfólio.</strong> É a variante de Akerlof + R-S aplicada a finanças.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Mercado de crédito sempre fecha sem regulação.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Stiglitz-Weiss (1981) generaliza Akerlof + R-S para mercado de crédito: assimetria informacional (banco não conhece risco do devedor) gera <strong>racionamento</strong> em equilíbrio competitivo. Banco prefere recusar crédito a alguns devedores em vez de aumentar taxa, porque aumento de taxa (a) atrai apenas devedores de alto risco (sel. adversa), (b) induz devedores aceitos a tomar projetos mais arriscados (risco moral) — efeito líquido sobre receita esperada do banco pode ser negativo.</p>
+      <p><strong>2. Derivação.</strong> Considere devedores com tipos \(\theta\) (risco de default). Banco oferece taxa \(r\); devedor aceita se valor esperado positivo. Sob seleção adversa, conjunto ativo é \(\{\theta : \theta \le \theta^*(r)\}\) (riscos mais baixos preferem ficar fora a aceitar \(r\) alto). Logo aumento de \(r\) reduz o universo (composição em direção a maior risco médio). Sob risco moral, devedor escolhe entre projeto seguro (baixo retorno se sucesso, baixo default) e projeto arriscado (alto retorno se sucesso, alto default); taxa alta induz risco-shifting para projeto arriscado. Receita esperada do banco \(R(r) = r \cdot \Pr(\text{pagamento}|\theta(r)) \cdot \mathbb{E}[\theta|\text{ativo}]\) pode ter máximo interior \(r^*\). Acima de \(r^*\), elevar taxa reduz receita.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora seleção adversa. (b) confunde direção. (d) absurdo.</p>
+      <p><strong>4. Extensão.</strong> Aplicações: BNDES no Brasil (subsídio para reduzir efeito de racionamento no setor produtivo), microcrédito (mecanismos como group lending — Grameen Bank — atenuam seleção adversa via responsabilidade compartilhada), credit scoring (reduzir assimetria via dados). Bench de 30 anos: Karlan-Zinman 2010 etc. <strong>Conexão com Aula 8:</strong> Stiglitz-Weiss é caso particular de Akerlof + R-S aplicado ao crédito; usa o mesmo aparato lógico.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Conhecimento da literatura econômica avançada. Distratores plausíveis para alunos que viram só "lei de oferta e demanda" sem internalizar assimetria. Resultado canônico de finanças com info assimétrica. Stiglitz Nobel 2001 (junto com Akerlof e Spence).</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴🔴 — META: Holmström second-best com agente neutro = first-best -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <em>Questão meta — pede raciocínio de recíproca/limite.</em> No principal-agente de Holmström com ação não-observável, sob agente <strong>neutro ao risco</strong> (\(u(w) = w\)), prove (intuição + sketch formal) que <strong>second-best = first-best</strong>. Discuta também a recíproca: <strong>se</strong> second-best = first-best em algum modelo de risco moral, <strong>então</strong> agente é neutro? Considere:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Sob neutralidade, second-best ≠ first-best (ainda há perda de bem-estar). A recíproca é trivial — second-best = first-best implica neutralidade.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) <strong>Sob neutralidade do agente, second-best = first-best por dois caminhos equivalentes: (i) Lagrangiano: CPOs reduzem \(1/u'(w_y) = 1\) constante; \(\nu \cdot \text{score}(y) = 0\); como \(\text{score} \neq 0\) (assumindo \(\pi_H \neq \pi_L\)): \(\nu = 0\), IC não-binding, salário fixo possível. (ii) Mecanismo equivalente: contrato franchise — A paga taxa fixa F = lucro esperado, fica residual claimant, escolhe \(a_H\) endogenamente. Sem perda de seguro porque A não tem aversão. <strong>A recíproca (second-best = first-best ⟹ neutralidade) NÃO é trivialmente verdadeira:</strong> contraexemplo é avesso com Bernoulli específica que satisfaz IC sem distorção (raro mas possível, e.g., quando \(c(a_H) = 0\) — não há custo de esforço, então IC é trivialmente satisfeita por qualquer salário). Em geral, sob \(c(a_H) > 0\) e \(\pi_H \neq \pi_L\), a recíproca vale; mas a equivalência é "sob hipóteses padrão" e não trivialmente bidirecional.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Sob neutralidade, principal não consegue induzir \(a_H\) — second-best falha. Recíproca não vale.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Equivalência neutralidade ⇔ second-best = first-best vale trivialmente em ambas direções.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A questão meta separa três objetos: (i) <em>direção forward</em> (neutralidade ⟹ SB = FB) que é correta sob Lagrangiano padrão; (ii) <em>direção reversa</em> (SB = FB ⟹ neutralidade) que <strong>não</strong> é trivialmente verdadeira — depende de outros parâmetros do modelo (custo de esforço, distribuição de output); (iii) <em>recíproca sob hipóteses padrão</em> (\(c(a_H) > 0, \pi_H \neq \pi_L\)) onde a recíproca vale. Distinguir as três é central em raciocínio econômico avançado.</p>
+      <p><strong>2. Derivação.</strong> <em>Forward.</em> Sob \(u(w) = w\), CPOs do Lagrangiano: \(\partial \mathcal{L}/\partial w_y = \pi(y|a_H)(1 - \mu - \nu \cdot (\Delta\pi)/\pi(y|a_H)) = 0\). Reorganizando: \(1 = \mu + \nu \cdot \text{score}(y)\). Como \(\text{score}(y_H) = (\pi_H - \pi_L)/\pi_H > 0\) e \(\text{score}(y_L) < 0\), e \(\mu + \nu\cdot\text{score}\) precisa = constante (1) para ambos \(y\), conclui-se que \(\nu \cdot \text{score}(y_H) = \nu \cdot \text{score}(y_L)\). Como \(\text{score}(y_H) \neq \text{score}(y_L)\) (assumindo \(\pi_H \neq \pi_L\)): \(\nu = 0\). IC não-binding; salário fixo possível. <em>Reverse caso especial.</em> Suponha \(c(a_H) = 0\). IC: \((\pi_H - \pi_L)[u(w_H) - u(w_L)] \ge 0\). Trivialmente satisfeita por qualquer \(w_H \ge w_L\). Salário fixo \(w_H = w_L\) é factível. SB = FB sem necessidade de neutralidade. <em>Reverse sob hipóteses padrão.</em> Se \(c(a_H) > 0\) e \(\pi_H \neq \pi_L\) e Bernoulli é estritamente côncava, IC binding força \(w_H > w_L\); em SB, esperança de \(w\) > FB salário fixo; SB ≠ FB. Logo SB = FB ⟹ ou neutralidade ou \(c(a_H) = 0\) ou \(\pi_H = \pi_L\). Recíproca não-trivial.</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte forward. (c) ignora contrato franchise. (d) ignora exceções da recíproca.</p>
+      <p><strong>4. Extensão.</strong> Distinguir hipóteses canônicas (neutralidade, custo positivo, sinais informativos) é central em qualifier de teoria. Holmström (1979) trabalha com \(c > 0\) e \(\pi_H > \pi_L\) (informativo); recíproca vale nesse domínio. Generalização: Mirrlees 1976 ("Optimal Tax Theory" follow-up); Rogerson 1985 sobre first-order approach validity. Conexão com Aula 9 — sinalização Spence sob agente neutro vs. avesso entrega resultados análogos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴🔴. Questão meta de raciocínio recíproca/condicional. Aluno que marca (a)/(c)/(d) ainda não distinguiu forward de reverse direction em afirmação econômica. Distrator (d) é o mais sutil — testa se aluno entende exceções (\(c = 0\) ou \(\pi\) iguais). <strong>Tradeoff de tempo:</strong> ~12 min para leitura cuidadosa + análise lógica. <strong>Decisão pedagógica:</strong> "alternativa longa correta" é o padrão para questões meta — preferi explicitar a estrutura lógica a brevidade.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 9 presencial</strong> (quarta, 17/06, 19:30 — Sinalização + Matching). Os <strong>exercícios avaliativos da Aula 8</strong> fecham em <strong>quarta 02/07/2026 às 18h</strong>; gabarito quinta 03/07/2026 · 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-08-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 08 — Seleção Adversa e Risco Moral — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Aula 08 — Seleção Adversa e Risco Moral</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 9</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-aula funciona</div>
+<p>Estrutura de <strong>9 seções sequenciais</strong> (orientação + 2 leituras + 3 conceituais + exercícios de papel + checkpoint + reflexão). Cada seção libera a próxima quando marcada como concluída. Nas conceituais, você registra confiança pré/pós e responde um micro-checkpoint obrigatório (até 3 tentativas cada item). Tempo-alvo total: <strong>90–120 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><em>Nota:</em> o tempo real depende do seu ritmo de papel-e-caneta — medimos por telemetria, sem julgar.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo:</strong> tudo (material, quiz pré, quiz pós, exercícios avaliativos) fecha em <strong>quarta 02/07/2026 às 18:00 BRT</strong> — deadline único de submissão para todo o material avaliativo do curso. Gabarito dos avaliativos: quinta 03/07/2026 · 00:00.</p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>Seu contrato com esta pré-aula</h2>
+  <ol>
+    <li>Papel e caneta. <strong>Risco moral</strong> se entende com gráfico de incentivo: utilidade do agente sob salário fixo vs. salário contingente, e o "preço" da assimetria. Faça pelo menos um cálculo lápis-papel da utilidade esperada do agente sob cada contrato.</li>
+    <li>Tente os micro-checkpoints <strong>sem consultar</strong> primeiro. Errar 1ª é dado pedagógico útil.</li>
+    <li>Não pule seções. Diagnóstico → Akerlof → R-S → Holmström é cadeia lógica: cada bloco progride uma camada de complexidade institucional.</li>
+    <li>Anote dúvidas na reflexão final (Seção 8). Alimentam o Bloco 0 da aula presencial.</li>
+  </ol>
+  <div class="admonition note" style="margin-top:1rem">
+  <div class="admonition-title">Aviso de calibre</div>
+  <p>Esta aula é a <strong>terceira das três falhas clássicas do EG.</strong> Aula 5 fechou o canônico AD; Aula 6 abriu com <strong>incompletude</strong> (1ª falha); Aula 7 catalogou <strong>externalidades + bens públicos</strong> (2ª falha); aqui catalogamos <strong>informação assimétrica</strong> (3ª falha). Aula 9 vai fechar com <strong>sinalização</strong> (Spence) e <strong>matching</strong> (Gale-Shapley) como mecanismos de coordenação descentralizada que respondem a algumas das três falhas. Mantenha o fio: cada aula expõe um mecanismo <em>específico</em> pelo qual o 1º TBE deixa de valer.</p>
+  </div>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi o contrato — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: LEITURA ZAE Cap. 19 ==================== -->
+<section class="section-block locked" id="s1-leitura-zae" data-section="s1-leitura-zae" data-order="1">
+  <div class="section-meta">Seção 1 · Leitura dirigida · 25 min</div>
+  <h2>ZaE Cap. 19 — Quando Um Lado Sabe Mais (E Isso Estraga Tudo)</h2>
+  <p>Abra o <strong>livro do Prof. Darcio</strong> — <em>Microeconomia: Do Zero ao Equilíbrio (e Além)</em>, <strong>Capítulo 19</strong>. Esta é a <strong>leitura principal</strong> desta pré-aula: cobertura panorâmica das três figuras canônicas (Akerlof, R-S, Holmström) com calibre adequado ao MPE, com Boxes Brasil substantivos (planos de saúde + ANS, Bolsa Família, IR progressivo).</p>
+  <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.95rem"><strong>Por que ZaE como referência principal:</strong> notação consistente com as Aulas 1–7 (\(\succeq\), vírgula decimal, Lagrangiano com restrição agregada estendido para IC + IR); boxes Brasil/Mundo alinhados ao bundle; atividade de sala (jogo de seguro com 2 tipos) que serve como ponte para o Bloco 2 do durante.</p>
+  <p><strong>O que ler:</strong></p>
+  <ul>
+    <li><strong>Tipologia da assimetria.</strong> <em>Hidden type</em> (seleção adversa) vs. <em>hidden action</em> (risco moral). Por que cada uma quebra o 1º TBE de modo distinto.</li>
+    <li><strong>O problema do limão (Akerlof 1970).</strong> Modelo de qualidade não-observável; derivação do unraveling.</li>
+    <li><strong>Mercados de seguro (R-S 1976).</strong> Dois tipos de risco; equilíbrio separador; inexistência do pooling.</li>
+    <li><strong>Principal-agente (Holmström 1979).</strong> Setup canônico 2×2; first-best vs. second-best; fórmula informativa.</li>
+    <li><strong>Aplicações:</strong> planos de saúde + ANS; Bolsa Família condicional; IR progressivo Mirrlees-style.</li>
+    <li><strong>Sinalização e screening.</strong> Pré-anúncio da Aula 9 (Spence); aqui apenas citamos.</li>
+  </ul>
+  <p>Recomendação: leia o capítulo com calma. A parte sobre sinalização e screening fica para a abertura da Aula 9 — não tente antecipar.</p>
+  <p style="margin-top:1rem">
+    <a href="https://darciogm.github.io/micro-book/cap19/" target="_blank" rel="noopener" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;text-decoration:none;font-weight:600;font-size:inherit">Abrir ZaE Cap. 19 (livro público) →</a>
+  </p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-leitura-zae')" style="margin-top:1.5rem">Terminei a leitura de ZaE Cap. 19</button>
+</section>
+
+<!-- ==================== SECTION 2: LEITURA N&S ==================== -->
+<section class="section-block locked" id="s2-leitura-ns" data-section="s2-leitura-ns" data-order="2">
+  <div class="section-meta">Seção 2 · Leitura dirigida · 20 min</div>
+  <h2>N&amp;S 12e — Cap. 18 (piso obrigatório)</h2>
+  <p>Abra o <strong>Nicholson &amp; Snyder, <em>Microeconomic Theory: Basic Principles and Extensions</em>, 12ª ed., Cap. 18</strong> ("Asymmetric Information"). Esta é a <strong>leitura formal canônica</strong> que estabelece o nível matemático mínimo da turma.</p>
+  <p><strong>Foco de leitura (em ordem):</strong></p>
+  <ul>
+    <li><strong>§18.1</strong> — Complex Contracts as a Response to Asymmetric Information. Tipologia.</li>
+    <li><strong>§18.2</strong> — Principal-Agent Model. Setup canônico, IC + IR, first-best vs. second-best.</li>
+    <li><strong>§18.3</strong> — Hidden Actions. Risco moral em economia de seguros e em emprego.</li>
+    <li><strong>§18.4</strong> — Owner-Manager Relationship. Aplicação a corporate governance.</li>
+    <li><strong>§18.5</strong> — Moral Hazard in Insurance. Risco moral pós-contratação em seguro.</li>
+    <li><strong>§18.6</strong> — Hidden Types. Seleção adversa em seguro e mercado de trabalho.</li>
+    <li><strong>§18.7</strong> — The Lemons Model (Akerlof). Derivação cuidadosa de unraveling.</li>
+    <li><strong>§18.8</strong> — Auctions and Mechanism Design. Ligações para VCG (Aula 7) e revelação. Leitura opcional.</li>
+  </ul>
+  <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.95rem"><strong>Calibre.</strong> N&amp;S §18.2 deriva o principal-agente via Lagrangiano com restrições IC + IR — <strong>exatamente</strong> o que vamos fazer no Bloco 3 do durante-aula. Quem dominar a derivação até CPO sai pronto. <strong>MWG Cap. 13</strong> (Adverse Selection, Signaling, and Screening + Moral Hazard) aparece cirurgicamente em 🔴 — não é leitura obrigatória. <strong>J-R 3e §7.1 (Akerlof) + §7.3 (R-S)</strong> é teto de conforto opcional.</p>
+  <p style="margin-top:1rem">
+    <button onclick="MPE.openMaterial('nicholson-snyder-12e-cap18.pdf', this)" style="background:var(--accent);color:#fff;padding:0.5rem 1rem;border-radius:4px;border:none;cursor:pointer;font-weight:600;font-size:inherit;font-family:inherit">Abrir N&amp;S Cap. 18 (PDF) →</button>
+    <span style="font-size:0.8rem;color:#64748b;margin-left:0.5rem">Acesso restrito — requer login. <em>Caso indisponível, use a versão impressa do Insper.</em></span>
+  </p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s2-leitura-ns')" style="margin-top:1.5rem">Terminei a leitura de N&amp;S Cap. 18</button>
+</section>
+
+<!-- ==================== SECTION 3: DIAGNÓSTICO + AKERLOF (1970) ==================== -->
+<section class="section-block locked" id="s3-akerlof" data-section="s3-akerlof" data-order="3">
+  <div class="section-meta">Seção 3 · Conceitual · 16 min</div>
+  <h2>Diagnóstico + Akerlof (1970): o problema do limão</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes de estudar: quão confortável você está com <strong>tipologia de assimetria</strong> (hidden type vs. hidden action) e <strong>unraveling de Akerlof</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-akerlof','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <h3>Diagnóstico: por que assimetria informacional quebra o 1º TBE</h3>
+    <p><strong>Tipologia operacional.</strong> Há <strong>dois grandes regimes</strong> de assimetria:</p>
+    <ul>
+      <li><strong>Hidden type (seleção adversa):</strong> o agente conhece, <em>antes da transação</em>, uma característica privada \(\theta\) (sua qualidade, seu risco, sua produtividade) que o principal não observa. Decisões dependem de \(\theta\).</li>
+      <li><strong>Hidden action (risco moral):</strong> o agente escolhe, <em>após assinar o contrato</em>, uma ação \(a\) (esforço, cuidado, alocação) que o principal não observa diretamente. O principal observa apenas um sinal ruidoso \(y = y(a, \varepsilon)\).</li>
+    </ul>
+    <p><strong>Por que isso quebra o 1º TBE.</strong> Recapitule o argumento do 1º TBE estendido (Aula 5): \(\tilde x \succ x^*\) viável \(\Rightarrow p^* \cdot \tilde x > p^* \cdot \omega \Rightarrow\) contradição. O passo crítico era que <strong>todo agente observa as mesmas características do bundle transacionado</strong>. Sob assimetria, o principal <strong>não consegue distinguir</strong> o tipo do agente nem verificar a ação tomada — então o conjunto de contratos <em>implementáveis</em> fica restrito a contratos que satisfazem <strong>restrições de compatibilidade de incentivo (IC)</strong> e de <strong>participação (IR)</strong>.</p>
+
+    <div class="admonition note">
+    <div class="admonition-title">Microscópio pedagógico</div>
+    <p>Aula 6 quebrou o 1º TBE por <strong>incompletude</strong> (faltavam ativos no span). Aula 7 quebrou por <strong>escopo da interação</strong> (a ação fora do preço). Aqui quebra por <strong>escopo da observabilidade</strong> — o vetor de bens transacionados existe, mas o principal não consegue medi-lo todo. São três mecanismos distintos. Aula 9 introduz mecanismos descentralizados (sinalização, matching) que tentam reabrir o conjunto factível.</p>
+    </div>
+
+    <h3>Akerlof (1970) — o problema do limão</h3>
+    <p><strong>Akerlof, G. A. (1970). "The Market for 'Lemons': Quality Uncertainty and the Market Mechanism." <em>Quarterly Journal of Economics</em> 84(3), 488–500, <a href="https://doi.org/10.2307/1879431" target="_blank" rel="noopener">DOI 10.2307/1879431</a>.</strong></p>
+    <p><strong>Setup mínimo (versão didática).</strong> Mercado de carros usados. Cada vendedor tem um carro com qualidade \(\theta \in [\underline\theta, \overline\theta]\) (uniforme em \([0,1]\) por simplicidade). O <strong>vendedor conhece</strong> \(\theta\); o <strong>comprador não</strong>. Vendedor reserva \(\theta\) (disposto a vender por \(\ge \theta\)); comprador valoriza \(\beta \theta\) com \(\beta > 1\) (existem ganhos do comércio se houvesse simetria).</p>
+    <p><strong>Equilíbrio sob simetria.</strong> Se ambos observassem \(\theta\), todo carro com \(\beta \theta > \theta\) (i.e., todo carro, dado \(\beta > 1\)) seria transacionado. <strong>Eficiência completa.</strong></p>
+    <p><strong>Equilíbrio sob assimetria.</strong> Comprador propõe preço \(p\) baseado na <strong>qualidade média esperada</strong> dos carros que aceitariam vender a \(p\). Vendedor aceita se \(\theta \le p\). Logo, à preço \(p\), o conjunto de vendedores ativos é \(\{\theta : \theta \le p\}\) — distribuição truncada. Sob uniforme, qualidade média condicional \(\mathbb{E}[\theta | \theta \le p] = p/2\). Comprador disposto a pagar até \(\beta p/2\).</p>
+    <p><strong>Equação do equilíbrio competitivo:</strong></p>
+    \[
+    p^* = \beta \cdot \mathbb{E}[\theta | \theta \le p^*] = \beta p^*/2 \;\;\Longleftrightarrow\;\; p^*(1 - \beta/2) = 0.
+    \]
+    <p>Se \(\beta < 2\), única solução interior é \(p^* = 0\) — <strong>mercado colapsa</strong>. Se \(\beta = 2\), qualquer \(p \in [0, 1]\) é equilíbrio (degenerada). Se \(\beta > 2\), o equilíbrio interior \(p=0\) deixa de ser estável; transações ocorrem.</p>
+
+    <div class="admonition note" style="border-left-color:#7c2d12;background:#fff7ed">
+    <div class="admonition-title" style="color:#7c2d12">Eq-punch</div>
+    <p>"Quando o <strong>bom</strong> subsidia o <strong>ruim</strong> via preço médio, os <strong>bons</strong> abandonam o mercado primeiro. O mercado <em>não consegue distinguir</em>, e o que sobra é o <strong>pior</strong>." É unraveling: bons saem, qualidade média cai, preço cai, mais bons saem.</p>
+    </div>
+
+    <div class="admonition note">
+    <div class="admonition-title">🇧🇷 Box Brasil — Mercado de carros usados + Webmotors/OLX</div>
+    <p>O <strong>mercado brasileiro de carros usados</strong> é o caso canônico de Akerlof aplicado: assimetria entre vendedor (conhece histórico, manutenção, sinistros) e comprador (vê apenas inspeção visual). Plataformas tipo <strong>Webmotors, OLX, Mercado Livre</strong> introduzem mecanismos parciais de redução de assimetria: laudo cautelar, garantia de loja, histórico de manutenção. <strong>Concessionárias certificadas</strong> com programa de "seminovos com garantia" cobram <strong>prêmio de informação</strong>: preço maior porque inspeção + garantia reduzem incerteza. Resultado empírico: distribuição <strong>bimodal</strong> dos preços de transação — concessionária aproxima do novo; OLX particular sofre <em>lemons discount</em> substancial.</p>
+    </div>
+
+    <div class="admonition note" style="border-left-color:#1B3A5C">
+    <div class="admonition-title" style="color:#1B3A5C">🌍 Box Mundo — Akerlof's used cars como referência canônica</div>
+    <p>O exemplo de Akerlof (1970) é o de carros usados nos EUA — canonicamente, é o paper que rendeu <strong>Nobel 2001</strong> (compartilhado com Stiglitz e Spence, "for their analyses of markets with asymmetric information"). O mecanismo central — informação privada do vendedor — generaliza-se para: seguros (Stiglitz), trabalho (Spence), crédito (Stiglitz-Weiss 1981), M&amp;A (Myers-Majluf 1984). Toda a literatura subsequente sobre informação assimétrica desce daqui.</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (2 itens — obrigatório para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s3q1" data-correct="b">
+        <div class="q-text">1. No modelo de Akerlof com qualidade uniforme \(\theta \sim U[0, 1]\), comprador valoriza \(\beta\theta\) com \(\beta = 1{,}5\), vendedor reserva \(\theta\). Em equilíbrio competitivo:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-akerlof','s3q1','a',this)">(a) Mercado funciona normalmente — todos transacionam.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-akerlof','s3q1','b',this)">(b) Mercado colapsa: \(p = \beta p/2 \Rightarrow p(1 - \beta/2) = 0 \Rightarrow p = 0\) (única solução com \(\beta = 1{,}5 < 2\)). Adverse selection unraveling completo.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-akerlof','s3q1','c',this)">(c) Apenas carros com \(\theta > 0{,}5\) transacionam.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-akerlof','s3q1','d',this)">(d) Equilíbrio é \(p = \beta = 1{,}5\) com qualidade média \(0{,}75\).</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s3q2" data-correct="b">
+        <div class="q-text">2. A diferença operacional entre <strong>seleção adversa</strong> e <strong>risco moral</strong> é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-akerlof','s3q2','a',this)">(a) Seleção adversa é positiva, risco moral é negativo.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-akerlof','s3q2','b',this)">(b) Seleção adversa: agente conhece <em>antes</em> da contratação um <em>tipo</em> (\(\theta\)) — hidden type. Risco moral: agente escolhe <em>após</em> a contratação uma <em>ação</em> (\(a\)) — hidden action. As duas geram restrições de incentivo distintas (IC para tipos vs. IC para ações).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-akerlof','s3q2','c',this)">(c) Seleção adversa é problema de risco; risco moral é problema de informação.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-akerlof','s3q2','d',this)">(d) São equivalentes — vocabulário diferente para o mesmo fenômeno.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-akerlof','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-akerlof" disabled onclick="MPE.completeSection('s3-akerlof')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: ROTHSCHILD-STIGLITZ ==================== -->
+<section class="section-block locked" id="s4-rs" data-section="s4-rs" data-order="4">
+  <div class="section-meta">Seção 4 · Conceitual · 16 min</div>
+  <h2>Seguro com seleção adversa (Rothschild-Stiglitz 1976)</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes de ler: quão confortável está com <strong>equilíbrio separador R-S</strong>, <strong>single-crossing</strong> e <strong>inexistência possível</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-rs','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <h3>Setup do mercado de seguro com 2 tipos de risco</h3>
+    <p><strong>Rothschild, M., &amp; Stiglitz, J. (1976). "Equilibrium in Competitive Insurance Markets." <em>Quarterly Journal of Economics</em> 90(4), 629–649, <a href="https://doi.org/10.2307/1885326" target="_blank" rel="noopener">DOI 10.2307/1885326</a>.</strong></p>
+    <p><strong>Setup mínimo.</strong> Cada agente tem riqueza inicial \(W\) e enfrenta sinistro \(L\) com probabilidade \(\pi^\theta\) onde \(\theta \in \{H, L\}\) (high/low risk), com \(\pi^H > \pi^L\). Probabilidade do tipo: \(\lambda\) high, \(1-\lambda\) low. <strong>Agente conhece</strong> \(\theta\); <strong>seguradora não</strong>. Bernoulli \(u(\cdot)\) côncava (avesso ao risco). Contrato \((p, c)\): prêmio \(p\) (paga sempre) + cobertura \(c\) (recebe em sinistro).</p>
+    <p>Em equilíbrio competitivo de informação simétrica: cada tipo recebe seguro completo a prêmio actuarialmente justo \(p^\theta = \pi^\theta L\). First-best: cobertura completa, sem perda de bem-estar.</p>
+
+    <h3>Sob informação assimétrica</h3>
+    <p>Seguradora não pode oferecer \((p^H, p^L)\) condicional ao tipo (não os observa). Tem que oferecer um <strong>menu de contratos</strong> e deixar o agente escolher. <strong>Restrição de IC (incentive compatibility):</strong></p>
+    \[
+    EU^H(\alpha_H, \beta_H) \ge EU^H(\alpha_L, \beta_L), \qquad EU^L(\alpha_L, \beta_L) \ge EU^L(\alpha_H, \beta_H).
+    \]
+    <p>Cada tipo prefere o contrato a si destinado a se passar pelo outro.</p>
+    <p><strong>Crucial: single-crossing property</strong> — sob \(\pi^H > \pi^L\) e Bernoulli côncava, alto-risco tem maior disposição-a-pagar por cobertura adicional na margem. Geometricamente: as curvas de indiferença de \(H\) e \(L\) (no espaço prêmio × cobertura) se cruzam <strong>uma única vez</strong>, e \(H\) está sempre "mais inclinado".</p>
+
+    <h3>Equilíbrio separador R-S</h3>
+    <p>R-S provam: o único candidato a equilíbrio competitivo (sob entrada livre) é o <strong>separador</strong>:</p>
+    <ul>
+      <li><strong>Tipo \(H\) (alto risco):</strong> recebe <strong>cobertura completa</strong> ao prêmio actuarialmente justo \(p^H = \pi^H L\) — first-best.</li>
+      <li><strong>Tipo \(L\) (baixo risco):</strong> recebe <strong>cobertura parcial</strong> — distorção deliberada para baixo — ao prêmio justo de tipo \(L\). A cobertura é tal que tipo \(H\) é <strong>indiferente</strong> entre seu próprio contrato e o de \(L\) (IC binding).</li>
+    </ul>
+
+    <div class="admonition note" style="border-left-color:#7c2d12;background:#fff7ed">
+    <div class="admonition-title" style="color:#7c2d12">Eq-punch</div>
+    <p>"Os bons riscos pagam o preço da assimetria — recebem menos seguro que mereceriam, para que os altos riscos não os imitem." Distorção de second-best: tipo \(L\) carrega o ônus.</p>
+    </div>
+
+    <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-top:1rem;font-size:0.92rem"><strong>Spoiler do Exercício 3 dos avaliativos.</strong> Com a calibração canônica \((W, L, \pi^H, \pi^L) = (100, 56, 1/2, 1/4)\) e Bernoulli \(\sqrt{\cdot}\), a cobertura ótima do tipo \(L\) no separador sai em \(c^L_* = 8\), i.e., <strong>~14% do dano</strong>. Distorção severa — e é precisamente por isso que reguladores (ANS no Brasil, ACA nos EUA) forçam padronização e mandato participação.</p>
+
+    <h3>Inexistência possível do equilíbrio</h3>
+    <p>R-S provam (resultado central): se a proporção \(\lambda\) de altos riscos é <strong>suficientemente baixa</strong>, não existe equilíbrio competitivo separador. O pooling Pareto-domina o separador, mas não é Nash; um desviante pode oferecer contrato que atrai apenas \(L\) e quebra o pooling. <strong>Não-existência de equilíbrio competitivo</strong> é o resultado intelectualmente mais surpreendente — abre porta para regulação (mandato + cross-subsidy explícito).</p>
+
+    <div class="admonition note">
+    <div class="admonition-title">🇧🇷 Box Brasil — Planos de saúde brasileiros + ANS</div>
+    <p>O <strong>mercado brasileiro de planos de saúde</strong> (regulamentado pela ANS — Lei 9.656/1998) ilustra R-S aplicado. Sem regulação, seguradoras seriam fortemente incentivadas a <em>cherry-pick</em>: triagem médica, carências, prêmios diferenciados por idade. ANS impõe limites: faixas etárias máximas, cobertura mínima obrigatória, <strong>portabilidade</strong>. Efeito líquido: pooling regulado — cross-subsidy explícito de baixos para altos riscos. Resolve a inexistência R-S, mas a custo de second-best regulado.</p>
+    </div>
+
+    <div class="admonition note" style="border-left-color:#1B3A5C">
+    <div class="admonition-title" style="color:#1B3A5C">🌍 Box Mundo — Affordable Care Act (US 2010)</div>
+    <p>O <strong>Affordable Care Act</strong> é resposta institucional canônica ao problema R-S: (i) <strong>proíbe underwriting baseado em saúde</strong> (força pooling); (ii) <strong>mandato individual</strong> (penalidade fiscal — força participação dos baixos riscos, evita unraveling); (iii) <strong>subsídios cruzados</strong> via marketplaces. Hackmann-Kolstad-Kowalski (2015, <em>AER</em> 105(3): 1030–1066, <a href="https://doi.org/10.1257/aer.20130758" target="_blank" rel="noopener">DOI 10.1257/aer.20130758</a>) documentaram unraveling parcial em estados que removeram mandato após decisão da Suprema Corte 2012.</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s4q1" data-correct="b">
+        <div class="q-text">1. No modelo R-S com 2 tipos (H, L), single-crossing, e probabilidade \(\lambda\) baixa de altos riscos, o equilíbrio competitivo separador é caracterizado por:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-rs','s4q1','a',this)">(a) Ambos os tipos recebem cobertura completa ao prêmio justo de cada um.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-rs','s4q1','b',this)">(b) Tipo H recebe cobertura completa ao prêmio justo \(p^H = \pi^H L\); tipo L recebe cobertura parcial (distorcida para baixo) tal que tipo H seja indiferente entre os dois contratos. IC do tipo H é <em>binding</em>.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-rs','s4q1','c',this)">(c) Ambos recebem o mesmo contrato pooling.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-rs','s4q1','d',this)">(d) Tipo L recebe cobertura completa; tipo H não tem cobertura.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s4q2" data-correct="b">
+        <div class="q-text">2. A inexistência de equilíbrio competitivo separador em R-S sob \(\lambda\) baixa decorre de:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-rs','s4q2','a',this)">(a) Falha de single-crossing.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-rs','s4q2','b',this)">(b) Pooling Pareto-domina o separador para \(\lambda\) suficientemente baixo (média de risco próxima de \(\pi^L\) faz pooling barato), mas pooling não é Nash em equilíbrio competitivo: uma seguradora pode desviar oferecendo contrato que atrai apenas L e quebra o pooling. Logo, nem separador nem pooling sobrevivem como Nash — não existe equilíbrio.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-rs','s4q2','c',this)">(c) Custos administrativos das seguradoras.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-rs','s4q2','d',this)">(d) Incompatibilidade com first-best.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-rs','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-rs" disabled onclick="MPE.completeSection('s4-rs')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: HOLMSTRÖM ==================== -->
+<section class="section-block locked" id="s5-holmstrom" data-section="s5-holmstrom" data-order="5">
+  <div class="section-meta">Seção 5 · Conceitual · 18 min</div>
+  <h2>Principal-agente + risco moral (Holmström 1979)</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes de estudar: quão confortável está com <strong>principal-agente canônico</strong>, <strong>first-best vs. second-best</strong> e <strong>Lagrangiano com IR + IC</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-holmstrom','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <h3>Setup canônico 2-estados / 2-esforços</h3>
+    <p><strong>Holmström, B. (1979). "Moral Hazard and Observability." <em>Bell Journal of Economics</em> 10(1), 74–91, <a href="https://doi.org/10.2307/3003320" target="_blank" rel="noopener">DOI 10.2307/3003320</a>.</strong></p>
+    <p><strong>Setup mínimo.</strong> Principal (P, neutro ao risco) contrata Agente (A, avesso ao risco) para realizar tarefa. Agente escolhe esforço \(a \in \{a_L, a_H\}\) com custo \(c(a)\), \(c(a_H) > c(a_L) \ge 0\). Output \(y \in \{y_L, y_H\}\) com \(y_H > y_L\); probabilidade de \(y_H\) sob esforço \(a_k\): \(\pi_k = \Pr(y_H | a_k)\), \(\pi_H > \pi_L\). Contrato: salário \(w(y) \in \{w_L, w_H\}\) (depende apenas do output observável). Bernoulli \(u(\cdot)\) côncava. Reservation utility \(\bar U\).</p>
+
+    <h3>Caso 1: ação observável (first-best)</h3>
+    <p>Se \(a\) é observável, principal contrata diretamente \(a\) e oferece <strong>salário fixo</strong> que satisfaz IR com igualdade: \(u(w^*) - c(a) = \bar U\), logo \(w^* = u^{-1}(\bar U + c(a))\). <strong>Risco totalmente carregado pelo principal</strong> — ele é neutro, agente é avesso, então é Pareto-eficiente que principal absorva todo o risco. Esse é o <strong>first-best</strong>.</p>
+
+    <h3>Caso 2: ação não-observável (second-best)</h3>
+    <p>Sob <em>hidden action</em>, contrato com salário fixo é incompatível com \(a_H\): agente desviaria para \(a_L\) (poupando custo de esforço sem afetar salário). Para induzir \(a_H\), salário tem de <strong>depender</strong> do output (sinal ruidoso de \(a\)). Mas isso impõe <strong>risco</strong> ao agente — perda de seguro vs. ganho de incentivo.</p>
+    <p><strong>Programa do principal (induzindo \(a_H\)):</strong></p>
+    \[
+    \min_{w_H, w_L} \pi_H w_H + (1-\pi_H) w_L \quad \text{s.a.}
+    \]
+    <ul>
+      <li><strong>(IR)</strong> \(\pi_H u(w_H) + (1-\pi_H) u(w_L) - c(a_H) \ge \bar U\)</li>
+      <li><strong>(IC)</strong> \((\pi_H - \pi_L) [u(w_H) - u(w_L)] \ge c(a_H) - c(a_L)\)</li>
+    </ul>
+    <p>Lagrangiano: \(\mathcal{L} = \pi_H w_H + (1-\pi_H) w_L - \mu \cdot [\text{IR}] - \nu \cdot [\text{IC}]\). CPOs em \(w_H\) e \(w_L\) (após reorganização):</p>
+    \[
+    \frac{1}{u'(w_H)} = \mu + \nu \cdot \frac{\pi_H - \pi_L}{\pi_H}, \qquad \frac{1}{u'(w_L)} = \mu - \nu \cdot \frac{\pi_H - \pi_L}{1-\pi_H}.
+    \]
+    <p><strong>Interpretação.</strong> Sob first-best (\(\nu = 0\), IC não-binding), \(u'(w_H) = u'(w_L) \Rightarrow w_H = w_L\). Sob second-best (\(\nu > 0\), IC binding), \(u'(w_H) < u'(w_L) \Rightarrow w_H > w_L\) — agente carrega risco para sinalizar esforço.</p>
+
+    <div class="admonition note" style="border-left-color:#7c2d12;background:#fff7ed">
+    <div class="admonition-title" style="color:#7c2d12">Eq-punch</div>
+    <p>"Risco moral força o principal a quebrar o seguro do agente para criar incentivo. Cada centavo a mais em \(w_H - w_L\) é seguro perdido (custo) e incentivo ganho (benefício). Second-best resolve o trade-off."</p>
+    </div>
+
+    <h3>Equivalência sob neutralidade do agente</h3>
+    <p>Se o agente é <strong>neutro ao risco</strong> (\(u\) linear), \(u'(w) = \) constante, e a perda do seguro é zero. Sob essa condição, second-best = first-best — resolve-se via "contrato franchise": principal "vende" o output bruto ao agente cobrando taxa fixa = lucro esperado. Agente fica residual claimant; escolhe \(a_H\) por interesse próprio. Quando o agente é neutro, <strong>o problema de risco moral desaparece</strong>.</p>
+
+    <div class="admonition note">
+    <div class="admonition-title">🇧🇷 Box Brasil — Bolsa Família como contrato condicional</div>
+    <p>O <strong>Programa Bolsa Família</strong> (criado 2003, atual Bolsa Família 2023) é um contrato condicional clássico: transferência de renda condicionada a (i) frequência escolar mínima dos filhos (≥ 85%) e (ii) acompanhamento de saúde. Esses são <strong>sinais verificáveis</strong> do "esforço" educacional/sanitário da família. Sem condicionalidades, transferência é "salário fixo" — agente (família) tem incentivo a desviar ações não observáveis. Com condicionalidades, contrato implementa restrição de IC: receber o benefício <strong>exige</strong> o esforço.</p>
+    </div>
+
+    <div class="admonition note" style="border-left-color:#1B3A5C">
+    <div class="admonition-title" style="color:#1B3A5C">🌍 Box Mundo — Stock options para CEO</div>
+    <p>Stock options para executivos seguram a estrutura básica do principal-agente: principal (acionistas) contrata agente (CEO) cuja ação é não-observável; output (preço da ação) é observável mas ruidoso. Stock options pagam ao CEO uma <strong>fração crescente</strong> do preço da ação acima de um <em>strike</em>. Equivalente operacional ao \(w_H > w_L\). <strong>Holmström-Milgrom (1987, <em>Econometrica</em> 55(2): 303–328, <a href="https://doi.org/10.2307/1913238" target="_blank" rel="noopener">DOI 10.2307/1913238</a>)</strong> generaliza para contínuo. Limites: stock options podem incentivar tomada de risco excessivo (segundo problema agency: risk-shifting); daí RSU, claw-back clauses, ESG-linked compensation como refinamentos.</p>
+    </div>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s5q1" data-correct="b">
+        <div class="q-text">1. No problema principal-agente canônico de Holmström com agente avesso ao risco e ação <strong>observável</strong>, o salário ótimo é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-holmstrom','s5q1','a',this)">(a) Variável (\(w_H \neq w_L\)) — incentivo direto via output.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-holmstrom','s5q1','b',this)">(b) Fixo (\(w_H = w_L\)) — principal neutro absorve todo o risco. IR é binding (utilidade reservada); IC é irrelevante porque ação é diretamente verificável. Este é o first-best.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-holmstrom','s5q1','c',this)">(c) \(w = 0\) — principal extrai todo o excedente.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-holmstrom','s5q1','d',this)">(d) Indeterminado.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s5q2" data-correct="b">
+        <div class="q-text">2. Sob ação <strong>não-observável</strong> + agente <strong>avesso ao risco</strong>, o second-best ótimo satisfaz:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-holmstrom','s5q2','a',this)">(a) \(w_H = w_L\) (salário fixo).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-holmstrom','s5q2','b',this)">(b) \(w_H > w_L\) com \(u'(w_H) < u'(w_L)\): IC binding força variabilidade do salário; agente carrega parte do risco para sinalizar esforço; second-best Pareto-dominado pelo first-best por causa da perda de seguro.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-holmstrom','s5q2','c',this)">(c) \(w_H < w_L\) — incentivo invertido.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-holmstrom','s5q2','d',this)">(d) Não há contrato implementável.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora, depois da leitura e do micro-checkpoint:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-holmstrom','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-holmstrom" disabled onclick="MPE.completeSection('s5-holmstrom')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: EXERCÍCIOS DE PAPEL ==================== -->
+<section class="section-block locked" id="s6-exercicios" data-section="s6-exercicios" data-order="6">
+  <div class="section-meta">Seção 6 · Exercícios de papel · 15 min</div>
+  <h2>Prestação de contas</h2>
+  <p>Resolva os <strong>dois primeiros</strong> exercícios propostos abaixo no papel — são <em>obrigatórios</em>. O terceiro (principal-agente second-best) é <em>bônus</em>. Marque <em>concluí</em> e descreva sua abordagem em 1–3 linhas.</p>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 1 — Akerlof com qualidade uniforme (obrigatório)</h3>
+    <p class="ex-statement">Mercado de carros usados. Qualidade \(\theta \sim U[1, 3]\). Vendedor reserva \(\theta\); comprador valoriza \(\beta \theta\) com \(\beta = 1{,}5\). (a) Sob informação simétrica, calcule o preço de equilíbrio para um carro de qualidade \(\theta = 2\). (b) Sob informação assimétrica, o comprador propõe preço \(p\); vendedor aceita se \(\theta \le p\). Calcule \(\mathbb{E}[\theta | \theta \le p]\) condicional na venda, sob distribuição uniforme \([1, p]\) (assumindo \(p \in [1, 3]\)). (c) Calcule o preço de equilíbrio competitivo \(p^*\) (onde \(p^* = \beta \cdot \mathbb{E}[\theta | \theta \le p^*]\)). (d) Argumente: o equilíbrio sobrevive ou colapsa? <em>Nota:</em> parâmetros distintos do Exercício 1 dos avaliativos — mesma estrutura conceitual.</p>
+    <label class="done-check"><input type="checkbox" id="ex81-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
+    <textarea id="ex81-approach" placeholder="Minha abordagem em 1-3 linhas (ex.: 'Calculo média condicional sob uniforme em [1, p]; aplico p = β · E[·]; verifico colapso')..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 2 — Principal-agente 2×2 (first-best, obrigatório)</h3>
+    <p class="ex-statement">Principal neutro contrata agente avesso com Bernoulli \(u(w) = \sqrt{w}\). Esforços: \(a_L\) (custo 0) e \(a_H\) (custo 4). Output: \(y_L = 0\), \(y_H = 100\). Probabilidade de \(y_H\): \(\pi_L = 0{,}3\), \(\pi_H = 0{,}7\). Reservation utility: \(\bar U = 4\). (a) Sob ação observável (first-best), calcule o salário fixo \(w^*_H\) tal que principal induza \(a_H\) — i.e., \(\sqrt{w^*_H} - 4 = \bar U = 4 \Rightarrow w^*_H = ?\) (b) Calcule o salário \(w^*_L\) que induz \(a_L\) — \(\sqrt{w^*_L} - 0 = 4 \Rightarrow w^*_L = ?\) (c) Para o principal, qual esforço é mais lucrativo? Compare \(\pi_a y_H + (1-\pi_a) y_L - w^*_a\). <em>Nota:</em> parâmetros distintos do Exercício 4 dos avaliativos.</p>
+    <label class="done-check"><input type="checkbox" id="ex82-done" onchange="MPE.updatePaperState()"> Resolvi no papel</label>
+    <textarea id="ex82-approach" placeholder="Minha abordagem em 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <div class="paper-exercise">
+    <h3>Exercício proposto 3 — Principal-agente 2×2 (second-best, bônus)</h3>
+    <p class="ex-statement">Mesmo setup do Exercício 2. Sob ação <strong>não-observável</strong>: (a) Escreva as restrições IR e IC com \(u(w) = \sqrt w\), \(\pi_H = 0{,}7\), \(\pi_L = 0{,}3\), \(c(a_H) = 4\), \(c(a_L) = 0\). (b) Resolva o sistema de 2 equações lineares em \((\sqrt{w_H}, \sqrt{w_L})\) — IR e IC ambas <em>binding</em>. (c) Compare salário esperado \(\pi_H w_H + (1-\pi_H) w_L\) com first-best \(w^*_H\) do Exercício 2(a). A diferença é o <strong>prêmio de risco moral</strong>.</p>
+    <label class="done-check"><input type="checkbox" id="ex83-done" onchange="MPE.updatePaperState()"> Resolvi no papel (opcional)</label>
+    <textarea id="ex83-approach" placeholder="Opcional — 1-3 linhas..." oninput="MPE.updatePaperState()"></textarea>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s6-exercicios" disabled onclick="MPE.completePaperExercises()">Registrar e avançar</button>
+</section>
+
+<!-- ==================== SECTION 7: CHECKPOINT FINAL ==================== -->
+<section class="section-block locked" id="s7-checkpoint" data-section="s7-checkpoint" data-order="7">
+  <div class="section-meta">Seção 7 · Checkpoint de síntese · 10 min</div>
+  <h2>Checkpoint final — 3 itens de síntese</h2>
+  <p>Estes 3 itens conectam <strong>diagnóstico → Akerlof → R-S → Holmström</strong>. Fechado, sem consulta.</p>
+
+  <div class="quiz-container">
+    <div class="quiz-header"><h3>Checkpoint Pré-Aula 08</h3>
+    <div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+
+    <div class="quiz-question" data-question="q1" data-correct="b">
+    <div class="q-text">Q1 (síntese — diagnóstico). Informação assimétrica quebra o 1º TBE da Aula 5 porque:</div>
+    <div class="quiz-option" data-value="a">(a) Os preços ficam incorretos.</div>
+    <div class="quiz-option" data-value="b">(b) O conjunto de contratos implementáveis é restrito por IC + IR — apenas contratos compatíveis com incentivo (agente não desvia) e participação (agente aceita) são factíveis. Esse conjunto é estritamente menor que o conjunto AD canônico, e o equilíbrio competitivo restrito a ele tipicamente é Pareto-dominado pelo first-best com informação simétrica.</div>
+    <div class="quiz-option" data-value="c">(c) Os agentes são irracionais.</div>
+    <div class="quiz-option" data-value="d">(d) O 1º TBE não vale em economias com produção.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-question" data-question="q2" data-correct="b">
+    <div class="q-text">Q2 (síntese — Akerlof). O resultado de unraveling de Akerlof (1970) implica que:</div>
+    <div class="quiz-option" data-value="a">(a) Mercados sempre funcionam apesar da assimetria.</div>
+    <div class="quiz-option" data-value="b">(b) Sob seleção adversa em mercado de qualidade não-observável, o equilíbrio competitivo pode degenerar — bons saem do mercado primeiro, qualidade média condicional cai, preço cai, mais bons saem; o limite é colapso completo (\(p^* = 0\)) ou unraveling para mínima qualidade. A falha é Pareto-ineficiente — informação simétrica entregaria first-best com toda transação realizada.</div>
+    <div class="quiz-option" data-value="c">(c) Comprador sempre paga preço alto.</div>
+    <div class="quiz-option" data-value="d">(d) Vendedor sempre lucra com a assimetria.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-question" data-question="q3" data-correct="b">
+    <div class="q-text">Q3 (síntese — Holmström). No principal-agente canônico de Holmström (1979) com agente avesso ao risco, o trade-off central do second-best é:</div>
+    <div class="quiz-option" data-value="a">(a) Eficiência ex-ante vs. eficiência ex-post.</div>
+    <div class="quiz-option" data-value="b">(b) Seguro (eficiência ex-post — agente é avesso, principal é neutro, então first-best entrega salário fixo) vs. incentivo (eficiência ex-ante — sob ação não-observável, IC requer salário variável). O second-best resolve o trade-off via Lagrangiano com IC binding; perda de bem-estar é a "sombra" da informação assimétrica. Sob agente neutro, o trade-off desaparece e first-best volta.</div>
+    <div class="quiz-option" data-value="c">(c) Lucro do principal vs. lucro do agente.</div>
+    <div class="quiz-option" data-value="d">(d) Risco do agente vs. risco da seguradora.</div>
+    <div class="quiz-feedback"></div>
+    </div>
+
+    <div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-08'); MPE.completeSection('s7-checkpoint')">Enviar Checkpoint</button></div>
+  </div>
+</section>
+
+<!-- ==================== SECTION 8: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s8-reflexao" data-section="s8-reflexao" data-order="8">
+  <div class="section-meta">Seção 8 · Reflexão qualitativa · 3 min</div>
+  <h2>Fechamento — suas dúvidas alimentam o Bloco 0 da aula</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas entram no <em>dashboard</em> do professor e orientam a triagem na abertura da Aula 8.</p>
+
+  <div class="reflection-block">
+    <label>Que conceito ou passagem ainda está <strong>nebuloso</strong> pra você?</label>
+    <textarea id="refl-nebulosa" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Por que pooling não é Nash em R-S?' ou 'Como visualizar single-crossing geometricamente?' ou 'Por que neutralidade do agente leva a first-best em risco moral?' ou 'Como a fórmula informativa de Holmström entrega o peso ótimo de cada sinal?'"></textarea>
+    <div class="help">Seja específico: cite conceito, equação ou passagem. Respostas tipo "nada" ou "tudo ok" zeram o campo.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>Qual ponto você quer ver <strong>discutido em sala</strong>?</label>
+    <textarea id="refl-aula" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Quero ver a derivação do principal-agente no quadro com números.' ou 'Quero entender como a ANS regula plano de saúde via R-S.' ou 'Como o ACA mandato + proibição de underwriting resolve o problema de inexistência R-S?' ou 'Onde a tragédia dos comuns reaparece em risco moral em equipe?'"></textarea>
+    <div class="help">Essa resposta informa a agenda do Bloco 0. Quanto mais aparece, mais tempo ocupa em sala.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s8-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-aula</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-aula 8 concluída</h2>
+  <p>Você cumpriu o contrato: leitura, conceitual, exercícios de papel, checkpoint, reflexão. O dashboard do professor registrou tudo.</p>
+  <p style="margin-top:1rem"><strong>Próxima aula:</strong> quarta, 10/06/2026, 19:30. Chegue 5 minutos antes.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Não esqueça do <a href="aula-08-pre.html" style="color:#fff;text-decoration:underline">quiz de revisão pré-aula 8</a> (10 questões 🟡). Prazo: 02/07/2026 às 18h.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-08');
+MicroQuiz.init('aula-08');
+
+var PAGE_ID = 'aula-08';
+var TOTAL_SECTIONS = 9; // s0..s8
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updatePaperState: function() {
+    var done81 = document.getElementById('ex81-done').checked;
+    var done82 = document.getElementById('ex82-done').checked;
+    var app81 = document.getElementById('ex81-approach').value.trim();
+    var app82 = document.getElementById('ex82-approach').value.trim();
+    var ok = done81 && done82 && app81.length >= 10 && app82.length >= 10;
+    document.getElementById('complete-s6-exercicios').disabled = !ok;
+  },
+  completePaperExercises: function() {
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-1', document.getElementById('ex81-approach').value.trim());
+    MicroTracker.recordPaperExercise(PAGE_ID, 'ep-2', document.getElementById('ex82-approach').value.trim());
+    var app83 = document.getElementById('ex83-approach').value.trim();
+    if (app83.length > 0) MicroTracker.recordPaperExercise(PAGE_ID, 'ep-3', app83);
+    this.completeSection('s6-exercicios');
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-nebulosa').value.trim();
+    var b = document.getElementById('refl-aula').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s8-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'nebulosa', document.getElementById('refl-nebulosa').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'aula', document.getElementById('refl-aula').value.trim());
+    this.completeSection('s8-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    var completedCount = 0;
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+        completedCount++;
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  },
+
+  openMaterial: function(fileName, btnEl) {
+    if (!window.MpeDB || !window.MpeDB.enabled) {
+      alert('Conexao com a plataforma indisponivel. Recarregue a pagina.');
+      return;
+    }
+    var originalText = btnEl ? btnEl.innerHTML : null;
+    if (btnEl) { btnEl.disabled = true; btnEl.innerHTML = 'Abrindo...'; }
+    window.MpeDB.openCourseMaterial(fileName).then(function(res) {
+      if (btnEl) { btnEl.disabled = false; btnEl.innerHTML = originalText; }
+      if (!res.ok) {
+        console.error('[openMaterial] falha:', res.error);
+        alert('Nao foi possivel abrir o material. Verifique se voce esta logado e tente novamente.');
+      }
+    });
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,761 @@
+---
+title: "Seleção Adversa e Risco Moral"
+subtitle: "Aula 8 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-06-10"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 10/06/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Seleção Adversa e Risco Moral {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 8 — Catálogo de Falhas (III): informação assimétrica**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+10 de junho de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 5 fechou Arrow-Debreu. Aula 6 abriu incompletude (1ª falha). Aula 7 catalogou externalidades + bens públicos (2ª falha). Hoje: a terceira — informação assimétrica. Aula 9: sinalização + matching como mecanismos de coordenação.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Diagnosticar assimetria informacional (hidden type vs. hidden action), derivar Akerlof unraveling, caracterizar R-S separador e inexistência, resolver Holmström principal-agente (first-best vs. second-best) com IR + IC.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE Cap. 19 + N&S §18.2/§18.5/§18.7 lidos com calma.
+- Lagrangiano com restrições, Bernoulli côncava, expectativa condicional na ponta da língua.
+- 1º TBE estendido (Aula 5) + duas falhas anteriores (Aulas 6 e 7) na memória.
+:::
+
+::: {.fragment}
+[Sair sem entender que **conjunto factível com IC + IR é estritamente menor que o canônico AD** = Aula 9 fica solta.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Recall Aula 7 + ponte falhas | 19:30–19:35 |
+| 1 | Diagnóstico + Akerlof (1970) | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Rothschild-Stiglitz (1976) — seguro | 20:25–21:05 |
+| 3 | Holmström (1979) — principal-agente | 21:05–21:50 |
+| — | *Pausa* | 21:50–22:00 |
+| 4 | Aplicações: Mirrlees, Grossman-Hart, ANS, ACA | 22:00–22:25 |
+| 5 | Síntese + ponte Aula 9 | 22:25–22:30 |
+
+::: {.bridge}
+180 min cheios. Hoje fecha o catálogo das três falhas. Aula 9 introduz mecanismos descentralizados.
+:::
+
+---
+
+## Bloco 1 — Diagnóstico + Akerlof {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Tipologia hidden type vs. hidden action; Akerlof unraveling; mercado de carros usados.
+:::
+
+---
+
+## Tipologia da assimetria
+
+::: {.compact-table}
+| Regime | Quando? | Exemplo canônico |
+|:---|:---|:---|
+| **Hidden type (sel. adversa)** | Antes da contratação | Vendedor conhece qualidade; segurado conhece risco |
+| **Hidden action (risco moral)** | Após a contratação | Segurado age com menos cuidado; CEO aloca esforço |
+:::
+
+::: {.bridge}
+Vamos modelar as duas em sequência: Akerlof + R-S para seleção adversa; Holmström para risco moral.
+:::
+
+---
+
+## Por que isso quebra o 1º TBE
+
+> Aula 5: 1º TBE valia em economia AD canônica. Hoje?
+
+::: {.card}
+$$\text{Conjunto factível AD} \supsetneq \text{Conjunto factível com IR + IC}.$$
+:::
+
+**(IR)** Agente **aceita** se utilidade esperada $\ge \bar U$. **(IC)** Agente **escolhe** ação compatível se desviar não compensa.
+
+::: {.bridge}
+Aula 6: incompletude (faltavam ativos). Aula 7: escopo da interação (faltam preços). Hoje: escopo da observabilidade (faltam medidas).
+:::
+
+---
+
+## Akerlof (1970) — setup
+
+::: {.callout-note .callout}
+Akerlof, G. A. (1970). "The Market for 'Lemons'." *QJE* 84(3), 488–500, [DOI 10.2307/1879431](https://doi.org/10.2307/1879431).
+:::
+
+::: {.compact-table}
+| Item | Especificação |
+|:---|:---|
+| Mercado | Carros usados |
+| Qualidade | $\theta \sim U[0, 1]$ |
+| Vendedor | Conhece $\theta$; reserva $\theta$ |
+| Comprador | Não conhece; valoriza $\beta\theta$, $\beta > 1$ |
+:::
+
+::: {.bridge}
+Sob simetria, todo carro transaciona. Sob assimetria?
+:::
+
+---
+
+## Akerlof — derivação (1/2)
+
+Comprador propõe $p$. Vendedor aceita se $\theta \le p$. Conjunto ativo: $\{\theta : \theta \le p\}$, distribuído $U[0, p]$.
+
+$$\mathbb{E}[\theta | \theta \le p] = p/2.$$
+
+Comprador competitivo paga $\beta \cdot \mathbb{E}[\theta | \theta \le p] = \beta p/2$.
+
+::: {.eq-key}
+$$p^* = \beta \cdot \mathbb{E}[\theta | \theta \le p^*] \;\Longleftrightarrow\; p^*(1 - \beta/2) = 0.$$
+:::
+
+---
+
+## Akerlof — derivação (2/2)
+
+Se $\beta < 2$: única solução interior $p^* = 0$ — **mercado colapsa**.
+
+Se $\beta = 2$: continuum de equilíbrios degenerados.
+
+Se $\beta > 2$: equilíbrio interior $p^* > 0$ — todos transacionam.
+
+::: {.eq-punch}
+"Bons saem do mercado primeiro. Qualidade média condicional cai. Preço cai. Mais bons saem. **Cascata de adverse selection.**"
+:::
+
+---
+
+## Akerlof — exemplo numérico
+
+$\beta = 1{,}5$, $\theta \sim U[0, 1]$:
+
+$$p = 1{,}5 \cdot p/2 = 0{,}75 p \;\Rightarrow\; p \cdot 0{,}25 = 0 \;\Rightarrow\; p^* = 0.$$
+
+::: {.bridge}
+Único equilíbrio: ninguém transaciona. Pareto-dominado por simétrico (todos transacionam).
+:::
+
+---
+
+## Box Brasil — carros usados + Webmotors/OLX
+
+> Vendedor conhece histórico (sinistros, manutenção). Comprador vê apenas inspeção visual.
+
+- Plataformas (Webmotors, OLX) reduzem assimetria parcialmente: laudo cautelar, garantia.
+- **Concessionária com seminovos certificados** cobra prêmio de informação.
+- Empírico: distribuição **bimodal** dos preços (concessionária vs. OLX particular).
+
+::: {.callout-note .callout}
+Lemons discount substantivo no segmento OLX. Teoria prevê o que vemos.
+:::
+
+---
+
+## Box Mundo — Akerlof como referência canônica
+
+> Nobel 2001: Akerlof + Stiglitz + Spence.
+
+::: {.eq-punch}
+Toda a literatura subsequente sobre informação assimétrica desce daqui. Aplicações: seguros (Stiglitz), trabalho (Spence), crédito (Stiglitz-Weiss 1981), M&A (Myers-Majluf 1984).
+:::
+
+::: {.bridge}
+Spence é Aula 9 (sinalização). Stiglitz aparece no próximo bloco (R-S 1976).
+:::
+
+---
+
+## Pausa 1 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+20:15 – 20:25 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+R-S 1976 quando voltarem.
+:::
+
+:::
+
+---
+
+## Bloco 2 — Rothschild-Stiglitz {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 20:25–21:05
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Seguro com 2 tipos. Single-crossing. Separador. Inexistência. ANS + ACA.
+:::
+
+---
+
+## R-S (1976) — setup
+
+::: {.callout-note .callout}
+Rothschild, M., & Stiglitz, J. (1976). "Equilibrium in Competitive Insurance Markets." *QJE* 90(4), 629–649, [DOI 10.2307/1885326](https://doi.org/10.2307/1885326).
+:::
+
+::: {.compact-table}
+| Item | Especificação |
+|:---|:---|
+| Riqueza inicial | $W$ |
+| Sinistro | $L$, com prob. $\pi^\theta$, $\theta \in \{H, L\}$ |
+| Probabilidade | $\pi^H > \pi^L$ |
+| Proporção | $\lambda$ alto risco, $1 - \lambda$ baixo |
+| Bernoulli | $u(\cdot)$ côncava (avesso) |
+| Contrato | $(p, c)$: prêmio $p$ + cobertura $c$ |
+:::
+
+---
+
+## First-best simétrico
+
+Equilíbrio competitivo (lucro zero por tipo): $p^\theta = \pi^\theta L$.
+
+CPO do agente avesso (igualar utilidade marginal entre estados) $\Rightarrow$ **cobertura completa** $c = L$.
+
+::: {.eq-key}
+First-best: $(p^H_*, c^H_*) = (\pi^H L, L)$, $(p^L_*, c^L_*) = (\pi^L L, L)$.
+:::
+
+::: {.bridge}
+Cada tipo: cobertura completa, prêmio justo. Pareto. Sem perda de bem-estar.
+:::
+
+---
+
+## Single-crossing
+
+> Sob $\pi^H > \pi^L$ + Bernoulli côncava: tipo $H$ tem maior disposição-marginal-a-pagar por cobertura.
+
+Geometricamente, no plano $(p, c)$:
+
+::: {.eq-punch}
+Curvas de indiferença $H$ e $L$ se cruzam **uma única vez**, e $H$ está sempre "mais inclinado".
+:::
+
+---
+
+## Equilíbrio separador R-S (1/2)
+
+Sob assimetria, contratos $(p, c)$ devem satisfazer IC:
+
+$$EU^H(\text{contrato }H) \ge EU^H(\text{contrato }L),$$
+
+$$EU^L(\text{contrato }L) \ge EU^L(\text{contrato }H).$$
+
+::: {.bridge}
+Tipo H tem incentivo a se passar por L (contratos de L são mais baratos). IC do H é o constraint binding.
+:::
+
+---
+
+## Equilíbrio separador R-S (2/2)
+
+::: {.eq-key}
+**Tipo $H$ recebe seu first-best:** $(p^H_*, c^H_*) = (\pi^H L, L)$.
+
+**Tipo $L$ recebe cobertura parcial:** $c^L_* < L$, com IC do $H$ binding.
+:::
+
+::: {.eq-punch}
+"Os bons riscos pagam o preço da assimetria — recebem menos seguro que mereceriam, para que os altos riscos não os imitem."
+:::
+
+---
+
+## Inexistência possível
+
+> R-S provam: para $\lambda$ (proporção de altos riscos) **suficientemente baixo**, **não existe** equilíbrio competitivo.
+
+- Sob $\lambda$ baixo, $\bar\pi \approx \pi^L$. **Pooling Pareto-domina o separador.**
+- **Mas pooling não é Nash:** desviante oferece contrato com cobertura parcial barata → atrai apenas $L$ → quebra pool.
+- **Nem separador (Pareto-pior) nem pooling (não-Nash) sobrevivem.**
+
+::: {.bridge}
+Mercado livre falha. Daí regulação.
+:::
+
+---
+
+## Box Brasil — ANS
+
+> Lei 9.656/1998: rol mínimo de cobertura, faixas etárias máximas, portabilidade.
+
+- Sem regulação: cherry-pick (triagem médica, carências, prêmios diferenciados por idade).
+- **ANS força pooling implícito** via "regulação de produto" (padronização).
+- Cross-subsidy explícito de baixos para altos riscos.
+
+::: {.callout-note .callout}
+ANS resolve inexistência R-S no Brasil; Pareto-incomparável com livre, mas viável.
+:::
+
+---
+
+## Box Mundo — ACA US 2010
+
+> Affordable Care Act: proibição de underwriting + mandato individual + subsídios.
+
+- (i) **Proibição** força pooling.
+- (ii) **Mandato** evita unraveling.
+- (iii) **Subsídios** redistribuem.
+
+::: {.eq-punch}
+Hackmann-Kolstad-Kowalski (2015): estados que removeram mandato sofreram unraveling parcial. Confirma teoria.
+:::
+
+---
+
+## Bloco 3 — Holmström {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 21:05–21:50
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Principal-agente 2×2. First-best vs. second-best. Equivalência neutra. Stock options + Bolsa Família.
+:::
+
+---
+
+## Holmström (1979) — setup
+
+::: {.callout-note .callout}
+Holmström, B. (1979). "Moral Hazard and Observability." *Bell J. Econ.* 10(1), 74–91, [DOI 10.2307/3003320](https://doi.org/10.2307/3003320).
+:::
+
+::: {.compact-table}
+| Item | Especificação |
+|:---|:---|
+| Principal | Neutro ao risco |
+| Agente | Avesso, Bernoulli $u(\cdot)$ côncava |
+| Esforço | $a \in \{a_L, a_H\}$, custo $c(a_H) > c(a_L) = 0$ |
+| Output | $y \in \{y_L, y_H\}$ com $y_H > y_L$ |
+| Probabilidade | $\pi_H > \pi_L$ ($\pi_a = \Pr(y_H \mid a)$) |
+| Reservation | $\bar U$ (IR) |
+:::
+
+---
+
+## First-best (ação observável)
+
+Principal especifica $a$ diretamente; oferece **salário fixo** $w^*$ que satisfaz IR binding.
+
+$$u(w^*) - c(a) = \bar U \;\Rightarrow\; w^* = u^{-1}(\bar U + c(a)).$$
+
+::: {.eq-key}
+**Salário fixo. Risco totalmente carregado pelo principal (neutro absorve).**
+:::
+
+::: {.bridge}
+IC é irrelevante porque ação é diretamente verificável.
+:::
+
+---
+
+## First-best — exemplo numérico
+
+$u(w) = \sqrt w$, $\bar U = 4$, $c(a_H) = 4$, $c(a_L) = 0$.
+
+::: {.compact-table}
+| Esforço | Salário fixo $w^*$ |
+|:---|:---|
+| $a_H$ | $\sqrt{w^*_H} = 4 + 4 = 8 \Rightarrow w^*_H = 64$ |
+| $a_L$ | $\sqrt{w^*_L} = 4 + 0 = 4 \Rightarrow w^*_L = 16$ |
+:::
+
+::: {.bridge}
+Comparação dos lucros decide qual induzir. Próximo: ação não-observável.
+:::
+
+---
+
+## Second-best — programa do principal
+
+Sob *hidden action*, salário fixo viola IC para $a_H$. Programa (induzindo $a_H$):
+
+$$\min_{w_H, w_L} \pi_H w_H + (1-\pi_H) w_L$$
+
+s.a.
+
+- **(IR)** $\pi_H u(w_H) + (1-\pi_H) u(w_L) - c(a_H) \ge \bar U$
+- **(IC)** $(\pi_H - \pi_L) [u(w_H) - u(w_L)] \ge c(a_H) - c(a_L)$
+
+---
+
+## Second-best — Lagrangiano + CPOs
+
+$\mathcal{L} = \pi_H w_H + (1-\pi_H) w_L - \mu \cdot [\text{IR}] - \nu \cdot [\text{IC}]$.
+
+CPOs (após reorganização):
+
+::: {.eq-key}
+$$\frac{1}{u'(w_H)} = \mu + \nu \cdot \frac{\pi_H - \pi_L}{\pi_H},$$
+
+$$\frac{1}{u'(w_L)} = \mu - \nu \cdot \frac{\pi_H - \pi_L}{1 - \pi_H}.$$
+:::
+
+---
+
+## Second-best — interpretação
+
+Sob first-best ($\nu = 0$): $u'(w_H) = u'(w_L) \Rightarrow w_H = w_L$ (salário fixo).
+
+Sob second-best ($\nu > 0$, IC binding): $u'(w_H) < u'(w_L) \Rightarrow w_H > w_L$.
+
+::: {.eq-punch}
+"Risco moral força o principal a quebrar o seguro do agente para criar incentivo. Cada centavo a mais em $w_H - w_L$ é seguro perdido (custo) e incentivo ganho (benefício)."
+:::
+
+---
+
+## Second-best — exemplo numérico (1/2)
+
+Mesmos parâmetros: $u(w) = \sqrt w$, $\bar U = 4$, $c(a_H) = 4$, $\pi_H = 0{,}7$, $\pi_L = 0{,}3$.
+
+**IR binding:** $0{,}7 \sqrt{w_H} + 0{,}3\sqrt{w_L} = 8$.
+
+**IC binding:** $0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10$.
+
+---
+
+## Second-best — exemplo numérico (2/2)
+
+Substituindo $\sqrt{w_H} = 10 + \sqrt{w_L}$ em IR:
+
+$$0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \;\Rightarrow\; \sqrt{w_L} = 1.$$
+
+Logo $\sqrt{w_H} = 11$, $w_L = 1$, $w_H = 121$.
+
+::: {.eq-key}
+$\mathbb{E}[w] = 0{,}7 \cdot 121 + 0{,}3 \cdot 1 = 85$.
+:::
+
+::: {.bridge}
+First-best $w^*_H = 64$. Prêmio de risco moral $= 85 - 64 = 21$.
+:::
+
+---
+
+## Equivalência sob neutralidade
+
+Se agente é **neutro ao risco** ($u(w) = w$), $u'(w) = 1$ constante.
+
+CPOs: $1 = \mu + \nu \cdot (\pi_H - \pi_L)/\pi_H = \mu - \nu \cdot (\pi_H - \pi_L)/(1-\pi_H)$.
+
+Subtraindo: $0 = \nu \cdot (\pi_H - \pi_L) [1/\pi_H + 1/(1-\pi_H)] \Rightarrow \nu = 0$ (sob $\pi_H \neq \pi_L$).
+
+::: {.eq-punch}
+**IC não-binding em second-best com agente neutro. Second-best = first-best.**
+:::
+
+---
+
+## Equivalência — interpretação
+
+> Por quê?
+
+- Principal pode "vender o output" ao agente.
+- Agente residual claimant: paga taxa fixa $F$ = lucro esperado, fica com $y - F$.
+- Sem perda de seguro (agente neutro não tem aversão).
+- Agente escolhe $a_H$ por interesse próprio.
+
+::: {.bridge}
+**O custo do risco moral é especificamente o custo de quebrar o seguro do agente avesso.** Sob neutralidade, custo zero.
+:::
+
+---
+
+## Box Brasil — Bolsa Família
+
+> Transferência condicionada a frequência escolar (≥85%) e acompanhamento de saúde.
+
+- Sinais verificáveis do "esforço" educacional/sanitário.
+- Sem condicionalidade: salário fixo → desvio.
+- Com condicionalidade: implementa **IC formal**.
+
+::: {.callout-note .callout}
+Glewwe-Olinto (2004), Soares et al. (2010): efeitos positivos sobre frequência escolar atribuíveis à condicionalidade. Empírico-confirma teoria.
+:::
+
+---
+
+## Box Mundo — Stock options para CEO
+
+> Acionistas (P, neutros — diversificados) contratam CEO (A, avesso — concentrado).
+
+- Esforço CEO não-observável; preço da ação observável e ruidoso.
+- Stock options: $w$ crescente em preço da ação acima de strike — $w_H > w_L$.
+- **Holmström-Milgrom (1987)**: generalização para contínuo + relative performance evaluation.
+
+::: {.bridge}
+Limites: stock options podem incentivar risco excessivo (segundo agency). Daí RSU + claw-back.
+:::
+
+---
+
+## Pausa 2 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+21:50 – 22:00 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Aplicações + Mirrlees + Grossman-Hart no Bloco 4.
+:::
+
+:::
+
+---
+
+## Bloco 4 — Aplicações + Extensões {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+25 min · 22:00–22:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Mirrlees taxação ótima. Grossman-Hart fronteiras da firma. Síntese das 3 falhas.
+:::
+
+---
+
+## Mirrlees (1971) — taxação ótima
+
+::: {.callout-note .callout}
+Mirrlees, J. A. (1971). "An Exploration in the Theory of Optimum Income Taxation." *Rev. Econ. Studies* 38(2), 175–208, [DOI 10.2307/2296779](https://doi.org/10.2307/2296779). Nobel 1996.
+:::
+
+> Governo (P) não observa **produtividade** $\theta$ (hidden type); observa apenas **renda** $y = \theta a$.
+
+Tributo $T(y)$ resolve IR + IC sobre coleção contínua de tipos.
+
+::: {.bridge}
+Aplicação direta de seleção adversa a política tributária.
+:::
+
+---
+
+## Mirrlees — resultado central
+
+::: {.eq-key}
+**Alíquota marginal não é monotonicamente crescente em renda.**
+:::
+
+- Pode ser zero no topo (tipo mais produtivo é "irrelevante" para IC dos abaixos).
+- Estrutura U-invertida sob hipóteses padrão.
+
+::: {.eq-punch}
+"Sabedoria popular" diria alíquota crescente. Teoria diz U-invertida — design tributário ótimo não é trivialmente progressivo.
+:::
+
+---
+
+## Box Brasil — IR progressivo
+
+> Estrutura atual: até R\$ 22.847,76 isento, depois 7,5%, 15%, 22,5%, 27,5%.
+
+- Uniformemente progressiva — não U-invertida.
+- Pode-se argumentar second-best por restrições adicionais:
+  - **Informalidade:** alíquota alta no meio incentiva sair do registro.
+  - **Capacidade fiscal:** alíquota zero no topo requer governo crível.
+
+::: {.bridge}
+Mirrlees instrutivo como referência teórica; aplicação requer ajustes substanciais.
+:::
+
+---
+
+## Grossman-Hart (1983)
+
+::: {.callout-note .callout}
+Grossman, S. J., & Hart, O. D. (1983). "An Analysis of the Principal-Agent Problem." *Econometrica* 51(1), 7–45, [DOI 10.2307/1912246](https://doi.org/10.2307/1912246).
+:::
+
+> Estende Holmström para framework de **fronteiras da firma** + **contratos incompletos**.
+
+- Direitos residuais de controle quando contrato não cobre todas as contingências.
+- Integração vertical pode ser Pareto-superior sob investimento específico.
+
+::: {.bridge}
+Hart Nobel 2016. Tradição "Property Rights Theory of the Firm" desce daqui.
+:::
+
+---
+
+## Síntese: 3 falhas + 3 vias institucionais
+
+::: {.compact-table}
+| Falha (Aula) | Mecanismo | Vias institucionais |
+|:---|:---|:---|
+| **Incompletude** (6) | Faltam ativos no span | Mercados completos; AD; Radner |
+| **Externalidade + BP** (7) | Ação fora do preço | Pigou; Coase; cap-and-trade; VCG; Ostrom |
+| **Info assimétrica** (8) | Restrição IR + IC | Sinalização (Aula 9); revelação (VCG); regulação (ACA, ANS); reputação |
+:::
+
+::: {.bridge}
+Cada falha tem múltiplas vias. Economias reais usam combinações. Teoria dá vocabulário, não receita única.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 9 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Catálogo das 3 falhas fechado. Aula 9: mecanismos descentralizados.
+:::
+
+---
+
+## Síntese da Aula 8
+
+::: {.compact-table}
+| Conceito | Resultado |
+|:---|:---|
+| Tipologia | hidden type (sel. adversa) vs. hidden action (risco moral) |
+| Akerlof | unraveling: $p^* \to 0$ sob $\beta < 2$ |
+| R-S separador | $H$ completo, $L$ distorcido; IC do $H$ binding |
+| R-S inexistência | $\lambda$ baixo: pooling Pareto-domina mas é não-Nash |
+| Holmström FB | $w$ fixo; P absorve risco |
+| Holmström SB | $w_H > w_L$; IC binding; perda de bem-estar |
+| Equivalência | agente neutro $\Rightarrow$ SB = FB |
+:::
+
+---
+
+## Ponte Aula 9 — Sinalização + Matching
+
+::: {.fragment}
+**Pergunta-driver Aula 9:** e se o agente *informado* tomar a iniciativa?
+:::
+
+::: {.fragment}
+- **Spence (1973)** — educação como sinal de produtividade.
+- **Gale-Shapley (1962)** — matching estável (NRMP, SISU, kidney exchange).
+- **A revelação como ação estratégica** do agente.
+:::
+
+::: {.fragment}
+[Aula 9 (qua 17/06): última aula de conteúdo. Pré-monitoria 5 com Alberto, sábado 20/06 (Aulas 8–9 + revisão AF).]{.bridge}
+:::
+
+---
+
+## Encerramento {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.6em; font-weight: 600; margin-top: 0.8em;"}
+Seleção Adversa + Risco Moral — terceira falha do EG
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
+**Quiz pós-aula 8** + **Exercícios avaliativos 8** disponíveis na plataforma.
+
+**Fechamento único:** quarta 02/07/2026 · 18h.
+
+**Gabarito dos avaliativos:** quinta 03/07/2026 · 00:00.
+
+**Pré-monitoria 5** (Aulas 8–9 + revisão AF) com Alberto: sáb 20/06 · 10h.
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.85; margin-top: 0.8em;"}
+Aula 9 (qua 17/06 · 19:30): sinalização + matching. **Avaliação Final:** qua 24/06 · 19:00 · 3h · A4 de consulta.
+:::

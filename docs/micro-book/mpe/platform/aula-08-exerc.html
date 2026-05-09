@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 08 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 08</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Seleção adversa (Akerlof + Rothschild-Stiglitz), risco moral (Holmström principal-agente), aplicações (planos de saúde + ANS, ACA US 2010)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 02/07/2026 às 18:00</strong> — deadline único de submissão para todo o material avaliativo do curso.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 03/07/2026 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-08-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 08">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Diagnóstico: hidden type vs. hidden action + Akerlof preliminar</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere as três situações abaixo, todas envolvendo informação assimétrica entre dois agentes. Para cada uma, classifique o regime informacional (<em>hidden type</em> — seleção adversa — vs. <em>hidden action</em> — risco moral) e identifique a restrição binding (IR ou IC).</p>
+      <p><strong>S1.</strong> Plano de saúde individual: agente conhece sua propensão a doenças crônicas (\(\theta\)) antes de assinar o contrato; seguradora oferece cobertura sem exame médico prévio.</p>
+      <p><strong>S2.</strong> Empregador contrata vendedor com salário fixo + comissão. Após assinado, vendedor escolhe quanto se esforçar (\(a\)) na prospecção; vendas observadas são sinal ruidoso do esforço.</p>
+      <p><strong>S3.</strong> Mercado de carros usados: vendedor conhece histórico (sinistros, manutenção); comprador vê apenas inspeção visual; preço é fechado antes de o comprador "abrir o capô" para inspeção mais funda.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A situação <strong>S1</strong> corresponde a:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) Hidden action — agente escolhe se se cuida ou não.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) Hidden type — agente conhece \(\theta\) (propensão a doença) <em>antes</em> da contratação; seguradora não vê \(\theta\); restrição binding em equilíbrio competitivo é IC (cada tipo prefere seu contrato a se passar pelo outro).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) Sem assimetria — exame de admissão padroniza.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) Hidden action + IR.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> A situação <strong>S2</strong> corresponde a:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) Hidden type — vendedor é alto/baixo risco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) Hidden action — vendedor escolhe \(a\) <em>após</em> assinar; empregador observa apenas vendas \(y(a, \varepsilon)\); restrição binding sob induzir alto esforço é IC (vendedor não desvia para baixo esforço).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) Sem assimetria — comissão revela tudo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) Hidden type + IC sobre tipos.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> A situação <strong>S3</strong> corresponde a:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) Hidden action.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) Hidden type — vendedor conhece a qualidade do carro \(\theta\) <em>antes</em> da venda; comprador não; é o setup canônico de Akerlof (1970).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) Risco moral.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) Sem assimetria.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> No setup de Akerlof com qualidade \(\theta \sim U[0, 1]\) e comprador valorizando \(\beta\theta\) com \(\beta = 1{,}3\), o equilíbrio competitivo \(p^*\) tal que \(p^* = \beta \cdot \mathbb{E}[\theta \mid \theta \le p^*]\) (sob distribuição uniforme em \([0, p^*]\)) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(p^* = \beta = 1{,}3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \(p^* = 0\): \(p = 1{,}3 \cdot p/2 = 0{,}65 p \Rightarrow p \cdot 0{,}35 = 0 \Rightarrow p = 0\) (única solução interior; \(\beta = 1{,}3 < 2\)). <strong>Mercado colapsa por unraveling.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \(p^* = 0{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) \(p^* = \beta/2 = 0{,}65\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1e" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(e)</strong> A condição \(\beta < 2\) no setup de Akerlof com uniforme em \([0, 1]\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="a"> (i) Apenas técnica — não muda o resultado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="b"> (ii) A condição que separa colapso completo (\(p^* = 0\)) de eq. interior. Para \(\beta < 2\), unraveling completo. Para \(\beta = 2\), continuum de equilíbrios degenerados. Para \(\beta > 2\), todos os tipos transacionam (\(\beta\) suficientemente alto compensa a média baixa do conjunto truncado).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="c"> (iii) Indica que comprador é avesso ao risco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1e" value="d"> (iv) Implica que vendedor sempre lucra.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> O diagnóstico operacional da assimetria é a primeira coisa a fazer em qualquer problema da Aula 8. <strong>Hidden type</strong> = informação privada <em>antes</em> do contrato (sel. adversa); <strong>hidden action</strong> = ação privada <em>depois</em> do contrato (risco moral). Cada regime gera restrições distintas: IC sobre tipos vs. IC sobre ações. Akerlof (1970) é o caso canônico de hidden type em mercado de qualidade não-observável; o cálculo do preço de equilíbrio passa por \(p = \beta \cdot \mathbb{E}[\theta \mid \theta \le p]\), que sob uniforme entrega solução analítica imediata.</p>
+      <p><strong>2. Derivação.</strong> Para uniforme \(\theta \sim U[0, 1]\), conjunto de vendedores ativos a preço \(p\) é \(\{\theta : \theta \le p\}\), distribuído uniformemente em \([0, p]\) — média \(p/2\). Comprador competitivo paga \(\beta \cdot \mathbb{E}[\theta \mid \theta \le p] = \beta p/2\). Equilíbrio: \(p = \beta p / 2 \Leftrightarrow p(1 - \beta/2) = 0\). Para \(\beta = 1{,}3\): \(p \cdot 0{,}35 = 0 \Rightarrow p = 0\). Limite \(\beta = 2\): qualquer \(p\) é eq. (degenerada). \(\beta > 2\): \(p = 0\) deixa de ser estável; eq. interior em \(p^* = \beta/2\) (eventualmente truncado em 1 pela viabilidade).</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i): aluno confunde "doença crônica = ação" — não, propensão é <em>atributo</em> do agente, conhecido antes. Item (b)(i): aluno acha que vendedor "tem tipo" — para essa modelagem, o ponto é a <em>ação</em>. Item (d)(i): aluno aplica fórmula sem cuidado e usa \(\beta\) bruto. Item (d)(iv): aluno calcula \(\beta/2\) sem checar se 0 também é solução. Item (e)(iii): aluno confunde aversão a risco com a estrutura do unraveling.</p>
+      <p><strong>4. Extensão.</strong> Diagnóstico vale para Aulas 8 <em>e</em> 9. Em <strong>Aula 9</strong> (sinalização — Spence 1973), o agente <em>informado</em> toma iniciativa via sinal \(e\) — variante do hidden type onde o equilíbrio é separador. Matching (Gale-Shapley 1962) lida com hidden type sob domínio combinatório (sem preços). <strong>Empírico:</strong> Akerlof, Spence e Stiglitz dividiram o <strong>Nobel 2001</strong> "for their analyses of markets with asymmetric information"; toda a tradição de informação assimétrica desce desses três papers.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟢. Cinco sub-itens cobrindo diagnóstico (3) + cálculo direto Akerlof (2). Distratores em (a)/(b)/(c) testam exatamente a confusão "tipo vs. ação" — pedagogicamente decisiva. Item (d) é o cálculo numérico de Akerlof com parâmetros simples; o aluno que sai sabendo apertar \(p = \beta p / 2\) tem o mecanismo na ponta da língua. Item (e) é conceitual sobre o threshold \(\beta = 2\). <strong>Sem risco residual.</strong> Aluno que faz tudo está consolidado em Akerlof e na tipologia operacional.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Akerlof unraveling com truncamento e proporção de tipos</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Mercado de carros usados com <strong>dois tipos discretos</strong> de qualidade: tipo \(L\) (limão) com qualidade \(\theta_L = 1\); tipo \(H\) (bom) com qualidade \(\theta_H = 4\). Proporção de limões: \(\lambda \in (0, 1)\). Vendedor conhece o tipo; comprador não. Vendedor reserva o próprio \(\theta\) (mínimo aceitável \(=\) qualidade); comprador valoriza \(\beta\theta\) com \(\beta = 1{,}3\) (assume-se \(\beta > 1\) para haver ganho potencial do comércio sob simetria). Comprador competitivo paga preço igual à valoração esperada condicional ao conjunto de vendedores ativos.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob informação simétrica, ambos os tipos transacionam (\(\beta\theta > \theta\) para todo \(\theta\) com \(\beta > 1\)). Os preços competitivos por tipo seriam:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) Preço único \(\bar p = \beta(\lambda \theta_L + (1 - \lambda)\theta_H) = 1{,}3(4 - 3\lambda)\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(p_L^{\text{sim}} = \beta\theta_L = 1{,}3\); \(p_H^{\text{sim}} = \beta\theta_H = 5{,}2\). Sob simetria, comprador identifica o tipo e paga valoração específica de cada um.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(p^L = \theta_L = 1\); \(p^H = \theta_H = 4\) (preço igual à reserva do vendedor).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) Indeterminado sem mais hipóteses.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Considere o <strong>candidato a equilíbrio pooling</strong> em que ambos os tipos transacionam ao mesmo preço \(\bar p\). Para que o equilíbrio pooling exista, \(\bar p\) precisa simultaneamente: (i) ser aceito pelo tipo \(H\) (\(\bar p \ge \theta_H = 4\)) e (ii) coincidir com a valoração esperada do comprador (\(\bar p = \beta(\lambda \theta_L + (1-\lambda) \theta_H)\)). A condição sobre \(\lambda\) para que pooling exista é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) Pooling sempre existe.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) Pooling exige \(\beta(\lambda + 4(1-\lambda)) \ge 4 \Leftrightarrow \beta(4 - 3\lambda) \ge 4 \Leftrightarrow \lambda \le (4\beta - 4)/(3\beta) = 1{,}2/3{,}9 \approx 0{,}308\). Logo, pooling existe se e só se \(\lambda \lesssim 0{,}31\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) Pooling exige \(\lambda \ge 0{,}5\) (maioria de \(L\) "puxa o preço para baixo").</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) Pooling existe sempre que \(\beta > 1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Para \(\lambda = 0{,}5\) (alta proporção de limões), o que ocorre?</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) Pooling se mantém: \(\bar p = 1{,}3(4 - 1{,}5) = 3{,}25\); ambos transacionam.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) Apenas o tipo \(L\) transaciona em equilíbrio (unraveling parcial). Sob \(\lambda = 0{,}5\), o "preço pooling implícito" \(1{,}3 \cdot 2{,}5 = 3{,}25 < 4 = \theta_H\); tipo \(H\) recusa. Removendo tipo \(H\) do conjunto ativo, comprador paga \(\beta \theta_L = 1{,}3\); tipo \(L\) aceita. Equilíbrio: apenas limões, preço \(p^* = 1{,}3\). <strong>Bons saíram do mercado.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) Mercado colapsa para \(p^* = 0\); ninguém transaciona.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) Apenas o tipo \(H\) transaciona.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Para \(\lambda = 0{,}1\) (poucos limões), o que ocorre?</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) Apenas \(L\) transaciona (mesmo resultado de (c)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) Pooling sustentável: \(\bar p = 1{,}3(4 - 0{,}3) = 4{,}81 > 4\). Comprador paga \(4{,}81\); ambos os tipos aceitam (tipo \(H\) recebe acima de \(\theta_H = 4\); tipo \(L\) recebe acima de \(\theta_L = 1\)). Mas tipo \(H\) sai com preço <strong>abaixo</strong> de seu first-best \(p^H_{\text{sim}} = 5{,}2\) — bom subsidia ruim no pool.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) Mercado colapsa.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) Apenas \(H\) transaciona.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A interpretação econômica geral é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Pooling sempre Pareto-domina separação.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Sob \(\lambda\) suficientemente baixo, pooling sobrevive mas tipo \(H\) é cross-subsidizado por tipo \(L\) (recebe \(\bar p < p^H_{\text{sim}}\)). Sob \(\lambda\) alto, tipo \(H\) sai do mercado e sobra apenas \(L\) (lemons). Em ambos os casos, alocação é Pareto-dominada pelo first-best simétrico.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Akerlof prevê que mercados sempre funcionam.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) Vendedor sempre lucra com a assimetria.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> Akerlof com 2 tipos discretos é a versão pedagogicamente mais limpa do unraveling: a proporção \(\lambda\) de limões controla <strong>se o pooling sobrevive</strong> (\(\lambda\) baixo) <strong>ou desaba</strong> (\(\lambda\) alto, tipo \(H\) sai). O insight central — "bons saem primeiro, qualidade média cai, mais bons saem" — fica visível na comparação entre os dois regimes. A perda de bem-estar é a diferença entre a alocação simétrica (cada tipo recebe sua valoração) e a assimétrica (pooling subótimo ou unraveling parcial).</p>
+      <p><strong>2. Derivação.</strong> Sob simetria: \(p^L_{\text{sim}} = 1{,}3 \cdot 1 = 1{,}3\); \(p^H_{\text{sim}} = 1{,}3 \cdot 4 = 5{,}2\). Pooling viável requer \(\bar p \ge \theta_H = 4\) e \(\bar p = \beta(\lambda \theta_L + (1-\lambda)\theta_H) = 1{,}3(\lambda + 4(1-\lambda)) = 1{,}3(4 - 3\lambda)\). Combinando: \(1{,}3(4 - 3\lambda) \ge 4 \Leftrightarrow 4 - 3\lambda \ge 4/1{,}3 \approx 3{,}077 \Leftrightarrow 3\lambda \le 0{,}923 \Leftrightarrow \lambda \le 0{,}308\). Para \(\lambda = 0{,}1\): \(\bar p = 1{,}3 \cdot 3{,}7 = 4{,}81 \ge 4\) ✓; pooling. Para \(\lambda = 0{,}5\): \(\bar p_{\text{cand}} = 1{,}3 \cdot 2{,}5 = 3{,}25 < 4\); tipo \(H\) recusa; pool quebra; equilíbrio com apenas \(L\) ativo, preço \(\beta \theta_L = 1{,}3\).</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(iii): aluno confunde "preço competitivo" com "reserva do vendedor". Item (b)(iii): aluno inverte o sentido da desigualdade. Item (c)(iii): aluno extrapola o caso uniforme contínuo (\(p^* = 0\)) para o caso discreto sem ajustar — em discreto, tipo \(L\) ainda é vendido a \(\beta \theta_L\) > 0. Item (d)(i): aluno aplica regra "alto \(\lambda \Rightarrow\) pooling falha" sem condicionar em \(\lambda\) realmente alto. Item (e)(i): aluno acha que pooling é sempre Pareto-superior — pode ser Pareto-incomparável.</p>
+      <p><strong>4. Extensão.</strong> O resultado generaliza a Akerlof contínuo (Exercício 1 deste bundle). Conexão com <strong>Aula 9 (Spence)</strong>: sinalização (educação como sinal) é um dos mecanismos pelos quais tipo \(H\) pode "sair do pool" sem ser confundido com \(L\). Outra via: <strong>garantia/reputação</strong> (Klein-Leffler 1981, <em>JPE</em> 89(4): 615–641, <a href="https://doi.org/10.1086/260996" target="_blank" rel="noopener">DOI 10.1086/260996</a>) cria mecanismo de auto-revelação. <strong>No Brasil:</strong> concessionárias com programa de "seminovos certificados" cobram prêmio precisamente porque a inspeção + garantia atenuam a assimetria; preço de transação tem distribuição bimodal (concessionária vs. OLX particular) — fato empírico consistente com Akerlof.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo numérico em duas regiões de \(\lambda\) + interpretação econômica. Item (b) é o mais técnico — exige derivar a desigualdade que define o threshold. Itens (c) e (d) testam o aluno em pontos opostos do parâmetro \(\lambda\); a comparação revela se ele entendeu o mecanismo. <strong>Tradeoff de tempo:</strong> ~14 min, dentro do alvo. <strong>Risco residual:</strong> moderado — aluno com pressa pode aplicar a fórmula contínua sem checar viabilidade discreta. <strong>Decisão pedagógica:</strong> modelo discreto 2-tipos foi escolhido para isolar a intuição "\(\lambda\) baixo \(\Rightarrow\) pooling, \(\lambda\) alto \(\Rightarrow\) unraveling parcial".</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Rothschild-Stiglitz separador com 2 tipos + single-crossing</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Mercado de seguro competitivo com <strong>2 tipos de risco</strong>. Riqueza inicial \(W = 100\). Sinistro de tamanho \(L = 56\). Probabilidade de sinistro: tipo \(H\) com \(\pi^H = 0{,}5\); tipo \(L\) com \(\pi^L = 0{,}25\). Proporção \(\lambda\) high, \(1-\lambda\) low. Bernoulli (utilidade do agente sob riqueza ex-post): \(u(W) = \sqrt{W}\) (avesso ao risco). Agente conhece o próprio tipo; seguradora não. Contratos competitivos: cada contrato \((p, c)\) — prêmio \(p\) (paga sempre) + cobertura \(c \in [0, L]\) (recebe se sinistro). Lucro esperado da seguradora sob tipo \(\theta\): \(\Pi^\theta = p - \pi^\theta c\); equilíbrio competitivo entrega \(\Pi^\theta = 0\). <strong>Single-crossing</strong> sob avessão de risco e \(\pi^H > \pi^L\): tipo \(H\) tem maior disposição-marginal-a-pagar por cobertura. <em>(Calibração escolhida para que a IC do tipo \(H\) reduza a uma quadrática com raiz inteira — fechamento algébrico exibível.)</em></p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob informação simétrica e equilíbrio competitivo (lucro zero por tipo), o contrato ótimo para cada tipo é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(c^H = c^L = 0\) (sem seguro).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(c^H = c^L = L = 56\) (cobertura completa); prêmios actuarialmente justos: \(p^H = \pi^H L = 28\); \(p^L = \pi^L L = 14\). Cada tipo atinge \(\sqrt{W - p^\theta}\) — utilidade certa sem risco residual.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(c^H = L; c^L = 0\) (apenas \(H\) compra seguro).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Sob informação <strong>assimétrica</strong> (seguradora não observa tipo), considere o candidato a equilíbrio <strong>separador</strong>: \((p^H_*, c^H_*)\) e \((p^L_*, c^L_*)\). Em equilíbrio competitivo separador:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) Tipo \(L\) recebe cobertura completa; tipo \(H\) recebe cobertura parcial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) Tipo \(H\) recebe cobertura completa ao prêmio justo \(p^H_* = \pi^H L = 28, c^H_* = L = 56\); tipo \(L\) recebe cobertura <em>parcial</em> a prêmio justo \(p^L_* = \pi^L c^L_*\), com \(c^L_* < L\) tal que <strong>IC do tipo \(H\) é binding</strong> (tipo \(H\) é indiferente entre seu próprio contrato e o de \(L\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) Ambos recebem cobertura completa ao prêmio médio.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) Não existe equilíbrio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A IC do tipo \(H\) binding implica
+        \[\sqrt{W - p^H_*} = (1 - \pi^H)\sqrt{W - p^L_*} + \pi^H \sqrt{W - p^L_* - L + c^L_*}.\]
+        Substituindo \(p^H_* = 28\), \(W = 100\), \(\pi^H = 0{,}5\), \(p^L_* = 0{,}25 c^L_*\), \(L = 56\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(\sqrt{72} = 0{,}5\sqrt{100 - 0{,}25 c^L_*} + 0{,}5\sqrt{100 - 0{,}25 c^L_* - 56 + c^L_*}\) reduz para \(c^L_* = 56\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(\sqrt{72} = 0{,}5\sqrt{100 - 0{,}25 c^L_*} + 0{,}5\sqrt{44 + 0{,}75 c^L_*}\); elevando ao quadrado e simplificando, a equação reduz à quadrática \((c^L_*)^2 - 400\, c^L_* + 3136 = 0\) (discriminante \(147456 = 384^2\)), com raízes \(\{8,\ 392\}\). Solução econômica: \(\boxed{c^L_* = 8}\), com \(p^L_* = 0{,}25 \cdot 8 = 2\) — cobertura estritamente parcial.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(c^L_* = 56\) (cobertura completa).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) \(c^L_* = 0\) (sem seguro).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A interpretação econômica do equilíbrio separador é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) Tipo \(H\) é punido injustamente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) Tipo \(L\) (baixo risco) <strong>carrega o ônus da assimetria</strong>: recebe cobertura sub-ótima (estritamente abaixo do seu first-best simétrico de cobertura completa) para que o tipo \(H\) (alto risco) não seja incentivado a se passar por \(L\). Distorção de second-best: o "bom risco paga o preço da assimetria". Aqui \(c^L_*/L = 8/56 \approx 14\%\) — distorção severa, ilustração quantitativa da força do mecanismo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) Tipo \(H\) e \(L\) ficam indiferentes ao tipo simétrico.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) Tipo \(L\) lucra com a assimetria.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Sobre <strong>inexistência possível</strong> do equilíbrio competitivo (resultado central de R-S 1976):</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) Equilíbrio separador sempre existe.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) Para \(\lambda\) (proporção de altos riscos) <strong>suficientemente baixo</strong>, o pooling Pareto-domina o separador (ambos os tipos preferem o pooling). Mas pooling não é Nash em equilíbrio competitivo: uma seguradora desviante pode oferecer contrato que atrai apenas tipo \(L\) (cobertura parcial mais barata) e quebra o pooling. Logo nem separador (Pareto-pior) nem pooling (não-Nash) sobrevivem como equilíbrio — <strong>R-S provam que pode não existir equilíbrio competitivo</strong>.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) Pooling é sempre Nash.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) Inexistência ocorre apenas com \(\lambda\) alto.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> O equilíbrio R-S separador é a estrutura canônica de seguro com seleção adversa: tipo \(H\) sai com seu first-best (cobertura completa, prêmio justo); tipo \(L\) carrega a distorção (cobertura parcial). A propriedade <strong>single-crossing</strong> (sob avessão + \(\pi^H > \pi^L\), curvas de indiferença \(H\) e \(L\) cruzam exatamente uma vez) é o que garante que o separador é factível. Inexistência ocorre quando \(\lambda\) é baixo: pooling Pareto-domina mas é não-Nash; nem separador nem pooling sobrevivem. <strong>Distorção do "bom risco" é o preço estrutural da assimetria</strong> — aqui materializada em \(c^L_*/L \approx 14\%\), severa por construção pedagógica.</p>
+      <p><strong>2. Derivação.</strong> <strong>First-best simétrico:</strong> lucro zero \(\Rightarrow p = \pi c\); CPO do agente avesso (igualar utilidade marginal entre estados) \(\Rightarrow c = L\). \(p^H = 0{,}5 \cdot 56 = 28\); \(p^L = 0{,}25 \cdot 56 = 14\). <strong>Separador R-S:</strong> \(H\) pega seu first-best (\(c^H_* = 56,\ p^H_* = 28\)); \(L\) pega contrato sobre sua linha de oferta justa (\(p^L_* = 0{,}25 c^L_*\)) com \(c^L_*\) tal que IC do \(H\) é binding. IC do \(H\): \(EU^H(\text{contrato }H) = EU^H(\text{contrato }L)\). LHS: \(\sqrt{W - p^H_*} = \sqrt{72}\) (cobertura completa, sem risco). RHS: \(0{,}5\sqrt{100 - 0{,}25 c^L_*} + 0{,}5\sqrt{44 + 0{,}75 c^L_*}\). <strong>Fechamento algébrico.</strong> Sejam \(A = \sqrt{100 - 0{,}25 c^L_*},\ B = \sqrt{44 + 0{,}75 c^L_*}\). Note \(B^2 - A^2 = c^L_* - 56\) e \(A + B = 2\sqrt{72}\), donde \(B - A = (c^L_* - 56)/(2\sqrt{72})\). Substituindo em \(B^2 = 44 + 0{,}75 c^L_*\) e simplificando, \((c^L_* - 56)^2 = 4 \cdot 72 \cdot c^L_* = 288\, c^L_*\), donde \((c^L_*)^2 - 400\, c^L_* + 3136 = 0\). Discriminante \(160000 - 12544 = 147456 = 384^2\); raízes \(c^L_* = (400 \pm 384)/2 \in \{8,\ 392\}\). Raiz \(392\) viola \(c \le L\); a solução é <strong>\(c^L_* = 8,\ p^L_* = 2\)</strong>. <strong>Verificação:</strong> LHS \(= \sqrt{72} = 6\sqrt{2}\). RHS \(= 0{,}5\sqrt{98} + 0{,}5\sqrt{50} = 0{,}5 \cdot 7\sqrt{2} + 0{,}5 \cdot 5\sqrt{2} = 6\sqrt{2}\) ✓. Riqueza ex-post do tipo \(L\) no separador: estado-1 \(= 98\) (sem sinistro); estado-2 \(= 50\) (com sinistro). Diferença confirma que tipo \(L\) carrega risco residual — característica do second-best.</p>
+      <p><strong>3. Armadilha.</strong> Três armadilhas estruturais. <strong>(i) Falsa simetria do separador</strong> — item (b)(i) inverte tipos por intuição moralista; o mecanismo é o oposto: tipo \(H\) recebe seu first-best precisamente porque é o tipo com mais incentivo a mimetizar; quem se distorce é \(L\). <strong>(ii) Confusão entre IR e IC</strong> — aluno tenta achar \(c^L_*\) impondo lucro zero ou utilidade reservada e não percebe que o que define \(c^L_*\) é a IC binding do <em>outro</em> tipo (\(H\)). O tradeoff em jogo é "fazer o \(H\) recusar o contrato de \(L\)", não "seguro vs. prêmio do próprio \(L\)". <strong>(iii) Aproximar em vez de fechar</strong> — aluno tenta resolver numericamente, chega a um valor próximo, e marca "(ii) \(c^L_* < L\)" sem perceber que a álgebra fecha em inteiro \(c^L_* = 8\). Item (e)(iii) revisita o erro do "pooling sempre sobrevive".</p>
+      <p><strong>4. Extensão.</strong> Inexistência de R-S abre porta para <strong>regulação institucional</strong>. Aplicações canônicas: (a) <strong>ANS no Brasil</strong> (Lei 9.656/1998) força <em>pooling regulado</em> via faixas etárias máximas, rol mínimo, portabilidade. (b) <strong>ACA US 2010</strong> combina proibição de underwriting + mandato individual + subsídios cruzados. <strong>Empírico:</strong> Hackmann-Kolstad-Kowalski (2015, <em>AER</em> 105(3): 1030–1066, <a href="https://doi.org/10.1257/aer.20130758" target="_blank" rel="noopener">DOI 10.1257/aer.20130758</a>) documentaram unraveling parcial em estados US que removeram mandato. <strong>Conexão com Exercício 6:</strong> lá comparamos pooling regulado com first-best em economia de saúde simplificada. <strong>Aula 9</strong> (sinalização) introduz mecanismo descentralizado via revelação do agente informado. <strong>Generalização:</strong> com \(u = \sqrt{\cdot},\ \pi^H = 1/2,\ \pi^L = 1/4\), a álgebra fecha em \((c^L_*)^2 - 4W c^L_* + L^2 = 0\); raízes inteiras quando \((2W)^2 - L^2\) é quadrado perfeito. Aqui, \((W, L) = (100, 56)\) é tripla pitagórica via \(56^2 + 192^2 = 200^2\) — escolha pedagógica deliberada.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡 (mantido). Item (a) revisa first-best com novos números; (b)–(d) cobrem separador R-S com IC binding e fechamento algébrico exibível; (e) abre inexistência. <strong>Tradeoff de tempo:</strong> ~18 min — no topo do alvo para 🟡 (a derivação algébrica do item (c) é a parte mais densa, ~8 min). <strong>Risco residual:</strong> baixo — diferente da versão anterior (com \(L = 64\), que dava aproximação numérica entre 25 e 35), aqui o aluno tem fechamento exibível: \((c^L_*)^2 - 400\, c^L_* + 3136 = 0\) com raiz inteira \(c^L_* = 8\). <strong>Decisão pedagógica explícita:</strong> recalibrei \(L = 64 \to 56\) precisamente para entregar fechamento — tripla pitagórica \((56, 192, 200)\) garante discriminante quadrado perfeito. <strong>Tradeoff dessa escolha:</strong> \(c^L_*/L \approx 14\%\) é severo, mas isso é <em>precisamente</em> o ponto: o modelo R-S pode entregar distorções arbitrariamente fortes — a regulação institucional do Exercício 6 é a resposta. Não tentei suavizar para "\(c/L \approx 50\%\)" porque (i) exigiria parâmetros menos canônicos e (ii) a severidade aqui é <em>feature</em>, não <em>bug</em>.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Holmström principal-agente: first-best (ação observável)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p style="background:#fef3c7;border-left:3px solid #d97706;padding:0.6rem 0.9rem;border-radius:4px;margin-bottom:0.8rem;font-size:0.9rem"><strong>Nota notacional.</strong> A partir deste exercício (e idem no Ex 5), a letra \(c\) denota <strong>custo de esforço</strong> \(c(a)\) — distinta da <strong>cobertura</strong> \(c\) usada no Exercício 3 (R-S) e no Exercício 6 (ANS+ACA). Mude o chip mental.</p>
+      <p><strong>Enunciado.</strong> Principal (P, neutro ao risco) contrata Agente (A, avesso ao risco, Bernoulli \(u(w) = \sqrt{w}\)) para realizar tarefa. Esforço \(a \in \{a_L, a_H\}\) com custos \(c(a_L) = 0\), \(c(a_H) = 5\). Output \(y \in \{y_L = 0, y_H = 144\}\). Probabilidade de \(y_H\): \(\pi_H = 0{,}75\) sob \(a_H\); \(\pi_L = 0{,}25\) sob \(a_L\). Reservation utility \(\bar U = 7\). <strong>Contrato:</strong> salário \(w(y)\) condicional ao output observável.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob ação <strong>observável</strong> (first-best), Principal especifica diretamente \(a\) e oferece <strong>salário fixo</strong> \(w^*\) que satisfaz IR com igualdade. Para induzir \(a_H\), o salário fixo \(w^*_H\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) \(w^*_H = 49\): aluno usa \(\sqrt{w} = 7\), ignora custo de esforço.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) \(w^*_H = 144\): IR binding \(\sqrt{w^*_H} - c(a_H) = \bar U \Rightarrow \sqrt{w^*_H} = \bar U + c(a_H) = 7 + 5 = 12 \Rightarrow w^*_H = 144\). Salário fixo (independente de \(y\)) — Principal absorve todo o risco.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) \(w^*_H = 25\): erro algébrico de raiz quadrada.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) \(w^*_H = 12\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Para induzir \(a_L\), o salário fixo \(w^*_L\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) \(w^*_L = 0\): aluno acha que sem esforço o agente "trabalha de graça".</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) \(w^*_L = 49\): IR binding \(\sqrt{w^*_L} - c(a_L) = \bar U \Rightarrow \sqrt{w^*_L} = \bar U + 0 = 7 \Rightarrow w^*_L = 49\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) \(w^*_L = 12\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) \(w^*_L = 7\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Sob first-best, <strong>se Principal contratar</strong>, qual esforço maximiza o <strong>lucro esperado</strong>? \(E\Pi(a) = \pi_a y_H + (1-\pi_a) y_L - w^*_a\).</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Principal não contrata em nenhum esforço (tecnicamente verdadeiro sob outside option \(\Pi^P_{\text{out}} = 0\); fora do escopo desta pergunta, que assume contratação como dado).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) \(a_H\): \(E\Pi(a_H) = 0{,}75 \cdot 144 - 144 = -36\). \(a_L\): \(E\Pi(a_L) = 0{,}25 \cdot 144 - 49 = -13\). Sob first-best, <strong>\(a_L\) é preferido</strong> porque o ganho de output (108 - 36 = 72) não compensa a diferença de salário (144 - 49 = 95).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) \(a_H\) sempre — alto esforço gera mais output.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Empate.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A intuição econômica do resultado de (c) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) Agente avesso ao risco paga "prêmio de risco" — por isso \(a_H\) é caro.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) Os parâmetros foram escolhidos para que o ganho marginal de output induzido por \(a_H\) (\(\Delta y_H \cdot \Delta\pi = 144 \cdot 0{,}5 = 72\)) seja menor que o custo marginal de salário (\(\Delta w^* = 144 - 49 = 95\)). É uma decisão de viabilidade econômica: nem todo esforço alto vale a pena, mesmo sob first-best. Mudando \(\pi_H\) para 0,9 ou \(c(a_H)\) para 2, \(a_H\) viraria preferido.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Sob first-best, sempre é melhor induzir baixo esforço.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Sob first-best, sempre é melhor induzir alto esforço.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> Suponha agora que o reservation utility do agente caia para \(\bar U = 5\). Como muda \(w^*_H\) e a decisão do Principal entre \(a_L\) e \(a_H\)?</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) \(w^*_H\) sobe para 196.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) \(w^*_H\) cai: \(\sqrt{w^*_H} = 5 + 5 = 10 \Rightarrow w^*_H = 100\). \(w^*_L = 25\) (\(\sqrt{w^*_L} = 5\)). \(E\Pi(a_H) = 108 - 100 = 8\); \(E\Pi(a_L) = 36 - 25 = 11\). <strong>\(a_L\) ainda preferido</strong>, mas margem caiu — \(a_H\) está agora mais perto de viabilidade.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) Decisão muda imediatamente para \(a_H\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) Não muda nada.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> No principal-agente de Holmström sob ação <strong>observável</strong> (first-best), o contrato ótimo é <strong>salário fixo</strong> que satisfaz IR binding. Principal neutro absorve <strong>todo o risco</strong> — Pareto-eficiente sob avessão de A. A questão "qual esforço induzir" depende da comparação entre ganho de output esperado e custo de salário; <strong>não é automaticamente alto esforço</strong>. Os parâmetros importam: aumentar \(\pi_H\) ou reduzir \(c(a_H)\) torna alto esforço mais atraente.</p>
+      <p><strong>2. Derivação.</strong> IR sob \(a_H\): \(\sqrt{w^*_H} = 7 + 5 = 12 \Rightarrow w^*_H = 144\). IR sob \(a_L\): \(\sqrt{w^*_L} = 7 + 0 = 7 \Rightarrow w^*_L = 49\). Lucros: \(E\Pi(a_H) = 108 - 144 = -36\); \(E\Pi(a_L) = 36 - 49 = -13\). Principal prefere \(a_L\). Sensibilidade a \(\bar U\): \(\bar U = 5 \Rightarrow w^*_H = 100, w^*_L = 25\); \(E\Pi(a_H) = 8\); \(E\Pi(a_L) = 11\); ainda \(a_L\). Se \(\bar U = 0\): \(w^*_H = 25, w^*_L = 0\); \(E\Pi(a_H) = 83, E\Pi(a_L) = 36\); aí \(a_H\) preferido.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(i)/(iii): erros aritméticos clássicos com raiz quadrada. Item (b)(i): aluno acha que sem esforço o salário é zero — ignora IR. Item (c)(iii): aluno aplica regra "alto esforço = mais output \(\Rightarrow\) sempre escolher" sem checar viabilidade. Item (d)(iii)/(iv): aluno generaliza incorretamente. Item (e)(iii): aluno acha que mudança em \(\bar U\) tem efeito imediato e binário.</p>
+      <p><strong>4. Extensão.</strong> First-best é o <strong>benchmark</strong> contra o qual second-best (Exercício 5) será comparado. Sob neutralidade de risco do agente (\(u\) linear), first-best é facilmente alcançável mesmo com ação não-observável via "contrato franchise" (agente paga taxa fixa, fica residual claimant) — o problema do risco moral <strong>desaparece</strong>. <strong>No Brasil:</strong> consultorias de gestão (Big 4 em projetos com performance bonus) operam em regime próximo ao first-best quando esforço é observável via supervisão de cliente. <strong>Aula 9</strong> introduz sinalização do agente — mecanismo <em>descendente</em> de revelação que pode alcançar first-best em alguns regimes.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cinco sub-itens cobrindo cálculo de IR com Bernoulli \(\sqrt{\cdot}\); comparação de lucros; sensibilidade. Item (c) é o mais formativo — quebra a intuição ingênua "alto esforço sempre". Item (e) testa raciocínio comparativo. <strong>Tradeoff de tempo:</strong> ~12 min, dentro do alvo. <strong>Risco residual:</strong> baixo. <strong>Decisão pedagógica:</strong> parâmetros escolhidos para que \(a_L\) seja preferido em first-best, contrariando a intuição "máximo esforço sempre" — efeito pedagógico forte. O Exercício 5 (second-best) usa parâmetros distintos onde \(a_H\) é desejado.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Holmström principal-agente: second-best (ação não-observável)</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Mesmo setup do Exercício 4 com <strong>parâmetros recalibrados</strong>: Principal neutro; Agente avesso com \(u(w) = \sqrt{w}\); \(c(a_L) = 0\), \(c(a_H) = 4\); \(y_L = 0\), \(y_H = 100\); \(\pi_H = 0{,}7\), \(\pi_L = 0{,}3\); \(\bar U = 4\). Sob <strong>ação observável</strong> (warm-up): \(w^*_H = 64\), \(E\Pi(a_H) = 70 - 64 = 6\); \(w^*_L = 16\), \(E\Pi(a_L) = 30 - 16 = 14\). Pelo padrão do Exercício 4, \(a_L\) é first-best. <strong>Mas</strong> suponha que Principal <strong>deseja</strong> induzir \(a_H\) (motivos não-modelados: política de empresa, longo prazo). O foco aqui é o programa de second-best: ação não-observável, Principal força \(a_H\) via contrato dependente de \(y\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> Sob ação <strong>não-observável</strong>, induzir \(a_H\) com <strong>salário fixo</strong> é incompatível porque:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) IR não pode ser satisfeito.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) Salário fixo \(w_H = w_L = w\) implica utilidade do agente \(\sqrt{w} - c(a)\) — agente desviaria para \(a_L\) (custo zero) sem reduzir salário. <strong>IC sob salário fixo é violada para \(a_H\).</strong> Para induzir \(a_H\), salário tem de <strong>depender</strong> do output observável \(y\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) Agente sempre escolhe \(a_H\) sob salário fixo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) Salário fixo é Pareto-superior.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> O programa de second-best (induzindo \(a_H\)) é
+        \[\min_{w_H, w_L} \pi_H w_H + (1-\pi_H) w_L\]
+        s.a.
+        \[\text{(IR)}\quad \pi_H \sqrt{w_H} + (1-\pi_H)\sqrt{w_L} - c(a_H) \ge \bar U,\]
+        \[\text{(IC)}\quad (\pi_H - \pi_L)[\sqrt{w_H} - \sqrt{w_L}] \ge c(a_H) - c(a_L).\]
+        Sob hipótese padrão (P induz \(a_H\), agente avesso, IC e IR ambas binding), o sistema linear em \((\sqrt{w_H}, \sqrt{w_L})\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); IC: \(\sqrt{w_H} - \sqrt{w_L} = 4\). <strong>Erro:</strong> ignora o coeficiente \((\pi_H - \pi_L) = 0{,}4\) na IC binding (divide por 1 em vez de 0{,}4).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); IC: \(\sqrt{w_H} - \sqrt{w_L} = 10\). Substituindo \(c(a_H) = 4, \bar U = 4\) na IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} - 4 = 4 \Rightarrow 0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); na IC: \(0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) Sistema diferente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) Sistema é não-linear.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Resolvendo o sistema de (b): das equações IR e IC binding,</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(\sqrt{w_H} = 11, \sqrt{w_L} = 1; w_H = 121, w_L = 1\): de IC, \(\sqrt{w_H} = 10 + \sqrt{w_L}\); substituindo em IR: \(0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \Rightarrow 7 + \sqrt{w_L} = 8 \Rightarrow \sqrt{w_L} = 1\); logo \(\sqrt{w_H} = 11\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(\sqrt{w_H} = \sqrt{w_L} = 8\) (salário fixo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(w_H = 100, w_L = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) Sistema sem solução.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Salário esperado sob second-best: \(\mathbb{E}[w] = \pi_H w_H + (1-\pi_H) w_L\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(\mathbb{E}[w] = 64\) (igual ao first-best).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(\mathbb{E}[w] = 0{,}7 \cdot 121 + 0{,}3 \cdot 1 = 84{,}7 + 0{,}3 = 85\). <strong>Diferença em relação ao first-best (\(w^*_H = 64\)) é \(85 - 64 = 21\)</strong> — esse é o <strong>prêmio de risco moral</strong>: custo extra que Principal paga para induzir \(a_H\) com agente avesso sob ação não-observável.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(\mathbb{E}[w] = 60\) (mais barato que first-best).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) \(\mathbb{E}[w] = 121\) (sempre paga máximo).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> A interpretação econômica do prêmio de risco moral é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) Custo de mentira do agente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) O Principal está forçado a impor variabilidade no salário (\(w_H = 121, w_L = 1\)) para criar incentivo (IC binding); essa variabilidade impõe risco ao agente avesso, que exige compensação adicional na média (IR binding na nova condição). Em first-best, \(w\) seria fixo em 64; em second-best, \(\mathbb{E}[w] = 85\). <strong>A diferença é a "sombra" da assimetria informacional</strong>.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) Custo de tecnologia.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) Diferencial entre \(a_H\) e \(a_L\) — sem relação com risco.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5f" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(f)</strong> <strong>Equivalência sob neutralidade do agente.</strong> Suponha que o agente seja <strong>neutro ao risco</strong> (Bernoulli \(u(w) = w\) linear) — todos os outros parâmetros mantidos. Sob essas condições, o Principal pode induzir \(a_H\) sob ação não-observável com:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5f" value="a"> (i) Mesma estrutura de second-best (salário variável).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5f" value="b"> (ii) Contrato franchise: Principal "vende" o output bruto ao agente cobrando taxa fixa \(F\), agente fica residual claimant. Agente neutro escolhe \(a_H\) por interesse próprio. Sob neutralidade de A, <strong>second-best = first-best</strong>: o trade-off "seguro vs. incentivo" desaparece porque agente não tem aversão a risco para "comprar". A perda de bem-estar por risco moral nasce <strong>especificamente</strong> da aversão de risco do agente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5f" value="c"> (iii) Sem solução factível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5f" value="d"> (iv) Salário fixo igual ao first-best.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> O contrato second-best em Holmström com ação não-observável e agente avesso resolve o trade-off <strong>seguro vs. incentivo</strong>: Principal força \(w_H > w_L\) para criar IC (incentivo); agente avesso paga "prêmio de risco" para a perda de seguro (IR sobe). <strong>Prêmio de risco moral</strong> = \(\mathbb{E}[w]_{SB} - w_{FB}\) é a "sombra da informação assimétrica". Sob agente <strong>neutro</strong> ao risco, second-best = first-best (contrato franchise) — o problema desaparece.</p>
+      <p><strong>2. Derivação.</strong> Sistema linear em \((\sqrt{w_H}, \sqrt{w_L})\): de IC binding \(0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\). De IR binding \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\). Substituindo: \(0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \Rightarrow 7 + \sqrt{w_L} = 8 \Rightarrow \sqrt{w_L} = 1, w_L = 1\); \(\sqrt{w_H} = 11, w_H = 121\). \(\mathbb{E}[w] = 0{,}7(121) + 0{,}3(1) = 85\). Prêmio de risco moral = \(85 - 64 = 21\). <strong>Equivalência neutra:</strong> sob \(u(w) = w\) linear, \(\nu = 0\), IC não binding — Principal pode pagar fixo. Equivalentemente: vende output ao agente, agente residual claimant escolhe \(a_H\) endogenamente.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(iii): aluno acha que agente "trabalha duro por padrão" — falso, ação não-observável \(\Rightarrow\) agente desvia. Item (c)(ii): aluno aplica solução de first-best. Item (d)(i): aluno confunde first-best com second-best em valor médio. Item (e)(i): aluno usa narrativa moralista — "custo de mentira". Item (f)(i): aluno generaliza second-best avesso para neutro sem checar.</p>
+      <p><strong>4. Extensão.</strong> <strong>Fórmula informativa de Holmström (1979):</strong> em modelo contínuo, salário ótimo \(w(y)\) depende de \(y\) <strong>apenas via</strong> o score de likelihood \(\partial \ln f(y\mid a)/\partial a\). <strong>Holmström-Milgrom (1987, <em>Econometrica</em> 55(2): 303–328, <a href="https://doi.org/10.2307/1913238" target="_blank" rel="noopener">DOI 10.2307/1913238</a>)</strong> estendem para domínio contínuo + relative performance evaluation. <strong>Stock options para CEO</strong> são o exemplo canônico. <strong>No Brasil:</strong> <strong>Bolsa Família</strong> com condicionalidade de frequência escolar (\(\ge 85\%\)) é um <em>contrato condicional</em> implementando IC para "esforço educacional". <strong>Aula 9 (sinalização)</strong> lida com o caso <em>dual</em>: agente <em>informado</em> toma iniciativa via sinal — Spence é o complemento natural do principal-agente.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Item (b) é "sub-item de redundância" intencional — força aluno a verificar a derivação. Item (c) é cálculo do sistema 2x2 — limpo com \(\sqrt{w}\). Item (d) calcula prêmio de risco moral. Item (f) introduz equivalência neutra como fechamento conceitual. <strong>Tradeoff de tempo:</strong> ~22 min — no topo do alvo para 🔴 (justificado: ferramental central). <strong>Risco residual:</strong> moderado. <strong>Decisão pedagógica:</strong> parâmetros escolhidos para que sistema 2x2 entregue solução de números inteiros (\(w_L = 1, w_H = 121\)) — visualização limpa do prêmio de risco moral (21).</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Affordable Care Act + ANS como resposta institucional a R-S</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere uma economia simplificada de seguros de saúde com <strong>2 tipos</strong> de risco e proporções fixas. Tipo \(H\) (alto risco): \(\pi^H = 0{,}5\), proporção \(\lambda = 0{,}2\). Tipo \(L\) (baixo risco): \(\pi^L = 0{,}1\), proporção \(1 - \lambda = 0{,}8\). Riqueza inicial \(W = 100\); sinistro \(L = 50\). Bernoulli \(u(W) = \sqrt{W}\). Mercado <strong>competitivo livre</strong> (sem regulação) gera (sob hipóteses do Exercício 3) candidato a separador R-S; mas com \(\lambda = 0{,}2\), pooling em \(\bar\pi = 0{,}2 \cdot 0{,}5 + 0{,}8 \cdot 0{,}1 = 0{,}18\) Pareto-domina o separador para tipo \(L\) — <strong>inexistência possível</strong>. Considere agora <strong>regulação institucional</strong> que força pooling com cobertura completa.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> <strong>Pooling regulado</strong> com cobertura completa (\(c = L = 50\)) ao prêmio único \(\bar p = \bar\pi \cdot L = 0{,}18 \cdot 50 = 9\). Sob esse regime, qual é a <strong>utilidade esperada</strong> de cada tipo?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) \(EU^H \neq EU^L\) (asimetria pelo prêmio).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) \(EU^H = \sqrt{100 - 9} = \sqrt{91} \approx 9{,}54\) (cobertura completa, sem sinistro residual). Mesmo valor para tipo \(L\). \(EU^L = \sqrt{91}\). <strong>Ambos têm consumo certo \(W - \bar p = 91\) — propriedade do pooling com cobertura completa: utilidade pessoal coincide para os dois tipos.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) \(EU^H = EU^L = 91\) (utilidade igual ao consumo certo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> Compare com <strong>first-best simétrico</strong> (cada tipo paga seu prêmio justo, cobertura completa): \(EU^{H,FB} = \sqrt{100 - 25} = \sqrt{75}\); \(EU^{L,FB} = \sqrt{100 - 5} = \sqrt{95}\). <strong>Quem ganha e quem perde</strong> com o pooling regulado em comparação ao first-best?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Ambos ganham com pooling.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Tipo \(H\) ganha (\(\sqrt{91} > \sqrt{75}\)) — paga prêmio menor que justo (9 vs. 25); cross-subsidy a seu favor. Tipo \(L\) perde (\(\sqrt{91} < \sqrt{95}\)) — paga prêmio maior que justo (9 vs. 5); cross-subsidy contra ele. <strong>Pooling redistribui: bom risco subsidia alto risco.</strong></label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Ambos perdem.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Tipo \(L\) ganha; tipo \(H\) perde.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Sob <strong>mercado competitivo sem regulação</strong> (livre), o que ocorreria?</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Pooling sustentado pelo mercado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Pooling não-Nash em mercado competitivo: uma seguradora desviante pode oferecer contrato com cobertura <em>parcial</em> a prêmio que atrai apenas tipo \(L\), levando-os para fora do pool (cross-subsidy quebra). Tipo \(H\) sobra no pool — pool quebra. R-S separador é candidato, mas para \(\lambda = 0{,}2\), o pooling Pareto-domina o separador para tipo \(L\); <strong>resultado clássico de inexistência</strong>. Mercado livre falha em entregar equilíbrio competitivo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) Mercado livre sempre entrega first-best.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Apenas tipo \(H\) tem seguro.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> <strong>Mandato individual</strong> (à la ACA US 2010): força ambos os tipos a participar do pooling, <strong>sem permitir desvio</strong>. Compare com pooling voluntário sem mandato:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Mandato é Pareto-pior (força tipo \(L\) a entrar contra sua preferência).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) Mandato resolve o problema da inexistência R-S forçando participação dos baixos riscos no pool; sem mandato, baixos riscos sairiam (revelando seu tipo via não-compra), causando unraveling. <strong>Custo:</strong> tipo \(L\) carrega cross-subsidy. <strong>Benefício:</strong> mecanismo viabilizado — tipo \(H\) tem cobertura. <strong>Pareto-incomparável</strong> entre mandato e mercado livre, mas mandato sustenta funcionamento que livre não consegue.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Mandato é estritamente Pareto-superior (todos ganham).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Mandato é arbitrário sem base teórica.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="c" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> <strong>Comparação Brasil (ANS) vs. US (ACA).</strong> Indique a afirmação mais correta sobre as duas regulações no contexto R-S:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) ANS e ACA são equivalentes.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) ANS força pooling apenas via faixa etária; ACA via mandato individual.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Ambas implementam pooling regulado mas com instrumentos distintos: <strong>ANS</strong> (Lei 9.656/1998) impõe rol mínimo, faixas etárias máximas, portabilidade — pooling implícito sustentado por barreiras regulatórias. <strong>ACA</strong> (US 2010) usa instrumentos diretos: proibição de underwriting + mandato + subsídios. <strong>Ambos resolvem inexistência R-S</strong>, mas via mecanismos distintos: ANS é "regulação de produto"; ACA é "regulação de participação". Em ambos, tipo \(L\) carrega cross-subsidy.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) ANS é R-S puro; ACA é Akerlof puro.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6f" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(f)</strong> <strong>Empírico crítico:</strong> após decisão da Suprema Corte (2012) sobre Medicaid expansion no contexto ACA, alguns estados US relaxaram efetivamente o mandato. O resultado documentado por Hackmann-Kolstad-Kowalski (2015, <em>AER</em> 105(3)) foi:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6f" value="a"> (i) Mercado funcionou normalmente.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6f" value="b"> (ii) Unraveling parcial nos estados que removeram mandato — baixos riscos saíram do pool, prêmios subiram, mais saídas ocorreram. <strong>Confirma teoria R-S empiricamente</strong>: mecanismo de pooling regulado depende crucialmente do mandato; sem ele, inexistência reaparece.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6f" value="c"> (iii) Custo administrativo subiu mas alocação não mudou.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6f" value="d"> (iv) Mandato é irrelevante empiricamente.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Mercados de seguro com seleção adversa frequentemente <strong>não entregam equilíbrio competitivo</strong> (resultado de inexistência R-S 1976 sob \(\lambda\) baixo). <strong>Resposta institucional canônica:</strong> regulação que força pooling (rol mínimo, faixas etárias, mandato, subsídios). ANS (Brasil) e ACA (US) são as duas implementações comparáveis. <strong>Tradeoff fundamental:</strong> tipo \(L\) carrega cross-subsidy em cima de seu first-best, mas mecanismo é viabilizado e tipo \(H\) tem acesso. Pareto-incomparável com mercado livre, mas Pareto-superior com mercado falho.</p>
+      <p><strong>2. Derivação.</strong> <strong>Pooling regulado:</strong> \(\bar\pi = 0{,}2 \cdot 0{,}5 + 0{,}8 \cdot 0{,}1 = 0{,}18\); \(\bar p = 0{,}18 \cdot 50 = 9\); \(EU^H = EU^L = \sqrt{91} \approx 9{,}54\). <strong>First-best simétrico:</strong> \(p^H = 25 \Rightarrow EU^H = \sqrt{75} \approx 8{,}66\); \(p^L = 5 \Rightarrow EU^L = \sqrt{95} \approx 9{,}75\). <strong>Comparação:</strong> \(\sqrt{91} - \sqrt{75} = 0{,}88\) (ganho \(H\)); \(\sqrt{95} - \sqrt{91} = 0{,}21\) (perda \(L\)). Cross-subsidy: tipo \(L\) paga 4 a mais que justo; tipo \(H\) paga 16 a menos que justo. Mecanismo viabilizado via mandato.</p>
+      <p><strong>3. Armadilha.</strong> Item (a)(iii): aluno confunde utilidade com consumo. Item (b)(iv): aluno inverte direção do cross-subsidy. Item (c)(i): aluno não internalizou inexistência R-S. Item (d)(iii): aluno não vê tradeoff distributivo do mandato. Item (e)(iv): confusão entre Akerlof (qualidade) e R-S (seguro). Item (f)(iv): negação do empírico.</p>
+      <p><strong>4. Extensão.</strong> Aplicações comparativas: <strong>Suíça</strong> (Lamal 1996) usa modelo similar a ACA. <strong>Singapura</strong> (CPF 1955+) usa modelo médico parcialmente individual. <strong>Brasil pré-1998:</strong> mercado privado de saúde tinha unraveling parcial em determinadas faixas. <strong>Conexão com Aula 9:</strong> sinalização (Spence) é mecanismo <em>descentralizado</em> — agente <em>informado</em> toma iniciativa para revelar tipo. Em saúde privada brasileira, há sinalização via "plano executivo com check-up". <strong>Empírico-econométrico:</strong> Hackmann-Kolstad-Kowalski (2015) é referência canônica de teste empírico de R-S em mercado real; Cutler-Reber (1998, <em>QJE</em> 113(2): 433–466) é antecedente em mercado plano de Harvard. <strong>Aula 9</strong> introduz <em>signaling games</em> formais com refinamento Cho-Kreps.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Aplicação avançada que exige (a) cálculo de utilidade esperada com Bernoulli \(\sqrt{}\); (b) comparação cross-subsidy; (c) reconhecimento de inexistência R-S; (d) tradeoff de mandato; (e) comparação institucional Brasil-US; (f) teste empírico. <strong>Item (e) é o mais formativo</strong>. <strong>Tradeoff de tempo:</strong> ~25 min — no topo do alvo (justificado: aplicação capstone). <strong>Risco residual:</strong> moderado — item (b) exige cálculo cuidadoso de \(\sqrt{}\) em três pontos. <strong>Decisão pedagógica:</strong> parâmetros escolhidos para que cross-subsidy seja substancial mas não absurdo; aluno pode visualizar redistribuição numericamente.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios avaliativos (6 exercícios, ~28 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>03/07/2026 após 00:00</strong> (dia seguinte ao fechamento único da plataforma em 02/07/2026 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 9</strong> (Sinalização + Matching) já está liberada na plataforma. <strong>Pré-monitoria 5</strong> com Alberto também está disponível (cobre Aulas 8 e 9 + revisão para Avaliação Final); monitoria presencial <strong>sáb 20/06 · 10:00</strong>. Todo o material avaliativo do curso fecha junto em <strong>quarta 02/07/2026 18h</strong>; gabarito quinta 03/07/2026 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-08-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberação do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(8, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-07-03T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
