@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Monitoria 5 — Extensões A8-A9 + Roteiro AF — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Monitoria 5 — Extensões das Aulas 8-9 (Sel. Adversa, Risco Moral, Sinalização, Matching) + Roteiro AF</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 8</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-monitoria funciona</div>
+<p><strong>Última pré-monitoria do curso. Formativa, não conta nota.</strong> Estrutura de <strong>8 seções</strong> (orientação + recap cross-aula + 3 extensões + roteiro AF integrado + síntese/despedida + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>75–90 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões cross-aula</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente, e <strong>roteiro operacional para a Avaliação Final</strong> de quarta 24/06. Esta pré-M cobre <strong>2 aulas</strong> (8 + 9) — por isso é mais densa que as anteriores. Não é repetição — é o passo seguinte. Várias extensões são <em>servidas, não esgotadas</em>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calibre.</strong> Sobe um degrau além das Aulas 8 e 9: <em>Spence com 3 tipos</em> via Mailath 1987 (sequência de IC adjacentes), <em>lattice theorem</em> de Roth-Sotomayor 1990 (estrutura algébrica do conjunto de matchings estáveis), e <em>TTC para kidney exchange</em> (Roth-Sönmez-Ünver 2004 QJE). <strong>Não entra Mirrlees formal completo nem mecanismos AGV/d'Aspremont-Gérard-Varet</strong> — fica para MWG §13.B/§13.D quem quiser perseguir.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Coordenação com a M5 presencial:</strong> Alberto vai trabalhar Spence numérico com <em>2 tipos</em> (\(\theta_L=3, \theta_H=7\)) e DA <em>4×4</em> com matriz nova. <strong>Esta pré-M traz coisa diferente</strong>: 3 tipos em sinalização, lattice formal, TTC. Sem duplicação.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> material aberto na plataforma — formativo, não conta nota. Monitoria presencial com Alberto: <strong>sábado 20/06 · 10:00</strong>. <strong>Avaliação Final: quarta 24/06 · 19:00 · 3h · A4 frente-e-verso permitida.</strong></p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>O que esperar do sábado — e da quarta</h2>
+  <ul>
+    <li>Esta pré-monitoria <strong>não conta nota</strong>. É preparação para o encontro presencial e para a AF.</li>
+    <li>Janela larga porque cobre 2 aulas inteiras + síntese final do curso. Comece cedo, deixe sedimentar.</li>
+    <li>O Alberto vai usar suas reflexões finais (Seção 7) para calibrar a monitoria de sábado 20/06 — <strong>e</strong> para sinalizar onde a turma vai tropeçar na AF da quarta seguinte (24/06).</li>
+    <li>Tente os micro-checkpoints sem consultar primeiro. Errar é dado útil — o admin captura quais distratores atraem mais.</li>
+    <li>Foco em <em>extensões cross-aula</em>: Spence 3 tipos (Mailath 1987), lattice theorem (Roth-Sotomayor 1990), TTC para troca de rins (Roth-Sönmez-Ünver 2004), síntese 4-modelos da informação assimétrica (Akerlof × R-S × Holmström × Spence), e <strong>roteiro operacional da AF</strong>.</li>
+    <li>Pré-requisitos: Aulas 1–9 consolidadas. Em particular: Akerlof, R-S, Holmström, Spence, Cho-Kreps, Gale-Shapley/DA no nível básico das Aulas 8–9.</li>
+    <li><strong>Despedida sóbria:</strong> esta é a última pré-monitoria do curso. O fechamento emocional acontece na quarta 24/06 com o Prof. Darcio na própria AF. Aqui é só passo final de preparação.</li>
+  </ul>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: RECAP AULAS 8 + 9 ==================== -->
+<section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
+  <div class="section-meta">Seção 1 · Recap · 10 min</div>
+  <h2>Recap rápido das Aulas 8 e 9</h2>
+  <p>Antes das extensões, ancore mentalmente os pontos centrais de cada aula. Cada um vai ser estendido depois.</p>
+
+  <h3 style="margin-top:1.2rem">Aula 8 — Seleção Adversa e Risco Moral</h3>
+  <ol>
+    <li><strong>Tipologia.</strong> <em>Hidden type</em> (informação privada antes da contratação): seleção adversa. <em>Hidden action</em> (após contratação): risco moral. Por que isso quebra o 1º TBE: contratos têm que satisfazer <em>(IR)</em> participação \(\ge \bar U\) e <em>(IC)</em> não-desvio. Conjunto factível encolhe; ótimo cai.</li>
+    <li><strong>Akerlof (1970) — unraveling.</strong> Carros usados \(\theta \sim U[0, 100]\), comprador valoriza \(\beta \theta\). Em equilíbrio, \(p = \beta\,\mathbb{E}[\theta \mid \theta \le p] = \beta p/2\). Se \(\beta &lt; 2\), única solução \(p = 0\) — colapso. Bons saem, qualidade média cai, mercado morre.</li>
+    <li><strong>Rothschild-Stiglitz (1976) — separador em seguro.</strong> Tipo H (alto risco) recebe cobertura completa a prêmio justo. Tipo L (baixo risco) recebe cobertura <em>parcial</em> com IC-H binding. Inexistência possível quando proporção de tipo H é pequena demais (pooling cross-subsidiza, mas é Pareto-instável).</li>
+    <li><strong>Holmström (1979) — principal-agente.</strong> First-best (ação observável): salário fixo, principal absorve risco. Second-best (ação não-observável): IR + IC ambos binding com Bernoulli côncava. Salário aumenta com output (\(w_H &gt; w_L\)) — quebra o seguro do agente avesso. <strong>Prêmio de risco moral</strong> \(= \mathbb{E}[w]^{\text{SB}} - w^{\text{FB}}\).</li>
+  </ol>
+
+  <h3 style="margin-top:1.2rem">Aula 9 — Sinalização e Matching</h3>
+  <ol>
+    <li><strong>Spence (1973) — sinalização.</strong> Trabalhador conhece \(\theta\); firma observa apenas educação \(e\). Custo \(c(e, \theta) = e/\theta\) (single-crossing: \(\partial \text{TMS}/\partial \theta &lt; 0\)). Equilíbrio separador menos custoso (Riley): \(\underline e^* = \theta_L (\theta_H - \theta_L)\). Educação como <strong>desperdício social</strong>: tipo H gasta \(\underline e^*\) que não muda sua produtividade.</li>
+    <li><strong>Cho-Kreps (1987) — refinamento intuitivo.</strong> Em cada PBE pooling/separador "alto", existe \(e'\) onde apenas o tipo alto desviaria. Crenças refinadas \(\mu(\theta_H \mid e') = 1\) implicam salário \(\theta_H\) nesse \(e'\); tipo H desvia, equilíbrio cai. Sobra Riley.</li>
+    <li><strong>Gale-Shapley (1962) — DA.</strong> Dois lados disjuntos, preferências completas e estritas. Algoritmo de aceitação adiada termina em \(\le n \cdot k\) iterações; output é estável e <strong>\(M\)-ótimo</strong> (proponente recebe melhor entre estáveis); strategy-proof apenas para o lado proponente. Roth (1982): nenhum mecanismo estável é SP nos dois lados.</li>
+    <li><strong>Bilateralidade da estabilidade.</strong> \((m, w)\) bloqueia \(\mu\) se <em>ambos</em> preferem-se mutuamente a seus parceiros em \(\mu\). Verificar bloqueio só do lado de \(m\) é o erro mais comum. Esse erro vai aparecer na AF.</li>
+  </ol>
+
+  <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne aos materiais (<a href="aula-08.html" style="color:var(--accent)">aula-08.html</a> e <a href="aula-09.html" style="color:var(--accent)">aula-09.html</a>) ou ZaE Cap. 19 antes de avançar.</p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
+</section>
+
+<!-- ==================== SECTION 2: EXTENSÃO 1 — Spence com 3 tipos (Mailath) ==================== -->
+<section class="section-block locked" id="s2-mailath" data-section="s2-mailath" data-order="2">
+  <div class="section-meta">Seção 2 · Extensão 1 (Aula 9) · 18 min</div>
+  <h2>Spence com 3 tipos — a sequência de IC adjacentes (Mailath 1987)</h2>
+
+  <div class="confidence-block" id="conf-s2-pre">
+    <label>Antes de estudar: dados 3 tipos \(\theta_1 = 1, \theta_2 = 3, \theta_3 = 6\) com custo \(c(e, \theta) = e/\theta\), você consegue construir o <strong>separador menos custoso</strong> sem aplicar mecanicamente a fórmula 2-tipos?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s2-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s2-mailath','pre','s2-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s2" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 9 cobriu Spence canônico com 2 tipos. Sob 2 tipos, separador menos custoso é \(\underline e^* = \theta_L(\theta_H - \theta_L)\). E quando temos 3 tipos? A intuição naïve "cada tipo recebe \(\theta_1(\theta_i - \theta_1)\)" está <em>errada</em> — esquece IC com tipos intermediários.</p>
+
+    <h3 style="margin-top:1.2rem">Setup</h3>
+    <p>Tipos \(\theta_1 = 1, \theta_2 = 3, \theta_3 = 6\). Probabilidades iguais \(\pi_i = 1/3\). Custo \(c(e, \theta) = e/\theta\). Salário competitivo \(w(e) = \mathbb{E}[\theta \mid e]\). Bernoulli quase-linear \(U^i = w(e) - e/\theta_i\).</p>
+    <p>TMS por tipo: \(\text{TMS}^i = \partial c/\partial e \big|_\theta = 1/\theta_i\). Logo \(\text{TMS}^1 = 1, \text{TMS}^2 = 1/3, \text{TMS}^3 = 1/6\). <strong>Ordenamento decrescente em \(\theta\)</strong> — single-crossing vale, curvas de indiferença ficam mais "deitadas" para tipos altos.</p>
+
+    <h3 style="margin-top:1.2rem">Construção sequencial (Mailath 1987)</h3>
+    <p>Em separador, cada tipo \(i\) escolhe \(e_i^*\) tal que <strong>tipo \(i-1\) é exatamente indiferente entre seu próprio sinal e imitar o tipo \(i\)</strong> (IC-adjacente binding). Recursivamente:</p>
+
+    <p><strong>Tipo 1 (mais baixo):</strong> não há ninguém abaixo para imitá-lo. \(e_1^* = 0\). Recebe \(w(0) = \theta_1 = 1\).</p>
+
+    <p><strong>Tipo 2:</strong> IC-adjacente binding diz que tipo 1 é indiferente entre \(e_1^* = 0\) (recebe \(\theta_1 = 1\)) e \(e_2^*\) (recebe \(\theta_2 = 3\)). Indiferença:</p>
+    <p>\[ \theta_1 - 0/\theta_1 = \theta_2 - e_2^*/\theta_1 \;\;\Longrightarrow\;\; e_2^* = \theta_1 (\theta_2 - \theta_1) = 1 \cdot 2 = 2. \]</p>
+
+    <p><strong>Tipo 3:</strong> IC-adjacente binding diz que tipo 2 é indiferente entre \(e_2^* = 2\) (recebe \(\theta_2 = 3\)) e \(e_3^*\) (recebe \(\theta_3 = 6\)). Indiferença:</p>
+    <p>\[ \theta_2 - e_2^*/\theta_2 = \theta_3 - e_3^*/\theta_2 \;\;\Longrightarrow\;\; e_3^* = e_2^* + \theta_2 (\theta_3 - \theta_2) = 2 + 3 \cdot 3 = 11. \]</p>
+
+    <p><strong>Sequência canônica:</strong></p>
+    <p>\[ \boxed{\;\; e_i^* = e_{i-1}^* + \theta_{i-1} (\theta_i - \theta_{i-1}), \qquad e_1^* = 0. \;\;} \]</p>
+
+    <p>Resultado para nosso exemplo: \(e_1^* = 0, e_2^* = 2, e_3^* = 11\).</p>
+
+    <h3 style="margin-top:1.2rem">Por que a fórmula 2-tipos não generaliza</h3>
+    <p>Aluno apressado escreveria \(e_3^* = \theta_1 (\theta_3 - \theta_1) = 1 \cdot 5 = 5\). <strong>Erro.</strong> Esse \(e_3^* = 5\) faz tipo 1 indiferente entre 0 e 5, mas <em>tipo 2</em> preferiria desviar para \(e = 5\): ganharia \(6 - 5/3 = 13/3 \approx 4{,}33\) contra \(3 - 2/3 = 7/3 \approx 2{,}33\). IC-2-imita-3 violada. Separação quebra.</p>
+    <p>O argumento de Mailath é que <strong>IC binding sempre é entre tipos adjacentes</strong> — porque single-crossing garante que se IC-adjacente vale, IC-distantes valem a fortiori. Daí a recursão.</p>
+
+    <h3 style="margin-top:1.2rem">Verificação numérica das ICs</h3>
+    <p>Em \(e_1^* = 0, e_2^* = 2, e_3^* = 11\):</p>
+    <ul>
+      <li>IC-1 não imita 2: \(1 - 0 = 1 \;\;\overset{?}{\ge}\;\; 3 - 2/1 = 1\). ✓ Binding.</li>
+      <li>IC-2 não imita 3: \(3 - 2/3 = 7/3 \;\;\overset{?}{\ge}\;\; 6 - 11/3 = 7/3\). ✓ Binding.</li>
+      <li>IC-1 não imita 3 (a fortiori): \(1 \;\;\overset{?}{\ge}\;\; 6 - 11/1 = -5\). ✓ Folgada.</li>
+      <li>IC-2 não imita 1: \(7/3 \;\;\overset{?}{\ge}\;\; 1 - 0 = 1\). ✓ Folgada.</li>
+      <li>IC-3 não imita 2: \(6 - 11/6 = 25/6 \;\;\overset{?}{\ge}\;\; 3 - 2/6 = 8/3\). \(25/6 \approx 4{,}17 \ge 8/3 \approx 2{,}67\). ✓ Folgada.</li>
+    </ul>
+    <p>Tudo consistente. <strong>Adjacentes binding, distantes folgadas.</strong></p>
+
+    <h3 style="margin-top:1.2rem">Cho-Kreps com 3 tipos</h3>
+    <p>Em 3+ tipos, Cho-Kreps elimina iterativamente: primeiro pools mais inclusivos (todos juntos), depois pools de pares, depois separadores acima do mínimo. Resultado robusto: separador menos custoso de Mailath sobrevive (Mailath 1987, <em>Econometrica</em> 55(6): 1349–1365, <a href="https://doi.org/10.2307/1913559" target="_blank" rel="noopener">DOI 10.2307/1913559</a>).</p>
+
+    <h3 style="margin-top:1.2rem">Generalização contínua</h3>
+    <p>Em <strong>tipos contínuos</strong> \(\theta \in [\underline\theta, \overline\theta]\), a IC binding entre adjacentes vira ODE: \(e^*\,'(\theta) = \theta\) (ou similar, dependendo da Bernoulli). Solução \(e^*(\theta) = \int_{\underline\theta}^{\theta} s\, ds\). É a versão "infinitesimal" da recursão de Mailath. Não cobramos isso na AF, mas a estrutura é a mesma.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode visualizar geometricamente as 3 curvas de indiferença (uma por tipo) cruzando as 3 linhas de salário (\(w = 1, 3, 6\)) no plano \((e, w)\), mostrando os pontos de tangência sequencial. Pede na reflexão se quiser.</p>
+
+    <div class="micro-checkpoint" id="micro-s2">
+      <h3>Micro-checkpoint (2 itens — obrigatórios para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s2q1" data-correct="c">
+        <div class="q-text">1. Considere Spence com 3 tipos \(\theta_1 = 2, \theta_2 = 4, \theta_3 = 8\) e custo \(c(e, \theta) = e/\theta\). Pelo procedimento de Mailath, o separador menos custoso para o tipo 3 é:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-mailath','s2q1','a',this)">(a) \(e_3^* = \theta_1 (\theta_3 - \theta_1) = 2 \cdot 6 = 12\), aplicação direta da fórmula 2-tipos.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-mailath','s2q1','b',this)">(b) \(e_3^* = \theta_2 (\theta_3 - \theta_2) = 4 \cdot 4 = 16\), apenas IC-adjacente entre 2 e 3 importa.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-mailath','s2q1','c',this)">(c) \(e_3^* = e_2^* + \theta_2(\theta_3 - \theta_2) = \theta_1(\theta_2 - \theta_1) + \theta_2(\theta_3 - \theta_2) = 4 + 16 = 20\), recursão de Mailath sobre IC adjacentes.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-mailath','s2q1','d',this)">(d) \(e_3^* = (\theta_3 - \theta_1)/2 = 3\), separador médio dos extremos.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s2q2" data-correct="b">
+        <div class="q-text">2. Por que IC binding em separador de Mailath é entre tipos <em>adjacentes</em>, não entre tipos distantes (ex.: IC-1-imita-3)?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-mailath','s2q2','a',this)">(a) Por convenção pedagógica — IC distante poderia ser binding e o resultado seria o mesmo.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-mailath','s2q2','b',this)">(b) Porque <em>single-crossing</em> garante que, se IC-adjacente vale (tipo \(i\) não imita \(i+1\)), então IC-distante também vale a fortiori. O ponto crítico é entre vizinhos no ordenamento de \(\theta\); distantes ficam folgadas.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-mailath','s2q2','c',this)">(c) Porque o resultado é independente da estrutura de custos.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-mailath','s2q2','d',this)">(d) Porque tipos distantes têm probabilidade infinitesimal.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s2-post" style="display:none">
+      <label>Agora, depois de ver Spence 3 tipos com Mailath:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s2-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s2-mailath','post','s2-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s2-mailath" disabled onclick="MPE.completeSection('s2-mailath')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 3: EXTENSÃO 2 — Lattice + TTC ==================== -->
+<section class="section-block locked" id="s3-lattice" data-section="s3-lattice" data-order="3">
+  <div class="section-meta">Seção 3 · Extensão 2 (Aula 9) · 18 min</div>
+  <h2>Lattice theorem + TTC para troca de rins</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes: você consegue dizer <strong>por que kidney exchange usa Top Trading Cycles (TTC) e não Deferred Acceptance (DA)</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-lattice','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 9 enunciou que DA com \(M\) proponente entrega \(\mu_M\) (M-ótimo) e DA com \(W\) proponente entrega \(\mu_W\) (W-ótimo). Aqui formalizamos: o conjunto de matchings estáveis tem estrutura de <em>reticulado</em>. E vemos um problema irmão — kidney exchange — onde DA <strong>não funciona</strong> e o algoritmo certo é TTC.</p>
+
+    <h3 style="margin-top:1.2rem">Parte A — Lattice theorem (Roth-Sotomayor 1990, Thm 2.16)</h3>
+    <p>Seja \(\mathcal{S}\) o conjunto de matchings estáveis num mercado bilateral. Defina a ordem parcial \(\succeq_M\):</p>
+    <p>\[ \mu \succeq_M \mu' \;\;\Longleftrightarrow\;\; \mu(m) \succeq_m \mu'(m) \;\;\forall m. \]</p>
+    <p>Em palavras: \(\mu\) domina \(\mu'\) na ordem dos homens se cada \(m\) acha seu parceiro em \(\mu\) pelo menos tão bom quanto em \(\mu'\). Análogo para \(\succeq_W\), com a observação importante de que <em>os dois lados são opostos</em>: \(\mu \succeq_M \mu' \Longleftrightarrow \mu' \succeq_W \mu\) (resultado de Knuth 1976; ver Roth-Sotomayor 1990 §2.5).</p>
+
+    <p><strong>Teorema (Knuth 1976; Roth-Sotomayor 1990 Thm 2.16):</strong> \((\mathcal{S}, \succeq_M)\) é um <em>reticulado completo</em>. Em particular:</p>
+    <ul>
+      <li>Existe \(\mu_M \in \mathcal{S}\) que é o <strong>supremo</strong> (M-ótimo): \(\mu_M \succeq_M \mu \;\;\forall \mu \in \mathcal{S}\). DA com \(M\) proponente produz \(\mu_M\).</li>
+      <li>Existe \(\mu_W \in \mathcal{S}\) que é o <strong>ínfimo</strong>: \(\mu \succeq_M \mu_W \;\;\forall \mu \in \mathcal{S}\). DA com \(W\) proponente produz \(\mu_W\).</li>
+      <li>Para quaisquer \(\mu, \mu' \in \mathcal{S}\), o "encontro" \(\mu \wedge_M \mu'\) (cada \(m\) recebe o pior dos dois parceiros) e a "junção" \(\mu \vee_M \mu'\) (cada \(m\) recebe o melhor) também são estáveis.</li>
+    </ul>
+
+    <p><strong>Implicação operacional:</strong> \(\mu_M = \mu_W \Longleftrightarrow \mathcal{S} = \{\mu_M\}\) (matching estável único). Quando \(\mu_M \neq \mu_W\), há pelo menos 2 matchings estáveis, e tipicamente vários.</p>
+
+    <h3 style="margin-top:1.2rem">Conexão com a Aula 9</h3>
+    <p>O fato dos dois extremos serem <em>opostos</em> (M-ótimo é W-péssimo, e vice-versa) é o que justifica a observação operacional: <strong>NRMP escolheu candidatos como proponentes</strong> para favorecer o lado que tem mais incentivo a manipular se não fosse SP. A escolha do lado proponente tem consequência distributiva direta. Não é detalhe técnico.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">Cite Roth, A. E. &amp; Sotomayor, M. A. O. (1990), <em>Two-Sided Matching: A Study in Game-Theoretic Modeling and Analysis</em>, Cambridge UP. Knuth (1976), <em>Mariages Stables</em>, Presses de l'Université de Montréal — primeira prova do lattice theorem.</p>
+
+    <h3 style="margin-top:1.5rem">Parte B — TTC para kidney exchange</h3>
+    <p>DA pressupõe <strong>matching bilateral</strong>: cada homem com uma mulher. Em kidney exchange, a estrutura é <em>cíclica</em>: paciente \(P_1\) tem doador \(D_1\) (mas incompatível com \(P_1\)); \(P_2\) tem \(D_2\); etc. A solução é uma <strong>cadeia</strong> \(D_1 \to P_2, D_2 \to P_3, D_3 \to P_1\) (ciclo de comprimento 3). DA não constrói cadeias — só pares.</p>
+
+    <p>O algoritmo certo é <strong>Top Trading Cycles (TTC)</strong>, originário de Shapley-Scarf (1974) para problemas de housing exchange. Aplicado a kidney exchange por Roth, Sönmez &amp; Ünver (2004), <em>Kidney Exchange</em>, <em>QJE</em> 119(2): 457–488, <a href="https://doi.org/10.1162/0033553041382157" target="_blank" rel="noopener">DOI 10.1162/0033553041382157</a>.</p>
+
+    <h3 style="margin-top:1.2rem">TTC pseudo-código</h3>
+    <ol>
+      <li>Cada par paciente-doador \((P_i, D_i)\) <em>aponta</em> para o doador \(D_j\) cujo rim seria seu primeiro favorito (compatibilidade tipo sanguíneo + HLA).</li>
+      <li>Identifique <strong>ciclos</strong> nesse grafo direcionado. Sempre existe pelo menos um (grafo finito + cada nó tem grau out 1).</li>
+      <li>Em cada ciclo, execute as trocas: rim flui no sentido do ciclo. Pares dentro do ciclo são <em>removidos</em>.</li>
+      <li>Repita com pares restantes até esgotar.</li>
+    </ol>
+
+    <h3 style="margin-top:1.2rem">Propriedades de TTC (Shapley-Scarf 1974; Roth-Sönmez-Ünver 2004)</h3>
+    <ul>
+      <li><strong>Pareto-eficiente</strong> no domínio de housing/kidney (Roth 1982 housing). Resultado mais forte que DA, que é Pareto-ótimo apenas entre estáveis.</li>
+      <li><strong>Strategy-proof</strong> (todos os agentes; não há lado proponente — o problema é simétrico).</li>
+      <li><strong>Core unique</strong>: a alocação de TTC é o único elemento do core no problema de troca pura.</li>
+      <li><strong>Não tem análogo de "estabilidade bilateral"</strong> porque o problema não é bilateral. A noção de eficiência substitui.</li>
+    </ul>
+
+    <h3 style="margin-top:1.2rem">Por que essa diferença entre DA e TTC importa</h3>
+    <p>É a diferença entre <em>mercados bilaterais com lados ordenados</em> (escolas/alunos, médicos/hospitais, homens/mulheres) e <em>mercados de troca cíclica de objetos heterogêneos</em> (rins, casas, pareamento de salas).</p>
+    <ul>
+      <li>NRMP, SISU, Boston/NYC school choice → DA.</li>
+      <li>Kidney exchange (NEPKE 2007, UNOS, programas brasileiros emergentes), house swapping → TTC.</li>
+    </ul>
+
+    <p><strong>Northwestern altruistic chain (2006):</strong> Roth-Sönmez-Ünver propuseram em 2006 uma generalização de TTC com <em>doador altruísta inicial</em> (não-direcional) — quebra ciclo em <em>cadeia</em> aberta. Permite mais transplantes que TTC puro. Implementado clinicamente desde 2007 (recorde: cadeia de 30 transplantes em 2015 nos EUA).</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode executar TTC num exemplo 3-pares com matriz de compatibilidade explícita, mostrando como o ciclo se forma. Pede na reflexão.</p>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s3q1" data-correct="c">
+        <div class="q-text">1. O lattice theorem (Roth-Sotomayor 1990 Thm 2.16) afirma que o conjunto de matchings estáveis \(\mathcal{S}\) num mercado bilateral:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-lattice','s3q1','a',this)">(a) Tem cardinalidade exatamente 2: \(\mu_M\) e \(\mu_W\).</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-lattice','s3q1','b',this)">(b) É sempre singleton: matching estável é único quando existe.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-lattice','s3q1','c',this)">(c) É um reticulado completo sob \(\succeq_M\), com supremo \(\mu_M\) (M-ótimo, output de DA com \(M\) proponente) e ínfimo \(\mu_W\). Quaisquer dois matchings estáveis admitem encontro e junção também estáveis.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-lattice','s3q1','d',this)">(d) É vazio quando há mais homens que mulheres.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s3q2" data-correct="b">
+        <div class="q-text">2. Por que kidney exchange usa Top Trading Cycles (TTC) e não Deferred Acceptance (DA)?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-lattice','s3q2','a',this)">(a) Porque DA não é strategy-proof e TTC é — e em medicina manipulação é proibida por lei.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-lattice','s3q2','b',this)">(b) Porque a estrutura do problema é <em>cíclica</em> (rim flui no sentido do ciclo \(D_1 \to P_2, D_2 \to P_3, D_3 \to P_1\)), não bilateral. DA constrói pares; TTC constrói ciclos. A noção de eficiência substitui a de estabilidade bilateral, que sequer faz sentido aqui.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-lattice','s3q2','c',this)">(c) Porque DA exige preferências completas e em medicina pacientes têm preferências incompletas.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-lattice','s3q2','d',this)">(d) Porque TTC arrecada doação financeira e DA não.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora, depois de ver lattice + TTC:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-lattice','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-lattice" disabled onclick="MPE.completeSection('s3-lattice')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EXTENSÃO 3 — Síntese cross-aula 4 modelos ==================== -->
+<section class="section-block locked" id="s4-sintese" data-section="s4-sintese" data-order="4">
+  <div class="section-meta">Seção 4 · Extensão 3 (Síntese A8+A9) · 10 min</div>
+  <h2>Matriz integrada: Akerlof × R-S × Holmström × Spence</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes: você consegue distinguir os 4 modelos canônicos da informação assimétrica em <strong>3 dimensões diferentes simultaneamente</strong> (tipo de assimetria, quem move primeiro, qual restrição é binding)?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-sintese','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Por que esta seção.</strong> Aulas 8 e 9 produzem 4 modelos canônicos. Confundi-los em prova é o erro #4 e #5 da lista do Alberto. A distinção exige enxergar três dimensões <em>simultaneamente</em>: <em>(i)</em> tipo de assimetria, <em>(ii)</em> quem move primeiro, <em>(iii)</em> qual restrição é binding em equilíbrio.</p>
+
+    <h3 style="margin-top:1.2rem">Matriz integrada</h3>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.92rem">
+      <thead>
+        <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+          <th style="padding:0.6rem;text-align:left">Modelo</th>
+          <th style="padding:0.6rem;text-align:left">Assimetria</th>
+          <th style="padding:0.6rem;text-align:left">Quem move 1º</th>
+          <th style="padding:0.6rem;text-align:left">Restrição binding</th>
+          <th style="padding:0.6rem;text-align:left">Ineficiência</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Akerlof (1970)</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">Hidden type (vendedor)</td>
+          <td style="padding:0.6rem;vertical-align:top">Comprador (oferece preço)</td>
+          <td style="padding:0.6rem;vertical-align:top">Participação (vendedor aceita se \(\theta \le p\))</td>
+          <td style="padding:0.6rem;vertical-align:top">Unraveling: \(p \to 0\); colapso parcial ou total</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Rothschild-Stiglitz (1976)</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">Hidden type (segurado)</td>
+          <td style="padding:0.6rem;vertical-align:top">Seguradora (oferece menu)</td>
+          <td style="padding:0.6rem;vertical-align:top">IC-H + IR-L (alto-risco não imita baixo; baixo-risco aceita)</td>
+          <td style="padding:0.6rem;vertical-align:top">Cobertura distorcida para baixo no tipo L; inexistência se \(\lambda^H\) baixo</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Holmström (1979)</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">Hidden action (agente)</td>
+          <td style="padding:0.6rem;vertical-align:top">Principal (oferece contrato)</td>
+          <td style="padding:0.6rem;vertical-align:top">IR + IC (agente participa; escolhe \(a_H\))</td>
+          <td style="padding:0.6rem;vertical-align:top">Quebra do seguro do agente avesso; salário variável \(w_H &gt; w_L\)</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Spence (1973)</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">Hidden type (trabalhador)</td>
+          <td style="padding:0.6rem;vertical-align:top"><strong>Agente informado</strong> (sinaliza)</td>
+          <td style="padding:0.6rem;vertical-align:top">IC-L (baixo não imita alto)</td>
+          <td style="padding:0.6rem;vertical-align:top">Educação como desperdício; tipo H gasta \(\underline e^* = \theta_L \Delta\theta\)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.5rem">Eq-punch para cravar</h3>
+    <p style="background:#1e293b;color:#fff;padding:1rem;border-radius:0.5rem;font-style:italic;margin-top:0.5rem">"O que distingue Spence dos outros 3 modelos? <strong>O agente informado move primeiro.</strong> Em Akerlof, o vendedor é passivo (preço cai por unraveling). Em R-S, o segurado escolhe entre menu pré-existente. Em Holmström, o agente é contratado e escolhe ação não-observável. Em Spence, o agente <strong>sinaliza ativamente</strong>. É o único modelo onde a iniciativa é do informado."</p>
+
+    <h3 style="margin-top:1.5rem">Aplicações brasileiras canônicas</h3>
+    <ul>
+      <li><strong>Akerlof:</strong> mercado de carros usados Webmotors/OLX; mercado de ações de empresas com governança fraca.</li>
+      <li><strong>R-S:</strong> planos de saúde individuais ANS (Lei 9.656/1998 impõe pooling regulado para evitar unraveling à la R-S 1976).</li>
+      <li><strong>Holmström:</strong> stock options de CEO; <strong>Bolsa Família condicional</strong> (Lei 10.836/2004) — IR para participação, IC via condicionalidades de matrícula escolar e vacinação.</li>
+      <li><strong>Spence:</strong> MBA executivo Insper/FGV; PNAD documenta prêmio salarial ~3× ensino superior vs. fundamental, dos quais Lange-Topel (2006) atribuem 30%–60% a sinalização.</li>
+    </ul>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai trabalhar essa matriz no quadro com a turma puxando exemplos. Esta seção te prepara para responder rápido. Pede na reflexão se quiser exemplos adicionais.</p>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s4q1" data-correct="b">
+        <div class="q-text">1. Considere: empresa contrata gestor para projeto. Gestor sabe se é "competente" ou "novato"; empresa não. Gestor pode escolher MBA caro <em>antes</em> de aplicar. Empresa observa só "MBA: sim/não". Esta situação é melhor modelada por:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-sintese','s4q1','a',this)">(a) Akerlof — empresa oferece preço e gestor competente sai do mercado.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-sintese','s4q1','b',this)">(b) Spence — agente informado (gestor) move primeiro com sinal custoso (MBA). Empresa atualiza crença sobre tipo via observação do sinal. Equilíbrio separador menos custoso emerge se single-crossing valer.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-sintese','s4q1','c',this)">(c) Holmström — agente escolhe ação (esforço no projeto) que principal não observa.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-sintese','s4q1','d',this)">(d) R-S — empresa oferece menu de salários e gestor escolhe pacote.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora, depois de ver a matriz integrada:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-sintese','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-sintese" disabled onclick="MPE.completeSection('s4-sintese')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: ROTEIRO AF INTEGRADO ==================== -->
+<section class="section-block locked" id="s5-af" data-section="s5-af" data-order="5">
+  <div class="section-meta">Seção 5 · Roteiro AF · 15 min</div>
+  <h2>Roteiro operacional para a Avaliação Final (qua 24/06)</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes: você consegue listar <strong>quais aulas têm peso 40%</strong> na AF e quais erros típicos serão descontados?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-af','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <p><strong>Por que esta seção.</strong> A AF é em quarta 24/06, 19:00, 3h, presencial, A4 frente-e-verso permitida. Esta seção te dá o roteiro operacional: pesos, erros típicos, dicas de A4 e mapa de revisão. Use esta seção como <strong>checklist concreto</strong> de preparação nos 4 dias entre M5 (sáb 20/06) e AF (qua 24/06).</p>
+
+    <h3 style="margin-top:1.2rem">Estrutura da AF — pesos por parte</h3>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.92rem">
+      <thead>
+        <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+          <th style="padding:0.6rem;text-align:left">Parte</th>
+          <th style="padding:0.6rem;text-align:left">Aulas cobertas</th>
+          <th style="padding:0.6rem;text-align:left">Peso</th>
+          <th style="padding:0.6rem;text-align:left">Calibre esperado</th>
+          <th style="padding:0.6rem;text-align:left">Tempo sugerido</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem"><strong>I</strong></td>
+          <td style="padding:0.6rem">1 (Preferências), 2 (UMP/EMP/Dualidade), 3 (Slutsky/Elasticidades)</td>
+          <td style="padding:0.6rem"><strong>40%</strong></td>
+          <td style="padding:0.6rem">🟡 N&amp;S</td>
+          <td style="padding:0.6rem">75–90 min</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem"><strong>II</strong></td>
+          <td style="padding:0.6rem">4 (EG trocas+produção), 5 (Arrow-Debreu I), 6 (Arrow-Debreu II)</td>
+          <td style="padding:0.6rem"><strong>30%</strong></td>
+          <td style="padding:0.6rem">🟡 a 🔴</td>
+          <td style="padding:0.6rem">60–75 min</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem"><strong>III</strong></td>
+          <td style="padding:0.6rem">7 (Externalidades/BP), 8 (Sel. Adversa+Risco Moral)</td>
+          <td style="padding:0.6rem"><strong>20%</strong></td>
+          <td style="padding:0.6rem">🟡 a 🔴</td>
+          <td style="padding:0.6rem">30–45 min</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem"><strong>IV</strong></td>
+          <td style="padding:0.6rem">9 (Sinalização+Matching)</td>
+          <td style="padding:0.6rem"><strong>10%</strong></td>
+          <td style="padding:0.6rem">🟡</td>
+          <td style="padding:0.6rem">15–20 min</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p style="background:#fef3c7;padding:0.8rem;border-left:4px solid #f59e0b;margin-top:1rem"><strong>Aviso de calibração:</strong> a AF favorece a primeira metade do curso em volume. Parte I (Aulas 1–3 = UMP/EMP/dualidade/Slutsky) vale 40% — quase o dobro de Partes III + IV combinadas. Quem chega aqui pensando "só Aulas 8–9 importam porque foram as últimas" perdeu 40 pontos.</p>
+
+    <h3 style="margin-top:1.5rem">Lista canônica de erros típicos (Alberto vai descontar)</h3>
+
+    <ol>
+      <li><strong>Confundir Marshalliana com Hicksiana em Slutsky.</strong> Hicksiana mantém \(u\) constante; Marshalliana mantém \(M\) constante. CV exige Hicksiana — usar Marshalliana é erro grave de Parte I.</li>
+      <li><strong>Esquecer 2º TBE em redistribuição.</strong> Pareto-eficiente requer realocar dotações <em>antes</em> + competir, não apenas competir. Parte II.</li>
+      <li><strong>\(t^* = \text{MEC}(q^p)\) em vez de \(\text{MEC}(q^*)\).</strong> Imposto de Pigou avalia o dano marginal externo no <em>ótimo social</em>, não no equilíbrio privado pré-imposto. Parte III.</li>
+      <li><strong>Em info assimétrica, esquecer IR.</strong> Sem IR, principal "explora" o agente sem limite. Parte III.</li>
+      <li><strong>Em Spence, esquecer single-crossing como hipótese.</strong> Não é teorema — é hipótese. Sem single-crossing, separação não emerge. Parte IV.</li>
+      <li><strong>Em DA, confundir \(M\)-ótimo com \(W\)-ótimo (ou Pareto-ótimo absoluto).</strong> M-ótimo é entre estáveis; \(W\)-ótimo só é gerado por DA com \(W\) proponente. Pode haver matching não-estável Pareto-superior — mas não-implementável. Parte IV.</li>
+      <li><strong>Em VCG, declarar orçamento balanceado.</strong> Não é em geral. Green-Laffont 1979: residual genérico não-zero. Parte III.</li>
+      <li><strong>Em Hart 1975, declarar Pareto-ótimo absoluto.</strong> Equilíbrio Radner é <em>constrained</em> Pareto-eficiente; o absoluto requer mercado completo. Parte II.</li>
+      <li><strong>Em Slutsky, confundir efeito-substituição com efeito-renda total.</strong> Substituição = Hicksiana mantendo \(u\); renda = ajuste de \(u\) sob preços novos. Parte I.</li>
+      <li><strong>Verificar bloqueio em DA só do lado de \(m\).</strong> <strong>Bilateralidade</strong> é exigida: ambos os agentes do par têm que preferir-se mutuamente. Parte IV.</li>
+    </ol>
+
+    <p style="background:#fee2e2;padding:0.8rem;border-left:4px solid #dc2626;margin-top:1rem"><strong>Direto:</strong> Alberto vai descontar todos os 10 acima. Anote essa lista numa folha à parte <em>antes</em> de escrever a A4. Releia na segunda 22/06 e na terça 23/06.</p>
+
+    <h3 style="margin-top:1.5rem">A4 — como construir e usar</h3>
+
+    <p>Folha A4 frente-e-verso, preenchida <em>à mão</em>. <strong>Construir a A4 é o método de estudo mais útil dos 4 dias finais.</strong> Não copie do livro: escreva com suas mãos. Onde tropeçar, é onde estudar.</p>
+
+    <p><strong>Sugestão de organização (não-obrigatória):</strong></p>
+    <ul>
+      <li><strong>Frente:</strong>
+        <ul>
+          <li>Topo-esquerdo: condições UMP / EMP + identidades de Roy e Shephard.</li>
+          <li>Topo-direito: matriz de Slutsky em forma matricial (\(\partial x_i/\partial p_j = \partial h_i/\partial p_j - x_j\,\partial x_i/\partial M\)).</li>
+          <li>Meio: 1º e 2º TBE (enunciados rápidos, hipóteses).</li>
+          <li>Fundo-esquerdo: Pigou (\(t^* = \text{MEC}(q^*)\)) + Coase (custos transação \(=0\)).</li>
+          <li>Fundo-direito: Samuelson (\(\sum_i \text{TMS}^i = \text{TMT}\)) + VCG pivot.</li>
+        </ul>
+      </li>
+      <li><strong>Verso:</strong>
+        <ul>
+          <li>Topo-esquerdo: Akerlof (equação \(p = \beta\,\mathbb{E}[\theta \mid \theta \le p]\); colapso se \(\beta &lt; 2\)).</li>
+          <li>Topo-direito: R-S separador (cobertura completa para H; IC-H binding distorce L para baixo).</li>
+          <li>Meio: Holmström FB (\(w^* = u^{-1}(c)\)) + SB (sistema IR + IC binding em Bernoulli côncava).</li>
+          <li>Fundo-esquerdo: Spence (\(\underline e^* = \theta_L \Delta\theta\)) + single-crossing (\(\partial \text{TMS}/\partial \theta &lt; 0\)).</li>
+          <li>Fundo-direito: DA pseudo-código + propriedades (M-ótimo, SP só do lado proponente, Roth 1982 negativa).</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p><strong>Princípio:</strong> A4 é <em>memória externa de fórmulas</em>, não substituto de aprendizado. Se você não entende o conceito, A4 não salva. Se entende mas pode esquecer fórmula sob pressão, A4 é seu amigo. <strong>O ato de construir é o estudo.</strong></p>
+
+    <h3 style="margin-top:1.5rem">Material permitido / proibido</h3>
+    <ul>
+      <li><strong>Permitido:</strong> caneta, lápis, borracha, calculadora simples (não-programável), folha A4 frente-e-verso preenchida à mão.</li>
+      <li><strong>Proibido:</strong> celular (modo avião na mochila), notebook, tablet, calculadora gráfica, qualquer outro material impresso.</li>
+    </ul>
+
+    <h3 style="margin-top:1.2rem">Mapa de revisão por aula (4 dias finais)</h3>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:0.5rem;font-size:0.9rem">
+      <thead>
+        <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+          <th style="padding:0.5rem;text-align:left">Dia</th>
+          <th style="padding:0.5rem;text-align:left">Foco principal</th>
+          <th style="padding:0.5rem;text-align:left">Exercício-chave para refazer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem"><strong>Sáb 20/06</strong></td><td style="padding:0.5rem">Monitoria 5 com Alberto (10:00). À tarde: começar A4.</td><td style="padding:0.5rem">Anotações da M5 + Bloco 4 dela (erros AF).</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem"><strong>Dom 21/06</strong></td><td style="padding:0.5rem">Aulas 1–3 (Parte I, 40%): UMP, EMP, Slutsky, dualidade.</td><td style="padding:0.5rem">Avaliativo 3 Ex 5 (CV/EV); avaliativo 2 Ex 4 (dualidade).</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem"><strong>Seg 22/06</strong></td><td style="padding:0.5rem">Aulas 4–6 (Parte II, 30%): Edgeworth, EG, Arrow-Debreu, SDF.</td><td style="padding:0.5rem">Avaliativo 5 ou 6 Ex de existência/2º TBE.</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem"><strong>Ter 23/06</strong></td><td style="padding:0.5rem">Aulas 7–9 (Partes III + IV, 30%). Finalizar A4. Releu lista de erros.</td><td style="padding:0.5rem">Avaliativo 8 Ex 5 (Holmström); avaliativo 9 Ex 5 (DA).</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem"><strong>Qua 24/06</strong></td><td style="padding:0.5rem"><strong>Não estude.</strong> Refresque A4 nas 2h antes.</td><td style="padding:0.5rem">Chegue ao Insper 18:30. Prova 19:00. Termina 22:00.</td></tr>
+      </tbody>
+    </table>
+
+    <p style="background:#dbeafe;padding:0.8rem;border-left:4px solid #2563eb;margin-top:1rem"><strong>Dica forte:</strong> não estude no dia da prova. Apenas refresque a A4 nas 2h antes. Cérebro cansado é cérebro errante. Durma cedo na terça.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai dedicar Bloco 4 (10 min final) a esta lista de erros + dicas A4. Esta seção te prepara — chegue ao sábado com perguntas específicas. Pede na reflexão se algum erro merece tratamento mais detalhado.</p>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (1 item — calibração da AF)</h3>
+      <div class="micro-q" data-q="s5q1" data-correct="b">
+        <div class="q-text">1. Aluno típico, com 3h de prova e pesos 40/30/20/10, deveria distribuir tempo aproximadamente:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-af','s5q1','a',this)">(a) 45 min em cada parte (180/4 = 45) — distribuição igualitária, "para não ficar com tempo sobrando".</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-af','s5q1','b',this)">(b) Proporcional ao peso, com folga de leitura inicial: ~5 min lendo tudo + ~75 min Parte I + ~60 min Parte II + ~30 min Parte III + ~10 min Parte IV. Total ~180 min. Quem invertir e gastar 60 min em Parte IV (10%) está perdendo a prova.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-af','s5q1','c',this)">(c) Começar pelas mais difíceis (III + IV) "para tirar do caminho" — gasto de energia sub-ótimo.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-af','s5q1','d',this)">(d) Indiferente — todas as partes valem o mesmo na média histórica.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora, depois de ver o roteiro AF integrado:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-af','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-af" disabled onclick="MPE.completeSection('s5-af')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: SÍNTESE FINAL + DESPEDIDA ==================== -->
+<section class="section-block locked" id="s6-fim" data-section="s6-fim" data-order="6">
+  <div class="section-meta">Seção 6 · Fechamento · 5 min</div>
+  <h2>Última volta: o arco completo das 9 aulas</h2>
+
+  <div class="section-content" id="content-s6" style="display:block">
+    <p>Vale a pena uma última passada de olho no arco do curso, antes da AF. A coerência das 9 aulas não é acidental — cada uma resolve um problema deixado pela anterior, e o conjunto forma um <em>uma estrutura</em>, não uma lista de tópicos.</p>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.9rem">
+      <thead>
+        <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+          <th style="padding:0.5rem;text-align:left">Aula</th>
+          <th style="padding:0.5rem;text-align:left">Tema</th>
+          <th style="padding:0.5rem;text-align:left">Pergunta-âncora resolvida</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">1</td><td style="padding:0.5rem">Preferências e utilidade</td><td style="padding:0.5rem">Como representar escolha racional?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">2</td><td style="padding:0.5rem">UMP / EMP / Dualidade</td><td style="padding:0.5rem">Como derivar demanda a partir de preferência?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">3</td><td style="padding:0.5rem">Slutsky e elasticidades</td><td style="padding:0.5rem">Como decompor variação de demanda em substituição vs. renda?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">4</td><td style="padding:0.5rem">EG: trocas e produção</td><td style="padding:0.5rem">Quando preços agregam escolhas individuais em alocação eficiente?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">5</td><td style="padding:0.5rem">Arrow-Debreu I (bens contingentes)</td><td style="padding:0.5rem">Como estender EG para incerteza e tempo?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">6</td><td style="padding:0.5rem">Arrow-Debreu II (existência, TBEs)</td><td style="padding:0.5rem">Quando o equilíbrio AD existe, e quando é eficiente?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">7</td><td style="padding:0.5rem">Externalidades + bens públicos</td><td style="padding:0.5rem">O que fazer quando faltam preços para interações sociais?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">8</td><td style="padding:0.5rem">Sel. adversa + risco moral</td><td style="padding:0.5rem">O que fazer quando faltam <em>medidas</em> para verificar tipo/ação?</td></tr>
+        <tr style="border-bottom:1px solid #e2e8f0"><td style="padding:0.5rem">9</td><td style="padding:0.5rem">Sinalização + matching</td><td style="padding:0.5rem">Como agentes informados revelam tipo? Como alocar sem preços?</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:1.5rem"><strong>O arco:</strong> Aulas 1–3 montam o cálculo do consumidor individual. Aulas 4–6 agregam em equilíbrio competitivo e mostram o limite ideal (TBEs). Aulas 6–9 catalogam as três falhas estruturais — incompletude, externalidades/bens públicos, informação assimétrica — e mecanismos de coordenação fora-do-preço (matching, sinalização). É o curso inteiro de microeconomia do consumidor + teoria do equilíbrio + falhas + mecanismos, em 9 sextas-feiras.</p>
+
+    <p style="margin-top:1rem">Sobre a AF: 70% da nota saem dali. Os 30% que vocês acumularam na plataforma estão garantidos — engajamento foi gravado, dashboard mostra. <strong>A AF é onde se materializa o aprendizado.</strong> Mas vocês saem do curso sabendo o que sabem; a prova é só o instrumento de medida.</p>
+
+    <p style="margin-top:1rem;font-style:italic">Boa monitoria no sábado e boa AF na quarta. Sem grandes despedidas — o Prof. Darcio fecha o curso na quarta. Aqui é a última pré-monitoria; é só passo final operacional.</p>
+  </div>
+
+  <button class="section-complete-btn" onclick="MPE.completeSection('s6-fim')" style="margin-top:1.2rem">Avançar para reflexão</button>
+</section>
+
+<!-- ==================== SECTION 7: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s7-reflexao" data-section="s7-reflexao" data-order="7">
+  <div class="section-meta">Seção 7 · Reflexão · 3 min</div>
+  <h2>Foco do Alberto no sábado</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas vão diretamente para o Alberto montar a monitoria de 20/06 — e, indiretamente, para ajustar o foco da revisão antes da AF.</p>
+
+  <div class="reflection-block">
+    <label>Qual <strong>extensão funcionou melhor</strong> nesta pré-monitoria? Qual ainda ficou nebulosa?</label>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Mailath 3 tipos fechou — entendi por que IC adjacentes binding; mas TTC ainda quero ver execução completa num exemplo numérico', ou 'Lattice theorem ficou claro qualitativamente; mas a relação entre \mu_M ser sup e \mu_W ser inf ainda parece mágica'"></textarea>
+    <div class="help">Diz pro Alberto qual extensão funcionou e onde precisa de aprofundamento — ele revisita rápido em sala.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>Qual <strong>tópico das Aulas 8-9 ou da AF</strong> você quer que o Alberto cubra no sábado 20/06?</label>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Execução de TTC num exemplo 3-pares com matriz de compatibilidade explícita', ou 'Geometria de single-crossing com 3 curvas de indiferença em Spence', ou 'Revisão Slutsky+CV com Cobb-Douglas alpha != 0,5', ou 'Algum erro típico da lista que merece exemplo extra: erro #X'"></textarea>
+    <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva. Pode pedir um erro típico específico para tratamento detalhado.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s7-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-monitoria</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>Pré-monitoria 5 concluída</h2>
+  <p>Boa. O Alberto vai ler suas reflexões antes do sábado.</p>
+  <p style="margin-top:1rem"><strong>Monitoria presencial:</strong> sábado, 20/06/2026, 10:00, Insper.</p>
+  <p style="margin-top:0.5rem"><strong>Avaliação Final:</strong> quarta, 24/06/2026, 19:00, Insper, 3h, A4 frente-e-verso permitida.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Esta pré-monitoria é <strong>formativa</strong> — não conta nota. Foi a última do curso.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('pre-monitoria-05');
+
+var PAGE_ID = 'pre-monitoria-05';
+var TOTAL_SECTIONS = 8; // s0..s7
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = 'Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = 'Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = 'Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = 'Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-claro').value.trim();
+    var b = document.getElementById('refl-alberto').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s7-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'claro', document.getElementById('refl-claro').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'alberto', document.getElementById('refl-alberto').value.trim());
+    this.completeSection('s7-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>
