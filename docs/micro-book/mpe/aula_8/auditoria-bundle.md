@@ -438,7 +438,7 @@ Bundle deploy-ready após ação #1. Top 3 ações (issues 🔴 + 🟡 críticos
 | 4 | Callout `c` cobertura/custo no início do Ex 4 (MD + HTML) | 🟡 | ✅ resolvido | `48ac8e7` |
 | 5 | Spoiler severidade Ex 3 (~14%) na pré-aula seção 4 | 🟢 | ✅ resolvido | `48ac8e7` |
 | 6 | Speaker notes slide 28 (Lagrangiano CPOs Holmström, ~250 palavras) | 🟢 | ✅ resolvido | `48ac8e7` |
-| 7 | Validar PDF N&S Cap 18 no bucket Supabase | 🟢 | ⚠️ externo (Darcio confirma) | — |
+| 7 | Validar PDF N&S Cap 18 no bucket Supabase | 🟢 | ✅ confirmado por Darcio (2026-05-09) | — |
 | 8 | Q sobre Stiglitz-Weiss em sala (Apêndice B) | 🟢 | ⏸ não-bloqueante, próxima iteração | — |
 | 9 | Render visual `quarto render aula-08.qmd` validar slide 27 | 🟢 | ✅ render exit 0 | `48ac8e7` |
 | 10 | Coleta de telemetria pós-aula | 🟢 | ⏸ passivo (admin) | — |

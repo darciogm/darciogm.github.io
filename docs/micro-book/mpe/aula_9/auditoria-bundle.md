@@ -480,7 +480,7 @@ Bundle precisa de **2 correções 🔴 antes de deploy**. Issue #1 (DOI) é fact
 | 8 | DOIs Mailath, Tyler-Murnane-Willett, Abdulkadiroğlu-Pathak-Roth | 🟢 | ✅ resolvido | `48ac8e7` |
 | — | DOI Roth-Peranson (1999, AER 89(4): 748-780, 10.1257/aer.89.4.748) | 🟢 | ✅ resolvido | esta passada |
 | — | Stiglitz 1975 sem DOI (AER pré-DOI canônico — verificado e justificado) | 🟢 | ✅ documentado | `48ac8e7` |
-| 9 | Validar PDF N&S Cap 18 §18.6 no bucket Supabase | 🟢 | ⚠️ externo (Darcio confirma) | — |
+| 9 | Validar PDF N&S Cap 18 §18.6 no bucket Supabase | 🟢 | ✅ confirmado por Darcio (2026-05-09) | — |
 | 10 | Coleta de telemetria pós-aula | 🟢 | ⏸ passivo (admin) | — |
 
 **Nota global pós-fixes: ~9.2+** (subiu de 8.6 base). Bundle deploy-ready em produção desde `c9d7176`/`48ac8e7`.
