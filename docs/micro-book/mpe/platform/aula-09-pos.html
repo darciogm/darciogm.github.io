@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pós-Aula 09 — Sinalização + Matching — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz Pós-Aula 09 — Sinalização (Spence) e Matching (Gale-Shapley)</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões: 5 intermediárias 🟡 (calibre N&amp;S §18.6) + 5 avançadas 🔴 (calibre J-R §7.2 + qualifier).</strong> Objetivo: ponte entre a última aula presencial (17/06) e a Avaliação Final (24/06). Use-o como calibre. <strong>Uma única submissão</strong>. Tempo estimado: <strong>45–70 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Q10</strong> é 🔴🔴 — questão meta-síntese cross-aula sobre quem é o jogador estratégico em cada modelo do curso.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo:</strong> fecha em <strong>quarta 02/07/2026 às 18:00 BRT</strong> — deadline único de submissão para todo o material avaliativo do curso.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-09-pos" data-phase="post" data-title="Pós-Aula 09">
+
+  <h3>Pós-Aula 09 — 5🟡 intermediárias + 5🔴 avançadas</h3>
+  <div class="quizg-intro">Responda todas as 10 questões antes de submeter. O ícone no início indica o calibre.</div>
+
+  <!-- ========== YELLOW 1..5 ========== -->
+
+  <!-- Q1 🟡 — Spence cálculo numérico Riley equilibrium (\theta_L=2, \theta_H=5) -->
+  <div class="quizg-q" data-qid="q1" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> No modelo de Spence com \(\theta_L = 2, \theta_H = 5\) e custo \(c(e,\theta) = e/\theta\), qual é o intervalo \([\underline e_{\min}, \underline e_{\max}]\) que sustenta separadores PBE?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) \([0, 6]\) — \(\underline e_{\max} = \theta_H \cdot \theta_L\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) <strong>\([6, 15]\)</strong>: \(\underline e_{\min} = \theta_L(\theta_H - \theta_L) = 2 \cdot 3 = 6\); \(\underline e_{\max} = \theta_H(\theta_H - \theta_L) = 5 \cdot 3 = 15\). Riley/Cho-Kreps seleciona \(\underline e = 6\) como o equilíbrio mais robusto.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) \([10, 25]\) — \(\theta\)s ao quadrado.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) \([2, 5]\) — os tipos.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O intervalo de \(\underline e\) que sustenta separação vem das duas restrições de incentivo. IC-L (tipo baixo não imita alto) entrega \(\underline e \ge \theta_L(\theta_H - \theta_L)\). IC-H (tipo alto não desvia para baixo) entrega \(\underline e \le \theta_H(\theta_H - \theta_L)\). Cho-Kreps + iteração eliminam todos exceto o mínimo.</p>
+      <p><strong>2. Derivação.</strong> IC-L: \(\theta_L \ge \theta_H - \underline e/\theta_L \Leftrightarrow \underline e \ge \theta_L(\theta_H - \theta_L) = 2 \cdot 3 = 6\). IC-H: \(\theta_H - \underline e/\theta_H \ge \theta_L \Leftrightarrow \underline e \le \theta_H(\theta_H - \theta_L) = 5 \cdot 3 = 15\). Intervalo \([6, 15]\). Verificação Riley: \(\underline e = 6\) é o menos custoso. Ineficiência social do tipo alto: \(6/5 = 1{,}2\) unidades de utilidade desperdiçadas em educação que não muda produtividade.</p>
+      <p><strong>3. Armadilha.</strong> (a)/(c)/(d) erros de cálculo ou confusão entre \(\theta\)s e \(\underline e\)s.</p>
+      <p><strong>4. Extensão.</strong> Comparar com first-best: tipo \(H\) recebe \(\theta_H = 5\) sem custo. Sob Riley, recebe \(5 - 6/5 = 3{,}8\). Perda: 1,2 unidades. Se \(\theta_H, \theta_L\) crescem juntos (mantendo razão), perda em proporção da utilidade do tipo alto pode crescer ou decrescer dependendo da estrutura — exercício de comparação estática vale.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto. Distratores plausíveis para alunos que não dominaram a fórmula.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Salário pooling -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> No modelo de Spence com \(\theta_L = 2, \theta_H = 5, \pi_L = 0{,}4\), qual é o salário pooling \(\bar w\) sob crenças baseadas em prior?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\bar w = 3{,}5\) (média simples).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) <strong>\(\bar w = 3{,}8\)</strong>: \(\bar w = \pi_L \theta_L + (1-\pi_L)\theta_H = 0{,}4 \cdot 2 + 0{,}6 \cdot 5 = 0{,}8 + 3 = 3{,}8\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\bar w = 2{,}6\) — peso invertido.</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(\bar w = 5\) — máximo.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Salário pooling com crença prior é expectativa condicional não-condicionada: \(\bar w = \mathbb{E}[\theta] = \pi_L \theta_L + (1-\pi_L)\theta_H\). É o que firma paga se acredita que sinal não é informativo (todos os tipos escolhem \(e^p\)).</p>
+      <p><strong>2. Derivação.</strong> \(\bar w = 0{,}4 \cdot 2 + 0{,}6 \cdot 5 = 0{,}8 + 3 = 3{,}8\). Note: \(\bar w \in [\theta_L, \theta_H]\) sempre. Aqui \(2 \le 3{,}8 \le 5\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> (a) usa média simples ignorando prior. (c) inverte pesos. (d) aplica máximo.</p>
+      <p><strong>4. Extensão.</strong> Comparar com Riley: tipo alto sob pooling recebe \(\bar w = 3{,}8\) sem custo de educação; sob Riley separador recebe \(\theta_H - \underline e_{\min}/\theta_H = 5 - 6/5 = 3{,}8\) — coincidência numérica! Para esses parâmetros específicos, tipo alto é indiferente entre pooling e Riley em utilidade. Cho-Kreps ainda elimina o pooling porque a indiferença não é estável a desvios.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo limpo de expectativa. Decisão pedagógica: parâmetros entregam coincidência interessante que motiva análise mais profunda do papel de Cho-Kreps.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — DA execução 3x3 simples -->
+  <div class="quizg-q" data-qid="q3" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Considere \(M = \{m_1, m_2, m_3\}\), \(W = \{w_1, w_2, w_3\}\). Preferências: \(m_1: w_1 \succ w_2 \succ w_3\); \(m_2: w_2 \succ w_1 \succ w_3\); \(m_3: w_1 \succ w_3 \succ w_2\); \(w_1: m_3 \succ m_1 \succ m_2\); \(w_2: m_2 \succ m_1 \succ m_3\); \(w_3: m_1 \succ m_2 \succ m_3\). DA com \(M\) proponente entrega:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) \((m_1, w_1), (m_2, w_2), (m_3, w_3)\) — 1ª escolha de cada \(m\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) \((m_1, w_2), (m_2, w_1), (m_3, w_3)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) <strong>\(\mu_M = ((m_1, w_3), (m_2, w_2), (m_3, w_1))\)</strong>: execução completa — Iter. 1: \(m_1 \to w_1, m_2 \to w_2, m_3 \to w_1\). \(w_1\) recebe \(\{m_1, m_3\}\); por \(\succ_{w_1}\): \(m_3 \succ m_1\), mantém \(m_3\), rejeita \(m_1\). Iter. 2: \(m_1 \to w_2\). \(w_2\) recebe \(\{m_2, m_1\}\); por \(\succ_{w_2}\): \(m_2 \succ m_1\), mantém \(m_2\), rejeita \(m_1\). Iter. 3: \(m_1 \to w_3\). \(w_3\) aceita. Termina.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Não termina.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Execução cuidadosa de DA num 3×3 com competição dupla por \(w_1\) e \(w_2\). \(m_1\) é "rejeitado em cadeia" — perde para \(m_3\) em \(w_1\), perde para \(m_2\) em \(w_2\), termina com \(w_3\) (sua última escolha). Ilustra que DA pode entregar matchings onde proponente fica longe da 1ª escolha.</p>
+      <p><strong>2. Derivação.</strong> Execução completa explicada na alternativa (c).</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora competição. (b) parcial. (d) errado.</p>
+      <p><strong>4. Extensão.</strong> \(M\)-ótimo significa que \(m_1\) recebe \(w_3\) <em>entre os matchings estáveis</em> — não significa que recebe sua 1ª escolha. Verifique: o matching \((m_1, w_2), (m_2, w_3), (m_3, w_1)\) é estável? \(m_2\) preferiria \(w_2\) a \(w_3\), \(w_2\) prefere \(m_2\) a \(m_1\) → bloqueia. Não estável. O matching \((m_1, w_3), (m_2, w_2), (m_3, w_1)\) é o único estável (verifique em DA com \(W\) proponente — entrega o mesmo resultado neste caso).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Execução cuidadosa exigida. Distrator (a) testa a "armadilha do otimismo" — alunos que assumem 1ª escolha sem checar.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — NRMP institucional -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> O <strong>National Resident Matching Program (NRMP)</strong> faz matching anual de ~30K médicos residentes a ~5K hospitais nos EUA desde 1952. Antes do NRMP, o mercado era caótico. Roth (1984) provou que o algoritmo do NRMP é estável; Roth-Peranson (1999) redesenharam para incorporar casais de médicos. A escolha institucional do NRMP de fazer <strong>candidatos como lado proponente</strong> implementa:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Matching W-ótimo (hospitais ganham todo o excedente).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) <strong>Strategy-proofness para os candidatos médicos + matching candidato-ótimo.</strong> Hospitais ficam em \(W\)-pessimo (entre os matchings estáveis), mas a escolha reflete decisão política: proteger candidatos contra manipulação dos hospitais. Empírico: cohorts pré-NRMP mostram contratos cada vez mais cedo (1ª ano de medicina), evidência de unraveling pré-mecanismo.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Equilíbrio Walrasiano com preços (salários) ajustáveis.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Mecanismo VCG.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> NRMP é caso paradigmático de market design via matching. Estabilidade + strategy-proofness assimétrica sustentam o mecanismo há 70+ anos. Mudança institucional explícita 1999 (Roth-Peranson) para acomodar casais.</p>
+      <p><strong>2. Derivação.</strong> NRMP usa DA modificado: candidatos ranqueiam hospitais; hospitais ranqueiam candidatos; algoritmo executa com candidatos como proponentes. Roth (1984, <em>JPE</em>) provou estabilidade. Roth-Peranson (1999) acrescentaram heurística para casais com preferências sobre <em>pares de cidades</em> — estabilidade não garantida em geral, mas empiricamente robusta. Cohort pré-NRMP: contratos chegavam a ser feitos no 1º ano de medicina, evidência de mercado descontrolado por unraveling. NRMP estabilizou.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde lado proponente com beneficiário do output. (c) NRMP não é mecanismo de preço — é matching ordinal. (d) VCG é leilão; NRMP é matching. Diferentes objetos.</p>
+      <p><strong>4. Extensão.</strong> NRMP serviu como modelo para SISU (Brasil) e outros sistemas (residência de cirurgia francesa, escolas em Boston/NYC). Lições gerais de market design: (i) estabilidade é importante para sustentação ao longo do tempo; (ii) escolha do lado proponente é decisão política/distributiva; (iii) mudanças institucionais podem ser incorporadas via algoritmos modificados. Roth Nobel 2012.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação institucional canônica. Distratores testam confusão DA-vs-Walrasiano e entendimento de lado proponente.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Tyler-Murnane-Willett GED -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> <strong>Tyler, Murnane &amp; Willett (2000, <em>QJE</em> 115(2): 431–468)</strong> sobre o GED americano isolam empiricamente o componente de sinalização do diploma de high school. A interpretação econômica do achado (~20–30% do prêmio salarial é sinalização pura) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) GED gera mais capital humano que high school.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Diploma é puramente capital humano; sinalização é zero.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) <strong>O GED cobre o mesmo conteúdo do high school, mas é obtido via prova em vez de 4 anos de aulas — isolando a "marca" institucional. Comparar ganhos salariais GED vs. high school formal isola o componente de sinalização (parte do prêmio do diploma vem da seleção: quem completa 4 anos sinaliza atributos como persistência, conformidade institucional, contatos sociais).</strong> ~20–30% do prêmio é sinalização; resto é capital humano + outros canais. Spence empírico, com identificação plausível.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Estudo é metodologicamente inconclusivo.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> O design empírico de Tyler-Murnane-Willett (2000) usa GED como instrumento natural para isolar sinalização. Mesmo conteúdo cognitivo (alunos passando provas equivalentes), mas sinal institucional diferente (completar 4 anos vs. fazer prova).</p>
+      <p><strong>2. Derivação.</strong> Identificação: comparar trabalhadores com GED vs. high school formal, controlando por nota. Diferença residual = componente de sinalização (atributos não-cognitivos sinalizados pela conclusão formal). Resultado: ~20–30% atribuível a sinalização. Heckman et al. depois questionaram parte do design (selection bias residual), mas o consenso é que sinalização explica fração não-trivial do prêmio.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde direção. (b) ignora resultado. (d) absurdo — GED é dos estudos mais citados em educação econômica.</p>
+      <p><strong>4. Extensão.</strong> Lange &amp; Topel (2006, <em>Handbook of Education Economics</em>) revisam: estimativas de sinalização variam 30%–60% dependendo do método. Implicação: políticas que expandem acesso (como ENEM/SISU) sem expandir produtividade efetiva podem reduzir o componente de sinalização do diploma. Componente de sinalização tende a se "redistribuir" em equilíbrio: se diploma se democratiza, peso passa para outras dimensões (origem institucional, sub-curso, performance).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação empírica canônica de Spence. Distratores testam interpretação correta do design empírico.</p>
+    </div>
+  </div>
+
+  <!-- ========== RED 6..10 ========== -->
+
+  <!-- Q6 🔴 — Cho-Kreps formal application -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q6. 🔴</strong> Considere Spence com \(\theta_L = 1, \theta_H = 4, \pi_L = 0{,}5\). Suponha pooling em \(e^p = 0\) com \(\bar w = 0{,}5 \cdot 1 + 0{,}5 \cdot 4 = 2{,}5\). Identifique o intervalo de \(e' > 0\) tal que apenas o tipo alto desviaria no melhor caso (Cho-Kreps mata o pooling). Esse intervalo é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \((0, 1{,}5)\) — \(\theta_L \cdot (\theta_H - \theta_L)\) e \(\theta_H \cdot (\theta_H - \theta_L)/4\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) <strong>\((1{,}5,\, 6)\)</strong>: tipo \(L\) desvia se ganho líquido > 0: \(\theta_H - e'/\theta_L - \bar w > 0 \Rightarrow e' < \theta_L(\theta_H - \bar w) = 1 \cdot (4 - 2{,}5) = 1{,}5\). Tipo \(H\) desvia se \(e' < \theta_H(\theta_H - \bar w) = 4 \cdot 1{,}5 = 6\). Intervalo onde só tipo \(H\) desvia: \((1{,}5, 6)\). Cho-Kreps força \(\mu(\theta_H | e') = 1\), \(w(e') = 4\). Tipo \(H\) realmente desvia (ganho \(= 4 - e'/4 - 2{,}5 = 1{,}5 - e'/4 > 0\) para \(e' < 6\)). Pooling cai.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \([0, 1{,}5]\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \([6, +\infty)\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cálculo formal do intervalo de Cho-Kreps. Limiares: \(\theta_L(\theta_H - \bar w)\) e \(\theta_H(\theta_H - \bar w)\). Como \(\theta_H > \theta_L\), o tipo alto está disposto a "pagar" mais educação para sair do pooling.</p>
+      <p><strong>2. Derivação.</strong> Tipo \(L\) desvia para \(e'\) (e ganha) se \(\theta_H - e'/\theta_L > \bar w\); equivalente a \(e' < \theta_L(\theta_H - \bar w) = 1 \cdot 1{,}5 = 1{,}5\). Tipo \(H\): desvia se \(\theta_H - e'/\theta_H > \bar w\); \(e' < \theta_H(\theta_H - \bar w) = 4 \cdot 1{,}5 = 6\). Para \(e' \in (1{,}5, 6)\), tipo \(L\) <strong>não</strong> desviaria mesmo no melhor caso \(w(e') = \theta_H = 4\); tipo \(H\) <strong>desviaria</strong>. Cho-Kreps requer crença \(\mu(\theta_H | e') = 1\). Firma paga \(\theta_H\), tipo \(H\) realmente desvia. Pooling não-robusto.</p>
+      <p><strong>3. Armadilha.</strong> (a) erro de cálculo. (c) inverte direção (intervalo onde tipo \(L\) desviaria, não onde apenas \(H\) desviaria). (d) extrapolação errada.</p>
+      <p><strong>4. Extensão.</strong> Verificação que pooling \(e^p = 0, \bar w = 2{,}5\) é PBE sob crenças pessimistas: tipo \(L\) com escolha verdadeira ganha \(\bar w = 2{,}5\); desvia para \(e \neq 0\) e ganha \(w(e) - e/1\) — sob crenças pessimistas \(w(e) = 1\), ganho \(= 1 - e < 1 < 2{,}5\). Não desvia. Tipo \(H\): ganho atual \(= 2{,}5\); desvio: \(1 - e/4 < 1 < 2{,}5\). Não desvia. Pooling é PBE sob pessimistas — mas Cho-Kreps elimina porque pessimismo em \(e' \in (1{,}5, 6)\) é "irracional".</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Cálculo cuidadoso de Cho-Kreps. <strong>Tradeoff de tempo:</strong> ~8 min para aluno que entende a estrutura.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🔴 — DA com casais Roth-Peranson -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q7. 🔴</strong> <strong>Roth &amp; Peranson (1999, <em>AER</em> 89(4): 748–780)</strong> redesenharam o NRMP para incorporar casais de médicos com preferências sobre <strong>pares de cidades</strong>. A diferença teórica fundamental entre matching individual e matching com casais é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) Casais introduzem ineficiência cardinal mas sem implicações teóricas.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Casais reduzem o número de matchings estáveis sem alterar a estrutura.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) <strong>Sob casais, preferências individuais são substituídas por preferências sobre <em>pares</em> (cidade do A, cidade do B); o conjunto de matchings estáveis pode ser <strong>vazio</strong>; e o algoritmo perdeu a garantia teórica de estabilidade. Roth-Peranson 1999 propuseram heurística que mantém estabilidade <em>na maioria</em> dos casos práticos (verificado empiricamente em dados NRMP), mas não como teorema.</strong> É exemplo de market design pragmático: teoria + empírica + iteração algorítmica.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) Casais são caso especial trivial de DA padrão.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Adicionar casais ao matching quebra a estrutura "preferências separáveis sobre o lado oposto" que sustenta DA padrão. Casais têm preferências sobre <em>pares de cidades</em>: \(\succ\) pode ranquear (NYC + Chicago) acima de (NYC + LA), independente das preferências individuais sobre cidades. Klaus &amp; Klijn (2005, <em>JET</em>) provam que o conjunto de matchings estáveis pode ser vazio em geral.</p>
+      <p><strong>2. Derivação.</strong> Em DA padrão, agentes têm preferências sobre o lado oposto; estabilidade = ausência de par bloqueante. Com casais, "agente" passa a ser o casal (\(c = (m, m')\)) com preferência sobre pares de cidades \((c_1, c_2)\). Par bloqueante envolve um casal e dois hospitais juntos. Pode-se construir exemplos onde nenhum matching satisfaz todas as restrições simultaneamente — conjunto vazio. Roth-Peranson (1999): heurística iterativa que primeiro empareja casais aproximadamente, depois individuais; depois ajusta. Empírico: estabilidade em ~99% dos casos NRMP reais.</p>
+      <p><strong>3. Armadilha.</strong> (a) trivializa. (b) errado — pode aumentar ou reduzir, e a estrutura é alterada substancialmente. (d) ignora a complicação fundamental.</p>
+      <p><strong>4. Extensão.</strong> Conexão com Roth-Sotomayor (1990, <em>Two-Sided Matching</em>, Cambridge UP) para tratamento formal. Mais recentemente, Kojima-Pathak-Roth (2013, <em>QJE</em>) propõem mecanismos com matching com restrições mais gerais. Caso brasileiro: Mais Médicos tem variantes similares de "matching com restrições" — cota por estado, prioridade SUS — que aproximam DA com restrições.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Conhecimento avançado da literatura de market design. Distratores para alunos que generalizaram DA básico sem ler Roth-Peranson 1999.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🔴 — DA W-pessimo prova -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q8. 🔴</strong> Por que DA com lado proponente \(M\) entrega o matching <strong>\(W\)-pessimo</strong> entre os matchings estáveis (cada \(w\) recebe seu pior parceiro entre os estáveis)? A intuição mais precisa é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) Porque \(W\) é discriminado pelo algoritmo.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) <strong>Em DA com \(M\) proponente, cada \(w\) só recebe propostas em ordem decrescente de qualidade segundo \(\succ_w\) — \(m\)s "ruins" propõem antes (são rejeitados primeiro pelo melhor \(w\) deles), \(m\)s "bons" propõem depois (já foram rejeitados pelos seus melhores \(w\)s). Logo \(w\) sempre tem o "melhor disponível na hora" — não o melhor possível em geral. Como o conjunto dos estáveis forma reticulado completo (Knuth 1976), \(\mu_M\) está no extremo \(M\)-favorável, simetricamente no extremo \(W\)-desfavorável.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Porque \(W\) tem menos tipos.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Porque \(W\) não pode rejeitar.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(W\)-pessimo é corolário direto de \(M\)-ótimo combinado com a estrutura de reticulado dos matchings estáveis. Knuth (1976, <em>Marriage Stable</em>) provou que o conjunto forma <em>lattice</em> completo onde o supremo \(M\)-direção corresponde ao ínfimo \(W\)-direção (relação dual).</p>
+      <p><strong>2. Derivação.</strong> Lattice theorem: dados dois matchings estáveis \(\mu, \nu\), o "encontro" \(\mu \wedge_M \nu\) (cada \(m\) recebe seu pior dos dois) e o "junção" \(\mu \vee_M \nu\) (cada \(m\) recebe seu melhor dos dois) são também estáveis, e formam reticulado completo. Para \(W\), a relação é dual: \(\mu \wedge_M \nu = \mu \vee_W \nu\). Logo, supremo-\(M\) = \(\mu_M\) (output de DA \(M\)-proponente) coincide com ínfimo-\(W\). Cada \(w\) recebe seu pior parceiro estável.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora estrutura. (c) ignora estrutura. (d) parcial — \(w\) pode rejeitar, mas a manipulação de rejeição não a leva a \(W\)-ótimo (Roth 1982).</p>
+      <p><strong>4. Extensão.</strong> Implicação prática: ao desenhar mecanismo, escolher proponente é decisão distributiva. NRMP escolheu candidatos (médicos residentes) → médicos em \(M\)-ótimo, hospitais em \(W\)-pessimo. Roth (1984) inicialmente acreditou que mecanismo NRMP era hospital-proponente; reanálise mostrou ser candidato-proponente — explica resistência inicial dos hospitais à mudança proposta. SISU: candidato-proponente; vagas em \(W\)-pessimo (mas vagas não têm comportamento estratégico ativo).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Conhecimento de lattice theorem. Distratores para alunos que internalizaram \(M\)-ótimo mas não a dualidade.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🔴 — Matching vs Walrasian -->
+  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q9. 🔴</strong> Compare matching de Gale-Shapley com equilíbrio Walrasiano (Aulas 4–5). A <strong>diferença teórica fundamental</strong> não é "preço vs. sem preço" superficialmente, mas:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Walrasiano é exato; matching é aproximado.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) <strong>Walrasiano agrega preferências cardinais via mecanismo de preço (somando disposições marginais a pagar); resulta em alocação Pareto-eficiente (1º TBE) sob hipóteses padrão. Matching de DA agrega preferências <em>ordinais</em> sobre o lado oposto; resulta em estabilidade (sem par bloqueante) — propriedade mais fraca que Pareto, e não-implicada por Pareto. Em domínios indivisíveis e não-substituíveis (residência médica, escolas, parceiros), preços não fazem sentido institucional, e estabilidade é o conceito de equilíbrio relevante. Os dois mecanismos resolvem problemas estruturalmente distintos.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) São equivalentes em domínio finito.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Walrasiano não funciona com indivisibilidades.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A diferença não é "preço vs. sem preço" trivialmente — é estrutural: agregação cardinal (Walrasiano) vs. ordinal (matching); Pareto vs. estabilidade. Cada conceito é "natural" em seu domínio de aplicação.</p>
+      <p><strong>2. Derivação.</strong> Walrasiano sob hipóteses padrão: preferências contínuas + locally non-satiated + economias divisíveis. 1º TBE: equilíbrio competitivo é Pareto-eficiente. Matching: preferências discretas, indivisíveis (cada \(m\) com no máximo um \(w\)), não-substituíveis em geral. Estabilidade: sem par bloqueante. Pode haver matchings estáveis Pareto-comparáveis (\(\mu_M \succeq_M \mu_W\) para todo \(m\), com inversão para \(W\)) — não há Pareto entre matchings estáveis em geral.</p>
+      <p><strong>3. Armadilha.</strong> (a) trivializa. (c) errado — em geral não equivalentes. (d) parcial mas incompleta.</p>
+      <p><strong>4. Extensão.</strong> Casos híbridos: Shapley-Shubik (1972, <em>Int. J. Game Theory</em>) <em>assignment game</em> — matching com transferências monetárias; converte ordinal em cardinal via valor monetário. Becker (1973, <em>JPE</em>) marriage com utility transfer. Esses são exceções: matching <em>com</em> transferências aproxima Walrasiano. DA puro é matching <em>sem</em> transferências. <strong>Para AF:</strong> SISU/NRMP/kidney exchange são matching sem transferências; mercado de trabalho regular é matching com transferências (salário ajusta).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Pergunta de comparação cross-aula (Aulas 4–5 vs. 9). Distratores para alunos que ficaram em "preço vs. sem preço" sem entender estrutura.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🔴🔴 — Síntese cross-aula: quem é o jogador estratégico? -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="red">
+    <div class="quizg-qtext">
+      <strong>Q10. 🔴🔴</strong> <em>Questão meta de síntese cross-aula — identifique quem é o "jogador estratégico" (agente que move primeiro escolhendo ação custosa para revelar/esconder informação) em cada modelo:</em> Akerlof (Aula 8), R-S (Aula 8), Holmström (Aula 8), Spence (Aula 9). A gradação correta é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Em todos, é o principal não-informado quem move primeiro.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) <strong>Akerlof: ninguém move estrategicamente — vendedor é tomador de preço, comprador propõe \(p\) baseado em \(\mathbb{E}[\theta | \theta \le p]\); equilíbrio é fixed-point sem ação estratégica observável (modelo "ingênuo" de unraveling). R-S 1976: <em>seguradora não-informada</em> move primeiro oferecendo menu \((p_H, c_H), (p_L, c_L)\); agente informado escolhe; "screening". Holmström 1979: <em>principal</em> move primeiro oferecendo contrato \(w(y)\); agente escolhe ação. Spence 1973: <em>agente informado</em> move primeiro escolhendo sinal custoso \(e\); firma responde com salário \(w(e)\); "signaling".</strong> A gradação Akerlof → R-S → Holmström → Spence ilustra como diferentes ordenações temporais e quem-tem-informação geram diferentes tipos de equilíbrio (fixed-point, separador screening, second-best, separador signaling).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) Em todos, é o agente informado que move primeiro.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Em Akerlof e Spence, agente; em R-S e Holmström, principal.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Os 4 modelos canônicos de informação assimétrica (Aulas 8-9) diferem em duas dimensões: (i) quem tem informação privada — vendedor (Akerlof), tipo do agente (R-S, Spence), ação do agente (Holmström); (ii) quem move primeiro — comprador (Akerlof, mas não estratégico), seguradora/principal (R-S, Holmström — screening), trabalhador (Spence — signaling). A combinação determina o tipo de equilíbrio.</p>
+      <p><strong>2. Derivação.</strong> <em>Akerlof.</em> Vendedor tem informação privada \(\theta\) mas é tomador de preço; comprador propõe \(p\) baseado em \(\mathbb{E}[\theta | \theta \le p]\). É fixed-point sem ação estratégica observável; tipo de equilíbrio: unraveling (\(p^* = 0\) sob \(\beta < 2\)). <em>R-S.</em> Seguradora oferece menu; agente informado escolhe seu contrato; tipo de equilíbrio: separador (under existence) ou inexistência (sob \(\lambda\) baixo). <em>Holmström.</em> Principal oferece contrato \(w(y)\); agente escolhe ação \(a \in \{a_L, a_H\}\); output \(y\) é sinal ruidoso de \(a\). Tipo de equilíbrio: second-best com IC binding. <em>Spence.</em> Trabalhador escolhe \(e\); firma responde \(w(e)\); tipo de equilíbrio: separador (Riley/Cho-Kreps).</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora Spence. (c) ignora R-S/Holmström. (d) inverte Akerlof e Spence — em Akerlof, vendedor não move estrategicamente (é tomador); em Spence, sim.</p>
+      <p><strong>4. Extensão.</strong> Implicação para AF (Parte III/IV): identificar a estrutura institucional do problema antes de aplicar o aparato algébrico. Setup: pergunte (i) quem tem informação privada? (ii) quem move primeiro? (iii) o que é observável depois? Resposta determina o modelo. Comparação útil: Stiglitz (1975, <em>QJE</em>) introduziu screening como dual de signaling — mesma estrutura, papéis trocados.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴🔴. Questão de síntese cross-aula. Aluno que faz tudo sai com mapa institucional dos 4 modelos canônicos. <strong>Tradeoff de tempo:</strong> ~12 min para leitura + análise. <strong>Decisão pedagógica:</strong> alternativa longa correta é padrão para questões meta — preferi explicitar a estrutura lógica a brevidade.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Avaliação Final</strong> (quarta, 24/06, 19:00 — 3h, presencial, A4 permitida). Os <strong>exercícios avaliativos da Aula 9</strong> fecham em <strong>quarta 02/07/2026 às 18h</strong>; gabarito quinta 03/07/2026 · 00:00. <strong>Pré-monitoria 5 com Alberto Nishikawa</strong>: sáb 20/06 · 10h — última oportunidade de revisão integrada.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-09-pos');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

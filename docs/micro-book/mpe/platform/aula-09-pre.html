@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 09 — Sinalização + Matching — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 09 — Sinalização (Spence) e Matching (Gale-Shapley)</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (N&amp;S 12e §18.6 + ZaE Cap. 19).</strong> Objetivo: consolidar o que você leu na pré-aula antes de entrar na <strong>última aula presencial do curso</strong> (17/06). <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Distribuição temática:</strong> 5 questões em Spence + Cho-Kreps; 5 questões em Gale-Shapley + DA + propriedades.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo:</strong> fecha em <strong>quarta 02/07/2026 às 18:00 BRT</strong> — deadline único de submissão para todo o material avaliativo do curso.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-09-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 09">
+
+  <h3>Revisão — Sinalização + Matching (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Spence setup -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> No modelo de Spence (1973), a hipótese-chave que permite a sinalização funcionar como mecanismo de seleção é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Que educação aumenta a produtividade do trabalhador.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Que a firma observa o tipo \(\theta\) diretamente.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) <strong>Que o custo de educação \(c(e, \theta)\) é decrescente em \(\theta\)</strong> — educar-se custa <em>menos</em> para o tipo de produtividade alta. No caso canônico \(c(e,\theta) = e/\theta\), isso é imediato. Sem essa hipótese, a TMS no plano \((e, w)\) não varia com o tipo, single-crossing falha, e separação não emerge.</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Que o tipo é endógeno à educação.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> No modelo canônico de Spence, educação <em>não muda</em> a produtividade do trabalhador — é puro sinal. O que faz o sinal funcionar é a <strong>diferença de custo marginal entre tipos</strong>: tipo alto carrega menos custo por unidade de \(e\). Essa assimetria de custos marginais é a propriedade que sustenta single-crossing e, portanto, separação.</p>
+      <p><strong>2. Derivação.</strong> Sob \(c(e,\theta) = e/\theta\): \(\partial c/\partial e = 1/\theta\); decrescente em \(\theta\). TMS = \(|U_e/U_w| = 1/\theta\); decrescente em \(\theta\). Single-crossing satisfeita: \(\partial \text{TMS}/\partial \theta = -1/\theta^2 < 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde Spence com modelo de capital humano (Becker 1964) — diferentes mecanismos. (b) anula a assimetria. (d) confunde com modelos "ability + investment" (Mailath 1987 e seguidores).</p>
+      <p><strong>4. Extensão.</strong> Modelos posteriores misturam sinalização e capital humano (educação tem ambos os efeitos). Lange-Topel (2006) revisam: 30%–60% do prêmio salarial é sinalização; resto é capital humano. A Aula 9 isola o canal de sinalização para entender como funciona.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Hipótese central. Distratores plausíveis para alunos que não internalizaram a assimetria de custos marginais como motor.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Spence cálculo numérico (\theta_L=2, \theta_H=4) -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> No modelo de Spence com \(\theta_L = 2, \theta_H = 4\) e custo \(c(e,\theta) = e/\theta\), o equilíbrio separador <strong>menos custoso</strong> (Riley/Cho-Kreps) tem \(\underline e\) igual a:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\underline e = 0\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) <strong>\(\underline e = 4\)</strong>: \(\underline e_{\min} = \theta_L(\theta_H - \theta_L) = 2 \cdot 2 = 4\). É o menor \(\underline e\) que satisfaz IC-L (\(\theta_L \ge \theta_H - \underline e/\theta_L\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\underline e = 8\) — coincide com IC-H \(\underline e_{\max} = \theta_H(\theta_H - \theta_L)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(\underline e = 6\) — média dos limites.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> \(\underline e_{\min} = \theta_L(\theta_H - \theta_L)\) vem da IC-L binding: o tipo baixo é exatamente indiferente entre seu salário verdadeiro \(\theta_L\) e se passar por alto \(\theta_H - \underline e/\theta_L\). Cho-Kreps seleciona esse separador entre o contínuo \([\theta_L(\theta_H-\theta_L), \theta_H(\theta_H-\theta_L)]\).</p>
+      <p><strong>2. Derivação.</strong> IC-L: \(\theta_L \ge \theta_H - \underline e/\theta_L \Leftrightarrow \underline e \ge \theta_L(\theta_H - \theta_L)\). Substituindo: \(\underline e \ge 2 \cdot (4 - 2) = 4\). Mínimo: \(\underline e = 4\). Verificação IC-H: \(\theta_H - \underline e/\theta_H = 4 - 4/4 = 3 \ge \theta_L = 2\) ✓.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora restrição de incentivo — sem custo, qualquer um se passa por alto. (c) é \(\underline e_{\max}\), válido também mas custoso para o tipo alto. (d) "média" não tem fundamento.</p>
+      <p><strong>4. Extensão.</strong> Cho-Kreps refina selecionando \(\underline e_{\min}\) — qualquer separador com \(\underline e\) maior é eliminado por argumento iterativo: existe \(e' \in (\underline e_{\min}, \underline e)\) onde tipo alto preferiria desviar. Riley equilibrium é selecionado.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Cálculo direto da fórmula canônica. Distrator (c) é o mais plausível para alunos que confundem mín com máx do intervalo.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Ineficiência social do separador -->
+  <div class="quizg-q" data-qid="q3" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> Comparado ao first-best com informação simétrica (cada tipo recebe seu salário verdadeiro \(\theta\), nenhum se educa), o equilíbrio separador de Spence é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Pareto-superior — sinalização gera bem-estar adicional.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) <strong>Estritamente Pareto-pior</strong>: tipo alto perde \(\underline e/\theta_H\) em educação que <em>não muda sua produtividade</em>; tipo baixo fica indiferente. O canal de sinalização é puro desperdício social — mas é o melhor implementável sob informação assimétrica e mercado competitivo.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Pareto-equivalente.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Pareto-incomparável (uns ganham, outros perdem).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> No first-best simétrico, ambos os tipos recebem salário justo (\(\theta\)) sem custo de educação. No separador, tipo alto carrega custo \(\underline e/\theta_H > 0\); tipo baixo recebe o mesmo. Diferença = perda social pura.</p>
+      <p><strong>2. Derivação.</strong> First-best: utilidade \(\theta_L\) e \(\theta_H\). Separador (Riley, \(\underline e_{\min} = \theta_L(\theta_H-\theta_L)\)): tipo \(L\) recebe \(\theta_L\) (mesmo); tipo \(H\) recebe \(\theta_H - \underline e_{\min}/\theta_H = \theta_H - \theta_L(\theta_H-\theta_L)/\theta_H < \theta_H\). Perda do tipo \(H\) = \(\theta_L(\theta_H-\theta_L)/\theta_H > 0\).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde sinalização com capital humano — em Spence canônico, educação não cria valor real. (c) ignora custo do tipo alto. (d) errado: ninguém ganha.</p>
+      <p><strong>4. Extensão.</strong> A perda social do separador motiva intervenções como subsídios à educação (se há também canal de capital humano), regulação contra over-credentialing, ou alternativas de matching/screening. Stiglitz (1975) introduziu screening como mecanismo dual.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Resultado central de bem-estar. Distratores testam confusão sinalização-vs-capital humano.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — Cho-Kreps mata pooling -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Considere um equilíbrio pooling no modelo de Spence em \(e^p\) com salário \(\bar w = \pi_L \theta_L + (1-\pi_L)\theta_H\), sustentado por crenças "pessimistas" \(\mu(\theta_L \mid e \neq e^p) = 1\). O critério intuitivo de Cho-Kreps elimina esse pooling porque:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) Pooling não é PBE — qualquer crença é admissível.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) <strong>Existe \(e' \in (\theta_L(\theta_H - \bar w),\, \theta_H(\theta_H - \bar w))\) tal que apenas o tipo alto desviaria mesmo no melhor caso.</strong> Crenças razoáveis devem ser \(\mu(\theta_H \mid e') = 1\), portanto \(w(e') = \theta_H\); mas então tipo alto realmente desvia, e o pooling deixa de ser robusto.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) Pooling é Pareto-inferior por construção.</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) Pooling viola single-crossing.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Cho-Kreps refina crenças fora-do-equilíbrio: se um sinal \(e'\) "só faria sentido" para um tipo (no melhor caso), crenças razoáveis devem atribuir o desvio a esse tipo. No Spence canônico, sempre existe \(e'\) entre os limiares de desvio dos dois tipos, e single-crossing garante que o tipo alto é quem desviaria.</p>
+      <p><strong>2. Derivação.</strong> Tipo \(L\) desvia se \(\theta_H - e'/\theta_L > \bar w \Leftrightarrow e' < \theta_L(\theta_H - \bar w)\). Tipo \(H\) desvia se \(e' < \theta_H(\theta_H - \bar w)\). Como \(\theta_H > \theta_L\), o intervalo \((\theta_L(\theta_H - \bar w), \theta_H(\theta_H - \bar w))\) é não-vazio. Para \(e'\) nesse intervalo, só tipo alto desviaria. Cho-Kreps força \(\mu(\theta_H | e') = 1\), \(w(e') = \theta_H\). Tipo alto realmente desvia. Pooling cai.</p>
+      <p><strong>3. Armadilha.</strong> (a) errado — pooling sob crenças pessimistas é PBE; o problema é robustez. (c) parcial — pooling pode ser Pareto-superior ao separador (depende de \(\pi_L\)). (d) single-crossing é hipótese mantida; usada na derivação.</p>
+      <p><strong>4. Extensão.</strong> Refinamentos mais fortes (D1, divinity, equilibrium dominance) chegam ao mesmo destino no Spence canônico. Em modelos mais complexos, divergem. Para MPE, Cho-Kreps cobre o que precisamos.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Argumento estrutural. Distrator (a) testa entendimento de PBE; (c) testa entendimento de Pareto vs. Nash.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — Spence vs R-S (Aula 8 ↔ 9) -->
+  <div class="quizg-q" data-qid="q5" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Spence (Aula 9) e R-S (Aula 8) ambos modelam informação assimétrica com 2 tipos e single-crossing. A <strong>diferença operacional central</strong> entre os dois modelos é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) R-S tem dois tipos; Spence tem um contínuo.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Spence usa single-crossing; R-S não.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) <strong>Em R-S, quem move primeiro é o principal não-informado (seguradora) oferecendo menu; em Spence, quem move primeiro é o agente informado escolhendo sinal custoso.</strong> Em R-S, separação é gerada por desenho do menu; em Spence, separação é gerada pela escolha estratégica do agente. Isso muda quem captura a renda informacional.</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Spence é Pareto-eficiente; R-S não.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A ordem de movimento é a distinção institucional entre <em>screening</em> (principal move primeiro, R-S) e <em>signaling</em> (agente move primeiro, Spence). Mesma estrutura de informação, ordens diferentes, distribuições de renda diferentes.</p>
+      <p><strong>2. Derivação.</strong> R-S: seguradora oferece \((p_H, c_H), (p_L, c_L)\); agente escolhe. IC do tipo \(H\): tipo alto não imita baixo. Resultado: tipo alto first-best, tipo baixo distorcido. Spence: trabalhador escolhe \(e\); firma responde com \(w(e)\). IC-L: tipo baixo não imita alto. Resultado: tipo alto carrega custo de sinal, tipo baixo first-best (\(\theta_L\) sem custo).</p>
+      <p><strong>3. Armadilha.</strong> (a) ambos canônicos têm 2 tipos. (b) ambos usam single-crossing. (d) ambos podem ser Pareto-piores que first-best simétrico — a comparação interna depende de parâmetros.</p>
+      <p><strong>4. Extensão.</strong> Stiglitz (1975, <em>Quart. J. Econ.</em>) introduz screening como dual de signaling. Modelos modernos misturam: empregador screening + agente signaling simultaneamente. Aulas 8–9 cobrem casos puros.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Distinção estrutural Aula 8 ↔ 9. Distrator (d) é o mais sutil — força aluno a distinguir os dois modelos por seu mecanismo, não por um juízo Pareto trivial.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — Matching estabilidade definição -->
+  <div class="quizg-q" data-qid="q6" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> Em um problema de matching de Gale-Shapley, dizer que um matching \(\mu\) é <strong>estável</strong> significa:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) Que \(\mu\) maximiza a soma das preferências cardinais dos agentes.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) <strong>Que não existe par \((m, w)\) não-emparelhado em \(\mu\) tal que \(w \succ_m \mu(m)\) <em>e</em> \(m \succ_w \mu(w)\) (ou seja, sem par bloqueante), e que ninguém prefere ficar solteiro a estar com seu par atual.</strong></label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) Que \(\mu\) é Pareto-eficiente.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Que \(\mu\) é único.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Estabilidade em matching = ausência de par bloqueante + estabilidade individual. É um conceito de equilíbrio robusto a desvios bilaterais voluntários — se um par \((m, w)\) prefere mutuamente trocar, o matching atual não é "estável" porque eles podem desviar e formar um par novo.</p>
+      <p><strong>2. Derivação.</strong> Definição formal: \(\mu\) estável se (i) \(\forall (m, w)\) com \(\mu(m) \neq w\): NÃO ocorre simultaneamente \(w \succ_m \mu(m)\) e \(m \succ_w \mu(w)\); (ii) \(\forall x\): \(\mu(x) \succeq_x x\) (preferir solteiro a par atual elimina). Note que matching ordinal não pede maximização cardinal.</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde com mecanismos cardinais (utilitarianos). (c) Pareto-eficiência é implicada por estabilidade no domínio canônico, mas não é a definição. (d) estabilidade não implica unicidade — em geral há múltiplos matchings estáveis.</p>
+      <p><strong>4. Extensão.</strong> Em domínios mais complexos (capacidades múltiplas, restrições, preferências fracas), a definição se ajusta. Lattice theorem de Knuth (1976): conjunto dos matchings estáveis forma reticulado completo, com \(\mu_M\) (DA M-proponente) no topo do lado \(M\) e \(\mu_W\) (DA W-proponente) no fundo.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Definição central. Distratores testam confusão entre conceitos.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — DA pseudo-código -->
+  <div class="quizg-q" data-qid="q7" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> No algoritmo de Deferred Acceptance com lado proponente \(M\), a expressão "deferred" significa que:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) O algoritmo é executado de trás para frente.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) Cada \(m\) propõe uma única vez e aceita o resultado.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) <strong>Cada \(w\) <em>não confirma</em> seu pendente até a iteração final — pode trocar pendente por uma proposta nova melhor a qualquer momento. A confirmação é "adiada" (deferred) até que ninguém seja rejeitado em uma iteração.</strong> É essa propriedade que sustenta a estabilidade do output.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) O algoritmo demora para terminar (timing).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> "Deferred" se refere ao comportamento do lado receptor: \(w\) sempre mantém o melhor entre {pendente atual} ∪ {nova proposta}, sem comprometer-se. A aceitação final é adiada até que o sistema estabilize. Essa é a chave da estabilidade do output.</p>
+      <p><strong>2. Derivação.</strong> Comparação com mecanismo "imediato" tipo Boston: candidato declara 1ª escolha; se a vaga existe, é aceita imediatamente; caso contrário, vai para 2ª. Boston não é strategy-proof — declarar 1ª escolha "concorrida" pode mandá-lo para o fim. DA com aceitação imediata seria similar. Em DA "deferred", \(w\) mantém pendente, recebe propostas novas, troca se melhor. Isso permite que \(m\)s rejeitados explorem todo o espaço de preferências sem que rejeições anteriores sejam permanentes.</p>
+      <p><strong>3. Armadilha.</strong> (a) algoritmo é forward. (b) cada \(m\) pode propor até \(k\) vezes (uma por \(w\)). (d) interpretação trivial errada.</p>
+      <p><strong>4. Extensão.</strong> Versão "imediata" do mecanismo (Boston) tem propriedade institucional contrastante: receptores se comprometem cedo, mas isso elimina strategy-proofness para os proponentes. Abdulkadiroğlu-Pathak-Roth 2005 documentam a substituição de Boston por DA em escolas americanas.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Conceito-chave do algoritmo. Distratores testam interpretação trivial vs. estrutural.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — DA execução simples 2x2 -->
+  <div class="quizg-q" data-qid="q8" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Considere \(M = \{m_1, m_2\}\) e \(W = \{w_1, w_2\}\). Preferências: \(m_1: w_1 \succ w_2\); \(m_2: w_1 \succ w_2\); \(w_1: m_2 \succ m_1\); \(w_2: m_1 \succ m_2\). DA com \(M\) proponente entrega:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \((m_1, w_1), (m_2, w_2)\).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) <strong>\((m_1, w_2), (m_2, w_1)\)</strong>: iter. 1: \(m_1 \to w_1\), \(m_2 \to w_1\); \(w_1\) prefere \(m_2\), rejeita \(m_1\). Iter. 2: \(m_1 \to w_2\); \(w_2\) aceita. Sem rejeições — termina. \(\mu_M = (m_1, w_2), (m_2, w_1)\). Estável: \((m_1, w_1)\) não bloqueia (\(w_1\) prefere \(m_2\)); \((m_2, w_2)\) não bloqueia (\(m_2\) prefere \(w_1\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) Não termina.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) Múltiplas saídas igualmente válidas.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> DA é determinístico dado lado proponente e preferências; saída única. Aqui, dois \(m\)s competem por \(w_1\); \(w_1\) escolhe \(m_2\) (preferido); \(m_1\) parte para \(w_2\), aceita.</p>
+      <p><strong>2. Derivação.</strong> Iter. 1: propostas \(m_1 \to w_1\), \(m_2 \to w_1\). \(w_1\) recebe \(\{m_1, m_2\}\). Por \(\succ_{w_1}\): \(m_2 \succ m_1\). Mantém \(m_2\); rejeita \(m_1\). Iter. 2: \(m_1\) propõe próximo (\(w_2\)). \(w_2\) recebe \(m_1\), mantém. Sem rejeições. Termina. Estabilidade: pares possíveis bloqueantes são \((m_1, w_1)\) e \((m_2, w_2)\). \((m_1, w_1)\): \(m_1\) prefere \(w_1\), mas \(w_1\) prefere \(m_2\) (atual). Não bloqueia. \((m_2, w_2)\): \(w_2\) prefere \(m_1\) (atual), mas \(m_2\) prefere \(w_1\) (atual). Não bloqueia.</p>
+      <p><strong>3. Armadilha.</strong> (a) é matching "ingênuo" se \(m\)s recebessem 1ª escolha sem competição. (c)/(d) erros estruturais.</p>
+      <p><strong>4. Extensão.</strong> Mesmo exemplo com \(W\) proponente: \(w_1 \to m_2\), \(w_2 \to m_1\); ninguém competindo. Saída: \((m_2, w_1), (m_1, w_2)\) — mesmo matching! Coincidência: aqui o matching estável é único. Em geral, \(M\)-proponente e \(W\)-proponente entregam matchings diferentes.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Execução simples de DA. Distrator (a) é o erro "ingênuo" mais comum — não internalizou competição.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — Strategy-proofness assimétrica -->
+  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> Roth (1982) provou que em DA com lado proponente \(M\), declarar verdade é estratégia dominante para \(m \in M\) <strong>mas não</strong> para \(w \in W\). A intuição é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Apenas \(m\)s entendem o algoritmo; \(w\)s não.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) <strong>Em DA, \(m\) só pode "perder" mentindo</strong> — propor a alguém pior que sua escolha verdadeira só leva a um pior parceiro. Logo verdade domina. <strong>Para \(w\),</strong> rejeitar imediatamente um \(m_X\) aceitável (em vez de mantê-lo pendente) pode forçar \(m_X\) a propor a outra \(w'\), que rejeita seu pendente \(m_Y\), que propõe a essa \(w\) — e \(m_Y\) pode ser melhor para \(w\) que \(m_X\). Cadeia de rejeições subsequente pode trazer ganho. Verdade não domina.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) \(w\)s estão sujeitas a custos administrativos.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) \(m\)s e \(w\)s têm informações diferentes.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A assimetria de incentivo é estrutural: lado proponente é "passivo" no sentido de só aceitar/recusar; só pode piorar mentindo. Lado receptor é "ativo" no sentido de poder declinar pendentes para forçar cadeia subsequente — e essa cadeia pode resultar em ganho. Roth 1982 formaliza.</p>
+      <p><strong>2. Derivação.</strong> Para \(m\): suponha verdade declarada \(\succ_m\) com 1ª escolha \(w_1\). Manipulação: declarar \(w_2 \succ' w_1\) (\(w_2\) era 2ª). Em iter. 1, \(m\) propõe \(w_2\) em vez de \(w_1\). Caso 1: \(w_2\) aceita; \(m\) fica com \(w_2\) (não-melhor). Caso 2: \(w_2\) rejeita; \(m\) propõe \(w_1\) (verdadeira 1ª) — equivalente à verdade, mas com timing perdido. Logo verdade fraco-domina. Para \(w\): exemplo de Roth 1982 — preferências específicas onde \(w\) ganha rejeitando \(m_X\) imediatamente. Sem dominância.</p>
+      <p><strong>3. Armadilha.</strong> (a) absurda. (c) imperfeição irrelevante. (d) errado — informação é simétrica em DA (preferências são privadas mas o conceito é comum).</p>
+      <p><strong>4. Extensão.</strong> Implicação prática: ao desenhar mecanismo, escolha qual lado terá a verdade. NRMP escolheu candidatos (médicos residentes); SISU também candidatos. Roth (1982) negative result: <strong>não existe</strong> mecanismo estável strategy-proof para ambos os lados (resultado tipo Gibbard-Satterthwaite restrito a matching).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Resultado central. Distratores testam intuição vs. mecanismo formal.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — SISU + aplicação institucional -->
+  <div class="quizg-q" data-qid="q10" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> O <strong>SISU</strong> (Sistema de Seleção Unificada do MEC, 2010+) faz matching entre candidatos do ENEM e vagas em instituições federais. Em termos do framework de Gale-Shapley, a escolha do MEC de fazer <strong>candidatos como lado proponente</strong> (vagas como lado receptor) implementa:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Matching W-ótimo (vagas captam todo o ganho).</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Mecanismo trivialmente Pareto-eficiente sem trade-offs.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) <strong>Strategy-proofness para os candidatos</strong> (declarar preferências verdadeiras é estratégia dominante para o aluno) e <strong>matching candidato-ótimo</strong> entre os matchings estáveis. Custo institucional: vagas (lado receptor) ficam com seu pior parceiro estável e podem teoricamente manipular — mas em prática, vagas são entes administrativos sem ranqueamento estratégico ativo, então essa "perda" é teoricamente prevista mas sem efeito empírico saliente.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Equivalência total com leilão de Vickrey.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> A escolha do MEC de fazer candidatos proponentes é decisão de política pública: protege o aluno contra manipulação (strategy-proofness) e garante \(M\)-otimalidade. Custo: vagas estão em \(W\)-pessimo, mas vagas não têm comportamento estratégico ativo (são quotas administrativas), então o custo é teórico e não empírico significativo.</p>
+      <p><strong>2. Derivação.</strong> SISU executa DA (com variantes) com candidatos como proponentes. Aplicando Roth 1982: candidatos têm dominante estratégia dominante (declarar verdade); ranking aparece em ordem genuína de preferência. Vagas recebem candidatos por nota ENEM — corte é determinístico, sem incentivo a manipulação. Resultado: \(M\)-ótimo entre estáveis. Empírico: cohorte 2010+ mostra distribuição geográfica que reflete preferências verdadeiras.</p>
+      <p><strong>3. Armadilha.</strong> (a) errado — \(M\) proponente é \(M\)-ótimo, não \(W\)-ótimo. (b) Pareto-eficiência geral não é trivial em matching com restrições. (d) Vickrey é mecanismo de leilão; SISU é mecanismo de matching ordinal. Diferentes objetos.</p>
+      <p><strong>4. Extensão.</strong> Aygün &amp; Bó (2020) argumentam que SISU não é DA puro — variantes Boston-mechanism aparecem em algumas configurações com ações afirmativas. Estudos INEP-MEC documentam desistência no 1º semestre quando aluno pegou curso/local distante das preferências verdadeiras (sinal de que candidato declarou preferências que ele acreditava maximizarem chance, não as preferências reais — distorção residual). Comparação com NRMP, ACA: cada mecanismo é uma escolha institucional sobre quem captura renda informacional.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Aplicação institucional brasileira — caso paradigmático. Distrator (a) é o erro mais comum (confundir lado proponente com beneficiário do output).</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>última aula presencial do curso</strong> (quarta, 17/06, 19:30 — Sinalização + Matching + síntese das 9 aulas + roteiro AF). Se alguma questão ficou imprecisa, volte ao <a href="aula-09.html">material da pré-aula</a> e relê a seção correspondente. O <strong>quiz pós-aula 9</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 9</strong> já estão liberados — todo o material avaliativo do curso fecha em <strong>02/07/2026 às 18h</strong>; gabarito quinta 03/07/2026 · 00:00. <strong>Avaliação Final:</strong> qua 24/06 · 19:00 · 3h · A4 permitida · 70% da nota.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-09-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>
