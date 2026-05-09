@@ -42,15 +42,6 @@
   <a class="next-step-cta" id="next-step-cta" href="#">abrir agora →</a>
 </div>
 
-<!-- Pendências multi-aula (substitui o antigo path-card) -->
-<div class="pend-card" id="pendencias-card" style="display:none">
-  <div class="pend-header">
-    <h3 class="pend-title">Suas pendências</h3>
-    <span class="pend-sub" id="pend-sub"></span>
-  </div>
-  <div id="pend-body"></div>
-</div>
-
 <div class="my-performance aulas-section-head">
   <h3>Aulas</h3>
   <label class="hide-done-toggle">
@@ -765,14 +756,9 @@ async function renderOnda1() {
   var hideDone = document.getElementById('hide-done-toggle');
   renderAulasGrid(myData, hideDone && hideDone.checked);
 
-  // Pendências multi-aula
+  // Pendências multi-aula — cálculo mantido (usado por banner de urgência e próximo passo)
   var pendings = window.PortalOndax.buildPendings(myData, AULAS);
   _portalCache.pendings = pendings;
-  document.getElementById('pendencias-card').style.display = 'block';
-  document.getElementById('pend-sub').textContent = pendings.length === 0
-    ? 'tudo em dia'
-    : pendings.length + ' atividade(s) abertas';
-  document.getElementById('pend-body').innerHTML = window.PortalOndax.renderPendings(pendings);
 
   // Banner de urgência (≤48h)
   renderUrgencyBanner(pendings);
