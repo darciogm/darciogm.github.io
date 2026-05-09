@@ -371,7 +371,7 @@ var AULAS = [
   {n:7,  title:'Externalidades e Bens Públicos', desc:'Externalidades tecnológicas, condição de Samuelson, Pigou, Coase, cotas, mercados de permissão', cap:'ZaE Ext · N&S 12e 19', time:80, available:true, preAvailable:true, posAvailable:true, posOpensOn:'04/06', exercAvailable:true},
   {n:8,  title:'Informação Assimétrica: Seleção Adversa e Risco Moral', desc:'Akerlof, Rothschild-Stiglitz, principal-agente, contratos com IR e IC, trade-off seguro-incentivo, ANS + ACA + Bolsa Família', cap:'ZaE 19 · N&S 12e 18', time:90, available:true, preAvailable:true, posAvailable:true, posOpensOn:'11/06', exercAvailable:true},
   {n:9,  title:'Sinalização e Matching', desc:'Spence com single-crossing, Cho-Kreps intuitive criterion, Riley equilibrium, Gale-Shapley DA, Roth 1982, aplicações (NRMP, SISU, kidney exchange, school choice)', cap:'ZaE 19 · N&S 12e 18 §18.6 + Match', time:85, available:true, preAvailable:true, posAvailable:true, posOpensOn:'18/06', exercAvailable:true},
-  {n:10, title:'Avaliação Final Presencial', desc:'Prova escrita cumulativa, 3h, cobertura integrada dos 9 tópicos, 70% da nota', cap:'Ementa completa', time:180, available:false}
+  {n:10, title:'Avaliação Final + Simulado', desc:'Prova escrita cumulativa, 3h, presencial qua 24/06, A4 de consulta permitida, 70% da nota. Simulado de estudo com 45 questões (9 aulas × 5; 1 fácil + 3 médias + 1 desafio por aula) + gabarito passo-a-passo comentado disponíveis como PDF.', cap:'Ementa completa · Simulado AF', time:180, available:true, isFinalAssessment:true}
 ];
 
 // Pré-monitorias online (formativas, não contam nota). Linkam para
@@ -523,21 +523,24 @@ function renderCTA(label, icon, href, summaryComp, opts) {
 
 function renderAulasGrid(myData, hideDone) {
   var grid = document.getElementById('aulas-grid');
-  var availableCount = AULAS.filter(function(a){return a.available}).length;
+  var availableCount = AULAS.filter(function(a){return a.available && !a.isFinalAssessment}).length;
   var aulasFullyDoneCount = 0;
   var html = '';
   var hiddenByToggle = 0;
 
   AULAS.forEach(function(a) {
     var pid2 = String(a.n).padStart(2,'0');
-    var summary = a.available ? PortalOndax.aulaSummary(a, myData) : null;
+    var summary = (a.available && !a.isFinalAssessment) ? PortalOndax.aulaSummary(a, myData) : null;
     if (summary && summary.allDone) aulasFullyDoneCount++;
 
-    if (a.available && hideDone && summary.allDone) { hiddenByToggle++; return; }
+    if (a.available && !a.isFinalAssessment && hideDone && summary.allDone) { hiddenByToggle++; return; }
 
     var cardCls = 'aula-card';
     var statusBadge = '';
-    if (!a.available) {
+    if (a.isFinalAssessment) {
+      cardCls += ' aula-final';
+      statusBadge = '<span class="aula-status-badge badge-open">📥 PDFs disponíveis</span>';
+    } else if (!a.available) {
       cardCls += ' aula-em-breve';
       statusBadge = '<span class="aula-status-badge badge-soon">Em breve</span>';
     } else if (summary.allDone) {
@@ -564,7 +567,19 @@ function renderAulasGrid(myData, hideDone) {
       + '</div>'
       + '</div>';
 
-    if (a.available) {
+    if (a.isFinalAssessment) {
+      // Aula 10 — Avaliação Final + Simulado: 2 botões de download PDF
+      var simBtn = '<a class="aula-cta cta-active" href="simulado-af.pdf" download style="text-decoration:none">'
+                 + '<span class="cta-icon">📥</span><span class="cta-label">Simulado (PDF)</span>'
+                 + '</a>';
+      var gabBtn = '<a class="aula-cta cta-active" href="gabarito-simulado-af.pdf" download style="text-decoration:none">'
+                 + '<span class="cta-icon">📥</span><span class="cta-label">Gabarito (PDF)</span>'
+                 + '</a>';
+      html += '<div class="' + cardCls + '">'
+            + cardHeader
+            + '<div class="aula-cta-row">' + simBtn + gabBtn + '</div>'
+            + '</div>';
+    } else if (a.available) {
       var preBtn = renderCTA('Pré-aula', '📝', 'aula-' + pid2 + '-pre.html', summary.byComp.pre);
       var matBtn = renderCTA('Material', '📖', 'aula-' + pid2 + '.html', summary.byComp.material);
       var posBtn = renderCTA('Pós-aula', '✍', 'aula-' + pid2 + '-pos.html', summary.byComp.pos);
