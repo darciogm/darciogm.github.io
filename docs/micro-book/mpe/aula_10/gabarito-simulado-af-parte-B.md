@@ -21,7 +21,7 @@ $$
 = 1 \cdot (2 - 0) - 1 \cdot (4 - 0) + 1 \cdot (6 - 4) = 2 - 4 + 2 = 0.
 $$
 
-Como $\det A = 0$, $\text{rank}(A) < 3$. Verificando o menor $2\times 2$ superior-esquerdo: $\det\begin{pmatrix}1&2\\1&1\end{pmatrix} = -1 \neq 0 \Rightarrow \text{rank}(A) = 2$. **De fato**, observe que $D^3 = D^1 + D^2$ (coluna 3 = coluna 1 + coluna 2): $(1+2, 1+1, 1+0) = (3, 2, 1) \neq (4,3,2)$ — isso seria errado. Re-checando: $D^1 + D^2 = (1+2, 1+1, 1+0) = (3,2,1)$ e $D^3 = (4,3,2) = (3,2,1) + (1,1,1) = D^1 + D^2 + D^1 = 2D^1 + D^2$. ✓ Portanto $D^3 = 2D^1 + D^2$, dependência linear, rank 2.
+Como $\det A = 0$, $\text{rank}(A) < 3$. O menor $2\times 2$ superior-esquerdo é $\det\begin{pmatrix}1&2\\1&1\end{pmatrix} = -1 \neq 0$, logo $\text{rank}(A) = 2$. Inspeção direta confirma a dependência linear: $D^3 = 2 D^1 + D^2$, pois $2(1,1,1) + (2,1,0) = (4,3,2)$. O ativo composto é redundante.
 
 3. **Resposta.** $\det A = 0$, $\text{rank}(A) = 2 < |S| = 3$. **Mercado incompleto.** O ativo composto é redundante (combinação linear dos outros dois). Pelo teorema da Aula 6 (Hart 1975 + equivalência AD↔Radner), a alocação Pareto-eficiente do AD canônico **não é atingível**: equilíbrio Radner será constrained-Pareto-eficiente (no span 2D) mas Pareto-inferior em sentido absoluto.
 
@@ -79,9 +79,9 @@ Subtraindo: $1{,}05 = 3 p^*_1 \Rightarrow p^*_1 = 0{,}35$, e $p^*_2 = 0{,}95 - 0
 
 **Resolução.**
 
-1. **Setup.** NA significa: $\nexists \theta$ com $(-q\cdot\theta, A\theta) \in \mathbb{R}_+^{1+|S|} \setminus \{0\}$.
+1. **Setup + hipóteses do teorema de Stiemke.** NA significa: $\nexists \theta$ com $(-q\cdot\theta, A\theta) \in \mathbb{R}_+^{1+|S|} \setminus \{0\}$. Trabalhamos em $\mathbb{R}^{1+|S|}$ (dimensão finita, $|S|, J < \infty$) — Stiemke é Hahn-Banach especializado a esse cenário e dispensa o aparato funcional. **Forma usada (alternativa de Stiemke):** dado $M \in \mathbb{R}^{m\times n}$, exatamente uma das duas vale: (i) $\exists\, x \geq 0,\, x \neq 0 : Mx = 0$, ou (ii) $\exists\, y : M^\top y \gg 0$ (estrito em todas as coordenadas). NA descarta (i) sobre a matriz $M = [-q^\top;\, A] \in \mathbb{R}^{(1+|S|)\times J}$, então (ii) entrega o $p^* \gg 0$. Em dimensão finita o cone $K$ é automaticamente fechado (imagem linear de $\mathbb{R}^J$), o que dispensa hipótese topológica adicional.
 
-2. **Derivação (prova).** Defina o cone $K = \{(-q\cdot\theta, A\theta) : \theta \in \mathbb{R}^J\} \subseteq \mathbb{R}^{1+|S|}$. NA equivale a dizer $K \cap (\mathbb{R}_+^{1+|S|} \setminus \{0\}) = \emptyset$. Como $K$ é subespaço linear (imagem de $\theta \mapsto (-q\cdot\theta, A\theta)$, linear) e $\mathbb{R}_+^{1+|S|} \setminus \{0\}$ é o cone positivo perfurado (convexo, com interior não-vazio), pelo **teorema da separação de Stiemke** (variante de Farkas / Hahn-Banach para cones), existe $(\lambda_0, \lambda) \in \mathbb{R}_{++}^{1+|S|}$ (estritamente positivo em todas as coordenadas) tal que para todo $\theta \in \mathbb{R}^J$:
+2. **Derivação (prova).** Defina o cone $K = \{(-q\cdot\theta, A\theta) : \theta \in \mathbb{R}^J\} \subseteq \mathbb{R}^{1+|S|}$. NA equivale a dizer $K \cap (\mathbb{R}_+^{1+|S|} \setminus \{0\}) = \emptyset$. Como $K$ é subespaço linear (imagem de $\theta \mapsto (-q\cdot\theta, A\theta)$, linear) e $\mathbb{R}_+^{1+|S|} \setminus \{0\}$ é o cone positivo perfurado (convexo, com interior não-vazio), pela **alternativa de Stiemke** (acima), existe $(\lambda_0, \lambda) \in \mathbb{R}_{++}^{1+|S|}$ (estritamente positivo em todas as coordenadas) tal que para todo $\theta \in \mathbb{R}^J$:
 $$
 \lambda_0 \cdot (-q\cdot\theta) + \lambda \cdot (A\theta) = 0.
 $$
@@ -103,7 +103,7 @@ Reorganizando: $\theta^\top(A^\top \lambda - \lambda_0\, q) = 0$ para todo $\the
 
   **(a) Distinção.** **Constrained-Pareto-eficiente (CPE):** alocação $x \in \omega + \text{span}(A)$ tal que não existe outra $\hat x \in \omega + \text{span}(A)$ Pareto-superior. Restrição: o conjunto de comparação é só **alocações implementáveis pelo span dos ativos disponíveis**. **PE absoluto:** comparação sobre **todas** as alocações viáveis fisicamente ($x$ tal que $\sum_i x^i = \sum_i \omega^i$). Sob mercado incompleto, $\text{span}(A) \subsetneq \mathbb{R}^{LS}$, então CPE $\not\Rightarrow$ PE absoluto. CPE é fraca demais porque **aceita** ineficiência institucional como dado: dois agentes podem ambos preferir uma alocação $\hat x \notin \text{span}(A)$ ao equilíbrio Radner $x^*$, mas $\hat x$ não é alcançável via os ativos existentes. O equilíbrio é "ótimo dado o que se pode comprar" — não "ótimo dado o que se quer".
 
-  **(b) Mecanismo GP 1986.** Em mercado já incompleto, **preços relativos dos ativos existentes incorporam um "prêmio de incompletude"**: agentes que conseguem se proteger melhor (dado o span) valoram menos o seguro adicional, agentes piores cobram prêmio. Adicionar um novo ativo **redistribui as oportunidades de seguro**: o novo ativo amplia o span, mas **reajusta** os preços de equilíbrio dos ativos pré-existentes. Quem antes ganhava "renda implícita por ser bem-posicionado no span velho" perde com o reajuste. Como utilidade depende não apenas do consumo final mas da estrutura de preços via UMP individual, o agente que antes era "vendedor implícito de seguro" pode ficar pior. Logo a mudança de bem-estar tem sinal ambíguo entre agentes; Pareto não é monótono em ativos.
+  **(b) Mecanismo GP 1986.** Em mercado já incompleto, os **preços relativos** dos ativos existentes incorporam um *prêmio de incompletude* — agentes mais expostos a estados não-cobertos pagam mais por instrumentos parcialmente correlacionados. Adicionar um novo ativo amplia o span, **mas reajusta os preços de todos os ativos pré-existentes** (efeito-preço de portfólio). Como cada agente é heterogêneo no padrão de exposição, o reajuste de preços redistribui renda entre eles via efeito-riqueza indireto. Quem antes "vendia seguro implicitamente" via portfólio com preços altos perde valor de mercado quando o novo ativo torna o seguro mais barato. Em modelos dois-períodos com preferências quaselineares, esses efeitos-preço somados podem deixar **algum agente Pareto-pior**, mesmo com span estritamente maior. Pareto não é monótono em ativos.
 
   **(c) Política.** Implicação Dodd-Frank/EMIR: **derivativos OTC complexos não devem ser desregulamentados sob a hipótese ingênua "mais é sempre melhor"**. Análise de bem-estar de cada novo produto requer modelagem de quem ganha vs. quem perde. Justificativa teórica para regulação prudencial pós-crise.
 
@@ -181,7 +181,7 @@ Reorganizando: $\theta^\top(A^\top \lambda - \lambda_0\, q) = 0$ para todo $\the
 
 **Resolução.**
 
-1. **Setup.** Agente $i$ reporta $\hat v_i$. Decisão $a^* = \arg\max_x \sum_j \hat v_j(x)$. Pagamento Clarke: $t_i = \max_x \sum_{j\neq i} \hat v_j(x) - \sum_{j\neq i} \hat v_j(a^*)$.
+1. **Setup + hipótese quaselinear.** Agente $i$ reporta $\hat v_i$. Decisão $a^* = \arg\max_x \sum_j \hat v_j(x)$. Pagamento Clarke: $t_i = \max_x \sum_{j\neq i} \hat v_j(x) - \sum_{j\neq i} \hat v_j(a^*)$. **Hipótese crítica:** preferências **quaselineares** em dinheiro — utilidade de $i$ é $U_i(a, t_i) = v_i(a) - t_i$, com $v_i$ medida na mesma unidade de $t_i$ e **sem efeito-renda** sobre $v_i$. É essa hipótese que permite a separação aditiva $U_i = v_i(a^*) - t_i$ na linha (1) abaixo e que garante que o termo $\max_x \sum_{j\neq i}\hat v_j(x)$ entre como **constante** (não interage com $v_i$). Sem quaselinearidade, VCG **não** é estritamente strategy-proof — Hurwicz (1972) e a impossibilidade Green-Laffont (1979) mostram que dominância em domínio mais largo exige relaxar a estrutura.
 
 2. **Derivação (prova).** Fixe $\hat v_{-i}$ (relatórios dos outros) arbitrário. Utilidade de $i$:
 $$
@@ -223,23 +223,46 @@ Logo $h_1 = S_2 = (S_1 - h_1)(1{,}10) \Rightarrow h_1 = 1{,}10 S_1 - 1{,}10 h_1 
 $S_2^{\text{soc}} = (100 - 52{,}38)(1{,}10) \approx 52{,}38 = h_2^{\text{soc}}$.
 **Por pescador:** $h_{i,1}^{\text{soc}} = 52{,}38/4 \approx 13{,}10$.
 
-  **(b) Nash.** Cada pescador $i$ resolve $\max \ln h_{i,1} + \delta \ln h_{i,2}$ sob $h_{i,2}$ que ele extrai em $t=2$ (último período: extrai todo seu "share fair" do estoque). Em $t=2$ (subgame perfect): cada pescador toma $h_{j,2}$ (outros) como dado em jogo simultâneo. Equilíbrio simétrico em $t=2$: $h_{i,2} = S_2/I$ por simetria (Nash em jogo de extração simultânea de bem comum). Substituindo na função objetivo: $\ln h_{i,1} + \delta \ln(S_2/I) = \ln h_{i,1} + \delta \ln((S_1 - h_1)\cdot 1{,}10/I)$. Como $h_1 = h_{i,1} + \sum_{j\neq i} h_{j,1}$, agente $i$ toma $\sum_{j\neq i} h_{j,1} = (I-1) h_{j,1}^*$ como dado em equilíbrio simétrico.
+  **(b) Nash Markov-perfect.** Resolva por indução para trás.
 
-  CPO de $i$ em $h_{i,1}$:
-$$
-\frac{1}{h_{i,1}} = \frac{\delta}{S_2/I} \cdot \frac{1{,}10}{I} = \frac{\delta\cdot 1{,}10}{S_2} = \frac{1}{S_2}.
-$$
-**Mesma** equação que social! Mas a diferença é que $S_2 = (S_1 - I h_{i,1})(1{,}10)$ em equilíbrio simétrico Nash (com $I$ pescadores extraindo $h_{i,1}$ cada). Substituindo: $h_{i,1} = S_2 = (S_1 - I h_{i,1})(1{,}10)$. Logo:
-$$
-h_{i,1} = 1{,}10 S_1 - 1{,}10 \cdot I \cdot h_{i,1} \Rightarrow h_{i,1}(1 + 1{,}10 \cdot 4) = 110 \Rightarrow h_{i,1}^{\text{Nash}} = 110/5{,}40 \approx 20{,}37.
-$$
-$h_1^{\text{Nash}} = 4 \cdot 20{,}37 \approx 81{,}48$. $S_2^{\text{Nash}} = (100 - 81{,}48)(1{,}10) \approx 20{,}37$.
+  *Período $t=2$ (último).* Estoque $S_2$ dado, sem continuação. Equilíbrio simétrico do jogo simultâneo de extração: cada pescador extrai $h_{i,2} = S_2/I$ (rateio igual; única alocação simétrica viável factível com $\ln$-utilidade — o jogo é "tragédia degenerada" em $t=2$).
 
-  **(c) Comparação.** $h_1^{\text{Nash}} \approx 81{,}48$ vs $h_1^{\text{soc}} \approx 52{,}38$. Em Nash colhe-se **muito mais** no período 1 (sobreexplora). $S_2^{\text{Nash}} \approx 20{,}37$ vs $S_2^{\text{soc}} \approx 52{,}38$ — Nash deixa **menos da metade** do estoque que o social. **Perda dinâmica** (em forma fechada literal, por pescador):
+  *Período $t=1$.* Cada pescador $i$ resolve, tomando $h_{j,1}$ (outros) como dado e antecipando $h_{i,2} = S_2/I$:
 $$
-\Delta U_i = [\ln h_{i,1}^{\text{soc}} + \delta \ln(S_2^{\text{soc}}/I)] - [\ln h_{i,1}^{\text{Nash}} + \delta \ln(S_2^{\text{Nash}}/I)].
+\max_{h_{i,1}} \ \ln h_{i,1} + \delta \ln(S_2/I), \quad S_2 = (S_1 - h_{i,1} - (I-1)\bar h_1)\cdot (1+r),
 $$
-Substituindo simetria $h_{i,t}^{\text{soc}} = S_t^{\text{soc}}/I$ similarmente: $\Delta U_i = (1+\delta) \ln(S_2^{\text{soc}}/S_2^{\text{Nash}}) + \ln(h_1^{\text{soc}}/h_1^{\text{Nash}}) \cdot (\text{ajuste})$ — em valores: $\ln(52{,}38/13{,}10 \cdot 4) = ?$. Forma fechada literal pedida — $\Delta U_i = \ln(13{,}10) - \ln(20{,}37) + \delta[\ln(13{,}10) - \ln(5{,}09)] \approx -0{,}44 + 0{,}91 \cdot 0{,}94 \approx +0{,}42$ (positivo, ou seja, social é melhor). Por pescador. Total $4 \cdot 0{,}42 = 1{,}68$ em utilidade de log.
+onde $\bar h_1$ é a colheita simétrica dos outros. CPO em $h_{i,1}$:
+$$
+\frac{1}{h_{i,1}} = \delta \cdot \frac{1}{S_2/I} \cdot \frac{(1+r)}{I} = \frac{\delta(1+r)}{S_2}.
+$$
+Como $\delta(1+r) = (1/1{,}10)\cdot 1{,}10 = 1$, isso vira $h_{i,1} = S_2$. Em equilíbrio simétrico ($\bar h_1 = h_{i,1}$): $S_2 = (S_1 - I\,h_{i,1})\cdot (1+r) = (100 - 4\,h_{i,1})\cdot 1{,}10$. Substituindo:
+$$
+h_{i,1} = (100 - 4\,h_{i,1})\cdot 1{,}10 \Rightarrow h_{i,1}\,(1 + 4\cdot 1{,}10) = 110 \Rightarrow h_{i,1}^{\text{Nash}} = \frac{110}{5{,}40} \approx 20{,}37.
+$$
+
+  Total $h_1^{\text{Nash}} = 4 \cdot 20{,}37 \approx 81{,}48$. $S_2^{\text{Nash}} = (100 - 81{,}48)\cdot 1{,}10 \approx 20{,}37$. Por pescador em $t=2$: $h_{i,2}^{\text{Nash}} = S_2^{\text{Nash}}/4 \approx 5{,}09$.
+
+  **Comparação social vs Nash.** A CPO social é $h_{i,1} = S_2$ com $S_2 = (S_1 - I\,h_{i,1})(1+r)$ porque o planner internaliza que aumentar $h_{i,1}$ reduz $S_2$ via *toda* a colheita agregada. O Nash leva à mesma forma da CPO ($1/h_{i,1} = 1/S_2$) mas com a equação de estado que cada agente individualmente percebe — e o resultado é que cada pescador trata só sua parte do estoque como interna, então em equilíbrio simétrico extrai $I$ vezes mais. **Daí a sobreexploração.**
+
+  **(c) Comparação.** $h_1^{\text{Nash}} \approx 81{,}48$ vs $h_1^{\text{soc}} \approx 52{,}38$ — Nash colhe **55% mais** no período 1. $S_2^{\text{Nash}} \approx 20{,}37$ vs $S_2^{\text{soc}} \approx 52{,}38$ — Nash deixa **39% do estoque** que o social deixaria.
+
+  **Perda dinâmica em forma fechada literal (por pescador).** As colheitas individuais em forma fechada são:
+$$
+h_{i,1}^{\text{soc}} = \frac{S_1\,(1+r)}{I\,(2+r)}, \qquad h_{i,1}^{\text{Nash}} = \frac{S_1\,(1+r)}{1 + I\,(1+r)}.
+$$
+A razão Nash/Social no período 1 (independente de $S_1$):
+$$
+\frac{h_{i,1}^{\text{Nash}}}{h_{i,1}^{\text{soc}}} = \frac{I\,(2+r)}{1 + I\,(1+r)} = \frac{8{,}40}{5{,}40} \approx 1{,}556 \quad (\text{Nash colhe 55\% mais}).
+$$
+A perda total descontada por pescador é
+$$
+\Delta U_i = \big[\ln h_{i,1}^{\text{soc}} - \ln h_{i,1}^{\text{Nash}}\big] + \delta \big[\ln h_{i,2}^{\text{soc}} - \ln h_{i,2}^{\text{Nash}}\big].
+$$
+**Avaliando numericamente** com $h_{i,1}^{\text{soc}} \approx 13{,}10$, $h_{i,1}^{\text{Nash}} \approx 20{,}37$, $h_{i,2}^{\text{soc}} \approx 13{,}10$, $h_{i,2}^{\text{Nash}} \approx 5{,}09$, $\delta = 1/1{,}10$:
+$$
+\Delta U_i = (\ln 13{,}10 - \ln 20{,}37) + (1/1{,}10)(\ln 13{,}10 - \ln 5{,}09) \approx (-0{,}441) + (0{,}909)(0{,}945) \approx +0{,}418.
+$$
+Positivo — social é melhor (como deve ser). Total agregado (4 pescadores): $4 \cdot 0{,}418 \approx 1{,}67$ em utilidade-log.
 
   **(d) Ostrom.** Elinor Ostrom (1990, *Governing the Commons*; Nobel 2009) documentou comunidades reais (pesca em Maine, irrigação em Bali, pastos em Suíça alpina) que escapam tragédia via **governança comunitária** — nem mercado nem Estado. Princípios de design relevantes (citando 2 dos 8): **(i) "Boundaries clearly defined"** — quem pode pescar e onde é institucionalmente fixado; **(ii) "Collective-choice arrangements"** — usuários participam ativamente da regra de uso (cota, época). Outros princípios: monitoramento mútuo, sanções graduadas, mecanismo de resolução de conflitos local, reconhecimento mínimo do governo central. A lição: tragédia de Hardin assume "nenhuma instituição" — Ostrom mostra que **instituições endógenas** existem e funcionam.
 
@@ -300,7 +323,9 @@ $$
 
 Mas $360 > 60$, **fora do suporte $[0,60]$**. Logo a única solução em $[0,60]$ é $p^* = 0$ (unraveling completo). **Mercado colapsa.**
 
-  **(c)** Comparação com uniforme em $[0,60]$ (caso de aula): $E[\theta\mid \theta\leq p] = p/2$ (uniforme). Equilíbrio: $p = (4/3)(p/2) = 2p/3$, ou seja $p/3 = 0 \Rightarrow p = 0$. **Também colapsa**, mas pelo motivo: incremento de qualidade médio ($\theta/2$) é menor que o gap de avaliação ($\theta/3$ porque comprador valoriza $4/3 \theta$, paga $p$; vendedor aceita $p \geq \theta$, ou seja $\theta \leq p$; precisa $(4/3)(p/2) \geq p$, falha). Na **triangular** (lemons concentrados em baixa qualidade — densidade decrescente), **piora ainda mais**: a esperança truncada $E[\theta\mid \theta\leq p]$ é puxada **mais para baixo** (quanto mais lemons-pesadas), agravando unraveling. Logo, ambas distribuições levam a $p^* = 0$, mas a triangular tem unraveling "mais forte" (se aumentássemos um pouco o premium do comprador, uniforme poderia salvar mercado, triangular não).
+  **(c)** Comparação com uniforme em $[0,60]$ (caso de aula): $E[\theta\mid \theta\leq p] = p/2$. Equilíbrio Akerlof: $p = (4/3)(p/2) = 2p/3$, logo $p^* = 0$. **Ambas distribuições colapsam para $p^* = 0$ sob premium $\alpha = 4/3$.**
+
+  **Direção da diferença qualitativa.** Na triangular, $E[\theta\mid \theta\leq p] = 2p(90-p)/(3(120-p)) < p/2$ para todo $p \in (0, 60)$ — a densidade decrescente puxa a esperança truncada **abaixo** de $p/2$. Numericamente: em $p = 60$, uniforme dá $30$, triangular dá $20$ (calcule). Logo, a "qualidade média esperada" abaixo do preço é **menor** na triangular, e o premium $\alpha$ necessário para sustentar mercado é **maior** na triangular. Especificamente: uniforme tem mercado funcional sse $\alpha \geq 2$; triangular requer $\alpha > 2$ para solução interior em $[0,60]$ e $\alpha > 3$ para mercado cheio. Em $\alpha = 4/3$, ambas colapsam, mas a triangular está "mais longe" do limiar — o lemons-pesadas piora a fronteira de existência.
 
 3. **Resposta.** $p^* = 0$ (unraveling completo); na triangular, lemons-pesadas agravam o problema vs uniforme.
 
@@ -328,27 +353,28 @@ Mas $360 > 60$, **fora do suporte $[0,60]$**. Logo a única solução em $[0,60]
 
 **Resolução.**
 
-1. **Setup.** CARA $\rho = 1$, $c(e) = e^2/2$, $\varepsilon \sim N(0, 1)$, $\bar U = -\exp(-1) \Leftrightarrow$ CE reservation $= 1$. Contrato $w = \alpha + \beta y$, $y = e + \varepsilon$.
+1. **Setup.** CARA $\rho = 1$, $c(e) = e^2/2$, $\varepsilon \sim N(0, 1)$, $\bar U = -1 \Leftrightarrow$ CE-reservation $= 0$. Contrato $w = \alpha + \beta y$, $y = e + \varepsilon$.
 
 2. **Derivação.**
 
-  **(a)** CE conhecido para CARA + normal: $\text{CE} = E[w(y)] - (\rho/2) \text{Var}(w(y)) - c(e) = (\alpha + \beta e) - (1/2)(1)(\beta^2)(1) - e^2/2 = \alpha + \beta e - \beta^2/2 - e^2/2$.
+  **(a)** Resultado padrão (CARA + normal): $\text{CE}(w(y), e) = E[w(y)] - (\rho/2)\,\text{Var}(w(y)) - c(e)$. Substituindo $w(y) = \alpha + \beta y$, $E[w] = \alpha + \beta e$, $\text{Var}(w) = \beta^2 \sigma^2 = \beta^2$, $c(e) = e^2/2$, $\rho = 1$:
+$$
+\text{CE}(\alpha, \beta, e) = \alpha + \beta e - \tfrac{1}{2}\beta^2 - \tfrac{1}{2}e^2.
+$$
 
   **(b) IC.** $\partial \text{CE}/\partial e = \beta - e = 0 \Rightarrow e^*(\beta) = \beta$.
 
-  **(c) PC.** $\text{CE}(\beta, e^*=\beta) = \alpha + \beta \cdot \beta - \beta^2/2 - \beta^2/2 = \alpha$. PC: $\alpha \geq 1$. Bind: $\alpha = 1$.
+  **(c) PC.** Substituindo $e^* = \beta$: $\text{CE}(\alpha, \beta, \beta) = \alpha + \beta^2 - \beta^2/2 - \beta^2/2 = \alpha$. PC: $\alpha \geq 0$. Bind: $\boxed{\alpha = 0}$.
 
-  **(d) Principal.** Sob $e^* = \beta$ e $\alpha$ ajustado por PC: o agente exige CE $\geq$ CE-reservation. Para o problema ficar bem-posto numericamente, **interprete $\bar U = -\exp(-1)$ como nível-utilidade com CE-reservation = 1** *e* tome a normalização canônica: $\alpha = 1 + \beta^2/2 + e^{*2}/2 - \beta e^* = 1 + \beta^2/2 + \beta^2/2 - \beta^2 = 1$ (PC bind). Logo $\Pi = E[y-w] = e^* - \alpha - \beta e^* = \beta(1-\beta) - 1$ — negativo para todo $\beta \in [0,1]$, indicando reservation alta demais para problema viável.
+  **(d) Principal.** Maximiza $\Pi = E[y - w(y)] = e^* - \alpha - \beta e^*$. Sob $e^* = \beta$ e $\alpha = 0$: $\Pi(\beta) = \beta - \beta^2$. CPO: $1 - 2\beta = 0 \Rightarrow \boxed{\beta^* = 1/2}$. Daí $e^* = 1/2$, $\Pi^{\text{SB}} = 1/4$.
 
-  **Versão canônica didática (CE-reservation = 0, equivalente a $\bar U = -1 = -\exp(0)$).** Com PC: $\alpha = 0$. $\Pi = \beta(1-\beta)$. Maximizar: $d\Pi/d\beta = 1 - 2\beta = 0 \Rightarrow \boxed{\beta^* = 1/2}$. Lucro SB = $1/4$.
+  **First-best.** Com $e$ observável: principal impõe $e^{\text{FB}}$ via salário fixo. CPO: $1 = c'(e) = e \Rightarrow e^{\text{FB}} = 1$. Salário fixo iguala custo de esforço (PC bind, agente neutro ao risco do salário fixo): $w^{\text{FB}} = c(1) = 1/2$. $\Pi^{\text{FB}} = 1 - 1/2 = 1/2$.
 
-  **First-best (CE-reservation = 0).** Com $e$ observável: $e^{\text{FB}}: 1 = c'(e) = e \Rightarrow e^{\text{FB}} = 1$. Salário fixo $w = c(1) = 1/2$. Lucro FB = $1 - 1/2 = 1/2$.
+  **Diferença SB vs FB e fórmula Holmström-Milgrom.** Lucro perdido: $1/2 - 1/4 = 1/4$ — o **prêmio de risco moral**. Forma fechada Holmström-Milgrom (1987, *Econometrica*; DOI: 10.2307/1911406): $\beta^* = 1/(1 + \rho \sigma^2\, c''(e^*))$. Aqui: $\beta^* = 1/(1 + 1 \cdot 1 \cdot 1) = 1/2$. ✓ O fator $\rho \sigma^2 c''$ mede precisamente o **trade-off risco-incentivo**: aumentar $\beta$ alinha incentivo (IC força $e^* = \beta$), mas aumenta variância do pagamento (custa prêmio de risco $\rho \sigma^2 \beta^2/2$). $\beta^* < 1$ por exatamente esse fator.
 
-  **Diferença SB vs FB.** $\beta^{\text{FB}}_{\text{efetivo}} = 1$ (agente teria que carregar todo o risco, mas como agora $e$ é observável, principal pode pagar fixo) vs $\beta^* = 1/2$ em SB. Lucro perdido: $1/2 - 1/4 = 1/4$ — esse é o **prêmio de risco moral**. Forma fechada Holmström-Milgrom (1987, *Econometrica*; DOI: 10.2307/1911406): $\beta^* = 1/(1 + \rho \sigma^2\, c''(e^*))$. Aqui: $\beta^* = 1/(1 + 1 \cdot 1 \cdot 1) = 1/2$. ✓
+3. **Resposta.** $\beta^* = 1/2$, $e^* = 1/2$, $\alpha = 0$, $\Pi^{\text{SB}} = 1/4$, $\Pi^{\text{FB}} = 1/2$. Gap = $1/4$. Forma fechada: $\beta^* = 1/(1+\rho\sigma^2 c'')$.
 
-3. **Resposta.** Sob $\bar U$ canônico (CE-reservation = 0): $\beta^* = 1/2, e^* = 1/2, \alpha = 0$, $\Pi^{\text{SB}} = 1/4$, $\Pi^{\text{FB}} = 1/2$. **Trade-off risco-incentivo:** $\beta^* < 1$ pelo fator $1/(1+\rho\sigma^2 c'')$.
-
-4. **Armadilha + cross-aula.** Erro de calibração no enunciado: a $\bar U = -\exp(-1)$ implícita é alta demais para o problema ter solução positiva — interpretar como reservation = 0 para fechar a conta. Outro erro: confundir CE com utilidade-CARA direto. **Cross-aula:** Q15 mostra que neutralidade ao risco recupera FB (agente compra o output). Em prática: salário variável de CEOs (alto $\beta$) vs salário fixo de servidores públicos (baixo $\beta$) reflete trade-off na vida real — funcionalismo público tem ruído alto e mensuração ruim, justificando $\beta = 0$.
+4. **Armadilha + cross-aula.** Erros: (i) confundir CE com utilidade-CARA direto (esquece de subtrair prêmio de risco $\beta^2/2$); (ii) tratar PC como $\alpha + \beta e \geq 0$ sem subtrair custo e prêmio. **Cross-aula:** Q15 mostra que neutralidade ao risco do agente recupera FB (agente "compra" o output via franquia). Em prática: salário variável de CEOs (alto $\beta$, $\sigma^2$ baixo após filtro de mercado) vs salário fixo de servidores públicos (baixo $\beta$, output ruidoso, mensuração ruim) reflete o trade-off na vida real.
 
 ---
 
@@ -528,7 +554,7 @@ Mas $360 > 60$, **fora do suporte $[0,60]$**. Logo a única solução em $[0,60]
 
 3. **Resposta.** Itens (a)-(d) acima. $\mu^M$ é M-ótimo via indução sobre rejeições + estabilidade.
 
-4. **Armadilha + cross-aula.** Erros: (i) tentar prova direta sem indução — fica caótica; (ii) confundir "alcançável" com "preferida" — alcançável é definida por **algum estável existir**, não por preferência. **Cross-aula:** mesma estrutura indutiva aparece em mecanismos top-trading-cycles (Roth-Sönmez-Ünver 2004, *J. Econ. Theory*; DOI: 10.1162/0033553041382157) para transplante de rins. **Aula 7** (VCG): também tem strategy-proofness por construção, mas em ambiente quase-linear (não-matching).
+4. **Armadilha + cross-aula.** Erros: (i) tentar prova direta sem indução — fica caótica; (ii) confundir "alcançável" com "preferida" — alcançável é definida por **algum estável existir**, não por preferência. **Cross-aula:** mesma estrutura indutiva aparece em mecanismos top-trading-cycles (Roth-Sönmez-Ünver 2004, "Kidney Exchange", *Quarterly Journal of Economics* 119(2): 457–488; DOI: 10.1162/0033553041382157) para transplante de rins. **Aula 7** (VCG): também tem strategy-proofness por construção, mas em ambiente quase-linear (não-matching).
 
 ---
 
@@ -542,7 +568,7 @@ Mas $360 > 60$, **fora do suporte $[0,60]$**. Logo a única solução em $[0,60]
 | Q8 | $G^{\text{soc}} = 8, G^{\text{Nash}} = 6$ (canto: $g_2 = 0$) | ✓ |
 | Q10 | $h_1^{\text{soc}} \approx 52{,}38, h_1^{\text{Nash}} \approx 81{,}48$ — sobreexploração ~55% | ✓ |
 | Q12 | $p^* = 0$ (unraveling) | ✓ |
-| Q14 | $\beta^* = 1/2$ (sob CE = 0); $\beta^*$ matches Holmström-Milgrom 1987 | ✓ |
+| Q14 | $\beta^* = 1/2$, $\alpha = 0$, $\Pi^{\text{SB}} = 1/4$, $\Pi^{\text{FB}} = 1/2$; bate H-M 1987 | ✓ |
 | Q16 | $e^* = 8/3$ (Cho-Kreps); DWL = 8/3 por tipo $H$ | ✓ |
 | Q18 | $\mu^F = \mu^T$ — único estável | ✓ |
 

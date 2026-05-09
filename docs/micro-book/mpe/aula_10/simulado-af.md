@@ -82,7 +82,9 @@ onde $\phi(x_1, x_2) = x_1 + x_2$.
 
 **(b)** Mostre, usando o argumento de Debreu adaptado, que **não existe** $u: X \to \mathbb{R}$ representando $\succeq^*$.
 
-**(c)** Suponha que restringimos $\succeq^*$ a $X^Q = \mathbb{Q}^2_+$. Argumente: $\succeq^*$ admite representação numérica em $X^Q$? E continua descontínua na topologia induzida em $X^Q$? Esclareça por que essas duas perguntas têm respostas distintas.
+**(c)** *[Bônus avançado — fora do escopo da AF.]* Suponha que restringimos $\succeq^*$ a $X^Q = \mathbb{Q}^2_+$. Argumente: $\succeq^*$ admite representação numérica em $X^Q$? E continua descontínua na topologia induzida em $X^Q$? Esclareça por que essas duas perguntas têm respostas distintas.
+
+> **Nota.** O item (c) testa a separação entre **cardinalidade** (que governa representabilidade) e **topologia** (que governa continuidade). É um ponto fino, mais perto de Jehle-Reny / Kreps do que do N&S 12e — **não cobrado na AF**. Resolva apenas se já fechou (a), (b) e (d) com folga; se travar, leve para a Pré-M5 com Alberto.
 
 **(d)** Em 4–5 linhas: se $\succeq^*$ não é representável, quais consequências para EG (Aulas 4–6)?
 
@@ -497,7 +499,7 @@ Seja economia de Radner com $|S|$ estados, $J$ ativos, matriz de payoffs $A \in 
 
 ### Q5 (🔴 desafio) — Hart 1975: ineficiência genérica de equilíbrio com mercado incompleto
 
-Considere a tese central de Hart (1975, *J. Economic Theory* 11(3): 418–443; DOI: 10.2307/2296844):
+Considere a tese central de Hart (1975, *J. Economic Theory* 11(3): 418–443; DOI: 10.1016/0022-0531(75)90028-9):
 
 > *"Em economias com mercados financeiros **incompletos** ($\text{rank}(A) < |S|$), preferências estritamente convexas e não-degenerescência genérica de dotações, o equilíbrio de Radner é **constrained-Pareto-eficiente** (no espaço de alocações implementáveis pelo span de $A$) mas **genericamente Pareto-ineficiente em sentido absoluto** — existem alocações fora do span que Pareto-dominariam o equilíbrio se fossem viáveis."*
 
@@ -641,13 +643,13 @@ $$
 y = e + \varepsilon, \quad \varepsilon \sim N(0, \sigma^2 = 1).
 $$
 
-Principal é risco-neutro, oferece contrato linear $w(y) = \alpha + \beta y$. Reservation utility do agente: $\bar U = -\exp(-1)$ (equivalente a equivalente-certeza de 1 unidade).
+Principal é risco-neutro, oferece contrato linear $w(y) = \alpha + \beta y$. Reservation utility do agente: $\bar U = -1$ (equivalente a equivalente-certeza de $0$ — outside option vale $0$ em CE-units).
 
 **(a)** Sob CARA + ruído normal, o equivalente-certeza do agente é (resultado padrão; cite e use): $\text{CE}(w(y), e) = \alpha + \beta e - \tfrac{1}{2} \rho \beta^2 \sigma^2 - c(e)$. Escreva-o aqui explicitamente substituindo os parâmetros numéricos.
 
 **(b)** **Incentive compatibility (IC):** dado o contrato, o agente escolhe $e^*$ maximizando seu CE. Encontre $e^*(\beta)$.
 
-**(c)** **Participation (PC):** $\text{CE}(\cdot) \geq 1$. Combine com IC e expresse $\alpha$ em função de $\beta$.
+**(c)** **Participation (PC):** $\text{CE}(\cdot) \geq 0$ (CE-reservation = 0, equivalente a $\bar U = -1 = -\exp(0)$). Combine com IC e expresse $\alpha$ em função de $\beta$.
 
 **(d)** Principal maximiza $E[y - w(y)] = e^* - \alpha - \beta e^*$ sujeito a IC + PC. Substitua e encontre $\beta^*$ ótimo. Mostre o trade-off **risco vs. incentivo**: o $\beta^*$ aqui é menor que $\beta = 1$ (first-best) por quanto, em termos de $\rho \sigma^2$?
 

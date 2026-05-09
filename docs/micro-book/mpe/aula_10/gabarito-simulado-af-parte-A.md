@@ -40,7 +40,7 @@
 
 1. **Setup.** $v = f \circ u$, $u_1, u_2 > 0$. Regra da cadeia: $v_i = f'(u)\cdot u_i$.
 
-2. **Derivação.** **(a)** $\text{TMS}^v = v_1/v_2 = (f'(u)\cdot u_1)/(f'(u)\cdot u_2) = u_1/u_2 = \text{TMS}^u$, **desde que** $f'(u) \neq 0$. Se $f'(u) > 0$ globalmente, igualdade vale em todo ponto interior. Se $f'(u_0) = 0$ em algum $u_0$, então $v_i = 0$ ali e $\text{TMS}^v$ fica $0/0$ — indefinida. **(b)** Exemplo: $f(u) = u + (u-1)^3$ é estritamente crescente em $\mathbb{R}_+$ (derivada $1 + 3(u-1)^2 \geq 1 > 0$ exceto... espera: $f'(u) = 1 + 3(u-1)^2 \geq 1$, sempre positivo — não serve). **Exemplo correto:** $f(u) = (u-1)^3$ em $\mathbb{R}$ (estritamente crescente, $f'(u) = 3(u-1)^2 \geq 0$, com $f'(1) = 0$). Em pontos onde $u(x) = 1$, $\text{TMS}^v$ é $0/0$. **(c)** Não viola a invariância "abstrata" (ordens das curvas de indiferença batem), mas viola a fórmula diferencial (TMS via gradientes) — a propriedade de que **TMS é invariante** assume $f$ estritamente crescente E $C^1$ com $f' > 0$.
+2. **Derivação.** **(a)** $\text{TMS}^v = v_1/v_2 = (f'(u)\cdot u_1)/(f'(u)\cdot u_2) = u_1/u_2 = \text{TMS}^u$, **desde que** $f'(u) \neq 0$. Se $f'(u) > 0$ globalmente, igualdade vale em todo ponto interior. Se $f'(u_0) = 0$ em algum $u_0$, então $v_i = 0$ ali e $\text{TMS}^v$ fica $0/0$ — indefinida. **(b)** Exemplo: $f(u) = (u-1)^3$ em $\mathbb{R}$. É estritamente crescente (a função cúbica deslocada é injetiva e crescente), com $f'(u) = 3(u-1)^2 \geq 0$ e $f'(1) = 0$. Em pontos onde $u(x) = 1$, $\nabla v(x) = f'(u(x))\nabla u(x) = 0$ e portanto $\text{TMS}^v$ fica $0/0$ — indefinida. **(c)** Não viola a invariância "abstrata" (ordens das curvas de indiferença batem, pois $f$ é estritamente crescente), mas viola a fórmula diferencial (TMS via gradientes) — a propriedade de que **TMS é invariante via $\nabla v / \nabla u$** assume $f$ estritamente crescente E $C^1$ com $f' > 0$.
 
 3. **Resposta.** **(a)** $\text{TMS}^v = \text{TMS}^u$ sse $f' > 0$. **(b)** $f(u) = (u-1)^3$ no domínio onde $u$ pode atingir 1; TMS vira indefinida ali. **(c)** A propriedade ordinal sobrevive (curvas de indiferença coincidem); a propriedade analítica via $\nabla v$ falha onde $f' = 0$. São propriedades de níveis diferentes.
 
@@ -76,7 +76,13 @@ O numerador é $-|H_b|/u_2^0$ onde $|H_b|$ é o determinante do **Hessiano borda
 
 1. **Setup.** $\succeq^*$ ordena por $\phi(x) = x_1+x_2$ primeiro, depois desempata por $x_1$. Argumento de Debreu (1954): se $u: \mathbb{R}^2_+ \to \mathbb{R}$ representasse, intervalos disjuntos não-vazios de $\mathbb{R}$ seriam parametrizados por um contínuo, contradizendo $|\mathbb{Q}| < |\mathbb{R}|$.
 
-2. **Derivação.** **(a)** Completude: dados $x, y$, ou $\phi(x) \gtrless \phi(y)$ (decide), ou $\phi(x) = \phi(y)$ e aí $x_1 \gtrless y_1$ (decide). Transitividade: se $x \succeq^* y$ e $y \succeq^* z$, casos por $\phi$ — propaga em todos. Monotonicidade forte: $x \geq y$, $x \neq y$ → $\phi(x) > \phi(y)$ (estrito) → $x \succ^* y$. **(b)** Em cada nível $\phi = c$ fixo (segmento $\{(x_1, x_2): x_1+x_2 = c, x_1 \in [0,c]\}$), o desempate por $x_1$ produz uma cópia de $[0,c]$ ordenada estritamente. Para cada $c \in \mathbb{R}_+$ e $x_1 \in [0,c]$, $u(x_1, c-x_1)$ teria que ser estritamente crescente em $x_1$. Pegue dois níveis $c, c'$ com $c < c'$: o ponto $(c, 0) \in $ nível $c$ tem $\phi = c$; o ponto $(0, c') \in$ nível $c'$ tem $\phi = c' > c$, logo $u(0, c') > u(c, 0)$. Mas dentro do nível $c$, $u(c, 0)$ é o supremo da sequência $u(x_1, c-x_1)$ quando $x_1 \to c$. Então $u(\cdot, c-\cdot)$ tem que injetar $[0,c]$ em um intervalo $I(c)\subset \mathbb{R}$, e os $I(c)$ para $c$ distintos têm que ser disjuntos. Pegue um racional em cada $I(c)$: temos uma injeção $\mathbb{R}_+ \hookrightarrow \mathbb{Q}$. Contradição. **(c)** Em $\mathbb{Q}^2_+$ (enumerável), o argumento de cardinalidade falha (todo conjunto enumerável tem injeção em $\mathbb{Q}$); existe representação por uma $u: \mathbb{Q}^2_+ \to \mathbb{Q}$. Mas continuidade na topologia induzida ainda falha — a sequência $(c - 1/n, 1/n)$ em $\mathbb{Q}^2_+$ converge a $(c, 0)$, com $\phi$ constante $= c$ e $x_1 \uparrow c$ — preferência salta no limite. Representabilidade é cardinalidade; continuidade é topologia — independentes. **(d)** Sem representação por $u$, não existe UMP: $\succeq^*$ não pode ser objetivo de maximização padrão. EG não admite essa preferência em estado original. Na prática, a teoria EG (Aulas 4-6) **sempre assume** continuidade exatamente para excluir lex e similares — Debreu é o filtro silencioso que garante UMP bem-posto.
+2. **Derivação.** **(a)** Completude: dados $x, y$, ou $\phi(x) \gtrless \phi(y)$ (decide), ou $\phi(x) = \phi(y)$ e aí $x_1 \gtrless y_1$ (decide); empate só se $x = y$. Transitividade: se $x \succeq^* y$ e $y \succeq^* z$, faça os casos por $\phi$: se $\phi(x) > \phi(y)$ ou $\phi(y) > \phi(z)$, então $\phi(x) \geq \phi(z)$ pelos casos transitivos de $>$ e $\geq$; se ambos com $\phi$ igual, desempate por $x_1$ é transitivo em $\geq$. Monotonicidade forte: $x \geq y$, $x \neq y$ → $\phi(x) > \phi(y)$ (estrito) → $x \succ^* y$.
+
+**(b)** Argumento de Debreu por cardinalidade. Suponha $u: \mathbb{R}^2_+ \to \mathbb{R}$ representando $\succeq^*$. Para cada $c \geq 0$, considere o segmento de nível $L_c = \{(x_1, c-x_1): x_1 \in [0, c]\}$. Em $L_c$, o desempate por $x_1$ produz uma ordem estrita: para $x_1 < x_1'$ em $[0,c]$, $(x_1, c-x_1) \prec^* (x_1', c-x_1')$ porque $\phi$ é igual mas $x_1 < x_1'$. Por monotonicidade do desempate: $u(\cdot, c-\cdot)$ é **estritamente crescente** em $x_1$ ao longo de $L_c$. Como qualquer ponto em $L_{c'}$ com $c' > c$ é estritamente preferido a qualquer ponto em $L_c$ (porque $\phi$ é maior), os intervalos imagem $I_c := u(L_c) \subset \mathbb{R}$ são **disjuntos** e ordenados conforme $c$. Cada $I_c$ é não-degenerado (contém pontos com $x_1 = 0$ e $x_1 = c$, que são distintos via desempate quando $c > 0$). Pegue um racional $q_c \in I_c$ para cada $c > 0$: a aplicação $c \mapsto q_c$ é injeção $\mathbb{R}_{++} \hookrightarrow \mathbb{Q}$, contradizendo $|\mathbb{R}| > |\mathbb{Q}|$. Logo, $\succeq^*$ não admite representação numérica em $\mathbb{R}^2_+$.
+
+**(c)** Em $\mathbb{Q}^2_+$ (domínio enumerável), o argumento de cardinalidade da parte (b) **não se aplica** — todo conjunto enumerável admite injeção em $\mathbb{Q}$, então existe $u: \mathbb{Q}^2_+ \to \mathbb{Q}$ representando $\succeq^*$ restrita. Construção explícita: enumere $\mathbb{Q}^2_+ = \{q^{(1)}, q^{(2)}, \ldots\}$ e defina $u$ recursivamente preservando a ordem. **Continuidade**, porém, falha mesmo em $\mathbb{Q}^2_+$ pela topologia induzida: a sequência $(c - 1/n, 1/n) \in \mathbb{Q}^2_+$ converge a $(c, 0) \in \mathbb{Q}^2_+$ (para $c \in \mathbb{Q}_{++}$), com $\phi$ constante $= c$ ao longo da sequência e no limite, mas $x_1 = c - 1/n < c$ na sequência e $x_1 = c$ no limite — então cada termo é $\prec^* (c, 0)$ e a preferência "salta". Resumindo: **representabilidade é questão de cardinalidade** (resolve em $\mathbb{Q}^2_+$), **continuidade é questão topológica** (falha mesmo em $\mathbb{Q}^2_+$ porque a topologia induzida ainda tem sequências convergentes à fronteira do segmento de nível).
+
+**(d)** Sem representação por $u$ contínua, a UMP $\max_x u(x)$ s.a. $p\cdot x \leq m$ pode não atingir máximo (Berge requer continuidade) e a teoria de demanda padrão fica indefinida. EG (Aulas 4–6) **sempre assume** continuidade explicitamente exatamente para excluir lex — Debreu (1954) é o filtro silencioso que garante existência de utilidade contínua e, com isso, UMP bem-posta + continuidade da demanda + aplicação de Berge/Kakutani para existência de equilíbrio.
 
 3. **Resposta.** **(a)** Os 3 axiomas valem. **(b)** Não-representável por argumento de cardinalidade (Debreu). **(c)** Em $\mathbb{Q}^2_+$: representável (cardinalidade), descontínua (topologia). **(d)** EG exclui lex de partida via hipótese de continuidade; na prática, todo modelo aplicado de EG tem $u$ contínua por construção.
 
@@ -134,17 +140,17 @@ Roy: $x_1^M = -\frac{(-\gamma_1 - \beta_1 M^*/p_1)/D}{1/D} = \gamma_1 + \beta_1\
 
 **Resolução.**
 
-1. **(a) V.** Se $u$ é homogênea de grau 1, então a UMP é resolvida por raio: dobrar $m$ dobra $x^*$. Então $x^M(p, \lambda m) = \lambda\, x^M(p, m)$, e $v(p, \lambda m) = u(\lambda x^M(p, m)) = \lambda\, u(x^M(p, m)) = \lambda\, v(p, m)$. Linearidade em $m$ fatoriza como $v(p, m) = m\cdot v(p, 1) = m\cdot \phi(p)$. Esboço de prova.
+**(a) V.** Se $u$ é homogênea de grau 1, então a UMP é resolvida por raio: dobrar $m$ dobra $x^*$. Então $x^M(p, \lambda m) = \lambda\, x^M(p, m)$, e $v(p, \lambda m) = u(\lambda x^M(p, m)) = \lambda\, u(x^M(p, m)) = \lambda\, v(p, m)$. Linearidade em $m$ fatoriza como $v(p, m) = m\cdot v(p, 1) = m\cdot \phi(p)$. Esboço de prova.
 
-2. **(b) V.** $e(p, \bar u) = \min_x \{p\cdot x : u(x) \geq \bar u\}$. Para $p^a, p^b$ e $\lambda \in [0,1]$, denote $p^c = \lambda p^a + (1-\lambda)p^b$. Para qualquer $x$ no conjunto factível (independente de $p$): $p^c\cdot x = \lambda p^a\cdot x + (1-\lambda)p^b\cdot x$. Tomando ínfimo dos dois lados sobre o factível: $e(p^c, \bar u) \leq \lambda e(p^a, \bar u) + (1-\lambda) e(p^b, \bar u)$ — wait, isso prova **côncava**, não convexa. Reverter: na verdade, $e$ é **côncava** em $p$ (consumidor reotimiza, então custo médio sob preços médios é menor que média de custos sob preços extremos). **F**, com correção: $e$ é côncava em $p$, não convexa.
+**(b) F.** A afirmação é **falsa**: $e(p, \bar u)$ é **côncava** em $p$, não convexa. Prova direta: $e(p, \bar u) = \min_x\{p\cdot x : u(x) \geq \bar u\}$ é o **ínfimo de uma família de funções lineares em $p$** (uma para cada $x$ factível). Ínfimo de funções lineares é côncavo. Equivalentemente, dados $p^a, p^b$ e $\lambda \in [0,1]$, com $p^c = \lambda p^a + (1-\lambda)p^b$ e $h^c$ minimizador em $p^c$: $e(p^c, \bar u) = p^c\cdot h^c = \lambda p^a\cdot h^c + (1-\lambda)p^b\cdot h^c \geq \lambda\, e(p^a, \bar u) + (1-\lambda)\, e(p^b, \bar u)$ (cada termo é $\geq$ porque $h^c$ não é necessariamente o minimizador em $p^a$ ou $p^b$). Logo $e$ é côncava. Intuição: o consumidor reotimiza Hicksiana sob cada preço, então custo a preços médios é **menor ou igual** à média dos custos extremos. (A função indireta $v(p,m)$ é o oposto — quasiconvexa em $p$.)
 
-3. **(c) V.** $e(p, \bar u)$ homogênea grau 1 em $p$ $\Rightarrow$ Euler: $\sum_i p_i\, \partial e/\partial p_i = 1\cdot e$. Pelo Lema de Shephard, $\partial e/\partial p_i = h_i$. Logo $\sum_i p_i\, h_i = e$. ✓ (Identidade de Walras Hicksiana.)
+**(c) V.** $e(p, \bar u)$ homogênea grau 1 em $p$ $\Rightarrow$ Euler: $\sum_i p_i\, \partial e/\partial p_i = 1\cdot e$. Pelo Lema de Shephard, $\partial e/\partial p_i = h_i$. Logo $\sum_i p_i\, h_i = e$. ✓ (Identidade de Walras Hicksiana.)
 
-4. **(d) F.** $\partial h_i/\partial p_i \leq 0$ é universal (semidefinida negativa de $S$). Mas $\partial x_i^M/\partial p_i$ pode ser **positivo** se efeito-renda dominar (bem Giffen). Contraexemplo clássico: Marshall (1895) — batata na Irlanda; Jensen-Miller (2008) [DOI 10.1257/aer.98.4.1553] — arroz em Hunan. A lei Marshalliana só vale para bens normais ou quase isso.
+**(d) F.** $\partial h_i/\partial p_i \leq 0$ é universal (semidefinida negativa de $S$). Mas $\partial x_i^M/\partial p_i$ pode ser **positivo** se efeito-renda dominar (bem Giffen). Contraexemplo clássico: Marshall (1895) — batata na Irlanda; Jensen-Miller (2008) [DOI 10.1257/aer.98.4.1553] — arroz em Hunan. A lei Marshalliana só vale para bens normais ou quase isso.
 
-3. **Resposta.** (a) V; (b) **F** ($e$ é côncava em $p$, não convexa); (c) V; (d) F.
+**Resposta.** (a) V; (b) **F** ($e$ é côncava em $p$, não convexa); (c) V; (d) F.
 
-4. **Armadilha + cross-aula.** A pegadinha é (b) — "convexa" vs "côncava" é um dos erros mais clássicos de prova oral. Mnemônico: o consumidor reotimiza (substitui contra o caro), então custo cresce **menos que linearmente** em $p$ — côncavo. $v(p, m)$ é o oposto: convexa em $p$ (mais caro tudo, pior). Cross: **Aula 3** Slutsky usa simetria de $\partial^2 e/\partial p_i \partial p_j$ (Young) — só faz sentido se $e$ for pelo menos $C^2$ em $p$.
+**Armadilha + cross-aula.** A pegadinha é (b) — "convexa" vs "côncava" é um dos erros mais clássicos de prova oral. Mnemônico: o consumidor reotimiza (substitui contra o caro), então custo cresce **menos que linearmente** em $p$ — côncavo. $v(p, m)$ é o oposto: convexa em $p$ (mais caro tudo, pior). Cross: **Aula 3** Slutsky usa simetria de $\partial^2 e/\partial p_i \partial p_j$ (Young) — só faz sentido se $e$ for pelo menos $C^2$ em $p$.
 
 ---
 
@@ -154,17 +160,39 @@ Roy: $x_1^M = -\frac{(-\gamma_1 - \beta_1 M^*/p_1)/D}{1/D} = \gamma_1 + \beta_1\
 
 1. **Setup.** EMP $\min p\cdot x$ s.a. $(\sum_i \alpha_i x_i^\rho)^{1/\rho} \geq \bar u$. Lagrangiano: $\mathcal{L} = p\cdot x - \mu[(\sum_i \alpha_i x_i^\rho)^{1/\rho} - \bar u]$.
 
-2. **Derivação.** **(a)** CPO: $p_i = \mu\cdot (\sum_j \alpha_j x_j^\rho)^{1/\rho - 1}\cdot \alpha_i\, x_i^{\rho-1}$. Com $u = \bar u$ na restrição e $u^{1-\rho} = (\sum)^{(1-\rho)/\rho}$: $p_i = \mu\, \alpha_i\, x_i^{\rho-1}/u^{\rho-1}\cdot u = \mu\, \alpha_i (x_i/u)^{\rho - 1}$ ... vamos manipular limpo: defina $\mu$ tal que $p_i/(\mu\,\alpha_i) = (x_i/u)^{\rho - 1}\cdot$ (constante). Razão $i, j$: $p_i/p_j = (\alpha_i/\alpha_j)(x_i/x_j)^{\rho-1}$. Inverte: $x_i/x_j = (\alpha_i/\alpha_j)^{1/(1-\rho)}(p_i/p_j)^{-1/(1-\rho)} = (\alpha_i/\alpha_j)^\sigma (p_j/p_i)^\sigma$. Substituindo na restrição $u(x) = \bar u$ e isolando $x_i$:
-$$
-h_i(p, \bar u) = \bar u\cdot \alpha_i^\sigma\, p_i^{-\sigma}\cdot \left[\sum_j \alpha_j^\sigma p_j^{1-\sigma}\right]^{\sigma/(1-\sigma)\cdot ???}.
-$$
-Simplificando: $h_i = \bar u\cdot \alpha_i^\sigma p_i^{-\sigma}\cdot P^{\sigma}$ onde $P(p) = (\sum_j \alpha_j^\sigma p_j^{1-\sigma})^{1/(1-\sigma)}$ é o índice de preços CES. E $e(p, \bar u) = \sum_i p_i h_i = \bar u\cdot P^\sigma\cdot \sum_i \alpha_i^\sigma p_i^{1-\sigma} = \bar u\cdot P^\sigma\cdot P^{1-\sigma} = \bar u\cdot P$. Logo
-$$
-e(p, \bar u) = \bar u\cdot \left(\sum_i \alpha_i^\sigma p_i^{1-\sigma}\right)^{1/(1-\sigma)}.
-$$
-✓ **(b)** Shephard: $h_i = \partial e/\partial p_i = \bar u\cdot \frac{1}{1-\sigma}\cdot P^{\sigma}\cdot (1-\sigma)\alpha_i^\sigma p_i^{-\sigma} = \bar u\cdot \alpha_i^\sigma p_i^{-\sigma}\cdot P^\sigma$. ✓ **(c)** $\partial h_i/\partial p_j = \bar u\, \alpha_i^\sigma p_i^{-\sigma}\cdot \partial P^\sigma/\partial p_j = \bar u\, \alpha_i^\sigma p_i^{-\sigma}\cdot \sigma P^{\sigma-1}\cdot \alpha_j^\sigma p_j^{-\sigma}\cdot P^\sigma = \sigma\, \bar u\, \alpha_i^\sigma\alpha_j^\sigma p_i^{-\sigma}p_j^{-\sigma} P^{2\sigma-1}$. Simétrica em $(i,j)$. ✓ Para Euler: $h$ homogênea grau 0 em $p$ (ver fórmula), então $\sum_j p_j (\partial h_i/\partial p_j) = 0$ por Euler. **(d)** Argumento estrutural: simetria vem de $S = \nabla^2_p e$, e $e$ é $C^2$ ⇒ Young. Homogeneidade vem de $h$ homogênea grau 0 (consumidor compensado: dobrar todos preços + utilidade fixa não muda quantidade) ⇒ Euler aplicado.
+2. **Derivação.** **(a)** CPO: $p_i = \mu\cdot (\sum_j \alpha_j x_j^\rho)^{1/\rho - 1}\cdot \alpha_i\, x_i^{\rho-1}$. Tomando razão $i, j$ (cancelando $\mu$ e o termo agregado comum): $p_i/p_j = (\alpha_i/\alpha_j)(x_i/x_j)^{\rho-1}$. Invertendo (com $\sigma = 1/(1-\rho)$, logo $1/(1-\rho) = \sigma$ e $-1/(\rho-1) = \sigma$): $x_i/x_j = (\alpha_i/\alpha_j)^\sigma (p_i/p_j)^{-\sigma}$.
 
-3. **Resposta.** **(a)** $e(p,\bar u) = \bar u\cdot (\sum_i \alpha_i^\sigma p_i^{1-\sigma})^{1/(1-\sigma)}$. **(b)** $h_i = \bar u\, \alpha_i^\sigma p_i^{-\sigma}/(\sum_j \alpha_j^\sigma p_j^{1-\sigma})^{\sigma/(1-\sigma)\cdot(-1)}$, equivalente $h_i = \bar u\, \alpha_i^\sigma p_i^{-\sigma}\cdot P^\sigma$. **(c)** Simetria + Euler 0 verificados. **(d)** Em qualquer preferência regular: $S = \nabla^2_p e$, simetria por Young; $h$ é homogênea grau 0 em $p$ (compensada) por construção, daí Euler 0.
+Define o **índice de preços CES** $P(p) = \left(\sum_j \alpha_j^\sigma p_j^{1-\sigma}\right)^{1/(1-\sigma)}$. Faça $x_j = x_i \cdot (\alpha_j/\alpha_i)^\sigma (p_i/p_j)^{\sigma}$ e substitua na restrição $\sum_j \alpha_j x_j^\rho = \bar u^\rho$. Note $\rho(\sigma-1)/\sigma = -\rho/(1-\rho) \cdot (1-\rho)/(1-\rho) \cdot \sigma/\sigma$... mais direto: $x_j^\rho = x_i^\rho \cdot (\alpha_j/\alpha_i)^{\sigma\rho} (p_i/p_j)^{\sigma\rho}$. Como $\sigma\rho = \sigma - 1$ (porque $\sigma(1-\rho) = 1$ ⇒ $\sigma - \sigma\rho = 1$ ⇒ $\sigma\rho = \sigma - 1$):
+
+$$
+\sum_j \alpha_j x_j^\rho = x_i^\rho \alpha_i^{1-\sigma} p_i^{\sigma-1} \sum_j \alpha_j^\sigma p_j^{1-\sigma} = x_i^\rho \cdot \alpha_i^{1-\sigma} p_i^{\sigma-1} \cdot P^{1-\sigma} = \bar u^\rho.
+$$
+
+Isolando $x_i$ e usando $\rho = (\sigma-1)/\sigma$:
+
+$$
+h_i(p,\bar u) = \bar u \cdot \alpha_i^\sigma p_i^{-\sigma} \cdot P^\sigma.
+$$
+
+Custo total: $e(p,\bar u) = \sum_i p_i h_i = \bar u \cdot P^\sigma \cdot \sum_i \alpha_i^\sigma p_i^{1-\sigma} = \bar u \cdot P^\sigma \cdot P^{1-\sigma} = \bar u \cdot P$. Logo
+
+$$
+e(p,\bar u) = \bar u \cdot \left(\sum_i \alpha_i^\sigma p_i^{1-\sigma}\right)^{1/(1-\sigma)}.
+$$
+
+**(b) Shephard:** $h_i = \partial e/\partial p_i$. Derivando $e = \bar u \cdot P$ com $P = (\sum_j \alpha_j^\sigma p_j^{1-\sigma})^{1/(1-\sigma)}$: $\partial P/\partial p_i = \frac{1}{1-\sigma}\cdot P^\sigma \cdot (1-\sigma)\, \alpha_i^\sigma p_i^{-\sigma} = P^\sigma \alpha_i^\sigma p_i^{-\sigma}$. Logo $h_i = \bar u\, \alpha_i^\sigma p_i^{-\sigma} P^\sigma$. Confere com (a). ✓
+
+**(c) Simetria + Euler.** Derivando $h_i$ em $p_j$ (com $j \neq i$):
+
+$$
+\frac{\partial h_i}{\partial p_j} = \bar u\, \alpha_i^\sigma p_i^{-\sigma} \cdot \sigma\, P^{\sigma-1}\cdot \frac{\partial P}{\partial p_j} = \bar u\, \alpha_i^\sigma p_i^{-\sigma}\cdot \sigma P^{\sigma-1}\cdot P^\sigma \alpha_j^\sigma p_j^{-\sigma} = \sigma\, \bar u\, \alpha_i^\sigma \alpha_j^\sigma p_i^{-\sigma} p_j^{-\sigma}\, P^{2\sigma-1}.
+$$
+
+A expressão é **simétrica em $(i,j)$** (todos os fatores aparecem com $i$ e $j$ trocáveis). Para o caso $j=i$: $\partial h_i/\partial p_i = \bar u\, \alpha_i^\sigma\,[-\sigma p_i^{-\sigma-1} P^\sigma + p_i^{-\sigma}\sigma P^{\sigma-1}\cdot P^\sigma \alpha_i^\sigma p_i^{-\sigma}] = \sigma h_i [-1/p_i + \alpha_i^\sigma p_i^{-\sigma}P^{\sigma-1}/(p_i^{-\sigma})\cdot P^{-\sigma}\cdot\ldots]$ — obtém-se $\partial h_i/\partial p_i = -\sigma(1-s_i^*)h_i/p_i \leq 0$ onde $s_i^* = \alpha_i^\sigma p_i^{1-\sigma}/P^{1-\sigma}$ é a parcela. Para Euler 0: $h_i$ é homogênea grau 0 em $p$ (verifique: dobrar todos $p_j$ multiplica $P^\sigma$ por $2^\sigma\cdot 2^{-\sigma} = 1$ no produto $p_i^{-\sigma}P^\sigma$). Por Euler, $\sum_j p_j(\partial h_i/\partial p_j) = 0\cdot h_i = 0$. ✓
+
+**(d)** Em qualquer preferência regular: simetria vem de $S_{ij} = \partial^2 e/\partial p_i\partial p_j$ por Shephard, e $e \in C^2$ ⇒ Young (Schwarz). Homogeneidade grau 0 de $h$ vem direto de $e$ homogênea grau 1 em $p$ + Lema de Shephard ⇒ Euler aplicado a $h$.
+
+3. **Resposta.** **(a)** $e(p,\bar u) = \bar u\cdot \left(\sum_i \alpha_i^\sigma p_i^{1-\sigma}\right)^{1/(1-\sigma)}$. **(b)** $h_i(p,\bar u) = \bar u\, \alpha_i^\sigma p_i^{-\sigma}\cdot P^\sigma$ com $P = (\sum_j \alpha_j^\sigma p_j^{1-\sigma})^{1/(1-\sigma)}$. **(c)** Simetria $\partial h_i/\partial p_j = \partial h_j/\partial p_i$ verificada por inspeção; Euler 0 segue de $h$ homogênea grau 0 em $p$. **(d)** Em qualquer preferência regular: $S = \nabla^2_p e$ + Young dão simetria; $e$ homogênea grau 1 em $p$ + Shephard dão $h$ homogênea grau 0, daí Euler.
 
 4. **Armadilha + cross-aula.** Maior erro: errar o expoente final $1/(1-\sigma)$ — depende crucialmente de manipular $\sigma = 1/(1-\rho)$ direito ($1-\sigma = -\rho/(1-\rho)$). Cross: **Aula 3** elasticidade compensada $\varepsilon^c_{ii} = -(1-s_i)\sigma$ sai derivando $\ln h_i = \ln \bar u + \sigma \ln \alpha_i - \sigma \ln p_i + \sigma \ln P$ e $\partial \ln P/\partial \ln p_i = s_i$.
 
@@ -188,17 +216,17 @@ $$
 
 **Resolução.**
 
-1. **(a) V.** Slutsky: $\partial x_i^M/\partial p_i = \partial h_i/\partial p_i - x_i^M\cdot \partial x_i^M/\partial m$. $\partial h_i/\partial p_i \leq 0$ (sempre). Para $\partial x_i^M/\partial p_i > 0$, precisa $-x_i^M\cdot \partial x_i^M/\partial m > 0$, isto é, $\partial x_i^M/\partial m < 0$ — bem inferior. (Necessário **e suficiente** depende do tamanho do efeito-renda; necessário é o ponto.)
+**(a) V.** Slutsky: $\partial x_i^M/\partial p_i = \partial h_i/\partial p_i - x_i^M\cdot \partial x_i^M/\partial m$. $\partial h_i/\partial p_i \leq 0$ (sempre). Para $\partial x_i^M/\partial p_i > 0$, precisa $-x_i^M\cdot \partial x_i^M/\partial m > 0$, isto é, $\partial x_i^M/\partial m < 0$ — bem inferior. (Necessário **e suficiente** depende do tamanho do efeito-renda; necessário é o ponto.)
 
-2. **(b) F.** Em CD, $\partial x_i^M/\partial p_j = 0$ para $j \neq i$ na demanda **Marshalliana** (parcelas constantes), mas isso não significa "não-substitutos nem não-complementos" — significa que **efeito-substituição cancela exatamente efeito-renda cruzado**. Em Hicksiana ($\partial h_i/\partial p_j > 0$), são substitutos líquidos. Marshalliana cancela por causa da homotetia, não por ausência de relação substancial.
+**(b) F.** Em CD, $\partial x_i^M/\partial p_j = 0$ para $j \neq i$ na demanda **Marshalliana** (parcelas constantes), mas isso não significa "não-substitutos nem não-complementos" — significa que **efeito-substituição cancela exatamente efeito-renda cruzado**. Em Hicksiana ($\partial h_i/\partial p_j > 0$), são substitutos líquidos. Marshalliana cancela por causa da homotetia, não por ausência de relação substancial.
 
-3. **(c) F.** Ambas simetrias — Hicksiana e... wait. Hicksiana $\partial h_i/\partial p_j = \partial h_j/\partial p_i$ (Young em $e$): **sempre** vale. Marshalliana **nunca** é simétrica em geral, exceto homotetia ou casos degenerados — Slutsky introduz termo assimétrico $x_j^M\cdot \partial x_i^M/\partial m \neq x_i^M\cdot \partial x_j^M/\partial m$. **A primeira parte da afirmação ("Hicksiana sempre simétrica") é V; a segunda ("Marshalliana falha em geral") também é V**. Logo a frase composta é **V**, não F. Re-julgo: V.
+**(c) V.** Hicksiana $\partial h_i/\partial p_j = \partial h_j/\partial p_i$ vale **sempre** (Young aplicado a $\partial^2 e/\partial p_i \partial p_j$, com $e \in C^2$). Marshalliana **falha em geral**: por Slutsky, $\partial x_i^M/\partial p_j = \partial h_i/\partial p_j - x_j^M\partial x_i^M/\partial m$. Trocar $i \leftrightarrow j$ dá $\partial h_j/\partial p_i - x_i^M\partial x_j^M/\partial m$. Como $\partial h_i/\partial p_j = \partial h_j/\partial p_i$, a diferença é $x_i^M\partial x_j^M/\partial m - x_j^M\partial x_i^M/\partial m$, que **só é zero** sob preferências homotéticas (em que $\partial x_i^M/\partial m = x_i^M/m$, anulando a diferença) ou outros casos degenerados. As duas afirmações da frase são verdadeiras, então a composta é **V**.
 
-4. **(d) V.** Em QL interior, $\partial x_1^M/\partial m = 0$ ⇒ Slutsky cancela ⇒ Marsh = Hicks ⇒ $\Delta\text{EC} = \text{CV} = \text{EV}$ exatamente. Esboço dado na Q3 da Aula 2.
+**(d) V.** Em QL interior, $\partial x_1^M/\partial m = 0$ ⇒ Slutsky cancela ⇒ Marsh = Hicks ⇒ $\Delta\text{EC} = \text{CV} = \text{EV}$ exatamente. Esboço dado na Q3 da Aula 2.
 
-3. **Resposta.** (a) V; (b) F; (c) V; (d) V.
+**Resposta.** (a) V; (b) F; (c) V; (d) V.
 
-4. **Armadilha + cross-aula.** Em (b), o aluno comum confunde "demanda Marsh independente de $p_j$" com "bens não-relacionados". Não. Hicksiana mostra que são substitutos brutos (utilidade compensada → mais $p_j$ joga consumo para $i$). Cross: **Aula 5** AD o mesmo cancelamento aparece em CES com bens contingentes — agentes CRRA com mesma $\gamma$ têm "demanda de consumo idiossincrática" Marsh independente de $\pi_j$ outras (sob agregado livre de risco).
+**Armadilha + cross-aula.** Em (b), o aluno comum confunde "demanda Marsh independente de $p_j$" com "bens não-relacionados". Não. Hicksiana mostra que são substitutos brutos (utilidade compensada → mais $p_j$ joga consumo para $i$). Cross: **Aula 5** AD o mesmo cancelamento aparece em CES com bens contingentes — agentes CRRA com mesma $\gamma$ têm "demanda de consumo idiossincrática" Marsh independente de $\pi_j$ outras (sob agregado livre de risco).
 
 ---
 
@@ -294,17 +322,17 @@ $$
 
 **Resolução.**
 
-1. **(a) F (parcial).** 1º TBE: V (toda alocação EC competitiva é Pareto, sob LNS). 2º TBE: a versão correta é "toda alocação Pareto pode ser **suportada** como EC após **redistribuição de dotações** (transferências lump-sum)" — não "toda alocação Pareto é EC de alguma economia" (essa formulação é vaga). Logo a frase composta é tecnicamente **F** pela imprecisão da segunda parte.
+**(a) F (parcial).** 1º TBE: V (toda alocação EC competitiva é Pareto, sob LNS). 2º TBE: a versão correta é "toda alocação Pareto pode ser **suportada** como EC após **redistribuição de dotações** (transferências lump-sum)" — não "toda alocação Pareto é EC de alguma economia" (essa formulação é vaga). Logo a frase composta é tecnicamente **F** pela imprecisão da segunda parte.
 
-2. **(b) V.** Em $2 \times 2$ com convexidade estrita, núcleo = contract curve é teorema clássico (Edgeworth-Debreu-Scarf no caso $I = 2$). Para $I$ grande, núcleo encolhe à contract curve via Debreu-Scarf (teorema do núcleo). Em $I = 2$, núcleo = curva inteira de Pareto entre $\omega^A$ e $\omega^B$ que está dentro da "lente" (ambos preferem ao status quo).
+**(b) V.** Em $2 \times 2$ com convexidade estrita, núcleo = contract curve é teorema clássico (Edgeworth-Debreu-Scarf no caso $I = 2$). Para $I$ grande, núcleo encolhe à contract curve via Debreu-Scarf (teorema do núcleo). Em $I = 2$, núcleo = curva inteira de Pareto entre $\omega^A$ e $\omega^B$ que está dentro da "lente" (ambos preferem ao status quo).
 
-3. **(c) F.** Para o **1º** TBE não é necessária convexidade dos $Y^j$ — basta que firmas maximizem lucro sob $p^*$ e consumidores maximizem utilidade sob $p^*$, e LNS. Convexidade dos $Y^j$ é necessária para **existência** do EC e para o **2º** TBE. Aluno que confunde 1º e 2º TBE marca V; o 1º TBE é o "fácil", precisa apenas de LNS.
+**(c) F.** Para o **1º** TBE não é necessária convexidade dos $Y^j$ — basta que firmas maximizem lucro sob $p^*$ e consumidores maximizem utilidade sob $p^*$, e LNS. Convexidade dos $Y^j$ é necessária para **existência** do EC e para o **2º** TBE. Aluno que confunde 1º e 2º TBE marca V; o 1º TBE é o "fácil", precisa apenas de LNS.
 
-4. **(d) V.** Robinson canônico com $f$ estritamente côncava: $\pi^* = p\, q^* - w^* L^* > 0$ porque $w^* L^*$ paga o custo marginal × quantidade, mas $p\, q^*$ paga acima (curva côncava acima da tangente). Concretamente: $\pi = p\, f(L) - w L$, com $w = p\, f'(L^*)$, dá $\pi = p\, [f(L^*) - f'(L^*)L^*]$, e $f$ estr. côncava em 0 (com $f(0) = 0$) implica $f(L^*) > f'(L^*)L^*$ pelo teorema do valor médio. Confirma com Q2: $\pi^* = (2/3)\cdot 2^{1/3} > 0$.
+**(d) V.** Robinson canônico com $f$ estritamente côncava: $\pi^* = p\, q^* - w^* L^* > 0$ porque $w^* L^*$ paga produto marginal × quantidade, mas $p\, q^*$ paga acima (curva côncava está acima da tangente em 0). Concretamente: $\pi = p\, f(L) - w L$, com $w = p\, f'(L^*)$, dá $\pi = p\, [f(L^*) - f'(L^*)L^*]$, e $f$ estr. côncava em $[0, L^*]$ com $f(0) = 0$ implica $f(L^*) > f'(L^*)L^*$ (corda fica acima da tangente em $L^*$). Confirma com Q2: $\pi^* = (1/3)\cdot 2^{1/3} \approx 0{,}420 > 0$.
 
-3. **Resposta.** (a) F (imprecisão na 2ª parte); (b) V; (c) F; (d) V.
+**Resposta.** (a) F (imprecisão na 2ª parte); (b) V; (c) F; (d) V.
 
-4. **Armadilha + cross-aula.** (a) é o teste de pegada precisa do 2º TBE — formulação correta requer transferências lump-sum. (c) é o teste hierárquico 1º vs 2º TBE. Cross: **Aula 6** existência precisa de convexidade dos $Y^j$ (corolário de Kakutani sobre demanda agregada).
+**Armadilha + cross-aula.** (a) é o teste de pegada precisa do 2º TBE — formulação correta requer transferências lump-sum. (c) é o teste hierárquico 1º vs 2º TBE. Cross: **Aula 6** existência precisa de convexidade dos $Y^j$ (corolário de Kakutani sobre demanda agregada).
 
 ---
 
@@ -373,17 +401,17 @@ Agora viabilidade: $\sum_i x^i_s = \bar\omega_s = \bar\omega$ constante em $s$. 
 
 **Resolução.**
 
-1. **(a) V.** O formalismo $\mathbb{R}^{LS}$ trata estados $s$ uniformemente, sem distinguir se $s$ é "tempo" (intertemporal sem incerteza) ou "estado da natureza" (incerteza pura) ou "$(t, \omega)$" misto. 1º TBE depende de LNS + competição, não da interpretação dos estados. Estrutura matemática idêntica.
+**(a) V.** O formalismo $\mathbb{R}^{LS}$ trata estados $s$ uniformemente, sem distinguir se $s$ é "tempo" (intertemporal sem incerteza) ou "estado da natureza" (incerteza pura) ou "$(t, \omega)$" misto. 1º TBE depende de LNS + competição, não da interpretação dos estados. Estrutura matemática idêntica.
 
-2. **(b) F.** O 1º TBE com mercado completo AD vale **independente de homogeneidade de crenças** — basta que cada agente tenha sua própria $\pi^i$ e maximize $\sum_s \pi^i_s v^i(x^i_s)$. O argumento da Q3 acima exigiu crenças idênticas só para concluir "preços = probabilidades", não para o 1º TBE. Aluno confunde "condição extra para resultado específico" com "condição para o teorema central".
+**(b) F.** O 1º TBE com mercado completo AD vale **independente de homogeneidade de crenças** — basta que cada agente tenha sua própria $\pi^i$ e maximize $\sum_s \pi^i_s v^i(x^i_s)$. O argumento da Q3 acima exigiu crenças idênticas só para concluir "preços = probabilidades", não para o 1º TBE. Aluno confunde "condição extra para resultado específico" com "condição para o teorema central".
 
-3. **(c) F.** Equivalência AD ↔ Radner sequencial vale sempre que o **span dos ativos** abrange $\mathbb{R}^S$, isto é, rank da matriz de payoffs $= S$. Pode-se ter $N > S$ ativos (redundância) e ainda ter mercado completo. "Exatamente $|S|$" é demasiado forte. Forma correta: **rank = $|S|$**, com $N \geq |S|$.
+**(c) F.** Equivalência AD ↔ Radner sequencial vale sempre que o **span dos ativos** abrange $\mathbb{R}^S$, isto é, rank da matriz de payoffs $= S$. Pode-se ter $N > S$ ativos (redundância) e ainda ter mercado completo. "Exatamente $|S|$" é demasiado forte. Forma correta: **rank = $|S|$**, com $N \geq |S|$.
 
-4. **(d) V.** Equação de Euler $u'(c_t) = \beta R\, \mathbb{E}_t u'(c_{t+1})$ é caso particular de $1 = \mathbb{E}_t[m_{t+1} R_{t+1}]$ com $R_{t+1} = R$ (livre de risco) e $m_{t+1} = \beta u'(c_{t+1})/u'(c_t)$. Sem incerteza ($|\Omega| = 1$), expectativa colapsa: $1 = \beta R\, u'(c_{t+1})/u'(c_t)$, ou seja, $u'(c_t) = \beta R u'(c_{t+1})$.
+**(d) V.** Equação de Euler $u'(c_t) = \beta R\, \mathbb{E}_t u'(c_{t+1})$ é caso particular de $1 = \mathbb{E}_t[m_{t+1} R_{t+1}]$ com $R_{t+1} = R$ (livre de risco) e $m_{t+1} = \beta u'(c_{t+1})/u'(c_t)$. Sem incerteza ($|\Omega| = 1$), expectativa colapsa: $1 = \beta R\, u'(c_{t+1})/u'(c_t)$, ou seja, $u'(c_t) = \beta R u'(c_{t+1})$.
 
-3. **Resposta.** (a) V; (b) F; (c) F; (d) V.
+**Resposta.** (a) V; (b) F; (c) F; (d) V.
 
-4. **Armadilha + cross-aula.** (b) é a pegadinha — um livro mediano associa "1º TBE em AD" com "homogêneo + mercado completo", mas só o segundo é realmente necessário. (c) confunde "rank" com "número" — clássica. Cross: **Aula 6** Q1 testa exatamente esse rank.
+**Armadilha + cross-aula.** (b) é a pegadinha — um livro mediano associa "1º TBE em AD" com "homogêneo + mercado completo", mas só o segundo é realmente necessário. (c) confunde "rank" com "número" — clássica. Cross: **Aula 6** Q1 testa exatamente esse rank.
 
 ---
 

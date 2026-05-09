@@ -83,7 +83,7 @@ Seja economia de Radner com $|S|$ estados, $J$ ativos, matriz de payoffs $A \in 
 
 ### Q5 (🔴 desafio) — Hart 1975: ineficiência genérica de equilíbrio com mercado incompleto
 
-Considere a tese central de Hart (1975, *J. Economic Theory* 11(3): 418–443; DOI: 10.2307/2296844):
+Considere a tese central de Hart (1975, *J. Economic Theory* 11(3): 418–443; DOI: 10.1016/0022-0531(75)90028-9):
 
 > *"Em economias com mercados financeiros **incompletos** ($\text{rank}(A) < |S|$), preferências estritamente convexas e não-degenerescência genérica de dotações, o equilíbrio de Radner é **constrained-Pareto-eficiente** (no espaço de alocações implementáveis pelo span de $A$) mas **genericamente Pareto-ineficiente em sentido absoluto** — existem alocações fora do span que Pareto-dominariam o equilíbrio se fossem viáveis."*
 
@@ -227,13 +227,13 @@ $$
 y = e + \varepsilon, \quad \varepsilon \sim N(0, \sigma^2 = 1).
 $$
 
-Principal é risco-neutro, oferece contrato linear $w(y) = \alpha + \beta y$. Reservation utility do agente: $\bar U = -\exp(-1)$ (equivalente a equivalente-certeza de 1 unidade).
+Principal é risco-neutro, oferece contrato linear $w(y) = \alpha + \beta y$. Reservation utility do agente: $\bar U = -1$ (equivalente a equivalente-certeza de $0$ — outside option vale $0$ em CE-units).
 
 **(a)** Sob CARA + ruído normal, o equivalente-certeza do agente é (resultado padrão; cite e use): $\text{CE}(w(y), e) = \alpha + \beta e - \tfrac{1}{2} \rho \beta^2 \sigma^2 - c(e)$. Escreva-o aqui explicitamente substituindo os parâmetros numéricos.
 
 **(b)** **Incentive compatibility (IC):** dado o contrato, o agente escolhe $e^*$ maximizando seu CE. Encontre $e^*(\beta)$.
 
-**(c)** **Participation (PC):** $\text{CE}(\cdot) \geq 1$. Combine com IC e expresse $\alpha$ em função de $\beta$.
+**(c)** **Participation (PC):** $\text{CE}(\cdot) \geq 0$ (CE-reservation = 0, equivalente a $\bar U = -1 = -\exp(0)$). Combine com IC e expresse $\alpha$ em função de $\beta$.
 
 **(d)** Principal maximiza $E[y - w(y)] = e^* - \alpha - \beta e^*$ sujeito a IC + PC. Substitua e encontre $\beta^*$ ótimo. Mostre o trade-off **risco vs. incentivo**: o $\beta^*$ aqui é menor que $\beta = 1$ (first-best) por quanto, em termos de $\rho \sigma^2$?
 
@@ -373,4 +373,4 @@ Estrutura sugerida:
 
 4. **Pesos de aula na AF.** Aulas 6-9 valem ~30% do total (10% Aula 6, 8% Aula 7, 7% Aula 8, 5% Aula 9 — aproximadamente). Esta Parte B prepara essa fatia.
 
-5. **Calibre.** 5/20 numéricos ($Q1, Q3, Q6, Q8, Q14$ parcialmente, $Q16, Q18$); 4/20 manipulação literal ($Q3$ parcial, $Q12, Q14, Q17$); 3/20 V/F ($Q2, Q7, Q13, Q19$ — na verdade 4/20); 5/20 provas curtas ($Q4, Q9, Q15, Q20$, $Q17$ parcial); 2/20 abertas-discursivas ($Q5, Q10$).
+5. **Calibre.** ~7/20 numéricos ($Q1, Q3, Q6, Q8, Q14, Q16, Q18$); ~3/20 manipulação literal ($Q12, Q17$ majoritariamente, $Q3$ parcialmente); 4/20 V/F ($Q2, Q7, Q13, Q19$); 5/20 provas curtas ($Q4, Q9, Q15, Q20$, e $Q17$ parcial); 2/20 abertas-discursivas ($Q5, Q10$).

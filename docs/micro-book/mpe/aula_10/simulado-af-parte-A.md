@@ -76,7 +76,9 @@ onde $\phi(x_1, x_2) = x_1 + x_2$.
 
 **(b)** Mostre, usando o argumento de Debreu adaptado, que **não existe** $u: X \to \mathbb{R}$ representando $\succeq^*$.
 
-**(c)** Suponha que restringimos $\succeq^*$ a $X^Q = \mathbb{Q}^2_+$. Argumente: $\succeq^*$ admite representação numérica em $X^Q$? E continua descontínua na topologia induzida em $X^Q$? Esclareça por que essas duas perguntas têm respostas distintas.
+**(c)** *[Bônus avançado — fora do escopo da AF.]* Suponha que restringimos $\succeq^*$ a $X^Q = \mathbb{Q}^2_+$. Argumente: $\succeq^*$ admite representação numérica em $X^Q$? E continua descontínua na topologia induzida em $X^Q$? Esclareça por que essas duas perguntas têm respostas distintas.
+
+> **Nota.** O item (c) testa a separação entre **cardinalidade** (que governa representabilidade) e **topologia** (que governa continuidade). É um ponto fino, mais perto de Jehle-Reny / Kreps do que do N&S 12e — **não cobrado na AF**. Resolva apenas se já fechou (a), (b) e (d) com folga; se travar, leve para a Pré-M5 com Alberto.
 
 **(d)** Em 4–5 linhas: se $\succeq^*$ não é representável, quais consequências para EG (Aulas 4–6)?
 
