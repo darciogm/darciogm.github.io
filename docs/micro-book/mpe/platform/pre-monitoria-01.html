@@ -137,7 +137,7 @@
 <div class="quiz-feedback"></div>
 </div>
 
-<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('monitoria-01')">Enviar Checkpoint</button></div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('pre-monitoria-01')">Enviar Checkpoint</button></div>
 </div>
 
 <hr>
@@ -164,8 +164,8 @@
 if (!MicroAuth.requireAuth()) throw 'redirect';
 var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome;
-MicroTracker.startPage('monitoria-01');
-MicroQuiz.init('monitoria-01');
+MicroTracker.startPage('pre-monitoria-01');
+MicroQuiz.init('pre-monitoria-01');
 </script>
 </body>
 </html>
