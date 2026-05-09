@@ -377,7 +377,7 @@ Cite: Roth, A. E. (1982). "The Economics of Matching: Stability and Incentives."
 **Box Brasil 🇧🇷 (3 min):** **SISU 2010+** com candidatos como lado proponente. ~2M candidatos / 200K vagas / executa em segundos. **Crítica empírica (Aygün & Bó 2020):** SISU não é DA puro — variantes Boston-mechanism aparecem em algumas configurações. Estudos INEP-MEC documentam desistência no 1º semestre quando aluno pegou curso/local distante das preferências reais.
 
 **Box Mundo 🌍 (2 min):**
-- **NRMP (US, 1952+).** Roth (1984, *J. Political Economy*) provou que NRMP era estável; **Roth-Peranson (1999, *AER* 89(4), 748–780)** redesenharam para incorporar casais. ~30K médicos / ~5K hospitais / anual.
+- **NRMP (US, 1952+).** Roth (1984, *J. Political Economy*) provou que NRMP era estável; **Roth-Peranson (1999, *AER* 89(4): 748–780, [DOI 10.1257/aer.89.4.748](https://doi.org/10.1257/aer.89.4.748))** redesenharam para incorporar casais. ~30K médicos / ~5K hospitais / anual.
 - **Kidney exchange (Roth, Sönmez & Ünver 2004, *Quarterly Journal of Economics* 119(2): 457–488, [DOI 10.1162/0033553041382157](https://doi.org/10.1162/0033553041382157)).** Chains de troca via top trading cycles. Northwestern altruistic chain 2006: 10 transplantes encadeados.
 - **School choice (Abdulkadiroğlu-Pathak-Roth 2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).** Boston substituiu Boston-mechanism por DA com candidatos como proponente em 2005.
 
@@ -553,7 +553,7 @@ Após a aula, conferir em `admin.html`:
   - Cho-Kreps (1987) [10.2307/1885060](https://doi.org/10.2307/1885060)
   - Gale-Shapley (1962) [10.2307/2312726](https://doi.org/10.2307/2312726)
   - Roth (1982) [10.1287/moor.7.4.617](https://doi.org/10.1287/moor.7.4.617)
-  - Roth-Peranson (1999) `<!-- [VERIFICAR DOI] -->` — *AER* 89(4), 748–780; DOI canônico não localizável instantaneamente.
+  - Roth-Peranson (1999) — *AER* 89(4): 748–780, [DOI 10.1257/aer.89.4.748](https://doi.org/10.1257/aer.89.4.748).
   - Roth, A. E., Sönmez, T. & Ünver, M. U. (2004). "Kidney Exchange." *Quarterly Journal of Economics* 119(2): 457–488. [DOI 10.1162/0033553041382157](https://doi.org/10.1162/0033553041382157).
   - Riley (2001) [10.1257/jel.39.2.432](https://doi.org/10.1257/jel.39.2.432)
   - Tyler-Murnane-Willett (2000) — *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827).

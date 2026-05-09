@@ -463,3 +463,24 @@ Bundle precisa de **2 correções 🔴 antes de deploy**. Issue #1 (DOI) é fact
 - **A11y, responsivo, mobile UX:** fora do escopo, herdado do template.
 
 **Um cético perguntaria:** "você foi duro? 8.6 é abaixo da Aula 8 (9.1)." Honestamente, sim — mas justificadamente. Aula 9 tem **DOI fabricado em 5 lugares** (Roth-Sönmez-Ünver kidney exchange) e **Ex 5 trivial para 🔴** — esses são bugs que a Aula 8 não tem. Bundles tecnicamente comparáveis em estrutura, mas a Aula 9 carrega 2 issues 🔴 estruturais a mais. Após correções (~35 min), Aula 9 chega a 9.2 — paridade com Aula 8 corrigida (9.4). **A diferença não é maturidade do agente — é dois bugs específicos identificáveis.**
+
+---
+
+## Status pós-fixes (2026-05-09)
+
+| # | Ação do plano | Severidade | Status | Commit |
+|---|---|:-:|:-:|---|
+| 1 | DOI Roth-Sönmez-Ünver corrigido em 5 lugares (QJE 119(2):457-488 / 10.1162/0033553041382157) | 🔴 | ✅ resolvido | `48ac8e7` |
+| 2 | Ex 5 reescrito com cadeia de 4 iter + 3 rejeições (m_2 rejeitado 2x) + critério μ_M=μ_W formal | 🔴 | ✅ resolvido | `48ac8e7` |
+| 3 | Q3 pós-quiz alternativa (c) reescrita começando com output | 🟡 | ✅ resolvido | `48ac8e7` |
+| 4 | Sims-Sargent 2011 removido (Nobel cronologicamente desconectado) | 🟡 | ✅ resolvido | `48ac8e7` |
+| 5 | Render `quarto render aula-09.qmd` confirmando slide 33 | 🟢 | ✅ render exit 0 | `48ac8e7` |
+| 6 | Speaker notes slide 33 (DA iter 5+6 com bilateralidade, ~280 palavras) | 🟢 | ✅ resolvido | `48ac8e7` |
+| 7 | Ex 5(e) "preferências coerentes" → critério operacional μ_M=μ_W (Knuth/Lattice) | 🟢 | ✅ resolvido | `48ac8e7` |
+| 8 | DOIs Mailath, Tyler-Murnane-Willett, Abdulkadiroğlu-Pathak-Roth | 🟢 | ✅ resolvido | `48ac8e7` |
+| — | DOI Roth-Peranson (1999, AER 89(4): 748-780, 10.1257/aer.89.4.748) | 🟢 | ✅ resolvido | esta passada |
+| — | Stiglitz 1975 sem DOI (AER pré-DOI canônico — verificado e justificado) | 🟢 | ✅ documentado | `48ac8e7` |
+| 9 | Validar PDF N&S Cap 18 §18.6 no bucket Supabase | 🟢 | ⚠️ externo (Darcio confirma) | — |
+| 10 | Coleta de telemetria pós-aula | 🟢 | ⏸ passivo (admin) | — |
+
+**Nota global pós-fixes: ~9.2+** (subiu de 8.6 base). Bundle deploy-ready em produção desde `c9d7176`/`48ac8e7`.

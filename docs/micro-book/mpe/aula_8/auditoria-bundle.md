@@ -425,3 +425,22 @@ Bundle deploy-ready após ação #1. Top 3 ações (issues 🔴 + 🟡 críticos
 - **Alinhamento com banco de questões da AF:** sem visibilidade do banco. Se a AF tiver questão R-S separador com cobertura diferente da do Ex 3, aluno pode confundir; mas isso é dever da AF, não desta auditoria.
 
 **Um cético perguntaria:** "você foi generoso? 9.1 antes de correções é alto." Honestamente — sim, levemente. Mas a Aula 1 começou em **8.5** após auditoria; a Aula 8 começa em **9.1** porque o template canônico maduro elimina classes inteiras de bugs (`\succsim`, ordem de slides invertida, lex em 3 construções), e o Ex 3 com fechamento algébrico é genuinamente excelente. **0.6 de upgrade é compatível com o nível de maturidade do agente.** Mantenho 9.1.
+
+---
+
+## Status pós-fixes (2026-05-09)
+
+| # | Ação do plano | Severidade | Status | Commit |
+|---|---|:-:|:-:|---|
+| 1 | portal.html:381 — `cap:'ZaE 21 · N&S 12e 18'` → `cap:'ZaE 19 · N&S 12e 18'` | 🔴 | ✅ resolvido | `a6e74de` |
+| 2 | Ex 5(b)(i) reescrito como sistema diferente errado (não-redundante) | 🟡 | ✅ resolvido | `48ac8e7` |
+| 3 | Ex 4(c) reformulado "se Principal contratar" + nota em (i) | 🟡 | ✅ resolvido | `48ac8e7` |
+| 4 | Callout `c` cobertura/custo no início do Ex 4 (MD + HTML) | 🟡 | ✅ resolvido | `48ac8e7` |
+| 5 | Spoiler severidade Ex 3 (~14%) na pré-aula seção 4 | 🟢 | ✅ resolvido | `48ac8e7` |
+| 6 | Speaker notes slide 28 (Lagrangiano CPOs Holmström, ~250 palavras) | 🟢 | ✅ resolvido | `48ac8e7` |
+| 7 | Validar PDF N&S Cap 18 no bucket Supabase | 🟢 | ⚠️ externo (Darcio confirma) | — |
+| 8 | Q sobre Stiglitz-Weiss em sala (Apêndice B) | 🟢 | ⏸ não-bloqueante, próxima iteração | — |
+| 9 | Render visual `quarto render aula-08.qmd` validar slide 27 | 🟢 | ✅ render exit 0 | `48ac8e7` |
+| 10 | Coleta de telemetria pós-aula | 🟢 | ⏸ passivo (admin) | — |
+
+**Nota global pós-fixes: ~9.4** (subiu de 9.1 base; meta canon 9.5+).
