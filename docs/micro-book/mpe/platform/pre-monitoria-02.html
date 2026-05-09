@@ -175,15 +175,15 @@
 
     <p><strong>Núcleo \(C(\mathcal{E})\).</strong> Conjunto das alocações viáveis não bloqueadas por nenhuma das sete coalizões não-vazias. Por 1º TBE, todo EC \(\subseteq C(\mathcal{E})\); a inclusão é típicamente estrita.</p>
 
-    <p><strong>Exemplo 1 — Pareto-eficiente NÃO no núcleo.</strong> Considere \(x^A = (3, 0)\), \(x^B = (0, 3)\), \(x^C = (0, 0)\). Viável (\(\sum = (3, 3)\)) e Pareto-eficiente entre alocações com \(u^C = 0\). Mas a coalizão \(\{C\}\) bloqueia: na autarquia, \(u^C(\omega^C) = u^C(1, 1) = 1 > 0\). <strong>Bloqueada por \(\{C\}\)</strong>. Logo, fora do núcleo.</p>
+    <p><strong>Exemplo 1 — bloqueada por \(\{C\}\) (e nem sequer Pareto-eficiente).</strong> Considere \(x^A = (3, 0)\), \(x^B = (0, 3)\), \(x^C = (0, 0)\). Viável (\(\sum = (3, 3)\)). Aqui \(u^A = u^B = u^C = 0\), o que mostra que \(\{C\}\) bloqueia trivialmente: na autarquia, \(u^C(\omega^C) = u^C(1, 1) = 1 > 0\). <strong>Fora do núcleo.</strong> Note ainda que a alocação <em>não</em> é Pareto-eficiente: \((1{,}5;\,1{,}5)\), \((1{,}5;\,1{,}5)\), \((0,0)\) Pareto-domina (melhora \(A\) e \(B\) estritamente sem piorar \(C\)). Esse exemplo é didático — bloqueio fácil — mas não isola o ponto pedagógico do núcleo.</p>
 
     <p><em>Lição.</em> Pareto-eficiência não basta. Núcleo exige racionalidade individual e, mais geral, racionalidade de toda subcoalizão.</p>
 
-    <p><strong>Exemplo 2 — viável em \(I = 3\) mas bloqueada por singleton.</strong> Considere \(x^A = (1.5, 1.5)\), \(x^B = (1.5, 1.5)\), \(x^C = (0, 0)\). Viável e Pareto-eficiente. Em \(I = 2\) sem o \(C\), \(\{A, B\}\) sozinhos têm dotação total \((2, 2)\) — não conseguiriam essa alocação. Em \(I = 3\), \(\{C\}\) bloqueia (autarquia dá \(u^C = 1 > 0\)). Fora do núcleo.</p>
+    <p><strong>Exemplo 2 — Pareto-eficiente mas bloqueada por singleton.</strong> Considere \(x^A = (1{,}5;\,1{,}5)\), \(x^B = (1{,}5;\,1{,}5)\), \(x^C = (0, 0)\). Viável e <em>genuinamente</em> Pareto-eficiente: qualquer melhoria de \(C\) tira recurso de \(A\) ou \(B\) e baixa CD respectiva. Em \(I = 2\) sem o \(C\), \(\{A, B\}\) sozinhos têm dotação total \((2, 2)\) — não conseguiriam essa alocação. Em \(I = 3\), \(\{C\}\) bloqueia (autarquia dá \(u^C = 1 > 0\)). <strong>Pareto-eficiente, fora do núcleo.</strong> Esse é o ponto canônico: PE \(\not\Rightarrow\) núcleo.</p>
 
     <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto vai construir uma alocação concreta bloqueada por <strong>coalizão intermediária</strong> \(\{A, C\}\) ou \(\{B, C\}\) — bloqueio por par, não por singleton. Esse é o caso geometricamente rico do "núcleo encolhe".</p>
 
-    <p><strong>Réplica e Debreu-Scarf (anúncio).</strong> Para \(r\) cópias de cada tipo, \(C(r)\) é decrescente em \(r\) e \(\bigcap_{r \ge 1} C(r) = \) EC. Resultado canônico: <strong>Debreu-Scarf (1963), com intuição original em Edgeworth (1881)</strong>. Não vamos provar; Alberto pode esquematizar sábado.</p>
+    <p><strong>Réplica e Debreu-Scarf (anúncio).</strong> Para \(r\) cópias de cada tipo, \(C(r)\) é decrescente em \(r\) e \(\bigcap_{r \ge 1} C(r) = \) EC. Resultado canônico: Debreu &amp; Scarf (1963), "A Limit Theorem on the Core of an Economy", <em>International Economic Review</em> 4(3): 235–246, <a href="https://doi.org/10.2307/2525306" target="_blank" rel="noopener">DOI 10.2307/2525306</a>, com intuição original em Edgeworth (1881, <em>Mathematical Psychics</em>, livro). Não vamos provar; Alberto pode esquematizar sábado.</p>
 
     <div class="micro-checkpoint" id="micro-s3">
       <h3>Micro-checkpoint (1 item)</h3>
@@ -317,7 +317,7 @@
 
     <p style="font-size:0.85rem;color:#64748b">Nomenclatura formal: <em>teorema de separação de Minkowski</em> (versão finito-dimensional). Não vamos formalizar.</p>
 
-    <p><strong>Quando falha — preferências não-convexas.</strong> Considere \(u^A(x_1, x_2) = x_1^2 + x_2^2\). Curvas de indiferença = arcos de círculo <em>côncavos</em> (vistos do conjunto preferido). \(V^A\) não é convexo: combinar \((2, 0)\) e \((0, 2)\) (ambos com \(u = 4\)) dá \((1, 1)\) com \(u = 2 < 4\) — combinação interior é <strong>estritamente pior</strong> que os extremos.</p>
+    <p><strong>Quando falha — preferências não-convexas.</strong> Considere \(u^A(x_1, x_2) = x_1^2 + x_2^2\). Curvas de indiferença são arcos de círculo centrados na origem; o conjunto preferido \(V^A = \{x : x_1^2 + x_2^2 > c\}\) é o <em>exterior</em> do círculo — <strong>não-convexo</strong>. Verificação direta: combinar \((2, 0)\) e \((0, 2)\) (ambos com \(u = 4\)) dá \((1, 1)\) com \(u = 2 < 4\) — a combinação interior é <strong>estritamente pior</strong> que os extremos, prova de que \(V^A\) com \(c = 4\) não contém o ponto médio.</p>
 
     <p>Com preferência assim, a tangência usual \(\text{TMS}^A = p_1/p_2\) gera ponto de utilidade <em>mínima</em> local na restrição orçamentária, não máxima. Demanda \(A\) vai aos extremos (cantos). <strong>Não há \(p^*\) que sustente alocação interior \(x^{*A}\) Pareto-eficiente como EC</strong> — qualquer reta tangente faz \(A\) querer fugir do interior.</p>
 

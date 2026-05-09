@@ -84,7 +84,7 @@
   <h2>Spence com 3 tipos — a sequência de IC adjacentes (Mailath 1987)</h2>
 
   <div class="confidence-block" id="conf-s2-pre">
-    <label>Antes de estudar: dados 3 tipos \(\theta_1 = 1, \theta_2 = 3, \theta_3 = 6\) com custo \(c(e, \theta) = e/\theta\), você consegue construir o <strong>separador menos custoso</strong> sem aplicar mecanicamente a fórmula 2-tipos?</label>
+    <label>Antes de estudar: dados 3 tipos \(\theta_1 = 2, \theta_2 = 4, \theta_3 = 8\) com custo \(c(e, \theta) = e/\theta\), você consegue construir o <strong>separador menos custoso</strong> sem aplicar mecanicamente a fórmula 2-tipos?</label>
     <div class="slider-row">
       <span style="font-size:0.8rem">1</span>
       <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
@@ -99,42 +99,42 @@
     <p><strong>Pergunta-driver.</strong> A Aula 9 cobriu Spence canônico com 2 tipos. Sob 2 tipos, separador menos custoso é \(\underline e^* = \theta_L(\theta_H - \theta_L)\). E quando temos 3 tipos? A intuição naïve "cada tipo recebe \(\theta_1(\theta_i - \theta_1)\)" está <em>errada</em> — esquece IC com tipos intermediários.</p>
 
     <h3 style="margin-top:1.2rem">Setup</h3>
-    <p>Tipos \(\theta_1 = 1, \theta_2 = 3, \theta_3 = 6\). Probabilidades iguais \(\pi_i = 1/3\). Custo \(c(e, \theta) = e/\theta\). Salário competitivo \(w(e) = \mathbb{E}[\theta \mid e]\). Bernoulli quase-linear \(U^i = w(e) - e/\theta_i\).</p>
-    <p>TMS por tipo: \(\text{TMS}^i = \partial c/\partial e \big|_\theta = 1/\theta_i\). Logo \(\text{TMS}^1 = 1, \text{TMS}^2 = 1/3, \text{TMS}^3 = 1/6\). <strong>Ordenamento decrescente em \(\theta\)</strong> — single-crossing vale, curvas de indiferença ficam mais "deitadas" para tipos altos.</p>
+    <p>Tipos \(\theta_1 = 2, \theta_2 = 4, \theta_3 = 8\). Probabilidades iguais \(\pi_i = 1/3\). Custo \(c(e, \theta) = e/\theta\). Salário competitivo \(w(e) = \mathbb{E}[\theta \mid e]\). Bernoulli quase-linear \(U^i = w(e) - e/\theta_i\).</p>
+    <p>TMS por tipo: \(\text{TMS}^i = \partial c/\partial e \big|_\theta = 1/\theta_i\). Logo \(\text{TMS}^1 = 1/2, \text{TMS}^2 = 1/4, \text{TMS}^3 = 1/8\). <strong>Ordenamento decrescente em \(\theta\)</strong> — single-crossing vale, curvas de indiferença ficam mais "deitadas" para tipos altos.</p>
 
     <h3 style="margin-top:1.2rem">Construção sequencial (Mailath 1987)</h3>
     <p>Em separador, cada tipo \(i\) escolhe \(e_i^*\) tal que <strong>tipo \(i-1\) é exatamente indiferente entre seu próprio sinal e imitar o tipo \(i\)</strong> (IC-adjacente binding). Recursivamente:</p>
 
-    <p><strong>Tipo 1 (mais baixo):</strong> não há ninguém abaixo para imitá-lo. \(e_1^* = 0\). Recebe \(w(0) = \theta_1 = 1\).</p>
+    <p><strong>Tipo 1 (mais baixo):</strong> não há ninguém abaixo para imitá-lo. \(e_1^* = 0\). Recebe \(w(0) = \theta_1 = 2\).</p>
 
-    <p><strong>Tipo 2:</strong> IC-adjacente binding diz que tipo 1 é indiferente entre \(e_1^* = 0\) (recebe \(\theta_1 = 1\)) e \(e_2^*\) (recebe \(\theta_2 = 3\)). Indiferença:</p>
-    <p>\[ \theta_1 - 0/\theta_1 = \theta_2 - e_2^*/\theta_1 \;\;\Longrightarrow\;\; e_2^* = \theta_1 (\theta_2 - \theta_1) = 1 \cdot 2 = 2. \]</p>
+    <p><strong>Tipo 2:</strong> IC-adjacente binding diz que tipo 1 é indiferente entre \(e_1^* = 0\) (recebe \(\theta_1 = 2\)) e \(e_2^*\) (recebe \(\theta_2 = 4\)). Indiferença:</p>
+    <p>\[ \theta_1 - 0/\theta_1 = \theta_2 - e_2^*/\theta_1 \;\;\Longrightarrow\;\; e_2^* = \theta_1 (\theta_2 - \theta_1) = 2 \cdot 2 = 4. \]</p>
 
-    <p><strong>Tipo 3:</strong> IC-adjacente binding diz que tipo 2 é indiferente entre \(e_2^* = 2\) (recebe \(\theta_2 = 3\)) e \(e_3^*\) (recebe \(\theta_3 = 6\)). Indiferença:</p>
-    <p>\[ \theta_2 - e_2^*/\theta_2 = \theta_3 - e_3^*/\theta_2 \;\;\Longrightarrow\;\; e_3^* = e_2^* + \theta_2 (\theta_3 - \theta_2) = 2 + 3 \cdot 3 = 11. \]</p>
+    <p><strong>Tipo 3:</strong> IC-adjacente binding diz que tipo 2 é indiferente entre \(e_2^* = 4\) (recebe \(\theta_2 = 4\)) e \(e_3^*\) (recebe \(\theta_3 = 8\)). Indiferença:</p>
+    <p>\[ \theta_2 - e_2^*/\theta_2 = \theta_3 - e_3^*/\theta_2 \;\;\Longrightarrow\;\; e_3^* = e_2^* + \theta_2 (\theta_3 - \theta_2) = 4 + 4 \cdot 4 = 20. \]</p>
 
     <p><strong>Sequência canônica:</strong></p>
     <p>\[ \boxed{\;\; e_i^* = e_{i-1}^* + \theta_{i-1} (\theta_i - \theta_{i-1}), \qquad e_1^* = 0. \;\;} \]</p>
 
-    <p>Resultado para nosso exemplo: \(e_1^* = 0, e_2^* = 2, e_3^* = 11\).</p>
+    <p>Resultado para nosso exemplo: \(e_1^* = 0, e_2^* = 4, e_3^* = 20\).</p>
 
     <h3 style="margin-top:1.2rem">Por que a fórmula 2-tipos não generaliza</h3>
-    <p>Aluno apressado escreveria \(e_3^* = \theta_1 (\theta_3 - \theta_1) = 1 \cdot 5 = 5\). <strong>Erro.</strong> Esse \(e_3^* = 5\) faz tipo 1 indiferente entre 0 e 5, mas <em>tipo 2</em> preferiria desviar para \(e = 5\): ganharia \(6 - 5/3 = 13/3 \approx 4{,}33\) contra \(3 - 2/3 = 7/3 \approx 2{,}33\). IC-2-imita-3 violada. Separação quebra.</p>
+    <p>Aluno apressado escreveria \(e_3^* = \theta_1 (\theta_3 - \theta_1) = 2 \cdot 6 = 12\). <strong>Erro.</strong> Esse \(e_3^* = 12\) faz tipo 1 indiferente entre 0 e 12, mas <em>tipo 2</em> preferiria desviar para \(e = 12\): ganharia \(8 - 12/4 = 5\) contra \(4 - 4/4 = 3\). IC-2-imita-3 violada. Separação quebra.</p>
     <p>O argumento de Mailath é que <strong>IC binding sempre é entre tipos adjacentes</strong> — porque single-crossing garante que se IC-adjacente vale, IC-distantes valem a fortiori. Daí a recursão.</p>
 
     <h3 style="margin-top:1.2rem">Verificação numérica das ICs</h3>
-    <p>Em \(e_1^* = 0, e_2^* = 2, e_3^* = 11\):</p>
+    <p>Em \(e_1^* = 0, e_2^* = 4, e_3^* = 20\):</p>
     <ul>
-      <li>IC-1 não imita 2: \(1 - 0 = 1 \;\;\overset{?}{\ge}\;\; 3 - 2/1 = 1\). ✓ Binding.</li>
-      <li>IC-2 não imita 3: \(3 - 2/3 = 7/3 \;\;\overset{?}{\ge}\;\; 6 - 11/3 = 7/3\). ✓ Binding.</li>
-      <li>IC-1 não imita 3 (a fortiori): \(1 \;\;\overset{?}{\ge}\;\; 6 - 11/1 = -5\). ✓ Folgada.</li>
-      <li>IC-2 não imita 1: \(7/3 \;\;\overset{?}{\ge}\;\; 1 - 0 = 1\). ✓ Folgada.</li>
-      <li>IC-3 não imita 2: \(6 - 11/6 = 25/6 \;\;\overset{?}{\ge}\;\; 3 - 2/6 = 8/3\). \(25/6 \approx 4{,}17 \ge 8/3 \approx 2{,}67\). ✓ Folgada.</li>
+      <li>IC-1 não imita 2: \(2 - 0/2 = 2 \;\;\overset{?}{\ge}\;\; 4 - 4/2 = 2\). ✓ Binding.</li>
+      <li>IC-2 não imita 3: \(4 - 4/4 = 3 \;\;\overset{?}{\ge}\;\; 8 - 20/4 = 3\). ✓ Binding.</li>
+      <li>IC-1 não imita 3 (a fortiori): \(2 \;\;\overset{?}{\ge}\;\; 8 - 20/2 = -2\). ✓ Folgada.</li>
+      <li>IC-2 não imita 1: \(3 \;\;\overset{?}{\ge}\;\; 2 - 0 = 2\). ✓ Folgada.</li>
+      <li>IC-3 não imita 2: \(8 - 20/8 = 11/2 = 5{,}5 \;\;\overset{?}{\ge}\;\; 4 - 4/8 = 7/2 = 3{,}5\). ✓ Folgada.</li>
     </ul>
     <p>Tudo consistente. <strong>Adjacentes binding, distantes folgadas.</strong></p>
 
     <h3 style="margin-top:1.2rem">Cho-Kreps com 3 tipos</h3>
-    <p>Em 3+ tipos, Cho-Kreps elimina iterativamente: primeiro pools mais inclusivos (todos juntos), depois pools de pares, depois separadores acima do mínimo. Resultado robusto: separador menos custoso de Mailath sobrevive (Mailath 1987, <em>Econometrica</em> 55(6): 1349–1365, <a href="https://doi.org/10.2307/1913559" target="_blank" rel="noopener">DOI 10.2307/1913559</a>).</p>
+    <p>Em 3+ tipos, Cho-Kreps elimina iterativamente: primeiro pools mais inclusivos (todos juntos), depois pools de pares, depois separadores acima do mínimo. Resultado robusto: separador menos custoso de Mailath sobrevive (Mailath 1987, <em>Econometrica</em> 55(6): 1349–1365, <a href="https://doi.org/10.2307/1913560" target="_blank" rel="noopener">DOI 10.2307/1913560</a>).</p>
 
     <h3 style="margin-top:1.2rem">Generalização contínua</h3>
     <p>Em <strong>tipos contínuos</strong> \(\theta \in [\underline\theta, \overline\theta]\), a IC binding entre adjacentes vira ODE: \(e^*\,'(\theta) = \theta\) (ou similar, dependendo da Bernoulli). Solução \(e^*(\theta) = \int_{\underline\theta}^{\theta} s\, ds\). É a versão "infinitesimal" da recursão de Mailath. Não cobramos isso na AF, mas a estrutura é a mesma.</p>
@@ -232,11 +232,11 @@
       <li>Repita com pares restantes até esgotar.</li>
     </ol>
 
-    <h3 style="margin-top:1.2rem">Propriedades de TTC (Shapley-Scarf 1974; Roth-Sönmez-Ünver 2004)</h3>
+    <h3 style="margin-top:1.2rem">Propriedades de TTC (Shapley-Scarf 1974; Roth 1982; Roth-Sönmez-Ünver 2004)</h3>
     <ul>
-      <li><strong>Pareto-eficiente</strong> no domínio de housing/kidney (Roth 1982 housing). Resultado mais forte que DA, que é Pareto-ótimo apenas entre estáveis.</li>
-      <li><strong>Strategy-proof</strong> (todos os agentes; não há lado proponente — o problema é simétrico).</li>
-      <li><strong>Core unique</strong>: a alocação de TTC é o único elemento do core no problema de troca pura.</li>
+      <li><strong>Pareto-eficiente</strong> no domínio de housing/kidney (Shapley-Scarf 1974 prova que a alocação de TTC é o único elemento do <em>core</em>; portanto Pareto-eficiente). Resultado mais forte que DA, que é Pareto-ótimo apenas entre estáveis.</li>
+      <li><strong>Strategy-proof</strong> (Roth 1982, <em>Economics Letters</em> 9(2): 127–132 — todos os agentes; não há lado proponente, o problema é simétrico).</li>
+      <li><strong>Core unique</strong> (Shapley-Scarf 1974, <em>Journal of Mathematical Economics</em> 1(1): 23–37): a alocação de TTC é o único elemento do core no problema de troca pura.</li>
       <li><strong>Não tem análogo de "estabilidade bilateral"</strong> porque o problema não é bilateral. A noção de eficiência substitui.</li>
     </ul>
 
@@ -247,7 +247,7 @@
       <li>Kidney exchange (NEPKE 2007, UNOS, programas brasileiros emergentes), house swapping → TTC.</li>
     </ul>
 
-    <p><strong>Northwestern altruistic chain (2006):</strong> Roth-Sönmez-Ünver propuseram em 2006 uma generalização de TTC com <em>doador altruísta inicial</em> (não-direcional) — quebra ciclo em <em>cadeia</em> aberta. Permite mais transplantes que TTC puro. Implementado clinicamente desde 2007 (recorde: cadeia de 30 transplantes em 2015 nos EUA).</p>
+    <p><strong>Cadeias altruísticas:</strong> Roth, Sönmez &amp; Ünver propuseram extensão de TTC com <em>doador altruísta inicial</em> (não-direcional) — quebra ciclo em <em>cadeia</em> aberta, permitindo mais transplantes que TTC puro com pares fechados. Implementado clinicamente nos EUA desde meados dos anos 2000s (programa NEPKE e similares; a maior cadeia documentada nos EUA até a redação destes materiais ultrapassou 30 transplantes encadeados).</p>
 
     <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode executar TTC num exemplo 3-pares com matriz de compatibilidade explícita, mostrando como o ciclo se forma. Pede na reflexão.</p>
 
@@ -539,7 +539,7 @@
       <div class="micro-q" data-q="s5q1" data-correct="b">
         <div class="q-text">1. Aluno típico, com 3h de prova e pesos 40/30/20/10, deveria distribuir tempo aproximadamente:</div>
         <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-af','s5q1','a',this)">(a) 45 min em cada parte (180/4 = 45) — distribuição igualitária, "para não ficar com tempo sobrando".</div>
-        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-af','s5q1','b',this)">(b) Proporcional ao peso, com folga de leitura inicial: ~5 min lendo tudo + ~75 min Parte I + ~60 min Parte II + ~30 min Parte III + ~10 min Parte IV. Total ~180 min. Quem invertir e gastar 60 min em Parte IV (10%) está perdendo a prova.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-af','s5q1','b',this)">(b) Proporcional ao peso, com folga de leitura inicial: ~5 min lendo tudo + ~75 min Parte I + ~60 min Parte II + ~30 min Parte III + ~15 min Parte IV (≈ 5 min de buffer). Total ~180 min. Quem invertir e gastar 60 min em Parte IV (10%) está perdendo a prova.</div>
         <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-af','s5q1','c',this)">(c) Começar pelas mais difíceis (III + IV) "para tirar do caminho" — gasto de energia sub-ótimo.</div>
         <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-af','s5q1','d',this)">(d) Indiferente — todas as partes valem o mesmo na média histórica.</div>
         <div class="micro-feedback"></div>
