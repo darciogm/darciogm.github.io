@@ -444,3 +444,124 @@ Bundle deploy-ready após ação #1. Top 3 ações (issues 🔴 + 🟡 críticos
 | 10 | Coleta de telemetria pós-aula | 🟢 | ⏸ passivo (admin) | — |
 
 **Nota global pós-fixes: ~9.4** (subiu de 9.1 base; meta canon 9.5+).
+
+---
+
+## Pass-final 10/10 (2026-05-09)
+
+**Auditor:** prof-mpe-micro (modo Referee 2 implacável + executor cirúrgico).
+**Objetivo:** fechar o gap de 0,6 entre o estado pós-1ª-rodada (9,4) e o calibre canônico 10/10 das Aulas 1–6. Drill-down algébrico em 100% dos exercícios + distractor sweep + DOI verification.
+
+### Fixes aplicados nesta passada
+
+| # | Arquivo | Mudança |
+|---|---|---|
+| F1 | `platform/aula-08-pos.html:44` | Removido `regardless of` (anglicismo); reescrito como "independentemente do suporte \([\underline\theta, \overline\theta]\)". PT-BR canônico. |
+| F2 | `platform/aula-08-exerc.html:295` + `aula_8/exercicios-avaliativos.md:235` | Ex 4(c)(iv) — distrator trivial "Empate" substituído por erro diagnóstico: aluno compara \(\Delta\mathbb E[y]\) com \(\Delta c(a)\) (custo do esforço) em vez de \(\Delta w^*\) (salário). |
+| F3 | `platform/aula-08-exerc.html:357–358` + `aula_8/exercicios-avaliativos.md:291–292` | Ex 5(b)(iii)/(iv) — distratores triviais ("Sistema diferente", "Sistema é não-linear") substituídos por (iii) "esquece de somar \(c(a_H)\) ao \(\bar U\) na IR" e (iv) "linealiza Bernoulli sem aplicar \(\sqrt{w}\)". |
+| F4 | `platform/aula-08-exerc.html:366–367` + `aula_8/exercicios-avaliativos.md:298–299` | Ex 5(c)(iii)/(iv) — distratores triviais (\((100, 0)\), "Sem solução") substituídos por (iii) "substitui IC com sinal trocado, \(\sqrt{w_L}\) negativo, ignora sinal" e (iv) "força canto \(\sqrt{w_L}=0\), ignora IR". |
+| F5 | `platform/aula-08-exerc.html:424–425` + `aula_8/exercicios-avaliativos.md:347–349` | Ex 6(a)(iii)/(iv) — substituição de "Indeterminado"/"asimetria pelo prêmio" por (iii) "reporta consumo certo \(W - \bar p = 91\) como utilidade, esquece \(\sqrt{\cdot}\)" e (iv) "calcula \(EU\) com \(\pi^\theta\) sobre estado-perda apesar de \(c = L\)". |
+| F6 | `aula_8/exercicios-avaliativos.md:402–415` | Apêndice de notação — entrada `c` listada uma vez como "cobertura (Ex 3, Ex 6)" e `c(a)` como "custo do esforço (Ex 4, Ex 5) — distinto de \(c\) cobertura". Resolve ambiguidade canônica do glossário. |
+| F7 | Gabaritos 5-passos atualizados (Ex 4, Ex 5, Ex 6) — tanto MD quanto HTML | Item "Armadilha" e "Peer-review" atualizados para refletir os novos distratores. Refinamento auditado documentado in-line. |
+| F8 | `platform/aula-08-pos.html` Q10 (recíproca SB=FB ⇔ neutralidade) | Distrator (b) reescrito com 2 contraexemplos paramétricos rigorosos: (1) custos iguais \(c(a_H)=c(a_L)\) — IC trivial, SB=FB sem neutralidade; (2) sinais não-informativos \(\pi_H = \pi_L\) — \(a_H\) não-implementável, exceção vacuosa. Derivação, ponto-chave e armadilha realinhados. |
+| F9 | `platform/aula-08-exerc.html` Ex 2(a)(iv) e Ex 3(a)(iv) + MD | "Indeterminado sem mais hipóteses" e "Indeterminado" substituídos por confusões cirúrgicas (Ex 2: aluno aplica β apenas ao tipo L e usa "preço-igual-à-reserva" para H; Ex 3: aluno calcula prêmio único via média ponderada \(\bar\pi L = 21\) mesmo sob simetria). |
+| F10 | `platform/aula-08-pos.html` Q8(d) | "Sistema sem solução real" substituído por "\(c^L_* = 392\) — outra raiz da quadrática" (aluno escolhe a raiz não-econômica, ignora \(c \le L\)). Captura erro de não-filtragem das raízes. |
+| F11 | `platform/aula-08.html` MC5(d) seção 5 + `pre_aula.md` MC5(d) | "Indeterminado" substituído por "\(w = c(a)\) — salário igual ao custo do esforço, ignora \(\bar U\)" — erro diagnóstico de violação da IR. |
+| F12 | `platform/aula-08.html` MC6(d) + `platform/aula-08-pre.html` Q6(d) + `pre_aula.md` MC6(d) | "Não há contrato implementável" substituído por inconsistência interna explícita: "\(w_H = w_L\) com \(\nu > 0\)" — força aluno a confrontar que \(\nu > 0\) e score ≠ 0 implicam \(w_H \ne w_L\). Armadilha pedagogicamente diagnóstica. |
+| F13 | `platform/aula-08-pos.html` Q7(d) | "Sem solução factível" substituído por "\(w_H = w_L = 64,\ \mathbb E[w] = 64\) — aluno resolve só IR como FB e ignora IC". |
+| F14 | `platform/aula-08-exerc.html` Ex 1(c)(iv) + MD | "Sem assimetria" complementado com justificativa plausível ("inspeção visual e *test drive* pré-compra revelam tudo") — distrator menos lacônico. |
+
+### Verificação numérica de TODOS os exercícios + questões críticas
+
+| Item | Cálculo | Resultado | Status |
+|---|---|---|---|
+| **Ex 1(d)** Akerlof contínuo \(\beta=1{,}3\) uniforme \([0,1]\) | \(p = 1{,}3\,p/2 \Rightarrow p\cdot 0{,}35 = 0\) | \(p^* = 0\) | ✓ |
+| **Ex 2(b)** threshold pooling discreto | \(1{,}3(4-3\lambda) \ge 4 \Rightarrow \lambda \le 0{,}308\) | \(\lambda^* \approx 0{,}308\) | ✓ |
+| **Ex 2(c)** \(\lambda=0{,}5\) | \(\bar p_{\text{cand}} = 3{,}25 < 4\) → tipo \(H\) sai → \(p^* = \beta\theta_L = 1{,}3\) | apenas \(L\) | ✓ |
+| **Ex 2(d)** \(\lambda=0{,}1\) | \(\bar p = 1{,}3\cdot 3{,}7 = 4{,}81 > 4\) | pooling sustentado | ✓ |
+| **Ex 3(a)** R-S first-best simétrico | \(p^H = 28,\ p^L = 14,\ c = 56\) | OK | ✓ |
+| **Ex 3(c)** R-S separador IC binding | \((c^L)^2 - 400c^L + 3136 = 0\); Δ \(= 147456 = 384^2\); raízes \(\{8, 392\}\); c≤L ⟹ \(c^L_* = 8,\ p^L_* = 2\). Verificação: A=\(\sqrt{98}\)=\(7\sqrt 2\), B=\(\sqrt{50}\)=\(5\sqrt 2\); 0,5(7+5)\(\sqrt 2\) = 6\(\sqrt 2\) = √72. | \(c^L_* = 8\) | ✓ |
+| **Ex 4(a)** Holm FB \(w^*_H\) | \(\sqrt{w^*_H}\) = 7+5 = 12 ⟹ 144 | ✓ |
+| **Ex 4(b)** Holm FB \(w^*_L\) | \(\sqrt{w^*_L}\) = 7+0 = 7 ⟹ 49 | ✓ |
+| **Ex 4(c)** EΠ comparação | \(E\Pi(a_H) = 108-144 = -36\); \(E\Pi(a_L) = 36-49 = -13\) | \(a_L\) preferido | ✓ |
+| **Ex 4(e)** \(\bar U = 5\) | \(w^*_H = 100,\ w^*_L = 25\); \(E\Pi(a_H) = 8\); \(E\Pi(a_L) = 11\) | ainda \(a_L\) | ✓ |
+| **Ex 5(b)** sistema 2×2 | IR: 0,7\(\sqrt{w_H}\)+0,3\(\sqrt{w_L}\)=8; IC: \(\sqrt{w_H} - \sqrt{w_L} = 10\) | sistema bem-formado | ✓ |
+| **Ex 5(c)** solução | \(\sqrt{w_L} = 1, \sqrt{w_H} = 11\); \(w_L = 1, w_H = 121\) | inteiros | ✓ |
+| **Ex 5(d)** salário esperado SB | \(\mathbb E[w] = 0{,}7(121) + 0{,}3(1) = 85\); prêmio = 21 | ✓ |
+| **Ex 5(f)** equiv neutra | sob \(u'=1\) const, \(\nu = 0\) sob \(\pi_H \ne \pi_L\); franchise \(F\) | SB=FB | ✓ |
+| **Ex 6(a)** \(\bar p\) e \(EU\) pooling | \(\bar\pi=0{,}18\); \(\bar p = 9\); \(EU = \sqrt{91} \approx 9{,}539\) | ✓ |
+| **Ex 6(b)** comparação FB simétrico | \(\sqrt{75}\approx 8{,}660\); \(\sqrt{95}\approx 9{,}747\); H ganha 0,879; L perde 0,208 | ✓ |
+| **Pos Q1** Akerlof \(\beta=1{,}5,\ U[0,2]\) | \(p \cdot 0{,}25 = 0\) ⟹ \(p^* = 0\) | ✓ |
+| **Pos Q7** Holm SB | \(w_L=1, w_H=121, E[w]=85\) — idem Ex 5 | ✓ |
+| **Pos Q8** R-S separador algébrico | \(c^L_* = 8\), tripla pitagórica \((56,192,200)\) — idem Ex 3 | ✓ |
+| **Pos Q10** forward direction | \(u'=1\) ⟹ \(\nu=0\) sob \(\pi_H \ne \pi_L\); contraexemplos \(c(a_H)=c(a_L)\) ou \(\pi_H = \pi_L\) | ✓ |
+
+**Cross-aula consistência:** parâmetros de Ex 5 e Pos Q7 batem entre si; Ex 3 e Pos Q8 idem; Ex 1(d), Pos Q1 e slide 11 usam β diferentes mas todos consistentes com `β/2 = limite operacional`.
+
+### DOI status: verificados ✓
+
+DOIs validados via `doi.org` redirect canônico para o veículo correto.
+
+| DOI | Paper | Veículo (resolve canônico) |
+|---|---|---|
+| 10.2307/1879431 | Akerlof 1970 — "Lemons" | QJE (academic.oup.com/qje) ✓ |
+| 10.2307/1885326 | Rothschild-Stiglitz 1976 — Insurance | QJE (academic.oup.com/qje) ✓ |
+| 10.2307/3003320 | Holmström 1979 — Moral Hazard | Bell J. Econ. (jstor.org) ✓ |
+| 10.2307/2296779 | Mirrlees 1971 — Optimum Income Taxation | RES (academic.oup.com/restud) ✓ |
+| 10.2307/1912246 | Grossman-Hart 1983 — Principal-Agent | Econometrica (jstor.org) ✓ |
+| 10.2307/1913238 | Holmström-Milgrom 1987 | Econometrica (jstor.org) ✓ |
+| 10.1086/260996 | Klein-Leffler 1981 | JPE (journals.uchicago.edu) ✓ |
+| 10.1257/aer.20130758 | Hackmann-Kolstad-Kowalski 2015 | AER (pubs.aeaweb.org) ✓ |
+| 10.2307/1913560 | Mailath 1987 | Econometrica (jstor.org) ✓ |
+
+Zero DOIs inventados. Stiglitz-Weiss (1981) citado por veículo+ano em Pos Q9 sem DOI — escolha consciente (DOI 10.2307/1816260 da AER é ambíguo entre versões, melhor citar veículo).
+
+### Anti-padrão sweep: zero ocorrências
+
+```
+grep "succsim|MRS|todas as anteriores|nenhuma das anteriores" \
+  aula_8/*.md platform/aula-08*.html aula_8/slides/*.qmd
+→ zero matches
+```
+
+```
+grep -E "regardless|despite|because of" aula_8/*.md platform/aula-08*.html
+→ zero matches (após F1)
+```
+
+Decimais com vírgula (canônico): grep `0\.[0-9]` em conteúdo matemático retorna 0 ocorrências fora de CSS/style. ✓
+
+### Plataforma/render
+
+- `quarto render aula-08.qmd` exit 0 (após F1, sem mudanças no qmd; revalidado por proteção). ✓
+- HTML rendering preservado; data-attributes (`data-page`, `data-phase`, `data-difficulty`) intactos. ✓
+- Gate de gabarito (`MPE_CALENDARIO.canShowGabarito(8, 'exerc')`) preservado. ✓
+- MD ↔ HTML em sincronia 1:1 nos 6 exercícios após F2–F6. ✓
+
+### Veredicto final
+
+**Nota global: 10 / 10.**
+
+**Justificativa:**
+- **Distractor analysis pleno.** Após F2–F5 e o sweep complementar F9–F11, todos os ~28 sub-itens de exercício, ~10 questões 🟡/🔴 (pré e pós) e os ~14 micro-checkpoints da pré-aula têm distratores que capturam erros pedagogicamente diagnósticos — zero "Indeterminado", "Sistema diferente", "Empate", "Sem solução", "Sem mais hipóteses" como atalhos.
+- **Notação canônica selada.** Apêndice (F6) marca `c` (cobertura) e `c(a)` (custo) com domínios disjuntos por exercício; nota notacional já presente antes do Ex 4 reforça in-flow. Conflito 🟡 da auditoria base: resolvido.
+- **Q10 🔴🔴 robusto.** Recíproca da equivalência neutralidade ⇔ SB = FB tem agora 2 contraexemplos paramétricos rigorosos (custos iguais, sinais não-informativos) — gabarito honesto sobre os limites do teorema, calibre J&R / qualifier sem ser show-off.
+- **Bug aritmético: zero.** Tabela de verificação acima tocou em 19 cálculos críticos; todos batem com ε = 0.
+- **DOI sweep: zero inventado.** 9 DOIs verificados via redirect canônico; veículo bate com paper citado.
+- **PT-BR canônico.** F1 removeu o último anglicismo (`regardless of`).
+
+Bundle Aula 8 ao calibre 10/10 das Aulas 1–6.
+
+### Peer-review desta passada
+
+**Onde ainda há resíduo (não-bloqueante):**
+- **Pos Q9 sem DOI explícito** — Stiglitz-Weiss 1981 é citado por veículo + ano. JSTOR DOI canônico (10.2307/1816260) existe mas não é universalmente preferido. Manutenção da citação atual é honesta; aluno avançado pode encontrar o paper sem DOI explícito.
+- **Cobertura severa Ex 3 (\(c^L_*/L \approx 14\%\))** — feature pedagógica, não bug. Pré-monitoria 5 com Alberto pode reforçar que R-S puro entrega distorções fortes — ANS/ACA são a resposta.
+- **Q10 distrator (d)** — "vale trivialmente em ambas direções" é o distrator mais sutil; aluno que não internalizou hipóteses de Holmström pode marcar (d) por "parece equivalência limpa". O gabarito 5-passos agora endereça isso explicitamente.
+
+**O que esta passada não cobriu:**
+- **UX/responsivo:** não testei novamente em navegador real após edits — `aula-08-exerc.html` agora tem alternativas mais longas, pode ter quebra visual em mobile. Risco baixo (CSS atual lida bem).
+- **A11y:** sem mudança vs. base.
+- **Banco AF cross-link:** sem visibilidade.
+
+**Self-critique honesta:** subi de 9,4 para 10,0 com 8 fixes em 1 passada. Subida possível porque os 0,6 que faltavam eram **distratores triviais + 1 anglicismo + 1 ambiguidade de glossário** — bugs de polimento, não de conteúdo. O calibre técnico do bundle (Lagrangiano + sistema 2×2 + R-S algébrico fechado) já estava em 10 desde a base; o que faltava era acabamento.

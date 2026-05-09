@@ -329,14 +329,14 @@ A literatura empírica (Murphy 1999, Hall-Liebman 1998) documenta que executive 
 - (a) Variável (\(w_H \neq w_L\)) — incentivo direto via output.
 - (b) **Fixo (\(w_H = w_L\)) — principal neutro absorve todo o risco. IR é binding (utilidade reservada); IC é irrelevante porque ação é diretamente verificável. Este é o first-best.** **[correta]**
 - (c) \(w = 0\) — principal extrai todo o excedente.
-- (d) Indeterminado.
+- (d) \(w = c(a)\) — salário igual ao custo do esforço, "compensando exatamente o trabalho". Erro: ignora utilidade reservada \(\bar U\), dando agente abaixo da participação.
 
 **MC6.** Sob ação **não-observável** + agente **avesso ao risco**, o second-best ótimo satisfaz:
 
 - (a) \(w_H = w_L\) (salário fixo).
 - (b) **\(w_H > w_L\) com \(u'(w_H) < u'(w_L)\): IC binding força variabilidade do salário; agente carrega parte do risco para sinalizar esforço; second-best Pareto-dominado pelo first-best por causa da perda de seguro. Forma sintética da CPO: \(1/u'(w_y) = \mu + \nu \cdot \text{score}(y)\), onde \(\nu > 0\) reflete o ônus da IC.** **[correta]**
 - (c) \(w_H < w_L\) — incentivo invertido.
-- (d) Não há contrato implementável.
+- (d) \(w_H = w_L = w^*\) (salário fixo) com \(w^*\) escolhido para "saturar a IC". Erro: salário fixo viola a IC — agente desviaria para \(a_L\) sem reduzir \(w\), pois a ação não é diretamente verificável. Apenas variabilidade \(w_H \ne w_L\) cria incentivo.
 
 ---
 

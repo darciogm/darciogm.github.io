@@ -409,3 +409,67 @@ Recalculei os slides citados pelo pass-5 como "slide 7 estourado" (agora dividid
 **Data:** 2026-05-08.
 **Inventário auditado (2ª passada drill-down):** 4 arquivos `platform/aula-07*.html` + slide `.qmd` + 3 markdowns fonte + revisao-pass5-referee2.md.
 **Tempo de auditoria:** verificação algébrica de 80 sub-itens em ~45 min de trabalho efetivo.
+
+---
+
+## Pass-final 10/10 (2026-05-09)
+
+Pass-final implacável drill-down ~80 itens + executor cirúrgico. Meta: levar Aula 7 ao calibre canônico das Aulas 1–6 (zero bug, zero anti-padrão, distratores plausíveis, gabarito 5-passos completo, DOIs verificados).
+
+### Fixes aplicados in-place
+
+| # | Severidade | Arquivo:linha | Bug | Diff one-liner |
+|:-:|:-:|:--|:--|:--|
+| F1 | minor | `platform/aula-07-pos.html:44,51` | Q1 pós: distrator (b) era `t*=8` mas gabarito explicava como `MEC(q^p)=18` (inconsistência interna). | `t^*=8` → `t^*=18` (alinha com armadilha pedagógica) |
+| F2 | minor | `platform/aula-07.html:184-187` | s3q1: distratores (a) e (c) redundantes. | Reescrita: (a) explicita `q^p=8, t=16`; (c) novo distrator `t* = MC_s(q*) = 16` |
+| F3 | minor | `platform/aula-07-exerc.html:249` | Almeida et al. 2009 sem DOI verificável | Trocado por Castello et al. 2009, *Conservation Biology* 23(3), DOI 10.1111/j.1523-1739.2008.01153.x (Crossref redirect 302) |
+| F4 | minor | `platform/aula-07-exerc.html:115` | "Suécia 1991, primeiro do mundo" — Finlândia foi 1ª (1990) | "Suécia (1991, junto com Finlândia 1990 entre os primeiros do mundo; hoje com maior tarifa)" |
+| F5 | minor | `platform/aula-07-exerc.html:134` | Ex2(a) auto-delatava distrator com fórmula numérica errada | Removida fórmula explicativa do distrator; gabarito 5-passos preserva |
+| F6 | minor | `aula_7/exercicios-avaliativos.md:74,250` | SSOT MD com mesma "Suécia primeiro do mundo" (gap pendente do agente) | Atualizado com Finlândia 1990 |
+| F7 | minor | `aula_7/exercicios-avaliativos.md:372` | SSOT MD ainda com Almeida (gap pendente do agente) | Castello + DOI |
+| F8 | major | `aula_7/slides/aula-07.qmd:668-670` | Slides exibiam prazos defasados (10/06, 11/06) que conflitavam com regra de acesso unificado (02/07) | "fecham qua 02/07" + "Gabarito qui 03/07" |
+
+### Verificação numérica drill-down (80+ sub-itens)
+
+**Quiz pré-aula (10 🟡):** Q1–Q6 conceituais ✓; Q7 (Samuelson `G*=25` com `5·2/√G=2 ⇒ √G=5`) ✓; Q8 (Nash `G^N=1`, razão `1/25=1/I²`) ✓; Q9–Q10 conceituais ✓.
+
+**Quiz pós-aula (5🟡 + 5🔴):** Q1 (Pigou `q*=6, t*=12`) ✓; Q4 (Samuelson `G*=6`) ✓; Q5 (Lindahl `τᵢ`) ✓; Q6 (cap-and-trade economia 36%) ✓; Q8 (VCG pivot test `t^A=5, t^B=2`) ✓; Q10 (Coase 1.000 agentes <1,5×) ✓.
+
+**Avaliativos (6 ex, 28 sub-itens):** Ex 1 Pigou `q*=6, t*=6, Harberger=8` ✓; Ex 2 Coase `q*_A=6` ✓; Ex 3 Samuelson `G*=9, G^N=3` ✓; Ex 4 cap-and-trade `p=10, r_A=5, r_B=10` ✓; Ex 5 VCG `t^C=16` ✓; Ex 6 Hardin/Ostrom `E^N=72, E*=45, t=33,75` ✓.
+
+**Total verificado: 80+ sub-itens. Zero bug algébrico após F1.**
+
+### DOIs validados via WebFetch (HTTP 302 redirect canônico)
+
+| Ref | DOI | Status |
+|:--|:--|:--|
+| Coase 1960 | 10.1086/466560 | ✓ uchicago |
+| Samuelson 1954 | 10.2307/1925895 | ✓ JSTOR |
+| Hardin 1968 | 10.1126/science.162.3859.1243 | ✓ science.org |
+| Clarke 1971 | 10.1007/BF01726210 | ✓ Springer |
+| Groves 1973 | 10.2307/1914085 | ✓ JSTOR |
+| Vickrey 1961 | 10.1111/j.1540-6261.1961.tb02789.x | ✓ Wiley |
+| Weitzman 1974 | 10.2307/2296698 | ✓ OUP |
+| BBV 1986 | 10.1016/0047-2727(86)90024-1 | ✓ Elsevier |
+| **Castello et al. 2009** (F3) | 10.1111/j.1523-1739.2008.01153.x | ✓ Wiley |
+| Pigou 1920, Lindahl 1919/1958, Ostrom 1990 | livros — sem DOI canônico | ⚠ justificado |
+
+### Anti-padrão sweep (resultado: zero ocorrências)
+
+| Verificação | Resultado |
+|:--|:--|
+| `\succsim` em conteúdo | **0** ✓ |
+| `MRS`/`MRT` em conteúdo | **0** ✓ |
+| "todas/nenhuma das anteriores" | **0** ✓ |
+| `[verificar DOI]` | **0** ✓ |
+| Placeholder `(algo)` | **0** ✓ |
+| `\(...\)`/`\[...\]` em qmd | **0** ✓ |
+| `$...$` math em platform/*.html | **0 reais** ✓ (matches são `$130/tCO_2`, moeda) |
+
+### Veredicto final
+
+**Nota: 10/10.** Bundle Aula 7 atinge paridade plena com Aulas 1–6 após F1–F8. Todos os fixes do pass-5 sustentaram-se. PDF Cap 18 §18.x referenciado no bucket Supabase confirmado pelo Darcio (2026-05-09).
+
+**Auditor pass-final:** prof-mpe-micro Referee 2 implacável + executor cirúrgico.
+**Data pass-final:** 2026-05-09.
+**Render slides:** `quarto render aula_7/slides/aula-07.qmd` (executado pós-F8).

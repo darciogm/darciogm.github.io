@@ -529,6 +529,6 @@ Dois campos obrigatórios (mín. 10 caracteres cada):
 - **Não cobre matching dinâmico** (Roth-Peranson 1999 incorporou casais; cursos avançados detalham).
 - **Não derivar a prova rigorosa da estabilidade de DA** (Knuth 1976, livro). Sketch + intuição.
 - **Não cobre top trading cycles em detalhe** — citamos Roth-Sönmez-Ünver 2004 no Box.
-- **Não modela formalmente sinalização vs. screening** (Stiglitz 1975 introduziu screening como dual de signaling) — citamos.
+- **Não modela formalmente sinalização vs. screening** (Stiglitz 1975, "The Theory of 'Screening,' Education, and the Distribution of Income," *American Economic Review* 65(3): 283–300, [JSTOR 1804834](https://www.jstor.org/stable/1804834) introduziu screening como dual de signaling) — citamos.
 
 > **Disclaimer estilístico.** Esta aula é **fechamento do curso**: alta em ferramental novo (DA, single-crossing), alta em integração com aulas anteriores (Spence é seleção adversa com agente informado movendo primeiro — extensão direta da Aula 8). Saia com 6 coisas na ponta da língua: (1) single-crossing como propriedade central de Spence; (2) construção do \(\underline e\) que separa os tipos via IC-L e IC-H; (3) Cho-Kreps elimina pooling; (4) DA termina, é estável e \(M\)-ótimo; (5) Roth 1982 — não há mecanismo estável SP para os dois lados; (6) aplicações reais: NRMP, SISU, kidney exchange, school choice. Esses são os 6 fatos pedagógicos da Aula 9. **Avaliação Final qua 24/06.**

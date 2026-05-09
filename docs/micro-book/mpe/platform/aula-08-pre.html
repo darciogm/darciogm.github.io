@@ -138,12 +138,12 @@
     <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \(w_H = w_L\) (salário fixo).</label>
     <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) <strong>\(w_H > w_L\) com \(u'(w_H) < u'(w_L)\)</strong>: IC binding (\(\nu > 0\)) força variabilidade do salário; agente carrega parte do risco para sinalizar esforço; second-best Pareto-dominado pelo first-best por causa da perda de seguro.</label>
     <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(w_H < w_L\) — incentivo invertido.</label>
-    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) Não há contrato implementável.</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \(w_H = w_L\) com \(\nu > 0\) — IC binding mas com salário fixo. <strong>Erro:</strong> aluno confunde "ν > 0" (IC ativa) com "ν · score = 0" (salário sem dependência em \(y\)); inconsistente, porque \(\nu > 0\) e \(\text{score} \ne 0\) implicam \(1/u'(w_H) \ne 1/u'(w_L)\), logo \(w_H \ne w_L\).</label>
     <div class="quizg-feedback" hidden>
       <p><strong>Gabarito: (b).</strong></p>
       <p><strong>1. Ponto-chave.</strong> Sob hidden action + agente avesso, salário fixo viola IC para \(a_H\) — agente desviaria. Contrato ótimo tem que <strong>variar com \(y\)</strong> para criar incentivo. Mas variabilidade impõe risco ao agente avesso, que exige compensação adicional (IR binding na nova condição). Trade-off seguro-vs-incentivo é resolvido pelo Lagrangiano com IC binding.</p>
       <p><strong>2. Derivação.</strong> CPOs em \(w_H, w_L\): \(1/u'(w_H) = \mu + \nu \cdot (\pi_H - \pi_L)/\pi_H\) e \(1/u'(w_L) = \mu - \nu \cdot (\pi_H - \pi_L)/(1-\pi_H)\). Sob \(\nu > 0\) (IC binding) e \(\pi_H > \pi_L\): \(1/u'(w_H) > 1/u'(w_L) \Rightarrow u'(w_H) < u'(w_L)\). Sob \(u\) côncava (\(u'\) decrescente): \(w_H > w_L\). Verificado.</p>
-      <p><strong>3. Armadilha.</strong> (a) é first-best. (c) absurda. (d) extremo errado.</p>
+      <p><strong>3. Armadilha.</strong> (a) é first-best (\(\nu = 0\)). (c) inverte sinal (incentivo invertido — apenas plausível sob \(\pi_H < \pi_L\), que viola hipótese single-crossing). (d) confunde "IC binding" (\(\nu > 0\)) com "salário fixo" — inconsistência interna: \(\nu > 0\) e \(\text{score} \ne 0\) forçam \(w_H \ne w_L\).</p>
       <p><strong>4. Extensão.</strong> A "fórmula informativa" de Holmström (1979) generaliza: salário ótimo depende de \(y\) <strong>apenas via</strong> score de likelihood \(\partial \ln f(y|a)/\partial a\). Sinais informativos sobre \(a\) entram; ruído puro não. Aplicação: relative performance evaluation (filtrar ruído comum entre agentes).</p>
       <p><strong>5. Peer-review.</strong> Calibre 🟡. Estrutura do second-best. Distratores plausíveis para alunos que confundem regimes.</p>
     </div>

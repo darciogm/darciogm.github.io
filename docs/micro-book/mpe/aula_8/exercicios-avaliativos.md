@@ -53,7 +53,7 @@ Considere as três situações abaixo, todas envolvendo informação assimétric
 - (i) Hidden action.
 - (ii) **Hidden type — vendedor conhece a qualidade do carro \(\theta\) *antes* da venda; comprador não; é o setup canônico de Akerlof (1970).** **[correta]**
 - (iii) Risco moral.
-- (iv) Sem assimetria.
+- (iv) Sem assimetria — inspeção visual e *test drive* pré-compra revelam tudo.
 
 **(d)** No setup de Akerlof com qualidade \(\theta \sim U[0, 1]\) e comprador valorizando \(\beta\theta\) com \(\beta = 1{,}3\), o equilíbrio competitivo \(p^*\) tal que \(p^* = \beta \cdot \mathbb{E}[\theta \mid \theta \le p^*]\) (sob distribuição uniforme em \([0, p^*]\)) é:
 
@@ -96,7 +96,7 @@ Mercado de carros usados com **dois tipos discretos** de qualidade: tipo \(L\) (
 - (i) Preço único \(\bar p = \beta(\lambda \theta_L + (1 - \lambda)\theta_H) = 1{,}3(1 \cdot \lambda + 4(1-\lambda)) = 1{,}3(4 - 3\lambda)\).
 - (ii) **\(p_L^{\text{sim}} = \beta\theta_L = 1{,}3\); \(p_H^{\text{sim}} = \beta\theta_H = 5{,}2\). Sob simetria, comprador identifica o tipo e paga valoração específica de cada um.** **[correta]**
 - (iii) \(p^L = \theta_L = 1\); \(p^H = \theta_H = 4\) (preço igual à reserva do vendedor).
-- (iv) Indeterminado sem mais hipóteses.
+- (iv) \(p_L^{\text{sim}} = \beta\theta_L = 1{,}3\); \(p_H^{\text{sim}} = \theta_H = 4\). **Erro:** aluno aplica \(\beta\) só ao tipo \(L\) e usa preço-igual-à-reserva para tipo \(H\) — mistura regimes (competitivo simétrico vs. monopsônico) sem internalizar que sob simetria + competição comprador paga \(\beta\theta\) para os dois.
 
 **(b)** Considere o **candidato a equilíbrio pooling** em que ambos os tipos transacionam ao mesmo preço \(\bar p\). Para que o equilíbrio pooling exista, \(\bar p\) precisa simultaneamente: (i) ser aceito pelo tipo \(H\) (\(\bar p \ge \theta_H = 4\)) e (ii) coincidir com a valoração esperada do comprador (\(\bar p = \beta(\lambda \theta_L + (1-\lambda) \theta_H)\)). A condição sobre \(\lambda\) para que pooling exista é:
 
@@ -153,7 +153,7 @@ Mercado de seguro competitivo com **2 tipos de risco**. Riqueza inicial \(W = 10
 - (i) \(c^H = c^L = 0\) (sem seguro).
 - (ii) **\(c^H = c^L = L = 56\) (cobertura completa); prêmios actuarialmente justos: \(p^H = \pi^H L = 28\); \(p^L = \pi^L L = 14\). Cada tipo atinge \(\sqrt{W - p^\theta}\) — utilidade certa sem risco residual.** **[correta]**
 - (iii) \(c^H = L; c^L = 0\) (apenas \(H\) compra seguro).
-- (iv) Indeterminado.
+- (iv) \(c^H = c^L = L = 56\); prêmios \(p^H = p^L = \bar\pi L = 0{,}375 \cdot 56 = 21\) (média ponderada). **Erro:** aluno calcula "prêmio único" via média mesmo sob simetria — esquece que sob simetria a seguradora identifica o tipo e cobra \(\pi^\theta L\) específico de cada um (sem cross-subsidy).
 
 **(b)** Sob informação **assimétrica** (seguradora não observa tipo), considere o candidato a equilíbrio **separador**: \((p^H_*, c^H_*)\) e \((p^L_*, c^L_*)\). Em equilíbrio competitivo separador:
 
@@ -231,8 +231,8 @@ Principal (P, neutro ao risco) contrata Agente (A, avesso ao risco, Bernoulli \(
 
 - (i) \(a_L\): \(0{,}25 \cdot 144 - 49 = -13\); \(a_H\): \(0{,}75 \cdot 144 - 144 = -36\). Principal não contrata em nenhum esforço (tecnicamente verdadeiro sob outside option \(\Pi^P_{\text{out}} = 0\); fora do escopo desta pergunta, que assume contratação como dado).
 - (ii) **\(a_H\): \(E\Pi(a_H) = 0{,}75 \cdot 144 + 0{,}25 \cdot 0 - 144 = 108 - 144 = -36\). \(a_L\): \(E\Pi(a_L) = 0{,}25 \cdot 144 + 0{,}75 \cdot 0 - 49 = 36 - 49 = -13\). Sob first-best, **\(a_L\) é preferido** porque o ganho de output (108 - 36 = 72) não compensa a diferença de salário (144 - 49 = 95).** **[correta]**
-- (iii) \(a_H\) sempre — alto esforço gera mais output.
-- (iv) Empate.
+- (iii) \(a_H\) sempre — alto esforço gera mais output esperado.
+- (iv) \(a_H\): aluno calcula \(\Delta\mathbb E[y] = 144(\pi_H - \pi_L) = 72 > \Delta c(a) = 5\) e conclui que o ganho cobre o custo do esforço — esquecendo que sob first-best o agente é compensado em **utilidade** (não em custo direto), e a comparação certa é \(\Delta\mathbb E[y] = 72\) vs. \(\Delta w^* = 95\). Erro de "ler o tradeoff em \(c(a)\) em vez de \(w^*\)".
 
 **(d)** A intuição econômica do resultado de (c) é:
 
@@ -254,7 +254,7 @@ Principal (P, neutro ao risco) contrata Agente (A, avesso ao risco, Bernoulli \(
 
 **2. Derivação.** IR sob \(a_H\): \(\sqrt{w^*_H} - c(a_H) = \bar U \Rightarrow \sqrt{w^*_H} = 7 + 5 = 12 \Rightarrow w^*_H = 144\). IR sob \(a_L\): \(\sqrt{w^*_L} = 7 + 0 = 7 \Rightarrow w^*_L = 49\). Lucros: \(E\Pi(a_H) = 108 - 144 = -36\); \(E\Pi(a_L) = 36 - 49 = -13\). Principal prefere \(a_L\) (menos negativo). **Sensibilidade a \(\bar U\):** \(\bar U = 5 \Rightarrow w^*_H = 100, w^*_L = 25\); \(E\Pi(a_H) = 8\); \(E\Pi(a_L) = 11\); ainda \(a_L\). Se \(\bar U = 0\) (limite): \(w^*_H = 25, w^*_L = 0\); \(E\Pi(a_H) = 83, E\Pi(a_L) = 36\); aí \(a_H\) preferido — alto esforço viabilizado por reservation baixa.
 
-**3. Armadilha.** Item (a)(i)/(iii): erros aritméticos clássicos com raiz quadrada. Item (b)(i): aluno acha que sem esforço o salário é zero — ignora IR. Item (c)(iii): aluno aplica regra "alto esforço = mais output \(\Rightarrow\) sempre escolher" sem checar viabilidade econômica. Item (d)(iii)/(iv): aluno generaliza incorretamente — não há regra universal, depende dos parâmetros. Item (e)(iii): aluno acha que mudança em \(\bar U\) tem efeito imediato e binário; na verdade, há threshold contínuo.
+**3. Armadilha.** Item (a)(i)/(iii): erros aritméticos clássicos com raiz quadrada (mistura passos de IR sem isolar \(\sqrt{w^*}\)). Item (b)(i): aluno acha que sem esforço o salário é zero — ignora IR. Item (c)(iii): aluno aplica regra "alto esforço = mais output \(\Rightarrow\) sempre escolher" sem checar viabilidade econômica. Item (c)(iv): aluno confunde a métrica do tradeoff — compara \(\Delta\mathbb E[y]\) com \(\Delta c(a)\) (custo do esforço) em vez de \(\Delta w^*\) (salário corrigido pela Bernoulli). Item (d)(iii)/(iv): aluno generaliza incorretamente — não há regra universal, depende dos parâmetros. Item (e)(iii): aluno acha que mudança em \(\bar U\) tem efeito imediato e binário; na verdade, há threshold contínuo.
 
 **4. Extensão.** First-best é o **benchmark** contra o qual second-best (Exercício 5) será comparado. Sob neutralidade de risco do agente (\(u\) linear), first-best é facilmente alcançável mesmo com ação não-observável via "contrato franchise" (agente paga taxa fixa, fica residual claimant) — o problema do risco moral **desaparece**. **No Brasil:** consultorias de gestão (Big 4 em projetos com performance bonus) operam em regime próximo ao first-best quando esforço é observável via supervisão de cliente; quando não, viram principal-agente clássico. **Aula 9** introduz sinalização do agente — mecanismo *descendente* de revelação que pode alcançar first-best em alguns regimes.
 
@@ -288,15 +288,15 @@ Sob hipótese padrão (P induz \(a_H\), agente avesso, IC e IR ambas binding), o
 
 - (i) IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); IC: \(\sqrt{w_H} - \sqrt{w_L} = 4\). **Erro:** ignora o coeficiente \((\pi_H - \pi_L) = 0{,}4\) na IC binding, dividindo por 1 em vez de 0{,}4 (ou seja, esquece que IC vem ponderada pela diferença de probabilidades).
 - (ii) **IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); IC: \(\sqrt{w_H} - \sqrt{w_L} = 10\).** Substituindo \(c(a_H) = 4, \bar U = 4\) na IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} - 4 = 4 \Rightarrow 0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\); na IC: \((0{,}7 - 0{,}3)[\sqrt{w_H} - \sqrt{w_L}] = 4 - 0 \Rightarrow 0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\). **[correta]**
-- (iii) Sistema diferente: IR e IC simultaneamente impossíveis sob esses parâmetros.
-- (iv) Sistema é não-linear (raízes quadradas) — exigiria método numérico.
+- (iii) IR: \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 4\); IC: \(\sqrt{w_H} - \sqrt{w_L} = 10\). **Erro:** esquece de somar \(c(a_H) = 4\) ao \(\bar U = 4\) na IR (escreve \(=\bar U\) em vez de \(=\bar U + c(a_H)\)).
+- (iv) IR: \(0{,}7 w_H + 0{,}3 w_L = 8\); IC: \(0{,}4(w_H - w_L) = 4\). **Erro:** aluno ignora a Bernoulli \(u(w) = \sqrt w\) e linealiza incorretamente nas restrições (perde a transformação para \(\sqrt w\)).
 
 **(c)** Resolvendo o sistema de (b): das equações IR e IC binding,
 
 - (i) \(\sqrt{w_H} = 11, \sqrt{w_L} = 1; w_H = 121, w_L = 1\): de IC, \(\sqrt{w_H} = 10 + \sqrt{w_L}\); substituindo em IR: \(0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \Rightarrow 7 + \sqrt{w_L} = 8 \Rightarrow \sqrt{w_L} = 1\); logo \(\sqrt{w_H} = 11\). [correta]
 - (ii) \(\sqrt{w_H} = \sqrt{w_L} = 8\) (salário fixo).
-- (iii) \(w_H = 100, w_L = 0\).
-- (iv) Sistema sem solução.
+- (iii) \(\sqrt{w_H} = 8, \sqrt{w_L} = -2; w_H = 64, w_L = 4\). **Erro:** aluno resolve substituindo \(\sqrt{w_L} = \sqrt{w_H} - 10\) em vez de \(\sqrt{w_H} = 10 + \sqrt{w_L}\); chega em \(\sqrt{w_L}\) negativo e ignora o sinal, elevando ao quadrado e marcando \(w_L = 4\). Inviável (raiz não é negativa).
+- (iv) \(\sqrt{w_H} = 10, \sqrt{w_L} = 0; w_H = 100, w_L = 0\). **Erro:** aluno usa apenas a IC binding sem resolver o sistema completo — assume \(\sqrt{w_L} = 0\) (canto inferior) e tira \(\sqrt{w_H} = 10\) direto, ignorando a IR.
 
 **(d)** Salário esperado sob second-best: \(\mathbb{E}[w] = \pi_H w_H + (1-\pi_H) w_L\):
 
@@ -325,11 +325,11 @@ Sob hipótese padrão (P induz \(a_H\), agente avesso, IC e IR ambas binding), o
 
 **2. Derivação.** Sistema linear em \((\sqrt{w_H}, \sqrt{w_L})\): de IC binding \(0{,}4(\sqrt{w_H} - \sqrt{w_L}) = 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} = 10\). De IR binding \(0{,}7\sqrt{w_H} + 0{,}3\sqrt{w_L} = 8\). Substituindo a 1ª na 2ª: \(0{,}7(10 + \sqrt{w_L}) + 0{,}3\sqrt{w_L} = 8 \Rightarrow 7 + \sqrt{w_L} = 8 \Rightarrow \sqrt{w_L} = 1, w_L = 1\); \(\sqrt{w_H} = 11, w_H = 121\). \(\mathbb{E}[w] = 0{,}7(121) + 0{,}3(1) = 84{,}7 + 0{,}3 = 85\). Comparação com first-best (\(w^* = 64\)): prêmio = 21. **Equivalência neutra:** sob \(u(w) = w\) linear, a CPO em \(w\) substitui \(1/u'(w) = \mu + \nu \cdot \text{score}\) por constante = constante; resolve-se com \(\nu = 0\), IC não binding — Principal pode pagar fixo. Equivalentemente: vende output ao agente, agente residual claimant escolhe \(a_H\) endogenamente.
 
-**3. Armadilha.** Item (a)(iii): aluno acha que agente "trabalha duro por padrão" — falso, ação não-observável \(\Rightarrow\) agente desvia. Item (c)(ii): aluno aplica solução de first-best (salário fixo). Item (d)(i): aluno confunde first-best com second-best em valor médio. Item (e)(i): aluno usa narrativa moralista — "custo de mentira". Item (f)(i): aluno generaliza second-best avesso para neutro sem checar.
+**3. Armadilha.** Item (a)(iii): aluno acha que agente "trabalha duro por padrão" — falso, ação não-observável \(\Rightarrow\) agente desvia. Item (b)(i): esquece coeficiente \((\pi_H - \pi_L) = 0{,}4\) na IC, divide por 1; (b)(iii): esquece somar \(c(a_H)\) ao \(\bar U\) na IR; (b)(iv): linealiza Bernoulli (perde \(\sqrt{w}\)). Item (c)(ii): aplica solução de first-best (salário fixo); (c)(iii): inverte substituição da IC (\(\sqrt{w_L}\) negativo, ignora sinal); (c)(iv): força canto \(\sqrt{w_L} = 0\), ignora IR. Item (d)(i): confunde first-best com second-best em valor médio. Item (e)(i): narrativa moralista ("custo de mentira") sem ferramental. Item (f)(i): generaliza second-best avesso para neutro sem checar.
 
 **4. Extensão.** **Fórmula informativa de Holmström (1979):** em modelo contínuo, salário ótimo \(w(y)\) depende de \(y\) **apenas via** o score de likelihood \(\partial \ln f(y\mid a)/\partial a\). Sinais informativos sobre \(a\) entram no contrato; sinais não-informativos não. **Aplicação:** **Holmström-Milgrom (1987, *Econometrica* 55(2): 303–328, DOI [10.2307/1913238](https://doi.org/10.2307/1913238))** estendem para domínio contínuo + relative performance evaluation (filtrar ruído comum entre agentes via comparação com peers). **Stock options para CEO** são o exemplo canônico: variabilidade do salário em função do preço da ação cria incentivo; "claw-back" e "RSU" são refinamentos para alinhar leque de ações. **No Brasil:** **Bolsa Família** com condicionalidade de frequência escolar (\(\ge 85\%\)) é um *contrato condicional* implementando IC para "esforço educacional" — Glewwe-Olinto (2004, World Bank) documenta efeitos. **Aula 9 (sinalização)** lida com o caso *dual*: agente *informado* toma iniciativa via sinal — Spence é o complemento natural do principal-agente.
 
-**5. Peer-review.** Calibre 🔴. Item (b) é "sub-item de redundância" intencional — força aluno a verificar a derivação (não cair em distrator (iii)/(iv)). Item (c) é cálculo do sistema 2x2 — limpo com \(\sqrt{w}\). Item (d) calcula prêmio de risco moral. Item (e) testa interpretação. Item (f) introduz equivalência neutra como fechamento conceitual. **Tradeoff de tempo:** ~22 min — no topo do alvo para 🔴 (justificado: é o ferramental central). **Risco residual:** moderado — aluno com pressa pode não verificar IR e IC ambas binding antes de resolver; o gabarito explicita que isso é hipótese padrão (otimal sob avessão estrita do agente). **Decisão pedagógica explícita:** parâmetros escolhidos para que sistema 2x2 entregue solução de números inteiros (\(w_L = 1, w_H = 121\)) — visualização limpa do prêmio de risco moral (21).
+**5. Peer-review.** Calibre 🔴. Item (b) tem 3 distratores que capturam erros distintos (esquecer coeficiente \((\pi_H - \pi_L) = 0{,}4\) na IC; esquecer somar \(c(a_H)\) ao \(\bar U\) na IR; linearizar Bernoulli). Item (c) tem 2 distratores numéricos plausíveis (substituição com sinal trocado; canto \(\sqrt{w_L}=0\) ignorando IR). Item (d) calcula prêmio de risco moral; (e) interpretação; (f) equivalência neutra como fechamento conceitual. **Tradeoff de tempo:** ~22 min — no topo do alvo para 🔴 (justificado: é o ferramental central). **Risco residual:** moderado — aluno deve verificar IR e IC ambas binding antes de resolver; o gabarito explicita que isso é hipótese padrão (otimal sob avessão estrita do agente). **Decisão pedagógica explícita:** parâmetros escolhidos para que sistema 2x2 entregue solução de números inteiros (\(w_L = 1, w_H = 121\)) — visualização limpa do prêmio de risco moral (21). **Refinamento auditado (2026-05-09):** distratores (b)(iii)/(iv) e (c)(iii)/(iv) reescritos para capturar erros algébricos diagnósticos — antes eram triviais ("Sistema diferente", "Sistema sem solução"); agora cada um marca uma confusão pedagogicamente relevante.
 
 ---
 
@@ -343,10 +343,10 @@ Considere uma economia simplificada de seguros de saúde com **2 tipos** de risc
 
 **(a)** **Pooling regulado** com cobertura completa (\(c = L = 50\)) ao prêmio único \(\bar p = \bar\pi \cdot L = 0{,}18 \cdot 50 = 9\) (médio actuarialmente justo agregado). Sob esse regime, qual é a **utilidade esperada** de cada tipo?
 
-- (i) \(EU^H = EU^L = \sqrt{91}\) (ambos atingem mesma utilidade).
-- (ii) **\(EU^H = \sqrt{100 - 9} = \sqrt{91} \approx 9{,}54\) (cobertura completa, sem sinistro residual). Mesmo valor para tipo \(L\). \(EU^L = \sqrt{91}\). **Ambos têm consumo certo \(W - \bar p = 91\) — essa é a propriedade do pooling com cobertura completa: utilidade pessoal coincide para os dois tipos.** **[correta]**
-- (iii) \(EU^H \neq EU^L\) (asimetria pelo prêmio).
-- (iv) Indeterminado.
+- (i) \(EU^H \neq EU^L\) — assimetria pelo prêmio, tipo \(H\) "paga mais" no resultado de utilidade.
+- (ii) **\(EU^H = \sqrt{100 - 9} = \sqrt{91} \approx 9{,}54\) (cobertura completa, sem sinistro residual). Mesmo valor para tipo \(L\). \(EU^L = \sqrt{91}\). **Ambos têm consumo certo \(W - \bar p = 91\) — propriedade do pooling com cobertura completa: utilidade pessoal coincide para os dois tipos.** **[correta]**
+- (iii) \(EU^H = EU^L = 91\) — aluno reporta o valor do consumo certo (riqueza líquida) em vez da utilidade Bernoulli; esquece de aplicar \(\sqrt{\cdot}\).
+- (iv) \(EU^H = \pi^H \sqrt{50} + (1-\pi^H)\sqrt{91} \approx 7{,}30\); \(EU^L = \pi^L \sqrt{50} + (1-\pi^L)\sqrt{91} \approx 9{,}13\). **Erro:** aluno ignora que cobertura é completa (\(c = L = 50\)) e calcula utilidade esperada como se houvesse risco residual; aplica \(\pi^\theta\) sobre estado-perda \(W - \bar p - L + c\) em vez de cancelar \(L = c\).
 
 **(b)** Compare com **first-best simétrico** (cada tipo paga seu prêmio justo, cobertura completa): \(EU^{H,FB} = \sqrt{100 - 25} = \sqrt{75}\); \(EU^{L,FB} = \sqrt{100 - 5} = \sqrt{95}\). **Quem ganha e quem perde** com o pooling regulado em comparação ao first-best?
 
@@ -389,7 +389,7 @@ Considere uma economia simplificada de seguros de saúde com **2 tipos** de risc
 
 **2. Derivação.** **Pooling regulado:** \(\bar\pi = 0{,}2 \cdot 0{,}5 + 0{,}8 \cdot 0{,}1 = 0{,}18\); \(\bar p = \bar\pi \cdot 50 = 9\); \(EU^H = EU^L = \sqrt{91} \approx 9{,}54\). **First-best simétrico:** \(p^H = 25 \Rightarrow EU^H = \sqrt{75} \approx 8{,}66\); \(p^L = 5 \Rightarrow EU^L = \sqrt{95} \approx 9{,}75\). **Comparação:** \(\sqrt{91} - \sqrt{75} = 9{,}54 - 8{,}66 = 0{,}88\) (ganho \(H\)); \(\sqrt{95} - \sqrt{91} = 9{,}75 - 9{,}54 = 0{,}21\) (perda \(L\)). Cross-subsidy: tipo \(L\) paga 4 a mais que justo; tipo \(H\) paga 16 a menos que justo. Mecanismo viabilizado via mandato.
 
-**3. Armadilha.** Item (a)(iii): aluno esquece que cobertura completa elimina risco — utilidade fica determinística para todos. Item (b)(iv): aluno inverte direção do cross-subsidy. Item (c)(i): aluno não internalizou inexistência R-S. Item (d)(iii): aluno não vê tradeoff distributivo do mandato. Item (e)(iv): confusão entre Akerlof (qualidade) e R-S (seguro). Item (f)(iv): negação do empírico — falsa.
+**3. Armadilha.** Item (a)(i): aluno acha que prêmio único gera utilidades distintas — confusão "quem paga mais subjetivamente" com "quem tem utilidade Bernoulli mais baixa". Item (a)(iii): aluno reporta o consumo certo \(W - \bar p = 91\) como "utilidade", sem aplicar \(\sqrt{\cdot}\). Item (a)(iv): aluno esquece que cobertura completa zera risco residual — calcula \(EU\) com \(\pi^\theta\) sobre estado-perda apesar de \(c = L\). Item (b)(iv): aluno inverte direção do cross-subsidy. Item (c)(i): aluno não internalizou inexistência R-S. Item (d)(iii): aluno não vê tradeoff distributivo do mandato. Item (e)(iv): confusão entre Akerlof (qualidade) e R-S (seguro). Item (f)(iv): negação do empírico — falsa.
 
 **4. Extensão.** Aplicações comparativas: **Suíça** (Lamal 1996) usa modelo similar a ACA com mandato + subsídio. **Singapura** (CPF 1955+) usa modelo médico parcialmente individual. **Brasil tradicional pré-1998:** mercado privado de saúde tinha unraveling parcial em determinadas faixas — Lei 9.656 foi resposta. **Conexão com Aula 9:** sinalização (Spence) é mecanismo *descentralizado* — agente *informado* toma iniciativa para revelar tipo (e.g., compra plano premium para sinalizar baixo risco). Em saúde privada brasileira, há sinalização via "plano executivo com check-up" (revela proxy de "se cuida") — mecanismo de mercado parcial além da regulação. **Empírico-econométrico:** Hackmann-Kolstad-Kowalski (2015) é referência canônica de teste empírico de R-S em mercado real; Cutler-Reber (1998, *QJE* 113(2): 433–466) é antecedente em mercado plano de Harvard. **Aula 9** introduz *signaling games* formais com refinamento Cho-Kreps.
 
@@ -409,10 +409,10 @@ Considere uma economia simplificada de seguros de saúde com **2 tipos** de risc
 | \(\bar p\) | preço pooling |
 | \(L\) | dano (loss) sob sinistro |
 | \(W\) | riqueza inicial |
-| \(c\) | cobertura do contrato de seguro |
+| \(c\) (Ex 3, Ex 6) | **cobertura** do contrato de seguro (símbolo reutilizado de N&S 12e §18.5) |
 | \(p\) | prêmio do contrato de seguro |
 | \(u(W) = \sqrt{W}\) | Bernoulli côncava do agente avesso |
-| \(c(a)\) | custo do esforço |
+| \(c(a)\) (Ex 4, Ex 5) | **custo do esforço** (Holmström) — distinto de \(c\) cobertura; ver nota notacional no Ex 4 |
 | \(\bar U\) | utilidade reservada do agente (IR) |
 | \(w_H, w_L\) | salário sob output alto / baixo |
 | \(\mu\) | multiplicador de IR |

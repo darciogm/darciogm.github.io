@@ -560,5 +560,6 @@ Após a aula, conferir em `admin.html`:
   - Abdulkadiroğlu-Pathak-Roth (2005) — *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509).
   - Roth-Sotomayor (1990) é livro: *Two-Sided Matching*, Cambridge UP — sem DOI canônico.
   - Mailath (1987) — *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560).
+  - Stiglitz (1975) — *American Economic Review* 65(3): 283–300, [JSTOR 1804834](https://www.jstor.org/stable/1804834). (AER pré-2001 não tem DOI 10.1257; JSTOR é canônico.)
   - Hardin (1968), Lange-Topel (2006), Shapley-Shubik (1972), Becker (1973) — citados como referência cultural; DOIs não são prioritários para esta aula.
 - ❌ **Não fechar com "isso resolve coordenação social".** Fechar com **encerramento do curso + AF**.

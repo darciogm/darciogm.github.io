@@ -665,9 +665,9 @@ Externalidades + Bens Públicos — segunda falha do EG
 :::
 
 ::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
-**Quiz pós-aula 7** + **Exercícios avaliativos 7** abrem qui 04/06 · fecham qua 10/06 às 18h.
+**Quiz pós-aula 7** + **Exercícios avaliativos 7** abrem qui 04/06 · fecham qua 02/07 às 18h.
 
-**Gabarito dos avaliativos:** qui 11/06 · 00:00.
+**Gabarito dos avaliativos:** qui 03/07 · 00:00.
 
 **Pré-monitoria 4** (Aulas 6–7) abre sáb 30/05 · fecha sex 12/06.
 :::
