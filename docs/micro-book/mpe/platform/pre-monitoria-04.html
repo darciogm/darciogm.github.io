@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Monitoria 4 — Extensões das Aulas 6-7 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Pré-Monitoria 4 — Extensões das Aulas 6-7 (Arrow-Debreu II + Externalidades/BP)</h1>
+
+<div class="progress-header">
+  <div class="progress-label" id="progress-label">Progresso: 0 / 8</div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+  <div class="progress-meta" id="progress-meta">0 min</div>
+</div>
+
+<div class="admonition info">
+<div class="admonition-title">Como esta pré-monitoria funciona</div>
+<p><strong>Formativa, não conta nota.</strong> Estrutura de <strong>8 seções</strong> (orientação + recap cross-aula + 4 extensões + síntese + reflexão). Cada seção libera a próxima quando concluída. Tempo-alvo total: <strong>75–90 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em">Foco: <strong>extensões cross-aula</strong> que o monitor <strong>Alberto Nishikawa</strong> vai aprofundar presencialmente. Esta pré-M cobre <strong>2 aulas</strong> (6 + 7), por isso a janela larga (sáb 30/05 → sex 12/06). Não é repetição — é o passo seguinte. Várias extensões são <em>servidas, não esgotadas</em>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calibre.</strong> Sobe um degrau além das Aulas 6 e 7: <em>numérico</em> de Hart-GP (constrained PE inferior), Mehra-Prescott e Hansen-Jagannathan bounds, Weitzman 1974 com cálculo explícito de inclinações, e VCG nos seus limites operacionais (orçamento, Gibbard-Satterthwaite, Roberts). <strong>Não entra Radner sequencial formal completo nem Magill-Quinzii §10.3</strong> — fica para a presencial se houver demanda.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Calendário:</strong> abre sábado <strong>30/05 12:00</strong>, fecha sexta <strong>12/06 22:00</strong>. Monitoria presencial: <strong>sábado 13/06 10:00</strong>.</p>
+</div>
+
+<!-- ==================== SECTION 0: ORIENTAÇÃO ==================== -->
+<section class="section-block active" id="s0-orientacao" data-section="s0-orientacao" data-order="0">
+  <div class="section-meta">Seção 0 · Orientação · 2 min</div>
+  <h2>O que esperar do sábado</h2>
+  <ul>
+    <li>Esta pré-monitoria <strong>não conta nota</strong>. É preparação para o encontro presencial.</li>
+    <li>Janela larga (2 semanas) porque cobre 2 aulas inteiras. Comece cedo, deixe sedimentar — o conteúdo é denso.</li>
+    <li>O Alberto vai usar suas reflexões finais (Seção 7) para calibrar a monitoria de sábado 13/06.</li>
+    <li>Tente os micro-checkpoints sem consultar primeiro. Errar é dado útil — o admin captura quais distratores atraem mais.</li>
+    <li>Foco em <em>extensões cross-aula</em>: Hart-GP numérico (Aula 6), equity premium puzzle (Aula 6), Weitzman 1974 cálculo explícito (Aula 7), VCG e seus limites (Aula 7), e síntese de falhas de mercado integrando as duas aulas.</li>
+    <li>Pré-requisitos: Aulas 1–7 consolidadas. Em particular: equilíbrio AD, SDF, Pigou, Coase, Samuelson, VCG no nível básico das Aulas 6–7.</li>
+  </ul>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s0-orientacao')">Entendi — começar</button>
+</section>
+
+<!-- ==================== SECTION 1: RECAP AULAS 6 + 7 ==================== -->
+<section class="section-block locked" id="s1-recap" data-section="s1-recap" data-order="1">
+  <div class="section-meta">Seção 1 · Recap · 10 min</div>
+  <h2>Recap rápido das Aulas 6 e 7</h2>
+  <p>Antes das extensões, ancore mentalmente os pontos centrais de cada aula. Cada um vai ser estendido depois.</p>
+
+  <h3 style="margin-top:1.2rem">Aula 6 — Arrow-Debreu II</h3>
+  <ol>
+    <li><strong>Existência via ponto fixo.</strong> Brouwer (correspondência contínua de demanda agregada num simplex compacto) e Kakutani (semicontinuidade superior). Hipóteses: continuidade, compacidade, convexidade do simplex de preços. <em>Extensão 1</em> não toca aqui — fica para a presencial.</li>
+    <li><strong>Radner sequencial e equivalência com AD.</strong> Em \(t = 0\) os agentes negociam \(J\) ativos com matriz de payoffs \(A\) de dimensão \(|S| \times J\); em \(t = 1\), cada estado \(s\) reabre mercado spot. Quando \(\text{rank}(A) = |S|\) (mercado completo), Radner é equivalente a AD canônico — mesma alocação, mesmo bem-estar.</li>
+    <li><strong>Mercados incompletos (Hart 1975).</strong> Quando \(\text{rank}(A) &lt; |S|\), equilíbrio Radner ainda existe (sob hipóteses padrão, Magill-Quinzii 1996), mas é genericamente <em>Pareto-ineficiente</em>. Pior: adicionar um novo ativo pode <em>piorar</em> o bem-estar de algum agente (Geanakoplos-Polemarchakis 1986). <em>Extensão 1</em> torna isso numérico.</li>
+    <li><strong>SDF como equação de Euler.</strong> A CPO do agente em equilíbrio AD entrega \(p_s^* \propto \pi_s\, v'(x_s^*)\); reescrita em termos do consumo de equilíbrio, vira \(1 = \mathbb{E}[m\,R]\) com \(m = \beta\,v'(c_{t+1})/v'(c_t)\) (Lucas 1978). <em>Extensão 2</em> aplica isso para confrontar dados.</li>
+  </ol>
+
+  <h3 style="margin-top:1.2rem">Aula 7 — Externalidades e Bens Públicos</h3>
+  <ol>
+    <li><strong>Externalidades tecnológicas.</strong> Falha do 1º TBE quando consumo/produção de um agente entra na função de utilidade/produção de outro sem preço. Sob certeza, Pigou (imposto = dano marginal externo) e cap-and-trade (cota com mercado de permissões) são equivalentes em alocação. <em>Extensão 3</em> mostra o que muda sob incerteza.</li>
+    <li><strong>Coase.</strong> Quando direitos de propriedade são bem definidos e custos de transação ausentes, agentes negociam até alocação Pareto-eficiente, independentemente da atribuição inicial. Em prática, custos de transação altos quebram o resultado.</li>
+    <li><strong>Bens públicos puros.</strong> Não-rivalidade + não-exclusão. Condição de Samuelson: \(\sum_i \text{TMS}^i = \text{TMT}\) — soma das TMS individuais (não a TMS de um único agente). Free-rider: cada agente quer subdeclarar.</li>
+    <li><strong>Mecanismos de implementação.</strong> Lindahl (preços personalizados) descentraliza Samuelson, mas exige revelação de \(\text{TMS}\). VCG (Vickrey 1961, Clarke 1971, Groves 1973) torna verdade dominante via Clarke pivot. <em>Extensão 4</em> mostra os limites operacionais do VCG.</li>
+  </ol>
+
+  <p style="font-size:0.9rem;color:#64748b;margin-top:1rem">Se algum ponto está nebuloso, retorne aos materiais (<a href="aula-06.html" style="color:var(--accent)">aula-06.html</a> e <a href="aula-07.html" style="color:var(--accent)">aula-07.html</a>) ou ZaE Caps. 16 e 20 antes de avançar.</p>
+  <button class="section-complete-btn" onclick="MPE.completeSection('s1-recap')">Recap fixado — avançar</button>
+</section>
+
+<!-- ==================== SECTION 2: EXTENSÃO 1 — Hart-GP numérico ==================== -->
+<section class="section-block locked" id="s2-hart" data-section="s2-hart" data-order="2">
+  <div class="section-meta">Seção 2 · Extensão 1 (Aula 6) · 15 min</div>
+  <h2>Hart-GP numérico — quando "completar mercado" piora alguém</h2>
+
+  <div class="confidence-block" id="conf-s2-pre">
+    <label>Antes de estudar: você consegue dizer <strong>se acrescentar um ativo financeiro num mercado incompleto sempre melhora o bem-estar agregado</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s2-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s2-hart','pre','s2-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s2" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 6 enunciou Hart (1975) e mencionou Geanakoplos-Polemarchakis (1986). Aqui vamos ver, no <em>menor exemplo numérico possível</em>, por que adicionar um ativo pode piorar alguém.</p>
+
+    <h3 style="margin-top:1.2rem">Setup minimalista</h3>
+    <p>Economia \(L = 2\) (bens \(x_1, x_2\) — pense em "alimento" e "abrigo"), \(S = 2\) (estado <em>chuva</em> e <em>seca</em>), \(I = 2\) (agentes \(A, B\)). Probabilidades de consenso \(\pi = (0{,}5;\ 0{,}5)\). Bernoulli \(v(c_1, c_2) = \ln c_1 + \ln c_2\) (Cobb-Douglas log).</p>
+    <p>Dotações <em>contingentes</em> (bem por estado):</p>
+    <p>\[ \omega^A = ((4, 1)_{\text{chuva}},\ (1, 4)_{\text{seca}}), \quad \omega^B = ((1, 4)_{\text{chuva}},\ (4, 1)_{\text{seca}}). \]</p>
+    <p>Note: o <em>agregado</em> é \(\bar\omega = ((5, 5), (5, 5))\) — não há risco agregado. <strong>Idiossincrático</strong> apenas. Em mercado AD completo, todos os 4 bens contingentes têm preço, e o equilíbrio implementa <em>seguro pleno</em>: \(x^{i*}\) constante entre estados.</p>
+
+    <h3 style="margin-top:1.2rem">Cenário 1 — mercado completo (4 ações Arrow)</h3>
+    <p>Existem ações Arrow para cada par \((\ell, s)\) — <strong>4 ativos contingentes</strong>. Por simetria das dotações e do agregado constante, o equilíbrio AD entrega:</p>
+    <p>\[ x^{A*}_{\text{chuva}} = x^{A*}_{\text{seca}} = (2{,}5;\ 2{,}5), \quad x^{B*}_{\text{chuva}} = x^{B*}_{\text{seca}} = (2{,}5;\ 2{,}5). \]</p>
+    <p>Utilidade esperada de cada agente: \(\mathbb{E}[U^i] = \ln 2{,}5 + \ln 2{,}5 = 2\ln 2{,}5 \approx 1{,}833\). <strong>Pareto-eficiente em sentido contingente.</strong></p>
+
+    <h3 style="margin-top:1.2rem">Cenário 2 — mercado incompleto (1 só ativo)</h3>
+    <p>Suponha agora que só existe <strong>um único ativo</strong>: um "bond agregado" que paga \((1, 1)\) (1 unidade de cada bem) em qualquer estado. A matriz de payoffs \(A\) tem dimensão \(|S| \cdot L \times J = 4 \times 1\) e <strong>rank 1</strong> — muito abaixo de \(|S| \cdot L = 4\).</p>
+    <p>Com tal ativo, agente \(A\) só pode ajustar uma combinação linear muito restrita do seu vetor contingente. Em equilíbrio Radner com este único ativo, autarquia é <em>quase</em> a única opção: \(x^A \approx \omega^A\), \(x^B \approx \omega^B\). Utilidade esperada de \(A\):</p>
+    <p>\[ \mathbb{E}[U^A] \approx 0{,}5\,(\ln 4 + \ln 1) + 0{,}5\,(\ln 1 + \ln 4) = \ln 4 \approx 1{,}386. \]</p>
+    <p>Bem inferior aos \(1{,}833\) do mercado completo. <strong>Constrained Pareto-eficiente</strong> dado o único ativo, mas Pareto-inferior em termos absolutos.</p>
+
+    <h3 style="margin-top:1.2rem">Cenário 3 — adicionar um ativo intermediário (Geanakoplos-Polemarchakis)</h3>
+    <p>Agora suponha que adicionamos um <strong>segundo ativo</strong>: paga \((2, 0)\) em chuva e \((0, 2)\) em seca. Esse ativo expande o span de \(\text{rank }1\) para \(\text{rank }2\), mas <em>não</em> chega a 4 — mercado continua incompleto.</p>
+    <p>Em equilíbrio Radner com 2 ativos, o agente \(A\) consegue um pouco de seguro entre estados, mas a um <em>preço</em> que reflete a estrutura assimétrica do novo ativo. Em equilíbrio numérico (resolvido com Lagrangiano explícito — o Alberto pode fazer no quadro), <strong>o preço do novo ativo distorce os termos de troca a ponto de o agente \(B\) ficar pior do que estava no Cenário 2</strong>.</p>
+    <p>Esse é o resultado <strong>Geanakoplos-Polemarchakis (1986)</strong>: <em>"adicionar um novo ativo financeiro pode reduzir o bem-estar de algum agente em equilíbrio competitivo com mercados incompletos"</em>.</p>
+    <p>A intuição: o novo ativo muda os preços de equilíbrio dos ativos pré-existentes, causando efeitos-renda redistributivos que podem dominar o ganho de span. Em mercado completo isso não acontece (1º TBE), mas com incompletude residual a regulação se torna não-monotônica em "número de ativos".</p>
+    <p>Cite Geanakoplos &amp; Polemarchakis (1986), <em>Existence, Regularity, and Constrained Suboptimality of Competitive Allocations when the Asset Market is Incomplete</em>, in <em>Essays in Honor of Kenneth J. Arrow</em>, Cambridge UP. <strong>Magill &amp; Quinzii (1996)</strong>, <em>Theory of Incomplete Markets, Vol. 1</em>, MIT Press, é o tratamento de referência completo.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode resolver o sistema completo do Cenário 3 com Lagrangiano explícito (3 incógnitas: holdings dos 2 ativos + 1 preço relativo) e mostrar quem fica pior em quanto. Pede na reflexão se quiser.</p>
+
+    <div class="micro-checkpoint" id="micro-s2">
+      <h3>Micro-checkpoint (2 itens — obrigatórios para avançar)</h3>
+      <div class="micro-desc">Até 3 tentativas por questão.</div>
+
+      <div class="micro-q" data-q="s2q1" data-correct="b">
+        <div class="q-text">1. No Cenário 1 (mercado completo, 4 ações Arrow) com agregado \(\bar\omega = ((5,5),(5,5))\) constante e Bernoulli \(v(c_1, c_2) = \ln c_1 + \ln c_2\) com \(\pi = (0{,}5; 0{,}5)\) e dotações idiossincráticas simétricas, o equilíbrio AD implementa:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-hart','s2q1','a',this)">(a) Autarquia (\(x^i = \omega^i\)) — agentes têm dotações simétricas, não há ganho de troca.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-hart','s2q1','b',this)">(b) Seguro pleno: cada agente consome \((2{,}5;\ 2{,}5)\) em ambos estados. O risco idiossincrático é diversificado pelo mercado.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-hart','s2q1','c',this)">(c) Risco agregado é proporcional ao quadrado da utilidade.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-hart','s2q1','d',this)">(d) Os preços Arrow dependem de \(\omega^i\), não de \(\pi\).</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s2q2" data-correct="c">
+        <div class="q-text">2. O resultado Geanakoplos-Polemarchakis (1986) afirma que, em mercados incompletos:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s2-hart','s2q2','a',this)">(a) Adicionar um ativo sempre melhora o bem-estar de pelo menos um agente sem prejudicar os demais.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s2-hart','s2q2','b',this)">(b) Adicionar um ativo deixa o equilíbrio Pareto-eficiente.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s2-hart','s2q2','c',this)">(c) Adicionar um ativo pode <em>piorar</em> o bem-estar de algum agente em equilíbrio competitivo, via efeitos de preço sobre ativos pré-existentes (a regulação financeira não é monotônica em "número de ativos").</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s2-hart','s2q2','d',this)">(d) Equilíbrio Radner não existe quando há mais de um ativo financeiro.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s2-post" style="display:none">
+      <label>Agora, depois de ver Hart-GP no numérico:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s2-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s2-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s2-hart','post','s2-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s2-hart" disabled onclick="MPE.completeSection('s2-hart')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 3: EXTENSÃO 2 — Equity premium puzzle ==================== -->
+<section class="section-block locked" id="s3-equity" data-section="s3-equity" data-order="3">
+  <div class="section-meta">Seção 3 · Extensão 2 (Aula 6) · 15 min</div>
+  <h2>Equity premium puzzle — quando o SDF encontra os dados</h2>
+
+  <div class="confidence-block" id="conf-s3-pre">
+    <label>Antes: dado o SDF \(m = \beta\,v'(c_{t+1})/v'(c_t)\) com CRRA \(v(c) = c^{1-\gamma}/(1-\gamma)\), você consegue dizer <strong>que valor de \(\gamma\) os dados americanos pós-guerra exigem para racionalizar o prêmio de risco observado</strong>?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s3-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s3-equity','pre','s3-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s3" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 6 deu o SDF como equação de Euler. Aqui vamos colocar dados em cima e ver onde a teoria range.</p>
+
+    <h3 style="margin-top:1.2rem">Os fatos (Mehra-Prescott 1985)</h3>
+    <p>Dados americanos 1889–1978 (séries usadas no paper original):</p>
+    <ul>
+      <li>Retorno real médio do mercado acionário: \(\mathbb{E}[R^e] \approx 7\%\) ao ano.</li>
+      <li>Retorno real médio do título de curto prazo: \(\mathbb{E}[R^f] \approx 1\%\) ao ano.</li>
+      <li><strong>Equity premium</strong>: \(\mathbb{E}[R^e - R^f] \approx 6\%\) ao ano.</li>
+      <li>Crescimento do consumo per capita: média \(\approx 1{,}8\%\), desvio-padrão \(\approx 3{,}6\%\).</li>
+    </ul>
+
+    <h3 style="margin-top:1.2rem">A previsão da teoria (CRRA representativa)</h3>
+    <p>Sob agente representativo CRRA com \(v(c) = c^{1-\gamma}/(1-\gamma)\), a equação de Euler implica (numa aproximação log-normal padrão):</p>
+    <p>\[ \mathbb{E}[R^e - R^f] \approx \gamma \cdot \text{Cov}(\Delta \ln c,\ R^e), \]</p>
+    <p>onde \(\text{Cov}(\Delta \ln c, R^e) \approx \rho \cdot \sigma_c \cdot \sigma_R\). Nos dados americanos:</p>
+    <ul>
+      <li>\(\sigma_c \approx 0{,}036\) (3,6% desvio-padrão do crescimento do consumo).</li>
+      <li>\(\sigma_R \approx 0{,}17\) (17% desvio-padrão do retorno acionário).</li>
+      <li>\(\rho \approx 0{,}4\) (correlação consumo-retorno).</li>
+    </ul>
+    <p>Logo \(\text{Cov}(\Delta \ln c, R^e) \approx 0{,}4 \cdot 0{,}036 \cdot 0{,}17 \approx 0{,}00245\). Para racionalizar prêmio de \(6\%\):</p>
+    <p>\[ 0{,}06 = \gamma \cdot 0{,}00245 \quad \Rightarrow \quad \gamma \approx 24. \]</p>
+    <p><strong>Mas \(\gamma \approx 24\) é absurdamente alto.</strong> Experimentos comportamentais e calibrações macro tradicionais sugerem \(\gamma \in [1, 5]\). Com \(\gamma = 5\), a teoria prevê prêmio de \(\approx 1{,}2\%\), <em>não</em> os \(6\%\) observados.</p>
+
+    <h3 style="margin-top:1.2rem">Hansen-Jagannathan bound</h3>
+    <p>Hansen &amp; Jagannathan (1991, <em>JPE</em> 99(2): 225–262, <a href="https://doi.org/10.1086/261749" target="_blank" rel="noopener">DOI 10.1086/261749</a>) reescrevem o puzzle como restrição direta sobre o SDF, independente da forma funcional:</p>
+    <p>\[ \frac{\sigma_m}{\mathbb{E}[m]} \geq \frac{|\mathbb{E}[R^e - R^f]|}{\sigma_R}. \]</p>
+    <p>Lado direito (Sharpe ratio) nos dados: \(\approx 0{,}06/0{,}17 \approx 0{,}35\). Logo o SDF tem que ter <strong>volatilidade relativa \(\geq 35\%\)</strong>. Com CRRA agente representativo, \(\sigma_m / \mathbb{E}[m] \approx \gamma \cdot \sigma_c\); para atingir 35%, precisaríamos \(\gamma \approx 10\) — <em>ainda</em> alto, mas o bound <em>não depende</em> de log-normalidade ou de nenhuma forma específica de \(v\). É restrição modelo-livre.</p>
+
+    <h3 style="margin-top:1.2rem">Saídas propostas (literatura subsequente)</h3>
+    <ul>
+      <li><strong>Habit formation</strong> (Constantinides 1990, Campbell-Cochrane 1999): utilidade depende de \(c_t - h_t\); \(\gamma\) efetivo varia e pode subir muito perto do habit.</li>
+      <li><strong>Long-run risks</strong> (Bansal-Yaron 2004): consumo tem componente persistente de baixa frequência; agentes Epstein-Zin com aversão ao risco distinta de aversão ao crescimento.</li>
+      <li><strong>Rare disasters</strong> (Rietz 1988, Barro 2006): probabilidade pequena de catástrofe (depressão, guerra) gera prêmio de risco mesmo com \(\gamma\) razoável.</li>
+      <li><strong>Limited participation</strong>: nem todos os agentes participam do mercado acionário; agentes marginais têm \(\sigma_c\) muito maior.</li>
+    </ul>
+    <p>Cite <strong>Mehra &amp; Prescott (1985)</strong>, <em>The Equity Premium: A Puzzle</em>, <em>Journal of Monetary Economics</em> 15(2): 145–161, <a href="https://doi.org/10.1016/0304-3932(85)90061-3" target="_blank" rel="noopener">DOI 10.1016/0304-3932(85)90061-3</a>. <strong>Lucas (1978)</strong>, <em>Asset Prices in an Exchange Economy</em>, <em>Econometrica</em> 46(6): 1429–1445, <a href="https://doi.org/10.2307/1913837" target="_blank" rel="noopener">DOI 10.2307/1913837</a>, é o modelo-base.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode esquematizar o cálculo do bound de Hansen-Jagannathan a partir da desigualdade de Cauchy-Schwarz aplicada à equação de Euler. Pede na reflexão.</p>
+
+    <div class="micro-checkpoint" id="micro-s3">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s3q1" data-correct="b">
+        <div class="q-text">1. Sob agente representativo CRRA com \(v(c) = c^{1-\gamma}/(1-\gamma)\), aproximação log-normal padrão e dados americanos \(\sigma_c \approx 0{,}036\), \(\sigma_R \approx 0{,}17\), \(\rho \approx 0{,}4\), o valor de \(\gamma\) implícito no equity premium de \(6\%\) é da ordem de:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s3-equity','s3q1','a',this)">(a) \(\gamma \approx 1\) — log-utility é suficiente.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s3-equity','s3q1','b',this)">(b) \(\gamma \approx 24\) — muito acima do plausível, configurando o "puzzle" de Mehra-Prescott.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s3-equity','s3q1','c',this)">(c) \(\gamma\) negativo — agentes amantes do risco.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s3-equity','s3q1','d',this)">(d) \(\gamma\) é indeterminado pela equação de Euler.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s3-post" style="display:none">
+      <label>Agora, depois de ver o equity premium puzzle:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s3-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s3-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s3-equity','post','s3-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s3-equity" disabled onclick="MPE.completeSection('s3-equity')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 4: EXTENSÃO 3 — Weitzman 1974 numérico ==================== -->
+<section class="section-block locked" id="s4-weitzman" data-section="s4-weitzman" data-order="4">
+  <div class="section-meta">Seção 4 · Extensão 3 (Aula 7) · 15 min</div>
+  <h2>Weitzman 1974 — preço vs quantidade sob incerteza, com cálculo</h2>
+
+  <div class="confidence-block" id="conf-s4-pre">
+    <label>Antes: você consegue dizer, com base apenas nas <strong>inclinações</strong> de MAC e MB, se o regulador deve preferir imposto ou cota numa situação de incerteza?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s4-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s4-weitzman','pre','s4-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s4" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 7 mostrou que sob certeza, imposto Pigou e cap-and-trade são equivalentes em alocação. Mas quase nunca o regulador conhece exatamente a curva de custo marginal de mitigação (MAC) das firmas. <em>Aqui</em>, sob incerteza, a escolha do instrumento importa — e Weitzman (1974) deu a regra de bolso.</p>
+
+    <h3 style="margin-top:1.2rem">Setup numérico</h3>
+    <p>Regulador deseja minimizar perda social esperada. Definimos:</p>
+    <ul>
+      <li>\(q\) = nível de redução de emissão (em milhões tCO\(_2\)).</li>
+      <li>Custo marginal de mitigação (MAC) das firmas: \(\text{MAC}(q) = a + b\,q + \varepsilon\), com \(\varepsilon \sim N(0, \sigma^2)\) representando incerteza do regulador sobre custos.</li>
+      <li>Benefício marginal social (MB) da redução: \(\text{MB}(q) = c - d\,q\).</li>
+    </ul>
+    <p>Ótimo de primeiro melhor (se regulador conhecesse \(\varepsilon\)): \(\text{MAC}(q^*) = \text{MB}(q^*) \Rightarrow q^*(\varepsilon) = (c - a - \varepsilon)/(b + d)\).</p>
+
+    <h3 style="margin-top:1.2rem">Instrumento 1 — Imposto Pigou (preço fixo)</h3>
+    <p>O regulador fixa imposto \(t^*\) baseado na <em>melhor estimativa</em> dos custos (\(\mathbb{E}[\varepsilon] = 0\)). Cada firma escolhe \(q\) tal que \(\text{MAC}(q) = t^*\), <em>após</em> observar \(\varepsilon\). Logo o nível de mitigação realizado responde à incerteza:</p>
+    <p>\[ q^{\text{Pigou}}(\varepsilon) = (t^* - a - \varepsilon)/b. \]</p>
+    <p><strong>Quantidade flutua, preço fixo.</strong></p>
+
+    <h3 style="margin-top:1.2rem">Instrumento 2 — Cap-and-trade (quantidade fixa)</h3>
+    <p>O regulador fixa quota total \(\bar Q\) baseada na melhor estimativa. As firmas atingem \(\bar Q\) via mercado de permissões; o preço da permissão \(p^{\text{cap}}\) ajusta-se ao realizar \(\varepsilon\):</p>
+    <p>\[ p^{\text{cap}}(\varepsilon) = a + b\,\bar Q + \varepsilon. \]</p>
+    <p><strong>Quantidade fixa, preço flutua.</strong></p>
+
+    <h3 style="margin-top:1.2rem">Comparando perdas esperadas</h3>
+    <p>Weitzman (1974) mostra que a diferença esperada de bem-estar entre os dois instrumentos depende <strong>apenas das inclinações \(b\) (MAC) e \(d\) (MB)</strong>:</p>
+    <p>\[ \boxed{\;\Delta = \mathbb{E}[W^{\text{Pigou}}] - \mathbb{E}[W^{\text{cap}}] = \frac{\sigma^2}{2}\cdot\left(\frac{1}{d} - \frac{1}{b}\right) \cdot \frac{b}{b+d}\;} \]</p>
+    <p>(forma equivalente; Weitzman usa um sinal mais limpo via \(\Delta = \frac{\sigma^2}{2b^2}(d - b)\) em algumas versões didáticas; o sinal é o que importa).</p>
+
+    <p><strong>Regra de bolso:</strong></p>
+    <ul>
+      <li>Se MAC <em>mais íngreme</em> que MB (\(b &gt; d\)): pequenos erros de quantidade geram custos enormes de mitigação. <strong>Prefira preço (Pigou)</strong>.</li>
+      <li>Se MB <em>mais íngreme</em> que MAC (\(d &gt; b\)): pequenos erros de quantidade geram danos sociais enormes (ex.: limiar ecológico). <strong>Prefira quantidade (cap)</strong>.</li>
+      <li>Se \(b = d\): instrumentos equivalentes em valor esperado.</li>
+    </ul>
+
+    <h3 style="margin-top:1.2rem">Exemplo numérico</h3>
+    <p>Suponha \(a = 10, b = 4, c = 50, d = 1, \sigma = 5\). Ótimo médio: \(q^* = (50 - 10)/(4+1) = 8\).</p>
+    <p>MAC \(\rightarrow\) inclinação 4; MB \(\rightarrow\) inclinação 1. Como \(b = 4 \gg d = 1\), MAC é muito mais íngreme. <strong>Prefira imposto Pigou.</strong></p>
+    <p>Aplicação: <em>regulação de emissões de CO\(_2\) globais</em>. MAC é íngreme (substituir geração térmica por renovável tem custo marginal alto-crescente), MB é razoavelmente plano (CO\(_2\) acumula, não cria limiar abrupto). Por isso Suécia e outros países nórdicos adotaram imposto direto (1991). EU optou por cap-and-trade político/jurídico.</p>
+    <p>Caso oposto: <em>poluição de mercúrio em rio com peixe consumido por população local</em>. MB íngreme acima de limiar de toxicidade; MAC relativamente plano. <strong>Prefira cota.</strong></p>
+    <p>Cite <strong>Weitzman (1974)</strong>, <em>Prices vs. Quantities</em>, <em>Review of Economic Studies</em> 41(4): 477–491, <a href="https://doi.org/10.2307/2296698" target="_blank" rel="noopener">DOI 10.2307/2296698</a>.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode resolver a derivação completa de \(\Delta\) a partir das duas otimizações (preço fixo vs quantidade fixa) e mostrar como a fórmula de Weitzman cai. Pede na reflexão.</p>
+
+    <div class="micro-checkpoint" id="micro-s4">
+      <h3>Micro-checkpoint (2 itens)</h3>
+
+      <div class="micro-q" data-q="s4q1" data-correct="b">
+        <div class="q-text">1. Numa indústria onde \(\text{MAC}(q) = 10 + 4q + \varepsilon\) e \(\text{MB}(q) = 50 - q\), com \(\varepsilon \sim N(0, 25)\). Qual instrumento Weitzman recomenda?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-weitzman','s4q1','a',this)">(a) Cap-and-trade (cota), porque MB é mais íngreme.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-weitzman','s4q1','b',this)">(b) Imposto Pigou (preço), porque MAC é mais íngreme (\(b = 4 &gt; d = 1\)).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-weitzman','s4q1','c',this)">(c) Comando-controle uniforme, sempre superior sob incerteza.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-weitzman','s4q1','d',this)">(d) Indiferente, pois sob incerteza os instrumentos são equivalentes.</div>
+        <div class="micro-feedback"></div>
+      </div>
+
+      <div class="micro-q" data-q="s4q2" data-correct="c">
+        <div class="q-text">2. Aplicação à regulação de mercúrio em rio que abastece comunidade ribeirinha. MB sobe muito acima de limiar de toxicidade (curva quase vertical perto do limiar); MAC relativamente plana. Sob incerteza, Weitzman recomenda:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s4-weitzman','s4q2','a',this)">(a) Imposto Pigou — preço fixo evita instabilidade política.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s4-weitzman','s4q2','b',this)">(b) Coase puro — partes negociam.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s4-weitzman','s4q2','c',this)">(c) Cota (cap), porque MB é mais íngreme que MAC. Erros de quantidade geram danos sanitários muito altos; erros de preço são menos custosos.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s4-weitzman','s4q2','d',this)">(d) Subsídio à mitigação — sempre Pareto-superior.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s4-post" style="display:none">
+      <label>Agora, depois de ver Weitzman 1974 com cálculo:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s4-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s4-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s4-weitzman','post','s4-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s4-weitzman" disabled onclick="MPE.completeSection('s4-weitzman')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 5: EXTENSÃO 4 — VCG e seus limites ==================== -->
+<section class="section-block locked" id="s5-vcg" data-section="s5-vcg" data-order="5">
+  <div class="section-meta">Seção 5 · Extensão 4 (Aula 7) · 15 min</div>
+  <h2>VCG e seus limites — porque o Nobel não resolveu tudo</h2>
+
+  <div class="confidence-block" id="conf-s5-pre">
+    <label>Antes: você consegue listar pelo menos <strong>dois problemas operacionais</strong> do mecanismo VCG que justificam por que ele é raramente usado em decisões públicas?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s5-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s5-vcg','pre','s5-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s5" style="display:none">
+    <p><strong>Pergunta-driver.</strong> A Aula 7 enunciou: VCG (Vickrey-Clarke-Groves) torna verdade dominante. Cabe perguntar: se é tão bom, por que praticamente nenhum governo usa VCG para decidir construir pontes ou financiar bens públicos? Aqui ficam três limitações estruturais.</p>
+
+    <h3 style="margin-top:1.2rem">Limitação 1 — Orçamento não-balanceado</h3>
+    <p>Considere o exemplo da Aula 7: 3 agentes decidindo construir ponte. Valorações \(v^A(\text{sim}) = 8, v^B(\text{sim}) = 5, v^C(\text{sim}) = -10\). Soma = 3 &gt; 0, decisão eficiente é "sim". No mecanismo Clarke pivot:</p>
+    <ul>
+      <li>\(A\) é pivotal? Sem \(A\), valorações somam \(5 - 10 = -5\) — decisão mudaria para "não". Logo \(A\) é pivotal e paga \(|{-5}| = 5\).</li>
+      <li>\(B\) é pivotal? Sem \(B\), \(8 - 10 = -2\) — decisão mudaria para "não". Logo \(B\) pivotal e paga \(|{-2}| = 2\).</li>
+      <li>\(C\) é pivotal? Sem \(C\), \(8 + 5 = 13\) — decisão continuaria "sim". Logo \(C\) não é pivotal e paga 0.</li>
+    </ul>
+    <p>Pagamentos totais: \(5 + 2 + 0 = 7\). Custo da ponte (digamos): 0. <strong>O regulador arrecada 7, mas não tem o que fazer com esse dinheiro</strong> (devolver aos agentes destruiria a propriedade de verdade dominante; reter cria distorções; queimar é Pareto-ineficiente).</p>
+    <p><strong>Resultado de impossibilidade (Green-Laffont 1979, <em>Incentives in Public Decision-Making</em>, North-Holland):</strong> não existe mecanismo direto, eficiente, individualmente racional <em>e</em> orçamento-balanceado em domínios suficientemente ricos. Você sempre desiste de uma propriedade.</p>
+
+    <h3 style="margin-top:1.2rem">Limitação 2 — Manipulação por coligação</h3>
+    <p>VCG é à prova de manipulação <em>individual</em> (verdade é dominante). Mas <strong>não</strong> à prova de manipulação por <em>coligações</em>. Exemplo: 2 agentes podem coordenadamente declarar valorações infladas para inverter decisão e dividir ganho líquido.</p>
+    <p>Em domínios práticos (leilão de espectro de telecom, alocação de slots de aeroporto), coligações de pequenos lances entre rivais que dividem mercado posteriormente são uma preocupação real (FCC tem regras anti-coligação explicitamente por causa disso).</p>
+
+    <h3 style="margin-top:1.2rem">Limitação 3 — Roberts (1979) e domínio restrito</h3>
+    <p>VCG funciona em domínio <strong>quasilinear</strong> com utilidades lineares em dinheiro. Em domínios mais gerais (preferências sobre alocação não-monetária, função utilidade não-quasilinear), o teorema de <strong>Gibbard-Satterthwaite (1973, 1975)</strong> diz que todo mecanismo direto, eficiente e à prova de manipulação é ditatorial.</p>
+    <p><strong>Roberts (1979, <em>The Characterization of Implementable Choice Rules</em>, in Aggregation and Revelation of Preferences, ed. Laffont)</strong> caracterizou: <em>os únicos mecanismos eficientes, à prova de manipulação e neutros entre alternativas, em domínios ricos, são as "afim soma" (\(\sum_i \alpha_i v^i + \beta\))</em> — uma classe pequena. VCG é um caso particular.</p>
+    <p>Ou seja: VCG não é um truque infinito. É a única coisa que sobra depois de impostas as restrições, e mesmo assim não cobre tudo.</p>
+
+    <h3 style="margin-top:1.2rem">Aplicações práticas e tensões</h3>
+    <ul>
+      <li><strong>Vickrey 1961 (segundo preço em leilão).</strong> Caso particular de VCG para 1 item indivisível. Funciona razoavelmente bem; usado em propaganda online (Google AdWords até ~2019; Facebook Ads parcialmente).</li>
+      <li><strong>FCC spectrum auctions (US 1994+).</strong> Mecanismos VCG-derivados arrecadaram mais de USD 100 bilhões. Mas houve adaptações (lances simultâneos múltiplos, regras anti-shill) para lidar com coligações.</li>
+      <li><strong>Bens públicos puros (decisões coletivas tipo "construir ponte").</strong> Praticamente <em>não</em> implementado via VCG na prática — câmaras municipais usam votação majoritária, que viola revelação verdadeira mas não tem problema de orçamento.</li>
+    </ul>
+    <p>Cite <strong>Vickrey (1961)</strong>, <em>Counterspeculation, Auctions, and Competitive Sealed Tenders</em>, <em>Journal of Finance</em> 16(1): 8–37, <a href="https://doi.org/10.1111/j.1540-6261.1961.tb02789.x" target="_blank" rel="noopener">DOI 10.1111/j.1540-6261.1961.tb02789.x</a>; <strong>Clarke (1971)</strong>, <em>Multipart Pricing of Public Goods</em>, <em>Public Choice</em> 11: 17–33, <a href="https://doi.org/10.1007/BF01726210" target="_blank" rel="noopener">DOI 10.1007/BF01726210</a>; <strong>Groves (1973)</strong>, <em>Incentives in Teams</em>, <em>Econometrica</em> 41(4): 617–631, <a href="https://doi.org/10.2307/1914085" target="_blank" rel="noopener">DOI 10.2307/1914085</a>.</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode discutir o tradeoff Aula 7 → Aula 8 → Aula 9: VCG resolve revelação <em>com</em> info simétrica entre desenhador e agentes (sobre estrutura do problema), e Aula 8 introduz info <em>assimétrica</em>, onde até esse mecanismo quebra.</p>
+
+    <div class="micro-checkpoint" id="micro-s5">
+      <h3>Micro-checkpoint (1 item)</h3>
+      <div class="micro-q" data-q="s5q1" data-correct="c">
+        <div class="q-text">1. Nas 3 valorações da Aula 7 (\(v^A = 8, v^B = 5, v^C = -10\), todos \(v^i(\text{não}) = 0\)), Clarke pivot arrecada \(7\) na decisão "sim". Por que esse fato é <em>problemático</em> para um regulador?</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s5-vcg','s5q1','a',this)">(a) Não é problemático — \(7\) representa o ganho social líquido e justifica o mecanismo.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s5-vcg','s5q1','b',this)">(b) É problemático porque \(7 &lt; 8 + 5 = 13\) (subarrecadação).</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s5-vcg','s5q1','c',this)">(c) É problemático porque o regulador não pode redistribuir o \(7\) aos agentes sem destruir a propriedade de verdade dominante. Green-Laffont (1979) provou que mecanismos VCG são genericamente <em>não</em> orçamento-balanceados.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s5-vcg','s5q1','d',this)">(d) Não é problemático — agentes \(A\) e \(B\) sempre recebem reembolso integral.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s5-post" style="display:none">
+      <label>Agora, depois de ver os limites do VCG:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s5-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s5-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s5-vcg','post','s5-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s5-vcg" disabled onclick="MPE.completeSection('s5-vcg')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 6: SÍNTESE CROSS-AULA ==================== -->
+<section class="section-block locked" id="s6-sintese" data-section="s6-sintese" data-order="6">
+  <div class="section-meta">Seção 6 · Síntese cross-aula · 10 min</div>
+  <h2>Tipologia integrada de falhas de mercado (Aulas 6 + 7 + teaser 8)</h2>
+
+  <div class="confidence-block" id="conf-s6-pre">
+    <label>Antes: você consegue <strong>distinguir três fontes estruturalmente diferentes</strong> de falha do 1º TBE?</label>
+    <div class="slider-row">
+      <span style="font-size:0.8rem">1</span>
+      <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s6-pre', this.value)">
+      <span style="font-size:0.8rem">5</span>
+      <span class="conf-value" id="conf-val-s6-pre">3</span>
+    </div>
+    <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+    <button class="btn-confidence" onclick="MPE.recordConfidence('s6-sintese','pre','s6-pre')">Registrar e continuar</button>
+  </div>
+
+  <div class="section-content" id="content-s6" style="display:none">
+    <p><strong>Por que esta seção.</strong> O 1º TBE diz: equilíbrio competitivo é Pareto-eficiente. Aulas 6, 7 e 8 mostram <em>três fontes</em> diferentes pelas quais essa promessa quebra. Saber distinguir é decisivo para diagnóstico de política pública.</p>
+
+    <h3 style="margin-top:1.2rem">Tipologia</h3>
+
+    <table style="width:100%;border-collapse:collapse;margin-top:1rem;font-size:0.92rem">
+      <thead>
+        <tr style="background:#f1f5f9;border-bottom:2px solid #cbd5e1">
+          <th style="padding:0.6rem;text-align:left">Fonte</th>
+          <th style="padding:0.6rem;text-align:left">Aula</th>
+          <th style="padding:0.6rem;text-align:left">Mecanismo da falha</th>
+          <th style="padding:0.6rem;text-align:left">Instrumento canônico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Incompletude de mercado</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">6</td>
+          <td style="padding:0.6rem;vertical-align:top">\(\text{rank}(A) &lt; |S|\); agentes não conseguem tradear todos os bens contingentes. Constrained PE, mas Pareto-inferior absoluto.</td>
+          <td style="padding:0.6rem;vertical-align:top">Criar mercados (derivativos, seguros), com ressalva GP86: pode piorar.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Externalidade tecnológica</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">7</td>
+          <td style="padding:0.6rem;vertical-align:top">Função de utilidade/produção de \(i\) depende diretamente de variável escolhida por \(j\). Não há preço para esse "input". Pareto-ineficiente.</td>
+          <td style="padding:0.6rem;vertical-align:top">Pigou (preço), cap (quantidade), Coase (negociação direta), governance (Ostrom).</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Bem público (não-rivalidade + não-exclusão)</strong></td>
+          <td style="padding:0.6rem;vertical-align:top">7</td>
+          <td style="padding:0.6rem;vertical-align:top">Cada agente subdeclara TMS para minimizar contribuição. Mercado descentralizado falha por construção.</td>
+          <td style="padding:0.6rem;vertical-align:top">Lindahl (preços personalizados), VCG (com limites operacionais), tributo + provisão pública.</td>
+        </tr>
+        <tr style="border-bottom:1px solid #e2e8f0">
+          <td style="padding:0.6rem;vertical-align:top"><strong>Informação assimétrica</strong> <em>(teaser Aula 8)</em></td>
+          <td style="padding:0.6rem;vertical-align:top">8</td>
+          <td style="padding:0.6rem;vertical-align:top">Vendedor sabe qualidade; comprador não. Lemons (Akerlof 1970) — bons produtos saem do mercado.</td>
+          <td style="padding:0.6rem;vertical-align:top">Sinalização (Aula 9), screening (Rothschild-Stiglitz), regulação por revelação (Aula 8).</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:1.5rem">Distinção fina</h3>
+    <p>É comum confundir <strong>incompletude</strong> e <strong>externalidade</strong>. Não são a mesma coisa:</p>
+    <ul>
+      <li><em>Incompletude:</em> os bens contingentes <em>existiriam</em> em princípio, mas não há mercado para eles (não há ações Arrow para todo \((\ell, s)\)).</li>
+      <li><em>Externalidade:</em> a variável da minha utilidade já passa <em>direto</em> pela escolha de outro agente, sem nem precisar de "estado da natureza". Falha está na falta de internalização, não na falta de span.</li>
+    </ul>
+    <p>É também comum confundir <strong>bem público</strong> e <strong>externalidade positiva</strong>. Bem público é caso-limite extremo: não-rival e não-exclusivo. Externalidade pode ser localizada (vacinação dá externalidade positiva, mas vacinação não é "bem público" no sentido de Samuelson estrito; é private good com spillover).</p>
+
+    <p style="font-size:0.9rem;color:#64748b;font-style:italic">No sábado, o Alberto pode trabalhar exemplos brasileiros que combinam dois ou mais tipos: ex., <em>desmatamento na Amazônia</em> tem externalidade pura (CO\(_2\) global) + bem público (biodiversidade) + incompletude (não há mercado para "Amazônia em pé daqui a 50 anos"). Política tem que casar instrumentos.</p>
+
+    <div class="micro-checkpoint" id="micro-s6">
+      <h3>Micro-checkpoint (1 item conceitual)</h3>
+      <div class="micro-q" data-q="s6q1" data-correct="b">
+        <div class="q-text">1. Considere a poluição atmosférica de uma fábrica que afeta a saúde de moradores próximos. Esse é um caso de:</div>
+        <div class="micro-option" data-value="a" onclick="MPE.microAnswer('s6-sintese','s6q1','a',this)">(a) Mercado incompleto — falta um ativo financeiro contingente ao estado de saúde.</div>
+        <div class="micro-option" data-value="b" onclick="MPE.microAnswer('s6-sintese','s6q1','b',this)">(b) Externalidade tecnológica — a função de utilidade dos moradores depende diretamente da escolha de produção da fábrica, sem preço de mercado para "ar limpo na vizinhança". Tratável por Pigou, cap, ou Coase com direitos definidos.</div>
+        <div class="micro-option" data-value="c" onclick="MPE.microAnswer('s6-sintese','s6q1','c',this)">(c) Bem público puro — ar é não-rival e não-exclusivo.</div>
+        <div class="micro-option" data-value="d" onclick="MPE.microAnswer('s6-sintese','s6q1','d',this)">(d) Informação assimétrica — moradores não sabem o quanto a fábrica polui.</div>
+        <div class="micro-feedback"></div>
+      </div>
+    </div>
+
+    <div class="confidence-block" id="conf-s6-post" style="display:none">
+      <label>Agora, depois de ver a tipologia integrada:</label>
+      <div class="slider-row">
+        <span style="font-size:0.8rem">1</span>
+        <input type="range" min="1" max="5" value="3" oninput="MPE.updateSlider('s6-post', this.value)">
+        <span style="font-size:0.8rem">5</span>
+        <span class="conf-value" id="conf-val-s6-post">3</span>
+      </div>
+      <div class="conf-scale"><span>Totalmente perdido</span><span>Dominante</span></div>
+      <button class="btn-confidence" onclick="MPE.recordConfidence('s6-sintese','post','s6-post')">Registrar</button>
+    </div>
+  </div>
+
+  <button class="section-complete-btn" id="complete-s6-sintese" disabled onclick="MPE.completeSection('s6-sintese')" style="margin-top:1.2rem">Concluir seção</button>
+</section>
+
+<!-- ==================== SECTION 7: REFLEXÃO ==================== -->
+<section class="section-block locked" id="s7-reflexao" data-section="s7-reflexao" data-order="7">
+  <div class="section-meta">Seção 7 · Reflexão · 3 min</div>
+  <h2>Foco do Alberto no sábado</h2>
+  <p>Os dois campos abaixo são obrigatórios. Suas respostas vão diretamente para o Alberto montar a monitoria de 13/06.</p>
+
+  <div class="reflection-block">
+    <label>Qual <strong>extensão funcionou melhor</strong> nesta pré-monitoria? Qual ainda ficou nebulosa?</label>
+    <textarea id="refl-claro" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Hart-GP numérico fechou — entendi por que adicionar ativo pode piorar; mas Weitzman 1974 ainda quero ver derivação completa da fórmula \Delta', ou 'Equity premium puzzle ficou claro nos dados; mas o bound de Hansen-Jagannathan ainda parece mágica'"></textarea>
+    <div class="help">Diz pro Alberto qual extensão funcionou e onde precisa de aprofundamento — ele revisita rápido em sala.</div>
+  </div>
+
+  <div class="reflection-block">
+    <label>Qual <strong>área específica das Aulas 6-7</strong> você quer que o Alberto cubra no sábado 13/06?</label>
+    <textarea id="refl-alberto" oninput="MPE.updateReflectionState()" placeholder="Ex.: 'Cálculo numérico completo do Cenário 3 de Hart-GP no quadro com 2 ativos e Lagrangiano explícito', ou 'Derivação do bound de Hansen-Jagannathan via Cauchy-Schwarz', ou 'Aplicação Weitzman a CBio Brasil: imposto vs cota nas circunstâncias brasileiras', ou 'Caso prático Coase: desmatamento na Amazônia com direitos definidos'"></textarea>
+    <div class="help">Quanto mais alunos pedirem o mesmo, mais tempo Alberto reserva. Pode pedir um exemplo brasileiro específico.</div>
+  </div>
+
+  <button class="section-complete-btn final" id="complete-s7-reflexao" disabled onclick="MPE.completeReflection()">Finalizar pré-monitoria</button>
+</section>
+
+<!-- ==================== COMPLETION ==================== -->
+<div class="completion-celebration" id="completion" style="display:none">
+  <h2>✓ Pré-monitoria 4 concluída</h2>
+  <p>Boa. O Alberto vai ler suas reflexões antes do sábado.</p>
+  <p style="margin-top:1rem"><strong>Monitoria presencial:</strong> sábado, 13/06/2026, 10:00, Insper.</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.9">Esta pré-monitoria é <strong>formativa</strong> — não conta nota.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('pre-monitoria-04');
+
+var PAGE_ID = 'pre-monitoria-04';
+var TOTAL_SECTIONS = 8; // s0..s7
+var MICRO_MAX_ATTEMPTS = 3;
+var MICRO_COOLDOWN_MS = 10000;
+
+var MPE = {
+  state: {},
+
+  updateSlider: function(id, val) {
+    document.getElementById('conf-val-'+id).textContent = val;
+  },
+
+  recordConfidence: function(sectionId, phase, sliderId) {
+    var input = document.querySelector('#conf-'+sliderId+' input[type="range"]');
+    var value = parseInt(input.value);
+    MicroTracker.recordConfidence(PAGE_ID, sectionId, phase, value);
+    var block = document.getElementById('conf-'+sliderId);
+    block.classList.add('recorded');
+    input.disabled = true;
+
+    if (phase === 'pre') {
+      var contentId = 'content-' + sectionId.split('-')[0];
+      var contentEl = document.getElementById(contentId);
+      if (contentEl) contentEl.style.display = 'block';
+      if (window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([contentEl]);
+    } else {
+      var btn = document.getElementById('complete-' + sectionId);
+      if (btn) btn.disabled = false;
+    }
+  },
+
+  _cooldownActive: {},
+  microAnswer: function(sectionId, questionId, answer, el) {
+    var qEl = el.closest('.micro-q');
+    if (this._cooldownActive[questionId]) return;
+    var correctAnswer = qEl.getAttribute('data-correct');
+    if (qEl.classList.contains('answered-correct')) return;
+    var existingAttempts = qEl.querySelectorAll('.micro-option.incorrect').length;
+    if (existingAttempts >= MICRO_MAX_ATTEMPTS) return;
+
+    var res = MicroTracker.recordMicroCheckpoint(PAGE_ID, sectionId, questionId, answer, correctAnswer);
+    var fb = qEl.querySelector('.micro-feedback');
+    qEl.querySelectorAll('.micro-option').forEach(function(o){ o.classList.remove('selected'); });
+
+    if (res.correct) {
+      el.classList.add('correct');
+      qEl.classList.add('answered-correct');
+      qEl.querySelectorAll('.micro-option').forEach(function(o){ o.onclick = null; o.style.cursor = 'default'; });
+      fb.className = 'micro-feedback success';
+      fb.textContent = '✓ Correto. Tentativa ' + res.attemptNum + '.';
+      this._checkMicroSectionDone(sectionId);
+    } else {
+      el.classList.add('incorrect');
+      var attemptsLeft = MICRO_MAX_ATTEMPTS - existingAttempts - 1;
+      if (attemptsLeft <= 0) {
+        qEl.querySelectorAll('.micro-option').forEach(function(o){
+          if (o.getAttribute('data-value') === correctAnswer) o.classList.add('correct');
+          o.onclick = null; o.style.cursor = 'default';
+        });
+        qEl.classList.add('answered-correct');
+        fb.className = 'micro-feedback error';
+        fb.textContent = '✗ Tentativas esgotadas. A resposta correta é (' + correctAnswer + '). O erro fica registrado e não bloqueia o avanço.';
+        this._checkMicroSectionDone(sectionId);
+      } else {
+        fb.className = 'micro-feedback info';
+        fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Rolando de volta ao texto para você revisar... <span class="attempts-left">(aguarde 10s)</span>';
+        var contentTop = document.getElementById('content-' + sectionId.split('-')[0]);
+        if (contentTop) contentTop.scrollIntoView({behavior:'smooth', block:'start'});
+        this._cooldownActive[questionId] = true;
+        var self = this;
+        setTimeout(function(){
+          self._cooldownActive[questionId] = false;
+          fb.innerHTML = '✗ Incorreto. <strong>' + attemptsLeft + ' tentativa(s) restante(s).</strong> Você pode tentar de novo.';
+        }, MICRO_COOLDOWN_MS);
+      }
+    }
+  },
+
+  _checkMicroSectionDone: function(sectionId) {
+    var section = document.getElementById(sectionId);
+    var allQs = section.querySelectorAll('.micro-q');
+    var allDone = true;
+    allQs.forEach(function(q){ if (!q.classList.contains('answered-correct')) allDone = false; });
+    if (allDone) {
+      var sectionSlug = sectionId.split('-')[0];
+      var postBlock = document.getElementById('conf-'+sectionSlug+'-post');
+      if (postBlock) postBlock.style.display = 'block';
+    }
+  },
+
+  completeSection: function(sectionId) {
+    MicroTracker.recordSectionComplete(PAGE_ID, sectionId);
+    var section = document.getElementById(sectionId);
+    section.classList.remove('active');
+    section.classList.add('completed');
+    var currentOrder = parseInt(section.getAttribute('data-order'));
+    var next = document.querySelector('[data-order="' + (currentOrder + 1) + '"]');
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+      MicroTracker.recordSectionStart(PAGE_ID, next.getAttribute('data-section'));
+      next.scrollIntoView({behavior:'smooth', block:'start'});
+    } else {
+      document.getElementById('completion').style.display = 'block';
+      document.getElementById('completion').scrollIntoView({behavior:'smooth'});
+    }
+    this._updateProgress();
+  },
+
+  updateReflectionState: function() {
+    var a = document.getElementById('refl-claro').value.trim();
+    var b = document.getElementById('refl-alberto').value.trim();
+    var ok = a.length >= 10 && b.length >= 10;
+    document.getElementById('complete-s7-reflexao').disabled = !ok;
+  },
+  completeReflection: function() {
+    MicroTracker.recordReflection(PAGE_ID, 'claro', document.getElementById('refl-claro').value.trim());
+    MicroTracker.recordReflection(PAGE_ID, 'alberto', document.getElementById('refl-alberto').value.trim());
+    this.completeSection('s7-reflexao');
+  },
+
+  _updateProgress: function() {
+    var completed = document.querySelectorAll('.section-block.completed').length;
+    var total = TOTAL_SECTIONS;
+    document.getElementById('progress-label').textContent = 'Progresso: ' + completed + ' / ' + total;
+    document.getElementById('progress-fill').style.width = (completed / total * 100) + '%';
+  },
+
+  _rehydrate: function() {
+    var data = MicroTracker.getData();
+    var mat = session.matricula;
+    var student = data[mat] || {};
+    var sections = (student.sections || {})[PAGE_ID] || {};
+
+    document.querySelectorAll('.section-block').forEach(function(sec) {
+      var sid = sec.getAttribute('data-section');
+      if (sections[sid] && sections[sid].completedAt) {
+        sec.classList.remove('active','locked');
+        sec.classList.add('completed');
+      }
+    });
+    var next = document.querySelectorAll('.section-block:not(.completed)')[0];
+    if (next) {
+      next.classList.remove('locked');
+      next.classList.add('active');
+    }
+    this._updateProgress();
+  },
+
+  init: function() {
+    this._rehydrate();
+    var firstActive = document.querySelector('.section-block.active');
+    if (firstActive) MicroTracker.recordSectionStart(PAGE_ID, firstActive.getAttribute('data-section'));
+  }
+};
+
+MPE.init();
+</script>
+</body>
+</html>
