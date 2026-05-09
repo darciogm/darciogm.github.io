@@ -41,7 +41,7 @@ Pré-M2/3/4 estão prontas para produção (ressalva pontual nos achados 🟡 ab
 
 **Ação recomendada:** decidir se Pré-M1 cobre **Aulas 1-3** (CLAUDE.md/portal) ou **Aulas 1-4** (conteúdo HTML real). Sugestão (consistente com calendário): atualizar **CLAUDE.md + portal.html** para "Aulas 1-4" e ajustar o `desc:` do card do portal. Não tocar no HTML legacy. Reflete a realidade: em 16/05 alunos já cursaram Aulas 1-4.
 
-#### B2. Definição inconsistente do SDF — Pré-M3 §3 (`pre-monitoria-03.html:159 vs 165`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### B2. Definição inconsistente do SDF — Pré-M3 §3 (`pre-monitoria-03.html:159 vs 165`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 **Fix aplicado:** padronizada **convenção Cochrane** (consistente com slides da Aula 5: `P_0 = Σ π_s · m_s · D_s`). Definição de `m^i_s` agora exclui `π^i_s`; relação `p*_s = π^i_s · m^i_s` adicionada explicitamente; nota de convenção alertando sobre a literatura AD pura. Ação Arrow corrigida para `p*_s = π_s · m_s` (linha 177 HTML / 175 MD). Espelhado em `aula_5/pre_monitoria.md` (linhas 128–142, 175). Gabaritos s3q1 e s3q2 permanecem corretos sob a convenção unificada.
 
@@ -56,7 +56,7 @@ Pré-M2/3/4 estão prontas para produção (ressalva pontual nos achados 🟡 ab
 
 ### 🟡 Major
 
-#### M1. Forma 2 da fórmula de Weitzman com sinal invertido — Pré-M4 §4 (`pre-monitoria-04.html:291-292`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### M1. Forma 2 da fórmula de Weitzman com sinal invertido — Pré-M4 §4 (`pre-monitoria-04.html:291-292`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 **Fix aplicado:** linha 292 trocada para `Δ = (σ²/(2b²))·(b - d)` com explicitação do sinal: "`Δ > 0 ⟺ b > d`, MAC mais íngreme favorece preço". Forma 1 e Forma 2 agora coerentes. Gabaritos s4q1 e s4q2 permanecem corretos.
 
@@ -71,7 +71,7 @@ A forma canônica didática correta é `Δ = (σ²/(2b²))·(b − d)` (cf. Weit
 
 **Ação recomendada:** trocar `(d − b)` por `(b − d)` na linha 292. One-character fix.
 
-#### M2. Pré-M2 s2q1 — enunciado ambíguo (`pre-monitoria-02.html:122-130`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### M2. Pré-M2 s2q1 — enunciado ambíguo (`pre-monitoria-02.html:122-130`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 **Fix aplicado:** enunciado agora especifica `α^A = α^B = 1/2 (pesos simétricos em ambos os agentes)`. Espelhado em `aula_4/pre_monitoria.md:82`. Gabarito (a) `1` permanece único e correto.
 
@@ -99,13 +99,13 @@ SSOTs MD internas mencionam "Pré-M2 abre sáb 16/05 12:00, fecha sex 22/05 22:0
 
 ### 🟢 Minor
 
-#### m1. Pré-M3 §4 — discrepância de notação CARA na questão s4q1 (`pre-monitoria-03.html:268`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### m1. Pré-M3 §4 — discrepância de notação CARA na questão s4q1 (`pre-monitoria-03.html:268`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 Texto da seção define `v(c) = -e^(-γc)/γ`. Questão s4q1 diz `v(c) = -e^(-c)`. Para `γ=1`, `-e^(-c)/1 = -e^(-c)` — equivalente. **Mas falta o `/γ`** explícito na questão — sub-letal.
 
 **Fix aplicado:** enunciado agora usa a forma canônica `v(c) = -e^{-γc}/γ` (linha 271), batendo com as definições das linhas 245 e 251.
 
-#### m2. Pré-M3 §3 — Black-Scholes citado como "aplicação famosa" sem ressalva da convenção (`pre-monitoria-03.html:179`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### m2. Pré-M3 §3 — Black-Scholes citado como "aplicação famosa" sem ressalva da convenção (`pre-monitoria-03.html:179`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 OK enquanto descrição informal. Mas o salto "opção europeia precificada como combinação linear de ações + bond, em mercado completo" é correto **se** o mercado tem 2 estados/2 ativos (modelo binomial). Em geral Black-Scholes original usa replicação dinâmica em tempo contínuo — não é mercado AD estático completo na forma que aluno vê na Pré-M3. A nota de rodapé está OK por ser informal, mas vale parametrizar como "no modelo binomial discreto, opção é replicada por bond + ação; Black-Scholes é o limite contínuo".
 
@@ -123,7 +123,7 @@ A própria pré-monitoria reconhece: "Construir contraexemplo onde o EC encontra
 
 Linha 34 da pré-monitoria-03: "Não entra Radner sequencial formal — isso é Aula 6". Linha 60-62 referência "Extensão 2 deriva o SDF a partir desta CPO" e "Extensão 3 formaliza isso" — não problema. ✓ teaser adequado.
 
-#### m6. Pré-M3 informalidade no "no-trade theorem" (`pre-monitoria-03.html:101`) — ✅ **RESOLVIDO em 2026-05-08** (`<commit-pending>`)
+#### m6. Pré-M3 informalidade no "no-trade theorem" (`pre-monitoria-03.html:101`) — ✅ **RESOLVIDO em 2026-05-08** (`4aaea6c`)
 
 "Esta intuição forte explica por que mercados de pari-mutuel funcionam (gostos diferentes) mas mercados financeiros não são pura especulação (informação assimétrica gera unraveling)". A afirmação é intuitiva e correta como bridge, mas Milgrom-Stokey 1982 é especificamente sobre common knowledge de racionalidade, não sobre informação assimétrica + unraveling (que é Akerlof 1970 / Glosten-Milgrom 1985). Mistura informalmente os dois resultados. **Aceitável** num texto exploratório de pré-monitoria, mas vale separar claramente "no-trade" (Milgrom-Stokey) de "lemons" (Akerlof) para o sábado.
 
