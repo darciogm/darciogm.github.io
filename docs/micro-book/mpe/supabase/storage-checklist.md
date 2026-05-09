@@ -15,6 +15,7 @@ Lista canônica dos PDFs que o frontend referencia via `MPE.openMaterial(filenam
 | **Aula 5 — Arrow-Debreu I (piso)** | **`jehle-reny-3e-cap5.pdf`** | `platform/aula-05.html:82` | ✅ confirmado 2026-05-07 |
 | Aula 5 — Arrow-Debreu I (complemento N&S) | `nicholson-snyder-12e-cap7.pdf` | `platform/aula-05.html:83` | ✅ confirmado 2026-05-07 |
 | Aula 5 — Arrow-Debreu I (intertemporal N&S) | `nicholson-snyder-12e-cap13.pdf` | `platform/aula-05.html:84` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
+| **Aula 7 — Externalidades + Bens Públicos** | **`nicholson-snyder-12e-cap19.pdf`** | `platform/aula-07.html:88` | ✅ confirmado 2026-05-08 (via `supabase storage ls`) |
 
 ## Comando para conferir no Supabase
 
