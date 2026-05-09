@@ -496,7 +496,7 @@
   if (window.MPE_CALENDARIO) {
     locked = !MPE_CALENDARIO.canShowGabarito(5, 'exerc');
   } else {
-    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-28T00:00:00-03:00').getTime();
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-07-03T00:00:00-03:00').getTime();
     locked = Date.now() < GABARITO_RELEASE_FALLBACK;
   }
   if (locked) {
