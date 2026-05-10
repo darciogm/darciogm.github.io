@@ -42,6 +42,9 @@
   <a class="next-step-cta" id="next-step-cta" href="#">abrir agora →</a>
 </div>
 
+<!-- IAAD-30 — Índice de Aprendizagem Ativa e Dedicação (30% da nota) -->
+<div id="iaad-card-target"></div>
+
 <div class="my-performance aulas-section-head">
   <h3>Aulas</h3>
   <label class="hide-done-toggle">
@@ -206,6 +209,7 @@
 <script src="js/calendario.js"></script>
 <script src="js/tracker.js"></script>
 <script src="js/portal-ondax.js"></script>
+<script src="js/iaad.js"></script>
 <script>
 if (!MicroAuth.requireAuth()) throw 'redirect';
 
@@ -884,6 +888,12 @@ document.addEventListener('change', function(ev) {
 });
 
 renderOnda1();
+
+// IAAD-30 — render real-time (depende apenas de RPC; independente de Onda)
+if (window.IAAD) {
+  var iaadTarget = document.getElementById('iaad-card-target');
+  if (iaadTarget) window.IAAD.fetchAndRender(iaadTarget);
+}
 
 // Re-render em visibilitychange/focus (debounced 500ms).
 // Guards: nao re-renderiza se ha modal aberto (pmi-modal-back) — evita
