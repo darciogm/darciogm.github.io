@@ -2,11 +2,11 @@
 -- IAAD-30 — Índice de Aprendizagem Ativa e Dedicação
 -- ============================================================================
 -- Componentes (cada um 0–10):
---   C_geral  (peso 40%): cumpriu o item em qualquer momento até prazo final
---   C_prazo  (peso 40%): cumpriu o item dentro da janela canônica da aula
+--   C_geral  (peso 60%): cumpriu o item em qualquer momento até prazo final
+--   C_prazo  (peso 20%): cumpriu o item dentro da janela canônica da aula
 --   P        (peso 20%): % acerto em 1ª tentativa cross-aulas (quizzes+exerc)
 --
--- Composição: IAAD = 0,40·C_geral + 0,40·C_prazo + 0,20·P   ∈ [0, 10]
+-- Composição: IAAD = 0,60·C_geral + 0,20·C_prazo + 0,20·P   ∈ [0, 10]
 -- Pontos da nota: 3 × IAAD ∈ [0, 30]   (= 30% da nota final do MPE)
 --
 -- Janelas canônicas (do CLAUDE.md):
@@ -240,8 +240,8 @@ BEGIN
   v_p_total := COALESCE(v_p_total, 0);
   v_p_correct := COALESCE(v_p_correct, 0);
 
-  -- IAAD final = 0,40 C_geral + 0,40 C_prazo + 0,20 P
-  v_iaad := ROUND(0.40 * v_c_geral_score + 0.40 * v_c_prazo_score + 0.20 * v_p_score, 2);
+  -- IAAD final = 0,60 C_geral + 0,20 C_prazo + 0,20 P
+  v_iaad := ROUND(0.60 * v_c_geral_score + 0.20 * v_c_prazo_score + 0.20 * v_p_score, 2);
 
   RETURN QUERY SELECT
     p_user_id,
@@ -320,7 +320,7 @@ BEGIN
   ),
   with_iaad AS (
     SELECT user_id, c_geral, c_prazo, p_score,
-           (0.40 * c_geral + 0.40 * c_prazo + 0.20 * p_score) AS iaad
+           (0.60 * c_geral + 0.20 * c_prazo + 0.20 * p_score) AS iaad
     FROM per_user
   )
   SELECT

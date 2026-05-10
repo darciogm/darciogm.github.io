@@ -1,7 +1,7 @@
 // ============================================================================
 // IAAD-30 — Índice de Aprendizagem Ativa e Dedicação (front-end)
 // ============================================================================
-// Composição: IAAD = 0,40·C_geral + 0,40·C_prazo + 0,20·P  ∈ [0, 10]
+// Composição: IAAD = 0,60·C_geral + 0,20·C_prazo + 0,20·P  ∈ [0, 10]
 // Pontos da nota: 3 × IAAD ∈ [0, 30]  (= 30% da nota final do MPE)
 //
 // Consome:
@@ -22,7 +22,7 @@
 
   var IAAD = {};
 
-  IAAD.WEIGHTS = { c_geral: 0.40, c_prazo: 0.40, p: 0.20 };
+  IAAD.WEIGHTS = { c_geral: 0.60, c_prazo: 0.20, p: 0.20 };
   IAAD.MAX_PTS_NOTA = 30;
   IAAD.AULAS_TOTAL = 9;
 
@@ -119,7 +119,7 @@
       // Cumprimento Geral
       + '  <div style="margin-bottom:0.6rem">'
       + '    <div style="display:flex;justify-content:space-between;font-size:0.92rem">'
-      + '      <strong>Cumprimento Geral · peso 40%</strong>'
+      + '      <strong>Cumprimento Geral · peso 60%</strong>'
       + '      <span><strong>' + cG.toFixed(2) + '</strong> / 10</span>'
       + '    </div>'
       + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cG) + ' · ' + qG.label + '</div>'
@@ -130,7 +130,7 @@
       // Cumprimento no Prazo
       + '  <div style="margin-bottom:0.6rem">'
       + '    <div style="display:flex;justify-content:space-between;font-size:0.92rem">'
-      + '      <strong>Cumprimento no Prazo · peso 40%</strong>'
+      + '      <strong>Cumprimento no Prazo · peso 20%</strong>'
       + '      <span><strong>' + cP.toFixed(2) + '</strong> / 10</span>'
       + '    </div>'
       + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cP) + ' · ' + qPr.label + '</div>'
