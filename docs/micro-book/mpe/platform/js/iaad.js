@@ -294,16 +294,31 @@
         window.MpeDB.client.rpc('get_iaad_class_distribution')
       ]);
 
+      console.log('[IAAD] iaadRes:', iaadRes);
+      console.log('[IAAD] distRes:', distRes);
+
       var data = iaadRes && iaadRes.data && iaadRes.data[0];
       var distribution = distRes && distRes.data && distRes.data[0];
 
-      if (iaadRes && iaadRes.error) console.warn('[IAAD] get_iaad error:', iaadRes.error);
-      if (distRes && distRes.error) console.warn('[IAAD] get_iaad_class_distribution error:', distRes.error);
+      if (iaadRes && iaadRes.error) {
+        console.error('[IAAD] get_iaad ERROR:', iaadRes.error);
+        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">RPC get_iaad falhou: ' + (iaadRes.error.message || JSON.stringify(iaadRes.error)) + '</div>';
+        return;
+      }
+      if (distRes && distRes.error) {
+        console.error('[IAAD] get_iaad_class_distribution ERROR:', distRes.error);
+        // Continua sem distribuição (degraded)
+      }
 
-      IAAD.render(targetEl, data, distribution);
+      try {
+        IAAD.render(targetEl, data, distribution);
+      } catch (renderErr) {
+        console.error('[IAAD] render exception:', renderErr);
+        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">Render falhou: ' + (renderErr && renderErr.message ? renderErr.message : String(renderErr)) + '<br><br>Stack:<br>' + (renderErr && renderErr.stack ? String(renderErr.stack).replace(/\n/g, '<br>') : '(sem stack)') + '</div>';
+      }
     } catch (e) {
       console.error('[IAAD] fetch failed:', e);
-      targetEl.innerHTML = '<div class="iaad-empty">Erro ao carregar IAAD-30 (ver console).</div>';
+      targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">Erro: ' + (e && e.message ? e.message : String(e)) + '</div>';
     }
   };
 
