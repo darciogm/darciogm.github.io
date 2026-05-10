@@ -247,10 +247,10 @@
       + '  <div id="iaad-breakdown-detail" style="display:none;margin-top:0.4rem">' + renderBreakdown(data.breakdown) + '</div>'
       // Sugestão
       + '  <div style="background:#fef3c7;border-left:3px solid #d97706;padding:0.5rem 0.8rem;border-radius:4px;font-size:0.85rem;margin-top:0.8rem">'
-      + '    <strong>Próximo passo:</strong> ' + IAAD.suggestNextStep(data, quartiles)
+      + '    <strong>Próximo passo:</strong> ' + IAAD.suggestNextStep(data, distribution)
       + '  </div>'
       + '  <div style="margin-top:0.6rem;font-size:0.75rem;color:#94a3b8">'
-      + '    Localização vs. turma é informativa (banda em quartis). Nota é absoluta — você ganha exatamente o que fez.'
+      + '    Localização vs. turma é informativa (histograma com sua posição). Nota é absoluta — você ganha exatamente o que fez.'
       + '  </div>'
       + '</div>';
 
