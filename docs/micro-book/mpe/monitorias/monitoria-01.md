@@ -272,7 +272,7 @@ S = (s_{ij}), \qquad s_{ij} = \frac{\partial h_i}{\partial p_j} = \frac{\partial
 
 Quadro com fatos verificáveis:
 
-> **AIDS — Almost Ideal Demand System.** Deaton & Muellbauer (1980), "An Almost Ideal Demand System", *American Economic Review* 70(3): 312–326, [DOI 10.2307/1805222](https://doi.org/10.2307/1805222). Especificação: a parcela de gasto \(s_i = p_i x_i^M/m\) é função log-linear de preços e renda real:
+> **AIDS — Almost Ideal Demand System.** Deaton & Muellbauer (1980), "An Almost Ideal Demand System", *American Economic Review* 70(3): 312–326. JSTOR stable 1805222. Especificação: a parcela de gasto \(s_i = p_i x_i^M/m\) é função log-linear de preços e renda real:
 > \[
 > s_i = \alpha_i + \sum_j \gamma_{ij} \ln p_j + \beta_i \ln(m/P),
 > \]
@@ -283,7 +283,7 @@ Quadro com fatos verificáveis:
 > | Adding-up (\(\sum s_i = 1\)) | \(\sum_i \alpha_i = 1, \sum_i \beta_i = 0, \sum_i \gamma_{ij} = 0\;\forall j\) |
 > | Homogeneidade (\(\sum_j \varepsilon_{ij} + \eta_i = 0\)) | \(\sum_j \gamma_{ij} = 0\;\forall i\) |
 > | **Simetria de Slutsky** (\(s_j \varepsilon^c_{ij} = s_i \varepsilon^c_{ji}\)) | \(\gamma_{ij} = \gamma_{ji}\) |
-> | Negatividade (\(S \succeq 0\) negativa semidefinida) | impor sobre \((\gamma_{ij})\) — testável no ajuste |
+> | Negatividade (\(S \preceq 0\), i.e. \(v^\top S v \leq 0 \;\forall v\)) | impor sobre \((\gamma_{ij})\) — testável no ajuste |
 
 **Estrutura conceitual (no quadro, 5 min):**
 
@@ -724,7 +724,7 @@ Use \(s_1 = 0{,}30\) (média do 1º quintil), preços \(p = (1, 1)\) (normalizad
 
 2. **Derivação.**
    - (a) Lagrangiano: \(\mathcal{L} = \ln x_1 + x_2 - \lambda(p_1 x_1 + p_2 x_2 - m)\). CPO 1: \(1/x_1 = \lambda p_1\). CPO 2: \(1 = \lambda p_2 \Rightarrow \lambda = 1/p_2\). Sub: \(x_1^M = p_2/p_1\) ✓. Walras: \(x_2^M = (m - p_2)/p_2 = m/p_2 - 1\).
-   - (b) \(v = \ln(p_2/p_1) + m/p_2 - 1\). Roy: \(-\partial v/\partial p_1 = 1/p_1\) (do \(\ln p_2/p_1 = \ln p_2 - \ln p_1\)); \(\partial v/\partial m = 1/p_2\). Razão: \(-(1/p_1)/(1/p_2) \cdot \) ... espere, sinal: \(\partial v/\partial p_1 = -1/p_1\) (pois \(-\ln p_1\) tem derivada \(-1/p_1\)); \(-\partial v/\partial p_1 = +1/p_1\); \(\partial v/\partial m = 1/p_2\); razão \(= (1/p_1)/(1/p_2) = p_2/p_1 = x_1^M\) ✓.
+   - (b) \(v(p, m) = \ln(p_2/p_1) + m/p_2 - 1\). Derivadas: \(\partial v/\partial p_1 = -1/p_1\) (de \(-\ln p_1\)) e \(\partial v/\partial m = 1/p_2\). Roy: \(x_1^M = -\dfrac{\partial v/\partial p_1}{\partial v/\partial m} = -\dfrac{-1/p_1}{1/p_2} = \dfrac{p_2}{p_1}\) ✓.
    - (c) Inverter \(v = u\) em \(m\): \(m = e(p, u) = (u - \ln(p_2/p_1) + 1) p_2 = u p_2 - p_2 \ln(p_2/p_1) + p_2\). Shephard: \(\partial e/\partial p_1 = -p_2 \cdot (-1/p_1) = p_2/p_1 = h_1(p, u) = x_1^M\) ✓ (independente de \(u\) — assinatura quase-linear).
    - (d) Como \(h_1 = x_1^M = p_2/p_1\) (independente de \(u\)), integrais de Hicksiana e Marshalliana **coincidem**: \(\text{CV} = \text{EV} = \Delta\text{EC} = \int_{p_1^0}^{p_1^1} (p_2/p_1) dp_1 = p_2 \ln(p_1^1/p_1^0)\).
 
@@ -738,22 +738,22 @@ Use \(s_1 = 0{,}30\) (média do 1º quintil), preços \(p = (1, 1)\) (normalizad
 
 **Enunciado.** \(u(x_1, x_2) = u_1(x_1) + u_2(x_2)\) com \(u_i'(\cdot) > 0\), \(u_i''(\cdot) < 0\). Preços \(p\), renda \(m\).
 
-(a) Mostre que TMS \(= u_1'(x_1)/u_2'(x_2)\) e que demanda Marshalliana satisfaz \(u_i'(x_i^M) = \lambda^* p_i\) com \(\lambda^*\) comum.
-(b) Mostre que se \(u_1, u_2\) são CARA com mesmo coeficiente, demanda é proporcional a \(\ln(1/p_i)\) (não-homotética).
-(c) Mostre que a matriz de Slutsky é **diagonal** se preferência é aditivamente separável **e** \(u_i\) é exponencial. Por quê?
+(a) Mostre que \(\text{TMS} = u_1'(x_1)/u_2'(x_2)\) e que demanda Marshalliana satisfaz \(u_i'(x_i^M) = \lambda^* p_i\) com \(\lambda^*\) comum.
+(b) Mostre que se \(u_1, u_2\) são CARA com mesmo coeficiente \(\theta\), a demanda tem a forma \(x_i^M = -\dfrac{1}{\theta}\big[\ln \lambda^*(p, m) + \ln p_i\big]\) — log-linear em preços, com \(\lambda^*\) endógeno em \(m\). Verifique que o sistema é **não-homotético** (escalar \(m\) não preserva razões \(x_i/x_j\)).
+(c) Em \(N \geq 3\) bens com aditividade separável, mostre que a matriz de Slutsky exibe **separabilidade Hicksiana** entre blocos: \(s_{ij}\) é proporcional ao produto de elasticidades-renda quando \(i, j\) estão em blocos distintos (resultado Houthakker 1960; teorema de Pearce). Por quê o caso de **2 bens** é degenerado?
 (d) Discuta: identificação de aditividade separável a partir de microdados — quais momentos são "tested"?
 
 **Gabarito 5-passos.**
 
-1. **Ponto-chave.** Aditividade separável é restrição forte: implica que efeito-renda cruzado \(\partial^2 u/\partial x_i \partial x_j = 0\), e a matriz de Slutsky herda diagonalidade quando preferência é também CARA-uniforme. **Identificável** via "razão de elasticidades cruzadas" em microdados — Deaton (1974, *Econometrica* 42(2): 341–367, [DOI 10.2307/1911709](https://doi.org/10.2307/1911709)) detalha o teste.
+1. **Ponto-chave.** Aditividade separável é restrição forte: implica que utilidade cruzada \(\partial^2 u/\partial x_i \partial x_j = 0\) e, em \(N \geq 3\) bens, induz **separabilidade Hicksiana** entre blocos de bens (resultado Houthakker 1960; tratamento moderno em Deaton-Muellbauer 1980b §5). **Identificável** via razão de elasticidades cruzadas em microdados — Deaton (1974, *Econometrica* 42(2): 341–367, [DOI 10.2307/1911983](https://doi.org/10.2307/1911983)) detalha o teste.
 
 2. **Derivação.**
-   - (a) Lagrangiano: \(\mathcal{L} = u_1(x_1) + u_2(x_2) - \lambda(p_1 x_1 + p_2 x_2 - m)\). CPO: \(u_i'(x_i) = \lambda p_i\;\forall i\). TMS \(= u_1'/u_2' = p_1/p_2\) (tangência) ✓.
+   - (a) Lagrangiano: \(\mathcal{L} = u_1(x_1) + u_2(x_2) - \lambda(p_1 x_1 + p_2 x_2 - m)\). CPO: \(u_i'(x_i) = \lambda p_i\;\forall i\). \(\text{TMS} = u_1'/u_2' = p_1/p_2\) (tangência) ✓.
    - (b) CARA: \(u_i(x_i) = -e^{-\theta x_i}/\theta\), \(u_i'(x_i) = e^{-\theta x_i}\). CPO: \(e^{-\theta x_i} = \lambda p_i \Rightarrow x_i = -(1/\theta)\ln(\lambda p_i)\). Walras: \(\sum_i p_i x_i = m \Rightarrow -(1/\theta) \sum_i p_i \ln(\lambda p_i) = m\). Solve para \(\lambda\) e back-sub. **Não-homotética** porque a relação \(x_i\) vs. \(p_i\) é log, não potência.
-   - (c) Slutsky: \(s_{ij} = \partial h_i/\partial p_j\). Para CARA-aditiva, \(\partial^2 u/\partial x_i \partial x_j = 0\); o sistema CPO se desacopla. Hicksiana cruzada \(\partial h_1/\partial p_2 = 0\) **se e somente se** preferência é aditiva **e** preferência é CARA — Hicks separability. Caso geral (aditiva mas não CARA), há cruzamento via \(\lambda^*\) compartilhado.
+   - (c) Para utilidade aditivamente separável \(u = \sum_i u_i(x_i)\), o resultado clássico de Houthakker (1960) é que a Hicksiana cruzada satisfaz \(s_{ij} = \phi \cdot \eta_i \eta_j s_i s_j / m\) entre blocos separáveis, com \(\phi\) função do "money-flexibility" \(\partial \ln \lambda^*/\partial \ln m\). **Cuidado em 2 bens:** as 4 propriedades de \(S\) (simetria + semidef. neg. + diagonal \(\leq 0\) + \(Sp = 0\)) **forçam** \(s_{ij} \geq 0\) para \(i \neq j\) — ver discussão em Bloco B.1; logo \(S\) **não pode ser estritamente diagonal** com \(s_{ii} < 0\) em \(N = 2\). A separabilidade Hicksiana só aparece operacionalmente em \(N \geq 3\), onde há graus de liberdade para cruzados nulos entre blocos distintos.
    - (d) Identificação: \(\partial \ln x_i^M/\partial \ln p_j\) (elasticidade cruzada) é função explícita de \((u_i, u_j)\). Se você dispõe de variação de preço em painéis de famílias com renda fixa (intra-trimestre), o coeficiente cruzado revela aditividade separável. **Teste empírico:** \(\partial^2 \ln u/\partial \ln x_i \partial \ln x_j = 0\) testável em microdados via curvatura de Engel.
 
-3. **Armadilha.** Aluno típico (i) confunde "aditiva separável" com "CD" — CD é multiplicativa, não aditiva (mas seu log é aditivo, donde a confusão); (ii) acha que Slutsky diagonal \(\Rightarrow\) bens independentes em **todo** sentido — não, são independentes Hicksianos mas **podem** ser substitutos brutos via efeito-renda; (iii) infere CARA \(\Rightarrow\) homotética — falso, CARA é inverso de homotética (não preserva razões sob escala de \(m\)).
+3. **Armadilha.** Aluno típico (i) confunde "aditiva separável" com "CD" — CD é multiplicativa, não aditiva (mas seu log é aditivo, donde a confusão); (ii) acha que aditividade em utilidade \(\Rightarrow\) Slutsky **estritamente diagonal** — falso em 2 bens (\(Sp = 0\) com \(s_{ii} \leq 0\) **força** \(s_{ij} \geq 0\) cruzado), e em \(N \geq 3\) bens só vale como separabilidade entre blocos, não diagonalidade plena; (iii) infere CARA \(\Rightarrow\) homotética — falso, CARA é inverso de homotética (não preserva razões sob escala de \(m\)).
 
 4. **Extensão.** Aditividade separável é hipótese clássica para extensão a múltiplos períodos: \(U = \sum_t \beta^t u(c_t)\) é CARA-aditiva intertemporal, leva à equação de Euler de macro padrão. **Crítica de Deaton (1974):** aditividade pode falhar empiricamente — bens podem ter complementaridade (lazer-cerveja), e impor aditividade rejeita modelos coerentes. **Tratamento moderno:** AIDS é não-aditiva por design.
 
@@ -807,7 +807,7 @@ Pontos onde o Darcio gostaria que o Alberto **reforce** ou **mitigue** algum asp
    - **Jensen & Miller (2008)** *AER* 98(4): 1553–1577, [DOI 10.1257/aer.98.4.1553](https://doi.org/10.1257/aer.98.4.1553) — Hunan arroz, caso canônico de Giffen.
    - **Hicks-Allen (1934)** *Economica* 1, [DOI 10.2307/2548574](https://doi.org/10.2307/2548574) — origem da Slutsky moderna.
    - **Stone (1954)** *Economic Journal* 64(255): 511–527, [DOI 10.2307/2227743](https://doi.org/10.2307/2227743) — Linear Expenditure System / SG empírico.
-   - **Deaton & Muellbauer (1980)** *AER* 70(3): 312–326, [DOI 10.2307/1805222](https://doi.org/10.2307/1805222) — AIDS canônico.
+   - **Deaton & Muellbauer (1980)** *AER* 70(3): 312–326 (JSTOR stable 1805222) — AIDS canônico.
 
 6. **O que NÃO entrar na monitoria:** funções de Bergson-Samuelson para welfare social (entra em Aula 4–5), economia da informação (Aula 8), modelos dinâmicos (não cabem em micro I). Aula 5 (Arrow-Debreu I) é a próxima — não invadir o terreno. Citar em 30 segundos máximo se aluno perguntar; redirecionar para a M2 (sábado 23/05).
 

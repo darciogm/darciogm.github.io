@@ -277,7 +277,7 @@ Definição operacional de \(r\)-réplica: dada economia \(\mathcal{E}\) com age
 > \]
 > Ou seja: o **núcleo encolhe** com a réplica e converge **exatamente** para o conjunto de EC.
 >
-> *Referência:* Debreu & Scarf (1963), "A Limit Theorem on the Core of an Economy", *International Economic Review* 4(3): 235–246, **DOI 10.2307/2525306**. Intuição original em Edgeworth (1881), *Mathematical Psychics* (livro). Tratamento formal em Aumann (1964), "Markets with a Continuum of Traders", *Econometrica* 32(1): 39–50, **DOI 10.2307/1913732** (passa ao limite contínuo).
+> *Referência:* Debreu & Scarf (1963), "A Limit Theorem on the Core of an Economy", *International Economic Review* 4(3): 235–246, **DOI 10.2307/2525306**. Intuição original em Edgeworth (1881), *Mathematical Psychics* (livro). Tratamento formal em Aumann (1964), "Markets with a Continuum of Traders", *Econometrica* 32(1/2): 39–50, **DOI 10.2307/1913732** (passa ao limite contínuo).
 
 **Argumento intuitivo (3 min):**
 
@@ -717,19 +717,20 @@ Elevar ao quadrado: \(4(27 - L) = 9 L^{4/3}\). Reorganizando:
 9 L^{4/3} + 4 L - 108 = 0.
 \]
 
-**Resolução numérica via tentativa:**
+**Resolução numérica via tentativa** (definir \(h(L) = 9 L^{4/3} + 4 L - 108\); buscar \(h(L^*) = 0\)):
 
-- \(L = 8\): \(9 \cdot 8^{4/3} + 32 - 108 = 9 \cdot 16 + 32 - 108 = 144 + 32 - 108 = 68 > 0\). Excesso.
-- \(L = 4\): \(9 \cdot 4^{4/3} + 16 - 108 = 9 \cdot 6{,}35 + 16 - 108 \approx 57{,}15 + 16 - 108 = -34{,}85 < 0\). Defeito.
-- \(L = 6\): \(9 \cdot 6^{4/3} + 24 - 108 = 9 \cdot 10{,}9 + 24 - 108 \approx 98{,}1 + 24 - 108 = 14{,}1 > 0\). Pequeno excesso.
-- \(L = 5{,}5\): \(9 \cdot 5{,}5^{4/3} + 22 - 108 \approx 9 \cdot 9{,}80 + 22 - 108 \approx 88{,}2 + 22 - 108 = 2{,}2\). Quase.
-- \(L = 5{,}4\): \(9 \cdot 5{,}4^{4/3} + 21{,}6 - 108 \approx 9 \cdot 9{,}57 + 21{,}6 - 108 \approx 86{,}13 + 21{,}6 - 108 \approx -0{,}27\). Pequeníssimo defeito.
+- \(L = 8\): \(8^{4/3} = 16\), \(h(8) = 9 \cdot 16 + 32 - 108 = 144 + 32 - 108 = 68 > 0\). Excesso grande.
+- \(L = 4\): \(4^{4/3} \approx 6{,}350\), \(h(4) = 9 \cdot 6{,}350 + 16 - 108 \approx 57{,}15 + 16 - 108 = -34{,}85 < 0\). Defeito grande.
+- \(L = 6\): \(6^{4/3} \approx 10{,}903\), \(h(6) \approx 9 \cdot 10{,}903 + 24 - 108 \approx 98{,}13 + 24 - 108 = 14{,}13 > 0\). Excesso.
+- \(L = 5{,}5\): \(5{,}5^{4/3} \approx 9{,}709\), \(h(5{,}5) \approx 9 \cdot 9{,}709 + 22 - 108 \approx 87{,}38 + 22 - 108 = 1{,}38\). Pequeno excesso.
+- \(L = 5{,}4\): \(5{,}4^{4/3} \approx 9{,}474\), \(h(5{,}4) \approx 9 \cdot 9{,}474 + 21{,}6 - 108 \approx 85{,}26 + 21{,}6 - 108 = -1{,}14\). Defeito moderado.
+- \(L = 5{,}45\): \(5{,}45^{4/3} \approx 9{,}591\), \(h(5{,}45) \approx 9 \cdot 9{,}591 + 21{,}8 - 108 \approx 86{,}32 + 21{,}8 - 108 \approx 0{,}12\). Praticamente zero — raiz.
 
-> **Aproximação:** \(L^* \approx 5{,}42\). Calcular \(q^* = (5{,}42)^{2/3}\) e \(\ell^* = 27 - 5{,}42 = 21{,}58\).
+> **Aproximação:** \(L^* \approx 5{,}45\). Calcular \(q^* = (5{,}45)^{2/3}\) e \(\ell^* = 27 - 5{,}45 = 21{,}55\).
 
-\(q^* = 5{,}42^{2/3} \approx 3{,}07\). \(\ell^* \approx 21{,}58\).
+\(q^* = 5{,}45^{2/3} \approx 3{,}10\). \(\ell^* \approx 21{,}55\).
 
-> **Pergunta-disparo (1 min):** *"Por que Robinson trabalha tão pouco? \(L^* \approx 5{,}42\) em \(\bar L = 27\) é menos de 20% do tempo!"*
+> **Pergunta-disparo (1 min):** *"Por que Robinson trabalha tão pouco? \(L^* \approx 5{,}45\) em \(\bar L = 27\) é cerca de 20% do tempo!"*
 
 > Resposta esperada: combinação de (i) tecnologia côncava forte (\(L^{2/3}\) tem PMa caindo rápido) e (ii) preferência CES com \(\sigma = 2\) (lazer e consumo são "muito substituíveis"; lazer "vale" muito quando consumo é abundante). Robinson é **eficiente** em substituir lazer por consumo.
 
@@ -739,22 +740,22 @@ Elevar ao quadrado: \(4(27 - L) = 9 L^{4/3}\). Reorganizando:
 \pi(p, w) = \max_L p L^{2/3} - w L.
 \]
 
-CPO: \(p \cdot (2/3) L^{-1/3} = w\), ou seja \(w = (2 p)/(3 L^{1/3})\). Em \(L^* = 5{,}42\), \(p = 1\):
+CPO: \(p \cdot (2/3) L^{-1/3} = w\), ou seja \(w = (2 p)/(3 L^{1/3})\). Em \(L^* \approx 5{,}45\), \(p = 1\) (\(5{,}45^{1/3} \approx 1{,}760\)):
 
 \[
-w^* = \frac{2}{3 \cdot 5{,}42^{1/3}} = \frac{2}{3 \cdot 1{,}757} \approx \frac{2}{5{,}27} \approx 0{,}379.
+w^* = \frac{2}{3 \cdot 5{,}45^{1/3}} \approx \frac{2}{3 \cdot 1{,}760} \approx \frac{2}{5{,}279} \approx 0{,}379.
 \]
 
-**Verificação alternativa via TMT:** \(\text{TMT}_{L, q} = f'(L^*) = (2/3) L^{*-1/3} = w^*/p = 0{,}379\) ✓.
+**Verificação alternativa via TMT:** \(\text{TMT}_{L, q} = f'(L^*) = (2/3) L^{*-1/3} = w^*/p \approx 0{,}379\) ✓.
 
 **Passo 3 — Lucro e renda (2 min):**
 
 \[
-\pi^* = p q^* - w^* L^* = 1 \cdot 3{,}07 - 0{,}379 \cdot 5{,}42 = 3{,}07 - 2{,}054 \approx 1{,}016.
+\pi^* = p q^* - w^* L^* \approx 1 \cdot 3{,}10 - 0{,}379 \cdot 5{,}45 \approx 3{,}10 - 2{,}066 \approx 1{,}033.
 \]
 
 \[
-m^* = w^* \bar L + \pi^* = 0{,}379 \cdot 27 + 1{,}016 = 10{,}233 + 1{,}016 \approx 11{,}25.
+m^* = w^* \bar L + \pi^* \approx 0{,}379 \cdot 27 + 1{,}033 \approx 10{,}233 + 1{,}033 \approx 11{,}27.
 \]
 
 **Passo 4 — UMP do consumidor com preferências CES (3 min):**
@@ -769,11 +770,11 @@ CPO: \(\frac{1}{2 q^{1/2}} = \lambda p\), \(\frac{1}{2 \ell^{1/2}} = \lambda w\)
 
 > **Atenção pedagógica:** o **inverso** da razão de preços, não o próprio. Em CES com \(\sigma > 1\), demanda relativa por lazer **sobe** quando \(w/p\) **cai** (lazer fica caro em utilidade marginal mas barato em preço relativo). A relação \((p/w)^\sigma\) com \(\sigma = 2\) — não \((w/p)^\sigma\). **Erro estrutural típico:** confundir o sinal/orientação da elasticidade.
 
-Com \(p = 1, w^* = 0{,}379\): \(\ell^*/q^* = (1/0{,}379)^2 = (2{,}639)^2 \approx 6{,}96\).
+Com \(p = 1, w^* \approx 0{,}379\): \(\ell^*/q^* = (1/0{,}379)^2 = (2{,}639)^2 \approx 6{,}96\).
 
-Pelo planejador: \(\ell^*/q^* = 21{,}58/3{,}07 \approx 7{,}03\).
+Pelo planejador: \(\ell^*/q^* \approx 21{,}55/3{,}10 \approx 6{,}95\).
 
-> **Coincide!** \(6{,}96 \approx 7{,}03\) (pequena diferença por arredondamento numérico do \(L^*\)). ✓
+> **Coincide!** \(6{,}96 \approx 6{,}95\) (concordância dentro de arredondamento numérico de \(L^*\)). ✓
 
 **Confirmação algébrica (2 min):**
 
@@ -787,25 +788,25 @@ p q^* + w \cdot q^* \cdot (p/w)^2 = m \;\;\Longleftrightarrow\;\; q^* \left[p + 
 
 E \(\ell^* = q^* \cdot (p/w)^2 = \frac{m w}{p(w + p)} \cdot \frac{p^2}{w^2} = \frac{m p}{w(w + p)}\).
 
-Em \(p = 1, w^* = 0{,}379, m^* = 11{,}25\):
+Em \(p = 1, w^* \approx 0{,}379, m^* \approx 11{,}27\):
 
 \[
-q^* = \frac{11{,}25 \cdot 0{,}379}{1 \cdot (0{,}379 + 1)} = \frac{4{,}264}{1{,}379} \approx 3{,}09 \;\;\checkmark
+q^* = \frac{11{,}27 \cdot 0{,}379}{1 \cdot (0{,}379 + 1)} \approx \frac{4{,}271}{1{,}379} \approx 3{,}10 \;\;\checkmark
 \]
 
-(concordante com \(3{,}07\) do planejador, diferença por arredondamento numérico de \(L^*\)).
+(concordante com \(3{,}10\) do planejador).
 
 \[
-\ell^* = \frac{11{,}25 \cdot 1}{0{,}379 \cdot 1{,}379} = \frac{11{,}25}{0{,}523} \approx 21{,}53 \;\;\checkmark
+\ell^* = \frac{11{,}27 \cdot 1}{0{,}379 \cdot 1{,}379} \approx \frac{11{,}27}{0{,}523} \approx 21{,}55 \;\;\checkmark
 \]
 
-(concordante com \(21{,}58\)).
+(concordante com \(21{,}55\)).
 
-**Passo 5 — Verificação da assinatura \(\text{TMS} = \text{TMT} = w^*/p\) (1 min):**
+**Passo 5 — Verificação da assinatura \(\text{TMS}_{\ell, q} = \text{TMT}_{L, q} = w^*/p\) (1 min):**
 
-- \(\text{TMS}_{\ell, q} = \frac{\partial u/\partial \ell}{\partial u/\partial q} = \frac{q^{1/2}/\ell^{1/2}}{1} \cdot \frac{(q^{1/2} + \ell^{1/2})}{(q^{1/2} + \ell^{1/2})} = \sqrt{q^*/\ell^*}\). Em \(q^* = 3{,}07, \ell^* = 21{,}58\): \(\sqrt{3{,}07/21{,}58} = \sqrt{0{,}142} \approx 0{,}377\) ✓ (≈ \(w^* = 0{,}379\), erro de arredondamento).
-- \(\text{TMT}_{L, q} = f'(L^*) = (2/3)/L^{*1/3} = (2/3)/1{,}757 \approx 0{,}379\) ✓.
-- \(w^*/p^* = 0{,}379\) ✓.
+- \(\text{TMS}_{\ell, q} = \frac{\partial u/\partial \ell}{\partial u/\partial q}\). Como \(u = (q^{1/2} + \ell^{1/2})^2\), \(\partial u/\partial q = (q^{1/2} + \ell^{1/2}) \cdot q^{-1/2}\) e \(\partial u/\partial \ell = (q^{1/2} + \ell^{1/2}) \cdot \ell^{-1/2}\); razão \(= q^{1/2}/\ell^{1/2} = \sqrt{q^*/\ell^*}\). Em \(q^* \approx 3{,}10, \ell^* \approx 21{,}55\): \(\sqrt{3{,}10/21{,}55} \approx \sqrt{0{,}1438} \approx 0{,}379\) ✓.
+- \(\text{TMT}_{L, q} = f'(L^*) = (2/3)/L^{*1/3} \approx (2/3)/1{,}760 \approx 0{,}379\) ✓.
+- \(w^*/p^* \approx 0{,}379\) ✓.
 
 **Igualdade tripla** confirmada.
 
@@ -813,9 +814,9 @@ q^* = \frac{11{,}25 \cdot 0{,}379}{1 \cdot (0{,}379 + 1)} = \frac{4{,}264}{1{,}3
 
 #### Gabarito 5-passos
 
-**1. Ponto-chave.** Robinson com tecnologia côncava paramétrica (\(L^{2/3}\)) e preferências CES com substituição \(\sigma = 2\) entrega EC interior solúvel. A solução exige iteração numérica (não fecha em forma elementar como CD), mas a **assinatura algébrica** TMS = TMT = w/p sobrevive. Robinson trabalha pouco (\(L^* \approx 5{,}42\) em \(\bar L = 27\)) por dupla pressão: tecnologia côncava + preferência por lazer alta.
+**1. Ponto-chave.** Robinson com tecnologia côncava paramétrica (\(L^{2/3}\)) e preferências CES com substituição \(\sigma = 2\) entrega EC interior solúvel. A solução exige iteração numérica (não fecha em forma elementar como CD), mas a **assinatura algébrica** TMS = TMT = w/p sobrevive. Robinson trabalha pouco (\(L^* \approx 5{,}45\) em \(\bar L = 27\)) por dupla pressão: tecnologia côncava + preferência por lazer alta.
 
-**2. Derivação.** Planejador: \(\max (L^{1/3} + (27-L)^{1/2})^2\). CPO: \(2(27-L)^{1/2} = 3 L^{2/3}\). Elevar ao quadrado: \(9 L^{4/3} + 4 L = 108\). Solução numérica \(L^* \approx 5{,}42\). Logo \(q^* \approx 3{,}07\), \(\ell^* \approx 21{,}58\). Firma: \(w^* = (2/3) L^{*-1/3} \approx 0{,}379\). Lucro: \(\pi^* \approx 1{,}016\). Renda: \(m^* \approx 11{,}25\). UMP CES verificada via \(\ell^*/q^* = (p/w)^\sigma = 6{,}96\) ✓. Tangência tripla: TMS = TMT = w/p \(\approx 0{,}379\) ✓.
+**2. Derivação.** Planejador: \(\max (L^{1/3} + (27-L)^{1/2})^2\). CPO: \(2(27-L)^{1/2} = 3 L^{2/3}\). Elevar ao quadrado: \(9 L^{4/3} + 4 L = 108\). Solução numérica \(L^* \approx 5{,}45\). Logo \(q^* \approx 3{,}10\), \(\ell^* \approx 21{,}55\). Firma: \(w^* = (2/3) L^{*-1/3} \approx 0{,}379\). Lucro: \(\pi^* \approx 1{,}033\). Renda: \(m^* \approx 11{,}27\). UMP CES verificada via \(\ell^*/q^* = (p/w)^\sigma \approx 6{,}96\) ✓. Tangência tripla: TMS = TMT = w/p \(\approx 0{,}379\) ✓.
 
 **3. Armadilha.** Aluno típico aplica fórmula CD para UMP (\(\ell^*/q^* = 1\) sob pesos iguais) — **falso** com CES. Outro erro: confundir \(\rho\) (parâmetro CES) com \(\sigma\) (elasticidade de substituição); \(\sigma = 1/(1-\rho)\). Terceiro erro: tentar resolver \(9 L^{4/3} + 4 L = 108\) algebricamente — não tem forma fechada elementar; **iteração numérica é a via**. Quarto erro: não verificar a CPO da firma (apenas plug-and-chug do salário) — perde a estrutura.
 
@@ -961,7 +962,7 @@ u^A(x_1, x_2) = x_1 + \ln x_2, \quad u^B(x_1, x_2) = \ln x_1 + x_2.
 1. **Ponto-chave.** Preferências não-homotéticas (quase-lineares com numerário diferente em utilidade) geram contract curve não-linear na caixa de Edgeworth. EC continua resolvido por mercado walrasiano, mas geometria difere de CD canônica. Caso pedagogicamente importante para aluno entender que tangência \(\text{TMS}^A = \text{TMS}^B\) não implica contract curve linear.
 
 2. **Derivação.**
-   - **(a) Contract curve:** \(\text{TMS}^A = 1 \cdot (1/x_2^A)/1 \cdot x_2^A = x_2^A\)? Recalcular: \(u^A_1 = 1\), \(u^A_2 = 1/x_2^A\). \(\text{TMS}^A_{12} = u^A_1/u^A_2 = x_2^A\). Similarmente \(\text{TMS}^B_{12} = u^B_1/u^B_2 = (1/x_1^B)/1 = 1/x_1^B\). Igualdade: \(x_2^A = 1/x_1^B\), ou seja \(x_2^A = 1/(\bar\omega_1 - x_1^A) = 1/(3 - x_1^A)\). **Contract curve:** \(x_2^A \cdot (3 - x_1^A) = 1\), ou seja \(x_2^A = 1/(3 - x_1^A)\) — **hipérbole não-linear**.
+   - **(a) Contract curve:** Derivadas parciais: \(u^A_1 = 1\), \(u^A_2 = 1/x_2^A\); \(u^B_1 = 1/x_1^B\), \(u^B_2 = 1\). Portanto \(\text{TMS}^A_{12} = u^A_1/u^A_2 = x_2^A\) e \(\text{TMS}^B_{12} = u^B_1/u^B_2 = 1/x_1^B\). Igualdade tangência \(\text{TMS}^A = \text{TMS}^B\): \(x_2^A = 1/x_1^B\), ou seja \(x_2^A = 1/(\bar\omega_1 - x_1^A) = 1/(3 - x_1^A)\). **Contract curve:** \(x_2^A \cdot (3 - x_1^A) = 1\) — **hipérbole, não passa pela diagonal de Edgeworth**.
    - **(b) EC:** Demanda Marshalliana de \(A\) (quase-linear): \(\text{TMS}^A = p_1/p_2 = p_1\) ⇒ \(x_2^A = p_1\). Demanda do bem 1: residual da renda. \(m^A = 2 p_1 + 1\). Gasto em bem 2: \(p_2 \cdot p_1 = p_1\). Resto: \(x_1^A = (2 p_1 + 1 - p_1)/p_1 = (p_1 + 1)/p_1 = 1 + 1/p_1\). De \(B\): \(\text{TMS}^B = 1/x_1^B = p_1\) ⇒ \(x_1^B = 1/p_1\). \(m^B = p_1 + 2\). Gasto em bem 1: \(p_1 \cdot 1/p_1 = 1\). Resto: \(x_2^B = (p_1 + 2 - 1)/1 = p_1 + 1\). **Mercado 1:** \(x_1^A + x_1^B = 1 + 1/p_1 + 1/p_1 = 1 + 2/p_1 = 3 \Rightarrow p_1^* = 1\). **Alocação:** \(x^A = (2, 1)\), \(x^B = (1, 2)\). **Coincide com a dotação** — não há troca em equilíbrio neste setup. ✓
    - **(c) Verificação na contract curve:** \(x_2^A = 1\), \(x_1^A = 2\); contract curve exige \(x_2^A \cdot (3 - x_1^A) = 1\). Substituir: \(1 \cdot 1 = 1\) ✓. Está na contract curve.
    - **(d) Contraste com CD:** em CD simétrica (\(u^A = u^B = x_1^{1/2} x_2^{1/2}\)), \(\text{TMS}^A = x_2^A/x_1^A\), \(\text{TMS}^B = (\bar\omega_2 - x_2^A)/(\bar\omega_1 - x_1^A)\). Igualdade: \(x_2^A/x_1^A = (\bar\omega_2 - x_2^A)/(\bar\omega_1 - x_1^A)\) ⇒ \(x_2^A (\bar\omega_1 - x_1^A) = x_1^A (\bar\omega_2 - x_2^A)\) ⇒ \(x_2^A \bar\omega_1 = x_1^A \bar\omega_2\), ou seja \(x_2^A/x_1^A = \bar\omega_2/\bar\omega_1\) — **diagonal linear**. Em CD, contract curve é a diagonal da caixa. Em preferências não-homotéticas, contract curve é curva genérica (hipérbole, parábola, etc.).
