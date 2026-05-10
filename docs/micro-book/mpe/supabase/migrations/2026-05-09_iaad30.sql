@@ -183,10 +183,10 @@ BEGIN
 
   -- C_geral e C_prazo
   FOR rec IN
-    SELECT *
-    FROM public.iaad_aula_completion
-    WHERE user_id = p_user_id
-    ORDER BY aula_n
+    SELECT ac.*
+    FROM public.iaad_aula_completion ac
+    WHERE ac.user_id = p_user_id
+    ORDER BY ac.aula_n
   LOOP
     -- Pesos: 0.40 + 0.30 + 0.30 + 0.50 + 0.085 + 0.085 = 1.67 por aula
     v_geral_pts := v_geral_pts
@@ -285,7 +285,7 @@ BEGIN
   RETURN QUERY
   WITH per_user AS (
     SELECT
-      pa.user_id,
+      pa.id AS user_id,
       -- C_geral
       COALESCE((
         SELECT (
@@ -296,7 +296,7 @@ BEGIN
            SUM(CASE WHEN refl_nebulosa_done  THEN 0.085 ELSE 0 END) +
            SUM(CASE WHEN refl_aula_done      THEN 0.085 ELSE 0 END))
           / 15.0 * 10.0
-        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.user_id
+        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
       ), 0)::numeric AS c_geral,
       -- C_prazo
       COALESCE((
@@ -308,11 +308,11 @@ BEGIN
            SUM(CASE WHEN refl_nebulosa_in_window  THEN 0.085 ELSE 0 END) +
            SUM(CASE WHEN refl_aula_in_window      THEN 0.085 ELSE 0 END))
           / 15.0 * 10.0
-        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.user_id
+        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
       ), 0)::numeric AS c_prazo,
       -- P
       COALESCE(
-        (SELECT pr.accuracy * 10.0 FROM public.iaad_performance_raw pr WHERE pr.user_id = pa.user_id),
+        (SELECT pr.accuracy * 10.0 FROM public.iaad_performance_raw pr WHERE pr.user_id = pa.id),
         0
       )::numeric AS p_score
     FROM public.profiles pa
