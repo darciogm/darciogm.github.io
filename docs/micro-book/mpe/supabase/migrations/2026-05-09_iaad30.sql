@@ -177,7 +177,7 @@ BEGIN
   IF auth.uid() IS NULL THEN
     RAISE EXCEPTION 'Não autenticado.';
   END IF;
-  IF auth.uid() <> p_user_id AND NOT public.is_admin(auth.uid()) THEN
+  IF auth.uid() <> p_user_id AND NOT public.is_admin() THEN
     RAISE EXCEPTION 'Sem permissão para ler IAAD de outro usuário.';
   END IF;
 
