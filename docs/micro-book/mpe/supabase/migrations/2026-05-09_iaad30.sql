@@ -40,10 +40,13 @@ ON CONFLICT (aula_n) DO NOTHING;
 
 
 -- 1. View: completion por (user, aula_n) com timestamps + flags geral e prazo
+-- Inclui qualquer user em profiles (student OU admin) — admin vê o próprio
+-- IAAD para teste/debug; para os agregados da turma, get_iaad_class_quartiles
+-- filtra apenas role='student'.
 CREATE OR REPLACE VIEW public.iaad_aula_completion AS
 WITH
   profiles_active AS (
-    SELECT id AS user_id FROM public.profiles WHERE role = 'student'
+    SELECT id AS user_id FROM public.profiles
   ),
   cal AS (
     SELECT aula_n, presencial_at, next_presencial_at, curso_deadline
