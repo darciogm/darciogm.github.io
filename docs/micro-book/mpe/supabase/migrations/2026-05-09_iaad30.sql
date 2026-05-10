@@ -347,6 +347,76 @@ $$;
 GRANT EXECUTE ON FUNCTION public.get_iaad_class_quartiles() TO authenticated;
 
 
+-- 4b. RPC: distribuição completa dos componentes (arrays para histograma)
+--    Retorna arrays sem ordem específica (anônimos) — frontend binniza/plota.
+--    Filtra apenas role='student' (admin não polui distribuição da turma).
+CREATE OR REPLACE FUNCTION public.get_iaad_class_distribution()
+RETURNS TABLE (
+  c_geral_values numeric[],
+  c_prazo_values numeric[],
+  p_values        numeric[],
+  iaad_values     numeric[],
+  n_students      integer
+)
+LANGUAGE plpgsql
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  IF auth.uid() IS NULL THEN
+    RAISE EXCEPTION 'Não autenticado.';
+  END IF;
+
+  RETURN QUERY
+  WITH per_user AS (
+    SELECT
+      pa.id AS user_id,
+      COALESCE((
+        SELECT (
+          (SUM(CASE WHEN material_done       THEN 0.40 ELSE 0 END) +
+           SUM(CASE WHEN quiz_pre_done       THEN 0.30 ELSE 0 END) +
+           SUM(CASE WHEN quiz_pos_done       THEN 0.30 ELSE 0 END) +
+           SUM(CASE WHEN exerc_done          THEN 0.50 ELSE 0 END) +
+           SUM(CASE WHEN refl_nebulosa_done  THEN 0.085 ELSE 0 END) +
+           SUM(CASE WHEN refl_aula_done      THEN 0.085 ELSE 0 END))
+          / 15.0 * 10.0
+        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
+      ), 0)::numeric AS c_geral,
+      COALESCE((
+        SELECT (
+          (SUM(CASE WHEN material_in_window       THEN 0.40 ELSE 0 END) +
+           SUM(CASE WHEN quiz_pre_in_window       THEN 0.30 ELSE 0 END) +
+           SUM(CASE WHEN quiz_pos_in_window       THEN 0.30 ELSE 0 END) +
+           SUM(CASE WHEN exerc_in_window          THEN 0.50 ELSE 0 END) +
+           SUM(CASE WHEN refl_nebulosa_in_window  THEN 0.085 ELSE 0 END) +
+           SUM(CASE WHEN refl_aula_in_window      THEN 0.085 ELSE 0 END))
+          / 15.0 * 10.0
+        ) FROM public.iaad_aula_completion ac WHERE ac.user_id = pa.id
+      ), 0)::numeric AS c_prazo,
+      COALESCE(
+        (SELECT pr.accuracy * 10.0 FROM public.iaad_performance_raw pr WHERE pr.user_id = pa.id),
+        0
+      )::numeric AS p_score
+    FROM public.profiles pa
+    WHERE pa.role = 'student'
+  ),
+  with_iaad AS (
+    SELECT user_id, c_geral, c_prazo, p_score,
+           (0.60 * c_geral + 0.20 * c_prazo + 0.20 * p_score) AS iaad
+    FROM per_user
+  )
+  SELECT
+    ARRAY(SELECT ROUND(c_geral::numeric, 2) FROM with_iaad ORDER BY c_geral),
+    ARRAY(SELECT ROUND(c_prazo::numeric, 2) FROM with_iaad ORDER BY c_prazo),
+    ARRAY(SELECT ROUND(p_score::numeric, 2) FROM with_iaad ORDER BY p_score),
+    ARRAY(SELECT ROUND(iaad::numeric,    2) FROM with_iaad ORDER BY iaad),
+    (SELECT COUNT(*)::integer FROM with_iaad);
+END;
+$$;
+
+GRANT EXECUTE ON FUNCTION public.get_iaad_class_distribution() TO authenticated;
+
+
 -- 5. Comentários documentais
 COMMENT ON TABLE  public.iaad_calendar IS
 'Calendário canônico do MPE 2026/32 — usado pelo IAAD-30 para janelas de prazo por aula.';

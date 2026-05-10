@@ -26,12 +26,20 @@
   IAAD.MAX_PTS_NOTA = 30;
   IAAD.AULAS_TOTAL = 9;
 
-  IAAD.bandFor = function(value, p25, p50, p75) {
-    if (value == null) return { idx: 0, label: 'sem dado' };
-    if (value >= p75) return { idx: 4, label: 'Top 25% da turma' };
-    if (value >= p50) return { idx: 3, label: 'Quartil 2 (acima da mediana)' };
-    if (value >= p25) return { idx: 2, label: 'Quartil 3 (abaixo da mediana)' };
-    return { idx: 1, label: 'Bottom 25% da turma' };
+  // Percentil exato vs. distribuição da turma
+  IAAD.percentile = function(value, values) {
+    if (value == null || !values || values.length === 0) return null;
+    var below = values.filter(function(v) { return Number(v) < Number(value); }).length;
+    return Math.round(100 * below / values.length);
+  };
+
+  IAAD.percentileLabel = function(value, values) {
+    var p = IAAD.percentile(value, values);
+    if (p == null) return '';
+    if (p >= 90) return 'top ' + (100 - p) + '% da turma';
+    if (p >= 50) return 'acima de ' + p + '% da turma';
+    if (p >= 10) return 'abaixo de ' + (100 - p) + '% da turma';
+    return 'bottom ' + (p === 0 ? 10 : (p+1)) + '% da turma';
   };
 
   function bar(score) {
@@ -39,6 +47,73 @@
     return '<span style="font-family:monospace;letter-spacing:-0.5px">' +
            '█'.repeat(n) + '░'.repeat(10 - n) + '</span>';
   }
+
+  // Histograma SVG da distribuição da turma com marcador da posição do aluno
+  IAAD.histogram = function(values, studentValue, opts) {
+    opts = opts || {};
+    var width = opts.width || 320;
+    var height = opts.height || 70;
+    var binCount = opts.binCount || 20;   // 20 bins de 0,5 cada (0–10)
+    var maxX = 10;
+
+    if (!values || values.length === 0) {
+      return '<div style="font-size:0.78rem;color:#94a3b8">Distribuição não disponível.</div>';
+    }
+
+    // Bin values
+    var bins = new Array(binCount).fill(0);
+    values.forEach(function(v) {
+      var num = Number(v);
+      var idx = Math.min(Math.floor(num / maxX * binCount), binCount - 1);
+      if (idx >= 0) bins[idx]++;
+    });
+    var maxCount = Math.max.apply(null, bins);
+    if (maxCount === 0) maxCount = 1;
+
+    var pct = IAAD.percentile(studentValue, values);
+    var binWidth = width / binCount;
+    var barAreaHeight = height - 20;
+
+    // Determinar bin do aluno para destacar
+    var studentBin = (studentValue != null) ? Math.min(Math.floor(Number(studentValue) / maxX * binCount), binCount - 1) : -1;
+
+    // Bars
+    var bars = bins.map(function(c, i) {
+      var h = (c / maxCount) * (barAreaHeight - 4);
+      var x = i * binWidth;
+      var y = barAreaHeight - h;
+      var color = (i === studentBin) ? '#C8102E' : '#cbd5e1';
+      var rect = '<rect x="' + (x + 0.5) + '" y="' + y + '" width="' + (binWidth - 1) + '" height="' + h + '" fill="' + color + '"/>';
+      // Anotação de count em cima da barra do aluno
+      var label = '';
+      if (i === studentBin && c > 0) {
+        label = '<text x="' + (x + binWidth/2) + '" y="' + (y - 2) + '" font-size="9" fill="#C8102E" text-anchor="middle">' + c + '</text>';
+      }
+      return rect + label;
+    }).join('');
+
+    // Linha vertical + triângulo do aluno
+    var marker = '';
+    if (studentValue != null) {
+      var markerX = (Number(studentValue) / maxX) * width;
+      marker = '<line x1="' + markerX + '" y1="-2" x2="' + markerX + '" y2="' + (barAreaHeight + 2) + '" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="2,2"/>' +
+               '<polygon points="' + (markerX - 5) + ',' + (barAreaHeight + 4) + ' ' + (markerX + 5) + ',' + (barAreaHeight + 4) + ' ' + markerX + ',' + (barAreaHeight - 1) + '" fill="#C8102E"/>';
+    }
+
+    // X-axis ticks
+    var ticks = '';
+    [0, 2.5, 5, 7.5, 10].forEach(function(t) {
+      var x = (t / maxX) * width;
+      ticks += '<line x1="' + x + '" y1="' + barAreaHeight + '" x2="' + x + '" y2="' + (barAreaHeight + 3) + '" stroke="#94a3b8" stroke-width="0.5"/>';
+      ticks += '<text x="' + x + '" y="' + (height - 2) + '" font-size="9" fill="#64748b" text-anchor="middle">' + t + '</text>';
+    });
+    // Eixo base
+    var axis = '<line x1="0" y1="' + barAreaHeight + '" x2="' + width + '" y2="' + barAreaHeight + '" stroke="#94a3b8" stroke-width="0.5"/>';
+
+    return '<svg width="' + width + '" height="' + (height + 4) + '" style="display:block;max-width:100%;overflow:visible">' +
+           bars + axis + ticks + marker +
+           '</svg>';
+  };
 
   // Breakdown C: 9 aulas × 6 itens × 2 dimensões (done/in_window)
   function renderBreakdown(breakdown) {
@@ -81,7 +156,7 @@
            '</div>';
   }
 
-  IAAD.render = function(targetEl, data, quartiles) {
+  IAAD.render = function(targetEl, data, distribution) {
     if (!targetEl) return;
     if (!data) {
       targetEl.innerHTML = '<div class="iaad-empty">Não foi possível carregar o IAAD-30. Recarregue a página.</div>';
@@ -94,10 +169,17 @@
     var iaad = Number(data.iaad || 0);
     var pts  = Number(data.pts_nota || 0);
 
-    var qG    = quartiles ? IAAD.bandFor(cG,   quartiles.c_geral_p25, quartiles.c_geral_p50, quartiles.c_geral_p75) : { label: '—' };
-    var qPr   = quartiles ? IAAD.bandFor(cP,   quartiles.c_prazo_p25, quartiles.c_prazo_p50, quartiles.c_prazo_p75) : { label: '—' };
-    var qP    = quartiles ? IAAD.bandFor(p,    quartiles.p_p25,       quartiles.p_p50,       quartiles.p_p75)       : { label: '—' };
-    var qIaad = quartiles ? IAAD.bandFor(iaad, quartiles.iaad_p25,    quartiles.iaad_p50,    quartiles.iaad_p75)    : { label: '—' };
+    // Arrays da turma para cada componente
+    var distG = (distribution && distribution.c_geral_values) || [];
+    var distPr = (distribution && distribution.c_prazo_values) || [];
+    var distP = (distribution && distribution.p_values) || [];
+    var distIaad = (distribution && distribution.iaad_values) || [];
+    var nStudents = (distribution && distribution.n_students) || 0;
+
+    var pctG = IAAD.percentileLabel(cG, distG);
+    var pctPr = IAAD.percentileLabel(cP, distPr);
+    var pctP = IAAD.percentileLabel(p, distP);
+    var pctIaad = IAAD.percentileLabel(iaad, distIaad);
 
     var html = ''
       + '<div class="iaad-card" style="background:#fff;border:1px solid #e2e8f0;border-radius:8px;padding:1rem 1.2rem;margin:1rem 0">'
@@ -110,44 +192,49 @@
       + '  <p style="margin:0.4rem 0 0.8rem 0;font-size:0.85rem;color:#64748b">'
       + '    Atualizado em tempo real a cada submissão. Nota é absoluta — exatamente o que você fez vale o que está abaixo.'
       + '  </p>'
-      // Total IAAD
-      + '  <div style="background:#f1f5f9;padding:0.7rem 0.9rem;border-radius:6px;margin-bottom:0.8rem">'
-      + '    <div style="display:flex;justify-content:space-between;align-items:center">'
-      + '      <strong style="font-size:1.1rem">IAAD: ' + iaad.toFixed(2) + ' / 10</strong>'
+      // Total IAAD + histograma da distribuição da turma
+      + '  <div style="background:#f1f5f9;padding:0.8rem 1rem;border-radius:6px;margin-bottom:0.9rem">'
+      + '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">'
+      + '      <strong style="font-size:1.15rem">IAAD: ' + iaad.toFixed(2) + ' / 10</strong>'
       + '      <span style="color:#0f766e;font-weight:600">→ ' + pts.toFixed(2) + ' / 30 pontos</span>'
       + '    </div>'
-      + '    <div style="font-size:0.8rem;color:#475569;margin-top:0.3rem">' + qIaad.label + '</div>'
+      + '    <div style="font-size:0.78rem;color:#64748b;margin-bottom:0.3rem">'
+      + '      Distribuição da turma (n=' + nStudents + ') · '
+      + '      <span style="color:#C8102E;font-weight:600">▲ você (' + iaad.toFixed(2) + ')</span>'
+      + '      ' + (pctIaad ? ' · ' + pctIaad : '')
+      + '    </div>'
+      + '    ' + IAAD.histogram(distIaad, iaad, { width: 360, height: 70, binCount: 20 })
       + '  </div>'
       // Cumprimento Geral
-      + '  <div style="margin-bottom:0.6rem">'
+      + '  <div style="margin-bottom:0.7rem">'
       + '    <div style="display:flex;justify-content:space-between;font-size:0.92rem">'
       + '      <strong>Cumprimento Geral · peso 60%</strong>'
       + '      <span><strong>' + cG.toFixed(2) + '</strong> / 10</span>'
       + '    </div>'
-      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cG) + ' · ' + qG.label + '</div>'
+      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cG) + (pctG ? ' · ' + pctG : '') + '</div>'
       + '    <div style="font-size:0.78rem;color:#64748b;margin-top:0.2rem">'
       + '      Cumpriu o item em algum momento · ' + (data.c_geral_aulas_full || 0) + ' / ' + IAAD.AULAS_TOTAL + ' aulas integralmente cumpridas'
       + '    </div>'
       + '  </div>'
       // Cumprimento no Prazo
-      + '  <div style="margin-bottom:0.6rem">'
+      + '  <div style="margin-bottom:0.7rem">'
       + '    <div style="display:flex;justify-content:space-between;font-size:0.92rem">'
       + '      <strong>Cumprimento no Prazo · peso 20%</strong>'
       + '      <span><strong>' + cP.toFixed(2) + '</strong> / 10</span>'
       + '    </div>'
-      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cP) + ' · ' + qPr.label + '</div>'
+      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(cP) + (pctPr ? ' · ' + pctPr : '') + '</div>'
       + '    <div style="font-size:0.78rem;color:#64748b;margin-top:0.2rem">'
       + '      Cumpriu dentro da janela canônica (pré-aula até a aula presencial; pós-aula até a próxima) · '
       + (data.c_prazo_aulas_full || 0) + ' / ' + IAAD.AULAS_TOTAL + ' aulas integralmente cumpridas no prazo'
       + '    </div>'
       + '  </div>'
       // Performance
-      + '  <div style="margin-bottom:0.6rem">'
+      + '  <div style="margin-bottom:0.7rem">'
       + '    <div style="display:flex;justify-content:space-between;font-size:0.92rem">'
       + '      <strong>Performance · peso 20%</strong>'
       + '      <span><strong>' + p.toFixed(2) + '</strong> / 10</span>'
       + '    </div>'
-      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(p) + ' · ' + qP.label + '</div>'
+      + '    <div style="font-size:0.85rem;color:#64748b">' + bar(p) + (pctP ? ' · ' + pctP : '') + '</div>'
       + '    <div style="font-size:0.78rem;color:#64748b;margin-top:0.2rem">'
       + '      Acerto em 1ª tentativa: ' + (data.p_correct_questions || 0) + ' / ' + (data.p_total_questions || 0)
       + '      ' + (data.p_total_questions ? '(' + Math.round((data.p_correct_questions/data.p_total_questions)*100) + '%)' : '')
@@ -202,18 +289,18 @@
         return;
       }
 
-      var [iaadRes, quartilesRes] = await Promise.all([
+      var [iaadRes, distRes] = await Promise.all([
         window.MpeDB.client.rpc('get_iaad', { p_user_id: uid }),
-        window.MpeDB.client.rpc('get_iaad_class_quartiles')
+        window.MpeDB.client.rpc('get_iaad_class_distribution')
       ]);
 
       var data = iaadRes && iaadRes.data && iaadRes.data[0];
-      var qData = quartilesRes && quartilesRes.data && quartilesRes.data[0];
+      var distribution = distRes && distRes.data && distRes.data[0];
 
       if (iaadRes && iaadRes.error) console.warn('[IAAD] get_iaad error:', iaadRes.error);
-      if (quartilesRes && quartilesRes.error) console.warn('[IAAD] get_iaad_class_quartiles error:', quartilesRes.error);
+      if (distRes && distRes.error) console.warn('[IAAD] get_iaad_class_distribution error:', distRes.error);
 
-      IAAD.render(targetEl, data, qData);
+      IAAD.render(targetEl, data, distribution);
     } catch (e) {
       console.error('[IAAD] fetch failed:', e);
       targetEl.innerHTML = '<div class="iaad-empty">Erro ao carregar IAAD-30 (ver console).</div>';
