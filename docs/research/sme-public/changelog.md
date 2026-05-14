@@ -15,6 +15,7 @@ paper: sme-public
 - **Robustness narratives** sharpened across §5 Identification, §6 Results, §7 Welfare, §8 Robustness, §9 Discussion, with discipline against accounting-vs-full-structural overreach.
 - **Macro hygiene.** All headline numbers, fiscal magnitudes, and parameter bounds reach the manuscript via `output/values.tex`; no hardcoded numerals.
 - **Institutional footnote** (PGE-SP Parecer 151/2017 ementa) translated to English with the original Portuguese preserved in italics, accommodating non-Lusophone JPubE referees.
+- **V4 (empate ficto) quantified.** The right-to-match instrument operative in current Brazilian law (LC 123/2006 arts.~44--45) extended to the BNE Monte Carlo framework as a fourth instrument alongside V0/V1/V2/V3. The empate fires in 1--2 percent of auctions; the SME win-rate gain is +1.9 (non-pharma) / +1.0 (pharma) percentage points; welfare cost is essentially zero (0.03 / 0.01 percent of $p_{S_1}$) — firmly below V3 on both distributive and welfare margins.
 
 ---
 
