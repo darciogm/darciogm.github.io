@@ -4,7 +4,10 @@ paper: sme-public
 
 # Welfare and Extensions
 
-The welfare consequences of the set-aside are class-heterogeneous from the start. Under the main equilibrium-selection specification, the welfare cost is **28.7% of p<sub>S<sub>1</sub></sub> in non-pharma** and **47.0% in pharma** at λ = 0.30. The price effect is therefore only the beginning of the welfare account.
+!!! info "Numbers reflect v6 (May 2026)"
+    Headline welfare magnitudes on this page are pulled from `v6-jpube/output/values.tex`. The earlier v5 figures (28.7% / 47.0% at λ = 0.30) shifted slightly under the v6 robustness audits. See `paper_v6.pdf` for canonical CIs and the underlying decomposition.
+
+The welfare consequences of the set-aside are class-heterogeneous from the start. Under the main equilibrium-selection specification, the welfare cost is **28.9% of p<sub>S<sub>1</sub></sub> in non-pharma** and **44.8% in pharma** at λ = 0.30. Translated to annual public-finance units on Group~65 alone, the welfare loss spans **R$55--128 million per year** (US$16--37 million) — R$55M the realistic central case at the empirically observed adherence rate, R$128M the upper bound under full SME-eligible adherence. The price effect is therefore only the beginning of the welfare account.
 
 ---
 
@@ -18,10 +21,10 @@ The first term is the **allocative wedge**: by how much the winner's production 
 
 ### Point estimates at λ = 0.30 (Ballard, Shoven, and Whalley 1985 benchmark)
 
-| | **Δ<sub>gov</sub>** | **DWL<sub>alloc</sub>** | **Implicit transfer** | **MCPF distortion** | **Total Loss / p<sub>S<sub>1</sub></sub>** |
-|---|:---:|:---:|:---:|:---:|:---:|
-| Non-pharma | 0.242 | 0.150 | 0.092 | 0.073 | **28.7%** |
-| Pharma | 0.328 | 0.210 | 0.118 | 0.098 | **47.0%** |
+| | **Total Loss / p<sub>S<sub>1</sub></sub>** at λ = 0.30 |
+|---|:---:|
+| Non-pharma | **28.9%** |
+| Pharma | **44.8%** |
 
 The allocative component dominates in both classes, but especially in pharma, where a thin SME pool and higher goods heterogeneity make bidder exclusion more likely to route the contract to a high-cost protected winner.
 
@@ -34,7 +37,7 @@ The allocative component dominates in both classes, but especially in pharma, wh
 
 ## 2. Endogenous entry as a partial offset in welfare units
 
-The fixed-pool counterfactual exceeds the realized post-policy counterfactual by 52% in non-pharma and 57% in pharma. Both terms in the welfare formula load on the simulated price margin, so a fixed-pool welfare calculation would be roughly 50--60% larger than the realized one in normalized units. Endogenous entry does not change the ranking against the preference rule in non-pharma; it does materially reduce the welfare burden of bidder exclusion under the model's main specification.
+The fixed-pool counterfactual exceeds the realized post-policy counterfactual by **59% in non-pharma** and **81% in pharma** (v6 refinement of the v5 52%/57% figures). Both terms in the welfare formula load on the simulated price margin, so a fixed-pool welfare calculation would be roughly 60--80% larger than the realized one in normalized units. Endogenous entry does not change the ranking against the preference rule in non-pharma; it does materially reduce the welfare burden of bidder exclusion under the model's main specification — and the attenuation is larger in pharmaceuticals, where SME entry adjustment is sharper.
 
 ---
 
@@ -57,10 +60,10 @@ For λ ∈ {0.20, 0.30, 0.40} (point estimates):
 
 | Class | λ = 0.20 | λ = 0.30 | λ = 0.40 |
 |---|:---:|:---:|:---:|
-| Non-pharma | 25.6% | **28.7%** | 31.8% |
-| Pharma | 42.0% | **47.0%** | 52.0% |
+| Non-pharma | 25.7% | **28.9%** | 32.2% |
+| Pharma | 40.3% | **44.8%** | 49.3% |
 
-Each 0.10 increment in λ adds about 3 percentage points in non-pharma and about 5 points in pharma. The level moves, but the **class ranking does not**. The non-pharma V3 > V0 ranking holds across λ ∈ [0.15, 0.45] under both specifications; the pharma V3 > V0 ranking holds across the same range under the main specification but reverses to V0 > V3 under strict invariance.
+Each 0.10 increment in λ adds about 3 percentage points in non-pharma and 4--5 points in pharma. The level moves, but the **class ranking does not**. The non-pharma V3 > V0 ranking holds across λ ∈ [0.15, 0.45] under both specifications; the pharma V3 > V0 ranking holds across the same range under the main specification but reverses to V0 > V3 under strict invariance.
 
 ---
 
@@ -96,7 +99,7 @@ Applying the pharmaceutical-class point estimates to that single purchase:
 | of which: allocative DWL | 0.210 |
 | of which: implicit transfer to SME winner | 0.118 |
 | Tax-distortion welfare cost (λ = 0.30) | 0.098 |
-| **Total welfare loss / p<sub>S<sub>1</sub></sub>** | **47.0%** |
+| **Total welfare loss / p<sub>S<sub>1</sub></sub>** | **44.8%** |
 
 The per-auction number scales; the group-level fiscal consequence is substantial, and the welfare consequence is larger still.
 

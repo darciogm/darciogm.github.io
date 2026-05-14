@@ -34,33 +34,29 @@ The structural sample is derived from the BEC (Bolsa Eletronica de Compras) admi
 
 ## Pipeline
 
-The full v5 structural analysis runs from a single master script:
+The full v6 structural analysis runs from a single master script under `v6-jpube/`:
 
 ```bash
+cd v6-jpube
 Rscript scripts/00_master.R
 ```
 
-Sequence of subprocesses:
+The master script orchestrates ~25 numbered R scripts (32_historical_sme.R through 58_figures.R) running as separate R subprocesses. The high-level pipeline is:
 
-| Script | Purpose |
-|--------|---------|
-| `01_clean.R` | CSV → parquet conversion, variable creation, sample filters |
-| `02_did.R` | Reduced-form DiD against 76 never-treated product groups (Appendix B) |
-| `10_uh_decomposition.R` | Method-of-moments σ<sub>a</sub><sup>2</sup>/σ<sub>e</sub><sup>2</sup> + Krasnokutskaya shrinkage |
-| `11_fc_estimation.R` | Type-specific F<sub>c</sub><sup>k</sup> via all-bidders ECDF + Turnbull NPMLE |
-| `12_gpv_convite.R` | Cross-modality GPV inversion on Convite first-price sealed-bid auctions |
-| `13_entry_rates.R` | Stratum-specific Poisson arrival rate calibration |
-| `14_bne_simulation.R` | Bayes-Nash counterfactual Monte Carlo (B = 2,000) over scenarios S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, V0--V3 |
-| `15_bootstrap.R` | Cluster bootstrap at the auction level (B<sub>bs</sub> = 500) |
-| `16_welfare.R` | DWL<sub>alloc</sub> + MCPF arithmetic, λ-grid, Saez--Stantcheva weights |
-| `17_robustness.R` | Strict invariance, F<sub>c</sub> regime, kernel bandwidth, sample filter, window |
-| `03_tables.R` | LaTeX tables (threeparttable + booktabs) |
-| `04_figures.R` | PDF figures (grayscale, cairo) |
+| Stage | Scripts | Purpose |
+|-------|---------|---------|
+| Data foundations | `32_historical_sme.R`, `33_pharma_flag.R`, `34_s1_descriptives.R` | Historical SME flag from CNPJ size class, pharma classification at the 6-digit BEC item level, descriptive baseline |
+| Pregão drop-out IDs | `35_pregao_dropouts.R`, `36_pregao_fc_dropout.R`, `37_pregao_ht_refined.R` | Drop-out point identification of type-specific F<sub>c</sub><sup>k</sup>, Haile--Tamer bounds refinement |
+| UH decomposition | `38_cross_modality.R`, `39_primitive_invariance.R`, `40_uh_variance.R`, `41_uh_clean_bids.R`, `42_uh_rerun_fc.R`, `43_uh_invariance_update.R` | Krasnokutskaya (2011) method-of-moments + best-linear-predictor shrinkage; cross-modality consistency check vs.\ Convite GPV |
+| Counterfactuals | `44_entry_pool.R`, `45_bne_simulation.R`, `46_decomp_compare.R` | BNE Monte Carlo (B = 2,000) over S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, V0--V3 |
+| Robustness | `47_entry_cost.R`, `48_turnbull_fc.R`, `49_sensitivity_fc.R`, `50_bandwidth_grid.R`, `51_bootstrap_ci.R`, `52_filter_sensitivity.R`, `53_apv.R`, `54_window_sensitivity.R`, `57_strict_invariance.R`, `58_collusion_screen.R` | Strict invariance, F<sub>c</sub> regime, kernel bandwidth, sample filter, temporal window, Conley--Decarolis collusion screen, affiliation pivot value (APV) |
+| Welfare | `55_welfare.R`, `56_welfare_bootstrap.R`, `57_welfare_adherence_sensitivity.R` | DWL<sub>alloc</sub> + MCPF arithmetic, λ-grid, Saez--Stantcheva weights, adherence-rate sensitivity for the annual R\$55--128M range |
+| Outputs | `58_figures.R` | All cairo-PDF figures, grayscale theme |
 
 ## Output structure
 
 ```
-v5-jpube/output/
+v6-jpube/output/
 ├── tables/             # threeparttable + booktabs
 │   ├── tab_v3_bne_decomp.tex
 │   ├── tab_v3_apv.tex
@@ -82,34 +78,46 @@ v5-jpube/output/
 │   ├── tab_v3_primitive_invariance.tex
 │   ├── tab_v3_uh_invariance.tex
 │   ├── tab_v3_cross_modality.tex
-│   └── tab_preview.tex
+│   ├── tab_collusion_screen.tex
+│   ├── tab_maskin_riley_bound.tex
+│   ├── tab_phased_adoption.tex
+│   ├── tab_pretrends.tex
+│   ├── tab_sample_flow.tex
+│   └── values.tex          # single source of truth for headline macros
 └── figures/            # cairo_pdf, grayscale
     ├── fig_v3_decomposition.pdf
     ├── fig_v3_entry_insurance.pdf
     ├── fig_v3_welfare_forest.pdf
     ├── fig_v3_welfare_weight.pdf
+    ├── fig_v3_cross_modality.pdf
     ├── fig_v3_cross_modality_uh.pdf
     ├── fig_v3_bne_prices.pdf
     ├── fig_v3_pregao_fc_by_stratum.pdf
     ├── fig_v3_pregao_ht_bands.pdf
     ├── fig_v3_optimal_preference.pdf
     ├── fig_v3_gelbach_waterfall.pdf
+    ├── fig_paper_dag.pdf
     └── fig_eventstudy_prices.pdf
 ```
+
+`values.tex` is the macro file consumed by the manuscript: every headline number in `paper_v6.tex` flows from a `\renewcommand` in `values.tex`, so the document is reproducible from the pipeline outputs without ever hardcoding a numeral into the prose.
 
 ## Manuscript compilation
 
 ```bash
-cd v5-jpube/manuscript
-pdflatex paper_v5.tex
-bibtex paper_v5
-pdflatex paper_v5.tex
-pdflatex paper_v5.tex
+cd v6-jpube/manuscript
+pdflatex paper_v6.tex
+bibtex paper_v6
+pdflatex paper_v6.tex
+pdflatex paper_v6.tex
 # online appendix
 pdflatex online_appendix.tex
 bibtex online_appendix
 pdflatex online_appendix.tex
 pdflatex online_appendix.tex
+# highlights + cover letter
+pdflatex highlights.tex
+pdflatex cover_letter.tex
 ```
 
 The manuscript uses the `elsarticle` document class and follows JPubE submission formatting.

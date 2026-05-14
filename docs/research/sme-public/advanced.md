@@ -4,7 +4,7 @@ paper: sme-public
 
 # Advanced Methods
 
-This page documents the structural-econometric machinery underlying the v5 (JPubE submission-ready) version of the paper. Five components combine: (1) drop-out point identification of type-specific cost distributions; (2) auction-level unobserved-heterogeneity correction; (3) Athey--Seira treatment of equilibrium entry; (4) Bayes--Nash counterfactual simulation; (5) Saez--Stantcheva welfare weights.
+This page documents the structural-econometric machinery underlying the v6 (JPubE submission-ready, May 2026) version of the paper. Five components combine: (1) drop-out point identification of type-specific cost distributions; (2) auction-level unobserved-heterogeneity correction; (3) Athey--Seira treatment of equilibrium entry; (4) Bayes--Nash counterfactual simulation; (5) Saez--Stantcheva welfare weights.
 
 ---
 

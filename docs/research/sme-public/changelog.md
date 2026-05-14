@@ -4,6 +4,20 @@ paper: sme-public
 
 # Changelog
 
+## v6 — May 2026 (Submission-ready, JPubE format)
+
+**Polish round** consolidating v5 into JPubE submission shape.
+
+- **Title rebranded** to **Sheltered Bidding: The Within-Auction Cost of SME Set-Asides**, replacing the v5 working title *The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement*. The new title puts the characterized property (sheltered bidding) front and centre.
+- **Abstract pivoted** to a question-first structure ("Why do SME set-asides raise procurement prices?") with three headline numbers: ~10% DiD effect on winning prices, sheltered bidding = 2/3 to 3/4 of the simulated effect, R\$55 million per year welfare cost on a single product group of São Paulo's R\$13 billion procurement platform.
+- **Sheltered bidding** elevated from descriptive label to characterized property; framing positions the within-auction component as the policy-design statement of the paper.
+- **Aggressive compression** (body 64 → 54pp, appendix 24 → 23pp) to fit JPubE conventions; figure floats tightened (`[!htbp]` → `[!htb]`).
+- **Robustness narratives** sharpened across §5 Identification, §6 Results, §7 Welfare, §8 Robustness, §9 Discussion, with discipline against accounting-vs-full-structural overreach.
+- **Macro hygiene.** All headline numbers, fiscal magnitudes, and parameter bounds reach the manuscript via `output/values.tex`; no hardcoded numerals.
+- **Institutional footnote** (PGE-SP Parecer 151/2017 ementa) translated to English with the original Portuguese preserved in italics, accommodating non-Lusophone JPubE referees.
+
+---
+
 ## v5 — April 2026 (Submission-ready, JPubE format)
 
 **Structural decomposition** of the SME set-aside replaces the v1--v3 reduced-form headline:

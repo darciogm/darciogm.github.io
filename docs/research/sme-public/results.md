@@ -4,7 +4,10 @@ paper: sme-public
 
 # Main Results
 
-The results organize around three findings. **First**, the simulated set-aside price effect is mostly within-auction: the within-auction share is 74.5% in non-pharma and 73.3% in pharma, and stays in the 73--85% range across cost-distribution estimators. **Second**, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be 50--60% larger. **Third**, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.
+!!! info "Numbers reflect v6 (May 2026)"
+    Point estimates on this page are pulled from `v6-jpube/output/values.tex`. Under v6 the pharma within-auction share was refined from v5's 73.3% to **66.1%** (non-pharma essentially unchanged at 74.0%). Class ranking and qualitative claims are preserved. See `paper_v6.pdf` for canonical tables and CIs.
+
+The results organize around three findings. **First**, the simulated set-aside price effect is mostly within-auction: the within-auction share is **74.0% in non-pharma** and **66.1% in pharma**, with both staying inside the 73--85% range across alternative cost-distribution estimators (the pharma point sits at the lower edge under the main specification; Turnbull NPMLE raises it). **Second**, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be **59% larger in non-pharma and 81% larger in pharma**. **Third**, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.
 
 ---
 
@@ -28,7 +31,7 @@ Define p<sub>S<sub>1</sub></sub> as the simulated winning price under the pre-po
 | Non-pharma | 0.759 | 1.152 | 1.018 | **+0.393** | −0.135 | **+0.259** |
 | Pharma | 0.656 | 1.141 | 0.964 | **+0.485** | −0.177 | **+0.308** |
 
-The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **74.5% in non-pharma** and **73.3% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset.
+The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **74.0% in non-pharma** and **66.1% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset. The pharmaceutical share is more model-sensitive: it climbs into the 73--85% baseline range under Turnbull NPMLE and under the strict-invariance benchmark — see the paper for the full sensitivity grid.
 
 <figure>
   <img src="../assets/figures/fig_v3_decomposition.png" alt="BNE counterfactual decomposition by class">
@@ -43,12 +46,12 @@ V2 imposes the full set-aside while holding the SME pool at its pre-policy size.
 
 | | **V2 / V0** |
 |---|:---:|
-| Non-pharma | 152.0% |
-| Pharma | 157.4% |
+| Non-pharma | 159% |
+| Pharma | 181% |
 
-The fixed-pool simulated effect exceeds the realized one by roughly 50--60%. Both terms in the welfare formula load on this simulated price margin, so a fixed-pool welfare arithmetic would materially overstate the burden of the policy under the model's main specification.
+The fixed-pool simulated effect exceeds the realized one by **59% in non-pharma and 81% in pharma**. Both terms in the welfare formula load on this simulated price margin, so a fixed-pool welfare arithmetic would materially overstate the burden of the policy under the model's main specification — and the overstatement is sharper in pharmaceuticals, where the SME entry adjustment is larger.
 
-The 50--60% attenuation is conditional on the policy instrument: under V3 (10% price preference) the analogous fixed-pool-vs-realized comparison delivers an attenuation close to zero, since non-SMEs remain in the auction and the participation margin barely moves. The entry response is therefore a property of the full-set-aside instrument, not a free-standing feature of the SME population.
+The attenuation is conditional on the policy instrument: under V3 (10% price preference) the analogous fixed-pool-vs-realized comparison delivers an attenuation close to zero, since non-SMEs remain in the auction and the participation margin barely moves. The entry response is therefore a property of the full-set-aside instrument, not a free-standing feature of the SME population.
 
 <figure>
   <img src="../assets/figures/fig_v3_entry_insurance.png" alt="Simulated participation-margin offset">
