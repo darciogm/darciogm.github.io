@@ -27,7 +27,7 @@ Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms ope
 [:material-book-open-variant: Online appendix](assets/sme_public_online_appendix.pdf){ .md-button } &nbsp;
 [:material-star-outline: Highlights](assets/sme_public_highlights.pdf){ .md-button }
 
-*Submission-ready version (v5, JPubE format) — April 2026.*
+*Submission-ready version (v6, JPubE format) — May 2026.*
 
 **JEL Classification:**
 <span class="badge">D44</span>

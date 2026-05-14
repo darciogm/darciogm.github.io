@@ -6,12 +6,12 @@ paper: sme-public
 
 ## Download
 
-- [Main paper (v5, JPubE format) — PDF](assets/sme_public_procurement.pdf)
+- [Main paper (v6, JPubE format) — PDF](assets/sme_public_procurement.pdf)
 - [Online appendix — PDF](assets/sme_public_online_appendix.pdf)
 - [Highlights — PDF](assets/sme_public_highlights.pdf)
 - [Video — *The Cost of Inclusion* (17 min, MP4)](assets/cost_of_inclusion.mp4)
 
-Submission-ready version, April 2026.
+Submission-ready version, May 2026.
 
 ---
 
