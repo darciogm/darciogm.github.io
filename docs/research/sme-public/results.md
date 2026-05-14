@@ -5,9 +5,9 @@ paper: sme-public
 # Main Results
 
 !!! info "Numbers reflect v6 (May 2026)"
-    Point estimates on this page are pulled from `v6-jpube/output/values.tex`. Under v6 the pharma within-auction share was refined from v5's 73.3% to **66.1%** (non-pharma essentially unchanged at 74.0%). Class ranking and qualitative claims are preserved. See `paper_v6.pdf` for canonical tables and CIs.
+    Point estimates on this page are pulled from `v6-jpube/output/values.tex`. Under v6 the BNE Monte Carlo runs at B = 10,000 (matching the APV pipeline) for lower variance; main-spec within-auction shares are **72.0% (non-pharma) / 68.8% (pharma)**, with the 69--85% range spanning all alternative cost-distribution estimators (Turnbull NPMLE, strict invariance). Class ranking and qualitative claims are preserved. See `paper_v6.pdf` for canonical tables and CIs.
 
-The results organize around three findings. **First**, the simulated set-aside price effect is mostly within-auction: the within-auction share is **74.0% in non-pharma** and **66.1% in pharma**, with both staying inside the 73--85% range across alternative cost-distribution estimators (the pharma point sits at the lower edge under the main specification; Turnbull NPMLE raises it). **Second**, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be **59% larger in non-pharma and 81% larger in pharma**. **Third**, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.
+The results organize around three findings. **First**, the simulated set-aside price effect is mostly within-auction: the within-auction share is **72.0% in non-pharma** and **68.8% in pharma**, with both within the 69--85% range across alternative cost-distribution estimators (Turnbull NPMLE raises the pharma share to 82%). **Second**, endogenous SME entry is a partial offset, not the source of the markup: without it the realized price and welfare cost would be **59% larger in non-pharma and 81% larger in pharma**. **Third**, the policy comparison between bidder exclusion and a 10% price preference is conditional on goods characteristics — robust in thick standardized non-pharma markets, model-sensitive in thin heterogeneous pharma markets.
 
 ---
 
@@ -28,10 +28,10 @@ Define p<sub>S<sub>1</sub></sub> as the simulated winning price under the pre-po
 
 | | **p<sub>S<sub>1</sub></sub>** (open) | **p<sub>S<sub>2</sub></sub>** (SME-only, fixed pool) | **p<sub>S<sub>3</sub></sub>** (SME-only, post pool) | **Within-auction** (S<sub>2</sub>−S<sub>1</sub>) | **Entry offset** (S<sub>3</sub>−S<sub>2</sub>) | **Total** (S<sub>3</sub>−S<sub>1</sub>) |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Non-pharma | 0.764 | 1.119 | 0.994 | **+0.355** | −0.125 | **+0.231** |
-| Pharma | 0.638 | 1.330 | 0.976 | **+0.693** | −0.355 | **+0.338** |
+| Non-pharma | 0.774 | 1.144 | 1.000 | **+0.371** | −0.144 | **+0.227** |
+| Pharma | 0.654 | 1.219 | 0.963 | **+0.565** | −0.256 | **+0.309** |
 
-The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **74.0% in non-pharma** and **66.1% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset. The pharmaceutical share is more model-sensitive: it climbs into the 73--85% baseline range under Turnbull NPMLE and under the strict-invariance benchmark — see the paper for the full sensitivity grid.
+The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **72.0% in non-pharma** and **68.8% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset. The pharmaceutical share is model-sensitive: it climbs to 82% under Turnbull NPMLE and 79% under strict-invariance — see the paper for the full sensitivity grid.
 
 <figure>
   <img src="../assets/figures/fig_v3_decomposition.png" alt="BNE counterfactual decomposition by class">
@@ -73,7 +73,7 @@ A second decomposition bridges the DiD coefficient itself to the structural coun
 | (c) Functional form (c<sub>(2)</sub> vs. linear log-mean) | +0.050 | +0.045 |
 | (d) Conditioning set (counterfactual vs. realized entry) | +0.020 | +0.005 |
 | **Sum of contributions** | **+0.135** | **+0.185** |
-| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.231 | +0.338 |
+| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.227 | +0.309 |
 
 The four contributions cumulate against the DiD baseline of approximately +0.06 (DiD on p<sup>final</sup>/p<sup>ref</sup>) to deliver the structural object up to non-linear interaction residuals of +0.004 and +0.003 in non-pharma and pharma respectively. The 3--4× gap between the structural and the DiD is informally attributable to the four sources documented above and is predictable in direction under the maintained structural assumptions.
 

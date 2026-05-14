@@ -121,7 +121,7 @@ Four mechanical sources of divergence account for the structural object via addi
 | (c) Functional form (c<sub>(2)</sub> vs. linear log-mean) | +0.050 | +0.045 |
 | (d) Conditioning set (counterfactual vs. realized entry) | +0.020 | +0.005 |
 | **Sum + DiD baseline ≈** | **+0.255** | **+0.305** |
-| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.231 | +0.338 |
+| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.227 | +0.309 |
 | Residuals (non-linear interactions) | +0.004 | +0.003 |
 
 The 3--4× gap between the structural and the DiD is informally attributable to the four sources above and is predictable in direction under the maintained structural assumptions. A misspecified model would not be guaranteed to deliver a gap of either consistent sign or consistent magnitude. The fact that the gap obtains in the same direction and at comparable magnitude in both classes is consistent with correct specification of asymmetric IPV with type-removal.

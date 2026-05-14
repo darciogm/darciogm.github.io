@@ -52,8 +52,8 @@ Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms ope
 |---|:---:|:---:|
 | DiD on log p<sup>final</sup> (absolute) | +0.10 to +0.11 | +0.10 to +0.11 |
 | DiD on p<sup>final</sup> / p<sup>ref</sup> | +0.06 | +0.06 |
-| Simulated p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub>, units of p<sup>ref</sup> | +0.231 | +0.338 |
-| Within-auction share, main spec | 74.0% | 66.1% |
+| Simulated p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub>, units of p<sup>ref</sup> | +0.227 | +0.309 |
+| Within-auction share, main spec | 72.0% | 68.8% |
 | Within-auction share, Turnbull NPMLE | 74.0% | 82.0% |
 | Within-auction share, strict invariance | 85.0% | 79.0% |
 | Welfare cost (% of p<sub>S<sub>1</sub></sub>, λ = 0.30) | 28.9% | 44.8% |
@@ -67,7 +67,7 @@ Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms ope
 ## Key Findings
 
 !!! success "The price effect is mostly within the auction"
-    The within-auction component — *sheltered bidding* — is **74.0% of the simulated total effect in non-pharma** and 66.1% in pharma. The share stays in the **66--85% range** across cost-distribution estimators (Turnbull NPMLE: 74, 82) and across the two specifications of the post-policy SME pool (strict invariance: 85, 79). The set-aside's price cost is mostly a property of how the surviving pool bids, not of how many firms it contains.
+    The within-auction component — *sheltered bidding* — is **72.0% of the simulated total effect in non-pharma** and 68.8% in pharma. The share stays in the **69--85% range** across cost-distribution estimators (Turnbull NPMLE: 74, 82) and across the two specifications of the post-policy SME pool (strict invariance: 85, 79). The set-aside's price cost is mostly a property of how the surviving pool bids, not of how many firms it contains.
 
 !!! warning "Endogenous SME entry attenuates a 59% larger latent shock in non-pharma, 81% in pharma"
     Holding the SME pool at its pre-policy size raises the simulated price effect to **159% of the realized one in non-pharma** and 181% in pharma. Without endogenous entry, the set-aside would cost 59% more in price and welfare in non-pharma (81% in pharma). Participation is the government's partial offset, not the source of the markup.
@@ -79,7 +79,7 @@ Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms ope
     In thin heterogeneous pharma markets the preference dominates under the main specification, but the ranking flips under strict invariance, with the implicit welfare weight required to prefer the set-aside falling to **0.7** (vs. 2.61 under the main specification). The bifurcation pins down where the modeling treatment of the protected pool is first-order.
 
 !!! note "Three magnitudes that should not be confused"
-    The DiD coefficient (10--11%) is the average effect on observed log winning prices. The structural counterfactual (+0.231/+0.338 of p<sup>ref</sup>) is the simulated mean of the second-order statistic under each counterfactual entry profile, three to four times the DiD coefficient on the structural normalization. The welfare cost (28.9% of p<sub>S<sub>1</sub></sub> in non-pharma, 44.8% in pharma at λ = 0.30) adds the marginal-cost-of-public-funds distortion on top of the allocative wedge.
+    The DiD coefficient (10--11%) is the average effect on observed log winning prices. The structural counterfactual (+0.227/+0.309 of p<sup>ref</sup>) is the simulated mean of the second-order statistic under each counterfactual entry profile, three to four times the DiD coefficient on the structural normalization. The welfare cost (28.9% of p<sub>S<sub>1</sub></sub> in non-pharma, 44.8% in pharma at λ = 0.30) adds the marginal-cost-of-public-funds distortion on top of the allocative wedge.
 
 ---
 
