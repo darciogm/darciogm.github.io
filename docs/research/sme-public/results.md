@@ -28,8 +28,8 @@ Define p<sub>S<sub>1</sub></sub> as the simulated winning price under the pre-po
 
 | | **p<sub>S<sub>1</sub></sub>** (open) | **p<sub>S<sub>2</sub></sub>** (SME-only, fixed pool) | **p<sub>S<sub>3</sub></sub>** (SME-only, post pool) | **Within-auction** (S<sub>2</sub>−S<sub>1</sub>) | **Entry offset** (S<sub>3</sub>−S<sub>2</sub>) | **Total** (S<sub>3</sub>−S<sub>1</sub>) |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| Non-pharma | 0.759 | 1.152 | 1.018 | **+0.393** | −0.135 | **+0.259** |
-| Pharma | 0.656 | 1.141 | 0.964 | **+0.485** | −0.177 | **+0.308** |
+| Non-pharma | 0.764 | 1.119 | 0.994 | **+0.355** | −0.125 | **+0.231** |
+| Pharma | 0.638 | 1.330 | 0.976 | **+0.693** | −0.355 | **+0.338** |
 
 The within-auction share — defined as |S<sub>2</sub>−S<sub>1</sub>| / (|S<sub>2</sub>−S<sub>1</sub>| + |S<sub>3</sub>−S<sub>2</sub>|) — is **74.0% in non-pharma** and **66.1% in pharma** under the main specification. The set-aside mainly works by changing the order statistic inside the restricted auction; entry matters, but as a partial offset. The pharmaceutical share is more model-sensitive: it climbs into the 73--85% baseline range under Turnbull NPMLE and under the strict-invariance benchmark — see the paper for the full sensitivity grid.
 
@@ -73,7 +73,7 @@ A second decomposition bridges the DiD coefficient itself to the structural coun
 | (c) Functional form (c<sub>(2)</sub> vs. linear log-mean) | +0.050 | +0.045 |
 | (d) Conditioning set (counterfactual vs. realized entry) | +0.020 | +0.005 |
 | **Sum of contributions** | **+0.135** | **+0.185** |
-| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.259 | +0.308 |
+| Structural BNE simulation, p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub> | +0.231 | +0.338 |
 
 The four contributions cumulate against the DiD baseline of approximately +0.06 (DiD on p<sup>final</sup>/p<sup>ref</sup>) to deliver the structural object up to non-linear interaction residuals of +0.004 and +0.003 in non-pharma and pharma respectively. The 3--4× gap between the structural and the DiD is informally attributable to the four sources documented above and is predictable in direction under the maintained structural assumptions.
 
@@ -111,8 +111,8 @@ Under a 10% SME price preference (V3), SME bids are scored with a 10% discount f
 
 | | **V0 total effect** (full set-aside) | **V3 total effect** (10% preference) |
 |---|:---:|:---:|
-| Non-pharma | +0.259 | −0.004 |
-| Pharma | +0.308 | +0.002 |
+| Non-pharma | +0.232 | −0.004 |
+| Pharma | +0.310 | +0.002 |
 
 The preference rule shifts price by essentially zero in both classes because non-SMEs remain in the auction and continue to discipline the second-order statistic even when an SME wins.
 
