@@ -71,6 +71,11 @@
   // Sob a regra de acesso livre, os 4 componentes (pre/material/pos/exerc)
   // tem o mesmo prazo. Bundles ainda nao prontos sao escondidos via flag
   // do portal (available:false), nao via calendario.
+  //
+  // SEMANTICA: getPrazo responde "ate quando o aluno PODE submeter"
+  // (gating real da plataforma). Para "ate quando o aluno DEVERIA submeter
+  // dentro do ritmo ideal" (cramming, atraso, foco da semana), use
+  // getJanelaCanonica abaixo.
   function getPrazo(aula_n, componente) {
     if (aula_n < 1 || aula_n > AULAS_DATAS.length) return null;
     return {
@@ -78,6 +83,49 @@
       fecha: ACESSO_LIVRE_FIM,
       gabarito: GABARITO_LIBERADO
     };
+  }
+
+  // Janela canonica IAAD-30 (espelha public.iaad_calendar do Postgres,
+  // ver supabase/migrations/2026-05-09_iaad30.sql):
+  //   material/pre/refl_nebulosa/refl_aula -> presencial_at (D_X qua 19:30)
+  //   pos/exerc                            -> next_presencial_at (D_{X+1};
+  //                                            Aula 9 -> AF qua 24/06 19:00)
+  // Usado por: cramming detection, foco-da-semana, label "atrasado",
+  // inbox de gabaritos. NUNCA use para gating de submissao -- isso e papel
+  // de getPrazo/isClosed (acesso livre ate ACESSO_LIVRE_FIM).
+  //
+  // Gabarito por aula = proxima meia-noite BRT apos a janela fechar
+  // (qui 00:00 BRT). Coerente com CLAUDE.md "quinta 00:00 pos-fechamento".
+  function _proximaMeiaNoiteBRT(ts) {
+    // BRT e UTC-3 fixo (sem horario de verao desde 2019). Calculo seguro
+    // independente do timezone do navegador.
+    // shifted: traduz UTC ms para "BRT-clock ms" (subtrai 3h, ja que BRT
+    // = UTC - 3h). Ai dividir por UM_DIA da fronteiras de dia em BRT.
+    var BRT_OFFSET_MS = -3 * 3600 * 1000;
+    var shifted = ts + BRT_OFFSET_MS;
+    var nextDayShifted = Math.floor(shifted / UM_DIA) * UM_DIA + UM_DIA;
+    return nextDayShifted - BRT_OFFSET_MS;
+  }
+
+  function getJanelaCanonica(aula_n, componente) {
+    if (aula_n < 1 || aula_n > AULAS_DATAS.length) return null;
+    var idx = aula_n - 1;
+    var presencial = AULAS_DATAS[idx];
+    var next = (aula_n < AULAS_DATAS.length) ? AULAS_DATAS[idx + 1] : AVALIACAO_FINAL;
+    var fecha = (componente === 'pos' || componente === 'exerc') ? next : presencial;
+    return {
+      abre: ACESSO_LIVRE_INICIO,
+      fecha: fecha,
+      gabarito: _proximaMeiaNoiteBRT(fecha),
+      presencial_at: presencial,
+      next_presencial_at: next
+    };
+  }
+
+  function isCanonicaFechada(aula_n, componente) {
+    var j = getJanelaCanonica(aula_n, componente);
+    if (!j) return false;
+    return Date.now() >= j.fecha;
   }
 
   // Parsing de data-page (ex: "aula-01-exerc") => {aula_n, componente}
@@ -191,6 +239,8 @@
     ACESSO_LIVRE_FIM: ACESSO_LIVRE_FIM,
     GABARITO_LIBERADO: GABARITO_LIBERADO,
     getPrazo: getPrazo,
+    getJanelaCanonica: getJanelaCanonica,
+    isCanonicaFechada: isCanonicaFechada,
     parsePageId: parsePageId,
     estadoDaAula: estadoDaAula,
     isOpen: isOpen,

@@ -386,6 +386,7 @@ td{padding:0.5rem;border-bottom:1px solid #f0ebe8}
 .o4-badge.srl-mixed{background:#E5E5E5;color:#525252}
 .o4-badge.crammer{background:#E9D5FF;color:#5B21B6}
 .o4-badge.drift{background:#FEE2E2;color:#991B1B}
+.o4-badge.late{background:#FEF3C7;color:#92400E}
 .o4-flags-inline{display:inline-flex;flex-wrap:wrap;gap:0.25rem;margin-left:0.4rem;vertical-align:middle}
 .o4-flags-inline .o4-badge{font-size:0.58rem;padding:0.06rem 0.36rem;letter-spacing:0;margin:0}
 /* Heatmap 7x24 */
@@ -1646,7 +1647,7 @@ function exportAlunosCSV() {
     return true;
   });
   var sorted = sortAlunos(filtered, sortKey);
-  var header = ['Matrícula','Nome','Email','Aulas visitadas (de '+(window._totalItems||0)+')','Quizzes feitos','Tempo (min)','Média quiz (%)','Acerto 1ª tentativa (%)','N itens para acerto 1ª','Streak (dias)','Dias desde último acesso','CV semanal','N semanas ativas','Risco (0-100)','Status','Calibração (ECE)','Calibração (label)','RT mediana (s)','RT fenótipo','SRL','Crammer crônico','Drift','Último percentil (trajetória)'];
+  var header = ['Matrícula','Nome','Email','Aulas visitadas (de '+(window._totalItems||0)+')','Quizzes feitos','Tempo (min)','Média quiz (%)','Acerto 1ª tentativa (%)','N itens para acerto 1ª','Streak (dias)','Dias desde último acesso','CV semanal','N semanas ativas','Risco (0-100)','Status','Calibração (ECE)','Calibração (label)','RT mediana (s)','RT fenótipo','SRL','Crammer crônico','Atrasado crônico','N itens fora da janela','Drift','Último percentil (trajetória)'];
   var lines = [header.map(csvq).join(',')];
   var onda4 = window._onda4 || {};
   sorted.forEach(function(r){
@@ -1656,6 +1657,7 @@ function exportAlunosCSV() {
     var srl = (onda4.srl && onda4.srl.byUser[uid]) || {};
     var cir = (onda4.circadian && onda4.circadian.byUser[uid]) || {};
     var tr  = (onda4.trajectory && onda4.trajectory.byUser[uid]) || {};
+    var lb  = (onda4.lateBird && onda4.lateBird.byUser[uid]) || {};
     lines.push([
       r.s.matricula, r.s.nome, r.email||'',
       r.s.pagesVisited, r.s.quizzesCompleted, r.s.totalTimeMin, r.s.avgQuizScore,
@@ -1671,6 +1673,8 @@ function exportAlunosCSV() {
       rt.phenotype || '',
       srl.label || '',
       cir.chronic ? 'sim' : (cir.totalEvents ? 'não' : ''),
+      lb.chronic ? 'sim' : (lb.totalDone ? 'não' : ''),
+      lb.lateCount != null ? lb.lateCount : '',
       tr.drift ? (tr.driftKind || 'sim') : '',
       tr.lastPct != null ? tr.lastPct : ''
     ].map(csvq).join(','));
@@ -4849,9 +4853,11 @@ function computeResponseTime() {
   return { byUser: byUser, turmaMedian: tMedT, turmaMedianAcc: tMedA };
 }
 
-// #5 CIRCADIAN + CRAMMING — Anderson et al. (2014, CHI on-time-in-MOOCs);
-// Baker et al. (2018, JLA). Heatmap 7×24 + cramming ratio vs.
-// MPE_CALENDARIO.getPrazo(n, componente).fecha.
+// #5 CIRCADIAN + CRAMMING — Heatmap 7×24 + cramming ratio (% eventos nas
+// 48h pre-janela canonica IAAD-30, espelhada de public.iaad_calendar via
+// MPE_CALENDARIO.getJanelaCanonica). Para distributed-vs-massed practice:
+// Cepeda et al. (2006, Psychological Bulletin) e Bjork (desirable
+// difficulties).
 function _o4CollectEventTimestamps(userId) {
   // Retorna array de {ts, pageId, kind}; todos com ms absolutos.
   var raw = window._adminRaw;
@@ -4905,10 +4911,13 @@ function computeCircadian() {
       if (!m) return;
       var aulaN = parseInt(m[1], 10);
       var comp = m[2] || 'material';
-      var prazo = null;
-      try { prazo = window.MPE_CALENDARIO.getPrazo(aulaN, comp); } catch(err) { prazo = null; }
-      if (!prazo || !prazo.fecha) return;
-      var fechaMs = prazo.fecha;
+      // Cramming = 48h pre-janela canonica (D_X para material/pre; D_{X+1}
+      // para pos/exerc). Nao usar getPrazo aqui -- aquele e o deadline da
+      // plataforma (02/07 unico) e nao faz sentido para cramming semanal.
+      var janela = null;
+      try { janela = window.MPE_CALENDARIO.getJanelaCanonica(aulaN, comp); } catch(err) { janela = null; }
+      if (!janela || !janela.fecha) return;
+      var fechaMs = janela.fecha;
       var deadlineWindow = 48 * 3600 * 1000;
       if (!aulaEvents[aulaN]) aulaEvents[aulaN] = { total: 0, last48h: 0 };
       aulaEvents[aulaN].total++;
@@ -5227,12 +5236,88 @@ function computeSRL() {
   return { byUser: byUser, distribution: distribution };
 }
 
+// 🐢 LATE BIRD — atrasado cronico. Cumpriu o item mas FORA da janela
+// canonica (espelha public.iaad_calendar). Ortogonal a 🌙 (cramming):
+// crammer concentra na vespera; late bird submete depois do prazo ideal
+// (mas dentro da plataforma aberta, ate 02/07).
+// Threshold: chronic = >=3 aulas com pelo menos 1 item atrasado (paridade
+// com 🌙).
+function computeLateBird() {
+  var raw = window._adminRaw;
+  var cal = window.MPE_CALENDARIO;
+  if (!raw || !cal || !cal.getJanelaCanonica) return { byUser: {} };
+  var students = (raw.profiles || []).filter(function(p){ return (p.role||'') !== 'admin'; });
+
+  // Pre-index para evitar O(n_aulas * n_records) por aluno
+  var matMaxByUserPid = {};      // userId::pageId -> max(completed_at_ms), so contagem >=9
+  var matCountByUserPid = {};    // userId::pageId -> count(completed_at)
+  (raw.sectionProgress || []).forEach(function(s){
+    if (!s.completed_at) return;
+    var k = s.user_id + '::' + s.page_id;
+    var ts = new Date(s.completed_at).getTime();
+    if (matMaxByUserPid[k] == null || ts > matMaxByUserPid[k]) matMaxByUserPid[k] = ts;
+    matCountByUserPid[k] = (matCountByUserPid[k] || 0) + 1;
+  });
+  var quizSubmittedByUserPid = {}; // userId::pageId -> submitted_at_ms
+  (raw.quizAggregates || []).forEach(function(q){
+    if (!q.submitted_at) return;
+    quizSubmittedByUserPid[q.user_id + '::' + q.page_id] = new Date(q.submitted_at).getTime();
+  });
+  var reflByUserPidPrompt = {};   // userId::pageId::prompt -> submitted_at_ms
+  (raw.reflections || []).forEach(function(r){
+    if (!r.submitted_at) return;
+    if (typeof r.text !== 'string' || r.text.trim().length < 10) return;
+    if (r.prompt_id !== 'nebulosa' && r.prompt_id !== 'aula') return;
+    reflByUserPidPrompt[r.user_id + '::' + r.page_id + '::' + r.prompt_id] = new Date(r.submitted_at).getTime();
+  });
+
+  var byUser = {};
+  students.forEach(function(p){
+    var lateAulasSet = {};
+    var lateItems = [];
+    var totalDone = 0;
+    for (var n = 1; n <= 9; n++) {
+      var pid = 'aula-' + (n < 10 ? '0' + n : n);
+      var jPre = cal.getJanelaCanonica(n, 'material'); // material/pre/refl_*: presencial_at
+      var jPos = cal.getJanelaCanonica(n, 'pos');      // pos/exerc: next_presencial_at
+      if (!jPre || !jPos) continue;
+      var presencial = jPre.fecha;
+      var nextPresencial = jPos.fecha;
+      function check(ts, ancora, comp) {
+        if (ts == null) return;
+        totalDone++;
+        if (ts > ancora) {
+          lateItems.push({ aula: n, comp: comp });
+          lateAulasSet[n] = true;
+        }
+      }
+      // Material: 9 secoes (mesmo gate do IAAD-30)
+      var matCount = matCountByUserPid[p.id + '::' + pid] || 0;
+      if (matCount >= 9) check(matMaxByUserPid[p.id + '::' + pid], presencial, 'material');
+      check(quizSubmittedByUserPid[p.id + '::' + pid + '-pre'], presencial, 'pre');
+      check(quizSubmittedByUserPid[p.id + '::' + pid + '-pos'], nextPresencial, 'pos');
+      check(quizSubmittedByUserPid[p.id + '::' + pid + '-exerc'], nextPresencial, 'exerc');
+      check(reflByUserPidPrompt[p.id + '::' + pid + '::nebulosa'], presencial, 'refl_nebulosa');
+      check(reflByUserPidPrompt[p.id + '::' + pid + '::aula'], presencial, 'refl_aula');
+    }
+    var lateAulas = Object.keys(lateAulasSet).map(Number).sort(function(a,b){return a-b;});
+    byUser[p.id] = {
+      lateItems: lateItems,
+      lateAulas: lateAulas,
+      lateCount: lateItems.length,
+      totalDone: totalDone,
+      chronic: lateAulas.length >= 3
+    };
+  });
+  return { byUser: byUser };
+}
+
 // Aggregator: computa todas as 6 de uma vez e guarda em window._onda4.
 function computeOnda4All() {
   var t0 = performance.now();
   var out = {
     calibration: null, rt: null, circadian: null,
-    trajectory: null, velocity: null, srl: null,
+    trajectory: null, velocity: null, srl: null, lateBird: null,
     ms: 0
   };
   try { out.calibration = computeCalibration(); } catch(e){ console.warn('[Onda4] calibration:', e); }
@@ -5241,6 +5326,7 @@ function computeOnda4All() {
   try { out.trajectory = computeTrajectory(); }   catch(e){ console.warn('[Onda4] trajectory:', e); }
   try { out.velocity = computeVelocity(); }       catch(e){ console.warn('[Onda4] velocity:', e); }
   try { out.srl = computeSRL(); }                 catch(e){ console.warn('[Onda4] srl:', e); }
+  try { out.lateBird = computeLateBird(); }       catch(e){ console.warn('[Onda4] lateBird:', e); }
   out.ms = Math.round(performance.now() - t0);
   window._onda4 = out;
   console.log('[Onda4] compute total: ' + out.ms + 'ms');
@@ -5475,9 +5561,11 @@ function _o4ExtraFlags(r) {
   var uid = _profileIdFromMatricula(r.s.matricula);
   if (!uid) return out;
   var cir = onda4.circadian && onda4.circadian.byUser[uid];
-  if (cir && cir.chronic) out.push({ kind: 'crammer', msg: '🌙 Crammer crônico (≥3 aulas com >60% dos eventos em 48h pré-prazo)' });
+  if (cir && cir.chronic) out.push({ kind: 'crammer', msg: '🌙 Crammer crônico (≥3 aulas com >60% dos eventos em 48h pré-janela canônica)' });
   var tr = onda4.trajectory && onda4.trajectory.byUser[uid];
   if (tr && tr.drift) out.push({ kind: 'drift', msg: '🔻 Drift detectado na trajetória de percentis' });
+  var lb = onda4.lateBird && onda4.lateBird.byUser[uid];
+  if (lb && lb.chronic) out.push({ kind: 'late', msg: '🐢 Atrasado crônico (' + lb.lateAulas.length + ' aulas com itens fora da janela canônica)' });
   return out;
 }
 
@@ -5489,9 +5577,11 @@ function _o4InlineChips(r) {
   var uid = _profileIdFromMatricula(r.s.matricula);
   if (!uid) return '';
   var cir = onda4.circadian && onda4.circadian.byUser[uid];
-  if (cir && cir.chronic) chips += '<span class="o4-badge crammer" title="Crammer crônico">🌙</span>';
+  if (cir && cir.chronic) chips += '<span class="o4-badge crammer" title="Crammer crônico (48h pré-janela canônica)">🌙</span>';
   var tr = onda4.trajectory && onda4.trajectory.byUser[uid];
   if (tr && tr.drift) chips += '<span class="o4-badge drift" title="Drift em percentil">🔻</span>';
+  var lb = onda4.lateBird && onda4.lateBird.byUser[uid];
+  if (lb && lb.chronic) chips += '<span class="o4-badge late" title="Atrasado crônico (≥3 aulas fora da janela canônica)">🐢</span>';
   return chips ? '<span class="o4-flags-inline">' + chips + '</span>' : '';
 }
 
@@ -5557,18 +5647,29 @@ function _profileO4Html(matricula) {
     srlHtml = '<span class="o4-badge srl-' + srl.label + '" title="' + srlTooltip + '">' + srlIcon + ' SRL: ' + srl.label + '</span>';
   }
 
-  // #5 Circadian
+  // #5 Circadian + #LB Late Bird (ortogonais)
   var cir = onda4.circadian && onda4.circadian.byUser[uid];
+  var lb  = onda4.lateBird && onda4.lateBird.byUser[uid];
+  var lbBadge = '';
+  if (lb && lb.chronic) {
+    lbBadge = ' · <span class="o4-badge late" title="Cumpriu mas fora da janela canônica IAAD-30">🐢 Atrasado crônico</span>'
+      + ' <span style="color:var(--text-muted);font-weight:400;font-size:0.72rem">('
+      + lb.lateCount + ' itens em ' + lb.lateAulas.length + ' aulas: ' + lb.lateAulas.join(', ')
+      + ')</span>';
+  }
   var cirHtml = '';
   if (cir && cir.totalEvents > 0) {
     cirHtml = '<h4 style="margin:0.8rem 0 0.3rem;color:var(--primary);font-size:0.76rem;text-transform:uppercase;letter-spacing:0.05em">'
       + 'Padrão circadiano · ' + cir.totalEvents + ' eventos'
       + (cir.chronic ? ' · <span class="o4-badge crammer">🌙 Crammer crônico</span>' : '')
       + (cir.crammedAulas.length > 0 ? ' <span style="color:var(--text-muted);font-weight:400;font-size:0.72rem">(cramming em aulas: ' + cir.crammedAulas.join(', ') + ')</span>' : '')
+      + lbBadge
       + '</h4>'
       + _o4RenderCircadianHeatmapHtml(cir.matrix);
   } else {
-    cirHtml = '<div style="color:var(--text-muted);font-size:0.78rem;margin-top:0.4rem">Sem eventos registrados para plotar padrão circadiano.</div>';
+    cirHtml = '<div style="color:var(--text-muted);font-size:0.78rem;margin-top:0.4rem">Sem eventos registrados para plotar padrão circadiano.'
+      + (lbBadge ? '<br>' + lbBadge.replace(/^ · /, '') : '')
+      + '</div>';
   }
 
   // #8 Trajectory sparkline
@@ -6145,26 +6246,29 @@ function _inboxGenStaleInterventionItems() {
 }
 
 // Categoria: gabaritos a liberar nas proximas 48h (operacional)
+// Usa janela canonica (qui 00:00 BRT do dia seguinte ao fechamento de pos/exerc)
+// em vez do gabarito unico 03/07. p.gabarito ja e ms (number), nao Date.
 function _inboxGenGabaritoItems() {
-  if (!window.MPE_CALENDARIO || !window.MPE_CALENDARIO.getPrazo) return [];
+  if (!window.MPE_CALENDARIO || !window.MPE_CALENDARIO.getJanelaCanonica) return [];
   var now = Date.now();
   var horizon = now + INBOX_GABARITO_LOOKAHEAD_HRS * 3600000;
   var items = [];
   for (var n = 1; n <= 9; n++) {
     ['pos', 'exerc'].forEach(function(comp){
       try {
-        var p = window.MPE_CALENDARIO.getPrazo(n, comp);
+        var p = window.MPE_CALENDARIO.getJanelaCanonica(n, comp);
         if (!p || !p.gabarito) return;
-        var t = p.gabarito.getTime();
+        var t = p.gabarito;
         if (t < now || t > horizon) return;
         var hoursTo = Math.round((t - now) / 3600000);
         var label = comp === 'pos' ? 'Quiz pos-aula' : 'Exercicios avaliativos';
+        var fmtData = new Date(t).toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' });
         items.push({
           key: 'inbox:gab:' + n + ':' + comp,
           category: 'gabarito',
           icon: '📅',
           title: 'Gabarito libera em ' + hoursTo + 'h: ' + label + ' Aula ' + n,
-          sub: 'Libera automaticamente em ' + p.gabarito.toLocaleString('pt-BR', { day:'2-digit', month:'2-digit', hour:'2-digit', minute:'2-digit' }) + '. Revise se quer ajustar feedback antes.',
+          sub: 'Libera automaticamente em ' + fmtData + '. Revise se quer ajustar feedback antes.',
           urgencyDays: hoursTo <= 24 ? 1 : 2,
           impactWeight: 1,
           cost: 5,
@@ -7260,13 +7364,14 @@ function buildStoryOfWeek(raw, lastVisitAtMs) {
         text: '<strong>' + first.nome + '</strong> migrou de <em>' + first.from + '</em> para <em>' + first.to + '</em> desde sua última visita' + nMore + '.',
         cta: 'profile:' + first.mat
       };
-    } else if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.getPrazo) {
-      // Aula com cobertura <60% recém-fechada (ou aproximando)
+    } else if (window.MPE_CALENDARIO && window.MPE_CALENDARIO.getJanelaCanonica) {
+      // Aula com cobertura <60% recem-fechada (janela canonica do quiz pos =
+      // D_{X+1} 19:30, nao deadline plataforma 02/07).
       var nowMs = Date.now();
       var lowCov = null;
       for (var n = 1; n <= 9; n++) {
         try {
-          var p = window.MPE_CALENDARIO.getPrazo(n, 'pos');
+          var p = window.MPE_CALENDARIO.getJanelaCanonica(n, 'pos');
           if (!p) continue;
           var diff = (nowMs - p.fecha) / 86400000;
           if (diff < -2 || diff > 14) continue;

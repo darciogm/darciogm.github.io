@@ -91,12 +91,34 @@ Seis métricas comportamentais sobre os dados já rastreados (zero mudança de s
 
 - **#4 Confidence calibration (ECE)** — `confidence_ratings.post` × acerto 1ª. Labels: 🎯 calibrated / 🔥 over-confident / 🧊 under-confident. Ref: Hacker, Bol & Keener 2012.
 - **#2 Response-time phenotyping** — diff de `answered_at` (janela 10s–15min), mediana por aluno vs. turma. 4 quadrantes. Ref: Van der Linden 2007.
-- **#5 Circadian + cramming** — heatmap 7×24 de eventos; cramming ratio vs. `MPE_CALENDARIO.getPrazo().fecha`. Flag 🌙 crammer crônico. Ref: Anderson CHI 2014.
+- **#5 Circadian + cramming + atrasado** — heatmap 7×24 de eventos; cramming ratio vs. `MPE_CALENDARIO.getJanelaCanonica(n, comp).fecha` (janela canônica IAAD-30, **não** deadline plataforma). Duas flags ortogonais: **🌙 crammer crônico** (≥3 aulas com >60% dos eventos nas 48h pré-janela canônica) e **🐢 atrasado crônico** (≥3 aulas com itens cumpridos *após* a janela canônica — `done && !in_window`). Ref: Cepeda et al. 2006 (spacing effect, Psychological Bulletin); Bjork & Bjork (desirable difficulties).
 - **#8 Cohort trajectory drift** — score composto por aula → percentil turma → 9 pontos → drift (queda ≥20 decis OU z-score rolling-3 < −1.5). Sparkline no modal. Flag 🔻 e sort `drift-desc`. Ref: Pardos 2014.
 - **#10 Learning velocity** — slope (regressão linear) de acerto através de 4 fases (pre_review → embedded → post → graded_exercise). Ref: Newell & Rosenbloom 1981; Koedinger 2013.
 - **#3 SRL phenotype** — 3 features (attempts/cp, revisit_ratio, read_before_try) + regras interpretáveis → strategic/reactive/skimmer/avoidant/mixed. Ref: Zimmerman 2013.
 
-Exportação CSV ganhou 8 colunas Onda 4. Tab agregada e modal têm fallback gracioso ("—" + tooltip) quando dados insuficientes. Requer `<script src="js/calendario.js">` no `admin.html` para cramming ratio.
+Exportação CSV ganhou 10 colunas Onda 4 (8 originais + 2 do 🐢: "Atrasado crônico" e "N itens fora da janela"). Tab agregada e modal têm fallback gracioso ("—" + tooltip) quando dados insuficientes. Requer `<script src="js/calendario.js">` no `admin.html` para cramming ratio + late detection.
+
+### Duas noções de prazo (canônico vs plataforma)
+
+Desde 2026-05-08 a plataforma opera em **acesso livre** até 02/07/2026 18:00 BRT (deadline única para gating real de submissão). O **calendário canônico IAAD-30** vive em paralelo: cada componente da aula X tem uma janela canônica que rege o ritmo ideal e alimenta `C_prazo` (20% do IAAD).
+
+| Componente da Aula X | Janela canônica fecha em |
+|---|---|
+| Pré-aula material | qua Aula X 19:30 BRT (`presencial_at`) |
+| Quiz pré-aula | qua Aula X 19:30 BRT |
+| Reflexão "nebulosa" | qua Aula X 19:30 BRT |
+| Reflexão "aula" | qua Aula X 19:30 BRT |
+| Quiz pós-aula | qua Aula X+1 19:30 BRT (`next_presencial_at`; Aula 9 → AF qua 24/06 19:00) |
+| Exercícios avaliativos | idem |
+
+**APIs JS** (`platform/js/calendario.js`):
+- `MPE_CALENDARIO.getPrazo(n, comp)` → `{abre, fecha, gabarito}` com `fecha = ACESSO_LIVRE_FIM`. **Use para gating real**: tracker disabled, banner "prazo encerrado", RLS-equivalente client-side.
+- `MPE_CALENDARIO.getJanelaCanonica(n, comp)` → `{abre, fecha, gabarito, presencial_at, next_presencial_at}` com `fecha = presencial_at` para material/pre/refl_*, `next_presencial_at` para pos/exerc, e `gabarito = qui 00:00 BRT` (próxima meia-noite após `fecha`). **Use para semântica pedagógica**: cramming, atraso, foco-da-semana, pendings, inbox de gabarito.
+- `MPE_CALENDARIO.isCanonicaFechada(n, comp)` → boolean conveniente.
+
+**Backend SSOT** (`supabase/migrations/2026-05-09_iaad30.sql`): tabela `public.iaad_calendar` + view `iaad_aula_completion` com colunas `*_in_window`. O JS espelha essa tabela; sincronia é manual mas verificável (ver Aula 9: presencial_at=17/06 19:30, next_presencial_at=24/06 **19:00** — bate AF).
+
+**Anti-padrão (já corrigido em 2026-05-15):** consumir `getPrazo().fecha` para qualquer pergunta que não seja "o aluno PODE submeter". Resulta em métrica degenerada (única janela coletiva no fim do curso).
 
 ### Ondas futuras (pensadas, não implementadas)
 - **Heatmap slide × erro na questão pós** (exige retro-tagging questão→slide).

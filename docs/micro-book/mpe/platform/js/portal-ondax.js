@@ -186,13 +186,14 @@
     for (var i = 0; i < aulas.length; i++) {
       var a = aulas[i];
       if (!a.available) continue;
-      if (!cal || a.n > 9) return a;
-      // Aula foco = primeira cujo pós ainda não fechou ou que ainda não
-      // aconteceu. Se pós já fechou, tenta a próxima.
-      var pos = cal.getPrazo(a.n, 'pos');
+      if (!cal || !cal.getJanelaCanonica || a.n > 9) return a;
+      // Aula foco = primeira cuja janela canonica do pos (D_{X+1} 19:30)
+      // ainda nao passou. Plataforma fica aberta ate 02/07 mas o ritmo
+      // ideal segue as aulas presenciais.
+      var pos = cal.getJanelaCanonica(a.n, 'pos');
       if (!pos || Date.now() < pos.fecha) return a;
     }
-    // Todas as aulas available já fecharam: retorna a última como foco
+    // Todas as janelas canonicas ja fecharam: retorna a ultima available
     for (var j = aulas.length - 1; j >= 0; j--) if (aulas[j].available) return aulas[j];
     return null;
   };
@@ -207,7 +208,11 @@
    */
   PortalOndax.stepStatus = function(aula, comp, myData) {
     var cal = window.MPE_CALENDARIO;
-    var prazo = cal ? cal.getPrazo(aula.n, comp) : null;
+    // Janela canonica (D_X / D_{X+1}) governa o ritmo ideal exposto ao
+    // aluno: 'closed' aqui significa "passou da janela ideal", nao
+    // "plataforma bloqueou submissao" (essa decisao vive em tracker.js
+    // via isClosed/getPrazo, e segue valida ate ACESSO_LIVRE_FIM).
+    var prazo = (cal && cal.getJanelaCanonica) ? cal.getJanelaCanonica(aula.n, comp) : null;
     var pageId = comp === 'material' ? pageIdAula(aula.n)
               : comp === 'pre'      ? pageIdAula(aula.n) + '-pre'
               : comp === 'pos'      ? pageIdAula(aula.n) + '-pos'
@@ -804,16 +809,17 @@
         if (e.correct) cellAcc[dow][h].correct++;
       }
 
-      // Cramming
-      if (!cal) return;
+      // Cramming = 48h pre-janela canonica do aluno (nao deadline plataforma).
+      // Ver calendario.js getJanelaCanonica + supabase iaad_calendar.
+      if (!cal || !cal.getJanelaCanonica) return;
       var m = String(e.pageId || '').match(/^aula-(\d+)(?:-(pre|pos|exerc))?$/);
       if (!m) return;
       var aulaN = parseInt(m[1], 10);
       var comp = m[2] || 'material';
-      var prazo = null;
-      try { prazo = cal.getPrazo(aulaN, comp); } catch(err) { prazo = null; }
-      if (!prazo || !prazo.fecha) return;
-      var fechaMs = prazo.fecha;
+      var janela = null;
+      try { janela = cal.getJanelaCanonica(aulaN, comp); } catch(err) { janela = null; }
+      if (!janela || !janela.fecha) return;
+      var fechaMs = janela.fecha;
       var deadlineWindow = 48 * 3600 * 1000;
       var ak = aulaN + '::' + comp;
       if (!aulaEvents[ak]) aulaEvents[ak] = { total: 0, last48h: 0, aulaN: aulaN };
