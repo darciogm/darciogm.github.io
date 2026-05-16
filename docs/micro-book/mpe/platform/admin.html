@@ -879,7 +879,7 @@ window.MathJax = {
         <option value="">Todas</option>
         <option value="neg">🔴 Discriminação negativa (BUG?)</option>
         <option value="hard">🔴 Muito difícil</option>
-        <option value="easy">🟢 Muito fácil</option>
+        <option value="easy">🟢 Consolidado (p&gt;90%)</option>
         <option value="lowdisc">⚠️ Baixa discriminação</option>
         <option value="ok">✅ OK</option>
       </select>
@@ -1428,17 +1428,31 @@ function firstTryAccuracyPerStudent(studentData) {
 
 function streakForStudent(studentData) {
   var dates = new Set();
+  function addDate(iso) { if (iso) dates.add(String(iso).substring(0, 10)); }
   Object.keys(studentData.pages || {}).forEach(function(pid) {
     var pg = studentData.pages[pid];
-    if (pg.firstVisit) dates.add(pg.firstVisit.substring(0,10));
-    if (pg.lastVisit) dates.add(pg.lastVisit.substring(0,10));
+    addDate(pg.firstVisit);
+    addDate(pg.lastVisit);
   });
   Object.keys(studentData.quizzes || {}).forEach(function(pid) {
     var q = studentData.quizzes[pid];
     (Object.values(q.questions || {})).forEach(function(it) {
-      (it.attempts || []).forEach(function(a) {
-        if (a.timestamp) dates.add(a.timestamp.substring(0,10));
-      });
+      (it.attempts || []).forEach(function(a) { addDate(a.timestamp); });
+    });
+  });
+  // Cobertura completa: section_progress (started + completed), confidence,
+  // micro_attempts. Antes contava so paginas + quiz attempts.
+  Object.keys(studentData.sections || {}).forEach(function(pid) {
+    Object.values(studentData.sections[pid] || {}).forEach(function(sec) {
+      addDate(sec.startedAt);
+      addDate(sec.completedAt);
+      if (sec.confidencePre)  addDate(sec.confidencePre.at);
+      if (sec.confidencePost) addDate(sec.confidencePost.at);
+      if (sec.microCheckpoint) {
+        Object.values(sec.microCheckpoint).forEach(function(it) {
+          (it.attempts || []).forEach(function(a) { addDate(a.timestamp); });
+        });
+      }
     });
   });
   if (dates.size === 0) return 0;
@@ -2223,12 +2237,11 @@ function computeQuestionPsychometrics(raw) {
     if (!entry.byUser[q.user_id]) {
       entry.byUser[q.user_id] = { first: { correct: !!q.correct, answer: q.answer } };
     }
-    // Mantém o primeiro (menor answered_at) como "first"
-    if (!entry.firstTs || (q.answered_at && q.answered_at < entry.byUser[q.user_id].firstTs)) {
-      if (!entry.byUser[q.user_id].firstTs || (q.answered_at && q.answered_at < entry.byUser[q.user_id].firstTs)) {
-        entry.byUser[q.user_id].first = { correct: !!q.correct, answer: q.answer };
-        entry.byUser[q.user_id].firstTs = q.answered_at;
-      }
+    // Mantém o primeiro (menor answered_at) como "first". Outer-if redundante
+    // removido (entry.firstTs nunca era setado; testava sempre falsy).
+    if (!entry.byUser[q.user_id].firstTs || (q.answered_at && q.answered_at < entry.byUser[q.user_id].firstTs)) {
+      entry.byUser[q.user_id].first = { correct: !!q.correct, answer: q.answer };
+      entry.byUser[q.user_id].firstTs = q.answered_at;
     }
   });
 
@@ -2310,7 +2323,7 @@ function computeQuestionPsychometrics(raw) {
     var flag;
     if (rpb < 0 && n >= 5)          flag = { code: 'neg',     label: 'Discrim. negativa' };
     else if (pValue < 0.20)          flag = { code: 'hard',    label: 'Muito difícil' };
-    else if (pValue > 0.90)          flag = { code: 'easy',    label: 'Muito fácil' };
+    else if (pValue > 0.90)          flag = { code: 'easy',    label: 'Consolidado' };
     else if (rpb < 0.15)             flag = { code: 'lowdisc', label: 'Baixa discrim.' };
     else                             flag = { code: 'ok',      label: 'OK' };
 
@@ -4453,8 +4466,15 @@ function renderWrightMap() {
 
   var studentsHtml = studentsLaid.map(function(s){
     var firstName = (s.nome || '').split(' ')[0];
-    return '<circle class="wright-student" cx="' + s._x.toFixed(1) + '" cy="' + y(s.theta).toFixed(1) + '" r="5">'
-      + '<title>' + s.nome + ' · θ=' + s.theta.toFixed(2) + ' · ' + s.n + ' respostas</title>'
+    // n<10 = theta volatil (gate baixo do IRT). Visual: r=3 + opacity 0.4
+    // + warn no tooltip. Mantemos no plot (transparencia da limitacao).
+    var lowN = (s.n || 0) < 10;
+    var rad = lowN ? 3 : 5;
+    var opacity = lowN ? '0.4' : '';
+    var styleAttr = lowN ? ' style="opacity:0.4"' : '';
+    var nWarn = lowN ? ' ⚠ amostra pequena (theta volatil)' : '';
+    return '<circle class="wright-student" cx="' + s._x.toFixed(1) + '" cy="' + y(s.theta).toFixed(1) + '" r="' + rad + '"' + styleAttr + '>'
+      + '<title>' + s.nome + ' · θ=' + s.theta.toFixed(2) + ' · ' + s.n + ' respostas' + nWarn + '</title>'
       + '</circle>'
       + '<text class="wright-side-label" x="' + (s._x + 7).toFixed(1) + '" y="' + (y(s.theta) + 3).toFixed(1) + '" text-anchor="start">' + firstName + '</text>';
   }).join('');
@@ -8544,7 +8564,8 @@ function _vizComputeTopBulletData() {
     acertoFT:   { value: acertoFT,   target: 70, zones: [50, 65], unit: '%', label: 'Acerto 1ª (turma)' },
     streak:     { value: streakMedian, target: 3, zones: [2, 5], unit: 'd', label: 'Streak mediano (dias)' },
     // ECE invertido: menor é melhor, max 25 -> alto risco. zonas vermelha 100->15, amarela 15->5, verde 5->0 (mas display é 0..40)
-    ece:        { value: ece, target: 15, zones: [15, 25], unit: 'pp', label: 'ECE turma (|conf−acc|)', inverted: true, max: 40 }
+    ece:        { value: ece, target: 15, zones: [15, 25], unit: 'pp', label: 'ECE turma (|conf−acc|)', inverted: true, max: 40,
+                  extraTip: 'Bins: 4 equidistantes [0,25)/[25,50)/[50,75)/[75,100]. Alternativa Naeini equal-mass não implementada (n por aluno baixo).' }
   };
 }
 
@@ -8566,7 +8587,8 @@ function _vizRenderBullet(spec) {
   var barW = v == null ? 0 : pos(v);
   var tx = pos(spec.target);
   var zoneLabelGood = spec.inverted ? '< ' + spec.zones[0] + spec.unit + ' (verde)' : '> ' + spec.zones[1] + spec.unit + ' (verde)';
-  var ttip = spec.label + ': ' + (v == null ? '—' : v + spec.unit) + ' · meta ' + spec.target + spec.unit + ' · ' + zoneLabelGood;
+  var ttip = spec.label + ': ' + (v == null ? '—' : v + spec.unit) + ' · meta ' + spec.target + spec.unit + ' · ' + zoneLabelGood
+           + (spec.extraTip ? ' · ' + spec.extraTip : '');
   var html = ''
     + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="none">'
     + '<title>' + ttip.replace(/</g,'&lt;') + '</title>'
