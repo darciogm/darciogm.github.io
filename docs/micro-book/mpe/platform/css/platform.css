@@ -307,6 +307,8 @@ details .solution-body{padding:1rem}
 .path-step.open{background:#fff;border-color:#e2e8f0}
 .path-step.locked{opacity:0.55}
 .path-step.closed{background:#f5f5f4;border-color:#e7e5e4;opacity:0.7}
+.path-step.partial{background:#FEF3C7;border-color:#FCD34D}
+.path-step.partial .path-step-icon{color:#92400E}
 .path-step-icon{font-size:1.1rem;line-height:1}
 .path-step-name{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.06em;font-weight:700;color:var(--primary)}
 .path-step-meta{font-size:0.72rem;color:var(--text-muted);line-height:1.25;margin-top:auto}

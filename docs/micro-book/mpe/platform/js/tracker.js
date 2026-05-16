@@ -74,7 +74,12 @@
     },
     logout: function() {
       MicroTracker.flush();
+      // T2.1 auditoria 2026-05-15: limpa localStorage do tracker para nao
+      // vazar tracking em maquina compartilhada. Sem isto, proximo login
+      // veria dados do aluno anterior via MicroTracker.exportJSON().
+      MicroTracker.clearAll();
       sessionStorage.removeItem(SESSION_KEY);
+      try { localStorage.removeItem('mpe_blocker_toast_dismissed'); } catch(e) {}
       if (_supabaseAuthOn()) {
         // fire-and-forget; a UI vai redirecionar
         MpeDB.signOut();
@@ -924,6 +929,25 @@
               btnLock2.style.opacity = '0.6';
             }
             gateAplicado = true;
+          } else if (pctx && MPE_CALENDARIO.isCanonicaFechada
+                     && MPE_CALENDARIO.isCanonicaFechada(pctx.aula_n, pctx.componente)) {
+            // T2.6 auditoria 2026-05-15: janela canonica encerrou mas plataforma
+            // ainda aceita. Aviso amarelo (nao desabilita submit). Cumpre Geral
+            // mas perde Cumprimento no Prazo no IAAD-30.
+            var janelaC = MPE_CALENDARIO.getJanelaCanonica(pctx.aula_n, pctx.componente);
+            var warn2 = block.querySelector('.quizg-warn');
+            var msgC = '⚠ Janela ideal encerrada em ' + MPE_CALENDARIO.fmt(janelaC.fecha) +
+                       '. Voce ainda pode submeter (vale Cumprimento Geral), mas Cumprimento no Prazo desta aula nao receberá pontos no IAAD-30.';
+            if (warn2) {
+              warn2.textContent = msgC;
+              warn2.hidden = false;
+              warn2.style.background = '#FEF3C7';
+              warn2.style.color = '#92400E';
+              warn2.style.padding = '0.8rem';
+              warn2.style.borderRadius = '4px';
+              warn2.style.marginTop = '0.8rem';
+            }
+            // NAO seta gateAplicado=true — botao continua habilitado.
           }
         }
 

@@ -26,20 +26,26 @@
   IAAD.MAX_PTS_NOTA = 30;
   IAAD.AULAS_TOTAL = 9;
 
-  // Percentil exato vs. distribuição da turma
+  // Percentil exato vs. distribuição da turma.
+  // T2.7 auditoria 2026-05-15: gate de n>=10 (abaixo disso, percentil
+  // estatisticamente sem sentido) + mean rank (conta 0.5 para empates,
+  // evita pular degrau no aluno mediano com muitos colegas no mesmo valor).
   IAAD.percentile = function(value, values) {
     if (value == null || !values || values.length === 0) return null;
-    var below = values.filter(function(v) { return Number(v) < Number(value); }).length;
-    return Math.round(100 * below / values.length);
+    if (values.length < 10) return null;
+    var v = Number(value);
+    var below = values.filter(function(x) { return Number(x) < v; }).length;
+    var ties  = values.filter(function(x) { return Number(x) === v; }).length;
+    return Math.round(100 * (below + 0.5 * ties) / values.length);
   };
 
   IAAD.percentileLabel = function(value, values) {
     var p = IAAD.percentile(value, values);
     if (p == null) return '';
-    if (p >= 90) return 'top ' + (100 - p) + '% da turma';
+    if (p >= 90) return 'top ' + Math.max(1, 100 - p) + '% da turma';
     if (p >= 50) return 'acima de ' + p + '% da turma';
-    if (p >= 10) return 'abaixo de ' + (100 - p) + '% da turma';
-    return 'bottom ' + (p === 0 ? 10 : (p+1)) + '% da turma';
+    if (p >= 25) return 'abaixo de ' + (100 - p) + '% da turma';
+    return 'percentil ' + p;  // evita "bottom X%" que confunde aluno
   };
 
   function bar(score) {
@@ -195,8 +201,8 @@
       // Total IAAD + histograma da distribuição da turma
       + '  <div style="background:#f1f5f9;padding:0.8rem 1rem;border-radius:6px;margin-bottom:0.9rem">'
       + '    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.4rem">'
-      + '      <strong style="font-size:1.15rem">IAAD: ' + iaad.toFixed(2) + ' / 10</strong>'
-      + '      <span style="color:#0f766e;font-weight:600">→ ' + pts.toFixed(2) + ' / 30 pontos</span>'
+      + '      <strong style="font-size:1.15rem" title="IAAD = 0,60·C_geral + 0,20·C_prazo + 0,20·P  ∈ [0, 10]. Pontos da nota = 3 × IAAD ∈ [0, 30].">IAAD: ' + iaad.toFixed(2) + ' / 10</strong>'
+      + '      <span style="color:#0f766e;font-weight:600" title="Equivalente em pontos da nota final do MPE">→ ' + pts.toFixed(2) + ' / 30 pontos</span>'
       + '    </div>'
       + '    <div style="font-size:0.78rem;color:#64748b;margin-bottom:0.3rem">'
       + '      Distribuição da turma (n=' + nStudents + ') · '
@@ -268,6 +274,10 @@
     var cP = Number(data.c_prazo_score || 0);
     var p  = Number(data.p_score || 0);
     var gap = cG - cP;  // se geral > prazo → atrasos
+    // T2.9 auditoria 2026-05-15: branch "alta performance + baixa entrega"
+    // (sabe a materia mas nao esta marcando as atividades). Frustracao
+    // pedagogica se nao detectada.
+    if (p >= 7 && cG < 6) return 'Você está performando bem (P=' + p.toFixed(1) + ') — mas o Cumprimento Geral está aquém. Submeter as atividades pendentes faz o IAAD refletir o que você sabe.';
     if (cG < 5) return 'Cumprimento Geral abaixo de 5,0 — entregue as próximas 2 atividades pendentes.';
     if (gap > 1.5) return 'Você cumpriu mas com atraso — antecipar o ritmo recupera pontos no Cumprimento no Prazo.';
     if (cP < 5) return 'Cumprimento no Prazo baixo — fazer pré-aula antes da quarta seguinte é o vetor de maior impacto.';
@@ -294,15 +304,20 @@
         window.MpeDB.client.rpc('get_iaad_class_distribution')
       ]);
 
-      console.log('[IAAD] iaadRes:', iaadRes);
-      console.log('[IAAD] distRes:', distRes);
+      // T2.8 auditoria 2026-05-15: console verboso so em DEBUG. Producao
+      // poluia o console do aluno com dado de classificacao.
+      var DEBUG = window.MPE_CONFIG && window.MPE_CONFIG.DEBUG;
+      if (DEBUG) {
+        console.log('[IAAD] iaadRes:', iaadRes);
+        console.log('[IAAD] distRes:', distRes);
+      }
 
       var data = iaadRes && iaadRes.data && iaadRes.data[0];
       var distribution = distRes && distRes.data && distRes.data[0];
 
       if (iaadRes && iaadRes.error) {
         console.error('[IAAD] get_iaad ERROR:', iaadRes.error);
-        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">RPC get_iaad falhou: ' + (iaadRes.error.message || JSON.stringify(iaadRes.error)) + '</div>';
+        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-size:0.85rem">Não foi possível carregar o IAAD-30. Recarregue a página ou avise o professor se persistir.</div>';
         return;
       }
       if (distRes && distRes.error) {
@@ -314,11 +329,11 @@
         IAAD.render(targetEl, data, distribution);
       } catch (renderErr) {
         console.error('[IAAD] render exception:', renderErr);
-        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">Render falhou: ' + (renderErr && renderErr.message ? renderErr.message : String(renderErr)) + '<br><br>Stack:<br>' + (renderErr && renderErr.stack ? String(renderErr.stack).replace(/\n/g, '<br>') : '(sem stack)') + '</div>';
+        targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-size:0.85rem">Erro ao renderizar o IAAD-30. Recarregue a página; se persistir, avise o professor.</div>';
       }
     } catch (e) {
       console.error('[IAAD] fetch failed:', e);
-      targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-family:monospace;font-size:0.78rem">Erro: ' + (e && e.message ? e.message : String(e)) + '</div>';
+      targetEl.innerHTML = '<div class="iaad-empty" style="background:#fee2e2;padding:0.8rem;border-radius:4px;font-size:0.85rem">Erro ao buscar o IAAD-30. Verifique sua conexão e recarregue.</div>';
     }
   };
 

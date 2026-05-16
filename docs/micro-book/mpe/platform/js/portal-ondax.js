@@ -109,13 +109,62 @@
       });
     });
 
-    // sectionProgress: o tracker guarda em mine.sections[pid][sid]
+    // sectionProgress + confidence + microAttempts: tracker guarda tudo
+    // dentro de mine.sections[pid][sid]. T2.10 auditoria 2026-05-15:
+    // pre-fix s_o sectionProgress era populado -> fallback offline mentia
+    // sobre cramming/calibration/streak. Agora as 3 fontes faltantes
+    // tambem entram no shape unificado.
     Object.keys(mine.sections || {}).forEach(function(pid) {
       Object.keys(mine.sections[pid] || {}).forEach(function(sid) {
         var s = mine.sections[pid][sid];
         empty.sectionProgress.push({
           page_id: pid, section_id: sid,
           started_at: s.startedAt, completed_at: s.completedAt
+        });
+        if (s.confidencePre) {
+          empty.confidence.push({
+            page_id: pid, section_id: sid, phase: 'pre',
+            value: s.confidencePre.value, recorded_at: s.confidencePre.at
+          });
+        }
+        if (s.confidencePost) {
+          empty.confidence.push({
+            page_id: pid, section_id: sid, phase: 'post',
+            value: s.confidencePost.value, recorded_at: s.confidencePost.at
+          });
+        }
+        if (s.microCheckpoint) {
+          Object.keys(s.microCheckpoint).forEach(function(qid) {
+            (s.microCheckpoint[qid].attempts || []).forEach(function(a, idx) {
+              empty.microAttempts.push({
+                page_id: pid, section_id: sid, question_id: qid,
+                answer: a.answer, correct: !!a.correct,
+                attempt_num: idx + 1, answered_at: a.timestamp
+              });
+            });
+          });
+        }
+      });
+    });
+
+    // paperExercises: mine.paperExercises[pid][exid] = {completed, approach, completedAt}
+    Object.keys(mine.paperExercises || {}).forEach(function(pid) {
+      Object.keys(mine.paperExercises[pid] || {}).forEach(function(exid) {
+        var pe = mine.paperExercises[pid][exid];
+        empty.paperExercises.push({
+          page_id: pid, exercise_id: exid,
+          approach: pe.approach || '', completed_at: pe.completedAt
+        });
+      });
+    });
+
+    // reflections: mine.reflections[pid][promptId] = {text, submittedAt}
+    Object.keys(mine.reflections || {}).forEach(function(pid) {
+      Object.keys(mine.reflections[pid] || {}).forEach(function(promptId) {
+        var r = mine.reflections[pid][promptId];
+        empty.reflections.push({
+          page_id: pid, prompt_id: promptId,
+          text: r.text || '', submitted_at: r.submittedAt
         });
       });
     });
@@ -186,6 +235,7 @@
     for (var i = 0; i < aulas.length; i++) {
       var a = aulas[i];
       if (!a.available) continue;
+      if (a.isFinalAssessment) continue;  // T2.4: AF nao serve como foco semanal
       if (!cal || !cal.getJanelaCanonica || a.n > 9) return a;
       // Aula foco = primeira cuja janela canonica do pos (D_{X+1} 19:30)
       // ainda nao passou. Plataforma fica aberta ate 02/07 mas o ritmo
@@ -193,8 +243,10 @@
       var pos = cal.getJanelaCanonica(a.n, 'pos');
       if (!pos || Date.now() < pos.fecha) return a;
     }
-    // Todas as janelas canonicas ja fecharam: retorna a ultima available
-    for (var j = aulas.length - 1; j >= 0; j--) if (aulas[j].available) return aulas[j];
+    // Todas as janelas canonicas ja fecharam: retorna a ultima available (nao-AF)
+    for (var j = aulas.length - 1; j >= 0; j--) {
+      if (aulas[j].available && !aulas[j].isFinalAssessment) return aulas[j];
+    }
     return null;
   };
 
@@ -268,11 +320,14 @@
     // done quando AMBOS done. Mostra o mais atrasado dos dois estados.
     var pos   = PortalOndax.stepStatus(aula, 'pos', myData);
     var exerc = PortalOndax.stepStatus(aula, 'exerc', myData);
-    // Estado combinado: done se ambos done; closed se ambos closed; active/open se algum open; locked se ambos locked.
+    // Estado combinado: done se ambos done; closed se ambos closed;
+    // open se algum aberto; partial se um done e outro closed (cumpriu metade
+    // mas perdeu janela do outro); locked se ambos locked. T2.5 auditoria.
     var combined;
     if (pos.state === 'done' && exerc.state === 'done') combined = 'done';
     else if (pos.state === 'closed' && exerc.state === 'closed') combined = 'closed';
     else if (pos.state === 'open' || exerc.state === 'open') combined = 'open';
+    else if (pos.state === 'done' || exerc.state === 'done') combined = 'partial';
     else combined = 'locked';
     var combinedStep = { state: combined, pos: pos, exerc: exerc, prazo: pos.prazo || exerc.prazo, pageId: null };
 
@@ -314,9 +369,14 @@
     stepDefs.forEach(function(d, idx) {
       var s = d.step;
       var cls = 'path-step ' + (s.state || 'open');
-      var check = s.state === 'done' ? '✓' : (s.state === 'active' ? '▶' : (s.state === 'locked' ? '🔒' : (s.state === 'closed' ? '×' : '·')));
+      var check = s.state === 'done' ? '✓'
+                : (s.state === 'active' ? '▶'
+                : (s.state === 'locked' ? '🔒'
+                : (s.state === 'closed' ? '×'
+                : (s.state === 'partial' ? '½' : '·'))));
       var metaHtml = '';
       if (s.state === 'done') metaHtml = 'Concluído';
+      else if (s.state === 'partial') metaHtml = 'Parcial (1 de 2)';
       else if (s.state === 'locked') {
         if (s.aulaTs) metaHtml = 'abre ' + (cal && cal.fmt ? cal.fmt(s.aulaTs) : '');
         else if (s.prazo) metaHtml = 'abre ' + (cal && cal.fmt ? cal.fmt(s.prazo.abre) : '');

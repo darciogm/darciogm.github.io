@@ -411,21 +411,36 @@ var MONITORIAS = [
 // 'post','graded_exercise') e e a fonte da nota). IAAD card cobre.
 
 function computeStreak(studentData) {
-  // Dias consecutivos (até hoje) com pelo menos um lastVisit
+  // Dias consecutivos (até hoje) com qualquer atividade rastreada.
+  // T2.2 auditoria 2026-05-15: espelha fix do admin commit dd5e433.
+  // Antes contava só pages + quiz attempts; agora inclui section_progress,
+  // confidence_ratings, micro_attempts — pula menos dias com leitura/checkpoint.
   var dates = new Set();
+  function addDate(iso) { if (iso) dates.add(String(iso).substring(0, 10)); }
   Object.keys(studentData.pages || {}).forEach(function(pid) {
     var pg = studentData.pages[pid];
-    if (pg.lastVisit) dates.add(pg.lastVisit.substring(0,10));
-    if (pg.firstVisit) dates.add(pg.firstVisit.substring(0,10));
+    addDate(pg.lastVisit);
+    addDate(pg.firstVisit);
   });
   Object.keys(studentData.quizzes || {}).forEach(function(pid) {
     var q = studentData.quizzes[pid];
     (Object.values(q.questions || {})).forEach(function(it) {
-      (it.attempts || []).forEach(function(a) {
-        if (a.timestamp) dates.add(a.timestamp.substring(0,10));
-      });
+      (it.attempts || []).forEach(function(a) { addDate(a.timestamp); });
     });
-    if (q.lastAttempt) dates.add(q.lastAttempt.substring(0,10));
+    addDate(q.lastAttempt);
+  });
+  Object.keys(studentData.sections || {}).forEach(function(pid) {
+    Object.values(studentData.sections[pid] || {}).forEach(function(sec) {
+      addDate(sec.startedAt);
+      addDate(sec.completedAt);
+      if (sec.confidencePre)  addDate(sec.confidencePre.at);
+      if (sec.confidencePost) addDate(sec.confidencePost.at);
+      if (sec.microCheckpoint) {
+        Object.values(sec.microCheckpoint).forEach(function(it) {
+          (it.attempts || []).forEach(function(a) { addDate(a.timestamp); });
+        });
+      }
+    });
   });
   if (dates.size === 0) return 0;
   var today = new Date(); today.setHours(0,0,0,0);
@@ -915,6 +930,11 @@ bootstrap();
       _reTimer = null;
       if (hasOpenModal()) return;
       renderOnda1();
+      // T2.3 auditoria 2026-05-15: re-render IAAD tambem. Sem isto, aluno
+      // submetia atividade em outra aba e voltava ao portal vendo IAAD
+      // antigo (renderOnda1 nao toca o card IAAD; ele tem seu proprio fetch).
+      var iaadTarget = document.getElementById('iaad-card-target');
+      if (iaadTarget && window.IAAD) window.IAAD.fetchAndRender(iaadTarget);
     }, 500);
   }
   document.addEventListener('visibilitychange', function() {
