@@ -2564,6 +2564,59 @@ var _PT_STOPWORDS = ('a,à,ao,aos,aquela,aquelas,aquele,aqueles,aquilo,as,até,a
 var _STOP = {};
 _PT_STOPWORDS.forEach(function(w){ _STOP[w.trim().toLowerCase()] = true; });
 
+// Whitelist de acronimos curtos (2 chars) que escapam do filtro len>=3.
+// Termos canonicos de microeconomia que aparecem nas reflexoes da turma.
+var _TAG_WHITELIST = { 'eg': true, 'af': true };
+
+// Stem map curado para PT-BR no contexto de microeconomia. Mapeia formas
+// flexionadas para a raiz (lemma simplificado). Sem snowballstemmer-pt
+// (precisaria bundler/CDN); este dict cobre os ~80 termos mais comuns
+// nas reflexoes do MPE. Estender via PR conforme padroes novos surgirem
+// na turma. Tudo lowercase sem acento (o normalizer abaixo nao remove
+// acentos, mas a chave do map deve bater EXATAMENTE com o token apos
+// .toLowerCase()).
+var _PT_STEM_MAP = {
+  // verbos centrais
+  'preferi': 'preferir', 'prefere': 'preferir', 'preferem': 'preferir', 'preferia': 'preferir', 'preferiu': 'preferir', 'preferimos': 'preferir', 'prefiro': 'preferir', 'preferindo': 'preferir',
+  'consumi': 'consumir', 'consome': 'consumir', 'consomem': 'consumir', 'consumimos': 'consumir', 'consumindo': 'consumir', 'consumido': 'consumir', 'consumiu': 'consumir', 'consumir': 'consumir',
+  'maximiza': 'maximizar', 'maximizam': 'maximizar', 'maximizou': 'maximizar', 'maximizando': 'maximizar', 'maximizei': 'maximizar', 'maximizado': 'maximizar', 'maximizar': 'maximizar',
+  'minimiza': 'minimizar', 'minimizam': 'minimizar', 'minimizou': 'minimizar', 'minimizando': 'minimizar', 'minimizar': 'minimizar',
+  'otimiza': 'otimizar', 'otimizam': 'otimizar', 'otimizou': 'otimizar', 'otimizando': 'otimizar', 'otimizar': 'otimizar', 'otimo': 'otimizar', 'otima': 'otimizar', 'otimos': 'otimizar', 'otimas': 'otimizar',
+  'comprou': 'comprar', 'compra': 'comprar', 'compram': 'comprar', 'comprando': 'comprar', 'comprei': 'comprar', 'comprar': 'comprar', 'comprado': 'comprar',
+  'vendeu': 'vender', 'vende': 'vender', 'vendem': 'vender', 'vendendo': 'vender', 'vendi': 'vender', 'vender': 'vender', 'vendido': 'vender',
+  'escolheu': 'escolher', 'escolhe': 'escolher', 'escolhem': 'escolher', 'escolhi': 'escolher', 'escolhendo': 'escolher', 'escolher': 'escolher', 'escolhido': 'escolher', 'escolha': 'escolher', 'escolhas': 'escolher',
+  'entendi': 'entender', 'entende': 'entender', 'entendem': 'entender', 'entendendo': 'entender', 'entender': 'entender', 'entendido': 'entender', 'entendeu': 'entender', 'entendemos': 'entender',
+  'compreendi': 'entender', 'compreende': 'entender', 'compreendem': 'entender', 'compreender': 'entender', 'compreendido': 'entender', 'compreendendo': 'entender',
+  'aprendi': 'aprender', 'aprende': 'aprender', 'aprendem': 'aprender', 'aprendendo': 'aprender', 'aprender': 'aprender', 'aprendido': 'aprender', 'aprendeu': 'aprender',
+  'estudei': 'estudar', 'estuda': 'estudar', 'estudam': 'estudar', 'estudando': 'estudar', 'estudar': 'estudar', 'estudei': 'estudar', 'estudou': 'estudar', 'estudado': 'estudar',
+  'pensei': 'pensar', 'pensa': 'pensar', 'pensam': 'pensar', 'pensando': 'pensar', 'pensar': 'pensar', 'pensou': 'pensar',
+  'praticar': 'praticar', 'pratiquei': 'praticar', 'pratica': 'praticar', 'praticam': 'praticar', 'praticando': 'praticar',
+  'aplicou': 'aplicar', 'aplica': 'aplicar', 'aplicam': 'aplicar', 'aplicar': 'aplicar', 'aplicando': 'aplicar', 'aplicado': 'aplicar', 'aplicacao': 'aplicar', 'aplicacoes': 'aplicar', 'aplicação': 'aplicar', 'aplicações': 'aplicar',
+  'analisou': 'analisar', 'analisa': 'analisar', 'analisam': 'analisar', 'analisando': 'analisar', 'analisar': 'analisar', 'analisado': 'analisar', 'analise': 'analisar', 'analises': 'analisar', 'análise': 'analisar', 'análises': 'analisar',
+  'resolvi': 'resolver', 'resolve': 'resolver', 'resolvem': 'resolver', 'resolveu': 'resolver', 'resolvendo': 'resolver', 'resolver': 'resolver', 'resolvido': 'resolver', 'solucao': 'resolver', 'solucoes': 'resolver', 'solução': 'resolver', 'soluções': 'resolver',
+  'duvida': 'duvida', 'duvidas': 'duvida', 'dúvida': 'duvida', 'dúvidas': 'duvida',
+  // substantivos centrais (singular/plural)
+  'consumidor': 'consumidor', 'consumidores': 'consumidor',
+  'produtor': 'produtor', 'produtores': 'produtor',
+  'mercado': 'mercado', 'mercados': 'mercado',
+  'preco': 'preco', 'precos': 'preco', 'preço': 'preco', 'preços': 'preco',
+  'utilidade': 'utilidade', 'utilidades': 'utilidade',
+  'demanda': 'demanda', 'demandas': 'demanda',
+  'oferta': 'oferta', 'ofertas': 'oferta',
+  'equilibrio': 'equilibrio', 'equilibrios': 'equilibrio', 'equilíbrio': 'equilibrio', 'equilíbrios': 'equilibrio',
+  'restricao': 'restricao', 'restricoes': 'restricao', 'restrição': 'restricao', 'restrições': 'restricao',
+  'curva': 'curva', 'curvas': 'curva',
+  'funcao': 'funcao', 'funcoes': 'funcao', 'função': 'funcao', 'funções': 'funcao',
+  'grafico': 'grafico', 'graficos': 'grafico', 'gráfico': 'grafico', 'gráficos': 'grafico',
+  'modelo': 'modelo', 'modelos': 'modelo',
+  'teoria': 'teoria', 'teorias': 'teoria', 'teorico': 'teoria', 'teoricos': 'teoria',
+  'exemplo': 'exemplo', 'exemplos': 'exemplo',
+  'exercicio': 'exercicio', 'exercicios': 'exercicio', 'exercício': 'exercicio', 'exercícios': 'exercicio',
+  'aula': 'aula', 'aulas': 'aula',
+  'monitoria': 'monitoria', 'monitorias': 'monitoria',
+  'revisao': 'revisao', 'revisoes': 'revisao', 'revisão': 'revisao', 'revisões': 'revisao'
+};
+
 // Cache de tokenizacao: cada click no tag cloud filtra reflexoes via
 // _tokenize(r.text) e antes re-tokenizava ~900 reflexoes por click. Cache
 // por texto (Map; lazy fill) evita o trabalho repetido. ~50ms -> <1ms para
@@ -2575,16 +2628,20 @@ function _tokenize(text) {
   if (cached) return cached;
   // Normaliza: lowercase, mantém letras+números+acentos, quebra em espaços/pontuação
   var norm = text.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, ' ').replace(/\s+/g, ' ').trim();
-  var tokens = norm.split(' ').filter(function(t){
-    if (!t || t.length < 3) return false;   // palavras muito curtas
-    if (_STOP[t]) return false;
-    if (/^\d+$/.test(t)) return false;       // só números
-    return true;
+  var tokens = [];
+  norm.split(' ').forEach(function(t){
+    if (!t) return;
+    // Whitelist 2 chars (acronimos canonicos: EG, AF, ...)
+    if (t.length < 3 && !_TAG_WHITELIST[t]) return;
+    if (_STOP[t]) return;
+    if (/^\d+$/.test(t)) return;
+    // Stem (lemma simplificado): se o token esta no map, troca pela raiz
+    var stem = _PT_STEM_MAP[t] || t;
+    tokens.push(stem);
   });
   _tokenizeCache.set(text, tokens);
   // Cap de seguranca: nao crescer indefinidamente entre admin sessions.
   if (_tokenizeCache.size > 5000) {
-    // Drop oldest 1000 (Map preserva insertion order)
     var keys = [];
     var it = _tokenizeCache.keys();
     for (var i = 0; i < 1000; i++) { var k = it.next(); if (k.done) break; keys.push(k.value); }
