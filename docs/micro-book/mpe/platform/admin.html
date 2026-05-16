@@ -1023,12 +1023,16 @@ window.MathJax = {
         <option value="post">Pós-aula</option>
         <option value="graded_exercise">Avaliativo</option>
       </select>
+      <button class="btn-export btn-csv" onclick="exportIrtMatrix()" title="Exportar matriz X (alunos × questões; 0/1 1ª tentativa) para rodar IRT 2-PL externamente em R (mirt) ou Python (pyirt)">📤 Exportar matriz X</button>
       <div class="toolbar-spacer"></div>
       <span id="irt-diag" style="font-size:0.72rem;color:var(--text-muted)"></span>
     </div>
     <div id="m-wright-map" class="dash-chart" style="width:100%;height:500px"></div>
     <div style="margin-top:1rem;padding:0.8rem 1rem;background:var(--accent-soft);border-radius:6px;font-size:0.75rem;color:var(--text-muted);line-height:1.45">
       <strong>Leitura:</strong> aluno alinhado com questão tem ~50% de chance de acertar. Questão <em>acima</em> de todos os alunos = teto (quase ninguém acerta); <em>abaixo</em> de todos = piso (quase todos acertam). Bom teste cobre o range de θ da turma. Discriminação <strong>a</strong> alta = questão separa bem; a ≈ 0 = questão ruim.
+    </div>
+    <div style="margin-top:0.8rem;padding:0.6rem 0.9rem;background:#FEF3C7;border:1px solid #FCD34D;border-radius:4px;font-size:0.72rem;color:#92400E;line-height:1.4">
+      <strong>⚠ Modo exploratório.</strong> O fit JS (joint MLE alternado) é didático mas não valida fit indices (RMSEA, item-fit χ²). Para análise rigorosa, exporte a matriz X e rode em R (<code>mirt</code>) ou Python (<code>pyirt</code>). Roteiro em <a href="data/irt-analysis-readme.md" target="_blank" rel="noopener" style="color:#92400E;text-decoration:underline;font-weight:600">data/irt-analysis-readme.md</a>.
     </div>
   </div>
 
@@ -1719,6 +1723,87 @@ function csvq(s) {
     return '"' + s.replace(/"/g, '""') + '"';
   }
   return s;
+}
+
+// Backlog estratégico (2026-05-16): exporta matriz X (alunos × questões)
+// para análise IRT 2-PL externa via R (mirt) ou Python (pyirt). Mantém o
+// fit JS no admin como exploratório; export é a alternativa rigorosa.
+// Linhas = alunos (matricula + nome); colunas = questões (page_id::qid);
+// valores: 1=acertou em 1ª tentativa, 0=errou em 1ª tentativa, vazio=não
+// respondeu. Mesma regra de gate de fitIRT2PL (n>=3 alunos × n>=3 questões
+// com n>=3 observações cada). Roteiro de análise em
+// platform/data/irt-analysis-readme.md.
+function exportIrtMatrix() {
+  var raw = window._adminRaw;
+  if (!raw || !raw.quizQA || !raw.quizQA.length) {
+    return alert('Sem dados de quiz_question_attempts. Aguarde a turma submeter.');
+  }
+  var phase = (document.getElementById('irt-filter-phase')||{}).value || '';
+
+  // 1) 1ª tentativa por (user, page, qid), filtrada por fase
+  var first = {};
+  (raw.quizQA || []).forEach(function(q){
+    if (phase && q.phase !== phase) return;
+    var key = q.user_id + '::' + q.page_id + '::' + q.question_id;
+    if (first[key] && q.answered_at >= first[key].ts) return;
+    first[key] = { ts: q.answered_at, correct: !!q.correct,
+                   user_id: q.user_id, page_id: q.page_id, qid: q.question_id };
+  });
+
+  // 2) Gate de IRT (mesma regra de fitIRT2PL)
+  var userCount = {}, itemCount = {};
+  Object.values(first).forEach(function(f){
+    userCount[f.user_id] = (userCount[f.user_id] || 0) + 1;
+    itemCount[f.page_id + '::' + f.qid] = (itemCount[f.page_id + '::' + f.qid] || 0) + 1;
+  });
+  var validUsers = Object.keys(userCount).filter(function(u){return userCount[u] >= 3});
+  var validItems = Object.keys(itemCount).filter(function(k){return itemCount[k] >= 3});
+  if (validUsers.length < 3 || validItems.length < 3) {
+    return alert('Amostra insuficiente para IRT (precisa >=3 alunos × >=3 questões com >=3 observações). Filtre menos restritivamente ou aguarde mais respostas.');
+  }
+
+  // 3) Metadata: matricula + nome por user_id, ordenação determinística
+  var profById = {};
+  (raw.profiles || []).forEach(function(p){
+    profById[p.id] = { matricula: p.matricula || '', nome: p.nome || '' };
+  });
+  validUsers.sort(function(a,b){
+    var na = (profById[a] && profById[a].matricula) || a;
+    var nb = (profById[b] && profById[b].matricula) || b;
+    return String(na).localeCompare(String(nb));
+  });
+  validItems.sort();
+
+  // 4) Header: matricula, nome, então uma coluna por questão
+  var header = ['matricula', 'nome'].concat(validItems);
+  var lines = [header.map(csvq).join(',')];
+
+  // 5) Linhas: para cada aluno válido, lookup de 1ª tentativa por item
+  var userIdx = {}; validUsers.forEach(function(u,i){userIdx[u]=i});
+  validUsers.forEach(function(uid){
+    var prof = profById[uid] || { matricula: uid.substring(0,8), nome: '' };
+    var row = [prof.matricula, prof.nome];
+    validItems.forEach(function(item){
+      var parts = item.split('::');
+      var key = uid + '::' + parts[0] + '::' + parts[1];
+      var f = first[key];
+      row.push(f ? (f.correct ? '1' : '0') : '');
+    });
+    lines.push(row.map(csvq).join(','));
+  });
+
+  var csv = '﻿' + lines.join('\n');  // BOM UTF-8 para Excel
+  var blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href = url;
+  var phaseTag = phase ? '-' + phase : '-all';
+  a.download = 'irt-matrix' + phaseTag + '-' + new Date().toISOString().substring(0,10) + '.csv';
+  a.click();
+  URL.revokeObjectURL(url);
+
+  console.log('[IRT export] matriz', validUsers.length + 'x' + validItems.length,
+              'fase=' + (phase || 'all'));
 }
 
 // Exports staged CSV — respeita sort + filtros atuais da tabela "Por Aluno"
