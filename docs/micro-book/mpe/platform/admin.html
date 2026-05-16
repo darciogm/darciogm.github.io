@@ -2971,9 +2971,54 @@ function renderConfidenceScatter() {
 
 // ============ ONDA 3B — trajetória / anomaly / nudges / sankey ============
 
+// ---------- Bench snapshot history ----------
+// Persiste snapshots semanais (ate 12) em localStorage por admin. Permite
+// que _retroScore use o bench da turma DAQUELA semana, em vez do bench
+// atual (que mudou conforme alunos progrediram). Snapshot por week-key
+// BRT — ja existe um por semana evita explosao em renderAdmin frequentes.
+function _benchSnapshotKey() {
+  return 'mpe_admin_bench_snapshots:' + _adminMat();
+}
+function _loadBenchHistory() {
+  try { return JSON.parse(localStorage.getItem(_benchSnapshotKey()) || '[]'); }
+  catch(e) { return []; }
+}
+function _saveBenchSnapshot(bench) {
+  try {
+    var nowMs = Date.now();
+    var nowKey = (function(){
+      var d = new Date(nowMs + _BRT_OFFSET_MS);
+      var y = d.getUTCFullYear();
+      var jan1 = Date.UTC(y, 0, 1);
+      var doy = Math.floor((d.getTime() - jan1) / 86400000);
+      return y + '-W' + String(Math.floor((doy + 6) / 7)).padStart(2, '0');
+    })();
+    var hist = _loadBenchHistory();
+    // Atualiza snapshot da semana atual (overwrite) ou adiciona
+    var foundIdx = -1;
+    hist.forEach(function(h, i) { if (h.weekKey === nowKey) foundIdx = i; });
+    if (foundIdx >= 0) hist[foundIdx] = { ts: nowMs, weekKey: nowKey, bench: bench };
+    else hist.push({ ts: nowMs, weekKey: nowKey, bench: bench });
+    // Mantem so ultimos 12
+    hist.sort(function(a,b){ return a.ts - b.ts; });
+    if (hist.length > 12) hist = hist.slice(-12);
+    localStorage.setItem(_benchSnapshotKey(), JSON.stringify(hist));
+  } catch(e) { console.warn('[bench-snapshot] save failed:', e); }
+}
+// Acha bench historico mais proximo de asOfMs (preferindo <= asOfMs).
+function _benchAt(asOfMs, currentBench) {
+  var hist = _loadBenchHistory();
+  if (!hist.length) return currentBench;
+  var prior = hist.filter(function(h){ return h.ts <= asOfMs; });
+  if (prior.length) return prior[prior.length - 1].bench; // mais recente <= asOfMs
+  return hist[0].bench; // todos sao posteriores -> usa o mais antigo
+}
+
 // Reconstrói o estado de um aluno num instante específico (asOfMs).
 // Computa risk score retrospectivo usando os mesmos 5 features do computeRiskScore,
-// mas considerando apenas eventos ≤ asOfMs.
+// mas considerando apenas eventos ≤ asOfMs. Bench parametro pode ser
+// substituido pelo snapshot historico via _benchAt para reduzir vies de
+// "comparar passado contra turma atual".
 function _retroScore(profileId, asOfMs, bench, allRows) {
   var raw = window._adminRaw;
   if (!raw) return null;
@@ -3056,7 +3101,10 @@ function renderRiskTrajectoryHtml(profileId) {
   var points = [];
   for (var w = 1; w <= nWeeks; w++) {
     var asOfMs = Math.min(now, SEMESTER_START + w * 7 * 86400000);
-    var r = _retroScore(profileId, asOfMs, bench, allRows);
+    // Bench historico (snapshot da semana mais proxima de asOfMs).
+    // Aluno comparado contra a turma DAQUELA semana, nao a turma atual.
+    var benchAt = _benchAt(asOfMs, bench);
+    var r = _retroScore(profileId, asOfMs, benchAt, allRows);
     if (r) points.push({ week: w, score: r.score, level: r.level });
   }
   if (!points.length) return '<div style="color:var(--text-muted);font-size:0.75rem">Sem dados</div>';
@@ -3092,10 +3140,16 @@ function renderRiskTrajectoryHtml(profileId) {
     return '';
   }).join('');
 
+  var benchHistN = _loadBenchHistory().length;
+  var disclaimer = '<div style="color:var(--text-muted);font-size:0.7rem;font-style:italic;margin-top:0.3rem">'
+    + '⚠ Trajetória aproximada. Bench histórico: ' + benchHistN + ' snapshot(s) em localStorage'
+    + (benchHistN < 2 ? ' (poucos snapshots — usar bench atual nas semanas sem histórico)' : '')
+    + '. <code>totalTimeMin</code> é cumulativo por <code>page_visits</code>, não reconstrutível por semana.'
+    + '</div>';
   return '<div class="risk-trajectory">'
     + '<svg viewBox="0 0 ' + W + ' ' + H + '" preserveAspectRatio="xMidYMid meet">'
     + grid + '<path class="line" d="' + linePath + '"/>' + dots + xticks
-    + '</svg></div>';
+    + '</svg>' + disclaimer + '</div>';
 }
 
 // ---------- Anomaly detection rolling (z-score 4-semanas) ----------
@@ -7019,6 +7073,9 @@ async function renderAdmin() {
   // 2) Computar benchmarks P25/P50 e aplicar risk score em cada row.
   var bench = computeBenchmarks(rows);
   rows.forEach(function(r){ r.risk = computeRiskScore(r, bench); });
+  // Snapshot semanal do bench para que _retroScore use bench historico
+  // (ate 12 snapshots em localStorage por admin).
+  try { _saveBenchSnapshot(bench); } catch(e) {}
 
   // 3) Itens para o modal de perfil (journey)
   var itemsForJourney = [];
