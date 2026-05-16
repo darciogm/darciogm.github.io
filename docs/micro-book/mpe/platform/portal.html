@@ -23,13 +23,15 @@
   <h2>Meu painel</h2>
   <p>Leia as referências indicadas e resolva o <em>checkpoint</em> antes de cada aula. Cada acesso é registrado e alimenta tanto este painel quanto o <em>dashboard</em> do professor.</p>
   <div class="portal-stats">
-    <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Aulas completas</div></div>
-    <div class="stat-badge"><div class="val" id="stat-first">—</div><div class="lbl">Acerto 1ª tentativa</div></div>
+    <!-- stat-done e stat-first removidos (T1.2 + T1.3 da auditoria 2026-05-15):
+         divergiam do card IAAD-30 abaixo (c_geral_aulas_full conta 6 itens
+         por aula; stat-done contava 4. P do IAAD filtra por phase; stat-first
+         agregava tudo). IAAD card e SSOT unico. -->
     <div class="stat-badge"><div class="val" id="stat-streak">0</div><div class="lbl">Dias consecutivos</div></div>
     <div class="stat-badge rhythm-badge" id="rhythm-badge" style="display:none"><div class="val" id="rhythm-val">—</div><div class="lbl" id="rhythm-lbl">Ritmo</div></div>
   </div>
   <div class="progress-bar" style="max-width:400px;margin:0.5rem auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-  <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem" id="progress-label">0 de 0 aulas disponíveis</div>
+  <div style="font-size:0.75rem;color:var(--text-muted);margin-top:0.4rem" id="progress-label">— · veja IAAD-30 abaixo para nota</div>
 </div>
 
 <!-- Próximo passo recomendado -->
@@ -217,54 +219,54 @@ var session = MicroAuth.getSession();
 document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
 if (MicroAuth.isAdmin()) document.getElementById('admin-link').style.display = 'inline-block';
 
-// Gate de primeiro acesso: forca troca de senha inicial.
-// Roda ANTES do modal LGPD. Se nao houver sessao Supabase ativa, se for
-// admin, ou se a coluna password_changed_at ainda nao existir (migration
-// pendente), passa direto. Defensivo por design.
-function checkPasswordGate() {
-  var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
-  if (!USE_SB || MicroAuth.isAdmin()) { checkLGPDConsent(); return; }
+// Resolvers para os gates assincronos. submitPasswordChange e acceptLGPD
+// chamam quando o usuario completa cada gate. bootstrap() abaixo aguarda
+// cada Promise antes de chamar renderOnda1 + IAAD.fetchAndRender (T1.5
+// auditoria 2026-05-15: render bloqueado ate consentimento LGPD).
+var _pwdGateResolve = null;
+var _lgpdGateResolve = null;
 
-  // Se session.password_changed_at for undefined, pode ser que:
-  //   (a) a coluna nao existe no schema (migration pendente) -> pular gate
-  //   (b) o espelho de sessionStorage ainda nao foi populado -> tentar ler
-  //       do Supabase direto.
-  // Em (a), nao bloqueamos a turma inteira. Em (b), buscamos.
-  (async function() {
-    var pwd = session.password_changed_at;
-    if (pwd === undefined && window.MpeDB && window.MpeDB.enabled) {
-      // Tenta pegar profile fresco. Se a coluna nao existir, o Supabase
-      // ainda retorna o registro sem o campo — nesse caso seguimos sem
-      // bloquear e logamos warning.
-      var res = await window.MpeDB.getProfile();
-      if (res.ok) {
-        pwd = res.profile.password_changed_at;
-        if (pwd === undefined) {
-          console.warn('[portal] coluna password_changed_at ausente no schema — gate desativado. Aplique a migration 2026-04-21_password_changed_at.sql.');
-          checkLGPDConsent();
+// Gate de primeiro acesso: forca troca de senha inicial.
+// Retorna Promise que resolve quando o aluno trocou a senha (ou skip).
+function checkPasswordGate() {
+  return new Promise(function(resolve) {
+    var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
+    if (!USE_SB || MicroAuth.isAdmin()) { resolve(); return; }
+
+    // Se session.password_changed_at for undefined, pode ser que:
+    //   (a) a coluna nao existe no schema (migration pendente) -> pular gate
+    //   (b) o espelho de sessionStorage ainda nao foi populado -> tentar ler
+    //       do Supabase direto.
+    // Em (a), nao bloqueamos a turma inteira. Em (b), buscamos.
+    (async function() {
+      var pwd = session.password_changed_at;
+      if (pwd === undefined && window.MpeDB && window.MpeDB.enabled) {
+        var res = await window.MpeDB.getProfile();
+        if (res.ok) {
+          pwd = res.profile.password_changed_at;
+          if (pwd === undefined) {
+            console.warn('[portal] coluna password_changed_at ausente no schema — gate desativado. Aplique a migration 2026-04-21_password_changed_at.sql.');
+            resolve();
+            return;
+          }
+        } else {
+          console.warn('[portal] falha ao buscar profile para gate de senha:', res.error);
+          resolve();
           return;
         }
-      } else {
-        // Falha de rede — nao bloqueia, segue para LGPD.
-        console.warn('[portal] falha ao buscar profile para gate de senha:', res.error);
-        checkLGPDConsent();
-        return;
       }
-    }
 
-    if (pwd) {
-      // Ja trocou a senha em algum momento — libera.
-      checkLGPDConsent();
-      return;
-    }
+      if (pwd) { resolve(); return; }
 
-    // password_changed_at IS NULL — aluno ainda esta na senha inicial.
-    document.getElementById('pwd-modal').style.display = 'flex';
-    setTimeout(function(){
-      var el = document.getElementById('pwd-new');
-      if (el) el.focus();
-    }, 100);
-  })();
+      // password_changed_at IS NULL — abre modal e aguarda submit.
+      _pwdGateResolve = resolve;
+      document.getElementById('pwd-modal').style.display = 'flex';
+      setTimeout(function(){
+        var el = document.getElementById('pwd-new');
+        if (el) el.focus();
+      }, 100);
+    })();
+  });
 }
 
 function showPwdError(msg) {
@@ -316,16 +318,20 @@ async function submitPasswordChange() {
     console.warn('[portal] senha trocada, mas coluna password_changed_at ausente — o gate voltara no proximo login ate a migration ser aplicada.');
   }
 
-  // Fluxo continua para LGPD.
-  checkLGPDConsent();
+  // Resolve gate de senha; bootstrap() segue para LGPD.
+  if (_pwdGateResolve) { var r = _pwdGateResolve; _pwdGateResolve = null; r(); }
 }
 
-// LGPD: bloqueia portal ate aluno consentir (admin pulado)
+// LGPD: bloqueia portal ate aluno consentir (admin pulado).
+// Retorna Promise que resolve quando o aluno consente (ou skip).
 function checkLGPDConsent() {
-  var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
-  if (!USE_SB || MicroAuth.isAdmin()) return;  // apenas em Supabase, apenas alunos
-  if (session.consented_lgpd) return;          // ja consentiu
-  document.getElementById('lgpd-modal').style.display = 'flex';
+  return new Promise(function(resolve) {
+    var USE_SB = window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH;
+    if (!USE_SB || MicroAuth.isAdmin()) { resolve(); return; }
+    if (session.consented_lgpd) { resolve(); return; }
+    _lgpdGateResolve = resolve;
+    document.getElementById('lgpd-modal').style.display = 'flex';
+  });
 }
 async function acceptLGPD() {
   if (!window.MpeDB || !window.MpeDB.enabled) return;
@@ -342,6 +348,8 @@ async function acceptLGPD() {
   s.consented_lgpd = new Date().toISOString();
   sessionStorage.setItem('mpe_microI_session', JSON.stringify(s));
   document.getElementById('lgpd-modal').style.display = 'none';
+  // Resolve gate; bootstrap() segue para renderOnda1 + IAAD.
+  if (_lgpdGateResolve) { var r = _lgpdGateResolve; _lgpdGateResolve = null; r(); }
 }
 
 async function downloadMyData() {
@@ -361,9 +369,8 @@ async function downloadMyData() {
   a.click();
 }
 
-// Dispara apos um pequeno delay para garantir que session espelho foi atualizado.
-// checkPasswordGate() eh o primeiro gate; se liberar, chama checkLGPDConsent em cadeia.
-setTimeout(checkPasswordGate, 400);
+// bootstrap movido para o final do <script> (apos AULAS/MONITORIAS estarem
+// definidos e renderOnda1 declarado). Ver chamada bootstrap() no rodape.
 
 var AULAS = [
   {n:1,  title:'Teoria do Consumidor I: Preferências, Axiomas e Utilidade', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade; representação por utilidade; Cobb-Douglas, CES, quasilinear, Leontief', cap:'ZaE 3 · N&S 12e 3', time:80, available:true, preAvailable:true, posAvailable:true, posOpensOn:'23/04', exercAvailable:true},
@@ -399,21 +406,9 @@ var MONITORIAS = [
   {n:5, title:'M5 — Aulas 8-9 + revisão integrada para AF', desc:'Aprofundamento da Pré-M5: Rothschild-Stiglitz, IR/IC em principal-agente, single-crossing em Spence, Gale-Shapley, refinamentos. Exercícios-âncora J-R 8.10 + simulado dirigido para a AF.', data:'sáb 20/06', time:90, available:true}
 ];
 
-function computeFirstTryAccuracy(studentData) {
-  // % de itens onde a primeira tentativa foi correta
-  var total = 0, correctFirst = 0;
-  Object.keys(studentData.quizzes || {}).forEach(function(pid) {
-    var q = studentData.quizzes[pid];
-    Object.keys(q.questions || {}).forEach(function(qid) {
-      var attempts = q.questions[qid].attempts || [];
-      if (attempts.length > 0) {
-        total++;
-        if (attempts[0].correct) correctFirst++;
-      }
-    });
-  });
-  return total > 0 ? Math.round(correctFirst / total * 100) : null;
-}
+// computeFirstTryAccuracy removido (T1.2 da auditoria 2026-05-15):
+// stat-first divergia da P do IAAD (esta filtra phase IN ('pre_review',
+// 'post','graded_exercise') e e a fonte da nota). IAAD card cobre.
 
 function computeStreak(studentData) {
   // Dias consecutivos (até hoje) com pelo menos um lastVisit
@@ -602,10 +597,13 @@ function renderAulasGrid(myData, hideDone) {
   }
   grid.innerHTML = html;
 
-  // Stats topo: aulas integralmente concluídas (4/4)
-  document.getElementById('stat-done').textContent = aulasFullyDoneCount;
-  document.getElementById('progress-fill').style.width = Math.round(aulasFullyDoneCount / availableCount * 100) + '%';
-  document.getElementById('progress-label').textContent = aulasFullyDoneCount + ' de ' + availableCount + ' aulas integralmente concluídas';
+  // Barra de progresso visual (4 componentes principais; cobertura completa
+  // 6/6 vive no IAAD card abaixo). stat-done removido (auditoria 2026-05-15).
+  if (availableCount > 0) {
+    document.getElementById('progress-fill').style.width = Math.round(aulasFullyDoneCount / availableCount * 100) + '%';
+    document.getElementById('progress-label').textContent =
+      aulasFullyDoneCount + ' de ' + availableCount + ' aulas com 4 componentes principais · veja IAAD-30 abaixo para detalhe';
+  }
 }
 
 function renderPreMonitoriasGrid(studentData) {
@@ -732,8 +730,7 @@ function renderBasicStats() {
     if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
   });
 
-  var firstTry = computeFirstTryAccuracy(studentData);
-  document.getElementById('stat-first').textContent = firstTry !== null ? firstTry + '%' : '—';
+  // stat-first removido (T1.2 auditoria 2026-05-15): IAAD P e SSOT da nota.
   var streak = computeStreak(studentData);
   document.getElementById('stat-streak').innerHTML = streak > 0 ? '<span class="streak-flame">🔥</span>' + streak : '0';
 
@@ -887,13 +884,22 @@ document.addEventListener('change', function(ev) {
   }
 });
 
-renderOnda1();
-
-// IAAD-30 — render real-time (depende apenas de RPC; independente de Onda)
-if (window.IAAD) {
-  var iaadTarget = document.getElementById('iaad-card-target');
-  if (iaadTarget) window.IAAD.fetchAndRender(iaadTarget);
+// Bootstrap async sequencial (T1.5 auditoria 2026-05-15): aguarda gates de
+// senha e LGPD antes de renderizar Onda 1 + IAAD. Antes esses renders
+// disparavam em paralelo aos modais — viola espirito do consentimento LGPD
+// (aluno via dados antes de consentir). Risco aceito: se aluno fechar
+// modal sem consentir, portal fica em branco — politica.
+async function bootstrap() {
+  await new Promise(function(r){ setTimeout(r, 400); });  // espera mirror sessionStorage
+  await checkPasswordGate();
+  await checkLGPDConsent();
+  renderOnda1();
+  if (window.IAAD) {
+    var iaadTarget = document.getElementById('iaad-card-target');
+    if (iaadTarget) await window.IAAD.fetchAndRender(iaadTarget);
+  }
 }
+bootstrap();
 
 // Re-render em visibilitychange/focus (debounced 500ms).
 // Guards: nao re-renderiza se ha modal aberto (pmi-modal-back) — evita

@@ -632,9 +632,15 @@
       var c = confBy[k];
       var acc = ft[k];
       if (!acc || acc.total < 2) return;
+      // Mapeia escala 1-5 do schema CHECK (confidence_ratings.value) para
+      // [0,100] esperado pelos bins ECE de 25pp. Bug master corrigido no
+      // admin via _confTo100 (commit 13d948a); replicado aqui.
+      // Pre-fix: c.sum/c.n in [1,5] caia sempre em bin 0 -> ECE ~95pp.
+      // Pos-fix: 1->0, 2->25, 3->50, 4->75, 5->100; bins distribuem.
+      var meanVal = c.sum / c.n; // in [1,5]
       pairs.push({
         pageRoot: c.pageRoot,
-        conf: Math.max(0, Math.min(100, c.sum / c.n)),
+        conf: Math.max(0, Math.min(100, (meanVal - 1) / 4 * 100)),
         acc: acc.correct / acc.total * 100,
         nItems: acc.total
       });

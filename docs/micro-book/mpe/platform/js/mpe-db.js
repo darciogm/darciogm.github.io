@@ -545,14 +545,17 @@
       var uid = sess.data.session && sess.data.session.user && sess.data.session.user.id;
       if (!uid) return { ok:false, error:'no session' };
       try {
+        // Ordering ASC e necessario para que buildCalibration (portal-ondax)
+        // leia "primeira tentativa" cronologicamente (Postgres nao garante
+        // ordem fisica). Mesmo fix de adminFetchAll commit dd5e433.
         var queries = await Promise.all([
           client.from('profiles').select('*').eq('id', uid).single(),
           client.from('page_visits').select('*').eq('user_id', uid),
           client.from('section_progress').select('*').eq('user_id', uid),
-          client.from('confidence_ratings').select('*').eq('user_id', uid),
-          client.from('micro_attempts').select('*').eq('user_id', uid),
+          client.from('confidence_ratings').select('*').eq('user_id', uid).order('recorded_at', { ascending: true }),
+          client.from('micro_attempts').select('*').eq('user_id', uid).order('answered_at', { ascending: true }),
           client.from('quiz_aggregates').select('*').eq('user_id', uid),
-          client.from('quiz_question_attempts').select('*').eq('user_id', uid),
+          client.from('quiz_question_attempts').select('*').eq('user_id', uid).order('answered_at', { ascending: true }),
           client.from('paper_exercises').select('*').eq('user_id', uid),
           // Para o titular (LGPD direito de acesso), seleciona apenas as
           // colunas publicas da reflexao. response_draft_text/is_ai_draft/
