@@ -2289,14 +2289,22 @@ function computeQuestionPsychometrics(raw) {
     }
     var rpb = (sxx * syy > 0) ? num / Math.sqrt(sxx * syy) : 0;
 
-    // Distratores
-    var distractors = {}, correctAnswer = null;
+    // Distratores. correctAnswer e inferido (nao persistido em quiz_aggregates):
+    // pega a alternativa com MAIS usuarios marcando .correct=true (majority),
+    // nao a primeira do iterator. Se 2+ alternativas tem correct=true (dados
+    // inconsistentes do banco), correctAnswerSuspect=true para flag visual.
+    var distractors = {};
+    var correctCounts = {}; // ans -> n usuarios que acertaram com essa ans
     users.forEach(function(uid) {
       var f = entry.byUser[uid].first;
       var ans = f.answer || '?';
-      if (f.correct && !correctAnswer) correctAnswer = ans;
-      if (!distractors[ans]) distractors[ans] = { count: 0, correct: f.correct, restScores: [] };
+      if (!distractors[ans]) distractors[ans] = { count: 0, correct: false, restScores: [] };
       distractors[ans].count++;
+      // .correct = OR (qualquer usuario que marcou esta ans com correct=true)
+      if (f.correct) {
+        distractors[ans].correct = true;
+        correctCounts[ans] = (correctCounts[ans] || 0) + 1;
+      }
       var tot = userPageTotals[entry.page_id][uid];
       var thisQ = f.correct ? 1 : 0;
       var rest = (tot.correct - thisQ) / Math.max(1, tot.total - 1);
@@ -2307,6 +2315,16 @@ function computeQuestionPsychometrics(raw) {
       d.avgRestScore = d.restScores.length > 0 ? d.restScores.reduce(function(a,b){return a+b},0) / d.restScores.length : 0;
       d.pct = d.count / n;
     });
+    var correctKeys = Object.keys(correctCounts);
+    var correctAnswer = null;
+    if (correctKeys.length === 1) {
+      correctAnswer = correctKeys[0];
+    } else if (correctKeys.length > 1) {
+      // Inconsistencia: pega majority. Suspect flag para o UI.
+      correctKeys.sort(function(a,b){ return correctCounts[b] - correctCounts[a]; });
+      correctAnswer = correctKeys[0];
+    }
+    var correctAnswerSuspect = correctKeys.length > 1;
 
     // Distrator-top: alternativa errada mais escolhida
     var topDistractor = null;
@@ -2337,6 +2355,7 @@ function computeQuestionPsychometrics(raw) {
       discrimination: rpb,
       distractors: distractors,
       correctAnswer: correctAnswer,
+      correctAnswerSuspect: correctAnswerSuspect,
       topDistractor: topDistractor,
       flag: flag
     });
@@ -2479,7 +2498,9 @@ function renderPsychometrics() {
       + '<td class="psi-pvalue ' + pClass + '">' + r.pValue.toFixed(2) + '</td>'
       + '<td class="psi-rpb ' + rpbClass + '">' + r.discrimination.toFixed(2) + '</td>'
       + '<td style="font-size:0.72rem">' + topStr + '</td>'
-      + '<td><span class="psi-flag ' + r.flag.code + '">' + r.flag.label + '</span></td>'
+      + '<td><span class="psi-flag ' + r.flag.code + '">' + r.flag.label + '</span>'
+      + (r.correctAnswerSuspect ? ' <span title="Múltiplas alternativas marcadas correct=true no banco — verificar gabarito" style="color:#92400E;cursor:help">⚠</span>' : '')
+      + '</td>'
       + '</tr>';
   }).join('');
   document.querySelector('#psi-table tbody').innerHTML = tbody || '<tr><td colspan="8" style="text-align:center;color:#aaa;padding:1rem">Sem questões com os filtros atuais.</td></tr>';
@@ -2496,7 +2517,7 @@ function exportPsychometricsCSV() {
   var rows = window._psiRows || [];
   if (!rows.length) return alert('Sem dados de psicometria.');
   var sorted = _sortPsi(rows, 'page');
-  var header = ['Aula/Fase','Questão','Fase','Dificuldade declarada','N respondeu','p-value','Discriminação (rpb)','Alt. correta','Distrator-top','Distrator-top %','Distrator-top avg-rest','Flag'];
+  var header = ['Aula/Fase','Questão','Fase','Dificuldade declarada','N respondeu','p-value','Discriminação (rpb)','Alt. correta','Alt. correta inconsistente?','Distrator-top','Distrator-top %','Distrator-top avg-rest','Flag'];
   var lines = [header.map(csvq).join(',')];
   sorted.forEach(function(r){
     var t = r.topDistractor || { letter:'', pct:0, avgRestScore:0 };
@@ -2505,6 +2526,7 @@ function exportPsychometricsCSV() {
       r.difficulty || '', r.n,
       r.pValue.toFixed(3), r.discrimination.toFixed(3),
       r.correctAnswer || '',
+      r.correctAnswerSuspect ? 'sim — múltiplas alternativas marcadas correct=true' : '',
       t.letter, (t.pct*100).toFixed(0), (t.avgRestScore*100).toFixed(0),
       r.flag.label
     ].map(csvq).join(','));
@@ -2542,8 +2564,15 @@ var _PT_STOPWORDS = ('a,à,ao,aos,aquela,aquelas,aquele,aqueles,aquilo,as,até,a
 var _STOP = {};
 _PT_STOPWORDS.forEach(function(w){ _STOP[w.trim().toLowerCase()] = true; });
 
+// Cache de tokenizacao: cada click no tag cloud filtra reflexoes via
+// _tokenize(r.text) e antes re-tokenizava ~900 reflexoes por click. Cache
+// por texto (Map; lazy fill) evita o trabalho repetido. ~50ms -> <1ms para
+// turma 50 alunos × 9 aulas × 2 prompts.
+var _tokenizeCache = new Map();
 function _tokenize(text) {
   if (!text) return [];
+  var cached = _tokenizeCache.get(text);
+  if (cached) return cached;
   // Normaliza: lowercase, mantém letras+números+acentos, quebra em espaços/pontuação
   var norm = text.toLowerCase().replace(/[^\p{L}\p{N}\s-]/gu, ' ').replace(/\s+/g, ' ').trim();
   var tokens = norm.split(' ').filter(function(t){
@@ -2552,6 +2581,15 @@ function _tokenize(text) {
     if (/^\d+$/.test(t)) return false;       // só números
     return true;
   });
+  _tokenizeCache.set(text, tokens);
+  // Cap de seguranca: nao crescer indefinidamente entre admin sessions.
+  if (_tokenizeCache.size > 5000) {
+    // Drop oldest 1000 (Map preserva insertion order)
+    var keys = [];
+    var it = _tokenizeCache.keys();
+    for (var i = 0; i < 1000; i++) { var k = it.next(); if (k.done) break; keys.push(k.value); }
+    keys.forEach(function(k) { _tokenizeCache.delete(k); });
+  }
   return tokens;
 }
 
