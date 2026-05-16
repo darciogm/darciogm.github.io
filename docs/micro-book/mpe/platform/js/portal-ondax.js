@@ -799,10 +799,14 @@
     var daysBefore = [];
     var cal = window.MPE_CALENDARIO;
 
+    // BRT fixo (UTC-3, sem DST). Aluno acessando do exterior ou com VPN
+    // ainda ve o padrao circadiano alinhado ao timezone do curso.
+    var BRT_OFFSET_MS = -3 * 3600 * 1000;
+
     events.forEach(function(e) {
-      var d = new Date(e.ts);
-      var dow = d.getDay();
-      var h = d.getHours();
+      var dBRT = new Date(e.ts + BRT_OFFSET_MS);
+      var dow = dBRT.getUTCDay();
+      var h = dBRT.getUTCHours();
       matrix[dow][h]++;
       if (e.correct === true || e.correct === false) {
         cellAcc[dow][h].total++;

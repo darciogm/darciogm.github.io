@@ -1533,17 +1533,23 @@ function daysSinceLastActivity(studentData) {
 // ============ RISK SCORE, BENCHMARKS, EXPORT, PROFILE ============
 
 function computeBenchmarks(rows) {
+  // Percentil com interpolacao linear (PERCENTILE_CONT-like). Para n par,
+  // mediana correta = (s[n/2-1]+s[n/2])/2; para p arbitrario, mistura
+  // entre os dois indices vizinhos.
   function pctl(arr, p) {
     if (!arr.length) return 0;
     var s = arr.slice().sort(function(a,b){return a-b});
-    var idx = Math.floor((s.length - 1) * p);
-    return s[idx];
+    var pos = (s.length - 1) * p;
+    var lo = Math.floor(pos), hi = Math.ceil(pos);
+    if (lo === hi) return s[lo];
+    return s[lo] + (s[hi] - s[lo]) * (pos - lo);
   }
   var tempos = rows.map(function(r){return r.s.totalTimeMin||0});
   var aulas = rows.map(function(r){return r.s.pagesVisited||0});
   var quizzes = rows.map(function(r){return r.s.quizzesCompleted||0});
   var medias = rows.filter(function(r){return r.s.quizzesCompleted>0}).map(function(r){return r.s.avgQuizScore||0});
-  var fts = rows.filter(function(r){return r.ftPct!==null}).map(function(r){return r.ftPct});
+  // ftPct sem ftTotal>=5 enviesa P50 (aluno com 1 questao acertada vira 100%).
+  var fts = rows.filter(function(r){return r.ftPct!==null && (r.ftTotal||0) >= 5}).map(function(r){return r.ftPct});
   return {
     p25Tempo: pctl(tempos,0.25), p50Tempo: pctl(tempos,0.50), p75Tempo: pctl(tempos,0.75),
     p25Aulas: pctl(aulas,0.25), p50Aulas: pctl(aulas,0.50),
@@ -2638,7 +2644,9 @@ function renderSparklineHtml(profileId, daysBack) {
 function computeCohortSurvival() {
   var raw = window._adminRaw;
   if (!raw) return null;
-  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00');
+  // Inicio do semestre = ACESSO_LIVRE_INICIO (calendario.js, espelha
+  // iaad_calendar.curso_inicio = 15/04 00:00 BRT). Mudar lá, propaga aqui.
+  var SEMESTER_START = new Date(window.MPE_CALENDARIO.ACESSO_LIVRE_INICIO);
   var now = new Date();
   var nWeeks = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
   if (nWeeks > 12) nWeeks = 12;
@@ -2740,6 +2748,13 @@ function _confTo100(value) {
   if (value == null || isNaN(value)) return 0;
   return Math.max(0, Math.min(100, (value - 1) / 4 * 100));
 }
+
+// Helpers BRT (UTC-3 fixo, sem DST desde 2019). Forcar BRT independente
+// do timezone do navegador: VPN, viagem, ou Darcio acessando do exterior
+// nao desloca padrao circadiano da turma.
+var _BRT_OFFSET_MS = -3 * 3600 * 1000;
+function _hourBRT(ts) { return new Date(ts + _BRT_OFFSET_MS).getUTCHours(); }
+function _dowBRT(ts)  { return new Date(ts + _BRT_OFFSET_MS).getUTCDay(); }
 
 // Confidence gap scatter — X = confiança pós, Y = acerto 1ª na aula
 function computeConfidencePoints() {
@@ -2958,7 +2973,8 @@ function renderRiskTrajectoryHtml(profileId) {
   if (!profileId) return '';
   var bench = window._alunosBench || {};
   var allRows = window._alunosRows || [];
-  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00').getTime();
+  // Inicio do semestre via calendario.js (espelho de iaad_calendar).
+  var SEMESTER_START = window.MPE_CALENDARIO.ACESSO_LIVRE_INICIO;
   var now = Date.now();
   var nWeeks = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
   if (nWeeks > 12) nWeeks = 12;
@@ -3013,7 +3029,7 @@ function renderRiskTrajectoryHtml(profileId) {
 function computeAnomalies() {
   var raw = window._adminRaw;
   if (!raw) return [];
-  var SEMESTER_START = new Date('2026-04-15T00:00:00-03:00').getTime();
+  var SEMESTER_START = window.MPE_CALENDARIO.ACESSO_LIVRE_INICIO;
   var now = Date.now();
   var currentWeek = Math.max(1, Math.ceil((now - SEMESTER_START) / (7 * 86400000)));
   if (currentWeek < 3) return []; // precisa de 3+ semanas para ter baseline
@@ -3046,7 +3062,10 @@ function computeAnomalies() {
     var sd = Math.sqrt(variance);
     if (sd === 0) sd = Math.max(0.5, mean * 0.2); // piso pra evitar divisão por zero
     var z = (currentVal - mean) / sd;
-    if (z < -1.5) {
+    // Threshold z<-2 (era -1.5): unilateral ~2.3% de FPR sob normal,
+    // antes era ~6.7%. Para turma de 50, esperamos ~1 falso positivo
+    // semanal vs ~3.3. Mantem 'severe' em z<-2.5.
+    if (z < -2) {
       results.push({
         user_id: uid,
         z: z, mean: mean, currentVal: currentVal,
@@ -4910,9 +4929,9 @@ function computeCircadian() {
     var aulaEvents = {};          // aula_n -> { total, last48h }
 
     evs.forEach(function(e){
-      var d = new Date(e.ts);
-      var dow = d.getDay(); // 0=dom .. 6=sáb
-      var h = d.getHours();
+      // dow/h em BRT (sem depender do TZ do navegador admin).
+      var dow = _dowBRT(e.ts); // 0=dom .. 6=sáb
+      var h = _hourBRT(e.ts);
       matrix[dow][h]++;
       turmaMatrix[dow][h]++;
 
@@ -5540,12 +5559,18 @@ function renderOnda4Velocity() {
     + '<th style="text-align:center;padding:0.4rem">Alunos</th>'
     + '</tr></thead><tbody>';
   rows.forEach(function(r){
-    var slopeCls = r.v.mean > 5 ? 'color:#065F46;font-weight:700' : r.v.mean < -5 ? 'color:#991B1B;font-weight:700' : 'color:var(--text-muted)';
-    html += '<tr style="border-bottom:1px solid #f5f0ec">'
+    // Slope volatil quando nUsers<5: nao colorir; texto cinza/italico.
+    var smallN = (r.v.nUsers || 0) < 5;
+    var slopeCls = smallN
+      ? 'color:var(--text-muted);font-style:italic'
+      : (r.v.mean > 5 ? 'color:#065F46;font-weight:700' : r.v.mean < -5 ? 'color:#991B1B;font-weight:700' : 'color:var(--text-muted)');
+    var nCls = smallN ? 'color:var(--text-muted);font-style:italic' : '';
+    var nTitle = smallN ? ' title="Amostra pequena (n<5); slope volátil"' : '';
+    html += '<tr style="border-bottom:1px solid #f5f0ec"' + nTitle + '>'
       + '<td style="padding:0.35rem 0.4rem">' + _pageLabel(r.root) + '</td>'
       + '<td style="text-align:center;padding:0.35rem 0.4rem;' + slopeCls + '">' + (r.v.mean >= 0 ? '+' : '') + r.v.mean.toFixed(1) + '</td>'
       + '<td style="text-align:center;padding:0.35rem 0.4rem;color:var(--text-muted)">' + r.v.p25.toFixed(1) + ' … ' + r.v.p75.toFixed(1) + '</td>'
-      + '<td style="text-align:center;padding:0.35rem 0.4rem">' + r.v.nUsers + '</td>'
+      + '<td style="text-align:center;padding:0.35rem 0.4rem;' + nCls + '">' + r.v.nUsers + (smallN ? ' ⚠' : '') + '</td>'
       + '</tr>';
   });
   html += '</tbody></table>';
@@ -8252,13 +8277,28 @@ function _vizComputeTopBulletData() {
   var rows = window._alunosRows || [];
   var onda4 = window._onda4 || {};
 
-  // Completude: % média aluno-aula visitada (de todos os 9+5 = 14 itens)
-  var totalItems = (typeof TOTAL_AULAS === 'number' ? TOTAL_AULAS : 9) + (typeof TOTAL_MONITORIAS === 'number' ? TOTAL_MONITORIAS : 5);
+  // Completude: % média aluno-aula visitada, dividida por itens JA
+  // ACONTECIDOS (aulas presenciais + monitorias com data <= now), em vez
+  // do total nominal 9+5=14. Sob calendario unificado de acesso livre,
+  // o aluno tem incentivo real para estudar a aula da semana, nao as
+  // futuras -- senao bullet fica em vermelho ate 17/06.
+  var nowMs = Date.now();
+  var availableItems = 0;
+  if (window.MPE_CALENDARIO) {
+    var aulas = window.MPE_CALENDARIO.AULAS_DATAS || [];
+    aulas.forEach(function(ms){ if (ms <= nowMs) availableItems++; });
+    var monits = window.MPE_CALENDARIO.MONITORIAS_DATAS || [];
+    monits.forEach(function(ms){ if (ms <= nowMs) availableItems++; });
+  }
+  if (availableItems === 0) {
+    // Fallback antes do inicio do semestre
+    availableItems = (typeof TOTAL_AULAS === 'number' ? TOTAL_AULAS : 9) + (typeof TOTAL_MONITORIAS === 'number' ? TOTAL_MONITORIAS : 5);
+  }
   var nonAdmin = rows.filter(function(r){ return r.s.matricula && r.s.matricula.toLowerCase().indexOf('prof') !== 0; });
   var completude = null;
-  if (nonAdmin.length > 0 && totalItems > 0) {
-    var sum = nonAdmin.reduce(function(a, r){ return a + (r.s.pagesVisited || 0); }, 0);
-    completude = Math.round(sum / (nonAdmin.length * totalItems) * 100);
+  if (nonAdmin.length > 0 && availableItems > 0) {
+    var sum = nonAdmin.reduce(function(a, r){ return a + Math.min(r.s.pagesVisited || 0, availableItems); }, 0);
+    completude = Math.round(sum / (nonAdmin.length * availableItems) * 100);
   }
 
   // Acerto 1ª turma: média ponderada de ftPct
@@ -8439,6 +8479,15 @@ function _vizDateKey(d) {
   var dd = String(d.getDate()).padStart(2, '0');
   return y + '-' + m + '-' + dd;
 }
+// Bucketing por dia em BRT (UTC-3 fixo). Usa getUTC* num timestamp deslocado
+// para BRT, dispensando dependencia do TZ do navegador.
+function _vizDateKeyBRT(ts) {
+  var d = new Date(ts + _BRT_OFFSET_MS);
+  var y = d.getUTCFullYear();
+  var m = String(d.getUTCMonth() + 1).padStart(2, '0');
+  var dd = String(d.getUTCDate()).padStart(2, '0');
+  return y + '-' + m + '-' + dd;
+}
 function _vizComputeCalendar() {
   var raw = window._adminRaw || {};
   var nonAdmin = _vizNonAdminUserIds(raw);
@@ -8446,9 +8495,9 @@ function _vizComputeCalendar() {
   var byDay = {}; // {dayKey: {events: n, users: Set}}
   function add(uid, ts) {
     if (!ts || !nonAdmin[uid]) return;
-    var d = new Date(ts);
-    if (!isFinite(d.getTime())) return;
-    var k = _vizDateKey(d);
+    var ms = new Date(ts).getTime();
+    if (!isFinite(ms)) return;
+    var k = _vizDateKeyBRT(ms);
     if (!byDay[k]) byDay[k] = { events: 0, users: {} };
     byDay[k].events++;
     byDay[k].users[uid] = true;
