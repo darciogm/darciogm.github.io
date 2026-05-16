@@ -1078,7 +1078,7 @@ window.MathJax = {
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
-          <h4>#2 Response-time phenotyping — Van der Linden 2007; Wise &amp; Kong 2005</h4>
+          <h4>#2 Response-time phenotyping — Wise &amp; Kong 2005 (rapid-guessing)</h4>
           <div class="metric-desc">
             Tempo mediano por item (diff entre tentativas consecutivas na mesma aula, janela 10s–15min) vs. acerto 1ª tentativa.
             Quadrantes: <strong>fast-correct</strong> (domínio), <strong>slow-correct</strong> (persistência),
@@ -1098,7 +1098,7 @@ window.MathJax = {
         </div>
 
         <div class="metric-block">
-          <h4>#3 SRL phenotype distribution — Zimmerman 2013; Pintrich 2004</h4>
+          <h4>#3 Heurística de comportamento (proxy SRL) — labels via regras internas</h4>
           <div class="metric-desc">
             Fenótipos comportamentais de auto-regulação.
             <strong>strategic</strong>: confidence antes do micro-checkpoint e poucas tentativas.
@@ -1111,7 +1111,7 @@ window.MathJax = {
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
-          <h4>#8 Cohort trajectory — Pardos et al. 2014; CMU OLI</h4>
+          <h4>#8 Cohort trajectory drift — heurística EDM (thresholds internos)</h4>
           <div class="metric-desc">
             Distribuição de drift detectado: quantos alunos caíram ≥2 decis entre aulas consecutivas ou têm z-score rolling-3 &lt; −1.5.
             Sparkline individual no perfil.
@@ -1120,7 +1120,7 @@ window.MathJax = {
         </div>
 
         <div class="metric-block" style="grid-column:1/-1">
-          <h4>#10 Learning velocity da turma — Newell &amp; Rosenbloom 1981; Koedinger et al. 2013</h4>
+          <h4>#10 Trend per phase (OLS) — slope linear entre 4 fases</h4>
           <div class="metric-desc">
             Slope médio (acerto por fase: pre_review → embedded → post → graded_exercise) por aula.
             Positivo = turma aprendeu com a aula; zero = platô; negativo = aula confundiu ou fase avaliativa era mais dura.
@@ -1964,9 +1964,16 @@ function _formatDeltaHtml(d) {
     ? '<strong>' + d.prePct + '%</strong> → <strong>' + d.postPct + '%</strong> ' + fmtAccArrow()
     : '<em style="color:var(--text-muted);font-weight:400">sem acerto registrado em ambas as janelas</em>';
 
+  // Disclaimer: regressao a media. Aluno recebe intervencao quando esta
+  // mal -> tendencia natural a 'melhorar' depois mesmo sem causalidade.
+  var disclaimer = '<div style="color:var(--text-muted);font-size:0.7rem;font-style:italic;margin-top:0.25rem">'
+    + '⚠ Comparação descritiva, não causal. Mudança esperada por regressão à média mesmo sem intervenção.'
+    + '</div>';
+
   return '<div class="iv-delta ' + d.classification + '">📊 <strong>14d pré → ' + windowLabel + ':</strong> '
     + 'eventos ' + eventsStr + '<span class="delta-sep">·</span>'
     + 'acerto 1ª ' + accStr
+    + disclaimer
     + '</div>';
 }
 
@@ -4725,9 +4732,11 @@ function renderTimePerformanceScatter() {
 // separados. Cada métrica tem fallback gracioso quando dados insuficientes.
 // ============================================================
 
-// #4 CONFIDENCE CALIBRATION (ECE) — Hacker, Bol & Keener (2012, Metacog.
-// Learn.); Dunlosky & Metcalfe (2009). Para cada par (aluno × page_id
-// pedagógica), confiança média pós vs acerto 1ª tentativa.
+// #4 CONFIDENCE CALIBRATION (ECE) — Guo et al. (2017, ICML, "On Calibration
+// of Modern Neural Networks") para a fórmula ECE com binning equidistante
+// de 25pp. Hacker, Bol & Keener (2008, cap. "Metacognition in Education")
+// como background metacognitivo de calibração subjetiva. Para cada par
+// (aluno × page_id pedagógica), confiança média pós vs acerto 1ª tentativa.
 function _o4BuildPairs() {
   var raw = window._adminRaw;
   if (!raw) return [];
@@ -4822,9 +4831,12 @@ function computeCalibration() {
   return { byUser: byUser, pairs: pairs };
 }
 
-// #2 RESPONSE-TIME PHENOTYPING — Van der Linden (2007, Springer); Wise &
-// Kong (2005, Educ. Assess.). Diff de answered_at consecutivos na mesma
-// page, janela 10s-15min para mitigar "saiu e voltou".
+// #2 RESPONSE-TIME PHENOTYPING — Wise & Kong (2005, Educ. Assessment) para
+// detecção de rapid-guessing por threshold de tempo. Van der Linden (2007,
+// Springer) como background da modelagem hierárquica de RT em itens
+// psicométricos (não usamos o modelo formal — só o quadrante descritivo).
+// Diff de answered_at consecutivos na mesma page, janela 10s-15min para
+// mitigar "saiu e voltou".
 function computeResponseTime() {
   var raw = window._adminRaw;
   if (!raw || !raw.quizQA) return { byUser: {}, turmaMedian: null, turmaMedianAcc: null };
@@ -4972,9 +4984,11 @@ function computeCircadian() {
   return { byUser: byUser, turma: turmaMatrix };
 }
 
-// #8 COHORT TRAJECTORY DRIFT — Pardos et al. (2014, Ed. Data Mining); CMU
-// OLI Learning Dashboard. Score composto por aula → percentil turma →
-// série de 9 pontos → drift detector.
+// #8 COHORT TRAJECTORY DRIFT — inspirado em literatura de Educational Data
+// Mining sobre detecção precoce de risco em trajetórias longitudinais
+// (CMU OLI, Purdue Signals). Thresholds calibrados internamente para
+// turma MPE (n=50): drift = queda ≥20 decis OU z-score rolling-3 < -1.5.
+// Score composto por aula → percentil turma → série de 9 pontos.
 function _o4PageRootsAulas() {
   // Retorna lista de roots 'aula-01'..'aula-09' (excluindo aula-10 = AF).
   var roots = [];
@@ -5074,8 +5088,11 @@ function computeTrajectory() {
   return { byUser: byUser, aulaRoots: aulaRoots };
 }
 
-// #10 LEARNING VELOCITY — Newell & Rosenbloom (1981, power law of
-// practice); Koedinger et al. (2013, DataShop). Slope sobre 4 fases.
+// #10 TREND PER PHASE (OLS) — slope linear simples sobre 4 fases (pre_review
+// → embedded → post → graded_exercise). NÃO é "learning velocity" no sentido
+// power-law de Newell & Rosenbloom (1981), que descreve aprendizado em
+// MILHARES de tentativas. Aqui são 4 fases — slope OLS é só descritor de
+// melhoria entre fases. Pode ser negativo (calibre mal ajustado entre fases).
 function computeVelocity() {
   var raw = window._adminRaw;
   if (!raw) return { byUser: {}, turmaByAula: {} };
@@ -5149,8 +5166,12 @@ function computeVelocity() {
   return { byUser: byUser, turmaByAula: turmaByAula, phaseOrder: phaseOrder };
 }
 
-// #3 SRL PHENOTYPES — Zimmerman (2013, Educ. Psychol.); Pintrich (2004).
-// Regras interpretáveis (não k-means) sobre 3 features.
+// #3 HEURÍSTICA DE COMPORTAMENTO (proxy SRL) — labels strategic/reactive/
+// skimmer/avoidant/mixed via regras interpretáveis sobre 3 features
+// (attempts/cp, revisit_ratio, read_before_try). NÃO é uma operacionalização
+// canônica do framework SRL de Zimmerman ou Pintrich — é proxy comportamental
+// construído internamente para o contexto MPE. Thresholds tunáveis na tab
+// Psico-cognitivo (UI futura).
 function computeSRL() {
   var raw = window._adminRaw;
   if (!raw) return { byUser: {}, distribution: {} };
