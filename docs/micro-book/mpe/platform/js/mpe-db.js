@@ -373,7 +373,11 @@
           client.from('reflections').select('*').order('submitted_at', { ascending: false }),
           // opcionais (migrations posteriores):
           client.from('admin_interventions').select('*').order('created_at', { ascending: false }),
-          client.from('nudge_dispositions').select('*').order('dispositioned_at', { ascending: false })
+          client.from('nudge_dispositions').select('*').order('dispositioned_at', { ascending: false }),
+          // Backlog estratégico 2026-05-16 (migration 2026-05-16_lo_taxonomy_and_sentiment):
+          client.from('learning_objectives').select('*').order('aula_n').order('code'),
+          client.from('question_learning_objectives').select('*'),
+          client.from('iaad_lo_performance').select('*')
         ]);
         // Trava apenas se as 9 primeiras (core) falharem.
         for (var i = 0; i < 9; i++) {
@@ -381,6 +385,9 @@
         }
         var interventions       = (queries[9].error  ? [] : (queries[9].data  || []));
         var nudgeDispositions   = (queries[10].error ? [] : (queries[10].data || []));
+        var learningObjectives  = (queries[11].error ? [] : (queries[11].data || []));
+        var questionLOs         = (queries[12].error ? [] : (queries[12].data || []));
+        var loPerformance       = (queries[13].error ? [] : (queries[13].data || []));
         return {
           ok: true,
           data: {
@@ -394,10 +401,14 @@
             paperExercises:    queries[7].data || [],
             reflections:       queries[8].data || [],
             interventions:     interventions,
-            nudgeDispositions: nudgeDispositions
+            nudgeDispositions: nudgeDispositions,
+            learningObjectives: learningObjectives,
+            questionLOs:        questionLOs,
+            loPerformance:      loPerformance
           },
           interventionsMigrationMissing:      !!(queries[9].error),
-          nudgeDispositionsMigrationMissing:  !!(queries[10].error)
+          nudgeDispositionsMigrationMissing:  !!(queries[10].error),
+          loTaxonomyMigrationMissing:         !!(queries[11].error || queries[12].error || queries[13].error)
         };
       } catch(e) {
         return { ok:false, error:e };
