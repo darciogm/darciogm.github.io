@@ -8,8 +8,9 @@
 > **STATUS de fixes (2026-05-15 atualizado):**
 > - ✅ 4 BUGs de janela canônica vs deadline plataforma (incluindo bug master `computeCircadian`) corrigidos via `MPE_CALENDARIO.getJanelaCanonica`. Bandeira 🐢 "atrasado crônico" adicionada. Bibliografia da Onda 4 #5 limpa.
 > - ✅ **Bug master de escala confidence** [1,5]→[0,100] corrigido via helper `_confTo100` aplicado nos 3 sites de acumulação (`_o4BuildPairs`, `computeConfidencePoints`, `computeKnowerPoints`). Sanity check (fixture sintética) confirma que as 3 categorias (good/over/under) voltam a se distinguir; pré-fix sempre virava "under" com ECE ~70.
-> - ❌ Ordering `attempts[0]` (S5) — pendente (precisa adicionar `.order('answered_at')` em `mpe-db.js:adminFetchAll`).
-> - ❌ Demais bugs (bibliografia inflada, viés de seleção na intervention delta, `buildStudentStoryArc.iv.profile_id`) — pendentes em sprints subsequentes. Ver `plano-fixes-dashboard-2026-05-15.md`.
+> - ✅ **Ordering `attempts[0]`** corrigido em `mpe-db.js:adminFetchAll` — adicionado `.order('answered_at', { ascending: true })` em `quiz_question_attempts` + `micro_attempts` + `recorded_at` em `confidence_ratings` (defensivo). `firstTryAccuracyPerStudent` agora lê o primeiro cronológico de fato.
+> - ✅ **Story arc falling action** corrigido em `admin.html:9235` — `iv.profile_id` (typo silencioso) → `iv.student_id` (coluna real do schema). Última intervenção volta a aparecer no story panel.
+> - ❌ Demais bugs (bibliografia inflada nos demais Onda 4, viés de seleção na intervention delta) — pendentes em sprints subsequentes. Ver `plano-fixes-dashboard-2026-05-15.md`.
 
 ---
 

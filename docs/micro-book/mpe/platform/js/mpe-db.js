@@ -362,10 +362,13 @@
           client.from('profiles').select('*').order('nome'),
           client.from('page_visits').select('*'),
           client.from('section_progress').select('*'),
-          client.from('confidence_ratings').select('*'),
-          client.from('micro_attempts').select('*'),
+          // Ordering ASC e necessario para que firstTryAccuracyPerStudent
+          // (admin.html:1417) leia attempts[0] como cronologicamente
+          // o primeiro. Postgres nao garante ordem fisica sem ORDER BY.
+          client.from('confidence_ratings').select('*').order('recorded_at', { ascending: true }),
+          client.from('micro_attempts').select('*').order('answered_at', { ascending: true }),
           client.from('quiz_aggregates').select('*'),
-          client.from('quiz_question_attempts').select('*'),
+          client.from('quiz_question_attempts').select('*').order('answered_at', { ascending: true }),
           client.from('paper_exercises').select('*'),
           client.from('reflections').select('*').order('submitted_at', { ascending: false }),
           // opcionais (migrations posteriores):

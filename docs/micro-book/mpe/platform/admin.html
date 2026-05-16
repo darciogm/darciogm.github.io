@@ -9230,9 +9230,10 @@ function buildStudentStoryArc(rowAluno, raw) {
     }
   }
   // 4) Falling action: última intervenção registrada
+  // Coluna real e student_id (schema.sql:266); profile_id era typo silencioso.
   var lastIv = null;
   (raw.interventions || []).forEach(function(iv){
-    if (iv.profile_id === profileId) {
+    if (iv.student_id === profileId) {
       var t = new Date(iv.created_at).getTime();
       if (!lastIv || t > lastIv.ts) lastIv = { ts: t, kind: iv.kind, topic: iv.topic, outcome: iv.outcome };
     }
