@@ -1474,20 +1474,44 @@ function hoursDistribution(data) {
 }
 
 function weeklyCV(data) {
-  // Para cada aluno, agrega tempo por semana e computa CV. Depois tira média.
+  // CV de N EVENTOS por semana (eventCV). Substitui CV de tempo, que era
+  // tecnicamente impossivel a partir de pageVisits.total_time_ms (cumulativo
+  // por page, nao distribuido por semana). Eventos = quizQA.attempts +
+  // sectionProgress.completedAt + microAttempts.attempts.
+  // Threshold de risk score (CV>1.5) ainda faz sentido: distribuicao
+  // [15,0,0,0,0] em 5 semanas da CV=2; [10,0,0,5,0] da CV=1.33.
+  function weekKeyBRT(ts) {
+    var ms = (ts && new Date(ts).getTime()) || 0;
+    if (!ms) return null;
+    var d = new Date(ms + _BRT_OFFSET_MS);
+    var y = d.getUTCFullYear();
+    var jan1 = Date.UTC(y, 0, 1);
+    var dayOfYear = Math.floor((d.getTime() - jan1) / 86400000);
+    var week = Math.floor((dayOfYear + 6) / 7);
+    return y + '-W' + String(week).padStart(2, '0');
+  }
   var cvs = [];
   Object.keys(data).forEach(function(mat) {
     var s = data[mat];
     var weekly = {};
-    Object.keys(s.pages || {}).forEach(function(pid) {
-      var pg = s.pages[pid];
-      if (!pg.lastVisit || !pg.totalTime) return;
-      var d = new Date(pg.lastVisit);
-      var y = d.getFullYear();
-      var onejan = new Date(y, 0, 1);
-      var week = Math.ceil((((d - onejan) / 86400000) + onejan.getDay() + 1) / 7);
-      var key = y + '-W' + String(week).padStart(2,'0');
-      weekly[key] = (weekly[key] || 0) + pg.totalTime / 60000;
+    function addEvent(ts) {
+      var k = weekKeyBRT(ts);
+      if (k) weekly[k] = (weekly[k] || 0) + 1;
+    }
+    Object.values(s.quizzes || {}).forEach(function(q) {
+      Object.values(q.questions || {}).forEach(function(it) {
+        (it.attempts || []).forEach(function(a) { addEvent(a.timestamp); });
+      });
+    });
+    Object.values(s.sections || {}).forEach(function(secMap) {
+      Object.values(secMap).forEach(function(sec) {
+        if (sec.completedAt) addEvent(sec.completedAt);
+        if (sec.microCheckpoint) {
+          Object.values(sec.microCheckpoint).forEach(function(it) {
+            (it.attempts || []).forEach(function(a) { addEvent(a.timestamp); });
+          });
+        }
+      });
     });
     var vals = Object.values(weekly);
     if (vals.length < 2) return;
@@ -1560,49 +1584,91 @@ function computeBenchmarks(rows) {
 }
 
 // Risk score rule-based 0-100, composto por features de engajamento.
-// Retorna {score, level: 'inactive'|'high'|'med'|'low', flags: [{msg, severity:'high'|'med'}]}
+// Retorna {score, level, flags, breakdown}.
+//   - breakdown[i] = {label, points, applied, raw} para tooltip de contribuicao.
+//   - applied <= raw quando anti-double-count reduz peso de F1 (somar nao
+//     deve sobrepenalizar "sumiu E acertou pouco" — sumir explica em parte
+//     o acerto baixo).
 function computeRiskScore(r, bench) {
-  var score = 0;
   var flags = [];
+  var breakdown = [];
   var neverAccessed = (r.s.pagesVisited||0) === 0 && (r.s.quizzesCompleted||0) === 0;
 
   if (neverAccessed) {
-    return { score: 100, level: 'inactive', flags: [{msg:'Nunca acessou a plataforma', severity:'high'}] };
+    return {
+      score: 100, level: 'inactive',
+      flags: [{msg:'Nunca acessou a plataforma', severity:'high'}],
+      breakdown: [{label:'Nunca acessou', points:100, applied:100}]
+    };
   }
 
-  // Feature 1: dias desde último acesso
+  // Feature 1: dias desde ultimo acesso (raw 35 ou 15)
+  var f1 = 0;
   if (r.daysSince != null) {
-    if (r.daysSince > 7)      { score += 35; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'high'}); }
-    else if (r.daysSince > 3) { score += 15; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'med'}); }
+    if (r.daysSince > 7)      { f1 = 35; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'high'}); }
+    else if (r.daysSince > 3) { f1 = 15; flags.push({msg:'Sem acesso há ' + r.daysSince + ' dias', severity:'med'}); }
   }
 
-  // Feature 2: acerto 1ª tentativa (requer n mínimo de 5 itens)
+  // Feature 2: acerto 1a tentativa (raw 30 ou 15)
+  var f2 = 0;
   if (r.ftPct !== null && r.ftTotal >= 5) {
-    if (r.ftPct < 40)      { score += 30; flags.push({msg:'Acerto 1ª baixo: ' + r.ftPct + '% (< 40)', severity:'high'}); }
-    else if (r.ftPct < 60) { score += 15; flags.push({msg:'Acerto 1ª mediano: ' + r.ftPct + '%', severity:'med'}); }
+    if (r.ftPct < 40)      { f2 = 30; flags.push({msg:'Acerto 1ª baixo: ' + r.ftPct + '% (< 40)', severity:'high'}); }
+    else if (r.ftPct < 60) { f2 = 15; flags.push({msg:'Acerto 1ª mediano: ' + r.ftPct + '%', severity:'med'}); }
   }
 
-  // Feature 3: aulas visitadas abaixo do P25
+  // Feature 3: aulas visitadas abaixo do P25 (raw 15)
+  var f3 = 0;
   if (bench.p25Aulas > 0 && (r.s.pagesVisited||0) < bench.p25Aulas) {
-    score += 15;
+    f3 = 15;
     flags.push({msg:'Aulas abertas abaixo do P25 da turma (' + (r.s.pagesVisited||0) + ' vs ' + bench.p25Aulas + ')', severity:'med'});
   }
 
-  // Feature 4: tempo total muito baixo (<50% do P25)
+  // Feature 4: tempo total muito baixo (raw 20)
+  var f4 = 0;
   if (bench.p25Tempo > 0 && (r.s.totalTimeMin||0) < bench.p25Tempo * 0.5) {
-    score += 20;
+    f4 = 20;
     flags.push({msg:'Tempo total < 50% do P25 da turma (' + r.s.totalTimeMin + ' vs ' + Math.round(bench.p25Tempo*0.5) + ' min)', severity:'high'});
   }
 
-  // Feature 5: consistência semanal (CV > 1.5 = estudo em picos)
+  // Feature 5: consistencia semanal eventCV (raw 10)
+  var f5 = 0;
   if (r.cv != null && r.nWeeks >= 3 && r.cv > 1.5) {
-    score += 10;
+    f5 = 10;
     flags.push({msg:'Estudo concentrado (CV=' + r.cv.toFixed(2) + ' em ' + r.nWeeks + ' semanas)', severity:'med'});
   }
 
-  score = Math.min(100, score);
+  // Anti-double-count leve: F1 (sumiu) explica parcialmente F2 (poucas
+  // questoes -> acerto volatil) e F4 (tempo baixo). Reduzir F1 35->20 quando
+  // F2 OU F4 disparam evita "high+high" virar "high+high+high" sem signal.
+  // Threshold so vale para o ramo F1=35 (raw); ramo F1=15 nao reduz.
+  var f1Applied = f1;
+  if (f1 === 35 && (f2 > 0 || f4 > 0)) f1Applied = 20;
+
+  breakdown.push({label:'Inatividade (>7d)', points:35, applied:f1Applied, raw:f1});
+  breakdown.push({label:'Acerto 1ª baixo',  points:30, applied:f2});
+  breakdown.push({label:'Aulas < P25',      points:15, applied:f3});
+  breakdown.push({label:'Tempo < 50%·P25',  points:20, applied:f4});
+  breakdown.push({label:'CV semanal alto',  points:10, applied:f5});
+
+  var score = Math.min(100, f1Applied + f2 + f3 + f4 + f5);
   var level = score >= 60 ? 'high' : score >= 30 ? 'med' : 'low';
-  return { score: score, level: level, flags: flags };
+  return { score: score, level: level, flags: flags, breakdown: breakdown };
+}
+
+// Constroi tooltip com breakdown da risk score (texto plain, vai como
+// title= no badge). Mostra so features que contribuiram.
+function _riskTooltip(risk) {
+  if (!risk || !risk.breakdown) return '';
+  var lines = ['Risco ' + risk.score + '/100 (' + risk.level + '):'];
+  risk.breakdown.forEach(function(b) {
+    if (b.applied > 0) {
+      var line = '+' + b.applied + ' ' + b.label;
+      if (b.raw && b.raw !== b.applied) line += ' (raw ' + b.raw + ', anti-double-count)';
+      lines.push(line);
+    }
+  });
+  if (lines.length === 1) lines.push('(nenhuma feature ativa)');
+  return lines.join('\n');
 }
 
 function riskLabel(level) {
@@ -1799,7 +1865,7 @@ function showStudentProfile(matricula) {
       + '</div>'
     + '<h3>Resumo & Risco</h3>'
     + '<div class="profile-summary-grid">'
-      + '<div class="profile-kpi ' + riskClass + '"><div class="v">' + r.risk.score + '</div><div class="l">Risco (0-100)</div><div class="b">' + riskLabel(r.risk.level) + '</div></div>'
+      + '<div class="profile-kpi ' + riskClass + '" title="' + _escapeHtml(_riskTooltip(r.risk)) + '"><div class="v">' + r.risk.score + '</div><div class="l">Risco (0-100)</div><div class="b">' + riskLabel(r.risk.level) + '</div></div>'
       + '<div class="profile-kpi"><div class="v">' + r.s.pagesVisited + '/' + (window._totalItems||'?') + '</div><div class="l">Aulas abertas</div>' + cmpWithPercentile(r.s.pagesVisited, bench.p50Aulas, '', 'aulas') + '</div>'
       + '<div class="profile-kpi"><div class="v">' + r.s.quizzesCompleted + '</div><div class="l">Quizzes feitos</div>' + cmpWithPercentile(r.s.quizzesCompleted, bench.p50Quiz, '', 'quiz') + '</div>'
       + '<div class="profile-kpi"><div class="v">' + r.s.totalTimeMin + '</div><div class="l">Min totais</div>' + cmpWithPercentile(r.s.totalTimeMin, bench.p50Tempo, 'min', 'tempo') + '</div>'
@@ -7007,7 +7073,7 @@ async function renderAdmin() {
         + '<td>'+(r.ftPct !== null ? r.ftPct+'% ('+r.ftTotal+')' : '—')+'</td>'
         + '<td>'+(r.streak > 0 ? '🔥'+r.streak : '—')+'</td>'
         + '<td class="'+daysCls+'">'+daysTxt+'</td>'
-        + '<td><span class="risk-cell '+riskCls+'"><span class="risk-dot"></span>'+r.risk.score+' · '+riskLabel(r.risk.level)+'</span>'+o4Chips+'</td>'
+        + '<td><span class="risk-cell '+riskCls+'" title="'+_escapeHtml(_riskTooltip(r.risk))+'"><span class="risk-dot"></span>'+r.risk.score+' · '+riskLabel(r.risk.level)+'</span>'+o4Chips+'</td>'
         + '</tr>';
     });
     document.querySelector('#detail-table tbody').innerHTML = tbody || '<tr><td colspan="10" style="text-align:center;color:#aaa">Nenhum aluno encontrado</td></tr>';
