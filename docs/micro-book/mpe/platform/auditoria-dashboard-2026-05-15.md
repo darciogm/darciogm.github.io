@@ -5,7 +5,11 @@
 **Calibre:** rigor estatístico + plumbing + checagem de bibliografia.
 **Data:** 2026-05-15.
 
-> **STATUS de fixes (2026-05-15 atualizado):** os 4 BUGs de janela canônica vs deadline plataforma (incluindo o bug master `computeCircadian`) foram corrigidos no mesmo dia via introdução de `MPE_CALENDARIO.getJanelaCanonica` em `calendario.js`. Bandeira nova 🐢 "atrasado crônico" adicionada (paralela ao 🌙). Bibliografia citada (Anderson 2014, Baker 2018) substituída por Cepeda 2006 / Bjork na seção #5. Demais bugs (escala confidence S5, ordering attempts[0] S5, bibliografia inflada nos demais Onda 4, etc.) **permanecem abertos** e devem ser tratados em sprints subsequentes — ver Tier 1/2/3 em `plano-fixes-dashboard-2026-05-15.md`.
+> **STATUS de fixes (2026-05-15 atualizado):**
+> - ✅ 4 BUGs de janela canônica vs deadline plataforma (incluindo bug master `computeCircadian`) corrigidos via `MPE_CALENDARIO.getJanelaCanonica`. Bandeira 🐢 "atrasado crônico" adicionada. Bibliografia da Onda 4 #5 limpa.
+> - ✅ **Bug master de escala confidence** [1,5]→[0,100] corrigido via helper `_confTo100` aplicado nos 3 sites de acumulação (`_o4BuildPairs`, `computeConfidencePoints`, `computeKnowerPoints`). Sanity check (fixture sintética) confirma que as 3 categorias (good/over/under) voltam a se distinguir; pré-fix sempre virava "under" com ECE ~70.
+> - ❌ Ordering `attempts[0]` (S5) — pendente (precisa adicionar `.order('answered_at')` em `mpe-db.js:adminFetchAll`).
+> - ❌ Demais bugs (bibliografia inflada, viés de seleção na intervention delta, `buildStudentStoryArc.iv.profile_id`) — pendentes em sprints subsequentes. Ver `plano-fixes-dashboard-2026-05-15.md`.
 
 ---
 

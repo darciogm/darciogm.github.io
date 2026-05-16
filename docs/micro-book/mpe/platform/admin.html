@@ -2730,6 +2730,17 @@ function renderCohortSurvival() {
     + '</svg>';
 }
 
+// Helper: confidence_ratings.value e integer [1,5] (CHECK no schema +
+// sliders min=1 max=5 nas paginas aula-XX.html). Mapeia linearmente para
+// percentual [0,100] (1->0, 2->25, 3->50, 4->75, 5->100) para poder
+// comparar com acerto-em-1a-tentativa (que ja e %) em ECE/scatter/
+// quadrante. Aplicar SEMPRE no acumulador (sum), nunca apos a media,
+// para manter o invariante "sum esta em unidades de %".
+function _confTo100(value) {
+  if (value == null || isNaN(value)) return 0;
+  return Math.max(0, Math.min(100, (value - 1) / 4 * 100));
+}
+
 // Confidence gap scatter — X = confiança pós, Y = acerto 1ª na aula
 function computeConfidencePoints() {
   var raw = window._adminRaw;
@@ -2737,12 +2748,12 @@ function computeConfidencePoints() {
   if (!raw || !data) return [];
   // Para cada (user_id, page_id): média de confidence.post (se existir) e acerto 1ª.
   // confidence_ratings: phase='post' é o que interessa aqui.
-  var conf = {}; // key "uid::page" → { sum, n }
+  var conf = {}; // key "uid::page" → { sum, n }; sum em unidades de % (via _confTo100)
   (raw.confidence || []).forEach(function(c){
     if (c.phase !== 'post') return;
     var k = c.user_id + '::' + c.page_id;
     if (!conf[k]) conf[k] = { sum: 0, n: 0 };
-    conf[k].sum += c.value; conf[k].n += 1;
+    conf[k].sum += _confTo100(c.value); conf[k].n += 1;
   });
   // 1st try accuracy por (uid, page)
   var firstSeen = {};
@@ -4703,13 +4714,13 @@ function _o4BuildPairs() {
   if (!raw) return [];
   // confidence_ratings.phase='post' -> média por (user_id, page_id) —
   // um page_id como 'aula-01' agrupa todas as seções da pré-aula.
-  var confBy = {};
+  var confBy = {}; // sum em unidades de % (via _confTo100)
   (raw.confidence || []).forEach(function(c){
     if (c.phase !== 'post') return;
     var pageRoot = String(c.page_id || '').replace(/-(pre|pos|exerc)$/, '');
     var k = c.user_id + '::' + pageRoot;
     if (!confBy[k]) confBy[k] = { sum: 0, n: 0, userId: c.user_id, pageRoot: pageRoot };
-    confBy[k].sum += c.value; confBy[k].n += 1;
+    confBy[k].sum += _confTo100(c.value); confBy[k].n += 1;
   });
   // Acerto 1ª por (user_id, pageRoot) — une attempts de aula-01 + aula-01-pre
   // + aula-01-pos porque todos são atividade da "aula 1".
@@ -7902,13 +7913,13 @@ function computeKnowerPoints() {
     if (firstSeen[k].correct) byUser[uid].c++;
   });
 
-  // Confiança média declarada (post) por aluno
+  // Confiança média declarada (post) por aluno; sum em % (via _confTo100)
   var confByUser = {};
   (raw.confidence || []).forEach(function(c){
     if (c.phase !== 'post') return;
     if (!prof[c.user_id]) return;
     if (!confByUser[c.user_id]) confByUser[c.user_id] = { sum: 0, n: 0 };
-    confByUser[c.user_id].sum += c.value;
+    confByUser[c.user_id].sum += _confTo100(c.value);
     confByUser[c.user_id].n++;
   });
 
