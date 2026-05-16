@@ -10,7 +10,8 @@
 > - ✅ **Bug master de escala confidence** [1,5]→[0,100] corrigido via helper `_confTo100` aplicado nos 3 sites de acumulação (`_o4BuildPairs`, `computeConfidencePoints`, `computeKnowerPoints`). Sanity check (fixture sintética) confirma que as 3 categorias (good/over/under) voltam a se distinguir; pré-fix sempre virava "under" com ECE ~70.
 > - ✅ **Ordering `attempts[0]`** corrigido em `mpe-db.js:adminFetchAll` — adicionado `.order('answered_at', { ascending: true })` em `quiz_question_attempts` + `micro_attempts` + `recorded_at` em `confidence_ratings` (defensivo). `firstTryAccuracyPerStudent` agora lê o primeiro cronológico de fato.
 > - ✅ **Story arc falling action** corrigido em `admin.html:9235` — `iv.profile_id` (typo silencioso) → `iv.student_id` (coluna real do schema). Última intervenção volta a aparecer no story panel.
-> - ❌ Demais bugs (bibliografia inflada nos demais Onda 4, viés de seleção na intervention delta) — pendentes em sprints subsequentes. Ver `plano-fixes-dashboard-2026-05-15.md`.
+> - ✅ **Tier 2 inteiro** (15 itens) executado em 5 commits subsequentes: defensividade do dashboard (pctl interpolado, ftTotal>=5, SEMESTER_START via calendario, anomalies z<-2, velocity n<5 warn, BRT explícito, completude com availableItems, eventCV substituindo weeklyCV impossível), risk score com tooltip + anti-double-count leve, bench snapshots semanais para trajetória retro honesta, SRL UI tunável no admin, bibliografia limpa (Cepeda/Guo/Wise·Kong; remoção de Anderson/Newell·Rosenbloom/Pardos/Zimmerman como bases diretas), disclaimer fixo na intervention delta sobre regressão à média.
+> - ❌ Tier 3 (backlog pós-semestre) — pendente. Ver `plano-fixes-dashboard-2026-05-15.md`.
 
 ---
 

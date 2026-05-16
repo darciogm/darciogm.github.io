@@ -1,5 +1,7 @@
 # Plano de fixes do dashboard — 2026-05-15
 
+> **STATUS (atualizado 2026-05-15):** Tier 1 ✅ **5/5 itens concluídos** (commits `f8d8c60`, `13d948a`, `943a121`). Tier 2 ✅ **15/15 itens concluídos** (commits `c6c344a`, `0a3d6d6`, `4dd49fa`, `516e33f`, `d8c8ea1`). Tier 3 ❌ pendente (backlog pós-semestre).
+
 Ranqueado por **severidade × esforço × valor pedagógico**. "Esforço" em horas-Darcio (escrever + testar + commit). "Valor" em escala 1–5: 1 = cosmético, 5 = mudança de decisão de intervenção.
 
 ---
