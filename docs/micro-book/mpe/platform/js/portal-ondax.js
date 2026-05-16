@@ -1241,6 +1241,102 @@
   };
 
   // ===================================================================
+  // NS.2 — Reflexões respondidas pelo professor (backlog 2026-05-16)
+  // ===================================================================
+
+  /**
+   * Constrói lista de reflexões do aluno que receberam response_text.
+   * Inclui badge "citada em aula" quando cited_in_class=true.
+   * myData.reflections vem de fetchMyDataAll (Supabase) ou _localToUnified
+   * (fallback offline; localStorage NÃO carrega response_text de outros,
+   * só do próprio aluno, então caminho local é silencioso/vazio).
+   */
+  PortalOndax.buildAnsweredReflections = function(myData) {
+    var refs = (myData && myData.reflections) || [];
+    return refs
+      .filter(function(r) {
+        var txt = r && r.response_text;
+        return typeof txt === 'string' && txt.trim().length > 0;
+      })
+      .map(function(r) {
+        return {
+          id: r.id,
+          page_id: r.page_id || '',
+          prompt_id: r.prompt_id || '',
+          text: r.text || '',
+          submitted_at: r.submitted_at,
+          response_text: r.response_text,
+          responded_at: r.responded_at,
+          cited_in_class: !!r.cited_in_class
+        };
+      })
+      .sort(function(a, b) {
+        return (b.responded_at || '').localeCompare(a.responded_at || '');
+      });
+  };
+
+  PortalOndax.renderAnsweredReflections = function(items) {
+    if (!items || items.length === 0) {
+      return '<div class="empty-state" style="background:#FAFAF8;padding:0.9rem 1rem;border-radius:8px;color:var(--text-muted);font-size:0.85rem">'
+           + 'Você ainda não recebeu resposta do professor às suas reflexões. Continue escrevendo com profundidade — reflexões substantivas são lidas e respondidas, e algumas viram pontos discutidos em aula.'
+           + '</div>';
+    }
+    var cal = window.MPE_CALENDARIO;
+    var fmt = function(ts) {
+      if (!ts) return '';
+      try { return cal && cal.fmt ? cal.fmt(new Date(ts).getTime()) : new Date(ts).toLocaleDateString('pt-BR'); }
+      catch(e) { return ''; }
+    };
+    var promptLabel = function(pid) {
+      if (pid === 'nebulosa') return 'Reflexão "nebulosa"';
+      if (pid === 'aula')     return 'Reflexão "aula"';
+      return 'Reflexão';
+    };
+    var aulaLabel = function(pageId) {
+      var m = /^aula-(\d+)/.exec(String(pageId || ''));
+      return m ? 'Aula ' + parseInt(m[1], 10) : pageId;
+    };
+    function escapeHtml(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+    // Quebra de paragrafo: cada \n\n vira <p>; \n simples vira <br>.
+    function toHtml(s) {
+      var safe = escapeHtml(s).replace(/\r\n/g, '\n');
+      return safe.split(/\n{2,}/).map(function(p) {
+        return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+      }).join('');
+    }
+    return items.map(function(r) {
+      var cited = r.cited_in_class
+        ? '<span class="refl-cited-badge" title="Reflexão citada em aula" style="background:#FEF3C7;color:#92400E;padding:0.18rem 0.5rem;border-radius:999px;font-size:0.72rem;font-weight:700;margin-left:0.4rem">🎤 Citada em aula</span>'
+        : '';
+      return '<article class="refl-answered" style="background:#fff;border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:var(--radius);padding:0.9rem 1.1rem;margin-bottom:0.8rem;box-shadow:var(--shadow)">'
+        + '<header style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.6rem">'
+        +   '<div style="font-size:0.78rem;color:var(--text-muted)">'
+        +     '<strong style="color:var(--primary)">' + aulaLabel(r.page_id) + '</strong>'
+        +     ' · ' + promptLabel(r.prompt_id)
+        +     (r.submitted_at ? ' · você escreveu em ' + fmt(r.submitted_at) : '')
+        +     cited
+        +   '</div>'
+        +   (r.responded_at
+              ? '<span style="font-size:0.72rem;color:var(--text-muted)">resposta em ' + fmt(r.responded_at) + '</span>'
+              : '')
+        + '</header>'
+        + '<div class="refl-mine" style="font-size:0.85rem;color:var(--text);background:#FAFAF8;padding:0.6rem 0.8rem;border-radius:6px;margin-bottom:0.6rem">'
+        +   '<div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--text-muted);margin-bottom:0.25rem">Você escreveu</div>'
+        +   toHtml(r.text)
+        + '</div>'
+        + '<div class="refl-response" style="font-size:0.88rem;color:var(--text)">'
+        +   '<div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:var(--primary);margin-bottom:0.25rem">Prof. Darcio respondeu</div>'
+        +   toHtml(r.response_text)
+        + '</div>'
+        + '</article>';
+    }).join('');
+  };
+
+  // ===================================================================
   // Exportar
   // ===================================================================
 

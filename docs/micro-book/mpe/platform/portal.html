@@ -76,6 +76,15 @@
   </div>
 </div>
 
+<!-- NS.2: Reflexões respondidas pelo professor -->
+<div class="my-performance" style="margin-top:2rem">
+  <h3>Suas reflexões — feedback do professor</h3>
+  <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">
+    Reflexões que você escreveu nas pré-aulas e o Prof. Darcio respondeu. Quando uma reflexão é <strong>citada em aula</strong> (badge 🎤), o ponto que você levantou ajudou a moldar o que o Darcio enfatizou para a turma.
+  </p>
+</div>
+<div id="reflexoes-respondidas" style="margin-bottom:1.5rem"></div>
+
 <div class="my-performance" style="margin-top:2rem">
   <h3>Pré-monitorias (online, formativas)</h3>
   <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.8rem">Material de preparação que abre na plataforma <em>antes</em> de cada encontro presencial com o Alberto. <strong>Não conta nota</strong> — é opcional, mas chegar preparado multiplica o valor do sábado.</p>
@@ -818,6 +827,11 @@ async function renderOnda1() {
   var nudges = window.PortalOndax.buildNudges(myData, focus, classP);
   var elNud = document.getElementById('nudges-wrap');
   if (elNud) elNud.innerHTML = window.PortalOndax.renderNudges(nudges);
+
+  // NS.2 — Reflexões respondidas pelo professor (backlog 2026-05-16).
+  var answered = window.PortalOndax.buildAnsweredReflections(myData);
+  var elRefl = document.getElementById('reflexoes-respondidas');
+  if (elRefl) elRefl.innerHTML = window.PortalOndax.renderAnsweredReflections(answered);
 }
 
 function renderUrgencyBanner(pendings) {
