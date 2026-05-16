@@ -5290,11 +5290,38 @@ function computeVelocity() {
 // skimmer/avoidant/mixed via regras interpretáveis sobre 3 features
 // (attempts/cp, revisit_ratio, read_before_try). NÃO é uma operacionalização
 // canônica do framework SRL de Zimmerman ou Pintrich — é proxy comportamental
-// construído internamente para o contexto MPE. Thresholds tunáveis na tab
-// Psico-cognitivo (UI futura).
+// construído internamente para o contexto MPE. Thresholds tunáveis pelo admin
+// (ver _loadSRLThresholds + UI inline em renderOnda4SRL).
+function _SRL_DEFAULTS() {
+  return {
+    readBefore: 0.7,        // strategic: read_before_try > X
+    aptStrategic: 1.5,      // strategic: attempts/cp < X
+    revisitReactive: 1.3,   // reactive: revisit_ratio > X
+    aptReactive: 2.0,       // reactive/skimmer: attempts/cp > X
+    aptSkimmer: 1.8,        // skimmer: attempts/cp > X (em conjunto com durMed<P25)
+    paperAvoidant: 0.3      // avoidant: paper_share < X (com nSecsDone>=3)
+  };
+}
+function _loadSRLThresholds() {
+  try {
+    var key = 'mpe_admin_srl_thresholds:' + _adminMat();
+    var saved = JSON.parse(localStorage.getItem(key) || 'null');
+    if (!saved) return _SRL_DEFAULTS();
+    var def = _SRL_DEFAULTS();
+    Object.keys(def).forEach(function(k){ if (typeof saved[k] === 'number') def[k] = saved[k]; });
+    return def;
+  } catch(e) { return _SRL_DEFAULTS(); }
+}
+function _saveSRLThresholds(t) {
+  try {
+    var key = 'mpe_admin_srl_thresholds:' + _adminMat();
+    localStorage.setItem(key, JSON.stringify(t));
+  } catch(e) {}
+}
 function computeSRL() {
   var raw = window._adminRaw;
   if (!raw) return { byUser: {}, distribution: {} };
+  var T = _loadSRLThresholds();
   var students = (raw.profiles || []).filter(function(p){return (p.role||'')!=='admin'});
 
   // Feature (a) attempts_per_checkpoint — média de micro_attempts antes do acerto
@@ -5383,12 +5410,12 @@ function computeSRL() {
     var durMed = durMedPerUser[uid];
 
     var label = 'none';
-    // Requer pelo menos um sinal razoável
+    // Requer pelo menos um sinal razoável. Thresholds tunaveis via _loadSRLThresholds.
     if (apt != null || revisit != null || readBefore != null) {
-      if (readBefore != null && readBefore > 0.7 && apt != null && apt < 1.5) label = 'strategic';
-      else if (revisit != null && revisit > 1.3 && apt != null && apt > 2) label = 'reactive';
-      else if (durMed != null && p25Dur != null && durMed < p25Dur && apt != null && apt > 1.8) label = 'skimmer';
-      else if (nSecsDone >= 3 && paperShare < 0.3) label = 'avoidant';
+      if (readBefore != null && readBefore > T.readBefore && apt != null && apt < T.aptStrategic) label = 'strategic';
+      else if (revisit != null && revisit > T.revisitReactive && apt != null && apt > T.aptReactive) label = 'reactive';
+      else if (durMed != null && p25Dur != null && durMed < p25Dur && apt != null && apt > T.aptSkimmer) label = 'skimmer';
+      else if (nSecsDone >= 3 && paperShare < T.paperAvoidant) label = 'avoidant';
       else label = 'mixed';
     }
     byUser[uid] = {
@@ -5657,7 +5684,54 @@ function renderOnda4SRL() {
         + icons[k] + ' <strong>' + labels[k] + '</strong> · ' + n + ' (' + pct + '%)</div>';
     }).join('')
     + '</div>';
-  container.innerHTML = '<div class="o4-pie-row">' + pieSvg + legend + '</div>';
+  // Painel de tuning de thresholds (escondido por default; toggle).
+  var T = _loadSRLThresholds();
+  var def = _SRL_DEFAULTS();
+  function inpRow(key, label, hint, step) {
+    var defaulted = T[key] === def[key] ? '' : ' <em style="color:#92400E">(modificado)</em>';
+    return '<label style="display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;margin:0.2rem 0">'
+      + '<span style="flex:1">' + label + ' <span style="color:var(--text-muted);font-size:0.7rem">(default ' + def[key] + ')</span>' + defaulted + '</span>'
+      + '<input type="number" step="' + step + '" data-srl-key="' + key + '" value="' + T[key] + '" '
+      + 'style="width:70px;padding:0.2rem 0.4rem;border:1px solid var(--border);border-radius:4px">'
+      + '<span style="color:var(--text-muted);font-size:0.7rem;width:50%">' + hint + '</span>'
+      + '</label>';
+  }
+  var tuner = '<details class="o4-srl-tuner" style="margin-top:0.5rem;border-top:1px solid #f5f0ec;padding-top:0.4rem">'
+    + '<summary style="font-size:0.78rem;color:var(--primary);cursor:pointer">⚙ Ajustar thresholds (persistido por admin em localStorage)</summary>'
+    + '<div style="margin-top:0.4rem;padding:0.5rem 0.6rem;background:#FAFAF8;border-radius:4px">'
+    + '<div style="font-size:0.72rem;color:var(--text-muted);margin-bottom:0.4rem">Valores ajustam a regra de classificação. Click "Recalcular" para reaplicar.</div>'
+    + inpRow('readBefore',      'Strategic: read_before_try >', 'Aluno leu antes de tentar (frac.)', '0.05')
+    + inpRow('aptStrategic',    'Strategic: apt <',             'Poucas tentativas/checkpoint',     '0.1')
+    + inpRow('revisitReactive', 'Reactive: revisit >',          'Voltou ao material após errar',    '0.1')
+    + inpRow('aptReactive',     'Reactive: apt >',              'Muitas tentativas/checkpoint',     '0.1')
+    + inpRow('aptSkimmer',      'Skimmer: apt >',               '+ tempo<P25 da turma',             '0.1')
+    + inpRow('paperAvoidant',   'Avoidant: paper_share <',      '+ nSecsDone>=3',                   '0.05')
+    + '<div style="display:flex;gap:0.5rem;margin-top:0.5rem">'
+    + '<button class="btn btn-primary" onclick="_srlApplyAndRender()" style="font-size:0.75rem;padding:0.3rem 0.7rem">Aplicar + recalcular</button>'
+    + '<button class="btn" onclick="_srlResetThresholds()" style="font-size:0.75rem;padding:0.3rem 0.7rem">Resetar defaults</button>'
+    + '</div></div></details>';
+  container.innerHTML = '<div class="o4-pie-row">' + pieSvg + legend + '</div>' + tuner;
+}
+
+// Lê os inputs do tuner, persiste, recomputa SRL e re-renderiza.
+function _srlApplyAndRender() {
+  var inputs = document.querySelectorAll('.o4-srl-tuner input[data-srl-key]');
+  var t = _loadSRLThresholds();
+  inputs.forEach(function(inp){
+    var k = inp.dataset.srlKey;
+    var v = parseFloat(inp.value);
+    if (!isNaN(v)) t[k] = v;
+  });
+  _saveSRLThresholds(t);
+  if (window._adminRaw) {
+    window._onda4 = window._onda4 || {};
+    try { window._onda4.srl = computeSRL(); } catch(e) { console.warn('[SRL] recompute failed:', e); }
+    renderOnda4SRL();
+  }
+}
+function _srlResetThresholds() {
+  _saveSRLThresholds(_SRL_DEFAULTS());
+  _srlApplyAndRender();
 }
 
 function renderOnda4Trajectory() {
