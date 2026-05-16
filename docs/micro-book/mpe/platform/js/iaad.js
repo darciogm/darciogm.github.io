@@ -54,7 +54,40 @@
            '█'.repeat(n) + '░'.repeat(10 - n) + '</span>';
   }
 
-  // Histograma SVG da distribuição da turma com marcador da posição do aluno
+  // Dot-plot: alternativa ao histograma quando n<10 (binning visualmente
+  // mentiroso com poucas amostras). T3.5 auditoria 2026-05-15.
+  IAAD.dotPlot = function(values, studentValue, opts) {
+    opts = opts || {};
+    var width = opts.width || 320;
+    var height = opts.height || 40;
+    var maxX = 10;
+    if (!values || values.length === 0) return '';
+    var dots = values.map(function(v) {
+      var x = (Number(v) / maxX) * width;
+      var isStudent = studentValue != null && Number(v) === Number(studentValue);
+      return '<circle cx="' + x.toFixed(1) + '" cy="' + (height/2) + '" r="' + (isStudent ? 5 : 4)
+           + '" fill="' + (isStudent ? '#C8102E' : '#94a3b8') + '" '
+           + 'opacity="' + (isStudent ? '1' : '0.55') + '"></circle>';
+    }).join('');
+    var axis = '<line x1="0" y1="' + (height-2) + '" x2="' + width + '" y2="' + (height-2)
+             + '" stroke="#cbd5e1" stroke-width="0.5"/>';
+    var ticks = '';
+    [0, 5, 10].forEach(function(t) {
+      var x = (t / maxX) * width;
+      ticks += '<text x="' + x + '" y="' + (height + 8) + '" font-size="9" fill="#64748b" text-anchor="middle">' + t + '</text>';
+    });
+    return '<svg width="' + width + '" height="' + (height + 12)
+         + '" viewBox="-10 -2 ' + (width + 20) + ' ' + (height + 16) + '" '
+         + 'preserveAspectRatio="xMidYMid meet" '
+         + 'style="display:block;max-width:100%;overflow:visible">'
+         + axis + dots + ticks + '</svg>'
+         + '<div style="font-size:0.7rem;color:#94a3b8;margin-top:0.2rem">'
+         + 'n=' + values.length + ' alunos · cada ponto = 1 aluno (vermelho = você)'
+         + '</div>';
+  };
+
+  // Histograma SVG da distribuição da turma com marcador da posição do aluno.
+  // T3.5: cai em IAAD.dotPlot quando n<10 (histograma sem sentido em amostra pequena).
   IAAD.histogram = function(values, studentValue, opts) {
     opts = opts || {};
     var width = opts.width || 320;
@@ -64,6 +97,10 @@
 
     if (!values || values.length === 0) {
       return '<div style="font-size:0.78rem;color:#94a3b8">Distribuição não disponível.</div>';
+    }
+    // T3.5: dot-plot quando n<10 (binning agressivo distorce).
+    if (values.length < 10) {
+      return IAAD.dotPlot(values, studentValue, opts);
     }
 
     // Bin values
@@ -116,7 +153,13 @@
     // Eixo base
     var axis = '<line x1="0" y1="' + barAreaHeight + '" x2="' + width + '" y2="' + barAreaHeight + '" stroke="#94a3b8" stroke-width="0.5"/>';
 
-    return '<svg width="' + width + '" height="' + (height + 4) + '" style="display:block;max-width:100%;overflow:visible">' +
+    // T3.2 auditoria 2026-05-15: viewBox com padding -8/+16 horizontal e
+    // 0/+8 vertical para acomodar labels de tick centrados em x=0 e x=width
+    // sem cortar; tambem da espaco ao triangulo do marker (y=barAreaHeight+4).
+    return '<svg width="' + width + '" height="' + (height + 8) + '" '
+         + 'viewBox="-10 -2 ' + (width + 20) + ' ' + (height + 12) + '" '
+         + 'preserveAspectRatio="xMidYMid meet" '
+         + 'style="display:block;max-width:100%;overflow:visible">' +
            bars + axis + ticks + marker +
            '</svg>';
   };

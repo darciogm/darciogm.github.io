@@ -2919,15 +2919,14 @@ function renderCohortSurvival() {
     + '</svg>';
 }
 
-// Helper: confidence_ratings.value e integer [1,5] (CHECK no schema +
-// sliders min=1 max=5 nas paginas aula-XX.html). Mapeia linearmente para
-// percentual [0,100] (1->0, 2->25, 3->50, 4->75, 5->100) para poder
-// comparar com acerto-em-1a-tentativa (que ja e %) em ECE/scatter/
-// quadrante. Aplicar SEMPRE no acumulador (sum), nunca apos a media,
-// para manter o invariante "sum esta em unidades de %".
+// Helper: delegado a MpeUtil.confTo100 (tracker.js, T3.1 auditoria 2026-05-15).
+// Mantemos o nome _confTo100 para call sites existentes. Aplicar SEMPRE
+// no acumulador (sum), nunca apos a media, para manter o invariante
+// "sum esta em unidades de %".
 function _confTo100(value) {
-  if (value == null || isNaN(value)) return 0;
-  return Math.max(0, Math.min(100, (value - 1) / 4 * 100));
+  return (window.MpeUtil && window.MpeUtil.confTo100)
+    ? window.MpeUtil.confTo100(value)
+    : (value == null || isNaN(value) ? 0 : Math.max(0, Math.min(100, (value - 1) / 4 * 100)));
 }
 
 // Helpers BRT (UTC-3 fixo, sem DST desde 2019). Forcar BRT independente

@@ -15,6 +15,20 @@
   var USERS_KEY = 'mpe_microI_users';
   var HEARTBEAT_MS = 30000; // 30s heartbeat for time tracking
 
+  // ==================== MpeUtil: helpers globais ====================
+  // T3.1 auditoria 2026-05-15: centraliza helpers compartilhados entre
+  // admin + portal + paginas de aula. Antes cada arquivo replicava a
+  // logica (e.g. _confTo100 em admin.html + inline em portal-ondax.js);
+  // bug master de escala confidence ressurgia toda vez que algum site
+  // era esquecido. Adicione novos helpers cross-cutting aqui, nao copie.
+  window.MpeUtil = window.MpeUtil || {};
+  // confTo100: mapeia confidence_ratings.value [1,5] para [0,100] (1->0,
+  // 2->25, 3->50, 4->75, 5->100). Esperado pelos bins ECE de 25pp.
+  window.MpeUtil.confTo100 = function(value) {
+    if (value == null || isNaN(value)) return 0;
+    return Math.max(0, Math.min(100, (value - 1) / 4 * 100));
+  };
+
   // Helper: usa Supabase se feature flag ativa
   function _supabaseAuthOn() {
     return window.MPE_CONFIG && window.MPE_CONFIG.USE_SUPABASE_AUTH && window.MpeDB && window.MpeDB.enabled;

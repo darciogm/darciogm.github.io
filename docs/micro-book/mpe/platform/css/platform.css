@@ -430,10 +430,21 @@ details .solution-body{padding:1rem}
 .next-step-card.next-step-normal{border-left:4px solid var(--accent);background:#FAFAF8}
 .next-step-card.next-step-zen{border-left:4px solid var(--success);background:#F3FBF6}
 .next-step-card .next-step-icon{font-size:1.5rem;flex:0 0 auto}
-.next-step-card .next-step-body{flex:1 1 auto;font-size:0.88rem;line-height:1.4}
-.next-step-card .next-step-text{color:var(--text)}
+.next-step-card .next-step-body{flex:1 1 auto;min-width:0;font-size:0.88rem;line-height:1.4}
+.next-step-card .next-step-text{color:var(--text);overflow-wrap:break-word;word-break:break-word}
 .next-step-card .next-step-text strong{color:var(--primary)}
-.next-step-card .next-step-hint{font-size:0.76rem;color:var(--text-muted);margin-top:0.2rem}
+.next-step-card .next-step-hint{font-size:0.76rem;color:var(--text-muted);margin-top:0.2rem;overflow-wrap:break-word}
+/* T3.10 auditoria 2026-05-15: mobile pode quebrar layout flex se texto
+   longo + CTA. min-width:0 no body + flex-wrap no card resolve. */
+@media (max-width:600px) {
+  .next-step-card{flex-wrap:wrap}
+  .next-step-card .next-step-cta{width:100%;text-align:center;margin-top:0.4rem}
+}
+/* T3.11: IAAD breakdown 9x6 — table horizontal cabe em desktop mas
+   estoura mobile. Container ja existente (#iaad-breakdown-detail) ganha
+   scroll horizontal; table mantem min-width para nao colapsar colunas. */
+#iaad-breakdown-detail{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.iaad-breakdown{min-width:380px}
 .next-step-card .next-step-cta{
   flex:0 0 auto;background:var(--accent);color:#fff;text-decoration:none;
   padding:0.55rem 0.95rem;border-radius:var(--radius);font-size:0.85rem;font-weight:600;

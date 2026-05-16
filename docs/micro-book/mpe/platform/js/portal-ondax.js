@@ -37,6 +37,12 @@
    *   quizAggregates, quizQA, paperExercises, reflections
    * }
    */
+  // T3.7 auditoria 2026-05-15: dual-source intencional (Supabase autoritativo
+  // + MicroTracker fallback local). Debito tecnico: portal.html ainda usa
+  // MicroTracker.getData() direto em renderSparkline/computeStreak/etc.
+  // Consolidacao futura: portal.html consumir apenas loadMyData (assincrono)
+  // ou expor PortalOndax.getDataSync com cache. Por ora os 2 caminhos
+  // coexistem; _localToUnified garante shape compativel quando offline.
   PortalOndax.loadMyData = async function() {
     if (window.MpeDB && window.MpeDB.enabled) {
       try {
@@ -692,15 +698,16 @@
       var c = confBy[k];
       var acc = ft[k];
       if (!acc || acc.total < 2) return;
-      // Mapeia escala 1-5 do schema CHECK (confidence_ratings.value) para
-      // [0,100] esperado pelos bins ECE de 25pp. Bug master corrigido no
-      // admin via _confTo100 (commit 13d948a); replicado aqui.
-      // Pre-fix: c.sum/c.n in [1,5] caia sempre em bin 0 -> ECE ~95pp.
-      // Pos-fix: 1->0, 2->25, 3->50, 4->75, 5->100; bins distribuem.
+      // T3.1 auditoria 2026-05-15: usa helper global MpeUtil.confTo100
+      // (tracker.js). Antes era logica inline replicada em 2 lugares,
+      // fonte recorrente de bug master de escala.
       var meanVal = c.sum / c.n; // in [1,5]
+      var confPct = (window.MpeUtil && window.MpeUtil.confTo100)
+        ? window.MpeUtil.confTo100(meanVal)
+        : Math.max(0, Math.min(100, (meanVal - 1) / 4 * 100));
       pairs.push({
         pageRoot: c.pageRoot,
-        conf: Math.max(0, Math.min(100, (meanVal - 1) / 4 * 100)),
+        conf: confPct,
         acc: acc.correct / acc.total * 100,
         nItems: acc.total
       });
@@ -788,16 +795,18 @@
     });
     svg += '</svg>';
 
-    // Badge + leitura
+    // Badge + leitura. T3.9 auditoria 2026-05-15: tooltips explicam o
+    // criterio (ECE de Guo et al. 2017 ICML). cal.ece esta em pp.
     var badge, texto;
+    var eceStr = (cal.ece != null) ? ' · ECE=' + Number(cal.ece).toFixed(1) + 'pp' : '';
     if (cal.label === 'good') {
-      badge = '<span class="calib-badge good">🎯 Você se conhece</span>';
+      badge = '<span class="calib-badge good" title="Calibração boa: ECE < 15pp OU diferença média |conf-acerto| pequena. ECE = média ponderada do |conf-acerto| por bin de 25pp (Guo et al. 2017 ICML).' + eceStr + '">🎯 Você se conhece</span>';
       texto = 'Seu nível declarado de confiança tende a bater com seu desempenho. Continue usando o slider como bússola.';
     } else if (cal.label === 'over') {
-      badge = '<span class="calib-badge over">🔥 Tendência a superestimar</span>';
+      badge = '<span class="calib-badge over" title="Tendência a superestimar: confiança média - acerto médio > +15pp em ≥3 pares de (aula × confidence pós).' + eceStr + '">🔥 Tendência a superestimar</span>';
       texto = 'Este é um sinal, não um julgamento. Vale olhar para as questões onde você marcou 4–5 de confiança e errou na 1ª — o que elas tinham em comum?';
     } else if (cal.label === 'under') {
-      badge = '<span class="calib-badge under">🧊 Tendência a subestimar</span>';
+      badge = '<span class="calib-badge under" title="Tendência a subestimar: confiança média - acerto médio < -15pp em ≥3 pares de (aula × confidence pós).' + eceStr + '">🧊 Tendência a subestimar</span>';
       texto = 'Você entrega mais do que acha que entrega. Confie um pouco mais no que você preparou antes de chutar.';
     }
 
@@ -839,8 +848,14 @@
    *   - cramming: proporção de eventos nas últimas 48h do prazo por aula
    *   - chronic: ≥2 aulas com cramming > 0.6
    *   - avgDaysBefore: dias médios antes do prazo (por evento com aula_n)
+   *
+   * T3.3 auditoria 2026-05-15: opts.pageRoot ('aula-04' p.ex.) filtra
+   * eventos por aula. Default = todos. UI ainda nao expoe; ligar via
+   * <select> no portal.html quando quiser drill-down semanal.
    */
-  PortalOndax.buildCircadian = function(myData) {
+  PortalOndax.buildCircadian = function(myData, opts) {
+    opts = opts || {};
+    var filterRoot = opts.pageRoot || null;
     var matrix = [];
     for (var r = 0; r < 7; r++) matrix.push([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]);
 
@@ -848,6 +863,7 @@
     var events = [];
     function pushEv(ts, pageId, correct) {
       if (!ts) return;
+      if (filterRoot && parsePageRoot(pageId) !== filterRoot) return;
       var t = new Date(ts).getTime();
       if (!isFinite(t)) return;
       events.push({ ts: t, pageId: pageId || '', correct: correct });
@@ -1146,15 +1162,48 @@
     return filtered.slice(0, 3);
   };
 
-  PortalOndax._dismissKey = 'mpe_portal_nudges_dismissed_v1';
+  // T3.4 auditoria 2026-05-15: dispense agora em localStorage com TTL de 7d.
+  // Antes era sessionStorage (some quando fecha a aba) -> aluno via R1 toda
+  // vez que abria o portal mesmo apos dispensar, e voltar para o estado
+  // antigo "questao errada >=2x" segue valido por dias. Estrutura migrou
+  // de array de ids para mapa {id: dismissTsMs}. Compat lendo array legado.
+  PortalOndax._dismissKey = 'mpe_portal_nudges_dismissed_v2';
+  PortalOndax._dismissLegacyKey = 'mpe_portal_nudges_dismissed_v1';
+  PortalOndax._dismissTTLms = 7 * 86400000;  // 7 dias
+
+  PortalOndax._loadDismissedRaw = function() {
+    try {
+      var v2 = JSON.parse(localStorage.getItem(PortalOndax._dismissKey) || 'null');
+      if (v2 && typeof v2 === 'object') return v2;
+      // Compat: migra sessionStorage v1 (array) -> v2 (mapa com ts atual).
+      var v1 = JSON.parse(sessionStorage.getItem(PortalOndax._dismissLegacyKey) || '[]');
+      var map = {};
+      if (Array.isArray(v1)) {
+        var now = Date.now();
+        v1.forEach(function(id) { map[id] = now; });
+      }
+      return map;
+    } catch(e) { return {}; }
+  };
   PortalOndax._getDismissedNudges = function() {
-    try { return JSON.parse(sessionStorage.getItem(PortalOndax._dismissKey) || '[]'); }
-    catch(e) { return []; }
+    var map = PortalOndax._loadDismissedRaw();
+    var now = Date.now();
+    var alive = [];
+    var clean = {};
+    Object.keys(map).forEach(function(id) {
+      if (now - Number(map[id] || 0) < PortalOndax._dismissTTLms) {
+        alive.push(id);
+        clean[id] = map[id];
+      }
+    });
+    // Limpa expirados oportunisticamente.
+    try { localStorage.setItem(PortalOndax._dismissKey, JSON.stringify(clean)); } catch(e) {}
+    return alive;
   };
   PortalOndax.dismissNudge = function(id) {
-    var list = PortalOndax._getDismissedNudges();
-    if (list.indexOf(id) === -1) list.push(id);
-    sessionStorage.setItem(PortalOndax._dismissKey, JSON.stringify(list));
+    var map = PortalOndax._loadDismissedRaw();
+    map[id] = Date.now();
+    try { localStorage.setItem(PortalOndax._dismissKey, JSON.stringify(map)); } catch(e) {}
     var safeAttr = (window.CSS && CSS.escape) ? CSS.escape(id) : String(id).replace(/"/g, '\\"');
     var el = document.querySelector('[data-nudge-id="' + safeAttr + '"]');
     if (el) el.remove();
@@ -1184,7 +1233,7 @@
            + '<div class="nudge-body">' + n.text
            + (n.cta ? '<br><a class="nudge-cta" href="' + n.cta.href + '">' + n.cta.label + ' →</a>' : '')
            + '</div>'
-           + '<button class="nudge-dismiss" title="Dispensar por esta sessão" onclick="PortalOndax.dismissNudge(\'' + safeId + '\')">×</button>'
+           + '<button class="nudge-dismiss" title="Dispensar por 7 dias" onclick="PortalOndax.dismissNudge(\'' + safeId + '\')">×</button>'
            + '</div>';
     });
     html += '</div>';
