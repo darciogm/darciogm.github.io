@@ -6,80 +6,81 @@ paper: sme-public
 
 <div class="hero-section" markdown>
 
-# Sheltered Bidding
+# The Price of Exclusion
 
-<p class="subtitle">The Within-Auction Cost of SME Set-Asides</p>
+<p class="subtitle">SME Set-Asides in Public Procurement</p>
 <p class="authors">Darcio Genicolo-Martins</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">R&#36;55&ndash;128M / yr</span>
-<span class="label">(US&#36;16&ndash;37M) annual welfare loss imposed by the SME-only set-aside on a single product group of S&atilde;o Paulo's R&#36;13 billion procurement platform &mdash; roughly three-quarters of it attributable to sheltered bidding rather than to entry response. A 10% SME price preference welfare-dominates the set-aside on the same metric in standardized markets, at essentially zero fiscal cost.</span>
+<span class="number">28.9%</span>
+<span class="label">static welfare loss from the full SME set-aside in standardized non-pharmaceutical procurement, at &lambda;=0.30 &mdash; with exclusion of non-SMEs accounting for ~72% of the absolute price decomposition. A 10% SME price preference preserves the price-forming pool at near-zero static welfare cost.</span>
 </div>
 
 ## Abstract
 
-Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms operate: the bidder pool shrinks, and the auction clears at a different point in the surviving cost distribution. This paper estimates the total impact and decomposes it into these two channels. A March 2018 reversal extended an SME-only rule to medical supplies on São Paulo's centralized procurement platform; a difference-in-differences against 76 never-treated product groups recovers *a roughly 10 percent rise in winning prices* and a doubling of SME participation. An asymmetric IPV model identified from Pregão drop-out bids then separates the channels under observed equilibrium entry — a policy-relevant accounting decomposition identified by the auction format plus observed entry, not a full structural entry equilibrium. The within-auction component — *sheltered bidding* — accounts for *two-thirds to three-quarters of the simulated effect* across classes. The implied welfare cost reaches *R\$55 million per year* on a single product group of São Paulo's R\$13 billion platform. A 10 percent price preference welfare-dominates the set-aside in thick standardized markets at near-zero fiscal cost; the ranking turns conditional in thin pharmaceutical markets, where the equilibrium-selection treatment of the protected pool becomes first-order. The conditional ranking is the policy-design statement: bidder exclusion is hardest to defend where the protected pool is thick and the good standardized, and most defensible — if at all — where it is not.
+Set-asides expand SME access to public procurement by removing rival bidders from the auction. This paper shows that, when the excluded bidders are the price-forming ones, the policy replaces competition with eligibility at high static cost. I study São Paulo's centralized electronic procurement platform, where a legal reinterpretation expanded SME-only tendering into medical and hospital supplies. The platform's reverse auctions record drop-out prices that, under the maintained independent-private-values clock interpretation, reveal type-specific willingness to supply. I use these exits to decompose the set-aside price effect into lost competitive discipline from excluding non-SMEs and a protected-pool offset from the post-policy SME pool. In standardized non-pharmaceutical procurement, the protected pool responds but does not replace the excluded discipline: the full set-aside generates a static welfare loss of *28.9 percent* of the open-regime price at &lambda;=0.30. Pharmaceutical procurement exhibits larger but more model-sensitive losses. A *10 percent SME price preference*, simulated as a static design benchmark, keeps non-SMEs in the auction at near-zero price cost in standardized markets, but delivers less redistribution than full exclusion. The relevant frontier is therefore not SME support versus no support; it runs between exclusionary redistribution and support that preserves the price-forming bidder pool.
 
 [:material-file-pdf-box: Download manuscript (PDF)](assets/sme_public_procurement.pdf){ .md-button .md-button--primary } &nbsp;
 [:material-book-open-variant: Online appendix](assets/sme_public_online_appendix.pdf){ .md-button } &nbsp;
-[:material-star-outline: Highlights](assets/sme_public_highlights.pdf){ .md-button }
+[:material-star-outline: Highlights](assets/sme_public_highlights.pdf){ .md-button } &nbsp;
+[:material-email-outline: Cover letter](assets/sme_public_cover_letter.pdf){ .md-button }
 
-*Submission-ready version (v6, JPubE format) — May 2026.*
+*JPubE submission &mdash; May 2026.*
 
 **JEL Classification:**
-<span class="badge">D44</span>
 <span class="badge">H32</span>
 <span class="badge">H57</span>
 <span class="badge">L26</span>
 <span class="badge">L53</span>
+<span class="badge">D44</span>
 
 **Keywords:**
 <span class="badge badge-kw">public procurement</span>
 <span class="badge badge-kw">SME set-asides</span>
-<span class="badge badge-kw">asymmetric auctions</span>
-<span class="badge badge-kw">structural estimation</span>
+<span class="badge badge-kw">auctions</span>
 <span class="badge badge-kw">welfare</span>
-<span class="badge badge-kw">marginal cost of public funds</span>
 
 ---
 
 ## Headline magnitudes
 
-| | **Non-pharma** | **Pharma** |
+| | **Non-pharma** | **Pharma (boundary case)** |
 |---|:---:|:---:|
-| DiD on log p<sup>final</sup> (absolute) | +0.10 to +0.11 | +0.10 to +0.11 |
-| DiD on p<sup>final</sup> / p<sup>ref</sup> | +0.06 | +0.06 |
-| Simulated p<sub>S<sub>3</sub></sub> − p<sub>S<sub>1</sub></sub>, units of p<sup>ref</sup> | +0.227 | +0.309 |
-| Within-auction share, main spec | 72.0% | 68.8% |
-| Within-auction share, Turnbull NPMLE | 74.0% | 82.0% |
-| Within-auction share, strict invariance | 85.0% | 79.0% |
-| Welfare cost (% of p<sub>S<sub>1</sub></sub>, λ = 0.30) | 28.9% | 44.8% |
-| w<sup>SME</sup><sub>★</sub> to prefer set-aside, main spec | 2.42 | 2.61 |
-| w<sup>SME</sup><sub>★</sub>, strict invariance | > 1 | 0.7 |
+| DiD on log p<sup>final</sup>, 18m | &minus;0.113 | &minus;0.113 |
+| Simulated p<sub>S<sub>3</sub></sub> &minus; p<sub>S<sub>1</sub></sub>, units of p<sup>ref</sup> | +0.227 | +0.309 |
+| Exclusion component (S<sub>2</sub>&minus;S<sub>1</sub>) | +0.371 | +0.565 |
+| Protected-pool offset (S<sub>3</sub>&minus;S<sub>2</sub>) | &minus;0.144 | &minus;0.256 |
+| Exclusion share (absolute, main) | 72.0% | 68.8% |
+| Exclusion share, Turnbull NPMLE | 74.0% | 82.0% |
+| Exclusion share, strict invariance | 85.0% | 79.0% |
+| Exclusion share, empirical bidder counts | 69.4% | 63.1% |
+| Welfare cost (% of p<sub>S<sub>1</sub></sub>, &lambda;=0.30) | 28.9% | 44.8% |
+| w<sup>SME</sup><sub>&star;</sub> to prefer full exclusion to 10% preference | 2.42 | 2.61 |
+| w<sup>SME</sup><sub>&star;</sub>, strict invariance | &gt; 1 | 0.7 |
 
-*DiD against 76 never-treated product groups, 18-month symmetric window around March 2018. Structural magnitudes from the asymmetric IPV counterfactual under observed equilibrium entry.*
+*DiD against 76 never-treated product groups, 18-month symmetric window around March 2018, used only as timing/sign/scale validation. Structural magnitudes are counterfactual price-formation objects under the maintained IPV clock interpretation and observed equilibrium entry.*
 
 ---
 
 ## Key Findings
 
-!!! success "The price effect is mostly within the auction"
-    The within-auction component — *sheltered bidding* — is **72.0% of the simulated total effect in non-pharma** and 68.8% in pharma. The share stays in the **69--85% range** across cost-distribution estimators (Turnbull NPMLE: 74, 82) and across the two specifications of the post-policy SME pool (strict invariance: 85, 79). The set-aside's price cost is mostly a property of how the surviving pool bids, not of how many firms it contains.
+!!! success "Exclusion dominates the price decomposition"
+    Removing non-SMEs while holding the pre-policy SME pool fixed (the &Delta;<sup>excl</sup> channel) accounts for **~72% of the price decomposition in absolute magnitude** in standardized non-pharmaceutical procurement. The post-policy protected pool responds (SME participation roughly doubles) but does not recreate the price discipline supplied by the excluded non-SMEs. The exclusion-dominant ranking survives Turnbull winner-censoring (74%), strict-invariance of the post-policy SME distribution (85%), and replacing the Poisson bidder-count process with the empirical class-period-type count distribution (69%).
 
-!!! warning "Endogenous SME entry attenuates a 59% larger latent shock in non-pharma, 81% in pharma"
-    Holding the SME pool at its pre-policy size raises the simulated price effect to **159% of the realized one in non-pharma** and 181% in pharma. Without endogenous entry, the set-aside would cost 59% more in price and welfare in non-pharma (81% in pharma). Participation is the government's partial offset, not the source of the markup.
+!!! danger "Static welfare cost of full set-aside: 28.9% in standardized markets"
+    At a marginal cost of public funds of &lambda;=0.30, the full SME-only regime generates a **static welfare loss of 28.9% of the open-regime price** in standardized non-pharmaceutical procurement. Pharmaceuticals exhibit larger but more composition-sensitive losses (44.8%), reported as a boundary case rather than a second headline.
 
-!!! danger "A 10% price preference welfare-dominates the set-aside in non-pharma"
-    In thick standardized markets the preference shifts simulated prices by **+0.010 against +0.244** under the set-aside, at essentially zero fiscal cost. The preference dominates under both the main equilibrium-selection specification and the strict-invariance benchmark.
+!!! info "A 10% price preference preserves the price-forming pool at near-zero static cost"
+    Simulated as a static design benchmark, a **10 percent SME price preference** keeps non-SMEs inside the auction and delivers positive SME-favoring redistribution at near-zero static welfare cost in standardized markets. The implied welfare weight required for a planner to prefer the full set-aside is **2.42 in non-pharmaceuticals**. Pharmaceuticals require 2.61 under the main specification and 0.7 under strict invariance &mdash; a bifurcation that pins down where the modeling treatment of the protected pool is first-order.
 
-!!! info "The pharmaceutical comparison bifurcates — and the bifurcation is the diagnostic"
-    In thin heterogeneous pharma markets the preference dominates under the main specification, but the ranking flips under strict invariance, with the implicit welfare weight required to prefer the set-aside falling to **0.7** (vs. 2.61 under the main specification). The bifurcation pins down where the modeling treatment of the protected pool is first-order.
+!!! warning "Pharmaceutical procurement is a boundary case"
+    The protected pool is thinner, composition changes more under the policy, and the welfare ranking becomes sensitive to how the post-policy SME pool is modeled. The non-pharmaceutical ranking is stable across the main and strict-invariance specifications; the pharmaceutical ranking is not. Pharmaceuticals are reported as a scope condition, not as a second headline result.
 
 !!! note "Three magnitudes that should not be confused"
-    The DiD coefficient (10--11%) is the average effect on observed log winning prices. The structural counterfactual (+0.227/+0.309 of p<sup>ref</sup>) is the simulated mean of the second-order statistic under each counterfactual entry profile, three to four times the DiD coefficient on the structural normalization. The welfare cost (28.9% of p<sub>S<sub>1</sub></sub> in non-pharma, 44.8% in pharma at λ = 0.30) adds the marginal-cost-of-public-funds distortion on top of the allocative wedge.
+    The DiD coefficient on log winning prices ($-$0.113 at 18m) is the average reduced-form effect, used as timing/sign/scale validation only. The structural counterfactual ($+$0.227 NP, $+$0.309 PH in $p^\mathrm{ref}$ units) is the simulated mean of the second-order statistic under each counterfactual bidder pool. The welfare cost (28.9% / 44.8% of $p_{S_1}$ at &lambda;=0.30) adds the marginal-cost-of-public-funds distortion on top of the allocative wedge.
 
 ---
 
@@ -89,14 +90,10 @@ Why do SME set-asides raise procurement prices? Two non-exclusive mechanisms ope
 
 [**Paper** <br> Manuscript description and methodology](paper.md)
 
-[**Results** <br> Structural decomposition, entry response, policy comparison](results.md)
+[**Results** <br> Main tables, event studies, and trends](results.md)
 
-[**Robustness** <br> Strict invariance, F<sub>c</sub> regime, window, sample filter](robustness.md)
+[**Robustness** <br> Placebo tests, alternative clustering, permutation inference](robustness.md)
 
-[**Extensions** <br> Welfare arithmetic, MCPF sensitivity, furosemida vignette](extensions.md)
-
-[**Advanced Methods** <br> Asymmetric IPV, drop-out point ID, UH cleaning, BNE simulation](advanced.md)
-
-[**Replication** <br> Code, data, software requirements](replication.md)
+[**Replication** <br> Code, data, and software requirements](replication.md)
 
 </div>

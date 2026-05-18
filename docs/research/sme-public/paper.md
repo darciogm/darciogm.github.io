@@ -6,24 +6,29 @@ paper: sme-public
 
 ## Download
 
-- [Main paper (v6, JPubE format) — PDF](assets/sme_public_procurement.pdf)
-- [Online appendix — PDF](assets/sme_public_online_appendix.pdf)
-- [Highlights — PDF](assets/sme_public_highlights.pdf)
-- [Video — *The Cost of Inclusion* (17 min, MP4)](assets/cost_of_inclusion.mp4)
+- [Main paper &mdash; PDF](assets/sme_public_procurement.pdf)
+- [Online appendix &mdash; PDF](assets/sme_public_online_appendix.pdf)
+- [Highlights &mdash; PDF](assets/sme_public_highlights.pdf)
+- [Cover letter &mdash; PDF](assets/sme_public_cover_letter.pdf)
+- [Video &mdash; *The Cost of Inclusion* (17 min, MP4)](assets/cost_of_inclusion.mp4)
 
-Submission-ready version, May 2026.
+JPubE submission, May 2026.
 
 ---
 
 ## Contribution
 
-The paper makes three contributions to the literature on procurement-preference rules.
+The paper makes three contributions:
 
-1. **Methodology — within-auction structural decomposition from a clean legal trigger.** The paper combines five conditions rare in the procurement-preference literature: a total-exclusion legal trigger (clean separation of regimes), a Pregao drop-out auction format (point-identification of cost distributions following Haile and Tamer 2003), an auction-level unobserved-heterogeneity correction (Krasnokutskaya 2011), an observed-equilibrium-entry treatment in the spirit of Athey, Coey, and Levin (2013) and Athey and Seira (2011), and a Saez and Stantcheva (2016) welfare-weight identity. Each component is established; the combination delivers a within-auction decomposition of an SME procurement preference where the partial-preference structural literature identifies the two margins jointly with cross-equation constraints rather than from a single legal trigger.
+1. **A price-formation decomposition.** I decompose the price effect of an SME set-aside into a **lost-discipline component** (non-SMEs removed from the price-forming pool, SME pool held fixed) and a **protected-pool offset** (post-policy SME pool replacing the pre-policy one). The decomposition turns the set-aside price effect into a design question: how much is mechanical exclusion of rival bidders, and how much is the protected pool's response?
 
-2. **Endogenous SME entry as a welfare object, not a side issue.** A fixed-pool counterfactual — the standard reduced-form shortcut — misstates the realized policy cost by 59% in non-pharma and 81% in pharma. The participation response is the government's partial offset to a larger latent within-auction shock, not the source of the markup.
+2. **Implementation via a reverse-auction setting.** In São Paulo's *Pregão* (electronic English-reverse auction), losing bidders' drop-out prices reveal type-specific willingness to supply under the maintained independent-private-values clock interpretation (Vickrey 1961; Milgrom and Weber 1982; Haile and Tamer 2003; Athey and Haile 2002). I use the recovered primitives, an auction-level heterogeneity correction in the spirit of Krasnokutskaya (2011), and observed equilibrium entry to simulate counterfactual price-formation objects under three pools.
 
-3. **A market-design statement, not a universal ranking.** A 10% price preference welfare-dominates the set-aside in thick, standardized non-pharma markets across both the main and the strict-invariance specifications. In thin, heterogeneous pharmaceutical markets the comparison depends on how the post-policy SME cost distribution is treated; we report the two readings as bounds on the welfare conclusion rather than as a tested model of selection. A firm-turnover discriminating test supports the main specification: 62% of post-period pharma SME firms are new entrants (vs. 44% in non-pharma), contributing 38% of post-period pharma bids. The bifurcation isolates the market conditions under which the modeling treatment of the protected pool becomes first-order for policy.
+3. **Recast of policy design.** The relevant policy frontier is not SME support versus no support, but **exclusionary redistribution versus support that preserves the price-forming bidder pool**. A 10 percent SME price preference enters as a static design benchmark: it preserves the non-SME bidders that discipline the price-forming order statistic but delivers less redistribution than full exclusion.
+
+In **standardized non-pharmaceutical** procurement, the protected pool responds (SME participation roughly doubles) but does not replace the excluded discipline: the full set-aside generates a **static welfare loss of 28.9% of the open-regime price** at &lambda;=0.30, with the exclusion component accounting for ~72% of the absolute price decomposition. The implied SME welfare weight required for a planner to prefer full exclusion to the 10% preference is **2.42**. The exclusion-dominant ranking survives Turnbull winner-censoring (74%), strict-invariance of the post-policy SME distribution (85%), and replacement of the Poisson bidder-count process with the empirical class-period-type count distribution (69%).
+
+**Pharmaceutical** procurement is reported as a **boundary case**, not as a second headline: there the protected pool is thinner, composition changes more under the policy, and the welfare ranking becomes sensitive to how the post-policy SME pool is modeled. The non-pharmaceutical ranking is stable across the main and strict-invariance specifications; the pharmaceutical ranking is not.
 
 ---
 

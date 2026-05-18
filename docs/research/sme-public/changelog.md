@@ -4,7 +4,16 @@ paper: sme-public
 
 # Changelog
 
-## v6 — May 2026 (Submission-ready, JPubE format)
+## v8 — May 2026 (JPubE submission)
+
+- **Title** is **The Price of Exclusion: SME Set-Asides in Public Procurement**. The framing moves from "sheltered bidding" (a within-auction conduct claim) to **price formation under exclusion** (the order statistic that prices the contract changes when non-SMEs are removed).
+- **Decomposition rebuilt** as $S_3 - S_1 = (S_2 - S_1) + (S_3 - S_2)$: a **lost competitive discipline** component (exclusion of non-SMEs, SME pool held fixed) and a **protected-pool offset** (post-policy SME pool replacing pre-policy). The two components are reported as counterfactual price-formation objects, not reduced-form treatment effects.
+- **Headline numbers** at &lambda;=0.30: non-pharma static welfare loss **28.9%** of the open-regime price; exclusion accounts for **72%** of the price decomposition (absolute share). Implied SME welfare weight to prefer full exclusion to a 10% preference: **2.42** (non-pharma) and **2.61** (pharma). Pharmaceuticals reported as a boundary case rather than a second headline.
+- **Empirical bidder-count robustness** (Online Appendix OA-D.2): replacing the Poisson bidder-count draws with sampling from the empirical class-period-type count distributions attenuates net effects by roughly a quarter but leaves the exclusion-dominant decomposition intact (exclusion shares 69.4% non-pharma, 63.1% pharma).
+- **Threat-assessment table** (Section 6, Table 5): eight identification and sensitivity threats mapped to diagnostic, finding, and remaining limitation.
+- **JPubE compliance**: Elsevier Harvard bibliography style, abstract under 250 words, 4 keywords + 5 JEL codes, highlights file, generative-AI declaration, acknowledgements section, data-availability statement.
+
+## v6 — May 2026 (Sheltered Bidding framing — superseded)
 
 **Polish round** consolidating v5 into JPubE submission shape.
 
