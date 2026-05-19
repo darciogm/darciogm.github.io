@@ -266,11 +266,13 @@
    */
   PortalOndax.stepStatus = function(aula, comp, myData) {
     var cal = window.MPE_CALENDARIO;
-    // Janela canonica (D_X / D_{X+1}) governa o ritmo ideal exposto ao
-    // aluno: 'closed' aqui significa "passou da janela ideal", nao
-    // "plataforma bloqueou submissao" (essa decisao vive em tracker.js
-    // via isClosed/getPrazo, e segue valida ate ACESSO_LIVRE_FIM).
-    var prazo = (cal && cal.getJanelaCanonica) ? cal.getJanelaCanonica(aula.n, comp) : null;
+    // Acesso livre unificado (decisao do Darcio 2026-05-19): TODOS os bundles
+    // ficam sempre clicaveis enquanto ACESSO_LIVRE vigora. Nao expomos mais
+    // 'locked' (aula futura) nem 'closed' (janela canonica passada) ao aluno
+    // no portal -- o significado pedagogico da janela canonica
+    // (D_X / D_{X+1}) continua vivo no IAAD-30 (C_prazo) e nas metricas de
+    // cramming/atraso do admin, que chamam getJanelaCanonica diretamente.
+    var prazo = (cal && cal.getPrazo) ? cal.getPrazo(aula.n, comp) : null;
     var pageId = comp === 'material' ? pageIdAula(aula.n)
               : comp === 'pre'      ? pageIdAula(aula.n) + '-pre'
               : comp === 'pos'      ? pageIdAula(aula.n) + '-pos'
@@ -472,6 +474,7 @@
    */
   PortalOndax.buildPendings = function(myData, aulas) {
     if (!aulas) return [];
+    var cal = window.MPE_CALENDARIO;
     var COMPS = [
       { key: 'pre',      label: 'Quiz pré-aula',  icon: '📝', est: '30–45 min', sufix: 'pre' },
       { key: 'material', label: 'Material',       icon: '📖', est: '90–120 min', sufix: '' },
@@ -487,11 +490,19 @@
         // Só incluir o que está realmente "para fazer": open (calendário aberto, não-done)
         // OU sem calendário mas considerado open por legado.
         if (st.state !== 'open') return;
-        var prazo = st.prazo && st.prazo.fecha ? st.prazo.fecha : null;
+
+        // Foco semanal: prazo/urgencia vem da janela canonica (D_X / D_{X+1}),
+        // nao do acesso livre (02/07). Aulas 1-2 sao graca: prazo=null para
+        // saírem do destaque e nunca virarem urgencia critica/alta.
+        var isGraca = (a.n === 1 || a.n === 2);
+        var janela = (!isGraca && cal && cal.getJanelaCanonica)
+                     ? cal.getJanelaCanonica(a.n, c.key) : null;
+        var prazo = janela ? janela.fecha : null;
         var diasRestantes = prazo != null ? Math.ceil((prazo - now) / 86400000) : null;
         var urgencia = 'normal';
-        if (diasRestantes != null) {
-          if (diasRestantes <= 2) urgencia = 'critica';
+        if (!isGraca && diasRestantes != null) {
+          if (diasRestantes < 0) urgencia = 'alta';          // canonicamente atrasada
+          else if (diasRestantes <= 2) urgencia = 'critica';
           else if (diasRestantes <= 5) urgencia = 'alta';
         }
         var href = 'aula-' + pad2(a.n) + (c.sufix ? '-' + c.sufix : '') + '.html';
@@ -506,14 +517,30 @@
           prazo: prazo,
           diasRestantes: diasRestantes,
           urgencia: urgencia,
-          est: c.est
+          est: c.est,
+          isGraca: isGraca
         });
       });
     });
+    // Ordenacao p/ foco semanal:
+    //   1. Janela canonica AINDA aberta -> crescente por prazo (mais perto primeiro).
+    //   2. Janela canonica passada (nao-graca) -> decrescente (mais recente primeiro).
+    //   3. Graca (aulas 1-2) -> no fim, sem ordem forte.
+    // Resultado: aluno ve "Aula da semana" no topo; pendencias atrasadas
+    // em seguida (mais recentes antes); aulas 1-2 ao fim para nao distrair.
     out.sort(function(a, b) {
+      if (a.isGraca !== b.isGraca) return a.isGraca ? 1 : -1;
+      if (a.isGraca && b.isGraca) return a.aulaN - b.aulaN;
+      var aFut = a.prazo != null && a.prazo >= now;
+      var bFut = b.prazo != null && b.prazo >= now;
+      if (aFut !== bFut) return aFut ? -1 : 1;
       var pa = a.prazo == null ? Infinity : a.prazo;
       var pb = b.prazo == null ? Infinity : b.prazo;
-      if (pa !== pb) return pa - pb;
+      if (aFut) {
+        if (pa !== pb) return pa - pb;        // futuro: crescente
+      } else {
+        if (pa !== pb) return pb - pa;        // passado: decrescente (mais recente primeiro)
+      }
       return a.aulaN - b.aulaN;
     });
     return out;
@@ -545,8 +572,13 @@
     function renderItem(p) {
       var urgClass = 'pend-urg-' + p.urgencia;
       var badge;
-      if (p.diasRestantes == null) badge = '<span class="pend-badge ' + urgClass + '">sem prazo</span>';
-      else if (p.diasRestantes <= 0) badge = '<span class="pend-badge pend-urg-critica">fecha hoje</span>';
+      if (p.isGraca) badge = '<span class="pend-badge pend-urg-normal">no seu ritmo</span>';
+      else if (p.diasRestantes == null) badge = '<span class="pend-badge ' + urgClass + '">sem prazo</span>';
+      else if (p.diasRestantes < 0) {
+        var atras = Math.abs(p.diasRestantes);
+        badge = '<span class="pend-badge ' + urgClass + '">atrasada (' + atras + 'd)</span>';
+      }
+      else if (p.diasRestantes === 0) badge = '<span class="pend-badge pend-urg-critica">fecha hoje</span>';
       else if (p.diasRestantes === 1) badge = '<span class="pend-badge pend-urg-critica">1 dia</span>';
       else badge = '<span class="pend-badge ' + urgClass + '">' + p.diasRestantes + ' dias</span>';
 
@@ -593,40 +625,77 @@
    */
   PortalOndax.computeRhythm = function(myData, aulas) {
     if (!aulas) return null;
+    var cal = window.MPE_CALENDARIO;
     var COMPS = ['pre','material','pos','exerc'];
-    var doneCount = 0, openCount = 0, lateCount = 0, totalCount = 0;
+    // Sob acesso livre, stepStatus retorna 'open' para tudo nao-done ate
+    // ACESSO_LIVRE_FIM (02/07). Para o indicador pedagogico de ritmo,
+    // consultamos a janela canonica D_X / D_{X+1} separadamente.
+    // Excecao: Aulas 1 e 2 nunca contam como atrasado nem como cobranca
+    // canonica -- graca explicita do Darcio (2026-05-19): qualquer
+    // submissao vale como "em-dia"; nao fazer nao vira late.
+    var doneGraca = 0, openGraca = 0;
+    var doneNormal = 0, openNormal = 0, lateNormal = 0;
     aulas.forEach(function(a) {
       if (!a.available) return;
+      var isGraca = (a.n === 1 || a.n === 2);
       COMPS.forEach(function(c) {
         var st = PortalOndax.stepStatus(a, c, myData);
-        if (st.state === 'locked') return; // ainda não conta
-        totalCount++;
-        if (st.state === 'done') doneCount++;
-        else if (st.state === 'open') openCount++;
-        else if (st.state === 'closed') lateCount++; // não-done E fechado = perdeu prazo
+        if (st.state === 'locked') return; // legado
+        if (st.state === 'done') {
+          if (isGraca) doneGraca++; else doneNormal++;
+          return;
+        }
+        if (isGraca) { openGraca++; return; }
+        var canonicalLate = false;
+        if (cal && cal.isCanonicaFechada) {
+          try { canonicalLate = cal.isCanonicaFechada(a.n, c); }
+          catch(e) { canonicalLate = false; }
+        }
+        if (canonicalLate) lateNormal++;
+        else openNormal++;
       });
     });
+    var doneCount = doneGraca + doneNormal;
+    var openCount = openGraca + openNormal;
+    var lateCount = lateNormal;
+    var totalCount = doneCount + openCount + lateCount;
+    // Denominador justo: so itens canonicamente cobrados (passados) das
+    // aulas 3-9. Itens futuros nao puxam ratio para baixo; aulas 1-2
+    // (graca) tambem nao entram (nem positivamente nem negativamente).
+    var dueNormal = doneNormal + lateNormal;
+
     var state, label, hint;
-    if (lateCount >= 1) {
+    if (lateNormal >= 1) {
       state = 'atrasado';
       label = 'Recuperando o passo';
-      hint = lateCount + ' atividade(s) fechou(aram) sem submissão. Foque nas pendências abertas — ainda dá pra zerar a próxima semana.';
+      hint = lateNormal + ' atividade(s) das Aulas 3+ passaram da janela canônica sem submissão. Submissão segue aberta — foque nas pendências da semana.';
     } else if (totalCount === 0) {
       state = 'novo';
       label = 'Começando agora';
       hint = 'Bem-vindo. Comece pelo Material ou Quiz pré-aula para registrar sua linha de base.';
-    } else if (doneCount / totalCount >= 0.5) {
+    } else if (dueNormal === 0) {
+      // Nada das aulas 3+ cobrado canonicamente ainda (semestre no comeco,
+      // ou aluno antecipou tudo). Se fez algo, em-dia; senao, novo.
+      if (doneCount > 0) {
+        state = 'em-dia'; label = 'Em dia';
+        hint = 'Você está em dia (ou adiantado) no calendário canônico. Mantém o ritmo.';
+      } else {
+        state = 'novo'; label = 'Começando agora';
+        hint = 'Comece pelo Material ou Quiz pré-aula. Aulas 1-2 são grátis no ritmo: faça quando puder.';
+      }
+    } else if (doneNormal / dueNormal >= 0.5) {
       state = 'em-dia';
       label = 'Em dia';
-      hint = 'Você concluiu mais da metade do que abriu. Mantém o ritmo.';
+      hint = 'Você concluiu mais da metade do que foi cobrado canonicamente nas Aulas 3+. Mantém o ritmo.';
     } else {
       state = 'pegando-ritmo';
       label = 'Pegando o ritmo';
-      hint = 'Ainda há margem para concluir antes do prazo. Comece pela pendência mais próxima.';
+      hint = 'Ainda há margem para concluir antes do prazo canônico. Comece pela pendência mais próxima.';
     }
     return {
       state: state, label: label, hint: hint,
-      doneCount: doneCount, openCount: openCount, lateCount: lateCount, totalCount: totalCount
+      doneCount: doneCount, openCount: openCount, lateCount: lateCount, totalCount: totalCount,
+      doneGraca: doneGraca, doneNormal: doneNormal, dueNormal: dueNormal
     };
   };
 
@@ -640,8 +709,10 @@
     var p = pendings[0];
     var dias = p.diasRestantes;
     var quando;
-    if (dias == null) quando = 'quando puder';
-    else if (dias <= 0) quando = 'hoje mesmo';
+    if (p.isGraca) quando = 'quando puder (aula 1-2)';
+    else if (dias == null) quando = 'quando puder';
+    else if (dias < 0) quando = 'para recuperar (janela canônica fechou)';
+    else if (dias === 0) quando = 'hoje mesmo';
     else if (dias === 1) quando = 'até amanhã';
     else if (dias <= 3) quando = 'nos próximos ' + dias + ' dias';
     else if (dias <= 7) quando = 'esta semana';
