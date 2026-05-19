@@ -25,12 +25,12 @@ with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conheciment
 
 ---
 
-### [Cheap Signals, Costly Proof: Award-Layer Triage for Cartel Enforcement](frequent-losers/index.md)
+### [Cheap Signals, Costly Proof: Award-Layer Evidence Triage in Cartel Enforcement](frequent-losers/index.md)
 
-with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026) | [PDF](frequent-losers/assets/paper_v17.pdf) | [Online appendix](frequent-losers/assets/paper_v17_online_appendix.pdf)
+with [Paulo Furquim de Azevedo](https://www.insper.edu.br/pesquisa-e-conhecimento/docentes-pesquisadores/paulo-furquim-de-azevedo/) (updated May, 2026 — JLEO submission-clean version) | [PDF](frequent-losers/paper.pdf) | [Online appendix](frequent-losers/online_appendix.pdf)
 
 ??? abstract "Abstract"
-    Can cheap data triage cartel investigations before costly forensics? Most antitrust enforcers see who won a public contract and at what price---not what every bidder offered. This thinner data is enough to flag which firms warrant costly forensic investigation. Our architecture sequences an award-layer screening stage before a costly bid-layer forensic stage, instantiated with a *frequent-loser* flag on São Paulo's BEC (2009--2019). The flag cuts the forensic stage's bid-microdata pool by 83% while still flagging two-thirds of adjudicated cartel cobidders. On the same data, it matches the seven-feature Imhof--Wallimann bid-distribution pipeline that requires bid microdata, adding non-redundant signal in combination. The discrimination is out-of-sample: built on 2009--2016 participation only, the screen prospectively flags adjudicated cobidders in 2017--2019. The screen triages; it does not adjudicate cartel membership. A simple separating-equilibrium argument motivates endogenous loser-side participation as the ranking primitive. Wherever award records are routinely available while bid microdata are forensic-recoverable, screening should be sequenced before forensics.
+    Cartel enforcement begins before legal proof exists. Agencies often observe contract-award records long before they recover the bid-level evidence needed to prove coordination. This paper asks whether that cheap award layer can allocate costly forensic attention. Using São Paulo's BEC procurement platform (2009--2019) and CADE adjudications, we construct a *frequent-loser* screen from award records alone: among zero-win firms, persistent participation ranks loser-side cartel-adjacency risk. The screen targets forensic priority, not cartel membership. We validate the ranking against adjudication-anchored cobidder labels, discipline it with exposure, timing, leakage, and direct-defendant scope checks, and compare it with bid-distribution forensics on the same target. Used sequentially, the award-layer ranking reduces the bid-microdata pool for the forensic stage by 83% while recovering 131 of 193 adjudicated cobidders.
 
 ??? note "Media coverage"
     - [National Dissertation Award - CAPES](https://www.insper.edu.br/noticias/premio-capes-de-teses-2021-darcio-genicolo-martins/)

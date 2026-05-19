@@ -7,7 +7,7 @@ hide:
 
 # Cheap Signals, Costly Proof
 
-<p class="subtitle">Award-Layer Triage for Cartel Enforcement</p>
+<p class="subtitle">Award-Layer Evidence Triage in Cartel Enforcement</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
@@ -20,27 +20,22 @@ hide:
 
 ## Abstract
 
-Can cheap data triage cartel investigations before costly
-forensics? Most antitrust enforcers see who won a public
-contract and at what price---not what every bidder offered.
-This thinner data is enough to flag which firms warrant costly
-forensic investigation. Our architecture sequences an
-award-layer screening stage before a costly bid-layer forensic
-stage, instantiated with a *frequent-loser* flag on São Paulo's
-BEC (2009--2019). The flag cuts the forensic stage's
-bid-microdata pool by 83% while still flagging two-thirds of
-adjudicated cartel cobidders. On the same data, it matches the
-seven-feature Imhof--Wallimann bid-distribution pipeline that
-requires bid microdata, adding non-redundant signal in
-combination. The discrimination is out-of-sample: built on
-2009--2016 participation only, the screen prospectively flags
-adjudicated cobidders in 2017--2019. The screen triages; it
-does not adjudicate cartel membership. A simple
-separating-equilibrium argument motivates
-endogenous loser-side participation as the ranking primitive.
-Wherever award records are routinely available while bid
-microdata are forensic-recoverable, screening should be
-sequenced before forensics.
+Cartel enforcement begins before legal proof exists. Agencies
+often observe contract-award records long before they recover
+the bid-level evidence needed to prove coordination. This paper
+asks whether that cheap award layer can allocate costly
+forensic attention. Using São Paulo's BEC procurement platform
+(2009--2019) and CADE adjudications, we construct a
+*frequent-loser* screen from award records alone: among zero-win
+firms, persistent participation ranks loser-side
+cartel-adjacency risk. The screen targets forensic priority,
+not cartel membership. We validate the ranking against
+adjudication-anchored cobidder labels, discipline it with
+exposure, timing, leakage, and direct-defendant scope checks,
+and compare it with bid-distribution forensics on the same
+target. Used sequentially, the award-layer ranking reduces the
+bid-microdata pool for the forensic stage by 83% while
+recovering 131 of 193 adjudicated cobidders.
 
 **JEL Classification:**
 <span class="badge">D44</span>
@@ -60,17 +55,17 @@ sequenced before forensics.
 
 ## Key Findings
 
-!!! success "3.6--7.7% conditional price association"
-    FL-present tenders exhibit **3.6--7.7% higher conditional prices** across four estimation approaches: cross-fit (3.6%), IPW (5.5%), OLS with item + year + PBU FE (6.4%), and CEM matching (7.7%). The estimates cluster rather than scatter, indicating a stable association across designs.
+!!! success "83% bid-microdata reduction"
+    Used as a sequential gatekeeper, the award-layer ranking reduces the bid-microdata pool for the forensic stage by **83%** while recovering **131 of 193 adjudicated cobidders**.
 
-!!! warning "AUC = 0.94 against CADE convictions"
-    The FL screen achieves **AUC = 0.94** against competition-authority convictions, versus 0.79 for an Imhof-style bid-level proxy. FL firms co-participate with convicted cartelists at **3.5 times** the baseline rate ($p < 0.001$). The two screens capture largely non-overlapping information (correlation 0.06); naively combining them into a single score degrades detection to AUC = 0.61, confirming that they operate on different dimensions and are best deployed sequentially.
+!!! warning "Validation target is legally limited"
+    The screen is validated against adjudication-anchored cobidders: always-loser firms observed alongside direct CADE defendants. It ranks forensic priority, not cartel membership, liability, damages, or legal proof.
 
-!!! danger "Coordinated cover bidding (Regime 2)"
-    BIC strongly favors coordinated cover bidding ($\Delta$BIC = $-91{,}473$): FL bids are 28% **less** dispersed than non-FL bids ($\sigma_c / \sigma_g = 0.72$). The price association concentrates in **competitive markets** (0.126) and vanishes in concentrated ones ($-0.018$), consistent with strategic complementarity ($\hat{\gamma} = 0.69 > 0$).
+!!! info "Evidence allocation under incomplete observability"
+    Award records are cheap and routinely observed; bid-level records are richer but costly to recover. The paper studies how these layers should be sequenced when enforcement begins before legal proof exists.
 
-!!! info "Three-stage enforcement pathway"
-    The FL screen requires only **participation and outcome data** (no bid values). We propose a screen--triage--investigate pathway that exploits a **12.5x gradient** in the FL--price association across PBU size quartiles to direct investigative resources where oversight is weakest.
+!!! note "Validation architecture"
+    The ranking is disciplined with participation-volume placebos, exposure adjustment over comparable opportunity sets, temporal holdouts, leakage checks, and a direct-defendant scope check.
 
 ---
 
@@ -80,7 +75,9 @@ sequenced before forensics.
 
 [**Video** <br> Narrated animated overview of the paper (English)](video.md)
 
-[**Paper** <br> Contribution, institutional setting, and empirical strategy](paper.md)
+[**Paper** <br> Download the current main manuscript](paper.pdf)
+
+[**Online Appendix** <br> Supporting framework and validation details](online_appendix.pdf)
 
 [**Results** <br> Classification, detection, price association, and diagnostics](results.md)
 
