@@ -704,14 +704,29 @@
    * urgente e devolve uma frase pedagógica curta. Considera horaPico
    * do circadian quando disponível.
    */
-  PortalOndax.buildNextStep = function(pendings, circadian) {
+  PortalOndax.buildNextStep = function(pendings, circadian, rhythm) {
     if (!pendings || pendings.length === 0) return null;
     var p = pendings[0];
     var dias = p.diasRestantes;
+
+    // Mode do card:
+    //   'recuperar' - aluno tem item canonicamente atrasado (lateNormal>=1
+    //                  OU pendings[0] tem dias<0 nao-graca);
+    //   'adiantado' - aluno fez tudo da janela canonica corrente;
+    //                  pendings[0] eh aula futura (>7d) ou so graca aulas 1-2;
+    //   'urgente'   - default; pendings[0] tem janela canonica proxima (<=7d).
+    var hasLate = !!(rhythm && rhythm.lateNormal && rhythm.lateNormal > 0);
+    var mode;
+    if (hasLate) mode = 'recuperar';
+    else if (!p.isGraca && dias != null && dias < 0) mode = 'recuperar';
+    else if (p.isGraca) mode = 'adiantado';
+    else if (dias != null && dias > 7) mode = 'adiantado';
+    else mode = 'urgente';
+
     var quando;
-    if (p.isGraca) quando = 'quando puder (aula 1-2)';
+    if (p.isGraca) quando = 'sem prazo canônico (aula 1-2)';
     else if (dias == null) quando = 'quando puder';
-    else if (dias < 0) quando = 'para recuperar (janela canônica fechou)';
+    else if (dias < 0) quando = 'para recuperar (janela canônica fechou há ' + Math.abs(dias) + 'd)';
     else if (dias === 0) quando = 'hoje mesmo';
     else if (dias === 1) quando = 'até amanhã';
     else if (dias <= 3) quando = 'nos próximos ' + dias + ' dias';
@@ -723,11 +738,25 @@
       var dow = ['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
       sugestao = ' Seu melhor horário até aqui é ' + dow[circadian.horaPico.dow] + ' por volta das ' + circadian.horaPico.hour + 'h.';
     }
+
+    var textPrefix, ctaText;
+    if (mode === 'adiantado') {
+      textPrefix = '<strong>Você está em dia.</strong> Quer adiantar? Próximo: ';
+      ctaText = 'adiantar →';
+    } else if (mode === 'recuperar') {
+      textPrefix = '<strong>Para recuperar:</strong> ';
+      ctaText = 'recuperar →';
+    } else {
+      textPrefix = 'Próximo passo: ';
+      ctaText = 'abrir agora →';
+    }
+
     return {
-      text: 'Próximo passo: <strong>' + p.icon + ' ' + p.label + ' da Aula ' + pad2(p.aulaN) + '</strong> — ' + quando + '.' + sugestao,
+      text: textPrefix + '<strong>' + p.icon + ' ' + p.label + ' da Aula ' + pad2(p.aulaN) + '</strong> — ' + quando + '.' + sugestao,
       href: p.href,
-      cta: 'abrir agora →',
-      urgencia: p.urgencia
+      cta: ctaText,
+      urgencia: p.urgencia,
+      mode: mode
     };
   };
 

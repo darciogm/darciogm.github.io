@@ -813,8 +813,8 @@ async function renderOnda1() {
   var elCirc = document.getElementById('circadian-body');
   if (elCirc) elCirc.innerHTML = window.PortalOndax.renderCircadian(cir);
 
-  // Próximo passo recomendado (usa pendings + circadian)
-  var nextStep = window.PortalOndax.buildNextStep(pendings, cir);
+  // Próximo passo recomendado (usa pendings + circadian + rhythm para decidir mode)
+  var nextStep = window.PortalOndax.buildNextStep(pendings, cir, rhythm);
   renderNextStep(nextStep, rhythm);
 
   // E2 — Calibracao de confianca
@@ -895,7 +895,13 @@ function renderNextStep(nextStep, rhythm) {
   }
   card.style.display = 'flex';
   card.classList.remove('next-step-zen','next-step-critica','next-step-alta','next-step-normal');
-  card.classList.add('next-step-' + nextStep.urgencia);
+  // Mode 'adiantado' -> verde (zen); 'recuperar' -> ambar (alta);
+  // 'urgente' -> cor da urgencia do pendings[0] (critica/alta/normal).
+  var cssMode;
+  if (nextStep.mode === 'adiantado') cssMode = 'zen';
+  else if (nextStep.mode === 'recuperar') cssMode = 'alta';
+  else cssMode = nextStep.urgencia;
+  card.classList.add('next-step-' + cssMode);
   document.getElementById('next-step-text').innerHTML = nextStep.text;
   document.getElementById('rhythm-hint').textContent = rhythm ? rhythm.hint : '';
   var cta = document.getElementById('next-step-cta');
