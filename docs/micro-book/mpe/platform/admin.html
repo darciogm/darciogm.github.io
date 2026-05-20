@@ -7456,7 +7456,20 @@ async function renderAdmin() {
   var totalItems = TOTAL_AULAS + TOTAL_MONITORIAS;
   var totalTime = summary.reduce(function(a,s){return a+s.totalTimeMin},0);
   var avgQuiz = summary.length > 0 ? summary.reduce(function(a,s){return a+s.avgQuizScore},0)/summary.length : 0;
-  var completionRate = totalStudents > 0 ? Math.round(summary.reduce(function(a,s){return a+s.pagesVisited},0) / (totalStudents * totalItems) * 100) : 0;
+  // Completude: cap por aluno em availableItems (encontros JA acontecidos),
+  // alinhado com _vizComputeTopBulletData(). Sem cap, pagesVisited inflaciona
+  // porque cada aula tem 4 paginas (material/pre/pos/exerc) vs. 1 "encontro".
+  var _nowMs = Date.now();
+  var availableItems = 0;
+  if (window.MPE_CALENDARIO) {
+    (window.MPE_CALENDARIO.AULAS_DATAS || []).forEach(function(ms){ if (ms <= _nowMs) availableItems++; });
+    (window.MPE_CALENDARIO.MONITORIAS_DATAS || []).forEach(function(ms){ if (ms <= _nowMs) availableItems++; });
+  }
+  if (availableItems === 0) availableItems = totalItems;  // fallback antes do semestre
+  var _nonAdminSummary = summary.filter(function(s){ return s.matricula.toLowerCase().indexOf('prof') !== 0; });
+  var completionRate = (_nonAdminSummary.length > 0 && availableItems > 0)
+    ? Math.round(_nonAdminSummary.reduce(function(a,s){ return a + Math.min(s.pagesVisited||0, availableItems); }, 0) / (_nonAdminSummary.length * availableItems) * 100)
+    : 0;
 
   // === STATS TOP ===
   document.getElementById('admin-stats').innerHTML =
