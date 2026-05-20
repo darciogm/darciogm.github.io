@@ -197,34 +197,14 @@ Em $L = 1, S = 2$: $x^i = (x^i_{\text{chuva}}, x^i_{\text{sol}}) \in \mathbb{R}^
 
 ## Diagrama em $L = 1, S = 2$
 
-::: {.cols}
-::: {}
-**Eixo horizontal:** $x_1$ (consumo se chover).
+<iframe src="graficos/risco-45.html" style="width:100%; height:420px; border:none; background:#fff; display:block; margin-bottom:0;"></iframe>
 
-**Eixo vertical:** $x_2$ (consumo se sol).
-
-**Reta de 45°:** consumo idêntico nos dois estados — *sem risco*.
-
-**Distância à 45°:** exposição ao risco.
-:::
-::: {}
-```
-   x_2 (sol)
-    |
-160 +     o 45 graus
-    |    /
-100 +  * /   <- dotacao (60,100)
-    |  /
- 60 + /
-    |/
-    +----------- x_1 (chuva)
-    0  60  100  160
-```
-:::
+::: {.callout-note .callout style="font-size:0.78em; margin-top:0.3em; padding:0.4em 0.7em;"}
+**O que a distância mede.** Variância do consumo **entre estados** — é geometria em $\mathbb{R}^{LS}_+$, não bem-estar. Aversão ao risco depende da concavidade de $v^i$ (próximo slide); probabilidades $\pi_s$ não entram aqui.
 :::
 
-::: {.eq-punch}
-Quanto mais longe da 45°, mais arriscado.
+::: {.notes}
+Mexa os sliders. Quando $\omega_1 = \omega_2$, o ponto **encosta** na reta de 45° e o status fica verde — sem risco. Qualquer afastamento ortogonal mede a exposição **geométrica**: dispersão de consumo entre estados. Cravar a distinção: distância à 45° é objeto do espaço de bens; aversão ao risco é objeto das preferências (Bloco 1). Um agente neutro ao risco com $\omega$ fora da 45° tem a mesma "exposição geométrica" que um avesso — só que não se importa. Esse é o ferramental visual que vai sustentar Arrow-Debreu: estados como dimensões, dotação como ponto em $\mathbb{R}^{LS}_+$, risco como geometria.
 :::
 
 ---
@@ -249,7 +229,7 @@ Black-Scholes vive aqui. Aula 6 toca.
 
 ---
 
-## Preferências sobre $\mathbb{R}^{LS}_+$
+## Preferências sobre $\mathbb{R}^{LS}_+$ (1/2)
 
 **Continuidade, monotonicidade, convexidade:** mesmas definições, espaço novo.
 
@@ -263,14 +243,18 @@ $$
 **Aversão ao risco** $\Leftrightarrow$ Bernoulli $v^i$ côncava.
 :::
 
+---
+
+## EU — quando usar, onde estudar (2/2)
+
 **Pontos de citação (sem ensino formal hoje):**
 
 - VNM (1944): axiomatização de EU.
-- Allais, Ellsberg: anomalias documentadas.
+- Allais, Ellsberg: anomalias documentadas — EU não é universal.
 - N&S Cap. 7 / J-R §2 / MWG §6 cobrem com rigor.
 
 ::: {.bridge}
-EU entra como **ferramenta**. Não é pré-requisito.
+EU entra como **ferramenta**. Não é pré-requisito do aparelho AD.
 :::
 
 ---
@@ -522,8 +506,7 @@ p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i.
 $$
 
 ::: {.eq-punch}
-$$p^* \cdot \sum_i \tilde x^i \;>\; p^* \cdot \sum_i \omega^i.$$
-Contradição com viabilidade.
+Contradição: $p^* \cdot \sum_i \tilde x^i > p^* \cdot \sum_i \omega^i$, violando viabilidade.
 :::
 
 ---

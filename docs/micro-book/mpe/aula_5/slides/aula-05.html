@@ -331,29 +331,36 @@ x^i = (x^i_{\ell, s})_{\ell \in L, s \in S} \in \mathbb{R}^{LS}_+.
 </section>
 <section class="slide level2 center">
 <h2>Diagrama em <span class="math inline">\(L = 1, S = 2\)</span></h2>
-<div class="cols">
-<div>
-<p><strong>Eixo horizontal:</strong> <span class="math inline">\(x_1\)</span> (consumo se chover).</p>
-<p><strong>Eixo vertical:</strong> <span class="math inline">\(x_2\)</span> (consumo se sol).</p>
-<p><strong>Reta de 45°:</strong> consumo idêntico nos dois estados — <em>sem risco</em>.</p>
-<p><strong>Distância à 45°:</strong> exposição ao risco.</p>
+<iframe src="graficos/risco-45.html" style="width:100%; height:420px; border:none; background:#fff; display:block; margin-bottom:0;">
+</iframe>
+<div style="font-size:0.78em; margin-top:0.3em; padding:0.4em 0.7em;">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div>
-<pre><code>   x_2 (sol)
-    |
-160 +     o 45 graus
-    |    /
-100 +  * /   &lt;- dotacao (60,100)
-    |  /
- 60 + /
-    |/
-    +----------- x_1 (chuva)
-    0  60  100  160</code></pre>
+<p><strong>Nota</strong></p>
+</div>
+<div class="callout-content">
+<p><strong>O que a distância mede.</strong> Variância do consumo <strong>entre estados</strong> — é geometria em <span class="math inline">\(\mathbb{R}^{LS}_+\)</span>, não bem-estar. Aversão ao risco depende da concavidade de <span class="math inline">\(v^i\)</span> (próximo slide); probabilidades <span class="math inline">\(\pi_s\)</span> não entram aqui.</p>
 </div>
 </div>
-<div class="eq-punch">
-<p>Quanto mais longe da 45°, mais arriscado.</p>
 </div>
+</div>
+<aside class="notes">
+<p>Mexa os sliders. Quando <span class="math inline">\(\omega_1 = \omega_2\)</span>, o ponto <strong>encosta</strong> na reta de 45° e o status fica verde — sem risco. Qualquer afastamento ortogonal mede a exposição <strong>geométrica</strong>: dispersão de consumo entre estados. Cravar a distinção: distância à 45° é objeto do espaço de bens; aversão ao risco é objeto das preferências (Bloco 1). Um agente neutro ao risco com <span class="math inline">\(\omega\)</span> fora da 45° tem a mesma “exposição geométrica” que um avesso — só que não se importa. Esse é o ferramental visual que vai sustentar Arrow-Debreu: estados como dimensões, dotação como ponto em <span class="math inline">\(\mathbb{R}^{LS}_+\)</span>, risco como geometria.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section class="slide level2 center">
 <h2>Tempo é caso particular de estado</h2>
@@ -392,7 +399,7 @@ x^i = (x^i_{\ell, s})_{\ell \in L, s \in S} \in \mathbb{R}^{LS}_+.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Preferências sobre <span class="math inline">\(\mathbb{R}^{LS}_+\)</span></h2>
+<h2>Preferências sobre <span class="math inline">\(\mathbb{R}^{LS}_+\)</span> (1/2)</h2>
 <p><strong>Continuidade, monotonicidade, convexidade:</strong> mesmas definições, espaço novo.</p>
 <p><strong>Caso particular pedagógico — utilidade esperada (EU):</strong></p>
 <p><span class="math display">\[
@@ -411,14 +418,17 @@ u^i(x^i) = \sum_{s \in S} \pi^i_s\, v^i(x^i_s).
 </div>
 </div>
 </div>
+</section>
+<section class="slide level2 center">
+<h2>EU — quando usar, onde estudar (2/2)</h2>
 <p><strong>Pontos de citação (sem ensino formal hoje):</strong></p>
 <ul>
 <li>VNM (1944): axiomatização de EU.</li>
-<li>Allais, Ellsberg: anomalias documentadas.</li>
+<li>Allais, Ellsberg: anomalias documentadas — EU não é universal.</li>
 <li>N&amp;S Cap. 7 / J-R §2 / MWG §6 cobrem com rigor.</li>
 </ul>
 <div class="bridge">
-<p>EU entra como <strong>ferramenta</strong>. Não é pré-requisito.</p>
+<p>EU entra como <strong>ferramenta</strong>. Não é pré-requisito do aparelho AD.</p>
 </div>
 </section>
 <section class="slide level2 center">
@@ -704,7 +714,7 @@ P_0 = E^\pi [m \cdot D] = \sum_s \pi_s\, m_s\, D_s.
 p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i.
 \]</span></p>
 <div class="eq-punch">
-<p><span class="math display">\[p^* \cdot \sum_i \tilde x^i \;&gt;\; p^* \cdot \sum_i \omega^i.\]</span> Contradição com viabilidade.</p>
+<p>Contradição: <span class="math inline">\(p^* \cdot \sum_i \tilde x^i &gt; p^* \cdot \sum_i \omega^i\)</span>, violando viabilidade.</p>
 </div>
 </section>
 <section class="slide level2 center">
