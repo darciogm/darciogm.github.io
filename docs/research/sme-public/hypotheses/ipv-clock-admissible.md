@@ -110,15 +110,19 @@ in hand; the ANs are scaffolded but not yet authored.
 | [AN-013](../analyses/an-013-pregao-dropouts.md) | Supports | Three winner-censoring regimes (losers-only / all-bidders / Turnbull) give net $S_3-S_1$ in [0.246, 0.275] (NP) and [0.308, 0.357] (PH); all positive, all large. Turnbull exclusion share 74% (NP) / 82% (PH). |
 | [AN-014](../analyses/an-014-uh-correction.md) | Supports | UH correction with ICCs 0.36 (NP-SME) to 0.59 (PH non-SME). Gaussian-copula ρ_c ≤ 0.3: exclusion share drift <5 pp; total drift <10%. |
 | [AN-015](../analyses/an-015-collusion-screens.md) | Supports | Conley close-pair shares stable in NP (16.9→16.8) / fall in PH (27.6→24.4); Bajari-Ye T1 ratios fall in both classes (NP 2.63→1.83; PH 1.29→1.11). Differential-coordination story rejected. |
+| [AN-019](../analyses/an-019-cross-modality-gpv.md) | Supports (partial) | Cross-modality GPV from Convite first-price aligns with Pregão drop-outs in the load-bearing pharma non-SME pre cell (c₀.₅₀ = 0.712 vs 0.704); other 7 cells show a persistent ~0.2 wedge consistent with first-price bid shading. UH-corrected version broadens alignment (§6.2). |
 
 ## Open tests
 
 ### Cross-modality convergence test
 
-`v7-jpube-tight/scripts/38_cross_modality.R` recovers a GPV cost
-distribution from Convite first-price bids. Convergence with the Pregão
-drop-out distribution would be the cleanest external validation.
-Currently a robustness exercise; deserves an AN page of its own.
+**Done** in [AN-019](../analyses/an-019-cross-modality-gpv.md):
+Convite first-price GPV vs Pregão drop-outs. Load-bearing pharma
+non-SME pre cell aligns (0.712 vs 0.704); other 7 cells show
+~0.2 first-price wedge consistent with strategic bid shading. UH-
+corrected version broadens alignment per paper §6.2. **Open**: emit
+the UH-corrected table as macro-bound numbers (currently figure-only),
+and run a KS / quantile-equality test by cell for formal $p$-values.
 
 ### Turnbull NPMLE on winner censoring
 

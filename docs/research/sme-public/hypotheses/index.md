@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Hypotheses
 
 Testable predictions for *The Price of Exclusion: SME Set-Asides in Public
@@ -123,7 +119,7 @@ Status runs **Not yet tested** → **Not confirmed** / **Mixed** / **Partial**
 | [H4](sme-winner-share-falls.md) | Open auctions → lower probability winner is SME | Non-SMEs outbid SMEs on price when allowed in | [AN-008](../analyses/an-008-gelbach-decomp.md) composition channel ~185% of Gelbach gap; [AN-009](../analyses/an-009-sme-winner-extensions.md) extensions confirm | **Partial** |
 | [H5](exclusion-dominates.md) | Lost-discipline $\|S_2-S_1\|$ dominates protected-pool offset $\|S_3-S_2\|$ | The excluded non-SMEs were the price-forming bidders | [AN-010](../analyses/an-010-bne-decomposition.md) absolute exclusion share ~72% (non-pharma); [AN-017](../analyses/an-017-strict-invariance.md) survives strict-invariance | **Partial** |
 | [H6](protected-pool-responds.md) | SME participation rises post-cutoff but does not close the gap | Protected firms enter; entry alone cannot replace discipline | [AN-010](../analyses/an-010-bne-decomposition.md) SME bidders roughly double; net $S_3-S_1$ remains positive | **Partial** |
-| [H7](ipv-clock-admissible.md) | Pregão drop-outs admit IPV-clock interpretation | English clock + private values + truthful exit pin down willingness-to-supply | [AN-013](../analyses/an-013-pregao-dropouts.md) Turnbull NPMLE exclusion share 74%/82% (NP/PH); [AN-014](../analyses/an-014-uh-correction.md) UH-corrected ICCs 0.36–0.59, Gaussian-copula ρ_c=0.3 drifts share <5pp; [AN-015](../analyses/an-015-collusion-screens.md) Conley + BY screens flat or falling | **Partial (toward Supports)** |
+| [H7](ipv-clock-admissible.md) | Pregão drop-outs admit IPV-clock interpretation | English clock + private values + truthful exit pin down willingness-to-supply | [AN-013](../analyses/an-013-pregao-dropouts.md) Turnbull NPMLE exclusion share 74%/82% (NP/PH); [AN-014](../analyses/an-014-uh-correction.md) UH-corrected ICCs 0.36–0.59, Gaussian-copula ρ_c=0.3 drifts share <5pp; [AN-015](../analyses/an-015-collusion-screens.md) Conley + BY screens flat or falling; [AN-019](../analyses/an-019-cross-modality-gpv.md) Convite GPV aligns with Pregão in load-bearing pharma non-SME pre cell (0.712 vs 0.704), other 7 cells show ~0.2 first-price wedge | **Partial (strongly supported)** |
 | [H8](static-welfare-loss-large.md) | Full SME-only set-aside generates large static welfare loss | DWL$_{\mathrm{alloc}}$ + &lambda; · MCPF arithmetic at &lambda;=0.30 | [AN-011](../analyses/an-011-welfare-arithmetic.md) 28.9% of open-regime price (non-pharma); [AN-016](../analyses/an-016-pharma-boundary.md) pharma 44.8% but model-sensitive | **Partial** |
 | [H9](preference-near-zero-cost.md) | 10% SME price preference preserves the price-forming pool at near-zero static cost | Eligible non-SMEs continue to discipline the price | [AN-012](../analyses/an-012-preference-benchmark.md) $\Delta p$ near zero in non-pharma at 10% preference | **Partial** |
 | [H10](implied-welfare-weight-large.md) | Planner needs SME welfare weight ~2.42 to prefer full set-aside | Saez-Stantcheva inversion of the welfare-loss arithmetic | [AN-011](../analyses/an-011-welfare-arithmetic.md) implied weight 2.42 (non-pharma) | **Partial** |

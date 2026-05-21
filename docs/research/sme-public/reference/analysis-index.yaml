@@ -214,3 +214,14 @@
   file: docs/analyses/an-018-cs2021-staggered.md
   script: scripts/19_cs2021.R
   target: output/tables/tab_cs2021.tex
+
+- id: an-019
+  hypothesis: ipv-clock-admissible
+  status: done
+  type: robustness
+  question: Does a GPV (Guerre-Perrigne-Vuong 2000) recovery of the bidder cost distribution from Convite first-price bids converge with the Pregão drop-out recovery, providing cross-modality discipline on the IPV-clock interpretation?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", cross-modality, gpv, convite, fpsb, structural-validation, second-identification-source]
+  file: docs/analyses/an-019-cross-modality-gpv.md
+  script: v7-jpube-tight/scripts/38_cross_modality.R
+  target: v7-jpube-tight/output/tables/tab_v3_cross_modality.tex

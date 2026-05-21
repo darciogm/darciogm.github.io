@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Findings — The Price of Exclusion
 
 This page is the curated index of *what we have learned* from the project's
@@ -101,7 +97,10 @@ see [H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
   effect by <10% ([AN-014](../analyses/an-014-uh-correction.md));
   strict invariance reinforces the dominance ordering, raising the
   exclusion share to 85% non-pharma and 79% pharma
-  ([AN-017](../analyses/an-017-strict-invariance.md)). The screens do
+  ([AN-017](../analyses/an-017-strict-invariance.md)); cross-modality
+  GPV from Convite first-price aligns with Pregão drop-outs in the
+  load-bearing pharma non-SME pre cell ($c_{0.50}$ 0.712 vs 0.704;
+  [AN-019](../analyses/an-019-cross-modality-gpv.md)). The screens do
   not *prove* the IPV-clock reading — that is why findings remain 🟡
   — but they rule out the most obvious bid-conduct deviations.
   Residual baseline clustering remains an acknowledged limitation
