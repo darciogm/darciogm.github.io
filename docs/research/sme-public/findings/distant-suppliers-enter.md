@@ -4,6 +4,15 @@ paper: sme-public
 
 # Open auctions pull in geographically distant non-SME suppliers
 
+!!! info "Reduced-form motivation layer"
+    The headline number on this page comes from the v1–v4 reduced-form
+    DiDiR pipeline. The v8 manuscript carries this as **motivation**
+    in §1 but does not headline it; the v8 canonical claim is the
+    structural decomposition — see
+    [Exclusion dominates the price decomposition](exclusion-dominates-decomposition.md)
+    and
+    [Static welfare cost ~28.9%](static-welfare-loss-large.md).
+
 🟡 On high-value items in switched group 65, opening to non-SME bidders
 *widens* the average buyer-winner distance by **+12.1 km** (p<0.01,
 item-clustered SEs), identified by DiDiR

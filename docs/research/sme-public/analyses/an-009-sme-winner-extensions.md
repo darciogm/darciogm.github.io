@@ -19,6 +19,14 @@ design:
 
 # AN-009: SME-winner share and extensions
 
+!!! info "Reduced-form motivation layer"
+    The numbers below are from the v1–v4 reduced-form DiDiR pipeline
+    (`scripts/02_analysis.R` + companions), which the v8 manuscript
+    carries as **motivation** in §1 but does not headline. The canonical
+    v8 result is the structural counterfactual decomposition — see
+    [AN-010](an-010-bne-decomposition.md) (decomposition) and
+    [AN-011](an-011-welfare-arithmetic.md) (welfare arithmetic).
+
 ## Question
 
 Under open competition (pre-period in switched group 65), what fraction

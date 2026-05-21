@@ -48,25 +48,35 @@ bidder pools.
 
 ## Results
 
-The headline magnitudes are macro-bound in
-`v8-jpube/output/values.tex` and entered the paper via macros
-(`\bneMeanSoneNp`, `\bneEffectIntensNp`, etc.). Per paper §4:
+Headline magnitudes from `v8-jpube/output/values.tex` (canonical BNE run,
+B = 10,000 Monte Carlo draws). All values reported as fractions of the
+buyer reference price $p^{\mathrm{ref}}$.
 
-In standardized **non-pharma**, moving from $S_1$ to $S_2$ raises the
-simulated price by a positive amount (`\bneEffectIntensNp`) of the
-reference price; replacing the fixed pre-policy SME pool with the
-observed post-policy SME pool reduces the price by `\bneEffectEntryNp`;
-the net effect $S_3 - S_1$ remains positive at `\bneEffectTotalNp`.
-The absolute exclusion share is **~72%** (`\bneShareIntensNp`).
+In standardized **non-pharma**:
 
-In **pharma**, the same qualitative pattern holds at higher magnitudes
-but with more model sensitivity
-([AN-016](an-016-pharma-boundary.md)).
+| Object | Value | Macro |
+|---|---:|---|
+| $S_1$ (open pre-policy) | 0.774 | `\bneMeanSoneNp` |
+| $S_2$ (SME-only, pre-pool fixed) | 1.144 | `\bneMeanStwoNp` |
+| $S_3$ (SME-only, post-pool) | 1.000 | `\bneMeanSthreeNp` |
+| **$S_2 - S_1$** (lost-discipline) | **+0.371** | `\bneEffectIntensNp` |
+| **$S_3 - S_2$** (protected-pool offset) | **−0.144** | `\bneEffectEntryNp` |
+| **$S_3 - S_1$** (net effect) | **+0.227** | `\bneEffectTotalNp` |
+| **Absolute exclusion share** | **72.0%** | `\bneShareIntensNp` |
+| Exclusion-to-net ratio | 164% | `\bneIntensRelNetNp` |
 
-Bidder counts: SME participation rises sharply post-cutoff
-(`\bneNsmePreNp` → `\bneNsmePostNp` in non-pharma); non-SME
-participation moves in the opposite direction
-(`\bneNnsPreNp` → `\nonSmePostNp`).
+In **pharma** (boundary case — see [AN-016](an-016-pharma-boundary.md)):
+$S_1$ = 0.654, $S_2$ = 1.219, $S_3$ = 0.963; exclusion magnitude +0.565,
+offset −0.256, net +0.309. Absolute exclusion share **68.8%**;
+exclusion-to-net ratio 183%. Same qualitative pattern at higher
+magnitudes; the welfare *ranking* is more model-sensitive than in
+non-pharma.
+
+**Bidder counts (per auction).** Non-pharma: SME participation
+**0.94 → 1.87** post-cutoff (roughly doubles); non-SME participation
+**2.68 → 1.50** (falls but does not vanish — many auctions are above
+the R$80K SME-eligibility ceiling and remain open). Pharma: SME
+**0.55 → 1.22**; non-SME **2.61 → 1.66**.
 
 *See Figure 4 (Counterfactual price decomposition) in `paper.pdf` §4.*
 

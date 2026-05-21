@@ -54,11 +54,14 @@ between the strength of the response and the size of the lost discipline.
 ## Setting evidence
 
 Pregão entry is observed at the firm-auction grain. SME participation
-rises from $\bne_{Nsme}^{Pre}$ to $\bne_{Nsme}^{Post}$ in non-pharma
-(per [paper §4](../paper.md)); non-SME participation moves in the
-opposite direction. The composition shift is mechanical from the
-eligibility rule; the question is whether the additional SMEs are
-*cost-equivalent* to the excluded non-SMEs.
+rises from **0.94 → 1.87** SME bidders per auction in non-pharma
+(roughly doubles), and from **0.55 → 1.22** in pharma. Non-SME
+participation moves in the opposite direction but does not vanish:
+**2.68 → 1.50** in non-pharma, **2.61 → 1.66** in pharma — a residual
+non-SME presence persists because many auctions are above the R$80K
+SME-eligibility ceiling and remain open. The composition shift on the
+SME side is large and mechanical; the open question is whether the
+additional SMEs are *cost-equivalent* to the excluded non-SMEs.
 
 ## Empirical test
 

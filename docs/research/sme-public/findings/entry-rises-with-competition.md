@@ -4,6 +4,15 @@ paper: sme-public
 
 # Open auctions increase bidder participation by ~10–22%
 
+!!! info "Reduced-form motivation layer"
+    The headline number on this page comes from the v1–v4 reduced-form
+    DiDiR pipeline. The v8 manuscript carries this as **motivation**
+    in §1 but does not headline it; the v8 canonical claim is the
+    structural decomposition — see
+    [Exclusion dominates the price decomposition](exclusion-dominates-decomposition.md)
+    and
+    [Static welfare cost ~28.9%](static-welfare-loss-large.md).
+
 🟡 Opening switched group 65 to non-SME bidders increased the average
 number of participating firms by **~22% in the 6-month window**, attenuating
 to **~10% in the 18-month window**, identified by DiDiR around March 2018

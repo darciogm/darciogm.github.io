@@ -43,16 +43,19 @@ does it deliver?
 
 ## Results
 
-The preference benchmark cells are macro-bound in
-`v8-jpube/output/values.tex`. Per paper §5:
+From `v8-jpube/output/values.tex` (10% SME price preference for
+selection only; government pays actual winning bid; entry held fixed):
 
-In **non-pharma**, the simulated price effect is essentially zero:
-`\optPrefShiftNp` of the reference price. SME win-rate rises by
-`\prefSmeWinGainTenNp` percentage points relative to the open
-benchmark $S_1$.
+| Class | $\Delta p$ vs $S_1$ | SME win-rate gain |
+|---|---:|---:|
+| **Non-pharma** | **−0.004** | **+4.3 pp** |
+| Pharma | +0.002 | +1.4 pp |
 
-In **pharma**, $\Delta p$ = `\vThreeShiftPh` (also near zero or small);
-SME win-rate gain `\prefSmeWinGainTenPh` pp.
+Both price shifts are essentially zero in reference-price units —
+non-SMEs continue to bid and discipline the price-forming order
+statistic. The SME win-rate gain is smaller than under full set-aside
+(which delivers full SME-winner concentration by construction); the
+preference trades redistribution for preserved competitive discipline.
 
 Output: macros in `v8-jpube/output/values.tex`; paper table
 `tab_welfare_policy_v8` columns 5–6 in §5.

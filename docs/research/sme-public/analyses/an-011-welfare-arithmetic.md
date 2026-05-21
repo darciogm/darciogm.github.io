@@ -49,23 +49,20 @@ indifferent between the set-aside and the open regime?
 
 ## Results
 
-The welfare arithmetic table cells are macro-bound in
-`v8-jpube/output/values.tex`. Per paper §5:
+From `v8-jpube/output/values.tex`. All shares of reference price
+$p^{S_1}$; $\lambda = 0.30$ baseline (Ballard-Shoven-Whalley).
 
-In **non-pharma**, the full set-aside raises government payments by
-`\welfDeltaGovNp` of the reference price, of which `\welfDwlAllocNp` is
-allocative waste and `\welfMcpfDistLthirtyNp` is the MCPF distortion at
-$\lambda=0.30$. The total welfare loss is `\welfLossPctLthirtyNp` = **28.9%**
-of the open-regime price. The bootstrap lower endpoint
-(`\welfLossPctLoNp`) remains economically large.
+| | Non-pharma | Pharma (boundary) |
+|---|---:|---:|
+| $\Delta_{\mathrm{gov}}$ (payment increase) | 0.247 | 0.298 |
+| DWL$_{\mathrm{alloc}}$ (allocative waste) | 0.148 | 0.207 |
+| $\lambda \cdot \Delta_{\mathrm{gov}}$ (MCPF distortion) | 0.074 | 0.089 |
+| **Total loss / $p^{S_1}$** | **28.9%** | **44.8%** |
+| Bootstrap lower endpoint | 20.5% | 34.9% |
+| **Implied SME welfare weight $\omega$** | **2.42** | **2.61** |
 
-In **pharma**, the corresponding loss is `\welfLossPctLthirtyPh` = **44.8%**,
-with bootstrap lower endpoint `\welfLossPctLoPh`. The pharma magnitudes
-are larger but inherit more model sensitivity — pharma is reported as a
-boundary case ([AN-016](an-016-pharma-boundary.md)).
-
-The **implied SME welfare weight** required for a planner to prefer the
-full set-aside over open auctions is **2.42 in non-pharma**.
+Pharma magnitudes are larger but inherit additional model sensitivity —
+treated as a boundary case ([AN-016](an-016-pharma-boundary.md)).
 
 Annualized on Group 65 alone: **R$55–128M per year (US$16–37M)** across
 the empirical adherence-rate range

@@ -4,6 +4,15 @@ paper: sme-public
 
 # Open auctions cut procurement prices by ~13% in switched group 65
 
+!!! info "Reduced-form motivation layer"
+    The headline number on this page comes from the v1–v4 reduced-form
+    DiDiR pipeline. The v8 manuscript carries this as **motivation**
+    in §1 but does not headline it; the v8 canonical claim is the
+    structural decomposition — see
+    [Exclusion dominates the price decomposition](exclusion-dominates-decomposition.md)
+    and
+    [Static welfare cost ~28.9%](static-welfare-loss-large.md).
+
 🟡 In São Paulo's BEC procurement platform, opening switched group 65
 (medical/hospital supplies) to non-SME bidders before March 2018
 lowered negotiated prices by **13.1–13.3%** relative to the SME-only

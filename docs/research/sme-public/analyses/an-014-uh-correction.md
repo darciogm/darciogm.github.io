@@ -44,11 +44,12 @@ component before the structural simulation.
 
 ## Results
 
-> *Pending — Krasnokutskaya-style decomposition cells are computed but
-> not yet reported here. Per paper §3, the Pregão intraclass
-> correlations range from `\iccNpSme` to `\iccPharmaNonSme` in the main
-> cells; once the AN page is authored, those macros should be cited
-> with their per-cell breakdown.*
+> *Pending AN-page interpretation — the underlying decomposition is run
+> and the macros are in `values.tex`. Headline ICCs in the main cells
+> range from **0.36** (Pregão non-pharma SMEs, `\iccNpSme`) to **0.59**
+> (Pregão pharma non-SMEs, `\iccPharmaNonSme`) — values comparable to
+> procurement settings where this correction is standard. Per-cell
+> breakdown across the four type-class pairs and pre/post pending.*
 
 ## Interpretation
 
