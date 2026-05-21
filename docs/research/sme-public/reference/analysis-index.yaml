@@ -184,14 +184,14 @@
 
 - id: an-016
   hypothesis: static-welfare-loss-large
-  status: pending
+  status: done
   type: robustness
-  question: How does the structural decomposition and welfare arithmetic behave in pharmaceuticals, and what makes pharmaceuticals a boundary case rather than a second headline?
-  confidence: pending
-  tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility]
+  question: How does the structural decomposition and welfare arithmetic behave in pharmaceuticals, and what specifically makes pharmaceuticals a boundary case rather than a second headline?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility, primitive-invariance, turnover, strict-invariance, welfare-ranking-flip]
   file: docs/analyses/an-016-pharma-boundary.md
-  script: v7-jpube-tight/scripts/24_pharma.R
-  target: v7-jpube-tight/output/pharma_decomp.parquet
+  script: scripts/24_pharma.R + v7-jpube-tight/scripts/33_pharma_flag.R + various
+  target: output/tables/tab_pharma.tex + v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex
 
 - id: an-017
   hypothesis: exclusion-dominates

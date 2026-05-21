@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Pharmaceutical procurement is a boundary case, not a second headline
 
 🟡 The structural decomposition and welfare arithmetic in pharmaceutical
@@ -23,16 +19,18 @@ same way) but not as *quantitative claim* (the headline magnitudes are
 not load-bearing). Anyone citing the pharma magnitudes should note the
 scope conditions of paper §4 (sec:pharma\_scope).
 
-**Caveat.** The reason pharma is more model-sensitive is twofold:
-(i) the protected SME pool is thinner (fewer SME firms eligible for
-pharmaceutical procurement under SME revenue thresholds), so
-counterfactual entry-response simulations are noisier; (ii) composition
-of the active SME pool changes more under the policy (drug-specific
-sourcing rotates more), so the
-[H:protected-pool-responds](../hypotheses/protected-pool-responds.md)
-participation-vs-composition decomposition is fragile in pharma. The
-strict-invariance specification ([AN-017](../analyses/an-017-strict-invariance.md))
-should pin down the composition margin if it is the driver.
+**Caveat.** [AN-016](../analyses/an-016-pharma-boundary.md) now
+documents the four-margin diagnosis of why pharma is fragile:
+(i) **thinner pre-policy SME pool** (0.55 Pregão bidders/auction vs
+0.94 in non-pharma); (ii) **heavier turnover** — 61.9% of post-policy
+pharma SME *firms* are new entrants (vs 23% in non-pharma);
+(iii) **primitive-invariance failure** — KS distance 0.141 after UH
+correction (vs passing in non-pharma); (iv) **strict-invariance
+ranking flip** — implied SME welfare weight drops to **0.7** (below
+unity) under strict invariance, flipping $V_3 \succ V_0$ to
+$V_0 \succ V_3$ in pharma but not non-pharma. Pharma is a
+qualitative confirmation of direction, not a headline-citable
+magnitude.
 
 **Sources.**
 

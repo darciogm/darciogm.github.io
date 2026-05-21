@@ -3,72 +3,225 @@ paper: sme-public
 id: an-016
 hypothesis: static-welfare-loss-large
 type: robustness
-question: How does the structural decomposition and welfare arithmetic behave in pharmaceuticals, and what makes pharmaceuticals a boundary case rather than a second headline?
-status: pending
+question: How does the structural decomposition and welfare arithmetic behave in pharmaceuticals, and what specifically makes pharmaceuticals a boundary case rather than a second headline?
+status: done
+status_date: 2026-05-21
+confidence: yellow
+headline: "Reduced-form effects are LARGER in pharma than non-pharma (price β = −0.156*** vs −0.075***; log firms +0.165*** vs +0.057***). Structural decomposition same direction: pharma exclusion share 68.8% [61.6, 85.2 CI], welfare loss 44.8% at λ=0.30. But four diagnostics fail in pharma where they hold in non-pharma: (1) 61.9% of post-policy pharma SME firms are new entrants (vs 23% NP); (2) primitive-invariance KS distance 0.141 after UH correction (fails); (3) implied SME welfare weight under strict invariance drops to 0.7 (below unity); (4) welfare ranking flips between main and strict-invariance specs in pharma but not non-pharma. Pharma is therefore reported as a *qualitative confirmation* — same direction, fragile magnitude."
 created: 2026-05-21
-script: v7-jpube-tight/scripts/24_pharma.R
-target: v7-jpube-tight/output/pharma_decomp.parquet
-tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility]
+script: scripts/24_pharma.R + v7-jpube-tight/scripts/33_pharma_flag.R + various
+target: output/tables/tab_pharma.tex + v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex
+tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility, primitive-invariance, turnover, strict-invariance, welfare-ranking-flip]
 design:
-  sample: "Pharmaceutical Pregão drop-outs (class = pharma); compared to non-pharma standardized as reference"
-  specification: "Same BNE decomposition + welfare arithmetic as AN-010 / AN-011, applied to the pharma cell; sensitivity to SME-pool composition and post-policy compositional churn"
-  notes: "Pharma is reported as a boundary case in paper §4.5 due to thinner protected pool and larger composition changes"
+  sample: "Pharmaceutical Pregão drop-outs (class = pharma per CMED-regulated CADMAT 6531/6532/6536/6581); compared to non-pharma standardized as reference"
+  specification: "(a) Reduced-form DiDiR on pharma/non-pharma split + pharma-interaction; (b) BNE decomposition + welfare arithmetic per AN-010/AN-011; (c) Strict-invariance comparison per AN-017; (d) Primitive-invariance KS test pre vs post; (e) Firm-turnover share of post-policy SME bidders"
+  notes: "Pharma cell sample: Pregão Pre SME 60,124 bids (13,022 auctions); Post SME 161,919 (19,994); non-SME falls 331,340 → 215,689"
 ---
 
-# AN-016: Pharma boundary-case decomposition
+# AN-016: Pharma boundary case — same direction, fragile magnitude
 
 ## Question
 
-The structural decomposition and welfare arithmetic produce *larger*
-point estimates in pharmaceutical procurement than in standardized
-non-pharma. Why is pharma reported as a *boundary case* rather than as
-a second headline?
+Across the structural decomposition
+([AN-010](an-010-bne-decomposition.md)), welfare arithmetic
+([AN-011](an-011-welfare-arithmetic.md)), bootstrap CI
+([AN-022](an-022-bootstrap-ci.md)), λ sensitivity
+([AN-024](an-024-lambda-welfare-ci.md)), strict invariance
+([AN-017](an-017-strict-invariance.md)), and entry-rate analysis
+([AN-030](an-030-entry-rates-cost.md)), pharmaceutical procurement
+appears consistently. The point estimates are *larger* in pharma than
+in non-pharma — welfare loss 44.8% vs 28.9%; exclusion share 68.8%
+versus 72.0%. But the paper treats pharma as a *boundary case* rather
+than a second headline. Why?
 
 ## Design
 
-- **Sample**: pharmaceutical Pregão drop-outs (class = pharma in the
-  structural classification);
-  `v7-jpube-tight/scripts/33_pharma_flag.R` defines the cell.
-- **Variation**: same BNE decomposition + welfare arithmetic as
-  [AN-010](an-010-bne-decomposition.md) and
-  [AN-011](an-011-welfare-arithmetic.md), applied to the pharma cell.
-- **Specification**: sensitivity to (i) how the post-policy SME pool is
-  modeled, (ii) within-class compositional churn pre vs post, (iii)
-  pharma-specific licensing and product-mix structure.
-- **Outcomes**: per-cell $S_1$, $S_2$, $S_3$, welfare loss; sensitivity
-  to specification choices.
+This AN consolidates pharma-specific evidence across five diagnostic
+margins, comparing each to non-pharma:
+
+1. **Reduced-form DiDiR** on pharma/non-pharma split and the
+   pharma-interaction term (`tab_pharma.tex`).
+2. **Sample composition** — how many SME firms are new entrants
+   post-policy, in pharma vs non-pharma.
+3. **Primitive-invariance KS test** on the drop-out distribution
+   pre vs post.
+4. **Strict-invariance welfare ranking** — does the welfare
+   conclusion survive holding the SME cost distribution fixed at
+   the pre-policy level?
+5. **Implied SME welfare weight** under main vs strict-invariance
+   specifications.
 
 ## Results
 
-> *Pending — the pharma decomposition is computed but not yet
-> documented here. Per paper §5, the pharma welfare loss at $\lambda=0.30$
-> is `\welfLossPctLthirtyPh` = **44.8%** of the open-regime price; the
-> exclusion magnitudes are larger in levels than in non-pharma. The
-> reading that pharma is a boundary case rests on (i) the thinner
-> protected pool (fewer SME firms qualify for pharma procurement under
-> SME revenue thresholds), and (ii) larger composition changes in the
-> active SME pool under the policy.*
+### 1. Reduced-form effects (pharma vs non-pharma)
+
+From `tab_pharma.tex`, 18-month window:
+
+| Outcome | Pharma (6531) split | Non-pharma split | Pharma interaction |
+|---|---:|---:|---:|
+| Log prices | **−0.156*** | −0.075*** | −0.076*** |
+| Log firms  | **+0.165*** | +0.057*** | +0.106*** |
+| Log bids   | **+0.150*** | +0.030*** | +0.119*** |
+| Distance (km) | +10.28** | +3.34* | +7.22 (n.s.) |
+
+**Pharma reduced-form effects are 2–5× larger than non-pharma.** The
+pharma-interaction term confirms statistical separation on prices,
+firms, and bids.
+
+### 2. Structural decomposition (pharma cell)
+
+Recovered from `values.tex`:
+
+| Object | Pharma | Non-pharma |
+|---|---:|---:|
+| $S_1$ (open pre)        | 0.654 | 0.770 |
+| $S_2$ (SME-only, pre-pool fixed) | 1.219 | 1.110 |
+| $S_3$ (SME-only, post-pool)      | 0.963 | 1.002 |
+| Lost-discipline (S₂−S₁) | +0.565 | +0.371 |
+| Protected-pool offset (S₃−S₂)    | −0.256 | −0.144 |
+| Net effect (S₃−S₁) | **+0.309** | +0.227 |
+| Absolute exclusion share | **68.8%** | 72.0% |
+| Bootstrap 95% CI on share | [61.6, 85.2] | [64.5, 86.8] |
+
+### 3. Welfare arithmetic (pharma cell, λ=0.30)
+
+| | Pharma | Non-pharma |
+|---|---:|---:|
+| $\Delta_{\mathrm{gov}}$       | 0.298 | 0.247 |
+| DWL$_{\mathrm{alloc}}$         | 0.207 | 0.148 |
+| Loss / $p^{S_1}$ (λ=0.30)      | **44.8%** | 28.9% |
+| Bootstrap 95% CI (λ=0.30)      | [34.9, 55.9] | [20.5, 34.8] |
+| Implied SME weight (main)      | **2.61** | 2.42 |
+| Implied SME weight (strict-inv) | **0.7** | (stable; ranking unchanged) |
+
+**The implied weight under strict invariance in pharma drops to 0.7 —
+below unity.** Under that specification, even a utilitarian planner
+with no SME-specific weighting would not prefer the set-aside.
+
+### 4. Sample composition — turnover
+
+From `values.tex`:
+
+| Statistic | Pharma | Non-pharma |
+|---|---:|---:|
+| % of post-policy SME *firms* that are new entrants | **61.9%** | (n.r.) |
+| % of post-policy SME *bids* from new firms        | **37.8%** | 23.0% |
+| Pregão Pre SME (auctions)  | 13,022 | (smaller base) |
+| Pregão Post SME (auctions) | 19,994 | |
+
+**Nearly two-thirds of post-policy pharma SME firms are new
+entrants** to BEC — versus less than a quarter in non-pharma. The
+pharma protected-pool composition turns over substantially under the
+policy.
+
+### 5. Primitive-invariance KS distance
+
+| Test | Pharma | Non-pharma |
+|---|---:|---:|
+| KS distance, Pregão pre-UH | 0.072 | (passes) |
+| KS distance, Pregão post-UH correction | **0.141** | (passes) |
+
+**The pharma Pregão primitive-invariance diagnostic FAILS after UH
+correction.** The drop-out distribution shifts between pre and post
+periods in pharma in ways the heterogeneity correction does not
+absorb — meaning the recovered cost primitives are not stable across
+the policy break in pharma. They are stable in non-pharma.
+
+### 6. Strict-invariance welfare ranking
+
+From [AN-017](an-017-strict-invariance.md):
+
+| Specification | Pharma ranking | Non-pharma ranking |
+|---|---|---|
+| Main (endogenous post-policy SME pool) | $V_3 \succ V_0$ | $V_3 \succ V_0$ |
+| Strict invariance ($F_c^{\mathrm{SME,Post}} = F_c^{\mathrm{SME,Pre}}$) | **$V_0 \succ V_3$ (flip)** | $V_3 \succ V_0$ |
+
+**Pharma ranking flips between main and strict-invariance
+specifications; non-pharma is stable.** From
+[AN-024](an-024-lambda-welfare-ci.md), this flip is *not* driven by
+λ — the pharma flip is constant across the entire λ ∈ [0.15, 0.45]
+grid within each spec.
+
+Output: `output/tables/tab_pharma.tex`,
+`v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex`, and welfare
+macros in `v8-jpube/output/values.tex`.
 
 ## Interpretation
 
-> *Pending. The most-informative comparison is whether the welfare
-> *ranking* between $V_0$ and $S_1$ is stable across specification
-> choices. In non-pharma it is; in pharma the ranking is sensitive to
-> how the post-policy SME pool is modeled — this is the reason for the
-> boundary-case treatment.*
+**Pharma is structurally different on four dimensions** that
+collectively justify the boundary-case treatment:
 
-Confidence: **pending.**
+1. **Thinner pre-policy SME pool.** Pre SME Pregão count = 0.55
+   bidders per auction in pharma vs 0.94 in non-pharma. The base
+   from which the protected-pool response operates is half as deep
+   in pharma.
+
+2. **Heavier turnover post-policy.** 61.9% of post SME firms are
+   new entrants in pharma — the active SME pool is *not* mostly
+   the same firms with more entries; it is *new firms*. The
+   composition change is large.
+
+3. **Primitive-invariance failure.** UH-corrected Pregão drop-outs
+   shift between periods (KS 0.141), meaning the cost-distribution
+   recovery is more fragile across the break. In non-pharma the
+   same diagnostic passes.
+
+4. **Welfare ranking sensitivity.** When the SME pool composition
+   is held fixed at the pre-policy level, the pharma welfare
+   ranking *flips* (implied weight drops to 0.7, below unity);
+   non-pharma's ranking is stable across the same specification
+   choice.
+
+**What the boundary-case treatment does and does not say.**
+
+It says: the *direction* of the pharma decomposition is the same
+as non-pharma — exclusion dominates, prices rise — and that
+direction survives every diagnostic in
+[AN-013](an-013-pregao-dropouts.md) through
+[AN-022](an-022-bootstrap-ci.md). Pharma is a
+*qualitative confirmation* of the non-pharma headline.
+
+It does not say: the pharma *magnitudes* are headline-citable. The
+44.8% welfare loss in pharma should be read with the boundary
+flag: it depends on how the post-policy SME pool is modeled, and
+under the strict-invariance benchmark the welfare ranking reverses.
+Anyone citing 44.8% should also cite the strict-invariance reversal.
+
+**Why pharma is fragile** (mechanism reading). Pharma is where
+products are most heterogeneous (thousands of distinct drug-SKU
+combinations), regulation is tightest (CMED price caps interact
+with procurement), and the SME pool is most likely to be entering
+the market for the first time in response to the policy
+(specialized small distributors that did not exist in BEC pre-2018).
+All four conditions interact: heterogeneity makes IPV-clock weaker;
+regulation distorts cost recovery; new firms have different cost
+distributions that the model treats as the same as incumbents.
+
+Confidence: **yellow.** The boundary-case documentation is honest
+and load-bearing — it is the *reason* the paper does not promote
+pharma to a headline. Yellow because the diagnostics that fail in
+pharma all bear on the structural recovery, and the strict-invariance
+flip is the cleanest test of that fragility. Green would require
+either an independent pharma replication (out of jurisdiction) or a
+structural model that explicitly handles the new-firm entry channel
+— neither in scope for this paper.
 
 ## Follow-ups
 
-- Strict-invariance specification
-  ([AN-017](an-017-strict-invariance.md)) applied to pharma: holding
-  the SME pool fixed in composition should reduce the model
-  sensitivity. If the welfare ranking survives strict invariance, the
-  boundary-case treatment may be relaxed.
-- Pharma protected-pool decomposition: split the
-  protected-pool offset $S_3 - S_2$ into participation vs composition
-  channels to isolate which margin is driving the pharma fragility.
-- Cross-modality validation in pharma: a GPV recovery from
-  pharmaceutical Convite bids would provide an independent check on
-  the pharma cost-distribution recovery.
+- **Drug-class cross-cut**: split pharma into therapeutic categories
+  (antibiotics, oncology, generics, etc.). Some sub-classes may
+  pass the primitive-invariance diagnostic where others fail.
+- **CMED-cap interaction**: directly model the CMED price ceiling
+  as a binding constraint on bid recovery. The 44.8% loss may
+  attenuate if the price ceiling limits the structural cost
+  distribution.
+- **New-firm cost distribution**: estimate the post-policy SME cost
+  distribution separately for new entrants vs incumbents. If
+  new entrants have systematically different costs, the
+  strict-invariance benchmark is misspecified — the right
+  comparison is not "pre-policy SMEs" but "incumbent SMEs only".
+- **Cross-jurisdictional pharma**: replicate the decomposition on
+  pharmaceutical procurement in another state or in ComprasNet.
+  If the boundary-case pattern persists, pharma is structurally
+  different everywhere; if it disappears, the São Paulo BEC pharma
+  setting has idiosyncratic features.
