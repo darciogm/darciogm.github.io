@@ -206,14 +206,14 @@
 
 - id: an-018
   hypothesis: parallel-trends-hold
-  status: pending
+  status: done
   type: robustness
   question: Do Callaway-Sant'Anna (2021) and Sun-Abraham (2021) staggered-DiD estimators reproduce the DiDiR price effect once heterogeneous treatment timing is accounted for?
-  confidence: pending
-  tags: ["H:parallel-trends-hold", staggered-did, callaway-santanna, sun-abraham, robustness]
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", staggered-did, callaway-santanna, sun-abraham, twfe, convergence]
   file: docs/analyses/an-018-cs2021-staggered.md
-  script: scripts/19_cs2021.R
-  target: output/tables/tab_cs2021.tex
+  script: scripts/19_cs2021.R + scripts/20_sun_abraham.R
+  target: output/tables/tab_cs2021.tex + output/tables/tab_sunab.tex
 
 - id: an-019
   hypothesis: ipv-clock-admissible
@@ -225,3 +225,25 @@
   file: docs/analyses/an-019-cross-modality-gpv.md
   script: v7-jpube-tight/scripts/38_cross_modality.R
   target: v7-jpube-tight/output/tables/tab_v3_cross_modality.tex
+
+- id: an-020
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does the Goodman-Bacon (2021) decomposition of the TWFE DiD coefficient show that all weight falls on the clean treated-vs-never-treated 2×2 comparison, with no contamination from forbidden treated-vs-already-treated comparisons?
+  confidence: green
+  tags: ["H:parallel-trends-hold", goodman-bacon, twfe, decomposition, clean-2x2, no-contamination]
+  file: docs/analyses/an-020-goodman-bacon.md
+  script: scripts/21_goodman_bacon.R
+  target: output/tables/tab_bacon.tex
+
+- id: an-021
+  hypothesis: parallel-trends-hold
+  status: done
+  type: causal
+  question: Does a synthetic-control match of group 65 to a weighted donor pool of never-treated product groups validate parallel trends and reproduce the DiDiR price effect?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", synthetic-control, augsynth, ridge, donor-weights, semester-panel]
+  file: docs/analyses/an-021-synth-control.md
+  script: scripts/09_synth_control.R
+  target: output/tables/tab_synth.tex

@@ -21,16 +21,25 @@ robust CIs under controlled M̄ violations and should keep the effect
 significant), and Lee bounds (which tighten the price coefficient
 against differential completion).
 
-> **Evidence strength: Partial (toward Supports).**
-> Pre-treatment placebos on prices are null
-> ([AN-004](../analyses/an-004-placebo-tests.md)). Lee bounds are tight
-> at −0.131 to −0.123, both highly significant
-> ([AN-005](../analyses/an-005-lee-bounds.md)). HonestDiD confidence
-> intervals survive substantial M̄
-> ([AN-006](../analyses/an-006-honestdid.md)). Callaway-Sant'Anna and
-> Sun-Abraham staggered-DiD reproductions are
-> pending ([AN-018](../analyses/an-018-cs2021-staggered.md)) but expected
-> to confirm.
+> **Evidence strength: Partial (strongly supported).** Six convergent
+> identification checks now back the design. **Sun-Abraham (item-level)
+> ATT 0.108 reproduces DDR 0.113** within 0.005 on log prices, with
+> similar tight convergence on firms and distance
+> ([AN-018](../analyses/an-018-cs2021-staggered.md)).
+> **Callaway-Sant'Anna at group×month gives 0.237* — same direction,
+> wider SE due to aggregation level**. **Goodman-Bacon decomposition
+> reports 100% weight on the clean Treated-vs-Untreated 2×2** —
+> the heterogeneous-timing-bias concern does not apply to this
+> single-cohort design ([AN-020](../analyses/an-020-goodman-bacon.md)).
+> **Synthetic control with Ridge augmentation matches group 65's
+> pre-treatment trajectory exactly** (L2 imbalance 0.0000); post-period
+> ATT 0.171 in the same direction; placebo $p = 0.103$ borderline
+> ([AN-021](../analyses/an-021-synth-control.md)). Plus **placebo
+> nulls** on prices ([AN-004](../analyses/an-004-placebo-tests.md)),
+> **tight Lee bounds** ([AN-005](../analyses/an-005-lee-bounds.md)),
+> and **HonestDiD survives M̄** ([AN-006](../analyses/an-006-honestdid.md)).
+> Three of four estimators (DDR, SA, GB) earn green or near-green;
+> synth's placebo $p = 0.103$ is the one open piece of the gauntlet.
 
 ## Theory
 
@@ -102,7 +111,9 @@ not to group 65 itself.
 | [AN-004](../analyses/an-004-placebo-tests.md) | Supports | Pre-treatment price placebo &beta; = &minus;0.0145 (Sep 2017) and +0.0206 (Mar 2017), p>0.10 on the first, p<0.10 on the second — small and not driving the main result. |
 | [AN-005](../analyses/an-005-lee-bounds.md) | Supports | Bounds −0.131 to −0.123, both highly significant; differential completion has negligible impact. |
 | [AN-006](../analyses/an-006-honestdid.md) | Supports | Price effect remains significant under substantial M̄ violations. |
-| [AN-018](../analyses/an-018-cs2021-staggered.md) | Pending | Callaway-Sant'Anna and Sun-Abraham staggered-DiD reproductions; expected to confirm direction. |
+| [AN-018](../analyses/an-018-cs2021-staggered.md) | Supports | Sun-Abraham item-level ATT 0.108 vs DDR 0.113 (Δ<0.005 on log prices); CS2021 group-month 0.237* same direction; convergence across three estimators on direction, on magnitude for SA. |
+| [AN-020](../analyses/an-020-goodman-bacon.md) | Supports (green) | Weight = 1.000 on clean Treated-vs-Untreated 2×2; zero forbidden comparisons. Heterogeneous-timing-bias mathematically absent in this single-cohort design. |
+| [AN-021](../analyses/an-021-synth-control.md) | Mixed | Pre-treatment gap 0.0000 (parallel trends enforced); post ATT 0.171 directionally consistent; placebo p=0.103 borderline (not significant at 5%). |
 
 ## Open tests
 
@@ -113,9 +124,11 @@ reassigning the group 65 indicator across groups. The figure already
 exists ([docs/robustness.md](../robustness.md)). Worth promoting to a
 separate AN page covering the entire RI battery.
 
-### Goodman-Bacon decomposition
+### Tighten the synthetic-control placebo $p$
 
-`scripts/21_goodman_bacon.R` decomposes the DiDiR coefficient into the
-2×2 building-block comparisons. Useful for diagnosing whether the
-single switching event drives the result or whether the control-group
-heterogeneity is contributing. Not yet documented as a standalone AN.
+[AN-021](../analyses/an-021-synth-control.md) reports placebo
+$p = 0.103$ (borderline). Two follow-ups would tighten it: (i)
+augmented synthetic control with covariates (item-mix, PBU
+composition); (ii) quarterly rather than semester aggregation (12 vs
+6 pre-period observations). Either would push the placebo $p$
+toward conventional significance.
