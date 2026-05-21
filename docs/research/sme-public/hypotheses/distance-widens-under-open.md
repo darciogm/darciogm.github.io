@@ -17,12 +17,16 @@ back into the pool, the average buyer-winner distance should *widen*.
 Conversely, SME-only rules should compress the geographic catchment of
 the public buyer. The DiDiR distance effect tests this directly.
 
-> **Evidence strength: Mixed.**
-> [AN-003](../analyses/an-003-didir-distance.md) reports a positive
-> distance coefficient on high-value items (+12.1 km, p<0.01) but a
-> null effect on low-value items. The geographic channel is therefore
-> *real but heterogeneous* — concentrated on items where suppliers
-> compete across regions rather than locally.
+> **Evidence strength: Partial (strongly supported).**
+> [AN-003](../analyses/an-003-didir-distance.md) reports +12.1 km
+> high-value, null low-value. **The cleanest test is now in
+> [AN-028](../analyses/an-028-rais-validation.md)**: the full-sample
+> distance β = +14.25 km*** *vanishes* in the SME-validated subsample
+> (β = −0.28, p>0.10) and stays null in the Micro (≤9) subsample
+> (β = +3.06). The geographic-catchment widening is *entirely* a
+> non-SME composition effect — RAIS-validated SMEs win locally; non-SMEs
+> win at a wider radius. This is the strongest possible
+> within-project decomposition of the distance channel.
 
 ## Theory
 
@@ -86,6 +90,7 @@ the distance specification yet.
 |----------|---------|--------------|
 | [AN-003](../analyses/an-003-didir-distance.md) | Mixed | High-value items: +12.1 km (p<0.01). Low-value items: +2.8 km (n.s.). Heterogeneous along the value margin as predicted by transport-cost amortization. |
 | [AN-004](../analyses/an-004-placebo-tests.md) | Supports (via rule-out) | Pre-treatment placebo on distance null — rules out freight/logistics shock. |
+| [AN-028](../analyses/an-028-rais-validation.md) | Supports | Distance β = +14.25 km full → −0.28 (null) in SME (≤49); stays null in Micro (≤9). Geographic-catchment effect is *entirely* a non-SME composition channel. |
 
 ## Open tests
 

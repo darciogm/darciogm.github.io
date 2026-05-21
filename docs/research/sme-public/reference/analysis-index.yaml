@@ -291,3 +291,36 @@
   file: docs/analyses/an-025-adherence-sensitivity.md
   script: v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R
   target: v7-jpube-tight/output/tables/tab_welfare_adherence_sensitivity.tex
+
+- id: an-026
+  hypothesis: no-collusion-confound
+  status: done
+  type: robustness
+  question: Does a persistent-pair coordination screen conditional on CADMAT product class detect within-class bidder coordination, and does the persistent-pairing signature (count of firm pairs co-bidding in ≥5 auctions) survive class conditioning?
+  confidence: yellow
+  tags: ["H:no-collusion-confound", "H:ipv-clock-admissible", pair-classification, kawai-nakabayashi, conley-decarolis, class-conditional, segmentation]
+  file: docs/analyses/an-026-pair-classification.md
+  script: v7-jpube-tight/scripts/61_collusion_screen_pair_classcond.R
+  target: v7-jpube-tight/output/tables/tab_collusion_screen_pair_classcond.tex
+
+- id: an-027
+  hypothesis: price-discipline-loss
+  status: done
+  type: robustness
+  question: Does the price effect appear both inside CMED-regulated medications (class 6531) and outside it (other medical supplies), as required if competition — not pharmaceutical-specific inflation — drives the headline?
+  confidence: yellow
+  tags: ["H:price-discipline-loss", within-group, cmed, medications, falsification, item-cluster]
+  file: docs/analyses/an-027-within-g65-cmed.md
+  script: scripts/27_major2_controls.R (or equivalent)
+  target: output/tables/tab_within_g65.tex
+
+- id: an-028
+  hypothesis: sme-winner-share-falls
+  status: done
+  type: causal
+  question: Does the price effect survive restricting the sample to RAIS-validated SME winners, and does the distance effect vanish in that subsample as the firm-size composition channel would predict?
+  confidence: yellow
+  tags: ["H:sme-winner-share-falls", "H:distance-widens-under-open", rais, firm-size, micro-firm, composition, validation, employment-links]
+  file: docs/analyses/an-028-rais-validation.md
+  script: scripts/11_rais_validation.R + scripts/12_rais_winner.R
+  target: output/tables/tab_rais_validation.tex + tab_winner_rais.tex

@@ -22,17 +22,18 @@ bid behavior. The decomposition would then become a price-forming
 bid-rigging screens (Bajari-Ye, Schurter, pair classification) test
 whether such a coordination shift is detectable in the data.
 
-> **Evidence strength: Partial (toward Supports).** Both classical
+> **Evidence strength: Partial (strongly supported).** Three classical
 > screens land clean for the differential question.
-> [AN-015](../analyses/an-015-collusion-screens.md) reports:
-> Conley-Decarolis close-pair share is **flat** in non-pharma
-> (16.9% → 16.8%, both well above null ~10%) and **falls** in pharma
-> (27.6% → 24.4%); Bajari-Ye T1 ratios **fall** in both classes
-> (NP 2.63 → 1.83; PH 1.29 → 1.11). The post-policy price increase is
-> *not* produced by a new coordination shock among the surviving SME
-> pool. Yellow because the screens were designed for other
-> institutional contexts and residual baseline clustering remains
-> acknowledged as a limitation.
+> [AN-015](../analyses/an-015-collusion-screens.md): Conley-Decarolis
+> close-pair share **flat** in NP (16.9% → 16.8%) and **falls** in PH
+> (27.6% → 24.4%); Bajari-Ye T1 ratios **fall** in both (NP 2.63 → 1.83;
+> PH 1.29 → 1.11). [AN-026](../analyses/an-026-pair-classification.md)
+> class-conditional pair test: persistent-pair signature $T_3$ sits *at
+> or below* the within-class null in all 4 cells (p ∈ [0.730, 1.000]) —
+> the "persistent meeting" pattern is segmentation, not coordination, and
+> it is stable across the cutoff. The post-policy price increase is not
+> produced by a coordination shock; yellow because the screens detect
+> first-moment clustering, not all conduct deviations.
 
 ## Theory
 
@@ -98,6 +99,7 @@ statistic baselines.
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
 | [AN-015](../analyses/an-015-collusion-screens.md) | Supports | Conley realized share flat NP (16.9→16.8) / falls PH (27.6→24.4); Bajari-Ye T1 falls in both (NP 2.63→1.83; PH 1.29→1.11). Differential-coordination shock rejected. |
+| [AN-026](../analyses/an-026-pair-classification.md) | Supports | Class-conditional pair screen: $T_3$ persistent-pair signature at/below within-class null in all 4 cells (p ∈ [0.730, 1.000]). Persistent meeting is segmentation, not coordination. |
 
 ## Open tests
 

@@ -19,17 +19,23 @@ group 65 (medical/hospital supplies) flipped the regime, providing a DiDiR
 testbed: comparing group 65 (switched) to other groups (always treated)
 yields the *open-vs-SME-only* price effect.
 
-> **Evidence strength: Partial (toward Supports).**
-> [AN-001](../analyses/an-001-didir-prices.md) reports DiDiR &beta; in the
-> range &minus;0.131 to &minus;0.133 across 18-month specifications
-> (item-clustered SEs, p<0.01), implying open auctions delivered ~13%
-> lower prices in switched group 65. The reading survives placebo tests
+> **Evidence strength: Partial (strongly supported).**
+> [AN-001](../analyses/an-001-didir-prices.md) reports DiDiR β =
+> −0.131 to −0.133 (18m, p<0.01); reading survives placebos
 > ([AN-004](../analyses/an-004-placebo-tests.md)), Lee bounds
-> ([AN-005](../analyses/an-005-lee-bounds.md)), HonestDiD violations
-> ([AN-006](../analyses/an-006-honestdid.md)), and is concentrated at the
-> *lower* end of the price distribution ([AN-007](../analyses/an-007-quantile-did.md)).
-> Structural validation in [AN-010](../analyses/an-010-bne-decomposition.md)
-> shows the same direction in counterfactual prices.
+> ([AN-005](../analyses/an-005-lee-bounds.md)), HonestDiD
+> ([AN-006](../analyses/an-006-honestdid.md)), Sun-Abraham (0.108 ≈ DDR
+> 0.113, [AN-018](../analyses/an-018-cs2021-staggered.md)),
+> Goodman-Bacon (100% weight on clean 2×2, 🟢
+> [AN-020](../analyses/an-020-goodman-bacon.md)), and synthetic control
+> ([AN-021](../analyses/an-021-synth-control.md)). Concentrated at low
+> quantiles ([AN-007](../analyses/an-007-quantile-did.md)). Structural
+> confirmation in [AN-010](../analyses/an-010-bne-decomposition.md).
+> Falsification against CMED pharmaceutical-inflation alternative:
+> price effect persists in both medications (β = −0.174***) and
+> non-medication medical supplies (β = −0.097***) within Group 65
+> ([AN-027](../analyses/an-027-within-g65-cmed.md)). Phased-adoption
+> robust ([AN-023](../analyses/an-023-phased-adoption.md)).
 
 ## Theory
 
@@ -109,6 +115,11 @@ for that decomposition).
 | [AN-006](../analyses/an-006-honestdid.md) | Supports | Price effect survives substantial M̄ violations in HonestDiD. |
 | [AN-007](../analyses/an-007-quantile-did.md) | Mixed | Effect concentrated at &tau; &le; 0.50 (strongly negative); turns positive at &tau; = 0.90. Mean DiDiR masks heterogeneous distributional impact. |
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Structural counterfactual confirms direction; $S_1 - S_3 > 0$ in standardized non-pharma. |
+| [AN-018](../analyses/an-018-cs2021-staggered.md) | Supports | Sun-Abraham ATT 0.108*** matches DDR 0.113*** within 0.005; CS2021 same direction. |
+| [AN-020](../analyses/an-020-goodman-bacon.md) | Supports (🟢) | Weight = 1.000 on clean Treated-vs-Untreated 2×2; no contamination from heterogeneous-timing. |
+| [AN-021](../analyses/an-021-synth-control.md) | Mixed | Synth pre-gap exact 0.0000; post ATT 0.171 directionally consistent; placebo p=0.103. |
+| [AN-027](../analyses/an-027-within-g65-cmed.md) | Supports | Within-Group-65 split: medications −0.174***, non-medications −0.097***. CMED inflation alternative rejected. |
+| [AN-023](../analyses/an-023-phased-adoption.md) | Supports | DiD survives dropping BEC enablement window (β −0.109 → −0.087, both p<0.01). |
 
 ## Open tests
 
