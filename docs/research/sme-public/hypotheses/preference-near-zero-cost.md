@@ -21,13 +21,17 @@ benchmark $S_1$, while SME win-rate rises. The preference is not a free
 version of the set-aside — it delivers less redistribution — but it
 shifts the static frontier.
 
-> **Evidence strength: Partial.**
+> **Evidence strength: Partial (strongly supported).**
 > [AN-012](../analyses/an-012-preference-benchmark.md) reports a price
-> shift of optPrefShift (non-pharma) ≈ 0 of the reference price under
-> $V_3$ (10% SME preference), with SME win-rate rising by
-> prefSmeWinGainTen pp. The preference benchmark is a *static design
-> exercise*, not a forecast of a legal preference regime — it holds
-> entry and recovered willingness-to-supply primitives fixed.
+> shift of **−0.004 NP / +0.002 PH** of the reference price under $V_3$
+> (10% SME preference); SME win-rate gain **+4.3 pp NP / +1.4 pp PH**.
+> [AN-024](../analyses/an-024-lambda-welfare-ci.md) extends this:
+> the welfare ranking $V_3 \succ V_0$ holds across the entire λ grid
+> [0.15, 0.45] in non-pharma under both main and strict-invariance
+> specifications — the choice of λ does not flip the preference vs
+> set-aside ordering. Pharma ranking is $V_3 \succ V_0$ under main spec
+> across all λ but reverses to $V_0 \succ V_3$ under strict invariance
+> (the boundary-case treatment).
 
 ## Theory
 
@@ -91,7 +95,8 @@ under a non-exclusionary preference.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-012](../analyses/an-012-preference-benchmark.md) | Supports | $\Delta p$ near zero in standardized non-pharma at 10% preference; SME win-rate rises meaningfully. |
+| [AN-012](../analyses/an-012-preference-benchmark.md) | Supports | $\Delta p$ = −0.004 NP / +0.002 PH at 10% preference; SME win-rate gain +4.3 pp NP / +1.4 pp PH. |
+| [AN-024](../analyses/an-024-lambda-welfare-ci.md) | Supports | Welfare ranking $V_3 \succ V_0$ stable across λ ∈ [0.15, 0.45] in NP under both main and strict-inv specs. Ranking not λ-driven; determined by composition treatment in PH. |
 
 ## Open tests
 

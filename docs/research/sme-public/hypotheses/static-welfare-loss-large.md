@@ -20,15 +20,19 @@ standardized non-pharma is large — ~28.9% of the open-regime price at
 &lambda;=0.30. The implied annualized welfare cost on Group 65 alone
 spans R$55–128M per year (US$16–37M).
 
-> **Evidence strength: Partial.**
+> **Evidence strength: Partial (strongly supported).**
 > [AN-011](../analyses/an-011-welfare-arithmetic.md) reports
-> welfLossPctLthirty (non-pharma) = 28.9% at &lambda;=0.30, with bootstrap
-> lower endpoints remaining economically large. Pharma
-> ([AN-016](../analyses/an-016-pharma-boundary.md)) shows 44.8% but with
-> more model sensitivity, hence the boundary-case treatment. The
-> welfare ranking depends on the structural decomposition surviving its
-> diagnostic battery
-> ([H:ipv-clock-admissible](ipv-clock-admissible.md)).
+> 28.9% non-pharma / 44.8% pharma at λ=0.30.
+> [AN-024](../analyses/an-024-lambda-welfare-ci.md) extends this with:
+> (i) **λ sensitivity** — loss runs 24.0% → 33.3% across λ ∈ [0.15, 0.45]
+> in non-pharma, 38.4% → 52.5% in pharma; (ii) **bootstrap CI at λ=0.30**
+> = [20.5, 34.8] non-pharma / [34.9, 55.9] pharma; (iii) **welfare
+> ranking $V_3 \succ V_0$** stable across the entire λ range in
+> non-pharma (under both main and strict-invariance specs); pharma
+> ranking determined by main vs strict-invariance, *not by λ*.
+> [AN-025](../analyses/an-025-adherence-sensitivity.md) translates to
+> **R$38–128M/yr (US$11–37M) annualized** on Group 65 alone across
+> adherence rates 30%–100%; empirical baseline 43% → **R$55M/yr (US$16M)**.
 
 ## Theory
 
@@ -98,7 +102,9 @@ midpoint; sensitivity to &lambda; is reported in §5 of the paper;
 |----------|---------|--------------|
 | [AN-011](../analyses/an-011-welfare-arithmetic.md) | Supports | Non-pharma welfare loss = 28.9% of open-regime price at &lambda;=0.30; pharma 44.8% but boundary case. |
 | [AN-016](../analyses/an-016-pharma-boundary.md) | Mixed | Pharma magnitudes larger but more model-sensitive; reported as boundary case, not headline. |
-| [AN-017](../analyses/an-017-strict-invariance.md) | Pending | Strict-invariance sensitivity — should preserve the non-pharma magnitude if compositional churn is not the main driver. |
+| [AN-017](../analyses/an-017-strict-invariance.md) | Supports | Strict invariance preserves non-pharma dominance ordering; exclusion share rises to 85% (NP) / 79% (PH). Welfare ranking $V_3 \succ V_0$ in NP under both specs. |
+| [AN-024](../analyses/an-024-lambda-welfare-ci.md) | Supports | Bootstrap 95% CI at λ=0.30: [20.5, 34.8] NP / [34.9, 55.9] PH. Loss > 18% even at λ=0.20 lower-CI endpoint. Ranking stable across λ ∈ [0.15, 0.45]. |
+| [AN-025](../analyses/an-025-adherence-sensitivity.md) | Supports | Annualized fiscal cost R$38–128M/yr across adherence 30%–100%; baseline 43% → **R$55M/yr (US$16M)** on Group 65 alone. |
 
 ## Open tests
 

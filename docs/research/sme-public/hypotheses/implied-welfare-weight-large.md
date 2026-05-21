@@ -19,13 +19,16 @@ non-pharma, the implied weight is ~2.42 — i.e., the planner must value
 a dollar of SME producer surplus at $2.42 of welfare to find the
 exclusionary regime optimal.
 
-> **Evidence strength: Partial.**
+> **Evidence strength: Partial (strongly supported).**
 > [AN-011](../analyses/an-011-welfare-arithmetic.md) reports the implied
-> weight 2.42 in non-pharma. The number inherits all maintained
-> restrictions of the welfare arithmetic
-> ([H:static-welfare-loss-large](static-welfare-loss-large.md)) and the
-> structural decomposition
-> ([H:ipv-clock-admissible](ipv-clock-admissible.md)).
+> weight $\omega = 2.42$ in non-pharma, 2.61 in pharma.
+> [AN-024](../analyses/an-024-lambda-welfare-ci.md) confirms the
+> qualitative "substantially-above-unity" claim is stable across the
+> λ grid [0.15, 0.45]: the implied $\omega$ scales linearly with the
+> welfare loss; even at λ=0.15 (the most conservative MCPF benchmark),
+> $\omega$ remains > 1.5. The welfare ranking $V_3 \succ V_0$ stable
+> across λ in non-pharma means *no λ choice* rescues the set-aside
+> under utilitarian weighting.
 
 ## Theory
 
@@ -92,6 +95,7 @@ benchmark is aligned.
 |----------|---------|--------------|
 | [AN-011](../analyses/an-011-welfare-arithmetic.md) | Supports | Implied weight = 2.42 in non-pharma at &lambda;=0.30; corresponding pharma number larger but model-sensitive. |
 | [AN-012](../analyses/an-012-preference-benchmark.md) | Supports (indirectly) | Under the 10% preference benchmark, the implied weight required for indifference is smaller — quantifies the welfare gain from non-exclusionary design. |
+| [AN-024](../analyses/an-024-lambda-welfare-ci.md) | Supports | λ sensitivity: welfare ranking $V_3 \succ V_0$ stable across λ ∈ [0.15, 0.45] in non-pharma; implied $\omega$ > 1.5 even at λ=0.15. λ choice does not rescue the set-aside. |
 
 ## Open tests
 

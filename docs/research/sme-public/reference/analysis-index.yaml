@@ -269,3 +269,25 @@
   file: docs/analyses/an-023-phased-adoption.md
   script: v7-jpube-tight/scripts/70_phased_adoption.R
   target: v7-jpube-tight/output/tables/tab_phased_adoption.tex
+
+- id: an-024
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: robustness
+  question: How does the static welfare loss vary across the MCPF λ grid, and what is the 95% bootstrap CI on the loss as a percent of the open-regime price?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", "H:implied-welfare-weight-large", "H:preference-near-zero-cost", lambda, mcpf, bootstrap, welfare-ranking, ballard-shoven-whalley]
+  file: docs/analyses/an-024-lambda-welfare-ci.md
+  script: v7-jpube-tight/scripts/55_welfare.R + 56_welfare_bootstrap.R
+  target: v7-jpube-tight/output/tables/tab_v3_welfare_ci.tex + tab_welfare_ranking_lambda.tex
+
+- id: an-025
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: descriptive
+  question: How does the annualized fiscal welfare cost on Group 65 vary across plausible SME-only adherence rates, and what is the baseline empirical adherence?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", adherence, annualized, fiscal-cost, group-65, baseline-43pct]
+  file: docs/analyses/an-025-adherence-sensitivity.md
+  script: v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R
+  target: v7-jpube-tight/output/tables/tab_welfare_adherence_sensitivity.tex
