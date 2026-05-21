@@ -20,14 +20,17 @@ the depth of the non-SME response — and about whether the protected SME
 pool fully replaces them under SME-only (it doesn't:
 see [H:protected-pool-responds](protected-pool-responds.md)).
 
-> **Evidence strength: Partial (toward Supports).**
-> [AN-002](../analyses/an-002-didir-firms-bids.md) reports DiDiR &beta;
-> on log firms of +0.178 (6m), attenuating to +0.093 (18m), all p<0.01,
-> item-clustered. The 18-month effect implies ~10% more firms under open
-> competition; the short-window effect ~22%. Bid-count effects move in the
-> same direction. Magnitudes attenuate with the window — consistent with
-> a gradual SME restriction rollout across the control groups producing
-> a partially-converging trend.
+> **Evidence strength: Partial (strongly supported).**
+> Three converging channels documented:
+> (i) **Headcount** — [AN-002](../analyses/an-002-didir-firms-bids.md)
+> DiDiR β on log firms +0.18 (6m) → +0.10 (18m), p<0.01.
+> (ii) **Extensive margin** — [AN-029](../analyses/an-029-bid-aggressiveness.md)
+> shows completion rate rises +10.7 pp at 18m (p<0.01).
+> (iii) **Per-bidder aggressiveness** — same AN: the price effect
+> *survives* fixing N at 2, 3, or ≥5 firms (β = −0.09 to −0.11***);
+> runner-up bid gap shrinks by 2.7 pp full-sample (p<0.01). Pure-headcount
+> explanation rejected — each firm bids more aggressively in expectation
+> of larger competition.
 
 ## Theory
 
@@ -94,6 +97,7 @@ pre-treatment seasonality.
 | [AN-002](../analyses/an-002-didir-firms-bids.md) | Supports | DiDiR firms &beta; +0.178 to +0.182 (6m), +0.149 to +0.154 (12m), +0.093 to +0.100 (18m); all p<0.01. Bid-count direction same. |
 | [AN-004](../analyses/an-004-placebo-tests.md) | Mixed | Pre-treatment placebo significant for firms (&beta; ~ &minus;0.10, p<0.01) — flagged in robustness as reflecting the secular SME-restriction rollout across control groups, not a group-65-specific cost shock. |
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Structural confirms: SME participation roughly doubles after the cutoff while non-SME participation falls — but the net post-policy bidder count is smaller than the pre-policy open count. |
+| [AN-029](../analyses/an-029-bid-aggressiveness.md) | Supports | (a) Completion rate +10.7 pp at 18m; (b) Price β survives fixing N=2/3/≥5 at −0.09 to −0.11***; (c) Runner-up gap shrinks −2.7 pp full sample. Two channels: extensive + per-bidder aggressiveness. |
 
 ## Open tests
 

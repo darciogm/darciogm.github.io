@@ -324,3 +324,25 @@
   file: docs/analyses/an-028-rais-validation.md
   script: scripts/11_rais_validation.R + scripts/12_rais_winner.R
   target: output/tables/tab_rais_validation.tex + tab_winner_rais.tex
+
+- id: an-029
+  hypothesis: entry-thickens-pool
+  status: done
+  type: causal
+  question: Is the open-competition price effect driven purely by more bidders (headcount channel), or does each individual bidder also bid more aggressively (per-bidder aggressiveness channel)? And does open competition raise the extensive margin (tender completion rate)?
+  confidence: yellow
+  tags: ["H:entry-thickens-pool", "H:price-discipline-loss", extensive-margin, bid-aggressiveness, runnerup-gap, headcount-vs-aggressiveness, completion-rate]
+  file: docs/analyses/an-029-bid-aggressiveness.md
+  script: scripts/06_extensions.R (extensive) + scripts/29_runnerup_gap.R + scripts/27_major2_controls.R (bid aggressiveness)
+  target: output/tables/tab_extensive.tex + tab_runnerup_gap.tex + tab_bid_aggressiveness.tex
+
+- id: an-030
+  hypothesis: protected-pool-responds
+  status: done
+  type: causal
+  question: What is the Pre→Post entry-rate shift in each modality × class × type cell, what is the calibrated entry-cost asymmetry that explains why SMEs cannot fully replace non-SMEs, and does the dominance ordering survive across the 2×2 grid of UH-clean-vs-raw and endogenous-vs-fixed-pool methodological choices?
+  confidence: yellow
+  tags: ["H:protected-pool-responds", "H:exclusion-dominates", entry-rates, entry-cost, decomposition-grid, asymmetric-entry, sme-vs-nonsme]
+  file: docs/analyses/an-030-entry-rates-cost.md
+  script: v7-jpube-tight/scripts/44_entry_pool.R + 47_entry_cost.R + 45_bne_simulation.R variants
+  target: v7-jpube-tight/output/tables/tab_v3_entry_rates.tex + tab_v3_entry_cost.tex + tab_v3_decomp_grid.tex

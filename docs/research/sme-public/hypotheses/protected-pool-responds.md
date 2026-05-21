@@ -17,11 +17,17 @@ the protected pool can recreate the price-forming discipline. The data
 say it does the first (entry rises sharply) but not the second (the
 realized post-policy price remains above the open benchmark).
 
-> **Evidence strength: Partial.**
+> **Evidence strength: Partial (strongly supported).**
 > [AN-010](../analyses/an-010-bne-decomposition.md) shows the post-policy
-> SME bidder count roughly doubles, but the net $S_3 - S_1$ remains
-> positive — the protected-pool response works against the price rise
-> but does not undo it.
+> SME bidder count roughly doubles (0.94 → 1.87 NP; 0.55 → 1.22 PH).
+> [AN-030](../analyses/an-030-entry-rates-cost.md) extends:
+> (i) Pre→Post asymmetric — SME +99% NP but non-SME −44%, **net loss of
+> 0.25 bidders per auction**; (ii) Calibrated entry costs **4.7× higher
+> for non-SMEs** (κ = R$2.57 vs R$0.54 NP) — explains why SMEs cannot
+> structurally replace non-SMEs (different cost-vs-win-prob equilibrium);
+> (iii) Dominance ordering survives 2×2 method grid: intensive share
+> ∈ [67.9%, 99.7%] across 8 cells. The protected-pool offset is real,
+> bounded, and well-characterized.
 
 ## Theory
 
@@ -88,6 +94,7 @@ price-forming statistic.
 |----------|---------|--------------|
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | SME bidder count rises sharply post-cutoff in both non-pharma and pharma cells; $S_3 - S_1 > 0$ in both. The protected-pool response is real but does not close the price gap. |
 | [AN-016](../analyses/an-016-pharma-boundary.md) | Pending | Pharma protected pool is thinner; composition changes more under the policy, making this hypothesis more fragile in pharma. |
+| [AN-030](../analyses/an-030-entry-rates-cost.md) | Supports | Per-cell entry rates: NP Pregão SME +99%, non-SME −44%, net −0.25 bidders/auction. Entry cost 4.7× higher for non-SMEs. Decomposition grid: intensive share ∈ [67.9%, 99.7%] across 8 cells, all > 50%. |
 
 ## Open tests
 
