@@ -1,0 +1,112 @@
+---
+paper: sme-public
+id: an-011
+hypothesis: static-welfare-loss-large
+type: causal
+question: What is the per-auction static welfare loss of the full SME-only set-aside, decomposed into allocative DWL and MCPF distortion at λ=0.30?
+status: done
+status_date: 2026-05-21
+confidence: yellow
+headline: "Per-auction static welfare loss of the full SME-only set-aside is 28.9% of the open-regime price in standardized non-pharma at λ=0.30 (DWL_alloc + λ · MCPF); pharma analog is 44.8% but model-sensitive. Implied SME welfare weight required for indifference: 2.42 (non-pharma). Annualized cost on Group 65 alone: R$55–128M (US$16–37M)."
+created: 2026-05-21
+script: v7-jpube-tight/scripts/55_welfare.R
+target: v8-jpube/output/values.tex
+tags: ["H:static-welfare-loss-large", "H:implied-welfare-weight-large", welfare, mcpf, dwl, saez-stantcheva]
+design:
+  sample: "Structural cells (non-pharma standardized; pharma boundary)"
+  specification: "Loss(V_0) = DWL_alloc + λ · (p^V_0 − p^S_1); DWL_alloc = c_(1)^V_0 − c_(1)^S_1; λ=0.30 baseline (Ballard-Shoven-Whalley)"
+  notes: "Implied SME welfare weight ω solves ω · transfer = DWL_alloc + λ · Δ_gov"
+---
+
+# AN-011: Static welfare arithmetic
+
+## Question
+
+What is the per-auction static welfare cost of the full SME-only
+set-aside, decomposed into real allocative waste and fiscal distortion?
+And what SME welfare weight would a planner need to apply to be
+indifferent between the set-aside and the open regime?
+
+## Design
+
+- **Sample**: structural cells from
+  [AN-010](an-010-bne-decomposition.md) — non-pharma standardized;
+  pharma boundary case.
+- **Variation**: counterfactual policy regime $V_0$ (full SME-only)
+  vs $S_1$ (open).
+- **Specification**: Loss($V_0$) = DWL$_{\mathrm{alloc}}$ +
+  $\lambda \cdot (p^{V_0} - p^{S_1})$, where DWL$_{\mathrm{alloc}} =
+  c_{(1)}^{V_0} - c_{(1)}^{S_1}$. The first term is real allocative
+  waste (the winner has a higher production cost under the set-aside);
+  the second is the fiscal distortion at the marginal cost of public
+  funds $\lambda = 0.30$ baseline.
+  - Implied SME welfare weight $\omega$ solves
+    $\omega \cdot \text{transfer} = \text{DWL}_{\mathrm{alloc}} + \lambda \cdot \Delta_{\mathrm{gov}}$.
+  - Bootstrap CIs from
+    `v7-jpube-tight/scripts/56_welfare_bootstrap.R`.
+- **Outcomes**: $\Delta_{\mathrm{gov}}$, DWL$_{\mathrm{alloc}}$,
+  $\lambda \cdot$ MCPF, total Loss / $p^{S_1}$, implied weight $\omega$.
+
+## Results
+
+The welfare arithmetic table cells are macro-bound in
+`v8-jpube/output/values.tex`. Per paper §5:
+
+In **non-pharma**, the full set-aside raises government payments by
+`\welfDeltaGovNp` of the reference price, of which `\welfDwlAllocNp` is
+allocative waste and `\welfMcpfDistLthirtyNp` is the MCPF distortion at
+$\lambda=0.30$. The total welfare loss is `\welfLossPctLthirtyNp` = **28.9%**
+of the open-regime price. The bootstrap lower endpoint
+(`\welfLossPctLoNp`) remains economically large.
+
+In **pharma**, the corresponding loss is `\welfLossPctLthirtyPh` = **44.8%**,
+with bootstrap lower endpoint `\welfLossPctLoPh`. The pharma magnitudes
+are larger but inherit more model sensitivity — pharma is reported as a
+boundary case ([AN-016](an-016-pharma-boundary.md)).
+
+The **implied SME welfare weight** required for a planner to prefer the
+full set-aside over open auctions is **2.42 in non-pharma**.
+
+Annualized on Group 65 alone: **R$55–128M per year (US$16–37M)** across
+the empirical adherence-rate range
+(`v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R`).
+
+Output: macros in `v8-jpube/output/values.tex`; paper table
+`tab_welfare_policy_v8` in §5.
+
+## Interpretation
+
+The set-aside is costly on *both* welfare margins: the contract is
+assigned to a higher-cost supplier (real allocative waste) *and* the
+government pays more (fiscal distortion at $\lambda$). The implied
+welfare weight of 2.42 means a planner must value SME producer surplus
+at $2.42 of welfare to find the full set-aside optimal — a number that
+should be benchmarked against the *other* welfare weights implied
+elsewhere in the planner's revealed preferences.
+
+The R$55–128M annual range comes from the SME-eligible adherence-rate
+sensitivity: the lower bound is the *realistic central case* at the
+empirically observed adherence rate, the upper bound is the upper
+bound under full SME-eligible adherence. The headline is meaningful
+because it is one product group of a single state's R$13B procurement
+platform.
+
+Confidence: **yellow.** The welfare arithmetic inherits the structural
+decomposition's restrictions
+([H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)) and
+the $\lambda=0.30$ benchmark (Ballard-Shoven-Whalley). Sensitivity to
+$\lambda$ is reported in paper §5. The non-pharma reading is the
+load-bearing claim; pharma is boundary.
+
+## Follow-ups
+
+- $\lambda$ sweep: report welfare loss at $\lambda \in \{0.10, 0.20, 0.30, 0.50\}$
+  as a sensitivity table.
+- Distributional incidence of the set-aside redistribution:
+  `v7-jpube-tight/scripts/60_distributional_incidence.R` shows the
+  SME-side gain distribution; documenting it as a standalone AN would
+  expose the within-SME concentration of the transfer.
+- Comparison to literature welfare weights from corporate tax or SME
+  subsidy programs (e.g., Hendren 2020 MVPF benchmarks): the implied
+  weight of 2.42 is only meaningful relative to the planner's other
+  revealed weights.

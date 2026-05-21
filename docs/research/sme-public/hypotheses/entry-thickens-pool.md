@@ -1,0 +1,115 @@
+---
+paper: sme-public
+id: h2
+slug: entry-thickens-pool
+title: "Open auctions attract more firms and more valid bids than SME-only auctions"
+cluster: A
+paper_section: "§1 + §6"
+status: partial
+last_updated: 2026-05-21
+---
+
+# H:entry-thickens-pool — Open auctions attract more firms and more valid bids than SME-only auctions
+
+Eligibility expansion mechanically brings non-SME firms back into the
+bidding pool. If that translates into observed bid activity, open-auction
+procurements should record more participating firms and more valid bids
+than SME-only procurements. The reduced-form margin is mechanical (the
+non-SMEs were excluded before), but the magnitude is informative about
+the depth of the non-SME response — and about whether the protected SME
+pool fully replaces them under SME-only (it doesn't:
+see [H:protected-pool-responds](protected-pool-responds.md)).
+
+> **Evidence strength: Partial (toward Supports).**
+> [AN-002](../analyses/an-002-didir-firms-bids.md) reports DiDiR &beta;
+> on log firms of +0.178 (6m), attenuating to +0.093 (18m), all p<0.01,
+> item-clustered. The 18-month effect implies ~10% more firms under open
+> competition; the short-window effect ~22%. Bid-count effects move in the
+> same direction. Magnitudes attenuate with the window — consistent with
+> a gradual SME restriction rollout across the control groups producing
+> a partially-converging trend.
+
+## Theory
+
+In English clock auctions with private values, more bidders shift the
+distribution of the second-order statistic downward (lower expected
+payment) and raise allocative efficiency
+\citep{milgrom1982, athey2002}. Entry into procurement
+auctions has been studied as endogenous to expected rents (Levin and
+Smith 1994; Athey, Levin and Seira 2011); SME-only rules act as an
+entry-eligibility shock by removing the non-SME bidder pool from the
+choice menu.
+
+## Prediction
+
+Log number of bidder firms and log number of valid bids in switched
+group 65 should be *higher* in the pre-period (open auctions) than in
+the post-period (SME-only), relative to always-treated control groups.
+Operationalized as DiDiR: coefficients on $g65 \times \text{Pre}$ in
+the firm-count and bid-count equations should be positive and significant.
+
+## Competing prediction
+
+**Concurrent demand expansion.** A demand expansion specific to group 65
+around March 2018 (e.g., hospital procurement bulk announcements,
+public-health emergency provisions) would attract more bidders without
+the price discipline interpretation. The placebo
+([AN-004](../analyses/an-004-placebo-tests.md)) also shows significant
+pre-treatment shifts in firm and bid counts — these reflect the
+*gradual SME restriction rollout* across the control groups, not a
+group-65-specific demand shock; see the [AN-004](../analyses/an-004-placebo-tests.md)
+discussion of the secular trend.
+
+## Setting evidence
+
+BEC records every registered firm participation per item, including
+those that submit no winning bid. The administrative grain therefore
+includes both the *extensive margin* (firm registers for the item) and
+the *intensive margin* (firm submits a valid bid). Both are recorded
+in the parquet cache; both are DiDiR-able.
+
+## Empirical test
+
+- *Outcome variables*: log number of bidder firms, log number of valid
+  bids (per item).
+- *Variation*: DiDiR — same as [H:price-discipline-loss](price-discipline-loss.md).
+- *Specification*: same DiDiR equation; item-clustered SEs.
+- *Fixed effects*: item; PBU FE in second specification.
+- *Sample*: **all items** (not restricted to completed) — firm and bid
+  counts are defined for non-completed items too.
+
+## Data requirements and limitations
+
+The reduced-form firm-count effect attenuates with the window, which is
+not a defect — it reflects the convergence in the control groups as the
+SME restriction continued to be rolled out. The 18-month estimate
+(~10% more firms) is the conservative read; the 6-month estimate (~22%)
+is the cleanest "treatment effect" comparison but conflates more
+pre-treatment seasonality.
+
+## Evidence
+
+| Analysis | Bearing | Key takeaway |
+|----------|---------|--------------|
+| [AN-002](../analyses/an-002-didir-firms-bids.md) | Supports | DiDiR firms &beta; +0.178 to +0.182 (6m), +0.149 to +0.154 (12m), +0.093 to +0.100 (18m); all p<0.01. Bid-count direction same. |
+| [AN-004](../analyses/an-004-placebo-tests.md) | Mixed | Pre-treatment placebo significant for firms (&beta; ~ &minus;0.10, p<0.01) — flagged in robustness as reflecting the secular SME-restriction rollout across control groups, not a group-65-specific cost shock. |
+| [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Structural confirms: SME participation roughly doubles after the cutoff while non-SME participation falls — but the net post-policy bidder count is smaller than the pre-policy open count. |
+
+## Open tests
+
+### Decompose the entry response by firm type
+
+The reduced-form firm count combines the *removal* of non-SMEs and the
+*entry response* of SMEs. The structural decomposition in
+[AN-010](../analyses/an-010-bne-decomposition.md) separates them; the
+reduced-form DiDiR does not. A composition-by-type cross-cut on the
+DiDiR specification (planned, not run) would expose the SME-side
+entry-response margin directly.
+
+### Margin of intensive vs extensive
+
+Are the bid-count gains driven by more firms registering (extensive) or
+by each firm submitting more valid bids on the same item (intensive)?
+Pregão re-bidding allows a single firm to submit many bids. A
+within-firm bid-count decomposition would isolate the strategic
+re-bidding margin.
