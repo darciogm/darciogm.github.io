@@ -114,6 +114,7 @@ not to group 65 itself.
 | [AN-018](../analyses/an-018-cs2021-staggered.md) | Supports | Sun-Abraham item-level ATT 0.108 vs DDR 0.113 (Δ<0.005 on log prices); CS2021 group-month 0.237* same direction; convergence across three estimators on direction, on magnitude for SA. |
 | [AN-020](../analyses/an-020-goodman-bacon.md) | Supports (green) | Weight = 1.000 on clean Treated-vs-Untreated 2×2; zero forbidden comparisons. Heterogeneous-timing-bias mathematically absent in this single-cohort design. |
 | [AN-021](../analyses/an-021-synth-control.md) | Mixed | Pre-treatment gap 0.0000 (parallel trends enforced); post ATT 0.171 directionally consistent; placebo p=0.103 borderline (not significant at 5%). |
+| [AN-023](../analyses/an-023-phased-adoption.md) | Supports | Dropping the 8-month BEC enablement window reduces β from −0.109 to −0.087 (−22%) but both remain p<0.01. Headline not driven by rollout dynamics. |
 
 ## Open tests
 

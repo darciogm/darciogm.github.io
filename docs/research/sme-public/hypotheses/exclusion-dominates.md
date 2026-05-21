@@ -21,15 +21,20 @@ the fixed pool with the observed post-policy pool). The paper's headline
 claim is that the first magnitude dominates the second in standardized
 non-pharmaceutical procurement.
 
-> **Evidence strength: Partial.**
-> [AN-010](../analyses/an-010-bne-decomposition.md) reports an absolute
-> exclusion share of ~72% in standardized non-pharma — i.e., the
-> lost-discipline channel accounts for ~72% of the sum of absolute
-> magnitudes of the two channels. Pharmaceuticals show a larger absolute
-> exclusion share at higher magnitudes but inherit additional model
-> sensitivity ([AN-016](../analyses/an-016-pharma-boundary.md)). Survival
-> under strict-invariance is checked in
-> [AN-017](../analyses/an-017-strict-invariance.md).
+> **Evidence strength: Partial (strongly supported).**
+> [AN-010](../analyses/an-010-bne-decomposition.md) reports an
+> absolute exclusion share of 72.0% (non-pharma) and 68.8% (pharma) —
+> lost-discipline channel dominates protected-pool offset.
+> [AN-017](../analyses/an-017-strict-invariance.md) shows strict
+> invariance ($F_c^{\mathrm{SME,Post}} = F_c^{\mathrm{SME,Pre}}$)
+> reinforces dominance: share rises to **85% (NP) / 79% (PH)** when
+> SME composition is held fixed. **AN-022 cluster bootstrap (B=500)
+> reports 95% CI [64.5, 86.8] (NP) and [61.6, 85.2] (PH) on the
+> absolute exclusion share — the lower endpoint exceeds 50%
+> in every cell × winner-censoring regime**, so the dominance ordering
+> survives bootstrap inference. Pharma inherits additional model
+> sensitivity ([AN-016](../analyses/an-016-pharma-boundary.md)),
+> hence the boundary-case treatment.
 
 ## Theory
 
@@ -101,7 +106,8 @@ participation with changes in the active SME pool composition
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Absolute exclusion share ~72% in standardized non-pharma; exclusion-to-net ratio exceeds 1 in both non-pharma and pharma cells. |
 | [AN-017](../analyses/an-017-strict-invariance.md) | Pending | Strict-invariance specification holding the SME pool fixed in composition — should preserve the dominance ordering if compositional churn is not the main driver. |
 | [AN-016](../analyses/an-016-pharma-boundary.md) | Mixed | Pharma magnitudes larger but more model-sensitive; not load-bearing for the headline. |
-| [AN-014](../analyses/an-014-uh-correction.md) | Pending | UH-correction sensitivities (ICCs across cells); load-bearing for whether the decomposition is mechanically produced by common auction-level scale heterogeneity. |
+| [AN-014](../analyses/an-014-uh-correction.md) | Supports | UH-correction ICCs 0.36–0.59; Gaussian-copula ρ_c=0.3 share drift <5pp, total drift <10%. Decomposition not mechanically produced by scale shocks. |
+| [AN-022](../analyses/an-022-bootstrap-ci.md) | Supports | 95% CI on absolute exclusion share [64.5, 86.8] NP / [61.6, 85.2] PH — lower endpoint exceeds 50% dominance threshold in every cell × regime. Δ_total CI excludes zero. |
 
 ## Open tests
 
@@ -113,8 +119,9 @@ restriction. Lives in `v7-jpube-tight/scripts/38_cross_modality.R`.
 
 ### Bootstrap dominance ordering
 
-[AN-010](../analyses/an-010-bne-decomposition.md) reports point
-decompositions. A clustered bootstrap on the exclusion share would
-report a CI on the dominance ordering, sharpening the "exceeds 50%"
-claim. Partly done in `51_bootstrap_ci.R`; not yet documented as a
-standalone AN.
+**Done** in [AN-022](../analyses/an-022-bootstrap-ci.md): cluster
+bootstrap (B=500) at auction level. 95% CI on absolute exclusion
+share [64.5, 86.8] NP / [61.6, 85.2] PH — exceeds 50% threshold in
+every cell × regime. **Open**: BCa intervals and subsampling
+variants for skew-robust inference; stratification by adherence-rate
+for the fiscal-cost CI alignment.

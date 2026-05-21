@@ -247,3 +247,25 @@
   file: docs/analyses/an-021-synth-control.md
   script: scripts/09_synth_control.R
   target: output/tables/tab_synth.tex
+
+- id: an-022
+  hypothesis: exclusion-dominates
+  status: done
+  type: robustness
+  question: What is the 95% bootstrap confidence interval on the absolute exclusion share, and does the lower endpoint exclude 50% (the dominance threshold)?
+  confidence: yellow
+  tags: ["H:exclusion-dominates", "H:protected-pool-responds", bootstrap, confidence-interval, cluster-bootstrap, dominance-threshold]
+  file: docs/analyses/an-022-bootstrap-ci.md
+  script: v7-jpube-tight/scripts/51_bootstrap_ci.R
+  target: v7-jpube-tight/output/tables/tab_v3_bootstrap_ci.tex
+
+- id: an-023
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does the DiD price coefficient survive dropping the 8-month BEC enablement window (Jul 2017–Feb 2018) during which the SME-only OC functionality was operationalized before the empirical cutoff of mass take-up?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", "H:price-discipline-loss", phased-adoption, rollout-robust, comunicado-bec, did, item-fe]
+  file: docs/analyses/an-023-phased-adoption.md
+  script: v7-jpube-tight/scripts/70_phased_adoption.R
+  target: v7-jpube-tight/output/tables/tab_phased_adoption.tex
