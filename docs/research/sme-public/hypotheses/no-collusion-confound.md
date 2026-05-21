@@ -4,8 +4,8 @@ id: h12
 slug: no-collusion-confound
 title: "The price drop is not produced by a post-policy shift in bidder coordination"
 cluster: D
-paper_section: "§6"
-status: not_yet_tested
+paper_section: "§6.4"
+status: partial
 last_updated: 2026-05-21
 ---
 
@@ -22,14 +22,17 @@ bid behavior. The decomposition would then become a price-forming
 bid-rigging screens (Bajari-Ye, Schurter, pair classification) test
 whether such a coordination shift is detectable in the data.
 
-> **Evidence strength: Not yet tested.**
-> The screens
-> (`v7-jpube-tight/scripts/58_collusion_screen.R`,
-> `59_collusion_screen_schurter.R`,
-> `60_collusion_screen_bajari_ye.R`,
-> `61_collusion_screen_pair_classcond.R`) are partly run but not yet
-> documented as a unified AN. Until they land, the decomposition
-> survives only conditionally on this hypothesis.
+> **Evidence strength: Partial (toward Supports).** Both classical
+> screens land clean for the differential question.
+> [AN-015](../analyses/an-015-collusion-screens.md) reports:
+> Conley-Decarolis close-pair share is **flat** in non-pharma
+> (16.9% → 16.8%, both well above null ~10%) and **falls** in pharma
+> (27.6% → 24.4%); Bajari-Ye T1 ratios **fall** in both classes
+> (NP 2.63 → 1.83; PH 1.29 → 1.11). The post-policy price increase is
+> *not* produced by a new coordination shock among the surviving SME
+> pool. Yellow because the screens were designed for other
+> institutional contexts and residual baseline clustering remains
+> acknowledged as a limitation.
 
 ## Theory
 
@@ -94,7 +97,7 @@ statistic baselines.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-015](../analyses/an-015-collusion-screens.md) | Pending | Bajari-Ye, Schurter, pair-classification — load-bearing for whether drop-outs admit the IPV reading. Documented but not yet authored. |
+| [AN-015](../analyses/an-015-collusion-screens.md) | Supports | Conley realized share flat NP (16.9→16.8) / falls PH (27.6→24.4); Bajari-Ye T1 falls in both (NP 2.63→1.83; PH 1.29→1.11). Differential-coordination shock rejected. |
 
 ## Open tests
 

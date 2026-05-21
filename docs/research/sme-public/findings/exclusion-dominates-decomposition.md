@@ -33,16 +33,22 @@ $|S_2-S_1| / (|S_2-S_1| + |S_3-S_2|)$ is ~72% in non-pharma.*
 **Caveat.** The decomposition inherits the maintained IPV-clock
 interpretation of Pregão drop-outs
 (see [H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
-If bidder coordination shifted across the policy break — for instance
-because the smaller eligible SME pool meets the same competitors more
-often — the post-policy $S_3$ understates the true willingness to
-supply and the offset reading collapses. The collusion-screen battery
-([AN-015](../analyses/an-015-collusion-screens.md)) is the load-bearing
-rule-out and remains pending. The pharma analog of the decomposition
-shows the same qualitative pattern at higher magnitudes but inherits
-additional model sensitivity
-([AN-016](../analyses/an-016-pharma-boundary.md)), which is why pharma
-is treated as a boundary case rather than a second headline.
+The diagnostic battery has now landed:
+[AN-015](../analyses/an-015-collusion-screens.md) finds Conley
+close-pair shares stable in non-pharma (16.9% → 16.8%) and falling in
+pharma (27.6% → 24.4%); Bajari-Ye T1 ratios fall in both classes
+(NP 2.63 → 1.83; PH 1.29 → 1.11). The threat that the smaller
+eligible SME pool generated a new coordination shock is rejected.
+Strict invariance ([AN-017](../analyses/an-017-strict-invariance.md))
+reinforces the dominance ordering, raising the exclusion share to
+**85% (NP) and 79% (PH)** when composition is held fixed. The
+reading remains 🟡 because residual baseline clustering exists
+(realized close-pair shares are 1.6–1.9× the null mean) and the
+screens do not *prove* IPV-clock holds — they rule out the most
+obvious deviations. The pharma analog inherits additional model
+sensitivity ([AN-016](../analyses/an-016-pharma-boundary.md)), which
+is why pharma is treated as a boundary case rather than a second
+headline.
 
 **Sources.**
 

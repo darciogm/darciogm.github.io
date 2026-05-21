@@ -84,15 +84,28 @@ see [H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
   identifying source within São Paulo (e.g., a complementary structural
   recovery from Convite first-price bids that converges with the Pregão
   drop-out reading; partly addressed by the cross-modality check in §6).
-- **The structural findings depend on the IPV-clock interpretation.** If
-  Pregão drop-outs do not pin down willingness-to-supply
-  (see [H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)),
-  the decomposition and welfare arithmetic become a price-forming
-  re-weighting exercise rather than a structural counterfactual. The
-  collusion-screen battery
-  ([AN-015](../analyses/an-015-collusion-screens.md)) is the load-bearing
-  threat-assessment piece; until it lands clean the decomposition
-  findings remain 🟡 by design.
+- **The IPV-clock diagnostic battery has landed.** What was an open
+  threat-assessment item — "do the screens land clean?" — has been
+  resolved on the differential question (does coordination *intensify*
+  post-cutoff, the threat that would mechanically produce the
+  exclusion-dominant decomposition through bid suppression). It does
+  not: Conley-Decarolis close-pair shares are stable in non-pharma
+  (16.9% → 16.8%) and fall in pharma (27.6% → 24.4%); Bajari-Ye T1
+  ratios fall in both classes (NP 2.63 → 1.83; PH 1.29 → 1.11). See
+  [AN-015](../analyses/an-015-collusion-screens.md) for the full
+  screen battery. Three winner-censoring regimes give net $S_3 - S_1$
+  in [0.246, 0.275] non-pharma and [0.308, 0.357] pharma — all
+  positive, all large ([AN-013](../analyses/an-013-pregao-dropouts.md));
+  Gaussian-copula relaxation with within-auction cost correlation up
+  to ρ_c = 0.3 drifts the exclusion share by <5 pp and the total
+  effect by <10% ([AN-014](../analyses/an-014-uh-correction.md));
+  strict invariance reinforces the dominance ordering, raising the
+  exclusion share to 85% non-pharma and 79% pharma
+  ([AN-017](../analyses/an-017-strict-invariance.md)). The screens do
+  not *prove* the IPV-clock reading — that is why findings remain 🟡
+  — but they rule out the most obvious bid-conduct deviations.
+  Residual baseline clustering remains an acknowledged limitation
+  (realized close-pair shares are 1.6–1.9× the null mean).
 - **The 10% price preference is a static design benchmark, not a forecast.**
   It holds entry and recovered willingness-to-supply primitives fixed; it
   does not solve a counterfactual legal regime in equilibrium. Any

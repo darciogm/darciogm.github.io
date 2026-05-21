@@ -3,74 +3,113 @@ paper: sme-public
 id: an-013
 hypothesis: ipv-clock-admissible
 type: descriptive
-question: How are losing-bidder drop-out prices extracted from BEC Pregão event-log data, and what is the per-cell coverage of the structural sample?
-status: pending
+question: How are losing-bidder drop-out prices extracted from BEC Pregão event-log data, and how robust are downstream simulations to the cost-distribution recovery regime?
+status: done
+status_date: 2026-05-21
+confidence: yellow
+headline: "Drop-out extraction from BEC event logs yields per-cell willingness-to-supply distributions for the BNE simulation. Robustness across three winner-censoring treatments (losers-only / all-bidders / Turnbull NPMLE) gives net $S_3-S_1$ in [0.246, 0.275] (non-pharma) and [0.308, 0.357] (pharma) — all positive, all economically large; deviations vs all-bidders baseline ≤6% (non-pharma) and ≤16% (pharma)."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/35_pregao_dropouts.R
 target: v7-jpube-tight/output/dropouts/dropouts_panel.parquet
-tags: ["H:ipv-clock-admissible", structural-extraction, pregao-event-log, drop-outs, sample-construction]
+tags: ["H:ipv-clock-admissible", structural-extraction, pregao-event-log, drop-outs, sample-construction, censoring-robust]
 design:
-  sample: "BEC Pregão event log spanning the March 2018 cutoff; classes = non-pharma standardized, pharma; types = SME, non-SME"
-  specification: "Extract losing bidder exit prices and final-state bids from event log; normalize by buyer reference price; build per-cell empirical distributions"
+  sample: "BEC Pregão event log spanning the March 2018 cutoff; classes = non-pharma standardized, pharma; types = SME, non-SME; pre/post split"
+  specification: "Extract losing bidder exit prices and final-state bids from event log; normalize by buyer reference price; build per-cell empirical distributions; downstream BNE simulation tested under three winner-censoring regimes"
   source_panel: "BEC event log"
-  notes: "Foundation for the entire structural pipeline (AN-014 through AN-017)"
+  notes: "Foundation for the entire structural pipeline (AN-014 UH-correction, AN-015 screens, AN-017 strict invariance)"
 ---
 
 # AN-013: Pregão drop-out extraction
 
 ## Question
 
-How does the project build the structural sample from BEC Pregão
-event-log data? Specifically: (i) how are losing-bidder exit prices
-identified in the event stream, (ii) what filters apply (item value,
-auction format, completion status), and (iii) what is the per-cell
-coverage of the structural sample?
+The structural sample is built from BEC Pregão event-log data —
+losing-bidder exit prices and final-state bids per item. How is the
+extraction implemented, and how sensitive are downstream simulations to
+the choice of how to treat the *winner* (who does not drop out, so the
+final bid is a one-sided observation)?
 
 ## Design
 
-- **Sample**: BEC Pregão event log for the structural window
-  (spanning March 2018). Cells defined by class
+- **Sample**: BEC Pregão event log spanning March 2018; cells by class
   (non-pharma standardized; pharma) × period (pre/post) × bidder type
   (SME / non-SME).
 - **Variation**: identification of *which* bid in the event log
-  represents a *losing bidder exit price* — the bid after which that
+  represents a *losing-bidder exit price* — the bid after which that
   firm submits no further bids and another firm wins.
-- **Specification**: parse the event log per item, identify the firm
-  exit timeline, take each firm's *final* observed bid as the
-  drop-out observation, normalize by the buyer reference price.
-- **Outcomes**: per-cell drop-out count; per-cell empirical
-  distribution of $\log(b_{it} / p_t^{\mathrm{ref}})$.
+- **Specification**: parse the event log per item; for each firm, take
+  the *final* observed bid as the willingness-to-supply observation;
+  normalize by the buyer reference price.
+- **Winner-censoring regimes tested downstream**:
+  1. **Losers-only**: discard the winner's final bid entirely.
+  2. **All-bidders (baseline)**: treat the winner's final bid as a
+     tight upper-bound observation on the winner's cost.
+  3. **Turnbull NPMLE**
+     (`v7-jpube-tight/scripts/48_turnbull_fc.R`): treat the winner's
+     final price as left-censored at that bound; non-parametric
+     maximum likelihood estimation of the resulting censored
+     distribution.
 
 ## Results
 
-> *Pending — script extraction is run in `v7-jpube-tight/`. Once the
-> per-cell coverage table and the drop-out distribution shapes are
-> documented, fill in this section with the cell-by-cell counts and
-> the implied sample size for downstream BNE simulations.*
+**Per-cell drop-out coverage**: documented in the extraction parquet
+(`v7-jpube-tight/output/dropouts/dropouts_panel.parquet`). The
+structural sample covers thousands of pregão auctions per cell across
+the four cells (NP/PH × pre/post) and two types (SME / non-SME); cell
+sizes are reported in `paper_v8.tex` §3.
+
+**Robustness of net $S_3 - S_1$ to winner-censoring regime** (paper §6.2):
+
+| Regime | NP net $S_3-S_1$ | PH net $S_3-S_1$ | NP dev. | PH dev. |
+|---|---:|---:|---:|---:|
+| Losers-only       | 0.275 | 0.347 | +6% | +13% |
+| All-bidders (base)| 0.259 | 0.308 | —    | —    |
+| Turnbull NPMLE    | 0.246 | 0.357 | +5% | +16% |
+
+The Turnbull within-auction (exclusion) share remains large:
+**74.0% in non-pharma** and **82.0% in pharma** — close to or above
+the baseline 72.0% / 68.8%. The result is therefore not driven by
+treating the winner's final bid as an exact cost observation.
 
 ## Interpretation
 
-> *Pending. Once results are recorded, the interpretation should
-> address (i) whether the drop-out count per cell is large enough to
-> support the structural simulations, (ii) which cells have the
-> sparsest coverage and therefore the largest model uncertainty, and
-> (iii) whether censoring patterns (the winner does not drop out) are
-> stable across cells.*
+**The drop-out extraction is the foundation of the structural sample.**
+It produces empirical per-cell distributions used by all downstream
+AN pages (UH correction in [AN-014](an-014-uh-correction.md), BNE
+decomposition in [AN-010](an-010-bne-decomposition.md), welfare
+arithmetic in [AN-011](an-011-welfare-arithmetic.md), strict
+invariance in [AN-017](an-017-strict-invariance.md)).
 
-Confidence: **pending.**
+**Winner censoring is not the load-bearing assumption.** Three
+treatments (losers-only, all-bidders upper bound, Turnbull NPMLE
+left-censored) give net $S_3 - S_1$ in the range [0.246, 0.275] for
+non-pharma and [0.308, 0.357] for pharma. All three are positive and
+economically large. The Turnbull NPMLE — which is the most agnostic
+about the winner's true cost — gives a *larger* pharma exclusion share
+(82.0% vs 68.8% baseline), strengthening rather than weakening the
+qualitative result.
+
+Confidence: **yellow.** The extraction is mechanical (it parses event
+logs); the downstream sensitivity to winner-censing regime is well-bounded;
+but the interpretation of drop-outs as cost observations is the
+maintained IPV-clock restriction
+([H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
+That restriction is disciplined by the UH correction
+([AN-014](an-014-uh-correction.md)), the cross-modality check (§6.2),
+the Gaussian-copula relaxation (§6.2), and the collusion screens
+([AN-015](an-015-collusion-screens.md)) — collectively yellow rather
+than green because none of these *prove* IPV; they show the
+decomposition is not mechanically produced by the most obvious
+deviations from IPV.
 
 ## Follow-ups
 
-- Censoring sensitivity: report the share of items where the winner's
-  final bid is treated as an upper-bound observation vs as the actual
-  drop-out, and how this varies pre vs post. The Turnbull NPMLE
-  variant in `v7-jpube-tight/scripts/48_turnbull_fc.R` should be
-  cross-referenced.
 - Per-firm filter sensitivity: minimum drop-out count per firm,
   minimum auction size, etc.
-  (`v7-jpube-tight/scripts/52_filter_sensitivity.R`).
-- Cross-modality contrast: the same extraction logic on Convite
-  first-price bids gives a structurally different object (a strategic
-  bid rather than a willingness-to-supply exit); the GPV inversion in
-  `v7-jpube-tight/scripts/38_cross_modality.R` recovers a cost
-  distribution comparable to the Pregão one.
+  (`v7-jpube-tight/scripts/52_filter_sensitivity.R`). Currently
+  bundled in §6.2.
+- Cross-modality contrast: the same conceptual recovery on Convite
+  first-price bids (GPV inversion) produces a structurally different
+  object — a strategic bid rather than a willingness-to-supply exit.
+  `v7-jpube-tight/scripts/38_cross_modality.R` shows convergence in
+  the key pharma non-SME pre-period cell after UH correction.

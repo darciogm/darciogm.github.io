@@ -4,8 +4,8 @@ id: h7
 slug: ipv-clock-admissible
 title: "Pregão drop-out prices admit the IPV-clock interpretation as willingness-to-supply observations"
 cluster: B
-paper_section: "§3"
-status: not_yet_tested
+paper_section: "§3, §6.2, §6.4"
+status: partial
 last_updated: 2026-05-21
 ---
 
@@ -20,16 +20,23 @@ or by non-truthful early exits, the interpretation as cost draws breaks
 down and the decomposition becomes a price-formation re-weighting
 exercise rather than a structural counterfactual.
 
-> **Evidence strength: Not yet tested.**
-> The full diagnostic battery — drop-out extraction
-> ([AN-013](../analyses/an-013-pregao-dropouts.md)), unobserved
-> heterogeneity correction
-> ([AN-014](../analyses/an-014-uh-correction.md)), collusion screens
-> ([AN-015](../analyses/an-015-collusion-screens.md)) — is partly run
-> but not yet documented as AN pages. The maintained restriction is
-> load-bearing for [H:exclusion-dominates](exclusion-dominates.md),
-> [H:protected-pool-responds](protected-pool-responds.md), and the
-> entire welfare arithmetic of Cluster C.
+> **Evidence strength: Partial (toward Supports).** The diagnostic
+> battery has landed. **Censoring** (Turnbull NPMLE,
+> [AN-013](../analyses/an-013-pregao-dropouts.md)): exclusion share
+> 74% (non-pharma) and 82% (pharma) under the most-agnostic winner
+> treatment — same direction as baseline. **Auction-level scale
+> shocks** ([AN-014](../analyses/an-014-uh-correction.md)):
+> Krasnokutskaya correction with ICCs 0.36–0.59 leaves the
+> decomposition intact; a Gaussian-copula relaxation with within-auction
+> cost correlation up to ρ_c=0.3 drifts the exclusion share by <5 pp
+> and the total effect by <10%. **Bidder coordination**
+> ([AN-015](../analyses/an-015-collusion-screens.md)): Conley-Decarolis
+> close-pair shares and Bajari-Ye T1 ratios both stable or falling
+> post-cutoff — no differential-coordination shock.
+> Cross-modality discipline (Convite GPV vs Pregão drop-out) lines up
+> in the key pharma non-SME cell. The diagnostics do not *prove* IPV;
+> they show the decomposition is not mechanically produced by the
+> most obvious deviations from IPV. Yellow remains appropriate.
 
 ## Theory
 
@@ -100,9 +107,9 @@ in hand; the ANs are scaffolded but not yet authored.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-013](../analyses/an-013-pregao-dropouts.md) | Pending | Drop-out extraction from BEC event log; per-cell coverage of the structural sample. |
-| [AN-014](../analyses/an-014-uh-correction.md) | Pending | Krasnokutskaya-style heterogeneity correction; ICC range across cells. |
-| [AN-015](../analyses/an-015-collusion-screens.md) | Pending | Bajari-Ye, Schurter, pair-classification screens — load-bearing for whether drop-outs admit the IPV reading. |
+| [AN-013](../analyses/an-013-pregao-dropouts.md) | Supports | Three winner-censoring regimes (losers-only / all-bidders / Turnbull) give net $S_3-S_1$ in [0.246, 0.275] (NP) and [0.308, 0.357] (PH); all positive, all large. Turnbull exclusion share 74% (NP) / 82% (PH). |
+| [AN-014](../analyses/an-014-uh-correction.md) | Supports | UH correction with ICCs 0.36 (NP-SME) to 0.59 (PH non-SME). Gaussian-copula ρ_c ≤ 0.3: exclusion share drift <5 pp; total drift <10%. |
+| [AN-015](../analyses/an-015-collusion-screens.md) | Supports | Conley close-pair shares stable in NP (16.9→16.8) / fall in PH (27.6→24.4); Bajari-Ye T1 ratios fall in both classes (NP 2.63→1.83; PH 1.29→1.11). Differential-coordination story rejected. |
 
 ## Open tests
 

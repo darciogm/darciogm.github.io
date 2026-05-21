@@ -24,12 +24,14 @@ $S_3 - S_1$ remains positive in both non-pharma and pharma cells.
 **Caveat.** The interpretation that the SME pool *cannot* recreate the
 discipline rests on the maintained IPV-clock reading
 ([H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)): the
-post-policy SME drop-outs are read as cost observations. If those
-drop-outs are strategically suppressed (more cover-bidding among the
-smaller eligible pool), the protected-pool cost distribution looks
-worse than it would under truthful exit — and the offset would be
-larger in counterfactual. The collusion screens
-([AN-015](../analyses/an-015-collusion-screens.md)) bound this concern.
+post-policy SME drop-outs are read as cost observations. The threat
+that drop-outs are strategically suppressed (more cover-bidding among
+the smaller eligible pool) is now bounded by the collusion screens
+([AN-015](../analyses/an-015-collusion-screens.md)): Conley close-pair
+shares are flat or falling post-cutoff and Bajari-Ye T1 ratios fall in
+both classes — the differential-coordination shock that would explain
+the protected-pool offset away is rejected. Residual baseline clustering
+(real > null in every cell) remains a limitation, hence 🟡.
 
 **Sources.**
 

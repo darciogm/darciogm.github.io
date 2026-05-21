@@ -3,31 +3,40 @@ paper: sme-public
 id: an-014
 hypothesis: ipv-clock-admissible
 type: robustness
-question: What auction-level heterogeneity correction is applied to drop-out prices (Krasnokutskaya 2011 in spirit), and what are the resulting intraclass correlations?
-status: pending
+question: Does the Krasnokutskaya-style auction-level heterogeneity correction (a) remove common scale shocks without mechanically generating the exclusion-dominant decomposition, and (b) does relaxing within-auction independence to a Gaussian copula leave the decomposition intact?
+status: done
+status_date: 2026-05-21
+confidence: yellow
+headline: "Krasnokutskaya-style decomposition reports Pregão ICCs from 0.36 (non-pharma SMEs) to 0.59 (pharma non-SMEs). Cleaned $\\exp(\\hat e_{it})$ feeds the BNE simulation. Gaussian-copula relaxation with within-auction cost correlation up to ρ_c=0.3: exclusion share drifts <5 pp and net effect drifts <10% — exclusion-dominant decomposition survives moderate dependence."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/40_uh_variance.R
 target: v7-jpube-tight/output/uh_decomposition.parquet
-tags: ["H:ipv-clock-admissible", krasnokutskaya, unobserved-heterogeneity, icc, scale-correction]
+tags: ["H:ipv-clock-admissible", krasnokutskaya, unobserved-heterogeneity, icc, scale-correction, gaussian-copula]
 design:
   sample: "Pregão drop-outs from AN-013, by class and bidder type"
-  specification: "y_it = log(b_it / p_t^ref) = a_t + e_it; method-of-moments decomposition of between-auction vs within-auction variance; best-linear-predictor shrinkage removes a_t"
+  specification: "y_it = log(b_it / p_t^ref) = a_t + e_it; method-of-moments decomposition of between-auction vs within-auction variance; best-linear-predictor shrinkage removes â_t. Gaussian-copula relaxation: within-auction cost correlation ρ_c ∈ {0, 0.1, 0.2, 0.3}"
   source_panel: "BEC event log"
-  notes: "ICCs reported per cell; cleaned exp(e_it) enters the BNE simulation"
+  notes: "Removes common auction-level scale but does NOT purge bidder-type selection or post-policy SME pool composition changes"
 ---
 
-# AN-014: Auction-level heterogeneity correction
+# AN-014: Auction-level heterogeneity correction + dependence relaxation
 
 ## Question
 
-Bids in a single auction can move together because of common
-auction-level scale factors (volume, delivery burden, regulatory
-documentation, item-specific complexity). Normalization by the buyer
-reference price absorbs cross-item scale differences but does not
-remove all auction-level heterogeneity. A Krasnokutskaya (2011)-style
-correction decomposes log normalized bids into an auction-level scale
-component and a bidder-specific component, and removes the auction-level
-component before the structural simulation.
+Two diagnostic concerns about the structural recovery:
+
+1. **Common auction-level scale shocks**: Bids in a single auction can
+   move together because of volume, delivery burden, regulatory
+   documentation, or item-specific complexity. Normalization by the
+   buyer reference price absorbs cross-item scale differences but not
+   these auction-level co-movements. Does a
+   Krasnokutskaya (2011)-style heterogeneity correction *mechanically*
+   produce the exclusion-dominant decomposition by removing too much
+   variance, or does the decomposition survive?
+2. **Within-auction cost independence**: The IPV-clock interpretation
+   assumes types draw independent costs within each auction. If
+   moderate within-auction cost correlation exists (sourcing shocks,
+   common input prices), does it overturn the decomposition?
 
 ## Design
 
@@ -35,46 +44,79 @@ component before the structural simulation.
   [AN-013](an-013-pregao-dropouts.md), by class and bidder type.
 - **Variation**: within-auction vs between-auction variance in
   $y_{it} = \log(b_{it} / p_t^{\mathrm{ref}})$.
-- **Specification**: method-of-moments variance decomposition; identify
-  the between-auction variance from co-movement of bids within
-  auctions; remove the estimated $\hat{a}_t$ via best-linear-predictor
-  shrinkage.
+- **Specification (UH correction)**: method-of-moments variance
+  decomposition; estimate $\hat{a}_t$ as auction-level scale
+  component; remove via best-linear-predictor shrinkage; use cleaned
+  $\exp(\hat{e}_{it})$ for downstream BNE simulation.
+- **Specification (dependence relaxation)**: re-run BNE simulation
+  under a Gaussian-copula joint distribution with within-auction cost
+  correlation $\rho_c \in \{0, 0.1, 0.2, 0.3\}$.
 - **Outcomes**: per-cell intraclass correlation (ICC); cleaned bid
-  distribution $\exp(\hat{e}_{it})$ for downstream BNE simulation.
+  distribution; exclusion share + net effect across $\rho_c$ grid.
 
 ## Results
 
-> *Pending AN-page interpretation — the underlying decomposition is run
-> and the macros are in `values.tex`. Headline ICCs in the main cells
-> range from **0.36** (Pregão non-pharma SMEs, `\iccNpSme`) to **0.59**
-> (Pregão pharma non-SMEs, `\iccPharmaNonSme`) — values comparable to
-> procurement settings where this correction is standard. Per-cell
-> breakdown across the four type-class pairs and pre/post pending.*
+**Intraclass correlations** (paper §3): Pregão ICCs in the main cells
+range from **0.36 (non-pharma SMEs)** to **0.59 (pharma non-SMEs)** —
+comparable to procurement settings where the Krasnokutskaya correction
+is standard (e.g., Krasnokutskaya 2011's Florida road auctions).
+
+**Gaussian-copula dependence relaxation** (paper §6.2):
+
+- Within-auction cost correlation tested up to $\rho_c = 0.3$.
+- Across the $\rho_c$ grid:
+  - Exclusion share moves by **less than 5 percentage points**.
+  - Total effect moves by **less than 10 percent**.
+
+Filter sensitivity at $c_\epsilon \leq 3$ and 6/12/18-month windows
+also leave the exclusion component as the larger component in both
+classes.
+
+Output: `v7-jpube-tight/output/uh_decomposition.parquet`; documented in
+`paper_v8.tex` §6.2 (Willingness-to-supply recovery and auction
+primitives).
 
 ## Interpretation
 
-> *Pending. Once results are recorded, the interpretation should
-> address (i) whether the ICC magnitudes are comparable to procurement
-> settings where this correction is standard, (ii) which cells exhibit
-> the largest auction-level variance (and hence the most cleaning),
-> and (iii) whether the dominance ordering in
-> [AN-010](an-010-bne-decomposition.md) survives the correction.
-> Important: the correction removes common auction-level scale
-> variation but does **not** purge bidder-type selection,
-> product-level composition, or post-policy changes in the active SME
-> pool.*
+**Common scale shocks do not produce the exclusion result.** After the
+UH correction removes auction-level scale, the cleaned per-cell cost
+distributions still generate the exclusion-dominant decomposition. The
+correction *narrows* the simulation's noise but does not change the
+qualitative ordering.
 
-Confidence: **pending.**
+**Moderate within-auction cost correlation does not overturn the
+decomposition.** Allowing within-auction $\rho_c$ up to 0.3 — a
+substantial deviation from the IPV-clock independence assumption —
+moves the exclusion share by less than 5 pp and the total effect by
+less than 10%. This is not a test that IPV-clock holds; it is a test
+that *moderate* deviations from IPV-clock are not the reason the
+decomposition reads as it does.
+
+**What the correction does *not* purge.** Two channels remain in the
+cleaned distribution: (i) bidder-type selection (SMEs vs non-SMEs
+genuinely have different cost distributions, which is the substantive
+finding the paper builds on); (ii) post-policy SME pool composition
+changes (selection into the protected market, sourcing or product-mix
+changes). The strict-invariance check
+([AN-017](an-017-strict-invariance.md)) is the test for whether the
+second channel matters for the *dominance ordering*.
+
+Confidence: **yellow.** The UH correction is methodologically standard;
+the ICC magnitudes are comparable to other procurement settings; the
+dependence-relaxation grid is informative. The reading remains yellow
+rather than green because the correction is a *necessary discipline*
+on the structural recovery, not a *proof* that the recovered objects
+are literal costs.
 
 ## Follow-ups
 
-- Cross-modality contrast: how does the cleaned ICC compare to the
-  cross-modality first-price recovery
-  (`v7-jpube-tight/scripts/38_cross_modality.R`)? Different auction
-  formats should produce different ICCs.
-- ICC stability across the policy break: a discontinuous shift in the
-  ICC at March 2018 would indicate the auction-level scale structure
-  changed under the policy. Worth checking.
-- Update-version sensitivity: `v7-jpube-tight/scripts/43_uh_invariance_update.R`
-  re-estimates the correction with iterative refinement; the
-  decomposition should be stable across iterations.
+- ICC stability across the policy break: re-estimate ICCs separately
+  in pre and post periods. A discontinuous shift would indicate the
+  auction-level scale structure changed under the policy.
+- Iterative refinement
+  (`v7-jpube-tight/scripts/43_uh_invariance_update.R`): the decomposition
+  should be stable across iterative updates of the correction.
+- Cross-modality consistency: per `paper_v8.tex` §6.2, the Convite
+  first-price GPV recovery and Pregão drop-out recovery line up in the
+  key pharma non-SME pre-period cell after UH correction — a
+  cross-modality discipline that deserves its own AN page.

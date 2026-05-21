@@ -151,33 +151,33 @@
 
 - id: an-013
   hypothesis: ipv-clock-admissible
-  status: pending
+  status: done
   type: descriptive
-  question: How are losing-bidder drop-out prices extracted from BEC Pregão event-log data, and what is the per-cell coverage of the structural sample?
-  confidence: pending
-  tags: ["H:ipv-clock-admissible", structural-extraction, pregao-event-log, drop-outs, sample-construction]
+  question: How are losing-bidder drop-out prices extracted from BEC Pregão event-log data, and how robust are downstream simulations to the cost-distribution recovery regime?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", structural-extraction, pregao-event-log, drop-outs, sample-construction, censoring-robust]
   file: docs/analyses/an-013-pregao-dropouts.md
   script: v7-jpube-tight/scripts/35_pregao_dropouts.R
   target: v7-jpube-tight/output/dropouts/dropouts_panel.parquet
 
 - id: an-014
   hypothesis: ipv-clock-admissible
-  status: pending
+  status: done
   type: robustness
-  question: What auction-level heterogeneity correction is applied to drop-out prices (Krasnokutskaya 2011 in spirit), and what are the resulting intraclass correlations?
-  confidence: pending
-  tags: ["H:ipv-clock-admissible", krasnokutskaya, unobserved-heterogeneity, icc, scale-correction]
+  question: Does the Krasnokutskaya-style auction-level heterogeneity correction (a) remove common scale shocks without mechanically generating the exclusion-dominant decomposition, and (b) does relaxing within-auction independence to a Gaussian copula leave the decomposition intact?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", krasnokutskaya, unobserved-heterogeneity, icc, scale-correction, gaussian-copula]
   file: docs/analyses/an-014-uh-correction.md
   script: v7-jpube-tight/scripts/40_uh_variance.R
   target: v7-jpube-tight/output/uh_decomposition.parquet
 
 - id: an-015
   hypothesis: no-collusion-confound
-  status: pending
+  status: done
   type: robustness
-  question: Do Bajari-Ye, Schurter, and pair-classification bid-coordination screens flag a post-policy change in bidder coordination that would invalidate the IPV-clock reading?
-  confidence: pending
-  tags: ["H:no-collusion-confound", "H:ipv-clock-admissible", collusion, bajari-ye, schurter, pair-classification, screens]
+  question: Do Conley-Decarolis close-pair and Bajari-Ye bid-coordination screens detect a post-policy intensification of bidder clustering that would invalidate the IPV-clock reading of Pregão drop-outs?
+  confidence: yellow
+  tags: ["H:no-collusion-confound", "H:ipv-clock-admissible", collusion, bajari-ye, conley-decarolis, screens, lands-clean]
   file: docs/analyses/an-015-collusion-screens.md
   script: v7-jpube-tight/scripts/58_collusion_screen.R
   target: v7-jpube-tight/output/collusion_screens.parquet
@@ -195,11 +195,11 @@
 
 - id: an-017
   hypothesis: exclusion-dominates
-  status: pending
+  status: done
   type: robustness
-  question: Does the exclusion-dominant decomposition survive a strict-invariance specification that holds the SME pool fixed in composition across the policy break?
-  confidence: pending
-  tags: ["H:exclusion-dominates", "H:static-welfare-loss-large", strict-invariance, robustness, sensitivity]
+  question: Does the exclusion-dominant decomposition survive a strict-invariance specification that holds the SME pool composition fixed at the pre-policy distribution while keeping observed post-policy SME entry counts?
+  confidence: yellow
+  tags: ["H:exclusion-dominates", "H:static-welfare-loss-large", strict-invariance, robustness, sensitivity, composition]
   file: docs/analyses/an-017-strict-invariance.md
   script: v7-jpube-tight/scripts/57_strict_invariance.R
   target: v7-jpube-tight/output/strict_invariance.parquet
