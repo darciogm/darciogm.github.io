@@ -18,11 +18,29 @@ hypothesis is that the FL ranking still concentrates cobidders after the
 exposure margin is disciplined away by participation-volume placebos and
 audits within tighter opportunity sets.
 
-> **Evidence strength: Moderate (single-source).**
-> Sham FL permutation AUC band 0.713–0.783 is substantially below the
-> observed 0.924. Leakage audit drops AUC from raw 0.995 → OOF 0.891 →
-> temporal 0.864 (attenuation 0.10–0.13). Concentration survives but
-> with documented audit costs.
+> **Evidence strength: Partial (strongly supported).**
+> Four converging audit chains, all decisive within the BEC × CADE
+> data:
+> (i) **Formal sham permutation** ([AN-005](../analyses/an-005-sham-fl-permutation.md)):
+> B = 2,000 volume-matched permutations; sham AUC distribution mean
+> 0.500, SD 0.013, q99 0.531, max 0.547. Observed 0.911 is **~32 sham
+> SDs above the mean**; permutation p < 1/2,000 = 0; rejects volume-only
+> null at 99%.
+> (ii) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
+> raw item-level 0.995 → OOF firm-level 0.891 [0.887, 0.894] → temporal
+> firm-level 0.864 [0.858, 0.870]. Attenuation 0.10–0.13, residual AUC
+> >> sham distribution.
+> (iii) **Universe-anchored stratum scope** ([AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)):
+> 8-row meta-table confirms the score targets only what the framing
+> predicts. Crucial row 4: participation count on all BEC vs direct CADE
+> = **0.383** — below 0.5, the score actively repels winner-heavy
+> defendants. No "generic detector" reading possible.
+> (iv) **Exposure-stratum balance** ([AN-028](../analyses/an-028-exposure-stratum-balance.md)):
+> within the FL14 stratum, cobidders distinct from non-cobidder FLs at
+> Cohen's d 0.19–1.00 across 7 dimensions; not driven by volume alone.
+> Promotion to 🟢 (**Confirmed**) requires independent replication on a
+> non-BEC procurement panel — see the H3 page commentary section on why
+> within-data exhaustion (however decisive) does not satisfy the bar.
 
 ## Theory
 
@@ -76,11 +94,49 @@ participation distortions.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo) | Direct | done | Permutation AUC 0.713–0.783 vs observed 0.924 |
+| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo, formal) | Direct | done | B=2,000 permutation; sham mean 0.500 SD 0.013; observed 0.911 = 32 σ above; p < 1/2,000 |
 | [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Direct | done | Raw 0.995 → OOF 0.891 → temporal 0.864; attenuation 0.10–0.13 |
+| [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | 8-row meta-table; row 4 (participation count vs direct CADE) = 0.383, below random |
+| [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL standardized diffs) | Direct | done | Cobidders distinct from non-cobidder FLs at d 0.19–1.00 across 7 dimensions |
 | [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Supports | done | Strict ex ante firm AUC 0.767 [0.734, 0.800] |
 
 ## Open tests
 
 - Sensitivity to exposure-stratum definition (coarser vs finer cells).
 - Decomposition of attenuation by modality.
+- Volume-matched cobidder vs non-cobidder-FL test
+  (match on `tenders_count` and re-run balance) — strongest remaining
+  within-data audit; see [AN-028](../analyses/an-028-exposure-stratum-balance.md)
+  follow-ups.
+
+## Why not 🟢 Confirmed?
+
+The within-data evidence is decisive at the audit level: sham
+permutation rejects at p < 1/2,000 (32 σ above null), the leakage audit
+preserves AUC > 0.85, the universe matrix shows row-by-row scope
+discipline, and the standardized-diff battery rules out within-stratum
+volume artifact. By the rubric of *audit-survival* claims, H3 is
+near-exhaustive.
+
+So why not 🟢? Two artifact families remain untested by any within-data
+audit:
+
+1. **Data-generating process artifacts.** BEC missingness, CNPJ-root
+   collision (only 8 digits → possible aggregation across distinct
+   firms with shared root), and CADE adjudication completeness bias.
+   These are not "audits" but structural properties of the data lake.
+   No within-data permutation can rule them out.
+
+2. **Selection on CADE adjudication.** The cobidder set is defined
+   relative to the CADE adjudications that exist in 2009–2019. If CADE
+   selects which cartels to adjudicate non-randomly (e.g., easier
+   cases, larger-impact cases, politically prominent cases), the
+   loser-side signal could be tracking that selection rather than
+   cartel-adjacent behavior in general.
+
+Both can only be ruled out by replication on a non-BEC panel
+(ComprasNet federal, another state's e-procurement, or another
+country's data) with an independent cartel anchor. Until that exists,
+H3 stays at **Partial (strongly supported)**, consistent with the
+project-wide rule documented in
+[findings/index.md](../findings/index.md).

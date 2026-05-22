@@ -65,12 +65,12 @@
   hypothesis: exposure-discipline
   status: done
   type: placebo
-  question: Does cobidder concentration in the FL14 stratum survive a participation-volume-matched placebo ("sham FL")?
-  confidence: yellow
-  tags: ["H:exposure-discipline", placebo, permutation, sham-fl]
+  question: Does cobidder concentration in the FL14 stratum survive a participation-volume-matched placebo, and how far is the observed AUC from the sham null distribution?
+  confidence: green
+  tags: ["H:exposure-discipline", placebo, permutation, sham-fl, formal-test]
   file: docs/analyses/an-005-sham-fl-permutation.md
   script: scripts/25_sham_fl_permutation.R
-  target: output/sham_fl/cade_permutation.csv
+  target: output/sham_fl/sham_summary.csv
 
 - id: an-006
   hypothesis: timing-discipline
@@ -302,3 +302,25 @@
   file: docs/analyses/an-026-subsample-robustness.md
   script: scripts/26_auc_by_subsample.R
   target: output/auc_by_subsample/auc_subsample.csv
+
+- id: an-027
+  hypothesis: exposure-discipline
+  status: done
+  type: descriptive
+  question: How does AUC behave when the universe and the positive class are systematically varied — does the loser-side score remain disciplined to loser-side targets across every (universe × class) combination?
+  confidence: green
+  tags: ["H:exposure-discipline", "H:direct-defendants-null", scope, universe, meta-table]
+  file: docs/analyses/an-027-universe-anchored-stratum-scope.md
+  script: scripts/48_stratum_scope_reframe.R
+  target: output/stratum_scope/stratum_scope_metrics.csv
+
+- id: an-028
+  hypothesis: exposure-discipline
+  status: done
+  type: descriptive
+  question: Within the always-loser stratum, are cobidders distinguishable from non-cobidder FLs along dimensions other than raw participation volume?
+  confidence: green
+  tags: ["H:exposure-discipline", "H:cobidder-profile-distinct", balance, exposure, standardized-diffs]
+  file: docs/analyses/an-028-exposure-stratum-balance.md
+  script: scripts/60_theory_validation_bridge.R
+  target: output/theory_bridge/standardized_diffs.csv
