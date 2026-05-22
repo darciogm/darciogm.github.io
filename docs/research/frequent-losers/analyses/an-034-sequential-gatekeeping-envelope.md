@@ -58,6 +58,15 @@ At precision target ≥ 0.1, smallest k = 50 across all rules:
 
 Source: `output/architecture_gatekeeper/sequential_envelope.csv`.
 
+![AN-034 sequential envelope: TP × microdata Pareto](../assets/figures/fig_an034_sequential_envelope.png)
+
+*Figure: cost-of-evidence Pareto plot. X-axis: bid-microdata footprint
+(records to recover). Y-axis: TP at k=50 (precision target 0.10).
+Joint scoring is the Pareto frontier upper bound (23 TP, 11,676
+microdata); Sequential K=1,000 and K=2,000 approximate the joint
+upper bound at 8-17% of the microdata cost; Award-only (0 microdata,
+15 TP) is the zero-cost benchmark.*
+
 ### Cost-of-evidence trade-off
 
 | Architecture | TP @ k=50 | Microdata cost | TP per microdata-record-recovered |

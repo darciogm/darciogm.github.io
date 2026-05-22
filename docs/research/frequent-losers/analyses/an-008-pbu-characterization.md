@@ -50,6 +50,14 @@ Macros: `\valBridgeTendCob`, `\valBridgeTendFLnc`, `\valBridgeTendD`,
 `\valBridgeNGroupsFLnc`, `\valBridgeRepeatShareCob`,
 `\valBridgeRepeatShareFLnc`.
 
+![AN-008 cobidder profile Cohen's d](../assets/figures/fig_an008_cobidder_profile.png)
+
+*Figure: Cohen's d of cobidders vs non-cobidder FLs across six profile
+dimensions. Positive (red): cobidders higher on tenders, unique
+winners crossed, share facing direct CADE, item-group HHI. Negative
+(navy): cobidders lower on n item groups and repeat-buyer share.
+Within-FL14 distinctness is robust across multiple dimensions.*
+
 ## Interpretation
 
 Inside the FL14 stratum, cobidders are deployed more broadly (more

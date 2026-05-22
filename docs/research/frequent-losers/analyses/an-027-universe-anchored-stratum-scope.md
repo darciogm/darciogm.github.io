@@ -61,6 +61,16 @@ The 8-row scope matrix (source CSV `stratum_scope_metrics.csv`):
 | 7 | Binary item flag frozen on 2009-2016 | Items 2017-2019 | Cobidder-bearing items | 0.565 | [0.564, 0.566] | 5,299 | 1,009,729 |
 | 8 | Continuous item score trained on 2009-2016 | Items 2017-2019 | Direct-defendant items | 0.511 | [0.510, 0.513] | 12,037 | 1,009,729 |
 
+![AN-027 stratum scope matrix](../assets/figures/fig_an027_stratum_scope_matrix.png)
+
+*Figure: AUC across the 8 (universe × positive class × score) rows.
+Red bars: rows 1-2 (where the score should work — 0.92–0.94 against
+cobidders within always-losers). Navy bars: rows 3-4, 7-8 (where the
+score should not work — near 0.5 against direct defendants).
+Intermediate (orange/amber): rows 5-6 (timing-disciplined cobidder
+targets). Row 4 below 0.5: participation count actively repels
+winner-heavy defendants.*
+
 Headline readings from the source CSV:
 
 - Row 1: "Within-stratum prioritization only" — the binary rule

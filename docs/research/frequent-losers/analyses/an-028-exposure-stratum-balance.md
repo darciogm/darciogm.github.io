@@ -80,6 +80,15 @@ that matters for H3):
 
 Source: `output/theory_bridge/standardized_diffs.csv`.
 
+![AN-028 standardized differences heatmap](../assets/figures/fig_an028_standardized_diffs_heatmap.png)
+
+*Figure: Cohen's d heatmap of cobidders vs three reference classes
+(rows) × 7 dimensions (columns). Red = cobidder higher; blue = lower.
+Values capped at ±2 for color scale; the ⁺ marks cells where the
+true d exceeds the cap (vs AL_non_FL: d up to 7.1 for unique
+winners). Cobidder vs FL_non_cobidder is the within-FL row that
+matters for H3 / H5: d in 0.19–1.00 range across most dimensions.*
+
 ## Interpretation
 
 The balance battery answers a key exposure-discipline question:

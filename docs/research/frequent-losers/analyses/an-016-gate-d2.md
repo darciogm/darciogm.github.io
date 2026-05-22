@@ -55,6 +55,14 @@ External-validity cross-check (script 52):
 Macros: `\valAUCConvFL`, `\valAUCConvlogtc`, `\valAUCPregFL`,
 `\valAUCPreglogtc`, `\valExtConvAUC`, `\valExtPregAUC`.
 
+![AN-016 D2 modal AUC: Pregão vs Convite](../assets/figures/fig_an016_d2_modal_auc.png)
+
+*Figure: AUC against cobidders by modality. Pregão (no minimum-bidder
+rule) dominates: FL14 0.924, continuous 0.952. Convite
+(minimum-bidder rule) lower: FL14 0.824, continuous 0.816. Direction
+is OPPOSITE to the institutional theory — interpreted as scope
+information, not institutional positive test.*
+
 ## Interpretation
 
 **Direction is OPPOSITE to the institutional minimum-bidder-rule

@@ -53,6 +53,13 @@ seen in training. This page documents the structural baseline.
 
 Source: `output/market_persistence/persistence_summary.csv`.
 
+![AN-030 firm / market / PBU persistence](../assets/figures/fig_an030_market_persistence.png)
+
+*Figure: persistence rates between 2009-2016 and 2017-2019 panel
+windows. Firms persist at 8.7% (red); markets at 12.4% (orange); PBUs
+at 83.5% (navy). The institutional environment is stable; the firm
+and market populations are essentially fresh across windows.*
+
 ## Interpretation
 
 Three readings, all reinforcing H4 (timing discipline):

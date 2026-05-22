@@ -79,6 +79,15 @@ Cells with negative point estimates in the broad spec:
 Sources: `output/sign_reversal_decomp/segment_betas.csv`,
 `output/negative_cell_audit/negative_cell_audit.csv`.
 
+![AN-038 item-group segment betas](../assets/figures/fig_an038_segment_betas.png)
+
+*Figure: FL-margin coefficient by item group across three
+specifications — broad (grey), overlap unweighted (light blue),
+overlap ATT (red). Groups 12, 13, 14, 29 flip from positive baseline
+to negative ATT (sign reversal). Group 37 stays negative across all
+specs (structural negative); group 10 stays positive (structural
+positive). Predictably structured heterogeneity, not noise.*
+
 ## Interpretation
 
 Three readings:

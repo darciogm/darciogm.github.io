@@ -56,6 +56,13 @@ top-k cell.
 
 Source: `output/operational/audit_precision_k_cv.csv`.
 
+![AN-036 CV precision stability](../assets/figures/fig_an036_cv_precision.png)
+
+*Figure: K-fold CV precision@k with ± 1 SD error bars, across
+k = 50 to 2,000. Precision_mean declines from 0.068 (k=50) to 0.016
+(k=2000); SDs are tight (≤ 0.011) across all k. Precision estimates
+are not artifacts of a particular train/test split.*
+
 ## Interpretation
 
 Two readings:

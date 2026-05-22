@@ -72,6 +72,14 @@ Macros: `\valFalBinPregCoef`, `\valFalBinConvCoef`, `\valFalBinFullCoef`,
 `\valFalBinRatio`, `\valFalContPregCoef`, `\valFalContConvCoef`,
 `\valFalContRatio`, plus the `\valFalJoint*` series.
 
+![AN-022 modal falsification — Pregão 2.45× Convite](../assets/figures/fig_an022_modal_falsification.png)
+
+*Figure: FL-margin coefficient on log price across four modality ×
+score cells, with 95% CIs. Pregão binary +0.096*** vs Convite binary
++0.039**; Pregão continuous +0.026*** vs Convite continuous +0.012**.
+Pregão coefficient ~2× larger than Convite in both binary and
+continuous specs.*
+
 ## Interpretation
 
 The modal asymmetry from D2 ([AN-016](an-016-gate-d2.md)) replicates in

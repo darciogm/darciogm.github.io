@@ -50,6 +50,12 @@ This is the headline-baseline triage result.
 Macros: `\valAUCFLfirm`, `\valAUCFLfirmCI`, `\valAUClogtc`,
 `\valAUClogtcCI`.
 
+![AN-004 baseline cobidder AUC](../assets/figures/fig_an004_baseline_auc.png)
+
+*Figure: baseline cobidder AUC for FL14 binary (0.924, [0.921, 0.926])
+and continuous log(1+tenders_count) (0.939, [0.932, 0.946]). Both
+substantially above the random benchmark (0.5).*
+
 The cobidder share inside FL14 is 7.1% (`\valCobidShareFL`), against a
 baseline always-loser cobidder rate that is much lower. This corresponds
 to the headline 131/193 cobidder recovery in the gatekeeping setup

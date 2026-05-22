@@ -51,6 +51,13 @@ D4 gate ([AN-018](an-018-gate-d4.md)) corroborates the null
 mechanistically: 7 of 47 direct defendants (14.9%) are always-losers;
 their median win rate is 0.261 vs 0.086 for the cobidder set.
 
+![AN-007 direct-defendant AUC null across regimes](../assets/figures/fig_an007_direct_cade_null.png)
+
+*Figure: AUC against 47 direct CADE defendants across three regimes —
+full panel (0.491, [0.461, 0.520]), item-level raw (0.506), item-level
+under temporal holdout (0.511). All within sampling distance of 0.5
+(red line). The null is regime-invariant.*
+
 ## Interpretation
 
 The result is exactly what the loser-side scope predicts. Direct

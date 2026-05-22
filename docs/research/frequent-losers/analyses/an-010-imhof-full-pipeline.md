@@ -62,6 +62,14 @@ Increment magnitudes
 `\valAUCFLvsImhofDelta` = 0.035 (FL14 vs Imhof full, p = 0.014);
 `\valAUCImhofPlusFLDelta` = 0.096 (Imhof + FL14 vs Imhof full).
 
+![AN-010 Imhof full pipeline + complementarity](../assets/figures/fig_an010_imhof_pipeline.png)
+
+*Figure: AUC across the six specifications on the joint sample
+(N = 11,676; 193 cobidders). Imhof CV-only is chance-level (0.585);
+Imhof full pipeline 0.888; FL14 alone 0.903; joint (Imhof + FL14)
+0.955; joint (Imhof + log_tc) 0.962. The award-layer + bid-layer
+complementarity adds ~0.07 over either alone.*
+
 ## Interpretation
 
 The Imhof full pipeline is comparable to FL14 alone (0.888 vs 0.903),

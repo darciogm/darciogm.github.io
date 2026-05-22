@@ -49,6 +49,14 @@ Macros: `\valFTuncondCoef`, `\valFTuncondSE`, `\valFTuncondP`,
 `\valFTuncondN`, `\valFTcemCoef`, `\valFTcemSE`, `\valFTcemP`,
 `\valFTcemN`, `\valFTpsCoef`, `\valFTpsSE`, `\valFTpsP`, `\valFTpsN`.
 
+![AN-021 first-time FL attenuation across discipline](../assets/figures/fig_an021_first_time_fl.png)
+
+*Figure: first-time-FL coefficient on cobidder indicator across three
+disciplines. Unconditional +0.100 (p=0.019, red = significant); CEM
++0.085 (p=0.076, grey = marginal); PS-matched +0.062 (p=0.312, navy =
+n.s.). The channel does not survive PS matching — demoted to
+appendix.*
+
 ## Interpretation
 
 The first-time-FL channel **does not survive PS matching**. The

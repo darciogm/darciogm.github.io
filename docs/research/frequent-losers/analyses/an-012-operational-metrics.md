@@ -54,6 +54,13 @@ Macros: `\valPrecInSFifty`, `\valPrecInSHund`, `\valPrecInSTwofh`,
 `\valPrecInSFivehu`, `\valPrecInSOnek`, plus the matching `\valRecInS*`
 and `\valLiftInS*` series.
 
+![AN-012 precision@k in-sample (precision and lift)](../assets/figures/fig_an012_precision_at_k_insample.png)
+
+*Figure: in-sample precision@k (red, left axis) and lift (navy, right
+axis) for k = 50, 100, 200, 500, 1000. Both decline monotonically as k
+expands the top-k pool with non-cobidders. The lift line shows the
+multiple over baseline cobidder rate.*
+
 ## Interpretation
 
 The in-sample numbers are the upper bound: ~13% of the top-500

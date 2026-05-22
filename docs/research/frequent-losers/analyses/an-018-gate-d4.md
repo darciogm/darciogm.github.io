@@ -53,6 +53,14 @@ Macros: `\valDirectCADE`, `\valDirectShareAL` (14.9), `\valDirectMedWR`
 Mann–Whitney test on win_rate (direct defendants vs cobidders):
 p < 0.05.
 
+![AN-018 D4: direct defendants are winner-heavy](../assets/figures/fig_an018_d4_winner_heavy.png)
+
+*Figure: direct CADE defendants vs cobidders on two dimensions —
+median win rate (red, left axis) and % always-losers (navy, right
+axis). Direct defendants: win rate 0.261, 14.9% always-losers.
+Cobidders: win rate 0.086, 100% always-losers by construction. The
+loser-side rank literally cannot cover most direct defendants.*
+
 ## Interpretation
 
 **D4 passes**. Direct CADE defendants are structurally **winner-heavy**:

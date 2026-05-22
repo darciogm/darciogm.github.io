@@ -81,6 +81,14 @@ small-N variant just cannot reject it.
 
 Source: `output/strict_prospective_summary.csv`.
 
+![AN-029 three-classifier timing battery](../assets/figures/fig_an029_three_classifier.png)
+
+*Figure: AUC across three classifiers (clf_2015, clf_2017,
+clf_2019_full) × two cobidder targets (cobid_all, cobid_post2019),
+for both FL14 binary and continuous log_tc. Even the strictest
+classifier (clf_2015) preserves AUC 0.79 (FL14) and 0.85 (continuous)
+against truly out-of-time cobid_post2019 cobidders.*
+
 ## Interpretation
 
 The three-classifier battery converts H4 from "single-train-window

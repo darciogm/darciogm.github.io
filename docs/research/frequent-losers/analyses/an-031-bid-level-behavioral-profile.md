@@ -76,6 +76,14 @@ Reading vs **winner_other**:
 Source: `output/theory_bridge/standardized_diffs_bidlevel.csv`,
 firm-level inputs from `output/theory_bridge/firm_bidlevel_metrics.csv`.
 
+![AN-031 bid-level gap-to-winner by class](../assets/figures/fig_an031_bid_gap.png)
+
+*Figure: median (red) and mean (navy) gap-to-winner ratio across the
+four firm classes. Cobidders bid closer to the winner (median 0.582)
+than non-cobidder FLs (median 0.809) — d = -0.28, p < 10⁻⁶. The
+within-FL distinctness extends to bid-level behavior beyond mere
+participation volume.*
+
 ## Interpretation
 
 The bid-level battery extends H5 beyond participation-only distinctness:

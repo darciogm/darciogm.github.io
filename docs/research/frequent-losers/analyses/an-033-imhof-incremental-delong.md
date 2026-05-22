@@ -54,6 +54,14 @@ deserves a formal statistical test rather than a visual gap-reading.
 
 Source: `output/imhof_incremental/imhof_incremental.csv`.
 
+![AN-033 Imhof incremental DeLong tests](../assets/figures/fig_an033_imhof_incremental.png)
+
+*Figure: incremental AUC gains over the Imhof full baseline. FL14
+alone +0.035 (p=0.014, significant); tenders_only +0.031 (p=0.077,
+marginal); Imhof + FL14 +0.096 (p = 10⁻²⁶); Imhof + tenders +0.098
+(p = 10⁻²⁵). The joint specifications are the cleanest within-data
+statistical evidence for complementarity in the paper.*
+
 The auxiliary `output/auc_decomposition.csv` Shapley-like decomposition
 yields a complementary reading on within-model contributions:
 

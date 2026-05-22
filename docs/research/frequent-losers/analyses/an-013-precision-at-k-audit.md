@@ -50,6 +50,14 @@ Macros: `\valPrecInSFivehu` (0.132), `\valPrecTHFivehu` (0.070),
 `\valOpRetentionFiveHund` (53%), `\valOpInflationShare` (47%),
 `\valOpRecallFiveHund` (18%), `\valOpRecallThou` (34%).
 
+![AN-013 precision@k — in-sample vs temporal holdout](../assets/figures/fig_an013_precision_inflation.png)
+
+*Figure: precision@k under in-sample evaluation (navy) vs temporal-
+holdout evaluation (red), k = 50 to 1,000. The gap is largest at k=50
+(0.300 vs 0.020) and narrows at high k. At k=500, in-sample is 0.132
+and temporal-holdout is 0.070 — retention 53%, the operational
+calibration number.*
+
 ## Interpretation
 
 **Verdict: INFLATED in-sample.** Operational deployment metrics are
