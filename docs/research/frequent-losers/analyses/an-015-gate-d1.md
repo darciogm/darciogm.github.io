@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-015
 hypothesis: award-bid-complementarity
 type: causal

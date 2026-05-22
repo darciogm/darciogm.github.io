@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-021
 hypothesis: cobidder-profile-distinct
 type: robustness

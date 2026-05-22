@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h5
 slug: cobidder-profile-distinct
 title: "FL cobidders are economically distinct from other frequent losers"

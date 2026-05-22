@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Hypotheses
 
 Testable predictions for *Cheap Signals, Costly Proof: Award-Layer Triage

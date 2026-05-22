@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-005
 hypothesis: exposure-discipline
 type: placebo

@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Award-layer gatekeeping cuts the bid-microdata pool by 83%
 
 🟡 Used as a gatekeeper, the FL14 ranking **cuts the bid-microdata pool

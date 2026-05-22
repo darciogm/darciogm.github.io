@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-007
 hypothesis: direct-defendants-null
 type: placebo

@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Cobidder concentration survives exposure, leakage, and timing audits
 
 🟡 The cobidder concentration result from

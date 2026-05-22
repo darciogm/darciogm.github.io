@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # FL cobidders are operationally distinct from other frequent losers
 
 🟡 Inside the FL14 stratum, **cobidders look different from other

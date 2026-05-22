@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-012
 hypothesis: gatekeeping-cost-of-evidence
 type: descriptive

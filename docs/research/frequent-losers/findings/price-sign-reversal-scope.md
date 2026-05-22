@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Price coefficient sign reverses — scope, not damages
 
 🟡 The price coefficient associated with the FL margin **reverses sign**

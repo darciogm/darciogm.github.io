@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h3
 slug: exposure-discipline
 title: "Cobidder concentration survives exposure-disciplined placebos"

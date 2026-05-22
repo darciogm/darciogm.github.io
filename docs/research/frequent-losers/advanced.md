@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Advanced Methods
 
 This page collects the methodological pieces that are too heavy for the

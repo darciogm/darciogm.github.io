@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-006
 hypothesis: timing-discipline
 type: robustness

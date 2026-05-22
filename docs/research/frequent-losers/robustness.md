@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Robustness
 
 This page summarizes the robustness checks supporting each of the four empirical claims of the paper.

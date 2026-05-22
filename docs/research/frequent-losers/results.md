@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Main Results
 
 This page presents the empirical findings in the order the paper now privileges: discrimination first, architectural complementarity second, pricing imprint third (descriptive corroboration only).

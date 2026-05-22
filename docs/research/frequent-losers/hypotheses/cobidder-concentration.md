@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h1
 slug: cobidder-concentration
 title: "The frequent-loser ranking concentrates CADE-adjacent cobidders"

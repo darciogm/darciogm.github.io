@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h6
 slug: award-bid-complementarity
 title: "Award-layer and bid-layer information are complementary"

@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h7
 slug: gatekeeping-cost-of-evidence
 title: "Award-layer gatekeeping cuts the bid-microdata pool cost-effectively"

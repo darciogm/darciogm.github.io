@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h2
 slug: direct-defendants-null
 title: "The frequent-loser ranking does not discriminate direct CADE defendants"

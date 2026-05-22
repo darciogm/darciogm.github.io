@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Findings — Cheap Signals, Costly Proof
 
 This page is the curated index of *what we have learned* from the project's

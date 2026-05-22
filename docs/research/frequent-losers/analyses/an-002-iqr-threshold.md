@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-002
 hypothesis: cobidder-concentration
 type: robustness

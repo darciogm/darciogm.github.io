@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-022
 hypothesis: price-scope-sign-reversal
 type: placebo

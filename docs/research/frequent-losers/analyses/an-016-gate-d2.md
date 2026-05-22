@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-016
 hypothesis: price-scope-sign-reversal
 type: descriptive

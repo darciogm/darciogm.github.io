@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-020
 hypothesis: price-scope-sign-reversal
 type: causal

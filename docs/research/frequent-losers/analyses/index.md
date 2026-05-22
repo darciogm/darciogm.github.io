@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Analyses — Cheap Signals, Costly Proof
 
 This page is the **directory of analyses** for *Cheap Signals, Costly

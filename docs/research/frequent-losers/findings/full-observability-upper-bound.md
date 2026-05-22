@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # Joint award + bid scoring is the full-observability upper bound
 
 🟡 On the cobidder target, a classifier that uses **both** the award-

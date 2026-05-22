@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h8
 slug: price-scope-sign-reversal
 title: "Price evidence carries scope information, not damages"

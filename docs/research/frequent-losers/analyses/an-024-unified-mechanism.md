@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-024
 hypothesis: cobidder-profile-distinct
 type: descriptive

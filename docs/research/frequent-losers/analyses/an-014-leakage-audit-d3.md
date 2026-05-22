@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-014
 hypothesis: gatekeeping-cost-of-evidence
 type: robustness

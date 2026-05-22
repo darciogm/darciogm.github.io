@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: h4
 slug: timing-discipline
 title: "Cobidder concentration survives timing discipline"

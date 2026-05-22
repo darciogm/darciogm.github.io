@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # The FL ranking is null on direct CADE defendants — by design
 
 🟢 The frequent-loser ranking, evaluated against the **47 direct CADE

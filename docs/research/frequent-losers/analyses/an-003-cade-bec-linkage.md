@@ -1,4 +1,5 @@
 ---
+paper: frequent-losers
 id: an-003
 hypothesis: cobidder-concentration
 type: descriptive

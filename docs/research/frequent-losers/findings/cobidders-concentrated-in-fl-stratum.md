@@ -1,3 +1,7 @@
+---
+paper: frequent-losers
+---
+
 # CADE-adjacent cobidders concentrate in the FL14 stratum
 
 🟢 In São Paulo's BEC procurement platform (2009–2019), always-loser
