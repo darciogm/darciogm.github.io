@@ -412,3 +412,25 @@
   file: docs/analyses/an-036-cv-precision-stability.md
   script: scripts/43_precision_at_k_audit.R
   target: output/operational/audit_precision_k_cv.csv
+
+- id: an-037
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: causal
+  question: How does the FL-margin price coefficient transform across baseline → overlap-cell → ATT specifications, and does the negative sign survive subgroup decomposition under overlap discipline?
+  confidence: green
+  tags: ["H:price-scope-sign-reversal", sign-reversal, overlap, ATT, subgroup-decomposition]
+  file: docs/analyses/an-037-sign-reversal-decomposition.md
+  script: scripts/59_sign_reversal_decomp.R
+  target: output/sign_reversal_decomp/headline_specs.csv
+
+- id: an-038
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: At the item-group and operating-cell level, where does the negative FL-price coefficient hold and where does it not? Does the heterogeneity track the scope reading or contradict it?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", cell-audit, segment-betas, item-group, heterogeneity]
+  file: docs/analyses/an-038-negative-cell-segment-audit.md
+  script: scripts/50_negative_cell_audit.R + scripts/59_sign_reversal_decomp.R
+  target: output/negative_cell_audit/negative_cell_audit.csv + output/sign_reversal_decomp/within_overlap_subgroup_betas.csv
