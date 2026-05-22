@@ -1,0 +1,80 @@
+# Schema for docs/analyses/ AN-page frontmatter.
+#
+# Adapted from Henrik Sigstad's paper6-procure project. Per-analysis docs
+# anchor each result with its question, design, headline numbers,
+# interpretation, and confidence. The frontmatter below is the structured
+# part of that anchor.
+#
+# `design_keys` lists project-specific keys permitted in the `design:`
+# block, beyond the universal core (sample, specification, notes). Keeping
+# the set fixed stops the design block from derailing across analyses. If
+# something keeps landing in `notes:`, that is the signal to promote it to
+# a key here. Edit `design_keys` to match the host paper's methods on first
+# vendor — the defaults below mirror paper6-procure and may not fit your
+# paper exactly.
+
+required:
+  - id              # an-NNN (sequential)
+  - type            # descriptive | causal | placebo | robustness
+  - question        # one-line research question
+  - status          # pending | done | stale
+  - created         # ISO date
+  - script          # path to source script (relative to project root)
+  - target          # primary output path under build/
+
+optional:
+  - hypothesis      # slug from docs/hypotheses/ if relevant; null for pure descriptives
+  - headline        # one-line summary of the result (required when status: done)
+  - confidence      # pending | green | yellow | red (required when status: done)
+  - status_date     # ISO date — last status change (required when status: done)
+  - tags            # free-form list (see conventions below)
+  - design          # block with project-specific keys (see design_keys)
+
+# Fields that become required once `status` flips from `pending` to `done`.
+# The AN page must carry a one-sentence headline (direction, magnitude,
+# significance), a confidence tag, and a status_date by then. Keeping the
+# rule conditional lets pending scaffolds skip these without lint noise.
+required_when_done:
+  - headline
+  - confidence
+  - status_date
+
+# Universal design keys (always available). Add paper-specific ones below.
+design_keys_universal:
+  - sample           # cohort / population definition
+  - specification    # estimating equation or method in one line
+  - notes            # catch-all; if something keeps landing here, promote it
+
+# Project-specific design keys — EDIT THIS LIST per paper to match the
+# methods you actually use. The list below is the paper6-procure default;
+# replace with your own (e.g. for an RD paper: cutoff, bandwidth,
+# kernel; for an IV paper: instrument, weak-IV-F).
+design_keys_project:
+  - fixed_effects    # entity/time FE used
+  - cluster          # cluster level for SEs
+  - controls         # any non-FE controls
+  - instrument       # for IV analyses (e.g. "judge tough-type leave-out mean")
+  - source_panel     # which data source(s)
+  - threshold        # for bunching tests: specific cutoff or "all"
+  - weights          # if not unweighted
+  - cutoff           # RD cutoff
+  - bandwidth        # RD bandwidth
+  - kernel           # RD kernel
+
+status_values:
+  pending: "AN scaffolded, script not yet written or not yet interpreted"
+  done:    "script run, headline + interpretation written, confidence set"
+  stale:   "result superseded by a newer AN or by upstream-data change"
+
+confidence_values:
+  pending: "no result yet"
+  green:   "clean identification, large sample, robust across slices"
+  yellow:  "informative but with caveats (small N, sensitive to specification, contradicts prior)"
+  red:     "result unreliable; documented for the record but not load-bearing"
+
+# Tag conventions (for grep/filter). Adapt per paper.
+#   Hypothesis:   H:<slug> (slug from docs/hypotheses/index.md)
+#   Cluster:      paper-specific letter codes (A, B, C, D, ...)
+#   Outcome:      paper-specific outcome variables
+#   Source:       paper-specific data sources
+#   Method:       descriptive, ols, did, iv, density-test, network, rd, ...

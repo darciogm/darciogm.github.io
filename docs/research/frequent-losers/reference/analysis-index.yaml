@@ -1,0 +1,282 @@
+# Analysis index — summary for scanning
+# Full details in docs/analyses/an-NNN-<slug>.md
+#
+# THIS FILE IS GENERATED — do not edit by hand.
+# Source of truth: YAML frontmatter on each docs/analyses/an-NNN-*.md page.
+# Regenerate via `python3 scripts/gen_analysis_index.py`.
+#
+# Fields:
+#   id:         an-NNN (sequential)
+#   hypothesis: hypothesis slug or null
+#   status:     pending | done | stale
+#   type:       descriptive | causal | placebo | robustness
+#   question:   one-line research question
+#   confidence: pending | green | yellow | red
+#   tags:       free-form list for filtering
+#   file:       path to analysis file (relative to project root)
+#   script:     path to source script (relative to project root)
+#   target:     primary output path under build/
+
+- id: an-001
+  hypothesis: cobidder-concentration
+  status: pending
+  type: descriptive
+  question: How is the persistent-zero-win-participation rank constructed, and what is its distribution across always-loser firms in BEC 2009–2019?
+  confidence: pending
+  tags: ["H:cobidder-concentration", construction, rank, log-tenders-count]
+  file: docs/analyses/an-001-zero-win-rank.md
+  script: scripts/12_build_item_value.R
+  target: data/processed/firm_loss_stats.parquet
+
+- id: an-002
+  hypothesis: cobidder-concentration
+  status: pending
+  type: robustness
+  question: Is the FL14 binary cutoff stable across IQR threshold definitions, and how does it compare to Tukey-standard cutoffs?
+  confidence: pending
+  tags: ["H:cobidder-concentration", iqr-threshold, robustness, fl14]
+  file: docs/analyses/an-002-iqr-threshold.md
+  script: scripts/04_figures.R
+  target: output/figures/fig_02_iqr_identification.png
+
+- id: an-003
+  hypothesis: cobidder-concentration
+  status: pending
+  type: descriptive
+  question: How are CADE direct defendants and adjudication-anchored cobidders linked to BEC firms via CNPJ root?
+  confidence: pending
+  tags: ["H:cobidder-concentration", "H:direct-defendants-null", cade, linkage, cnpj-root]
+  file: docs/analyses/an-003-cade-bec-linkage.md
+  script: scripts/00_build_bidlevel.py
+  target: data/processed/cade_bec_crossmatch.csv
+
+- id: an-004
+  hypothesis: cobidder-concentration
+  status: pending
+  type: descriptive
+  question: Does the FL14 stratum contain a disproportionate share of CADE-adjudication-anchored cobidders relative to the always-loser baseline?
+  confidence: pending
+  tags: ["H:cobidder-concentration", baseline, fl14, auc]
+  file: docs/analyses/an-004-cobidder-baseline.md
+  script: scripts/02_analysis.R
+  target: output/tables/tab_cobidder_baseline.tex
+
+- id: an-005
+  hypothesis: exposure-discipline
+  status: pending
+  type: placebo
+  question: Does cobidder concentration in the FL14 stratum survive a participation-volume-matched placebo ("sham FL")?
+  confidence: pending
+  tags: ["H:exposure-discipline", placebo, permutation, sham-fl]
+  file: docs/analyses/an-005-sham-fl-permutation.md
+  script: scripts/25_sham_fl_permutation.R
+  target: output/tables/tab_sham_fl_permutation.tex
+
+- id: an-006
+  hypothesis: timing-discipline
+  status: pending
+  type: robustness
+  question: Does cobidder concentration survive when the FL score is formed strictly before the target window?
+  confidence: pending
+  tags: ["H:timing-discipline", "H:exposure-discipline", holdout, ex-ante]
+  file: docs/analyses/an-006-strict-prospective-holdout.md
+  script: scripts/27_strict_prospective_holdout.R
+  target: output/tables/tab_strict_holdout.tex
+
+- id: an-007
+  hypothesis: direct-defendants-null
+  status: pending
+  type: placebo
+  question: Does the FL score discriminate direct CADE defendants? It should not — by design.
+  confidence: pending
+  tags: ["H:direct-defendants-null", placebo, scope-check, auc]
+  file: docs/analyses/an-007-auc-direct-cade.md
+  script: scripts/33_auc_direct_cade.R
+  target: output/tables/tab_auc_direct_cade.tex
+
+- id: an-008
+  hypothesis: cobidder-profile-distinct
+  status: pending
+  type: descriptive
+  question: Within the FL14 stratum, how do cobidders differ from non-cobidder FLs along buyer breadth and operational footprint?
+  confidence: pending
+  tags: ["H:cobidder-profile-distinct", descriptive, buyer-breadth, footprint]
+  file: docs/analyses/an-008-pbu-characterization.md
+  script: scripts/28_pbu_characterization.R
+  target: output/tables/tab_pbu_characterization.tex
+
+- id: an-009
+  hypothesis: cobidder-profile-distinct
+  status: pending
+  type: descriptive
+  question: Do cobidders inside the FL14 stratum operate in more concentrated product portfolios and closer to legal cartel anchors in network terms?
+  confidence: pending
+  tags: ["H:cobidder-profile-distinct", network, hhi, product-concentration]
+  file: docs/analyses/an-009-network-hhi.md
+  script: scripts/19_network_heterogeneity_2d.R
+  target: output/figures/fig_network_hhi.png
+
+- id: an-010
+  hypothesis: award-bid-complementarity
+  status: pending
+  type: causal
+  question: How does the seven-feature Imhof–Wallimann bid-distribution pipeline perform on the cobidder target, and what is the increment from adding the award-layer score?
+  confidence: pending
+  tags: ["H:award-bid-complementarity", imhof, bid-distribution, horse-race]
+  file: docs/analyses/an-010-imhof-full-pipeline.md
+  script: scripts/31_imhof_full_pipeline.R
+  target: output/tables/tab_imhof_pipeline.tex
+
+- id: an-011
+  hypothesis: award-bid-complementarity
+  status: pending
+  type: causal
+  question: Does the continuous log(1+tenders_count) dominate the binary FL14 on the cobidder target?
+  confidence: pending
+  tags: ["H:cobidder-concentration", "H:award-bid-complementarity", horse-race, continuous, binary]
+  file: docs/analyses/an-011-horse-race-continuous.md
+  script: scripts/34_horse_race_fl_continuous.R
+  target: output/tables/tab_horse_race_continuous.tex
+
+- id: an-012
+  hypothesis: gatekeeping-cost-of-evidence
+  status: pending
+  type: descriptive
+  question: What are the in-sample precision@k and lift metrics for the FL ranking used as a forensic gatekeeper?
+  confidence: pending
+  tags: ["H:gatekeeping-cost-of-evidence", precision-at-k, in-sample, operational]
+  file: docs/analyses/an-012-operational-metrics.md
+  script: scripts/42_operational_metrics.R
+  target: output/tables/tab_operational_metrics.tex
+
+- id: an-013
+  hypothesis: gatekeeping-cost-of-evidence
+  status: pending
+  type: robustness
+  question: What are the temporal-holdout precision@k and lift metrics, and how much does the in-sample evaluation inflate operational numbers?
+  confidence: pending
+  tags: ["H:gatekeeping-cost-of-evidence", "H:timing-discipline", precision-at-k, temporal-holdout, audit]
+  file: docs/analyses/an-013-precision-at-k-audit.md
+  script: scripts/43_precision_at_k_audit.R
+  target: output/tables/tab_precision_at_k_audit.tex
+
+- id: an-014
+  hypothesis: gatekeeping-cost-of-evidence
+  status: pending
+  type: robustness
+  question: How much does item-level evaluation leak relative to out-of-fold and temporal-holdout retraining?
+  confidence: pending
+  tags: ["H:exposure-discipline", "H:gatekeeping-cost-of-evidence", leakage, out-of-fold, audit]
+  file: docs/analyses/an-014-leakage-audit-d3.md
+  script: scripts/40_leakage_audit_d3.R
+  target: output/tables/tab_leakage_audit.tex
+
+- id: an-015
+  hypothesis: award-bid-complementarity
+  status: pending
+  type: causal
+  question: D1 gate diagnostic — does the continuous score dominate FL14 on a harmonized same-sample horse race?
+  confidence: pending
+  tags: ["H:award-bid-complementarity", gate-d1, continuous, harmonized]
+  file: docs/analyses/an-015-gate-d1.md
+  script: scripts/36_gate_d1_harmonized.R
+  target: output/tables/tab_gate_d1.tex
+
+- id: an-016
+  hypothesis: price-scope-sign-reversal
+  status: pending
+  type: descriptive
+  question: D2 gate diagnostic — does the FL screen discriminate cobidders better in Convite or in Pregão environments?
+  confidence: pending
+  tags: ["H:price-scope-sign-reversal", gate-d2, modal-id, convite, pregao]
+  file: docs/analyses/an-016-gate-d2.md
+  script: scripts/37_gate_d2_modal_auc.R
+  target: output/tables/tab_gate_d2.tex
+
+- id: an-017
+  hypothesis: cobidder-concentration
+  status: pending
+  type: robustness
+  question: D3 gate diagnostic — does the continuous score preserve the loser-side thesis without FL14?
+  confidence: pending
+  tags: ["H:cobidder-concentration", gate-d3, continuous-only]
+  file: docs/analyses/an-017-gate-d3.md
+  script: scripts/38_gate_d3_continuous_only.R
+  target: output/tables/tab_gate_d3.tex
+
+- id: an-018
+  hypothesis: direct-defendants-null
+  status: pending
+  type: descriptive
+  question: D4 gate diagnostic — what share of direct CADE defendants are always-losers, and what is their win-rate distribution?
+  confidence: pending
+  tags: ["H:direct-defendants-null", gate-d4, cade, winner-heavy]
+  file: docs/analyses/an-018-gate-d4.md
+  script: scripts/39_gate_d4_cade_winner_heavy.R
+  target: output/tables/tab_gate_d4.tex
+
+- id: an-019
+  hypothesis: price-scope-sign-reversal
+  status: pending
+  type: causal
+  question: Does the negotiated-price coefficient at the procurement-cap threshold reverse sign when FL14 presence is introduced?
+  confidence: pending
+  tags: ["H:price-scope-sign-reversal", rdd, cap-threshold, price]
+  file: docs/analyses/an-019-rdd-cap-price.md
+  script: scripts/13_rdd_cap.R
+  target: output/tables/tab_rdd_cap.tex
+
+- id: an-020
+  hypothesis: price-scope-sign-reversal
+  status: pending
+  type: causal
+  question: Does the 2018 procurement decree shift price dynamics differently across modalities, consistent with the scope reading?
+  confidence: pending
+  tags: ["H:price-scope-sign-reversal", did, decreto-2018, modality]
+  file: docs/analyses/an-020-did-decreto-2018.md
+  script: scripts/14_did_decreto_2018.R
+  target: output/tables/tab_did_decreto_2018.tex
+
+- id: an-021
+  hypothesis: cobidder-profile-distinct
+  status: pending
+  type: robustness
+  question: Does the "first-time FL" effect on cobidder concentration survive propensity-score matching?
+  confidence: pending
+  tags: ["H:cobidder-profile-distinct", matching, first-time-fl, robustness]
+  file: docs/analyses/an-021-first-time-fl-matching.md
+  script: scripts/30_first_time_fl_matching.R
+  target: output/tables/tab_first_time_fl_matching.tex
+
+- id: an-022
+  hypothesis: price-scope-sign-reversal
+  status: pending
+  type: placebo
+  question: Does the loser-side ranking generate similar cobidder concentration when restricted to Pregão-only auctions?
+  confidence: pending
+  tags: ["H:price-scope-sign-reversal", falsification, pregao-only]
+  file: docs/analyses/an-022-falsification-pregao.md
+  script: scripts/46_falsification_pregao_only.R
+  target: output/tables/tab_falsification_pregao.tex
+
+- id: an-023
+  hypothesis: cobidder-concentration
+  status: pending
+  type: robustness
+  question: Does the operational mapping from theory (loser-side concentration) to implementation (FL14) survive an explicit audit against alternative operationalizations?
+  confidence: pending
+  tags: ["H:cobidder-concentration", audit, operationalization, theory]
+  file: docs/analyses/an-023-theory-operationalization-audit.md
+  script: scripts/47_theory_operationalization_audit.R
+  target: output/tables/tab_theory_audit.tex
+
+- id: an-024
+  hypothesis: cobidder-profile-distinct
+  status: pending
+  type: descriptive
+  question: How does the unified mechanism profile (HHI × pairs × heterogeneity) characterize FL cobidders relative to other FLs?
+  confidence: pending
+  tags: ["H:cobidder-profile-distinct", mechanism, hhi, pairs, heterogeneity]
+  file: docs/analyses/an-024-unified-mechanism.md
+  script: scripts/35_unified_mechanism.R
+  target: output/tables/tab_unified_mechanism.tex
