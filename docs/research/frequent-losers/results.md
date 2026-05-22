@@ -38,9 +38,19 @@ The raw in-sample item-level AUC of 0.995 is partly tautological by construction
 
 The 0.10–0.13 drop from in-sample to audit-corrected AUC is the pure-leakage component. Audits against direct-CADE labels return random AUC, consistent with the loser-side scope.
 
+### Formal sham permutation: 32 σ above the volume-only null
+
+A formal version of the volume placebo permutes the FL14 label across always-losers while preserving the marginal participation distribution. Across **B = 2,000** sham draws, the sham AUC distribution has mean 0.500, SD 0.013, and 99th percentile 0.531. The observed FL14 AUC of 0.911 falls **~32 standard deviations above the sham mean**; permutation *p* < 1/2,000 (decisively rejects the volume-only null at the 99% level). The price coefficient under the same sham *does not* reject the null (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
+
+### Three-classifier timing battery: discrimination preserved under strict ex ante training
+
+A stricter version of the temporal holdout trains on progressively earlier windows and evaluates against cobidders linked to CADE adjudications closed only after the training window. Even at the strictest horizon — **clf_2015** trained on 2009–2015 only, evaluated against **cobid_post2019** (truly out-of-time, by construction unavailable in the training data) — the firm-level FL AUC is **0.786** and the continuous AUC is **0.854**. clf_2017 returns 0.844 / 0.894 against the same target. Firm persistence between the early and late panel windows is **8.7%**: roughly nine in ten test-window firms were not in the training pool. The temporal holdout therefore evaluates a substantially fresh firm population, not the same firms in different years.
+
 ### Why direct-CADE AUC ≈ 0.49 is the design's empirical signature
 
 The flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the winner side of the same arrangements. The asymmetry between cobidder discrimination (0.864) and direct-defendant discrimination (≈ 0.49) is not a failure of validation but the empirical fingerprint of what a screen built on the loser side can and cannot do.
+
+The stronger version of this scope check uses raw participation count against direct CADE defendants in the full BEC firm universe: AUC = **0.383**, which is *below* random. A high-participation BEC firm is *less* likely, not more likely, to be a direct CADE defendant under the loser-side scoring logic. The score does not merely fail to identify winner-heavy defendants; the relevant direction is reversed.
 
 ---
 

@@ -31,6 +31,18 @@ Rolling-origin temporal holdout: training window 2009 through (test year $-$1), 
 
 Monte Carlo simulation with adversarial adaptation (cover bidders strategically increase or decrease participation to evade the screen) confirms the screen retains discrimination AUC > 0.75 under realistic adaptation. The construct degrades predictably, not catastrophically.
 
+### Formal sham permutation against volume-only null
+
+B = 2,000 sham permutations of the FL14 label preserving the marginal `tenders_count` distribution. Sham AUC distribution: mean 0.500, SD 0.013, q99 0.531, max 0.547. Observed FL14 AUC of 0.911 is **~32 σ above the sham mean** (permutation *p* < 1/2,000; rejects volume-only null at 99%). The price coefficient under the same sham draws does *not* reject (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
+
+### Universe-anchored scope matrix
+
+8-row matrix varies the universe (always-losers vs full BEC firm registry) and the positive class (cobidders vs direct CADE defendants) systematically. The matrix confirms the score targets exactly what the loser-side framing predicts (AUC 0.924/0.939 on cobidders inside always-losers) and actively repels what it should not target (participation count on full BEC vs direct CADE = **0.383, below random**). Rules out a "generic detector" reading.
+
+### Cross-validation precision stability
+
+K-fold CV of precision@k at cobidder-firm level. Precision_mean across k = 50 to 2,000: [0.016, 0.068]; SDs [0.001, 0.011]; CV coefficient < 31% across all k. The precision estimates are not artifacts of a particular train/test split.
+
 ---
 
 ## 2. Architecture Robustness (Claim 2: 83% footprint reduction)
@@ -72,6 +84,18 @@ Under continuous specification, the headline AUC is preserved across thresholds 
 ### Horse-race against continuous score
 
 A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) is statistically larger than binary-only AUC of 0.911 ($p = 1.7 \times 10^{-5}$). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
+
+### Cutoff-sweep robustness (19 thresholds)
+
+Sweeping the FL cutoff from k = 2 through k = 100 produces a clean inverted-U in cobidder AUC. The plateau between **FL10 and FL15 has AUC ≥ 0.90**; the peak is at FL13 (0.924); FL14 (paper convention, IQR median + 1.5 × IQR statistic = 13.5) sits one bucket below peak. The paper's choice is auditable and falls within the wide robustness band, not at a fragile peak.
+
+### Subsample robustness (4 subsamples × 4 scores)
+
+AUC across full / data-rich / low-bid-count / high-bid-count subsamples crossed with FL14 / continuous / Imhof CV / Imhof log_sd. FL14 AUC stays in the **0.89–0.91 band** across all four subsamples; continuous AUC dominates in every cell. The signal does not track bid-microdata richness — important cross-cut for the cost-of-evidence and complementarity claims.
+
+### Matched-heterogeneity audit (honest negative)
+
+Within-FL14 quadrant heterogeneity (HHI × pairs) under PS matching on `tenders_count` largely does *not* survive: Low-HHI × Low-pairs cell drops from unmatched +0.090 (*p* = 0.048) to matched +0.066 (*p* = 0.227). The first-time-FL channel similarly attenuates from +0.10 unconditional to +0.062 (p = 0.31) under PS matching. Reported transparently as the boundary of what the within-FL distinctness can claim — most of it is a volume effect; what survives matching is the bid-level conduct signature (median gap-to-winner d = −0.28).
 
 ---
 
