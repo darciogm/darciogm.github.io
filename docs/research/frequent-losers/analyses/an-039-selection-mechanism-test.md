@@ -87,6 +87,19 @@ cartels concentrate are cells where the products being procured are
 fundamentally higher-priced (different goods, different procurement
 volumes).
 
+![AN-039 Test 1: selection mechanism](../assets/figures/fig_an039_selection_mechanism.png)
+
+*Figure: Panel A — mean log_neg_price among non-treated items rises
+monotonically from Q1 (1.35) to Q5 (6.93) across cell FL-share
+quintiles; Δ Q5 − Q1 = 5.58 log-points ≈ 265× nominal price ratio.
+Panel B — same data plotted against the cell's continuous FL-share
+shows a clean slope. Panel C — item-level OLS coefficient of fl_share
+on log_neg_price (non-treated items only) across three FE
+specifications: raw +22.65, with item+year FE +24.04, with all 5
+marginal cell-dimension FE +3.55. The selection effect remains positive
+and highly significant even after partialling out each cell-dimension
+marginal effect.*
+
 ### Verdict
 
 **Test 1 PASSES.** Selection mechanism is empirically real and large.
