@@ -21,7 +21,7 @@ design:
 # AN-039: Selection Mechanism Test (Test 1 of the Sign-Reversal Rationalization)
 
 !!! abstract "Intuition (plain-language)"
-    The price coefficient on FL presence flips sign between specifications (+0.064 baseline → −0.097 overlap-cell ATT). One economic story for this is **selection**: cartels with cover bidders choose to operate in product-buyer cells where the underlying price level is structurally higher (better rents). This page tests that story directly by comparing prices of NON-TREATED items (items without FL presence) across cells that have high vs low FL-share. If cartels select into high-price cells, non-treated prices in those cells should also be higher. They are — dramatically so.
+    The price coefficient on FL presence flips sign between specifications (+0.064 baseline → −0.097 overlap-cell ATT). One economic story for this is **selection**: cartels with cover bidders choose to operate in product-buyer cells where the underlying price level is structurally higher (better rents). This page tests that story directly by comparing prices of NON-TREATED items (items without FL presence) across cells that have high vs low FL-share. If cartels select into high-price cells, non-treated prices in those cells should also be higher. They are: mean non-treated log-price rises monotonically from 1.35 (lowest FL-share quintile) to 6.93 (highest), a +5.58 log-point gap (~265× nominal). After full marginal-FE controls, fl_share on non-treated log_price = +3.55 (SE 0.23; *N* = 1,439,255).
 
 ## Question
 

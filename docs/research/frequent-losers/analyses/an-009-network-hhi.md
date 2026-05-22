@@ -21,7 +21,7 @@ design:
 # AN-009: Network proximity and product-portfolio HHI
 
 !!! abstract "Intuition (plain-language)"
-    Cobidders concentrate in tighter product portfolios than other frequent losers, but the MARKETS where they appear are MORE competitive on the winner side. The pattern fits cover bidding: cobidders are deployed against a few focal product verticals, specifically in markets where winning looks contested — which is where simulated competition is most useful for the cartel.
+    Cobidders concentrate in tighter product portfolios than other frequent losers, but the MARKETS where they appear are MORE competitive on the winner side. The pattern is *consistent with* cover bidding: cobidders concentrate in a few focal product verticals, specifically in markets where winning looks contested. This pattern does not, by itself, identify the cartel's choice problem.
 
 ## Question
 
