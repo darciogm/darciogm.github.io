@@ -1,0 +1,1176 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,multicol,multirow,array,setspace,comment,tikz,booktabs,enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,calc}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% ------------------ cores ------------------
+\definecolor{solblue}{RGB}{0,0,139}
+\definecolor{rubred}{RGB}{139,0,0}
+\definecolor{boxgray}{RGB}{240,240,240}
+\definecolor{boxborder}{RGB}{100,100,100}
+
+\raggedbottom
+
+\printanswers
+
+\unframedsolutions
+\SolutionEmphasis{\color{solblue}}
+\renewcommand{\solutiontitle}{\noindent\textcolor{solblue}{\rule{\linewidth}{0.4pt}}\par\noindent\textbf{\textcolor{solblue}{Solução:}}\enspace}
+
+\pagestyle{headandfoot}
+\runningheader{Microeconomia I (MPE)}{APS V1 -- Demanda Alimentar e Slutsky}{Página \thepage\ de \numpages}
+\runningheadrule
+\runningfooter{}{}{}
+
+\newcommand{\class}{Microeconomia I -- MPE 2026/32}
+\newcommand{\examname}{Atividade Prática Supervisionada -- APS (V1, Aulas 1--3)}
+\newcommand{\examdate}{2026.1}
+
+\pointpoints{ponto}{pontos}
+\renewcommand{\partlabel}{\alph{partno})}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+
+\newtcolorbox{contextbox}[1][]{%
+  enhanced, breakable,
+  colback=boxgray, colframe=boxborder,
+  boxrule=0.4pt, arc=2pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\bfseries, title=#1
+}
+
+% Notação operacional
+\newcommand{\TMS}{\text{TMS}}
+\newcommand{\E}{\mathrm{e}}
+
+\begin{document}
+
+\newgeometry{top=2cm,bottom=2cm,left=1.8cm,right=1.8cm}
+
+\ifprintanswers
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large APS -- Versão 1 (Aulas 1--3) -- Resolução Comentada \\[0.5em]
+        \normalsize \examdate
+    \end{center}
+    \vspace{0.5cm}
+\else
+    \noindent\hfill\includegraphics[width=2.5cm]{logo-insper.png}\\[1em]
+    \vspace*{-4.5em}
+    \noindent\textbf{Aluno(a):} \rule{12cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Curso:} \rule{6cm}{0.4pt}
+    \hspace{0.5cm}
+    \textbf{N\textsuperscript{o} de matrícula:} \rule{5cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Turma:} \rule{6cm}{0.4pt}
+    \hspace{0.3cm}
+    \textbf{Professor(a):} \rule{5.8cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Grupo (até 4 integrantes):} \rule{10cm}{0.4pt}
+
+    \vspace{1em}
+
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large \examname \\[0.5em]
+        \large \textit{Demanda alimentar no Brasil: estimação via Sistema Linear de Despesa e Matriz de Slutsky} \\[0.5em]
+        \large \examdate
+    \end{center}
+
+    \textbf{Prezado(a) Aluno(a),}
+    \vspace{0.8em}
+
+    Esta APS cobre as Aulas 1, 2 e 3 do curso (preferências e utilidade; UMP/EMP/dualidade; equação de Slutsky, elasticidades e estimação de demanda). É composta de \textbf{4 questões} distribuídas em três partes técnicas e uma síntese de política, totalizando \textbf{100 pontos}. Tempo estimado: \textbf{180 minutos} (3 horas).
+
+    \begin{enumerate}[noitemsep]
+        \item Identifique-se com letra legível em todas as folhas.
+        \item Esta APS pode ser resolvida em grupos de até 4 integrantes. \textbf{Cada integrante deve dominar a totalidade da resolução.}
+        \item Apresentação clara, notação consistente e justificativa econômica das passagens são parte da nota.
+        \item \textbf{Gráficos exigem precisão:} interceptos numéricos, inclinações, pontos rotulados, assíntotas explícitas.
+        \item Resoluções a lápis \textbf{não serão revisadas}.
+        \item Esta atividade trabalha exclusivamente em \textbf{equilíbrio parcial} (o consumidor representativo enfrenta preços paramétricos) e em \textbf{sistema com $n=3$ bens}.
+        \item Os parâmetros calibrados \textit{não} pretendem reproduzir literalmente médias da POF/IBGE -- são uma ilustração com magnitudes plausíveis projetadas para que as restrições de Slutsky fechem exatamente e a álgebra seja transparente.
+    \end{enumerate}
+
+    \rightline{\textbf{Boa atividade!}}
+
+    \vspace{0.5em}
+    \noindent\hrulefill
+
+    \noindent\textbf{Formulário permitido}
+    \vspace{0.3em}
+
+    \textbf{Sistema Linear de Despesa (LES) -- Stone-Geary:}
+    \[
+        u(x_1, x_2, x_3) = \sum_{i=1}^{3} \alpha_i\, \ln(x_i - \gamma_i), \qquad \alpha_i > 0,\ \sum_i \alpha_i = 1,\ \gamma_i \geq 0.
+    \]
+    Conjunto consumo admissível: $X = \{x \in \mathbb{R}^3 : x_i > \gamma_i\ \forall i\}$. Renda supranumerária $S \equiv m - \sum_j p_j \gamma_j$ supõe-se positiva. Demanda marshalliana (fórmula de Stone, 1954):
+    \[
+        x_i^{M}(p, m) = \gamma_i + \frac{\alpha_i}{p_i}\bigl(m - \textstyle\sum_j p_j \gamma_j\bigr) = \gamma_i + \frac{\alpha_i\, S}{p_i}.
+    \]
+    Utilidade indireta, demanda hicksiana e função despesa:
+    \[
+        v(p, m) = \ln S + \sum_i \alpha_i \ln(\alpha_i/p_i),\quad
+        h_i^{H}(p, u) = \gamma_i + \frac{\alpha_i}{p_i}\, \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j},
+    \]
+    \[
+        e(p, u) = \sum_j p_j \gamma_j + \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j}.
+    \]
+
+    \textbf{Notação de elasticidades e participações orçamentárias:}
+    \[
+        w_i \equiv \frac{p_i x_i}{m},\quad c_i \equiv \frac{p_i \gamma_i}{m},\quad
+        \eta_i \equiv \frac{\partial x_i^{M}}{\partial m}\cdot \frac{m}{x_i},\quad
+        \varepsilon_{ij} \equiv \frac{\partial x_i^{M}}{\partial p_j}\cdot \frac{p_j}{x_i}.
+    \]
+
+    \textbf{Restrições teóricas} (consequências de $u(\cdot)$ regular, restrição orçamentária e dualidade):
+    \begin{itemize}[noitemsep,topsep=0pt]
+        \item \emph{Engel:} $\sum_i w_i \eta_i = 1$.
+        \item \emph{Cournot:} $\sum_i w_i \varepsilon_{ij} = -w_j$.
+        \item \emph{Homogeneidade (grau 0 em $(p, m)$):} $\sum_j \varepsilon_{ij} + \eta_i = 0$.
+        \item \emph{Simetria de Slutsky:} $s_{ij} = s_{ji}$, com $s_{ij} \equiv \partial x_i^{M}/\partial p_j + x_j\, \partial x_i^{M}/\partial m = \partial h_i/\partial p_j$.
+        \item \emph{Negatividade:} $s_{ii} \leq 0$ e a \emph{matriz de Slutsky} $\mathbf{S} \equiv [s_{ij}]$ é semidefinida negativa, com $\mathbf{S}\,p = 0$.
+    \end{itemize}
+
+    \vspace{0.5em}
+    \hrule
+    \vspace{1em}
+    \noindent\textbf{\underline{Para uso exclusivo do Professor}} \\[0.2em]
+
+    Permitido rascunho? \hfill (X) SIM \quad (   ) NÃO\\[0.3em]
+    Consulta a material extra? \hfill (   ) SIM \quad (X) NÃO\\[0.3em]
+    Calculadora científica? \hfill (X) SIM \quad (   ) NÃO
+
+    \vspace{0.6em}
+    \noindent Avaliação passível de revisão? \hfill (X) SIM \quad (   ) NÃO
+
+    \newpage
+\fi
+
+\begin{contextbox}[Contexto: estimação de demanda alimentar no Brasil]
+\small
+A discussão sobre desonerações tributárias da cesta básica, calibragem de transferências de renda (Bolsa Família, Auxílio Brasil) e a recente Reforma Tributária do Consumo (EC 132/2023) tem em comum a necessidade de \emph{elasticidades de demanda alimentar} -- preço e renda -- por categoria. No Brasil, a Pesquisa de Orçamentos Familiares (POF) do IBGE, com edições 1987--88, 1995--96, 2002--03, 2008--09 e \textbf{2017--18}, é a fonte canônica de microdados para esse exercício.
+
+A teoria de sistemas de demanda construída por \textbf{Stone (1954)} no contexto do consumo britânico introduziu o Sistema Linear de Despesa (LES) a partir da função utilidade que \textbf{Geary (1950)} havia proposto como nota técnica. O LES é a especificação \emph{didaticamente} mais transparente: tem solução de canto, dualidade fechada, agrega-se exatamente, e suas elasticidades têm forma analítica. Por isso é o ponto natural de entrada para discutir estimação de demanda antes de seguir para sistemas mais flexíveis -- AIDS de \textbf{Deaton \& Muellbauer (1980a, AER)} e suas extensões (QUAIDS, Translog, PIGLOG).
+
+Esta APS modela um consumidor representativo brasileiro de baixa renda com cesta de três grupos alimentares -- \textbf{cereais/leguminosas} ($x_1$, ex.: arroz e feijão), \textbf{proteína animal} ($x_2$, ex.: carnes, ovos, lácteos) e \textbf{frutas/legumes/verduras} ($x_3$, FLV) -- preferências Stone-Geary calibradas para que as restrições da matriz de Slutsky fechem exatamente. Você (i) derivará UMP/EMP e dualidade, (ii) computará a matriz de Slutsky $3 \times 3$ com suas restrições agregadas, (iii) mostrará como recuperar os parâmetros estruturais $(\alpha, \gamma)$ a partir de elasticidades observáveis, e (iv) recomendará à Secretaria do Tesouro qual grupo desonerar.
+
+\medskip
+\textit{Referências (todas reais e verificáveis em catálogos públicos):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Deaton, A. \& Muellbauer, J. (1980a). ``An Almost Ideal Demand System.'' \textit{American Economic Review} 70(3): 312--326.
+\item Deaton, A. \& Muellbauer, J. (1980b). \textit{Economics and Consumer Behavior}. Cambridge University Press.
+\item Frisch, R. (1959). ``A Complete Scheme for Computing All Direct and Cross Demand Elasticities in a Model with Many Sectors.'' \textit{Econometrica} 27(2): 177--196.
+\item Geary, R. C. (1950). ``A Note on `A Constant-Utility Index of the Cost of Living'.'' \textit{Review of Economic Studies} 18(1): 65--66.
+\item Hicks, J. R. (1939). \textit{Value and Capital}. Oxford: Clarendon Press.
+\item IBGE. \textit{Pesquisa de Orçamentos Familiares 2017--2018: análise do consumo alimentar pessoal no Brasil}. Rio de Janeiro, 2020.
+\item Leser, C. E. V. (1963). ``Forms of Engel Functions.'' \textit{Econometrica} 31(4): 694--703.
+\item Slutsky, E. E. (1915). ``Sulla teoria del bilancio del consumatore.'' \textit{Giornale degli Economisti} 51: 1--26.
+\item Stone, J. R. N. (1954). ``Linear Expenditure Systems and Demand Analysis: An Application to the Pattern of British Demand.'' \textit{Economic Journal} 64(255): 511--527.
+\item Working, H. (1943). ``Statistical Laws of Family Expenditure.'' \textit{Journal of the American Statistical Association} 38(221): 43--56. (Holbrook Working, Stanford -- não confundir com E. J. Working 1927.)
+\end{itemize}
+\end{contextbox}
+
+\vspace{0.5em}
+
+\noindent\textbf{Setup geral.} O consumidor representativo de baixa renda tem preferências Stone-Geary
+\[
+   u(x_1, x_2, x_3) = \tfrac{1}{4} \ln(x_1 - \gamma_1) + \tfrac{1}{2}\ln(x_2 - \gamma_2) + \tfrac{1}{4}\ln(x_3 - \gamma_3),
+\]
+com pesos supranumerários $(\alpha_1, \alpha_2, \alpha_3) = (1/4,\, 1/2,\, 1/4)$ (proteína concentra metade do gasto supranumerário) e mínimos de subsistência $(\gamma_1, \gamma_2, \gamma_3) = (4,\, 1,\, 2)$ medidos em unidades padronizadas mensais por adulto-equivalente. Preços calibrados $(p_1, p_2, p_3) = (3,\, 10,\, 5)$ em R\$/unidade e renda alimentar mensal $m = 92$ R\$. Esta especificação será mantida em todas as partes (a Parte III generaliza para parâmetros $(\alpha, \gamma)$ a estimar).
+
+\begin{spacing}{1.3}
+
+% ============================================================
+% PARTE I
+% ============================================================
+\begin{center}\large\textbf{Parte I --- Preferências e a função utilidade Stone-Geary} \quad (25 pontos)\end{center}
+
+\textit{Conexão com a Aula 1.} Os itens abaixo testam: (i) reconhecimento de uma função utilidade como representação de uma preferência regular (axiomas, monotonicidade, convexidade); (ii) cálculo e interpretação econômica da TMS; (iii) distinção entre cardinalidade e ordinalidade (Stone-Geary como Cobb-Douglas deslocada via transformação monotônica); e (iv) geometria do conjunto consumo com mínimos de subsistência.
+
+\begin{questions}
+\question \textbf{Stone-Geary como representação regular de preferências} (25 pontos).
+
+\begin{parts}
+\part[6] Considere a função utilidade Stone-Geary do setup geral, definida no domínio $X = \{x \in \mathbb{R}^3 : x_i > \gamma_i,\ i=1,2,3\}$. \textbf{(i)} Mostre que $u$ é estritamente crescente em cada $x_i$ no domínio $X$. \textbf{(ii)} Calcule a Hessiana $H = D^2 u$ e mostre que ela é definida negativa em $X$ (logo $u$ é estritamente côncava, e portanto as preferências representadas por $u$ são estritamente convexas).
+
+\begin{solution}
+\textbf{(i) Monotonicidade estrita.} As utilidades marginais são
+\[
+    \frac{\partial u}{\partial x_i} = \frac{\alpha_i}{x_i - \gamma_i} > 0 \quad \forall x \in X,
+\]
+pois $\alpha_i > 0$ e, em $X$, $x_i - \gamma_i > 0$. Logo $u$ é estritamente crescente em cada coordenada (e portanto a relação $\succeq$ representada por $u$ é \emph{estritamente monotônica} em $X$). $\square$
+
+\textbf{(ii) Concavidade estrita.} As segundas derivadas próprias são
+\[
+    \frac{\partial^2 u}{\partial x_i^2} = -\frac{\alpha_i}{(x_i - \gamma_i)^2} < 0,\qquad
+    \frac{\partial^2 u}{\partial x_i \partial x_j} = 0\ \text{para}\ i \neq j.
+\]
+Logo $H = D^2 u$ é diagonal com entradas estritamente negativas:
+\[
+    H = \mathrm{diag}\!\left(-\frac{\alpha_1}{(x_1 - \gamma_1)^2},\ -\frac{\alpha_2}{(x_2 - \gamma_2)^2},\ -\frac{\alpha_3}{(x_3 - \gamma_3)^2}\right).
+\]
+Todos os autovalores são estritamente negativos em $X$, portanto $H$ é \textbf{definida negativa} em $X$. Pelo critério padrão (Jehle-Reny 3e, Teorema A2.4), $u$ é \textbf{estritamente côncava} em $X$. A concavidade estrita implica que as curvas de nível $\{x \in X : u(x) = \bar u\}$ delimitam conjuntos de contorno superior estritamente convexos -- i.e., as preferências são \emph{estritamente convexas}. $\square$
+
+\textit{Observação.} Continuidade segue por composição de funções contínuas; transitividade e completude são automáticas porque $u$ é uma função real. Logo $\succeq$ representada por $u$ em $X$ satisfaz: (R) reflexiva, (T) transitiva, (C) completa, (Cont) contínua, (M+) monotônica estrita, (CV) estritamente convexa. Conjuntos de axiomas suficientes para o teorema da representação de Debreu estão portanto satisfeitos (ver Debreu 1959, \textit{Theory of Value}, Wiley; Jehle-Reny 3e, §1.2).
+\end{solution}
+
+\newpage
+\part[5] Calcule a TMS entre os bens 1 e 2 (i.e., $\TMS_{12} \equiv (\partial u/\partial x_1)/(\partial u/\partial x_2)$) como função do vetor de consumo $x$. Mostre que, fixados $x_2$ e $x_3$, $\TMS_{12}$ é estritamente \emph{decrescente} em $x_1$ ao longo de $X$ (taxa marginal de substituição decrescente, TMSD). \textbf{Interprete economicamente} o papel de $\gamma_1$ como ``ponto de saciação inferior''.
+
+\begin{solution}
+\textbf{Cálculo direto.}
+\[
+    \TMS_{12}(x) = \frac{\partial u/\partial x_1}{\partial u/\partial x_2}
+    = \frac{\alpha_1/(x_1-\gamma_1)}{\alpha_2/(x_2-\gamma_2)}
+    = \frac{\alpha_1}{\alpha_2}\cdot \frac{x_2 - \gamma_2}{x_1 - \gamma_1}
+    = \frac{1}{2}\cdot \frac{x_2 - 1}{x_1 - 4}.
+\]
+\textbf{TMSD.} Para $x_2, x_3$ fixos com $x_2 > \gamma_2$:
+\[
+    \frac{\partial\, \TMS_{12}}{\partial x_1} = \frac{\alpha_1}{\alpha_2}(x_2-\gamma_2)\cdot \left[-\frac{1}{(x_1-\gamma_1)^2}\right] < 0\qquad \forall x \in X.
+\]
+Logo a TMS é estritamente decrescente em $x_1$ ao longo da curva de indiferença -- o consumidor está cada vez menos disposto a abrir mão de uma unidade adicional de $x_2$ para obter uma unidade extra de $x_1$ à medida que $x_1$ aumenta.
+
+\textbf{Interpretação econômica de $\gamma_1$.} Quando $x_1 \to \gamma_1^{+}$ (consumo se aproxima do mínimo de subsistência), $(x_1 - \gamma_1) \to 0^{+}$ e portanto $\TMS_{12} \to +\infty$: o consumidor exige \emph{infinitas unidades de $x_2$ em troca de uma unidade de $x_1$}, ou seja, qualquer perda marginal em $x_1$ próxima ao mínimo é catastrófica. $\gamma_1$ funciona como \textbf{piso de subsistência} (não saciação): o ponto a partir do qual a preferência por $x_1$ está ``viva'' -- abaixo dele, o consumidor não está sequer no conjunto consumo. Stone (1954) e Pollak \& Wales (1969, \textit{Econometrica}) discutem essa interpretação no contexto britânico e norte-americano.
+\end{solution}
+
+\newpage
+\part[4] Mostre que $u(x) = \sum_i \alpha_i \ln(x_i - \gamma_i)$ é uma transformação monotônica de
+\[
+    \tilde u(x) = \prod_i (x_i - \gamma_i)^{\alpha_i}.
+\]
+Conclua que $u$ e $\tilde u$ representam \emph{a mesma} preferência. Comente brevemente a distinção entre \textbf{ordinalidade} e \textbf{cardinalidade} no contexto de Stone-Geary.
+
+\begin{solution}
+\textbf{Equivalência.} Tomando o logaritmo de $\tilde u$:
+\[
+    \ln \tilde u(x) = \sum_i \alpha_i \ln(x_i - \gamma_i) = u(x).
+\]
+Como $\ln(\cdot)$ é estritamente crescente em $\mathbb{R}_{>0}$ e $\tilde u(x) > 0$ em $X$, segue $u = \ln \circ\, \tilde u$ -- transformação monotônica estrita. Portanto, para todos $x, x' \in X$:
+\[
+    u(x) \geq u(x') \;\iff\; \tilde u(x) \geq \tilde u(x').
+\]
+As duas funções induzem o mesmo \emph{ranking} sobre $X$ e, logo, representam a mesma preferência $\succeq$.
+
+\textbf{Interpretação.} A forma $\tilde u$ é a chamada \textbf{Cobb-Douglas deslocada} -- recupera a Cobb-Douglas usual no caso $\gamma_i \equiv 0$ (ver Aulas 1 e 2 do curso, e Pollak \& Wales 1969). Como $u$ e $\tilde u$ representam a mesma preferência, \textbf{nenhuma escolha ótima} no UMP/EMP depende de qual delas usemos -- inclui-se demandas marshallianas, hicksianas, função despesa (\emph{a menos da escala}, no caso da utilidade indireta).
+
+\textbf{Cardinalidade vs.\ ordinalidade.} As demandas $x^M, h$, a função despesa $e$ e as elasticidades $\eta, \varepsilon$ são \textbf{invariantes} sob transformação monotônica -- são objetos \emph{ordinais}. Já a utilidade indireta $v$ e o nível de utilidade $u^*$ \textbf{mudam de escala} sob a transformação $u \to \tilde u$: se $u^* = 1{,}23$ com a forma logarítmica, $\tilde u^* = \E^{1{,}23} \approx 3{,}42$ com a forma multiplicativa. \emph{Comparações entre níveis de utilidade só fazem sentido fixada a função} -- e mesmo aí com cautela, porque a unidade não tem significado econômico próprio. Esse é exatamente o ponto cardinal/ordinal levantado em Aulas 1 e 3.
+\end{solution}
+
+\newpage
+\part[5] No plano $(x_1, x_2)$, fixe $x_3 = x_3^{*} = 5$ (o valor que será calculado no item 2a). \textbf{(i)} Mostre que a curva de indiferença passando pelo ponto $A = (9,\, 4,\, 5)$ tem equação implícita $(x_1 - 4)(x_2 - 1)^2 = 45$ neste plano. \textbf{(ii)} Esboce graficamente, com precisão, a curva de indiferença e suas assíntotas $x_1 = 4$ e $x_2 = 1$, marcando o ponto $A$.
+
+\begin{solution}
+\textbf{(i) Equação da IC.} Em $A$, $u(A) = \tfrac14 \ln 5 + \tfrac12 \ln 3 + \tfrac14 \ln 3 = \tfrac14 \ln 5 + \tfrac34 \ln 3$. Fixando $x_3 = 5$, a IC neste plano satisfaz
+\[
+    \tfrac14 \ln(x_1 - 4) + \tfrac12 \ln(x_2 - 1) + \tfrac14 \ln 3 = \tfrac14 \ln 5 + \tfrac34 \ln 3.
+\]
+Isolando:
+\[
+    \tfrac14 \ln(x_1 - 4) + \tfrac12 \ln(x_2 - 1) = \tfrac14 \ln 5 + \tfrac12 \ln 3.
+\]
+Multiplicando por 4 e exponenciando:
+\[
+    (x_1 - 4)(x_2 - 1)^2 = 5 \cdot 3^2 = 45.
+\]
+\textbf{Verificação:} em $A=(9,4)$, $(9-4)(4-1)^2 = 5\cdot 9 = 45$ $\checkmark$.
+
+\textbf{(ii) Esboço.} Fronteiras de $X$ no plano: $x_1 = 4$ e $x_2 = 1$ -- assíntotas \emph{verticais} e \emph{horizontais}, respectivamente. A IC é monótona decrescente e convexa em $\{x_1 > 4, x_2 > 1\}$, com $\TMS_{12}(A) = \tfrac12 \cdot 3/5 = 3/10$. Para a tangência em $A$, a fatia da reta orçamentária no plano com $x_3 = 5$ é $3x_1 + 10 x_2 = 92 - 5\cdot 5 = 67$, com inclinação $-p_1/p_2 = -3/10$ -- coincidente com $\TMS_{12}(A)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=8cm,
+    xlabel={$x_1$ (cereais e leguminosas)},
+    ylabel={$x_2$ (proteína animal)},
+    xmin=0, xmax=24, ymin=0, ymax=10,
+    xtick={0,4,9,14,22.33},
+    xticklabels={$0$,$4$,$9$,$14$,$67/3$},
+    ytick={0,1,4,6.7},
+    yticklabels={$0$,$1$,$4$,$6{,}7$},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north east,
+    legend style={font=\small}
+]
+% Reta orçamentária slice: 3 x_1 + 10 x_2 = 67  =>  x_2 = 6.7 - 0.3 x_1
+\addplot[thick,blue,domain=0:22.33] {6.7 - 0.3*x};
+\addlegendentry{Orç. slice: $3x_1+10x_2=67$ (em $x_3=5$)}
+% IC: x_2 = 1 + sqrt(45/(x_1-4)), válido em x_1 > 4
+\addplot[thick,red,domain=4.55:22,samples=200] {1 + sqrt(45/(x-4))};
+\addlegendentry{IC $u=u_A$: $(x_1-4)(x_2-1)^2=45$}
+% Assíntotas
+\addplot[dashed,boxborder,thick] coordinates {(4,0) (4,10)};
+\addplot[dashed,boxborder,thick] coordinates {(0,1) (24,1)};
+\node[below right,font=\footnotesize] at (axis cs:4,9.5) {$x_1 = \gamma_1 = 4$};
+\node[above right,font=\footnotesize] at (axis cs:18,1) {$x_2 = \gamma_2 = 1$};
+% Ponto A
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(9,4)};
+\node[above right] at (axis cs:9,4) {\large$A$};
+\node[below right=2pt] at (axis cs:9,4) {\small$(9,\,4)$};
+% Linhas guia
+\addplot[dashed,gray,thin] coordinates {(9,0) (9,4)};
+\addplot[dashed,gray,thin] coordinates {(0,4) (9,4)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textit{Sanity:} (i) a IC \textbf{não cruza} as assíntotas -- elas são fronteira de $X$, e o consumidor não pode operar em $X$ se algum $x_i \leq \gamma_i$. Esta geometria contrasta com a Cobb-Douglas usual ($\gamma_i \equiv 0$), em que as assíntotas coincidem com os eixos. (ii) A reta orçamentária ``de fatia'' é tangente à IC exatamente em $A$, confirmando $\TMS_{12}(A) = p_1/p_2 = 3/10$.
+\end{solution}
+
+\newpage
+\part[5] No setup calibrado, calcule explicitamente: \textbf{(i)} a renda comprometida $C \equiv \sum_j p_j \gamma_j$; \textbf{(ii)} a renda supranumerária $S = m - C$; \textbf{(iii)} as participações comprometidas $c_i = p_i \gamma_i/m$ para cada bem. Comente o significado econômico desses três objetos.
+
+\begin{solution}
+\textbf{Cálculo direto.}
+\[
+    C = p_1 \gamma_1 + p_2 \gamma_2 + p_3 \gamma_3 = 3\cdot 4 + 10\cdot 1 + 5\cdot 2 = 12 + 10 + 10 = \boxed{32},
+\]
+\[
+    S = m - C = 92 - 32 = \boxed{60},
+\]
+\[
+    c_1 = \tfrac{12}{92} = \tfrac{3}{23} \approx 0{,}130,\quad
+    c_2 = \tfrac{10}{92} = \tfrac{5}{46} \approx 0{,}109,\quad
+    c_3 = \tfrac{10}{92} = \tfrac{5}{46} \approx 0{,}109.
+\]
+A participação comprometida agregada é $\sum_i c_i = 32/92 = 8/23 \approx 0{,}348$, ou seja, \textbf{34,8\%} da renda do consumidor é ``trancada'' pelo mínimo de subsistência.
+
+\textbf{Significado econômico.}
+\begin{itemize}[noitemsep]
+\item $C$ é o ``custo da subsistência'': a renda mínima necessária para o consumidor sequer pertencer ao conjunto consumo $X$. Se $m < C$, a especificação Stone-Geary não tem solução interior -- o modelo precisa ser estendido para tratar canto, tópico que sai do escopo desta APS (discutido na literatura sobre Stone-Geary; ver Pollak \& Wales 1969, \textit{Econometrica}, §3).
+\item $S$ é a renda \emph{discricionária} -- a porção que o consumidor aloca \emph{como} se fosse uma Cobb-Douglas pura entre os bens.
+\item $c_i$ mede o grau em que o consumo do bem $i$ é \emph{piso fixo} versus \emph{escolha discricionária}. Bens com $c_i$ alto são ``inelásticos por construção''. Esta é precisamente a estatística que será usada na Parte III (item 3g) para identificar $\gamma_i$ a partir de elasticidades observadas.
+\end{itemize}
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 1 (25 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 6 pontos}} \\
+\quad Utilidade marginal positiva e justificativa em $X$ & 2 \\
+\quad Cálculo correto da Hessiana (diagonal, entradas negativas) & 2 \\
+\quad Conclusão estritamente côncava / preferência estritamente convexa & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 5 pontos}} \\
+\quad TMS $= (\alpha_1/\alpha_2)\cdot (x_2-\gamma_2)/(x_1-\gamma_1) = (x_2-1)/(2(x_1-4))$ & 2 \\
+\quad TMSD demonstrada via derivada & 2 \\
+\quad Interpretação de $\gamma_1$ como piso de subsistência (TMS$\to\infty$ na fronteira) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 4 pontos}} \\
+\quad $u = \ln \tilde u$ via logaritmo & 1 \\
+\quad Equivalência das preferências sob transformação monotônica & 1 \\
+\quad Distinção ordinalidade (demandas/elasticidades invariantes) vs.\ cardinalidade (nível $u$) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 5 pontos}} \\
+\quad Equação da IC $(x_1-4)(x_2-1)^2 = 45$ derivada corretamente & 2 \\
+\quad Gráfico com assíntotas $x_1=4$, $x_2=1$ tracejadas e identificadas & 2 \\
+\quad Ponto $A=(9,4)$ rotulado com coordenadas & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 5 pontos}} \\
+\quad $C = 32$ e $S = 60$ corretos & 2 \\
+\quad Participações comprometidas $c_i$ corretas e somando $8/23$ & 2 \\
+\quad Interpretação econômica dos três objetos & 1 \\
+\midrule
+\textbf{Total Q1} & \textbf{25} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE II
+% ============================================================
+\begin{center}\large\textbf{Parte II --- UMP, EMP e Dualidade} \quad (30 pontos)\end{center}
+
+\textit{Conexão com a Aula 2.} Os itens abaixo testam: (i) montagem e resolução do Lagrangiano do UMP via tangência; (ii) construção da função utilidade indireta $v(p, m)$; (iii) resolução do EMP (problema dual) e função despesa $e(p, u)$; (iv) verificação operacional das identidades de Roy e do lema de Shephard; (v) checagem das quatro identidades de dualidade. \emph{Todas as variáveis são calculadas explicitamente no ponto calibrado.}
+
+\begin{questions}
+\setcounter{question}{1}
+\question \textbf{UMP, EMP e identidades duais em Stone-Geary} (30 pontos).
+
+\begin{parts}
+\part[6] Resolva o UMP $\max_{x \in X} u(x)$ s.t.\ $\sum_j p_j x_j \leq m$ via Lagrangiano. Derive a fórmula geral
+\[
+    x_i^{M}(p, m) = \gamma_i + \frac{\alpha_i}{p_i}\bigl(m - \textstyle\sum_j p_j \gamma_j\bigr)
+\]
+e calcule numericamente $(x_1^*, x_2^*, x_3^*)$ no ponto calibrado.
+
+\begin{solution}
+\textbf{Lagrangiano.}
+\[
+    \mathcal{L}(x, \lambda) = \sum_i \alpha_i \ln(x_i - \gamma_i) - \lambda\!\left(\sum_j p_j x_j - m\right).
+\]
+\textbf{CPOs interiores} (válidas pois $u$ é estritamente côncava e a restrição é linear -- KKT com $\lambda > 0$):
+\[
+    \frac{\alpha_i}{x_i - \gamma_i} = \lambda\, p_i\quad(i=1,2,3),\qquad \sum_j p_j x_j = m. \tag{*}
+\]
+\textbf{Resolvendo $x_i$ em função de $\lambda$:}
+\[
+    x_i - \gamma_i = \frac{\alpha_i}{\lambda\, p_i}\;\Rightarrow\; p_i(x_i - \gamma_i) = \frac{\alpha_i}{\lambda}.
+\]
+\textbf{Somando sobre $i$:} usando $\sum_i p_i x_i = m$ e $\sum_i \alpha_i = 1$:
+\[
+    \sum_i p_i(x_i - \gamma_i) = m - \sum_i p_i \gamma_i = S = \frac{\sum_i \alpha_i}{\lambda} = \frac{1}{\lambda}
+    \;\Longrightarrow\; \lambda^{*} = \frac{1}{S}.
+\]
+\textbf{Substituindo $\lambda^{*}$:}
+\[
+    x_i^{M} = \gamma_i + \frac{\alpha_i}{p_i}\, S = \gamma_i + \frac{\alpha_i\,(m - \sum_j p_j \gamma_j)}{p_i}. \quad \boxed{\phantom{x}}
+\]
+\textbf{Valores numéricos} ($S = 60$, $p = (3,10,5)$, $\alpha = (1/4, 1/2, 1/4)$, $\gamma = (4,1,2)$):
+\[
+    x_1^* = 4 + \frac{(1/4)\cdot 60}{3} = 4 + 5 = \boxed{9};\qquad
+    x_2^* = 1 + \frac{(1/2)\cdot 60}{10} = 1 + 3 = \boxed{4};
+\]
+\[
+    x_3^* = 2 + \frac{(1/4)\cdot 60}{5} = 2 + 3 = \boxed{5}.
+\]
+\textbf{Verificação orçamentária:} $3\cdot 9 + 10\cdot 4 + 5\cdot 5 = 27 + 40 + 25 = 92 = m$ $\checkmark$.
+
+\textit{Interpretação de $\lambda^{*} = 1/S$.} O multiplicador é o inverso da renda supranumerária: a utilidade marginal da renda \emph{discricionária} é proporcional a $1/S$ -- caracterização ``Frisch'' do LES (Frisch 1959).
+\end{solution}
+
+\newpage
+\part[4] Derive a função utilidade indireta $v(p, m)$ e calcule $v(p, m)$ no ponto. Mostre que $v$ é homogênea de grau zero em $(p, m)$.
+
+\begin{solution}
+\textbf{Construção.} Substituindo $x^M$ em $u$:
+\[
+    v(p, m) = \sum_i \alpha_i \ln\!\left(\frac{\alpha_i\, S}{p_i}\right)
+    = \ln S + \sum_i \alpha_i \ln\!\frac{\alpha_i}{p_i}.
+\]
+(Usou-se $\sum_i \alpha_i = 1$ para fatorar $\ln S$.) Numericamente, com $S = 60$:
+\[
+    v(p, m) = \ln 60 + \tfrac14 \ln \tfrac{1}{12} + \tfrac12 \ln \tfrac{1}{20} + \tfrac14 \ln \tfrac{1}{20}
+    = \ln 60 - \tfrac14 \ln 12 - \tfrac34 \ln 20.
+\]
+\[
+    v(p, m) \approx 4{,}0943 - 0{,}6212 - 2{,}2468 \approx \boxed{1{,}2263}.
+\]
+\textit{Verificação direta:} $u(A) = \tfrac14 \ln 5 + \tfrac12 \ln 3 + \tfrac14 \ln 3 \approx 0{,}4024 + 0{,}5493 + 0{,}2747 \approx 1{,}2263$ $\checkmark$.
+
+\textbf{Homogeneidade de grau 0.} Substituindo $(p, m) \to (\theta p, \theta m)$, $\theta > 0$: $C \to \theta C$, $S \to \theta S$, e $\alpha_i/p_i \to (\alpha_i/p_i)/\theta$. Logo
+\[
+    v(\theta p, \theta m) = \ln(\theta S) + \sum_i \alpha_i \ln\!\frac{\alpha_i/p_i}{\theta} = \ln \theta + \ln S - \ln \theta + \sum_i \alpha_i \ln\!\frac{\alpha_i}{p_i} = v(p, m).
+\]
+A ausência de ilusão monetária está embutida no LES por construção.
+\end{solution}
+
+\newpage
+\part[6] Resolva o EMP $\min_{x \in X} \sum_j p_j x_j$ s.t.\ $u(x) \geq u^{*}$. Derive a função despesa
+\[
+    e(p, u) = \sum_j p_j \gamma_j + \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j}
+\]
+e as demandas hicksianas
+\[
+    h_i^{H}(p, u) = \gamma_i + \frac{\alpha_i}{p_i}\, \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j}.
+\]
+\textbf{(i)} Verifique numericamente que $e(p, u^*) = m = 92$. \textbf{(ii)} Verifique que $h_i(p, u^*) = x_i^M$ para cada $i$.
+
+\begin{solution}
+\textbf{Lagrangiano dual.} $\mathcal{L}^{d} = \sum_j p_j x_j - \mu(u(x) - u^{*})$. CPOs:
+\[
+    p_i = \mu\cdot \frac{\alpha_i}{x_i - \gamma_i}\;\Longrightarrow\; p_i(x_i - \gamma_i) = \mu\, \alpha_i.
+\]
+A restrição $u(x) = u^{*}$ dá
+\[
+    \sum_i \alpha_i \ln(x_i - \gamma_i) = u^{*}
+    \;\Leftrightarrow\; \sum_i \alpha_i \ln\!\frac{\mu \alpha_i}{p_i} = u^{*}
+    \;\Leftrightarrow\; \ln \mu + \sum_i \alpha_i \ln\!\frac{\alpha_i}{p_i} = u^{*}
+\]
+\[
+    \;\Longrightarrow\; \mu^{*} = \E^{u^{*}}\!\prod_i (p_i/\alpha_i)^{\alpha_i}.
+\]
+\textbf{Substituindo em $x_i$:}
+\[
+    h_i^{H}(p, u^{*}) = \gamma_i + \frac{\mu^{*}\alpha_i}{p_i} = \gamma_i + \frac{\alpha_i}{p_i}\, \E^{u^{*}}\!\prod_j (p_j/\alpha_j)^{\alpha_j}. \quad \boxed{\phantom{x}}
+\]
+\textbf{Função despesa:} $e(p, u) = \sum_i p_i h_i(p, u) = \sum_i p_i \gamma_i + \mu^{*}\sum_i \alpha_i = C + \mu^{*}$:
+\[
+    e(p, u) = \sum_j p_j \gamma_j + \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j}. \quad \boxed{\phantom{x}}
+\]
+
+\textbf{(i) Verificação numérica em $u^* \approx 1{,}2263$.} Os preços normalizados são
+\[
+    \prod_j (p_j/\alpha_j)^{\alpha_j} = (3/(1/4))^{1/4}\cdot (10/(1/2))^{1/2}\cdot (5/(1/4))^{1/4}
+    = 12^{1/4}\cdot 20^{1/2}\cdot 20^{1/4}.
+\]
+Numericamente: $12^{1/4} \approx 1{,}8612$; $20^{1/2} \approx 4{,}4721$; $20^{1/4} \approx 2{,}1147$. Produto $\approx 17{,}5953$.
+
+Multiplicando por $\E^{u^{*}} \approx \E^{1{,}2263} \approx 3{,}409$:
+\[
+    \mu^{*} \approx 17{,}5953 \cdot 3{,}409 \approx 59{,}99 \approx 60 = S.
+\]
+\textit{Identidade exata:} $\mu^{*} = \E^{u^{*}}\!\prod_j (p_j/\alpha_j)^{\alpha_j} = \E^{v(p,m)}\!\prod_j (p_j/\alpha_j)^{\alpha_j}$. Mas $\E^{v} = S\cdot \prod_j (\alpha_j/p_j)^{\alpha_j}$ (da fórmula de $v$), portanto $\mu^{*} = S$ exatamente. Logo $e(p, u^{*}) = C + S = 32 + 60 = \boxed{92} = m$ $\checkmark$.
+
+\textbf{(ii) Hicksianas vs.\ Marshallianas em $u^{*}$.} Como $\mu^{*} = S$:
+\[
+    h_i^{H}(p, u^{*}) = \gamma_i + \frac{\alpha_i \cdot S}{p_i} = x_i^{M}(p, m).
+\]
+Logo $h_1 = 9, h_2 = 4, h_3 = 5$ no ponto. $\checkmark$
+\end{solution}
+
+\newpage
+\part[3] Verifique numericamente a \textbf{Identidade de Roy} para o bem 2:
+\[
+    x_2^{M}(p, m) = -\frac{\partial v/\partial p_2}{\partial v/\partial m}.
+\]
+
+\begin{solution}
+A partir de $v(p, m) = \ln(m - \sum_j p_j \gamma_j) + \sum_i \alpha_i \ln(\alpha_i/p_i)$:
+\[
+    \frac{\partial v}{\partial m} = \frac{1}{S},\qquad
+    \frac{\partial v}{\partial p_2} = \frac{-\gamma_2}{S} - \frac{\alpha_2}{p_2}.
+\]
+Logo
+\[
+    -\frac{\partial v/\partial p_2}{\partial v/\partial m} = -\left(\frac{-\gamma_2}{S} - \frac{\alpha_2}{p_2}\right)\cdot S = \gamma_2 + \frac{\alpha_2\, S}{p_2} = x_2^{M}(p, m). \quad \checkmark
+\]
+\textbf{Numericamente:} $\partial v/\partial p_2 = -1/60 - (1/2)/10 = -1/60 - 1/20 = -1/60 - 3/60 = -4/60 = -1/15$. $\partial v/\partial m = 1/60$. Razão $= -(-1/15)/(1/60) = (1/15)\cdot 60 = 4 = x_2^{*}$. $\checkmark$
+\end{solution}
+
+\newpage
+\part[3] Verifique o \textbf{Lema de Shephard} para o bem 1:
+\[
+    h_1^{H}(p, u^{*}) = \frac{\partial e}{\partial p_1}(p, u^{*}).
+\]
+
+\begin{solution}
+\[
+    \frac{\partial e}{\partial p_1} = \gamma_1 + \E^{u}\cdot \frac{\partial}{\partial p_1}\!\prod_j (p_j/\alpha_j)^{\alpha_j}.
+\]
+A derivada do produtório:
+\[
+    \frac{\partial}{\partial p_1}\!\prod_j (p_j/\alpha_j)^{\alpha_j} = \frac{\alpha_1}{p_1}\prod_j (p_j/\alpha_j)^{\alpha_j}.
+\]
+Logo
+\[
+    \frac{\partial e}{\partial p_1} = \gamma_1 + \frac{\alpha_1}{p_1}\, \E^{u}\!\prod_j (p_j/\alpha_j)^{\alpha_j} = h_1^{H}(p, u). \quad \checkmark
+\]
+\textbf{Numericamente em $u = u^*$:} $\partial e/\partial p_1 = 4 + (1/4)/3 \cdot 60 = 4 + 5 = 9 = h_1^{H}(p, u^*) = x_1^{*}$. $\checkmark$
+
+\textit{Por que vale.} Shephard é uma aplicação direta do Teorema do Envelope no EMP: ao perturbar $p_1$, a primeira-ordem ótima já está zerada nas demais variáveis, e a derivada total da função objetivo é apenas a derivada parcial direta, $h_1$.
+\end{solution}
+
+\newpage
+\part[4] Verifique numericamente as quatro identidades de dualidade no ponto calibrado:
+\[
+    \text{(D1)}\ v(p, e(p, u^*)) = u^{*};\qquad
+    \text{(D2)}\ e(p, v(p, m)) = m;
+\]
+\[
+    \text{(D3)}\ h_i(p, v(p, m)) = x_i^{M}(p, m);\qquad
+    \text{(D4)}\ x_i^{M}(p, e(p, u)) = h_i(p, u).
+\]
+Mostre os cálculos numéricos para \textbf{ao menos duas} delas (D2 e D3 são as mais diretas).
+
+\begin{solution}
+\textbf{(D2) $e(p, v(p, m)) = m$.} Já feito em (c): $v(p, m) = u^{*} \approx 1{,}2263$, e $e(p, u^{*}) = C + S = 32 + 60 = 92 = m$. $\checkmark$
+
+\textbf{(D3) $h_i(p, v(p, m)) = x_i^{M}$.} Como $\mu^{*} = S = 60$ quando avaliamos $h$ em $u = v(p, m) = u^{*}$:
+\[
+    h_1 = 4 + (1/4)\cdot 60/3 = 9 = x_1^{M};\quad
+    h_2 = 1 + (1/2)\cdot 60/10 = 4 = x_2^{M};
+\]
+\[
+    h_3 = 2 + (1/4)\cdot 60/5 = 5 = x_3^{M}. \quad \checkmark
+\]
+
+\textit{(D1)} segue de (D2) aplicada na ordem reversa; \textit{(D4)} segue de (D3) compondo com (D2). As quatro identidades são \emph{lógicamente equivalentes}: derivam da existência e unicidade do par primal/dual UMP/EMP sob preferências regulares (Aula 2, ZaE cap.\ 4; Deaton \& Muellbauer 1980b, cap.\ 2).
+\end{solution}
+
+\part[4] \textbf{Pergunta conceitual.} A função despesa $e(p, u)$ é \textbf{côncava} em $p$. Mostre essa propriedade \emph{em palavras} (sem cálculo): use a ideia de envelope sobre a família de \emph{retas} indexadas pelo plano de gastos hicksiano, ou cite explicitamente o argumento de Diewert/Shephard. Em seguida, verifique numericamente para Stone-Geary que, neste setup, $\partial^2 e/\partial p_2^2 < 0$.
+
+\begin{solution}
+\textbf{Argumento de envelope (Shephard 1953; ver Mas-Colell, Whinston \& Green 1995, \textit{Microeconomic Theory}, Proposição 3.E.2).} Para cada cesta $\bar x$ \emph{fixa}, a função $p \mapsto \sum_j p_j \bar x_j$ é \emph{linear} em $p$ (logo côncava). A função despesa é o \emph{ínfimo} dessa família de funções lineares: $e(p, u) = \min_{x : u(x) \geq u} p \cdot x$. O ínfimo (pointwise) de uma família de funções côncavas (em particular lineares) é côncavo. Portanto $e$ é côncava em $p$. $\square$
+
+\textbf{Verificação numérica em Stone-Geary.} A partir de $e(p, u) = C + \mu(p,u)$, e $\mu = \E^u \prod (p_j/\alpha_j)^{\alpha_j}$:
+\[
+    \frac{\partial e}{\partial p_2} = \gamma_2 + \frac{\alpha_2}{p_2}\mu = h_2(p, u),
+\]
+\[
+    \frac{\partial^2 e}{\partial p_2^2} = -\frac{\alpha_2}{p_2^2}\mu + \frac{\alpha_2}{p_2}\cdot \frac{\alpha_2}{p_2}\mu = \frac{\alpha_2(\alpha_2 - 1)}{p_2^2}\mu = -\frac{\alpha_2(1-\alpha_2)\mu}{p_2^2}.
+\]
+Em $u = u^*$, $\mu = S = 60$: $\partial^2 e/\partial p_2^2 = -(1/2)(1/2)(60)/100 = -3/20 = -0{,}15 < 0$. $\checkmark$
+
+A concavidade de $e$ em $p$ é o \emph{fundamento estrutural} da \textbf{negatividade da matriz de Slutsky} (Parte III, item 3b): $s_{ii} = \partial h_i/\partial p_i = \partial^2 e/\partial p_i^2 \leq 0$.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 2 (30 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 6 pontos}} \\
+\quad Lagrangiano e CPOs corretos & 2 \\
+\quad $\lambda^* = 1/S$ derivado via somatório das CPOs & 1 \\
+\quad Fórmula geral $x_i^M = \gamma_i + \alpha_i S/p_i$ & 2 \\
+\quad Valores numéricos $(9,4,5)$ e verificação orçamentária & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 4 pontos}} \\
+\quad Fórmula $v(p,m) = \ln S + \sum\alpha_i\ln(\alpha_i/p_i)$ derivada & 2 \\
+\quad Valor numérico $v\approx 1{,}2263$ + verificação direta em $u(A)$ & 1 \\
+\quad Demonstração de homogeneidade de grau 0 & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 6 pontos}} \\
+\quad CPOs do EMP corretas; $\mu^* = \E^u \prod (p_j/\alpha_j)^{\alpha_j}$ & 2 \\
+\quad Fórmulas de $h_i^H$ e $e(p,u)$ corretas & 2 \\
+\quad Verificação $e(p, u^*) = 92$ e $h_i = x_i^M$ no ponto & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 3 pontos}} \\
+\quad $\partial v/\partial p_2$ e $\partial v/\partial m$ corretas & 1 \\
+\quad Razão = $x_2^M = 4$ verificada & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 3 pontos}} \\
+\quad Derivada de $e$ em $p_1$ correta & 1 \\
+\quad Igualdade com $h_1^H = 9$ verificada + menção a Envelope & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- 4 pontos}} \\
+\quad (D2) e (D3) verificadas numericamente & 2 \\
+\quad Reconhecimento de equivalência lógica das quatro identidades & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (g) -- 4 pontos}} \\
+\quad Argumento de envelope/concavidade enunciado corretamente & 2 \\
+\quad $\partial^2 e/\partial p_2^2 = -\alpha_2(1-\alpha_2)\mu/p_2^2 = -0{,}15$ verificado & 1 \\
+\quad Ligação explícita com a negatividade de Slutsky (Parte III) & 1 \\
+\midrule
+\textbf{Total Q2} & \textbf{30} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE III
+% ============================================================
+\begin{center}\large\textbf{Parte III --- Equação de Slutsky, elasticidades e estimação de demanda} \quad (35 pontos)\end{center}
+
+\textit{Conexão com a Aula 3.} Os itens abaixo trabalham: (i) derivação da matriz de Slutsky a partir da identidade calibrada $x^M(p, m) = h^H(p, v(p,m))$; (ii) verificação das quatro restrições agregadas (Engel, Cournot, homogeneidade, simetria); (iii) cálculo e interpretação das elasticidades-renda e preço (Marshallianas); (iv) \textbf{o item central da APS:} identificação dos parâmetros estruturais $(\alpha, \gamma)$ a partir de observáveis (participações orçamentárias e elasticidades), com discussão de estratégias de estimação na prática.
+
+\begin{questions}
+\setcounter{question}{2}
+\question \textbf{Matriz de Slutsky 3x3 e estimação do LES} (35 pontos).
+
+\begin{parts}
+\part[6] A partir das demandas marshallianas $x_i^M$ derivadas no item 2(a), compute analiticamente os elementos da matriz de Slutsky
+\[
+    s_{ij} = \frac{\partial x_i^M}{\partial p_j} + x_j\, \frac{\partial x_i^M}{\partial m} = \frac{\partial h_i}{\partial p_j}\bigg|_{u = v(p, m)}.
+\]
+Mostre que em Stone-Geary
+\[
+    s_{ii} = -\frac{\alpha_i(1-\alpha_i)\, S}{p_i^2},\quad
+    s_{ij} = \frac{\alpha_i \alpha_j\, S}{p_i\, p_j}\ (i \neq j).
+\]
+Calcule numericamente a matriz $\mathbf{S} \equiv [s_{ij}]$ e apresente-a em uma tabela. \emph{Aviso de notação:} no que segue, $S$ (escalar, itálico) é a renda supranumerária; $\mathbf{S}$ (negrito) é a matriz de Slutsky.
+
+\begin{solution}
+\textbf{Derivadas Marshallianas (entradas).} A partir de $x_i^M = \gamma_i + (\alpha_i/p_i)(m - \sum_k p_k \gamma_k)$:
+\[
+    \frac{\partial x_i^M}{\partial m} = \frac{\alpha_i}{p_i},\quad
+    \frac{\partial x_i^M}{\partial p_j} = -\frac{\alpha_i \gamma_j}{p_i}\quad (j \neq i),\quad
+    \frac{\partial x_i^M}{\partial p_i} = -\frac{\alpha_i\, S}{p_i^2} - \frac{\alpha_i \gamma_i}{p_i}.
+\]
+\textbf{Slutsky cruzada ($j \neq i$):}
+\[
+    s_{ij} = -\frac{\alpha_i \gamma_j}{p_i} + x_j\cdot \frac{\alpha_i}{p_i} = \frac{\alpha_i(x_j - \gamma_j)}{p_i} = \frac{\alpha_i}{p_i}\cdot \frac{\alpha_j\, S}{p_j} = \frac{\alpha_i \alpha_j\, S}{p_i\, p_j}.
+\]
+\textbf{Slutsky própria ($j = i$):}
+\[
+    s_{ii} = -\frac{\alpha_i S}{p_i^2} - \frac{\alpha_i \gamma_i}{p_i} + x_i\cdot \frac{\alpha_i}{p_i}
+    = -\frac{\alpha_i S}{p_i^2} + \frac{\alpha_i(x_i - \gamma_i)}{p_i}
+    = -\frac{\alpha_i S}{p_i^2} + \frac{\alpha_i^2\, S}{p_i^2}
+    = -\frac{\alpha_i(1-\alpha_i)S}{p_i^2}. \quad \boxed{\phantom{x}}
+\]
+\textbf{Matriz numérica} ($S=60$, $\alpha=(1/4,1/2,1/4)$, $p=(3,10,5)$):
+\[
+    s_{11} = -\tfrac{(1/4)(3/4)(60)}{9} = -\tfrac{5}{4} = -1{,}25;\qquad
+    s_{22} = -\tfrac{(1/2)(1/2)(60)}{100} = -\tfrac{3}{20} = -0{,}15;
+\]
+\[
+    s_{33} = -\tfrac{(1/4)(3/4)(60)}{25} = -\tfrac{9}{20} = -0{,}45;\qquad
+    s_{12} = \tfrac{(1/4)(1/2)(60)}{30} = \tfrac{1}{4} = 0{,}25;
+\]
+\[
+    s_{13} = \tfrac{(1/4)(1/4)(60)}{15} = \tfrac{1}{4} = 0{,}25;\qquad
+    s_{23} = \tfrac{(1/2)(1/4)(60)}{50} = \tfrac{3}{20} = 0{,}15.
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|ccc}
+\toprule
+$s_{ij}$ & $j = 1$ (cereais) & $j = 2$ (proteína) & $j = 3$ (FLV) \\
+\midrule
+$i = 1$ (cereais)  & $-5/4 = -1{,}25$ & $1/4 = 0{,}25$ & $1/4 = 0{,}25$ \\
+$i = 2$ (proteína) & $1/4 = 0{,}25$    & $-3/20 = -0{,}15$ & $3/20 = 0{,}15$ \\
+$i = 3$ (FLV)      & $1/4 = 0{,}25$    & $3/20 = 0{,}15$   & $-9/20 = -0{,}45$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{solution}
+
+\newpage
+\part[3] Verifique \textbf{simetria} ($s_{ij} = s_{ji}$) e \textbf{negatividade} ($s_{ii} \leq 0$). Comente em uma frase de onde, estruturalmente, vem cada uma dessas duas propriedades.
+
+\begin{solution}
+\textbf{Simetria.} Inspeção direta da tabela: $s_{12} = s_{21} = 0{,}25$; $s_{13} = s_{31} = 0{,}25$; $s_{23} = s_{32} = 0{,}15$. $\checkmark$
+
+\textbf{Negatividade na diagonal.} $s_{11} = -1{,}25 < 0$, $s_{22} = -0{,}15 < 0$, $s_{33} = -0{,}45 < 0$. $\checkmark$
+
+\textit{Origem estrutural.}
+\begin{itemize}[noitemsep]
+\item \emph{Simetria} é a igualdade das derivadas cruzadas de $e(p, u)$ em $p$ (Teorema de Young), pois $s_{ij} = \partial^2 e/\partial p_i \partial p_j$. Requer \emph{existência} de $e$ -- i.e., que o EMP esteja bem definido.
+\item \emph{Negatividade} (diagonal e a forma matricial semidefinida) é a \emph{concavidade} de $e(p, u)$ em $p$, demonstrada conceitualmente no item 2(g) e numericamente no caso $i=2$.
+\end{itemize}
+\textit{Observação adicional.} A matriz $\mathbf{S}$ é \emph{singular}: $\det \mathbf{S} = 0$, pois $\mathbf{S}\cdot p = 0$ (homogeneidade de $h$ em $p$, verificada em (c) a seguir). Portanto $\mathbf{S}$ é semidefinida negativa de \emph{posto 2}, não definida negativa.
+\end{solution}
+
+\part[3] Verifique a \textbf{homogeneidade} (de grau zero em $p$ das hicksianas), na forma matricial $\mathbf{S}\cdot p = 0$, computando explicitamente $\sum_j s_{ij}\, p_j$ para cada $i$.
+
+\begin{solution}
+\textbf{Linha $i=1$:} $-1{,}25\cdot 3 + 0{,}25\cdot 10 + 0{,}25\cdot 5 = -3{,}75 + 2{,}50 + 1{,}25 = 0$. $\checkmark$
+
+\textbf{Linha $i=2$:} $0{,}25\cdot 3 + (-0{,}15)\cdot 10 + 0{,}15\cdot 5 = 0{,}75 - 1{,}50 + 0{,}75 = 0$. $\checkmark$
+
+\textbf{Linha $i=3$:} $0{,}25\cdot 3 + 0{,}15\cdot 10 + (-0{,}45)\cdot 5 = 0{,}75 + 1{,}50 - 2{,}25 = 0$. $\checkmark$
+
+\textit{Intuição.} Multiplicando todos os preços por $\theta$, a hicksiana não muda (porque resolve o mesmo problema dual com $\theta\, p$ e a mesma utilidade-alvo); a derivada na direção $p$ a partir de $\theta = 1$ é portanto zero. Algebricamente, $\mathbf{S}\,p = 0$.
+\end{solution}
+
+\newpage
+\part[3] Calcule as elasticidades-renda $\eta_i = \alpha_i m/(p_i x_i)$ para cada bem e verifique a \textbf{agregação de Engel}: $\sum_i w_i \eta_i = 1$, onde $w_i = p_i x_i/m$.
+
+\begin{solution}
+\textbf{Elasticidades-renda.}
+\[
+    \eta_1 = \frac{(1/4)\cdot 92}{3\cdot 9} = \frac{23}{27} \approx 0{,}852,\quad
+    \eta_2 = \frac{(1/2)\cdot 92}{10\cdot 4} = \frac{23}{20} = 1{,}15,\quad
+    \eta_3 = \frac{(1/4)\cdot 92}{5\cdot 5} = \frac{23}{25} = 0{,}92.
+\]
+\textbf{Participações.} $w_1 = 27/92$, $w_2 = 40/92$, $w_3 = 25/92$. (Note $w_1 + w_2 + w_3 = 92/92 = 1$ $\checkmark$.)
+
+\textbf{Agregação de Engel:}
+\[
+    \sum_i w_i \eta_i = \tfrac{27}{92}\cdot \tfrac{23}{27} + \tfrac{40}{92}\cdot \tfrac{23}{20} + \tfrac{25}{92}\cdot \tfrac{23}{25}
+    = \tfrac{23}{92} + \tfrac{46}{92} + \tfrac{23}{92} = \tfrac{92}{92} = 1. \quad \checkmark
+\]
+
+\textit{Identidade estrutural.} Em LES, $w_i \eta_i = \alpha_i$ (substituição direta); somando, $\sum_i \alpha_i = 1$ -- a agregação de Engel \emph{é} a normalização $\sum_i \alpha_i = 1$ vestida em linguagem econométrica.
+
+\textbf{Classificação inicial.} Bens 1 e 3 são \emph{necessidades} ($\eta < 1$); bem 2 é \emph{luxo} ($\eta > 1$). Esta hierarquia -- cereais/leguminosas e FLV mais inelásticos em renda do que proteína animal -- é qualitativamente consistente com curvas de Engel estimadas em dados POF (ver Bloco 2 da Aula 3, durante\_aula.md).
+\end{solution}
+
+\part[4] Calcule as elasticidades-preço marshallianas $\varepsilon_{ij}$ e verifique a \textbf{agregação de Cournot}: $\sum_i w_i \varepsilon_{ij} = -w_j$ para cada $j$.
+
+\begin{solution}
+\textbf{Fórmulas.}
+\[
+    \varepsilon_{ii} = -\frac{\alpha_i S}{p_i x_i} - \frac{\alpha_i \gamma_i}{x_i},\quad
+    \varepsilon_{ij} = -\frac{\alpha_i \gamma_j p_j}{p_i x_i}\ (i\neq j).
+\]
+\textbf{Matriz numérica.}
+\[
+    \varepsilon_{11} = -\tfrac{(1/4)(60)}{27} - \tfrac{(1/4)(4)}{9} = -\tfrac{5}{9} - \tfrac{1}{9} = -\tfrac{2}{3} \approx -0{,}667;
+\]
+\[
+    \varepsilon_{12} = -\tfrac{(1/4)(1)(10)}{27} = -\tfrac{5}{54} \approx -0{,}093;\quad
+    \varepsilon_{13} = -\tfrac{(1/4)(2)(5)}{27} = -\tfrac{5}{54} \approx -0{,}093;
+\]
+\[
+    \varepsilon_{21} = -\tfrac{(1/2)(4)(3)}{40} = -\tfrac{3}{20} = -0{,}15;
+\]
+\[
+    \varepsilon_{22} = -\tfrac{(1/2)(60)}{40} - \tfrac{(1/2)(1)}{4} = -\tfrac{3}{4} - \tfrac{1}{8} = -\tfrac{7}{8} = -0{,}875;\quad
+    \varepsilon_{23} = -\tfrac{(1/2)(2)(5)}{40} = -\tfrac{1}{8} = -0{,}125.
+\]
+\[
+    \varepsilon_{31} = -\tfrac{(1/4)(4)(3)}{25} = -\tfrac{3}{25} = -0{,}12;\quad
+    \varepsilon_{32} = -\tfrac{(1/4)(1)(10)}{25} = -\tfrac{1}{10} = -0{,}10.
+\]
+\[
+    \varepsilon_{33} = -\tfrac{(1/4)(60)}{25} - \tfrac{(1/4)(2)}{5} = -\tfrac{3}{5} - \tfrac{1}{10} = -\tfrac{7}{10} = -0{,}70.
+\]
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{c|ccc}
+\toprule
+$\varepsilon_{ij}$ & $j = 1$ & $j = 2$ & $j = 3$ \\
+\midrule
+$i = 1$ & $-2/3 \approx -0{,}667$ & $-5/54 \approx -0{,}093$ & $-5/54 \approx -0{,}093$ \\
+$i = 2$ & $-3/20 = -0{,}15$ & $-7/8 = -0{,}875$ & $-1/8 = -0{,}125$ \\
+$i = 3$ & $-3/25 = -0{,}12$ & $-1/10 = -0{,}10$ & $-7/10 = -0{,}70$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Cournot, coluna $j=1$:}
+\[
+    \sum_i w_i \varepsilon_{i1} = \tfrac{27}{92}(-\tfrac{2}{3}) + \tfrac{40}{92}(-\tfrac{3}{20}) + \tfrac{25}{92}(-\tfrac{3}{25}) = -\tfrac{18 + 6 + 3}{92} = -\tfrac{27}{92} = -w_1. \quad \checkmark
+\]
+\textbf{Cournot, $j=2$:} $-2{,}5/92 - 35/92 - 2{,}5/92 = -40/92 = -w_2$. $\checkmark$ \\
+\textbf{Cournot, $j=3$:} $-2{,}5/92 - 5/92 - 17{,}5/92 = -25/92 = -w_3$. $\checkmark$
+
+\textit{Verificação adicional -- homogeneidade em elasticidades.} $\sum_j \varepsilon_{ij} + \eta_i = 0$ para cada $i$:
+\[
+\text{Linha 1:}\ -\tfrac{36}{54} - \tfrac{10}{54} + \tfrac{46}{54} = 0;\quad
+\text{Linha 2:}\ -\tfrac{3}{20} - 1 + \tfrac{23}{20} = 0;\quad
+\text{Linha 3:}\ -\tfrac{3}{25} - \tfrac{8}{10} + \tfrac{23}{25} = 0. \quad \checkmark
+\]
+\end{solution}
+
+\newpage
+\part[4] \textbf{Classificação dos bens.} Com base nas elasticidades calculadas em (d) e (e):
+\textbf{(i)} Classifique cada bem como \emph{normal} ou \emph{inferior}, e como \emph{luxo} ou \emph{necessidade}. \textbf{(ii)} Classifique cada par de bens como \emph{substitutos} ou \emph{complementos} no sentido \emph{Marshalliano bruto} (sinal de $\varepsilon_{ij}$, $i\neq j$) e no sentido \emph{Hicksiano líquido} (sinal de $s_{ij}$, $i\neq j$). Comente discrepâncias.
+
+\begin{solution}
+\textbf{(i) Renda.}
+\begin{itemize}[noitemsep]
+\item Bem 1 (cereais): $\eta_1 = 0{,}852 \in (0, 1)$: \textbf{normal, necessidade}.
+\item Bem 2 (proteína): $\eta_2 = 1{,}15 > 1$: \textbf{normal, luxo}.
+\item Bem 3 (FLV): $\eta_3 = 0{,}92 \in (0, 1)$: \textbf{normal, necessidade} (próximo de unitário).
+\end{itemize}
+Em LES, $\eta_i > 0$ \emph{sempre} (não há bens inferiores na especificação). Esta é uma limitação conhecida (Pollak \& Wales 1992, \textit{Demand System Specification \& Estimation}, OUP).
+
+\textbf{(ii) Substituição / complementaridade.}
+\begin{itemize}[noitemsep]
+\item \emph{Marshalliano bruto:} todos os $\varepsilon_{ij} < 0$ para $i \neq j$. Pela definição mais comum -- $i$ e $j$ são \emph{substitutos brutos} se $\varepsilon_{ij} > 0$ -- todos os pares seriam \textbf{complementos brutos} neste modelo.
+\item \emph{Hicksiano líquido:} todos os $s_{ij} > 0$ para $i \neq j$. Logo todos os pares são \textbf{substitutos líquidos}.
+\end{itemize}
+\textbf{Discrepância.} O sinal Marshalliano bruto é dominado pelo \emph{efeito-renda} (aumento de $p_j$ empobrece o consumidor, reduzindo o consumo de \emph{todos} os bens normais incluindo $x_i$). Decompondo via Slutsky:
+\[
+    \varepsilon_{ij}^{\text{(Marsh.)}} = \underbrace{\frac{s_{ij}\, p_j}{x_i}}_{\text{Hicks (subst.) líquido > 0}} - \underbrace{w_j \eta_i}_{\text{efeito-renda > 0}},
+\]
+e o segundo termo domina porque, em LES, os pesos $\alpha_i$ tornam $w_j \eta_i$ relativamente grande em magnitude. \textbf{Em Stone-Geary \emph{todos} os pares de bens são substitutos no sentido Hicksiano} (não há complementaridade líquida) -- esta é uma limitação estrutural do LES (mesma origem que $\eta_i > 0$ acima).
+
+\textit{Implicação metodológica.} Se o modelo aplicado a dados reais revelar pares com $s_{ij} < 0$ (complementos líquidos -- por exemplo: pão e manteiga), o LES é \emph{rejeitado} e o pesquisador precisa migrar para sistemas mais flexíveis (AIDS, QUAIDS, Translog).
+\end{solution}
+
+\newpage
+\part[12] \textbf{Estimação dos parâmetros estruturais.} A Secretaria de Política Econômica (SPE) do Tesouro observa, na POF/IBGE 2017--18, para o estrato de baixa renda:
+\begin{itemize}[noitemsep]
+\item As participações orçamentárias $w_i$ (medidas diretamente do gasto observado);
+\item As elasticidades-renda $\eta_i$ (estimadas via variação de renda entre famílias dentro do estrato, ou via Bolsa Família/Auxílio Emergencial como choque exógeno);
+\item As elasticidades-preço próprias \emph{marshallianas} $\varepsilon_{ii}$ (estimadas via variação geográfica e temporal de preços, e.g., choques de commodities, sazonalidade do arroz, choques de oferta de proteína animal por gripe aviária etc.);
+\item O nível agregado $m$ (renda alimentar mensal estimada) e o vetor de preços $p$.
+\end{itemize}
+A SPE quer recuperar os parâmetros estruturais $(\alpha_1, \alpha_2, \alpha_3, \gamma_1, \gamma_2, \gamma_3)$ -- um total de 5 graus de liberdade (já que $\sum_i \alpha_i = 1$).
+
+\textbf{(i)} Mostre que, em LES, vale a identidade $\boxed{\alpha_i = w_i\, \eta_i}$. Conclua que com $\{w_i, \eta_i\}_{i=1,2,3}$ recupera-se $\alpha$ exatamente (a normalização $\sum \alpha_i = 1$ é redundante por Engel).
+
+\textbf{(ii)} Mostre que em LES vale também
+\[
+    \varepsilon_{ii} = -\eta_i\!\left(1 - \sum_{j \neq i} c_j\right),\qquad
+    \varepsilon_{ij} = -\eta_i\, c_j\quad (i \neq j),
+\]
+onde $c_j = p_j \gamma_j/m$. Use isso para construir um \emph{sistema linear $3\times 3$} em $(c_1, c_2, c_3)$ a partir de $\{\eta_i, \varepsilon_{ii}\}$, resolva-o e recupere os $\gamma_i$ via $\gamma_i = c_i\, m/p_i$.
+
+\textbf{(iii)} Aplique a estratégia ao ponto calibrado: a partir de $(w_1, w_2, w_3, \eta_1, \eta_2, \eta_3, \varepsilon_{11}, \varepsilon_{22}, \varepsilon_{33})$ ``observados'', recupere $(\alpha, \gamma)$ e confirme que reproduz $(1/4, 1/2, 1/4)$ e $(4, 1, 2)$.
+
+\textbf{(iv)} \emph{Discussão econométrica.} Em 2--3 frases, comente qual é a principal \textbf{ameaça à identificação} de $\eta_i$ na prática e que estratégia de identificação dois choques recentes da economia brasileira poderiam oferecer.
+
+\begin{solution}
+\textbf{(i) Recuperação de $\alpha$.} Da fórmula $\eta_i = \alpha_i m/(p_i x_i)$:
+\[
+    \alpha_i = \frac{p_i x_i}{m}\cdot \eta_i = w_i\, \eta_i. \quad \boxed{\phantom{x}}
+\]
+Engel garante $\sum_i w_i \eta_i = 1$, então $\sum_i \alpha_i = 1$ é automático -- a normalização não é restrição adicional, é consequência.
+
+\textbf{(ii) Recuperação de $\gamma$.} Da fórmula cruzada $\varepsilon_{ij} = -\alpha_i \gamma_j p_j/(p_i x_i)$ e usando $\alpha_i = w_i \eta_i$:
+\[
+    \varepsilon_{ij} = -\frac{w_i \eta_i\, p_j \gamma_j}{p_i x_i} = -\eta_i\cdot \frac{p_j \gamma_j}{m} = -\eta_i\, c_j\quad (i \neq j). \quad \boxed{\phantom{x}}
+\]
+Para a própria, $\varepsilon_{ii} = -\alpha_i S/(p_i x_i) - \alpha_i \gamma_i/x_i$. Usando $S/(p_i x_i) = (m - \sum_k p_k \gamma_k)/(p_i x_i) = (1/w_i)(1 - \sum_k c_k)$ e $\alpha_i \gamma_i/x_i = w_i \eta_i \gamma_i/x_i = \eta_i\, p_i \gamma_i/(p_i x_i) \cdot (m/m) = \eta_i\, c_i/w_i \cdot w_i = \eta_i c_i$:
+\[
+    \varepsilon_{ii} = -\eta_i(1 - \textstyle\sum_k c_k) - \eta_i\, c_i = -\eta_i\!\left(1 - \textstyle\sum_{k \neq i} c_k\right). \quad \boxed{\phantom{x}}
+\]
+Reorganizando: $\sum_{k \neq i} c_k = 1 + \varepsilon_{ii}/\eta_i$. Sistema linear $3\times 3$ em $(c_1, c_2, c_3)$:
+\[
+\begin{cases}
+\ c_2 + c_3 &= 1 + \varepsilon_{11}/\eta_1\\
+\ c_1 + c_3 &= 1 + \varepsilon_{22}/\eta_2\\
+\ c_1 + c_2 &= 1 + \varepsilon_{33}/\eta_3
+\end{cases}
+\]
+Somando as três equações: $2(c_1 + c_2 + c_3) = 3 + \sum_i \varepsilon_{ii}/\eta_i$, logo $\sum c_i = \tfrac{1}{2}(3 + \sum_i \varepsilon_{ii}/\eta_i)$, e cada $c_i$ é obtido subtraindo a equação correspondente:
+\[
+    \boxed{\ c_i = \frac{1}{2}\!\left(3 + \textstyle\sum_k \varepsilon_{kk}/\eta_k\right) - \left(1 + \varepsilon_{ii}/\eta_i\right) = \frac{1}{2}\!\left(1 + \sum_{k \neq i}\varepsilon_{kk}/\eta_k - \varepsilon_{ii}/\eta_i\right)\ }
+\]
+Depois, $\gamma_i = c_i\, m/p_i$.
+
+\textbf{(iii) Aplicação ao ponto calibrado.}
+
+\emph{Observáveis:}
+\[
+    w = \tfrac{1}{92}(27, 40, 25);\quad \eta = (\tfrac{23}{27},\, \tfrac{23}{20},\, \tfrac{23}{25});\quad
+    (\varepsilon_{ii})_i = (-\tfrac{2}{3},\, -\tfrac{7}{8},\, -\tfrac{7}{10});\quad m = 92,\quad p = (3, 10, 5).
+\]
+
+\emph{Recuperação de $\alpha$:}
+\[
+    \alpha_1 = (27/92)(23/27) = 23/92 = 1/4;\quad
+    \alpha_2 = (40/92)(23/20) = 46/92 = 1/2;
+\]
+\[
+    \alpha_3 = (25/92)(23/25) = 23/92 = 1/4. \quad \checkmark
+\]
+\emph{Recuperação de $c$:} cálculo dos termos $\varepsilon_{ii}/\eta_i$:
+\[
+    \varepsilon_{11}/\eta_1 = (-2/3)\cdot(27/23) = -18/23;\quad
+    \varepsilon_{22}/\eta_2 = (-7/8)\cdot(20/23) = -35/46;
+\]
+\[
+    \varepsilon_{33}/\eta_3 = (-7/10)\cdot(25/23) = -35/46.
+\]
+Sistema:
+\[
+    c_2 + c_3 = 1 - 18/23 = 5/23;\quad
+    c_1 + c_3 = 1 - 35/46 = 11/46;\quad
+    c_1 + c_2 = 11/46.
+\]
+Somando: $2(c_1+c_2+c_3) = 10/46 + 11/46 + 11/46 = 32/46 = 16/23$, portanto $c_1+c_2+c_3 = 8/23$.
+
+Subtraindo cada equação:
+\[
+    c_1 = 8/23 - 5/23 = 3/23;\quad
+    c_2 = 8/23 - 11/46 = 16/46 - 11/46 = 5/46;\quad
+    c_3 = 5/46.
+\]
+Aplicando $\gamma_i = c_i\, m/p_i$ com $m=92$:
+\[
+    \gamma_1 = (3/23)\cdot 92/3 = 4;\quad
+    \gamma_2 = (5/46)\cdot 92/10 = 1;\quad
+    \gamma_3 = (5/46)\cdot 92/5 = 2. \quad \checkmark
+\]
+A estratégia recupera \emph{exatamente} os parâmetros calibrados.
+
+\emph{Caracterização da identificação:} 5 parâmetros estruturais livres ($\alpha_1, \alpha_2, \gamma_1, \gamma_2, \gamma_3$, com $\alpha_3 = 1 - \alpha_1 - \alpha_2$); 7 observáveis efetivos ($w_1, w_2$ -- $w_3$ sai por adding-up; $\eta_1, \eta_2, \eta_3$; e $\varepsilon_{11}, \varepsilon_{22}, \varepsilon_{33}$, sendo $\eta_3$ redundante por Engel). Restam então 6 graus de liberdade observacionais independentes contra 5 parâmetros. O sistema é \emph{sobreidentificado}: a sobreidentificação \textbf{é} a restrição de homogeneidade -- que serve como teste de especificação do LES (Deaton \& Muellbauer 1980b, cap.\ 3).
+
+\textbf{(iv) Ameaças à identificação e estratégias.}
+\begin{itemize}[noitemsep]
+\item \emph{Endogeneidade dos preços.} Em equilíbrio, $p$ e $x$ são determinados conjuntamente: o estimador de OLS de $\varepsilon_{ii}$ confunde curva de demanda e curva de oferta (problema clássico de E. J. Working 1927, ``What Do Statistical `Demand Curves' Show?'', \textit{Quarterly Journal of Economics} 41(2): 212--235). Solução padrão: instrumentos \emph{de oferta} (custos de transporte, choques climáticos sobre produção, paridade internacional de commodities).
+\item \emph{Variação exógena de renda como choques de identificação no Brasil:}
+\begin{itemize}[noitemsep]
+\item \emph{Expansão do Bolsa Família (2003--2014)} -- aumento da cobertura entre estratos elegíveis. Diferenças-em-diferenças cobertos vs.\ não-cobertos identifica $\eta_i$ no estrato de baixa renda.
+\item \emph{Auxílio Emergencial (2020--21)} -- choque de R\$ 600/mês quase universal aos elegíveis, com escalonamento por mês e por elegibilidade. Variação plausivelmente exógena à preferência alimentar.
+\end{itemize}
+\item \emph{Heterogeneidade de preferências entre estratos.} O ``consumidor representativo'' do modelo é uma média ponderada -- viés de agregação se preferências não são homotéticas (Theil 1954, \textit{Linear Aggregation of Economic Relations}). Robustez: replicar a estimação por decil de renda e comparar $\hat\alpha, \hat\gamma$.
+\end{itemize}
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 3 (35 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 6 pontos}} \\
+\quad Derivadas marshallianas corretas (próprias e cruzadas) & 2 \\
+\quad Fórmula geral de $s_{ii}$ e $s_{ij}$ derivada & 2 \\
+\quad Matriz numérica $3\times 3$ correta em tabela & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 3 pontos}} \\
+\quad Simetria explícita verificada e atribuída a $\partial^2 e/\partial p_i \partial p_j$ & 1 \\
+\quad Negatividade na diagonal e ligação à concavidade de $e$ & 1 \\
+\quad Menção à singularidade de $\mathbf{S}$ (posto 2 / $\mathbf{S}p = 0$) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 3 pontos}} \\
+\quad $\sum_j s_{ij} p_j = 0$ verificado para cada linha & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 3 pontos}} \\
+\quad $\eta_i$ corretos numericamente & 2 \\
+\quad Engel agregação verificada ($\sum w_i \eta_i = 1$) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 4 pontos}} \\
+\quad Matriz $\varepsilon_{ij}$ completa e correta & 2 \\
+\quad Cournot verificado para $j=1,2,3$ & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- 4 pontos}} \\
+\quad Classificação renda + sinal Marshalliano & 1 \\
+\quad Classificação Hicksiana (substituto líquido) & 1 \\
+\quad Decomposição de Slutsky em elasticidades para explicar discrepância & 1 \\
+\quad Crítica estrutural (LES não acomoda $s_{ij} < 0$) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (g) -- 12 pontos}} \\
+\quad Identidade $\alpha_i = w_i \eta_i$ derivada (subitem i) & 2 \\
+\quad Fórmulas $\varepsilon_{ij} = -\eta_i c_j$ e $\varepsilon_{ii} = -\eta_i(1 - \sum_{k\neq i} c_k)$ derivadas (ii) & 3 \\
+\quad Sistema linear $3\times 3$ montado e resolvido em $c$ (ii) & 2 \\
+\quad $\gamma_i$ recuperado via $\gamma_i = c_i m/p_i$ (ii-iii) & 2 \\
+\quad Numérico em (iii) confere com calibração & 1 \\
+\quad Discussão econométrica (iv) com pelo menos um choque brasileiro mencionado & 2 \\
+\midrule
+\textbf{Total Q3} & \textbf{35} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE IV
+% ============================================================
+\begin{center}\large\textbf{Parte IV --- Síntese: recomendação à Secretaria do Tesouro} \quad (10 pontos)\end{center}
+
+\begin{questions}
+\setcounter{question}{3}
+\question[10] \textbf{Recomendação fundamentada}.
+
+A Secretaria do Tesouro recebeu seus resultados e considera \emph{desonerar de PIS/COFINS} um (1) dos três grupos alimentares, com magnitude tal que o preço efetivo ao consumidor caia em 20\%. O objetivo declarado: \textbf{aumentar o bem-estar de famílias do estrato de baixa renda} representado pela calibragem da APS. Você dispõe da matriz de Slutsky completa (item 3a), das elasticidades (3d, 3e) e da identificação estrutural (3g).
+
+\textbf{Apresente em até uma página} a sua recomendação. Cubra explicitamente:
+\begin{enumerate}[noitemsep]
+\item \textbf{Qual bem desonerar} e por quê, em termos de impacto sobre a utilidade do consumidor representativo. Use o lema de Shephard ($\partial e/\partial p_j = h_j$) para argumentar que o \emph{primeiro impacto} de uma redução $\Delta p_j$ sobre o gasto necessário para preservar $u$ é $h_j\cdot \Delta p_j$ -- proporcional ao consumo hicksiano do bem em questão.
+\item \textbf{Cálculo numérico.} Estime a \emph{variação compensatória aproximada} (em R\$/mês) para cada uma das três opções de desoneração, usando $\mathrm{CV} \approx h_j\cdot \Delta p_j$ em primeira ordem.
+\item \textbf{Limitações estruturais do LES} que enfraquecem a recomendação na realidade brasileira -- \emph{pelo menos três}, incluindo: (i) $\eta_i > 0$ por construção (sem bens inferiores); (ii) ausência de complementaridade Hicksiana; (iii) consumidor representativo vs.\ heterogeneidade da POF; (iv) efeito-renda dominante na Marshalliana bruta versus efeito-substituição líquido em política tributária real.
+\item \textbf{Estratégia empírica.} Recomende \emph{uma} estratégia concreta de identificação para validar (ou recalibrar) o vetor de elasticidades antes de implementar a desoneração. Cite ao menos uma fonte de variação exógena (Auxílio Emergencial 2020--21, abertura de novas linhas de crédito consignado, choques de safra de commodities, etc.) e uma especificação econométrica padrão (AIDS de Deaton-Muellbauer com IV, ou Working-Leser).
+\end{enumerate}
+
+\begin{solution}
+\textit{Resposta-modelo} (sem resposta única; avaliação por rubrica).
+
+\textbf{1. Bem a desonerar.} Pelo lema de Shephard, $\partial e/\partial p_j = h_j$. Para a meta de \emph{maximizar a redução do dispêndio mínimo necessário para preservar $u^*$}, desonere o bem com maior $h_j$ \emph{em valor} -- equivalentemente, o bem com maior gasto observado $p_j x_j = w_j m$ (no ponto de calibração inicial, $h_j = x_j$).
+
+No ponto: $p_1 x_1 = 27$, $p_2 x_2 = 40$, $p_3 x_3 = 25$. O bem com maior gasto absoluto é o bem 2 (\textbf{proteína animal}, R\$ 40/mês de 92). Desonerar proteína entrega o maior alívio em primeira ordem.
+
+\textbf{2. Ganho de bem-estar aproximado (primeira ordem em $\Delta p$).} \emph{Convenção de sinal adotada aqui:} chamo de ``ganho de bem-estar'' $G_j \equiv -\mathrm{CV}_j$, em que $\mathrm{CV}_j = e(p', u^*) - e(p, u^*)$ é a Variação Compensatória padrão. Para uma queda de preço, $\mathrm{CV} < 0$ e $G > 0$ -- $G_j$ é a quantia (em R\$/mês) que o consumidor pagaria para enfrentar os novos preços. Pela linearização (Shephard), $G_j \approx -h_j\cdot \Delta p_j$.
+
+Com $\Delta p_j = -0{,}20\, p_j$ e avaliando $h_j$ no ponto inicial:
+\begin{itemize}[noitemsep]
+\item Bem 1 (cereais): $G_1 \approx -h_1\cdot \Delta p_1 = -(9)(-0{,}60) = 5{,}40$ R\$/mês.
+\item Bem 2 (proteína): $G_2 \approx -h_2\cdot \Delta p_2 = -(4)(-2{,}00) = 8{,}00$ R\$/mês.
+\item Bem 3 (FLV): $G_3 \approx -h_3\cdot \Delta p_3 = -(5)(-1{,}00) = 5{,}00$ R\$/mês.
+\end{itemize}
+\emph{Em primeira ordem, desonerar proteína gera $\sim$50\% mais alívio (R\$ 8,00) do que desonerar cereais ou FLV (R\$ 5,00--5,40).}
+
+\textit{Aviso técnico.} A aproximação $G_j \approx -h_j \Delta p_j$ ignora a curvatura de $e(p, u)$ em $p$. O termo de segunda ordem é $-\tfrac12\, s_{jj}\, (\Delta p_j)^2 > 0$ (porque $s_{jj} < 0$). Portanto $|\mathrm{CV}|$ \emph{exata} é maior que a aproximação linear -- o consumidor reage à queda de preço e captura ganho extra via reotimização. Verificação numérica para $\Delta p_j = -20\%$: a correção de segunda ordem soma $(0{,}5 \cdot |s_{jj}| \cdot \Delta p_j^2)$ a $|G|$, dando ganhos exatos aproximados de $\{5{,}625;\ 8{,}30;\ 5{,}225\}$ R\$/mês para $j=\{1,2,3\}$ -- correção de $\sim$4--5\% sobre a aproximação linear, sem alterar o ranking $j=2 > j=1 > j=3$.
+
+\textbf{3. Limitações estruturais.} O LES tem três rigidezes que enfraquecem qualquer recomendação derivada dele \emph{stricto sensu}:
+\begin{enumerate}[noitemsep]
+\item \emph{$\eta_i > 0$ por construção:} se a literatura empírica brasileira detectar inferioridade em algum subgrupo de cereais (e.g., farinha de mandioca em estratos de renda média), o LES falha em primeiro princípio.
+\item \emph{Sem complementaridade Hicksiana:} se ``arroz+feijão'' for de fato um par de complementos (consumo conjunto culturalmente sólido), $s_{12} < 0$ na realidade; o LES impõe $s_{12} > 0$ por construção. Implicação: o LES \emph{subestima} a queda de demanda agregada quando $p_1$ ou $p_2$ sobem.
+\item \emph{Consumidor representativo:} a POF revela heterogeneidade massiva entre o 1º decil (cereais = 12\% do gasto alimentar) e o 5º decil (cereais $\approx$ 3\%). A política ótima depende do estrato; ``desonerar proteína'' pode dominar para o decil mediano e ser dominada por ``desonerar cereais'' para o 1º decil. Em modelo agregado, esses sinais se cancelam.
+\item \emph{Efeito-renda dominante em Marshalliana bruta:} a magnitude da queda observada de demanda após \emph{aumento} de preço (na ausência de compensação) é menor do que o LES prevê, porque parte do efeito é capturada via ajustes em outros bens não-modelados (e.g., processados industrializados, fora-do-lar).
+\end{enumerate}
+
+\textbf{4. Estratégia empírica.} Antes de aprovar a desoneração, recomendaria:
+\begin{itemize}[noitemsep]
+\item \textbf{Estimar AIDS (Deaton \& Muellbauer 1980a)} sobre painel POF 2008--09 e 2017--18 + suplementos POF-Saúde 2019. \emph{Identificação dos preços:} variação geográfica de preços (CPI regional do IBGE/SIDRA) cruzada com variação intertemporal, instrumentando com choques de safra (PAM/IBGE) e câmbio para commodities transacionáveis (soja, milho, carne bovina).
+\item \textbf{Estimar $\eta_i$ via Auxílio Emergencial (2020--21):} choque exógeno de R\$ 600/mês com escalonamento. Diferenças-em-diferenças entre elegíveis e não-elegíveis (na faixa de corte) identifica elasticidades-renda \emph{out of sample} relativas à POF 2017--18.
+\item \textbf{Teste de adequação:} verificar empiricamente se $\hat s_{ij} > 0$ para todo $i \neq j$ -- se algum cruzado vier estatisticamente negativo, rejeitar LES e adotar AIDS/QUAIDS.
+\item \textbf{Replicação por estrato:} repetir a estimação por quintil de renda; se as recomendações divergirem entre quintis 1 e 3, considerar \emph{política diferenciada} (subsídio focalizado por programa social, não desoneração tributária universal).
+\end{itemize}
+
+\textbf{Recomendação final:} \emph{prosseguir com desoneração da proteína animal como primeira opção, condicionada a validação empírica em painel POF + AIE.} Se a estimação AIDS revelar complementaridade Hicksiana arroz-feijão ou heterogeneidade entre quintis tal que cereais dominem no 1º quintil, pivotar para política mista (cesta básica zero $+$ subsídio focalizado a proteína).
+\end{solution}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 4 (10 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+Identificação clara do bem a desonerar com justificativa via Shephard & 2 \\
+Cálculo de CV aproximada para os três casos com magnitudes corretas & 3 \\
+Pelo menos 3 limitações estruturais do LES discutidas & 3 \\
+Estratégia empírica concreta com instrumento e/ou choque brasileiro citado & 2 \\
+\midrule
+\textbf{Total Q4} & \textbf{10} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+\end{spacing}
+
+\newpage
+\begin{center}\large\textbf{Apêndice -- Auto-verificação antes da entrega}\end{center}
+\vspace{0.5em}
+
+\noindent Antes de entregar, percorra esta checklist. Se algum item falhar, há erro algébrico ou conceitual.
+
+\medskip
+\begin{enumerate}[label=$\square$,leftmargin=*]
+\item Todas as quantidades $x_i^*, h_i, y_i$ estão \emph{estritamente acima} de $\gamma_i$ no setup?
+\item Custo orçamentário $\sum_i p_i x_i^* = 92$? Renda supranumerária $S = 60$?
+\item Identidade-chave do LES: $w_i \eta_i = \alpha_i$. Soma $\sum_i \alpha_i = 1$ via Engel?
+\item Matriz de Slutsky simétrica ($s_{ij} = s_{ji}$) e com diagonal negativa ($s_{ii} < 0$)?
+\item $\sum_j s_{ij} p_j = 0$ para cada $i$ (homogeneidade)?
+\item Cournot verificado: $\sum_i w_i \varepsilon_{ij} = -w_j$ para cada $j$?
+\item Homogeneidade em elasticidades: $\sum_j \varepsilon_{ij} + \eta_i = 0$ para cada $i$?
+\item No item 3(g), o sistema linear em $c$ recupera $\gamma_1 = 4$, $\gamma_2 = 1$, $\gamma_3 = 2$?
+\item Identidades duais (D2) e (D3) verificadas numericamente em $u^* \approx 1{,}2263$?
+\item No gráfico do item 1(d), as assíntotas $x_1 = 4$ e $x_2 = 1$ estão explicitamente marcadas?
+\end{enumerate}
+
+\vspace{1em}
+\begin{contextbox}[Sobre Stone-Geary e suas limitações]
+\small
+O LES de Stone (1954) é o sistema de demanda mais antigo \emph{integralmente derivável de uma função utilidade}. É didaticamente imbatível porque (i) tem soluções analíticas fechadas para UMP, EMP, Marshalliana, Hicksiana, despesa, indireta, elasticidades; (ii) as restrições agregadas (Engel, Cournot, homogeneidade, simetria) verificam-se trivialmente; e (iii) os parâmetros estruturais $(\alpha, \gamma)$ admitem identificação exata em forma fechada a partir de elasticidades observáveis.
+
+Suas limitações estruturais -- $\eta_i > 0$, ausência de complementaridade Hicksiana, formas de Engel rígidas -- motivaram a evolução para AIDS (Deaton \& Muellbauer 1980a), Translog (Christensen, Jorgenson \& Lau 1975, \textit{AER}), QUAIDS (Banks, Blundell \& Lewbel 1997, \textit{ReStat}) e a fronteira atual em Lewbel \& Pendakur (2009, \textit{AER}). Esta APS treina o ferramental que os papers fronteiriços assumem como dado.
+\end{contextbox}
+
+\vspace{1em}
+\begin{contextbox}[Para estudo posterior]
+\small
+\textit{Leituras sugeridas (todas verificadas):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Nicholson \& Snyder, \textit{Microeconomic Theory}, 12e, caps.\ 3--5 -- nível desta APS.
+\item Jehle \& Reny, \textit{Advanced Microeconomic Theory}, 3e, §§1.4--1.5, §2.1 -- nível imediatamente superior.
+\item Deaton \& Muellbauer (1980b), \textit{Economics and Consumer Behavior}, caps.\ 2--5 -- referência canônica para estimação de demanda.
+\item Stone (1954) e Geary (1950) -- origens do LES.
+\item Deaton (1997), \textit{The Analysis of Household Surveys: A Microeconometric Approach to Development Policy}, Johns Hopkins University Press para o World Bank (reedição 2018 com novo prefácio) -- aplicação prática a microdados de consumo (POF-like).
+\end{itemize}
+\end{contextbox}
+
+\end{document}

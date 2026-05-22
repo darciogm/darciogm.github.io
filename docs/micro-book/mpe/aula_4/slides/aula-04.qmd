@@ -254,7 +254,11 @@ Apoio visual para o cálculo CD assimétrica do Bloco 2: $u^A = x_1^{2/3}x_2^{1/
 
 ::: {.eq-key}
 $$
-x \text{ é Pareto-eficiente} \iff \nexists\, \tilde x \text{ viável com } u^i(\tilde x^i) \ge u^i(x^i)\;\forall i,\;u^j(\tilde x^j) > u^j(x^j) \text{ p/ algum } j.
+\begin{aligned}
+x \text{ é Pareto-eficiente} \iff{}\; & \nexists\,\tilde x \text{ viável tal que} \\
+& u^i(\tilde x^i) \ge u^i(x^i)\;\;\forall\, i, \\
+& u^j(\tilde x^j) > u^j(x^j) \;\text{p/ algum } j.
+\end{aligned}
 $$
 :::
 
@@ -699,7 +703,7 @@ Contradição. EC é Pareto-eficiente. $\blacksquare$
 
 ---
 
-## O papel exato de LNS (1/2) — onde aparece
+## O papel exato de LNS (1/3) — onde aparece
 
 **LNS aparece** apenas no **passo 2** — para os $i$ que estão fracamente melhor.
 
@@ -715,24 +719,16 @@ Próximo: calibrar a hipótese num exemplo concreto.
 
 ---
 
-## O papel exato de LNS (2/2) — calibração num exemplo
+## O papel exato de LNS (2/3) — calibração: setup + diagnóstico
 
 **Setup.** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$; $u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (2, 0)$, $\omega^B = (0, 2)$.
 
-**Diagnóstico de LNS em $A$.** Em qualquer $(x_1^0, x_2^0)$, vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$. Como $\partial u^A/\partial x_2 = 1 > 0$ globalmente, **LNS vale** — inclusive em $x_1^0 \ge 1$. A "saturação" em bem 1 é apenas direcional.
+**Diagnóstico de LNS em $A$.** Em qualquer $(x_1^0, x_2^0)$, o vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$. Como $\partial u^A/\partial x_2 = 1 > 0$ globalmente, **LNS vale** — inclusive em $x_1^0 \ge 1$. A "saturação" em bem 1 é apenas direcional.
 
 **EC desta economia.** A $p^* = (1, 1)$: $A$ é indiferente em $x_1 \in [0, 1]$ (com $x_2 = 2 - x_1$); $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x^A = x^B = (1, 1)$. Por **1º TBE (LNS vale)**, é Pareto-eficiente.
 
-::: {.eq-punch}
-Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.
-:::
-
-::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;"}
-*Para falhar LNS de fato: bliss-point interior — e.g. $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, conjunto preferido estrito vazio em $(a, b)$. **MWG §16.D**. Construção numérica fica para a pré-monitoria 2 (sáb 23/05, com Alberto).*
-:::
-
 ::: {.bridge}
-LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. Próximo: 2º TBE (preliminar).
+Próximo: o punch — saturação direcional não quebra o teorema; e onde LNS *de fato* falha.
 :::
 
 ::: {.notes}
@@ -743,8 +739,26 @@ LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. 
 (2) **EC.** A $p^* = (1, 1)$: $A$ tem $m^A = 2$. UMP de $A$: para $x_1 \in [0, 1]$, $u^A = x_1 + (2 - x_1) = 2$; para $x_1 \in [1, 2]$, $u^A = 1 + (2 - x_1) = 3 - x_1 \in [1, 2]$. Máximo em $x_1 \in [0, 1]$ — indiferente nessa faixa. $B$: CD com $m^B = 2$, demanda $(1, 1)$. Mercado: $x_1^A + 1 = 2 \Rightarrow x_1^A = 1$ (compatível com indiferença). EC: $((1,1),(1,1))$.
 
 (3) **Pareto.** Por 1º TBE, é Pareto. Verificação direta: agregado fixo $(2,2)$; tirar bem 2 de $B$ piora $B$ (CD monotônica estrita); dar bem 1 a $B$ acima de seu ponto exige tirar de $A$ que está em $x_1^A = 1$ (no joelho). Trade-off binding nas duas direções.
+:::
 
-(4) **O contraste honesto.** Para ter saturação local <em>verdadeira</em> em algum ponto: bliss-point interior em $u^A = -[(x_1-1)^2 + (x_2-1)^2]$ — em $(1,1)$ o conjunto preferido estrito é vazio. Aí LNS falha em $(1,1)$ e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC <em>cai</em> exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.
+---
+
+## O papel exato de LNS (3/3) — punch e onde LNS falha
+
+::: {.eq-punch}
+Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.
+:::
+
+::: {style="font-size: 0.82em; color: #4A5060; margin-top: 0.6em;"}
+*Para falhar LNS **de fato**: bliss-point **interior** — e.g.* $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, *conjunto preferido estrito vazio em $(a, b)$.* **MWG §16.D**. *Construção numérica completa: pré-monitoria 2 (sáb 23/05, com Alberto).*
+:::
+
+::: {.bridge}
+LNS é o mínimo axiomático e é robusta a saturação direcional. Próximo: 2º TBE (preliminar).
+:::
+
+::: {.notes}
+**Contraste honesto (slide 3/3).** Para ter saturação local *verdadeira* em algum ponto: bliss-point interior em $u^A = -[(x_1-1)^2 + (x_2-1)^2]$ — em $(1,1)$ o conjunto preferido estrito é vazio. Aí LNS falha em $(1,1)$ e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC *cai* exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.
 :::
 
 ---
@@ -753,7 +767,11 @@ LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. 
 
 ::: {.eq-key}
 $$
-\text{Pareto-eficiente} + \text{convexidade} \;\Rightarrow\; \exists\, p^* \text{ tal que } (p^*, x^*) \text{ é EC após redistribuição lump-sum.}
+\begin{aligned}
+&\text{Pareto-eficiente} \,+\, \text{convexidade} \\
+&\quad\Longrightarrow\; \exists\, p^* \text{ tal que } (p^*, x^*) \text{ é EC} \\
+&\quad\phantom{\Longrightarrow\;} \text{após redistribuição lump-sum.}
+\end{aligned}
 $$
 :::
 
@@ -876,28 +894,46 @@ Edgeworth → bens entre consumidores. PPF → fatores entre produtos.
 
 ---
 
-## Taxa marginal de transformação (TMT)
+## Taxa marginal de transformação (1/2) — definição e CPO
 
 ::: {.eq-key}
 $$
 \begin{aligned}
-\text{TMT}_{12} &= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} \\
-&= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+\text{TMT}_{12} &= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}}
+= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
 \end{aligned}
 $$
 :::
 
-**Em equilíbrio, mercado força** $\text{TMT}_{12} = p_1/p_2$:
+**Em equilíbrio, mercado força** $\text{TMT}_{12} = p_1/p_2$. CPO da firma:
 
-CPO da firma:
-$$p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT} = p_1/p_2.$$
-
-**Numérico** em $(q_1, q_2) = (2, 2\sqrt{3})$, $L_1=4$, $L_2=12$:
-
-$\text{PMa}_L^1 = 1/(2\sqrt{4}) = 1/4$. $\text{PMa}_L^2 = 1/(2\sqrt{12}) = 1/(4\sqrt{3})$. $\text{TMT}_{12} = 1/\sqrt{3} \approx 0{,}577$. ✓
+$$
+p_1\, \text{PMa}_L^1 \;=\; w \;=\; p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT}_{12} = p_1/p_2.
+$$
 
 ::: {.bridge}
-Verificação alternativa via implícita: $\text{TMT} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}$. ✓
+Próximo: verificação numérica no ponto $(q_1, q_2) = (2, 2\sqrt{3})$.
+:::
+
+---
+
+## Taxa marginal de transformação (2/2) — verificação numérica
+
+**Setup.** Ponto $(q_1, q_2) = (2, 2\sqrt{3})$, com $L_1 = 4$ e $L_2 = 12$. Tecnologias $q_j = \sqrt{L_j}$, então $\text{PMa}_L^j = 1/(2\sqrt{L_j})$.
+
+**Cálculo direto.**
+
+$$
+\text{PMa}_L^1 = \tfrac{1}{2\sqrt{4}} = \tfrac{1}{4},\qquad
+\text{PMa}_L^2 = \tfrac{1}{2\sqrt{12}} = \tfrac{1}{4\sqrt{3}}.
+$$
+
+$$
+\text{TMT}_{12} \;=\; \frac{\text{PMa}_L^2}{\text{PMa}_L^1} \;=\; \frac{1/(4\sqrt{3})}{1/4} \;=\; \frac{1}{\sqrt{3}} \;\approx\; 0{,}577. \;\;\checkmark
+$$
+
+::: {.bridge}
+Cheque alternativo (via derivada implícita da PPF): $\text{TMT} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}$. $\checkmark$
 :::
 
 ---

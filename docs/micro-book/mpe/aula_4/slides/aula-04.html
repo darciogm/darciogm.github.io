@@ -394,7 +394,11 @@ x = (x^A, x^B) \;\;\text{viável}\;\;\Leftrightarrow\;\; x^A + x^B = \bar\omega.
 <h2>Pareto-eficiência (1/3) — definição</h2>
 <div class="eq-key">
 <p><span class="math display">\[
-x \text{ é Pareto-eficiente} \iff \nexists\, \tilde x \text{ viável com } u^i(\tilde x^i) \ge u^i(x^i)\;\forall i,\;u^j(\tilde x^j) &gt; u^j(x^j) \text{ p/ algum } j.
+\begin{aligned}
+x \text{ é Pareto-eficiente} \iff{}\; &amp; \nexists\,\tilde x \text{ viável tal que} \\
+&amp; u^i(\tilde x^i) \ge u^i(x^i)\;\;\forall\, i, \\
+&amp; u^j(\tilde x^j) &gt; u^j(x^j) \;\text{p/ algum } j.
+\end{aligned}
 \]</span></p>
 </div>
 <p><strong>Em palavras:</strong> não há outra alocação viável onde <em>todos</em> fiquem pelo menos iguais e <em>alguém</em> fique estritamente melhor.</p>
@@ -738,7 +742,7 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>O papel exato de LNS (1/2) — onde aparece</h2>
+<h2>O papel exato de LNS (1/3) — onde aparece</h2>
 <p><strong>LNS aparece</strong> apenas no <strong>passo 2</strong> — para os <span class="math inline">\(i\)</span> que estão fracamente melhor.</p>
 <p><strong>Contrapositiva do passo 2:</strong> “se sobra renda em <span class="math inline">\(\tilde x^i\)</span>, então <span class="math inline">\(u^i(\tilde x^i) &lt; u^i(x^{*i})\)</span>”. Para sustentar isso precisamos de um <strong>vizinho</strong> <span class="math inline">\(\tilde x^i + \varepsilon\)</span> ainda dentro do orçamento e estritamente preferido — <strong>isso é exatamente LNS</strong>.</p>
 <div class="callout callout-none no-icon callout-style-simple">
@@ -753,18 +757,12 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>O papel exato de LNS (2/2) — calibração num exemplo</h2>
+<h2>O papel exato de LNS (2/3) — calibração: setup + diagnóstico</h2>
 <p><strong>Setup.</strong> <span class="math inline">\(u^A(x_1, x_2) = \min\{x_1, 1\} + x_2\)</span>; <span class="math inline">\(u^B = x_1^{1/2}x_2^{1/2}\)</span>. <span class="math inline">\(\omega^A = (2, 0)\)</span>, <span class="math inline">\(\omega^B = (0, 2)\)</span>.</p>
-<p><strong>Diagnóstico de LNS em <span class="math inline">\(A\)</span>.</strong> Em qualquer <span class="math inline">\((x_1^0, x_2^0)\)</span>, vizinho <span class="math inline">\((x_1^0, x_2^0 + \delta)\)</span> tem utilidade <span class="math inline">\(\min\{x_1^0, 1\} + x_2^0 + \delta\)</span>. Como <span class="math inline">\(\partial u^A/\partial x_2 = 1 &gt; 0\)</span> globalmente, <strong>LNS vale</strong> — inclusive em <span class="math inline">\(x_1^0 \ge 1\)</span>. A “saturação” em bem 1 é apenas direcional.</p>
+<p><strong>Diagnóstico de LNS em <span class="math inline">\(A\)</span>.</strong> Em qualquer <span class="math inline">\((x_1^0, x_2^0)\)</span>, o vizinho <span class="math inline">\((x_1^0, x_2^0 + \delta)\)</span> tem utilidade <span class="math inline">\(\min\{x_1^0, 1\} + x_2^0 + \delta\)</span>. Como <span class="math inline">\(\partial u^A/\partial x_2 = 1 &gt; 0\)</span> globalmente, <strong>LNS vale</strong> — inclusive em <span class="math inline">\(x_1^0 \ge 1\)</span>. A “saturação” em bem 1 é apenas direcional.</p>
 <p><strong>EC desta economia.</strong> A <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> é indiferente em <span class="math inline">\(x_1 \in [0, 1]\)</span> (com <span class="math inline">\(x_2 = 2 - x_1\)</span>); <span class="math inline">\(B\)</span> tem CD com <span class="math inline">\(m^B = 2\)</span>, demanda <span class="math inline">\((1, 1)\)</span>. Mercado fecha em <span class="math inline">\(x^A = x^B = (1, 1)\)</span>. Por <strong>1º TBE (LNS vale)</strong>, é Pareto-eficiente.</p>
-<div class="eq-punch">
-<p>Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.</p>
-</div>
-<div style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;">
-<p><em>Para falhar LNS de fato: bliss-point interior — e.g.&nbsp;<span class="math inline">\(u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]\)</span>, conjunto preferido estrito vazio em <span class="math inline">\((a, b)\)</span>. <strong>MWG §16.D</strong>. Construção numérica fica para a pré-monitoria 2 (sáb 23/05, com Alberto).</em></p>
-</div>
 <div class="bridge">
-<p>LNS é o mínimo axiomático e a hipótese é robusta a saturação direcional. Próximo: 2º TBE (preliminar).</p>
+<p>Próximo: o punch — saturação direcional não quebra o teorema; e onde LNS <em>de fato</em> falha.</p>
 </div>
 <aside class="notes">
 <p><strong>Resolução completa (fallback se aluno perguntar).</strong></p>
@@ -772,8 +770,32 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <li><p><strong>LNS de <span class="math inline">\(A\)</span> globalmente.</strong> Em qualquer <span class="math inline">\((x_1^0, x_2^0)\)</span>, <span class="math inline">\(u^A(x_1^0, x_2^0 + \delta) = \min\{x_1^0, 1\} + x_2^0 + \delta &gt; u^A(x_1^0, x_2^0)\)</span> para todo <span class="math inline">\(\delta &gt; 0\)</span>. Logo o vizinho <span class="math inline">\((x_1^0, x_2^0 + \delta)\)</span> resolve o teste de LNS.</p></li>
 <li><p><strong>EC.</strong> A <span class="math inline">\(p^* = (1, 1)\)</span>: <span class="math inline">\(A\)</span> tem <span class="math inline">\(m^A = 2\)</span>. UMP de <span class="math inline">\(A\)</span>: para <span class="math inline">\(x_1 \in [0, 1]\)</span>, <span class="math inline">\(u^A = x_1 + (2 - x_1) = 2\)</span>; para <span class="math inline">\(x_1 \in [1, 2]\)</span>, <span class="math inline">\(u^A = 1 + (2 - x_1) = 3 - x_1 \in [1, 2]\)</span>. Máximo em <span class="math inline">\(x_1 \in [0, 1]\)</span> — indiferente nessa faixa. <span class="math inline">\(B\)</span>: CD com <span class="math inline">\(m^B = 2\)</span>, demanda <span class="math inline">\((1, 1)\)</span>. Mercado: <span class="math inline">\(x_1^A + 1 = 2 \Rightarrow x_1^A = 1\)</span> (compatível com indiferença). EC: <span class="math inline">\(((1,1),(1,1))\)</span>.</p></li>
 <li><p><strong>Pareto.</strong> Por 1º TBE, é Pareto. Verificação direta: agregado fixo <span class="math inline">\((2,2)\)</span>; tirar bem 2 de <span class="math inline">\(B\)</span> piora <span class="math inline">\(B\)</span> (CD monotônica estrita); dar bem 1 a <span class="math inline">\(B\)</span> acima de seu ponto exige tirar de <span class="math inline">\(A\)</span> que está em <span class="math inline">\(x_1^A = 1\)</span> (no joelho). Trade-off binding nas duas direções.</p></li>
-<li><p><strong>O contraste honesto.</strong> Para ter saturação local <em>verdadeira</em> em algum ponto: bliss-point interior em <span class="math inline">\(u^A = -[(x_1-1)^2 + (x_2-1)^2]\)</span> — em <span class="math inline">\((1,1)\)</span> o conjunto preferido estrito é vazio. Aí LNS falha em <span class="math inline">\((1,1)\)</span> e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC <em>cai</em> exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.</p></li>
 </ol>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section class="slide level2 center">
+<h2>O papel exato de LNS (3/3) — punch e onde LNS falha</h2>
+<div class="eq-punch">
+<p>Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.</p>
+</div>
+<div style="font-size: 0.82em; color: #4A5060; margin-top: 0.6em;">
+<p><em>Para falhar LNS <strong>de fato</strong>: bliss-point <strong>interior</strong> — e.g.</em> <span class="math inline">\(u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]\)</span>, <em>conjunto preferido estrito vazio em <span class="math inline">\((a, b)\)</span>.</em> <strong>MWG §16.D</strong>. <em>Construção numérica completa: pré-monitoria 2 (sáb 23/05, com Alberto).</em></p>
+</div>
+<div class="bridge">
+<p>LNS é o mínimo axiomático e é robusta a saturação direcional. Próximo: 2º TBE (preliminar).</p>
+</div>
+<aside class="notes">
+<p><strong>Contraste honesto (slide 3/3).</strong> Para ter saturação local <em>verdadeira</em> em algum ponto: bliss-point interior em <span class="math inline">\(u^A = -[(x_1-1)^2 + (x_2-1)^2]\)</span> — em <span class="math inline">\((1,1)\)</span> o conjunto preferido estrito é vazio. Aí LNS falha em <span class="math inline">\((1,1)\)</span> e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC <em>cai</em> exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -790,7 +812,11 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 <h2>2º TBE preliminar — enunciado</h2>
 <div class="eq-key">
 <p><span class="math display">\[
-\text{Pareto-eficiente} + \text{convexidade} \;\Rightarrow\; \exists\, p^* \text{ tal que } (p^*, x^*) \text{ é EC após redistribuição lump-sum.}
+\begin{aligned}
+&amp;\text{Pareto-eficiente} \,+\, \text{convexidade} \\
+&amp;\quad\Longrightarrow\; \exists\, p^* \text{ tal que } (p^*, x^*) \text{ é EC} \\
+&amp;\quad\phantom{\Longrightarrow\;} \text{após redistribuição lump-sum.}
+\end{aligned}
 \]</span></p>
 </div>
 <p><strong>Em palavras:</strong> sob convexidade, qualquer Pareto-eficiente pode ser implementado como EC, contanto que se redistribua lump-sum as dotações.</p>
@@ -900,21 +926,36 @@ p^*\cdot \tilde x^j &gt; p^*\cdot \omega^j.
 </div>
 </section>
 <section class="slide level2 center">
-<h2>Taxa marginal de transformação (TMT)</h2>
+<h2>Taxa marginal de transformação (1/2) — definição e CPO</h2>
 <div class="eq-key">
 <p><span class="math display">\[
 \begin{aligned}
-\text{TMT}_{12} &amp;= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}} \\
-&amp;= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+\text{TMT}_{12} &amp;= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}}
+= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
 \end{aligned}
 \]</span></p>
 </div>
-<p><strong>Em equilíbrio, mercado força</strong> <span class="math inline">\(\text{TMT}_{12} = p_1/p_2\)</span>:</p>
-<p>CPO da firma: <span class="math display">\[p_1\, \text{PMa}_L^1 = w = p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT} = p_1/p_2.\]</span></p>
-<p><strong>Numérico</strong> em <span class="math inline">\((q_1, q_2) = (2, 2\sqrt{3})\)</span>, <span class="math inline">\(L_1=4\)</span>, <span class="math inline">\(L_2=12\)</span>:</p>
-<p><span class="math inline">\(\text{PMa}_L^1 = 1/(2\sqrt{4}) = 1/4\)</span>. <span class="math inline">\(\text{PMa}_L^2 = 1/(2\sqrt{12}) = 1/(4\sqrt{3})\)</span>. <span class="math inline">\(\text{TMT}_{12} = 1/\sqrt{3} \approx 0{,}577\)</span>. ✓</p>
+<p><strong>Em equilíbrio, mercado força</strong> <span class="math inline">\(\text{TMT}_{12} = p_1/p_2\)</span>. CPO da firma:</p>
+<p><span class="math display">\[
+p_1\, \text{PMa}_L^1 \;=\; w \;=\; p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT}_{12} = p_1/p_2.
+\]</span></p>
 <div class="bridge">
-<p>Verificação alternativa via implícita: <span class="math inline">\(\text{TMT} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}\)</span>. ✓</p>
+<p>Próximo: verificação numérica no ponto <span class="math inline">\((q_1, q_2) = (2, 2\sqrt{3})\)</span>.</p>
+</div>
+</section>
+<section class="slide level2 center">
+<h2>Taxa marginal de transformação (2/2) — verificação numérica</h2>
+<p><strong>Setup.</strong> Ponto <span class="math inline">\((q_1, q_2) = (2, 2\sqrt{3})\)</span>, com <span class="math inline">\(L_1 = 4\)</span> e <span class="math inline">\(L_2 = 12\)</span>. Tecnologias <span class="math inline">\(q_j = \sqrt{L_j}\)</span>, então <span class="math inline">\(\text{PMa}_L^j = 1/(2\sqrt{L_j})\)</span>.</p>
+<p><strong>Cálculo direto.</strong></p>
+<p><span class="math display">\[
+\text{PMa}_L^1 = \tfrac{1}{2\sqrt{4}} = \tfrac{1}{4},\qquad
+\text{PMa}_L^2 = \tfrac{1}{2\sqrt{12}} = \tfrac{1}{4\sqrt{3}}.
+\]</span></p>
+<p><span class="math display">\[
+\text{TMT}_{12} \;=\; \frac{\text{PMa}_L^2}{\text{PMa}_L^1} \;=\; \frac{1/(4\sqrt{3})}{1/4} \;=\; \frac{1}{\sqrt{3}} \;\approx\; 0{,}577. \;\;\checkmark
+\]</span></p>
+<div class="bridge">
+<p>Cheque alternativo (via derivada implícita da PPF): <span class="math inline">\(\text{TMT} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}\)</span>. <span class="math inline">\(\checkmark\)</span></p>
 </div>
 </section>
 <section class="slide level2 center">

@@ -324,3 +324,25 @@
   file: docs/analyses/an-028-exposure-stratum-balance.md
   script: scripts/60_theory_validation_bridge.R
   target: output/theory_bridge/standardized_diffs.csv
+
+- id: an-029
+  hypothesis: timing-discipline
+  status: done
+  type: robustness
+  question: Does the FL screen preserve discrimination under three progressively-earlier train windows, evaluated against both all-time and truly-out-of-time cobidder targets?
+  confidence: green
+  tags: ["H:timing-discipline", strict-prospective, holdout, three-classifier]
+  file: docs/analyses/an-029-three-classifier-timing-battery.md
+  script: scripts/27_strict_prospective_holdout.R
+  target: output/strict_prospective_summary.csv
+
+- id: an-030
+  hypothesis: timing-discipline
+  status: done
+  type: descriptive
+  question: How much do the firms, markets, and procuring buyers in 2017–2019 overlap with those in 2009–2016? Is the out-of-sample evaluation actually evaluating new entities?
+  confidence: green
+  tags: ["H:timing-discipline", persistence, market-turnover, structural-oos]
+  file: docs/analyses/an-030-market-persistence.md
+  script: scripts/24_market_persistence.R
+  target: output/market_persistence/persistence_summary.csv
