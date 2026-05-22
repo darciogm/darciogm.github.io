@@ -5,7 +5,7 @@ slug: cobidder-concentration
 title: "The frequent-loser ranking concentrates CADE-adjacent cobidders"
 cluster: A
 paper_section: "§3 + §4"
-status: partial
+status: "partial (strongly supported)"
 last_updated: 2026-05-22
 ---
 

@@ -5,7 +5,7 @@ slug: award-bid-complementarity
 title: "Award-layer and bid-layer information are complementary"
 cluster: D
 paper_section: "§6.1 + §6.2"
-status: partial
+status: "partial (strongly supported)"
 last_updated: 2026-05-22
 ---
 

@@ -43,9 +43,7 @@ record only). Set only when `status: done`.
 
 ## Generated index
 
-All 38 AN pages, machine-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` file via `scripts/gen_analysis_index.py`. The same machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
-
-Sort by clicking any column header (rendered table is non-interactive; use Ctrl/Cmd+F to filter by hypothesis or type).
+All 38 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
 
 | AN | Type | Status | Conf. | Hypothesis | Question |
 |---|---|---|:-:|---|---|
@@ -91,4 +89,3 @@ Sort by clicking any column header (rendered table is non-interactive; use Ctrl/
 **Status legend.** `done` = analysis run and interpretation written; `pending` = scaffolded only; `stale` = superseded.
 
 **Confidence legend.** 🟢 green (clean identification, robust); 🟡 yellow (informative with caveats); 🔴 red (kept for the record, not load-bearing).
-

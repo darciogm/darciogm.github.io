@@ -107,3 +107,20 @@ replication on a non-BEC procurement panel.
 | [H6](award-bid-complementarity.md) | Award and bid layers are complementary. | Imhof+FL Δ vs Imhof = +0.096 (DeLong p = 1.2e-26); FL alone vs Imhof Δ = +0.035 (p = 0.014); sequential K=2,000 captures 74% joint recall at 17% bid-microdata footprint. | [AN-010](../analyses/an-010-imhof-full-pipeline.md), [AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md), [AN-033](../analyses/an-033-imhof-incremental-delong.md), [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md) | **Partial (strongly supported)** |
 | [H7](gatekeeping-cost-of-evidence.md) | Gatekeeping cuts the bid pool ≥80% with majority cobidder recovery. | 83% pool cut + 131/193 cobidders (in-sample); sequential K=2,000 captures 103% of joint TP at 24% microdata cost (temporal holdout); CV precision SD ≤ 0.011. | [AN-012](../analyses/an-012-operational-metrics.md), [AN-013](../analyses/an-013-precision-at-k-audit.md), [AN-014](../analyses/an-014-leakage-audit-d3.md), [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md), [AN-035](../analyses/an-035-architecture-cost-of-evidence-matrix.md), [AN-036](../analyses/an-036-cv-precision-stability.md) | **Partial (strongly supported)** |
 | [H8](price-scope-sign-reversal.md) | Price coefficient sign reverses across targets — scope, not damages. | Broad +0.064 → overlap ATT −0.097 (p = 1.7e-10); negative in 14 of 15 subgroup cells; item-group decomp predictably structured; modal asymmetry 2.45×. | [AN-019](../analyses/an-019-rdd-cap-price.md), [AN-020](../analyses/an-020-did-decreto-2018.md), [AN-016](../analyses/an-016-gate-d2.md), [AN-022](../analyses/an-022-falsification-pregao.md), [AN-037](../analyses/an-037-sign-reversal-decomposition.md), [AN-038](../analyses/an-038-negative-cell-segment-audit.md) | **Partial (strongly supported)** |
+
+## Generated index
+
+All 8 hypothesis pages, auto-generated from the YAML frontmatter of each `docs/hypotheses/<slug>.md` via `scripts/render_indexes.py`. Maintained in lockstep with the scorecard above.
+
+| H# | Cluster | Paper section | Status | Slug + title |
+|---|:-:|:-:|---|---|
+| [H1](cobidder-concentration.md) | A | §3 + §4 | **Partial (strongly supported)** | [cobidder-concentration](cobidder-concentration.md) — The frequent-loser ranking concentrates CADE-adjacent cobidders |
+| [H2](direct-defendants-null.md) | A | §4.3 | **Confirmed** | [direct-defendants-null](direct-defendants-null.md) — The frequent-loser ranking does not discriminate direct CADE defendants |
+| [H3](exposure-discipline.md) | B | §4.2 | **Partial (strongly supported)** | [exposure-discipline](exposure-discipline.md) — Cobidder concentration survives exposure-disciplined placebos |
+| [H4](timing-discipline.md) | B | §4.2 | **Partial (strongly supported)** | [timing-discipline](timing-discipline.md) — Cobidder concentration survives timing discipline |
+| [H5](cobidder-profile-distinct.md) | C | §5 | **Mixed** | [cobidder-profile-distinct](cobidder-profile-distinct.md) — FL cobidders are economically distinct from other frequent losers |
+| [H6](award-bid-complementarity.md) | D | §6.1 + §6.2 | **Partial (strongly supported)** | [award-bid-complementarity](award-bid-complementarity.md) — Award-layer and bid-layer information are complementary |
+| [H7](gatekeeping-cost-of-evidence.md) | D | §6.3 + §6.4 | **Partial (strongly supported)** | [gatekeeping-cost-of-evidence](gatekeeping-cost-of-evidence.md) — Award-layer gatekeeping cuts the bid-microdata pool cost-effectively |
+| [H8](price-scope-sign-reversal.md) | E | §7.1 + §7.2 | **Partial (strongly supported)** | [price-scope-sign-reversal](price-scope-sign-reversal.md) — Price evidence carries scope information, not damages |
+
+**Status legend.** `Not yet tested` → `Not confirmed` / `Mixed` / `Partial` → `Partial (strongly supported)` → `Confirmed`. Promotion to `Confirmed` requires non-BEC replication; see [`COMPRASNET_PATH_TO_CONFIRMED.md`](https://github.com/darciogm/bitter-pills/blob/main/paper3-frequent-losers/COMPRASNET_PATH_TO_CONFIRMED.md).

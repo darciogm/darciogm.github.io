@@ -5,7 +5,7 @@ slug: timing-discipline
 title: "Cobidder concentration survives timing discipline"
 cluster: B
 paper_section: "§4.2"
-status: partial
+status: "partial (strongly supported)"
 last_updated: 2026-05-22
 ---
 

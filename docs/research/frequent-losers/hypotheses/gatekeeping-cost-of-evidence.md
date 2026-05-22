@@ -5,7 +5,7 @@ slug: gatekeeping-cost-of-evidence
 title: "Award-layer gatekeeping cuts the bid-microdata pool cost-effectively"
 cluster: D
 paper_section: "§6.3 + §6.4"
-status: partial
+status: "partial (strongly supported)"
 last_updated: 2026-05-22
 ---
 

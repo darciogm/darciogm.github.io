@@ -5,7 +5,7 @@ slug: price-scope-sign-reversal
 title: "Price evidence carries scope information, not damages"
 cluster: E
 paper_section: "§7.1 + §7.2"
-status: partial
+status: "partial (strongly supported)"
 last_updated: 2026-05-22
 ---
 
