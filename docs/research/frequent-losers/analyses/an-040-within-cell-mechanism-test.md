@@ -97,6 +97,20 @@ bidders to be visible. In dense tenders (11+ bidders), FL presence is
 associated with LOWER prices: the mechanism dominates because cover-
 bidder inflation is operative.
 
+![AN-040 Test 2: within-cell mechanism](../assets/figures/fig_an040_within_cell_mechanism.png)
+
+*Figure: Panel A — coefficient on losers in `winner_vs_ref ~ losers |
+overlap_cell` is −0.0479 (p < 10⁻³⁰); adding `log(n_firms)` as control
+zeroes out the effect (+0.008, n.s.). The mechanism operates through
+the bidder-count channel. Panel B — M1 (losers → +0.507 log-bidders =
+67% more bidders) and M2 (losers → −0.048 on log winner-to-reference)
+revalidated within overlap cells. Panel C — heterogeneity by bidder-
+count quartile: FL presence is associated with higher winner-to-
+reference in sparse tenders (1-3 bidders: +0.092; 4-6: +0.096),
+attenuates in 7-10, and FLIPS NEGATIVE in dense tenders (11+: −0.015).
+The selection-vs-mechanism boundary is empirically observable at the
+tender-density threshold.*
+
 ### Verdict
 
 **Test 2 PASSES.** Selection-vs-mechanism decomposition is empirically
