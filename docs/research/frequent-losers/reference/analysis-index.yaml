@@ -390,3 +390,25 @@
   file: docs/analyses/an-034-sequential-gatekeeping-envelope.md
   script: scripts/architecture_gatekeeper.R
   target: output/architecture_gatekeeper/sequential_envelope.csv
+
+- id: an-035
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: descriptive
+  question: Across the full architecture × k × regime grid, what are the recall, precision, and bid-microdata cost trade-offs of the four sequencing rules?
+  confidence: green
+  tags: ["H:gatekeeping-cost-of-evidence", "H:award-bid-complementarity", architecture, cost-of-evidence, recall, precision, lift]
+  file: docs/analyses/an-035-architecture-cost-of-evidence-matrix.md
+  script: scripts/architecture_gatekeeper.R
+  target: output/architecture_gatekeeper/precision_at_k.csv
+
+- id: an-036
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: robustness
+  question: Are the precision@k metrics stable across cross-validation folds, or do they depend on a specific random split?
+  confidence: yellow
+  tags: ["H:gatekeeping-cost-of-evidence", cross-validation, precision-stability, operational]
+  file: docs/analyses/an-036-cv-precision-stability.md
+  script: scripts/43_precision_at_k_audit.R
+  target: output/operational/audit_precision_k_cv.csv
