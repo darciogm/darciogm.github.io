@@ -57,6 +57,14 @@ OOF to temporal holdout — totalling **~0.10–0.13 attenuation**
 0.86–0.89 (`\valLeakStructLow`–`\valLeakStructHigh`) is the structural
 discriminating performance the operational claim relies on.
 
+![Leakage audit sensitivity contour](../assets/figures/fig_08_sensitivity_contour.png)
+
+*Figure: sensitivity contour for the leakage audit, showing how AUC
+attenuates as evaluation regime tightens (raw item-level → OOF firm-
+level → temporal holdout). The structural discriminating band sits at
+~0.86–0.89; direct-defendant AUC stays at ~0.51 across regimes
+(predicted null, [AN-007](an-007-auc-direct-cade.md)).*
+
 ## Interpretation
 
 **Verdict: DEFENSIBLE.** Item-level evaluation leaks repeated-firm

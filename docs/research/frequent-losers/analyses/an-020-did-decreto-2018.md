@@ -54,6 +54,22 @@ Auxiliary panel sizes: `\valDiDmarketYear` = 144,168 market-years;
 `\valDiDmarkets` = 19,777 markets; `\valDiDtreated` = 1,511 treated;
 `\valDiDneverTreated` = 18,266 never-treated.
 
+![Callaway-Sant'Anna event study around 2018 decree (prices)](../assets/figures/fig_06_cs_event_study_price.png)
+
+*Figure: Callaway-Sant'Anna event-study coefficients on log price
+around the Decreto 9.412/2018 cap shift. CIs straddle zero in every
+period; no significant pre- or post-treatment dynamic.*
+
+![Event study: number of excluded firms around the 2018 decree](../assets/figures/fig_06_cs_event_study_nfirms_excl.png)
+
+*Figure: same event-study design applied to the number of excluded
+firms (n_firms_excl). Also null around the cap shift.*
+
+![Generic event study around the decree](../assets/figures/fig_06_event_study.png)
+
+*Figure: alternative event-study specification (stacked DiD); pattern
+matches the Callaway-Sant'Anna result.*
+
 ## Interpretation
 
 Both estimators return null effects with tight CIs around zero. The

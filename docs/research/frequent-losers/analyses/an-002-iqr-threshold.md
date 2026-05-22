@@ -50,6 +50,13 @@ Output: `output/threshold_table_q3iqr/threshold_table_q3iqr.csv`. Macros:
 `\valAUCFLfirm` (FL14), `\valAUCQThreeIQR` (Tukey),
 `\valAUClogtc` (continuous).
 
+![IQR threshold identification on tenders_count distribution](../assets/figures/fig_02_iqr_identification.png)
+
+*Figure: the FL14 cutoff (median + 1.5 × IQR = 13.5) plotted against
+the tenders_count distribution. The Tukey alternative (Q3 + 1.5 × IQR)
+is also marked for reference. The paper's choice sits between the
+naive median and the conservative Tukey rule.*
+
 ## Interpretation
 
 The paper's median + 1.5 × IQR cutoff (FL14) sits between the very tight

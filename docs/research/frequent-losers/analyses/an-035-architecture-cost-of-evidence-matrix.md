@@ -96,6 +96,15 @@ Headline trade-off cells:
 Source: `output/architecture_gatekeeper/precision_at_k.csv` (in-sample),
 `output/architecture_gatekeeper_th/precision_at_k_th.csv` (temporal).
 
+![Architecture × k cost-of-evidence envelope](../assets/figures/fig_precision_at_k_an035.png)
+
+*Figure: precision@k curves for the four architectures (Award-only,
+Bid-only Imhof full, Joint, Sequential FL→Imhof at K=2,000) across
+k = 50 to 2,000. Joint scoring dominates at low k (top of the
+ranking); Sequential K=2,000 approximates Joint at substantial
+microdata savings; Award-only achieves competitive recall at high k
+with zero microdata cost.*
+
 ## Interpretation
 
 The full matrix establishes four operational claims:

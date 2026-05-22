@@ -52,6 +52,21 @@ Auxiliary v8 mechanism statistics (consolidated):
 `\valMechRegimeSpread` (+0.255), `\valMechRegimeNeg` (−0.056),
 `\valMechBoundaryNeg` (−0.160).
 
+![Mechanism quadrants: regime boxplot](../assets/figures/fig_05_regime_boxplot.png)
+
+*Figure: regime boxplots of the FL margin across the HHI × pairs
+quadrants. The Low-Low cell carries the mass; the QLHH cell has the
+sign-flipping pattern (−7.92, p = 0.002) but small N (6,496) and
+small effect mass.*
+
+![Oversight heterogeneity (PBU size quartile interaction)](../assets/figures/fig_14_oversight_heterogeneity.png)
+
+*Figure: FL-margin coefficient by oversight strength (PBU size
+quartile). Q1 (smallest PBUs, weakest oversight) carries the largest
+positive coefficient; Q4 (largest PBUs, strongest oversight) carries
+the smallest — consistent with the "loser-side concentration is more
+visible where institutional discipline is weaker" reading.*
+
 ## Interpretation
 
 The largest cell by mass is **Low-HHI × Low-pairs × Low-heterogeneity**

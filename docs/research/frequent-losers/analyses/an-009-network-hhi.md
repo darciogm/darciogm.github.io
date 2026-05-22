@@ -57,6 +57,21 @@ Auxiliary bid-level ratios (from the consolidated v8 panel):
 `\valFLBidWinnerRatio` = 1.846 (FL bid/winner ratio) vs
 `\valNonFLBidWinnerRatio` = 1.426 (non-FL).
 
+![Network HHI by class](../assets/figures/fig_network_hhi.png)
+
+*Figure: product-portfolio HHI distribution across the four firm
+classes (cobidder, FL_non_cobidder, AL_non_FL, winner_other).
+Cobidders sit at HHI 0.380 — between FL_non_cobidder (0.288) and
+AL_non_FL (0.719). The within-FL14 separation (cobidder vs FL_non) is
+the key contrast for [H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md).*
+
+![Network split: cobidder vs non-cobidder FL bidding patterns](../assets/figures/fig_11_network_split.png)
+
+*Figure: network-graph split showing cobidder vs non-cobidder FL
+positioning relative to direct CADE defendants. Cobidders cluster
+closer to direct anchors; non-cobidder FLs are dispersed across
+unrelated buyers.*
+
 ## Interpretation
 
 Two complementary readings:

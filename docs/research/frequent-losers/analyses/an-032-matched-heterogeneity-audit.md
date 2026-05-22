@@ -57,6 +57,15 @@ is matched away.
 
 Source: `output/matched_heterogeneity/matched_het_results.csv`.
 
+![Matched-heterogeneity audit: unmatched vs matched quadrant coefficients](../assets/figures/fig_matched_het_an032.png)
+
+*Figure: quadrant coefficients (HHI × pairs) under unmatched ATE
+(blue) vs PS-matched ATT (orange). Low-HHI × Low-pairs cell drops from
++0.090 (p=0.048) to +0.066 (p=0.227). High-HHI × Low-pairs drops from
++0.266 (p=0.026) to +0.197 (p=0.091). Quadrant heterogeneity largely
+does not survive matching — the honest negative finding for the
+causal-mechanistic reading of H5.*
+
 ### Attenuation pattern
 
 | Quadrant | Unmatched | Matched | Attenuation | Loses significance? |

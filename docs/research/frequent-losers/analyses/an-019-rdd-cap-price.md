@@ -65,6 +65,13 @@ Macros: `\valRDDtight`, `\valRDDmid`, `\valRDDwide`, `\valMcCraryRatio`,
 `\valMcCraryDisc`, `\valMatchBaselineCoef`, `\valMatchOverlapCoef`,
 `\valMatchPSCoef`.
 
+![RDD first-stage binscatter at procurement cap](../assets/figures/fig_first_stage_binscatter.png)
+
+*Figure: binscatter of FL14 presence as a function of the running
+variable (price minus cap threshold). The discontinuity at the cap is
+small; combined with McCrary density ratio 0.94, no bunching pattern
+is detected.*
+
 ## Interpretation
 
 The naive RDD coefficient is small and positive across bandwidths (4–6%).

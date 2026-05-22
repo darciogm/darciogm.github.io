@@ -58,6 +58,13 @@ Macros: `\valAUCFLfirm`, `\valAUClogtc`, `\valDeLongZ`, `\valDeLongP`,
 `\valHorseFLOne`, `\valHorseFLOneSE`, `\valHorseContTwo`,
 `\valHorseFLThree`, `\valHorseContThree`.
 
+![Horse race coefficient summary: FL14 binary vs continuous log_tc](../assets/figures/fig_03_coef_summary.png)
+
+*Figure: AUC point estimates with 95% CIs for FL14 binary (0.911,
+[0.898, 0.925]) and continuous log(1+tenders_count) (0.939,
+[0.932, 0.946]). DeLong test rejects equality at p = 2 × 10⁻⁵.
+Continuous dominates; FL14 is the deployable simplification.*
+
 ## Interpretation
 
 The continuous score dominates the binary at p < 10⁻⁴. FL14 is the

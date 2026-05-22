@@ -69,6 +69,14 @@ All AUCs come with 95% bootstrap CIs in the source CSV. Selected CIs:
 
 Source: `output/auc_by_subsample/auc_subsample.csv`.
 
+![AUC across four subsamples × four scores](../assets/figures/fig_auc_subsample_an026.png)
+
+*Figure: AUC point estimates with 95% CIs across the four subsamples
+(full / data_rich / low_n_bids / high_n_bids) crossed with the four
+scores (FL14, log_tc, Imhof CV, Imhof log_sd). FL14 AUC stable in the
+0.89–0.91 band across subsamples; log_tc dominates in every cell;
+Imhof scores below the award-layer scores throughout.*
+
 ## Interpretation
 
 Four readings, all supporting H1:

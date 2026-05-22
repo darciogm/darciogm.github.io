@@ -96,6 +96,15 @@ Source: `output/sign_reversal_decomp/headline_specs.csv`,
 `within_overlap_subgroup_betas.csv`,
 `cell_dropping_dimensions.csv`.
 
+![Year-by-year coefficient on FL14 presence](../assets/figures/fig_10_year_coefficients.png)
+
+*Figure: year-by-year FL-margin coefficients on log price. The pattern
+is mixed in the early period (2009–2011 hover around zero), turns
+sharply negative in 2013–2015 (−0.050, −0.153 with p < 0.01), and
+remains negative in 2017–2018. Consistent with the sign-reversal
+result: the negative coefficient appears in the routine bulk of the
+panel under disciplined identification.*
+
 ## Interpretation
 
 Four readings, all converging on the scope interpretation:

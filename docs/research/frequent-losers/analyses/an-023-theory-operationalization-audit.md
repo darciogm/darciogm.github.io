@@ -53,6 +53,14 @@ Macros: `\valAUClogtc`, `\valAUCFLfirm`, `\valAUCQThreeIQR`,
 `\valAUCStrictFirmFL`, `\valAUCStrictFirmTC`, `\valFLQThreeIQR`,
 `\valFL`, `\valAlwaysLosers`.
 
+![FL definition robustness across operationalizations](../assets/figures/fig_12_fl_definition_robustness.png)
+
+*Figure: AUC point estimates across alternative FL operationalizations
+— continuous log_tc (0.939), FL14 (0.924), Tukey Q3 + 1.5 × IQR
+(0.834), strict-train FL7 (0.767). Continuous dominates; FL14 sits on
+the high plateau; tighter cutoffs lose discrimination. The paper's
+choice is auditable, not ontologically privileged.*
+
 ## Interpretation
 
 The continuous score dominates every binary operationalization. FL14 is

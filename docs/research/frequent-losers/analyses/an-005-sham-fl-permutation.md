@@ -96,6 +96,16 @@ Sources: `output/sham_fl/sham_summary.csv` (formal AUC + price test),
 `output/sham_fl/sham_auc_distribution.csv` (B = 2,000 draws),
 `output/sham_fl/cade_permutation.csv` (CADE-label permutation).
 
+![Sham FL permutation distribution: AUC and price coefficient](../assets/figures/fig_sham_distributions_an005.png)
+
+*Figure: B = 2,000 sham FL permutation draws. The AUC distribution
+(left) is tightly centered on 0.500 (SD = 0.013, max = 0.547); the
+observed 0.911 falls ~32 SDs above the sham mean. The price-
+coefficient distribution (right) is wider and asymmetric, with sham
+mean +0.144 — larger than the observed +0.064 — explaining why the
+price-coefficient placebo does NOT reject under the same draws (the
+scope-vs-damages reading).*
+
 ## Interpretation
 
 **Volume-only is dead as a candidate explanation.** Two independent

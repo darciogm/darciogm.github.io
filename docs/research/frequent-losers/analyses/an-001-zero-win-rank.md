@@ -58,6 +58,13 @@ Output: `data/processed/firm_loss_stats.parquet`. The macro pipeline
 `\valAlwaysLosers`, `\valFL`, `\valBECfirms`, `\valThreshold`,
 `\valThresholdStat`, `\valFLrateAL`, `\valCobidShareFL`.
 
+![Distribution of tenders_count among always-losers](../assets/figures/fig_01_losses_distribution.png)
+
+*Figure: distribution of `tenders_count` among the 16,843 always-loser
+firms. The median + 1.5 × IQR threshold (= 13.5, rounded to 14) is the
+FL14 cutoff used in the paper. The long right tail selects the 2,735
+FL14 firms.*
+
 ## Interpretation
 
 The rank is small, transparent, and auditable. The IQR cutoff produces a

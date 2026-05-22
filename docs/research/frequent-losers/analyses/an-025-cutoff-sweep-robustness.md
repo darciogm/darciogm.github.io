@@ -58,6 +58,14 @@ Selected cutoffs from the full sweep (source CSV has 19+ rows):
 
 Source: `output/continuous_vs_binary/auc_threshold_sweep.csv`.
 
+![Threshold stability: AUC across 19 FL cutoffs](../assets/figures/fig_07_threshold_stability.png)
+
+*Figure: AUC as a function of the FL cutoff value k, for cobidder
+discrimination. The shape is a clean inverted U: rising from k=2 to
+peak at k=13 (AUC 0.924), declining smoothly afterward. The FL10–FL15
+plateau is ≥ 0.90; the FL14 paper choice sits on the high plateau,
+not at a fragile peak.*
+
 The shape is a clean **inverted U**:
 
 - *Rising branch (k = 2 → 13)*: AUC rises monotonically from 0.730 to
