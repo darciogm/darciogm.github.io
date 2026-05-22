@@ -27,7 +27,7 @@ PAPER_NAVS = {
     ],
     "frequent-losers": [
         {"title": "Summary",     "url": "/research/frequent-losers/"},
-        {"title": "Papers",      "url": "/research/frequent-losers/papers/"},
+        {"title": "Agenda",      "url": "/research/frequent-losers/papers/"},
         {"title": "Paper",       "url": "/research/frequent-losers/paper/"},
         {"title": "Video",       "url": "/research/frequent-losers/video/"},
         {"title": "Hypotheses",  "url": "/research/frequent-losers/hypotheses/"},

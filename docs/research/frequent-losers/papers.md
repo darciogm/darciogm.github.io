@@ -2,7 +2,7 @@
 paper: frequent-losers
 ---
 
-# Papers from this Research Program
+# Research Agenda
 
 This page lists the paper currently in submission preparation and a
 ranked set of follow-up paper ideas that can be built using the same
