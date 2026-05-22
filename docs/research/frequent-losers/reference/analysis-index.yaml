@@ -280,3 +280,25 @@
   file: docs/analyses/an-024-unified-mechanism.md
   script: scripts/35_unified_mechanism.R
   target: output/unified_mechanism/unified_mechanism.csv
+
+- id: an-025
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: How does cobidder AUC vary as the FL cutoff sweeps from FL2 through FL100, and is FL14 picking up an arbitrary plateau or a peak?
+  confidence: green
+  tags: ["H:cobidder-concentration", robustness, cutoff-sweep, sensitivity]
+  file: docs/analyses/an-025-cutoff-sweep-robustness.md
+  script: scripts/22_continuous_vs_binary.R
+  target: output/continuous_vs_binary/auc_threshold_sweep.csv
+
+- id: an-026
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: Does the cobidder concentration result survive across always-loser sub-populations defined by bid-microdata availability?
+  confidence: green
+  tags: ["H:cobidder-concentration", "H:award-bid-complementarity", robustness, subsample, sensitivity]
+  file: docs/analyses/an-026-subsample-robustness.md
+  script: scripts/26_auc_by_subsample.R
+  target: output/auc_by_subsample/auc_subsample.csv
