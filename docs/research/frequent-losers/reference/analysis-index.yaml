@@ -346,3 +346,25 @@
   file: docs/analyses/an-030-market-persistence.md
   script: scripts/24_market_persistence.R
   target: output/market_persistence/persistence_summary.csv
+
+- id: an-031
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Do cobidders display bid-level behavior distinct from non-cobidder FLs, independent of participation volume?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", bid-level, behavior, gap-to-winner, dispersion]
+  file: docs/analyses/an-031-bid-level-behavioral-profile.md
+  script: scripts/60_theory_validation_bridge.R
+  target: output/theory_bridge/standardized_diffs_bidlevel.csv
+
+- id: an-032
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: robustness
+  question: Does the quadrant-level heterogeneity (HHI × pairs) of the cobidder profile survive propensity-score matching, or is it a volume-confound artifact?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", matching, heterogeneity, quadrants, robustness, against]
+  file: docs/analyses/an-032-matched-heterogeneity-audit.md
+  script: scripts/32_matched_heterogeneity.R
+  target: output/matched_heterogeneity/matched_het_results.csv

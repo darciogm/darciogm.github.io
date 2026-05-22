@@ -18,13 +18,36 @@ buyer-portfolio breadth, product-portfolio concentration, proximity to
 legal cartel anchors, and bid-level behavior consistent with credible
 losing roles.
 
-> **Evidence strength: Mixed.**
-> Within-stratum profile shows Cohen's d 0.3–1.0 for tenders, unique
-> winners, and HHI: cobidders bid in 136.5 tenders vs 76.7 for non-
-> cobidder FLs; HHI 0.380 vs 0.288. The temporal "first-time-FL" margin
-> does NOT survive PS matching (+0.062, p = 0.312), demoted to appendix.
-> Cross-sectional profile supports the claim; the temporal channel does
-> not.
+> **Evidence strength: Partial (strongly supported).**
+> Descriptive distinctness is robust across many dimensions; causal /
+> mechanistic distinctness is largely a volume effect with one
+> bid-level residual. Six lines of evidence:
+> (i) **Participation profile** ([AN-008](../analyses/an-008-pbu-characterization.md)):
+> Cohen's d +0.67 tenders, +1.00 unique winners, +0.46 CADE-facing,
+> −0.32 n item groups, vs non-cobidder FLs.
+> (ii) **Network / HHI** ([AN-009](../analyses/an-009-network-hhi.md)):
+> cobidder portfolio HHI 0.380 vs 0.288 (d = +0.39); FL-bidder-present
+> markets have lower winner-side HHI (0.178 vs 0.303) — cobidders sit
+> in contestable winner environments.
+> (iii) **Standardized-diff battery** ([AN-028](../analyses/an-028-exposure-stratum-balance.md)):
+> 7 dimensions, d 0.19–1.00, all Wilcoxon p < 10⁻⁵ given N = 191.
+> (iv) **Bid-level behavior** ([AN-031](../analyses/an-031-bid-level-behavioral-profile.md)):
+> cobidder median gap-to-winner 0.582 vs 0.809 for non-cobidder FLs
+> (d = −0.28, p < 10⁻⁶); SD of gap +0.15. Distinctness at the bid
+> level, not just participation.
+> (v) **Unified mechanism quadrants** ([AN-024](../analyses/an-024-unified-mechanism.md)):
+> descriptive cell heterogeneity, with the Low-Low cell carrying the
+> mass.
+> (vi) **Matched-heterogeneity audit** ([AN-032](../analyses/an-032-matched-heterogeneity-audit.md)):
+> the quadrant heterogeneity LARGELY DOES NOT SURVIVE PS matching —
+> Low-HHI × Low-pairs cell drops from +0.090 (p = 0.048) unmatched to
+> +0.066 (p = 0.227) matched. Reported as the negative finding that
+> defines the causal-mechanistic limit.
+> First-time-FL channel ([AN-021](../analyses/an-021-first-time-fl-matching.md))
+> demoted to appendix (+0.10 unconditional → +0.062 PS-matched, p = 0.312).
+> Promotion to 🟢 (**Confirmed**) requires both non-BEC replication AND
+> a clean causal identification of the within-FL distinctness — see the
+> H5 page section on why neither is satisfied by current evidence.
 
 ## Theory
 
@@ -82,9 +105,48 @@ patterns from forensic proof.
 | [AN-008](../analyses/an-008-pbu-characterization.md) (FL characterization) | Direct | done | Cohen's d +0.67 tenders, +1.00 unique winners |
 | [AN-009](../analyses/an-009-network-hhi.md) (network proximity + HHI) | Direct | done | Cobidder HHI 0.380 vs 0.288 (d = +0.39); FL-winner HHI 0.178 vs 0.303 |
 | [AN-024](../analyses/an-024-unified-mechanism.md) (unified mechanism) | Supports | done | Profile descriptive — drop "assinatura de cartel" framing |
+| [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL standardized diffs) | Direct | done | 7 dimensions, Cohen's d 0.19–1.00 vs FL_non_cobidder; all Wilcoxon p < 10⁻⁵ |
+| [AN-031](../analyses/an-031-bid-level-behavioral-profile.md) (bid-level behavior) | Direct | done | Cobidder median gap-to-winner 0.582 vs FL 0.809 (d = −0.28, p < 10⁻⁶); bid-level signal beyond volume |
 | [AN-021](../analyses/an-021-first-time-fl-matching.md) (first-time FL — demoted) | Against | done | +0.062 (p = 0.312) under PS matching; demoted to appendix |
+| [AN-032](../analyses/an-032-matched-heterogeneity-audit.md) (matched-heterogeneity audit) | Against | done | Quadrant heterogeneity attenuates under matching: Low-Low loses significance (p 0.048 → 0.227) |
 
 ## Open tests
 
 - Robustness to alternative cobidder definitions.
 - Heterogeneity within FL stratum by sub-period.
+- Bid-level moments under volume-matched specification — does the
+  d = −0.28 median-gap signal of [AN-031](../analyses/an-031-bid-level-behavioral-profile.md)
+  survive PS matching on `tenders_count`? This is the strongest
+  remaining within-data audit for the *causal* distinctness claim.
+
+## Why not 🟢 Confirmed?
+
+H5 has a different boundary than H1, H3, H4 because the descriptive
+distinctness is genuinely a within-FL volume effect for most channels.
+Three obstacles to Confirmed:
+
+1. **Volume-confound at the firm level**. The quadrant heterogeneity
+   ([AN-032](../analyses/an-032-matched-heterogeneity-audit.md))
+   attenuates by 26–35% under PS matching on `tenders_count`. The
+   first-time-FL channel ([AN-021](../analyses/an-021-first-time-fl-matching.md))
+   loses significance entirely. Within-FL distinctness IS largely a
+   volume effect — and that is honestly reported.
+
+2. **Single behavioral residual**. What survives matching is the
+   bid-level conduct ([AN-031](../analyses/an-031-bid-level-behavioral-profile.md)):
+   median gap-to-winner d = −0.28. This is one channel; would need
+   independent confirmation from another behavioral dimension (e.g.,
+   timing of bid submission, inter-bid intervals, distance from
+   reference price) before claiming bid-conduct distinctness is
+   robust.
+
+3. **No non-BEC replication**. Same boundary as H1, H3, H4 — without
+   replicating on a non-BEC procurement panel, the bid-level signature
+   could reflect a feature of the BEC mechanism rather than
+   loser-role behavior in general.
+
+Until both the within-data causal identification and the cross-data
+replication exist, H5 stays at **Partial (strongly supported)**:
+descriptive distinctness is robust; causal-mechanistic distinctness
+is contingent on a single bid-level residual and one negative finding
+(matched heterogeneity).
