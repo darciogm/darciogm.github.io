@@ -43,7 +43,15 @@ replication on a non-BEC procurement panel.
   [AN-001](../analyses/an-001-zero-win-rank.md) (rank construction),
   [AN-011](../analyses/an-011-horse-race-continuous.md) (continuous vs
   binary), [AN-012](../analyses/an-012-operational-metrics.md)
-  (operational metrics).
+  (operational metrics),
+  [AN-025](../analyses/an-025-cutoff-sweep-robustness.md) (cutoff
+  sweep, 19-threshold inverted-U),
+  [AN-026](../analyses/an-026-subsample-robustness.md) (subsample
+  AUC band 0.89-0.96),
+  [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)
+  (universe × class scope matrix),
+  [AN-029](../analyses/an-029-three-classifier-timing-battery.md)
+  (three-classifier × out-of-time targets).
 - *Cross-refs*:
   [H:cobidder-concentration](../hypotheses/cobidder-concentration.md);
   [docs/results.md](../results.md).

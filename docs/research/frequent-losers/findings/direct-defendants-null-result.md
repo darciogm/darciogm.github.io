@@ -38,7 +38,10 @@ load-bearing for the framing of the paper and survives every audit in
 - *Own analysis*:
   [AN-007](../analyses/an-007-auc-direct-cade.md) (direct-defendant AUC),
   [AN-018](../analyses/an-018-gate-d4.md) (D4 gate — CADE winner-heavy),
-  [AN-014](../analyses/an-014-leakage-audit-d3.md) (null in audit regimes).
+  [AN-014](../analyses/an-014-leakage-audit-d3.md) (null in audit regimes),
+  [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (scope
+  matrix; **row 4: participation count vs direct CADE = 0.383, below
+  random — score actively repels winner-heavy defendants**).
 - *Cross-refs*:
   [H:direct-defendants-null](../hypotheses/direct-defendants-null.md);
   [docs/results.md](../results.md).

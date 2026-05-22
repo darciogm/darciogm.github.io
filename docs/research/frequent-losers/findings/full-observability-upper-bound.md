@@ -46,8 +46,14 @@ available adjudication target.
   [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof
   benchmark + joint),
   [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race
-  continuous), [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized
-  same-sample).
+  continuous),
+  [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized same-sample),
+  [AN-033](../analyses/an-033-imhof-incremental-delong.md) (formal
+  DeLong incremental: Imhof + FL Δ = +0.096, p = 1.2 × 10⁻²⁶; FL
+  marginal beyond TC = +0.003),
+  [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)
+  (sequential envelope demonstrates complementarity at operational
+  level).
 - *Cross-refs*:
   [H:award-bid-complementarity](../hypotheses/award-bid-complementarity.md);
   [docs/results.md](../results.md).

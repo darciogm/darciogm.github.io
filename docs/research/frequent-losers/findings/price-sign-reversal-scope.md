@@ -65,7 +65,12 @@ framed as secondary to the triage and cobidder-concentration results.
   [AN-016](../analyses/an-016-gate-d2.md) (modal AUC asymmetry),
   [AN-022](../analyses/an-022-falsification-pregao.md) (modal
   falsification),
-  [AN-015](../analyses/an-015-gate-d1.md) (joint-spec sign flip).
+  [AN-015](../analyses/an-015-gate-d1.md) (joint-spec sign flip),
+  [AN-037](../analyses/an-037-sign-reversal-decomposition.md) (headline
+  three-spec progression +0.064 → −0.097, p = 1.7 × 10⁻¹⁰; within-
+  overlap subgroup negative in 14/15 cells),
+  [AN-038](../analyses/an-038-negative-cell-segment-audit.md) (item-
+  group segment betas; group 37 −0.126 stays negative across specs).
 - *Cross-refs*:
   [H:price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md);
   [docs/extensions.md](../extensions.md).

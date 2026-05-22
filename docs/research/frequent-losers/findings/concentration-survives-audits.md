@@ -41,12 +41,21 @@ choices and the BEC panel is the only labeled environment.
 **Sources.**
 
 - *Own analysis*:
-  [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo),
+  [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL
+  placebo, formal p < 1/2,000 / 32 σ above null),
   [AN-006](../analyses/an-006-strict-prospective-holdout.md) (timing
   discipline),
   [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k
   temporal holdout),
-  [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3).
+  [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3),
+  [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md)
+  (universe scope matrix),
+  [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL
+  standardized-diff battery, 7 dimensions),
+  [AN-029](../analyses/an-029-three-classifier-timing-battery.md)
+  (three-classifier × cobid_post2019 truly-OOT target),
+  [AN-030](../analyses/an-030-market-persistence.md) (8.7% firm
+  persistence — temporal holdout is fresh population).
 - *Cross-refs*:
   [H:exposure-discipline](../hypotheses/exposure-discipline.md);
   [H:timing-discipline](../hypotheses/timing-discipline.md);

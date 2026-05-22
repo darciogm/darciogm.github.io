@@ -47,7 +47,14 @@ margins that did not survive PS discipline.
   [AN-021](../analyses/an-021-first-time-fl-matching.md) (first-time
   channel — demoted),
   [AN-024](../analyses/an-024-unified-mechanism.md) (unified mechanism
-  quadrants).
+  quadrants),
+  [AN-028](../analyses/an-028-exposure-stratum-balance.md)
+  (standardized-diff battery, 7 dimensions × 3 comparisons),
+  [AN-031](../analyses/an-031-bid-level-behavioral-profile.md) (bid-
+  level gap-to-winner d = -0.28 — behavioral distinctness beyond
+  participation),
+  [AN-032](../analyses/an-032-matched-heterogeneity-audit.md) (matched
+  quadrant heterogeneity audit — honest negative finding).
 - *Cross-refs*:
   [H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md);
   [docs/results.md](../results.md).

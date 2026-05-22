@@ -44,7 +44,14 @@ procurement panel.
   [AN-013](../analyses/an-013-precision-at-k-audit.md) (temporal-
   holdout audit),
   [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit
-  — defensible verdict).
+  — defensible verdict),
+  [AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)
+  (sequential envelope — 74% joint recall at 17% microdata),
+  [AN-035](../analyses/an-035-architecture-cost-of-evidence-matrix.md)
+  (full architecture × k × regime matrix — sequential K=2,000 beats
+  joint in temporal holdout),
+  [AN-036](../analyses/an-036-cv-precision-stability.md) (K-fold CV
+  precision SD ≤ 0.011).
 - *Cross-refs*:
   [H:gatekeeping-cost-of-evidence](../hypotheses/gatekeeping-cost-of-evidence.md);
   [docs/results.md](../results.md).
