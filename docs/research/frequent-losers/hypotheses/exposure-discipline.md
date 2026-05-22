@@ -4,7 +4,7 @@ slug: exposure-discipline
 title: "Cobidder concentration survives exposure-disciplined placebos"
 cluster: B
 paper_section: "§4.2"
-status: pending
+status: partial
 last_updated: 2026-05-22
 ---
 
@@ -17,10 +17,11 @@ hypothesis is that the FL ranking still concentrates cobidders after the
 exposure margin is disciplined away by participation-volume placebos and
 audits within tighter opportunity sets.
 
-> **Evidence strength: Pending.**
-> Backed by §4.2 of the [manuscript](../paper.md) ("Exposure and Timing
-> Discipline") and Appendix [Validation Audits](../paper.md). AN pages to
-> follow.
+> **Evidence strength: Moderate (single-source).**
+> Sham FL permutation AUC band 0.713–0.783 is substantially below the
+> observed 0.924. Leakage audit drops AUC from raw 0.995 → OOF 0.891 →
+> temporal 0.864 (attenuation 0.10–0.13). Concentration survives but
+> with documented audit costs.
 
 ## Theory
 
@@ -72,10 +73,11 @@ participation distortions.
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL permutation) | Direct | pending |
-| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo) | Direct | done | Permutation AUC 0.713–0.783 vs observed 0.924 |
+| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Direct | done | Raw 0.995 → OOF 0.891 → temporal 0.864; attenuation 0.10–0.13 |
+| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (exposure + timing) | Supports | done | Strict ex ante firm AUC 0.767 [0.734, 0.800] |
 
 ## Open tests
 

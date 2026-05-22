@@ -4,7 +4,7 @@ slug: cobidder-concentration
 title: "The frequent-loser ranking concentrates CADE-adjacent cobidders"
 cluster: A
 paper_section: "§3 + §4"
-status: pending
+status: partial
 last_updated: 2026-05-22
 ---
 
@@ -17,9 +17,11 @@ stratum identified by persistent zero-win participation. The hypothesis is
 about *loser-side adjacency*, not about cartel membership: the ranking
 should concentrate cobidders, not direct defendants.
 
-> **Evidence strength: Pending.**
-> Backed by §3 (construction) and §4.1 (baseline benchmarks) of the
-> [manuscript](../paper.md). AN pages to follow.
+> **Evidence strength: Strong (single-source).**
+> FL14 AUC 0.924 [0.921, 0.926] against 193 adjudicated cobidders;
+> continuous log_tc AUC 0.939 [0.932, 0.946] dominates the binary
+> (DeLong p = 2 × 10⁻⁵). 131 of 193 cobidders recovered at FL14 cutoff.
+> Promotion to 🟢 awaits replication on a non-BEC procurement panel.
 
 ## Theory
 
@@ -73,11 +75,13 @@ to CADE-adjudicated environments in São Paulo.
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-001](../analyses/an-001-zero-win-rank.md) (construction) | Setup | pending |
-| [AN-004](../analyses/an-004-cobidder-baseline.md) (baseline concentration) | Direct | pending |
-| [AN-011](../analyses/an-011-horse-race-continuous.md) (continuous vs binary) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-001](../analyses/an-001-zero-win-rank.md) (construction) | Setup | done | 16,843 always-losers; FL14 cutoff = 14 (median+1.5×IQR=13.5); 2,735 FL firms (16.2%) |
+| [AN-004](../analyses/an-004-cobidder-baseline.md) (baseline concentration) | Supports | done | FL14 AUC 0.924; continuous 0.939 |
+| [AN-011](../analyses/an-011-horse-race-continuous.md) (continuous vs binary) | Supports | done | Continuous dominates FL14, DeLong p = 2e-5 |
+| [AN-017](../analyses/an-017-gate-d3.md) (continuous-only thesis) | Supports | done | Thesis holds without FL14 |
+| [AN-023](../analyses/an-023-theory-operationalization-audit.md) (operationalization audit) | Supports | done | FL14 not ontologically privileged; continuous is the primitive |
 
 ## Open tests
 

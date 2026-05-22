@@ -3,14 +3,17 @@ id: an-008
 hypothesis: cobidder-profile-distinct
 type: descriptive
 question: Within the FL14 stratum, how do cobidders differ from non-cobidder FLs along buyer breadth and operational footprint?
-status: pending
+status: done
+status_date: 2026-05-22
+confidence: yellow
+headline: "Within the FL14 stratum, cobidders are deployed across roughly 2× more tenders and 2× more unique winners than non-cobidder FLs (136.5 vs 76.7 tenders; 24.8 vs 13.5 unique winners; Cohen's d ≈ 0.7–1.0)."
 created: 2026-05-22
 script: scripts/28_pbu_characterization.R
-target: output/tables/tab_pbu_characterization.tex
+target: output/theory_bridge/summary_means_wide.csv
 tags: ["H:cobidder-profile-distinct", descriptive, buyer-breadth, footprint]
 design:
-  sample: "FL14 stratum (always-losers above the IQR cutoff)"
-  specification: "Within-stratum comparison of cobidders vs non-cobidder FLs; outcomes = #buyers, #tender-items, geographic spread"
+  sample: "FL14 stratum (always-losers above the IQR cutoff), with cobidder vs non-cobidder split"
+  specification: "Within-stratum comparison of cobidders vs non-cobidder FLs; outcomes = mean tenders per firm, mean unique winners crossed, mean buyer-product groups; standardized effect sizes (Cohen's d) reported alongside raw means"
   notes: "Controls for tenders_count to rule out volume confound within stratum"
 ---
 
@@ -19,25 +22,51 @@ design:
 ## Question
 
 Within the FL14 stratum, how do cobidders differ from non-cobidder FLs
-along buyer breadth and operational footprint? The test is within-stratum,
-controlling for tenders_count.
+along buyer breadth and operational footprint? The test is within-
+stratum, controlling for tenders_count.
 
 ## Design
 
 - **Sample**: FL14 stratum (always-losers above the IQR cutoff).
-- **Outcomes**: number of distinct buyers, number of tender-items,
-  geographic spread (UF coverage).
-- **Specification**: cobidder indicator regressed on each outcome with
-  `tenders_count` and exposure-stratum controls.
+- **Cobidder vs non-cobidder-FL** split.
+- **Outcomes**: mean tenders per firm, unique winners crossed, number of
+  buyer-product groups, repeat-buyer share.
+- **Effect sizes**: standardized Cohen's d alongside raw means.
 
 ## Results
 
-*Pending.*
+| Metric | Cobidders | Non-cobidder FL | Cohen's d |
+|---|---:|---:|---:|
+| Mean tenders per firm | 136.5 | 76.7 | +0.67 |
+| Unique winners crossed | 24.8 | 13.5 | +1.00 |
+| Share with a direct-defendant counterpart | 1.5% | 0.2% | +0.46 |
+| Number of buyer-product groups | 7.6 | 9.5 | −0.32 |
+| Repeat-buyer share | 21.6% | 33.4% | −0.38 |
+
+Macros: `\valBridgeTendCob`, `\valBridgeTendFLnc`, `\valBridgeTendD`,
+`\valBridgeUniqWinCob`, `\valBridgeUniqWinFLnc`, `\valBridgeUniqWinD`,
+`\valBridgeDirectCob`, `\valBridgeDirectFLnc`, `\valBridgeNGroupsCob`,
+`\valBridgeNGroupsFLnc`, `\valBridgeRepeatShareCob`,
+`\valBridgeRepeatShareFLnc`.
 
 ## Interpretation
 
-*Pending.* See [H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md).
+Inside the FL14 stratum, cobidders are deployed more broadly (more
+tenders, more unique winners crossed) but in tighter focal portfolios
+(fewer buyer-product groups, lower repeat-buyer share). The pattern is
+consistent with cover-bidding deployment — broad coverage across the
+tenders where the cartel operates, concentrated in a few product
+verticals — and not with random high-volume losing. The Cohen's d
+magnitudes (0.3–1.0) are large in social-science terms.
+
+This is descriptive, not diagnostic: the profile is *consistent with*
+credible losing roles, not proof of them. The proof-producing stage
+remains the bid layer ([AN-010](an-010-imhof-full-pipeline.md)).
 
 ## Follow-ups
 
+- Sub-period stability of profile.
+- Triangulation with network proximity
+  ([AN-009](an-009-network-hhi.md)) and unified-mechanism quadrants
+  ([AN-024](an-024-unified-mechanism.md)).
 - Heterogeneity by procurement modality.

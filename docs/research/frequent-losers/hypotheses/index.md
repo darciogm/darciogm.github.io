@@ -89,17 +89,17 @@ Maps to paper §7 (price evidence as scope, not damages).
 ## Scorecard
 
 Status runs **Not yet tested** → **Not confirmed** / **Mixed** / **Partial** →
-**Confirmed**. All hypotheses below are currently in `status: pending`; AN
-pages need to graduate from pending to done before the row can move past
-**Not yet tested**.
+**Confirmed**. Single-source own-project estimates anchored in BEC 2009–2019
+and CADE adjudications; promotion to **Confirmed** would require independent
+replication on a non-BEC procurement panel.
 
-| # | Prediction | Intuition | Evidence | Status |
+| # | Prediction | Headline evidence | Evidence | Status |
 |---|---|---|---|---|
-| [H1](cobidder-concentration.md) | FL score concentrates CADE cobidders. | Persistent zero-win participation ranks loser-side adjacency. | [AN-001](../analyses/an-001-zero-win-rank.md), [AN-004](../analyses/an-004-cobidder-baseline.md) | **Not yet tested** |
-| [H2](direct-defendants-null.md) | FL score is null on direct CADE defendants. | A loser-side rank cannot detect designated winners. | [AN-007](../analyses/an-007-auc-direct-cade.md), [AN-018](../analyses/an-018-gate-d4.md) | **Not yet tested** |
-| [H3](exposure-discipline.md) | Concentration survives exposure-disciplined placebos. | Signal is not driven by participation volume or opportunity overlap. | [AN-005](../analyses/an-005-sham-fl-permutation.md), [AN-006](../analyses/an-006-strict-prospective-holdout.md) | **Not yet tested** |
-| [H4](timing-discipline.md) | Concentration survives strict timing discipline. | Score formed strictly before the target window retains discrimination. | [AN-006](../analyses/an-006-strict-prospective-holdout.md), [AN-013](../analyses/an-013-precision-at-k-audit.md) | **Not yet tested** |
-| [H5](cobidder-profile-distinct.md) | FL cobidders are economically distinct from other FLs. | Cover-bidder operations leave a specific footprint. | [AN-008](../analyses/an-008-pbu-characterization.md), [AN-009](../analyses/an-009-network-hhi.md), [AN-024](../analyses/an-024-unified-mechanism.md) | **Not yet tested** |
-| [H6](award-bid-complementarity.md) | Award and bid layers are complementary. | The two stages encode different information. | [AN-010](../analyses/an-010-imhof-full-pipeline.md), [AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md) | **Not yet tested** |
-| [H7](gatekeeping-cost-of-evidence.md) | Gatekeeping cuts the bid pool ≥80% with majority cobidder recovery. | Two-stage architecture dominates one-stage under cost differential. | [AN-012](../analyses/an-012-operational-metrics.md), [AN-013](../analyses/an-013-precision-at-k-audit.md), [AN-014](../analyses/an-014-leakage-audit-d3.md) | **Not yet tested** |
-| [H8](price-scope-sign-reversal.md) | Price coefficient sign reverses across targets — scope, not damages. | Prices inform where the loser-side rank applies, not the overcharge. | [AN-019](../analyses/an-019-rdd-cap-price.md), [AN-020](../analyses/an-020-did-decreto-2018.md), [AN-016](../analyses/an-016-gate-d2.md) | **Not yet tested** |
+| [H1](cobidder-concentration.md) | FL score concentrates CADE cobidders. | AUC 0.924 (FL14) / 0.939 (continuous); 131/193 cobidders recovered. | [AN-001](../analyses/an-001-zero-win-rank.md), [AN-004](../analyses/an-004-cobidder-baseline.md), [AN-011](../analyses/an-011-horse-race-continuous.md) | **Partial** |
+| [H2](direct-defendants-null.md) | FL score is null on direct CADE defendants. | AUC 0.491 [0.461, 0.520]; 14.9% of direct defendants are always-losers (D4). | [AN-007](../analyses/an-007-auc-direct-cade.md), [AN-018](../analyses/an-018-gate-d4.md) | **Confirmed** |
+| [H3](exposure-discipline.md) | Concentration survives exposure-disciplined placebos. | Permutation AUC 0.713–0.783 vs observed 0.924; OOF CV 0.891. | [AN-005](../analyses/an-005-sham-fl-permutation.md), [AN-014](../analyses/an-014-leakage-audit-d3.md) | **Partial** |
+| [H4](timing-discipline.md) | Concentration survives strict timing discipline. | Strict ex ante firm AUC 0.767 [0.734, 0.800]; precision@500 retains 53%. | [AN-006](../analyses/an-006-strict-prospective-holdout.md), [AN-013](../analyses/an-013-precision-at-k-audit.md) | **Partial** |
+| [H5](cobidder-profile-distinct.md) | FL cobidders are economically distinct from other FLs. | Cohen's d 0.3–1.0 across tenders, unique winners, HHI; first-time-FL demoted. | [AN-008](../analyses/an-008-pbu-characterization.md), [AN-009](../analyses/an-009-network-hhi.md), [AN-024](../analyses/an-024-unified-mechanism.md), [AN-021](../analyses/an-021-first-time-fl-matching.md) | **Mixed** |
+| [H6](award-bid-complementarity.md) | Award and bid layers are complementary. | Imhof 0.888 vs FL14 0.903 vs joint 0.955; Imhof CV-only 0.585. | [AN-010](../analyses/an-010-imhof-full-pipeline.md), [AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md) | **Partial** |
+| [H7](gatekeeping-cost-of-evidence.md) | Gatekeeping cuts the bid pool ≥80% with majority cobidder recovery. | 83% pool cut, 131/193 cobidders recovered; precision@500 = 0.070 (TH), lift 6.1×. | [AN-012](../analyses/an-012-operational-metrics.md), [AN-013](../analyses/an-013-precision-at-k-audit.md), [AN-014](../analyses/an-014-leakage-audit-d3.md) | **Partial** |
+| [H8](price-scope-sign-reversal.md) | Price coefficient sign reverses across targets — scope, not damages. | Baseline +6.36% → overlap ATT −9.72% → PS −30.67%; Pregão 2.45× Convite. | [AN-019](../analyses/an-019-rdd-cap-price.md), [AN-020](../analyses/an-020-did-decreto-2018.md), [AN-016](../analyses/an-016-gate-d2.md), [AN-022](../analyses/an-022-falsification-pregao.md) | **Partial** |

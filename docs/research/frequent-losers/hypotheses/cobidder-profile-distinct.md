@@ -4,7 +4,7 @@ slug: cobidder-profile-distinct
 title: "FL cobidders are economically distinct from other frequent losers"
 cluster: C
 paper_section: "§5"
-status: pending
+status: mixed
 last_updated: 2026-05-22
 ---
 
@@ -17,9 +17,13 @@ buyer-portfolio breadth, product-portfolio concentration, proximity to
 legal cartel anchors, and bid-level behavior consistent with credible
 losing roles.
 
-> **Evidence strength: Pending.**
-> Backed by §5 of the [manuscript](../paper.md) ("The Economic Profile of
-> Cartel-Adjacent Losers"). AN pages to follow.
+> **Evidence strength: Mixed.**
+> Within-stratum profile shows Cohen's d 0.3–1.0 for tenders, unique
+> winners, and HHI: cobidders bid in 136.5 tenders vs 76.7 for non-
+> cobidder FLs; HHI 0.380 vs 0.288. The temporal "first-time-FL" margin
+> does NOT survive PS matching (+0.062, p = 0.312), demoted to appendix.
+> Cross-sectional profile supports the claim; the temporal channel does
+> not.
 
 ## Theory
 
@@ -72,11 +76,12 @@ patterns from forensic proof.
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-008](../analyses/an-008-pbu-characterization.md) (FL characterization) | Direct | pending |
-| [AN-009](../analyses/an-009-network-hhi.md) (network proximity + HHI) | Direct | pending |
-| [AN-024](../analyses/an-024-unified-mechanism.md) (unified mechanism profile) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-008](../analyses/an-008-pbu-characterization.md) (FL characterization) | Direct | done | Cohen's d +0.67 tenders, +1.00 unique winners |
+| [AN-009](../analyses/an-009-network-hhi.md) (network proximity + HHI) | Direct | done | Cobidder HHI 0.380 vs 0.288 (d = +0.39); FL-winner HHI 0.178 vs 0.303 |
+| [AN-024](../analyses/an-024-unified-mechanism.md) (unified mechanism) | Supports | done | Profile descriptive — drop "assinatura de cartel" framing |
+| [AN-021](../analyses/an-021-first-time-fl-matching.md) (first-time FL — demoted) | Against | done | +0.062 (p = 0.312) under PS matching; demoted to appendix |
 
 ## Open tests
 

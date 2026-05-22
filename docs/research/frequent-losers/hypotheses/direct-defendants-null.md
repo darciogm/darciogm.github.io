@@ -4,7 +4,7 @@ slug: direct-defendants-null
 title: "The frequent-loser ranking does not discriminate direct CADE defendants"
 cluster: A
 paper_section: "§4.3"
-status: pending
+status: confirmed
 last_updated: 2026-05-22
 ---
 
@@ -17,9 +17,13 @@ are not zero-win firms. A null AUC against direct defendants is therefore
 part of the design — it confirms that the ranking carries loser-side scope,
 not membership scope.
 
-> **Evidence strength: Pending.**
-> Backed by §4.3 of the [manuscript](../paper.md) ("Direct-Defendant Scope
-> Check"). AN page to follow.
+> **Evidence strength: Strong.**
+> AUC against 47 direct CADE defendants = 0.491 [0.461, 0.520];
+> indistinguishable from random and stable across raw, OOF, and
+> temporal-holdout regimes. D4 mechanistic check: only 14.9% (7/47) of
+> direct defendants are always-losers; median win rate 0.261 vs 0.086
+> for cobidders (Mann–Whitney p < 0.05). The null is the predicted
+> finding under the loser-side scope.
 
 ## Theory
 
@@ -67,10 +71,11 @@ A null result is the predicted finding under the loser-side scope.
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-007](../analyses/an-007-auc-direct-cade.md) (direct-defendant AUC) | Direct | pending |
-| [AN-018](../analyses/an-018-gate-d4.md) (CADE winner-heavy gate diagnostic) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-007](../analyses/an-007-auc-direct-cade.md) (direct-defendant AUC) | Direct | done | AUC = 0.491 [0.461, 0.520] — random |
+| [AN-018](../analyses/an-018-gate-d4.md) (D4 winner-heavy) | Supports | done | 14.9% of direct defendants are always-losers; median win rate 0.261 |
+| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit) | Supports | done | Direct-defendant AUC stays at 0.51 across raw/OOF/temporal — null is regime-invariant |
 
 ## Open tests
 

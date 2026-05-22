@@ -4,7 +4,7 @@ slug: award-bid-complementarity
 title: "Award-layer and bid-layer information are complementary"
 cluster: D
 paper_section: "§6.1 + §6.2"
-status: pending
+status: partial
 last_updated: 2026-05-22
 ---
 
@@ -16,8 +16,12 @@ adjudication-anchored target — not because awards dominate bids, but
 because the two layers operate at different evidentiary stages. A joint
 classifier should outperform each layer individually.
 
-> **Evidence strength: Pending.**
-> Backed by §6.1–§6.2 of the [manuscript](../paper.md). AN pages to follow.
+> **Evidence strength: Strong (single-source).**
+> Imhof full pipeline AUC 0.888 [0.865, 0.911]; FL14 alone 0.903 [0.884,
+> 0.923]; joint 0.955 [0.943, 0.967]. Gap is *complementarity*: each
+> layer contributes ~0.05–0.07 over the other alone. Imhof CV-only is
+> chance-level (0.585) — the pipeline needs award-side features to
+> reach its headline AUC.
 
 ## Theory
 
@@ -73,11 +77,11 @@ therefore supports — but does not require — the gatekeeping deployment of
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | pending |
-| [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race) | Direct | pending |
-| [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | done | Imhof 0.888 vs FL14 0.903 vs joint 0.955 |
+| [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race) | Direct | done | Continuous dominates binary, DeLong p = 2e-5 |
+| [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized) | Supports | done | D1 passes; price coefficients align in single-score specs |
 
 ## Open tests
 

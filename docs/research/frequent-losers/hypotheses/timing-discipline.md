@@ -4,7 +4,7 @@ slug: timing-discipline
 title: "Cobidder concentration survives timing discipline"
 cluster: B
 paper_section: "§4.2"
-status: pending
+status: partial
 last_updated: 2026-05-22
 ---
 
@@ -15,8 +15,13 @@ power. The hypothesis is that the FL ranking still concentrates cobidders
 when the score is formed strictly before the target window — including
 strict ex ante definitions that exclude any in-target information.
 
-> **Evidence strength: Pending.**
-> Backed by §4.2 of the [manuscript](../paper.md). AN pages to follow.
+> **Evidence strength: Moderate.**
+> Strict ex ante (train 2009–2016 → test 2017–2019) firm-level AUC
+> 0.767 [0.734, 0.800] (FL14) and 0.750 [0.706, 0.795] (continuous).
+> Precision@500 retains 53% under temporal holdout (0.070 vs 0.132
+> in-sample); lift 6.1× vs 11.5×. ~47% of in-sample top-500 is
+> retrospective; the operational claim uses the temporal-holdout
+> column.
 
 ## Theory
 
@@ -64,10 +69,11 @@ deployment scenario.
 
 ## Evidence
 
-| Analysis | Bearing | Status |
-|---|---|---|
-| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (timing holdout) | Direct | pending |
-| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k temporal holdout) | Supports | pending |
+| Analysis | Bearing | Status | Key takeaway |
+|---|---|---|---|
+| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (timing holdout) | Direct | done | Firm AUC 0.767 (FL14) / 0.750 (continuous) |
+| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k audit) | Direct | done | Precision retention 53%; lift retention 53%; ~47% inflation share |
+| [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit) | Supports | done | Temporal-holdout firm AUC 0.864 [0.858, 0.870] |
 
 ## Open tests
 
