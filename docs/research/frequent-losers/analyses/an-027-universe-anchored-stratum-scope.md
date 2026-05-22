@@ -20,6 +20,9 @@ design:
 
 # AN-027: Universe-anchored stratum scope matrix
 
+!!! abstract "Intuition (plain-language)"
+    A systematic 8-row matrix varies the universe of firms ranked (always-losers vs all BEC firms) and the positive class (cobidders vs direct defendants). Row 4 is the strong result: raw participation count against direct CADE defendants on the full panel returns AUC 0.383 — BELOW random. The loser-side score doesn't just fail to identify winner-heavy defendants; it actively *repels* them. Structural scope discipline.
+
 ## Question
 
 How does AUC behave when the universe (the set of firms or items being

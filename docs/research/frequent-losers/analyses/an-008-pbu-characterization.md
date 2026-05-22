@@ -20,6 +20,9 @@ design:
 
 # AN-008: Cobidder buyer breadth and operational footprint
 
+!!! abstract "Intuition (plain-language)"
+    Inside the frequent-loser group, are cobidders distinguishable from other frequent losers, or do they look the same? Cobidders bid in twice as many tenders, cross twice as many unique winners, and concentrate in tighter product portfolios. The profile is what one would expect if cobidders are *deployed* against many tenders deliberately, rather than just bidding broadly by chance.
+
 ## Question
 
 Within the FL14 stratum, how do cobidders differ from non-cobidder FLs

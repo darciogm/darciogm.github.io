@@ -20,6 +20,9 @@ design:
 
 # AN-012: Operational metrics — in-sample precision@k
 
+!!! abstract "Intuition (plain-language)"
+    How well does the screen perform if a regulator uses it to draw up a ranked enforcement priority list? Out of the top 500 flagged firms, 13% are cobidders — 11× the baseline rate. The screen meaningfully concentrates investigative attention. Caveat: these are in-sample numbers and inflated; the next page disciplines them with temporal holdout.
+
 ## Question
 
 What are the in-sample precision@k and lift metrics for the FL ranking

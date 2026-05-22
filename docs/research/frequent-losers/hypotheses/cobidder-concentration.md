@@ -18,6 +18,10 @@ stratum identified by persistent zero-win participation. The hypothesis is
 about *loser-side adjacency*, not about cartel membership: the ranking
 should concentrate cobidders, not direct defendants.
 
+!!! abstract "Intuition (plain-language)"
+    Among always-loser firms in Brazilian procurement, the ones that bid most often (frequent losers) concentrate disproportionately near cartels formally adjudicated by Brazil's antitrust authority. The hypothesis is the paper's headline empirical claim. Using only award records — no expensive bid-level data — the screen recovers 131 of 193 adjudicated cobidders. The economic logic: cartels need cover bidders to manufacture the appearance of competition, and those cover bidders leave a persistent footprint of zero-win participation.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > Eight converging lines of evidence on the BEC 2009–2019 panel:
 > (i) headline AUC 0.924 [0.921, 0.926] for FL14, 0.939 [0.932, 0.946]

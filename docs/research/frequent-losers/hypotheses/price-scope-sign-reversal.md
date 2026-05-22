@@ -18,6 +18,10 @@ rather than as a damages calculation. A naive damages reading would predict
 a stable, signed effect; the scope reading predicts that the sign and
 magnitude depend on the validation target.
 
+!!! abstract "Intuition (plain-language)"
+    The presence of frequent losers in a tender is associated with higher negotiated prices on average (+6.4% — a damages-like reading that a careless reader might interpret as the size of the cartel overcharge). But once we restrict comparisons to comparable cells under matched ATT weighting, the sign FLIPS to negative (−9.7%). The hypothesis is that this sign reversal is informative and disciplining: the price evidence is *scope* information about WHERE the loser-side ranking applies, not a damages estimate. The paper deliberately treats price evidence as secondary corroboration, and the sign reversal is what justifies that disciplined reading.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > Six lines of evidence document the sign-reversal pattern that
 > defeats a naive damages reading:

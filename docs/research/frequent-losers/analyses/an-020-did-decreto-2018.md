@@ -22,6 +22,9 @@ design:
 
 # AN-020: DiD around 2018 procurement decree
 
+!!! abstract "Intuition (plain-language)"
+    In 2018 the procurement cap was raised from R$80K to R$176K. We use this policy change as a difference-in-differences experiment for the price effect. Both Callaway-Sant'Anna and stacked DiD estimators return null — no detectable shift in price-FL dynamics. Consistent with the scope-not-damages reading: a true damages parameter would interact with the cap change; the FL-margin coefficient does not.
+
 ## Question
 
 Does the 2018 procurement decree (Decreto 9.412/2018) shift price

@@ -20,6 +20,9 @@ design:
 
 # AN-014: Leakage audit (D3 diagnostic)
 
+!!! abstract "Intuition (plain-language)"
+    When the screen is built and validated on the same data, performance can be artificially inflated by structural data reuse ('leakage'). We re-estimate AUC under three increasingly strict regimes: raw item-level (0.99), out-of-fold by firm (0.89), and temporal holdout (0.86). The drop is real but bounded; the operational discriminating signal sits in the 0.86–0.89 band, well above random.
+
 ## Question
 
 How much does item-level evaluation leak relative to out-of-fold and

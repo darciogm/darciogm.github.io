@@ -20,6 +20,9 @@ design:
 
 # AN-004: Baseline cobidder concentration in FL14 stratum
 
+!!! abstract "Intuition (plain-language)"
+    Do firms flagged by the screen actually cluster around the loser side of CADE-adjudicated cartels? Yes — the screen achieves discrimination AUC 0.924 against the cobidder set (where 0.5 is random guessing and 1.0 is perfect). This is the headline baseline; the rest of the validation chain disciplines this number against placebos, leakage, and timing.
+
 ## Question
 
 Does the FL14 stratum contain a disproportionate share of CADE-

@@ -20,6 +20,9 @@ design:
 
 # AN-024: Unified mechanism profile
 
+!!! abstract "Intuition (plain-language)"
+    Where in the data does the FL-price association concentrate? A two-way grid (market concentration × cobidder-pair density) shows the LOW-LOW cell carries the largest mass. The paper's stance: this is descriptive heterogeneity, not a mechanistic cartel signature. The locked rule drops the cartel-signature framing — the pattern is *consistent with* cover bidding, not proof of it.
+
 ## Question
 
 How does the unified mechanism profile (HHI × pairs × heterogeneity

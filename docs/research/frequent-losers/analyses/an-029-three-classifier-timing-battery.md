@@ -20,6 +20,9 @@ design:
 
 # AN-029: Three-classifier timing battery — strict prospective evaluation
 
+!!! abstract "Intuition (plain-language)"
+    How does the screen perform if we make it INCREASINGLY harder to use any post-window information? We train the screen on only 2009–2015 data (or 2009–2017) and test it against cobidders linked to CADE cases adjudicated AFTER 2019 — strictly out-of-time. The screen still achieves AUC 0.79–0.89 against this disjoint target. Strong evidence of genuine prospective generalization.
+
 ## Question
 
 Does the FL screen preserve discrimination under three progressively-

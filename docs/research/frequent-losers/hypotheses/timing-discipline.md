@@ -16,6 +16,10 @@ power. The hypothesis is that the FL ranking still concentrates cobidders
 when the score is formed strictly before the target window — including
 strict ex ante definitions that exclude any in-target information.
 
+!!! abstract "Intuition (plain-language)"
+    Could the screen perform well only because we built it with hindsight, using post-period information that wouldn't be available to a regulator in real time? We test this with progressively stricter timing rules: train on 2009–2015 data only; test against cobidders linked to cartels adjudicated AFTER 2019. The screen still achieves AUC 0.79–0.89 against this strictly disjoint target. Combined with the structural fact that 91% of test-window firms are not in the training pool, the timing discipline is about as well-supported as within-data evidence allows.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > Five converging timing audits within the BEC × CADE data:
 > (i) **Three-classifier battery** ([AN-029](../analyses/an-029-three-classifier-timing-battery.md)):

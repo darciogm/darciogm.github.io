@@ -20,6 +20,9 @@ design:
 
 # AN-026: Subsample robustness (data-rich vs low/high bid counts)
 
+!!! abstract "Intuition (plain-language)"
+    Does the screen work equally well in firms that have a lot of bid microdata vs firms that have very little? AUC stays in the 0.89–0.96 band across full / data-rich / low-bid / high-bid subsamples. The screen does not depend on bid-microdata availability — important because the alternative bid-distribution screen DOES require expensive microdata to operate.
+
 ## Question
 
 Does the cobidder concentration result survive across always-loser

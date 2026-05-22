@@ -23,6 +23,9 @@ design:
 
 # AN-019: RDD price at procurement cap × FL presence
 
+!!! abstract "Intuition (plain-language)"
+    Brazilian procurement has cap thresholds that determine which tendering modality applies. We use the cap as a regression discontinuity to ask how prices and frequent-loser presence change at the threshold. The simple RDD coefficient is +4–6% (a damages-like reading); under overlap discipline it flips to −10%. The sign reversal is the load-bearing piece for the scope-not-damages interpretation of the price evidence.
+
 ## Question
 
 Does the negotiated-price coefficient at the procurement-cap threshold

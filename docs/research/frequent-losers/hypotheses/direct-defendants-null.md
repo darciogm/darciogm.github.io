@@ -18,6 +18,10 @@ are not zero-win firms. A null AUC against direct defendants is therefore
 part of the design — it confirms that the ranking carries loser-side scope,
 not membership scope.
 
+!!! abstract "Intuition (plain-language)"
+    Direct CADE defendants in procurement cartels are typically the *winners* of the rotation, not the systematic losers. A loser-side screen — built on persistent zero-win participation — cannot rank winners, and the data confirm this (AUC ≈ 0.49, indistinguishable from random). The null is the predicted finding under the loser-side scope. Far from being a failure, the null defines what the screen *claims* to do (rank cover-bidders) and what it *doesn't* claim to do (identify ringleaders). This is the anti-claim that disciplines the rest of the paper.
+
+
 > **Evidence strength: Strong.**
 > AUC against 47 direct CADE defendants = 0.491 [0.461, 0.520];
 > indistinguishable from random and stable across raw, OOF, and

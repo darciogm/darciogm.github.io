@@ -20,6 +20,9 @@ design:
 
 # AN-033: Imhof incremental — formal DeLong tests for complementarity
 
+!!! abstract "Intuition (plain-language)"
+    How much information does the award-layer screen contribute BEYOND what the bid-distribution screen already captures? A formal DeLong test (paired AUC comparison) gives ΔAUC = +0.096 with p = 1.2 × 10⁻²⁶. The two layers are statistically distinct signals. The award layer is not redundant with bid moments.
+
 ## Question
 
 How significant is the incremental value of the award-layer score added

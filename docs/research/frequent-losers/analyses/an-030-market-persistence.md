@@ -20,6 +20,9 @@ design:
 
 # AN-030: Market persistence between early (2009–2016) and late (2017–2019) panel
 
+!!! abstract "Intuition (plain-language)"
+    Are the firms in the 2017–2019 test window the same firms as in the 2009–2016 training window? Only 8.7% of firms persist. Markets (PBU × product group) persist at 12.4%. Procuring buyers persist at 83.5%. The institutional environment is stable; the firm and market populations are essentially fresh. The temporal holdout is a genuine out-of-sample test, not a same-firm reshuffle.
+
 ## Question
 
 How much do the firms, markets, and procuring buyers in 2017–2019

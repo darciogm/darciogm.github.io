@@ -20,6 +20,9 @@ design:
 
 # AN-035: Architecture × k × regime cost-of-evidence matrix
 
+!!! abstract "Intuition (plain-language)"
+    The full grid of operational architectures (award-only, bid-only, joint scoring, sequential at three Stage-1 cutoffs) × six recall levels × two evaluation regimes (in-sample, temporal holdout). The surprise: in the operationally honest temporal-holdout regime, the sequential architecture BEATS joint scoring (114 true positives vs 111) while using less than a quarter of the bid-microdata footprint.
+
 ## Question
 
 Across the full architecture × k × regime grid, what are the recall,

@@ -20,6 +20,9 @@ design:
 
 # AN-007: AUC against direct CADE defendants
 
+!!! abstract "Intuition (plain-language)"
+    The screen is built to detect *cover bidders* (the loser-side roles in a cartel), not cartel ringleaders. So testing it against the 47 direct CADE defendants should give a random result — and it does (AUC ≈ 0.49). This is not a failure: it is the empirical signature that the screen is doing what it claims (loser-side ranking) and not pretending to identify cartel masterminds.
+
 ## Question
 
 Does the FL score discriminate direct CADE defendants? Under the loser-

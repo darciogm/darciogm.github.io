@@ -20,6 +20,9 @@ design:
 
 # AN-037: Sign-reversal decomposition — headline specs + within-overlap subgroups
 
+!!! abstract "Intuition (plain-language)"
+    The price coefficient on frequent-loser presence is +0.064 in the naive baseline but flips to −0.097 once we restrict comparisons to cells where both treated and control items exist and reweight toward those cells. The reversal is not a sample-selection artifact (less than 1% of items are dropped). It is a *weighting* result. This is the central evidence for the scope-not-damages reading of price evidence: a true damages parameter wouldn't flip sign under reweighting.
+
 ## Question
 
 How does the FL-margin price coefficient transform across baseline →

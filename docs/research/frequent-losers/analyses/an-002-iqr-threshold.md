@@ -20,6 +20,9 @@ design:
 
 # AN-002: IQR threshold and FL14 cutoff stability
 
+!!! abstract "Intuition (plain-language)"
+    How does one decide where "a few losses" ends and "frequent loser" begins? The paper uses a textbook quantile rule (median + 1.5 × IQR) rather than picking a number arbitrarily. This page asks: would the result change if we'd picked a different reasonable cutoff? It wouldn't — the signal sits on a wide plateau, not at a fragile peak. The choice is auditable, not cherry-picked.
+
 ## Question
 
 How does the cobidder AUC change as the IQR threshold is varied, and is

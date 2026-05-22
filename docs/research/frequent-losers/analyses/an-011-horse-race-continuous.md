@@ -20,6 +20,9 @@ design:
 
 # AN-011: Horse race — continuous vs binary FL
 
+!!! abstract "Intuition (plain-language)"
+    The screen has a binary version (a firm is flagged if its bid count exceeds the cutoff) and a continuous version (log of bid count). The continuous version statistically dominates. The paper's interpretation: the continuous score is the empirical primitive; the binary cutoff is the simpler, deployable rule a regulator would actually use in the field.
+
 ## Question
 
 Does the continuous `log(1 + tenders_count)` dominate the binary `FL14`

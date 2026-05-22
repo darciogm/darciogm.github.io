@@ -20,6 +20,9 @@ design:
 
 # AN-018: Gate D4 — CADE winner-heavy diagnostic
 
+!!! abstract "Intuition (plain-language)"
+    Why is the screen blind to direct CADE defendants? D4 confirms the mechanism: only ~15% of direct defendants are always-losers, and their median win rate is 0.26 (vs 0.09 for cobidders). Direct defendants are structurally winner-heavy — that is what makes them ringleaders. A loser-side screen literally cannot cover them, by construction.
+
 ## Question
 
 D4 gate diagnostic: what share of direct CADE defendants are always-

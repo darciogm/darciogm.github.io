@@ -20,6 +20,9 @@ design:
 
 # AN-032: Matched-heterogeneity audit — does the quadrant profile survive PS matching?
 
+!!! abstract "Intuition (plain-language)"
+    The honest negative finding: most of the within-FL quadrant heterogeneity in the screen does NOT survive matching on participation history. The largest cell drops from a significant +0.09 to a non-significant +0.07 once we control for volume. The implication: within-FL cobidder distinctness is largely a volume effect. What survives matching is the bid-level signature documented in AN-031.
+
 ## Question
 
 Does the quadrant-level heterogeneity of the cobidder profile (across

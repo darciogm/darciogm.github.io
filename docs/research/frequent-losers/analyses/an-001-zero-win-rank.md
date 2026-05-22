@@ -20,6 +20,9 @@ design:
 
 # AN-001: Persistent zero-win participation rank
 
+!!! abstract "Intuition (plain-language)"
+    Among Brazilian procurement bidders, roughly 16,800 firms never won a single tender between 2009 and 2019. The screen ranks these always-losers by how often they show up. The top ~2,700 (the "frequent losers") are firms that bid abnormally often without ever winning — a plausible behavioral footprint of cartel cover bidders, who manufacture the appearance of competition without intending to take the contract.
+
 ## Question
 
 How is the persistent-zero-win-participation rank constructed, and what

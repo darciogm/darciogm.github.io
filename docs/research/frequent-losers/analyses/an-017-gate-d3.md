@@ -20,6 +20,9 @@ design:
 
 # AN-017: Gate D3 — continuous-only thesis
 
+!!! abstract "Intuition (plain-language)"
+    D3 asks: does the substantive thesis still hold if we drop the specific FL14 binary cutoff and use only the continuous score? Yes — every continuous specification is statistically significant and the modal asymmetry from D2 survives. The paper's claim does not depend on a particular cutoff choice.
+
 ## Question
 
 D3 gate diagnostic: does the continuous score preserve the loser-side

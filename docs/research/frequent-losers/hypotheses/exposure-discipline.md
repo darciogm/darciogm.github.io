@@ -18,6 +18,10 @@ hypothesis is that the FL ranking still concentrates cobidders after the
 exposure margin is disciplined away by participation-volume placebos and
 audits within tighter opportunity sets.
 
+!!! abstract "Intuition (plain-language)"
+    The headline result might be an artifact — perhaps the screen just identifies firms that bid a lot, and high-volume firms happen to cluster around CADE cases by mechanical overlap (same products, buyers, periods). Several audits discipline this: a formal sham permutation rejects the volume-only null at 32 standard deviations, a leakage audit preserves AUC above 0.85, a universe-scope matrix rules out generic-detector readings. The observed signal is not explained by any within-data artifact family we can test.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > Four converging audit chains, all decisive within the BEC × CADE
 > data:

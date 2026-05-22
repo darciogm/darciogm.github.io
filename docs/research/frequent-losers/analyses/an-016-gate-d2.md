@@ -20,6 +20,9 @@ design:
 
 # AN-016: Gate D2 — modal-by-modal AUC
 
+!!! abstract "Intuition (plain-language)"
+    D2 asks: does the screen perform better in Convite (sealed-bid, with a minimum-bidder rule) or Pregão (electronic auction, no such rule)? An institutional theory predicted Convite > Pregão. The data show the OPPOSITE (Pregão 0.95, Convite 0.82). D2 disqualified an alternative framing of the paper; the current framing treats this as scope information, not as institutional identification.
+
 ## Question
 
 D2 gate diagnostic: does the FL screen discriminate cobidders better in

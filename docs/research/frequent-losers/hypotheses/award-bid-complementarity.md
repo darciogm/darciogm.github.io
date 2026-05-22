@@ -17,6 +17,10 @@ adjudication-anchored target — not because awards dominate bids, but
 because the two layers operate at different evidentiary stages. A joint
 classifier should outperform each layer individually.
 
+!!! abstract "Intuition (plain-language)"
+    There are two layers of procurement data: cheap administrative award records (who participated, who won) and expensive bid-level microdata (every bid amount in every tender). The hypothesis: they carry complementary, non-redundant information for cartel detection. The data strongly support this — joint scoring (using both layers) gains +0.10 AUC over either layer alone with p = 10⁻²⁶. The two layers are not measuring the same thing, and this matters for the architecture of enforcement.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > The complementarity claim is established at the same-sample level
 > with formal statistical significance and an operational deployment

@@ -20,6 +20,9 @@ design:
 
 # AN-003: CADE × BEC linkage and cobidder construction
 
+!!! abstract "Intuition (plain-language)"
+    To test whether the screen works, we need a "truth label" of which firms were actually involved in cartels. CADE (Brazil's antitrust authority) has formally adjudicated 47 firms as direct cartel defendants in procurement cases. The paper's validation target is the broader set of 193 always-loser firms that bid alongside those defendants — the loser-side footprint of the adjudicated cartels.
+
 ## Question
 
 How are CADE direct defendants and adjudication-anchored cobidders

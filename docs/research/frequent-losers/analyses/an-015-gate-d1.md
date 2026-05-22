@@ -20,6 +20,9 @@ design:
 
 # AN-015: Gate D1 — harmonized same-sample horse race
 
+!!! abstract "Intuition (plain-language)"
+    D1 is the first of four "gate" diagnostics that decided the paper's strategic framing in 2026. It harmonizes the same-sample comparison between continuous and binary versions of the screen on a single, consistent firm set. The continuous version dominates decisively, confirming the locked rule: continuous is the empirical primitive, binary is the deployable simplification.
+
 ## Question
 
 D1 gate diagnostic: does the continuous score dominate FL14 on a

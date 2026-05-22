@@ -20,6 +20,9 @@ design:
 
 # AN-013: Precision@k audit — temporal holdout vs in-sample
 
+!!! abstract "Intuition (plain-language)"
+    The in-sample precision numbers are inflated because the screen has full hindsight on the data it was built with. Under a strict train/test split (2009–2016 → 2017–2019), precision@500 drops from 0.13 to 0.07 — retention of 53%. The honest operational number is about half the in-sample headline. The paper reports both columns transparently.
+
 ## Question
 
 What are the temporal-holdout precision@k and lift metrics, and how

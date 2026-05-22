@@ -18,6 +18,10 @@ buyer-portfolio breadth, product-portfolio concentration, proximity to
 legal cartel anchors, and bid-level behavior consistent with credible
 losing roles.
 
+!!! abstract "Intuition (plain-language)"
+    Within the frequent-loser group, are cobidders qualitatively different from other firms in the same group, or are they just the highest-volume members? Descriptively, cobidders are distinct across seven dimensions with large effect sizes. Causally, most of the within-FL heterogeneity is driven by volume itself — it doesn't survive matching. What survives is the bid-level behavioral signature (cobidders bid closer to winners). Honest mixed reading: the descriptive distinctness is robust; the causal/mechanistic story is narrower and concentrated in bid-level conduct.
+
+
 > **Evidence strength: Partial (strongly supported).**
 > Descriptive distinctness is robust across many dimensions; causal /
 > mechanistic distinctness is largely a volume effect with one

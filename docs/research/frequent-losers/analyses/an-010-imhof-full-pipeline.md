@@ -20,6 +20,9 @@ design:
 
 # AN-010: Imhof full pipeline benchmark
 
+!!! abstract "Intuition (plain-language)"
+    The standard cartel-screening tool in the literature is the Imhof–Wallimann pipeline, which uses seven features from each tender's full bid history (requires expensive bid microdata). We compare it head-to-head with our cheap award-layer screen: each alone gives AUC ~0.89–0.90. Combined, they reach 0.96. The two layers carry complementary, non-redundant information — not the same signal twice.
+
 ## Question
 
 How does the seven-feature Imhof–Wallimann bid-distribution pipeline
