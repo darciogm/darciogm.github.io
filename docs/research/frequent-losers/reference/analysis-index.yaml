@@ -368,3 +368,25 @@
   file: docs/analyses/an-032-matched-heterogeneity-audit.md
   script: scripts/32_matched_heterogeneity.R
   target: output/matched_heterogeneity/matched_het_results.csv
+
+- id: an-033
+  hypothesis: award-bid-complementarity
+  status: done
+  type: causal
+  question: How significant is the incremental value of the award-layer score added to the Imhof bid-distribution pipeline, by formal DeLong AUC-difference tests?
+  confidence: green
+  tags: ["H:award-bid-complementarity", imhof, incremental, delong, formal-test]
+  file: docs/analyses/an-033-imhof-incremental-delong.md
+  script: scripts/49_imhof_incremental_value.R
+  target: output/imhof_incremental/imhof_incremental.csv
+
+- id: an-034
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: When deployed sequentially (FL gatekeeper → Imhof forensic stage) vs jointly, how does the cost-of-evidence trade-off look across precision targets and Stage-1 cutoffs?
+  confidence: green
+  tags: ["H:award-bid-complementarity", "H:gatekeeping-cost-of-evidence", sequential, gatekeeping, cost-of-evidence]
+  file: docs/analyses/an-034-sequential-gatekeeping-envelope.md
+  script: scripts/architecture_gatekeeper.R
+  target: output/architecture_gatekeeper/sequential_envelope.csv
