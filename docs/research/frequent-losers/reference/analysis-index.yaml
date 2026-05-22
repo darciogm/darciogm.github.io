@@ -434,3 +434,14 @@
   file: docs/analyses/an-038-negative-cell-segment-audit.md
   script: scripts/50_negative_cell_audit.R + scripts/59_sign_reversal_decomp.R
   target: output/negative_cell_audit/negative_cell_audit.csv + output/sign_reversal_decomp/within_overlap_subgroup_betas.csv
+
+- id: an-039
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: causal
+  question: Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level is structurally higher? If yes, the naive positive FL-price coefficient reflects selection, not the cartel's within-cell price effect.
+  confidence: green
+  tags: ["H:price-scope-sign-reversal", selection, rationalization, sign-reversal-decomposition]
+  file: docs/analyses/an-039-selection-mechanism-test.md
+  script: scripts/61_selection_mechanism_test.R
+  target: output/selection_mechanism/selection_test_results.csv + non_treated_price_by_fl_share.csv

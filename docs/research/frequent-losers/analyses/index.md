@@ -43,7 +43,7 @@ record only). Set only when `status: done`.
 
 ## Generated index
 
-All 38 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
+All 39 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
 
 | AN | Type | Status | Conf. | Hypothesis | Question |
 |---|---|---|:-:|---|---|
@@ -85,6 +85,7 @@ All 38 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses
 | [AN-036](an-036-cv-precision-stability.md) | robustness | done | 🟡 | [gatekeeping-cost-of-evidence](../hypotheses/gatekeeping-cost-of-evidence.md) | Are the precision@k metrics stable across cross-validation folds, or do they depend on a specific random spli… |
 | [AN-037](an-037-sign-reversal-decomposition.md) | causal | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | How does the FL-margin price coefficient transform across baseline → overlap-cell → ATT specifications, and d… |
 | [AN-038](an-038-negative-cell-segment-audit.md) | descriptive | done | 🟡 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | At the item-group and operating-cell level, where does the negative FL-price coefficient hold and where does… |
+| [AN-039](an-039-selection-mechanism-test.md) | causal | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level i… |
 
 **Status legend.** `done` = analysis run and interpretation written; `pending` = scaffolded only; `stale` = superseded.
 
