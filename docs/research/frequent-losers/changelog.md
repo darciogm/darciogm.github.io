@@ -18,6 +18,18 @@ paper: frequent-losers
   gap-to-winner (−0.25) hold or strengthen. Honest casualty: the AN-031
   bid-dispersion elevation collapses (+0.05, n.s.) and is dropped.
   Script `scripts/74_volume_matched_cobidder_audit.R`.
+- **AN-042 — volume-matched timing audit (null).** Candidate *second*
+  bid-conduct channel: pregão bid timing (revision intensity, inter-bid
+  interval, last-bid position, engagement span) under the same matching.
+  No dimension survives (all Wilcoxon p ≥ 0.23). Bid-conduct distinctness
+  stays single-channel (gap-to-winner). Script
+  `scripts/75_volume_matched_timing_audit.R`.
+- **H5 promoted Mixed → Partial (strongly supported)** (structural scope).
+  The structural distinctness survives volume matching (AN-041); AN-021 /
+  AN-032 re-labelled as scope limits on a causal-mechanism reading the
+  hypothesis does not assert. Incorporated into the manuscript: §5 body +
+  Appendix D.3 ("Volume-Matched Within-FL Profile") + `\valVM*` macros.
+  Confirmed still blocked by the non-BEC replication constraint.
 
 **JLEO editorial optimization pass (main paper 42 → 40 pp):**
 

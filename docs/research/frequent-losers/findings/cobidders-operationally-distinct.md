@@ -39,19 +39,24 @@ content and make it harder to reduce the result to ordinary high-
 volume losing alone — a worry now directly addressed by the
 volume-matched audit.
 
-**Caveat.** The bid-level patterns are explicitly described as
-*consistent with* credible losing roles, not as forensic proof. The
-manuscript distinguishes consistency from diagnosticity and keeps the
-proof-producing stage in the bid layer. The reading stays 🟡 because
-the profile dimensions are observational, within-stratum, and
-single-source (BEC × CADE): the volume confound is now addressed
-([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)), but
-the first-time-FL channel demoted to appendix
-([AN-021](../analyses/an-021-first-time-fl-matching.md)) and the
-matched quadrant heterogeneity
-([AN-032](../analyses/an-032-matched-heterogeneity-audit.md)) are
-margins that did not survive PS discipline. Promotion beyond 🟡 would
-need non-BEC replication.
+**Caveat.** The distinctness that survives volume matching is
+**structural** (product specialization, winner spread, proximity to the
+winning bid). The *bid-conduct* distinctness is narrower: one channel
+survives (median gap-to-winner), while the bid-dispersion sub-signal
+([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)) and the
+bid-timing battery ([AN-042](../analyses/an-042-volume-matched-timing-audit.md):
+all Wilcoxon p ≥ 0.23) are documented nulls — so this is not a
+multi-channel behavioral signature. The reading stays 🟡 because the
+dimensions are observational, within-stratum, and single-source
+(BEC × CADE). The first-time-FL channel
+([AN-021](../analyses/an-021-first-time-fl-matching.md)) and the matched
+quadrant heterogeneity
+([AN-032](../analyses/an-032-matched-heterogeneity-audit.md)) bound a
+causal-mechanism reading the finding does not assert, not the structural
+distinctness. The supporting hypothesis
+[H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md)
+is **Partial (strongly supported)** on the structural claim; promotion
+beyond 🟡 / to Confirmed needs non-BEC replication.
 
 **Sources.**
 
@@ -71,8 +76,10 @@ need non-BEC replication.
   [AN-032](../analyses/an-032-matched-heterogeneity-audit.md) (matched
   quadrant heterogeneity audit — honest negative finding),
   [AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)
-  (volume-matched profile audit — distinctness survives matching on
-  `tenders_count`; bid-dispersion sub-signal does not).
+  (volume-matched profile audit — structural distinctness survives matching
+  on `tenders_count`; bid-dispersion sub-signal does not),
+  [AN-042](../analyses/an-042-volume-matched-timing-audit.md)
+  (volume-matched timing audit — candidate 2nd bid-conduct channel, null).
 - *Cross-refs*:
   [H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md);
   [docs/results.md](../results.md).

@@ -467,3 +467,14 @@
   file: docs/analyses/an-041-volume-matched-cobidder-audit.md
   script: scripts/74_volume_matched_cobidder_audit.R
   target: output/volume_matched_audit/matched_standardized_diffs.csv + balance.csv
+
+- id: an-042
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid position, engagement span), and does any timing dimension survive volume matching on tenders_count? I.e., is there a SECOND bid-conduct channel beyond the median gap-to-winner?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", timing, bid-conduct, volume-matching, null-result, propensity-score, cem]
+  file: docs/analyses/an-042-volume-matched-timing-audit.md
+  script: scripts/75_volume_matched_timing_audit.R
+  target: output/volume_matched_timing/timing_standardized_diffs.csv + timing_balance.csv

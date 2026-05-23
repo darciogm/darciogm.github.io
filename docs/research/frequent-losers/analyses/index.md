@@ -43,7 +43,7 @@ record only). Set only when `status: done`.
 
 ## Generated index
 
-All 41 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
+All 42 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses/an-NNN-*.md` via `scripts/gen_analysis_index.py` + `scripts/render_indexes.py`. The machine-readable form lives at [`docs/reference/analysis-index.yaml`](../reference/analysis-index.yaml).
 
 | AN | Type | Status | Conf. | Hypothesis | Question |
 |---|---|---|:-:|---|---|
@@ -88,6 +88,7 @@ All 41 AN pages, auto-generated from the YAML frontmatter of each `docs/analyses
 | [AN-039](an-039-selection-mechanism-test.md) | causal | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level i… |
 | [AN-040](an-040-within-cell-mechanism-test.md) | causal | done | 🟢 | [price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md) | Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does… |
 | [AN-041](an-041-volume-matched-cobidder-audit.md) | descriptive | done | 🟢 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Does the within-FL distinctness of cobidders (AN-028 participation dimensions, AN-031 bid-level gap-to-winner… |
+| [AN-042](an-042-volume-matched-timing-audit.md) | descriptive | done | 🟡 | [cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md) | Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid… |
 
 **Status legend.** `done` = analysis run and interpretation written; `pending` = scaffolded only; `stale` = superseded.
 
