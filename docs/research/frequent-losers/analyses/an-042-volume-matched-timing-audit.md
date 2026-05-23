@@ -21,7 +21,7 @@ design:
 # AN-042: Volume-matched timing audit — is there a second bid-conduct channel?
 
 !!! abstract "Intuition (plain-language)"
-    [AN-041](an-041-volume-matched-cobidder-audit.md) showed cobidders are a distinct firm *type* (product specialization, winner spread, bidding closer to the winner) and that this survives matching on participation volume. But the only *bid-conduct* signal that survived was the median gap-to-winner — one channel. A single behavioral channel is thin. This page asks whether cobidders also *bid on a different clock* — revising less, spacing bids differently, finishing earlier — and whether that survives volume matching. The answer is no: the timing differences are small and statistically indistinguishable once volume is held fixed. The distinctness of cobidders is structural (what they bid on, how close to the winner), not a timing signature.
+    [AN-041](an-041-volume-matched-cobidder-audit.md) showed cobidders are a distinct within-stratum *pattern* (product specialization, winner spread, bidding closer to the winner) that survives matching on participation volume. But the only *bid-conduct* signal that survived was the median gap-to-winner — one channel. A single behavioral channel is thin. This page asks whether cobidders also *bid on a different clock* — revising less, spacing bids differently, finishing earlier — and whether that survives volume matching. The answer is no: the timing differences are small and statistically indistinguishable once volume is held fixed. The distinctness of cobidders is structural (what they bid on, how close to the winner), not a timing signature.
 
 ## Question
 
