@@ -18,7 +18,7 @@ adjudication-anchored cobidders. This is the operational architecture
 relevant for agencies that face costly bid recovery.
 
 !!! abstract "Intuition (plain-language)"
-    In real enforcement, opening bid-level microdata for forensic analysis is expensive. The hypothesis: a cheap award-layer screen can act as a gatekeeper that decides which firms enter the expensive forensic stage, while preserving most of the cartel signal. The architecture works — 83% reduction in the bid-microdata pool while still recovering 131 of 193 adjudicated cobidders. The sequential gatekeeper even beats joint scoring under temporal holdout, the operationally honest regime. The cost-of-evidence argument is an institutional contribution that goes beyond raw discrimination performance.
+    In real enforcement, opening bid-level microdata for forensic analysis is expensive. The hypothesis: a cheap award-layer screen can act as a gatekeeper that decides which firms enter the expensive forensic stage, while preserving most of the cartel signal. The architecture works — 83% reduction in the bid-microdata pool while still recovering 131 of 193 adjudicated cobidders. The sequential gatekeeper even beats joint scoring under temporal holdout, the operationally honest regime. The cost-of-evidence argument is the paper's most distinctive institutional contribution.
 
 
 > **Evidence strength: Partial (strongly supported).**

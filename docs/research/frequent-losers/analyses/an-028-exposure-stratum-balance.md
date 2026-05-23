@@ -21,7 +21,7 @@ design:
 # AN-028: Exposure-stratum balance — cobidders vs reference classes
 
 !!! abstract "Intuition (plain-language)"
-    Within the frequent-loser group, are cobidders just the firms that bid the most, or are they qualitatively different? Across 7 dimensions (tender count, unique winners crossed, repeat-buyer share, portfolio concentration, etc.), cobidders are descriptively distinct from other FL firms with effect sizes Cohen's d 0.19–1.00. Under propensity-score matching on participation history, most of this descriptive distinctness collapses; see [AN-032](an-032-matched-heterogeneity-audit.md). What survives matching is the bid-level signature in [AN-031](an-031-bid-level-behavioral-profile.md).
+    Within the frequent-loser group, are cobidders just the firms that bid the most, or are they qualitatively different? Across 7 dimensions (tender count, unique winners crossed, repeat-buyer share, portfolio concentration, etc.), cobidders are statistically distinct from other FL firms with effect sizes Cohen's d 0.19–1.00. The distinctness is multi-dimensional, not just volume.
 
 ## Question
 

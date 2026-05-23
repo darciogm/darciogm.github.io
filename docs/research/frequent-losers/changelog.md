@@ -6,7 +6,53 @@ paper: frequent-losers
 
 ---
 
-## v18 — May 2026 (Current, JLEO submission-clean)
+## v18-editor — May 23, 2026 (Current — JLEO editorial optimization)
+
+**New result:**
+
+- **AN-041 — volume-matched cobidder audit.** The "strongest remaining
+  within-data audit": matching cobidders to non-cobidder FLs on
+  `tenders_count` (standardized difference 0.49 → 0.00, PS nearest-neighbour
+  + CEM), the within-FL profile distinctness is **not a volume artifact** —
+  product HHI (d +0.47), winner-pair spread (−0.56), and median
+  gap-to-winner (−0.25) hold or strengthen. Honest casualty: the AN-031
+  bid-dispersion elevation collapses (+0.05, n.s.) and is dropped.
+  Script `scripts/74_volume_matched_cobidder_audit.R`.
+
+**JLEO editorial optimization pass (main paper 42 → 40 pp):**
+
+- Abstract microcorrection: "exposure audits" → "validation audits";
+  "procurement overlap" → "opportunity-set exposure".
+- Section 4 sharpened: the **Three-Classifier Timing Battery** and the
+  **Universe-Anchored Scope Matrix** moved from the main text to
+  **Appendix D** (D.6 and D.4); the full sham-FL distribution and the
+  price-coefficient-under-sham moved to D.2. Main text keeps the compact
+  *Validation Architecture* threat table.
+- Section 7 re-downgraded to scope/limits: the monetary-scope range
+  (R\$ figures / % of spending) and the full selection/within-cell
+  decomposition table moved to **Appendix E** (E.3 and E.2); a bounded
+  one-sentence pointer remains in the main text.
+- Mechanism-identification language softened throughout to **descriptive
+  scope evidence that does not identify a mechanism, a causal price effect,
+  overcharges, or damages**.
+
+**Site reconciliation (this version):**
+
+- H8 ([price-scope-sign-reversal](hypotheses/price-scope-sign-reversal.md))
+  and AN-039 / AN-040 relabelled "selection component" / "within-cell
+  component" and reframed as descriptive associations, mirroring the paper.
+- Findings updated: [price-sign-reversal-scope](findings/price-sign-reversal-scope.md)
+  now cites AN-039/040 (descriptive decomposition);
+  [cobidders-operationally-distinct](findings/cobidders-operationally-distinct.md)
+  now cites AN-041 (distinctness survives volume matching).
+
+*Note:* the v18 entry below describes the Three-Classifier Timing Battery
+and Universe-Anchored Scope Matrix as main-text Tables 3/4; this pass moved
+both into Appendix D.
+
+---
+
+## v18 — May 2026 (JLEO submission-clean)
 
 **Full hypothesis audit + manuscript integration:**
 

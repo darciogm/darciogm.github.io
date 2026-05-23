@@ -108,10 +108,11 @@ participation distortions.
 
 - Sensitivity to exposure-stratum definition (coarser vs finer cells).
 - Decomposition of attenuation by modality.
-- Volume-matched cobidder vs non-cobidder-FL test
-  (match on `tenders_count` and re-run balance) — strongest remaining
-  within-data audit; see [AN-028](../analyses/an-028-exposure-stratum-balance.md)
-  follow-ups.
+- Volume-matched cobidder vs non-cobidder-FL test — **done**
+  ([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)): matching
+  on `tenders_count` (SMD 0.49 → 0.00), the within-stratum concentration is
+  not a volume artifact (HHI d +0.47, repeat-spread −0.56 hold or
+  strengthen; bid-dispersion sub-signal collapses to n.s.).
 
 ## Why not 🟢 Confirmed?
 

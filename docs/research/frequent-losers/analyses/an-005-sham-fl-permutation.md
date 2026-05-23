@@ -21,7 +21,7 @@ design:
 # AN-005: Sham FL permutation — formal test against the volume-only null
 
 !!! abstract "Intuition (plain-language)"
-    Could the headline result come from raw bidding volume alone — i.e., the screen just spots high-volume bidders, and those firms happen to overlap with cartels by chance? A formal placebo (2,000 random reassignments preserving each firm's bid count) tests this. The placebo cannot reproduce the observed concentration: the real AUC is 32 standard deviations above the placebo null. Volume alone is rejected as the explanation for the observed signal.
+    Could the headline result come from raw bidding volume alone — i.e., the screen just spots high-volume bidders, and those firms happen to overlap with cartels by chance? A formal placebo (2,000 random reassignments preserving each firm's bid count) tests this. The placebo cannot reproduce the observed concentration: the real AUC is 32 standard deviations above the placebo null. Volume alone is dead as an alternative explanation.
 
 ## Question
 

@@ -68,7 +68,7 @@ require independent replication on a non-BEC procurement panel.
 
 **Cobidder economic profile** *(empirical)*
 
-- [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) — 🟡 broader buyer deployment, more concentrated product portfolios, closer to legal cartel anchors, bid patterns consistent with credible losing roles.
+- [FL cobidders are operationally distinct from other frequent losers](cobidders-operationally-distinct.md) — 🟡 broader buyer deployment, more concentrated product portfolios, closer to legal cartel anchors, bid patterns consistent with credible losing roles; distinctness survives volume matching (AN-041).
 
 **Sequential architecture / cost of evidence** *(empirical + interpretive)*
 

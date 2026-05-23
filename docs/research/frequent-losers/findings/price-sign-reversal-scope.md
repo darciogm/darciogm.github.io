@@ -43,6 +43,19 @@ negative (−0.075 in the full sample) while the continuous coefficient
 remains positive (+0.035). The binary picks up truncation noise that
 the continuous score absorbs.
 
+**Descriptive decomposition**
+([AN-039](../analyses/an-039-selection-mechanism-test.md),
+[AN-040](../analyses/an-040-within-cell-mechanism-test.md)): the reversal
+decomposes into a positive across-cell selection component (non-treated
+price rises Δ = 5.58 log-points with cell FL-share; full-FE coefficient
++3.55) and a negative within-cell association (winner-to-reference
+−0.048, accounted for by +0.507 log-bidders), exchanging sign at the
+tender-density margin. These are **descriptive associations** consistent
+with economic non-neutrality; they do **not** identify a mechanism, a
+causal price effect, overcharges, or damages. The manuscript (§7 /
+Appendix E) keeps the decomposition as scope evidence, subordinate to
+the evidence-allocation claim.
+
 The sign reversal is, by itself, the load-bearing piece of legal
 disciplining: a screening tool that confused scope with damages would
 overreach in court, and the manuscript explicitly separates the two.
@@ -70,7 +83,12 @@ framed as secondary to the triage and cobidder-concentration results.
   three-spec progression +0.064 → −0.097, p = 1.7 × 10⁻¹⁰; within-
   overlap subgroup negative in 14/15 cells),
   [AN-038](../analyses/an-038-negative-cell-segment-audit.md) (item-
-  group segment betas; group 37 −0.126 stays negative across specs).
+  group segment betas; group 37 −0.126 stays negative across specs),
+  [AN-039](../analyses/an-039-selection-mechanism-test.md) (across-cell
+  selection component, descriptive),
+  [AN-040](../analyses/an-040-within-cell-mechanism-test.md) (within-cell
+  association via bidder count, descriptive — not mechanism
+  identification).
 - *Cross-refs*:
   [H:price-scope-sign-reversal](../hypotheses/price-scope-sign-reversal.md);
   [docs/extensions.md](../extensions.md).

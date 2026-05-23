@@ -456,3 +456,14 @@
   file: docs/analyses/an-040-within-cell-mechanism-test.md
   script: scripts/62_within_cell_mechanism_test.R
   target: output/mechanism_within_cell/mechanism_test_results.csv + m1_m2_revalidated.csv + mechanism_by_bidder_count.csv
+
+- id: an-041
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Does the within-FL distinctness of cobidders (AN-028 participation dimensions, AN-031 bid-level gap-to-winner) survive holding participation volume fixed, or is it a raw tenders_count artifact? Match cobidders to FL non-cobidders on tenders_count and re-compute Cohen's d.
+  confidence: green
+  tags: ["H:cobidder-profile-distinct", "H:exposure-discipline", volume-matching, propensity-score, cem, robustness, gap-to-winner]
+  file: docs/analyses/an-041-volume-matched-cobidder-audit.md
+  script: scripts/74_volume_matched_cobidder_audit.R
+  target: output/volume_matched_audit/matched_standardized_diffs.csv + balance.csv

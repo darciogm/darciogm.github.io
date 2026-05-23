@@ -23,8 +23,10 @@ magnitude depend on the validation target.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> Six lines of evidence document the sign-reversal pattern that
-> defeats a naive damages reading:
+> Eight lines of evidence document the sign-reversal pattern that
+> defeats a naive damages reading — six describe the pattern, two
+> describe the within-cell decomposition behind it (descriptive scope
+> evidence, not mechanism identification):
 > (i) **Headline three-spec progression** ([AN-037](../analyses/an-037-sign-reversal-decomposition.md)):
 > broad +0.064 (p=0.003) → overlap unweighted +0.044 (p=0.035) →
 > overlap ATT **−0.097** (p = 1.7 × 10⁻¹⁰). Clean structural sign flip.
@@ -49,6 +51,18 @@ magnitude depend on the validation target.
 > (vi) **Modal asymmetry** ([AN-016](../analyses/an-016-gate-d2.md),
 > [AN-022](../analyses/an-022-falsification-pregao.md)): Pregão 2.45×
 > Convite in binary price spec; joint specs flip binary FL14 sign.
+> (vii) **Selection component** ([AN-039](../analyses/an-039-selection-mechanism-test.md)):
+> among non-treated items, mean log-price rises monotonically from 1.35
+> (lowest FL-share quintile) to 6.93 (highest); Δ = 5.58 log-points,
+> full-FE FL-share coefficient +3.55 (SE 0.23). Frequent losers are
+> concentrated in structurally high-price cells — the naive positive
+> coefficient is selection, not damages.
+> (viii) **Within-cell component** ([AN-040](../analyses/an-040-within-cell-mechanism-test.md)):
+> within overlap cells FL presence is associated with +0.507 log-bidders
+> (≈66% more) and a winner bid −0.048 closer to reference; the
+> winner-vs-reference association vanishes once bidder count is controlled.
+> Selection dominates where bidders are few, the within-cell association
+> where they are many. Descriptive associations, not a mechanism.
 > Promotion to 🟢 (**Confirmed**) requires non-BEC replication of the
 > sign-reversal pattern — see the H8 page section on why within-data
 > evidence does not satisfy the bar.
@@ -113,6 +127,8 @@ descriptive and supportive, not causal.
 | [AN-022](../analyses/an-022-falsification-pregao.md) (modal falsification) | Supports | done | Pregão/Convite price ratio 2.45×; joint specs flip binary sign |
 | [AN-037](../analyses/an-037-sign-reversal-decomposition.md) (sign-reversal headline + subgroups) | Direct | done | Broad +0.064 → overlap ATT −0.097 (p = 1.7e-10); both modalities, all PBU-Q, tender-value Q1-Q3 all negative |
 | [AN-038](../analyses/an-038-negative-cell-segment-audit.md) (item-group + cell audit) | Direct | done | Item-group 37 −0.126 (stays negative); group 10 +0.063 (stays positive); period 2009-2013 −0.119 — predictably structured |
+| [AN-039](../analyses/an-039-selection-mechanism-test.md) (selection component — Test 1) | Direct | done | Non-treated log-price rises Q1 1.35 → Q5 6.93 (Δ 5.58); full-FE FL-share coef +3.55 (SE 0.23) — frequent losers concentrate in high-price cells, so the naive positive coefficient is selection, not damages |
+| [AN-040](../analyses/an-040-within-cell-mechanism-test.md) (within-cell component — Test 2) | Direct | done | Within overlap cells FL presence → +0.507 log-bidders (≈66%) and winner −0.048 closer to reference; association runs through bidder count. Selection dominates sparse tenders, within-cell association dominates dense. Descriptive, not mechanism identification |
 
 ## Open tests
 

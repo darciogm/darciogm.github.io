@@ -24,19 +24,34 @@ terms.
 4. **Bid-level patterns** ([AN-010](../analyses/an-010-imhof-full-pipeline.md),
    [AN-024](../analyses/an-024-unified-mechanism.md)). Consistent with
    credible losing roles, not diagnostic of them.
+5. **Survives volume matching** ([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)).
+   Cobidders bid in ~1.8× more tenders, so the obvious worry is that
+   the distinctness is just volume. Matching cobidders to non-cobidder
+   FLs on `tenders_count` (standardized difference 0.49 → 0.00), the
+   profile distinctness holds or strengthens: product HHI **d = +0.47**,
+   winner-pair spread **−0.56**, median gap-to-winner **−0.25**. The
+   distinctness is **not a volume artifact**. One honest casualty: the
+   AN-031 bid-dispersion elevation collapses (**+0.05, n.s.**) and is
+   dropped as a volume artifact.
 
 These differences give the loser-side adjacency target economic
 content and make it harder to reduce the result to ordinary high-
-volume losing alone.
+volume losing alone — a worry now directly addressed by the
+volume-matched audit.
 
 **Caveat.** The bid-level patterns are explicitly described as
 *consistent with* credible losing roles, not as forensic proof. The
 manuscript distinguishes consistency from diagnosticity and keeps the
-proof-producing stage in the bid layer. The reading is 🟡 because the
-profile dimensions are observational and within-stratum; the first-
-time-FL channel demoted to appendix
-([AN-021](../analyses/an-021-first-time-fl-matching.md)) is one of the
-margins that did not survive PS discipline.
+proof-producing stage in the bid layer. The reading stays 🟡 because
+the profile dimensions are observational, within-stratum, and
+single-source (BEC × CADE): the volume confound is now addressed
+([AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)), but
+the first-time-FL channel demoted to appendix
+([AN-021](../analyses/an-021-first-time-fl-matching.md)) and the
+matched quadrant heterogeneity
+([AN-032](../analyses/an-032-matched-heterogeneity-audit.md)) are
+margins that did not survive PS discipline. Promotion beyond 🟡 would
+need non-BEC replication.
 
 **Sources.**
 
@@ -54,7 +69,10 @@ margins that did not survive PS discipline.
   level gap-to-winner d = -0.28 — behavioral distinctness beyond
   participation),
   [AN-032](../analyses/an-032-matched-heterogeneity-audit.md) (matched
-  quadrant heterogeneity audit — honest negative finding).
+  quadrant heterogeneity audit — honest negative finding),
+  [AN-041](../analyses/an-041-volume-matched-cobidder-audit.md)
+  (volume-matched profile audit — distinctness survives matching on
+  `tenders_count`; bid-dispersion sub-signal does not).
 - *Cross-refs*:
   [H:cobidder-profile-distinct](../hypotheses/cobidder-profile-distinct.md);
   [docs/results.md](../results.md).

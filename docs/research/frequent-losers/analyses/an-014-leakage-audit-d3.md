@@ -47,15 +47,7 @@ generalization gap.
 |---|---:|---:|
 | Raw item-level | 0.995 [0.995, 0.995] | 0.506 [0.505, 0.507] |
 | Out-of-fold CV at firm | 0.891 [0.887, 0.894] | — |
-| Temporal holdout (item, firm score) | 0.864 [0.858, 0.870] | 0.511 [0.510, 0.513] |
-
-The last row reports the item-level AUC under temporal split (each item
-is one observation, with the firm-level continuous score applied);
-*N*+ = 5,299 cobidder-items in the 2017–2019 test window. The strict
-*firm-level* temporal holdout (one firm, one prediction) is reported
-separately in [AN-006](an-006-strict-prospective-holdout.md) and yields
-AUC ≈ 0.75–0.77 — a stricter test under which the score is also
-retrained on the 2009–2016 window alone.
+| Temporal holdout (firm) | 0.864 [0.858, 0.870] | 0.511 [0.510, 0.513] |
 
 Macros: `\valAUCitemRaw`, `\valAUCitemCV`, `\valAUCitemCVCI`,
 `\valAUCitemTemp`, `\valAUCitemTempCI`, `\valAUCitemDirect`,

@@ -21,7 +21,7 @@ design:
 # AN-039: Selection Mechanism Test (Test 1 of the Sign-Reversal Rationalization)
 
 !!! abstract "Intuition (plain-language)"
-    The price coefficient on FL presence flips sign between specifications (+0.064 baseline → −0.097 overlap-cell ATT). One economic story for this is **selection**: cartels with cover bidders choose to operate in product-buyer cells where the underlying price level is structurally higher (better rents). This page tests that story directly by comparing prices of NON-TREATED items (items without FL presence) across cells that have high vs low FL-share. If cartels select into high-price cells, non-treated prices in those cells should also be higher. They are: mean non-treated log-price rises monotonically from 1.35 (lowest FL-share quintile) to 6.93 (highest), a +5.58 log-point gap (~265× nominal). After full marginal-FE controls, fl_share on non-treated log_price = +3.55 (SE 0.23; *N* = 1,439,255).
+    The price coefficient on FL presence flips sign between specifications (+0.064 baseline → −0.097 overlap-cell ATT). One economic story for this is **selection**: cartels with cover bidders choose to operate in product-buyer cells where the underlying price level is structurally higher (better rents). This page tests that story directly by comparing prices of NON-TREATED items (items without FL presence) across cells that have high vs low FL-share. If cartels select into high-price cells, non-treated prices in those cells should also be higher. They are — dramatically so.
 
 ## Question
 
@@ -143,20 +143,25 @@ and *depress observed prices* within those cells via the cover-bidding
 theater (negative within cell). The overlap-ATT spec removes the
 selection and isolates the mechanism.
 
-This converts the price evidence in the manuscript from a defensive
-"scope, not damages" disclaimer into an **assertive substantive claim**:
-the sign-reversal is the predicted empirical signature of cover-
-bidding theory. The mechanism component needs Test 2 (within-cell
-winner-bid depression by cover-bidder presence) to be completed; see
-[AN-040](an-040-within-cell-winner-depression.md) when that test is
-run.
+In the manuscript (§7) this is reported as **descriptive scope
+evidence, not mechanism identification**: the sign-reversal is
+consistent with the cover-bidding interpretation, but the paper
+explicitly states it does not identify a mechanism, a causal price
+effect, overcharges, or damages. The within-cell component is
+documented in Test 2
+([AN-040](an-040-within-cell-mechanism-test.md)): within overlap cells
+FL presence is associated with bidder-count inflation (+0.507 log-bidders)
+and a winner bid −0.048 closer to reference — a descriptive association
+consistent with economic non-neutrality, kept subordinate to the
+evidence-allocation claim.
 
 ## Follow-ups
 
-- **Test 2 (mechanism component)**: within-cell comparison of winner
-  log_bid in FL-present vs FL-absent tenders. If cover bidders depress
-  the observed winning price within cell, that completes the
-  rationalization. (Pending.)
+- **Test 2 (mechanism component)**: completed in
+  [AN-040](an-040-within-cell-mechanism-test.md) — within overlap cells
+  FL presence moves the winner bid −0.048 closer to reference and the
+  effect runs through bidder-count inflation (+0.507 log-bidders),
+  completing the rationalization. (Done, 2026-05-22.)
 - Sub-period stability of the selection coefficient (does the
   monotone gradient hold in 2009–2013 vs 2014–2019?).
 - Cross-modality decomposition (does the Pregão vs Convite asymmetry
