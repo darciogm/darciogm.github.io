@@ -21,7 +21,7 @@ design:
 # AN-006: Strict prospective holdout (timing + exposure)
 
 !!! abstract "Intuition (plain-language)"
-    In a real enforcement environment, the screen would have to be built before the relevant adjudications close. We retrain the screen using only 2009–2016 data and test against later-adjudicated cobidders. Discrimination drops from in-sample 0.93 to 0.77 — informative but lower, as expected when the screen is held to a real-time information set. The signal survives strict timing discipline.
+    In a real enforcement environment, the screen would have to be built before the relevant adjudications close. We retrain the screen using only 2009–2016 data and test against later-adjudicated cobidders. Firm-level discrimination drops from in-sample 0.92 (FL14) / 0.94 (continuous) to 0.77 / 0.75 — informative but lower, as expected when the screen is held to a real-time information set. The signal survives strict timing discipline. (This is the *firm-level* temporal holdout — one firm, one prediction. The leakage audit in [AN-014](an-014-leakage-audit-d3.md) reports a related but distinct item-weighted variant at AUC 0.86, where firms that bid on more test-window items receive proportionally more weight.)
 
 ## Question
 
