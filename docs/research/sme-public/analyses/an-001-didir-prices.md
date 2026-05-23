@@ -23,6 +23,9 @@ design:
 
 # AN-001: DiDiR price effect
 
+!!! abstract "Intuition (plain-language)"
+    The cleanest evidence that the set-aside raises prices: when medical supplies were forced back into SME-only tendering in March 2018, their prices rose about 13% relative to groups that never changed. The estimate barely moves across 6/12/18-month windows — what you want from a real policy effect rather than noise.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

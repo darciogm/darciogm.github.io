@@ -21,6 +21,9 @@ design:
 
 # AN-029: Bid aggressiveness — headcount vs per-bidder channel
 
+!!! abstract "Intuition (plain-language)"
+    Does open competition lower prices only by adding bidders, or does each firm also bid harder? Fix the bidder count at exactly 2, 3, or 5+ and the price effect persists — so it is not pure headcount. Open competition both thickens the pool and sharpens each firm's bid, and it lifts the share of tenders that actually complete by about 11 percentage points.
+
 ## Question
 
 [AN-002](an-002-didir-firms-bids.md) shows open competition raises the

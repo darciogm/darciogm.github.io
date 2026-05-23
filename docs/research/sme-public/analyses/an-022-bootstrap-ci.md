@@ -20,6 +20,9 @@ design:
 
 # AN-022: Bootstrap CI for the BNE decomposition
 
+!!! abstract "Intuition (plain-language)"
+    Is exclusion-dominance (above 50%) just a point estimate that could be noise? Cluster-bootstrapping the auctions puts the exclusion share's confidence interval at [64.5%, 86.8%] — the whole interval is above the 50% dominance threshold, so the ordering survives statistical inference, not just the point estimate.
+
 ## Question
 
 The point estimate of the absolute exclusion share is 72.0% in

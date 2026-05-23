@@ -19,6 +19,9 @@ group 65 (medical/hospital supplies) flipped the regime, providing a DiDiR
 testbed: comparing group 65 (switched) to other groups (always treated)
 yields the *open-vs-SME-only* price effect.
 
+!!! abstract "Intuition (plain-language)"
+    Procurement prices are set by the most competitive bidders, and non-SMEs are often those price-setters. Kick them out and prices should rise; let them back in and prices should fall. The March 2018 PGE-SP reversal that re-imposed SME-only status on medical supplies flips the regime cleanly, letting us read off the open-vs-set-aside price gap directly: about 13% lower under open competition.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-001](../analyses/an-001-didir-prices.md) reports DiDiR β =
 > −0.131 to −0.133 (18m, p<0.01); reading survives placebos

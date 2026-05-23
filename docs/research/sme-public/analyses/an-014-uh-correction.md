@@ -21,6 +21,9 @@ design:
 
 # AN-014: Auction-level heterogeneity correction + dependence relaxation
 
+!!! abstract "Intuition (plain-language)"
+    Some auctions are simply expensive across the board (a common cost shock). The Krasnokutskaya-style correction strips out that shared component so the decomposition reflects firm-level cost differences, not common shocks — and it checks the result survives letting bidders' costs be correlated within an auction. The exclusion-dominant story holds.
+
 ## Question
 
 Two diagnostic concerns about the structural recovery:

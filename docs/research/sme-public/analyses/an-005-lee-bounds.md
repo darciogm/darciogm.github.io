@@ -20,6 +20,9 @@ design:
 
 # AN-005: Lee bounds on the DiDiR price coefficient
 
+!!! abstract "Intuition (plain-language)"
+    Different auctions complete under the two regimes, so maybe selection — not price formation — drives the result. Lee bounds draw a worst-case box around that concern. The box is tiny here (−0.131 to −0.123), so differential completion cannot explain away the price effect.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

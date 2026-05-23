@@ -17,6 +17,9 @@ of SMEs that win. The composition channel is a direct consequence of
 the same primitive that drives the price effect: type-specific
 willingness-to-supply distributions differ between SMEs and non-SMEs.
 
+!!! abstract "Intuition (plain-language)"
+    If non-SMEs are genuinely cheaper on the margin that wins contracts, then opening the auction to them means SMEs win less often. That drop in the SME win share is not a separate phenomenon — it is the same cost-gap primitive that drives the price effect, read on the composition margin instead of the price margin.
+
 > **Evidence strength: Partial (strongly supported).**
 > Three converging measures of the composition shift:
 > Gelbach decomposition ([AN-008](../analyses/an-008-gelbach-decomp.md))

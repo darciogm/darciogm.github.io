@@ -21,6 +21,9 @@ design:
 
 # AN-018: Staggered-DiD estimators (CS2021 + Sun-Abraham)
 
+!!! abstract "Intuition (plain-language)"
+    Modern DiD warns that two-way fixed effects can be contaminated by bad timing comparisons. Re-estimating with Sun-Abraham and Callaway-Sant'Anna reproduces the price effect almost exactly. The headline is not an artifact of staggered-timing bias.
+
 ## Question
 
 Two-way fixed-effects DiD can be contaminated by heterogeneous

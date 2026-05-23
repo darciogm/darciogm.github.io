@@ -21,6 +21,9 @@ design:
 
 # AN-015: Classical bid-coordination screens
 
+!!! abstract "Intuition (plain-language)"
+    If the price rise were really the surviving SME pool quietly coordinating, the drop-out-as-cost reading would collapse. Standard collusion screens look for a post-policy jump in suspicious bid-clustering. There is baseline clustering but no post-policy intensification, so a new coordination shock is not driving the result.
+
 ## Question
 
 The structural decomposition rests on the maintained IPV-clock

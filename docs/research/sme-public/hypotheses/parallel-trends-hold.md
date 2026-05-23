@@ -21,6 +21,9 @@ robust CIs under controlled M̄ violations and should keep the effect
 significant), and Lee bounds (which tighten the price coefficient
 against differential completion).
 
+!!! abstract "Intuition (plain-language)"
+    The design assumes that, absent the policy reversal, Group 65 prices would have tracked the control groups. You cannot observe that counterfactual, but you can stress it: fake-date placebos should find nothing, the effect should survive controlled violations of parallel trends, and selection on which auctions complete should not move the estimate. All three checks hold, so the comparison is credible.
+
 > **Evidence strength: Partial (strongly supported).** Six convergent
 > identification checks now back the design. **Sun-Abraham (item-level)
 > ATT 0.108 reproduces DDR 0.113** within 0.005 on log prices, with

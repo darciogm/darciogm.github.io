@@ -21,6 +21,9 @@ design:
 
 # AN-027: Within-Group-65 split — CMED-regulated medications vs other supplies
 
+!!! abstract "Intuition (plain-language)"
+    Could the price rise just be pharmaceutical inflation, since CMED-regulated drugs sit inside Group 65? Split Group 65 into regulated medications and other medical supplies: the price effect appears in both (about −17% and −10%). It is competition, not a drug-price-inflation confound.
+
 ## Question
 
 Group 65 (medical/hospital supplies) is heterogeneous. The CMED-regulated

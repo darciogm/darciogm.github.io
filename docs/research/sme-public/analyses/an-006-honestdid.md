@@ -19,6 +19,9 @@ design:
 
 # AN-006: HonestDiD parallel-trends sensitivity
 
+!!! abstract "Intuition (plain-language)"
+    Parallel trends never holds exactly. HonestDiD asks how big a violation it would take to overturn the result. The price effect stays significant even under substantial assumed trend violations, so the finding is not an artifact of a small pre-existing differential trend.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

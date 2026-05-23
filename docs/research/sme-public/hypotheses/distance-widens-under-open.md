@@ -17,6 +17,9 @@ back into the pool, the average buyer-winner distance should *widen*.
 Conversely, SME-only rules should compress the geographic catchment of
 the public buyer. The DiDiR distance effect tests this directly.
 
+!!! abstract "Intuition (plain-language)"
+    Non-SMEs are typically larger firms that can serve a wider radius; SMEs are local. So opening the auction pulls the winning supplier farther from the buyer — about 12 km — but only on high-value items, where the larger order covers the extra freight. On small orders distance barely moves. The widening distance is the visible footprint of larger, more efficient firms re-entering the pool.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-003](../analyses/an-003-didir-distance.md) reports +12.1 km
 > high-value, null low-value. **The cleanest test is now in

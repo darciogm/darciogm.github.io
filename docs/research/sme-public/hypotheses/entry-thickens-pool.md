@@ -20,6 +20,9 @@ the depth of the non-SME response — and about whether the protected SME
 pool fully replaces them under SME-only (it doesn't:
 see [H:protected-pool-responds](protected-pool-responds.md)).
 
+!!! abstract "Intuition (plain-language)"
+    A set-aside literally bars non-SMEs from bidding, so reopening the auction must add firms and bids — that part is mechanical. What is informative is the *size* of the response: how many non-SMEs actually show up measures how much competitive pressure the set-aside was suppressing, and whether the protected SME pool was ever a full substitute for them. It was not.
+
 > **Evidence strength: Partial (strongly supported).**
 > Three converging channels documented:
 > (i) **Headcount** — [AN-002](../analyses/an-002-didir-firms-bids.md)

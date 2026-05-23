@@ -20,6 +20,9 @@ design:
 
 # AN-017: Strict-invariance specification
 
+!!! abstract "Intuition (plain-language)"
+    Maybe the result is an artifact of how the SME pool's composition changes after the policy. Strict invariance freezes the SME cost distribution at its pre-policy shape while keeping observed entry counts. The price effect not only survives — the exclusion share rises to 85% — so composition change is not what drives dominance.
+
 ## Question
 
 The protected-pool offset $S_3 - S_2$ combines additional SME

@@ -20,6 +20,9 @@ design:
 
 # AN-030: Entry rates, entry costs, and decomposition robustness grid
 
+!!! abstract "Intuition (plain-language)"
+    Why can the protected SME pool not simply replace the excluded non-SMEs? Calibrate entry costs: SME entry nearly doubles while non-SME entry falls more, for a small net drop in bidders — and non-SMEs face about 4.7× higher entry costs yet win far more often. The exclusion-dominant decomposition holds across every method-choice combination tested.
+
 ## Question
 
 The protected-pool offset $S_3 - S_2$ in

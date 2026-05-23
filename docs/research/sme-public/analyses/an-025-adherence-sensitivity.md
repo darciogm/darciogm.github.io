@@ -20,6 +20,9 @@ design:
 
 # AN-025: Annualized welfare cost — adherence-rate sensitivity
 
+!!! abstract "Intuition (plain-language)"
+    The per-auction welfare cost is fixed by the structure; what scales the annual bill is how often buyers actually comply with SME-only tendering. Across adherence rates of 30–100% the Group-65 cost spans R$38–128M/yr; at the observed 43% adherence it is about R$55M/yr. Adherence is the dial on the realized fiscal cost.
+
 ## Question
 
 The structural welfare loss in [AN-011](an-011-welfare-arithmetic.md)

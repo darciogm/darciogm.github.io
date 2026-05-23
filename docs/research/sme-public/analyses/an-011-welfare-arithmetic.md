@@ -20,6 +20,9 @@ design:
 
 # AN-011: Static welfare arithmetic
 
+!!! abstract "Intuition (plain-language)"
+    Translate the price effect into welfare: the waste from a higher-cost supplier winning, plus the extra cost of raising public funds to pay the bill. At λ=0.30 that is about 29% of the open price in ordinary goods — and a planner would need to value SME profits at 2.42× ordinary money to call it worth it. On Group 65 alone, R$55–128M a year.
+
 ## Question
 
 What is the per-auction static welfare cost of the full SME-only

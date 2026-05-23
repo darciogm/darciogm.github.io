@@ -21,6 +21,9 @@ the fixed pool with the observed post-policy pool). The paper's headline
 claim is that the first magnitude dominates the second in standardized
 non-pharmaceutical procurement.
 
+!!! abstract "Intuition (plain-language)"
+    The set-aside moves the price on two levers: it removes the non-SMEs who were setting the price, and it changes who is left in the SME pool. The decomposition asks which lever does more work. For ordinary (non-pharma) goods, simply removing the disciplining non-SMEs accounts for about 72% of the price change. The SME pool's response is real but secondary — exclusion, not composition, is the main story.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-010](../analyses/an-010-bne-decomposition.md) reports an
 > absolute exclusion share of 72.0% (non-pharma) and 68.8% (pharma) —

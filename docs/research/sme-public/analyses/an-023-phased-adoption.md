@@ -22,6 +22,9 @@ design:
 
 # AN-023: Phased-adoption robustness — drop the BEC enablement window
 
+!!! abstract "Intuition (plain-language)"
+    The SME-only functionality was switched on gradually before mass take-up. If the price effect were really driven by that messy rollout window, dropping it should kill the result. Dropping the 8-month enablement window shrinks the coefficient by about 22% but it stays highly significant — the effect is not a rollout artifact.
+
 ## Question
 
 The March 2018 PGE-SP legal reinterpretation triggered SME-only

@@ -17,6 +17,9 @@ the protected pool can recreate the price-forming discipline. The data
 say it does the first (entry rises sharply) but not the second (the
 realized post-policy price remains above the open benchmark).
 
+!!! abstract "Intuition (plain-language)"
+    Defenders of set-asides expect the protected SMEs to step up and fill the gap left by excluded non-SMEs. They do step up — SME participation roughly doubles — but they do not fill the gap: the realized price stays above the open-competition benchmark. More SME bidders is not the same as more price discipline, because the entering SMEs are higher-cost on the margin that sets the price.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-010](../analyses/an-010-bne-decomposition.md) shows the post-policy
 > SME bidder count roughly doubles (0.94 → 1.87 NP; 0.55 → 1.22 PH).

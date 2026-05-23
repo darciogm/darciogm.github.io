@@ -19,6 +19,9 @@ non-pharma, the implied weight is ~2.42 — i.e., the planner must value
 a dollar of SME producer surplus at $2.42 of welfare to find the
 exclusionary regime optimal.
 
+!!! abstract "Intuition (plain-language)"
+    Rather than assert the set-aside is bad, the paper asks: how much would a government have to favor SME profits — above ordinary citizens' money — to make full exclusion worth it? In non-pharma the answer is 2.42: the planner must value a dollar of SME producer surplus at $2.42 of social welfare. That is a high bar, and it makes the policy's cost transparent in welfare-weight terms rather than just reais.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-011](../analyses/an-011-welfare-arithmetic.md) reports the implied
 > weight $\omega = 2.42$ in non-pharma, 2.61 in pharma.

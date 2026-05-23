@@ -20,6 +20,9 @@ design:
 
 # AN-021: Synthetic-control match of group 65
 
+!!! abstract "Intuition (plain-language)"
+    Build a synthetic Group 65 from a weighted blend of never-treated groups that matches its pre-policy price path almost perfectly. After the policy, the real and synthetic series diverge in the expected direction. The placebo rank p-value is borderline (just above 5%), so this corroborates rather than clinches.
+
 ## Question
 
 The DiDiR identifies the open-vs-SME-only effect by comparing group 65

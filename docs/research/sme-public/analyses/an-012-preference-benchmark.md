@@ -20,6 +20,9 @@ design:
 
 # AN-012: 10% SME price preference benchmark
 
+!!! abstract "Intuition (plain-language)"
+    What if, instead of banning non-SMEs, you give SMEs a 10% bid discount for winner selection? Everyone still competes, so the simulated price barely moves — yet SMEs win more often. The preference buys redistribution without sacrificing price discipline; it is a static design benchmark, not a forecast of a specific legal regime.
+
 ## Question
 
 A static price preference is a non-exclusionary design alternative to

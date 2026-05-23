@@ -22,6 +22,9 @@ design:
 
 # AN-002: DiDiR firm and bid count effects
 
+!!! abstract "Intuition (plain-language)"
+    Reopening an auction to non-SMEs mechanically adds bidders; the question is how many. Switched Group 65 gains roughly 18% more bidding firms right after the change, fading to about 10% as the control groups themselves finish rolling into SME-only. The fade reflects the controls moving, not the treatment effect vanishing.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

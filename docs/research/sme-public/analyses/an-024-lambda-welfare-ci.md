@@ -20,6 +20,9 @@ design:
 
 # AN-024: λ sensitivity and bootstrap CI on welfare loss
 
+!!! abstract "Intuition (plain-language)"
+    The welfare loss depends on λ, the cost of public funds — so does the conclusion hinge on a lucky λ? Across the whole plausible λ range the loss runs 24–33% in non-pharma and the preference-beats-set-aside ranking never flips. The ranking is driven by how you model the SME pool, not by the λ knob.
+
 ## Question
 
 The static welfare arithmetic in [AN-011](an-011-welfare-arithmetic.md)

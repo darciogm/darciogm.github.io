@@ -20,6 +20,9 @@ design:
 
 # AN-007: Quantile DiD across the conditional price distribution
 
+!!! abstract "Intuition (plain-language)"
+    The average price effect hides where the action is. Open competition cuts prices most at the cheap end of the distribution, where competitive bidders bunch, and even reverses sign at the very top. The gain from competition is concentrated in the bulk of ordinary contracts, not spread evenly.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

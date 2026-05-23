@@ -12,6 +12,7 @@ PAPER_NAVS = {
     ],
     "sme-public": [
         {"title": "Summary",     "url": "/research/sme-public/"},
+        {"title": "Agenda",      "url": "/research/sme-public/papers/"},
         {"title": "Paper",       "url": "/research/sme-public/paper/"},
         {"title": "Video",       "url": "/research/sme-public/video/"},
         {"title": "Hypotheses",  "url": "/research/sme-public/hypotheses/"},
@@ -23,6 +24,7 @@ PAPER_NAVS = {
         {"title": "Advanced",    "url": "/research/sme-public/advanced/"},
         {"title": "Replication", "url": "/research/sme-public/replication/"},
         {"title": "Authors",     "url": "/research/sme-public/authors/"},
+        {"title": "Mind Map",    "url": "/research/sme-public/mindmap/"},
         {"title": "Changelog",   "url": "/research/sme-public/changelog/"},
     ],
     "frequent-losers": [

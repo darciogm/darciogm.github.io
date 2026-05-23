@@ -19,6 +19,9 @@ design:
 
 # AN-009: SME-winner share and extensions
 
+!!! abstract "Intuition (plain-language)"
+    Letting cheaper non-SMEs bid means SMEs win less often — the composition cost of open competition. It shows up equally in direct- and indirect-administration buyers, so the channel is institutionally uniform rather than driven by one type of buyer behaving differently.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

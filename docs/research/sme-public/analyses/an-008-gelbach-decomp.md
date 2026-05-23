@@ -19,6 +19,9 @@ design:
 
 # AN-008: Gelbach decomposition of price effect
 
+!!! abstract "Intuition (plain-language)"
+    Why do prices fall under open competition — more bidders, or a different (non-SME) winner? A Gelbach decomposition splits the gap. The composition channel (who wins) explains most of the mediated part, the headcount channel partly offsets it, and a large share runs through neither — consistent with each remaining firm also bidding harder, not just more firms showing up.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

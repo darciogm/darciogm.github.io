@@ -22,6 +22,9 @@ design:
 
 # AN-028: RAIS-validated SME winner composition
 
+!!! abstract "Intuition (plain-language)"
+    Use employer records (RAIS) to confirm the 'SME' winners are genuinely small firms. The price effect survives restricting to RAIS-validated small winners — but the distance effect vanishes, exactly as a firm-size composition story predicts (the distant winners were the larger non-SMEs). This separately identifies the composition channel.
+
 ## Question
 
 The composition channel in [AN-008](an-008-gelbach-decomp.md) loaded

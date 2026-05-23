@@ -21,6 +21,9 @@ design:
 
 # AN-026: Persistent-pair coordination screen, class-conditional
 
+!!! abstract "Intuition (plain-language)"
+    Another collusion check: do the same pairs of firms keep meeting more than chance, once you condition on product class? Raw clustering rejects randomness, but conditioning on CADMAT class makes the 'persistent meeting' pattern disappear — it is market segmentation (firms specialize in product lines), not coordination. Stable before and after the policy.
+
 ## Question
 
 The Bajari-Ye T1 screen in [AN-015](an-015-collusion-screens.md)

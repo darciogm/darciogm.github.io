@@ -21,6 +21,9 @@ design:
 
 # AN-004: Pre-treatment placebo tests
 
+!!! abstract "Intuition (plain-language)"
+    If the price jump were really a pre-existing trend, then pretending the policy happened on an earlier (fake) date would also 'find' an effect. It does not — placebo price effects are tiny and insignificant — which supports parallel trends. The firm- and bid-count placebos that do fire reflect the controls' gradual SME rollout, not a Group-65-specific shock.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

@@ -21,6 +21,9 @@ design:
 
 # AN-019: Cross-modality GPV — Convite first-price vs Pregão drop-outs
 
+!!! abstract "Intuition (plain-language)"
+    An independent check on the IPV-clock reading: recover firm costs from the *other* auction format (Convite sealed-bid) using GPV and see whether they line up with the Pregão drop-out costs. They align in the load-bearing cell after correction, with a wedge elsewhere consistent with sealed-bid shading. It is discipline that the recovery is not idiosyncratic to one auction format — not proof of the assumption.
+
 ## Question
 
 The structural decomposition's load-bearing assumption is that Pregão

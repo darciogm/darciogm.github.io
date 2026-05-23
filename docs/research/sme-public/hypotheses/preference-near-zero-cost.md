@@ -21,6 +21,9 @@ benchmark $S_1$, while SME win-rate rises. The preference is not a free
 version of the set-aside — it delivers less redistribution — but it
 shifts the static frontier.
 
+!!! abstract "Intuition (plain-language)"
+    A price preference is the gentle alternative to a set-aside: SMEs get a discount applied only when picking the winner, but everyone still bids and the government pays the real winning price. Because the disciplining non-SMEs stay in the room, the simulated price barely budges — yet SMEs win more often. It is not a free set-aside (it redistributes less), but it buys SME support without throwing away the competition that holds prices down.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-012](../analyses/an-012-preference-benchmark.md) reports a price
 > shift of **−0.004 NP / +0.002 PH** of the reference price under $V_3$

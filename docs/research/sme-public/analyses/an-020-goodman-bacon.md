@@ -21,6 +21,9 @@ design:
 
 # AN-020: Goodman-Bacon TWFE decomposition
 
+!!! abstract "Intuition (plain-language)"
+    Goodman-Bacon shows which comparisons a TWFE coefficient is actually built from. Here 100% of the weight sits on the clean treated-vs-never-treated comparison, with zero on the 'forbidden' already-treated comparisons. The single-cohort design is identification-clean, and the heterogeneous-timing concern simply does not bite.
+
 ## Question
 
 The two-way fixed-effects DiD coefficient is a weighted average of all

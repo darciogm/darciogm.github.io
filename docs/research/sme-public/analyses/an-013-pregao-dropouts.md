@@ -21,6 +21,9 @@ design:
 
 # AN-013: Pregão drop-out extraction
 
+!!! abstract "Intuition (plain-language)"
+    The structural primitives come from BEC's auction event logs: each losing firm's drop-out price is read as its willingness to supply. This page extracts those drop-outs and checks the simulation is not sensitive to how the unobserved winner's cost is treated — across three censoring methods the net effect stays positive and economically large.
+
 ## Question
 
 The structural sample is built from BEC Pregão event-log data —

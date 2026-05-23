@@ -20,6 +20,9 @@ standardized non-pharma is large — ~28.9% of the open-regime price at
 &lambda;=0.30. The implied annualized welfare cost on Group 65 alone
 spans R$55–128M per year (US$16–37M).
 
+!!! abstract "Intuition (plain-language)"
+    The set-aside costs society twice: it hands the contract to a higher-cost supplier (real resource waste) and it forces the government to raise more tax money to pay the higher price (costly because public funds carry a deadweight markup). Adding both at λ=0.30 gives a static welfare loss of about 29% of the open-regime price in ordinary goods — on Group 65 alone, roughly R$55–128M per year.
+
 > **Evidence strength: Partial (strongly supported).**
 > [AN-011](../analyses/an-011-welfare-arithmetic.md) reports
 > 28.9% non-pharma / 44.8% pharma at λ=0.30.

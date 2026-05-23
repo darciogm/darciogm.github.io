@@ -20,6 +20,9 @@ design:
 
 # AN-010: BNE decomposition — exclusion vs protected-pool offset
 
+!!! abstract "Intuition (plain-language)"
+    This is the structural heart of the paper: simulate the price under three bidder pools and ask how much of the set-aside's price effect is just removing the disciplining non-SMEs versus the SME pool's own response. Removing non-SMEs — the exclusion channel — does about 72% of the work in ordinary goods. SME entry roughly doubles but cannot undo the loss.
+
 ## Question
 
 How does the set-aside price effect decompose into the lost-discipline

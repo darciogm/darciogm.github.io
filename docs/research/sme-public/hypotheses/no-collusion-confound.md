@@ -22,6 +22,9 @@ bid behavior. The decomposition would then become a price-forming
 bid-rigging screens (Bajari-Ye, Schurter, pair classification) test
 whether such a coordination shift is detectable in the data.
 
+!!! abstract "Intuition (plain-language)"
+    If the smaller post-policy SME pool started colluding — the same few firms meeting repeatedly and softening their bids — the price rise could be a coordination story rather than a lost-competition story, and the drop-out-as-cost reading would break. Classical bid-rigging screens check for exactly that. They find baseline clustering but no post-policy intensification, so the price increase is not manufactured by a new collusion shock.
+
 > **Evidence strength: Partial (strongly supported).** Three classical
 > screens land clean for the differential question.
 > [AN-015](../analyses/an-015-collusion-screens.md): Conley-Decarolis

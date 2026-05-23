@@ -21,6 +21,9 @@ design:
 
 # AN-003: DiDiR distance effect
 
+!!! abstract "Intuition (plain-language)"
+    Larger non-SME firms can ship farther, so opening the auction pulls the winning supplier about 12 km farther from the buyer — but only on high-value items, where a large order covers the extra freight. On small orders distance is flat. Geography is the visible signature of larger firms re-entering the pool.
+
 !!! info "Reduced-form motivation layer"
     The numbers below are from the v1–v4 reduced-form DiDiR pipeline
     (`scripts/02_analysis.R` + companions), which the v8 manuscript

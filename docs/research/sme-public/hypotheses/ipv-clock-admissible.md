@@ -20,6 +20,9 @@ or by non-truthful early exits, the interpretation as cost draws breaks
 down and the decomposition becomes a price-formation re-weighting
 exercise rather than a structural counterfactual.
 
+!!! abstract "Intuition (plain-language)"
+    The entire structural exercise rests on one reading: in a descending-clock reverse auction, the price at which a losing firm drops out is the lowest price it would accept — its cost. If that reading holds, drop-outs reveal each firm's willingness to supply and the decomposition is a genuine cost-based counterfactual. If firms instead drop out for strategic reasons (collusion, sniping, budget limits), the numbers become a price-formation re-weighting exercise rather than structural primitives. This is the load-bearing assumption of the paper.
+
 > **Evidence strength: Partial (toward Supports).** The diagnostic
 > battery has landed. **Censoring** (Turnbull NPMLE,
 > [AN-013](../analyses/an-013-pregao-dropouts.md)): exclusion share

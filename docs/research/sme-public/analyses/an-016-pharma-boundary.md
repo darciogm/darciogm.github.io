@@ -20,6 +20,9 @@ design:
 
 # AN-016: Pharma boundary case — same direction, fragile magnitude
 
+!!! abstract "Intuition (plain-language)"
+    Pharma's reduced-form effects are even bigger than non-pharma's — but the structural story is fragile there: most post-policy SME pharma firms are brand-new entrants, the cost primitives do not stay invariant, and the welfare ranking flips between specifications. So pharma is reported as a same-direction confirmation, not a second headline you can lean on.
+
 ## Question
 
 Across the structural decomposition
