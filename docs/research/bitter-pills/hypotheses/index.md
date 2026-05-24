@@ -65,7 +65,7 @@ separates same-firm pricing from supplier-set sourcing.
   same-firm markup.
 - [H:thin-market-supplier-leverage](thin-market-supplier-leverage.md) — The
   deep-market null is not universal: a residual within-firm gap persists in the
-  earliest cohorts (the quantity dimension reflects scale).
+  earlier period (the quantity dimension reflects scale).
 
 ## Cluster C: The sourcing mechanism
 

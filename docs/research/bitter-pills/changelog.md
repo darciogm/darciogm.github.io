@@ -15,7 +15,7 @@ paper: bitter-pills
   administrative-dearer and fades over time (`62_h4_period_axis.R`). The phrase
   "supplier leverage reappears in thinner and earlier markets" is replaced
   throughout the paper and site by a bounded statement: the deep-market null is
-  not universal — a residual within-firm gap persists in the earliest cohorts —
+  not universal — a residual within-firm gap persists in the earlier period —
   without asserting litigated-buyer leverage.
 - **Build fix.** Referee-test macros carrying hypothesis IDs (h2/h3/h4/h6) are
   illegal LaTeX control-sequence names; they are emitted to
@@ -32,7 +32,7 @@ Pharmaceutical Procurement Costs.**
   sanction-related cost margin does not appear as a broad same-firm markup; it
   appears through fragmented sourcing — lost scale and supplier-set
   reallocation. The deep-market null is not universal: a residual within-firm gap
-  persists in the earliest cohorts (the quantity dimension reflects scale, not
+  persists in the earlier period (the quantity dimension reflects scale, not
   same-firm pricing).
 - **Central estimates.** Urgent-vs-ordinary margin (+5.4% negotiated price,
   ~5.4% fewer bidders, +2.1pp tender success); under-the-gun gap

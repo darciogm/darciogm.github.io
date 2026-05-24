@@ -2,7 +2,7 @@
 paper: bitter-pills
 ---
 
-# The deep-market null is not universal: a residual within-firm gap in the earliest cohorts
+# The deep-market null is not universal: a residual within-firm gap in the earlier period
 
 🟡 The deep-market within-firm null is not uniform across the urgent panel, but
 the heterogeneity has two dimensions that behave differently. Splitting the
@@ -26,7 +26,7 @@ heterogeneity is the scale channel
 The earlier-period coefficient *survives* a within-triple quantity control
 (`62_h4_period_axis.R`): it moves from **+0.117** (SE 0.037) to **+0.168**
 (SE 0.062, *p* = 0.007), while the late period stays null. So a real within-firm
-price gap persists in the earliest cohorts. But the surviving gap is *positive* —
+price gap persists in the earlier period. But the surviving gap is *positive* —
 the **administrative** channel is dearer within firm-buyer-item, not the
 litigated one — and it **fades as the urgent market thickens** (a continuous
 administrative×year interaction declines from −0.025 to −0.019 with the quantity
@@ -37,7 +37,7 @@ asserted as litigated-buyer leverage.
 **What to conclude.** The no-broad-same-firm-markup result in
 [No broad same-firm markup](no-broad-same-firm-markup.md) is a deep-market
 statement, not a universal one: a residual within-firm gap persists in the
-earliest cohorts. But the two natural "thin-market leverage" candidates do not
+earlier period. But the two natural "thin-market leverage" candidates do not
 both survive scrutiny — the quantity dimension is scale, and the period gap is
 administrative-dearer and time-declining, consistent with early-market
 maturation rather than supplier power over the litigated buyer.
@@ -45,7 +45,7 @@ maturation rather than supplier power over the litigated buyer.
 **Caveat.** These are conditional contrasts within the selected administrative
 urgent channel — the closest feasible urgent-procurement comparison — not causal
 estimates of urgency in thin markets. The splits are observational cuts, and the
-"earliest cohorts" differ on more dimensions than timing alone. The reading is
+"earlier period" differ on more dimensions than timing alone. The reading is
 🟡 because it is a single-source own-project estimate in São Paulo BEC.
 
 **Sources.**

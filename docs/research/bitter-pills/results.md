@@ -62,7 +62,7 @@ The pricing test asks whether the same firm charges a sanctioned buyer more for 
 | Below-median quantity (thinner) | **+0.066\*\*\*** |
 | Earlier period (thinner) | **+0.117\*\*\*** |
 
-The result is not a claim that same-firm pricing is everywhere zero. In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup; a residual within-firm gap persists in the earliest cohorts and fades as the urgent market thickens, while the quantity dimension reflects scale rather than same-firm pricing.
+The result is not a claim that same-firm pricing is everywhere zero. In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup; a residual within-firm gap is confined to the earlier period, while the quantity dimension reflects scale rather than same-firm pricing.
 
 Detail: [AN-003 — Within-firm pricing](analyses/an-003-within-firm-pricing.md) · [AN-004 — Market-depth heterogeneity](analyses/an-004-market-depth-heterogeneity.md).
 

@@ -21,7 +21,7 @@ markets — it shifts attention away from a same-firm pricing story and toward
 the sourcing margin (see
 [Fragmented sourcing is the margin](fragmented-sourcing-is-the-margin.md)).
 The null is not universal, however: a residual within-firm gap persists in the
-earliest cohorts (the quantity dimension instead reflects scale, not same-firm
+earlier period (the quantity dimension instead reflects scale, not same-firm
 pricing — see
 [The deep-market null is not universal](thin-market-leverage.md)).
 

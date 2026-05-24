@@ -23,7 +23,7 @@ axes shows the quantity dimension is the **scale** channel (not same-firm
 pricing) and the surviving earlier-period gap is **administrative-dearer** and
 fades over time — the opposite direction from a court order squeezing the
 sanctioned buyer. What survives is a bounded statement: the deep-market null is
-**not universal**, with a residual within-firm gap in the earliest cohorts.
+**not universal**, with a residual within-firm gap in the earlier period.
 
 !!! abstract "Intuition (plain-language)"
     The deep-market result said the same supplier does not, on average, charge more under a court order. But "on average, in deep markets" hides the cases where the supplier holds the cards. When the order is small, when the drug is not on the standard public formulary, or when we look at the earlier years before the urgent market filled in, the same-firm price difference reappears and is meaningful. That is exactly where you would expect a supplier to have leverage — fewer competing sources, a buyer with little room to shop around. So leverage is not absent; it is concentrated in the thin and early corners of the market.
@@ -40,7 +40,7 @@ sanctioned buyer. What survives is a bounded statement: the deep-market null is
 > gradient collapses under a quantity control), and the earlier-period gap
 > **survives** a within-triple quantity control (+0.117 → +0.168, *p* = 0.007)
 > but is **administrative-dearer and time-declining** — a genuine residual
-> within-firm gap in the earliest cohorts, not litigated-buyer leverage. The
+> within-firm gap in the earlier period, not litigated-buyer leverage. The
 > status is therefore a **bounded non-null**: the deep-market null is not
 > universal, but the surviving gap is not the "supplier squeezes the sanctioned
 > buyer" channel.

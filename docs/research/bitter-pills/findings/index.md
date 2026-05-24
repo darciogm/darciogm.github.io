@@ -64,7 +64,7 @@ a selected, larger, closest-feasible comparison rather than a randomized one.
   indistinguishable across urgent regimes (0.035, SE 0.041). A deep-market null,
   not a universal claim.
 - [The deep-market null is not universal](thin-market-leverage.md)
-  — a residual within-firm gap persists in the earliest cohorts (+0.117, robust
+  — a residual within-firm gap persists in the earlier period (+0.117, robust
   to a quantity control); the quantity dimension reflects scale, not same-firm
   pricing.
 
@@ -98,7 +98,7 @@ a selected, larger, closest-feasible comparison rather than a randomized one.
   have cost without sanctions. See
   [H:utg-gap-selection-bounded](../hypotheses/utg-gap-selection-bounded.md).
 - **The deep-market null is not universal.** A residual within-firm gap persists
-  in the earliest cohorts (the quantity dimension instead reflects scale); the
+  in the earlier period (the quantity dimension instead reflects scale); the
   no-broad-same-firm-markup reading is specific to deep repeated urgent markets.
   See [The deep-market null is not universal](thin-market-leverage.md).
 - **The fiscal figure is a procurement-cost calculation.** It is not a full

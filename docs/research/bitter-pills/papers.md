@@ -44,7 +44,7 @@ revise-and-resubmit (R&R).
    winner-switching and scale evidence measure the sourcing margin. The cost of
    legal urgency in deep markets is fragmented sourcing — lost scale and
    supplier-set reallocation — not a broad same-firm markup, with a residual
-   within-firm gap persisting in the earliest cohorts (the quantity dimension
+   within-firm gap persisting in the earlier period (the quantity dimension
    reflecting scale, not same-firm pricing).
 2. *Opening the procurement black box behind right-to-health litigation* — the
    literature on health litigation studies how much the state spends and who
