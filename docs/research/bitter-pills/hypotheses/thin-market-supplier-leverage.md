@@ -127,13 +127,18 @@ $p = 0.041$ and the earlier-period coefficient $p = 0.010$; a Romano-Wolf free
 step-down (PBU cluster bootstrap) gives $p = 0.053$ and $p = 0.025$. So the
 reappearance is **not** a data-mined artifact.
 
-A **continuous** administrative × log-quantity interaction, however, does **not**
-reproduce a monotone "leverage fades with scale" gradient — it is small and runs
-the other way ($+0.021$, $p = 0.046$). The quantity-based split should therefore
-**not** be read as a smooth depth gradient; the **earlier-period contrast is the
-more robust expression** of the reappearance, and the quantity axis is
-non-monotone. This is why the status stays **Moderate (supported)** rather than
-higher. A quantile decomposition of the quantity axis remains open.
+The quantity axis, however, turns out to be **the scale channel, not same-firm
+leverage** (`analysis/61_h4_quantity_quartiles.R`). A quartile decomposition of
+the within firm-buyer-item coefficient is monotone in order size — $+0.285$ at
+the smallest orders, then $+0.063$, $-0.042$, and $-0.174$ at the largest — but
+that gradient **collapses once log-quantity is held fixed within the triple**
+($+0.103$ at Q1, $+0.181$ at Q4, neither robust), while the within-FBI
+log-quantity coefficient is $-0.259$ (SE $0.074$): a clean bulk-discount effect.
+The raw quantity gradient is therefore the **scale/sourcing channel leaking
+through** (consistent with [H:lost-scale](lost-scale.md)), not a same-firm
+pricing gradient. The genuine candidate for thin-market supplier leverage is the
+**earlier-period** contrast, not order size. The status stays **Moderate
+(supported)**, with the quantity axis reclassified as scale.
 
 ### Distinguish thinness from earliness
 

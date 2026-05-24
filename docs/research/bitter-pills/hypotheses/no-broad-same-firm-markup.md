@@ -170,3 +170,11 @@ rejected) but **underpowered against modest ones** — which is exactly why the
 reading is "no broad same-firm markup," reported as a bound, and **not
 "confirmed."** Cross-jurisdiction replication would be needed to consolidate it
 further.
+
+A quartile decomposition confirms the null is **not hiding a same-firm pricing
+gradient** (`analysis/61_h4_quantity_quartiles.R`): the within-triple coefficient
+varies with order size only through bulk discounts — the within firm-buyer-item
+log-quantity coefficient is $-0.259$ (SE $0.074$) — and once quantity is held
+fixed there is no systematic same-firm price gradient across quantity quartiles.
+The order-size variation is the scale channel ([H:lost-scale](lost-scale.md)),
+not same-firm pricing.

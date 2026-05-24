@@ -108,6 +108,7 @@ caveats about unobserved item heterogeneity across lot sizes.
 |----------|---------|--------------|
 | [AN-005](../analyses/an-005-pricing-sourcing-decomposition.md) | Supports | Figure 1 decomposition (admin minus litigated): observed gap −22.8%; quantity/scale −32.8% (dominant); within-firm pricing +3.5% (near zero); supplier-composition residual +10.9% (a reconciliation residual, read with the winner-switching table). |
 | [AN-009](../analyses/an-009-aggregation-cells.md) | Supports | Administrative orders ~3.3× larger than litigated; bulk-discount elasticity −0.329. Larger lots earn lower unit prices; court-mandated channel forgoes the scale margin. |
+| [`61_h4_quantity_quartiles.R`](../analyses/index.md) | Supports | Direct within firm-buyer-item bulk discount: holding firm, buyer, and item fixed, the log-quantity coefficient is −0.259 (SE 0.074). The quantity gradient in the within-firm price difference is this scale channel, not same-firm pricing. |
 
 Cross-link: the near-zero within-firm pricing component echoes
 [H:no-broad-same-firm-markup](no-broad-same-firm-markup.md); the
