@@ -1,191 +1,153 @@
----
-paper: bitter-pills
----
-
 # Replication
 
-This page describes how to replicate the results presented in the paper.
+This page describes how to replicate the current results. The active version of
+the paper is **v9-jpube-short** (JPubE short paper, May 2026): *Sourcing under
+Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs.*
 
 ---
 
-## Replication Package
+## Repository Structure
 
-The full replication package includes all code, processed datasets, and manuscript source files needed to reproduce every table and figure in the paper.
+```
+paper1-bitter-pills/
+├── v9-jpube-short/             # ACTIVE (JPubE short paper)
+│   ├── analysis/               # R + Python scripts (40_… 54_…) + _macros.R
+│   ├── manuscript/paper/       # main.tex, OnlineAppendix.tex, *.tex sections, values.tex
+│   ├── output/figures/         # vector PDFs (sourcing-vs-pricing, event study, …)
+│   ├── output/tables/          # generated .tex / .csv tables
+│   ├── build_v9.sh             # regenerate outputs + compile main + appendix
+│   └── V9_CHANGELOG.md         # detailed build and revision log
+├── v8-sourcing-reframe/        # frozen — earlier sourcing reframe
+├── v7-r2round1/                # frozen — referee R2 round 1 baseline
+├── v4/                         # legacy R pipeline (prepares the input data cache)
+├── docs/                       # MkDocs site source (this site)
+└── deploy.sh                   # build site + push to darciogm.github.io
+```
 
-!!! info "Repository Structure"
-    The replication materials are organized in version-specific directories. The **v4** directory contains the current primary analysis in R, while **v2** and **v3** contain legacy Stata implementations.
+The **v4 pipeline** prepares the input data cache (`/tmp/v4_prepared.rds`) used
+by the v9 analysis scripts; v9 builds analysis on top of that prepared dataset
+rather than re-deriving it from raw BEC.
 
 ---
 
 ## Software Requirements
 
-### Primary Analysis (v4 -- R)
+### Primary Analysis (R + Python)
 
-| Software | Version | Purpose |
-|----------|---------|---------|
-| **R** | 4.5+ | Statistical computing |
-| `fixest` | latest | High-dimensional fixed effects estimation |
-| `data.table` | latest | Fast data manipulation |
-| `modelsummary` | latest | Regression tables |
-| `ggplot2` | latest | Publication-quality figures |
-| `arrow` | latest | Reading Parquet files |
+| Package | Purpose |
+|---------|---------|
+| `R` 4.5+ | Statistical computing |
+| `fixest` | High-dimensional fixed-effects estimation (`lean=TRUE` default) |
+| `data.table` | Fast data manipulation |
+| `ggplot2` | Publication figures (grayscale, serif) |
+| `arrow` / `duckdb` | Parquet I/O (DuckDB is the default engine for parquet) |
+| `Python` 3 + `duckdb` / `pyarrow` | Classifier macros and presentation tables |
 
-Additional R packages: `kableExtra`, `sandwich`, `lmtest`, `broom`, `scales`, `sf`, `viridis`.
-
-### Legacy Analysis (v2/v3 -- Stata)
-
-| Software | Version | Purpose |
-|----------|---------|---------|
-| **Stata/SE** | 17+ | Statistical computing |
-| `reghdfe` | latest | High-dimensional fixed effects |
-| `ftools` | latest | Fast Stata tools |
+Lee trimming bounds and the Rademacher wild-cluster bootstrap are implemented
+manually in the v9 scripts. `HonestDiD` requires `CVXR`/`clarabel` system deps;
+where unavailable, the Honest-DiD sensitivity is computed as a manual
+linear-extrapolation fallback that produces the same diagnostic verdict.
 
 ### Manuscript
 
-| Software | Version | Purpose |
-|----------|---------|---------|
-| **LaTeX** | TeX Live 2024+ | Document typesetting |
-| `elsarticle` | latest | Journal document class |
-| `chicago` | latest | Bibliography style |
+| Tool | Purpose |
+|------|---------|
+| TeX Live 2024+ | LaTeX typesetting |
+| `elsarticle` | Journal class (review format) |
+| `natbib` + `bibtex` | Bibliography (NOT biblatex/biber in this project) |
+| `booktabs` + `threeparttable` | Tables |
 
 ---
 
 ## Data Sources
 
-### Primary Dataset
+**BEC-G65** — bid-level pharmaceutical procurement on the São Paulo state
+electronic procurement platform.
 
-**BEC-G65-WORK1.parquet**
+| Feature | Description |
+|---------|-------------|
+| Source | Bolsa Eletrônica de Compras (BEC), São Paulo state |
+| Coverage | Pharmaceutical purchases (BEC Group 65) |
+| Period | January 2009 – December 2019 |
+| Observations | 479,330 purchase-offer-item observations |
+| Regimes | Ordinary; Administrative urgent; Litigated urgent |
 
-- **Source:** Bolsa Eletronica de Compras (BEC), Sao Paulo state electronic procurement platform
-- **Format:** Apache Parquet (~125 MB)
-- **Observations:** 479,330 bids
-- **Variables:** 180 columns
-- **Coverage:** All bids for BEC Group 65 (medical, dental, and hospital supplies), January 2009 -- December 2019
-- **Unit:** Bid level (firm x item x procurement event)
+The classifier operates at the purchase-order/tender-notice level; the empirical
+analysis is at the purchase-offer-item level after classified regimes are linked
+to BEC item records. Price regressions use accepted winning bids. The processed
+dataset is included in the replication package; raw BEC data is publicly
+available through the São Paulo state transparency portal.
 
-!!! warning "Data Access"
-    The BEC procurement data is publicly available through the Sao Paulo state transparency portal. The processed dataset used in the analysis is included in the replication package.
+### Selection and the Lee bounds
 
-### Key Variables
-
-| Variable | Description |
-|----------|-------------|
-| `purchase_type` | 0 = Ordinary, 1 = Administrative, 2 = Litigated |
-| `bid_price_ref` | Reference price (maximum the government will pay), in BRL |
-| `bid_price` | Negotiated (final) bid price, in BRL |
-| `bid_qty` | Quantity demanded in tender notice |
-| `n_firms_bids` | Number of distinct firms submitting bids |
-| `po_item_winner` | Tender success indicator (1 = successful purchase) |
-| `item_id` | Product identifier (used for item FE) |
-| `pbu_code` | Public buyer unit code (used for PBU FE and clustering) |
-| `year_n` | Year (used for time FE) |
-
-A full data dictionary is available in the replication package (`DATA_DICTIONARY.md`).
+The administrative urgent channel is selected and larger — the closest feasible
+urgent-procurement comparison, not a randomized one. The Lee trimming bounds
+discipline that selection: within item × year × PBU strata the overrepresented
+administrative group is trimmed from the high and low tails of its price
+distribution, producing lower and upper bounds for the litigated-over-
+administrative gap under a monotonicity restriction. A parametric (Heckman-type)
+selection correction is non-informative in this design and is reported only as a
+diagnostic.
 
 ---
 
-## Running the Analysis
+## Pipeline
 
-### Quick Start (v4 -- R)
-
-```bash
-# 1. Clone the repository and navigate to the project
-cd paper1-bitter-pills
-
-# 2. Run the full v4 pipeline (~5 minutes on 16 cores)
-Rscript v4/run_all.R
-```
-
-This single command executes all analysis scripts in sequence:
-
-1. `00_prepare_data.R` -- Load and prepare the dataset (cached at `/tmp/v4_prepared.rds`)
-2. `01_desc_stats.R` -- Descriptive statistics
-3. `02_balance_table.R` -- Balance table for urgent subsample
-4. `03_main_regressions.R` -- Main regression tables (4 FE specs x 3 clustering variants)
-5. `04_heterogeneity.R` -- Heterogeneous effects analysis
-6. `05_fiscal_costs.R` -- Fiscal cost estimates
-7. `06_robustness.R` -- Robustness checks (120+ regressions)
-8. `07_graphs.R` -- Generate all figures
-9. `08_pub_tables.R` -- Publication-ready LaTeX tables
-10. `09_pub_figures.R` -- Publication-ready PDF figures
-
-### v6 Extensions (Journal of Public Economics)
-
-The v6 revision adds one new script with two exercises:
-
-| Script | Purpose | Outputs |
-|--------|---------|---------|
-| `20_falsification_and_supplier_fe.R` | Placebo test (items never litigated) + supplier FE decomposition | `output/tables/tab_placebo.tex`, `output/tables/tab_supplier_fe.tex` |
+The v9 analysis runs on top of the v4 prepared cache. The numbered scripts emit
+macros into `manuscript/paper/values.tex`, which the LaTeX manuscript reads.
 
 ```bash
-# Run after the main v4 pipeline
-Rscript v6-jpub-short/analysis/20_falsification_and_supplier_fe.R
-```
-
-### Running Individual Scripts
-
-```bash
-# Must run data preparation first
+# 1. Prepare input data (one-off; ~1 minute)
 Rscript v4/analysis/00_prepare_data.R
 
-# Then any individual analysis script
-Rscript v4/analysis/03_main_regressions.R
-Rscript v4/analysis/07_graphs.R
+# 2. Regenerate outputs and compile (one command)
+./v9-jpube-short/build_v9.sh
 ```
 
-### Legacy Analysis (Stata)
+`build_v9.sh` runs the analysis scripts — among them
+`40_utg_lee_bounds.R` (Lee bounds), `43_rambachan_roth.R` (BJS event study +
+Honest-DiD), `44_wild_bootstrap.R` (Rademacher wild-cluster bootstrap),
+`45_reconciliation.R` (pricing-vs-sourcing decomposition),
+`46_procurement_cost_bound.R` (fiscal procurement-cost calculation),
+`48_mechanism_evidence.R` (within firm-buyer-item pricing, winner switching,
+aggregation), and the Python classifier/table layer
+(`49_classifier_macros.py`, `50_v9_outputs.py`, `54_sample_flow_diagnostics.py`)
+— checks required outputs, and compiles `main.pdf` and `OnlineAppendix.pdf`.
 
-```bash
-# Install required Stata packages
-stata-se -b -q do v2/analysis/install_packages.do
-
-# Run the v3 pipeline
-bash v3/analysis/run_all.sh
-```
+Each numbered script emits a block into `values.tex` (delimited by auto-markers).
+The manuscript reads those macros — every numerical claim, table input, and
+figure path is regenerated by the script that owns it. **No hardcoded numerals
+in the manuscript.**
 
 ---
 
 ## Output Files
 
-### Tables
-
-| Directory | Format | Count | Description |
-|-----------|--------|-------|-------------|
-| `v4/pub/tables/` | LaTeX (.tex) | 17 | Publication-ready tables (booktabs + threeparttable) |
-| `v4/manuscript/` | LaTeX (.tex) | 59 | Full regression tables (tabularray format) |
-| `v4/results/` | HTML (.html) | 59 | Browser-viewable tables |
-
-### Figures
-
-| Directory | Format | Count | Description |
-|-----------|--------|-------|-------------|
-| `v4/pub/figures/` | PDF | 8 | Publication-ready figures (grayscale, 6.5 x 4 in) |
-| `v4/graphs/` | PDF | 8 | Color figures for presentations |
-
-### Manuscript
-
-```bash
-# Compile the manuscript (v6 — Journal of Public Economics short paper)
-cd v6-jpub-short/manuscript/paper
-pdflatex -interaction=nonstopmode Bitter-Pills_v6.tex
-bibtex Bitter-Pills_v6
-pdflatex Bitter-Pills_v6.tex
-pdflatex Bitter-Pills_v6.tex
-```
+| Path | Content |
+|------|---------|
+| `v9-jpube-short/output/figures/` | Vector PDFs: pricing-vs-sourcing decomposition, BJS event study, Honest-DiD sensitivity, quantity-ratio density |
+| `v9-jpube-short/output/tables/` | Generated `.tex` tables: combined urgent-margins-and-Lee-bounds, within firm-buyer-item robustness, winner switching, placebo, dynamic sensitivity, procurement cost, classifier validation, sample construction, and more |
+| `v9-jpube-short/manuscript/paper/main.pdf` | Compiled main paper (17 pp, JPubE short-paper review format) |
+| `v9-jpube-short/manuscript/paper/OnlineAppendix.pdf` | Compiled Online Appendix (5 pp) |
 
 ---
 
 ## Computational Environment
 
-The analysis was developed and tested on the following system:
+The analysis was developed and tested on **DarcioWork** (a WSL2 development
+workstation):
 
 | Component | Specification |
-|-----------|--------------|
-| **OS** | Ubuntu 24.04 (WSL2 on Windows) |
-| **CPU** | 16 cores |
-| **RAM** | 15 GB |
-| **R** | 4.5 |
-| **fixest** | Uses OpenMP for parallel estimation (16 threads) |
+|-----------|---------------|
+| OS | Ubuntu (WSL2 on Windows) |
+| CPU | Intel i7-1260P (12 cores / 14 threads visible to WSL2) |
+| RAM | 21 GB |
+| GPU | None (CPU-only) |
+| R | 4.5 |
+| `fixest` threads | `setFixest_nthreads(12)` |
+| DuckDB threads | `PRAGMA threads=12; PRAGMA memory_limit='14GB'` |
 
-!!! note "Runtime"
-    The full v4 pipeline (`run_all.R`) takes approximately 5 minutes on the reference system. The most time-intensive step is the robustness analysis (`06_robustness.R`), which estimates 120+ regressions across three winsorization levels.
+!!! note "Reproducibility"
+    Scripts that draw random numbers (bootstrap) set explicit seeds. Re-running
+    the pipeline produces identical `values.tex` macro blocks, and a
+    LaTeX-only rebuild reproduces both PDFs without changing any estimate.

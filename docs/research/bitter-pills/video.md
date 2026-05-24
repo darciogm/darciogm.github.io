@@ -2,20 +2,25 @@
 hide:
   - navigation
   - toc
-paper: bitter-pills
 ---
 
-# Animated Overview
+# Video summary
 
 <p class="subtitle" style="text-align:center; color:#666; margin-bottom:1.5em;">
-A narrated visual walkthrough of the paper's key ideas and findings.
+A short conversational explainer of the paper's argument — from the court
+mandate through legal urgency to the sourcing margin and the policy response.
+In preparation.
 </p>
 
-<iframe src="../assets/storytelling_video.html"
-        style="width:100%; height:80vh; border:1px solid #e0e0e0; border-radius:12px;"
-        allowfullscreen>
-</iframe>
+!!! info "Video explainer in preparation"
+    A video explainer for *Sourcing under Sanctions* is in preparation and will
+    appear here once available. In the meantime, the full argument — court
+    mandates secure delivery, but legal urgency changes how the state buys —
+    is laid out in the paper.
+
+    [Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v9.pdf){ .md-button .md-button--primary }
+    [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf){ .md-button }
 
 <p style="text-align:center; margin-top:1em; font-size:0.85em; color:#999;">
-Sound on recommended. Use arrow keys or buttons to navigate. ~5 minutes.
+Genicolo-Martins &amp; Furquim de Azevedo, 2026.
 </p>

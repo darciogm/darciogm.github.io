@@ -1,108 +1,111 @@
----
-paper: bitter-pills
----
-
 # The Paper
 
-## Bitter Pills: Judicial Enforcement and the Cost of Public Procurement in Brazil
+## Sourcing under Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs
 
 **Authors:** Darcio Genicolo-Martins and Paulo Furquim de Azevedo
 **Affiliation:** Insper Institute of Education and Research, Sao Paulo, Brazil
-**Version:** May 2026 (v7 r2-round1, three-channel decomposition rewrite)
+**Version:** May 2026 (JPubE short paper, v9)
 
 !!! abstract "Download"
-    The latest version of the paper is available as a PDF in the manuscript directory of the replication package.
+    [Main paper (PDF)](assets/pdf/sourcing-under-sanctions-v9.pdf) &nbsp;·&nbsp; [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf)
 
 ---
 
-## Contribution
+## Question
 
-This paper makes three main contributions to the literature on public procurement, judicial enforcement, and health policy:
+Court mandates secure delivery, but they may change how the state procures the mandated good. In Brazil, courts compel state governments to purchase specific medications when patients win right-to-health lawsuits. Compliance is enforced through fines, civil liability, and other sanctions on procurement officials who fail to deliver---but no analogous penalty attaches to officials who deliver at high prices. In São Paulo alone, this one-sided accountability regime covers roughly **\$300M of pharmaceutical purchases per year**.
 
-1. **Quantifying the fiscal costs of judicial intervention in public procurement.** While a growing literature studies health litigation in Brazil and other countries, the existing evidence focuses primarily on the legal and medical dimensions. This paper provides the first systematic estimate of how court-mandated purchases affect procurement prices, competition, and outcomes.
+Higher prices under judicial urgency have two distinct interpretations that are observationally confounded in standard procurement data:
 
-2. **Identifying the "under the gun" mechanism.** By exploiting the institutional distinction between litigated and administrative urgent purchases---both of which bypass standard procurement timelines, but only the former expose officials to judicial sanctions---we isolate the causal effect of enforcement pressure on procurement costs. This "under the gun" effect accounts for the bulk of the observed price premium.
+- **Same-firm markups** (in the spirit of accountability models, Prendergast, 2007): the same supplier charges a sanctioned buyer more for the same item.
+- **Fragmented sourcing** (in the spirit of passive waste, Bandiera, Prat & Valletti, 2009): the state buys smaller lots, loses scale, and matches with a different supplier set.
 
-3. **Informing the design of judicial remedies.** The findings suggest that courts should consider the procurement-side costs of their mandates and that institutional reforms reducing the sanction channel---such as expanding the administrative request mechanism to other states and removing the court-order signal from tender notices---could substantially lower the fiscal burden of health litigation.
+The paper separates these margins with a within firm-buyer-item test, selection bounds, and direct sourcing evidence.
 
-### New in v6
+---
 
-Two additional empirical exercises strengthen the causal interpretation:
+## Contributions
 
-- **Placebo test (items never litigated):** Running the preferred specification on items with zero litigated purchases yields a coefficient of $-0.020$ (SE = 0.032, n.s.), confirming the premium is absent where judicial pressure plays no role.
-- **Supplier fixed effects (2,202 firms):** Adding firm FE attenuates the urgency coefficient by 52% (from 0.051 to 0.025), decomposing the premium into roughly equal demand-side and supply-side components. With both firm FE and quantity controls, the residual falls to 0.011 (n.s.).
+1. **Main contribution — pricing versus sourcing under judicial urgency.** Standard procurement comparisons confound incumbent pricing with supplier-set reallocation. Holding the supplier–buyer match fixed, the within firm-buyer-item triple isolates same-firm pricing; the sourcing evidence captures scale loss and supplier-set reallocation. The headline result is **no broad same-firm markup in deep repeated urgent markets**, with the cost surfacing through sourcing instead — not a universal "no markup" claim, since supplier leverage can reappear in thinner or earlier markets.
+
+2. **The administrative urgent channel as a selected but informative comparison.** São Paulo runs a parallel administrative-request channel that creates urgent pharmaceutical procurement outside the court-sanction regime. It is not random and it is larger and screened, but it is the closest feasible urgent-procurement comparison, and the paper disciplines it with Lee bounds rather than treating it as a clean counterfactual.
+
+3. **A judicial-enforcement form of passive waste.** One-sided sanctions secure delivery but weaken the routines that aggregate demand and match buyers with suppliers. The paper reframes right-to-health litigation as a question of public-sector production under legal constraint: how court orders change the way the state buys, not only how much it spends. It also engages JPubE work on demand aggregation in health procurement (Lin & Wang, 2025).
+
+---
+
+## Headline Findings
+
+| Object | Estimate |
+|--------|----------|
+| Selection-bounded under-the-gun gap (Lee bounds) | **[15.9%, 21.1%]** |
+| Within firm-buyer-item Admin coefficient | β̂ = 0.035, SE = 0.041 (no broad markup) |
+| Sourcing shift: modal winner differs across regimes | **70.2%** of item-buyer pairs |
+| Lost scale: admin orders larger than litigated | **~3.3×** |
+| Bounded annual fiscal procurement-cost implication | **\$27.8M** on \$300M of litigated spending |
+| Placebo on never-litigated items | economically and statistically zero |
+
+The deep-market no-broad-markup result is the central finding; a thin-market sanction premium reappears on subsamples where the incumbent has fewer alternatives, consistent with supplier leverage exactly where the literature predicts it should bite.
 
 ---
 
 ## Institutional Background
 
-Brazil's universal public health system (SUS) provides free access to pharmaceuticals listed in official formularies. When patients cannot obtain medications through regular channels, they may file lawsuits compelling the government to purchase and deliver specific drugs. These court orders create a distinct procurement channel---**litigated purchases**---that operates under tight judicial deadlines and the threat of sanctions (fines, contempt proceedings) against procurement officials.
+Brazil's universal public health system (SUS) provides free access to pharmaceuticals listed in official formularies. When patients cannot obtain medications through regular channels, they may file lawsuits compelling the government to purchase and deliver specific drugs. These court orders create a distinct procurement channel---**litigated purchases**---that operates under tight judicial deadlines and possible sanctions for procurement officials.
 
-The Sao Paulo state government conducts pharmaceutical procurement through its electronic platform (BEC), which records all transactions at the bid level. Purchases are classified into three types:
+The São Paulo state government conducts pharmaceutical procurement through its electronic platform (BEC), which records transactions at the bid level. Within urgent demand, two channels coexist:
 
-- **Ordinary purchases:** Planned procurement following standard timelines and competitive bidding rules.
-- **Administrative urgent purchases:** Expedited procurement authorized by the administration itself (e.g., due to supply disruptions or inventory shortfalls), which may use simplified procedures but are not subject to judicial sanctions.
-- **Litigated purchases:** Procurement compelled by court orders, subject to judicial deadlines and sanctions for non-compliance.
+- **Litigated purchases:** Procurement compelled by court orders. Failure to deliver can expose the responsible officials to fines, civil liability, and other sanctions.
+- **Administrative urgent purchases:** Procurement authorized by the SES/SP scientific committee. Same compressed timelines, same small quantities, same auction procedures on BEC, but without the court-sanction regime.
+
+This dual channel for urgent pharmaceutical demand is the institutional asset that lets the under-the-gun (UTG) contrast hold urgency fixed while disciplining selection into the administrative channel.
+
+---
+
+## Identification
+
+The selection-bounded UTG gap is identified within urgent pharmaceutical demand by:
+
+1. **Lee monotone trimming bounds** on selection into the administrative channel (screening admits items that would have been cheaper under any regime; the Lee bound brackets that wedge under a monotonicity restriction — it bounds selection rather than eliminating it).
+2. **Within firm-buyer-item triples** observed under both urgent regimes (1,206 triples, 4,573 observations) — same firm, same item, same buyer — that isolate same-firm pricing while conditioning away supplier-set reallocation.
+3. **Wild cluster bootstrap** on the preferred-FE Admin coefficient (Rademacher replicates).
+4. **Borusyak-Jaravel-Spiess event study** with **Rambachan-Roth honest-sensitivity** overlay, used as diagnostic rather than primary evidence (Appendix).
+5. **Placebo** on items never subject to litigation: the urgent-procurement pattern does not reproduce outside the litigation margin.
 
 ---
 
 ## Data and Sample
 
-The analysis uses the **BEC-G65-WORK1** dataset, a bid-level panel covering all pharmaceutical procurement transactions by the Sao Paulo State Department of Health (SES/SP) from January 2009 through December 2019.
+The analysis uses bid-level data from the **Bolsa Eletrônica de Compras** (BEC), São Paulo state, covering pharmaceutical procurement by SES/SP from January 2009 through December 2019.
 
 | Feature | Description |
 |---------|-------------|
-| **Source** | Bolsa Eletronica de Compras (BEC), Sao Paulo state |
-| **Coverage** | All bids for Group 65 (medical, dental, and hospital supplies) |
+| **Source** | BEC, São Paulo state (mandatory for common goods since 2007) |
+| **Coverage** | Pharmaceutical purchases (Group 65) |
 | **Period** | January 2009 -- December 2019 |
-| **Observations** | 479,330 bids (full sample); 226,000 (items with both litigated and ordinary) |
-| **Unit of observation** | Bid (firm x item x procurement event) |
-| **Key outcomes** | Reference price, negotiated price, quantity, number of bidders, tender success |
-| **Treatment** | Purchase type: Ordinary (0), Administrative (1), Litigated (2) |
-
----
-
-## Empirical Strategy
-
-The identification strategy relies on comparing procurement outcomes across purchase types within narrowly defined cells. The preferred specification includes:
-
-$$
-Y_{ijpt} = \alpha + \beta \cdot \text{Litigated}_{ijpt} + \mathbf{X}_{ijpt}'\gamma + \mu_i + \delta_t + \phi_p + \varepsilon_{ijpt}
-$$
-
-where:
-
-- $Y_{ijpt}$ is the outcome (log price, log number of firms, or tender success) for item $i$, buyer $p$, at time $t$
-- $\text{Litigated}_{ijpt}$ is an indicator for court-mandated procurement
-- $\mu_i$ are **item fixed effects** (comparing the same product)
-- $\delta_t$ are **year fixed effects** (absorbing time trends)
-- $\phi_p$ are **public buyer unit (PBU) fixed effects** (comparing within the same procurement office)
-- Standard errors are clustered at the PBU level
-
-### Four Fixed-Effects Specifications
-
-| Spec | Fixed Effects | Purpose |
-|------|--------------|---------|
-| (1) | Item | Baseline: within-product comparison |
-| (2) | Item + Year | Controls for aggregate time trends |
-| (3) | Item + Year + PBU | **Preferred:** controls for buyer heterogeneity |
-| (4) | Item + Year-Month + PBU | Most saturated: monthly time effects |
-
-### The "Under the Gun" Design
-
-To isolate the effect of judicial sanctions from general urgency, we restrict the sample to urgent purchases only (administrative + litigated) and estimate:
-
-$$
-Y_{ijpt} = \alpha + \beta \cdot \text{Administrative}_{ijpt} + \mu_i + \delta_t + \phi_p + \varepsilon_{ijpt}
-$$
-
-A negative coefficient on the administrative indicator means that **litigated purchases are more expensive**, isolating the sanction channel.
+| **Observations** | 479,330 purchase-offer-item observations |
+| **Units** | Classifier operates at the purchase-order/tender-notice level; empirical analysis is at the purchase-offer-item level; price regressions use accepted winning bids |
+| **Key outcomes** | Negotiated price, reference price, quantity, number of bidders, tender success |
+| **Treatment contrasts** | Litigated vs Ordinary; **Litigated vs Administrative (UTG)** |
 
 ---
 
 ## Software and Estimation
 
-- **Primary analysis (v4):** R 4.5 with `fixest` package (equivalent to Stata's `reghdfe`)
-- **Legacy analysis (v2/v3):** Stata/SE with `reghdfe` and `ftools`
-- **Winsorization:** 1st/99th percentiles (baseline); robustness at 0% and 5th/95th
-- **Clustering:** PBU (primary); item and two-way PBU x Item (robustness)
+- **Primary analysis:** R 4.5 with `fixest` (`feols`), BJS event study, Rademacher wild cluster bootstrap, and Lee bound computation.
+- **DuckDB** for parquet I/O on BEC and joined data.
+- **Honest-DiD-style** sensitivity bound implemented as a diagnostic overlay.
+- **Macro discipline:** every numerical claim, table input, and figure path resolves through `values.tex`, regenerated by the producing script. No hardcoded numerals in the manuscript.
+
+---
+
+## Policy Implication
+
+The evidence identifies a procurement mechanism, not a general verdict on courts. Because the measured margin is lost scale and supplier matching rather than contract language or price caps alone, the policy response is to **preserve delivery while rebuilding aggregation and supplier matching under legal urgency**:
+
+- **Framework agreements and pooled urgent procurement** restore scale.
+- **Pre-contracted suppliers for recurring medicines** support supplier matching.
+- **Stronger administrative screening** widens an urgent route without court sanctions for admissible cases.
+- **Inventories or protocols for recurrent litigated medicines** let the state anticipate and aggregate demand rather than source isolated emergencies.
+
+The paper does not estimate patient health benefits, the social value of litigation, or a structural counterfactual in which sanctions are removed; the fiscal calculation is a procurement-cost figure, not a full welfare estimate. The point is narrower and more useful: under one-sided legal urgency, the procurement problem is not only how much the state pays, but how the state is forced to buy.

@@ -1,201 +1,94 @@
----
-paper: bitter-pills
----
+# Main Results
 
-# Results
+*See also: [Findings overview](findings/index.md) · [Analyses overview](analyses/index.md).*
 
-This page presents the main empirical findings from the paper, organized by the key outcomes and mechanisms. See also: [Administrative vs Ordinary](results_adm_vs_ord.md) | [Maps](maps.md) | [Changelog](changelog.md)
+The results build cumulatively. Section 5.1 establishes that urgent procurement is costlier and less competitive than ordinary procurement of comparable items. Section 5.2 moves inside urgent procurement and bounds the under-the-gun gap for selection into the administrative channel. Section 5.3 asks whether the same firm charges a sanctioned buyer more for the same item, and finds no broad same-firm markup in deep repeated urgent markets. Section 5.4 locates the cost margin in fragmented sourcing — lost scale and supplier-set reallocation. Throughout, the administrative urgent channel is the closest feasible urgent-procurement comparison: selected, larger, and neither random nor a clean control.
 
 ---
 
-## Geographic Context
+## 5.1 Urgent procurement is costlier and less competitive
 
-### Health Litigation Across Sao Paulo
+Relative to ordinary purchases of comparable items, urgent procurement moves in the direction expected when sourcing is compressed. The estimates condition on item, year, and buyer fixed effects.
 
-<figure markdown>
-  ![Health litigation rate map](assets/figures/fig_00_litigation_map.png){ width="100%" }
-  <figcaption><strong>Figure 1.</strong> Health litigation cases per 1,000 inhabitants across municipalities in the state of Sao Paulo. Darker shading indicates higher litigation rates. The geographic variation in litigation intensity motivates the analysis of its procurement consequences.</figcaption>
-</figure>
+| Outcome | Urgent vs ordinary | SE |
+|---|:---:|:---:|
+| Negotiated price | **+5.4%** (0.053) | (0.016) |
+| Reference price | **+2.7%** (0.027) | (0.014) |
+| Number of bidders | **−5.4%** (−0.056) | (0.014) |
+| Tender success | **+2.1 pp** (0.021) | (0.006) |
 
-<figure markdown>
-  ![Total litigation map](assets/figures/fig_00d_litigation_total_map.png){ width="100%" }
-  <figcaption><strong>Figure 2.</strong> Total health litigation cases by municipality. The absolute number of cases reflects both population size and litigation propensity, with the metropolitan region of Sao Paulo concentrating the largest volumes.</figcaption>
-</figure>
+Urgency appears to help the state complete purchases — tender success rises — while weakening the competitive conditions under which those purchases are sourced. These estimates establish the urgent-procurement environment, not judicial sanction exposure; the remaining results move inside urgent procurement and separate pricing from sourcing.
 
-### Procurement Infrastructure
-
-<figure markdown>
-  ![PBU location map](assets/figures/fig_00b_litigation_pbu_map.png){ width="100%" }
-  <figcaption><strong>Figure 3.</strong> Public Buyer Units (PBUs) across Sao Paulo state. Each point represents a procurement office that purchases pharmaceuticals through the state's electronic platform (BEC). The 97 PBUs are distributed across the state, with concentration in the capital region.</figcaption>
-</figure>
+Detail: [AN-001 — Urgent vs ordinary procurement](analyses/an-001-urgent-vs-ordinary.md).
 
 ---
 
-## Purchase Type Classification
+## 5.2 The under-the-gun gap is selection-bounded
 
-<figure markdown>
-  ![Purchase types comparison](assets/figures/fig_00c_litigation_types.png){ width="100%" }
-  <figcaption><strong>Figure 4.</strong> Types of purchases: Ordinary, Administrative, and Litigated. This figure illustrates the three-way classification of procurement events. Ordinary purchases follow standard timelines; administrative purchases are expedited but lack judicial oversight; litigated purchases are court-mandated with enforceable sanctions.</figcaption>
-</figure>
+The under-the-gun comparison is within urgent procurement: court-mandated (litigated) purchases versus administrative urgent purchases. Coefficients are administrative minus litigated, so a negative coefficient means litigated purchases are more expensive; percentage gaps are reported in the reader-facing litigated-over-administrative direction.
 
----
+The naive litigated-over-administrative gap is **29.5%**. Because administrative requests are screened and the administrative group is overrepresented, we trim it within item-by-year-by-PBU strata using Lee bounds. The selection-corrected interval is:
 
-## Main Results
+<div class="key-result" markdown>
+<span class="number">[15.9%, 21.1%]</span>
+<span class="label">Lee-bounded litigated-over-administrative price gap. The bounded interval, not the naïve cross-sectional gap, is the disciplined object. The bounds discipline selection under a monotonicity restriction; they do not eliminate it or claim assignment to sanctions.</span>
+</div>
 
-### Preferred Specification: Item + Year + PBU Fixed Effects
+Wild-cluster inference supports the contrast: the preferred specification rejects a zero gap at *p* = 0.0080, with *p* = 0.0390 under the tighter item-by-year-month specification. Even after disciplining the most direct urgent comparison for selection, litigated urgent procurement remains more expensive.
 
-The table below summarizes the main estimates from the preferred specification (Specification 3), which includes item, year, and public buyer unit fixed effects. Standard errors are clustered at the PBU level.
-
-| Outcome | Coefficient | Std. Error | Effect (%) |
-|:--------|:-----------:|:----------:|:----------:|
-| Log Reference Price | 0.027* | (0.016) | +2.7% |
-| Log Negotiated Price (total) | 0.053*** | (0.016) | +5.4% |
-| Log Negotiated Price (direct) | 0.030* | (0.016) | +3.1% |
-| Log Quantity | -0.058 | (0.064) | -5.6% |
-| Log N. Firms (total) | -0.056*** | (0.011) | -5.5% |
-| Log N. Firms (direct) | -0.042*** | (0.010) | -4.1% |
-| Tender Success | 0.021*** | (0.004) | +2.1pp |
-
-<small>**Notes:** \* p < 0.10, \*\* p < 0.05, \*\*\* p < 0.01. "Total" refers to the full-sample effect of litigated vs. ordinary purchases. "Direct" isolates the direct price effect controlling for bidder participation. Percentage effects computed as exp(beta) - 1. Tender success is in percentage points.</small>
-
-!!! tip "Interpretation"
-    Litigated purchases pay **2.7% higher reference prices** and **5.4% higher negotiated prices** than ordinary purchases for the same item, in the same year, at the same procurement office. Part of this price increase operates through reduced competition: litigated purchases attract **5.5% fewer bidding firms**.
+Detail: [AN-002 — Lee bounds](analyses/an-002-lee-bounds.md) · [AN-007 — Wild-cluster bootstrap](analyses/an-007-wild-cluster-bootstrap.md).
 
 ---
 
-### Coefficient Plot
+## 5.3 Same firm, same buyer, same item: no broad same-firm markup in deep markets
 
-<figure markdown>
-  ![Coefficient plot](assets/figures/fig_08_coefplot.png){ width="100%" }
-  <figcaption><strong>Figure 5.</strong> Coefficient estimates with 95% confidence intervals from the preferred specification (Item + Year + PBU fixed effects). Each panel shows the estimated effect of litigated procurement on a different outcome variable. The horizontal bars represent 95% confidence intervals based on PBU-clustered standard errors.</figcaption>
-</figure>
+The pricing test asks whether the same firm charges a sanctioned buyer more for the same item. In firm-buyer-item triples observed under both urgent regimes (4,573 observations, 1,206 triples), the administrative coefficient is:
 
----
+<div class="key-result" markdown>
+<span class="number">β̂ = 0.035 (SE 0.041)</span>
+<span class="label">Within firm-buyer-item administrative coefficient. Conditional on the same firm, buyer, and item, prices are statistically indistinguishable across urgent regimes: no broad same-firm markup in deep repeated urgent markets. By construction this test conditions away supplier reallocation; it cannot measure who wins.</span>
+</div>
 
-### Price Dynamics Over Time
+"Deep markets" are repeated urgent settings with greater scale or more standardized demand, proxied by above-median quantity, SUS-formulary status, and later-period procurement. The heterogeneity is as important as the baseline null:
 
-<figure markdown>
-  ![Time trends](assets/figures/fig_07_time_trends.png){ width="100%" }
-  <figcaption><strong>Figure 6.</strong> Mean log negotiated price over time by purchase type. The figure plots the evolution of average (log) negotiated prices for ordinary, administrative, and litigated purchases from 2009 to 2019. The persistent gap between litigated and ordinary purchases motivates the econometric analysis.</figcaption>
-</figure>
+| Subsample | Coefficient |
+|---|:---:|
+| Above-median quantity (deeper) | **−0.005** |
+| SUS-formulary (deeper) | **−0.001** |
+| Below-median quantity (thinner) | **+0.066\*\*\*** |
+| Earlier period (thinner) | **+0.117\*\*\*** |
 
----
+The result is not a claim that supplier leverage never matters. In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup; in thinner and earlier markets, the markup channel can reappear.
 
-## The "Under the Gun" Effect
-
-The key mechanism identified in the paper is the **"under the gun" effect**: the price premium that arises specifically from judicial sanctions, above and beyond the general urgency of the purchase.
-
-To isolate this channel, we restrict the sample to **urgent purchases only** (administrative + litigated) and estimate the effect of the administrative indicator. Since both purchase types share urgency but only litigated purchases carry judicial sanctions, a negative coefficient on the administrative indicator means litigated purchases are more expensive.
-
-### Under the Gun: All Outcomes (Preferred Specification)
-
-| Outcome | Coefficient | Std. Error | Effect (%) |
-|:--------|:-----------:|:----------:|:----------:|
-| Log Reference Price | -0.319*** | (0.087) | -27.3% |
-| Log Quantity | +1.115* | (0.618) | +205% |
-| Log Neg. Price (total) | -0.262** | (0.102) | -23.0% |
-| Log Neg. Price (direct) | -0.117 | (0.093) | n.s. |
-| Log N. Firms (total) | +0.102 | (0.070) | n.s. |
-| Tender Success | -0.018 | (0.019) | n.s. |
-
-<small>**Notes:** \*\*\* p < 0.01, \*\* p < 0.05, \* p < 0.10. The administrative indicator is coded as 1 for administrative urgent purchases and 0 for litigated purchases. A negative coefficient indicates that litigated purchases have higher values than administrative ones. "n.s." = not statistically significant at conventional levels.</small>
-
-!!! danger "The sanction channel operates through reference prices and quantities"
-    The **23--30% negotiated price premium** from the "under the gun" effect is driven by two specific mechanisms: litigated purchases carry **27% higher reference price ceilings** (set during planning) and involve **much smaller quantities** that forgo bulk discounts. By contrast, bidder participation and tender success rates do not differ significantly between administrative and litigated purchases.
-
-<figure markdown>
-  ![UTG coefficient plot](assets/figures/fig_09_utg_coefplot_v7.png){ width="100%" }
-  <figcaption><strong>Figure 7.</strong> Under the Gun: Coefficient estimates with 90% and 95% confidence intervals from the preferred specification. A negative coefficient on the administrative indicator means litigated purchases have higher values.</figcaption>
-</figure>
+Detail: [AN-003 — Within-firm pricing](analyses/an-003-within-firm-pricing.md) · [AN-004 — Market-depth heterogeneity](analyses/an-004-market-depth-heterogeneity.md).
 
 ---
 
-## Litigated vs. Ordinary Purchases
+## 5.4 Fragmented sourcing: lost scale and supplier-set reallocation
 
-To isolate the specific effect of **court-mandated** procurement, we compare litigated purchases directly to ordinary ones, excluding administrative purchases from the sample. This yields larger estimates than the pooled urgent analysis.
+If the cost margin is not a broad same-firm markup in deep markets, where does it operate? The sourcing evidence points to two channels: lost scale and a reallocated winning supplier set.
 
-### Litigated-Only: Preferred Specification
+**Lost scale.** Administrative urgent orders are **3.3× larger** than litigated urgent orders, so fragmented court-mandated buying gives up scale and the discounts that come with it.
 
-| Outcome | Coefficient | Std. Error | Effect (%) |
-|:--------|:-----------:|:----------:|:----------:|
-| Log Reference Price | +0.073*** | (0.023) | +7.6% |
-| Log Quantity | -0.232*** | (0.085) | -20.7% |
-| Log Neg. Price (total) | +0.087*** | (0.021) | +9.1% |
-| Log Neg. Price (direct) | -0.008 | (0.028) | n.s. |
-| Log N. Firms (total) | -0.082*** | (0.022) | -7.9% |
-| Log N. Firms (direct) | -0.053*** | (0.016) | -5.1% |
-| Tender Success (total) | +0.024*** | (0.009) | +2.4pp |
-| Tender Success (direct) | +0.027*** | (0.009) | +2.8pp |
+**Supplier reallocation.** Among item-buyer pairs observed under both urgent regimes (2,134 pairs), the mean winner-set Jaccard similarity is **0.268**, **48.5%** of pairs have no winner overlap, and the **modal winner differs in 70.2% of pairs**. Conditional on the same firm, prices are statistically indistinguishable in deep markets; unconditionally, the winning supplier set often changes. That combination is the empirical signature of fragmented sourcing.
 
-<small>**Notes:** \*\*\* p < 0.01. Sample restricted to litigated and ordinary purchases only (excluding administrative). Effects computed as exp(beta) - 1. Tender success in percentage points.</small>
+**Reconciliation.** The figure below reconciles the observed administrative-minus-litigated price gap with a mechanical quantity/scale component, the within-firm pricing component, and a residual supplier-composition component. The residual is a reconciliation residual and should not be read alone as proof of sourcing; the direct winner-switching evidence above carries that claim.
 
-!!! tip "Litigated purchases drive the bulk of enforcement costs"
-    Comparing litigated directly to ordinary purchases yields **larger effects** than the pooled analysis across all outcomes: reference prices +7.6% (vs. 2.7%), negotiated prices +9.1% (vs. 5.4%), and bidder participation -7.9% (vs. -5.5%). The entire negotiated price premium operates through the **quantity channel**: controlling for quantity, the direct effect is essentially zero.
+![Pricing vs sourcing decomposition](assets/figures/fig_sourcing_vs_pricing_v9.png)
 
-<figure markdown>
-  ![Litigated coefficient plot](assets/figures/fig_10_litigated_coefplot_v7.png){ width="100%" }
-  <figcaption><strong>Figure 8.</strong> Litigated vs. Ordinary: Coefficient estimates with 90% and 95% confidence intervals from the preferred specification. "Total" = treatment variable only; "Direct" = additionally controlling for log quantity.</figcaption>
-</figure>
+| Component (admin minus litigated) | Contribution |
+|---|:---:|
+| Observed price gap | **−22.8%** |
+| Quantity / scale | **−32.8%** |
+| Within-firm pricing | **+3.5%** |
+| Composition (residual) | **+10.9%** |
+
+Detail: [Fragmented sourcing is the margin](findings/fragmented-sourcing-is-the-margin.md).
 
 ---
 
-## Heterogeneity
+## The policy margin
 
-The paper documents significant heterogeneous effects across several dimensions:
+Court mandates do not merely affect how much the state pays; they change how the state is forced to buy. The mechanism is a judicial-enforcement form of passive waste: one-sided sanctions secure delivery, but they weaken the routines that aggregate demand and match buyers with suppliers. Because the measured margin is lost scale and supplier matching rather than contract language or price caps, the policy response is to **preserve delivery while restoring aggregation under legal urgency** — not to weaken access to medicines.
 
-=== "SUS Component"
-
-    Effects are concentrated in **basic SUS items** (essential medicines). For specialized or high-value items, the litigated premium is smaller, possibly because reference prices for these items are already high and less sensitive to procurement pressure.
-
-=== "Time Period"
-
-    The price premium is larger in the **later period (2014--2019)**, consistent with the expansion of health litigation in Brazil and increasing pressure on procurement officials over time.
-
-=== "Market Competition"
-
-    Effects are strongest in **low-competition markets** (items with below-median numbers of bidders). When few firms compete, the reduction in bidder participation induced by judicial urgency has a larger impact on prices.
-
-=== "PBU Size"
-
-    Both large and small procurement offices are affected, but the mechanisms differ. Larger PBUs may have more institutional capacity to manage judicial orders, while smaller ones face more acute resource constraints.
-
----
-
-## Falsification: Items Never Litigated
-
-If the urgency premium reflects the causal effect of judicial pressure rather than unobserved item characteristics, it should be absent for items that are never subject to court orders. We test this by running the preferred specification on items with zero litigated purchases across the entire 2009--2019 period, restricting to those with both ordinary and administrative purchases for within-item comparability.
-
-| Outcome | Coefficient | Std. Error | Significant? |
-|:--------|:-----------:|:----------:|:------------:|
-| Log Negotiated Price | -0.020 | (0.032) | No |
-| Log Reference Price | -0.031 | (0.045) | No |
-
-!!! success "Falsification passes"
-    Both coefficients are economically small and statistically insignificant. The urgency premium exists **only** for items that are targets of litigation, ruling out the possibility that the main estimates reflect a generic correlation between urgency and prices.
-
----
-
-## Demand vs Supply Side: Supplier Fixed Effects
-
-The urgency premium could reflect demand-side pressure (officials accepting worse terms) or supply-side exploitation (firms charging more because they know the government is desperate). To distinguish these channels, we add supplier fixed effects (2,202 unique winning firms) to the preferred specification.
-
-| Specification | Coefficient | Attenuation |
-|:--------------|:-----------:|:-----------:|
-| Baseline (Item + Year + PBU FE) | 0.051 | -- |
-| + Supplier FE | 0.025 | 52% |
-| + Supplier FE + Log Quantity | 0.011 (n.s.) | 78% |
-
-!!! example "Decomposition"
-    Adding firm FE attenuates the urgency coefficient by **52%**, from 0.051 to 0.025. This indicates that roughly half the price premium reflects the same firms charging higher prices in urgent tenders (supply side), and half reflects officials selecting into worse matches under time pressure (demand side). With both firm FE and quantity controls, the residual coefficient falls to 0.011 (statistically insignificant), suggesting that the urgency premium operates through two concrete channels: suppliers exploiting judicial pressure, and the loss of bulk discounts from demand fragmentation.
-
----
-
-## Summary of Channels
-
-The results can be decomposed into three main channels through which judicial mandates increase procurement costs:
-
-1. **Competition channel:** Litigated purchases attract fewer bidders (-5.5%), reducing competitive pressure and leading to higher prices. This channel accounts for the difference between the "total" and "direct" price effects.
-
-2. **Sanction channel ("under the gun"):** Even controlling for reduced competition, the threat of judicial sanctions induces procurement officials to accept higher prices. This is the dominant channel, accounting for the 23--30% premium identified in the urgent-subsample analysis.
-
-3. **Supply-side exploitation:** Supplier fixed effects reveal that firms charge higher prices when they know the purchase is court-mandated, accounting for roughly half the urgency premium. The remaining half reflects demand-side distortions (officials accepting worse matches under pressure).
+*Continue: [Robustness](robustness.md) · [Extensions](extensions.md) · [Advanced Methods](advanced.md).*
