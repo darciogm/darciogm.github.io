@@ -136,14 +136,47 @@ that gradient **collapses once log-quantity is held fixed within the triple**
 log-quantity coefficient is $-0.259$ (SE $0.074$): a clean bulk-discount effect.
 The raw quantity gradient is therefore the **scale/sourcing channel leaking
 through** (consistent with [H:lost-scale](lost-scale.md)), not a same-firm
-pricing gradient. The genuine candidate for thin-market supplier leverage is the
-**earlier-period** contrast, not order size. The status stays **Moderate
-(supported)**, with the quantity axis reclassified as scale.
+pricing gradient.
 
-### Distinguish thinness from earliness
+The **earlier-period** contrast, by contrast, is *not* scale
+(`analysis/62_h4_period_axis.R`). Re-estimating the within firm-buyer-item
+administrative coefficient on the early and late subsamples with a within-triple
+log-quantity control, the early-period coefficient is $+0.117$ (SE $0.037$) and
+**rises to $+0.168$ (SE $0.062$, $p = 0.007$) once quantity is held fixed** — it
+survives, and even strengthens, the scale control, whereas the late-period
+coefficient is null throughout ($-0.038 \to -0.004$ with control). The early
+period does have smaller orders (mean log-quantity $6.20$ vs $7.98$ late), but
+the price difference is not coming from that: it is a genuine within-firm price
+gap. A continuous administrative$\times$year interaction confirms the same
+direction — the within-firm administrative premium **declines over calendar
+time** ($-0.025$ per year, $-0.019$ with the quantity control), consistent with
+a margin that fades as the urgent market thickens.
 
-Below-median quantity, non-formulary status, and earlier period all proxy for
-thin supplier alternatives but are correlated. A joint specification that
-separates the *market-thinness* channel from a pure *time-trend* channel would
-clarify whether the earlier-period premium is leverage in a then-thin market or
-a distinct vintage effect.
+**Sign caveat — read honestly.** The surviving early-period coefficient is
+*positive*, i.e. the **administrative** channel is dearer within firm-buyer-item,
+not the litigated one. That is a genuine, scale-robust, time-declining same-firm
+price difference, but it is **not** the "court order lets the supplier squeeze
+the sanctioned (litigated) buyer" direction — if anything it points the other
+way. So the period result firmly establishes that the deep-market null is **not
+universal** (a real within-firm gap persists in the early, thin years), but
+whether to label that gap "supplier leverage" is exactly what the open test
+below must settle. The status stays **Moderate (supported)**: the quantity axis
+is reclassified as scale, the period axis is a genuine non-null, and the
+*direction* of the period gap is flagged as an open interpretive question rather
+than asserted as litigated-buyer leverage.
+
+### Distinguish thinness from earliness — and pin the sign
+
+The disambiguation above leaves one sharp question. Below-median quantity,
+non-formulary status, and earlier period all proxy for thin supplier
+alternatives but are correlated, and we now know the quantity axis is scale
+while the period axis is a genuine within-firm gap. What we do **not** yet know
+is *why the period gap is administrative-dearer* rather than litigated-dearer. A
+joint specification that separates the *market-thinness* channel from a pure
+*time-trend / vintage* channel — and that models the direction of the gap (does
+the early administrative channel pay more because of immature batching, a
+different early supplier mix, or genuine early-market supplier power?) — would
+settle whether "supplier leverage" is the right label or whether the early
+premium is a maturation artifact. Until then the period gap is reported as a
+genuine, scale-robust non-null with its direction flagged, not as
+litigated-buyer leverage.
