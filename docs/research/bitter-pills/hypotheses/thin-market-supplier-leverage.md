@@ -16,24 +16,34 @@ deep repeated urgent markets ([H:no-broad-same-firm-markup](no-broad-same-firm-m
 But that null is a deep-market statement, and the natural follow-up is: where
 the incumbent supplier has *fewer alternatives* — small lots, drugs off the
 public formulary, the earlier years before the urgent market matured — does the
-markup come back? This hypothesis says yes. Cutting the within-triple sample by
-market depth, the administrative-vs-litigated coefficient turns positive and
-significant exactly in the thin and early subsamples, consistent with supplier
-leverage where the literature predicts it should bite.
+markup come back? Partly — but not as supplier leverage. Cutting the
+within-triple sample by market depth, the administrative-vs-litigated coefficient
+does turn positive in the thin and early subsamples, but disambiguating the two
+axes shows the quantity dimension is the **scale** channel (not same-firm
+pricing) and the surviving earlier-period gap is **administrative-dearer** and
+fades over time — the opposite direction from a court order squeezing the
+sanctioned buyer. What survives is a bounded statement: the deep-market null is
+**not universal**, with a residual within-firm gap in the earliest cohorts.
 
 !!! abstract "Intuition (plain-language)"
     The deep-market result said the same supplier does not, on average, charge more under a court order. But "on average, in deep markets" hides the cases where the supplier holds the cards. When the order is small, when the drug is not on the standard public formulary, or when we look at the earlier years before the urgent market filled in, the same-firm price difference reappears and is meaningful. That is exactly where you would expect a supplier to have leverage — fewer competing sources, a buyer with little room to shop around. So leverage is not absent; it is concentrated in the thin and early corners of the market.
 
-> **Evidence strength: Moderate (supported).**
+> **Evidence strength: Moderate (bounded non-null).**
 > The within firm-buyer-item heterogeneity in
 > [AN-003](../analyses/an-003-within-firm-pricing.md) shows the Admin
 > coefficient flat or null in deep markets (above-median quantity −0.005;
 > SUS-formulary −0.001) but positive and significant in thin and early markets
 > (below-median quantity +0.066, ***; earlier period +0.117, ***; non-formulary
 > +0.101). [AN-004](../analyses/an-004-market-depth-heterogeneity.md) organizes
-> these splits by market depth. The reappearance of leverage is a heterogeneity
-> result on subsamples; it is supported and directionally consistent with theory,
-> but rests on smaller cells than the deep-market null.
+> these splits by market depth. Two referee tests disambiguate the result: the
+> quantity axis is the **scale** channel (within-FBI log-quantity −0.259; the
+> gradient collapses under a quantity control), and the earlier-period gap
+> **survives** a within-triple quantity control (+0.117 → +0.168, *p* = 0.007)
+> but is **administrative-dearer and time-declining** — a genuine residual
+> within-firm gap in the earliest cohorts, not litigated-buyer leverage. The
+> status is therefore a **bounded non-null**: the deep-market null is not
+> universal, but the surviving gap is not the "supplier squeezes the sanctioned
+> buyer" channel.
 
 ## Theory
 

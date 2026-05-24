@@ -20,10 +20,10 @@ matter of incumbent suppliers raising their own prices in deep repeated
 markets — it shifts attention away from a same-firm pricing story and toward
 the sourcing margin (see
 [Fragmented sourcing is the margin](fragmented-sourcing-is-the-margin.md)).
-Supplier leverage does not vanish everywhere, however: it reappears in
-thinner and earlier markets, where the within-firm coefficient turns sharply
-positive (see
-[Supplier leverage reappears in thinner and earlier markets](thin-market-leverage.md)).
+The null is not universal, however: a residual within-firm gap persists in the
+earliest cohorts (the quantity dimension instead reflects scale, not same-firm
+pricing — see
+[The deep-market null is not universal](thin-market-leverage.md)).
 
 **Caveat.** The near-zero within-firm-buyer-item coefficient applies to deep
 repeated urgent markets only and must not be generalized to all markets: the

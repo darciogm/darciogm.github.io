@@ -4,6 +4,24 @@ paper: bitter-pills
 
 # Changelog
 
+## Refinement — heterogeneity disambiguation (2026-05-24)
+
+- **Thin/early heterogeneity reframed.** Two referee tests disambiguate the
+  within firm-buyer-item heterogeneity. The **quantity** axis is the scale
+  channel, not same-firm pricing: the within-triple log-quantity coefficient is
+  −0.259 and the order-size gradient collapses once quantity is held fixed
+  (`61_h4_quantity_quartiles.R`). The **earlier-period** gap *survives* a
+  within-triple quantity control (+0.117 → +0.168, *p* = 0.007) but is
+  administrative-dearer and fades over time (`62_h4_period_axis.R`). The phrase
+  "supplier leverage reappears in thinner and earlier markets" is replaced
+  throughout the paper and site by a bounded statement: the deep-market null is
+  not universal — a residual within-firm gap persists in the earliest cohorts —
+  without asserting litigated-buyer leverage.
+- **Build fix.** Referee-test macros carrying hypothesis IDs (h2/h3/h4/h6) are
+  illegal LaTeX control-sequence names; they are emitted to
+  `analysis/referee_macros.tex` (site-only) and kept out of the paper's
+  `values.tex`.
+
 ## v9 — JPubE short paper (2026-05-24)
 
 Current submission version: **Sourcing under Sanctions: Judicial Urgency and
@@ -13,7 +31,9 @@ Pharmaceutical Procurement Costs.**
   court-mandated urgent procurement. In deep repeated urgent markets the
   sanction-related cost margin does not appear as a broad same-firm markup; it
   appears through fragmented sourcing — lost scale and supplier-set
-  reallocation. Supplier leverage reappears in thinner and earlier markets.
+  reallocation. The deep-market null is not universal: a residual within-firm gap
+  persists in the earliest cohorts (the quantity dimension reflects scale, not
+  same-firm pricing).
 - **Central estimates.** Urgent-vs-ordinary margin (+5.4% negotiated price,
   ~5.4% fewer bidders, +2.1pp tender success); under-the-gun gap
   selection-bounded in **[15.9%, 21.1%]** (Lee bounds; naive 29.5%); within

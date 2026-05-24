@@ -30,7 +30,7 @@ The paper separates these margins with a within firm-buyer-item test, selection 
 
 ## Contributions
 
-1. **Main contribution — pricing versus sourcing under judicial urgency.** Standard procurement comparisons confound incumbent pricing with supplier-set reallocation. Holding the supplier–buyer match fixed, the within firm-buyer-item triple isolates same-firm pricing; the sourcing evidence captures scale loss and supplier-set reallocation. The headline result is **no broad same-firm markup in deep repeated urgent markets**, with the cost surfacing through sourcing instead — not a universal "no markup" claim, since supplier leverage can reappear in thinner or earlier markets.
+1. **Main contribution — pricing versus sourcing under judicial urgency.** Standard procurement comparisons confound incumbent pricing with supplier-set reallocation. Holding the supplier–buyer match fixed, the within firm-buyer-item triple isolates same-firm pricing; the sourcing evidence captures scale loss and supplier-set reallocation. The headline result is **no broad same-firm markup in deep repeated urgent markets**, with the cost surfacing through sourcing instead — not a universal "no markup" claim: a residual within-firm gap persists in the earliest cohorts, while the quantity dimension reflects scale rather than same-firm pricing.
 
 2. **The administrative urgent channel as a selected but informative comparison.** São Paulo runs a parallel administrative-request channel that creates urgent pharmaceutical procurement outside the court-sanction regime. It is not random and it is larger and screened, but it is the closest feasible urgent-procurement comparison, and the paper disciplines it with Lee bounds rather than treating it as a clean counterfactual.
 
@@ -49,7 +49,7 @@ The paper separates these margins with a within firm-buyer-item test, selection 
 | Bounded annual fiscal procurement-cost implication | **\$27.8M** on \$300M of litigated spending |
 | Placebo on never-litigated items | economically and statistically zero |
 
-The deep-market no-broad-markup result is the central finding; a thin-market sanction premium reappears on subsamples where the incumbent has fewer alternatives, consistent with supplier leverage exactly where the literature predicts it should bite.
+The deep-market no-broad-markup result is the central finding. The heterogeneity is more nuanced than a simple thin-market premium: the quantity dimension reflects scale rather than same-firm pricing, while a residual within-firm gap persists in the earliest cohorts and fades as the urgent market thickens — and that surviving gap is administrative-dearer, so it is reported as a bounded non-null rather than litigated-buyer leverage.
 
 ---
 

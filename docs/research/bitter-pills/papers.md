@@ -43,8 +43,9 @@ revise-and-resubmit (R&R).
    SE 0.041 — no broad same-firm markup in deep repeated urgent markets), while
    winner-switching and scale evidence measure the sourcing margin. The cost of
    legal urgency in deep markets is fragmented sourcing — lost scale and
-   supplier-set reallocation — not a broad same-firm markup, with supplier
-   leverage able to reappear in thinner and earlier markets.
+   supplier-set reallocation — not a broad same-firm markup, with a residual
+   within-firm gap persisting in the earliest cohorts (the quantity dimension
+   reflecting scale, not same-firm pricing).
 2. *Opening the procurement black box behind right-to-health litigation* — the
    literature on health litigation studies how much the state spends and who
    gets access. This paper studies **how the state buys** when delivery is

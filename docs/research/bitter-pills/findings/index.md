@@ -63,9 +63,10 @@ a selected, larger, closest-feasible comparison rather than a randomized one.
   — within the same firm, buyer, and item, prices are statistically
   indistinguishable across urgent regimes (0.035, SE 0.041). A deep-market null,
   not a universal claim.
-- [Supplier leverage reappears in thinner and earlier markets](thin-market-leverage.md)
-  — the within-firm coefficient turns positive in below-median-quantity
-  (+0.066) and earlier-period (+0.117) subsamples.
+- [The deep-market null is not universal](thin-market-leverage.md)
+  — a residual within-firm gap persists in the earliest cohorts (+0.117, robust
+  to a quantity control); the quantity dimension reflects scale, not same-firm
+  pricing.
 
 **The sourcing mechanism** *(empirical + interpretive)*
 
@@ -96,10 +97,10 @@ a selected, larger, closest-feasible comparison rather than a randomized one.
   monotonicity restriction but do not recover what a litigated purchase would
   have cost without sanctions. See
   [H:utg-gap-selection-bounded](../hypotheses/utg-gap-selection-bounded.md).
-- **The deep-market null is not universal.** Supplier leverage reappears in
-  thinner and earlier markets; the no-broad-same-firm-markup reading is specific
-  to deep repeated urgent markets. See
-  [Supplier leverage reappears in thinner and earlier markets](thin-market-leverage.md).
+- **The deep-market null is not universal.** A residual within-firm gap persists
+  in the earliest cohorts (the quantity dimension instead reflects scale); the
+  no-broad-same-firm-markup reading is specific to deep repeated urgent markets.
+  See [The deep-market null is not universal](thin-market-leverage.md).
 - **The fiscal figure is a procurement-cost calculation.** It is not a full
   welfare estimate and excludes patient health benefits, search and compliance
   costs, and other welfare components.
