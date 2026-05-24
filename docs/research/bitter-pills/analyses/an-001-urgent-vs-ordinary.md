@@ -58,6 +58,8 @@ the court-mandated versus closest-administrative-urgent contrast is taken up in
 
 Output: `v9-jpube-short/output/tables/tab_urgent_and_bounds.tex` (Panel A).
 
+![Urgent-vs-ordinary coefficients (95% CI) across the four outcomes](../assets/figures/fig_urgent_coefplot_v9.png)
+
 ## Interpretation
 
 The urgent environment is the costly, thinner one. The negotiated price rises

@@ -62,6 +62,8 @@ administrative price gap survives a worst-case treatment of that selection.
 Output: `v9-jpube-short/output/tables/tab_urgent_and_bounds.tex` (Panel B) and
 `v9-jpube-short/output/tables/tab_utg_lee_alt_strata.tex`.
 
+![Naive estimate versus Lee selection bounds for the litigated-over-administrative gap](../assets/figures/fig_lee_bounds_interval_v9.png)
+
 ## Interpretation
 
 The naive contrast puts the litigated urgent channel about 29.5% above the

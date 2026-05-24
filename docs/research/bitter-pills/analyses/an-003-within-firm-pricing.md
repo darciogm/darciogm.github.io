@@ -59,6 +59,8 @@ supplier-set reallocation and isolates the **same-firm pricing** margin.
 
 Output: `v9-jpube-short/output/tables/tab_within_firm_robustness.tex`.
 
+![Within firm-buyer-item coefficient by subsample, with 95% CI: deep-market cells near zero, thin/early cells positive](../assets/figures/fig_within_firm_forest_v9.png)
+
 ## Interpretation
 
 The baseline within-firm coefficient is 0.035 with a standard error of 0.041 —

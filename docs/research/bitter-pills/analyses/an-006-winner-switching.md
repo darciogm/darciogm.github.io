@@ -58,6 +58,8 @@ worked through the same firm's price, the winner sets should largely coincide.
 
 Output: `v9-jpube-short/output/tables/tab_winner_switch.tex`.
 
+![Cross-regime winner-set Jaccard versus within-regime baseline churn](../assets/figures/fig_winner_churn_v9.png)
+
 ## Interpretation
 
 The winning supplier set moves with the regime. Across 2,134 buyer×item pairs

@@ -56,6 +56,8 @@ market depth. The detailed bins and coefficients are in the output table.*
 
 Output: `v9-jpube-short/output/tables/tab_market_depth_heterogeneity.tex`.
 
+![Within firm-buyer-item coefficient by market-depth subsample, with 95% CI](../assets/figures/fig_within_firm_forest_v9.png)
+
 ## Interpretation
 
 The litigated-urgent gap is concentrated where the supplier pool is shallow and
