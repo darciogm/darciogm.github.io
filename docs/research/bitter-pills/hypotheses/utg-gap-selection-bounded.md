@@ -141,3 +141,23 @@ evidence ([H:lost-scale](lost-scale.md),
 [H:supplier-set-reallocation](supplier-set-reallocation.md)) decompose this gap;
 a tighter bridge from the bound to the decomposition would consolidate Clusters
 B and C.
+
+### Path to confirmation
+
+**Partial (strongly supported)** is the ceiling for a single-jurisdiction
+design, and this hypothesis sits squarely on the project's load-bearing
+identifying assumptions: the Lee monotonicity restriction and the selection of
+the administrative urgent channel (a selected, larger, closest-feasible
+comparison, not a randomized one). Lifting the status would require evidence
+that does not rest on either:
+
+- an exogenous or quasi-random source of sanction exposure — none is available
+  in the São Paulo setting;
+- cross-jurisdiction replication of the litigated-over-administrative gap
+  (e.g., federal ComprasNet or another state platform); or
+- an identifying design that does not use the administrative channel as the
+  comparison.
+
+Absent one of these, the gap remains selection-bounded under monotonicity, not
+point-identified. The paper states this directly, and the status reflects it —
+the hypothesis is not, and should not be, marked "confirmed."

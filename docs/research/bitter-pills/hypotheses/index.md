@@ -93,8 +93,9 @@ The theory-driven prediction, the intuition behind it, the analyses that bear
 on it, and the current verdict. Click a hypothesis for the full design and
 detailed Evidence table; click an `AN-NNN` for the backing analysis. Status
 runs **Not yet tested** → **Not confirmed** / **Mixed** / **Moderate** →
-**Partial (strongly supported)**. No single-jurisdiction result is marked
-"Confirmed" without cross-data replication.
+**Partial (strongly supported)**. **Confirmed requires independent cross-data
+replication; no single-jurisdiction result here reaches it, so the ceiling is
+Partial (strongly supported).**
 
 | # | Prediction | Intuition | Evidence | Status |
 |---|-----------|-----------|----------|--------|
