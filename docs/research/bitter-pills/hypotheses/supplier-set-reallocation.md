@@ -36,6 +36,8 @@ marking up the same item.
 > not standalone proof, and is meant to be read together with this
 > winner-switching table.
 
+![Cross-regime winner-set Jaccard (0.268) versus within-regime baseline churn (0.378)](../assets/figures/fig_winner_churn_v9.png)
+
 ## Theory
 
 Procurement cost is shaped not only by price-per-lot but by *which* suppliers

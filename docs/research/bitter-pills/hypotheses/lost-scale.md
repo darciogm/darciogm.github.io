@@ -34,6 +34,8 @@ quantity/scale component is the dominant piece of the observed gap.
 > ([H:no-broad-same-firm-markup](no-broad-same-firm-markup.md)); the scale
 > component is what carries the gap.
 
+![Pricing-versus-sourcing decomposition of the administrative-minus-litigated gap: quantity/scale dominates](../assets/figures/fig_sourcing_vs_pricing_v9.png)
+
 ## Theory
 
 Demand aggregation is one of the central levers of procurement performance:

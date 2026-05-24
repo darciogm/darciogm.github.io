@@ -34,6 +34,8 @@ up separately in [H:utg-gap-selection-bounded](utg-gap-selection-bounded.md).
 > motivational contrast and is read as such — the sanction-exposure
 > identification lives in Cluster B.
 
+![Urgent-vs-ordinary coefficients (95% CI): higher negotiated and reference prices, fewer bidders, higher tender success](../assets/figures/fig_urgent_coefplot_v9.png)
+
 ## Theory
 
 Compressed procurement timelines limit the two margins that discipline price.

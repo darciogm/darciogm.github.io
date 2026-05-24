@@ -45,6 +45,8 @@ sanctioned buyer. What survives is a bounded statement: the deep-market null is
 > universal, but the surviving gap is not the "supplier squeezes the sanctioned
 > buyer" channel.
 
+![Within firm-buyer-item coefficient by subsample (95% CI): positive in thin and early cells](../assets/figures/fig_within_firm_forest_v9.png)
+
 ## Theory
 
 Supplier market power is a function of the buyer's outside options. When a
