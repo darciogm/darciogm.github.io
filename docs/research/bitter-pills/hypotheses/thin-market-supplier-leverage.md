@@ -117,14 +117,23 @@ positive.
 
 ## Open tests
 
-### Continuous market-depth interaction
+### Multiple-testing and continuous interaction (run)
 
-The current evidence uses binary splits (above/below median, formulary/not,
-early/late). A continuous interaction of the administrative coefficient with a
-supplier-alternatives index (e.g., count of qualified suppliers per molecule)
-would trace the leverage gradient rather than dichotomizing it, and would
-upgrade the status toward partial-strong if the gradient is monotone and
-precisely estimated.
+We probe the two obvious threats — that the splits are multiple-testing
+artifacts, and that the quantity axis is an arbitrary dichotomy
+(`analysis/60_referee_tests.R`). The subsample markups **survive multiple-testing
+correction**: under Holm the below-median-quantity coefficient has adjusted
+$p = 0.041$ and the earlier-period coefficient $p = 0.010$; a Romano-Wolf free
+step-down (PBU cluster bootstrap) gives $p = 0.053$ and $p = 0.025$. So the
+reappearance is **not** a data-mined artifact.
+
+A **continuous** administrative × log-quantity interaction, however, does **not**
+reproduce a monotone "leverage fades with scale" gradient — it is small and runs
+the other way ($+0.021$, $p = 0.046$). The quantity-based split should therefore
+**not** be read as a smooth depth gradient; the **earlier-period contrast is the
+more robust expression** of the reappearance, and the quantity axis is
+non-monotone. This is why the status stays **Moderate (supported)** rather than
+higher. A quantile decomposition of the quantity axis remains open.
 
 ### Distinguish thinness from earliness
 

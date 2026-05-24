@@ -114,6 +114,18 @@ supplier set — which is the mechanism behind the cross-cutting finding
 [no broad same-firm markup](../findings/no-broad-same-firm-markup.md) in deep
 markets.
 
+## Reallocation exceeds baseline churn (run)
+
+A skeptic could ask whether a 70.2% different-modal-winner rate is just normal
+supplier turnover. It is not. Benchmarking the cross-regime winner-set similarity
+against a within-regime placebo — randomly splitting each regime's purchases for
+the same item-buyer pair into halves and computing their winner-set overlap
+(`analysis/60_referee_tests.R`) — the within-regime baseline Jaccard is **0.378**,
+while the cross-regime Jaccard is only **0.268** (a gap of **0.109**). The regime
+change pushes winner-set overlap well **below** normal churn, so the reallocation
+is specific to the litigated-versus-administrative contrast rather than
+background turnover.
+
 ## Open tests
 
 ### Price the supplier switch directly

@@ -142,6 +142,17 @@ evidence ([H:lost-scale](lost-scale.md),
 a tighter bridge from the bound to the decomposition would consolidate Clusters
 B and C.
 
+### Robustness to monotonicity violations (run)
+
+The Lee interval assumes monotone selection into the administrative channel. We
+relax it (`analysis/60_referee_tests.R`) by trimming an extra share $\delta$ of
+administrative observations to absorb potential monotonicity violators. The
+litigated-over-administrative gap **stays positive** (litigated more expensive)
+for extra trimming all the way past $\delta = 0.60$, and is essentially unchanged
+(≈[15.9%, 21.1%]) at a 10% slack. The headline direction is therefore robust to
+substantial departures from monotonicity, even though the interval's exact width
+remains conditional on the assumption.
+
 ### Path to confirmation
 
 **Partial (strongly supported)** is the ceiling for a single-jurisdiction

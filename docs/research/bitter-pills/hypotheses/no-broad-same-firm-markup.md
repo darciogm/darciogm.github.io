@@ -159,9 +159,14 @@ Two further reasons the status cannot be "confirmed":
 - It is a **single-jurisdiction** estimate (São Paulo BEC), with no independent
   cross-data replication.
 
-The honest way to *strengthen* a null is an **equivalence test** (e.g., TOST):
-formally bounding the largest same-firm markup the deep-market data can rule out
-— turning "no detectable broad markup" into "broad markups above X% are
-rejected." Combined with cross-jurisdiction replication, that would consolidate
-the reading. Neither is run here, and adding it is a precision exercise on the
-same data, not a change in identification.
+To bound the null formally, we run an **equivalence test** on the within
+firm-buyer-item coefficient (`analysis/60_referee_tests.R`). The one-sided upper
+95% bound on the coefficient is +0.102, so the deep-market data **rule out broad
+same-firm markups above about 10.8%**. The minimum detectable effect at 80% power
+is 12.2%, and power to detect a 10% markup is 0.64; a two-one-sided-tests (TOST)
+procedure gives p = 0.070 at a ±10% margin (borderline) and p = 0.364 at ±5%. The
+null is therefore **genuine against broad markups** (anything above ~11% is
+rejected) but **underpowered against modest ones** — which is exactly why the
+reading is "no broad same-firm markup," reported as a bound, and **not
+"confirmed."** Cross-jurisdiction replication would be needed to consolidate it
+further.
