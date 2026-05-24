@@ -66,6 +66,12 @@ bootstrap replications (999) and the supplier-turnover benchmark's seeded
 puts the main text at **4,398 words** (4,451 with captions), well under the
 JPubE 6,000-word cap, with four exhibits and a six-page appendix.
 
+**Reproducibility run.** Re-ran the entire numbered analysis pipeline
+(`analysis/run_pipeline.sh`, 23 scripts) from the prepared cache: all exit 0,
+and `values.tex` plus the 31 output tables regenerate **byte-identically**
+(figure PDFs differ only by an embedded timestamp; rendered content is
+identical). The v9 results are fully reproducible from the cache forward.
+
 ## v9 — JPubE short paper (2026-05-24)
 
 Current submission version: **Sourcing under Sanctions: Judicial Urgency and
