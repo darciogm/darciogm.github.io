@@ -137,3 +137,31 @@ The within-firm pricing component enters the Figure 1 decomposition at +3.5%
 within-triple coefficient and the decomposition's within-firm term would
 consolidate the link from this hypothesis to
 [H:lost-scale](lost-scale.md).
+
+### How this null is bounded — and why it is not "confirmed"
+
+This hypothesis is a **null**, and a null is not the same as proof of zero. The
+within firm-buyer-item coefficient is 0.035 with a standard error of 0.041, so
+the 95% interval runs roughly from &minus;0.045 to +0.115: the data show **no
+detectable broad same-firm markup** in deep repeated urgent markets, but the
+interval still admits small same-firm price differences. Absence of a detectable
+broad markup is not evidence that the markup is exactly zero. The status is
+therefore **Partial (strongly supported)** for the bounded, deep-market reading
+— not "confirmed."
+
+Two further reasons the status cannot be "confirmed":
+
+- The result is **not universal by design.** Supplier leverage reappears in
+  thinner and earlier subsamples
+  ([H:thin-market-supplier-leverage](thin-market-supplier-leverage.md), below-
+  median quantity +0.066, earlier period +0.117). The claim is scoped to deep
+  repeated urgent markets and must stay scoped.
+- It is a **single-jurisdiction** estimate (São Paulo BEC), with no independent
+  cross-data replication.
+
+The honest way to *strengthen* a null is an **equivalence test** (e.g., TOST):
+formally bounding the largest same-firm markup the deep-market data can rule out
+— turning "no detectable broad markup" into "broad markups above X% are
+rejected." Combined with cross-jurisdiction replication, that would consolidate
+the reading. Neither is run here, and adding it is a precision exercise on the
+same data, not a change in identification.
