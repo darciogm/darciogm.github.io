@@ -4,23 +4,59 @@ paper: bitter-pills
 
 # Changelog
 
-## Refinement — heterogeneity disambiguation (2026-05-24)
+## Refinement pass — 2026-05-24 (disambiguation, referee-proofing, figures)
 
-- **Thin/early heterogeneity reframed.** Two referee tests disambiguate the
-  within firm-buyer-item heterogeneity. The **quantity** axis is the scale
-  channel, not same-firm pricing: the within-triple log-quantity coefficient is
-  −0.259 and the order-size gradient collapses once quantity is held fixed
-  (`61_h4_quantity_quartiles.R`). The **earlier-period** gap *survives* a
-  within-triple quantity control (+0.117 → +0.168, *p* = 0.007) but is
-  administrative-dearer and fades over time (`62_h4_period_axis.R`). The phrase
-  "supplier leverage reappears in thinner and earlier markets" is replaced
-  throughout the paper and site by a bounded statement: the deep-market null is
-  not universal — a residual within-firm gap persists in the earlier period —
-  without asserting litigated-buyer leverage.
-- **Build fix.** Referee-test macros carrying hypothesis IDs (h2/h3/h4/h6) are
-  illegal LaTeX control-sequence names; they are emitted to
-  `analysis/referee_macros.tex` (site-only) and kept out of the paper's
-  `values.tex`.
+A skeptical-referee pass that disambiguated the heterogeneity, ported the
+highest-value robustness diagnostics into the Online Appendix, and enriched the
+documentation site with figures. Headline estimates and the identified objects
+are unchanged; the main-paper exhibit set stays at four (≤5).
+
+**Heterogeneity reframed (disambiguation).** Two referee tests separate the two
+axes of the within firm-buyer-item heterogeneity:
+
+- The **quantity** axis is the scale channel, not same-firm pricing: holding
+  firm, buyer, and item fixed, the within-triple log-quantity coefficient is
+  **−0.259 (SE 0.074)** and the order-size gradient collapses under a quantity
+  control (`61_h4_quantity_quartiles.R`). This coefficient is now cited in
+  Results §5.3.
+- The **earlier-period** gap *survives* a within-triple quantity control
+  (+0.117 → +0.168, *p* = 0.007) but is administrative-dearer and time-declining
+  (`62_h4_period_axis.R`).
+- The phrase "supplier leverage reappears in thinner and earlier markets" is
+  replaced throughout paper and site by a bounded statement — the deep-market
+  null is **not universal**, a residual within-firm gap persists in the **earlier
+  period** — without asserting litigated-buyer leverage. The H4 hypothesis and
+  finding pages are retitled "The deep-market null is not universal."
+
+**Online Appendix — four referee-defense diagnostics added** (5 → 6 pages):
+
+- **Bounding the null (H3, Appendix C):** a TOST equivalence test on the
+  within-triple coefficient rules out broad same-firm markups above ~10.8%
+  (TOST *p* = 0.070 at a 10% margin, 0.364 at 5%; MDE 12.2%; power 0.64 against a
+  10% markup).
+- **Multiple testing (H4, Appendix C):** Holm and Romano-Wolf step-down adjusted
+  *p*-values for the below-median-quantity (0.041 / 0.053) and earlier-period
+  (0.010 / 0.025) heterogeneity splits.
+- **Lee-bound monotonicity robustness (H2, Appendix B):** the bounded
+  litigated-over-administrative gap stays positive under extra trimming for
+  monotonicity slack until the additional trim exceeds 0.60.
+- **Supplier-turnover benchmark (H6, Appendix C):** a within-regime placebo
+  Jaccard of 0.378 vs the cross-regime 0.268 (gap 0.109) — reallocation exceeds
+  normal churn.
+
+**Documentation site — figures added.** Four new color-blind-safe figures
+(`63_site_figures.R`, numbers read from `values.tex`, no hardcoding): the within
+firm-buyer-item coefficient forest (AN-003/AN-004), the urgent-vs-ordinary
+coefplot (AN-001), the Lee-bound interval (AN-002), and the winner-set churn
+benchmark (AN-006). Each hypothesis page (H1–H7) now embeds one hero figure after
+its evidence-strength callout.
+
+**Build fix.** Referee-test macros carrying hypothesis IDs (h2/h3/h4/h6) are
+illegal LaTeX control-sequence names. Site-only diagnostics now emit to
+`analysis/referee_macros.tex`, while paper-grade numbers emit to `values.tex`
+with valid names. The paper had not recompiled since those scripts first ran
+(deploys only copy the existing PDF), so the break was latent; both documents now
+build cleanly (main 17 pp, Online Appendix 6 pp).
 
 ## v9 — JPubE short paper (2026-05-24)
 
