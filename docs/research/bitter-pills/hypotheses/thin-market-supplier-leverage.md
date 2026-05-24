@@ -2,14 +2,14 @@
 paper: bitter-pills
 id: h4
 slug: thin-market-supplier-leverage
-title: "Supplier leverage reappears in thinner and earlier markets"
+title: "The deep-market null is not universal: a within-firm gap in thin and early cells"
 cluster: B
 paper_section: "§4 + §5"
 status: moderate
 last_updated: 2026-05-24
 ---
 
-# H:thin-market-supplier-leverage — Supplier leverage reappears in thinner and earlier markets
+# H:thin-market-supplier-leverage — The deep-market null is not universal: a within-firm gap in thin and early cells
 
 The within firm-buyer-item null tells us there is no broad same-firm markup in
 deep repeated urgent markets ([H:no-broad-same-firm-markup](no-broad-same-firm-markup.md)).
