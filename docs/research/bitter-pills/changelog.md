@@ -58,6 +58,14 @@ with valid names. The paper had not recompiled since those scripts first ran
 (deploys only copy the existing PDF), so the break was latent; both documents now
 build cleanly (main 17 pp, Online Appendix 6 pp).
 
+**Final cleanup.** The abstract's heterogeneity sentence was simplified to "the
+within-firm gap reappears only in the earlier period, while order-size
+differences operate through scale." The appendix now discloses the Romano-Wolf
+bootstrap replications (999) and the supplier-turnover benchmark's seeded
+200-split averaging. A reproducible word counter (`analysis/64_wordcount.py`)
+puts the main text at **4,398 words** (4,451 with captions), well under the
+JPubE 6,000-word cap, with four exhibits and a six-page appendix.
+
 ## v9 — JPubE short paper (2026-05-24)
 
 Current submission version: **Sourcing under Sanctions: Judicial Urgency and
