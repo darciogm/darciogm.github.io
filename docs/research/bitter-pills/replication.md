@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Replication
 
 This page describes how to replicate the current results. The active version of

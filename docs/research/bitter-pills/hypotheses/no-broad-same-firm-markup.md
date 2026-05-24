@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h3
 slug: no-broad-same-firm-markup
 title: "In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup"

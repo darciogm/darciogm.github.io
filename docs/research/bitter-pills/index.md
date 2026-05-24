@@ -6,9 +6,9 @@ hide:
 
 <div class="hero-section" markdown>
 
-# Bitter Pills
+# Sourcing under Sanctions
 
-<p class="subtitle">Sourcing under Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs</p>
+<p class="subtitle">Judicial Urgency and Pharmaceutical Procurement Costs</p>
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 

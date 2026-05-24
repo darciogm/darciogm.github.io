@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-001
 hypothesis: urgent-costlier-less-competitive
 type: causal

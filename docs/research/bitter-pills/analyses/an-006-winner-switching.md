@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-006
 hypothesis: supplier-set-reallocation
 type: descriptive

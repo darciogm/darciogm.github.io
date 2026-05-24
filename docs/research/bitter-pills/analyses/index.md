@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Analyses — Sourcing under Sanctions
 
 This page is the **directory of analyses** for *Sourcing under Sanctions:

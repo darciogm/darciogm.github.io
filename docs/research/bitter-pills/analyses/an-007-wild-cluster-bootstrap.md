@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-007
 hypothesis: utg-gap-selection-bounded
 type: robustness

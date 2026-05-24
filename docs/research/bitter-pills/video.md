@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 hide:
   - navigation
   - toc

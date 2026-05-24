@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-011
 type: descriptive
 question: What is the annual fiscal procurement-cost implication of the litigated-urgent price gap, given the Lee-bound midpoint and an admissibility calibration?

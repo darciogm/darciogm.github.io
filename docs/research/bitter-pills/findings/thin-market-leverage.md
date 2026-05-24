@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Supplier leverage reappears in thinner and earlier markets
 
 🟡 The deep-market within-firm null is not uniform across the urgent panel.

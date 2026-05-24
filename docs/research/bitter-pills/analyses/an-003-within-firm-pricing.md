@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-003
 hypothesis: no-broad-same-firm-markup
 type: causal

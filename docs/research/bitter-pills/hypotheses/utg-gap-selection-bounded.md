@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h2
 slug: utg-gap-selection-bounded
 title: "Court-mandated urgent purchases cost more than the closest administrative urgent comparison, and the gap survives selection bounding"

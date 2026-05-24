@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Legal urgency raises procurement costs and weakens competition
 
 🟡 In São Paulo's BEC procurement platform (BEC group 65, hospital and

@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Hypotheses
 
 Testable predictions for *Sourcing under Sanctions: Judicial Urgency and

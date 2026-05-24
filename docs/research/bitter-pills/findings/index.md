@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Findings — Sourcing under Sanctions
 
 This page is the curated index of *what we have learned* from the project's own

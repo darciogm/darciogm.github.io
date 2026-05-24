@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Main Results
 
 *See also: [Findings overview](findings/index.md) · [Analyses overview](analyses/index.md).*

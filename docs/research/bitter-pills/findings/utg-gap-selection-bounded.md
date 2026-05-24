@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # The under-the-gun gap is selection-bounded at 15.9–21.1%
 
 🟡 Within the administrative urgent channel — the closest feasible

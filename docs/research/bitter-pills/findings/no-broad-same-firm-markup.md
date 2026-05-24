@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # No broad same-firm markup in deep repeated urgent markets
 
 🟡 When the price comparison is taken within the same firm-buyer-item cell —

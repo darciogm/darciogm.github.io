@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Changelog
 
 ## v9 — JPubE short paper (2026-05-24)

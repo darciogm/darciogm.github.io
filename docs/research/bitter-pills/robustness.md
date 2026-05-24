@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Robustness
 
 The robustness layer treats every exercise below as a diagnostic or sensitivity check on the main claims, not as a stand-alone identification design. The main claims rest on the Lee selection bounds, the within firm-buyer-item pricing test, and the sourcing evidence. These checks ask whether those claims survive plausible alternatives.

@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-004
 hypothesis: thin-market-supplier-leverage
 type: robustness

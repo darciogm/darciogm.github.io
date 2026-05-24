@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-010
 hypothesis: placebo-and-dynamics
 type: robustness

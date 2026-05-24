@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h7
 slug: placebo-and-dynamics
 title: "The urgent-procurement pattern is specific to litigated items; dynamic evidence is diagnostic, not the primary design"

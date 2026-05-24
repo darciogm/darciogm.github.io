@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h4
 slug: thin-market-supplier-leverage
 title: "Supplier leverage reappears in thinner and earlier markets"

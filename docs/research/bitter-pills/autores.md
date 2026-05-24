@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Autores
 
 <div class="authors-grid">

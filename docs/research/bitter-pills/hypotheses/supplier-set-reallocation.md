@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h6
 slug: supplier-set-reallocation
 title: "Legal urgency reallocates the winning supplier set"

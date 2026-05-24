@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h1
 slug: urgent-costlier-less-competitive
 title: "Urgent procurement is costlier and less competitive than ordinary procurement"

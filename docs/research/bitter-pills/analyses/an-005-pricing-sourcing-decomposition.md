@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-005
 hypothesis: lost-scale
 type: causal

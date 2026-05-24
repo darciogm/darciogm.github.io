@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-009
 hypothesis: lost-scale
 type: robustness

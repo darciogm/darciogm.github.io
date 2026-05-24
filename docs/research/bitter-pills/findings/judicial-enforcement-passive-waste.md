@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # A judicial-enforcement form of passive waste
 
 🟡 (interpretation) Taken together, the v9 results point to a

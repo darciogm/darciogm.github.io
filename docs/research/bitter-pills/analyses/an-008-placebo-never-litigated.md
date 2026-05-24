@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-008
 hypothesis: placebo-and-dynamics
 type: placebo

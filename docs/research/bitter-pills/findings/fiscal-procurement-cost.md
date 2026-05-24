@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Fiscal procurement-cost implication of ~$27.8M per year
 
 🟡 Applying the selection-bounded urgency gap to the scale of

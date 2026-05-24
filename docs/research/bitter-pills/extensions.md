@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Extensions
 
 The extensions are the pieces that sit beyond the core mechanism: an aggregation-within-cell diagnostic, the fiscal procurement-cost implication, and the mapping from the measured mechanism to policy instruments. None of them changes the core claim; each adds context or quantifies a consequence.

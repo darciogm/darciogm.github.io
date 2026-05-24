@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Fragmented sourcing is the margin: lost scale and supplier-set reallocation
 
 🟡 Decomposing the administrative-minus-litigated price gap shows that the

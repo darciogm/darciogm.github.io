@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: an-012
 type: descriptive
 question: How accurately does the urgency classifier label purchase orders, validated against a ground-truth set, and does any residual error bias the regime contrasts?

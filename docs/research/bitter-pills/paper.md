@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # The Paper
 
 ## Sourcing under Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs

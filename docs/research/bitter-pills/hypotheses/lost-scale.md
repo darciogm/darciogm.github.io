@@ -1,4 +1,5 @@
 ---
+paper: bitter-pills
 id: h5
 slug: lost-scale
 title: "Court-mandated buying gives up scale: administrative urgent orders are larger and capture bulk discounts"

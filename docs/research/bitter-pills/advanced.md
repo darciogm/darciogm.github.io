@@ -1,3 +1,7 @@
+---
+paper: bitter-pills
+---
+
 # Advanced Methods
 
 This page documents the dynamic and identification machinery that supports the analysis. These methods are reported as **diagnostics**: they help with timing and sensitivity, but they are not the primary identification. The main claims rest on the Lee selection bounds, the within firm-buyer-item pricing test, and the sourcing evidence.
