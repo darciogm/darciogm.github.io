@@ -62,7 +62,7 @@ administrative price gap survives a worst-case treatment of that selection.
 Output: `v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex` (Panel B) and
 `v10-causal-mechanism/output/tables/tab_utg_lee_alt_strata.tex`.
 
-![Naive estimate versus Lee selection bounds for the litigated-over-administrative gap](../assets/figures/fig_lee_bounds_interval_v9.png)
+![Naive estimate versus Lee selection bounds for the litigated-over-administrative gap](../assets/figures/fig_lee_bounds_interval_v10.png)
 
 ## Interpretation
 

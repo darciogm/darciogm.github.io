@@ -4,6 +4,26 @@ paper: bitter-pills
 
 # Changelog
 
+## v10 — JPubE short paper publication package (2026-05-25)
+
+The public site now points to the v10 publication package in
+`v10-causal-mechanism/`. Main PDF, Online Appendix, analysis-page script paths,
+results pages, and site figures were refreshed from the v10 outputs.
+
+- **Current manuscript.** `v10-causal-mechanism/manuscript/paper/main.pdf`.
+- **Current Online Appendix.**
+  `v10-causal-mechanism/manuscript/paper/OnlineAppendix.pdf`.
+- **Site figures.** Rebuilt from v10 macros/outputs:
+  urgent-vs-ordinary, Lee bounds, within firm-buyer-item forest,
+  pricing-versus-sourcing decomposition, winner churn, and event-study
+  diagnostics.
+- **Core result.** The paper separates same-firm pricing from supplier-set
+  sourcing under judicial urgency. In deep repeated urgent pharmaceutical
+  markets, the procurement-cost margin is not mainly a broad same-firm markup;
+  it operates through fragmented sourcing, lost scale, and supplier-set
+  reallocation, with supplier leverage able to reappear in thinner or earlier
+  markets.
+
 ## Refinement pass — 2026-05-24 (disambiguation, referee-proofing, figures)
 
 A skeptical-referee pass that disambiguated the heterogeneity, ported the

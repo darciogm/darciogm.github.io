@@ -15,9 +15,9 @@ supplier composition contributes **+10.9%** as a reconciliation residual
 turns that lost scale into a price penalty
 ([AN-005](../analyses/an-005-pricing-sourcing-decomposition.md)).
 
-![Pricing-versus-sourcing decomposition](../assets/figures/fig_sourcing_vs_pricing_v9.png)
+![Pricing-versus-sourcing decomposition](../assets/figures/fig_sourcing_vs_pricing_v10.png)
 
-*Decomposition of the administrative-minus-litigated price gap (fig\_sourcing\_vs\_pricing\_v9):
+*Decomposition of the administrative-minus-litigated price gap (fig\_sourcing\_vs\_pricing\_v10):
 the observed gap is dominated by the quantity/scale channel, the within-firm
 component sits near zero, and supplier composition enters as a reconciliation
 residual rather than a standalone channel.*

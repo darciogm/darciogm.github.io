@@ -58,7 +58,7 @@ worked through the same firm's price, the winner sets should largely coincide.
 
 Output: `v10-causal-mechanism/output/tables/tab_winner_switch.tex`.
 
-![Cross-regime winner-set Jaccard versus within-regime baseline churn](../assets/figures/fig_winner_churn_v9.png)
+![Cross-regime winner-set Jaccard versus within-regime baseline churn](../assets/figures/fig_winner_churn_v10.png)
 
 ## Interpretation
 

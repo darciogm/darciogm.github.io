@@ -36,7 +36,7 @@ zero and statistically significant.
 > not selection-free: the bound disciplines screening into the administrative
 > channel rather than eliminating it.
 
-![Naive estimate versus Lee selection-bounded litigated-over-administrative price gap](../assets/figures/fig_lee_bounds_interval_v9.png)
+![Naive estimate versus Lee selection-bounded litigated-over-administrative price gap](../assets/figures/fig_lee_bounds_interval_v10.png)
 
 ## Theory
 

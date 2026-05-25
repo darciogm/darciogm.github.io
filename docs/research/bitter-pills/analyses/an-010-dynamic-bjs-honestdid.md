@@ -51,9 +51,9 @@ scale.
 
 Output: `v10-causal-mechanism/output/tables/tab_dynamic_sensitivity_summary.tex`.
 
-![BJS event study](../assets/figures/fig_event_study_item_v9.png)
+![BJS event study](../assets/figures/fig_event_study_item_v10.png)
 
-![Honest-DiD sensitivity](../assets/figures/fig_event_study_honest_rr_v9.png)
+![Honest-DiD sensitivity](../assets/figures/fig_event_study_honest_rr_v10.png)
 
 ## Interpretation
 

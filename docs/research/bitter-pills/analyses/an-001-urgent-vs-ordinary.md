@@ -58,7 +58,7 @@ the court-mandated versus closest-administrative-urgent contrast is taken up in
 
 Output: `v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex` (Panel A).
 
-![Urgent-vs-ordinary coefficients (95% CI) across the four outcomes](../assets/figures/fig_urgent_coefplot_v9.png)
+![Urgent-vs-ordinary coefficients (95% CI) across the four outcomes](../assets/figures/fig_urgent_coefplot_v10.png)
 
 ## Interpretation
 

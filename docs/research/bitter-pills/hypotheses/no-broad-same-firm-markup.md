@@ -37,7 +37,7 @@ reappear elsewhere, which is the subject of
 > thinner and earlier subsamples (see
 > [H:thin-market-supplier-leverage](thin-market-supplier-leverage.md)).
 
-![Within firm-buyer-item coefficient by subsample (95% CI): near zero in deep-market cells](../assets/figures/fig_within_firm_forest_v9.png)
+![Within firm-buyer-item coefficient by subsample (95% CI): near zero in deep-market cells](../assets/figures/fig_within_firm_forest_v10.png)
 
 ## Theory
 

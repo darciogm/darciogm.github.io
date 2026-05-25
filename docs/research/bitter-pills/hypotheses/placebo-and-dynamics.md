@@ -36,7 +36,7 @@ remains the selection-bounded UTG comparison and the within-firm-buyer-item test
 > observed maximum pre-period scale**, so the dynamic evidence is diagnostic, not
 > the primary design.
 
-![BJS event study around item-level litigation exposure (diagnostic, not the primary design)](../assets/figures/fig_event_study_item_v9.png)
+![BJS event study around item-level litigation exposure (diagnostic, not the primary design)](../assets/figures/fig_event_study_item_v10.png)
 
 ## Theory
 

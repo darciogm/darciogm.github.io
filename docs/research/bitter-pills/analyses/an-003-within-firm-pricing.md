@@ -59,7 +59,7 @@ supplier-set reallocation and isolates the **same-firm pricing** margin.
 
 Output: `v10-causal-mechanism/output/tables/tab_within_firm_robustness.tex`.
 
-![Within firm-buyer-item coefficient by subsample, with 95% CI: deep-market cells near zero, thin/early cells positive](../assets/figures/fig_within_firm_forest_v9.png)
+![Within firm-buyer-item coefficient by subsample, with 95% CI: deep-market cells near zero, thin/early cells positive](../assets/figures/fig_within_firm_forest_v10.png)
 
 ## Interpretation
 

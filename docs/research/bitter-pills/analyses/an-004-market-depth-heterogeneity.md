@@ -56,7 +56,7 @@ market depth. The detailed bins and coefficients are in the output table.*
 
 Output: `v10-causal-mechanism/output/tables/tab_market_depth_heterogeneity.tex`.
 
-![Within firm-buyer-item coefficient by market-depth subsample, with 95% CI](../assets/figures/fig_within_firm_forest_v9.png)
+![Within firm-buyer-item coefficient by market-depth subsample, with 95% CI](../assets/figures/fig_within_firm_forest_v10.png)
 
 ## Interpretation
 

@@ -78,7 +78,7 @@ If the cost margin is not a broad same-firm markup in deep markets, where does i
 
 **Reconciliation.** The figure below reconciles the observed administrative-minus-litigated price gap with a mechanical quantity/scale component, the within-firm pricing component, and a residual supplier-composition component. The residual is a reconciliation residual and should not be read alone as proof of sourcing; the direct winner-switching evidence above carries that claim.
 
-![Pricing vs sourcing decomposition](assets/figures/fig_sourcing_vs_pricing_v9.png)
+![Pricing vs sourcing decomposition](assets/figures/fig_sourcing_vs_pricing_v10.png)
 
 | Component (admin minus litigated) | Contribution |
 |---|:---:|
