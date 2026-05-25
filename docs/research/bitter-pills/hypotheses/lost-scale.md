@@ -40,8 +40,8 @@ quantity/scale component is the dominant piece of the observed gap.
 
 Demand aggregation is one of the central levers of procurement performance:
 pooling requirements into larger lots lets the state move down the supplier's
-cost curve and capture volume discounts \citep{lin2025}. The passive-waste view
-\citep{bandiera2009} predicts that institutional features which fragment demand
+cost curve and capture volume discounts (Lin & Wang, 2025). The passive-waste view
+(Bandiera, Prat & Valletti, 2009) predicts that institutional features which fragment demand
 — here, one-sided legal urgency that forces case-by-case sourcing — raise costs
 not through corrupt pricing but through lost scale. The mechanism is mechanical
 in the bulk-discount elasticity: if larger orders command lower unit prices,

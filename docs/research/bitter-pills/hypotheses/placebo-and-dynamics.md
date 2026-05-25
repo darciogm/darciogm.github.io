@@ -52,10 +52,10 @@ universe at large. A placebo on never-litigated items operationalizes this
 specificity — there is no litigation channel there, so any apparent effect would
 signal a confound rather than the mechanism. The dynamic event study addresses a
 different question: the *timing* of the margin around exposure. Modern
-heterogeneity-robust event-study estimators \citep{borusyak2024} recover an
+heterogeneity-robust event-study estimators (Borusyak, Jaravel & Spiess, 2024) recover an
 interpretable dynamic path, but their credibility depends on parallel-trends
 assumptions that cannot be tested directly. Honest-DiD sensitivity analysis
-\citep{rambachan2023} asks how large a pre-trend violation the dynamic estimates
+(Rambachan & Roth, 2023) asks how large a pre-trend violation the dynamic estimates
 could tolerate before the conclusion flips; when the answer is "smaller than the
 pre-period deviations we actually observe," the dynamic design cannot carry the
 primary identification and is properly demoted to a diagnostic.

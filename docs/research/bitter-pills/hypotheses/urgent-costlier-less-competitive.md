@@ -44,10 +44,10 @@ statistic is drawn from a thinner pool — fewer competitors mean a higher
 expected winning bid. Second, urgency forecloses demand aggregation: the buyer
 cannot batch the requirement into a larger lot that would attract volume
 discounts. Both forces are central to the passive-waste view of public
-procurement \citep{bandiera2009}, in which slack in the buying process — not
+procurement (Bandiera, Prat & Valletti, 2009), in which slack in the buying process — not
 corruption — drives much of the price gap, and to the broader institutional
-account of procurement performance \citep{bosio2022, best2023}. Work on court
-efficiency and procurement \citep{coviello2018} likewise links time pressure on
+account of procurement performance (Bosio et al., 2022; Best et al., 2023). Work on court
+efficiency and procurement (Coviello et al., 2018) likewise links time pressure on
 the contracting side to worse procurement outcomes.
 
 ## Prediction

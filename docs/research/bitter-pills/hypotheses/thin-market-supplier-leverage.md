@@ -57,7 +57,7 @@ extract a markup, which is why the within-triple coefficient is null there. When
 the buyer's alternatives are thin — small one-off lots, non-formulary drugs with
 few qualified suppliers, the early years before the urgent procurement market
 matured — a same-firm price gap is more likely to appear. This is the standard logic of
-accountability and supplier power \citep{prendergast2007} interacted with
+accountability and supplier power (Prendergast, 2007) interacted with
 market structure, but the sign matters: one-sided pressure to deliver would
 predict litigated-buyer vulnerability, while the surviving period gap is
 administrative-dearer. The result is not a

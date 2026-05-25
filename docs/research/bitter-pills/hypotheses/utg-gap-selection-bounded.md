@@ -43,14 +43,14 @@ zero and statistically significant.
 Court mandates impose one-sided accountability: procurement officials face
 fines, civil liability, and other sanctions for failing to deliver a litigated
 medication on time, but no symmetric penalty attaches to paying a high price.
-In the passive-waste tradition \citep{bandiera2009}, this asymmetry predicts
+In the passive-waste tradition (Bandiera, Prat & Valletti, 2009), this asymmetry predicts
 slack on the price margin precisely where delivery is enforced. The
 administrative urgent channel runs the same urgent auctions without the
 court-sanction regime, so it is the closest feasible urgent comparison for the
 court-mandated purchases. But the administrative channel is gated by the SES/SP
 scientific committee, which screens cases for admissibility — and that screening
 plausibly admits items that would have been cheaper to source under any regime.
-Lee's monotone trimming bounds \citep{lee2009} are the right instrument here:
+Lee's monotone trimming bounds (Lee, 2009) are the right instrument here:
 under a monotonicity restriction on selection, they bracket how much of the raw
 gap could be an artifact of differential composition between the channels.
 

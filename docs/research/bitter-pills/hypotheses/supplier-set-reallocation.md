@@ -41,7 +41,7 @@ marking up the same item.
 ## Theory
 
 Procurement cost is shaped not only by price-per-lot but by *which* suppliers
-the state matches with. In the passive-waste tradition \citep{bandiera2009},
+the state matches with. In the passive-waste tradition (Bandiera, Prat & Valletti, 2009),
 institutional frictions that disrupt routine supplier matching can raise costs
 even absent any change in posted prices, because the buyer ends up with a less
 favorable supplier set. One-sided legal urgency disrupts the matching routine:

@@ -41,13 +41,13 @@ reappears elsewhere, which is the subject of
 
 ## Theory
 
-Accountability models of bureaucratic motivation \citep{prendergast2007}
+Accountability models of bureaucratic motivation (Prendergast, 2007)
 suggest that an agent under one-sided pressure to deliver may accept worse price
 terms from an incumbent supplier — the supplier, recognizing that the buyer
 *must* obtain the good, extracts a markup. This is the same-firm-markup channel:
 the price difference would show up holding the supplier–buyer–item match fixed.
 The competing mechanism is the passive-waste / fragmented-sourcing channel
-\citep{bandiera2009}, in which the cost margin instead operates through lost
+(Bandiera, Prat & Valletti, 2009), in which the cost margin instead operates through lost
 scale and a reallocated supplier set rather than through the incumbent's pricing.
 The two channels are observationally confounded in any comparison that lets the
 supplier set vary; the within firm-buyer-item triple is the design that
