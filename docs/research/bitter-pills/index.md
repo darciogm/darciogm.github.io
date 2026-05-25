@@ -12,8 +12,12 @@ hide:
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
-[Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v10.pdf){ .md-button .md-button--primary }
-[Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf){ .md-button }
+<p class="downloads" markdown>
+[Download paper (PDF)](assets/pdf/sourcing-under-sanctions-v10.pdf){ .md-button .md-button--primary } &nbsp;
+[Online appendix](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf){ .md-button }
+</p>
+
+<p class="version-tag"><em>JPubE short paper &mdash; v10, May 2026.</em></p>
 
 </div>
 
@@ -65,12 +69,12 @@ Court mandates secure access to medicines, but they can also change how governme
 
 <div class="quick-links" markdown>
 
-[**Paper** <br> Question, contributions, identification, findings](paper.md)
+[**Paper** <br> Manuscript description and methodology](paper.md)
 
 [**Results** <br> Main tables, figures, and coefficient plots](results.md)
 
-[**Replication** <br> Code, data, and software requirements](replication.md)
+[**Robustness** <br> Placebo tests, bounds, and diagnostic evidence](robustness.md)
 
-[**Autores** <br> About the research team](autores.md)
+[**Replication** <br> Code, data, and software requirements](replication.md)
 
 </div>
