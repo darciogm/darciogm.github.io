@@ -80,12 +80,16 @@ manuscript at submission.
 
 ---
 
-## 2. Five follow-up paper ideas using the same data
+## 2. Eight follow-up paper ideas using the same data
 
-The five ideas below are ordered by **overlap with the current paper**,
-from highest to none. Two are partial extensions of the cover-bidding
-framework; the rest are deliberately disjoint, taking the BEC + CADE
-+ RAIS data lake into different research programs.
+Ideas 2.1–2.5 are ordered by **overlap with the current paper**, from
+highest to none. Ideas 2.6–2.8 (added 2026-05-25) round out the set
+with enforcement-evaluation, reference-price, and structural-damages
+angles. Several are extensions of the cover-bidding framework; the rest
+are deliberately disjoint, taking the BEC + CADE + RAIS data lake into
+different research programs. Where a number of adjudicated cartels caps
+precision, the entry says so up front — these are reviewer-honest
+assessments, not pitch decks.
 
 ### Idea 2.1 — Adaptive Cartels: Strategic Bid-Rigging Response to the 2018 Decreto
 
@@ -271,6 +275,177 @@ different question.
 
 ---
 
+### Idea 2.6 — Adjudication and Deterrence: What Happens to Cartel Firms After CADE?
+
+**Overlap with current paper:** **Low–Medium** — reuses the CADE
+adjudication anchor and the FL ranking, but turns the question from
+*detection* to *post-detection firm behavior*.
+
+**Central question:** Once CADE adjudicates a procurement cartel, what
+happens to the firms? Do convicted firms and their cover bidders exit
+BEC, persist unchanged, or reorganize (new CNPJ roots, recombined
+bidding partners) to keep operating below the detection radar? Is
+enforcement deterring conduct or merely displacing it?
+
+**Empirical strategy:** Event-study around each cartel's CADE
+adjudication date (observed). For adjudicated firms and their
+cobidders, track post-event participation intensity, win rates,
+FL-stratum membership, and co-bidding-partner turnover. A "phoenix"
+test links pre-event CNPJ roots to post-event entrants sharing
+addresses, partners (via RAIS), or bidding fingerprints. Untreated
+always-losers with comparable pre-event participation form the control.
+
+**Original contributions to the literature:**
+
+1. *First firm-level recidivism/displacement measurement for
+   procurement cartels in an emerging-market e-procurement setting* —
+   the cartel-duration and recidivism literature (Levenstein & Suslow
+   2006) is built largely on international price-fixing cartels;
+   procurement-specific, firm-level post-adjudication dynamics are thin.
+2. *A behavioral test of deterrence vs displacement* — separates
+   Becker-style deterrence (conduct stops) from displacement (conduct
+   migrates to new shells), a distinction the leniency/enforcement
+   literature (Miller 2009) rarely draws with bid-level micro-data.
+3. *The "phoenix firm" channel, operationalized* — a reproducible
+   linkage of pre- and post-adjudication identities through bidding
+   fingerprints + RAIS partner/address overlap, usable as an
+   enforcement-evaluation instrument.
+
+**Data reuse:** Current-paper CADE anchor + FL ranking + AN-020 event
+scaffolding, plus RAIS partner/address linkage for the phoenix test.
+~8–10 weeks; the main lift is the identity-linkage pipeline.
+
+**Target journals:**
+
+| Tier | Journal | R&R prob. | Rationale |
+|:-:|---|:-:|---|
+| 1 | **JLE** (J. of Law and Economics) | 30–35% | Enforcement effectiveness is core JLE; the small number of adjudicated SP cartels is the binding constraint, and JLE referees will press on power. |
+| 2 | **IJIO** (Int'l J. of Industrial Organization) | 40–45% | Empirical-IO home for cartel-dynamics and enforcement-response work; more forgiving on N if the displacement mechanism is clean. |
+| 3 | **Int'l Review of Law and Economics** | 50–55% | Strong topical fit and more reachable; values applied enforcement evaluation over heroic identification. |
+
+**Differentiator:** the current paper *detects*; this paper asks whether
+detection *changes behavior*. No triage-architecture or cost-of-evidence
+content — the contribution is enforcement evaluation. **Binding
+constraint, stated honestly:** the count of distinct adjudicated SP
+cartels is small, so the event-study is power-limited; cross-state CADE
+records would be the natural fix.
+
+---
+
+### Idea 2.7 — Reference Prices as a Collusive Instrument
+
+**Overlap with current paper:** **Medium** — same cover-bidding
+substrate, but isolates the reference-price (*preço de referência*)
+channel that the current paper deliberately sets aside.
+
+**Central question:** BEC tenders are anchored by an administratively
+set reference price. Do winners and cover bidders exploit the
+reference-price process — clustering winning bids just below the
+anchor, or inflating the anchor itself — so that the reference price
+becomes a collusive coordination device rather than a competitive
+ceiling?
+
+**Empirical strategy:** Characterize the distribution of
+winning-bid-to-reference-price ratios and test for bunching just below
+the anchor (McCrary / Cattaneo density tests) in FL-present vs
+FL-absent tenders. Where reference-price revisions are observed across
+re-tendered items, test for systematic upward anchor drift in
+cartel-adjacent environments. Modality split (Convite vs Pregão) as the
+institutional contrast.
+
+**Original contributions to the literature:**
+
+1. *Reference prices as a coordination device, not just a ceiling* —
+   the procurement-design literature on awarding and screening rules
+   (Decarolis 2014) treats reference/reserve prices as mechanism
+   parameters; their use as a collusive anchor is largely untested
+   empirically.
+2. *Anchoring (Tversky & Kahneman 1974) imported into procurement
+   collusion* — bridges behavioral economics and bid-rigging detection
+   by treating the administrative anchor as the object cartels
+   manipulate, not just a passive ceiling.
+3. *A bunching-based screen at the reference-price margin* — a new,
+   microdata-light screen complementary to the loser-side FL screen of
+   the current paper, deployable wherever a reference price is recorded.
+
+**Data reuse:** BEC + bid_level + the reference-price field (where
+populated — see caveat). ~8–10 weeks.
+
+**Target journals:**
+
+| Tier | Journal | R&R prob. | Rationale |
+|:-:|---|:-:|---|
+| 1 | **J. of Public Economics** | 25–35% | Procurement market-design home; the bunching identification must be airtight and JPubE referees will demand it. |
+| 2 | **AEJ: Applied Economics** | 30–40% | Likes clean bunching designs at administrative thresholds; the behavioral-anchor framing is a plus. |
+| 3 | **J. of Industrial Economics** / **IJIO** | 40–50% | Reliable IO home for a reference-price-manipulation screen. |
+
+**Data-availability caveat:** these R&R figures assume the
+reference-price field is populated for a usable share of tenders. If
+coverage is thin, the idea collapses to a robustness note inside Idea
+2.2 — confirm coverage before committing any time.
+
+**Differentiator:** the current paper reports the price coefficient as
+descriptive scope and refuses a damages reading; this paper makes the
+*price-setting process itself* the object of study.
+
+---
+
+### Idea 2.8 — What Did the Cartel Cost? A Structural Overcharge Estimate
+
+**Overlap with current paper:** **Medium** — uses the same
+cover-bidding framework and bid-level data to do precisely what the
+current paper refuses to do: estimate damages.
+
+**Central question:** The current paper deliberately reports no
+overcharge. This paper takes on the structural counterfactual directly:
+absent the cover bidders, what would the winning price have been, and
+what is the implied overcharge in CADE-adjudicated procurement cartels?
+
+**Empirical strategy:** Structural first-price estimation
+(Guerre–Perrigne–Vuong nonparametric recovery of latent valuations) on
+competitive (FL-absent, non-adjudicated) tenders to identify the
+competitive bidding function; counterfactually price the adjudicated
+cartel tenders against it. Cover-bidder bids are treated as
+non-informative (Asker 2010) and excluded from the competitive-fit
+step. Bound the estimate with the selection + mechanism decomposition
+(AN-039 / AN-040) so the structural number inherits the paper's honesty
+about cartels selecting into high-price cells.
+
+**Original contributions to the literature:**
+
+1. *First structural overcharge estimate for Brazilian public-
+   procurement cartels* — the structural collusion-damages literature
+   rests on a handful of settings (Asker 2010, stamp dealers; Porter &
+   Zona 1993 and Bajari & Ye 2003, US highway/milk procurement); an
+   emerging-market e-procurement estimate is new.
+2. *A selection-corrected structural counterfactual* — embeds the
+   current paper's selection/mechanism decomposition into the structural
+   step, netting the damages number of the "cartels choose high-price
+   cells" selection that contaminates naive overcharge regressions.
+3. *Cover-bid exclusion as an identification device* — turns the
+   loser-side screen into a structural-estimation input (cleaning the
+   competitive-fit sample), not merely a detector — a reusable move for
+   any structural collusion study with a credible cover-bidder flag.
+
+**Data reuse:** bid_level_full_v14 + CADE anchor + AN-039/040
+decomposition. ~12–16 weeks; the structural pipeline is the heavy lift.
+
+**Target journals:**
+
+| Tier | Journal | R&R prob. | Rationale |
+|:-:|---|:-:|---|
+| 1 | **RAND** (Journal of Economics) | 25–35% | Structural-IO home; high value if the counterfactual is credible, but RAND referees are demanding and the cartel N is small. |
+| 2 | **IJIO** (Int'l J. of Industrial Organization) | 40–50% | Best risk-adjusted target for an applied structural overcharge paper. |
+| 3 | **JLE** (J. of Law and Economics) | 35–45% | Damages estimation is squarely law-and-economics; referees will want exactly the selection correction the current paper pioneers. |
+
+**Differentiator:** this is the damages paper the current one refuses
+to be. Where the current paper stops at "scope, not damages," this one
+takes the structural identification head-on — and is candid that the
+small number of adjudicated cartels bounds how precise any overcharge
+estimate can be.
+
+---
+
 ## Summary: portfolio view
 
 | Idea | Overlap | Top journal | Top R&R |
@@ -281,6 +456,9 @@ different question.
 | 2.3 Geography of Cartels | Low | J. Economic Geography | 50–60% |
 | 2.4 Information Frictions | None | AEJ: Applied | 35–45% |
 | 2.5 Municipal Development | None | World Development | 45–55% |
+| 2.6 Adjudication & Deterrence | Low–Med | Int'l Rev. Law & Econ | 50–55% |
+| 2.7 Reference-Price Instrument | Medium | J. Ind. Econ / IJIO | 40–50% |
+| 2.8 Structural Overcharge | Medium | IJIO | 40–50% |
 
 The portfolio mixes:
 
@@ -292,6 +470,13 @@ The portfolio mixes:
   Geography (Idea 2.3) both ~50% with good positioning.
 - **Disjoint papers** (2.4 and 2.5) avoid intellectual cannibalization
   with the current paper at the cost of needing more data work.
+- **The three added ideas (2.6–2.8)** are the natural intellectual
+  continuations once the current paper is in review: 2.6 evaluates
+  whether enforcement works, 2.7 attacks the reference-price channel,
+  and 2.8 is the structural damages paper the current one deliberately
+  declines to be. All three are power-capped by the small number of
+  adjudicated cartels — the same single-jurisdiction constraint that
+  binds the current paper, and the same cross-jurisdiction fix.
 
 **Sequencing recommendation:** complete current paper R&R cycle
 first; then pursue Idea 2.1 (Adaptive Cartels) as the natural
@@ -301,4 +486,4 @@ competing intellectually with the current paper.
 
 ---
 
-*Last updated: 2026-05-22*
+*Last updated: 2026-05-25*
