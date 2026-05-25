@@ -14,6 +14,9 @@ SUS-formulary items **−0.001** — and turns positive in below-median-quantity
 [AN-004](../analyses/an-004-market-depth-heterogeneity.md)). Disambiguating those
 two axes is what this finding is about.
 
+!!! econ "Economic intuition"
+    Two candidate "thin-market leverage" stories look alike in raw splits but mean different things, and only one survives. The quantity axis is *scale* — small orders cost more because they forgo bulk discounts, not because the same firm charges more (the within-triple quantity elasticity does the work). The period axis is a genuine within-firm gap, but it runs the "wrong" way — the administrative channel is the dearer one, and it fades as the market matures — so it reads as early-market maturation, not a court order handing suppliers power over the sanctioned buyer. Reading the sign honestly is what separates a real non-null from a convenient one.
+
 **The quantity axis is scale, not same-firm pricing.** A quartile decomposition
 (`61_h4_quantity_quartiles.R`) shows the within-triple coefficient varies with
 order size only through bulk discounts: the within firm-buyer-item log-quantity

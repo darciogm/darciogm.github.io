@@ -56,6 +56,28 @@
   color: var(--md-default-fg-color--light);
 }
 
+/* Economic-intuition admonition (custom type: econ) */
+:root {
+  --md-admonition-icon--econ: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,2A7,7 0 0,1 19,9C19,11.38 17.81,13.47 16,14.74V17A1,1 0 0,1 15,18H9A1,1 0 0,1 8,17V14.74C6.19,13.47 5,11.38 5,9A7,7 0 0,1 12,2M9,21V20H15V21A1,1 0 0,1 14,22H10A1,1 0 0,1 9,21Z"/></svg>');
+}
+
+.md-typeset .admonition.econ,
+.md-typeset details.econ {
+  border-color: var(--md-primary-fg-color);
+}
+
+.md-typeset .econ > .admonition-title,
+.md-typeset .econ > summary {
+  background-color: rgba(200, 16, 46, 0.08);
+}
+
+.md-typeset .econ > .admonition-title::before,
+.md-typeset .econ > summary::before {
+  background-color: var(--md-primary-fg-color);
+  -webkit-mask-image: var(--md-admonition-icon--econ);
+          mask-image: var(--md-admonition-icon--econ);
+}
+
 /* Quick links grid */
 .quick-links {
   display: grid;

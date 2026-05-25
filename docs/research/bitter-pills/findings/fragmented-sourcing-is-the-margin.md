@@ -15,6 +15,9 @@ supplier composition contributes **+10.9%** as a reconciliation residual
 turns that lost scale into a price penalty
 ([AN-005](../analyses/an-005-pricing-sourcing-decomposition.md)).
 
+!!! econ "Economic intuition"
+    If price is up but the same firm is not charging more, the money has to be going somewhere else — and the decomposition says scale, while the supplier set says matching. Read the two together: the within-firm null closes the markup door, and the churn in winning suppliers (Jaccard overlap of just 0.268) opens the sourcing door. The composition term in the accounting is only a residual; the direct winner-switching evidence is what carries the reallocation claim.
+
 ![Pricing-versus-sourcing decomposition](../assets/figures/fig_sourcing_vs_pricing_v10.png)
 
 *Decomposition of the administrative-minus-litigated price gap (fig\_sourcing\_vs\_pricing\_v10):

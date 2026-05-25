@@ -12,6 +12,9 @@ The extensions are the pieces that sit beyond the core mechanism: an aggregation
 
 If lost scale is part of the cost margin, then aggregating demand within finer cells should attenuate the litigated-over-administrative gap. The aggregation-within-cell diagnostic tests this directly. The evidence is **mixed**: the direction is consistent with the scale channel in some cells but is not uniform, and the exercise is reported as a diagnostic rather than a clean estimate of an aggregation counterfactual.
 
+!!! econ "Economic intuition"
+    If lost scale is genuinely part of the cost, then forcibly aggregating demand within finer cells should shrink the litigated-over-administrative gap. The evidence leans that way but is noisy — which is why it is reported as a diagnostic consistent with the scale channel, not as an estimate of what an aggregation policy would actually deliver.
+
 Detail: [AN-009 — Aggregation within cells](analyses/an-009-aggregation-cells.md).
 
 ---
@@ -24,6 +27,9 @@ Applying the bounded litigated-over-administrative gap to annual litigated pharm
 <span class="number">$27.8M / year</span>
 <span class="label">Fiscal procurement-cost implication (Lee range $23.9M–$31.7M). This is a fiscal procurement-cost calculation, not a full welfare estimate: it excludes health benefits, search costs, compliance benefits, and other welfare components, and it should not be read as the value of scaling back legal enforcement.</span>
 </div>
+
+!!! econ "Economic intuition"
+    Scaling the bounded gap by admissible litigated spending gives the order of magnitude of what fragmentation costs the treasury in *procurement prices* — not the welfare value of enforcement. Health benefits, timely delivery, and compliance value are deliberately left out. The number answers "how much more does the state pay to source this way," not "is the right to health worth it."
 
 Detail: [AN-011 — Fiscal procurement-cost implication](analyses/an-011-procurement-cost.md).
 
@@ -41,3 +47,6 @@ Because the measured margin is lost scale and supplier matching rather than cont
 | Inventories and protocols for recurrent litigated medicines | Lets the state **anticipate and aggregate** demand rather than source isolated emergencies |
 
 The paper does not estimate these tools directly. It points to them because the mechanism it measures is aggregation and supplier matching: the goal is to preserve delivery while preventing legal urgency from becoming procurement fragmentation.
+
+!!! econ "Economic intuition"
+    The instruments follow from the mechanism, not from ideology. Because the measured margin is lost scale and broken matching — not abusive contract terms or price-cap evasion — the tools that bite are those that rebuild aggregation and supplier matching under legal urgency. Capping prices would treat a symptom the data do not point to; the cause is fragmented sourcing.

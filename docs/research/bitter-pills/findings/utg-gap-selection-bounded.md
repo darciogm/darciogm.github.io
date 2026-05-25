@@ -12,6 +12,9 @@ bounds, the price difference compresses to a **15.9%–21.1%** range
 (coefs −0.148/−0.192), with a mean trimming rate of **26.9%**
 ([AN-002](../analyses/an-002-lee-bounds.md)).
 
+!!! econ "Economic intuition"
+    The honest question is not "how much dearer are litigated orders?" but "how much survives once we admit the comparison group was screened?" Administrative requests are filtered, so the items in that channel are not a clean counterfactual. Lee bounds answer the harder question: under a monotonicity restriction, the gap lies in a range that stays well above zero. Bounding — not the raw 29.5% — is what makes the claim defensible.
+
 The bounded effect is statistically robust under inference that accounts for
 the small number of clusters: a wild cluster bootstrap returns
 **p = 0.0080** in the preferred specification and **p = 0.0390** under the

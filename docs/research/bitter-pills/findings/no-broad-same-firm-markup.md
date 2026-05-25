@@ -11,6 +11,9 @@ from zero. In deep, repeatedly traded urgent markets, the same supplier
 selling the same item to the same buyer does not charge a broad same-firm
 markup for urgency ([AN-003](../analyses/an-003-within-firm-pricing.md)).
 
+!!! econ "Economic intuition"
+    Holding the firm, buyer, and item fixed turns a price comparison into a clean test of one story: does urgency let an incumbent charge its captive buyer more? In deep repeated markets the answer is no. A null is usually weak evidence, but here it *discriminates* — it shuts the markup door and redirects attention to scale and supplier matching. Where markets are thin, outside options vanish and the leverage story can revive; that boundary is itself informative.
+
 This is a deep-market null, not a universal one. The within-firm-buyer-item
 contrast is most informative precisely where the same trading relationship
 recurs often enough to be estimated, which biases the estimable cells toward

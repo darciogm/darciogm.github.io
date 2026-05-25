@@ -15,6 +15,9 @@ accepted winning bids; competition and success margins use the broader
 479,330 purchase-offer-item universe
 ([AN-001](../analyses/an-001-urgent-vs-ordinary.md)).
 
+!!! econ "Economic intuition"
+    Four margins move together — higher price, higher reference price, fewer bidders, higher success — and that coherence is the point. A lone price jump could be measurement; a *joint* shift in price, competition, and completion is what a thinner urgent market looks like. Speed and competition trade off, and this contrast sets the stage for isolating the sanction-specific piece later.
+
 The pattern is internally coherent: urgency raises the price the buyer
 ultimately pays while thinning the field of competitors and lifting the
 share of tenders that close. The reference-price movement indicates that the

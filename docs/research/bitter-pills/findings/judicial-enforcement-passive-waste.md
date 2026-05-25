@@ -19,6 +19,9 @@ extra cost is not an incumbent supplier extracting a broad same-firm markup
 in deep repeated urgent markets, but the dissipation of scale and matching
 when urgent orders are split off into small, fast, fragmented purchases.
 
+!!! econ "Economic intuition"
+    The waste is "passive" in the exact sense of Bandiera, Prat & Valletti (2009): it arises with every actor behaving reasonably. The court secures delivery, the buyer meets the deadline, the supplier fills the small order in front of it — and the routine that batches demand and returns to known suppliers is what quietly disappears. No corruption, no opportunism, no villain: the cost is a by-product of how one-sided urgent enforcement collides with procurement structure.
+
 The mechanism is passive in the precise sense that no party need behave
 opportunistically for the cost to arise. The court secures the patient's
 delivery; the buyer complies on the deadline; suppliers respond to the small,

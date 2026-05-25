@@ -13,6 +13,9 @@ admissibility share of **50%**, and annual litigated spending of **$300M**
 procurement-cost calculation — what the urgency gap implies for the prices
 the state pays on litigated orders — and is **not** a full welfare estimate.
 
+!!! econ "Economic intuition"
+    This translates a price gap into a budget line, and nothing more. It says the state pays roughly this much extra to *source* litigated medicines through fragmented urgent channels — it does not weigh that against the health the orders secure. Built on the bounded midpoint and only the admissible share of spending, it is deliberately a conservative accounting figure, not a verdict on whether judicial enforcement of access is worth its cost.
+
 The figure is deliberately conservative in construction: it applies the
 midpoint of the bounded gap rather than the naive 29.5% difference, and it
 scales only the admissible portion of litigated spending. It translates the

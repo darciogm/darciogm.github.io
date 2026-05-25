@@ -23,6 +23,9 @@ Relative to ordinary purchases of comparable items, urgent procurement moves in 
 
 Urgency appears to help the state complete purchases — tender success rises — while weakening the competitive conditions under which those purchases are sourced. These estimates establish the urgent-procurement environment, not judicial sanction exposure; the remaining results move inside urgent procurement and separate pricing from sourcing.
 
+!!! econ "Economic intuition"
+    Compressing the time available to source narrows the set of suppliers who can credibly bid, so the buyer faces a thinner, less competitive market and pays more. The higher tender-success rate is the same force seen from the other side: urgency buys *completion*, not *bargaining power*. Read this as the urgent-procurement environment — the cost of buying fast — before any judicial sanction enters.
+
 Detail: [AN-001 — Urgent vs ordinary procurement](analyses/an-001-urgent-vs-ordinary.md).
 
 ---
@@ -39,6 +42,9 @@ The naive litigated-over-administrative gap is **29.5%**. Because administrative
 </div>
 
 Wild-cluster inference supports the contrast: the preferred specification rejects a zero gap at *p* = 0.0080, with *p* = 0.0390 under the tighter item-by-year-month specification. Even after disciplining the most direct urgent comparison for selection, litigated urgent procurement remains more expensive.
+
+!!! econ "Economic intuition"
+    The tempting comparison — litigated versus administrative urgent purchases — is contaminated: administrative requests are pre-screened, so the items flowing through that channel differ systematically from litigated ones. A naïve gap credits urgency for what is partly composition. Lee bounds trade a single number for an honest interval: under a monotonicity restriction, they bracket how much of the gap survives the most and least favorable trimming. It stays positive — selection narrows the gap but cannot explain it away.
 
 Detail: [AN-002 — Lee bounds](analyses/an-002-lee-bounds.md) · [AN-007 — Wild-cluster bootstrap](analyses/an-007-wild-cluster-bootstrap.md).
 
@@ -64,6 +70,9 @@ The pricing test asks whether the same firm charges a sanctioned buyer more for 
 
 The result is not a claim that same-firm pricing is everywhere zero. In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup; a residual within-firm gap is confined to the earlier period, while the quantity dimension reflects scale rather than same-firm pricing.
 
+!!! econ "Economic intuition"
+    If sanctions worked by letting an incumbent hold up a captive buyer, the extra cost would show up *within the same firm, buyer, and item* — and in deep repeated markets it does not. That null is informative: it rules out a broad same-firm markup as the channel and pushes the search toward *who* supplies and *at what scale*. The thin-market positive marks the boundary — where a relationship is shallow and outside options are scarce, supplier leverage can re-emerge, exactly as bargaining logic predicts.
+
 Detail: [AN-003 — Within-firm pricing](analyses/an-003-within-firm-pricing.md) · [AN-004 — Market-depth heterogeneity](analyses/an-004-market-depth-heterogeneity.md).
 
 ---
@@ -87,6 +96,9 @@ If the cost margin is not a broad same-firm markup in deep markets, where does i
 | Within-firm pricing | **+3.5%** |
 | Composition (residual) | **+10.9%** |
 
+!!! econ "Economic intuition"
+    Two sourcing forces raise the cost of fragmented buying. *Lost scale*: splitting demand into small, urgent orders forfeits the volume discounts a batched tender would capture (litigated orders are ~3.3× smaller). *Reallocation*: the winning supplier changes in most item-buyer pairs, because an emergency pulls in whoever can deliver now rather than whoever is cheapest. The combination — same-firm prices flat, yet the winner set churning — is the fingerprint of fragmentation, not of incumbents charging more.
+
 Detail: [Fragmented sourcing is the margin](findings/fragmented-sourcing-is-the-margin.md).
 
 ---
@@ -94,5 +106,8 @@ Detail: [Fragmented sourcing is the margin](findings/fragmented-sourcing-is-the-
 ## The policy margin
 
 Court mandates do not merely affect how much the state pays; they change how the state is forced to buy. The mechanism is a judicial-enforcement form of passive waste: one-sided sanctions secure delivery, but they weaken the routines that aggregate demand and match buyers with suppliers. Because the measured margin is lost scale and supplier matching rather than contract language or price caps, the policy response is to **preserve delivery while restoring aggregation under legal urgency** — not to weaken access to medicines.
+
+!!! econ "Economic intuition"
+    This is passive waste in a judicial-enforcement guise (Bandiera, Prat & Valletti, 2009): no party need behave opportunistically for the cost to arise. The court secures delivery, the buyer complies on the deadline, suppliers answer the small order in front of them — and what is lost is the routine that aggregates demand and matches suppliers. The corollary for policy: the lever is procurement *capacity* under urgency, not weaker access. The cost is not an argument against enforcing the right to health.
 
 *Continue: [Robustness](robustness.md) · [Extensions](extensions.md) · [Advanced Methods](advanced.md).*
