@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h5
 slug: exclusion-dominates
 title: "The lost-discipline channel dominates the protected-pool offset in the absolute price decomposition"

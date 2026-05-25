@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-014
 hypothesis: ipv-clock-admissible
 type: robustness

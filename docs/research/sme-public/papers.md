@@ -34,8 +34,8 @@ manuscript at submission.
 **Author:** Darcio Genicolo-Martins (Insper)
 
 **Version:** v8 (May 2026, JPubE submission)
-[manuscript PDF](assets/sme_public_procurement.pdf) ·
-[online appendix](assets/sme_public_online_appendix.pdf)
+[manuscript PDF](assets/paper/paper.pdf) ·
+[online appendix](assets/paper/online_appendix.pdf)
 
 **Distinctive contributions:**
 

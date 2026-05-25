@@ -2,12 +2,12 @@
 paper: frequent-losers
 id: an-039
 hypothesis: price-scope-sign-reversal
-type: causal
+type: descriptive
 question: Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level is structurally higher? If yes, the naive positive FL-price coefficient reflects selection, not the cartel's within-cell price effect.
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Test 1 (selection mechanism) PASSES decisively. Mean log_price among NON-treated items rises monotonically from 1.35 (Q1, lowest FL-share cells) to 6.93 (Q5, highest FL-share cells); Δ = 5.58 log-points (~265× nominal price difference). After full marginal-FE controls on all 5 cell dimensions, fl_share coefficient on non-treated log_price = +3.55 (SE 0.23; N = 1,439,255). Cartels select into high-price cells beyond what cell dimensions explain marginally."
+headline: "Test 1 (selection pattern) strongly supports the scope interpretation. Mean log_price among NON-treated items rises monotonically from 1.35 (Q1, lowest FL-share cells) to 6.93 (Q5, highest FL-share cells); Δ = 5.58 log-points (~265× nominal price difference). After full marginal-FE controls on all 5 cell dimensions, fl_share coefficient on non-treated log_price = +3.55 (SE 0.23; N = 1,439,255). Frequent-loser activity is concentrated in high-price cells beyond what cell dimensions explain marginally."
 created: 2026-05-22
 script: scripts/61_selection_mechanism_test.R
 target: output/selection_mechanism/selection_test_results.csv + non_treated_price_by_fl_share.csv

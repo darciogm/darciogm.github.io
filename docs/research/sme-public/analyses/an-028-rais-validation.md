@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-028
 hypothesis: sme-winner-share-falls
 type: causal

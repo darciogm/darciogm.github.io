@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-026
 hypothesis: no-collusion-confound
 type: robustness

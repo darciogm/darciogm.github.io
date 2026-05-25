@@ -8,22 +8,26 @@ Interactive overview of the paper's logical structure. Click and drag to explore
 
 ```mermaid
 mindmap
-  root((Frequent Losers<br/>A Cover-Bidder Screen<br/>Without Bid Microdata))
-    **Two Observability Layers**
-      Operational layer
-        Award envelope
-        Audit-court queryable in minutes
-        Winner + participants + item + price
-      Forensic-recoverable layer
-        Per-bidder bid amounts
-        Bid timestamps and sequences
-        Administrative request weeks of latency
-      Asymmetry is structural
-        Not Brazil-specific
-        FPDS-NG TED UK Contracts Finder
+  root((Screening for<br/>Bid Rigging with<br/>Frequent Losers))
+    **Institutional Setting**
+      BEC Platform
+        Sao Paulo state
+        2009-2019
+      4.5M tender-items
+      41K unique firms
+      Two modalities
+        Convite sealed bid
+          3-bidder minimum
+          Signal dilution 3.8%
+        Pregao e-auction
+          No bidder minimum
+          Voluntary 9.3%
+      Lei 14.133/2021
+        Eliminates convite
+        Testable predictions
     **FL Definition**
       Always-losers
-        win rate = 0
+        win rate = 0%
         16,843 firms
       IQR threshold
         median + 1.5 x IQR
@@ -31,80 +35,72 @@ mindmap
       2,735 FL firms
         Treatment: tender has >= 1 FL
     **Conceptual Framework**
-      Four formal results
-        Lemma wins=0 separating equilibrium
-        Prop log(1+t) sufficient ranking statistic
-        Prop dm*/dtheta_k less than 0
-        Prop beta vs beta-ov different objects
-      R1 vs R2 cover bidding
-        R1 textbook visibly uncompetitive
-        R2 credible phantom competition
-        Bid-level evidence adopts R2
-    **Discrimination Against CADE**
-      Cobidders 193 in always-loser stratum
-      Conservative AUC 0.748 pre-2020
-      Prospective AUC 0.864 temporal holdout
-      Direct defendants AUC 0.491 by design
-        Loser-side recovery not winner-side
-      Within-stratum bridge
-        Firm-level d up to 1.0
-        Bid-level median gap d -0.28
-        Multivariate logit p less than 1e-3
-    **Architectural Test**
-      Same target different envelopes
-        FL alone AUC 0.881
-        Imhof full AUC 0.846
-        Comparable on thinner envelope
-      Non-redundant signal
-        Combined AUC 0.942
-        Delta +0.096 DeLong p 1e-26
-      Sequential gatekeeper
-        K1=2000 catches 131 of 193
-        Bid-microdata footprint -83%
-        Recall cost only -8%
-      Temporal-holdout robustness
-        Sequential matches joint scoring
-        Out-of-time TP at 1000 114 vs 111
-    **Pricing Imprint**
-      Headline range +3.6 to +7.7%
+      Two regimes
+        Regime 1 complementary
+        Regime 2 coordinated
+          BIC favors by 91,473
+          sigma_c/sigma_g = 0.72
+      Strategic complementarity
+        gamma = 0.69 > 0
+        More cover bidders in competitive markets
+      Market selection
+        FL concentrates in low HHI
+    **Detection Performance**
+      AUC = 0.94 vs CADE
+      Youden J = 0.84 at 1.45x
+      Horse-race
+        Correlation 0.06 with CV
+        FL rises to 0.084
+      CADE validation
+        3.5x overrepresentation
+        193/2,735 co-participate
+        3 convicted FL firms
+    **Price Association**
+      3.6-7.7% range
         Cross-fit 3.6%
         IPW 5.5%
-        OLS within-PBU 6.4%
+        OLS 6.4%
         CEM 7.7%
-      Segment decomposition
-        Q1-Q3 negative robust to specs
-        Q4 positive robust to specs
-        Aggregate is volume-weighted average
-      Trim sensitivity
-        Trim top decile -0.118
-        Negative is structural not few-cell
-      Modal asymmetry
-        Pregao 9.3% Convite 3.8%
-        Quorum-filler reading falsified
-    **Heterogeneity**
-      Oversight gradient 12.6x
-        Q1 +21.4% Q4 +1.7%
-      Modal contrast
-        Pregao deeper than convite
-        Active vs passive cover bidding
-      What data do not support
-        Cell-heterogeneity grid
-        First-time-FL compresses
+      Network split
+        Competitive 0.126
+        Concentrated -0.018
+      Bajari-Ye tests
+        KS D = 0.15
+        Pairwise product 4.28
+        Tender FE reversal
+      IV diagnostic
+        0.194 F=396
+        Lambda = 0.33
+    **Diagnostics M1-M5**
+      M1 No displacement
+        +0.19 non-FL firms
+      M2 Reference anchoring
+        -4.1% to ref price
+      M3 Reverse causality
+        Elasticity ~ 0.002
+      M4 Dyadic linkage
+        4,696 pairs p<0.001
+      M5 Exit hazard
+        HR = 0.60
     **Robustness**
       Threshold sensitivity
-        Five multipliers all significant
-      Identification audits
-        Cinelli RV 0.207
-        Oster delta 261.6
-        Anti-leakage AUC 0.864 holdout
-      Operational metrics
-        In-sample inflates 50% at 500
-        Holdout the deployable column
-      Adversarial adaptation
-        Resilient to rotation and wins
-        Vulnerable to threshold capping
-        Combined attack AUC 0.81
-      Staggered designs
-        RDD null at caps no bunching
-        DiD pre-trends fail
+        36 cells all significant
+      Cinelli-Hazlett
+        RV = 17.5%
+      Oster delta
+        Degenerate R2 gap ~ 0
+      DiD pre-trends
+        Non-causal framing
+      Oversight heterogeneity
+        12.5x gradient Q1 to Q4
+    **Enforcement Pathway**
+      Screen
+        Participation records only
+        SQL query or spreadsheet
+      Triage
+        Network metrics
+        PBU size quartile
+      Investigate
+        Bid-level forensics
+        On triaged subset
 ```

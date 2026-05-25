@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-007
 hypothesis: price-discipline-loss
 type: causal

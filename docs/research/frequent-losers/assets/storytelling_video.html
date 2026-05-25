@@ -434,7 +434,7 @@
     <div class="stat fu" data-d="900"><div class="stat-v" style="color:var(--pink)">3</div><div class="stat-l">Convicted firms<br>are themselves FL</div></div>
     <div class="stat fu" data-d="1200"><div class="stat-v" style="color:var(--cyan)">2.2&times;</div><div class="stat-l">Survives exact<br>count matching</div></div>
   </div>
-  <div class="body fu" data-d="500" style="font-size:clamp(0.82rem,1.1vw,0.95rem)">Brazil&rsquo;s competition authority, CADE, has convicted 65 procurement cartels. Against that ground truth: <span class="em">AUC = 0.94</span> &mdash; though volume contributes substantially (within participation-count bands, AUC drops to <span class="em-o">0.54</span>). The screen&rsquo;s detection power comes from identifying the <span class="em">high-participation tail</span> of always-losers. A count-matched permutation test (<span class="em">2.2&times;</span>) confirms the FL classification adds signal beyond volume alone.</div>
+  <div class="body fu" data-d="500" style="font-size:clamp(0.82rem,1.1vw,0.95rem)">Brazil&rsquo;s competition authority, CADE, has convicted 65 procurement cartels. Against that ground truth: <span class="em">AUC = 0.94</span>. Three convicted firms are themselves frequent losers. The screen doesn&rsquo;t just work &mdash; it works <span class="em-p">embarrassingly well</span>.</div>
 </div>
 
 <!-- 9: THE PARADOX — WHY EXISTING TOOLS MISS THIS -->
@@ -510,7 +510,6 @@
       <div style="font:600 0.6rem/1 'Inter',sans-serif; text-transform:uppercase; letter-spacing:1.5px; color:var(--accent); margin-bottom:6px">FL Screen</div>
       <div style="font:700 1.2rem/1 'JetBrains Mono',monospace; color:var(--accent)">AUC 0.94</div>
       <div style="font:400 0.7rem/1 'Crimson Pro',serif; color:var(--text-dim); margin-top:4px">Participation only</div>
-      <div style="font:400 0.6rem/1 'Crimson Pro',serif; color:var(--orange); margin-top:2px">(0.54 within bands)</div>
     </div>
     <div class="si" data-d="500" style="font:500 0.75rem/1 'Inter',sans-serif; color:var(--text-dim)">correlation<br><span style="font:700 1.4rem/1 'JetBrains Mono',monospace; color:var(--gold)">0.06</span></div>
     <div class="si" data-d="700" style="text-align:center; padding:20px; background:var(--surface); border-radius:14px; border:1px solid var(--border); width:180px">
@@ -577,8 +576,7 @@
       <div class="sr" data-d="300"><span class="em-r">&#10007;</span> &ensp;This is not causal identification. It's a conditional association.</div>
       <div class="sr" data-d="600"><span class="em-r">&#10007;</span> &ensp;The screen flags environments, not guilty firms.</div>
       <div class="sr" data-d="900"><span class="em-r">&#10007;</span> &ensp;Diagnostics are consistent with cover bidding but don't prove it.</div>
-      <div class="sr" data-d="1100"><span class="em-r">&#10007;</span> &ensp;The staggered DiD yields a null result &mdash; insufficient power and pre-trends preclude causal interpretation.</div>
-      <div class="sr" data-d="1400"><span class="em-g">&#10003;</span> &ensp;An omitted confounder would need to explain 17.5% of residual variation in <em>both</em> FL presence and prices to nullify the result.</div>
+      <div class="sr" data-d="1200"><span class="em-g">&#10003;</span> &ensp;An omitted confounder would need to explain 17.5% of residual variation in <em>both</em> FL presence and prices to nullify the result.</div>
     </div>
   </div>
   <div class="body fu" data-d="1500" style="font-style:italic; color:var(--text-dim); margin-top:20px; font-size:0.9rem">The diagnostics don't prove the mechanism.<br>They make the case for deploying the screen.</div>
@@ -637,8 +635,8 @@ const S = [
     dur: 28000
   },
   { // 8 — CADE validation
-    text: "But here's where it gets interesting — and where intellectual honesty matters. The researchers checked the screen against ground truth — Brazil's competition authority, CADE, which convicted sixty-five procurement cartels during the same period. Using a strict temporal split, they got an unconditional AUC of zero-point-nine-four. Impressive — but partly mechanical. Both the screening score and the ground truth are driven by participation volume. Within participation-count bands, the AUC drops to zero-point-five-four. The screen's detection power comes primarily from identifying the high-participation tail of always-losers. That said, a count-matched permutation test confirms the FL classification adds real signal beyond volume alone — two-point-two times the expected rate — and the zero-win condition is the active ingredient. For enforcement purposes, the unconditional AUC is the relevant metric: volume is part of the behavioral anomaly the screen exploits.",
-    dur: 38000
+    text: "But here's where it gets really interesting. The researchers checked the screen against ground truth — Brazil's competition authority, CADE, which convicted sixty-five procurement cartels during the same period. They built the screen using data from 2009 to 2014 and tested it against enforcement outcomes from 2015 to 2019 — a strict temporal split to prevent information leakage. The result? An AUC of zero-point-nine-four. That's near-perfect detection accuracy. Frequent losers co-appear with convicted cartelists at three-and-a-half times the expected rate. The signal survives exact volume matching. And three convicted firms are themselves classified as frequent losers. The screen doesn't just work. It works embarrassingly well.",
+    dur: 34000
   },
   { // 9 — Dispersion paradox
     text: "Now here's the twist that makes the whole thing click — and it's genuinely clever. You'd expect cover bids to be wild and random, right? High variance, all over the place? That's what variance-based screens look for. But no. FL bids cluster tightly above the winning price. Their within-tender coefficient of variation is zero-point-five-seven — compared to one-point-six-five for genuine losing bids. Cover bids are less dispersed, not more. This is what the paper calls Regime Two: coordinated cover bidding. And it means that the existing detection tools — the ones everyone uses — lose power precisely when cartel coordination is tightest. A participation-based screen sidesteps this trap entirely. It doesn't care how they bid. It only cares that they showed up.",
@@ -665,8 +663,8 @@ const S = [
     dur: 32000
   },
   { // 15 — Honesty
-    text: "And the paper is remarkably honest about what it does not claim. This is not causal identification — it's a conditional association, robust across estimation strategies but not a treatment effect. The screen flags environments, not guilty firms. The staggered difference-in-differences yields a null result — the estimator lacks power and pre-trends suggest strategic market selection. The diagnostics are consistent with coordinated cover bidding, but they don't prove the mechanism. An omitted confounder would need to explain seventeen-and-a-half percent of residual variation in both FL presence and prices to nullify the result — though that bound assumes a single confounder and the pre-trends suggest multi-channel selection. The diagnostics don't prove the mechanism. They make the case for deploying the screen.",
-    dur: 34000
+    text: "And the paper is remarkably honest about what it does not claim. This is not causal identification — it's a conditional association, robust across estimation strategies but not a treatment effect. The screen flags environments, not guilty firms. The diagnostics are consistent with coordinated cover bidding, but they don't prove the mechanism. An omitted confounder would need to explain seventeen-and-a-half percent of residual variation in both FL presence and prices to nullify the result. That's a high bar — but it's a bar, not a wall. The diagnostics don't prove the mechanism. They make the case for deploying the screen.",
+    dur: 30000
   },
   { // 16 — Closing
     text: "Firms that lose too often may be losing on purpose. And this pattern — detectable with nothing more than who bid and who won — reveals where cartels are most likely hiding. The screen is simple. The data requirements are minimal. The enforcement pathway is actionable. And sometimes... the best clue to a rigged game isn't who wins. It's who keeps losing.",

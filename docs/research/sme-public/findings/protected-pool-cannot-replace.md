@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # The protected SME pool responds but does not replace lost discipline
 
 🟡 After the March 2018 SME-only cutoff, the number of SME bidders per

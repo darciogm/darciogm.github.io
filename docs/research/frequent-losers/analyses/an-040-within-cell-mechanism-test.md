@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-040
 hypothesis: price-scope-sign-reversal
-type: causal
+type: descriptive
 question: Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does the effect operate through the channel of more bidders (cover-bidding theater)? Does the mechanism strengthen in dense-bidding tenders?
 status: done
 status_date: 2026-05-22
@@ -161,10 +161,7 @@ present and reweighting toward the treatment-bearing cells.
   estimate of OVERCHARGE). But the decomposition explains WHY the
   damages reading fails: the observed price is the result of two
   competing forces, and a single coefficient cannot capture both.
-- Adaptive deployment ([§7.4](../paper.md#sec:adaptive_deployment_submission))
-  becomes more concrete: detection works best where the mechanism
-  dominates (dense-bidding cells), and the screen design should
-  reflect this.
+- Deployment guidance becomes more concrete: detection is most informative where the within-cell scope pattern dominates (dense-bidding cells), and the screen design should reflect this.
 
 ## Follow-ups
 

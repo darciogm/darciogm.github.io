@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-037
 hypothesis: price-scope-sign-reversal
-type: causal
+type: descriptive
 question: How does the FL-margin price coefficient transform across baseline → overlap-cell → ATT specifications, and does the negative sign survive subgroup decomposition under overlap discipline?
 status: done
 status_date: 2026-05-22

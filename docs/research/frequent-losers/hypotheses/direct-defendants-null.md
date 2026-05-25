@@ -5,7 +5,7 @@ slug: direct-defendants-null
 title: "The frequent-loser ranking does not discriminate direct CADE defendants"
 cluster: A
 paper_section: "§4.3"
-status: confirmed
+status: partial (strongly supported)
 last_updated: 2026-05-22
 ---
 
@@ -15,7 +15,7 @@ A loser-side screen built from persistent zero-win participation should
 fail when used as a generic cartel-membership detector: direct CADE
 defendants typically include the designated winners of the rotation, who
 are not zero-win firms. A null AUC against direct defendants is therefore
-part of the design — it confirms that the ranking carries loser-side scope,
+part of the design — it supports the interpretation that the ranking carries loser-side scope,
 not membership scope.
 
 !!! abstract "Intuition (plain-language)"

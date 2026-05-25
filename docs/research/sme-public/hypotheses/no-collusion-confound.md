@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h12
 slug: no-collusion-confound
 title: "The price drop is not produced by a post-policy shift in bidder coordination"

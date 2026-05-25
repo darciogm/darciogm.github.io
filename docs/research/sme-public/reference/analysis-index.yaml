@@ -119,7 +119,7 @@
 - id: an-010
   hypothesis: exclusion-dominates
   status: done
-  type: causal
+  type: descriptive
   question: What is the structural decomposition of the set-aside price effect into the lost-discipline channel ($S_2-S_1$) and the protected-pool offset ($S_3-S_2$)?
   confidence: yellow
   tags: ["H:exclusion-dominates", "H:protected-pool-responds", structural, bne, decomposition, pregao-dropouts]
@@ -130,7 +130,7 @@
 - id: an-011
   hypothesis: static-welfare-loss-large
   status: done
-  type: causal
+  type: descriptive
   question: What is the per-auction static welfare loss of the full SME-only set-aside, decomposed into allocative DWL and MCPF distortion at λ=0.30?
   confidence: yellow
   tags: ["H:static-welfare-loss-large", "H:implied-welfare-weight-large", welfare, mcpf, dwl, saez-stantcheva]
@@ -141,7 +141,7 @@
 - id: an-012
   hypothesis: preference-near-zero-cost
   status: done
-  type: causal
+  type: descriptive
   question: What is the simulated price and SME win-rate effect of a 10% SME price preference relative to the open benchmark $S_1$?
   confidence: yellow
   tags: ["H:preference-near-zero-cost", preference, design-benchmark, bne, scoring]
@@ -240,7 +240,7 @@
 - id: an-021
   hypothesis: parallel-trends-hold
   status: done
-  type: causal
+  type: robustness
   question: Does a synthetic-control match of group 65 to a weighted donor pool of never-treated product groups validate parallel trends and reproduce the DiDiR price effect?
   confidence: yellow
   tags: ["H:parallel-trends-hold", synthetic-control, augsynth, ridge, donor-weights, semester-panel]
@@ -339,7 +339,7 @@
 - id: an-030
   hypothesis: protected-pool-responds
   status: done
-  type: causal
+  type: robustness
   question: What is the Pre→Post entry-rate shift in each modality × class × type cell, what is the calibrated entry-cost asymmetry that explains why SMEs cannot fully replace non-SMEs, and does the dominance ordering survive across the 2×2 grid of UH-clean-vs-raw and endogenous-vs-fixed-pool methodological choices?
   confidence: yellow
   tags: ["H:protected-pool-responds", "H:exclusion-dominates", entry-rates, entry-cost, decomposition-grid, asymmetric-entry, sme-vs-nonsme]

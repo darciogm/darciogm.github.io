@@ -146,7 +146,7 @@ descriptive and supportive, not causal.
 
 ## Why not 🟢 Confirmed?
 
-The within-data sign-reversal evidence is decisive. The headline
+The within-data sign-reversal evidence is strong. The headline
 progression (broad +0.064 → overlap ATT −0.097, p = 1.7 × 10⁻¹⁰)
 plus the within-overlap subgroup decomposition (negative in 14 of 15
 relevant cells) plus the item-group structure (predictable
@@ -169,7 +169,7 @@ Three obstacles to Confirmed:
 2. **No causal identification of the FL margin.** The headline
    coefficient is a within-cell association under FE + ATT weights,
    not an estimate identified by an instrument or a sharp design.
-   A clean instrument would settle whether the sign reversal is
+   A clean instrument would help determine whether the sign reversal is
    structural or specification-driven. The cap-RDD
    ([AN-019](../analyses/an-019-rdd-cap-price.md)) and the 2018-
    decree DiD ([AN-020](../analyses/an-020-did-decreto-2018.md))

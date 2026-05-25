@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-025
 hypothesis: static-welfare-loss-large
 type: descriptive

@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h2
 slug: entry-thickens-pool
 title: "Open auctions attract more firms and more valid bids than SME-only auctions"

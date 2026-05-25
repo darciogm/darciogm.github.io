@@ -1,8 +1,7 @@
 ---
-paper: sme-public
 id: an-021
 hypothesis: parallel-trends-hold
-type: causal
+type: robustness
 question: Does a synthetic-control match of group 65 to a weighted donor pool of never-treated product groups validate parallel trends and reproduce the DiDiR price effect?
 status: done
 status_date: 2026-05-21

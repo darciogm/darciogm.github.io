@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-022
 hypothesis: exclusion-dominates
 type: robustness

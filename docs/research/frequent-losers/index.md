@@ -12,6 +12,13 @@ hide:
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
+<p class="downloads" markdown>
+[Download paper (PDF)](paper.pdf){ .md-button .md-button--primary } &nbsp;
+[Online appendix](online_appendix.pdf){ .md-button }
+</p>
+
+<p class="version-tag"><em>JLEO submission-clean version &mdash; May 2026.</em></p>
+
 </div>
 
 <div class="key-result" markdown>
@@ -74,16 +81,12 @@ recovering 131 of 193 adjudicated cobidders.
 
 <div class="quick-links" markdown>
 
-[**Video** <br> Narrated animated overview of the paper (English)](video.md)
+[**Paper** <br> Manuscript description and methodology](paper.md)
 
-[**Paper** <br> Download the current main manuscript](paper.pdf)
+[**Results** <br> Main tables, classification, and diagnostics](results.md)
 
-[**Online Appendix** <br> Supporting framework and validation details](online_appendix.pdf)
+[**Robustness** <br> Threshold sensitivity, holdouts, and scope checks](robustness.md)
 
-[**Results** <br> Classification, detection, price association, and diagnostics](results.md)
-
-[**Robustness** <br> Threshold sensitivity, DiD, IV diagnostic, and extensions](robustness.md)
-
-[**Replication** <br> Code, data, and pipeline](replication.md)
+[**Replication** <br> Code, data, and software requirements](replication.md)
 
 </div>

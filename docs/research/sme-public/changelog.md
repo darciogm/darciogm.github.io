@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Changelog
 
 ## v8 — May 2026 (JPubE submission)
@@ -10,59 +6,40 @@ paper: sme-public
 - **Decomposition rebuilt** as $S_3 - S_1 = (S_2 - S_1) + (S_3 - S_2)$: a **lost competitive discipline** component (exclusion of non-SMEs, SME pool held fixed) and a **protected-pool offset** (post-policy SME pool replacing pre-policy). The two components are reported as counterfactual price-formation objects, not reduced-form treatment effects.
 - **Headline numbers** at &lambda;=0.30: non-pharma static welfare loss **28.9%** of the open-regime price; exclusion accounts for **72%** of the price decomposition (absolute share). Implied SME welfare weight to prefer full exclusion to a 10% preference: **2.42** (non-pharma) and **2.61** (pharma). Pharmaceuticals reported as a boundary case rather than a second headline.
 - **Empirical bidder-count robustness** (Online Appendix OA-D.2): replacing the Poisson bidder-count draws with sampling from the empirical class-period-type count distributions attenuates net effects by roughly a quarter but leaves the exclusion-dominant decomposition intact (exclusion shares 69.4% non-pharma, 63.1% pharma).
-- **Threat-assessment table** (Section 6, Table 5): eight identification and sensitivity threats mapped to diagnostic, finding, and remaining limitation.
+- **Threat-assessment table** (Section 6, Table 5): eight identification and sensitivity threats mapped to diagnostic, finding, and remaining limitation. Closes the most predictable referee-level rejection channels.
 - **JPubE compliance**: Elsevier Harvard bibliography style, abstract under 250 words, 4 keywords + 5 JEL codes, highlights file, generative-AI declaration, acknowledgements section, data-availability statement.
+- 45 cited references covering procurement-policy classics (Marion 2007; Nakabayashi 2013; Krasnokutskaya–Seim 2011; Athey–Coey–Levin 2013), modern procurement empirical (Coviello–Mariniello 2014; Bosio et al. 2022; Best–Hjort–Szakonyi 2023; Decarolis et al. 2025; Coviello et al. 2026), Brazilian setting (Ferraz–Finan–Szerman 2016; Szerman 2023), auction theory canon (Vickrey 1961; Milgrom–Weber 1982; Haile–Tamer 2003; Athey–Haile 2002, 2007), recovery (GPV 2000; Bajari–Hortaçsu 2005; Krasnokutskaya 2011), welfare framework (Saez–Stantcheva 2016; Ballard et al. 1985; Hendren 2020; Finkelstein–Hendren 2020), and modern DiD literature.
 
 ## v6 — May 2026 (Sheltered Bidding framing — superseded)
 
-**Polish round** consolidating v5 into JPubE submission shape.
+- **Title rebranded** to **Sheltered Bidding: The Within-Auction Cost of SME Set-Asides** (commit `5d83c28`).
+- **Abstract pivoted** to question-first structure with three headline numbers: ~10% DiD effect on winning prices; sheltered bidding = 2/3 to 3/4 of the simulated effect; R$55M/yr welfare cost on Group 65 alone (out of São Paulo's R$13B platform).
+- **Sheltered bidding** elevated from descriptive label to characterized property; new policy-design framing.
+- **Aggressive compression** (body 64→54pp; appendix 24→23pp) to fit JPubE conventions.
+- **Macros** (`v6-jpube/output/values.tex`) become the single source of truth for every headline number in the manuscript.
+- **Final pre-submission cleanup** (commit `d21754d`) + footnote translation of the PGE-SP Parecer 151/2017 ementa into English.
 
-- **Title rebranded** to **Sheltered Bidding: The Within-Auction Cost of SME Set-Asides**, replacing the v5 working title *The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement*. The new title puts the characterized property (sheltered bidding) front and centre.
-- **Abstract pivoted** to a question-first structure ("Why do SME set-asides raise procurement prices?") with three headline numbers: ~10% DiD effect on winning prices, sheltered bidding = 2/3 to 3/4 of the simulated effect, R\$55 million per year welfare cost on a single product group of São Paulo's R\$13 billion procurement platform.
-- **Sheltered bidding** elevated from descriptive label to characterized property; framing positions the within-auction component as the policy-design statement of the paper.
-- **Aggressive compression** (body 64 → 54pp, appendix 24 → 23pp) to fit JPubE conventions; figure floats tightened (`[!htbp]` → `[!htb]`).
-- **Robustness narratives** sharpened across §5 Identification, §6 Results, §7 Welfare, §8 Robustness, §9 Discussion, with discipline against accounting-vs-full-structural overreach.
-- **Macro hygiene.** All headline numbers, fiscal magnitudes, and parameter bounds reach the manuscript via `output/values.tex`; no hardcoded numerals.
-- **Institutional footnote** (PGE-SP Parecer 151/2017 ementa) translated to English with the original Portuguese preserved in italics, accommodating non-Lusophone JPubE referees.
-- **V4 (empate ficto) quantified.** The right-to-match instrument operative in current Brazilian law (LC 123/2006 arts.~44--45) extended to the BNE Monte Carlo framework as a fourth instrument alongside V0/V1/V2/V3. The empate fires in 1--2 percent of auctions; the SME win-rate gain is +1.9 (non-pharma) / +1.0 (pharma) percentage points; welfare cost is essentially zero (0.03 / 0.01 percent of $p_{S_1}$) — firmly below V3 on both distributive and welfare margins.
+## v5 — April 2026 (Submission-ready, structural decomposition)
 
----
+Structural decomposition replaces the v1--v3 reduced-form headline: asymmetric IPV reading of Pregão, type-specific cost distributions point-identified from drop-out bids (Haile and Tamer 2003), Krasnokutskaya (2011) auction-level UH correction, Athey--Seira (2011) treatment of equilibrium SME entry, BNE Monte Carlo, cluster bootstrap, Saez--Stantcheva (2016) welfare weights. Headline magnitudes: within-auction share ~74% in non-pharma, ~66% in pharma. Welfare cost 28.9%/44.8% of *p<sub>S<sub>1</sub></sub>* at λ = 0.30.
 
-## v5 — April 2026 (Submission-ready, JPubE format)
+## March 2026 (v4, reduced-form layer)
 
-**Structural decomposition** of the SME set-aside replaces the v1--v3 reduced-form headline:
+- **Fiscal Cost Quantification** (v4 reduced-form): subsection added with R$84.5--85.8 million headline. **Superseded in v5/v6** by the structural welfare arithmetic (R$55--128M/yr, λ-grid, MCPF, Saez--Stantcheva weights).
+- 5 advanced econometric methods: parallel trends sensitivity (HonestDiD), Lee bounds, causal forest, quantile DiD, Gelbach decomposition
+- 4 new tables + 5 new figures (18 tables / 15 figures total)
+- Expanded appendix with organized subsections and explanatory paragraphs
+- Polished main body text (~10% expansion with references to advanced methods)
+- New MkDocs page for advanced methods
 
-- Asymmetric IPV reading of the Pregao auction; type-specific cost distributions point-identified from drop-out bids (Haile and Tamer 2003)
-- Krasnokutskaya (2011) auction-level UH correction via method-of-moments + best-linear-predictor shrinkage
-- Athey--Seira (2011) treatment of equilibrium SME entry as observed Poisson arrival rates
-- BNE Monte Carlo (B = 2,000) over scenarios S<sub>1</sub>, S<sub>2</sub>, S<sub>3</sub>, V0--V3
-- Cluster bootstrap at the auction level (B<sub>bs</sub> = 500)
-- Saez--Stantcheva (2016) generalized social-marginal-welfare-weight identity
-
-**Headline magnitudes.** Within-auction share of the simulated total effect: 74.5% (non-pharma), 73.3% (pharma), stable in the 73--85% range across cost-distribution estimators and across the strict-invariance benchmark. Welfare cost at λ = 0.30: 28.7% of p<sub>S<sub>1</sub></sub> (non-pharma), 47.0% (pharma). 10% price preference welfare-dominates the set-aside in non-pharma under both specifications; ranking bifurcates in pharma.
-
-**Robustness.** Strict primitive invariance, F<sub>c</sub> regime (losers-only / all-bidders / Turnbull NPMLE), kernel bandwidth, sample filter, temporal window (6m / 12m / 18m), alternative policy variants (V0--V3).
-
-**Online appendix.** 15 sections including IPV-relaxation Gaussian copula sensitivity, Maskin--Riley FPSB calibration of V3, full λ-grid welfare CIs, Convite cross-modality consistency, Conley--Decarolis collusion screen, primitive-invariance KS tests.
-
-**Title.** Renamed from *The Price of Protecting Small Firms* to **The Cost of Inclusion: Decomposing Bidder Exclusion in Public Procurement**, reflecting the structural focus on within-auction (sheltered bidding) vs. participation-margin decomposition.
-
----
-
-## March 2026 (v4)
-
-- *Fiscal Cost Quantification* subsection added to reduced-form manuscript (R\$84.5--85.8 million)
-- 5 advanced econometric methods bolted onto DiDiR: HonestDiD, Lee bounds, causal forest, quantile DiD, Gelbach decomposition
-- 18 tables / 15 figures total
-
-## March 2025 (v2--v3)
+## March 2025
 
 - Full R/fixest pipeline with 14 tables and 10 figures
-- Robustness: placebo tests, alternative clustering, winsorization, randomization inference
+- Robustness checks: placebo tests, alternative clustering, winsorization, randomization inference
 - Extensions: real prices, extensive margin, efficiency, winner composition, heterogeneity by item value and PBU type
 - MkDocs documentation site
 
-## January 2021 (v1, first version)
+## January 2021 (First Version)
 
 - Initial manuscript with core DiDiR results
 - 4 main outcome variables: prices, firms, bids, distance

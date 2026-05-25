@@ -1,8 +1,7 @@
 ---
-paper: sme-public
 id: an-010
 hypothesis: exclusion-dominates
-type: causal
+type: descriptive
 question: What is the structural decomposition of the set-aside price effect into the lost-discipline channel ($S_2-S_1$) and the protected-pool offset ($S_3-S_2$)?
 status: done
 status_date: 2026-05-21

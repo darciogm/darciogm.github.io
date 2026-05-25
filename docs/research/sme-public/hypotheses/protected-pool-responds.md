@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h6
 slug: protected-pool-responds
 title: "Post-policy SME participation rises but does not recreate the lost competitive discipline"

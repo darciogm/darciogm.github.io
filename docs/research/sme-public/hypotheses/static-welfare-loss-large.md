@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h8
 slug: static-welfare-loss-large
 title: "The full SME-only set-aside generates a static welfare loss of ~28.9% of the open-regime price in non-pharma"

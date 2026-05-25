@@ -119,7 +119,7 @@
 - id: an-010
   hypothesis: award-bid-complementarity
   status: done
-  type: causal
+  type: descriptive
   question: How does the seven-feature Imhof–Wallimann bid-distribution pipeline perform on the cobidder target, and what is the increment from adding the award-layer score?
   confidence: green
   tags: ["H:award-bid-complementarity", imhof, bid-distribution, horse-race]
@@ -130,7 +130,7 @@
 - id: an-011
   hypothesis: award-bid-complementarity
   status: done
-  type: causal
+  type: descriptive
   question: Does the continuous log(1+tenders_count) dominate the binary FL14 on the cobidder target?
   confidence: green
   tags: ["H:cobidder-concentration", "H:award-bid-complementarity", horse-race, continuous, binary]
@@ -174,7 +174,7 @@
 - id: an-015
   hypothesis: award-bid-complementarity
   status: done
-  type: causal
+  type: descriptive
   question: D1 gate diagnostic — does the continuous score dominate FL14 on a harmonized same-sample horse race, and do the price coefficients align?
   confidence: green
   tags: ["H:award-bid-complementarity", "H:cobidder-concentration", gate-d1, continuous, harmonized]
@@ -218,7 +218,7 @@
 - id: an-019
   hypothesis: price-scope-sign-reversal
   status: done
-  type: causal
+  type: descriptive
   question: Does the negotiated-price coefficient at the procurement-cap threshold reverse sign when FL14 presence is introduced, and is the RDD coefficient stable across bandwidths?
   confidence: yellow
   tags: ["H:price-scope-sign-reversal", rdd, cap-threshold, price]
@@ -229,7 +229,7 @@
 - id: an-020
   hypothesis: price-scope-sign-reversal
   status: done
-  type: causal
+  type: descriptive
   question: Does the 2018 procurement decree shift price dynamics differently across modalities, consistent with the scope reading?
   confidence: yellow
   tags: ["H:price-scope-sign-reversal", did, decreto-2018, modality]
@@ -372,7 +372,7 @@
 - id: an-033
   hypothesis: award-bid-complementarity
   status: done
-  type: causal
+  type: descriptive
   question: How significant is the incremental value of the award-layer score added to the Imhof bid-distribution pipeline, by formal DeLong AUC-difference tests?
   confidence: green
   tags: ["H:award-bid-complementarity", imhof, incremental, delong, formal-test]
@@ -416,7 +416,7 @@
 - id: an-037
   hypothesis: price-scope-sign-reversal
   status: done
-  type: causal
+  type: descriptive
   question: How does the FL-margin price coefficient transform across baseline → overlap-cell → ATT specifications, and does the negative sign survive subgroup decomposition under overlap discipline?
   confidence: green
   tags: ["H:price-scope-sign-reversal", sign-reversal, overlap, ATT, subgroup-decomposition]
@@ -438,7 +438,7 @@
 - id: an-039
   hypothesis: price-scope-sign-reversal
   status: done
-  type: causal
+  type: descriptive
   question: Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level is structurally higher? If yes, the naive positive FL-price coefficient reflects selection, not the cartel's within-cell price effect.
   confidence: green
   tags: ["H:price-scope-sign-reversal", selection, rationalization, sign-reversal-decomposition]
@@ -449,7 +449,7 @@
 - id: an-040
   hypothesis: price-scope-sign-reversal
   status: done
-  type: causal
+  type: descriptive
   question: Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does the effect operate through the channel of more bidders (cover-bidding theater)? Does the mechanism strengthen in dense-bidding tenders?
   confidence: green
   tags: ["H:price-scope-sign-reversal", mechanism, rationalization, cover-bidding, bidder-count]

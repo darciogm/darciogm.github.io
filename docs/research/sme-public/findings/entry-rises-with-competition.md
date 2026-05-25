@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Open auctions increase bidder participation by ~10–22%
 
 !!! info "Reduced-form motivation layer"

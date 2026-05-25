@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h11
 slug: parallel-trends-hold
 title: "Pre-treatment placebos null, HonestDiD survives M̄ violations, Lee bounds tight"

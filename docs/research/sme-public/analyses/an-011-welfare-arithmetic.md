@@ -1,8 +1,7 @@
 ---
-paper: sme-public
 id: an-011
 hypothesis: static-welfare-loss-large
-type: causal
+type: descriptive
 question: What is the per-auction static welfare loss of the full SME-only set-aside, decomposed into allocative DWL and MCPF distortion at λ=0.30?
 status: done
 status_date: 2026-05-21

@@ -23,7 +23,7 @@ audits within tighter opportunity sets.
 
 
 > **Evidence strength: Partial (strongly supported).**
-> Four converging audit chains, all decisive within the BEC × CADE
+> Four converging audit chains, all strong within the BEC × CADE
 > data:
 > (i) **Formal sham permutation** ([AN-005](../analyses/an-005-sham-fl-permutation.md)):
 > B = 2,000 volume-matched permutations; sham AUC distribution mean
@@ -44,7 +44,7 @@ audits within tighter opportunity sets.
 > Cohen's d 0.19–1.00 across 7 dimensions; not driven by volume alone.
 > Promotion to 🟢 (**Confirmed**) requires independent replication on a
 > non-BEC procurement panel — see the H3 page commentary section on why
-> within-data exhaustion (however decisive) does not satisfy the bar.
+> within-data exhaustion (however strong) does not satisfy the bar.
 
 ## Theory
 
@@ -116,7 +116,7 @@ participation distortions.
 
 ## Why not 🟢 Confirmed?
 
-The within-data evidence is decisive at the audit level: sham
+The within-data evidence is strong at the audit level: sham
 permutation rejects at p < 1/2,000 (32 σ above null), the leakage audit
 preserves AUC > 0.85, the universe matrix shows row-by-row scope
 discipline, and the standardized-diff battery rules out within-stratum

@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h1
 slug: price-discipline-loss
 title: "Open auctions yield lower procurement prices than SME-only auctions"

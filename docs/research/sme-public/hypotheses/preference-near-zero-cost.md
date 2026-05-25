@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h9
 slug: preference-near-zero-cost
 title: "A 10% SME price preference preserves the price-forming pool at near-zero static cost"

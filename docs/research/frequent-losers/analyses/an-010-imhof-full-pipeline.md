@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-010
 hypothesis: award-bid-complementarity
-type: causal
+type: descriptive
 question: How does the seven-feature Imhof–Wallimann bid-distribution pipeline perform on the cobidder target, and what is the increment from adding the award-layer score?
 status: done
 status_date: 2026-05-22

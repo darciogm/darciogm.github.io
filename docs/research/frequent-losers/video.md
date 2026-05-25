@@ -1,8 +1,8 @@
 ---
+paper: frequent-losers
 hide:
   - navigation
   - toc
-paper: frequent-losers
 ---
 
 # Animated Overview

@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-019
 hypothesis: price-scope-sign-reversal
-type: causal
+type: descriptive
 question: Does the negotiated-price coefficient at the procurement-cap threshold reverse sign when FL14 presence is introduced, and is the RDD coefficient stable across bandwidths?
 status: done
 status_date: 2026-05-22

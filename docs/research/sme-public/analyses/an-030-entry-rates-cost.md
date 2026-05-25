@@ -1,8 +1,7 @@
 ---
-paper: sme-public
 id: an-030
 hypothesis: protected-pool-responds
-type: causal
+type: robustness
 question: What is the Pre→Post entry-rate shift in each modality × class × type cell, what is the calibrated entry-cost asymmetry that explains why SMEs cannot fully replace non-SMEs, and does the dominance ordering survive across the 2×2 grid of UH-clean-vs-raw and endogenous-vs-fixed-pool methodological choices?
 status: done
 status_date: 2026-05-21

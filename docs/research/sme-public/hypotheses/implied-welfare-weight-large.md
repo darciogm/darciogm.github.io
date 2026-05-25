@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h10
 slug: implied-welfare-weight-large
 title: "A planner needs SME welfare weight ~2.42 to prefer the full set-aside over open auctions in non-pharma"

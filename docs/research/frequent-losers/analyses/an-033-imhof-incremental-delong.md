@@ -2,12 +2,12 @@
 paper: frequent-losers
 id: an-033
 hypothesis: award-bid-complementarity
-type: causal
+type: descriptive
 question: How significant is the incremental value of the award-layer score added to the Imhof bid-distribution pipeline, by formal DeLong AUC-difference tests?
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Imhof + FL14 vs Imhof full: AUC gain +0.096, DeLong p = 1.2 × 10⁻²⁶. Imhof + log_tc vs Imhof full: gain +0.098, p = 1.3 × 10⁻²⁵. FL14 alone vs Imhof full: gain +0.035, p = 0.014 (FL beats Imhof). Complementarity is decisively significant at the same-sample level."
+headline: "Imhof + FL14 vs Imhof full: AUC gain +0.096, DeLong p = 1.2 × 10⁻²⁶. Imhof + log_tc vs Imhof full: gain +0.098, p = 1.3 × 10⁻²⁵. FL14 alone vs Imhof full: gain +0.035, p = 0.014 (FL beats Imhof). Complementarity is strongly supported at the same-sample level."
 created: 2026-05-22
 script: scripts/49_imhof_incremental_value.R
 target: output/imhof_incremental/imhof_incremental.csv
@@ -85,7 +85,7 @@ Four readings:
    formal significance. *The cheap layer is more informative than the
    expensive layer, individually.*
 
-2. **Joint scoring is decisively more informative than either alone**
+2. **Joint scoring is more informative than either layer alone in this same-sample comparison**
    (Imhof + FL: 0.942 vs Imhof: 0.846, delta +0.096, p = 1.2 × 10⁻²⁶).
    This is the formal statistical test of
    [H:award-bid-complementarity](../hypotheses/award-bid-complementarity.md).

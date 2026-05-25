@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-009
 hypothesis: sme-winner-share-falls
 type: descriptive

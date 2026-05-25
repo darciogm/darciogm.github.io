@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-011
 hypothesis: award-bid-complementarity
-type: causal
+type: descriptive
 question: Does the continuous log(1+tenders_count) dominate the binary FL14 on the cobidder target?
 status: done
 status_date: 2026-05-22

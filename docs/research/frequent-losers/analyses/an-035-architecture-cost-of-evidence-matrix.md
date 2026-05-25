@@ -81,8 +81,8 @@ Headline trade-off cells:
 2. **Temporal-holdout operational metric**: Sequential K=2,000 at
    k=1,000 → TP = 114, recall **80.3%**, microdata 2,000 (vs joint TP =
    111, recall 78.2%, microdata 8,257). Captures 103% of joint TP
-   using 24% of microdata — sequential **beats joint in temporal
-   holdout**.
+   using 24% of microdata — sequential **matches or exceeds the joint TP count in this
+   temporal-holdout cell**.
 
 3. **Award-only at high k is highly competitive**. At k=2,000
    in-sample: 151 TP, recall 78.2%, zero microdata. Compared to joint

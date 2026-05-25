@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: an-013
 hypothesis: ipv-clock-admissible
 type: descriptive

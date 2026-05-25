@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-015
 hypothesis: award-bid-complementarity
-type: causal
+type: descriptive
 question: D1 gate diagnostic — does the continuous score dominate FL14 on a harmonized same-sample horse race, and do the price coefficients align?
 status: done
 status_date: 2026-05-22
@@ -21,7 +21,7 @@ design:
 # AN-015: Gate D1 — harmonized same-sample horse race
 
 !!! abstract "Intuition (plain-language)"
-    D1 is the first of four "gate" diagnostics that decided the paper's strategic framing in 2026. It harmonizes the same-sample comparison between continuous and binary versions of the screen on a single, consistent firm set. The continuous version dominates decisively, confirming the locked rule: continuous is the empirical primitive, binary is the deployable simplification.
+    D1 is the first of four "gate" diagnostics that decided the paper's strategic framing in 2026. It harmonizes the same-sample comparison between continuous and binary versions of the screen on a single, consistent firm set. The continuous version dominates strongly in this diagnostic, supporting the rule: continuous is the empirical primitive, binary is the deployable simplification.
 
 ## Question
 

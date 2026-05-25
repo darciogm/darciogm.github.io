@@ -16,7 +16,7 @@ typography and palette.
 <video controls preload="metadata"
        style="width:100%; max-width:1200px; display:block; margin:0 auto;
               border:1px solid #e0e0e0; border-radius:12px;">
-  <source src="../assets/cost_of_inclusion.mp4" type="video/mp4">
+  <source src="../assets/paper/cost_of_inclusion.mp4" type="video/mp4">
   Your browser does not support embedded video.
 </video>
 

@@ -2,7 +2,7 @@
 paper: frequent-losers
 id: an-020
 hypothesis: price-scope-sign-reversal
-type: causal
+type: descriptive
 question: Does the 2018 procurement decree shift price dynamics differently across modalities, consistent with the scope reading?
 status: done
 status_date: 2026-05-22

@@ -1,7 +1,3 @@
----
-paper: sme-public
----
-
 # Open auctions cut procurement prices by ~13% in switched group 65
 
 !!! info "Reduced-form motivation layer"

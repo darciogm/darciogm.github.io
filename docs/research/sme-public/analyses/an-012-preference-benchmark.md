@@ -1,8 +1,7 @@
 ---
-paper: sme-public
 id: an-012
 hypothesis: preference-near-zero-cost
-type: causal
+type: descriptive
 question: What is the simulated price and SME win-rate effect of a 10% SME price preference relative to the open benchmark $S_1$?
 status: done
 status_date: 2026-05-21

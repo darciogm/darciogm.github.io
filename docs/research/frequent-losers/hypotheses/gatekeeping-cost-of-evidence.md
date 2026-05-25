@@ -18,7 +18,7 @@ adjudication-anchored cobidders. This is the operational architecture
 relevant for agencies that face costly bid recovery.
 
 !!! abstract "Intuition (plain-language)"
-    In real enforcement, opening bid-level microdata for forensic analysis is expensive. The hypothesis: a cheap award-layer screen can act as a gatekeeper that decides which firms enter the expensive forensic stage, while preserving most of the cartel signal. The architecture works — 83% reduction in the bid-microdata pool while still recovering 131 of 193 adjudicated cobidders. The sequential gatekeeper even beats joint scoring under temporal holdout, the operationally honest regime. The cost-of-evidence argument is the paper's most distinctive institutional contribution.
+    In real enforcement, opening bid-level microdata for forensic analysis is expensive. The hypothesis: a cheap award-layer screen can act as a gatekeeper that decides which firms enter the expensive forensic stage, while preserving most of the cartel signal. The architecture is operationally attractive: 83% reduction in the bid-microdata pool while still recovering 131 of 193 adjudicated cobidders. A temporal-holdout diagnostic shows the sequential gatekeeper can match or exceed the joint true-positive count in a specific operating cell, while using far less bid microdata. The cost-of-evidence argument is the paper's most distinctive institutional contribution.
 
 
 > **Evidence strength: Partial (strongly supported).**
@@ -38,8 +38,7 @@ relevant for agencies that face costly bid recovery.
 > (v) **Full architecture × k × regime matrix** ([AN-035](../analyses/an-035-architecture-cost-of-evidence-matrix.md)):
 > sequential K=2,000 at k=1,000 captures 131 TP in-sample (92% of
 > joint TP at 17% microdata) and 114 TP temporal-holdout (103% of
-> joint TP at 24% microdata — sequential **beats joint in temporal
-> holdout**).
+> joint TP at 24% microdata — sequential **matches or exceeds joint TP in this temporal-holdout cell**).
 > (vi) **CV precision stability** ([AN-036](../analyses/an-036-cv-precision-stability.md)):
 > K-fold precision_mean across k = 50 → 2,000 is in [0.016, 0.068]
 > with SDs ≤ 0.011 (CV coef < 31%). The precision estimates are not
@@ -132,8 +131,7 @@ shows the trade-off envelope across in-sample and temporal-holdout
 regimes; CV stability ([AN-036](../analyses/an-036-cv-precision-stability.md))
 confirms the precision estimates are not split-artifacts; and the
 sequential architecture ([AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md))
-beats joint scoring in the temporal-holdout regime that matches
-operational deployment.
+matches or exceeds joint true positives in the temporal-holdout cell that approximates operational deployment.
 
 But the cost-of-evidence claim is fundamentally about **how an agency
 should deploy resources in a real enforcement environment**. The

@@ -1,5 +1,4 @@
 ---
-paper: sme-public
 id: h7
 slug: ipv-clock-admissible
 title: "Pregão drop-out prices admit the IPV-clock interpretation as willingness-to-supply observations"
