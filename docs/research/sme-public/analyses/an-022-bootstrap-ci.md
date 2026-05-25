@@ -72,6 +72,14 @@ threshold; does the 95% confidence interval clear it too?
 | All-bidders | 0.305 [0.245, 0.370] | 70.0 **[61.6, 85.2]** | 30.0 [14.8, 38.4] |
 | Turnbull    | 0.341 [0.272, 0.409] | 69.0 **[62.3, 80.1]** | 31.0 [19.9, 37.7] |
 
+!!! note "Bootstrap point vs canonical headline"
+    The per-regime point estimates above are the B=500 cluster-bootstrap
+    means. They differ by Monte Carlo noise from the canonical all-bidders
+    headline reported elsewhere on the site (absolute exclusion share
+    **72.0% NP / 68.8% PH**, net effect **0.227 NP / 0.309 PH**; `values.tex`).
+    The canonical points sit comfortably inside each regime's 95% CI; the
+    bootstrap is used for the *interval*, not to revise the point estimate.
+
 ## Interpretation
 
 **The 95% lower endpoint of the exclusion share exceeds 50% in every

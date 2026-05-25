@@ -35,8 +35,9 @@ design:
 The DiDiR coefficient identifies the open-vs-SME-only effect *if*
 parallel trends hold. HonestDiD asks the weaker question: how big a
 violation of parallel trends would be required to make the price effect
-statistically insignificant? Robust CIs survive larger violations
-provide stronger evidence the result is not an artifact.
+statistically insignificant? The larger the violation the robust CIs can
+absorb while still excluding zero, the stronger the evidence that the
+result is not an artifact of differential pre-trends.
 
 ## Design
 

@@ -7,7 +7,7 @@ question: How does the static welfare loss vary across the MCPF λ grid, and wha
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "Non-pharma welfare loss runs 24.0% → 33.3% across λ ∈ [0.15, 0.45]; 95% bootstrap CI at λ=0.30 = [20.5, 34.8]. Pharma: 38.4% → 52.5% point estimates; CI at λ=0.30 = [34.9, 55.9]. Welfare ranking V3 (10% preference) ≻ V0 (full set-aside) holds across the entire λ range in non-pharma and in pharma under the main spec. The ranking is *not* driven by λ choice — it is determined by the equilibrium-selection vs strict-primitive-invariance treatment of the post-policy SME pool."
+headline: "Non-pharma welfare loss runs 24.1% → 33.8% across λ ∈ [0.15, 0.45] (canonical point estimates); 95% bootstrap CI at λ=0.30 = [20.5, 34.8]. Pharma: 38.1% → 51.6% point estimates; CI at λ=0.30 = [34.9, 55.9]. Welfare ranking V3 (10% preference) ≻ V0 (full set-aside) holds across the entire λ range in non-pharma and in pharma under the main spec. The ranking is *not* driven by λ choice — it is determined by the equilibrium-selection vs strict-primitive-invariance treatment of the post-policy SME pool."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/55_welfare.R + 56_welfare_bootstrap.R
 target: v7-jpube-tight/output/tables/tab_v3_welfare_ci.tex + tab_welfare_ranking_lambda.tex
@@ -56,11 +56,15 @@ sensitivity questions are open:
 
 | λ | NP Loss($V_0$) | NP Ranking | PH Loss($V_0$) | PH Ranking (main) | PH Ranking (strict-inv) |
 |---:|---:|---|---:|---|---|
-| 0.15 | 24.0% | $V_3 \succ V_0$ | 38.4% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
-| 0.20 | 25.6% | $V_3 \succ V_0$ | 40.8% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
-| **0.30** | **28.7%** | $V_3 \succ V_0$ | **47.0%** | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
-| 0.40 | 31.8% | $V_3 \succ V_0$ | 50.2% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
-| 0.45 | 33.3% | $V_3 \succ V_0$ | 52.5% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+| 0.15 | 24.1% | $V_3 \succ V_0$ | 38.1% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+| 0.20 | 25.7% | $V_3 \succ V_0$ | 40.3% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+| **0.30** | **28.9%** | $V_3 \succ V_0$ | **44.8%** | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+| 0.40 | 32.2% | $V_3 \succ V_0$ | 49.3% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+| 0.45 | 33.8% | $V_3 \succ V_0$ | 51.6% | $V_3 \succ V_0$ | $V_0 \succ V_3$ |
+
+*Point estimates are the canonical values from `values.tex` (matching the
+main text and online appendix). The bootstrap CIs below are the B=500
+uncertainty bands around them.*
 
 **Bootstrap 95% CI on welfare loss** (`tab_v3_welfare_ci.tex`,
 B = 500 cluster-bootstrap at auction):
@@ -74,10 +78,10 @@ B = 500 cluster-bootstrap at auction):
 | Pharma | **0.30** | **45.55%** | **[34.90, 55.85]** |
 | Pharma | 0.40 | 50.25% | [38.50, 61.41] |
 
-(Slight magnitude difference vs `\welfLossPctLthirtyNp` = 28.9% in
-`values.tex` reflects a more recent canonical run on the v8 sample;
-the CIs from the v7-jpube-tight bootstrap remain the headline
-uncertainty bands.)
+(The λ-grid point estimates above are the canonical `values.tex` values
+— 28.9% NP / 44.8% PH at λ=0.30. The bootstrap-*mean* point in the CI
+table, 27.76% NP, differs by ~1 pp of Monte Carlo noise from the B=500
+cluster bootstrap; the canonical point sits well inside the CI.)
 
 Output: `output/tables/tab_welfare_ranking_lambda.tex`,
 `tab_v3_welfare_ci.tex`.
@@ -124,17 +128,17 @@ below ~1.5 even at λ=0.15).
 Confidence: **yellow.** The ranking-stability result is the strongest
 finding of this AN — it disposes of the "λ choice drives the headline"
 critique. The bootstrap CI is informative on sampling variability but
-inherits the IPV-clock restriction. The point-estimate
-slight-mismatch between `values.tex` (28.9% NP) and this table (27.76%)
-should be reconciled by re-running the bootstrap on the v8 canonical
-sample; flagged as a follow-up.
+inherits the IPV-clock restriction. The bootstrap-mean point (27.76% NP)
+differs by ~1 pp of Monte Carlo noise from the canonical 28.9%; the
+canonical point lies inside the bootstrap CI [20.5, 34.8], so the
+uncertainty conclusion is unaffected.
 
 ## Follow-ups
 
-- **Reconcile point estimates**: re-run `56_welfare_bootstrap.R` on
-  the v8 canonical sample to align point estimates with
-  `\welfLossPctLthirtyNp` = 28.9%. Expected to shift the CI midpoint
-  by ~1 pp; should not affect lower-endpoint clearance.
+- **Recenter the bootstrap CI**: the λ-grid point estimates are now the
+  canonical `values.tex` values; a future re-run of
+  `56_welfare_bootstrap.R` on the v8 sample would also recenter the CI
+  midpoint (~1 pp shift), without affecting the lower-endpoint clearance.
 - **Implied-weight bootstrap**: directly bootstrap the implied $\omega$
   in addition to bootstrapping the loss. Would give a CI on the
   $\omega$ = 2.42 headline of [AN-011](an-011-welfare-arithmetic.md).

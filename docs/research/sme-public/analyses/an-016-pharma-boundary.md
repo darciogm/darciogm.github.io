@@ -10,7 +10,7 @@ confidence: yellow
 headline: "Within Group 65, the CMED-regulated medications cell (6531) shows larger reduced-form effects than other medical supplies (log price −0.166 vs −0.099; log firms +0.152 vs +0.044), but the effect is significant in BOTH cells (OA-B falsification). Structural decomposition same direction: pharma exclusion share 68.8%, welfare loss 44.8% at λ=0.30. But four diagnostics fail in pharma where they hold in non-pharma: (1) 61.9% of post-policy pharma SME firms are new entrants (vs 23% NP); (2) primitive-invariance KS distance 0.141 after UH correction (fails); (3) implied SME welfare weight under strict invariance drops to 0.7 (below unity); (4) welfare ranking flips between main and strict-invariance specs in pharma but not non-pharma. Pharma is therefore reported as a *qualitative confirmation* — same direction, fragile magnitude."
 created: 2026-05-21
 script: scripts/24_pharma.R + v7-jpube-tight/scripts/33_pharma_flag.R + various
-target: output/tables/tab_pharma.tex + v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex
+target: within-Group-65 falsification (online appendix OA-B, tab_within_g65) + v8-jpube/output/values.tex
 tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility, primitive-invariance, turnover, strict-invariance, welfare-ranking-flip]
 design:
   sample: "Pharmaceutical Pregão drop-outs (class = pharma per CMED-regulated CADMAT 6531/6532/6536/6581); compared to non-pharma standardized as reference"
@@ -42,8 +42,8 @@ than a second headline. Why?
 This AN consolidates pharma-specific evidence across five diagnostic
 margins, comparing each to non-pharma:
 
-1. **Reduced-form DiDiR** on pharma/non-pharma split and the
-   pharma-interaction term (`tab_pharma.tex`).
+1. **Within-Group-65 falsification** — medications (CADMAT 6531) vs other
+   medical supplies (online appendix OA-B; `tab_within_g65.tex`).
 2. **Sample composition** — how many SME firms are new entrants
    post-policy, in pharma vs non-pharma.
 3. **Primitive-invariance KS test** on the drop-out distribution
@@ -152,8 +152,8 @@ specifications; non-pharma is stable.** From
 λ — the pharma flip is constant across the entire λ ∈ [0.15, 0.45]
 grid within each spec.
 
-Output: `output/tables/tab_pharma.tex`,
-`v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex`, and welfare
+Output: within-Group-65 falsification `tab_within_g65.tex` (OA-B);
+`v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex` (counts); welfare
 macros in `v8-jpube/output/values.tex`.
 
 ## Interpretation
