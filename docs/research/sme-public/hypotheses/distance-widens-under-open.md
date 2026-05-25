@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: h3
 slug: distance-widens-under-open
 title: "Open auctions pull in geographically distant non-SME suppliers"

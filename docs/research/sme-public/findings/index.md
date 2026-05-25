@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Findings — The Price of Exclusion
 
 This page is the curated index of *what we have learned* from the project's

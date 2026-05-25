@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Changelog
 
 ## v8 — May 2026 (JPubE submission)

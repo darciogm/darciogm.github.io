@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-012
 hypothesis: preference-near-zero-cost
 type: descriptive

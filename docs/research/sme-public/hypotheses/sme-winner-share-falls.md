@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: h4
 slug: sme-winner-share-falls
 title: "Open auctions reduce the probability that the winner is an SME"

@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-030
 hypothesis: protected-pool-responds
 type: robustness

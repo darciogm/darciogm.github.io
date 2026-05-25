@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-002
 hypothesis: entry-thickens-pool
 type: causal

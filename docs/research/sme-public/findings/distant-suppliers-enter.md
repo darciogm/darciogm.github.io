@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Open auctions pull in geographically distant non-SME suppliers
 
 !!! info "Reduced-form motivation layer"

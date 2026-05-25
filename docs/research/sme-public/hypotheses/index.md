@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Hypotheses
 
 Testable predictions for *The Price of Exclusion: SME Set-Asides in Public

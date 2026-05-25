@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Exclusion dominates the price decomposition
 
 🟡 The structural decomposition of the SME set-aside price effect into

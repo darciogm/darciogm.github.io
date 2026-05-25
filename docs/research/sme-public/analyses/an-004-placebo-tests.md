@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-004
 hypothesis: parallel-trends-hold
 type: placebo

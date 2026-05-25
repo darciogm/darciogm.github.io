@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # A 10% SME price preference delivers redistribution at near-zero static price cost
 
 🟡 A static 10% SME price preference simulated under the recovered

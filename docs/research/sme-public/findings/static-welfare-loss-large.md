@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Static welfare cost of full set-aside is ~28.9% of open-regime price (non-pharma)
 
 🟡 The full SME-only set-aside generates a static welfare loss of

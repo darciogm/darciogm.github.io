@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-024
 hypothesis: static-welfare-loss-large
 type: robustness

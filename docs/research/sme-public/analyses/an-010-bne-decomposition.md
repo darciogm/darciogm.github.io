@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-010
 hypothesis: exclusion-dominates
 type: descriptive

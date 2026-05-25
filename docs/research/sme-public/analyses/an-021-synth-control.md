@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-021
 hypothesis: parallel-trends-hold
 type: robustness

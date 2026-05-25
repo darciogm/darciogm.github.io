@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-027
 hypothesis: price-discipline-loss
 type: robustness

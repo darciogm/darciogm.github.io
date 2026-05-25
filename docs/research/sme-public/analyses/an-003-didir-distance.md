@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 id: an-003
 hypothesis: distance-widens-under-open
 type: causal

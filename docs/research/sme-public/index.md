@@ -1,4 +1,5 @@
 ---
+paper: sme-public
 hide:
   - navigation
 ---

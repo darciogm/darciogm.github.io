@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Main Results
 
 !!! info "v8 banner: this page reflects v1--v4 reduced-form figures; canonical results are in v8"

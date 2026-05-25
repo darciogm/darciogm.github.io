@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Pharmaceutical procurement is a boundary case, not a second headline
 
 🟡 The structural decomposition and welfare arithmetic in pharmaceutical

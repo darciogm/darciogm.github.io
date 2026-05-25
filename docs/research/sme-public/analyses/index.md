@@ -1,3 +1,7 @@
+---
+paper: sme-public
+---
+
 # Analyses — The Price of Exclusion
 
 This page is the **directory of analyses** for *The Price of Exclusion:
