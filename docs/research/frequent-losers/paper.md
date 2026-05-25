@@ -14,7 +14,7 @@ The paper proposes an **enforcement architecture** in which an award-layer scree
 
 Three substantive contributions:
 
-1. **Architectural feasibility.** Routing forensic interrogation through an award-layer screen reduces the bid-microdata pool the forensic stage must work on by **83%** (1,985 of 11,676 firms) while still recovering **131 of 193** adjudicated cobidders. The screen triages; it does not adjudicate cartel membership: it ranks loser-side firms for costly bid-layer interrogation, not cartel members for legal sanction.
+1. **Architectural feasibility.** Routing forensic interrogation through an award-layer screen reduces the bid-microdata pool the forensic stage must work on by **83%** (interrogating 2,000 of 11,676 firms) while still recovering **131 of 193** adjudicated cobidders. The screen triages; it does not adjudicate cartel membership: it ranks loser-side firms for costly bid-layer interrogation, not cartel members for legal sanction.
 
 2. **Informational complementarity.** The screening and forensic stages are informational complements, not substitutes. Discrimination accuracy against the cobidder population is firm-level **AUC 0.864 under temporal holdout**, and the screen adds **+0.035 AUC** over the seven-feature Imhof–Wallimann bid-distribution pipeline (DeLong $p = 0.014$) when both are accessed. The architecture is therefore well-defined: the screen runs on operational data already maintained, and the forensic stage inherits a much smaller pool to interrogate.
 
@@ -126,7 +126,7 @@ A leakage audit decomposes the raw in-sample item-level AUC of 0.995 into a stru
 
 ### Tier 2 — Architecture (the contribution's headline)
 
-Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable bid-microdata layer, the award-layer flag matches AUC on a thinner envelope and adds non-redundant signal in same-sample combination (**+0.035 AUC**, DeLong $p = 0.014$). A sequential gatekeeper rule that uses the flag to filter which firms enter the forensic stage catches **131 of 193** adjudicated cobidders in the top-1,000 flag list while interrogating bid microdata for **1,985** firms instead of 11,676 — an **83% data-envelope reduction** whose recall robustness survives temporal holdout.
+Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable bid-microdata layer, the award-layer flag matches AUC on a thinner envelope and adds non-redundant signal in same-sample combination (**+0.035 AUC**, DeLong $p = 0.014$). A sequential gatekeeper rule that uses the flag to filter which firms enter the forensic stage catches **131 of 193** adjudicated cobidders in the top-1,000 flag list while interrogating bid microdata for **2,000** firms instead of 11,676 — an **83% data-envelope reduction** whose recall robustness survives temporal holdout.
 
 ### Tier 3 — Pricing imprint (descriptive corroboration only)
 

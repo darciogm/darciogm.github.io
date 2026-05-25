@@ -13,7 +13,7 @@ with FL14 + Imhof, and **0.962 [0.954, 0.969]** with continuous + Imhof
 The two layers are **complementary**, not substitutes:
 
 - **Imhof seven-feature pipeline alone**: AUC 0.888 [0.865, 0.911].
-- **FL14 binary alone**: AUC 0.903 [0.884, 0.923].
+- **FL14 binary alone**: AUC 0.921 [0.914, 0.928].
 - **Continuous log_tc alone**: AUC 0.884 [0.860, 0.908].
 - **Joint**: AUC 0.955–0.962 — gain of ~0.05–0.07 over each layer
   individually.
@@ -57,7 +57,7 @@ available adjudication target.
 - *Cross-refs*:
   [H:award-bid-complementarity](../hypotheses/award-bid-complementarity.md);
   [docs/results.md](../results.md).
-- *Macros*: `\valAUCImhofFull` (0.888), `\valImhofFLBin` (0.903),
+- *Macros*: `\valAUCImhofFull` (0.888), `\valImhofFLBin` (0.921),
   `\valImhofComboBin` (0.955), `\valImhofComboCont` (0.962),
   `\valAUCImhofCV` (0.585), `\valImhofPoolN` (16,779).
 - *Validation*: backing scripts `scripts/31_imhof_full_pipeline.R`,

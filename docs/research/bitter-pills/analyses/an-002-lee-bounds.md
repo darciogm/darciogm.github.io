@@ -52,8 +52,8 @@ administrative price gap survives a worst-case treatment of that selection.
 | Quantity | Coefficient | Implied gap (litigated over administrative) |
 |---|---:|---:|
 | Naive (no trimming) | −0.259 (SE 0.092) | 29.5% |
-| Lee lower bound | −0.192 | 21.1% |
-| Lee upper bound | −0.148 | 15.9% |
+| Lee lower bound | −0.148 | 15.9% |
+| Lee upper bound | −0.192 | 21.1% |
 | Bounded interval | — | 15.9% – 21.1% |
 
 *Trimming within item×year×PBU strata. Mean trimming proportion 26.9%, maximum

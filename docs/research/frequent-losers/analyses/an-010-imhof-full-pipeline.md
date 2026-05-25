@@ -7,7 +7,7 @@ question: How does the seven-feature Imhof–Wallimann bid-distribution pipeline
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Imhof full pipeline AUC = 0.888 [0.865, 0.911]; FL14 alone reaches 0.903 [0.884, 0.923]; joint (Imhof + FL) hits 0.955 [0.943, 0.967]. Complementarity, not dominance — the two layers operate at different evidentiary stages."
+headline: "Imhof full pipeline AUC = 0.888 [0.865, 0.911]; FL14 alone reaches 0.921 [0.914, 0.928]; joint (Imhof + FL) hits 0.955 [0.943, 0.967] (binary) / 0.962 (continuous). Complementarity, not dominance — the two layers operate at different evidentiary stages."
 created: 2026-05-22
 script: scripts/31_imhof_full_pipeline.R
 target: output/imhof_full/imhof_full_results.csv
@@ -51,7 +51,7 @@ bound.
 |---|---:|---|
 | Imhof CV-only | 0.585 | [0.553, 0.616] |
 | Imhof full pipeline | **0.888** | [0.865, 0.911] |
-| FL14 alone (binary) | 0.903 | [0.884, 0.923] |
+| FL14 alone (binary) | 0.921 | [0.914, 0.928] |
 | log_tc alone (continuous) | 0.884 | [0.860, 0.908] |
 | **Joint Imhof + FL14** | **0.955** | [0.943, 0.967] |
 | Joint Imhof + log_tc | 0.962 | [0.954, 0.969] |
@@ -67,15 +67,15 @@ Increment magnitudes
 
 ![AN-010 Imhof full pipeline + complementarity](../assets/figures/fig_an010_imhof_pipeline.png)
 
-*Figure: AUC across the six specifications on the joint sample
-(N = 11,676; 193 cobidders). Imhof CV-only is chance-level (0.585);
-Imhof full pipeline 0.888; FL14 alone 0.903; joint (Imhof + FL14)
+*Figure: AUC across the six specifications on the five-fold CV pool
+(N = 16,779; 193 cobidders). Imhof CV-only is chance-level (0.585);
+Imhof full pipeline 0.888; FL14 alone 0.921; joint (Imhof + FL14)
 0.955; joint (Imhof + log_tc) 0.962. The award-layer + bid-layer
 complementarity adds ~0.07 over either alone.*
 
 ## Interpretation
 
-The Imhof full pipeline is comparable to FL14 alone (0.888 vs 0.903),
+The Imhof full pipeline is comparable to FL14 alone (0.888 vs 0.921),
 not dominated by it. The headline is **complementarity**: the joint
 score adds roughly 0.05–0.07 AUC over either layer individually. The
 two information layers operate at different evidentiary stages —

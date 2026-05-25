@@ -11,6 +11,16 @@ hide:
 A narrated visual walkthrough of the paper's key ideas and findings.
 </p>
 
+!!! warning "This animation reflects an earlier version of the paper"
+    The narrated video predates the current *"Cheap Signals, Costly
+    Proof"* framing and reports superseded numbers (e.g. an AUC of 0.94
+    against CADE, and a pregão-vs-convite price split). For the current
+    figures see the [Paper](paper.md), [Results](results.md), and
+    [Findings](findings/index.md) pages. The headline discrimination
+    number is now firm-level AUC **0.864** under temporal holdout (0.924
+    in-sample); the headline result is the **83%** bid-microdata
+    reduction recovering **131 of 193** adjudicated cobidders.
+
 <div style="position:relative; width:100%; padding-bottom:56.25%; border-radius:12px; overflow:hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.15); margin-bottom:2em;">
   <iframe
     src="../assets/storytelling_video.html"

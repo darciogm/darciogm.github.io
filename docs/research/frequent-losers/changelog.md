@@ -6,7 +6,14 @@ paper: frequent-losers
 
 ---
 
-## v18-editor — May 23, 2026 (Current — JLEO editorial optimization)
+## v20 submission-clean — May 23, 2026 (Current — JLEO)
+
+**Title:** *Cheap Signals, Costly Proof: Award-Layer Evidence Triage in
+Cartel Enforcement.* Canonical source: `work/v20-editor/submission_clean/`
+(full integral copy of the v18-editor build, recompiled 2026-05-23).
+Headline: an **83%** bid-microdata reduction recovering **131 of 193**
+adjudicated cobidders; firm-level discrimination AUC **0.864** under
+temporal holdout (0.924 in-sample).
 
 **New result:**
 

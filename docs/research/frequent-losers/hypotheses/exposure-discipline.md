@@ -27,7 +27,7 @@ audits within tighter opportunity sets.
 > data:
 > (i) **Formal sham permutation** ([AN-005](../analyses/an-005-sham-fl-permutation.md)):
 > B = 2,000 volume-matched permutations; sham AUC distribution mean
-> 0.500, SD 0.013, q99 0.531, max 0.547. Observed 0.911 is **~32 sham
+> 0.500, SD 0.013, q99 0.531, max 0.547. Observed 0.924 is **~32 sham
 > SDs above the mean**; permutation p < 1/2,000 = 0; rejects volume-only
 > null at 99%.
 > (ii) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
@@ -98,7 +98,7 @@ participation distortions.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo, formal) | Direct | done | B=2,000 permutation; sham mean 0.500 SD 0.013; observed 0.911 = 32 σ above; p < 1/2,000 |
+| [AN-005](../analyses/an-005-sham-fl-permutation.md) (sham FL placebo, formal) | Direct | done | B=2,000 permutation; sham mean 0.500 SD 0.013; observed 0.924 = 32 σ above; p < 1/2,000 |
 | [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit D3) | Direct | done | Raw 0.995 → OOF 0.891 → temporal 0.864; attenuation 0.10–0.13 |
 | [AN-027](../analyses/an-027-universe-anchored-stratum-scope.md) (universe-anchored scope matrix) | Direct | done | 8-row meta-table; row 4 (participation count vs direct CADE) = 0.383, below random |
 | [AN-028](../analyses/an-028-exposure-stratum-balance.md) (within-FL standardized diffs) | Direct | done | Cobidders distinct from non-cobidder FLs at d 0.19–1.00 across 7 dimensions |

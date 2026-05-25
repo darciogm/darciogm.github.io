@@ -7,7 +7,7 @@ question: Across the full architecture × k × regime grid, what are the recall,
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "In-sample at k=2,000: Award-only TP=151 (78.2% recall, microdata 0); Joint TP=181 (93.8%, microdata 11,676); Sequential K=2,000 TP=151 (78.2%, microdata 2,000). Temporal holdout at k=1,000: Sequential K=2,000 captures 114/142 cobidders (80.3% recall) at microdata cost 2,000 — 76% of joint's 111-TP performance using 24% of joint's microdata footprint."
+headline: "At the §6 headline (k=1,000, in-sample), sequential award→bid recovers 131 of 193 cobidders vs joint's 142 — 92% of joint recall using 17% of the bid-microdata footprint (2,000 of 11,676 firms). Under temporal holdout sequential recall is comparable to joint (114 vs 111 at k=1,000) and more robust to the temporal drop. Sequential approaches, not dominates, the full-observability joint benchmark."
 created: 2026-05-22
 script: scripts/architecture_gatekeeper.R
 target: output/architecture_gatekeeper/precision_at_k.csv
@@ -21,7 +21,7 @@ design:
 # AN-035: Architecture × k × regime cost-of-evidence matrix
 
 !!! abstract "Intuition (plain-language)"
-    The full grid of operational architectures (award-only, bid-only, joint scoring, sequential at three Stage-1 cutoffs) × six recall levels × two evaluation regimes (in-sample, temporal holdout). The surprise: in the operationally honest temporal-holdout regime, the sequential architecture BEATS joint scoring (114 true positives vs 111) while using less than a quarter of the bid-microdata footprint.
+    The full grid of operational architectures (award-only, bid-only, joint scoring, sequential at three Stage-1 cutoffs) × six recall levels × two evaluation regimes (in-sample, temporal holdout). The point: in the operationally honest temporal-holdout regime, sequential recall is comparable to joint scoring (114 vs 111 true positives at k=1,000) and more robust to the temporal drop, while using less than a quarter of the bid-microdata footprint. The manuscript does not claim sequential dominates the full-observability joint model.
 
 ## Question
 
@@ -80,9 +80,10 @@ Headline trade-off cells:
 
 2. **Temporal-holdout operational metric**: Sequential K=2,000 at
    k=1,000 → TP = 114, recall **80.3%**, microdata 2,000 (vs joint TP =
-   111, recall 78.2%, microdata 8,257). Captures 103% of joint TP
-   using 24% of microdata — sequential **matches or exceeds the joint TP count in this
-   temporal-holdout cell**.
+   111, recall 78.2%, microdata 8,257). Sequential recovers comparable
+   TP to joint at this cell using ~24% of the microdata; more
+   importantly, sequential recall is more robust to the temporal drop
+   than joint (see Interpretation).
 
 3. **Award-only at high k is highly competitive**. At k=2,000
    in-sample: 151 TP, recall 78.2%, zero microdata. Compared to joint
@@ -120,9 +121,11 @@ The full matrix establishes four operational claims:
    confirmed across both regimes.
 
 2. **Sequential K=2,000 is the operational sweet spot.** In temporal
-   holdout at k=1,000, sequential captures **103% of joint TP using
-   24% of joint microdata**. This is the architecture the manuscript
-   defends in §6.
+   holdout at k=1,000 it recovers comparable TP to joint (114 vs 111)
+   using ~24% of joint's microdata, and its recall is more robust to
+   the temporal drop. The manuscript defends this architecture in §6 as
+   **approaching — not dominating** — the full-observability joint
+   benchmark.
 
 3. **Joint scoring's advantage is at LOW k (top-of-list precision).**
    At k=50, joint has 27.8× lift vs award-only's 18.1× — a 1.5×

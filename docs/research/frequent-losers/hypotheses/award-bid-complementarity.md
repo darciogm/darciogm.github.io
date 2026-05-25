@@ -26,7 +26,7 @@ classifier should outperform each layer individually.
 > with formal statistical significance and an operational deployment
 > envelope:
 > (i) **AUC bands** ([AN-010](../analyses/an-010-imhof-full-pipeline.md)):
-> Imhof full 0.888 [0.865, 0.911]; FL14 alone 0.903 [0.884, 0.923];
+> Imhof full 0.888 [0.865, 0.911]; FL14 alone 0.921 [0.914, 0.928];
 > joint 0.955 [0.943, 0.967].
 > (ii) **Formal DeLong incremental tests** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
 > Imhof + FL14 vs Imhof full Δ = +0.096, **p = 1.2 × 10⁻²⁶**; FL14 vs
@@ -37,10 +37,13 @@ classifier should outperform each layer individually.
 > +0.003. Continuous participation is the load-bearing complement to
 > Imhof; FL14 binary is the auditable simplification of that signal.
 > (iv) **Same-sample horse race** ([AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md)):
-> continuous AUC 0.939 dominates FL14 0.911 (DeLong p = 2 × 10⁻⁵).
+> continuous AUC 0.939 dominates the binary FL14 flag (0.924); the
+> gap is 0.015 under the corrected FL14 ≥ 14 definition (exact DeLong
+> statistic pending the D1 re-run).
 > (v) **Operational sequential envelope** ([AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)):
-> sequential FL → Imhof at Stage-1 K=2,000 captures 74% of joint
-> recall using 17% of the bid-microdata footprint. The architecture
+> sequential award → bid gatekeeping at Stage-1 K=2,000 recovers 131
+> of 193 cobidders (recall 0.679) using 17% of the bid-microdata
+> footprint (2,000 of 11,676 firms). The architecture
 > approximates the full-observability upper bound at much lower
 > forensic cost.
 > Imhof CV-only is chance-level (0.585) — the bid-distribution pipeline
@@ -105,7 +108,7 @@ therefore supports — but does not require — the gatekeeping deployment of
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | done | Imhof 0.888 vs FL14 0.903 vs joint 0.955 |
+| [AN-010](../analyses/an-010-imhof-full-pipeline.md) (Imhof benchmark) | Direct | done | Imhof 0.888 vs FL14 0.921 vs joint 0.955 |
 | [AN-011](../analyses/an-011-horse-race-continuous.md) (horse race) | Direct | done | Continuous dominates binary, DeLong p = 2e-5 |
 | [AN-015](../analyses/an-015-gate-d1.md) (D1 harmonized) | Supports | done | D1 passes; price coefficients align in single-score specs |
 | [AN-033](../analyses/an-033-imhof-incremental-delong.md) (formal DeLong incremental) | Direct | done | Imhof + FL Δ = +0.096, p = 1.2e-26; FL alone vs Imhof Δ = +0.035, p = 0.014; FL binary marginal beyond TC = +0.003 |

@@ -33,7 +33,7 @@ Monte Carlo simulation with adversarial adaptation (cover bidders strategically 
 
 ### Formal sham permutation against volume-only null
 
-B = 2,000 sham permutations of the FL14 label preserving the marginal `tenders_count` distribution. Sham AUC distribution: mean 0.500, SD 0.013, q99 0.531, max 0.547. Observed FL14 AUC of 0.911 is **~32 σ above the sham mean** (permutation *p* < 1/2,000; rejects volume-only null at 99%). The price coefficient under the same sham draws does *not* reject (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
+B = 2,000 sham permutations of the FL14 label preserving the marginal `tenders_count` distribution. Sham AUC distribution: mean 0.500, SD 0.013, q99 0.531, max 0.547. Observed FL14 AUC of 0.924 is **~32 σ above the sham mean** (permutation *p* < 1/2,000; rejects volume-only null at 99%). The price coefficient under the same sham draws does *not* reject (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
 
 ### Universe-anchored scope matrix
 
@@ -83,11 +83,11 @@ Under continuous specification, the headline AUC is preserved across thresholds 
 
 ### Horse-race against continuous score
 
-A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) is statistically larger than binary-only AUC of 0.911 ($p = 1.7 \times 10^{-5}$). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
+A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ($\geq 14$) definition (exact statistic pending the D1 re-run — the published $p = 1.7 \times 10^{-5}$ was computed under the earlier $>14$ cut). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
 
-### Cutoff-sweep robustness (19 thresholds)
+### Cutoff-sweep robustness (full cutoff sweep)
 
-Sweeping the FL cutoff from k = 2 through k = 100 produces a clean inverted-U in cobidder AUC. The plateau between **FL10 and FL15 has AUC ≥ 0.90**; the peak is at FL13 (0.924); FL14 (paper convention, IQR median + 1.5 × IQR statistic = 13.5) sits one bucket below peak. The paper's choice is auditable and falls within the wide robustness band, not at a fragile peak.
+Sweeping the FL cutoff (tenders_count $> k$) from k = 2 through k = 100 produces a clean inverted-U in cobidder AUC. Because the sweep indexes cutoffs as $> k$, the paper's FL14 ($\geq 14$) is the $> 13$ row — the **peak** of the sweep at AUC 0.924 (2,735 firms, 193 cobidders); the $> 14$ (FL15) cutoff sits one bucket tighter at 0.911. The paper's IQR-defined choice (median + 1.5 × IQR statistic = 13.5) sits at the top of a broad high plateau, not on a fragile peak.
 
 ### Subsample robustness (4 subsamples × 4 scores)
 

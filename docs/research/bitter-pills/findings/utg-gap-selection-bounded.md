@@ -9,7 +9,7 @@ urgent-procurement comparison to litigation-driven orders — items procured
 "under the gun" show a naive price gap of **29.5%** (coef −0.259), but once
 the gap is bounded for selection into the urgent channel using Lee (2009)
 bounds, the price difference compresses to a **15.9%–21.1%** range
-(coefs −0.192/−0.148), with a mean trimming rate of **26.9%**
+(coefs −0.148/−0.192), with a mean trimming rate of **26.9%**
 ([AN-002](../analyses/an-002-lee-bounds.md)).
 
 The bounded effect is statistically robust under inference that accounts for

@@ -17,7 +17,8 @@ The screen's primary validation is firm-level discrimination of cobidders inside
 | Metric | Value |
 |---|---|
 | **Firm-level AUC, temporal holdout (train 2009–2016, test 2017–2019)** | **0.864** [95% CI: 0.858, 0.870] |
-| Firm-level AUC, in-sample | 0.939 |
+| Firm-level AUC, in-sample (binary FL14 flag) | 0.924 [95% CI: 0.921, 0.926] |
+| Firm-level AUC, in-sample (continuous log participation) | 0.939 |
 | AUC, strict pre-2020 benchmark with participation-stratified permutation null | corroborated by 3.2× excess over random-matching baseline ($p < 0.001$) |
 | AUC against direct CADE defendants in broader BEC firm universe | ≈ 0.49 (random — by design; loser-side scope, not winner-side identity) |
 
@@ -40,7 +41,7 @@ The 0.10–0.13 drop from in-sample to audit-corrected AUC is the pure-leakage c
 
 ### Formal sham permutation: 32 σ above the volume-only null
 
-A formal version of the volume placebo permutes the FL14 label across always-losers while preserving the marginal participation distribution. Across **B = 2,000** sham draws, the sham AUC distribution has mean 0.500, SD 0.013, and 99th percentile 0.531. The observed FL14 AUC of 0.911 falls **~32 standard deviations above the sham mean**; permutation *p* < 1/2,000 (decisively rejects the volume-only null at the 99% level). The price coefficient under the same sham *does not* reject the null (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
+A formal version of the volume placebo permutes the FL14 label across always-losers while preserving the marginal participation distribution. Across **B = 2,000** sham draws, the sham AUC distribution has mean 0.500, SD 0.013, and 99th percentile 0.531. The observed FL14 AUC of 0.924 falls **~32 standard deviations above the sham mean**; permutation *p* < 1/2,000 (decisively rejects the volume-only null at the 99% level). The price coefficient under the same sham *does not* reject the null (observed +0.064 vs sham mean +0.144, *p* = 0.989) — the second piece of the scope-not-damages reading.
 
 ### Three-classifier timing battery: discrimination preserved under strict ex ante training
 
@@ -62,7 +63,7 @@ This is the paper's headline contribution.
 
 | Quantity | Without architecture | With award-layer triage | Improvement |
 |---|---|---|---|
-| Firms entering forensic stage | 11,676 (all always-losers) | **1,985** (top-1,000 flag list extended) | **83% reduction in bid-microdata pool** |
+| Firms entering forensic stage | 11,676 (all always-losers) | **2,000** (top-$K_1$ award-ranked survivor pool) | **83% reduction in bid-microdata pool** |
 | Cobidders recovered (of 193 adjudicated) | 193 (full coverage) | **131** | 68% recall preserved |
 | Bid-microdata interrogation cost | full | ~17% of full | ~83% saving |
 
@@ -73,13 +74,14 @@ This is the paper's headline contribution.
 
 Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on the forensic-recoverable layer:
 
-| Comparison | Result |
-|---|---|
-| Award-layer flag (alone), AUC | 0.864 |
-| Imhof–Wallimann pipeline (alone), AUC | 0.829 |
-| Combined (same-sample audit) | **+0.035 AUC over Imhof alone** |
-| DeLong test for combination improvement | $p = 0.014$ |
-| Combined model, additional improvement over Imhof full alone | +0.096 to +0.098 AUC ($p < 0.001$) |
+| Model (same five-fold CV sample, $N = 16{,}779$) | AUC | 95% CI |
+|---|---|---|
+| Frequent-loser flag (alone) | 0.921 | [0.914, 0.928] |
+| Participation intensity (continuous, alone) | 0.884 | [0.860, 0.908] |
+| Imhof–Wallimann pipeline (alone) | 0.888 | [0.865, 0.911] |
+| Award layer + bid layer (combined) | **0.962** | [0.954, 0.969] |
+
+The frequent-loser flag adds **+0.035 AUC** over the Imhof–Wallimann benchmark alone in the identical same-sample audit (DeLong $p = 0.014$); the combined specification gains **+0.096 to +0.098 AUC** over the bid-layer benchmark ($p < 0.001$). The increment is not an outperformance claim — it shows the two layers are not measuring the same thing.
 
 !!! warning "Informational complements, not substitutes"
     The two screens carry non-redundant information about the same target. The screening stage functions as a credible Stage-1 gatekeeper for the forensic stage. Reforms that mandate operational bid-microdata archival expand the forensic stage, not the screening one.
@@ -144,9 +146,9 @@ Cross-fit (0.036), CEM matching (0.077), IPW (0.055), and a leave-one-out IV bou
 
 ### Sign reversal under overlap restriction
 
-Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables and reweighting to the average treatment effect on the treated produces a reversed coefficient: overlap-cell ATT $-0.032$, propensity-score-trimmed ATT $-0.021$ (full coefficients in Online Appendix B). The reversal is real; the paper does not rest on either sign.
+Restricting comparisons to cells where FL-present and -absent items genuinely overlap on observables and reweighting to the average treatment effect on the treated produces a reversed coefficient: overlap-cell ATT $-0.097$ ($p < 0.001$); the negative sign is robust to propensity-score trimming (full coefficients in Online Appendix B). The reversal is real; the paper does not rest on either sign.
 
-The within-quintile decomposition:
+The within-quartile decomposition:
 
 | Quintile | Broad-sample $\beta$ | $p$-value | ATT |
 |---|---:|---:|---:|

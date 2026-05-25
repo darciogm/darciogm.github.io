@@ -31,7 +31,7 @@ manuscript at submission.
 
 **Authors:** Darcio Genicolo-Martins & Paulo Furquim de Azevedo (Insper)
 
-**Version:** v18 (May 2026, JLEO submission-clean)
+**Version:** v20 (May 2026, JLEO submission-clean)
 [manuscript PDF](paper.pdf) ·
 [online appendix](online_appendix.pdf)
 
@@ -45,10 +45,12 @@ manuscript at submission.
    FL14 ranking achieves AUC 0.924 against adjudication-anchored
    cobidders; AUC ≈ 0.49 against direct CADE defendants (the
    predicted null defining the loser-side scope).
-3. *Sequential architecture* — Sequential FL → Imhof at Stage-1
-   K = 2,000 captures 74% of joint-scoring recall using 17% of the
-   bid-microdata footprint; sequential beats joint scoring in the
-   operationally honest temporal-holdout regime.
+3. *Sequential architecture* — Sequential award → bid gatekeeping
+   recovers 131 of 193 cobidders (recall 0.679) while opening bid
+   microdata for only 2,000 of 11,676 firms — an 83% footprint
+   reduction at an 8% recall cost relative to full-observability joint
+   scoring; sequential recall is markedly more robust than joint under
+   temporal holdout.
 4. *Selection + mechanism decomposition of price evidence* — the
    FL-price coefficient sign-reverses between broad sample (+0.064)
    and overlap-cell ATT (−0.097). The reversal decomposes into a

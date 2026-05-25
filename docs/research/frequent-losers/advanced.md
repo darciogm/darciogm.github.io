@@ -7,8 +7,9 @@ paper: frequent-losers
 This page collects the methodological machinery that supports the
 empirical claims in the manuscript but is too heavy for the
 [Robustness](robustness.md) and [Extensions](extensions.md) tabs. It
-documents the formal audit chain that the v18 submission relies on,
-with cross-references to the AN pages where each result is computed.
+documents the formal audit chain that the current (v20) submission
+relies on, with cross-references to the AN pages where each result is
+computed.
 
 ## Identification under costly observability
 
@@ -55,7 +56,7 @@ families:
 
 | Audit | Source AN | Outcome |
 |---|---|---|
-| Volume sham permutation (B = 2,000) | [AN-005](analyses/an-005-sham-fl-permutation.md) | Sham AUC mean 0.500, SD 0.013; observed 0.911 = 32 σ above null; *p* < 1/2,000 |
+| Volume sham permutation (B = 2,000) | [AN-005](analyses/an-005-sham-fl-permutation.md) | Sham AUC mean 0.500, SD 0.013; observed FL14 AUC 0.924 = 32 σ above null; *p* < 1/2,000 |
 | Leakage decomposition (raw → OOF → temporal) | [AN-014](analyses/an-014-leakage-audit-d3.md) | 0.995 → 0.891 → 0.864; attenuation 0.10–0.13 |
 | Timing discipline (strict ex ante) | [AN-006](analyses/an-006-strict-prospective-holdout.md), [AN-029](analyses/an-029-three-classifier-timing-battery.md) | Firm AUC 0.767 strict; three-classifier battery preserves AUC 0.79–0.89 against truly out-of-time cobid\_post2019 |
 | Exposure-stratum balance | [AN-028](analyses/an-028-exposure-stratum-balance.md) | Within-FL14 cobidder distinctness d 0.19–1.00 across 7 dimensions |
@@ -75,9 +76,11 @@ before a costly bid-layer forensic stage. The architecture and its
 cost-of-evidence trade-off are documented in:
 
 - **[AN-010](analyses/an-010-imhof-full-pipeline.md)**: Imhof full
-  pipeline vs FL14 alone vs joint. Imhof 0.888; FL14 0.903; joint
-  0.955. Imhof CV-only is chance-level (0.585), so the bid-
-  distribution pipeline needs participation features to reach its
+  pipeline vs the frequent-loser flag vs the combined model, on the
+  five-fold CV pool (manuscript Table *Discrimination at Different
+  Information Costs*). Imhof full 0.888; FL flag (binary) 0.921;
+  combined 0.962. Imhof CV-only is chance-level (0.585), so the
+  bid-distribution pipeline needs participation features to reach its
   headline.
 - **[AN-033](analyses/an-033-imhof-incremental-delong.md)**: formal
   DeLong incremental tests. Imhof + FL Δ = +0.096, *p* = 1.2 × 10⁻²⁶.
@@ -85,12 +88,16 @@ cost-of-evidence trade-off are documented in:
   tenders is only +0.003 — continuous participation is the load-
   bearing complement; FL14 is the auditable simplification.
 - **[AN-034](analyses/an-034-sequential-gatekeeping-envelope.md)**:
-  sequential FL → Imhof at Stage-1 K = 2,000 captures 74% of joint
-  recall using 17% of bid-microdata footprint.
+  sequential award → bid gatekeeping at Stage-1 K = 2,000 recovers
+  131 of 193 cobidders (recall 0.679) while opening bid microdata for
+  only 2,000 of 11,676 firms — 17% of the footprint, an 8% recall cost
+  relative to joint scoring.
 - **[AN-035](analyses/an-035-architecture-cost-of-evidence-matrix.md)**:
-  full 4 × 6 × 2 cost-of-evidence matrix. Sequential K = 2,000
-  **beats joint** in the temporal-holdout regime (114 TP vs 111 at
-  k = 1,000).
+  full cost-of-evidence matrix. Under temporal holdout the sequential
+  rule's recall is markedly more robust than joint scoring (sequential
+  drops ~9% vs joint's ~24% from in-sample to holdout), so the
+  sequential architecture's relative advantage **widens in the
+  operationally honest regime**.
 
 ## Adaptive deployment
 

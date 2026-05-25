@@ -8,99 +8,76 @@ Interactive overview of the paper's logical structure. Click and drag to explore
 
 ```mermaid
 mindmap
-  root((Screening for<br/>Bid Rigging with<br/>Frequent Losers))
+  root((Cheap Signals,<br/>Costly Proof:<br/>Award-Layer<br/>Evidence Triage))
     **Institutional Setting**
+      Two observability layers
+        Award layer cheap and routine
+        Bid layer costly forensic-recoverable
       BEC Platform
         Sao Paulo state
         2009-2019
-      4.5M tender-items
+      1.65M analysis tender-items
       41K unique firms
-      Two modalities
-        Convite sealed bid
-          3-bidder minimum
-          Signal dilution 3.8%
-        Pregao e-auction
-          No bidder minimum
-          Voluntary 9.3%
+      Modalities Convite and Pregao
       Lei 14.133/2021
-        Eliminates convite
-        Testable predictions
-    **FL Definition**
+        Consolidates pregao default
+    **Frequent-Loser Screen**
       Always-losers
         win rate = 0%
         16,843 firms
       IQR threshold
-        median + 1.5 x IQR
-        threshold ~ 14 tenders
+        median + 1.5 x IQR ~ 14
       2,735 FL firms
         Treatment: tender has >= 1 FL
-    **Conceptual Framework**
-      Two regimes
-        Regime 1 complementary
-        Regime 2 coordinated
-          BIC favors by 91,473
-          sigma_c/sigma_g = 0.72
-      Strategic complementarity
-        gamma = 0.69 > 0
-        More cover bidders in competitive markets
-      Market selection
-        FL concentrates in low HHI
-    **Detection Performance**
-      AUC = 0.94 vs CADE
-      Youden J = 0.84 at 1.45x
-      Horse-race
-        Correlation 0.06 with CV
-        FL rises to 0.084
-      CADE validation
-        3.5x overrepresentation
-        193/2,735 co-participate
-        3 convicted FL firms
-    **Price Association**
-      3.6-7.7% range
-        Cross-fit 3.6%
-        IPW 5.5%
-        OLS 6.4%
-        CEM 7.7%
-      Network split
-        Competitive 0.126
-        Concentrated -0.018
-      Bajari-Ye tests
-        KS D = 0.15
-        Pairwise product 4.28
-        Tender FE reversal
-      IV diagnostic
-        0.194 F=396
-        Lambda = 0.33
-    **Diagnostics M1-M5**
-      M1 No displacement
-        +0.19 non-FL firms
-      M2 Reference anchoring
-        -4.1% to ref price
-      M3 Reverse causality
-        Elasticity ~ 0.002
-      M4 Dyadic linkage
-        4,696 pairs p<0.001
-      M5 Exit hazard
-        HR = 0.60
-    **Robustness**
-      Threshold sensitivity
-        36 cells all significant
-      Cinelli-Hazlett
-        RV = 17.5%
-      Oster delta
-        Degenerate R2 gap ~ 0
-      DiD pre-trends
-        Non-causal framing
-      Oversight heterogeneity
-        12.5x gradient Q1 to Q4
+      Primitive
+        log(1+tenders_count)
+        Binary flag is its coarsening
+    **Validation Target**
+      Cobidders adjudication-anchored
+        193 firms with CADE defendants
+      NOT direct defendants
+        Loser-side scope by design
+    **Discrimination**
+      Firm-level AUC
+        0.924 in-sample
+        0.864 temporal holdout
+      Direct-CADE AUC ~ 0.49
+        Predicted null = scope signature
+      Audits
+        Sham permutation 32 sigma
+        Leakage 0.995 to 0.891 to 0.864
+        Strict ex ante timing
+        Exposure-adjusted opportunity sets
+    **Architecture (headline)**
+      Award triage then bid forensics
+      Gatekeeping
+        83% bid-microdata reduction
+        131 of 193 recovered
+        8% recall cost
+      Complementarity
+        FL + Imhof AUC 0.962
+        FL increment +0.035 DeLong p=0.014
+    **Price (scope, descriptive)**
+      Broad +3.6 to 7.7%
+      Sign reversal
+        Overlap-cell ATT -0.097
+        Q4 only positive +0.041
+      Decomposition
+        Selection dQ5-Q1 +5.58 log-points
+        Mechanism bidder inflation 66%
+      Buyer-size gradient
+        Q1 +21.4% to Q4 +1.7%
+      Not a damages estimate
+    **Modal Scope**
+      Pregao AUC 0.952
+      Convite AUC 0.816
+      Scope info not institutional test
     **Enforcement Pathway**
       Screen
-        Participation records only
+        Award records only
         SQL query or spreadsheet
       Triage
-        Network metrics
-        PBU size quartile
+        Award-layer survivor pool
       Investigate
-        Bid-level forensics
-        On triaged subset
+        Bid-level forensics on survivors
 ```

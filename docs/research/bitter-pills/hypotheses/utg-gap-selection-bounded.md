@@ -29,7 +29,7 @@ zero and statistically significant.
 > The naive under-the-gun (UTG) gap is 29.5% (coefficient −0.259, in the
 > administrative-minus-litigated sign convention, so negative means litigated is
 > more expensive). [AN-002](../analyses/an-002-lee-bounds.md) reports Lee bounds
-> of 15.9%–21.1% (lower coefficient −0.192, upper −0.148) with a mean trimming
+> of 15.9%–21.1% (lower-bound coefficient −0.148, upper −0.192) with a mean trimming
 > rate of 26.9%. [AN-007](../analyses/an-007-wild-cluster-bootstrap.md) returns a
 > wild-cluster bootstrap p = 0.0080 under the preferred fixed effects and
 > p = 0.0390 under item-by-year-month fixed effects. The gap is selection-bounded,
@@ -121,7 +121,7 @@ a procurement-cost calculation, not a full welfare estimate.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-002](../analyses/an-002-lee-bounds.md) | Supports | Naive UTG gap 29.5% (coef −0.259); Lee bounds 15.9%–21.1% (lower coef −0.192, upper −0.148), mean trimming rate 26.9%. Selection-bounded gap stays well above zero. |
+| [AN-002](../analyses/an-002-lee-bounds.md) | Supports | Naive UTG gap 29.5% (coef −0.259); Lee bounds 15.9%–21.1% (lower coef −0.148, upper −0.192), mean trimming rate 26.9%. Selection-bounded gap stays well above zero. |
 | [AN-007](../analyses/an-007-wild-cluster-bootstrap.md) | Supports | Wild-cluster bootstrap p = 0.0080 (preferred FE), p = 0.0390 (item-by-year-month). Significance survives clustering-robust inference. |
 
 ## Open tests

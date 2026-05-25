@@ -7,7 +7,7 @@ question: How does cobidder AUC vary as the FL cutoff sweeps from FL2 through FL
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "AUC over 19 cutoffs forms a clean inverted-U: rises monotonically from 0.730 (FL2) to peak 0.924 (FL13), declines smoothly afterwards. The FL10-FL15 plateau is 0.902-0.924 — the FL14 choice sits on the high plateau, not at a fragile peak."
+headline: "The cutoff sweep (tenders_count > k) forms a clean inverted-U. The paper's FL14 (≥ 14, i.e. the > 13 cutoff) sits at the peak: AUC 0.924, 2,735 firms, 193 cobidders. Tighter cutoffs (FL15+) decline as cobidders get excluded. FL14 sits at the top of a broad high plateau, not on a fragile spike."
 created: 2026-05-22
 script: scripts/22_continuous_vs_binary.R
 target: output/continuous_vs_binary/auc_threshold_sweep.csv
@@ -50,8 +50,8 @@ Selected cutoffs from the full sweep (source CSV has 19+ rows):
 | 5 | 0.833 | 5,757 | 193 |
 | 7 | 0.868 | 4,574 | 193 |
 | 10 | 0.902 | 3,442 | 193 |
-| **13** | **0.924** | **2,735** | **193** |
-| **14** (paper) | **0.911** | **2,537** | **186** |
+| **13** (≡ paper FL14, ≥ 14) | **0.924** | **2,735** | **193** |
+| 14 (≡ FL15, > 14) | 0.911 | 2,537 | 186 |
 | 15 | 0.884 | 2,385 | 174 |
 | 18 | 0.834 | 1,981 | 150 |
 | 20 | 0.824 | 1,778 | 144 |
@@ -104,12 +104,13 @@ The sweep accomplishes three things:
    cobidders themselves (false negatives at the construct level — the
    N cobidders above cutoff column shows this directly).
 
-3. **Headline-FL14 vs peak-FL13 difference is small** (0.911 vs 0.924
-   in this sweep; 0.924 reported as headline in
-   [AN-004](an-004-cobidder-baseline.md) using a slightly different
-   sample definition). The paper does not exploit the peak; it uses
-   the IQR-defined cutoff and accepts the 0.013 AUC trade-off for
-   auditability.
+3. **The paper's FL14 (≥ 14) IS the peak of the sweep.** Because the
+   sweep indexes cutoffs as `> k`, the paper's ≥ 14 rule is the `> 13`
+   row: AUC 0.924, 2,735 firms, 193 cobidders — matching the headline
+   AUC in [AN-004](an-004-cobidder-baseline.md). The `> 14` (FL15) row
+   sits one bucket tighter at 0.911. There is no auditability trade-off
+   against a higher peak; the IQR-defined FL14 sits at the top of a
+   broad high plateau.
 
 This is the robustness check that converts H1 from "single-cutoff
 result" to "robust across a wide cutoff band". See

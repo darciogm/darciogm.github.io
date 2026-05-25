@@ -5,7 +5,7 @@ paper: frequent-losers
 # Analyses — Cheap Signals, Costly Proof
 
 This page is the **directory of analyses** for *Cheap Signals, Costly
-Proof: Award-Layer Triage for Cartel Enforcement*. Each AN-NNN page is
+Proof: Award-Layer Evidence Triage in Cartel Enforcement*. Each AN-NNN page is
 anchored by a YAML frontmatter block that drives the generated index
 below.
 

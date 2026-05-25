@@ -7,7 +7,7 @@ question: Does the cobidder concentration result survive across always-loser sub
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "FL14 AUC stable across four subsamples: full (0.911), data-rich (0.887), low bid count (0.909), high bid count (0.912). Continuous AUC: 0.939 / 0.918 / 0.933 / 0.962. Concentration is not driven by data-rich firms or low-bid-count firms specifically."
+headline: "FL14 AUC stable across four subsamples: full (0.924), data-rich (0.887), low bid count (0.909), high bid count (0.912). Continuous AUC: 0.939 / 0.918 / 0.933 / 0.962. Concentration is not driven by data-rich firms or low-bid-count firms specifically."
 created: 2026-05-22
 script: scripts/26_auc_by_subsample.R
 target: output/auc_by_subsample/auc_subsample.csv
@@ -56,7 +56,7 @@ would track availability across the subsamples. It does not.
 
 | Subsample | FL14 | log_tc | Imhof CV | Imhof log_sd | N | N+ |
 |---|---:|---:|---:|---:|---:|---:|
-| full | 0.911 | **0.939** | 0.854 | 0.790 | 16,843 | 193 |
+| full | 0.924 | **0.939** | 0.854 | 0.790 | 16,843 | 193 |
 | data_rich | 0.887 | 0.918 | 0.840 | 0.781 | 12,575 | 193 |
 | low_n_bids | 0.909 | 0.933 | 0.847 | 0.765 | 11,134 | 132 |
 | high_n_bids | 0.912 | **0.962** | 0.865 | 0.824 | 5,709 | 61 |
@@ -85,13 +85,13 @@ Imhof scores below the award-layer scores throughout.*
 Four readings, all supporting H1:
 
 1. **FL signal does not depend on bid-microdata richness.** FL14 AUC is
-   0.911 in the full sample, 0.887 in data-rich, 0.909 in low-bid, 0.912
+   0.924 in the full sample, 0.887 in data-rich, 0.909 in low-bid, 0.912
    in high-bid. Range = 0.025. The signal carries across the data
    richness margin — the screen is *not* a proxy for "we have lots of
    bid data on this firm".
 
 2. **Continuous score dominates in every subsample.** log_tc AUC
-   exceeds FL14 in all four cells (0.939 > 0.911 full; 0.918 > 0.887
+   exceeds FL14 in all four cells (0.939 > 0.924 full; 0.918 > 0.887
    data-rich; 0.933 > 0.909 low-bid; 0.962 > 0.912 high-bid). The
    horse-race result of [AN-011](an-011-horse-race-continuous.md) is
    not driven by any one subsample.
