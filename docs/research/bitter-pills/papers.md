@@ -91,47 +91,35 @@ full welfare estimate.
 
 ## 2. Follow-up paper ideas
 
-The ideas below reuse the BEC-SP procurement panel and the TJSP litigation data
-lake already assembled for the current paper.
+The agenda below distinguishes projects that deliberately overlap with the
+current paper from projects that use the same empirical platform to answer a
+different public-economics question. The first two ideas extend the v10
+pricing-versus-sourcing mechanism. The last three should be written as separate
+papers, not appendices or robustness exercises for the current manuscript.
 
-### Idea 2.1 — Heterogeneity across drug classes and molecule competition
+### 2.1 Ideas with direct overlap
 
-**Central question:** Does the sourcing margin depend on how contestable the
-underlying molecule is? Where a medicine is a single-source specialty drug, the
-winner set may be mechanically fixed, so the cost of legal urgency should load on
-scale; where there are many multi-source generic suppliers, supplier-set
-reallocation should dominate. Mapping the pricing-versus-sourcing split across
-drug classes and measures of molecule competition would show where each channel
-binds.
+These projects are closest to the current paper. Their main risk is that a
+referee may read them as extensions rather than standalone contributions unless
+the mechanism or external-validity payoff is made explicit.
 
-**Data reuse:** BEC group 65 panel + ATC/molecule classification + the
-litigated/administrative classifier. ~6–8 weeks, mostly drug-class assembly.
+| Idea | Research question | Planned structure | Target journal | R&R probability |
+|---|---|---|---|---:|
+| **A. Market depth and supplier leverage under legal urgency** | When does legal urgency become a same-firm pricing problem rather than a sourcing problem? The current paper shows no broad same-firm markup in deep repeated urgent markets, with leverage reappearing in thinner or earlier markets. A dedicated paper would model and test the boundary between these regimes. | 1. Classify item-buyer markets by depth, recurrence, molecule contestability, and supplier concentration. 2. Estimate within firm-buyer-item pricing gaps by depth strata. 3. Test whether winner switching, order size, and bidder participation explain where markups reappear. 4. Conclude with a targeting rule for urgent-procurement capacity. | **J. Health Economics** or **Health Economics** | **25–35%** |
+| **B. External validity of sourcing under sanctions** | Does the pricing-versus-sourcing mechanism travel beyond São Paulo BEC? The current paper's most predictable limitation is the single-jurisdiction setting. A second platform would test whether court-mandated urgency disrupts aggregation and supplier matching in a different procurement environment. | 1. Port the litigated/administrative classifier and procurement pipeline to another state or ComprasNet. 2. Rebuild the urgent-vs-ordinary, Lee-bound, within-firm, and winner-switching modules. 3. Compare the mechanism across institutional settings. 4. Identify which features of procurement capacity moderate the sourcing margin. | **Journal of Public Economics** short paper or **AEJ: Policy** | **20–30% JPubE; 30–40% AEJ: Policy** |
 
-### Idea 2.2 — Dynamic procurement-capacity effects
+### 2.2 Ideas without direct overlap
 
-**Central question:** The current paper uses the dynamic event study only as a
-diagnostic. A dedicated paper would ask whether repeated litigated demand builds
-or erodes a buyer's procurement capacity over time — whether purchasing units
-that face sustained urgent demand learn to aggregate (framework agreements,
-pre-contracted suppliers) or instead settle into chronic fragmentation. The unit
-is the purchasing unit's procurement routine across years.
+These projects should not be framed as "more results" from the current paper.
+They use the broader litigation-procurement data infrastructure to ask different
+questions about courts, state capacity, and public service delivery.
 
-**Data reuse:** BEC panel buyer trajectories + litigation timing, with a
-design built to survive Honest-DiD sensitivity rather than treated as a
-diagnostic. ~8–10 weeks.
-
-### Idea 2.3 — Cross-state external validity
-
-**Central question:** The single-jurisdiction limitation is the most predictable
-referee concern. A second procurement platform — federal ComprasNet or another
-state — replicating the litigated-over-administrative sourcing margin would test
-whether the mechanism travels beyond São Paulo. The contribution is external
-validity for the core separation of pricing from sourcing.
-
-**Data reuse:** the current pricing/sourcing pipeline and the litigation
-classifier, ported to a second platform's procurement records. ~10–14 weeks,
-mostly new-platform data assembly.
+| Idea | Research question | Planned structure | Target journal | R&R probability |
+|---|---|---|---|---:|
+| **C. Judicial demand and administrative learning** | Do purchasing units adapt after repeated court-mandated demand, or does litigation create persistent dependence on fragmented urgent procurement? Unlike the current paper, the object is dynamic state capacity, not the contemporaneous procurement-cost margin. | 1. Build buyer-year exposure measures to repeated legal urgency. 2. Estimate dynamic changes in order aggregation, framework-like purchasing routines, supplier recurrence, and emergency dependence. 3. Use timing diagnostics and sensitivity analysis to separate learning from selection into high-litigation buyers. 4. Interpret the results as capacity accumulation or administrative scarring. | **Journal of Policy Analysis and Management** or **Public Administration Review** | **25–35%** |
+| **D. The distributional geography of right-to-health procurement** | Who benefits from court-mandated pharmaceutical procurement, and do procurement responses differ across poorer and richer municipalities? This paper would move from procurement technology to distributional incidence. | 1. Link purchasing units and court cases to municipal socioeconomic measures and health-system capacity. 2. Measure whether legal urgency is concentrated in richer, legally sophisticated, or medically underserved areas. 3. Compare procurement prices, access timing, and sourcing margins across local capacity strata. 4. Discuss whether litigation equalizes access or amplifies territorial inequality. | **World Development**, **Health Affairs**, or **Social Science & Medicine** | **20–30%** |
+| **E. Reference prices, legal urgency, and price ceilings** | Do statutory or administrative reference prices constrain procurement under legal urgency, or do urgent purchases bypass the price-discipline role of benchmarks? This is a price-regulation paper rather than a court-procurement mechanism paper. | 1. Combine BEC item prices with CMED/reference-price measures. 2. Estimate bunching, pass-through, and exceedance around reference-price thresholds by ordinary, administrative urgent, and litigated urgent regimes. 3. Test whether urgency weakens benchmark discipline differently across competitive and concentrated molecules. 4. Derive implications for benchmark design under emergency demand. | **Journal of Health Economics** or **International Journal of Industrial Organization** | **20–30%** |
 
 ---
 
-*Last updated: 2026-05-24*
+*Last updated: 2026-05-25*
