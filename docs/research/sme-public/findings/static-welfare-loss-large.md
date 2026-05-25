@@ -4,6 +4,15 @@ paper: sme-public
 
 # Static welfare cost of full set-aside is ~28.9% of open-regime price (non-pharma)
 
+!!! abstract "Intuition (plain-language)"
+    The set-aside costs society in two ways at once. The contract goes to a
+    higher-cost supplier (real resource waste), and the taxpayer foots a larger
+    bill financed through distortionary taxes. Together the static loss is about
+    29% of what the item would cost under open bidding — roughly R$38–89 million a
+    year on this one product group. For the policy to still be worth it, a planner
+    would have to value a real of SME producer surplus at about 2.42 reais of
+    ordinary public money.
+
 🟡 The full SME-only set-aside generates a static welfare loss of
 **~28.9% of the open-regime price $p^{S_1}$** in standardized
 non-pharmaceutical procurement at &lambda;=0.30

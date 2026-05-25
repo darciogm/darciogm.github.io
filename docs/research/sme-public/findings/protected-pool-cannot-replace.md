@@ -4,6 +4,14 @@ paper: sme-public
 
 # The protected SME pool responds but does not replace lost discipline
 
+!!! abstract "Intuition (plain-language)"
+    This is not a story where SMEs simply fail to show up. After the set-aside
+    returns, the number of SME bidders per auction roughly doubles — the protected
+    pool does respond. The problem is the quality of competition, not the
+    headcount: even with twice as many SMEs bidding, the winning price stays above
+    the open-auction benchmark. More of the protected type cannot replicate the
+    discipline of the type you excluded.
+
 🟡 After the March 2018 SME-only cutoff, the number of SME bidders per
 auction roughly doubles in switched group 65 — the protected pool does
 respond. But the realized post-policy price $S_3$ remains above the

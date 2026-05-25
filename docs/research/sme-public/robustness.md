@@ -13,6 +13,16 @@ mechanically driven by any one threat. All numbers are from the v8 macro
 registry (`v8-jpube/output/values.tex`); the full table is Table&nbsp;5 of the
 manuscript.
 
+!!! abstract "Intuition (plain-language)"
+    Every check here asks the question a skeptic would: could the
+    exclusion-dominant result be an artifact rather than the policy? If it were
+    a pre-existing trend, fake treatment dates would light up — they don't. If
+    it hinged on how the winner's hidden cost is treated, the three censoring
+    methods would disagree — they don't (the exclusion share stays 74–82%). If a
+    smaller eligible pool quietly raised collusion, the co-bidding screens would
+    intensify after the cutoff — they don't. No single check proves the auction
+    model; together they show the headline is not manufactured by any one threat.
+
 ## Threat assessment (Table 5)
 
 | Threat | Diagnostic | Finding | Remaining limitation |

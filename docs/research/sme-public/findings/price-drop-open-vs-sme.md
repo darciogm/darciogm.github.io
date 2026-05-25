@@ -4,6 +4,15 @@ paper: sme-public
 
 # Open auctions cut procurement prices by ~10–11% in switched group 65
 
+!!! abstract "Intuition (plain-language)"
+    In a competitive tender the price is set by whoever goes lowest, and many of
+    the keenest price-cutters are non-SMEs. When São Paulo briefly let them bid
+    for medical supplies and then shut the door again in March 2018, prices
+    tracked the door: about 10–11% lower while open, higher once SME-only
+    returned. The estimate is stable across 6/12/18-month windows. The v8 paper
+    uses this only to pin down timing and sign — the policy magnitude comes from
+    the structural decomposition.
+
 !!! info "Reduced-form motivation layer"
     The headline number on this page comes from the v1–v4 reduced-form
     DiDiR pipeline. The v8 manuscript carries this as **motivation**

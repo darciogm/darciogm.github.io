@@ -4,6 +4,15 @@ paper: sme-public
 
 # A 10% SME price preference delivers redistribution at near-zero static price cost
 
+!!! abstract "Intuition (plain-language)"
+    There is a cheaper way to favor SMEs than locking everyone else out. Give SMEs
+    a 10% price handicap but keep non-SMEs in the room: the disciplining bidders
+    stay, the government still pays the real winning bid, and SMEs win more often.
+    The static price cost relative to open bidding is essentially zero. It buys
+    less redistribution than the full set-aside — but the real policy choice is not
+    "support SMEs or not," it is "exclude rivals" versus "tilt the allocation while
+    keeping the price-forming pool intact."
+
 🟡 A static 10% SME price preference simulated under the recovered
 cost primitives keeps non-SME bidders eligible and disciplining the
 price-forming order statistic. The resulting price shift relative to

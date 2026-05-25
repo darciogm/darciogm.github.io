@@ -11,6 +11,16 @@ paper: sme-public
     comparison ([Results](results.md)); the **Welfare cost** section at the
     bottom reports the v8 annualized figures.
 
+!!! abstract "Intuition (plain-language)"
+    These extensions poke at the same mechanism from different angles. Is the
+    effect real or just inflation? (Deflated prices look identical.) Does opening
+    tenders change who wins? (Fewer SMEs win — exactly what a competition story
+    predicts.) Does the government get better deals against its own reference
+    price? (Yes.) And the welfare arithmetic puts a number on it: about 29% of
+    the open price per auction, R$38–89 million a year on this one product group.
+    None of the first five is the headline; the welfare cost is the substantive
+    payoff.
+
 ## IPCA-Deflated Real Prices
 
 Using IPCA-deflated (real) prices yields patterns virtually identical to the nominal results, confirming that the price effects reflect real differences in procurement costs rather than differential inflation across product groups.

@@ -22,6 +22,17 @@ of the policy change.
 
 ---
 
+!!! abstract "Intuition (plain-language)"
+    Five stress-tests on the reduced-form benchmark, each guarding a different
+    flank. HonestDiD: the price effect survives even if parallel trends fails
+    substantially. Lee bounds: selection on item completion barely moves it.
+    Causal forest: the effect is broad-based, not driven by one exotic subgroup.
+    Quantile DiD: competition bites hardest on cheap, standardized items and even
+    reverses at the thin-market top. Gelbach: competition and composition partly
+    cancel, so "more firms → lower prices" is only part of the story. None carries
+    the headline — that is the structural decomposition — but together they keep
+    the benchmark honest.
+
 ## 1. Parallel Trends Sensitivity (HonestDiD)
 
 The HonestDiD method (Rambachan and Roth, 2023) constructs robust confidence intervals for the treatment effect under controlled violations of the parallel trends assumption. The parameter $\bar{M}$ governs the maximum amount by which the post-treatment trend may deviate from the pre-treatment path.

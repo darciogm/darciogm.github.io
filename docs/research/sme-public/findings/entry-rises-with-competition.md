@@ -4,6 +4,14 @@ paper: sme-public
 
 # Open auctions increase bidder participation by ~10–22%
 
+!!! abstract "Intuition (plain-language)"
+    Drop the SME-only fence and more firms show up to bid — about 22% more in the
+    first six months, settling toward 10% over a year and a half. More bidders is
+    the proximate mechanism behind the price drop: a thicker pool means the order
+    statistic that sets the price is drawn from a tougher field. Part of the fade
+    over the longer window reflects the control groups themselves being phased
+    into SME-only, not the entry effect dying out.
+
 !!! info "Reduced-form motivation layer"
     The headline number on this page comes from the v1–v4 reduced-form
     DiDiR pipeline. The v8 manuscript carries this as **motivation**

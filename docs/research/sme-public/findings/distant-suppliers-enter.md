@@ -4,6 +4,14 @@ paper: sme-public
 
 # Open auctions pull in geographically distant non-SME suppliers
 
+!!! abstract "Intuition (plain-language)"
+    A distant supplier only bids when the prize is big enough to cover the
+    freight. So when group 65 opened up, the extra distance shows up only on
+    high-value items (about 12 km farther) and is invisible on small ones (about
+    3 km, not significant). That value-margin asymmetry is exactly what a
+    transport-cost story predicts: non-SMEs have wider reach but deploy it
+    selectively, where contract size absorbs the logistics.
+
 !!! info "Reduced-form motivation layer"
     The headline number on this page comes from the v1–v4 reduced-form
     DiDiR pipeline. The v8 manuscript carries this as **motivation**

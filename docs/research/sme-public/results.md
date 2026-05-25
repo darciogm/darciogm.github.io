@@ -12,6 +12,17 @@ are drawn from the v8 macro registry (`v8-jpube/output/values.tex`); the
 underlying tables and figure are Tables&nbsp;1–4 and Figure&nbsp;1 of the
 manuscript.
 
+!!! abstract "Intuition (plain-language)"
+    Procurement prices are set by the fiercest bidders, and many of those are
+    non-SMEs. A set-aside removes them, so the price should rise — and it does.
+    The structural decomposition separates two forces: kicking non-SMEs out
+    (lost discipline, +0.371 of the reference price) versus more SMEs crowding
+    in to compensate (the protected-pool offset, −0.144). Exclusion wins about
+    72% of the contest, leaving a net price increase and a 28.9% static welfare
+    loss in standardized goods. A 10% price preference would keep the
+    disciplining bidders in the room at near-zero cost — so the real choice is
+    exclude-rivals versus tilt-the-allocation.
+
 <div class="key-result" markdown>
 <span class="number">28.9%</span>
 <span class="label">static welfare loss from the full SME set-aside in standardized non-pharmaceutical procurement, at &lambda;=0.30 — with the exclusion of non-SMEs accounting for ~72% of the absolute price decomposition</span>

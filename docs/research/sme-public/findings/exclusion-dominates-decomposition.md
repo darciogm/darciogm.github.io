@@ -4,6 +4,14 @@ paper: sme-public
 
 # Exclusion dominates the price decomposition
 
+!!! abstract "Intuition (plain-language)"
+    Split the set-aside's price effect into two opposing forces. One: removing
+    non-SMEs strips out the toughest price-setters (the lost-discipline channel).
+    Two: with the door shut, more SMEs crowd in and partly compensate (the
+    protected-pool offset). The first force is the lion's share — about 72% of the
+    combined magnitude. Crowding more SMEs in helps, but it cannot manufacture the
+    competitive pressure the excluded firms used to supply.
+
 🟡 The structural decomposition of the SME set-aside price effect into
 the **lost-discipline channel** (non-SMEs removed, SME pool held fixed)
 and the **protected-pool offset** (post-policy SME pool replacing the

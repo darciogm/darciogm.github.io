@@ -4,6 +4,14 @@ paper: sme-public
 
 # Pharmaceutical procurement is a boundary case, not a second headline
 
+!!! abstract "Intuition (plain-language)"
+    Pharmaceuticals show even bigger numbers — welfare loss near 45% of the open
+    price — but we deliberately refuse to headline them. The pharma estimates lean
+    harder on modeling assumptions, and the welfare ranking between set-aside and
+    open can flip depending on how the post-policy SME pool is modeled. So pharma
+    earns its keep only as qualitative confirmation that the ordering points the
+    same way, never as a load-bearing magnitude.
+
 🟡 The structural decomposition and welfare arithmetic in pharmaceutical
 procurement produce *larger* point estimates than in standardized
 non-pharma — exclusion magnitudes higher, welfare loss ~44.8% of the
