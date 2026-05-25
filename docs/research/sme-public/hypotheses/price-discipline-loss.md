@@ -47,7 +47,7 @@ Set-aside policies that remove a subset of bidders from the auction must
 either rely on the protected pool's response or accept higher prices. In
 independent private values English auctions, the expected payment is the
 second-order statistic of the bidder cost distribution
-\citep{vickrey1961, milgrom1982, haile2003}. Removing the
+(Vickrey 1961; Milgrom and Weber 1982; Haile and Tamer 2003). Removing the
 lowest-cost subset of bidders raises the expected second-lowest cost; the
 question is how much the protected pool's entry response offsets the
 removal. Empirical work on SME procurement preferences (Marion 2007;

@@ -45,12 +45,12 @@ exercise rather than a structural counterfactual.
 
 In a benchmark IPV clock auction, the weakly-dominant strategy for each
 bidder is to remain active until the price clock crosses the bidder's
-private cost \citep{vickrey1961, milgrom1982}. The
+private cost (Vickrey 1961; Milgrom and Weber 1982). The
 losing exit price therefore equals the bidder's cost (or willingness to
-supply at the auction scale). \citet{haile2003} extend this
+supply at the auction scale). Haile and Tamer (2003) extend this
 to ascending auctions with weaker restrictions, providing bounds on the
 underlying value distribution from observed exits.
-\citet{athey2002} survey nonparametric conditions under which
+Athey and Haile (2002) survey nonparametric conditions under which
 ascending-auction exit data identify the type-conditional cost
 distributions. The IPV-clock reading is therefore well-supported in
 theory; the empirical question is whether it survives the specific

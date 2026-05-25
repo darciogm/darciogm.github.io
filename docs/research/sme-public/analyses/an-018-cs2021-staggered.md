@@ -28,7 +28,7 @@ design:
 
 Two-way fixed-effects DiD can be contaminated by heterogeneous
 treatment effects across cohorts and timing
-\citep{dechaisemartin2020, goodmanbacon2021, callaway2021, sun2021}.
+(de Chaisemartin and D'Haultfoeuille 2020; Goodman-Bacon 2021; Callaway and Sant'Anna 2021; Sun and Abraham 2021).
 The control groups in [AN-001](an-001-didir-prices.md) had been
 SME-restricted at different times before March 2018 (gradual rollout
 documented in [AN-004](an-004-placebo-tests.md)). Two modern

@@ -30,7 +30,7 @@ The two-way fixed-effects DiD coefficient is a weighted average of all
 2×2 comparisons implicit in the panel. When some controls are
 *already-treated* before the treatment cohort, the TWFE coefficient
 can include "forbidden" comparisons that contaminate the estimate
-\citep{goodmanbacon2021}. The Callaway-Sant'Anna and Sun-Abraham
+(Goodman-Bacon 2021). The Callaway-Sant'Anna and Sun-Abraham
 corrections in [AN-018](an-018-cs2021-staggered.md) reproduce the
 DDR — but is that because the TWFE was *clean to begin with*, or
 because the corrections happen to give similar magnitudes? The

@@ -50,7 +50,7 @@ distribution fixed — a pure *removal* effect;
 $S_3 - S_2$ replaces the SME draw distribution with the post-policy
 estimate — a pure *protected-pool composition + entry* effect. The
 decomposition follows the price-formation logic in
-\citep{vickrey1961, haile2003, athey2002}.
+(Vickrey 1961; Haile and Tamer 2003; Athey and Haile 2002).
 
 ## Prediction
 

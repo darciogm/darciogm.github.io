@@ -41,7 +41,7 @@ see [H:protected-pool-responds](protected-pool-responds.md)).
 In English clock auctions with private values, more bidders shift the
 distribution of the second-order statistic downward (lower expected
 payment) and raise allocative efficiency
-\citep{milgrom1982, athey2002}. Entry into procurement
+(Milgrom and Weber 1982; Athey and Haile 2002). Entry into procurement
 auctions has been studied as endogenous to expected rents (Levin and
 Smith 1994; Athey, Levin and Seira 2011); SME-only rules act as an
 entry-eligibility shock by removing the non-SME bidder pool from the

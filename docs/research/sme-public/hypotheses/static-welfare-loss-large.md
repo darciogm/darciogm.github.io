@@ -42,7 +42,7 @@ spans R$38–89M per year (US$11–25M).
 The static per-auction welfare loss combines the allocative wedge
 $\mathrm{DWL}_{\mathrm{alloc}} = c_{(1)}^{V_0} - c_{(1)}^{S_1}$ with an
 MCPF distortion $\lambda \cdot (p^{V_0} - p^{S_1})$
-\citep{ballard1985, hendren2020, finkelstein2020}. The first term is
+(Ballard, Shoven, and Whalley 1985; Hendren and Sprung-Keyser 2020; Finkelstein and Hendren 2020). The first term is
 real allocative waste; the second is the fiscal distortion. The
 remainder of the payment increase is a transfer to the protected winner
 and enters welfare only weighted by the planner's SME welfare weight
