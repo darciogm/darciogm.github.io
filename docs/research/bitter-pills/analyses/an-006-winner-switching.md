@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Across 2,134 buyer×item pairs, winner-set Jaccard similarity is 0.268; 48.5% share no winners and the modal winner differs in 70.2% of pairs."
 created: 2026-05-24
-script: v9-jpube-short/analysis/48_mechanism_evidence.R
-target: v9-jpube-short/output/tables/tab_winner_switch.tex
+script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+target: v10-causal-mechanism/output/tables/tab_winner_switch.tex
 tags: ["H:supplier-set-reallocation", winner-switching, sourcing, supplier-set, descriptive]
 design:
   sample: "2,134 buyer×item pairs observed under both urgent regimes (≥1 administrative and ≥1 litigated urgent purchase)"
@@ -56,7 +56,7 @@ worked through the same firm's price, the winner sets should largely coincide.
 | Modal winner differs | 70.2% |
 | Same modal winner | 29.8% |
 
-Output: `v9-jpube-short/output/tables/tab_winner_switch.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_winner_switch.tex`.
 
 ![Cross-regime winner-set Jaccard versus within-regime baseline churn](../assets/figures/fig_winner_churn_v9.png)
 

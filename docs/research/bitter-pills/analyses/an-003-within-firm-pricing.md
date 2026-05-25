@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "No broad same-firm markup in deep repeated urgent markets (0.035, SE 0.041); leverage resurfaces only in thin or earlier markets."
 created: 2026-05-24
-script: v9-jpube-short/analysis/48_mechanism_evidence.R
-target: v9-jpube-short/output/tables/tab_within_firm_robustness.tex
+script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+target: v10-causal-mechanism/output/tables/tab_within_firm_robustness.tex
 tags: ["H:no-broad-same-firm-markup", within-firm, pricing, mechanism, causal]
 design:
   sample: "Firm-buyer-item triples: 4,573 observations across 1,206 triples observed under both urgent regimes"
@@ -57,7 +57,7 @@ supplier-set reallocation and isolates the **same-firm pricing** margin.
 
 *FBI + year fixed effects. SE clustered by PBU. \*\*\* p<0.01.*
 
-Output: `v9-jpube-short/output/tables/tab_within_firm_robustness.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_within_firm_robustness.tex`.
 
 ![Within firm-buyer-item coefficient by subsample, with 95% CI: deep-market cells near zero, thin/early cells positive](../assets/figures/fig_within_firm_forest_v9.png)
 

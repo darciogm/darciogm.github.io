@@ -19,8 +19,8 @@ In preparation.
     mandates secure delivery, but legal urgency changes how the state buys —
     is laid out in the paper.
 
-    [Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v9.pdf){ .md-button .md-button--primary }
-    [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf){ .md-button }
+    [Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v10.pdf){ .md-button .md-button--primary }
+    [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf){ .md-button }
 
 <p style="text-align:center; margin-top:1em; font-size:0.85em; color:#999;">
 Genicolo-Martins &amp; Furquim de Azevedo, 2026.

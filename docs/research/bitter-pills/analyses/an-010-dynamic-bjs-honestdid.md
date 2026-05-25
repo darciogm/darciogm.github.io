@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Dynamic BJS event study shows a first post-exposure estimate of 0.052 (SE 0.018) rising to 0.147 (SE 0.026) five periods after; Honest-DiD sensitivity does not survive deviations at the observed maximum pre-period scale, so the dynamic evidence is diagnostic, not the primary design."
 created: 2026-05-24
-script: v9-jpube-short/analysis/43_rambachan_roth.R
-target: v9-jpube-short/output/tables/tab_dynamic_sensitivity_summary.tex
+script: v10-causal-mechanism/analysis/43_rambachan_roth.R
+target: v10-causal-mechanism/output/tables/tab_dynamic_sensitivity_summary.tex
 tags: ["H:placebo-and-dynamics", event-study, bjs, honest-did, rambachan-roth, robustness, diagnostic]
 design:
   sample: "Urgent panel within BEC group 65 São Paulo pharmaceutical procurement, 2009–2019"
@@ -49,7 +49,7 @@ scale.
 | First post-exposure | 0.052 | 0.018 |
 | Five periods after | 0.147 | 0.026 |
 
-Output: `v9-jpube-short/output/tables/tab_dynamic_sensitivity_summary.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_dynamic_sensitivity_summary.tex`.
 
 ![BJS event study](../assets/figures/fig_event_study_item_v9.png)
 

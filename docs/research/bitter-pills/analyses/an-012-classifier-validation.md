@@ -8,8 +8,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Across 764,362 classified purchase orders, validation against 179,148 ground-truth orders shows 98.6% exact agreement; urgent-class F1 is 0.93 (judicial) and 0.96 (administrative), macro-F1 0.94; residual misclassification would attenuate, not inflate, regime contrasts."
 created: 2026-05-24
-script: v9-jpube-short/analysis/49_classifier_macros.py
-target: v9-jpube-short/output/tables/tab_classifier_validation_v9.tex
+script: v10-causal-mechanism/analysis/49_classifier_macros.py
+target: v10-causal-mechanism/output/tables/tab_classifier_validation_v9.tex
 tags: [classifier, validation, measurement, descriptive]
 design:
   sample: "764,362 classified purchase orders; validation against 179,148 ground-truth purchase orders"
@@ -52,7 +52,7 @@ regime contrasts upward or downward?
 | Urgent-class F1 (administrative) | 0.96 |
 | Macro-F1 | 0.94 |
 
-Output: `v9-jpube-short/output/tables/tab_classifier_validation_v9.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_classifier_validation_v9.tex`.
 
 ## Interpretation
 

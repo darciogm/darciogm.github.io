@@ -12,8 +12,8 @@ hide:
 <p class="authors">Darcio Genicolo-Martins &nbsp;&middot;&nbsp; Paulo Furquim de Azevedo</p>
 <p class="affiliation">Insper Institute of Education and Research, Sao Paulo, Brazil</p>
 
-[Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v9.pdf){ .md-button .md-button--primary }
-[Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf){ .md-button }
+[Download the paper (PDF)](assets/pdf/sourcing-under-sanctions-v10.pdf){ .md-button .md-button--primary }
+[Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf){ .md-button }
 
 </div>
 
@@ -24,7 +24,7 @@ hide:
 
 ## Abstract
 
-Court mandates secure delivery, but they may change how governments procure the mandated goods. We study São Paulo pharmaceutical procurement on BEC, covering **479,330 purchase-offer-item observations** during 2009--2019. Higher prices under judicial urgency can reflect incumbent suppliers charging same-firm markups or fragmented sourcing that changes scale and supplier matching. We use an administrative urgent channel as the closest feasible comparison: it lacks judicial sanctions but is selected and larger, so we combine **Lee selection bounds**, within firm-buyer-item comparisons, and sourcing tests. The bounds place the litigated-over-administrative price gap between **15.9% and 21.1%**. Within the same firm, buyer, and item, the administrative coefficient is **0.035 (SE 0.041)**, providing little evidence of a broad same-firm markup in deep repeated urgent markets. The within-firm gap reappears only in the earlier period, while order-size differences operate through scale. The sourcing margin is substantial: administrative orders are **3.3× larger**, and modal winners differ in **70.2%** of item-buyer pairs. One-sided sanctions secure delivery, but they change how the state buys: the policy margin is preserving aggregation and supplier matching under legal urgency.
+Court mandates secure access to medicines, but they can also change how governments buy. We study São Paulo pharmaceutical procurement on BEC, covering **479,330 purchase-offer-item observations** from 2009--2019. Higher prices under legal urgency can reflect two very different margins: incumbent suppliers charging more to sanctioned buyers, or fragmented sourcing that changes scale and supplier matching. Because court orders originate outside procurement offices, we interpret ordinary-versus-urgent estimates as the procurement effect of externally imposed legal urgency, conditional on item, time, and purchasing-unit fixed effects. A selected administrative urgent channel provides the closest feasible comparison without court sanctions; Lee bounds place the litigated-over-administrative price gap between **15.9% and 21.1%**. The cost margin is not mainly a broad same-firm markup in deep repeated urgent markets: within the same firm, buyer, and item, prices are statistically indistinguishable across urgent regimes. Instead, judicial urgency operates through sourcing. Administrative orders are **3.3 times larger**, and modal winners differ in **70.2%** of item-buyer pairs. Supplier leverage can reappear in thinner or earlier markets. The policy margin is not weaker access, but procurement capacity that preserves aggregation and supplier matching under legal urgency.
 
 **JEL Classification:**
 <span class="badge">D44</span>

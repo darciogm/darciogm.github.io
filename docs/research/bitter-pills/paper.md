@@ -8,10 +8,10 @@ paper: bitter-pills
 
 **Authors:** Darcio Genicolo-Martins and Paulo Furquim de Azevedo
 **Affiliation:** Insper Institute of Education and Research, Sao Paulo, Brazil
-**Version:** May 2026 (JPubE short paper, v9)
+**Version:** May 2026 (JPubE short paper, v10)
 
 !!! abstract "Download"
-    [Main paper (PDF)](assets/pdf/sourcing-under-sanctions-v9.pdf) &nbsp;·&nbsp; [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf)
+    [Main paper (PDF)](assets/pdf/sourcing-under-sanctions-v10.pdf) &nbsp;·&nbsp; [Online Appendix (PDF)](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf)
 
 ---
 

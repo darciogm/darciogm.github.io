@@ -9,7 +9,7 @@ Pharmaceutical Procurement Costs*. Each hypothesis lives in its own file and is
 referenced project-internally by `H:<slug>`.
 
 Hypotheses are organized into four thematic clusters aligned with the canonical
-manuscript `v9-jpube-short/manuscript/paper/main.tex`.
+manuscript `v10-causal-mechanism/manuscript/paper/main.tex`.
 
 ## How to read a hypothesis page
 

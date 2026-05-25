@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Mixed pattern: administrative cells carry larger total accepted quantity (greater scale), while litigated cells show more repeated purchase-offer-items (more fragmented repeated demand)."
 created: 2026-05-24
-script: v9-jpube-short/analysis/48_mechanism_evidence.R
-target: v9-jpube-short/output/tables/tab_aggregation_cells.tex
+script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+target: v10-causal-mechanism/output/tables/tab_aggregation_cells.tex
 tags: ["H:lost-scale", aggregation, scale, sourcing, robustness, diagnostic]
 design:
   sample: "Common buyer-item-month cells observed under both regimes within BEC group 65 São Paulo pharmaceutical procurement, 2009–2019"
@@ -50,7 +50,7 @@ repeated purchase-offer-items.
 | Total accepted quantity | Larger (greater scale) | Smaller |
 | Repeated purchase-offer-items | Fewer | More (more fragmented repeated demand) |
 
-Output: `v9-jpube-short/output/tables/tab_aggregation_cells.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_aggregation_cells.tex`.
 
 ## Interpretation
 

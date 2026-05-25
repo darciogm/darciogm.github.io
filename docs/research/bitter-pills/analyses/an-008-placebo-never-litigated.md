@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "On never-litigated items the negotiated-price placebo coefficient is −0.020 (SE 0.032), economically and statistically null, so generic platform or time-trend stories do not generate the regime contrast."
 created: 2026-05-24
-script: v9-jpube-short/analysis/20_falsification_and_supplier_fe.R
-target: v9-jpube-short/output/tables/tab_placebo.tex
+script: v10-causal-mechanism/analysis/20_falsification_and_supplier_fe.R
+target: v10-causal-mechanism/output/tables/tab_placebo.tex
 tags: ["H:placebo-and-dynamics", placebo, falsification, robustness]
 design:
   sample: "Never-litigated items within the BEC group 65 São Paulo pharmaceutical sample, 2009–2019"
@@ -48,7 +48,7 @@ gap.
 |---|---:|---:|
 | Negotiated-price placebo | −0.020 | 0.032 |
 
-Output: `v9-jpube-short/output/tables/tab_placebo.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_placebo.tex`.
 
 ## Interpretation
 

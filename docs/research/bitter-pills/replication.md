@@ -5,7 +5,7 @@ paper: bitter-pills
 # Replication
 
 This page describes how to replicate the current results. The active version of
-the paper is **v9-jpube-short** (JPubE short paper, May 2026): *Sourcing under
+the paper is **v10-causal-mechanism** (JPubE short paper, May 2026): *Sourcing under
 Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs.*
 
 ---
@@ -14,12 +14,12 @@ Sanctions: Judicial Urgency and Pharmaceutical Procurement Costs.*
 
 ```
 paper1-bitter-pills/
-├── v9-jpube-short/             # ACTIVE (JPubE short paper)
+├── v10-causal-mechanism/             # ACTIVE (JPubE short paper)
 │   ├── analysis/               # R + Python scripts (40_… 54_…) + _macros.R
 │   ├── manuscript/paper/       # main.tex, OnlineAppendix.tex, *.tex sections, values.tex
 │   ├── output/figures/         # vector PDFs (sourcing-vs-pricing, event study, …)
 │   ├── output/tables/          # generated .tex / .csv tables
-│   ├── build_v9.sh             # regenerate outputs + compile main + appendix
+│   ├── build_v10.sh             # regenerate outputs + compile main + appendix
 │   └── V9_CHANGELOG.md         # detailed build and revision log
 ├── v8-sourcing-reframe/        # frozen — earlier sourcing reframe
 ├── v7-r2round1/                # frozen — referee R2 round 1 baseline
@@ -29,7 +29,7 @@ paper1-bitter-pills/
 ```
 
 The **v4 pipeline** prepares the input data cache (`/tmp/v4_prepared.rds`) used
-by the v9 analysis scripts; v9 builds analysis on top of that prepared dataset
+by the v10 analysis scripts; v10 builds analysis on top of that prepared dataset
 rather than re-deriving it from raw BEC.
 
 ---
@@ -48,7 +48,7 @@ rather than re-deriving it from raw BEC.
 | `Python` 3 + `duckdb` / `pyarrow` | Classifier macros and presentation tables |
 
 Lee trimming bounds and the Rademacher wild-cluster bootstrap are implemented
-manually in the v9 scripts. `HonestDiD` requires `CVXR`/`clarabel` system deps;
+manually in the v10 scripts. `HonestDiD` requires `CVXR`/`clarabel` system deps;
 where unavailable, the Honest-DiD sensitivity is computed as a manual
 linear-extrapolation fallback that produces the same diagnostic verdict.
 
@@ -97,7 +97,7 @@ diagnostic.
 
 ## Pipeline
 
-The v9 analysis runs on top of the v4 prepared cache. The numbered scripts emit
+The v10 analysis runs on top of the v4 prepared cache. The numbered scripts emit
 macros into `manuscript/paper/values.tex`, which the LaTeX manuscript reads.
 
 ```bash
@@ -105,10 +105,10 @@ macros into `manuscript/paper/values.tex`, which the LaTeX manuscript reads.
 Rscript v4/analysis/00_prepare_data.R
 
 # 2. Regenerate outputs and compile (one command)
-./v9-jpube-short/build_v9.sh
+./v10-causal-mechanism/build_v10.sh
 ```
 
-`build_v9.sh` runs the analysis scripts — among them
+`build_v10.sh` runs the analysis scripts — among them
 `40_utg_lee_bounds.R` (Lee bounds), `43_rambachan_roth.R` (BJS event study +
 Honest-DiD), `44_wild_bootstrap.R` (Rademacher wild-cluster bootstrap),
 `45_reconciliation.R` (pricing-vs-sourcing decomposition),
@@ -129,10 +129,10 @@ in the manuscript.**
 
 | Path | Content |
 |------|---------|
-| `v9-jpube-short/output/figures/` | Vector PDFs: pricing-vs-sourcing decomposition, BJS event study, Honest-DiD sensitivity, quantity-ratio density |
-| `v9-jpube-short/output/tables/` | Generated `.tex` tables: combined urgent-margins-and-Lee-bounds, within firm-buyer-item robustness, winner switching, placebo, dynamic sensitivity, procurement cost, classifier validation, sample construction, and more |
-| `v9-jpube-short/manuscript/paper/main.pdf` | Compiled main paper (17 pp, JPubE short-paper review format) |
-| `v9-jpube-short/manuscript/paper/OnlineAppendix.pdf` | Compiled Online Appendix (5 pp) |
+| `v10-causal-mechanism/output/figures/` | Vector PDFs: pricing-vs-sourcing decomposition, BJS event study, Honest-DiD sensitivity, quantity-ratio density |
+| `v10-causal-mechanism/output/tables/` | Generated `.tex` tables: combined urgent-margins-and-Lee-bounds, within firm-buyer-item robustness, winner switching, placebo, dynamic sensitivity, procurement cost, classifier validation, sample construction, and more |
+| `v10-causal-mechanism/manuscript/paper/main.pdf` | Compiled main paper (17 pp, JPubE short-paper review format) |
+| `v10-causal-mechanism/manuscript/paper/OnlineAppendix.pdf` | Compiled Online Appendix (5 pp) |
 
 ---
 

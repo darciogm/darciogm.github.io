@@ -25,8 +25,8 @@
   confidence: yellow
   tags: ["H:urgent-costlier-less-competitive", urgent, motivation, prices, competition, causal]
   file: docs/analyses/an-001-urgent-vs-ordinary.md
-  script: v9-jpube-short/analysis/50_v9_outputs.py
-  target: v9-jpube-short/output/tables/tab_urgent_and_bounds.tex
+  script: v10-causal-mechanism/analysis/50_v9_outputs.py
+  target: v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex
 
 - id: an-002
   hypothesis: utg-gap-selection-bounded
@@ -36,8 +36,8 @@
   confidence: yellow
   tags: ["H:utg-gap-selection-bounded", lee-bounds, urgent, selection, robustness]
   file: docs/analyses/an-002-lee-bounds.md
-  script: v9-jpube-short/analysis/40_utg_lee_bounds.R
-  target: v9-jpube-short/output/tables/tab_urgent_and_bounds.tex
+  script: v10-causal-mechanism/analysis/40_utg_lee_bounds.R
+  target: v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex
 
 - id: an-003
   hypothesis: no-broad-same-firm-markup
@@ -47,8 +47,8 @@
   confidence: yellow
   tags: ["H:no-broad-same-firm-markup", within-firm, pricing, mechanism, causal]
   file: docs/analyses/an-003-within-firm-pricing.md
-  script: v9-jpube-short/analysis/48_mechanism_evidence.R
-  target: v9-jpube-short/output/tables/tab_within_firm_robustness.tex
+  script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+  target: v10-causal-mechanism/output/tables/tab_within_firm_robustness.tex
 
 - id: an-004
   hypothesis: thin-market-supplier-leverage
@@ -58,8 +58,8 @@
   confidence: yellow
   tags: ["H:thin-market-supplier-leverage", market-depth, formulary, heterogeneity, robustness]
   file: docs/analyses/an-004-market-depth-heterogeneity.md
-  script: v9-jpube-short/analysis/52_market_depth_heterogeneity.R
-  target: v9-jpube-short/output/tables/tab_market_depth_heterogeneity.tex
+  script: v10-causal-mechanism/analysis/52_market_depth_heterogeneity.R
+  target: v10-causal-mechanism/output/tables/tab_market_depth_heterogeneity.tex
 
 - id: an-005
   hypothesis: lost-scale
@@ -69,8 +69,8 @@
   confidence: yellow
   tags: ["H:lost-scale", decomposition, sourcing, pricing, scale, causal]
   file: docs/analyses/an-005-pricing-sourcing-decomposition.md
-  script: v9-jpube-short/analysis/45_reconciliation.R
-  target: v9-jpube-short/output/figures/fig_sourcing_vs_pricing.pdf
+  script: v10-causal-mechanism/analysis/45_reconciliation.R
+  target: v10-causal-mechanism/output/figures/fig_sourcing_vs_pricing.pdf
 
 - id: an-006
   hypothesis: supplier-set-reallocation
@@ -80,8 +80,8 @@
   confidence: yellow
   tags: ["H:supplier-set-reallocation", winner-switching, sourcing, supplier-set, descriptive]
   file: docs/analyses/an-006-winner-switching.md
-  script: v9-jpube-short/analysis/48_mechanism_evidence.R
-  target: v9-jpube-short/output/tables/tab_winner_switch.tex
+  script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+  target: v10-causal-mechanism/output/tables/tab_winner_switch.tex
 
 - id: an-007
   hypothesis: utg-gap-selection-bounded
@@ -91,8 +91,8 @@
   confidence: yellow
   tags: ["H:utg-gap-selection-bounded", wild-cluster-bootstrap, inference, robustness, utg-contrast]
   file: docs/analyses/an-007-wild-cluster-bootstrap.md
-  script: v9-jpube-short/analysis/44_wild_bootstrap.R
-  target: v9-jpube-short/output/tables/tab_utg_boottest.tex
+  script: v10-causal-mechanism/analysis/44_wild_bootstrap.R
+  target: v10-causal-mechanism/output/tables/tab_utg_boottest.tex
 
 - id: an-008
   hypothesis: placebo-and-dynamics
@@ -102,8 +102,8 @@
   confidence: yellow
   tags: ["H:placebo-and-dynamics", placebo, falsification, robustness]
   file: docs/analyses/an-008-placebo-never-litigated.md
-  script: v9-jpube-short/analysis/20_falsification_and_supplier_fe.R
-  target: v9-jpube-short/output/tables/tab_placebo.tex
+  script: v10-causal-mechanism/analysis/20_falsification_and_supplier_fe.R
+  target: v10-causal-mechanism/output/tables/tab_placebo.tex
 
 - id: an-009
   hypothesis: lost-scale
@@ -113,8 +113,8 @@
   confidence: yellow
   tags: ["H:lost-scale", aggregation, scale, sourcing, robustness, diagnostic]
   file: docs/analyses/an-009-aggregation-cells.md
-  script: v9-jpube-short/analysis/48_mechanism_evidence.R
-  target: v9-jpube-short/output/tables/tab_aggregation_cells.tex
+  script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
+  target: v10-causal-mechanism/output/tables/tab_aggregation_cells.tex
 
 - id: an-010
   hypothesis: placebo-and-dynamics
@@ -124,8 +124,8 @@
   confidence: yellow
   tags: ["H:placebo-and-dynamics", event-study, bjs, honest-did, rambachan-roth, robustness, diagnostic]
   file: docs/analyses/an-010-dynamic-bjs-honestdid.md
-  script: v9-jpube-short/analysis/43_rambachan_roth.R
-  target: v9-jpube-short/output/tables/tab_dynamic_sensitivity_summary.tex
+  script: v10-causal-mechanism/analysis/43_rambachan_roth.R
+  target: v10-causal-mechanism/output/tables/tab_dynamic_sensitivity_summary.tex
 
 - id: an-011
   hypothesis: null
@@ -135,8 +135,8 @@
   confidence: yellow
   tags: [procurement-cost, fiscal, lee-bounds, descriptive]
   file: docs/analyses/an-011-procurement-cost.md
-  script: v9-jpube-short/analysis/46_procurement_cost_bound.R
-  target: v9-jpube-short/output/tables/tab_procurement_cost_bound.tex
+  script: v10-causal-mechanism/analysis/46_procurement_cost_bound.R
+  target: v10-causal-mechanism/output/tables/tab_procurement_cost_bound.tex
 
 - id: an-012
   hypothesis: null
@@ -146,5 +146,5 @@
   confidence: yellow
   tags: [classifier, validation, measurement, descriptive]
   file: docs/analyses/an-012-classifier-validation.md
-  script: v9-jpube-short/analysis/49_classifier_macros.py
-  target: v9-jpube-short/output/tables/tab_classifier_validation_v9.tex
+  script: v10-causal-mechanism/analysis/49_classifier_macros.py
+  target: v10-causal-mechanism/output/tables/tab_classifier_validation_v9.tex

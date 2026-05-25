@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Urgent purchases run +5.4% on the negotiated price, draw 5.4% fewer bidders, and clear +2.1pp more often — within item, year, and buyer."
 created: 2026-05-24
-script: v9-jpube-short/analysis/50_v9_outputs.py
-target: v9-jpube-short/output/tables/tab_urgent_and_bounds.tex
+script: v10-causal-mechanism/analysis/50_v9_outputs.py
+target: v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex
 tags: ["H:urgent-costlier-less-competitive", urgent, motivation, prices, competition, causal]
 design:
   sample: "BEC group 65 São Paulo pharmaceutical procurement, 2009–2019; winners-only price sample of 196,883 accepted winning bids for price outcomes; the 479,330 purchase-offer-item universe for competition and success margins"
@@ -56,7 +56,7 @@ the court-mandated versus closest-administrative-urgent contrast is taken up in
 
 *Item + year + PBU fixed effects. SE clustered by PBU.*
 
-Output: `v9-jpube-short/output/tables/tab_urgent_and_bounds.tex` (Panel A).
+Output: `v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex` (Panel A).
 
 ![Urgent-vs-ordinary coefficients (95% CI) across the four outcomes](../assets/figures/fig_urgent_coefplot_v9.png)
 

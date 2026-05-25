@@ -4,7 +4,7 @@ paper: bitter-pills
 
 # A judicial-enforcement form of passive waste
 
-🟡 (interpretation) Taken together, the v9 results point to a
+🟡 (interpretation) Taken together, the v10 results point to a
 judicial-enforcement form of passive waste. A one-sided sanction — a court
 order that compels delivery on a deadline — reliably secures the good, but it
 does so by bypassing the procurement routines that would otherwise aggregate

@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "The litigated-urgent gap concentrates in thin and off-formulary markets, consistent with residual supplier leverage where the pool is shallow."
 created: 2026-05-24
-script: v9-jpube-short/analysis/52_market_depth_heterogeneity.R
-target: v9-jpube-short/output/tables/tab_market_depth_heterogeneity.tex
+script: v10-causal-mechanism/analysis/52_market_depth_heterogeneity.R
+target: v10-causal-mechanism/output/tables/tab_market_depth_heterogeneity.tex
 tags: ["H:thin-market-supplier-leverage", market-depth, formulary, heterogeneity, robustness]
 design:
   sample: "Urgent panel; litigated-versus-administrative urgent gap split by formulary status and market depth"
@@ -54,7 +54,7 @@ same boundary along quantity, formulary, and period cuts.
 *UTG = litigated-versus-administrative urgent gap, split by formulary status and
 market depth. The detailed bins and coefficients are in the output table.*
 
-Output: `v9-jpube-short/output/tables/tab_market_depth_heterogeneity.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_market_depth_heterogeneity.tex`.
 
 ![Within firm-buyer-item coefficient by market-depth subsample, with 95% CI](../assets/figures/fig_within_firm_forest_v9.png)
 

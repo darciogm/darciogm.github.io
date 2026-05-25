@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Naive litigated-over-administrative gap is 29.5%; Lee bounds tighten it to 15.9%–21.1% under monotonicity."
 created: 2026-05-24
-script: v9-jpube-short/analysis/40_utg_lee_bounds.R
-target: v9-jpube-short/output/tables/tab_urgent_and_bounds.tex
+script: v10-causal-mechanism/analysis/40_utg_lee_bounds.R
+target: v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex
 tags: ["H:utg-gap-selection-bounded", lee-bounds, urgent, selection, robustness]
 design:
   sample: "Urgent panel of 56,803 observations; administrative-urgent versus litigated-urgent purchases within item×year×PBU strata"
@@ -59,8 +59,8 @@ administrative price gap survives a worst-case treatment of that selection.
 *Trimming within item×year×PBU strata. Mean trimming proportion 26.9%, maximum
 100%.*
 
-Output: `v9-jpube-short/output/tables/tab_urgent_and_bounds.tex` (Panel B) and
-`v9-jpube-short/output/tables/tab_utg_lee_alt_strata.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex` (Panel B) and
+`v10-causal-mechanism/output/tables/tab_utg_lee_alt_strata.tex`.
 
 ![Naive estimate versus Lee selection bounds for the litigated-over-administrative gap](../assets/figures/fig_lee_bounds_interval_v9.png)
 

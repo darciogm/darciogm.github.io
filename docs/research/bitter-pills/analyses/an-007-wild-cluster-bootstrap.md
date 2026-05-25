@@ -9,8 +9,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Rademacher wild-cluster bootstrap continues to reject a zero administrative-minus-litigated gap: p=0.0080 in the preferred item+year+PBU specification and p=0.0390 under tighter item-by-year-month fixed effects."
 created: 2026-05-24
-script: v9-jpube-short/analysis/44_wild_bootstrap.R
-target: v9-jpube-short/output/tables/tab_utg_boottest.tex
+script: v10-causal-mechanism/analysis/44_wild_bootstrap.R
+target: v10-causal-mechanism/output/tables/tab_utg_boottest.tex
 tags: ["H:utg-gap-selection-bounded", wild-cluster-bootstrap, inference, robustness, utg-contrast]
 design:
   sample: "Urgent panel of 56,803 purchase-offer-item observations, BEC group 65 São Paulo pharmaceutical procurement, 2009–2019"
@@ -54,7 +54,7 @@ is valid with a small, unbalanced number of clusters?
 
 *Rademacher wild-cluster bootstrap, clustering on PBU. Sign convention: admin-minus-litigated.*
 
-Output: `v9-jpube-short/output/tables/tab_utg_boottest.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_utg_boottest.tex`.
 
 ## Interpretation
 

@@ -8,8 +8,8 @@ status_date: 2026-05-24
 confidence: yellow
 headline: "Fiscal procurement-cost implication of $27.8M per year (Lee-bound range $23.9M–$31.7M), from a Lee midpoint of 18.5%, a 50% admissibility calibration, and $300M annual litigated spending."
 created: 2026-05-24
-script: v9-jpube-short/analysis/46_procurement_cost_bound.R
-target: v9-jpube-short/output/tables/tab_procurement_cost_bound.tex
+script: v10-causal-mechanism/analysis/46_procurement_cost_bound.R
+target: v10-causal-mechanism/output/tables/tab_procurement_cost_bound.tex
 tags: [procurement-cost, fiscal, lee-bounds, descriptive]
 design:
   sample: "Litigated urgent procurement within BEC group 65 São Paulo pharmaceutical procurement, 2009–2019"
@@ -53,7 +53,7 @@ comparison.
 | Fiscal procurement-cost implication (per year) | $27.8M |
 | Lee-bound range | $23.9M–$31.7M |
 
-Output: `v9-jpube-short/output/tables/tab_procurement_cost_bound.tex`.
+Output: `v10-causal-mechanism/output/tables/tab_procurement_cost_bound.tex`.
 
 ## Interpretation
 

@@ -70,7 +70,7 @@ JPubE 6,000-word cap, with four exhibits and a six-page appendix.
 (`analysis/run_pipeline.sh`, 23 scripts) from the prepared cache: all exit 0,
 and `values.tex` plus the 31 output tables regenerate **byte-identically**
 (figure PDFs differ only by an embedded timestamp; rendered content is
-identical). The v9 results are fully reproducible from the cache forward.
+identical). The v10 results are fully reproducible from the cache forward.
 
 ## v9 — JPubE short paper (2026-05-24)
 
@@ -105,6 +105,6 @@ Pharmaceutical Procurement Costs.**
 
 - **v8 (sourcing-reframe).** Earlier reframing around pricing versus sourcing,
   with the under-the-gun gap and the within firm-buyer-item pricing test; the
-  v9 short paper supersedes it with selection-bounded language, combined
+  v10 short paper supersedes it with selection-bounded language, combined
   exhibits, and a compact appendix.
 - **v7 and earlier.** Reduced-form and three-channel framings; superseded.

@@ -30,9 +30,9 @@ revise-and-resubmit (R&R).
 
 **Authors:** Darcio Genicolo-Martins &amp; Paulo Furquim de Azevedo (Insper)
 
-**Version:** v9 (May 2026, JPubE short paper)
-[manuscript PDF](assets/pdf/sourcing-under-sanctions-v9.pdf) ·
-[online appendix](assets/pdf/sourcing-under-sanctions-v9-online-appendix.pdf)
+**Version:** v10 (May 2026, JPubE short paper)
+[manuscript PDF](assets/pdf/sourcing-under-sanctions-v10.pdf) ·
+[online appendix](assets/pdf/sourcing-under-sanctions-v10-online-appendix.pdf)
 
 **Distinctive contributions:**
 
