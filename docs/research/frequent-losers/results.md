@@ -84,7 +84,10 @@ Against the seven-feature Imhof–Wallimann bid-distribution pipeline trained on
 | Imhof–Wallimann pipeline (alone) | 0.888 | [0.865, 0.911] |
 | Award layer + bid layer (combined) | **0.962** | [0.954, 0.969] |
 
-The frequent-loser flag adds **+0.035 AUC** over the Imhof–Wallimann benchmark alone in the identical same-sample audit (DeLong $p = 0.014$); the combined specification gains **+0.096 to +0.098 AUC** over the bid-layer benchmark ($p < 0.001$). The increment is not an outperformance claim — it shows the two layers are not measuring the same thing.
+The frequent-loser flag adds **+0.035 AUC** over the Imhof–Wallimann benchmark alone (DeLong $p = 0.014$); the combined specification gains **+0.096 to +0.098 AUC** over the bid-layer benchmark ($p < 0.001$). The increment is not an outperformance claim — it shows the two layers are not measuring the same thing.
+
+!!! note "Why +0.035 and not 0.921 − 0.888 = 0.033"
+    The DeLong test requires paired observations on identical firms, so the **+0.035** increment is computed on the stricter same-sample subset with complete bid-layer features ($N = 11{,}676$: Imhof full 0.846, FL 0.881). The table levels above are the larger 16,779-firm pool, whose raw gap is 0.033. The two differ only because the samples differ; the DeLong-valid number is +0.035.
 
 !!! warning "Informational complements, not substitutes"
     The two screens carry non-redundant information about the same target. The screening stage functions as a credible Stage-1 gatekeeper for the forensic stage. Reforms that mandate operational bid-microdata archival expand the forensic stage, not the screening one.

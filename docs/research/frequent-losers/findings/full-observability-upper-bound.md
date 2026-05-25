@@ -60,7 +60,7 @@ available adjudication target.
 - *Cross-refs*:
   [H:award-bid-complementarity](../hypotheses/award-bid-complementarity.md);
   [docs/results.md](../results.md).
-- *Macros*: `\valAUCImhofFull` (0.888), `\valImhofFLBin` (0.921),
+- *Macros*: `\valImhofFull` (0.888), `\valImhofFLBin` (0.921),
   `\valImhofComboBin` (0.955), `\valImhofComboCont` (0.962),
   `\valAUCImhofCV` (0.585), `\valImhofPoolN` (16,779).
 - *Validation*: backing scripts `scripts/31_imhof_full_pipeline.R`,
