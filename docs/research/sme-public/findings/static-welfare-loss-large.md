@@ -13,8 +13,9 @@ assigned to a higher-cost supplier) with the fiscal distortion from
 financing the increased payment ($\lambda \cdot \Delta_{\mathrm{gov}}$
 at the Ballard-Shoven-Whalley benchmark). Translated to public-finance
 units on Group 65 alone, the welfare cost spans
-**R$55–128 million per year** (US$16–37M), depending on the SME-eligible
-adherence rate. This is one product group of São Paulo's R$13 billion
+**R$38–89 million per year** (US$11–25M) across the **30–70%** SME-eligible
+adherence range, against a Group-65 annual reference outlay of ~R$345M
+(non-pharma). This is one product group of São Paulo's R$13 billion
 procurement platform.
 
 The implied SME welfare weight required for a planner to prefer the
@@ -46,8 +47,8 @@ inversely with &lambda;.
 - *Cross-refs*: [H:static-welfare-loss-large](../hypotheses/static-welfare-loss-large.md);
   [H:implied-welfare-weight-large](../hypotheses/implied-welfare-weight-large.md);
   paper §5 (Static welfare and policy design); [docs/extensions.md](../extensions.md)
-  Welfare Cost (v6) panel.
+  Welfare cost panel.
 - *Validation*: `v7-jpube-tight/scripts/55_welfare.R` and
   `56_welfare_bootstrap.R` produce the welfare-loss arithmetic;
-  `57_welfare_adherence_sensitivity.R` produces the R$55–128M annual
+  `57_welfare_adherence_sensitivity.R` produces the R$38–89M annual
   range.

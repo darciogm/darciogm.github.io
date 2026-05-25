@@ -4,7 +4,21 @@ paper: sme-public
 
 # Advanced Methods
 
-This page documents five advanced econometric methods that complement the main DiDiR analysis. Each method addresses a specific concern or deepens the understanding of the treatment effect.
+!!! info "Where this sits in v8"
+    These five methods discipline the **reduced-form benchmark layer** — the
+    difference-in-differences that the canonical v8 paper uses only for timing,
+    sign, and approximate scale. The headline policy result is the
+    **structural price-formation decomposition** and the **static welfare
+    comparison** ([Results](results.md), [Robustness](robustness.md)). Each
+    method below also appears as a dedicated analysis page (HonestDiD →
+    [AN-006](analyses/an-006-honestdid.md), Lee bounds →
+    [AN-005](analyses/an-005-lee-bounds.md), quantile DiD →
+    [AN-007](analyses/an-007-quantile-did.md), Gelbach decomposition →
+    [AN-008](analyses/an-008-gelbach-decomp.md)).
+
+This page documents five econometric methods that discipline the reduced-form
+benchmark. Each addresses a specific concern about the timing-and-sign reading
+of the policy change.
 
 ---
 

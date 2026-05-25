@@ -18,18 +18,18 @@ mindmap
       SME statute LC 123/2006
         Revenue ceilings define ME/EPP
         SME-only default below R$80K
-        Adherence rose 13% to 70%
+        Group 65 adherence ~43% post
       Group 65 medical and hospital
         ~27% of transactions
-        Open exception 2014 to 2018
+        Total-notice threshold kept it open
       Two auction formats
         Pregao descending clock
           Drop-out prices observed
         Convite first-price sealed
           Cross-modality check
     **Natural Experiment**
-      March 2018 PGE-SP reversal
-        Isonomy reinterpretation
+      March 2018 mass take-up
+        PGE-SP item-level reading Dec 2017
         Not a market shock
       Group 65 switched
         Open then SME-only
@@ -48,17 +48,16 @@ mindmap
         Pregao only
         97,993 auctions
         297,967 firm-auctions
-    **Reduced-form Effects**
-      Prices fall ~13%
-        beta -0.131 to -0.133
+    **Reduced-form Benchmark**
+      Open ~10-11% cheaper
+        beta -0.108 to -0.148
         Stable across windows
-      Entry rises 10 to 22%
-        More firms and valid bids
+      Timing and sign only
+        Not the structural magnitude
       Distance widens +12 km
         High-value items only
         Null on low value
       SME winner share falls
-      Each bidder bids more aggressively
     **Structural Decomposition**
       Three pools S1 S2 S3
         S1 open benchmark
@@ -69,7 +68,7 @@ mindmap
       Exclusion share ~72%
       SME entry roughly doubles
         But does not replace discipline
-        Entry cost 4.7x for non-SMEs
+        Order-statistic not less aggressive bidding
     **Welfare and Policy**
       Static loss 28.9%
         At lambda = 0.30
@@ -79,7 +78,7 @@ mindmap
         Near-zero static cost
         Preserves price-forming pool
         Less redistribution
-      Annual cost R$55 to 128M
+      Annual cost R$38 to 89M
       Frontier
         Exclusionary redistribution
         vs preserving the pool

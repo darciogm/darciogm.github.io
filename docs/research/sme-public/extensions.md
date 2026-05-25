@@ -4,6 +4,13 @@ paper: sme-public
 
 # Extensions
 
+!!! info "Where this sits in v8"
+    The first five extensions below are **reduced-form-layer** checks on the
+    broader panel — they support the timing-and-sign benchmark, not the headline.
+    The canonical v8 policy result is the structural decomposition and welfare
+    comparison ([Results](results.md)); the **Welfare cost** section at the
+    bottom reports the v8 annualized figures.
+
 ## IPCA-Deflated Real Prices
 
 Using IPCA-deflated (real) prices yields patterns virtually identical to the nominal results, confirming that the price effects reflect real differences in procurement costs rather than differential inflation across product groups.
@@ -34,18 +41,26 @@ Interacting the treatment indicator with a direct administration dummy reveals b
 
 ---
 
-## Welfare Cost (v6)
+## Welfare Cost
 
-The v6 manuscript replaces the v4 back-of-the-envelope fiscal calculation with a structural welfare arithmetic. The per-auction welfare loss combines the allocative wedge $\text{DWL}_{\text{alloc}} = c_{(1)}^{S_3} - c_{(1)}^{S_1}$ with an MCPF distortion $\lambda \cdot (p_{S_3} - p_{S_1})$ at $\lambda = 0.30$ (Ballard--Shoven--Whalley benchmark).
+The structural welfare arithmetic combines the allocative wedge
+$\text{DWL}_{\text{alloc}} = c_{(1)}^{S_3} - c_{(1)}^{S_1}$ with an MCPF
+distortion $\lambda \cdot (p_{S_3} - p_{S_1})$ at $\lambda = 0.30$
+(Ballard–Shoven–Whalley benchmark; updated MCPF frameworks in Hendren 2020 and
+Finkelstein–Hendren 2020).
 
 | Class | **Loss / p<sub>S<sub>1</sub></sub>** at λ = 0.30 |
 |---|:---:|
 | Non-pharma | **28.9%** |
-| Pharma | **44.8%** |
+| Pharma *(boundary)* | **44.8%** |
 
-Translated to annual public-finance units on Group~65 alone, the welfare cost spans **R$55--128 million per year** (US$16--37M): R$55M is the realistic central case at the empirically observed adherence rate; R$128M is the upper bound under full SME-eligible adherence. This is one product group of São Paulo's R$13 billion procurement platform.
+Translated to annual public-finance units on Group&nbsp;65 alone, the welfare
+cost spans **R$38–89 million per year** (US$11–25M) across the **30–70%**
+adherence range, against a Group-65 annual reference outlay of roughly R$345M
+(non-pharma) and R$363M (pharma). This is one product group of São Paulo's
+R$13 billion procurement platform.
 
 <div class="key-result" markdown>
-<span class="number">R$ 55--128 M / yr</span>
-<span class="label">v6 annual welfare cost of bidder exclusion on Group 65, at λ = 0.30, across the empirical adherence range. (Earlier v4 reduced-form back-of-envelope gave R$84.5--85.8M as the 18-month *fiscal* cost — a different object, superseded.)</span>
+<span class="number">R$ 38–89 M / yr</span>
+<span class="label">v8 annual static welfare cost of bidder exclusion on Group 65, at λ = 0.30, across the 30–70% adherence range (US$11–25M). The headline per-auction loss is 28.9% of the open-regime price in standardized non-pharmaceutical procurement.</span>
 </div>

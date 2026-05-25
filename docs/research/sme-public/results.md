@@ -4,156 +4,199 @@ paper: sme-public
 
 # Main Results
 
-!!! info "v8 banner: this page reflects v1--v4 reduced-form figures; canonical results are in v8"
-    The tables and figures on this page are the original reduced-form DiD estimates from the early reduced-form layer. The canonical **v8 paper** (`paper.pdf`) reframes the policy account around **the price-forming order statistic**: the set-aside price effect is decomposed into a lost-discipline component (non-SMEs removed) and a protected-pool offset (post-policy SME pool), with exclusion accounting for ~72% of the absolute price decomposition in standardized non-pharmaceutical procurement. See `paper.pdf` for the canonical estimates, the threat-assessment table (Table 5), and the empirical bidder-count robustness (Online Appendix OA-D.2).
-
-
-## Event Study: Log Prices
-
-The event study plots semester-by-semester differences between group 65 (switched) and other groups (always treated). The parallel trends assumption requires that the difference is stable in the post-period (after March 2018).
-
-<figure>
-  <img src="../assets/figures/fig_01_logprices_es.png" alt="Event study: Log prices">
-  <figcaption>Figure 1. Log Prices: Difference between the always treated group and the switched group</figcaption>
-</figure>
-
-The difference between the two groups narrows dramatically after the policy change and then stabilizes in subsequent periods, supporting the parallel trends assumption.
-
-<figure>
-  <img src="../assets/figures/fig_02_distance_es.png" alt="Event study: Distance">
-  <figcaption>Figure A.1. Distance from PBUs to Winner Firms</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_03_numfirms_es.png" alt="Event study: Number of firms">
-  <figcaption>Figure A.2. Number of Participant Firms (log)</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_04_numbids_es.png" alt="Event study: Number of bids">
-  <figcaption>Figure A.3. Number of Valid Bids (log)</figcaption>
-</figure>
-
----
-
-## Descriptive Statistics
-
-|  | Group 65, Pre |  | Group 65, Post |  | Others, Pre |  | Others, Post |  |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|  | Mean | SD | Mean | SD | Mean | SD | Mean | SD |
-| Price (levels) | 1,402 | 20,564 | 1,508 | 25,872 | 1,466 | 50,386 | 1,291 | 68,043 |
-| Log price | 1.72 | 2.84 | 1.91 | 2.81 | 2.85 | 2.12 | 2.78 | 2.07 |
-| Number of firms | 3.17 | 2.52 | 3.02 | 2.40 | 4.66 | 3.27 | 4.69 | 3.28 |
-| Log firms | 0.88 | 0.73 | 0.84 | 0.71 | 1.30 | 0.72 | 1.30 | 0.72 |
-| Number of valid bids | 11.10 | 15.49 | 10.99 | 16.51 | 10.13 | 15.74 | 10.47 | 16.87 |
-| Log bids | 1.64 | 1.24 | 1.61 | 1.23 | 1.69 | 1.06 | 1.70 | 1.08 |
-| Distance (km) | 238.54 | 270.42 | 215.08 | 239.63 | 164.78 | 182.23 | 170.28 | 186.07 |
-| N (completed / all) | 65,606 | 77,206 | 66,822 | 85,181 | 246,277 | 287,500 | 271,011 | 323,836 |
-
-*Price and distance computed on completed items. Firm and bid statistics computed on all items.*
-
----
-
-## DiDiR Results: Log Prices
-
-|  | 6-month | 6-month | 12-month | 12-month | 18-month | 18-month |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **g65 x Pre** | **-0.1311\*\*\*** | **-0.1441\*\*\*** | **-0.1370\*\*\*** | **-0.1369\*\*\*** | **-0.1309\*\*\*** | **-0.1330\*\*\*** |
-|  | (0.0121) | (0.0116) | (0.0107) | (0.0104) | (0.0096) | (0.0094) |
-| Sealed bids | -0.1461\*\*\* | -0.2216\*\*\* | -0.1430\*\*\* | -0.2025\*\*\* | -0.1501\*\*\* | -0.2048\*\*\* |
-|  | (0.0088) | (0.0131) | (0.0079) | (0.0123) | (0.0079) | (0.0116) |
-| Log quantity | -0.2598\*\*\* | -0.2972\*\*\* | -0.2611\*\*\* | -0.2956\*\*\* | -0.2597\*\*\* | -0.2934\*\*\* |
-|  | (0.0082) | (0.0089) | (0.0075) | (0.0080) | (0.0073) | (0.0077) |
-| Observations | 219,535 | 219,535 | 439,054 | 439,054 | 649,714 | 649,714 |
-| R-squared | 0.191 | 0.212 | 0.193 | 0.211 | 0.193 | 0.211 |
-| Item FE | YES | YES | YES | YES | YES | YES |
-| PBU FE | NO | YES | NO | YES | NO | YES |
-
-*Standard errors clustered at the item level. \*\*\* p<0.01, \*\* p<0.05, \* p<0.1.*
-
-Negotiated prices are **4.6--8.1% lower** in group 65 open tenders across all specifications and time windows.
-
----
-
-## DiDiR Results: Number of Participant Firms
-
-|  | 6-month | 6-month | 12-month | 12-month | 18-month | 18-month |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **g65 x Pre** | **0.1776\*\*\*** | **0.1821\*\*\*** | **0.1495\*\*\*** | **0.1540\*\*\*** | **0.0926\*\*\*** | **0.1004\*\*\*** |
-|  | (0.0079) | (0.0081) | (0.0062) | (0.0063) | (0.0059) | (0.0060) |
-| Observations | 261,450 | 261,450 | 524,745 | 524,745 | 773,263 | 773,263 |
-| R-squared | 0.214 | 0.167 | 0.210 | 0.165 | 0.206 | 0.163 |
-| Item FE | YES | YES | YES | YES | YES | YES |
-| PBU FE | NO | YES | NO | YES | NO | YES |
-
-*Standard errors clustered at the item level. \*\*\* p<0.01.*
-
-Open tenders attract **~22% more firms** in the short term, attenuating to **~10%** in the 18-month window.
-
----
-
-## Heterogeneous Effects by Item Value
-
-|  | Log prices | Log firms | Log bids | Distance |
-|---|:---:|:---:|:---:|:---:|
-| **Panel A: High-value items (above median)** | | | | |
-| g65 x Pre | -0.1369\*\*\* | 0.1075\*\*\* | 0.0456\*\*\* | 12.0849\*\*\* |
-|  | (0.0103) | (0.0072) | (0.0093) | (2.9018) |
-| Observations | 383,949 | 445,903 | 445,903 | 383,949 |
-| **Panel B: Low-value items (below median)** | | | | |
-| g65 x Pre | -0.0981\*\*\* | 0.0592\*\*\* | 0.0577\*\*\* | 2.8312 |
-|  | (0.0086) | (0.0075) | (0.0110) | (2.2944) |
-| Observations | 265,765 | 327,360 | 327,360 | 265,765 |
-
-*18-month window, base specification. Sample split at median reference value.*
-
-The price effect is **40% larger for high-value items** (-0.137 vs. -0.098). The distance effect is significant only for high-value items (12.1 km).
-
----
-
-## Fiscal Cost Quantification
-
-Translating the estimated price effects into monetary terms provides a concrete measure of the policy's fiscal burden. The calculation applies the implied percentage price effect ($e^{\hat{\beta}} - 1$) to the total procurement value of group 65 completed items in the pre-period (Sep 2016--Feb 2018).
-
-| Component | Baseline spec. | PBU FE spec. |
-|-----------|:--------------:|:------------:|
-| Price coefficient (18m) | -0.1309 | -0.1330 |
-| Implied price effect | -12.27% | -12.45% |
-| G65 pre-period total value | R$ 689.0 million | R$ 689.0 million |
-| **Estimated fiscal saving** | **R$ 84.5 million** | **R$ 85.8 million** |
+The canonical results are the **structural price-formation decomposition** and
+the **static welfare comparison** in `paper.pdf`. The reduced-form
+difference-in-differences is reported as a timing, sign, and approximate-scale
+benchmark, not as the source of the policy magnitude. All numbers on this page
+are drawn from the v8 macro registry (`v8-jpube/output/values.tex`); the
+underlying tables and figure are Tables&nbsp;1–4 and Figure&nbsp;1 of the
+manuscript.
 
 <div class="key-result" markdown>
-<span class="number">R$ 84.5--85.8 M (v4 reduced-form, 18m)</span>
-<span class="label">Earlier reduced-form fiscal benchmark. Superseded as the headline by the v6 structural welfare arithmetic: R$55--128M/yr (~US$16--37M), λ = 0.30, on Group 65 alone of São Paulo's R$13B platform. See `paper_v6.pdf`.</span>
+<span class="number">28.9%</span>
+<span class="label">static welfare loss from the full SME set-aside in standardized non-pharmaceutical procurement, at &lambda;=0.30 — with the exclusion of non-SMEs accounting for ~72% of the absolute price decomposition</span>
 </div>
-
-This represents about **12% of total procurement value** for group 65 in the reduced-form back-of-envelope. The structural v6 welfare arithmetic delivers a different object — annualized rather than 18-month, structural rather than reduced-form, with explicit MCPF and Saez--Stantcheva welfare-weight treatment.
 
 ---
 
-## Raw Trends
+## 1. First-stage participation facts
+
+The mechanism operates through the bidder pool, so the participation margins
+are the key first stage. After the March 2018 cutoff, SME-only adoption in
+Group&nbsp;65 rises (state-level adherence reaches **43%**, not full coverage),
+SME participation roughly doubles, non-SME participation falls, and winning
+prices move up. Because take-up is incomplete, post-period non-SME counts stay
+positive — the first stage is a sharp change in the bidder pool, not universal
+exclusion.
+
+| Average bidders per auction | Non-pharma | Pharma |
+|---|:---:|:---:|
+| Pre: SME bidders | 0.94 | 0.55 |
+| Pre: non-SME bidders | 2.68 | 2.61 |
+| Post: SME bidders | 1.87 | 1.22 |
+| Post: non-SME bidders | 1.50 | 1.66 |
+| **Change in SME bidders** | **+0.93** | **+0.67** |
+| **Change in non-SME bidders** | **−1.18** | **−0.95** |
+
+*Group&nbsp;65 Pregão auctions, 18-month window on each side of the March 2018
+cutoff, after the structural filters ($c_\epsilon \in (0,3]$, at least 2 active
+firms). Table&nbsp;1 in the manuscript.*
+
+The price-forming order statistic moves in the same direction. A DiD on
+$\log b^{(2)}$ (the second-lowest bid, built from raw bid units with no
+reference-price normalization) is **−0.039** (SE 0.021) in non-pharmaceuticals
+and **−0.131** (SE 0.035) in pharmaceuticals, corroborating the order-statistic
+channel directly (Online Appendix OA-D.4).
+
+---
+
+## 2. Reduced-form price benchmark
+
+The DiD compares Group&nbsp;65 to **76 never-treated product groups**, with item
+and month fixed effects, auction-format and log-quantity controls, PBU controls,
+and item-clustered standard errors. The coefficient uses a *DiD-in-reverse*
+convention: a negative coefficient on Group&nbsp;65 × pre-period means the open
+regime was cheaper, so the post-cutoff SME-only extension undoes that discount.
+
+| Window around cutoff | 6 months | 12 months | 18 months |
+|---|:---:|:---:|:---:|
+| $g65 \times Pre$ on $\log p^{\mathrm{final}}$ | −0.148 | −0.108 | −0.113 |
+| Standard error | (0.014) | (0.013) | (0.012) |
+| Observations | 219,535 | 439,054 | 649,714 |
+
+*Table&nbsp;2 in the manuscript. The estimate is stable across windows and
+implies a **10–11% price movement**. Modern estimators attenuate the magnitude
+relative to TWFE (Callaway–Sant'Anna −0.017 vs. TWFE −0.108), consistent with
+the conservative role assigned to the reduced form: it verifies timing and sign,
+not the structural magnitude.*
+
+!!! note "The reduced form is a benchmark, not the headline"
+    Group&nbsp;65 is not balanced enough against the pooled controls to support a
+    reduced-form-only design (7 of 9 pre-period covariates exceed the 0.10
+    normalized-difference threshold). The DiD establishes a real first-stage
+    footprint around March 2018; the **structural decomposition** below
+    estimates the price mechanism, and the **welfare comparison** does the policy
+    work. See the [Robustness](robustness.md) page for the full threat
+    assessment.
+
+---
+
+## 3. Price decomposition: exclusion vs. protected-pool offset
+
+The set-aside changes the price-forming pool on two margins. It removes non-SMEs
+from eligible auctions (weakening the order statistic that disciplines price),
+and it changes the protected SME pool through additional participation and
+composition (pushing back). Three counterfactual auctions on the same product
+cells isolate the two channels:
+
+- **$S_1$** — open auction, pre-policy bidder pool (the benchmark).
+- **$S_2$** — SME-only, pre-policy SME pool held fixed (removes non-SMEs only).
+- **$S_3$** — SME-only, observed post-policy SME pool.
+
+The jump $S_1 \to S_2$ is the **lost competitive discipline** from excluding
+non-SMEs; the decline $S_2 \to S_3$ is the **protected-pool offset**; the
+remaining $S_1 \to S_3$ gap is the realized price cost of the set-aside.
 
 <figure>
-  <img src="../assets/figures/fig_05_trends_prices.png" alt="Raw trends: prices">
-  <figcaption>Figure A.4. Raw Trends: Mean Log Price by Month</figcaption>
+  <img src="../assets/figures/fig_decomposition.png" alt="Counterfactual price decomposition">
+  <figcaption>Figure 1. Counterfactual price decomposition. Bars report the simulated second-order statistic $E[c_{(2)}]$ normalized by the buyer reference price, for $S_1$, $S_2$, $S_3$, by product class.</figcaption>
+</figure>
+
+| Class | $S_1$ | $S_2$ | $S_3$ | $S_2{-}S_1$ (excl.) | $S_3{-}S_2$ (offset) | $S_3{-}S_1$ (net) | Abs. excl. share |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Non-pharma** | 0.774 | 1.144 | 1.000 | +0.371 | −0.144 | **+0.227** | **72.0%** |
+| Pharma *(boundary)* | 0.654 | 1.219 | 0.963 | +0.565 | −0.256 | +0.309 | 68.8% |
+
+*Table&nbsp;3 in the manuscript. Prices are simulated $E[c_{(2)}]$ normalized by
+the buyer reference price. "Abs. excl. share" is
+$|S_2-S_1| / (|S_2-S_1| + |S_3-S_2|)$.*
+
+**The protected pool responds, but exclusion dominates.** In non-pharmaceutical
+supplies, removing non-SMEs while holding the SME pool fixed raises simulated
+prices by **0.371** of the reference price; the observed post-policy SME pool
+offsets that shock by only **0.144**, leaving a net **+0.227**. The exclusion
+component is **72%** of the sum of absolute component magnitudes — the dominant
+force is the loss of the non-SME price-forming pool, not a failure of protected
+firms to respond.
+
+The ordering is not an artifact of how entry is modeled. Replacing the Poisson
+bidder-count draws with the **empirical class-period-type count distributions**
+attenuates net effects by roughly a quarter (net +0.171 non-pharma, +0.223
+pharma) but leaves the exclusion shares large (**69.4%** non-pharma, **63.1%**
+pharma; Online Appendix OA-D.2). Strict invariance — forcing the post-policy SME
+distribution to equal the pre-policy one — *raises* the exclusion share to
+**85% (non-pharma) / 79% (pharma)**.
+
+---
+
+## 4. Static welfare and the price-preference benchmark
+
+The simulated second-order statistic $c_{(2)}$ determines the government's
+payment; the winner's cost $c_{(1)}$ determines allocative efficiency. The
+static welfare loss of the full set-aside $V_0$ relative to the open benchmark
+is allocative deadweight loss plus the MCPF distortion on the extra outlay
+($\lambda = 0.30$). The benchmark $V_3$ is a static **10% SME price preference**:
+all firms remain eligible, SMEs get a 10% edge for winner selection, and the
+government pays the actual winning bid.
+
+| Class | $\Delta_{\mathrm{gov}}$ | DWL$_{\mathrm{alloc}}$ | MCPF | Loss / $p_{S_1}$ | $\Delta p$ (10% pref) | SME win gain |
+|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| **Non-pharma** | 0.247 | 0.148 | 0.074 | **28.9%** | −0.004 | +4.3 pp |
+| Pharma *(boundary)* | 0.298 | 0.207 | 0.089 | 44.8% | +0.002 | +1.4 pp |
+
+*Table&nbsp;4 in the manuscript. All quantities in reference-price units;
+$\lambda = 0.30$. Lower bootstrap endpoints remain economically large: 20.5%
+(non-pharma) and 34.9% (pharma).*
+
+- **The full set-aside is costly on both margins.** In standardized
+  non-pharmaceutical procurement the total welfare loss is **28.9%** of the
+  open-regime price.
+- **The preference preserves the price-forming pool at near-zero static cost.**
+  Holding entry and recovered primitives fixed, the simulated price effect of a
+  10% preference is essentially zero (−0.004 non-pharma), while still raising the
+  SME win-rate by 4.3 pp. Welfare costs stay negligible up to a **15%** (NP) /
+  **25%** (PH) preference, and even a 30% preference costs only 4.99% / 1.92% of
+  $p_{S_1}$.
+- **How much must the planner value SME surplus?** To prefer full exclusion to
+  the 10% preference, the planner would need to value an extra real of SME
+  surplus at more than **2.42×** a real of general surplus (non-pharma; 2.61×
+  pharma). Dynamic market-access and capacity gains are additional benefit-side
+  terms not identified by this static exercise.
+
+The comparison is therefore a **frontier, not a ranking**: set-asides buy more
+redistribution by removing rival bidders; preferences buy less redistribution
+while preserving the price-forming pool. Exclusion is warranted only when the
+planner is willing to pay for the missing competitive discipline.
+
+---
+
+## 5. Pharmaceuticals as a boundary case
+
+Pharmaceutical procurement shows the same qualitative pattern at larger
+magnitudes, but it is reported as a **boundary case**, not a second headline.
+The protected pool is thinnest there, products are most heterogeneous, and
+post-policy composition turns over most: **61.9%** of post-policy pharmaceutical
+SME firms are new (vs. 23.0% of bids in non-pharma), and the primitive-invariance
+diagnostic fails after the heterogeneity correction. Under strict invariance the
+**pharmaceutical** welfare ranking reverses while the **non-pharmaceutical**
+ranking does not — which is precisely the scope condition.
+
+---
+
+## Supporting figures
+
+<figure>
+  <img src="../assets/figures/fig_eventstudy_secondbid.png" alt="Event study: second-lowest bid">
+  <figcaption>Second-lowest-bid event study (raw bid units, no reference-price normalization). Online Appendix OA-D.4.</figcaption>
 </figure>
 
 <figure>
-  <img src="../assets/figures/fig_06_trends_firms.png" alt="Raw trends: firms">
-  <figcaption>Figure A.5. Raw Trends: Mean Log Number of Firms by Month</figcaption>
+  <img src="../assets/figures/fig_eventstudy_logpref.png" alt="Event study: log reference price">
+  <figcaption>Reference-price ($\log p^{\mathrm{ref}}$) event study. The headline price movement survives where the reference price is stable. Online Appendix OA-D.4.</figcaption>
 </figure>
 
-<figure>
-  <img src="../assets/figures/fig_07_trends_bids.png" alt="Raw trends: bids">
-  <figcaption>Figure A.6. Raw Trends: Mean Log Number of Valid Bids by Month</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_08_trends_distance.png" alt="Raw trends: distance">
-  <figcaption>Figure A.7. Raw Trends: Mean Distance (km) by Month</figcaption>
-</figure>
-
-<figure>
-  <img src="../assets/figures/fig_10_sme_share.png" alt="SME participation share">
-  <figcaption>Figure A.9. SME Participation Share Among Firms by Month</figcaption>
-</figure>
+*Data and sample: BEC administrative microdata (SEFAZ/SP). Raw extract: 3.7M
+bid-level observations across 82,569 items, 832,984 purchase orders, and 1,344
+public buyer units. Structural sample: 297,967 firm-auction observations across
+97,993 Group&nbsp;65 Pregão auctions (48,740 pre / 49,253 post), September 2016 –
+August 2019.*

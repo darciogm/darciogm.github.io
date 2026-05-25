@@ -33,14 +33,14 @@ In **standardized non-pharmaceutical** procurement, the protected pool responds 
 
 ## Institutional Background
 
-Since 2005, all public buyer units (PBUs) in the state of Sao Paulo have been required to purchase common goods and services through **Bolsa Eletronica de Compras (BEC)**, an electronic procurement platform. In 2014, the federal SME law made it mandatory to execute exclusive public tenders for SMEs for items valued at R\$80,000 or less.
+Since 2005, all public buyer units (PBUs) in São Paulo state procure common goods and services through **Bolsa Eletrônica de Compras (BEC)**, the centralized electronic platform. Brazil's federal SME statute (LC 123/2006) requires exclusive SME tenders for items valued at **R\$80,000 or less**, and LC 147/2014 made the SME-only rule mandatory. For most goods on BEC, that rule already operated before the period studied here.
 
-However, between 2014 and 2018, the state of Sao Paulo exempted **group 65** (medical, dental, and hospital supplies) from this requirement, based on a joint agreement that health items were strategic goods warranting open competition. In **March 2018**, a legal opinion from PGE-SP reversed this interpretation, subjecting group 65 to the same SME-favoring rules as all other product groups.
+**Group 65** (medical, dental, and hospital equipment and supplies) was different for a *legal* reason, not a market one. The prevailing interpretation applied the R\$80,000 threshold to the **total value of the purchase notice**, not to each item. Because medical-supply notices bundle many individually small items inside large purchase orders, the total-notice reading kept many individually eligible items *outside* the SME-only default. A sequence of administrative acts moved them in: BEC enabled SME-only functionality (COMUNICADO BEC 02/2017, July 2017), and **PGE-SP Parecer 151/2017** (December 2017) held that the R\$80,000 threshold applies **item-by-item** regardless of the total notice value. The operational cutoff is **March 2018**, when Group&nbsp;65 buyer units began mass take-up of the functionality; TCE-SP ratified the new reading in May 2018, after the cutoff. The trigger was legal and administrative — not a medical-supply policy, a price intervention, or a technology shock.
 
-| Groups | Before March 2018 | After March 2018 |
-|--------|-------------------|-------------------|
-| Group 65 (switched) | Opt-out costs = 0 | Opt-out costs > 0 |
-| Others (always treated) | Opt-out costs > 0 | Opt-out costs > 0 |
+| Group | Before March 2018 | After March 2018 |
+|---|---|---|
+| Group 65 (switched) | Open competition (threshold applied to total notice) | SME-only default (threshold applied item-by-item) |
+| Other groups (always treated) | SME-only default | SME-only default |
 
 ---
 
@@ -49,36 +49,62 @@ However, between 2014 and 2018, the state of Sao Paulo exempted **group 65** (me
 | Feature | Detail |
 |---------|--------|
 | **Source** | BEC administrative records (SEFAZ/SP) |
-| **Coverage** | All standardized goods procurement in Sao Paulo state |
-| **Period** | January 2016 -- December 2019 |
-| **PBUs** | 1,344 public buyer units |
-| **Items** | 82,569 distinct items across 76 groups |
-| **Transactions** | 832,984 successful transactions |
-| **Treatment group** | Group 65 (medical/hospital supplies, ~27% of purchases) |
-| **Treatment date** | March 2018 |
+| **Coverage** | All standardized goods procurement in São Paulo state |
+| **Period** | 18-month structural window **Sep 2016 – Aug 2019** (each side of the March 2018 cutoff); broader reduced-form panel spans 2016–2019 |
+| **Raw extract** | 3.7M bid-level observations; 1,344 PBUs; 82,569 items; 832,984 purchase orders |
+| **Treatment group** | Group 65 (medical/hospital supplies, ~27% of platform transactions) |
+| **Controls** | 76 never-treated product groups (reduced-form benchmark) |
+| **Structural sample** | 297,967 firm-auction obs across 97,993 Group 65 Pregão auctions (48,740 pre / 49,253 post) |
+| **Treatment date** | March 2018 (operational mass take-up) |
 
 ---
 
 ## Empirical Strategy
 
-The identification strategy exploits the timing of the policy change (March 2018) that affected only group 65, using a **difference-in-differences in reverse (DiDiR)** design. DiDiR identifies pre-switch-period effects by comparing the switched group (group 65) with the always-treated group (all other groups).
+The argument rests on **three pieces of evidence that carry separate
+identifying weight**. A weakness in one does not mechanically overturn the
+others; it changes which interpretation the evidence can support.
 
-The main specification is:
+### 1. Reduced-form benchmark (timing, sign, scale)
+
+A difference-in-differences compares Group&nbsp;65 to 76 never-treated product
+groups around March 2018, written in a *DiD-in-reverse* convention (a negative
+pre-period coefficient is the open-regime discount that disappears under the
+SME-only extension):
 
 $$y_{pigt} = \eta_i + \gamma\,\text{Pre}_t + \beta\,(g65_{pgt} \times \text{Pre}_t) + x\,\delta + \varepsilon_{pigt}$$
 
-where:
+where $\eta_i$ are item fixed effects, $\text{Pre}_t = 1$ before March 2018,
+$g65$ marks Group&nbsp;65, $x$ includes log quantity and tender format, and
+errors are item-clustered. The 18-month coefficient is **−0.113** (a 10–11%
+price movement), stable across 6-, 12-, and 18-month windows. This benchmark is
+**not** asked to carry the structural magnitude — it verifies that the
+institutional episode left the predicted footprint in timing and sign.
 
-- $y$ is the outcome (log price, log firms, log bids, or distance)
-- $\eta_i$ are item fixed effects
-- $\text{Pre}_t = 1$ if month < March 2018
-- $g65_{pgt} = 1$ if item belongs to group 65
-- $x$ includes log quantity and tender type (sealed bid/auction)
-- $\varepsilon_{pigt}$ is clustered at the item level
+### 2. Structural price-formation decomposition (the mechanism)
 
-The coefficient $\beta$ captures the pre-switch-period effect of the SME policy on group 65 outcomes.
+The core of the paper. In the Pregão (English-reverse auction), losing bidders'
+drop-out prices reveal type-specific willingness to supply under the maintained
+IPV-clock interpretation. Recovering type-specific cost distributions (with a
+Krasnokutskaya-style auction-level heterogeneity correction) and using observed
+equilibrium entry, the set-aside price effect is simulated under three
+counterfactual bidder pools and decomposed:
 
-**Time windows:** 6 months (Sep 2017--Aug 2018), 12 months (Mar 2017--Feb 2019), and 18 months (Sep 2016--Aug 2019).
+$$\underbrace{p_{S_3}-p_{S_1}}_{\text{net set-aside effect}} = \underbrace{p_{S_2}-p_{S_1}}_{\Delta^{\text{excl}}\ \text{lost discipline}} + \underbrace{p_{S_3}-p_{S_2}}_{\Delta^{\text{pool}}\ \text{protected-pool offset}}$$
+
+This conditions on within-period type-specific primitives and equilibrium bidder
+counts, so it requires **neither** cross-group balance **nor** the DiD
+magnitude. See [Results](results.md) for the decomposition.
+
+### 3. Static welfare comparison (the policy)
+
+Mapping the recovered primitives into allocative deadweight loss, the MCPF
+distortion ($\lambda = 0.30$), and SME producer surplus (Saez–Stantcheva
+weights), the full set-aside $V_0$ is compared to a static **10% price
+preference** $V_3$ that preserves the non-SME price-forming pool.
+
+**Time windows:** 6 months (Sep 2017–Aug 2018), 12 months (Mar 2017–Feb 2019),
+and 18 months (Sep 2016–Aug 2019).
 
 ---
 
