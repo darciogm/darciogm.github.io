@@ -24,13 +24,16 @@ design:
 !!! abstract "Intuition (plain-language)"
     Larger non-SME firms can ship farther, so opening the auction pulls the winning supplier about 12 km farther from the buyer — but only on high-value items, where a large order covers the extra freight. On small orders distance is flat. Geography is the visible signature of larger firms re-entering the pool.
 
-!!! info "Reduced-form motivation layer"
-    The numbers below are from the v1–v4 reduced-form DiDiR pipeline
-    (`scripts/02_analysis.R` + companions), which the v8 manuscript
-    carries as **motivation** in §1 but does not headline. The canonical
-    v8 result is the structural counterfactual decomposition — see
-    [AN-010](an-010-bne-decomposition.md) (decomposition) and
-    [AN-011](an-011-welfare-arithmetic.md) (welfare arithmetic).
+!!! info "Reduced-form descriptive (not in the v8 manuscript)"
+    Distance is a v1–v4 reduced-form outcome (`scripts/02_analysis.R` →
+    `tab_distance.tex`). The v8 manuscript does **not** carry distance: it is
+    a site-level descriptive that documents the *geographic signature* of
+    larger non-SME firms re-entering the pool under open competition — the
+    visible counterpart to the first-stage participation facts
+    ([AN-002](an-002-didir-firms-bids.md), Table 1). The canonical policy
+    result is the structural decomposition ([AN-010](an-010-bne-decomposition.md))
+    and welfare arithmetic ([AN-011](an-011-welfare-arithmetic.md)). See the
+    finding [Distant suppliers enter](../findings/distant-suppliers-enter.md).
 
 ## Question
 

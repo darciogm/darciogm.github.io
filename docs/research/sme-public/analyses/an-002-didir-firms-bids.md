@@ -67,6 +67,17 @@ with similar magnitude attenuation across windows.
 Output: `output/tables/tab_participants.tex`,
 `output/tables/tab_validbids.tex`.
 
+!!! note "Maps to the v8 first stage (Table 1)"
+    This aggregate count is the *net* of two by-type moves that the v8
+    structural first stage (Table 1) reports separately. In the
+    non-pharmaceutical structural sample, SME bidders rise from 0.94 to 1.87
+    per auction while non-SMEs fall from 2.68 to 1.50 (pharma: SME 0.55 → 1.22,
+    non-SME 2.61 → 1.66). Open competition therefore fields *more* total
+    bidders than the SME-only counterfactual — consistent with the positive
+    reduced-form coefficient here. The reduced-form DiD cannot separate SME
+    *entry* from non-SME *removal*; the structural decomposition does
+    ([AN-010](an-010-bne-decomposition.md)).
+
 ## Interpretation
 
 The 6-month estimate implies ~22% more firms in switched group 65 under

@@ -7,13 +7,13 @@ question: Do placebo treatment dates applied to pre-treatment data yield null pr
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "Pre-treatment placebos on prices are small and statistically insignificant (β ≈ −0.0145 at Sep 2017, +0.0206 at Mar 2017), directly supporting parallel trends; firm-count and bid-count placebos are significant but reflect the control groups' gradual SME-restriction rollout, not a group-65-specific shock."
+headline: "Pre-reform price placebos are small relative to the real cutoff: the v8 benchmark reports −0.013 (Sep 2017), −0.030 (Mar 2017), and −0.034 (Jun 2017), all far below the −0.108 to −0.142 real-cutoff range, supporting parallel trends on the price margin. Firm- and bid-count placebos fire but reflect the control groups' gradual SME-restriction rollout, not a Group-65-specific shock."
 created: 2026-05-21
 script: scripts/05_robustness.R
 target: output/tables/tab_placebo.tex
 tags: ["H:parallel-trends-hold", placebo, parallel-trends, robustness, item-cluster]
 design:
-  sample: "Pre-treatment data only (Sep 2016 – Feb 2018); fake treatment dates Sep 2017 and Mar 2017"
+  sample: "Pre-treatment data only; placebo cutoffs Sep 2017, Mar 2017, and Jun 2017"
   specification: "y = η_i + γ Pre_fake + β (g65 × Pre_fake) + controls + ε; item-clustered SE"
   fixed_effects: "item"
   cluster: "item"
@@ -24,54 +24,64 @@ design:
 !!! abstract "Intuition (plain-language)"
     If the price jump were really a pre-existing trend, then pretending the policy happened on an earlier (fake) date would also 'find' an effect. It does not — placebo price effects are tiny and insignificant — which supports parallel trends. The firm- and bid-count placebos that do fire reflect the controls' gradual SME rollout, not a Group-65-specific shock.
 
-!!! info "Reduced-form motivation layer"
-    The numbers below are from the v1–v4 reduced-form DiDiR pipeline
-    (`scripts/02_analysis.R` + companions), which the v8 manuscript
-    carries as **motivation** in §1 but does not headline. The canonical
-    v8 result is the structural counterfactual decomposition — see
+!!! info "Reduced-form benchmark layer"
+    The price placebos below are the v8 canonical numbers reported in §5.1
+    (reduced-form robustness), which the manuscript uses to discipline the
+    timing-and-sign benchmark — not the headline. The canonical policy result
+    is the structural counterfactual decomposition — see
     [AN-010](an-010-bne-decomposition.md) (decomposition) and
     [AN-011](an-011-welfare-arithmetic.md) (welfare arithmetic).
 
 ## Question
 
-If the main DiDiR coefficient ([AN-001](an-001-didir-prices.md)) were
+If the reduced-form price benchmark ([AN-001](an-001-didir-prices.md)) were
 driven by a differential pre-existing trend in group 65, applying the
 same specification with a *fake* treatment date inside the pre-period
-should detect that trend. A null placebo coefficient on prices supports
-parallel trends; a significant one does not.
+should detect that trend. A small placebo coefficient on prices supports
+parallel trends; a large one does not.
 
 ## Design
 
-- **Sample**: pre-treatment data only (Sep 2016 – Feb 2018), restricted
-  to ensure the fake post-period stays inside the pre-period.
-- **Variation**: fake treatment dates Sep 2017 and Mar 2017; the DiDiR
-  specification is applied with these dates substituted for March 2018.
-- **Specification**: same as [AN-001](an-001-didir-prices.md) but with
-  the fake date.
-- **Outcomes**: log prices, log firms, log valid bids, distance.
+- **Sample**: pre-treatment data only, restricted to ensure the fake
+  post-period stays inside the pre-period.
+- **Variation**: placebo cutoffs Sep 2017, Mar 2017, and Jun 2017,
+  substituted for the real March 2018 cutoff.
+- **Specification**: the reduced-form DiD on $\log p^{\mathrm{final}}$.
+- **Outcomes**: log prices (primary); log firms, log valid bids, distance
+  reported in the broader reduced-form battery below.
 - **Identification threats**: cost shocks or trends inside the pre-period
   itself.
 
 ## Results
 
-| Outcome | Sep 2017 β | Mar 2017 β | N (Sep 2017) | N (Mar 2017) |
-|---|---:|---:|---:|---:|
-| Log prices | −0.0145 (0.0149) | +0.0206* (0.0112) | 311,883 | 215,611 |
-| Log firms  | −0.1038*** (0.0063) | −0.1346*** (0.0070) | 364,500 | 252,478 |
-| Log bids   | −0.1363*** (0.0092) | −0.1343*** (0.0106) | 364,500 | 252,478 |
-| Distance   | +3.7807 (2.4452) | −1.2018 (2.9144) | 311,883 | 215,611 |
+Canonical v8 price placebos (§5.1), in the same DiD-in-reverse sign
+convention as the real cutoff:
 
-*Item FE; item-clustered SE. \*\*\* p<0.01, \* p<0.10.*
+| Placebo cutoff | $g65 \times Pre$ on $\log p^{\mathrm{final}}$ |
+|---|---:|
+| Sep 2017 | −0.013 |
+| Mar 2017 | −0.030 |
+| Jun 2017 | −0.034 |
+| **Real cutoff (Mar 2018)** | **−0.108 to −0.142** |
 
-Output: `output/tables/tab_placebo.tex`.
+*The placebo coefficients are far smaller in magnitude than the real-cutoff
+range, supporting parallel trends on the price margin.*
+
+!!! note "Earlier reduced-form pipeline (fuller battery)"
+    The v1–v4 pipeline (`scripts/05_robustness.R` → `tab_placebo.tex`) ran a
+    two-date × four-outcome placebo battery. Its price placebos were −0.0145
+    (Sep 2017) and +0.0206 (Mar 2017) — slightly different point estimates
+    from the v8 spec but the same qualitative conclusion (small, near-zero on
+    the price margin). The firm- and bid-count placebos were significant and
+    negative (e.g. log firms −0.104/−0.135; log bids −0.136/−0.134 at
+    Sep/Mar 2017), and the distance placebo was null (+3.8 / −1.2 km).
 
 ## Interpretation
 
-The price-margin placebo is null at both fake dates: the Sep 2017
-coefficient is small (~1.5% in magnitude) and statistically insignificant,
-the Mar 2017 coefficient is borderline (p~0.07) but small relative to
-the main estimate (~13%). This is the load-bearing piece supporting
-parallel trends on the price margin.
+The price-margin placebos are small relative to the real cutoff: all three
+pre-reform dates (−0.013, −0.030, −0.034) sit far below the −0.108 to −0.142
+real-cutoff range (~10–11% movement). This is the load-bearing piece
+supporting parallel trends on the price margin.
 
 The firm-count and bid-count placebos are significant — but the *direction*
 is informative. Both go in the *same* direction (negative) as the main
