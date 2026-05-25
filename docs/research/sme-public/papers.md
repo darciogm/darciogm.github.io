@@ -102,12 +102,16 @@ distribution (69%). Pharmaceutical procurement is reported as a
 
 ---
 
-## 2. Five follow-up paper ideas using the same data
+## 2. Seven follow-up paper ideas using the same data
 
-The five ideas below are ordered by **overlap with the current paper**,
+The seven ideas below are ordered by **overlap with the current paper**,
 from highest to none. Two extend the set-aside / price-formation
-framework directly; the rest take the BEC + RAIS + CMED + IBGE data
-lake into different research programs.
+framework directly (2.1–2.2); the rest take the BEC + RAIS + CMED + IBGE
+data lake into different research programs. The last two (2.6–2.7) are
+**fully disjoint** from the current paper — no set-aside, no
+price-formation decomposition, no set-aside-versus-preference frontier —
+and pose entirely different research questions (bureaucratic capacity;
+fiscal-year budget cycles) on the same data substrate.
 
 ### Idea 2.1 — Do Set-Asides Build SME Capacity? The Dynamic Case for Exclusion
 
@@ -302,6 +306,88 @@ pharmaceutical sector is the headline rather than the caveat.
 
 ---
 
+### Idea 2.6 — Who Buys Well? Bureaucratic Capacity and Procurement Performance Across 1,344 Buyers
+
+**Overlap with current paper:** **None** — the unit of analysis and the
+object of study are the *buyer*, not the auction rule or SME eligibility.
+
+**Central question:** Holding the good fixed, procurement outcomes vary
+enormously across buyer units. How much of the variation in prices paid,
+competition attracted, and tender success is attributable to the *buyer* —
+its organizational capacity and the people who run it — rather than to what
+is bought? Do more capable buyers obtain systematically lower prices and
+more bidders for the same item, and which observable capacity proxies
+predict effectiveness?
+
+**Empirical strategy:** Decompose item-level outcomes (price relative to
+the reference, number of bidders, completion) into product, time, and
+buyer (PBU) components on the 1,344-PBU panel. Identify buyer
+effectiveness through a connected-set / movers design where the data
+support it (PBUs linked by shared items over time; if procurement
+officials can be tracked across PBUs, an AKM-style mover decomposition in
+the spirit of Best–Hjort–Szakonyi 2023). Relate the estimated buyer
+effects to capacity proxies (purchase volume, experience, centralization,
+turnover). Anchors: Bandiera–Prat–Valletti (2009, *AER*),
+Bandiera–Best–Khan–Prat (2021, *QJE*), Best–Hjort–Szakonyi (2023, *AER*).
+
+**Data reuse:** BEC full panel (no new data); optional RAIS linkage if
+official identifiers are recoverable. ~10–12 weeks; the main lift is the
+connected-set / movers decomposition and the capacity proxies.
+
+**Target journals:**
+
+| Tier | Journal | R&R prob. | Rationale |
+|:-:|---|:-:|---|
+| 1 | **J. of Public Economics** | 30–40% | State capacity and waste in government spending is JPubE-core (the Bandiera–Prat–Valletti lineage). The binding cap is cleanly separating buyer *effectiveness* from buyer-specific selection of what they buy. |
+| 2 | **AEJ: Policy** | 30–40% | Procurement-performance heterogeneity with a real policy lever (which buyers to support or centralize) fits AEJ:Policy. |
+| 3 | **JLEO** (J. of Law, Economics & Organization) | 40–50% | The organizational-capacity angle and within-bureaucracy variation are a strong, more reachable JLEO fit. |
+
+**Differentiator:** the contribution is a buyer-effectiveness ledger; the
+auction-welfare machinery of the current paper is entirely absent. It asks
+*who* procures well and why, not *which rule* prices the contract.
+
+---
+
+### Idea 2.7 — Use It or Lose It: Fiscal-Year Cycles and Year-End Spending in Procurement
+
+**Overlap with current paper:** **None** — a public-finance / budget-institutions
+question about *when* money is spent, orthogonal to set-asides and to price
+formation.
+
+**Central question:** Annual budgets that do not roll over create an
+incentive to exhaust funds before year-end. Does São Paulo state
+procurement show the Liebman–Mahoney (2017) year-end spending surge — and
+is the rush *wasteful*? Do December tenders pay more relative to the
+reference price, attract fewer bidders, or complete worse than otherwise
+identical tenders earlier in the year? What is the implied efficiency cost
+of expiring budgets?
+
+**Empirical strategy:** Use the precise BEC timestamps to build a
+within-year spending profile by PBU. Test for an end-of-fiscal-year volume
+spike and, conditional on the item, whether year-end tenders pay a premium
+over the reference price, draw fewer bidders, and differ in completion.
+Exploit cross-PBU variation in budget rigidity and the fiscal calendar;
+benchmark the realized year-end premium against the Liebman–Mahoney federal
+estimate (last-week spending ≈ 4.9× the rest-of-year weekly average; lower
+year-end quality). Anchor: Liebman–Mahoney (2017, *AER*).
+
+**Data reuse:** BEC timestamps + reference prices + completion status (all
+in hand); no new data. ~8–10 weeks.
+
+**Target journals:**
+
+| Tier | Journal | R&R prob. | Rationale |
+|:-:|---|:-:|---|
+| 1 | **J. of Public Economics** | 35–45% | Use-it-or-lose-it wasteful year-end spending is squarely JPubE public finance; Liebman–Mahoney is the template, and a non-US, state-level replication with explicit price/competition/completion margins is a clean contribution. |
+| 2 | **AEJ: Policy** | 35–45% | Budget-institution design (rollover rules) with a measurable efficiency cost is a strong AEJ:Policy fit. |
+| 3 | **National Tax Journal** | 50–60% | Budget-cycle and public-budgeting work is a reachable, high-fit NTJ target. |
+
+**Differentiator:** the identifying variation is the fiscal calendar, not
+the auction rule or SME eligibility; the contribution is a budget-institution
+efficiency cost, and the paper's auction-welfare decomposition is absent.
+
+---
+
 ## Summary: portfolio view
 
 | Idea | Overlap | Top journal | Top R&R |
@@ -312,19 +398,26 @@ pharmaceutical sector is the headline rather than the caveat.
 | 2.3 Local economic development | Low | J. Economic Geography | 50–60% |
 | 2.4 Reference-price anchoring | None | IJIO | 45–55% |
 | 2.5 CMED price ceilings | None | J. Health Economics | 35–45% |
+| 2.6 Bureaucratic capacity | None | JLEO | 40–50% |
+| 2.7 Year-end spending | None | National Tax Journal | 50–60% |
 
 The portfolio mixes:
 
-- **Highest R&R targets**: J. of Economic Geography (Idea 2.3, smaller
-  but high-fit), then IJIO (Idea 2.4), then AEJ:Policy / AEJ:Applied
+- **Highest R&R targets**: National Tax Journal (Idea 2.7, ~50–60%) and
+  J. of Economic Geography (Idea 2.3, smaller but high-fit), then IJIO
+  (Idea 2.4) and JLEO (Idea 2.6), then AEJ:Policy / AEJ:Applied
   (Ideas 2.1, 2.2).
 - **Most coherent pairing**: Idea 2.1 (dynamic capacity-building) is
   the direct counterpart to the current paper's static-only welfare and
   is the cleanest sequel.
-- **Cleanest reach**: J. of Economic Geography (Idea 2.3) and the IJIO
-  targets (2.2, 2.4) at ~50% with good positioning.
-- **Disjoint papers** (2.4 and 2.5) avoid cannibalizing the current
-  paper's contribution, at the cost of more data assembly.
+- **Cleanest reach**: J. of Economic Geography (Idea 2.3), National Tax
+  Journal (2.7), and the IJIO targets (2.2, 2.4) at ~50% with good
+  positioning.
+- **Fully disjoint papers** (2.4, 2.5, 2.6, 2.7) avoid cannibalizing the
+  current paper's contribution, at the cost of more data assembly. The two
+  newest (2.6 bureaucratic capacity, 2.7 year-end spending) are the
+  cleanest intellectual breaks: they share only the data substrate, not
+  the set-aside / price-formation frame.
 
 **Sequencing recommendation:** complete the current paper's R&R cycle
 first; then pursue Idea 2.1 (Dynamic capacity-building) as the natural
@@ -336,4 +429,4 @@ competing intellectually with the current paper.
 
 ---
 
-*Last updated: 2026-05-23*
+*Last updated: 2026-05-25*
