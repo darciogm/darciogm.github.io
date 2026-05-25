@@ -77,7 +77,7 @@
   status: done
   type: descriptive
   question: When the same buyer buys the same item under both urgent regimes, does the set of winning suppliers change?
-  confidence: yellow
+  confidence: green
   tags: ["H:supplier-set-reallocation", winner-switching, sourcing, supplier-set, descriptive]
   file: docs/analyses/an-006-winner-switching.md
   script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
@@ -88,7 +88,7 @@
   status: done
   type: robustness
   question: Does the administrative-minus-litigated urgent-price gap survive wild-cluster bootstrap inference when the number of purchasing-buyer-units (PBU) clusters is small and uneven?
-  confidence: yellow
+  confidence: green
   tags: ["H:utg-gap-selection-bounded", wild-cluster-bootstrap, inference, robustness, utg-contrast]
   file: docs/analyses/an-007-wild-cluster-bootstrap.md
   script: v10-causal-mechanism/analysis/44_wild_bootstrap.R
@@ -143,8 +143,19 @@
   status: done
   type: descriptive
   question: How accurately does the urgency classifier label purchase orders, validated against a ground-truth set, and does any residual error bias the regime contrasts?
-  confidence: yellow
+  confidence: green
   tags: [classifier, validation, measurement, descriptive]
   file: docs/analyses/an-012-classifier-validation.md
   script: v10-causal-mechanism/analysis/49_classifier_macros.py
   target: v10-causal-mechanism/output/tables/tab_classifier_validation_v9.tex
+
+- id: an-013
+  hypothesis: placebo-and-dynamics
+  status: done
+  type: placebo
+  question: Does the never-litigated placebo remain null inside buyer-by-class environments that also contain litigated purchases?
+  confidence: green
+  tags: ["H:placebo-and-dynamics", placebo, specificity, buyer-class, robustness]
+  file: docs/analyses/an-013-litigation-specificity-placebos.md
+  script: v10-causal-mechanism/analysis/65_h7_specificity_placebos.R
+  target: v10-causal-mechanism/output/tables/tab_h7_placebo_battery.tex

@@ -6,7 +6,7 @@ type: descriptive
 question: When the same buyer buys the same item under both urgent regimes, does the set of winning suppliers change?
 status: done
 status_date: 2026-05-24
-confidence: yellow
+confidence: green
 headline: "Across 2,134 buyer×item pairs, winner-set Jaccard similarity is 0.268; 48.5% share no winners and the modal winner differs in 70.2% of pairs."
 created: 2026-05-24
 script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
@@ -77,13 +77,13 @@ within-firm pricing margin in [AN-003](an-003-within-firm-pricing.md), it
 supports the core reading that in deep repeated urgent markets the cost margin is
 fragmented sourcing rather than a broad same-firm markup.
 
-Confidence: **yellow.** This is a descriptive within-pair comparison, not an
-identification design — it documents that the supplier set changes but does not,
-on its own, attribute the change to litigation versus the selected composition of
-the two channels. The administrative urgent channel is the selected, larger,
-closest feasible urgent-procurement comparison rather than a random or clean
-counterfactual. The reading is yellow because the evidence is single-jurisdiction
-(São Paulo BEC) and from own-project runs.
+Confidence: **green for the stated descriptive question.** The analysis directly
+measures whether the winning supplier set changes within buyer-item pairs
+observed under both urgent regimes, and the answer is large: low Jaccard
+similarity, many zero-overlap pairs, and a different modal winner in most pairs.
+This is not a causal identification design and does not make the administrative
+channel random; the green rating is only for the descriptive supplier-set
+reallocation fact.
 
 ## Follow-ups
 

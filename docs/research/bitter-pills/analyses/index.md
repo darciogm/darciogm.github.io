@@ -33,9 +33,10 @@ Each `an-NNN-<slug>.md` follows the same skeleton:
 **Status.** `pending` (scaffolded, not yet run or interpreted) → `done` (script
 run, headline + interpretation written, confidence set) → `stale` (superseded).
 
-**Confidence.** 🟢 green (clean identification, robust), 🟡 yellow (informative
-with caveats), 🔴 red (kept for the record only). Every analysis here is 🟡:
-single-jurisdiction São Paulo BEC, own-project runs, no independent replication.
+**Confidence.** 🟢 green (direct and robust for the stated question), 🟡 yellow
+(informative with caveats), 🔴 red (kept for the record only). Green does not
+mean cross-jurisdiction confirmed; it means the specific analysis answers its
+narrow design question cleanly.
 
 ---
 
@@ -53,13 +54,14 @@ and lives at
 | [AN-003](an-003-within-firm-pricing.md) | done · 🟡 | causal | [H:no-broad-same-firm-markup](../hypotheses/no-broad-same-firm-markup.md) | Within the same firm, buyer, and item observed under both urgent regimes, does the same supplier charge a sanctioned buyer more? |
 | [AN-004](an-004-market-depth-heterogeneity.md) | done · 🟡 | robustness | [H:thin-market-supplier-leverage](../hypotheses/thin-market-supplier-leverage.md) | Does the under-the-gun gap vary by formulary status and market depth, as the deep-market interpretation predicts? |
 | [AN-005](an-005-pricing-sourcing-decomposition.md) | done · 🟡 | descriptive | [H:lost-scale](../hypotheses/lost-scale.md) | How does the observed administrative-minus-litigated price gap decompose into a quantity/scale component, a within-firm pricing component, and a supplier-composition residual? |
-| [AN-006](an-006-winner-switching.md) | done · 🟡 | descriptive | [H:supplier-set-reallocation](../hypotheses/supplier-set-reallocation.md) | Across urgent regimes within item-buyer pairs, how often does the winning supplier set change? |
-| [AN-007](an-007-wild-cluster-bootstrap.md) | done · 🟡 | robustness | [H:utg-gap-selection-bounded](../hypotheses/utg-gap-selection-bounded.md) | Does the under-the-gun gap survive Rademacher wild-cluster bootstrap inference given few and uneven PBU clusters? |
+| [AN-006](an-006-winner-switching.md) | done · 🟢 | descriptive | [H:supplier-set-reallocation](../hypotheses/supplier-set-reallocation.md) | Across urgent regimes within item-buyer pairs, how often does the winning supplier set change? |
+| [AN-007](an-007-wild-cluster-bootstrap.md) | done · 🟢 | robustness | [H:utg-gap-selection-bounded](../hypotheses/utg-gap-selection-bounded.md) | Does the under-the-gun gap survive Rademacher wild-cluster bootstrap inference given few and uneven PBU clusters? |
 | [AN-008](an-008-placebo-never-litigated.md) | done · 🟡 | placebo | [H:placebo-and-dynamics](../hypotheses/placebo-and-dynamics.md) | Do never-litigated items reproduce the urgent-procurement price pattern, as a generic platform/time-trend explanation would require? |
 | [AN-009](an-009-aggregation-cells.md) | done · 🟡 | robustness | [H:lost-scale](../hypotheses/lost-scale.md) | Within common buyer-item-month cells, do administrative and litigated urgent purchases differ in total quantity and repeated demands? |
 | [AN-010](an-010-dynamic-bjs-honestdid.md) | done · 🟡 | robustness | [H:placebo-and-dynamics](../hypotheses/placebo-and-dynamics.md) | What do the BJS event study and Honest-DiD sensitivity say about the timing of the litigated-urgency price pattern? |
 | [AN-011](an-011-procurement-cost.md) | done · 🟡 | descriptive | — | What is the annual fiscal procurement-cost implication of the bounded under-the-gun gap, and how sensitive is it to the admissibility and spending calibration? |
-| [AN-012](an-012-classifier-validation.md) | done · 🟡 | descriptive | — | How accurately does the regime classifier recover judicial and administrative urgent purchases against ground-truth purchase orders? |
+| [AN-012](an-012-classifier-validation.md) | done · 🟢 | descriptive | — | How accurately does the regime classifier recover judicial and administrative urgent purchases against ground-truth purchase orders? |
+| [AN-013](an-013-litigation-specificity-placebos.md) | done · 🟢 | placebo | [H:placebo-and-dynamics](../hypotheses/placebo-and-dynamics.md) | Does the never-litigated placebo remain null inside buyer-by-class environments that also contain litigated purchases? |
 
 ---
 

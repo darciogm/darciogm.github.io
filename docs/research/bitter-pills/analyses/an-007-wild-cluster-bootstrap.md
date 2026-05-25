@@ -6,7 +6,7 @@ type: robustness
 question: Does the administrative-minus-litigated urgent-price gap survive wild-cluster bootstrap inference when the number of purchasing-buyer-units (PBU) clusters is small and uneven?
 status: done
 status_date: 2026-05-24
-confidence: yellow
+confidence: green
 headline: "Rademacher wild-cluster bootstrap continues to reject a zero administrative-minus-litigated gap: p=0.0080 in the preferred item+year+PBU specification and p=0.0390 under tighter item-by-year-month fixed effects."
 created: 2026-05-24
 script: v10-causal-mechanism/analysis/44_wild_bootstrap.R
@@ -58,18 +58,13 @@ Output: `v10-causal-mechanism/output/tables/tab_utg_boottest.tex`.
 
 ## Interpretation
 
-Confidence: **yellow.** Under the preferred item+year+PBU specification
-the wild-cluster bootstrap rejects a zero gap at p=0.0080; the tighter
-item-by-year-month specification still rejects at p=0.0390. Both
-continue to reject a zero administrative-minus-litigated gap once
-inference accounts for the small, uneven cluster count. The bootstrap
-disciplines inference only; it does not address selection into the
-litigated regime. Selection is handled separately by the Lee bounds
-(see [AN-002: Lee bounds](an-002-lee-bounds.md)). The reading
-is yellow because the evidence is from a single jurisdiction (São Paulo
-BEC) and rests on own project runs, and because the administrative
-urgent channel is the closest feasible urgent-procurement comparison,
-not a random one.
+Confidence: **green for the stated inference question.** Under the preferred
+item+year+PBU specification the wild-cluster bootstrap rejects a zero gap at
+p=0.0080; the tighter item-by-year-month specification still rejects at
+p=0.0390. The analysis directly addresses the small, uneven PBU-cluster concern
+and the result survives that stress test. The bootstrap disciplines inference
+only; it does not address selection into the litigated regime, which is handled
+separately by the Lee bounds in [AN-002](an-002-lee-bounds.md).
 
 ## Follow-ups
 

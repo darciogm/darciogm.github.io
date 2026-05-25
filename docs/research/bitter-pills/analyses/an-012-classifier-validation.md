@@ -5,7 +5,7 @@ type: descriptive
 question: How accurately does the urgency classifier label purchase orders, validated against a ground-truth set, and does any residual error bias the regime contrasts?
 status: done
 status_date: 2026-05-24
-confidence: yellow
+confidence: green
 headline: "Across 764,362 classified purchase orders, validation against 179,148 ground-truth orders shows 98.6% exact agreement; urgent-class F1 is 0.93 (judicial) and 0.96 (administrative), macro-F1 0.94; residual misclassification would attenuate, not inflate, regime contrasts."
 created: 2026-05-24
 script: v10-causal-mechanism/analysis/49_classifier_macros.py
@@ -56,17 +56,14 @@ Output: `v10-causal-mechanism/output/tables/tab_classifier_validation_v9.tex`.
 
 ## Interpretation
 
-Confidence: **yellow.** The urgency classifier reaches 98.6% exact
-agreement against 179,148 ground-truth purchase orders, with urgent-class
-F1 of 0.93 for the judicial class and 0.96 for the administrative class,
-and a macro-F1 of 0.94. The classifier operates at the purchase-order and
-tender-notice level, whereas the empirical analysis is at the POI level
-and price regressions use accepted winning bids; the 764,362 classified
-orders exceed the 479,330 POI analysis file because classification is
-upstream of item-level linkage. Any remaining misclassification would
-blur the regimes together and so would attenuate, not inflate, the regime
-contrasts. The reading is yellow because the validation is from a single
-jurisdiction (São Paulo BEC) and rests on own project runs.
+Confidence: **green for measurement validity.** The urgency classifier reaches
+98.6% exact agreement against 179,148 ground-truth purchase orders, with
+urgent-class F1 of 0.93 for the judicial class and 0.96 for the administrative
+class, and a macro-F1 of 0.94. The classifier operates upstream of the POI
+analysis file, and remaining misclassification would blur regimes together,
+attenuating rather than inflating regime contrasts. This does not make the
+substantive estimates causal, but the regime-label measurement check itself is
+strong.
 
 ## Follow-ups
 

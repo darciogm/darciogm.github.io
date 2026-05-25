@@ -5,8 +5,8 @@ slug: placebo-and-dynamics
 title: "The urgent-procurement pattern is specific to litigated items; dynamic evidence is diagnostic, not the primary design"
 cluster: D
 paper_section: "§5 + Appendix"
-status: supported
-last_updated: 2026-05-24
+status: partial (strongly supported)
+last_updated: 2026-05-25
 ---
 
 # H:placebo-and-dynamics — The urgent-procurement pattern is specific to litigated items; dynamic evidence is diagnostic, not the primary design
@@ -25,16 +25,22 @@ remains the selection-bounded UTG comparison and the within-firm-buyer-item test
 !!! abstract "Intuition (plain-language)"
     Two final checks. The first asks whether the pattern is real or just a quirk of the data: we run the same test on medicines that are never litigated. If the effect showed up there too, we would worry it was an artifact — but it comes back flat, essentially zero, which tells us the pattern is specific to the litigation margin. The second is a timing study that watches the urgent margin evolve around exposure. It points the right way, but when we stress-test it for pre-trend violations it does not hold up at the largest pre-period deviation we actually observe. So we report it honestly as a diagnostic that is consistent with the story, not as the backbone of the identification. The backbone is the bounded under-the-gun comparison and the same-firm test.
 
-> **Evidence strength: Supported (placebo null); dynamics diagnostic.**
+> **Evidence strength: Partial (strongly supported).**
 > The placebo on never-litigated items returns a negotiated-price coefficient of
 > **−0.020 (SE 0.032), null**
 > ([AN-008](../analyses/an-008-placebo-never-litigated.md)) — the pattern does
-> not reproduce off the litigation margin. The BJS event study
+> not reproduce off the litigation margin. A stricter buyer-by-class placebo
+> battery ([AN-013](../analyses/an-013-litigation-specificity-placebos.md))
+> restricts never-litigated items to procurement environments that also contain
+> litigated purchases; the negotiated-price coefficient remains null
+> (−0.046, SE 0.053), as do the quantity-controlled negotiated-price,
+> reference-price, and bidder-count placebos. The BJS event study
 > ([AN-010](../analyses/an-010-dynamic-bjs-honestdid.md)) gives a first
 > post-exposure estimate of 0.052 (SE 0.018) rising to 0.147 (SE 0.026) by the
 > fifth period, but Honest-DiD sensitivity **does not survive deviations at the
 > observed maximum pre-period scale**, so the dynamic evidence is diagnostic, not
-> the primary design.
+> the primary design. The partial-strong status rests on the placebo
+> specificity battery, not on treating the dynamics as causal identification.
 
 ![BJS event study around item-level litigation exposure (diagnostic, not the primary design)](../assets/figures/fig_event_study_item_v10.png)
 
@@ -117,16 +123,17 @@ within-firm-buyer-item test
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
 | [AN-008](../analyses/an-008-placebo-never-litigated.md) | Supports (via rule-out) | Placebo on never-litigated items: negotiated-price coefficient −0.020 (SE 0.032), economically and statistically null. The pattern is specific to the litigation margin. |
+| [AN-013](../analyses/an-013-litigation-specificity-placebos.md) | Supports | Stricter buyer-by-class placebo: matched never-litigated negotiated-price coefficient −0.046 (SE 0.053), −0.020 (SE 0.070) with quantity control; reference-price and bidder-count placebos are also null. |
 | [AN-010](../analyses/an-010-dynamic-bjs-honestdid.md) | Diagnostic | BJS event study: first post-exposure estimate 0.052 (SE 0.018), five-period estimate 0.147 (SE 0.026), directionally consistent. Honest-DiD does not survive deviations at the observed maximum pre-period scale — diagnostic, not primary. |
 
 ## Open tests
 
-### Sharper placebo with matched never-litigated controls
+### Classifier-threshold sensitivity
 
-The current placebo uses the never-litigated subsample directly. Matching
-never-litigated items to litigated ones on molecule class and buyer would
-tighten the specificity check and guard against residual composition between the
-placebo and treated universes.
+The placebo battery now includes a matched buyer-by-class never-litigated
+comparison. A remaining implementation check is to re-run the placebo battery
+under stricter classifier-confidence thresholds if regime-level confidence
+scores are exposed in the public replication files.
 
 ### Alternative dynamic estimators as a triangulation
 
