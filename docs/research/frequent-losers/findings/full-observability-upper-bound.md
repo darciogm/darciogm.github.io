@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Joint award + bid scoring is the full-observability upper bound
 
+!!! abstract "Intuition (plain-language)"
+    Suppose a regulator had everything — every bid, fully recorded — and ran the classic bid-distribution screens too. Would the cheap loser-side signal still matter? Yes: combining both does best (AUC ≈ 0.96), and the gain over either one alone shows the two are measuring *different things*. The loser-side signal is not a budget substitute for bid microdata; it carries information the bid screens miss. This combined model is the best-case ceiling — a useful benchmark, but it assumes data a regulator usually does not have.
+
 🟡 On the cobidder target, a classifier that uses **both** the award-
 layer score (FL14 or continuous log_tc) and the Imhof-style bid-
 distribution features achieves the highest AUC: **0.955 [0.943, 0.967]**

@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Robustness
 
+!!! abstract "Intuition (plain-language)"
+    Each check here exists to kill a *boring* explanation for the headline result — "it's just bidding volume," "it's overfitting," "it's a lucky threshold," "it's one weird year." The discrimination and architecture claims survive all of them, and what degrades does so predictably rather than catastrophically. The page also keeps the failures in plain sight: the price-as-damages reading does not survive overlap discipline, and the difference-in-differences designs are underpowered. A screen worth trusting is one whose limits are mapped as carefully as its strengths.
+
 This page summarizes the robustness checks supporting each of the four empirical claims of the paper.
 
 ---

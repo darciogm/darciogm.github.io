@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Award-layer gatekeeping cuts the bid-microdata pool by 83%
 
+!!! abstract "Intuition (plain-language)"
+    This is the whole point, stated as a budget. Forensic bid analysis is costly, so you cannot run it on every firm. Route it instead through the top of the cheap loser-side ranking: you open expensive bid microdata for only ~17% of firms and still recover about two-thirds of the known cartel-linked losers. The screen earns its keep not by catching everyone, but by telling an enforcer *where to spend the forensic budget first*.
+
 🟡 Used as a gatekeeper, the FL14 ranking **cuts the bid-microdata pool
 required for the forensic stage by 83%** while still recovering **131
 of 193 adjudicated cobidders (68%)**. This is the cost-of-evidence

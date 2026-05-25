@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Cobidder concentration survives exposure, leakage, and timing audits
 
+!!! abstract "Intuition (plain-language)"
+    The natural skeptic's reply is "of course cartel-linked firms score high — they bid a lot, and your score just counts bids." The audits stress-test exactly that: strip out raw bidding volume, remove the firms that built the score, and force the score to predict cobidders it has never seen. The concentration weakens but does not vanish (operational performance is roughly half the in-sample best case). What is left after the cheap mechanical explanations are removed is genuine signal, not an artifact of counting.
+
 🟡 The cobidder concentration result from
 [CADE-adjacent cobidders concentrate in the FL14 stratum](cobidders-concentrated-in-fl-stratum.md)
 survives the three audit disciplines introduced in §4.2 of the

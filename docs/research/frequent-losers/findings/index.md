@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Findings — Cheap Signals, Costly Proof
 
+!!! abstract "Intuition (plain-language)"
+    Catching bid-rigging is expensive: the textbook tests need detailed bid-by-bid data that procurement systems rarely keep. The economic idea organizing these findings is a *cost-of-evidence* one — use a cheap, always-available signal (which firms bid constantly without ever winning) to decide *where* to spend costly forensic effort, not to decide *who* is guilty. The findings below separate what that cheap signal can credibly buy (a prioritized pool to investigate) from what it cannot (a verdict on any individual firm).
+
 This page is the curated index of *what we have learned* from the project's
 own analyses. Each finding is a **claim about the world** — the kind of
 statement that would go in the paper — and it may rest on several

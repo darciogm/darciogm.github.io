@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Extensions
 
+!!! abstract "Intuition (plain-language)"
+    A screen that gets used gets gamed — a cartel can rotate its cover bidders or let them win occasionally to duck a fixed threshold. These extensions ask whether the signal holds up anyway: it degrades gracefully rather than collapsing under strategic adaptation, it still discriminates firms it was never trained on, and the headline "83% cost saving" turns out to be one point on a whole frontier an enforcer can dial between investigation cost and how many cartels it catches. Together they describe how the tool would behave in the wild, not just on the historical sample.
+
 This page collects auxiliary analyses that support the paper's screening
 and architecture results: strategic adaptation, the strict-ex-ante timing
 battery, population turnover under the temporal split, the structure of the

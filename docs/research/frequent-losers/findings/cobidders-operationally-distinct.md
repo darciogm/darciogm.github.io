@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # FL cobidders are operationally distinct from other frequent losers
 
+!!! abstract "Intuition (plain-language)"
+    Not every firm that loses a lot is a cover bidder — most are just uncompetitive. So the screen would be useless if cartel-linked losers looked exactly like ordinary losers. They don't: the cartel-linked ones range across more buyers, concentrate on narrower product lines, and keep showing up beside the same winners. Those are footprints of a *role played inside a scheme*, not of generic weakness — which is what makes the loser-side signal informative rather than just a ranking of weak firms.
+
 🟡 Inside the FL14 stratum, **cobidders look different from other
 always-losers** along four economically meaningful dimensions, with
 effect sizes (Cohen's d) in the 0.3–1.0 band — large in social-science

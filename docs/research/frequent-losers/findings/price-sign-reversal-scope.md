@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Price coefficient sign reverses — scope, not damages
 
+!!! abstract "Intuition (plain-language)"
+    It is tempting to read "frequent losers present → higher prices" as a damages number — proof the cartel overcharges. Resist it. Once you compare only genuinely similar tenders, the sign flips to negative. A correlation that changes sign depending on the comparison set cannot be a clean estimate of overcharge. What the price pattern *can* tell you is *where* the loser-side signal is economically live (it bites in the high-value segment the framework predicts), not *how much* anyone was overcharged. Scope, not damages.
+
 🟡 The price coefficient associated with the FL margin **reverses sign**
 when overlap discipline is applied, in a pattern that defeats the
 naive damages reading and supports a **scope** interpretation: prices

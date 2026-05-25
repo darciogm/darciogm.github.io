@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # CADE-adjacent cobidders concentrate in the FL14 stratum
 
+!!! abstract "Intuition (plain-language)"
+    A bid-rigging ring needs losers: someone has to submit losing bids on purpose so the auction looks competitive while the pre-chosen firm wins. Those cover bidders leave a footprint — they show up over and over and never win. So when we rank firms purely by how persistently they lose, the firms that bid next to convicted cartelists rise to the top of the list (AUC ≈ 0.92). The signal is strong precisely because losing-on-purpose is the cover bidder's job description.
+
 🟢 In São Paulo's BEC procurement platform (2009–2019), always-loser
 firms that bid alongside direct CADE defendants in adjudicated cartel
 environments concentrate disproportionately inside the **FL14 stratum**

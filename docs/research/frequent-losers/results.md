@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Main Results
 
+!!! abstract "Intuition (plain-language)"
+    Read these results as answers to one practical question: can a signal a regulator *already has for free* — which firms keep losing — make expensive cartel forensics cheaper? Yes. The persistent-loser ranking separates cartel-linked cover bidders from ordinary losers well enough (AUC ≈ 0.86 out of sample) that using it as a first-stage filter cuts the costly bid-microdata pool by ~83% while still catching about two-thirds of known cobidders. It complements, rather than duplicates, the classic bid-distribution screens. The price results come last and on purpose: they describe *where* the signal is active, not *how much* any cartel overcharged.
+
 This page presents the empirical findings in the order the paper now privileges: discrimination first, architectural complementarity second, pricing imprint third (descriptive corroboration only).
 
 ---

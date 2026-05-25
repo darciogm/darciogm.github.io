@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # Advanced Methods
 
+!!! abstract "Intuition (plain-language)"
+    The conceptual move on this page is to be precise about *what is being identified*. The screen does not estimate guilt or damages; it produces a defensible *ranking of forensic priority* — an answer to "investigate whom first," not "who is liable." The audit chain then works through every artifact a single dataset could hide (raw volume, overfitting, threshold choice, lucky years) and rules them out one by one. The two things it cannot settle from BEC alone — quirks of the data source and which cartels prosecutors happened to pursue — are exactly what cross-jurisdiction replication is meant to test.
+
 This page collects the methodological machinery that supports the
 empirical claims in the manuscript but is too heavy for the
 [Robustness](robustness.md) and [Extensions](extensions.md) tabs. It

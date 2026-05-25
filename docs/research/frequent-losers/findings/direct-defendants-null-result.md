@@ -4,6 +4,9 @@ paper: frequent-losers
 
 # The FL ranking is null on direct CADE defendants — by design
 
+!!! abstract "Intuition (plain-language)"
+    The same logic that makes the screen work also fixes its limit. A score built on "this firm never wins" is, by construction, blind to the firms that *did* win the rigged contracts — designated winners are not zero-win firms. So the screen scores essentially at random (AUC ≈ 0.49) against the convicted ring-leaders. That is not a failure to hide; it is the honest boundary of a loser-side tool: it tells you *where to look*, never *who is guilty*.
+
 🟢 The frequent-loser ranking, evaluated against the **47 direct CADE
 defendants** in 2009–2019 procurement-cartel adjudications, returns
 **AUC = 0.491 [0.461, 0.520]** — indistinguishable from random. The
