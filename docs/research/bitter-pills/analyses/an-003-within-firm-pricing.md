@@ -7,7 +7,7 @@ question: Within the same firm, buyer, and item, does the same supplier charge a
 status: done
 status_date: 2026-05-24
 confidence: yellow
-headline: "No broad same-firm markup in deep repeated urgent markets (0.035, SE 0.041); leverage resurfaces only in thin or earlier markets."
+headline: "No broad same-firm markup in deep repeated urgent markets (0.035, SE 0.041); the deep-market null is not universal — a residual within-firm gap persists in the earlier period, while the quantity axis reflects scale."
 created: 2026-05-24
 script: v10-causal-mechanism/analysis/48_mechanism_evidence.R
 target: v10-causal-mechanism/output/tables/tab_within_firm_robustness.tex
@@ -21,7 +21,7 @@ design:
 # AN-003: Within-firm-buyer-item pricing under litigation
 
 !!! abstract "Intuition (plain-language)"
-    Hold everything about the transaction fixed except the regime: the same supplier, the same buyer, the same item. Does that one supplier charge more when the purchase is court-mandated? In deep, repeatedly traded urgent markets, the answer is essentially no — the same firm does not post a broad markup. But the picture is not uniform: when the lot is small, the molecule is off the public formulary, or we look at the earlier years, the same supplier does charge more. So the cost of litigation is not a blanket same-firm markup; supplier leverage shows up only where the market is thin.
+    Hold everything about the transaction fixed except the regime: the same supplier, the same buyer, the same item. Does that one supplier charge more when the purchase is court-mandated? In deep, repeatedly traded urgent markets, the answer is essentially no — the same firm does not post a broad markup. The picture is not uniform, but the exceptions split in two: the small-lot positive reflects scale (bulk discounts), not the same supplier marking up, while a genuine residual within-firm gap survives in the earlier years — and even that gap is administrative-dearer, not the litigated buyer being squeezed. So the cost of litigation is not a blanket same-firm markup.
 
 ## Question
 
@@ -72,12 +72,18 @@ pricing and toward the supplier-set and scale channels documented in
 [AN-005](an-005-pricing-sourcing-decomposition.md) and
 [AN-006](an-006-winner-switching.md).
 
-The heterogeneity makes the boundary precise. Where the market is thin — small
-lots (+0.066, ***), off-formulary molecules (+0.101), and the earlier period
-(+0.117, ***) — the same supplier does charge more. Where the market is deep —
-large lots, formulary molecules, the later period — the within-firm gap is near
-zero. Supplier leverage is therefore a thin-market and earlier-market
-phenomenon, taken up directly in [AN-004](an-004-market-depth-heterogeneity.md).
+The heterogeneity makes the boundary precise, but the thin-market axes behave
+differently. The below-median-quantity positive (+0.066, ***) is the **scale**
+channel, not same-firm pricing: holding firm, buyer, and item fixed, the
+within-triple log-quantity coefficient is −0.259 (SE 0.074), and the order-size
+gradient collapses under a quantity control. The earlier-period gap (+0.117,
+***) survives that control but is **administrative-dearer** and time-declining —
+a genuine residual within-firm gap, not the litigated buyer being squeezed.
+Off-formulary (+0.101) is positive but not significant. Where the market is
+deep — large lots, formulary molecules, the later period — the within-firm gap
+is near zero. The deep-market null is therefore not universal, but the surviving
+margin is disambiguated rather than read as broad supplier leverage; this is
+taken up directly in [AN-004](an-004-market-depth-heterogeneity.md).
 
 Confidence: **yellow.** The within-firm-buyer-item design holds supplier
 identity fixed, the tightest available control on composition, but it conditions

@@ -28,11 +28,14 @@ pricing — see
 **Caveat.** The near-zero within-firm-buyer-item coefficient applies to deep
 repeated urgent markets only and must not be generalized to all markets: the
 heterogeneity cuts in [AN-003](../analyses/an-003-within-firm-pricing.md)
-show large positive same-firm effects in below-median-quantity, earlier, and
-non-formulary cells. The estimable cells are themselves selected toward
-deep relationships, so the null is informative about where same-firm pricing
-power is absent rather than a claim that it is absent in general. The reading
-is 🟡 because it is a single-source own-project estimate in São Paulo BEC.
+show a residual within-firm gap in the earlier period (+0.117, administrative-
+dearer), while the below-median-quantity positive (+0.066) reflects scale — the
+within-triple log-quantity coefficient is −0.259 — rather than same-firm
+pricing, and the off-formulary positive (+0.101) is not statistically
+significant. The estimable cells are themselves selected toward deep
+relationships, so the null is informative about where same-firm pricing power
+is absent rather than a claim that it is absent in general. The reading is 🟡
+because it is a single-source own-project estimate in São Paulo BEC.
 
 **Sources.**
 

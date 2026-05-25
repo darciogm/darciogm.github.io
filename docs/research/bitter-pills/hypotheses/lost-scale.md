@@ -25,7 +25,7 @@ quantity/scale component is the dominant piece of the observed gap.
 > **Evidence strength: Partial (strongly supported).**
 > Administrative urgent orders are about **3.3× larger** than litigated orders,
 > and the estimated bulk-discount elasticity is **−0.329**
-> ([AN-009](../analyses/an-009-aggregation-cells.md)). In the Figure 1
+> ([AN-005](../analyses/an-005-pricing-sourcing-decomposition.md)). In the same Figure 1
 > decomposition ([AN-005](../analyses/an-005-pricing-sourcing-decomposition.md)),
 > the observed administrative-minus-litigated gap is −22.8%, of which the
 > quantity/scale component is **−32.8%** (the dominant piece), the within-firm
@@ -108,8 +108,8 @@ caveats about unobserved item heterogeneity across lot sizes.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-005](../analyses/an-005-pricing-sourcing-decomposition.md) | Supports | Figure 1 decomposition (admin minus litigated): observed gap −22.8%; quantity/scale −32.8% (dominant); within-firm pricing +3.5% (near zero); supplier-composition residual +10.9% (a reconciliation residual, read with the winner-switching table). |
-| [AN-009](../analyses/an-009-aggregation-cells.md) | Supports | Administrative orders ~3.3× larger than litigated; bulk-discount elasticity −0.329. Larger lots earn lower unit prices; court-mandated channel forgoes the scale margin. |
+| [AN-005](../analyses/an-005-pricing-sourcing-decomposition.md) | Supports | Figure 1 decomposition (admin minus litigated): observed gap −22.8%; quantity/scale −32.8% (dominant); within-firm pricing +3.5% (near zero); supplier-composition residual +10.9% (a reconciliation residual, read with the winner-switching table). Administrative orders ~3.3× larger than litigated; bulk-discount elasticity −0.329, so larger lots earn lower unit prices. |
+| [AN-009](../analyses/an-009-aggregation-cells.md) | Supports | Aggregation within buyer-item-month cells: administrative cells carry larger total accepted quantity (greater scale); litigated cells split demand across more repeated purchase-offer-items (more fragmented). Diagnostic, read with the decomposition and winner-switching evidence. |
 | [`61_h4_quantity_quartiles.R`](../analyses/index.md) | Supports | Direct within firm-buyer-item bulk discount: holding firm, buyer, and item fixed, the log-quantity coefficient is −0.259 (SE 0.074). The quantity gradient in the within-firm price difference is this scale channel, not same-firm pricing. |
 
 Cross-link: the near-zero within-firm pricing component echoes

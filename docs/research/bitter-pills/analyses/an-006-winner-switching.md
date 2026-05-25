@@ -91,7 +91,7 @@ reallocation fact.
   for, sharpening the supplier-composition residual — see
   [AN-005](an-005-pricing-sourcing-decomposition.md).
 - Check whether winner switching is more pronounced in the thin and
-  off-formulary markets where supplier leverage resurfaces — see
+  off-formulary markets where the deep-market within-firm null breaks down — see
   [AN-004](an-004-market-depth-heterogeneity.md).
 - Validate the regime classification underlying the pairs — see
   [AN-012](an-012-classifier-validation.md).

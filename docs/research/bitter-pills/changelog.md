@@ -21,8 +21,8 @@ results pages, and site figures were refreshed from the v10 outputs.
   sourcing under judicial urgency. In deep repeated urgent pharmaceutical
   markets, the procurement-cost margin is not mainly a broad same-firm markup;
   it operates through fragmented sourcing, lost scale, and supplier-set
-  reallocation, with supplier leverage able to reappear in thinner or earlier
-  markets.
+  reallocation, with a residual within-firm gap able to reappear in thinner or
+  earlier markets.
 
 ## Refinement pass — 2026-05-24 (disambiguation, referee-proofing, figures)
 
@@ -48,7 +48,7 @@ axes of the within firm-buyer-item heterogeneity:
   period** — without asserting litigated-buyer leverage. The H4 hypothesis and
   finding pages are retitled "The deep-market null is not universal."
 
-**Online Appendix — four referee-defense diagnostics added** (5 → 6 pages):
+**Online Appendix — four referee-defense diagnostics added** (kept to five pages):
 
 - **Bounding the null (H3, Appendix C):** a TOST equivalence test on the
   within-triple coefficient rules out broad same-firm markups above ~10.8%
@@ -76,15 +76,15 @@ illegal LaTeX control-sequence names. Site-only diagnostics now emit to
 `analysis/referee_macros.tex`, while paper-grade numbers emit to `values.tex`
 with valid names. The paper had not recompiled since those scripts first ran
 (deploys only copy the existing PDF), so the break was latent; both documents now
-build cleanly (main 17 pp, Online Appendix 6 pp).
+build cleanly (main 17 pp, Online Appendix 5 pp).
 
 **Final cleanup.** The abstract's heterogeneity sentence was simplified to "the
 within-firm gap reappears only in the earlier period, while order-size
 differences operate through scale." The appendix now discloses the Romano-Wolf
 bootstrap replications (999) and the supplier-turnover benchmark's seeded
 200-split averaging. A reproducible word counter (`analysis/64_wordcount.py`)
-puts the main text at **4,398 words** (4,451 with captions), well under the
-JPubE 6,000-word cap, with four exhibits and a six-page appendix.
+puts the main text at **4,402 words** (4,445 with captions), well under the
+JPubE 6,000-word cap, with four exhibits and a five-page appendix.
 
 **Reproducibility run.** Re-ran the entire numbered analysis pipeline
 (`analysis/run_pipeline.sh`, 23 scripts) from the prepared cache: all exit 0,

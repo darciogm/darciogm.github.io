@@ -20,8 +20,8 @@ under **both** urgent regimes — same firm, same item, same buyer. In these dee
 repeated urgent markets, the administrative-vs-litigated price difference is
 statistically indistinguishable from zero. The sanction-related cost margin in
 these markets is therefore **not** a broad same-firm markup. This is a
-**deep-market null, not a universal one** — supplier leverage can and does
-reappear elsewhere, which is the subject of
+**deep-market null, not a universal one** — a residual within-firm gap
+reappears elsewhere, which is the subject of
 [H:thin-market-supplier-leverage](thin-market-supplier-leverage.md).
 
 !!! abstract "Intuition (plain-language)"
@@ -71,9 +71,10 @@ more for the identical item. Under this view the within-triple coefficient
 should be positive and significant. The deep-market within-triple null
 (0.035, SE 0.041) rules this channel out **as the broad explanation in deep
 repeated markets**. It does not rule it out everywhere: the heterogeneity in
-[H:thin-market-supplier-leverage](thin-market-supplier-leverage.md) shows the
-markup reappearing where the incumbent has fewer alternatives, exactly where the
-accountability logic predicts it should bite.
+[H:thin-market-supplier-leverage](thin-market-supplier-leverage.md) shows a
+residual within-firm gap in thinner and earlier cells — though that gap is
+disambiguated (the quantity axis is scale; the earlier-period gap is
+administrative-dearer) rather than asserted as litigated-buyer leverage.
 
 ## Setting evidence
 
@@ -153,11 +154,13 @@ therefore **Partial (strongly supported)** for the bounded, deep-market reading
 
 Two further reasons the status cannot be "confirmed":
 
-- The result is **not universal by design.** Supplier leverage reappears in
-  thinner and earlier subsamples
+- The result is **not universal by design.** A residual within-firm gap persists
+  in thinner and earlier subsamples
   ([H:thin-market-supplier-leverage](thin-market-supplier-leverage.md), below-
-  median quantity +0.066, earlier period +0.117). The claim is scoped to deep
-  repeated urgent markets and must stay scoped.
+  median quantity +0.066, earlier period +0.117) — though the quantity axis is
+  scale and the earlier-period gap is administrative-dearer, not litigated-buyer
+  leverage. The claim is scoped to deep repeated urgent markets and must stay
+  scoped.
 - It is a **single-jurisdiction** estimate (São Paulo BEC), with no independent
   cross-data replication.
 
