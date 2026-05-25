@@ -5,8 +5,8 @@ slug: thin-market-supplier-leverage
 title: "The deep-market null is not universal: a within-firm gap in thin and early cells"
 cluster: B
 paper_section: "§4 + §5"
-status: moderate
-last_updated: 2026-05-24
+status: partial (strongly supported)
+last_updated: 2026-05-25
 ---
 
 # H:thin-market-supplier-leverage — The deep-market null is not universal: a within-firm gap in thin and early cells
@@ -28,7 +28,7 @@ sanctioned buyer. What survives is a bounded statement: the deep-market null is
 !!! abstract "Intuition (plain-language)"
     The deep-market result said the same supplier does not, on average, charge more under a court order. But "on average, in deep markets" hides the cases where the supplier holds the cards. When the order is small, when the drug is not on the standard public formulary, or when we look at the earlier years before the urgent market filled in, the same-firm price difference reappears and is meaningful. That is exactly where you would expect a supplier to have leverage — fewer competing sources, a buyer with little room to shop around. So leverage is not absent; it is concentrated in the thin and early corners of the market.
 
-> **Evidence strength: Moderate (bounded non-null).**
+> **Evidence strength: Partial (strongly supported).**
 > The within firm-buyer-item heterogeneity in
 > [AN-003](../analyses/an-003-within-firm-pricing.md) shows the Admin
 > coefficient flat or null in deep markets (above-median quantity −0.005;
@@ -41,9 +41,10 @@ sanctioned buyer. What survives is a bounded statement: the deep-market null is
 > **survives** a within-triple quantity control (+0.117 → +0.168, *p* = 0.007)
 > but is **administrative-dearer and time-declining** — a genuine residual
 > within-firm gap in the earlier period, not litigated-buyer leverage. The
-> status is therefore a **bounded non-null**: the deep-market null is not
-> universal, but the surviving gap is not the "supplier squeezes the sanctioned
-> buyer" channel.
+> status is therefore **Partial (strongly supported)** for the bounded non-null:
+> the deep-market null is not universal. The interpretation remains disciplined,
+> because the surviving gap is not the "supplier squeezes the sanctioned buyer"
+> channel.
 
 ![Within firm-buyer-item coefficient by subsample (95% CI): positive in thin and early cells](../assets/figures/fig_within_firm_forest_v10.png)
 
@@ -78,8 +79,9 @@ every subsample. The heterogeneity rejects this: below-median quantity (+0.066,
 alternative is that the thin-market positives are pure small-sample noise; the
 consistency of the sign across three theoretically motivated splits (quantity,
 formulary status, period) and the significance stars weigh against pure noise,
-though the cells are smaller than the pooled deep-market sample, which is why
-the status is moderate rather than partial-strong.
+though the cells are smaller than the pooled deep-market sample, so the status
+is partial-strong for the bounded non-null rather than for a universal
+supplier-leverage interpretation.
 
 ## Setting evidence
 
@@ -172,10 +174,10 @@ the sanctioned (litigated) buyer" direction — if anything it points the other
 way. So the period result firmly establishes that the deep-market null is **not
 universal** (a real within-firm gap persists in the early, thin years), but
 whether to label that gap "supplier leverage" is exactly what the open test
-below must settle. The status stays **Moderate (supported)**: the quantity axis
-is reclassified as scale, the period axis is a genuine non-null, and the
-*direction* of the period gap is flagged as an open interpretive question rather
-than asserted as litigated-buyer leverage.
+below must settle. The status is **Partial (strongly supported)** for the
+bounded claim: the quantity axis is reclassified as scale, the period axis is a
+genuine non-null, and the *direction* of the period gap is flagged as an open
+interpretive question rather than asserted as litigated-buyer leverage.
 
 ### Distinguish thinness from earliness — and pin the sign
 

@@ -2,7 +2,7 @@
 paper: bitter-pills
 id: an-005
 hypothesis: lost-scale
-type: causal
+type: descriptive
 question: How does the litigated-over-administrative urgent price gap split between same-firm pricing and supplier-set sourcing, and how much of it is lost scale?
 status: done
 status_date: 2026-05-24
@@ -11,7 +11,7 @@ headline: "The observed −22.8% gap reconciles as −32.8% scale, +3.5% near-ze
 created: 2026-05-24
 script: v10-causal-mechanism/analysis/45_reconciliation.R
 target: v10-causal-mechanism/output/figures/fig_sourcing_vs_pricing.pdf
-tags: ["H:lost-scale", decomposition, sourcing, pricing, scale, causal]
+tags: ["H:lost-scale", decomposition, sourcing, pricing, scale, mechanism]
 design:
   sample: "Urgent panel; administrative-versus-litigated urgent comparison decomposed into scale, within-firm pricing, and supplier-composition components"
   specification: "Reconciliation of the administrative-minus-litigated log-price gap into a quantity/scale component, a within-firm pricing component, and a supplier-composition residual; bulk-discount elasticity estimated alongside"

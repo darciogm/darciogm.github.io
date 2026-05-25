@@ -64,10 +64,10 @@
 - id: an-005
   hypothesis: lost-scale
   status: done
-  type: causal
+  type: descriptive
   question: How does the litigated-over-administrative urgent price gap split between same-firm pricing and supplier-set sourcing, and how much of it is lost scale?
   confidence: yellow
-  tags: ["H:lost-scale", decomposition, sourcing, pricing, scale, causal]
+  tags: ["H:lost-scale", decomposition, sourcing, pricing, scale, mechanism]
   file: docs/analyses/an-005-pricing-sourcing-decomposition.md
   script: v10-causal-mechanism/analysis/45_reconciliation.R
   target: v10-causal-mechanism/output/figures/fig_sourcing_vs_pricing.pdf
