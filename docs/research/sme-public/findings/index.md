@@ -56,7 +56,7 @@ see [H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)).
 
 **Reduced-form policy effects** *(empirical)*
 
-- [Open auctions cut procurement prices by ~13% in switched group 65](price-drop-open-vs-sme.md) — DiDiR &beta;=&minus;0.131 to &minus;0.133 across 18-month specifications, p<0.01, item-clustered SEs.
+- [Open auctions cut procurement prices by ~10–11% in switched group 65](price-drop-open-vs-sme.md) — v8 reduced-form benchmark &beta;=&minus;0.113 (18-month, PBU controls), p<0.01, item-clustered SEs; the earlier v1–v4 pipeline gave &minus;0.131 to &minus;0.133.
 - [Open auctions increase bidder participation by ~10–22%](entry-rises-with-competition.md) — short-window effect ~22%, attenuating to ~10% at 18 months; consistent across firms and valid-bids margins.
 - [Open auctions pull in geographically distant non-SME suppliers](distant-suppliers-enter.md) — average buyer-winner distance widens by ~12 km on high-value items; null on low-value items.
 

@@ -7,7 +7,7 @@ question: How does the annualized fiscal welfare cost on Group 65 vary across pl
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "At λ=0.30, the per-auction welfare cost is fixed at 0.204 (non-pharma) and 0.308 (pharma) of reference price. Annualized on Group 65: R$38–128M per year (US$11–37M) across adherence rates 30%–100%; baseline at the empirical 43% adherence is R$55M/yr (US$16M/yr). Adherence is the sensitivity-driver of the realized fiscal cost; the per-auction structural magnitude is held fixed."
+headline: "At λ=0.30, the per-auction welfare cost is fixed at 0.204 (non-pharma) and 0.308 (pharma) of reference price. Annualized on Group 65: R$38–89M per year (US$11–25M) across the 30–70% adherence range reported in the paper; the empirical 43% adherence implies ~R$55M/yr. Adherence is the sensitivity-driver of the realized fiscal cost; the per-auction structural magnitude is held fixed."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R
 target: v7-jpube-tight/output/tables/tab_welfare_adherence_sensitivity.tex
@@ -21,7 +21,7 @@ design:
 # AN-025: Annualized welfare cost — adherence-rate sensitivity
 
 !!! abstract "Intuition (plain-language)"
-    The per-auction welfare cost is fixed by the structure; what scales the annual bill is how often buyers actually comply with SME-only tendering. Across adherence rates of 30–100% the Group-65 cost spans R$38–128M/yr; at the observed 43% adherence it is about R$55M/yr. Adherence is the dial on the realized fiscal cost.
+    The per-auction welfare cost is fixed by the structure; what scales the annual bill is how often buyers actually comply with SME-only tendering. Across the 30–70% adherence range reported in the paper the Group-65 cost spans R$38–89M/yr; at the observed 43% adherence it is about R$55M/yr. Adherence is the dial on the realized fiscal cost.
 
 ## Question
 
@@ -62,24 +62,28 @@ SME-only mandate is imperfect.
 | **Total Group 65** (R$ M/yr) | **38** | **55** | **70** | **89** | **109** | **128** |
 | US$ M/yr (R$3.50 end-2018) | 11 | **16** | 20 | 25 | 31 | 37 |
 
-The bold column (43%) is the empirical baseline cited in paper §2.
-The R$55M/yr (US$16M/yr) baseline → R$128M/yr (US$37M/yr) under
-hypothetical 100% SME-eligible adherence range matches the headline
-of [AN-011](an-011-welfare-arithmetic.md) and the **Welfare Cost
-(v6)** panel in [docs/extensions.md](../extensions.md).
+!!! warning "Reported range vs. extrapolation"
+    The paper reports the **30–70% adherence range → R$38–89M/yr
+    (US$11–25M/yr)**, matching [AN-011](an-011-welfare-arithmetic.md) and the
+    Welfare cost panel in [docs/extensions.md](../extensions.md). The **85%
+    and 100% columns are arithmetic extrapolations beyond the reported
+    range** (full SME-eligible adherence is not observed) and are shown only
+    to illustrate the adherence lever. The bold 43% column is the empirical
+    post-cutoff adherence cited in paper §2 and implies ~R$55M/yr.
 
 Output: `output/tables/tab_welfare_adherence_sensitivity.tex` and
 `tab_welfare_adherence_sensitivity.csv`.
 
 ## Interpretation
 
-**The R$55–128M range is an adherence-grid sensitivity, not a
+**The R$38–89M range is an adherence-grid sensitivity, not a
 structural uncertainty band.** The per-auction welfare cost is *fixed*
 (0.204 NP / 0.308 PH of reference price); the range spans the
-plausible adherence rates. The realistic central case at the
-empirically observed adherence of 43% is **R$55M/yr (US$16M/yr)**;
-the upper bound at counterfactual full SME-eligible adherence is
-**R$128M/yr (US$37M/yr)**.
+paper's reported 30–70% adherence band. The empirically observed
+adherence of 43% implies **~R$55M/yr (US$16M/yr)**; the upper bound of
+the reported range, at 70% adherence, is **R$89M/yr (US$25M/yr)**.
+(A hypothetical 100% adherence would reach ~R$128M/yr, but that is an
+extrapolation beyond the range the paper reports.)
 
 **The structural CI is a separate uncertainty band.** The bootstrap
 CI in [AN-024](an-024-lambda-welfare-ci.md) is on the *per-auction*
@@ -102,9 +106,10 @@ relative to full enforcement, under the assumption that the
 non-adhering Group-65 procurements default to open competition. This
 is consistent with the paper's recasting of the policy frontier:
 not "support SMEs vs not", but "exclusionary redistribution vs
-support-with-preserved-pool". A 100% adherence regime maximizes the
-welfare loss; the empirical 43% leaves R$73M/yr of welfare *on the
-table* relative to full SME-only.
+support-with-preserved-pool". Higher adherence raises the welfare
+loss monotonically; relative to the 70% upper bound of the paper's
+reported range (R$89M/yr), the empirical 43% adherence leaves about
+R$34M/yr of welfare loss *unrealized*.
 
 Confidence: **yellow.** The arithmetic is deterministic given the
 per-auction structural cost and the reference outlays. The yellow

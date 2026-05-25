@@ -18,24 +18,24 @@ fiscal distortion from raising the additional public funds at the
 marginal cost of public funds &lambda;. The headline magnitude in
 standardized non-pharma is large — ~28.9% of the open-regime price at
 &lambda;=0.30. The implied annualized welfare cost on Group 65 alone
-spans R$55–128M per year (US$16–37M).
+spans R$38–89M per year (US$11–25M).
 
 !!! abstract "Intuition (plain-language)"
-    The set-aside costs society twice: it hands the contract to a higher-cost supplier (real resource waste) and it forces the government to raise more tax money to pay the higher price (costly because public funds carry a deadweight markup). Adding both at λ=0.30 gives a static welfare loss of about 29% of the open-regime price in ordinary goods — on Group 65 alone, roughly R$55–128M per year.
+    The set-aside costs society twice: it hands the contract to a higher-cost supplier (real resource waste) and it forces the government to raise more tax money to pay the higher price (costly because public funds carry a deadweight markup). Adding both at λ=0.30 gives a static welfare loss of about 29% of the open-regime price in ordinary goods — on Group 65 alone, roughly R$38–89M per year.
 
 > **Evidence strength: Partial (strongly supported).**
 > [AN-011](../analyses/an-011-welfare-arithmetic.md) reports
 > 28.9% non-pharma / 44.8% pharma at λ=0.30.
 > [AN-024](../analyses/an-024-lambda-welfare-ci.md) extends this with:
-> (i) **λ sensitivity** — loss runs 24.0% → 33.3% across λ ∈ [0.15, 0.45]
-> in non-pharma, 38.4% → 52.5% in pharma; (ii) **bootstrap CI at λ=0.30**
+> (i) **λ sensitivity** — loss runs 24.1% → 33.8% across λ ∈ [0.15, 0.45]
+> in non-pharma, 38.1% → 51.6% in pharma; (ii) **bootstrap CI at λ=0.30**
 > = [20.5, 34.8] non-pharma / [34.9, 55.9] pharma; (iii) **welfare
 > ranking $V_3 \succ V_0$** stable across the entire λ range in
 > non-pharma (under both main and strict-invariance specs); pharma
 > ranking determined by main vs strict-invariance, *not by λ*.
 > [AN-025](../analyses/an-025-adherence-sensitivity.md) translates to
-> **R$38–128M/yr (US$11–37M) annualized** on Group 65 alone across
-> adherence rates 30%–100%; empirical baseline 43% → **R$55M/yr (US$16M)**.
+> **R$38–89M/yr (US$11–25M) annualized** on Group 65 alone across
+> adherence rates 30%–70%; empirical baseline 43% → **R$55M/yr (US$16M)**.
 
 ## Theory
 
@@ -73,7 +73,7 @@ preference reversal would be different
 
 Group 65 (medical/hospital supplies) accounts for ~27% of BEC volume.
 São Paulo's BEC platform handles ~R$13B/year in standardized goods
-procurement. The R$55–128M/year welfare cost is therefore on a single
+procurement. The R$38–89M/year welfare cost is therefore on a single
 product group of a single state's procurement platform.
 
 ## Empirical test
@@ -107,7 +107,7 @@ midpoint; sensitivity to &lambda; is reported in §5 of the paper;
 | [AN-016](../analyses/an-016-pharma-boundary.md) | Mixed | Pharma magnitudes larger but more model-sensitive; reported as boundary case, not headline. |
 | [AN-017](../analyses/an-017-strict-invariance.md) | Supports | Strict invariance preserves non-pharma dominance ordering; exclusion share rises to 85% (NP) / 79% (PH). Welfare ranking $V_3 \succ V_0$ in NP under both specs. |
 | [AN-024](../analyses/an-024-lambda-welfare-ci.md) | Supports | Bootstrap 95% CI at λ=0.30: [20.5, 34.8] NP / [34.9, 55.9] PH. Loss > 18% even at λ=0.20 lower-CI endpoint. Ranking stable across λ ∈ [0.15, 0.45]. |
-| [AN-025](../analyses/an-025-adherence-sensitivity.md) | Supports | Annualized fiscal cost R$38–128M/yr across adherence 30%–100%; baseline 43% → **R$55M/yr (US$16M)** on Group 65 alone. |
+| [AN-025](../analyses/an-025-adherence-sensitivity.md) | Supports | Annualized fiscal cost R$38–89M/yr across adherence 30%–70%; baseline 43% → **R$55M/yr (US$16M)** on Group 65 alone. |
 
 ## Open tests
 
@@ -115,7 +115,7 @@ midpoint; sensitivity to &lambda; is reported in §5 of the paper;
 
 `v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R` varies the
 SME-eligible adherence rate to bound the realized fiscal cost. The
-R$55–128M annual range comes from this; documenting it as an AN page
+R$38–89M annual range comes from this; documenting it as an AN page
 would expose the calibration explicitly.
 
 ### Optimal preference comparison

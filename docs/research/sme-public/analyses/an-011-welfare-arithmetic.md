@@ -7,7 +7,7 @@ question: What is the per-auction static welfare loss of the full SME-only set-a
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "Per-auction static welfare loss of the full SME-only set-aside is 28.9% of the open-regime price in standardized non-pharma at λ=0.30 (DWL_alloc + λ · MCPF); pharma analog is 44.8% but model-sensitive. Implied SME welfare weight required for indifference: 2.42 (non-pharma). Annualized cost on Group 65 alone: R$55–128M (US$16–37M)."
+headline: "Per-auction static welfare loss of the full SME-only set-aside is 28.9% of the open-regime price in standardized non-pharma at λ=0.30 (DWL_alloc + λ · MCPF); pharma analog is 44.8% but model-sensitive. Implied SME welfare weight required for indifference: 2.42 (non-pharma). Annualized cost on Group 65 alone: R$38–89M (US$11–25M) across the 30–70% adherence range."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/55_welfare.R
 target: v8-jpube/output/values.tex
@@ -21,7 +21,7 @@ design:
 # AN-011: Static welfare arithmetic
 
 !!! abstract "Intuition (plain-language)"
-    Translate the price effect into welfare: the waste from a higher-cost supplier winning, plus the extra cost of raising public funds to pay the bill. At λ=0.30 that is about 29% of the open price in ordinary goods — and a planner would need to value SME profits at 2.42× ordinary money to call it worth it. On Group 65 alone, R$55–128M a year.
+    Translate the price effect into welfare: the waste from a higher-cost supplier winning, plus the extra cost of raising public funds to pay the bill. At λ=0.30 that is about 29% of the open price in ordinary goods — and a planner would need to value SME profits at 2.42× ordinary money to call it worth it. On Group 65 alone, R$38–89M a year.
 
 ## Question
 
@@ -67,8 +67,8 @@ $p^{S_1}$; $\lambda = 0.30$ baseline (Ballard-Shoven-Whalley).
 Pharma magnitudes are larger but inherit additional model sensitivity —
 treated as a boundary case ([AN-016](an-016-pharma-boundary.md)).
 
-Annualized on Group 65 alone: **R$55–128M per year (US$16–37M)** across
-the empirical adherence-rate range
+Annualized on Group 65 alone: **R$38–89M per year (US$11–25M)** across
+the 30–70% adherence range
 (`v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R`).
 
 Output: macros in `v8-jpube/output/values.tex`; paper table
@@ -84,12 +84,11 @@ at $2.42 of welfare to find the full set-aside optimal — a number that
 should be benchmarked against the *other* welfare weights implied
 elsewhere in the planner's revealed preferences.
 
-The R$55–128M annual range comes from the SME-eligible adherence-rate
-sensitivity: the lower bound is the *realistic central case* at the
-empirically observed adherence rate, the upper bound is the upper
-bound under full SME-eligible adherence. The headline is meaningful
-because it is one product group of a single state's R$13B procurement
-platform.
+The R$38–89M annual range comes from the SME-eligible adherence-rate
+sensitivity across the **30–70%** range reported in the paper, against a
+Group-65 annual reference outlay of ~R$345M (non-pharma) and ~R$363M
+(pharma). The headline is meaningful because it is one product group of
+a single state's R$13B procurement platform.
 
 Confidence: **yellow.** The welfare arithmetic inherits the structural
 decomposition's restrictions

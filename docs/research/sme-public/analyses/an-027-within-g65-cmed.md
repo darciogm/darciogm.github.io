@@ -56,9 +56,9 @@ directly.
 
 | Panel | Outcome | Base coef | PBU-FE coef | N |
 |---|---|---:|---:|---:|
-| **A: Medications (6531)** | Log prices | −0.166*** (0.017) | **−0.174*** (0.017)** | 573,080 |
+| **A: Medications (6531)** | Log prices | −0.166*** (0.017) | −0.174*** (0.017) | 573,080 |
 | **A: Medications (6531)** | Log firms  | +0.152*** (0.010) | +0.161*** (0.010) | 678,547 |
-| **B: Other supplies (non-6531)** | Log prices | −0.099*** (0.009) | **−0.097*** (0.009)** | 593,920 |
+| **B: Other supplies (non-6531)** | Log prices | −0.099*** (0.009) | −0.097*** (0.009) | 593,920 |
 | **B: Other supplies (non-6531)** | Log firms  | +0.044*** (0.006) | +0.050*** (0.006) | 705,616 |
 
 Output: `output/tables/tab_within_g65.tex`.

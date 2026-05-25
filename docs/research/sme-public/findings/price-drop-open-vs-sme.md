@@ -2,7 +2,7 @@
 paper: sme-public
 ---
 
-# Open auctions cut procurement prices by ~13% in switched group 65
+# Open auctions cut procurement prices by ~10–11% in switched group 65
 
 !!! info "Reduced-form motivation layer"
     The headline number on this page comes from the v1–v4 reduced-form
@@ -15,19 +15,21 @@ paper: sme-public
 
 🟡 In São Paulo's BEC procurement platform, opening switched group 65
 (medical/hospital supplies) to non-SME bidders before March 2018
-lowered negotiated prices by **13.1–13.3%** relative to the SME-only
-regime that followed, identified by a difference-in-differences-in-reverse
-(DiDiR) against control groups that were SME-only throughout
-([AN-001](../analyses/an-001-didir-prices.md), 18-month window,
-item-clustered SEs, p<0.01).
+lowered negotiated prices by **~10–11%** relative to the SME-only
+regime that followed (v8 reduced-form benchmark β = −0.113, 18-month
+window, item-clustered SEs, p<0.01), identified by a
+difference-in-differences-in-reverse (DiDiR) against control groups that
+were SME-only throughout ([AN-001](../analyses/an-001-didir-prices.md)).
+The earlier v1–v4 pipeline gave a slightly larger −0.131 to −0.133; the
+v8 benchmark is the canonical number.
 
 The estimate is stable across 6/12/18-month windows around the March 2018
 PGE-SP legal reversal, robust to PBU fixed effects, and concentrated at
 the lower end of the conditional price distribution: quantile DiD finds
 the effect at $\tau \leq 0.50$ (β strongly negative) but reversing at
 $\tau = 0.90$ ([AN-007](../analyses/an-007-quantile-did.md)). Lee
-(2009) selection bounds run a tight −0.131 to −0.123
-([AN-005](../analyses/an-005-lee-bounds.md)); HonestDiD CIs survive
+(2009) selection bounds are tight, confirming negligible completion-selection
+bias ([AN-005](../analyses/an-005-lee-bounds.md)); HonestDiD CIs survive
 substantial M̄ violations ([AN-006](../analyses/an-006-honestdid.md));
 the pre-treatment placebo on prices is null
 ([AN-004](../analyses/an-004-placebo-tests.md)).

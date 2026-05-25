@@ -7,7 +7,7 @@ question: How does the structural decomposition and welfare arithmetic behave in
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "Reduced-form effects are LARGER in pharma than non-pharma (price β = −0.156*** vs −0.075***; log firms +0.165*** vs +0.057***). Structural decomposition same direction: pharma exclusion share 68.8% [61.6, 85.2 CI], welfare loss 44.8% at λ=0.30. But four diagnostics fail in pharma where they hold in non-pharma: (1) 61.9% of post-policy pharma SME firms are new entrants (vs 23% NP); (2) primitive-invariance KS distance 0.141 after UH correction (fails); (3) implied SME welfare weight under strict invariance drops to 0.7 (below unity); (4) welfare ranking flips between main and strict-invariance specs in pharma but not non-pharma. Pharma is therefore reported as a *qualitative confirmation* — same direction, fragile magnitude."
+headline: "Within Group 65, the CMED-regulated medications cell (6531) shows larger reduced-form effects than other medical supplies (log price −0.166 vs −0.099; log firms +0.152 vs +0.044), but the effect is significant in BOTH cells (OA-B falsification). Structural decomposition same direction: pharma exclusion share 68.8%, welfare loss 44.8% at λ=0.30. But four diagnostics fail in pharma where they hold in non-pharma: (1) 61.9% of post-policy pharma SME firms are new entrants (vs 23% NP); (2) primitive-invariance KS distance 0.141 after UH correction (fails); (3) implied SME welfare weight under strict invariance drops to 0.7 (below unity); (4) welfare ranking flips between main and strict-invariance specs in pharma but not non-pharma. Pharma is therefore reported as a *qualitative confirmation* — same direction, fragile magnitude."
 created: 2026-05-21
 script: scripts/24_pharma.R + v7-jpube-tight/scripts/33_pharma_flag.R + various
 target: output/tables/tab_pharma.tex + v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex
@@ -56,20 +56,27 @@ margins, comparing each to non-pharma:
 
 ## Results
 
-### 1. Reduced-form effects (pharma vs non-pharma)
+### 1. Reduced-form effects (within-Group-65 falsification)
 
-From `tab_pharma.tex`, 18-month window:
+The canonical reduced-form pharma evidence is the within-Group-65
+falsification reported in the online appendix (OA-B) and
+[AN-027](an-027-within-g65-cmed.md): the CMED-regulated medications
+subclass (CADMAT 6531) versus other Group-65 medical supplies, 18-month
+window, both compared to non-Group-65 controls.
 
-| Outcome | Pharma (6531) split | Non-pharma split | Pharma interaction |
-|---|---:|---:|---:|
-| Log prices | **−0.156*** | −0.075*** | −0.076*** |
-| Log firms  | **+0.165*** | +0.057*** | +0.106*** |
-| Log bids   | **+0.150*** | +0.030*** | +0.119*** |
-| Distance (km) | +10.28** | +3.34* | +7.22 (n.s.) |
+| Outcome | Medications (6531), base / PBU FE | Other medical supplies, base / PBU FE |
+|---|---:|---:|
+| Log prices | **−0.166*** / −0.174*** | −0.099*** / −0.097*** |
+| Log firms  | **+0.152*** / +0.161*** | +0.044*** / +0.050*** |
 
-**Pharma reduced-form effects are 2–5× larger than non-pharma.** The
-pharma-interaction term confirms statistical separation on prices,
-firms, and bids.
+**The regulated-medications cell is larger in magnitude** (price −0.166
+vs −0.099; firms +0.152 vs +0.044) but the effect is present and
+significant in *both* subclasses — a confounder operating only through
+CMED-regulated medicines would not move the non-medication cell. CMED
+ceilings *cap* prices, so contamination would attenuate the medications
+coefficient, not amplify it. The larger medications magnitude is
+consistent with deeper non-SME pharmaceutical bidder pools, not pharma
+inflation.
 
 ### 2. Structural decomposition (pharma cell)
 
@@ -77,9 +84,9 @@ Recovered from `values.tex`:
 
 | Object | Pharma | Non-pharma |
 |---|---:|---:|
-| $S_1$ (open pre)        | 0.654 | 0.770 |
-| $S_2$ (SME-only, pre-pool fixed) | 1.219 | 1.110 |
-| $S_3$ (SME-only, post-pool)      | 0.963 | 1.002 |
+| $S_1$ (open pre)        | 0.654 | 0.774 |
+| $S_2$ (SME-only, pre-pool fixed) | 1.219 | 1.144 |
+| $S_3$ (SME-only, post-pool)      | 0.963 | 1.000 |
 | Lost-discipline (S₂−S₁) | +0.565 | +0.371 |
 | Protected-pool offset (S₃−S₂)    | −0.256 | −0.144 |
 | Net effect (S₃−S₁) | **+0.309** | +0.227 |

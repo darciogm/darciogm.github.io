@@ -20,11 +20,12 @@ testbed: comparing group 65 (switched) to other groups (always treated)
 yields the *open-vs-SME-only* price effect.
 
 !!! abstract "Intuition (plain-language)"
-    Procurement prices are set by the most competitive bidders, and non-SMEs are often those price-setters. Kick them out and prices should rise; let them back in and prices should fall. The March 2018 PGE-SP reversal that re-imposed SME-only status on medical supplies flips the regime cleanly, letting us read off the open-vs-set-aside price gap directly: about 13% lower under open competition.
+    Procurement prices are set by the most competitive bidders, and non-SMEs are often those price-setters. Kick them out and prices should rise; let them back in and prices should fall. The March 2018 PGE-SP reinterpretation that re-imposed SME-only status on medical supplies flips the regime cleanly, letting us read off the open-vs-set-aside price gap directly: about 10–11% lower under open competition.
 
 > **Evidence strength: Partial (strongly supported).**
-> [AN-001](../analyses/an-001-didir-prices.md) reports DiDiR β =
-> −0.131 to −0.133 (18m, p<0.01); reading survives placebos
+> [AN-001](../analyses/an-001-didir-prices.md) reports the v8 reduced-form
+> benchmark β = −0.113 (18m, ~10–11%, p<0.01; the earlier v1–v4 pipeline
+> gave −0.131 to −0.133); reading survives placebos
 > ([AN-004](../analyses/an-004-placebo-tests.md)), Lee bounds
 > ([AN-005](../analyses/an-005-lee-bounds.md)), HonestDiD
 > ([AN-006](../analyses/an-006-honestdid.md)), Sun-Abraham (0.108 ≈ DDR
@@ -76,13 +77,15 @@ or a binding M̄ in HonestDiD; both come back null.
 
 ## Setting evidence
 
-The March 2018 PGE-SP opinion (PGE-SP n. 2018/01) reversed the prior
-exemption of group 65 from the federal SME law's mandatory SME-only rules
-for items below R$80,000. From that date, group 65 procurements joined
-all other groups in being subject to SME-only tendering by default.
-This created a clean switching event with a pre-period in which group 65
-was open to all bidders and other groups were already SME-only, and a
-post-period in which all groups were subject to the same SME-only rule.
+Before 2018, Group 65 stayed open because São Paulo applied the
+R$80,000 SME-only threshold to the **total value of the purchase notice**,
+not item-by-item; medical notices bundle many small items inside large
+orders, keeping them outside the SME-only default. PGE-SP Parecer
+151/2017 (December 2017) held that the threshold applies item-by-item,
+and Group-65 buyers reached mass take-up around the **March 2018**
+operational cutoff. From that point Group 65 joined the other groups
+under SME-only tendering by default — a clean switching event with an
+open pre-period (controls already SME-only) and an SME-only post-period.
 See [docs/paper.md](../paper.md) for the institutional account.
 
 ## Empirical test
@@ -112,9 +115,9 @@ for that decomposition).
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-001](../analyses/an-001-didir-prices.md) | Supports | DiDiR price &beta; &minus;0.131 to &minus;0.133 (18m), p<0.01, item-clustered. Magnitudes stable across 6/12/18-month windows. |
-| [AN-004](../analyses/an-004-placebo-tests.md) | Supports (via rule-out) | Pre-treatment placebo on prices null (&beta; = &minus;0.0145, p > 0.10) — rules out the cost-shock confound. |
-| [AN-005](../analyses/an-005-lee-bounds.md) | Supports | Lee bounds &minus;0.131 to &minus;0.123, both highly significant; sample selection has negligible impact. |
+| [AN-001](../analyses/an-001-didir-prices.md) | Supports | v8 reduced-form benchmark &beta; &minus;0.113 (18m, ~10–11%), p<0.01, item-clustered; stable across 6/12/18-month windows. Earlier v1–v4 pipeline gave &minus;0.131 to &minus;0.133. |
+| [AN-004](../analyses/an-004-placebo-tests.md) | Supports (via rule-out) | Pre-reform price placebos small (&beta; = &minus;0.013/&minus;0.030/&minus;0.034 at Sep/Mar/Jun 2017) vs real-cutoff &minus;0.108 to &minus;0.142 — rules out the cost-shock confound. |
+| [AN-005](../analyses/an-005-lee-bounds.md) | Supports | Lee bounds tight; completion-selection has negligible impact. |
 | [AN-006](../analyses/an-006-honestdid.md) | Supports | Price effect survives substantial M̄ violations in HonestDiD. |
 | [AN-007](../analyses/an-007-quantile-did.md) | Mixed | Effect concentrated at &tau; &le; 0.50 (strongly negative); turns positive at &tau; = 0.90. Mean DiDiR masks heterogeneous distributional impact. |
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Structural counterfactual confirms direction; $S_1 - S_3 > 0$ in standardized non-pharma. |
@@ -137,8 +140,8 @@ robustness battery.
 
 ### Adherence-rate sensitivity for fiscal translation
 
-The reduced-form &beta; translates to ~R$55–128M/year on group 65 alone
-under varying adherence assumptions
+The structural welfare loss translates to ~R$38–89M/year on group 65 alone
+across the 30–70% adherence range
 (see [docs/extensions.md](../extensions.md)). A first-stage-by-PBU
 adherence calibration (`scripts/35_pref_sdid_class.R`) would tighten the
 fiscal interpretation but is not load-bearing for the welfare arithmetic,

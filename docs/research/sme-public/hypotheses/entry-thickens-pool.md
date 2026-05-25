@@ -29,11 +29,12 @@ see [H:protected-pool-responds](protected-pool-responds.md)).
 > DiDiR β on log firms +0.18 (6m) → +0.10 (18m), p<0.01.
 > (ii) **Extensive margin** — [AN-029](../analyses/an-029-bid-aggressiveness.md)
 > shows completion rate rises +10.7 pp at 18m (p<0.01).
-> (iii) **Per-bidder aggressiveness** — same AN: the price effect
+> (iii) **Composition / order statistic** — same AN: the price effect
 > *survives* fixing N at 2, 3, or ≥5 firms (β = −0.09 to −0.11***);
-> runner-up bid gap shrinks by 2.7 pp full-sample (p<0.01). Pure-headcount
-> explanation rejected — each firm bids more aggressively in expectation
-> of larger competition.
+> the price-forming gap shrinks by 2.7 pp full-sample (p<0.01).
+> Pure-headcount explanation rejected — holding N fixed, removing low-cost
+> non-SMEs shifts the price-forming order statistic (a composition/admissibility
+> effect, not strategic "less aggressive" bidding, per v8).
 
 ## Theory
 
@@ -100,7 +101,7 @@ pre-treatment seasonality.
 | [AN-002](../analyses/an-002-didir-firms-bids.md) | Supports | DiDiR firms &beta; +0.178 to +0.182 (6m), +0.149 to +0.154 (12m), +0.093 to +0.100 (18m); all p<0.01. Bid-count direction same. |
 | [AN-004](../analyses/an-004-placebo-tests.md) | Mixed | Pre-treatment placebo significant for firms (&beta; ~ &minus;0.10, p<0.01) — flagged in robustness as reflecting the secular SME-restriction rollout across control groups, not a group-65-specific cost shock. |
 | [AN-010](../analyses/an-010-bne-decomposition.md) | Supports | Structural confirms: SME participation roughly doubles after the cutoff while non-SME participation falls — but the net post-policy bidder count is smaller than the pre-policy open count. |
-| [AN-029](../analyses/an-029-bid-aggressiveness.md) | Supports | (a) Completion rate +10.7 pp at 18m; (b) Price β survives fixing N=2/3/≥5 at −0.09 to −0.11***; (c) Runner-up gap shrinks −2.7 pp full sample. Two channels: extensive + per-bidder aggressiveness. |
+| [AN-029](../analyses/an-029-bid-aggressiveness.md) | Supports | (a) Completion rate +10.7 pp at 18m; (b) Price β survives fixing N=2/3/≥5 at −0.09 to −0.11***; (c) price-forming gap shrinks −2.7 pp full sample. Two channels: extensive margin + composition/order-statistic (not behavioral aggressiveness). |
 
 ## Open tests
 

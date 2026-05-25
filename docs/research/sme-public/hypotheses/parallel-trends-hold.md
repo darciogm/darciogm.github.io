@@ -80,15 +80,16 @@ a group-65-specific shock — see
 
 ## Setting evidence
 
-The pre-treatment period (Sep 2016–Feb 2018) is long enough to test
-trend stability. The placebo design uses Sep 2017 and Mar 2017 as fake
-treatment dates, splitting the pre-period into nominal "pre" and "post"
-halves while applying the same DiDiR specification.
+The pre-treatment period is long enough to test trend stability. The
+placebo design uses Sep 2017, Mar 2017, and Jun 2017 as fake treatment
+dates, splitting the pre-period into nominal "pre" and "post" halves
+while applying the same DiDiR specification.
 
 ## Empirical test
 
-- *Pre-treatment placebos*: DiDiR with fake treatment dates Sep 2017
-  and Mar 2017; price coefficient should be null.
+- *Pre-treatment placebos*: DiDiR with fake treatment dates Sep 2017,
+  Mar 2017, and Jun 2017; price coefficient should be small relative to
+  the real cutoff.
 - *HonestDiD*: Rambachan-Roth bounds on the post-treatment trend
   deviation; the price effect should remain significant for moderate M̄.
 - *Lee bounds*: Lee (2009) selection-bound formula applied to the
@@ -111,7 +112,7 @@ not to group 65 itself.
 
 | Analysis | Bearing | Key takeaway |
 |----------|---------|--------------|
-| [AN-004](../analyses/an-004-placebo-tests.md) | Supports | Pre-treatment price placebo &beta; = &minus;0.0145 (Sep 2017) and +0.0206 (Mar 2017), p>0.10 on the first, p<0.10 on the second — small and not driving the main result. |
+| [AN-004](../analyses/an-004-placebo-tests.md) | Supports | Pre-reform price placebos small and negative: &beta; = &minus;0.013 / &minus;0.030 / &minus;0.034 at Sep / Mar / Jun 2017, all far below the real-cutoff &minus;0.108 to &minus;0.142 range — not driving the main result. |
 | [AN-005](../analyses/an-005-lee-bounds.md) | Supports | Bounds −0.131 to −0.123, both highly significant; differential completion has negligible impact. |
 | [AN-006](../analyses/an-006-honestdid.md) | Supports | Price effect remains significant under substantial M̄ violations. |
 | [AN-018](../analyses/an-018-cs2021-staggered.md) | Supports | Sun-Abraham item-level ATT 0.108 vs DDR 0.113 (Δ<0.005 on log prices); CS2021 group-month 0.237* same direction; convergence across three estimators on direction, on magnitude for SA. |

@@ -3,15 +3,15 @@ paper: sme-public
 id: an-029
 hypothesis: entry-thickens-pool
 type: causal
-question: Is the open-competition price effect driven purely by more bidders (headcount channel), or does each individual bidder also bid more aggressively (per-bidder aggressiveness channel)? And does open competition raise the extensive margin (tender completion rate)?
+question: Is the open-competition price effect driven purely by more bidders (headcount channel), or does it persist when the bidder count is held fixed (the composition / order-statistic channel)? And does open competition raise the extensive margin (tender completion rate)?
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "Two-channel decomposition: (a) open competition lifts the extensive margin (completion rate) by +10.7 pp (18m, p<0.01); (b) the price effect persists at β = −0.09 to −0.11*** when N is fixed at exactly 2, 3, or ≥5 firms — ruling out the pure-headcount explanation; (c) winner-to-runner-up bid gap shrinks under open competition (normalized gap −2.7 pp, p<0.01 full sample). Open competition thickens the pool AND makes each firm bid more aggressively."
+headline: "(a) Open competition lifts the extensive margin (completion rate) by +10.7 pp (18m, p<0.01); (b) the price effect persists at β = −0.09 to −0.11*** when N is fixed at exactly 2, 3, or ≥5 firms — ruling out the pure-headcount explanation; (c) the winner-to-runner-up bid gap shrinks under open competition (normalized gap −2.7 pp, p<0.01 full sample). Read through the v8 order-statistic mechanism: with N held fixed, removing low-cost non-SMEs from the eligible pool shifts the price-forming order statistic upward — a composition/admissibility channel, NOT strategic 'less aggressive' SME bidding."
 created: 2026-05-21
 script: scripts/06_extensions.R (extensive) + scripts/29_runnerup_gap.R + scripts/27_major2_controls.R (bid aggressiveness)
 target: output/tables/tab_extensive.tex + tab_runnerup_gap.tex + tab_bid_aggressiveness.tex
-tags: ["H:entry-thickens-pool", "H:price-discipline-loss", extensive-margin, bid-aggressiveness, runnerup-gap, headcount-vs-aggressiveness, completion-rate]
+tags: ["H:entry-thickens-pool", "H:price-discipline-loss", extensive-margin, composition-channel, order-statistic, runnerup-gap, headcount-vs-composition, completion-rate]
 design:
   sample: "BEC items (all, for completion margin) and BEC completed items 18m (for bid-aggressiveness and runner-up gap)"
   specification: "(a) DiDiR with completion-indicator outcome, group FE; (b) DiDiR price effect under conditioned subsamples with fixed N ∈ {2, 3, ≥5}, item + month FE; (c) DiDiR on normalized runner-up gap (p^(2) − p^(1)) / p^ref, item + PBU + month FE"
@@ -19,10 +19,13 @@ design:
   cluster: "item"
 ---
 
-# AN-029: Bid aggressiveness — headcount vs per-bidder channel
+# AN-029: Price effect at fixed bidder count — composition, not headcount
 
 !!! abstract "Intuition (plain-language)"
-    Does open competition lower prices only by adding bidders, or does each firm also bid harder? Fix the bidder count at exactly 2, 3, or 5+ and the price effect persists — so it is not pure headcount. Open competition both thickens the pool and sharpens each firm's bid, and it lifts the share of tenders that actually complete by about 11 percentage points.
+    Does open competition lower prices only by adding bidders? Fix the bidder count at exactly 2, 3, or 5+ and the price effect persists — so it is not pure headcount. The reason, in the paper's order-statistic reading, is *who* is in the pool: with the count held fixed, removing low-cost non-SMEs and leaving higher-cost SMEs raises the price-forming (second-lowest) draw. It also lifts the share of tenders that actually complete by about 11 percentage points. This is a composition/admissibility effect, not firms choosing to "bid harder."
+
+!!! warning "Framing: order statistic, not behavioral aggressiveness"
+    The v8 manuscript reads Pregão drop-outs as willingness-to-supply under the IPV clock, so the mechanism is which order statistic forms the price — *not* that protected firms "bid less aggressively" (§3, §2 explicitly: "an admissibility effect rather than evidence of less aggressive SME bidding"). The fixed-N evidence on this page is therefore evidence for the **composition / order-statistic** channel inside lost-discipline, not for a behavioral per-bidder-aggressiveness channel. The page is worded accordingly.
 
 ## Question
 
@@ -33,13 +36,15 @@ complementary questions are open:
 
 1. **Extensive margin**: does open competition affect the *probability*
    that an auction successfully procures (completion rate)?
-2. **Per-bidder aggressiveness**: does each individual bidder also bid
-   more aggressively when more bidders are present? Or is the price
-   effect purely mechanical from more bidders?
+2. **Composition vs headcount**: does the price effect persist when the
+   bidder count is held fixed? If it does, the effect is not purely the
+   mechanical addition of bidders — it reflects *which* bidders are in the
+   pool (composition), which in the order-statistic reading shifts the
+   price-forming draw.
 
 The first asks whether open competition expands the *set of successful
-auctions*; the second asks whether it changes *behavior within an
-auction*.
+auctions*; the second asks whether the price effect is headcount alone or
+also the composition of the eligible pool at a given count.
 
 ## Design
 
@@ -57,8 +62,9 @@ auction*.
     the price effect were purely from headcount, conditioning on
     fixed $N$ should kill it.
   - **(c) Runner-up gap**: outcome = normalized gap
-    $(p^{(2)} - p^{(1)}) / p^{\mathrm{ref}}$ — smaller gap signals
-    more aggressive bidding by the runner-up.
+    $(p^{(2)} - p^{(1)}) / p^{\mathrm{ref}}$ — a smaller gap signals the
+    second-lowest (price-forming) draw sits closer to the lowest, which in
+    the order-statistic reading reflects a lower-cost eligible pool.
 - **Identification threats**: completion margin may interact with
   selection of which items get bids; runner-up gap analysis requires
   the runner-up to be observed (N ≥ 2).
@@ -76,7 +82,7 @@ auction*.
 Open competition raises the tender completion rate by **+10.7 pp**
 (18m baseline). Highly significant in all windows.
 
-**(b) Bid aggressiveness conditional on fixed N**
+**(b) Price effect conditional on fixed bidder count N**
 (`tab_bid_aggressiveness.tex`):
 
 | Subsample | β on $g65 \times \text{Pre}$ | SE | N |
@@ -101,9 +107,11 @@ about 85% of the unconditional baseline.
 | N ≥ 5 firms | −0.0104* (0.005) | −0.0082** (0.004) | 245,002 |
 
 Under open competition the **normalized winner-to-runner-up gap
-shrinks by 2.7 percentage points** (full-sample, p<0.01). The
-runner-up bids more aggressively, sitting closer to the winner's
-price.
+shrinks by 2.7 percentage points** (full-sample, p<0.01). In the
+order-statistic reading, the second-lowest (price-forming) willingness
+to supply sits closer to the lowest because the eligible pool includes
+lower-cost non-SMEs — a composition effect on the gap, not a behavioral
+change in how aggressively any one firm bids.
 
 Output: `output/tables/tab_extensive.tex`,
 `tab_bid_aggressiveness.tex`, `tab_runnerup_gap.tex`.
@@ -115,14 +123,16 @@ prices *only* because more firms bid, then fixing the number of
 firms should kill the price effect. It does not. At N = 2 (minimum
 competitive), the price effect is β = −0.093*** — 85% of baseline.
 At N ≥ 5, it is −0.107*** (essentially the same as the unconditional
-−0.109*** baseline). The per-bidder aggressiveness channel is real.
+−0.109*** baseline). The composition channel is therefore real: at a
+given bidder count, *which* firms are eligible moves the price-forming
+order statistic.
 
-**The runner-up bids more aggressively in larger auctions.** The
-gap-shrinking at N ≥ 5 (β = −0.010*) but not at N = 2 or N = 3
-suggests that *expected* bidder count — even when realized N is
-fixed — affects per-bidder bidding strategy. Firms entering an
-auction where 5+ other firms are participating bid harder than
-firms entering an auction with only 1 other.
+**The price-forming gap narrows in larger auctions.** The gap-shrinking
+at N ≥ 5 (β = −0.010*) but not at N = 2 or N = 3 is consistent with the
+order-statistic reading: in thicker pools the second-lowest
+willingness-to-supply draw sits closer to the lowest. Under the
+maintained IPV clock this is a property of the draw distribution and
+pool composition, not a strategic change in how any one firm bids.
 
 **Extensive margin is real.** A 10.7 pp rise in completion rate is
 economically large — open competition not only lowers prices on
@@ -134,15 +144,18 @@ completion, AND those completed auctions deliver lower prices.
 prediction holds on three fronts:
 - More firms participate ([AN-002](an-002-didir-firms-bids.md): +10–22%)
 - The auctions successfully complete more often (this AN: +10.7 pp)
-- Each firm bids more aggressively conditional on participating
-  (this AN: gap shrinks; price effect survives fixing $N$)
+- The price effect is composition-driven, not headcount-only: it
+  survives fixing $N$, and the price-forming gap narrows in thicker
+  pools (this AN)
 
-The unconditional reduced-form −0.13 price effect is therefore a
-*sum* of three mechanisms: more entrants × more completions ×
-more aggressive bidding. The decomposition is what the structural
-model in [AN-010](an-010-bne-decomposition.md) refines into the
-exclusion-vs-protected-pool split; the per-bidder aggressiveness
-channel sits *inside* the lost-discipline component.
+The unconditional reduced-form price effect (~−0.11, 18m) therefore
+combines more entrants, more completions, and a composition shift in
+the eligible pool at any given count. The structural model in
+[AN-010](an-010-bne-decomposition.md) refines this into the
+exclusion-vs-protected-pool split; the fixed-N composition result is
+direct evidence for the **order-statistic channel inside
+lost-discipline** — not for a behavioral per-bidder-aggressiveness
+channel, which the v8 manuscript explicitly disavows.
 
 Confidence: **yellow.** Three separate channels are documented with
 independent tests. The reading is yellow because:
@@ -150,16 +163,19 @@ independent tests. The reading is yellow because:
   exactly 2 firms differ from items with 5+ firms in observables
   (value, complexity). The price-effect persistence under fixed N
   is informative but not a clean test of aggressiveness alone.
-- The runner-up gap could shrink either because the runner-up
-  bids more aggressively OR because the winner backs off less.
+- The runner-up gap narrowing is consistent with the order-statistic /
+  composition reading, but the design cannot fully separate it from any
+  residual within-firm behavioral response; the IPV-clock interpretation
+  ([H:ipv-clock-admissible](../hypotheses/ipv-clock-admissible.md)) is
+  maintained, not proven.
 
 ## Follow-ups
 
 - **Within-firm bid behavior across the policy break**: for firms that
   bid in both pre and post periods, compare bid moments. A within-firm
   shift in mean bid (relative to reference) would isolate the per-bidder
-  aggressiveness channel from selection-into-participation. Not yet
-  authored as a standalone AN.
+  composition channel from any residual within-firm behavioral response.
+  Not yet authored as a standalone AN.
 - **Newcomer firms**: which firms participating post are new entrants
   to BEC vs returning bidders? If many SMEs are newcomers, the entry
   response is real expansion not rotation.
