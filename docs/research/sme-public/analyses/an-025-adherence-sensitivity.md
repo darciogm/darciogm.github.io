@@ -7,7 +7,7 @@ question: How does the annualized fiscal welfare cost on Group 65 vary across pl
 status: done
 status_date: 2026-05-21
 confidence: yellow
-headline: "At λ=0.30, the per-auction welfare cost is fixed at 0.204 (non-pharma) and 0.308 (pharma) of reference price. Annualized on Group 65: R$38–89M per year (US$11–25M) across the 30–70% adherence range reported in the paper; the empirical 43% adherence implies ~R$55M/yr. Adherence is the sensitivity-driver of the realized fiscal cost; the per-auction structural magnitude is held fixed."
+headline: "At λ=0.30, the per-auction welfare cost is held fixed at the canonical structural point estimate (28.9% of the open-regime price in non-pharma, 44.8% in pharma). Annualized on Group 65: R$38–89M per year (US$11–25M) across the 30–70% adherence range reported in the paper; the empirical 43% adherence implies ~R$55M/yr. Adherence is the sensitivity-driver of the realized fiscal cost; the per-auction structural magnitude is held fixed."
 created: 2026-05-21
 script: v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R
 target: v7-jpube-tight/output/tables/tab_welfare_adherence_sensitivity.tex
@@ -48,8 +48,11 @@ SME-only mandate is imperfect.
 - **Annual reference outlays**: pharma R$363M/yr; non-pharma R$345M/yr
   (own tabulation; 18-month Post window annualized to 12 months).
 - **Per-auction welfare cost** (λ=0.30, fixed across adherence grid):
-  0.308 × $p^{\mathrm{ref}}$ in pharma; 0.204 × $p^{\mathrm{ref}}$ in
-  non-pharma.
+  the canonical structural loss — 28.9% of the open-regime price in
+  non-pharma, 44.8% in pharma ([AN-011](an-011-welfare-arithmetic.md)).
+  Carried into the annual scaling, this anchors full (100%) adherence at
+  R$55M/yr (non-pharma) and R$73M/yr (pharma) — an effective welfare cost
+  of ≈0.16 and ≈0.20 of annual reference outlay, respectively.
 - **Empirical baseline**: 43% — the state-level Post-period Group-65
   SME-only adherence rate (paper §2 institutional).
 
@@ -78,7 +81,8 @@ Output: `output/tables/tab_welfare_adherence_sensitivity.tex` and
 
 **The R$38–89M range is an adherence-grid sensitivity, not a
 structural uncertainty band.** The per-auction welfare cost is *fixed*
-(0.204 NP / 0.308 PH of reference price); the range spans the
+at the canonical λ=0.30 structural point estimate (28.9% of the
+open-regime price in non-pharma, 44.8% in pharma); the range spans the
 paper's reported 30–70% adherence band. The empirically observed
 adherence of 43% implies **~R$55M/yr (US$16M/yr)**; the upper bound of
 the reported range, at 70% adherence, is **R$89M/yr (US$25M/yr)**.
