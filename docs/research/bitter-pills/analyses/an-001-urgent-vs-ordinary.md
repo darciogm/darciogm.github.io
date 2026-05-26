@@ -20,7 +20,7 @@ design:
 
 # AN-001: Urgent vs ordinary pharmaceutical procurement
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Buying in a hurry costs more. When a pharmaceutical purchase has to clear on a tight deadline, the state cannot wait for a deep field of bidders or batch the order into a large lot, so prices come in higher and fewer firms compete. Within the same item, year, and buyer, urgent purchases run about 5.4% more expensive on the negotiated price, draw roughly 5.4% fewer bidders, and are slightly more likely to clear. This sets the stage — it tells us the urgent environment is the costly one — but it is not yet the court-sanction design.
 
 ## Question

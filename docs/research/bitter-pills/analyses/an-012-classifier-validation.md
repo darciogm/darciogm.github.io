@@ -19,7 +19,7 @@ design:
 
 # AN-012: Urgency classifier validation
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Every purchase order is labeled as judicial-urgent, administrative-urgent, or ordinary by a classifier. Before trusting those labels, we check them against a hand-verified ground-truth set. The classifier agrees with the ground truth on 98.6% of cases, and its per-class accuracy is high for both urgent types. Crucially, the kind of mistakes it still makes would blur the regimes together, pulling estimated contrasts toward zero rather than exaggerating them.
 
 ## Question

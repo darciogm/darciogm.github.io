@@ -20,7 +20,7 @@ design:
 
 # AN-005: Pricing-vs-sourcing decomposition of the urgent gap
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     The cost of court-mandated urgency could come from two very different places. Either the same supplier charges more (a pricing story), or the state ends up buying from a different, more fragmented set of suppliers in smaller lots (a sourcing story). This page does the arithmetic. Almost all of the observed cost gap is lost scale — administrative orders are about 3.3 times larger, and bigger orders earn bulk discounts. The same-firm pricing piece is essentially zero. What is left over points toward a change in who supplies, but that leftover is a reconciliation residual, so it has to be read together with the direct winner-switching evidence.
 
 ## Question

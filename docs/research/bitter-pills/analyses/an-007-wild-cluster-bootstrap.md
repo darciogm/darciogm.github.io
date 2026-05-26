@@ -20,7 +20,7 @@ design:
 
 # AN-007: Wild-cluster bootstrap inference on the UTG contrast
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     The urgent-price gap is estimated across a modest number of purchasing units, and those units differ a lot in size. With few, uneven clusters, ordinary standard errors can overstate precision. The Rademacher wild-cluster bootstrap re-draws the data thousands of times to stress-test the gap. It still rejects a zero administrative-minus-litigated gap, so the contrast is not an artifact of how the standard errors are computed.
 
 ## Question

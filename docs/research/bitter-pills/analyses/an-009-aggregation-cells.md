@@ -20,7 +20,7 @@ design:
 
 # AN-009: Aggregation within buyer-item-month cells
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Group purchases into buyer-item-month cells and ask two questions: how much was bought, and in how many separate pieces. Administrative cells move more total quantity, consistent with buying at greater scale. Litigated cells are split into more separate purchase-offer-items, consistent with demand arriving in fragmented, repeated batches. Neither fact alone settles the mechanism; together with the decomposition figure and winner switching they point toward a scale and sourcing reading.
 
 ## Question

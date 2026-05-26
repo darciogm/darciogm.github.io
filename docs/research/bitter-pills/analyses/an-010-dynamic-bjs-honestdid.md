@@ -20,7 +20,7 @@ design:
 
 # AN-010: Dynamic BJS event study and Honest-DiD sensitivity
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Trace prices period by period around exposure. The gap is small right after exposure and grows over the following periods, which fits a story of demand building up. But when we stress-test the dynamic path against plausible pre-trend deviations, sized to the largest deviation already visible before exposure, the robust intervals no longer rule out zero. So the dynamic pattern is a useful diagnostic, but it is not what the main claims stand on.
 
 ## Question

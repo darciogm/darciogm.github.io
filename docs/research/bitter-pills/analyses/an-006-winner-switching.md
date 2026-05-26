@@ -20,7 +20,7 @@ design:
 
 # AN-006: Winner switching across urgent regimes
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Take a buyer that bought the same item both ways — once on an administrative urgent order and once under a court mandate — and ask: did the same firm win, or did someone else step in? If litigation mainly raised the same supplier's price, the winners would largely match. They do not. Across these pairs, the winning supplier sets barely overlap — about a quarter of overlap on average — and in nearly half the pairs there is no overlap at all. The most common winner is a different firm in about seven of every ten pairs. The supplier set, not just the price, moves with the regime.
 
 ## Question

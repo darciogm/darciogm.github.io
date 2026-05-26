@@ -20,7 +20,7 @@ design:
 
 # AN-003: Within-firm-buyer-item pricing under litigation
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Hold everything about the transaction fixed except the regime: the same supplier, the same buyer, the same item. Does that one supplier charge more when the purchase is court-mandated? In deep, repeatedly traded urgent markets, the answer is essentially no — the same firm does not post a broad markup. The picture is not uniform, but the exceptions split in two: the small-lot positive reflects scale (bulk discounts), not the same supplier marking up, while a genuine residual within-firm gap survives in the earlier years — and even that gap is administrative-dearer, not the litigated buyer being squeezed. So the cost of litigation is not a blanket same-firm markup.
 
 ## Question

@@ -20,7 +20,7 @@ design:
 
 # AN-002: Lee bounds on the litigated-vs-administrative urgent gap
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Among urgent purchases, the ones driven by a court order are not a clean random sample — different items, buyers, and circumstances reach the litigated channel than reach the administrative urgent channel, which is itself larger and selected. A raw comparison says the litigated channel costs about 29.5% more; but some of that gap could be who lands where, not the litigation itself. Lee bounds draw a worst-case box around that selection concern. The box still sits well above zero — 15.9% to 21.1% — so the cost premium survives even under conservative selection assumptions.
 
 ## Question

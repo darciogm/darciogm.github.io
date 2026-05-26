@@ -19,7 +19,7 @@ design:
 
 # AN-011: Annual fiscal procurement-cost implication
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Take the price gap from the Lee bounds, apply it to how much the state spends on litigated urgent purchases each year, and discount it by how much of that spending plausibly could have been sourced through the closest feasible urgent comparison. The arithmetic points to roughly $28M a year in extra procurement outlays. This is an outlay calculation for the state budget, not a full welfare accounting: it deliberately leaves out the health benefits of faster access and the search and compliance costs on the other side of the ledger.
 
 ## Question

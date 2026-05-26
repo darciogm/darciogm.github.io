@@ -20,7 +20,7 @@ design:
 
 # AN-004: Market-depth and formulary heterogeneity in the urgent gap
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     The same urgent purchase looks very different depending on how many suppliers can plausibly serve it. Where many firms compete and the item is a routine public-formulary molecule bought again and again, the litigation cost margin is small. Where the supplier pool is shallow or the molecule sits off the public formulary, the gap is larger. This page maps where the deep-market within-firm null breaks down — a diagnostic that locates the margin, not a fresh identification design. Read with [AN-003](an-003-within-firm-pricing.md), the disambiguation matters: the small-lot positive is scale and the surviving earlier-period gap is administrative-dearer, so the larger thin-market gap is not by itself evidence that a court order lets a supplier squeeze the litigated buyer.
 
 ## Question

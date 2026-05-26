@@ -20,7 +20,7 @@ design:
 
 # AN-013: Buyer-by-class placebo battery
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     The original placebo asks whether never-litigated items show the same urgent-price pattern. This version makes the placebo harder to pass: it keeps only never-litigated items bought by the same buyers in the same item classes where litigated purchases also appear elsewhere in the panel. The result stays flat. The urgent pattern does not reappear even in overlapping procurement environments where a generic buyer, class, or platform story would be more plausible.
 
 ## Question

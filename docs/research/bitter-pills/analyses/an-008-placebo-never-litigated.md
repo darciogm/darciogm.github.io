@@ -20,7 +20,7 @@ design:
 
 # AN-008: Placebo on never-litigated items
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     If the price gap were really driven by something generic, a platform-wide pricing quirk or a common time trend, it should also appear on items that are never litigated. It does not. The placebo coefficient on never-litigated items is essentially zero, so the regime contrast is not a mechanical feature of the platform or the calendar.
 
 ## Question
