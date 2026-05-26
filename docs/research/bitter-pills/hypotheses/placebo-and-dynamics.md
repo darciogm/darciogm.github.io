@@ -4,7 +4,7 @@ id: h7
 slug: placebo-and-dynamics
 title: "The urgent-procurement pattern is specific to litigated items; dynamic evidence is diagnostic, not the primary design"
 cluster: D
-paper_section: "§5 + Appendix"
+paper_section: "§6 + Appendix"
 status: partial (strongly supported)
 last_updated: 2026-05-25
 ---
@@ -22,7 +22,7 @@ the observed maximum pre-period scale, so the dynamic evidence is presented as a
 **diagnostic**, not as the paper's primary identification. The primary design
 remains the selection-bounded UTG comparison and the within-firm-buyer-item test.
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Two final checks. The first asks whether the pattern is real or just a quirk of the data: we run the same test on medicines that are never litigated. If the effect showed up there too, we would worry it was an artifact — but it comes back flat, essentially zero, which tells us the pattern is specific to the litigation margin. The second is a timing study that watches the urgent margin evolve around exposure. It points the right way, but when we stress-test it for pre-trend violations it does not hold up at the largest pre-period deviation we actually observe. So we report it honestly as a diagnostic that is consistent with the story, not as the backbone of the identification. The backbone is the bounded under-the-gun comparison and the same-firm test.
 
 > **Evidence strength: Partial (strongly supported).**

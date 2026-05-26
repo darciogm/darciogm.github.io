@@ -19,7 +19,7 @@ Larger orders earn volume discounts, so the court-mandated channel forgoes the
 bulk-discount margin. The pricing-versus-sourcing decomposition shows that the
 quantity/scale component is the dominant piece of the observed gap.
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Buying one box at a time costs more per box than buying a pallet. Court orders force the state to source individual, urgent cases, so the lots stay small. The administrative urgent route, by contrast, batches demand into much larger orders — about 3.3 times larger — and larger orders pull volume discounts. When we decompose the price gap, the lost-scale piece is the big one: holding pricing fixed, the smaller court-ordered lots account for most of the cost difference. The court does not change what a supplier would charge for the same lot; it changes the size of the lot the state is allowed to buy.
 
 > **Evidence strength: Partial (strongly supported).**

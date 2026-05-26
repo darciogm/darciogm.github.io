@@ -22,7 +22,7 @@ interpretation. The cost margin in deep markets operates through *how the state
 is forced to buy* — a reshuffled supplier set — rather than through an incumbent
 marking up the same item.
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Take the same medicine bought by the same buyer, once under a court order and once through the administrative urgent route, and ask: are the winning suppliers the same firms? Mostly not. In about half of these matched pairs the two regimes share no winning supplier at all, and in seven out of ten the single most common winner is a different firm. So legal urgency does not just change the price or the lot size — it changes the cast of suppliers the state ends up buying from. That reshuffling is a real sourcing channel, and it is why the decomposition leaves a supplier-composition piece that the same-firm pricing test alone cannot explain.
 
 > **Evidence strength: Partial (strongly supported).**

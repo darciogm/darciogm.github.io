@@ -25,7 +25,7 @@ fades over time — the opposite direction from a court order squeezing the
 sanctioned buyer. What survives is a bounded statement: the deep-market null is
 **not universal**, with a residual within-firm gap in the earlier period.
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     The deep-market result said the same supplier does not, on average, charge more under a court order. But "on average, in deep markets" is a scoped claim. When the order is small, when the drug is not on the standard public formulary, or when we look at the earlier years before the urgent market filled in, a same-firm price difference reappears. The follow-up tests show exactly how to read that fact: the quantity axis is scale, and the surviving early-period gap is administrative-dearer, not litigated-dearer. The evidence therefore supports a bounded non-null: the deep-market null is not universal, but this is not a clean claim that court sanctions let suppliers squeeze litigated buyers.
 
 > **Evidence strength: Partial (strongly supported).**

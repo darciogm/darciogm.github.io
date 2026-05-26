@@ -24,7 +24,7 @@ these markets is therefore **not** a broad same-firm markup. This is a
 reappears elsewhere, which is the subject of
 [H:thin-market-supplier-leverage](thin-market-supplier-leverage.md).
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     If a court order let suppliers squeeze the state, you would expect the very same firm to charge the very same buyer more for the very same medicine when a sanction is in play. We can check that directly, because some firm–buyer–item combinations show up under both urgent regimes. When we line those up, the price difference is essentially zero. So in the deep, repeated urgent markets where the same supplier keeps selling the same drug to the same buyer, the extra cost is not coming from that supplier marking up the price. It has to be coming from somewhere else — and the rest of the paper points to how the state is forced to buy: smaller lots and a reshuffled supplier set. This is a statement about deep markets, not a blanket claim.
 
 > **Evidence strength: Partial (strongly supported).**

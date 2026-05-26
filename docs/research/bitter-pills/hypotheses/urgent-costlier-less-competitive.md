@@ -4,7 +4,7 @@ id: h1
 slug: urgent-costlier-less-competitive
 title: "Urgent procurement is costlier and less competitive than ordinary procurement"
 cluster: A
-paper_section: "§2 + §5"
+paper_section: "§4 + §5"
 status: partial
 last_updated: 2026-05-24
 ---
@@ -21,7 +21,7 @@ operates, but it is **not** the sanction-exposure design. The contrast between
 court-mandated urgency and the closest administrative urgent comparison is taken
 up separately in [H:utg-gap-selection-bounded](utg-gap-selection-bounded.md).
 
-!!! abstract "Intuition (plain-language)"
+!!! econ "Economic intuition"
     Buying in a hurry costs more. When a pharmaceutical purchase has to clear on a tight deadline, the state cannot wait for a deep field of bidders or batch the order into a large lot, so prices come in higher and fewer firms compete. We see this directly: urgent purchases run about 5.4% more expensive on the negotiated price, draw roughly 5.4% fewer bidders, and are slightly more likely to clear successfully. This sets the stage — it tells us the urgent environment is the costly one — but it does not yet isolate what the court sanction adds on top.
 
 > **Evidence strength: Partial (strongly supported).**
