@@ -21,7 +21,7 @@ design:
 # AN-008: Cobidder buyer breadth and operational footprint
 
 !!! abstract "Intuition (plain-language)"
-    Inside the frequent-loser group, are cobidders distinguishable from other frequent losers, or do they look the same? Cobidders bid in twice as many tenders, cross twice as many unique winners, and concentrate in tighter product portfolios. The profile is what one would expect if cobidders are *deployed* against many tenders deliberately, rather than just bidding broadly by chance.
+    If cobidders are deployed as cartel cover, they should look operationally busier than ordinary frequent losers. They do: inside the FL14 stratum, cobidders bid in ~2× as many tenders (136.5 vs 76.7) and brush past ~2× as many distinct winners (24.8 vs 13.5), at large effect sizes (Cohen's d ≈ 0.7–1.0). The profile fits firms *assigned* to populate many auctions rather than firms that happen to bid broadly. Whether this survives once sheer volume is netted out is the question AN-041 confronts.
 
 ## Question
 

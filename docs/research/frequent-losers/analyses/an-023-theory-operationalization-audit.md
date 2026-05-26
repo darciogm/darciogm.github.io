@@ -21,7 +21,7 @@ design:
 # AN-023: Theory operationalization audit
 
 !!! abstract "Intuition (plain-language)"
-    How much does the result depend on the specific FL14 cutoff? We compare it against FL10, FL20, the Tukey alternative, and percentile-based ranks. The continuous score dominates every binary variant. The paper's FL14 choice is auditable but not ontologically privileged — it is the operational implementation of an underlying continuous primitive (loser-side concentration).
+    This page audits the bridge between concept and code: "loser-side concentration" (the theory) is operationalized as FL14 (the rule). Is FL14 special? No — the continuous score beats every binary version (FL10, FL20, Tukey, percentile ranks; 0.939 vs 0.924 and below). The point is deliberately deflationary: FL14 is the auditable, deployable layer, but it is not ontologically privileged. The economic object is continuous concentration; the cutoff is an engineering choice you can defend without pretending it is a law of nature.
 
 ## Question
 

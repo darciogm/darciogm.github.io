@@ -23,7 +23,7 @@ design:
 # AN-020: DiD around 2018 procurement decree
 
 !!! abstract "Intuition (plain-language)"
-    In 2018 the procurement cap was raised from R\$80K to R\$176K. We use this policy change as a difference-in-differences experiment for the price effect. Both Callaway-Sant'Anna and stacked DiD estimators return null — no detectable shift in price-FL dynamics. Consistent with the scope-not-damages reading: a true damages parameter would interact with the cap change; the FL-margin coefficient does not.
+    If the FL-price gap were a damages estimate, a big shock to the caps should move it. In 2018 the Convite cap jumped from R$80K to R$176K. Two staggered-DiD estimators (Callaway–Sant'Anna and stacked) both return a precise null around the reform. The non-reaction is consistent with the scope reading: the price gap is not a structural overcharge that should respond to the cap — it is a composition feature of where frequent losers operate.
 
 ## Question
 

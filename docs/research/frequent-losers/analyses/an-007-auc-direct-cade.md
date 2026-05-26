@@ -21,7 +21,7 @@ design:
 # AN-007: AUC against direct CADE defendants
 
 !!! abstract "Intuition (plain-language)"
-    The screen is built to detect *cover bidders* (the loser-side roles in a cartel), not cartel ringleaders. So testing it against the 47 direct CADE defendants should give a random result — and it does (AUC ≈ 0.49). This is not a failure: it is the empirical signature that the screen is doing what it claims (loser-side ranking) and not pretending to identify cartel masterminds.
+    The most important number in the paper is a near-coin-flip. The screen ranks loser-side roles, and a cartel's ringleaders are its *winners* — they capture the rents by taking the rotated contracts. So tested against the 47 direct CADE defendants the screen scores AUC 0.491, indistinguishable from random. This is not a failure to hide; it is the design made visible. A tool claiming to flag both cover bidders and ringleaders would be overclaiming, and this null is what disciplines every other claim in the paper.
 
 ## Question
 

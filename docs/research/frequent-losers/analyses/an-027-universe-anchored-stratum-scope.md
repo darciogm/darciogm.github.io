@@ -21,7 +21,7 @@ design:
 # AN-027: Universe-anchored stratum scope matrix
 
 !!! abstract "Intuition (plain-language)"
-    A systematic 8-row matrix varies the universe of firms ranked (always-losers vs all BEC firms) and the positive class (cobidders vs direct defendants). Row 4 is the strong result: raw participation count against direct CADE defendants on the full panel returns AUC 0.383 — BELOW random. The loser-side score doesn't just fail to identify winner-heavy defendants; it actively *repels* them. Structural scope discipline.
+    An eight-cell matrix varies *who* gets ranked (always-losers vs all BEC firms) and *what* counts as a hit (cobidders vs direct defendants). The disciplining row: ranking by raw participation against direct defendants on the full panel gives AUC 0.383 — below random. The loser-side score doesn't merely miss winner-heavy ringleaders, it actively *repels* them. That is exactly the behavior a scope-honest screen should show, and it rules out a "generic detector" reading.
 
 ## Question
 

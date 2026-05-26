@@ -21,7 +21,7 @@ design:
 # AN-002: IQR threshold and FL14 cutoff stability
 
 !!! abstract "Intuition (plain-language)"
-    How does one decide where "a few losses" ends and "frequent loser" begins? The paper uses a textbook quantile rule (median + 1.5 × IQR) rather than picking a number arbitrarily. This page asks: would the result change if we'd picked a different reasonable cutoff? It wouldn't — the signal sits on a wide plateau, not at a fragile peak. The choice is auditable, not cherry-picked.
+    Where does "a few losses" end and "frequent loser" begin? Drawing the line by hand invites cherry-picking, so the paper fixes it with a mechanical quantile rule (median + 1.5 × IQR → FL14, 2,735 firms). The economic question is whether the signal is fragile at that line. It is not: discrimination sits at AUC 0.924 on a wide plateau, and the tighter Tukey cutoff (1,981 firms) actually loses power (0.834). The rule is defensible precisely because the result does not hinge on the exact threshold — the underlying object is continuous loser-side concentration, not a magic number.
 
 ## Question
 

@@ -21,7 +21,7 @@ design:
 # AN-012: Operational metrics — in-sample precision@k
 
 !!! abstract "Intuition (plain-language)"
-    How well does the screen perform if a regulator uses it to draw up a ranked enforcement priority list? Out of the top 500 flagged firms, 13% are cobidders — 11× the baseline rate. The screen meaningfully concentrates investigative attention. Caveat: these are in-sample numbers and inflated; the next page disciplines them with temporal holdout.
+    Turn the screen into a regulator's priority list: of the top 500 flagged firms, 13% are cobidders — an 11.5× lift over the base rate — and the FL14 cutoff alone shrinks the expensive bid-microdata pool by ~83%. That is real concentration of scarce investigative attention. But these are *in-sample* numbers with full hindsight, so they flatter the tool; AN-013 re-runs them under a real-time split before any operational claim is allowed to stand.
 
 ## Question
 

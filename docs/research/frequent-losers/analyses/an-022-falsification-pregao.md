@@ -21,7 +21,7 @@ design:
 # AN-022: Pregão-only falsification
 
 !!! abstract "Intuition (plain-language)"
-    Does the FL-price coefficient hold up modality by modality? Pregão (electronic auctions) shows a +9.6% price coefficient; Convite (sealed-bid) shows +3.9%. The Pregão effect is 2.45× larger than Convite — same direction, very different magnitudes. The asymmetry is scope information about where the FL-price relationship is concentrated.
+    Does the FL-price relationship hold across modalities, and is it the same size? Same direction, very different magnitude: binary FL raises prices +9.6% in Pregão vs +3.9% in Convite (2.45× larger), and the joint specification flips the binary sign altogether. The magnitude asymmetry is again *scope* — it tells you where the FL-price association concentrates — not a clean modality-specific damages estimate you could bank.
 
 ## Question
 

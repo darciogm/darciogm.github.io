@@ -21,7 +21,7 @@ design:
 # AN-003: CADE × BEC linkage and cobidder construction
 
 !!! abstract "Intuition (plain-language)"
-    To test whether the screen works, we need a "truth label" of which firms were actually involved in cartels. CADE (Brazil's antitrust authority) has formally adjudicated 47 firms as direct cartel defendants in procurement cases. The paper's validation target is the broader set of 193 always-loser firms that bid alongside those defendants — the loser-side footprint of the adjudicated cartels.
+    To grade a screen you need ground truth about who actually colluded. CADE, Brazil's antitrust authority, has adjudicated procurement cartels; matching defendants to BEC by CNPJ root yields 47 *direct* defendants. But direct defendants are the cartel's winners — the wrong target for a loser-side screen. The honest validation target is the 193 *cobidders*: always-loser firms that repeatedly bid alongside adjudicated cartelists. These are the cover-bidding roles the screen is built to rank, and the linkage fixes them before any performance number is computed.
 
 ## Question
 

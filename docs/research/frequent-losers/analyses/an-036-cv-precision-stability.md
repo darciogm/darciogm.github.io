@@ -21,7 +21,7 @@ design:
 # AN-036: Cross-validation precision stability
 
 !!! abstract "Intuition (plain-language)"
-    Are the precision numbers we report stable across different random splits of the data, or do they depend on the particular train/test partition? Cross-validation gives precision standard deviations in the range [0.001, 0.011] across k = 50–2,000. Tight enough that the operational claim is not an artifact of one particular split.
+    Are the precision numbers a fluke of one lucky train/test split? Cross-validation says no: precision@k standard deviations are tight (0.004–0.011 across k = 50–2,000, coefficients of variation under 25%). The operational claim — that the ranked list concentrates investigative value — is stable across resamples, not an artifact of one partition. A regulator drawing a priority list would get materially the same list each time.
 
 ## Question
 

@@ -21,7 +21,7 @@ design:
 # AN-026: Subsample robustness (data-rich vs low/high bid counts)
 
 !!! abstract "Intuition (plain-language)"
-    Does the screen work equally well in firms that have a lot of bid microdata vs firms that have very little? AUC stays in the 0.89–0.96 band across full / data-rich / low-bid / high-bid subsamples. The screen does not depend on bid-microdata availability — important because the alternative bid-distribution screen DOES require expensive microdata to operate.
+    Does the result only work for firms with rich bid histories? If so it would inherit the data dependence of the expensive screens it claims to replace. It doesn't: FL14 AUC stays in a tight band (0.887–0.912) across data-rich, low-bid, and high-bid subsamples. That data-independence is the whole operational selling point — the award-layer screen runs on cheap administrative records whether or not bid microdata exists.
 
 ## Question
 

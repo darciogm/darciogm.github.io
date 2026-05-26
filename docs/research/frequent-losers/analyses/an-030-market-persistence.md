@@ -21,7 +21,7 @@ design:
 # AN-030: Market persistence between early (2009–2016) and late (2017–2019) panel
 
 !!! abstract "Intuition (plain-language)"
-    Are the firms in the 2017–2019 test window the same firms as in the 2009–2016 training window? Only 8.7% of firms persist. Markets (PBU × product group) persist at 12.4%. Procuring buyers persist at 83.5%. The institutional environment is stable; the firm and market populations are essentially fresh. The temporal holdout is a genuine out-of-sample test, not a same-firm reshuffle.
+    Is the temporal holdout a real out-of-sample test or a same-firms reshuffle? Mostly fresh: only 8.7% of firms and 12.4% of markets carry over from the early to the late panel, while 83.5% of *buyers* persist. So the institutions are stable but the firms and markets being scored are largely new. That asymmetry is what makes the prospective AUC credible — the screen generalizes to new players inside a stable institutional environment rather than re-recognizing old ones.
 
 ## Question
 

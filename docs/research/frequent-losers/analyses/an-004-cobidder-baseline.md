@@ -21,7 +21,7 @@ design:
 # AN-004: Baseline cobidder concentration in FL14 stratum
 
 !!! abstract "Intuition (plain-language)"
-    Do firms flagged by the screen actually cluster around the loser side of CADE-adjudicated cartels? Yes — the screen achieves discrimination AUC 0.924 against the cobidder set (where 0.5 is random guessing and 1.0 is perfect). This is the headline baseline; the rest of the validation chain disciplines this number against placebos, leakage, and timing.
+    Do the firms the screen flags actually cluster on the loser side of adjudicated cartels? Yes — FL14 separates cobidders from other always-losers at AUC 0.924, and the continuous score reaches 0.939 (0.5 is a coin flip). Economically, this says the loser-side concentration a cartel needs in order to fake competition is visible in cheap award records alone, with no bid microdata. This is the headline; everything after it is an attempt to break it with placebos, leakage audits, and timing discipline.
 
 ## Question
 

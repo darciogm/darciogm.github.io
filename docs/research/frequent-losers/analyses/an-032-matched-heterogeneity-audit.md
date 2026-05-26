@@ -21,7 +21,7 @@ design:
 # AN-032: Matched-heterogeneity audit — does the quadrant profile survive PS matching?
 
 !!! abstract "Intuition (plain-language)"
-    The honest negative finding: most of the within-FL quadrant heterogeneity in the screen does NOT survive matching on participation history. The largest cell drops from a significant +0.09 to a non-significant +0.07 once we control for volume. The implication: within-FL cobidder distinctness is largely a volume effect. What survives matching is the bid-level signature documented in AN-031.
+    An honest negative. The eye-catching cell-level heterogeneity in the cobidder profile (e.g. Low-HHI × Low-pairs +0.09) mostly evaporates once firms are matched on participation volume (→ +0.07, not significant). Translation: much of what looked like a structured "cartel geography" was really just volume showing up in different cells. What does survive matching is the bid-level conduct (AN-031), so the paper keeps the conduct claim and drops the cell-geography claim.
 
 ## Question
 

@@ -21,7 +21,7 @@ design:
 # AN-033: Imhof incremental — formal DeLong tests for complementarity
 
 !!! abstract "Intuition (plain-language)"
-    How much information does the award-layer screen contribute BEYOND what the bid-distribution screen already captures? A formal DeLong test (paired AUC comparison) gives ΔAUC = +0.096 with p = 1.2 × 10⁻²⁶. The two layers are statistically distinct signals. The award layer is not redundant with bid moments.
+    How much does the cheap award layer add *on top of* the expensive bid-distribution screen? A formal DeLong test answers: +0.096 AUC, p ≈ 10⁻²⁶ — the two are statistically distinct signals, not the same information measured twice. Strikingly, FL alone even beats Imhof alone on the same sample (+0.035, p = 0.014). The economic implication is an architecture one: spend on bid microdata only after a near-free award screen has already done its share of the work.
 
 ## Question
 

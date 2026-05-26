@@ -21,7 +21,7 @@ design:
 # AN-013: Precision@k audit — temporal holdout vs in-sample
 
 !!! abstract "Intuition (plain-language)"
-    The in-sample precision numbers are inflated because the screen has full hindsight on the data it was built with. Under a strict train/test split (2009–2016 → 2017–2019), precision@500 drops from 0.13 to 0.07 — retention of 53%. The honest operational number is about half the in-sample headline. The paper reports both columns transparently.
+    In-sample precision is inflated because the screen has already seen the data it is graded on. Under an honest train-on-past, test-on-future split, precision@500 falls from 0.132 to 0.070 (53% retained) and lift from 11.5× to 6.1×. The honest operational number is about half the headline — and the paper reports both columns side by side, resting its claims on the lower one. Roughly half the in-sample ranking power came from cases already under investigation when the data were generated.
 
 ## Question
 

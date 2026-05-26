@@ -21,7 +21,7 @@ design:
 # AN-025: Cutoff-sweep robustness (FL2 through FL100)
 
 !!! abstract "Intuition (plain-language)"
-    If we sweep the cutoff from k = 2 through k = 100, how does discrimination change? AUC rises monotonically to a peak at k = 13 (0.92), then declines smoothly as the cutoff starts to exclude the cobidders themselves. The FL10–FL15 plateau is uniformly above 0.90. The paper's FL14 choice sits on a wide high plateau, not at a fragile peak.
+    Sweep the cutoff from FL2 to FL100 and watch discrimination. It traces a clean inverted-U: rising to a peak around FL13 (0.924), then sliding as the cutoff gets so high it starts excluding the cobidders themselves. The FL10–FL15 band all clears 0.90. Economically this is the reassuring picture — the signal lives on a broad plateau, so FL14 is a point on a hill, not a needle balanced on a spike.
 
 ## Question
 

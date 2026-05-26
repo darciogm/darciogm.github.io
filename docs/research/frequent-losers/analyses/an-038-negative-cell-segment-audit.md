@@ -21,7 +21,7 @@ design:
 # AN-038: Negative cell + item-group segment audit
 
 !!! abstract "Intuition (plain-language)"
-    Where in the data does the sign reversal actually happen? At the item-group level, most groups flip from positive baseline to negative under matched comparison. Item group 37 stays strongly negative across every specification (the cleanest structural negative). Item group 10 stays positive (the boundary of the scope reading). The cell-level heterogeneity is predictably structured, not random.
+    Where exactly does the sign reversal happen? Group by group: most item groups flip from positive baseline to negative under ATT (e.g. group 13: +0.255 → −0.129). One group (37) stays robustly negative; one (10) stays positive, marking the boundary of the scope reading. The heterogeneity is structured, not random noise — predominantly negative under proper comparison — which is what you'd expect if the positive baseline was a composition artifact rather than a price effect.
 
 ## Question
 

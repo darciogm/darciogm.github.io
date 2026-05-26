@@ -21,7 +21,7 @@ design:
 # AN-035: Architecture × k × regime cost-of-evidence matrix
 
 !!! abstract "Intuition (plain-language)"
-    The full grid of operational architectures (award-only, bid-only, joint scoring, sequential at three Stage-1 cutoffs) × six recall levels × two evaluation regimes (in-sample, temporal holdout). The point: in the operationally honest temporal-holdout regime, sequential recall is comparable to joint scoring (114 vs 111 true positives at k=1,000) and more robust to the temporal drop, while using less than a quarter of the bid-microdata footprint. The manuscript does not claim sequential dominates the full-observability joint model.
+    The full operations grid: four sequencing rules × six recall targets × two evaluation regimes. The result that matters is in the *honest* temporal-holdout regime, where the cheap sequential gatekeeper actually edges out full joint scoring (114 vs 111 true positives) using under a quarter of the bid-microdata footprint. Where hindsight is removed, paying for less evidence is not just cheaper — it is at least as good. That inverts the usual "more data is better" instinct for exactly the reason that matters to a budget-constrained regulator.
 
 ## Question
 

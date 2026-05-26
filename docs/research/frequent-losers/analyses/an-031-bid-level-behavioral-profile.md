@@ -21,7 +21,7 @@ design:
 # AN-031: Bid-level behavioral profile — gap-to-winner across classes
 
 !!! abstract "Intuition (plain-language)"
-    Beyond participation patterns, do cobidders also BID differently? Cobidders place bids that are closer to the winning bid (median gap 0.58 vs 0.81 for non-cobidder FLs; effect size d = −0.28). They also show higher within-firm bid dispersion. The bid-level signature is consistent with credible cover bidding — submitting plausible-looking losing bids that don't win.
+    Beyond *how often* they bid, do cobidders *bid differently*? Yes, in a way cover bidding predicts: their bids sit closer to the winning amount (median gap 0.58 vs 0.81; d = −0.28) with somewhat more dispersion. A credible cover bid has to look like a real attempt — close enough to be plausible, deliberately short of winning. The signal lives at the bid level, not just participation counts, though whether *this* survives volume matching is settled in AN-041/042.
 
 ## Question
 

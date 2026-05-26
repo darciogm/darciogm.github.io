@@ -21,7 +21,7 @@ design:
 # AN-006: Strict prospective holdout (timing + exposure)
 
 !!! abstract "Intuition (plain-language)"
-    In a real enforcement environment, the screen would have to be built before the relevant adjudications close. We retrain the screen using only 2009–2016 data and test against later-adjudicated cobidders. Discrimination drops from in-sample 0.93 to 0.77 — informative but lower, as expected when the screen is held to a real-time information set. The signal survives strict timing discipline.
+    A screen is only useful if it would have flagged firms *before* the cases closed. We rebuild it on 2009–2016 data and test it on cobidders adjudicated in 2017–2019. Discrimination falls from in-sample 0.924 to 0.767 — the honest cost of using a real-time information set instead of hindsight. Lower, but well above random: the loser-side footprint forms early enough to carry operational value for a regulator, not merely retrospective fit.
 
 ## Question
 

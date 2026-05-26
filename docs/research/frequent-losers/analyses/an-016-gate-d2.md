@@ -21,7 +21,7 @@ design:
 # AN-016: Gate D2 — modal-by-modal AUC
 
 !!! abstract "Intuition (plain-language)"
-    D2 asks: does the screen perform better in Convite (sealed-bid, with a minimum-bidder rule) or Pregão (electronic auction, no such rule)? An institutional theory predicted Convite > Pregão. The data show the OPPOSITE (Pregão 0.95, Convite 0.82). D2 disqualified an alternative framing of the paper; the current framing treats this as scope information, not as institutional identification.
+    D2 asks where the screen bites harder: Convite (sealed-bid, with a minimum-bidder rule) or Pregão (open electronic auction). A tempting institutional theory predicted Convite — the minimum-bidder rule should force cartels to field *more* cover bidders. The data say the opposite (continuous AUC Pregão 0.95 vs Convite 0.82), which killed an alternative framing of the paper. The disciplined reading: this is *scope* information about where the footprint is strongest, not evidence that an institutional rule identifies the mechanism.
 
 ## Question
 

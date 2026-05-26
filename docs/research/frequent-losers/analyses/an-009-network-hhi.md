@@ -21,7 +21,7 @@ design:
 # AN-009: Network proximity and product-portfolio HHI
 
 !!! abstract "Intuition (plain-language)"
-    Cobidders concentrate in tighter product portfolios than other frequent losers, but the MARKETS where they appear are MORE competitive on the winner side. The pattern fits cover bidding: cobidders are deployed against a few focal product verticals, specifically in markets where winning looks contested — which is where simulated competition is most useful for the cartel.
+    Two facts that look contradictory until you think like a cartel: cobidders specialize in tighter product portfolios (HHI 0.380 vs 0.288), yet the markets where they appear are *more* contestable on the winner side (HHI 0.178 vs 0.303). Cover bidding is most useful exactly where winning looks competitive — a lone-bidder auction fools no one. So a cartel concentrates its designated losers in a few focal verticals and deploys them where simulated rivalry buys the most cover.
 
 ## Question
 

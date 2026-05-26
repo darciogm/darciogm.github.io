@@ -21,7 +21,7 @@ design:
 # AN-041: Volume-matched cobidder audit — does within-FL distinctness survive holding tenders_count fixed?
 
 !!! abstract "Intuition (plain-language)"
-    Cobidders bid in far more tenders than other frequent losers (137 vs 77 on average). A skeptic can argue that everything that makes them look "distinct" — crossing more winners, specializing in a product niche, bidding close to the winner — is just arithmetic: bid more, and you mechanically cross more winners. This audit pairs each cobidder with an FL non-cobidder that bids in the *same* number of tenders, then re-measures the gaps. The product-specialization, winner-pair-spread, and bid-proximity signals survive — and several get *larger* once volume is equalized, meaning volume was masking them, not creating them. One signal dies: the elevated bid-dispersion of AN-031 was a volume artifact.
+    The hardest skeptical test of the profile: pair each cobidder with a non-cobidder frequent loser that bids in the *same* number of tenders, then re-measure the gaps. Most distinctness survives and some grows — product specialization and bidding-close-to-winner strengthen once volume is equalized, meaning volume had been *masking* them. One signal dies honestly: the elevated bid dispersion of AN-031 turns out to be a pure volume artifact. The cobidder type is real, but it is about *what and how they bid*, not merely *how much*.
 
 ## Question
 

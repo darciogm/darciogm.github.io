@@ -21,7 +21,7 @@ design:
 # AN-029: Three-classifier timing battery — strict prospective evaluation
 
 !!! abstract "Intuition (plain-language)"
-    How does the screen perform if we make it INCREASINGLY harder to use any post-window information? We train the screen on only 2009–2015 data (or 2009–2017) and test it against cobidders linked to CADE cases adjudicated AFTER 2019 — strictly out-of-time. The screen still achieves AUC 0.79–0.89 against this disjoint target. Strong evidence of genuine prospective generalization.
+    The toughest timing test in the paper. Train the screen on only 2009–2015 (or 2009–2017) and grade it against cobidders whose cartels were adjudicated *after 2019* — a target the training data could not have peeked at. It still lands AUC 0.79–0.89 across all six (window × target) combinations. Genuine prospective generalization: the loser-side footprint is informative about cartels the screen had no way of knowing about when it was built.
 
 ## Question
 

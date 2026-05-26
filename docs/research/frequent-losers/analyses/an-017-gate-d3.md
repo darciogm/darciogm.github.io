@@ -21,7 +21,7 @@ design:
 # AN-017: Gate D3 — continuous-only thesis
 
 !!! abstract "Intuition (plain-language)"
-    D3 asks: does the substantive thesis still hold if we drop the specific FL14 binary cutoff and use only the continuous score? Yes — every continuous specification is statistically significant and the modal asymmetry from D2 survives. The paper's claim does not depend on a particular cutoff choice.
+    D3 stress-tests whether the thesis depends on the FL14 cutoff at all. Throw the binary away and use only the continuous score: every specification stays significant (p < 0.001) and the modality asymmetry from D2 survives. So loser-side concentration is a property of the data, not an artifact of one threshold. The eye-popping in-sample item-level AUC (0.995) is held back for the leakage audit (AN-014), which is where the honest 0.86–0.89 number lives.
 
 ## Question
 

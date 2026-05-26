@@ -21,7 +21,7 @@ design:
 # AN-021: First-time FL effect under PS matching
 
 !!! abstract "Intuition (plain-language)"
-    Does becoming a frequent loser for the first time predict cobidder status? Unconditionally yes (+0.10, statistically significant). But the effect collapses to +0.06 (not significant) once we match on participation history via propensity scores. The temporal 'first-time' margin doesn't survive volume matching. Reported transparently; demoted to appendix, not load-bearing.
+    Does *becoming* a frequent loser for the first time predict cobidder status — a quasi-dynamic signal? Unconditionally yes (+0.10). But the moment you match firms on participation history with propensity scores, the effect fades to +0.06 and loses significance (p = 0.31). Honest verdict: the "first-time" timing margin is mostly a volume story, not an independent signal. The paper reports it transparently and demotes it to the appendix rather than leaning on it.
 
 ## Question
 

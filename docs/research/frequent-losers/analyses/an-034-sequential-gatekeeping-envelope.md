@@ -21,7 +21,7 @@ design:
 # AN-034: Sequential gatekeeping envelope — joint vs sequential cost-of-evidence
 
 !!! abstract "Intuition (plain-language)"
-    Opening full bid-level microdata is expensive. Can the cheap award-layer screen act as a gatekeeper that selects which firms enter the expensive forensic stage? Yes: a sequential rule (FL screen → Imhof on top 2,000) captures 74% of the joint-scoring true positives while requiring only 17% of the bid-microdata cost. The architecture preserves most of the signal at a fraction of the cost of evidence.
+    Opening full bid-level microdata is the expensive forensic step. Can a near-free award screen act as the gatekeeper that decides which firms are worth that cost? Yes: an FL → Imhof pipeline keeping the top 2,000 firms recovers 74% of the true positives the full joint model finds, while pulling 83% fewer bid records into forensic analysis. This is the paper's core cost-of-evidence argument — most of the signal at a fraction of the evidentiary bill.
 
 ## Question
 

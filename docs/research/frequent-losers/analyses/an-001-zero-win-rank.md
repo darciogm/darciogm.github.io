@@ -21,7 +21,7 @@ design:
 # AN-001: Persistent zero-win participation rank
 
 !!! abstract "Intuition (plain-language)"
-    Among Brazilian procurement bidders, roughly 16,800 firms never won a single tender between 2009 and 2019. The screen ranks these always-losers by how often they show up. The top ~2,700 (the "frequent losers") are firms that bid abnormally often without ever winning — a plausible behavioral footprint of cartel cover bidders, who manufacture the appearance of competition without intending to take the contract.
+    A cartel that rigs a tender still has to make the auction look competitive, or the buyer rejects it for too few bidders. The cheapest way to manufacture that appearance is to field firms that bid but are never meant to win. Over a decade those designated losers accumulate a distinctive footprint: many appearances, zero awards. Of the ~16,800 firms that never won between 2009 and 2019, the IQR rule isolates the 2,735 that bid far more often than a genuine also-ran ever would. The hypothesis is simple: for a cover bidder, frequent losing is not bad luck — it is the job.
 
 ## Question
 
