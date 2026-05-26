@@ -38,8 +38,8 @@ classifier should outperform each layer individually.
 > Imhof; FL14 binary is the auditable simplification of that signal.
 > (iv) **Same-sample horse race** ([AN-011](../analyses/an-011-horse-race-continuous.md), [AN-015](../analyses/an-015-gate-d1.md)):
 > continuous AUC 0.939 dominates the binary FL14 flag (0.924); the
-> gap is 0.015 under the corrected FL14 ≥ 14 definition (exact DeLong
-> statistic pending the D1 re-run).
+> gap is 0.015 under the corrected FL14 ≥ 14 definition (DeLong
+> Z = −4.38, p = 1.2 × 10⁻⁵).
 > (v) **Operational sequential envelope** ([AN-034](../analyses/an-034-sequential-gatekeeping-envelope.md)):
 > sequential award → bid gatekeeping at Stage-1 K=2,000 recovers 131
 > of 193 cobidders (recall 0.679) using 17% of the bid-microdata

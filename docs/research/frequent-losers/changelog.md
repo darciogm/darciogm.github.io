@@ -10,10 +10,24 @@ paper: frequent-losers
 
 **Title:** *Cheap Signals, Costly Proof: Award-Layer Evidence Triage in
 Cartel Enforcement.* Canonical source: `work/v20-editor/submission_clean/`
-(full integral copy of the v18-editor build, recompiled 2026-05-23).
+(full integral copy of the v18-editor build, last recompiled 2026-05-25).
 Headline: an **83%** bid-microdata reduction recovering **131 of 193**
 adjudicated cobidders; firm-level discrimination AUC **0.864** under
 temporal holdout (0.924 in-sample).
+
+**2026-05-25 refresh.**
+
+- **D1 horse-race re-run completed** (`scripts/36_gate_d1_harmonized.R`,
+  FL14 = `tenders_count ≥ 14`). Continuous AUC **0.939** [0.932, 0.946]
+  dominates binary FL14 **0.924** [0.921, 0.926]; **DeLong Z = −4.38,
+  p = 1.2 × 10⁻⁵** — direction preserved, marginally tighter than the
+  earlier (superseded) Z = −4.30 / p ≈ 2 × 10⁻⁵ that had been computed
+  under the `> 14` (FL15) cut. AN-011, AN-015, robustness, and the
+  award-bid-complementarity hypothesis page updated; the "pending the
+  D1 re-run" caveats are retired.
+- Site PDFs (`paper.pdf`, `online_appendix.pdf`) re-synced to the
+  2026-05-25 v20-editor build (intro / validation / forensics / price-scope
+  section edits + macro corrections).
 
 **New result:**
 

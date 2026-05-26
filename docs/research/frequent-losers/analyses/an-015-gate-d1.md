@@ -7,7 +7,7 @@ question: D1 gate diagnostic — does the continuous score dominate FL14 on a ha
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "D1 passes. Continuous AUC 0.939 dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ≥ 14 definition (exact DeLong statistic pending the D1 re-run). Price coefficients align in sign across binary and continuous in the single-score specifications."
+headline: "D1 passes. Continuous AUC 0.939 dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ≥ 14 definition (DeLong Z = −4.38, p = 1.2 × 10⁻⁵). Price coefficients align in sign across binary and continuous in the single-score specifications."
 created: 2026-05-22
 script: scripts/36_gate_d1_harmonized.R
 target: output/gate_d1/gate_d1_harmonized.csv
@@ -48,7 +48,7 @@ the JLEO submission strategy.
 | FL14 binary | 0.924 | [0.921, 0.926] |
 | Continuous log_tc | **0.939** | [0.932, 0.946] |
 
-**D1 passes**: continuous dominates the binary flag; the gap is 0.015 under the corrected FL14 (≥ 14) definition. Exact statistic pending the D1 re-run (published Z = −4.30 / p = 2 × 10⁻⁵ were computed under the earlier > 14 cut).
+**D1 passes**: continuous dominates the binary flag (DeLong Z = −4.38, p = 1.2 × 10⁻⁵); the gap is 0.015 under the corrected FL14 (≥ 14) definition. The D1 re-run (2026-05-25) confirmed the direction; the earlier Z = −4.30 / p = 2 × 10⁻⁵ were computed under the superseded > 14 (FL15) cut.
 
 **Price coefficients (item × year × PBU FE):**
 

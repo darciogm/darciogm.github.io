@@ -86,7 +86,7 @@ Under continuous specification, the headline AUC is preserved across thresholds 
 
 ### Horse-race against continuous score
 
-A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ($\geq 14$) definition (exact statistic pending the D1 re-run — the published $p = 1.7 \times 10^{-5}$ was computed under the earlier $>14$ cut). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
+A horse race between the binary FL flag and the continuous $\log(1+\text{tenders\_count})$ shows the continuous score dominates discrimination. Under DeLong test, continuous-only AUC of 0.939 (in-sample) dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ($\geq 14$) definition (DeLong $Z = -4.38$, $p = 1.2 \times 10^{-5}$; the earlier $p = 1.7 \times 10^{-5}$ was computed under the superseded $>14$ / FL15 cut). The framework treats the continuous primitive as the identification object; the binary rule is the deployable coarsening.
 
 ### Cutoff-sweep robustness (full cutoff sweep)
 

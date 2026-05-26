@@ -33,7 +33,7 @@ should concentrate cobidders, not direct defendants.
 > (iii) subsample robustness: AUC 0.89–0.96 across full / data-rich /
 > low-bid-count / high-bid-count subsamples
 > ([AN-026](../analyses/an-026-subsample-robustness.md));
-> (iv) continuous dominance: DeLong p = 2 × 10⁻⁵
+> (iv) continuous dominance: DeLong Z = −4.38, p = 1.2 × 10⁻⁵
 > ([AN-011](../analyses/an-011-horse-race-continuous.md));
 > (v) volume placebo: permutation AUC 0.713–0.783 ≪ 0.924
 > ([AN-005](../analyses/an-005-sham-fl-permutation.md));
