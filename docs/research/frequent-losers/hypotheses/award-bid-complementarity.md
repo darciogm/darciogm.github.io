@@ -30,8 +30,10 @@ classifier should outperform each layer individually.
 > joint 0.955 [0.943, 0.967].
 > (ii) **Formal DeLong incremental tests** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
 > Imhof + FL14 vs Imhof full Δ = +0.096, **p = 1.2 × 10⁻²⁶**; FL14 vs
-> Imhof Δ = +0.035, **p = 0.014** (FL alone beats Imhof alone with
-> statistical significance).
+> Imhof Δ = +0.035, **p = 0.014** (the award-layer signal alone is at
+> least as discriminating as the full Imhof pipeline, at lower
+> information cost — a complementarity diagnostic, not an outperformance
+> claim).
 > (iii) **Feature decomposition** ([AN-033](../analyses/an-033-imhof-incremental-delong.md)):
 > Imhof-base AUC 0.785 → +participation features +0.154 → +FL binary
 > +0.003. Continuous participation is the load-bearing complement to

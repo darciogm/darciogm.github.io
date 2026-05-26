@@ -7,7 +7,7 @@ question: How significant is the incremental value of the award-layer score adde
 status: done
 status_date: 2026-05-22
 confidence: green
-headline: "Imhof + FL14 vs Imhof full: AUC gain +0.096, DeLong p = 1.2 × 10⁻²⁶. Imhof + log_tc vs Imhof full: gain +0.098, p = 1.3 × 10⁻²⁵. FL14 alone vs Imhof full: gain +0.035, p = 0.014 (FL beats Imhof). Complementarity is strongly supported at the same-sample level."
+headline: "Imhof + FL14 vs Imhof full: AUC gain +0.096, DeLong p = 1.2 × 10⁻²⁶. Imhof + log_tc vs Imhof full: gain +0.098, p = 1.3 × 10⁻²⁵. FL14 alone vs Imhof full: gain +0.035, p = 0.014 (the award layer alone is at least as discriminating as the full Imhof pipeline, at far lower information cost). The increment is a complementarity diagnostic, not an outperformance claim; complementarity is strongly supported at the same-sample level."
 created: 2026-05-22
 script: scripts/49_imhof_incremental_value.R
 target: output/imhof_incremental/imhof_incremental.csv
@@ -79,11 +79,12 @@ yields a complementary reading on within-model contributions:
 
 Four readings:
 
-1. **FL14 alone beats Imhof full at the same-sample level** (0.881 vs
-   0.846; delta +0.035, p = 0.014). Award-layer outperforms the
-   seven-feature bid-distribution pipeline on the same firms with
-   formal significance. *The cheap layer is more informative than the
-   expensive layer, individually.*
+1. **FL14 alone is at least as discriminating as Imhof full at the
+   same-sample level** (0.881 vs 0.846; delta +0.035, p = 0.014). The
+   cheap award-layer signal matches the seven-feature bid-distribution
+   pipeline on the same firms at far lower information cost. Following
+   the paper, the increment is an information-cost / complementarity
+   diagnostic, **not an outperformance claim**.
 
 2. **Joint scoring is more informative than either layer alone in this same-sample comparison**
    (Imhof + FL: 0.942 vs Imhof: 0.846, delta +0.096, p = 1.2 × 10⁻²⁶).

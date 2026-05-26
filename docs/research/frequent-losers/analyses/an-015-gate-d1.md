@@ -5,7 +5,7 @@ hypothesis: award-bid-complementarity
 type: descriptive
 question: D1 gate diagnostic — does the continuous score dominate FL14 on a harmonized same-sample horse race, and do the price coefficients align?
 status: done
-status_date: 2026-05-22
+status_date: 2026-05-25
 confidence: green
 headline: "D1 passes. Continuous AUC 0.939 dominates the binary FL14 flag (0.924); the gap is 0.015 under the corrected FL14 ≥ 14 definition (DeLong Z = −4.38, p = 1.2 × 10⁻⁵). Price coefficients align in sign across binary and continuous in the single-score specifications."
 created: 2026-05-22

@@ -5,7 +5,7 @@ hypothesis: award-bid-complementarity
 type: descriptive
 question: Does the continuous log(1+tenders_count) dominate the binary FL14 on the cobidder target?
 status: done
-status_date: 2026-05-22
+status_date: 2026-05-25
 confidence: green
 headline: "Continuous AUC 0.939 [0.932, 0.946] dominates the binary FL14 flag (0.924 [0.921, 0.926]); the binary–continuous gap is 0.015 under the corrected FL14 ≥ 14 definition (DeLong Z = −4.38, p = 1.2 × 10⁻⁵). The continuous score is the true signal; FL14 is the deployable auditable rule."
 created: 2026-05-22
