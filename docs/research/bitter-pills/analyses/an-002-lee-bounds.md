@@ -13,7 +13,7 @@ script: v10-causal-mechanism/analysis/40_utg_lee_bounds.R
 target: v10-causal-mechanism/output/tables/tab_urgent_and_bounds.tex
 tags: ["H:utg-gap-selection-bounded", lee-bounds, urgent, selection, robustness]
 design:
-  sample: "Urgent panel of 56,803 observations; administrative-urgent versus litigated-urgent purchases within item×year×PBU strata"
+  sample: "Urgent winner panel (naive regression N=61,620; Lee-trimmed N=45,624); administrative-urgent versus litigated-urgent purchases within item×year×PBU strata"
   specification: "Lee (2009) trimming bounds on the administrative-minus-litigated log-price coefficient, trimming within item×year×PBU strata; standard errors as reported"
   notes: "The administrative urgent channel is selected, larger, and the closest feasible urgent-procurement comparison — not a random or clean counterfactual; bounds discipline selection under monotonicity, they do not eliminate it"
 ---
@@ -34,7 +34,8 @@ administrative price gap survives a worst-case treatment of that selection.
 
 ## Design
 
-- **Sample**: the urgent panel of 56,803 observations, comparing
+- **Sample**: the urgent winner panel — 61,620 observations in the naive
+  regression, 45,624 after Lee trimming — comparing
   administrative-urgent and litigated-urgent purchases within item×year×PBU
   strata.
 - **Variation**: administrative-urgent versus litigated-urgent within stratum.
@@ -49,12 +50,12 @@ administrative price gap survives a worst-case treatment of that selection.
 
 ## Results
 
-| Quantity | Coefficient | Implied gap (litigated over administrative) |
-|---|---:|---:|
-| Naive (no trimming) | −0.259 (SE 0.092) | 29.5% |
-| Lee lower bound | −0.148 | 15.9% |
-| Lee upper bound | −0.192 | 21.1% |
-| Bounded interval | — | 15.9% – 21.1% |
+| Quantity | Coefficient | Implied gap (litigated over administrative) | N |
+|---|---:|---:|---:|
+| Naive (no trimming) | −0.259 (SE 0.092) | 29.5% | 61,620 |
+| Lee lower bound | −0.148 | 15.9% | 45,624 |
+| Lee upper bound | −0.192 | 21.1% | 45,624 |
+| Bounded interval | — | 15.9% – 21.1% | — |
 
 *Trimming within item×year×PBU strata. Mean trimming proportion 26.9%, maximum
 100%.*

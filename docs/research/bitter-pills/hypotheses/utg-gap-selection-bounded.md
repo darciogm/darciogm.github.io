@@ -103,7 +103,7 @@ institutional account.
   administrative channel (mean trimming rate 26.9%).
 - *Inference*: Rademacher wild-cluster bootstrap on the preferred-FE Admin
   coefficient.
-- *Sample*: the urgent panel (56,803 observations).
+- *Sample*: the urgent winner panel (naive regression N=61,620; Lee-trimmed 45,624).
 
 ## Data requirements and limitations
 
