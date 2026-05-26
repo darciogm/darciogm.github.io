@@ -71,7 +71,7 @@ The pricing test asks whether the same firm charges a sanctioned buyer more for 
 The result is not a claim that same-firm pricing is everywhere zero. In deep repeated urgent markets, the sanction-related cost margin does not appear as a broad same-firm markup; a residual within-firm gap is confined to the earlier period, while the quantity dimension reflects scale rather than same-firm pricing.
 
 !!! econ "Economic intuition"
-    If sanctions worked by letting an incumbent hold up a captive buyer, the extra cost would show up *within the same firm, buyer, and item* — and in deep repeated markets it does not. That null is informative: it rules out a broad same-firm markup as the channel and pushes the search toward *who* supplies and *at what scale*. The thin-market positive marks the boundary — where a relationship is shallow and outside options are scarce, supplier leverage can re-emerge, exactly as bargaining logic predicts.
+    If sanctions worked by letting an incumbent hold up a captive buyer, the extra cost would show up *within the same firm, buyer, and item* — and in deep repeated markets it does not. That null is informative: it rules out a broad same-firm markup as the channel and pushes the search toward *who* supplies and *at what scale*. The thin-market positive marks the boundary where the deep-market null stops holding — but read its sign honestly: the quantity axis is scale (bulk discounts), and the surviving earlier-period gap is *administrative*-dearer, not the litigated buyer being squeezed. The boundary is a genuine non-null, not evidence that court orders hand incumbents pricing power.
 
 Detail: [AN-003 — Within-firm pricing](analyses/an-003-within-firm-pricing.md) · [AN-004 — Market-depth heterogeneity](analyses/an-004-market-depth-heterogeneity.md).
 
@@ -85,7 +85,7 @@ If the cost margin is not a broad same-firm markup in deep markets, where does i
 
 **Supplier reallocation.** Among item-buyer pairs observed under both urgent regimes (2,134 pairs), the mean winner-set Jaccard similarity is **0.268**, **48.5%** of pairs have no winner overlap, and the **modal winner differs in 70.2% of pairs**. Conditional on the same firm, prices are statistically indistinguishable in deep markets; unconditionally, the winning supplier set often changes. That combination is the empirical signature of fragmented sourcing.
 
-**Reconciliation.** The figure below reconciles the observed administrative-minus-litigated price gap with a mechanical quantity/scale component, the within-firm pricing component, and a residual supplier-composition component. The residual is a reconciliation residual and should not be read alone as proof of sourcing; the direct winner-switching evidence above carries that claim.
+**Reconciliation.** The figure below reconciles the observed administrative-minus-litigated price gap with a mechanical quantity/scale component, the within-firm pricing component, and a residual supplier-composition component. The observed **−22.8%** is the §5.2 gap in the opposite sign convention — a −22.8% administrative-minus-litigated gap is the +29.5% naive litigated-over-administrative gap (the same −0.259 log points). The residual is a reconciliation residual and should not be read alone as proof of sourcing; the direct winner-switching evidence above carries that claim.
 
 ![Pricing vs sourcing decomposition](assets/figures/fig_sourcing_vs_pricing_v10.png)
 
