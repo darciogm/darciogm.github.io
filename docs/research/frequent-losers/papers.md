@@ -97,7 +97,7 @@ assessments, not pitch decks.
 directly, just pivots from static detection to dynamic adaptation.
 
 **Central question:** When the 2018 Decreto 9.412 raised the
-procurement cap from R$80K to R$176K (and CADE detection
+procurement cap from R\$80K to R\$176K (and CADE detection
 methodologies had matured), did cartels adapt their cover-bidding
 strategies to remain undetected? Did some cartels exit the market,
 others change tactics?

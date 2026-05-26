@@ -13,7 +13,7 @@ script: scripts/13_rdd_cap.R
 target: output/tables/tab_rdd_cap.tex
 tags: ["H:price-scope-sign-reversal", rdd, cap-threshold, price]
 design:
-  sample: "BEC items with prices crossing the procurement-cap thresholds (R$80,000 → R$176,000 in the 2018 Decreto 9.412)"
+  sample: "BEC items with prices crossing the procurement-cap thresholds (R\$80,000 → R\$176,000 in the 2018 Decreto 9.412)"
   specification: "Regression discontinuity with FL14 presence indicator and interaction with running variable; three bandwidth specifications (tight, mid, wide); McCrary density test"
   cutoff: "Procurement-cap threshold (modality-specific)"
   bandwidth: "Tight (default IK), mid, wide"
@@ -35,7 +35,7 @@ stable across bandwidths?
 ## Design
 
 - **Sample**: BEC items with prices crossing the procurement-cap
-  thresholds. Caps moved from R$80,000 (Lei 8.666/93) to R$176,000
+  thresholds. Caps moved from R\$80,000 (Lei 8.666/93) to R\$176,000
   (Decreto 9.412/2018) during the panel; cap variation provides the
   discontinuity.
 - **Specification**: regression discontinuity with FL14 presence

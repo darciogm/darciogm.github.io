@@ -13,7 +13,7 @@ script: scripts/14_did_decreto_2018.R
 target: output/tables/tab_did_decreto_2018.tex
 tags: ["H:price-scope-sign-reversal", did, decreto-2018, modality]
 design:
-  sample: "BEC items 2017–2019, by Convite vs Pregão; Decreto 9.412/2018 raises cap from R$80K to R$176K"
+  sample: "BEC items 2017–2019, by Convite vs Pregão; Decreto 9.412/2018 raises cap from R\$80K to R\$176K"
   specification: "Callaway-Sant'Anna staggered DiD; stacked-DiD robustness; outcome = log negotiated price; FL14 presence interaction"
   fixed_effects: "Item, modality, year"
   cluster: "Item"
@@ -23,7 +23,7 @@ design:
 # AN-020: DiD around 2018 procurement decree
 
 !!! abstract "Intuition (plain-language)"
-    In 2018 the procurement cap was raised from R$80K to R$176K. We use this policy change as a difference-in-differences experiment for the price effect. Both Callaway-Sant'Anna and stacked DiD estimators return null — no detectable shift in price-FL dynamics. Consistent with the scope-not-damages reading: a true damages parameter would interact with the cap change; the FL-margin coefficient does not.
+    In 2018 the procurement cap was raised from R\$80K to R\$176K. We use this policy change as a difference-in-differences experiment for the price effect. Both Callaway-Sant'Anna and stacked DiD estimators return null — no detectable shift in price-FL dynamics. Consistent with the scope-not-damages reading: a true damages parameter would interact with the cap change; the FL-margin coefficient does not.
 
 ## Question
 
@@ -36,7 +36,7 @@ with the scope reading?
 - **Sample**: BEC items 2017–2019, by Convite (sealed-bid) vs Pregão
   (electronic auction).
 - **Treatment**: Decreto 9.412/2018 raising the procurement cap from
-  R$80,000 (Lei 8.666/93 baseline) to R$176,000.
+  R\$80,000 (Lei 8.666/93 baseline) to R\$176,000.
 - **Specifications**:
   - Callaway-Sant'Anna staggered DiD;
   - Stacked-DiD robustness.
