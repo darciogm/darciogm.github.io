@@ -1,0 +1,270 @@
+\documentclass[11pt]{article}
+
+% ---------- Codificacao e idioma ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+
+% ---------- Matematica ----------
+\usepackage{amsmath,amssymb}
+
+% ---------- Layout ----------
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+
+% ---------- Cores Insper ----------
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{insperdark}{HTML}{9A0C23}
+\definecolor{azulbox}{HTML}{1B3A5C}
+\definecolor{papersoft}{HTML}{F7F7F5}
+
+\usepackage[colorlinks=true,linkcolor=insperdark,urlcolor=insperdark]{hyperref}
+
+% ---------- Caixas ----------
+\newtcolorbox{setupbox}{
+  breakable, colback=papersoft, colframe=insperred, boxrule=0.8pt,
+  arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries\color{white}, coltitle=white, colbacktitle=insperred,
+  title=Setup --- escreva no quadro}
+
+\newtcolorbox{intuibox}{
+  breakable, colback=insperred!6, colframe=insperred!55, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+\newtcolorbox{pontebox}{
+  breakable, colback=azulbox!7, colframe=azulbox!70, boxrule=0.7pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+\newtcolorbox{armadbox}{
+  breakable, colback=yellow!8, colframe=orange!70!black, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+% ---------- Cabecalhos ----------
+\newcommand{\parteheader}[1]{%
+  \bigskip
+  {\color{insperred}\rule{\textwidth}{1.2pt}}\par
+  \nopagebreak
+  {\Large\bfseries\color{insperred} #1}\par
+  \nopagebreak
+  {\color{insperred}\rule{\textwidth}{0.4pt}}\par
+  \smallskip}
+
+\newcommand{\passo}[1]{\par\medskip\noindent{\bfseries\color{insperdark}#1}\par}
+
+\setlist[enumerate]{leftmargin=2.2em,itemsep=2pt,topsep=3pt}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ck}{\ensuremath{\checkmark}}
+\newcommand{\Eq}{\mathbb{Q}}
+
+\begin{document}
+
+% ===================== TITULO =====================
+\begin{center}
+  {\LARGE\bfseries\color{insperred} Aula 6 $\leftrightarrow$ Black--Scholes (tempo discreto)}\\[2pt]
+  {\large Precificação binomial de uma opção: Arrow, replicação e medida neutra ao risco}\\[4pt]
+  {\normalsize Microeconomia I \textbullet{} MPE 2026/32 \textbullet{} Insper \textbullet{} para resolução em sala}
+\end{center}
+\vspace{2pt}
+{\color{insperred!40}\hrule height 1pt}
+\vspace{4pt}
+
+\begin{pontebox}
+\textbf{A ponte.} O modelo binomial (Cox--Ross--Rubinstein, 1979) \emph{é} a Aula 6 aplicada a uma opção:
+mercado completo (título + ação $=$ 2 ativos, 2 estados, $\operatorname{rank}=2$) $\Rightarrow$ \textbf{todo}
+payoff é replicável $\Rightarrow$ preço único por não-arbitragem. Os \textbf{preços de Arrow} precificam a opção;
+os \textbf{preços de Arrow escalados por $R$} são a \textbf{medida neutra ao risco}. Black--Scholes é o
+\emph{limite contínuo} de exatamente isto.
+\end{pontebox}
+
+% ===================== PARTE I =====================
+\parteheader{Parte I --- Um período}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item Ação hoje: $S_0=100$. Dois estados em $t=1$: \textbf{alta} ($U$) e \textbf{baixa} ($D$).
+  \item Fatores: $u=2$ (dobra) e $d=0{,}5$ (cai à metade) $\Rightarrow S_1=(S_U,S_D)=(200,\,50)$.
+        \emph{(Movimentos exagerados de propósito, para aritmética limpa no quadro.)}
+  \item Taxa bruta livre de risco: $R=1{,}25$ (25\% por período). Título: investe 1, recebe $R$ em ambos os estados.
+  \item \textbf{Sem-arbitragem exige} $d<R<u$: aqui $0{,}5<1{,}25<2$ \ck.
+  \item Opção de compra (\emph{call}) europeia, \emph{strike} $K=100$, vence em $t=1$.
+\end{itemize}
+\textbf{Perguntas.} (a) o mercado é completo? (b) preços de Arrow $p$ por não-arbitragem; (c) preço da call por
+\emph{dois} métodos (Arrow e portfólio replicante) --- devem coincidir; (d) medida neutra ao risco e a fórmula CRR.
+\end{setupbox}
+
+\passo{Passo (a) --- Completude.}
+Dois ativos negociados: título com payoff $(R,R)=(1{,}25,\,1{,}25)$ e ação com payoff $(200,\,50)$. A matriz
+\[
+  A=\begin{pmatrix} 200 & 1{,}25 \\ 50 & 1{,}25 \end{pmatrix}\quad(\text{linhas}=\text{estados }U,D;\ \text{colunas}=\text{ação, título})
+\]
+tem $\det A = 200(1{,}25)-50(1{,}25)=1{,}25\cdot150=187{,}5\neq0\Rightarrow\operatorname{rank}=2=|S|$.
+\textbf{Mercado completo:} qualquer payoff $(x_U,x_D)$ --- inclusive o da opção --- é replicável. É a condição
+da equivalência AD\,$\leftrightarrow$\,Radner da aula.
+
+\passo{Passo (b) --- Preços de Arrow por não-arbitragem.}
+Os preços de Arrow $p=(p_U,p_D)$ precificam os ativos negociados ($q_j=\sum_s p_s A_{sj}$, agora \emph{resolvido para $p$}):
+\[
+  \text{título:}\quad 1 = p_U(1{,}25)+p_D(1{,}25)\ \Rightarrow\ p_U+p_D=\tfrac{1}{R}=0{,}8;
+\]
+\[
+  \text{ação:}\quad 100 = p_U(200)+p_D(50).
+\]
+Substituindo $p_D=0{,}8-p_U$: $\,200\,p_U+50(0{,}8-p_U)=100\Rightarrow 150\,p_U=60\Rightarrow$
+\[
+  \boxed{\,p=(0{,}4,\;0{,}4)\,}.
+\]
+
+\begin{intuibox}
+\textbf{Leitura Aula 6.} Os preços de Arrow saem \emph{dos preços de mercado}, não das preferências. Aqui
+$p_U=p_D$ porque o exemplo é simétrico, mas em geral $p_s$ embute o SDF (estado escasso $\to$ Arrow caro).
+\end{intuibox}
+
+\passo{Passo (c) --- Preço da call por dois métodos.}
+Payoff da call $K=100$: $\;c=(\max(200-100,0),\,\max(50-100,0))=(100,\,0)$.
+
+\emph{Método 1 --- preços de Arrow:}
+\[
+  C = p_U\cdot 100 + p_D\cdot 0 = 0{,}4\cdot100 = \boxed{40}.
+\]
+
+\emph{Método 2 --- portfólio replicante (o $\theta=A^{-1}c$ de Radner):} ache $\Delta$ ações $+$ $B$ em título que
+reproduzam $(100,0)$:
+\[
+  \begin{cases} 200\,\Delta + 1{,}25\,B = 100 &(U)\\[2pt] 50\,\Delta + 1{,}25\,B = 0 &(D)\end{cases}
+  \;\Rightarrow\; 150\,\Delta = 100 \Rightarrow \Delta=\tfrac23,\quad B=-\tfrac{50\,\Delta}{1{,}25}=-\tfrac{80}{3}\approx-26{,}67.
+\]
+Custo de montar a réplica (preço da ação $=100$, do título $=1$):
+\[
+  C = 100\,\Delta + B = \tfrac{200}{3}-\tfrac{80}{3}=\tfrac{120}{3}=\boxed{40}.\quad\text{\ck\ os dois métodos coincidem.}
+\]
+$\Delta=\tfrac23$ é o \textbf{\emph{delta} / razão de hedge}: $2/3$ de ação por opção, financiado tomando emprestado $\approx26{,}67$.
+
+\passo{Passo (d) --- Medida neutra ao risco e fórmula CRR.}
+Defina a probabilidade neutra ao risco $q_s = R\,p_s$ (preço de Arrow ``des-descontado''):
+\[
+  q=(R\,p_U,\,R\,p_D)=(1{,}25\cdot0{,}4,\;1{,}25\cdot0{,}4)=(0{,}5,\;0{,}5),\qquad \textstyle\sum_s q_s=R\sum_s p_s=R\cdot\tfrac1R=1.
+\]
+Então o preço é o valor esperado descontado \emph{sob $\Eq$}:
+\[
+  C=\frac{1}{R}\,\mathbb{E}^{\Eq}[c]=\frac{1}{1{,}25}\big(0{,}5\cdot100+0{,}5\cdot0\big)=0{,}8\cdot50=40.\quad\ck
+\]
+Fórmula fechada (CRR): $\;\displaystyle q_U=\frac{R-d}{u-d}=\frac{1{,}25-0{,}5}{2-0{,}5}=\frac{0{,}75}{1{,}5}=0{,}5$ \ck.
+
+\begin{intuibox}
+\textbf{O insight que cala a turma:} a \emph{probabilidade real} $\pi$ \textbf{nunca entrou}. O preço da opção não
+depende de quão provável é a alta --- só dos preços de não-arbitragem. $\Eq$ é uma medida de \emph{precificação},
+não de crença. Esse é o conteúdo de ``preço $=$ custo de replicação'' (1.\textsuperscript{o} bem-estar / não-arbitragem).
+\end{intuibox}
+
+% ===================== PARTE II =====================
+\parteheader{Parte II --- Dois períodos: indução para trás e hedge dinâmico}
+
+\noindent Repita os mesmos $u=2,\ d=0{,}5,\ R=1{,}25$ por um segundo período. A árvore \textbf{recombina}
+($200\cdot0{,}5=100=50\cdot2$):
+
+\begin{center}
+\begin{tikzpicture}[scale=1.05, every node/.style={font=\small}]
+  \tikzstyle{px}=[draw=insperred,thick,rounded corners=2pt,fill=papersoft,inner sep=3pt,minimum width=1.05cm]
+  \node[px] (n0)  at (0,0)    {$100$};
+  \node[px] (nu)  at (3,1.6)  {$200$};
+  \node[px] (nd)  at (3,-1.6) {$50$};
+  \node[px] (nuu) at (6,3.2)  {$400$};
+  \node[px] (nud) at (6,0)    {$100$};
+  \node[px] (ndd) at (6,-3.2) {$25$};
+  \draw[->,gray] (n0)--(nu); \draw[->,gray] (n0)--(nd);
+  \draw[->,gray] (nu)--(nuu); \draw[->,gray] (nu)--(nud);
+  \draw[->,gray] (nd)--(nud); \draw[->,gray] (nd)--(ndd);
+  % payoffs da call K=100 em t=2 (em vermelho)
+  \node[insperred,right=2pt] at (nuu.east) {$c_{UU}=300$};
+  \node[insperred,right=2pt] at (nud.east) {$c_{UD}=0$};
+  \node[insperred,right=2pt] at (ndd.east) {$c_{DD}=0$};
+  \node at (0,-4.2){$t=0$}; \node at (3,-4.2){$t=1$}; \node at (6,-4.2){$t=2$};
+\end{tikzpicture}
+\end{center}
+
+\passo{Passo (e) --- Preço em 2 períodos.}
+\emph{Payoffs terminais} (call $K=100$): $c_{UU}=\max(400-100,0)=300$; $c_{UD}=\max(100-100,0)=0$; $c_{DD}=\max(25-100,0)=0$.
+
+\emph{Indução para trás} com $q=0{,}5$ e desconto $1/R=0{,}8$ em cada passo:
+\[
+  \underbrace{C_U=\tfrac{1}{R}\big(q\,c_{UU}+(1-q)c_{UD}\big)=0{,}8(0{,}5\cdot300+0{,}5\cdot0)=120}_{\text{nó alta, }t=1},
+  \qquad
+  C_D=0{,}8(0{,}5\cdot0+0{,}5\cdot0)=0.
+\]
+\[
+  C_0=\tfrac{1}{R}\big(q\,C_U+(1-q)C_D\big)=0{,}8(0{,}5\cdot120+0{,}5\cdot0)=0{,}8\cdot60=\boxed{48}.
+\]
+\emph{Confira em um passo só} (valor esperado descontado em 2 períodos):
+\[
+  C_0=\frac{1}{R^2}\,\mathbb{E}^{\Eq}[c]=\frac{1}{1{,}25^2}\big(q^2\cdot300\big)=\frac{1}{1{,}5625}(0{,}25\cdot300)=0{,}64\cdot75=48.\quad\ck
+\]
+
+\passo{Hedge dinâmico (a alma do Black--Scholes).}
+O \emph{delta} é recalculado em cada nó: $\Delta=\dfrac{C_{\text{cima}}-C_{\text{baixo}}}{S_{\text{cima}}-S_{\text{baixo}}}$.
+\[
+  \Delta_0=\frac{120-0}{200-50}=\frac{120}{150}=0{,}8;\qquad
+  \Delta_U=\frac{300-0}{400-100}=1;\qquad \Delta_D=\frac{0-0}{100-25}=0.
+\]
+Começa-se com $0{,}8$ de ação; sobe para $1$ se a ação subir, cai para $0$ se cair. \textbf{Rebalancear a cada nó}
+$=$ o análogo discreto do \emph{delta-hedging contínuo} de Black--Scholes.
+
+% ===================== PARTE III =====================
+\parteheader{Parte III --- A ponte para Black--Scholes (o limite)}
+
+\begin{pontebox}
+Divida $[0,T]$ em $N$ períodos de tamanho $\Delta t = T/N$ e tome
+\[
+  u=e^{\sigma\sqrt{\Delta t}},\qquad d=e^{-\sigma\sqrt{\Delta t}}=\tfrac1u,\qquad R=e^{r\Delta t},
+  \qquad q=\frac{R-d}{u-d}.
+\]
+Quando $N\to\infty$, o preço binomial $C_0=\dfrac{1}{R^N}\,\mathbb{E}^{\Eq}[\,(S_T-K)^+\,]$ converge para a fórmula de
+\textbf{Black--Scholes--Merton} (1973):
+\[
+  C_0 = S_0\,\Phi(d_1) - K\,e^{-rT}\Phi(d_2),\qquad
+  d_1=\frac{\ln(S_0/K)+(r+\tfrac12\sigma^2)T}{\sigma\sqrt T},\quad d_2=d_1-\sigma\sqrt T.
+\]
+\end{pontebox}
+
+\noindent\textbf{O dicionário Aula 6 $\to$ Black--Scholes (escreva no quadro):}
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}p{0.46\textwidth}@{\quad$\longrightarrow$\quad}p{0.40\textwidth}@{}}
+\hline
+\textbf{Binomial / Aula 6 (discreto)} & \textbf{Black--Scholes (contínuo)}\\
+\hline
+Mercado completo ($\operatorname{rank}A=|S|$) & Replicação por hedge contínuo\\
+Preços de Arrow $p_s$ & Densidade neutra ao risco (lognormal)\\
+$C=\sum_s p_s\,c_s$ & $C=e^{-rT}\!\int (S_T-K)^+\,d\Eq$\\
+Medida $\Eq$ com $q=\frac{R-d}{u-d}$ & Medida $\Eq$ com drift $r$ (não $\mu$)\\
+Delta $\Delta=\frac{\Delta C}{\Delta S}$ por nó & $\Delta=\partial C/\partial S=\Phi(d_1)$\\
+$\pi$ (prob.\ real) irrelevante & $\mu$ (retorno esperado) some da fórmula\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{intuibox}
+\textbf{Três ideias, uma só história.} Completude (replicação), não-arbitragem (preços de Arrow $=$ medida $\Eq$
+descontada) e hedge dinâmico --- são exatamente os pilares da Aula 6. Black--Scholes não é um teorema novo: é o
+\emph{limite contínuo} do que a turma acabou de calcular à mão.
+\end{intuibox}
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) usar a probabilidade real $\pi$ em vez de $q$ no preço; (ii) esquecer de descontar por $R$
+(confundir $q_s$ com $p_s$); (iii) achar que o delta é fixo --- ele \emph{muda} a cada nó (origem do hedge dinâmico);
+(iv) checar sempre $d<R<u$, senão há arbitragem e nada disso vale.
+\end{armadbox}
+
+\bigskip
+{\color{insperred!40}\hrule height 1pt}
+\smallskip
+\noindent\textbf{\color{insperred}Sugestão de uso ($\sim$30 min).} Parte~I no quadro com a turma propondo cada passo
+($\sim$15 min); Parte~II como indução para trás guiada ($\sim$10 min); Parte~III só o dicionário e a fórmula,
+\emph{sem} computar BS --- o objetivo é reconhecer que já fizeram o essencial em tempo discreto.
+
+\end{document}

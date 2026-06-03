@@ -105,6 +105,7 @@ Aula 5 montou Arrow-Debreu I assumindo existência. Hoje provamos via ponto fixo
 
 ## Roteiro da noite
 
+::: {.compact-table}
 | Bloco | Conteúdo | Tempo |
 |:---|:---|---:|
 | 0 | Recall Aula 5 (canônico) | 19:30–19:35 |
@@ -115,6 +116,7 @@ Aula 5 montou Arrow-Debreu I assumindo existência. Hoje provamos via ponto fixo
 | — | *Pausa* | 21:45–21:55 |
 | 4 | SDF, Euler + boxes + H-J bounds + Equity premium puzzle | 21:55–22:25 |
 | 5 | Síntese + ponte Aula 7 | 22:25–22:30 |
+:::
 
 ::: {.bridge}
 180 min cheios. Aula 5 foi conceitual; hoje é técnica + institucional + política.
@@ -299,7 +301,7 @@ Radner (1972, *Econometrica*): equilíbrio com **portfolio em $t = 0$** + **merc
 
 ## Setup formal de Radner
 
-::: {.cols-2-3}
+::: {.cols .cols-2-3}
 ::: {}
 **Em $t = 0$:**
 
