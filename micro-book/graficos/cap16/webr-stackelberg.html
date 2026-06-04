@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Stackelberg vs. Cournot</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Stackelberg vs. Cournot
+# Exercicio Resolvido 16.2
+# ============================================
+
+a <- 150; b <- 1; c <- 30  # Demanda: p = a - Q, CMg = c
+
+cat("====== STACKELBERG vs. COURNOT ======\n")
+cat("Demanda: p =", a, "- Q\n")
+cat("CMg =", c, "(ambas as firmas)\n\n")
+
+# --- Cournot simetrico ---
+qC <- (a - c) / (3 * b)
+QC <- 2 * qC
+pC <- a - b * QC
+piC <- (pC - c) * qC
+
+cat("--- Cournot ---\n")
+cat(sprintf("q1 = q2 = %.1f  Q = %.1f  p = %.1f\n", qC, QC, pC))
+cat(sprintf("pi1 = pi2 = %.0f  Pi = %.0f\n\n", piC, 2*piC))
+
+# --- Stackelberg (firma 1 = lider) ---
+# Melhor-resposta da seguidora: q2*(q1) = (a - c - q1) / 2
+# Lider maximiza: pi1 = (a - q1 - q2*(q1) - c)*q1
+# = ((a-c)/2 - q1/2)*q1
+# CPO: (a-c)/2 - q1 = 0 => q1 = (a-c)/2
+q1L <- (a - c) / (2 * b)
+q2S <- (a - c - b * q1L) / (2 * b)
+QS <- q1L + q2S
+pS <- a - b * QS
+pi1L <- (pS - c) * q1L
+pi2S <- (pS - c) * q2S
+
+cat("--- Stackelberg ---\n")
+cat(sprintf("q1 (lider)    = %.1f  pi1 = %.0f\n", q1L, pi1L))
+cat(sprintf("q2 (seguidora)= %.1f  pi2 = %.0f\n", q2S, pi2S))
+cat(sprintf("Q = %.1f  p = %.1f  Pi = %.0f\n\n", QS, pS, pi1L + pi2S))
+
+# --- Comparacao ---
+cat("--- Comparacao ---\n")
+cat(sprintf("%-18s %-10s %-10s\n", "", "Stackelberg", "Cournot"))
+cat(strrep("-", 40), "\n")
+cat(sprintf("%-18s %-10.0f %-10.0f\n", "Firma 1 (lucro)", pi1L, piC))
+cat(sprintf("%-18s %-10.0f %-10.0f\n", "Firma 2 (lucro)", pi2S, piC))
+cat(sprintf("%-18s %-10.0f %-10.0f\n", "Lucro total", pi1L+pi2S, 2*piC))
+cat(sprintf("%-18s %-10.1f %-10.1f\n", "Preco", pS, pC))
+cat(sprintf("%-18s %-10.1f %-10.1f\n", "Quantidade", QS, QC))
+
+cat("\nA lider ganha +", pi1L - piC, "vs. Cournot\n")
+cat("A seguidora perde", piC - pi2S, "vs. Cournot\n")
+cat("Consumidores ganham: p cai de", pC, "para", pS, "\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+q_seq <- seq(0, 130, length = 300)
+
+# Melhor-resposta de cada firma
+MR1 <- function(q2) pmax((a - c - b*q2) / (2*b), 0)
+MR2 <- function(q1) pmax((a - c - b*q1) / (2*b), 0)
+
+plot(q_seq, MR2(q_seq), type = "l", lwd = 3, col = "#dc3545",
+     xlim = c(0, 70), ylim = c(0, 70),
+     xlab = expression(q[1]), ylab = expression(q[2]),
+     main = "Stackelberg vs. Cournot", asp = 1)
+lines(MR1(q_seq), q_seq, lwd = 3, col = "#0d6efd")  # MR1 no eixo q2
+
+# Curvas de iso-lucro da lider (para intuicao)
+# pi1 = (a - q1 - q2 - c)*q1 = K => q2 = a - c - q1 - K/q1
+for (K in c(pi1L, piC)) {
+  q1_iso <- seq(1, 120, length = 500)
+  q2_iso <- a - c - b*q1_iso - K / q1_iso
+  valid <- q2_iso >= 0 & q1_iso > 0
+  lines(q1_iso[valid], q2_iso[valid], col = "#adb5bd", lty = 3, lwd = 1)
+}
+
+# Cournot
+points(qC, qC, pch = 19, col = "#6f42c1", cex = 2.2)
+text(qC + 2, qC + 2.5, paste0("Cournot (", qC, ", ", qC, ")"),
+     col = "#6f42c1", cex = 0.75, font = 2)
+
+# Stackelberg
+points(q1L, q2S, pch = 17, col = "#198754", cex = 2.2)
+text(q1L + 2, q2S + 2.5, paste0("Stack. (", q1L, ", ", q2S, ")"),
+     col = "#198754", cex = 0.75, font = 2)
+
+# Seta de Cournot para Stackelberg
+arrows(qC + 1, qC - 1, q1L - 1, q2S + 1,
+       col = "#fd7e14", lwd = 2, length = 0.1)
+
+legend("topright",
+       legend = c(expression(MR[1](q[2])), expression(MR[2](q[1])),
+                  "Cournot", "Stackelberg", "Iso-lucro lider"),
+       col = c("#0d6efd", "#dc3545", "#6f42c1", "#198754", "#adb5bd"),
+       lwd = c(3, 3, NA, NA, 1), pch = c(NA, NA, 19, 17, NA),
+       lty = c(1, 1, NA, NA, 3), cex = 0.65, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:560,height:500}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

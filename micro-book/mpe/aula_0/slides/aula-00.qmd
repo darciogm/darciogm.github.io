@@ -1,0 +1,612 @@
+---
+title: "Orientações do curso"
+subtitle: "Aula 0 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-04-22"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · Aula 0 — Orientações"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Orientações do curso {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 0 — Microeconomia I**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+22 de abril de 2026 · 19:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Antes de entrar em preferências e utilidade: o contrato do curso. O que você recebe, o que você entrega, e como os dois lados vão saber que está funcionando.
+:::
+
+---
+
+## Bloco A — Quem somos, onde estamos {.section-divider background-color="#4A0E15"}
+
+Professor, monitor, matéria, espaço-tempo.
+
+---
+
+## Professor {background-color="#FFFFFF"}
+
+::: {.cols-2-3}
+
+::: {}
+
+**Darcio Genicolo-Martins**
+
+- PhD em Economia pelo Insper
+- Linhas: microeconomia aplicada e *law and economics*
+- No Insper desde 2019 — graduação, mestrado profissional, executivo
+- Autor do livro *Microeconomia: do Zero ao Equilíbrio (e além)* — o "ZaE" que aparece nas leituras
+
+:::
+
+::: {}
+
+::: {.callout}
+**Como me procurar**
+
+Email: `darciogm1@insper.edu.br`
+
+Regra de bolso: dúvida rápida de conteúdo vai para o canal da turma (monitoria/WhatsApp da classe). Dúvida profunda, conflito de calendário ou qualquer coisa pessoal — email direto.
+:::
+
+:::
+
+:::
+
+---
+
+## Monitor {background-color="#FFFFFF"}
+
+::: {.cols-2-3}
+
+::: {}
+
+**Alberto Nishikawa**
+
+- Doutorando em Economia pelo Insper
+- Experiência em microeconomia intermediária/avançada
+- Conduz **5 monitorias-chave** aos sábados (calendário adiante)
+- Foco: resolução comentada, passagens técnicas, extensões ocasionais, preparação para a avaliação
+
+:::
+
+::: {}
+
+::: {.callout-note}
+Presença **não é obrigatória**, mas é onde o MPE aprende a fazer conta. Quem só assiste à aula e nunca vai à monitoria termina o curso entendendo, sem dominar.
+:::
+
+:::
+
+:::
+
+---
+
+## O que é Microeconomia I {background-color="#FFFFFF"}
+
+**Ementa enxuta — 9 aulas + avaliação final:**
+
+::: {.compact-table}
+| Bloco temático | Aulas |
+|---|---|
+| Teoria do consumidor (preferências → demanda) | 1–3 |
+| Equilíbrio geral em trocas e produção | 4–5 |
+| Arrow-Debreu (incerteza, ativos, mercados completos) | 6–7 |
+| Falhas de mercado (externalidades, bens públicos) | 8 |
+| Assimetria de informação (adversa, moral, sinalização, matching) | 9 |
+:::
+
+::: {.bridge}
+O curso fecha Micro I para quem vai fazer Macro, Econometria ou Finanças no MPE. Piso é Nicholson & Snyder 12e. Teto é Jehle-Reny 3e. Gold standard estrutural é o ZaE.
+:::
+
+---
+
+## Quando, onde, por quanto tempo {background-color="#FFFFFF"}
+
+::: {.compact-table}
+| Componente | Frequência | Horário | Formato |
+|---|---|---|---|
+| **Aulas** (9 encontros) | Quartas, 22/04 – 17/06 | 19:30 – 22:30 (3h) | Presencial, Insper |
+| **Monitorias** (5 encontros) | Sábados: 16/05, 23/05, 30/05, 13/06, 20/06 | ~2h | Virtual (link no portal) |
+| **Avaliação final** | 24/06 (quarta) | 3h | Presencial, Insper |
+:::
+
+::: {.bridge}
+Sala confirmada no Blackboard. Datas são fixas — conflitos pessoais para mim, por email.
+:::
+
+---
+
+## Bloco B — Como a nota é formada {.section-divider background-color="#4A0E15"}
+
+70% prova final, 30% engajamento. Ninguém tira nota cheia sem entregar os dois lados.
+
+---
+
+## A nota — estrutura geral {background-color="#FFFFFF"}
+
+::: {.eq-punch}
+Nota final = 0.70 × Prova Final + 0.30 × Engajamento
+:::
+
+::: {.callout-warn style="margin-top: 1em;"}
+**Sem piso individual nos componentes.** Você pode compensar um item fraco com outros. Mas componentes muito baixos sinalizam algo que vou comentar individualmente antes da avaliação final.
+:::
+
+---
+
+## Os 30% de engajamento, destrinchados {background-color="#FFFFFF"}
+
+::: {.compact-table}
+| Componente | Peso dentro dos 30% | O que conta |
+|---|---|---|
+| **Pré-aulas** | 30% | Seções completadas + micro-checkpoints + quiz de revisão (10🟡) |
+| **Quizzes pós-aula** | 30% | 10 questões cada (5🟡 + 5🔴), 1 por aula |
+| **Exercícios avaliativos** | 30% | 5–8 exercícios 🟢/🟡/🔴 por aula, tudo **dentro da plataforma**, gabarito 5-passos após prazo |
+| **Reflexões qualitativas** | 10% | Texto curto ao fim de cada pré-aula — alimenta o Bloco 0 da aula seguinte |
+:::
+
+::: {.bridge}
+Tudo é rastreado e avaliado automaticamente pela plataforma. Nada por email, nada em papel. Correção e gabaritos saem com as respostas registradas.
+:::
+
+---
+
+## Os 70% da prova final {background-color="#FFFFFF"}
+
+::: {.cols}
+
+::: {}
+
+**Formato:**
+
+- Presencial, 3h
+- ~8 questões abertas (demonstrar + calcular + interpretar)
+- Mix 🟡 + 🔴, poucos 🟢 de aquecimento
+- Consulta **permitida** a uma folha A4 frente-e-verso escrita à mão
+
+:::
+
+::: {}
+
+**Cobertura:**
+
+- Tudo que foi coberto nas 9 aulas
+- Ênfase proporcional ao peso-relativo em sala
+- Monitorias não introduzem matéria nova, mas lapidam a execução
+
+**Ponderação interna:**
+
+- Cada questão vale peso igual, a menos de aviso explícito
+
+:::
+
+:::
+
+---
+
+## Exemplo de cálculo {background-color="#FFFFFF"}
+
+Aluno A: prova = 7,5 · engajamento = 8,0
+
+::: {.eq-key}
+Nota final = 0.70 × 7,5 + 0.30 × 8,0 = **7,65**
+:::
+
+Aluno B: prova = 9,0 · engajamento = 5,0
+
+::: {.eq-key}
+Nota final = 0.70 × 9,0 + 0.30 × 5,0 = **7,80**
+:::
+
+::: {.bridge}
+Dá para tirar nota boa com prova ok + engajamento forte e vice-versa. O sistema é desenhado para não premiar só uma das pontas.
+:::
+
+---
+
+## Bloco C — O fluxo semanal {.section-divider background-color="#1B3A5C"}
+
+Cadência pensada para 4–6h/semana fora da aula.
+
+---
+
+## Mapa semanal — abre, ritmo, fecha {background-color="#FFFFFF"}
+
+Para cada aula X dada numa **quarta-feira**:
+
+::: {.compact-table style="font-size: 0.72em;"}
+| Dia | O que acontece | Tempo-alvo |
+|---|---|---|
+| **Qua 19:30 – 22:30** | Aula X em sala | 3 h |
+| **Qua após a aula** | **Abrem:** quiz pós-X · exercícios avaliativos X · pré-aula da próx. semana | — |
+| **Qui / sex / sáb** | Recomendado: fazer a **pré-aula** (leitura + micro-checkpoints + quiz de revisão 10🟡 + reflexão) | 90–120 min |
+| **Dom / seg** | Recomendado: fazer os **exercícios avaliativos** da aula X | 2–3 h |
+| **Terça** | Recomendado: **quiz pós-aula** da aula X | 30 min |
+| **Qua 18:00** | **Fecham:** pré-aula · quiz pós-X · exercícios avaliativos X | — |
+| **Qua 19:30** | Aula X+1 começa | — |
+:::
+
+::: {.bridge style="font-size: 0.75em;"}
+Não é rígido — é um esqueleto. Se fizer tudo em bloco no sábado, tudo bem. O tracker olha **se** você entregou, não **quando**.
+:::
+
+---
+
+## Prazos — a parte que importa {background-color="#FFFFFF"}
+
+::: {.callout-warn}
+**Regra única de fechamento:** toda a entrega da semana fecha na **quarta 18:00** — 1h30 antes da próxima aula. Três coisas travam ao mesmo tempo:
+
+1. **Pré-aula** da semana (leitura + micro-checkpoints + quiz de revisão 10🟡 + reflexão)
+2. **Quiz pós-aula** da aula anterior (10 questões: 5🟡 + 5🔴)
+3. **Exercícios avaliativos** da aula anterior (5–8 exercícios 🟢/🟡/🔴)
+
+Depois desse corte: sem entrada, sem resubmissão. Gabaritos 5-passos saem logo em seguida.
+:::
+
+::: {.callout style="margin-top: 0.8em; background:#fefcbf; border-left-color:#B8860B;"}
+**Exceção pontual — calendário Aula 1 ∪ Aula 2.** Só nesta turma e só na primeira semana, as Aulas 1 e 2 compartilham uma única janela de entrega (união dos dois calendários). Tudo — pré-aulas, pós-aulas e exercícios avaliativos das duas — fecha em **quarta 06/05 às 18:00**, 1h30 antes da Aula 3. **Da Aula 3 em diante, a regra semanal acima volta a valer.**
+:::
+
+::: {.bridge}
+Sem prazos móveis sem aviso. Quem precisar de extensão por motivo justo fala comigo por email **antes** do prazo, não depois.
+:::
+
+---
+
+## Bloco D — A plataforma {.section-divider background-color="#1B3A5C"}
+
+Onde tudo acontece fora da sala de aula.
+
+---
+
+## Portal do aluno {background-color="#FFFFFF"}
+
+**Cards das 9 aulas** com 3 estados: cinza (não liberada) · vermelho "Nova" · verde "Concluída".
+
+Quando a aula está ativa, o card mostra **3 botões**:
+
+- **📝 Pré-aula** — quiz de revisão (10🟡)
+- **📖 Material** — leitura dirigida + micro-checkpoints
+- **✍ Pós-aula** — quiz avaliativo (5🟡 + 5🔴)
+
+::: {.callout-note style="margin-top: 0.8em;"}
+**Senha inicial** = parte do seu email antes do `@`. No primeiro login, a plataforma **força** troca de senha.
+:::
+
+---
+
+## O que é rastreado (e o que não é) {background-color="#FFFFFF"}
+
+::: {.cols}
+
+::: {}
+
+**É rastreado:**
+
+- Quais seções você completou
+- Respostas de micro-checkpoints (certo/errado, nº de tentativas)
+- Tempo total na página
+- Notas de confiança antes/depois
+- Quiz (tentativa + score)
+- Reflexões qualitativas
+- Downloads de PDFs do curso
+
+:::
+
+::: {}
+
+**Não é rastreado:**
+
+- Onde você passa o mouse
+- Teclas digitadas (fora dos campos de resposta)
+- Atividade em outras abas
+- Qualquer coisa fora da plataforma
+
+:::
+
+:::
+
+::: {.bridge}
+O objetivo é calibrar o ensino (onde a turma trava?) e justificar a nota de engajamento. Não é vigilância.
+:::
+
+---
+
+## Bloco E — Contrato pedagógico {.section-divider background-color="#4A0E15"}
+
+Bilateral. Cada lado assume a parte dele.
+
+---
+
+## Eu, aluno, me comprometo a... {background-color="#FFFFFF"}
+
+::: {.incremental}
+1. Fazer a **pré-aula antes** da aula — não como tarefa, como leitura real que prepara o terreno.
+2. Tentar os micro-checkpoints **sem consultar** primeiro. Errar na primeira tentativa é dado útil, não vergonha.
+3. Registrar dúvidas na reflexão final da pré-aula. Elas alimentam o Bloco 0 da aula seguinte.
+4. Entregar os **exercícios avaliativos na plataforma** dentro do prazo — sem esperar o gabarito sair pra "entregar depois".
+5. **Participar** em sala. MPE que vem só para escutar sai pela metade.
+6. Ir às monitorias relevantes pro meu nível. Se não for necessário, combino com o Alberto.
+:::
+
+---
+
+## Eu, professor, me comprometo a... {background-color="#FFFFFF"}
+
+::: {.incremental}
+1. **Aula preparada**, cronometrada, com material disponibilizado com antecedência.
+2. Usar as **reflexões qualitativas** para abrir a aula seguinte (Bloco 0 de ~10 min focado no que travou mais gente).
+3. Dar **feedback individual** ao fim do ciclo de 4 aulas (meio do curso) pra quem estiver abaixo da média — baseado no que o tracker registra.
+4. Liberar o **gabarito 5-passos** de cada lote de exercícios avaliativos logo após o prazo fechar.
+5. Responder **emails em até 48h úteis**. Se for demorar mais, aviso.
+6. Abrir exceções com base em **motivo, não em quantidade** de pedidos. Quem pedir com justificativa razoável tem.
+:::
+
+---
+
+## Bloco F — Calendário completo {.section-divider background-color="#1B3A5C"}
+
+As 15 datas que importam.
+
+---
+
+## As 9 aulas {background-color="#FFFFFF"}
+
+::: {.compact-table style="font-size: 0.62em;"}
+| # | Data | Tema | N&S |
+|---|---|---|---|
+| 1 | 22/04 | Preferências, axiomas, utilidade | 3 |
+| 2 | 29/04 | UMP, EMP, dualidade | 4 |
+| 3 | 06/05 | Slutsky, elasticidades, demanda | 5–6 |
+| 4 | 13/05 | Equilíbrio geral em trocas (Edgeworth) | 13 |
+| 5 | 20/05 | Equilíbrio geral com produção | 13 |
+| 6 | 27/05 | Arrow-Debreu I — incerteza, utilidade esperada | 7 |
+| 7 | 03/06 | Arrow-Debreu II — state-preference, ativos, mercados completos | 7§ + extras |
+| 8 | 10/06 | Externalidades, bens públicos, Coase | 19 |
+| 9 | 17/06 | Informação assimétrica — adversa, moral, sinalização | 18 |
+:::
+
+---
+
+## Monitorias + avaliação final {background-color="#FFFFFF"}
+
+::: {.compact-table}
+| Data | Formato | Foco |
+|---|---|---|
+| **Sáb 16/05** | Monitoria 1 (Alberto) | Aulas 1–3: teoria do consumidor, Slutsky, exercícios |
+| **Sáb 23/05** | Monitoria 2 | Aula 4: equilíbrio geral em trocas |
+| **Sáb 30/05** | Monitoria 3 | Aula 5: EG com produção |
+| **Sáb 13/06** | Monitoria 4 | Aulas 6–7: Arrow-Debreu, incerteza, ativos |
+| **Sáb 20/06** | Monitoria 5 | Revisão geral + simulado da avaliação final |
+| **Qua 24/06** | **Avaliação final** | 3h, presencial, consulta A4 permitida |
+:::
+
+::: {.bridge}
+Tudo isso já está no portal com o estado certo (bloqueado até a data de abertura). Quem quiser exportar pro Google Calendar, peça no canal da turma.
+:::
+
+---
+
+## Bloco G — Bibliografia {.section-divider background-color="#4A0E15"}
+
+Três livros, um piso, um teto, um mapa.
+
+---
+
+## Nicholson & Snyder 12e — o piso {background-color="#FFFFFF"}
+
+::: {.cols-2-3}
+
+::: {}
+
+**Microeconomic Theory: Basic Principles and Extensions**, 12ª ed.
+
+- **Obrigatório**. O curso assume que você lê a seção correspondente antes da aula.
+- PDFs dos capítulos relevantes no **Storage da plataforma** (requer login).
+- Nível: graduação avançada / mestrado iniciante. Nota boa em Micro I do MPE começa aqui.
+
+:::
+
+::: {}
+
+::: {.callout-note}
+**Como usar:**
+
+Leia linearmente, parando em cada equação numerada. Reproduza no papel pelo menos as equações que a pré-aula destaca.
+
+Volte ao capítulo depois da aula — pontos que pareciam enjoativos costumam ficar claros.
+:::
+
+:::
+
+:::
+
+---
+
+## Jehle & Reny 3e — o teto de conforto {background-color="#FFFFFF"}
+
+**Advanced Microeconomic Theory**, 3ª ed.
+
+- **Recomendado** para quem já tem Micro de graduação sólida e quer rigor adicional.
+- Prova tópica dos teoremas do N&S: Debreu, Slutsky, 1º/2º teoremas do bem-estar.
+- Notação mais pesada — bom para quem vai fazer Micro II (PhD-track) ou pesquisa aplicada.
+
+::: {.bridge}
+Pedagogicamente: leio N&S para formar o modelo mental; Jehle-Reny, quando quero entender por que o modelo tem as propriedades que tem.
+:::
+
+---
+
+## ZaE + MWG — o mapa estrutural {background-color="#FFFFFF"}
+
+::: {.cols}
+
+::: {}
+
+**Microeconomia: do Zero ao Equilíbrio (e além)**
+
+- Livro do professor, em elaboração
+- Cap. 3 é referência para a Aula 1
+- Distinto do N&S: prioriza **narrativa estrutural** antes da manipulação
+- Disponível em `darciogm.github.io/micro-book/` (público)
+
+:::
+
+::: {}
+
+**MWG — *Microeconomic Theory* (Mas-Colell, Whinston, Green)**
+
+- **Citado cirurgicamente**, não bibliografia obrigatória
+- Use só se já conhece e quer cross-check. Nunca como ponto de partida.
+
+:::
+
+:::
+
+---
+
+## Bloco H — Contato {.section-divider background-color="#4A0E15"}
+
+Um canal oficial. Use bem.
+
+---
+
+## Email do professor {background-color="#FFFFFF"}
+
+::: {style="text-align: center; margin: 2em 0;"}
+
+::: {.eq-punch}
+darciogm1@insper.edu.br
+:::
+
+:::
+
+**Quando usar:**
+
+- Conflito de calendário / pedido de extensão
+- Dúvida profunda de conteúdo que não coube na aula
+- Problema com a plataforma (erro, login quebrado, dado faltando)
+- Questões pessoais que afetam o curso
+- Qualquer coisa sensível
+
+::: {.bridge}
+Resposta em até 48h úteis. Se demorar mais, reenvie — pode ter caído em filtro.
+:::
+
+---
+
+## Canal da turma {background-color="#FFFFFF"}
+
+**O canal do WhatsApp/grupo da turma** (combinado na primeira aula presencial) é para:
+
+::: {.incremental}
+- Dúvida rápida de conteúdo que outro aluno provavelmente também tem
+- Compartilhar material complementar, exemplos, artigos
+- Combinar grupos de estudo
+- Tirar questões de logística (sala trocou, link da monitoria, etc.)
+:::
+
+::: {.callout-warn style="margin-top: 1em;"}
+**Não é para:** reclamar de nota, pedir extensão, discutir privadamente. Essas vão para o email.
+:::
+
+---
+
+## Bloco I — Próximos passos {.section-divider background-color="#1B3A5C"}
+
+Começamos agora. Aula 1 já liberada.
+
+---
+
+## O que fazer ao sair daqui {background-color="#FFFFFF"}
+
+::: {.incremental}
+1. **Logar no portal** — `darciogm.github.io/mpe-platform/` — trocar a senha no primeiro acesso.
+2. **Entrar na Pré-aula 1** — "📝 Pré-aula" no card da Aula 1.
+   - Leitura dirigida (ZaE Cap. 3 + N&S Cap. 3)
+   - 9 seções sequenciais, 75–90 min
+   - Micro-checkpoints obrigatórios com até 3 tentativas
+3. **Fechar a pré-aula** antes da aula de quarta (22/04 19:30).
+4. **Anotar a dúvida mais forte** na reflexão final — ela entra no Bloco 0 da aula.
+:::
+
+::: {.bridge}
+Se você terminou a pré-aula e ainda sobrou tempo: o quiz de revisão (10🟡) está lá para verificar se sedimentou. Fecha na quarta, 18h.
+:::
+
+---
+
+## Vamos começar? {.pause-slide background-color="#4A0E15"}
+
+**Microeconomia I — MPE 2026/32**
+
+Aula 1 começa agora.
+
+---

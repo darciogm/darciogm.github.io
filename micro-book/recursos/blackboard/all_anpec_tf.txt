@@ -1,0 +1,340 @@
+TF	Os preços relativos P_Y/P_X livres de mercado dos bens Y e X refletem as taxas às quais a sociedade está disposta a sacrificar o bem Y em troca de uma unidade marginal de X.	true
+TF	No curto prazo, um fator de produção é fixo apenas por razões tecnológicas, nunca porque seja simplesmente mais barato mantê-lo fixo do que ajustá-lo às novas condições de mercado.	false
+TF	Na ausência de externalidades marginais, os custos marginais privados podem ser interpretados como o valor que a sociedade atribui aos recursos deslocados da economia para a produção da unidade marginal.	true
+TF	Num mercado competitivo, com custos marginais constantes e capacidade máxima limitada, se a demanda agregada é grande o suficiente para fazer a firma atingir sua capacidade máxima, então o preço de equilíbrio é o custo marginal da última unidade acrescido do preço-sombra da capacidade máxima.	true
+TF	Suponha que o preço de um bem X cai marginalmente de P_0 para P_1. Ao se defrontar com o preço marginalmente mais baixo, o consumidor realiza uma economia de gastos relativamente à quantidade que usualmente comprava ao preço inicial. Se ele usa uma parte dessa economia para comprar mais unidades desse bem X, mas aproveita outra parte dela para comprar outros bens, então, para esse consumidor, a demanda pelo bem X é preço-elástica.	false
+TF	No centro urbano de uma grande cidade não se permite, por razões arquitetônicas e políticas, a expansão da quantidade de imóveis residenciais. Considere a seguinte afirmação: "O aluguel de mercado do imóvel não é um pagamento para produção de imóveis (primeiro ponto); mas é um pagamento para obter o uso do imóvel (segundo ponto)". Pode-se afirmar que, do primeiro ponto de vista, o aluguel é uma renda pura e, do segundo ponto de vista, é um custo.	true
+TF	A decisão de manter alguma capacidade ociosa nunca é uma decisão racional viável da empresa para lidar com a incerteza quanto a variações aleatórias de demanda.	false
+TF	O preço-sombra da capacidade de produção máxima que a firma acrescenta ao custo marginal é uma medida monetária do valor que o mercado, na figura dos demandantes, está disposto a pagar pela expansão da capacidade máxima em uma unidade marginal.	true
+TF	Algumas empresas anunciam que seus produtos são mais baratos que os dos concorrentes porque elas compram diretamente dos fornecedores, eliminando integralmente o papel dos intermediários. Esse tipo de propaganda pressupõe que a intermediação é sem custos.	false
+TF	Custos quase-fixos não desaparecem no longo prazo.	true
+TF	A soma das derivadas parciais de f no ponto (2,2) é igual a 32.	false
+TF	Em um ponto crítico (x_0, y_0) de f temos que f(x_0, y_0) = 0.	true
+TF	As derivadas parciais de primeira ordem de f são também funções homogêneas de grau 4.	false
+TF	As identidades x f_{xx}(x,y) + y f_{yx}(x,y) = 3f_x(x,y) e x f_{xy}(x,y) + y f_{yy}(x,y) = 3f_y(x,y) são válidas para todo ponto (x,y) \in \mathbb{R}^2.	true
+TF	Se p = (x_0, y_0) e o gradiente de f em p são ortogonais, então f(p) = 0.	true
+TF	Podemos garantir que a restrição g(x,y) \leq a é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de a, \alpha e \beta.	false
+TF	Podemos garantir que a restrição x \geq 0 é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de a, \alpha e \beta.	true
+TF	Se g(x,y) = 2x + y, então a solução é (x^, y^) = \left(\frac{a}{4}, \frac{a}{2}\right).	true
+TF	Se g(x,y) = 2x + y, então \frac{d}{da} f(x^(a), y^(a)) = \frac{a}{8}.	false
+TF	Se a solução do problema satisfizer g(x^, y^) - a = 0, então os gradientes de f e de g em (x^, y^) são perpendiculares.	false
+TF	A matriz Hessiana da função f em qualquer ponto \mathbf{x} \in \mathbb{R}^2 é negativa definida.	false
+TF	Quaisquer que sejam os valores de a e b, se o gradiente \nabla f(x_1^, x_2^) = (0,0), então (x_1^, x_2^) resolve o problema P.	false
+TF	Quando a = b = 0, o problema P não tem solução.	false
+TF	Quando a > 0 e b = 0, qualquer solução (x_1^, x_2^) do problema P satisfaz x_2^ = 2x_1^.	true
+TF	Quando a = b = 1, em qualquer solução (x_1^, x_2^) do problema P, o gradiente satisfaz \nabla f(x_1^, x_2^) \neq (0,0).	true
+TF	Sendo U(x, y) a função de utilidade em dois bens x e y, U(x, y) = \ln x \cdot \ln y representa uma função de utilidade quase-linear.	false
+TF	Podemos sempre extrair a transformação monotônica da função de utilidade do tipo Cobb-Douglas.	true
+TF	Uma função de utilidade do tipo U(x, y) = (x + y)^{0,5} implica que x e y são bens substitutos perfeitos.	true
+TF	Uma função de utilidade do tipo U(x, y) = x + y implica que x e y são bens complementares perfeitos.	false
+TF	f(U) = U^2 é uma transformação monotônica apenas para U positivo.	true
+TF	A taxa marginal de substituição deste consumidor é X/Y.	true
+TF	A cesta (X = 2, Y = 1) e a cesta (X = 1, Y = 2) se encontram sobre a mesma curva de indiferença.	true
+TF	As curvas de indiferença do consumidor são estritamente convexas entre as cestas (X = 2, Y = 1) e (X = 1, Y = 2).	false
+TF	X e Y são substitutos perfeitos.	false
+TF	O bem Y é um mal.	false
+TF	Todos os tipos de preferências podem ser representados pela função de utilidade.	false
+TF	Sejam dois bens, X e Y. A uma função de utilidade dada por U(X, Y) = XY corresponde uma curva de indiferença típica dada por Y = cX, em que c é uma constante.	false
+TF	Se dois bens (A e B) forem substitutos perfeitos, pode-se, em geral, representar sua função de utilidade na forma U(A, B) = c_1 A + c_2 B, em que c_1 e c_2 são constantes positivas.	true
+TF	A inclinação de uma curva de indiferença típica da função de utilidade U(A, B) = c_1 A + c_2 B, em que c_1 e c_2 são constantes positivas, é -c_1/c_2.	true
+TF	A transformação monotônica de uma função de utilidade não altera a taxa marginal de substituição (TMS), porque a TMS é medida ao longo de uma curva de indiferença, e a utilidade permanece constante ao longo da curva de indiferença.	true
+TF	Se U(X, Y) = \sqrt{X} + \sqrt{Y}, então a elasticidade de substituição é igual a 2.	true
+TF	Se U(X, Y) é uma função de utilidade diferenciável homogênea de grau k, com U(X, Y) \neq 0, e se \eta_X(X, Y) e \eta_Y(X, Y) denotam a elasticidade de U relativamente a X e Y, respectivamente, então \eta_X(X, Y) + \eta_Y(X, Y) = k.	true
+TF	Considere o conjunto X = \bigcup_{n=1}^{\infty}\{1 - 1/n\} e defina \succsim sobre X por: x \succsim y se, e somente se, \lvert x - 1/2 \rvert \geq \lvert y - 1/2 \rvert. Então \succsim é contínua.	false
+TF	Considere o conjunto X = [0,2] \times [0,2] e defina \succsim sobre X por: (x,y) \succsim (z,w) se, e somente se, \lVert (x,y) - (1,1) \rVert \geq \lVert (z,w) - (1,1) \rVert. Então (0,0) é um elemento maximal.	true
+TF	A ordem lexicográfica é contínua.	false
+TF	Como a demanda pelo bem x não depende do preço y, aumentos deste último não afetarão a demanda por x, mesmo com a renda gasta integralmente com os dois bens.	true
+TF	Quando os preços dos dois bens forem \2 e a renda igual a \4, a função utilidade indireta assume o valor V(p_x, p_y, R) = 1.	true
+TF	O exercício de minimização do gasto \min\; xp_x + yp_y, sujeito a U = \sqrt{xy}, resulta em uma função demanda compensada ou hicksiana pelo bem x dada por h_x(p_x, p_y, U) = \sqrt{p_x/p_y} \cdot U.	false
+TF	A função gasto resultante do item anterior será e(p_x, p_y, U) = 2U\sqrt{p_x p_y}, expressão que indica que preços maiores e utilidade maiores requerem gasto maior.	true
+TF	Em relação à Equação de Slutsky, o efeito substituição (ES) será equivalente a ES = \frac{\partial h_x}{\partial p_x} = -\frac{1}{4}\frac{R}{p_x^2}.	false
+TF	x(\mathbf{p}, r) = h(\mathbf{p}, v(\mathbf{p}, r)).	true
+TF	e(\mathbf{p}, v(\mathbf{p}, r)) = r.	true
+TF	Seja U(x_1, \ldots, x_n) = \min\{x_1/a_1, \ldots, x_n/a_n\}, com a_1, \ldots, a_n > 0, uma utilidade Leontief. Então e(\mathbf{p}, \bar{u}) = (a_1 p_1 + \cdots + a_n p_n)/\bar{u}.	false
+TF	Se vale o princípio da valoração marginal decrescente, então a função dispêndio e(\mathbf{p}, \bar{u}) é estritamente convexa nos preços.	false
+TF	A matriz S = [s_{ij}]_{n \times n}, definida como o jacobiano de \mathbf{h}(\mathbf{p}, \bar{u}) relativamente aos preços, isto é, s_{ij} = \partial h_i / \partial p_j, para i, j = 1, \ldots, n, é antissimétrica, semidefinida negativa e satisfaz S\mathbf{p} = \mathbf{0}_n.	false
+TF	Se a utilidade U(X, Y) é quase-côncava sobre \mathbb{R}^2, então o conjunto S(X_0, Y_0) = \{(X, Y) \in \mathbb{R}^2 : U(X, Y) \geq U(X_0, Y_0)\} é convexo.	true
+TF	Se U(X, Y) = f(X) + Y é uma função de utilidade quase-linear, então o bem Y serve como numerário.	true
+TF	Se as preferências do consumidor sobre o conjunto X = \{a, b, c, d\} de alternativas são totais (ou completas), então necessariamente existe uma alternativa maximal.	true
+TF	Se U(X, Y) = \min\{aX, bY\}, com a, b > 0 constantes, então a Demanda Hicksiana (ou compensada) não depende dos preços de X e Y.	true
+TF	Seja U(X, Y) = X^a Y^{1-a}, com 0 < a < 1, uma Utilidade Cobb-Douglas. Então a elasticidade-preço cruzada da Demanda Marshalliana é positiva.	false
+TF	Se um bem é normal, então ele não pode ser um bem de Giffen.	true
+TF	Se um bem é de Giffen, então ele deve ser um bem inferior.	true
+TF	Suponha que existam apenas dois bens, cujas demandas são denotadas por x e y. Se x apresenta elasticidade-renda unitária e o consumidor gasta uma fração positiva de sua renda em cada bem, então y também apresenta elasticidade-renda unitária.	false
+TF	Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o bem 1 é um bem comum e que sua demanda é elástica relativamente ao seu próprio preço. Se o bem 1 é um complementar bruto do bem 2, então o bem 1 é um bem normal necessário.	false
+TF	Suponha que existam apenas dois bens, 1 e 2. Suponha ainda que o consumidor gasta metade de sua renda em cada bem e que o bem 1 é um bem normal de luxo, com elasticidade-renda estritamente maior que 2. Então o bem 2 deve ser um bem inferior.	true
+TF	Na situação inicial o consumidor alcança utilidade U = 3.	false
+TF	No segundo momento a cesta consumida será (x,y) = (1,3).	false
+TF	A variação compensadora (VC) é igual a vinte e cinco centavos, que devem ser dados ao consumidor após a mudança no preço.	false
+TF	A variação equivalente (VE) requer que se tire dinheiro do consumidor antes da variação no preço para que, neste caso, a utilidade se reduza em meia unidade.	true
+TF	Neste caso, as variações compensadora e equivalente são iguais ao excedente do consumidor.	true
+TF	A demanda marshalliana inicial é (X_0, Y_0) = (32, 288).	true
+TF	Dada a mudança de preço, a renda necessária para o indivíduo manter o nível de utilidade anterior é \$768.	true
+TF	O efeito-preço de Slutsky (sobre o bem X) decorrente da mudança de preço é EP = -16, ou seja, uma redução de 16 unidades no consumo de X.	false
+TF	O efeito-substituição de Slutsky (sobre o bem X) é ES = -6, ou seja, uma redução de 6 unidades no consumo de X.	false
+TF	O efeito-preço puro (sobre o bem X) é EP_{\text{puro}} = -7, ou seja, uma redução de 7 unidades no consumo de X.	true
+TF	Se as preferências do indivíduo estão representadas pela função utilidade U(x,y) = 2x + y e os preços dos bens são p_x = p_y = 2, então uma redução de p_x para p_x = 1 resulta num Efeito Substituição igual a zero.	true
+TF	Se dois bens x e y são complementares perfeitos e o preço do bem x decresce, então o Efeito Renda é zero e o Efeito Total se iguala ao Efeito Substituição.	false
+TF	A negatividade do Efeito Substituição decorre diretamente do Axioma Forte da Preferência Revelada.	false
+TF	No caso de preferências do tipo Cobb-Douglas, a Elasticidade-Preço Cruzada da demanda por bens é nula, enquanto a Elasticidade-Preço da demanda por cada um deles é unitária (em módulo).	true
+TF	Nas funções demandas geradas a partir de uma função utilidade do tipo U(X,Y) = X^2 + Y^2 as demandas individuais por cada bem são independentes do preço do outro.	false
+TF	Para qualquer consumidor, no espectro de preços considerado, o bem é comum.	true
+TF	Em t=0, se o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem é de \$10, então o excedente social é nulo.	true
+TF	Em t=1, o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem cai de \10 para \9. Então a quantidade de equilíbrio em t=1 é de Q = 11.000 unidades.	false
+TF	Em t=2, o valor que a sociedade atribui aos recursos deslocados da economia para a produção desse bem cai para \8. Então o excedente social é de \31.000.	true
+TF	Um economista coletou os dados de quantidade demandada agregada e de preços nos períodos t=0 e t=1, a saber, preço de \10 em t=0 e de \9 em t=1. Para obter os dados de demanda agregada, o economista entrevistou cada um dos demandantes que foi ao mercado em t=0 e em t=1, sendo que nenhum demandante mentiu ao ser perguntado sobre a quantidade que estava demandando ao preço do período. O economista, porém, negligenciou o fato de que os tempos de consumo dos demandantes eram diferentes. Então esse economista concluiu que o bem é de Giffen.	true
+TF	A elasticidade-preço será unitária quando a quantidade de tulipas vendida for de 1.800 unidades.	true
+TF	A elasticidade-preço da demanda por chope será -\infty ao preço de \$200.	false
+TF	Para preços entre \180 e \90, a demanda é elástica.	true
+TF	A elasticidade-preço da demanda é nula para uma quantidade de 4.000 tulipas.	false
+TF	Como chope e batata frita são bens complementares, a elasticidade-preço cruzada da demanda entre eles no bar é menor do que zero.	true
+TF	Como a função utilidade é convexa em relação à origem, o consumidor é avesso ao risco.	false
+TF	A utilidade esperada da loteria é igual a trinta e dois.	true
+TF	A utilidade do valor esperado dessa loteria é superior à utilidade esperada da loteria.	false
+TF	O equivalente certeza é igual a 2,5.	false
+TF	O coeficiente absoluto de aversão ao risco é constante.	false
+TF	Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern U(W) = \ln(W+1). Então sua medida relativa de aversão ao risco de Pratt R(W) satisfaz \lim_{W \to \infty} R(W) = 1.	true
+TF	Considere um indivíduo avesso ao risco, com utilidade Von Neumann-Morgenstern e que investe em um ativo arriscado. Se o rendimento do ativo arriscado é taxado, então o consumidor tem um incentivo para investir menos nesse ativo.	false
+TF	Suponha que o \beta de um ativo é igual a 1,25, que o retorno de mercado é de 10,5% e que o retorno do ativo sem risco é de 4,5%. O valor esperado do ativo é de \56. Então, de acordo com o Modelo CAPM, o preço que esse ativo deveria ser vendido hoje é de \50.	true
+TF	Considere o Modelo Média-Variância e um indivíduo avesso ao risco. Suponha que o retorno de mercado é de 11%, que o retorno do ativo sem risco é de 5% e que a variância do ativo arriscado é de 25%. Então o preço do risco é p = 0{,}24.	true
+TF	Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern e é neutro ao risco. Se sua riqueza é aleatória, então a utilidade esperada da riqueza é maior que a utilidade da riqueza esperada.	false
+TF	O valor esperado do retorno da aposta é \$15.	false
+TF	Trata-se de uma aposta justa.	false
+TF	Uma aposta justa não possui risco.	false
+TF	Se o custo da aposta fosse de \$12,50, um indivíduo com aversão ao risco aceitaria jogar.	false
+TF	Uma função de utilidade estritamente côncava é associada a um comportamento de aversão ao risco.	true
+TF	Na Teoria do Prospecto, os agentes avaliam resultados como ganhos ou perdas relativos a um ponto de referência, e não em termos de riqueza final — o que implica que dois indivíduos com a mesma riqueza total podem tomar decisões diferentes dependendo de suas trajetórias prévias.	true
+TF	A aversão à perda e a aversão ao risco são conceitos equivalentes: ambas decorrem da concavidade da função de utilidade sobre a riqueza.	false
+TF	A função valor da Teoria do Prospecto é côncava para ganhos e convexa para perdas, o que implica que os agentes são avessos ao risco no domínio dos ganhos e propensos ao risco no domínio das perdas.	true
+TF	A função de ponderação de probabilidades w(p) na Teoria do Prospecto é linear, preservando a propriedade de que uma probabilidade de 10% recebe exatamente um décimo do peso de um evento certo.	false
+TF	Considere a função valor paramétrica v(x) = x^{\alpha} para x \geq 0 e v(x) = -\lambda(-x)^{\beta} para x < 0, com \alpha = \beta = 0{,}88 e \lambda = 2{,}25. Se um agente enfrenta uma aposta simétrica de 50% de ganhar R\ 100 e 50% de perder R\ 100, o valor subjetivo esperado dessa aposta (usando probabilidades não distorcidas) é negativo.	true
+TF	A ancoragem é o viés pelo qual um valor inicial — mesmo que arbitrário e irrelevante para a decisão — influencia sistematicamente a estimativa final, como demonstrado no experimento da roda da fortuna de Tversky e Kahneman (1974).	true
+TF	O efeito framing viola o axioma da invariância das preferências: no experimento das "doenças asiáticas" de Tversky e Kahneman (1981), a maioria dos participantes escolheu a opção certa (avessa ao risco) quando o problema foi enquadrado em termos de vidas salvas, mas escolheu a opção arriscada quando o mesmo problema foi enquadrado em termos de mortes.	true
+TF	O viés do status quo e o efeito dotação são fenômenos independentes da aversão à perda: eles decorrem exclusivamente de custos de transação e assimetrias de informação, não de propriedades da função valor.	false
+TF	A contabilidade mental implica que os agentes tratam o dinheiro como perfeitamente fungível, avaliando cada decisão financeira em relação ao orçamento total, conforme prevê a teoria neoclássica.	false
+TF	No contexto de negociações, a ancoragem implica que quem faz a primeira oferta pode capturar uma parcela maior do excedente — não porque a oferta inicial seja mais informativa, mas porque serve de âncora para o processo de ajuste subsequente das partes.	true
+TF	No modelo de desconto exponencial (Samuelson 1937), a taxa de desconto entre dois períodos consecutivos é constante, o que garante a consistência temporal: se um agente prefere a opção A à B quando ambas estão no futuro distante, essa preferência se mantém quando o momento da decisão se aproxima.	true
+TF	No modelo de desconto quasi-hiperbólico (\beta, \delta), com \beta = 0{,}70 e \delta = 0{,}95, o fator de desconto entre t = 0 e t = 1 é \beta\delta = 0{,}665, enquanto o fator de desconto entre t = 5 e t = 6 é \delta = 0{,}95. Essa assimetria gera o viés do presente.	true
+TF	Um agente com desconto quasi-hiperbólico (\beta = 0{,}70,\; \delta = 0{,}95) e utilidade linear avalia, em t = 0, um pagamento de R\ 1.000 em t = 1 como equivalente a um pagamento de aproximadamente R\ 665 hoje. Contudo, ao avaliar em t = 0 dois pagamentos futuros — R\ 1.000 em t = 10 e R\ 1.000 em t = 11 —, a razão dos valores presentes é \delta = 0{,}95, idêntica à do desconto exponencial.	true
+TF	A distinção entre agentes sofisticados e ingênuos é irrelevante para o desenho de políticas públicas, pois nudges como a adesão automática (opt-out) só são eficazes para agentes sofisticados que reconhecem seu viés do presente.	false
+TF	A demanda por mecanismos de compromisso — como planos de previdência com penalidade por resgate antecipado ou o programa Save More Tomorrow — é racional no contexto do modelo quasi-hiperbólico, pois o agente sofisticado reconhece que seu "eu futuro" terá viés do presente e busca restringir seu comportamento futuro.	true
+TF	A ordem em que estratégias fracamente dominadas são eliminadas é relevante, pois pode afetar o conjunto das estratégias sobreviventes.	true
+TF	No jogo abaixo, T, M, B são estratégias de J1 e E, C, D de J2. As estratégias racionalizáveis são T, M, E.	false
+TF	No equilíbrio de Nash em mistas do jogo abaixo, J1 joga T com probabilidade 1/3 e B com 2/3, J2 joga E com 2/3 e D com 1/3.	true
+TF	No jogo abaixo existe um único equilíbrio de Nash em puras.	false
+TF	Todo jogo na forma normal possui um equilíbrio de Nash em estratégias mistas.	false
+TF	Em um Duopólio de Cournot com c_1(q_1) = q_1^2/2, c_2(q_2) = q_2^2 e P(Q) = 11 - Q, o equilíbrio é (q_1^, q_2^; P^*) = (3, 2; 6).	true
+TF	Ao comparar oligopolização pelo Índice de Lerner, a indústria mais oligopolizada tem necessariamente maior HHI.	false
+TF	No equilíbrio de Stackelberg, a seguidora lucra mais que em Cournot.	false
+TF	No equilíbrio de Stackelberg, a isoprofit da líder tangencia a curva de reação da seguidora.	true
+TF	Duopólio de Bertrand repetido infinitamente: se competir dá lucro 0, cartel dá 40 cada, desviar dá 200, então a menor taxa de desconto para sustentar o cartel com GRIM é \delta = 0{,}25.	false
+TF	Trata-se de um jogo de informação imperfeita.	true
+TF	Há dois equilíbrios de Nash.	true
+TF	Os dois caçadores possuem estratégias fracamente dominantes.	false
+TF	Se x = 0, o equilíbrio misto prescreve Cervo com probabilidade 1/3.	true
+TF	Se x \to 1, o equilíbrio misto converge para o EN Pareto-dominado (Lebre, Lebre).	true
+TF	Em todo jogo finito com informação perfeita, a indução retroativa identifica pelo menos um Equilíbrio Perfeito em Subjogos.	true
+TF	No Dilema dos Prisioneiros repetido infinitamente, a cooperação pode ser sustentada como EPS para qualquer valor do fator de desconto \delta \in (0,1).	false
+TF	No modelo de barganha de Rubinstein com fatores de desconto simétricos \delta_1 = \delta_2 = \delta, o jogador que propõe primeiro sempre obtém mais do que metade do excedente, para qualquer \delta \in (0,1).	true
+TF	O Folk Theorem garante que, em jogos infinitamente repetidos com \delta suficientemente alto, qualquer perfil de payoffs factível e individualmente racional pode ser sustentado como equilíbrio.	true
+TF	No Dilema dos Prisioneiros repetido finitamente (com horizonte T conhecido), o único EPS é a repetição do equilíbrio de Nash do jogo de estágio em todos os T períodos, desde que o jogo de estágio tenha equilíbrio de Nash único.	true
+TF	A estratégia de equilíbrio simétrico é b(v) = v/2.	true
+TF	A receita esperada do leiloeiro é 1/3.	true
+TF	No leilão de segundo preço, a receita esperada também é 1/3.	true
+TF	Com aversão ao risco dos licitantes, o leilão de primeiro preço gera mais receita que o de segundo.	true
+TF	A colusão é mais fácil de sustentar no leilão ascendente (inglês) do que no de envelope fechado.	true
+TF	No equilíbrio bayesiano de Nash, cada tipo de cada jogador maximiza seu payoff esperado, condicionando na distribuição dos tipos dos demais e nas estratégias de equilíbrio.	true
+TF	No leilão de segundo preço (Vickrey), lançar o valor verdadeiro é estratégia estritamente dominante.	false
+TF	O Teorema da Equivalência de Receita implica que a receita de qualquer leilão é sempre a mesma, independentemente do formato.	false
+TF	A maldição do vencedor é um fenômeno que ocorre exclusivamente em leilões de valor comum, não em leilões de valor privado.	true
+TF	O Princípio da Revelação afirma que, para qualquer mecanismo e qualquer BNE, existe um mecanismo de revelação direta equivalente em que reportar o tipo verdadeiro é equilíbrio.	true
+TF	Seleção adversa diz respeito a uma ação não observável.	false
+TF	Problemas morais dizem respeito a características não observáveis.	false
+TF	Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening.	true
+TF	Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa.	true
+TF	Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa.	true
+TF	No modelo de Spence, se o custo de obter educação fosse idêntico para trabalhadores de alta e baixa produtividade, o equilíbrio separador ainda seria sustentável, pois bastaria que o tipo alto investisse mais.	false
+TF	O problema do moral hazard surge porque o agente toma ações não observáveis pelo principal após a celebração do contrato; se o esforço fosse observável e verificável, o primeiro melhor seria alcançável com salário fixo.	true
+TF	No modelo de Rothschild-Stiglitz, o equilíbrio de mercado competitivo com informação assimétrica é sempre do tipo pooling, em que ambos os tipos recebem o mesmo contrato.	false
+TF	O Princípio da Informatividade de Holmström (1979) implica que o contrato ótimo de incentivos deve incluir qualquer variável correlacionada com o esforço do agente, mesmo que essa variável seja um indicador imperfeito.	true
+TF	No equilíbrio separador do modelo de sinalização, o custo social da sinalização é zero, pois a informação é revelada e os salários correspondem às produtividades verdadeiras.	false
+TF	Se a função de produção for f(K, L) = [K^a + L^a]^{v/a}, com a \leq 1, a \neq 0 e v > 1, ela apresenta retornos crescentes de escala.	true
+TF	O coeficiente de elasticidade de substituição \sigma de uma função de produção como f(K, L) = [K^a + L^a]^{v/a}, com a 1, é \sigma = 1/(1-a).	true
+TF	Funções de produção com elasticidade de substituição \sigma = 0 possuem isoquantas em formato de L.	true
+TF	Se a tecnologia for monotônica, isso significa que não é possível produzir ao menos a mesma quantidade aumentando a quantidade de um dos insumos.	false
+TF	Funções de produção do tipo Cobb-Douglas possuem elasticidade de substituição \sigma = 1.	true
+TF	Se o produto médio do fator variável é crescente, o seu produto marginal é maior do que o seu produto médio.	true
+TF	A produtividade da mão de obra pode aumentar se houver progresso técnico, mesmo que o processo produtivo apresente rendimentos marginais decrescentes.	true
+TF	Quando o processo produtivo apresenta retornos constantes de escala, se a produção aumentar proporcionalmente, o espaço entre as isoquantas aumenta progressivamente.	false
+TF	Uma isoquanta nunca pode apresentar uma inclinação ascendente, se todos os insumos apresentam produtividades marginais positivas.	true
+TF	As isoquantas são convexas se a taxa marginal de substituição técnica for decrescente.	true
+TF	A elasticidade de substituição para uma função de produção Q = AL^a K^b é a/b.	false
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, apresenta no limite uma taxa marginal de substituição igual a -K/L, quando p tende a zero.	true
+TF	Quando a função de produção da empresa consegue produzir mais do que antes, com a quantidade de insumos na mesma proporção, diz-se que ela experimentou progresso técnico neutro.	true
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, no limite tende a uma Cobb-Douglas, quando p tende a zero.	true
+TF	Uma função de produção do tipo Q = (L^p + K^p)^{1/p}, com p > 0, apresenta uma elasticidade de substituição infinita, quando p = 1.	true
+TF	O produto marginal é zero quando o volume produzido é máximo.	true
+TF	O produto médio é decrescente quando o produto marginal é maior do que o produto médio.	false
+TF	O produto marginal deve ser igual ao produto médio quando este último é máximo.	true
+TF	A lei dos rendimentos marginais decrescentes resulta da queda na qualidade de unidades adicionais do insumo variável.	false
+TF	Avanços tecnológicos anulam a operação da lei dos rendimentos marginais decrescentes.	false
+TF	Em uma função de produção do tipo Q = Af(K, L), o parâmetro "A" representa o nível de produtividade total dos fatores.	true
+TF	Uma empresa emprega 100 trabalhadores e 50 unidades de capital. O preço do trabalho é \15/hora e o do capital é \30/hora. O produto marginal do trabalho é 60 e o produto marginal do capital é 90. A empresa está minimizando seus custos.	false
+TF	Se a taxa marginal de substituição técnica de uma empresa não varia ao longo da isoquanta, sendo sempre igual a -1, os insumos são substitutos perfeitos.	true
+TF	Custos fixos como proporção importante dos custos totais é uma fonte de retornos crescentes de escala.	true
+TF	A presença de "aprender fazendo" (learning by doing) de forma significativa no processo produtivo de uma empresa é uma fonte de retornos crescentes de escala.	true
+TF	Seja f(z_1,\ldots,z_m) = \gamma(\delta_1 z_1^{-\rho} + \cdots + \delta_m z_m^{-\rho})^{-\nu/\rho} uma função de produção CES, em que \gamma, \nu, \delta_1,\ldots,\delta_m > 0, \sum_{i=1}^{m} \delta_i = 1 e \rho \geq -1. Então o limite da CES quando a elasticidade de substituição diverge para +\infty é uma função de produção Leontief, independentemente do grau de homogeneidade de f.	false
+TF	Seja Q(t) = \gamma(t)K(t)^{\alpha}L(t)^{1-\alpha}, com 0 < \alpha < 1, uma função de produção Cobb-Douglas que varia continuamente no tempo. Suponha que as elasticidades-produto do capital e do trabalho são, respectivamente, 0,5 e 0,5. Se o produto cresce 2% ao ano, o capital cresce 1,8% ao ano e o trabalho cresce 1% ao ano, então o resíduo de Solow é de 0,6% ao ano.	true
+TF	Seja Q = \min\{K/2, L\} uma função de produção Leontief. Suponha que L está fixo e defina q = Q/L e k = K/L. Defina \varphi(k) = \min\{k/2, 1\}. Se k \in [0, 2), então a produção é tecnologicamente ineficiente.	true
+TF	Considere f(K,L) = (K-L)^2 se K \leq L, e f(K,L) = (K-L)^3 se K > L. Então, ao longo de linhas retas que partem da origem, a taxa técnica de substituição é constante, mas a função não é homotética.	true
+TF	Uma firma produz de acordo com dois processos de Leontief: \min\{K/3, L/2\} e \min\{K, L/3\}. Suponha que K = 5 e L = 8. Se o trabalhador adicional custa 70 e o preço da unidade do produto é 210, então não vale a pena contratar o trabalhador adicional.	true
+TF	O custo contábil anual da empresa é de \$ 550 mil.	true
+TF	O custo econômico anual da empresa é de \$ 780 mil.	true
+TF	O lucro econômico anual da empresa é de \$ 100 mil.	false
+TF	Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo.	true
+TF	O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$ 300 mil.	false
+TF	Quando há níveis discretos do fator fixo, a curva de custo marginal de longo prazo será composta por trechos das curvas de custo marginal de curto prazo associados a cada nível de fator fixo.	true
+TF	No caso de uma empresa com duas fábricas, a curva de custo marginal de curto prazo da empresa é a soma vertical das curvas de custo marginal de curto prazo das duas fábricas.	false
+TF	A função de custo total quadrática do tipo CT = aq + bq^2 resulta em uma curva de custo marginal linear.	true
+TF	Uma função de custo total cúbica do tipo C = aq + bq^2 + cq^3 resulta em curvas de custo médio e marginal em forma de U.	true
+TF	Custos quase fixos independem do nível de produção, mas só precisam ser pagos se a empresa produzir uma quantidade positiva de bens.	true
+TF	Uma empresa produz mensalmente um bem a partir de capital (K) e trabalho (L) de acordo com dois processos de produção do tipo Leontief (de proporções fixas): o primeiro processo é dado por f_1(K,L) = \min\{K, L/4\} e o segundo processo é dado por f_2(K,L) = \min\{K/5, L\}. Denote por Q a quantidade mensal produzida do bem. O custo de oportunidade do capital é v = 1 e o do trabalho é w = 2. Então, a função custo da empresa é c(Q) = 7Q.	true
+TF	Um bem é produzido numa quantidade q a partir de capital (K) e trabalho (L), com os respectivos preços fatoriais denotados por v > 0 e w > 0. Um econometrista estimou a seguinte função de custo do tipo Cobb-Douglas: c(v, w, q) = 2v^{5/8}w^{3/8}. Suponha que v = 1 e w = 256 = 2^8. Então, a demanda fatorial por capital é K = 16.	false
+TF	Uma empresa possui função de produção dada por f(K, L) = \sqrt{KL}, em que K denota o capital e L o trabalho. No curto prazo, o capital está fixo em \bar{K} = 4. Suponha que o preço fatorial do capital é v = 1 e que o preço fatorial do trabalho é w = 4. Então, a função de custo de curto prazo é c(q) = 4 + q^2.	true
+TF	No curto prazo, se o preço do produto é inferior ao custo médio mínimo, então a firma necessariamente não produzirá.	false
+TF	Uma firma tem função de produção f(K, L) = \min\{K + L, 2L\}. Sejam v, w > 0 os custos de oportunidade do capital e do trabalho, respectivamente. Suponha que v < w. O fator trabalho está limitado a um máximo de 10 unidades. Então, a restrição sobre o trabalho só afeta a função custo da firma para níveis de produção acima de 20 unidades de produto.	true
+TF	O nível de utilização do insumo que maximiza o nível de produção é x_1 = 33{,}33.	true
+TF	O nível de utilização do insumo que maximiza o lucro da firma é x_1 = 19{,}5.	false
+TF	O nível de produção economicamente ótimo é q = 28.	true
+TF	O lucro máximo (\pi) obtenível pela firma é \pi = R\$\,120{,}00.	true
+TF	A produtividade marginal do fator é crescente.	false
+TF	O custo contábil anual da empresa é de \$550 mil.	true
+TF	O custo econômico anual da empresa é de \$780 mil.	true
+TF	O lucro econômico anual da empresa é de \$100 mil.	false
+TF	Sendo racional, o proprietário deve continuar a operar sua empresa, pois o lucro econômico é positivo.	true
+TF	O proprietário deveria fechar a sua empresa se tivesse registrado um custo irrecuperável de \$300 mil.	false
+TF	No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.	false
+TF	No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.	true
+TF	Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.	false
+TF	Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.	false
+TF	Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.	true
+TF	Se as curvas de demanda e oferta do mercado forem lineares, sendo p o preço do produto e t um imposto específico, então dp/dt = \eta/(\eta - \varepsilon), em que \eta é a elasticidade preço da oferta e \varepsilon é a elasticidade preço da demanda;	true
+TF	No caso de um imposto específico t, o equilíbrio do mercado será diferente se o imposto for cobrado dos vendedores ou dos compradores;	false
+TF	Se a elasticidade preço da demanda for 0 (zero) e a elasticidade preço da oferta for 1, o custo do imposto específico recairá totalmente sobre os produtores;	false
+TF	O peso morto decorrente da introdução de um imposto específico em um mercado com curvas de oferta e demanda lineares não depende do preço antes da incidência do imposto;	true
+TF	Se as curvas de demanda e oferta forem lineares, a receita fiscal do governo compensa a introdução de um imposto específico e gera um peso morto nulo.	false
+TF	A função de demanda consistente com o preço e a quantidade antes do embargo é D_1(p) = 116 - 0{,}2p.	false
+TF	A função de oferta que é consistente com o equilíbrio antes do embargo é S_1(p) = 60 + 0{,}5p.	false
+TF	A função de oferta após o embargo é S_2(p) = 50 + 0{,}25p.	true
+TF	Após o embargo, o preço de equilíbrio será de \$120 dólares, e a quantidade de equilíbrio será de 80 milhões de barris/dia.	true
+TF	Suponha que, concomitantemente com o embargo, novas tecnologias de energias alternativas sejam incorporadas, reduzindo a demanda global em 20 milhões de barris/dia. Nesse caso, o preço de equilíbrio será menor que o preço antes do embargo e da introdução de novas tecnologias.	false
+TF	No equilíbrio de curto prazo de uma indústria competitiva todas as empresas têm de obter lucro zero.	false
+TF	No equilíbrio de longo prazo, se não houver barreiras à entrada e à saída, todos os fatores de produção são remunerados a preços de mercado.	true
+TF	Sempre que houver barreiras à entrada causadas por um fator fixo, a indústria vai apresentar lucros positivos no longo prazo.	false
+TF	Caso haja renda econômica em um setor, ela determinará o preço de equilíbrio do setor.	false
+TF	Se não houver barreiras à entrada e à saída, e os custos da indústria forem constantes, a curva de oferta de longo prazo será horizontal, a um preço igual ao custo médio mínimo.	true
+TF	O conjunto de alocações factíveis na Caixa de Edgeworth é [0,10] \times [0,10].	true
+TF	A curva de contrato é dada por Y = 10X/(20-X), com 0 \leq X \leq 10.	false
+TF	O Equilíbrio de Walras é o par alocação-preço dado por \{(X_A,Y_A),(X_B,Y_B);(p,q)\} = \{(5,5),(5,5);(p,q)\}, com p/q = 1.	true
+TF	O Equilíbrio de Walras é Pareto-eficiente.	true
+TF	O valor do vetor de excesso de demanda é positivo.	false
+TF	Em equilíbrio, p = \$2.	false
+TF	A função de bem-estar utilitarista (benthamita) com pesos unitários para os dois agentes assume o valor W = 30.	true
+TF	A alocação final não é justa, pois embora eficiente, não é equitativa.	false
+TF	É possível atingir via mercados competitivos a alocação eficiente (x_1^A, x_2^A) = (2{,}5;\; 2{,}5), (x_1^B, x_2^B) = (7{,}5;\; 7{,}5) se realocarmos metade da dotação inicial de A, transferindo-a para B.	true
+TF	Utilizando a mesma função de bem-estar do item 1, a alocação final descrita no item 3 é socialmente preferível àquela descrita inicialmente.	true
+TF	A Lei de Walras afirma que o valor da demanda agregada é zero para todas as escolhas de preços possíveis, e não apenas para os preços de equilíbrio.	false
+TF	O pressuposto de que a função de demanda excedente agregada seja uma função contínua não é indispensável à demonstração da existência do equilíbrio nos modelos de equilíbrio geral.	false
+TF	Mesmo que as demandas individuais sejam descontínuas, desde que os consumidores sejam pequenos, a função de demanda agregada será contínua.	true
+TF	Pelo primeiro teorema do bem-estar, todos os equilíbrios em mercados competitivos serão Pareto-eficientes.	true
+TF	Se as preferências não forem convexas, algumas alocações Pareto-eficientes não serão alcançadas por mercados competitivos.	true
+TF	Se o custo marginal da empresa em monopólio for constante e igual a \ 10, e a elasticidade-preço da demanda for igual a -2, o preço do produto será \ 20;	true
+TF	Quanto menos elástica for a curva de demanda de uma empresa, maior poder de monopólio ela terá;	true
+TF	O poder de monopsônio permite à empresa compradora adquirir o produto por um preço inferior ao competitivo;	true
+TF	Quanto menos elástica for a curva de oferta, maior será a diferença entre a despesa marginal e a despesa média, e maior será o poder de monopsônio do comprador;	true
+TF	Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.	true
+TF	Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.	false
+TF	Uma firma capaz de discriminação de preços de terceiro grau obtém lucro maior ou igual, em comparação com a situação na qual ela não fosse capaz de discriminar.	true
+TF	Uma firma monopolista, que se depara com curva de demanda com elasticidade constante, é indiferente sobre a quantidade produzida.	false
+TF	Para obter eficiência econômica, o regulador de um monopólio natural deve escolher a alocação que minimiza o custo médio unitário da firma.	false
+TF	Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.	true
+TF	Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;	true
+TF	Na discriminação de preços de terceiro grau, o preço mais elevado será cobrado dos consumidores com demanda mais elástica;	false
+TF	A discriminação de preços intertemporal cobra preços mais elevados dos consumidores mais impacientes, reduzindo o preço mais tarde para incentivar o consumo de massa;	true
+TF	A tarifa em duas partes é eficaz quando as demandas dos consumidores são relativamente homogêneas;	true
+TF	Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.	false
+TF	Considere um duopólio de Cournot em que a demanda é dada por P = 11 - Q, Q = q_1 + q_2, e as funções custo são C_1(q_1) = q_1^2/2 e C_2(q_2) = q_2^2 / 1 (i.e., C_2 = q_2^2). Nesse caso, o equilíbrio de Nash em quantidades é (q_1^, q_2^) = (3{,}2;\; 6) e o preço de mercado é P = 6.	true
+TF	Se uma firma possui um índice de Lerner maior do que outra, então necessariamente a primeira opera em um mercado com índice de Herfindahl-Hirschman (HHI) maior do que a segunda.	false
+TF	No modelo de Stackelberg com produtos homogêneos e custos marginais constantes e idênticos, a firma seguidora obtém lucro maior do que obteria no equilíbrio de Cournot simultâneo.	false
+TF	No equilíbrio de Stackelberg, a curva de iso-lucro do líder é tangente à curva de reação do seguidor.	true
+TF	Considere um duopólio de Bertrand repetido infinitamente, com P = 100 - Q e custo marginal c = 0. Se as firmas usam uma estratégia de gatilho (grim trigger) para sustentar o preço de monopólio, o fator de desconto mínimo para que a colusão seja sustentável é \delta = 0{,}25.	false
+TF	Se q_2 = 3, a melhor resposta da firma 1 é q_1 = 6.	true
+TF	Se q_1 = 6, a melhor resposta da firma 2 é q_2 = 3.	false
+TF	O equilíbrio de Cournot-Nash é (q_1^, q_2^) = (5, 5) e o preço de equilíbrio é P^* = 10.	true
+TF	No equilíbrio, o índice de Lerner da firma 2 é 1/4.	false
+TF	O índice de Lerner da indústria, medido pela média ponderada (pelas participações de mercado) dos índices individuais, é 1/2.	true
+TF	No modelo de demanda quebrada (kinked demand), se houver um aumento no custo marginal da firma, haverá necessariamente um aumento no preço cobrado pela firma.	false
+TF	A sinalização de preços (price signaling) por uma firma líder em um oligopólio exige necessariamente um acordo explícito entre as firmas.	false
+TF	A liderança de preços pode funcionar como mecanismo para que firmas oligopolistas superem o dilema dos prisioneiros.	true
+TF	Em um duopólio de Cournot simétrico, o lucro de cada firma no equilíbrio de Nash é maior do que o lucro que cada firma obteria em um cartel (colusão perfeita) com divisão igualitária da produção.	false
+TF	No modelo de concorrência monopolística, a livre entrada e saída de firmas implica que, no equilíbrio de longo prazo, cada firma opera com lucro econômico zero.	true
+TF	Se João está trabalhando um número de horas por dia tal que a utilidade marginal da renda é 4 e a utilidade marginal do lazer é 2, sendo que a taxa de salário é 2, então João está maximizando a sua utilidade.	false
+TF	A curva de oferta de trabalho de João é construída subtraindo de 24 (o número de horas de um dia) a demanda por lazer, para cada taxa de salário.	true
+TF	O efeito substituição tem de ser negativo: um aumento na taxa de salário leva João a escolher um número menor de horas de lazer e um número maior de horas de trabalho.	true
+TF	Se lazer é um bem normal para João, o efeito substituição e o efeito renda atuam em direções opostas. O efeito que vai predominar dependerá do tamanho relativo dos dois efeitos.	true
+TF	Se João considerar lazer como um bem inferior, o seu efeito substituição e o seu efeito renda atuam na mesma direção, de tal forma que uma elevação no salário reduzirá suas horas de lazer.	true
+TF	A demanda de um setor por determinado insumo é a soma horizontal das demandas desse insumo por todas as empresas do setor.	false
+TF	A curva de oferta de trabalho pode apresentar um trecho com inclinação negativa se o efeito-renda associado a uma remuneração mais elevada for maior que o efeito-substituição.	true
+TF	Quando o comprador de um insumo tem poder de monopsônio, a curva de despesa marginal se situa abaixo da curva de despesa média.	false
+TF	Para um monopolista o produto da receita marginal será sempre menor do que o valor do produto marginal.	true
+TF	Se um monopolista upstream vender um fator de produção para um monopolista downstream, o preço final do produto será afetado por um mark-up duplo.	true
+TF	Em equilíbrio, o lucro da firma será \$15.	false
+TF	Em equilíbrio, P = \$10.	false
+TF	O consumidor escolhe quatro unidades de comida.	true
+TF	A renda nominal do consumidor, composta do valor da dotação de tempo mais o lucro da firma, é igual a \$40.	true
+TF	Se P cair pela metade do valor de equilíbrio, haverá excesso de oferta de trabalho, mas a somatória dos valores dos excessos de demanda pelos dois bens será nula.	true
+TF	A análise do valor presente líquido incorpora o valor presente com taxa de desconto tanto dos custos quanto dos benefícios de um investimento.	true
+TF	O prazo de retorno também proporciona um modo de determinar os benefícios líquidos de um investimento.	true
+TF	O prazo de retorno desconta fluxos futuros de dinheiro, assim como a análise do valor presente líquido.	false
+TF	O valor da opção de espera de um investimento é o incentivo que o risco cria para adiar a decisão de investir e coletar informação.	true
+TF	Um indivíduo avesso ao risco ganha mais utilidade a partir de uma determinada quantidade de renda, do que a partir de uma quantidade equivalente em valor esperado decorrente de uma renda incerta.	true
+TF	Seja u(W) = -e^{-\beta W} uma utilidade von Neumann-Morgenstern, em que \beta > 0 é uma constante e W é a riqueza. Então \beta denota a medida de aversão relativa ao risco.	false
+TF	Suponha que uma carteira de ativos arriscados possui retorno esperado r_e = 21\% e variância \sigma^2 = 0{,}09. O ativo sem risco oferece um retorno r_f = 3\%. Então, de acordo com o modelo média-variância, o preço do risco da carteira é p = 2.	false
+TF	Suponha que o retorno de mercado é r_m = 12\% e a taxa de retorno do ativo sem risco é r_f = 8\%. A variância da carteira eficiente é \sigma_e^2 = 0{,}01 e a covariância entre o retorno de um ativo A e a carteira eficiente é \sigma_{A,e} = 0{,}5. De acordo com o modelo CAPM, se o valor esperado do ativo A é \64, então o preço do ativo A é \50.	false
+TF	De acordo com o modelo média-variância, se a taxa marginal de substituição (TMS) entre retorno esperado da carteira e seu desvio-padrão é TMS = 0{,}3, se a variância do retorno da carteira é \sigma_m^2 = 0{,}04 e a taxa de retorno do ativo sem risco é r_f = 12\%, então o retorno esperado da carteira é r_m = 18\%.	true
+TF	Um indivíduo possui utilidade von Neumann-Morgenstern u(x) = \sqrt{x} e possui riqueza W = \100. Ele está sujeito a uma perda monetária aleatória X, com distribuição uniforme contínua no intervalo [0, 100]. Se ao indivíduo for oferecido, ao preço de G = \55, um seguro total contra essa perda aleatória, então ele comprará o seguro.	true
+TF	No modelo de Fisher com dois períodos, se a taxa de juros real aumenta e o consumidor é poupador líquido, o efeito sobre o consumo no período 1 é inequivocamente negativo (o consumidor sempre consome menos no período 1).	false
+TF	A equação de Euler do consumo u'(C_1) = \beta(1+r)u'(C_2) implica que, quando a taxa de juros excede a taxa de desconto subjetiva (r > \rho), o consumo ótimo é crescente ao longo do tempo.	true
+TF	O custo de uso do capital de Jorgenson, c_K = p_K(r + \delta), é crescente na taxa de depreciação e crescente na taxa de juros real.	true
+TF	Segundo a regra de Hotelling, se a taxa de juros real de uma economia aumenta, a velocidade de extração de recursos exauríveis diminui, pois o futuro se torna mais valioso.	false
+TF	O Valor Presente Líquido (VPL) e a Taxa Interna de Retorno (TIR) sempre concordam na ordenação de projetos de investimento mutuamente exclusivos.	false
+TF	Pela equação de Fisher, se a taxa de juros nominal é 15% e a inflação é 10%, a taxa de juros real é exatamente 5%.	false
+TF	Se o VPL de um projeto é zero, isso significa que o projeto não gera nenhum lucro contábil.	false
+TF	A TIR de um projeto com fluxos de caixa convencionais (investimento inicial negativo seguido de fluxos positivos) é única.	true
+TF	No modelo CAPM, o risco idiossincrático (específico da firma) é remunerado pelo mercado, pois afeta o retorno do investidor.	false
+TF	A fórmula da perpetuidade VP = F/r implica que uma redução da taxa de juros de 10% para 5% duplica o valor presente de um fluxo perpétuo constante.	true
+TF	Seleção adversa diz respeito a uma ação não observável.	false
+TF	Problemas morais dizem respeito a características não observáveis.	false
+TF	Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening.	true
+TF	Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa.	true
+TF	Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa.	true
+TF	O leilão holandês e o leilão de Vickrey geram resultados Pareto-eficientes.	true
+TF	O leilão inglês com preço de reserva igual a zero não gera resultados eficientes de Pareto.	false
+TF	Os resultados do leilão de lance fechado são Pareto-eficientes, mesmo que as crenças de cada participante acerca das avaliações dos demais estejam incorretas.	false
+TF	Declarar o verdadeiro valor é a estratégia ótima de cada participante no leilão de Vickrey.	true
+TF	Em um leilão de valor comum, em que os participantes têm estimativas diferentes deste valor, a estratégia ótima é oferecer um lance menor do que o valor estimado, que deverá ser tão mais baixo quanto maior for o número de participantes.	true
+TF	Quando uma atividade produz externalidades positivas, o nível eficiente de produção é alcançado quando o benefício marginal social é igual ao custo marginal da atividade.	true
+TF	Quando o governo possui informações limitadas sobre os custos e os benefícios resultantes da redução da emissão de um poluente, e quando a curva de custo marginal social for muito inclinada e a curva de custo marginal da redução é plana, a imposição de um limite legal à quantidade de poluente que pode ser emitido é preferível a uma taxa sobre a emissão.	true
+TF	Se as empresas poluidoras possuem processos produtivos diferentes e diferentes custos de redução de emissões, taxas sobre a quantidade de poluente emitida podem ser preferíveis à imposição de um limite.	true
+TF	Externalidades de difusão não geram falhas de mercado.	false
+TF	Mesmo que não haja intervenção governamental para a reciclagem do lixo, alguma reciclagem poderá ocorrer se os preços dos materiais novos forem muito elevados em relação ao material reciclado.	true
+TF	Recursos comuns são bens rivais, mas não excludentes.	true
+TF	Bens de clube são não rivais, e excludentes.	true
+TF	Como o bem público é não rival, para determinar o seu valor temos de somar os benefícios marginais de todas as pessoas que o consomem.	true
+TF	Uma solução para o problema do carona em bens públicos é financiá-los por meio de tributos.	true
+TF	Pode acontecer que um bem público que oferece enorme benefício total a um grupo acabe por não ser fornecido, se o tamanho do seu grupo potencial for grande a ponto de o benefício médio individual ser tão pequeno que não supere o problema do carona.	true
+TF	Considere dois agentes, 1 e 2, em uma economia com um bem público e um bem privado. O agente 1 possui utilidade U_1(G, x_1) = 4\ln(G) + x_1 sobre a quantidade G do bem público e a quantidade x_1 do bem privado. Para o agente 2, U_2(G, x_2) = 6\ln(G) + x_2. Suas rendas são, respectivamente, w_1 = 4 e w_2 = 6. Seja g_i a contribuição do agente i = 1, 2 para a produção do bem público e suponha que a função de produção desse bem é G = g_1 + g_2. Se \tau_1^ e \tau_2^ denotam as taxas de Lindahl do agente 1 e do agente 2, respectivamente, então \tau_1^ = 2/5 e \tau_2^ = 3/5.	true
+TF	A firma A vende seu produto em um mercado competitivo, no qual a curva de demanda é dada por p(x) = 120 - x. A função de custo privado é c(x) = 40x. Entretanto, a produção de x unidades do bem gera uma externalidade negativa para a firma B de acordo com a função e(x) = x^2. Então o imposto pigouviano que induz a produção da quantidade socialmente eficiente é de \$ 40.	false
+TF	Suponha que os direitos de propriedade estão bem definidos e que os custos de transação são nulos. Nessas condições, segundo o Teorema de Coase, a negociação privada entre duas firmas envolvidas em uma situação de externalidades levará à alocação socialmente eficiente, desde que os direitos de propriedade estejam alocados em favor do agente que sofre a externalidade.	false
+TF	Suponha que o sindicato dos caminhoneiros de um país dispende recursos para fazer lobby no parlamento e assim implementar escolhas políticas de modo a capturar rendas mediante o subsídio ao preço do diesel. Então o sindicato exerce rent-seeking.	true
+TF	A regra de votação majoritária pode apresentar o paradoxo do voto, mas se as preferências são de pico-único, então a regra de votação majoritária aplicada a questões públicas mensuradas monetariamente (unidimensionais) resultará em políticas preferidas pelo eleitor mediano.	true

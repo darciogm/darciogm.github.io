@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  Elasticidade-Preco e Receita Total — Interactive Graph
+  Library: JSXGraph
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elasticidade e Receita Total</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .panels { flex: 1 1 420px; max-width: 500px; display: flex; flex-direction: column; gap: 0.5rem; }
+    .jxgbox-top { width: 100%; height: 280px; border: 1px solid #ddd; border-radius: 6px; }
+    .jxgbox-bot { width: 100%; height: 200px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 260px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .legend { margin-top: 0.5rem; font-size: 0.78rem; line-height: 1.8; }
+    .legend span { display: inline-block; width: 14px; height: 3px; margin-right: 4px; vertical-align: middle; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .panels { flex-basis: 100%; width: 100%; max-width: 500px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 500px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div class="panels">
+      <div id="jxgbox-demand" class="jxgbox-top"></div>
+      <div id="jxgbox-revenue" class="jxgbox-bot"></div>
+    </div>
+    <div class="controls">
+      <h3>Demanda Linear</h3>
+      <div class="slider-group">
+        <label>Intercepto \(a\): <span class="val" id="val-a">180</span></label>
+        <input type="range" id="slider-a" min="50" max="300" step="10" value="180">
+      </div>
+      <div class="slider-group">
+        <label>Inclinacao \(b\): <span class="val" id="val-b">2.0</span></label>
+        <input type="range" id="slider-b" min="0.5" max="5" step="0.1" value="2">
+      </div>
+      <div class="legend">
+        <span style="background:#1565c0"></span>Demanda \(P = a - bQ\)<br>
+        <span style="background:#C8102E"></span>Receita Total \(TR = PQ\)<br>
+        <span style="background:#00897b;height:1px;border-top:2px dashed #00897b"></span>Ponto selecionado
+      </div>
+      <div class="info-box" id="info"></div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Demand graph (top)
+    var boardD = JXG.JSXGraph.initBoard('jxgbox-demand', {
+      boundingbox: [-8, 210, 105, -25],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+    boardD.create('axis', [[0,0],[100,0]], { ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 } });
+    boardD.create('axis', [[0,0],[0,200]], { ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6,0] }, minorTicks: 0, ticksDistance: 50 } });
+    boardD.create('text', [52, -18, '<b><i>Q</i></b>'], { fontSize: 13, fixed: true, anchorX: 'middle', highlight: false });
+    boardD.create('text', [-6, 105, '<b><i>P</i></b>'], { fontSize: 13, fixed: true, anchorX: 'middle', rotate: 90, highlight: false });
+
+    // Revenue graph (bottom)
+    var boardR = JXG.JSXGraph.initBoard('jxgbox-revenue', {
+      boundingbox: [-8, 4500, 105, -600],
+      axis: false, showCopyright: false, showNavigation: false, keepaspectratio: false
+    });
+    boardR.create('axis', [[0,0],[100,0]], { ticks: { drawLabels: true, label: { fontSize: 9 }, minorTicks: 0, ticksDistance: 20 } });
+    boardR.create('axis', [[0,0],[0,4500]], { ticks: { drawLabels: true, label: { fontSize: 9, anchorX: 'right', offset: [-6,0] }, minorTicks: 0, ticksDistance: 1000 } });
+    boardR.create('text', [52, -420, '<b><i>Q</i></b>'], { fontSize: 13, fixed: true, anchorX: 'middle', highlight: false });
+    boardR.create('text', [-6, 2200, '<b><i>TR</i></b>'], { fontSize: 13, fixed: true, anchorX: 'middle', rotate: 90, highlight: false });
+
+    var objsD = [], objsR = [];
+    var qDrag = 30; // initial draggable Q
+
+    function getParams() {
+      return {
+        a: parseFloat(document.getElementById('slider-a').value),
+        b: parseFloat(document.getElementById('slider-b').value)
+      };
+    }
+
+    function draw() {
+      var i;
+      for (i = 0; i < objsD.length; i++) boardD.removeObject(objsD[i]);
+      for (i = 0; i < objsR.length; i++) boardR.removeObject(objsR[i]);
+      objsD = []; objsR = [];
+
+      var p = getParams();
+      document.getElementById('val-a').textContent = p.a.toFixed(0);
+      document.getElementById('val-b').textContent = p.b.toFixed(1);
+
+      var Qmax = p.a / p.b; // Q where P=0
+      var Qmid = Qmax / 2;  // unit elastic point
+      var TRmax = p.a * p.a / (4 * p.b);
+
+      // Update bounding boxes
+      var xMax = Math.min(Qmax * 1.1, 200);
+      var yMaxD = p.a * 1.1;
+      var yMaxR = TRmax * 1.3;
+      boardD.setBoundingBox([-xMax*0.08, yMaxD, xMax, -yMaxD*0.12], false);
+      boardR.setBoundingBox([-xMax*0.08, yMaxR, xMax, -yMaxR*0.13], false);
+
+      // Clamp qDrag
+      if (qDrag > Qmax) qDrag = Qmax * 0.9;
+      if (qDrag < 0.5) qDrag = 0.5;
+
+      // --- Demand graph ---
+      // Elastic region (green fill)
+      var fillElastic = [];
+      for (var q = 0; q <= Qmid; q += 0.5) fillElastic.push([q, p.a - p.b * q]);
+      fillElastic.push([Qmid, 0]); fillElastic.push([0, 0]);
+      var fxE = fillElastic.map(function(pt){return pt[0];}), fyE = fillElastic.map(function(pt){return pt[1];});
+      objsD.push(boardD.create('curve', [fxE, fyE], { strokeWidth: 0, fillColor: 'rgba(76,175,80,0.10)', fillOpacity: 1 }));
+
+      // Inelastic region (red fill)
+      var fillInelastic = [];
+      for (var q = Qmid; q <= Qmax; q += 0.5) fillInelastic.push([q, p.a - p.b * q]);
+      fillInelastic.push([Qmax, 0]); fillInelastic.push([Qmid, 0]);
+      var fxI = fillInelastic.map(function(pt){return pt[0];}), fyI = fillInelastic.map(function(pt){return pt[1];});
+      objsD.push(boardD.create('curve', [fxI, fyI], { strokeWidth: 0, fillColor: 'rgba(244,67,54,0.10)', fillOpacity: 1 }));
+
+      // Demand curve
+      var dxs = [], dys = [];
+      for (var q = 0; q <= Qmax; q += 0.5) { dxs.push(q); dys.push(p.a - p.b * q); }
+      objsD.push(boardD.create('curve', [dxs, dys], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+
+      // Region labels
+      objsD.push(boardD.create('text', [Qmid * 0.35, p.a * 0.65, '<span style="color:#4caf50;font-size:10px"><b>Elastica</b><br>|e|>1</span>'], { fixed: true, anchorX: 'middle', highlight: false }));
+      objsD.push(boardD.create('text', [Qmid * 1.55, p.a * 0.25, '<span style="color:#f44336;font-size:10px"><b>Inelastica</b><br>|e|<1</span>'], { fixed: true, anchorX: 'middle', highlight: false }));
+
+      // Unit elastic vertical line
+      objsD.push(boardD.create('segment', [[Qmid, 0], [Qmid, p.a - p.b * Qmid]], {
+        strokeColor: '#ff9800', dash: 3, strokeWidth: 1.5
+      }));
+      objsD.push(boardD.create('point', [Qmid, p.a / 2], { name: '|e|=1', size: 4, fillColor: '#ff9800', strokeColor: '#ff9800', fixed: true, label: { fontSize: 9, offset: [8, 8], color: '#ff9800' } }));
+
+      // Draggable point on demand curve
+      var Pcur = p.a - p.b * qDrag;
+      if (Pcur < 0) Pcur = 0;
+      var dragPt = boardD.create('point', [qDrag, Pcur], {
+        name: '', size: 6, fillColor: '#00897b', strokeColor: '#00897b',
+        snapToGrid: false
+      });
+      objsD.push(dragPt);
+
+      // Dashed lines from drag point to axes
+      objsD.push(boardD.create('segment', [function(){return [dragPt.X(), 0];}, function(){return [dragPt.X(), dragPt.Y()];}], { strokeColor: '#00897b', dash: 3, strokeWidth: 1 }));
+      objsD.push(boardD.create('segment', [function(){return [0, dragPt.Y()];}, function(){return [dragPt.X(), dragPt.Y()];}], { strokeColor: '#00897b', dash: 3, strokeWidth: 1 }));
+
+      // Constrain drag point to demand curve
+      dragPt.on('drag', function() {
+        var qNew = Math.max(0.5, Math.min(dragPt.X(), Qmax - 0.1));
+        qDrag = qNew;
+        var pNew = p.a - p.b * qNew;
+        if (pNew < 0) pNew = 0;
+        dragPt.moveTo([qNew, pNew]);
+        updateInfo();
+        boardR.update();
+      });
+
+      // --- Revenue graph ---
+      var rxs = [], rys = [];
+      for (var q = 0; q <= Qmax; q += 0.5) {
+        var price = p.a - p.b * q;
+        rxs.push(q); rys.push(price > 0 ? price * q : 0);
+      }
+      objsR.push(boardR.create('curve', [rxs, rys], { strokeColor: '#C8102E', strokeWidth: 2.5 }));
+
+      // TR max line
+      objsR.push(boardR.create('segment', [[Qmid, 0], [Qmid, TRmax]], { strokeColor: '#ff9800', dash: 3, strokeWidth: 1.5 }));
+      objsR.push(boardR.create('point', [Qmid, TRmax], { name: 'TR max', size: 4, fillColor: '#ff9800', strokeColor: '#ff9800', fixed: true, label: { fontSize: 9, offset: [8, 5], color: '#ff9800' } }));
+
+      // Revenue point corresponding to drag
+      var TRcur = Pcur * qDrag;
+      objsR.push(boardR.create('point', [
+        function() { return dragPt.X(); },
+        function() { var qq = dragPt.X(); var pp = p.a - p.b * qq; return pp > 0 ? pp * qq : 0; }
+      ], { name: '', size: 5, fillColor: '#00897b', strokeColor: '#00897b', fixed: true }));
+
+      // Vertical dashed in revenue
+      objsR.push(boardR.create('segment', [
+        function() { return [dragPt.X(), 0]; },
+        function() { var qq = dragPt.X(); var pp = p.a - p.b * qq; return [qq, pp > 0 ? pp * qq : 0]; }
+      ], { strokeColor: '#00897b', dash: 3, strokeWidth: 1 }));
+
+      updateInfo();
+      boardD.update();
+      boardR.update();
+    }
+
+    function updateInfo() {
+      var p = getParams();
+      var Q = qDrag;
+      var P = p.a - p.b * Q;
+      if (P < 0) P = 0;
+      var TR = P * Q;
+      var epsilon = (Q > 0.1 && P > 0.1) ? (-1/p.b) * (P / Q) : NaN;
+      var epsAbs = Math.abs(epsilon);
+      var region, regionColor;
+      if (epsAbs > 1.01) { region = 'Elastica'; regionColor = '#4caf50'; }
+      else if (epsAbs < 0.99) { region = 'Inelastica'; regionColor = '#f44336'; }
+      else { region = 'Unitaria'; regionColor = '#ff9800'; }
+
+      var html = '<div style="text-align:center;margin-bottom:0.3rem;">\\(P = ' + p.a + ' - ' + p.b.toFixed(1) + 'Q\\)</div>';
+      html += '<div>';
+      html += '\\(Q = ' + Q.toFixed(1) + '\\), \\(P = ' + P.toFixed(1) + '\\)<br>';
+      html += '\\(TR = P \\times Q = ' + TR.toFixed(0) + '\\)<br>';
+      if (!isNaN(epsilon)) {
+        html += '\\(\\varepsilon = \\frac{1}{b} \\cdot \\frac{P}{Q} = ' + epsilon.toFixed(3) + '\\)<br>';
+        html += 'Regiao: <strong style="color:' + regionColor + '">' + region + '</strong> (\\(|\\varepsilon| = ' + epsAbs.toFixed(3) + '\\))';
+      }
+      html += '</div>';
+      html += '<hr style="margin:0.3rem 0">';
+      html += '<div style="font-size:0.78rem;color:#666;">';
+      html += '\\(|\\varepsilon| > 1\\): aumento de \\(P \\Rightarrow TR\\) cai<br>';
+      html += '\\(|\\varepsilon| < 1\\): aumento de \\(P \\Rightarrow TR\\) sobe<br>';
+      html += '\\(|\\varepsilon| = 1\\): \\(TR\\) maximo (\\(RMg = 0\\))';
+      html += '</div>';
+
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 180;
+      document.getElementById('slider-b').value = 2;
+      qDrag = 30;
+      draw();
+    }
+
+    ['slider-a','slider-b'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', function() { draw(); });
+    });
+    draw();
+  </script>
+</body>
+</html>

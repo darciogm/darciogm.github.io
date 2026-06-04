@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Juros Compostos, Perpetuidades e Anuidades</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Juros Compostos, Perpetuidades e Anuidades
+# Secao 18.9
+# ============================================
+
+K0 <- 1000  # capital inicial
+i <- 0.12   # taxa nominal anual (12%)
+
+cat("====== JUROS COMPOSTOS ======\n")
+cat(sprintf("Capital inicial: R$ %s\n", format(K0, big.mark=".")))
+cat(sprintf("Taxa nominal anual: %.0f%%\n\n", i*100))
+
+# --- Frequencia de capitalizacao ---
+cat("--- Efeito da frequencia de capitalizacao (1 ano) ---\n")
+cat(sprintf("%-15s %-5s %-12s %-10s\n",
+    "Frequencia", "m", "K(1)", "Taxa efet."))
+cat(strrep("-", 45), "\n")
+freqs <- c("Anual"=1, "Semestral"=2, "Trimestral"=4,
+           "Mensal"=12, "Diaria"=365)
+for (nm in names(freqs)) {
+  m <- freqs[nm]
+  K1 <- K0 * (1 + i/m)^m
+  r_ef <- (1 + i/m)^m - 1
+  cat(sprintf("%-15s %-5d %-12.2f %-10.4f\n", nm, m, K1, r_ef))
+}
+K_cont <- K0 * exp(i)
+cat(sprintf("%-15s %-5s %-12.2f %-10.4f\n", "Continua", "inf", K_cont, exp(i)-1))
+
+# --- Poder dos juros compostos no tempo ---
+cat("\n--- Crescimento ao longo do tempo (r=12% a.a.) ---\n")
+cat(sprintf("%-6s %-12s %-12s %-12s\n",
+    "Anos", "Simples", "Composto", "Continuo"))
+cat(strrep("-", 46), "\n")
+anos <- c(1, 5, 10, 20, 30, 50)
+for (t in anos) {
+  simples <- K0 * (1 + i*t)
+  composto <- K0 * (1 + i)^t
+  continuo <- K0 * exp(i*t)
+  cat(sprintf("%-6d %-12s %-12s %-12s\n", t,
+      format(round(simples), big.mark="."),
+      format(round(composto), big.mark="."),
+      format(round(continuo), big.mark=".")))
+}
+
+# --- Perpetuidades e anuidades ---
+cat("\n--- Perpetuidades e anuidades ---\n")
+F <- 100  # fluxo anual
+r <- 0.05
+cat(sprintf("Fluxo anual: R$ %.0f  Taxa: %.0f%%\n\n", F, r*100))
+
+VP_perp <- F / r
+cat(sprintf("Perpetuidade (F/r): R$ %s\n", format(VP_perp, big.mark=".")))
+
+for (n in c(5, 10, 20, 30, 50)) {
+  VP_anuid <- F * (1 - (1+r)^(-n)) / r
+  pct <- VP_anuid / VP_perp * 100
+  cat(sprintf("Anuidade %2d anos: R$ %7.1f (%4.1f%% da perpetuidade)\n",
+      n, VP_anuid, pct))
+}
+
+# Perpetuidade crescente
+g <- 0.02
+VP_cresc <- F / (r - g)
+cat(sprintf("\nPerpetuidade crescente (g=%.0f%%): R$ %s\n",
+    g*100, format(VP_cresc, big.mark=".")))
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Juros simples vs compostos
+t_seq <- 0:50
+plot(t_seq, K0*(1+i)^t_seq / 1000, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Anos", ylab = "Capital (R$ mil)",
+     main = "Simples vs. Composto vs. Continuo",
+     ylim = c(0, K0*exp(i*50)/1000))
+lines(t_seq, K0*(1+i*t_seq)/1000, lwd = 3, col = "#0d6efd", lty = 2)
+lines(t_seq, K0*exp(i*t_seq)/1000, lwd = 2, col = "#6f42c1", lty = 3)
+
+legend("topleft",
+       legend = c("Composto", "Simples", "Continuo"),
+       col = c("#dc3545", "#0d6efd", "#6f42c1"),
+       lwd = 3, lty = c(1, 2, 3), cex = 0.65, bg = "white")
+
+# Painel 2: VP da perpetuidade vs taxa
+r_seq2 <- seq(0.01, 0.15, length = 200)
+VP_seq <- F / r_seq2
+
+plot(r_seq2 * 100, VP_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Taxa de juros (%)", ylab = "VP (R$)",
+     main = "Perpetuidade: VP = F/r",
+     ylim = c(0, 12000))
+
+# Marcar pontos
+r_marks <- c(0.02, 0.05, 0.10)
+VP_marks <- F / r_marks
+points(r_marks*100, VP_marks, pch = 19, col = "#dc3545", cex = 1.5)
+for (k in seq_along(r_marks)) {
+  text(r_marks[k]*100 + 0.8, VP_marks[k],
+       format(round(VP_marks[k]), big.mark="."),
+       col = "#dc3545", cex = 0.7, font = 2, pos = 4)
+}
+
+text(8, 8000, "Queda de r\nduplica o VP!",
+     col = "#6f42c1", cex = 0.8, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

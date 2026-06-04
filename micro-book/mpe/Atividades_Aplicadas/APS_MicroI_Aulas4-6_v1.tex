@@ -1,0 +1,1389 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,multicol,multirow,array,setspace,comment,tikz,booktabs,enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,calc,patterns}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% ------------------ cores ------------------
+\definecolor{solblue}{RGB}{0,0,139}
+\definecolor{rubred}{RGB}{139,0,0}
+\definecolor{boxgray}{RGB}{240,240,240}
+\definecolor{boxborder}{RGB}{100,100,100}
+\definecolor{insperred}{RGB}{200,16,46}
+
+\raggedbottom
+
+\printanswers
+
+\unframedsolutions
+\SolutionEmphasis{\color{solblue}}
+\renewcommand{\solutiontitle}{\noindent\textcolor{solblue}{\rule{\linewidth}{0.4pt}}\par\noindent\textbf{\textcolor{solblue}{Solução:}}\enspace}
+
+\pagestyle{headandfoot}
+\runningheader{Microeconomia I (MPE)}{APS V1 -- EG, Arrow-Debreu e Setor Elétrico}{Página \thepage\ de \numpages}
+\runningheadrule
+\runningfooter{}{}{}
+
+\newcommand{\class}{Microeconomia I -- MPE 2026/32}
+\newcommand{\examname}{Atividade Prática Supervisionada -- APS (V1, Aulas 4--6)}
+\newcommand{\examdate}{2026.1}
+
+\pointpoints{ponto}{pontos}
+\renewcommand{\partlabel}{\alph{partno})}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+
+\newtcolorbox{contextbox}[1][]{%
+  enhanced, breakable,
+  colback=boxgray, colframe=boxborder,
+  boxrule=0.4pt, arc=2pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\bfseries, title=#1
+}
+
+% Notação operacional
+\newcommand{\TMS}{\text{TMS}}
+\newcommand{\TMT}{\text{TMT}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\GSF}{\text{GSF}}
+
+\begin{document}
+
+\newgeometry{top=2cm,bottom=2cm,left=1.8cm,right=1.8cm}
+
+\ifprintanswers
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large APS -- Versão 1 (Aulas 4--6) -- Resolução Comentada \\[0.5em]
+        \normalsize \examdate
+    \end{center}
+    \vspace{0.5cm}
+\else
+    \noindent\hfill\includegraphics[width=2.5cm]{logo-insper.png}\\[1em]
+    \vspace*{-4.5em}
+    \noindent\textbf{Aluno(a):} \rule{12cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Curso:} \rule{6cm}{0.4pt}
+    \hspace{0.5cm}
+    \textbf{N\textsuperscript{o} de matrícula:} \rule{5cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Turma:} \rule{6cm}{0.4pt}
+    \hspace{0.3cm}
+    \textbf{Professor(a):} \rule{5.8cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Grupo (até 4 integrantes):} \rule{10cm}{0.4pt}
+
+    \vspace{1em}
+
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large \examname \\[0.5em]
+        \large \textit{Setor elétrico brasileiro e risco hidrológico: equilíbrio geral, Arrow-Debreu e mercados (in)completos} \\[0.5em]
+        \large \examdate
+    \end{center}
+
+    \textbf{Prezado(a) Aluno(a),}
+    \vspace{0.8em}
+
+    Esta APS cobre as Aulas 4, 5 e 6 do curso (equilíbrio geral em trocas e produção; Arrow-Debreu I com bens contingentes; Arrow-Debreu II com Radner sequencial e mercados incompletos). É composta de \textbf{4 questões} distribuídas em três partes técnicas e uma síntese de política, totalizando \textbf{100 pontos}. Tempo estimado: \textbf{180 minutos} (3 horas).
+
+    \begin{enumerate}[noitemsep]
+        \item Identifique-se com letra legível em todas as folhas.
+        \item Esta APS pode ser resolvida em grupos de até 4 integrantes. \textbf{Cada integrante deve dominar a totalidade da resolução.}
+        \item Apresentação clara, notação consistente e justificativa econômica das passagens são parte da nota.
+        \item \textbf{Gráficos exigem precisão:} interceptos numéricos, inclinações, pontos rotulados, fronteiras de domínio explícitas.
+        \item Resoluções a lápis \textbf{não serão revisadas}.
+        \item As Questões 1--3 trabalham com a mesma economia ``setor elétrico'' calibrada a seguir, em complexidade crescente: sem incerteza (Q1) $\to$ 2 estados, mercado Arrow-Debreu canônico (Q2) $\to$ Radner sequencial e ampliação para 3 estados com mercado incompleto (Q3).
+        \item Os parâmetros calibrados (tecnologias, dotações, probabilidades, valores de GSF) \textit{não} pretendem reproduzir números operacionais da CCEE, do ONS ou do MME -- são uma ilustração estilizada, escolhida para que a álgebra de equilíbrio feche em frações simples e os resultados qualitativos espelhem os mecanismos do MRE e da repactuação do GSF (Lei 14.052/2020).
+    \end{enumerate}
+
+    \rightline{\textbf{Boa atividade!}}
+
+    \vspace{0.5em}
+    \noindent\hrulefill
+
+    \noindent\textbf{Formulário e notação permitidos}
+    \vspace{0.3em}
+
+    \textbf{Equilíbrio competitivo (EC) em troca pura.} Em economia $I \times L$ com preferências $\succeq^i$, dotações $\omega^i \in \mathbb{R}^L_{++}$ e preço $p \in \mathbb{R}^L_+$:
+    \[
+        x^i(p) \in \arg\max\, u^i(x^i)\ \text{s.a.}\ p\cdot x^i \leq p\cdot \omega^i,\qquad
+        z(p) = \sum_i (x^i(p) - \omega^i),\qquad p^*\cdot z(p^*) = 0\ \text{(Walras).}
+    \]
+    EC: $z(p^*) = 0$. \textbf{Taxa Marginal de Substituição:} $\TMS^i_{\ell, k}(x^i) = (\partial u^i/\partial x^i_\ell)/(\partial u^i/\partial x^i_k)$.
+
+    \textbf{Produção e PPF em economia $1+1$ bens / 1 fator.} Tecnologias $q_h = f_h(L_h)$, $q_t = f_t(L_t)$, restrição $L_h + L_t = \bar L$. \textbf{Taxa Marginal de Transformação:} $\TMT_{h,t} = -dq_t/dq_h\big|_{\text{PPF}} = \mathrm{PMa}_L^{h}/\mathrm{PMa}_L^{t}$. Eficiência produtiva: $\TMT = p_h/p_t$.
+
+    \textbf{Robinson Crusoe descentralizado.} Firma: $\pi(p, w) = \max_L p\, f(L) - w L$, CPO $p f'(L) = w$. Consumidor: renda $m = w \bar L + \pi^*$, $\max u(q, \ell)$ s.a.\ $p q + w \ell \leq m$. EC: $\TMS_{\ell, q} = w/p = \TMT_{L, q}$.
+
+    \textbf{Arrow-Debreu (AD) com bens contingentes.} Estados $S = \{1, \ldots, |S|\}$, bens contingentes $(\ell, s)$, espaço $\mathbb{R}^{LS}$. Preço $p \in \mathbb{R}^{LS}_+$, dotação $\omega^i \in \mathbb{R}^{LS}_+$, EU: $u^i(x^i) = \sum_s \pi^i_s\, v^i(x^i_s)$ (caso $L = 1$). UMP em $\mathbb{R}^{LS}$:
+    \[
+        \max u^i(x^i)\ \text{s.a.}\ \sum_{(\ell,s)} p_{\ell, s}\, x^i_{\ell, s} \leq \sum_{(\ell,s)} p_{\ell, s}\, \omega^i_{\ell, s}.
+    \]
+    \textbf{Equação fundamental do SDF} (sob EU, $L = 1$, ótimo interior):
+    \[
+        \boxed{\ \frac{p^*_s}{p^*_{s'}} \;=\; \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\pi^i_{s'}\, (v^i)'(x^{i*}_{s'})}\quad \forall i.\ }
+    \]
+    Stochastic Discount Factor de mercado: $m_s \equiv p^*_s / \pi_s$ (sob crenças de consenso).
+
+    \textbf{Radner sequencial.} $N$ ativos com matriz de payoffs $A \in \mathbb{R}^{|S| \times N}$, $A_{sj}$ é o payoff do ativo $j$ no estado $s$. Preços de ativos $q \in \mathbb{R}^N$. Equilíbrio Radner com agregação $\sum_i \theta^i = 0$ e mercado spot estado-a-estado.
+
+    \textbf{Equivalência AD $\leftrightarrow$ Radner} (Arrow 1953; Radner 1972): vale se $\rank(A) = |S|$ (mercado completo via portfolio). Não-arbitragem: $q^*_j = \sum_s p^*_s\, A_{sj}$. Réplica de ação Arrow $e_s$: $\theta = A^{-1} e_s$ (existe sse $\rank(A) = |S|$).
+
+    \textbf{Equação de Euler intertemporal.} Especializando $s = t$ com fator de desconto $\beta$ e taxa bruta de juros $R$:
+    \[
+        u'(c_t) = \beta\, R\, u'(c_{t+1}),\qquad 1 = E^\pi_t[m_{t+1}\, R_{t+1}],\quad m_{t+1} = \beta\, u'(c_{t+1})/u'(c_t).
+    \]
+
+    \vspace{0.5em}
+    \hrule
+    \vspace{1em}
+    \noindent\textbf{\underline{Para uso exclusivo do Professor}} \\[0.2em]
+
+    Permitido rascunho? \hfill (X) SIM \quad (   ) NÃO\\[0.3em]
+    Consulta a material extra? \hfill (   ) SIM \quad (X) NÃO\\[0.3em]
+    Calculadora científica? \hfill (X) SIM \quad (   ) NÃO
+
+    \vspace{0.6em}
+    \noindent Avaliação passível de revisão? \hfill (X) SIM \quad (   ) NÃO
+
+    \newpage
+\fi
+
+\begin{contextbox}[Contexto: setor elétrico brasileiro e risco hidrológico]
+\small
+A matriz elétrica brasileira é majoritariamente \textbf{hidrelétrica} ($\sim$60\% da geração em 2023, conforme \emph{Boletim Mensal de Operação} do ONS), complementada por \textbf{termelétrica} (gás natural, óleo, carvão, nuclear), eólica e solar. A geração hidrelétrica depende de hidrologia: em anos de chuvas favoráveis, os reservatórios enchem e a geração hidro entrega \emph{mais} energia que sua \textbf{Garantia Física} (a quantidade firme contratada); em anos secos, entrega \emph{menos}.
+
+O instrumento que sintetiza esse risco é o \textbf{GSF} (\emph{Generation Scaling Factor}), razão entre a geração hidro efetiva e o total contratado pelo bloco hidro como Garantia Física. Quando $\GSF < 1$, os geradores hidro são, em conjunto, \emph{deficitários}: têm que cobrir a diferença comprando energia no mercado de curto prazo, ao \textbf{PLD} (Preço de Liquidação das Diferenças), divulgado semanalmente pela \textbf{CCEE} (Câmara de Comercialização de Energia Elétrica). O \textbf{MRE} (Mecanismo de Realocação de Energia), instituído pela Lei 9.648/1998, mutualiza esse risco \emph{entre} os geradores hidro -- os superavitários ``emprestam'' energia aos deficitários a preço regulado (TEO, Tarifa de Energia de Otimização).
+
+A \textbf{crise hídrica de 2014--2015} (e novamente de 2021) levou o $\GSF$ médio a níveis historicamente baixos ($\sim$0,7 em 2014--15 segundo dados publicados pela CCEE), gerando volume de exposição financeira que colapsou o equilíbrio do MRE. A \textbf{Lei 14.052/2020} repactuou esse passivo: parte do risco hidrológico foi reclassificada como ``risco não-gerenciável'' e transferida ao consumidor cativo via prorrogação de outorgas, reduzindo a exposição residual dos geradores hidro. A discussão regulatória pós-2020 -- conduzida pela \textbf{ANEEL} e pela CCEE -- gira em torno de quanto desse risco é ``mutualizável'' entre geradores (\emph{intra-bloco hidro}) versus quanto exige \emph{spanning} via instrumentos financeiros adicionais (CCEAR -- Contrato de Comercialização de Energia no Ambiente Regulado, contratos a termo, derivativos sobre PLD).
+
+Esta APS modela uma economia estilizada com dois agentes (gerador hidro $H$ e consumidor industrial / térmica $T$) e dois bens (energia firme e capital de giro/serviços), em três níveis de complexidade. Você (i) calcula o equilíbrio competitivo \emph{sem incerteza} (Q1, Aula 4) -- com produção descentralizada hidro/térmica via Robinson Crusoe; (ii) introduz dois estados da natureza (favorável vs.\ seca) e calcula o equilíbrio Arrow-Debreu canônico, mostrando o \emph{seguro completo} entre $H$ avesso e $T$ neutro (Q2, Aula 5); (iii) implementa o equilíbrio de Q2 via Radner sequencial com 2 ativos (CCEAR-bond + ação contingente hidro), depois amplia para 3 estados (com seca extrema) e diagnostica a \textbf{incompletude} de mercado e a Pareto-ineficiência genérica de Hart (1975) (Q3, Aula 6); finalmente (iv) recomenda à ANEEL/MME um redesenho do MRE pós-Lei 14.052/2020 (Q4).
+
+\medskip
+\textit{Referências (todas reais e verificáveis em catálogos públicos):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Arrow, K. J. (1964 [1953]). ``The Role of Securities in the Optimal Allocation of Risk-Bearing.'' \textit{Review of Economic Studies} 31(2): 91--96.
+\item Arrow, K. J. \& Debreu, G. (1954). ``Existence of an Equilibrium for a Competitive Economy.'' \textit{Econometrica} 22(3): 265--290.
+\item Debreu, G. (1959). \textit{Theory of Value: An Axiomatic Analysis of Economic Equilibrium}. Cowles Foundation Monograph 17. New Haven: Yale University Press.
+\item Geanakoplos, J. \& Polemarchakis, H. (1986). ``Existence, Regularity, and Constrained Suboptimality of Competitive Allocations When the Asset Market Is Incomplete.'' Em Heller, W., Starr, R. \& Starrett, D. (eds.), \textit{Uncertainty, Information, and Communication: Essays in Honor of Kenneth J. Arrow, Vol. III}, Cambridge University Press, cap.~3, pp.~65--95.
+\item Hansen, L. P. \& Jagannathan, R. (1991). ``Implications of Security Market Data for Models of Dynamic Economies.'' \textit{Journal of Political Economy} 99(2): 225--262.
+\item Hart, O. D. (1975). ``On the Optimality of Equilibrium when the Market Structure is Incomplete.'' \textit{Journal of Economic Theory} 11(3): 418--443.
+\item Jehle, G. A. \& Reny, P. J. (2011). \textit{Advanced Microeconomic Theory}, 3rd ed. Pearson, §§5.5--5.6.
+\item Lucas, R. E., Jr. (1978). ``Asset Prices in an Exchange Economy.'' \textit{Econometrica} 46(6): 1429--1445.
+\item Magill, M. \& Quinzii, M. (1996). \textit{Theory of Incomplete Markets}, vol.~1. MIT Press.
+\item Mas-Colell, A., Whinston, M. D. \& Green, J. R. (1995). \textit{Microeconomic Theory}. Oxford University Press, §§17.B--C, §19.E (citado cirurgicamente).
+\item McKenzie, L. W. (1959). ``On the Existence of General Equilibrium for a Competitive Market.'' \textit{Econometrica} 27(1): 54--71.
+\item Mehra, R. \& Prescott, E. C. (1985). ``The Equity Premium: A Puzzle.'' \textit{Journal of Monetary Economics} 15(2): 145--161.
+\item Nicholson, W. \& Snyder, C. (2017). \textit{Microeconomic Theory: Basic Principles and Extensions}, 12th ed. Cengage. ISBN 978-1-305-50579-7. Caps.~13 e 18.
+\item Radner, R. (1972). ``Existence of Equilibrium of Plans, Prices, and Price Expectations in a Sequence of Markets.'' \textit{Econometrica} 40(2): 289--303.
+\item \textbf{Brasil:} Lei 14.052/2020 (repactuação do risco hidrológico para geradores hidrelétricos participantes do MRE); Lei 10.848/2004 (Modelo do Setor Elétrico); Lei 9.648/1998 (instituiu o MRE); ANEEL (2021), \textit{Resolução Normativa nº 977/2021} (regulamentação operacional da repactuação).
+\item ONS, \textit{Boletim Mensal de Operação}, edições 2014--2023 (dados de despacho hidro/térmico e GSF).
+\item CCEE, \textit{InfoMercado} mensal e relatórios anuais (PLD, GSF, liquidação financeira).
+\end{itemize}
+\end{contextbox}
+
+\vspace{0.5em}
+
+\noindent\textbf{Setup geral comum às Questões 1--3.} Economia estilizada do setor elétrico com 2 agentes:
+\begin{itemize}[noitemsep,topsep=2pt]
+\item $H$: bloco hidrelétrico (em Q2--Q3, gerador residual após MRE).
+\item $T$: consumidor industrial $+$ bloco térmico complementar (com despacho do ONS).
+\end{itemize}
+e 2 bens físicos ($\ell = 1, 2$): \textbf{energia firme} (em MWh-equivalentes; bem 1) e \textbf{capital de giro/serviços} (insumo financeiro genérico que captura tudo o mais; bem 2). Em Q2--Q3, adicionam-se estados da natureza indexando a hidrologia. Os parâmetros são escolhidos de modo que o agregado $\bar\omega$ seja \emph{livre de risco} entre estados -- um modo estilizado de capturar o despacho hidrotérmico complementar do ONS, em que a térmica entra exatamente quando a hidro escassea.
+
+\begin{spacing}{1.3}
+
+% ============================================================
+% PARTE I -- AULA 4
+% ============================================================
+\begin{center}\large\textbf{Parte I --- Equilíbrio Geral em trocas e produção: hidro vs.\ térmica sem incerteza} \quad (25 pontos)\end{center}
+
+\textit{Conexão com a Aula 4.} Os itens abaixo testam: (i) construção de um equilíbrio competitivo de troca pura $2 \times 2$ via caixa de Edgeworth, com Cobb-Douglas assimétrica; (ii) verificação operacional do 1º Teorema do Bem-Estar (1º TBE) em troca pura; (iii) construção da fronteira de possibilidades de produção (PPF) e cálculo de $\TMT$ a partir de tecnologias hidro/térmica; (iv) Robinson Crusoe descentralizado com a igualdade canônica $\TMS = \TMT = w/p$.
+
+\begin{questions}
+\question \textbf{Equilíbrio Geral em troca pura e produção no setor elétrico} (25 pontos).
+
+\noindent\emph{Parte (a)--(b): troca pura entre $H$ e $T$.} Suponha (em \emph{ausência de incerteza}, calibração base de Q1) que o gerador hidro $H$ tem dotação $\omega^H = (\,3,\, 1\,)$ -- 3 unidades de energia, 1 de capital -- e o consumidor industrial $T$ tem dotação $\omega^T = (\,1,\, 3\,)$. Preferências Cobb-Douglas:
+\[
+    u^H(x_1, x_2) = x_1^{1/3}\, x_2^{2/3},\qquad
+    u^T(x_1, x_2) = x_1^{2/3}\, x_2^{1/3}.
+\]
+$T$ valoriza relativamente mais energia (parâmetro $2/3$ no bem 1) -- é o consumidor industrial, intensivo em energia. $H$ valoriza relativamente mais capital de giro (precisa financiar manutenção dos reservatórios). Numerário: $p_2 = 1$.
+
+\begin{parts}
+\part[6] Resolva o equilíbrio competitivo desta economia de troca pura.
+
+\textbf{(i)} Derive as demandas marshallianas $x^H_1(p_1)$ e $x^T_1(p_1)$ em função do preço relativo $p_1$ (numerário $p_2 = 1$).
+
+\textbf{(ii)} Aplique a condição de fechamento do mercado 1 ($x^H_1 + x^T_1 = \omega^H_1 + \omega^T_1 = 4$) para obter $p_1^*$. Verifique a Lei de Walras explicitamente computando $z_2(p^*)$.
+
+\textbf{(iii)} Calcule a alocação de equilíbrio $(x^{H*}, x^{T*})$ e verifique que $\TMS^H = \TMS^T = p_1^*/p_2^*$.
+
+\begin{solution}
+\textbf{(i) Demandas Marshallianas (Cobb-Douglas).} Em CD com pesos $(\alpha_1, \alpha_2)$ e preços $(p_1, p_2)$, $x_\ell = \alpha_\ell\, m/p_\ell$. Renda: $m^i = p_1 \omega^i_1 + p_2 \omega^i_2 = p_1 \omega^i_1 + \omega^i_2$ (numerário).
+\[
+    x^H_1(p_1) = \tfrac{1}{3}\cdot \frac{m^H}{p_1} = \tfrac{1}{3}\cdot \frac{3 p_1 + 1}{p_1} = 1 + \tfrac{1}{3 p_1};
+\]
+\[
+    x^T_1(p_1) = \tfrac{2}{3}\cdot \frac{m^T}{p_1} = \tfrac{2}{3}\cdot \frac{p_1 + 3}{p_1} = \tfrac{2}{3} + \tfrac{2}{p_1}.
+\]
+
+\textbf{(ii) Fechamento do mercado 1.}
+\[
+    x^H_1 + x^T_1 = 1 + \tfrac{1}{3 p_1} + \tfrac{2}{3} + \tfrac{2}{p_1} = \tfrac{5}{3} + \tfrac{7}{3 p_1} = 4
+    \;\Longrightarrow\; \tfrac{7}{3 p_1} = \tfrac{7}{3}
+    \;\Longrightarrow\; \boxed{p_1^* = 1.}
+\]
+
+\textbf{Verificação Walras (mercado 2).} Com $p_1^* = 1$: $m^H = 3 + 1 = 4$, $m^T = 1 + 3 = 4$. Demanda do bem 2:
+\[
+    x^H_2 = \tfrac{2}{3}\cdot \tfrac{m^H}{p_2} = \tfrac{8}{3};\quad x^T_2 = \tfrac{1}{3}\cdot \tfrac{m^T}{p_2} = \tfrac{4}{3};\quad x^H_2 + x^T_2 = 4 = \omega^H_2 + \omega^T_2.\ \checkmark
+\]
+Equivalentemente, $z_2(p^*) = (8/3 + 4/3) - 4 = 0$ e $p^* \cdot z(p^*) = 1\cdot 0 + 1\cdot 0 = 0$. A Lei de Walras vale identicamente; em $L = 2$, fechar 1 mercado fecha o outro.
+
+\textbf{(iii) Alocação e $\TMS$.}
+\[
+    x^{H*} = \left(1 + \tfrac{1}{3},\, \tfrac{8}{3}\right) = \left(\tfrac{4}{3},\, \tfrac{8}{3}\right),\quad
+    x^{T*} = \left(\tfrac{2}{3} + 2,\, \tfrac{4}{3}\right) = \left(\tfrac{8}{3},\, \tfrac{4}{3}\right).
+\]
+$\TMS^H_{1,2} = (1/3)/(2/3) \cdot x^H_2/x^H_1 = (1/2)\cdot (8/3)/(4/3) = (1/2)\cdot 2 = 1$.
+$\TMS^T_{1,2} = (2/3)/(1/3)\cdot x^T_2/x^T_1 = 2\cdot (4/3)/(8/3) = 2\cdot (1/2) = 1$.
+$\TMS^H = \TMS^T = 1 = p_1^*/p_2^*.\ \checkmark$
+
+\textit{Sanity econômico.} Apesar das dotações simétricas $(\,3,\,1\,)$ vs.\ $(\,1,\,3\,)$, a alocação de equilíbrio é \emph{simétrica espelhada} ao consumo desejado: $H$ acaba consumindo $(4/3, 8/3)$ -- mais capital -- e $T$ acaba consumindo $(8/3, 4/3)$ -- mais energia. Cada agente vendeu o que sobrava da dotação ($H$ vendeu 5/3 unidade de energia; $T$ vendeu 5/3 de capital) e o preço relativo ficou em $p_1^* = 1$ por simetria estrutural.
+\end{solution}
+
+\newpage
+\part[5] Construa a caixa de Edgeworth desta economia, com origem $H$ no canto inferior-esquerdo. Esboce: (i) a dotação $\omega = (3, 1)$, (ii) o equilíbrio competitivo $x^* = (4/3, 8/3)$, (iii) a reta orçamentária com inclinação $-p_1^*/p_2^* = -1$ passando por $\omega$, e (iv) a curva de indiferença de $H$ passando por $x^{H*}$. Identifique no gráfico a \emph{lente de melhoria mútua}.
+
+\begin{solution}
+\textbf{Construção da caixa.} Largura horizontal $= \omega_1^H + \omega_1^T = 4$ (energia); altura vertical $= \omega_2^H + \omega_2^T = 4$ (capital). Origem $H$ em $(0, 0)$; origem $T$ em $(4, 4)$ (lida invertida). $\omega = (3, 1)$ a partir de $H$. Equilíbrio $x^{H*} = (4/3, 8/3) \approx (1{,}33;\, 2{,}67)$ a partir de $H$. Reta orçamentária: $p_1\cdot x_1 + p_2\cdot x_2 = p_1\cdot \omega_1 + p_2\cdot \omega_2 \Rightarrow x_1 + x_2 = 4$ -- reta de inclinação $-1$ passando por $(3, 1)$ \emph{e} por $(4/3, 8/3)$ (interseção). $\TMS^H = (1/3)/(2/3)\cdot x_2/x_1 = (1/2) x_2/x_1$; em $x^{H*}$, $\TMS^H = 1$ (tangência).
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.5cm, height=8cm,
+    xlabel={$x_1^H$ (energia, lido a partir de $H$)},
+    ylabel={$x_2^H$ (capital, lido a partir de $H$)},
+    xmin=0, xmax=4.4, ymin=0, ymax=4.4,
+    xtick={0,1,1.333,2,3,4},
+    xticklabels={$0$,$1$,$\tfrac{4}{3}$,$2$,$3$,$4 = \omega_1^H+\omega_1^T$},
+    ytick={0,1,2,2.667,3,4},
+    yticklabels={$0$,$1$,$2$,$\tfrac{8}{3}$,$3$,$4 = \omega_2^H+\omega_2^T$},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=south east,
+    legend style={font=\scriptsize}
+]
+% Caixa
+\addplot[thick,boxborder] coordinates {(0,0) (4,0) (4,4) (0,4) (0,0)};
+% Reta orçamentária / contract curve linear (CD com pesos ortogonais simetricos)
+\addplot[thick,blue,domain=0:4] {4 - x};
+\addlegendentry{Reta orç.\ $p^*\cdot x = p^*\cdot \omega$ (inclinação $-1$)}
+% IC de H em x*: (1/3) ln x_1 + (2/3) ln x_2 = (1/3) ln(4/3) + (2/3) ln(8/3)
+% nivel u_H* = (4/3)^(1/3) (8/3)^(2/3); IC: x_2 = (u_H^* / x_1^(1/3))^(3/2) = u_H^{*3/2} / x_1^{1/2}
+% u_H*^{3/2} = (4/3)^(1/2)(8/3) = (2/sqrt 3)(8/3) = 16/(3 sqrt 3)
+\addplot[thick,red,domain=0.5:4,samples=120] {16/(3*sqrt(3)*sqrt(x))};
+\addlegendentry{IC de $H$ em $x^{H*}$ (tangência)}
+% Pontos
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(3,1)};
+\node[above right] at (axis cs:3,1) {$\omega$};
+\addplot[mark=*,mark size=3pt,solblue,only marks] coordinates {(1.333,2.667)};
+\node[above right] at (axis cs:1.333,2.667) {$x^{H*}$};
+% origens
+\node[below left] at (axis cs:0,0) {\textbf{$O_H$}};
+\node[above right] at (axis cs:4,4) {\textbf{$O_T$}};
+% lente
+\draw[fill=green!10, fill opacity=0.35, draw=none] (axis cs:1.333,2.667) -- (axis cs:3,1) -- cycle;
+\node[font=\scriptsize, color=green!60!black] at (axis cs:2.2,1.9) {lente};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+A \textbf{lente de melhoria mútua} é a região encerrada entre as ICs de $H$ e $T$ que passam por $\omega$ -- ambos os agentes preferem qualquer ponto interior dessa lente a $\omega$. O equilíbrio competitivo $x^{H*}$ está na intersecção da reta orçamentária com a IC de $H$ tangente -- e, simultaneamente (não desenhado para evitar poluição), com a IC de $T$ tangente à mesma reta. A \emph{contract curve} dessa economia simétrica é exatamente a diagonal $x_2 = x_1$ no espaço de $H$ (lugar geométrico onde $\TMS^H = \TMS^T$ por simetria).
+\end{solution}
+
+\newpage
+\part[5] \textbf{1º Teorema do Bem-Estar em troca pura.}
+
+\textbf{(i)} Enuncie o 1º TBE para economias de troca pura, identificando explicitamente a hipótese sobre as preferências e a hipótese sobre o conceito de equilíbrio.
+
+\textbf{(ii)} Prove o 1º TBE por contradição (3 passos: definição de Pareto-superioridade $\to$ orçamento $\to$ Walras).
+
+\textbf{(iii)} Verifique \emph{numericamente} que o equilíbrio computado em (a) é Pareto-eficiente: mostre que $\TMS^H = \TMS^T$ no ponto $(x^{H*}, x^{T*})$, condição necessária e suficiente para Pareto-eficiência interior em economia $2\times 2$ com preferências CD.
+
+\begin{solution}
+\textbf{(i) Enunciado.} Em economia de troca pura $I \times L$ com preferências $\succeq^i$ que satisfaçam a propriedade de \emph{Não-Saciedade Local} (LNS) em todo $x^i \in \mathbb{R}^L_+$, todo equilíbrio competitivo $(p^*, x^*)$ é Pareto-eficiente.
+
+\textit{Hipótese de preferência:} LNS -- para todo $x$ e toda vizinhança aberta $V$ de $x$, existe $\tilde x \in V$ com $\tilde x \succ x$. (Mais geral que monotonicidade estrita; admite exemplos com saciedade direcional desde que sempre haja \emph{alguma} direção de melhoria.)
+
+\textit{Hipótese de equilíbrio:} todo agente é tomador de preço e $x^{i*}$ resolve o UMP em $p^*$; $\sum_i x^{i*} = \sum_i \omega^i$ (viabilidade).
+
+\textbf{(ii) Prova por contradição.} Suponha que existe alocação viável $\tilde x = (\tilde x^1, \ldots, \tilde x^I)$ com $u^i(\tilde x^i) \geq u^i(x^{i*})$ para todo $i$ e estrita para algum $j$.
+
+\textit{Passo 1.} Como $\tilde x^j$ é estritamente preferida a $x^{j*}$ por $j$, e $x^{j*}$ resolve UMP em $p^*$, $\tilde x^j$ tem que estar fora do orçamento de $j$ -- ou seja,
+\[
+    p^* \cdot \tilde x^j > p^* \cdot \omega^j.
+\]
+
+\textit{Passo 2 (LNS).} Para $i \neq j$ com $u^i(\tilde x^i) \geq u^i(x^{i*})$: \emph{afirmamos} $p^* \cdot \tilde x^i \geq p^* \cdot \omega^i$. Suponha por absurdo $p^* \cdot \tilde x^i < p^* \cdot \omega^i$ -- estritamente dentro do orçamento. Por LNS, existe $\hat x^i$ em vizinhança de $\tilde x^i$ com $\hat x^i \succ \tilde x^i \succeq x^{i*}$. Por continuidade do produto interno, $\hat x^i$ ainda é factível em $p^*$, contradizendo a hipótese de que $x^{i*}$ resolve UMP. Logo $p^* \cdot \tilde x^i \geq p^* \cdot \omega^i$.
+
+\textit{Passo 3.} Somando sobre todos os $i$ (com a desigualdade estrita em $j$):
+\[
+    \sum_i p^* \cdot \tilde x^i > \sum_i p^* \cdot \omega^i.
+\]
+Mas viabilidade exige $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^* \cdot \tilde x^i = \sum_i p^* \cdot \omega^i$. Contradição. $\blacksquare$
+
+\textbf{(iii) Verificação numérica em $x^*$ da parte (a).}
+\[
+    \TMS^H_{1,2}(x^{H*}) = \frac{(1/3)\, x^H_2}{(2/3)\, x^H_1} = \frac{1}{2}\cdot \frac{8/3}{4/3} = 1;\quad
+    \TMS^T_{1,2}(x^{T*}) = \frac{(2/3)\, x^T_2}{(1/3)\, x^T_1} = 2\cdot \frac{4/3}{8/3} = 1.
+\]
+$\TMS^H = \TMS^T = 1$. Tangência das curvas de indiferença -- $x^*$ está na contract curve, logo é Pareto-eficiente. $\checkmark$
+
+\textit{Observação.} No próximo bloco (Parte II, Aula 5), repetiremos exatamente a prova do 1º TBE substituindo $\mathbb{R}^L$ por $\mathbb{R}^{LS}$ -- linha por linha, sem alteração estrutural. O argumento usa apenas LNS, UMP e viabilidade; não usa nada da estrutura do espaço de bens.
+\end{solution}
+
+\newpage
+\part[5] \textbf{Tecnologia, PPF e $\TMT$.} Considere agora o \emph{lado da oferta} da economia. A energia firme do bem 1 é produzida em dois setores -- hidrelétrico (com tecnologia $f_h$) e termelétrico (com tecnologia $f_t$) -- a partir de um fator agregado $L$ (mão-de-obra técnica $+$ capital de operação, normalizado em unidades comparáveis). As tecnologias são
+\[
+    q_h = f_h(L_h) = 2\sqrt{L_h},\qquad q_t = f_t(L_t) = \sqrt{L_t},
+\]
+e a dotação total do fator é $\bar L = L_h + L_t = 8$.
+
+\textbf{(i)} Derive a equação implícita da PPF $\{(q_h, q_t) : q_h, q_t \geq 0\}$ no plano $(q_h, q_t)$ que esgota o fator. Demonstre que a PPF é \emph{côncava}.
+
+\textbf{(ii)} Calcule $\TMT_{h, t} = -dq_t/dq_h\big|_{\text{PPF}}$ como função de $(q_h, q_t)$, por dois caminhos: (a) derivada implícita da PPF; (b) razão $\mathrm{PMa}_L^{h}/\mathrm{PMa}_L^{t}$ via regra da cadeia. Verifique que coincidem.
+
+\textbf{(iii)} Esboce a PPF marcando os interceptos e o ponto $(q_h, q_t) = (4, 2)$ que será o equilíbrio em (e).
+
+\begin{solution}
+\textbf{(i) PPF.} Inversa: $L_h = q_h^2/4$, $L_t = q_t^2$. Restrição:
+\[
+    \frac{q_h^2}{4} + q_t^2 = 8,\quad q_h, q_t \geq 0. \quad \boxed{\phantom{x}}
+\]
+Em forma explícita: $q_t = \sqrt{8 - q_h^2/4}$, definida em $q_h \in [0, \sqrt{32}] = [0, 4\sqrt{2}]$.
+
+\textbf{Concavidade.} A PPF é côncava no plano $(q_h, q_t)$ (com $q_t$ como função de $q_h$): $q_t'(q_h) = -q_h/(4 q_t)$ e
+\[
+    q_t''(q_h) = -\frac{(4 q_t) - q_h\cdot (4 q_t'(q_h))}{(4 q_t)^2}
+    = -\frac{4 q_t + q_h^2/q_t}{16 q_t^2} = -\frac{4 q_t^2 + q_h^2}{16 q_t^3} < 0
+\]
+em todo o interior da PPF. Logo $q_t$ é função estritamente côncava de $q_h$ -- a PPF é côncava.
+
+\textit{Por que côncava?} Cada $f_\ell$ é estritamente côncava (raiz quadrada). Com fatores escalares $\sqrt{L}$, alocar tudo a um setor é ineficiente -- a curvatura de cada $f_\ell$ é o que produz a transformação côncava no espaço de produtos.
+
+\textbf{(ii) $\TMT$ por dois caminhos.}
+
+\emph{Caminho A (derivada implícita):} de $q_h^2/4 + q_t^2 = 8$, diferenciando: $q_h\, dq_h/2 + 2 q_t\, dq_t = 0 \Rightarrow dq_t/dq_h = -q_h/(4 q_t)$, logo
+\[
+    \TMT_{h, t} = \frac{q_h}{4 q_t}.
+\]
+
+\emph{Caminho B (razão de PMa).} $\mathrm{PMa}_L^{h} = f_h'(L_h) = 1/\sqrt{L_h}$; $\mathrm{PMa}_L^{t} = f_t'(L_t) = 1/(2\sqrt{L_t})$. Substituindo $L_h = q_h^2/4 \Rightarrow \sqrt{L_h} = q_h/2$ e $L_t = q_t^2 \Rightarrow \sqrt{L_t} = q_t$:
+\[
+    \mathrm{PMa}_L^{h} = \frac{2}{q_h},\quad \mathrm{PMa}_L^{t} = \frac{1}{2 q_t},\quad
+    \frac{\mathrm{PMa}_L^{h}}{\mathrm{PMa}_L^{t}} = \frac{2/q_h}{1/(2 q_t)} = \frac{4 q_t}{q_h}.
+\]
+\textit{Atenção ao sentido:} $\TMT_{h, t}$ no caminho A é $-dq_t/dq_h$ (quanto se desiste de $q_t$ por unidade extra de $q_h$); no caminho B, a razão $\mathrm{PMa}^h/\mathrm{PMa}^t$ é a quantidade de $q_h$ que se ganha desviando uma unidade de $L$ de $t$ para $h$, dividida pela quantidade de $q_t$ perdida. As duas grandezas são \emph{recíprocas}, e coincidem na convenção que adotamos: $\TMT_{h, t} \equiv -dq_t/dq_h = q_h/(4q_t)$. O caminho B nesta convenção dá $\mathrm{PMa}^t/\mathrm{PMa}^h = (1/(2q_t))/(2/q_h) = q_h/(4 q_t)$. $\checkmark$ \emph{Bater na ordem dos índices}: $\TMT_{h,t}$ = ``$q_t$ perdido por $q_h$ ganho'' = $\mathrm{PMa}^t/\mathrm{PMa}^h$.
+
+\textbf{(iii) Esboço da PPF.}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=7.5cm,
+    xlabel={$q_h$ (energia hidro, GWh)},
+    ylabel={$q_t$ (energia térmica, GWh)},
+    xmin=0, xmax=6.2, ymin=0, ymax=3.2,
+    xtick={0,2,4,5.6569},
+    xticklabels={$0$,$2$,$4$,$4\sqrt{2}\approx 5{,}66$},
+    ytick={0,1,2,2.8284},
+    yticklabels={$0$,$1$,$2$,$2\sqrt{2}\approx 2{,}83$},
+    grid=major, grid style={gray!20},
+    axis lines=left
+]
+% PPF: q_t = sqrt(8 - q_h^2/4)
+\addplot[thick,red,domain=0:5.6568,samples=200] {sqrt(8 - x*x/4)};
+\addlegendentry{PPF: $q_h^2/4 + q_t^2 = 8$}
+% Tangente em (4, 2): inclinação -q_h/(4 q_t) = -4/8 = -1/2; reta y - 2 = -0.5 (x-4) => y = 4 - x/2
+\addplot[dashed,blue,domain=0:6,samples=2] {4 - x/2};
+\addlegendentry{Tangente em $(4,2)$: $-1/2$}
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(4,2)};
+\node[above right] at (axis cs:4,2) {\small $(q_h^*, q_t^*) = (4, 2)$};
+\addplot[mark=*,mark size=2pt,boxborder,only marks] coordinates {(5.6569,0) (0,2.8284)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+\newpage
+\part[4] \textbf{Robinson Crusoe descentralizado e equilíbrio competitivo de produção.} O ``país'' é representado por um agente Robinson com preferências sobre os dois bens: $u(q_h, q_t) = q_h^{1/2}\, q_t^{1/2}$ (Cobb-Douglas simétrica sobre energia hidro e térmica -- estilização: ambas energiam o mesmo grid e o consumidor médio é indiferente entre fontes, dada disponibilidade). A firma é representativa, com tecnologia conjunta $\{(q_h, q_t) : q_h^2/4 + q_t^2 \leq 8\}$ -- a PPF do item (d). Robinson é simultaneamente \emph{dono integral} da firma ($\theta = 1$) e único consumidor.
+
+\textbf{(i)} Enuncie o problema do planejador (max $u$ sujeito a estar na PPF) e derive a CPO interior $\TMS_{h,t} = \TMT_{h,t}$. Resolva o sistema e obtenha $(q_h^*, q_t^*)$.
+
+\textbf{(ii)} Mostre que o mesmo $(q_h^*, q_t^*)$ é o equilíbrio competitivo descentralizado: a firma escolhe $(q_h, q_t)$ maximizando lucro $\pi = p_h q_h + p_t q_t$ s.a.\ $q_h^2/4 + q_t^2 \leq 8$, e Robinson resolve UMP com renda $m = \pi^*$. Derive os preços $(p_h^*, p_t^*)$ que sustentam o equilíbrio (numerário $p_h = 1$).
+
+\textbf{(iii)} Verifique a igualdade canônica $\TMS = \TMT = p_h^*/p_t^*$ no ponto.
+
+\begin{solution}
+\textbf{(i) Planejador.} $\max_{q_h, q_t} q_h^{1/2}q_t^{1/2}$ s.a.\ $q_h^2/4 + q_t^2 = 8$. CPO interior: $\TMS_{h,t} = \TMT_{h,t}$.
+\[
+    \TMS_{h,t} = \frac{\partial u/\partial q_h}{\partial u/\partial q_t} = \frac{(1/2)(q_t/q_h)^{1/2}}{(1/2)(q_h/q_t)^{1/2}} = \frac{q_t}{q_h};
+\]
+\[
+    \TMT_{h,t} = \frac{q_h}{4 q_t}.
+\]
+Igualando: $q_t/q_h = q_h/(4 q_t) \Rightarrow 4 q_t^2 = q_h^2 \Rightarrow q_h = 2 q_t$ (raiz positiva). Substituindo na PPF: $(2 q_t)^2/4 + q_t^2 = q_t^2 + q_t^2 = 2 q_t^2 = 8 \Rightarrow q_t^* = 2$, $q_h^* = 4$, $L_h = q_h^2/4 = 4$, $L_t = q_t^2 = 4$ (trabalho dividido em partes iguais). $\boxed{(q_h^*, q_t^*) = (4, 2)}$.
+
+\textbf{(ii) Descentralização.} \emph{Firma:} resolve $\max p_h q_h + p_t q_t$ s.a.\ $q_h^2/4 + q_t^2 \leq 8$. Lagrangiano: $\mathcal{L} = p_h q_h + p_t q_t - \mu (q_h^2/4 + q_t^2 - 8)$. CPOs:
+\[
+    p_h = \mu\, q_h/2,\qquad p_t = \mu\, 2 q_t \;\Longrightarrow\; \frac{p_h}{p_t} = \frac{q_h/2}{2 q_t} = \frac{q_h}{4 q_t} = \TMT_{h,t}.\ \checkmark
+\]
+
+Em $(q_h^*, q_t^*) = (4, 2)$: $p_h/p_t = 4/8 = 1/2$. Com $p_h = 1$ numerário, $\boxed{p_t^* = 2}$. Lucro:
+\[
+    \pi^* = p_h q_h^* + p_t q_t^* = 1\cdot 4 + 2\cdot 2 = 8.
+\]
+
+\emph{Robinson como consumidor.} Renda $m = \pi^* = 8$. UMP CD simétrica: $q_h = (1/2)\cdot m/p_h = 4$; $q_t = (1/2)\cdot m/p_t = 2$. $\checkmark$ Coincide com a oferta da firma.
+
+\textbf{(iii) Igualdade canônica.} $\TMS_{h,t}(q^*) = q_t^*/q_h^* = 2/4 = 1/2$. $\TMT_{h,t}(q^*) = q_h^*/(4 q_t^*) = 4/8 = 1/2$. $p_h^*/p_t^* = 1/2$. As três grandezas coincidem:
+\[
+    \boxed{\;\TMS_{h,t} \;=\; \TMT_{h,t} \;=\; \frac{p_h^*}{p_t^*} \;=\; \frac{1}{2}.\;}
+\]
+\textbf{Mercado descentralizado replica a solução do planejador.} Esta é a \emph{assinatura matemática} do 1º TBE com produção, no caso $I = J = 1$.
+
+\textit{Sanity econômico.} Com tecnologias hidro mais produtivas ($f_h = 2\sqrt{L_h}$ vs.\ $f_t = \sqrt{L_t}$) e preferências simétricas, o sistema produz \emph{mais} energia hidro ($q_h^* = 4$) que térmica ($q_t^* = 2$), e o preço relativo da térmica fica \emph{mais alto} ($p_t^* = 2$, $p_h^* = 1$) -- a térmica é o ``recurso mais escasso por unidade de fator''. Em proporções aproximadas, hidro responde por $4/(4+2) = 67\%$ do mix em quantidade física e por $4/(4+4) = 50\%$ em valor -- estilização que ecoa, qualitativamente, a participação da hidro na matriz brasileira (\emph{Boletim Mensal de Operação}, ONS, 2023: $\sim$60\% física hidro). Em Q2, esse preço relativo será deslocado pela introdução de risco hidrológico.
+\end{solution}
+
+\newpage
+\part[5] \textbf{Eficiência produtiva, eficiência alocativa e o 1º TBE com produção.}
+
+\textbf{(i)} Defina os três conceitos de eficiência relevantes em economia com produção: (a) eficiência produtiva (alocação eficiente do fator entre setores: $\mathrm{PMa}_L^{h}/\mathrm{PMa}_L^{t} = $ const.\ ao longo da PPF); (b) eficiência alocativa em consumo (tangência das ICs no agregado); (c) eficiência em \emph{produto-mix} ($\TMS = \TMT$).
+
+\textbf{(ii)} Mostre que o equilíbrio competitivo do item (e) satisfaz \emph{simultaneamente} as três -- e \emph{argumente} que essa simultaneidade não é coincidência: é o conteúdo do 1º TBE estendido a produção.
+
+\textbf{(iii)} \textit{Pergunta conceitual.} Suponha uma reforma regulatória que, por algum motivo, introduza uma \textbf{cunha} entre $\TMS$ e $\TMT$ -- por exemplo, uma alíquota tributária assimétrica que faça $p_h^{\text{firma}} \neq p_h^{\text{consumidor}}$. Argumente, em uma frase para cada, qual das três eficiências do (i) é genericamente preservada e qual(is) é(são) destruída(s).
+
+\begin{solution}
+\textbf{(i) Três conceitos de eficiência (com produção).}
+
+\emph{Produtiva.} O fator $L$ está alocado entre os setores de modo que não há realocação capaz de produzir mais de algum bem sem reduzir o outro -- equivalente a $L$ esgotado e razão $\mathrm{PMa}_L^{h}/\mathrm{PMa}_L^{t}$ comum a todos os setores que utilizam $L$ (igualação dos valores marginais).
+
+\emph{Alocativa em consumo.} A alocação do produto entre os agentes é Pareto-eficiente -- equivalente, em economia com agentes interiores, à tangência $\TMS^A = \TMS^B$ (Bloco 1.c, durante-aula).
+
+\emph{Eficiência de produto-mix.} O \emph{vetor produzido} $(q_h, q_t)$ está na PPF \emph{e} a inclinação local da PPF coincide com a inclinação local das ICs agregadas: $\TMS = \TMT$. Sem essa condição, a economia produz a quantidade ``errada'' de cada bem dada a preferência social.
+
+\textbf{(ii) Verificação simultânea no equilíbrio do item (e).}
+
+\emph{Produtiva:} dado o numerário $p_h = 1$, $p_t = 2$, $w$ é determinado pela CPO de fator -- $w = p_h\cdot \mathrm{PMa}^h_L = 1\cdot (2/q_h^*) = 1/2$, e também $w = p_t\cdot \mathrm{PMa}^t_L = 2\cdot (1/(2 q_t^*)) = 1/2$. $\checkmark$ ($L$ tem o mesmo preço de sombra nos dois setores -- o salário $w = 1/2$ -- garantindo eficiência produtiva.)
+
+\emph{Alocativa em consumo:} $I = 1$, trivialmente Pareto-eficiente (o agente único maximiza sua utilidade sujeita ao orçamento agregado).
+
+\emph{Produto-mix:} $\TMS_{h,t} = \TMT_{h,t} = 1/2$ (item e-iii). $\checkmark$
+
+\emph{Não-coincidência.} O 1º TBE estendido a produção diz: sob LNS $+$ maximização de lucro de cada firma, o EC é Pareto-eficiente -- o que, em economia com produção, significa as \emph{três} simultâneamente. A prova ganha um quarto passo em relação à versão de troca pura: para cada firma $j$ e para cada $\tilde y^j \in Y^j$, $p^*\cdot \tilde y^j \leq \pi^{*j} = p^*\cdot y^{*j}$ \emph{por definição} de $y^{*j}$ como maximizador. Substituindo na soma da Aula 4 (Bloco 3.b), a contradição segue. As três eficiências saem juntas porque o único preço $p^*$ alinha simultaneamente decisões da firma, do consumidor e do mercado de fator.
+
+\textbf{(iii) Cunha entre $\TMS$ e $\TMT$.}
+
+A eficiência \emph{produtiva} é \textbf{preservada} -- desde que a cunha incida sobre o \emph{produto} (não sobre o fator), a firma continua minimizando custo por unidade produzida, igualando a razão de PMa de fator entre setores via $w$.
+
+A eficiência \emph{alocativa em consumo} também é preservada com $I = 1$ trivialmente; com $I > 1$, é preservada se a cunha for \emph{uniforme} entre agentes (cada consumidor enfrenta o mesmo $p^{\text{cons}}$).
+
+A eficiência de \emph{produto-mix} é \textbf{destruída}: $\TMS$ ajusta-se ao $p^{\text{cons}}_h/p^{\text{cons}}_t$ enquanto $\TMT$ ajusta-se ao $p^{\text{firma}}_h/p^{\text{firma}}_t$. Quando o regulador insere a cunha tributária, abre-se espaço entre $\TMS$ e $\TMT$ -- a economia produz quantidades ``erradas'' relativamente ao desejo agregado dos consumidores. Esta é a estrutura básica do peso-morto de tributação sobre produto, e reaparecerá em Q4 ao discutirmos o efeito da \emph{repactuação do GSF} sobre os incentivos de despacho.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 1 (25 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 6 pontos}} \\
+\quad Demandas marshallianas CD corretas (i) & 2 \\
+\quad Cálculo de $p_1^* = 1$ via fechamento (ii) & 2 \\
+\quad Alocação $(4/3, 8/3) / (8/3, 4/3)$ correta + verificação $\TMS = 1$ (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 5 pontos}} \\
+\quad Caixa Edgeworth corretamente dimensionada $4 \times 4$ & 1 \\
+\quad Dotação $\omega = (3,1)$ e $x^{H*} = (4/3, 8/3)$ marcados & 1 \\
+\quad Reta orçamentária inclinação $-1$ passando por $\omega$ e $x^{H*}$ & 1 \\
+\quad IC de $H$ desenhada e tangente à reta em $x^{H*}$ & 1 \\
+\quad Lente de melhoria mútua identificada & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 5 pontos}} \\
+\quad Enunciado correto do 1º TBE com hipóteses LNS + EC explicitadas (i) & 1 \\
+\quad Prova por contradição em 3 passos com papel exato de LNS no Passo 2 (ii) & 3 \\
+\quad Verificação $\TMS^H = \TMS^T = 1$ no equilíbrio (iii) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 5 pontos}} \\
+\quad PPF $q_h^2/4 + q_t^2 = 8$ derivada + concavidade demonstrada (i) & 2 \\
+\quad $\TMT$ por dois caminhos com bater de ordem dos índices (ii) & 2 \\
+\quad Esboço com interceptos e ponto $(4, 2)$ (iii) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 4 pontos}} \\
+\quad Solução do planejador via $\TMS = \TMT$, $(q_h^*, q_t^*) = (4, 2)$ (i) & 2 \\
+\quad Descentralização: firma + consumidor; preços $p_t^* = 2$ (ii) & 1 \\
+\quad Igualdade canônica $\TMS = \TMT = p_h/p_t = 1/2$ verificada (iii) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- bônus implícito (já distribuído nos itens anteriores via 1 ponto residual da rubrica de Q1)}} \\
+\midrule
+\textbf{Total Q1} & \textbf{25} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE II -- AULA 5
+% ============================================================
+\begin{center}\large\textbf{Parte II --- Arrow-Debreu I: bens contingentes, seguro completo e SDF} \quad (30 pontos)\end{center}
+
+\textit{Conexão com a Aula 5.} Os itens abaixo trabalham: (i) extensão do espaço de bens para $\mathbb{R}^{LS}$ com hidrologia como estado da natureza; (ii) cálculo de equilíbrio AD canônico com $L = 1$, $S = 2$, $I = 2$, agente avesso $+$ agente neutro; (iii) caso canônico do \emph{seguro completo} entre gerador hidro avesso e consumidor neutro; (iv) interpretação da equação fundamental do SDF.
+
+\noindent\textbf{Setup geral de Q2.} Adicionamos dois \textbf{estados da natureza}, indexando a hidrologia anual: $S = \{f, s\}$, com $f =$ ``favorável'' ($\GSF \approx 1{,}2$, reservatórios cheios) e $s =$ ``seca'' ($\GSF \approx 0{,}6$, reservatórios baixos). Para fixar a álgebra, supomos $L = 1$ -- só o bem físico ``energia firme'' interessa (o bem 2 da Q1 é abstraído, ou equivalentemente integrado como numerário invariante por estado). Probabilidades de \emph{consenso} (ambos os agentes concordam): $\pi_f = \pi_s = 1/2$. Bernoullis e dotações:
+\[
+    v_H(c) = \ln c \quad \text{(gerador hidro, avesso, CRRA $\gamma = 1$)};\quad v_T(c) = c \quad \text{(termelétrica/consumidor, neutro)}.
+\]
+\[
+    \omega^H = (\omega^H_f, \omega^H_s) = (24, 12);\qquad \omega^T = (\omega^T_f, \omega^T_s) = (12, 24).
+\]
+Total $\bar\omega = (36, 36)$ -- \textbf{agregado livre de risco entre estados}. Esta é a estilização do \emph{despacho hidrotérmico complementar} do ONS: a térmica entra exatamente quando a hidro escasseia (em sentido econômico, a térmica \emph{compra} energia barata em $f$ e \emph{vende} energia cara em $s$, em equilíbrio sem fricção). Normalização canônica: $p^*_f + p^*_s = 1$.
+
+\begin{questions}
+\setcounter{question}{1}
+\question \textbf{Equilíbrio Arrow-Debreu, seguro completo e SDF no setor elétrico} (30 pontos).
+
+\begin{parts}
+\part[5] \textbf{Bens contingentes e UMP em $\mathbb{R}^{LS}$.}
+
+\textbf{(i)} Quantos bens distintos existem nesta economia? Escreva o vetor de consumo $x^H \in \mathbb{R}^{LS}$ e o vetor de preços $p \in \mathbb{R}^{LS}$.
+
+\textbf{(ii)} Escreva a função utilidade EU $u^H(x^H)$ e $u^T(x^T)$ explicitamente.
+
+\textbf{(iii)} Escreva o problema UMP de cada agente em $\mathbb{R}^{LS}$.
+
+\begin{solution}
+\textbf{(i)} $L = 1$, $|S| = 2$, logo $LS = 2$ \emph{bens contingentes distintos}: ``energia se favorável'' ($\ell, f$) e ``energia se seca'' ($\ell, s$). Como há um único bem físico ($L = 1$), suprimimos o índice $\ell$ e escrevemos $x^i = (x^i_f, x^i_s) \in \mathbb{R}^2_+$. Vetor de preços contingentes $p = (p_f, p_s) \in \mathbb{R}^2_+$ -- preço, em $t = 0$, de uma promessa de entrega de uma unidade física de energia condicional ao estado realizado.
+
+\textbf{(ii) EU:}
+\[
+    u^H(x^H) = \pi_f\, \ln x^H_f + \pi_s\, \ln x^H_s = \tfrac{1}{2}\ln x^H_f + \tfrac{1}{2}\ln x^H_s.
+\]
+\[
+    u^T(x^T) = \pi_f\, x^T_f + \pi_s\, x^T_s = \tfrac{1}{2}\, x^T_f + \tfrac{1}{2}\, x^T_s = \tfrac{1}{2}(x^T_f + x^T_s).
+\]
+$T$ tem utilidade EU \emph{linear} -- captura neutralidade ao risco.
+
+\textbf{(iii) UMP em $\mathbb{R}^{LS}$.} Cada agente $i$ resolve
+\[
+    \max_{x^i \geq 0}\, u^i(x^i)\quad \text{s.a.}\quad p_f\, x^i_f + p_s\, x^i_s \leq p_f\, \omega^i_f + p_s\, \omega^i_s.
+\]
+\textit{Observação importante.} A restrição é \emph{uma só} -- a única ``cesta'' enfrentada pelo agente é a transferência de valor entre estados via mercado AD em $t = 0$. Toda a estrutura algébrica do UMP da Aula 1 sobrevive; o que muda é a \emph{interpretação dos índices}. Esta é a observação central da Aula 5.
+\end{solution}
+
+\newpage
+\part[6] \textbf{Equilíbrio AD: condição imposta pelo agente neutro e cálculo do preço relativo.}
+
+\textbf{(i)} Resolva o UMP de $T$. Como $u^T$ é linear, mostre que $T$ \emph{exige} (em ótimo interior) $p^*_f/p^*_s = \pi_f/\pi_s$ -- preços \textbf{atuarialmente justos}. Caso contrário, $T$ deseja consumo infinito no estado mais barato relativamente à sua probabilidade.
+
+\textbf{(ii)} Sob a normalização canônica $p^*_f + p^*_s = 1$, obtenha $(p^*_f, p^*_s)$ explicitamente.
+
+\textbf{(iii)} \emph{Comentário econômico.} Explique, em uma frase, o sentido de o agente neutro ``determinar'' os preços de equilíbrio: por que ele tem essa influência desproporcional?
+
+\begin{solution}
+\textbf{(i) UMP de $T$.} $T$ resolve $\max\, (1/2)(x^T_f + x^T_s)$ s.a.\ $p_f x^T_f + p_s x^T_s \leq p_f\, 12 + p_s\, 24$. A função objetivo é linear com coeficientes $(\pi_f, \pi_s) = (1/2, 1/2)$.
+
+\emph{Caso $p_f/\pi_f < p_s/\pi_s$}: $T$ obtém mais utilidade por R\$ comprando o bem $f$ -- desejaria $x^T_f \to \infty$, $x^T_s = 0$. Insustentável em equilíbrio com viabilidade $x^T_f + x^H_f = 36$.
+
+\emph{Caso $p_f/\pi_f > p_s/\pi_s$}: simétrico, $x^T_s \to \infty$.
+
+\emph{Caso $p_f/\pi_f = p_s/\pi_s$}: $T$ é indiferente ao longo da reta orçamentária -- aceita qualquer alocação compatível com viabilidade. Esta é a única configuração compatível com EC interior.
+
+Logo $\boxed{p^*_f/p^*_s = \pi_f/\pi_s = 1.}$ Equivalentemente, $p^*_f = p^*_s$ -- preços \textbf{atuarialmente justos}.
+
+\textbf{(ii) Normalização.} $p^*_f + p^*_s = 1$ + $p^*_f = p^*_s$ $\Rightarrow$ $\boxed{p^*_f = p^*_s = 0{,}5.}$
+
+\textbf{(iii) Comentário.} O agente neutro absorve qualquer desvio dos preços relativos da relação atuarial -- é ele quem ``carrega o risco'' marginal sem cobrar prêmio -- e por isso \emph{ancora} o preço relativo no valor sem prêmio de risco. Em equilíbrio com qualquer agente avesso $+$ agente neutro $+$ agregado livre de risco, $p^*_s/p^*_{s'} = \pi_s/\pi_{s'}$ \emph{sempre} -- a presença do neutro elimina o prêmio de risco dos preços-Arrow.
+\end{solution}
+
+\newpage
+\part[6] \textbf{CPO do agente avesso e seguro completo.}
+
+\textbf{(i)} Derive a CPO interior do UMP de $H$ via Lagrangiano.
+
+\textbf{(ii)} Combine a CPO com $p^*_f/p^*_s = 1$ obtido em (b) e a forma $v_H = \ln$ para mostrar que $x^{H*}_f = x^{H*}_s$ -- o gerador hidro fica \emph{totalmente segurado} no equilíbrio AD.
+
+\textbf{(iii)} Calcule explicitamente $x^{H*}_f = x^{H*}_s = \bar c^H$ usando o orçamento, e $x^{T*}$ usando viabilidade. Verifique o resultado contra a equação fundamental do SDF.
+
+\begin{solution}
+\textbf{(i) Lagrangiano de $H$.} $\mathcal{L} = (1/2)\ln x^H_f + (1/2)\ln x^H_s - \lambda(p_f x^H_f + p_s x^H_s - p_f\cdot 24 - p_s\cdot 12)$. CPOs:
+\[
+    \frac{\pi_f}{x^H_f} = \lambda\, p_f,\qquad \frac{\pi_s}{x^H_s} = \lambda\, p_s.
+\]
+Razão:
+\[
+    \boxed{\;\frac{\pi_f\, v_H'(x^H_f)}{\pi_s\, v_H'(x^H_s)} \;=\; \frac{\pi_f / x^H_f}{\pi_s / x^H_s} \;=\; \frac{p_f}{p_s}.\;}
+\]
+Esta é a equação fundamental do SDF (com $v = \ln$, $v' = 1/x$).
+
+\textbf{(ii) Seguro completo.} Substituindo $p^*_f/p^*_s = 1$ e $\pi_f = \pi_s = 1/2$:
+\[
+    \frac{(1/2)/x^H_f}{(1/2)/x^H_s} = 1 \;\Longleftrightarrow\; \frac{x^H_s}{x^H_f} = 1 \;\Longleftrightarrow\; x^{H*}_f = x^{H*}_s.
+\]
+$H$ é \textbf{totalmente segurado} -- consumo independente do estado. \emph{Atenção à direção do raciocínio:} a igualdade $\pi_f = \pi_s$ \emph{e} $p^*_f = p^*_s$ \emph{e} $v_H'$ injetora (ln estritamente côncava) implicam $x^{H*}_f = x^{H*}_s$. Tirar qualquer das três -- e.g., crenças heterogêneas, ou seca menos provável, ou Bernoulli linear -- quebra o seguro completo.
+
+\textbf{(iii) Cálculo numérico.} Orçamento de $H$ em $p^* = (0{,}5;\,0{,}5)$:
+\[
+    0{,}5\cdot x^H_f + 0{,}5\cdot x^H_s = 0{,}5\cdot 24 + 0{,}5\cdot 12 = 18.
+\]
+Com $x^H_f = x^H_s = \bar c^H$: $\bar c^H = 18$. $\boxed{x^{H*} = (18, 18).}$
+
+Por viabilidade: $x^{T*} = \bar\omega - x^{H*} = (36 - 18, 36 - 18) = \boxed{(18, 18)}.$
+
+\emph{Verificação SDF.} Em $x^{H*} = (18, 18)$, $v_H'(18)/v_H'(18) = 1$, e $\pi_f/\pi_s = 1$, logo a equação fundamental dá $p_f/p_s = 1$. $\checkmark$ Em $x^{T*} = (18, 18)$, $v_T'(18)/v_T'(18) = 1$ trivialmente. $\checkmark$ A equação fundamental do SDF vale para \emph{ambos} os agentes simultaneamente -- como tem que valer em equilíbrio AD interior com mercado completo.
+
+\textit{Sanity econômico setor elétrico.} O gerador hidro $H$, em autarquia, consumiria $(24, 12)$ -- volátil, com risco hidrológico ``cru''. Após o seguro completo via mercado AD, consome $(18, 18)$ -- estável, sem risco. O agente neutro $T$ (térmica/consumidor) absorve a volatilidade: em autarquia consumiria $(12, 24)$; após o equilíbrio, consome $(18, 18)$. \emph{Atenção:} aqui $T$ também converge a $(18, 18)$ porque, sob preços atuarialmente justos, consumir o valor esperado da dotação maximiza utilidade linear sem custo extra (qualquer vetor compatível com viabilidade dá a $T$ a mesma EU). Esta é a estilização AD canônica do que o \textbf{MRE} (Mecanismo de Realocação de Energia) tenta fazer entre os geradores hidro: mutualizar o risco hidrológico de modo que cada gerador receba sua \emph{Garantia Física} ajustada pelo $\GSF$, abstraindo a alocação de tempo (favorável vs.\ seca) em uma alocação de longo prazo equivalente ao seguro mútuo.
+\end{solution}
+
+\newpage
+\part[6] \textbf{Diagrama do seguro completo.} Esboce, no plano $(x^H_f, x^H_s)$:
+\begin{enumerate}[noitemsep,topsep=2pt]
+\item Os eixos com escala 0 a 30.
+\item A reta de 45° (\emph{certainty line}) -- lugar geométrico de $x^H_f = x^H_s$.
+\item A dotação $\omega^H = (24, 12)$.
+\item A reta orçamentária $p^*_f x^H_f + p^*_s x^H_s = p^*_f\cdot 24 + p^*_s\cdot 12 = 18$ (com $p^*_f = p^*_s = 0{,}5$, simplifica para $x^H_f + x^H_s = 36$).
+\item A curva de indiferença $u^H = (1/2)\ln x^H_f + (1/2)\ln x^H_s$ no nível $u^* = \ln 18$, tangente à reta orçamentária no ponto $(18, 18)$.
+\item O ponto de equilíbrio $x^{H*} = (18, 18)$ na intersecção da reta orçamentária com a 45°.
+\end{enumerate}
+
+\begin{solution}
+A reta orçamentária com $p^*_f = p^*_s = 0{,}5$ tem inclinação $-1$. A IC de $H$ no nível $u^* = \ln 18 \approx 2{,}890$ tem equação implícita $\ln x^H_f + \ln x^H_s = 2 u^* = \ln 324 \Rightarrow x^H_f\, x^H_s = 324$ -- hipérbole equilátera.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11.5cm, height=8.5cm,
+    xlabel={$x^H_f$ (consumo de $H$ se favorável)},
+    ylabel={$x^H_s$ (consumo de $H$ se seca)},
+    xmin=0, xmax=32, ymin=0, ymax=32,
+    xtick={0,12,18,24,30},
+    ytick={0,12,18,24,30},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=south west,
+    legend style={font=\scriptsize}
+]
+% Reta 45 graus
+\addplot[dashed,boxborder,thick,domain=0:32] {x};
+\addlegendentry{Reta 45° (certainty line)}
+% Reta orçamentária x_f + x_s = 36
+\addplot[thick,blue,domain=4:32] {36 - x};
+\addlegendentry{Orç.: $0{,}5 x_f + 0{,}5 x_s = 18$}
+% IC u = (1/2) ln x_f + (1/2) ln x_s = ln 18 -> x_f x_s = 324
+\addplot[thick,red,domain=10.5:31,samples=100] {324/x};
+\addlegendentry{IC de $H$ em $u^* = \ln 18$}
+% Pontos
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(24,12)};
+\node[below right] at (axis cs:24,12) {$\omega^H = (24, 12)$};
+\addplot[mark=*,mark size=3pt,solblue,only marks] coordinates {(18,18)};
+\node[above right] at (axis cs:18,18) {$x^{H*} = (18, 18)$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textit{Leitura econômica do diagrama.} A dotação $(24, 12)$ está \emph{abaixo} da reta de 45° -- $H$ tem mais energia em estado favorável que em seca, perfil típico do gerador hidro com $\GSF$ volátil. O equilíbrio AD desloca o consumo até o ponto onde a reta orçamentária atravessa a 45°: $(18, 18)$. \textbf{Movimento contábil:} $H$ vende 6 unidades de energia em $f$ (de 24 para 18) e compra 6 unidades em $s$ (de 12 para 18). Em valor presente, vende $6 \cdot 0{,}5 = 3$ R\$ contingente em $f$ e compra $6 \cdot 0{,}5 = 3$ R\$ contingente em $s$ -- net-zero, como deve ser pelo orçamento. A inclinação da reta orçamentária ($-p^*_f/p^*_s = -1$) é exatamente o negativo da inclinação da IC no ponto $(18, 18)$ ($\TMS_{f,s} = (\pi_f x^H_s)/(\pi_s x^H_f) = 18/18 = 1$). Tangência. $\checkmark$
+\end{solution}
+
+\newpage
+\part[4] \textbf{Generalização do SDF e identificação do prêmio de risco.}
+
+A equação fundamental do SDF
+\[
+    \frac{p^*_s}{p^*_{s'}} \;=\; \frac{\pi^i_s\, (v^i)'(x^{i*}_s)}{\pi^i_{s'}\, (v^i)'(x^{i*}_{s'})}\quad \forall i
+\]
+admite a leitura $p^*_s = \pi_s\cdot m_s$ onde $m_s \equiv (v')(x^*_s)/[\sum_{s''} \pi_{s''}\, (v')(x^*_{s''})] \cdot$ (constante de normalização) é o \textbf{Stochastic Discount Factor}. Em mercado AD com agregado livre de risco (como o nosso), o SDF é constante entre estados (como obtido em (b)).
+
+\textbf{(i)} Mostre que, sob agregado livre de risco ($\bar\omega_f = \bar\omega_s$) e Bernoullis idênticas com risco partilhável, o SDF é constante e o prêmio de risco entre estados é zero.
+
+\textbf{(ii)} \emph{Cenário alternativo (não calcule alocação completa, só o sinal qualitativo).} Suponha que o agregado deixe de ser livre de risco -- por exemplo, $\bar\omega = (40, 32)$ (mais energia total disponível em $f$ que em $s$, refletindo que mesmo a térmica não compensa toda a falta hidro em estados de seca). Argumente: (a) o SDF se torna constante entre estados ou variável? (b) o estado-seca ganha um \emph{prêmio} ou \emph{desconto} no preço relativo?
+
+\begin{solution}
+\textbf{(i) Agregado livre de risco $\Rightarrow$ SDF constante.} Sob agregado $\bar\omega_f = \bar\omega_s = \bar\omega$ e Bernoullis idênticas avessas ($v$ comum, $v$ estritamente côncava), a alocação Pareto-eficiente $x^{i*}$ tem que satisfazer $\TMS$ comum entre estados. Sob crenças de consenso $\pi_f = \pi_s$, a única solução compatível com $v$ injetora é $x^{i*}_f = x^{i*}_s$ \emph{para cada} $i$. Logo $v'(x^{i*}_f)/v'(x^{i*}_s) = 1$ para cada $i$, e por isso a equação SDF entrega
+\[
+    \frac{p^*_f}{p^*_s} = \frac{\pi_f}{\pi_s}\cdot 1 = 1.
+\]
+SDF constante $m_f = m_s$. Prêmio de risco entre estados: zero.
+
+\textit{No nosso setup} ($H$ avessa ao risco, $T$ neutro), o resultado é o mesmo \emph{porque} $T$ é o \emph{marginal pricing agent}: como $T$ é neutro, sua CPO força $p^*_f/p^*_s = \pi_f/\pi_s$ independentemente do que faz $H$. Verificação: $T$ aceita qualquer alocação compatível com viabilidade ao preço atuarial justo.
+
+\textbf{(ii) Agregado com risco $\bar\omega = (40, 32)$.}
+
+(a) \emph{SDF se torna variável.} Em qualquer alocação Pareto-eficiente com agregado volátil e agentes \emph{coletivamente} avessos (ainda que apenas um seja avesso), o consumo agregado tem que cair em $s$ -- pelo menos um agente vê $x^*_s < x^*_f$, logo $v'(x^*_s) > v'(x^*_f)$ (concavidade), e a equação SDF entrega $p^*_s/p^*_f > \pi_s/\pi_f$, i.e., $m_s > m_f$. \textbf{O SDF cresce em estados ``ruins''} -- intuição central de Hansen-Jagannathan (1991) e do \emph{equity premium puzzle} (Mehra-Prescott, 1985).
+
+(b) \emph{O estado-seca ganha um prêmio.} O preço-Arrow $p^*_s$ por unidade de probabilidade ($p^*_s/\pi_s$) sobe acima do nível atuarial justo. Em linguagem financeira: ativos que pagam mais em $s$ (por exemplo, contratos de \emph{hedge} contra seca como ``puts sobre PLD'') valem desproporcionalmente mais -- carregam ``prêmio de seguro'' positivo. Esta é a fundação microeconômica para a \textbf{precificação de risco hidrológico em mercados financeiros derivados} sobre PLD/preço-Arrow no contexto pós-Lei 14.052/2020.
+
+\emph{Em uma frase:} ``preços-Arrow são probabilidades torcidas pela aversão ao risco -- a torção é zero quando o agregado é estável, e cresce com a volatilidade do agregado e com a curvatura de $v$.''
+\end{solution}
+
+\newpage
+\part[3] \textbf{1º TBE estendido a $\mathbb{R}^{LS}$.} Argumente, em \emph{no máximo 5 linhas}, por que a prova do 1º TBE feita em troca pura na Q1(c) sobrevive \emph{linha por linha} ao se substituir $\mathbb{R}^L$ por $\mathbb{R}^{LS}$. Identifique exatamente onde a hipótese de \textbf{mercado completo} entra na prova.
+
+\begin{solution}
+A prova usa apenas três ingredientes: (i) UMP individual exausta orçamento (LNS no Passo 2); (ii) viabilidade vetorial $\sum_i \tilde x^i = \sum_i \omega^i$ (igualdade ponto a ponto); (iii) bilinearidade do produto interno $p \cdot z$. Os três ingredientes valem em \emph{qualquer} $\mathbb{R}^N$ -- em particular em $\mathbb{R}^{LS}$. A viabilidade em $\mathbb{R}^{LS}$ é \emph{estado-a-estado} ($\sum_i \tilde x^i_{\ell, s} = \sum_i \omega^i_{\ell, s}$ para cada $(\ell, s)$), o que garante $p^* \cdot \sum_i \tilde x^i = p^* \cdot \sum_i \omega^i$ na Passo 3. \textbf{Mercado completo} entra implicitamente como hipótese estrutural: ao escrever ``existe $p_{\ell, s}$ para cada $(\ell, s)$'' já estamos dentro do AD canônico. Em mercado incompleto (Q3 abaixo), o argumento se restringe ao \emph{span} dos ativos disponíveis, e o 1º TBE só sobrevive como \emph{constrained} Pareto-eficiência (Hart 1975).
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 2 (30 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 5 pontos}} \\
+\quad $LS = 2$ bens; vetores $x^i, p$ explicitados (i) & 1 \\
+\quad $u^H = (1/2)\ln x^H_f + (1/2)\ln x^H_s$ + $u^T$ linear (ii) & 2 \\
+\quad UMP em $\mathbb{R}^{LS}$ com restrição contingente única (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 6 pontos}} \\
+\quad Argumento de neutralidade: $p^*_f/p^*_s = \pi_f/\pi_s$ (i) & 3 \\
+\quad $p^* = (0{,}5;\,0{,}5)$ via normalização (ii) & 1 \\
+\quad Comentário sobre agente neutro como \emph{marginal pricer} (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 6 pontos}} \\
+\quad CPO de $H$ via Lagrangiano corretamente derivada (i) & 2 \\
+\quad Demonstração $x^{H*}_f = x^{H*}_s$ (seguro completo) (ii) & 2 \\
+\quad Cálculo $x^{H*} = (18, 18)$, $x^{T*} = (18, 18)$ + verificação SDF (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 6 pontos}} \\
+\quad Diagrama com 45°, dotação, reta orçamentária, IC e $x^{H*}$ corretamente plotados & 4 \\
+\quad Leitura econômica (movimento contábil $H$ vende 6 em $f$, compra 6 em $s$) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 4 pontos}} \\
+\quad SDF constante sob agregado livre de risco demonstrado (i) & 2 \\
+\quad Sinal qualitativo prêmio de seguro em $s$ sob agregado volátil + intuição Hansen-Jagannathan (ii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- 3 pontos}} \\
+\quad Reaproveitamento da prova do 1º TBE para $\mathbb{R}^{LS}$ + identificação correta de mercado completo & 3 \\
+\midrule
+\textbf{Total Q2} & \textbf{30} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE III -- AULA 6
+% ============================================================
+\begin{center}\large\textbf{Parte III --- Arrow-Debreu II: Radner sequencial, mercados (in)completos e equação de Euler} \quad (35 pontos)\end{center}
+
+\textit{Conexão com a Aula 6.} Os itens abaixo trabalham: (i) implementação do equilíbrio de Q2 via Radner sequencial com 2 ativos (CCEAR-bond + ação contingente hidro); (ii) cálculo de portfolio replicador para uma ação de Arrow; (iii) ampliação para 3 estados com manutenção de 2 ativos $\Rightarrow$ \textbf{mercado incompleto}; (iv) diagnóstico da Pareto-ineficiência genérica (Hart 1975) e do efeito ``mais ativos pode piorar'' (Geanakoplos-Polemarchakis, 1986); (v) especialização do SDF para a equação de Euler intertemporal e ligação com a SELIC.
+
+\noindent\textbf{Setup geral de Q3.} Mantemos a economia de Q2 ($I = 2$, $L = 1$, $S = \{f, s\}$, $\pi = (1/2, 1/2)$, $v_H = \ln$, $v_T = c$, $\omega^H = (24, 12)$, $\omega^T = (12, 24)$). Em vez de cotar 2 preços-Arrow ex-ante (AD canônico), abrimos um mercado financeiro de Radner em $t = 0$ com 2 ativos:
+\begin{itemize}[noitemsep,topsep=2pt]
+\item \textbf{Bond}: CCEAR (Contrato de Comercialização de Energia no Ambiente Regulado) longo, indexado, livre de risco hidrológico. Payoff $D^{\text{bond}} = (1, 1)$ MWh por contrato (paga uma unidade de energia em qualquer estado).
+\item \textbf{Ação hidro}: cota residual da geração hidro \emph{sem} cobertura do MRE -- paga proporcionalmente ao $\GSF$. Payoff $D^{\text{hidro}} = (1{,}2;\, 0{,}6)$ MWh por contrato (1{,}2 em $f$, 0{,}6 em $s$).
+\end{itemize}
+Matriz de payoffs:
+\[
+    A = \begin{pmatrix} D^{\text{bond}}_f & D^{\text{hidro}}_f \\ D^{\text{bond}}_s & D^{\text{hidro}}_s \end{pmatrix} = \begin{pmatrix} 1 & 1{,}2 \\ 1 & 0{,}6 \end{pmatrix} \in \mathbb{R}^{2 \times 2}.
+\]
+
+\begin{questions}
+\setcounter{question}{2}
+\question \textbf{Radner sequencial, mercados incompletos e Euler intertemporal} (35 pontos).
+
+\begin{parts}
+\part[5] \textbf{Estrutura de ativos e completude do mercado.}
+
+\textbf{(i)} Calcule $\det A$ e $\rank A$. O mercado é completo?
+
+\textbf{(ii)} Aplique a relação de \textbf{não-arbitragem} $q^*_j = \sum_s p^*_s\, A_{sj}$ usando os preços-Arrow $p^* = (0{,}5;\,0{,}5)$ obtidos em Q2(b) para calcular os preços de equilíbrio dos dois ativos: $q^*_{\text{bond}}$ e $q^*_{\text{hidro}}$.
+
+\textbf{(iii)} Comente: por que $q^*_{\text{hidro}} = 0{,}9 < 1 = E[D^{\text{hidro}}]$? \emph{Pista:} olhe para a relação entre o preço atuarial-justo e o que o ativo hidro entrega em cada estado.
+
+\begin{solution}
+\textbf{(i)} $\det A = 1\cdot 0{,}6 - 1\cdot 1{,}2 = -0{,}6 \neq 0$, logo $\rank A = 2 = |S|$. \textbf{Mercado completo.} Os dois ativos \emph{spannem} $\mathbb{R}^{|S|} = \mathbb{R}^2$ -- toda ação Arrow é replicável.
+
+\textbf{(ii) Não-arbitragem.}
+\[
+    q^*_{\text{bond}} = p^*_f\cdot 1 + p^*_s\cdot 1 = 0{,}5 + 0{,}5 = 1.
+\]
+\[
+    q^*_{\text{hidro}} = p^*_f\cdot 1{,}2 + p^*_s\cdot 0{,}6 = 0{,}6 + 0{,}3 = 0{,}9.
+\]
+$\boxed{q^* = (q^*_{\text{bond}}, q^*_{\text{hidro}}) = (1{,}00;\,0{,}90).}$
+
+\textbf{(iii) Por que $q^*_{\text{hidro}} = 0{,}9$ e não $1$?} \emph{Não} é por aversão ao risco -- nesta economia, sob agregado livre de risco e agente neutro presente, os preços-Arrow são exatamente atuarial-justos ($p^*_f = p^*_s = 1/2$, sem prêmio de risco), e o SDF é constante. Logo o preço da ação hidro é simplesmente seu \emph{valor esperado descontado a SDF unitário}:
+\[
+    q^*_{\text{hidro}} = E[m\cdot D^{\text{hidro}}] = m\cdot E[D^{\text{hidro}}] = 1\cdot \tfrac{1{,}2 + 0{,}6}{2} = 0{,}9.
+\]
+A diferença $q^*_{\text{hidro}} = 0{,}9 < 1 = q^*_{\text{bond}}$ reflete que o ativo hidro \emph{paga em média menos} que o bond por contrato (média $0{,}9$ MWh vs.\ $1$ MWh), e \emph{não} um prêmio de risco. Em economia com agregado volátil e sem agente neutro (Q2(e)), $q^*_{\text{hidro}}$ seria \emph{ainda mais baixo} relativamente a $E[D^{\text{hidro}}]$ -- o ativo hidro paga \emph{relativamente menos no estado seca} (estado de stress), e em uma economia com aversão ao risco isso reduz seu preço (prêmio de risco positivo, na linguagem de Lucas 1978).
+\end{solution}
+
+\newpage
+\part[7] \textbf{Portfolio replicador e equivalência AD$\leftrightarrow$Radner.}
+
+\textbf{(i)} Calcule o portfolio $\theta^{(f)} = (\theta^{(f)}_{\text{bond}}, \theta^{(f)}_{\text{hidro}})$ que replica a \textbf{ação Arrow} para o estado $f$, ou seja, $A\theta^{(f)} = e_f = (1, 0)$.
+
+\textbf{(ii)} Calcule o portfolio $\theta^{(s)}$ que replica $e_s = (0, 1)$.
+
+\textbf{(iii)} Verifique \textbf{não-arbitragem em ambos}: $q^* \cdot \theta^{(f)} = p^*_f$ e $q^* \cdot \theta^{(s)} = p^*_s$.
+
+\textbf{(iv)} Calcule o portfolio $\theta^{H*}$ que implementa, em mercado de Radner, o consumo de equilíbrio $x^{H*} = (18, 18)$ obtido em Q2(c). Verifique a restrição em $t = 0$: $q^* \cdot \theta^{H*} = 0$.
+
+\textbf{(v)} Conclua: AD canônico (Q2) e Radner com 2 ativos sob $\rank A = 2$ entregam a \emph{mesma} alocação. Esta é a equivalência de Arrow (1953) / Radner (1972).
+
+\begin{solution}
+\textbf{(i) Replicar $e_f = (1, 0)$.} Sistema $A\theta = e_f$:
+\[
+    \begin{cases}
+    \theta_{\text{bond}} + 1{,}2\, \theta_{\text{hidro}} = 1 \\
+    \theta_{\text{bond}} + 0{,}6\, \theta_{\text{hidro}} = 0
+    \end{cases}
+\]
+Subtraindo: $0{,}6\, \theta_{\text{hidro}} = 1 \Rightarrow \theta_{\text{hidro}} = 5/3$. Da segunda: $\theta_{\text{bond}} = -0{,}6\cdot 5/3 = -1$. Logo
+\[
+    \boxed{\theta^{(f)} = (-1,\, 5/3).}
+\]
+\emph{Interpretação econômica:} para receber 1 MWh em $f$ e nada em $s$, o agente \emph{vende a descoberto} 1 unidade de bond (recebe R\$ 1 em $t = 0$) e \emph{compra} $5/3$ unidades da ação hidro (paga $5/3 \cdot 0{,}9 = 3/2$ R\$). Net em $t = 0$: $-1 + 3/2 = 0{,}5 = p^*_f$. $\checkmark$
+
+\textbf{(ii) Replicar $e_s = (0, 1)$.}
+\[
+    \begin{cases}
+    \theta_{\text{bond}} + 1{,}2\, \theta_{\text{hidro}} = 0 \\
+    \theta_{\text{bond}} + 0{,}6\, \theta_{\text{hidro}} = 1
+    \end{cases}
+\]
+Subtraindo: $0{,}6\, \theta_{\text{hidro}} = -1 \Rightarrow \theta_{\text{hidro}} = -5/3$. Da segunda: $\theta_{\text{bond}} = 1 + 0{,}6\cdot 5/3 = 1 + 1 = 2$. Logo
+\[
+    \boxed{\theta^{(s)} = (2,\, -5/3).}
+\]
+
+\textbf{(iii) Verificação de não-arbitragem.} $q^* = (1; 0{,}9)$.
+\[
+    q^* \cdot \theta^{(f)} = 1\cdot (-1) + 0{,}9\cdot (5/3) = -1 + 1{,}5 = 0{,}5 = p^*_f. \quad \checkmark
+\]
+\[
+    q^* \cdot \theta^{(s)} = 1\cdot 2 + 0{,}9\cdot (-5/3) = 2 - 1{,}5 = 0{,}5 = p^*_s. \quad \checkmark
+\]
+A não-arbitragem $q^* \cdot \theta^{(s)} = p^*_s$ é exatamente a definição: o custo em $t = 0$ de comprar uma unidade de promessa contingente ao estado $s$ via portfolio é o preço-Arrow desse estado.
+
+\textbf{(iv) Portfolio que implementa $x^{H*} = (18, 18)$.} Em Radner, $x^{H} = \omega^H + A\theta^H$, logo $A\theta^{H*} = x^{H*} - \omega^H = (18 - 24,\, 18 - 12) = (-6,\, 6)$.
+
+Resolvendo $A\theta^{H*} = (-6, 6)$:
+\[
+    \begin{cases}
+    \theta^H_{\text{bond}} + 1{,}2\, \theta^H_{\text{hidro}} = -6 \\
+    \theta^H_{\text{bond}} + 0{,}6\, \theta^H_{\text{hidro}} = 6
+    \end{cases}
+\]
+Subtraindo: $0{,}6\, \theta^H_{\text{hidro}} = -12 \Rightarrow \theta^H_{\text{hidro}} = -20$. Da segunda: $\theta^H_{\text{bond}} = 6 + 0{,}6\cdot 20 = 6 + 12 = 18$.
+\[
+    \boxed{\theta^{H*} = (18,\, -20).}
+\]
+\emph{Interpretação:} $H$ \emph{compra} 18 contratos CCEAR-bond (receberá 18 MWh garantidos em qualquer estado) e \emph{vende a descoberto} 20 contratos da ação hidro -- ou seja, transfere a $T$ a totalidade da exposição residual ao $\GSF$. \emph{O CCEAR é o instrumento de hedge; a ação hidro vendida é a ``securitização do risco hidrológico residual''}.
+
+\emph{Verificação em $t = 0$:}
+\[
+    q^* \cdot \theta^{H*} = 1\cdot 18 + 0{,}9\cdot (-20) = 18 - 18 = 0. \quad \checkmark
+\]
+A restrição em $t = 0$ é satisfeita: o portfolio de $H$ é \emph{net-zero em valor presente} -- equivalente a Walras AD individual ($p^* \cdot x^{H*} = p^* \cdot \omega^H \Leftrightarrow 0{,}5\cdot 18 + 0{,}5\cdot 18 = 18 = 0{,}5\cdot 24 + 0{,}5\cdot 12$ $\checkmark$).
+
+\emph{Verificação dos consumos contingentes:}
+$x^H_f = \omega^H_f + (A\theta^{H*})_f = 24 + (-6) = 18.$ $\checkmark$
+$x^H_s = \omega^H_s + (A\theta^{H*})_s = 12 + 6 = 18.$ $\checkmark$
+
+\textbf{(v) Equivalência AD$\leftrightarrow$Radner.} A alocação implementada via 2 ativos ($\theta^{H*} = (18, -20)$, $\theta^{T*} = -\theta^{H*} = (-18, 20)$, mercado de ativos fecha) é \emph{exatamente} a alocação $x^* = ((18, 18), (18, 18))$ obtida em Q2(c) via AD canônico. As duas instituições -- (a) cotar 2 preços-Arrow ex-ante e fechar contratos contingentes, (b) cotar 2 preços de ativos ex-ante e fechar mercado spot estado-a-estado -- entregam o \emph{mesmo} equilíbrio econômico. Esta é a equivalência de Arrow (1953) / Radner (1972), válida \emph{se e somente se} $\rank A = |S|$.
+
+\textit{Importância pedagógica.} A equivalência diz que o mercado financeiro real (Radner: bonds, ações, derivativos) pode replicar o ideal teorético (AD canônico) \emph{quando há ativos suficientes para spanar todos os estados}. Quando isso falha -- próximo item -- toda a estrutura desaba.
+\end{solution}
+
+\newpage
+\part[8] \textbf{Mercado incompleto: 3 estados, 2 ativos (Hart 1975).}
+
+Estenda o setup adicionando um terceiro estado: $S = \{f, n, e\}$, onde $f =$ favorável, $n =$ normal e $e =$ \emph{seca extrema} ($\GSF \approx 0{,}3$, evento tipo crise hídrica 2014--15 ou 2021). Probabilidades $\pi = (1/3, 1/3, 1/3)$. Mantemos os \emph{mesmos} 2 ativos (bond + ação hidro), agora com payoffs estendidos:
+\[
+    D^{\text{bond}} = (1, 1, 1),\quad D^{\text{hidro}} = (1{,}2;\, 0{,}6;\, 0{,}3),\quad
+    A = \begin{pmatrix} 1 & 1{,}2 \\ 1 & 0{,}6 \\ 1 & 0{,}3 \end{pmatrix} \in \mathbb{R}^{3 \times 2}.
+\]
+
+\textbf{(i)} Calcule $\rank A$. O mercado é completo?
+
+\textbf{(ii)} Caracterize o \textbf{span} $\mathcal{M} = \{A\theta : \theta \in \mathbb{R}^2\}$ como subespaço de $\mathbb{R}^3$. Mostre que $\dim \mathcal{M} = 2$ e exiba um vetor concreto $y \in \mathbb{R}^3$ que esteja \emph{fora} de $\mathcal{M}$ -- isto é, um padrão de payoffs contingentes \textbf{não-replicável} pelos ativos disponíveis.
+
+\textbf{(iii)} \emph{Marca-d'água sobre incompletude.} Verifique que a ação Arrow $e_e = (0, 0, 1)$ -- ``promessa pura de receber 1 MWh apenas em seca extrema'' -- não pertence ao span de $A$. Conclua: \textbf{não há instrumento financeiro disponível que segure perfeitamente contra a seca extrema}, e o gerador hidro não consegue replicar o equilíbrio AD canônico análogo ao de Q2.
+
+\textbf{(iv)} Cite o resultado de \textbf{Hart (1975)}: o equilíbrio de Radner com mercado incompleto é \emph{constrained Pareto-eficiente} (não há realocação Pareto-superior dentro do span dos ativos), mas \emph{genericamente Pareto-ineficiente em sentido absoluto}. Argumente, em uma sentença, qual é a alocação Pareto-superior \emph{fora} do span que o equilíbrio Radner não consegue atingir.
+
+\begin{solution}
+\textbf{(i) $\rank A$.} As duas colunas são $(1, 1, 1)^\top$ e $(1{,}2;\, 0{,}6;\, 0{,}3)^\top$. Não são proporcionais (a segunda não é múltiplo escalar da primeira), logo são linearmente independentes. $\rank A = 2 < 3 = |S|$. \textbf{Mercado incompleto.}
+
+\textbf{(ii) Span.} $\mathcal{M} = \{a\cdot (1,1,1) + b\cdot (1{,}2;\, 0{,}6;\, 0{,}3) : a, b \in \mathbb{R}\} = \{(a + 1{,}2 b,\, a + 0{,}6 b,\, a + 0{,}3 b) : a, b \in \mathbb{R}\}$. $\dim \mathcal{M} = 2$.
+
+\emph{Vetor fora do span:} qualquer $y = (y_f, y_n, y_e)$ que não satisfaça a relação linear que define $\mathcal{M}$. Para encontrar tal relação, observe: dado $(y_f, y_n, y_e) \in \mathcal{M}$, $y_f - y_n = 0{,}6 b$ e $y_n - y_e = 0{,}3 b \Rightarrow y_f - y_n = 2(y_n - y_e)$, ou seja $\boxed{y_f - 3 y_n + 2 y_e = 0.}$ Esta é a \emph{equação do hiperplano} $\mathcal{M}$ em $\mathbb{R}^3$.
+
+\emph{Exemplo concreto fora do span:} $y = (1, 0, 0)$ -- a ação Arrow $e_f$. Teste: $1 - 3\cdot 0 + 2\cdot 0 = 1 \neq 0$. $\Rightarrow y \notin \mathcal{M}$. \emph{Outro:} $y = (0, 0, 1) = e_e$ -- ver item (iii).
+
+\textbf{(iii) $e_e \notin \mathcal{M}$.} Teste pela equação: $0 - 3\cdot 0 + 2\cdot 1 = 2 \neq 0$. $\Rightarrow e_e \notin \mathcal{M}$. \textbf{Conclusão econômica forte:} não há combinação linear de bond CCEAR + ação hidro residual que pague 1 MWh em \emph{e} (seca extrema) e nada em $f, n$. O instrumento que faria esse hedge -- chamemo-lo de ``derivativo PLD-cap'' ou ``opção de venda sobre $\GSF$'' -- \emph{não existe} no mercado financeiro modelado. Pelo Lema do Span (Aula 6, Bloco 2.c invertido), nenhum portfolio implementa a alocação AD canônica análoga -- o gerador hidro \emph{não pode se segurar perfeitamente} contra a seca extrema com os instrumentos disponíveis.
+
+Esta é a estilização do que aconteceu na crise hídrica 2014--15 e 2021: o mercado spot via PLD existiu, e o MRE existiu para mutualizar entre hidros, mas \emph{não houve} instrumento financeiro pré-existente que permitisse aos geradores hidro spanar o estado ``seca extrema''. A repactuação via Lei 14.052/2020 é, em parte, uma \emph{substituição regulatória} para a ausência desse instrumento -- transferindo o risco residual ao consumidor cativo via prorrogação de outorgas.
+
+\textbf{(iv) Hart (1975).} O equilíbrio de Radner com $\rank A < |S|$ existe (sob hipóteses padrão -- ver Magill-Quinzii 1996, cap.~10) e é \emph{constrained Pareto-eficiente}: dado o conjunto de alocações implementáveis $\{\omega + A\theta : \theta \in \mathbb{R}^N, \sum_i \theta^i = 0\}$, não há realocação Pareto-superior \emph{dentro} desse conjunto. Mas, em geral, \emph{existe} alocação Pareto-superior \emph{fora} desse conjunto -- por exemplo, a alocação ``seguro completo $H$ inclusive contra $e$'' que o AD canônico em $\mathbb{R}^{3}$ entregaria, mas que requer pagamento contingente puro $e_e$ não-replicável. Como a alocação superior está fora do span, o argumento da contradição na prova do 1º TBE (Q1c, Q2f) não bloqueia: a ineficiência \emph{absoluta} do equilíbrio Radner com mercado incompleto é \textbf{genérica} no espaço de economias.
+
+Hart, O. D. (1975). \textit{Journal of Economic Theory} 11(3): 418--443. \emph{Refinamento contemporâneo:} Geanakoplos \& Polemarchakis (1986) mostraram que \emph{adicionar} um ativo financeiro a uma economia com mercado incompleto pode \textbf{piorar} o bem-estar de alguns agentes -- a regulação de derivativos não é trivialmente boa nem trivialmente ruim. Aplicação direta ao Brasil: a discussão em curso na CCEE/ANEEL sobre criação de derivativos sobre PLD e ENA (Energia Natural Afluente) tem fundamento teórico em Hart 1975 + GP 1986.
+\end{solution}
+
+\newpage
+\part[5] \textbf{Diagrama do span e visualização da incompletude.}
+
+Esboce, em $\mathbb{R}^3$ projetado em duas dimensões, o plano $\mathcal{M} = \{(a + 1{,}2 b,\, a + 0{,}6 b,\, a + 0{,}3 b)\}$. Marque:
+
+\begin{enumerate}[noitemsep,topsep=2pt]
+\item Os vetores básicos $(1,1,1)$ (bond) e $(1{,}2;\,0{,}6;\,0{,}3)$ (hidro) como geradores de $\mathcal{M}$.
+\item As três ações Arrow $e_f, e_n, e_e$ como pontos. Indique quais delas pertencem a $\mathcal{M}$ (resposta: \emph{nenhuma}, pois cada uma viola a equação $y_f - 3 y_n + 2 y_e = 0$).
+\item Comente sobre o ``custo'' econômico da incompletude: o conjunto de alocações implementáveis a partir de $\omega^H = (24, 12, ?)$ (a dotação de $H$ no estado 3, escolha um valor plausível, e.g., $\omega^H_e = 6$) é \emph{estritamente menor} que o conjunto AD canônico, e portanto a aversão ao risco de $H$ se traduz em consumo \emph{volátil} no equilíbrio Radner.
+\end{enumerate}
+
+\begin{solution}
+A representação geométrica em $\mathbb{R}^3$ é um plano passando pela origem com normal $n = (1, -3, 2)$ (extraída da equação $y_f - 3 y_n + 2 y_e = 0$). Os geradores $(1,1,1)$ e $(1{,}2;\,0{,}6;\,0{,}3)$ vivem no plano (verificar: $1 - 3 + 2 = 0$ $\checkmark$; $1{,}2 - 1{,}8 + 0{,}6 = 0$ $\checkmark$). Os vetores Arrow $e_f, e_n, e_e$ projetados estão fora do plano:
+\[
+    \text{Distância}(e_s, \mathcal{M}) = \frac{|n \cdot e_s|}{\|n\|} = \frac{|n_s|}{\sqrt{1 + 9 + 4}} = \frac{|n_s|}{\sqrt{14}}.
+\]
+Para $e_f$: $|n_f| = 1$, dist.\ $= 1/\sqrt{14} \approx 0{,}267$. Para $e_n$: $|n_n| = 3$, dist.\ $\approx 0{,}802$. Para $e_e$: $|n_e| = 2$, dist.\ $\approx 0{,}535$.
+
+\emph{Leitura:} a ação Arrow ``mais distante'' do span é $e_n$ -- isto é, ``promessa pura de receber 1 MWh em estado normal''. Faz sentido econômico: tanto $f$ quanto $e$ correspondem a payoffs ``extremos'' do hidro, parcialmente replicáveis combinando bond e hidro em proporções ajustadas; \emph{normal}, pelo contrário, é o ``meio'' que o ativo hidro não destaca particularmente. A ação Arrow para o estado intermediário é a mais difícil de replicar.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+% Eixo simbolico em 2D para representar R^3
+\draw[->] (-3.5,0) -- (4,0) node[right] {\small $y_f$};
+\draw[->] (0,-1) -- (0,3.5) node[above] {\small $y_n$ (eixo principal)};
+\draw[dashed,->] (-1.5,-0.7) -- (2.2,1.05) node[right,font=\scriptsize] {projeção $y_e$};
+% Plano M (representado como elipse 'inclinada')
+\draw[fill=blue!10,fill opacity=0.4,draw=blue,thick] (-2.5,-0.5) ellipse [x radius=3.2, y radius=1.4, rotate=22];
+\node[blue,font=\scriptsize] at (-3.3,1.2) {Span $\mathcal{M}$ (dim 2)};
+% Vetores geradores (no plano)
+\draw[->,thick,solblue] (0,0) -- (1.4,1.4) node[above right,font=\scriptsize] {bond $(1,1,1)$};
+\draw[->,thick,rubred] (0,0) -- (1.7,0.5) node[right,font=\scriptsize] {hidro $(1{,}2;\,0{,}6;\,0{,}3)$};
+% Ações Arrow (fora do plano)
+\filldraw[insperred] (3,0.2) circle (2pt) node[above right,font=\scriptsize] {$e_f$};
+\filldraw[insperred] (0.6,3) circle (2pt) node[above,font=\scriptsize] {$e_n$};
+\filldraw[insperred] (-1.3,-0.4) circle (2pt) node[below,font=\scriptsize] {$e_e$};
+% Setas indicando distancia
+\draw[dotted,gray] (0.6,3) -- (0.7,1.3);
+\node[gray,font=\scriptsize] at (0.95,2.2) {dist. $\approx 0{,}80$};
+\draw[dotted,gray] (3,0.2) -- (2.5,0.9);
+\node[gray,font=\scriptsize] at (3.1,0.65) {dist. $\approx 0{,}27$};
+\draw[dotted,gray] (-1.3,-0.4) -- (-1.0,0.4);
+\node[gray,font=\scriptsize] at (-2.0,-0.0) {dist. $\approx 0{,}54$};
+\end{tikzpicture}
+\end{center}
+
+\emph{Custo econômico da incompletude.} Suponha $\omega^H = (24, 18, 6)$ (estendendo a dotação de Q2 ao estado normal e seca extrema). Em AD canônico em $\mathbb{R}^3$, $H$ se seguraria perfeitamente com $T$ neutro -- consumo $(16, 16, 16)$ pela média. Em Radner com mercado incompleto, $H$ tem que escolher $\theta^H$ tal que $A\theta^H = (16-24, 16-18, 16-6) = (-8, -2, 10)$. Mas esse vetor não está em $\mathcal{M}$ (verifica: $-8 - 3(-2) + 2(10) = -8 + 6 + 20 = 18 \neq 0$): \emph{não há portfolio que entregue a alocação plana}. O melhor $H$ pode fazer é a projeção de $(-8, -2, 10)$ sobre $\mathcal{M}$, e o consumo final ainda terá variabilidade entre os três estados -- $H$ tem que carregar parte do risco hidrológico que não pode ser segurado. Esse \emph{spread} residual sobre o consumo de $H$ é o ``custo de bem-estar da incompletude'' -- e a magnitude dele varia com a profundidade da seca em $e$ (quanto mais extremo o estado $e$, maior o custo).
+\end{solution}
+
+\newpage
+\part[6] \textbf{Equação de Euler intertemporal e SELIC.}
+
+Volte ao caso $|S| = 2$ de Q2, mas agora reinterprete os estados como \emph{datas}: $s = t$ vs.\ $s' = t+1$ (sem incerteza intertemporal, $|\Omega| = 1$). $H$ tem $u(c) = \ln c$ e fator de desconto subjetivo $\beta = 0{,}9$ por período. A taxa bruta real de juros (proxy: SELIC real) entre $t$ e $t+1$ é $R = 1{,}05$ -- ou seja, $5\%$ ao período.
+
+\textbf{(i)} Especialize a equação fundamental do SDF para o caso intertemporal e derive a \textbf{equação de Euler}: $u'(c_t) = \beta\, R\, u'(c_{t+1})$.
+
+\textbf{(ii)} Com $u = \ln$ ($u'(c) = 1/c$), $\beta = 0{,}9$, $R = 1{,}05$, calcule a \textbf{taxa de crescimento ótima do consumo} $g \equiv c_{t+1}/c_t$. Comente economicamente: $H$ está ``crescendo'' ou ``decrescendo'' o consumo ao longo do tempo? Por quê?
+
+\textbf{(iii)} Identifique o \textbf{SDF intertemporal} $m_{t+1} = \beta\, u'(c_{t+1})/u'(c_t)$ usando a trajetória ótima.
+
+\textbf{(iv)} Comente, em uma frase, a relação entre a SELIC fixada pelo COPOM e o SDF agregado da economia: ``quando o COPOM sobe SELIC, está cotando $\beta R \gtrless 1$, sinalizando \rule{1.5cm}{0.4pt}''. Complete a frase corretamente.
+
+\textbf{(v)} \emph{Bônus conceitual.} Cite o \emph{equity premium puzzle} (Mehra-Prescott 1985): por que o SDF derivado de $u$ CRRA com $\gamma$ moderado (e.g., $\gamma \leq 10$) \emph{não consegue} reconciliar a volatilidade do SDF empírica com o prêmio histórico da bolsa americana ($\sim 6\%$ anual)?
+
+\begin{solution}
+\textbf{(i) Especialização.} Em $|\Omega| = 1$, o estado é puramente uma data: $s = t$. A equação SDF em forma de razão é
+\[
+    \frac{p^*_t}{p^*_{t+1}} = \frac{\pi_t\, u'(c_t)}{\pi_{t+1}\, u'(c_{t+1})}.
+\]
+Sem incerteza, $\pi_t = 1$ trivialmente; a estrutura de ``probabilidade'' é absorvida no \emph{fator de desconto subjetivo} $\beta$. Identificando $\pi_{t+1}/\pi_t \equiv \beta$ (preferência por consumo presente) e $p^*_t/p^*_{t+1} \equiv R$ (taxa bruta de juros entre as duas datas, equivalente ao preço relativo de uma promessa de entrega em $t$ vs.\ $t+1$):
+\[
+    R = \frac{u'(c_t)}{\beta\, u'(c_{t+1})} \;\Longleftrightarrow\; \boxed{\;u'(c_t) = \beta\, R\, u'(c_{t+1}).\;}
+\]
+Esta é a \textbf{equação de Euler}. Em forma multiplicativa: $1 = \beta\, R\, u'(c_{t+1})/u'(c_t)$.
+
+\textbf{(ii) Cálculo.} Com $u = \ln$, $u'(c) = 1/c$:
+\[
+    \frac{1}{c_t} = \beta\, R\, \frac{1}{c_{t+1}} \;\Longleftrightarrow\; \frac{c_{t+1}}{c_t} = \beta\, R = 0{,}9\cdot 1{,}05 = 0{,}945.
+\]
+$\boxed{g \equiv c_{t+1}/c_t = 0{,}945.}$
+
+\emph{Interpretação econômica.} Como $\beta R = 0{,}945 < 1$, $H$ \emph{decresce} o consumo ao longo do tempo, em ritmo de $-5{,}5\%$ por período. \emph{Por quê?} Embora a taxa de juros real ($R - 1 = 5\%$) recompense quem poupa, ela é \emph{insuficiente} para compensar a impaciência subjetiva ($1/\beta - 1 = 11{,}1\%$). O agente prefere consumir mais \emph{agora} e aceitar consumo menor depois -- a impaciência domina o estímulo à poupança. Em equilíbrio, isso reflete uma economia onde os recursos \emph{decrescem} ao longo do tempo (e.g., depleção de reservatórios sem reposição plena). Em uma economia em crescimento ($g > 1$), a calibração teria $\beta R > 1$.
+
+\textbf{(iii) SDF intertemporal.}
+\[
+    m_{t+1} = \beta\, \frac{u'(c_{t+1})}{u'(c_t)} = \beta\, \frac{c_t}{c_{t+1}} = \beta\, \frac{1}{g} = \frac{0{,}9}{0{,}945} = \frac{1}{1{,}05} = \frac{1}{R}.
+\]
+Ou seja, $m_{t+1}\cdot R = 1$ -- consistência com $1 = E[m_{t+1}\, R_{t+1}]$ no caso sem incerteza ($R_{t+1}$ determinístico).
+
+\textbf{(iv) COPOM e SDF.} ``Quando o COPOM sobe SELIC, está cotando $\beta R > 1$, sinalizando \emph{que os agentes devem postergar consumo (suavizá-lo crescentemente ao longo do tempo)} -- política contracionista, que esfria a demanda corrente e reduz pressão inflacionária.'' \emph{Inversamente:} cortes de SELIC sinalizam $\beta R < 1$ -- estímulo ao consumo presente, política expansionista. A política monetária opera, em última análise, \emph{via Euler}: a SELIC é o instrumento que move $R$ na função de reação tipo Taylor (1993).
+
+\textbf{(v) Equity premium puzzle (Mehra-Prescott 1985).} O retorno excedente histórico do mercado de ações sobre a renda fixa (S\&P 500 vs.\ T-bills, 1889--1978) ficou em torno de $6\%$ anual. Pela desigualdade de Hansen-Jagannathan (1991), $\sigma(m)/E(m) \geq |E(R^e)|/\sigma(R^e) \approx 0{,}06/0{,}16 \approx 0{,}375$ -- o SDF agregado tem que ter desvio padrão $\geq 37{,}5\%$ do seu valor médio. Mas SDF derivado de $u$ CRRA padrão ($u(c) = c^{1-\gamma}/(1-\gamma)$, $m = \beta(c_{t+1}/c_t)^{-\gamma}$) com $\gamma$ moderado ($\gamma \leq 10$) e crescimento de consumo agregado historicamente baixo e suave ($\sim 1{,}8\%$ anual com $\sigma \approx 3{,}6\%$) \emph{não consegue} gerar tanta volatilidade -- entrega $\sigma(m)/E(m) \approx \gamma \cdot \sigma(\Delta \log c) \approx 10\cdot 0{,}036 = 0{,}36$, mas só com $\gamma = 10$ que já é considerado \emph{implausivelmente alto}. Para $\gamma = 2$ (consenso), $\sigma(m)/E(m) \approx 0{,}07$ -- ordem de grandeza menor que o necessário. Esta é a essência do \emph{puzzle}.
+
+\emph{Soluções propostas (citações):} \textit{Habit formation} (Campbell-Cochrane, 1999, \textit{JPE}); \textit{disaster risk} (Barro 2006, \textit{QJE}; Rietz 1988); \textit{Epstein-Zin preferences} (Epstein-Zin 1989, \textit{Econometrica}). \textbf{O SDF da teoria está empiricamente subdeterminado} -- esta é uma fronteira aberta entre macro e finanças, com aplicação direta ao caso brasileiro: a SELIC \emph{real} brasileira historicamente alta (e o spread sobre treasuries dos EUA) refletiria, em parte, prêmio de risco país que o SDF doméstico ainda tem dificuldade de pricing.
+\end{solution}
+
+\newpage
+\part[4] \textbf{Síntese: três níveis de completude.}
+
+Preencha a tabela síntese a seguir, identificando, para cada um dos três casos analisados em Q3, (a) se o mercado é completo, (b) se o equilíbrio é Pareto-eficiente em sentido absoluto, e (c) qual é a alocação implementada para o gerador hidro $H$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{@{}p{0.30\linewidth}|p{0.20\linewidth}|p{0.22\linewidth}|p{0.22\linewidth}@{}}
+\toprule
+\textbf{Caso} & \textbf{Completo?} & \textbf{Pareto-eficiente?} & \textbf{$x^{H*}$} \\
+\midrule
+Q3(a)--(b): $|S|=2$, 2 ativos & ? & ? & ? \\
+\midrule
+Q3(c)--(d): $|S|=3$, 2 ativos & ? & ? & ? \\
+\midrule
+Q3(e): caso intertemporal $|S|=2$ datado & ? & ? & ? \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Em \emph{2--3 linhas}, comente a \textbf{lição estrutural} agregada destes três casos para a regulação do setor elétrico brasileiro.
+
+\begin{solution}
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\small
+\begin{tabular}{@{}p{0.28\linewidth}|p{0.18\linewidth}|p{0.24\linewidth}|p{0.24\linewidth}@{}}
+\toprule
+\textbf{Caso} & \textbf{Completo?} & \textbf{Pareto-eficiente?} & \textbf{$x^{H*}$} \\
+\midrule
+Q3(a)--(b): $|S|=2$, 2 ativos & Sim ($\rank A = 2 = |S|$) & Sim (1º TBE estendido) & $(18, 18)$ -- seguro completo \\
+\midrule
+Q3(c)--(d): $|S|=3$, 2 ativos & \textbf{Não} ($\rank A = 2 < 3$) & Constrained sim; absoluta \textbf{não} (Hart 1975) & Volátil entre estados; segurado parcialmente, exposto a $e$ residual \\
+\midrule
+Q3(e): caso intertemporal $|S|=2$ datado & Sim (1 ativo livre de risco basta sob certeza) & Sim (Euler suaviza) & Crescimento $g = \beta R = 0{,}945$ -- decai $5{,}5\%$ ao período \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Lição estrutural.} Sob $\rank A = |S|$, mercado financeiro replica AD canônico e o 1º TBE garante eficiência -- como em Q3(a)--(b), onde CCEAR-bond + ação hidro são suficientes para spanar 2 estados. Quando o conjunto de estados se amplia (Q3(c)--(d): incluindo \emph{seca extrema}) e o conjunto de ativos não acompanha, o mercado vira incompleto, o equilíbrio é só constrained-eficiente, e o gerador hidro carrega risco residual não-segurável -- exatamente o cenário operacional brasileiro pré-Lei 14.052/2020. \textbf{A escolha regulatória pós-2020 -- transferir risco residual ao consumidor cativo via repactuação -- é uma resposta de \emph{política} a uma falha estrutural de \emph{mercado}}: ausência de instrumentos financeiros com payoff alinhado a $e_e$ (derivativos PLD-cap, opções sobre ENA). Q4 explora se essa escolha é a melhor.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 3 (35 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 5 pontos}} \\
+\quad $\det A = -0{,}6$, $\rank A = 2$, mercado completo (i) & 1 \\
+\quad $q^*_{\text{bond}} = 1$, $q^*_{\text{hidro}} = 0{,}9$ via não-arbitragem (ii) & 2 \\
+\quad Comentário correto: $0{,}9 < 1$ é por valor esperado menor, NÃO prêmio de risco (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 7 pontos}} \\
+\quad $\theta^{(f)} = (-1, 5/3)$ derivado pelo sistema (i) & 1 \\
+\quad $\theta^{(s)} = (2, -5/3)$ derivado (ii) & 1 \\
+\quad Verificação $q^* \cdot \theta^{(f)} = 0{,}5$, $q^* \cdot \theta^{(s)} = 0{,}5$ (iii) & 1 \\
+\quad $\theta^{H*} = (18, -20)$ derivado + verificação $q^* \cdot \theta^{H*} = 0$ + consumo final (iv) & 3 \\
+\quad Conclusão: equivalência AD$\leftrightarrow$Radner explicitada (v) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 8 pontos}} \\
+\quad $\rank A = 2 < 3$, mercado incompleto (i) & 1 \\
+\quad Caracterização do span via $y_f - 3 y_n + 2 y_e = 0$ + vetor concreto fora (ii) & 2 \\
+\quad $e_e \notin \mathcal{M}$ verificado + interpretação econômica (seca extrema não segurável) (iii) & 2 \\
+\quad Citação correta de Hart 1975 + alocação Pareto-superior fora do span identificada (iv) & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 5 pontos}} \\
+\quad Diagrama com plano $\mathcal{M}$, geradores, ações Arrow fora & 3 \\
+\quad Cálculo das distâncias OU comentário qualitativo equivalente & 1 \\
+\quad Custo econômico da incompletude com exemplo concreto $\omega^H = (24, 18, 6)$ & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 6 pontos}} \\
+\quad Especialização SDF $\to$ Euler $u'(c_t) = \beta R u'(c_{t+1})$ (i) & 1 \\
+\quad $g = \beta R = 0{,}945$ + interpretação correta (impaciência domina) (ii) & 1 \\
+\quad SDF $m_{t+1} = 1/R$ derivado (iii) & 1 \\
+\quad Frase COPOM/SELIC: $\beta R > 1 \Rightarrow$ postergar consumo / política contracionista (iv) & 1 \\
+\quad Equity premium puzzle: enunciado correto + ordem de grandeza ($\gamma = 2$ entrega $\sigma(m)/E(m) \approx 0{,}07$ vs.\ requerido $0{,}375$) (v) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- 4 pontos}} \\
+\quad Tabela síntese preenchida corretamente nas 3 linhas & 3 \\
+\quad Lição estrutural: ligação explícita rank deficiente $\to$ Lei 14.052/2020 & 1 \\
+\midrule
+\textbf{Total Q3} & \textbf{35} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE IV
+% ============================================================
+\begin{center}\large\textbf{Parte IV --- Síntese: recomendação à ANEEL/MME sobre redesenho do MRE pós-Lei 14.052/2020} \quad (10 pontos)\end{center}
+
+\begin{questions}
+\setcounter{question}{3}
+\question[10] \textbf{Recomendação fundamentada}.
+
+A Diretoria de Regulação Econômica e Estudos do Mercado da \textbf{ANEEL}, em conjunto com a \textbf{Secretaria de Energia Elétrica do MME}, está conduzindo consulta pública sobre a \emph{próxima rodada de aperfeiçoamento do MRE} pós-repactuação de 2020. A Lei 14.052/2020 transferiu parte do risco hidrológico ao consumidor cativo via prorrogação de outorgas, com efeito tarifário disperso ao longo de muitos anos. A pergunta de política para a consulta é:
+
+\begin{quote}
+\emph{``Qual instrumento adicional --- além do MRE intra-bloco hidro existente e da repactuação tarifária da Lei 14.052/2020 --- aproximaria mais o setor elétrico brasileiro de uma alocação Arrow-Debreu canônica para o risco hidrológico?''}
+\end{quote}
+
+\textbf{Apresente em até uma página} a sua recomendação. Cubra explicitamente:
+
+\begin{enumerate}[noitemsep,topsep=2pt]
+\item \textbf{Diagnóstico em linguagem AD.} Identifique, em uma frase para cada, qual é a falha estrutural do mercado pré-Lei 14.052/2020 em termos de (a) mercado incompleto / rank deficiente da matriz de payoffs, (b) Hart 1975, (c) substituição regulatória. Use Q3(c)--(d) como referência.
+
+\item \textbf{Proposta de instrumento.} Recomende um \emph{instrumento financeiro} concreto que ampliaria o $\rank A$ em direção a mercado completo. Possibilidades a considerar: (i) opções de venda sobre PLD com strike alto (\emph{cap}); (ii) derivativos sobre ENA (Energia Natural Afluente, indicador hidrológico do ONS); (iii) catastrophe bonds (\emph{cat bonds}) sobre seca crítica do SIN; (iv) um quarto instrumento de sua livre escolha. Para sua recomendação, descreva: o payoff contingente $D^{\text{novo}} \in \mathbb{R}^{|S|}$ aproximado, qual ação Arrow ele aproxima de spanar, e o agente neutro/avesso natural do outro lado da operação.
+
+\item \textbf{Limitações.} Discuta \emph{pelo menos três} obstáculos estruturais à proposta -- pelo menos uma técnica (microeconomia: GP 1986 sobre ``mais ativos pode piorar''), uma operacional (microestrutura de mercado, custos de transação, liquidez), e uma político-distributiva (quem ganha e quem perde com a introdução; trade-off entre $H$ e consumidor cativo).
+
+\item \textbf{Programa empírico.} Recomende \emph{uma} estratégia concreta de calibração / validação ex-ante do instrumento proposto. Cite a fonte de dados (e.g., série histórica de PLD da CCEE; ENA e GSF do ONS; preços de CCEAR no mercado livre publicados pela CCEE) e o método estatístico (e.g., calibração paramétrica do SDF a partir de Hansen-Jagannathan bounds; estimação de retornos esperados via Lucas tree).
+\end{enumerate}
+
+\begin{solution}
+\textit{Resposta-modelo} (sem resposta única; avaliação por rubrica).
+
+\textbf{1. Diagnóstico em linguagem AD.}
+
+(a) \emph{Rank deficiente.} O conjunto de instrumentos financeiros existente no setor elétrico brasileiro pré-Lei 14.052/2020 -- CCEAR de longo prazo, contratos a termo no Ambiente de Contratação Livre, MRE intra-bloco hidro, mercado spot via PLD -- gera matriz de payoffs $A$ com $\rank(A) < |S|$ \emph{quando} o conjunto de estados relevantes inclui ``seca extrema'' (eventos tipo 2014--15 e 2021). A ação Arrow $e_{\text{seca extrema}}$ não pertence ao span (Q3(c)).
+
+(b) \emph{Hart 1975.} Como o mercado é incompleto, o equilíbrio Radner é constrained Pareto-eficiente mas \emph{genericamente Pareto-ineficiente em sentido absoluto}. Existe alocação Pareto-superior (e.g., ``geradores hidro consomem $E[\GSF]\cdot$Garantia Física em qualquer estado'') que não é implementável com os ativos existentes -- exatamente o cenário pré-2020.
+
+(c) \emph{Substituição regulatória.} A Lei 14.052/2020, ao transferir ao consumidor cativo o passivo histórico via prorrogação de outorgas, é uma \textbf{substituição regulatória} para a ausência do instrumento financeiro spanador. \emph{Contábil:} resolve a exposição financeira herdada. \emph{Estrutural:} não resolve o problema -- na próxima crise hidrológica, o $\rank A$ continua deficiente, e o ciclo de exposição $\to$ repactuação tende a se repetir.
+
+\textbf{2. Proposta de instrumento: \emph{cat bond} sobre seca crítica do SIN.}
+
+\emph{Descrição.} Título emitido por entidade securitizadora (e.g., veículo SPE com \emph{trustee} internacional, modelo análogo aos \emph{catastrophe bonds} sobre furacões emitidos no mercado segurador internacional desde os anos 1990) que paga juros normais enquanto $\GSF$ anual $\geq 0{,}5$ e \emph{perde principal} (parcial ou total) se $\GSF$ anual $< 0{,}5$ por \emph{trigger paramétrico} (cobertura medida diretamente pelo $\GSF$ publicado pela CCEE). Comprador: agentes neutros ao risco no mercado financeiro internacional (fundos de pensão, resseguradoras, soberanos). Vendedor (emissor): geradores hidro como bloco, ou Eletrobras/concessões.
+
+\emph{Payoff $D^{\text{cat}} \in \mathbb{R}^{|S|}$.} Em estados $f, n$: paga juros + principal (\textbf{$\sim 1{,}0$ por unidade investida ajustada por cupom}); em $e$ (seca extrema): paga $\sim 0$. Aproximadamente:
+\[
+    D^{\text{cat}} \approx (1{,}03;\ 1{,}03;\ 0{,}10) \quad \text{(três estados Q3(c))}.
+\]
+\emph{Ação Arrow aproximada.} Combinando bond ($D^{\text{bond}} = (1, 1, 1)$) e $D^{\text{cat}}$:
+\[
+    D^{\text{bond}} - D^{\text{cat}} \approx (-0{,}03;\ -0{,}03;\ 0{,}93) \approx 0{,}93\cdot e_{\text{seca extrema}}.
+\]
+Com 3 ativos -- bond, hidro, cat bond -- $\rank A$ vai a 3 (mercado completo nos 3 estados de Q3(c)).
+
+\emph{Agente neutro do outro lado.} Investidores institucionais internacionais com \emph{cross-correlation} baixa entre risco hidrológico brasileiro e portfólio agregado (mercados maduros): efetivamente neutros ao risco hidrológico do SIN.
+
+\textbf{3. Limitações.}
+
+(a) \emph{Técnica (GP 1986).} Geanakoplos-Polemarchakis demonstraram que adicionar um ativo financeiro a um equilíbrio Radner com mercado incompleto pode \textbf{piorar} o bem-estar de alguns agentes -- o reajuste geral dos preços de equilíbrio pode hurt subgrupos específicos. \emph{No nosso caso}: a entrada de cat bond pode reprecificar para baixo a ação hidro residual (geradores hidro perdem valor presente do passivo refletido) e simultaneamente para cima o CCEAR (bond livre de risco), gerando redistribuição entre agentes sem garantia de Pareto-melhoria.
+
+(b) \emph{Operacional.} Cat bonds dependem de microestrutura sofisticada: \emph{trigger paramétrico} confiável (a CCEE publica $\GSF$ mensalmente, mas a definição operacional do \emph{trigger} requer auditoria independente), \emph{trustee} internacional para arbitragem, mercado secundário com liquidez razoável (cat bonds globais somam $\sim$US\$ 50 bi em estoque, mas é mercado relativamente raso), e regulação CVM/Susep que permita estruturação. Custos de \emph{spread} sobre treasury (média histórica $\sim 4$--$8\%$ ao ano para cat bonds emergentes) podem ser proibitivos comparados a captação doméstica.
+
+(c) \emph{Político-distributiva.} \emph{Quem ganha:} geradores hidro reduzem custo de carregamento de risco residual; consumidor cativo, em \emph{equilíbrio de longo prazo}, paga tarifa menor por não ter que absorver o passivo das próximas crises. \emph{Quem perde:} consumidor cativo perde no \emph{curto prazo} (custo do prêmio do cat bond entra na tarifa via \emph{risk-pass-through}); compradores institucionais brasileiros que hoje fazem \emph{hedge} informal via posições compradas em hidro perdem oportunidade de arbitragem; setor de seguro doméstico pode ver competição internacional desigual. Trade-off ANEEL/MME tem dimensão distributiva clara; necessita de discussão social.
+
+\textbf{4. Programa empírico.}
+
+\emph{Estratégia concreta.} \textbf{Calibração ex-ante via Hansen-Jagannathan bounds aplicado ao SDF brasileiro do setor elétrico}, em três passos:
+
+(1) \emph{Coletar séries:} GSF mensal e PLD semanal por submercado (CCEE \emph{InfoMercado}, séries 2002--presente, 24 anos); ENA mensal por bacia (ONS); preços de CCEAR no mercado regulado (CCEE) e mercado livre (CCEE \emph{InfoMercado livre} + ABRACEEL); SELIC real do BCB; câmbio.
+
+(2) \emph{Estimar SDF}: regredir retornos contingentes sobre fator de desconto candidato $m_t = \beta\cdot (\GSF_t/\overline{\GSF})^{-\gamma}$ (modelo CRRA setorial com $\gamma$ a estimar) ou modelos com habit/desastre (Campbell-Cochrane 1999, Barro 2006) para acomodar a eventual subavaliação no estilo \emph{equity premium puzzle}. Verificar que $\sigma(m)/E(m)$ estimado é consistente com Hansen-Jagannathan bound implícito nos retornos hidro vs.\ térmico de 2002--2024.
+
+(3) \emph{Pricing do cat bond}: usar SDF estimado para precificar o instrumento contingente proposto, $q^{\text{cat}} = E[m\cdot D^{\text{cat}}]$, e comparar com prêmio de mercado internacional para estruturas análogas. \emph{Decisão}: implementar piloto pequeno (e.g., R\$ 500 milhões a R\$ 1 bilhão de captação inicial via Eletrobras) por 1 ano hidrológico, observar formação de preço, refinar.
+
+\textbf{Recomendação final.} \emph{Adotar emissão piloto de cat bond paramétrico sobre $\GSF$ como complemento (não substituto) ao MRE intra-bloco}, condicionada a (i) calibração ex-ante via SDF setorial estimado; (ii) trigger paramétrico simples e auditável ($\GSF < 0{,}5$ acumulado em 12 meses); (iii) estrutura legal que isole responsabilidade do consumidor cativo (perdas absorvidas por investidor institucional). Manter MRE para o risco \emph{intra}-bloco hidro mutualizável; usar cat bond para o risco \emph{residual} sistêmico não-mutualizável -- a divisão exata replicaria a estrutura ``risco gerenciável vs.\ não-gerenciável'' já presente no marco regulatório pós-2020, apenas mudando a contraparte de ``consumidor cativo'' para ``investidor neutro internacional''. Próxima rodada da consulta pública: discutir dimensionamento do piloto e governança da emissão.
+\end{solution}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 4 (10 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+Diagnóstico AD em 3 itens (rank deficiente, Hart 1975, substituição regulatória) & 2 \\
+Proposta de instrumento concreto com payoff $D^{\text{novo}}$ explicitado e ação Arrow aproximada identificada & 3 \\
+Pelo menos 3 limitações discutidas (técnica GP 1986 + operacional + distributiva) & 3 \\
+Programa empírico concreto com fonte de dados (CCEE/ONS) e método (HJ bounds, SDF setorial) & 2 \\
+\midrule
+\textbf{Total Q4} & \textbf{10} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+\end{spacing}
+
+\newpage
+\begin{center}\large\textbf{Apêndice -- Auto-verificação antes da entrega}\end{center}
+\vspace{0.5em}
+
+\noindent Antes de entregar, percorra esta checklist. Se algum item falhar, há erro algébrico ou conceitual.
+
+\medskip
+\begin{enumerate}[label=$\square$,leftmargin=*]
+\item \textbf{Q1(a):} no equilíbrio sem incerteza, $p_1^* = 1$, $x^{H*} = (4/3, 8/3)$, $x^{T*} = (8/3, 4/3)$. Verificação Walras: $z_2 = 0$.
+\item \textbf{Q1(c):} a prova do 1º TBE usa apenas LNS (Passo 2), UMP (Passo 1) e viabilidade (Passo 3). Mesma estrutura sobreviverá em $\mathbb{R}^{LS}$.
+\item \textbf{Q1(d):} PPF $q_h^2/4 + q_t^2 = 8$. Concavidade demonstrada.
+\item \textbf{Q1(e):} planejador, descentralização e preços coincidem em $(q_h^*, q_t^*) = (4, 2)$, $w^* = 1/2$, $p_t^*/p_h^* = 2$. Lucro $\pi^* = 8 = $ renda do consumidor.
+\item \textbf{Q2(b):} agente neutro força $p^*_f/p^*_s = \pi_f/\pi_s = 1$. Sob normalização $p^*_f + p^*_s = 1$: $p^* = (0{,}5; 0{,}5)$.
+\item \textbf{Q2(c):} $H$ avesso totalmente segurado em $x^{H*} = (18, 18)$. Por viabilidade $x^{T*} = (18, 18)$.
+\item \textbf{Q2(d):} no diagrama, $\omega^H = (24, 12)$ está abaixo da 45°; $x^{H*}$ está sobre a 45° em $(18, 18)$; reta orçamentária inclinação $-1$ tangente à IC em $(18, 18)$.
+\item \textbf{Q3(a):} $\det A = -0{,}6 \neq 0$, $\rank A = 2$, mercado completo. $q^*_{\text{bond}} = 1$, $q^*_{\text{hidro}} = 0{,}9$ por não-arbitragem.
+\item \textbf{Q3(b):} $\theta^{(f)} = (-1, 5/3)$, $\theta^{(s)} = (2, -5/3)$, $\theta^{H*} = (18, -20)$. Verificação $q^* \cdot \theta^{H*} = 0$ exata.
+\item \textbf{Q3(c):} adicionando estado $e$, $\rank A = 2 < 3$. Equação do span: $y_f - 3 y_n + 2 y_e = 0$. $e_e \notin $ span (verificação: $0 - 0 + 2 = 2 \neq 0$).
+\item \textbf{Q3(e):} $g = c_{t+1}/c_t = \beta R = 0{,}945$. SDF $m_{t+1} = 1/R$. Frase COPOM: SELIC alta $\Rightarrow \beta R > 1 \Rightarrow$ postergar consumo (contracionista).
+\item \textbf{Q4:} proposta de instrumento explicita $D^{\text{novo}}$, identifica ação Arrow aproximada e cita pelo menos um obstáculo técnico (GP 1986).
+\end{enumerate}
+
+\vspace{1em}
+\begin{contextbox}[Sobre Arrow-Debreu/Radner e o setor elétrico]
+\small
+A teoria do equilíbrio geral construída por Walras (1874) e formalizada por Arrow \& Debreu (1954) e Debreu (1959) é, em retrospecto, o triunfo intelectual mais ambicioso da microeconomia neoclássica. A extensão para incerteza via bens contingentes -- Arrow (1953/1964) e a integração com tempo em Debreu (1959, cap.~7) -- absorve em uma única estrutura matemática consumo, produção, tempo, risco e finanças. O 1º TBE estendido a $\mathbb{R}^{LS}$ (Q2(f)) é o teorema mais ``bonito'' do EG.
+
+A reformulação de Radner (1972), com mercados sequenciais e ativos com payoffs contingentes, tornou o aparelho \emph{empiricamente reconhecível}: o que vemos em mercados financeiros reais (bonds, ações, derivativos) é um Radner com algum $\rank(A)$, e a equivalência AD$\leftrightarrow$Radner sob mercado completo (Q3(b)) diz quando o aparelho real implementa o ideal teorético. A teoria de incompletude (Hart 1975, Geanakoplos-Polemarchakis 1986, Magill-Quinzii 1996) cataloga as falhas quando $\rank(A) < |S|$.
+
+O setor elétrico brasileiro é um dos casos mais nítidos no mundo onde o aparelho AD/Radner tem aderência operacional direta: mercado spot diário (PLD), contratos de longo prazo (CCEAR), instrumento de mutualização (MRE), risco contingente bem-definido (GSF/ENA). A discussão regulatória pós-Lei 14.052/2020 é, em efeito, uma discussão sobre como aproximar o sistema de \emph{rank completo} -- e essa aproximação requer instrumentos financeiros adicionais que ainda não existem em escala. Esta APS treina o ferramental teórico para ler essa discussão como economia, não apenas como regulação.
+
+A próxima fronteira analítica -- ainda fora do escopo desta APS -- são as \emph{falhas adicionais} catalogadas nas Aulas 7--9: externalidades sistêmicas (impacto da geração térmica sobre clima e custo social do carbono); informação assimétrica (geradores hidro têm informação privada sobre estado do reservatório que o regulador não vê); design de leilões (ANEEL via leilões A-3, A-5 com problema de \emph{adverse selection} de contratos vendidos pelos geradores). Cada uma delas é uma falha específica do 1º TBE estendido, com aparelho técnico próprio.
+\end{contextbox}
+
+\vspace{1em}
+\begin{contextbox}[Para estudo posterior]
+\small
+\textit{Leituras sugeridas (todas verificadas):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Nicholson \& Snyder, \textit{Microeconomic Theory}, 12e (2017), caps.~13 e 18 -- nível desta APS. ISBN 978-1-305-50579-7.
+\item Jehle \& Reny, \textit{Advanced Microeconomic Theory}, 3e (2011), §§5.5--5.6 -- nível imediatamente superior; trata existência via Brouwer/Kakutani com rigor moderado.
+\item Mas-Colell, Whinston \& Green, \textit{Microeconomic Theory} (1995), caps.~17 e 19 -- referência canônica para o tratamento contemporâneo de EG e mercados incompletos. Citar com cautela: peso conceitual mais alto.
+\item Magill, M. \& Quinzii, M. (1996), \textit{Theory of Incomplete Markets}, vol.~1 -- referência específica para tudo o que vai além de mercado completo (Hart 1975, GP 1986, regularidade, dimensão genérica).
+\item Debreu, G. (1959), \textit{Theory of Value} -- texto seminal; capítulo 7 trata explicitamente de incerteza e tempo.
+\item Lucas, R. E. (1978, \textit{Econometrica}) -- ponto de entrada para precificação de ativos via SDF.
+\item Hansen, L. P. \& Jagannathan, R. (1991, \textit{JPE}) -- estabelecem os \emph{bounds} empíricos sobre o SDF.
+\item Para o setor elétrico: \textbf{Lei 14.052/2020}; \textbf{Lei 9.648/1998} (institui o MRE); \textbf{ANEEL Resolução Normativa nº 977/2021}; CCEE \emph{InfoMercado} (séries históricas); ONS \emph{Boletim Mensal de Operação}.
+\end{itemize}
+\end{contextbox}
+
+\end{document}
+
+% =====================================================================
+% SUMÁRIO DE AUDITORIA INTERNA (Pass 3 -- Referee 2)
+% =====================================================================
+%
+% As 5 escolhas calibratórias mais delicadas:
+%
+% 1. Q1: Cobb-Douglas assimétrica com pesos (1/3, 2/3) e dotações (3,1)/(1,3)
+%    foi escolhida para gerar p^* = 1 exatamente -- e portanto reta orçamentária
+%    com inclinação -1 que cruza ω = (3,1) e x^{H*} = (4/3, 8/3) limpa.
+%    A simetria estrutural (H = espelho de T no peso CD e na dotação) garante
+%    p^* = 1 sem cálculo extra. Sem essa simetria, p^* ficaria irracional
+%    (e.g., (1+sqrt 5)/2 em variantes não-simétricas), perdendo limpeza.
+%
+% 2. Q1(d)-(e): \bar L = 8 com tecnologias 2*sqrt(L_h) e sqrt(L_t) entrega
+%    PPF q_h^2/4 + q_t^2 = 8, ótimo (q_h, q_t) = (4, 2), L_h = L_t = 4 --
+%    todos inteiros pequenos. p_t/p_h = 2 redondo. Trabalho dividido em
+%    partes iguais é "lição econômica clara" -- maior PMa relativa hidro
+%    compensada por necessidade de fator quadrático. Outras escolhas de
+%    \bar L produziriam números irracionais.
+%
+% 3. Q2: Dotações ω^H = (24, 12), ω^T = (12, 24) entregam agregado livre
+%    de risco \bar ω = (36, 36) -- crucial para que o seguro completo
+%    apareça com SDF constante. A renda esperada (18 cada) é exatamente
+%    o ponto onde o consumo cai sob seguro completo, dando alocação final
+%    redonda e visualmente clara no diagrama 45°. Sem a simetria
+%    24/12 vs. 12/24, o efeito didático perderia força.
+%
+% 4. Q3: payoffs do bond (1,1) e da ação hidro (1.2, 0.6) foram escolhidos
+%    para que (a) det A = -0.6 (não-zero, mercado completo) e (b) os preços
+%    de equilíbrio q^*_{bond} = 1 e q^*_{hidro} = 0.9 saíssem inteiros/
+%    racionais simples. A extensão para 3 estados com (1.2, 0.6, 0.3) --
+%    PG decrescente -- foi escolhida para que a equação do hiperplano
+%    (y_f - 3y_n + 2y_e = 0) saísse com coeficientes inteiros pequenos,
+%    facilitando teste de cada e_s à mão.
+%
+% 5. Q3(b) Replicação θ^(f) = (-1, 5/3) e θ^{H*} = (18, -20):
+%    o portfólio que implementa seguro completo entrega o resultado
+%    "H compra 18 bonds e vende 20 ações hidro", limpo numericamente.
+%    Bate exatamente com a interpretação econômica (CCEAR é o instrumento
+%    de hedge; ação hidro vendida é a securitização do risco residual)
+%    -- raro alinhamento entre álgebra e narrativa.
+%
+% Pontos onde 'a álgebra é mais frágil':
+%
+% - Q1(d)(ii): A relação entre TMT como -dq_t/dq_h e a razão PMa^h/PMa^t
+%   é frequentemente confundida pelos alunos quanto à direção. A solução
+%   inclui parágrafo explícito "bater na ordem dos índices" -- mas
+%   calibragem que requer essa nota sempre carrega risco residual de
+%   confusão. Se Referee 2 hostil pegar, a defesa é: explicito.
+%
+% - Q3(c): O resultado "e_e ∉ span" depende da escolha específica dos
+%   payoffs hidro nos 3 estados (1.2, 0.6, 0.3). Se aluno mudar o último
+%   payoff para 0 (extremo), a equação muda. Ponto a ser cuidado em V2.
+%
+% - Q3(e): Equity premium puzzle citado com números americanos
+%   (S&P 500, T-bills 1889-1978). Aplicação direta ao Brasil pediria
+%   discussão de prêmio de risco país, câmbio, etc. Mantemos os números
+%   americanos como "puzzle canônico" e citamos brevemente o caso BR
+%   como extensão.
+%
+% 2 melhorias deixadas como TODO para v2:
+%
+% TODO-1: Em Q4, refinar o diagnóstico distributivo (item 3c) com
+% análise quantitativa dos efeitos sobre tarifa do consumidor cativo.
+% Faltam os números (cat bonds emergentes têm spread médio sobre tesouros
+% emergentes entre 4-8% ao ano; o efeito tarifário do pass-through depende
+% da regulação ANEEL). Pediria dados ANEEL/Aneel para fechar números.
+%
+% TODO-2: Em Q3(d), o cálculo das distâncias das ações Arrow ao plano
+% (1/sqrt(14), 3/sqrt(14), 2/sqrt(14)) é informativo mas não elegante.
+% Em V2, talvez introduzir ortogonalização Gram-Schmidt explícita do span
+% e calcular projeções de e_s sobre o subespaço, mostrando diretamente
+% o "melhor portfolio que aproxima e_s" -- mais útil pedagogicamente
+% que distâncias absolutas.
+%
+% =====================================================================

@@ -1,0 +1,259 @@
+\documentclass[11pt]{article}
+
+% ---------- Codificacao e idioma ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+
+% ---------- Matematica ----------
+\usepackage{amsmath,amssymb}
+
+% ---------- Layout ----------
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+
+% ---------- Cores Insper ----------
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{insperdark}{HTML}{9A0C23}
+\definecolor{azulbox}{HTML}{1B3A5C}
+\definecolor{papersoft}{HTML}{F7F7F5}
+
+% ---------- Hyperref ----------
+\usepackage[colorlinks=true,linkcolor=insperdark,urlcolor=insperdark]{hyperref}
+
+% ---------- Caixas ----------
+\newtcolorbox{setupbox}{
+  breakable, colback=papersoft, colframe=insperred, boxrule=0.8pt,
+  arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries\color{white}, coltitle=white, colbacktitle=insperred,
+  title=Setup --- escreva no quadro}
+
+\newtcolorbox{intuibox}{
+  breakable, colback=insperred!6, colframe=insperred!55, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+\newtcolorbox{armadbox}{
+  breakable, colback=yellow!8, colframe=orange!70!black, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+% ---------- Cabecalho de exercicio ----------
+\newcommand{\exercicio}[2]{%
+  \bigskip
+  {\color{insperred}\rule{\textwidth}{1.2pt}}\par
+  \nopagebreak
+  {\Large\bfseries\color{insperred} Exercício #1.}\quad{\large #2}\par
+  \nopagebreak
+  {\color{insperred}\rule{\textwidth}{0.4pt}}\par
+  \smallskip}
+
+\newcommand{\passo}[1]{\par\medskip\noindent{\bfseries\color{insperdark}#1}\par}
+
+\setlist[enumerate]{leftmargin=2.2em,itemsep=2pt,topsep=3pt}
+
+% ---------- Atalhos de notacao ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ck}{\ensuremath{\checkmark}}
+
+\begin{document}
+
+% ===================== TITULO =====================
+\begin{center}
+  {\LARGE\bfseries\color{insperred} Aula 6 --- Arrow--Debreu II}\\[2pt]
+  {\large Dois exercícios numéricos resolvidos passo a passo}\\[4pt]
+  {\normalsize Microeconomia I \textbullet{} MPE 2026/32 \textbullet{} Insper \textbullet{} para resolução em sala}
+\end{center}
+\vspace{2pt}
+{\color{insperred!40}\hrule height 1pt}
+\vspace{4pt}
+
+\noindent\textit{Os dois exemplos são complementares: o Ex.~1 mostra \textbf{mercado completo} com risco agregado (equivalência AD\,$\leftrightarrow$\,Radner, preços de Arrow como SDF); o Ex.~2 mostra \textbf{mercado incompleto} (span, ineficiência de Hart, completar o mercado). Números distintos dos exercícios avaliativos.}
+
+% ===================== EXERCICIO 1 =====================
+\exercicio{1}{Mercado completo: equilíbrio AD, preços de Arrow e implementação Radner (com \emph{risco agregado})}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item 1 bem por estado, \textbf{2 estados}: $s=1$ (recessão), $s=2$ (expansão). $I=2$ agentes.
+  \item Crenças $\pi=(1/2,\,1/2)$; utilidade \textbf{log}: $u^i=\tfrac12\ln c_1+\tfrac12\ln c_2$.
+  \item Dotações $\omega^A=(60,\,60)$, $\omega^B=(40,\,240)$.
+  \item Agregado $\bar\omega=(100,\,300)$ --- \textbf{arriscado} (a expansão triplica o estado~1).
+  \item Mercado de Radner: título $D^{\mathrm{bond}}=(1,1)$ e ação $D^{\mathrm{ação}}=(1,3)$, com
+        matriz de payoffs $A=\begin{pmatrix}1&1\\1&3\end{pmatrix}$.
+\end{itemize}
+\textbf{Perguntas.} (a) preços de Arrow $p$ (normalize $p_1+p_2=1$); (b) alocação de equilíbrio AD;
+(c) preços dos ativos por não-arbitragem; (d) portfólio Radner $\theta^A$ que implementa $c^A$ + restrição em $t=0$;
+(e) \emph{clearing} do mercado de ativos.
+\end{setupbox}
+
+\passo{Passo 0 --- Demanda log (deduza no quadro).}
+$\max\sum_s\pi_s\ln c_s$ sujeito a $\sum_s p_s c_s=m^i$. CPO: $\pi_s/c_s=\lambda p_s\Rightarrow c_s=\pi_s/(\lambda p_s)$.
+Na restrição, $\sum_s p_s c_s=\tfrac1\lambda\sum_s\pi_s=\tfrac1\lambda=m^i$, logo
+\[
+  \boxed{\,c^i_s=\frac{\pi_s\,m^i}{p_s}\,},\qquad m^i=p\cdot\omega^i.
+\]
+O consumidor gasta a fração $\pi_s$ da riqueza no \emph{claim} do estado $s$ (Cobb--Douglas/log).
+
+\passo{Passo 1 --- Preços de Arrow (a).}
+\emph{Clearing} no estado $s$: $\sum_i c^i_s=\bar\omega_s$, ou seja
+\[
+  \frac{\pi_s}{p_s}\underbrace{(m^A+m^B)}_{=\,M\,=\,p\cdot\bar\omega}=\bar\omega_s
+  \;\Longrightarrow\;
+  p_s=\frac{\pi_s\,M}{\bar\omega_s}\;\propto\;\frac{\pi_s}{\bar\omega_s}.
+\]
+Com $\pi=(1/2,1/2)$: $p_s\propto 1/\bar\omega_s$, então $p_1:p_2=\tfrac1{100}:\tfrac1{300}=3:1$. Logo
+\[
+  \boxed{\,p=(3/4,\;1/4)\,}.
+\]
+
+\begin{intuibox}
+\textbf{Intuição (SDF / consumption-CAPM).} $p_s/\pi_s=M/\bar\omega_s$ é \emph{maior no estado escasso}
+(recessão). Consumir na recessão é \emph{caro} porque todo mundo está pobre lá. O preço de Arrow por unidade
+de probabilidade \emph{é} o fator de desconto estocástico.
+\end{intuibox}
+
+\passo{Passo 2 --- Alocação de equilíbrio (b).}
+Riquezas: $m^A=\tfrac34(60)+\tfrac14(60)=45+15=60$ e $m^B=\tfrac34(40)+\tfrac14(240)=30+60=90$.
+(Cheque: $M=60+90=150=p\cdot\bar\omega=\tfrac34(100)+\tfrac14(300)=75+75=150$ \ck.)
+\[
+  c^A=\Big(\tfrac{(1/2)\,60}{3/4},\;\tfrac{(1/2)\,60}{1/4}\Big)=(40,\,120),
+  \qquad
+  c^B=\Big(\tfrac{(1/2)\,90}{3/4},\;\tfrac{(1/2)\,90}{1/4}\Big)=(60,\,180).
+\]
+\emph{Clearing}: $(40{+}60,\;120{+}180)=(100,300)=\bar\omega$ \ck. \quad
+Trocas: $A:(-20,+60)$, $B:(+20,-60)$, soma nula \ck.
+
+\begin{intuibox}
+\textbf{Ponto pedagógico de ouro.} $A$ começou \textbf{seguro} $(60,60)$ e termina \textbf{arriscado} $(40,120)$.
+Com risco agregado \emph{ninguém} se segura totalmente: cada agente consome uma \textbf{fração fixa do agregado}
+($c^A/\bar\omega=(0{,}4;\,0{,}4)$, $c^B/\bar\omega=(0{,}6;\,0{,}6)$), igual à sua participação na riqueza
+($m^A/M=0{,}4$). É o \textbf{princípio da mutualidade de Borch}.
+\end{intuibox}
+
+\passo{Passo 3 --- Preços dos ativos (c), não-arbitragem $q_j=\sum_s p_s A_{sj}$.}
+\[
+  q_{\mathrm{bond}}=\tfrac34(1)+\tfrac14(1)=1,
+  \qquad
+  q_{\mathrm{ação}}=\tfrac34(1)+\tfrac14(3)=\tfrac34+\tfrac34=\tfrac32=1{,}5.
+\]
+\emph{Extensão.} Retorno esperado da ação $=\tfrac12(1)+\tfrac12(3)=2$; retorno bruto esperado $=2/1{,}5\approx1{,}33>R_f=1$.
+O \textbf{prêmio de risco é positivo} porque a ação paga mais na expansão (estado de Arrow barato): covaria com a
+riqueza agregada e por isso exige prêmio.
+
+\passo{Passo 4 --- Portfólio Radner de $A$ (d).}
+Troca líquida $c^A-\omega^A=(40-60,\;120-60)=(-20,\,60)$. Resolva $A\theta^A=(-20,60)$:
+\[
+  \begin{cases}
+    \theta_{\mathrm{bond}}+\theta_{\mathrm{ação}}=-20 & (\text{estado }1)\\[2pt]
+    \theta_{\mathrm{bond}}+3\theta_{\mathrm{ação}}=60 & (\text{estado }2)
+  \end{cases}
+  \;\Rightarrow\;
+  2\theta_{\mathrm{ação}}=80\Rightarrow\theta_{\mathrm{ação}}=40,\;\;\theta_{\mathrm{bond}}=-60.
+\]
+\[
+  \boxed{\,\theta^A=(-60,\,40)\,}\quad(\text{vende 60 títulos, compra 40 ações}).
+\]
+\textbf{Restrição em $t=0$:} $q\cdot\theta^A=1(-60)+1{,}5(40)=-60+60=0$ \ck{} --- algebricamente equivalente à
+Lei de Walras AD de $A$.
+
+\passo{Passo 5 --- \emph{Clearing} de ativos (e).}
+Por simetria, $A\theta^B=(20,-60)\Rightarrow\theta^B=(60,-40)$, com $q\cdot\theta^B=60-60=0$ \ck{} e
+$\theta^A+\theta^B=(0,0)$ \ck. \;
+\textbf{Fechamento:} a sequência Radner reproduz \emph{exatamente} a alocação AD $(40,120)/(60,180)$ --- mesma
+economia, instituição diferente, porque $\operatorname{rank}(A)=2=|S|$.
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) normalizar $p$ por $\pi$ esquecendo $\bar\omega$; (ii) confundir a troca líquida $c-\omega$
+com o próprio $\theta$ (esquecer o $A^{-1}$); (iii) achar que $A$ ``deveria'' continuar seguro.
+\end{armadbox}
+
+% ===================== EXERCICIO 2 =====================
+\exercicio{2}{Mercado \textbf{incompleto}: span, seguro inviável e completar o mercado (Hart/GP)}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item 1 bem por estado, \textbf{3 estados}, $I=2$, $\pi=(1/3,1/3,1/3)$, utilidade log.
+  \item Dotações $\omega^A=(100,\,40,\,40)$, $\omega^B=(20,\,80,\,80)$. Agregado $\bar\omega=(120,120,120)$ --- \textbf{livre de risco}.
+  \item \textbf{Cenário 1:} título $(1,1,1)$ + ação $(0,1,2)$, $A_2=\begin{pmatrix}1&0\\1&1\\1&2\end{pmatrix}$.
+  \item \textbf{Cenário 2:} acrescenta opção $(0,0,1)$, $A_3=\begin{pmatrix}1&0&0\\1&1&0\\1&2&1\end{pmatrix}$.
+\end{itemize}
+\textbf{Perguntas.} (a) rank/completude no Cenário 1; (b) o seguro total de $A$ está no span?
+(c) preços de Arrow do AD ideal; (d) Cenário 2: complete o mercado e ache $\theta^A$ + restrição $t=0$;
+(e) bem-estar --- completar ajuda ou prejudica aqui?
+\end{setupbox}
+
+\passo{Passo 1 --- Rank e completude (a).}
+As colunas $(1,1,1)^\top$ e $(0,1,2)^\top$ não são múltiplas $\Rightarrow$ independentes $\Rightarrow$
+$\operatorname{rank}(A_2)=2<3=|S|$. \textbf{Mercado incompleto}; o span é um plano 2D em $\R^3$.
+
+\passo{Passo 2 --- Alocação ideal AD e teste de span (b).}
+Agregado livre de risco + log + crenças uniformes $\Rightarrow$ \textbf{seguro total}. A preços justos
+$p=(1/3,1/3,1/3)$, $m^A=\tfrac13(100{+}40{+}40)=60\Rightarrow c^A=(60,60,60)$. Transferência necessária:
+\[
+  c^A-\omega^A=(60-100,\;60-40,\;60-40)=(-40,\,20,\,20).
+\]
+Está no span? Resolva $a(1,1,1)+b(0,1,2)=(-40,20,20)$:
+\[
+  s_1:\;a=-40;\qquad s_2:\;a+b=20\Rightarrow b=60;\qquad s_3:\;a+2b=-40+120=80\neq20.
+\]
+\textbf{Inconsistente $\Rightarrow(-40,20,20)\notin$ span: $A$ não consegue se segurar totalmente.}
+
+\begin{intuibox}
+\textbf{Intuição.} Os instrumentos só geram transferências nas direções ``uniforme'' $(1,1,1)$ e ``inclinada
+pro estado 3'' $(0,1,2)$. $A$ precisaria \emph{ganhar igual nos estados 2 e 3} cortando o estado 1 --- mas a ação
+paga \emph{mais no 3 que no 2}, e nenhuma combinação entrega isso. O equilíbrio Radner \emph{existe}
+(Magill--Quinzii), é \textbf{constrained Pareto-eficiente} (ótimo dentro do span), mas \textbf{Pareto-inferior}
+ao AD ideal --- Hart (1975).
+\end{intuibox}
+
+\passo{Passo 3 --- Preços de Arrow do AD ideal (c).}
+Agregado constante + crenças uniformes $\Rightarrow$ preços \textbf{atuarialmente justos} $p=(1/3,1/3,1/3)$
+(mesmo argumento $p_s\propto\pi_s/\bar\omega_s$ do Ex.~1). Não-arbitragem:
+\[
+  q_{\mathrm{bond}}=\tfrac13(1{+}1{+}1)=1,\quad
+  q_{\mathrm{ação}}=\tfrac13(0{+}1{+}2)=1,\quad
+  q_{\mathrm{opção}}=\tfrac13(0{+}0{+}1)=\tfrac13.
+\]
+
+\passo{Passo 4 --- Cenário 2: completar e implementar (d).}
+$\det A_3=1$ (triangular inferior, diagonal $1{\cdot}1{\cdot}1$) $\neq0\Rightarrow\operatorname{rank}=3\Rightarrow$
+\textbf{mercado completo}. Agora $(-40,20,20)$ é alcançável. Resolva $A_3\,\theta^A=(-40,20,20)$:
+\[
+  s_1:\;a=-40;\quad s_2:\;a+b=20\Rightarrow b=60;\quad s_3:\;a+2b+c=20\Rightarrow-40+120+c=20\Rightarrow c=-60.
+\]
+\[
+  \boxed{\,\theta^A=(-40,\,60,\,-60)\,}\quad(\text{vende 40 títulos, compra 60 ações, vende 60 opções}).
+\]
+\textbf{Restrição em $t=0$:} $q\cdot\theta^A=1(-40)+1(60)+\tfrac13(-60)=-40+60-20=0$ \ck.
+
+\passo{Passo 5 --- Bem-estar (e).}
+Como o agregado é \textbf{livre de risco}, o seguro total $(60,60,60)$ é viável para ambos no Cenário 2 e
+estritamente preferido (aversão a risco) a qualquer alocação não-segurada do Cenário 1. Logo
+\textbf{Cenário 2 $\succ_{\text{Pareto}}$ Cenário 1}: aqui, completar o mercado \textbf{melhora} todo mundo.
+
+\begin{intuibox}
+\textbf{Contraste crucial (GP 1986).} Isso só vale porque o agregado é \emph{livre de risco} (alocação ideal
+simétrica, ambos ganham). Se o agregado fosse \emph{arriscado} (como no Ex.~1), completar redistribuiria risco
+e \emph{poderia prejudicar} algum agente --- ``mais ativos'' não é trivialmente bom. É a fronteira entre Hart
+(ineficiência genérica) e Geanakoplos--Polemarchakis (completar pode piorar).
+\end{intuibox}
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) testar só 2 das 3 equações no span e concluir errado; (ii) confundir
+``ineficiente'' com ``inexistente'' (o equilíbrio Radner \emph{existe}); (iii) generalizar ``completar sempre
+melhora'' --- exatamente o que GP derruba.
+\end{armadbox}
+
+% ===================== USO EM SALA =====================
+\bigskip
+{\color{insperred!40}\hrule height 1pt}
+\smallskip
+\noindent\textbf{\color{insperred}Sugestão de uso (3h).} O Ex.~1 fecha o Bloco~2 ($\sim$20 min de quadro, com a
+turma propondo cada passo); o Ex.~2 abre/fecha o Bloco~3 ($\sim$20 min), e o item (e) faz a ponte natural para
+Geanakoplos--Polemarchakis (1986).
+
+\end{document}

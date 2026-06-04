@@ -1,0 +1,143 @@
+{
+ "auditoria": {
+  "aprovado": true,
+  "parecer": "APROVADA. Auditoria cruzada completa dos 20 slots (16 objetivas + 4 abertas com 12 sub-itens). PONTUAÇÃO: 4 blocos × 25 = 100; cada bloco com 2 ME (3 pts) + 2 V/F (2 pts) + aberta 15 (5+5+5) — confere. GABARITOS: todos batem com o esperado — B1 (B,E / V,F), B2 (A,C / F,V), B3 (D,B / F,V), B4 (C,E / V,F). Re-resolvi cada item de forma independente: Slutsky -3+20(-0,2)=-7 ✓; Roy (3/4)(120)/(4·3)=30 ✓; UMP-dualidade m/(2p): cestas 36→4, receita 32, v=m/(2√p₁), CV=216-72=144, L*=EV=48, peso-morto=16 e a verificação por dualidade (cesta (4,36) custa 40=72-32, reotimiza v(1,40)=20>12) fecha perfeitamente ✓; EG Cobb-Douglas mᴬ=8p₁ ⇒ 6+4/p₁=8 ⇒ p₁*=2 com checagem de Walras no mercado 2 ✓; Arrow não-arbitragem q=(0,6;0,3), P_Z=21 com replicação a=3,b=8 custo 21 ✓; bens contingentes ln: W=70 c=(70,70) sob preços justos, W=60 c=(80,40) sob carregamento, loading 50% ✓; Pigou s*=MEB=8 ✓; comuns médio(90-N)=30 vs marginal(90-2N)=30 ⇒ 60 vs 30 ✓; Samuelson 16/G=1 ⇒ G*=16, Lindahl τ=(1/4,3/4) somando 1, voluntária G^N=12<16 (B carrega, A pega carona) ✓; lemons média condicional (2/3)p ⇒ k≥3/2 ✓; garantia B≥Δ/p_F=15 com teto 45 ✓; screening FB Π=41, SB q_L=6/T_L=48/T_H=88/U_H=12/Π=34, custo 7 = renda informacional 6 + perda eficiência 1 ✓. FATOS verificados via WebSearch: fim da taxa das blusinhas (MP 13/05/2026, alíquota federal 20%) ✓; pedágio de Manhattan abaixo da Rua 60, US$9, jan/2025, primeiro dos EUA ✓; fusão Petz-Cobasi aprovada pelo CADE com restrições (dez/2025) e setor pet ~R$80 bi ✓; Smart Fit >2.000 academias e receita R$7,2 bi em 2025, líder na América Latina ✓; cacau ~US$12 mil/t na bolsa de NY em 2024 ✓; acordo Samarco/Rio Doce R$170 bi (out/2024, MG-ES) ✓. PARALELO SEM CÓPIA: nos 6 slots mais arriscados, todos os números e respostas finais diferem dos originais dos simulados (B1-Aberta 144/48/16 vs 80/40/10; B4-Aberta q_L=6 vs 2, custo 7 vs 8; B3-Aberta G*=16 vs 9; B4-ME1 k≥3/2 vs 2; B4-ME2 B=15 vs 12; B1-ME1 -7 vs -5) — sem clonagem. ÂNCORAS: nenhuma repetida entre blocos; e — ponto de maior mérito — toda fonte cuja âncora original estava na lista proibida foi corretamente REANCORADA (Brasil-China→Mercosul-UE; queimadas 2024→Samarco; Webmotors→recommerce; ENARE/NRMP, SiSU, creches/Gale-Shapley→SNT/SNA; BYD→Casas Bahia/Samsung; rizicultores RS→Serra Gaúcha; pedágio SP→Manhattan; suco de laranja→cacau). NOTAÇÃO: \\text{TMS}, vírgula decimal 0{,}25, \\succeq, ln(G) em bens públicos (conforme memória do projeto, com peer-review explicando o porquê do ln vs √). Nenhuma nota interna vaza para o corpo do enunciado do aluno. As ressalvas abaixo são todas MENORES e não comprometem a integridade da prova.\n\nTABELA SLOT→FONTE:\nB1-ME1 → Sim3/B1/ME2 (Slutsky inferior) | B1-ME2 → Sim2/B1/ME2 (Roy) | B1-VF1 → Sim2/B1/VF1 (Engel) | B1-VF2 → Sim1/B1/VF2 (lex) | B1-Aberta → Sim3/B1/Aberta (Cobb tax/CV/lump-sum)\nB2-ME1 → Sim1/B2/ME1 (EG trocas) | B2-ME2 → Sim3/B2/ME2 (Arrow) | B2-VF1 → Sim2/B2/VF1 (convexidade) | B2-VF2 → Sim3/B2/VF1 (incompleto) | B2-Aberta → Sim1/B2/Aberta (contingentes ln)\nB3-ME1 → Sim2/B3/ME1 (Pigou) | B3-ME2 → Sim3/B3/ME2 (comuns) | B3-VF1 → Sim3/B3/VF2 (interestadual) | B3-VF2 → Sim3/B3/VF1 (soma vertical) | B3-Aberta → Sim1/B3/Aberta (Samuelson/Lindahl/carona)\nB4-ME1 → Sim1/B4/ME1 (lemons) | B4-ME2 → Sim3/B4/ME1 (garantia) | B4-VF1 → Sim2/B4/VF1 (par bloqueante) | B4-VF2 → Sim1/B4/VF2 (Gale-Shapley) | B4-Aberta → Sim3/B4/Aberta (screening)\nCobertura: cada bloco usa os 3 simulados (B1:{1,2,3}, B2:{1,2,3}, B3:{1,2,3}, B4:{1,2,3}); os três simulados aparecem na prova; nenhum item-fonte exato (Sim+Bloco+slot) é reutilizado — onde um mesmo par (Sim,Bloco) reaparece (Sim3/B2, Sim3/B3, Sim1/B4, Sim3/B4) o slot-tipo é sempre distinto.",
+  "issues": [
+   {
+    "bloco": 3,
+    "gravidade": "menor",
+    "onde": "Bloco 3 — distribuição de fontes (B3-ME2, B3-VF1, B3-VF2 todas do Simulado 3)",
+    "problema": "O Bloco 3 puxa três de seus cinco slots do mesmo Simulado 3 (ME2, VF1 e VF2). A regra '≥2 simulados por bloco' é satisfeita (Sim2 no ME1 e Sim1 na Aberta), e nenhum item-fonte exato repete, mas a concentração deixa o Bloco 3 mais previsível para quem treinou intensamente o Simulado 3 do que os demais blocos, que distribuem melhor entre as três fontes.",
+    "correcao_sugerida": "Opcional: trocar uma das duas V/F do Bloco 3 por um análogo do Simulado 1 ou 2 (p.ex. uma V/F de Coase/bem público do Sim1 ou Sim2) para equilibrar a pegada das fontes. Não é obrigatório — apenas reduz a assimetria de previsibilidade entre blocos."
+   },
+   {
+    "bloco": 1,
+    "gravidade": "menor",
+    "onde": "B1-ME2 (Smart Fit / Roy), enunciado e resultado x₁=30",
+    "problema": "O resultado numérico x₁=30 'meses de academia' com m=120 e p₁=3 ('unidades monetárias padronizadas') é internamente consistente, mas 30 meses (2,5 anos) de mensalidades é uma quantidade física economicamente artificial para um único cliente. A salvaguarda 'unidades padronizadas' resolve formalmente, porém a interpretação física do número fica forçada.",
+    "correcao_sugerida": "Manter o método, mas reescalar para um número mais palatável (p.ex. p₁=12, m=120 ⇒ x₁=(3/4)(120/12)=7,5, ou ajustar para inteiro), ou redefinir x₁ como 'gasto/índice de adesão' em vez de 'número de meses', evitando que o aluno trave na plausibilidade física de 30 meses."
+   },
+   {
+    "bloco": 0,
+    "gravidade": "menor",
+    "onde": "Tempo global — 180 min para 16 objetivas + 4 abertas densas",
+    "problema": "As quatro questões abertas são pesadas: a B1-Aberta encadeia UMP+demanda+receita, v/e/CV e lump-sum/EV/peso-morto via dualidade num só bloco de 15 pts; B4-Aberta exige first-best, menu second-best com IR/IC e decomposição de custo. Somadas às 16 objetivas (várias com derivação não-trivial), 180 min ficam apertados para o aluno mediano, ainda que viável com consulta A4. Está no limite superior da carga, não além dele.",
+    "correcao_sugerida": "Confirmar o tempo-alvo com telemetria/simulado cronometrado; se a média projetada exceder ~165 min, considerar enxugar um sub-item de uma das abertas (p.ex. tornar o item (iii) de B4-Aberta parcialmente qualitativo) ou reduzir uma derivação objetiva. Caso a prova seja de fato 'difícil mas justa' por design, manter."
+   },
+   {
+    "bloco": 1,
+    "gravidade": "menor",
+    "onde": "B1-Aberta, gancho factual 'Cacau Show — pior resultado em dez anos de lucratividade'",
+    "problema": "A alta do cacau (~US$12 mil/t na bolsa de NY em 2024) e a pressão sobre custos da indústria de chocolate foram confirmadas via WebSearch, mas a citação específica 'Cacau Show reportou o pior resultado em dez anos de lucratividade' não foi corroborada por fonte primária na auditoria. É detalhe acessório (o imposto é declaradamente hipotético), porém é a única afirmação factual do bloco sem confirmação direta.",
+    "correcao_sugerida": "Verificar a citação da Cacau Show em fonte primária antes do uso final; se não confirmada, suavizar para 'pressionou as margens da indústria nacional de chocolate' (afirmação genérica e comprovada) em vez de atribuir um resultado financeiro específico a uma empresa nomeada."
+   }
+  ]
+ },
+ "blocos_refeitos_pos_auditoria": [],
+ "issues_por_bloco": {
+  "1": {
+   "issues_rodada1": [
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva ME2 (Smart Fit / identidade de Roy) — enunciado",
+     "problema": "Duas imprecisões leves de ancoragem da variável quantidade. (1) A definição 'x1 é a mensalidade de academia (em meses de acesso)' mistura preço ('mensalidade' = valor pago) com quantidade ('meses de acesso'), enquanto a fonte paralela (Três Corações, Sim. 2 ME2) é limpa: 'x1 é café (em pacotes)'. (2) O preço p1=R$3 por 'mês de academia' é numericamente irrealista para o setor fitness (uma mensalidade Smart Fit é de dezenas de reais), ao passo que na fonte R$3/pacote de café é plausível e o número não cria atrito com o verniz empírico. Não compromete a matemática (Roy dá x1=30 corretamente, distinto dos 20 da fonte), mas o paralelo perde um pouco da naturalidade empírica que a fonte tinha.",
+     "correcao_sugerida": "Definir a quantidade sem o termo 'mensalidade': por exemplo 'x1 é o número de meses de acesso à academia contratados'. E, se quiser preservar realismo do preço, reescalar para p1=R$90 e m=R$3.600 (mantendo x1=3/4·m/p1=30) ou explicitar que p1 está 'em dezenas de reais' / unidades padronizadas, como já se faz para o bem composto."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva ME1 (taxa das blusinhas / Slutsky bem inferior) — extensão do enunciado",
+     "problema": "O enunciado tem ~115-125 palavras antes das alternativas, acima do alvo de ~110 palavras para ME. O excedente vem do contexto da taxa das blusinhas somado à glosa explicativa da inferioridade ('à medida que enriquece, ele migra para roupas de marcas nacionais'). A fonte paralela (Azul-Gol, Sim. 3 ME2) é mais enxuta (~95 palavras). A ferramenta-núcleo, os dados (efeito total -3, x1=20, dx/dm=-0,2 → -7 vs -5 da fonte) e a estrutura de distratores estão fiéis; é só uma questão de economia de texto.",
+     "correcao_sugerida": "Enxugar o contexto: cortar nomes de plataformas ('Shein, Temu e AliExpress' pode virar 'plataformas internacionais') e condensar a glosa de inferioridade em meia oração. Alvo: trazer o enunciado para ≤110 palavras sem perder a sinalização de que x1 é bem inferior."
+    }
+   ],
+   "pendencias": []
+  },
+  "2": {
+   "issues_rodada1": [
+    {
+     "gravidade": "menor",
+     "onde": "VF1 (Eletrobras/1º TBE), solucao_latex — Passo 3 e o parágrafo imediatamente seguinte",
+     "problema": "Dois parágrafos consecutivos carregam o mesmo rótulo em negrito 'Por que é Falsa', gerando repetição de título. Não há erro matemático nem de gabarito (F está correto, convexidade não é exigida pelo 1º Teorema, apenas LNS); é apenas descuido de apresentação/redundância de rótulo.",
+     "correcao_sugerida": "Renomear o segundo bloco para diferenciar o conteúdo, por exemplo 'Por que é Falsa' (Passo 3) e, no parágrafo seguinte, usar 'Origem do erro' ou 'Confusão entre os dois teoremas': '\\textbf{Origem do erro.} A afirmação transplanta uma hipótese do teorema difícil (2º) para o teorema fácil (1º)...' — mantendo o texto, só ajustando o rótulo para não repetir."
+    },
+    {
+     "gravidade": "grave",
+     "onde": "Objetiva VF1 (Eletrobras / 1º Teorema do Bem-Estar) — paralelo de Simulado 2, Bloco 2, VF1 (cooperativas de café MG)",
+     "problema": "Falha de fidelidade de paralelo do tipo 're-skin cosmético que preserva a resposta'. A proposição testada é IDÊNTICA à fonte, quase palavra por palavra: 'para que todo equilíbrio walrasiano seja Pareto-eficiente (1º Teorema do Bem-Estar) é INDISPENSÁVEL supor preferências convexas', com gabarito F e exatamente o mesmo raciocínio (convexidade é hipótese do 2º Teorema, não do 1º; o 1º só requer não-saciedade local; prova orçamentária). A fonte (café MG) e a nova versão (leilão de capacidade Eletrobras) diferem APENAS no contexto-âncora; a afirmação, o gabarito e a solução são essencialmente copiados. Em VF conceitual, 'dados' = a proposição; aqui ela é a mesma, o que viola o requisito de 'resultado final efetivamente diferente'. Um aluno que estudou o Simulado 2 já viu esta exata questão — não é paralelo, é a mesma prova com logo trocado. O checklist classifica 'mudança cosmética que preserva a resposta' como grave.",
+     "correcao_sugerida": "Mudar a SUBSTÂNCIA testada, não só o contexto. Opções: (i) inverter a polaridade testando o 2º Teorema — 'para descentralizar uma alocação Pareto-eficiente como equilíbrio com transferências lump-sum, é indispensável a convexidade das preferências' (gabarito V), o que muda raciocínio e resposta; (ii) testar se LNS sozinha basta para o 1º Teorema (gabarito V) em vez de afirmar que convexidade é indispensável (gabarito F); (iii) testar a relação entre existência (que pode falhar sem convexidade) e eficiência (que não exige convexidade), distinguindo-as — calibre 🔴 mais alto. Qualquer dessas mantém a ferramenta-núcleo (teoremas do bem-estar) sem reciclar a proposição da fonte."
+    },
+    {
+     "gravidade": "grave",
+     "onde": "Objetiva VF2 (WEG / mercado incompleto) — paralelo de Simulado 3, Bloco 2, VF1 (Embraer/tarifaço)",
+     "problema": "Mesmo defeito: re-skin cosmético que preserva a resposta e o raciocínio. Setup idêntico ao da fonte — 'único ativo negociável é um título livre de risco que paga 1 em ambos os estados; nenhum outro contrato' → 'não consegue transferir recursos do estado favorável (s₂) para o desfavorável (s₁); espaço de carteiras unidimensional; risco específico não-segurável', gabarito V. A solução é praticamente copiada da Embraer (span {(θ,θ)}, dimensão 1<2, payoff (+,−) inatingível). Trocou-se apenas Embraer→WEG e tarifaço→câmbio, mantendo inclusive a convenção favorável=s₂. Proposição, gabarito e derivação são os mesmos da fonte do Simulado 3. Viola 'resultado final efetivamente diferente'.",
+     "correcao_sugerida": "Alterar a estrutura do problema de modo a mudar o raciocínio/resposta. Opções: (i) trocar o ativo livre de risco por um ativo arriscado, p.ex. um único título que paga (2,1) — o span vira {(2θ,θ)}, ainda incompleto, mas a justificativa muda (não é mais 'paga o mesmo nos dois estados') e permite perguntar se um payoff específico é replicável; (ii) introduzir DOIS ativos linearmente independentes e perguntar se o mercado é completo (gabarito V), invertendo a conclusão; (iii) manter um ativo, mas perguntar sobre uma proposição distinta (p.ex. precificação de um forward cambial que completaria o mercado). Mantém a ferramenta (completude/span) sem reciclar a proposição V da fonte."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva ME1 (Mercosul–UE) e ME2 (GNA Açu) — extensão do enunciado",
+     "problema": "Ambos os enunciados de ME ultrapassam o teto-guia de ~110 palavras antes das alternativas (ME1 ~125-130 palavras; ME2 ~110-120), por conta da descrição de duas frases do contexto-âncora (Acordo Mercosul-UE; complexo GNA com terminal de GNL). O contexto é substantivo (não é verniz), mas a verbosidade aproxima o limite e, em ME1, o ultrapassa. A fonte (Sim 1 ME1, Brasil–China) é mais enxuta por usar intro de uma frase.",
+     "correcao_sugerida": "Enxugar a moldura para uma frase. Ex. ME1: 'A conclusão das negociações Mercosul–União Europeia (dezembro de 2024) reacendeu a discussão sobre a troca de grãos (bem 1) por manufaturas (bem 2). Modele o comércio birregional como economia de trocas 2×2...' — cortando a oração 'reacendeu a discussão sobre a pauta de comércio entre as duas regiões, frequentemente descrita como'. Em ME2, reduzir a descrição do complexo GNA a 'maior parque a gás natural da América Latina, com receita dependente do despacho do operador do sistema'."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "Objetiva ME2 (GNA Açu) — matriz de payoffs de X e Y idêntica à fonte (Serena)",
+     "problema": "A matriz de coeficientes do sistema de Arrow (X paga (3,1); Y paga (1,2)) é exatamente a mesma da fonte Simulado 3 ME2 (Serena). Mudaram preços (2,10/1,20 vs 1,90/1,30), o payoff de Z (20,30 vs 10,30) e a resposta (R\\$21 vs R\\$17), o que salva o paralelo de ser cópia. Ainda assim, reutilizar a mesma matriz a inverter dá ao aluno que decorou a fonte meio caminho andado (mesma estrutura de eliminação de Gauss). É borderline aceitável, mas vale registrar para não normalizar.",
+     "correcao_sugerida": "Alterar também os payoffs de X e Y (p.ex. X paga (4,1), Y paga (1,3)), recalculando q e P_Z, para que a própria álgebra de inversão do sistema seja diferente da fonte — não apenas os números do lado direito. Verificar que q₁,q₂>0 e que a carteira replicante exista."
+    }
+   ],
+   "pendencias": []
+  },
+  "3": {
+   "issues_rodada1": [
+    {
+     "gravidade": "menor",
+     "onde": "Aberta, sub-item (b) — solucao_latex, Passo 3 (verificação) e sub-item (c) Passo 1",
+     "problema": "Aparece a dotação ω^i (ex.: 'x^A=ω^A-1/4·G' em (b) e 'max (ω^i-g^i)+θ^i ln(...)' em (c)) sem que o contexto da questão tenha definido qualquer dotação inicial ω^A, ω^B. A álgebra está correta (ω^i é constante e some na CPO), mas o símbolo é introduzido sem definição, o que pode confundir o aluno que tente reconstruir o orçamento.",
+     "correcao_sugerida": "Adicionar uma frase no contexto definindo dotações genéricas (ex.: 'cada empresa dispõe de uma dotação inicial ω^i de bem privado, suficientemente grande para soluções interiores em x^i'), ou substituir ω^i por uma constante neutra (ex.: 'rendimento m^i') já mencionada. Alternativamente, manter quase-linearidade explícita: como x^i entra linearmente, basta notar que a CPO não depende da dotação — registrar isso em uma frase evita o símbolo solto."
+    },
+    {
+     "gravidade": "grave",
+     "onde": "VF1 (INMET / soma vertical vs horizontal), enunciado da afirmação e solução 5-passos — paralelo com Simulado 3, Bloco 3, VF1 (iluminação de praça)",
+     "problema": "A afirmação a ser julgada é CÓPIA VERBATIM da afirmação do Simulado 3 VF1. Comparando palavra por palavra: ambas começam 'para obter a curva de demanda agregada por um bem público puro, somam-se verticalmente as disposições marginais a pagar individuais (a cada quantidade do bem, somam-se os preços que cada agente estaria disposto a pagar por aquela unidade), ao contrário de um bem privado, em que a demanda de mercado se obtém pela soma horizontal das demandas individuais (a cada preço, somam-se as quantidades). A soma vertical reflete que a mesma unidade do bem público é consumida simultaneamente por todos.' — texto idêntico. Os Passos 1-4 da solução também são essencialmente os mesmos (só o exemplo da intuição troca 'pão/praça' por 'fertilizante/alerta INMET'). A resposta (V) é preservada. Como não há dados numéricos a diferenciar, a única alavanca de paralelismo seria mudar o ângulo da pergunta, e isso não foi feito: um aluno que viu o Simulado 3 reconhece a frase inteira e responde sem esforço novo. Pelo checklist (item 1b), 'mudança cosmética que preserva a resposta = grave'.",
+     "correcao_sugerida": "Reescrever a afirmação para testar um aspecto distinto da soma vertical, em vez de repetir a definição canônica. Opções: (i) inverter para uma versão FALSA ('para o bem público puro somam-se HORIZONTALMENTE as quantidades, como no bem privado' → F), forçando o aluno a detectar o erro; (ii) testar a consequência geométrica ('a demanda agregada vertical cruza o CMg no nível de Samuelson; impor preço uniforme per capita NÃO implementa esse nível' — conectando a Lindahl); (iii) manter V mas exigir que o aluno identifique POR QUE a não-rivalidade força a soma vertical num caso-limite (ex.: dois agentes com DMP dadas, qual a altura da curva agregada em G fixo). Qualquer dessas quebra a clonagem verbatim."
+    },
+    {
+     "gravidade": "grave",
+     "onde": "VF2 (Samarco / externalidade interestadual), enunciado + solução Passos 2-3 — paralelo com Simulado 3, Bloco 3, VF2 (queimadas interestadual)",
+     "problema": "A adaptação de contexto degradou o mecanismo de falsidade que tornava o item-fonte limpo. No Simulado 3 (queimadas), os focos estão DISTRIBUÍDOS por vários estados, então mesmo com a alíquota 'certa' um imposto de um só estado deixa fontes de outros estados sem tributo — falsidade clara por COBERTURA PARCIAL. Já no Samarco, a fonte poluidora (a barragem) está CONCENTRADA em um único estado (MG). Como o enunciado estipula que a alíquota é 'calibrada para igualar o dano marginal social total (somado sobre os dois estados)', sob leitura literal um imposto a essa alíquota sobre a única fonte (em MG) faria essa fonte enfrentar o custo social marginal pleno e internalizaria a externalidade — o que aproxima a afirmação de VERDADEIRA. A própria solução reconhece a tensão ('Mesmo que neste caso a fonte esteja concentrada em um estado...') e tenta escapar por (a) argumento de incentivo (o estado calibraria pelo dano próprio) — mas isso CONTRADIZ a hipótese explícita do enunciado de que a alíquota já é a social total; e (b) 'se houvesse fontes em ambos os estados' — hipótese ausente no setting Samarco. O resultado é um item cuja falsidade ficou logicamente frágil: um aluno cuidadoso pode defender V sob a leitura literal. O mecanismo de falsidade (cobertura) exige fontes distribuídas; o contexto escolhido tem fonte única.",
+     "correcao_sugerida": "Duas saídas: (i) trocar o contexto-âncora por um caso de externalidade interestadual com fontes GENUINAMENTE DISTRIBUÍDAS nos dois estados (preservando o mecanismo de cobertura do item-fonte) — porém evitando âncoras banidas; ou (ii) manter o Samarco mas REESCREVER a afirmação para que a falsidade não dependa de cobertura: focar no problema de INCENTIVO/competência jurisdicional sem estipular que a alíquota já é a social total (ex.: 'basta que MG institua um imposto sobre a barragem para que, agindo isoladamente, alcance o ótimo de Pareto' — falso porque MG internaliza só o dano doméstico, e a estipulação da alíquota correta é removida). Assim a falsidade volta a ser robusta e não contradita pela própria hipótese."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (Wolbachia) e ME2 (Manhattan), enunciados das questões objetivas",
+     "problema": "Ambos os enunciados de ME ultrapassam o teto de ~110 palavras antes das alternativas (item 4 do checklist). ME1 (do 'O Método Wolbachia...' até '...socialmente eficiente?') tem ~120 palavras por carregar três frases de contextualização institucional (Fiocruz, Ministério da Saúde, mecanismo da bactéria) antes do modelo. ME2 (Manhattan) está em faixa semelhante (~115 palavras), com descrição da Congestion Relief Zone, da Rua 60 e da natureza de recurso comum antes dos parâmetros. Os itens-fonte (Limeira, Starlink) eram mais enxutos. Não compromete a correção nem a resposta única, mas alonga o tempo de leitura num bloco com alvo de ~35 min.",
+     "correcao_sugerida": "Enxugar a contextualização para 1-2 frases. Ex. ME1: 'O Método Wolbachia (Fiocruz/Ministério da Saúde) libera Aedes aegypti que não transmitem dengue; soltar lotes num bairro também protege os vizinhos — externalidade positiva.' e ir direto aos parâmetros. Ex. ME2: condensar a descrição da zona para uma frase, mantendo apenas que antes da tarifa o acesso era recurso comum (rival, sem exclusão)."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (Wolbachia), Passo 4 e fecho de intuição — diagnóstico do distrator R$ 10",
+     "problema": "O fecho da intuição diz 'não a quantidade-alvo (R$ 10 coincide com o MPC, mas é coincidência)'. A redação mistura dois objetos: R$ 10 NÃO é a quantidade-alvo (q*=19), é o MPC. O item-fonte (Limeira) tinha a coincidência genuína de que q*=9 = MPC=9, e o distrator explorava exatamente essa dupla armadilha. Aqui, ao quebrar os números (q*=19 ≠ MPC=10), a 'coincidência' deixou de existir, mas o texto herdou a frase do fonte falando em 'quantidade-alvo', gerando confusão: o leitor pode achar que R$ 10 seria a quantidade, o que não é o caso. O Passo 4 já explica corretamente (R$ 10 = MPC), então o fecho é redundante e levemente incoerente.",
+     "correcao_sugerida": "Reescrever o fecho para refletir que a coincidência do item-fonte NÃO se aplica aqui: '...não a quantidade-alvo (q*=19) nem sua variação (R$ 4); o valor R$ 10 é apenas o MPC, custo de produção, não o tamanho da externalidade na margem.' Remover a menção a 'coincidência', que pertencia ao caso Limeira (onde q*=MPC=9)."
+    }
+   ],
+   "pendencias": []
+  },
+  "4": {
+   "issues_rodada1": [
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (recommerce/Akerlof), solução, parágrafo final 'Intuição econômica'",
+     "problema": "A racionalização verbal do limiar está logicamente invertida. O texto diz que o mercado sobrevive 'quando o prêmio k supera o produto do viés de truncamento (1/2) pelo fator de reserva invertido (4/3)'. Mas (1/2)×(4/3)=2/3, e o limiar correto derivado nos Passos 1–2 é k≥3/2. O valor 3/2 é o RECÍPROCO de 2/3, não o produto descrito. A condição efetiva é k ≥ 1/E[q|·]/p = 1/(2/3) = 3/2. A álgebra do gabarito (Passos 1–3) e a resposta C estão corretas; apenas a paráfrase intuitiva confunde produto com recíproco e pode induzir o aluno a montar a desigualdade ao contrário.",
+     "correcao_sugerida": "Reescrever a frase para refletir o recíproco: 'A média condicional dos que vendem é fração 2/3 do preço (o viés de truncamento 1/2 combinado ao fator de reserva 4/3, pois q ≤ (4/3)p). O mercado só sobrevive quando o prêmio k compensa esse desconto, isto é, k ≥ 1/(2/3) = 3/2.' Evitar a formulação 'produto ... = 3/2', que é numericamente falsa."
+    },
+    {
+     "gravidade": "menor",
+     "onde": "ME1 (recommerce), solução, explicação do distrator 'k≥3/4'",
+     "problema": "A explicação do distrator k≥3/4 é vaga e não reproduz uma conta que de fato gere 3/4. O texto diz que vem de 'comparar k vezes a qualidade média cheia dos vendedores com o preço sem dividir por 2, perdendo metade do desconto de seleção', mas não mostra a aritmética que aterrissa exatamente em 3/4. O erro concreto que produz 3/4 é: usar a média da população (E[q]) ou tratar a reserva sem truncar, levando a k·(reserva média) ≥ p com o fator de reserva 3/4 entrando diretamente como limiar (k≥3/4 é literalmente o fator de reserva do enunciado). Como distrator-âncora ele funciona (é o coeficiente 3/4 do próprio enunciado, atrativo por isso), mas a justificativa do diagnóstico não fecha a conta.",
+     "correcao_sugerida": "Tornar o diagnóstico explícito e fechado: 'A alternativa k≥3/4 é o erro de quem ignora o truncamento por completo e lê o coeficiente de reserva (3/4) do enunciado como se fosse o próprio limiar — comparando k·q com (3/4)q sem o desconto de seleção, o que cancela q e devolve k≥3/4.' Assim o distrator fica ancorado num erro reproduzível."
+    }
+   ],
+   "pendencias": []
+  }
+ }
+}

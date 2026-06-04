@@ -1,0 +1,68 @@
+# Schema for docs/analyses/ AN-page frontmatter — Paper 2 (Price of Exclusion)
+#
+# Per-analysis docs anchor each result with its question, design, headline
+# numbers, interpretation, and confidence. The frontmatter below is the
+# structured part of that anchor.
+#
+# `design_keys` lists project-specific keys permitted in the `design:`
+# block, beyond the universal core (sample, specification, notes).
+# Keeping the set fixed stops the design block from derailing across
+# analyses. If something keeps landing in `notes:`, that's the signal to
+# promote it to a key here.
+
+required:
+  - id              # an-NNN (sequential)
+  - type            # descriptive | causal | placebo | robustness
+  - question        # one-line research question
+  - status          # pending | done | stale
+  - created         # ISO date
+  - script          # path to source script (relative to project root)
+  - target          # primary output path under output/ or v7-jpube-tight/output/
+
+optional:
+  - hypothesis      # slug from docs/hypotheses/ if relevant; null for pure descriptives
+  - headline        # one-line summary of the result (required when status: done)
+  - confidence      # pending | green | yellow | red (required when status: done)
+  - status_date     # ISO date — last status change (required when status: done)
+  - tags            # free-form list (see conventions below)
+  - design          # block with project-specific keys (see design_keys)
+
+# Fields that become required once `status` flips from `pending` to `done`.
+required_when_done:
+  - headline
+  - confidence
+  - status_date
+
+design_keys:
+  - sample           # cohort / population definition (e.g. "BEC completed items, 18-month window")
+  - specification    # estimating equation or method in one line
+  - fixed_effects    # entity/time FE used (e.g. "item; PBU FE in second specification")
+  - cluster          # cluster level for SEs (e.g. "item", "group", "PBU")
+  - controls         # any non-FE controls
+  - instrument       # for IV analyses; rare in this paper
+  - source_panel     # which BEC source(s): audesp | bec-event-log | rais | cnae | doe
+  - threshold        # for bunching tests if any (not load-bearing here)
+  - weights          # if not unweighted
+  - notes            # catch-all; if something keeps landing here, promote it
+
+status_values:
+  pending: "AN scaffolded, script not yet authored or not yet interpreted"
+  done:    "script run, headline + interpretation written, confidence set"
+  stale:   "result superseded by a newer AN or by upstream-data change"
+
+confidence_values:
+  pending: "no result yet"
+  green:   "clean identification, large sample, robust across slices; independent replication or converging design within the paper"
+  yellow:  "informative with caveats (own-project run, model-restricted, sensitive to specification)"
+  red:     "result unreliable; documented for the record but not load-bearing"
+
+# Tag conventions for Paper 2 (use consistently so grep/filter works):
+#   Hypothesis:    H:<slug> from docs/hypotheses/index.md
+#   Cluster:       A-reduced-form, B-decomposition, C-welfare, D-robustness
+#   Outcome:       prices, firms, bids, distance, sme-winner, welfare
+#   Source:        bec-event-log, audesp, rais, cnae
+#   Method:        didir, event-study, fixest, item-fe, item-cluster,
+#                  placebo, lee-bounds, honestdid, quantile-did, gelbach,
+#                  staggered-did, bne, structural, krasnokutskaya
+#   Channel:       lost-discipline, protected-pool, competition, composition
+#   Class:         non-pharma, pharma, boundary-case

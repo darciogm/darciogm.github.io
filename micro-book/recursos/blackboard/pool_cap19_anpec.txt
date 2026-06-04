@@ -1,0 +1,10 @@
+TF	Seleção adversa diz respeito a uma ação não observável.	false
+TF	Problemas morais dizem respeito a características não observáveis.	false
+TF	Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening.	true
+TF	Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa.	true
+TF	Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa.	true
+TF	O leilão holandês e o leilão de Vickrey geram resultados Pareto-eficientes.	true
+TF	O leilão inglês com preço de reserva igual a zero não gera resultados eficientes de Pareto.	false
+TF	Os resultados do leilão de lance fechado são Pareto-eficientes, mesmo que as crenças de cada participante acerca das avaliações dos demais estejam incorretas.	false
+TF	Declarar o verdadeiro valor é a estratégia ótima de cada participante no leilão de Vickrey.	true
+TF	Em um leilão de valor comum, em que os participantes têm estimativas diferentes deste valor, a estratégia ótima é oferecer um lance menor do que o valor estimado, que deverá ser tão mais baixo quanto maior for o número de participantes.	true

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Franquia Minima e Risco Moral em Seguros</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Franquia Minima e Risco Moral em Seguros
+# Exercicio Resolvido 19.2
+# ============================================
+
+L <- 4000       # valor do celular (perda)
+p_eH <- 0.10    # prob roubo com cuidado (esforco alto)
+p_eL <- 0.30    # prob roubo sem cuidado (esforco baixo)
+custo_e <- 100   # custo do esforco (cuidados)
+W0 <- 10000      # riqueza inicial
+
+cat("====== FRANQUIA MINIMA E RISCO MORAL ======\n")
+cat(sprintf("Valor do celular (L): R$ %s\n", format(L, big.mark=".")))
+cat(sprintf("Prob roubo com cuidado: %.0f%%\n", p_eH*100))
+cat(sprintf("Prob roubo sem cuidado: %.0f%%\n", p_eL*100))
+cat(sprintf("Custo do esforco: R$ %.0f\n\n", custo_e))
+
+# --- (a) Seguro completo ---
+premio_justo <- p_eH * L
+cat("--- (a) Seguro completo ao premio justo ---\n")
+cat(sprintf("Premio = p(eH)*L = %.2f * %s = R$ %.0f\n",
+    p_eH, format(L, big.mark="."), premio_justo))
+cat(sprintf("Com seguro completo:\n"))
+cat(sprintf("  Riqueza = W0 - premio = %s - %.0f = %s (ambos estados)\n",
+    format(W0, big.mark="."), premio_justo,
+    format(W0 - premio_justo, big.mark=".")))
+cat(sprintf("  Se nao faz esforco: economiza R$ %.0f, sem consequencia\n", custo_e))
+cat("  => SEGURO COMPLETO ELIMINA O INCENTIVO!\n\n")
+
+# --- (b) Franquia minima ---
+# Com franquia D:
+# E[W|esforco] = W0 - q - p_eH * D - custo_e
+# E[W|sem esf] = W0 - q - p_eL * D
+# Esforco domina se: -p_eH*D - custo_e >= -p_eL*D
+# => (p_eL - p_eH)*D >= custo_e
+# => D >= custo_e / (p_eL - p_eH)
+
+D_min <- custo_e / (p_eL - p_eH)
+cat("--- (b) Franquia minima ---\n")
+cat(sprintf("Condicao: (pL - pH)*D >= custo_e\n"))
+cat(sprintf("D_min = %.0f / (%.2f - %.2f) = %.0f / %.2f = R$ %.0f\n\n",
+    custo_e, p_eL, p_eH, custo_e, p_eL - p_eH, D_min))
+
+# --- Tabela: variando D ---
+cat("--- Incentivo vs. franquia ---\n")
+cat(sprintf("%-10s %-15s %-15s %-10s\n",
+    "D (R$)", "E[custo|esf]", "E[custo|sem]", "Esforco?"))
+cat(strrep("-", 55), "\n")
+
+D_vals <- seq(0, 2000, by = 200)
+for (Di in D_vals) {
+  custo_esf <- p_eH * Di + custo_e
+  custo_sem <- p_eL * Di
+  faz <- custo_esf <= custo_sem
+  cat(sprintf("%-10.0f %-15.0f %-15.0f %-10s\n",
+      Di, custo_esf, custo_sem,
+      ifelse(faz, "SIM", "NAO")))
+}
+
+cat(sprintf("\n=> Franquia minima: R$ %.0f (%.0f%% do valor do celular)\n\n",
+    D_min, D_min/L*100))
+
+# --- Mercado brasileiro ---
+cat("--- Franquias no mercado brasileiro ---\n")
+faixa <- c(0.20, 0.25, 0.30)
+cat(sprintf("Tipica: %.0f-%.0f%% do valor = R$ %.0f - R$ %.0f\n",
+    faixa[1]*100, faixa[3]*100, faixa[1]*L, faixa[3]*L))
+cat(sprintf("Franquia minima teorica: R$ %.0f (%.1f%%)\n",
+    D_min, D_min/L*100))
+cat("Seguradoras cobram MAIS que o minimo por custos administrativos\n")
+cat("e porque aversao ao risco dos segurados permite premia mais alta.\n\n")
+
+# --- Variando parametros ---
+cat("--- Sensibilidade: efeito do custo do esforco ---\n")
+cat(sprintf("%-12s %-12s %-10s\n", "Custo esf.", "D_min", "% do celular"))
+cat(strrep("-", 36), "\n")
+ce_vals <- c(50, 100, 150, 200, 300, 500)
+Dmin_vec <- numeric(length(ce_vals))
+for (k in seq_along(ce_vals)) {
+  ce <- ce_vals[k]
+  Dm <- ce / (p_eL - p_eH)
+  Dmin_vec[k] <- Dm
+  cat(sprintf("%-12.0f %-12.0f %-10.1f%%\n", ce, Dm, Dm/L*100))
+}
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Custo esperado vs franquia
+D_seq <- seq(0, 2500, length = 200)
+custo_esf_seq <- p_eH * D_seq + custo_e
+custo_sem_seq <- p_eL * D_seq
+
+plot(D_seq, custo_sem_seq, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Franquia D (R$)",
+     ylab = "Custo esperado para segurado (R$)",
+     main = "Incentivo ao esforco vs. franquia",
+     ylim = c(0, max(custo_sem_seq) * 1.1))
+lines(D_seq, custo_esf_seq, lwd = 3, col = "#0d6efd")
+
+abline(v = D_min, col = "#6f42c1", lwd = 2, lty = 3)
+points(D_min, p_eH * D_min + custo_e, pch = 19, col = "#6f42c1", cex = 2)
+
+# Zona sem incentivo
+polygon(c(0, D_min, D_min, 0),
+        c(0, 0, max(custo_sem_seq)*1.1, max(custo_sem_seq)*1.1),
+        col = rgb(0.85, 0.2, 0.2, 0.06), border = NA)
+text(D_min/2, max(custo_sem_seq)*0.8, "Sem\nincentivo",
+     col = "#dc3545", cex = 0.7, font = 2)
+
+text(D_min + 200, max(custo_sem_seq)*0.5, "Com\nincentivo",
+     col = "#198754", cex = 0.7, font = 2)
+
+text(D_min, max(custo_sem_seq)*0.95,
+     paste0("D_min = R$ ", D_min),
+     col = "#6f42c1", cex = 0.65, font = 2)
+
+legend("topleft",
+       legend = c("Sem esforco: pL*D",
+                  expression("Com esforco: " * p[H]*D + c[e])),
+       col = c("#dc3545", "#0d6efd"),
+       lwd = 3, cex = 0.55, bg = "white")
+
+# Painel 2: D_min vs custo do esforco
+ce_fine <- seq(10, 600, length = 200)
+Dm_fine <- ce_fine / (p_eL - p_eH)
+
+plot(ce_fine, Dm_fine, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Custo do esforco (R$)",
+     ylab = expression(D[min] ~ "(R$)"),
+     main = "Franquia minima vs. custo do esforco")
+
+points(custo_e, D_min, pch = 19, col = "#dc3545", cex = 2)
+text(custo_e + 30, D_min + 100,
+     paste0("ER 19.2\n(c_e=", custo_e, ", D=", D_min, ")"),
+     col = "#dc3545", cex = 0.6, font = 2)
+
+abline(h = L, col = "#fd7e14", lty = 3, lwd = 1.5)
+text(400, L + 80, "L (valor do celular)", col = "#fd7e14", cex = 0.6)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

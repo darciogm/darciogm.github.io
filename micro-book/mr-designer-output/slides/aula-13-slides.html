@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="aula-13-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula-13-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula-13-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula-13-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula-13-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula-13-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula-13-slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Insper">
+  <title>Função de Produção e Tecnologia</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula-13-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula-13-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="aula-13-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula-13-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Função de Produção e Tecnologia</h1>
+  <p class="subtitle">Microeconomia II — Aula 13</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Insper 
+</div>
+</div>
+</div>
+
+</section>
+<section id="da-teoria-do-consumidor-à-teoria-da-firma" class="slide level2">
+<h2>Da Teoria do Consumidor à Teoria da Firma</h2>
+<p>A Teoria da Firma é um <strong>espelho</strong> da Teoria do Consumidor:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Consumidor</th>
+<th style="text-align: left;">Firma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Utilidade <span class="math inline">\(u(x_1, x_2)\)</span></td>
+<td style="text-align: left;">Produção <span class="math inline">\(q = f(K, L)\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Restrição orçamentária</td>
+<td style="text-align: left;">Restrição de isocusto</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Curva de indiferença</td>
+<td style="text-align: left;">Isoquanta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TMS</td>
+<td style="text-align: left;">TMST</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Maximiza utilidade</td>
+<td style="text-align: left;">Minimiza custo (ou maximiza produto)</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A matemática da otimização é a mesma — tangência entre curva de nível e restrição linear. O que muda é a <strong>interpretação econômica</strong>: preferências viram tecnologia, preços de bens viram preços de insumos.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="função-de-produção-definição" class="slide level2">
+<h2>Função de Produção: Definição</h2>
+<p>A <strong>função de produção</strong> mapeia insumos no produto máximo tecnicamente viável:</p>
+<p><span class="math display">\[q = f(K, L)\]</span></p>
+<div class="fragment">
+<p><strong>Propriedades usuais:</strong></p>
+<ul>
+<li><span class="math inline">\(f(0, 0) = 0\)</span> — sem insumos, sem produto</li>
+<li><span class="math inline">\(f\)</span> é crescente em cada insumo (monotonicidade)</li>
+<li><span class="math inline">\(f\)</span> é contínua e (ao menos duas vezes) diferenciável</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Conjunto de produção (technology set):</strong></p>
+<p><span class="math display">\[Y = \{(K, L, q) : 0 \leq q \leq f(K, L)\}\]</span></p>
+<p>A função de produção descreve a <strong>fronteira eficiente</strong> deste conjunto — a quantidade máxima de produto para cada combinação de insumos.</p>
+</div>
+</section>
+<section id="produto-marginal-e-produto-médio" class="slide level2">
+<h2>Produto Marginal e Produto Médio</h2>
+<p><strong>Produto Marginal do Trabalho:</strong></p>
+<p><span class="math display">\[PMg_L = \frac{\partial f(K, L)}{\partial L}\]</span></p>
+<p><strong>Produto Médio do Trabalho:</strong></p>
+<p><span class="math display">\[PMe_L = \frac{f(K, L)}{L}\]</span></p>
+<div class="fragment">
+<p><strong>Relação fundamental:</strong></p>
+<p><span class="math display">\[\frac{d\,PMe_L}{dL} = \frac{PMg_L - PMe_L}{L}\]</span></p>
+</div>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;">Consequência</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(PMg_L &gt; PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está <strong>subindo</strong></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(PMg_L = PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está no <strong>máximo</strong></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(PMg_L &lt; PMe_L\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L\)</span> está <strong>caindo</strong></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Analogia:</strong> se sua nota na próxima prova (marginal) for maior que sua média, a média sobe.</p>
+</blockquote>
+</div>
+</section>
+<section id="lei-dos-rendimentos-marginais-decrescentes" class="slide level2">
+<h2>Lei dos Rendimentos Marginais Decrescentes</h2>
+<blockquote>
+<p>Mantendo os demais insumos fixos, aumentos sucessivos de um insumo variável <strong>eventualmente</strong> geram acréscimos decrescentes de produto.</p>
+</blockquote>
+<p><span class="math display">\[\frac{\partial^2 f}{\partial L^2} &lt; 0 \quad \text{(a partir de certo ponto)}\]</span></p>
+<div class="fragment">
+<p><strong>Exemplos:</strong></p>
+<ul>
+<li>Mais trabalhadores numa fábrica com máquinas fixas: inicialmente produtividade sobe (especialização), depois cai (superlotação)</li>
+<li>Mais fertilizante numa área fixa de terra: rendimento cresce a taxas decrescentes</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Atenção — o que a lei NÃO diz:</strong></p>
+<ul>
+<li>Não diz que <span class="math inline">\(PMg_L\)</span> é <strong>sempre</strong> decrescente (pode crescer inicialmente)</li>
+<li>Não se aplica quando <strong>todos</strong> os insumos variam proporcionalmente (isso é rendimentos de escala)</li>
+<li>É uma regularidade empírica, não um teorema matemático</li>
+</ul>
+</div>
+</section>
+<section id="isoquantas" class="slide level2">
+<h2>Isoquantas</h2>
+<p>A <strong>isoquanta</strong> é o conjunto de combinações <span class="math inline">\((K, L)\)</span> que produzem o mesmo nível de produto <span class="math inline">\(\bar{q}\)</span>:</p>
+<p><span class="math display">\[\{(K, L) : f(K, L) = \bar{q}\}\]</span></p>
+<div class="graph-slider-row">
+<div id="graph-a13-isoquant" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-isoquant', {
+    boundingbox: [0, 12, 12, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAlpha = brd.create('slider', [[1.5, 11], [5, 11], [0.1, 0.5, 0.9]], {
+    name: '\\alpha',
+    snapWidth: 0.05,
+    id: 'sl-a13-alpha'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var a = slAlpha.Value();
+      if (L < 0.15) return NaN;
+      return Math.pow(qVal / Math.pow(L, 1 - a), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      return Lpos;
+    }, function() {
+      var a = slAlpha.Value();
+      var Lpos = 1.5 + idx * 1.2;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, 1 - a), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+})();
+</script>
+<div class="fragment">
+<p>Mova o slider <span class="math inline">\(\alpha\)</span> e observe: quanto maior <span class="math inline">\(\alpha\)</span> (capital-intensivo), mais <strong>verticais</strong> as isoquantas; quanto menor, mais horizontais (trabalho-intensivo).</p>
+</div>
+</section>
+<section id="taxa-marginal-de-substituição-técnica-tmst" class="slide level2">
+<h2>Taxa Marginal de Substituição Técnica (TMST)</h2>
+<p>A <strong>TMST</strong> mede a taxa à qual a firma pode substituir capital por trabalho mantendo o produto constante:</p>
+<p><span class="math display">\[TMST_{L,K} = -\frac{dK}{dL}\bigg|_{q=\bar{q}} = \frac{PMg_L}{PMg_K}\]</span></p>
+<div class="fragment">
+<p><strong>Derivação:</strong> sobre a isoquanta, <span class="math inline">\(dq = 0\)</span>:</p>
+<p><span class="math display">\[df = PMg_L \, dL + PMg_K \, dK = 0 \implies \frac{dK}{dL} = -\frac{PMg_L}{PMg_K}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Propriedades:</strong></p>
+<ul>
+<li><strong>Decrescente</strong> ao longo da isoquanta (convexidade estrita)</li>
+<li>Reflete a <strong>substituibilidade</strong> entre insumos</li>
+<li>Análoga à TMS do consumidor (onde <span class="math inline">\(TMS = UMg_1/UMg_2\)</span>)</li>
+</ul>
+</div>
+</section>
+<section id="cobb-douglas-na-produção" class="slide level2">
+<h2>Cobb-Douglas na Produção</h2>
+<p>A função <strong>Cobb-Douglas</strong> é o caso mais usado:</p>
+<p><span class="math display">\[q = A K^\alpha L^\beta\]</span></p>
+<div class="fragment">
+<p><strong>TMST da Cobb-Douglas:</strong></p>
+<p><span class="math display">\[TMST_{L,K} = \frac{PMg_L}{PMg_K} = \frac{\beta}{\alpha} \cdot \frac{K}{L}\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Propriedades importantes:</strong></p>
+<ul>
+<li>Elasticidade de substituição: <span class="math inline">\(\sigma = 1\)</span> (sempre)</li>
+<li>Rendimentos de escala: <span class="math inline">\(\alpha + \beta\)</span> (soma dos expoentes)</li>
+<li>Participação dos fatores: se mercados são competitivos, <span class="math inline">\(\alpha\)</span> = participação do capital na renda, <span class="math inline">\(\beta\)</span> = participação do trabalho</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Na Cobb-Douglas, a TMST depende apenas da <strong>razão</strong> <span class="math inline">\(K/L\)</span>, não do nível absoluto. Ao longo de qualquer raio partindo da origem, a inclinação da isoquanta é constante — por isso a elasticidade de substituição é unitária.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="rendimentos-de-escala" class="slide level2">
+<h2>Rendimentos de Escala</h2>
+<p>O que acontece quando <strong>todos</strong> os insumos variam <strong>proporcionalmente</strong>?</p>
+<p><span class="math display">\[f(tK, tL) \text{ vs. } t \cdot f(K, L), \quad t &gt; 1\]</span></p>
+<div class="graph-slider-row">
+<div id="graph-a13-returns" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-returns', {
+    boundingbox: [0, 14, 14, 0],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'K', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slAB = brd.create('slider', [[2, 13], [6, 13], [0.5, 1.0, 1.5]], {
+    name: '\\alpha+\\beta',
+    snapWidth: 0.05,
+    id: 'sl-a13-ab'
+  });
+
+  var colors = ['#1565c0', '#C8102E', '#00897b', '#ff9800'];
+  var qLevels = [2, 4, 6, 8];
+
+  qLevels.forEach(function(qVal, idx) {
+    brd.create('functiongraph', [function(L) {
+      var ab = slAB.Value();
+      if (L < 0.15) return NaN;
+      var a = ab / 2;
+      var b = ab / 2;
+      return Math.pow(qVal / Math.pow(L, b), 1 / a);
+    }], {
+      strokeColor: colors[idx],
+      strokeWidth: 2.5
+    });
+
+    brd.create('text', [function() {
+      var Lpos = 2.5 + idx * 1.0;
+      return Lpos;
+    }, function() {
+      var ab = slAB.Value();
+      var a = ab / 2;
+      var b = ab / 2;
+      var Lpos = 2.5 + idx * 1.0;
+      var Kpos = Math.pow(qVal / Math.pow(Lpos, b), 1 / a);
+      return Kpos + 0.5;
+    }, function() { return 'q=' + qLevels[idx]; }], {
+      fontSize: 11,
+      color: colors[idx]
+    });
+  });
+
+  // Ray from origin to show scaling
+  brd.create('line', [[0,0],[1,1]], {
+    strokeColor: '#999',
+    strokeWidth: 1,
+    dash: 2,
+    straightFirst: false,
+    straightLast: true
+  });
+
+  brd.create('text', [8, 12.2, function() {
+    var ab = slAB.Value();
+    if (ab > 1.02) return 'IRS — isoquantas se aproximam';
+    if (ab < 0.98) return 'DRS — isoquantas se afastam';
+    return 'CRS — espaçamento constante';
+  }], { fontSize: 13, color: '#333' });
+})();
+</script>
+<div class="fragment">
+<p>Observe: com <span class="math inline">\(\alpha+\beta &gt; 1\)</span> (IRS), as isoquantas ficam <strong>mais próximas</strong>; com <span class="math inline">\(\alpha+\beta &lt; 1\)</span> (DRS), ficam <strong>mais distantes</strong>.</p>
+</div>
+</section>
+<section id="classificação-constantes-crescentes-decrescentes" class="slide level2">
+<h2>Classificação: Constantes, Crescentes, Decrescentes</h2>
+<p>Para a Cobb-Douglas <span class="math inline">\(q = AK^\alpha L^\beta\)</span>:</p>
+<p><span class="math display">\[f(tK, tL) = A(tK)^\alpha(tL)^\beta = t^{\alpha+\beta} \cdot AK^\alpha L^\beta = t^{\alpha+\beta} \cdot f(K,L)\]</span></p>
+<div class="fragment">
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Tipo</th>
+<th style="text-align: center;">Condição</th>
+<th style="text-align: left;">Dobrar insumos…</th>
+<th style="text-align: left;">Fonte econômica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>CRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta = 1\)</span></td>
+<td style="text-align: left;">…dobra o produto</td>
+<td style="text-align: left;">Replicação</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>IRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta &gt; 1\)</span></td>
+<td style="text-align: left;">…mais que dobra</td>
+<td style="text-align: left;">Especialização, indivisibilidades</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>DRS</strong></td>
+<td style="text-align: center;"><span class="math inline">\(\alpha+\beta &lt; 1\)</span></td>
+<td style="text-align: left;">…menos que dobra</td>
+<td style="text-align: left;">Problemas de coordenação</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<p><strong>Teste geral</strong> (não restrito a Cobb-Douglas):</p>
+<p><span class="math display">\[f(tK, tL) = t^k \cdot f(K, L) \implies \text{homogênea de grau } k\]</span></p>
+<ul>
+<li><span class="math inline">\(k &gt; 1\)</span>: IRS</li>
+<li><span class="math inline">\(k = 1\)</span>: CRS</li>
+<li><span class="math inline">\(k &lt; 1\)</span>: DRS</li>
+</ul>
+</div>
+</section>
+<section id="elasticidade-de-substituição" class="slide level2">
+<h2>Elasticidade de Substituição</h2>
+<p>A <strong>elasticidade de substituição</strong> mede quão facilmente a firma troca insumos ao longo da isoquanta:</p>
+<p><span class="math display">\[\sigma = \frac{d\ln(K/L)}{d\ln(TMST_{L,K})}\]</span></p>
+<div class="fragment">
+<p><strong>Interpretação geométrica:</strong> <span class="math inline">\(\sigma\)</span> mede a <strong>curvatura</strong> da isoquanta.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(\sigma\)</span></th>
+<th style="text-align: left;">Forma da isoquanta</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sigma \to \infty\)</span></td>
+<td style="text-align: left;">Reta (substitutos perfeitos)</td>
+<td style="text-align: left;"><span class="math inline">\(q = aK + bL\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\sigma = 1\)</span></td>
+<td style="text-align: left;">Cobb-Douglas (curvatura intermediária)</td>
+<td style="text-align: left;"><span class="math inline">\(q = AK^\alpha L^\beta\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\sigma \to 0\)</span></td>
+<td style="text-align: left;">“L” (complementos perfeitos)</td>
+<td style="text-align: left;"><span class="math inline">\(q = \min\{aK, bL\}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p><span class="math inline">\(\sigma\)</span> determina como a firma responde a mudanças nos <strong>preços relativos</strong> dos insumos. Se <span class="math inline">\(\sigma\)</span> é alto, um aumento no salário faz a firma substituir bastante trabalho por capital. Se <span class="math inline">\(\sigma\)</span> é baixo, a firma tem pouca margem de manobra.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="curto-prazo-vs-longo-prazo" class="slide level2">
+<h2>Curto Prazo vs Longo Prazo</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Curto Prazo (CP)</th>
+<th style="text-align: left;">Longo Prazo (LP)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Capital</strong></td>
+<td style="text-align: left;">Fixo: <span class="math inline">\(\bar{K}\)</span></td>
+<td style="text-align: left;">Variável</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Trabalho</strong></td>
+<td style="text-align: left;">Variável</td>
+<td style="text-align: left;">Variável</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Função</strong></td>
+<td style="text-align: left;"><span class="math inline">\(q = f(\bar{K}, L)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(q = f(K, L)\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>No curto prazo</strong> temos uma função de <strong>um</strong> insumo variável:</p>
+<p><span class="math display">\[q = f(\bar{K}, L) \equiv g(L)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Definições no CP:</strong></p>
+<ul>
+<li><strong>Produto Total (PT):</strong> <span class="math inline">\(q = g(L)\)</span></li>
+<li><strong>Produto Marginal:</strong> <span class="math inline">\(PMg_L = g'(L)\)</span></li>
+<li><strong>Produto Médio:</strong> <span class="math inline">\(PMe_L = g(L)/L\)</span></li>
+</ul>
+<blockquote>
+<p>O longo prazo não é um período de tempo fixo — é o horizonte no qual <strong>todos</strong> os insumos são ajustáveis.</p>
+</blockquote>
+</div>
+</section>
+<section id="produto-total-médio-e-marginal-no-cp" class="slide level2">
+<h2>Produto Total, Médio e Marginal no CP</h2>
+<p>Considere <span class="math inline">\(q = AL^2(60 - L)\)</span> com <span class="math inline">\(A &gt; 0\)</span> (válida para <span class="math inline">\(0 &lt; L &lt; 60\)</span>):</p>
+<div class="graph-slider-row">
+<div id="graph-a13-tpapmp" style="width:700px;height:370px;margin:0 auto;">
+
+</div>
+</div>
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('graph-a13-tpapmp', {
+    boundingbox: [-2, 110, 55, -40],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L', withLabel: true, label: { position: 'rt', offset: [-10, 15] } },
+      y: { name: 'q', withLabel: true, label: { position: 'rt', offset: [15, 0] } }
+    }
+  });
+
+  var slA = brd.create('slider', [[5, 105], [20, 105], [0.005, 0.01, 0.02]], {
+    name: 'A',
+    snapWidth: 0.001,
+    id: 'sl-a13-A'
+  });
+
+  // TP: q = A * L^2 * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * L * (60 - L) / 100;
+  }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 42 * 18 / 100 + 5;
+  }, 'PT'], { fontSize: 12, color: '#1565c0' });
+
+  // AP: q/L = A * L * (60 - L)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0.5 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * L * (60 - L) / 2;
+  }], { strokeColor: '#00897b', strokeWidth: 2.5, dash: 2 });
+
+  brd.create('text', [42, function() {
+    var A = slA.Value();
+    return A * 42 * 18 / 2 + 5;
+  }, 'PMe'], { fontSize: 12, color: '#00897b' });
+
+  // MP: dq/dL = A * (120L - 3L^2)
+  brd.create('functiongraph', [function(L) {
+    if (L < 0 || L > 50) return NaN;
+    var A = slA.Value();
+    return A * (120 * L - 3 * L * L) / 2;
+  }], { strokeColor: '#C8102E', strokeWidth: 2.5, dash: 3 });
+
+  brd.create('text', [25, function() {
+    var A = slA.Value();
+    return A * (120 * 25 - 3 * 625) / 2 + 5;
+  }, 'PMg'], { fontSize: 12, color: '#C8102E' });
+
+  // Zero line
+  brd.create('line', [[0,0],[1,0]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 4,
+    straightFirst: true, straightLast: true, fixed: true
+  });
+
+  // Stage labels
+  brd.create('text', [8, -15, 'I'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [25, -15, 'II'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+  brd.create('text', [44, -15, 'III'], { fontSize: 14, color: '#ff9800', cssStyle: 'font-weight:bold' });
+
+  // Stage boundary: PMg = PMe at L = 30
+  brd.create('line', [[30, -40],[30, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+
+  // Stage boundary: PMg = 0 at L = 40
+  brd.create('line', [[40, -40],[40, 110]], {
+    strokeColor: '#ff9800', strokeWidth: 1.5, dash: 2,
+    straightFirst: false, straightLast: false, fixed: true
+  });
+})();
+</script>
+<div class="fragment">
+<p>As curvas de PMg e PMe se cruzam no <strong>máximo</strong> do PMe. O PMg cruza zero no <strong>máximo</strong> do PT.</p>
+</div>
+</section>
+<section id="estágios-da-produção" class="slide level2">
+<h2>Estágios da Produção</h2>
+<p>Os <strong>três estágios</strong> dividem a produção de curto prazo:</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 40%">
+<col style="width: 30%">
+<col style="width: 30%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Estágio</th>
+<th style="text-align: left;">Condição</th>
+<th style="text-align: left;">Característica</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><strong>I</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMg_L &gt; PMe_L &gt; 0\)</span></td>
+<td style="text-align: left;">PMe ainda subindo — insumo fixo subutilizado</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><strong>II</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMe_L &gt; PMg_L &gt; 0\)</span></td>
+<td style="text-align: left;">Região <strong>eficiente</strong> — produção racional</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>III</strong></td>
+<td style="text-align: left;"><span class="math inline">\(PMg_L &lt; 0\)</span></td>
+<td style="text-align: left;">Produto total <strong>caindo</strong> — excesso de insumo variável</td>
+</tr>
+</tbody>
+</table>
+<div class="fragment">
+<p><strong>Por que a firma opera no Estágio II?</strong></p>
+<ul>
+<li>No Estágio I, contratar mais <span class="math inline">\(L\)</span> eleva a produtividade média — ainda compensa</li>
+<li>No Estágio III, contratar mais <span class="math inline">\(L\)</span> <strong>reduz</strong> o produto total — irracional</li>
+<li>O ponto ótimo exato no Estágio II depende dos <strong>preços</strong> relativos (veremos em custos)</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Os estágios I e III são “eliminados” pela lógica econômica. No I, a firma sempre ganha adicionando trabalho; no III, ela ganha <strong>reduzindo</strong> trabalho. Só no Estágio II existe um <strong>trade-off</strong> genuíno.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="progresso-tecnológico" class="slide level2">
+<h2>Progresso Tecnológico</h2>
+<p>O progresso técnico desloca a função de produção <strong>para cima</strong>: mais produto com os mesmos insumos.</p>
+<p><span class="math display">\[q_t = A(t) \cdot f(K, L), \quad A(t) \text{ crescente — Produtividade Total dos Fatores (PTF)}\]</span></p>
+<div class="fragment">
+<p><strong>Classificação de Hicks:</strong></p>
+<ul>
+<li><strong>Neutro:</strong> não altera a razão <span class="math inline">\(K/L\)</span> ótima para dado <span class="math inline">\(w/r\)</span> — isoquantas se contraem homoteticamente</li>
+<li><strong>Poupador de trabalho:</strong> aumenta <span class="math inline">\(PMg_K\)</span> relativamente — firma substitui <span class="math inline">\(L\)</span> por <span class="math inline">\(K\)</span></li>
+<li><strong>Poupador de capital:</strong> aumenta <span class="math inline">\(PMg_L\)</span> relativamente — firma substitui <span class="math inline">\(K\)</span> por <span class="math inline">\(L\)</span></li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Resíduo de Solow:</strong></p>
+<p><span class="math display">\[\Delta \ln q = \alpha \, \Delta \ln K + (1-\alpha) \, \Delta \ln L + \underbrace{\Delta \ln A}_{\text{resíduo}}\]</span></p>
+<p>O resíduo captura tudo que <strong>não é explicado</strong> pelo aumento dos insumos — é a “medida da nossa ignorância” (Abramovitz).</p>
+</div>
+</section>
+<section id="próxima-aula" class="slide level2">
+<h2>Próxima Aula</h2>
+<p><strong>Aula 14 — Lab Isoquantas e Funções de Produção</strong></p>
+<div class="fragment">
+<ul>
+<li>Exploração interativa de funções Cobb-Douglas e CES</li>
+<li>Jigsaw: cada grupo analisa uma função de produção diferente</li>
+<li>Peer Instruction: rendimentos crescentes implicam monopólio natural?</li>
+</ul>
+</div>
+<div class="fragment">
+<p><strong>Preparação:</strong></p>
+<ul>
+<li>Revisar propriedades da Cobb-Douglas (<span class="math inline">\(\alpha\)</span>, <span class="math inline">\(\beta\)</span>, <span class="math inline">\(\sigma\)</span>)</li>
+<li>Pensar: por que diferentes indústrias usam diferentes combinações de <span class="math inline">\(K\)</span> e <span class="math inline">\(L\)</span>?</li>
+<li>Trazer calculadora ou dispositivo com acesso à internet</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>A teoria da produção que vimos hoje é a base de <strong>tudo</strong> que vem a seguir: custos, oferta, equilíbrio competitivo, poder de mercado. Dominar isoquantas e rendimentos de escala agora economiza muito esforço depois.</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Microeconomia II | Aula 13</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula-13-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula-13-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="aula-13-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula-13-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

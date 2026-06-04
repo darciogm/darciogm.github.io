@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercícios Avaliativos — Aula 05 — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+<style>
+  body.gabarito-locked .quizg-feedback { display: none !important; }
+  .gabarito-pending-banner { display:none; background:#fefcbf; border-left:4px solid #b7791f; padding:1rem 1.2rem; margin:1.5rem 0; border-radius:4px; }
+  .gabarito-pending-banner strong { color:#744210; }
+  .ex-divider { border-top: 2px solid var(--border); margin: 2.5rem 0 1.5rem; padding-top: 1rem; }
+  .ex-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.6rem; flex-wrap:wrap; }
+  .ex-header h2 { margin: 0; font-size: 1.1rem; color: var(--primary); }
+  .ex-calibre { font-size: 1.2rem; }
+  .ex-title { font-size: 0.95rem; color: var(--text-muted); font-style: italic; }
+  .ex-enunciado { background: #f7f7f5; padding: 0.9rem 1.2rem; border-radius: 4px; margin-bottom: 1.2rem; font-size: 0.95rem; border-left: 3px solid var(--accent); }
+  .ex-gabarito-5passos { background: #f9f9f7; border: 1px solid var(--border); border-radius: 6px; padding: 1.2rem 1.4rem; margin: 1.5rem 0 2rem; }
+  .ex-gabarito-5passos h4 { margin: 0 0 0.6rem; color: var(--primary); font-size: 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.4rem; }
+  .ex-gabarito-5passos p { margin: 0.5rem 0; font-size: 0.9rem; line-height: 1.55; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Exercícios Avaliativos — Aula 05</h1>
+<p style="color:var(--text-muted);font-size:0.95rem;margin-top:-0.5rem">Equilíbrio Geral em Produção (tecnologia, PPF, Robinson Crusoe, EG com \(J\) firmas, 1º/2º TBE com produção)</p>
+
+<div class="admonition info" style="margin-top:1.5rem">
+<div class="admonition-title">Como estes exercícios funcionam</div>
+<p><strong>6 exercícios calibrados: 1 🟢 + 3 🟡 + 2 🔴</strong>, ~28 sub-itens de múltipla escolha (uma correta por sub-item). Valem nota — fazem parte dos 30% de engajamento. <strong>Tempo-alvo: 2h30–3h</strong>. Não há tempo máximo, mas responder tudo de uma sentada é mais produtivo que fragmentar. <strong>Uma única submissão</strong>.</p>
+<p style="margin-top:0.6rem"><strong>Prazo: quarta 27/05 às 18:00</strong> — 1h30 antes da Aula 6. <em>Calendário canônico</em>.</p>
+</div>
+
+<div class="admonition" style="border-left:4px solid #b7791f;background:#fefcbf;margin-top:1rem">
+<div class="admonition-title" style="color:#744210">Sobre o gabarito</div>
+<p>O gabarito 5-passos (ponto-chave, derivação, armadilha, extensão, peer-review) e a solução detalhada ficam <strong>indisponíveis até 28/05 às 00:00</strong>, um dia após o fechamento. Após a liberação, o gabarito aparece automaticamente nesta mesma página.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-05-exerc" data-phase="graded_exercise" data-title="Exercícios Avaliativos 05">
+
+  <!-- ===================== EXERCÍCIO 1 🟢 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 1</h2>
+      <span class="ex-calibre">🟢</span>
+      <span class="ex-title">Robinson Crusoe canônico CD-CD</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Robinson Crusoe com 1 consumidor + 1 firma + 2 bens. Preferências \(u(q, \ell) = q^{1/2}\ell^{1/2}\). Tecnologia \(f(L) = \sqrt{L}\). Dotação total de tempo \(\bar L = 16\). Numerário \(p = 1\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1a" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(a)</strong> A solução do planejador (problema \(\max_L u(f(L), \bar L - L)\)) tem \(L^*\) igual a:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="a"> (i) \(L^* = 16\) (todo o tempo trabalhando).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="b"> (ii) \(L^* = 16/3 \approx 5{,}33\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="c"> (iii) \(L^* = 8\) (metade do tempo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1a" value="d"> (iv) \(L^* = 0\) (lazer puro).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1b" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(b)</strong> Em equilíbrio competitivo com \(p = 1\), o salário \(w^*\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="a"> (i) \(w^* = 1\) (igual ao preço do bem).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="b"> (ii) \(w^* = \sqrt{3}/8 \approx 0{,}217\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="c"> (iii) \(w^* = 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1b" value="d"> (iv) \(w^* = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1c" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(c)</strong> O lucro \(\pi^*\) da firma em equilíbrio é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="a"> (i) \(\pi^* = 0\) (lucro zero por construção).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="b"> (ii) \(\pi^* = 2\sqrt{3}/3 \approx 1{,}155\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="c"> (iii) \(\pi^* = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1c" value="d"> (iv) \(\pi^* = q^* = 4/\sqrt{3}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex1d" data-correct="b" data-difficulty="green">
+      <div class="quizg-qtext"><strong>(d)</strong> A renda total do consumidor (incluindo salário e lucro) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="a"> (i) \(m^* = w^*\, \bar L = 2\sqrt{3} \approx 3{,}46\) — só salário.</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="b"> (ii) \(m^* = w^*\, \bar L + \pi^* = 8\sqrt{3}/3 \approx 4{,}62\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="c"> (iii) \(m^* = p\cdot q^* = 4/\sqrt{3}\) — só consumo (errado dimensionalmente).</label>
+      <label class="quizg-opt"><input type="radio" name="ex1d" value="d"> (iv) \(m^* = \bar L = 16\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 1</h4>
+      <p><strong>1. Ponto-chave.</strong> Robinson Crusoe canônico: 1 consumidor + 1 firma. Mercado descentralizado replica solução do planejador. EC tem \(\text{TMS} = \text{TMT} = w/p\). Verificação numérica de toda a maquinaria: planejador, max-lucro, UMP, fechamento de mercados.</p>
+      <p><strong>2. Derivação.</strong> Planejador: \(\max_L L^{1/4}(16-L)^{1/2}\). CPO: derivar e igualar a zero entrega \((16-L) - 2L = 0 \implies L^* = 16/3\). ✓ (a). Da firma: \(f'(L^*) = w/p \Rightarrow w^* = 1/(2\sqrt{16/3}) = \sqrt{3}/8\). ✓ (b). Lucro: \(\pi^* = p\, q^* - w^*\, L^* = 4/\sqrt{3} - (\sqrt{3}/8)(16/3) = 4/\sqrt{3} - 2/\sqrt{3} = 2\sqrt{3}/3\). ✓ (c). Renda: \(m^* = w^*\, \bar L + \pi^* = (\sqrt{3}/8)\cdot 16 + 2\sqrt{3}/3 = 2\sqrt{3} + 2\sqrt{3}/3 = 8\sqrt{3}/3\). ✓ (d).</p>
+      <p><strong>3. Armadilha.</strong> (a)(i) confunde planejador com "maximize produção". (b)(i) confunde Robinson com Aula 4 — aqui \(w \neq p\). (c)(i) "lucro zero" só vale com retornos constantes. (d)(i) ignora o lucro como dividendo do dono.</p>
+      <p><strong>4. Extensão.</strong> Verificação \(\text{TMS} = \text{TMT} = w/p\): \(\text{TMS} = q^*/\ell^* = (4/\sqrt{3})/(32/3) = \sqrt{3}/8\). \(\text{TMT} = f'(L^*) = \sqrt{3}/8\). \(w^*/p^* = \sqrt{3}/8\). Os três coincidem. Walras com produção: mercado de trabalho fecha (\(L^* = 16/3\)) e mercado de bem fecha (\(q^* = \sqrt{16/3}\)).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟢. Toda a maquinaria da Aula 5 num caso canônico. Aluno que erra (a) tem dificuldade com derivada de função composta; quem erra (c) confunde estrutura de retornos.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 2 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 2</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">PPF e TMT em economia \(2 \times 2\) heterogênea</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Economia com fator único trabalho, dotação total \(\bar L = 100\). Dois setores produtivos: \(f_1(L_1) = L_1^{1/2}\) (raiz, retornos decrescentes) e \(f_2(L_2) = L_2\) (linear, retornos constantes). Restrição \(L_1 + L_2 = \bar L\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2a" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A equação da PPF \((q_1, q_2)\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="a"> (i) \(q_1^2 + q_2^2 = 100\) (círculo).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="b"> (ii) \(q_1 + q_2 = 100\) (linha).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="c"> (iii) \(q_1^2 + q_2 = 100\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2a" value="d"> (iv) \(q_1 + q_2^2 = 100\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> Substituir \(L_1 = q_1^2\) e \(L_2 = q_2\) na restrição.</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2b" data-correct="c" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A TMT entre o bem 1 e o bem 2 (em valor absoluto), em ponto interior \((q_1, q_2)\), é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="a"> (i) \(\text{TMT}_{12} = q_2/q_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="b"> (ii) \(\text{TMT}_{12} = 1\) (constante, pois setor 2 é linear).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="c"> (iii) \(\text{TMT}_{12} = 2 q_1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2b" value="d"> (iv) \(\text{TMT}_{12} = \sqrt{L_1}\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (iii).</strong> \(\text{TMT} = -dq_2/dq_1 = -d(100 - q_1^2)/dq_1 = 2 q_1\).</div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> Em \(q_1 = 4\) na PPF, qual o valor de \(q_2\) e da TMT?</div>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="a"> (i) \(q_2 = 84\), \(\text{TMT} = 8\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="b"> (ii) \(q_2 = 96\), \(\text{TMT} = 4\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="c"> (iii) \(q_2 = 6\), \(\text{TMT} = 16\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2c" value="d"> (iv) \(q_2 = 100\), \(\text{TMT} = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i). \(q_2 = 100 - 16 = 84\); \(\text{TMT} = 2\cdot 4 = 8\).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Suponha que preços de mercado sejam \(p_1 = 2\), \(p_2 = 1\). Em equilíbrio competitivo (alocação eficiente), a quantidade \(q_1\) produzida é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="a"> (i) \(q_1 = 0\) (firma especializa em bem 2).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="b"> (ii) \(q_1 = 1\) (de \(\text{TMT} = 2 q_1 = p_1/p_2 = 2\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="c"> (iii) \(q_1 = 2\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2d" value="d"> (iv) \(q_1 = 4\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex2e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A intuição econômica de "PPF côncava em \(q_1\) e linear em \(q_2\)" é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="a"> (i) Bem 1 tem retornos crescentes; bem 2 tem retornos decrescentes (oposto).</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="b"> (ii) Bem 1 tem retornos decrescentes em \(L\) (\(f_1\) raiz quadrada); bem 2 tem retornos constantes (\(f_2\) linear). Convexidade da PPF reflete heterogeneidade tecnológica.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="c"> (iii) Os dois bens têm retornos iguais; PPF é côncava por convenção.</label>
+      <label class="quizg-opt"><input type="radio" name="ex2e" value="d"> (iv) PPF é côncava sempre, independente de tecnologia.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 2</h4>
+      <p><strong>1. Ponto-chave.</strong> PPF é construída a partir das funções de produção e da restrição agregada de fator. TMT = inclinação da PPF = razão de produtividades marginais. Em EC, TMT = razão de preços.</p>
+      <p><strong>2. Derivação.</strong> Substituir \(L_1 = q_1^2\) e \(L_2 = q_2\): \(q_1^2 + q_2 = \bar L = 100\). ✓ (a). \(\text{TMT} = -dq_2/dq_1 = 2 q_1\). ✓ (b). Em \(q_1 = 4\): \(q_2 = 100 - 16 = 84\), \(\text{TMT} = 8\). ✓ (c). EC: \(\text{TMT} = 2 q_1 = p_1/p_2 = 2 \implies q_1 = 1\). ✓ (d). Concavidade vem de \(f_1\) raiz; linearidade vem de \(f_2\) linear. ✓ (e).</p>
+      <p><strong>3. Armadilha.</strong> (a)(i) é a PPF do exemplo da aula (\(f_1 = f_2 = \sqrt{\cdot}\)) — quem marca colou da aula. (a)(ii) é PPF linear pura. (b)(i) confunde TMT com razão de quantidades. (b)(ii) ignora o setor de raiz. (c)(ii) usa fórmula errada. (d)(iv) é o \(q_1\) se \(p_1/p_2 = 8\). (e)(iv) é falso.</p>
+      <p><strong>4. Extensão.</strong> A PPF muda de forma se a restrição mudar — em economias com **dois fatores** (trabalho + capital), PPF emerge da otimização de Hotelling-Lemma; é côncava sob hipóteses padrão. **Conexão Aula 4:** a PPF é o análogo "lado da produção" da caixa de Edgeworth. **Aula 6:** PPF + utilidade esperada em estados da natureza.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Exercício técnico — exige construção e derivação cuidadosa. Quem erra (a) confunde PPF com caso simétrico; quem erra (b) ou (c) tem problema com derivada implícita ou substituição.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 3 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 3</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">Robinson Crusoe com preferências assimétricas — composição mata expoente</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Robinson Crusoe com \(u(q, \ell) = q^{2/3}\ell^{1/3}\) (consumidor "viciado em consumo", peso \(2/3\) em consumo) e \(f(L) = L^{1/2}\). Dotação total \(\bar L = 9\). Numerário \(p = 1\).</p>
+      <p style="font-size:0.85rem;color:#64748b;margin-top:0.4em"><em>Atenção algébrica:</em> como \(q = L^{1/2}\), ao substituir na utilidade temos \(u(L) = (L^{1/2})^{2/3}(\bar L - L)^{1/3} = L^{1/3}(9 - L)^{1/3}\) — função <strong>simétrica</strong> em \(L\) e \(9 - L\). A composição "mata" o peso assimétrico.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3a" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> Resolvendo o problema do planejador, \(L^*\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="a"> (i) \(L^* = 9\) (especialização total).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="b"> (ii) \(L^* = 9/2 = 4{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="c"> (iii) \(L^* = 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3a" value="d"> (iv) \(L^* = 3\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3b" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> Logo, \(\ell^* = \) ?</div>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="a"> (i) \(\ell^* = 0\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="b"> (ii) \(\ell^* = 4{,}5\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="c"> (iii) \(\ell^* = 6\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3b" value="d"> (iv) \(\ell^* = 9\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> E \(q^* = f(L^*) = \sqrt{L^*}\) vale:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="a"> (i) \(q^* = 3/\sqrt{2} = 3\sqrt{2}/2 \approx 2{,}121\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="b"> (ii) \(q^* = 3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="c"> (iii) \(q^* = \sqrt{9} = 3\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3c" value="d"> (iv) \(q^* = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3d" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> Em equilíbrio competitivo com \(p = 1\), o salário \(w^*\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="a"> (i) \(w^* = 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="b"> (ii) \(w^* = f'(L^*) = 1/(2\sqrt{9/2}) = \sqrt{2}/6 \approx 0{,}236\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="c"> (iii) \(w^* = 9\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3d" value="d"> (iv) \(w^* = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex3e" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A verificação \(\text{TMS} = \text{TMT} = w/p\) em equilíbrio mostra:</div>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="a"> (i) Os três coincidem em \(\sqrt{2}/6 \approx 0{,}236\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="b"> (ii) \(\text{TMS} \neq \text{TMT}\) (exemplo "patológico" do peso assimétrico).</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="c"> (iii) Não há tangência possível.</label>
+      <label class="quizg-opt"><input type="radio" name="ex3e" value="d"> (iv) Os três coincidem em \(1\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 3</h4>
+      <p><strong>1. Ponto-chave.</strong> Robinson Crusoe com peso assimétrico no consumo. <strong>Lição-chave:</strong> a composição \(q = f(L) = L^{1/2}\) "mata" o peso \(2/3\) da utilidade na fórmula reduzida. Função objetivo final \(L^{1/3}(9-L)^{1/3}\) é simétrica, ótimo em \(L^* = 9/2\). Quem tenta intuir "trabalha mais porque ama consumir" sem fazer a álgebra erra.</p>
+      <p><strong>2. Derivação.</strong> Substituir \(q = L^{1/2}\), \(\ell = 9 - L\): \(u(L) = L^{1/3}(9-L)^{1/3}\). CPO entrega \((9-L) - L = 0 \implies L^* = 4{,}5\). ✓ (a). \(\ell^* = 4{,}5\). ✓ (b). \(q^* = \sqrt{9/2} = 3/\sqrt{2}\). ✓ (c). \(w^* = 1/(2\sqrt{9/2}) = \sqrt{2}/6\). ✓ (d). \(\text{TMS}_{\ell, q} = (\alpha_\ell/\alpha_q)(q/\ell) = (1/2)(q/\ell) = (1/2)(3/\sqrt{2})/(9/2) = 1/(3\sqrt{2}) = \sqrt{2}/6\). \(\text{TMT} = f'(L^*) = \sqrt{2}/6\). \(w^*/p^* = \sqrt{2}/6\). ✓ (e).</p>
+      <p><strong>3. Armadilha.</strong> (a)(iii) \(L^* = 6\) é o "intuitivo errado" — quem pensa "peso 2/3 ⇒ trabalha 2/3 do tempo" cai aqui. (a)(iv) é o oposto. (c)(ii) "\(q^* = 3\)" é alguém que substituiu \(L = 9\). (d)(i) confunde Robinson com Aula 4. (e)(ii) ignora que TMS = TMT em qualquer EC interior por construção.</p>
+      <p><strong>4. Extensão.</strong> Fórmula geral: com \(u = q^\alpha\ell^{1-\alpha}\) e \(f(L) = L^\beta\), \(L^* = \alpha\beta\bar L/(\alpha\beta + 1 - \alpha)\). Em \(\alpha = 2/3, \beta = 1/2\): \(L^* = (1/3)\bar L/(1/3 + 1/3) = \bar L/2 = 4{,}5\). ✓ Para \(\beta = 1\) (linear) e mesmo \(\alpha = 2/3\): \(L^* = (2/3)\bar L = 6\) — aí a intuição funciona. A interação preferência × tecnologia é o ponto.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Distrator (a)(iii) \(L^* = 6\) é deliberado — quem usa intuição em vez de álgebra cai. Calibração honesta de "intuição" vs. "cálculo" — exatamente o que Aula 5 quer corrigir.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 4 🟡 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 4</h2>
+      <span class="ex-calibre">🟡</span>
+      <span class="ex-title">1º TBE com produção: estrutura da prova e papel das hipóteses</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere a prova padrão do 1º TBE em economia com produção (\(I\) consumidores, \(J\) firmas, cotas \(\theta^{ij}\)). Cada uma das afirmações abaixo refere-se a um aspecto da estrutura ou do papel das hipóteses.</p>
+      <ul>
+        <li><strong>A.</strong> A prova é por contradição: assume-se \(\exists (\tilde x, \tilde y)\) viável com \(u^i(\tilde x^i) \ge u^i(x^{*i})\) para todo \(i\) e \(u^j(\tilde x^j) > u^j(x^{*j})\) para algum consumidor \(j\).</li>
+        <li><strong>B.</strong> Para o consumidor \(j\) estritamente melhor, o argumento usa UMP com renda \(m^{*j} = p^*\cdot \omega^j + \sum_k \theta^{jk}\, \pi^{*k}\) — incluindo dividendos.</li>
+        <li><strong>C.</strong> Para os \(i \neq j\) fracamente melhores, <strong>LNS</strong> é necessária (passo 2).</li>
+        <li><strong>D.</strong> Para as firmas, o argumento exige <strong>maximização de lucro</strong>: cada \(\tilde y^k \in Y^k\) implica \(p^*\cdot \tilde y^k \le p^*\cdot y^{*k}\) (passo 3).</li>
+        <li><strong>E.</strong> A hipótese de <strong>convexidade dos \(Y^j\)</strong> é essencial para o 1º TBE com produção.</li>
+      </ul>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4a" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(a)</strong> A afirmação A é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="a"> (i) Verdadeira — esqueleto da prova padrão.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="b"> (ii) Verdadeira em \(J = 1\) apenas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="c"> (iii) Falsa — prova é construtiva.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4a" value="d"> (iv) Verdadeira em economia \(2 \times 2\) apenas.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4b" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(b)</strong> A afirmação B é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="a"> (i) Verdadeira — definição de UMP do consumidor.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="b"> (ii) Falsa — renda do consumidor não inclui dividendos.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="c"> (iii) Verdadeira apenas em CD.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4b" value="d"> (iv) Falsa — argumento exige LNS para \(j\) também.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4c" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(c)</strong> A afirmação C é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="a"> (i) Verdadeira — LNS é hipótese-mínima sobre consumidores no passo 2.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="b"> (ii) Falsa — passo 2 não exige LNS, basta UMP.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="c"> (iii) Verdadeira em CD apenas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4c" value="d"> (iv) Falsa — passo 2 segue da convexidade.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4d" data-correct="a" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(d)</strong> A afirmação D é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="a"> (i) Verdadeira — esse é o passo 3 novo (em comparação com a prova da Aula 4).</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="b"> (ii) Falsa — firmas não maximizam lucro em equilíbrio.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="c"> (iii) Verdadeira apenas em monopólio.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4d" value="d"> (iv) Falsa — passo 3 usa convexidade de \(Y^j\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex4e" data-correct="b" data-difficulty="yellow">
+      <div class="quizg-qtext"><strong>(e)</strong> A afirmação E é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="a"> (i) Verdadeira — convexidade de \(Y^j\) entra no 1º TBE.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="b"> (ii) Falsa — convexidade é hipótese do 2º TBE com produção, não do 1º. 1º TBE precisa apenas de LNS dos consumidores + max-lucro das firmas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="c"> (iii) Verdadeira em retornos constantes apenas.</label>
+      <label class="quizg-opt"><input type="radio" name="ex4e" value="d"> (iv) Verdadeira em \(L = 2\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 4</h4>
+      <p><strong>1. Ponto-chave.</strong> A prova do 1º TBE com produção tem 4 passos: contradição → passo 1 (UMP para consumidor estritamente melhor) → passo 2 (LNS para consumidores fracamente melhores) → passo 3 (max-lucro para firmas) → soma e contradiz viabilidade. O passo 3 é o **único novo** em relação à Aula 4. Convexidade dos \(Y^j\) é hipótese do 2º TBE, **não** do 1º.</p>
+      <p><strong>2. Derivação.</strong> Passos 1–4 como já vistos. Passo 3 detalhado: cada \(\tilde y^k\) é viável em \(Y^k\), então \(p^*\cdot \tilde y^k\) é alcançável. Mas \(y^{*k}\) é maximizador, então \(p^*\cdot \tilde y^k \le p^*\cdot y^{*k}\). Esta desigualdade equipara as firmas no agregado, fechando o argumento.</p>
+      <p><strong>3. Armadilha.</strong> (e)(i) é o erro clássico "convexidade ⇒ 1º TBE": falso, é hipótese do 2º. (d)(ii) ignora o que define EC com produção. (b)(ii) erra porque renda inclui sim os dividendos \(\sum_k \theta^{jk}\pi^{*k}\). (c)(ii) confunde papel da LNS.</p>
+      <p><strong>4. Extensão.</strong> Comparação com Aula 4: (i) Aula 4 (troca pura): EC ⇒ Pareto, LNS dos consumidores; (ii) Aula 5 (produção): EC ⇒ Pareto, LNS + max-lucro firmas; (iii) Aula 7 (externalidades): 1º TBE pode falhar mesmo com LNS + max-lucro, se há efeitos cruzados; (iv) Aula 8 (info assimétrica): mesmo + sem info privada. Cada aula adiciona uma camada; estrutura do 1º TBE sobrevive desde que as hipóteses estejam presentes.</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🟡. Exige distinção limpa entre 1º e 2º TBE *e* entre consumidores e firmas. Aluno que marca (e)(i) ainda não separou os teoremas; quem marca (d)(ii) ainda não internalizou que firmas maximizam lucro **em todo** EC.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 5 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 5</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">Eficiência produtiva, TMT e razão de preços com distorção</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Em economia com fator único trabalho e \(L\) bens produzíveis, a alocação de fatores entre setores é eficiente se e somente se as produtividades marginais (em valor) se igualam: \(p_\ell\cdot \text{PMa}_L^\ell = p_k\cdot \text{PMa}_L^k\) para todo par \((\ell, k)\). Considere agora distorção tributária no setor 1.</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> Em equilíbrio competitivo (sem distorção), a igualdade \(p_\ell\cdot \text{PMa}_L^\ell = w\) para todo setor \(\ell\) vem de:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="a"> (i) Suposição arbitrária do modelo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="b"> (ii) Maximização de lucro de cada firma: \(\max p_\ell\, f_\ell(L_\ell) - w\, L_\ell\) tem CPO \(p_\ell\, f_\ell'(L_\ell) = w\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="c"> (iii) Lei de Walras.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5a" value="d"> (iv) UMP do consumidor.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> A TMT entre os bens \(\ell\) e \(k\) pode ser escrita como:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="a"> (i) \(\text{TMT}_{\ell k} = q_\ell/q_k\) — só função das quantidades.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="b"> (ii) \(\text{TMT}_{\ell k} = \text{PMa}_L^k/\text{PMa}_L^\ell\) — razão inversa de produtividades.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="c"> (iii) \(\text{TMT}_{\ell k} = w/p_\ell\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5b" value="d"> (iv) \(\text{TMT}_{\ell k}\) não está bem-definida em economia geral.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> Combinando (a) e (b), em EC sem distorção:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="a"> (i) \(\text{TMT}_{\ell k} = p_k/p_\ell\) (preço relativo do bem \(k\)).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="b"> (ii) \(\text{TMT}_{\ell k} = p_\ell/p_k\) — "preço relativo do bem \(\ell\) em termos de \(k\)".</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="c"> (iii) \(\text{TMT}_{\ell k} = 1\) sempre.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5c" value="d"> (iv) \(\text{TMT}_{\ell k} = 0\).</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii). \(\text{TMT}_{\ell k} = (\text{PMa}^k)/(\text{PMa}^\ell) = (w/p_k)/(w/p_\ell) = p_\ell/p_k\).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> Suponha agora que o setor 1 paga imposto \(\tau\) sobre cada unidade de produto. O preço efetivo recebido pela firma do setor 1 é \(p_1(1 - \tau)\). Em EC com tributação, \(\text{TMT}_{12}\) no agregado é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="a"> (i) \(\text{TMT}_{12} = p_1/p_2\) — tributo não afeta TMT.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="b"> (ii) \(\text{TMT}_{12} = p_1(1-\tau)/p_2\) — alocação reflete preço pós-imposto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="c"> (iii) \(\text{TMT}_{12} = p_2/p_1\) — inverte.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5d" value="d"> (iv) Indeterminado.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex5e" data-correct="a" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> Implicação política do item (d):</div>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="a"> (i) Imposto seletivo distorce TMT, levando à locação <strong>ineficiente</strong> de fatores entre setores. Pareto-eficiência agregada é violada (1º TBE quebra parcialmente).</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="b"> (ii) Imposto seletivo é Pareto-eficiente sempre.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="c"> (iii) Imposto seletivo aumenta produção total.</label>
+      <label class="quizg-opt"><input type="radio" name="ex5e" value="d"> (iv) Tributação não afeta produção.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (i).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 5</h4>
+      <p><strong>1. Ponto-chave.</strong> Eficiência produtiva = TMT igual a razão de preços relativos. Sem distorção, mercado descentralizado replica isso via maximização de lucro com mobilidade de fator. Distorção tributária faz a TMT-produção se afastar da TMS-consumo, gerando wedge e ineficiência.</p>
+      <p><strong>2. Derivação.</strong> Da firma \(\ell\): \(\max p_\ell f_\ell(L_\ell) - w L_\ell\), CPO \(p_\ell f_\ell' = w \implies f_\ell' = w/p_\ell\). ✓ (a). \(\text{TMT}_{\ell k} = -dq_k/dq_\ell = (df_k/dL_k)(dL_k/dq_\ell) \cdot (-1)\): regra da cadeia com \(L_k = \bar L - L_\ell\), \(L_\ell = f_\ell^{-1}(q_\ell)\) entrega \(\text{TMT}_{\ell k} = \text{PMa}^k/\text{PMa}^\ell\). ✓ (b). Combinando: \(\text{TMT}_{\ell k} = (w/p_k)/(w/p_\ell) = p_\ell/p_k\). ✓ (c). Com tributo: firma 1 vê \(p_1(1-\tau)\), CPO \(f_1' = w/[p_1(1-\tau)]\). \(\text{TMT}_{12} = f_2'/f_1' = (w/p_2)/(w/(p_1(1-\tau))) = p_1(1-\tau)/p_2\). ✓ (d). Mercado de bens enxerga \(p_1/p_2\) (preço de consumidor); wedge \(\text{TMS}_{12} \neq \text{TMT}_{12}\) ⇒ ineficiência. ✓ (e).</p>
+      <p><strong>3. Armadilha.</strong> (a)(i) ignora que CPO da firma é o que **gera** a igualdade. (b)(i) confunde TMT com razão de quantidades — só vale em casos particulares (PPF circular). (c)(i) inverte direção. (d)(i) ignora pass-through do imposto.</p>
+      <p><strong>4. Extensão.</strong> Conexão com Aula 7 (externalidades): se há externalidade tecnológica positiva em setor 1 (aprendizado, network effects), preço de mercado **subestima** valor social ⇒ TMT-mercado \(\neq\) TMT-social. Argumento simétrico ao da tributação. **Conexão com Box ZFM da aula:** subsídio fiscal regional cria distorção análoga — TMT em Manaus \(\neq\) TMT em SP, e Pareto-agregada é violada (a menos que externalidades positivas justifiquem second-best).</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Mecânica de eficiência produtiva + leitura econômica de distorção. Aluno que marca (e)(ii)/(iii)/(iv) ainda não internalizou conexão "TMT = preço relativo" como condição de eficiência. Genuinamente 🔴 porque cobra a estrutura da derivação, não só a fórmula.</p>
+    </div>
+  </div>
+
+  <!-- ===================== EXERCÍCIO 6 🔴 ===================== -->
+  <div class="ex-divider">
+    <div class="ex-header">
+      <h2>Exercício 6</h2>
+      <span class="ex-calibre">🔴</span>
+      <span class="ex-title">2º TBE com produção: convexidade e retornos crescentes</span>
+    </div>
+
+    <div class="ex-enunciado">
+      <p><strong>Enunciado.</strong> Considere economia com 1 consumidor + 1 firma + 2 bens. Tecnologia \(f(L) = L^2\) (retornos crescentes) — quanto mais trabalho, mais que proporcionalmente mais produto. Preferências \(u(q, \ell) = \ln q + \ln \ell\). Dotação \(\bar L = 10\).</p>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6a" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(a)</strong> A função de produção \(f(L) = L^2\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="a"> (i) Côncava (rendimentos decrescentes).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="b"> (ii) Convexa (rendimentos crescentes).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="c"> (iii) Linear.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6a" value="d"> (iv) Constante.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii). \(f''(L) = 2 > 0\).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6b" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(b)</strong> O conjunto de produção \(Y = \{(-L, q) : L \ge 0, q \le L^2\}\) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="a"> (i) Convexo.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="b"> (ii) Não-convexo — combinação de \((0, 0)\) e \((-2, 4)\) é \((-1, 2)\), mas \(f(1) = 1 < 2\), então \((-1, 2) \notin Y\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="c"> (iii) Compacto.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6b" value="d"> (iv) Vazio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6c" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(c)</strong> O problema de maximização de lucro \(\max_L p L^2 - w L\), com \(p, w > 0\):</div>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="a"> (i) Tem solução interior única.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="b"> (ii) Tem \(L^* = w/(2p)\) como mínimo (não máximo) — função objetivo é convexa em \(L\), então CPO de 1ª ordem dá mínimo, e máximo está em \(L \to \infty\) (lucro infinito) ou \(L = 0\) (lucro zero).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="c"> (iii) Não tem solução.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6c" value="d"> (iv) Tem múltiplas soluções interiores.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6d" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(d)</strong> A consequência econômica de (c) é:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="a"> (i) Existe EC clássico — apenas precisa-se de \(p\) adequado.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="b"> (ii) <strong>Não existe EC clássico</strong> com firma maximizando lucro; firma "quer" produzir infinito, o que é viável só em monopólio com restrição de demanda.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="c"> (iii) Mercado fecha em qualquer \(p\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6d" value="d"> (iv) Lucro zero em equilíbrio.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="quizg-q" data-qid="ex6e" data-correct="b" data-difficulty="red">
+      <div class="quizg-qtext"><strong>(e)</strong> O 2º TBE preliminar nesta economia:</div>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="a"> (i) Vale — qualquer Pareto-eficiente é EC após redistribuição.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="b"> (ii) <strong>Falha</strong> — convexidade do \(Y\) é violada, hiperplano-preço de suporte pode não existir, mercado descentralizado não replica solução do planejador.</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="c"> (iii) Vale apenas em \(\bar L > 1\).</label>
+      <label class="quizg-opt"><input type="radio" name="ex6e" value="d"> (iv) Falha porque preferências são CD.</label>
+      <div class="quizg-feedback" hidden><strong>Correta: (ii).</strong></div>
+    </div>
+
+    <div class="ex-gabarito-5passos quizg-feedback" hidden>
+      <h4>Gabarito 5-passos — Exercício 6</h4>
+      <p><strong>1. Ponto-chave.</strong> Retornos crescentes em \(f(L) = L^2\) ⇒ conjunto de produção \(Y\) não-convexo ⇒ separação por hiperplano-preço falha ⇒ 2º TBE com produção quebra. Aplicação do tópico estrutural de "quando convexidade falha". Ponte com Aula 7 (externalidades, regulação tarifária para retornos crescentes naturais).</p>
+      <p><strong>2. Derivação.</strong> \(f(L) = L^2\) tem \(f''(L) = 2 > 0\) ⇒ convexa. ✓ (a). \(Y\) é a sub-gráfica; problema é a fronteira: \((0, 0)\) e \((-2, 4)\) estão em \(Y\); combinação convexa \((-1, 2)\) tem \(L = 1\) com \(f(1) = 1 < 2\), fora de \(Y\). ✓ (b). Lucro \(\pi = pL^2 - wL\) é convexa em \(L\); CPO \(2pL = w\) dá ponto crítico, mas é mínimo (segunda derivada \(2p > 0\)). Máximo global em \(L = \infty\) (se \(p > 0\)), lucro \(\infty\). ✓ (c). Sem \(L\) ótimo finito, sem EC clássico. ✓ (d). Sem EC, 2º TBE não pode descentralizar. ✓ (e).</p>
+      <p><strong>3. Armadilha.</strong> (a)(i) confunde "côncavo" com "monotônico" — \(f\) é monotônica crescente, mas convexa. (b)(i) ignora que combinação convexa precisa estar abaixo da função. (c)(i) é o erro clássico de aplicar CPO sem checar concavidade do problema. (d)(i) "qualquer \(p\)" ignora que firma quer produzir infinito.</p>
+      <p><strong>4. Extensão.</strong> <strong>Onde retornos crescentes aparecem em economia real:</strong> telecomunicações (rede com custo fixo + custo marginal baixo); software/IP (P&D fixo, cópia ~zero); eletricidade (infraestrutura concentrada); farmacêutica (P&D + produção marginal baixa). <strong>Resposta de política:</strong> regulação tarifária (preço regulado), tarifa em duas partes (Coase). Mercado puro não funciona; "second-best". <strong>Conexão com Box ZFM:</strong> subsídio à indústria local pode ser justificado se houver retornos crescentes (encadeamento industrial, learning-by-doing) — argumento "second-best".</p>
+      <p><strong>5. Peer-review.</strong> Calibre 🔴. Exercício de "quando o 2º TBE quebra" — pega o aluno em todos os pontos onde convexidade aparece. Aluno que marca (a)(i), (b)(i), (c)(i), (d)(i), ou (e)(i) tem buraco em algum elo da cadeia "retornos crescentes ⇒ não-convexidade ⇒ Hahn-Banach falha". Risco residual: o item (c) é quase malicioso porque o aluno faz CPO e acha um número, sem checar segunda ordem.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap" style="margin-top:2.5rem">
+    <button class="btn btn-primary quizg-submit">Submeter exercícios (~28 sub-itens)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="gabarito-pending-banner">
+  <strong>Suas respostas foram registradas.</strong> O gabarito 5-passos e a solução detalhada serão liberados em <strong>28/05 após 00:00</strong> (dia seguinte ao fechamento da plataforma em 27/05 18:00). Volte aqui nesse momento para revisar.
+</div>
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Próximos passos</div>
+<p>Feitos os exercícios, a <strong>Pré-aula 6</strong> (Arrow-Debreu I — bens contingentes) é liberada na madrugada de <strong>21/05</strong>. <strong>Pré-monitoria 3</strong> com Alberto abre <strong>sáb 23/05</strong> (cobre Aula 5 — EG produção). Tudo da Aula 5 fecha em <strong>quarta 27/05 18h</strong>; gabarito quinta 28/05 00:00.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+(function() {
+  if (!MicroAuth.requireAuth()) throw 'redirect';
+  var session = MicroAuth.getSession();
+  document.getElementById('user-name').textContent = session.nome;
+  MicroTracker.startPage('aula-05-exerc');
+  MicroQuizGraded.init();
+
+  // Gate de liberacao do gabarito: consome MPE_CALENDARIO (SSOT).
+  var locked;
+  if (window.MPE_CALENDARIO) {
+    locked = !MPE_CALENDARIO.canShowGabarito(5, 'exerc');
+  } else {
+    var GABARITO_RELEASE_FALLBACK = new Date('2026-05-28T00:00:00-03:00').getTime();
+    locked = Date.now() < GABARITO_RELEASE_FALLBACK;
+  }
+  if (locked) {
+    document.body.classList.add('gabarito-locked');
+    var btn = document.querySelector('.quizg-submit');
+    if (btn) {
+      btn.addEventListener('click', function() {
+        setTimeout(function() {
+          var banner = document.querySelector('.gabarito-pending-banner');
+          if (banner) banner.style.display = 'block';
+        }, 200);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>

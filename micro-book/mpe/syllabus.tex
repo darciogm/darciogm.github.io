@@ -1,0 +1,516 @@
+% =============================================================================
+% Syllabus — Microeconomia I — MPE 2026/32
+% Insper Instituto de Ensino e Pesquisa
+% Prof. Darcio Genicolo Martins + Monitor Alberto Nishikawa
+% Compilar com: pdflatex syllabus.tex (duas vezes, para referências cruzadas)
+% =============================================================================
+
+\documentclass[11pt,a4paper]{article}
+
+% ---- Codificação e idioma ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% ---- Geometria e espaçamento ----
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{setspace}
+\setstretch{1.15}
+
+% ---- Matemática ----
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ---- Tabelas ----
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{tabularx}
+
+% ---- Listas ----
+\usepackage{enumitem}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt}
+
+% ---- Cores e identidade visual ----
+\usepackage{xcolor}
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{monitoriablue}{HTML}{1B3A5C}
+\definecolor{lightgray}{HTML}{F2F2F2}
+
+% ---- Títulos de seção ----
+\usepackage{titlesec}
+\titleformat{\section}
+  {\color{insperred}\Large\bfseries}{\thesection}{0.6em}{}
+\titleformat{\subsection}
+  {\color{insperred}\large\bfseries}{\thesubsection}{0.5em}{}
+\titleformat{\subsubsection}
+  {\color{insperred}\normalsize\bfseries}{\thesubsubsection}{0.5em}{}
+
+% ---- Hyperref (por último entre os pacotes de formatação) ----
+\usepackage[colorlinks=true,
+            linkcolor=insperred,
+            urlcolor=insperred,
+            citecolor=insperred]{hyperref}
+
+% ---- Cabeçalho e rodapé ----
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{insperred}\textbf{Microeconomia I} --- MPE 2026/32}
+\fancyhead[R]{\small Prof. Darcio Genicolo Martins}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{22pt}
+\setlength{\topmargin}{-10pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{insperred}\leaders\hrule height \headrulewidth\hfill}}
+
+% ---- Definições de ambientes úteis ----
+\newcommand{\insper}{\textcolor{insperred}{\textbf{Insper}}}
+\newcommand{\zae}{\textit{Do Zero ao Equilíbrio (e Além)}}
+\newcommand{\zaeshort}{ZaE}
+\newcommand{\ns}{N\&S 12e}
+\newcommand{\jr}{J-R 3e}
+\newcommand{\mwg}{MWG}
+
+% ---- Título do documento ----
+\title{\color{insperred}\bfseries
+  Microeconomia I --- Mestrado Profissional em Economia\\[2pt]
+  \large\mdseries Plano de Ensino --- Turma MPE23MI --- Período Letivo 2026/32}
+\author{Prof. Darcio Genicolo Martins \\ Monitor: Alberto Nishikawa}
+\date{Vigência: 22 de abril a 24 de junho de 2026}
+
+% =============================================================================
+\begin{document}
+% =============================================================================
+
+\maketitle
+\thispagestyle{fancy}
+
+% -----------------------------------------------------------------------------
+\section*{\color{insperred}Identificação da disciplina}
+\addcontentsline{toc}{section}{Identificação da disciplina}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\toprule
+\textbf{Instituição}        & Insper Instituto de Ensino e Pesquisa \\
+\textbf{Curso}              & Mestrado Profissional em Economia (MPE) \\
+\textbf{Disciplina}         & Microeconomia I \\
+\textbf{Turma}              & MPE23MI \\
+\textbf{Currículo}          & 202631 \\
+\textbf{Período letivo}     & 2026 / 32 \\
+\textbf{Carga horária}      & 30 horas presenciais + trilha assíncrona na plataforma \\
+\textbf{Período de vigência}& 22/04/2026 a 24/06/2026 \\
+\textbf{Horário das aulas}  & Quartas-feiras, 19h30 às 22h30 \\
+\textbf{Monitorias}         & Sábados à tarde (cinco encontros, ver calendário) \\
+\textbf{Professor titular}  & Darcio Genicolo Martins --- \href{mailto:darciogm1@insper.edu.br}{darciogm1@insper.edu.br} \\
+\textbf{Monitor}            & Alberto Nishikawa --- \href{mailto:albertokn2@insper.edu.br}{albertokn2@insper.edu.br} \\
+\bottomrule
+\end{tabularx}
+
+\vspace{1em}
+
+% -----------------------------------------------------------------------------
+\section{Apresentação do curso}
+
+Microeconomia de mestrado profissional não é microeconomia de graduação travestida de adulto nem um \textit{qualifier} de doutorado disfarçado. O ferramental central é o mesmo de um \textit{qualifier} diluído --- maximização de utilidade, dualidade, decomposição de Slutsky, Arrow--Debreu, desenho de mecanismos sob informação assimétrica --- mas o alvo formativo é distinto: dar ao profissional o vocabulário e o aparato formal para \textbf{ler um artigo empírico com teoria não-trivial, sobreviver a uma reunião onde alguém cita ``falha de mercado'' com propriedade, e reconhecer, no dia-a-dia do ofício (mercado financeiro, consultoria, regulação, governo, terceiro setor), qual peça da teoria está operando}. Em trinta horas presenciais, não há espaço para reaquecer graduação nem para caber um tratado. O curso trabalha num meio-termo deliberado: piso intermediário-difícil no calibre de Nicholson \& Snyder (12\textsuperscript{a} edição), teto de conforto em Jehle--Reny (3\textsuperscript{a} edição) para os pontos em que o rigor adicional paga o custo, e menção cirúrgica a Mas-Colell--Whinston--Green onde não há substituto mais suave.
+
+O público-alvo é heterogêneo por desenho: egressos de Economia, Engenharia, Administração, Direito, Estatística, com trajetórias profissionais distintas (mercado, consultoria, setor público, terceiro setor). Assume-se que o nivelamento matemático --- cálculo multivariado, álgebra linear básica, otimização com Lagrangiano --- foi feito no \textit{onboarding} do programa. A heterogeneidade de formação não é obstáculo; é ativo, desde que a turma chegue nivelada tecnicamente e disposta a operar em linguagem formal.
+
+A arquitetura é de \textbf{sala invertida}. A primeira exposição ao conteúdo acontece \emph{antes} da aula, na plataforma do curso e nas notas autorais \zae{} (ver Seção~\ref{sec:zae}). A sala é onde o material se refina, aplica, tensiona e estende. A monitoria com o Alberto é extensão, não repetição --- calibre avançado, aprofundamento de demonstrações, exercícios em nível N\&S-difícil e J-R, aplicações empíricas com noção de estimação estrutural. Quem adere ao protocolo sai preparado para a camada seguinte do currículo (econometria estrutural, IO, \textit{public}, finanças comportamentais) e apto a exercer ofício intelectualmente honesto com modelos microeconômicos. Quem não adere, o curso não compensa --- e convém recalibrar a postura ainda na primeira semana.
+
+% -----------------------------------------------------------------------------
+\section{Objetivos de aprendizagem}
+
+\subsection*{Objetivos institucionais (conforme Ementário oficial)}
+
+O curso apresenta os fundamentos da microeconomia necessários à análise do comportamento dos agentes econômicos e do funcionamento dos mercados. Parte da teoria da escolha do consumidor e da derivação da demanda para analisar respostas a preços e renda, elasticidades e implicações para bem-estar. Em seguida, introduz o arcabouço de equilíbrio geral em economias de trocas e produção e aprofunda o modelo Arrow--Debreu, no qual tempo, risco e expectativas são incorporados ao modelo walrasiano por meio de mercados de bens contingentes. O curso examina, ainda, situações em que os pressupostos do equilíbrio competitivo não se sustentam, incluindo externalidades, bens públicos e problemas de informação assimétrica. Ao final, o aluno deverá ser capaz de aplicar esses conceitos, com rigor analítico, à análise de mercados, políticas públicas e desenho institucional.
+
+\subsection*{Objetivos operacionais complementares}
+
+Ao término da disciplina, espera-se que o aluno seja capaz de:
+
+\begin{itemize}
+  \item ler criticamente um artigo empírico contemporâneo com teoria estrutural não-trivial --- estimação de sistemas de demanda, risco moral em seguros, desenho de mecanismo em leilões, \textit{matching} em mercados de trabalho --- identificando quais premissas teóricas sustentam a identificação econométrica;
+  \item traduzir um resultado teórico em linguagem executiva sem perder rigor --- por exemplo, explicar a um colegiado o que muda quando um mercado passa de completo a incompleto, ou por que um contrato ótimo sob risco moral sacrifica seguro em favor de incentivo;
+  \item reconhecer, em casos reais do ambiente profissional, qual peça da teoria microeconômica está operando, e desconfiar de narrativas que apelam à teoria econômica sem respeitar suas condições de validade.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Competências e habilidades}
+
+O curso foi desenhado para desenvolver e avaliar três camadas de competências. A correspondência específica entre cada competência e o instrumento que a afere fica a cargo do professor, ajustável ao longo do semestre.
+
+\subsection*{Competências analíticas (derivação, modelagem, demonstração)}
+
+\begin{itemize}
+  \item \textbf{Derivar} demandas Marshallianas e Hicksianas a partir das respectivas formulações primal e dual, aplicando Lagrangiano e condições de primeira e segunda ordem com rigor algébrico.
+  \item \textbf{Demonstrar} identidades de Roy e lema de Shephard via teorema do envelope, e a simetria da matriz de Slutsky via dualidade.
+  \item \textbf{Construir} equilíbrio geral em caixa de Edgeworth e caracterizar alocações de Pareto-eficiência, núcleo e walrasianas; estender para economias de produção.
+  \item \textbf{Formalizar} o modelo Arrow--Debreu com bens contingentes, esboçar o argumento de existência via ponto fixo, e enunciar/aplicar o Primeiro e o Segundo Teoremas do Bem-Estar.
+  \item \textbf{Modelar} problemas de informação assimétrica (seleção adversa \`a Akerlof e Rothschild--Stiglitz, risco moral principal-agente, sinalização \`a Spence) derivando restrições de participação (IR) e de compatibilidade de incentivos (IC).
+  \item \textbf{Enunciar} a condição de Samuelson para bens públicos e o problema do \textit{free-rider}, comparando instrumentos corretivos (Pigou, Coase, cotas, mercados de permissão).
+\end{itemize}
+
+\subsection*{Competências aplicadas (reconhecer teoria no mundo real)}
+
+\begin{itemize}
+  \item \textbf{Interpretar} resultados empíricos de sistemas de demanda (AIDS de Deaton--Muellbauer, por exemplo) à luz das restrições teóricas que os modelos impõem --- simetria, homogeneidade, agregação --- e reconhecer quando uma especificação econométrica viola esses blocos.
+  \item \textbf{Identificar}, em casos-Brasil e casos-Mundo apresentados em aula (mercado de carbono regulado, POF/IBGE, seguro-saúde ANS, SISU, NRMP), qual peça da teoria está operando e quais hipóteses estão sendo tensionadas pelo caso empírico.
+  \item \textbf{Ler} um artigo aplicado contemporâneo (recortado previamente pelo professor ou monitor) e reconstituir a cadeia teoria $\to$ identificação $\to$ estimação $\to$ implicação de bem-estar.
+  \item \textbf{Traduzir} um resultado teórico em linguagem não-técnica sem perder conteúdo --- por exemplo, argumentar a um tomador de decisão por que um subsídio uniforme é tecnicamente inferior a uma transferência \textit{lump-sum} em presença de externalidades.
+\end{itemize}
+
+\subsection*{Habilidades transversais}
+
+\begin{itemize}
+  \item \textbf{Disciplina de estudo}: consistência semanal na plataforma, leitura à risca, \textit{timeliness} na resolução de checkpoints, registro genuíno de dúvidas.
+  \item \textbf{Uso responsável de ferramentas de IA}: utilizar modelos de linguagem como tutor, gerador de exercícios e revisor de raciocínio, \emph{sem} terceirizar item avaliativo.
+  \item \textbf{Trabalho em dupla ou trio}: capacidade de co-resolver exercícios em sala, articular raciocínio em voz alta e ouvir construtivamente o raciocínio do colega.
+  \item \textbf{Comunicação de raciocínio técnico}: apresentar solução ao quadro de forma legível e auditável --- equação numerada, passagem justificada, resultado sinalizado.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Conteúdo programático}
+
+Transcrição literal dos nove tópicos da Ementa oficial (Currículo 202631):
+
+\begin{enumerate}
+  \item \textbf{Preferências e Utilidade}: axiomas de preferências, representação por funções utilidade, ordinalidade e cardinalidade, convexidade, preferências quasilineares e CES, interpretação econômica.
+  \item \textbf{Maximização de Utilidade e Escolha do Consumidor}: problema de maximização de utilidade, restrição orçamentária, demanda Marshalliana, funções gasto, dualidade, demandas Hicksianas, lemas de Roy e de Shephard.
+  \item \textbf{Efeito Renda e Efeito Substituição}: decomposição de Slutsky, bens normais e inferiores, bens de Giffen, propriedades da matriz de Slutsky, implicações para bem-estar e estática comparativa.
+  \item \textbf{Elasticidades e Princípios de Estimação de Demanda}: elasticidades-preço e renda, elasticidades Marshallianas e Hicksianas, restrições teóricas em sistemas de demanda, identificação, noções de estimação estrutural e análise de bem-estar.
+  \item \textbf{Equilíbrio Geral: Economias de Trocas e Produção}: economias de trocas puras, caixa de Edgeworth, núcleo e equilíbrio competitivo, inclusão da produção, comportamento das firmas, eficiência de Pareto.
+  \item \textbf{Equilíbrio Geral: Modelo Arrow--Debreu}: bens contingentes, incorporação explícita de tempo, risco e expectativas ao modelo walrasiano, mercados completos, existência do equilíbrio, teoremas do bem-estar, interpretação normativa.
+  \item \textbf{Externalidades e Bens Públicos}: externalidades tecnológicas, falhas de mercado, ótimo de Pareto com externalidades, bens públicos e condição de Samuelson, instrumentos de política e arranjos institucionais.
+  \item \textbf{Informação Assimétrica: Seleção Adversa e Risco Moral}: informação privada, seleção adversa, modelos de seguro, risco moral, contratos ótimos, \textit{trade-offs} entre incentivo e seguro.
+  \item \textbf{Informação Assimétrica: Sinalização, Matching e Outros Tópicos}: modelos de sinalização, mercados de \textit{matching}, equilíbrio estável, aplicações a mercados de trabalho, educação e políticas públicas.
+\end{enumerate}
+
+% -----------------------------------------------------------------------------
+\section{Projeto \textit{Do Zero ao Equilíbrio (e Além)}}
+\label{sec:zae}
+
+O livro-texto autoral do professor, \zae{}, está em desenvolvimento ativo e disponível em \url{https://darciogm.github.io/micro-book/}. É importante registrar com clareza o estatuto deste material: \textbf{\zae{} não consta da bibliografia básica nem da bibliografia complementar oficial da Ementa} (Seção~\ref{sec:bibliografia}). Ele cumpre, no contexto deste curso, o papel de \textbf{notas de aula estruturadas} --- escritas especificamente no nível e no tom que o MPE exige, servindo de ponte entre o repertório de graduação avançada e o calibre de \textit{qualifier} diluído que a disciplina opera.
+
+Como notas de aula, \zae{} é a referência primária da pré-aula na plataforma, sempre acompanhada do cruzamento com \ns{} (bibliografia básica) para calibragem de notação e cobertura. O livro traz aplicações Brasil (POF/IBGE, reforma tributária, mercado de carbono regulado no Brasil, seguro-saúde no âmbito da ANS) e aplicações Mundo (derivativos climáticos, CAT bonds, ETS europeu, NRMP nos EUA), além de gráficos interativos que os PDFs tradicionais não acomodam. O material é apresentado como complemento, não como substituto dos livros-texto consolidados: o aluno que quiser tratamento canônico vai a \ns{} e, para teto de rigor, a \jr{}; o aluno que quiser a exposição já calibrada para este curso vai a \zae{}.
+
+% -----------------------------------------------------------------------------
+\section{Dinâmica do curso}
+
+Microeconomia I do MPE é um curso desenhado para profissionais que querem sair com ferramental real --- não com certificado. A primeira exposição ao conteúdo acontece antes da aula, com leitura das referências bibliográficas indicadas e resolução dos \textit{checkpoints} da plataforma. A sala é onde o material se refina, aplica e tensiona; a monitoria é onde se ganha calibre extra e se conhece o teto de dificuldade. Em 30 horas presenciais, só funciona se o aluno chegar preparado --- essa é a arquitetura, não um detalhe.
+
+A pré-aula é \textbf{obrigatória} e deve ser feita \emph{à risca}: leitura atenta das seções indicadas e todos os itens do \textit{checkpoint} resolvidos com tentativa genuína, papel e caneta. A plataforma registra tempo efetivo de sessão, percentual concluído, acerto em primeira tentativa, latência entre liberação e resolução e consistência semanal. Esses sinais alimentam um \textit{dashboard} compartilhado entre professor e aluno --- painel de bordo, não vigilância oculta. Em aulas escolhidas sem aviso, podem ser aplicados \textbf{quizzes-surpresa} curtos, fechados, cobrindo exclusivamente a pré-aula daquela semana. Quantidade e calendário não são anunciados: planejar em torno do quiz é perda de tempo; planejar em torno da pré-aula é o que faz o quiz virar formalidade.
+
+Cada aula presencial dura 3h, às quartas-feiras, e combina blocos curtos de \textit{lecture} com prática em dupla ou trio, mini-cases Brasil/Mundo quando o tópico permite, e fechamento com síntese no quadro. A aula assume pré-aula feita e avança no conteúdo; não é resumo nem leitura em voz alta do capítulo. A monitoria com o Alberto acontece em cinco encontros aos sábados à tarde (16/05, 23/05, 30/05, 13/06, 20/06), integralmente baseada em resolução de exercícios --- aprofundamento dos itens mais duros do livro-texto, calibre avançado e tópicos extras com sabor ANPEC. Não é repetição da aula: é extensão, e é onde se ganha o teto que a prova cobra em um ou dois itens.
+
+A nota é composta por \textbf{30\% de pré-aula agregada} (\textit{checkpoints}, quizzes-surpresa e engajamento do \textit{dashboard}, com ponderação interna a critério do professor) e \textbf{70\% de avaliação final presencial em 24/06} --- escrita, individual, sem consulta, cobrindo toda a ementa. Para aprovação, exige-se média final $\geq 6{,}0$ e presença $\geq 75\%$ nas aulas presenciais. Sobre integridade: IA e colegas são bem-vindos como ferramentas de estudo, mas copiar resposta de quiz, prova ou \textit{checkpoint} --- de pessoa, modelo ou gabarito --- é proibido, detectado e punido. O contrato é adulto e explícito: quem adere ao protocolo com disciplina conclui o semestre apto a ler artigos com teoria não-trivial e preparado para as próximas etapas do currículo; quem dele se afasta obtém retorno limitado do curso, e convém recalibrar a postura ainda na primeira semana.
+
+% -----------------------------------------------------------------------------
+\section{Aula a aula}
+\label{sec:aulas}
+
+A tabela a seguir transcreve, com mínimo retoque editorial, o Plano de Aula homologado. Horário de todas as aulas: quartas-feiras, 19h30 às 22h30.
+
+\begin{small}
+\begin{longtable}{@{}p{0.9cm}p{1.6cm}p{2.8cm}p{4.2cm}p{4.6cm}@{}}
+\toprule
+\textbf{\#} & \textbf{Data} & \textbf{Tema} & \textbf{Objetivo de aprendizagem} & \textbf{Pré-aula $\to$ Durante-aula} \\
+\midrule
+\endfirsthead
+
+\toprule
+\textbf{\#} & \textbf{Data} & \textbf{Tema} & \textbf{Objetivo de aprendizagem} & \textbf{Pré-aula $\to$ Durante-aula} \\
+\midrule
+\endhead
+
+\bottomrule
+\endfoot
+
+1 & 22/04 & Teoria do Consumidor I: Preferências, Axiomas e Utilidade & Formalizar preferências via axiomas, demonstrar representação por utilidade e distinguir ordinalidade de cardinalidade; classificar utilidades (Cobb-Douglas, CES, quasilinear, Leontief). &
+\textbf{Pré (75--90 min):} \ns{} caps. 2--3; \zaeshort{} cap. 3 §§3.1--3.4; \textit{checkpoint} de 6 itens (axiomas, monotonicidade, convexidade, TMS); resolver \ns{} 3.1 e 3.3.\newline
+\textbf{Durante:} mini-\textit{lecture} 45min (axiomas e teorema da representação); resolução guiada de TMS para CES e quasilinear 40min; Box Brasil consumo domiciliar POF 25min; exercícios em dupla \ns{} 3.5 e 3.7 com fechamento 50min. \\
+\addlinespace
+
+2 & 29/04 & Maximização, Minimização de Gasto e Dualidade & Resolver UMP e EMP via Lagrangiano, derivar demandas Marshalliana e Hicksiana, e aplicar identidades de Roy e Shephard para estabelecer a dualidade consumidor. &
+\textbf{Pré (90 min):} \ns{} cap. 4 integral e cap. 5 §§5.1--5.3; \zaeshort{} cap. 4; \textit{checkpoint} de 7 itens (CPOs, envelope, função indireta); refazer Cobb-Douglas simétrico fechado.\newline
+\textbf{Durante:} derivação no quadro de UMP e EMP lado a lado 50min; demonstração de Roy e Shephard via envelope 35min; exercício cronometrado CES 30min; discussão dualidade como equivalência informacional 25min; síntese 20min. \\
+\addlinespace
+
+3 & 06/05 & Slutsky, Elasticidades e Princípios de Estimação de Demanda & Decompor efeitos renda e substituição via Slutsky, classificar bens (normal, inferior, Giffen) e conectar elasticidades à identificação em estimação estrutural de demanda. &
+\textbf{Pré (90 min):} \ns{} cap. 5 §§5.4--5.8 e cap. 6 §§6.1--6.3; \zaeshort{} cap. 5; \textit{checkpoint} de 8 itens (matriz de Slutsky, simetria, negatividade); ler resumo Deaton--Muellbauer AIDS (2p).\newline
+\textbf{Durante:} derivação matricial de Slutsky 40min; paradoxo Giffen com exemplo Jensen--Miller China 20min; Box Brasil POF estimando elasticidade-renda alimentos 30min; ponte para identificação e IV em demanda 40min; exercício \ns{} 5.4 (Cobb-Douglas com verificação da equação de Slutsky) e 6.2 (Giffen/Hicksian substitutes) 50min. \\
+\addlinespace
+
+4 & 13/05 & Equilíbrio Geral: Trocas e Produção & Construir equilíbrio geral de trocas na caixa de Edgeworth, caracterizar alocações Pareto-eficientes e do núcleo, e estender para economia com produção. &
+\textbf{Pré (75 min):} \ns{} cap. 13 §§13.1--13.5; \zaeshort{} capítulo de EG (trocas); \textit{checkpoint} de 6 itens (curva de contrato, núcleo, walrasiano); resolver exemplo 2$\times$2 Cobb-Douglas fechado.\newline
+\textbf{Durante:} construção da caixa de Edgeworth passo a passo 45min; teorema equivalência núcleo-walrasiano intuitivo 30min; extensão para produção e FPP 40min; exercício \ns{} 13.2 (Smith/Jones produção com Cobb-Douglas) em grupos 45min; discussão aplicada reforma tributária 20min. \\
+\addlinespace
+
+5 & 20/05 & Arrow-Debreu I: Bens Contingentes, Tempo e Risco & Estender o \textit{framework} walrasiano para bens contingentes, tempo e incerteza, e formalizar estados da natureza e mercados de Arrow-Debreu. &
+\textbf{Pré (75 min):} \ns{} cap. 7 integral (Uncertainty, Expected Utility, VNM Theorem, State-Preference Approach); \zaeshort{} capítulo AD parte I (bens contingentes, datas e mercados de Arrow --- tratamento completo do walrasiano estendido, não coberto formalmente em \ns{}); \textit{checkpoint} de 6 itens (estados, bens datados, utilidade esperada); revisar VNM axiomas.\newline
+\textbf{Durante:} mini-\textit{lecture} 50min (expansão do espaço de bens, estados, datas); derivação de preços de Arrow 30min; exemplo 2 estados com seguro 35min; Box Mundo derivativos climáticos e CAT bonds 25min; exercício preparatório para AD II 40min. \\
+\addlinespace
+
+6 & 27/05 & Arrow-Debreu II: Existência e Teoremas do Bem-Estar & Demonstrar existência de equilíbrio competitivo e os Primeiro e Segundo Teoremas do Bem-Estar; discutir completude de mercados e falhas na implementação. &
+\textbf{Pré (90 min):} \ns{} cap. 13 §§Mathematical Model of Exchange e Mathematical Model of Production and Exchange; \zaeshort{} capítulo AD parte II (existência via Brouwer, 1T e 2T rigorosos, completude de mercados --- tratamento formal não coberto em \ns{}); \textit{checkpoint} de 7 itens (1T, 2T, convexidade, separação); ler apêndice matemático do \zaeshort{} sobre ponto fixo de Brouwer.\newline
+\textbf{Durante:} esboço de existência via Brouwer 40min; demonstração 1T no quadro 30min; 2T e papel da convexidade mais transferências \textit{lump-sum} 35min; discussão crítica sobre completude e mercados faltantes 25min; exercício \jr{} calibre médio 50min. \\
+\addlinespace
+
+7 & 03/06 & Externalidades e Bens Públicos & Caracterizar externalidades e bens públicos, derivar condição de Samuelson, e comparar instrumentos (Pigou, Coase, cotas, mercados de permissões). &
+\textbf{Pré (80 min):} \ns{} cap. 19 integral; \zaeshort{} capítulo de externalidades; \textit{checkpoint} de 7 itens (Samuelson, Pigou, Coase, \textit{free-rider}); ler \textit{case} curto ETS europeu (2p).\newline
+\textbf{Durante:} mini-\textit{lecture} externalidades tecnológicas 35min; derivação Samuelson 25min; teorema de Coase com custos de transação 25min; Box Brasil mercado de carbono regulado 25min; exercício \ns{} 19.9 (Taxing pollution: Pigou uniforme vs. diferencial, cap de emissão) e aplicação prática 60min; síntese 10min. \\
+\addlinespace
+
+8 & 10/06 & Informação Assimétrica: Seleção Adversa e Risco Moral & Modelar seleção adversa (Akerlof, Rothschild--Stiglitz) e risco moral com contratos de participação e incentivo; derivar \textit{trade-off} seguro-incentivo. &
+\textbf{Pré (90 min):} \ns{} cap. 18, seções \textit{Complex Contracts} até \textit{Adverse Selection in Insurance} (cobre Principal-Agent, Hidden Actions, Moral Hazard in Insurance, Hidden Types, Nonlinear Pricing, Adverse Selection in Insurance --- inclui Rothschild-Stiglitz); \zaeshort{} capítulo de informação; \textit{checkpoint} de 8 itens (\textit{lemons}, \textit{pooling}, \textit{separating}, IR, IC); resolver exemplo principal-agente 2 estados.\newline
+\textbf{Durante:} Akerlof \textit{lemons} com \textit{unraveling} 30min; Rothschild--Stiglitz equilíbrio separador 40min; principal-agente com esforço binário e derivação IC mais IR 45min; Box Brasil seguro saúde ANS 20min; exercício \jr{} em grupos 45min. \\
+\addlinespace
+
+9 & 17/06 & Sinalização e Matching & Construir modelo de sinalização de Spence, caracterizar equilíbrios separador e \textit{pooling}, e introduzir \textit{matching} estável (Gale--Shapley) com aplicações. &
+\textbf{Pré (85 min):} \ns{} cap. 18, seções \textit{Market Signaling} e \textit{Auctions}; \zaeshort{} capítulo de sinalização e capítulo de \textit{matching} (Gale-Shapley não é coberto em \ns{} --- tratamento formal em \zaeshort{}); \textit{checkpoint} de 6 itens (\textit{single-crossing}, \textit{intuitive criterion}, estabilidade); ler Roth AER 2002 resumo.\newline
+\textbf{Durante:} Spence completo com \textit{single-crossing} e \textit{intuitive criterion} 50min; Gale--Shapley \textit{deferred acceptance} 30min; Box Mundo NRMP médicos EUA e SISU Brasil 30min; exercício sinalização calibre \jr{} 40min; recapitulação curso 30min. \\
+\addlinespace
+
+10 & 24/06 & \textbf{Avaliação Final Presencial} (70\% da nota) & Avaliar domínio integrado dos nove tópicos do curso em prova escrita cumulativa de calibre intermediário-difícil. &
+\textbf{Preparação:} revisar material completo: \zaeshort{} caps. 3--19 equivalentes, \ns{} caps. 2--7, 13, 18, 19 (capítulos efetivamente usados no curso na 12.~ed.); resolver simulado liberado na plataforma; atendimento de dúvidas com Prof. Darcio e monitor Alberto na semana.\newline
+\textbf{Durante:} prova presencial de 3h; 5 a 6 questões dissertativas cobrindo consumidor, EG, AD, externalidades, informação assimétrica e sinalização-\textit{matching}; permitido: caneta, calculadora não-programável, formulário de uma página impresso; proibido: celular, notas manuscritas, material de consulta. \\
+\end{longtable}
+\end{small}
+
+% -----------------------------------------------------------------------------
+\section{Mini-syllabus de monitorias}
+\label{sec:monitorias}
+
+As cinco monitorias com o monitor Alberto Nishikawa ocorrem aos sábados à tarde. Cada encontro é extensão explícita de uma ou duas aulas anteriores e opera sob o mesmo contrato pedagógico do curso: exercício resolvido no quadro com participação ativa da turma, calibre elevado (piso N\&S-difícil, teto \jr{}, \textit{flavor} ANPEC quando pertinente), sem reexposição da aula.
+
+\subsection{Monitoria 1 --- 16/05/2026 --- Aulas 3 e 4 com revisão relâmpago de 1 e 2}
+
+\textbf{Encontro de referência:} Aulas 3 (Slutsky e Elasticidades) e 4 (Equilíbrio Geral: Trocas e Produção), com revisão relâmpago de pontos-chave das Aulas 1 (Preferências e Utilidade) e 2 (UMP/EMP/Dualidade).
+
+\textbf{Escopo pedagógico:} cobertura densa de Slutsky, elasticidades e entrada em Equilíbrio Geral, reaproveitando ao máximo os blocos anteriores como ferramental. Revisão relâmpago (primeiros 20--25min) fixa axiomas $\to$ representação $\to$ UMP/EMP/dualidade como \emph{fundo}; foco principal recai sobre decomposição de Slutsky, matriz e propriedades, e construção do equilíbrio 2$\times$2 Cobb-Douglas na caixa de Edgeworth.
+
+\textbf{Exercícios-âncora:}
+\begin{itemize}
+  \item \ns{} 3.5 e 3.7 revisitados em versão estendida (axiomas + TMS em CES). \texttt{[enunciados confirmados no Plano]}
+  \item \ns{} 4.10 (Cobb-Douglas analytical problem) --- derivar função de utilidade indireta, função gasto e cálculo da compensação equivalente para aumento de preço em Cobb-Douglas $U(x,y) = x^\alpha y^{1-\alpha}$.
+  \item \ns{} 5.4 (Cobb-Douglas com verificação explícita da equação de Slutsky) e 6.2 (Giffen + Hicksian substitutes).
+  \item \ns{} 13.2 --- economia 2$\times$2 com Smith e Jones, produção Cobb-Douglas com labor, preço relativo e alocação de equilíbrio.
+  \item \jr{} 1.38 --- verificar que a função gasto derivada da utilidade CES do Exemplo 1.3 satisfaz as propriedades do Teorema 1.7 (dualidade rigorosa com CES genérico).
+\end{itemize}
+
+\textbf{Tópicos extras / extensões:}
+\begin{itemize}
+  \item Cobb-Douglas como limite da CES quando $\rho \to 0$ --- dedução via log e L'Hôpital.
+  \item Leontief como limite da CES quando $\rho \to -\infty$ --- argumento heurístico via \textit{min}, atenção ao \textit{kink}.
+  \item Cálculo direto de $\sigma = d\ln(x_2/x_1)\,/\,d\ln \text{TMS}$ para cada forma funcional, fechando o passeio CES.
+  \item Contraexemplo de preferências lexicográficas --- continuidade e não-representabilidade (promessa da Aula 1).
+\end{itemize}
+
+\textbf{Conexão de saída:} reforça Aulas 1--4, prepara para Arrow-Debreu (Aulas 5--6) ao fixar o equilíbrio walrasiano 2$\times$2 como bloco; antecipa itens de piso N\&S da Avaliação Final.
+
+\subsection{Monitoria 2 --- 23/05/2026 --- Arrow-Debreu I}
+
+\textbf{Encontro de referência:} Aula 5 (Arrow-Debreu I: Bens Contingentes, Tempo e Risco).
+
+\textbf{Escopo pedagógico:} aprofundar a expansão do espaço de bens para estados da natureza e datas, operar com preços de Arrow e revisitar utilidade esperada no calibre algébrico que a aula não comporta.
+
+\textbf{Exercícios-âncora:}
+\begin{itemize}
+  \item Exemplo 2 estados com seguro --- versão estendida com agente avesso e risco neutro, calculando prêmio de equilíbrio. \texttt{[expansão do exemplo da Aula 5]}
+  \item \ns{} 7.13 (Graphing risky investments in state-preference) --- representar investimento em ativo livre de risco e ativo arriscado no framework \textit{state-preference}, construir portfólio misto, caracterizar escolha sob aversão ao risco.
+  \item Exercício VNM --- derivar certeza equivalente e prêmio de risco para CRRA e CARA. \texttt{[clássico, formato livre]}
+  \item \jr{} 5.34 (Arrow Securities) --- construção do equilíbrio walrasiano quando apenas títulos de Arrow são transacionáveis a priori e os demais bens são negociados em mercados \textit{spot}; mostra equivalência com mercados contingentes completos.
+\end{itemize}
+
+\textbf{Tópicos extras / extensões:}
+\begin{itemize}
+  \item Relação entre preços de Arrow e preços de ativos primitivos --- precificação por ausência de arbitragem.
+  \item \textit{State-price deflators} e medida neutra ao risco --- ponte cirúrgica para finanças.
+\end{itemize}
+
+\textbf{Conexão de saída:} prepara integralmente para Aula 6 (existência e teoremas do bem-estar); fixa o aparato para itens de AD na Avaliação Final.
+
+\subsection{Monitoria 3 --- 30/05/2026 --- Arrow-Debreu II}
+
+\textbf{Encontro de referência:} Aula 6 (Arrow-Debreu II: Existência e Teoremas do Bem-Estar).
+
+\textbf{Escopo pedagógico:} operar no quadro o esboço de existência via Brouwer, demonstrar 1T e 2T em caso 2$\times$2 com detalhe algébrico, e discutir criticamente completude de mercados e falhas na implementação do 2T.
+
+\textbf{Exercícios-âncora:}
+\begin{itemize}
+  \item Demonstração 1T em economia 2$\times$2 com utilidades Cobb-Douglas --- passagem linha a linha. \texttt{[formato livre, guiado]}
+  \item Demonstração 2T com convexidade e separação de hiperplanos --- argumento geométrico $+$ algébrico. \texttt{[formato livre, guiado]}
+  \item \ns{} 13.13 (Initial endowments, equilibrium prices, and the first theorem of welfare economics) --- derivar demandas como função de preços relativos e dotações iniciais, resolver o preço de equilíbrio, verificar Pareto-eficiência da alocação resultante e discutir como mudanças na dotação afetam o equilíbrio.
+  \item \jr{} 5.28 --- contraexemplo explícito em caixa de Edgeworth mostrando que, removida a estrita positividade da alocação ótima, o 2T não necessariamente suporta a alocação como equilíbrio walrasiano; identificar qual hipótese do Teorema 5.8 é violada.
+\end{itemize}
+
+\textbf{Tópicos extras / extensões:}
+\begin{itemize}
+  \item Transferências \textit{lump-sum} na prática --- por que o 2T é formalmente poderoso e empiricamente delicado.
+  \item Mercados faltantes e segundo-\textit{best} --- antecipação das Aulas 7 e 8.
+\end{itemize}
+
+\textbf{Conexão de saída:} reforça Aula 6, prepara para Aula 7 (externalidades como falhas do 1T), antecipa itens de teto J-R da Avaliação Final.
+
+\subsection{Monitoria 4 --- 13/06/2026 --- Externalidades, Bens Públicos e Informação Assimétrica I}
+
+\textbf{Encontro de referência:} Aula 7 (Externalidades e Bens Públicos) e Aula 8 (Seleção Adversa e Risco Moral).
+
+\textbf{Escopo pedagógico:} duplo bloco --- instrumentos corretivos para falhas de mercado do 1T (Aula 7) e a mecânica formal de IR/IC em contratos sob informação privada (Aula 8).
+
+\textbf{Exercícios-âncora:}
+\begin{itemize}
+  \item \ns{} 19.9 (Taxing pollution) --- alocação eficiente de trabalho entre $n$ firmas poluidoras, imposto pigouviano uniforme vs. diferencial, tributação sobre output, comparação de bem-estar com cap de emissões.
+  \item Exercício Samuelson numérico --- dois agentes, bem público, derivação da condição ótima. \texttt{[formato livre]}
+  \item Akerlof \textit{lemons} estendido --- \textit{unraveling} passo a passo, cálculo do preço de equilíbrio em \textit{pooling}. \texttt{[extensão da Aula 8]}
+  \item Rothschild--Stiglitz --- construção explícita do equilíbrio separador e prova de que não há equilíbrio \textit{pooling}. \texttt{[extensão da Aula 8]}
+  \item Principal-agente com esforço binário --- derivação completa de IR e IC e cálculo do contrato ótimo. \texttt{[extensão da Aula 8]}
+\end{itemize}
+
+\textbf{Tópicos extras / extensões:}
+\begin{itemize}
+  \item Desenho de mecanismo: princípio da revelação, em um único exemplo concreto (leilão de segundo preço). \texttt{[sabor ANPEC]}
+  \item Mercado de carbono regulado no Brasil --- comentário aplicado sobre o Box da Aula 7, com referência à literatura empírica recente.
+\end{itemize}
+
+\textbf{Conexão de saída:} reforça Aulas 7 e 8, prepara para Aula 9 (sinalização/\textit{matching}) ao consolidar o vocabulário de IR/IC.
+
+\subsection{Monitoria 5 --- 20/06/2026 --- Sinalização, Matching e Revisão Integrada}
+
+\textbf{Encontro de referência:} Aula 9 (Sinalização e Matching) e \textbf{revisão integrada} para a Avaliação Final de 24/06.
+
+\textbf{Escopo pedagógico:} fechar o modelo de Spence com \textit{single-crossing} e \textit{intuitive criterion}, operar Gale--Shapley em exemplo concreto, e percorrer a ementa completa em formato de simulado dirigido, identificando as armadilhas de prova.
+
+\textbf{Exercícios-âncora:}
+\begin{itemize}
+  \item Spence completo --- construção do equilíbrio separador com custo de sinal dependente do tipo e verificação do \textit{intuitive criterion}. \texttt{[extensão da Aula 9]}
+  \item Gale--Shapley \textit{deferred acceptance} --- exemplo com 4 homens e 4 mulheres (ou 4 candidatos e 4 escolas), verificação de estabilidade. \texttt{[formato livre]}
+  \item \jr{} 8.10 (Insurance signalling game) --- construção de equilíbrios \textit{separating} e \textit{pooling} com refinamentos Pareto, incluindo demonstração de que todo equilíbrio separador Pareto-domina o equilíbrio competitivo sob informação assimétrica.
+  \item Simulado dirigido --- 3 a 4 itens selecionados cobrindo consumidor, EG, informação assimétrica, no calibre da Avaliação Final. \texttt{[preparado pelo Prof. Darcio e monitor Alberto]}
+\end{itemize}
+
+\textbf{Tópicos extras / extensões:}
+\begin{itemize}
+  \item Aplicações de \textit{matching} em políticas públicas brasileiras --- SISU, alocação de médicos em residência, transplante de órgãos. \texttt{[apoio ao Box Mundo da Aula 9]}
+  \item Recapitulação estratégica: mapa das conexões entre os nove tópicos da ementa --- axiomas $\to$ dualidade $\to$ Slutsky $\to$ EG $\to$ AD $\to$ falhas (externalidades, informação) $\to$ desenho institucional.
+\end{itemize}
+
+\textbf{Conexão de saída:} é a última instância de preparação antes da prova; fecha todos os pontos que ficaram em aberto no curso e calibra o aluno para o formato da Avaliação Final.
+
+% -----------------------------------------------------------------------------
+\section{Sistema de avaliação}
+\label{sec:avaliacao}
+
+\begin{center}
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Avaliação} & \textbf{Sigla} & \textbf{Peso} \\
+\midrule
+Acompanhamento Pré-Aula & APA & 30\% \\
+Avaliação Final (presencial, 24/06) & AF & 70\% \\
+\midrule
+\textbf{Total} & & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Acompanhamento Pré-Aula (APA) --- 30\%}
+
+Nota única agregada, composta por: desempenho nos \textit{checkpoints} da plataforma (acerto em primeira tentativa como métrica sensível de preparação real); quizzes-surpresa aplicados no início de aulas escolhidas, sem aviso prévio, fechados, cobrindo exclusivamente a pré-aula da semana; e engajamento aferido pelo \textit{dashboard} (frequência de acesso, tempo efetivo de sessão, consistência semanal, latência entre liberação e resolução). A ponderação interna entre esses três componentes fica a critério do professor e pode ser calibrada ao longo do semestre conforme o comportamento observado da turma.
+
+\subsection*{Avaliação Final (AF) --- 70\%}
+
+Prova escrita, individual, presencial, sem consulta, realizada em 24/06/2026 das 19h30 às 22h30. Cobre a totalidade da ementa (Conteúdo Programático, itens 1 a 9). Estrutura: 5 a 6 questões dissertativas, calibre intermediário-difícil no piso \ns{}, com um ou dois itens no teto \jr{}. Permitido: caneta, calculadora não-programável, formulário de uma página impresso. Proibido: celular, notas manuscritas, material de consulta não listado.
+
+\subsection*{Regra de aprovação}
+
+Aprovação exige simultaneamente:
+\begin{itemize}
+  \item \textbf{Média final} $\geq 6{,}0$ (em escala 0--10).
+  \item \textbf{Presença} $\geq 75\%$ nas aulas presenciais (8 presenças em 10 encontros, incluindo a Avaliação Final).
+\end{itemize}
+
+Demais normas seguem o regulamento institucional do Insper / MPE em vigor.
+
+% -----------------------------------------------------------------------------
+\section{Bibliografia}
+\label{sec:bibliografia}
+
+\subsection*{Bibliografia básica}
+
+\begin{itemize}
+  \item NICHOLSON, Walter E.; SNYDER, Christopher M. \textit{Microeconomic theory: basic principles and extensions}. 12.~ed. Boston: Cengage Learning, 2017. ISBN 978-1-305-50579-7. \texttt{[\ns{}]}\footnote{A Ementa oficial do MPE lista a 11.~ed.\ (2012); esta edição de trabalho utiliza a 12.~ed.\ (2017), cujos conteúdos e numeração de capítulos estão atualizados. As referências a seções de \ns{} ao longo deste syllabus seguem a 12.~ed.}
+  \item VARIAN, Hal R. \textit{Microeconomia: uma abordagem moderna}. 9.~ed. São Paulo: Atlas, 2015.
+\end{itemize}
+
+\subsection*{Bibliografia complementar}
+
+\begin{itemize}
+  \item MAS-COLELL, Andreu; WHINSTON, Michael D.; GREEN, Jerry R. \textit{Microeconomic theory}. 1.~ed. New York: Oxford University Press, 1995. 981 p. \texttt{[\mwg{}]}
+  \item GIBBONS, Robert. \textit{Game theory for applied economists}. Princeton: Princeton University Press, 1992.
+  \item JEHLE, Geoffrey A.; RENY, Philip J. \textit{Advanced microeconomic theory}. 3.~ed. Harlow: Pearson Education, 2011. \texttt{[\jr{}]}
+  \item KREPS, David M. \textit{Microeconomic foundations I: choice and competitive markets}. Princeton: Princeton University Press, 2013.
+  \item DEATON, Angus; MUELLBAUER, John. \textit{Economics and consumer behavior}. Cambridge: Cambridge University Press, 1980.
+\end{itemize}
+
+% -----------------------------------------------------------------------------
+\section{Política de integridade acadêmica e uso de IA}
+\label{sec:integridade}
+
+O curso opera sob contrato de adulto profissional. Ferramentas de inteligência artificial (ChatGPT, Claude, entre outras) e colaboração com colegas são \textbf{encorajadas como ferramentas de estudo}: refazer derivações, pedir explicações alternativas, gerar exercícios extras, explorar intuição, traduzir uma passagem densa, montar grupo de estudo. Consulta livre a \ns{}, \jr{}, \mwg{}, Varian, Kreps, Deaton--Muellbauer e Gibbons durante a preparação é bem-vinda.
+
+É \textbf{proibido}: (i) copiar resposta de quiz-surpresa, Avaliação Final ou \textit{checkpoint} formativo, seja de colega, seja de IA, seja de gabarito circulante; (ii) compartilhar enunciado ou resposta de quiz-surpresa entre turmas ou em canais de mensagem; (iii) terceirizar a resolução do \textit{checkpoint} (pagar, pedir favor, automatizar). A plataforma detecta padrões anômalos (tempo implausivelmente curto, sequência de chutes) e sinaliza no \textit{dashboard}. Consequência de violação: zero no componente correspondente, mais encaminhamento ao procedimento institucional.
+
+A diferença operacional é simples: \textbf{IA para aprender, sim; IA para responder por você em item avaliativo, não.} Se você não apresentaria aquele atalho ao seu chefe como trabalho próprio, não o apresente aqui.
+
+% -----------------------------------------------------------------------------
+\section{Calendário consolidado}
+
+Calendário integrado das 10 aulas (quartas-feiras) e das 5 monitorias (sábados à tarde). A Avaliação Final é destacada.
+
+\begin{center}
+\begin{tabular}{@{}p{2.4cm}p{1.2cm}p{3cm}p{7.5cm}@{}}
+\toprule
+\textbf{Data} & \textbf{Dia} & \textbf{Tipo} & \textbf{Conteúdo} \\
+\midrule
+22/04/2026 & Qua & \textcolor{insperred}{\textbf{Aula 1}}    & Preferências, Axiomas e Utilidade \\
+29/04/2026 & Qua & \textcolor{insperred}{\textbf{Aula 2}}    & Maximização, Minimização de Gasto e Dualidade \\
+06/05/2026 & Qua & \textcolor{insperred}{\textbf{Aula 3}}    & Slutsky, Elasticidades e Estimação de Demanda \\
+13/05/2026 & Qua & \textcolor{insperred}{\textbf{Aula 4}}    & Equilíbrio Geral: Trocas e Produção \\
+16/05/2026 & Sáb & \textcolor{monitoriablue}{\textbf{Monitoria 1}} & Aulas 3--4 (revisão relâmpago de 1--2) \\
+20/05/2026 & Qua & \textcolor{insperred}{\textbf{Aula 5}}    & Arrow-Debreu I: Bens Contingentes, Tempo e Risco \\
+23/05/2026 & Sáb & \textcolor{monitoriablue}{\textbf{Monitoria 2}} & Aprofundamento Arrow-Debreu I \\
+27/05/2026 & Qua & \textcolor{insperred}{\textbf{Aula 6}}    & Arrow-Debreu II: Existência e Teoremas do Bem-Estar \\
+30/05/2026 & Sáb & \textcolor{monitoriablue}{\textbf{Monitoria 3}} & Aprofundamento Arrow-Debreu II \\
+03/06/2026 & Qua & \textcolor{insperred}{\textbf{Aula 7}}    & Externalidades e Bens Públicos \\
+10/06/2026 & Qua & \textcolor{insperred}{\textbf{Aula 8}}    & Seleção Adversa e Risco Moral \\
+13/06/2026 & Sáb & \textcolor{monitoriablue}{\textbf{Monitoria 4}} & Aulas 7 e 8 (Externalidades + Informação I) \\
+17/06/2026 & Qua & \textcolor{insperred}{\textbf{Aula 9}}    & Sinalização e Matching \\
+20/06/2026 & Sáb & \textcolor{monitoriablue}{\textbf{Monitoria 5}} & Sinalização e Matching $+$ revisão integrada \\
+\midrule
+\textbf{24/06/2026} & \textbf{Qua} & \textcolor{insperred}{\textbf{\large AVALIAÇÃO FINAL}} & \textbf{Prova presencial --- 3h --- 70\% da nota} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\vspace{1em}
+
+\begin{center}
+\small
+\textit{Legenda:} \textcolor{insperred}{\textbf{vermelho}} --- aulas presenciais e Avaliação Final; \textcolor{monitoriablue}{\textbf{azul}} --- monitorias com Alberto Nishikawa.
+\end{center}
+
+\vfill
+\begin{center}
+\small
+Insper Instituto de Ensino e Pesquisa --- Mestrado Profissional em Economia \\
+Microeconomia I --- MPE 2026/32 --- Turma MPE23MI --- Currículo 202631 \\
+Notas de aula em \url{https://darciogm.github.io/micro-book/}
+\end{center}
+
+% =============================================================================
+\end{document}
+% =============================================================================

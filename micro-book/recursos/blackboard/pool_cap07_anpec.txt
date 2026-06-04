@@ -1,0 +1,15 @@
+TF	Como a função utilidade é convexa em relação à origem, o consumidor é avesso ao risco.	false
+TF	A utilidade esperada da loteria é igual a trinta e dois.	true
+TF	A utilidade do valor esperado dessa loteria é superior à utilidade esperada da loteria.	false
+TF	O equivalente certeza é igual a 2,5.	false
+TF	O coeficiente absoluto de aversão ao risco é constante.	false
+TF	Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern U(W) = \ln(W+1). Então sua medida relativa de aversão ao risco de Pratt R(W) satisfaz \lim_{W \to \infty} R(W) = 1.	true
+TF	Considere um indivíduo avesso ao risco, com utilidade Von Neumann-Morgenstern e que investe em um ativo arriscado. Se o rendimento do ativo arriscado é taxado, então o consumidor tem um incentivo para investir menos nesse ativo.	false
+TF	Suponha que o \beta de um ativo é igual a 1,25, que o retorno de mercado é de 10,5% e que o retorno do ativo sem risco é de 4,5%. O valor esperado do ativo é de \56. Então, de acordo com o Modelo CAPM, o preço que esse ativo deveria ser vendido hoje é de \50.	true
+TF	Considere o Modelo Média-Variância e um indivíduo avesso ao risco. Suponha que o retorno de mercado é de 11%, que o retorno do ativo sem risco é de 5% e que a variância do ativo arriscado é de 25%. Então o preço do risco é p = 0{,}24.	true
+TF	Suponha que um indivíduo tem utilidade Von Neumann-Morgenstern e é neutro ao risco. Se sua riqueza é aleatória, então a utilidade esperada da riqueza é maior que a utilidade da riqueza esperada.	false
+TF	O valor esperado do retorno da aposta é \$15.	false
+TF	Trata-se de uma aposta justa.	false
+TF	Uma aposta justa não possui risco.	false
+TF	Se o custo da aposta fosse de \$12,50, um indivíduo com aversão ao risco aceitaria jogar.	false
+TF	Uma função de utilidade estritamente côncava é associada a um comportamento de aversão ao risco.	true

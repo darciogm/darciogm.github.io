@@ -1,0 +1,678 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 15 — Escolha sob Incerteza III: Aplicações e Paradoxos"
+author: "Prof. Darcio Genicolo Martins"
+date: "Prêmio de Risco, Paradoxos e Teoria dos Prospectos"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Onde Estamos?
+
+Na Aula 13, construímos a **utilidade esperada** e classificamos três atitudes perante o risco.
+
+Na Aula 14, medimos a aversão ao risco com **Arrow-Pratt** e calculamos o equivalente certo.
+
+. . .
+
+**Hoje:**
+
+1. Prêmio de risco --- cálculo detalhado e aproximação Arrow-Pratt
+2. Exemplos numéricos com CRRA e CARA
+3. Paradoxo de Allais em profundidade
+4. Paradoxo de Ellsberg --- ambiguidade vs. risco
+5. Teoria dos Prospectos (Kahneman & Tversky)
+6. Aplicação: Mega-Sena e decisões financeiras no Brasil
+
+## Prêmio de Risco e Equivalente Certo {data-background-color="#E50505"}
+
+## Relembrando: EC e Prêmio de Risco
+
+O **equivalente de certeza** (EC) de uma loteria $\tilde{W}$ é o valor certo $W_{EC}$ tal que:
+
+::: {.eq-highlight}
+$$u(W_{EC}) = E[u(\tilde{W})]$$
+:::
+
+. . .
+
+O **prêmio de risco** $\pi$ mede o "custo" da incerteza em reais:
+
+::: {.eq-highlight}
+$$\pi = E[\tilde{W}] - W_{EC} > 0 \quad \text{(agente avesso)}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O equivalente certo é o "preço de saída" de uma aposta --- quanto você aceitaria receber para não ter que jogar. O prêmio de risco é o desconto que você dá só para dormir tranquilo.
+:::
+
+## Aproximação de Arrow-Pratt
+
+Para riscos **pequenos** ($\tilde{\varepsilon}$ com $E[\tilde{\varepsilon}] = 0$ e $\text{Var}(\tilde{\varepsilon}) = \sigma^2$):
+
+::: {.eq-highlight}
+$$\pi \approx \frac{1}{2} \, A(W) \, \sigma^2$$
+:::
+
+. . .
+
+onde $A(W) = -u''(W)/u'(W)$ é o coeficiente de aversão **absoluta** (Arrow-Pratt).
+
+. . .
+
+**Decomposição elegante:** o "preço" do risco = fator subjetivo ($A$) $\times$ fator objetivo ($\sigma^2$).
+
+. . .
+
+:::{.callout-note title="Implicação"}
+Para um mesmo risco: agentes **mais avessos** pagam prêmios maiores. Para um mesmo agente: riscos **mais voláteis** custam mais caro. É exatamente assim que seguradoras precificam apólices.
+:::
+
+## Derivação da Aproximação {.smaller}
+
+**Passo 1:** Expanda $u(W + \tilde{\varepsilon})$ em Taylor de 2a ordem:
+
+$$u(W + \tilde{\varepsilon}) \approx u(W) + u'(W)\tilde{\varepsilon} + \tfrac{1}{2}u''(W)\tilde{\varepsilon}^2$$
+
+. . .
+
+**Passo 2:** Tome o valor esperado:
+
+$$E[u(\tilde{W})] \approx u(W) + \tfrac{1}{2}u''(W)\sigma^2$$
+
+. . .
+
+**Passo 3:** Por definição, $u(W - \pi) = E[u(\tilde{W})]$. Expanda em Taylor de 1a ordem:
+
+$$u(W) - u'(W)\pi \approx u(W) + \tfrac{1}{2}u''(W)\sigma^2$$
+
+. . .
+
+**Passo 4:** Iguale e resolva:
+
+::: {.eq-highlight}
+$$\pi \approx -\frac{1}{2}\frac{u''(W)}{u'(W)}\sigma^2 = \frac{1}{2}A(W)\sigma^2 \quad \blacksquare$$
+:::
+
+## Prêmio de Risco --- Interativo
+
+<iframe src="graficos/cap07/premio-risco.html" title="Prêmio de Risco" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exemplo Numérico: CRRA {.smaller}
+
+Utilidade CRRA: $u(W) = \frac{W^{1-\gamma}}{1-\gamma}$, com $\gamma = 2$.
+
+. . .
+
+**Loteria:** $W_0 = 100.000$, 50% de chance de ganhar R\$ 20.000, 50% de chance de perder R\$ 20.000.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Cálculo direto:**
+
+- $E[\tilde{W}] = 100.000$
+- $E[u(\tilde{W})] = 0{,}5 \cdot u(120.000) + 0{,}5 \cdot u(80.000)$
+- $u(W) = -W^{-1}$
+- $E[u] = 0{,}5 \times (-1/120.000) + 0{,}5 \times (-1/80.000)$
+- $E[u] = -4{,}17 \times 10^{-6} + (-6{,}25 \times 10^{-6})$
+- $E[u] = -1{,}042 \times 10^{-5}$
+:::
+::: {.column width="50%"}
+**EC e prêmio de risco:**
+
+- $u(W_{EC}) = E[u] \Rightarrow -W_{EC}^{-1} = -1{,}042 \times 10^{-5}$
+- $W_{EC} = 96.000$ (aprox.)
+- $\pi = E[\tilde{W}] - W_{EC} = 4.000$
+
+**Aproximação Arrow-Pratt:**
+
+- $A(W) = \gamma/W = 2/100.000$
+- $\sigma^2 = (20.000)^2 = 4 \times 10^8$
+- $\pi \approx \frac{1}{2} \times \frac{2}{100.000} \times 4 \times 10^8 = 4.000$ ✓
+:::
+::::
+
+## Exemplo Numérico: CARA {.smaller}
+
+Utilidade CARA: $u(W) = -e^{-aW}$, com $a = 0{,}00002$.
+
+. . .
+
+**Mesma loteria:** $W_0 = 100.000$, ganho ou perda de R\$ 20.000 com prob. 50% cada.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Cálculo direto:**
+
+- $E[u] = 0{,}5 \times (-e^{-0{,}00002 \times 120.000}) + 0{,}5 \times (-e^{-0{,}00002 \times 80.000})$
+- $E[u] = 0{,}5 \times (-e^{-2{,}4}) + 0{,}5 \times (-e^{-1{,}6})$
+- $E[u] = 0{,}5 \times (-0{,}0907) + 0{,}5 \times (-0{,}2019)$
+- $E[u] = -0{,}1463$
+:::
+::: {.column width="50%"}
+**EC e prêmio de risco:**
+
+- $-e^{-aW_{EC}} = -0{,}1463$
+- $W_{EC} = -\ln(0{,}1463)/a = 96.000$ (aprox.)
+- $\pi = 4.000$
+
+**Propriedade CARA:**
+
+- $A(W) = a$ (constante!)
+- O prêmio **não depende** da riqueza
+- Milionário ou assalariado: mesmo $\pi$
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="CARA vs. CRRA"}
+CARA: prêmio de risco fixo em reais --- pouco realista. CRRA: prêmio de risco proporcional à riqueza --- mais aderente aos dados. Na prática, evidências sugerem DARA (aversão absoluta decrescente).
+:::
+
+## CRRA vs. CARA --- Resumo
+
+| Propriedade | CRRA: $\frac{W^{1-\gamma}}{1-\gamma}$ | CARA: $-e^{-aW}$ |
+|:------------|:---------------------------------------|:-------------------|
+| $A(W)$ | $\gamma/W$ (decrescente) | $a$ (constante) |
+| $R(W)$ | $\gamma$ (constante) | $aW$ (crescente) |
+| DARA? | Sim | Não |
+| Prêmio de risco | Proporcional a $W$ | Fixo em R\$ |
+| Uso típico | Finanças, macro | Tratabilidade analítica |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Um bilionário e um assalariado não pagam o mesmo para evitar um risco de R\$ 10.000. CRRA captura isso; CARA não. Por isso CRRA domina em finanças e macroeconomia.
+:::
+
+## Paradoxo de Allais {data-background-color="#E50505"}
+
+## Revisitando Allais em Detalhe {.smaller}
+
+| | Opção A | Opção B |
+|:-|:--------|:--------|
+| **Situação I** | R\$ 1M certo | 10% R\$ 5M, 89% R\$ 1M, 1% nada |
+| **Situação II** | 11% R\$ 1M, 89% nada | 10% R\$ 5M, 90% nada |
+
+. . .
+
+**Padrão típico:** 60--80% dos respondentes escolhem **A na I** e **B na II**.
+
+. . .
+
+**Por que isso viola a UE?**
+
+Se $A \succ B$: $u(1M) > 0{,}10 \, u(5M) + 0{,}89 \, u(1M) + 0{,}01 \, u(0)$
+
+$\Rightarrow 0{,}11 \, u(1M) > 0{,}10 \, u(5M) + 0{,}01 \, u(0)$
+
+. . .
+
+Mas $C \succ D$: $0{,}11 \, u(1M) + 0{,}89 \, u(0) > 0{,}10 \, u(5M) + 0{,}90 \, u(0)$
+
+$\Rightarrow 0{,}11 \, u(1M) > 0{,}10 \, u(5M) + 0{,}01 \, u(0)$ --- **mesma desigualdade!**
+
+. . .
+
+Logo $A \succ B \Rightarrow C \succ D$. Escolher $A$ e $D$ é **inconsistente** com a utilidade esperada.
+
+## O Efeito Certeza
+
+Por que as pessoas violam a UE neste caso?
+
+. . .
+
+:::{.callout-note title="Efeito Certeza (Kahneman & Tversky, 1979)"}
+Agentes reais sobreponderam resultados **certos** em relação a resultados meramente prováveis. Na Situação I, a opção A oferece certeza --- e isso tem um valor desproporcional. Na Situação II, nenhuma opção oferece certeza, então o agente compara "friamente" e prefere o maior prêmio.
+:::
+
+. . .
+
+**Implicação devastadora:** o axioma da **independência** --- pilar da utilidade esperada --- é violado sistematicamente.
+
+. . .
+
+:::{.callout-warning title="Contexto histórico"}
+Allais apresentou o paradoxo em Paris (1952) ao grupo que incluía Savage e Samuelson. Muitos deles, ao responder intuitivamente, violaram os próprios axiomas que defendiam! Savage reconheceu: "Cometi um erro de cálculo que corrigiria ao raciocinar com cuidado."
+:::
+
+## Allais no Laboratório
+
+Desde 1953, o paradoxo foi replicado centenas de vezes:
+
+. . .
+
+| Estudo | País | % escolhendo A+D | Conclusão |
+|:-------|:-----|:------------------|:----------|
+| Allais (1953) | França | ~65% | Violação robusta |
+| Kahneman & Tversky (1979) | Israel | ~70% | Confirma efeito certeza |
+| Conlisk (1989) | EUA | ~60% | Persiste com incentivos reais |
+| Huck & Mueller (2012) | Alemanha | ~62% | Robusto a grandes prêmios |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O paradoxo não é um "erro" das pessoas --- é uma regularidade empírica robusta que revela uma limitação do modelo VNM. A teoria precisa se adaptar aos dados, não o contrário.
+:::
+
+## Paradoxo de Ellsberg {data-background-color="#E50505"}
+
+## Risco vs. Ambiguidade
+
+| Conceito | Probabilidades | Exemplo |
+|:---------|:---------------|:--------|
+| **Risco** | Conhecidas e objetivas | Roleta: $P(\text{vermelho}) = 18/37$ |
+| **Incerteza knightiana** | Desconhecidas | Resultado de uma revolução política |
+| **Ambiguidade** | Atribuíveis, mas vagas | Urna com composição desconhecida |
+
+. . .
+
+A utilidade esperada de VNM lida com **risco**. O Paradoxo de Ellsberg mostra que as pessoas tratam **ambiguidade** de forma diferente.
+
+## O Experimento de Ellsberg {.smaller}
+
+:::{.callout-note title="Paradoxo de Ellsberg --- Duas Cores"}
+Duas urnas, cada uma com 100 bolas:
+
+- **Urna A (conhecida):** 50 vermelhas e 50 pretas
+- **Urna B (ambígua):** 100 bolas, proporção desconhecida
+
+Você ganha R\$ 100 se sortear a cor escolhida.
+
+**Escolha 1:** Apostar em vermelho. Maioria prefere **Urna A**.
+
+**Escolha 2:** Apostar em preto. Maioria **também** prefere **Urna A**!
+:::
+
+. . .
+
+Se $P(\text{verm. em B}) < 0{,}5$, entao $P(\text{preto em B}) > 0{,}5$ --- deveria preferir Urna B para preto!
+
+. . .
+
+A preferência **simultânea** pela Urna A em ambas as apostas revela **aversão à ambiguidade** --- não só aversão ao risco.
+
+## Ellsberg --- Interativo
+
+<iframe src="graficos/cap08/ellsberg-urnas.html" title="Paradoxo de Ellsberg" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Implicações do Ellsberg
+
+A aversão à ambiguidade tem consequências profundas para mercados:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Em financas:**
+
+- Ativos com retornos difíceis de modelar carregam um **prêmio de ambiguidade** além do prêmio de risco
+- Crises financeiras = colapso da confiança nos modelos $\Rightarrow$ transição de "risco" para "ambiguidade"
+- Spreads de credito em 2008 e 2020
+:::
+::: {.column width="50%"}
+**No Brasil:**
+
+- Instabilidade regulatória e fiscal gera ambiguidade persistente
+- Investidores não sabem *quão confiáveis são seus modelos*
+- Elevados spreads corporativos refletem **prêmio de ambiguidade** sobre o prêmio de risco convencional
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Pessoas preferem riscos conhecidos a incertezas desconhecidas --- mesmo quando as probabilidades objetivas são iguais. Isso explica por que ativos de países com marcos regulatórios estáveis custam menos para financiar.
+:::
+
+## Teoria dos Prospectos {data-background-color="#E50505"}
+
+Kahneman & Tversky, 1979 --- Prêmio Nobel 2002
+
+## Da VNM à Prospect Theory
+
+A utilidade esperada pressupõe:
+
+1. Avaliação em termos de **riqueza final**
+2. Ponderação **linear** das probabilidades
+
+. . .
+
+A Teoria dos Prospectos substitui ambas por:
+
+| Componente | UE (VNM) | Teoria dos Prospectos |
+|:-----------|:---------|:---------------------|
+| Resultado | Riqueza final $W$ | Ganhos/perdas vs. **ponto de referência** |
+| Probabilidade | $p$ linear | $w(p)$ --- ponderação não linear |
+| Curvatura | Côncava (global) | Côncava (ganhos), convexa (perdas) |
+| Simetria | Simétrica | Assimétrica: $\lambda \approx 2{,}25$ |
+
+## A Função Valor {.smaller}
+
+A função valor $v(x)$ possui três propriedades fundamentais:
+
+. . .
+
+**1. Dependência de referência:** o portador de valor é a variação $x$ em relação ao *status quo*, não o nível absoluto de riqueza.
+
+. . .
+
+**2. Sensibilidade decrescente:** côncava para ganhos ($v'' < 0$ se $x > 0$), convexa para perdas ($v'' > 0$ se $x < 0$).
+
+. . .
+
+**3. Aversão à perda:** a função é mais íngreme para perdas: $|v(-x)| > v(x)$ para todo $x > 0$.
+
+. . .
+
+::: {.eq-highlight}
+$$v(x) = \begin{cases} x^{\alpha} & \text{se } x \geq 0 \\ -\lambda(-x)^{\beta} & \text{se } x < 0 \end{cases}$$
+:::
+
+Estimativas de Tversky & Kahneman (1992): $\alpha = \beta = 0{,}88$, $\lambda = 2{,}25$.
+
+## Função Valor --- Interativo
+
+<iframe src="graficos/cap08/funcao-valor-pt.html" title="Função Valor — Teoria dos Prospectos" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Aversão à Perda vs. Aversão ao Risco
+
+:::{.callout-warning title="Não confunda!"}
+| Conceito | Mecanismo | Exemplo |
+|:---------|:----------|:--------|
+| **Aversão ao risco** (VNM) | Concavidade de $u(W)$ | Prefere R\$ 500 certos a 50% de R\$ 1.000 |
+| **Aversão à perda** (PT) | Assimetria $\lambda > 1$ | Recusa aposta de 50% ganhar R\$ 150 / 50% perder R\$ 100 |
+
+Aversão à perda opera **mesmo com função linear** --- é um fenômeno distinto!
+:::
+
+. . .
+
+**Exemplo numérico:** Aposta com 50% de ganhar R\$ 150 e 50% de perder R\$ 100. Valor esperado: +R\$ 25.
+
+- Sob **VNM** com aversão moderada ao risco: agente **aceita** (retorno esperado positivo e risco pequeno)
+- Sob **PT** com $\lambda = 2{,}25$: perda "pesa" $2{,}25 \times 100 = 225 > 150$ $\Rightarrow$ agente **recusa**
+
+## Exercício Resolvido: Função Valor {.smaller}
+
+**Dados:** $\alpha = \beta = 0{,}88$, $\lambda = 2{,}25$. Calcule $v(100)$, $v(-100)$, $v(250)$, $v(-250)$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Ganhos:**
+
+- $v(100) = 100^{0{,}88} = 57{,}54$
+- $v(250) = 250^{0{,}88} = 128{,}82$
+
+**Sensibilidade decrescente:**
+
+- Aumento de 100 para 250 (+150): $\Delta v = 71{,}28$
+- Se linear: $\Delta v = 86{,}31$
+- $71{,}28 < 86{,}31$ ✓ concavidade
+:::
+::: {.column width="50%"}
+**Perdas:**
+
+- $v(-100) = -2{,}25 \times 100^{0{,}88} = -129{,}47$
+- $v(-250) = -2{,}25 \times 250^{0{,}88} = -289{,}85$
+
+**Aversão à perda:**
+
+- $|v(-100)| / v(100) = 129{,}47 / 57{,}54 = 2{,}25 = \lambda$ ✓
+- Perda de R\$ 100 é sentida 2,25x mais que ganho de R\$ 100
+:::
+::::
+
+## Ponderação de Probabilidades {.smaller}
+
+Na UE, probabilidade de 10% recebe exatamente 1/10 do peso de um evento certo. Na PT, probabilidades são **distorcidas**:
+
+::: {.eq-highlight}
+$$w(p) = \frac{p^{\gamma}}{(p^{\gamma} + (1-p)^{\gamma})^{1/\gamma}}$$
+:::
+
+. . .
+
+**Propriedades:**
+
+| Faixa | Distorção | Consequência |
+|:------|:----------|:-------------|
+| $p$ pequeno | $w(p) > p$ (sobrevaloriza) | Compra loteria, seguro catástrofe |
+| $p$ moderado/alto | $w(p) < p$ (subvaloriza) | Subpondera riscos prováveis |
+| Subcerteza | $w(p) + w(1-p) < 1$ | Aversão global à incerteza |
+
+. . .
+
+Estimativas: $\gamma^+ = 0{,}61$ (ganhos), $\gamma^- = 0{,}69$ (perdas).
+
+## Ponderação de Probabilidades --- Interativo
+
+<iframe src="graficos/cap08/ponderacao-prob.html" title="Ponderação de Probabilidades" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Quatro Padrões da PT {.smaller}
+
+A combinação de função valor + ponderação de probabilidades gera **quatro padrões** de atitude perante o risco:
+
+. . .
+
+|  | $p$ alta | $p$ baixa |
+|:--|:---------|:----------|
+| **Ganhos** | Aversão ao risco (efeito certeza) | Propensão ao risco (compra loteria) |
+| **Perdas** | Propensão ao risco (recusa seguro justo) | Aversão ao risco (compra seguro catástrofe) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A mesma pessoa compra loteria (sobrepondera ganho raro) e seguro contra catástrofe (sobrepondera perda rara). Na UE, isso é inconsistente. Na PT, ambos decorrem da mesma distorção $w(p) > p$ para $p$ pequeno.
+:::
+
+## UE vs. PT --- Comparativo {.smaller}
+
+| Fenomeno | UE explica? | PT explica? |
+|:---------|:------------|:------------|
+| Compra de seguro | Sim (aversao ao risco) | Sim |
+| Compra de loteria | Não (deveria rejeitar) | Sim ($w(p) > p$ para $p$ pequeno) |
+| Paradoxo de Allais | Não (viola independência) | Sim (efeito certeza) |
+| Efeito disposição (B3) | Não | Sim (aversão à perda) |
+| Framing | Não (irrelevante na UE) | Sim (ponto de referência) |
+| Aversão à perda | Não | Sim ($\lambda \approx 2{,}25$) |
+
+. . .
+
+:::{.callout-note title="Caveat"}
+A PT é descritiva, não normativa. Ela descreve **como** as pessoas decidem, não **como deveriam** decidir. Em teoria dos jogos e mecanismos, a UE permanece o benchmark normativo.
+:::
+
+## Aplicação: Mega-Sena e o Cérebro Brasileiro {data-background-color="#E50505"}
+
+## Mega-Sena: Os Números {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Dados:**
+
+- Probabilidade de acertar 6: 1 em 50.063.860
+- Aposta simples: R\$ 5,00
+- Arrecadação para prêmios: 43,35% do bruto
+- Retorno esperado por aposta: ~R\$ 2,20
+- **Retorno líquido: −R\$ 2,80** (perda de 56%)
+
+Agente avesso ao risco com $u$ côncava: **jamais** apostaria.
+:::
+::: {.column width="45%"}
+**Três explicações:**
+
+1. **Friedman-Savage:** $u$ convexa para ganhos enormes (mudança de classe social)
+2. **PT:** $w(1/50M) \gg 1/50M$ --- sobrepondera probabilidade minúscula
+3. **Utilidade do sonho:** prazer de imaginar o prêmio (antecipação como consumo)
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O cérebro humano não distingue bem "1 em mil" de "1 em 50 milhões" --- ambos são "improvável, mas possível". A função de ponderação da PT formaliza essa compressão perceptual.
+:::
+
+## Decisões Financeiras no Brasil {.smaller}
+
+A PT ajuda a explicar padroes observados no mercado brasileiro:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Efeito disposição na B3:**
+
+- Investidores seguram ações **perdedoras** tempo demais ("não quero realizar o prejuízo")
+- Vendem ações **vencedoras** cedo demais ("melhor garantir o lucro")
+- Documentado por Da Costa Jr. et al. (2013)
+
+**Explicação PT:** no domínio de perdas, o agente é propenso ao risco (convexidade de $v$) $\Rightarrow$ aposta na recuperação.
+:::
+::: {.column width="50%"}
+**Outros exemplos:**
+
+- **Poupança vs. Tesouro:** muitos brasileiros preferem poupança (menor retorno, mas "não perde") --- aversão à perda nominal
+- **Previdência:** adesão baixa ao PGBL/VGBL sem *default* automático --- viés do presente + framing
+- **Crédito consignado:** subestimação de juros compostos (heurística de ancoragem)
+:::
+::::
+
+## Contabilidade Mental {.smaller}
+
+Thaler (1985) identificou outro desvio: agentes criam **contas mentais** separadas para diferentes tipos de gastos.
+
+. . .
+
+:::{.callout-note title="Exemplo"}
+Você pagou R\$ 200 por um ingresso de show. No dia, descobre que perdeu o ingresso. Você compra outro?
+
+Agora imagine: você não comprou o ingresso, mas ao chegar na bilheteria, percebe que perdeu R\$ 200 em dinheiro. Você compra o ingresso?
+
+A maioria responde **não** ao primeiro e **sim** ao segundo --- mesmo que o custo financeiro seja idêntico. A perda do ingresso é "debitada" da conta mental "entretenimento", que já esgotou. A perda de dinheiro é "debitada" de outra conta.
+:::
+
+. . .
+
+Na UE, dinheiro é **fungível** --- R\$ 200 é R\$ 200, independentemente de onde veio ou para onde vai.
+
+## PT Cumulativa (CPT) {.smaller}
+
+A PT original (1979) tinha um problema técnico: poderia violar **dominância estocástica**.
+
+. . .
+
+**Solução:** Tversky & Kahneman (1992) propuseram a **PT Cumulativa** (CPT):
+
+- Ordena resultados do pior ao melhor
+- Pondera **probabilidades acumuladas**, nao isoladas
+- Ganhos e perdas ponderados separadamente
+
+. . .
+
+| Característica | UE | PT Original | CPT |
+|:---------------|:---|:------------|:----|
+| Ponderação | Linear $p$ | $w(p_i)$ isolado | $w(\sum p_j)$ cumulativo |
+| Dominância | Satisfaz | Pode violar | Satisfaz |
+| Referência | Riqueza final | Ganhos/perdas | Ganhos/perdas |
+| Uso acadêmico | Normativo | Histórico | Descritivo padrão |
+
+## Estimativas Empiricas da PT {.smaller}
+
+| Estudo | $\alpha$ | $\beta$ | $\lambda$ | $\gamma^+$ | $\gamma^-$ | Método |
+|:-------|:---------|:--------|:----------|:-----------|:-----------|:-------|
+| Tversky & Kahneman (1992) | 0,88 | 0,88 | 2,25 | 0,61 | 0,69 | Equivalentes de certeza |
+| Camerer & Ho (1994) | 0,37 | --- | --- | 0,56 | --- | Dados experimentais |
+| Wu & Gonzalez (1996) | --- | --- | --- | 0,71 | --- | Loterias binárias |
+| Abdellaoui (2000) | 0,89 | 0,92 | 2,54 | 0,60 | 0,70 | Trade-off method |
+| Booij et al. (2010) | 0,86 | 0,86 | 2,09 | 0,65 | 0,65 | Meta-análise |
+
+. . .
+
+**Consenso:** $\alpha \approx 0{,}88$, $\lambda \approx 2{,}0\text{--}2{,}5$, $\gamma \approx 0{,}6\text{--}0{,}7$. Os parâmetros são notavelmente estáveis entre estudos, países e métodos.
+
+## Limites da PT e Pesquisa Atual
+
+:::: {.columns}
+::: {.column width="50%"}
+**Limitações:**
+
+- Ponto de referência: como é determinado?
+- Loterias com muitos resultados: CPT perde tratabilidade
+- Heterogeneidade de $\lambda$ entre indivíduos
+- Aplicabilidade normativa limitada
+:::
+::: {.column width="50%"}
+**Fronteira de pesquisa:**
+
+- Koszegi & Rabin (2006): ponto de referência = expectativas racionais
+- Bordalo, Gennaioli & Shleifer (2012): saliência e atenção
+- Neuroeconomia: bases neurais da aversão à perda (amígdala)
+- Big data e ML: estimação heterogênea de $\lambda$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A PT não substitui a UE --- ela a complementa. Em situações de alta importância e deliberação, a UE pode prevalecer (Sistema 2). Em decisões rápidas e intuitivas, a PT descreve melhor (Sistema 1).
+:::
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Prêmio de risco** $\pi \approx \frac{1}{2}A(W)\sigma^2$ --- decomposição elegante entre aversão (subjetivo) e variância (objetivo).
+
+2. **CRRA vs. CARA:** CRRA é mais realista (DARA); CARA é útil analiticamente.
+
+3. **Allais:** viola axioma da independência $\Rightarrow$ efeito certeza.
+
+4. **Ellsberg:** aversão à ambiguidade $\neq$ aversão ao risco $\Rightarrow$ prêmio de ambiguidade em mercados.
+
+5. **PT:** função valor (referência, $\lambda \approx 2{,}25$) + ponderação ($w(p) > p$ para $p$ pequeno).
+
+. . .
+
+**Próxima aula:** Mercados de risco e informação --- seguros, seleção adversa, risco moral e sinalização.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Curva Envoltória: Curto Prazo vs. Longo Prazo</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Envoltoria: CMe de curto vs. longo prazo
+# q = K^(1/4) * L^(1/4) (retornos decrescentes)
+# ============================================
+
+w <- 10;  v <- 10
+alpha <- 1/4;  beta_p <- 1/4
+s <- alpha + beta_p   # 0.5
+
+# --- Custo de longo prazo ---
+# Com alpha = beta e w = v => K = L => K^0.5 = q => K = q^2
+# CT_LP = 2*v*q^2 = 20*q^2
+CT_LP <- function(q) 20 * q^2
+CMe_LP <- function(q) 20 * q
+
+# --- Custo de curto prazo (K fixo em Kbar) ---
+# q = Kbar^(1/4) * L^(1/4) => L = q^4 / Kbar
+# CT_CP = v*Kbar + w * q^4 / Kbar
+CT_CP <- function(q, Kbar) v * Kbar + w * q^4 / Kbar
+CMe_CP <- function(q, Kbar) v * Kbar / q + w * q^3 / Kbar
+
+# Capital otimo de LP para cada q: K* = q^2
+K_star <- function(q) q^2
+
+# --- Verificacao: CT_CP - CT_LP >= 0 ---
+q_seq <- seq(0.1, 3, length = 500)
+Kbar_vals <- c(0.25, 1, 2.25, 4)  # K* para q = 0.5, 1, 1.5, 2
+
+cat("====== ENVOLTORIA: VERIFICACAO ======\n")
+cat("CT_LP(q) = 20*q^2   |   CMe_LP(q) = 20*q\n\n")
+
+for (kb in Kbar_vals) {
+  q_tang <- sqrt(kb)  # q onde K* = Kbar
+  diff <- CT_CP(q_tang, kb) - CT_LP(q_tang)
+  cat(sprintf("Kbar = %.2f => tangencia em q = %.2f | CT_CP - CT_LP = %.4f\n",
+              kb, q_tang, diff))
+}
+
+cat("\nPara Kbar = 1, q = 1:\n")
+cat("  CT_CP = ", CT_CP(1, 1), "\n")
+cat("  CT_LP = ", CT_LP(1), "\n")
+cat("  Diferenca = 10*(1 - q^2)^2 = ", 10*(1 - 1)^2, " (= 0, OK!)\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Custo Total
+cores <- c("#adb5bd", "#fd7e14", "#6f42c1", "#20c997")
+plot(q_seq, CT_LP(q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "q", ylab = "$", main = "Custo Total",
+     ylim = c(0, max(CT_LP(q_seq)) * 1.05), cex.lab = 1.1)
+
+for (i in seq_along(Kbar_vals)) {
+  kb <- Kbar_vals[i]
+  lines(q_seq, CT_CP(q_seq, kb), lwd = 1.5, col = cores[i], lty = 2)
+  q_t <- sqrt(kb)
+  if (q_t <= max(q_seq)) {
+    points(q_t, CT_LP(q_t), pch = 19, col = "#dc3545", cex = 1.2)
+  }
+}
+
+legend("topleft",
+       legend = c("CT_LP (envoltoria)",
+                  paste0("CT_CP (K=", Kbar_vals, ")")),
+       col = c("#0d6efd", cores),
+       lwd = c(3, rep(1.5, 4)), lty = c(1, rep(2, 4)),
+       cex = 0.75, bg = "white")
+
+# Painel 2: Custo Medio
+plot(q_seq, CMe_LP(q_seq), type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "q", ylab = "$/unidade", main = "Custo Medio",
+     ylim = c(0, 80), cex.lab = 1.1)
+
+for (i in seq_along(Kbar_vals)) {
+  kb <- Kbar_vals[i]
+  cme_cp <- CMe_CP(q_seq, kb)
+  cme_cp[cme_cp > 100] <- NA
+  lines(q_seq, cme_cp, lwd = 1.5, col = cores[i], lty = 2)
+  q_t <- sqrt(kb)
+  if (q_t <= max(q_seq) & q_t > 0.1) {
+    points(q_t, CMe_LP(q_t), pch = 19, col = "#dc3545", cex = 1.2)
+  }
+}
+
+legend("topright",
+       legend = c("CMe_LP (envoltoria)",
+                  paste0("CMe_CP (K=", Kbar_vals, ")")),
+       col = c("#0d6efd", cores),
+       lwd = c(3, rep(1.5, 4)), lty = c(1, rep(2, 4)),
+       cex = 0.75, bg = "white")
+
+cat("\n=> Pontos vermelhos = tangencias (onde Kbar = K* de LP)\n")
+cat("=> CMe_LP sempre <= CMe_CP (envoltoria inferior)\n")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:360}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

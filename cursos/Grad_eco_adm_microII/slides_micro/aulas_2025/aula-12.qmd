@@ -1,0 +1,445 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 12 — Economia de Dotações: Trabalho e Escolha Intertemporal"
+author: "Prof. Darcio Genicolo Martins"
+date: "Dotações, Trabalho-Lazer, Backward-Bending e Escolha Intertemporal"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Preferência Revelada {data-background-color="#E50505"}
+
+## Da Teoria à Observação
+
+Até aqui, partimos de **preferências** (utilidade) para derivar **demandas**.
+
+. . .
+
+Mas e se não conhecemos a utilidade? Podemos inferir preferências a partir de **escolhas observadas**?
+
+. . .
+
+> **Preferência revelada**: se o consumidor escolheu a cesta $A$ quando $B$ era acessível, então $A$ é **revelada preferida** a $B$.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+As ações falam mais alto que as palavras. Se alguém compra café quando podia comprar chá pelo mesmo preço, revelou preferir café — não precisamos perguntar sua função de utilidade.
+:::
+
+## Preferência Diretamente Revelada
+
+Sejam $\mathbf{x}^0$ a cesta escolhida aos preços $\mathbf{p}^0$ e $\mathbf{x}^1$ qualquer outra cesta.
+
+. . .
+
+Se $\mathbf{p}^0 \cdot \mathbf{x}^0 \geq \mathbf{p}^0 \cdot \mathbf{x}^1$, então $\mathbf{x}^0$ é **diretamente revelada preferida** a $\mathbf{x}^1$.
+
+. . .
+
+Notação: $\mathbf{x}^0 \; R^D \; \mathbf{x}^1$
+
+. . .
+
+:::{.callout-note title="Interpretação"}
+$\mathbf{x}^1$ cabia no orçamento mas o consumidor escolheu $\mathbf{x}^0$ — logo, deve considerar $\mathbf{x}^0$ pelo menos tão boa.
+:::
+
+## Axioma Fraco de Preferência Revelada (AFPR)
+
+::: {.eq-highlight}
+$$\text{Se } \mathbf{x}^0 \; R^D \; \mathbf{x}^1 \text{ e } \mathbf{x}^0 \neq \mathbf{x}^1, \text{ então NÃO pode ocorrer } \mathbf{x}^1 \; R^D \; \mathbf{x}^0$$
+:::
+
+. . .
+
+Em palavras: se a cesta $A$ foi escolhida quando $B$ era acessível, então $B$ **nunca** pode ser escolhida quando $A$ é acessível.
+
+. . .
+
+:::{.callout-warning title="O que o AFPR proíbe"}
+Escolhas **contraditórias**: revelar preferir $A$ a $B$ em uma situação e depois revelar preferir $B$ a $A$ em outra.
+:::
+
+## AFPR: Exemplo Numérico {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+**Situação 1**: $\mathbf{p}^0 = (1, 2)$, $\mathbf{x}^0 = (3, 4)$
+
+Gasto: $1 \times 3 + 2 \times 4 = 11$
+
+**Situação 2**: $\mathbf{p}^1 = (2, 1)$, $\mathbf{x}^1 = (4, 3)$
+
+Gasto: $2 \times 4 + 1 \times 3 = 11$
+:::
+::: {.column width="48%"}
+**Teste AFPR**:
+
+$\mathbf{p}^0 \cdot \mathbf{x}^1 = 1 \times 4 + 2 \times 3 = 10 \leq 11$ → $\mathbf{x}^0 \; R^D \; \mathbf{x}^1$ ✓
+
+$\mathbf{p}^1 \cdot \mathbf{x}^0 = 2 \times 3 + 1 \times 4 = 10 \leq 11$ → $\mathbf{x}^1 \; R^D \; \mathbf{x}^0$ ✗
+
+**Violação do AFPR!** Dados inconsistentes com racionalidade.
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Implicação"}
+Esses dados não podem ter sido gerados por um consumidor maximizador de utilidade com preferências estritamente convexas.
+:::
+
+## AFPR e a Lei da Demanda Compensada
+
+O AFPR implica a **negatividade do efeito substituição de Slutsky**:
+
+. . .
+
+Se $\mathbf{x}^0$ é escolhida a $\mathbf{p}^0$ e $\mathbf{x}^1$ a $\mathbf{p}^1$ (com compensação de Slutsky):
+
+$$(\mathbf{p}^1 - \mathbf{p}^0) \cdot (\mathbf{x}^1 - \mathbf{x}^0) \leq 0$$
+
+. . .
+
+Para $i = j$ (variação de um único preço):
+
+$$\Delta p_i \cdot \Delta x_i^{ES} \leq 0$$
+
+. . .
+
+:::{.callout-tip title="Resultado"}
+O efeito substituição de Slutsky é sempre **negativo** — sem precisar de utilidade! A racionalidade observável (AFPR) basta.
+:::
+
+## Elasticidades da Demanda {data-background-color="#E50505"}
+
+## Por Que Elasticidades?
+
+Derivadas dependem de **unidades de medida**. Como comparar:
+
+. . .
+
+- Sensibilidade da demanda por gasolina (litros) vs. arroz (kg)?
+- Resposta do consumidor brasileiro vs. americano?
+
+. . .
+
+**Elasticidades** = derivadas adimensionais (variação **percentual**).
+
+::: {.eq-highlight}
+$$\varepsilon_{x,p} = \frac{\Delta\% \; x}{\Delta\% \; p} = \frac{\partial x}{\partial p} \cdot \frac{p}{x}$$
+:::
+
+## Elasticidade-Preço da Demanda
+
+$$\varepsilon_{x_i, p_i} = \frac{\partial x_i}{\partial p_i} \cdot \frac{p_i}{x_i}$$
+
+. . .
+
+| Classificação | Condição | Significado |
+|:---|:---:|:---|
+| Elástica | $|\varepsilon| > 1$ | Demanda muito sensível ao preço |
+| Unitária | $|\varepsilon| = 1$ | Receita total constante |
+| Inelástica | $|\varepsilon| < 1$ | Demanda pouco sensível ao preço |
+
+. . .
+
+:::{.callout-note title="Exemplo CD"}
+Para $x_1^* = aI/p_1$: $\varepsilon_{x_1,p_1} = -1$ (sempre elasticidade unitária).
+:::
+
+## Elasticidade-Renda da Demanda
+
+$$\varepsilon_{x_i, I} = \frac{\partial x_i}{\partial I} \cdot \frac{I}{x_i}$$
+
+. . .
+
+| Tipo de bem | $\varepsilon_{x,I}$ | Exemplo (Brasil) |
+|:---|:---:|:---|
+| Inferior | $< 0$ | Farinha de mandioca, transporte público |
+| Necessidade | $0 < \varepsilon < 1$ | Alimentação domiciliar, habitação |
+| Luxo | $> 1$ | Educação privada, saúde, restaurante |
+
+. . .
+
+:::{.callout-tip title="Lei de Engel"}
+A parcela do orçamento gasta com alimentos **decresce** conforme a renda cresce — regularidade documentada desde 1857.
+:::
+
+## Elasticidade-Preço Cruzada
+
+$$\varepsilon_{x_i, p_j} = \frac{\partial x_i}{\partial p_j} \cdot \frac{p_j}{x_i}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Substitutos** ($\varepsilon_{x_i,p_j} > 0$)
+
+Preço do frango sobe → demanda por carne sobe
+
+*Gasolina-etanol no Brasil: $\varepsilon \approx 0.8$ a $1.4$*
+:::
+::: {.column width="48%"}
+**Complementares** ($\varepsilon_{x_i,p_j} < 0$)
+
+Preço do café sobe → demanda por açúcar cai
+
+*Pão-manteiga: elasticidade cruzada negativa*
+:::
+::::
+
+## Excedente do Consumidor
+
+<iframe src="graficos/cap05/excedente-consumidor.html" title="Excedente do Consumidor" width="1100" height="560" style="border:none;"></iframe>
+
+## Curva de Engel
+
+<iframe src="graficos/cap05/curva-engel.html" title="Curva de Engel" width="1100" height="560" style="border:none;"></iframe>
+
+## Agregação de Engel {data-background-color="#E50505"}
+
+Seja $w_i = p_i x_i / I$ a parcela orçamentária do bem $i$:
+
+::: {.eq-highlight}
+$$\sum_{i=1}^n w_i \, \varepsilon_{x_i, I} = 1$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A média ponderada das elasticidades-renda é 1 — portanto, **nem todos os bens podem ser inferiores** simultaneamente. Se alguns têm $\varepsilon < 1$, outros devem compensar com $\varepsilon > 1$.
+:::
+
+## Agregação de Cournot (Homogeneidade)
+
+Para cada bem $i$:
+
+::: {.eq-highlight}
+$$\sum_{j=1}^n \varepsilon_{x_i, p_j} + \varepsilon_{x_i, I} = 0$$
+:::
+
+. . .
+
+- Decorre diretamente da HOD0 da demanda
+- A soma de **todas** as elasticidades-preço (própria + cruzadas) mais a elasticidade-renda é zero
+
+. . .
+
+:::{.callout-note title="Utilidade prática"}
+Se conhecemos $n-1$ elasticidades-preço e a elasticidade-renda, podemos **inferir** a elasticidade-preço restante.
+:::
+
+## Elasticidades Estimadas para o Brasil {.smaller}
+
+| Categoria | $\varepsilon_{x,p}$ | $\varepsilon_{x,I}$ | Classificação |
+|:---|:---:|:---:|:---|
+| Alimentação domiciliar | $-0{,}45$ | $0{,}56$ | Inelástica; necessidade |
+| Alimentação fora | $-0{,}78$ | $1{,}25$ | Inelástica; luxo |
+| Transporte público | $-0{,}32$ | $-0{,}18$ | Inelástica; inferior |
+| Gasolina | $-0{,}46$ | $0{,}68$ | Inelástica; necessidade |
+| Saúde | $-0{,}21$ | $1{,}35$ | Muito inelástica; luxo |
+| Educação privada | $-0{,}38$ | $1{,}48$ | Inelástica; luxo |
+| Vestuário | $-0{,}92$ | $1{,}10$ | Quase unitária; luxo |
+| Eletrodomésticos | $-1{,}15$ | $1{,}52$ | Elástica; luxo |
+
+*Fontes: POF/IBGE 2017-2018; Almeida e Azzoni (2016); IPEA.*
+
+## Economia de Dotações {data-background-color="#E50505"}
+
+## O Consumidor Que Vende Antes de Comprar
+
+Até aqui, o consumidor recebia renda $m$ "do nada". Na prática, a renda vem de **dotações** que ele possui e pode vender.
+
+. . .
+
+**Dotação:** $(\omega_1, \omega_2)$ --- quantidades iniciais dos bens 1 e 2.
+
+. . .
+
+**Restrição orçamentária com dotações:**
+
+::: {.eq-highlight}
+$$p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O lado direito é o **valor da dotação** --- a renda depende dos preços. Se o preço do bem que você possui sobe, sua renda sobe junto. Isso cria um efeito renda adicional que não existia no modelo com renda fixa.
+:::
+
+## Efeito de Mudança de Preço com Dotações
+
+Quando $p_1$ sobe, dois efeitos sobre quem possui $\omega_1 > 0$:
+
+. . .
+
+1. **Efeito substituição:** $x_1$ cai (como sempre)
+2. **Efeito renda:** renda $p_1 \omega_1 + p_2 \omega_2$ **sobe** --- pode aumentar $x_1$
+
+. . .
+
+:::{.callout-warning title="Resultado"}
+Um **vendedor líquido** do bem 1 ($x_1 < \omega_1$) pode se beneficiar com a alta de $p_1$. Um **comprador líquido** ($x_1 > \omega_1$) sempre perde.
+:::
+
+## Oferta de Trabalho {data-background-color="#E50505"}
+
+## O Modelo Trabalho-Lazer
+
+O trabalhador possui uma dotação de **tempo** $T$ (ex: 24h/dia) e escolhe entre:
+
+. . .
+
+- **Lazer** $\ell$ (horas não trabalhadas)
+- **Consumo** $c$ (comprado com salário)
+
+. . .
+
+::: {.eq-highlight}
+$$c = w(T - \ell) + m_0 \qquad \text{ou} \qquad c + w\ell = wT + m_0$$
+:::
+
+onde $w$ = salário/hora e $m_0$ = renda não salarial.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O "preço" do lazer é o salário --- cada hora de descanso custa $w$ em consumo perdido. A restrição orçamentária passa pelo ponto de dotação $(T, m_0)$.
+:::
+
+## Modelo Trabalho-Lazer --- Interativo
+
+<iframe src="graficos/cap17/trabalho-lazer.html" title="Modelo Trabalho-Lazer" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Efeito de um Aumento Salarial
+
+Quando $w$ sobe:
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Efeito substituição:**
+
+Lazer fica mais caro → $\ell$ cai → trabalha **mais**
+:::
+::: {.column width="48%"}
+**Efeito renda:**
+
+Renda $wT + m_0$ sobe → se lazer é normal, $\ell$ sobe → trabalha **menos**
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Curva backward-bending"}
+Para salários baixos, o efeito substituição domina (oferta crescente). Para salários altos, o efeito renda domina (oferta **decrescente**). O resultado é uma curva de oferta de trabalho em formato de **S invertido**.
+:::
+
+## Oferta de Trabalho: Curva Backward-Bending --- Interativo
+
+<iframe src="graficos/cap17/oferta-trabalho.html" title="Oferta de Trabalho: Curva Backward-Bending" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Escolha Intertemporal {data-background-color="#E50505"}
+
+## Consumo Hoje vs. Amanhã
+
+O consumidor vive dois períodos e decide quanto consumir em cada um:
+
+. . .
+
+- **Dotação:** renda $m_1$ no período 1 e $m_2$ no período 2
+- **Taxa de juros:** $r$ (preço de transferir consumo entre períodos)
+
+. . .
+
+**Restrição orçamentária intertemporal:**
+
+::: {.eq-highlight}
+$$c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O lado direito é a **riqueza presente** --- o valor presente de toda a renda futura. A taxa de juros é o "preço" do consumo presente em termos de consumo futuro: cada real gasto hoje custa $(1+r)$ reais amanhã.
+:::
+
+## Poupador vs. Devedor
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Poupador** ($c_1 < m_1$):
+
+- Beneficia-se com aumento de $r$
+- Efeito renda reforça substituição
+- Consome mais no futuro
+:::
+::: {.column width="48%"}
+**Devedor** ($c_1 > m_1$):
+
+- Prejudica-se com aumento de $r$
+- Efeito renda e substituição em direções opostas
+- Resultado ambíguo
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Analogia com dotações"}
+A escolha intertemporal é um caso especial da economia de dotações: os "bens" são consumo hoje e amanhã, os "preços" são 1 e $1/(1+r)$, e a dotação é $(m_1, m_2)$.
+:::
+
+## Escolha Intertemporal --- Interativo
+
+<iframe src="graficos/cap18/consumo-intertemporal.html" title="Escolha Intertemporal" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Conexões {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Fórmula / Resultado |
+|:---|:---|
+| Restrição com dotações | $p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2$ |
+| Modelo trabalho-lazer | $c + w\ell = wT + m_0$ |
+| Curva backward-bending | ES domina (baixo $w$) → ER domina (alto $w$) |
+| Restrição intertemporal | $c_1 + c_2/(1+r) = m_1 + m_2/(1+r)$ |
+| Poupador vs. devedor | Poupador ganha com $r\uparrow$; devedor perde |
+
+. . .
+
+A economia de dotações generaliza a teoria do consumidor: a renda deixa de ser fixa e passa a depender dos preços --- o que gera efeitos renda adicionais com implicações importantes para trabalho e poupança.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

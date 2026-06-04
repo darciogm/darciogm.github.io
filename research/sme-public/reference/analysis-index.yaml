@@ -1,0 +1,348 @@
+# Analysis index — summary for scanning
+# Full details in docs/analyses/an-NNN-<slug>.md
+#
+# THIS FILE IS GENERATED — do not edit by hand.
+# Source of truth: YAML frontmatter on each docs/analyses/an-NNN-*.md page.
+# Regenerate via `python3 scripts/gen_analysis_index.py`.
+#
+# Fields:
+#   id:         an-NNN (sequential)
+#   hypothesis: hypothesis slug or null
+#   status:     pending | done | stale
+#   type:       descriptive | causal | placebo | robustness
+#   question:   one-line research question
+#   confidence: pending | green | yellow | red
+#   tags:       free-form list for filtering
+#   file:       path to analysis file (relative to project root)
+#   script:     path to source script (relative to project root)
+#   target:     primary output path under build/
+
+- id: an-001
+  hypothesis: price-discipline-loss
+  status: done
+  type: causal
+  question: Does open competition lower negotiated procurement prices in switched group 65, identified by DiDiR around the March 2018 PGE-SP reinterpretation?
+  confidence: yellow
+  tags: ["H:price-discipline-loss", didir, prices, fixest, item-fe, item-cluster]
+  file: docs/analyses/an-001-didir-prices.md
+  script: scripts/02_analysis.R
+  target: output/tables/tab_prices.tex
+
+- id: an-002
+  hypothesis: entry-thickens-pool
+  status: done
+  type: causal
+  question: Does open competition raise the number of bidder firms and valid bids in switched group 65?
+  confidence: yellow
+  tags: ["H:entry-thickens-pool", didir, firms, bids, fixest, item-fe, item-cluster]
+  file: docs/analyses/an-002-didir-firms-bids.md
+  script: scripts/02_analysis.R
+  target: output/tables/tab_participants.tex
+
+- id: an-003
+  hypothesis: distance-widens-under-open
+  status: done
+  type: causal
+  question: Does open competition widen the average distance between the public buyer and the winning supplier?
+  confidence: yellow
+  tags: ["H:distance-widens-under-open", didir, distance, geography, value-heterogeneity, item-cluster]
+  file: docs/analyses/an-003-didir-distance.md
+  script: scripts/02_analysis.R
+  target: output/tables/tab_distance.tex
+
+- id: an-004
+  hypothesis: parallel-trends-hold
+  status: done
+  type: placebo
+  question: Do placebo treatment dates applied to pre-treatment data yield null price effects, as required for parallel trends?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", placebo, parallel-trends, robustness, item-cluster]
+  file: docs/analyses/an-004-placebo-tests.md
+  script: scripts/05_robustness.R
+  target: output/tables/tab_placebo.tex
+
+- id: an-005
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: How tight are Lee (2009) sample-selection bounds on the DiDiR price coefficient?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", lee-bounds, sample-selection, robustness, advanced]
+  file: docs/analyses/an-005-lee-bounds.md
+  script: scripts/07_advanced.R
+  target: output/tables/tab_lee_bounds.tex
+
+- id: an-006
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does the price effect survive HonestDiD (Rambachan-Roth 2023) robust confidence intervals under controlled violations of parallel trends?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", honestdid, rambachan-roth, robustness, advanced]
+  file: docs/analyses/an-006-honestdid.md
+  script: scripts/07_advanced.R
+  target: output/figures/fig_11_honestdid.pdf
+
+- id: an-007
+  hypothesis: price-discipline-loss
+  status: done
+  type: causal
+  question: How does the price treatment effect vary across the conditional price distribution?
+  confidence: yellow
+  tags: ["H:price-discipline-loss", quantile-did, canay, distributional, advanced]
+  file: docs/analyses/an-007-quantile-did.md
+  script: scripts/07_advanced.R
+  target: output/tables/tab_quantile_did.tex
+
+- id: an-008
+  hypothesis: sme-winner-share-falls
+  status: done
+  type: descriptive
+  question: What share of the reduced-form price effect is attributable to the competition (more bidders) vs composition (winner-type) channels?
+  confidence: yellow
+  tags: ["H:sme-winner-share-falls", gelbach, mediation, decomposition, advanced]
+  file: docs/analyses/an-008-gelbach-decomp.md
+  script: scripts/07_advanced.R
+  target: output/tables/tab_mediation.tex
+
+- id: an-009
+  hypothesis: sme-winner-share-falls
+  status: done
+  type: descriptive
+  question: Does the probability of an SME winner fall under open competition, and is the composition shift symmetric across PBU types?
+  confidence: yellow
+  tags: ["H:sme-winner-share-falls", composition, sme-winner, heterogeneity-pbu, extensions]
+  file: docs/analyses/an-009-sme-winner-extensions.md
+  script: scripts/06_extensions.R
+  target: output/tables/tab_sme_winner.tex
+
+- id: an-010
+  hypothesis: exclusion-dominates
+  status: done
+  type: descriptive
+  question: What is the structural decomposition of the set-aside price effect into the lost-discipline channel ($S_2-S_1$) and the protected-pool offset ($S_3-S_2$)?
+  confidence: yellow
+  tags: ["H:exclusion-dominates", "H:protected-pool-responds", structural, bne, decomposition, pregao-dropouts]
+  file: docs/analyses/an-010-bne-decomposition.md
+  script: v7-jpube-tight/scripts/45_bne_simulation.R
+  target: v8-jpube/output/values.tex
+
+- id: an-011
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: descriptive
+  question: What is the per-auction static welfare loss of the full SME-only set-aside, decomposed into allocative DWL and MCPF distortion at λ=0.30?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", "H:implied-welfare-weight-large", welfare, mcpf, dwl, saez-stantcheva]
+  file: docs/analyses/an-011-welfare-arithmetic.md
+  script: v7-jpube-tight/scripts/55_welfare.R
+  target: v8-jpube/output/values.tex
+
+- id: an-012
+  hypothesis: preference-near-zero-cost
+  status: done
+  type: descriptive
+  question: What is the simulated price and SME win-rate effect of a 10% SME price preference relative to the open benchmark $S_1$?
+  confidence: yellow
+  tags: ["H:preference-near-zero-cost", preference, design-benchmark, bne, scoring]
+  file: docs/analyses/an-012-preference-benchmark.md
+  script: v7-jpube-tight/scripts/61_optimal_preference.R
+  target: v8-jpube/output/values.tex
+
+- id: an-013
+  hypothesis: ipv-clock-admissible
+  status: done
+  type: descriptive
+  question: How are losing-bidder drop-out prices extracted from BEC Pregão event-log data, and how robust are downstream simulations to the cost-distribution recovery regime?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", structural-extraction, pregao-event-log, drop-outs, sample-construction, censoring-robust]
+  file: docs/analyses/an-013-pregao-dropouts.md
+  script: v7-jpube-tight/scripts/35_pregao_dropouts.R
+  target: v7-jpube-tight/output/dropouts/dropouts_panel.parquet
+
+- id: an-014
+  hypothesis: ipv-clock-admissible
+  status: done
+  type: robustness
+  question: Does the Krasnokutskaya-style auction-level heterogeneity correction (a) remove common scale shocks without mechanically generating the exclusion-dominant decomposition, and (b) does relaxing within-auction independence to a Gaussian copula leave the decomposition intact?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", krasnokutskaya, unobserved-heterogeneity, icc, scale-correction, gaussian-copula]
+  file: docs/analyses/an-014-uh-correction.md
+  script: v7-jpube-tight/scripts/40_uh_variance.R
+  target: v7-jpube-tight/output/uh_decomposition.parquet
+
+- id: an-015
+  hypothesis: no-collusion-confound
+  status: done
+  type: robustness
+  question: Do Conley-Decarolis close-pair and Bajari-Ye bid-coordination screens detect a post-policy intensification of bidder clustering that would invalidate the IPV-clock reading of Pregão drop-outs?
+  confidence: yellow
+  tags: ["H:no-collusion-confound", "H:ipv-clock-admissible", collusion, bajari-ye, conley-decarolis, screens, lands-clean]
+  file: docs/analyses/an-015-collusion-screens.md
+  script: v7-jpube-tight/scripts/58_collusion_screen.R
+  target: v7-jpube-tight/output/collusion_screens.parquet
+
+- id: an-016
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: robustness
+  question: How does the structural decomposition and welfare arithmetic behave in pharmaceuticals, and what specifically makes pharmaceuticals a boundary case rather than a second headline?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", pharma, boundary-case, sensitivity, model-fragility, primitive-invariance, turnover, strict-invariance, welfare-ranking-flip]
+  file: docs/analyses/an-016-pharma-boundary.md
+  script: scripts/24_pharma.R + v7-jpube-tight/scripts/33_pharma_flag.R + various
+  target: output/tables/tab_pharma.tex + v7-jpube-tight/output/tables/tab_v3_pharma_counts.tex
+
+- id: an-017
+  hypothesis: exclusion-dominates
+  status: done
+  type: robustness
+  question: Does the exclusion-dominant decomposition survive a strict-invariance specification that holds the SME pool composition fixed at the pre-policy distribution while keeping observed post-policy SME entry counts?
+  confidence: yellow
+  tags: ["H:exclusion-dominates", "H:static-welfare-loss-large", strict-invariance, robustness, sensitivity, composition]
+  file: docs/analyses/an-017-strict-invariance.md
+  script: v7-jpube-tight/scripts/57_strict_invariance.R
+  target: v7-jpube-tight/output/strict_invariance.parquet
+
+- id: an-018
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Do Callaway-Sant'Anna (2021) and Sun-Abraham (2021) staggered-DiD estimators reproduce the DiDiR price effect once heterogeneous treatment timing is accounted for?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", staggered-did, callaway-santanna, sun-abraham, twfe, convergence]
+  file: docs/analyses/an-018-cs2021-staggered.md
+  script: scripts/19_cs2021.R + scripts/20_sun_abraham.R
+  target: output/tables/tab_cs2021.tex + output/tables/tab_sunab.tex
+
+- id: an-019
+  hypothesis: ipv-clock-admissible
+  status: done
+  type: robustness
+  question: Does a GPV (Guerre-Perrigne-Vuong 2000) recovery of the bidder cost distribution from Convite first-price bids converge with the Pregão drop-out recovery, providing cross-modality discipline on the IPV-clock interpretation?
+  confidence: yellow
+  tags: ["H:ipv-clock-admissible", cross-modality, gpv, convite, fpsb, structural-validation, second-identification-source]
+  file: docs/analyses/an-019-cross-modality-gpv.md
+  script: v7-jpube-tight/scripts/38_cross_modality.R
+  target: v7-jpube-tight/output/tables/tab_v3_cross_modality.tex
+
+- id: an-020
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does the Goodman-Bacon (2021) decomposition of the TWFE DiD coefficient show that all weight falls on the clean treated-vs-never-treated 2×2 comparison, with no contamination from forbidden treated-vs-already-treated comparisons?
+  confidence: green
+  tags: ["H:parallel-trends-hold", goodman-bacon, twfe, decomposition, clean-2x2, no-contamination]
+  file: docs/analyses/an-020-goodman-bacon.md
+  script: scripts/21_goodman_bacon.R
+  target: output/tables/tab_bacon.tex
+
+- id: an-021
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does a synthetic-control match of group 65 to a weighted donor pool of never-treated product groups validate parallel trends and reproduce the DiDiR price effect?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", synthetic-control, augsynth, ridge, donor-weights, semester-panel]
+  file: docs/analyses/an-021-synth-control.md
+  script: scripts/09_synth_control.R
+  target: output/tables/tab_synth.tex
+
+- id: an-022
+  hypothesis: exclusion-dominates
+  status: done
+  type: robustness
+  question: What is the 95% bootstrap confidence interval on the absolute exclusion share, and does the lower endpoint exclude 50% (the dominance threshold)?
+  confidence: yellow
+  tags: ["H:exclusion-dominates", "H:protected-pool-responds", bootstrap, confidence-interval, cluster-bootstrap, dominance-threshold]
+  file: docs/analyses/an-022-bootstrap-ci.md
+  script: v7-jpube-tight/scripts/51_bootstrap_ci.R
+  target: v7-jpube-tight/output/tables/tab_v3_bootstrap_ci.tex
+
+- id: an-023
+  hypothesis: parallel-trends-hold
+  status: done
+  type: robustness
+  question: Does the DiD price coefficient survive dropping the 8-month BEC enablement window (Jul 2017–Feb 2018) during which the SME-only OC functionality was operationalized before the empirical cutoff of mass take-up?
+  confidence: yellow
+  tags: ["H:parallel-trends-hold", "H:price-discipline-loss", phased-adoption, rollout-robust, comunicado-bec, did, item-fe]
+  file: docs/analyses/an-023-phased-adoption.md
+  script: v7-jpube-tight/scripts/70_phased_adoption.R
+  target: v7-jpube-tight/output/tables/tab_phased_adoption.tex
+
+- id: an-024
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: robustness
+  question: How does the static welfare loss vary across the MCPF λ grid, and what is the 95% bootstrap CI on the loss as a percent of the open-regime price?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", "H:implied-welfare-weight-large", "H:preference-near-zero-cost", lambda, mcpf, bootstrap, welfare-ranking, ballard-shoven-whalley]
+  file: docs/analyses/an-024-lambda-welfare-ci.md
+  script: v7-jpube-tight/scripts/55_welfare.R + 56_welfare_bootstrap.R
+  target: v7-jpube-tight/output/tables/tab_v3_welfare_ci.tex + tab_welfare_ranking_lambda.tex
+
+- id: an-025
+  hypothesis: static-welfare-loss-large
+  status: done
+  type: descriptive
+  question: How does the annualized fiscal welfare cost on Group 65 vary across plausible SME-only adherence rates, and what is the baseline empirical adherence?
+  confidence: yellow
+  tags: ["H:static-welfare-loss-large", adherence, annualized, fiscal-cost, group-65, baseline-43pct]
+  file: docs/analyses/an-025-adherence-sensitivity.md
+  script: v7-jpube-tight/scripts/57_welfare_adherence_sensitivity.R
+  target: v7-jpube-tight/output/tables/tab_welfare_adherence_sensitivity.tex
+
+- id: an-026
+  hypothesis: no-collusion-confound
+  status: done
+  type: robustness
+  question: Does a persistent-pair coordination screen conditional on CADMAT product class detect within-class bidder coordination, and does the persistent-pairing signature (count of firm pairs co-bidding in ≥5 auctions) survive class conditioning?
+  confidence: yellow
+  tags: ["H:no-collusion-confound", "H:ipv-clock-admissible", pair-classification, kawai-nakabayashi, conley-decarolis, class-conditional, segmentation]
+  file: docs/analyses/an-026-pair-classification.md
+  script: v7-jpube-tight/scripts/61_collusion_screen_pair_classcond.R
+  target: v7-jpube-tight/output/tables/tab_collusion_screen_pair_classcond.tex
+
+- id: an-027
+  hypothesis: price-discipline-loss
+  status: done
+  type: robustness
+  question: Does the price effect appear both inside CMED-regulated medications (class 6531) and outside it (other medical supplies), as required if competition — not pharmaceutical-specific inflation — drives the headline?
+  confidence: yellow
+  tags: ["H:price-discipline-loss", within-group, cmed, medications, falsification, item-cluster]
+  file: docs/analyses/an-027-within-g65-cmed.md
+  script: scripts/27_major2_controls.R (or equivalent)
+  target: output/tables/tab_within_g65.tex
+
+- id: an-028
+  hypothesis: sme-winner-share-falls
+  status: done
+  type: causal
+  question: Does the price effect survive restricting the sample to RAIS-validated SME winners, and does the distance effect vanish in that subsample as the firm-size composition channel would predict?
+  confidence: yellow
+  tags: ["H:sme-winner-share-falls", "H:distance-widens-under-open", rais, firm-size, micro-firm, composition, validation, employment-links]
+  file: docs/analyses/an-028-rais-validation.md
+  script: scripts/11_rais_validation.R + scripts/12_rais_winner.R
+  target: output/tables/tab_rais_validation.tex + tab_winner_rais.tex
+
+- id: an-029
+  hypothesis: entry-thickens-pool
+  status: done
+  type: causal
+  question: Is the open-competition price effect driven purely by more bidders (headcount channel), or does each individual bidder also bid more aggressively (per-bidder aggressiveness channel)? And does open competition raise the extensive margin (tender completion rate)?
+  confidence: yellow
+  tags: ["H:entry-thickens-pool", "H:price-discipline-loss", extensive-margin, bid-aggressiveness, runnerup-gap, headcount-vs-aggressiveness, completion-rate]
+  file: docs/analyses/an-029-bid-aggressiveness.md
+  script: scripts/06_extensions.R (extensive) + scripts/29_runnerup_gap.R + scripts/27_major2_controls.R (bid aggressiveness)
+  target: output/tables/tab_extensive.tex + tab_runnerup_gap.tex + tab_bid_aggressiveness.tex
+
+- id: an-030
+  hypothesis: protected-pool-responds
+  status: done
+  type: robustness
+  question: What is the Pre→Post entry-rate shift in each modality × class × type cell, what is the calibrated entry-cost asymmetry that explains why SMEs cannot fully replace non-SMEs, and does the dominance ordering survive across the 2×2 grid of UH-clean-vs-raw and endogenous-vs-fixed-pool methodological choices?
+  confidence: yellow
+  tags: ["H:protected-pool-responds", "H:exclusion-dominates", entry-rates, entry-cost, decomposition-grid, asymmetric-entry, sme-vs-nonsme]
+  file: docs/analyses/an-030-entry-rates-cost.md
+  script: v7-jpube-tight/scripts/44_entry_pool.R + 47_entry_cost.R + 45_bne_simulation.R variants
+  target: v7-jpube-tight/output/tables/tab_v3_entry_rates.tex + tab_v3_entry_cost.tex + tab_v3_decomp_grid.tex

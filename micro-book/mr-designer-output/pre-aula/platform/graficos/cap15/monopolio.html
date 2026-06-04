@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+  Monopoly Equilibrium — Chapter 15
+  Library: JSXGraph
+  Shows: demand, MR, MC, monopoly equilibrium, profit, CS, DWL, competitive comparison
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equilíbrio de Monopólio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 300px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.7; }
+    .info-box .section-title { font-weight: 700; color: #1565c0; margin-top: 0.4rem; }
+    .info-box .section-title:first-child { margin-top: 0; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Intercepto da demanda \(a\): <span class="val" id="val-a">100</span></label>
+        <input type="range" id="slider-a" min="40" max="150" step="1" value="100">
+      </div>
+      <div class="slider-group">
+        <label>Inclinação da demanda \(b\): <span class="val" id="val-b">1.0</span></label>
+        <input type="range" id="slider-b" min="0.5" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Custo marginal \(c\): <span class="val" id="val-c">20</span></label>
+        <input type="range" id="slider-c" min="0" max="80" step="1" value="20">
+      </div>
+      <div class="info-box" id="info"></div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    // Parameters (global, updated by sliders)
+    var a = 100, b = 1, c = 20;
+
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-20, 140, 170, -80],
+      axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+    });
+
+    // Axes
+    board.create('axis', [[0,0],[1,0]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11 } },
+      name: '', withLabel: false
+    });
+    board.create('text', [85, -17, '<b><i>Q</i></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+    board.create('axis', [[0,0],[0,1]], {
+      ticks: { drawLabels: true, minorTicks: 0, ticksDistance: 20, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    board.create('text', [-15, 85, '<b><i>P</i></b>'], {
+      fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+
+    // --- Shaded areas (drawn first, behind curves) ---
+
+    // DWL triangle
+    board.create('polygon', [
+      [function(){ return (a-c)/(2*b); }, function(){ return (a+c)/2; }],
+      [function(){ return (a-c)/b; },     function(){ return c; }],
+      [function(){ return (a-c)/(2*b); }, function(){ return c; }]
+    ], {
+      fillColor: '#ff9800', fillOpacity: 0.25,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // Profit rectangle
+    board.create('polygon', [
+      [0, function(){ return c; }],
+      [function(){ return (a-c)/(2*b); }, function(){ return c; }],
+      [function(){ return (a-c)/(2*b); }, function(){ return (a+c)/2; }],
+      [0, function(){ return (a+c)/2; }]
+    ], {
+      fillColor: '#00897b', fillOpacity: 0.18,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // CS triangle
+    board.create('polygon', [
+      [0, function(){ return a; }],
+      [0, function(){ return (a+c)/2; }],
+      [function(){ return (a-c)/(2*b); }, function(){ return (a+c)/2; }]
+    ], {
+      fillColor: '#1565c0', fillOpacity: 0.18,
+      borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false
+    });
+
+    // --- Curves ---
+
+    // Demand (1st quadrant only: q>=0, P>=0)
+    board.create('functiongraph', [function(q) {
+      if (q < 0) return NaN;
+      var v = a - b * q;
+      return v >= 0 ? v : NaN;
+    }], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+    // MR (q>=0, can go negative)
+    board.create('functiongraph', [function(q) {
+      if (q < 0) return NaN;
+      return a - 2 * b * q;
+    }], { strokeColor: '#C8102E', strokeWidth: 2, dash: 2 });
+
+    // CMg (horizontal, q>=0)
+    board.create('functiongraph', [function(q) {
+      return q >= 0 ? c : NaN;
+    }], { strokeColor: '#00897b', strokeWidth: 2.5 });
+
+    // --- Curve labels (positioned beside the end of each curve) ---
+    board.create('text', [function(){ return a/b + 3; }, 3, '<i>D</i>'], {
+      fontSize: 13, color: '#1565c0', fixed: true, highlight: false
+    });
+    board.create('text', [function(){ return a/(2*b) + 3; }, 3, '<i>RMg</i>'], {
+      fontSize: 13, color: '#C8102E', fixed: true, highlight: false
+    });
+    board.create('text', [function(){ return a/b + 3; }, function(){ return c + 4; }, '<i>CMg</i>'], {
+      fontSize: 13, color: '#00897b', fixed: true, highlight: false
+    });
+
+    // --- Equilibrium points ---
+
+    // Monopoly point (on demand at Qm)
+    board.create('point', [
+      function(){ return (a-c)/(2*b); },
+      function(){ return (a+c)/2; }
+    ], { name: '', size: 4, strokeColor: '#C8102E', fillColor: '#C8102E', fixed: true });
+
+    // Competitive point (D = CMg)
+    board.create('point', [
+      function(){ return (a-c)/b; },
+      function(){ return c; }
+    ], { name: '', size: 3, strokeColor: '#00897b', fillColor: '#00897b', fixed: true, strokeOpacity: 0.6, fillOpacity: 0.6 });
+
+    // --- Dashed projection lines ---
+
+    // Pm to y-axis
+    board.create('segment', [
+      [function(){ return (a-c)/(2*b); }, function(){ return (a+c)/2; }],
+      [0, function(){ return (a+c)/2; }]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+    // Qm to x-axis
+    board.create('segment', [
+      [function(){ return (a-c)/(2*b); }, function(){ return (a+c)/2; }],
+      [function(){ return (a-c)/(2*b); }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+    // Qc to x-axis
+    board.create('segment', [
+      [function(){ return (a-c)/b; }, function(){ return c; }],
+      [function(){ return (a-c)/b; }, 0]
+    ], { strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true });
+
+    // --- Axis annotations ---
+
+    board.create('text', [-3, function(){ return (a+c)/2; }, '<i>P<sup>m</sup></i>'], {
+      fontSize: 11, color: '#C8102E', anchorX: 'right', fixed: true, highlight: false
+    });
+    board.create('text', [function(){ return (a-c)/(2*b); }, -7, '<i>Q<sup>m</sup></i>'], {
+      fontSize: 11, color: '#C8102E', anchorX: 'middle', fixed: true, highlight: false
+    });
+    board.create('text', [function(){ return (a-c)/b; }, -7, '<i>Q<sup>c</sup></i>'], {
+      fontSize: 11, color: '#00897b', anchorX: 'middle', fixed: true, highlight: false
+    });
+
+    // --- Area labels ---
+
+    board.create('text', [
+      function(){ return (a-c)/(4*b); },
+      function(){ return (a+c)/2 + (a - (a+c)/2)/3; },
+      'EC'
+    ], { fontSize: 12, color: '#1565c0', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+    board.create('text', [
+      function(){ return (a-c)/(4*b); },
+      function(){ return c + ((a+c)/2 - c)/2; },
+      '<i>π</i>'
+    ], { fontSize: 12, color: '#00897b', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+    board.create('text', [
+      function(){ var qm=(a-c)/(2*b); var qc=(a-c)/b; return qm + (qc-qm)*0.4; },
+      function(){ return c + ((a+c)/2 - c)*0.3; },
+      'PPM'
+    ], { fontSize: 11, color: '#ff9800', anchorX: 'middle', fontWeight: 'bold', fixed: true, highlight: false });
+
+    // --- Info panel update ---
+
+    function update() {
+      a = parseFloat(document.getElementById('slider-a').value);
+      b = parseFloat(document.getElementById('slider-b').value);
+      c = parseFloat(document.getElementById('slider-c').value);
+
+      document.getElementById('val-a').textContent = a.toFixed(0);
+      document.getElementById('val-b').textContent = b.toFixed(1);
+      document.getElementById('val-c').textContent = c.toFixed(0);
+
+      var qm = (a - c) / (2 * b);
+      var pm = (a + c) / 2;
+      var profit = (pm - c) * qm;
+      var cs = 0.5 * (a - pm) * qm;
+      var qc = (a - c) / b;
+      var dwl = 0.5 * (pm - c) * (qc - qm);
+      var lerner = pm > 0 ? (pm - c) / pm : 0;
+
+      var html = '<div class="section-title">Curvas</div>';
+      html += '\\(P = ' + a.toFixed(0) + ' - ' + b.toFixed(1) + '\\,Q\\) &ensp;(Demanda)<br>';
+      html += '\\(RMg = ' + a.toFixed(0) + ' - ' + (2*b).toFixed(1) + '\\,Q\\)<br>';
+      html += '\\(CMg = ' + c.toFixed(0) + '\\)';
+      html += '<div class="section-title">Monopólio</div>';
+      html += '\\(Q^m = ' + qm.toFixed(2) + '\\), \\(P^m = ' + pm.toFixed(2) + '\\)<br>';
+      html += '\\(\\pi = ' + profit.toFixed(1) + '\\)<br>';
+      html += '\\(EC = ' + cs.toFixed(1) + '\\), \\(PPM = ' + dwl.toFixed(1) + '\\)<br>';
+      html += '\\(L = \\frac{P-CMg}{P} = ' + lerner.toFixed(3) + '\\)';
+      html += '<div class="section-title">Concorrência Perfeita</div>';
+      html += '\\(Q^c = ' + qc.toFixed(2) + '\\), \\(P^c = ' + c.toFixed(0) + '\\)<br>';
+      var csComp = 0.5 * (a - c) * qc;
+      html += '\\(EC^c = ' + csComp.toFixed(1) + '\\), \\(PPM = 0\\)';
+
+      document.getElementById('info').innerHTML = html;
+      board.update();
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function resetAll() {
+      document.getElementById('slider-a').value = 100;
+      document.getElementById('slider-b').value = 1;
+      document.getElementById('slider-c').value = 20;
+      update();
+    }
+
+    ['slider-a','slider-b','slider-c'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', update);
+    });
+    update();
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var objs = board.objectsList;
+      for (var i = 0; i < objs.length; i++) {
+        if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+          objs[i].setProperty({visible: show});
+        }
+      }
+      board.update();
+    }
+  </script>
+</body>
+</html>

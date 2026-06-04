@@ -1,0 +1,960 @@
+---
+title: "Sinalização (Spence) e Matching (Gale-Shapley)"
+subtitle: "Aula 9 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-06-17"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 17/06/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Sinalização e Matching {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 9 — Última de conteúdo: mecanismos de coordenação descentralizada**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+17 de junho de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aulas 6–8 catalogaram as três falhas do EG: incompletude, externalidades/bens públicos, informação assimétrica. Hoje fechamos o curso com mecanismos descentralizados que respondem a algumas delas. Próxima quarta (24/06): Avaliação Final.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Diagnosticar Spence (1973) como caso de seleção adversa com agente informado movendo primeiro; usar single-crossing para construir equilíbrio separador; aplicar Cho-Kreps para eliminar pooling; executar DA num exemplo concreto e enunciar Roth (1982); sintetizar 9 aulas e dar roteiro AF.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE Cap. 19 + N&S §18.6 lidos com calma.
+- Single-crossing já apareceu na Aula 8 (R-S 1976) — recapitule.
+- Lagrangiano + IC + IR de Holmström (Aula 8) na ponta da língua.
+- 1º TBE estendido (Aula 5) + três falhas (Aulas 6, 7, 8) na memória.
+:::
+
+---
+
+## Roteiro da noite — última aula
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Recall Aula 8 + ponte | 19:30–19:35 |
+| 1 | Spence (1973) — single-crossing + separador | 19:35–20:15 |
+| — | *Pausa* | 20:15–20:25 |
+| 2 | Cho-Kreps (1987) — refinamento intuitivo | 20:25–21:05 |
+| 3 | Gale-Shapley (1962) — DA + execução 4×4 | 21:05–21:50 |
+| — | *Pausa* | 21:50–22:00 |
+| 4 | Aplicações + síntese 9 aulas + roteiro AF | 22:00–22:25 |
+| 5 | Encerramento do curso | 22:25–22:30 |
+
+::: {.bridge}
+180 min cheios. Bloco 4 reserva 25 min para síntese + AF — não cortar.
+:::
+
+---
+
+## Bloco 1 — Spence (1973) {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Setup canônico; single-crossing; equilíbrio separador; ineficiência social.
+:::
+
+---
+
+## Pergunta-driver
+
+> Aula 8 (Akerlof): vendedores informados não podiam sinalizar. Resultado: unraveling.
+
+::: {.fragment}
+> **E se o agente informado pudesse mover primeiro, escolhendo um sinal custoso?**
+:::
+
+::: {.fragment}
+::: {.bridge}
+É a pergunta de Spence (1973). Agente informado vira jogador estratégico.
+:::
+:::
+
+---
+
+## Spence (1973) — setup
+
+::: {.callout-note .callout}
+Spence, M. (1973). "Job Market Signaling." *QJE* 87(3), 355–374, [DOI 10.2307/1882010](https://doi.org/10.2307/1882010).
+:::
+
+::: {.compact-table}
+| Item | Especificação |
+|:---|:---|
+| Tipos | $\theta \in \{\theta_L, \theta_H\}$, $\theta_H > \theta_L > 0$ |
+| Probabilidade | $\Pr(\theta_L) = \pi_L$ |
+| Sinal | $e \ge 0$ — educação escolhida pelo trabalhador |
+| Custo | $c(e, \theta) = e/\theta$ — decrescente em $\theta$ |
+| Salário | $w(e) = \mathbb{E}[\theta \mid e]$ (mercado competitivo) |
+| Utilidade | $U = w - e/\theta$ |
+:::
+
+---
+
+## Hipótese-chave: custo decrescente em $\theta$
+
+> Educação custa **menos** para o tipo de produtividade alta.
+
+- No canônico: $c(e, \theta) = e/\theta$, então $\partial c/\partial e = 1/\theta$, decrescente em $\theta$.
+- **Spence canônico não modela capital humano** — educação não muda $\theta$.
+- Sinalização puro: educação tem valor de mercado **porque seleciona**, não porque produz.
+
+::: {.bridge}
+Mailath (1987, *Econometrica* 55(6): 1349–1365, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) mistura sinalização e capital humano. Aqui isolamos para entender como funciona.
+:::
+
+---
+
+## Single-crossing (1/2)
+
+TMS no plano $(e, w)$ — quanto trabalhador exige de salário extra por unidade de educação:
+
+$$\text{TMS}(e, w; \theta) = \left| \frac{\partial U/\partial e}{\partial U/\partial w} \right| = \frac{1/\theta}{1} = \frac{1}{\theta}.$$
+
+::: {.eq-key}
+$$\frac{\partial \text{TMS}}{\partial \theta} = -\frac{1}{\theta^2} < 0.$$
+:::
+
+---
+
+## Single-crossing (2/2)
+
+Geometricamente, no plano $(e, w)$:
+
+::: {.eq-punch}
+"Curvas de indiferença dos dois tipos cruzam **no máximo uma vez**. Tipo $L$ está sempre mais íngreme — exige mais salário por unidade de educação."
+:::
+
+::: {.bridge}
+É essa propriedade que permite construir um $\underline e$ que só o tipo alto topa pagar.
+:::
+
+---
+
+## Construção do separador — conjectura
+
+::: {.eq-key}
+$e^*_L = 0$, \quad $e^*_H = \underline e \ge 0$,
+
+$$w(e) = \begin{cases} \theta_H & \text{se } e \ge \underline e \\ \theta_L & \text{se } e < \underline e \end{cases}$$
+
+com crenças $\mu(\theta_H \mid e \ge \underline e) = 1$.
+:::
+
+::: {.bridge}
+Próximos slides: derivar IC-L e IC-H, verificar PBE.
+:::
+
+---
+
+## IC-L (tipo baixo não imita alto)
+
+Tipo baixo escolhe verdade ($e=0, w=\theta_L$) ou imita ($e=\underline e, w=\theta_H$):
+
+$$\theta_L - 0 \ge \theta_H - \frac{\underline e}{\theta_L}$$
+
+$$\Longleftrightarrow \quad \underline e \ge \theta_L (\theta_H - \theta_L).$$
+
+::: {.bridge}
+Limite inferior do separador: educação tem que ser cara o suficiente para o tipo baixo desistir.
+:::
+
+---
+
+## IC-H (tipo alto não desvia para baixo)
+
+Tipo alto escolhe verdade ($e=\underline e, w=\theta_H$) ou desvia ($e=0, w=\theta_L$):
+
+$$\theta_H - \frac{\underline e}{\theta_H} \ge \theta_L - 0$$
+
+$$\Longleftrightarrow \quad \underline e \le \theta_H (\theta_H - \theta_L).$$
+
+::: {.eq-key}
+**Intervalo:** $\underline e \in [\theta_L(\theta_H - \theta_L),\, \theta_H(\theta_H - \theta_L)]$.
+:::
+
+---
+
+## Contínuo de equilíbrios separadores
+
+::: {.eq-punch}
+"Existe um **contínuo** de equilíbrios separadores indexado por $\underline e$ — multiplicidade canônica em jogos de sinalização. Cho-Kreps vai resolver isso no Bloco 2."
+:::
+
+---
+
+## Exemplo numérico
+
+$\theta_L = 2, \theta_H = 5$:
+
+::: {.compact-table}
+| Limite | Valor |
+|:---|:---|
+| $\underline e_{\min} = \theta_L(\theta_H - \theta_L)$ | $2 \cdot 3 = 6$ |
+| $\underline e_{\max} = \theta_H(\theta_H - \theta_L)$ | $5 \cdot 3 = 15$ |
+:::
+
+::: {.bridge}
+Qualquer $\underline e \in [6, 15]$ sustenta separação. Cho-Kreps seleciona $\underline e = 6$ (Bloco 2).
+:::
+
+---
+
+## Ineficiência social do separador
+
+::: {.compact-table}
+| Cenário | Salário $\theta_L$ | Salário $\theta_H$ | Educ. $\theta_L$ | Educ. $\theta_H$ |
+|:---|:---:|:---:|:---:|:---:|
+| First-best (info simétrica) | $\theta_L$ | $\theta_H$ | 0 | 0 |
+| Separador (Riley, $\underline e = 6$) | $\theta_L$ | $\theta_H$ | 0 | $6/5 = 1{,}2$ |
+:::
+
+::: {.eq-punch}
+Tipo alto perde **1,2 unidades** em educação que **não muda sua produtividade**. Puro desperdício social — mas é o melhor implementável sob assimetria.
+:::
+
+---
+
+## Box Brasil — diploma como sinal
+
+> PNAD documenta prêmio salarial ~3× ensino superior vs. fundamental.
+
+- Lange & Topel (2006) revisam: 30%–60% do prêmio é sinalização.
+- Resto: capital humano + outros canais.
+- Implicação: políticas que expandem acesso sem expandir produtividade redistribuem o componente de sinalização.
+
+::: {.callout-note .callout}
+Spence está vivo no mercado brasileiro. Diploma seleciona antes de produzir.
+:::
+
+---
+
+## Box Mundo — GED americano
+
+> Tyler-Murnane-Willett (2000, *QJE* 115(2): 431–468, [DOI 10.1162/003355300554827](https://doi.org/10.1162/003355300554827)).
+
+- GED = diploma alternativo, mesmo conteúdo cognitivo, prova em vez de 4 anos.
+- Comparar GED vs. high school formal isola sinalização.
+- Resultado: ~20–30% do prêmio é sinalização pura.
+
+::: {.eq-punch}
+Spence empírico, com identificação plausível. Nobel 2001 (Spence + Akerlof + Stiglitz).
+:::
+
+---
+
+## Pausa 1 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+20:15 – 20:25 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Cho-Kreps quando voltarem.
+:::
+
+:::
+
+---
+
+## Bloco 2 — Cho-Kreps (1987) {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 20:25–21:05
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Multiplicidade de PBE; pooling sob crenças pessimistas; intuitive criterion; Riley equilibrium.
+:::
+
+---
+
+## Multiplicidade de PBE
+
+> No Bloco 1: contínuo de separadores. **Pior:** sob crenças pessimistas, **pooling também é PBE.**
+
+::: {.eq-key}
+**Pooling em $e^p$ com $w(e^p) = \bar w = \pi_L \theta_L + (1-\pi_L)\theta_H$.**
+
+Crenças fora-do-equilíbrio: $\mu(\theta_L \mid e \neq e^p) = 1$, $w(e) = \theta_L$.
+:::
+
+::: {.bridge}
+Sob crenças pessimistas, ninguém desvia. PBE permissivo demais.
+:::
+
+---
+
+## O critério intuitivo
+
+::: {.callout-note .callout}
+Cho, I.-K. & Kreps, D. M. (1987). "Signaling Games and Stable Equilibria." *QJE* 102(2), 179–221, [DOI 10.2307/1885060](https://doi.org/10.2307/1885060).
+:::
+
+> **Ideia.** Para uma mensagem $e$ fora-do-equilíbrio: se um tipo $\theta$ **nunca** ganharia desviando para $e$ (independente da resposta), crenças razoáveis devem atribuir o desvio aos outros tipos.
+
+::: {.bridge}
+Restringe crenças "razoáveis" fora-do-equilíbrio. Mata pooling no Spence canônico.
+:::
+
+---
+
+## Aplicação ao Spence (1/2)
+
+Pooling em $\bar w$. Considere desvio para $e' > e^p$:
+
+- Tipo $L$ desvia (melhor caso $w = \theta_H$) se $\theta_H - e'/\theta_L > \bar w$:
+$$e' < \theta_L(\theta_H - \bar w).$$
+
+- Tipo $H$ desvia (melhor caso $w = \theta_H$) se $\theta_H - e'/\theta_H > \bar w$:
+$$e' < \theta_H(\theta_H - \bar w).$$
+
+---
+
+## Aplicação ao Spence (2/2)
+
+Como $\theta_H > \theta_L$:
+
+::: {.eq-key}
+$$e' \in (\theta_L(\theta_H - \bar w),\, \theta_H(\theta_H - \bar w)) \;\Rightarrow\; \text{só tipo H desviaria.}$$
+:::
+
+Cho-Kreps: $\mu(\theta_H \mid e') = 1$, $w(e') = \theta_H$. Tipo H realmente desvia.
+
+::: {.eq-punch}
+**Pooling cai.** Sobra apenas o separador. Cho-Kreps + iteração: $\underline e = \underline e_{\min}$ — Riley equilibrium.
+:::
+
+---
+
+## Exemplo numérico — Cho-Kreps em ação
+
+$\theta_L = 2, \theta_H = 5, \pi_L = 0{,}5$. $\bar w = 0{,}5 \cdot 2 + 0{,}5 \cdot 5 = 3{,}5$.
+
+Pooling em $e^p = 0$. Intervalo de Cho-Kreps:
+
+$$e' \in (2 \cdot 1{,}5,\, 5 \cdot 1{,}5) = (3,\, 7{,}5).$$
+
+::: {.bridge}
+Tomar $e' = 5$: tipo $L$ ganha $5 - 5/2 - 3{,}5 = -1 < 0$ (não desvia); tipo $H$ ganha $5 - 5/5 - 3{,}5 = 0{,}5 > 0$ (desvia). Cho-Kreps: $w(5) = 5$. Pool quebra.
+:::
+
+---
+
+## Riley (1979, 2001) — separador menos custoso
+
+::: {.callout-note .callout}
+Riley, J. G. (2001). "Silver Signals: Twenty-Five Years of Screening and Signaling." *J. Econ. Lit.* 39(2), 432–478, [DOI 10.1257/jel.39.2.432](https://doi.org/10.1257/jel.39.2.432).
+:::
+
+::: {.eq-key}
+**Riley equilibrium:** $\underline e = \theta_L(\theta_H - \theta_L)$ — separador menos custoso.
+:::
+
+::: {.bridge}
+Cho-Kreps + iteração leva ao mínimo: qualquer $\underline e > \underline e_{\min}$ tem $e' \in (\underline e_{\min}, \underline e)$ atrativo só ao tipo H.
+:::
+
+---
+
+## Refinamentos mais fortes — citação
+
+> D1 (Banks-Sobel 1987), divinity (Cho-Kreps 1987), equilibrium dominance.
+
+- No Spence canônico, todos chegam ao mesmo destino.
+- Em modelos mais complexos, divergem.
+
+::: {.bridge}
+Para MPE, Cho-Kreps cobre o que precisamos. Fica como pergunta para curso de teoria de jogos avançada.
+:::
+
+---
+
+## Box Brasil — MBAs executivos
+
+> Tier-1 (Insper, FIA, FGV) atrai gerente sênior via custo elevado.
+
+- Tier-2/3 atrai gerente médio via custo intermediário.
+- Quem fica fora não paga sinal — fica com salário esperado.
+- Estratificação hierárquica = **pooling-com-separating em sub-mercados**.
+
+::: {.bridge}
+Mailath (1987, [DOI 10.2307/1913560](https://doi.org/10.2307/1913560)) modela com tipos contínuos. Hierarquia de MBAs no Brasil opera como sinalização hierárquica.
+:::
+
+---
+
+## Box Mundo — Riley revisitado
+
+> 25 anos depois (2001), maioria dos refinamentos sensatos chega ao Riley equilibrium.
+
+::: {.eq-punch}
+"Cho-Kreps virou padrão de fato em economia aplicada. Spence + Cho-Kreps = receita pedagógica padrão para sinalização em MPE."
+:::
+
+---
+
+## Bloco 3 — Gale-Shapley (1962) {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 21:05–21:50
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Matching estável; algoritmo DA; execução 4×4; propriedades; Roth 1982; aplicações.
+:::
+
+---
+
+## Mudança de paradigma
+
+> Spence + Cho-Kreps: paradigma **preço + valoração** (salários, custos, mercado competitivo).
+
+::: {.fragment}
+> Aqui mudamos: **preferências ordinais sobre o lado oposto, sem preços.**
+:::
+
+::: {.fragment}
+::: {.bridge}
+Casamento, residência médica, escolas, transplante de rins — domínios onde "preço" não faz sentido institucional. Mas ainda queremos alocação eficiente e estável.
+:::
+:::
+
+---
+
+## Setup
+
+::: {.callout-note .callout}
+Gale, D. & Shapley, L. S. (1962). "College Admissions and the Stability of Marriage." *Amer. Math. Monthly* 69(1), 9–15, [DOI 10.2307/2312726](https://doi.org/10.2307/2312726).
+:::
+
+::: {.compact-table}
+| Item | Especificação |
+|:---|:---|
+| Conjuntos | $M = \{m_1, \ldots, m_n\}$, $W = \{w_1, \ldots, w_k\}$ disjuntos |
+| Preferências | $\succ_m$ sobre $W \cup \{m\}$ — completas e estritas |
+| Matching | $\mu$ bilateral, $\mu(\mu(x)) = x$ |
+:::
+
+---
+
+## Estabilidade — definição
+
+::: {.eq-key}
+**$\mu$ é estável** se não existe par bloqueante $(m, w)$ não-emparelhado em $\mu$ tal que
+
+$$w \succ_m \mu(m) \quad \text{e} \quad m \succ_w \mu(w).$$
+:::
+
+::: {.bridge}
+Mais ninguém prefere ficar solteiro a estar com seu par. Estabilidade = robustez a desvios bilaterais voluntários.
+:::
+
+---
+
+## Existe sempre matching estável?
+
+> **Pergunta-driver:** existência? Unicidade?
+
+::: {.fragment}
+::: {.eq-punch}
+Resposta de Gale-Shapley: **sim, sempre existe** (em domínio finito + preferências estritas). **Não é único em geral.**
+:::
+:::
+
+::: {.fragment}
+::: {.bridge}
+A prova é construtiva: o algoritmo Deferred Acceptance constrói um matching estável.
+:::
+:::
+
+---
+
+## Algoritmo DA — pseudo-código
+
+```
+Iteração 1:
+  Cada m ∈ M propõe ao melhor w ∈ W (segundo ≻_m).
+  Cada w mantém em pendente o melhor m que recebeu;
+  rejeita o resto.
+
+Iteração t > 1:
+  Cada m rejeitado em t−1 propõe ao próximo melhor w.
+  Cada w mantém o melhor entre {pendente} ∪ {nova proposta}.
+
+Termina quando: ninguém é rejeitado nesta iteração.
+Saída: μ_M(m) = pendente final de m.
+```
+
+---
+
+## Por que "deferred"?
+
+> $w$ **não confirma** o pendente até a iteração final.
+
+::: {.eq-punch}
+"$w$ pode trocar pendente por proposta nova melhor a qualquer momento. Aceitação é adiada — daí 'deferred'. **É essa propriedade que sustenta estabilidade.**"
+:::
+
+::: {.bridge}
+Compare com mecanismo "Boston" (aceitação imediata). Boston não é strategy-proof.
+:::
+
+---
+
+## Execução 4×4 — preferências
+
+::: {.compact-table}
+| Agente | Ordem (mais → menos preferido) |
+|:---|:---|
+| $m_1$ | $w_1 \succ w_2 \succ w_3 \succ w_4$ |
+| $m_2$ | $w_1 \succ w_2 \succ w_3 \succ w_4$ |
+| $m_3$ | $w_2 \succ w_1 \succ w_3 \succ w_4$ |
+| $m_4$ | $w_3 \succ w_4 \succ w_1 \succ w_2$ |
+| $w_1$ | $m_3 \succ m_2 \succ m_1 \succ m_4$ |
+| $w_2$ | $m_1 \succ m_4 \succ m_3 \succ m_2$ |
+| $w_3$ | $m_4 \succ m_1 \succ m_2 \succ m_3$ |
+| $w_4$ | $m_2 \succ m_4 \succ m_3 \succ m_1$ |
+:::
+
+---
+
+## Iterações 1 e 2
+
+**Iter. 1.** $m_1 \to w_1, m_2 \to w_1, m_3 \to w_2, m_4 \to w_3$.
+
+- $w_1$ recebe $\{m_1, m_2\}$. Prefere $m_2$. Rejeita $m_1$.
+- $w_2, w_3$ mantêm $m_3, m_4$.
+
+**Iter. 2.** $m_1$ propõe a $w_2$.
+
+- $w_2$ compara $m_3$ (atual) com $m_1$ (novo). Prefere $m_1$. Rejeita $m_3$.
+
+::: {.bridge}
+$m_1$ aceito por $w_2$. Mas $m_3$ agora rejeitado de $w_2$ — vai propor a $w_1$.
+:::
+
+---
+
+## Iterações 3 e 4
+
+**Iter. 3.** $m_3$ propõe a $w_1$.
+
+- $w_1$ compara $m_2$ (atual) com $m_3$ (novo). Prefere $m_3$. Rejeita $m_2$.
+
+**Iter. 4.** $m_2$ propõe a $w_2$.
+
+- $w_2$ compara $m_1$ com $m_2$. Prefere $m_1$. Rejeita $m_2$.
+
+::: {.bridge}
+$m_2$ rejeitado em cadeia. Próxima escolha: $w_3$.
+:::
+
+---
+
+## Iterações 5 e 6 — termina
+
+**Iter. 5.** $m_2$ propõe a $w_3$.
+
+- $w_3$ compara $m_4$ com $m_2$. Prefere $m_4$. Rejeita $m_2$.
+
+**Iter. 6.** $m_2$ propõe a $w_4$.
+
+- $w_4$ aceita $m_2$. **Sem rejeições — termina.**
+
+::: {.eq-key}
+$\mu_M = \{(m_1, w_2),\, (m_2, w_4),\, (m_3, w_1),\, (m_4, w_3)\}.$
+:::
+
+::: {.notes}
+Trace completo das 6 iterações para fallback no quadro. Estado pendente $(m, w)$ ao fim de cada iteração:
+
+- **Iter 1** (todos propõem ao topo): $m_1{\to}w_1$, $m_2{\to}w_1$, $m_3{\to}w_2$, $m_4{\to}w_3$. $w_1$ recebe dois e mantém $m_2$ (prefere $m_2 \succ m_1$). Pendente: $\{(m_2,w_1),(m_3,w_2),(m_4,w_3)\}$; $m_1$ rejeitado.
+- **Iter 2**: $m_1$ propõe a $w_2$ (2ª escolha). $w_2$ tinha $m_3$, prefere $m_1 \succ m_3$, mantém $m_1$. Pendente: $\{(m_1,w_2),(m_2,w_1),(m_4,w_3)\}$; $m_3$ rejeitado.
+- **Iter 3**: $m_3$ propõe a $w_1$ (2ª escolha — $m_3$: $w_2 \succ w_1 \succ \ldots$). $w_1$ tinha $m_2$, prefere $m_3 \succ m_2$, mantém $m_3$. Pendente: $\{(m_1,w_2),(m_3,w_1),(m_4,w_3)\}$; $m_2$ rejeitado.
+- **Iter 4**: $m_2$ propõe a $w_2$ (2ª escolha). $w_2$ tinha $m_1$, prefere $m_1 \succ m_2$, rejeita $m_2$. Estado igual.
+- **Iter 5**: $m_2$ propõe a $w_3$ (3ª escolha). $w_3$ tinha $m_4$, prefere $m_4 \succ m_2$, rejeita $m_2$.
+- **Iter 6**: $m_2$ propõe a $w_4$ (4ª escolha). $w_4$ aceita (estava livre). Sem rejeições — fim.
+
+**Matching final** $\mu_M = \{(m_1,w_2),(m_2,w_4),(m_3,w_1),(m_4,w_3)\}$.
+
+**Verificação dois pares bloqueantes candidatos:**
+- $(m_1, w_1)$: $m_1$ prefere $w_1$ a $w_2$ (sim, é sua 1ª). Mas $w_1$ está com $m_3$ e prefere $m_3 \succ m_1$. Não bloqueia (bilateralidade falha do lado de $w_1$).
+- $(m_3, w_2)$: $m_3$ prefere $w_2$ a $w_1$ (sim, é sua 1ª). Mas $w_2$ está com $m_1$ e prefere $m_1 \succ m_3$. Não bloqueia (bilateralidade falha do lado de $w_2$).
+
+**Para o Prof. Darcio:** se a turma estiver perdida, peça pra rastrear iter 1 → 6 no quadro junto, marca os rejeitados em vermelho a cada passo. A propagação $m_1 \to m_3 \to m_2$ é a chave — uma rejeição em $w_1$ força $m_1$ a $w_2$, que rejeita $m_3$, que vai a $w_1$ e expulsa $m_2$, que cai cascateando até $w_4$. Vale enfatizar que $m_2$ termina com sua **última** escolha — DA é $M$-ótimo no agregado, não significa que cada $m$ ganha bem.
+:::
+
+---
+
+## Verificação de estabilidade
+
+> Existe par bloqueante? Verifique pares não-emparelhados.
+
+- $(m_1, w_1)$? $m_1$ prefere $w_1$ a $w_2$ (sim). Mas $w_1$ prefere $m_3$ (atual) a $m_1$. **Não bloqueia.**
+- $(m_2, w_1)$? $w_1$ prefere $m_3$ a $m_2$. **Não bloqueia.**
+- Demais pares: análogos.
+
+::: {.eq-punch}
+Nenhum par bloqueante. **$\mu_M$ é estável** ✓.
+:::
+
+---
+
+## Quem ganha o quê?
+
+::: {.compact-table}
+| $m$ | Queria | Ficou |
+|:---|:---|:---|
+| $m_1$ | $w_1$ (1ª) | $w_2$ (2ª) |
+| $m_2$ | $w_1$ (1ª) | $w_4$ (4ª — última) |
+| $m_3$ | $w_2$ (1ª) | $w_1$ (2ª) |
+| $m_4$ | $w_3$ (1ª) | $w_3$ (1ª — top!) |
+:::
+
+::: {.bridge}
+Lado proponente captura ganho — **mas não uniforme**. $m_2$ ficou com sua última escolha.
+:::
+
+---
+
+## Propriedades de DA — teoremas
+
+::: {.eq-key}
+**(1)** DA termina em $\le n \cdot k$ iterações; output **estável**.
+
+**(2)** $\mu_M$ é **$M$-ótimo**: cada $m$ recebe seu melhor parceiro entre os matchings estáveis.
+
+**(3)** $\mu_M$ é **$W$-pessimo**: cada $w$ recebe seu pior parceiro estável.
+:::
+
+::: {.bridge}
+Lattice theorem (Knuth 1976): conjunto dos estáveis forma reticulado completo, $\mu_M$ no extremo $M$-favorável = $W$-desfavorável.
+:::
+
+---
+
+## Roth (1982) — strategy-proofness
+
+::: {.callout-note .callout}
+Roth, A. E. (1982). "The Economics of Matching: Stability and Incentives." *Math. Oper. Res.* 7(4), 617–628, [DOI 10.1287/moor.7.4.617](https://doi.org/10.1287/moor.7.4.617).
+:::
+
+::: {.eq-key}
+**(4)** Em DA com $M$ proponente: declarar verdade é **estratégia dominante** para todo $m \in M$.
+
+**(5)** Não dominante para $w \in W$.
+:::
+
+---
+
+## Por que assimetria de incentivo?
+
+- **$m$ só pode perder mentindo:** propor a alguém pior leva a parceiro pior. Verdade fraco-domina.
+- **$w$ pode ganhar mentindo:** rejeitar imediatamente $m_X$ aceitável força cadeia subsequente que pode trazer $m_Y$ melhor.
+
+::: {.eq-punch}
+"Ao escolher quem é lado proponente, o desenhador do mecanismo escolhe **quem ganha a verdade**. NRMP escolheu candidatos. SISU também."
+:::
+
+---
+
+## Roth (1982) — negative result
+
+::: {.eq-punch}
+**Teorema (Roth 1982).** Não existe mecanismo de matching simultaneamente
+
+(i) **estável** e
+(ii) **strategy-proof para ambos os lados**.
+:::
+
+::: {.bridge}
+Resultado tipo Gibbard-Satterthwaite restrito a domínio de matching. DA escolhe (i) + SP apenas para o proponente.
+:::
+
+---
+
+## Box Brasil — SISU
+
+> MEC 2010+. ~2M candidatos, ~200K vagas, executa em segundos.
+
+- Candidatos como lado proponente — strategy-proof para o aluno.
+- Aproxima DA, com variantes (Aygün & Bó 2020).
+- **Crítica empírica:** desistência no 1º semestre quando aluno pegou curso/local distante das preferências reais.
+
+::: {.callout-note .callout}
+SISU redistribuiu fluxo geográfico — antes inviável institucional/financeiramente.
+:::
+
+---
+
+## Box Mundo — NRMP, kidney exchange, school choice
+
+> **NRMP (US 1952+).** Roth (1984), Roth-Peranson (1999) — DA com casais.
+
+- ~30K médicos / ~5K hospitais / anual.
+- Pré-NRMP: contratos no 1º ano de medicina (unraveling).
+
+> **Kidney exchange.** Roth-Sönmez-Ünver (2004) — top trading cycles.
+
+- Northwestern altruistic chain 2006: 10 transplantes encadeados.
+
+> **School choice.** Abdulkadiroğlu-Pathak-Roth (2005, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)) — Boston e NYC redesignados.
+
+::: {.bridge}
+Roth Nobel 2012 (junto com Shapley). Market design como ramo da economia aplicada.
+:::
+
+---
+
+## Pausa 2 {.pause-slide}
+
+::: {style="text-align: center; margin-top: 1.5em;"}
+
+**Pausa**
+
+21:50 – 22:00 · 10 min
+
+::: {style="margin-top: 1em; font-size: 0.85em; opacity: 0.85;"}
+Síntese das 9 aulas + roteiro AF quando voltarem.
+:::
+
+:::
+
+---
+
+## Bloco 4 — Síntese + Roteiro AF {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+25 min · 22:00–22:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Mais Médicos. Síntese das 9 aulas. Roteiro AF detalhado. Erros comuns.
+:::
+
+---
+
+## Box Brasil — Mais Médicos
+
+> Programa Mais Médicos (2013–2019, retomado 2023+).
+
+- Aloca médicos a postos de saúde em locais carentes.
+- Candidatos rankeiam locais; locais aplicam pontuação de critérios.
+- Aproxima DA com restrições adicionais (cota por estado, prioridade SUS).
+
+::: {.bridge}
+Não é DA puro mas pertence à mesma família institucional de NRMP. Setor diferente — Mais Médicos público; NRMP residência hospitalar de mercado livre.
+:::
+
+---
+
+## Box Mundo — Boston/NYC school choice
+
+> Abdulkadiroğlu-Pathak-Roth (2005, *AER* 95(2): 364–367, [DOI 10.1257/000282805774670509](https://doi.org/10.1257/000282805774670509)).
+
+- Boston pré-2005: candidato declara preferências; 1ª escolha primeiro; quem não pegou vai para 2ª; etc.
+- **Boston-mechanism não é strategy-proof.**
+- Redesign 2005 substituiu por DA. NYC fez similar em 2003.
+
+::: {.eq-punch}
+Mecanismos de aceitação imediata são vulneráveis a manipulação. DA (deferred) é mais robusto.
+:::
+
+---
+
+## Síntese das 9 aulas (1/2)
+
+::: {.compact-table}
+| Aula | Tema | Conceito-âncora |
+|:---|:---|:---|
+| 1 | Preferências e Utilidade | Axiomas + representação |
+| 2 | UMP/EMP/Dualidade | Marshalliana, Hicksiana, gasto |
+| 3 | Slutsky + Elasticidades | Decomposição substituição/renda |
+| 4 | EG: Trocas + Produção | Edgeworth, Pareto, núcleo |
+| 5 | Arrow-Debreu I | Bens contingentes, mercados completos |
+:::
+
+---
+
+## Síntese das 9 aulas (2/2)
+
+::: {.compact-table}
+| Aula | Tema | Conceito-âncora |
+|:---|:---|:---|
+| 6 | Arrow-Debreu II | Existência, incompletude (Hart 1975) |
+| 7 | Externalidades + Bens Públicos | Pigou, Coase, Samuelson, VCG |
+| 8 | Sel. Adversa + Risco Moral | Akerlof, R-S, Holmström |
+| 9 | Sinalização + Matching | Spence, Gale-Shapley, Roth |
+:::
+
+---
+
+## Arco do curso
+
+::: {.eq-punch}
+"Preferências individuais (Aula 1) → demanda agregada (Aulas 2-3) → equilíbrio geral canônico (Aulas 4-5) → três falhas estruturais (Aulas 6-8) → mecanismos descentralizados que respondem a algumas dessas falhas (Aula 9)."
+:::
+
+::: {.bridge}
+9 aulas, um arco. Saiam com o mapa institucional na cabeça.
+:::
+
+---
+
+## Roteiro AF (1/2)
+
+> qua 24/06 · 19:00 · 3h · presencial · A4 permitida · 70% da nota.
+
+::: {.compact-table}
+| Parte | Aulas | Tópicos | Calibre | Peso |
+|:---|:---|:---|:---|---:|
+| I | 1, 2, 3 | UMP/EMP, Slutsky | 🟡 N&S | 40% |
+| II | 4, 5, 6 | EG, AD, incompletude | 🟡–🔴 | 30% |
+| III | 7, 8 | Externalidades, info assimétrica | 🟡–🔴 | 20% |
+| IV | 9 | Sinalização ou matching | 🟡 | 10% |
+:::
+
+---
+
+## Roteiro AF (2/2) — operacional
+
+- **Folha A4** (frente/verso): condições UMP/EMP, Roy/Shephard, Slutsky, 1º/2º TBE, Pigou, Samuelson, IC/IR, single-crossing, DA pseudo-código.
+- **Tempo-alvo:** Parte I/II 25–35 min/questão; III 15–25; IV 10–15.
+- **AF favorece Aulas 1–6 em volume.** 7–9 entram com calibre comparável mas peso menor.
+
+::: {.bridge}
+Pré-monitoria 5 com Alberto (sáb 20/06) é última revisão integrada.
+:::
+
+---
+
+## Erros comuns que descontam
+
+1. Confundir **Marshalliana** com **Hicksiana** em Slutsky.
+2. Esquecer **2º TBE** em problemas de equilíbrio com redistribuição.
+3. Pigou no privado em vez do ótimo: $t^* = \text{MEC}(q^*)$, **não** $\text{MEC}(q^p)$.
+4. **IR** esquecida em info assimétrica.
+5. Single-crossing como hipótese (não teorema).
+6. **$M$-ótimo** vs. **$W$-ótimo** em DA — esse último não vale para $M$-proponente.
+
+---
+
+## Bloco 5 — Encerramento {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Síntese final do curso. Despedida.
+:::
+
+---
+
+## Síntese final do curso
+
+::: {.eq-punch}
+"Microeconomia I é a teoria de **decisão sob restrições** + **agregação dessas decisões em equilíbrios** + **catalogação das falhas** + **mecanismos para responder a essas falhas**."
+:::
+
+::: {.bridge}
+Quando virem um problema microeconômico no mundo, perguntem: (i) qual é o agente? (ii) qual é a restrição? (iii) qual é o equilíbrio? (iv) há falha? (v) qual mecanismo poderia corrigir?
+:::
+
+---
+
+## Despedida {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; font-size: 1.6em; font-weight: 600; margin-top: 0.8em;"}
+Foi um prazer ter cada um de vocês neste curso.
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.6em;"}
+**Avaliação Final:** qua 24/06 · 19:00 · 3h · A4 permitida.
+
+**Pré-monitoria 5** com Alberto: sáb 20/06 · 10h — última revisão integrada.
+
+**Plataforma fecha:** quarta 02/07/2026 · 18h. Gabarito dos avaliativos: quinta 03/07 · 00:00.
+:::
+
+::: {style="color: white; font-size: 0.85em; opacity: 0.85; margin-top: 0.8em;"}
+Boa sorte na AF, e se cuidem.
+:::

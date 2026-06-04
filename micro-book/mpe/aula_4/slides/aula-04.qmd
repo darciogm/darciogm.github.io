@@ -1,0 +1,1162 @@
+---
+title: "Equilíbrio Geral em Trocas Puras"
+subtitle: "Aula 4 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-05-13"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 13/05/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Equilíbrio Geral em Trocas Puras {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 4 — Equilíbrio Geral I**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+13 de maio de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aulas 1–3 fecharam o consumidor isolado. Hoje vários consumidores se cruzam — e o preço deixa de ser exógeno.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Construir Edgeworth, calcular EC em CD, demonstrar **1º TBE** linha-a-linha, anunciar 2º TBE.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE EG (trocas) com papel e caneta.
+- N&S 12e §13.1 e §13.2 visitados.
+- 9 seções da plataforma + quiz pré-aula 10🟡.
+:::
+
+::: {.fragment}
+[Sair sem entender por que **LNS** segura o 1º TBE = perdemos a chave de Aulas 5–7.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite (atualizado 07/05 — agora c/ produção)
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura + recall | 19:30–19:35 |
+| 1 | Edgeworth, Pareto, núcleo | 19:35–20:13 |
+| — | *Pausa* | 20:13–20:23 |
+| 2 | EC + lei de Walras + cálculo CD | 20:23–20:55 |
+| 3 | 1º TBE + 2º TBE preliminar | 20:55–21:23 |
+| — | *Pausa curta* | 21:23–21:30 |
+| **3.5** | **Tecnologia + PPF + Robinson + 1º TBE c/ produção** ✦ | **21:30–22:20** |
+| 4' | Box único condensado (RenovaBio = TMS=TMT) | 22:20–22:25 |
+| 5 | Síntese + ponte Aula 5 (AD-I) | 22:25–22:30 |
+
+::: {.bridge}
+Cirurgia 07/05: Aula 4 absorveu produção. 50 min para PPF + Robinson é piso, não conforto.
+:::
+
+---
+
+## Recall das Aulas 1–3 (1/2)
+
+::: {.eq-key}
+$$
+x^{M,i}(p, m^i) \in \arg\max_{x \ge 0} u^i(x) \;\;\text{s.a.}\;\; p\cdot x \le m^i.
+$$
+:::
+
+**UMP individual.** Demanda Marshalliana, identidade calibrada, dualidade, Slutsky — tudo **com preço dado**.
+
+::: {.bridge}
+Hoje: $p$ deixa de ser exógeno. É objeto matemático que zera todos os mercados simultaneamente.
+:::
+
+---
+
+## Recall das Aulas 1–3 (2/2)
+
+**A nível individual** (Aula 3): $p\cdot x^{M,i} = m^i = p\cdot \omega^i$ — Walras *individual*.
+
+**Hoje:** somar sobre $i$ ⇒ Walras *agregada*. Identidade que segue de UMP+LNS.
+
+::: {.eq-punch}
+Walras agregada é o único enunciado universal de teoria do consumidor. Aula 4 mostra por quê.
+:::
+
+---
+
+## Bloco 1 — Edgeworth, Pareto, núcleo {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+40 min · 19:35–20:15
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Setup · construção da caixa · Pareto · contract curve · núcleo.
+:::
+
+---
+
+## Setup — economia de troca pura
+
+**Objetos:**
+
+- $I = 2$ consumidores ($A$, $B$); $L = 2$ bens.
+- Cada $i$ com $u^i: \mathbb{R}^2_+ \to \mathbb{R}$ contínua, monotônica, estritamente quase-côncava.
+- Dotação $\omega^i = (\omega_1^i, \omega_2^i) \gg 0$.
+
+**Total da economia:** $\bar\omega = \omega^A + \omega^B$.
+
+::: {.bridge}
+Não há produção. Recursos fixos. A pergunta é: como redistribuir entre os agentes?
+:::
+
+---
+
+## Alocação viável
+
+::: {.eq-key}
+$$
+x = (x^A, x^B) \;\;\text{viável}\;\;\Leftrightarrow\;\; x^A + x^B = \bar\omega.
+$$
+:::
+
+**Mercados fecham.** Ninguém cria nem destrói recurso. Só transfere.
+
+::: {.bridge}
+Espaço de alocações viáveis tem dimensão $L = 2$ (escolhe $x^A$; $x^B$ sai). Caixa de Edgeworth visualiza.
+:::
+
+---
+
+## A caixa de Edgeworth (1/3) — construção
+
+**Eixos:** horizontal de comprimento $\bar\omega_1$; vertical de comprimento $\bar\omega_2$.
+
+**Origens:** $A$ no canto inferior-esquerdo; $B$ no canto superior-direito (rotacionado 180°).
+
+**Cada ponto interior** $(x_1^A, x_2^A)$ é uma alocação viável; $B$ recebe $\bar\omega - x^A$ automaticamente.
+
+::: {.bridge}
+Próximo: ler curvas de indiferença e a "lente de melhoria mútua".
+:::
+
+---
+
+## A caixa de Edgeworth (2/3) — leitura visual
+
+- **Curvas de indiferença de $A$:** convexas para $A$ (origem inferior-esquerda).
+- **Curvas de indiferença de $B$:** convexas para $B$ (origem superior-direita; parecem côncavas a olhos de $A$).
+- **Dotação $\omega$:** ponto fixo de partida.
+- **Lente de melhoria mútua em $\omega$:** região onde ambas as IC indicam preferência.
+
+::: {.bridge}
+Próximo: Pareto-eficiência como tangência de IC.
+:::
+
+---
+
+## A caixa de Edgeworth (3/3) — punch
+
+::: {.eq-punch}
+A caixa de Edgeworth é o microscópio mais barato que a teoria oferece.
+:::
+
+**Cada ponto interior é uma economia possível.** A pergunta de mercado é: para qual desses pontos os preços levam?
+
+::: {.notes}
+Aqui é o momento crítico. Desenhar a caixa ao vivo no quadro com lápis vermelho/azul é o que cola na cabeça do aluno. Slides projetados não substituem.
+:::
+
+---
+
+## Caixa de Edgeworth — interativa (CD assimétrica)
+
+<iframe src="graficos/edgeworth.html" class="graph-iframe" width="100%" height="470" style="border:none;border-radius:6px"></iframe>
+
+::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.4em;"}
+Volte aqui depois do Bloco 2 (CD assimétrica) — o ponto $p_1 = 8/7$ no slider corresponde ao cálculo simbólico que vamos fazer.
+:::
+
+::: {.notes}
+Apoio visual para o cálculo CD assimétrica do Bloco 2: $u^A = x_1^{2/3}x_2^{1/3}$, $\omega^A=(1,4)$; $u^B = x_1^{1/3}x_2^{2/3}$, $\omega^B=(3,0)$. Slider varre $p_1/p_2 \in [0{,}5; 2{,}0]$. Em $p_1^*/p_2^* = 8/7$ os dois pontos de demanda coincidem na contract curve. Use rapidamente em sala (30s) — o desenho ao vivo no quadro continua sendo a aula central.
+:::
+
+---
+
+## Pareto-eficiência (1/3) — definição
+
+::: {.eq-key}
+$$
+\begin{aligned}
+x \text{ é Pareto-eficiente} \iff{}\; & \nexists\,\tilde x \text{ viável tal que} \\
+& u^i(\tilde x^i) \ge u^i(x^i)\;\;\forall\, i, \\
+& u^j(\tilde x^j) > u^j(x^j) \;\text{p/ algum } j.
+\end{aligned}
+$$
+:::
+
+**Em palavras:** não há outra alocação viável onde *todos* fiquem pelo menos iguais e *alguém* fique estritamente melhor.
+
+::: {.bridge}
+Próximo: caracterização interior via tangência.
+:::
+
+---
+
+## Pareto-eficiência (2/3) — caracterização
+
+**Em alocação interior** ($x^i \gg 0$, utilidades suaves):
+
+::: {.eq-key}
+$$
+x \text{ Pareto-eficiente interior} \iff \text{TMS}^A(x^A) = \text{TMS}^B(x^B).
+$$
+:::
+
+**Intuição:** se $\text{TMS}^A \neq \text{TMS}^B$, há troca infinitesimal que melhora ambos.
+
+::: {.bridge}
+Próximo: contract curve = lugar geométrico desses pontos.
+:::
+
+---
+
+## Pareto-eficiência (3/3) — contract curve
+
+**Contract curve.** Conjunto $\{x : x \text{ Pareto-eficiente}\}$.
+
+**Em economia suave:** curva contínua dentro da caixa, conectando origens $A$ e $B$.
+
+::: {.eq-punch}
+Tangência é a fronteira do que mercado pode fazer sem redistribuir.
+:::
+
+::: {.bridge}
+Próximo: núcleo — refinamento da contract curve por voluntariedade.
+:::
+
+---
+
+## Núcleo (1/2) — definição
+
+**Núcleo** ($\text{Core}$): alocações viáveis tais que:
+
+1. **Individualmente racionais:** $u^i(x^i) \ge u^i(\omega^i)$ para todo $i$.
+2. **Não bloqueáveis por coalizão:** nenhuma coalizão $S$ pode redistribuir só sua dotação $\sum_{i \in S}\omega^i$ e melhorar todos.
+
+::: {.bridge}
+Em $I = 2$, coalizões = $\{A\}$, $\{B\}$, $\{A, B\}$. Próximo: visual.
+:::
+
+---
+
+## Núcleo (2/2) — leitura visual
+
+**Em economia $2\times 2$:** núcleo = parte da contract curve **dentro** da lente de melhoria mútua passando pela dotação $\omega$.
+
+::: {.eq-punch}
+Núcleo = Pareto + voluntariedade. Mais restrito que Pareto puro.
+:::
+
+**Quando $I$ cresce** (Aula 6, brevemente): núcleo encolhe; em economia "grande", converge ao conjunto de equilíbrios competitivos (**Debreu-Scarf (1963), com intuição original em Edgeworth (1881)**).
+
+---
+
+## Síntese Bloco 1
+
+::: {.compact-table}
+| Conceito | Forma | Geometria |
+|:---|:---|:---|
+| Alocação viável | $x^A + x^B = \bar\omega$ | Ponto na caixa |
+| Pareto-eficiente | $\text{TMS}^A = \text{TMS}^B$ | Tangência IC |
+| Contract curve | Lugar de Pareto | Curva ligando origens |
+| Núcleo | IR + não-bloqueável | Parte da CC na lente |
+:::
+
+::: {.bridge}
+Próximo: introduzir preços e equilíbrio competitivo. Mercado escolhe um ponto da contract curve.
+:::
+
+---
+
+## Pausa 1 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 20:25.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Estique. Água. Releia o desenho da caixa se precisar.
+:::
+
+---
+
+## Bloco 2 — EC + lei de Walras {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 20:25–21:00
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Tomadores de preço · UMP individual · Walras · cálculo CD.
+:::
+
+---
+
+## Tomadores de preço (1/2) — UMP individual
+
+**Cada $i$ enfrenta** $p = (p_1, p_2) \ge 0$, $p \neq 0$. Renda inicial $m^i = p\cdot \omega^i$.
+
+::: {.eq-key}
+$$
+x^i(p) \in \arg\max_{x \ge 0} u^i(x) \;\;\text{s.a.}\;\; p\cdot x \le p\cdot \omega^i.
+$$
+:::
+
+::: {.bridge}
+Próximo: excesso de demanda como diferença entre quer comprar e tem.
+:::
+
+---
+
+## Tomadores de preço (2/3) — excesso individual
+
+**Excesso de demanda individual:**
+
+$$
+z^i(p) = x^i(p) - \omega^i.
+$$
+
+**Vetor:** componente $\ell$ positiva ⇒ $i$ quer comprar bem $\ell$; negativa ⇒ quer vender.
+
+::: {.bridge}
+Próximo: agregar sobre $i$ para obter excesso de mercado.
+:::
+
+---
+
+## Tomadores de preço (3/3) — excesso agregado
+
+**Excesso agregado:**
+
+$$
+z(p) = \sum_i z^i(p) = \sum_i x^i(p) - \sum_i \omega^i.
+$$
+
+::: {.eq-punch}
+Excesso de demanda é vetor: positivo onde a economia quer comprar mais; negativo onde quer vender.
+:::
+
+---
+
+## Lei de Walras (1/3) — exauste do orçamento
+
+**Por LNS**, cada UMP exausta orçamento: $p\cdot x^i(p) = p\cdot \omega^i$. Logo:
+
+$$
+p\cdot z^i(p) = p\cdot x^i - p\cdot \omega^i = 0 \quad\forall i.
+$$
+
+::: {.bridge}
+Cada agente individualmente já satisfaz $p\cdot z^i = 0$. Próximo: somar.
+:::
+
+---
+
+## Lei de Walras (2/3) — somar sobre $i$
+
+**Somando $p\cdot z^i(p) = 0$ sobre todos os $i$:**
+
+::: {.eq-key}
+$$
+\boxed{\;p\cdot z(p) = 0 \quad\text{(Lei de Walras).}\;}
+$$
+:::
+
+::: {.bridge}
+Próximo: implicações operacionais para encontrar EC.
+:::
+
+---
+
+## Lei de Walras (3/3) — implicações
+
+**Em $L = 2$:** $p_1 z_1(p) + p_2 z_2(p) = 0$. Se $p \gg 0$ e $z_1 = 0$, então $z_2 = 0$.
+
+**Em geral:** zerar $L - 1$ mercados ⇒ o $L$-ésimo zera.
+
+**Homogeneidade grau 0:** $z(\lambda p) = z(p)$ ⇒ podemos normalizar ($p_2 = 1$ numerário).
+
+::: {.eq-punch}
+Walras é identidade contábil. EC é solução. Não confundir.
+:::
+
+---
+
+## Equilíbrio competitivo — definição
+
+::: {.eq-key}
+$$
+(p^*, x^*) \text{ é EC} \iff \begin{cases} x^{*i} \in \arg\max u^i \;\;\text{s.a.}\;\; p^*\cdot x \le p^*\cdot \omega^i \\ \sum_i x^{*i} = \sum_i \omega^i \end{cases}
+$$
+:::
+
+**Equivalente:** $z(p^*) = 0$.
+
+::: {.bridge}
+Tomadores de preço + viabilidade. Não há leiloeiro implícito; $p^*$ é objeto matemático.
+:::
+
+---
+
+## Cálculo em CD simétrica (1/3) — setup
+
+**Setup:** $u^A = u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (3, 1)$, $\omega^B = (1, 3)$. Total $\bar\omega = (4, 4)$.
+
+**Demanda CD:** $x_\ell^i = m^i/(2 p_\ell)$, com $m^i = p\cdot \omega^i$.
+
+::: {.bridge}
+Próximo: substituir e fechar mercado 1.
+:::
+
+---
+
+## Cálculo em CD simétrica (2/3) — fechar mercado 1
+
+$x_1^A = (3 p_1 + p_2)/(2 p_1)$. $x_1^B = (p_1 + 3 p_2)/(2 p_1)$.
+
+**Mercado 1:** $x_1^A + x_1^B = 4$:
+
+$$
+\frac{4 p_1 + 4 p_2}{2 p_1} = 4 \implies \frac{p_1 + p_2}{p_1} = 2 \implies \frac{p_2}{p_1} = 1.
+$$
+
+::: {.bridge}
+Equilíbrio em $p_1 = p_2$. Próximo: alocação e checagens.
+:::
+
+---
+
+## Cálculo em CD simétrica (3/3) — punch
+
+**Em $p_2 = 1$:** $p_1^* = 1$. Alocação: $x^{A*} = (2, 2)$, $x^{B*} = (2, 2)$.
+
+**Verificações:**
+
+- $\text{TMS}^A = x_2^A/x_1^A = 1$. $\text{TMS}^B = 1$. Tangência. ✓
+- $z_1 = 0$ ⇒ $z_2 = 0$ por Walras. ✓
+
+::: {.eq-punch}
+Simetria total ⇒ preço relativo unitário. Cada um troca uma unidade do bem que tem mais.
+:::
+
+---
+
+## Cálculo em CD assimétrica (1/2) — setup
+
+**Setup alternativo:** $u^A = x_1^{2/3}x_2^{1/3}$ ($A$ ama bem 1), $u^B = x_1^{1/3}x_2^{2/3}$ ($B$ ama bem 2). $\omega^A = (1, 4)$, $\omega^B = (3, 0)$. Total $(4, 4)$.
+
+**Demanda CD com $\alpha$:** $x_\ell^i = \alpha_\ell^i\cdot m^i/p_\ell$. Em $p_2 = 1$: $m^A = p_1 + 4$, $m^B = 3 p_1$.
+
+::: {.bridge}
+Próximo: fechar mercado 1 e ler preço relativo.
+:::
+
+---
+
+## Cálculo em CD assimétrica (2/2) — punch
+
+$x_1^A = (2/3)(p_1 + 4)/p_1 = 2/3 + 8/(3 p_1)$. $x_1^B = (1/3)\cdot 3 p_1/p_1 = 1$ — **cancelamento**.
+
+**Mercado 1:**
+$$2/3 + 8/(3 p_1) + 1 = 4 \;\implies\; p_1^* = 8/7.$$
+
+**Alocação:** $x^A = (3,\; 12/7)$, $x^B = (1,\; 16/7)$. Soma bem 2: $28/7 = 4$. ✓ $\text{TMS}^* = 8/7$ em ambos.
+
+::: {.eq-punch}
+Preço relativo no EC reflete preferências **e** dotações. Não há mágica — é álgebra de market-clearing.
+:::
+
+---
+
+## CD + Leontief (1/2) — setup e demandas
+
+**Setup:** $u^A = x_1^{1/2}x_2^{1/2}$ (CD), $u^B = \min\{x_1, x_2\}$ (Leontief). $\omega^A = (10, 0)$, $\omega^B = (0, 10)$. $p_2 = 1$.
+
+**Demanda CD ($A$):** $m^A = 10\, p_1$. Logo $x_1^A = m^A/(2 p_1) = 10 p_1/(2 p_1) = 5$ — **constante** (cancelamento porque $A$ só tem bem 1).
+
+**Demanda Leontief ($B$):** UMP em "L" exige $x_1^B = x_2^B$ (sem desperdício). Orçamento: $p_1 x_1^B + p_2 x_2^B = m^B = 10$. Substituindo $x_1^B = x_2^B$: $(p_1 + 1) x_1^B = 10 \implies x_1^B = 10/(p_1 + 1)$.
+
+::: {.bridge}
+Próximo: fechar mercado 1 e ler alocação.
+:::
+
+---
+
+## CD + Leontief (2/2) — fechar mercado e alocação
+
+**Mercado 1:** $x_1^A + x_1^B = \bar\omega_1 = 10$:
+
+$$
+5 + \frac{10}{p_1 + 1} = 10 \implies \frac{10}{p_1 + 1} = 5 \implies p_1^* = 1.
+$$
+
+**Alocação:** $x_1^A = 5$, $x_1^B = 10/2 = 5$. Por Walras (zerar mercado 1 ⇒ mercado 2 zera): $x_2^A = m^A/(2 p_2) = 5$, $x_2^B = x_1^B = 5$. Portanto $x^{A*} = x^{B*} = (5, 5)$.
+
+::: {.eq-punch}
+Leontief no EC: $x_1 = x_2$ sem desperdício. CD com toda dotação num bem: demanda no outro bem é constante. Mercado fecha em $p^* = (1,1)$.
+:::
+
+::: {.bridge}
+Próximo bloco: 1º TBE — por que esta alocação é Pareto-eficiente.
+:::
+
+---
+
+## Bloco 3 — 1º TBE + 2º TBE preliminar {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 21:00–21:35
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+LNS · prova linha-a-linha · papel exato de LNS · teaser do 2º TBE.
+:::
+
+---
+
+## Não-saciedade local (LNS)
+
+::: {.eq-key}
+$$
+\forall x^i\, \forall U \text{ vizinhança de } x^i,\;\; \exists\, \tilde x^i \in U \text{ com } u^i(\tilde x^i) > u^i(x^i).
+$$
+:::
+
+**Mais geral que monotonicidade estrita** (admite curvas de indiferença "atravessáveis" localmente).
+
+::: {.bridge}
+LNS é o mínimo axiomático para que UMP exausta orçamento. Sem ela, mercado pode não esgotar valor.
+:::
+
+---
+
+## LNS vs. monotonicidade — exemplo concreto
+
+**Considere** $u(x_1, x_2) = x_1$ (utilidade só do bem 1).
+
+**Não é monotônica estrita** em bem 2 — $u(x_1, x_2 + \delta) = u(x_1, x_2)$ para todo $\delta > 0$. Aumentar bem 2 não melhora.
+
+**Mas é LNS** — em qualquer ponto, vizinho com mais bem 1 é estritamente preferido.
+
+::: {.eq-punch}
+LNS é mais fraca que monotonicidade estrita — e ainda assim suficiente para 1º TBE.
+:::
+
+::: {.bridge}
+A Aula 4 usa LNS como hipótese-mínima. Próximo: o teorema.
+:::
+
+---
+
+## 1º TBE — enunciado
+
+::: {.eq-punch}
+Em troca pura com **LNS**, todo equilíbrio competitivo $(p^*, x^*)$ é Pareto-eficiente.
+:::
+
+::: {.bridge}
+Próximo: prova por contradição em três passos. Atenção a onde LNS aparece.
+:::
+
+---
+
+## 1º TBE (1/4) — contradição
+
+**Suponha** que $x^*$ NÃO é Pareto. Então ∃ $\tilde x$ viável com:
+
+- $u^i(\tilde x^i) \ge u^i(x^{*i})$ para todo $i$;
+- $u^j(\tilde x^j) > u^j(x^{*j})$ para algum $j$.
+
+**Estratégia:** mostrar que $\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i$ — contradiz viabilidade.
+
+::: {.bridge}
+Próximo passo: o $j$ estritamente melhor está fora do orçamento.
+:::
+
+---
+
+## 1º TBE (2/4) — passo 1
+
+**Para o $j$ estritamente melhor:**
+
+$$
+p^*\cdot \tilde x^j > p^*\cdot \omega^j.
+$$
+
+**Razão:** se $p^*\cdot \tilde x^j \le p^*\cdot \omega^j$, $\tilde x^j$ era viável no orçamento e $u^j(\tilde x^j) > u^j(x^{*j})$ — contradiz UMP de $x^{*j}$.
+
+::: {.bridge}
+Próximo: para $i \ne j$ (fracamente melhor), aqui LNS entra.
+:::
+
+---
+
+## 1º TBE (3/4) — passo 2 (LNS aqui)
+
+**Para $i \neq j$:** $u^i(\tilde x^i) \ge u^i(x^{*i})$. Queremos $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$.
+
+**Por contradição:** se $p^*\cdot \tilde x^i < p^*\cdot \omega^i$, **LNS** dá vizinhança de $\tilde x^i$ com $\hat x^i$ estritamente preferida.
+
+Por continuidade, $p^*\cdot \hat x^i \le p^*\cdot \omega^i$. Mas $u^i(\hat x^i) > u^i(\tilde x^i) \ge u^i(x^{*i})$ — contradiz UMP de $x^{*i}$. Logo $p^*\cdot \tilde x^i \ge p^*\cdot \omega^i$.
+
+::: {style="font-size: 0.78em; color: #4A5060; margin-top: 0.6em;"}
+*Onde isso quebra sem LNS — slides "O papel exato de LNS (1/2) e (2/2)" mais à frente, com calibração honesta da hipótese.*
+:::
+
+::: {.bridge}
+Próximo: somar passos 1 e 2 e contradizer viabilidade.
+:::
+
+---
+
+## 1º TBE (4/4) — punch
+
+**Somando passos 1 e 2:**
+
+$$
+\sum_i p^*\cdot \tilde x^i \;>\; \sum_i p^*\cdot \omega^i.
+$$
+
+**Mas $\tilde x$ viável:** $\sum_i \tilde x^i = \sum_i \omega^i$, logo $\sum_i p^*\cdot \tilde x^i = \sum_i p^*\cdot \omega^i$.
+
+::: {.eq-punch}
+Contradição. EC é Pareto-eficiente. $\blacksquare$
+:::
+
+---
+
+## O papel exato de LNS (1/3) — onde aparece
+
+**LNS aparece** apenas no **passo 2** — para os $i$ que estão fracamente melhor.
+
+**Contrapositiva do passo 2:** "se sobra renda em $\tilde x^i$, então $u^i(\tilde x^i) < u^i(x^{*i})$". Para sustentar isso precisamos de um **vizinho** $\tilde x^i + \varepsilon$ ainda dentro do orçamento e estritamente preferido — **isso é exatamente LNS**.
+
+::: {.callout .callout-note}
+**Cuidado.** LNS é hipótese de **vizinhança**, não de direção. Basta <em>uma</em> direção de melhora em qualquer entorno. Saturação <em>direcional</em> (uma derivada parcial nula numa região) **não viola LNS** quando outro bem oferece direção positiva.
+:::
+
+::: {.bridge}
+Próximo: calibrar a hipótese num exemplo concreto.
+:::
+
+---
+
+## O papel exato de LNS (2/3) — calibração: setup + diagnóstico
+
+**Setup.** $u^A(x_1, x_2) = \min\{x_1, 1\} + x_2$; $u^B = x_1^{1/2}x_2^{1/2}$. $\omega^A = (2, 0)$, $\omega^B = (0, 2)$.
+
+**Diagnóstico de LNS em $A$.** Em qualquer $(x_1^0, x_2^0)$, o vizinho $(x_1^0, x_2^0 + \delta)$ tem utilidade $\min\{x_1^0, 1\} + x_2^0 + \delta$. Como $\partial u^A/\partial x_2 = 1 > 0$ globalmente, **LNS vale** — inclusive em $x_1^0 \ge 1$. A "saturação" em bem 1 é apenas direcional.
+
+**EC desta economia.** A $p^* = (1, 1)$: $A$ é indiferente em $x_1 \in [0, 1]$ (com $x_2 = 2 - x_1$); $B$ tem CD com $m^B = 2$, demanda $(1, 1)$. Mercado fecha em $x^A = x^B = (1, 1)$. Por **1º TBE (LNS vale)**, é Pareto-eficiente.
+
+::: {.bridge}
+Próximo: o punch — saturação direcional não quebra o teorema; e onde LNS *de fato* falha.
+:::
+
+::: {.notes}
+**Resolução completa (fallback se aluno perguntar).**
+
+(1) **LNS de $A$ globalmente.** Em qualquer $(x_1^0, x_2^0)$, $u^A(x_1^0, x_2^0 + \delta) = \min\{x_1^0, 1\} + x_2^0 + \delta > u^A(x_1^0, x_2^0)$ para todo $\delta > 0$. Logo o vizinho $(x_1^0, x_2^0 + \delta)$ resolve o teste de LNS.
+
+(2) **EC.** A $p^* = (1, 1)$: $A$ tem $m^A = 2$. UMP de $A$: para $x_1 \in [0, 1]$, $u^A = x_1 + (2 - x_1) = 2$; para $x_1 \in [1, 2]$, $u^A = 1 + (2 - x_1) = 3 - x_1 \in [1, 2]$. Máximo em $x_1 \in [0, 1]$ — indiferente nessa faixa. $B$: CD com $m^B = 2$, demanda $(1, 1)$. Mercado: $x_1^A + 1 = 2 \Rightarrow x_1^A = 1$ (compatível com indiferença). EC: $((1,1),(1,1))$.
+
+(3) **Pareto.** Por 1º TBE, é Pareto. Verificação direta: agregado fixo $(2,2)$; tirar bem 2 de $B$ piora $B$ (CD monotônica estrita); dar bem 1 a $B$ acima de seu ponto exige tirar de $A$ que está em $x_1^A = 1$ (no joelho). Trade-off binding nas duas direções.
+:::
+
+---
+
+## O papel exato de LNS (3/3) — punch e onde LNS falha
+
+::: {.eq-punch}
+Saturação direcional ≠ violação de LNS. 1º TBE vale aqui.
+:::
+
+::: {style="font-size: 0.82em; color: #4A5060; margin-top: 0.6em;"}
+*Para falhar LNS **de fato**: bliss-point **interior** — e.g.* $u(x_1, x_2) = -[(x_1-a)^2 + (x_2-b)^2]$, *conjunto preferido estrito vazio em $(a, b)$.* **MWG §16.D**. *Construção numérica completa: pré-monitoria 2 (sáb 23/05, com Alberto).*
+:::
+
+::: {.bridge}
+LNS é o mínimo axiomático e é robusta a saturação direcional. Próximo: 2º TBE (preliminar).
+:::
+
+::: {.notes}
+**Contraste honesto (slide 3/3).** Para ter saturação local *verdadeira* em algum ponto: bliss-point interior em $u^A = -[(x_1-1)^2 + (x_2-1)^2]$ — em $(1,1)$ o conjunto preferido estrito é vazio. Aí LNS falha em $(1,1)$ e a contrapositiva do passo 2 da prova fica sem testemunha. MWG §16.D. Calibrar economia onde o EC *cai* exatamente nesse ponto com sobra de renda só no agente saciado é trabalho fino — fica com o Alberto na pré-monitoria 2.
+:::
+
+---
+
+## 2º TBE preliminar — enunciado
+
+::: {.eq-key}
+$$
+\begin{aligned}
+&\text{Pareto-eficiente} \,+\, \text{convexidade} \\
+&\quad\Longrightarrow\; \exists\, p^* \text{ tal que } (p^*, x^*) \text{ é EC} \\
+&\quad\phantom{\Longrightarrow\;} \text{após redistribuição lump-sum.}
+\end{aligned}
+$$
+:::
+
+**Em palavras:** sob convexidade, qualquer Pareto-eficiente pode ser implementado como EC, contanto que se redistribua lump-sum as dotações.
+
+::: {.bridge}
+Implicação política: mercado pode atingir qualquer Pareto desejado, **se** redistribuição lump-sum for permitida.
+:::
+
+---
+
+## 2º TBE — onde quebra
+
+**Convexidade é a hipótese-chave.** Sem ela:
+
+- **Retornos crescentes** na produção (**Aula 5**): tecnologia não-convexa.
+- **Indivisibilidades** (**Aula 9 — matching**): bens discretos.
+- **Externalidades** (**Aula 7**): preferências individuais não capturam efeitos cruzados.
+- **Informação assimétrica** (**Aula 8**): "preço único" pressupõe contratos que não existem.
+
+::: {.eq-punch}
+1º TBE: mercado é Pareto. 2º TBE: Pareto é mercado — *se* dotação puder ser redistribuída e tudo for convexo.
+:::
+
+::: {.notes}
+Prova rigorosa do 2º TBE via Hahn-Banach é Aula 6. Hoje é teaser, não treino. Se aluno perguntar "como prova?", responder: separação de conjuntos convexos por hiperplano = preço.
+:::
+
+---
+
+## Síntese Bloco 3
+
+**1º TBE** ⇒ EC é Pareto. Hipótese-mínima: LNS. Falha sem LNS.
+
+**2º TBE preliminar** ⇒ Pareto pode ser implementado como EC após redistribuição. Hipótese-chave: convexidade. Aula 6 prova.
+
+::: {.eq-punch}
+Os dois teoremas separam **eficiência** (1º) de **equidade** (2º). Mercado é eficiente; equidade vem da redistribuição.
+:::
+
+---
+
+## Pausa curta — 5 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 21:30.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Pausa curta — as próximas 50 min são densas (firmas + Robinson). Recomendo ficar.
+:::
+
+---
+
+## Bloco 3.5 — Adicionando firmas: tecnologia, PPF, Robinson Crusoe ✦ {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+50 min · 21:30–22:20 · NOVO
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+$Y$ · função de produção · PPF · TMT · Robinson Crusoe · TMS=TMT=$w/p$ · 1º TBE com produção.
+:::
+
+---
+
+## Tecnologia — conjunto de produção $Y$
+
+$y \in \mathbb{R}^L$ vetor input-output: $y_\ell > 0$ produto, $y_\ell < 0$ insumo.
+
+**Hipóteses canônicas** (em uma linha): $0 \in Y$ (inação), livre descarte, $Y \cap \mathbb{R}^L_+ = \{0\}$, fechamento, **convexidade**.
+
+::: {.callout-note}
+**Convexidade do $Y$ é hipótese do 2º TBE, não do 1º.** Quebra com retornos crescentes — Aula 7.
+:::
+
+::: {.bridge}
+Caso particular usado a noite toda: função de produção $q = f(L)$ côncava.
+:::
+
+---
+
+## PPF — construção (1/2)
+
+**Setup:** 2 setores, fator único trabalho $\bar L$, $f_1(L_1)$, $f_2(L_2)$, restrição $L_1 + L_2 = \bar L$.
+
+**Caso canônico** (use no quadro):
+$$f_1(L_1) = \sqrt{L_1}, \quad f_2(L_2) = \sqrt{L_2}, \quad \bar L = 16.$$
+
+Substituindo $L_\ell = q_\ell^2$ na restrição:
+
+::: {.eq-key}
+$$q_1^2 + q_2^2 = 16 \;\Longrightarrow\; \text{PPF é arco de círculo de raio 4.}$$
+:::
+
+---
+
+## PPF — construção (2/2)
+
+::: {.cols-3-2}
+::: {.col}
+
+**Pontos-âncora** (marcar no quadro):
+
+- $(0, 4)$ → todo $L$ no setor 2.
+- $(4, 0)$ → todo $L$ no setor 1.
+- $(2, 2\sqrt{3}) \approx (2, 3{,}46)$ → $L_1=4$, $L_2=12$.
+
+**PPF côncava** = rendimentos decrescentes setoriais.
+
+:::
+::: {.col}
+
+::: {.eq-punch}
+Edgeworth → bens entre consumidores. PPF → fatores entre produtos.
+:::
+
+:::
+:::
+
+---
+
+## Taxa marginal de transformação (1/2) — definição e CPO
+
+::: {.eq-key}
+$$
+\begin{aligned}
+\text{TMT}_{12} &= -\left.\frac{dq_2}{dq_1}\right|_{\text{PPF}}
+= \frac{\text{PMa}_L^{2}}{\text{PMa}_L^{1}}.
+\end{aligned}
+$$
+:::
+
+**Em equilíbrio, mercado força** $\text{TMT}_{12} = p_1/p_2$. CPO da firma:
+
+$$
+p_1\, \text{PMa}_L^1 \;=\; w \;=\; p_2\, \text{PMa}_L^2 \;\implies\; \text{TMT}_{12} = p_1/p_2.
+$$
+
+::: {.bridge}
+Próximo: verificação numérica no ponto $(q_1, q_2) = (2, 2\sqrt{3})$.
+:::
+
+---
+
+## Taxa marginal de transformação (2/2) — verificação numérica
+
+**Setup.** Ponto $(q_1, q_2) = (2, 2\sqrt{3})$, com $L_1 = 4$ e $L_2 = 12$. Tecnologias $q_j = \sqrt{L_j}$, então $\text{PMa}_L^j = 1/(2\sqrt{L_j})$.
+
+**Cálculo direto.**
+
+$$
+\text{PMa}_L^1 = \tfrac{1}{2\sqrt{4}} = \tfrac{1}{4},\qquad
+\text{PMa}_L^2 = \tfrac{1}{2\sqrt{12}} = \tfrac{1}{4\sqrt{3}}.
+$$
+
+$$
+\text{TMT}_{12} \;=\; \frac{\text{PMa}_L^2}{\text{PMa}_L^1} \;=\; \frac{1/(4\sqrt{3})}{1/4} \;=\; \frac{1}{\sqrt{3}} \;\approx\; 0{,}577. \;\;\checkmark
+$$
+
+::: {.bridge}
+Cheque alternativo (via derivada implícita da PPF): $\text{TMT} = q_1/q_2 = 2/(2\sqrt{3}) = 1/\sqrt{3}$. $\checkmark$
+:::
+
+---
+
+## Robinson Crusoe — setup
+
+**Robinson é dono da firma E consumidor.** Variáveis: trabalho $L$, lazer $\ell = \bar L - L$, consumo $q$.
+
+::: {.cols}
+::: {.col}
+
+**Tecnologia:** $q = f(L)$, côncava, $f(0)=0$, $f' > 0$.
+
+**Preferências:** $u(q, \ell)$, monotônica, quase-côncava.
+
+:::
+::: {.col}
+
+::: {.callout}
+*"Mesmo agente, dois chapéus."* Mercado finge que é entre **duas pessoas**. Análise se mantém.
+:::
+
+:::
+:::
+
+::: {.bridge}
+Próximo: solução do planejador como referência, depois o EC descentralizado.
+:::
+
+---
+
+## Planejador — TMS = TMT
+
+::: {.eq-key}
+$$\max_L \; u(f(L), \bar L - L).$$
+$$\boxed{\;\text{TMS}_{\ell, q} \;=\; f'(L) \;=\; \text{TMT}_{L,q}\;}$$
+:::
+
+**Numérico canônico:** $u = q^{1/2}\ell^{1/2}$, $f = \sqrt{L}$, $\bar L = 16$.
+
+$\max_L L^{1/4}(16-L)^{1/2}$. CPO: $\frac{1}{4L} = \frac{1}{2(16-L)} \Rightarrow 2(16-L) = 4L$.
+
+$$L^* = \frac{16}{3}, \quad \ell^* = \frac{32}{3},$$
+$$q^* = \sqrt{16/3} = \frac{4}{\sqrt{3}} \approx 2{,}31.$$
+
+**Verificação:** $\text{TMS} = q^*/\ell^* = \sqrt{3}/8$. $\text{TMT} = f'(L^*) = \sqrt{3}/8$. ✓
+
+---
+
+## Robinson EC descentralizado — os dois chapéus
+
+::: {.cols}
+::: {.col}
+
+**Firma:** $\pi(p, w) = \max_L p\, f(L) - w\, L$.
+
+CPO: $f'(L^*) = w/p$.
+
+Lucro: $\pi^* = p\, q^s - w\, L^d$.
+
+:::
+::: {.col}
+
+**Consumidor:** $m = w\, \bar L + \pi^*$.
+
+UMP: $\max u(q, \ell)$ s.a. $p\,q + w\,\ell \le m$.
+
+CPO: $\text{TMS}_{\ell, q} = w/p$.
+
+:::
+:::
+
+::: {.callout-note}
+**Pergunta para a turma:** *Por que Robinson "paga salário a si mesmo"?* — É conta interna. $w\,L + \pi^* = w\,L + p\,q - w\,L = p\,q$. Fechado.
+:::
+
+---
+
+## TMS = TMT = $w/p$ — a igualdade canônica
+
+::: {.eq-key}
+$$\boxed{\;\text{TMS}_{\ell, q} \;=\; \frac{w^*}{p^*} \;=\; \text{TMT}_{L, q}.\;}$$
+:::
+
+**Verificação numérica** (Robinson canônico, $p = 1$):
+
+$w^* = p\, f'(L^*) = \sqrt{3}/8$.
+$\pi^* = q^* - w^*\, L^* = 2/\sqrt{3}$.
+
+$m^* = w^*\bar L + \pi^* = 8\sqrt{3}/3$.
+$q^* = 4/\sqrt{3}$ ✓; $\ell^* = 32/3$ ✓.
+
+::: {.eq-punch}
+Mercado descentralizado replica planejador. **1º TBE no caso mínimo: 1 consumidor + 1 firma.**
+:::
+
+---
+
+## Generalização rápida — $I$ consumidores + $J$ firmas
+
+Cotas $\theta^{ij} \ge 0$, $\sum_i \theta^{ij} = 1$. Renda: $m^i(p) = p\cdot \omega^i + \sum_j \theta^{ij}\,\pi^j(p)$.
+
+**EC com produção:** $(p^*, x^*, y^*)$ com firmas max-lucro + UMP individual + viabilidade $\sum_i x^{*i} = \sum_i \omega^i + \sum_j y^{*j}$.
+
+::: {.callout}
+**Robinson é o caso $I = J = 1$, $\theta = 1$.** Detalhes algébricos da cota $\theta^{ij}$: pré-monitoria 2.
+:::
+
+::: {.bridge}
+Próximo: 1º TBE com produção como **corolário** — só um passo a mais.
+:::
+
+---
+
+## 1º TBE com produção — corolário
+
+**Prova: 4 passos** (3 da Aula 4 §3 + 1 novo para firmas):
+
+1. *Consumidor $j$ estritamente melhor:* $p^*\cdot \tilde x^j > m^{*j}$. (UMP de $x^{*j}$.)
+2. *LNS para $i \neq j$:* $p^*\cdot \tilde x^i \ge m^{*i}$. (idêntico à Aula 4 §3.)
+3. **NOVO — firmas:** $p^* \cdot \tilde y^j \le p^* \cdot y^{*j}$ por max-lucro.
+4. Soma + viabilidade $\sum_i \tilde x^i = \sum_i \omega^i + \sum_j \tilde y^j$ ⇒ contradição. $\blacksquare$
+
+::: {.eq-punch}
+Passo 3 das firmas é o único novo. **Convexidade do $Y$ não aparece** — é hipótese do 2º TBE, não 1º.
+:::
+
+---
+
+## Box único — RenovaBio com produção endógena {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**RenovaBio (Lei 13.576/2017):** distribuidoras de combustível compram **CBIOs** de produtores de etanol/biodiesel. Preço único leiloado em **B3** = $p^*$ walrasiano.
+
+**Aula 4 estendida:** lado da produção também responde — produtores investem mais em sustentabilidade quando $p_{\text{CBIO}}$ sobe. **TMT** (etanol vs. fóssil) iguala-se ao preço relativo. Mercado replica planejador (1º TBE com produção).
+
+**EU ETS = estrutura idêntica** (cap-and-trade europeu, 2005). Sem desenvolvimento por tempo.
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.4em;"}
+Volume 2024: ~46M CBIOs. Ribeiro et al. (2022), *Biofuels, Bioproducts and Biorefining*, doi:10.1002/bbb.2326.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 5 (AD-I) {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+5 min · 22:25–22:30
+:::
+
+---
+
+## Síntese — quatro frases
+
+::: {.fragment}
+1. **Edgeworth + Pareto + núcleo** descrevem alocações que mercado pode atingir sem distorção.
+:::
+
+::: {.fragment}
+2. **Walras + EC** dão a álgebra do market-clearing — preço relativo único.
+:::
+
+::: {.fragment}
+3. **1º TBE** (LNS) e **2º TBE preliminar** (convexidade) separam eficiência de equidade.
+:::
+
+::: {.fragment}
+4. **PPF + Robinson Crusoe** estendem a estrutura para produção: $\text{TMS} = \text{TMT} = w/p$.
+:::
+
+---
+
+## Ponte para Aula 5 — Arrow-Debreu I
+
+**Pergunta motor da Aula 5:** adicionamos **incerteza** — estados da natureza $s = 1, \ldots, S$.
+
+Cada bem físico vira **bem contingente** $(\ell, s)$: mesma maçã em estados diferentes é **bem diferente**.
+
+::: {.eq-key}
+$$\text{Espaço de bens:} \quad \mathbb{R}^L \;\to\; \mathbb{R}^{LS}.$$
+:::
+
+**Robinson de hoje** vira "Robinson contingente". 1º TBE sobrevive sob **mercados completos** (um preço por $(\ell, s)$).
+
+**Reuso integral:** PPF, $\text{TMS} = \text{TMT}$, max-lucro, 1º TBE — toda a maquinaria do Bloco 3.5 vive em $\mathbb{R}^{LS}$ sem alteração de prova.
+
+::: {.eq-punch}
+Aula 4: $p$ endógeno em consumo + produção. Aula 5: $p$ endógeno em consumo + produção + estados.
+:::
+
+---
+
+## Lembretes operacionais
+
+**Calendário Aula 4** — fecha quarta 20/05 18h. Gabarito quinta 21/05 00:00.
+
+**Pré-aula 4 atualizada (07/05):** seções 5b e 6b (PPF + Robinson) novas. Quem fez antes mantém progresso.
+
+**Pré-monitoria 2** — sáb 16/05 12h abre. Monitoria sáb 23/05 10h. Cobre Aula 4 (trocas + produção).
+
+**Foco do Alberto:** núcleo $I=3$, contraexemplo bliss-point, 2º TBE com retornos crescentes, Robinson com $J=2$ firmas e cotas explícitas.
+
+---
+
+## Obrigado. {.title-slide}
+
+::: {style="margin-top: 3em; text-align: center;"}
+
+::: {style="color: #C8102E; font-size: 1.8em; font-weight: 700;"}
+Perguntas?
+:::
+
+<br/>
+
+<br/>
+
+::: {style="font-size: 0.85em; color: #2A2F36;"}
+Quiz pós-aula 4 e exercícios avaliativos: abertos desde 14/05.  \
+Prazo: **quarta 20/05 · 18:00 BRT**.  \
+Gabarito: quinta 21/05 · 00:00.
+:::
+
+:::

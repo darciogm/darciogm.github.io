@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Equilibrio Walrasiano na Caixa de Edgeworth</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Equilibrio walrasiano: Caixa de Edgeworth
+# Exercicio Resolvido 14.2
+# ============================================
+
+# --- Dotacoes e preferencias ---
+wA <- c(8, 2); wB <- c(2, 8)
+aA <- 0.5  # U_A = x1^aA * x2^(1-aA)
+aB <- 1/3  # U_B = x1^aB * x2^(1-aB)
+
+totais <- wA + wB
+cat("====== EQUILIBRIO WALRASIANO ======\n")
+cat("Dotacoes: wA = (", wA, ")  wB = (", wB, ")\n")
+cat("Totais: (", totais, ")\n")
+cat("U_A = x1^", aA, " * x2^", 1-aA, "\n")
+cat("U_B = x1^", round(aB,3), " * x2^", round(1-aB,3), "\n\n")
+
+# --- Demandas Cobb-Douglas ---
+# x1_i = alpha_i * I_i / p1;  x2_i = (1-alpha_i) * I_i / p2
+# Normalizar p2 = 1
+
+# Equilibrio: x1_A + x1_B = total_1
+# aA*(wA[1]*p + wA[2])/p + aB*(wB[1]*p + wB[2])/p = totais[1]
+
+# Resolver para p:
+# aA*wA[1] + aA*wA[2]/p + aB*wB[1] + aB*wB[2]/p = totais[1]
+# p*(aA*wA[1] + aB*wB[1] - totais[1]) + aA*wA[2] + aB*wB[2] = 0
+
+num <- aA * wA[2] + aB * wB[2]
+den <- totais[1] - aA * wA[1] - aB * wB[1]
+p_star <- num / den
+
+IA <- wA[1] * p_star + wA[2]
+IB <- wB[1] * p_star + wB[2]
+
+xA <- c(aA * IA / p_star, (1 - aA) * IA)
+xB <- c(aB * IB / p_star, (1 - aB) * IB)
+
+cat("--- Equilibrio ---\n")
+cat("p* = p1/p2 =", round(p_star, 4), "\n")
+cat("x_A* = (", round(xA, 4), ")\n")
+cat("x_B* = (", round(xB, 4), ")\n")
+cat("Soma: (", round(xA + xB, 4), ") = totais? ",
+    all(abs(xA + xB - totais) < 1e-10), "\n\n")
+
+# --- Verificar eficiencia de Pareto ---
+TMS_A <- xA[2] / xA[1]  # para CD alpha=0.5
+TMS_B <- ((1-aB)/aB) * xB[2] / xB[1] # correcao: TMS = (aB*x2)/(((1-aB)*x1)) nao...
+# TMS_i = (alpha_i * x2_i) / ((1-alpha_i) * x1_i)? Nao.
+# Para U = x1^a * x2^(1-a): TMS = (a/(1-a)) * (x2/x1)
+TMS_A <- (aA / (1 - aA)) * xA[2] / xA[1]
+TMS_B <- (aB / (1 - aB)) * xB[2] / xB[1]
+
+cat("--- Eficiencia de Pareto ---\n")
+cat("TMS_A =", round(TMS_A, 4), "\n")
+cat("TMS_B =", round(TMS_B, 4), "\n")
+cat("p* =", round(p_star, 4), "\n")
+cat("TMS_A = TMS_B = p*?", abs(TMS_A - TMS_B) < 1e-10 & abs(TMS_A - p_star) < 1e-10, "\n\n")
+
+# --- Lei de Walras a preco arbitrario ---
+p_test <- 2
+IA_t <- wA[1]*p_test + wA[2]; IB_t <- wB[1]*p_test + wB[2]
+xA_t <- c(aA*IA_t/p_test, (1-aA)*IA_t)
+xB_t <- c(aB*IB_t/p_test, (1-aB)*IB_t)
+Z1 <- xA_t[1] + xB_t[1] - totais[1]
+Z2 <- xA_t[2] + xB_t[2] - totais[2]
+walras <- p_test * Z1 + 1 * Z2
+cat("--- Lei de Walras (p =", p_test, ") ---\n")
+cat("Z1 =", round(Z1, 4), "  Z2 =", round(Z2, 4), "\n")
+cat("p*Z1 + Z2 =", round(walras, 10), " = 0?\n\n")
+
+# --- Utilidades ---
+UA_ini <- wA[1]^aA * wA[2]^(1-aA)
+UB_ini <- wB[1]^aB * wB[2]^(1-aB)
+UA_eq <- xA[1]^aA * xA[2]^(1-aA)
+UB_eq <- xB[1]^aB * xB[2]^(1-aB)
+cat("--- Ganhos de troca ---\n")
+cat("U_A: dotacao =", round(UA_ini, 3), " => equilibrio =", round(UA_eq, 3),
+    " (+", round((UA_eq/UA_ini-1)*100, 1), "%)\n")
+cat("U_B: dotacao =", round(UB_ini, 3), " => equilibrio =", round(UB_eq, 3),
+    " (+", round((UB_eq/UB_ini-1)*100, 1), "%)\n")
+
+# --- Grafico: excesso de demanda ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+p_seq <- seq(0.1, 3, length = 300)
+Z1_seq <- sapply(p_seq, function(p) {
+  IA <- wA[1]*p + wA[2]; IB <- wB[1]*p + wB[2]
+  aA*IA/p + aB*IB/p - totais[1]
+})
+
+plot(p_seq, Z1_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = expression(p == p[1]/p[2]), ylab = expression(Z^1*(p)),
+     main = "Excesso de demanda do bem 1")
+abline(h = 0, col = "#adb5bd", lty = 2)
+abline(v = p_star, col = "#dc3545", lty = 2, lwd = 1.5)
+points(p_star, 0, pch = 19, col = "#dc3545", cex = 2)
+text(p_star, Z1_seq[1]*0.3,
+     paste0("  p* = ", round(p_star, 3)),
+     pos = 4, cex = 0.9, col = "#dc3545", font = 2)
+text(0.5, Z1_seq[10], "Excesso de\ndemanda > 0\n(preco sobe)",
+     col = "#198754", cex = 0.75, font = 3)
+text(2.5, Z1_seq[250], "Excesso de\noferta < 0\n(preco cai)",
+     col = "#fd7e14", cex = 0.75, font = 3)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

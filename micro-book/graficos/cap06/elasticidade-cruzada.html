@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+  Elasticidade-Preço Cruzada: Substitutos vs Complementos
+  Library: JSXGraph
+  Chapter 6 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elasticidade Cruzada</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .jxgbox { flex: 1 1 380px; max-width: 420px; height: 340px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 260px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { flex-basis: 100%; width: 100%; max-width: 420px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 420px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox1" class="jxgbox"></div>
+  <div class="controls">
+    <h3>Elasticidade Cruzada</h3>
+    <div class="slider-group">
+      <label>Relação \(\gamma\): <span class="val" id="val-gamma">0.50</span></label>
+      <input type="range" id="slider-gamma" min="-1.5" max="1.5" step="0.05" value="0.5">
+    </div>
+    <div class="slider-group">
+      <label>Preço \(p_y\): <span class="val" id="val-py">5.0</span></label>
+      <input type="range" id="slider-py" min="1" max="10" step="0.25" value="5">
+    </div>
+    <div class="slider-group">
+      <label>Novo preço \(p_y'\): <span class="val" id="val-py2">7.0</span></label>
+      <input type="range" id="slider-py2" min="1" max="10" step="0.25" value="7">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var board = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-1, 22, 22, -3],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  board.create('axis', [[0,0],[22,0]], {
+    ticks: { drawLabels: true, label: { fontSize: 11 }, minorTicks: 0, ticksDistance: 5 }
+  });
+  board.create('text', [11, -2, '<b><i>Q<sub>x</sub></i></b>'], { fontSize: 13, fixed: true, anchorX: 'middle', highlight: false });
+  board.create('axis', [[0,0],[0,22]], {
+    ticks: { drawLabels: true, label: { fontSize: 11, anchorX: 'right', offset: [-8,0] }, minorTicks: 0, ticksDistance: 5 }
+  });
+  board.create('text', [-0.8, 20, '<b><i>p<sub>x</sub></i></b>'], { fontSize: 13, fixed: true, highlight: false });
+
+  var objs = [];
+
+  function draw() {
+    for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+    objs = [];
+
+    var gamma = parseFloat(document.getElementById('slider-gamma').value);
+    var py = parseFloat(document.getElementById('slider-py').value);
+    var py2 = parseFloat(document.getElementById('slider-py2').value);
+
+    document.getElementById('val-gamma').textContent = gamma.toFixed(2);
+    document.getElementById('val-py').textContent = py.toFixed(1);
+    document.getElementById('val-py2').textContent = py2.toFixed(1);
+
+    // Demand: Qx = 20 + gamma*py - 2*px
+    function demandQ(px, pyVal) {
+      return Math.max(0, 20 + gamma * pyVal - 2 * px);
+    }
+    function demandP(Q, pyVal) {
+      return (20 + gamma * pyVal - Q) / 2;
+    }
+
+    var intercept1 = (20 + gamma * py) / 2;
+    var intercept2 = (20 + gamma * py2) / 2;
+    var Qint1 = 20 + gamma * py;
+    var Qint2 = 20 + gamma * py2;
+
+    // Original demand
+    var xs1 = [], ys1 = [];
+    for (var q = 0; q <= Math.max(Qint1, 0.1); q += 0.3) {
+      var pp = demandP(q, py);
+      if (pp >= 0) { xs1.push(q); ys1.push(pp); }
+    }
+    objs.push(board.create('curve', [xs1, ys1], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+    objs.push(board.create('text', [Math.max(Qint1 - 2, 1), 0.8, '<i>D(p<sub>y</sub>)</i>'], {
+      fontSize: 10, color: '#1565c0', fixed: true, highlight: false
+    }));
+
+    // New demand
+    if (Qint2 > 0) {
+      var xs2 = [], ys2 = [];
+      for (var q = 0; q <= Qint2; q += 0.3) {
+        var pp = demandP(q, py2);
+        if (pp >= 0) { xs2.push(q); ys2.push(pp); }
+      }
+      objs.push(board.create('curve', [xs2, ys2], { strokeColor: '#C8102E', strokeWidth: 2.5, dash: 2 }));
+      objs.push(board.create('text', [Math.max(Qint2 - 2, 1), 1.6, "<i>D(p<sub>y</sub>')</i>"], {
+        fontSize: 10, color: '#C8102E', fixed: true, highlight: false
+      }));
+    }
+
+    // Arrow showing shift
+    var midP = Math.max(intercept1, intercept2) * 0.5;
+    var q1mid = demandQ(midP, py);
+    var q2mid = demandQ(midP, py2);
+    if (q1mid > 0 && q2mid > 0 && Math.abs(q2mid - q1mid) > 0.3) {
+      objs.push(board.create('arrow', [[q1mid, midP],[q2mid, midP]], {
+        strokeColor: '#666', strokeWidth: 2, lastArrow: { type: 2, size: 6 }
+      }));
+    }
+
+    // Elasticity calculation
+    var px0 = 5;
+    var Qx0 = demandQ(px0, py);
+    var Qx1 = demandQ(px0, py2);
+    var epsCross = (py2 !== py && Qx0 > 0) ? ((Qx1 - Qx0) / Qx0) / ((py2 - py) / py) : 0;
+
+    var relation = gamma > 0.01 ? 'Substitutos' : (gamma < -0.01 ? 'Complementos' : 'Independentes');
+    var relColor = gamma > 0.01 ? '#1565c0' : (gamma < -0.01 ? '#C8102E' : '#666');
+    var direction = gamma > 0 ? 'direita (↑Qₓ)' : (gamma < 0 ? 'esquerda (↓Qₓ)' : 'não se desloca');
+
+    var html = '<div style="text-align:center;margin-bottom:0.3rem;">';
+    html += '\\(\\varepsilon_{xy} = \\frac{\\%\\Delta Q_x}{\\%\\Delta p_y}\\)';
+    html += '</div>';
+    html += '<strong style="color:' + relColor + ';">' + relation + '</strong> (\\(\\gamma = ' + gamma.toFixed(2) + '\\))<br>';
+    html += '\\(\\varepsilon_{xy} \\approx ' + epsCross.toFixed(3) + '\\)<br>';
+    html += 'Quando \\(p_y\\) sobe, demanda por \\(x\\) desloca para ' + direction;
+    html += '<hr style="margin:0.3rem 0">';
+    html += '<div style="font-size:0.78rem;color:#666;">';
+    html += '\\(\\gamma > 0\\): substitutos (demanda ↑)<br>';
+    html += '\\(\\gamma < 0\\): complementos (demanda ↓)<br>';
+    html += '\\(\\gamma = 0\\): independentes';
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-gamma').value = 0.5;
+    document.getElementById('slider-py').value = 5;
+    document.getElementById('slider-py2').value = 7;
+    draw();
+  }
+
+  ['slider-gamma','slider-py','slider-py2'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', draw);
+  });
+  draw();
+</script>
+</body>
+</html>

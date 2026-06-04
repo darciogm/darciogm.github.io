@@ -1,0 +1,81 @@
+% ============================================================
+% Preâmbulo compartilhado — Simulado AF · Microeconomia I (MPE)
+% Carregado por simulado-af.tex (\solucaofalse) e
+% simulado-af-solucao.tex (\solucaotrue)
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,top=2.2cm,bottom=2.6cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{multirow}
+
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{cinzasol}{gray}{0.93}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\linespread{1.12}
+
+% ---------- header/footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Microeconomia I --- MPE}
+\chead{\ifsolucao Simulado AF --- Solução e Rubrica\else Simulado --- Avaliação Final\fi}
+\rhead{Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.6pt}
+\fancypagestyle{capa}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}}
+
+% ---------- macros de prova ----------
+% linha de identificação da capa
+\newcommand{\linhaid}[1]{\textbf{#1:}~\hrulefill}
+
+% caixa de resolução (só na versão prova)
+\newcommand{\resolucaobox}[1]{%
+  \ifsolucao\else
+    \par\vspace{0.4em}{\itshape Resolução:}\par\vspace{0.2em}
+    \noindent\framebox[\linewidth]{\rule{0pt}{#1}\hfill}\par
+  \fi}
+
+% gabarito + solução (só na versão solução) — via comment.sty:
+% na versão prova o conteúdo é descartado na leitura (robusto p/ math)
+\usepackage{comment}
+\ifsolucao
+  \specialcomment{solucao}{%
+    \par\vspace{0.5em}%
+    \begin{list}{}{\leftmargin=0.9em \rightmargin=0.9em}\item[]%
+    \textcolor{insperred}{\rule{\linewidth}{0.5pt}}\par\vspace{0.3em}%
+  }{%
+    \par\vspace{0.2em}\textcolor{insperred}{\rule{\linewidth}{0.5pt}}%
+    \end{list}\par\vspace{0.5em}%
+  }
+\else
+  \excludecomment{solucao}
+\fi
+
+\newcommand{\gabaritoitem}[1]{\ifsolucao\par\vspace{0.3em}\textbf{Gabarito: #1}\par\fi}
+
+% rótulo de rubrica
+\newcommand{\rubricalabel}{\par\vspace{0.35em}\textbf{Rubrica de correção:}\par}
+
+% quadro-resposta de bloco (4 itens objetivos)
+\newcommand{\quadroresposta}[1]{%
+  \ifsolucao\else
+    \par\vspace{0.8em}
+    \begin{center}
+    \textbf{Quadro-resposta do Bloco #1 --- escreva a alternativa (A--E) ou V/F de cada item:}\\[0.6em]
+    \renewcommand{\arraystretch}{1.6}
+    \begin{tabular}{|>{\centering\arraybackslash}p{2.6cm}|*{4}{>{\centering\arraybackslash}p{1.4cm}|}}
+      \hline
+      \textbf{Item} & a) & b) & c) & d) \\ \hline
+      \textbf{Resposta} & & & & \\ \hline
+    \end{tabular}
+    \end{center}
+    {\small\itshape Atenção: apenas o quadro acima será considerado na correção dos itens objetivos deste bloco.}\par\vspace{0.6em}
+  \fi}

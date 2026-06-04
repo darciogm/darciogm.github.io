@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Regra de Hotelling</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Regra de Hotelling
+# Exercicio Resolvido 18.3
+# ============================================
+
+p0 <- 80     # preco inicial (mil R$/ton)
+c <- 20      # custo de extracao
+r <- 0.04    # taxa de juros real
+S0 <- 5000   # estoque (toneladas)
+
+cat("====== REGRA DE HOTELLING ======\n")
+cat(sprintf("p0 = %.0f  c = %.0f  r = %.0f%%  S0 = %.0f\n\n",
+    p0, c, r*100, S0))
+
+# --- Renda de escassez ---
+R0 <- p0 - c
+cat(sprintf("Renda de escassez inicial: R0 = p0 - c = %.0f\n\n", R0))
+
+# --- Trajetoria de precos ---
+cat("--- Trajetoria de precos (Hotelling) ---\n")
+cat(sprintf("%-6s %-10s %-10s\n", "Ano", "R(t)", "p(t)"))
+cat(strrep("-", 28), "\n")
+anos <- c(0, 5, 10, 15, 20, 25, 30)
+for (t in anos) {
+  Rt <- R0 * (1 + r)^t
+  pt <- Rt + c
+  cat(sprintf("%-6d %-10.2f %-10.2f\n", t, Rt, pt))
+}
+
+# --- Backstop technology ---
+p_backstop <- 100  # preco do substituto
+t_backstop <- 15   # disponivel em t=15
+
+cat(sprintf("\n--- Backstop technology ---\n"))
+cat(sprintf("Substituto a R$ %.0f disponivel em t = %d\n", p_backstop, t_backstop))
+R_backstop <- p_backstop - c
+R0_novo <- R_backstop / (1 + r)^t_backstop
+p0_novo <- R0_novo + c
+cat(sprintf("R0 ajustado = %.2f  p0 ajustado = %.2f\n", R0_novo, p0_novo))
+cat(sprintf("Preco cai de %.0f para %.2f (-%.1f%%)\n\n",
+    p0, p0_novo, (1 - p0_novo/p0)*100))
+
+# --- Efeito da taxa de juros ---
+cat("--- Efeito da taxa de juros em t=20 ---\n")
+r_vals <- c(0.02, 0.04, 0.06, 0.08, 0.10)
+cat(sprintf("%-8s %-10s %-10s\n", "r(%)", "R(20)", "p(20)"))
+cat(strrep("-", 30), "\n")
+for (ri in r_vals) {
+  Ri <- R0 * (1+ri)^20
+  pi <- Ri + c
+  cat(sprintf("%-8.0f %-10.2f %-10.2f\n", ri*100, Ri, pi))
+}
+cat("\nJuros altos => preco futuro sobe mais rapido\n")
+cat("=> incentiva extracao HOJE (futuro vale menos)\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Trajetoria de precos
+t_seq <- 0:30
+R_seq <- R0 * (1 + r)^t_seq
+p_seq <- R_seq + c
+
+plot(t_seq, p_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Anos", ylab = "Preco (mil R$/ton)",
+     main = "Trajetoria de precos (Hotelling)",
+     ylim = c(0, max(p_seq) * 1.1))
+lines(t_seq, R_seq, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#adb5bd", lty = 3)
+text(25, c + 3, "c (custo)", col = "#adb5bd", cex = 0.7)
+
+# Backstop
+abline(h = p_backstop, col = "#dc3545", lwd = 2, lty = 4)
+text(2, p_backstop + 3, paste0("Backstop = ", p_backstop),
+     col = "#dc3545", cex = 0.7, font = 2)
+
+# Trajetoria com backstop
+R_novo_seq <- R0_novo * (1+r)^t_seq
+p_novo_seq <- pmin(R_novo_seq + c, p_backstop)
+lines(t_seq, p_novo_seq, lwd = 2, col = "#198754", lty = 2)
+
+legend("topleft",
+       legend = c("Sem backstop", "Renda escassez",
+                  "Com backstop", "Preco backstop"),
+       col = c("#0d6efd", "#6f42c1", "#198754", "#dc3545"),
+       lwd = c(3, 2, 2, 2), lty = c(1, 2, 2, 4),
+       cex = 0.55, bg = "white")
+
+# Painel 2: Efeito da taxa de juros
+cols2 <- c("#0d6efd", "#198754", "#fd7e14", "#dc3545", "#6f42c1")
+plot(NULL, xlim = c(0, 30), ylim = c(p0, 300),
+     xlab = "Anos", ylab = "Preco (mil R$/ton)",
+     main = "Efeito da taxa de juros")
+for (k in seq_along(r_vals)) {
+  p_k <- (R0 * (1+r_vals[k])^t_seq) + c
+  lines(t_seq, p_k, lwd = 2, col = cols2[k],
+        lty = ifelse(k <= 2, 1, 2))
+}
+legend("topleft",
+       legend = paste0("r=", r_vals*100, "%"),
+       col = cols2, lwd = 2,
+       lty = c(1,1,2,2,2), cex = 0.55, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

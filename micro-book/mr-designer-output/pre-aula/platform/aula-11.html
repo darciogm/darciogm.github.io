@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 11 — Decomposição de Hicks: Exercícios — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-11-decomposição-de-hicks-exercícios">Pré-Aula 11 — Decomposição de Hicks: Exercícios</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 5, Seções 5.4–5.6</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong> — revise especialmente as fórmulas de VC e VE.</p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Aplicar as fórmulas de VC e VE para utilidades Cobb-Douglas e quase-lineares.</li>
+<li>Calcular e comparar as três medidas de bem-estar em problemas numéricos.</li>
+<li>Preparar-se para o exercício em sala sobre tributação de eletricidade (ICMS).</li>
+</ol>
+<hr />
+<h2 id="formulário-de-medidas-de-bem-estar">1. Formulário de Medidas de Bem-Estar</h2>
+<p>Antes dos exercícios, consolide as fórmulas essenciais.</p>
+<p><strong>Excedente do consumidor (variação):</strong></p>
+<p><span class="math display">\[\Delta EC = \int_{p_0}^{p_1} x^M(p, m)\,dp\]</span></p>
+<p><strong>Variação compensatória:</strong></p>
+<p><span class="math display">\[VC = e(p_1, u_0) - m\]</span></p>
+<p><strong>Variação equivalente:</strong></p>
+<p><span class="math display">\[VE = m - e(p_0, u_1)\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A VC “compensa” a mudança mantendo utilidade em <span class="math inline">\(u_0\)</span>; a VE encontra o “equivalente” monetário da mudança avaliado a preços antigos. Para aumentos de preço de bens normais: <span class="math inline">\(|VE| &lt; |\Delta EC| &lt; |VC|\)</span>.</p>
+</div>
+<hr />
+<h2 id="vc-e-ve-para-cobb-douglas">2. VC e VE para Cobb-Douglas</h2>
+<p>Para <span class="math inline">\(u = x_1^\alpha x_2^{1-\alpha}\)</span> com preços <span class="math inline">\((p_1, p_2)\)</span> e renda <span class="math inline">\(m\)</span>:</p>
+<ul>
+<li><strong>Demanda marshalliana:</strong> <span class="math inline">\(x_1^M = \frac{\alpha m}{p_1}\)</span>, <span class="math inline">\(x_2^M = \frac{(1-\alpha) m}{p_2}\)</span></li>
+<li><strong>Utilidade indireta:</strong> <span class="math inline">\(v(p_1, p_2, m) = \alpha^\alpha (1-\alpha)^{1-\alpha} \frac{m}{p_1^\alpha p_2^{1-\alpha}}\)</span></li>
+<li><strong>Função dispêndio:</strong> <span class="math inline">\(e(p_1, p_2, u) = \frac{u \, p_1^\alpha p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}\)</span></li>
+</ul>
+<p>Quando <span class="math inline">\(p_1\)</span> muda de <span class="math inline">\(p_1^0\)</span> para <span class="math inline">\(p_1^1\)</span>:</p>
+<p><span class="math display">\[VC = m\left[\left(\frac{p_1^1}{p_1^0}\right)^\alpha - 1\right], \qquad VE = m\left[1 - \left(\frac{p_1^0}{p_1^1}\right)^\alpha\right]\]</span></p>
+<iframe src="graficos/cap05/excedente-consumidor.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Altere o preço e observe como as áreas de EC, VC e VE diferem para demandas com efeito renda não nulo. Compare com o caso quase-linear.</p>
+</div>
+<hr />
+<h2 id="vc-e-ve-para-quase-linear">3. VC e VE para Quase-Linear</h2>
+<p>Para <span class="math inline">\(u = v(x_1) + x_2\)</span> com <span class="math inline">\(v&#39;(x_1) &gt; 0\)</span>, <span class="math inline">\(v&#39;&#39;(x_1) &lt; 0\)</span>:</p>
+<ul>
+<li><strong>Demanda marshalliana:</strong> <span class="math inline">\(v&#39;(x_1) = p_1\)</span>, independe de <span class="math inline">\(m\)</span>.</li>
+<li><strong>Não há efeito renda</strong> sobre <span class="math inline">\(x_1\)</span>.</li>
+</ul>
+<p>Resultado fundamental:</p>
+<p><span class="math display">\[VC = VE = \Delta EC = \int_{p_0}^{p_1} x^M(p)\,dp\]</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Em preferências quase-lineares, toda a variação de renda é absorvida pelo bem numerário <span class="math inline">\(x_2\)</span>. A demanda por <span class="math inline">\(x_1\)</span> depende apenas do preço — as curvas hicksiana e marshalliana coincidem.</p>
+</div>
+<hr />
+<h2 id="exercício-preparatório-icms-sobre-eletricidade">4. Exercício Preparatório: ICMS sobre Eletricidade</h2>
+<p>O ICMS sobre eletricidade no Brasil pode chegar a 25–30% em alguns estados. Modelamos o consumo de eletricidade (<span class="math inline">\(x_1\)</span>) e outros bens (<span class="math inline">\(x_2\)</span>) com:</p>
+<p><span class="math display">\[u = x_1^{0{,}4} x_2^{0{,}6}, \quad m = 3000, \quad p_2 = 1\]</span></p>
+<p>O preço da eletricidade sobe de <span class="math inline">\(p_1 = 1\)</span> para <span class="math inline">\(p_1 = 1{,}30\)</span> (alíquota de 30%).</p>
+<p><strong>Receita do governo:</strong> <span class="math inline">\(R = (p_1^1 - p_1^0) \cdot x_1^*(p_1^1)\)</span></p>
+<p><strong>Perda de peso morto:</strong> <span class="math inline">\(DWL = |VC| - R\)</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A perda de peso morto cresce com o <strong>quadrado</strong> da alíquota — a chamada regra de Harberger. Dobrar a alíquota quadruplica a ineficiência. Isso é central no debate sobre reforma tributária no Brasil.</p>
+</div>
+<iframe src="graficos/cap06/substitutos-complementos.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe como a relação de substituição ou complementaridade entre bens afeta a magnitude da perda de peso morto. Bens com substitutos próximos sofrem maior distorção.</p>
+</div>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Com <span class="math inline">\(u = x_1^{0{,}5} x_2^{0{,}5}\)</span>, <span class="math inline">\(m = 400\)</span>, <span class="math inline">\(p_2 = 1\)</span> e aumento de <span class="math inline">\(p_1\)</span> de 2 para 8, calcule VC, VE e <span class="math inline">\(\Delta EC\)</span>.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(\alpha = 0{,}5\)</span>. Usando as fórmulas:<br />
+<span class="math inline">\(VC = 400\left[\left(\frac{8}{2}\right)^{0,5} - 1\right] = 400(2 - 1) = 400\)</span>.<br />
+<span class="math inline">\(VE = 400\left[1 - \left(\frac{2}{8}\right)^{0,5}\right] = 400(1 - 0{,}5) = 200\)</span>.<br />
+<span class="math inline">\(\Delta EC = \int_2^8 \frac{200}{p}\,dp = 200\ln 4 \approx 277{,}26\)</span>.<br />
+Confirmamos: <span class="math inline">\(VE = 200 &lt; \Delta EC \approx 277 &lt; VC = 400\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(u = 10\sqrt{x_1} + x_2\)</span>, <span class="math inline">\(m = 100\)</span>, <span class="math inline">\(p_2 = 1\)</span> e <span class="math inline">\(p_1\)</span> subindo de 1 para 4, calcule as três medidas.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Demanda: <span class="math inline">\(v&#39;(x_1) = \frac{5}{\sqrt{x_1}} = p_1 \Rightarrow x_1 = 25/p_1^2\)</span>.<br />
+<span class="math inline">\(\Delta EC = \int_1^4 \frac{25}{p^2}\,dp = 25\left[-\frac{1}{p}\right]_1^4 = 25\left(1 - \frac{1}{4}\right) = 18{,}75\)</span>.<br />
+Como é quase-linear: <span class="math inline">\(VC = VE = \Delta EC = 18{,}75\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> No exercício do ICMS (<span class="math inline">\(\alpha = 0{,}4\)</span>, <span class="math inline">\(m = 3000\)</span>, <span class="math inline">\(p_1\)</span>: 1 para 1,30), calcule a receita <span class="math inline">\(R\)</span> e a perda de peso morto.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(x_1^*(1{,}30) = \frac{0{,}4 \times 3000}{1{,}30} \approx 923{,}08\)</span>.<br />
+<span class="math inline">\(R = 0{,}30 \times 923{,}08 \approx 276{,}92\)</span>.<br />
+<span class="math inline">\(VC = 3000[(1{,}30)^{0,4} - 1] = 3000[1{,}1096 - 1] = 3000 \times 0{,}1096 \approx 328{,}77\)</span>.<br />
+<span class="math inline">\(DWL = 328{,}77 - 276{,}92 \approx 51{,}85\)</span>.<br />
+A perda de peso morto é de aproximadamente R$ 51,85.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. Para preferências Cobb-Douglas com \(\alpha = 0{,}5\), a função dispêndio é proporcional a:</div>
+<div class="quiz-option" data-value="a">(a) \(p_1 / p_2\)</div>
+<div class="quiz-option" data-value="b">(b) \(\sqrt{p_1 p_2}\)</div>
+<div class="quiz-option" data-value="c">(c) \(p_1 + p_2\)</div>
+<div class="quiz-option" data-value="d">(d) \(p_1^2 p_2^2\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. Em preferências quase-lineares, o efeito renda sobre \(x_1\) é:</div>
+<div class="quiz-option" data-value="a">(a) Positivo</div>
+<div class="quiz-option" data-value="b">(b) Negativo</div>
+<div class="quiz-option" data-value="c">(c) Zero</div>
+<div class="quiz-option" data-value="d">(d) Depende dos parâmetros</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Se o preço de um bem normal aumenta, a maior medida de perda (em valor absoluto) é:</div>
+<div class="quiz-option" data-value="a">(a) Variação compensatória</div>
+<div class="quiz-option" data-value="b">(b) Variação equivalente</div>
+<div class="quiz-option" data-value="c">(c) Excedente do consumidor</div>
+<div class="quiz-option" data-value="d">(d) São todas iguais</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. A perda de peso morto de um imposto cresce aproximadamente com:</div>
+<div class="quiz-option" data-value="a">(a) A alíquota</div>
+<div class="quiz-option" data-value="b">(b) O quadrado da alíquota</div>
+<div class="quiz-option" data-value="c">(c) A raiz da alíquota</div>
+<div class="quiz-option" data-value="d">(d) O logaritmo da alíquota</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. A receita do governo com um imposto unitário \(t\) sobre o bem \(x_1\) é:</div>
+<div class="quiz-option" data-value="a">(a) \(t \cdot x_1(p_1^0)\)</div>
+<div class="quiz-option" data-value="b">(b) \(t \cdot x_1(p_1^0 + t)\)</div>
+<div class="quiz-option" data-value="c">(c) \(t^2 \cdot x_1(p_1^0)\)</div>
+<div class="quiz-option" data-value="d">(d) \(t \cdot m\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-11')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p>Na <strong>Aula 12</strong>, estudaremos economias com dotações, incluindo o modelo de oferta de trabalho (lazer-consumo) e a escolha intertemporal com taxa de juros.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-11');
+MicroQuiz.init('aula-11');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

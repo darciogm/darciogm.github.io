@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Cap-and-Trade e Custo-Efetividade</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Cap-and-Trade e Custo-Efetividade
+# Exercicio Resolvido 20.4
+# ============================================
+
+cat("====== CAP-AND-TRADE (ER 20.4) ======\n\n")
+
+# Duas fabricas, emissao base = 50 cada (total 100)
+# Meta: reduzir para 60 (abatimento = 40)
+# CMgA_1 = 4*a_1,  CMgA_2 = 2*a_2
+e_base <- c(50, 50)
+A_total <- 40
+c1 <- 4   # inclinacao CMgA firma 1
+c2 <- 2   # inclinacao CMgA firma 2
+
+cat(sprintf("Emissao base: %d + %d = %d ton\n", e_base[1], e_base[2], sum(e_base)))
+cat(sprintf("Meta: emissao total = %d ton (abatimento = %d)\n", sum(e_base) - A_total, A_total))
+cat(sprintf("CMgA_1 = %d*a_1,  CMgA_2 = %d*a_2\n\n", c1, c2))
+
+# --- (a) Alocacao custo-efetiva ---
+# CMgA_1 = CMgA_2  =>  4*a1 = 2*a2  =>  a2 = 2*a1
+# a1 + a2 = 40  =>  a1 + 2*a1 = 40  =>  a1 = 40/3
+a1_eff <- A_total / 3
+a2_eff <- 2 * A_total / 3
+
+cat("--- (a) Alocacao custo-efetiva ---\n")
+cat(sprintf("CMgA_1 = CMgA_2:  %d*a1 = %d*a2,  a1 + a2 = %d\n", c1, c2, A_total))
+cat(sprintf("a1* = %.1f ton,  a2* = %.1f ton\n", a1_eff, a2_eff))
+
+# Custos totais
+CT1_eff <- (c1/2) * a1_eff^2   # integral de 4a da = 2a^2
+CT2_eff <- (c2/2) * a2_eff^2   # integral de 2a da = a^2
+CT_eff <- CT1_eff + CT2_eff
+cat(sprintf("Custo firma 1: %.1f,  Custo firma 2: %.1f\n", CT1_eff, CT2_eff))
+cat(sprintf("Custo total eficiente: %.1f\n\n", CT_eff))
+
+# --- (b) Abatimento uniforme ---
+a_unif <- A_total / 2
+CT1_unif <- (c1/2) * a_unif^2
+CT2_unif <- (c2/2) * a_unif^2
+CT_unif <- CT1_unif + CT2_unif
+
+cat("--- (b) Abatimento uniforme ---\n")
+cat(sprintf("Cada firma abate %d ton\n", a_unif))
+cat(sprintf("Custo firma 1: %.0f,  Custo firma 2: %.0f\n", CT1_unif, CT2_unif))
+cat(sprintf("Custo total uniforme: %.0f\n", CT_unif))
+economia <- CT_unif - CT_eff
+cat(sprintf("Economia com cap-and-trade: %.1f (%.1f%%)\n\n",
+    economia, economia/CT_unif*100))
+
+# --- (c) Preco da permissao ---
+p_perm <- c1 * a1_eff
+cat("--- (c) Preco da permissao ---\n")
+cat(sprintf("p_E = CMgA_1(a1*) = %d * %.1f = %.1f por ton\n", c1, a1_eff, p_perm))
+cat(sprintf("Verif: CMgA_2(a2*) = %d * %.1f = %.1f? %s\n\n",
+    c2, a2_eff, c2*a2_eff,
+    ifelse(abs(p_perm - c2*a2_eff) < 0.01, "SIM!", "NAO")))
+
+# Comercio de permissoes
+# Firma 1 compra permissoes (abate menos que 20)
+# Firma 2 vende permissoes (abate mais que 20)
+perm_trade <- a_unif - a1_eff  # permissoes que firma 1 compra
+cat("--- Comercio de permissoes ---\n")
+cat(sprintf("Firma 1 compra %.1f permissoes a R$ %.1f = R$ %.1f\n",
+    perm_trade, p_perm, perm_trade * p_perm))
+cat(sprintf("Firma 2 vende %.1f permissoes a R$ %.1f = R$ %.1f\n\n",
+    perm_trade, p_perm, perm_trade * p_perm))
+
+# --- Variando o cap ---
+cat("--- Sensibilidade: variando o cap ---\n")
+cat(sprintf("%-12s %-8s %-8s %-10s %-10s\n",
+    "Abatimento", "a1*", "a2*", "Custo", "Preco perm"))
+cat(strrep("-", 52), "\n")
+A_vals <- seq(10, 80, by = 10)
+for (Ai in A_vals) {
+  ai1 <- Ai / 3
+  ai2 <- 2 * Ai / 3
+  cti <- (c1/2)*ai1^2 + (c2/2)*ai2^2
+  pi <- c1 * ai1
+  cat(sprintf("%-12d %-8.1f %-8.1f %-10.1f %-10.1f\n",
+      Ai, ai1, ai2, cti, pi))
+}
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: CMgA das duas firmas
+a_seq <- seq(0, 30, length = 200)
+CMgA1 <- c1 * a_seq
+CMgA2 <- c2 * a_seq
+
+plot(a_seq, CMgA1, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Abatimento (ton)", ylab = "CMg abatimento (R$/ton)",
+     main = "Custo-efetividade: igualar CMgA",
+     ylim = c(0, max(CMgA1)))
+lines(a_seq, CMgA2, lwd = 3, col = "#0d6efd")
+
+# Preco de equilibrio
+abline(h = p_perm, col = "#198754", lwd = 2, lty = 2)
+points(a1_eff, p_perm, pch = 19, col = "#dc3545", cex = 2)
+points(a2_eff, p_perm, pch = 19, col = "#0d6efd", cex = 2)
+
+# Abatimento uniforme
+abline(v = a_unif, col = "#fd7e14", lty = 3, lwd = 1.5)
+text(a_unif + 0.5, max(CMgA1)*0.9, "Uniforme\n(a=20)",
+     col = "#fd7e14", cex = 0.6, font = 2)
+
+text(a1_eff, p_perm + 10,
+     sprintf("a1*=%.1f", a1_eff),
+     col = "#dc3545", cex = 0.6, font = 2)
+text(a2_eff, p_perm + 10,
+     sprintf("a2*=%.1f", a2_eff),
+     col = "#0d6efd", cex = 0.6, font = 2)
+text(28, p_perm + 5,
+     sprintf("p_E = %.1f", p_perm),
+     col = "#198754", cex = 0.6, font = 2)
+
+legend("topleft",
+       legend = c(expression(CMgA[1] == 4*a[1]),
+                  expression(CMgA[2] == 2*a[2]),
+                  "Preco permissao"),
+       col = c("#dc3545", "#0d6efd", "#198754"),
+       lwd = c(3, 3, 2), lty = c(1, 1, 2),
+       cex = 0.55, bg = "white")
+
+# Painel 2: Custo total vs abatimento total
+A_fine <- seq(1, 80, length = 200)
+CT_eff_fine <- (c1/2)*(A_fine/3)^2 + (c2/2)*(2*A_fine/3)^2
+CT_unif_fine <- (c1/2)*(A_fine/2)^2 + (c2/2)*(A_fine/2)^2
+
+plot(A_fine, CT_unif_fine, type = "l", lwd = 2, col = "#fd7e14", lty = 2,
+     xlab = "Abatimento total (ton)",
+     ylab = "Custo total (R$)",
+     main = "Custo: cap-trade vs. uniforme")
+lines(A_fine, CT_eff_fine, lwd = 3, col = "#198754")
+
+# Ponto do exercicio
+points(A_total, CT_eff, pch = 19, col = "#198754", cex = 2)
+points(A_total, CT_unif, pch = 17, col = "#fd7e14", cex = 1.5)
+
+arrows(A_total + 1, CT_unif, A_total + 1, CT_eff,
+       code = 3, lwd = 2, col = "#6f42c1", length = 0.08)
+text(A_total + 5, (CT_unif + CT_eff)/2,
+     sprintf("Economia\nR$ %.0f", economia),
+     col = "#6f42c1", cex = 0.6, font = 2)
+
+legend("topleft",
+       legend = c("Cap-and-trade (eficiente)", "Regulacao uniforme"),
+       col = c("#198754", "#fd7e14"),
+       lwd = c(3, 2), lty = c(1, 2),
+       cex = 0.55, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

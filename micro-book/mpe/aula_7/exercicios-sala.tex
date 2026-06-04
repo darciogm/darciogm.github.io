@@ -1,0 +1,808 @@
+\documentclass[11pt]{article}
+
+% ---------- Codificacao e idioma ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+
+% ---------- Matematica ----------
+\usepackage{amsmath,amssymb}
+
+% ---------- Layout ----------
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{tikz}
+
+% ---------- Cores Insper ----------
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{insperdark}{HTML}{9A0C23}
+\definecolor{azulbox}{HTML}{1B3A5C}
+\definecolor{papersoft}{HTML}{F7F7F5}
+
+% ---------- Hyperref ----------
+\usepackage[colorlinks=true,linkcolor=insperdark,urlcolor=insperdark]{hyperref}
+
+% ---------- Caixas ----------
+\newtcolorbox{setupbox}{
+  breakable, colback=papersoft, colframe=insperred, boxrule=0.8pt,
+  arc=2pt, left=8pt, right=8pt, top=6pt, bottom=6pt,
+  fonttitle=\bfseries\color{white}, coltitle=white, colbacktitle=insperred,
+  title=Setup --- escreva no quadro}
+
+\newtcolorbox{intuibox}{
+  breakable, colback=insperred!6, colframe=insperred!55, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+\newtcolorbox{armadbox}{
+  breakable, colback=yellow!8, colframe=orange!70!black, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+% ---------- Cabecalho de exercicio ----------
+\newcommand{\exercicio}[2]{%
+  \bigskip
+  {\color{insperred}\rule{\textwidth}{1.2pt}}\par
+  \nopagebreak
+  {\Large\bfseries\color{insperred} Exercício #1.}\quad{\large #2}\par
+  \nopagebreak
+  {\color{insperred}\rule{\textwidth}{0.4pt}}\par
+  \smallskip}
+
+\newcommand{\passo}[1]{\par\medskip\noindent{\bfseries\color{insperdark}#1}\par}
+
+\setlist[enumerate]{leftmargin=2.2em,itemsep=2pt,topsep=3pt}
+
+% ---------- Atalhos de notacao ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ck}{\ensuremath{\checkmark}}
+\newcommand{\TMS}{\text{TMS}}
+\newcommand{\TMT}{\text{TMT}}
+\newcommand{\MEC}{\text{MEC}}
+\newcommand{\MCp}{\text{MC}_p}
+\newcommand{\MCs}{\text{MC}_s}
+
+\begin{document}
+
+% ===================== TITULO =====================
+\begin{center}
+  {\LARGE\bfseries\color{insperred} Aula 7 --- Externalidades e Bens Públicos}\\[2pt]
+  {\large Quatro exercícios resolvidos passo a passo --- um por bloco da aula}\\[4pt]
+  {\normalsize Microeconomia I \textbullet{} MPE 2026/32 \textbullet{} Insper \textbullet{} para resolução em sala (lousa)}
+\end{center}
+\vspace{2pt}
+{\color{insperred!40}\hrule height 1pt}
+\vspace{4pt}
+
+\noindent\textit{Os quatro exercícios resumem o \textbf{eixo formal} da aula, um por bloco: Ex.~1 fecha o Bloco~1 (\textbf{externalidade negativa + Pigou + perda de bem-estar}); Ex.~2 fecha o Bloco~2 (\textbf{Coase} bilateral com \MEC{} crescente $+$ equivalência com Pigou); Ex.~3 fecha o Bloco~3 (\textbf{bem público} com Samuelson $+$ free-rider \emph{assimétrico} $+$ Lindahl); Ex.~4 fecha o Bloco~4 (\textbf{VCG} com verificação de verdade-dominante por desvio). \textbf{Não treinados na lousa hoje:} cap-and-trade numérico e tragédia dos comuns --- ficam para os Avaliativos~4 e~6 (avisar a turma no fechamento). Os números são \textbf{distintos} dos exercícios avaliativos e dos exercícios de papel da pré-aula --- mesmos conceitos, calibração nova.}
+
+\smallskip
+\noindent\textbf{\color{insperred}Orçamento de tempo (lousa, 2h40 = 160 min):} Ex.~1 (30 min) $+$ Ex.~2 (35 min) $+$ Ex.~3 (42 min) $+$ Ex.~4 (48 min) $=$ \textbf{155 min} $+$ 5 de respiro. Escrever à mão é $\sim$3$\times$ mais lento que projetar; o enunciado de cada exercício cabe em $\le 6$ linhas de quadro. Se derrapar, \textbf{corte um sub-item}, não acelere a álgebra.
+
+\smallskip
+\noindent\textbf{\color{insperred}Disciplina de quadro (regra de ouro):} as caixas de \emph{intuição} e \emph{armadilha} são \textbf{FALADAS, nunca escritas}. Só vai para a lousa o que está no \texttt{Setup} e nas equações destacadas. Escrever uma box custa 3--4 min; são 8 boxes $=$ $\sim$25 min de colapso.
+
+\smallskip
+\noindent\textbf{\color{insperred}Sobre a prosa expandida (``Traduzindo o enunciado'' e os parágrafos longos nos passos):} é o que o professor \textbf{FALA} enquanto escreve a álgebra na lousa --- \textbf{não vai para o quadro}. Pense nela como o roteiro de narração: a turma é sênior em outras áreas (direito, engenharia, administração) e domina cálculo, mas precisa ouvir o \emph{porquê econômico} de cada igualação. A álgebra destacada vai para a lousa; a tradução sai pela voz.
+
+\smallskip
+\noindent\textbf{\color{insperred}Plano de corte (engatilhado, nesta ordem):}
+\begin{itemize}[leftmargin=1.6em,itemsep=1pt,topsep=2pt]
+  \item \textbf{Atraso $\sim$5 min:} Ex.~1 --- triângulo de Harberger só algebricamente, sem desenhar o gráfico.
+  \item \textbf{Atraso $\sim$10 min:} Ex.~2 --- cortar o Caso 2 ($A$ detém o direito); dizer em uma frase ``inverte quem paga, mesmo $q^*$''.
+  \item \textbf{Atraso $\sim$15 min:} Ex.~4 --- cortar o Passo 4 (desvio de $C$); afirmar o resultado e apontar para este PDF.
+  \item \textbf{Nunca cortar:} Ex.~3 inteiro (coração N\&S da aula) e o teste de pivot do Ex.~4 (Passo 2).
+\end{itemize}
+
+% ===================== EXERCICIO 1 =====================
+\exercicio{1}{Externalidade negativa, imposto de Pigou e perda de bem-estar (Bloco 1 --- 30 min)}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item Mercado parcial. Demanda inversa $P(q)=100-q$.
+  \item Custo privado marginal $\MCp(q)=10+2q$. Custo externo marginal $\MEC(q)=3q$ (linear).
+  \item Custo social marginal $\MCs(q)=\MCp(q)+\MEC(q)$.
+\end{itemize}
+\textbf{Perguntas.} (a) $\MCs(q)$; (b) equilíbrio privado $q^p$; (c) ótimo social $q^*$;
+(d) imposto de Pigou $t^*$ e verificação; (e) perda de bem-estar (triângulo de Harberger) do regime sem imposto.
+\end{setupbox}
+
+\noindent\textbf{Traduzindo o enunciado.} Imagine uma fábrica que solta fumaça sobre um bairro. A reta
+$P(q)=100-q$ é a \emph{disposição a pagar} dos compradores: o primeiro cliente toparia pagar quase $100$ pela
+unidade, o centésimo pagaria $0$ --- por isso a reta \emph{cai} (cada comprador adicional valoriza menos). O
+$\MCp(q)=10+2q$ é o \emph{custo marginal privado} --- o custo, para a fábrica, de produzir \textbf{uma} unidade
+a mais; ele \emph{sobe} porque, à medida que a fábrica se aproxima do limite de capacidade, cada unidade extra
+fica mais cara (hora extra, máquina forçada). Até aqui é o mercado que o dono da fábrica enxerga. O
+$\MEC(q)=3q$ é o \emph{custo externo marginal}: o estrago que a fumaça da última unidade impõe a quem está
+\textbf{fora} do negócio --- a vizinhança, que não assina o contrato nem paga o preço. ``Externalidade'' vem
+literalmente de \emph{externo}: é o custo que escapa para fora do preço e fora do contrato. O custo social
+marginal $\MCs=\MCp+\MEC$ é a soma honesta: o que a unidade custa para \textbf{todo mundo}, fábrica e
+vizinhança juntas. A pergunta de fundo é: o mercado, que só ``vê'' $\MCp$, produz demais? E quanto custa, em
+dinheiro, ignorar a fumaça?
+
+\passo{Passo 0 --- O diagnóstico (diga em voz alta enquanto desenha os eixos).}
+\emph{``A externalidade tecnológica quebra o 1\textordmasculine{} TBE --- o Primeiro Teorema do Bem-Estar, a
+ideia de que mercados competitivos, sozinhos, chegam a um resultado eficiente --- porque a fumaça do produtor
+entra no bem-estar de terceiros \textbf{fora dos preços}. O mercado lê $\MCp$; a sociedade paga $\MCs$. O hiato
+$\MEC$ é a fonte da ineficiência.''} Desenhe $P(q)$ caindo, $\MCp$ e $\MCs$ subindo, $\MCs$ acima de $\MCp$.
+
+\passo{Passo 1 --- Custo social marginal (a).}
+A conta aqui só pergunta: ``somando o custo da fábrica e o estrago da fumaça, quanto a próxima unidade custa
+para a sociedade inteira?'' É literalmente empilhar as duas parcelas. O termo $\MEC=3q$ cresce mais rápido que
+$\MCp$: quanto mais a fábrica produz, mais pesa a fumaça na conta social.
+\[
+  \MCs(q)=\underbrace{10+2q}_{\MCp}+\underbrace{3q}_{\MEC}=\boxed{\,10+5q\,}.
+\]
+Repare no coeficiente: a inclinação saltou de $2$ (privado) para $5$ (social). Esse ``$5$ em vez de $2$'' é a
+fumaça entrando na conta. Toda a diferença entre o que o mercado faz e o que seria bom para todos mora nesse hiato.
+
+\passo{Passo 2 --- Equilíbrio privado (b), $P=\MCp$.}
+``Até quando a fábrica produz, sozinha, sem ninguém regulando?'' Ela produz enquanto a próxima unidade ainda
+\emph{compensa}: enquanto o que o cliente paga por ela $(P)$ --- que, num mercado competitivo, é exatamente o
+que a fábrica embolsa pela próxima unidade --- cobre o que custa fazê-la $(\MCp)$. No instante em
+que o preço recebido iguala o custo de produzir mais uma, parar ou continuar dá no mesmo --- é aí que a fábrica
+para. Por isso igualamos $P=\MCp$: é a regra ``produz a última unidade que ainda dá lucro''. Note que a
+vizinhança \emph{não entra} nesta conta --- a fábrica ignora a fumaça porque não paga por ela.
+\[
+  100-q=10+2q\;\Longrightarrow\;90=3q\;\Longrightarrow\;\boxed{\,q^p=30\,},\qquad P^p=100-30=70.
+\]
+Resultado: a fábrica, deixada sozinha, faz $30$ unidades e cobra $70$ por elas.
+
+\passo{Passo 3 --- Ótimo social (c), $P=\MCs$.}
+Agora a pergunta muda de dono: ``até quando seria bom para a \emph{sociedade} produzir?'' A regra é a mesma
+--- produzir a última unidade que ainda compensa --- mas o ``compensa'' agora pesa o custo de \textbf{todos},
+fumaça incluída. Por isso igualamos o que o cliente paga $(P)$ ao custo social $(\MCs)$, e não ao custo
+privado. É como se a vizinhança tivesse, finalmente, voz na decisão.
+\[
+  100-q=10+5q\;\Longrightarrow\;90=6q\;\Longrightarrow\;\boxed{\,q^*=15\,},\qquad P^*=100-15=85.
+\]
+Como o denominador cresce ($3\to6$), $q^*<q^p$: \textbf{a produção privada é excessiva}. E o número fala alto:
+$q^*=15$ é \emph{metade} do que o mercado entrega sozinho. A leitura econômica é direta --- a sociedade quer
+metade da produção porque a fumaça é cara; cada unidade entre $15$ e $30$ vale para o comprador menos do que
+machuca a vizinhança.
+
+\passo{Passo 4 --- Imposto de Pigou (d).}
+A ideia: em vez de mandar a fábrica produzir $15$ por decreto, o governo cobra um \emph{preço} por unidade de
+fumaça --- e deixa a fábrica decidir sozinha. Se o pedágio for do tamanho exato do estrago, a fábrica passa a
+``sentir no bolso'' o que antes jogava na vizinhança, e por conta própria recua para $15$. Qual o tamanho
+certo? O estrago da última unidade que \emph{queremos} que ela produza --- ou seja, o $\MEC$ avaliado
+\textbf{no ponto ótimo}, não em qualquer outro lugar.
+\[
+  t^*=\MEC(q^*)=3\cdot 15=\boxed{\,45\,}.
+\]
+Cada unidade passa a custar para a fábrica $45$ a mais --- o pedágio pelo uso lícito do ar. Não é uma
+\emph{multa} (multa pune ato ilícito); é o \emph{preço} do dano que a unidade impõe.
+\textbf{Verificação} (faça no quadro): com $t^*=45$ o produtor resolve $P=\MCp+t^*$, ou seja, refaz a conta do
+Passo~2 agora com o pedágio embutido no seu custo:
+\[
+  100-q=10+2q+45=55+2q\;\Longrightarrow\;45=3q\;\Longrightarrow\;q=15=q^*\ \ck.
+\]
+A fábrica, agindo no puro interesse próprio, agora escolhe \emph{exatamente} o que a sociedade queria.
+
+\begin{armadbox}
+\textbf{Armadilha (a mais cobrada em prova).} $t^*=\MEC(q^*)$, \textbf{nunca} $\MEC(q^p)$.
+Quem avalia no privado obtém $\MEC(30)=90$ e \emph{sobre-taxa} --- empurraria $q$ abaixo de $15$.
+A taxa certa iguala $\MCp+t$ a $\MCs$ \emph{exatamente no ponto $q^*$}, não em outro.
+\end{armadbox}
+
+\passo{Passo 5 --- Perda de bem-estar do não-imposto (e).}
+Esta é a pergunta do dinheiro: ``se ninguém taxar, quanto a sociedade perde, em reais, por produzir demais?''
+Cada unidade entre $15$ e $30$ é produzida mas \emph{não deveria}: ela custa à sociedade o $\MCs$ e vale para o
+comprador só $P(q)$, que é \emph{menor}. Atenção a um ponto que confunde todo mundo: isto \textbf{não} é uma
+transferência (dinheiro que sai do bolso de um e entra no de outro) --- é riqueza que \emph{desaparece},
+valor que ninguém captura.
+A perda é o triângulo entre $\MCs$ e $P$ no intervalo $[q^*,q^p]$. No extremo $q^p=30$:
+\[
+  \MCs(30)=10+150=160,\qquad P(30)=70,\qquad \text{hiato}=160-70=90.
+\]
+No ótimo $q^*=15$ o hiato é zero ($\MCs(15)=85=P(15)$). Logo
+\[
+  \text{Perda}=\tfrac12\,(q^p-q^*)\,(\text{hiato em }q^p)=\tfrac12\,(30-15)\,(90)=\tfrac12\cdot 15\cdot 90=\boxed{\,675\,}.
+\]
+São $675$ de riqueza evaporada por deixar a fumaça fora do preço --- exatamente o que o imposto de Pigou
+recupera. É o ``preço'' que a sociedade paga por não cobrar pela fumaça.
+
+\begin{center}
+\begin{tikzpicture}[x=0.22cm,y=0.038cm,>=stealth,line join=round]
+
+  % ----- shaded Harberger triangle: (15,85)-(30,70)-(30,160) -----
+  \fill[insperred!20] (15,85) -- (30,70) -- (30,160) -- cycle;
+
+  % ----- axes -----
+  \draw[->,thick] (0,0) -- (37,0) node[right] {$q$};
+  \draw[->,thick] (0,0) -- (0,178) node[above] {$\$$/un.};
+
+  % ----- guide lines (dashed gray) -----
+  \draw[gray,dashed] (15,0) -- (15,85);
+  \draw[gray,dashed] (0,85) -- (15,85);
+  \draw[gray,dashed] (30,0) -- (30,160);
+  \draw[gray,dashed] (0,70) -- (30,70);
+  \draw[gray,dashed] (0,160) -- (30,160);
+
+  % ----- ticks q -----
+  \foreach \x/\xl in {15/15,30/30}
+    \draw (\x,0) -- (\x,-3) node[below] {\small $\xl$};
+  % ----- ticks $ -----
+  \foreach \y/\yl in {70/70,85/85,160/160}
+    \draw (0,\y) -- (-1.5,\y) node[left] {\small $\yl$};
+
+  % ----- demand: P = 100 - q, from (0,100) to (35,65), azulbox -----
+  \draw[azulbox,thick] (0,100) -- (35,65) node[right,azulbox] {$D$};
+
+  % ----- MC_p = 10 + 2q, from (0,10) to (35,80), black -----
+  \draw[black,thick] (0,10) -- (35,80) node[right,black] {$\MCp$};
+
+  % ----- MC_s = 10 + 5q, from (0,10) to (32,170), insperred thick -----
+  \draw[insperred,very thick] (0,10) -- (32,170) node[above right,insperred] {$\MCs$};
+
+  % ----- double arrow for tax t* = 45 at q = 15: (15,40) -> (15,85) -----
+  \draw[<->,insperdark,thick] (15,40) -- (15,85);
+  \node[insperdark,left] at (14.2,62) {\small $t^*=45$};
+
+  % ----- equilibrium points -----
+  \fill (30,70) circle (2.2pt);
+  \node at (32.6,58) {\small $E^p$};
+  \fill (15,85) circle (2.2pt);
+  \node[above left] at (15,85) {\small $E^*$};
+
+  % ----- DWL label pointing to triangle -----
+  \node[insperdark,anchor=west] at (33,120) {\small DWL $=675$};
+  \draw[insperdark,->] (33,120) -- (26,105);
+
+\end{tikzpicture}
+\par\smallskip{\small\itshape Ordem no quadro: eixos $\to$ demanda $\to$ $\MCp$ $\to$ $E^p$ $\to$ $\MCs$ $\to$ $E^*$ $\to$ seta $t^*$ $\to$ triângulo.}
+\end{center}
+
+\begin{intuibox}
+\textbf{Intuição econômica.} O imposto de Pigou não é ``punição'': é o \textbf{preço que faltava}.
+Ele recria, dentro do sistema de preços, o canal que a externalidade havia rompido --- por isso
+o produtor, agindo egoisticamente sob $\MCp+t^*$, escolhe o nível socialmente ótimo. Os $675$ de perda
+são o tamanho exato da falha de mercado que a taxa elimina.
+\end{intuibox}
+
+% ===================== EXERCICIO 2 =====================
+\exercicio{2}{Coase: barganha bilateral com $\MEC$ crescente e equivalência com Pigou (Bloco 2 --- 35 min)}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item Fábrica $A$ produz $q$ a preço fixo $P^A=30$, com $\text{MC}^A(q)=2q$. Lucro marginal $=P^A-\text{MC}^A=30-2q$.
+  \item A fumaça impõe ao vizinho $B$ um dano marginal \textbf{crescente} $\MEC(q)=q$.
+  \item Custos de transação zero; direitos bem-definidos; sem efeito-renda relevante.
+\end{itemize}
+\textbf{Perguntas.} (a) output privado $q^p$; (b) ótimo social $q^*$; (c) Caso 1 --- $B$ tem direito ao ar limpo;
+(d) Caso 2 --- $A$ tem direito a poluir; (e) ganho de bem-estar da barganha e ponte com Pigou.
+\end{setupbox}
+
+\noindent\textbf{Traduzindo o enunciado.} Mesma fábrica, mesmo vizinho, mas agora a pergunta é: \emph{e se não
+houvesse governo? Os dois conseguiriam resolver sozinhos, conversando?} A fábrica $A$ vende cada unidade por um
+preço fixo $P^A=30$ e tem custo marginal $\text{MC}^A=2q$ (custo de fazer mais uma, que sobe com a produção).
+Uma convenção de notação que vale para o resto do documento: sobrescritos como $A$, $B$, $i$ identificam
+\emph{de quem} é a variável --- \textbf{não são expoentes}. $P^A$ lê-se ``o preço de $A$''.
+O \emph{lucro marginal} $30-2q$ é quanto $A$ ganha com a última unidade --- começa em $30$ e some quando
+$q=15$. O dano da fumaça sobre o vizinho $B$ agora é $\MEC(q)=q$, e é \textbf{crescente}: a primeira baforada
+incomoda pouco, a vigésima já é insuportável. As três hipóteses do rodapé são o que torna a história limpa:
+\emph{custos de transação zero} (conversar não custa nada --- é a hipótese heroica do Coase), \emph{direitos
+bem-definidos} (a lei deixa claro quem ``manda'' no ar --- como num direito de vizinhança bem escrito no
+Código Civil), e \emph{sem efeito-renda} (quem ficou mais rico ou mais pobre com o acordo não muda o quanto
+valoriza o ar). ``Deter o direito'' aqui é jurídico: significa que a lei dá àquela parte o poder de dizer sim
+ou não --- uma \emph{regra de propriedade}. O ponto do exercício é mostrar que \textbf{quem} a lei escolhe
+proteger muda \emph{quem paga quem}, mas não muda o nível de poluição que sobra no fim.
+
+\passo{Passo 1 --- Output privado (a).}
+``Quanto a fábrica produz se não dá a mínima para o vizinho?'' Produz até a última unidade que ainda dá lucro
+--- ou seja, até o lucro marginal zerar. Igualar preço a custo marginal é dizer ``pare quando ganhar mais uma
+unidade deixar de compensar''.
+$A$ produz enquanto o lucro marginal é positivo: $P^A=\text{MC}^A\Rightarrow 30=2q\Rightarrow\boxed{q^p=15}$.
+($A$ ignora $B$ por completo.) Guarde esse $15$: é o ponto de partida ``sujo'', antes de qualquer conversa.
+
+\passo{Passo 2 --- Ótimo social (b).}
+``Qual seria o nível justo, contando os dois lados?'' A última unidade socialmente boa é aquela cujo
+\emph{ganho de $A$} (lucro marginal) ainda cobre o \emph{estrago em $B$} (dano marginal). Quando o que a fábrica
+ganha com mais uma unidade é igual ao que essa unidade machuca o vizinho, chegou-se ao ponto de parar: daí em
+diante, produzir tira de $B$ mais do que dá a $A$. Por isso igualamos lucro marginal a dano marginal.
+Iguale o lucro marginal de $A$ ao dano marginal de $B$: $P^A=\text{MC}^A+\MEC$:
+\[
+  30=2q+q=3q\;\Longrightarrow\;\boxed{\,q^*=10\,}.
+\]
+O número $10$ fica \emph{entre} o nada e os $15$ sujos: a fumaça não justifica fechar a fábrica, só apará-la.
+
+\passo{Passo 3 --- Caso 1: $B$ detém o direito (c).}
+A lei deu ao vizinho o direito ao ar limpo: por padrão, $A$ \emph{não pode} soltar fumaça. Para produzir, $A$
+tem que \textbf{comprar} a permissão de $B$, unidade por unidade --- como quem precisa da anuência do confinante
+para construir. Quanto $B$ cobra no mínimo? O tamanho do incômodo daquela unidade, $\MEC(q)=q$. Quanto $A$ topa
+pagar no máximo? O que ela ganha com a unidade, o lucro marginal $30-2q$. Enquanto o que $A$ topa pagar for
+\emph{maior} que o que $B$ exige, sobra um excedente para os dois dividirem --- e gente racional não deixa
+dinheiro na mesa: a fábrica liga, paga, e ambos saem ganhando. O acordo só para quando esse excedente acaba.
+$A$ só pode poluir pagando $B$. Por unidade, $B$ exige $\ge\MEC(q)=q$; $A$ paga $\le$ lucro marginal $=30-2q$.
+A barganha avança enquanto há excedente, i.e.\ enquanto
+\[
+  \underbrace{30-2q}_{\text{máx.\ que }A\text{ paga}}>\underbrace{q}_{\text{mín.\ que }B\text{ aceita}}
+  \;\Longleftrightarrow\;30>3q\;\Longleftrightarrow\;q<10.
+\]
+Em $q=10$ as duas curvas se cruzam: excedente esgotado. $\Rightarrow q=10=q^*$ \ck. \quad
+\textbf{Quem paga:} $A$ paga $B$. E note: partindo do ar limpo (zero), a fábrica \emph{sobe} até $10$ comprando
+o direito de poluir.
+
+\passo{Passo 4 --- Caso 2: $A$ detém o direito (d).}
+Agora a lei inverteu: a fábrica tem o direito de poluir à vontade. Quem quiser ar mais limpo que \textbf{pague}
+por isso --- e quem quer é o vizinho $B$. A história roda ao contrário: $A$ parte dos $15$ sujos, e $B$ oferece
+dinheiro para que ela \emph{reduza}. Por cada unidade que abre mão, $A$ exige no mínimo o lucro que perde
+($30-2q$); $B$ paga no máximo o incômodo que evita ($q$). Aqui está o ponto que cola na cabeça: pagar \emph{para
+poder} poluir (Caso 1) e ser pago \emph{para não} poluir (Caso 2) são a mesma negociação vista de dois ângulos
+--- nos dois, o que está em jogo é o valor de cada unidade de fumaça, comparado curva-a-curva. Por isso o
+encontro das curvas é o mesmo ponto.
+$A$ partiria de $q^p=15$; $B$ paga $A$ para reduzir. Por unidade reduzida, $A$ exige $\ge$ lucro perdido $=30-2q$;
+$B$ paga $\le$ dano evitado $=\MEC(q)=q$. Reduzir vale enquanto
+\[
+  \underbrace{30-2q}_{\text{exige }A}<\underbrace{q}_{\text{paga }B}\;\Longleftrightarrow\;q>10.
+\]
+$A$ reduz de $15$ até $q=10$, onde a desigualdade vira igualdade. $\Rightarrow q=10=q^*$ \ck. \quad
+\textbf{Quem paga:} $B$ paga $A$. Mesmo destino do Caso 1 ($q=10$), seta de pagamento trocada.
+
+\begin{intuibox}
+\textbf{O coração do Coase.} Os dois casos chegam ao \textbf{mesmo} $q^*=10$. O que muda é só a
+\textbf{direção do pagamento} (quem paga quem) --- a \emph{distribuição} dos ganhos, não a \emph{alocação}
+real. Direitos claros $+$ barganha sem fricção $\Rightarrow$ eficiência \emph{independe} de quem recebeu
+o direito inicialmente. Na prática isso é otimista: ``custo de transação zero'' e ``direito bem-definido'' são
+raros --- por isso o teorema de Coase é mais uma lente para enxergar \emph{onde} o atrito mora do que uma
+receita de resolver tudo com contrato.
+\end{intuibox}
+
+\passo{Passo 5 --- Ganho de bem-estar e ponte com Pigou (e).}
+``Quanto valor a conversa entre os dois gera, em reais?'' É o desperdício que existia em $q^p=15$ e some quando
+recuamos para $q^*=10$. Em cada unidade entre $10$ e $15$, o estrago em $B$ era maior que o lucro de $A$ ---
+puro prejuízo social que a barganha apara. Somando esse prejuízo evitado unidade a unidade, sai a área do
+triângulo.
+A barganha recupera o triângulo entre o dano marginal $\MEC=q$ e o lucro marginal $30-2q$ no intervalo $[q^*,q^p]$.
+A taxa líquida de perda social em $q$ é $\MEC-(30-2q)=q-(30-2q)=3q-30$, nula em $q^*=10$ e igual a
+$3(15)-30=15$ em $q^p=15$. Logo
+\[
+  \text{Ganho da barganha}=\tfrac12\,(q^p-q^*)\,(15)=\tfrac12\cdot 5\cdot 15=\boxed{\,37{,}5\,}.
+\]
+São $37{,}5$ de riqueza que estava sendo queimada e que a conversa recupera --- independentemente de quem ficou
+com o cheque no fim.
+\textbf{Ponte com Pigou.} O mesmo $q^*=10$ sai de um imposto $t^*=\MEC(q^*)=10$: o produtor resolve
+$30=2q+10\Rightarrow q=10$ \ck. \emph{Coase deixa os privados barganharem; Pigou impõe a taxa; cap-and-trade
+descentraliza ambos via permissões} --- três caminhos, mesmo destino $q^*$, \textbf{desde que} o regulador
+conheça a curva de dano para calibrar $t^*$ ou o cap (a informação que o Ex.~4 mostra ser difícil de extrair).
+
+\begin{center}
+\begin{tikzpicture}[x=0.45cm,y=0.17cm,>=stealth]
+
+  % ---------- eixos ----------
+  \draw[->,thick] (0,0) -- (18,0) node[right] {$q$};
+  \draw[->,thick] (0,0) -- (0,34) node[above] {\$/un.};
+
+  % ---------- LMg: 30 - 2q (azulbox), de q=0 (30) a q=15 (0) ----------
+  % rotulo junto ao trecho superior da reta azul (associacao visual inequivoca)
+  \draw[azulbox,thick] (0,30) -- (15,0);
+  \node[azulbox,anchor=south west] at (2.6,26.2) {$30-2q$ (lucro mg.\ de $A$)};
+
+  % ---------- MEC = q (insperred), de q=0 a q=17 (17) ----------
+  % rotulo na ponta da reta vermelha (associacao visual inequivoca)
+  \draw[insperred,thick] (0,0) -- (17,17);
+  \node[insperred,anchor=south east] at (17.4,17.9) {$\MEC=q$ (dano mg.\ de $B$)};
+
+  % ---------- triangulo do ganho: (10,10)-(15,0)-(15,15) ----------
+  \fill[insperred!20] (10,10) -- (15,0) -- (15,15) -- cycle;
+  \node[anchor=west] at (15.4,11) {ganho $=37{,}5$};
+
+  % ---------- guias tracejadas do cruzamento (10,10) ----------
+  \draw[gray,dashed] (10,10) -- (10,0);
+  \draw[gray,dashed] (10,10) -- (0,10);
+
+  % ---------- cruzamento ----------
+  \fill (10,10) circle (2.6pt);
+  \node[anchor=south east] at (9.4,11.2) {$q^*$};
+
+  % ---------- ticks eixo q ----------
+  \draw (10,0) -- (10,-0.8) node[below] {$10$};
+  \draw (15,0) -- (15,-0.8) node[below] {$15=q^p$};
+
+  % ---------- ticks eixo $ ----------
+  \draw (0,30) -- (-0.4,30) node[left] {$30$};
+  \draw (0,10) -- (-0.4,10) node[left] {$10$};
+
+  % ---------- setas dos dois casos (abaixo do eixo) ----------
+  \draw[->,thick] (4,-4) -- (9.7,-4)
+    node[midway,below,font=\scriptsize] {Caso 1: $B$ tem direito ($A$ paga, sobe at\'e 10)};
+  \draw[->,thick] (15,-8) -- (10.3,-8)
+    node[midway,below,font=\scriptsize] {Caso 2: $A$ tem direito ($B$ paga, desce at\'e 10)};
+
+\end{tikzpicture}
+\par\smallskip{\small\itshape Ordem no quadro: eixos $\to$ LMg $\to$ MEC $\to$ cruzamento $q^*$ $\to$ marcar $q^p$ $\to$ triângulo $\to$ setas dos dois casos.}
+\end{center}
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) Achar que ``quem tem o direito produz/lucra mais'' muda $q^*$ --- não muda, só muda
+quem paga. (ii) Confundir o \emph{nível} ótimo (alocação) com a \emph{divisão} do excedente (distribuição).
+(iii) Esquecer que aqui $\MEC=q$ é \textbf{crescente}: o cruzamento ocorre num ponto \emph{interior} (quantidade
+positiva, os dois ainda transacionam), não num \emph{canto} (solução presa na fronteira --- por exemplo, produção
+zero). Guarde esse par interior/canto: ele volta com força no Ex.~3.
+\end{armadbox}
+
+% ===================== EXERCICIO 3 =====================
+\exercicio{3}{Bem público: Samuelson, free-rider \emph{assimétrico} e Lindahl (Bloco 3 --- 42 min)}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item $I=2$ agentes. Bem privado $x$ (numerário) $+$ bem público $G$. Tecnologia linear $\TMT_{G,x}=1$.
+  \item \textbf{Utilidades assimétricas} (log, para evitar coincidência espúria):
+        $u^A=x^A+6\ln G$, \ $u^B=x^B+2\ln G$.
+  \item Dotações $\omega^i$ (a riqueza inicial de cada agente) grandes o bastante para ninguém esbarrar
+        no limite do bolso --- podemos ignorar a restrição $x^i\ge0$.
+\end{itemize}
+\textbf{Perguntas.} (a) $\TMS^i_{G,x}$; (b) ótimo de Samuelson $G^*$; (c) provisão voluntária Nash $G^N$
+e quem provê; (d) razão $G^N/G^*$ e o que ilustra; (e) preços de Lindahl $\tau^A,\tau^B$.
+\end{setupbox}
+
+\noindent\textbf{Traduzindo o enunciado.} Trocamos a fumaça por um bem que beneficia todo mundo ao mesmo tempo:
+um \emph{bem público}. Pense na iluminação de uma rua, no farol que guia os navios, ou na segurança contratada
+por um condomínio --- quando existe, serve a todos simultaneamente, e o fato de um morador usufruir não tira
+nada do outro. Isso é \textbf{não-rivalidade}: a \emph{mesma} unidade de luz ilumina os dois vizinhos. Aqui há
+$I=2$ agentes, um bem privado $x$ (dinheiro no bolso --- o ``numerário'', o bem que serve de \emph{régua}:
+medimos tudo em unidades dele e seu preço é $1$ por definição) e o bem público $G$. A Taxa Marginal de
+Transformação ($\TMT$) é o ``câmbio'' técnico entre dinheiro e luz; $\TMT=1$ quer dizer que cada real gasto
+vira uma unidade de $G$ (custa $1$ de bolso fazer $1$ de luz). As
+utilidades $u^A=x^A+6\ln G$ e $u^B=x^B+2\ln G$ dizem o quanto cada um valoriza a luz: $A$ gosta \emph{três
+vezes} mais que $B$ (o $6$ contra o $2$). O $\ln G$ embute saturação --- a primeira lâmpada importa muito, a
+décima nem tanto. As três perguntas-chave: quanto de luz seria \emph{ideal} para os dois juntos (Samuelson)?
+Quanto de luz aparece se cada um decide sozinho, podendo \emph{pegar carona} no outro (Nash)? E que ``conta de
+rateio'' faria cada um, voluntariamente, querer o nível ideal (Lindahl)?
+
+\passo{Passo 1 --- Taxas marginais de substituição (a).}
+A taxa marginal de substituição, $\TMS$, responde a uma pergunta concreta: ``quantos reais do bolso o agente
+toparia abrir mão por mais um pingo de luz?'' É o \emph{preço interno} que cada um atribui ao bem público. Para
+calcular, vemos quanto a utilidade sobe com mais $G$ (o ``benefício'') e dividimos pelo quanto sobe com mais
+dinheiro (o ``custo de oportunidade'').
+Com $u^i=x^i+a^i\ln G$ ($a^A=6,\ a^B=2$): $u^i_x=1$, $u^i_G=a^i/G$. Logo
+\[
+  \TMS^A_{G,x}=\frac{6}{G},\qquad \TMS^B_{G,x}=\frac{2}{G}.
+\]
+\emph{Diga:} ``$\TMS$ \textbf{decresce} em $G$ --- utilidade marginal do bem público cai. E $A$ valoriza o triplo de $B$.''
+
+\passo{Passo 2 --- Ótimo de Samuelson (b), soma \emph{vertical}.}
+Aqui mora a diferença mais importante da aula, e a que mais escorrega na prova. Num bem \emph{privado} (um pão),
+se eu como, você não come --- então para saber o valor social de mais um pão olhamos uma pessoa de cada vez. Num
+bem \emph{público} (a luz da rua), a \emph{mesma} unidade beneficia os dois \textbf{ao mesmo tempo}. Logo o valor
+de mais uma lâmpada para a sociedade é o que $A$ valoriza \textbf{mais} o que $B$ valoriza --- as valorações se
+\emph{empilham}. É por isso que somamos as $\TMS$ ``verticalmente'' (às alturas das duas curvas, no mesmo $G$),
+e não ``horizontalmente'' como faríamos com demandas de bem privado. Construímos uma única unidade que rende
+para os dois; a regra de parar é: produza luz até o benefício \emph{somado} igualar o custo de fazer mais uma
+($\TMT=1$).
+\[
+  \TMS^A+\TMS^B=\TMT\;\Longrightarrow\;\frac{6}{G}+\frac{2}{G}=1\;\Longrightarrow\;\frac{8}{G}=1\;\Longrightarrow\;\boxed{\,G^*=8\,}.
+\]
+\textbf{Cuidado pedagógico:} é \textbf{soma} das TMS, não cada uma igual à TMT. Bem público é não-rival: a
+\emph{mesma} unidade de $G$ serve aos dois, então o valor social marginal é a soma das valorações.
+
+\passo{Passo 3 --- Provisão voluntária Nash (c).}
+Tire o planejador de cena: cada um decide sozinho quanto colocar do próprio bolso, sabendo que vai usufruir
+\emph{também} do que o outro colocar. É o problema do rateio sem síndico --- cada condômino pensa ``se o vizinho
+pagar a luz, eu aproveito de graça''. Esse ``aproveitar de graça'' é o \textbf{free-rider} (pegar carona).
+Matematicamente, cada um maximiza a própria utilidade tratando a contribuição do outro como dada --- esse
+``cada um responde da melhor forma possível, dado o que o outro está fazendo'' é o que se chama
+\textbf{equilíbrio de Nash} (a notação $g_{-i}$ significa ``a contribuição de todos os outros, exceto $i$'').
+Cada $i$ contribui $g^i\ge0$, $G=g^A+g^B$, e resolve $\max_{g^i}\ (\omega^i-g^i)+a^i\ln(g^i+g_{-i})$.
+A Condição de Primeira Ordem (CPO) --- a derivada igualada a zero, a regra ``pare onde o ganho marginal
+some'' --- no caso \emph{interior} dá: $-1+\dfrac{a^i}{G}=0\Rightarrow G=a^i$. Ou seja, $A$ ``quer'' $G=6$ e
+$B$ ``quer'' $G=2$.
+Repare: cada um, sozinho, só leva em conta a \emph{própria} valoração ($a^i/G=1$) --- a do outro nunca entra na
+sua conta. É exatamente a soma vertical que \emph{falta} aqui.
+Como os desejos diferem e $g^i\ge0$:
+\[
+  A\text{ provê até }G=6.\quad\text{Dado }G=6>2,\ B\text{ tem }-1+\tfrac{2}{6}=-\tfrac23<0\Rightarrow g^B=0.
+\]
+A derivada de $B$ é \emph{negativa já no primeiro centavo}: contribuir só piora a situação de $B$, dado que $A$
+já garante mais luz do que $B$ pagaria por conta própria. Quando isso acontece, o melhor que $B$ pode fazer é
+parar na fronteira --- contribuir exatamente zero. É a \emph{solução de canto} prometida no Ex.~2.
+\[
+  \boxed{\,g^A=6,\quad g^B=0,\quad G^N=6\,}\qquad(A\text{ provê tudo};\ B\text{ pega carona total}).
+\]
+Em português: $A$, que valoriza mais, banca a luz toda; $B$, vendo que já há luz suficiente para o seu gosto
+menor, não põe um centavo --- já lhe basta a luz que $A$ pagou.
+
+\begin{intuibox}
+\textbf{Free-rider assimétrico (Bergstrom--Blume--Varian 1986).} Não é que ``ninguém contribui''. É que
+o agente de \textbf{maior valoração} ($A$) banca o bem público sozinho, e o de menor valoração ($B$)
+free-ride \emph{perfeitamente}. O 100\%/0\% é a previsão \emph{exata da solução de canto deste modelo};
+a realidade aproxima com provisão \textbf{fortemente concentrada} nos maiores valoradores: OTAN
+(burden-sharing assimétrico), Wikipedia e open-source (cauda longa, poucos contribuem muito).
+Simetria não é necessária para free-rider --- a assimetria só o torna nítido.
+\end{intuibox}
+
+\passo{Passo 4 --- Subprovisão (d).}
+A razão entre o que aparece sozinho ($G^N$) e o que seria ideal ($G^*$) mede o tamanho do problema: quanto a
+``mão invisível'' fica abaixo do que deveria quando o bem é público.
+\[
+  \frac{G^N}{G^*}=\frac{6}{8}=\frac{3}{4}<1.
+\]
+O número diz: a provisão voluntária entrega só $3/4$ da luz ideal --- falta um quarto. E falta exatamente porque
+a valoração de $B$ ($=2$) jamais entrou na conta de ninguém. O que está embaixo do ideal é o ``a mais'' que $B$
+gostaria, mas pelo qual ninguém se dispõe a pagar.
+Tecnicamente: o Nash para onde a $\TMS$ \textbf{do maior valorador apenas} iguala a $\TMT$
+($6/G=1\Rightarrow G=6$), enquanto Samuelson exige a \emph{soma} ($8/G=1\Rightarrow G=8$).
+
+\begin{center}
+\begin{tikzpicture}[x=0.6cm,y=1.6cm,>=stealth]
+
+  % --- eixos ---
+  \draw[->,thick] (0,0) -- (13,0) node[right] {$G$};
+  \draw[->,thick] (0,0) -- (0,3.2) node[above] {TMS, TMT};
+
+  % --- linhas-guia verticais (G=6 e G=8, da altura 1 ao eixo) ---
+  \draw[gray,dashed] (6,0) -- (6,1);
+  \draw[gray,dashed] (8,0) -- (8,1);
+
+  % --- ticks ---
+  \draw (6,0) -- (6,-0.06);
+  \draw (8,0) -- (8,-0.06);
+  \draw (0,1) -- (-0.12,1) node[left] {$1$};
+
+  % --- TMS^B = 2/G (gray) ---
+  \draw[gray,thick,smooth] plot[domain=0.8:12.5,samples=60] (\x,{2/\x});
+
+  % --- TMS^A = 6/G (azulbox) ---
+  \draw[azulbox,thick,smooth] plot[domain=2.1:12.5,samples=60] (\x,{6/\x});
+
+  % --- soma vertical 8/G (insperred) ---
+  \draw[insperred,very thick,smooth] plot[domain=2.7:12.5,samples=60] (\x,{8/\x});
+
+  % --- TMT = 1 ---
+  \draw[black,dashed] (0,1) -- (12.8,1);
+  \node[anchor=west] at (11.3,1.18) {TMT $=1$};
+
+  % --- rótulos das curvas, escalonados à direita, ligados por linha fina ---
+  % pontas em x=12.5: 8/G=0.64, 6/G=0.48, 2/G=0.16 (fracoes inline p/ nao encostar na TMT)
+  \draw[gray,very thin] (12.5,0.64) -- (12.6,0.80);
+  \node[insperred,anchor=west] at (12.6,0.80) {\small TMS$^A{+}$TMS$^B=8/G$};
+  \draw[gray,very thin] (12.5,0.48) -- (12.6,0.48);
+  \node[azulbox,anchor=west] at (12.6,0.48) {\small TMS$^A=6/G$};
+  \draw[gray,very thin] (12.5,0.16) -- (12.6,0.16);
+  \node[gray,anchor=west] at (12.6,0.16) {\small TMS$^B=2/G$};
+
+  % --- anotação: soma vertical em G=4 (TMS^A=1.5, TMS^B=0.5, soma=2) ---
+  \draw[black,dashed,thin] (4,0) -- (4,2);
+  \fill[gray] (4,0.5) circle (1.6pt);
+  \fill[azulbox] (4,1.5) circle (1.6pt);
+  \fill[insperred] (4,2) circle (1.6pt);
+  \node[anchor=east,align=right] at (3.7,1.7) {\scriptsize soma\\ \scriptsize vertical};
+
+  % --- pontos de cruzamento na TMT ---
+  \fill (8,1) circle (2pt);
+  \fill (6,1) circle (2pt);
+
+  % --- rótulos G^* e G^N abaixo do eixo nos ticks ---
+  \node[below] at (8,-0.06) {$G^*$};
+  \node[below] at (6,-0.06) {$G^N$};
+
+  % --- subprovisão: segmento entre G=6 e G=8 logo abaixo do eixo ---
+  \draw[insperdark,very thick,|-|] (6,-0.32) -- (8,-0.32);
+  \node[insperdark,below] at (7,-0.34) {\small subprovisão};
+
+\end{tikzpicture}
+\par\smallskip{\small\itshape Ordem no quadro: eixos $\to$ TMS$^B$ $\to$ TMS$^A$ $\to$ soma vertical ($8/G$) $\to$ TMT $\to$ $G^*=8$ $\to$ $G^N=6$ (Nash usa só TMS$^A$).}
+\end{center}
+
+\passo{Passo 5 --- Preços de Lindahl (e), descentralizar Samuelson.}
+A pergunta de Lindahl é de engenharia de rateio: ``existe uma divisão da conta que faça \emph{cada um}, por puro
+interesse próprio, querer justamente o nível ideal $G^*=8$?'' A sacada é cobrar de cada um um \emph{preço
+pessoal} por unidade de luz --- como uma cota de condomínio sob medida, maior para quem usa/valoriza mais.
+Cada $i$ paga preço pessoal $\tau^i$ por unidade de $G$, \emph{tomando $\tau^i$ como dado} ---
+cada um age como \emph{tomador de preço} sobre o próprio preço pessoal, sem poder manipulá-lo; é o que
+distingue da CPO de Nash do Passo~3: restrição
+$x^i+\tau^i G\le\omega^i$, CPO $-\tau^i+a^i/G=0\Rightarrow G=a^i/\tau^i$. Para ambos concordarem em $G^*=8$:
+\[
+  \tau^A=\frac{a^A}{G^*}=\frac{6}{8}=\frac34,\qquad
+  \tau^B=\frac{a^B}{G^*}=\frac{2}{8}=\frac14,\qquad
+  \tau^A+\tau^B=\frac34+\frac14=1=\TMT\ \ck.
+\]
+\[
+  \boxed{\,\tau^A=\tfrac34,\quad \tau^B=\tfrac14\,}\qquad(A\text{ paga 3$\times$ }B,\text{ porque valoriza 3$\times$}).
+\]
+Leitura: o rateio justo cobra de cada um na proporção do quanto valoriza --- $A$ banca $3/4$ da conta, $B$ banca
+$1/4$, e a soma fecha exatamente o custo de fazer a luz ($\tau^A+\tau^B=1=\TMT$). Sob essa conta, ninguém quer
+pegar carona: cada um, sozinho, já pede $G=8$. O calcanhar de Aquiles --- e é o gancho do Ex.~4 --- é que para
+montar esse rateio o síndico precisa \emph{saber} o quanto cada um valoriza, e ninguém tem incentivo a contar a verdade.
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) Aplicar $\TMS^i=\TMT$ por agente (regra de \emph{bem privado}) e achar $G$ menor.
+(ii) Cobrar $\tau^i=\TMT=1$ de cada um --- não, a \textbf{soma} dos preços pessoais é que iguala a TMT.
+(iii) Concluir que com agentes idênticos não há free-rider --- a assimetria aqui é didática, não condição;
+o problema persiste no simétrico (só fica distribuído).
+\end{armadbox}
+
+\noindent\textit{\small Nota de calibre: usamos $\ln G$ assimétrico de propósito. Com $\sqrt{G}$ simétrico e $I=2$, a
+média das TMS coincidiria por acaso com a condição de Samuelson e o aluno decoraria o atalho errado. Aqui não há coincidência.}
+
+% ===================== EXERCICIO 4 =====================
+\exercicio{4}{VCG (Clarke pivot): decisão eficiente e verdade-dominante por desvio (Bloco 4 --- 48 min, calibre acima de N\&S --- teto Jehle--Reny)}
+
+\begin{setupbox}
+\begin{itemize}[leftmargin=1.3em,itemsep=2pt,topsep=2pt]
+  \item $I=3$ agentes decidem $d\in\{\text{sim},\text{não}\}$ (construir uma obra pública). $v^i(\text{não})=0$.
+  \item Valorações \textbf{líquidas} (valor menos a parcela de custo de cada um): $n^A=4,\ n^B=3,\ n^C=-5$.
+  \item Preferências \textbf{quasi-lineares}: utilidade de $i$ é $n^i(d)-t^i$ (transferência entra linearmente, sem efeito-renda) --- é o que faz o argumento de incentivo funcionar.
+  \item Decisão eficiente $d^*=\arg\max_d\sum_i n^i(d)$. Pagamento Clarke:
+        $t^i=h^i(\hat n_{-i})-\sum_{j\ne i}\hat n^j(d^*)$, com $h^i=\max_d\sum_{j\ne i}\hat n^j(d)$.
+\end{itemize}
+\textbf{Perguntas.} (a) $d^*$; (b) quem é \emph{pivot}; (c) transferências $t^A,t^B,t^C$;
+(d) $C$ ganha mentindo? (verdade-dominante por desvio); (e) saldo do mecanismo e ponte Lindahl/Aula 8.
+\end{setupbox}
+
+\noindent\textbf{Traduzindo o enunciado.} Pense numa assembleia de condomínio com \emph{três} condôminos
+decidindo se constroem uma obra comum --- digamos, uma piscina. Cada um tem uma valoração \emph{líquida} $n^i$:
+o quanto a piscina vale para ele \emph{menos} a parcela do custo que vai pagar. $A$ sai ganhando $4$, $B$ ganha
+$3$, e $C$ \emph{perde} $5$ (mora longe da área comum, mas rateia o custo igual). A obra é boa para o condomínio
+se a soma dos ganhos líquidos for positiva. O problema central: numa votação, se você pergunta ``quanto vale
+para você?'', cada um tem incentivo a \textbf{mentir} --- inflar o valor se quer a obra, ou chorar prejuízo se
+não quer --- porque a resposta mexe na conta que ele paga. O \textbf{mecanismo VCG} (regra de Clarke) é o
+desenho engenhoso que faz a \emph{verdade} ser a melhor jogada de cada um, não importa o que os outros digam
+(no jargão: dizer a verdade é estratégia \emph{dominante}).
+Ele cobra de cada condômino um \emph{imposto de Clarke} $t^i$: aquele que \textbf{vira} o resultado da votação
+paga exatamente o \emph{estrago} que sua presença impõe à preferência dos demais --- nem mais, nem menos.
+\textbf{Atenção a duas distinções.} Primeira: um condomínio \emph{real} decide por maioria e rateia por fração
+ideal (CC, art.~1.352) --- o VCG é um desenho \emph{diferente}, hipotético, em que a regra é somar valorações
+líquidas e cobrar de quem vira a votação; usamos a assembleia só como cenário, a mecânica é a de Clarke, não a
+do Código Civil. Segunda: a parcela de custo da obra \emph{já está descontada} dentro de $n^i$; o imposto de
+Clarke $t^i$ é uma \textbf{segunda} cobrança, por cima, que existe só para induzir honestidade --- não é o
+custo da obra. As preferências são \emph{quasi-lineares} (utilidade $=$ valoração menos imposto, sem
+efeito-renda: ficar mais rico ou mais pobre não muda quanto a obra vale para a pessoa), e é justamente essa
+linearidade que faz o truque de incentivo fechar.
+\emph{Notação:} o chapéu marca o valor \textbf{declarado} ($\hat n^i$, que pode ser mentira), sem chapéu é o
+valor \textbf{verdadeiro} ($n^i$) --- o jogo inteiro é sobre se vale a pena $\hat n^i\ne n^i$. O símbolo
+$\sum_{j\ne i}$ lê-se ``some sobre todos, \emph{exceto} o próprio $i$'' (e o subscrito $-i$, como em
+$\hat n_{-i}$, é ``todos os outros''). E $h^i$, em palavras, é \emph{o melhor resultado possível para os outros
+num cenário em que a opinião de $i$ é simplesmente ignorada} --- repare que, como só somamos sobre os outros,
+esse número não depende de uma palavra do que $i$ disser. É isso que torna mentir inútil.
+
+\passo{Passo 1 --- Decisão eficiente (a).}
+``A obra vale a pena para o condomínio como um todo?'' A regra é somar os ganhos líquidos: se o que $A$ e $B$
+ganham supera o que $C$ perde, constrói-se. Note que \emph{não} é votação por cabeça --- é por \textbf{magnitude}:
+o que pesa é \emph{quanto} cada um ganha ou perde, não quantos votam sim.
+$\sum_i n^i(\text{sim})=4+3+(-5)=2>0=\sum_i n^i(\text{não})$. Logo $\boxed{d^*=\text{sim}}$ (construir).
+O ganho de $A$ e $B$ ($4+3=7$) cobre com folga a perda de $C$ ($5$); sobra $2$ de benefício líquido para o
+condomínio. Constrói-se.
+
+\passo{Passo 2 --- Teste de pivot (b): tire um agente por vez.}
+Ser \emph{pivot} é ser o voto que decide: o condômino cuja presença \textbf{muda} o resultado. Para descobrir,
+fazemos um experimento mental simples --- ``e se este sujeito não existisse? A assembleia decidiria diferente?''
+Se sim, ele é pivot (foi ele quem virou o jogo); se a decisão fica igual sem ele, ele não fez diferença. Esse
+teste é o coração do mecanismo: só quem vira a decisão vai pagar imposto.
+\[
+  \begin{aligned}
+  \text{sem }A:&\ \ 3+(-5)=-2<0\Rightarrow\text{não}\ \ (\ne d^*)\Rightarrow A\text{ é \textbf{pivot}};\\
+  \text{sem }B:&\ \ 4+(-5)=-1<0\Rightarrow\text{não}\ \ (\ne d^*)\Rightarrow B\text{ é \textbf{pivot}};\\
+  \text{sem }C:&\ \ 4+3=\phantom{-}7>0\Rightarrow\text{sim}\ \ (=d^*)\Rightarrow C\text{ \textbf{não} é pivot}.
+  \end{aligned}
+\]
+
+\passo{Passo 3 --- Transferências (c).}
+Agora a conta do imposto de Clarke. A ideia em palavras: cada condômino paga o \emph{prejuízo} que sua presença
+causa aos outros. Comparamos o que os \emph{demais} conseguiriam se ele não estivesse na sala ($h^i$, o melhor
+para eles sem ele) com o que de fato conseguem com a decisão tomada ($\sum_{j\ne i}n^j$). A diferença é o
+``dano externo'' --- e é exatamente o que ele paga. Quem não vira nada não causa dano, e paga zero.
+O $\max(\cdot,0)$ na fórmula está ali porque os demais sempre podem rejeitar a obra e garantir $0$ ---
+nunca aceitam, como grupo, um resultado pior que zero.
+Para cada $i$, $\sum_{j\ne i}n^j(\text{não})=0$, então $h^i=\max\big(\sum_{j\ne i}n^j,\ 0\big)$ e
+$\sum_{j\ne i}n^j(d^*)=\sum_{j\ne i}n^j$ (pois $d^*=$ sim). Daí:
+\[
+  \begin{aligned}
+  t^A&=\max(-2,0)-(-2)=0+2=\boxed{2},\\
+  t^B&=\max(-1,0)-(-1)=0+1=\boxed{1},\\
+  t^C&=\max(\phantom{-}7,0)-(\phantom{-}7)=7-7=\boxed{0}.
+  \end{aligned}
+\]
+\textbf{Leitura:} $A$ e $B$ são pivots --- cada um \emph{vira} a decisão para ``sim'' contra a preferência
+líquida dos demais, e paga exatamente o ``dano externo'' que impõe a eles ($2$ e $1$). $C$ não é pivot: paga $0$.
+
+\begin{center}
+\begin{tikzpicture}[y=0.55cm, x=1cm]
+
+% --- título superior ---
+\node[font=\itshape\small, align=center] at (5,9.0)
+  {Teste de pivot: a decisão vira quando a barra cruza o zero};
+
+% --- linha do zero (limiar) ---
+\draw[line width=1.2pt, insperdark] (-0.3,0) -- (10.3,0);
+\node[font=\small, anchor=west, insperdark] at (10.4,0) {$0$ (limiar sim/n\~ao)};
+\node[font=\scriptsize, anchor=west, insperdark] at (10.4,-1.1) {$t^i=$ dist\^ancia at\'e $0$};
+
+% ============ Barra 1: todos, +2 ============
+\fill[insperred!70] (0.55,0) rectangle (1.45,2);
+\node[font=\small] at (1,2.55) {$+2$};
+\node[font=\scriptsize, align=center] at (1,-3.6) {$\sum_i n^i$};
+\node[font=\scriptsize, align=center] at (1,-4.5) {todos};
+\node[font=\scriptsize, align=center] at (1,-5.4) {$d^*=$ sim};
+
+% ============ Barra 2: sem A, -2 ============
+\fill[azulbox!60] (2.75,0) rectangle (3.65,-2);
+\node[font=\small] at (3.2,-2.55) {$-2$};
+\node[font=\scriptsize, align=center] at (3.2,-3.6) {sem $A$};
+\node[font=\scriptsize, align=center] at (3.2,-4.5) {$A$ piv\^o};
+\node[font=\scriptsize, align=center] at (3.2,-5.4) {$t^A=2$};
+
+% ============ Barra 3: sem B, -1 ============
+\fill[azulbox!60] (4.95,0) rectangle (5.85,-1);
+\node[font=\small] at (5.4,-1.55) {$-1$};
+\node[font=\scriptsize, align=center] at (5.4,-3.6) {sem $B$};
+\node[font=\scriptsize, align=center] at (5.4,-4.5) {$B$ piv\^o};
+\node[font=\scriptsize, align=center] at (5.4,-5.4) {$t^B=1$};
+
+% ============ Barra 4: sem C, +7 ============
+\fill[gray!50] (7.15,0) rectangle (8.05,7);
+\node[font=\small] at (7.6,7.55) {$+7$};
+\node[font=\scriptsize, align=center] at (7.6,-3.6) {sem $C$};
+\node[font=\scriptsize, align=center] at (7.6,-4.5) {$C$ n\~ao-piv\^o};
+\node[font=\scriptsize, align=center] at (7.6,-5.4) {$t^C=0$};
+
+% --- setas t^i = distância até 0 (barras negativas) ---
+\draw[->, thin, insperdark] (3.65,-2) -- (3.65,0);
+\draw[->, thin, insperdark] (5.85,-1) -- (5.85,0);
+
+\end{tikzpicture}
+\par\smallskip{\small\itshape Ordem no quadro: linha do zero $\to$ barra ``todos'' $\to$ três barras ``sem $i$'' $\to$ marcar quem cruza o zero (piv\^os) $\to$ $t^i$.}
+\end{center}
+
+\begin{intuibox}
+\textbf{O truque do VCG.} O termo $h^i$ \emph{não depende} do que $i$ declara. Então maximizar a utilidade
+líquida de $i$, $n^i(d^*)-t^i=n^i(d^*)+\sum_{j\ne i}\hat n^j(d^*)-h^i$, equivale a maximizar
+$n^i(d^*)+\sum_{j\ne i}\hat n^j(d^*)$ --- que é \emph{exatamente} o critério social que o mecanismo já otimiza
+quando $i$ relata a verdade. \textbf{Incentivo individual alinhado ao social.}
+\end{intuibox}
+
+\passo{Passo 4 --- $C$ ganha mentindo? (d) --- a prova que vale ouro.}
+Aqui testamos a promessa do mecanismo: ``será que $C$, que odeia a obra, não consegue se dar melhor mentindo?''
+$C$ é o candidato natural a trapacear --- tem o maior motivo para querer derrubar a piscina. Se nem ele ganha
+mentindo, o desenho funciona. A intuição: para $C$ virar a votação para ``não'', a regra de Clarke o obriga a
+\emph{pagar} o estrago que ele causaria aos outros ($A$ e $B$, que queriam a obra) --- e esse pedágio é maior do
+que o prejuízo que $C$ evita. Mentir sai caro \emph{por construção}, não por moral.
+Honesto, $C$ tem utilidade $n^C(d^*)-t^C=(-5)-0=-5$ ($C$ ``perde'' com a obra, mas não paga). Pode $C$
+mentir para \emph{virar} a decisão para ``não''? Precisaria reportar $\hat n^C$ com $4+3+\hat n^C\le0$,
+i.e.\ $\hat n^C\le-7$. Diga que reporta $\hat n^C=-8$: então $d=\text{não}$, e
+\[
+  t^C=h^C-\sum_{j\ne C}\hat n^j(\text{não})=7-0=7\;\Rightarrow\;\text{utilidade}=n^C(\text{não})-t^C=0-7=-7.
+\]
+$-7<-5$: \textbf{mentir piora}. Virar a decisão custa a $C$ uma transferência de $7$ para economizar só $5$ de
+valoração. \emph{E os outros desvios?} Qualquer $\hat n^C>-7$ mantém $d=\text{sim}$ e $t^C=0$: utilidade
+inalterada em $-5$ (mentir ``pouco'' é inócuo, não pior). Por isso a verdade é \textbf{fracamente dominante}:
+nenhum desvio ajuda, e o único que muda algo --- virar a decisão --- estritamente piora. O argumento
+\emph{geral} (todo agente, todo desvio) é o truque do $h^i$ na box acima; o cálculo aqui é a verificação
+numérica do desvio mais tentador. Não por moral, por aritmética. $\blacksquare$
+
+\passo{Passo 5 --- Saldo do mecanismo e ponte (e).}
+Última pergunta prática: ``e o dinheiro dos impostos, sobra ou falta?'' Somamos o que cada um pagou. Se sobra
+caixa, o síndico tem um problema chato: não pode devolver aos próprios condôminos (devolver mexeria nos
+incentivos e estragaria a honestidade que tanto custou montar), então o superávit precisa ser \emph{queimado} ou
+mandado para fora --- e isso é desperdício.
+Receita total $\sum_i t^i=2+1+0=3>0$: o VCG (Clarke pivot) \textbf{não é orçamento-balanceado} ---
+extrai um superávit que o planejador precisa devolver/descartar. \quad
+\textbf{Ponte com o Ex.~3:} Lindahl implementa Samuelson \emph{se} as $\TMS^i$ forem reveladas com verdade ---
+mas revelar é estrategicamente ruim (free-rider de revelação). VCG resolve a \emph{decisão eficiente com
+verdade dominante} --- mas \textbf{não consegue também balancear o orçamento} (Green--Laffont): a
+\emph{decisão} permanece eficiente; o que se perde é o superávit de $3$, que ao ser queimado vira peso-morto
+puro. A eficiência \emph{da decisão} sobrevive; a \emph{do orçamento}, não. Não há almoço grátis completo. É o ponto exato onde a Aula~7
+encosta na \textbf{Aula~8}: quando a informação é privada, o desenho de mecanismos passa a ser sobre
+\emph{como extrair a verdade} --- seleção adversa e revelação.
+
+\begin{armadbox}
+\textbf{Armadilhas.} (i) Decidir por \emph{maioria} (2 a favor) em vez de \textbf{soma} das valorações
+($d^*$ depende de magnitudes, não de contagem). (ii) Esquecer o $\max(\cdot,0)$ em $h^i$: como ``não'' rende
+$0$ aos outros, $h^A=\max(-2,0)=0$, \emph{não} $-2$ --- e é esse $0$ que gera $t^A=2$. (iii) Achar que $C$ é
+``compensado'' por perder --- $C$ paga $0$ por \emph{não} ser pivot, e pagaria $7$ se mentisse. O pagamento
+mede \emph{influência sobre a decisão}, não ganho ou perda de utilidade.
+\end{armadbox}
+
+% ===================== USO EM SALA =====================
+\bigskip
+{\color{insperred!40}\hrule height 1pt}
+\smallskip
+\noindent\textbf{\color{insperred}Fechamento (1 min de quadro).} Quatro blocos, um fio: o 1\textordmasculine{} TBE
+falha porque a interação foge dos preços (Ex.~1--2) ou porque o bem é não-rival e não-excludente (Ex.~3--4).
+\textbf{Pigou} recria o preço; \textbf{Coase} deixa barganhar; \textbf{Samuelson} dá a regra da soma vertical;
+\textbf{Lindahl/VCG} desenham o mecanismo. O que sobra para a Aula~8: e quando o agente \emph{conhece} sua
+valoração e o planejador \emph{não}? Informação assimétrica --- a terceira falha.
+
+\end{document}

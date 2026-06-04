@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Selecao Adversa em Seguros (Rothschild-Stiglitz)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Selecao Adversa em Seguros
+# Rothschild-Stiglitz (1976)
+# Exercicio Resolvido 19.4
+# ============================================
+
+pH <- 0.5    # prob sinistro tipo alto risco
+pL <- 0.1    # prob sinistro tipo baixo risco
+W <- 1000    # riqueza inicial
+d <- 600     # perda potencial
+frac_L <- 0.6  # fracao tipo L
+
+cat("====== SELECAO ADVERSA EM SEGUROS (R-S) ======\n")
+cat(sprintf("pH = %.1f   pL = %.1f   W = %.0f   d = %.0f\n",
+    pH, pL, W, d))
+cat(sprintf("Fracao tipo L: %.0f%%\n\n", frac_L*100))
+
+# --- Contratos justos separados ---
+premio_H <- pH * d
+premio_L <- pL * d
+cat("--- Contratos atuarialmente justos ---\n")
+cat(sprintf("Tipo H: premio = %.0f*%.0f = %.0f => Riqueza certa = %.0f\n",
+    pH, d, premio_H, W - premio_H))
+cat(sprintf("Tipo L: premio = %.0f*%.0f = %.0f => Riqueza certa = %.0f\n\n",
+    pL, d, premio_L, W - premio_L))
+
+# --- Contrato pooling ---
+p_bar <- frac_L * pL + (1 - frac_L) * pH
+premio_pool <- p_bar * d
+W_pool <- W - premio_pool
+
+cat("--- Contrato pooling ---\n")
+cat(sprintf("p_bar = %.2f   Premio pooling = %.0f\n", p_bar, premio_pool))
+cat(sprintf("Riqueza certa pooling = %.0f\n\n", W_pool))
+
+# Tipo L prefere pooling ou nada?
+U_pool_L <- log(W_pool)
+U_nada_L <- (1 - pL) * log(W) + pL * log(W - d)
+cat("--- Tipo L: pooling vs. sem seguro ---\n")
+cat(sprintf("U(pooling) = ln(%.0f) = %.4f\n", W_pool, U_pool_L))
+cat(sprintf("EU(sem seguro) = %.1f*ln(%.0f) + %.1f*ln(%.0f) = %.4f\n",
+    1-pL, W, pL, W-d, U_nada_L))
+cat(sprintf("Tipo L prefere: %s\n\n",
+    ifelse(U_pool_L > U_nada_L, "POOLING", "SEM SEGURO => pooling NAO e' equilibrio!")))
+
+# --- Tipo H ---
+U_pool_H <- log(W_pool)
+U_nada_H <- (1 - pH) * log(W) + pH * log(W - d)
+U_justo_H <- log(W - premio_H)
+cat("--- Tipo H ---\n")
+cat(sprintf("U(pooling) = %.4f\n", U_pool_H))
+cat(sprintf("EU(sem seguro) = %.4f\n", U_nada_H))
+cat(sprintf("U(seguro justo) = %.4f\n", U_justo_H))
+cat(sprintf("Tipo H prefere: pooling > sem seguro? %s\n\n",
+    ifelse(U_pool_H > U_nada_H, "SIM", "NAO")))
+
+# --- Equilibrio separador ---
+cat("--- Equilibrio separador ---\n")
+cat("Tipo H: seguro COMPLETO ao premio justo (beta_H = d)\n")
+cat(sprintf("  Premio = %.0f, Riqueza = %.0f em ambos os estados\n", premio_H, W - premio_H))
+cat("Tipo L: seguro PARCIAL (beta_L < d)\n")
+cat("  Cobertura limitada pela RCI do tipo H\n\n")
+
+# Encontrar beta_L maximo tal que tipo H nao desvie
+# U_H(C_H) >= U_H(C_L)
+# log(W-pH*d) >= (1-pH)*log(W-pL*beta) + pH*log(W-d+beta-pL*beta)
+U_H_proprio <- log(W - pH * d)
+
+cat("--- Buscando cobertura maxima para tipo L ---\n")
+cat(sprintf("%-10s %-12s %-12s %-10s\n",
+    "beta_L", "EU_H(C_L)", "U_H(C_H)", "RCI H ok?"))
+cat(strrep("-", 48), "\n")
+
+beta_vals <- seq(0, d, by = d/10)
+for (bl in beta_vals) {
+  EU_H_desvio <- (1-pH)*log(W - pL*bl) + pH*log(W - d + bl - pL*bl)
+  ok <- EU_H_desvio <= U_H_proprio
+  cat(sprintf("%-10.0f %-12.4f %-12.4f %-10s\n",
+      bl, EU_H_desvio, U_H_proprio, ifelse(ok, "OK", "VIOLA")))
+}
+
+# Biseccao para beta_L exato
+f_rci <- function(bl) {
+  (1-pH)*log(W - pL*bl) + pH*log(W - d + bl - pL*bl) - U_H_proprio
+}
+beta_L_max <- uniroot(f_rci, c(0, d - 1))$root
+cat(sprintf("\nCobertura maxima tipo L: beta_L* = %.2f (%.1f%% de d)\n",
+    beta_L_max, beta_L_max/d*100))
+premio_L_sep <- pL * beta_L_max
+cat(sprintf("Premio tipo L separador: %.2f\n", premio_L_sep))
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+# Espaco (W_NS, W_S) - riqueza sem sinistro vs com sinistro
+W_NS_range <- c(300, W + 50)
+W_S_range <- c(300, W + 50)
+
+plot(NULL, xlim = W_NS_range, ylim = W_S_range,
+     xlab = expression(W^NS ~ "(riqueza sem sinistro)"),
+     ylab = expression(W^S ~ "(riqueza com sinistro)"),
+     main = "Equilibrio separador (Rothschild-Stiglitz)")
+
+# Linha de 45 graus (seguro completo)
+abline(0, 1, col = "#adb5bd", lty = 3, lwd = 1)
+
+# Dotacao (sem seguro)
+points(W, W - d, pch = 17, col = "#fd7e14", cex = 2)
+text(W - 15, W - d - 25, "Dotacao", col = "#fd7e14", cex = 0.65, font = 2)
+
+# Linha atuarial justa tipo H: inclinacao = -(1-pH)/pH
+# Passando por (W-pH*d, W-pH*d)
+W_H_cert <- W - pH * d
+abline(v = W_H_cert, col = "#adb5bd", lty = 4, lwd = 0.5)
+slope_H <- -(1 - pH) / pH
+# y - W_H_cert = slope_H * (x - W_H_cert) nao — reta atuarial
+# Parametrica: W_NS = W - alpha, W_S = W - d + beta - alpha, com alpha = pH*beta
+# => W_NS = W - pH*beta, W_S = W - d + (1-pH)*beta
+beta_seq <- seq(0, d * 1.2, length = 200)
+WNS_H <- W - pH * beta_seq
+WS_H  <- W - d + (1 - pH) * beta_seq
+lines(WNS_H, WS_H, col = "#dc3545", lwd = 2, lty = 2)
+
+# Linha atuarial justa tipo L
+WNS_L <- W - pL * beta_seq
+WS_L  <- W - d + (1 - pL) * beta_seq
+lines(WNS_L, WS_L, col = "#0d6efd", lwd = 2, lty = 2)
+
+# Contrato tipo H (seguro completo)
+points(W_H_cert, W_H_cert, pch = 19, col = "#dc3545", cex = 2)
+text(W_H_cert - 30, W_H_cert + 25, expression(C[H] ~ "(seguro completo)"),
+     col = "#dc3545", cex = 0.6, font = 2)
+
+# Contrato tipo L (seguro parcial)
+WNS_L_sep <- W - pL * beta_L_max
+WS_L_sep  <- W - d + (1 - pL) * beta_L_max
+points(WNS_L_sep, WS_L_sep, pch = 19, col = "#0d6efd", cex = 2)
+text(WNS_L_sep + 10, WS_L_sep - 25, expression(C[L] ~ "(seguro parcial)"),
+     col = "#0d6efd", cex = 0.6, font = 2)
+
+# Curvas de indiferenca tipo H passando por C_H
+# EU_H = (1-pH)*log(W_NS) + pH*log(W_S) = log(W_H_cert)
+U_H_star <- log(W_H_cert)
+WNS_ci <- seq(350, W+20, length = 300)
+WS_ci_H <- exp((U_H_star - (1-pH)*log(WNS_ci)) / pH)
+valid_H <- WS_ci_H > 300 & WS_ci_H < W+50
+lines(WNS_ci[valid_H], WS_ci_H[valid_H], col = "#dc3545", lwd = 1.5, lty = 4)
+
+# Curva de indiferenca tipo L passando por C_L
+U_L_star <- (1-pL)*log(WNS_L_sep) + pL*log(WS_L_sep)
+WS_ci_L <- exp((U_L_star - (1-pL)*log(WNS_ci)) / pL)
+valid_L <- WS_ci_L > 300 & WS_ci_L < W+50
+lines(WNS_ci[valid_L], WS_ci_L[valid_L], col = "#0d6efd", lwd = 1.5, lty = 4)
+
+legend("bottomright",
+       legend = c("Reta justa H", "Reta justa L",
+                  expression(C[H] ~ "(completo)"), expression(C[L] ~ "(parcial)"),
+                  "CI tipo H", "CI tipo L", "45 graus"),
+       col = c("#dc3545", "#0d6efd", "#dc3545", "#0d6efd",
+               "#dc3545", "#0d6efd", "#adb5bd"),
+       lwd = c(2, 2, NA, NA, 1.5, 1.5, 1),
+       lty = c(2, 2, NA, NA, 4, 4, 3),
+       pch = c(NA, NA, 19, 19, NA, NA, NA),
+       cex = 0.5, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

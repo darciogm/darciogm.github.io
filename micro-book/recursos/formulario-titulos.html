@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seleção de Títulos Divertidos — Capítulos</title>
+<style>
+  :root { --bg: #1a1a2e; --card: #16213e; --accent: #e94560; --text: #eee; --muted: #aaa; --keep: #2d6a4f; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding: 1.5rem; max-width: 820px; margin: 0 auto; }
+  h1 { text-align: center; margin: 1rem 0 .3rem; font-size: 1.5rem; }
+  .subtitle { text-align: center; color: var(--muted); margin-bottom: 1.5rem; font-size: .9rem; }
+  .progress-bar { position: sticky; top: 0; z-index: 10; background: var(--bg); padding: .5rem 0; }
+  .progress-bar .track { background: #333; border-radius: 6px; height: 12px; overflow: hidden; }
+  .progress-bar .fill { background: linear-gradient(90deg, var(--accent), #ff6b6b); height: 100%; width: 0; transition: width .3s; border-radius: 6px; }
+  .progress-text { text-align: center; font-size: .8rem; color: var(--muted); margin-top: 4px; }
+  .item { background: var(--card); border-radius: 10px; margin: .8rem 0; padding: 1rem 1.2rem; }
+  .item-label { font-size: .82rem; color: var(--muted); margin-bottom: .15rem; text-transform: uppercase; letter-spacing: .5px; }
+  .item-current { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: .7rem; padding-bottom: .5rem; border-bottom: 1px solid #333; }
+  .options { display: flex; flex-direction: column; gap: 5px; }
+  .opt { display: flex; align-items: center; gap: .6rem; padding: 8px 12px; border-radius: 6px; cursor: pointer; transition: background .15s; }
+  .opt:hover { background: rgba(233,69,96,.12); }
+  .opt.keep-opt:hover { background: rgba(45,106,79,.2); }
+  .opt input { accent-color: var(--accent); transform: scale(1.2); }
+  .opt.keep-opt input { accent-color: var(--keep); }
+  .opt span { font-size: .92rem; }
+  .opt .tag { font-size: .7rem; padding: 1px 6px; border-radius: 3px; margin-left: 6px; font-weight: 600; }
+  .tag-atual { background: var(--keep); color: #fff; }
+  .tag-novo { background: #e9456033; color: var(--accent); }
+  .actions { text-align: center; margin: 2rem 0; }
+  .btn { background: var(--accent); color: #fff; border: none; padding: .8rem 2rem; font-size: 1rem; border-radius: 8px; cursor: pointer; margin: .3rem; }
+  .btn:hover { opacity: .85; }
+  .btn.secondary { background: #0f3460; }
+  #output { display: none; background: var(--card); border-radius: 10px; padding: 1.2rem; margin: 1rem 0; white-space: pre-wrap; font-family: monospace; font-size: .88rem; }
+  .copied-msg { color: #4caf50; font-weight: bold; display: none; margin-top: .5rem; }
+</style>
+</head>
+<body>
+
+<h1>Novos Titulos — Capitulos</h1>
+<p class="subtitle">Para cada capitulo, escolha o titulo atual ou uma alternativa divertida. Ao final, copie e cole no chat.</p>
+
+<div class="progress-bar">
+  <div class="track"><div class="fill" id="progressFill"></div></div>
+  <div class="progress-text" id="progressText">0 / 0</div>
+</div>
+
+<div id="formContainer"></div>
+
+<div class="actions">
+  <button class="btn" onclick="generateOutput()">Gerar Resultado</button>
+  <button class="btn secondary" onclick="copyOutput()">Copiar para Colar no Chat</button>
+  <div class="copied-msg" id="copiedMsg">Copiado!</div>
+</div>
+
+<div id="output"></div>
+
+<script>
+const CAPS = [
+  { id: "cap2", current: "O Manual de Sobrevivencia Matematica", opts: [
+    "Socorro! Tem Derivada no Meu Livro de Economia",
+    "Matematica: O Chefe de Fase Antes do Jogo Comecar",
+    "Tudo Que Voce Fingiu Entender no Calculo I"
+  ]},
+  { id: "cap3", current: "Mais E Melhor -- Sera?", opts: [
+    "Eu Quero Tudo (Disse o Consumidor ao Universo)",
+    "A Arte de Ranquear Desejos Sem Surtar",
+    "Prefiro A ou B? Sim."
+  ]},
+  { id: "cap4", current: "Voce Quer Tudo. Mas Nao Pode.", opts: [
+    "O Orcamento Nao Liga Pros Seus Sonhos",
+    "Champagne na Wishlist, Cerveja no Bolso",
+    "Maximizando a Felicidade (Com o Cartao Estourado)"
+  ]},
+  { id: "cap5", current: "Slutsky no Supermercado", opts: [
+    "Por Que Voce Comprou Isso? (Slutsky Explica)",
+    "O Carrinho de Supermercado e uma Equacao Disfarçada",
+    "Efeito-Renda: Quando o Salario Sobe e Voce Troca de Marca"
+  ]},
+  { id: "cap6", current: "Substitutos, Complementos e Relacoes Complicadas", opts: [
+    "Cafe e Acucar: Uma Historia de Amor. Cafe e Cha: E Complicado.",
+    "O Tinder dos Bens: Match, Rival ou Friendzone?",
+    "Relacoes Complicadas (Edição Microeconomia)"
+  ]},
+  { id: "cap7", current: "O Preco do Talvez", opts: [
+    "Aposta Aceita: Decisoes Quando Ninguem Sabe de Nada",
+    "Cara ou Coroa? A Microeconomia da Incerteza",
+    "O Seguro Morreu de Velho (Mas Pagou Premio)"
+  ]},
+  { id: "cap8", current: "Nem Tao Racionais Assim", opts: [
+    "Homo Economicus? Mais pra Homo Distraidus",
+    "Seu Cerebro Esta Mentindo (E Kahneman Pode Provar)",
+    "Vieses: O Manual de Erros que Voce Comete Todo Dia"
+  ]},
+  { id: "cap9a", current: "Jogos Estaticos com Informacao Completa", opts: [
+    "Todo Mundo Ve, Todo Mundo Joga, Ninguem Se Mexe",
+    "Pedra, Papel, Nash",
+    "O Xadrez dos Economistas (Mas Sem Tabuleiro)"
+  ]},
+  { id: "cap9b", current: "Jogos Dinamicos", opts: [
+    "Primeiro Voce, Depois Eu (E Ninguem Confia em Ninguem)",
+    "O Jogo Continua: Sequencial, Repetido, Sem Fim",
+    "Se Eu Soubesse Que Voce Ia Fazer Isso..."
+  ]},
+  { id: "cap9c", current: "Informacao Incompleta", opts: [
+    "Jogando no Escuro (E Fingindo Que Sabe)",
+    "Eu Sei Que Voce Nao Sabe Que Eu Sei",
+    "Poker Economico: Blefe, Tipos e Bayes"
+  ]},
+  { id: "cap9d", current: "Sinais e Contratos", opts: [
+    "O Diploma E Caro, Mas O Sinal E Gratis?",
+    "Prove Que Voce Presta (Sem Falar Demais)",
+    "Contratos: O Manual Anti-Espertalhao"
+  ]},
+  { id: "cap10", current: "Mais Maos, Mais Maquinas -- Mais Produto?",  opts: [
+    "Coloca Mais Gente! (Mas O Produto Nao Dobra)",
+    "A Fabrica, a Funcao e a Frustracao dos Rendimentos Decrescentes",
+    "Receita de Bolo Economico: Trabalho, Capital e Uma Pitada de Tecnologia"
+  ]},
+  { id: "cap11", current: "Por Que Nada E de Graca", opts: [
+    "A Conta Sempre Chega (E Vem em Formato de U)",
+    "Custo Marginal: O Penetra que Aparece em Toda Festa",
+    "Nao Existe Almoco Gratis, Mas Existe Custo Fixo"
+  ]},
+  { id: "cap12", current: "A Firma Nua: Anatomia do Lucro", opts: [
+    "A Firma Pelada: Receita, Custo e Vergonha Alheia",
+    "Lucro = Receita - Custo (E Tudo que Pode Dar Errado no Meio)",
+    "Produzir ou Fechar? O Drama Diario da Firma"
+  ]},
+  { id: "cap13", current: "O Leiloeiro que Ninguem Ve", opts: [
+    "A Mao Invisivel Passou Alcool Gel e Sumiu",
+    "Oferta, Demanda e o Fantasma que Acerta o Preco",
+    "O Mercado Se Equilibra Sozinho (Ou Pelo Menos Tenta)"
+  ]},
+  { id: "cap14", current: "Quando Tudo se Encaixa (ou Quase Isso): Equilibrio Geral", opts: [
+    "Todos os Mercados ao Mesmo Tempo (Boa Sorte)",
+    "O Quebra-Cabeca de Walras: 10 Mil Pecas, Zero Manual",
+    "Pareto Disse Que Ta Otimo. Voce Discorda?"
+  ]},
+  { id: "cap15", current: "Sem Concorrente, Sem Piedade", opts: [
+    "Eu Sou O Mercado (Disse o Monopolista)",
+    "Sozinho, Feliz e Cobrando Caro",
+    "O Vilao da Microeconomia: Monopolio Sem Remorso"
+  ]},
+  { id: "cap16", current: "Poucos -- e Isso Muda Tudo", opts: [
+    "Tres Empresas Num Bar: O Oligopolio Explicado",
+    "Poucos Rivais, Muita Paranoia",
+    "Cournot, Bertrand e Stackelberg Entram Numa Sala..."
+  ]},
+  { id: "cap17", current: "O Preco do Suor: Economia do Trabalho", opts: [
+    "Quanto Vale Sua Segunda-Feira?",
+    "Trabalhar ou Assistir Netflix? (O Modelo Trabalho-Lazer)",
+    "O Salario Subiu e Voce... Trabalhou Menos?"
+  ]},
+  { id: "cap18", current: "A Paciencia Tem Preco", opts: [
+    "R$ 100 Hoje ou R$ 110 Amanha? (A Resposta Nao E Obvia)",
+    "Juros: O Preco de Nao Gastar Tudo Agora",
+    "O Futuro Tem Desconto (Literalmente)"
+  ]},
+  { id: "cap19", current: "Limoes, Sinais e Contratos", opts: [
+    "Carros Usados, Diplomas Caros e Seguros Suspeitos",
+    "Quando Um Lado Sabe Mais (E Isso Estraga Tudo)",
+    "O Mercado dos Limoes: Por Que O Bom Paga Pelo Ruim"
+  ]},
+  { id: "cap20", current: "Fumaca, Caronas e Tragedias", opts: [
+    "Seu Vizinho Polui, Voce Paga: Bem-Vindo as Externalidades",
+    "Bens Publicos: Todos Querem, Ninguem Quer Pagar",
+    "A Tragedia dos Comuns (E Ninguem Trouxe Solucao)"
+  ]},
+  { id: "cap21", current: "Plataformas, Redes e Dados: Microeconomia da Era Digital", opts: [
+    "Se E De Graca, O Produto E Voce",
+    "Likes, Dados e Monopolios: A Economia do Seu Feed",
+    "OK Computador: Quando Algoritmos Viram o Mercado"
+  ]},
+  { id: "cap22", current: "O Laboratorio do Economista: Economia Experimental", opts: [
+    "Cobaias com Planilha: Economia de Laboratorio",
+    "Prove ou Cale-se: A Revolucao dos Experimentos",
+    "RCTs, Diff-in-Diff e Outras Siglas que Mudaram a Economia"
+  ]},
+  { id: "cap23", current: "Microeconomia da Saude", opts: [
+    "Doutor, Quanto Custa? (Arrow Ja Sabia Que Ia Dar Problema)",
+    "O Paciente Impaciente e o Mercado Imperfeito",
+    "SUS, NHS e o Sonho de Um Mercado que Nao Existe"
+  ]},
+  { id: "cap24", current: "Economia Ambiental: Mercados, Clima e Sustentabilidade", opts: [
+    "O Planeta Manda a Conta (E Ninguem Quer Pagar)",
+    "Carbono, Pigou e o Imposto Que Pode Salvar o Mundo",
+    "Quanto Vale Um Por do Sol? (Nao, Serio, Quanto?)"
+  ]},
+];
+
+const total = CAPS.length;
+const container = document.getElementById('formContainer');
+
+CAPS.forEach(cap => {
+  const div = document.createElement('div');
+  div.className = 'item';
+  let html = `<div class="item-label">Titulo atual:</div>`;
+  html += `<div class="item-current">${cap.current}</div>`;
+  html += `<div class="options">`;
+  html += `<label class="opt keep-opt"><input type="radio" name="${cap.id}" value="0" onchange="updateProgress()"><span>Manter titulo atual <span class="tag tag-atual">ATUAL</span></span></label>`;
+  cap.opts.forEach((opt, i) => {
+    html += `<label class="opt"><input type="radio" name="${cap.id}" value="${i+1}" onchange="updateProgress()"><span>${opt} <span class="tag tag-novo">NOVO</span></span></label>`;
+  });
+  html += `</div>`;
+  div.innerHTML = html;
+  container.appendChild(div);
+});
+
+function updateProgress() {
+  const n = document.querySelectorAll('input[type=radio]:checked').length;
+  document.getElementById('progressFill').style.width = (n / total * 100) + '%';
+  document.getElementById('progressText').textContent = n + ' / ' + total + ' selecionados';
+}
+updateProgress();
+
+function generateOutput() {
+  let lines = [];
+  CAPS.forEach(cap => {
+    const sel = document.querySelector(`input[name="${cap.id}"]:checked`);
+    if (sel) {
+      const v = parseInt(sel.value);
+      if (v === 0) {
+        lines.push(`${cap.id}: MANTER → "${cap.current}"`);
+      } else {
+        lines.push(`${cap.id}: TROCAR → "${cap.opts[v-1]}"`);
+      }
+    } else {
+      lines.push(`${cap.id}: NAO SELECIONADO`);
+    }
+  });
+  const out = document.getElementById('output');
+  out.textContent = lines.join('\n');
+  out.style.display = 'block';
+  out.scrollIntoView({ behavior: 'smooth' });
+}
+
+function copyOutput() {
+  const out = document.getElementById('output');
+  if (!out.textContent) generateOutput();
+  navigator.clipboard.writeText(out.textContent).then(() => {
+    const msg = document.getElementById('copiedMsg');
+    msg.style.display = 'block';
+    setTimeout(() => msg.style.display = 'none', 2000);
+  });
+}
+</script>
+</body>
+</html>

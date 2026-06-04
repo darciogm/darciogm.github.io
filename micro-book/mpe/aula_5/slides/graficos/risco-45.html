@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+  Diagrama L=1, S=2 — Aula 5 MPE 2026/32 (Arrow-Debreu I)
+  Eixos: x1 = consumo se chove, x2 = consumo se sol (ambos em [0, 160]).
+  Linha de 45°: consumo idêntico nos dois estados (sem risco).
+  Ponto de dotação omega = (omega1, omega2) ajustável via sliders.
+  Exposição ao risco visualizada como:
+    (a) projeção perpendicular do ponto até a 45° (segmento azul),
+    (b) gap |x2 - x1| nos eixos (linhas pontilhadas e label numérico).
+  Distância à 45° = |x2 - x1| / sqrt(2) (geometricamente exata, perp à reta).
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrama L=1, S=2 — Aula 5 MPE</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#222;padding:0.45rem 0.6rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:0.8rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 460px;max-width:560px;height:440px;border:1px solid #ddd;border-radius:6px;background:#fafafa}
+    .controls{flex:0 1 310px;padding:0.7rem 0.8rem;background:#f7f7f7;border-radius:6px;border:1px solid #eee;font-size:0.82rem}
+    .controls h3{font-size:0.9rem;color:#C8102E;margin-bottom:0.45rem;border-bottom:1px solid #ddd;padding-bottom:0.25rem}
+    .slider-group{margin-bottom:0.5rem}
+    .slider-group label{display:flex;justify-content:space-between;margin-bottom:0.2rem;font-size:0.85em}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:0.5rem;padding:0.5rem 0.6rem;background:#fff;border:1px solid #ddd;border-radius:4px;line-height:1.45}
+    .info-box .eq{text-align:center;margin:0.2rem 0;font-size:0.88em}
+    .info-box .row{display:flex;justify-content:space-between;font-size:0.8em;margin:0.14rem 0}
+    .info-box .row .lbl{color:#555}
+    .info-box .row .val{font-weight:700;font-variant-numeric:tabular-nums}
+    .info-box .row .val.zero{color:#0a7d2c}
+    .info-box .row .val.risk{color:#C8102E}
+    .info-box .sep{border:none;border-top:1px dashed #ddd;margin:0.4rem 0}
+    .status{margin-top:0.45rem;padding:0.4rem;border-radius:4px;font-size:0.85em;text-align:center;background:#eee;color:#444}
+    .status.safe{background:#e0f5e6;color:#0a7d2c;font-weight:700}
+    .status.risk{background:#fdecec;color:#C8102E;font-weight:700}
+    .btn-row{display:flex;gap:0.4rem;margin-top:0.5rem}
+    .btn-eq{flex:1;padding:0.4rem 0.3rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-family:inherit;font-size:0.78rem;line-height:1.15}
+    .btn-eq:hover{background:#9a0c23}
+    .btn-eq.secondary{background:#1B3A5C}
+    .btn-eq.secondary:hover{background:#13294a}
+    @media (max-width:860px){
+      .graph-container{flex-direction:column;align-items:center}
+      #jxgbox{flex-basis:100%;width:100%}
+      .controls{flex-basis:100%;width:100%;max-width:520px}
+    }
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Bens contingentes — \(L=1,\ S=2\)</h3>
+    <div class="slider-group">
+      <label>Dotação se chove \(\omega_1\): <span class="val" id="val-w1">60</span></label>
+      <input type="range" id="slider-w1" min="0" max="160" step="1" value="60">
+    </div>
+    <div class="slider-group">
+      <label>Dotação se sol \(\omega_2\): <span class="val" id="val-w2">100</span></label>
+      <input type="range" id="slider-w2" min="0" max="160" step="1" value="100">
+    </div>
+    <div class="info-box">
+      <div class="eq">\(\omega = (\omega_1, \omega_2)\) em \(\mathbb{R}^2_+\)</div>
+      <div class="eq">Reta de \(45^\circ\): \(x_2 = x_1\) (consumo sem risco)</div>
+      <hr class="sep">
+      <div class="row"><span class="lbl">\(\omega = (\omega_1,\, \omega_2)\)</span><span class="val" id="val-omega">(60; 100)</span></div>
+      <div class="row"><span class="lbl">Gap \(|x_2 - x_1|\)</span><span class="val" id="val-gap">40</span></div>
+      <div class="row"><span class="lbl">Distância à \(45^\circ\) \(= |x_2-x_1|/\sqrt{2}\)</span><span class="val" id="val-dist">28,28</span></div>
+    </div>
+    <div class="status" id="status">Exposição ao risco: 40 unidades.</div>
+    <div class="btn-row">
+      <button class="btn-eq secondary" onclick="setSafe()">Sem risco \(\omega_1 = \omega_2 = 80\)</button>
+      <button class="btn-eq" onclick="setReset()">Resetar \(\omega = (60, 100)\)</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// --- Parâmetros do problema ---
+var XMAX = 160;                  // limite superior dos eixos
+var W1_DEFAULT = 60, W2_DEFAULT = 100;
+var W_SAFE = 80;                 // dotação sem risco para o botão "Sem risco"
+
+// --- Board: bounding-box quadrada simétrica ---
+var board = JXG.JSXGraph.initBoard('jxgbox', {
+  boundingbox: [-22, 178, 178, -22],
+  axis: false,
+  showCopyright: false,
+  showNavigation: false,
+  keepaspectratio: true,
+  pan: { enabled: false },
+  zoom: { enabled: false }
+});
+
+// Eixos como segmentos limpos (não as setas default do JXG)
+board.create('segment', [[0,0],[XMAX,0]], {strokeColor:'#444', strokeWidth:2, fixed:true, highlight:false, lastArrow:{type:1,size:6}});
+board.create('segment', [[0,0],[0,XMAX]], {strokeColor:'#444', strokeWidth:2, fixed:true, highlight:false, lastArrow:{type:1,size:6}});
+
+// Ticks discretos (40, 80, 120, 160) em ambos os eixos
+var ticks = [40, 80, 120, 160];
+for (var t=0; t<ticks.length; t++){
+  var v = ticks[t];
+  // ticks no eixo x
+  board.create('segment', [[v,-2],[v,2]], {strokeColor:'#444', strokeWidth:1.2, fixed:true, highlight:false});
+  board.create('text', [v, -10, String(v)], {fontSize:10, color:'#555', fixed:true, anchorX:'middle'});
+  // ticks no eixo y
+  board.create('segment', [[-2,v],[2,v]], {strokeColor:'#444', strokeWidth:1.2, fixed:true, highlight:false});
+  board.create('text', [-7, v, String(v)], {fontSize:10, color:'#555', fixed:true, anchorX:'right'});
+}
+
+// Labels dos eixos
+board.create('text', [XMAX/2, -18, 'x₁ — consumo se chove'], {fontSize:12, color:'#555', fixed:true, anchorX:'middle'});
+board.create('text', [-16, XMAX/2, 'x₂ — consumo se sol'], {fontSize:12, color:'#555', fixed:true, anchorX:'middle', rotate:90});
+board.create('text', [-5, -8, '0'], {fontSize:10, color:'#555', fixed:true, anchorX:'right'});
+
+// --- Reta de 45° (consumo sem risco / certainty line) ---
+board.create('segment', [[0,0],[XMAX,XMAX]],
+  {strokeColor:'#0a7d2c', strokeWidth:2.5, dash:2, fixed:true, highlight:false});
+// Label posicionado abaixo da reta (y = x - 12) para não colidir com ω quando ω ≈ (160,160).
+board.create('text', [XMAX-4, XMAX-16, 'Consumo sem risco (45°)'],
+  {fontSize:11, color:'#0a7d2c', fixed:true, anchorX:'right', cssStyle:'font-style:italic'});
+
+// Estado dinâmico
+var state = { w1: W1_DEFAULT, w2: W2_DEFAULT };
+
+// --- Projeção perpendicular do ponto omega sobre a reta x2 = x1 ---
+// Pé da perpendicular: P = ((w1+w2)/2, (w1+w2)/2)
+function footX(){ return (state.w1 + state.w2) / 2; }
+function footY(){ return (state.w1 + state.w2) / 2; }
+
+// --- Ponto omega (vermelho, fixo via sliders) ---
+var omega = board.create('point', [function(){ return state.w1; }, function(){ return state.w2; }],
+  {name:'ω', size:5, color:'#C8102E', fixed:true,
+   label:{offset:[10, 12], fontSize:14, color:'#C8102E', cssStyle:'font-weight:700'}});
+
+// Pé da perpendicular na reta 45° (azul)
+var foot = board.create('point', [footX, footY],
+  {name:'', size:3, color:'#1B3A5C', fixed:true, withLabel:false});
+
+// Segmento perpendicular omega -> pé da perpendicular (linha sólida azul)
+board.create('segment', [omega, foot],
+  {strokeColor:'#1B3A5C', strokeWidth:2.2, fixed:true, highlight:false});
+
+// Linhas-guia pontilhadas: omega aos eixos (cinza claro)
+board.create('segment', [[function(){return state.w1;}, 0], omega],
+  {strokeColor:'#bbb', strokeWidth:1, dash:1, fixed:true, highlight:false});
+board.create('segment', [[0, function(){return state.w2;}], omega],
+  {strokeColor:'#bbb', strokeWidth:1, dash:1, fixed:true, highlight:false});
+
+// Labels dinâmicos das coordenadas no eixo (omega_1, omega_2)
+board.create('text', [function(){return state.w1;}, -10, function(){ return 'ω₁ = ' + state.w1; }],
+  {fontSize:11, color:'#C8102E', fixed:true, anchorX:'middle'});
+board.create('text', [-7, function(){return state.w2;}, function(){ return 'ω₂ = ' + state.w2; }],
+  {fontSize:11, color:'#C8102E', fixed:true, anchorX:'right'});
+
+// Label "exposição" no meio do segmento perpendicular
+// Esconde quando gap pequeno (<6) para evitar sobreposição com o segmento curto.
+board.create('text', [
+  function(){ return (state.w1 + footX()) / 2 + 6; },
+  function(){ return (state.w2 + footY()) / 2; },
+  function(){
+    var gap = Math.abs(state.w2 - state.w1);
+    if (gap < 6) return '';
+    return 'exposição';
+  }
+], {fontSize:11, color:'#1B3A5C', fixed:true, anchorX:'left', cssStyle:'font-style:italic;font-weight:700'});
+
+// --- Update ---
+function pretty(x, decimals){
+  if (decimals === undefined) decimals = 0;
+  if (Math.abs(x) < Math.pow(10, -decimals-1)) x = 0;
+  return x.toFixed(decimals).replace('.', ',');
+}
+
+function update(){
+  var w1 = parseInt(document.getElementById('slider-w1').value, 10);
+  var w2 = parseInt(document.getElementById('slider-w2').value, 10);
+  state.w1 = w1;
+  state.w2 = w2;
+
+  document.getElementById('val-w1').textContent = w1;
+  document.getElementById('val-w2').textContent = w2;
+  document.getElementById('val-omega').textContent = '(' + w1 + '; ' + w2 + ')';
+
+  var gap = Math.abs(w2 - w1);
+  var dist = gap / Math.sqrt(2);
+  var gapEl = document.getElementById('val-gap');
+  var distEl = document.getElementById('val-dist');
+  gapEl.textContent = pretty(gap, 0);
+  distEl.textContent = pretty(dist, 2);
+
+  var safe = gap < 0.5;
+  gapEl.className = 'val ' + (safe ? 'zero' : 'risk');
+  distEl.className = 'val ' + (safe ? 'zero' : 'risk');
+
+  var st = document.getElementById('status');
+  if (safe){
+    st.textContent = '✓ Sem risco: ω₁ = ω₂ = ' + w1 + '. Sobre a 45°.';
+    st.className = 'status safe';
+  } else {
+    var dir = (w2 > w1) ? 'mais consumo se sol' : 'mais consumo se chove';
+    st.textContent = '⚠ Exposição: |x₂ − x₁| = ' + gap + ' (' + dir + ').';
+    st.className = 'status risk';
+  }
+
+  board.update();
+  if (window.MathJax && window.MathJax.typesetPromise){
+    MathJax.typesetPromise([document.querySelector('.controls')]);
+  }
+}
+
+function setSafe(){
+  document.getElementById('slider-w1').value = W_SAFE;
+  document.getElementById('slider-w2').value = W_SAFE;
+  update();
+}
+function setReset(){
+  document.getElementById('slider-w1').value = W1_DEFAULT;
+  document.getElementById('slider-w2').value = W2_DEFAULT;
+  update();
+}
+
+document.getElementById('slider-w1').addEventListener('input', update);
+document.getElementById('slider-w2').addEventListener('input', update);
+update();
+</script>
+</body>
+</html>

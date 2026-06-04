@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Paradoxo do Valor e Utilidade Marginal</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Paradoxo Água vs. Diamante — Utilidade Marginal
+# Cap. 1, Seção 1.5: A revolução marginalista resolve Smith
+
+# Utilidade: U(q) = A * q^alpha  (côncava se alpha < 1)
+# Água: abundante, utilidade total alta, UMg baixa
+# Diamante: escasso, utilidade total menor, UMg alta
+
+A_agua  <- 50;  alpha_agua  <- 0.4   # altere!
+A_diam  <- 30;  alpha_diam  <- 0.3
+
+q_agua  <- 100   # quantidade consumida de água
+q_diam  <- 2     # quantidade consumida de diamante
+
+U     <- function(A, al, q) A * q^al
+UMg   <- function(A, al, q) A * al * q^(al - 1)
+
+cat("=== Paradoxo do Valor (Smith → Jevons/Menger/Walras) ===\n\n")
+cat(sprintf("  Água:     U_total = %.1f   UMg = %.4f\n",
+    U(A_agua, alpha_agua, q_agua), UMg(A_agua, alpha_agua, q_agua)))
+cat(sprintf("  Diamante: U_total = %.1f   UMg = %.4f\n\n",
+    U(A_diam, alpha_diam, q_diam), UMg(A_diam, alpha_diam, q_diam)))
+cat("Preço ~ UMg, não U_total!\n")
+cat(sprintf("  UMg(diamante)/UMg(água) = %.0fx\n",
+    UMg(A_diam, alpha_diam, q_diam) / UMg(A_agua, alpha_agua, q_agua)))
+
+# Gráfico
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# Painel 1: Utilidade Total
+q <- seq(0.1, 120, length.out = 300)
+plot(q, U(A_agua, alpha_agua, q), type = "l", col = "steelblue",
+     lwd = 2, xlab = "Quantidade", ylab = "Utilidade Total",
+     main = "Utilidade Total", ylim = c(0, max(U(A_agua, alpha_agua, 120))))
+lines(q, U(A_diam, alpha_diam, q), col = "#C8102E", lwd = 2)
+points(q_agua, U(A_agua, alpha_agua, q_agua), pch=19, col="steelblue", cex=1.5)
+points(q_diam, U(A_diam, alpha_diam, q_diam), pch=19, col="#C8102E", cex=1.5)
+legend("topleft", legend = c("Água", "Diamante"),
+       col = c("steelblue", "#C8102E"), lwd = 2, cex = 0.85)
+text(q_agua, U(A_agua, alpha_agua, q_agua)*1.08,
+     "q=100", col = "steelblue", cex = 0.8, font = 2)
+text(q_diam + 10, U(A_diam, alpha_diam, q_diam)*1.3,
+     "q=2", col = "#C8102E", cex = 0.8, font = 2)
+
+# Painel 2: Utilidade Marginal
+q2 <- seq(0.5, 50, length.out = 300)
+plot(q2, UMg(A_agua, alpha_agua, q2), type = "l", col = "steelblue",
+     lwd = 2, xlab = "Quantidade", ylab = "Utilidade Marginal",
+     main = "Utilidade Marginal (= Preço)", ylim = c(0, 30))
+lines(q2, UMg(A_diam, alpha_diam, q2), col = "#C8102E", lwd = 2)
+abline(v = q_diam, lty = 3, col = "#C8102E")
+
+# Marcar UMg nos pontos de consumo
+umg_a <- UMg(A_agua, alpha_agua, q_agua)
+umg_d <- UMg(A_diam, alpha_diam, q_diam)
+# Água: UMg tão baixa que mal aparece (q=100 fora do gráfico)
+arrows(45, umg_a + 2, 50, umg_a + 0.3, length = 0.1,
+       col = "steelblue", lwd = 1.5)
+text(40, umg_a + 3, sprintf("UMg(água)=%.2f", umg_a),
+     col = "steelblue", cex = 0.8, font = 2)
+points(q_diam, umg_d, pch = 19, col = "#C8102E", cex = 1.5)
+text(q_diam + 3, umg_d + 1, sprintf("UMg(diam)=%.1f", umg_d),
+     col = "#C8102E", cex = 0.8, font = 2)
+
+legend("topright", legend = c("UMg Água", "UMg Diamante"),
+       col = c("steelblue", "#C8102E"), lwd = 2, cex = 0.85)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. O paradoxo de Smith: água tem utilidade total enorme mas preço baixo; diamante tem utilidade total menor mas preço alto. A solução? O preço reflete a utilidade <em>marginal</em>, não a total. Altere as quantidades para ver!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

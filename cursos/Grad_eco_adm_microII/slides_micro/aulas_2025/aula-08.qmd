@@ -1,0 +1,377 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 08 — Equação de Slutsky: Teoria"
+author: "Prof. Darcio Genicolo Martins"
+date: "Decomposição de Hicks, Slutsky e Lei da Demanda"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Por Que Decompor? {data-background-color="#E50505"}
+
+## Motivação: Preço Subiu — E Agora?
+
+Quando o preço da carne cai, você compra mais. Mas **por quê**?
+
+. . .
+
+Há duas razões misturadas:
+
+1. A carne ficou **mais barata que o frango** → troca frango por carne (**efeito substituição**)
+2. Carne mais barata → seu salário **rende mais** → pode comprar mais de tudo (**efeito renda**)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No supermercado, os dois efeitos acontecem ao mesmo tempo. Mas o governo precisa separá-los: o impacto distributivo de uma redução tarifária depende de quanto é troca e quanto é enriquecimento.
+:::
+
+## Decomposição: Visão Geral
+
+::: {.eq-highlight}
+$$\underbrace{\Delta x_i}_{\text{Efeito Total}} = \underbrace{\Delta x_i^{ES}}_{\text{Efeito Substituição}} + \underbrace{\Delta x_i^{ER}}_{\text{Efeito Renda}}$$
+:::
+
+. . .
+
+- **ES**: movimento ao longo da CI (preço relativo muda, bem-estar constante)
+- **ER**: movimento entre CIs (poder de compra muda)
+
+. . .
+
+Duas abordagens clássicas para separar esses efeitos:
+
+- **Hicks** (1934): mantém a *utilidade* constante
+- **Slutsky** (1915): mantém o *poder de compra* constante
+
+## Decomposição de Hicks {data-background-color="#E50505"}
+
+## Hicks: Compensação pela Utilidade
+
+Na abordagem de Hicks:
+
+. . .
+
+1. O preço $p_1$ cai
+2. **Etapa ES**: compensamos a renda para que o consumidor fique na **mesma CI** com os novos preços
+3. **Etapa ER**: devolvemos a renda ao nível original
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Vantagem**: teoricamente elegante — utilidade como referência
+
+:::
+::: {.column width="50%"}
+**Desvantagem**: exige conhecer as curvas de indiferença (não observáveis)
+
+:::
+::::
+
+## Decomposição de Slutsky
+
+Na abordagem de Slutsky:
+
+. . .
+
+1. O preço $p_1$ muda por $\Delta p_1$
+2. Compensamos a renda de modo que a **cesta original** permaneça acessível:
+
+::: {.eq-highlight}
+$$\Delta I^S = x_1^* \cdot \Delta p_1$$
+:::
+
+. . .
+
+3. **ES**: nova escolha com $(\mathbf{p}', I + \Delta I^S)$ vs. cesta original
+4. **ER**: diferença entre a escolha final (sem compensação) e a escolha compensada
+
+. . .
+
+:::{.callout-note title="Convergência"}
+Para variações **infinitesimais**, as decomposições de Hicks e Slutsky coincidem.
+:::
+
+## Efeito Renda e Substituição — Interativo
+
+<iframe src="graficos/cap05/efeito-renda-substituicao.html" title="Decomposição ES + ER" width="1100" height="560" style="border:none;"></iframe>
+
+## A Equação de Slutsky {data-background-color="#E50505"}
+
+## A Equação Fundamental
+
+::: {.eq-highlight}
+$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="33%"}
+**Efeito Total**
+
+$\partial x_i / \partial p_j$
+
+(marshalliana)
+:::
+::: {.column width="33%"}
+**Efeito Substituição**
+
+$\partial h_i / \partial p_j$
+
+(hicksiana; sempre $\leq 0$ para $i=j$)
+:::
+::: {.column width="33%"}
+**Efeito Renda**
+
+$-x_j \cdot \partial x_i / \partial I$
+
+(ponderado pela quantidade)
+:::
+::::
+
+## Demonstração da Equação de Slutsky {.smaller}
+
+**Passo 1**: Identidade $h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u}))$
+
+. . .
+
+**Passo 2**: Diferenciando em relação a $p_j$:
+
+$$\frac{\partial h_i}{\partial p_j} = \frac{\partial x_i}{\partial p_j} + \frac{\partial x_i}{\partial I} \cdot \frac{\partial E}{\partial p_j}$$
+
+. . .
+
+**Passo 3**: Pelo Lema de Shephard: $\partial E / \partial p_j = h_j = x_j$ (no ótimo)
+
+. . .
+
+**Passo 4**: Rearranjando:
+
+$$\frac{\partial x_i}{\partial p_j} = \frac{\partial h_i}{\partial p_j} - x_j \frac{\partial x_i}{\partial I} \qquad \blacksquare$$
+
+:::{.callout-note title="Elegância"}
+A demonstração usa apenas a identidade de dualidade e o Lema de Shephard — as ferramentas construídas na Aula 18.
+:::
+
+## Bens Normais, Inferiores e Giffen {.smaller}
+
+| Tipo de Bem | ES | ER | Efeito Total | Exemplo |
+|:---|:---:|:---:|:---:|:---|
+| **Normal** | $-$ | $-$ | $-$ | Carne, restaurante |
+| **Inferior comum** | $-$ | $+$ (pequeno) | $-$ | Farinha de mandioca |
+| **Giffen** | $-$ | $+$ (grande) | $+$ | Batata na Irlanda (1845?) |
+
+. . .
+
+:::{.callout-warning title="Cuidado com o sinal"}
+O ER na Slutsky tem sinal **negativo** na fórmula. Para um bem normal ($\partial x_i/\partial I > 0$), o termo $-x_j \partial x_i/\partial I$ é **negativo** — reforça o ES.
+:::
+
+## Bem Normal: ES e ER se Reforçam
+
+:::: {.columns}
+::: {.column width="55%"}
+
+Quando $p_1 \uparrow$ para um **bem normal**:
+
+- **ES** < 0: $x_1$ cai (bem ficou relativamente caro)
+- **ER** < 0: consumidor ficou mais pobre → compra menos de $x_1$
+- **Total**: queda inequívoca em $x_1$
+
+. . .
+
+> A lei da demanda vale **sempre** para bens normais.
+
+:::
+::: {.column width="40%"}
+
+:::{.callout-note title="Resultado"}
+Se o bem é normal, a curva de demanda marshalliana é **negativamente inclinada** — garantido pela Slutsky.
+:::
+
+:::
+::::
+
+## Bem Inferior: ES e ER se Opõem
+
+Quando $p_1 \uparrow$ para um **bem inferior**:
+
+. . .
+
+- **ES** < 0: bem ficou relativamente caro → substitui
+- **ER** > 0: ficou mais pobre → consome **mais** do bem inferior
+
+. . .
+
+O efeito total depende de qual domina:
+
+- Se $|ES| > |ER|$: demanda cai → **inferior comum** (caso típico)
+- Se $|ES| < |ER|$: demanda **sobe** → **bem Giffen**
+
+. . .
+
+:::{.callout-warning title="Bem Giffen"}
+Bens Giffen são uma curiosidade teórica. Na prática, pouquíssimos (se algum) foram documentados convincentemente. O ES quase sempre domina.
+:::
+
+## Curva de Engel e Bens Normais/Inferiores
+
+<iframe src="graficos/cap05/curva-engel.html" title="Curva de Engel e Bens Normais/Inferiores" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## A Lei da Demanda
+
+Da equação de Slutsky para $i = j$:
+
+$$\frac{\partial x_i}{\partial p_i} = \underbrace{\frac{\partial h_i}{\partial p_i}}_{\leq 0} - \underbrace{x_i \frac{\partial x_i}{\partial I}}_{\text{sinal depende do bem}}$$
+
+. . .
+
+:::{.callout-tip title="Resultado fundamental"}
+Se o bem é **normal** ($\partial x_i/\partial I > 0$), ambos os termos são negativos, e a **lei da demanda** vale: $\partial x_i/\partial p_i < 0$.
+:::
+
+. . .
+
+A lei da demanda **pode falhar** apenas para bens inferiores com efeito renda muito grande (Giffen) — caso extremo e empiricamente raro.
+
+## Slutsky em Ação — Interativo
+
+Ajuste $\Delta p_1$ para ver a decomposição ES + ER:
+
+<div id="graph-a19-slutsky" style="width:700px;height:330px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\Delta p_1$: <input type="range" id="sl-a19-dp" min="-3" max="3" value="1" step="0.5" oninput="updA19()"> <span id="val-a19-dp">1.0</span></label>
+  <label>$\alpha$: <input type="range" id="sl-a19-a" min="0.2" max="0.8" value="0.5" step="0.05" oninput="updA19()"> <span id="val-a19-a">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a19-slutsky',{
+    boundingbox:[-2,45,45,-3], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'x\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2082',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var objs=[];
+  function draw(){
+    var dp=parseFloat(document.getElementById('sl-a19-dp').value),
+        a=parseFloat(document.getElementById('sl-a19-a').value);
+    document.getElementById('val-a19-dp').textContent=dp.toFixed(1);
+    document.getElementById('val-a19-a').textContent=a.toFixed(2);
+    brd.suspendUpdate();
+    objs.forEach(function(o){brd.removeObject(o)});
+    objs=[];
+    var I=120, p1=4, p2=3, b=1-a;
+    var p1n=p1+dp; if(p1n<0.5) p1n=0.5;
+    // Original bundle
+    var x1o=a*I/p1, x2o=b*I/p2;
+    // New bundle (marshallian)
+    var x1n=a*I/p1n, x2n=b*I/p2;
+    // Slutsky compensated income
+    var Ic=I+x1o*dp;
+    var x1c=a*Ic/p1n, x2c=b*Ic/p2;
+    // Budget lines
+    objs.push(brd.create('segment',[[I/p1,0],[0,I/p2]],{strokeColor:'#E50505',strokeWidth:2}));
+    objs.push(brd.create('segment',[[I/p1n,0],[0,I/p2]],{strokeColor:'#2980b9',strokeWidth:2}));
+    objs.push(brd.create('segment',[[Ic/p1n,0],[0,Ic/p2]],{strokeColor:'#27ae60',strokeWidth:2,dash:2}));
+    // Points
+    objs.push(brd.create('point',[x1o,x2o],{size:5,fillColor:'#E50505',strokeColor:'#E50505',
+      name:'A',label:{fontSize:12,offset:[8,10]}}));
+    objs.push(brd.create('point',[x1c,x2c],{size:5,fillColor:'#27ae60',strokeColor:'#27ae60',
+      name:'B (ES)',label:{fontSize:12,offset:[8,10]}}));
+    objs.push(brd.create('point',[x1n,x2n],{size:5,fillColor:'#2980b9',strokeColor:'#2980b9',
+      name:'C (Total)',label:{fontSize:12,offset:[8,10]}}));
+    // Arrows
+    objs.push(brd.create('arrow',[[(x1o+x1c)/2,x2o-3],[(x1c+x1c)/2-0.3,x2o-3]],{strokeColor:'#27ae60',strokeWidth:2}));
+    objs.push(brd.create('text',[(x1o+x1c)/2,x2o-5,'ES'],{fontSize:11,color:'#27ae60'}));
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA19=draw;
+})();
+</script>
+
+## Marshalliana vs. Hicksiana: O Efeito de um Choque
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html" title="Marshalliana vs. Hicksiana: O Efeito de um Choque" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exemplo Numérico: Slutsky para CD {.smaller}
+
+$u = x_1^{0.5}x_2^{0.5}$, $p_1=10$, $p_2=5$, $I=200$. Preço de $x_1$ sobe para $p_1'=20$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Antes**: $x_1^*=10$, $x_2^*=20$
+
+**Depois**: $x_1^*=5$, $x_2^*=20$
+
+$\Delta x_1^{Total}=-5$
+
+:::
+::: {.column width="50%"}
+**Compensação Slutsky**: $\Delta I^S = 10 \times 10 = 100$
+
+$I^S = 300$; $x_1^S = 0.5 \times 300/20 = 7.5$
+
+$ES = 7.5 - 10 = -2.5$
+
+$ER = 5 - 7.5 = -2.5$
+
+$Total = ES + ER = -5$ ✓
+
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Para CD simétrica"}
+Com $\alpha = 0.5$, ES e ER contribuem igualmente. Em geral, a decomposição depende dos expoentes e da magnitude da variação de preço.
+:::
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Fórmula / Resultado |
+|:---|:---|
+| Slutsky | $\partial x_i/\partial p_j = \partial h_i/\partial p_j - x_j \cdot \partial x_i/\partial I$ |
+| ES (Hicks) | Ao longo da CI; $\partial h_i/\partial p_i \leq 0$ |
+| Compensação Slutsky | $\Delta I^S = x_i^* \cdot \Delta p_i$ |
+| Bem normal | ES e ER se reforçam → lei da demanda vale |
+| Bem inferior | ES e ER se opõem → pode violar lei da demanda (Giffen) |
+| Lei da demanda | Garantida para bens normais |
+
+. . .
+
+**Próxima aula**: Preferência Revelada e Elasticidades — testando a racionalidade e medindo a sensibilidade da demanda.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

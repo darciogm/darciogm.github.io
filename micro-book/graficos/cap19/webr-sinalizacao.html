@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Sinalizacao por Educacao (Spence)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Sinalizacao por Educacao (Spence, 1973)
+# Exercicio Resolvido 19.5
+# ============================================
+
+theta_H <- 80   # produtividade alta
+theta_L <- 40   # produtividade baixa
+frac_H <- 0.50  # fracao de tipo H
+
+cat("====== SINALIZACAO POR EDUCACAO (SPENCE) ======\n")
+cat(sprintf("theta_H = %.0f   theta_L = %.0f\n", theta_H, theta_L))
+cat(sprintf("Custo educacao: c_H(s) = s/%.0f   c_L(s) = s/%.0f\n",
+    theta_H, theta_L))
+cat(sprintf("Fracao tipo H: %.0f%%\n\n", frac_H*100))
+
+# --- Intervalo do equilibrio separador ---
+s_min <- theta_L * (theta_H - theta_L)
+s_max <- theta_H * (theta_H - theta_L)
+s_star <- s_min  # least-cost separating
+
+cat("--- Equilibrio separador ---\n")
+cat(sprintf("Intervalo: s* in [%s, %s]\n",
+    format(s_min, big.mark="."), format(s_max, big.mark=".")))
+cat(sprintf("Least-cost separating: s* = %s\n\n", format(s_star, big.mark=".")))
+
+# Verificacao
+ganho <- theta_H - theta_L
+custo_H <- s_star / theta_H
+custo_L <- s_star / theta_L
+
+cat("--- Verificacao ---\n")
+cat(sprintf("Ganho salarial por sinalizar: %.0f\n", ganho))
+cat(sprintf("Custo para tipo H: %s/%.0f = %.1f => Liquido = +%.1f (sinaliza)\n",
+    format(s_star, big.mark="."), theta_H, custo_H, ganho - custo_H))
+cat(sprintf("Custo para tipo L: %s/%.0f = %.1f => Liquido = %.1f (nao sinaliza)\n\n",
+    format(s_star, big.mark="."), theta_L, custo_L, ganho - custo_L))
+
+# --- Custo social ---
+custo_social <- frac_H * custo_H
+cat("--- Custo social da sinalizacao ---\n")
+cat(sprintf("Custo medio por trabalhador: %.1f%% * %.1f = %.1f\n",
+    frac_H*100, custo_H, custo_social))
+cat("(Se educacao NAO aumenta produtividade, e' puro desperdicio)\n\n")
+
+# --- Equilibrio pooling ---
+w_pooling <- frac_H * theta_H + (1 - frac_H) * theta_L
+cat("--- Equilibrio pooling (sem sinalizacao) ---\n")
+cat(sprintf("Salario medio: w = %.0f\n", w_pooling))
+cat(sprintf("Payoff H no pooling: %.0f\n", w_pooling))
+cat(sprintf("Payoff H no separador: %.0f - %.1f = %.1f\n",
+    theta_H, custo_H, theta_H - custo_H))
+cat(sprintf("Tipo H prefere separador? %s\n\n",
+    ifelse(theta_H - custo_H > w_pooling, "SIM", "NAO")))
+
+# --- Variando theta_L ---
+cat("--- Sensibilidade: variando theta_L ---\n")
+cat(sprintf("%-10s %-10s %-12s %-12s\n",
+    "theta_L", "s*", "Custo H", "Custo soc."))
+cat(strrep("-", 48), "\n")
+tL_vals <- seq(10, 70, by = 10)
+for (tL in tL_vals) {
+  si <- tL * (theta_H - tL)
+  ci <- si / theta_H
+  csi <- frac_H * ci
+  cat(sprintf("%-10.0f %-10.0f %-12.1f %-12.1f\n",
+      tL, si, ci, csi))
+}
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+s_seq <- seq(0, s_max * 1.3, length = 300)
+
+# Custos de educacao
+cH_seq <- s_seq / theta_H
+cL_seq <- s_seq / theta_L
+
+# Payoff liquido = w(s) - c(s)
+# Sem sinal: w = theta_L; Com sinal (s >= s*): w = theta_H
+
+plot(s_seq, cL_seq, type = "l", lwd = 3, col = "#dc3545",
+     xlab = "Nivel de educacao (s)",
+     ylab = "Custo / Ganho",
+     main = "Sinalizacao (Spence): single-crossing",
+     ylim = c(0, max(cL_seq) * 1.1))
+
+lines(s_seq, cH_seq, lwd = 3, col = "#0d6efd")
+
+# Ganho salarial
+abline(h = ganho, col = "#198754", lwd = 2, lty = 2)
+text(s_max * 1.1, ganho + 2,
+     expression(Delta*w == theta[H] - theta[L]),
+     col = "#198754", cex = 0.7, font = 2)
+
+# Intervalo separador
+rect(s_min, -1, s_max, max(cL_seq)*1.1,
+     col = rgb(0.1, 0.4, 0.9, 0.08), border = NA)
+abline(v = s_min, col = "#6f42c1", lwd = 2, lty = 3)
+abline(v = s_max, col = "#6f42c1", lwd = 2, lty = 3)
+text((s_min + s_max)/2, max(cL_seq)*0.95,
+     "Intervalo\nseparador",
+     col = "#6f42c1", cex = 0.7, font = 2)
+
+# s* (least-cost)
+points(s_star, custo_H, pch = 19, col = "#0d6efd", cex = 2)
+text(s_star + 100, custo_H + 3,
+     paste0("s* = ", s_star, "\n(least-cost)"),
+     col = "#0d6efd", cex = 0.6, font = 2)
+
+points(s_star, custo_L, pch = 19, col = "#dc3545", cex = 2)
+
+legend("topleft",
+       legend = c(expression(c[L](s) == s/theta[L] ~ "(tipo baixo)"),
+                  expression(c[H](s) == s/theta[H] ~ "(tipo alto)"),
+                  expression(Delta*w ~ "(ganho salarial)")),
+       col = c("#dc3545", "#0d6efd", "#198754"),
+       lwd = c(3, 3, 2), lty = c(1, 1, 2),
+       cex = 0.6, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

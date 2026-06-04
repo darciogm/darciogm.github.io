@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--
+  Cap. 10 — Minimização de Custo (Cost Minimization)
+  Library: JSXGraph
+  Function types: Cobb-Douglas, Linear, Leontief, CES (production functions)
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimização de Custo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .fn-selector { display: flex; gap: 0.3rem; margin-bottom: 0.8rem; flex-wrap: wrap; }
+    .fn-btn { flex: 1; min-width: 55px; padding: 0.35rem 0.2rem; border: 2px solid #C8102E; border-radius: 4px; background: #fff; color: #C8102E; font-size: 0.72rem; font-family: inherit; cursor: pointer; text-align: center; font-weight: 600; }
+    .fn-btn.active { background: #C8102E; color: #fff; }
+    .fn-btn:hover:not(.active) { background: rgba(200,16,46,0.08); }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; } .controls { flex-basis: 100%; width: 100%; max-width: 520px; } }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Função de Produção</h3>
+      <div class="fn-selector">
+        <button class="fn-btn active" data-fn="cd" onclick="setFn('cd')">Cobb-Douglas</button>
+        <button class="fn-btn" data-fn="linear" onclick="setFn('linear')">Linear</button>
+        <button class="fn-btn" data-fn="leontief" onclick="setFn('leontief')">Leontief</button>
+        <button class="fn-btn" data-fn="ces" onclick="setFn('ces')">CES</button>
+      </div>
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Salário \(w\): <span class="val" id="val-w">2.00</span></label>
+        <input type="range" id="sl-w" min="0.5" max="6" step="0.25" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Custo capital \(r\): <span class="val" id="val-r">2.00</span></label>
+        <input type="range" id="sl-r" min="0.5" max="6" step="0.25" value="2">
+      </div>
+      <div class="slider-group">
+        <label>Produto \(q\): <span class="val" id="val-q">4.00</span></label>
+        <input type="range" id="sl-q" min="1" max="8" step="0.5" value="4">
+      </div>
+      <div class="slider-group">
+        <label>\(\alpha\): <span class="val" id="val-alpha">0.50</span></label>
+        <input type="range" id="sl-alpha" min="0.1" max="0.9" step="0.05" value="0.5">
+      </div>
+      <div class="slider-group" id="rho-group" style="display:none;">
+        <label>\(\rho\) (CES): <span class="val" id="val-rho">-1.00</span></label>
+        <input type="range" id="sl-rho" min="-5" max="0.9" step="0.1" value="-1">
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var currentFn = 'cd';
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2.3, 13.5, 13.5, -1.9],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[12,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,12]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-2.3 * 0.55, 13.5 / 2, '<b><i>K</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [13.5 / 2, -1.9 * 0.65, '<b><i>L</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    function getRho() { return parseFloat(document.getElementById('sl-rho').value); }
+
+    function setFn(fn) {
+      currentFn = fn;
+      document.querySelectorAll('.fn-btn').forEach(function(b) { b.classList.toggle('active', b.dataset.fn === fn); });
+      document.getElementById('rho-group').style.display = (fn === 'ces') ? '' : 'none';
+      draw();
+    }
+
+    function prodVal(L, K, al) {
+      var be = 1 - al;
+      if (L <= 0 || K <= 0) {
+        if (currentFn === 'linear') return al*Math.max(L,0) + be*Math.max(K,0);
+        return 0;
+      }
+      switch (currentFn) {
+        case 'cd': return Math.pow(K, al) * Math.pow(L, be);
+        case 'linear': return al*L + be*K;
+        case 'leontief': return Math.min(L/be, K/al);
+        case 'ces':
+          var r = getRho();
+          if (Math.abs(r)<0.05) return Math.pow(K,al)*Math.pow(L,be);
+          return Math.pow(al*Math.pow(K,r)+be*Math.pow(L,r), 1/r);
+      }
+    }
+
+    function isoquantK(L, q, al) {
+      var be = 1-al;
+      switch (currentFn) {
+        case 'cd':
+          if (L<=0.01||q<=0) return NaN;
+          return Math.pow(q/Math.pow(L,be), 1/al);
+        case 'linear':
+          var v = (q-be*L)/al; return v>=0?v:NaN;
+        case 'leontief': return NaN;
+        case 'ces':
+          var r=getRho();
+          if (Math.abs(r)<0.05) { if(L<=0.01) return NaN; return Math.pow(q/Math.pow(L,be),1/al); }
+          if (L<=0.01) return NaN;
+          var s=Math.pow(q,r)-be*Math.pow(L,r);
+          if (s<=0) return NaN;
+          return Math.pow(s/al, 1/r);
+      }
+    }
+
+    var objs = [];
+    function draw() {
+      for (var i=0; i<objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var w = parseFloat(document.getElementById('sl-w').value);
+      var r = parseFloat(document.getElementById('sl-r').value);
+      var q = parseFloat(document.getElementById('sl-q').value);
+      var al = parseFloat(document.getElementById('sl-alpha').value);
+      var be = 1-al;
+
+      document.getElementById('val-w').textContent = w.toFixed(2);
+      document.getElementById('val-r').textContent = r.toFixed(2);
+      document.getElementById('val-q').textContent = q.toFixed(2);
+      document.getElementById('val-alpha').textContent = al.toFixed(2);
+      if (currentFn==='ces') document.getElementById('val-rho').textContent = getRho().toFixed(2);
+
+      var Lstar, Kstar, Cstar;
+
+      switch (currentFn) {
+        case 'cd':
+          // TMST = PMgL/PMgK = (be/al)*(K/L) = w/r
+          var ratio = (al*w)/(be*r);
+          Lstar = q / Math.pow(ratio, al);
+          Kstar = ratio * Lstar;
+          break;
+        case 'linear':
+          // q = al*L + be*K (note: al is weight of K in prod, be is weight of L)
+          // Actually: q = be*L + al*K; cost = wL + rK
+          // If be/w > al/r: use only L; else only K
+          var bangL = be/w, bangK = al/r;
+          if (bangL > bangK + 0.0001) { Lstar = q/be; Kstar = 0.01; }
+          else if (bangK > bangL + 0.0001) { Lstar = 0.01; Kstar = q/al; }
+          else { Lstar = q/be/2; Kstar = q/al/2; }
+          break;
+        case 'leontief':
+          // q = min(L/be, K/al) => L = be*q, K = al*q
+          Lstar = be * q;
+          Kstar = al * q;
+          break;
+        case 'ces':
+          var rho = getRho();
+          if (Math.abs(rho)<0.05) {
+            var ratio2 = (al*w)/(be*r);
+            Lstar = q / Math.pow(ratio2, al);
+            Kstar = ratio2 * Lstar;
+          } else {
+            // TMST = w/r => (be/al)*(K/L)^(1-rho) = w/r (for CES prod fn)
+            // Actually: dq/dL / dq/dK = (be/al)*(L/K)^(rho-1) = w/r
+            // K/L = [(al/be)*(w/r)]^(1/(1-rho)) = [(al/be)*(w/r)]^sigma
+            var sigma = 1/(1-rho);
+            var KLratio = Math.pow((al/be)*(w/r), sigma);
+            if (!isFinite(KLratio) || KLratio < 0) { Lstar = q/be; Kstar = 0.01; }
+            else {
+              // q = (al*K^rho + be*L^rho)^(1/rho) with K = KLratio * L
+              // q = (al*(KLratio*L)^rho + be*L^rho)^(1/rho)
+              // q = L * (al*KLratio^rho + be)^(1/rho)
+              var factor = Math.pow(al*Math.pow(KLratio, rho) + be, 1/rho);
+              Lstar = q / factor;
+              Kstar = KLratio * Lstar;
+            }
+          }
+          break;
+      }
+
+      Lstar = Math.max(Lstar, 0.01);
+      Kstar = Math.max(Kstar, 0.01);
+      Cstar = w*Lstar + r*Kstar;
+
+      // Draw isoquant
+      if (currentFn === 'leontief') {
+        var vL = be*q, vK = al*q;
+        objs.push(board.create('segment', [[vL, vK], [vL, 12]], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        objs.push(board.create('segment', [[vL, vK], [12, vK]], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+        objs.push(board.create('point', [vL, vK], { size: 2, color: '#1565c0', fixed: true, name: '', withLabel: false }));
+        objs.push(board.create('text', [vL+0.3, vK+0.5, 'q='+q.toFixed(1)], { fontSize: 10, color: '#1565c0' }));
+      } else {
+        var xs=[], ys=[];
+        for (var L2=0.05; L2<=12; L2+=0.05) {
+          var K2 = isoquantK(L2, q, al);
+          if (!isNaN(K2) && K2>0 && K2<12) { xs.push(L2); ys.push(K2); }
+        }
+        if (xs.length>0) {
+          objs.push(board.create('curve', [xs, ys], { strokeColor: '#1565c0', strokeWidth: 2.5 }));
+          var idx = Math.min(xs.length-1, Math.floor(xs.length*0.8));
+          objs.push(board.create('text', [xs[idx]+0.2, ys[idx]+0.3, 'q='+q.toFixed(1)], { fontSize: 10, color: '#1565c0' }));
+        }
+      }
+
+      // Optimal isocost
+      var Kint = Cstar/r, Lint = Cstar/w;
+      if (Kint<14 && Lint<14) {
+        objs.push(board.create('line', [[0, Math.min(Kint,12)], [Math.min(Lint,12), 0]], {
+          strokeColor: '#C8102E', strokeWidth: 2, straightFirst: false, straightLast: false
+        }));
+        objs.push(board.create('text', [Lint*0.5, Kint*0.5+0.5, 'C*='+Cstar.toFixed(2)],
+          { fontSize: 10, color: '#C8102E' }));
+      }
+
+      // Higher isocost
+      var Ch = Cstar*1.4;
+      var Kh=Ch/r, Lh=Ch/w;
+      if (Kh<14 && Lh<14) {
+        objs.push(board.create('line', [[0,Math.min(Kh,12)],[Math.min(Lh,12),0]], {
+          strokeColor: '#ddd', strokeWidth: 1.5, dash: 2, straightFirst: false, straightLast: false
+        }));
+      }
+
+      // Optimal point
+      if (Lstar>0 && Lstar<12 && Kstar>0 && Kstar<12) {
+        objs.push(board.create('point', [Lstar, Kstar], { name:'', size:5, color:'#C8102E', fixed:true }));
+        objs.push(board.create('segment', [[Lstar,0],[Lstar,Kstar]], { strokeColor:'#999', dash:3, strokeWidth:1 }));
+        objs.push(board.create('segment', [[0,Kstar],[Lstar,Kstar]], { strokeColor:'#999', dash:3, strokeWidth:1 }));
+        objs.push(board.create('text', [Lstar,-0.35,'L*'], { fontSize:11, color:'#C8102E', anchorX:'middle' }));
+        objs.push(board.create('text', [-0.35,Kstar,'K*'], { fontSize:11, color:'#C8102E', anchorX:'right' }));
+      }
+
+      // Info
+      var info = document.getElementById('info');
+      var html;
+      switch (currentFn) {
+        case 'cd':
+          html = '<div class="eq">\\(q = K^{'+al.toFixed(2)+'} L^{'+be.toFixed(2)+'}\\)</div>';
+          break;
+        case 'linear':
+          html = '<div class="eq">\\(q = '+be.toFixed(2)+' L + '+al.toFixed(2)+' K\\)</div>';
+          break;
+        case 'leontief':
+          html = '<div class="eq">\\(q = \\min\\!\\left(\\frac{L}{'+be.toFixed(2)+'},\\; \\frac{K}{'+al.toFixed(2)+'}\\right)\\)</div>';
+          break;
+        case 'ces':
+          var rho=getRho(), sigma=1/(1-rho);
+          html = '<div class="eq">\\(q = ('+al.toFixed(2)+' K^{\\rho} + '+be.toFixed(2)+' L^{\\rho})^{1/\\rho}\\)</div>';
+          html += '<div class="eq" style="font-size:0.78rem;">\\(\\rho = '+rho.toFixed(1)+',\\; \\sigma = '+sigma.toFixed(2)+'\\)</div>';
+          break;
+      }
+      html += '<hr style="margin:.4rem 0">';
+      html += '<div>\\(L^* = '+Lstar.toFixed(2)+'\\)</div>';
+      html += '<div>\\(K^* = '+Kstar.toFixed(2)+'\\)</div>';
+      html += '<div>\\(C^* = wL^* + rK^* = '+Cstar.toFixed(2)+'\\)</div>';
+      html += '<hr style="margin:.4rem 0">';
+
+      if (currentFn === 'leontief') {
+        html += '<div class="eq">Proporções fixas: \\(\\frac{L}{K} = \\frac{'+be.toFixed(2)+'}{'+al.toFixed(2)+'}\\)</div>';
+      } else {
+        var tmst = w/r;
+        html += '<div class="eq">\\(\\mathrm{TMST} = \\frac{w}{r} = '+tmst.toFixed(3)+'\\)</div>';
+      }
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-w').value = 2;
+      document.getElementById('sl-r').value = 2;
+      document.getElementById('sl-q').value = 4;
+      document.getElementById('sl-alpha').value = 0.5;
+      document.getElementById('sl-rho').value = -1;
+      currentFn = 'cd';
+      document.querySelectorAll('.fn-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.fn==='cd'); });
+      document.getElementById('rho-group').style.display = 'none';
+      draw();
+    }
+
+    ['sl-w','sl-r','sl-q','sl-alpha','sl-rho'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', draw);
+    });
+    draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

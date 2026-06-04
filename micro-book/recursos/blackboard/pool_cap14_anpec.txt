@@ -1,0 +1,15 @@
+TF	O conjunto de alocações factíveis na Caixa de Edgeworth é [0,10] \times [0,10].	true
+TF	A curva de contrato é dada por Y = 10X/(20-X), com 0 \leq X \leq 10.	false
+TF	O Equilíbrio de Walras é o par alocação-preço dado por \{(X_A,Y_A),(X_B,Y_B);(p,q)\} = \{(5,5),(5,5);(p,q)\}, com p/q = 1.	true
+TF	O Equilíbrio de Walras é Pareto-eficiente.	true
+TF	O valor do vetor de excesso de demanda é positivo.	false
+TF	Em equilíbrio, p = \$2.	false
+TF	A função de bem-estar utilitarista (benthamita) com pesos unitários para os dois agentes assume o valor W = 30.	true
+TF	A alocação final não é justa, pois embora eficiente, não é equitativa.	false
+TF	É possível atingir via mercados competitivos a alocação eficiente (x_1^A, x_2^A) = (2{,}5;\; 2{,}5), (x_1^B, x_2^B) = (7{,}5;\; 7{,}5) se realocarmos metade da dotação inicial de A, transferindo-a para B.	true
+TF	Utilizando a mesma função de bem-estar do item 1, a alocação final descrita no item 3 é socialmente preferível àquela descrita inicialmente.	true
+TF	A Lei de Walras afirma que o valor da demanda agregada é zero para todas as escolhas de preços possíveis, e não apenas para os preços de equilíbrio.	false
+TF	O pressuposto de que a função de demanda excedente agregada seja uma função contínua não é indispensável à demonstração da existência do equilíbrio nos modelos de equilíbrio geral.	false
+TF	Mesmo que as demandas individuais sejam descontínuas, desde que os consumidores sejam pequenos, a função de demanda agregada será contínua.	true
+TF	Pelo primeiro teorema do bem-estar, todos os equilíbrios em mercados competitivos serão Pareto-eficientes.	true
+TF	Se as preferências não forem convexas, algumas alocações Pareto-eficientes não serão alcançadas por mercados competitivos.	true

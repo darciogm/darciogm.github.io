@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Mercado de Limoes (Akerlof)</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Mercado de Limoes (Akerlof, 1970)
+# Exercicio Resolvido 19.3
+# ============================================
+
+# Valores
+VH <- 24000   # valor carro bom para comprador
+CH <- 20000   # valor carro bom para vendedor
+VL <- 10000   # valor carro ruim para comprador
+CL <- 6000    # valor carro ruim para vendedor
+lambda <- 0.40  # fracao de carros bons
+
+cat("====== MERCADO DE LIMOES (AKERLOF) ======\n")
+cat(sprintf("Carros bons: VH = %s  CH = %s\n",
+    format(VH, big.mark="."), format(CH, big.mark=".")))
+cat(sprintf("Carros ruins: VL = %s  CL = %s\n",
+    format(VL, big.mark="."), format(CL, big.mark=".")))
+cat(sprintf("Fracao de bons: lambda = %.0f%%\n\n", lambda*100))
+
+# --- Analise ---
+V_bar <- lambda * VH + (1 - lambda) * VL
+cat("--- Disposicao a pagar do comprador desinformado ---\n")
+cat(sprintf("V_bar = %.2f*%s + %.2f*%s = %s\n\n",
+    lambda, format(VH, big.mark="."),
+    1-lambda, format(VL, big.mark="."),
+    format(V_bar, big.mark=".")))
+
+if (V_bar >= CH) {
+  cat("V_bar >= CH => Ambos os tipos sao transacionados!\n")
+} else {
+  cat(sprintf("V_bar = %s < CH = %s\n", format(V_bar, big.mark="."), format(CH, big.mark=".")))
+  cat("=> Carros BONS saem do mercado! So sobram limoes.\n")
+  cat(sprintf("=> Comprador oferece no maximo VL = %s\n\n", format(VL, big.mark=".")))
+}
+
+# --- Perda de bem-estar ---
+excedente_bom <- VH - CH
+excedente_ruim <- VL - CL
+excedente_total <- lambda * excedente_bom + (1-lambda) * excedente_ruim
+excedente_perdido <- lambda * excedente_bom
+
+cat("--- Perda de bem-estar ---\n")
+cat(sprintf("Excedente por carro bom: %s\n", format(excedente_bom, big.mark=".")))
+cat(sprintf("Excedente por carro ruim: %s\n", format(excedente_ruim, big.mark=".")))
+cat(sprintf("Excedente medio (info simetrica): %s\n", format(excedente_total, big.mark=".")))
+cat(sprintf("Excedente perdido (selecao adversa): %s\n\n", format(excedente_perdido, big.mark=".")))
+
+# --- Custo da vistoria ---
+custo_vistoria <- 500
+ganho_vistoria <- VH - CH - custo_vistoria
+cat("--- Vistoria como solucao ---\n")
+cat(sprintf("Custo da vistoria: R$ %s\n", format(custo_vistoria, big.mark=".")))
+cat(sprintf("Ganho liquido vendedor bom: %s - %s = %s => %s\n\n",
+    format(excedente_bom, big.mark="."),
+    format(custo_vistoria, big.mark="."),
+    format(ganho_vistoria, big.mark="."),
+    ifelse(ganho_vistoria > 0, "VALE A PENA!", "Nao compensa")))
+
+# --- Variando lambda ---
+cat("--- Limiar critico de lambda ---\n")
+# V_bar >= CH  <=>  lambda*VH + (1-lambda)*VL >= CH
+# lambda >= (CH - VL) / (VH - VL)
+lambda_crit <- (CH - VL) / (VH - VL)
+cat(sprintf("lambda_critico = (CH-VL)/(VH-VL) = %.4f = %.1f%%\n",
+    lambda_crit, lambda_crit*100))
+cat(sprintf("Mercado de bons funciona se lambda >= %.1f%%\n\n",
+    lambda_crit*100))
+
+cat("%-10s %-12s %-12s %-15s\n", "lambda(%)", "V_bar", "Funciona?", "Exc. perdido")
+cat(strrep("-", 52), "\n")
+lam_vals <- seq(0, 1, by = 0.1)
+for (l in lam_vals) {
+  Vb <- l * VH + (1 - l) * VL
+  funciona <- Vb >= CH
+  perda <- ifelse(funciona, 0, l * excedente_bom)
+  cat(sprintf("%-10.0f %-12s %-12s %-15s\n",
+      l*100,
+      format(Vb, big.mark="."),
+      ifelse(funciona, "SIM", "NAO"),
+      format(perda, big.mark=".")))
+}
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: V_bar vs lambda
+lam_seq <- seq(0, 1, length = 200)
+Vbar_seq <- lam_seq * VH + (1 - lam_seq) * VL
+
+plot(lam_seq * 100, Vbar_seq / 1000, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = expression(lambda ~ "(% de carros bons)"),
+     ylab = "Valor (R$ mil)",
+     main = "Selecao adversa: V_bar vs. lambda",
+     ylim = c(0, VH / 1000 * 1.1))
+
+abline(h = CH / 1000, col = "#dc3545", lwd = 2, lty = 2)
+text(15, CH/1000 + 0.8, expression(C[H] ~ "(custo vendedor bom)"),
+     col = "#dc3545", cex = 0.65, font = 2)
+
+abline(v = lambda_crit * 100, col = "#6f42c1", lwd = 2, lty = 3)
+text(lambda_crit*100 + 3, VL/1000,
+     paste0("lambda* = ", round(lambda_crit*100,1), "%"),
+     col = "#6f42c1", cex = 0.65, font = 2)
+
+# Zona de colapso
+polygon(c(0, lambda_crit*100, lambda_crit*100, 0),
+        c(0, 0, VH/1000*1.1, VH/1000*1.1),
+        col = rgb(0.85, 0.2, 0.2, 0.08), border = NA)
+text(lambda_crit*100/2, VH/1000*0.85, "COLAPSO\ndos bons",
+     col = "#dc3545", cex = 0.7, font = 2)
+
+polygon(c(lambda_crit*100, 100, 100, lambda_crit*100),
+        c(0, 0, VH/1000*1.1, VH/1000*1.1),
+        col = rgb(0.1, 0.6, 0.3, 0.08), border = NA)
+text((lambda_crit*100+100)/2, VH/1000*0.85, "Mercado\nfunciona",
+     col = "#198754", cex = 0.7, font = 2)
+
+points(lambda*100, V_bar/1000, pch = 19, col = "#fd7e14", cex = 2)
+text(lambda*100 + 5, V_bar/1000, paste0("lambda=", lambda*100, "%"),
+     col = "#fd7e14", cex = 0.65, font = 2)
+
+# Painel 2: Excedente perdido vs lambda
+perda_seq <- ifelse(Vbar_seq < CH, lam_seq * excedente_bom, 0)
+
+plot(lam_seq * 100, perda_seq / 1000, type = "l", lwd = 3, col = "#dc3545",
+     xlab = expression(lambda ~ "(% de carros bons)"),
+     ylab = "Excedente perdido (R$ mil)",
+     main = "Custo da selecao adversa")
+
+abline(v = lambda_crit * 100, col = "#6f42c1", lwd = 2, lty = 3)
+points(lambda*100, excedente_perdido/1000, pch = 19, col = "#fd7e14", cex = 2)
+text(lambda*100 + 5, excedente_perdido/1000 + 0.1,
+     paste0("R$ ", format(excedente_perdido, big.mark=".")),
+     col = "#fd7e14", cex = 0.65, font = 2)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

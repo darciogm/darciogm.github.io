@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Monopólio com Demanda Linear</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Monopolio com demanda linear
+# Exercicio Resolvido 15.1
+# ============================================
+
+# --- Parametros ---
+a <- 80    # intercepto da demanda
+b <- 2     # inclinacao da demanda
+CF <- 200  # custo fixo
+c <- 8     # custo marginal constante
+
+cat("====== MONOPOLIO COM DEMANDA LINEAR ======\n")
+cat("Demanda: p =", a, "-", b, "* q\n")
+cat("Custo: C(q) =", CF, "+", c, "* q\n\n")
+
+# --- Monopolio ---
+qm <- (a - c) / (2 * b)
+pm <- a - b * qm
+RMg_m <- a - 2 * b * qm  # = c (verificacao)
+lucro_m <- pm * qm - (CF + c * qm)
+
+cat("--- Resultado de monopolio ---\n")
+cat("q^m =", qm, "\n")
+cat("p^m =", pm, "\n")
+cat("Lucro =", lucro_m, "\n")
+
+# --- Indice de Lerner ---
+L <- (pm - c) / pm
+eps <- (-1/b) * (pm / qm)  # elasticidade no ponto
+cat("\nIndice de Lerner: L =", round(L, 4), "\n")
+cat("Elasticidade: eps =", round(eps, 4), "\n")
+cat("1/|eps| =", round(1/abs(eps), 4), " = L?", abs(L - 1/abs(eps)) < 1e-10, "\n")
+
+# --- Concorrencia perfeita ---
+qc <- (a - c) / b
+pc <- c
+EC_c <- 0.5 * (a - c) * qc
+
+cat("\n--- Concorrencia perfeita ---\n")
+cat("q^c =", qc, "  p^c =", pc, "\n")
+cat("EC^c =", EC_c, "  EP^c = 0\n")
+cat("W^c =", EC_c, "\n")
+
+# --- Excedentes sob monopolio ---
+EC_m <- 0.5 * (a - pm) * qm
+EP_m <- (pm - c) * qm
+PPM <- 0.5 * (pm - c) * (qc - qm)
+Wm <- EC_m + EP_m
+
+cat("\n--- Excedentes sob monopolio ---\n")
+cat("EC^m =", EC_m, "\n")
+cat("EP^m =", EP_m, "\n")
+cat("W^m =", Wm, "\n")
+cat("PPM (triangulo de Harberger) =", PPM, "\n")
+cat("Verificacao: W^c - W^m =", EC_c - Wm, "= PPM?", abs(EC_c - Wm - PPM) < 1e-10, "\n")
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+q_seq <- seq(0, qc + 5, length = 300)
+p_dem <- a - b * q_seq
+RMg_seq <- a - 2 * b * q_seq
+
+plot(q_seq, p_dem, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, a + 5), xlim = c(0, qc + 5),
+     xlab = "q", ylab = "p, CMg, RMg",
+     main = "Monopolio vs. Concorrencia Perfeita")
+lines(q_seq, RMg_seq, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#dc3545", lwd = 2)
+
+# Triangulo de PPM
+polygon(c(qm, qm, qc), c(pm, c, c),
+        col = rgb(1, 0.5, 0, 0.25), border = NA)
+text((qm + qc)/2, (pm + c)/2 - 3, paste0("PPM = ", PPM),
+     col = "#fd7e14", cex = 0.85, font = 2)
+
+# Retangulo de lucro
+rect(0, c, qm, pm, col = rgb(0.1, 0.53, 0.33, 0.15), border = NA)
+text(qm/2, (pm + c)/2, paste0("EP = ", EP_m),
+     col = "#198754", cex = 0.8, font = 2)
+
+# Pontos
+points(qm, pm, pch = 19, col = "#dc3545", cex = 2)
+text(qm + 1, pm + 2, paste0("M (", qm, ", ", pm, ")"),
+     col = "#dc3545", cex = 0.8, font = 2)
+points(qc, pc, pch = 17, col = "#198754", cex = 1.5)
+text(qc - 1, pc + 4, paste0("C (", qc, ", ", pc, ")"),
+     col = "#198754", cex = 0.8, font = 2)
+
+legend("topright",
+       legend = c("Demanda", "RMg", "CMg", "PPM", "EP monopolio"),
+       col = c("#0d6efd", "#6f42c1", "#dc3545",
+               rgb(1, 0.5, 0, 0.5), rgb(0.1, 0.53, 0.33, 0.3)),
+       lwd = c(3, 2, 2, NA, NA), lty = c(1, 2, 1, NA, NA),
+       pch = c(NA, NA, NA, 15, 15), cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

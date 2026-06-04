@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Mecanismo VCG para Bem Publico Discreto</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Mecanismo VCG para Bem Publico Discreto
+# Exercicio Resolvido 20.8
+# ============================================
+
+cat("====== MECANISMO VCG (ER 20.8) ======\n\n")
+
+# Ponte (bem publico discreto), custo C = 120
+# Valoracoes: v_A = 70, v_B = 40, v_C = 30
+v <- c(A = 70, B = 40, C = 30)
+C_ponte <- 120
+nomes <- names(v)
+
+cat(sprintf("Custo da ponte: C = %d\n", C_ponte))
+cat(sprintf("Valoracoes: %s\n\n",
+    paste(sprintf("v_%s = %d", nomes, v), collapse = ", ")))
+
+# --- (a) Decisao de provisao ---
+soma_v <- sum(v)
+cat("--- (a) Decisao ---\n")
+cat(sprintf("Soma valoracoes: %s = %d\n", paste(v, collapse = " + "), soma_v))
+cat(sprintf("Soma >= C? %d >= %d? %s => %s\n\n",
+    soma_v, C_ponte,
+    ifelse(soma_v >= C_ponte, "SIM", "NAO"),
+    ifelse(soma_v >= C_ponte, "PROVER!", "NAO prover")))
+
+# --- (b) Agentes pivotais ---
+cat("--- (b) Agentes pivotais ---\n")
+pivotal <- logical(length(v))
+for (i in seq_along(v)) {
+  soma_sem <- sum(v[-i])
+  pivotal[i] <- soma_sem < C_ponte
+  cat(sprintf("Sem %s: soma = %d %s %d => %s pivotal\n",
+      nomes[i], soma_sem,
+      ifelse(soma_sem < C_ponte, "<", ">="),
+      C_ponte,
+      ifelse(pivotal[i], "E'", "NAO e'")))
+}
+cat("\n")
+
+# --- (c) Impostos pivotais ---
+cat("--- (c) Impostos pivotais ---\n")
+t_vcg <- numeric(length(v))
+for (i in seq_along(v)) {
+  if (pivotal[i]) {
+    t_vcg[i] <- C_ponte - sum(v[-i])
+  } else {
+    t_vcg[i] <- 0
+  }
+  cat(sprintf("t_%s = C - sum(v_{-%s}) = %d - %d = %d\n",
+      nomes[i], nomes[i], C_ponte, sum(v[-i]), t_vcg[i]))
+}
+
+cat(sprintf("\nTotal arrecadado: %s = %d\n",
+    paste(t_vcg, collapse = " + "), sum(t_vcg)))
+deficit <- C_ponte - sum(t_vcg)
+cat(sprintf("Deficit: %d - %d = %d (VCG NAO e' equilibrado!)\n\n",
+    C_ponte, sum(t_vcg), deficit))
+
+# --- Excedentes liquidos ---
+cat("--- Excedentes liquidos ---\n")
+cat(sprintf("%-8s %-10s %-10s %-12s\n",
+    "Agente", "v_i", "t_i", "Excedente"))
+cat(strrep("-", 44), "\n")
+for (i in seq_along(v)) {
+  exc <- v[i] - t_vcg[i]
+  cat(sprintf("%-8s %-10d %-10d %-12d\n",
+      nomes[i], v[i], t_vcg[i], exc))
+}
+
+# --- (d) Compatibilidade de incentivos ---
+cat("\n--- (d) Incentivos para agente A ---\n")
+cat("Revelar verdade (v_A = 70):\n")
+cat(sprintf("  Soma = 140 >= 120 => ponte provida\n"))
+cat(sprintf("  t_A = 50, excedente = 70 - 50 = 20\n\n"))
+
+# Subdeclarar
+for (v_hat in c(30, 10, 0)) {
+  soma_hat <- v_hat + sum(v[-1])
+  provido <- soma_hat >= C_ponte
+  if (provido) {
+    t_hat <- C_ponte - sum(v[-1])
+    exc_hat <- v[1] - t_hat
+  } else {
+    t_hat <- 0
+    exc_hat <- 0
+  }
+  cat(sprintf("Declarar v_A = %d: soma = %d, %s, excedente = %d %s\n",
+      v_hat, soma_hat,
+      ifelse(provido, "provido", "NAO provido"),
+      exc_hat,
+      ifelse(exc_hat < 20, "(PIOR)", ifelse(exc_hat == 20, "(IGUAL)", "(MELHOR)"))))
+}
+
+# Sobredeclarar
+cat(sprintf("Declarar v_A = 90: soma = %d, provido, t_A = %d, excedente = %d (IGUAL)\n\n",
+    90 + sum(v[-1]), t_vcg[1], v[1] - t_vcg[1]))
+
+cat("=> Revelar a verdade e' estrategia dominante!\n\n")
+
+# --- Variando custo da ponte ---
+cat("--- Sensibilidade: variando o custo ---\n")
+cat(sprintf("%-8s %-12s %-8s %-8s %-8s %-10s\n",
+    "Custo", "Prover?", "t_A", "t_B", "t_C", "Deficit"))
+cat(strrep("-", 58), "\n")
+C_vals <- seq(60, 180, by = 20)
+for (Ci in C_vals) {
+  provido <- soma_v >= Ci
+  ti <- numeric(3)
+  if (provido) {
+    for (j in 1:3) {
+      ti[j] <- max(0, Ci - sum(v[-j]))
+    }
+  }
+  cat(sprintf("%-8d %-12s %-8d %-8d %-8d %-10d\n",
+      Ci, ifelse(provido, "SIM", "NAO"),
+      ti[1], ti[2], ti[3],
+      ifelse(provido, Ci - sum(ti), 0)))
+}
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+cols <- c("#dc3545", "#0d6efd", "#fd7e14")
+
+# Grafico de barras: valoracao vs imposto
+barpos <- barplot(rbind(v, t_vcg),
+        beside = TRUE, col = c(cols, adjustcolor(cols, 0.4)),
+        names.arg = nomes,
+        main = "VCG: valoracao vs. imposto pivotal",
+        ylab = "R$", ylim = c(0, max(v) * 1.3),
+        border = NA)
+
+# Excedentes como texto
+for (i in 1:3) {
+  exc <- v[i] - t_vcg[i]
+  mid_x <- mean(barpos[, i])
+  text(mid_x, v[i] + 5,
+       sprintf("exc = %d", exc),
+       cex = 0.65, font = 2, col = cols[i])
+}
+
+# Linha do custo
+abline(h = C_ponte, col = "#6f42c1", lty = 3, lwd = 2)
+text(max(barpos) + 0.5, C_ponte + 4,
+     sprintf("Custo = %d", C_ponte),
+     col = "#6f42c1", cex = 0.7, font = 2)
+
+# Total arrecadado
+abline(h = sum(t_vcg), col = "#198754", lty = 2, lwd = 1.5)
+text(max(barpos) + 0.5, sum(t_vcg) - 4,
+     sprintf("Arrecadado = %d", sum(t_vcg)),
+     col = "#198754", cex = 0.65, font = 2)
+
+legend("topright",
+       legend = c("Valoracao (v_i)", "Imposto (t_i)"),
+       fill = c("#dc3545", adjustcolor("#dc3545", 0.4)),
+       cex = 0.6, bg = "white", border = NA)
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

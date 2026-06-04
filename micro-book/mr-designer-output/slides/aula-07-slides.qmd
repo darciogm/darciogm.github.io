@@ -1,0 +1,468 @@
+---
+title: "Efeitos Renda e Substituição"
+subtitle: "Microeconomia II — Aula 07"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 07"
+    transition: slide
+    width: 1280
+    height: 720
+lang: pt-BR
+---
+
+## Quando o Preço Muda, Tudo Muda
+
+> Quando $p_1$ cai, o consumidor compra mais de $x_1$. Mas **por quê**? Porque ficou relativamente mais barato, ou porque o poder de compra aumentou?
+
+. . .
+
+**Resposta:** as duas coisas ao mesmo tempo.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Toda variação de preço produz **dois efeitos simultâneos**: (1) altera o preço *relativo* entre os bens — **efeito substituição**; (2) altera o *poder de compra* real da renda — **efeito renda**.
+:::
+
+## Decomposição de Hicks
+
+**Ideia:** introduzir uma etapa intermediária para isolar cada efeito.
+
+. . .
+
+1. **Ponto $A$:** cesta ótima original — preços $(p_1, p_2)$, renda $m$, utilidade $\bar{u}$
+2. **Ponto $B$:** cesta ótima ao preço novo $p_1'$ mantendo $U = \bar{u}$ (compensação hicksiana)
+3. **Ponto $C$:** cesta ótima final — preços $(p_1', p_2)$, renda $m$
+
+. . .
+
+$$\underbrace{A \to C}_{\text{efeito total}} = \underbrace{A \to B}_{\text{efeito substituição}} + \underbrace{B \to C}_{\text{efeito renda}}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+$B$ é a cesta que o consumidor escolheria aos novos preços se alguém ajustasse sua renda de modo a mantê-lo na curva de indiferença original.
+:::
+
+## Efeito Substituição (Hicks)
+
+O efeito substituição hicksiano é o movimento **ao longo** da curva de indiferença original.
+
+. . .
+
+**Resultado fundamental — Lei da Demanda Compensada:**
+
+$$\frac{\partial h_i}{\partial p_i} \leq 0 \quad \text{sempre}$$
+
+. . .
+
+**Demonstração intuitiva:**
+
+- A curva de indiferença é convexa → quando $p_1$ cai, a reta de isocusto gira
+- O novo ponto de tangência exige menor TMS → move-se para a **direita**
+- Logo $x_1$ aumenta quando $p_1$ cai — **sempre**
+
+. . .
+
+> O efeito substituição empurra o consumo na direção **oposta** à variação de preço, sem exceção.
+
+## Efeito Renda
+
+O efeito renda é o deslocamento de $B$ para $C$: mudança de renda real a preços constantes.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Bem normal** ($\frac{\partial x}{\partial m} > 0$):
+
+Queda em $p_1$ → renda real sobe → consome **mais** $x_1$
+
+→ ER reforça ES → demanda cai inequivocamente
+:::
+::: {.column width="50%"}
+**Bem inferior** ($\frac{\partial x}{\partial m} < 0$):
+
+Queda em $p_1$ → renda real sobe → consome **menos** $x_1$
+
+→ ER contraria ES → resultado ambíguo
+:::
+::::
+
+. . .
+
+$$\text{Efeito renda} = -x_1^* \cdot \frac{\partial x_1}{\partial m} \cdot \Delta p_1$$
+
+O sinal depende inteiramente de o bem ser normal ou inferior.
+
+## Decomposição Interativa
+
+Arraste o slider para alterar $p_1'$ e observe a decomposição de Hicks nos pontos $A$, $B$ e $C$:
+
+<div id="graph-a07-hicks" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Novo $p_1'$: <input type="range" id="sl-a07-p1new" min="1" max="8" value="4" step="0.2" oninput="updA07Hicks()"> <span id="val-a07-p1new">4.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-hicks',{
+    boundingbox:[-2,55,75,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  // Parameters: U = x^0.5 * y^0.5, m=120, p1=2, p2=3
+  var m=120, p1=2, p2=3, alpha=0.5;
+  var p1new = 4;
+
+  // Marshallian demand Cobb-Douglas: x1 = alpha*m/p1, x2 = (1-alpha)*m/p2
+  function xM1(pp1, mm){ return alpha*mm/pp1; }
+  function xM2(pp2, mm){ return (1-alpha)*mm/pp2; }
+  // Utility
+  function U(x,y){ return Math.pow(x,alpha)*Math.pow(y,1-alpha); }
+  // Hicksian: h1 = ubar*(p2/p1)^(1-alpha) * (alpha/(1-alpha))^(1-alpha)
+  //           h2 = ubar*(p1/p2)^alpha * ((1-alpha)/alpha)^alpha
+  function h1(pp1, pp2, ubar){
+    return ubar * Math.pow(pp2/pp1, 1-alpha) * Math.pow(alpha/(1-alpha), 1-alpha);
+  }
+  function h2(pp1, pp2, ubar){
+    return ubar * Math.pow(pp1/pp2, alpha) * Math.pow((1-alpha)/alpha, alpha);
+  }
+
+  // IC: y = (ubar / x^alpha)^(1/(1-alpha))
+  function icY(x, ubar){
+    if(x<=0) return 999;
+    return Math.pow(ubar / Math.pow(x, alpha), 1/(1-alpha));
+  }
+
+  // Point A
+  var xA1 = xM1(p1, m), xA2 = xM2(p2, m);
+  var ubarA = U(xA1, xA2);
+
+  // Original budget line
+  brd.create('line',[[0, m/p2],[m/p1, 0]],{strokeColor:'#1565c0',strokeWidth:2,straightFirst:false,straightLast:false,name:'',fixed:true});
+  // Original IC
+  brd.create('functiongraph',[function(x){return icY(x, ubarA);},0.3,70],{strokeColor:'#1565c0',strokeWidth:2,dash:0});
+  // Point A
+  var ptA = brd.create('point',[xA1, xA2],{size:6,fillColor:'#1565c0',strokeColor:'#1565c0',name:'A',fixed:true,label:{fontSize:15,offset:[10,10]}});
+
+  // New budget line (dynamic)
+  var blNew1 = brd.create('point',[function(){return m/p1new;},0],{visible:false});
+  var blNew2 = brd.create('point',[0, function(){return m/p2;}],{visible:false});
+  brd.create('line',[blNew2, blNew1],{strokeColor:'#C8102E',strokeWidth:2,straightFirst:false,straightLast:false});
+
+  // Point C (final)
+  var ptC = brd.create('point',[function(){return xM1(p1new, m);}, function(){return xM2(p2, m);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'C',fixed:true,label:{fontSize:15,offset:[10,10]}});
+  // New IC through C
+  brd.create('functiongraph',[function(x){return icY(x, U(xM1(p1new,m), xM2(p2,m)));},0.3,70],{strokeColor:'#C8102E',strokeWidth:2,dash:0});
+
+  // Compensated budget (dashed): tangent to original IC at new price ratio
+  var ptB = brd.create('point',[function(){return h1(p1new, p2, ubarA);}, function(){return h2(p1new, p2, ubarA);}],
+    {size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'B',fixed:true,label:{fontSize:15,offset:[10,10]}});
+  // Compensated budget line passes through B with slope -p1new/p2
+  var mComp = function(){ return p1new * h1(p1new, p2, ubarA) + p2 * h2(p1new, p2, ubarA); };
+  var blC1 = brd.create('point',[function(){return mComp()/p1new;},0],{visible:false});
+  var blC2 = brd.create('point',[0, function(){return mComp()/p2;}],{visible:false});
+  brd.create('line',[blC2, blC1],{strokeColor:'#00897b',strokeWidth:2,dash:3,straightFirst:false,straightLast:false});
+
+  // Arrows SE and IE
+  brd.create('arrow',[[function(){return xA1;},function(){return -2;}],[function(){return h1(p1new,p2,ubarA);},function(){return -2;}]],
+    {strokeColor:'#00897b',strokeWidth:3});
+  brd.create('text',[function(){return (xA1+h1(p1new,p2,ubarA))/2;}, -3.5, 'ES'],{fontSize:13,cssStyle:'color:#00897b;font-weight:bold;'});
+
+  brd.create('arrow',[[function(){return h1(p1new,p2,ubarA);},function(){return -2;}],[function(){return xM1(p1new,m);},function(){return -2;}]],
+    {strokeColor:'#ff9800',strokeWidth:3});
+  brd.create('text',[function(){return (h1(p1new,p2,ubarA)+xM1(p1new,m))/2;}, -3.5, 'ER'],{fontSize:13,cssStyle:'color:#ff9800;font-weight:bold;'});
+
+  window.updA07Hicks = function(){
+    p1new = parseFloat(document.getElementById('sl-a07-p1new').value);
+    document.getElementById('val-a07-p1new').textContent = p1new.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Observe: o ES ($A \to B$) sempre vai na direção oposta ao aumento de preço; o ER ($B \to C$) depende do tipo de bem.
+:::
+
+## Decomposição de Slutsky
+
+**Alternativa à decomposição de Hicks:** em vez de manter a utilidade constante, manter o **poder de compra** constante.
+
+. . .
+
+- **Renda compensada (Slutsky):** $m^S = p_1' x_1^A + p_2 x_2^A$ — o consumidor pode comprar a cesta original
+- A reta orçamentária compensada **pivota pela cesta** $A$
+
+. . .
+
+$$ES_{\text{Slutsky}} = x_1(p_1', m^S) - x_1(p_1, m)$$
+$$ER_{\text{Slutsky}} = x_1(p_1', m) - x_1(p_1', m^S)$$
+
+. . .
+
+> A decomposição de Slutsky é mais fácil de calcular empiricamente porque usa cestas observáveis.
+
+## Hicks vs Slutsky: Comparação
+
+| | **Hicks** | **Slutsky** |
+|:--|:--|:--|
+| **Compensação** | Mesma utilidade $\bar{u}$ | Mesmo poder de compra (cesta original acessível) |
+| **Efeito Substituição** | Move-se ao longo da CI | Pivota a restrição pela cesta original |
+| **Resultado** | $B$ na CI original | $B'$ sobre a reta que passa por $A$ |
+| **Uso principal** | Teoria (demanda hicksiana) | Empírico (dados observáveis) |
+
+. . .
+
+**Convergência:** para variações infinitesimais de preço, as duas decomposições coincidem.
+
+. . .
+
+$$\text{Para } \Delta p \to 0: \quad ES_{\text{Hicks}} = ES_{\text{Slutsky}}$$
+
+## Bens Normais, Inferiores e de Giffen
+
+A classificação depende da **direção relativa** dos efeitos:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+```
+         ∂x/∂m > 0?
+        /          \
+      Sim          Não
+     NORMAL      INFERIOR
+    /     \         |
+ εm>1   εm<1    |ER|>|ES|?
+ Luxo  Necess.   /     \
+               Sim      Não
+              GIFFEN  Inferior
+                      comum
+```
+:::
+::: {.column width="50%"}
+
+| Tipo | ES | ER | Total |
+|:--|:--:|:--:|:--:|
+| Normal | $-$ | $-$ | $-$ |
+| Inferior | $-$ | $+$ | $-$ |
+| Giffen | $-$ | $+$ (domina) | $+$ |
+
+(sinais para $\Delta p_1 > 0$)
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Um bem de Giffen é necessariamente inferior, mas nem todo bem inferior é de Giffen — o efeito renda precisa dominar o efeito substituição.
+:::
+
+## O Caso Giffen
+
+**Condições necessárias** para que a demanda **suba** quando o preço sobe:
+
+. . .
+
+1. O bem deve ser **inferior**: $\frac{\partial x_1}{\partial m} < 0$
+2. O efeito renda deve **dominar** o efeito substituição em módulo
+3. O bem deve ter **grande parcela orçamentária** $s_1 = \frac{p_1 x_1}{m}$
+
+. . .
+
+$$\frac{\partial x_1}{\partial p_1} = \underbrace{\frac{\partial h_1}{\partial p_1}}_{< 0} - \underbrace{x_1 \frac{\partial x_1}{\partial m}}_{> 0 \text{ (pois } \frac{\partial x_1}{\partial m} < 0)} > 0$$
+
+. . .
+
+**Evidência histórica:**
+
+- Batatas na Irlanda (séc. XIX) — bem básico, grande parcela do orçamento familiar
+- Arroz em províncias chinesas (Jensen & Miller, 2008) — subsídio ao arroz reduziu consumo
+
+## Curva de Demanda Marshalliana
+
+A curva de demanda marshalliana é derivada do problema de maximização de utilidade:
+
+. . .
+
+$$x_1^*(p_1) = \arg\max_{x_1,x_2} U(x_1, x_2) \quad \text{s.a.} \quad p_1 x_1 + p_2 x_2 = m$$
+
+. . .
+
+**Construção gráfica:**
+
+1. Para cada $p_1$, encontre a cesta ótima $(x_1^*, x_2^*)$
+2. Projete $x_1^*$ no plano $(x_1, p_1)$
+3. Conecte os pontos → curva de demanda
+
+. . .
+
+$$\text{Inclinação:} \quad \frac{\partial x_1^*}{\partial p_1} = \frac{\partial h_1}{\partial p_1} - x_1^* \frac{\partial x_1^*}{\partial m}$$
+
+A inclinação captura **ambos** os efeitos (substituição + renda).
+
+## Demanda Marshalliana vs Hicksiana
+
+Compare as duas curvas de demanda. A marshalliana incorpora o efeito renda; a hicksiana, não.
+
+<div id="graph-a07-demands" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Renda $m$: <input type="range" id="sl-a07-m" min="40" max="240" value="120" step="10" oninput="updA07Dem()"> <span id="val-a07-m">120</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-demands',{
+    boundingbox:[-0.5,12,50,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var p2=3, alpha=0.5, mVal=120;
+  // Marshallian: x1*(p1) = alpha*m/p1
+  // Hicksian at ubar = U(x1*(p10,m), x2*(p10,m)) with p10=2
+  // ubar = (alpha*m/p10)^a * ((1-a)*m/p2)^(1-a)
+  function getUbar(mm){
+    var p10=2;
+    return Math.pow(alpha*mm/p10, alpha)*Math.pow((1-alpha)*mm/p2, 1-alpha);
+  }
+  // h1(p1) = ubar*(p2/p1)^(1-a)*(a/(1-a))^(1-a)
+  function hicksX1(p1val, ubar){
+    return ubar * Math.pow(p2/p1val, 1-alpha) * Math.pow(alpha/(1-alpha), 1-alpha);
+  }
+
+  // Plot Marshallian: p1 on y-axis, x1 on x-axis
+  // x1 = alpha*m/p1 => p1 = alpha*m/x1
+  var marshCurve = brd.create('functiongraph',[function(x1){
+    if(x1<=0.1) return 12;
+    return alpha*mVal/x1;
+  },0.5,50],{strokeColor:'#1565c0',strokeWidth:3,name:'Marshalliana',withLabel:true,label:{fontSize:13,offset:[-10,15]}});
+
+  var ubar0 = getUbar(mVal);
+  var hicksCurve = brd.create('functiongraph',[function(x1){
+    if(x1<=0.1) return 12;
+    // h1 = ubar*(p2/p1)^(1-a)*k => p1 = p2*(ubar*k/x1)^(1/(1-a))
+    var k = Math.pow(alpha/(1-alpha), 1-alpha);
+    var ratio = ubar0*k/x1;
+    if(ratio<=0) return 12;
+    return p2 * Math.pow(ratio, 1/(1-alpha));
+  },0.5,50],{strokeColor:'#00897b',strokeWidth:3,dash:2,name:'Hicksiana',withLabel:true,label:{fontSize:13,offset:[-10,-15]}});
+
+  brd.create('text',[35, 11, function(){return 'x₁';}],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[1, 11, function(){return 'p₁';}],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  window.updA07Dem = function(){
+    mVal = parseFloat(document.getElementById('sl-a07-m').value);
+    document.getElementById('val-a07-m').textContent = mVal.toFixed(0);
+    ubar0 = getUbar(mVal);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Para bens normais, a marshalliana é mais inclinada (mais elástica ao preço) porque o efeito renda reforça o efeito substituição. As duas curvas se cruzam no preço de referência.
+:::
+
+## Lei da Demanda para Bens Normais
+
+**Teorema:** Se $x_1$ é um bem normal, então $\frac{\partial x_1^*}{\partial p_1} < 0$.
+
+. . .
+
+**Prova via equação de Slutsky:**
+
+$$\frac{\partial x_1^*}{\partial p_1} = \underbrace{\frac{\partial h_1}{\partial p_1}}_{< 0 \text{ (lei da demanda compensada)}} - \underbrace{x_1^* \cdot \frac{\partial x_1^*}{\partial m}}_{> 0 \text{ (bem normal)}}$$
+
+. . .
+
+Ambos os termos contribuem negativamente:
+
+$$\frac{\partial x_1^*}{\partial p_1} = (\text{negativo}) - (\text{positivo}) < 0 \quad \blacksquare$$
+
+. . .
+
+> A lei da demanda é **garantida** para bens normais. Para bens inferiores, vale **quase sempre** — exceto no caso Giffen.
+
+## Curvas de Engel
+
+A curva de Engel mostra a relação entre renda e quantidade demandada, $x_1^*(m)$:
+
+<div id="graph-a07-engel" style="width:700px;height:370px;margin:0 auto;"></div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a07-engel',{
+    boundingbox:[-10,55,310,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+
+  brd.create('text',[280, 52, 'm'],{fontSize:14,cssStyle:'font-weight:bold;'});
+  brd.create('text',[5, 52, 'x₁'],{fontSize:14,cssStyle:'font-weight:bold;'});
+
+  // Normal necessity (concave): x1 = 12*sqrt(m/50)
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    return 12*Math.sqrt(mm/50);
+  },0,300],{strokeColor:'#1565c0',strokeWidth:3,name:'Necessidade',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+  // Normal luxury (convex): x1 = 0.0006*m^2
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    return 0.0006*mm*mm;
+  },0,300],{strokeColor:'#00897b',strokeWidth:3,name:'Luxo',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+  // Inferior (backward bending): x1 = 20*(1 - exp(-m/80)) - 0.04*max(m-150,0)
+  brd.create('functiongraph',[function(mm){
+    if(mm<=0) return 0;
+    var base = 25*(1 - Math.exp(-mm/60));
+    var decline = 0.06*Math.max(mm-140, 0);
+    return Math.max(base - decline, 0.5);
+  },0,300],{strokeColor:'#C8102E',strokeWidth:3,dash:2,name:'Inferior',withLabel:true,label:{fontSize:12,offset:[5,10]}});
+
+})();
+</script>
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Bens necessários têm curva de Engel côncava (saturação), bens de luxo têm convexa (aceleração), e bens inferiores apresentam trecho decrescente a partir de certa renda.
+:::
+
+## Classificação de Bens: Resumo
+
+| Tipo de Bem | $\frac{\partial x}{\partial m}$ | $\varepsilon_m$ | ES | ER | $\frac{\partial x}{\partial p}$ |
+|:--|:--:|:--:|:--:|:--:|:--:|
+| **Normal — Necessidade** | $> 0$ | $0 < \varepsilon_m < 1$ | $-$ | $-$ | $< 0$ |
+| **Normal — Luxo** | $> 0$ | $\varepsilon_m > 1$ | $-$ | $-$ | $< 0$ |
+| **Inferior (comum)** | $< 0$ | $< 0$ | $-$ | $+$ (menor) | $< 0$ |
+| **Giffen** | $< 0$ | $< 0$ | $-$ | $+$ (domina) | $> 0$ |
+
+. . .
+
+(sinais de ES e ER para aumento de preço $\Delta p > 0$)
+
+. . .
+
+**Regra prática:** a equação de Slutsky organiza tudo:
+
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{ES: sempre } \leq 0} - \underbrace{x_j \frac{\partial x_i}{\partial m}}_{\text{ER: depende do tipo}}$$
+
+## Próxima Aula
+
+**Aula 08 — Equação de Slutsky e Aplicações**
+
+. . .
+
+- Equação de Slutsky em forma matricial e em elasticidades
+- Efeitos preço-cruzados: substitutos e complementos líquidos
+- Variação compensatória e variação equivalente
+- Aplicação: incidência de impostos e o *lump-sum principle*
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise a equação de Slutsky e traga exemplos de pares de bens que você considera substitutos ou complementos no seu dia a dia. Pense: o efeito renda é relevante para esses bens?
+:::

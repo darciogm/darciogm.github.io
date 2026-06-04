@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--
+  Funções de Desconto: Exponencial vs Quasi-Hiperbólico
+  Library: JSXGraph
+  Reason: Interactive sliders for δ and β parameters
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções de Desconto — Exponencial vs Quasi-Hiperbólico</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .info-box .eq {
+      text-align: center;
+      margin: 0.3rem 0;
+      color: #333;
+    }
+    .legend {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.3rem;
+    }
+    .legend-swatch {
+      width: 24px;
+      height: 3px;
+      margin-right: 8px;
+      border-radius: 2px;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(\delta\) (desconto por período): <span class="val" id="val-delta">0.95</span></label>
+        <input type="range" id="slider-delta" min="0.80" max="1.00" step="0.01" value="0.95">
+      </div>
+      <div class="slider-group">
+        <label>\(\beta\) (viés do presente): <span class="val" id="val-beta">0.70</span></label>
+        <input type="range" id="slider-beta" min="0.20" max="1.00" step="0.01" value="0.70">
+      </div>
+      <div class="info-box">
+        <div class="eq">\(D_{\text{exp}}(t) = \delta^t\)</div>
+        <div class="eq">\(D_{\text{hyp}}(t) = \begin{cases} 1 & t=0 \\ \beta\delta^t & t \geq 1 \end{cases}\)</div>
+      </div>
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#2a7f2a;"></div>
+          Exponencial \(\delta^t\)
+        </div>
+        <div class="legend-item">
+          <div class="legend-swatch" style="background:#C8102E;"></div>
+          Quasi-hiperbólico \(\beta\delta^t\)
+        </div>
+      </div>
+      <div class="info-box" id="info-gap" style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+        Queda de \(t=0\) para \(t=1\):<br>
+        Exp: <span id="gap-exp">0.95</span> |
+        Hyp: <span id="gap-hyp">0.67</span>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-4.2, 1.28, 25, -0.18],
+      showCopyright: false,
+      showNavigation: false,
+      defaultAxes: {
+        x: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 5, minorTicks: 0, label: { fontSize: 11 } } },
+        y: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 0.2, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
+      }
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-4.2 * 0.55, 1.28 / 2, '<b><i>D</i>(<i>t</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [25 / 2, -0.18 * 0.65, '<b><i>t</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var delta = 0.95, betaParam = 0.70;
+
+    // Exponential discount curve
+    var expCurve = board.create('functiongraph', [
+      function(t) { return t >= 0 ? Math.pow(delta, t) : 1; },
+      0, 21
+    ], { strokeColor: '#2a7f2a', strokeWidth: 2.5 });
+
+    // Quasi-hyperbolic discount curve
+    var hypCurve = board.create('functiongraph', [
+      function(t) {
+        if (t < 0.5) return 1;
+        return betaParam * Math.pow(delta, t);
+      },
+      0, 21
+    ], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+
+    // Points for exponential
+    var expPoints = [];
+    for (var i = 0; i <= 20; i++) {
+      expPoints.push(board.create('point', [i, Math.pow(delta, i)], {
+        size: 2, color: '#2a7f2a', fixed: true, withLabel: false
+      }));
+    }
+
+    // Points for quasi-hyperbolic
+    var hypPoints = [];
+    for (var i = 0; i <= 20; i++) {
+      var val = i === 0 ? 1 : betaParam * Math.pow(delta, i);
+      hypPoints.push(board.create('point', [i, val], {
+        size: 2, color: '#C8102E', fixed: true, withLabel: false
+      }));
+    }
+
+    // Drop line at t=1 to show the gap
+    var dropLine = board.create('segment', [[1, 0], [1, 1]], {
+      strokeColor: '#999', strokeWidth: 1, dash: 2, fixed: true
+    });
+
+    function resetAll() {
+      document.getElementById('slider-delta').value = 0.95;
+      document.getElementById('slider-beta').value = 0.70;
+      update();
+    }
+
+    function update() {
+      delta = parseFloat(document.getElementById('slider-delta').value);
+      betaParam = parseFloat(document.getElementById('slider-beta').value);
+
+      document.getElementById('val-delta').textContent = delta.toFixed(2);
+      document.getElementById('val-beta').textContent = betaParam.toFixed(2);
+
+      expCurve.Y = function(t) { return t >= 0 ? Math.pow(delta, t) : 1; };
+      hypCurve.Y = function(t) {
+        if (t < 0.5) return 1;
+        return betaParam * Math.pow(delta, t);
+      };
+
+      for (var i = 0; i <= 20; i++) {
+        expPoints[i].moveTo([i, Math.pow(delta, i)]);
+        hypPoints[i].moveTo([i, i === 0 ? 1 : betaParam * Math.pow(delta, i)]);
+      }
+
+      document.getElementById('gap-exp').textContent = delta.toFixed(2);
+      document.getElementById('gap-hyp').textContent = (betaParam * delta).toFixed(2);
+
+      board.update();
+    }
+
+    document.getElementById('slider-delta').addEventListener('input', update);
+    document.getElementById('slider-beta').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

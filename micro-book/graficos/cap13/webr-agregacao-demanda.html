@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Agregacao de Demandas Individuais</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Agregacao de demandas individuais
+# Soma horizontal => demanda de mercado
+# ============================================
+
+# --- Tres tipos de consumidores ---
+# Tipo A: 100 consumidores, x_A(p) = 20 - 2p  (p <= 10)
+# Tipo B:  50 consumidores, x_B(p) = 15 - p    (p <= 15)
+# Tipo C:  30 consumidores, x_C(p) = 30 - 3p   (p <= 10)
+
+n_A <- 100; n_B <- 50; n_C <- 30
+
+x_A <- function(p) pmax(20 - 2*p, 0)
+x_B <- function(p) pmax(15 - p, 0)
+x_C <- function(p) pmax(30 - 3*p, 0)
+
+# Demanda de mercado: soma horizontal
+X_mkt <- function(p) n_A * x_A(p) + n_B * x_B(p) + n_C * x_C(p)
+
+# --- Oferta de mercado (40 firmas identicas) ---
+# s_j(p) = 4p - 10  para p >= 2.5
+n_f <- 40
+s_j <- function(p) ifelse(p >= 2.5, 4*p - 10, 0)
+S_mkt <- function(p) n_f * s_j(p)
+
+# --- Equilibrio ---
+# Resolver X(p*) = S(p*) numericamente
+f_eq <- function(p) X_mkt(p) - S_mkt(p)
+p_star <- uniroot(f_eq, c(0.1, 15))$root
+Q_star <- X_mkt(p_star)
+
+cat("====== AGREGACAO DE DEMANDAS ======\n")
+cat("Tipo A:", n_A, "consumidores, x_A = 20 - 2p\n")
+cat("Tipo B:", n_B, "consumidores, x_B = 15 - p\n")
+cat("Tipo C:", n_C, "consumidores, x_C = 30 - 3p\n\n")
+
+cat("--- Demanda de mercado em p = 5 ---\n")
+cat("  A:", n_A, "x", x_A(5), "=", n_A*x_A(5), "\n")
+cat("  B:", n_B, "x", x_B(5), "=", n_B*x_B(5), "\n")
+cat("  C:", n_C, "x", x_C(5), "=", n_C*x_C(5), "\n")
+cat("  X(5) =", X_mkt(5), "\n\n")
+
+cat("--- Equilibrio ---\n")
+cat("p* =", round(p_star, 2), "\n")
+cat("Q* =", round(Q_star, 2), "\n")
+
+# Elasticidade de mercado no equilibrio
+eps <- 1e-6
+elast_mkt <- ((X_mkt(p_star+eps) - X_mkt(p_star-eps))/(2*eps)) * p_star / Q_star
+cat("|e_D| =", round(abs(elast_mkt), 3), "\n\n")
+
+# Elasticidade ponderada
+e_A <- -2 * p_star / x_A(p_star)
+e_B <- -1 * p_star / x_B(p_star)
+e_C <- -3 * p_star / x_C(p_star)
+w_A <- n_A * x_A(p_star) / Q_star
+w_B <- n_B * x_B(p_star) / Q_star
+w_C <- n_C * x_C(p_star) / Q_star
+e_pond <- w_A * e_A + w_B * e_B + w_C * e_C
+cat("Verificacao (media ponderada):\n")
+cat("  e_pond =", round(e_pond, 3), " = e_mkt? ",
+    abs(e_pond - elast_mkt) < 0.01, "\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+p_seq <- seq(0, 16, length = 500)
+
+# Painel 1: Demandas individuais
+plot(n_A*x_A(p_seq), p_seq, type = "l", lwd = 2, col = "#0d6efd",
+     xlim = c(0, max(X_mkt(0))*1.1), ylim = c(0, 16),
+     xlab = "Q", ylab = "p",
+     main = "Demandas individuais (agregadas por tipo)")
+lines(n_B*x_B(p_seq), p_seq, lwd = 2, col = "#dc3545")
+lines(n_C*x_C(p_seq), p_seq, lwd = 2, col = "#198754")
+legend("topright",
+       legend = c(paste0("100 x A"), paste0("50 x B"), paste0("30 x C")),
+       col = c("#0d6efd", "#dc3545", "#198754"),
+       lwd = 2, cex = 0.75, bg = "white")
+
+# Painel 2: Mercado
+plot(X_mkt(p_seq), p_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlim = c(0, max(X_mkt(0))*1.1), ylim = c(0, 16),
+     xlab = "Q", ylab = "p",
+     main = "Equilibrio de mercado")
+lines(S_mkt(p_seq), p_seq, lwd = 3, col = "#dc3545")
+
+# Equilibrio
+points(Q_star, p_star, pch = 19, col = "#6f42c1", cex = 2)
+text(Q_star, p_star,
+     paste0("  E: p*=", round(p_star,1), ", Q*=", round(Q_star,0)),
+     pos = 4, cex = 0.8, col = "#6f42c1", font = 2)
+
+# EC (area acima de p* abaixo da demanda)
+q_ec <- seq(0, Q_star, length = 200)
+# Inverter: para cada q, achar p tal que X(p) = q
+p_inv <- sapply(q_ec, function(q) {
+  if (q <= 0) return(15)
+  tryCatch(uniroot(function(p) X_mkt(p) - q, c(0, 16))$root, error = function(e) NA)
+})
+p_inv[is.na(p_inv)] <- p_star
+polygon(c(q_ec, rev(q_ec)),
+        c(p_inv, rep(p_star, length(q_ec))),
+        col = rgb(0.05, 0.43, 0.99, 0.15), border = NA)
+
+# EP (area abaixo de p* acima da oferta)
+q_ep <- seq(0, Q_star, length = 200)
+p_s_inv <- sapply(q_ep, function(q) {
+  if (q <= 0) return(2.5)
+  (q / n_f + 10) / 4
+})
+polygon(c(q_ep, rev(q_ep)),
+        c(rep(p_star, length(q_ep)), p_s_inv),
+        col = rgb(0.1, 0.53, 0.33, 0.15), border = NA)
+
+text(Q_star*0.3, p_star + 2, "EC", col = "#0d6efd", cex = 1, font = 2)
+text(Q_star*0.3, p_star - 1.5, "EP", col = "#198754", cex = 1, font = 2)
+
+legend("topright",
+       legend = c("Demanda (X)", "Oferta (S)"),
+       col = c("#0d6efd", "#dc3545"),
+       lwd = 3, cex = 0.75, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:360}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 15 — Escolha sob Incerteza III: Aplicações e Paradoxos — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-15-escolha-sob-incerteza-iii-aplicações-e-paradoxos">Pré-Aula 15 — Escolha sob Incerteza III: Aplicações e Paradoxos</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 8, Seções 8.1–8.3</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Explicar os paradoxos de Allais e Ellsberg e identificar quais axiomas VNM eles violam.</li>
+<li>Descrever os três componentes da Teoria dos Prospectos: função valor, ponderação de probabilidades e ponto de referência.</li>
+<li>Aplicar a Teoria dos Prospectos a decisões do cotidiano, incluindo loterias e seguros.</li>
+</ol>
+<hr />
+<h2 id="paradoxo-de-allais">1. Paradoxo de Allais</h2>
+<p>Maurice Allais (1953) propôs dois pares de escolha que sistematicamente violam o axioma da independência:</p>
+<p><strong>Par 1:</strong> A = R$ 1 milhão com certeza vs. B = (0,89; 1M | 0,10; 5M | 0,01; 0)</p>
+<p><strong>Par 2:</strong> C = (0,11; 1M | 0,89; 0) vs. D = (0,10; 5M | 0,90; 0)</p>
+<p>A maioria escolhe <span class="math inline">\(A \succ B\)</span> e <span class="math inline">\(D \succ C\)</span>. Porém, pela utilidade esperada:</p>
+<p><span class="math display">\[A \succ B \implies u(1M) &gt; 0{,}89\,u(1M) + 0{,}10\,u(5M) + 0{,}01\,u(0)\]</span></p>
+<p>Reescrevendo: <span class="math inline">\(0{,}11\,u(1M) &gt; 0{,}10\,u(5M) + 0{,}01\,u(0)\)</span>, o que implica <span class="math inline">\(C \succ D\)</span> — contradição!</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>O paradoxo de Allais revela o <strong>efeito certeza</strong>: as pessoas sobrevalorizam resultados certos em relação a resultados apenas prováveis. Trocar “certeza de 1M” por “89% de 1M” parece uma perda enorme, mesmo que a probabilidade mude apenas 11 pontos percentuais.</p>
+</div>
+<hr />
+<h2 id="paradoxo-de-ellsberg">2. Paradoxo de Ellsberg</h2>
+<p>Daniel Ellsberg (1961) mostrou que as pessoas distinguem entre <strong>risco</strong> (probabilidades conhecidas) e <strong>ambiguidade</strong> (probabilidades desconhecidas).</p>
+<p>Uma urna contém 30 bolas vermelhas e 60 bolas pretas ou amarelas (proporção desconhecida):</p>
+<ul>
+<li><strong>Aposta A</strong>: ganha R$ 100 se vermelha → <span class="math inline">\(P = 1/3\)</span> (conhecida)</li>
+<li><strong>Aposta B</strong>: ganha R$ 100 se preta → <span class="math inline">\(P = ?\)</span> (ambígua)</li>
+</ul>
+<p>A maioria prefere <span class="math inline">\(A \succ B\)</span>, revelando <strong>aversão à ambiguidade</strong>. Este comportamento viola não apenas a utilidade esperada, mas qualquer modelo baseado em probabilidades subjetivas únicas.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>As pessoas preferem “o diabo que conhecem”. A ambiguidade gera desconforto adicional além do risco puro. Isso explica por que investidores preferem ações domésticas (home bias) mesmo quando a diversificação internacional seria ótima.</p>
+</div>
+<hr />
+<h2 id="teoria-dos-prospectos">3. Teoria dos Prospectos</h2>
+<p>Kahneman e Tversky (1979) propuseram a <strong>Teoria dos Prospectos</strong> (Prospect Theory) como alternativa descritiva à utilidade esperada. Seus três pilares são:</p>
+<p><strong>Função valor</strong> <span class="math inline">\(v(x)\)</span> definida sobre <strong>ganhos e perdas</strong> relativas a um ponto de referência:</p>
+<p><span class="math display">\[v(x) = \begin{cases} x^\alpha &amp; \text{se } x \geq 0 \\ -\lambda(-x)^\beta &amp; \text{se } x &lt; 0 \end{cases}\]</span></p>
+<p>com parâmetros típicos <span class="math inline">\(\alpha = \beta \approx 0{,}88\)</span> e <span class="math inline">\(\lambda \approx 2{,}25\)</span>.</p>
+<p>Propriedades da função valor:</p>
+<ul>
+<li><strong>Côncava para ganhos</strong> (aversão ao risco em ganhos)</li>
+<li><strong>Convexa para perdas</strong> (propensão ao risco em perdas)</li>
+<li><strong>Mais íngreme para perdas</strong> → <strong>aversão à perda</strong> (<span class="math inline">\(\lambda &gt; 1\)</span>)</li>
+</ul>
+<iframe src="graficos/cap08/funcao-valor-pt.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe o formato em “S” da função valor. Note a assimetria: a dor de perder R$ 100 é sentida com intensidade <span class="math inline">\(\lambda \approx 2{,}25\)</span> vezes maior do que o prazer de ganhar R$ 100.</p>
+</div>
+<hr />
+<h2 id="ponderação-de-probabilidades-e-cpt">4. Ponderação de Probabilidades e CPT</h2>
+<p>Na Teoria dos Prospectos, as probabilidades objetivas <span class="math inline">\(p\)</span> são transformadas por uma <strong>função de ponderação</strong> <span class="math inline">\(w(p)\)</span>:</p>
+<p><span class="math display">\[w(p) = \frac{p^\delta}{(p^\delta + (1-p)^\delta)^{1/\delta}}\]</span></p>
+<p>com <span class="math inline">\(\delta \approx 0{,}65\)</span>. Propriedades:</p>
+<ul>
+<li><strong>Sobreponderação de probabilidades pequenas</strong>: <span class="math inline">\(w(p) &gt; p\)</span> para <span class="math inline">\(p\)</span> pequeno</li>
+<li><strong>Subponderação de probabilidades grandes</strong>: <span class="math inline">\(w(p) &lt; p\)</span> para <span class="math inline">\(p\)</span> grande</li>
+<li><span class="math inline">\(w(0) = 0\)</span>, <span class="math inline">\(w(1) = 1\)</span></li>
+</ul>
+<p>A avaliação de um prospecto <span class="math inline">\((x_1, p; x_2, 1-p)\)</span> com <span class="math inline">\(x_1 &gt; 0 &gt; x_2\)</span> é:</p>
+<p><span class="math display">\[V = w(p) \cdot v(x_1) + w(1-p) \cdot v(x_2)\]</span></p>
+<p>A <strong>Teoria dos Prospectos Cumulativa</strong> (CPT, Tversky &amp; Kahneman, 1992) estende o modelo para loterias com múltiplos resultados, aplicando a ponderação às probabilidades cumulativas.</p>
+<iframe src="graficos/cap08/ponderacao-prob.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Compare a curva de ponderação <span class="math inline">\(w(p)\)</span> com a diagonal (probabilidades objetivas). Note o cruzamento: probabilidades pequenas são infladas e probabilidades grandes são deflacionadas.</p>
+</div>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A Teoria dos Prospectos explica um padrão fascinante: a mesma pessoa compra bilhete de loteria (sobrepondera a pequena chance de ganho) e faz seguro (sobrepondera a pequena chance de perda catastrófica). Na utilidade esperada padrão, isso seria impossível com uma única curvatura de <span class="math inline">\(u\)</span>.</p>
+</div>
+<hr />
+<h2 id="aplicação-mega-sena">5. Aplicação: Mega-Sena</h2>
+<p>O bilhete da Mega-Sena custa R$ 5,00 e a chance de acertar 6 números é <span class="math inline">\(\approx 1/50\,\text{milhões}\)</span>. O valor esperado é amplamente negativo. Pela Teoria dos Prospectos:</p>
+<ul>
+<li>A pequena probabilidade de ganho é <strong>sobreponderada</strong> (<span class="math inline">\(w(p) \gg p\)</span>).</li>
+<li>O ganho é avaliado pela função valor côncava, mas o efeito da sobreponderação domina.</li>
+<li>A perda de R$ 5,00 é pequena em relação ao ponto de referência.</li>
+</ul>
+<p>Resultado: a compra do bilhete pode ser “racional” sob Prospect Theory.</p>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> No paradoxo de Allais, mostre formalmente que as escolhas <span class="math inline">\(A \succ B\)</span> e <span class="math inline">\(D \succ C\)</span> violam o axioma da independência.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Defina <span class="math inline">\(L_0 = (1,\;1M)\)</span>, <span class="math inline">\(L_1 = (10/11,\;5M;\;1/11,\;0)\)</span>, <span class="math inline">\(L_2 = (1,\;0)\)</span>.<br />
+<span class="math inline">\(A = 0{,}11 L_0 + 0{,}89 L_0\)</span> e <span class="math inline">\(B = 0{,}11 L_1 + 0{,}89 L_0\)</span>.<br />
+Pelo axioma da independência, <span class="math inline">\(A \succ B \iff L_0 \succ L_1\)</span>.<br />
+<span class="math inline">\(C = 0{,}11 L_0 + 0{,}89 L_2\)</span> e <span class="math inline">\(D = 0{,}11 L_1 + 0{,}89 L_2\)</span>.<br />
+Pelo mesmo axioma, <span class="math inline">\(L_0 \succ L_1 \implies C \succ D\)</span>.<br />
+Mas as pessoas escolhem <span class="math inline">\(D \succ C\)</span>, violando a independência.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Calcule o valor de um prospecto <span class="math inline">\(P = (+500, 0{,}10;\; -200, 0{,}90)\)</span> usando <span class="math inline">\(\alpha = \beta = 0{,}88\)</span>, <span class="math inline">\(\lambda = 2{,}25\)</span> e <span class="math inline">\(\delta = 0{,}65\)</span>.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(v(+500) = 500^{0,88} \approx 274{,}7\)</span>.<br />
+<span class="math inline">\(v(-200) = -2{,}25 \times 200^{0,88} \approx -2{,}25 \times 122{,}5 \approx -275{,}6\)</span>.<br />
+<span class="math inline">\(w(0{,}10) \approx \frac{0{,}10^{0,65}}{(0{,}10^{0,65} + 0{,}90^{0,65})^{1/0,65}} \approx 0{,}18\)</span>.<br />
+<span class="math inline">\(w(0{,}90) \approx 0{,}71\)</span>.<br />
+<span class="math inline">\(V = 0{,}18 \times 274{,}7 + 0{,}71 \times (-275{,}6) \approx 49{,}4 - 195{,}7 = -146{,}3 &lt; 0\)</span>.<br />
+O prospecto é rejeitado.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Explique por que a Teoria dos Prospectos prevê que motoristas de táxi trabalham menos em dias de alta demanda.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Camerer et al. (1997) documentaram que taxistas estabelecem uma <strong>meta diária de renda</strong> (ponto de referência). Em dias bons (alta demanda), atingem a meta rapidamente e param — estão no domínio dos ganhos (aversos ao risco, logo param). Em dias ruins, continuam trabalhando para evitar ficar abaixo da meta — estão no domínio das perdas (propensos ao risco). Isso contradiz a teoria padrão: deveriam trabalhar mais quando o “salário” por hora é maior.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="c">
+<div class="q-text">Q1. O paradoxo de Allais viola qual axioma de VNM?</div>
+<div class="quiz-option" data-value="a">(a) Completude</div>
+<div class="quiz-option" data-value="b">(b) Transitividade</div>
+<div class="quiz-option" data-value="c">(c) Independência</div>
+<div class="quiz-option" data-value="d">(d) Continuidade</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2. A aversão à perda na Teoria dos Prospectos significa que:</div>
+<div class="quiz-option" data-value="a">(a) Perdas são ignoradas</div>
+<div class="quiz-option" data-value="b">(b) Perdas pesam mais do que ganhos de mesma magnitude (\(\lambda > 1\))</div>
+<div class="quiz-option" data-value="c">(c) Ganhos e perdas são simétricos</div>
+<div class="quiz-option" data-value="d">(d) Todas as pessoas são aversas ao risco</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. A função de ponderação \(w(p)\) para \(p\) pequeno tipicamente satisfaz:</div>
+<div class="quiz-option" data-value="a">(a) \(w(p) > p\) (sobreponderação)</div>
+<div class="quiz-option" data-value="b">(b) \(w(p) < p\) (subponderação)</div>
+<div class="quiz-option" data-value="c">(c) \(w(p) = p\)</div>
+<div class="quiz-option" data-value="d">(d) \(w(p) = 0\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. No domínio das perdas, a função valor da PT prevê:</div>
+<div class="quiz-option" data-value="a">(a) Aversão ao risco</div>
+<div class="quiz-option" data-value="b">(b) Propensão ao risco</div>
+<div class="quiz-option" data-value="c">(c) Neutralidade ao risco</div>
+<div class="quiz-option" data-value="d">(d) Aversão à ambiguidade</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. O paradoxo de Ellsberg demonstra:</div>
+<div class="quiz-option" data-value="a">(a) Violação da transitividade</div>
+<div class="quiz-option" data-value="b">(b) Que as pessoas são neutras ao risco</div>
+<div class="quiz-option" data-value="c">(c) Aversão à ambiguidade (incerteza sobre probabilidades)</div>
+<div class="quiz-option" data-value="d">(d) Que \(w(p) = p\) para todo \(p\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-15')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p>Na <strong>Aula 16</strong>, estudaremos mercados de risco e informação assimétrica: seleção adversa (mercado de limões), risco moral, sinalização e screening, com aplicações ao sistema de saúde e seguros no Brasil.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-15');
+MicroQuiz.init('aula-15');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

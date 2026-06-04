@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!--
+  Limiar de Cooperação em Jogos Repetidos — δ*
+  Library: Plotly.js
+  Chapter 9b — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Limiar de Cooperação em Jogos Repetidos</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .plot-box { flex: 1 1 420px; max-width: 520px; height: 380px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.8rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .plot-box { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Payoffs do Dilema</h3>
+    <div class="slider-group">
+      <label>Tentação \(T\): <span class="val" id="val-T">5</span></label>
+      <input type="range" id="slider-T" min="3" max="10" step="0.5" value="5">
+    </div>
+    <div class="slider-group">
+      <label>Recompensa \(R\): <span class="val" id="val-R">3</span></label>
+      <input type="range" id="slider-R" min="1" max="8" step="0.5" value="3">
+    </div>
+    <div class="slider-group">
+      <label>Punição \(P\): <span class="val" id="val-P">1</span></label>
+      <input type="range" id="slider-P" min="0" max="5" step="0.5" value="1">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  function getState() {
+    return {
+      T: parseFloat(document.getElementById('slider-T').value),
+      R: parseFloat(document.getElementById('slider-R').value),
+      P: parseFloat(document.getElementById('slider-P').value)
+    };
+  }
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-T').textContent = s.T.toFixed(1);
+    document.getElementById('val-R').textContent = s.R.toFixed(1);
+    document.getElementById('val-P').textContent = s.P.toFixed(1);
+
+    // delta* = (T-R)/(T-P)
+    var deltaStar = (s.T > s.P) ? (s.T - s.R) / (s.T - s.P) : 1;
+    if (deltaStar < 0) deltaStar = 0;
+    if (deltaStar > 1) deltaStar = 1;
+
+    var deltas = [], coopPayoffs = [], devPayoffs = [];
+    for (var d = 0; d <= 1; d += 0.005) {
+      deltas.push(d);
+      // Cooperate forever: R/(1-delta)
+      coopPayoffs.push(s.R / (1 - d + 0.001));
+      // Deviate then punished: T + delta*P/(1-delta)
+      devPayoffs.push(s.T + d * s.P / (1 - d + 0.001));
+    }
+
+    var traces = [];
+
+    // Cooperation region (shade where coop > dev)
+    var coopX = [], coopY1 = [], coopY2 = [];
+    for (var i = 0; i < deltas.length; i++) {
+      if (coopPayoffs[i] >= devPayoffs[i]) {
+        coopX.push(deltas[i]);
+        coopY1.push(coopPayoffs[i]);
+        coopY2.push(devPayoffs[i]);
+      }
+    }
+    if (coopX.length > 1) {
+      traces.push({
+        x: coopX.concat(coopX.slice().reverse()),
+        y: coopY1.concat(coopY2.slice().reverse()),
+        fill: 'toself', fillcolor: 'rgba(0,137,123,0.12)', line: { width: 0 },
+        name: 'Cooperacao sustentavel', showlegend: true, hoverinfo: 'skip'
+      });
+    }
+
+    traces.push({
+      x: deltas, y: coopPayoffs, mode: 'lines',
+      line: { color: '#1565c0', width: 2.5 },
+      name: 'Cooperar sempre: R/(1-delta)'
+    });
+    traces.push({
+      x: deltas, y: devPayoffs, mode: 'lines',
+      line: { color: '#e65100', width: 2.5 },
+      name: 'Trair + punição: T + delta P/(1-delta)'
+    });
+
+    // delta* marker
+    var shapes = [];
+    if (deltaStar >= 0 && deltaStar <= 1) {
+      var yAtStar = s.R / (1 - deltaStar + 0.001);
+      traces.push({
+        x: [deltaStar], y: [yAtStar], mode: 'markers',
+        marker: { size: 10, color: '#C8102E', symbol: 'diamond' },
+        name: 'delta* = ' + deltaStar.toFixed(3)
+      });
+      shapes.push({
+        type: 'line', x0: deltaStar, x1: deltaStar, y0: 0, y1: yAtStar,
+        line: { color: '#C8102E', width: 1.5, dash: 'dot' }
+      });
+    }
+
+    var maxY = Math.min(Math.max(s.T * 5, s.R * 8), 200);
+
+    Plotly.react('plotDiv', traces, {
+      margin: { l: 55, r: 20, t: 25, b: 50 },
+      xaxis: { title: 'Fator de desconto delta', range: [0, 1.02] },
+      yaxis: { title: 'Payoff descontado', range: [0, maxY] },
+      showlegend: true,
+      legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 9 } },
+      shapes: shapes,
+      font: { family: 'CMU Serif, Georgia, serif' }
+    }, { responsive: true, displayModeBar: false });
+
+    var valid = (s.T > s.R && s.R > s.P);
+    var html = '<div style="text-align:center;margin-bottom:0.3rem;">';
+    html += '\\(\\delta^* = \\frac{T - R}{T - P} = \\frac{' + (s.T - s.R).toFixed(1) + '}{' + (s.T - s.P).toFixed(1) + '} = ' + deltaStar.toFixed(3) + '\\)';
+    html += '</div>';
+    if (!valid) {
+      html += '<div style="color:#C8102E;"><strong>Requer T > R > P para dilema valido.</strong></div>';
+    } else {
+      html += 'Cooperacao sustentavel se \\(\\delta > ' + deltaStar.toFixed(3) + '\\)<br>';
+      html += '<span style="color:#1565c0;">Azul</span>: payoff de cooperar para sempre<br>';
+      html += '<span style="color:#e65100;">Laranja</span>: payoff de trair e ser punido';
+    }
+    html += '<hr style="margin:0.3rem 0">';
+    html += '<div style="font-size:0.78rem;color:#666;">Quanto mais pacientes os jogadores (maior \\(\\delta\\)), mais facil sustentar a cooperacao.</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-T').value = 5;
+    document.getElementById('slider-R').value = 3;
+    document.getElementById('slider-P').value = 1;
+    update();
+  }
+
+  ['slider-T','slider-R','slider-P'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

@@ -1,0 +1,385 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 18 — Função de Produção II"
+author: "Prof. Darcio Genicolo Martins"
+date: ""
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Recapitulando
+
+Na aula anterior:
+
+- $q = f(K,L)$: função de produção como "receita" tecnológica
+- PMg e PMe: o trabalhador extra "puxa" a média
+- Isoquantas e TMST: curvas de nível e taxa de troca
+- Rendimentos de escala: CRS, IRS, DRS
+
+. . .
+
+**Hoje:** Quais *formas funcionais* concretas a teoria oferece? E o que acontece quando a tecnologia evolui no tempo?
+
+## Famílias de Funções {data-background-color="#E50505"}
+
+## O Cardápio Tecnológico
+
+Quatro receitas clássicas cobrem todo o espectro de substituibilidade:
+
+. . .
+
+| Função | Substituição | $\sigma$ |
+|---|---|:---:|
+| **Linear** | Total | $\infty$ |
+| **Cobb-Douglas** | Intermediária | $1$ |
+| **CES** | Qualquer valor | $\frac{1}{1-\rho}$ |
+| **Leontief** | Nenhuma | $0$ |
+
+. . .
+
+> A escolha da forma funcional depende do setor e do problema em análise. Dominar essas quatro é indispensável.
+
+## Função Linear: Substitutos Perfeitos
+
+$$q = aK + bL, \qquad a, b > 0$$
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Propriedades:**
+
+- TMST = $b/a$ (constante)
+- $\sigma = \infty$
+- Rendimentos constantes de escala
+- Isoquantas: **retas**
+:::
+
+::: {.column width="50%"}
+**Exemplo:**
+
+Usina que gera eletricidade queimando gás *ou* óleo combustível — insumos intercambiáveis.
+
+A firma usa **100%** do insumo mais barato por unidade de produto.
+:::
+
+::::
+
+## Função Leontief: Complementares Perfeitos
+
+$$q = \min\left\{\frac{K}{a}, \frac{L}{b}\right\}, \qquad a, b > 0$$
+
+. . .
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Propriedades:**
+
+- Proporção fixa: $K/L = a/b$
+- TMST indefinida no vértice
+- $\sigma = 0$
+- Rendimentos constantes de escala
+- Isoquantas: **ângulos retos**
+:::
+
+::: {.column width="50%"}
+**Exemplo:**
+
+Taxista e veículo: 1 motorista para 1 carro. Dois motoristas e um carro não produzem mais corridas.
+
+Receitas químicas: H$_2$O exige exatamente 2H + 1O.
+:::
+
+::::
+
+## Função Cobb-Douglas
+
+::: {.eq-highlight}
+$$q = A K^{\alpha} L^{\beta}, \qquad A > 0, \; \alpha, \beta > 0$$
+:::
+
+. . .
+
+**A mais célebre da economia.** Proposta por Cobb e Douglas (1928) para a indústria americana.
+
+- $\mathrm{TMST} = (\beta/\alpha)(K/L)$ — depende da razão capital-trabalho
+- $\sigma = 1$ sempre
+- Rendimentos de escala: $\alpha + \beta \gtrless 1$
+- Isoquantas: **hipérboles convexas**
+
+. . .
+
+**Propriedade notável:** Com CRS e mercados competitivos, $\alpha$ e $\beta$ correspondem às participações do capital e trabalho na renda.
+
+## Elasticidade de Substituição
+
+A elasticidade de substituição $\sigma$ mede a **facilidade** de trocar $K$ por $L$:
+
+::: {.eq-highlight}
+$$\sigma = \frac{d \ln(K/L)}{d \ln(\mathrm{TMST}_{L,K})} = \frac{d \ln(K/L)}{d \ln(f_L / f_K)}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Em um call center, substituir atendentes por chatbots de IA é relativamente fácil ($\sigma$ alto). Em uma cirurgia cardíaca, trocar o cirurgião por um robô é muito mais difícil ($\sigma$ baixo). Quanto mais rígida a receita, menor $\sigma$.
+:::
+
+. . .
+
+**Dados empíricos:** Na indústria manufatureira, $\sigma \approx 0{,}4$ a $0{,}6$ (Chirinko, 2008) — capital e trabalho são complementares, mas não perfeitamente.
+
+## Função CES: O Canivete Suíço
+
+$$q = A\left[\delta K^{\rho} + (1 - \delta) L^{\rho}\right]^{\gamma/\rho}, \quad \rho \leq 1, \; \rho \neq 0$$
+
+. . .
+
+onde $\sigma = \frac{1}{1-\rho}$, $\gamma$ = rendimentos de escala, $\delta$ = parâmetro de distribuição.
+
+. . .
+
+**Generaliza todas as anteriores:**
+
+| $\rho$ | Limite | Função |
+|:---:|---|---|
+| $\rho \to 0$ | $\sigma = 1$ | Cobb-Douglas |
+| $\rho = 1$ | $\sigma = \infty$ | Linear |
+| $\rho \to -\infty$ | $\sigma = 0$ | Leontief |
+
+> Arrow, Chenery, Minhas e Solow (1961) — um dos artigos mais influentes da microeconomia.
+
+## CES — Isoquantas Interativas (JSXGraph)
+
+<div id="jxgbox-aula03" style="width:700px; height:420px; margin: 0 auto;"></div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('jxgbox-aula03', {
+    boundingbox: [-0.3, 10.5, 10.5, -0.3], axis: true,
+    defaultAxes: {x: {name: 'L', withLabel: true, label: {position: 'rt', offset: [-10, 15]}},
+                  y: {name: 'K', withLabel: true, label: {position: 'rt', offset: [15, -5]}}}
+  });
+  var sRho = brd.create('slider', [[0.5,10],[4.5,10],[-5, 0, 0.9]], {name: '\u03c1', snapWidth: 0.1});
+  var q0 = 5; var delta = 0.5; var gamma = 1;
+  var colors = ['#E50505','#2196F3','#4CAF50'];
+  var levels = [3, 5, 7];
+  for (var i = 0; i < levels.length; i++) {
+    (function(lev, col) {
+      brd.create('curve', [
+        function(L) { return L; },
+        function(L) {
+          if (L < 0.15) return NaN;
+          var r = sRho.Value();
+          if (Math.abs(r) < 0.01) {
+            // Cobb-Douglas limit: K = (q/A)^2 / L  (alpha=beta=0.5)
+            return (lev*lev) / (L);
+          }
+          var val = Math.pow(lev, r/gamma) - (1-delta)*Math.pow(L, r);
+          if (val <= 0) return NaN;
+          return Math.pow(val / delta, 1/r);
+        }
+      ], 0.15, 10, {strokeColor: col, strokeWidth: 2.2});
+    })(levels[i], colors[i]);
+  }
+  brd.create('text', [6, 9.5, function() {
+    var s = 1/(1-sRho.Value());
+    return '\u03c3 = ' + (sRho.Value() > 0.85 ? '\u221e' : s.toFixed(2));
+  }], {fontSize: 15});
+})();
+</script>
+
+Ajuste $\rho$ para ver as isoquantas variarem de Leontief ($\rho \to -\infty$) a Linear ($\rho \to 1$).
+
+## Tabela Comparativa {.smaller}
+
+| Propriedade | Linear | Leontief | Cobb-Douglas | CES |
+|:---|:---|:---|:---|:---|
+| **Fórmula** | $aK + bL$ | $\min\{K/a, L/b\}$ | $AK^{\alpha}L^{\beta}$ | $A[\delta K^{\rho} + (1-\delta)L^{\rho}]^{\gamma/\rho}$ |
+| **TMST** | $b/a$ (cte) | Indef. no vértice | $(\beta/\alpha)(K/L)$ | $\frac{1-\delta}{\delta}\left(\frac{K}{L}\right)^{1-\rho}$ |
+| **$\sigma$** | $\infty$ | $0$ | $1$ | $\frac{1}{1-\rho}$ |
+| **Rend. escala** | CRS | CRS | $\alpha + \beta$ | $\gamma$ |
+| **Isoquantas** | Retas | Ângulos retos | Hipérboles | Curvas convexas |
+
+. . .
+
+> A CES é o caso geral; as demais são casos particulares.
+
+## Progresso Técnico {data-background-color="#3ACC9F"}
+
+## A Mão Invisível do Tempo
+
+As funções anteriores são **fotos** — instantâneos. Mas a tecnologia evolui.
+
+. . .
+
+No Cerrado: mesma terra e mesmos braços passaram de 1.700 kg/ha de soja (1977) para 3.300 kg/ha (2024). De onde vem esse ganho?
+
+. . .
+
+::: {.eq-highlight}
+$$q = A(t) \cdot f(K, L)$$
+:::
+
+O parâmetro $A(t)$ cresce ao longo do tempo, deslocando a função de produção **para cima**.
+
+**Visualmente:** as isoquantas se contraem em direção à origem — mesma produção com menos insumos.
+
+## Classificações do Progresso Técnico
+
+| Tipo | Fórmula | Característica |
+|---|---|---|
+| **Hicks-neutro** | $q = A(t) \cdot f(K,L)$ | TMST depende só de $K/L$ |
+| **Harrod-neutro** | $q = f(K, A(t) \cdot L)$ | Aumentador de trabalho |
+| **Solow-neutro** | $q = f(A(t) \cdot K, L)$ | Aumentador de capital |
+
+. . .
+
+**Fato notável:** Para Cobb-Douglas, os três tipos são equivalentes:
+
+$$A(t) K^{\alpha} L^{1-\alpha} = K^{\alpha} [A(t)^{1/(1-\alpha)} L]^{1-\alpha} = [A(t)^{1/\alpha} K]^{\alpha} L^{1-\alpha}$$
+
+Para CES com $\sigma \neq 1$, as classificações geram resultados **distintos**.
+
+## O Resíduo de Solow
+
+Decomposição do crescimento do produto:
+
+::: {.eq-highlight}
+$$\frac{\dot{q}}{q} = \underbrace{\frac{\dot{A}}{A}}_{\text{PTF}} + \alpha \frac{\dot{K}}{K} + \beta \frac{\dot{L}}{L}$$
+:::
+
+. . .
+
+O termo $\dot{A}/A$ é a **Produtividade Total dos Fatores (PTF)** — o resíduo de Solow.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o produto cresce a 4%, o capital a 3% e o trabalho a 1%, e $\alpha = 0{,}4$, $\beta = 0{,}6$: a acumulação explica $0{,}4 \times 3\% + 0{,}6 \times 1\% = 1{,}8\%$. Os restantes $2{,}2\%$ são PTF — "a medida da nossa ignorância" (Abramovitz).
+:::
+
+## Exemplo: Contabilidade do Crescimento {.smaller}
+
+**Dados:** $\alpha = 0{,}3$, $\beta = 0{,}7$, $\dot{A}/A = 2\%$, $\dot{K}/K = 4\%$, $\dot{L}/L = 1\%$
+
+$$\frac{\dot{q}}{q} = 0{,}02 + 0{,}3 \times 0{,}04 + 0{,}7 \times 0{,}01 = 3{,}9\%$$
+
+. . .
+
+| Fonte | Contribuição | % do total |
+|---|---|---|
+| PTF (progresso técnico) | 2,0 p.p. | 51,3% |
+| Capital | 1,2 p.p. | 30,8% |
+| Trabalho | 0,7 p.p. | 17,9% |
+| **Total** | **3,9 p.p.** | **100%** |
+
+. . .
+
+> Mais da **metade** do crescimento vem da PTF — consistente com o padrão da agricultura brasileira pós-Embrapa.
+
+## A Revolução da Embrapa
+
+:::: {.columns}
+
+::: {.column width="55%"}
+
+| Cultura | ~1977 | ~2024 | Fator |
+|---|---:|---:|:---:|
+| **Soja** | 1.700 kg/ha | 3.300 kg/ha | $\times 1{,}9$ |
+| **Milho** | 1.600 kg/ha | 6.000 kg/ha | $\times 3{,}8$ |
+
+*Fonte: CONAB, safras 2023/24*
+:::
+
+::: {.column width="45%"}
+**Interpretação micro:**
+
+- Deslocamento de $A(t)$ na função de produção
+- Progresso técnico **aumentador de terra**
+- Calagem + cultivares tropicais + plantio direto
+- Embrapa: ~60% dos ganhos de PTF agrícola
+:::
+
+::::
+
+## Rendimentos de Escala — Gráfico Interativo
+
+<iframe src="graficos/cap10/rendimentos-escala.html" width="100%" height="450" frameborder="0" class="graph-embed"></iframe>
+
+Compare o espaçamento das isoquantas sob CRS, IRS e DRS. O slider $t$ controla o fator de escala.
+
+## Funções Homotéticas
+
+Uma função é **homotética** se a TMST depende apenas de $K/L$, não dos níveis absolutos:
+
+$$\mathrm{TMST}_{LK}(K, L) = \phi\!\left(\frac{K}{L}\right)$$
+
+. . .
+
+**Consequência prática:** Firmas grandes e pequenas usam a **mesma "receita"** de insumos (para dados preços).
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Uma rede de cafeterias usa 20g de café para cada 200ml de água em todo espresso — seja na loja que serve 500 cafés/dia ou na que serve 3.000. Com tecnologia homotética, "escalar" é como dar zoom na mesma combinação ótima.
+:::
+
+**Todas as quatro funções vistas hoje são homotéticas.**
+
+## Caminho de Expansão
+
+Para funções homotéticas, a minimização de custos gera um **caminho de expansão linear**:
+
+$$\frac{K^*}{L^*} = \psi\!\left(\frac{w}{v}\right) \quad \text{(constante para todo } q \text{)}$$
+
+. . .
+
+**Implicação para custos (Capítulo 11):**
+
+$$C(w, v, q) = c(w, v) \cdot g(q)$$
+
+Os custos se separam em componente de **preços** e componente de **quantidade** — simplificação enorme!
+
+. . .
+
+> A homoteticidade é a **ponte** entre a teoria da produção (Cap. 10) e a teoria dos custos (Cap. 11).
+
+## Mapa de Isoquantas --- Interativo
+
+<iframe src="graficos/cap10/isoquantas.html" title="Mapa de Isoquantas Interativo" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Tipos de Progresso Técnico --- Interativo
+
+<iframe src="graficos/cap10/progresso-tecnico.html" title="Tipos de Progresso Técnico" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo da Aula
+
+1. **Quatro funções** cobrem todo o espectro de substituibilidade: Linear ($\sigma = \infty$), Leontief ($\sigma = 0$), Cobb-Douglas ($\sigma = 1$), CES ($\sigma$ livre)
+2. **Elasticidade de substituição** $\sigma$: determina facilidade de troca entre insumos
+3. **Progresso técnico**: desloca $A(t)$ — isoquantas contraem; três tipos de neutralidade
+4. **Resíduo de Solow** (PTF): parcela do crescimento não explicada por acumulação
+5. **Homoteticidade**: mesma "receita" em qualquer escala → caminho de expansão linear
+
+. . .
+
+**Próxima aula:** Custos I — do conceito de custo de oportunidade à minimização de custos.

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--
+  Otimização de Função de Uma Variável
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otimização de uma Variável</title>
+
+  <!-- JSXGraph -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 450px;
+      max-width: 560px;
+      height: 450px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .info-box .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .info-box .info-label {
+      color: #666;
+    }
+    .info-box .info-val {
+      font-weight: 700;
+      color: #333;
+    }
+    .info-box .info-val.accent { color: #C8102E; }
+    .info-box .info-val.green { color: #00897b; }
+    .info-box .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 0.4rem 0;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .legend-swatch {
+      width: 18px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+
+      <div class="slider-group">
+        <label>Curvatura \(b\): <span class="val" id="valB">1.0</span></label>
+        <input type="range" id="sliderB" min="0.2" max="3" value="1" step="0.1">
+      </div>
+      <div class="slider-group">
+        <label>Centro \(a\): <span class="val" id="valA">2.0</span></label>
+        <input type="range" id="sliderA" min="-3" max="5" value="2" step="0.1">
+      </div>
+
+      <div class="info-box">
+        <div class="info-row">
+          <span class="info-label">Ponto arrastável \(x\)</span>
+          <span class="info-val" id="xDrag">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(f(x)\)</span>
+          <span class="info-val" id="fxDrag">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(f'(x)\) (inclinação)</span>
+          <span class="info-val" id="fpDrag">—</span>
+        </div>
+        <hr class="divider">
+        <div class="info-row">
+          <span class="info-label">Máximo: \(x^*\), \(f(x^*)\)</span>
+          <span class="info-val accent" id="optInfo">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">CPO: \(f'(x^*)=0\)</span>
+          <span class="info-val accent" id="cpoInfo">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">CSO: \(f''(x^*)\)</span>
+          <span class="info-val green" id="csoInfo">—</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> \(f(x)\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> Tangente</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#C8102E; border-radius:50%; width:10px; height:10px;"></div> Máximo</div>
+      </div>
+
+      <button class="btn-reset" onclick="resetGraph()">Resetar</button>
+    </div>
+  </div>
+
+<script>
+var board, fCurve, tangentLine, dragPoint, maxPoint;
+var paramA = 2, paramB = 1, paramC = 5;
+
+function f(x) { return -paramB * (x - paramA) * (x - paramA) + paramC; }
+function fp(x) { return -2 * paramB * (x - paramA); }
+function fpp(x) { return -2 * paramB; }
+
+function initBoard() {
+  board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-1.5, 9, 9, -6.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: '', withLabel: false, label: { position: 'rt', offset: [5, 20], fontSize: 14 } },
+      y: { name: '', withLabel: false, label: { position: 'rt', offset: [-5, -20], fontSize: 14 }, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
+    }
+  });
+
+  // Y-axis label: centered vertically, rotated 90°, bold italic
+  board.create('text', [
+    -1.5 * 0.55, (9 + (-6.5)) / 2,
+    '<b><i>f</i>(<i>x</i>)</b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+  // X-axis label: centered horizontally, below ticks, bold italic
+  board.create('text', [
+    9 / 2, -6.5 * 0.85,
+    '<b><i>x</i></b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+  // Function curve
+  fCurve = board.create('functiongraph', [f, -6, 9], {
+    strokeColor: '#1565c0', strokeWidth: 2.8
+  });
+
+  // Draggable point on curve
+  dragPoint = board.create('glider', [0, f(0), fCurve], {
+    size: 5, fillColor: '#1565c0', strokeColor: '#1565c0', name: ''
+  });
+
+  // Tangent line
+  tangentLine = board.create('line', [
+    function() {
+      var xd = dragPoint.X();
+      return [f(xd) - fp(xd)*xd, fp(xd)]; // line: y = fp(xd)*(x - xd) + f(xd) => ax + b form: [b, a] for JXG std form
+    }
+  ], {
+    strokeColor: '#ff9800', strokeWidth: 2, dash: 2,
+    straightFirst: true, straightLast: true,
+    point1: { visible: false }, point2: { visible: false }
+  });
+
+  // Actually, let's use a segment-based tangent for clarity
+  board.removeObject(tangentLine);
+  tangentLine = board.create('segment', [
+    [function(){ return dragPoint.X() - 2; }, function(){ return f(dragPoint.X()) + fp(dragPoint.X())*(-2); }],
+    [function(){ return dragPoint.X() + 2; }, function(){ return f(dragPoint.X()) + fp(dragPoint.X())*(2); }]
+  ], { strokeColor: '#ff9800', strokeWidth: 2, dash: 2 });
+
+  // Maximum point
+  maxPoint = board.create('point', [
+    function(){ return paramA; },
+    function(){ return f(paramA); }
+  ], {
+    size: 6, fillColor: '#C8102E', strokeColor: '#C8102E', name: 'max', label: { offset: [8, 12], fontSize: 12, color: '#C8102E' }, fixed: true
+  });
+
+  // Vertical dashed at max
+  board.create('segment', [
+    [function(){ return paramA; }, 0],
+    [function(){ return paramA; }, function(){ return f(paramA); }]
+  ], { strokeColor: '#C8102E', dash: 3, strokeWidth: 1 });
+
+  dragPoint.on('drag', updateInfo);
+  updateInfo();
+}
+
+function updateInfo() {
+  var xd = dragPoint.X();
+  document.getElementById('xDrag').textContent = xd.toFixed(2);
+  document.getElementById('fxDrag').textContent = f(xd).toFixed(2);
+  document.getElementById('fpDrag').textContent = fp(xd).toFixed(3);
+  document.getElementById('optInfo').textContent = 'x*=' + paramA.toFixed(2) + ', f=' + f(paramA).toFixed(2);
+  document.getElementById('cpoInfo').textContent = "f'(" + paramA.toFixed(1) + ") = 0  \u2713";
+  var fppVal = fpp(paramA);
+  document.getElementById('csoInfo').textContent = fppVal.toFixed(2) + ' < 0  \u2713 (máximo)';
+  document.getElementById('csoInfo').style.color = fppVal < 0 ? '#00897b' : '#C8102E';
+}
+
+function updateParams() {
+  paramA = parseFloat(document.getElementById('sliderA').value);
+  paramB = parseFloat(document.getElementById('sliderB').value);
+  document.getElementById('valA').textContent = paramA.toFixed(1);
+  document.getElementById('valB').textContent = paramB.toFixed(1);
+  board.update();
+  updateInfo();
+}
+
+function resetGraph() {
+  document.getElementById('sliderA').value = 2;
+  document.getElementById('sliderB').value = 1;
+  paramA = 2; paramB = 1;
+  updateParams();
+}
+
+document.getElementById('sliderA').addEventListener('input', updateParams);
+document.getElementById('sliderB').addEventListener('input', updateParams);
+
+initBoard();
+</script>
+</body>
+</html>

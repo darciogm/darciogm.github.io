@@ -1,0 +1,480 @@
+# Analysis index — summary for scanning
+# Full details in docs/analyses/an-NNN-<slug>.md
+#
+# THIS FILE IS GENERATED — do not edit by hand.
+# Source of truth: YAML frontmatter on each docs/analyses/an-NNN-*.md page.
+# Regenerate via `python3 scripts/gen_analysis_index.py`.
+#
+# Fields:
+#   id:         an-NNN (sequential)
+#   hypothesis: hypothesis slug or null
+#   status:     pending | done | stale
+#   type:       descriptive | causal | placebo | robustness
+#   question:   one-line research question
+#   confidence: pending | green | yellow | red
+#   tags:       free-form list for filtering
+#   file:       path to analysis file (relative to project root)
+#   script:     path to source script (relative to project root)
+#   target:     primary output path under build/
+
+- id: an-001
+  hypothesis: cobidder-concentration
+  status: done
+  type: descriptive
+  question: How is the persistent-zero-win-participation rank constructed, and what is its distribution across always-loser firms in BEC 2009–2019?
+  confidence: green
+  tags: ["H:cobidder-concentration", construction, rank, log-tenders-count]
+  file: docs/analyses/an-001-zero-win-rank.md
+  script: scripts/12_build_item_value.R
+  target: data/processed/firm_loss_stats.parquet
+
+- id: an-002
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: How does the cobidder AUC change as the IQR threshold is varied, and is the median + 1.5 × IQR cutoff distinguishable from alternatives?
+  confidence: yellow
+  tags: ["H:cobidder-concentration", iqr-threshold, robustness, fl14]
+  file: docs/analyses/an-002-iqr-threshold.md
+  script: scripts/54_threshold_table_q3iqr.R
+  target: output/threshold_table_q3iqr/threshold_table_q3iqr.csv
+
+- id: an-003
+  hypothesis: cobidder-concentration
+  status: done
+  type: descriptive
+  question: How are CADE direct defendants and adjudication-anchored cobidders linked to BEC firms via CNPJ root, and what is the resulting set used as validation target?
+  confidence: green
+  tags: ["H:cobidder-concentration", "H:direct-defendants-null", cade, linkage, cnpj-root]
+  file: docs/analyses/an-003-cade-bec-linkage.md
+  script: scripts/00_build_bidlevel.py
+  target: data/processed/cade_bec_crossmatch.csv
+
+- id: an-004
+  hypothesis: cobidder-concentration
+  status: done
+  type: descriptive
+  question: Does the FL14 stratum contain a disproportionate share of CADE-adjudication-anchored cobidders relative to the always-loser baseline?
+  confidence: green
+  tags: ["H:cobidder-concentration", baseline, fl14, auc]
+  file: docs/analyses/an-004-cobidder-baseline.md
+  script: scripts/02_analysis.R
+  target: output/tables/tab_cobidder_baseline.tex
+
+- id: an-005
+  hypothesis: exposure-discipline
+  status: done
+  type: placebo
+  question: Does cobidder concentration in the FL14 stratum survive a participation-volume-matched placebo, and how far is the observed AUC from the sham null distribution?
+  confidence: green
+  tags: ["H:exposure-discipline", placebo, permutation, sham-fl, formal-test]
+  file: docs/analyses/an-005-sham-fl-permutation.md
+  script: scripts/25_sham_fl_permutation.R
+  target: output/sham_fl/sham_summary.csv
+
+- id: an-006
+  hypothesis: timing-discipline
+  status: done
+  type: robustness
+  question: Does cobidder concentration survive when the FL score is formed strictly before the target window?
+  confidence: yellow
+  tags: ["H:timing-discipline", "H:exposure-discipline", holdout, ex-ante]
+  file: docs/analyses/an-006-strict-prospective-holdout.md
+  script: scripts/27_strict_prospective_holdout.R
+  target: output/strict_train_threshold/strict_train_threshold.csv
+
+- id: an-007
+  hypothesis: direct-defendants-null
+  status: done
+  type: placebo
+  question: Does the FL score discriminate direct CADE defendants? It should not — by design.
+  confidence: green
+  tags: ["H:direct-defendants-null", placebo, scope-check, auc]
+  file: docs/analyses/an-007-auc-direct-cade.md
+  script: scripts/33_auc_direct_cade.R
+  target: output/auc_direct_cade/auc_direct_cade.csv
+
+- id: an-008
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Within the FL14 stratum, how do cobidders differ from non-cobidder FLs along buyer breadth and operational footprint?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", descriptive, buyer-breadth, footprint]
+  file: docs/analyses/an-008-pbu-characterization.md
+  script: scripts/28_pbu_characterization.R
+  target: output/theory_bridge/summary_means_wide.csv
+
+- id: an-009
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Do cobidders inside the FL14 stratum operate in more concentrated product portfolios than non-cobidder FLs, and are FL-flagged winners less concentrated overall?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", network, hhi, product-concentration]
+  file: docs/analyses/an-009-network-hhi.md
+  script: scripts/19_network_heterogeneity_2d.R
+  target: output/figures/fig_network_hhi.png
+
+- id: an-010
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: How does the seven-feature Imhof–Wallimann bid-distribution pipeline perform on the cobidder target, and what is the increment from adding the award-layer score?
+  confidence: green
+  tags: ["H:award-bid-complementarity", imhof, bid-distribution, horse-race]
+  file: docs/analyses/an-010-imhof-full-pipeline.md
+  script: scripts/31_imhof_full_pipeline.R
+  target: output/imhof_full/imhof_full_results.csv
+
+- id: an-011
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: Does the continuous log(1+tenders_count) dominate the binary FL14 on the cobidder target?
+  confidence: green
+  tags: ["H:cobidder-concentration", "H:award-bid-complementarity", horse-race, continuous, binary]
+  file: docs/analyses/an-011-horse-race-continuous.md
+  script: scripts/34_horse_race_fl_continuous.R
+  target: output/horse_race/horse_race_summary.csv
+
+- id: an-012
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: descriptive
+  question: What are the in-sample precision@k and lift metrics for the FL ranking used as a forensic gatekeeper?
+  confidence: yellow
+  tags: ["H:gatekeeping-cost-of-evidence", precision-at-k, in-sample, operational]
+  file: docs/analyses/an-012-operational-metrics.md
+  script: scripts/42_operational_metrics.R
+  target: output/operational/audit_precision_k.csv
+
+- id: an-013
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: robustness
+  question: What are the temporal-holdout precision@k and lift metrics, and how much does the in-sample evaluation inflate operational numbers?
+  confidence: green
+  tags: ["H:gatekeeping-cost-of-evidence", "H:timing-discipline", precision-at-k, temporal-holdout, audit]
+  file: docs/analyses/an-013-precision-at-k-audit.md
+  script: scripts/43_precision_at_k_audit.R
+  target: output/operational/audit_precision_k.csv
+
+- id: an-014
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: robustness
+  question: How much does item-level evaluation leak relative to out-of-fold and temporal-holdout retraining?
+  confidence: green
+  tags: ["H:exposure-discipline", "H:gatekeeping-cost-of-evidence", leakage, out-of-fold, audit]
+  file: docs/analyses/an-014-leakage-audit-d3.md
+  script: scripts/40_leakage_audit_d3.R
+  target: output/leakage_audit_d3/leakage_audit_d3.csv
+
+- id: an-015
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: D1 gate diagnostic — does the continuous score dominate FL14 on a harmonized same-sample horse race, and do the price coefficients align?
+  confidence: green
+  tags: ["H:award-bid-complementarity", "H:cobidder-concentration", gate-d1, continuous, harmonized]
+  file: docs/analyses/an-015-gate-d1.md
+  script: scripts/36_gate_d1_harmonized.R
+  target: output/gate_d1/gate_d1_harmonized.csv
+
+- id: an-016
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: D2 gate diagnostic — does the FL screen discriminate cobidders better in Convite or in Pregão environments?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", gate-d2, modal-id, convite, pregao]
+  file: docs/analyses/an-016-gate-d2.md
+  script: scripts/37_gate_d2_modal_auc.R
+  target: output/gate_d2/d2_modal_auc.csv
+
+- id: an-017
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: D3 gate diagnostic — does the continuous score preserve the loser-side thesis without FL14, and what is the item-level raw AUC subject to the leakage audit?
+  confidence: green
+  tags: ["H:cobidder-concentration", gate-d3, continuous-only]
+  file: docs/analyses/an-017-gate-d3.md
+  script: scripts/38_gate_d3_continuous_only.R
+  target: output/gate_d3/gate_d3_continuous_only.csv
+
+- id: an-018
+  hypothesis: direct-defendants-null
+  status: done
+  type: descriptive
+  question: D4 gate diagnostic — what share of direct CADE defendants are always-losers, and what is their win-rate distribution?
+  confidence: green
+  tags: ["H:direct-defendants-null", gate-d4, cade, winner-heavy]
+  file: docs/analyses/an-018-gate-d4.md
+  script: scripts/39_gate_d4_cade_winner_heavy.R
+  target: output/gate_d4/gate_d4_cade_winner_heavy.csv
+
+- id: an-019
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: Does the negotiated-price coefficient at the procurement-cap threshold reverse sign when FL14 presence is introduced, and is the RDD coefficient stable across bandwidths?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", rdd, cap-threshold, price]
+  file: docs/analyses/an-019-rdd-cap-price.md
+  script: scripts/13_rdd_cap.R
+  target: output/tables/tab_rdd_cap.tex
+
+- id: an-020
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: Does the 2018 procurement decree shift price dynamics differently across modalities, consistent with the scope reading?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", did, decreto-2018, modality]
+  file: docs/analyses/an-020-did-decreto-2018.md
+  script: scripts/14_did_decreto_2018.R
+  target: output/tables/tab_did_decreto_2018.tex
+
+- id: an-021
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: robustness
+  question: Does the "first-time FL" effect on cobidder concentration survive propensity-score matching?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", matching, first-time-fl, robustness, appendix-demoted]
+  file: docs/analyses/an-021-first-time-fl-matching.md
+  script: scripts/30_first_time_fl_matching.R
+  target: output/first_time_fl_matching/matched_results.csv
+
+- id: an-022
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: placebo
+  question: Do FL-margin price effects differ by procurement modality, and does the Pregão-only subsample replicate the full-sample direction?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", "H:cobidder-concentration", falsification, modality, pregao]
+  file: docs/analyses/an-022-falsification-pregao.md
+  script: scripts/46_falsification_pregao_only.R
+  target: output/falsification_pregao/falsification_results.csv
+
+- id: an-023
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: Does the operational mapping from theory (loser-side concentration) to implementation (FL14) survive an explicit audit against alternative operationalizations?
+  confidence: yellow
+  tags: ["H:cobidder-concentration", audit, operationalization, theory]
+  file: docs/analyses/an-023-theory-operationalization-audit.md
+  script: scripts/47_theory_operationalization_audit.R
+  target: output/theory_operationalization_audit/theory_audit.csv
+
+- id: an-024
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: How does the unified mechanism profile (HHI × pairs × heterogeneity quadrants) characterize FL cobidders relative to other FLs?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", mechanism, hhi, pairs, heterogeneity, quadrants]
+  file: docs/analyses/an-024-unified-mechanism.md
+  script: scripts/35_unified_mechanism.R
+  target: output/unified_mechanism/unified_mechanism.csv
+
+- id: an-025
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: How does cobidder AUC vary as the FL cutoff sweeps from FL2 through FL100, and is FL14 picking up an arbitrary plateau or a peak?
+  confidence: green
+  tags: ["H:cobidder-concentration", robustness, cutoff-sweep, sensitivity]
+  file: docs/analyses/an-025-cutoff-sweep-robustness.md
+  script: scripts/22_continuous_vs_binary.R
+  target: output/continuous_vs_binary/auc_threshold_sweep.csv
+
+- id: an-026
+  hypothesis: cobidder-concentration
+  status: done
+  type: robustness
+  question: Does the cobidder concentration result survive across always-loser sub-populations defined by bid-microdata availability?
+  confidence: green
+  tags: ["H:cobidder-concentration", "H:award-bid-complementarity", robustness, subsample, sensitivity]
+  file: docs/analyses/an-026-subsample-robustness.md
+  script: scripts/26_auc_by_subsample.R
+  target: output/auc_by_subsample/auc_subsample.csv
+
+- id: an-027
+  hypothesis: exposure-discipline
+  status: done
+  type: descriptive
+  question: How does AUC behave when the universe and the positive class are systematically varied — does the loser-side score remain disciplined to loser-side targets across every (universe × class) combination?
+  confidence: green
+  tags: ["H:exposure-discipline", "H:direct-defendants-null", scope, universe, meta-table]
+  file: docs/analyses/an-027-universe-anchored-stratum-scope.md
+  script: scripts/48_stratum_scope_reframe.R
+  target: output/stratum_scope/stratum_scope_metrics.csv
+
+- id: an-028
+  hypothesis: exposure-discipline
+  status: done
+  type: descriptive
+  question: Within the always-loser stratum, are cobidders distinguishable from non-cobidder FLs along dimensions other than raw participation volume?
+  confidence: green
+  tags: ["H:exposure-discipline", "H:cobidder-profile-distinct", balance, exposure, standardized-diffs]
+  file: docs/analyses/an-028-exposure-stratum-balance.md
+  script: scripts/60_theory_validation_bridge.R
+  target: output/theory_bridge/standardized_diffs.csv
+
+- id: an-029
+  hypothesis: timing-discipline
+  status: done
+  type: robustness
+  question: Does the FL screen preserve discrimination under three progressively-earlier train windows, evaluated against both all-time and truly-out-of-time cobidder targets?
+  confidence: green
+  tags: ["H:timing-discipline", strict-prospective, holdout, three-classifier]
+  file: docs/analyses/an-029-three-classifier-timing-battery.md
+  script: scripts/27_strict_prospective_holdout.R
+  target: output/strict_prospective_summary.csv
+
+- id: an-030
+  hypothesis: timing-discipline
+  status: done
+  type: descriptive
+  question: How much do the firms, markets, and procuring buyers in 2017–2019 overlap with those in 2009–2016? Is the out-of-sample evaluation actually evaluating new entities?
+  confidence: green
+  tags: ["H:timing-discipline", persistence, market-turnover, structural-oos]
+  file: docs/analyses/an-030-market-persistence.md
+  script: scripts/24_market_persistence.R
+  target: output/market_persistence/persistence_summary.csv
+
+- id: an-031
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Do cobidders display bid-level behavior distinct from non-cobidder FLs, independent of participation volume?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", bid-level, behavior, gap-to-winner, dispersion]
+  file: docs/analyses/an-031-bid-level-behavioral-profile.md
+  script: scripts/60_theory_validation_bridge.R
+  target: output/theory_bridge/standardized_diffs_bidlevel.csv
+
+- id: an-032
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: robustness
+  question: Does the quadrant-level heterogeneity (HHI × pairs) of the cobidder profile survive propensity-score matching, or is it a volume-confound artifact?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", matching, heterogeneity, quadrants, robustness, against]
+  file: docs/analyses/an-032-matched-heterogeneity-audit.md
+  script: scripts/32_matched_heterogeneity.R
+  target: output/matched_heterogeneity/matched_het_results.csv
+
+- id: an-033
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: How significant is the incremental value of the award-layer score added to the Imhof bid-distribution pipeline, by formal DeLong AUC-difference tests?
+  confidence: green
+  tags: ["H:award-bid-complementarity", imhof, incremental, delong, formal-test]
+  file: docs/analyses/an-033-imhof-incremental-delong.md
+  script: scripts/49_imhof_incremental_value.R
+  target: output/imhof_incremental/imhof_incremental.csv
+
+- id: an-034
+  hypothesis: award-bid-complementarity
+  status: done
+  type: descriptive
+  question: When deployed sequentially (FL gatekeeper → Imhof forensic stage) vs jointly, how does the cost-of-evidence trade-off look across precision targets and Stage-1 cutoffs?
+  confidence: green
+  tags: ["H:award-bid-complementarity", "H:gatekeeping-cost-of-evidence", sequential, gatekeeping, cost-of-evidence]
+  file: docs/analyses/an-034-sequential-gatekeeping-envelope.md
+  script: scripts/architecture_gatekeeper.R
+  target: output/architecture_gatekeeper/sequential_envelope.csv
+
+- id: an-035
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: descriptive
+  question: Across the full architecture × k × regime grid, what are the recall, precision, and bid-microdata cost trade-offs of the four sequencing rules?
+  confidence: green
+  tags: ["H:gatekeeping-cost-of-evidence", "H:award-bid-complementarity", architecture, cost-of-evidence, recall, precision, lift]
+  file: docs/analyses/an-035-architecture-cost-of-evidence-matrix.md
+  script: scripts/architecture_gatekeeper.R
+  target: output/architecture_gatekeeper/precision_at_k.csv
+
+- id: an-036
+  hypothesis: gatekeeping-cost-of-evidence
+  status: done
+  type: robustness
+  question: Are the precision@k metrics stable across cross-validation folds, or do they depend on a specific random split?
+  confidence: yellow
+  tags: ["H:gatekeeping-cost-of-evidence", cross-validation, precision-stability, operational]
+  file: docs/analyses/an-036-cv-precision-stability.md
+  script: scripts/43_precision_at_k_audit.R
+  target: output/operational/audit_precision_k_cv.csv
+
+- id: an-037
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: How does the FL-margin price coefficient transform across baseline → overlap-cell → ATT specifications, and does the negative sign survive subgroup decomposition under overlap discipline?
+  confidence: green
+  tags: ["H:price-scope-sign-reversal", sign-reversal, overlap, ATT, subgroup-decomposition]
+  file: docs/analyses/an-037-sign-reversal-decomposition.md
+  script: scripts/59_sign_reversal_decomp.R
+  target: output/sign_reversal_decomp/headline_specs.csv
+
+- id: an-038
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: At the item-group and operating-cell level, where does the negative FL-price coefficient hold and where does it not? Does the heterogeneity track the scope reading or contradict it?
+  confidence: yellow
+  tags: ["H:price-scope-sign-reversal", cell-audit, segment-betas, item-group, heterogeneity]
+  file: docs/analyses/an-038-negative-cell-segment-audit.md
+  script: scripts/50_negative_cell_audit.R + scripts/59_sign_reversal_decomp.R
+  target: output/negative_cell_audit/negative_cell_audit.csv + output/sign_reversal_decomp/within_overlap_subgroup_betas.csv
+
+- id: an-039
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: Do cartels with cover bidders endogenously select into cells where the underlying (non-treated) price level is structurally higher? If yes, the naive positive FL-price coefficient reflects selection, not the cartel's within-cell price effect.
+  confidence: green
+  tags: ["H:price-scope-sign-reversal", selection, rationalization, sign-reversal-decomposition]
+  file: docs/analyses/an-039-selection-mechanism-test.md
+  script: scripts/61_selection_mechanism_test.R
+  target: output/selection_mechanism/selection_test_results.csv + non_treated_price_by_fl_share.csv
+
+- id: an-040
+  hypothesis: price-scope-sign-reversal
+  status: done
+  type: descriptive
+  question: Within overlap cells, does FL presence depress the observed winner bid relative to the reference price? Does the effect operate through the channel of more bidders (cover-bidding theater)? Does the mechanism strengthen in dense-bidding tenders?
+  confidence: green
+  tags: ["H:price-scope-sign-reversal", mechanism, rationalization, cover-bidding, bidder-count]
+  file: docs/analyses/an-040-within-cell-mechanism-test.md
+  script: scripts/62_within_cell_mechanism_test.R
+  target: output/mechanism_within_cell/mechanism_test_results.csv + m1_m2_revalidated.csv + mechanism_by_bidder_count.csv
+
+- id: an-041
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Does the within-FL distinctness of cobidders (AN-028 participation dimensions, AN-031 bid-level gap-to-winner) survive holding participation volume fixed, or is it a raw tenders_count artifact? Match cobidders to FL non-cobidders on tenders_count and re-compute Cohen's d.
+  confidence: green
+  tags: ["H:cobidder-profile-distinct", "H:exposure-discipline", volume-matching, propensity-score, cem, robustness, gap-to-winner]
+  file: docs/analyses/an-041-volume-matched-cobidder-audit.md
+  script: scripts/74_volume_matched_cobidder_audit.R
+  target: output/volume_matched_audit/matched_standardized_diffs.csv + balance.csv
+
+- id: an-042
+  hypothesis: cobidder-profile-distinct
+  status: done
+  type: descriptive
+  question: Are cobidders distinct from non-cobidder FLs on bid TIMING (revision intensity, inter-bid interval, last-bid position, engagement span), and does any timing dimension survive volume matching on tenders_count? I.e., is there a SECOND bid-conduct channel beyond the median gap-to-winner?
+  confidence: yellow
+  tags: ["H:cobidder-profile-distinct", timing, bid-conduct, volume-matching, null-result, propensity-score, cem]
+  file: docs/analyses/an-042-volume-matched-timing-audit.md
+  script: scripts/75_volume_matched_timing_audit.R
+  target: output/volume_matched_timing/timing_standardized_diffs.csv + timing_balance.csv

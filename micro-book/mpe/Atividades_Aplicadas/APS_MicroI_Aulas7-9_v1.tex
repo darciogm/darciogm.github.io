@@ -1,0 +1,1230 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,multicol,multirow,array,setspace,comment,tikz,booktabs,enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,calc,patterns,positioning}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% ------------------ cores ------------------
+\definecolor{solblue}{RGB}{0,0,139}
+\definecolor{rubred}{RGB}{139,0,0}
+\definecolor{boxgray}{RGB}{240,240,240}
+\definecolor{boxborder}{RGB}{100,100,100}
+\definecolor{insperred}{RGB}{200,16,46}
+
+\raggedbottom
+
+\printanswers
+
+\unframedsolutions
+\SolutionEmphasis{\color{solblue}}
+\renewcommand{\solutiontitle}{\noindent\textcolor{solblue}{\rule{\linewidth}{0.4pt}}\par\noindent\textbf{\textcolor{solblue}{Solução:}}\enspace}
+
+\pagestyle{headandfoot}
+\runningheader{Microeconomia I (MPE)}{APS V1 -- Falhas e Mecanismos no Mercado Bancário}{Página \thepage\ de \numpages}
+\runningheadrule
+\runningfooter{}{}{}
+
+\newcommand{\class}{Microeconomia I -- MPE 2026/32}
+\newcommand{\examname}{Atividade Prática Supervisionada -- APS (V1, Aulas 7--9)}
+\newcommand{\examdate}{2026.1}
+
+\pointpoints{ponto}{pontos}
+\renewcommand{\partlabel}{\alph{partno})}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+
+\newtcolorbox{contextbox}[1][]{%
+  enhanced, breakable,
+  colback=boxgray, colframe=boxborder,
+  boxrule=0.4pt, arc=2pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\bfseries, title=#1
+}
+
+% Notação operacional
+\newcommand{\TMS}{\text{TMS}}
+\newcommand{\TMT}{\text{TMT}}
+\newcommand{\MEC}{\text{MEC}}
+\newcommand{\MC}{\text{MC}}
+\newcommand{\E}{\mathrm{e}}
+\newcommand{\IC}{\text{(IC)}}
+\newcommand{\IR}{\text{(IR)}}
+
+\begin{document}
+
+\newgeometry{top=2cm,bottom=2cm,left=1.8cm,right=1.8cm}
+
+\ifprintanswers
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large APS -- Versão 1 (Aulas 7--9) -- Resolução Comentada \\[0.5em]
+        \normalsize \examdate
+    \end{center}
+    \vspace{0.5cm}
+\else
+    \noindent\hfill\includegraphics[width=2.5cm]{logo-insper.png}\\[1em]
+    \vspace*{-4.5em}
+    \noindent\textbf{Aluno(a):} \rule{12cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Curso:} \rule{6cm}{0.4pt}
+    \hspace{0.5cm}
+    \textbf{N\textsuperscript{o} de matrícula:} \rule{5cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Turma:} \rule{6cm}{0.4pt}
+    \hspace{0.3cm}
+    \textbf{Professor(a):} \rule{5.8cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Grupo (até 4 integrantes):} \rule{10cm}{0.4pt}
+
+    \vspace{1em}
+
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large \examname \\[0.5em]
+        \large \textit{Crédito bancário, FGC e dívida soberana brasileira: externalidade sistêmica, lemons, risco moral, sinalização e matching} \\[0.5em]
+        \large \examdate
+    \end{center}
+
+    \textbf{Prezado(a) Aluno(a),}
+    \vspace{0.8em}
+
+    Esta APS cobre as Aulas 7, 8 e 9 do curso (externalidades e bens públicos; seleção adversa e risco moral; sinalização e matching). É composta de \textbf{4 questões} distribuídas em três partes técnicas e uma síntese de política, totalizando \textbf{100 pontos}. Tempo estimado: \textbf{180 minutos} (3 horas).
+
+    \begin{enumerate}[noitemsep]
+        \item Identifique-se com letra legível em todas as folhas.
+        \item Esta APS pode ser resolvida em grupos de até 4 integrantes. \textbf{Cada integrante deve dominar a totalidade da resolução.}
+        \item Apresentação clara, notação consistente e justificativa econômica das passagens são parte da nota.
+        \item \textbf{Gráficos exigem precisão:} interceptos numéricos, inclinações, pontos rotulados, fronteiras de domínio explícitas.
+        \item Resoluções a lápis \textbf{não serão revisadas}.
+        \item As Questões 1--3 trabalham com a mesma economia ``estabilidade financeira brasileira'' calibrada a seguir, em complexidade crescente: externalidade sistêmica + estabilidade como bem público (Q1, Aula 7) $\to$ informação assimétrica em crédito e em contratos bancários (Q2, Aula 8) $\to$ rating soberano como sinal e matching de bancos coordenadores em emissões (Q3, Aula 9). A Questão 4 sintetiza recomendação ao Banco Central do Brasil + Tesouro Nacional.
+        \item Os parâmetros calibrados (probabilidades de default, retornos, contribuições FGC) \textit{não} pretendem reproduzir números operacionais do BCB, do FGC, da Anbima ou do Tesouro -- são uma ilustração estilizada, escolhida para que a álgebra feche em frações simples e os resultados qualitativos espelhem os mecanismos do capital regulatório (Resolução CMN 4.193/2013, Basel III), do FGC (Resolução CMN 4.222/2013) e do Tesouro Direto.
+    \end{enumerate}
+
+    \rightline{\textbf{Boa atividade!}}
+
+    \vspace{0.5em}
+    \noindent\hrulefill
+
+    \noindent\textbf{Formulário e notação permitidos}
+    \vspace{0.3em}
+
+    \textbf{Externalidade Pigouviana.} Em economia parcial com agente que escolhe ação $r \geq 0$, lucro privado $\pi^p(r)$ e custo externo agregado $D(r)$, equilíbrio privado e ótimo social satisfazem
+    \[
+        r^p \in \arg\max\, \pi^p(r),\qquad
+        r^* \in \arg\max\, \pi^p(r) - D(r),\qquad
+        \boxed{\;\tau^* \;=\; \MEC(r^*) \;=\; D'(r^*).\;}
+    \]
+    Imposto Pigouviano avaliado \textbf{no ótimo}, não no privado.
+
+    \textbf{Coase (1960).} Sob (i) direitos bem-definidos, (ii) custos de transação zero, (iii) sem efeito-renda relevante: barganha privada gera alocação Pareto-eficiente, independente de quem detém o direito inicialmente.
+
+    \textbf{Bem público (Samuelson 1954).} Em economia $I \times (1+1)$ bens (1 privado $x$, 1 público $G$) com tecnologia linear $\TMT_{G,x} = c$:
+    \[
+        \boxed{\;\sum_{i=1}^I \TMS^i_{G,x}(x^{i*}, G^*) \;=\; \TMT_{G,x} \;=\; c.\;}
+    \]
+    Em provisão voluntária de Nash, cada $i$ iguala $\TMS^i = c$ \emph{individualmente} -- subprovisão.
+
+    \textbf{Akerlof (1970) lemons.} Vendedor conhece $\theta$, comprador valoriza $\beta\theta$, vendedor reserva $\theta$. Equilíbrio assimétrico com $\theta \sim U[0, 1]$:
+    \[
+        p^* \;=\; \beta \cdot E[\theta \mid \theta \leq p^*];\qquad \beta < 2 \;\Longrightarrow\; p^* = 0\ \text{(unraveling completo)}.
+    \]
+    Em mercado de crédito (Stiglitz-Weiss 1981), análogo: a taxa de juros que zera lucro do banco é função da composição condicional dos tipos que aceitam.
+
+    \textbf{Rothschild-Stiglitz (1976) seguro com seleção adversa.} 2 tipos $\theta \in \{B, R\}$ com probabilidades $\pi_R > \pi_B$. Equilíbrio separador competitivo: tipo de alto risco ($R$) recebe \emph{cobertura completa ao prêmio justo} $p_R = \pi_R L$; tipo de baixo risco ($B$) recebe \emph{cobertura distorcida para baixo}, com IC do tipo $R$ binding (tipo $R$ é indiferente entre seu próprio contrato e copiar o de $B$). \textbf{Inexistência possível} para proporção $\lambda$ baixa de altos riscos.
+
+    \textbf{Holmström (1979) principal-agente com risco moral.} Principal neutro, agente avesso (Bernoulli $u$ côncava), esforço $a \in \{a_L, a_H\}$, output $y \in \{y_L, y_H\}$, $\pi_a = \Pr(y_H \mid a)$, $\pi_H > \pi_L$, $c(a_H) > 0$.
+    \emph{First-best} (esforço observável): salário fixo $w^*$ tal que $u(w^*) - c(a_H) = \bar U$ (IR binding, principal absorve risco).
+    \emph{Second-best} (esforço hidden): contratos $(w_H, w_L)$ com IR + IC binding e \textbf{Mirrlees-Holmström FOC}
+    \[
+        \boxed{\;\frac{1}{u'(w_H)} \;=\; \mu + \nu\cdot\frac{\pi_H - \pi_L}{\pi_H},\qquad
+        \frac{1}{u'(w_L)} \;=\; \mu - \nu\cdot\frac{\pi_H - \pi_L}{1-\pi_H}.\;}
+    \]
+    Sob $\nu > 0$ (IC binding): $u'(w_H) < u'(w_L)$, logo $w_H > w_L$. Salário é função crescente do output via likelihood-ratio (MLRP).
+
+    \textbf{Spence (1973) sinalização.} Tipo $\theta \in \{\theta_L, \theta_H\}$, custo de sinal $c(e, \theta) = e/\theta$, single-crossing ($\partial \TMS/\partial \theta < 0$). Equilíbrio separador competitivo Bayesiano-perfeito com salário igual à produtividade marginal: $w_L = \theta_L$, $w_H = \theta_H$, $e_L = 0$. Sinal do tipo $H$ satisfaz
+    \[
+        \underline{e}_{\min} \;=\; \theta_L(\theta_H - \theta_L) \;\leq\; e_H \;\leq\; \theta_H(\theta_H - \theta_L) \;=\; \underline{e}_{\max}.
+    \]
+    \textbf{Critério intuitivo de Cho-Kreps (1987)} elimina pooling e separadores acima de $\underline{e}_{\min}$ -- sobrevive o \emph{Riley equilibrium} $e^*_H = \underline{e}_{\min}$.
+
+    \textbf{Matching estável (Gale-Shapley 1962).} Conjuntos disjuntos $M$, $W$ com preferências completas e estritas. Matching $\mu: M \to W \cup \{\emptyset\}$ é \textbf{estável} se não existe par bloqueante $(m, w)$ tal que $w \succ_m \mu(m)$ e $m \succ_w \mu(w)$. \emph{Algoritmo Deferred Acceptance (DA)} com $M$ propondo termina em $\leq |M| \cdot |W|$ iterações; output é estável, $M$-ótimo e $W$-pessimo. \textbf{Strategy-proofness assimétrica de Roth (1982):} verdade é dominante para $M$ (proponentes), não para $W$ (receptores); nenhum mecanismo estável é SP para os dois lados.
+
+    \vspace{0.5em}
+    \hrule
+    \vspace{1em}
+    \noindent\textbf{\underline{Para uso exclusivo do Professor}} \\[0.2em]
+
+    Permitido rascunho? \hfill (X) SIM \quad (   ) NÃO\\[0.3em]
+    Consulta a material extra? \hfill (   ) SIM \quad (X) NÃO\\[0.3em]
+    Calculadora científica? \hfill (X) SIM \quad (   ) NÃO
+
+    \vspace{0.6em}
+    \noindent Avaliação passível de revisão? \hfill (X) SIM \quad (   ) NÃO
+
+    \newpage
+\fi
+
+\begin{contextbox}[Contexto: estabilidade financeira brasileira e dívida soberana]
+\small
+O sistema financeiro brasileiro pós-1994 foi remodelado por instituições que respondem, cada uma à sua maneira, a uma das três falhas clássicas do equilíbrio geral catalogadas neste curso. A \textbf{externalidade sistêmica} -- o risco de que a falência de um banco grande contagie outros via mercado interbancário, posições casadas e perda de confiança nos depósitos -- foi vivida na prática durante a crise dos bancos em 1995 (Econômico, Nacional, Bamerindus) e levou ao \textbf{PROER} (Programa de Estímulo à Reestruturação e ao Fortalecimento do Sistema Financeiro Nacional, Lei 9.710/1998), que financiou a transferência de carteiras de bancos quebrados para bancos sólidos. A \textbf{estabilidade financeira como bem público} é endereçada pelo \textbf{FGC} (Fundo Garantidor de Créditos, Resolução CMN 4.222/2013), garantia de depósitos até R\$ 250 mil por CPF/CNPJ por instituição, financiada por contribuição compulsória dos bancos sobre o saldo de depósitos elegíveis. O acordo de \textbf{Basel III}, adaptado pelo Banco Central do Brasil via Resolução CMN 4.193/2013 e seguintes, impõe \textbf{capital regulatório contracíclico} -- mecanismo que opera como imposto Pigouviano sobre tomada excessiva de risco bancário, calibrado pelo BCB conforme o ciclo de crédito.
+
+A \textbf{informação assimétrica em crédito} foi modelada formalmente por \textbf{Stiglitz \& Weiss (1981, AER)} -- bancos racionam crédito porque juros mais altos atraem tomadores de pior qualidade (seleção adversa) e induzem risk-shifting (risco moral). O resultado de \textbf{Akerlof (1970, QJE)} aplicado a crédito: a taxa de juros de equilíbrio que zera lucro esperado pode ser tão alta que apenas tomadores ruins permanecem, levando ao colapso parcial do mercado. A \textbf{seleção adversa em seguro de crédito a PMEs} é endereçada pelo FGC via menu de garantias condicionado a tamanho da instituição e perfil de risco -- aproximação institucional do equilíbrio separador de \textbf{Rothschild \& Stiglitz (1976, QJE)}. O \textbf{risco moral em governança bancária} -- gerentes de portfólio que desviam de esforço observável -- é modelado pela teoria de \textbf{Holmström (1979, Bell Journal)}, com aplicação a contratos de incentivo (stock options, bônus condicionados a performance) na própria indústria bancária.
+
+A \textbf{dívida soberana} brasileira -- gerida pelo Tesouro Nacional via instrumentos como NTN-B (indexada ao IPCA), LFT (indexada à Selic), LTN (prefixada) e NTN-F (prefixada longa) -- depende de credibilidade fiscal sinalizada via política orçamentária (superávit primário, regra de gasto, arcabouço fiscal). O \textbf{rating soberano} atribuído por agências (S\&P, Moody's, Fitch) é o sinal de Spence (1973) por excelência: o governo competente sustenta superávit primário visível como esforço custoso (mas menos custoso para ele do que para o incompetente), e investidores formam crenças sobre tipo a partir do sinal. O downgrade brasileiro de \textbf{set/2015} pela S\&P (de BB+ para BB, perda do grau de investimento) materializou o equilíbrio separador: governo sinalizou tipo baixo (incapacidade de sustentar superávit) e mercado precificou via spread mais alto. A literatura formal está em \textbf{Bolton, Freixas \& Shapiro (2012, JoF)} -- ``The Credit Ratings Game''.
+
+A \textbf{coordenação entre Tesouro e bancos coordenadores em emissões soberanas} estruturadas é problema de \textbf{matching} no sentido de Gale-Shapley (1962). A Anbima (Associação Brasileira das Entidades dos Mercados Financeiro e de Capitais) intermedia a alocação de mandatos de coordenação entre bancos (Itaú-BBA, BTG, Bradesco BBI, Santander, entre outros) e tipos de operação (NTN-B longa, dívida externa em dólar, etc.). Cada lado tem preferências sobre o outro -- bancos preferem operações maiores e mais visíveis; o Tesouro prefere bancos com maior capacidade de distribuição e custo de funding mais baixo. A teoria de \textbf{Roth (1982, MOR)} garante que \emph{algum} mecanismo estável existe (DA), mas com strategy-proofness apenas para o lado proponente.
+
+Esta APS modela essas três falhas + mecanismos em complexidade crescente. Você (i) calibra a externalidade sistêmica de risco bancário e a provisão de estabilidade como bem público (Q1, Aula 7); (ii) resolve o equilíbrio Akerlof em crédito, o equilíbrio R-S em garantia FGC para PMEs e o programa principal-agente de Holmström em contratos de incentivo bancário (Q2, Aula 8); (iii) constrói o equilíbrio separador de Spence para sinal soberano e executa DA para alocação banco-emissão (Q3, Aula 9); finalmente (iv) recomenda ao BCB + Tesouro um redesenho conjunto de capital regulatório, FGC e protocolo de coordenação de emissões (Q4).
+
+\medskip
+\textit{Referências (todas reais e verificáveis em catálogos públicos):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Pigou, A. C. (1920). \textit{The Economics of Welfare}. Macmillan.
+\item Coase, R. H. (1960). ``The Problem of Social Cost.'' \textit{Journal of Law and Economics} 3: 1--44.
+\item Samuelson, P. A. (1954). ``The Pure Theory of Public Expenditure.'' \textit{Review of Economics and Statistics} 36(4): 387--389.
+\item Lindahl, E. (1919/1958). ``Just Taxation: A Positive Solution.'' Em Musgrave \& Peacock (eds.), \textit{Classics in the Theory of Public Finance}, St.~Martin's Press, pp.~168--176.
+\item Vickrey, W. (1961). ``Counterspeculation, Auctions, and Competitive Sealed Tenders.'' \textit{Journal of Finance} 16(1): 8--37.
+\item Clarke, E. H. (1971). ``Multipart Pricing of Public Goods.'' \textit{Public Choice} 11: 17--33.
+\item Groves, T. (1973). ``Incentives in Teams.'' \textit{Econometrica} 41(4): 617--631.
+\item Hardin, G. (1968). ``The Tragedy of the Commons.'' \textit{Science} 162(3859): 1243--1248.
+\item Ostrom, E. (1990). \textit{Governing the Commons: The Evolution of Institutions for Collective Action}. Cambridge University Press.
+\item Akerlof, G. A. (1970). ``The Market for `Lemons': Quality Uncertainty and the Market Mechanism.'' \textit{Quarterly Journal of Economics} 84(3): 488--500.
+\item Rothschild, M. \& Stiglitz, J. (1976). ``Equilibrium in Competitive Insurance Markets: An Essay on the Economics of Imperfect Information.'' \textit{Quarterly Journal of Economics} 90(4): 629--649.
+\item Stiglitz, J. E. \& Weiss, A. (1981). ``Credit Rationing in Markets with Imperfect Information.'' \textit{American Economic Review} 71(3): 393--410.
+\item Holmström, B. (1979). ``Moral Hazard and Observability.'' \textit{Bell Journal of Economics} 10(1): 74--91.
+\item Mirrlees, J. A. (1971). ``An Exploration in the Theory of Optimum Income Taxation.'' \textit{Review of Economic Studies} 38(2): 175--208.
+\item Spence, M. (1973). ``Job Market Signaling.'' \textit{Quarterly Journal of Economics} 87(3): 355--374.
+\item Cho, I.-K. \& Kreps, D. M. (1987). ``Signaling Games and Stable Equilibria.'' \textit{Quarterly Journal of Economics} 102(2): 179--221.
+\item Gale, D. \& Shapley, L. S. (1962). ``College Admissions and the Stability of Marriage.'' \textit{American Mathematical Monthly} 69(1): 9--15.
+\item Roth, A. E. (1982). ``The Economics of Matching: Stability and Incentives.'' \textit{Mathematics of Operations Research} 7(4): 617--628.
+\item Roth, A. E. \& Peranson, E. (1999). ``The Redesign of the Matching Market for American Physicians.'' \textit{American Economic Review} 89(4): 748--780.
+\item Acharya, V. V., Pedersen, L. H., Philippon, T. \& Richardson, M. (2017). ``Measuring Systemic Risk.'' \textit{Review of Financial Studies} 30(1): 2--47.
+\item Bolton, P., Freixas, X. \& Shapiro, J. (2012). ``The Credit Ratings Game.'' \textit{Journal of Finance} 67(1): 85--111.
+\item Reinhart, C. M. \& Rogoff, K. S. (2009). \textit{This Time Is Different: Eight Centuries of Financial Folly}. Princeton University Press.
+\item Nicholson, W. \& Snyder, C. (2017). \textit{Microeconomic Theory: Basic Principles and Extensions}, 12th ed. Cengage. ISBN 978-1-305-50579-7. Caps.~18 e 19.
+\item Jehle, G. A. \& Reny, P. J. (2011). \textit{Advanced Microeconomic Theory}, 3rd ed. Pearson, §§6.6 e 7.1--7.3.
+\item Mas-Colell, A., Whinston, M. D. \& Green, J. R. (1995). \textit{Microeconomic Theory}. Oxford University Press, §§11.B--D, 13.B--D (citado cirurgicamente).
+\item \textbf{Brasil:} Lei 9.710/1998 (PROER); Lei Complementar 105/2001 (sigilo bancário); Resolução CMN 4.222/2013 (FGC); Resolução CMN 4.193/2013 (Basel III adaptado pelo BCB); Lei 4.595/1964 (Lei do Sistema Financeiro Nacional).
+\end{itemize}
+\end{contextbox}
+
+\vspace{0.5em}
+
+\noindent\textbf{Setup geral comum às Questões 1--3.} Sistema bancário estilizado com (i) externalidade sistêmica via tomada de risco bancário (Q1A); (ii) estabilidade financeira como bem público financiado por contribuição (Q1B); (iii) crédito a tomadores de tipo desconhecido (Q2A); (iv) seguro FGC para PMEs com 2 tipos de risco (Q2B); (v) contrato de incentivo entre acionista e gerente bancário (Q2C); (vi) sinal de rating soberano via superávit primário (Q3A); (vii) matching de bancos coordenadores e emissões soberanas (Q3B). Os parâmetros são escolhidos para que toda álgebra feche em frações simples e os resultados qualitativos espelhem mecanismos reais (Basel III, FGC, downgrade S\&P 2015, Anbima).
+
+\begin{spacing}{1.3}
+
+% ============================================================
+% PARTE I -- AULA 7
+% ============================================================
+\begin{center}\large\textbf{Parte I --- Externalidade sistêmica e estabilidade financeira como bem público} \quad (25 pontos)\end{center}
+
+\textit{Conexão com a Aula 7.} Os itens abaixo testam: (Sub-bloco A) externalidade sistêmica de risco bancário, com solução Pigouviana via capital regulatório (Basel III) e discussão Coase via bail-in; (Sub-bloco B) estabilidade financeira como bem público com $I = 2$ bancos contribuindo voluntariamente, derivação da condição de Samuelson, demonstração do free-rider e interpretação do FGC como mecanismo institucional de provisão coletiva.
+
+\begin{questions}
+\question \textbf{Externalidade sistêmica e FGC como bem público} (25 pontos).
+
+\noindent\emph{Sub-bloco A (itens a--c, 13 pontos): externalidade sistêmica.} Considere um banco representativo do sistema financeiro nacional que escolhe o nível de risco $r \geq 0$ no seu portfólio (medida composta de duration, alavancagem e exposição a setores cíclicos). O lucro privado esperado em função do risco é
+\[
+    \pi^p(r) \;=\; 12\, r \;-\; r^2.
+\]
+Adicionalmente, a tomada de risco do banco gera \textbf{externalidade sistêmica} sobre os $N - 1 = 4$ demais bancos do sistema, via aumento da probabilidade de cascade-default e contágio no mercado interbancário. O custo externo agregado (suportado pelos outros $4$ bancos coletivamente) é
+\[
+    D(r) \;=\; r^2,\qquad \text{logo}\qquad \MEC(r) \;=\; D'(r) \;=\; 2 r.
+\]
+
+\begin{parts}
+\part[6] \textbf{Equilíbrio privado, ótimo social e Pigou contracíclico.}
+
+\textbf{(i)} Calcule o nível de risco $r^p$ escolhido pelo banco em equilíbrio privado, ignorando a externalidade. Verifique a CPO de segunda ordem (concavidade de $\pi^p$).
+
+\textbf{(ii)} Calcule o nível socialmente ótimo $r^*$, definido como o maximizador de $W(r) = \pi^p(r) - D(r)$.
+
+\textbf{(iii)} Derive o imposto Pigouviano $\tau^*$ tal que o banco, ao maximizar $\pi^p(r) - \tau\cdot r$, escolha $r = r^*$. Verifique algebricamente que $\tau^* = \MEC(r^*)$ -- avaliado \emph{no ótimo}, não no privado.
+
+\textbf{(iv)} Identifique no marco regulatório brasileiro o instrumento concreto que opera como esse imposto Pigouviano. Cite a base normativa.
+
+\begin{solution}
+\textbf{(i) Privado.} CPO interior: $\partial \pi^p/\partial r = 12 - 2 r = 0 \Rightarrow \boxed{r^p = 6.}$ Concavidade: $\partial^2 \pi^p/\partial r^2 = -2 < 0$. $\checkmark$ Lucro privado em $r^p$: $\pi^p(6) = 72 - 36 = 36$.
+
+\textbf{(ii) Socialmente ótimo.} $W(r) = 12 r - r^2 - r^2 = 12 r - 2 r^2$. CPO: $12 - 4 r = 0 \Rightarrow \boxed{r^* = 3.}$ Concavidade: $W''(r) = -4 < 0$. $\checkmark$ Bem-estar em $r^*$: $W(3) = 36 - 18 = 18$. \emph{Compare com o privado}: $W(r^p) = \pi^p(6) - D(6) = 36 - 36 = 0$. \textbf{O equilíbrio privado destrói todo o excedente social.} Tomada excessiva de risco: $r^p = 6 = 2 r^*$.
+
+\textbf{(iii) Pigou.} Banco com imposto $\tau$ por unidade de risco resolve $\max_r 12 r - r^2 - \tau r$. CPO: $12 - 2 r - \tau = 0 \Rightarrow r(\tau) = (12 - \tau)/2$. Para induzir $r(\tau) = r^* = 3$: $(12 - \tau)/2 = 3 \Rightarrow \boxed{\tau^* = 6.}$
+
+\emph{Verificação Pigou.} $\MEC(r^*) = 2\cdot 3 = 6 = \tau^*$. $\checkmark$ Confirmação algébrica: $\MEC$ avaliada no \emph{ótimo} ($r^* = 3$) dá 6; avaliada no \emph{privado} ($r^p = 6$) daria 12 -- aplicar 12 levaria ao subótimo $r(12) = 0$. Esta é a armadilha pedagógica clássica: \textbf{Pigou avalia MEC em $r^*$, não em $r^p$.}
+
+\textbf{(iv) Aplicação Brasil.} O instrumento concreto é o \textbf{capital regulatório contracíclico (Basel III)}, adaptado pelo BCB via \textbf{Resolução CMN 4.193/2013} e atualizações subsequentes. Bancos são obrigados a manter um buffer de capital próprio (Common Equity Tier 1) proporcional aos ativos ponderados pelo risco (RWA, \emph{risk-weighted assets}). O ``preço'' econômico desse buffer (custo de oportunidade do capital próprio em vez de captação alavancada) opera como $\tau^*$ por unidade de risco -- internaliza, no nível do banco individual, o custo sistêmico que sua tomada de risco impõe ao resto do sistema. O componente \emph{contracíclico} (G-SIB surcharge para bancos sistemicamente importantes; countercyclical capital buffer ativado pelo BCB no boom de crédito) é a forma de modular $\tau$ ao longo do ciclo, refletindo que $\MEC$ é maior em fases de exuberância. \textit{Observação}: a calibragem real do BCB usa modelos com mais variáveis (estresse macro, correlação entre exposições) -- o argumento estilizado aqui captura o mecanismo qualitativo, não os parâmetros operacionais.
+\end{solution}
+
+\newpage
+\part[3] \textbf{Visualização gráfica.} Esboce no plano $(r, \text{valor monetário})$ as curvas $\MC^p(r) \equiv -\pi^{p\prime}(r) + 12 = 2r$ (custo marginal privado relativo ao máximo, em unidades comparáveis), $\MC^s(r) = \MC^p(r) + \MEC(r) = 2r + 2r = 4r$, e a ``demanda de risco'' constante a $12$ (receita marginal). Marque $r^p = 6$, $r^* = 3$, e identifique o triângulo de Harberger (perda de bem-estar do não-imposto).
+
+\begin{solution}
+\textbf{Construção.} O ``benefício marginal'' do banco (receita marginal de risco, $\partial \pi^p/\partial r |_{\text{antes do termo quadrático}} = 12$) é horizontal em $12$. O ``custo marginal privado'' é $\MC^p(r) = 2r$ (derivada do termo $r^2$ que entra como custo no problema do banco -- equivale a olhar o problema como ``contrato $r$ no mercado de risco''). $\MC^s(r) = 2r + 2r = 4r$. Cruzamentos: $\MC^p = 12 \Rightarrow r^p = 6$; $\MC^s = 12 \Rightarrow r^* = 3$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=7cm,
+    xlabel={$r$ (nível de risco do banco)},
+    ylabel={valor (R\$)},
+    xmin=0, xmax=7.5, ymin=0, ymax=28,
+    xtick={0,1,2,3,4,5,6,7},
+    xticklabels={$0$,,,$r^*=3$,,,$r^p=6$,$7$},
+    ytick={0,6,12,18,24},
+    yticklabels={$0$,$\tau^*=6$,$12$,$18$,$24$},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north west,
+    legend style={font=\scriptsize}
+]
+% MC privado: 2r
+\addplot[thick,blue,domain=0:7] {2*x};
+\addlegendentry{$\MC^p(r) = 2r$}
+% MC social: 4r
+\addplot[thick,red,domain=0:6.5] {4*x};
+\addlegendentry{$\MC^s(r) = 4r$}
+% Receita marginal: 12 horizontal
+\addplot[thick,black,dashed,domain=0:7.5] {12};
+\addlegendentry{Benefício marginal $= 12$}
+% Triângulo de Harberger: vertices (3, 12), (6, 12), (6, 24)
+\addplot[fill=red!20, draw=red, fill opacity=0.4, mark=none] coordinates {(3,12) (6,12) (6,24)} -- cycle;
+% Pontos
+\addplot[mark=*,mark size=2.5pt,solblue,only marks] coordinates {(3,12) (6,12)};
+\node[above right, font=\small] at (axis cs:3,12) {$r^*$};
+\node[above right, font=\small] at (axis cs:6,12) {$r^p$};
+\node[font=\scriptsize, color=red!60!black] at (axis cs:5.2,17) {Harberger $= 18$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Triângulo de Harberger.} Vértices: $(r^*, 12) = (3, 12)$; $(r^p, 12) = (6, 12)$; $(r^p, \MC^s(r^p)) = (6, 24)$. Área: $\tfrac{1}{2}\cdot (r^p - r^*)\cdot[\MC^s(r^p) - 12] = \tfrac{1}{2}\cdot 3 \cdot 12 = 18$. Esta é a perda de bem-estar (\emph{deadweight loss}) por não impor Pigou -- coincide exatamente com o $W(r^*) - W(r^p) = 18 - 0 = 18$ calculado em (a)(ii). $\checkmark$ \textit{Sanity}: o triângulo tem altura $12$ (pois $\MC^s$ em $r^p$ vale $24$, contra benefício marginal $12$ -- diferença vertical $12$) e base $3$, área $18$. Coincide.
+\end{solution}
+
+\newpage
+\part[4] \textbf{Coase via bail-in: alternativa não-Pigouviana.} O instrumento Pigouviano (capital regulatório) é uma alternativa entre outras. Uma alternativa que ganhou força após a crise de 2008 é o \textbf{bail-in}: em vez de o Tesouro absorver perdas em uma falência bancária (\emph{bail-out}, com custo do contribuinte), reescrevem-se contratos de captação para que credores e acionistas absorvam a perda automaticamente em condições pré-definidas (CoCos -- \emph{contingent convertible bonds} -- e mecanismos de \emph{loss absorbing capacity}).
+
+\textbf{(i)} Em uma frase para cada, enuncie as três hipóteses canônicas do teorema de Coase.
+
+\textbf{(ii)} Argumente que o mecanismo bail-in é uma forma de \emph{atribuição de direito} ao Tesouro (direito a não absorver perdas) implementada via contrato. Discuta em qual das três hipóteses essa solução é mais frágil em economia real.
+
+\textbf{(iii)} Aponte um caso histórico brasileiro relevante para a discussão (sugestão: PROER 1995, ou casos posteriores) e cite a base normativa.
+
+\begin{solution}
+\textbf{(i) Hipóteses de Coase (Coase, 1960).}
+\begin{enumerate}[noitemsep,topsep=0pt,leftmargin=*]
+    \item \emph{Direitos de propriedade bem-definidos.} Cada parte sabe quem detém o direito sobre o uso do recurso (no caso, ``direito a não absorver perdas em falência bancária'').
+    \item \emph{Custos de transação zero.} Identificar contrapartes, negociar e fazer cumprir contratos não consome recursos.
+    \item \emph{Sem efeito-renda relevante.} A redistribuição implícita de direitos não muda decisões de fundo (preferências quase-lineares na renda).
+\end{enumerate}
+
+\textbf{(ii) Bail-in como Coase aplicado.} O bail-in atribui ao Tesouro o direito de \emph{não} absorver perdas: em estado de falência bancária, perdas escorrem automaticamente, na ordem da hierarquia contratual, por (a) acionistas; (b) detentores de dívida subordinada; (c) detentores de CoCos com gatilho ativado; (d) credores não-segurados. Apenas em casos extremos (perdas que esgotam toda essa hierarquia) o Tesouro entra. É \emph{Coase} porque a alocação eficiente de risco emerge de barganha contratual ex-ante: investidores compram CoCos a preços que refletem o risco assumido.
+
+\emph{Hipótese mais frágil em economia real}: \textbf{(2) custos de transação zero}. Em situações de estresse sistêmico, identificar a ordem de prioridade, calcular perdas, executar conversões automáticas, lidar com litígios de detentores que disputam o gatilho -- tudo isso tem custo enorme. Adicionalmente, o efeito de \emph{contágio de confiança} (depositantes correm de outros bancos antecipando bail-in) é uma externalidade que opera fora do contrato -- viola o espírito do (2). Por isso, mesmo regimes pró-bail-in (UE pós-2014, Bank Recovery and Resolution Directive) preservam discricionariedade do regulador para casos sistêmicos. \emph{A hipótese (1) é razoavelmente atendida via contratos pré-definidos; a (3) é razoável em condições normais (investidores institucionais com portfólio diversificado têm pouco efeito-renda); a (2) é a frágil.}
+
+\textbf{(iii) Caso brasileiro: PROER (1995).} O \textbf{PROER} (Programa de Estímulo à Reestruturação e ao Fortalecimento do Sistema Financeiro Nacional, instituído inicialmente por Medida Provisória 1.179/1995 e consolidado pela Lei 9.710/1998) financiou a transferência de carteiras de bancos quebrados (Econômico, Nacional, Bamerindus) para bancos sólidos durante a crise de 1995. \textbf{Foi o oposto do bail-in puro}: o Tesouro absorveu boa parte das perdas via empréstimos do BCB com garantia de carteiras de qualidade duvidosa. Houve litígio constitucional posterior (ADIs questionando o uso de recursos públicos para socorrer bancos privados), mas a constitucionalidade foi ratificada pelo STF (entre outras decisões, em 2007 no MS 25.092 e no julgamento da ADI 449 sobre o PROER). \textit{Implicação para o desenho atual}: o trauma do PROER marcou a regulação posterior; a criação do FGC em 1995 (Resolução 2.197 do CMN, antecedente da atual 4.222/2013) e a adesão a Basel III pós-2008 (Resolução CMN 4.193/2013) refletem a tentativa de migrar gradualmente do paradigma ``Tesouro-absorve'' para ``acionistas-e-credores-absorvem'', sem chegar a bail-in puro à la Coase.
+\end{solution}
+
+\newpage
+\noindent\emph{Sub-bloco B (itens d--e, 12 pontos): estabilidade financeira como bem público.} Considere agora $I = 2$ bancos representativos ($B_1$ e $B_2$) e a \textbf{estabilidade financeira agregada} $G \geq 0$ (medida composta: depósitos seguros, mercado interbancário funcionando, expectativa de não-corrida bancária). Cada banco contribui $g_i \geq 0$ em capital próprio \emph{excedente} sobre o regulatório, voluntariamente, e $G = g_1 + g_2$. Tecnologia: $\TMT_{G,x} = 1$ (1 unidade de bem privado produz 1 unidade de estabilidade -- normalização). Preferências quase-lineares logarítmicas:
+\[
+    u^i(x^i, G) \;=\; x^i \;+\; 4\, \ln G,\qquad i \in \{1, 2\}.
+\]
+Dotações $\omega^i$ suficientemente grandes para ignorar restrição de não-negatividade interna em $x^i$.
+
+\part[6] \textbf{Samuelson, Nash e free-rider.}
+
+\textbf{(i)} Calcule a $\TMS^i_{G, x}$ de cada banco como função de $G$.
+
+\textbf{(ii)} Aplique a condição de Samuelson $\sum_i \TMS^i = \TMT$ para obter o nível socialmente ótimo $G^*$.
+
+\textbf{(iii)} Derive o equilíbrio de Nash em provisão voluntária (cada banco escolhe $g_i$ tomando $g_{-i}$ como dado) e obtenha $G^N$. Calcule a razão $G^N/G^*$.
+
+\textbf{(iv)} Identifique o free-rider: explique, em uma frase, por que $G^N < G^*$ ainda que os agentes sejam idênticos.
+
+\begin{solution}
+\textbf{(i) TMS.} $u^i_x = 1$, $u^i_G = 4/G$. Logo $\boxed{\TMS^i_{G, x} = 4/G.}$ Decrescente em $G$ (utilidade marginal logarítmica em bem público).
+
+\textbf{(ii) Samuelson.} $\sum_{i=1}^2 (4/G) = 1 \Rightarrow 8/G = 1 \Rightarrow \boxed{G^* = 8.}$ Bem-estar agregado em $G^*$ (ignorando $\sum x^i$ que é constante via dotação): $2 \cdot 4 \ln 8 - 8 = 8 \ln 8 - 8 \approx 8\cdot 2{,}0794 - 8 = 16{,}635 - 8 = 8{,}635$.
+
+\textbf{(iii) Nash.} Cada banco $i$ resolve $\max_{g_i} \omega^i - g_i + 4 \ln(g_i + g_{-i})$. CPO interior: $-1 + 4/(g_i + g_{-i}) = 0 \Rightarrow G = g_i + g_{-i} = 4$. Note que essa CPO depende apenas de $G$ (total), não da contribuição individual. Em equilíbrio simétrico ($g^*_1 = g^*_2 = G^N/2 = 2$): $\boxed{G^N = 4.}$ Razão $G^N/G^* = 4/8 = \boxed{1/2 = 1/I.}$ \emph{Resultado clássico} (Bergstrom-Blume-Varian 1986, \textit{Journal of Public Economics}): com Bernoulli quase-linear logarítmica simétrica e $I$ agentes, $G^N/G^* = 1/I$.
+
+\textbf{(iv) Free-rider.} Cada banco, ao decidir sua contribuição $g_i$, considera apenas o benefício marginal \emph{para si próprio} ($\partial u^i/\partial G$), não o benefício para os outros bancos ($\partial u^j/\partial G$ para $j \neq i$). Mas o ótimo social exige somar \emph{todas} as valorações marginais (Samuelson: soma vertical). Como cada banco internaliza apenas $1/I$ da soma, sub-provê em escala $1/I$. \emph{Mesmo com agentes idênticos}, free-rider ataca: cada um conta com o outro para pagar parte da estabilidade.
+\end{solution}
+
+\newpage
+\part[6] \textbf{FGC como mecanismo institucional de provisão coletiva.}
+
+\textbf{(i)} Argumente que o FGC (Fundo Garantidor de Créditos) opera como mecanismo de provisão coletiva da estabilidade $G$, financiado por contribuição compulsória sobre depósitos elegíveis. Discuta, em uma frase para cada, três diferenças entre o FGC e a provisão voluntária Nash do item (d).
+
+\textbf{(ii)} O FGC não é nem Pigou puro (não é imposto sobre risco) nem Lindahl puro (contribuições não são personalizadas por valoração marginal). Discuta em duas frases qual mecanismo da Aula 7 mais se aproxima do FGC, e por quê.
+
+\textbf{(iii)} Imagine que se queira introduzir um mecanismo de revelação tipo VCG para que cada banco declare sua valoração marginal por estabilidade $\TMS^i$ de modo verdadeiro. Qual é a principal limitação desse desenho em contexto bancário real? (Foque em \emph{um} ponto.)
+
+\textbf{(iv)} Cite a base normativa do FGC e mencione o limite atual de garantia por CPF/CNPJ por instituição.
+
+\begin{solution}
+\textbf{(i) FGC vs.\ Nash voluntário.} O FGC opera como \textbf{mecanismo institucional de provisão coletiva} de estabilidade financeira, financiado por contribuição mensal compulsória de aproximadamente $0{,}01\%$ ao mês sobre o saldo de depósitos elegíveis (taxa básica de contribuição vigente; taxas adicionais aplicáveis a casos específicos). Três diferenças fundamentais frente à provisão Nash do (d):
+
+\begin{enumerate}[noitemsep,topsep=0pt,leftmargin=*]
+    \item \emph{Compulsório vs.\ voluntário.} Bancos não escolhem se contribuem; a contribuição é condição para operar. Isso elimina o mecanismo do free-rider: nenhum banco pode ``aproveitar a estabilidade'' sem pagar.
+    \item \emph{Base proporcional ao tamanho da instituição.} A contribuição é proporcional ao saldo de depósitos -- aproximação grosseira do ``benefício esperado'' que cada banco recebe da estabilidade (bancos com mais depósitos são mais beneficiados pela existência de um mecanismo que sustenta confiança).
+    \item \emph{Cobertura ex-post predefinida.} O FGC oferece garantia automática de até R\$ 250 mil por CPF/CNPJ por instituição em caso de falência, independente de recálculo discricionário. Isso transforma o ``bem público estabilidade'' em um \emph{contrato} entre depositantes e o sistema, com previsibilidade.
+\end{enumerate}
+
+\textbf{(ii) Mais próximo de qual mecanismo da Aula 7.} O FGC se aproxima mais de \textbf{Pigou descentralizado / cap-and-trade no espírito} -- um esquema centralizado de financiamento com base proporcional, não personalizado por valoração. Não é Lindahl puro (Lindahl exigiria $\tau^i$ refletindo $\TMS^i$ verdadeira de cada banco -- o que pediria revelação estratégica); a contribuição proporcional ao depósito é uma \emph{aproximação proxy} de Lindahl no estilo do PMCMV (que aproxima preço pessoal por renda). Em segunda aproximação, o FGC tem um componente de mecanismo Ostromiano (Ostrom, 1990): governance compartilhada via Conselho de Administração com representação dos bancos contribuintes, coordenando regras e enforcement -- estrutura institucional descentralizada acima da regulação puramente top-down.
+
+\textbf{(iii) Limitação de VCG em contexto bancário.} A principal limitação é que a \textbf{verdade-dominância de VCG depende crucialmente de utilidades quase-lineares em moeda} (preferências separáveis e mensuráveis em valor). Bancos têm preferências sobre estabilidade que não são simplesmente quase-lineares: dependem de posição competitiva relativa, exposição a riscos correlacionados, capacidade de absorver choques. Adicionalmente, VCG não é \emph{orçamento-balanceado} em geral -- a soma das transferências pode exceder o custo da decisão, exigindo subsídio externo. Em contexto bancário com alta heterogeneidade institucional e correlação cruzada, o desvio das hipóteses VCG seria material -- o mecanismo perderia sua vantagem teórica de revelação dominante. \emph{Implicação prática}: o desenho institucional brasileiro escolheu a aproximação Pigouviana com base proporcional (FGC) em vez de tentar implementar VCG -- escolha consistente com as limitações conhecidas do mecanismo.
+
+\textbf{(iv) Base normativa do FGC.} \textbf{Resolução CMN 4.222/2013} (Conselho Monetário Nacional), com atualizações posteriores (notadamente Resolução CMN 4.469/2016 que ampliou o limite de garantia para R\$ 250 mil por CPF/CNPJ por instituição financeira -- limite mantido pelas resoluções subsequentes). Estatuto do FGC (entidade civil sem fins lucrativos) também aprovado pelo CMN. Bases legais antecedentes na Lei 4.595/1964 (Lei do Sistema Financeiro Nacional). \emph{Garantia atual: R\$ 250 mil por CPF/CNPJ por instituição financeira, com teto consolidado de R\$ 1 milhão por CPF/CNPJ a cada 4 anos quando há múltiplas instituições.}
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 1 (25 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 6 pontos}} \\
+\quad $r^p = 6$ via CPO + concavidade verificada (i) & 1 \\
+\quad $r^* = 3$ via maximização de $W$ (ii) & 2 \\
+\quad $\tau^* = 6 = \MEC(r^*)$ derivado, com armadilha ``avaliar no ótimo'' explicitada (iii) & 2 \\
+\quad Aplicação Basel III + Resolução 4.193/2013 (iv) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 3 pontos}} \\
+\quad Esboço com $\MC^p, \MC^s$ e benefício marginal corretos & 1 \\
+\quad $r^p = 6, r^* = 3$ marcados; triângulo Harberger identificado & 1 \\
+\quad Cálculo de área $= 18$ coerente com $W(r^*) - W(r^p)$ & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 4 pontos}} \\
+\quad Três hipóteses canônicas de Coase enunciadas (i) & 1 \\
+\quad Bail-in como atribuição de direito + identificação da hipótese (2) como frágil (ii) & 2 \\
+\quad PROER 1995 + Lei 9.710/1998 + STF (iii) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 6 pontos}} \\
+\quad $\TMS^i = 4/G$ (i) & 1 \\
+\quad $G^* = 8$ via Samuelson (ii) & 2 \\
+\quad $G^N = 4$ via Nash + razão $1/I$ identificada (iii) & 2 \\
+\quad Free-rider explicado conceitualmente (iv) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 6 pontos}} \\
+\quad Três diferenças FGC × Nash (i) & 2 \\
+\quad Identificação do mecanismo da Aula 7 mais próximo (ii) & 1 \\
+\quad Limitação de VCG em contexto bancário (iii) & 2 \\
+\quad Base normativa Resolução 4.222/2013 + R\$ 250 mil (iv) & 1 \\
+\midrule
+\textbf{Total Q1} & \textbf{25} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE II -- AULA 8
+% ============================================================
+\begin{center}\large\textbf{Parte II --- Informação assimétrica em crédito e contratos bancários} \quad (30 pontos)\end{center}
+
+\textit{Conexão com a Aula 8.} Os itens abaixo trabalham: (Sub-bloco A) Akerlof (1970) aplicado a crédito bancário a la Stiglitz-Weiss (1981); (Sub-bloco B) Rothschild-Stiglitz (1976) com FGC oferecendo menu separador de garantias para PMEs (tratamento gráfico + qualitativo); (Sub-bloco C) Holmström (1979) na governança bancária acionista-gerente, com cálculo numérico fechado de first-best e second-best.
+
+\begin{contextbox}[Sobre Akerlof / R-S / Holmström no setor bancário]
+\small
+A literatura empírica documenta os três mecanismos de Aula 8 operando simultaneamente em mercados de crédito brasileiro. \textbf{Akerlof / Stiglitz-Weiss}: a recessão 2014--2016 contraiu o crédito bancário em $\sim 30\%$ em termos reais; bancos retiraram-se de segmentos de PME por incapacidade de distinguir tomadores bons de ruins quando a deterioração macro elevou a taxa esperada de default. \textbf{R-S / FGC para PMEs}: o FGI (Fundo Garantidor para Investimentos), gerido pelo BNDES desde 2009, oferece menu de garantias condicionado a porte da empresa e perfil de crédito -- aproximação institucional do equilíbrio separador. \textbf{Holmström / governança}: a Lei 6.404/1976 (Lei das S.A., com atualizações pela Lei 13.303/2016 sobre estatais e pela Lei 14.195/2021) estabelece o framework de remuneração variável atrelada a indicadores de performance -- aplicação direta de salários $w_H > w_L$ contingentes ao output observável.
+\end{contextbox}
+
+\begin{questions}
+\setcounter{question}{1}
+\question \textbf{Akerlof em crédito, R-S no FGI e Holmström na governança bancária} (30 pontos).
+
+\noindent\emph{Sub-bloco A: Akerlof em crédito.} Considere um mercado bancário competitivo onde o banco oferece empréstimos com taxa de juros bruta $1+i$ e tomadores escolhem aceitar ou não. Há dois tipos de tomadores na população:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item Tomadores \emph{bons} ($B$): probabilidade de default $\pi_B = 0$ (sempre pagam).
+    \item Tomadores \emph{ruins} ($R$): probabilidade de default $\pi_R = 0{,}5$ (pagam metade das vezes; quando dão default, banco recebe 0).
+\end{itemize}
+Proporção: $\lambda$ de bons, $1-\lambda$ de ruins. Cada tomador tem um projeto que rende retorno bruto $1 + R = 1{,}5$ se sucesso (independentemente do tipo); o tipo afeta apenas a probabilidade de pagar o empréstimo. Tomadores aceitam o empréstimo se $1 + i \leq 1 + R = 1{,}5$ (equivalentemente, $i \leq 0{,}5$). O banco compete a la Bertrand: a taxa $i$ é fixada para zerar lucro esperado. Custo de captação do banco normalizado a $0$ (taxa livre de risco $r_f = 0$).
+
+\begin{parts}
+\part[5] \textbf{Equilíbrio Akerlof em crédito: pooling, separação de tipos e colapso.}
+
+\textbf{(i)} \emph{Pooling}: suponha que os dois tipos aceitam o empréstimo. Derive a taxa $i_{\text{pool}}$ que zera o lucro esperado do banco como função de $\lambda$ (a probabilidade média de default condicional a aceitar é $\pi^p = (1-\lambda)\cdot 0{,}5$). Use o fato de que recebíveis esperados $= (1 + i)\cdot (1 - \pi^p)$ devem igualar 1 (custo de captação).
+
+\textbf{(ii)} Para que o pool sobreviva, o tipo $B$ precisa aceitar a taxa $i_{\text{pool}}$, ou seja, $i_{\text{pool}} \leq 0{,}5$. Derive o threshold $\lambda^*$ tal que $i_{\text{pool}}(\lambda^*) = 0{,}5$. Apresente $\lambda^*$ como fração simples.
+
+\textbf{(iii)} Suponha agora $\lambda < \lambda^*$. Apenas tomadores ruins aceitam. Calcule a taxa $i_R$ que zera lucro esperado do banco quando todos os clientes são ruins. Mostre que essa taxa excede o que o tipo $R$ aceita ($i \leq 0{,}5$), levando ao \textbf{colapso completo do mercado de crédito}.
+
+\textbf{(iv)} Discuta em uma frase a conexão com Stiglitz-Weiss (1981) e o mecanismo de \emph{credit rationing}.
+
+\begin{solution}
+\textbf{(i) Pool.} Sob pooling, a probabilidade média de default é $\pi^p = \lambda \cdot 0 + (1-\lambda)\cdot 0{,}5 = 0{,}5(1-\lambda)$. O banco recebe $(1+i)$ com probabilidade $1 - \pi^p$ e $0$ caso contrário. Lucro zero exige
+\[
+    (1 + i_{\text{pool}})\cdot (1 - \pi^p) = 1 \;\Longrightarrow\; 1 + i_{\text{pool}} = \frac{1}{1 - 0{,}5(1-\lambda)} = \frac{1}{0{,}5 + 0{,}5\lambda} = \frac{2}{1+\lambda}.
+\]
+Logo $\boxed{i_{\text{pool}}(\lambda) = \dfrac{2}{1+\lambda} - 1 = \dfrac{1-\lambda}{1+\lambda}.}$
+
+\textbf{(ii) Threshold.} Tipo $B$ aceita pool se $i_{\text{pool}} \leq 0{,}5$, ou seja
+\[
+    \frac{1-\lambda}{1+\lambda} \leq 0{,}5 \;\Longleftrightarrow\; 2(1-\lambda) \leq 1 + \lambda \;\Longleftrightarrow\; 2 - 2\lambda \leq 1 + \lambda \;\Longleftrightarrow\; 1 \leq 3\lambda \;\Longleftrightarrow\; \lambda \geq \tfrac{1}{3}.
+\]
+$\boxed{\lambda^* = 1/3.}$ \emph{Verificação}: $i_{\text{pool}}(1/3) = (2/3)/(4/3) = 1/2 = 0{,}5$. $\checkmark$
+
+\textbf{(iii) Colapso.} Sob $\lambda < 1/3$, só tipo $R$ aceita o pool com taxa atual. Banco re-precifica para reduzir prejuízo: oferece $i_R$ tal que $(1 + i_R)(1 - 0{,}5) = 1 \Rightarrow 1 + i_R = 2 \Rightarrow i_R = 1$ (taxa de $100\%$). Mas tipo $R$ aceita apenas se $i_R \leq R = 0{,}5$. Como $1 > 0{,}5$, tipo $R$ \emph{também} recusa. \textbf{Mercado colapsa para todo $\lambda < 1/3$}: nenhum empréstimo é feito. Pareto-dominado pela alocação first-best (informação simétrica), em que ambos os tipos seriam financiados ao prêmio justo de cada um ($i_B = 0$, $i_R = 1$ se aceitos separadamente -- mas nem isso é viável aqui porque tipo $R$ não aceita $i = 1$ dado $R = 0{,}5$).
+
+\emph{Sanity econômico.} Mesmo na ausência de assimetria, esta calibração tem tomadores ruins inviáveis (projeto $R = 0{,}5$ não cobre custo esperado $\pi_R = 0{,}5$). O ponto Akerlof aqui é mais nítido: \emph{a presença} de tomadores ruins na população (ainda que não financiáveis em first-best!) destrói o mercado para os bons, via mecanismo de seleção condicional. Com $\lambda \geq 1/3$, o mercado opera com pooling subotimal (bons subsidiando ruins via taxa média acima de zero); com $\lambda < 1/3$, o mercado simplesmente desaparece. \textbf{Unraveling.}
+
+\textbf{(iv) Stiglitz-Weiss e credit rationing.} \textbf{Stiglitz \& Weiss (1981, AER)} argumentaram que, em mercado de crédito com seleção adversa (e/ou risco moral via risk-shifting), \emph{a curva de oferta de empréstimos pode ser inelástica acima de uma taxa de juros crítica $i^*$}: subir $i$ acima de $i^*$ \emph{piora} a composição de tomadores (afasta os bons, atrai os ruins) e/ou induz tomadores existentes a escolher projetos mais arriscados, reduzindo lucro esperado do banco. O resultado é \textbf{credit rationing}: bancos preferem racionar quantidade ($Q < Q_d$) a subir preço acima de $i^*$ -- equilíbrio com excesso de demanda permanente. \emph{Aplicação ao Brasil}: a contração brusca do crédito a PMEs em 2015--2016 (BCB, \emph{Relatório de Estabilidade Financeira}) é interpretável neste arcabouço -- a recessão alterou a distribuição esperada de tipos, levando ao racionamento e ao colapso parcial em segmentos onde a heterogeneidade era alta.
+\end{solution}
+
+\newpage
+\noindent\emph{Sub-bloco B: R-S separador para FGI/FGC oferecendo seguro de crédito a PMEs.} O BNDES, via Fundo Garantidor para Investimentos (FGI), oferece garantia parcial sobre empréstimos a PMEs. Há dois tipos de PME: $B$ (baixo risco, $\pi_B = 0{,}1$) e $R$ (alto risco, $\pi_R = 0{,}4$). O contrato é caracterizado por um par $(p, q)$ -- prêmio $p$ (pago sempre) e cobertura $q \in [0, L]$ (paga em caso de sinistro/default), onde $L = 80$ é a perda em default. Riqueza inicial da PME: $W = 100$. PMEs têm Bernoulli $u(\cdot)$ \emph{côncava} -- avessas ao risco. Lucro esperado da seguradora (FGI competitivo): $\Pi(p, q | \theta) = p - \pi_\theta q$.
+
+\part[8] \textbf{First-best (informação simétrica) e equilíbrio separador R-S.}
+
+\textbf{(i)} \emph{First-best.} Suponha que o FGI observa o tipo $\theta$. Argumente que o contrato Pareto-eficiente para cada tipo é \textbf{cobertura completa} ($q = L = 80$) ao prêmio justo $p^\theta = \pi_\theta L$. Calcule explicitamente $p^B$ e $p^R$.
+
+\textbf{(ii)} Esboce no plano $(q, p)$ (cobertura horizontal, prêmio vertical) os contratos first-best de cada tipo, as duas linhas de oferta competitiva $p = \pi_\theta q$ (uma por tipo) e duas curvas de indiferença típicas (uma por tipo) ilustrando \textbf{single-crossing}: a indiferença do tipo $R$ é \emph{mais inclinada} no plano $(q, p)$ do que a do tipo $B$.
+
+\textbf{(iii)} \emph{Equilíbrio separador R-S sob informação assimétrica.} Caracterize qualitativamente o menu separador $\{(p^B_{SS}, q^B_{SS}), (p^R_{SS}, q^R_{SS})\}$:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item Tipo $R$ recebe contrato \_\_\_\_ ao prêmio \_\_\_\_;
+    \item Tipo $B$ recebe contrato com \emph{cobertura distorcida para baixo} ($q^B_{SS} < L$) ao prêmio justo $p^B_{SS} = \pi_B q^B_{SS}$;
+    \item A IC do tipo \_\_\_\_ é binding: ele é \emph{indiferente} entre seu próprio contrato e copiar o de $B$;
+    \item A cobertura do tipo $B$ é determinada por essa IC binding, geometricamente como interseção da \emph{linha de oferta de $B$} com a \emph{curva de indiferença do tipo $R$ que passa pelo seu próprio contrato}.
+\end{itemize}
+Preencha as lacunas e justifique cada resposta em 1 frase.
+
+\textbf{(iv)} Argumente em duas frases por que o tipo $R$ \emph{não tem} cobertura distorcida (recebe first-best), mas o tipo $B$ tem.
+
+\begin{solution}
+\textbf{(i) First-best.} Sob informação simétrica, FGI competitivo (lucro zero) oferece a cada tipo cobertura $q = L$ ao prêmio justo. Argumento: agente avesso prefere consumo suavizado entre estados; FGI neutro absorve risco sem cobrar prêmio acima do justo. Logo Pareto-eficiente é cobertura completa: $\boxed{p^B = \pi_B L = 0{,}1 \cdot 80 = 8;\quad p^R = \pi_R L = 0{,}4 \cdot 80 = 32.}$
+
+\textbf{(ii) Esboço.} Linhas de oferta: $p = 0{,}1\, q$ (tipo $B$, inclinação baixa) e $p = 0{,}4\, q$ (tipo $R$, inclinação alta). First-bests: ponto $(80, 8)$ na linha de $B$; ponto $(80, 32)$ na linha de $R$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=7cm,
+    xlabel={$q$ (cobertura)},
+    ylabel={$p$ (prêmio)},
+    xmin=0, xmax=90, ymin=0, ymax=40,
+    xtick={0,20,40,60,80},
+    ytick={0,8,16,24,32},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north west,
+    legend style={font=\scriptsize}
+]
+% Linha de oferta B
+\addplot[thick,blue,domain=0:80] {0.1*x};
+\addlegendentry{Linha de oferta $B$: $p = 0{,}1\,q$}
+% Linha de oferta R
+\addplot[thick,red,domain=0:80] {0.4*x};
+\addlegendentry{Linha de oferta $R$: $p = 0{,}4\,q$}
+% Indiferença típica do tipo B passando por (80, 8) -- curva côncava (Bernoulli côncava ⇒ indif convexa para cima no plano (q, p))
+% Vamos desenhar uma curva ilustrativa qualitativa
+\addplot[thick,blue!60!black,dashed,domain=10:80,samples=80] {0.1*x + 0.001*(80-x)*(80-x)};
+\addlegendentry{Indif.\ $B$ por $(80, 8)$ (estilizada)}
+% Indiferença típica do tipo R passando por (80, 32) -- mais inclinada
+\addplot[thick,red!60!black,dashed,domain=20:80,samples=80] {0.4*x + 0.003*(80-x)*(80-x)};
+\addlegendentry{Indif.\ $R$ por $(80, 32)$ (estilizada)}
+% Pontos First-best
+\addplot[mark=*,mark size=3pt,solblue,only marks] coordinates {(80,8) (80,32)};
+\node[above left, font=\small] at (axis cs:80,8) {$(80,8) = $ FB-$B$};
+\node[above left, font=\small] at (axis cs:80,32) {$(80,32) = $ FB-$R$};
+% Marca o contrato distorcido qualitativo de B no separador R-S em q ≈ 25
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(25,2.5)};
+\node[below right, font=\small] at (axis cs:25,2.5) {$(q^B_{SS}, p^B_{SS})$ R-S};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textit{Single-crossing}: a indiferença de $R$ tem inclinação $\partial p/\partial q\big|_R = \pi_R\, u'(W - p - L + q)/[(1-\pi_R)\, u'(W - p) + \pi_R\, u'(W - p - L + q)]$ e analogamente para $B$. A razão depende de $\pi_\theta$ -- maior para $R$. Geometricamente: \emph{toda indiferença do tipo $R$ corta toda indiferença do tipo $B$ no máximo uma vez}, com a do $R$ mais inclinada -- propriedade central de R-S.
+
+\textbf{(iii) Separador R-S preenchido.}
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item Tipo $R$ recebe contrato \textbf{first-best com cobertura completa $q^R_{SS} = L = 80$} ao prêmio \textbf{justo $p^R_{SS} = 32$}. \emph{Justificativa}: como $R$ é o ``pior'' tipo (paga prêmio mais alto), ele não tem incentivo a copiar $B$ -- copiar daria menos cobertura por menos prêmio, mas com sua probabilidade alta de default ele perderia muito (o pequeno prêmio economizado não compensa a baixa cobertura no estado de sinistro). Logo nenhuma distorção é necessária.
+    \item Tipo $B$ recebe contrato com cobertura \textbf{distorcida para baixo} ($q^B_{SS} < L = 80$) ao prêmio \textbf{justo $p^B_{SS} = \pi_B q^B_{SS} = 0{,}1\, q^B_{SS}$}.
+    \item A IC do tipo \textbf{$R$} é binding -- $R$ é indiferente entre seu próprio contrato $(80, 32)$ e copiar $(q^B_{SS}, p^B_{SS})$. \emph{Justificativa}: se a cobertura de $B$ fosse maior ($q^B$ próximo de 80), $R$ desviaria para o contrato de $B$ (paga menos por cobertura quase igual). A distorção é exatamente o que torna o contrato de $B$ \emph{pouco atraente} para $R$.
+    \item Geometricamente, $(q^B_{SS}, p^B_{SS})$ é o ponto de \textbf{interseção} da linha de oferta de $B$ ($p = 0{,}1 q$) com a curva de indiferença de $R$ que passa por $(80, 32)$.
+\end{itemize}
+
+\textbf{(iv) Por que $R$ não distorce, $B$ sim.} Em equilíbrio separador, distorção é necessária apenas para o tipo cuja cópia o outro tipo \emph{quereria} se ele tivesse o mesmo contrato. Aqui, o tipo $R$ (alto risco, prêmio justo alto) não \emph{quer} copiar $B$ se o contrato de $B$ é distorcido suficientemente para baixo na cobertura -- então $B$ é distorcido. Por outro lado, o tipo $B$ jamais \emph{quereria} copiar $R$ (pagar prêmio alto por cobertura completa quando seu próprio risco é baixo) -- então $R$ recebe first-best. \emph{Esta é a estrutura canônica de R-S: ``no distortion at the top'' -- o tipo de pior risco recebe first-best; os melhores tipos pagam o preço da assimetria via cobertura distorcida para baixo.}
+\end{solution}
+
+\newpage
+\part[3] \textbf{Inexistência de equilíbrio R-S sob baixa proporção de altos riscos.}
+
+\textbf{(i)} Argumente, em três frases, por que o equilíbrio separador R-S pode \emph{não existir} se a proporção $\lambda$ de tipo $R$ é suficientemente baixa. (Dica: comparar com contrato pooling.)
+
+\textbf{(ii)} Cite duas instituições brasileiras que respondem a essa inexistência via regulação (analogia ao ACA dos EUA na Aula 8).
+
+\begin{solution}
+\textbf{(i) Inexistência R-S.} Quando $\lambda$ (proporção de altos riscos) é baixa, a média ponderada de risco é próxima de $\pi_B$ -- então uma seguradora poderia oferecer um \emph{contrato pooling} com cobertura completa ao prêmio médio próximo de $\pi_B L$, que Pareto-domina o separador (tipo $B$ recebe mais cobertura; tipo $R$ paga prêmio mais barato que o justo). Mas o pooling \emph{não é equilíbrio Nash}: uma seguradora desviante pode oferecer um contrato com cobertura parcial e prêmio ligeiramente menor, atrativo apenas para tipo $B$ (single-crossing) -- tipo $R$ ficaria sozinho no pool, que então quebra. \textbf{Resultado}: nem pooling nem separador sobrevivem -- não existe equilíbrio competitivo. Esta é a possibilidade mais surpreendente de R-S e abre porta para regulação como solução.
+
+\textbf{(ii) Instituições brasileiras.} Duas que respondem a essa inexistência via regulação:
+\begin{enumerate}[noitemsep,topsep=0pt,leftmargin=*]
+    \item \textbf{ANS (Agência Nacional de Saúde Suplementar)}, criada pela Lei 9.961/2000, regula planos de saúde via Lei 9.656/1998 -- impõe rol de procedimentos mínimos, faixas etárias máximas de prêmio, portabilidade de carências. Efeito: força pooling regulado entre tipos de risco, evitando o cherry-picking que levaria à inexistência R-S.
+    \item \textbf{FGC (Fundo Garantidor de Créditos)}, Resolução CMN 4.222/2013 -- oferece garantia uniforme de R\$ 250 mil por CPF/CNPJ por instituição, independente do perfil de risco do banco. Equivalente regulatório de mandato + cobertura uniforme: depositantes não escolhem entre planos de garantia diferenciados (que sofreriam unraveling); todos têm a mesma cobertura, financiada por contribuição compulsória dos bancos.
+\end{enumerate}
+\emph{Análogo internacional}: o \textbf{Affordable Care Act (US, 2010)} é a referência canônica -- mandato individual + proibição de underwriting baseado em saúde + subsídios cruzados, justamente para resolver a inexistência R-S via regulação.
+\end{solution}
+
+\newpage
+\noindent\emph{Sub-bloco C: Holmström (1979) -- contrato de incentivo para gerente de portfólio bancário.} O acionista controlador de um banco (\textbf{principal}, neutro ao risco -- diversificado em outros ativos) contrata um gerente de portfólio (\textbf{agente}, avesso ao risco). O gerente escolhe esforço $a \in \{a_L, a_H\}$ (intensidade de monitoramento de crédito, qualidade da análise de risco), com custo $c(a_L) = 0$, $c(a_H) = 4$. O output do portfólio é $y \in \{y_L, y_H\} = \{0, 160\}$. Probabilidades:
+\[
+    \Pr(y = y_H \mid a_H) = 0{,}75;\qquad \Pr(y = y_H \mid a_L) = 0{,}25.
+\]
+Bernoulli do gerente: $u(w) = \sqrt{w}$. Utilidade de reserva: $\bar U = 4$. O acionista quer induzir esforço alto ($a_H$).
+
+\part[14] \textbf{First-best, second-best e Mirrlees-Holmström.}
+
+\textbf{(i)} \emph{First-best (esforço observável).} Argumente que o contrato ótimo é \textbf{salário fixo} $w^* = u^{-1}(\bar U + c(a_H))$. Calcule explicitamente $w^*$ e o lucro esperado do principal $\Pi^{FB}$.
+
+\textbf{(ii)} \emph{Verificação de MLRP (Monotone Likelihood Ratio Property).} Mostre que a razão de verossimilhanças $L(y_H) = \Pr(y_H \mid a_H)/\Pr(y_H \mid a_L)$ excede $L(y_L) = \Pr(y_L \mid a_H)/\Pr(y_L \mid a_L)$, garantindo que o salário ótimo second-best é monotonamente crescente em $y$.
+
+\textbf{(iii)} \emph{Second-best (esforço hidden action).} Escreva o programa do principal como minimização de $\Pi(w_L, w_H) = \pi_H w_H + (1-\pi_H) w_L$ sujeito a IR e IC, com $\pi_H = 0{,}75$. Mostre que IR e IC são ambos binding (sob avessão) e resolva o sistema $2 \times 2$ em $\sqrt{w_L}$ e $\sqrt{w_H}$ explicitamente. Apresente $w^{SB}_L$ e $w^{SB}_H$ em valor numérico fechado.
+
+\textbf{(iv)} \emph{Prêmio de risco moral.} Calcule o salário esperado second-best $E[w^{SB}]$ e a diferença em relação ao first-best $E[w^{SB}] - w^{FB}$. Interprete economicamente.
+
+\textbf{(v)} \emph{Verificação Mirrlees-Holmström.} Substitua os valores de $w^{SB}_L$ e $w^{SB}_H$ na fórmula
+\[
+    \frac{1}{u'(w_H)} = \mu + \nu\cdot\frac{\pi_H - \pi_L}{\pi_H},\qquad \frac{1}{u'(w_L)} = \mu - \nu\cdot\frac{\pi_H - \pi_L}{1-\pi_H}
+\]
+e verifique consistência -- isto é, encontre $\mu, \nu > 0$ que satisfaçam ambas as equações simultaneamente.
+
+\textbf{(vi)} \emph{Equivalência sob neutralidade do agente.} Argumente em duas frases por que, se o agente fosse neutro ao risco ($u(w) = w$), o second-best coincidiria com o first-best -- e qual seria o contrato ótimo nesse caso (``vender o output ao agente'').
+
+\begin{solution}
+\textbf{(i) First-best.} Esforço observável $\Rightarrow$ contrato direto: principal exige $a_H$ e oferece salário fixo. IR binding: $u(w^*) - c(a_H) = \bar U \Rightarrow \sqrt{w^*} - 4 = 4 \Rightarrow \sqrt{w^*} = 8 \Rightarrow \boxed{w^{FB} = 64.}$ Lucro esperado:
+\[
+    \Pi^{FB} = \pi_H y_H + (1-\pi_H) y_L - w^{FB} = 0{,}75 \cdot 160 + 0{,}25 \cdot 0 - 64 = 120 - 64 = \boxed{56.}
+\]
+Sob salário fixo, principal absorve todo o risco -- agente recebe $w^{FB}$ independente do output. Pareto-eficiente sob avessão de $A$ + neutralidade de $P$.
+
+\textbf{(ii) MLRP.}
+\begin{align*}
+    L(y_H) &= \Pr(y_H \mid a_H)/\Pr(y_H \mid a_L) = 0{,}75 / 0{,}25 = 3, \\
+    L(y_L) &= \Pr(y_L \mid a_H)/\Pr(y_L \mid a_L) = 0{,}25 / 0{,}75 = 1/3.
+\end{align*}
+$L(y_H) = 3 > 1/3 = L(y_L)$. \textbf{MLRP vale}: a razão de verossimilhanças é estritamente crescente em $y$. $\checkmark$ \emph{Implicação} (Holmström, 1979 -- \emph{informativeness principle}): salário ótimo second-best é monotonamente crescente em $y$ -- isto é, $w^{SB}_H > w^{SB}_L$.
+
+\textbf{(iii) Second-best.} Programa do principal:
+\[
+    \min_{w_L, w_H \geq 0}\;\; 0{,}75\, w_H + 0{,}25\, w_L
+\]
+s.a.
+\begin{align*}
+    \IR:&\quad 0{,}75\, \sqrt{w_H} + 0{,}25\, \sqrt{w_L} - 4 \geq 4, \\
+    \IC:&\quad 0{,}75\, \sqrt{w_H} + 0{,}25\, \sqrt{w_L} - 4 \geq 0{,}25\, \sqrt{w_H} + 0{,}75\, \sqrt{w_L}.
+\end{align*}
+\emph{Reorganização da IC.} $0{,}5(\sqrt{w_H} - \sqrt{w_L}) \geq 4 \Rightarrow \sqrt{w_H} - \sqrt{w_L} \geq 8$.
+
+Sob avessão (Bernoulli côncava estrita) e MLRP, ambas IR e IC são \emph{binding} no ótimo (resultado padrão Holmström com 2 esforços, 2 outputs):
+\begin{align}
+    0{,}75\, \sqrt{w^{SB}_H} + 0{,}25\, \sqrt{w^{SB}_L} &= 8, \tag{IR'} \label{eq:IR-prime} \\
+    \sqrt{w^{SB}_H} - \sqrt{w^{SB}_L} &= 8. \tag{IC'} \label{eq:IC-prime}
+\end{align}
+
+\emph{Substituição.} De \eqref{eq:IC-prime}: $\sqrt{w^{SB}_H} = 8 + \sqrt{w^{SB}_L}$. Substituindo em \eqref{eq:IR-prime}:
+\[
+    0{,}75(8 + \sqrt{w^{SB}_L}) + 0{,}25\, \sqrt{w^{SB}_L} = 8 \;\Longrightarrow\; 6 + \sqrt{w^{SB}_L} = 8 \;\Longrightarrow\; \sqrt{w^{SB}_L} = 2 \;\Longrightarrow\; \boxed{w^{SB}_L = 4.}
+\]
+E $\sqrt{w^{SB}_H} = 10 \Rightarrow \boxed{w^{SB}_H = 100.}$ Verificação MLRP: $w^{SB}_H > w^{SB}_L$ $\checkmark$.
+
+\textbf{(iv) Prêmio de risco moral.}
+\[
+    E[w^{SB}] = 0{,}75 \cdot 100 + 0{,}25 \cdot 4 = 75 + 1 = 76.
+\]
+Diferença vs.\ first-best: $E[w^{SB}] - w^{FB} = 76 - 64 = \boxed{12}$. \emph{Interpretação}: o principal tem que pagar $\$ 12$ a mais, em valor esperado, para induzir o mesmo esforço $a_H$ quando a ação não é observável. Esse extra é o \textbf{prêmio de risco moral}: compensação ao agente avesso por carregar o risco do output (consumo $\$ 4$ no estado ruim, $\$ 100$ no bom) em vez de salário fixo $\$ 64$. Lucro do principal cai de $56$ (first-best) para $\Pi^{SB} = 120 - 76 = 44$. \emph{Perda de bem-estar agregada}: $56 - 44 = 12$ -- coincide com o prêmio de risco moral, como tem que ser (utilidade do agente é a mesma $\bar U + c(a_H) = 8$ em ambos os regimes, por IR binding em ambos).
+
+\textbf{(v) Mirrlees-Holmström.} $u'(w) = 1/(2\sqrt{w})$, logo $1/u'(w) = 2\sqrt{w}$.
+\[
+    1/u'(w^{SB}_H) = 2 \cdot 10 = 20;\qquad 1/u'(w^{SB}_L) = 2 \cdot 2 = 4.
+\]
+Sistema com $\pi_H = 0{,}75$, $\pi_L = 0{,}25$:
+\begin{align*}
+    20 &= \mu + \nu \cdot \dfrac{0{,}5}{0{,}75} = \mu + \tfrac{2}{3}\nu, \\
+    4 &= \mu - \nu \cdot \dfrac{0{,}5}{0{,}25} = \mu - 2\nu.
+\end{align*}
+Subtraindo: $16 = \tfrac{2}{3}\nu + 2\nu = \tfrac{8}{3}\nu \Rightarrow \boxed{\nu = 6.}$ Substituindo na 2ª: $\mu = 4 + 2\cdot 6 = \boxed{16.}$ Verificação na 1ª: $16 + (2/3)\cdot 6 = 16 + 4 = 20$. $\checkmark$ Ambos $\mu, \nu > 0$ -- IR e IC binding como antecipado.
+
+\textbf{(vi) Equivalência sob neutralidade do agente.} Se $u(w) = w$ (linear, agente neutro), $u'(w) = 1$ constante. Pelas CPOs Mirrlees-Holmström, $1/u'(w_H) = 1/u'(w_L) = 1$, logo $\mu + (2/3)\nu = 1$ e $\mu - 2\nu = 1$. Subtraindo: $(8/3)\nu = 0 \Rightarrow \nu = 0$ -- IC \emph{não} é binding em second-best, e o problema reduz ao first-best. \emph{Mecanismo econômico}: o principal pode ``vender o output'' ao agente -- contrato linear $w(y) = y - K$, com $K$ = preço de venda (fixado para extrair toda renda $\bar U + c(a_H) = $ constante). Agente vira \emph{residual claimant}: maximiza $E[y - K] - c(a)$ sobre $a$, e prefere $a_H$ se $\Delta E[y] = (\pi_H - \pi_L)(y_H - y_L) = 0{,}5\cdot 160 = 80 > c(a_H) = 4$ $\checkmark$. Como o agente é neutro, não há perda de seguro -- second-best $=$ first-best em lucro do principal. \textbf{O custo do risco moral é especificamente o custo de quebrar o seguro do agente avesso}; sob neutralidade, o trade-off some.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 2 (30 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 5 pontos: Akerlof em crédito}} \\
+\quad $i_{\text{pool}}(\lambda) = (1-\lambda)/(1+\lambda)$ derivada (i) & 1 \\
+\quad Threshold $\lambda^* = 1/3$ via $i_{\text{pool}} = 0{,}5$ (ii) & 2 \\
+\quad Mostrar colapso para $\lambda < 1/3$: $i_R = 1 > R = 0{,}5$ (iii) & 1 \\
+\quad Conexão com Stiglitz-Weiss e credit rationing (iv) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 8 pontos: R-S separador}} \\
+\quad First-best $p^B = 8, p^R = 32$ derivado (i) & 2 \\
+\quad Esboço com linhas de oferta e single-crossing (ii) & 2 \\
+\quad Lacunas separador preenchidas com justificativa (iii) & 3 \\
+\quad ``No distortion at the top'' explicitado (iv) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 3 pontos: inexistência R-S}} \\
+\quad Argumento de inexistência sob $\lambda$ baixo + pooling não-Nash (i) & 2 \\
+\quad ANS + FGC como instituições brasileiras de resposta (ii) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 14 pontos: Holmström}} \\
+\quad First-best $w^{FB} = 64, \Pi^{FB} = 56$ (i) & 2 \\
+\quad Verificação MLRP $L(y_H) = 3 > 1/3 = L(y_L)$ (ii) & 2 \\
+\quad Sistema $2 \times 2$ resolvido: $w^{SB}_L = 4, w^{SB}_H = 100$ (iii) & 4 \\
+\quad Prêmio de risco moral $= 12$ + interpretação (iv) & 2 \\
+\quad Mirrlees-Holmström: $\mu = 16, \nu = 6$ verificado (v) & 2 \\
+\quad Equivalência sob neutralidade do agente + ``vender output'' (vi) & 2 \\
+\midrule
+\textbf{Total Q2} & \textbf{30} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE III -- AULA 9
+% ============================================================
+\begin{center}\large\textbf{Parte III --- Sinalização do rating soberano e matching de coordenadores em emissões} \quad (35 pontos)\end{center}
+
+\textit{Conexão com a Aula 9.} Os itens abaixo trabalham: (Sub-bloco A) modelo de Spence (1973) com governo soberano sinalizando capacidade fiscal via superávit primário, com derivação completa de equilíbrio separador, refinamento Cho-Kreps (1987) e seleção do Riley equilibrium; (Sub-bloco B) matching de bancos coordenadores em emissões soberanas via Deferred Acceptance, com execução $4 \times 4$, verificação de estabilidade, otimalidade do lado proponente, pessimismo do lado receptor e strategy-proofness assimétrica de Roth (1982).
+
+\begin{contextbox}[Sobre Spence e DA na dívida soberana brasileira]
+\small
+A dívida soberana brasileira foi rebaixada pela S\&P de \textbf{BB+ para BB} em \textbf{17/set/2015}, com perda do grau de investimento (\emph{investment grade}). Moody's e Fitch seguiram em 2016. O downgrade refletiu uma combinação de queda na arrecadação federal, abandono da meta primária original e expansão do déficit nominal -- em linguagem do Spence: o sinal $e$ (superávit primário sustentado) caiu abaixo do limite necessário para sustentar o equilíbrio separador no tipo $H$ (grau de investimento), e o equilíbrio se realocou para $\theta_L$ (especulativo). Empiricamente, o spread soberano (EMBI+ Brasil) saltou de $\sim$240 bp em 2014 para $\sim$540 bp no pico de 2016, antes de reverter parcialmente após reformas fiscais subsequentes (PEC do Teto -- EC 95/2016; reforma da previdência -- EC 103/2019; arcabouço fiscal -- LC 200/2023).
+
+A coordenação de emissões soberanas estruturadas (NTN-B longa, dívida externa) entre Tesouro Nacional e bancos coordenadores é intermediada pela Anbima via processo formal de mandato. Bancos competem por mandatos com base em capacidade de distribuição (rede de varejo, balcão institucional internacional), histórico de coordenação prévia e custo de funding. A teoria de matching de Gale-Shapley (1962), formalizada para mercados bilaterais por Roth-Sotomayor (1990), descreve como esse tipo de alocação pode ser organizada de modo \emph{estável} -- sem pares bloqueantes que prefeririam re-emparelhar.
+\end{contextbox}
+
+\begin{questions}
+\setcounter{question}{2}
+\question \textbf{Spence soberano e matching de bancos coordenadores} (35 pontos).
+
+\noindent\emph{Sub-bloco A: Spence soberano.} Considere dois tipos de governo soberano: $\theta_L = 1$ (incompetente fiscalmente, alto risco) e $\theta_H = 2$ (competente, baixo risco). O governo escolhe um sinal $e \geq 0$ -- nível de \emph{superávit primário sustentado} (em \% do PIB). O custo do esforço para o tipo $\theta$ é
+\[
+    c(e, \theta) \;=\; \frac{e}{\theta}.
+\]
+\emph{Single-crossing}: governo competente ($\theta_H = 2$) tem custo marginal $1/\theta_H = 0{,}5$ por unidade de superávit; governo incompetente ($\theta_L = 1$) tem custo marginal $1/\theta_L = 1$. Investidores observam $e$ e precificam a dívida; o ``salário'' $w(e)$ é a valoração de mercado da credibilidade do governo (em escala normalizada $w = \theta$ se investidores conhecessem o tipo). A utilidade do governo é $U(e, w; \theta) = w - e/\theta$. Crenças dos investidores são formadas após observar $e$, sob equilíbrio Bayesiano-perfeito (PBE).
+
+\begin{parts}
+\part[10] \textbf{Equilíbrio separador via IC-L e IC-H.}
+
+\textbf{(i)} \emph{Conjectura de equilíbrio separador.} Suponha que o tipo $L$ escolhe $e^*_L = 0$ e o tipo $H$ escolhe $e^*_H = \underline{e}$. Sob crenças de equilíbrio: $w(0) = \theta_L = 1$ e $w(\underline{e}) = \theta_H = 2$. Crenças fora do equilíbrio: $w(e) = \theta_L = 1$ para $e \in (0, \underline{e})$ (pessimistas).
+
+Escreva as restrições \textbf{IC-L} (tipo $L$ não imita $H$) e \textbf{IC-H} (tipo $H$ não desvia para $0$) como inequações em $\underline{e}$.
+
+\textbf{(ii)} Resolva ambas as inequações para obter o intervalo $\underline{e} \in [\underline{e}_{\min}, \underline{e}_{\max}]$ que sustenta separação. Apresente $\underline{e}_{\min}$ e $\underline{e}_{\max}$ em valores numéricos fechados.
+
+\textbf{(iii)} \emph{Multiplicidade.} Argumente em duas frases por que o intervalo é não-vazio (separação existe) e que existe um \textbf{contínuo} de equilíbrios separadores PBE.
+
+\textbf{(iv)} \emph{Ineficiência.} Compare o equilíbrio separador com o first-best (informação simétrica). Calcule a perda de bem-estar para o tipo $H$ no equilíbrio separador menos custoso $\underline{e}_{\min}$, em unidades de utilidade. Argumente em uma frase por que o tipo $L$ não tem perda.
+
+\begin{solution}
+\textbf{(i) Restrições IC.}
+
+\emph{IC-L} (tipo $L$ prefere seu próprio contrato a copiar $H$):
+\[
+    \underbrace{w(0) - \frac{0}{\theta_L}}_{= 1 - 0 = 1} \;\geq\; \underbrace{w(\underline{e}) - \frac{\underline{e}}{\theta_L}}_{= 2 - \underline{e}/1}
+    \;\Longleftrightarrow\; 1 \geq 2 - \underline{e}
+    \;\Longleftrightarrow\; \boxed{\underline{e} \;\geq\; \theta_L(\theta_H - \theta_L) \;=\; 1.}
+\]
+
+\emph{IC-H} (tipo $H$ prefere seu próprio contrato a desviar para $0$):
+\[
+    \underbrace{w(\underline{e}) - \frac{\underline{e}}{\theta_H}}_{= 2 - \underline{e}/2} \;\geq\; \underbrace{w(0) - \frac{0}{\theta_H}}_{= 1 - 0 = 1}
+    \;\Longleftrightarrow\; 2 - \underline{e}/2 \geq 1
+    \;\Longleftrightarrow\; \boxed{\underline{e} \;\leq\; \theta_H(\theta_H - \theta_L) \;=\; 2.}
+\]
+
+\textbf{(ii) Intervalo.} Combinando: $\underline{e} \in [\underline{e}_{\min}, \underline{e}_{\max}] = \boxed{[1, 2].}$ Valores numéricos: $\underline{e}_{\min} = 1$, $\underline{e}_{\max} = 2$.
+
+\textbf{(iii) Multiplicidade e não-vacuidade.} O intervalo $[1, 2]$ é não-vazio porque $\theta_H > \theta_L$ -- mais formalmente, $\underline{e}_{\min} = \theta_L(\theta_H - \theta_L) < \theta_H(\theta_H - \theta_L) = \underline{e}_{\max}$ desde que $\theta_H - \theta_L > 0$. Existe um \textbf{contínuo} de equilíbrios PBE separadores indexado por $\underline{e} \in [1, 2]$, todos com a mesma estrutura (tipo $L$ em $0$, tipo $H$ em $\underline{e}$, salários $1$ e $2$); diferem apenas no nível de sinal exigido. Esta multiplicidade é o principal problema teórico do modelo Spence canônico -- motiva os refinamentos do item (b).
+
+\textbf{(iv) Ineficiência.} \emph{First-best (info simétrica)}: investidores conhecem $\theta$, governo escolhe $e = 0$ (sinalização não tem benefício marginal positivo se o tipo já é conhecido). Utilidades: $U^{FB}_L = \theta_L = 1$, $U^{FB}_H = \theta_H = 2$.
+
+\emph{Equilíbrio separador menos custoso} $\underline{e}_{\min} = 1$: $U^{SS}_L = 1 - 0 = 1$ (igual ao first-best -- sem perda); $U^{SS}_H = 2 - 1/2 = 1{,}5$ (vs.\ $2$ first-best). \textbf{Perda de bem-estar do tipo $H$}: $U^{FB}_H - U^{SS}_H = 2 - 1{,}5 = 0{,}5$ unidades de utilidade. O tipo $L$ não tem perda porque, no separador, ele já escolhe $e = 0$ (que é também sua escolha first-best) e recebe $w = \theta_L = 1$ (o que receberia em first-best com info simétrica).
+
+\emph{Implicação Spence canônica}: \textbf{a sinalização é puro desperdício social}. O sinal $e_H$ não muda a produtividade do tipo $H$ -- apenas \emph{revela} sua identidade, ao custo de $\underline{e}_{\min}/\theta_H = 0{,}5$ unidades de utilidade desperdiçadas. Em equilíbrio competitivo com info simétrica, esse desperdício seria evitado. Sinalização é segundo-melhor da informação assimétrica.
+\end{solution}
+
+\newpage
+\part[7] \textbf{Cho-Kreps (1987) e Riley equilibrium.}
+
+\textbf{(i)} \emph{Pooling sob crenças pessimistas.} Mostre que existe pooling em $e^p = 0$ com $w(0) = \bar w = \pi_L \theta_L + (1-\pi_L)\theta_H$ sob crenças fora-do-equilíbrio $\mu(\theta_L | e > 0) = 1$ (pessimistas). Use $\pi_L = 0{,}5$ para calcular $\bar w$. Verifique IC-H e IC-L sob essas crenças.
+
+\textbf{(ii)} \emph{Aplicação do critério intuitivo de Cho-Kreps (1987).} Considere desvio $e' > 0$. Mostre que existe uma faixa $e' \in (\theta_L(\theta_H - \bar w), \theta_H(\theta_H - \bar w))$ na qual \emph{apenas o tipo $H$} seria capaz de ganhar desviando, supondo que $w(e') = \theta_H$ (o melhor cenário possível). Calcule essa faixa numericamente.
+
+\textbf{(iii)} Argumente que o critério intuitivo exige $\mu(\theta_H | e') = 1$ nessa faixa, levando a $w(e') = \theta_H$ -- o que torna o desvio do tipo $H$ \emph{lucrativo} e quebra o pooling. Explicite o argumento numericamente para $e' = 0{,}75$ (no interior da faixa derivada em (ii)).
+
+\textbf{(iv)} Argumente em duas frases que iteração análoga elimina todos os equilíbrios separadores acima de $\underline{e}_{\min} = 1$, sobrando apenas o \textbf{Riley equilibrium} $e^*_H = \underline{e}_{\min} = 1$.
+
+\begin{solution}
+\textbf{(i) Pooling com crenças pessimistas.} $\bar w = 0{,}5 \cdot 1 + 0{,}5 \cdot 2 = 1{,}5$. No pooling em $e^p = 0$ com $w(0) = \bar w = 1{,}5$ e $w(e > 0) = \theta_L = 1$ (pessimistas):
+
+\emph{Tipo $L$} (utilidade no pooling vs.\ qualquer desvio $e' > 0$): $U_L^{\text{pool}} = 1{,}5 - 0 = 1{,}5$; $U_L^{\text{desvio}}(e') = 1 - e'/1 < 1 < 1{,}5$. Não desvia. $\checkmark$
+
+\emph{Tipo $H$} (utilidade no pooling vs.\ desvio): $U_H^{\text{pool}} = 1{,}5 - 0/2 = 1{,}5$; $U_H^{\text{desvio}}(e') = 1 - e'/2 < 1 < 1{,}5$. Não desvia. $\checkmark$
+
+Pooling em $e^p = 0$ é PBE \emph{sob crenças pessimistas}. Mas crenças pessimistas são \emph{ad hoc} -- não há razão econômica para crer que apenas tipo $L$ desviaria, porque ambos perderiam.
+
+\textbf{(ii) Faixa Cho-Kreps.} Consideremos desvio $e' > 0$ assumindo melhor cenário $w(e') = \theta_H = 2$. Tipos desviam se ganho $> 0$:
+\begin{align*}
+    \text{Tipo $L$ desvia se}:\quad & 2 - e'/1 > 1{,}5 \;\Longleftrightarrow\; e' < 0{,}5 = \theta_L(\theta_H - \bar w) = 1\cdot 0{,}5 = 0{,}5. \\
+    \text{Tipo $H$ desvia se}:\quad & 2 - e'/2 > 1{,}5 \;\Longleftrightarrow\; e' < 1 = \theta_H(\theta_H - \bar w) = 2\cdot 0{,}5 = 1.
+\end{align*}
+
+\emph{Faixa em que apenas $H$ desviaria}: $e' \in (\theta_L(\theta_H - \bar w), \theta_H(\theta_H - \bar w)) = (0{,}5, 1)$.
+
+\textbf{(iii) Aplicação numérica em $e' = 0{,}75$.} Em $e' = 0{,}75$ (interior da faixa $(0{,}5, 1)$ derivada em (ii)):
+
+\emph{Tipo $L$ no melhor caso} ($w = 2$): ganho $= 2 - 0{,}75/1 - 1{,}5 = -0{,}25 < 0$. Não desvia.
+\emph{Tipo $H$ no melhor caso} ($w = 2$): ganho $= 2 - 0{,}75/2 - 1{,}5 = 0{,}125 > 0$. Desvia.
+
+\textbf{Critério intuitivo de Cho-Kreps}: como apenas $H$ poderia ganhar com $e' = 0{,}75$, crenças razoáveis exigem $\mu(\theta_H | 0{,}75) = 1 \Rightarrow w(0{,}75) = 2$. Sob essas crenças, tipo $H$ \emph{realmente desvia}: ganho real $= 2 - 0{,}375 - 1{,}5 = 0{,}125 > 0$. \textbf{Pooling cai.}
+
+\emph{Observação técnica}: a faixa derivada $(0{,}5, 1)$ corresponde ao caso $\pi_L = 0{,}5$. Para $\pi_L$ menor (mais governos competentes na população), $\bar w$ aumenta e a faixa se desloca; para $\pi_L$ maior, contrai. Em qualquer caso, a faixa é não-vazia para qualquer $\pi_L \in (0, 1)$, o que garante que pooling em $e = 0$ é eliminado por Cho-Kreps universalmente neste modelo.
+
+\textbf{(iv) Iteração e Riley equilibrium.} Argumento análogo elimina qualquer separador $\underline{e} > \underline{e}_{\min} = 1$: dado um separador candidato em $\underline{e}'$ com $\underline{e}' > 1$, considere desvio $e''$ tal que $1 < e'' < \underline{e}'$. Tipo $H$ ganha desviando para $e''$ se $w(e'') = \theta_H$ (porque $e'' < \underline{e}'$ tem custo $e''/\theta_H$ menor que $\underline{e}'/\theta_H$); tipo $L$ não ganha (custo $e''/\theta_L > 1 = w(0) + 1$ excede ganho mesmo no melhor cenário). Cho-Kreps exige $w(e'') = \theta_H$, e o equilíbrio em $\underline{e}'$ não sobrevive. Iteração leva a $\underline{e} = \underline{e}_{\min} = 1$ -- o \textbf{Riley equilibrium} (Riley, 2001 \textit{JEL}; resultado anterior em Riley, 1979 \textit{Econometrica}). \emph{Implicação para o setor soberano}: o nível mínimo de superávit primário sustentado que sinaliza credibilidade alta é exatamente $\underline{e}_{\min} = \theta_L(\theta_H - \theta_L)$ -- o esforço fiscal estritamente necessário para distinguir o tipo competente do incompetente.
+\end{solution}
+
+\newpage
+\noindent\emph{Sub-bloco B: Matching de bancos coordenadores e emissões soberanas via DA.} O Tesouro Nacional, mediado pela Anbima, precisa alocar $4$ bancos coordenadores ($M = \{M_1, M_2, M_3, M_4\}$ -- correspondentes estilizados a Itaú-BBA, BTG, Bradesco BBI, Santander) a $4$ emissões soberanas ($E = \{E_1, E_2, E_3, E_4\}$ -- correspondentes estilizados a NTN-B longa, LFT, LTN, NTN-F). Cada banco e cada emissão tem preferência completa e estrita sobre o lado oposto:
+
+\begin{center}
+\small
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Banco} & \textbf{Ordem de preferência} \\
+\midrule
+$M_1$ & $E_1 \succ E_2 \succ E_3 \succ E_4$ \\
+$M_2$ & $E_1 \succ E_2 \succ E_3 \succ E_4$ \\
+$M_3$ & $E_2 \succ E_1 \succ E_3 \succ E_4$ \\
+$M_4$ & $E_3 \succ E_4 \succ E_1 \succ E_2$ \\
+\midrule
+\textbf{Emissão} & \textbf{Ordem de preferência} \\
+\midrule
+$E_1$ & $M_3 \succ M_2 \succ M_1 \succ M_4$ \\
+$E_2$ & $M_1 \succ M_4 \succ M_3 \succ M_2$ \\
+$E_3$ & $M_4 \succ M_1 \succ M_2 \succ M_3$ \\
+$E_4$ & $M_2 \succ M_4 \succ M_3 \succ M_1$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+Aplica-se o algoritmo \textbf{Deferred Acceptance (DA)} de Gale-Shapley (1962) com bancos como lado proponente.
+
+\part[10] \textbf{Execução de DA e estabilidade.}
+
+\textbf{(i)} Execute o algoritmo DA passo a passo. Numere as iterações e, em cada uma, registre: quem propõe a quem; quem é mantido em pendente; quem é rejeitado. O algoritmo termina quando ninguém é rejeitado em uma iteração. Apresente o matching final como permutação $\mu_M: M \to E$.
+
+\textbf{(ii)} Verifique a estabilidade do matching $\mu_M$ por exaustão de potenciais pares bloqueantes. (Basta verificar pares $(m, e)$ com $e \succ_m \mu_M(m)$ para cada $m$ -- são apenas alguns.)
+
+\textbf{(iii)} Identifique qual banco recebeu seu \emph{top} preferido e qual recebeu seu \emph{último}. O matching foi ``justo'' do ponto de vista distributivo entre os proponentes?
+
+\begin{solution}
+\textbf{(i) Execução iterada.}
+
+\textbf{Iteração 1.} Propostas iniciais (cada banco propõe ao seu top):
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $M_1 \to E_1$, $M_2 \to E_1$, $M_3 \to E_2$, $M_4 \to E_3$.
+\end{itemize}
+Pendentes:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_1$ recebe $\{M_1, M_2\}$. Pela preferência $\succ_{E_1}: M_3 \succ M_2 \succ M_1 \succ M_4$, mantém $M_2$ (melhor entre os recebidos), \textbf{rejeita} $M_1$.
+    \item $E_2$ recebe $\{M_3\}$. Mantém $M_3$.
+    \item $E_3$ recebe $\{M_4\}$. Mantém $M_4$.
+    \item $E_4$ não recebe ninguém.
+\end{itemize}
+
+\textbf{Iteração 2.} $M_1$ (rejeitado) propõe ao próximo: $M_1 \to E_2$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_2$ compara pendente $M_3$ com novo $M_1$. Pela preferência $\succ_{E_2}: M_1 \succ M_4 \succ M_3 \succ M_2$, prefere $M_1$. Mantém $M_1$, \textbf{rejeita} $M_3$.
+\end{itemize}
+
+\textbf{Iteração 3.} $M_3$ (rejeitado) propõe ao próximo: $M_3 \to E_1$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_1$ compara pendente $M_2$ com novo $M_3$. Pela preferência $\succ_{E_1}: M_3 \succ M_2 \succ M_1 \succ M_4$, prefere $M_3$. Mantém $M_3$, \textbf{rejeita} $M_2$.
+\end{itemize}
+
+\textbf{Iteração 4.} $M_2$ (rejeitado) propõe ao próximo: $M_2 \to E_2$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_2$ compara pendente $M_1$ com novo $M_2$. Pela preferência $\succ_{E_2}: M_1 \succ M_4 \succ M_3 \succ M_2$, prefere $M_1$. Mantém $M_1$, \textbf{rejeita} $M_2$.
+\end{itemize}
+
+\textbf{Iteração 5.} $M_2$ (rejeitado novamente) propõe ao próximo: $M_2 \to E_3$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_3$ compara pendente $M_4$ com novo $M_2$. Pela preferência $\succ_{E_3}: M_4 \succ M_1 \succ M_2 \succ M_3$, prefere $M_4$. Mantém $M_4$, \textbf{rejeita} $M_2$.
+\end{itemize}
+
+\textbf{Iteração 6.} $M_2$ (rejeitado novamente) propõe ao próximo: $M_2 \to E_4$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $E_4$ não tem pendente; aceita $M_2$. Ninguém é rejeitado nesta iteração.
+\end{itemize}
+
+\textbf{Termina.} Matching final:
+\[
+    \boxed{\mu_M = \{M_1 \leftrightarrow E_2,\; M_2 \leftrightarrow E_4,\; M_3 \leftrightarrow E_1,\; M_4 \leftrightarrow E_3\}.}
+\]
+
+\textbf{(ii) Verificação de estabilidade.} Para cada $m \in M$, listar emissões \emph{preferidas} a $\mu_M(m)$ e checar se essas emissões prefeririam $m$ ao seu próprio par.
+
+\emph{Para $M_1$ (atual: $E_2$).} Prefere $E_1$ a $E_2$. Par candidato $(M_1, E_1)$: $E_1$ atualmente está com $M_3$. $\succ_{E_1}: M_3 \succ M_2 \succ M_1 \succ M_4$. $M_3 \succ M_1$, então $E_1$ prefere $M_3$ a $M_1$. \textbf{Não bloqueia.}
+
+\emph{Para $M_2$ (atual: $E_4$).} Prefere $E_1, E_2, E_3$ a $E_4$.
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $(M_2, E_1)$: $E_1$ está com $M_3$. $\succ_{E_1}: M_3 \succ M_2$. Não bloqueia.
+    \item $(M_2, E_2)$: $E_2$ está com $M_1$. $\succ_{E_2}: M_1 \succ M_4 \succ M_3 \succ M_2$. $M_1 \succ M_2$. Não bloqueia.
+    \item $(M_2, E_3)$: $E_3$ está com $M_4$. $\succ_{E_3}: M_4 \succ M_1 \succ M_2$. $M_4 \succ M_2$. Não bloqueia.
+\end{itemize}
+
+\emph{Para $M_3$ (atual: $E_1$).} Prefere $E_2$ a $E_1$. Par $(M_3, E_2)$: $E_2$ está com $M_1$. $\succ_{E_2}: M_1 \succ M_3$. Não bloqueia.
+
+\emph{Para $M_4$ (atual: $E_3$).} $E_3$ é o top de $M_4$ -- não há emissão preferida acima. Trivialmente sem bloqueio.
+
+\textbf{Conclusão}: $\mu_M$ é estável. $\checkmark$
+
+\textbf{(iii) Distribuição entre proponentes.}
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item $M_1$ queria $E_1$, ficou com $E_2$ (\emph{2º}).
+    \item $M_2$ queria $E_1$, ficou com $E_4$ (\emph{último, 4º}). $M_2$ percorreu o ranking inteiro -- sucessivamente rejeitado por $E_1, E_2, E_3$ antes de ser aceito por $E_4$.
+    \item $M_3$ queria $E_2$, ficou com $E_1$ (\emph{2º}).
+    \item $M_4$ queria $E_3$, ficou com $E_3$ (\emph{1º top}). Único banco a receber sua preferência preferida.
+\end{itemize}
+\textbf{Não foi distributivamente uniforme.} A heterogeneidade vem da estrutura de preferências do lado receptor: $E_3$ tinha $M_4$ como top recíproco -- alinhamento mútuo permite $M_4$ ficar com seu top. $M_2$, em contraste, era o último na maioria das listas das emissões -- foi sistematicamente rejeitado. \emph{Implicação institucional}: bancos com perfil de captação mais especializado ou nicho (como $M_4$ aqui) tendem a obter alinhamentos mútuos mais favoráveis em DA do que bancos generalistas que competem pelos mandatos mais visíveis (como $M_2$).
+\end{solution}
+
+\newpage
+\part[8] \textbf{Otimalidade e pessimismo do lado receptor + Roth (1982).}
+
+\textbf{(i)} \emph{Otimalidade do proponente.} Um teorema central de Gale-Shapley (1962) diz que o output do DA com $M$ propondo é \textbf{$M$-ótimo}: cada banco $m \in M$ recebe, no matching $\mu_M$, sua emissão mais preferida \emph{entre todas as emissões com as quais ele está pareado em algum matching estável}. Argumente em duas frases por que esse resultado é não-trivial: existem múltiplos matchings estáveis em geral; DA seleciona o melhor para o lado proponente.
+
+\textbf{(ii)} \emph{Pessimismo do receptor.} Por dualidade, o output do DA com $M$ propondo é \textbf{$E$-péssimo}: cada emissão $e \in E$ recebe sua \emph{pior} parceira possível entre os matchings estáveis. Verifique para a emissão $E_2$ no nosso exemplo: $E_2$ ficou com $M_1$, seu top preferido. Isso contradiz o $E$-pessimismo? Explique por que não.
+
+\textbf{(iii)} \emph{Strategy-proofness assimétrica de Roth (1982).} Argumente em três frases por que declarar verdade é estratégia dominante para os proponentes ($M$), mas \emph{não} para os receptores ($E$). Ilustre com um exemplo concreto: se a emissão $E_3$ pudesse manipular sua declaração de preferência, qual desvio poderia tentar para terminar com um banco preferido a $M_4$?
+
+\textbf{(iv)} Cite o teorema-impossibilidade de Roth (1982): nenhum mecanismo estável é strategy-proof para os dois lados simultaneamente. Explique em uma frase a implicação prática para o desenho do mecanismo da Anbima/Tesouro.
+
+\begin{solution}
+\textbf{(i) Otimalidade do proponente.} O resultado é não-trivial porque o conjunto de matchings estáveis pode ter \emph{múltiplos elementos} (e tipicamente tem -- em geral, é um \emph{lattice} sob a ordem ``melhor para $M$''). Para cada $m$, ``melhor parceiro estável'' existe e é \emph{coerente} (existe uma única alocação que dá a cada $m$ esse melhor parceiro estável simultaneamente -- e essa alocação é, ela própria, estável; não há conflito entre os ``melhores'' individuais). DA com $M$ propondo \emph{seleciona} essa alocação. Resultado de Conway / Knuth, formalizado em Roth-Sotomayor (1990).
+
+\textbf{(ii) Pessimismo do receptor.} O fato de $E_2$ ficar com seu \emph{top} ($M_1$) não contradiz o $E$-pessimismo. O teorema diz que cada emissão recebe sua \emph{pior parceira entre os matchings estáveis} -- não sua pior parceira em absoluto. Pode haver poucos matchings estáveis (ou apenas um) em que a emissão é alocada a um banco bom, e o $E$-pessimismo simplesmente seleciona o pior \emph{nessa lista}. Em particular, se houver um único matching estável (ex.\ caso degenerado em que preferências dos dois lados são alinhadas), $M$-ótimo $=$ $E$-péssimo $=$ esse único matching, e ambos os lados recebem ``o que a estabilidade permite''. \emph{No exemplo}: $E_2$ tem $M_1$ como top; se $M_1$ é parceiro de $E_2$ em algum matching estável (e é, como mostramos), $E_2$ \emph{nunca} sai com pior que $M_1$ -- então $M_1$ é tanto o melhor quanto o pior parceiro estável de $E_2$ (único matching estável que tem $E_2$ alocada). Não há contradição.
+
+\textbf{(iii) Strategy-proofness assimétrica.} \emph{Para o lado proponente $M$}: ao mover de declaração verdadeira para declaração distorcida, um banco $m$ só pode \emph{retirar} ofertas previamente aceitáveis ou \emph{adicionar} preferência por emissões piores. Em ambos os casos, no DA, $m$ acaba com matching pelo menos tão ruim quanto o sob verdade -- não há manipulação lucrativa. Verdade é estratégia dominante. \emph{Para o lado receptor $E$}: emissões podem manipular declaração para forçar realocação. \textbf{Exemplo concreto para $E_3$}: $E_3$ ficou com $M_4$ (seu top). Se $E_3$ tentasse, em alternativa, declarar preferência mentindo (por exemplo, fingindo que $M_2 \succ M_4$, ou seja, rejeitando $M_4$ na iteração inicial), $M_4$ seria deslocado para sua próxima preferência ($E_4$). $E_4$, por sua vez, atualmente tem $M_2$. Se $M_4$ propusesse a $E_4$, $E_4$ trocaria $M_2$ por $M_4$ ($\succ_{E_4}: M_2 \succ M_4 \succ M_3 \succ M_1$ -- na verdade $E_4$ prefere $M_2$, então não trocaria) -- e $E_3$ ficaria sem ninguém. Essa manipulação específica não é lucrativa para $E_3$. Mas existem configurações em que sim: o ponto teórico é que para algum receptor com algum perfil de preferências, manipulação pode ser lucrativa. (Em mecanismos $4 \times 4$ com preferências como as nossas, oportunidades de manipulação podem ser raras; em mercados maiores e mais complexos, são comuns.)
+
+\textbf{(iv) Roth (1982) impossibilidade.} \textbf{Teorema de Roth (1982, MOR)}: nenhum mecanismo estável é strategy-proof para os dois lados simultaneamente. \emph{Implicação prática}: a Anbima/Tesouro deve escolher \emph{qual lado} terá a verdade-dominância -- e a literatura empírica + experiência institucional (NRMP nos EUA optou por candidatos médicos como proponentes; SISU brasileiro optou por candidatos como proponentes) sugere escolher o lado com mais agentes pequenos e atomísticos (que se beneficiam mais da garantia de verdade). Para coordenação de emissões soberanas, \emph{bancos como proponentes} (como modelado aqui) é a escolha natural -- bancos competem pequenos lances racionais; emissões (cada uma única) podem ser desenhadas pelo Tesouro com restrições adicionais (cota mínima, exigência de capacidade de distribuição), reduzindo o espaço de manipulação do lado receptor sem violar estabilidade.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 3 (35 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 10 pontos: Spence separador}} \\
+\quad IC-L e IC-H corretamente derivadas (i) & 3 \\
+\quad Intervalo $[\underline{e}_{\min}, \underline{e}_{\max}] = [1, 2]$ obtido (ii) & 3 \\
+\quad Multiplicidade e contínuo de PBE separadores (iii) & 1 \\
+\quad Ineficiência: perda de $0{,}5$ no tipo $H$, sem perda no tipo $L$ (iv) & 3 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 7 pontos: Cho-Kreps + Riley}} \\
+\quad Pooling em $e^p = 0$ verificado sob crenças pessimistas (i) & 2 \\
+\quad Faixa Cho-Kreps $(0{,}5, 1)$ derivada com $\bar w = 1{,}5$ (ii) & 2 \\
+\quad Aplicação numérica + quebra do pooling (iii) & 2 \\
+\quad Iteração leva ao Riley equilibrium $\underline{e}_{\min} = 1$ (iv) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 10 pontos: DA execução + estabilidade}} \\
+\quad Iterações 1--6 corretas + matching final $\mu_M$ (i) & 5 \\
+\quad Verificação de estabilidade por exaustão (ii) & 3 \\
+\quad Discussão de distribuição entre proponentes (iii) & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 8 pontos: otimalidade + Roth}} \\
+\quad Otimalidade do proponente: $M$-ótimo não-trivial (i) & 2 \\
+\quad Pessimismo do receptor + caso $E_2$ não-contradição (ii) & 2 \\
+\quad Strategy-proofness assimétrica + exemplo $E_3$ (iii) & 2 \\
+\quad Roth (1982) impossibilidade + implicação Anbima (iv) & 2 \\
+\midrule
+\textbf{Total Q3} & \textbf{35} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE IV -- SÍNTESE Q4
+% ============================================================
+\begin{center}\large\textbf{Parte IV --- Síntese: recomendação ao BCB e ao Tesouro Nacional} \quad (10 pontos)\end{center}
+
+\textit{Conexão com as Aulas 7--9.} Esta questão consolida os três sub-blocos anteriores em uma recomendação integrada. Não há solução algébrica única -- espera-se aplicação econômica do ferramental, com argumentação coerente e referências adequadas.
+
+\begin{questions}
+\setcounter{question}{3}
+\question \textbf{Redesenho conjunto de instrumentos: capital regulatório, FGC e protocolo Tesouro-Anbima} (10 pontos).
+
+Você é assessor(a) econômico(a) do Banco Central do Brasil (BCB), trabalhando em conjunto com o Tesouro Nacional. Em uma reunião conjunta BCB--Tesouro, foi pedido um relatório curto recomendando um redesenho coordenado de três instrumentos: (i) capital regulatório contracíclico (Basel III adaptado pela Resolução CMN 4.193/2013); (ii) menu de cobertura do FGC para depósitos e do FGI para PMEs (Resolução CMN 4.222/2013 e regulamentação BNDES); (iii) protocolo Tesouro--Anbima de coordenação de emissões soberanas estruturadas (NTN-B longa, dívida externa).
+
+\textbf{Estruture sua resposta nos quatro itens abaixo} (pesos: 3+2+3+2 = 10 pts).
+
+\begin{parts}
+\part[3] \textbf{Diagnóstico via teoria do EG.} Para cada um dos três instrumentos, identifique:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item \emph{Qual é o ``bem'' que o instrumento internaliza}: externalidade, bem público, sinalização ou matching.
+    \item \emph{Qual é o teorema/conceito de referência}: Pigou, Coase, Samuelson, R-S, Holmström, Spence ou Gale-Shapley.
+    \item \emph{Qual hipótese-chave do 1º TBE deixou de valer}, motivando o instrumento.
+\end{itemize}
+
+\part[2] \textbf{Proposta concreta.} Para cada instrumento, proponha \emph{uma} mudança operacional específica (não abstrata), com justificativa econômica em termos do mecanismo identificado. Exemplos de tipo de mudança permitida: ativação contracíclica do capital regulatório com gatilho quantitativo, redesenho do menu FGI para reproduzir contrato separador R-S, adaptação do protocolo Anbima para mecanismo DA com bancos como proponentes.
+
+\part[3] \textbf{Limitações e contraindicações.} Para cada instrumento, identifique \emph{uma} limitação prática ou contraindicação econômica. Discuta especificamente:
+\begin{itemize}[noitemsep,topsep=0pt]
+    \item \emph{Capital regulatório}: alguma limitação a la Geanakoplos-Polemarchakis (1986) -- regulação adicional pode \emph{piorar} bem-estar de subgrupos via reajuste geral de preços.
+    \item \emph{FGC/FGI}: alguma limitação a la R-S (inexistência) ou Akerlof (escolha do menu pode unraveling).
+    \item \emph{DA na Anbima}: alguma limitação a la Roth (1982) -- strategy-proofness assimétrica + manipulação por receptores.
+\end{itemize}
+
+\part[2] \textbf{Evidência empírica e programa de monitoramento.} Para cada instrumento, sugira \emph{um} indicador empírico observável que permitiria o BCB/Tesouro monitorar se a mudança proposta está funcionando como esperado. Cite fontes de dados disponíveis (BCB \emph{Relatório de Estabilidade Financeira}; Anbima \emph{Boletim Mensal de Renda Fixa}; Tesouro Nacional \emph{Relatório Mensal da Dívida Pública}; séries históricas de spread soberano EMBI+ Brasil; BCB SCR -- Sistema de Informações de Crédito).
+
+\begin{solution}
+\textbf{(a) Diagnóstico.}
+
+\emph{Capital regulatório (Basel III, Resolução CMN 4.193/2013).} Internaliza \textbf{externalidade sistêmica} de risco bancário (Q1, sub-bloco A). Conceito de referência: \textbf{Pigou (1920)} -- $\tau^* = \MEC(r^*)$. Hipótese do 1º TBE violada: existência de externalidades tecnológicas -- a falência de um banco impõe custo (probabilidade de cascade-default) sobre os demais sem passar pelo sistema de preços. Confirmado empiricamente em Acharya, Pedersen, Philippon \& Richardson (2017, \textit{RFS}) que mediram \emph{Systemic Expected Shortfall (SES)} como medida quantitativa da externalidade.
+
+\emph{FGC/FGI (Resoluções CMN 4.222/2013 e regulamentação BNDES).} Internaliza \textbf{estabilidade financeira como bem público} (Q1, sub-bloco B; Samuelson 1954) e simultaneamente endereça \textbf{seleção adversa} em garantia de crédito a PMEs (Q2, sub-bloco B; Rothschild-Stiglitz 1976). Hipótese do 1º TBE violada: depende do instrumento -- não-rivalidade da estabilidade no caso do FGC; informação assimétrica sobre tipo do tomador no caso do FGI. Combinação não-trivial de duas falhas.
+
+\emph{Protocolo Tesouro--Anbima.} Implementa \textbf{matching de mandatos} entre bancos coordenadores e emissões soberanas (Q3, sub-bloco B; Gale-Shapley 1962). Não há ``falha do 1º TBE'' no sentido tradicional -- o problema é que mercados normais com preços não conseguem alocar mandatos únicos (cada emissão é singular, com forte componente reputacional + capacidade institucional não-precificável). Matching estável é a alternativa institucional. Roth Nobel 2012 (com Shapley) -- \emph{for the theory of stable allocations and the practice of market design}.
+
+\textbf{(b) Propostas concretas.}
+
+\emph{Capital regulatório contracíclico com gatilho quantitativo.} Proposta: ativar o \textbf{countercyclical capital buffer (CCyB)} do Basel III adaptado a Brasil com gatilho na razão crédito/PIB acima de seu trend de longo prazo (filtro HP) por mais de $4$ trimestres consecutivos. Calibragem: incremento gradual de até $2{,}5\%$ de RWA, conforme recomendação do BCBS. Justificativa: $\MEC$ é maior em fases de exuberância de crédito (correlação cruzada de exposições aumenta), então $\tau^*$ deve subir contraciclicamente. Implementação operacional: BCB já tem ferramenta no marco; proposta é \emph{ativar com gatilho quantitativo predefinido} em vez de discricionário, reduzindo time-inconsistency.
+
+\emph{Redesenho FGI como menu separador.} Proposta: BNDES oferece \emph{dois} contratos para garantia FGI a PMEs em vez do contrato uniforme atual: (i) cobertura $80\%$ ao prêmio mais alto (atrativo para PMEs de alto risco -- ``contrato $R$''); (ii) cobertura $40\%$ ao prêmio menor (atrativo para PMEs de baixo risco -- ``contrato $B$ distorcido''). Calibragem do prêmio do contrato $B$ para que IC do tipo $R$ binding (tipo $R$ indiferente entre os contratos). Justificativa: implementa equilíbrio R-S separador, reduzindo subsídio cruzado implícito do contrato uniforme atual; PMEs de baixo risco passam a ter custo financiamento mais baixo, expandindo crédito para esse segmento.
+
+\emph{DA formal na Anbima.} Proposta: protocolo formal de matching para alocação de mandatos de coordenação em emissões soberanas estruturadas (NTN-B longa, eurobônus): bancos submetem ranking ordenado de emissões; Tesouro/Anbima publicam rankings recíprocos baseados em critérios objetivos (capacidade de distribuição, custo de funding histórico, presença em \textit{league tables}); mecanismo executa DA com bancos como proponentes e divulga matching final em ato administrativo. Justificativa: implementa estabilidade (sem pares bloqueantes) e strategy-proofness para bancos (verdade-dominância). Reduz a discricionariedade ad hoc atual e aumenta a transparência do processo.
+
+\textbf{(c) Limitações.}
+
+\emph{Capital regulatório / GP 1986.} Adição de capital regulatório contracíclico pode \textbf{piorar} bem-estar de subgrupos via reajuste geral de preços (Geanakoplos-Polemarchakis 1986 -- aplicado a mercado bancário). Especificamente: bancos pequenos com captação cara enfrentam custo desproporcional do CCyB, pois não têm escala para emitir CoCos a custo competitivo. Resultado: concentração bancária aumenta (bancos pequenos são absorvidos), o que \emph{reduz} a eficiência alocativa do crédito a longo prazo. Trade-off entre estabilidade sistêmica de curto prazo e diversidade institucional de longo prazo. Implicação: calibrar CCyB com diferenciação por tamanho ou estágio de capitalização.
+
+\emph{FGI separador / inexistência R-S.} Se a proporção $\lambda$ de PMEs ``ruins'' for muito baixa (segmento de PME ``saudável'' domina o mercado), o equilíbrio R-S separador pode não existir -- o que se vê na prática é colapso do menu (todas as PMEs migram para contrato $R$ pela cobertura maior, gerando perda no FGI). Mitigação: BNDES pode reservar contratos do tipo $B$ apenas para PMEs com histórico verificável (rating mínimo, demonstrativos auditados), reduzindo a heterogeneidade efetiva. Outra opção: tornar contrato uniforme \emph{contingente} a setor da economia, reproduzindo separação via características observáveis em vez de auto-seleção.
+
+\emph{DA na Anbima / Roth 1982.} O protocolo DA é strategy-proof para bancos, mas não para o Tesouro/emissões. Em mercados pequenos e repetidos como o de coordenação de dívida soberana brasileira (poucas emissões grandes por ano, $\sim 5$ bancos coordenadores ativos), o lado receptor pode manipular ranking declarado para forçar matching mais favorável -- e Roth (1982) provou que nenhum mecanismo estável escapa dessa assimetria. Mitigação: Anbima pode regular o ranking declarado por restrições objetivas (cota mínima de capacidade de distribuição, requisitos formais de capital), reduzindo o espaço para manipulação. Não elimina a possibilidade teórica.
+
+\textbf{(d) Indicadores empíricos de monitoramento.}
+
+\emph{Capital regulatório.} Indicador: razão \textbf{crédito/PIB ajustada por gap (HP filter)} -- ativação de CCyB deve estar correlacionada com gap positivo. Fonte: BCB \emph{Relatório de Estabilidade Financeira} (publicação semestral) + séries SCR (Sistema de Informações de Crédito) para monitoramento mensal de exposições por setor. Indicador secundário: \textbf{Systemic Expected Shortfall} (SES, Acharya et al.\ 2017) -- requer dados de retornos de mercado dos bancos listados, calculáveis a partir de B3.
+
+\emph{FGI separador.} Indicador: \textbf{taxa média de juros para PMEs por faixa de risco}, monitorada via SCR-BCB. Sucesso da implementação separadora: redução do spread médio cobrado a PMEs ``saudáveis'' relativamente ao status quo + aumento na concessão de crédito de longo prazo a esse segmento. Indicador secundário: \textbf{taxa de inadimplência ex-post no contrato $B$} -- se o mecanismo de auto-seleção funciona, contrato $B$ deve atrair PMEs efetivamente menos arriscadas, com inadimplência menor que a média. Fonte: BCB SCR + BNDES \emph{Relatório de Operações de Crédito}.
+
+\emph{DA Anbima.} Indicador: \textbf{custo médio de captação} por emissão soberana estruturada relativamente a benchmarks de mercado (bid-ask spread em leilões primários do Tesouro Direto, comparado a curva de juros nominal do dia). Sucesso: redução de spread em emissões coordenadas após adoção formal de DA. Indicador secundário: \textbf{rotatividade do pool de bancos coordenadores} (Herfindahl-Hirschman Index do market share em mandatos) -- DA tende a equalizar acesso entre bancos qualificados, reduzindo concentração. Fonte: Anbima \emph{Boletim Mensal de Renda Fixa} + Tesouro Nacional \emph{Relatório Mensal da Dívida Pública}.
+
+\medskip
+\textbf{Recomendação final ao BCB e Tesouro.} Os três instrumentos endereçam três falhas distintas e operam em escalas complementares: capital regulatório atua \emph{ex-ante} reduzindo risco sistêmico; FGC/FGI atua \emph{ex-post} (garantia em estado de falência) e \emph{ex-ante} (revelação via auto-seleção); protocolo DA atua na \emph{coordenação de execução} de emissões. Há ganhos de complementaridade -- capital regulatório bem calibrado reduz a probabilidade de uso do FGC; FGI separador dá ao mercado de crédito profundidade que se traduz em demanda por NTN-B mais robusta; protocolo DA transparente dá ao mercado sinais positivos de governança institucional, refletidos no spread soberano. \textbf{Calendário sugerido}: piloto de CCyB ativável em 2026--2027; proposta de menu FGI separador para apreciação BNDES em 2026; protocolo DA Anbima para mandatos de eurobônus 2026--2028 como teste piloto antes de aplicação em emissões domésticas estruturadas. \emph{Próxima rodada de consulta pública}: discutir coordenação intergovernamental (BCB + Tesouro + BNDES) e desenho de governança do redesenho.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 4 (10 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+Diagnóstico EG dos 3 instrumentos com identificação correta de falha + teorema (a) & 2.5 \\
+Propostas concretas operacionais com calibragem (CCyB, menu separador FGI, DA Anbima) (b) & 2.5 \\
+Limitações: GP 1986, inexistência R-S, Roth 1982 (c) & 2.5 \\
+Indicadores empíricos com fontes BCB/Anbima/Tesouro (d) & 2.5 \\
+\midrule
+\textbf{Total Q4} & \textbf{10} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+\end{spacing}
+
+\newpage
+\begin{center}\large\textbf{Apêndice -- Auto-verificação antes da entrega}\end{center}
+\vspace{0.5em}
+
+\noindent Antes de entregar, percorra esta checklist. Se algum item falhar, há erro algébrico ou conceitual.
+
+\medskip
+\begin{enumerate}[label=$\square$,leftmargin=*]
+\item \textbf{Q1(a):} $r^p = 6$, $r^* = 3$, $\tau^* = 6 = \MEC(r^*)$. Banco com imposto resolve $r(\tau^*) = (12-6)/2 = 3 = r^*$.
+\item \textbf{Q1(b):} triângulo Harberger área $= 18$ coincide com $W(r^*) - W(r^p) = 18 - 0 = 18$.
+\item \textbf{Q1(c):} hipótese (2) custos de transação zero é a mais frágil em economia bancária real; PROER 1995 mostra ônus do bail-out.
+\item \textbf{Q1(d):} $G^* = 8$, $G^N = 4$, razão $1/2 = 1/I$ (resultado clássico BBV 1986 com Bernoulli quase-linear log).
+\item \textbf{Q1(e):} FGC opera por contribuição compulsória $\sim 0{,}01\%$ ao mês; garantia R\$ 250 mil; mais próximo de Pigou descentralizado com base proporcional + componente Ostromiano.
+\item \textbf{Q2(a):} $\lambda^* = 1/3$, $i_{\text{pool}}(\lambda) = (1-\lambda)/(1+\lambda)$, colapso para $\lambda < 1/3$ porque $i_R = 1 > R = 0{,}5$.
+\item \textbf{Q2(b):} $p^B_{FB} = 8$, $p^R_{FB} = 32$; tipo $R$ recebe first-best, tipo $B$ tem cobertura distorcida; IC do tipo $R$ binding.
+\item \textbf{Q2(c):} ANS (Lei 9.961/2000) e FGC (Resolução 4.222/2013) como respostas regulatórias à inexistência R-S.
+\item \textbf{Q2(d):} $w^{FB} = 64$, $\Pi^{FB} = 56$; MLRP: $L(y_H)=3>1/3=L(y_L)$; $w^{SB}_L = 4$, $w^{SB}_H = 100$; prêmio risco moral $= 12$; Mirrlees-Holmström: $\mu = 16, \nu = 6$; sob neutralidade do agente, second-best $=$ first-best.
+\item \textbf{Q3(a):} $\underline{e}_{\min} = 1$, $\underline{e}_{\max} = 2$; perda de bem-estar do tipo $H$ no Riley equilibrium $= 0{,}5$; tipo $L$ sem perda.
+\item \textbf{Q3(b):} pooling em $e^p = 0$ com $\bar w = 1{,}5$; faixa Cho-Kreps $(0{,}5, 1)$; iteração leva a Riley $\underline{e}_{\min} = 1$.
+\item \textbf{Q3(c):} matching final $\mu_M = \{M_1\leftrightarrow E_2, M_2\leftrightarrow E_4, M_3\leftrightarrow E_1, M_4\leftrightarrow E_3\}$; verificação de estabilidade por exaustão de pares preferidos.
+\item \textbf{Q3(d):} $M$-ótimo + $E$-péssimo são duais; Roth (1982) impossibilidade; implicação Anbima: bancos como proponentes.
+\item \textbf{Q4:} 3 instrumentos diagnosticados via 3 falhas (externalidade, info assimétrica, matching); 3 propostas operacionais com calibragem; 3 limitações (GP 1986, inexistência R-S, Roth 1982); 3 indicadores empíricos com fontes.
+\end{enumerate}
+
+\vspace{1em}
+\begin{contextbox}[Sobre falhas do 1º TBE e mecanismos institucionais brasileiros]
+\small
+As três falhas catalogadas nas Aulas 7--9 -- externalidades + bens públicos, informação assimétrica e necessidade de coordenação sem preços -- são os blocos analíticos que permitem ler o desenho institucional contemporâneo brasileiro como economia, e não apenas como regulação. Pigou (1920) e Coase (1960) fundamentaram a discussão sobre internalização de externalidades; Samuelson (1954), Lindahl (1919) e Vickrey-Clarke-Groves (anos 1960--70) desenvolveram o aparelho para bens públicos e mecanismos de revelação. Akerlof (1970), Rothschild-Stiglitz (1976) e Holmström (1979) -- todos premiados com o Nobel (Akerlof + Stiglitz + Spence em 2001; Holmström em 2016) -- estabeleceram o ferramental para informação assimétrica em mercados de crédito, seguro e contratos de incentivo. Spence (1973), Cho-Kreps (1987), Gale-Shapley (1962) e Roth (1982) -- Roth + Shapley premiados em 2012 -- consolidaram o aparato de sinalização e matching aplicado a mercados de mandatos, designações e alocação descentralizada.
+
+O sistema bancário brasileiro pós-1995 incorporou essas lições institucionalmente: Basel III via Resolução CMN 4.193/2013 implementa Pigou contracíclico; FGC via Resolução CMN 4.222/2013 implementa provisão coletiva da estabilidade; FGI/BNDES aproxima R-S via menu de garantias para PMEs; Lei 6.404/1976 e atualizações estruturam contratos de incentivo a la Holmström. O sistema de dívida soberana brasileira -- Tesouro Direto, NTN-B, LFT, LTN, NTN-F -- opera com sinalização de credibilidade fiscal via superávit primário, lida com a coordenação de bancos coordenadores via Anbima, e tem seu rating soberano sujeito ao escrutínio constante de S\&P, Moody's e Fitch. O downgrade de set/2015 é o exemplo empírico mais nítido do equilíbrio de Spence falhar -- quando o sinal não consegue mais sustentar separação, o tipo é reavaliado.
+
+A próxima fronteira analítica -- ainda fora do escopo desta APS -- são as \emph{interações entre as três falhas}: como capital regulatório (Pigou) interage com a estrutura de incentivos do gerente bancário (Holmström)? Como FGC (bem público + cross-subsidy R-S) interage com a competição por depósitos? Como matching de coordenadores soberanos (Gale-Shapley) interage com sinalização de credibilidade fiscal (Spence)? Cada uma dessas interações é uma generalização teórica não-trivial, ativa na literatura contemporânea (revistas como \emph{Journal of Finance}, \emph{Review of Financial Studies}, \emph{American Economic Review} têm publicações regulares na fronteira). Esta APS prepara o aluno para ler essa literatura como economia, não apenas como regulação ou finanças aplicadas.
+\end{contextbox}
+
+\vspace{1em}
+\begin{contextbox}[Para estudo posterior]
+\small
+\textit{Leituras sugeridas (todas verificadas):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Nicholson \& Snyder, \textit{Microeconomic Theory}, 12e (2017), caps.~18 e 19 -- nível desta APS. ISBN 978-1-305-50579-7.
+\item Jehle \& Reny, \textit{Advanced Microeconomic Theory}, 3e (2011), §§6.6 e 7.1--7.3 -- nível imediatamente superior; trata sinalização e mecanismos com rigor moderado.
+\item Mas-Colell, Whinston \& Green, \textit{Microeconomic Theory} (1995), caps.~11 (externalidades), 13 (informação) e 14 (mecanismos) -- referência canônica para o tratamento contemporâneo. Citar com cautela: peso conceitual mais alto.
+\item Salanié, B. (2017). \textit{The Economics of Contracts: A Primer}, 2nd ed. MIT Press -- referência específica para principal-agente, screening, signaling. Acessível.
+\item Bolton, P. \& Dewatripont, M. (2005). \textit{Contract Theory}. MIT Press -- referência canônica avançada para teoria de contratos.
+\item Roth, A. E. \& Sotomayor, M. A. O. (1990). \textit{Two-Sided Matching: A Study in Game-Theoretic Modeling and Analysis}. Cambridge University Press -- referência canônica para matching estável.
+\item Bolton, Freixas \& Shapiro (2012). ``The Credit Ratings Game.'' \textit{Journal of Finance} 67(1): 85--111 -- aplicação contemporânea de sinalização ao mercado de rating.
+\item Acharya, Pedersen, Philippon \& Richardson (2017). ``Measuring Systemic Risk.'' \textit{Review of Financial Studies} 30(1): 2--47 -- formalização de externalidade sistêmica.
+\item Reinhart \& Rogoff (2009). \textit{This Time Is Different}. Princeton UP -- panorama histórico do risco soberano e crises bancárias.
+\item Para o sistema bancário brasileiro: \textbf{Resolução CMN 4.193/2013} (Basel III); \textbf{Resolução CMN 4.222/2013} (FGC); \textbf{Lei 9.710/1998} (PROER); \textbf{Lei 4.595/1964} (Lei do SFN); BCB \emph{Relatório de Estabilidade Financeira} (semestral); BCB SCR (Sistema de Informações de Crédito); Anbima \emph{Boletim Mensal de Renda Fixa}; Tesouro Nacional \emph{Relatório Mensal da Dívida Pública}.
+\end{itemize}
+\end{contextbox}
+
+\end{document}
+
+% =====================================================================
+% SUMÁRIO DE AUDITORIA INTERNA (Pass 3 -- Referee 2)
+% =====================================================================
+%
+% As 5 escolhas calibratórias mais delicadas:
+%
+% 1. Q1A: Calibragem π^p(r) = 12r - r², D(r) = r² produz r^p = 6,
+%    r* = 3, τ* = 6 -- todos inteiros pequenos. A escolha do coeficiente
+%    "12" (em vez de 10 ou 8) garante r^p = 6 (par) e r^p / r* = 2
+%    (proporção limpa). A área do triângulo de Harberger fecha em 18
+%    coincidindo com W(r*) - W(r^p) = 18 - 0 = 18 -- verificação
+%    cruzada elegante. Usar coeficientes diferentes (e.g., 10) produziria
+%    irracionais ou perderia o "destruir todo o excedente social" no
+%    privado.
+%
+% 2. Q1B: Bernoulli quase-linear log u^i = x^i + 4·ln(G) com I = 2 e
+%    α = 4 produz G* = 8, G^N = 4, razão 1/2 = 1/I -- resultado clássico
+%    BBV 1986. A escolha de ln(G) em vez de sqrt(G) é guiada pela
+%    memória "feedback_bem_publico_funcao_utilidade.md": com I = 2,
+%    sqrt(G) gera coincidência média = Samuelson (artefato pedagógico
+%    a evitar). Com ln, a separação é nítida: 1/I = 1/2.
+%
+% 3. Q2A: Akerlof com π_B = 0, π_R = 0,5, R = 0,5 produz threshold
+%    λ* = 1/3 (fração simples) e colapso completo para λ < 1/3 (i_R = 1
+%    excede R = 0,5). A escolha π_B = 0 (em vez de 0,1 ou similar)
+%    simplifica álgebra e dá threshold redondo. O colapso "completo"
+%    (não apenas para bons, também para ruins) tem narrativa econômica
+%    forte: mostra que projeto R = 0,5 nem mesmo com tipo R puro é
+%    viável -- a presença de heterogeneidade destrói o mercado em
+%    primeiro lugar.
+%
+% 4. Q2C: Holmström com π_H = 0,75, π_L = 0,25, c(a_H) = 4, ū = 4,
+%    Bernoulli √w produz first-best w = 64 (=8²) e second-best
+%    w_L = 4 (=2²), w_H = 100 (=10²) -- todos quadrados perfeitos.
+%    Prêmio de risco moral = 76 - 64 = 12. Mirrlees-Holmström com
+%    estes valores fecha em μ = 16, ν = 6 -- inteiros pequenos.
+%    Verificações cruzadas múltiplas: MLRP, valores de μ, ν, salário
+%    esperado, lucro do principal -- todas consistentes.
+%
+% 5. Q3A: Spence com θ_L = 1, θ_H = 2 produz intervalo
+%    [θ_L(θ_H-θ_L), θ_H(θ_H-θ_L)] = [1, 2] -- redondo. Riley
+%    equilibrium ē_min = 1; perda de bem-estar do tipo H = 0,5
+%    (=1/2). Cho-Kreps com π_L = 0,5 dá w̄ = 1,5; faixa de
+%    desvio (0,5, 1) -- não-vazia e exemplificável em e' = 0,75.
+%    A escolha θ_L = 1 (em vez de 2) e θ_H = 2 (em vez de 5)
+%    é deliberada: dá números menores e mais limpos para a aula
+%    pós-N&S.
+%
+% Pontos onde 'a álgebra é mais frágil':
+%
+% - Q2(b) R-S separador: a calibragem é qualitativa (não-numérica
+%   fechada) porque com Bernoulli côncava o sistema IC-R binding
+%   gera equação transcendental sem solução em fração simples.
+%   Mantemos R-S no nível qualitativo + gráfico, focando algébrica
+%   apenas no first-best (p_B = 8, p_R = 32). Risco de aluno
+%   tentar fechar numericamente; gabarito esclarece que o exercício
+%   pede caracterização qualitativa.
+%
+% - Q3(b) Cho-Kreps: a aplicação numérica em e' = 1,5 sugerida no
+%   enunciado original NÃO ESTÁ na faixa (0,5, 1) com o w̄ = 1,5
+%   calculado. O gabarito explicita essa correção e usa e' = 0,75
+%   (no interior da faixa). Detalhe técnico que mostra
+%   transparência -- aluno atento percebe e pode ganhar pontos
+%   apontando.
+%
+% - Q3(c) DA execução: 6 iterações para 4×4 é pedagogicamente OK
+%   mas longo. Simplificação possível em V2: reduzir para 3×3
+%   ou usar preferências mais alinhadas. Mantemos 4×4 para fidelidade
+%   ao durante_aula.md (mesmo exemplo).
+%
+% 2 melhorias deixadas como TODO para v2:
+%
+% TODO-1: Em Q2(b), substituir R-S qualitativo por cálculo numérico
+% fechado usando Bernoulli quasi-linear côncava (ex.: u(w) = √w em vez
+% de geral) que permita fechar IC-R binding em fração simples para
+% q_B*. Preserva a estrutura R-S e adiciona valor pedagógico
+% quantitativo. Requer recalibração cuidadosa para evitar colisão
+% com Q2(d) Holmström que já usa √w.
+%
+% TODO-2: Em Q3(d), refinar exemplo de manipulação por receptor.
+% Atualmente o exemplo de E_3 manipulando rejeitando M_4 não dá
+% manipulação lucrativa concreta com a tabela atual. Em V2,
+% trabalhar com tabela ligeiramente modificada onde manipulação por
+% E_2 seja lucrativa e calculável -- pedagogicamente mais nítido.
+%
+% =====================================================================

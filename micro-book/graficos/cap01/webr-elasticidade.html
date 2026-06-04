@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Elasticidade ao Longo da Demanda</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Elasticidade ao Longo de uma Curva de Demanda Linear
+# Cap. 1 — Por que a mesma curva tem trechos elásticos e inelásticos?
+
+# Parâmetros (altere!)
+a <- 100     # intercepto (Qd = a - b*P)
+b <- 2       # inclinação
+
+# Elasticidade-preço: E = (dQ/dP)*(P/Q) = -b*(P/Q)
+P <- seq(0.5, a/b - 0.5, length.out = 200)
+Q <- a - b * P
+E <- -b * P / Q   # elasticidade (negativa)
+
+# Receita total
+RT <- P * Q
+
+# Ponto de elasticidade unitária
+P_unit <- a / (2 * b)
+Q_unit <- a / 2
+RT_max <- P_unit * Q_unit
+
+cat("=== Elasticidade ao longo da demanda Qd =", a, "-", b, "* P ===\n")
+cat(sprintf("  Ponto de elasticidade unitária: P = %.1f, Q = %.1f\n", P_unit, Q_unit))
+cat(sprintf("  Receita máxima nesse ponto: R$ %.0f\n\n", RT_max))
+cat("Exemplos:\n")
+for (p_ex in c(5, 15, 25, 35, 45)) {
+  q_ex <- a - b * p_ex
+  if (q_ex > 0) {
+    e_ex <- -b * p_ex / q_ex
+    cat(sprintf("  P=%2.0f  Q=%3.0f  |E|=%.2f  %s\n",
+        p_ex, q_ex, abs(e_ex),
+        ifelse(abs(e_ex) > 1, "ELASTICA",
+        ifelse(abs(e_ex) < 1, "INELASTICA", "UNITARIA"))))
+  }
+}
+
+# Gráfico
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+
+# Painel 1: Demanda colorida por elasticidade
+plot(Q, P, type = "n",
+     xlab = "Quantidade (Q)", ylab = "Preço (P)",
+     main = "Demanda: zonas de elasticidade")
+# Trecho elástico (|E| > 1)
+idx_el <- abs(E) >= 1
+lines(Q[idx_el], P[idx_el], col = "#C8102E", lwd = 3)
+# Trecho inelástico (|E| < 1)
+idx_in <- abs(E) <= 1
+lines(Q[idx_in], P[idx_in], col = "#2a7f2a", lwd = 3)
+# Ponto unitário
+points(Q_unit, P_unit, pch = 19, cex = 1.8, col = "#ff9800")
+text(Q_unit + 5, P_unit + 2, "|E|=1", font = 2, col = "#ff9800")
+text(a*0.2, a/(2*b)*1.5, "|E|>1\nElastica", col = "#C8102E", font = 2)
+text(a*0.7, a/(2*b)*0.4, "|E|<1\nInelastica", col = "#2a7f2a", font = 2)
+
+# Painel 2: Receita total
+plot(Q, RT, type = "l", col = "steelblue", lwd = 2,
+     xlab = "Quantidade (Q)", ylab = "Receita Total (R$)",
+     main = "Receita Total = P x Q")
+abline(v = Q_unit, lty = 2, col = "#ff9800")
+points(Q_unit, RT_max, pch = 19, cex = 1.5, col = "#ff9800")
+text(Q_unit + 3, RT_max, sprintf("RT_max=%.0f", RT_max),
+     font = 2, col = "#ff9800", cex = 0.85)
+text(Q_unit - 10, RT_max * 0.5, "P sobe\n-> RT sobe", col = "#C8102E", cex = 0.8)
+text(Q_unit + 10, RT_max * 0.5, "P sobe\n-> RT cai", col = "#2a7f2a", cex = 0.8)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. A mesma curva de demanda linear tem |E| variando de 0 a infinito! No trecho elástico, aumentar preço reduz receita. No inelástico, aumentar preço aumenta receita. Onde a firma quer operar?
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

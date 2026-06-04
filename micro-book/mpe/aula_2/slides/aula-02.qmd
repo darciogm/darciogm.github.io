@@ -1,0 +1,1049 @@
+---
+title: "UMP, EMP e Dualidade"
+subtitle: "Aula 2 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-04-29"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 29/04/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## UMP, EMP e Dualidade {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 2 — Teoria do Consumidor II**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+29 de abril de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Na Aula 1, existe $u$. Hoje, $u$ vira problema de otimização — e o problema tem quatro filhos.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Derivar com rigor UMP e EMP, reconhecer $x^M, v, h, e$ como objetos de primeira classe, e aplicar **Roy** e **Shephard** como derivadas — não como mágica.
+
+::: {.fragment}
+### O que assumo da pré-aula 2
+
+- ZaE cap. 4 lido com **papel e caneta**.
+- N&S 12e §§4.1–4.7 visitado.
+- Exercícios propostos 1 e 2 (CES $\rho=1/2$, CD 3D) **no papel** — conferimos rapidamente hoje.
+- 9 seções da plataforma concluídas + quiz pré-aula (10🟡) submetido.
+:::
+
+::: {.fragment}
+[Se algum piso não foi feito, anote — a Aula 3 (Slutsky) lê Roy e Shephard como se fossem aritmética.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura + triagem Aula 1 + recall | 19:30–19:40 |
+| 1 | UMP: Lagrangiano, CPO-tangência, Marshalliana | 19:40–20:25 |
+| — | *Pausa* | 20:25–20:35 |
+| 2 | $v(p,m)$ e Identidade de **Roy** | 20:35–21:10 |
+| 3 | EMP, $e(p,u)$, Hicksiana e lema de **Shephard** | 21:10–21:40 |
+| — | *Pausa* | 21:40–21:50 |
+| 4 | **Dualidade sinótica** + prática em dupla | 21:50–22:22 |
+| 5 | Síntese + ponte Aula 3 (Slutsky) | 22:22–22:30 |
+
+::: {.bridge}
+3h cheias. Duas pausas de 10 minutos. **Bloco 4 é onde a cena fecha** — defendo esse tempo.
+:::
+
+---
+
+## Recall da Aula 1 em 60 segundos
+
+::: {.eq-key}
+Preferência $\succeq$ axiomas (1)–(3) $\xrightarrow{\text{Debreu}}$ existe $u: X \to \mathbb{R}$ contínua representando $\succeq$.
+:::
+
+**Passo que falta:** dar a $u$ **preços** e **renda**, e pedir o melhor pacote.
+
+::: {.eq-punch}
+Axiomas entregam a função. Mercado entrega o problema.
+:::
+
+::: {.bridge}
+Saímos de axioma e vamos chegar, numa noite, em quatro funções e duas identidades.
+:::
+
+---
+
+## Bloco 1 — UMP: Lagrangiano, CPO, Marshalliana {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 19:40–20:25
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Primal, tangência, Cobb-Douglas e as quatro propriedades da Marshalliana.
+:::
+
+---
+
+## O problema primal — UMP
+
+::: {.card}
+**Enunciado.**
+$$
+\max_{x \in \mathbb{R}^n_+} u(x) \quad \text{s.a.} \quad p \cdot x \leq m.
+$$
+:::
+
+**Hipóteses standard:**
+
+- $p \gg 0$, $m > 0$ (preços e renda positivos).
+- $u$ **contínua** (axioma 3): garante Weierstrass — máximo *é atingido*.
+- $u$ **quasicôncava**: conjunto superior convexo — solução interior única (sob hipóteses extras).
+- $u$ **monotônica** (ou NSL): restrição **ativa** no ótimo — $p \cdot x^* = m$.
+
+::: {.bridge}
+Sem continuidade, o supremo pode não ser atingido — lembram da lex? É onde o modelo "escorrega" numericamente.
+:::
+
+---
+
+## Lagrangiano e CPO (1/2)
+
+::: {.eq-key}
+$$
+\mathcal{L}(x, \lambda) = u(x) + \lambda\,(m - p \cdot x).
+$$
+:::
+
+**CPO interiores:**
+
+$$
+\frac{\partial u}{\partial x_i} = \lambda\, p_i \quad (\forall i), \qquad p \cdot x = m.
+$$
+
+::: {.bridge}
+$n+1$ equações em $n+1$ incógnitas $(x_1, \dots, x_n, \lambda)$. Próximo passo: ler a razão.
+:::
+
+---
+
+## Tangência e leitura de $\lambda^*$ (2/2)
+
+**Razão entre duas CPOs** (a equação que entra no bolso):
+
+::: {.eq-key}
+$$
+\frac{u_i}{u_j} = \frac{p_i}{p_j} \iff \text{TMS}_{ij} = \frac{p_i}{p_j}. \tag{tangência}
+$$
+:::
+
+::: {.fragment}
+**$\lambda^*$ tem leitura econômica:** utilidade marginal da renda. Aparece na **Identidade de Roy** (Bloco 2).
+:::
+
+---
+
+## Geometria da tangência
+
+::: {.cols}
+::: {}
+**Reta orçamentária:** $p_1 x_1 + p_2 x_2 = m$.
+
+**Curva de indiferença:** $u(x_1, x_2) = \bar{u}$.
+
+**Ótimo interior:** as duas se tocam com a mesma inclinação — $\text{TMS} = p_1/p_2$.
+:::
+::: {}
+::: {.eq-punch}
+A melhor cesta está onde a preferência toca a restrição.
+:::
+
+**Solução de canto** (um dos bens a zero): TMS ≠ razão de preços — a desigualdade sobra. **Hoje só tratamos interior;** canto volta em quasilinear na Aula 3.
+:::
+:::
+
+---
+
+## UMP em Cobb-Douglas — tangência (1/2)
+
+::: {.card}
+**Função.** $u(x_1, x_2) = x_1^{\alpha} x_2^{1-\alpha}, \quad \alpha \in (0, 1).$
+:::
+
+**Caminho 1 — tangência:**
+
+$$
+\frac{\alpha}{1-\alpha} \cdot \frac{x_2}{x_1} = \frac{p_1}{p_2}.
+$$
+
+Combine com a restrição $p_1 x_1 + p_2 x_2 = m$.
+
+::: {.bridge}
+Duas equações, duas incógnitas — no próximo slide, a solução fechada e a leitura como parcelas de gasto.
+:::
+
+---
+
+## UMP em Cobb-Douglas — Marshalliana fechada (2/2)
+
+::: {.eq-key}
+$$
+\boxed{\;x_1^M(p, m) = \frac{\alpha\, m}{p_1}, \qquad x_2^M(p, m) = \frac{(1-\alpha)\,m}{p_2}.\;}
+$$
+:::
+
+**Parcelas de gasto:** $p_i x_i^M / m = \alpha,\; 1-\alpha$ — **constantes**. Rastro de homotetia.
+
+::: {.bridge}
+Parcela constante em $m$ é a marca da homotetia. Quasilinear, Leontief e CES vão quebrar (ou reforçar) essa marca nos próximos slides.
+:::
+
+---
+
+## Cobb-Douglas via log — Lagrangiano linear (1/3)
+
+Lembra da Aula 1? $v = \ln u$ representa a **mesma** preferência. Aplicar $\ln$ torna o Lagrangiano linear em logs:
+
+$$
+\mathcal{L} = \alpha \ln x_1 + (1-\alpha) \ln x_2 + \lambda\,(m - p_1 x_1 - p_2 x_2).
+$$
+
+::: {.bridge}
+Cobb-Douglas multiplicativa vira soma quando você toma log. O Lagrangiano muda de cara — o ótimo, não.
+:::
+
+---
+
+## Cobb-Douglas via log — CPO e $\lambda^*$ (2/3)
+
+**CPO é divisão limpa:**
+
+$$
+\frac{\alpha}{x_1} = \lambda p_1, \qquad \frac{1-\alpha}{x_2} = \lambda p_2.
+$$
+
+**Truque:** multiplique cada CPO por $x_i$ e some. Como $p_1 x_1 + p_2 x_2 = m$:
+
+$$
+\alpha + (1-\alpha) = \lambda \cdot m \;\Rightarrow\; \lambda^* = 1/m.
+$$
+
+---
+
+## Cobb-Douglas via log — punch
+
+::: {.eq-punch}
+Ordinalidade não é luxo — é como a álgebra fica calma.
+:::
+
+::: {.bridge}
+Tomamos log sem pedir licença a ninguém. A Aula 1 autoriza — qualquer transformação monotônica serve. O que muda é só a calibração, nunca a escolha.
+:::
+
+---
+
+## Cobb-Douglas via log — ordinalidade em ação (3/3)
+
+**Por que o $\lambda^*$ mudou?** Porque a escala cardinal mudou.
+
+::: {.callout-note}
+Esse $\lambda^* = 1/m$ é o multiplicador da **log-forma** $\ln u$.
+
+Na forma direta $u = x_1^\alpha x_2^{1-\alpha}$, o $\lambda^*$ canônico vale $v/m$.
+
+Ordinalidade preserva o ótimo $x^M$, **não** o valor numérico de $\lambda^*$.
+:::
+
+**O que sobrevive intacto à transformação monotônica:**
+
+- A razão $u_i/u_j$ (condição de tangência).
+- A Identidade de Roy (Bloco 2), via Teorema do Envelope.
+
+::: {.bridge}
+Valor absoluto de $\lambda^*$ é calibração. Tangência e Roy são **estrutura**.
+:::
+
+---
+
+## Propriedades da Marshalliana $x^M(p, m)$ (1/2)
+
+::: {.card}
+**(M1) Homogeneidade de grau 0** em $(p, m)$: $x^M(\lambda p, \lambda m) = x^M(p, m)$.
+:::
+
+**Por quê:** escalar preços e renda por $\lambda$ não muda o conjunto orçamentário. Escolha ótima é a mesma.
+
+::: {.card}
+**(M2) Walras (lei de ocupação):** $p \cdot x^M(p, m) = m$.
+:::
+
+**Por quê:** monotonicidade de $u$ (ou NSL) ⇒ consumidor gasta tudo no ótimo.
+
+::: {.bridge}
+M1 é simetria. M2 é esgotamento. Juntas, são a geometria da tangência.
+:::
+
+---
+
+## Propriedades da Marshalliana $x^M(p, m)$ (2/2)
+
+::: {.card}
+**(M3) Continuidade:** onde $u$ é quasicôncava estrita e a solução é única, $x^M$ é contínua em $(p, m)$ (Teorema do Máximo, Berge).
+:::
+
+**Por quê:** pequenas perturbações em $p$ ou $m$ movem o ótimo continuamente — não há saltos, sob unicidade.
+
+::: {.bridge}
+**Diferenciabilidade** de $x^M$ é um passo a mais — exige Hessiano bordado não-degenerado. Assumido no curso; justificado em J-R §1.4.
+:::
+
+::: {.eq-punch}
+Homogeneidade, Walras, continuidade. Três escudos básicos — todo resto deriva daqui.
+:::
+
+---
+
+## Da Marshalliana à função indireta
+
+::: {.eq-key}
+$$
+v(p, m) = u\big(x^M(p, m)\big) = \max_{p \cdot x \leq m} u(x).
+$$
+:::
+
+**Leitura:** $x^M$ é *a escolha*; $v$ é *o nível* de utilidade que essa escolha atinge.
+
+::: {.fragment}
+**Pergunta útil:** como varia $v$ com preços e renda?
+
+- $\partial v/\partial m > 0$: mais renda ⇒ mais bem-estar.
+- $\partial v/\partial p_i < 0$: preço maior ⇒ menos bem-estar.
+
+E uma combinação específica dessas duas derivadas **é** a Marshalliana.
+:::
+
+---
+
+## Pausa 1 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 20:35.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Estique. Água. Revise as CPOs se precisar.
+:::
+
+---
+
+## Bloco 2 — Indireta $v(p,m)$ e Roy {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+35 min · 20:35–21:10
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Cinco propriedades · Identidade de Roy · verificação em Cobb-Douglas.
+:::
+
+---
+
+## As cinco propriedades de $v(p, m)$
+
+::: {.compact-table}
+| # | Propriedade | Ingrediente |
+|---|---|---|
+| P1 | **Homogênea de grau 0** em $(p, m)$ | herda de $x^M$ |
+| P2 | **Decrescente em cada $p_i$, crescente em $m$** | inclusão de conjuntos orçamentários |
+| P3 | **Quasiconvexa em $p$** | minimax na preferência |
+| P4 | **Contínua** em $(p, m)$ onde $p \gg 0, m > 0$ | Berge |
+| P5 | **Identidade de Roy** (derivada) | Teorema do Envelope |
+:::
+
+::: {.bridge}
+P1–P4 são "carta de apresentação" da $v$. P5 é a **ferramenta operacional** — a razão pela qual $v$ vira a protagonista em aplicações.
+:::
+
+---
+
+## Identidade de Roy — enunciado
+
+::: {.eq-key}
+$$
+\boxed{\; x_i^M(p, m) = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}. \;}
+$$
+:::
+
+**O que ela faz:** extrai a **demanda** diretamente da função **indireta** — sem passar pela preferência.
+
+**Onde importa:** econometria estrutural (estima-se $v$ paramétrica, recupera-se $x^M$ via derivada). Deaton-Muellbauer e AIDS são construções dessa família.
+
+::: {.eq-punch}
+Se você tem $v$, você tem a demanda.
+:::
+
+---
+
+## Roy — envelope (1/2)
+
+**Envelope aplicado ao Lagrangiano $\mathcal{L} = u(x) + \lambda(m - p \cdot x)$:**
+
+$$
+\frac{\partial v}{\partial p_i} = \frac{\partial \mathcal{L}}{\partial p_i}\bigg|_{x = x^M, \lambda = \lambda^*} = -\,\lambda^*\, x_i^M.
+$$
+
+$$
+\frac{\partial v}{\partial m} = \frac{\partial \mathcal{L}}{\partial m}\bigg|_{x = x^M, \lambda = \lambda^*} = \lambda^*.
+$$
+
+::: {.bridge}
+Duas derivadas parciais de $v$ pela conta do envelope. Próximo: dividir e ver a mágica acontecer.
+:::
+
+---
+
+## Roy — divisão cancela $\lambda^*$ (2/2)
+
+**Divida:**
+
+$$
+-\,\frac{\partial v/\partial p_i}{\partial v/\partial m} = -\,\frac{-\lambda^* x_i^M}{\lambda^*} = x_i^M. \quad \blacksquare
+$$
+
+::: {.bridge}
+O $\lambda^*$ **cancela** — é por isso que Roy "funciona" sem precisar calcular multiplicador. Envelope em ação.
+:::
+
+---
+
+## Roy em Cobb-Douglas (1/2) — achar $v$
+
+**Passo 1 — substituir $x^M$ em $u$.** Com $x^M = (\alpha m / p_1, (1-\alpha)m / p_2)$ e $u = x_1^\alpha x_2^{1-\alpha}$:
+
+::: {.eq-key}
+$$
+v(p, m) = m \cdot \frac{\alpha^\alpha (1-\alpha)^{1-\alpha}}{p_1^\alpha\, p_2^{1-\alpha}}.
+$$
+:::
+
+::: {.bridge}
+Observe a forma: $v = m \cdot \phi(p)$ — a renda sai como fator multiplicativo. Voltamos a isso no próximo slide; aqui, só precisamos da fórmula para derivar.
+:::
+
+---
+
+## Roy em Cobb-Douglas (2/2) — aplicar a derivada
+
+**Passo 2 — as duas parciais:**
+
+$$
+\partial v / \partial p_1 = -\alpha \cdot \frac{v}{p_1}, \qquad \partial v / \partial m = \frac{v}{m}.
+$$
+
+**Passo 3 — dividir conforme Roy:**
+
+$$
+x_1^M = -\,\frac{-\alpha\, v / p_1}{v/m} = \frac{\alpha m}{p_1}. \quad \checkmark
+$$
+
+**Bate com a Marshalliana direta** do bloco anterior. Derivada ≠ truque: **é** a demanda.
+
+---
+
+## Por que $v$ fatoriza em Cobb-Douglas?
+
+::: {.cols}
+::: {}
+**Observação:** $v(p, m) = m \cdot \phi(p)$ — a renda sai como **fator multiplicativo**.
+
+**Consequência:** a utilidade indireta é **linear** em $m$. Dobre a renda, dobre $v$.
+:::
+::: {}
+**Estrutural:** Cobb-Douglas é **homotética** — escalar a cesta por $\lambda$ escala $u$ por $\lambda^{\alpha+(1-\alpha)} = \lambda$.
+
+Homotetia ⇒ *path de expansão radial* ⇒ $v$ separável em renda.
+:::
+:::
+
+::: {.bridge}
+Fator de renda em $v$ é assinatura de homotetia. Preferências quasilineares, Leontief, CES (sem deslocamento) também fatorizam.
+:::
+
+---
+
+## O dual — pergunta invertida
+
+::: {.eq-punch}
+O UMP pergunta: dado **$m$**, qual o maior **$u$**?
+
+O EMP pergunta: dado **$\bar{u}$**, qual o menor **gasto**?
+:::
+
+**Por que dualizar?** Porque Slutsky — na Aula 3 — precisa *isolar* o efeito-substituição do efeito-renda. O jeito limpo de fazer isso é fixar $u$ e variar $p$ — exatamente o que o EMP faz.
+
+::: {.fragment .bridge}
+Abre o Bloco 3: enunciar EMP, calcular $h, e$, enunciar Shephard, fechar dualidade.
+:::
+
+---
+
+## Bloco 3 — EMP, $e(p,u)$, Shephard {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+30 min · 21:10–21:40
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Primal → dual · Hicksiana $h$ · gasto $e$ · Shephard como derivada.
+:::
+
+---
+
+## O problema dual — EMP (1/2)
+
+::: {.card}
+**Enunciado.**
+$$
+\min_{x \in \mathbb{R}^n_+} p \cdot x \quad \text{s.a.} \quad u(x) \geq \bar{u}.
+$$
+:::
+
+**Hipóteses:** mesma família do UMP (continuidade, quasiconcavidade, monotonicidade).
+
+::: {.bridge}
+O EMP inverte o papel: agora utilidade é *restrição* (piso $\bar u$) e o gasto é o *objeto* a minimizar. Duas saídas novas, no próximo slide.
+:::
+
+---
+
+## EMP — Hicksiana e gasto (2/2)
+
+**Saídas do EMP:**
+
+$$
+h(p, \bar{u}) = \arg\min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(Hicksiana / compensada)}.
+$$
+
+$$
+e(p, \bar{u}) = p \cdot h(p, \bar{u}) = \min_{u(x) \geq \bar{u}} p \cdot x \quad \text{(função gasto)}.
+$$
+
+**Paralelo com o UMP:** $h$ é *a escolha* (como $x^M$); $e$ é *o valor* do problema (como $v$). Mesma estrutura — direção oposta.
+
+---
+
+## EMP — Lagrangiano e CPO (1/2)
+
+$$
+\mathcal{L}^{\text{EMP}}(x, \mu) = p \cdot x + \mu\,(\bar{u} - u(x)).
+$$
+
+**CPO interiores:**
+
+$$
+p_i = \mu\, u_i \quad (\forall i), \qquad u(x) = \bar{u}.
+$$
+
+::: {.bridge}
+Minimiza gasto, utilidade como restrição ativa. Próximo passo: mesma razão, mesma tangência.
+:::
+
+---
+
+## EMP — tangência e leitura de $\mu^*$ (2/2)
+
+**Razão de duas CPOs:** $\boxed{\;\text{TMS}_{ij} = p_i / p_j\;}$ — **a mesma** condição de tangência do UMP.
+
+::: {.eq-punch}
+Mesma tangência, problema diferente. O ponto geométrico é o mesmo.
+:::
+
+$\mu^*$ tem leitura dual: **custo marginal de utilidade**. É o recíproco de $\lambda^*$ do UMP.
+
+---
+
+## Propriedades da função gasto $e(p, \bar{u})$
+
+::: {.compact-table}
+| # | Propriedade | Por quê |
+|---|---|---|
+| E1 | **Homogênea de grau 1** em $p$ | escala de preços ⇒ escala do gasto |
+| E2 | **Crescente em $p_i$ e em $\bar{u}$** | mais caro, mais gasto; mais utilidade exigida, mais gasto |
+| E3 | **Côncava em $p$** | é ínfimo de funções lineares em $p$ |
+| E4 | **Contínua** em $p, \bar{u}$ onde $p \gg 0$ | Berge |
+| E5 | **Lema de Shephard** (derivada) | Teorema do Envelope |
+:::
+
+::: {.fragment .bridge}
+**Pergunta para o aluno:** por que $v$ é *quasiconvexa* em $p$ e $e$ é *côncava* em $p$? Porque uma é *máximo* sob restrição linear em $p$, outra é *mínimo*. Minimax inverte a curvatura.
+:::
+
+---
+
+## Concavidade de $e$ em $p$ — intuição
+
+**Ínfimo de lineares é côncavo:** para cada $x$ fixo, $p \mapsto p \cdot x$ é **linear** em $p$. O mínimo sobre $x$ (com $u(x) \geq \bar u$) é o **envelope inferior** dessa família de retas — sempre côncavo.
+
+::: {.eq-key}
+$$
+e(p, \bar u) = \min_{x \in \{u(x) \geq \bar u\}} p \cdot x \quad \Rightarrow \quad e \text{ côncava em } p.
+$$
+:::
+
+**Consequência direta para Slutsky (Aula 3):** a matriz $\partial h_i / \partial p_j$ é **semidefinida negativa** (diagonal $\leq 0$, "lei da demanda compensada").
+
+::: {.fragment .bridge}
+A concavidade de $e$ **é** o teorema — tudo que vem da matriz de Slutsky herda daí.
+:::
+
+---
+
+## Lema de Shephard — enunciado
+
+::: {.eq-key}
+$$
+\boxed{\; h_i(p, \bar{u}) = \frac{\partial e(p, \bar{u})}{\partial p_i}. \;}
+$$
+:::
+
+**Prova via Envelope:**
+
+$$
+\frac{\partial e}{\partial p_i} = \frac{\partial \mathcal{L}^{\text{EMP}}}{\partial p_i}\bigg|_{x = h, \mu = \mu^*} = h_i.
+$$
+
+::: {.bridge}
+Uma derivada parcial — uma demanda. O "porquê" econômico está no próximo slide.
+:::
+
+---
+
+## Lema de Shephard — intuição
+
+**A frase que eu queria ter escrito no quadro da pós:**
+
+::: {.eq-punch}
+Subir $p_i$ em $\Delta$; consumidor ajusta $x_i$ para manter $\bar u$. O ajuste é segunda-ordem — muda só $h_i \cdot \Delta$ no gasto.
+:::
+
+**Por que "segunda-ordem"?** Porque no ótimo a CPO vale — a variação de primeira ordem no gasto via reajuste de $x$ é zero. Sobra apenas o efeito direto do preço sobre a quantidade já escolhida.
+
+---
+
+## Shephard em Cobb-Douglas (1/2) — achar $e$
+
+**Passo 1 — inversão de Roy.** Use $v = m \cdot \phi(p)$ e imponha $v(p, e) = \bar u$. Isolando $e$:
+
+::: {.eq-key}
+$$
+e(p, \bar u) = \bar u \cdot \frac{p_1^{\alpha}\, p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}}.
+$$
+:::
+
+::: {.bridge}
+É a imagem-espelho de $v$: troque $m \leftrightarrow \bar u$ e inverta $\phi(p)$. A homotetia de CD faz o trabalho pesado.
+:::
+
+---
+
+## Shephard em Cobb-Douglas (2/2) — aplicar a derivada
+
+**Passo 2 — derivar $e$ em $p_1$:**
+
+$$
+h_1 = \frac{\partial e}{\partial p_1} = \bar u \cdot \frac{\alpha\, p_1^{\alpha - 1} p_2^{1-\alpha}}{\alpha^\alpha (1-\alpha)^{1-\alpha}} = \alpha\, \frac{e}{p_1}.
+$$
+
+**Compare com $x_1^M = \alpha m / p_1$:** quando $\bar u = v(p, m)$, $e = m$, logo $h_1 = x_1^M$. *Prévia da dualidade* — essa calibração é o tema do Bloco 4.
+
+---
+
+## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 21:50.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Se estiver confortável com Shephard e Roy, o Bloco 4 será rápido. Se não, é o momento de reler.
+:::
+
+---
+
+## Bloco 4 — Dualidade sinótica + prática {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+32 min · 21:50–22:22
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.4em;"}
+Três diagramas · exercício em dupla · consolidação.
+:::
+
+---
+
+## Diagrama 1 — identidades recíprocas
+
+::: {.eq-key}
+$$
+e(p,\ v(p, m)) = m, \qquad v(p,\ e(p, \bar u)) = \bar u.
+$$
+:::
+
+**Leitura:** $(x^M, v)$ no UMP e $(h, e)$ no EMP são **o mesmo ponto físico** — calibrado de um lado pela renda, do outro pela utilidade.
+
+::: {.eq-punch}
+UMP e EMP são o mesmo ponto, vistos de direções opostas.
+:::
+
+::: {.fragment .bridge}
+Calibração é o detalhe técnico: dado $m$, calibra-se com $\bar u = v(p, m)$. Dado $\bar u$, calibra-se com $m = e(p, \bar u)$.
+:::
+
+---
+
+## Diagrama 2 — Marshalliana ↔ Hicksiana
+
+::: {.eq-key}
+$$
+x_i^M(p, m) = h_i\big(p,\ v(p, m)\big),
+$$
+
+$$
+h_i(p, \bar u) = x_i^M\big(p,\ e(p, \bar u)\big).
+$$
+:::
+
+**Leitura:** a **Marshalliana** é a **Hicksiana calibrada** ao nível de utilidade que a renda compra. E vice-versa.
+
+**Como é usado em Slutsky (Aula 3):** derivar a primeira identidade em $p_j$; substituir Roy; rearrumar. Sai a equação de Slutsky quase sozinha.
+
+---
+
+## Diagrama 3 — Roy e Shephard lado a lado (1/2)
+
+::: {.cols}
+::: {}
+**Roy** (da indireta à Marshalliana):
+$$
+x_i^M = -\,\frac{\partial v / \partial p_i}{\partial v / \partial m}.
+$$
+:::
+::: {}
+**Shephard** (do gasto à Hicksiana):
+$$
+h_i = \frac{\partial e}{\partial p_i}.
+$$
+:::
+:::
+
+::: {.eq-punch}
+Duas funções "resumo", duas derivadas, duas demandas.
+:::
+
+---
+
+## Diagrama 3 — quadro-resumo (2/2)
+
+::: {.compact-table}
+| Função | Dado | Derivada extrai | Identidade |
+|:---|:---|:---|:---|
+| $v(p, m)$ | preços + renda | $x^M$ | Roy |
+| $e(p, \bar u)$ | preços + utilidade | $h$ | Shephard |
+:::
+
+::: {.bridge}
+**Operacionalmente:** em econometria estrutural, estima-se $v$ (ou $e$) paramétrica e **recupera** a demanda por derivada. É o esqueleto da AIDS, QUAIDS, translog. Álgebra hoje, papers amanhã.
+:::
+
+---
+
+## Prática em dupla — exercício
+
+**Dado:** $u(x_1, x_2) = x_1^{1/2} x_2^{1/2}$, $p = (4, 1)$, $m = 20$.
+
+::: {.compact-table}
+| # | Tarefa | Ferramenta |
+|---|---|---|
+| 1 | Resolver UMP: $x^M, v$ | CPO + tangência |
+| 2 | Verificar **Roy** em $x_1^M$ | derivada de $v$ |
+| 3 | Com $\bar u = v$, resolver EMP: $h, e$. Confirmar $e = m$ | inversão / Lagrangiano dual |
+| 4 | Verificar **Shephard** em $h_1$ | derivada de $e$ |
+:::
+
+**Regras:** duplas aleatórias · 18 min · papel e caneta · professor circula · Alberto no apoio (se presente).
+
+::: {.bridge}
+Armadilhas canônicas que vou olhar: sinal em Roy, confundir Shephard com $\partial e/\partial m$, errar parcela CD ($\alpha$ vs. $1-\alpha$).
+:::
+
+---
+
+## Prática — resposta completa (1/5)
+
+**Item 1 — UMP.** Com $\alpha = 1/2$:
+
+$$
+x_1^M = \frac{\alpha m}{p_1} = \frac{10}{4} = 2{,}5, \quad x_2^M = \frac{(1-\alpha) m}{p_2} = \frac{10}{1} = 10.
+$$
+
+**Utilidade indireta no ótimo:**
+
+$$
+v = (2{,}5)^{1/2} (10)^{1/2} = \sqrt{25} = 5.
+$$
+
+::: {.bridge}
+Próximo passo: confirmar $x_1^M = 2{,}5$ via derivada de $v$ (Roy).
+:::
+
+---
+
+## Prática — resposta completa (2/5)
+
+**Item 2 — Roy.** Fator de renda na indireta:
+
+$$
+v(p, m) = m \cdot \phi(p), \qquad \phi(p) = \frac{(1/2)^{1/2}(1/2)^{1/2}}{p_1^{1/2} p_2^{1/2}} = \frac{1/2}{\sqrt{p_1 p_2}}.
+$$
+
+**Checagem numérica** em $p = (4, 1)$, $m = 20$: $v = 20 \cdot \frac{0{,}5}{\sqrt{4}} = 20 \cdot 0{,}25 = 5$. ✓
+
+**Roy aplicado a $x_1^M$:**
+
+$$
+-\frac{\partial v/\partial p_1}{\partial v/\partial m} = -\frac{-\,v/(2 p_1)}{v/m} = \frac{m}{2 p_1} = \frac{20}{8} = 2{,}5 = x_1^M. \;\checkmark
+$$
+
+---
+
+## Prática — resposta completa (3/5)
+
+**Item 3 — EMP com $\bar u = 5$.** Função gasto em CD com $\alpha = 1/2$:
+
+$$
+e(p, \bar u) = \bar u \cdot \frac{p_1^{1/2} p_2^{1/2}}{(1/2)^{1/2}(1/2)^{1/2}} = 2\bar u\,\sqrt{p_1 p_2}.
+$$
+
+**Checagem numérica** em $p = (4, 1)$, $\bar u = 5$: $e = 2\cdot 5\cdot \sqrt{4} = 10\cdot 2 = 20 = m$. ✓
+
+**Hicksianas via fórmula fechada:** $h_1 = \alpha\, e/p_1 = 0{,}5 \cdot 20 / 4 = 2{,}5 = x_1^M$. ✓
+
+::: {.bridge}
+Dualidade em ação: $e = m$, $h = x^M$. Falta conferir **Shephard** na derivada.
+:::
+
+---
+
+## Prática — resposta completa (4/5)
+
+**Item 4 — Shephard.** Com $e = 2\bar u\, p_1^{1/2}\, p_2^{1/2}$, derive em $p_1$:
+
+::: {.eq-key}
+$$
+\frac{\partial e}{\partial p_1} \;=\; 2\bar u \cdot \tfrac{1}{2}\, p_1^{-1/2}\, p_2^{1/2} \;=\; \bar u\,\sqrt{\frac{p_2}{p_1}}.
+$$
+:::
+
+::: {.bridge}
+Fórmula analítica pronta. Próximo slide: substitui os números e confirma que bate com $h_1$.
+:::
+
+---
+
+## Prática — resposta completa (5/5)
+
+**Checagem numérica** em $p = (4, 1)$, $\bar u = 5$:
+
+$$
+\frac{\partial e}{\partial p_1} = 5\cdot \sqrt{\tfrac{1}{4}} = 5\cdot \tfrac{1}{2} = 2{,}5 = h_1. \;\checkmark
+$$
+
+**Mesmo resultado** da fórmula fechada $h_1 = \alpha\,e/p_1$. Shephard **é** derivada — não truque paralelo.
+
+::: {.eq-punch}
+UMP e EMP são o mesmo ponto físico. Roy e Shephard são as derivadas que provam.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 3 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+8 min · 22:22–22:30
+:::
+
+---
+
+## Síntese — se você sair com isto, a aula valeu
+
+::: {.fragment}
+1. **UMP e EMP são o mesmo ponto físico**, visto de duas direções. Quatro funções ($x^M, v, h, e$), duas identidades recíprocas, uma tangência comum.
+:::
+
+::: {.fragment}
+2. **Roy e Shephard são derivadas**, não mágica — Teorema do Envelope aplicado ao Lagrangiano de cada problema.
+:::
+
+::: {.fragment}
+3. **Cobb-Douglas é caso-brinquedo.** CES, quasilinear, Leontief adaptam a álgebra; a **estrutura é sempre a mesma** — tangência, envelope, fatoração da indireta, concavidade do gasto.
+:::
+
+---
+
+## Ponte para a Aula 3 — Slutsky (1/2)
+
+**Pergunta motor:** Marshalliana e Hicksiana satisfazem a *mesma* tangência. Mas quando preço muda, elas **não** movem igual.
+
+::: {.eq-key}
+$$
+\frac{\partial x_i^M}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{substituição}} \;-\; \underbrace{x_j^M \cdot \frac{\partial x_i^M}{\partial m}}_{\text{renda}}.
+$$
+:::
+
+::: {.bridge}
+Isto é Slutsky. Próximo slide: três leituras da equação — e o que cada uma herda desta aula.
+:::
+
+---
+
+## Ponte para a Aula 3 — três leituras (2/2)
+
+- A **Hicksiana** é a "Marshalliana sem efeito-renda".
+- O **efeito-substituição** vem da **concavidade de $e$** (matriz de Slutsky simétrica, semi-def. negativa).
+- O **efeito-renda** vem da **derivada da Marshalliana em $m$** (curvas de Engel).
+
+::: {.eq-punch}
+Slutsky é a soma de Shephard (substituição) com Engel (renda). Nada novo — só bem contabilizado.
+:::
+
+---
+
+## Monitoria 1 — extensões teóricas (1/2)
+
+::: {.cols}
+::: {}
+**1. Dualidade em CES completa**
+
+$x^M, v, h, e$ para $u = (\alpha x_1^\rho + (1-\alpha) x_2^\rho)^{1/\rho}$ genérico. Verificação das quatro identidades.
+:::
+::: {}
+**2. Slutsky derivada**
+
+Derivar a equação de Slutsky a partir da identidade $x^M(p, m) = h(p, v(p, m))$ + Roy + Shephard. Duas linhas.
+:::
+:::
+
+::: {.bridge}
+Teoria pura: CES fecha o ciclo da álgebra de hoje; Slutsky *derivada* é o elo entre Aula 2 e Aula 3.
+:::
+
+---
+
+## Monitoria 1 — extensões aplicadas (2/2)
+
+::: {.cols}
+::: {}
+**3. Quasilinear em canto**
+
+O que sobrevive de Roy/Shephard quando $x_2^M = 0$. Fronteira do interior.
+:::
+::: {}
+**4. Restrições de adição**
+
+Walras ⇒ $\sum_i s_i \eta_i = 1$ e $\sum_i s_i \varepsilon_{ij} = -s_j$. Testes empíricos.
+:::
+:::
+
+::: {.bridge}
+Monitoria 1: sáb 16/05, cobrindo Aulas 1–3. Opcional-mas-recomendada — é onde a tecnologia algébrica de hoje fica no corpo.
+:::
+
+---
+
+## Obrigado. {.title-slide}
+
+::: {style="margin-top: 3em; text-align: center;"}
+
+::: {style="color: #C8102E; font-size: 1.8em; font-weight: 700;"}
+Perguntas?
+:::
+
+<br/>
+
+<br/>
+
+::: {style="font-size: 0.85em; color: #2A2F36;"}
+Quiz pós-aula 2 e exercícios avaliativos: abrem na madrugada.  \
+Prazo de entrega: **quarta 06/05 · 18:00** (calendário unificado Aula 1 ∪ Aula 2).
+:::
+
+:::

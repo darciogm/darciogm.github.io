@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Modelo de Fisher: Consumo Intertemporal</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Modelo de Fisher: Consumo Intertemporal
+# Exercicio Resolvido 18.1
+# ============================================
+
+Y1 <- 80; Y2 <- 66
+rho <- 0.10   # taxa de desconto subjetiva
+r <- 0.10     # taxa de juros
+
+beta <- 1 / (1 + rho)
+
+cat("====== MODELO DE FISHER ======\n")
+cat(sprintf("Y1 = %.0f  Y2 = %.0f  r = %.0f%%  rho = %.0f%%\n",
+    Y1, Y2, r*100, rho*100))
+cat(sprintf("beta = 1/(1+rho) = %.4f\n\n", beta))
+
+# --- Riqueza intertemporal ---
+W <- Y1 + Y2 / (1 + r)
+cat(sprintf("Riqueza intertemporal: W = %.2f\n\n", W))
+
+# --- Consumo otimo (Cobb-Douglas intertemporal) ---
+# U = ln(C1) + beta*ln(C2)
+# C1* = W / (1 + beta)
+# C2* = (1+r) * beta * W / (1 + beta)
+C1_star <- W / (1 + beta)
+C2_star <- (1 + r) * beta * W / (1 + beta)
+S <- Y1 - C1_star
+
+cat("--- Consumo otimo ---\n")
+cat(sprintf("C1* = %.2f  C2* = %.2f\n", C1_star, C2_star))
+cat(sprintf("Poupanca: S = Y1 - C1* = %.2f\n", S))
+cat(sprintf("Classificacao: %s\n\n",
+    ifelse(S > 0, "POUPADOR", ifelse(S < 0, "DEVEDOR", "NEUTRO"))))
+
+# Verificacao: TMS = C2/(beta*C1) = 1+r?
+TMS <- C2_star / (beta * C1_star)
+cat(sprintf("Verificacao: TMS = %.4f  1+r = %.4f  OK? %s\n\n",
+    TMS, 1+r, abs(TMS - (1+r)) < 0.001))
+
+# --- Estatica comparativa: variando r ---
+cat("--- Estatica comparativa ---\n")
+cat(sprintf("%-8s %-8s %-8s %-8s %-10s\n",
+    "r(%)", "W", "C1*", "C2*", "S"))
+cat(strrep("-", 46), "\n")
+
+r_vals <- c(0.02, 0.05, 0.08, 0.10, 0.15, 0.20, 0.30)
+for (ri in r_vals) {
+  Wi <- Y1 + Y2/(1+ri)
+  C1i <- Wi / (1 + beta)
+  C2i <- (1+ri) * beta * Wi / (1 + beta)
+  Si <- Y1 - C1i
+  cat(sprintf("%-8.0f %-8.2f %-8.2f %-8.2f %-10.2f\n",
+      ri*100, Wi, C1i, C2i, Si))
+}
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+
+# Restricao orcamentaria
+C1_seq <- seq(0, W * 1.1, length = 300)
+C2_reta <- (1 + r) * (W - C1_seq)
+
+plot(C1_seq, C2_reta, type = "l", lwd = 3, col = "#0d6efd",
+     xlim = c(0, W * 1.1), ylim = c(0, (1+r)*W * 1.1),
+     xlab = expression(C[1]), ylab = expression(C[2]),
+     main = "Consumo intertemporal (Fisher)")
+
+# Curva de indiferenca
+U_star <- log(C1_star) + beta * log(C2_star)
+C1_ci <- seq(5, W, length = 400)
+C2_ci <- exp((U_star - log(C1_ci)) / beta)
+valid <- C2_ci < (1+r)*W * 1.2 & C2_ci > 0
+lines(C1_ci[valid], C2_ci[valid], lwd = 2, col = "#6f42c1", lty = 2)
+
+# Dotacao
+points(Y1, Y2, pch = 17, col = "#198754", cex = 2)
+text(Y1 + 2, Y2 + 5, paste0("Dotacao (", Y1, ",", Y2, ")"),
+     col = "#198754", cex = 0.7, font = 2)
+
+# Otimo
+points(C1_star, C2_star, pch = 19, col = "#dc3545", cex = 2)
+text(C1_star - 5, C2_star + 5,
+     paste0("Otimo (", round(C1_star,1), ",", round(C2_star,1), ")"),
+     col = "#dc3545", cex = 0.7, font = 2)
+
+# Seta poupanca
+if (abs(S) > 0.5) {
+  arrows(Y1, Y2, C1_star, C2_star,
+         col = "#fd7e14", lwd = 2, length = 0.1)
+  text((Y1+C1_star)/2 + 3, (Y2+C2_star)/2,
+       ifelse(S > 0, "Poupa", "Toma emprestado"),
+       col = "#fd7e14", cex = 0.7, font = 2)
+}
+
+# Reta com r diferente (para comparacao)
+r2 <- 0.20
+W2 <- Y1 + Y2/(1+r2)
+C2_reta2 <- (1+r2)*(W2 - C1_seq)
+lines(C1_seq[C2_reta2 >= 0], C2_reta2[C2_reta2 >= 0],
+      lwd = 1.5, col = "#adb5bd", lty = 3)
+text(W2*0.3, (1+r2)*W2*0.7, paste0("r=", r2*100, "%"),
+     col = "#adb5bd", cex = 0.65, font = 2)
+
+legend("topright",
+       legend = c(paste0("Restricao (r=", r*100, "%)"),
+                  "Curva de indiferenca", "Dotacao", "Otimo"),
+       col = c("#0d6efd", "#6f42c1", "#198754", "#dc3545"),
+       lwd = c(3, 2, NA, NA), lty = c(1, 2, NA, NA),
+       pch = c(NA, NA, 17, 19), cex = 0.6, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:580,height:480}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

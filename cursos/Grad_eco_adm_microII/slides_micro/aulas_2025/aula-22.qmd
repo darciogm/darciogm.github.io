@@ -1,0 +1,413 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 22 — Concorrência Perfeita e Bem-Estar"
+author: "Prof. Darcio Genicolo Martins"
+date: "Equilíbrio Parcial, Excedentes e Eficiência"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roadmap da Aula {data-background-color="#E50505"}
+
+## Onde Estamos?
+
+Nos capítulos anteriores, derivamos:
+
+. . .
+
+- A **curva de oferta** da firma individual (CMg acima do CVMe)
+- A **condição de fechamento** no curto prazo
+
+. . .
+
+Hoje conectamos **oferta**, **demanda** e **bem-estar**:
+
+1. Oferta de mercado (CP e LP)
+2. Excedente do consumidor e do produtor
+3. Primeiro Teorema do Bem-Estar
+4. Perda de peso morto
+
+:::{.callout-tip title="Intuição Econômica"}
+O preço de equilíbrio é aquele em que ninguém está frustrado — todo mundo que quer comprar consegue, e todo mundo que quer vender encontra comprador.
+:::
+
+## Oferta de Curto Prazo: Firma Individual
+
+A oferta individual e a curva de CMg acima do ponto de fechamento:
+
+::: {.eq-highlight}
+$$S_j(p) = \begin{cases} q_j \text{ tal que } CMg_j(q_j) = p, & \text{se } p \geq CVMe_{\min} \\ 0, & \text{se } p < CVMe_{\min} \end{cases}$$
+:::
+
+. . .
+
+- Abaixo de $CVMe_{\min}$, a firma **para de produzir** (mas mantém a planta)
+- Acima, produz onde $p = CMg$
+
+:::{.callout-note title="Observação"}
+A curva de oferta pode apresentar **descontinuidade** no ponto de fechamento.
+:::
+
+## Oferta de Mercado no Curto Prazo
+
+A oferta de mercado é a **soma horizontal** das ofertas individuais:
+
+::: {.eq-highlight}
+$$S(p) = \sum_{j=1}^{m} S_j(p)$$
+:::
+
+. . .
+
+| Componente | Significado |
+|:---|:---|
+| $m$ | Número de firmas (fixo no CP) |
+| $S_j(p)$ | Oferta individual da firma $j$ |
+| $S(p)$ | Oferta agregada do mercado |
+
+. . .
+
+Com muitas firmas heterogêneas, os "saltos" se tornam imperceptíveis e a curva de oferta de mercado é essencialmente **contínua**.
+
+## Equilíbrio Marshalliano {data-background-color="#E50505"}
+
+O equilíbrio competitivo de curto prazo ocorre ao preço $p^*$ tal que:
+
+::: {.eq-highlight}
+$$X(p^*) = S(p^*)$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Condições do Equilíbrio CP:**
+
+- Cada firma maximiza lucro: $p = CMg(q)$
+- Mercado se equilibra: $X(p^*) = S(p^*)$
+- Número de firmas é fixo
+:::
+::: {.column width="48%"}
+**Estabilidade Walrasiana:**
+
+$$\frac{dX}{dp} - \frac{dS}{dp} < 0$$
+
+Preço acima do equilíbrio $\Rightarrow$ excesso de oferta $\Rightarrow$ preço cai.
+:::
+::::
+
+## Oferta e Demanda — Interativo
+
+Explore como mudanças nos parâmetros afetam o equilíbrio de mercado:
+
+<iframe src="graficos/cap13/oferta-demanda.html" title="Equilibrio de oferta e demanda" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## Estática Comparativa no CP
+
+O equilíbrio muda quando as condições se alteram. Da equação $X(p, \alpha) = S(p, \beta)$:
+
+::: {.eq-highlight}
+$$\frac{dp}{d\alpha} = \frac{\partial X / \partial \alpha}{\partial S / \partial p - \partial X / \partial p} > 0$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Choque de demanda**
+
+- RenovaBio $\uparrow$ demanda etanol
+- Preço e quantidade sobem
+:::
+::: {.column width="48%"}
+**Choque de oferta**
+
+- Geada no Parana (2021)
+- Café: preço sobe, quantidade cai
+:::
+::::
+
+:::{.callout-warning title="Magnitudes"}
+Quanto mais **inelásticas** oferta e demanda, maior a variação de preço para um dado choque.
+:::
+
+## Equilíbrio de Longo Prazo {data-background-color="#E50505"}
+
+No LP, o número de firmas é **endógeno**. Condição: lucro econômico zero.
+
+::: {.eq-highlight}
+$$\pi^* = 0 \implies p^* = CTMe_{\min}$$
+:::
+
+. . .
+
+| Condicao | Significado |
+|:---|:---|
+| $p = CMg(q)$ | Firma maximiza lucro |
+| $p = CTMe_{\min}$ | Opera na escala eficiente |
+| $X(p^*) = m^* \cdot q^*$ | Mercado equilibra |
+| $\pi = 0$ | Lucro econômico zero |
+
+:::{.callout-tip title="Intuição Econômica"}
+No longo prazo, a concorrência perfeita é um moedor de lucros — todo lucro extraordinário atrai entrada até desaparecer.
+:::
+
+## Equilibrio de Longo Prazo: Entrada e Saida
+
+<iframe src="graficos/cap13/equilibrio-longo-prazo.html" title="Equilíbrio de Longo Prazo: Entrada e Saída" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Três Tipos de Indústria
+
+:::: {.columns}
+::: {.column width="32%"}
+**Custos Constantes**
+
+- Oferta LP **horizontal**
+- $p_{LP} = CTMe_{\min}$
+- Deslocamento de demanda altera so a quantidade
+:::
+::: {.column width="32%"}
+**Custos Crescentes**
+
+- Oferta LP **positivamente** inclinada
+- Caso mais comum
+- Soja no Cerrado: terra encarece
+:::
+::: {.column width="32%"}
+**Custos Decrescentes**
+
+- Oferta LP **negativamente** inclinada
+- Economias externas
+- Polo de Franca (calçados)
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Observação"}
+A elasticidade-preço da oferta **aumenta** com o horizonte temporal: $|\varepsilon_S^{LP}| > |\varepsilon_S^{CP}| > 0$.
+:::
+
+## Bem-Estar e Excedentes {data-background-color="#E50505"}
+
+## Excedente do Consumidor e do Produtor
+
+:::: {.columns}
+::: {.column width="48%"}
+**Excedente do Consumidor (EC)**
+
+$$EC = \int_0^{Q^*} p^d(Q)\, dQ - p^* \cdot Q^*$$
+
+Área entre a curva de demanda e a linha de preço.
+:::
+::: {.column width="48%"}
+**Excedente do Produtor (EP)**
+
+$$EP = p^* \cdot Q^* - \int_0^{Q^*} CMg(Q)\, dQ$$
+
+Área entre a linha de preço e a curva de oferta.
+:::
+::::
+
+. . .
+
+**Bem-estar total:**
+
+::: {.eq-highlight}
+$$W = EC + EP = \int_0^{Q^*} \left[ p^d(Q) - CMg(Q) \right] dQ$$
+:::
+
+## Excedentes com Imposto — Interativo
+
+Ajuste o imposto e observe como EC, EP e a perda de peso morto se alteram:
+
+<div id="graph-a11-tax" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Imposto $t$: <input type="range" id="sl-a11-t" min="0" max="30" value="0" step="1" oninput="updA11Tax()"> <span id="val-a11-t">0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-tax',{
+    boundingbox:[-5,65,55,-5], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'Q',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'P',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var aD=60,bD=1,aS=5,bS=0.8, tax=0;
+  var csArea,psArea,dwlArea,demLine,supLine,supTLine,eqPt;
+  function pD(q){return aD-bD*q;} function pS(q){return aS+bS*q;}
+  function draw(){
+    brd.suspendUpdate();
+    brd.removeObject(brd.objectsList.filter(function(o){return o.elType!=='axis'&&o.elType!=='ticks';}));
+    var Qe=(aD-aS-tax)/(bD+bS), Pe=aD-bD*Qe, Ps=aS+bS*Qe;
+    var Qc=(aD-aS)/(bD+bS), Pc=aD-bD*Qc;
+    demLine=brd.create('functiongraph',[function(q){return pD(q);},0,55],{strokeColor:'#1565C0',strokeWidth:2.5,name:'D',withLabel:true,label:{position:'rt',offset:[5,10],fontSize:12}});
+    supLine=brd.create('functiongraph',[function(q){return pS(q);},0,55],{strokeColor:'#2E7D32',strokeWidth:2.5,name:'S',withLabel:true,label:{position:'rt',offset:[5,10],fontSize:12}});
+    if(tax>0){
+      supTLine=brd.create('functiongraph',[function(q){return pS(q)+tax;},0,55],{strokeColor:'#2E7D32',strokeWidth:2,dash:2,name:'S+t',withLabel:true,label:{position:'rt',offset:[5,10],fontSize:11}});
+    }
+    brd.create('polygon',[[0,aD],[0,Pe],[Qe,Pe]],{fillColor:'#1565C0',fillOpacity:0.15,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    brd.create('polygon',[[0,Ps],[0,aS],[Qe,Ps]],{fillColor:'#2E7D32',fillOpacity:0.15,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    if(tax>0){
+      brd.create('polygon',[[Qe,Pe],[Qe,Ps],[Qc,Pc]],{fillColor:'#E50505',fillOpacity:0.25,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+      brd.create('polygon',[[0,Pe],[0,Ps],[Qe,Ps],[Qe,Pe]],{fillColor:'#F7C704',fillOpacity:0.15,borders:{strokeWidth:0},vertices:{visible:false},highlight:false});
+    }
+    brd.create('point',[Qe,Pe],{size:4,fillColor:'#E50505',strokeColor:'#E50505',name:'(Q*,Pd)',label:{fontSize:11,offset:[5,10]}});
+    if(tax>0) brd.create('point',[Qe,Ps],{size:4,fillColor:'#2E7D32',strokeColor:'#2E7D32',name:'(Q*,Ps)',label:{fontSize:11,offset:[5,-15]}});
+    brd.create('text',[42,58,'EC'],{fontSize:13,color:'#1565C0'});
+    brd.create('text',[42,53,'EP'],{fontSize:13,color:'#2E7D32'});
+    if(tax>0){brd.create('text',[42,48,'PPM'],{fontSize:13,color:'#E50505'});brd.create('text',[42,43,'Receita fiscal'],{fontSize:13,color:'#B8860B'});}
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA11Tax=function(){
+    tax=parseFloat(document.getElementById('sl-a11-t').value);
+    document.getElementById('val-a11-t').textContent=tax;
+    draw();
+  };
+})();
+</script>
+
+## Primeiro Teorema do Bem-Estar
+
+::: {.eq-highlight}
+$$\text{O equilíbrio competitivo maximiza o excedente total } W = EC + EP$$
+:::
+
+. . .
+
+A quantidade de equilibrio $Q^*$ onde $p^d(Q^*) = CMg(Q^*)$ maximiza:
+
+$$W(Q) = \int_0^{Q} \left[ p^d(t) - CMg(t) \right] dt$$
+
+. . .
+
+**Condição de 1a ordem:** $\frac{dW}{dQ} = p^d(Q) - CMg(Q) = 0$
+
+**Condição de 2a ordem:** $\frac{d^2W}{dQ^2} = \frac{dp^d}{dQ} - \frac{dCMg}{dQ} < 0$ $\checkmark$
+
+:::{.callout-warning title="Hipóteses cruciais"}
+O 1o Teorema requer: comportamento tomador de preço, ausência de externalidades, informação completa, ausência de poder de mercado.
+:::
+
+## Perda de Peso Morto (PPM)
+
+Qualquer desvio de $Q^*$ gera uma PPM — transações mutuamente benéficas que deixam de ocorrer:
+
+::: {.eq-highlight}
+$$PPM = \int_{Q_t}^{Q^*} \left[ p^d(Q) - CMg(Q) \right] dQ$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Fontes de PPM:**
+
+- Impostos
+- Teto/piso de preços
+- Cotas
+- Poder de mercado
+:::
+::: {.column width="48%"}
+**Com demanda e oferta lineares:**
+
+$$PPM = \frac{1}{2} \cdot t \cdot \Delta Q$$
+
+onde $t$ é a distorção e $\Delta Q$ a redução de quantidade.
+:::
+::::
+
+## Controles de Precos: Teto e Piso
+
+<iframe src="graficos/cap13/controles-precos.html" title="Controles de Preços: Teto e Piso" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Renda Ricardiana
+
+Se $\pi = 0$ no LP, como explicar firmas "mais lucrativas"?
+
+. . .
+
+::: {.eq-highlight}
+$$\text{Renda ricardiana}_j = (p^* - CTMe_j) \cdot q_j^*$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A renda ricardiana é o prêmio que a escassez paga — e ela sempre acaba no bolso de quem controla o recurso escasso, não de quem o utiliza.
+:::
+
+. . .
+
+**Exemplo:** Mato Grosso (soja com custo baixo) vs. Matopiba (fronteira, custo alto). A diferença se capitaliza no preço da terra: valorização real > 300% entre 2000 e 2020.
+
+## Aplicação: Incidência Tributária {data-background-color="#E50505"}
+
+## Quem Paga o Imposto?
+
+A incidência **econômica** depende das elasticidades relativas, não de quem recolhe:
+
+. . .
+
+| Cenário | Quem absorve mais? |
+|:---|:---|
+| Demanda inelástica, oferta elástica | **Consumidor** |
+| Demanda elástica, oferta inelástica | **Produtor** |
+| Elasticidades iguais | Divisão igualitária |
+
+. . .
+
+$$\frac{\Delta p_c}{\Delta p_p} = \frac{\varepsilon_S}{|\varepsilon_D|}$$
+
+:::{.callout-note title="Brasil na Prática"}
+Gasolina: demanda inelástica ($\varepsilon_D \approx -0{,}4$). A maior parte de impostos como ICMS e CIDE recai sobre o consumidor.
+:::
+
+## Incidência Tributária e Elasticidades
+
+<iframe src="graficos/cap13/incidencia-tributaria.html" title="Incidência Tributária e Elasticidades" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## O Que Aprendemos Hoje
+
+| Conceito | Fórmula-chave | Significado |
+|:---|:---|:---|
+| Equil. CP | $X(p^*)=S(p^*)$ | Oferta = Demanda |
+| Equil. LP | $p^*=CTMe_{\min}$ | Lucro zero |
+| EC | $\int p^d\,dQ - p^*Q^*$ | Ganho líquido consumidores |
+| EP | $p^*Q^* - \int CMg\,dQ$ | Ganho líquido produtores |
+| PPM | $\int_{Q_t}^{Q^*}[p^d - CMg]\,dQ$ | Valor destruído |
+| 1o TBE | $Q^*$ maximiza $W$ | Equilíbrio é eficiente |
+
+. . .
+
+:::{.callout-tip title="Próxima Aula"}
+Aula 12: **Monopólio I** — o que acontece quando há apenas um vendedor? RMg = CMg, índice de Lerner e perda de peso morto do monopólio.
+:::
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no portal da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

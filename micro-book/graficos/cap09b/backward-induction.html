@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<!--
+  Indução Retroativa — Jogo de Entrada com Payoffs Ajustáveis
+  Library: JSXGraph (canvas-based tree)
+  Chapter 9b — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indução Retroativa</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    .jxgbox { flex: 1 1 400px; max-width: 460px; height: 380px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.82rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      .jxgbox { flex-basis: 100%; width: 100%; max-width: 460px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 460px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox1" class="jxgbox"></div>
+  <div class="controls">
+    <h3>Payoffs (Entrante, Incumbente)</h3>
+    <div class="slider-group">
+      <label>Nao Entra — E: <span class="val" id="val-noE">0</span></label>
+      <input type="range" id="slider-noE" min="-3" max="5" step="0.5" value="0">
+    </div>
+    <div class="slider-group">
+      <label>Nao Entra — I: <span class="val" id="val-noI">3</span></label>
+      <input type="range" id="slider-noI" min="0" max="8" step="0.5" value="3">
+    </div>
+    <div class="slider-group">
+      <label>Acomoda — E: <span class="val" id="val-acE">2</span></label>
+      <input type="range" id="slider-acE" min="-3" max="5" step="0.5" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Acomoda — I: <span class="val" id="val-acI">1</span></label>
+      <input type="range" id="slider-acI" min="-3" max="5" step="0.5" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Luta — E: <span class="val" id="val-luE">-1</span></label>
+      <input type="range" id="slider-luE" min="-5" max="3" step="0.5" value="-1">
+    </div>
+    <div class="slider-group">
+      <label>Luta — I: <span class="val" id="val-luI">-1</span></label>
+      <input type="range" id="slider-luI" min="-5" max="3" step="0.5" value="-1">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  var board = JXG.JSXGraph.initBoard('jxgbox1', {
+    boundingbox: [-1, 10, 11, -1],
+    axis: false, showCopyright: false, showNavigation: false, keepAspectRatio: false
+  });
+
+  var objs = [];
+
+  function draw() {
+    for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+    objs = [];
+
+    var noE = parseFloat(document.getElementById('slider-noE').value);
+    var noI = parseFloat(document.getElementById('slider-noI').value);
+    var acE = parseFloat(document.getElementById('slider-acE').value);
+    var acI = parseFloat(document.getElementById('slider-acI').value);
+    var luE = parseFloat(document.getElementById('slider-luE').value);
+    var luI = parseFloat(document.getElementById('slider-luI').value);
+
+    document.getElementById('val-noE').textContent = noE.toFixed(1);
+    document.getElementById('val-noI').textContent = noI.toFixed(1);
+    document.getElementById('val-acE').textContent = acE.toFixed(1);
+    document.getElementById('val-acI').textContent = acI.toFixed(1);
+    document.getElementById('val-luE').textContent = luE.toFixed(1);
+    document.getElementById('val-luI').textContent = luI.toFixed(1);
+
+    // Backward induction: I chooses Acomoda if acI > luI; Luta otherwise
+    var iChoice = (acI >= luI) ? 'Acomoda' : 'Luta';
+    var ePayoffIfEnter = (iChoice === 'Acomoda') ? acE : luE;
+    var eChoice = (ePayoffIfEnter > noE) ? 'Entra' : 'Nao Entra';
+    var eqE = (eChoice === 'Entra') ? ePayoffIfEnter : noE;
+    var eqI = (eChoice === 'Entra') ? (iChoice === 'Acomoda' ? acI : luI) : noI;
+
+    // Tree nodes
+    var rootX = 5, rootY = 8.5;
+    var leftX = 2, leftY = 5;   // Not Enter
+    var rightX = 8, rightY = 5; // Enter -> I decides
+    var farLeftX = 6, farLeftY = 1.5;  // Fight
+    var farRightX = 10, farRightY = 1.5; // Accommodate
+
+    // Highlight EPS path
+    var epsColor = '#C8102E';
+    var normalColor = '#999';
+
+    var enterColor = (eChoice === 'Entra') ? epsColor : normalColor;
+    var notEnterColor = (eChoice === 'Nao Entra') ? epsColor : normalColor;
+    var fightColor = (eChoice === 'Entra' && iChoice === 'Luta') ? epsColor : normalColor;
+    var acomColor = (eChoice === 'Entra' && iChoice === 'Acomoda') ? epsColor : normalColor;
+
+    var enterW = (eChoice === 'Entra') ? 3 : 1.5;
+    var notEnterW = (eChoice === 'Nao Entra') ? 3 : 1.5;
+    var fightW = (eChoice === 'Entra' && iChoice === 'Luta') ? 3 : 1.5;
+    var acomW = (eChoice === 'Entra' && iChoice === 'Acomoda') ? 3 : 1.5;
+
+    // Edges
+    objs.push(board.create('segment', [[rootX, rootY],[leftX, leftY]], { strokeColor: notEnterColor, strokeWidth: notEnterW }));
+    objs.push(board.create('segment', [[rootX, rootY],[rightX, rightY]], { strokeColor: enterColor, strokeWidth: enterW }));
+    objs.push(board.create('segment', [[rightX, rightY],[farLeftX, farLeftY]], { strokeColor: fightColor, strokeWidth: fightW }));
+    objs.push(board.create('segment', [[rightX, rightY],[farRightX, farRightY]], { strokeColor: acomColor, strokeWidth: acomW }));
+
+    // Node labels
+    objs.push(board.create('text', [rootX, rootY + 0.6, '<b>Entrante</b>'], { fontSize: 12, anchorX: 'middle', fixed: true, highlight: false }));
+    objs.push(board.create('text', [rightX, rightY + 0.6, '<b>Incumbente</b>'], { fontSize: 12, anchorX: 'middle', fixed: true, highlight: false }));
+
+    // Action labels
+    objs.push(board.create('text', [3.2, 7.2, 'Nao Entra'], { fontSize: 10, color: notEnterColor, fixed: true, highlight: false }));
+    objs.push(board.create('text', [6.5, 7.2, 'Entra'], { fontSize: 10, color: enterColor, fixed: true, highlight: false }));
+    objs.push(board.create('text', [6.5, 3.6, 'Luta'], { fontSize: 10, color: fightColor, fixed: true, highlight: false }));
+    objs.push(board.create('text', [9.5, 3.6, 'Acomoda'], { fontSize: 10, color: acomColor, fixed: true, highlight: false }));
+
+    // Payoff labels at terminal nodes
+    objs.push(board.create('text', [leftX, leftY - 0.8, '(' + noE.toFixed(1) + ', ' + noI.toFixed(1) + ')'], {
+      fontSize: 11, anchorX: 'middle', color: notEnterColor, fixed: true, highlight: false
+    }));
+    objs.push(board.create('text', [farLeftX, farLeftY - 0.8, '(' + luE.toFixed(1) + ', ' + luI.toFixed(1) + ')'], {
+      fontSize: 11, anchorX: 'middle', color: fightColor, fixed: true, highlight: false
+    }));
+    objs.push(board.create('text', [farRightX, farRightY - 0.8, '(' + acE.toFixed(1) + ', ' + acI.toFixed(1) + ')'], {
+      fontSize: 11, anchorX: 'middle', color: acomColor, fixed: true, highlight: false
+    }));
+
+    // Nodes (circles)
+    objs.push(board.create('point', [rootX, rootY], { name: '', size: 6, fillColor: '#333', strokeColor: '#333', fixed: true }));
+    objs.push(board.create('point', [rightX, rightY], { name: '', size: 6, fillColor: '#333', strokeColor: '#333', fixed: true }));
+    objs.push(board.create('point', [leftX, leftY], { name: '', size: 4, fillColor: '#fff', strokeColor: '#333', fixed: true }));
+    objs.push(board.create('point', [farLeftX, farLeftY], { name: '', size: 4, fillColor: '#fff', strokeColor: '#333', fixed: true }));
+    objs.push(board.create('point', [farRightX, farRightY], { name: '', size: 4, fillColor: '#fff', strokeColor: '#333', fixed: true }));
+
+    var credible = (iChoice === 'Luta') ? 'Sim — a ameaca de lutar e crivel.' : 'Nao — lutar nao e crivel (I prefere acomodar).';
+    var html = '<div style="text-align:center;margin-bottom:0.3rem;"><strong style="color:#C8102E;">EPS por Inducao Retroativa</strong></div>';
+    html += '<strong>Passo 1 (I):</strong> ' + iChoice + ' (\\(' + (iChoice === 'Acomoda' ? acI : luI).toFixed(1) + ' > ' + (iChoice === 'Acomoda' ? luI : acI).toFixed(1) + '\\))<br>';
+    html += '<strong>Passo 2 (E):</strong> ' + eChoice + ' (\\(' + ePayoffIfEnter.toFixed(1) + (eChoice === 'Entra' ? ' > ' : ' \\leq ') + noE.toFixed(1) + '\\))<br>';
+    html += '<strong>Resultado:</strong> (' + eqE.toFixed(1) + ', ' + eqI.toFixed(1) + ')<br>';
+    html += '<hr style="margin:0.3rem 0">';
+    html += '<div style="font-size:0.78rem;color:#666;">Ameaca de Luta crivel? ' + credible + '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    board.update();
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-noE').value = 0;
+    document.getElementById('slider-noI').value = 3;
+    document.getElementById('slider-acE').value = 2;
+    document.getElementById('slider-acI').value = 1;
+    document.getElementById('slider-luE').value = -1;
+    document.getElementById('slider-luI').value = -1;
+    draw();
+  }
+
+  ['slider-noE','slider-noI','slider-acE','slider-acI','slider-luE','slider-luI'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', draw);
+  });
+  draw();
+</script>
+</body>
+</html>

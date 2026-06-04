@@ -1,0 +1,701 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 16 — Escolha sob Incerteza IV: Mercados de Risco e Informação"
+author: "Prof. Darcio Genicolo Martins"
+date: "Seguros, Seleção Adversa, Risco Moral e Sinalização"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Da Teoria aos Mercados
+
+Nas aulas 13--15, construímos a teoria da decisão sob incerteza: loterias, utilidade esperada, Arrow-Pratt, Prospect Theory.
+
+. . .
+
+**Hoje:** como essa teoria se manifesta em **mercados reais**?
+
+1. Mercado de seguros: cobertura ótima e prêmio justo
+2. Seleção adversa (Akerlof --- *market for lemons*)
+3. Risco moral (principal-agente)
+4. Sinalização (Spence) e screening (Rothschild-Stiglitz)
+5. Diversificação e fronteira risco-retorno
+6. Aplicações brasileiras: SUS, Proagro, mercado de crédito
+
+## Mercado de Seguros {data-background-color="#E50505"}
+
+## A Lógica do Seguro
+
+O seguro permite **transferir risco** de agentes mais avessos para agentes menos avessos (ou mais diversificados).
+
+. . .
+
+**Setup:** agente com riqueza $W$, perda $d$ com probabilidade $p$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Sem seguro:**
+
+- Estado bom: $W$ (prob. $1-p$)
+- Estado ruim: $W - d$ (prob. $p$)
+- $E[W] = W - pd$
+:::
+::: {.column width="50%"}
+**Com seguro (cobertura $q$, premio $P$):**
+
+- Estado bom: $W - P$
+- Estado ruim: $W - P - d + q$
+- Se $q = d$: riqueza **certa** $= W - P$
+:::
+::::
+
+## Premio Atuarialmente Justo
+
+::: {.eq-highlight}
+$$P_{\text{justo}} = p \cdot d$$
+:::
+
+. . .
+
+**Teorema:** Se o prêmio é atuarialmente justo e o agente é estritamente avesso ao risco, o contrato ótimo é de **cobertura total** ($q^* = d$).
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando o prêmio é justo, o agente pode "comprar" certeza sem custo atuarial. Como ele prefere certeza a incerteza (aversão ao risco), ele elimina todo o risco.
+:::
+
+. . .
+
+**Com carregamento:** $P = (1 + \lambda) p \cdot d$, $\lambda > 0$. A certeza passa a ter preco adicional $\Rightarrow$ cobertura **parcial** pode ser otima.
+
+## Mercado de Seguros --- Interativo
+
+<iframe src="graficos/cap07/seguro.html" title="Mercado de Seguros" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exercício Resolvido: Seguro {.smaller}
+
+**Dados:** Produtora de café, $W = 500.000$, risco de geada com $p = 0{,}2$, perda $d = 200.000$, $u(W) = \sqrt{W}$.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Passo 1 --- Premio justo:**
+
+$P_{\text{justo}} = 0{,}2 \times 200.000 = \text{R\$} \; 40.000$
+
+**Passo 2 --- Sem seguro:**
+
+$E[u] = 0{,}8\sqrt{500.000} + 0{,}2\sqrt{300.000}$
+
+$= 0{,}8 \times 707{,}11 + 0{,}2 \times 547{,}72 = 675{,}23$
+
+**Com seguro total ($P = 40.000$):**
+
+$u(460.000) = \sqrt{460.000} = 678{,}23 > 675{,}23$ ✓
+:::
+::: {.column width="50%"}
+**Passo 3 --- Prêmio máximo:**
+
+$\sqrt{500.000 - P_{\max}} = 675{,}23$
+
+$P_{\max} = 500.000 - 675{,}23^2 = \text{R\$} \; 44.064$
+
+**Premio de risco:** $44.064 - 40.000 = \text{R\$} \; 4.064$
+
+**Passo 4 --- Com carregamento $\lambda = 0{,}3$:**
+
+$P_\lambda = 1{,}3 \times 40.000 = \text{R\$} \; 52.000 > P_{\max}$
+
+$\Rightarrow$ **Não contrata** cobertura total!
+:::
+::::
+
+## Espaço Estado-Contingente {.smaller}
+
+O problema de seguros pode ser visualizado no **espaco estado-contingente** $(c_{\text{bom}}, c_{\text{ruim}})$:
+
+. . .
+
+- **Linha de 45 graus:** $c_{\text{bom}} = c_{\text{ruim}}$ $\Rightarrow$ seguro total (riqueza certa)
+- **Reta orçamentária justa:** inclinação $= -(1-p)/p$
+- **Curvas de indiferenca:** convexas para agente avesso ao risco
+- **Otimo com premio justo:** na linha de 45 graus (seguro total)
+- **Otimo com carregamento:** abaixo da linha de 45 graus (cobertura parcial)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Comprar seguro é comprar um **ativo contingente ao estado ruim**. A abordagem de Arrow-Debreu transforma o problema de risco num problema de consumidor --- com as mesmas curvas de indiferença e restrição orçamentária que já conhecemos!
+:::
+
+## Por Que Seguradoras Existem?
+
+Se seguros sao precificados com **carregamento** ($\lambda > 0$), por que agentes avessos ainda compram?
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Lado da demanda:**
+
+- Agente avesso ao risco paga ate $P_{\max} = P_{\text{justo}} + \pi$
+- Se $\lambda < \pi / P_{\text{justo}}$: contrata
+- Risco moral e selecao adversa complicam
+:::
+::: {.column width="50%"}
+**Lado da oferta:**
+
+- Seguradora diversifica: $n$ riscos independentes
+- $\text{Var}(\text{perda media}) = \sigma^2/n \to 0$
+- Lei dos Grandes Numeros: perda media $\to p \cdot d$ com certeza
+- Lucro = carregamento $\lambda \cdot p \cdot d$ por apolice
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Chave"}
+A seguradora nao elimina o risco --- ela o **dilui** entre muitos segurados. So funciona quando os sinistros sao **independentes** (nao para catastrofes sistemicas).
+:::
+
+## Informacao Assimetrica {data-background-color="#E50505"}
+
+Quando um sabe mais que o outro
+
+## O Problema Fundamental
+
+Até agora: agente e seguradora compartilham a **mesma informação**.
+
+. . .
+
+**Realidade:** uma das partes sabe mais:
+
+| Problema | Quem sabe mais? | Quando? | Tipo de info |
+|:---------|:----------------|:--------|:-------------|
+| **Seleção adversa** | Agente (tipo) | *Antes* do contrato | Informação oculta |
+| **Risco moral** | Agente (ação) | *Depois* do contrato | Ação oculta |
+
+. . .
+
+Ambos geram **falhas de mercado** --- o equilíbrio competitivo pode não ser eficiente (ou não existir!).
+
+## Seleção Adversa: Market for Lemons {data-background-color="#E50505"}
+
+Akerlof (1970) --- Prêmio Nobel 2001
+
+## O Mercado de Carros Usados {.smaller}
+
+:::{.callout-note title="Modelo de Akerlof"}
+- **Vendedores** sabem a qualidade do carro: bom ($v_S = 20.000$) ou ruim --- *lemon* ($v_S = 10.000$)
+- **Compradores** não distinguem: só observam a proporção $\theta$ de bons
+- Compradores pagam ate $E[v] = \theta \times 20.000 + (1-\theta) \times 10.000$
+:::
+
+. . .
+
+Se $\theta = 0{,}5$: compradores pagam ate R\$ 15.000.
+
+. . .
+
+**Mas:** vendedores de carros bons (que valem R\$ 20.000) **nao aceitam** R\$ 15.000 $\Rightarrow$ **saem do mercado**.
+
+. . .
+
+Resta so *lemons* $\Rightarrow$ compradores ajustam expectativas $\Rightarrow$ preco cai $\Rightarrow$ mais vendedores bons saem...
+
+::: {.eq-highlight}
+$$\text{Espiral descendente} \Rightarrow \text{colapso do mercado (unraveling)}$$
+:::
+
+## Mercado de Limoes --- Interativo
+
+<iframe src="graficos/cap19/mercado-limoes.html" title="Mercado de Limoes" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Seleção Adversa: Consequências {.smaller}
+
+A seleção adversa gera **ineficiência de Pareto**: transações mutuamente benéficas **não ocorrem** porque a informação é privada.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Onde aparece:**
+
+- Seguros de saude: doentes compram mais
+- Crédito: tomadores arriscados buscam mais
+- Mercado de trabalho: trabalhadores ruins aceitam salários mais baixos
+- Mercado financeiro: empresas ruins emitem mais ações (Myers & Majluf, 1984)
+:::
+::: {.column width="50%"}
+**Solucoes institucionais:**
+
+- Garantias e certificações
+- Regulação (cobertura mínima obrigatória)
+- Reputação e marcas
+- **Sinalização** (próximo slide)
+- **Screening** (slide seguinte)
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A informação assimétrica faz com que o mercado "puna" os bons junto com os ruins. Se eu não consigo provar que meu carro é bom, sou tratado como se fosse ruim --- e o mercado inteiro perde.
+:::
+
+## Sinalização {data-background-color="#E50505"}
+
+Spence (1973) --- Prêmio Nobel 2001
+
+## Educação como Sinal {.smaller}
+
+:::{.callout-note title="Modelo de Spence"}
+- Trabalhadores sao de dois tipos: produtividade **alta** ($\theta_H$) ou **baixa** ($\theta_L$)
+- Empregadores não observam $\theta$ diretamente
+- **Educação** ($e$) é custosa, mas **mais custosa** para tipo baixo: $c_L(e) > c_H(e)$
+- Tipo alto escolhe $e^*$ suficientemente alto para que tipo baixo **não queira imitar**
+:::
+
+. . .
+
+**Equilibrio separador:** tipos altos educam-se ($e = e^*$), tipos baixos nao ($e = 0$).
+
+. . .
+
+::: {.eq-highlight}
+$$\text{Condicao de separacao:} \quad w_H - w_L \geq c_L(e^*) \quad \text{e} \quad w_H - w_L \leq c_H(e^*)$$
+:::
+
+Não --- invertido: $w_H - w_L \geq c_H(e^*)$ e $w_H - w_L \leq c_L(e^*)$.
+
+. . .
+
+O sinal funciona porque **é diferencialmente custoso**: só quem é produtivo "se dá ao trabalho" de sinalizar.
+
+## Sinalização: Propriedades {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Condições para um sinal funcionar:**
+
+1. **Observável** pelo receptor
+2. **Custoso** para o emissor
+3. **Diferencialmente custoso:** mais barato para quem tem qualidade alta
+4. **Crível:** não pode ser falsificado a baixo custo
+:::
+::: {.column width="50%"}
+**Exemplos alem da educacao:**
+
+- Garantia de produto (fabricante confiante)
+- Dividendos (empresa saudável)
+- Publicidade de marca cara (qualidade durável)
+- Queimar dinheiro em casamento caro (comprometimento)
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Ineficiência da sinalização"}
+No modelo de Spence, a educação **não aumenta** a produtividade --- só sinaliza. O investimento em educação é um custo social puro (deadweight loss). Na prática, educação provavelmente **faz as duas coisas**: sinaliza e aumenta capital humano. Quanto de cada? Debate aberto.
+:::
+
+## Screening {data-background-color="#E50505"}
+
+Rothschild & Stiglitz (1976) --- Prêmio Nobel (Stiglitz, 2001)
+
+## Menu de Contratos Separadores {.smaller}
+
+Na **sinalização**, a parte **informada** age primeiro. No **screening**, a parte **desinformada** age primeiro, desenhando um menu de contratos.
+
+. . .
+
+:::{.callout-note title="Modelo Rothschild-Stiglitz"}
+Seguradora não sabe se segurado é de **alto** ou **baixo** risco. Oferece dois contratos:
+
+- **Contrato A:** cobertura total, premio alto $\Rightarrow$ atrai alto risco
+- **Contrato B:** cobertura parcial (franquia alta), premio baixo $\Rightarrow$ atrai baixo risco
+
+O menu e desenhado para que cada tipo **se autorrevele** ao escolher.
+:::
+
+. . .
+
+**Condição de compatibilidade de incentivos (IC):** tipo $i$ prefere seu contrato ao contrato de tipo $j$.
+
+**Condição de participação (IR):** cada tipo prefere seu contrato a não contratar.
+
+## Equilibrio Separador {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Alto risco ($p_H$):**
+
+- Recebe cobertura **total**
+- Paga premio $P_H = p_H \cdot d$
+- Lucro zero para seguradora
+:::
+::: {.column width="50%"}
+**Baixo risco ($p_L$):**
+
+- Recebe cobertura **parcial** (distorcida)
+- Paga premio $P_L = p_L \cdot q_L$ (com $q_L < d$)
+- Lucro zero para seguradora
+- **Subsidia** indiretamente o tipo alto (via distorção)
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Resultado de Rothschild-Stiglitz"}
+1. Equilíbrio **pooling** (contrato único para todos) **não existe** sob competição
+2. Equilíbrio **separador** pode não existir se a proporção de tipos bons for alta
+3. Quando existe, o tipo **bom** sofre --- recebe cobertura distorcida por causa da assimetria de informação
+:::
+
+## Comparativo: Sinalização vs. Screening {.smaller}
+
+| Dimensão | Sinalização | Screening |
+|:---------|:------------|:----------|
+| Quem age primeiro? | Parte **informada** | Parte **desinformada** |
+| Mecanismo | Ação custosa (sinal) | Menu de contratos |
+| Exemplo | Diploma, garantia | Franquias, menus de preço |
+| Custo social | Sinal pode ser puro custo | Distorção do contrato do tipo bom |
+| Autor | Spence (1973) | Rothschild & Stiglitz (1976) |
+| Nobel | 2001 (com Akerlof e Stiglitz) | 2001 (com Akerlof e Spence) |
+
+## Risco Moral {data-background-color="#E50505"}
+
+O problema de acao oculta
+
+## O Problema Principal-Agente {.smaller}
+
+:::{.callout-note title="Definição"}
+O **risco moral** ocorre quando, após a celebração do contrato, uma das partes pode tomar ações não observáveis que afetam o resultado.
+
+- **Principal:** quem delega (empregador, seguradora, acionista)
+- **Agente:** quem executa (empregado, segurado, gestor)
+:::
+
+. . .
+
+**Tensão fundamental:** o agente maximiza sua própria utilidade, que pode divergir do interesse do principal.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Exemplos:**
+
+- Segurado reduz cuidados após contratar seguro
+- Empregado reduz esforço quando não monitorado
+- Gestor gasta em perquisites (jatinho, escritório luxuoso)
+:::
+::: {.column width="50%"}
+**Solucoes via contrato:**
+
+- Franquias e copagamentos (seguro)
+- Comissões e bônus por desempenho
+- Stock options (alinhar gestor e acionista)
+- Monitoramento e auditorias
+:::
+::::
+
+## Contrato Ótimo: Tradeoff Risco vs. Incentivo {.smaller}
+
+O principal enfrenta um dilema:
+
+. . .
+
+| Estratégia | Incentivo | Risco para o agente |
+|:-----------|:---------|:-------------------|
+| Salário fixo | Zero (sem skin in the game) | Zero (seguro total) |
+| Comissão pura | Máximo (100% skin in the game) | Máximo (sem seguro) |
+| Misto (fixo + variável) | Intermediário | Intermediário |
+
+. . .
+
+::: {.eq-highlight}
+$$\text{Contrato ótimo} = \arg\max \; \text{excedente total s.a. IC + IR}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o agente é avesso ao risco, o contrato ótimo **nunca** é comissão pura --- porque o custo de impor risco ao agente (prêmio de risco) reduz o excedente. O principal balanceia incentivo (faz o agente se esforçar) e seguro (reduz o custo de aversão ao risco do agente).
+:::
+
+## Risco Moral no Dia a Dia
+
+:::: {.columns}
+::: {.column width="50%"}
+**Seguro de automóvel:**
+
+- **Franquia:** segurado paga os primeiros R\$ 3.000 $\Rightarrow$ mantem incentivo a cuidar
+- **Bônus por ausência de sinistro:** até 35% de desconto
+- **Inspeção prévia:** reduz seleção adversa
+:::
+::: {.column width="50%"}
+**Mercado de trabalho:**
+
+- **Salário eficiência:** pagar acima do mercado para que o custo de ser demitido seja alto (Shapiro & Stiglitz, 1984)
+- **Piece rate vs. salário fixo:** Lazear (2000) mostra aumento de 44% na produtividade ao mudar para comissão
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Observação"}
+Risco moral e seleção adversa frequentemente **coexistem**. No mercado de saúde: quem contrata plano pode ser mais doente (seleção adversa) **e** consumir mais serviços desnecessariamente (risco moral).
+:::
+
+## Diversificação {data-background-color="#E50505"}
+
+## Não Coloque Todos os Ovos na Mesma Cesta
+
+A **diversificação** dilui o risco distribuindo exposição entre múltiplas fontes de incerteza.
+
+. . .
+
+Para $n$ ativos **independentes** com retorno $\tilde{r}_i$ (media $\mu$, variancia $\sigma^2$):
+
+::: {.eq-highlight}
+$$\text{Var}\left(\frac{1}{n}\sum_{i=1}^{n}\tilde{r}_i\right) = \frac{\sigma^2}{n} \xrightarrow{n \to \infty} 0$$
+:::
+
+. . .
+
+**Resultado:** o risco **idiossincrático** desaparece com diversificação. Mas o risco **sistemático** (que afeta todos) permanece.
+
+## Fronteira Risco-Retorno {.smaller}
+
+Para dois ativos com correlação $\rho$:
+
+$$\sigma_p^2 = w^2\sigma_1^2 + (1-w)^2\sigma_2^2 + 2w(1-w)\rho\sigma_1\sigma_2$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+| $\rho$ | Beneficio |
+|:-------|:---------|
+| $+1$ | Nenhum (combinação linear) |
+| $0$ | Moderado |
+| $-1$ | Máximo (risco zero possível) |
+:::
+::: {.column width="50%"}
+**Peso de variância mínima:**
+
+$$w^* = \frac{\sigma_2^2 - \rho\sigma_1\sigma_2}{\sigma_1^2 + \sigma_2^2 - 2\rho\sigma_1\sigma_2}$$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Diversificar é como plantar soja, milho e feijão em vez de só soja. O retorno médio pode ser parecido, mas o risco de "quebrar" cai muito. É o princípio por trás de fundos de investimento, previdência e até da política de crédito agrícola.
+:::
+
+## Risco Diversificável vs. Sistemático {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Risco idiossincrático (diversificável):**
+
+- Específico de cada ativo
+- Desaparece com $n$ grande
+- **Não é remunerado** pelo mercado
+- Ex.: greve numa fábrica, fraude contábil
+:::
+::: {.column width="50%"}
+**Risco sistemático (não diversificável):**
+
+- Afeta todos os ativos
+- Permanece mesmo com $n \to \infty$
+- **Remunerado** pelo mercado (premio de risco)
+- Ex.: recessao, Selic, cambio, pandemia
+:::
+::::
+
+. . .
+
+:::{.callout-note title="CAPM (Capital Asset Pricing Model)"}
+Apenas o risco sistemático --- medido pelo coeficiente $\beta$ --- é remunerado:
+
+$$E[r_i] - r_f = \beta_i \times (E[r_m] - r_f)$$
+
+onde $\beta_i = \text{Cov}(r_i, r_m) / \text{Var}(r_m)$.
+:::
+
+## Ellsberg e Mercados --- Interativo
+
+<iframe src="graficos/cap08/ellsberg-urnas.html" title="Paradoxo de Ellsberg" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Aplicações Brasileiras {data-background-color="#E50505"}
+
+## SUS e Informação Assimétrica {.smaller}
+
+O **Sistema Único de Saúde** pode ser analisado como resposta a falhas de mercado em saúde:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Selecao adversa:**
+
+- Sem cobertura universal: doentes crônicos não conseguem plano privado (preço proibitivo)
+- ANS obriga cobertura de doenças preexistentes justamente para mitigar isso
+- SUS funciona como "seguro de último recurso"
+:::
+::: {.column width="50%"}
+**Risco moral:**
+
+- Acesso gratuito pode gerar uso excessivo ("procura médica por qualquer coisa")
+- Filas funcionam como "copagamento em tempo" --- mecanismo ineficiente mas real
+- Programa Saúde da Família: prevenção reduz sinistralidade
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O SUS é, na linguagem de Arrow-Debreu, um conjunto de **ativos contingentes** a estados de doença que o mercado privado não consegue prover universalmente. A intervenção estatal se justifica pela incompletude dos mercados de seguro saúde.
+:::
+
+## Proagro e Seguro Rural {.smaller}
+
+O **Proagro** (Programa de Garantia da Atividade Agropecuaria) ilustra seguros subsidiados:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Estrutura:**
+
+- Prêmio: 2% a 6% do valor financiado
+- Cobertura: geada, seca, granizo, pragas
+- Pronaf tem Proagro Mais (subsidiado)
+- Subsidiado pelo Tesouro Nacional
+:::
+::: {.column width="50%"}
+**Lógica microeconômica:**
+
+- Prêmio justo no Semiárido >> capacidade de pagamento
+- Subsídio = redução do carregamento $\lambda$
+- Sem seguro: produtor escolhe tecnologia segura mas de baixo retorno
+- Com seguro: adota tecnologia arriscada mas produtiva
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Problemas informacionais do Proagro"}
+**Seleção adversa:** regiões de maior risco climático aderem mais. **Risco moral:** com cobertura, produtor investe menos em irrigação e práticas preventivas. Verificação de sinistros é custosa e sujeita a disputas.
+:::
+
+## Mercado de Credito no Brasil {.smaller}
+
+O crédito bancário brasileiro é um laboratório de informação assimétrica:
+
+. . .
+
+| Problema | Manifestação | Resposta institucional |
+|:---------|:-------------|:----------------------|
+| Seleção adversa | Tomadores arriscados buscam mais crédito | Cadastro positivo (Lei 12.414/2011), SCR/BCB |
+| Risco moral | Devedor reduz esforço de pagamento após receber | Garantias reais, fiador, alienação fiduciária |
+| Racionamento | Bancos negam crédito mesmo a taxas altas | Stiglitz & Weiss (1981): equilíbrio com racionamento |
+
+. . .
+
+:::{.callout-note title="Spread bancário e informação"}
+O spread bancário brasileiro --- historicamente entre os mais altos do mundo --- reflete, além de fatores macroeconômicos (Selic, impostos, inadimplência), um **prêmio de informação assimétrica**. Parte do custo de crédito é o custo de screening que bancos incorrem para separar bons dos maus pagadores.
+:::
+
+## Aplicação: Saúde Suplementar {.smaller}
+
+O mercado de planos de saúde no Brasil opera sob regulação da ANS e exibe **ambos** os problemas:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Selecao adversa:**
+
+- Obrigação de cobertura de doenças preexistentes (RN 162/2007)
+- Sem essa regra: espiral de seleção adversa
+- Pool de riscos obrigatório: jovens saudáveis subsidiam idosos doentes
+- Reajuste por faixa etária limitado (máximo 6x entre a primeira e última faixa)
+:::
+::: {.column width="50%"}
+**Risco moral:**
+
+- Coparticipação (30-50% em consultas) reduz uso desnecessário
+- Autorização prévia para procedimentos caros
+- Programas de gestão de crônicos (DM, HAS)
+- Carência: período de espera após adesão
+:::
+::::
+
+## Resumo: Soluções para Informação Assimétrica {.smaller}
+
+| Mecanismo | Resolve | Como funciona | Exemplo brasileiro |
+|:----------|:--------|:-------------|:-------------------|
+| Sinalização | Sel. adversa | Ação custosa do informado | Diploma universitário |
+| Screening | Sel. adversa | Menu de contratos | Franquias de seguro auto |
+| Garantia | Sel. adversa | Vendedor assume risco | Garantia de 3 anos (automóveis) |
+| Franquia / copagamento | Risco moral | Segurado mantém skin in the game | Franquia auto, coparticipação saúde |
+| Bônus / malus | Risco moral | Prêmio por bom comportamento | Bônus seguro auto (até 35%) |
+| Monitoramento | Risco moral | Observação direta | Auditorias do BCB, SUSEP |
+| Regulação | Ambos | Regras impostas por autoridade | ANS, SUSEP, BCB |
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **Seguro:** cobertura total sob prêmio justo; parcial com carregamento. Seguradora funciona pela Lei dos Grandes Números.
+
+2. **Seleção adversa:** informação oculta *antes* do contrato $\Rightarrow$ *lemons*, colapso de mercado. Soluções: sinalização, screening, regulação.
+
+3. **Risco moral:** ação oculta *depois* do contrato $\Rightarrow$ esforço subótimo. Soluções: franquias, incentivos, monitoramento.
+
+4. **Sinalização vs. screening:** parte informada vs. desinformada age primeiro.
+
+5. **Diversificação:** elimina risco idiossincrático, não sistemático. CAPM: só $\beta$ é remunerado.
+
+. . .
+
+**Próxima aula:** Teoria dos Jogos I --- interação estratégica e equilíbrio de Nash.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

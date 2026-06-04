@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 03 — Preferências e Axiomas — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-03-preferências-e-axiomas">Pré-Aula 03 — Preferências e Axiomas</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 3, Seções 3.1–3.3</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Enunciar e interpretar os axiomas fundamentais das preferências (completude, transitividade, continuidade, monotonicidade, convexidade)</li>
+<li>Explicar o Teorema de Debreu e a representação de preferências por funções de utilidade</li>
+<li>Desenhar e interpretar curvas de indiferença, compreendendo que utilidade é ordinal</li>
+</ol>
+<hr />
+<h2 id="relações-de-preferência">1. Relações de preferência</h2>
+<p>O consumidor compara cestas de bens usando uma <strong>relação de preferência</strong> <span class="math inline">\(\succsim\)</span> (“pelo menos tão boa quanto”). A partir dela, derivamos:</p>
+<ul>
+<li><strong>Preferência estrita</strong>: <span class="math inline">\(x \succ y \iff x \succsim y\)</span> e não <span class="math inline">\(y \succsim x\)</span></li>
+<li><strong>Indiferença</strong>: <span class="math inline">\(x \sim y \iff x \succsim y\)</span> e <span class="math inline">\(y \succsim x\)</span></li>
+</ul>
+<p>A questão central é: sob quais condições podemos representar <span class="math inline">\(\succsim\)</span> por uma função <span class="math inline">\(u(\cdot)\)</span> tal que <span class="math inline">\(x \succsim y \iff u(x) \geq u(y)\)</span>?</p>
+<hr />
+<h2 id="axiomas-das-preferências">2. Axiomas das preferências</h2>
+<h3 id="completude">2.1 Completude</h3>
+<p>Para quaisquer cestas <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>: <span class="math inline">\(x \succsim y\)</span> ou <span class="math inline">\(y \succsim x\)</span> (ou ambos).</p>
+<p>O consumidor sempre consegue comparar duas cestas. Não há “não sei” — ele sabe se prefere <span class="math inline">\(x\)</span>, se prefere <span class="math inline">\(y\)</span>, ou se é indiferente.</p>
+<h3 id="transitividade">2.2 Transitividade</h3>
+<p>Se <span class="math inline">\(x \succsim y\)</span> e <span class="math inline">\(y \succsim z\)</span>, então <span class="math inline">\(x \succsim z\)</span>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A transitividade garante coerência nas escolhas. Sem ela, um agente poderia ser explorado em trocas circulares: paga para trocar <span class="math inline">\(z\)</span> por <span class="math inline">\(y\)</span>, depois <span class="math inline">\(y\)</span> por <span class="math inline">\(x\)</span>, depois <span class="math inline">\(x\)</span> por <span class="math inline">\(z\)</span> — voltando ao início mais pobre. Isso é chamado de <em>money pump</em>.</p>
+</div>
+<h3 id="continuidade">2.3 Continuidade</h3>
+<p>Para todo <span class="math inline">\(x\)</span>, os conjuntos <span class="math inline">\(\{y : y \succsim x\}\)</span> (pelo menos tão bom) e <span class="math inline">\(\{y : x \succsim y\}\)</span> (no máximo tão bom) são <strong>fechados</strong>.</p>
+<p>Intuitivamente: se uma sequência de cestas <span class="math inline">\(y_n \succsim x\)</span> converge para <span class="math inline">\(y\)</span>, então <span class="math inline">\(y \succsim x\)</span>. Não há “saltos” abruptos nas preferências.</p>
+<h3 id="monotonicidade-não-saciedade-local">2.4 Monotonicidade (não-saciedade local)</h3>
+<p>Se <span class="math inline">\(x\)</span> tem pelo menos tanto de cada bem quanto <span class="math inline">\(y\)</span> e mais de pelo menos um, então <span class="math inline">\(x \succ y\)</span>. Formalmente: <span class="math inline">\(x \geq y\)</span> e <span class="math inline">\(x \neq y \implies x \succ y\)</span>.</p>
+<p>Consequência: o consumidor sempre prefere mais a menos. As curvas de indiferença têm inclinação <strong>negativa</strong>.</p>
+<h3 id="convexidade">2.5 Convexidade</h3>
+<p>Para quaisquer <span class="math inline">\(x \sim y\)</span> e <span class="math inline">\(\lambda \in (0,1)\)</span>: <span class="math inline">\(\lambda x + (1-\lambda)y \succsim x\)</span>.</p>
+<p>O consumidor prefere misturas a extremos. Conjuntos “pelo menos tão bom quanto” são <strong>convexos</strong>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A convexidade reflete o gosto por diversificação. Um consumidor com 10 cafés e 0 chás (ou 0 cafés e 10 chás) ficaria mais satisfeito com 5 de cada — a mistura é pelo menos tão boa quanto os extremos.</p>
+</div>
+<hr />
+<h2 id="teorema-de-debreu">3. Teorema de Debreu</h2>
+<p><strong>Teorema (Debreu, 1954):</strong> Se <span class="math inline">\(\succsim\)</span> é completa, transitiva e contínua, então existe uma função contínua <span class="math inline">\(u: \mathbb{R}^n_+ \to \mathbb{R}\)</span> que representa <span class="math inline">\(\succsim\)</span>:</p>
+<p><span class="math display">\[x \succsim y \iff u(x) \geq u(y)\]</span></p>
+<p>Além disso, se <span class="math inline">\(v = f \circ u\)</span> com <span class="math inline">\(f\)</span> estritamente crescente, então <span class="math inline">\(v\)</span> também representa <span class="math inline">\(\succsim\)</span>. A utilidade é <strong>ordinal</strong>: apenas a ordenação importa, não os valores numéricos.</p>
+<hr />
+<h2 id="curvas-de-indiferença">4. Curvas de indiferença</h2>
+<p>Uma <strong>curva de indiferença</strong> é o conjunto de cestas que proporcionam o mesmo nível de utilidade:</p>
+<p><span class="math display">\[\{(x_1, x_2) : u(x_1, x_2) = \bar{u}\}\]</span></p>
+<p>Propriedades fundamentais (dados os axiomas acima):</p>
+<ol type="1">
+<li><strong>Curvas mais altas = maior utilidade</strong> (monotonicidade)</li>
+<li><strong>Curvas não se cruzam</strong> (transitividade)</li>
+<li><strong>Inclinação negativa</strong> (monotonicidade)</li>
+<li><strong>Convexas em relação à origem</strong> (convexidade)</li>
+</ol>
+<h2 id="gráfico-interativo-curvas-de-indiferença">Gráfico interativo: Curvas de Indiferença</h2>
+<iframe src="graficos/cap03/curvas-indiferenca.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Movimente o cursor sobre diferentes cestas para ver o nível de utilidade. Observe como curvas mais afastadas da origem representam níveis superiores de satisfação.</p>
+</div>
+<hr />
+<h2 id="tipos-de-preferências">5. Tipos de preferências</h2>
+<p>Diferentes formas funcionais capturam diferentes padrões de preferência:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Curvas de indiferença</th>
+<th>Propriedade-chave</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Substitutos perfeitos</td>
+<td>Retas paralelas</td>
+<td>TMS constante</td>
+</tr>
+<tr>
+<td>Complementos perfeitos</td>
+<td>L invertido</td>
+<td>Consumo em proporção fixa</td>
+</tr>
+<tr>
+<td>Cobb-Douglas</td>
+<td>Hipérboles convexas</td>
+<td>TMS decrescente, suave</td>
+</tr>
+<tr>
+<td>Quase-linear</td>
+<td>Translações verticais</td>
+<td>Sem efeito renda para um bem</td>
+</tr>
+</tbody>
+</table>
+<h2 id="gráfico-interativo-tipos-de-preferências">Gráfico interativo: Tipos de Preferências</h2>
+<iframe src="graficos/cap03/tipos-preferencias.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Alterne entre os diferentes tipos de preferência e observe como a forma das curvas de indiferença muda. Compare substitutos perfeitos (retas) com complementos perfeitos (ângulos retos).</p>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Um consumidor diz: “Prefiro café a chá, chá a suco, e suco a café.” Qual axioma é violado? Explique por que essa violação é problemática.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>A <strong>transitividade</strong> é violada. Se café <span class="math inline">\(\succ\)</span> chá e chá <span class="math inline">\(\succ\)</span> suco, a transitividade exige café <span class="math inline">\(\succ\)</span> suco. Mas o consumidor afirma suco <span class="math inline">\(\succ\)</span> café, gerando um ciclo. Isso permite uma <em>money pump</em>: alguém poderia cobrar para trocar suco por chá, chá por café, e café por suco, extraindo dinheiro infinitamente.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Mostre que curvas de indiferença não podem se cruzar. (Dica: use monotonicidade e transitividade.)</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Suponha que duas curvas, <span class="math inline">\(\bar{u}_1\)</span> e <span class="math inline">\(\bar{u}_2\)</span> com <span class="math inline">\(\bar{u}_2 &gt; \bar{u}_1\)</span>, se cruzem no ponto <span class="math inline">\(A\)</span>. Então <span class="math inline">\(A\)</span> está em ambas as curvas, logo <span class="math inline">\(u(A) = \bar{u}_1\)</span> e <span class="math inline">\(u(A) = \bar{u}_2\)</span>. Mas <span class="math inline">\(\bar{u}_2 &gt; \bar{u}_1\)</span> implica <span class="math inline">\(u(A) &gt; u(A)\)</span>, uma contradição. Alternativamente: tome <span class="math inline">\(B\)</span> na curva superior (não no cruzamento). Temos <span class="math inline">\(B \sim A\)</span> (mesma curva) e <span class="math inline">\(A \sim C\)</span> onde <span class="math inline">\(C\)</span> está na curva inferior. Transitividade dá <span class="math inline">\(B \sim C\)</span>, mas monotonicidade exige <span class="math inline">\(B \succ C\)</span> (pois <span class="math inline">\(B\)</span> tem mais de algum bem). Contradição. <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Um consumidor tem preferências representadas por <span class="math inline">\(u(x_1,x_2) = x_1 x_2\)</span>. A transformação <span class="math inline">\(v(x_1,x_2) = \ln(x_1) + \ln(x_2)\)</span> representa as mesmas preferências? E <span class="math inline">\(w(x_1,x_2) = -x_1 x_2\)</span>?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(v = \ln(x_1 x_2) = \ln \circ \, u\)</span>, e <span class="math inline">\(\ln\)</span> é estritamente crescente. Logo <span class="math inline">\(v\)</span> representa as mesmas preferências. Já <span class="math inline">\(w = -u\)</span> é uma transformação estritamente <strong>decrescente</strong>, portanto inverte a ordenação: <span class="math inline">\(w\)</span> <strong>não</strong> representa as mesmas preferências.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">Q1. O axioma que garante que o consumidor pode sempre comparar duas cestas é:</div>
+<div class="quiz-option" data-value="a">(a) Completude</div>
+<div class="quiz-option" data-value="b">(b) Transitividade</div>
+<div class="quiz-option" data-value="c">(c) Continuidade</div>
+<div class="quiz-option" data-value="d">(d) Monotonicidade</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="b">
+<div class="q-text">Q2. Se \(u(x_1,x_2) = x_1^2 x_2^2\), qual das seguintes também representa as mesmas preferências?</div>
+<div class="quiz-option" data-value="a">(a) \(v = -x_1^2 x_2^2\)</div>
+<div class="quiz-option" data-value="b">(b) \(v = \ln(x_1) + \ln(x_2)\)</div>
+<div class="quiz-option" data-value="c">(c) \(v = x_1 + x_2\)</div>
+<div class="quiz-option" data-value="d">(d) \(v = 1/(x_1 x_2)\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="c">
+<div class="q-text">Q3. A convexidade das preferências implica que:</div>
+<div class="quiz-option" data-value="a">(a) Curvas de indiferença são retas</div>
+<div class="quiz-option" data-value="b">(b) O consumidor prefere extremos a misturas</div>
+<div class="quiz-option" data-value="c">(c) Misturas de cestas indiferentes são pelo menos tão boas quanto as cestas originais</div>
+<div class="quiz-option" data-value="d">(d) A utilidade é cardinal</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">Q4. Pelo Teorema de Debreu, para que exista uma função utilidade contínua, as preferências devem ser:</div>
+<div class="quiz-option" data-value="a">(a) Completas e convexas</div>
+<div class="quiz-option" data-value="b">(b) Completas, transitivas e monotônicas</div>
+<div class="quiz-option" data-value="c">(c) Completas, transitivas e contínuas</div>
+<div class="quiz-option" data-value="d">(d) Completas, transitivas, contínuas e convexas</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="b">
+<div class="q-text">Q5. Curvas de indiferença com formato de "L" (ângulo reto) representam:</div>
+<div class="quiz-option" data-value="a">(a) Substitutos perfeitos</div>
+<div class="quiz-option" data-value="b">(b) Complementos perfeitos</div>
+<div class="quiz-option" data-value="c">(c) Preferências Cobb-Douglas</div>
+<div class="quiz-option" data-value="d">(d) Preferências quase-lineares</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-03')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 04</strong>: Utilidade e Curvas de Indiferença — TMS, funções Cobb-Douglas, CES e quase-linear em detalhe.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-03');
+MicroQuiz.init('aula-03');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

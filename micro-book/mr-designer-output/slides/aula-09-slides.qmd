@@ -1,0 +1,566 @@
+---
+title: "Dotações, Trabalho e Escolha Intertemporal"
+subtitle: "Microeconomia II — Aula 09"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 09"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## O Consumidor Não Tem Só Renda — Tem Dotações
+
+Até agora, a renda $m$ era um valor fixo e exógeno. Mas na realidade, a "renda" do consumidor vem da **venda** de algo que ele já possui.
+
+. . .
+
+**Dotação (endowment):** o consumidor começa com uma cesta $(\omega_1, \omega_2)$ e enfrenta preços $(p_1, p_2)$.
+
+. . .
+
+**Renda como valor da dotação:**
+
+$$m = p_1 \omega_1 + p_2 \omega_2$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando os preços mudam, a renda do consumidor com dotações também muda — ele sofre um efeito adicional que não existia no modelo com renda fixa.
+:::
+
+## Restrição Orçamentária com Dotação
+
+A restrição orçamentária passa pelo ponto de dotação $(\omega_1, \omega_2)$:
+
+. . .
+
+$$p_1 x_1 + p_2 x_2 = p_1 \omega_1 + p_2 \omega_2$$
+
+. . .
+
+**Reescrevendo:** $x_2 = \omega_2 - \frac{p_1}{p_2}(x_1 - \omega_1)$
+
+. . .
+
+**Propriedades:**
+
+- A reta **sempre** passa pela dotação, independentemente dos preços
+- A inclinação é $-p_1/p_2$ (como antes)
+- Quando $p_1$ muda, a reta **pivota** em torno de $(\omega_1, \omega_2)$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A dotação é o "ponto fixo" da restrição: o consumidor sempre pode consumir o que já possui, sem comprar nem vender nada.
+:::
+
+## Efeito-Preço com Dotação: Comprador vs Vendedor
+
+:::: {.columns}
+::: {.column width="50%"}
+**Comprador líquido** (net buyer) do bem $i$:
+
+$$x_i > \omega_i$$
+
+O consumidor **compra** a diferença $x_i - \omega_i$ no mercado.
+
+. . .
+
+Se $p_i$ sobe: fica **mais pobre** (paga mais pelo que compra).
+:::
+::: {.column width="50%"}
+**Vendedor líquido** (net seller) do bem $i$:
+
+$$x_i < \omega_i$$
+
+O consumidor **vende** a diferença $\omega_i - x_i$ no mercado.
+
+. . .
+
+Se $p_i$ sobe: fica **mais rico** (recebe mais pelo que vende).
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A mesma variação de preço pode beneficiar ou prejudicar o consumidor, dependendo de ele ser comprador ou vendedor líquido do bem cujo preço mudou.
+:::
+
+## Efeito Dotação Interativo
+
+Ajuste $p_1$ e observe a reta orçamentária pivotar em torno da dotação. Note as regiões de comprador e vendedor do bem 1.
+
+<div id="graph-a09-endow" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>p&#8321;: <span id="val-a09-p1">3.0</span></label>
+  <input type="range" id="sl-a09-p1" min="1" max="8" step="0.5" value="3" oninput="window.updateA09Endow(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-endow', {
+    boundingbox: [-0.5, 18, 16, -0.5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'x\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'x\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var w1 = 6, w2 = 4, p2 = 2;
+  var p1 = 3;
+
+  // Endowment point
+  var endowPt = board.create('point', [w1, w2], {
+    name: '\u03C9', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 14, offset: [8, 8] }
+  });
+
+  // Budget line
+  var budgetLine = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return val;
+    },
+    0, 15
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Shade buyer region (x1 > w1): right of endowment
+  var buyerShade = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return (val < 0) ? NaN : val;
+    },
+    w1, 15
+  ], { strokeWidth: 0 });
+
+  var buyerFill = board.create('inequality', [buyerShade], {
+    inverse: true, fillColor: '#1565c0', fillOpacity: 0.08
+  });
+
+  // Shade seller region (x1 < w1): left of endowment
+  var sellerShade = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      var val = w2 + (p1 / p2) * (w1 - t);
+      return (val < 0) ? NaN : val;
+    },
+    0, w1
+  ], { strokeWidth: 0 });
+
+  var sellerFill = board.create('inequality', [sellerShade], {
+    inverse: true, fillColor: '#00897b', fillOpacity: 0.08
+  });
+
+  // Labels for regions
+  var buyerLabel = board.create('text', [9.5, 1.5, 'Comprador de x\u2081'], {
+    fontSize: 12, color: '#1565c0', fixed: true
+  });
+  var sellerLabel = board.create('text', [1, 12, 'Vendedor de x\u2081'], {
+    fontSize: 12, color: '#00897b', fixed: true
+  });
+
+  // Info text
+  var infoText = board.create('text', [10, 16, function() {
+    var W = p1 * w1 + p2 * w2;
+    return 'W = ' + W.toFixed(1) + '  |  slope = -' + (p1 / p2).toFixed(2);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA09Endow = function(val) {
+    p1 = parseFloat(val);
+    document.getElementById('val-a09-p1').textContent = p1.toFixed(1);
+    board.update();
+  };
+})();
+</script>
+
+## Equação de Slutsky com Dotações
+
+A decomposição agora inclui um **efeito dotação** adicional:
+
+. . .
+
+$$\frac{\partial x_i}{\partial p_j} = \underbrace{\frac{\partial h_i}{\partial p_j}}_{\text{Efeito Substituição}} \;-\; \underbrace{(x_j - \omega_j)\frac{\partial x_i}{\partial m}}_{\text{Efeito Renda Modificado}}$$
+
+. . .
+
+**Diferença crucial:** o efeito renda depende da **demanda líquida** $(x_j - \omega_j)$, não da demanda bruta $x_j$.
+
+. . .
+
+**Se** $x_j > \omega_j$ (comprador): aumento de $p_j$ reduz riqueza real $\Rightarrow$ ER usual
+
+**Se** $x_j < \omega_j$ (vendedor): aumento de $p_j$ aumenta riqueza real $\Rightarrow$ ER invertido
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O vendedor líquido de um bem se beneficia quando o preço desse bem sobe — o efeito renda vai na direção oposta ao caso sem dotações.
+:::
+
+## Oferta de Trabalho: Setup
+
+O modelo trabalho-lazer é uma aplicação direta de dotações:
+
+. . .
+
+- **Dotação de tempo:** $T$ horas (ex.: 24h/dia)
+- **Lazer:** $R$ horas consumidas
+- **Trabalho:** $L = T - R$ horas vendidas
+- **Salário:** $w$ por hora
+- **Renda não-salarial:** $m_0$
+
+. . .
+
+**Restrição orçamentária:**
+
+$$c = w \cdot L + m_0 = w(T - R) + m_0$$
+
+. . .
+
+> O preço do lazer é o salário $w$ — cada hora de lazer custa $w$ em consumo sacrificado.
+
+## Oferta de Trabalho: Solução
+
+No ótimo interior: $TMS_{R,c} = w$
+
+. . .
+
+**Estática comparativa — aumento de $w$:**
+
+- **Efeito Substituição:** lazer fica mais caro $\Rightarrow$ trabalha **mais**
+- **Efeito Renda:** trabalhador é vendedor líquido de tempo $\Rightarrow$ mais rico $\Rightarrow$ consome **mais lazer** (trabalha menos)
+
+. . .
+
+**Resultado:**
+
+- Para $w$ baixo: ES domina $\Rightarrow$ oferta de trabalho **positivamente** inclinada
+- Para $w$ alto: ER domina $\Rightarrow$ oferta de trabalho **negativamente** inclinada
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A curva de oferta de trabalho tem formato **backward-bending**: a partir de certo salário, o trabalhador prefere mais lazer a mais renda. Países ricos trabalham menos horas que países pobres.
+:::
+
+## Oferta de Trabalho Interativa
+
+Observe como a renda não-salarial $m_0$ desloca a curva de oferta de trabalho (backward-bending):
+
+<div id="graph-a09-labor" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>m&#8320;: <span id="val-a09-m0">10</span></label>
+  <input type="range" id="sl-a09-m0" min="0" max="50" step="2" value="10" oninput="window.updateA09Labor(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-labor', {
+    boundingbox: [-1, 22, 18, -1],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'L (horas)', withLabel: true, label: { position: 'rt', offset: [-40, -15] } },
+      y: { name: 'w (sal\u00e1rio)', withLabel: true, label: { position: 'rt', offset: [-30, 0] } }
+    }
+  });
+
+  var m0 = 10;
+
+  // Backward-bending labor supply: L = f(w, m0)
+  // Simple parametric model: L rises then falls with w
+  // L(w) = T * (a*w) / (a*w + 1) - b*m0/(w+1)
+  // We trace w on y-axis, L on x-axis parametrically
+  var T = 16, a = 0.3, b = 0.06;
+
+  function laborSupply(w) {
+    var sub = T * (a * w) / (a * w + 1);
+    var inc = b * (m0 + w * sub) / (w + 1);
+    var L = sub - inc;
+    return (L < 0) ? 0 : L;
+  }
+
+  var laborCurve = board.create('curve', [
+    function(w) { return laborSupply(w); },
+    function(w) { return w; },
+    0.5, 20
+  ], { strokeColor: '#1565c0', strokeWidth: 3 });
+
+  // Peak indicator
+  var peakDot = board.create('point', [
+    function() {
+      var bestW = 0.5, bestL = 0;
+      for (var w = 0.5; w <= 20; w += 0.1) {
+        var L = laborSupply(w);
+        if (L > bestL) { bestL = L; bestW = w; }
+      }
+      return bestL;
+    },
+    function() {
+      var bestW = 0.5, bestL = 0;
+      for (var w = 0.5; w <= 20; w += 0.1) {
+        var L = laborSupply(w);
+        if (L > bestL) { bestL = L; bestW = w; }
+      }
+      return bestW;
+    }
+  ], {
+    name: 'pico', size: 4, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 11, offset: [8, 5] }
+  });
+
+  // Labels
+  board.create('text', [14, 18, 'ES domina'], { fontSize: 11, color: '#00897b', fixed: true });
+  board.create('text', [3, 18, 'ER domina'], { fontSize: 11, color: '#C8102E', fixed: true });
+
+  window.updateA09Labor = function(val) {
+    m0 = parseFloat(val);
+    document.getElementById('val-a09-m0').textContent = m0.toFixed(0);
+    board.update();
+  };
+})();
+</script>
+
+## Efeito Renda vs Substituição no Trabalho
+
+:::: {.columns}
+::: {.column width="50%"}
+**Quando o salário $w$ sobe:**
+
+| Efeito | Direção | Sobre o trabalho |
+|:--|:--|:--|
+| Substituição | Lazer mais caro | Trabalha **mais** |
+| Renda | Mais rico | Trabalha **menos** |
+
+. . .
+
+**Resultado líquido:**
+
+- $w$ baixo: $|ES| > |ER|$ $\Rightarrow$ $L$ sobe
+- $w$ alto: $|ER| > |ES|$ $\Rightarrow$ $L$ cai
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Evidência empírica:**
+
+- Horas trabalhadas caíram ~40% nos países ricos desde 1900
+- Elasticidade-salário da oferta: homens $\approx 0.1$, mulheres $\approx 0.5$
+- Loteria: vencedores reduzem horas de trabalho (ER puro)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A backward-bending explica por que aumentar impostos sobre altos salários pode ter efeitos ambíguos sobre a arrecadação: depende de onde estamos na curva.
+:::
+:::
+::::
+
+## Escolha Intertemporal: Setup
+
+O consumidor vive **dois períodos** e decide quanto consumir em cada um.
+
+. . .
+
+- **Renda:** $(m_1, m_2)$ — dotação intertemporal
+- **Consumo:** $(c_1, c_2)$
+- **Taxa de juros:** $r$ (pode emprestar ou tomar emprestado)
+
+. . .
+
+**Poupança:** $s = m_1 - c_1$
+
+- Se $s > 0$: **poupador** (consome menos que a renda no período 1)
+- Se $s < 0$: **tomador de empréstimo** (consome mais que a renda no período 1)
+
+. . .
+
+> A taxa de juros $r$ é o "preço" do consumo presente em termos do consumo futuro.
+
+## Restrição Intertemporal
+
+A restrição pode ser escrita em **valor presente** ou **valor futuro**:
+
+. . .
+
+**Valor Presente:**
+
+$$c_1 + \frac{c_2}{1+r} = m_1 + \frac{m_2}{1+r} \equiv W_{VP}$$
+
+. . .
+
+**Valor Futuro:**
+
+$$c_1(1+r) + c_2 = m_1(1+r) + m_2 \equiv W_{VF}$$
+
+. . .
+
+**Inclinação da reta:** $-\frac{dc_2}{dc_1} = (1+r)$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A reta intertemporal sempre passa pela dotação $(m_1, m_2)$: o consumidor pode sempre escolher consumir exatamente suas rendas em cada período.
+:::
+
+## Escolha Intertemporal Interativa
+
+Ajuste a taxa de juros $r$ e observe a reta intertemporal pivotar em torno da dotação:
+
+<div id="graph-a09-intertemp" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>r: <span id="val-a09-r">0.10</span></label>
+  <input type="range" id="sl-a09-r" min="0.01" max="0.50" step="0.01" value="0.10" oninput="window.updateA09Intertemp(this.value)">
+</div>
+
+<script>
+(function(){
+  var board = JXG.JSXGraph.initBoard('graph-a09-intertemp', {
+    boundingbox: [-5, 180, 180, -5],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: 'c\u2081', withLabel: true, label: { position: 'rt', offset: [-10, -15] } },
+      y: { name: 'c\u2082', withLabel: true, label: { position: 'rt', offset: [-25, 0] } }
+    }
+  });
+
+  var m1 = 80, m2 = 60;
+  var r = 0.10;
+
+  // Endowment point
+  var endowPt = board.create('point', [m1, m2], {
+    name: '(m\u2081, m\u2082)', size: 5, fixed: true,
+    color: '#C8102E', strokeColor: '#C8102E', fillColor: '#C8102E',
+    label: { fontSize: 12, offset: [8, 8] }
+  });
+
+  // Budget line: c2 = m2 + (1+r)*(m1 - c1)
+  var budgetLine = board.create('curve', [
+    function(t) { return t; },
+    function(t) {
+      return m2 + (1 + r) * (m1 - t);
+    },
+    0, 170
+  ], { strokeColor: '#1565c0', strokeWidth: 2.5 });
+
+  // Saver region label (c1 < m1)
+  board.create('text', [20, 155, function() { return 'Poupador'; }], {
+    fontSize: 12, color: '#00897b', fixed: true
+  });
+
+  // Borrower region label (c1 > m1)
+  board.create('text', [120, 20, function() { return 'Tomador'; }], {
+    fontSize: 12, color: '#ff9800', fixed: true
+  });
+
+  // Vertical dashed line at m1
+  board.create('line', [[m1, 0], [m1, 1]], {
+    strokeColor: '#999', strokeWidth: 1, dash: 3, fixed: true
+  });
+
+  // Info text
+  var infoText = board.create('text', [5, 170, function() {
+    var WVP = m1 + m2 / (1 + r);
+    return 'W_{VP} = ' + WVP.toFixed(1) + '  |  (1+r) = ' + (1 + r).toFixed(2);
+  }], { fontSize: 12, color: '#555', fixed: true });
+
+  window.updateA09Intertemp = function(val) {
+    r = parseFloat(val);
+    document.getElementById('val-a09-r').textContent = r.toFixed(2);
+    board.update();
+  };
+})();
+</script>
+
+## Poupador vs Tomador de Empréstimo
+
+:::: {.columns}
+::: {.column width="50%"}
+**Poupador** ($c_1^* < m_1$):
+
+- Empresta $(m_1 - c_1^*)$ no período 1
+- Recebe $(1+r)(m_1 - c_1^*)$ no período 2
+- Consumo futuro: $c_2^* = m_2 + (1+r)(m_1 - c_1^*)$
+
+. . .
+
+> Um poupador **nunca** se torna tomador quando $r$ sobe (preferência revelada).
+:::
+::: {.column width="50%"}
+**Tomador** ($c_1^* > m_1$):
+
+- Toma emprestado $(c_1^* - m_1)$ no período 1
+- Paga $(1+r)(c_1^* - m_1)$ no período 2
+- Consumo futuro: $c_2^* = m_2 - (1+r)(c_1^* - m_1)$
+
+. . .
+
+> Um tomador **pode** se tornar poupador quando $r$ sobe (ambos os efeitos reduzem $c_1$).
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A classificação poupador/tomador é análoga a vendedor/comprador líquido: o poupador "vende" consumo presente e "compra" consumo futuro.
+:::
+
+## Efeito de Mudança na Taxa de Juros
+
+Slutsky com dotações aplicado à escolha intertemporal:
+
+. . .
+
+$$\frac{\partial c_1}{\partial r} = \underbrace{ES}_{\text{< 0}} \;-\; \underbrace{(c_1 - m_1) \cdot \frac{\partial c_1}{\partial W}}_{\text{ER modificado}}$$
+
+. . .
+
+| Agente | ES | ER | $c_1$ quando $r$ sobe |
+|:--|:--|:--|:--|
+| **Poupador** ($c_1 < m_1$) | $c_1 \downarrow$ | $c_1 \uparrow$ (mais rico) | **Ambíguo** |
+| **Tomador** ($c_1 > m_1$) | $c_1 \downarrow$ | $c_1 \downarrow$ (mais pobre) | **Cai com certeza** |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Para o poupador, juros maiores trazem ES e ER em direções opostas — pode poupar mais ou menos. Para o tomador, ambos os efeitos vão na mesma direção: ele reduz $c_1$ inequivocamente.
+:::
+
+## Próxima Aula
+
+**Aula 10 — Simulação: Mercado de Trabalho**
+
+. . .
+
+- Salário de reserva e decisão de participação
+- Equilíbrio competitivo vs. monopsônio
+- Salário mínimo e backward-bending na prática
+- Simulação interativa com diferentes perfis de trabalhadores
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Pesquise o salário mínimo atual no Brasil e compare com o custo de vida na sua cidade. Qual seria o seu **salário de reserva** para aceitar um estágio?
+:::

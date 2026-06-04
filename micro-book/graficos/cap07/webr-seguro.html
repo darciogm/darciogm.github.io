@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Mercado de Seguros</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Mercado de Seguros: seguro justo e demanda por cobertura
+# Cap. 7 — Por que avessos ao risco compram seguro total?
+
+W0   <- 100000  # riqueza inicial
+L    <- 40000   # perda potencial
+prob <- 0.1     # probabilidade de perda
+gamma <- 2      # aversao ao risco CRRA (altere!)
+loading <- 0.2  # carregamento da seguradora (0 = justo)
+
+# Utilidade CRRA: u(W) = W^(1-gamma)/(1-gamma)
+u <- function(W) ifelse(gamma == 1, log(W), W^(1-gamma)/(1-gamma))
+
+# Premio atuarialmente justo: pi_justo = prob * L
+pi_justo <- prob * L
+pi_real  <- pi_justo * (1 + loading)
+
+# Sem seguro
+EU_sem <- prob * u(W0 - L) + (1 - prob) * u(W0)
+EW_sem <- prob * (W0 - L) + (1 - prob) * W0
+
+# Com seguro total (cobertura = L)
+W_seguro_justo <- W0 - pi_justo
+W_seguro_real  <- W0 - pi_real
+EU_justo <- u(W_seguro_justo)
+EU_real  <- u(W_seguro_real)
+
+# Cobertura ótima com carregamento
+# max prob*u(W0-pi-L+C) + (1-prob)*u(W0-pi)
+# onde pi = (1+loading)*prob*C
+# Busca numérica
+C_grid <- seq(0, L, length.out = 1000)
+EU_grid <- sapply(C_grid, function(C) {
+  pi <- (1+loading) * prob * C
+  prob * u(W0 - pi - L + C) + (1 - prob) * u(W0 - pi)
+})
+C_opt <- C_grid[which.max(EU_grid)]
+pi_opt <- (1+loading) * prob * C_opt
+
+cat("=== Mercado de Seguros (CRRA gamma =", gamma, ") ===\n\n")
+cat(sprintf("Riqueza: W0=%.0f, Perda=%.0f, Prob=%.0f%%\n", W0, L, prob*100))
+cat(sprintf("Premio justo = R$ %.0f\n", pi_justo))
+cat(sprintf("Premio real (+%.0f%% loading) = R$ %.0f\n\n", loading*100, pi_real))
+cat(sprintf("Sem seguro:    E[U] = %.2f,  E[W] = R$ %.0f\n", EU_sem, EW_sem))
+cat(sprintf("Seguro justo:  U = %.2f,  W = R$ %.0f\n", EU_justo, W_seguro_justo))
+cat(sprintf("Seguro real:   U = %.2f,  W = R$ %.0f\n\n", EU_real, W_seguro_real))
+cat(sprintf("Cobertura otima: C* = R$ %.0f (%.0f%% da perda)\n", C_opt, C_opt/L*100))
+cat(sprintf("Premio otimo:    R$ %.0f\n", pi_opt))
+if (abs(C_opt - L) < L*0.02) {
+  cat("-> Seguro (quase) total! (premio justo ou gamma alto)\n")
+} else {
+  cat("-> Seguro parcial (loading alto ou gamma baixo)\n")
+}
+
+# Gráfico: estado-contingente
+par(mar = c(4, 4, 3, 1))
+W_bom  <- seq(W0*0.5, W0*1.1, length.out = 200)
+W_ruim_ci <- function(W_b, U_bar) {
+  # prob*u(Wr) + (1-prob)*u(Wb) = U_bar
+  # u(Wr) = (U_bar - (1-prob)*u(Wb)) / prob
+  u_r <- (U_bar - (1-prob)*u(W_b)) / prob
+  if (gamma == 1) exp(u_r) else (u_r * (1-gamma))^(1/(1-gamma))
+}
+
+plot(NA, xlim = c(W0*0.4, W0*1.1), ylim = c(W0*0.4, W0*1.1),
+     xlab = "W (sem perda)", ylab = "W (com perda)",
+     main = "Diagrama Estado-Contingente")
+# Linha de 45 graus (certeza plena)
+abline(0, 1, col = "gray", lty = 2, lwd = 1.5)
+# Dotação
+points(W0, W0-L, pch = 19, col = "#C8102E", cex = 1.5)
+text(W0+1000, W0-L-2000, "Dotacao\n(sem seguro)", col="#C8102E", cex=0.8, font=2)
+# Seguro total
+points(W_seguro_justo, W_seguro_justo, pch = 17, col = "#2a7f2a", cex = 1.5)
+text(W_seguro_justo-5000, W_seguro_justo+3000, "Seguro\ntotal", col="#2a7f2a", cex=0.8, font=2)
+# Linha de seguro justo (slope = -(1-prob)/prob)
+abline(a = W0 - L + W0*(1-prob)/prob, b = -(1-prob)/prob,
+       col = "steelblue", lwd = 1.5)
+legend("topleft",
+       legend = c("45 (certeza)", "Linha seguro justo"),
+       col = c("gray", "steelblue"), lty = c(2, 1), lwd = 1.5, cex = 0.8)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Com seguro atuarialmente justo, o avesso ao risco compra cobertura total (ponto na linha de 45°). Aumente o loading e veja a cobertura ótima cair.
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

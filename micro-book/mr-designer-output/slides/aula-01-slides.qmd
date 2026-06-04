@@ -1,0 +1,408 @@
+---
+title: "Ferramentas Matemáticas do Economista"
+subtitle: "Microeconomia II — Aula 01"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 01"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Por que matemática importa em Micro?
+
+> "A economia é a ciência que estuda como agentes racionais fazem escolhas sob escassez."
+
+. . .
+
+Toda escolha econômica é, no fundo, um **problema de otimização**:
+
+- Consumidor: maximizar utilidade sujeito a orçamento
+- Firma: minimizar custo sujeito a produção
+- Governo: maximizar bem-estar sujeito a restrições políticas
+
+. . .
+
+:::{.callout-tip title="Objetivo da Aula"}
+Revisar e consolidar as ferramentas matemáticas que sustentam toda a análise microeconômica do curso.
+:::
+
+## Revisão: Otimização sem Restrição
+
+Problema fundamental: encontrar $x^*$ tal que
+
+$$\max_{x} f(x)$$
+
+. . .
+
+**Condições necessárias (1ª ordem):**
+
+$$f'(x^*) = 0$$
+
+**Condições suficientes (2ª ordem):**
+
+$$f''(x^*) < 0 \quad \text{(máximo)}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+No ótimo, o ganho marginal de "mais um pouquinho" é exatamente zero — não há como melhorar.
+:::
+
+## Otimização em Uma Variável — Interativo
+
+Mova o ponto sobre a curva e ajuste os parâmetros para ver como o ótimo se desloca:
+
+<div id="graph-a01-optim1var" style="width:700px;height:380px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Centro $a$: <input type="range" id="sl-a01-a" min="-2" max="6" value="3" step="0.2" oninput="updA01Opt()"> <span id="val-a01-a">3.0</span></label>
+  <label>Curvatura $b$: <input type="range" id="sl-a01-b" min="0.2" max="3" value="1" step="0.1" oninput="updA01Opt()"> <span id="val-a01-b">1.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-optim1var',{
+    boundingbox:[-2,9,9,-5], axis:true, showCopyright:false, showNavigation:false
+  });
+  var pA=3, pB=1;
+  function f(x){return -pB*(x-pA)*(x-pA)+pA*pB+3;}
+  function fp(x){return -2*pB*(x-pA);}
+  var curve = brd.create('functiongraph',[f,-5,12],{strokeColor:'#1565c0',strokeWidth:3});
+  var maxPt = brd.create('point',[function(){return pA;},function(){return f(pA);}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'x*',label:{fontSize:14,offset:[10,10]}});
+  var dashV = brd.create('segment',[function(){return [pA,0];},function(){return [pA,f(pA)];}],
+    {strokeColor:'#C8102E',dash:2,strokeWidth:1.5});
+  var glider = brd.create('glider',[1,f(1),curve],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:''});
+  var tang = brd.create('tangent',[glider],{strokeColor:'#ff9800',dash:2,strokeWidth:2});
+  window.updA01Opt = function(){
+    pA = parseFloat(document.getElementById('sl-a01-a').value);
+    pB = parseFloat(document.getElementById('sl-a01-b').value);
+    document.getElementById('val-a01-a').textContent = pA.toFixed(1);
+    document.getElementById('val-a01-b').textContent = pB.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+## Otimização Multivariável e Gradiente
+
+Com $n$ variáveis de escolha: $\max_{x_1, \ldots, x_n} f(x_1, \ldots, x_n)$
+
+. . .
+
+**Gradiente** — vetor de derivadas parciais:
+
+$$\nabla f = \left(\frac{\partial f}{\partial x_1}, \frac{\partial f}{\partial x_2}, \ldots, \frac{\partial f}{\partial x_n}\right)$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**CPO (1ª ordem):**
+
+$$\nabla f(x^*) = \mathbf{0}$$
+:::
+::: {.column width="50%"}
+**CSO (2ª ordem):**
+
+Matriz Hessiana $H$ deve ser negativa definida:
+
+$$H = \begin{bmatrix} f_{11} & f_{12} \\ f_{21} & f_{22} \end{bmatrix}$$
+:::
+::::
+
+## Visualizando o Gradiente
+
+Arraste o ponto sobre o mapa de contorno. A seta mostra a direção do gradiente $\nabla f$.
+
+<div id="graph-a01-gradient" style="width:700px;height:380px;margin:0 auto;"></div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-gradient',{
+    boundingbox:[-1,10,10,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  // f(x,y) = -(x-5)^2 -(y-5)^2 + 50  (paraboloid, max at (5,5))
+  function fval(x,y){return -(x-5)*(x-5)-(y-5)*(y-5)+50;}
+  // Contour lines f=k
+  var levels = [10,20,30,35,40,45,48,50];
+  for(var i=0;i<levels.length;i++){
+    var r = Math.sqrt(50-levels[i]);
+    if(r>0){
+      brd.create('circle',[[5,5],r],{strokeColor:'#1565c0',strokeWidth:1.5,
+        strokeOpacity:0.3+0.07*i,dash:2,fixed:true,highlight:false});
+    } else {
+      brd.create('point',[5,5],{size:3,fillColor:'#00897b',strokeColor:'#00897b',
+        name:'máx',label:{fontSize:14,offset:[10,5]}});
+    }
+  }
+  var P = brd.create('point',[3,7],{size:5,fillColor:'#ff9800',strokeColor:'#ff9800',name:'P',
+    label:{fontSize:14,offset:[10,10]}});
+  var sc = 0.3;
+  var arr = brd.create('arrow',
+    [function(){return [P.X(),P.Y()];},
+     function(){var gx=-2*(P.X()-5),gy=-2*(P.Y()-5);return [P.X()+sc*gx,P.Y()+sc*gy];}],
+    {strokeColor:'#C8102E',strokeWidth:3,lastArrow:{type:2,size:8}});
+  brd.create('text',[function(){return P.X()+0.3;},function(){return P.Y()-0.8;},
+    function(){return '∇f = ('+(-2*(P.X()-5)).toFixed(1)+', '+(-2*(P.Y()-5)).toFixed(1)+')';}],
+    {fontSize:13,color:'#C8102E'});
+})();
+</script>
+
+## Por que Precisamos do Lagrangeano?
+
+Na economia, quase nunca otimizamos **livremente**.
+
+. . .
+
+Sempre há restrições:
+
+- Orçamento do consumidor: $p_1 x_1 + p_2 x_2 = m$
+- Capacidade da firma: $g(K, L) = \bar{q}$
+
+. . .
+
+**Problema genérico:**
+
+$$\max_{x_1, x_2} f(x_1, x_2) \quad \text{s.a.} \quad g(x_1, x_2) = c$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O Lagrangeano transforma um problema restrito em um problema "como se fosse livre" — ao custo de adicionar uma variável extra, $\lambda$.
+:::
+
+## Montando o Lagrangeano
+
+$$\mathcal{L}(x_1, x_2, \lambda) = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]$$
+
+. . .
+
+**Três ingredientes:**
+
+| Componente | Papel |
+|:--|:--|
+| $f(x_1,x_2)$ | Função objetivo |
+| $g(x_1,x_2) = c$ | Restrição |
+| $\lambda$ | Multiplicador de Lagrange |
+
+. . .
+
+A ideia geométrica: no ótimo, as **curvas de nível** de $f$ são tangentes à restrição $g = c$.
+
+## Condições de Primeira Ordem (CPOs)
+
+Derivando $\mathcal{L}$ em relação a cada variável:
+
+$$\frac{\partial \mathcal{L}}{\partial x_1} = \frac{\partial f}{\partial x_1} - \lambda \frac{\partial g}{\partial x_1} = 0$$
+
+$$\frac{\partial \mathcal{L}}{\partial x_2} = \frac{\partial f}{\partial x_2} - \lambda \frac{\partial g}{\partial x_2} = 0$$
+
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = -(g(x_1, x_2) - c) = 0$$
+
+. . .
+
+Dividindo as duas primeiras:
+
+$$\frac{f_1}{f_2} = \frac{g_1}{g_2}$$
+
+> **Taxa marginal de substituição = preço relativo** (no caso do consumidor).
+
+## O Lagrangeano em Ação — Interativo
+
+$\max_{x,y} \; U = xy \quad \text{s.a.} \quad x + y = c$. Mova o slider para alterar a restrição:
+
+<div id="graph-a01-lagrange" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Restrição $c$: <input type="range" id="sl-a01-c" min="2" max="18" value="10" step="0.5" oninput="updA01Lag()"> <span id="val-a01-c">10.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a01-lagrange',{
+    boundingbox:[-1,16,16,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var cVal=10;
+  // Contour curves U=k (hyperbolas y=k/x)
+  var contours=[], conLevels=[4,9,16,25];
+  function drawAll(){
+    brd.suspendUpdate();
+    // Remove old
+    while(brd.objectsList.length>2) brd.removeObject(brd.objectsList[brd.objectsList.length-1]);
+    var optX=cVal/2, optY=cVal/2, optU=optX*optY;
+    // Contour levels
+    var levels=[optU*0.2,optU*0.4,optU*0.6,optU*0.8,optU];
+    for(var i=0;i<levels.length;i++){
+      var k=levels[i];
+      var op = i<4?0.3:0.9;
+      var col = i<4?'#1565c0':'#00897b';
+      var d = i<4?2:0;
+      var w = i<4?1.5:2.5;
+      brd.create('functiongraph',[function(kk){return function(x){return x>0.1?kk/x:NaN;};}(k),0.1,18],
+        {strokeColor:col,strokeWidth:w,strokeOpacity:op,dash:d,highlight:false});
+    }
+    // Constraint line
+    brd.create('line',[[cVal,0],[0,cVal]],{strokeColor:'#C8102E',strokeWidth:2.5,straightFirst:false,straightLast:false,
+      point1:{visible:false},point2:{visible:false}});
+    // Optimal point
+    brd.create('point',[optX,optY],{size:6,fillColor:'#00897b',strokeColor:'#00897b',
+      name:'('+optX.toFixed(1)+', '+optY.toFixed(1)+')',label:{fontSize:13,offset:[10,10]}});
+    brd.unsuspendUpdate();
+  }
+  drawAll();
+  window.updA01Lag = function(){
+    cVal = parseFloat(document.getElementById('sl-a01-c').value);
+    document.getElementById('val-a01-c').textContent = cVal.toFixed(1);
+    drawAll();
+  };
+})();
+</script>
+
+## O Multiplicador $\lambda$ e o Teorema do Envelope
+
+**Interpretação de $\lambda$:**
+
+$$\lambda^* = \frac{\partial f^*}{\partial c}$$
+
+. . .
+
+O multiplicador mede o **valor marginal de relaxar** a restrição em uma unidade.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se o consumidor ganha R\$1 a mais de renda, $\lambda^*$ diz quanto sua utilidade máxima cresce. É o "preço-sombra" da restrição.
+:::
+
+. . .
+
+**Teorema do Envelope:** no ótimo, o efeito de uma mudança paramétrica sobre o valor ótimo depende **apenas** do efeito direto, não do reajuste das variáveis de escolha.
+
+## Estática Comparativa
+
+**Estática comparativa:** como $x^*$ muda quando um parâmetro $\alpha$ se altera?
+
+. . .
+
+Da CPO $f_x(x^*, \alpha) = 0$, pelo Teorema da Função Implícita:
+
+$$\frac{dx^*}{d\alpha} = -\frac{f_{x\alpha}}{f_{xx}}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Sinal de $f_{xx}$:**
+
+CSO garante $f_{xx} < 0$ (máximo)
+:::
+::: {.column width="50%"}
+**Sinal de $f_{x\alpha}$:**
+
+Determina a **direção** do deslocamento de $x^*$
+:::
+::::
+
+. . .
+
+> A estática comparativa transforma derivadas cruzadas em **previsões econômicas**.
+
+## Elasticidade e Funções Homogêneas
+
+**Elasticidade** — medida adimensional de sensibilidade:
+
+$$\varepsilon_{y,x} = \frac{\partial y}{\partial x} \cdot \frac{x}{y} = \frac{d \ln y}{d \ln x}$$
+
+. . .
+
+**Funções homogêneas de grau $k$:**
+
+$$f(tx_1, tx_2) = t^k f(x_1, x_2), \quad \forall t > 0$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Teorema de Euler:**
+
+$$\sum_i x_i \frac{\partial f}{\partial x_i} = k \cdot f$$
+:::
+::: {.column width="50%"}
+**Aplicação:**
+
+Cobb-Douglas $x^\alpha y^\beta$ é homogênea de grau $\alpha + \beta$.
+:::
+::::
+
+## Aplicação: Cobb-Douglas e Homogeneidade
+
+Considere $f(K,L) = K^{0{,}3} L^{0{,}7}$ — homogênea de grau 1.
+
+. . .
+
+**Pelo Teorema de Euler:**
+
+$$K \cdot \frac{\partial f}{\partial K} + L \cdot \frac{\partial f}{\partial L} = 1 \cdot f(K,L)$$
+
+. . .
+
+$$K \cdot 0{,}3 \frac{f}{K} + L \cdot 0{,}7 \frac{f}{L} = f$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se a função de produção tem retornos constantes de escala ($k=1$), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o **Teorema da Exaustão**.
+:::
+
+## Mapa do Curso: De Ferramentas a Mercados
+
+:::: {.columns}
+::: {.column width="50%"}
+**Bloco 1 — Consumidor** (Aulas 1–12)
+
+1. Ferramentas matemáticas
+2. Preferências e utilidade
+3. Escolha ótima e dualidade
+4. Efeitos renda e substituição
+5. Dotações e trabalho
+6. Incerteza e seguros
+:::
+::: {.column width="50%"}
+**Bloco 2 — Firma e Mercados** (Aulas 13–24)
+
+7. Produção e tecnologia
+8. Custos
+9. Lucro e oferta
+10. Equilíbrio competitivo
+11. Monopólio e discriminação
+12. Oligopólio
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Fio Condutor"}
+Cada bloco usa as **mesmas ferramentas** desta aula — o que muda é o contexto econômico.
+:::
+
+## Próxima Aula
+
+**Aula 02 — Oficina Lagrangiano**
+
+. . .
+
+- Teorema do Envelope: aplicações detalhadas
+- Condições de Kuhn-Tucker para desigualdades
+- **Atividade prática:** Gallery Walk com problemas de otimização
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Revise os exercícios do Capítulo 2 e traga dúvidas sobre as CPOs do Lagrangeano.
+:::

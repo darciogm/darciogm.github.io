@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+  Função Valor da Teoria do Prospecto (Kahneman & Tversky)
+  Library: JSXGraph
+  Reason: Interactive sliders for α, β, λ parameters
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Função Valor — Teoria do Prospecto</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .info-box .eq {
+      text-align: center;
+      margin: 0.3rem 0;
+      color: #333;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>\(\alpha\) (ganhos): <span class="val" id="val-alpha">0.88</span></label>
+        <input type="range" id="slider-alpha" min="0.10" max="1.00" step="0.01" value="0.88">
+      </div>
+      <div class="slider-group">
+        <label>\(\beta\) (perdas): <span class="val" id="val-beta">0.88</span></label>
+        <input type="range" id="slider-beta" min="0.10" max="1.00" step="0.01" value="0.88">
+      </div>
+      <div class="slider-group">
+        <label>\(\lambda\) (aversão à perda): <span class="val" id="val-lambda">2.25</span></label>
+        <input type="range" id="slider-lambda" min="1.00" max="4.00" step="0.05" value="2.25">
+      </div>
+      <div class="info-box" id="info">
+        <div class="eq">\(v(x) = x^{\alpha}\) para \(x \geq 0\)</div>
+        <div class="eq">\(v(x) = -\lambda(-x)^{\beta}\) para \(x < 0\)</div>
+        <div style="margin-top:0.5rem; font-size:0.8rem; color:#666;">
+          <strong>Curva vermelha:</strong> Teoria do Prospecto<br>
+          <strong>Linha cinza:</strong> utilidade linear (\(v = x\))
+        </div>
+      </div>
+      <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar (Tversky–Kahneman 1992)</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-110, 115, 115, -155],
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      defaultAxes: {
+        x: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 50, minorTicks: 0, label: { fontSize: 11 } } },
+        y: { name: '', withLabel: false,
+             ticks: { insertTicks: false, ticksDistance: 50, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } } }
+      }
+    });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-110 * 0.55, (115 + (-155)) / 2, '<b><i>v</i>(<i>x</i>)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [115 / 2, -155 * 0.65, '<b><i>x</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    // Reference line v = x
+    board.create('line', [[0,0],[1,1]], {
+      strokeColor: '#ccc', strokeWidth: 1, dash: 2, fixed: true
+    });
+
+    // Reference line v = -x (for comparison)
+    board.create('line', [[0,0],[-1,1]], {
+      strokeColor: '#ccc', strokeWidth: 1, dash: 3, fixed: true
+    });
+
+    var alpha = 0.88, beta = 0.88, lambda = 2.25;
+
+    // Value function curve — gains (x >= 0)
+    var gainCurve = board.create('functiongraph', [
+      function(x) { return x >= 0 ? Math.pow(x, alpha) : 0; },
+      0, 100
+    ], { strokeColor: '#C8102E', strokeWidth: 3 });
+
+    // Value function curve — losses (x < 0)
+    var lossCurve = board.create('functiongraph', [
+      function(x) { return x < 0 ? -lambda * Math.pow(-x, beta) : 0; },
+      -100, 0
+    ], { strokeColor: '#C8102E', strokeWidth: 3 });
+
+    // Origin label
+    var lblRef = board.create('text', [3, -8, 'Ponto de referência'], {
+      fontSize: 11, color: '#666', fixed: true
+    });
+
+    // Gain/Loss labels
+    var lblGanhos = board.create('text', [60, 80, 'Ganhos'], {
+      fontSize: 13, color: '#2a7f2a', fontWeight: 'bold', fixed: true
+    });
+    var lblPerdas = board.create('text', [-95, -100, 'Perdas'], {
+      fontSize: 13, color: '#C8102E', fontWeight: 'bold', fixed: true
+    });
+    var textLabels = [lblRef, lblGanhos, lblPerdas];
+
+    function resetAll() {
+      document.getElementById('slider-alpha').value = 0.88;
+      document.getElementById('slider-beta').value = 0.88;
+      document.getElementById('slider-lambda').value = 2.25;
+      update();
+    }
+
+    function update() {
+      alpha = parseFloat(document.getElementById('slider-alpha').value);
+      beta = parseFloat(document.getElementById('slider-beta').value);
+      lambda = parseFloat(document.getElementById('slider-lambda').value);
+
+      document.getElementById('val-alpha').textContent = alpha.toFixed(2);
+      document.getElementById('val-beta').textContent = beta.toFixed(2);
+      document.getElementById('val-lambda').textContent = lambda.toFixed(2);
+
+      gainCurve.Y = function(x) { return x >= 0 ? Math.pow(x, alpha) : 0; };
+      lossCurve.Y = function(x) { return x < 0 ? -lambda * Math.pow(-x, beta) : 0; };
+
+      board.update();
+    }
+
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      textLabels.forEach(function(t) { t.setAttribute({ visible: show }); });
+      board.update();
+    }
+
+    document.getElementById('slider-alpha').addEventListener('input', update);
+    document.getElementById('slider-beta').addEventListener('input', update);
+    document.getElementById('slider-lambda').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

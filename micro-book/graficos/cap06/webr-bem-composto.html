@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Teorema do Bem Composto de Hicks</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Teorema do Bem Composto de Hicks
+# Cap. 6 — Quando "todo o resto" pode ser tratado como 1 bem
+
+# Cenário: 3 bens (x, y, z)
+# Se py e pz se movem proporcionalmente,
+# podemos tratar (y,z) como um bem composto Y
+
+# U = x^a * (y^b * z^(1-b))^(1-a)
+a <- 0.4;  b <- 0.6   # altere!
+m <- 120
+
+# Precos iniciais
+px <- 3;  py <- 2;  pz <- 4
+
+# Solucao com 3 bens (Cobb-Douglas aninhada)
+x_star  <- a * m / px
+gasto_yz <- (1-a) * m
+y_star  <- b * gasto_yz / py
+z_star  <- (1-b) * gasto_yz / pz
+
+cat("=== Teorema do Bem Composto ===\n\n")
+cat(sprintf("3 bens: x*=%.1f, y*=%.1f, z*=%.1f\n", x_star, y_star, z_star))
+cat(sprintf("Gasto total em (y,z) = R$ %.1f\n\n", py*y_star + pz*z_star))
+
+# Agora: aumento proporcional em py e pz (fator t)
+cat("--- Precos de y e z sobem proporcionalmente ---\n\n")
+for (t in c(1.0, 1.2, 1.5, 2.0)) {
+  py_t <- py * t;  pz_t <- pz * t
+  # Y composto: preco do composto sobe por t
+  x_t <- a * m / px
+  y_t <- b * (1-a) * m / py_t
+  z_t <- (1-b) * (1-a) * m / pz_t
+  # Razao y/z
+  cat(sprintf("t=%.1f: x=%.1f, y=%.2f, z=%.2f, y/z=%.3f\n",
+      t, x_t, y_t, z_t, y_t/z_t))
+}
+cat("\ny/z e CONSTANTE! Precos proporcionais -> composicao fixa.\n")
+cat("Podemos colapsar (y,z) em Y e analisar (x vs Y).\n")
+
+# Gráfico: espaço (x, Y) com Y = py*y + pz*z
+par(mfrow = c(1, 2), mar = c(4, 4, 3, 1))
+x_grid <- seq(0.1, m/px, length.out = 200)
+
+# Reta orcamentaria em (x, Y) para diferentes t
+plot(NA, xlim = c(0, m/px), ylim = c(0, m*1.1),
+     xlab = "x", ylab = "Y = gasto em (y,z)",
+     main = "Espaco do Bem Composto")
+cols <- c("#333", "#2a7f2a", "#C8102E", "#ff9800")
+for (i in seq_along(c(1, 1.2, 1.5, 2.0))) {
+  t <- c(1, 1.2, 1.5, 2.0)[i]
+  Y_line <- m - px * x_grid
+  lines(x_grid[Y_line >= 0], Y_line[Y_line >= 0],
+        col = cols[i], lwd = 2, lty = ifelse(t==1, 1, 2))
+  x_opt <- a * m / px
+  Y_opt <- (1-a) * m
+  if (t == 1) points(x_opt, Y_opt, pch = 19, col = cols[i], cex = 1.3)
+}
+text(5, 100, "x nao muda!\n(CD -> share fixo)", col = "#C8102E", font = 2, cex = 0.8)
+
+# Painel 2: composição interna do composto
+t_vec <- seq(0.5, 3, length.out = 100)
+y_ratio <- sapply(t_vec, function(t) {
+  b * (1-a) * m / (py*t) / ((1-b) * (1-a) * m / (pz*t))
+})
+plot(t_vec, y_ratio, type = "l", col = "steelblue", lwd = 2,
+     xlab = "Fator proporcional t", ylab = "y*/z*",
+     main = "Razao y/z (constante!)")
+abline(h = y_ratio[1], col = "#C8102E", lty = 2)
+text(2, y_ratio[1]*1.05, sprintf("y/z = %.2f", y_ratio[1]),
+     col = "#C8102E", font = 2, cex = 0.9)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Hicks mostrou: se os preços de um grupo de bens se movem <em>proporcionalmente</em>, o grupo inteiro pode ser tratado como um único bem. A composição interna não muda!
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:340}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+  Cap. 9 — Progresso Técnico (Technical Progress)
+  Library: JSXGraph
+  Toggle: Hicks-neutral, Harrod-neutral, Solow-neutral
+  Slider: technology parameter A
+  Shows isoquant shifting inward
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progresso Técnico</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .85rem; margin-bottom: .2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .toggle-group { margin-bottom: .8rem; }
+    .toggle-group label { display: inline-block; margin-right: .2rem; font-size: .8rem; cursor: pointer; padding: .3rem .5rem; border: 1px solid #ccc; border-radius: 4px; margin-bottom: .3rem; }
+    .toggle-group input[type="radio"] { display: none; }
+    .toggle-group input[type="radio"]:checked + span { background: #C8102E; color: #fff; border-radius: 3px; padding: .15rem .4rem; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .83rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) { .graph-container { flex-direction: column; align-items: center; } #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; } .controls { flex-basis: 100%; width: 100%; max-width: 520px; } }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Tipo de Progresso</h3>
+      <div class="toggle-group">
+        <label><input type="radio" name="ptype" value="hicks" checked><span>Hicks-neutro</span></label>
+        <label><input type="radio" name="ptype" value="harrod"><span>Harrod-neutro</span></label>
+        <label><input type="radio" name="ptype" value="solow"><span>Solow-neutro</span></label>
+      </div>
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Tecnologia \(A\): <span class="val" id="val-A">1.00</span></label>
+        <input type="range" id="sl-A" min="1" max="3" step="0.1" value="1">
+      </div>
+      <div class="slider-group">
+        <label>Produto \(q\): <span class="val" id="val-q">5.00</span></label>
+        <input type="range" id="sl-q" min="2" max="10" step="0.5" value="5">
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2.3, 13.5, 13.5, -1.9],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[12,0]], { ticks: { drawLabels: true, minorTicks: 0 } });
+    board.create('axis', [[0,0],[0,12]], { ticks: { drawLabels: true, minorTicks: 0, label: { anchorX: 'right', offset: [-8, 0] } } });
+    // Y-axis: centered, rotated, bold italic
+    board.create('text', [-2.3 * 0.55, 13.5 / 2, '<b><i>K</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+    // X-axis: centered, bold italic
+    board.create('text', [13.5 / 2, -1.9 * 0.65, '<b><i>L</i></b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+    });
+
+    var objs = [];
+    var alpha = 0.4, beta = 0.6;
+
+    // Isoquant K as function of L for q = f(K,L) with technology
+    // Hicks: q = A * K^a * L^b => K = (q/(A*L^b))^(1/a)
+    // Harrod: q = K^a * (A*L)^b => K = (q/(A^b * L^b))^(1/a)
+    // Solow: q = (A*K)^a * L^b => K = (q/(A^a * L^b))^(1/a) / A... let's be precise
+
+    function isoK(L, q, A, type) {
+      if (L <= 0.01) return NaN;
+      var K;
+      if (type === 'hicks') {
+        // q = A * K^alpha * L^beta
+        var num = q / (A * Math.pow(L, beta));
+        if (num <= 0) return NaN;
+        K = Math.pow(num, 1.0 / alpha);
+      } else if (type === 'harrod') {
+        // q = K^alpha * (A*L)^beta
+        var num = q / Math.pow(A * L, beta);
+        if (num <= 0) return NaN;
+        K = Math.pow(num, 1.0 / alpha);
+      } else {
+        // solow: q = (A*K)^alpha * L^beta
+        var num = q / Math.pow(L, beta);
+        if (num <= 0) return NaN;
+        var AK = Math.pow(num, 1.0 / alpha);
+        K = AK / A;
+      }
+      return K;
+    }
+
+    function draw() {
+      for (var i = 0; i < objs.length; i++) board.removeObject(objs[i]);
+      objs = [];
+
+      var type = document.querySelector('input[name="ptype"]:checked').value;
+      var A = parseFloat(document.getElementById('sl-A').value);
+      var q = parseFloat(document.getElementById('sl-q').value);
+      document.getElementById('val-A').textContent = A.toFixed(2);
+      document.getElementById('val-q').textContent = q.toFixed(2);
+
+      // Draw isoquant with A=1 (original)
+      var xs0 = [], ys0 = [];
+      for (var L = 0.05; L <= 12; L += 0.05) {
+        var K = isoK(L, q, 1, type);
+        if (!isNaN(K) && K > 0 && K < 12) { xs0.push(L); ys0.push(K); }
+      }
+      if (xs0.length > 0) {
+        var c0 = board.create('curve', [xs0, ys0], { strokeColor: '#999', strokeWidth: 2, dash: 2 });
+        objs.push(c0);
+        var idx0 = Math.min(xs0.length - 1, Math.floor(xs0.length * 0.75));
+        objs.push(board.create('text', [xs0[idx0]+0.2, ys0[idx0]+0.3, 'A=1'], { fontSize: 10, color: '#999' }));
+      }
+
+      // Draw isoquant with current A
+      if (A > 1.05) {
+        var xs1 = [], ys1 = [];
+        for (var L = 0.05; L <= 12; L += 0.05) {
+          var K = isoK(L, q, A, type);
+          if (!isNaN(K) && K > 0 && K < 12) { xs1.push(L); ys1.push(K); }
+        }
+        if (xs1.length > 0) {
+          var c1 = board.create('curve', [xs1, ys1], { strokeColor: '#C8102E', strokeWidth: 2.5 });
+          objs.push(c1);
+          var idx1 = Math.min(xs1.length - 1, Math.floor(xs1.length * 0.75));
+          objs.push(board.create('text', [xs1[idx1]+0.2, ys1[idx1]+0.3, 'A=' + A.toFixed(1)], { fontSize: 10, color: '#C8102E' }));
+
+          // Arrow showing inward shift along K/L=1 ray
+          var Lref = 4;
+          var K_old = isoK(Lref, q, 1, type);
+          var K_new = isoK(Lref, q, A, type);
+          if (!isNaN(K_old) && !isNaN(K_new) && K_old < 12 && K_new < 12) {
+            var arr = board.create('arrow', [[Lref, K_old], [Lref, K_new]], {
+              strokeColor: '#00897b', strokeWidth: 2
+            });
+            objs.push(arr);
+          }
+        }
+      }
+
+      // Info box
+      var info = document.getElementById('info');
+      var html = '';
+      if (type === 'hicks') {
+        html += '<div class="eq">\\(q = A \\cdot K^{' + alpha + '} L^{' + beta + '}\\)</div>';
+        html += '<div>Hicks-neutro: a TMST não muda para dado \\(K/L\\)</div>';
+        html += '<div>Isoquanta contrai homoteticamente</div>';
+      } else if (type === 'harrod') {
+        html += '<div class="eq">\\(q = K^{' + alpha + '} (AL)^{' + beta + '}\\)</div>';
+        html += '<div>Harrod-neutro (aumentador de trabalho)</div>';
+        html += '<div>Compatível com crescimento equilibrado</div>';
+      } else {
+        html += '<div class="eq">\\(q = (AK)^{' + alpha + '} L^{' + beta + '}\\)</div>';
+        html += '<div>Solow-neutro (aumentador de capital)</div>';
+        html += '<div>Capital efetivo = \\(A \\cdot K\\)</div>';
+      }
+      html += '<hr style="margin:.4rem 0">';
+      html += '<div>\\(A = ' + A.toFixed(2) + '\\): ';
+      if (A > 1.05) {
+        html += 'menos insumos necessarios para \\(q = ' + q.toFixed(1) + '\\)</div>';
+      } else {
+        html += 'tecnologia de referência</div>';
+      }
+
+      info.innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset([info]);
+      board.update();
+    }
+
+    function resetAll() {
+      document.getElementById('sl-A').value = 1;
+      document.getElementById('sl-q').value = 5;
+      document.querySelector('input[name="ptype"][value="hicks"]').checked = true;
+      draw();
+    }
+
+    document.getElementById('sl-A').addEventListener('input', draw);
+    document.getElementById('sl-q').addEventListener('input', draw);
+    document.querySelectorAll('input[name="ptype"]').forEach(function(r) { r.addEventListener('change', draw); });
+    draw();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

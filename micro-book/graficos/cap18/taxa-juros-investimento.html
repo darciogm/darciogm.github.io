@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+  VPL e Taxa de Juros: Por Que o Brasil Investe Pouco
+  Library: Plotly.js
+  Chapter 18 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VPL e Taxa de Juros</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Projeto de Investimento</h3>
+    <div class="slider-group">
+      <label>Investimento \(I_0\): <span class="val" id="val-I">80</span></label>
+      <input type="range" id="slider-I" min="20" max="200" step="5" value="80">
+    </div>
+    <div class="slider-group">
+      <label>Fluxo anual \(C\): <span class="val" id="val-C">25</span></label>
+      <input type="range" id="slider-C" min="5" max="60" step="1" value="25">
+    </div>
+    <div class="slider-group">
+      <label>Horizonte \(T\) (anos): <span class="val" id="val-T">5</span></label>
+      <input type="range" id="slider-T" min="2" max="20" step="1" value="5">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function vpl(I0,C,T,r){var s=0;for(var t=1;t<=T;t++)s+=C/Math.pow(1+r,t);return s-I0;}
+  function tir(I0,C,T){var lo=0,hi=2;for(var i=0;i<80;i++){var m=(lo+hi)/2;if(vpl(I0,C,T,m)>0)lo=m;else hi=m;}return(lo+hi)/2;}
+  function update(){
+    var I0=parseFloat(document.getElementById('slider-I').value);
+    var C=parseFloat(document.getElementById('slider-C').value);
+    var T=parseInt(document.getElementById('slider-T').value);
+    document.getElementById('val-I').textContent=I0;
+    document.getElementById('val-C').textContent=C;
+    document.getElementById('val-T').textContent=T;
+    var rs=[],vs=[];
+    for(var r=0;r<=0.30;r+=0.005){rs.push(r*100);vs.push(vpl(I0,C,T,r)/1000);}
+    var tirVal=tir(I0,C,T);
+    var vplBR=vpl(I0,C,T,0.07)/1000;
+    var vplUS=vpl(I0,C,T,0.02)/1000;
+    var traces=[
+      {x:rs,y:vs,mode:'lines',line:{color:'#1565c0',width:2.5},name:'VPL(r)'},
+      {x:[0,30],y:[0,0],mode:'lines',line:{color:'#999',width:1,dash:'dash'},showlegend:false},
+      {x:[tirVal*100],y:[0],mode:'markers',marker:{size:10,color:'#C8102E',symbol:'diamond'},name:'TIR = '+(tirVal*100).toFixed(1)+'%'},
+      {x:[7],y:[vplBR],mode:'markers',marker:{size:9,color:'#e65100',symbol:'circle'},name:'Brasil (~7%)'},
+      {x:[2],y:[vplUS],mode:'markers',marker:{size:9,color:'#00897b',symbol:'circle'},name:'EUA (~2%)'}
+    ];
+    var shapes=[
+      {type:'line',x0:7,x1:7,y0:Math.min(vs[0],-20)/1000,y1:vplBR,line:{color:'#e65100',width:1,dash:'dot'}},
+      {type:'line',x0:2,x1:2,y0:Math.min(vs[0],-20)/1000,y1:vplUS,line:{color:'#00897b',width:1,dash:'dot'}}
+    ];
+    Plotly.react('plotDiv',traces,{
+      margin:{l:60,r:20,t:25,b:50},
+      xaxis:{title:'Taxa de desconto r (%)',range:[0,30]},
+      yaxis:{title:'VPL (milhares)'},
+      showlegend:true,legend:{x:0.5,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      shapes:shapes,font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    var html='<div style="text-align:center;margin-bottom:0.3rem;">\\(VPL = -I_0 + \\sum_{t=1}^T \\frac{C}{(1+r)^t}\\)</div>';
+    html+='TIR = <strong>'+(tirVal*100).toFixed(1)+'%</strong><br>';
+    html+='<span style="color:#00897b;">VPL (EUA, 2%):</span> <strong>'+(vplUS*1000).toFixed(0)+'</strong><br>';
+    html+='<span style="color:#e65100;">VPL (Brasil, 7%):</span> <strong>'+(vplBR*1000).toFixed(0)+'</strong>';
+    if(vplUS>0&&vplBR<0) html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#C8102E;">Projeto viavel nos EUA, inviavel no Brasil — juros altos destroem investimento.</div>';
+    else html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">Ajuste os parametros para ver como juros altos tornam projetos inviaveis.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-I').value=80;document.getElementById('slider-C').value=25;document.getElementById('slider-T').value=5;update();}
+  ['slider-I','slider-C','slider-T'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

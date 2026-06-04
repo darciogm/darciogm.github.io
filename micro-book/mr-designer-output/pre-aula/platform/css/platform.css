@@ -1,0 +1,136 @@
+/* ==================== PLATFORM CSS ==================== */
+:root {
+  --primary: #1a365d;
+  --primary-light: #2c5282;
+  --accent: #3182ce;
+  --accent-hover: #2b6cb0;
+  --success: #38a169;
+  --warning: #d69e2e;
+  --danger: #e53e3e;
+  --bg: #f7fafc;
+  --card: #fff;
+  --text: #2d3748;
+  --text-muted: #718096;
+  --border: #e2e8f0;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+
+/* ---- LOGIN ---- */
+.login-wrapper{min-height:100vh;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1a365d 0%,#2c5282 100%)}
+.login-card{background:#fff;border-radius:12px;padding:2.5rem;width:100%;max-width:400px;box-shadow:0 20px 60px rgba(0,0,0,0.3)}
+.login-card h1{font-size:1.4rem;text-align:center;margin-bottom:0.3rem;color:var(--primary)}
+.login-card .subtitle{text-align:center;color:var(--text-muted);font-size:0.85rem;margin-bottom:1.5rem}
+.login-card .logo{text-align:center;font-size:2.5rem;margin-bottom:0.5rem}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--text-muted);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.5px}
+.form-group input{width:100%;padding:0.7rem 1rem;border:2px solid var(--border);border-radius:var(--radius);font-size:0.95rem;transition:0.2s}
+.form-group input:focus{outline:none;border-color:var(--accent)}
+.btn{width:100%;padding:0.75rem;border:none;border-radius:var(--radius);font-size:0.95rem;font-weight:600;cursor:pointer;transition:0.2s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-hover)}
+.btn-secondary{background:transparent;color:var(--accent);border:2px solid var(--accent);margin-top:0.5rem}
+.btn-secondary:hover{background:var(--accent);color:#fff}
+.login-error{background:#fed7d7;color:var(--danger);padding:0.6rem;border-radius:6px;font-size:0.85rem;margin-bottom:1rem;display:none}
+.login-footer{text-align:center;margin-top:1rem;font-size:0.75rem;color:var(--text-muted)}
+
+/* ---- TOPBAR ---- */
+.topbar{background:var(--primary);color:#fff;padding:0.7rem 1.5rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.topbar h1{font-size:1rem;font-weight:600}
+.topbar .user-info{display:flex;align-items:center;gap:1rem;font-size:0.85rem}
+.topbar .user-info .name{opacity:0.9}
+.btn-logout{background:rgba(255,255,255,0.15);color:#fff;border:none;padding:0.4rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.8rem}
+.btn-logout:hover{background:rgba(255,255,255,0.3)}
+
+/* ---- PORTAL ---- */
+.portal-header{text-align:center;padding:2rem 1rem 1rem;max-width:800px;margin:0 auto}
+.portal-header h2{font-size:1.5rem;margin-bottom:0.3rem}
+.portal-header p{color:var(--text-muted)}
+.portal-stats{display:flex;justify-content:center;gap:2rem;margin:1.5rem 0;flex-wrap:wrap}
+.stat-badge{text-align:center}
+.stat-badge .val{font-size:1.8rem;font-weight:700;color:var(--accent)}
+.stat-badge .lbl{font-size:0.75rem;color:var(--text-muted)}
+
+.aulas-grid{max-width:1000px;margin:0 auto;padding:0 1rem 2rem;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem}
+.aula-card{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:1.2rem;transition:0.2s;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.aula-card:hover{border-color:var(--accent);box-shadow:0 4px 12px rgba(49,130,206,0.15);transform:translateY(-2px)}
+.aula-card .aula-num{font-size:0.7rem;text-transform:uppercase;letter-spacing:1px;color:var(--accent);font-weight:700;margin-bottom:0.3rem}
+.aula-card .aula-title{font-size:1rem;font-weight:600;margin-bottom:0.3rem}
+.aula-card .aula-desc{font-size:0.8rem;color:var(--text-muted);flex:1;margin-bottom:0.8rem}
+.aula-card .aula-meta{display:flex;justify-content:space-between;align-items:center;font-size:0.75rem}
+.aula-card .aula-meta .time{color:var(--text-muted)}
+.aula-card .badge{display:inline-block;padding:0.15rem 0.5rem;border-radius:10px;font-size:0.65rem;font-weight:700}
+.badge-done{background:#c6f6d5;color:#276749}
+.badge-new{background:#bee3f8;color:#2a4365}
+.badge-progress{background:#fefcbf;color:#744210}
+.aula-card a{text-decoration:none;color:inherit}
+
+/* ---- PRE-AULA PAGE ---- */
+.content-wrapper{max-width:900px;margin:0 auto;padding:1.5rem;text-align:center}
+.content-wrapper h1{font-size:1.6rem;border-bottom:3px solid var(--accent);padding-bottom:0.5rem;margin-bottom:1rem;text-align:center}
+.content-wrapper h2{font-size:1.2rem;margin-top:2rem;margin-bottom:0.5rem;color:var(--primary);text-align:center}
+.content-wrapper h3{font-size:1rem;margin-top:1.5rem;margin-bottom:0.4rem;text-align:center}
+.content-wrapper p{margin-bottom:0.8rem;text-align:left}
+.content-wrapper ol,.content-wrapper ul{text-align:left}
+.content-wrapper table{width:100%;border-collapse:collapse;margin:1rem auto;font-size:0.85rem;text-align:left}
+.content-wrapper th{background:#edf2f7;padding:0.5rem 0.8rem;text-align:left;border-bottom:2px solid var(--border)}
+.content-wrapper td{padding:0.5rem 0.8rem;border-bottom:1px solid #f0f0f0}
+.content-wrapper code{background:#edf2f7;padding:0.15rem 0.4rem;border-radius:3px;font-size:0.9em}
+.content-wrapper pre{background:#1a202c;color:#e2e8f0;padding:1rem;border-radius:var(--radius);overflow-x:auto;margin:1rem 0;text-align:left}
+.content-wrapper blockquote{border-left:4px solid var(--accent);padding:0.5rem 1rem;margin:1rem 0;background:#ebf8ff;border-radius:0 var(--radius) var(--radius) 0;text-align:left}
+/* Display equations — extra breathing room */
+.content-wrapper .math.display,.content-wrapper mjx-container[display="true"]{display:block;margin:1.2rem 0;padding:0.6rem 0}
+.content-wrapper p:has(.math.display){margin:1.2rem 0}
+/* Inline math — slight spacing */
+.content-wrapper .math.inline,.content-wrapper mjx-container:not([display="true"]){margin:0 0.1em}
+.content-wrapper img{max-width:100%;border-radius:var(--radius);display:block;margin:1rem auto}
+.content-wrapper iframe{display:block;border:1px solid var(--border);border-radius:var(--radius);width:calc(100% + 3rem);margin:0 -1.5rem 0.5rem;height:560px}
+
+/* Admonitions */
+.admonition{border-radius:var(--radius);padding:1rem 1.2rem;margin:1rem auto;border-left:4px solid;text-align:left}
+.admonition-title{font-weight:700;font-size:0.85rem;margin-bottom:0.4rem;text-transform:uppercase;letter-spacing:0.3px}
+.admonition.info{background:#ebf8ff;border-color:#3182ce;}.admonition.info .admonition-title{color:#2b6cb0}
+.admonition.tip{background:#f0fff4;border-color:#38a169;}.admonition.tip .admonition-title{color:#276749}
+.admonition.note{background:#fefcbf;border-color:#d69e2e;}.admonition.note .admonition-title{color:#744210}
+.admonition.warning{background:#fff5f5;border-color:#e53e3e;}.admonition.warning .admonition-title{color:#c53030}
+.admonition.abstract{background:#e9d8fd;border-color:#805ad5;}.admonition.abstract .admonition-title{color:#6b46c1}
+.admonition.example{background:#e6fffa;border-color:#319795;}.admonition.example .admonition-title{color:#285e61}
+
+/* Collapsible solutions */
+details{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);margin:0.8rem auto;overflow:hidden;text-align:left}
+details summary{padding:0.7rem 1rem;cursor:pointer;font-weight:600;font-size:0.85rem;background:#f7fafc;user-select:none}
+details summary:hover{background:#edf2f7}
+details[open] summary{border-bottom:1px solid var(--border)}
+details .solution-body{padding:1rem}
+
+/* ---- QUIZ ---- */
+.quiz-container{background:#f7fafc;border:2px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin:1.5rem auto;text-align:left}
+.quiz-container h3{font-size:1rem;margin-bottom:1rem;color:var(--primary)}
+.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.quiz-score{font-size:0.9rem;font-weight:600;color:var(--accent)}
+.quiz-question{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid #e2e8f0}
+.quiz-question:last-child{border-bottom:none;margin-bottom:0}
+.quiz-question .q-text{font-weight:600;margin-bottom:0.6rem;font-size:0.9rem}
+.quiz-option{display:block;padding:0.5rem 0.8rem;margin:0.3rem 0;border:2px solid var(--border);border-radius:6px;cursor:pointer;font-size:0.85rem;transition:0.15s}
+.quiz-option:hover{border-color:var(--accent);background:#ebf8ff}
+.quiz-option.selected{border-color:var(--accent);background:#bee3f8}
+.quiz-option.correct{border-color:var(--success)!important;background:#c6f6d5!important}
+.quiz-option.incorrect{border-color:var(--danger)!important;background:#fed7d7!important}
+.quiz-feedback{display:none;margin-top:0.5rem;padding:0.5rem 0.8rem;border-radius:6px;font-size:0.8rem}
+.feedback-correct{background:#c6f6d5;color:#276749}
+.feedback-incorrect{background:#fed7d7;color:#9b2c2c}
+.quiz-submit{margin-top:1rem}
+
+/* ---- PROGRESS ---- */
+.progress-bar{height:6px;background:#e2e8f0;border-radius:3px;margin:0.5rem 0}
+.progress-fill{height:100%;background:var(--accent);border-radius:3px;transition:width 0.3s}
+
+/* ---- RESPONSIVE ---- */
+@media(max-width:640px){
+  .aulas-grid{grid-template-columns:1fr}
+  .portal-stats{gap:1rem}
+  .content-wrapper{padding:1rem}
+  .topbar{flex-wrap:wrap;gap:0.5rem}
+}

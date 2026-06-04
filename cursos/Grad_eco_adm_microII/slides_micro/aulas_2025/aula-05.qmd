@@ -1,0 +1,306 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 05 — Maximização de Utilidade e Demanda Marshalliana"
+author: "Prof. Darcio Genicolo Martins"
+date: "Demandas Ótimas, Utilidade Indireta e Identidade de Roy"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Demandas Marshallianas {data-background-color="#E50505"}
+
+## Recapitulação: Do Lagrangeano à Demanda
+
+Na aula anterior, resolvemos o problema do consumidor e obtivemos as CPOs.
+
+. . .
+
+As quantidades ótimas como funções de preços e renda são as **demandas marshallianas**:
+
+::: {.eq-highlight}
+$$x_i^* = x_i(p_1, p_2, \ldots, p_n, I), \quad i = 1, \ldots, n$$
+:::
+
+. . .
+
+:::{.callout-note title="Alfred Marshall (1842–1924)"}
+Sistematizou a análise de demanda em *Principles of Economics* (1890). A curva de demanda preço-quantidade é herança direta de Marshall.
+:::
+
+## Propriedades Fundamentais
+
+As demandas marshallianas obedecem a três propriedades:
+
+. . .
+
+1. **Homogeneidade de grau zero**: $x_i(t\mathbf{p}, tI) = x_i(\mathbf{p}, I)$
+   - Duplicar preços e renda não altera quantidades
+   - O que importa são **preços relativos**
+
+. . .
+
+2. **Lei de Walras**: $\mathbf{p} \cdot \mathbf{x}^*(\mathbf{p}, I) = I$
+   - O consumidor **gasta toda a renda** (sob monotonicidade)
+
+. . .
+
+3. **Negatividade do efeito substituição** (via Slutsky — Aula 19)
+
+## Restrição Orçamentária
+
+<iframe src="graficos/cap04/restricao-orcamentaria.html" title="Restrição Orçamentária" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Catálogo de Demandas — Cobb-Douglas {.smaller}
+
+Para $u = x_1^a x_2^b$ com $a + b = 1$:
+
+::: {.eq-highlight}
+$$x_1^* = \frac{a \, I}{p_1}, \qquad x_2^* = \frac{(1-a) \, I}{p_2}$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Propriedades**
+
+- Parcelas de gasto **fixas**: $a$ e $1-a$
+- Demanda **linear** em $I$
+- **Inversamente proporcional** ao próprio preço
+- Não depende do preço do outro bem
+:::
+::: {.column width="50%"}
+**Verificação HOD0**
+
+$x_1(tp_1, tp_2, tI) = \frac{a \cdot tI}{tp_1} = \frac{aI}{p_1}$ ✓
+
+**Verificação Walras**
+
+$p_1 \cdot \frac{aI}{p_1} + p_2 \cdot \frac{(1-a)I}{p_2} = aI + (1-a)I = I$ ✓
+:::
+::::
+
+## Catálogo: Substitutos e Complementos {.smaller}
+
+:::: {.columns}
+::: {.column width="48%"}
+**Substitutos perfeitos** ($u = ax_1 + bx_2$)
+
+$$x_1^* = \begin{cases} I/p_1 & \text{se } a/b > p_1/p_2 \\ 0 & \text{se } a/b < p_1/p_2 \\ [0, I/p_1] & \text{se } a/b = p_1/p_2 \end{cases}$$
+
+- Demanda **tudo-ou-nada**
+- Solução de canto típica
+:::
+::: {.column width="48%"}
+**Complementos perfeitos** ($u = \min\{x_1/a, x_2/b\}$)
+
+$$x_1^* = \frac{b \, I}{b\,p_1 + a\,p_2}, \quad x_2^* = \frac{a \, I}{b\,p_1 + a\,p_2}$$
+
+- Consumo sempre na proporção $a:b$
+- Demanda depende de **ambos** os preços
+:::
+::::
+
+. . .
+
+:::{.callout-warning title="Cuidado"}
+Para substitutos, o Lagrangeano falha — a TMS é constante. Para complementos, a função não é diferenciável na quina.
+:::
+
+## Catálogo: Quase-Linear e CES {.smaller}
+
+| Preferência | Demanda $x_1^*$ | Características |
+|:---|:---|:---|
+| Quase-linear: $v(x_1)+x_2$ | $v'^{-1}(p_1/p_2)$ | Não depende de $I$; efeito renda **zero** em $x_1$ |
+| CES: $(x_1^\rho+x_2^\rho)^{1/\rho}$ | $\frac{p_1^{\sigma-1} \cdot I}{p_1^\sigma + p_2^\sigma}$ | $\sigma = \frac{1}{1-\rho}$; unifica todos os casos |
+
+. . .
+
+:::{.callout-note title="A CES como caso geral"}
+$\rho \to 0$: Cobb-Douglas ($\sigma=1$). $\rho=1$: Substitutos ($\sigma \to \infty$). $\rho \to -\infty$: Complementos ($\sigma \to 0$).
+:::
+
+## Equilíbrio do Consumidor — Interativo
+
+<iframe src="graficos/cap04/equilibrio-consumidor.html" title="Equilíbrio do Consumidor" width="1100" height="560" style="border:none;"></iframe>
+
+## Utilidade Indireta {data-background-color="#E50505"}
+
+## A Função de Utilidade Indireta $V(\mathbf{p}, I)$
+
+Substituindo as demandas ótimas na utilidade:
+
+::: {.eq-highlight}
+$$V(p_1, p_2, I) = u\big(x_1^*(p_1,p_2,I), \; x_2^*(p_1,p_2,I)\big) = \max_{\mathbf{x} \in B} u(\mathbf{x})$$
+:::
+
+. . .
+
+$V$ é o **termômetro de felicidade**: traduz preços e renda em satisfação máxima alcançável.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O nome "indireta" é preciso: a utilidade vem *indiretamente*, via os preços e a renda que determinam as quantidades ótimas.
+:::
+
+## Propriedades de $V(\mathbf{p}, I)$ {.smaller}
+
+| Propriedade | Significado |
+|:---|:---|
+| HOD0 em $(\mathbf{p}, I)$ | Duplicar tudo não muda a felicidade |
+| Não crescente em $p_i$ | Preço sobe → bem-estar cai |
+| Não decrescente em $I$ | Mais renda → mais felicidade (ou igual) |
+| Quase-convexa em $\mathbf{p}$ | Preços "ruins" formam conjuntos convexos |
+| Contínua | Sem saltos abruptos |
+
+. . .
+
+:::{.callout-warning title="Erro Comum"}
+Quase-convexidade de $V$ em $\mathbf{p}$ **não** significa convexidade. São conceitos diferentes!
+:::
+
+## Exemplo: $V$ para Cobb-Douglas
+
+Para $u = x_1^a x_2^{1-a}$:
+
+$$V(p_1, p_2, I) = \left(\frac{a}{p_1}\right)^a \left(\frac{1-a}{p_2}\right)^{1-a} \cdot I$$
+
+. . .
+
+- **Linear** em $I$ → utilidade marginal da renda é constante
+- **Decrescente** em cada preço ✓
+- Fácil de derivar → será útil para a Identidade de Roy
+
+## A Identidade de Roy {data-background-color="#E50505"}
+
+## O Atalho Mais Elegante
+
+Se alguém lhe dá $V(\mathbf{p}, I)$, você consegue **recuperar as demandas** sem resolver Lagrangeano:
+
+::: {.eq-highlight}
+$$x_i(\mathbf{p}, I) = -\frac{\partial V / \partial p_i}{\partial V / \partial I}$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+É como extrair a receita do bolo a partir do sabor. O extrato bancário ($V$) já contém toda a informação sobre o carrinho de compras.
+:::
+
+## Verificação: Roy para Cobb-Douglas
+
+$V = (a/p_1)^a ((1-a)/p_2)^{1-a} \cdot I$
+
+. . .
+
+$$\frac{\partial V}{\partial p_1} = -a \cdot \frac{V}{p_1}, \qquad \frac{\partial V}{\partial I} = \frac{V}{I}$$
+
+. . .
+
+$$x_1 = -\frac{-aV/p_1}{V/I} = \frac{aI}{p_1} \quad \checkmark$$
+
+. . .
+
+:::{.callout-note title="Aplicação empírica"}
+Na prática, pesquisadores frequentemente estimam $V$ ou a função dispêndio primeiro, e depois usam Roy ou Shephard para obter as demandas.
+:::
+
+## Curva de Demanda Marshalliana — Interativo
+
+Varie $p_1$ e observe como $x_1^*$ responde:
+
+<div id="graph-a17-demand" style="width:700px;height:330px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$I$: <input type="range" id="sl-a17-I" min="50" max="300" value="120" step="10" oninput="updA17()"> <span id="val-a17-I">120</span></label>
+  <label>$\alpha$: <input type="range" id="sl-a17-a" min="0.1" max="0.9" value="0.5" step="0.05" oninput="updA17()"> <span id="val-a17-a">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a17-demand',{
+    boundingbox:[-0.5,25,15,-1.5], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'p\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2081*',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var crv;
+  function draw(){
+    var I=parseFloat(document.getElementById('sl-a17-I').value),
+        a=parseFloat(document.getElementById('sl-a17-a').value);
+    document.getElementById('val-a17-I').textContent=I;
+    document.getElementById('val-a17-a').textContent=a.toFixed(2);
+    brd.suspendUpdate();
+    if(crv) brd.removeObject(crv);
+    crv = brd.create('functiongraph',[function(p){return p>0.2?a*I/p:NaN;},0.2,14],
+      {strokeColor:'#E50505',strokeWidth:3});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA17=draw;
+})();
+</script>
+
+## Restrições Testáveis da Demanda
+
+As propriedades da marshalliana impõem **restrições testáveis** sobre dados de consumo:
+
+. . .
+
+- Se $x_i(t\mathbf{p}, tI) \neq x_i(\mathbf{p}, I)$ → **ilusão monetária** (viola HOD0)
+- Se $\sum p_j x_j^* \neq I$ → consumidor não esgota a renda (viola Walras)
+- Se a simetria de Slutsky falha → dados inconsistentes com maximização
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A teoria do consumidor não é apenas abstração: as propriedades das demandas são **hipóteses falsificáveis**. Dados da POF/IBGE podem ser usados para testar se o comportamento observado é consistente com racionalidade.
+:::
+
+## Demanda Marshalliana vs. Hicksiana
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html" title="Demanda Marshalliana vs. Hicksiana" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Conexões {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Fórmula / Resultado |
+|:---|:---|
+| Demanda marshalliana | $x_i^* = x_i(\mathbf{p}, I)$ |
+| HOD0 | $x_i(t\mathbf{p}, tI) = x_i(\mathbf{p}, I)$ |
+| Lei de Walras | $\mathbf{p} \cdot \mathbf{x}^* = I$ |
+| Utilidade indireta | $V(\mathbf{p}, I) = u(\mathbf{x}^*(\mathbf{p}, I))$ |
+| Identidade de Roy | $x_i = -(\partial V/\partial p_i)/(\partial V/\partial I)$ |
+| CD: demandas | $x_i^* = \frac{a_i}{\sum a_j} \cdot \frac{I}{p_i}$ |
+
+. . .
+
+**Próxima aula**: Minimização do Dispêndio — o problema *dual* do consumidor, demanda hicksiana e função dispêndio.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

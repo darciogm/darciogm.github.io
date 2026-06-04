@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 16 — Escolha sob Incerteza IV: Mercados de Risco e Informação — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-16-escolha-sob-incerteza-iv-mercados-de-risco-e-informação">Pré-Aula 16 — Escolha sob Incerteza IV: Mercados de Risco e Informação</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 7, Seção 7.7</strong> e <strong>Cap. 19, Seções 19.1–19.2</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Explicar como a seleção adversa pode levar ao colapso de mercados (modelo de Akerlof).</li>
+<li>Distinguir entre risco moral e seleção adversa e identificar exemplos em mercados brasileiros.</li>
+<li>Descrever os mecanismos de sinalização (Spence) e screening (Rothschild-Stiglitz) como soluções para informação assimétrica.</li>
+</ol>
+<hr />
+<h2 id="mercado-de-seguros-e-informação-assimétrica">1. Mercado de Seguros e Informação Assimétrica</h2>
+<p>No modelo básico de seguros (Aula 14), assumimos que a seguradora conhece a probabilidade de sinistro <span class="math inline">\(p\)</span>. Na prática, <strong>o segurado conhece seu risco melhor que a seguradora</strong> — temos <strong>informação assimétrica</strong>.</p>
+<p>Dois problemas fundamentais surgem:</p>
+<ul>
+<li><strong>Seleção adversa</strong> (antes do contrato): indivíduos de alto risco são os mais propensos a comprar seguro.</li>
+<li><strong>Risco moral</strong> (após o contrato): o segurado toma menos cuidado após obter cobertura.</li>
+</ul>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A informação assimétrica cria um círculo vicioso: a seguradora aumenta o prêmio para cobrir os altos riscos, o que expulsa os baixos riscos do mercado, o que piora ainda mais o pool de segurados. No limite, o mercado pode desaparecer.</p>
+</div>
+<hr />
+<h2 id="seleção-adversa-o-mercado-de-limões">2. Seleção Adversa: O Mercado de Limões</h2>
+<p>Akerlof (1970) analisou o mercado de carros usados. Vendedores conhecem a qualidade do carro; compradores não. Se há carros bons (valor <span class="math inline">\(V_H\)</span>) e ruins/“limões” (valor <span class="math inline">\(V_L\)</span>), o comprador oferece o preço esperado:</p>
+<p><span class="math display">\[P^* = \theta V_H + (1-\theta) V_L\]</span></p>
+<p>onde <span class="math inline">\(\theta\)</span> é a fração esperada de carros bons. Se <span class="math inline">\(P^* &lt; V_H\)</span>, donos de carros bons <strong>saem do mercado</strong>. Isso reduz <span class="math inline">\(\theta\)</span>, reduz <span class="math inline">\(P^*\)</span>, e mais vendedores bons saem — <strong>espiral adversa</strong>.</p>
+<p>No caso extremo, apenas limões são vendidos: o mercado colapsa para bens de qualidade.</p>
+<iframe src="graficos/cap19/mercado-limoes.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Varie a proporção de carros bons e observe como o preço de equilíbrio se ajusta. Note o ponto crítico em que vendedores de carros bons abandonam o mercado.</p>
+</div>
+<hr />
+<h2 id="risco-moral">3. Risco Moral</h2>
+<p>O <strong>risco moral</strong> (moral hazard) ocorre quando o comportamento do agente muda <strong>após</strong> a contratação, de forma não observável pelo principal:</p>
+<ul>
+<li>Segurado de automóvel dirige com menos cuidado após contratar seguro total.</li>
+<li>Trabalhador com estabilidade reduz esforço.</li>
+<li>Banco “grande demais para falir” assume riscos excessivos.</li>
+</ul>
+<p><strong>Soluções típicas:</strong></p>
+<ul>
+<li><strong>Franquias e copagamentos</strong>: o segurado retém parte do risco → incentivo a tomar cuidado.</li>
+<li><strong>Monitoramento</strong>: câmeras, auditorias, avaliações de desempenho.</li>
+<li><strong>Contratos contingentes</strong>: bônus por resultado, pagamento por desempenho.</li>
+</ul>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A franquia resolve parcialmente o risco moral: como o segurado paga os primeiros R$ <span class="math inline">\(d\)</span> de qualquer sinistro, ele ainda tem incentivo para ser cauteloso. É um trade-off entre proteção contra risco e incentivos ao cuidado.</p>
+</div>
+<hr />
+<h2 id="sinalização-spence">4. Sinalização (Spence)</h2>
+<p>Michael Spence (1973) mostrou como a parte informada pode <strong>sinalizar</strong> sua qualidade por meio de ações custosas:</p>
+<ul>
+<li>Trabalhadores de alta produtividade obtêm educação como <strong>sinal</strong>, mesmo que a educação não aumente diretamente a produtividade.</li>
+<li>O sinal funciona se for <strong>mais custoso</strong> para o tipo ruim imitar.</li>
+</ul>
+<p><strong>Condição de separação</strong>: custo do sinal para tipo alto &lt; benefício; custo para tipo baixo &gt; benefício.</p>
+<p><span class="math display">\[w_H - c_H(e^*) &gt; w_L \quad \text{e} \quad w_H - c_L(e^*) &lt; w_L\]</span></p>
+<p>onde <span class="math inline">\(c_H &lt; c_L\)</span> (tipo alto tem custo menor para adquirir educação <span class="math inline">\(e^*\)</span>).</p>
+<iframe src="graficos/cap07/seguro.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Os conceitos de autosseleção no mercado de seguros são análogos à sinalização: diferentes tipos escolhem contratos diferentes, revelando informação privada.</p>
+</div>
+<hr />
+<h2 id="screening-rothschild-stiglitz-e-aplicações-no-brasil">5. Screening (Rothschild-Stiglitz) e Aplicações no Brasil</h2>
+<p>Quando a parte <strong>desinformada</strong> age primeiro, ela pode oferecer um <strong>menu de contratos</strong> que induz autosseleção:</p>
+<ul>
+<li>Seguradora oferece: contrato A (cobertura alta, prêmio alto) e contrato B (cobertura baixa, prêmio baixo).</li>
+<li>Desenhados para que altos riscos prefiram A e baixos riscos prefiram B.</li>
+</ul>
+<p><strong>Condição de compatibilidade de incentivos (IC):</strong> cada tipo deve preferir o contrato desenhado para ele.</p>
+<p><strong>Aplicações no Brasil:</strong></p>
+<ul>
+<li><strong>SUS</strong>: sistema universal enfrenta seleção adversa reversa — quem pode pagar sai para planos privados, deixando o SUS com população de maior custo médio.</li>
+<li><strong>Proagro</strong>: seguro agrícola subsidiado enfrenta tanto seleção adversa (regiões mais arriscadas demandam mais) quanto risco moral (menor cuidado com manejo).</li>
+</ul>
+<iframe src="graficos/cap08/ellsberg-urnas.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Este gráfico ilustra a incerteza sobre probabilidades. Em mercados com informação assimétrica, a seguradora enfrenta ambiguidade similar: não sabe a verdadeira distribuição de riscos dos segurados.</p>
+</div>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Sinalização e screening são espelhos: na sinalização, quem tem informação age primeiro; no screening, quem não tem informação desenha o menu. Ambos exploram o fato de que imitar é mais custoso para tipos ruins.</p>
+</div>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Em um mercado de carros usados, carros bons valem R$ 20.000 para compradores e R$ 15.000 para vendedores; limões valem R$ 10.000 para compradores e R$ 5.000 para vendedores. Se 50% são bons, qual o preço de equilíbrio? O mercado colapsa?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Preço esperado pelo comprador: <span class="math inline">\(P = 0{,}5 \times 20000 + 0{,}5 \times 10000 = 15000\)</span>.<br />
+Vendedores de carros bons exigem pelo menos R$ 15.000 → aceitam vender a R$ 15.000 (marginalmente).<br />
+Vendedores de limões exigem R$ 5.000 → aceitam.<br />
+O mercado não colapsa totalmente neste caso. Porém, se o custo de oportunidade dos bons fosse R$ 16.000, eles sairiam e só limões seriam vendidos (<span class="math inline">\(P = 10000\)</span>).</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Explique por que planos de saúde no Brasil cobram prêmios maiores para faixas etárias mais altas. Isso é seleção adversa ou precificação por risco?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>É uma combinação. A <strong>precificação por risco</strong> reflete o fato observável de que idosos têm maior frequência de uso. Porém, há <strong>seleção adversa residual</strong>: dentro de cada faixa etária, pessoas mais doentes (informação privada) têm maior propensão a contratar planos mais completos. A ANS regula o fator de variação entre faixas (máximo de 1:6), justamente para evitar a exclusão de idosos — uma intervenção que reconhece a falha de mercado.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Uma empresa oferece dois contratos de seguro: A (cobertura total, prêmio R$ 500) e B (cobertura 50%, prêmio R$ 150). Se o alto risco (<span class="math inline">\(p = 0{,}3\)</span>, perda <span class="math inline">\(L = 2000\)</span>) prefere A e o baixo risco (<span class="math inline">\(p = 0{,}1\)</span>) prefere B, verifique se o contrato A é lucrativo.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Lucro esperado de A para alto risco: <span class="math inline">\(500 - 0{,}3 \times 2000 = 500 - 600 = -100\)</span>.<br />
+O contrato A isolado dá <strong>prejuízo</strong> com alto risco! Para o menu ser viável, a seguradora precisa que o lucro de B com baixo risco compense:<br />
+Lucro de B: <span class="math inline">\(150 - 0{,}1 \times 1000 = 150 - 100 = 50\)</span>.<br />
+Com proporções adequadas, o pool pode ser sustentável, mas o contrato A deve ser ajustado (prêmio mínimo de R$ 600 para break-even com alto risco).</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="a">
+<div class="q-text">Q1. A seleção adversa ocorre:</div>
+<div class="quiz-option" data-value="a">(a) Antes da contratação, quando uma parte tem informação privada sobre seu tipo</div>
+<div class="quiz-option" data-value="b">(b) Depois da contratação, quando o comportamento muda</div>
+<div class="quiz-option" data-value="c">(c) Quando ambas as partes têm informação completa</div>
+<div class="quiz-option" data-value="d">(d) Apenas em mercados de seguros</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. No modelo de Akerlof, o mercado de limões pode colapsar porque:</div>
+<div class="quiz-option" data-value="a">(a) Compradores são irracionais</div>
+<div class="quiz-option" data-value="b">(b) Vendedores são desonestos</div>
+<div class="quiz-option" data-value="c">(c) O preço médio expulsa vendedores de bens de alta qualidade</div>
+<div class="quiz-option" data-value="d">(d) O governo impõe preços máximos</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. O risco moral é mitigado por:</div>
+<div class="quiz-option" data-value="a">(a) Cobertura total sem franquia</div>
+<div class="quiz-option" data-value="b">(b) Franquias, copagamentos e monitoramento</div>
+<div class="quiz-option" data-value="c">(c) Prêmio atuarialmente justo</div>
+<div class="quiz-option" data-value="d">(d) Seleção adversa</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="b">
+<div class="q-text">Q4. Na sinalização de Spence, a educação funciona como sinal porque:</div>
+<div class="quiz-option" data-value="a">(a) Aumenta a produtividade de todos igualmente</div>
+<div class="quiz-option" data-value="b">(b) É relativamente menos custosa para trabalhadores de alta produtividade</div>
+<div class="quiz-option" data-value="c">(c) É obrigatória por lei</div>
+<div class="quiz-option" data-value="d">(d) Todos os tipos investem igualmente</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="c">
+<div class="q-text">Q5. No screening de Rothschild-Stiglitz, a seguradora:</div>
+<div class="quiz-option" data-value="a">(a) Oferece um único contrato para todos</div>
+<div class="quiz-option" data-value="b">(b) Exige exame médico perfeito</div>
+<div class="quiz-option" data-value="c">(c) Oferece um menu de contratos que induz autosseleção</div>
+<div class="quiz-option" data-value="d">(d) Recusa segurar altos riscos</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-16')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p>Na <strong>Aula 17</strong>, iniciaremos a teoria da firma com a função de produção, isoquantas, TMST e rendimentos de escala.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-16');
+MicroQuiz.init('aula-16');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

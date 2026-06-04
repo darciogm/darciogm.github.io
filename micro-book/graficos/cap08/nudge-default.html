@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!--
+  Nudge: Impacto do Default — Opt-in vs Opt-out
+  Library: JSXGraph (bar chart)
+  Reason: Interactive visualization of default effect on participation
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impacto do Default — Opt-in vs Opt-out</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 420px;
+      max-width: 520px;
+      height: 420px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 280px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      margin: 0.3rem 0;
+      font-size: 0.85rem;
+    }
+    .stat-label { color: #666; }
+    .stat-val { font-weight: 700; color: #C8102E; }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 740px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="slider-group">
+        <label>Adesão <em>opt-in</em> (%): <span class="val" id="val-optin">49</span></label>
+        <input type="range" id="slider-optin" min="10" max="80" step="1" value="49">
+      </div>
+      <div class="slider-group">
+        <label>Adesão <em>opt-out</em> (%): <span class="val" id="val-optout">86</span></label>
+        <input type="range" id="slider-optout" min="50" max="99" step="1" value="86">
+      </div>
+      <div class="slider-group">
+        <label>Funcionários: <span class="val" id="val-n">1000</span></label>
+        <input type="range" id="slider-n" min="100" max="5000" step="100" value="1000">
+      </div>
+      <div class="info-box">
+        <div style="font-size:0.8rem; color:#666; margin-bottom:0.5rem;">
+          Dados de referência: Madrian e Shea (2001)<br>
+          <em>Opt-in</em>: 49% → <em>Opt-out</em>: 86%
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Aderentes <em>opt-in</em>:</span>
+          <span class="stat-val" id="stat-in">490</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Aderentes <em>opt-out</em>:</span>
+          <span class="stat-val" id="stat-out">860</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Ganho por inércia:</span>
+          <span class="stat-val" id="stat-gain">+370</span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Aumento relativo:</span>
+          <span class="stat-val" id="stat-pct">+75,5%</span>
+        </div>
+      </div>
+      <button class="btn-reset" onclick="resetAll()">Resetar (Madrian–Shea 2001)</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-0.8, 118, 4.5, -16],
+      showCopyright: false,
+      showNavigation: false,
+      axis: false
+    });
+
+    // Y axis
+    board.create('axis', [[0, 0], [0, 1]], {
+      ticks: { insertTicks: false, ticksDistance: 20, minorTicks: 0, label: { fontSize: 11, anchorX: 'right', offset: [-8, 0] } },
+      name: '', withLabel: false
+    });
+    // Y-axis: centered, rotated, bold
+    board.create('text', [-0.8 * 0.55, 118 / 2, '<b>Adesão (%)</b>'], {
+        fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+    });
+
+    // X axis (no numbers)
+    board.create('segment', [[0, 0], [3.5, 0]], {
+      strokeColor: '#333', strokeWidth: 1, fixed: true
+    });
+
+    var optinRate = 49, optoutRate = 86, nEmployees = 1000;
+
+    // Bar for opt-in
+    var barIn = board.create('polygon', [
+      [0.5, 0], [1.3, 0], [1.3, optinRate], [0.5, optinRate]
+    ], {
+      fillColor: '#999', fillOpacity: 0.7,
+      borders: { strokeColor: '#666', strokeWidth: 1 },
+      vertices: { visible: false }, fixed: true, hasInnerPoints: true
+    });
+
+    // Bar for opt-out
+    var barOut = board.create('polygon', [
+      [2.0, 0], [2.8, 0], [2.8, optoutRate], [2.0, optoutRate]
+    ], {
+      fillColor: '#C8102E', fillOpacity: 0.7,
+      borders: { strokeColor: '#8b0000', strokeWidth: 1 },
+      vertices: { visible: false }, fixed: true, hasInnerPoints: true
+    });
+
+    // Labels
+    var labelIn = board.create('text', [0.9, -4, 'Opt-in'], {
+      fontSize: 12, anchorX: 'middle', fixed: true
+    });
+    var labelOut = board.create('text', [2.4, -4, 'Opt-out'], {
+      fontSize: 12, anchorX: 'middle', fixed: true
+    });
+
+    var valIn = board.create('text', [0.9, optinRate + 3, optinRate + '%'], {
+      fontSize: 13, fontWeight: 'bold', anchorX: 'middle', color: '#666', fixed: true
+    });
+    var valOut = board.create('text', [2.4, optoutRate + 3, optoutRate + '%'], {
+      fontSize: 13, fontWeight: 'bold', anchorX: 'middle', color: '#C8102E', fixed: true
+    });
+
+    function resetAll() {
+      document.getElementById('slider-optin').value = 49;
+      document.getElementById('slider-optout').value = 86;
+      document.getElementById('slider-n').value = 1000;
+      update();
+    }
+
+    function update() {
+      optinRate = parseInt(document.getElementById('slider-optin').value);
+      optoutRate = parseInt(document.getElementById('slider-optout').value);
+      nEmployees = parseInt(document.getElementById('slider-n').value);
+
+      document.getElementById('val-optin').textContent = optinRate;
+      document.getElementById('val-optout').textContent = optoutRate;
+      document.getElementById('val-n').textContent = nEmployees;
+
+      // Update bars by moving vertices
+      barIn.vertices[2].moveTo([1.3, optinRate]);
+      barIn.vertices[3].moveTo([0.5, optinRate]);
+      barOut.vertices[2].moveTo([2.8, optoutRate]);
+      barOut.vertices[3].moveTo([2.0, optoutRate]);
+
+      valIn.setText(optinRate + '%');
+      valIn.moveTo([0.9, optinRate + 3]);
+      valOut.setText(optoutRate + '%');
+      valOut.moveTo([2.4, optoutRate + 3]);
+
+      var nIn = Math.round(nEmployees * optinRate / 100);
+      var nOut = Math.round(nEmployees * optoutRate / 100);
+      var gain = nOut - nIn;
+      var pct = ((gain / nIn) * 100).toFixed(1);
+
+      document.getElementById('stat-in').textContent = nIn;
+      document.getElementById('stat-out').textContent = nOut;
+      document.getElementById('stat-gain').textContent = '+' + gain;
+      document.getElementById('stat-pct').textContent = '+' + pct + '%';
+
+      board.update();
+    }
+
+    document.getElementById('slider-optin').addEventListener('input', update);
+    document.getElementById('slider-optout').addEventListener('input', update);
+    document.getElementById('slider-n').addEventListener('input', update);
+    update();
+  </script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Funções Custo por Tipo de Tecnologia</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:300px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Funcoes Custo: CD, Linear, Leontief, CES
+# Comparacao lado a lado
+# ============================================
+
+w <- 4;  v <- 1  # precos dos insumos
+q_seq <- seq(0.1, 10, length = 500)
+
+# --- 1. Cobb-Douglas ---
+# (a) CRS: q = K^0.5 * L^0.5  (alpha+beta = 1)
+C_cd_crs <- function(q) {
+  kappa <- 2 * (0.5^(-0.5) * 0.5^(-0.5))
+  kappa * w^0.5 * v^0.5 * q   # linear em q
+}
+
+# (b) DRS: q = K^0.25 * L^0.25  (alpha+beta = 0.5)
+C_cd_drs <- function(q) {
+  # C = kappa * w^0.5 * v^0.5 * q^2
+  kappa <- 1 * (0.25^(-0.25) * 0.25^(-0.25))^2
+  kappa * w^0.5 * v^0.5 * q^2
+}
+
+# (c) IRS: q = K^0.4 * L^0.6  com alpha+beta = 1 mas A > 1
+# Usaremos alpha=0.6, beta=0.9 => s=1.5
+C_cd_irs <- function(q) {
+  a <- 0.6; b <- 0.9; s <- a + b
+  kappa <- s * (a^(-a) * b^(-b))^(1/s)
+  kappa * w^(b/s) * v^(a/s) * q^(1/s)  # q^(2/3), concava
+}
+
+# --- 2. Linear: q = 2K + L ---
+C_linear <- function(q) {
+  q * min(v/2, w/1)  # min{v/alpha, w/beta}
+}
+
+# --- 3. Leontief: q = min{K, 2L} ---
+C_leontief <- function(q) {
+  (1 * v + 0.5 * w) * q   # alpha*v + beta*w (com K/1 = L/0.5)
+}
+
+# --- Calculos ---
+C1 <- C_cd_crs(q_seq)
+C2 <- sapply(q_seq, C_cd_drs)
+C3 <- C_cd_irs(q_seq)
+C4 <- sapply(q_seq, C_linear)
+C5 <- sapply(q_seq, C_leontief)
+
+# --- Tabela resumo ---
+cat("====== FUNCOES CUSTO: CATALOGO ======\n")
+cat("Precos: w =", w, " v =", v, "\n\n")
+
+cat("1. CD (CRS): q = K^0.5 L^0.5\n")
+cat("   C(q) =", round(C_cd_crs(1), 2), "* q  |  CMg = CMe =", round(C_cd_crs(1), 2), "\n\n")
+
+cat("2. CD (DRS): q = K^0.25 L^0.25\n")
+cat("   C(q) ~ q^2  |  CMg crescente  |  CMe crescente\n\n")
+
+cat("3. CD (IRS): q = K^0.6 L^0.9\n")
+cat("   C(q) ~ q^(2/3)  |  CMg decrescente  |  CMe decrescente\n\n")
+
+cat("4. Linear: q = 2K + L\n")
+cat("   C(q) = min{v/2, w/1}*q = min{", v/2, ",", w, "}*q =", min(v/2, w)*1, "*q\n")
+cat("   Firma usa so capital (v/alpha < w/beta)\n\n")
+
+cat("5. Leontief: q = min{K, 2L}\n")
+cat("   C(q) = (v + w/2)*q =", (v + w/2), "*q  |  Independe dos precos!\n")
+
+# --- Graficos ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Custo Total
+plot(q_seq, C1, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "q", ylab = "C(q)", main = "Custo Total",
+     ylim = c(0, max(C2) * 0.6), cex.lab = 1.1)
+lines(q_seq, C2, lwd = 2, col = "#dc3545")
+lines(q_seq, C3, lwd = 2, col = "#198754")
+lines(q_seq, C4, lwd = 2, col = "#fd7e14", lty = 2)
+lines(q_seq, C5, lwd = 2, col = "#6f42c1", lty = 3)
+
+legend("topleft",
+       legend = c("CD (CRS)", "CD (DRS)", "CD (IRS)", "Linear", "Leontief"),
+       col = c("#0d6efd", "#dc3545", "#198754", "#fd7e14", "#6f42c1"),
+       lwd = c(3, 2, 2, 2, 2), lty = c(1, 1, 1, 2, 3),
+       cex = 0.75, bg = "white")
+
+# Painel 2: Custo Medio
+CMe1 <- C1 / q_seq
+CMe2 <- C2 / q_seq
+CMe3 <- C3 / q_seq
+CMe4 <- C4 / q_seq
+CMe5 <- C5 / q_seq
+
+plot(q_seq, CMe1, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "q", ylab = "CMe(q)", main = "Custo Medio",
+     ylim = c(0, max(CMe2[q_seq > 1]) * 1.2), cex.lab = 1.1)
+lines(q_seq, CMe2, lwd = 2, col = "#dc3545")
+lines(q_seq, CMe3, lwd = 2, col = "#198754")
+lines(q_seq, CMe4, lwd = 2, col = "#fd7e14", lty = 2)
+lines(q_seq, CMe5, lwd = 2, col = "#6f42c1", lty = 3)
+
+legend("topright",
+       legend = c("CD (CRS) - const.", "CD (DRS) - cresc.",
+                  "CD (IRS) - decresc.", "Linear - const.", "Leontief - const."),
+       col = c("#0d6efd", "#dc3545", "#198754", "#fd7e14", "#6f42c1"),
+       lwd = c(3, 2, 2, 2, 2), lty = c(1, 1, 1, 2, 3),
+       cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:360}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Imposto sobre o Monopolista</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Imposto sobre o monopolista
+# Exercicio Resolvido 15.3
+# ============================================
+
+# --- Parametros ---
+a <- 60   # demanda: p = a - q
+c <- 12   # custo marginal
+t <- 8    # imposto unitario
+
+cat("====== IMPOSTO SOBRE O MONOPOLISTA ======\n")
+cat("Demanda: p =", a, "- q\n")
+cat("CMg =", c, "  Imposto t =", t, "\n\n")
+
+# --- Antes do imposto ---
+qm0 <- (a - c) / 2
+pm0 <- a - qm0
+lucro0 <- (pm0 - c) * qm0
+EC0 <- 0.5 * (a - pm0) * qm0
+
+cat("--- Antes do imposto ---\n")
+cat("q^m =", qm0, "  p^m =", pm0, "\n")
+cat("Lucro =", lucro0, "  EC =", EC0, "\n\n")
+
+# --- Depois do imposto ---
+c_eff <- c + t
+qm1 <- (a - c_eff) / 2
+pm1 <- a - qm1
+lucro1 <- (pm1 - c_eff) * qm1
+EC1 <- 0.5 * (a - pm1) * qm1
+receita_fiscal <- t * qm1
+
+cat("--- Depois do imposto ---\n")
+cat("CMg efetivo =", c_eff, "\n")
+cat("q^m(t) =", qm1, "  p^m(t) =", pm1, "\n")
+cat("Lucro (liq. imposto) =", lucro1, "  EC =", EC1, "\n")
+cat("Receita fiscal = t*q =", receita_fiscal, "\n\n")
+
+# --- Analise do repasse ---
+delta_p <- pm1 - pm0
+repasse <- delta_p / t * 100
+delta_EC <- EC1 - EC0
+delta_lucro <- lucro1 - lucro0
+
+cat("--- Analise do repasse ---\n")
+cat("Delta p =", delta_p, " (repasse:", repasse, "%)\n")
+cat("Delta EC =", delta_EC, "\n")
+cat("Delta lucro =", delta_lucro, "\n")
+cat("Receita fiscal =", receita_fiscal, "\n")
+
+# PPM antes e depois
+qc <- a - c
+PPM0 <- 0.5 * (pm0 - c) * (qc - qm0)
+qc1 <- a - c_eff
+PPM1 <- 0.5 * (pm1 - c_eff) * (qc1 - qm1)
+delta_PPM <- PPM1 - PPM0
+
+cat("\nPPM antes =", PPM0, "  PPM depois =", PPM1, "\n")
+cat("Delta PPM =", delta_PPM, "\n")
+cat("Perda total (consumidor+produtor) =", abs(delta_EC) + abs(delta_lucro), "\n")
+cat("Receita fiscal =", receita_fiscal, "\n")
+cat("Diferenca =", abs(delta_EC) + abs(delta_lucro) - receita_fiscal, "= Delta PPM\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: Antes e depois
+q_seq <- seq(0, 55, length = 300)
+p_dem <- a - q_seq
+RMg0 <- a - 2 * q_seq
+
+plot(q_seq, p_dem, type = "l", lwd = 3, col = "#0d6efd",
+     ylim = c(0, 65), xlim = c(0, 55),
+     xlab = "q", ylab = "p",
+     main = "Efeito do imposto unitario")
+lines(q_seq, RMg0, lwd = 2, col = "#6f42c1", lty = 2)
+abline(h = c, col = "#198754", lwd = 2)
+abline(h = c_eff, col = "#dc3545", lwd = 2, lty = 3)
+
+points(qm0, pm0, pch = 19, col = "#198754", cex = 1.8)
+points(qm1, pm1, pch = 17, col = "#dc3545", cex = 1.8)
+arrows(qm0 - 0.5, pm0 + 0.5, qm1 + 0.5, pm1 - 0.5,
+       col = "#fd7e14", lwd = 2, length = 0.08)
+
+text(qm0 + 1.5, pm0 - 2, "Antes", col = "#198754", cex = 0.8, font = 2)
+text(qm1 - 1, pm1 + 2.5, "Depois", col = "#dc3545", cex = 0.8, font = 2)
+
+legend("topright",
+       legend = c("Demanda", "RMg", paste0("CMg = ", c),
+                  paste0("CMg+t = ", c_eff)),
+       col = c("#0d6efd", "#6f42c1", "#198754", "#dc3545"),
+       lwd = c(3, 2, 2, 2), lty = c(1, 2, 1, 3),
+       cex = 0.65, bg = "white")
+
+# Painel 2: Repasse vs taxa
+t_seq <- seq(0, a - c - 1, length = 200)
+repasse_pct <- rep(50, length(t_seq))  # sempre 50% com demanda linear
+lucro_seq <- ((a - c - t_seq) / 2)^2
+receita_seq <- t_seq * (a - c - t_seq) / 2
+
+plot(t_seq, receita_seq, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Imposto (t)", ylab = "R$ / %",
+     main = "Receita fiscal e lucro",
+     ylim = c(0, max(lucro_seq) * 1.1))
+lines(t_seq, lucro_seq, lwd = 3, col = "#198754")
+abline(v = t, col = "#fd7e14", lty = 2, lwd = 1.5)
+abline(h = 50, col = "#adb5bd", lty = 3)
+text(t + 1, max(lucro_seq) * 0.9, paste0("t = ", t),
+     col = "#fd7e14", cex = 0.8, font = 2)
+
+legend("topright",
+       legend = c("Receita fiscal", "Lucro", "Repasse = 50%"),
+       col = c("#0d6efd", "#198754", "#adb5bd"),
+       lwd = c(3, 3, 1), lty = c(1, 1, 3),
+       cex = 0.65, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

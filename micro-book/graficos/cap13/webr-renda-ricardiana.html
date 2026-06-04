@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Renda Ricardiana e Industria de Custos Crescentes</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Renda ricardiana em industria de custos crescentes
+# Exercicio Resolvido 13.1
+# ============================================
+
+# --- Oferta de longo prazo e demanda ---
+# Oferta LP: p = 20 + 0.05*Q
+# Demanda 1: Q = 800 - 10*p
+# Demanda 2: Q = 1000 - 10*p (choque positivo)
+
+p_S <- function(Q) 20 + 0.05 * Q
+Q_D1 <- function(p) 800 - 10 * p
+Q_D2 <- function(p) 1000 - 10 * p
+
+# --- Equilibrio 1 ---
+# 800 - 10p = (p - 20)/0.05 = 20p - 400
+# 1200 = 30p => p = 40
+Q1 <- 400; p1 <- 40
+
+# --- Equilibrio 2 ---
+# 1000 - 10p = 20p - 400 => 1400 = 30p => p = 46.67
+p2 <- 1400/30; Q2 <- Q_D2(p2)
+
+# --- Renda ricardiana (area acima da oferta LP) ---
+RR1 <- 0.5 * (p1 - 20) * Q1
+RR2 <- 0.5 * (p2 - 20) * Q2
+
+cat("====== RENDA RICARDIANA ======\n")
+cat("Oferta LP: p = 20 + 0.05Q\n")
+cat("Demanda 1: Q = 800 - 10p\n")
+cat("Demanda 2: Q = 1000 - 10p\n\n")
+
+cat("--- Equilibrio 1 ---\n")
+cat("p* =", p1, " Q* =", Q1, "\n")
+cat("Renda ricardiana = 0.5*(", p1, "- 20)*", Q1, "=", RR1, "\n\n")
+
+cat("--- Equilibrio 2 (pos-choque de demanda) ---\n")
+cat("p* =", round(p2, 2), " Q* =", round(Q2, 2), "\n")
+cat("Renda ricardiana =", round(RR2, 1), "\n")
+cat("Variacao =", round(RR2 - RR1, 1), " (+", round((RR2/RR1 - 1)*100, 1), "%)\n\n")
+
+cat("--- Interpretacao ---\n")
+cat("A renda ricardiana e' o pagamento aos fatores inframarginais\n")
+cat("(terras ferteis, localizacao privilegiada, etc.).\n")
+cat("NAO e' lucro da firma — e' custo de oportunidade do fator escasso.\n")
+cat("Ricardo: 'Nao e' porque os alugueis sao altos que o trigo e' caro;\n")
+cat("          e' porque o trigo e' caro que os alugueis sao altos.'\n")
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+Q_seq <- seq(0, 700, length = 300)
+p_seq <- seq(0, 70, length = 300)
+
+# Painel 1: Equilibrio 1
+plot(Q_seq, p_S(Q_seq), type = "l", lwd = 3, col = "#dc3545",
+     ylim = c(0, 70), xlim = c(0, 700),
+     xlab = "Q", ylab = "p",
+     main = "Equilibrio 1: demanda original")
+lines(Q_D1(p_seq), p_seq, lwd = 3, col = "#0d6efd")
+
+# Area de renda ricardiana
+Q_rr <- seq(0, Q1, length = 200)
+polygon(c(Q_rr, rev(Q_rr)),
+        c(rep(p1, length(Q_rr)), p_S(rev(Q_rr))),
+        col = rgb(0.1, 0.53, 0.33, 0.2), border = NA)
+text(Q1/2, (p1 + 20)/2, paste0("RR = ", RR1),
+     col = "#198754", cex = 1, font = 2)
+
+points(Q1, p1, pch = 19, col = "#6f42c1", cex = 1.8)
+text(Q1, p1, paste0("  E1"), pos = 4, cex = 0.8, col = "#6f42c1", font = 2)
+
+legend("topright", legend = c("Oferta LP", "Demanda", "Renda ricardiana"),
+       col = c("#dc3545", "#0d6efd", rgb(0.1, 0.53, 0.33, 0.5)),
+       lwd = c(3, 3, NA), pch = c(NA, NA, 15), cex = 0.7, bg = "white")
+
+# Painel 2: Equilibrio 2 (pos-choque)
+plot(Q_seq, p_S(Q_seq), type = "l", lwd = 3, col = "#dc3545",
+     ylim = c(0, 70), xlim = c(0, 700),
+     xlab = "Q", ylab = "p",
+     main = "Equilibrio 2: demanda expandida")
+lines(Q_D1(p_seq), p_seq, lwd = 1.5, col = "#0d6efd", lty = 2)
+lines(Q_D2(p_seq), p_seq, lwd = 3, col = "#0d6efd")
+
+# Area de renda ricardiana 2
+Q_rr2 <- seq(0, Q2, length = 200)
+polygon(c(Q_rr2, rev(Q_rr2)),
+        c(rep(p2, length(Q_rr2)), p_S(rev(Q_rr2))),
+        col = rgb(0.1, 0.53, 0.33, 0.2), border = NA)
+text(Q2/2, (p2 + 20)/2, paste0("RR = ", round(RR2)),
+     col = "#198754", cex = 1, font = 2)
+
+points(Q1, p1, pch = 1, col = "#adb5bd", cex = 1.5)
+points(Q2, p2, pch = 19, col = "#6f42c1", cex = 1.8)
+text(Q2, p2, paste0("  E2"), pos = 4, cex = 0.8, col = "#6f42c1", font = 2)
+
+# Seta de transicao
+arrows(Q1 + 5, p1 + 1, Q2 - 5, p2 - 1,
+       col = "#fd7e14", lwd = 2, length = 0.08)
+
+legend("topright", legend = c("Oferta LP", "D (nova)", "D (antiga)", "RR"),
+       col = c("#dc3545", "#0d6efd", "#0d6efd", rgb(0.1, 0.53, 0.33, 0.5)),
+       lwd = c(3, 3, 1.5, NA), lty = c(1, 1, 2, NA),
+       pch = c(NA, NA, NA, 15), cex = 0.7, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

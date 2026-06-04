@@ -1,0 +1,12 @@
+{
+  "name": "mpe-micro-i-supabase-scripts",
+  "version": "1.0.0",
+  "description": "Scripts administrativos para o Supabase da disciplina Microeconomia I MPE 2026/32",
+  "private": true,
+  "scripts": {
+    "import": "node import-turma.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}

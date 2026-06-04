@@ -1,0 +1,15 @@
+TF	Se o custo marginal da empresa em monopólio for constante e igual a \ 10, e a elasticidade-preço da demanda for igual a -2, o preço do produto será \ 20;	true
+TF	Quanto menos elástica for a curva de demanda de uma empresa, maior poder de monopólio ela terá;	true
+TF	O poder de monopsônio permite à empresa compradora adquirir o produto por um preço inferior ao competitivo;	true
+TF	Quanto menos elástica for a curva de oferta, maior será a diferença entre a despesa marginal e a despesa média, e maior será o poder de monopsônio do comprador;	true
+TF	Chama-se captura de renda ao processo pelo qual as empresas aplicam recursos produtivos em atividade de lobby para adquirir, manter ou exercer seu poder de monopólio.	true
+TF	Uma firma monopolista, que opera com várias fábricas, aloca sua produção entre elas de forma a igualar o custo médio em cada uma das fábricas.	false
+TF	Uma firma capaz de discriminação de preços de terceiro grau obtém lucro maior ou igual, em comparação com a situação na qual ela não fosse capaz de discriminar.	true
+TF	Uma firma monopolista, que se depara com curva de demanda com elasticidade constante, é indiferente sobre a quantidade produzida.	false
+TF	Para obter eficiência econômica, o regulador de um monopólio natural deve escolher a alocação que minimiza o custo médio unitário da firma.	false
+TF	Se o monopolista for capaz de realizar discriminação de preços de primeiro grau, a alocação de recursos será eficiente em termos paretianos.	true
+TF	Na discriminação de preços de terceiro grau, a receita marginal deve ser igual para os diferentes grupos de consumidores e igual ao custo marginal;	true
+TF	Na discriminação de preços de terceiro grau, o preço mais elevado será cobrado dos consumidores com demanda mais elástica;	false
+TF	A discriminação de preços intertemporal cobra preços mais elevados dos consumidores mais impacientes, reduzindo o preço mais tarde para incentivar o consumo de massa;	true
+TF	A tarifa em duas partes é eficaz quando as demandas dos consumidores são relativamente homogêneas;	true
+TF	Quando as demandas são heterogêneas e estão positivamente correlacionadas, a prática do pacote pode ser uma técnica eficaz para a fixação de preços.	false

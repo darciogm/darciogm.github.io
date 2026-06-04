@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head>
+<script src="aula-11-slides_files/libs/clipboard/clipboard.min.js"></script>
+<script src="aula-11-slides_files/libs/quarto-html/tabby.min.js"></script>
+<script src="aula-11-slides_files/libs/quarto-html/popper.min.js"></script>
+<script src="aula-11-slides_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="aula-11-slides_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="aula-11-slides_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="aula-11-slides_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.40">
+
+  <meta name="author" content="Insper">
+  <title>Incerteza e Utilidade Esperada</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="aula-11-slides_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="aula-11-slides_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="aula-11-slides_files/libs/revealjs/dist/theme/quarto-ee6a354ff8ea7d9782c29025ce848fbb.css">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="aula-11-slides_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Incerteza e Utilidade Esperada</h1>
+  <p class="subtitle">Microeconomia II — Aula 11</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Insper 
+</div>
+</div>
+</div>
+
+</section>
+<section id="a-aposta" class="slide level2">
+<h2>A Aposta</h2>
+<blockquote>
+<p>Você pagaria R$ 5 por uma loteria que paga R$ 12 com 50% de chance e R$ 0 com 50%?</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Valor esperado:</strong> <span class="math inline">\(E[X] = 0{,}5 \times 12 + 0{,}5 \times 0 = 6 &gt; 5\)</span></p>
+</div>
+<div class="fragment">
+<p>Parece um bom negócio. Mas muitas pessoas <strong>recusam</strong>.</p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O valor esperado diz que vale a pena, mas a possibilidade de perder R$ 5 com certeza gera desconforto. Precisamos de uma teoria que capture a <strong>atitude em relação ao risco</strong> — a <strong>utilidade esperada</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="loterias-e-valor-esperado" class="slide level2">
+<h2>Loterias e Valor Esperado</h2>
+<p>Uma <strong>loteria</strong> <span class="math inline">\(\mathcal{L}\)</span> é uma distribuição de probabilidade sobre resultados:</p>
+<p><span class="math display">\[\mathcal{L} = (x_1, \pi_1; \; x_2, \pi_2), \quad \pi_1 + \pi_2 = 1\]</span></p>
+<div class="fragment">
+<p><strong>Valor esperado:</strong></p>
+<p><span class="math display">\[E[X] = \pi_1 x_1 + \pi_2 x_2\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Generalização para <span class="math inline">\(n\)</span> resultados:</strong></p>
+<p><span class="math display">\[\mathcal{L} = (x_1, \pi_1; \; \ldots; \; x_n, \pi_n), \quad E[X] = \sum_{i=1}^n \pi_i x_i\]</span></p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>O valor esperado resume a loteria em um único número — mas será que captura tudo?</p>
+</blockquote>
+</div>
+</section>
+<section id="o-paradoxo-de-são-petersburgo" class="slide level2">
+<h2>O Paradoxo de São Petersburgo</h2>
+<p><strong>Jogo:</strong> lance uma moeda até sair cara. Se cara sai na jogada <span class="math inline">\(n\)</span>, você recebe <span class="math inline">\(2^n\)</span> reais.</p>
+<div class="fragment">
+<p><span class="math display">\[E[\text{ganho}] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Problema:</strong> o valor esperado é <strong>infinito</strong>, mas ninguém pagaria R$ 1 milhão para jogar.</p>
+</div>
+<div class="fragment">
+<p><strong>Solução de Bernoulli (1738):</strong> as pessoas maximizam a <strong>utilidade esperada</strong>, não o valor esperado. Com <span class="math inline">\(U(x) = \ln(x)\)</span>:</p>
+<p><span class="math display">\[E[U] = \sum_{n=1}^{\infty} \frac{1}{2^n} \ln(2^n) = \ln 2 \sum_{n=1}^{\infty} \frac{n}{2^n} = 2\ln 2 \approx 1{,}39\]</span></p>
+</div>
+</section>
+<section id="axiomas-de-von-neumann-morgenstern" class="slide level2">
+<h2>Axiomas de Von Neumann-Morgenstern</h2>
+<p>Para que exista uma função de utilidade esperada, precisamos de quatro axiomas sobre preferências <span class="math inline">\(\succsim\)</span> definidas em loterias:</p>
+<div class="fragment">
+<ol type="1">
+<li><p><strong>Completude:</strong> para quaisquer <span class="math inline">\(\mathcal{L}_1, \mathcal{L}_2\)</span>, ou <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_2\)</span> ou <span class="math inline">\(\mathcal{L}_2 \succsim \mathcal{L}_1\)</span></p></li>
+<li><p><strong>Transitividade:</strong> se <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_2\)</span> e <span class="math inline">\(\mathcal{L}_2 \succsim \mathcal{L}_3\)</span>, então <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_3\)</span></p></li>
+</ol>
+</div>
+<div class="fragment">
+<ol start="3" type="1">
+<li><p><strong>Continuidade:</strong> se <span class="math inline">\(\mathcal{L}_1 \succ \mathcal{L}_2 \succ \mathcal{L}_3\)</span>, existe <span class="math inline">\(\alpha \in (0,1)\)</span> tal que <span class="math inline">\(\mathcal{L}_2 \sim \alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3\)</span></p></li>
+<li><p><strong>Independência:</strong> se <span class="math inline">\(\mathcal{L}_1 \succsim \mathcal{L}_2\)</span>, então para todo <span class="math inline">\(\alpha \in (0,1)\)</span> e <span class="math inline">\(\mathcal{L}_3\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[\alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3 \succsim \alpha \mathcal{L}_2 + (1-\alpha)\mathcal{L}_3\]</span></p>
+</div>
+</section>
+<section id="teorema-da-utilidade-esperada" class="slide level2">
+<h2>Teorema da Utilidade Esperada</h2>
+<p><strong>Teorema (VNM):</strong> Se <span class="math inline">\(\succsim\)</span> satisfaz os quatro axiomas, existe <span class="math inline">\(U: \mathbb{R} \to \mathbb{R}\)</span> tal que:</p>
+<p><span class="math display">\[\mathcal{L}_1 \succsim \mathcal{L}_2 \iff EU(\mathcal{L}_1) \geq EU(\mathcal{L}_2)\]</span></p>
+<div class="fragment">
+<p>onde:</p>
+<p><span class="math display">\[EU(\mathcal{L}) = \pi_1 U(x_1) + \pi_2 U(x_2)\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Unicidade:</strong> <span class="math inline">\(U\)</span> é única a menos de transformação <strong>afim positiva</strong> — se <span class="math inline">\(U\)</span> representa <span class="math inline">\(\succsim\)</span>, então <span class="math inline">\(V = a + bU\)</span> (com <span class="math inline">\(b &gt; 0\)</span>) também representa.</p>
+</div>
+<div class="fragment">
+<blockquote>
+<p>Diferente da utilidade ordinal, aqui as <em>diferenças</em> de utilidade importam.</p>
+</blockquote>
+</div>
+</section>
+<section id="tres-atitudes-em-relacao-ao-risco" class="slide level2 smaller">
+<h2>Tres Atitudes em Relacao ao Risco</h2>
+<div id="graph-a11-risk" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Curvatura: <input type="range" id="sl-a11-curv" min="-200" max="200" value="-100" step="10" oninput="updA11Risk()"> <span id="val-a11-curv">-1.00</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-risk',{
+    boundingbox:[-5,12,110,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var curv = -1.0;
+  var x1 = 20, x2 = 80, pi1 = 0.5;
+  var EX = pi1*x1 + (1-pi1)*x2;
+
+  function uf(x){
+    if(Math.abs(curv)<0.05) return x/10;
+    if(curv<0) return 10*(1-Math.exp(curv*x/100));
+    return 10*(Math.exp(curv*x/100)-1);
+  }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,105],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[x1, function(){return uf(x1);}],
+    {name:'U(x₁)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+  var pHigh = brd.create('point',[x2, function(){return uf(x2);}],
+    {name:'U(x₂)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+
+  var chordLine = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var pEU = brd.create('point',[EX, function(){return pi1*uf(x1)+(1-pi1)*uf(x2);}],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-30,-15],fontSize:12}});
+  var pUEX = brd.create('point',[EX, function(){return uf(EX);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  brd.create('segment',
+    [[EX,0], [EX, function(){return Math.max(uf(EX), pi1*uf(x1)+(1-pi1)*uf(x2));}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+
+  brd.create('text',[55,11, function(){
+    if(curv<-0.05) return 'Avesso ao risco (côncava)';
+    if(curv>0.05) return 'Amante do risco (convexa)';
+    return 'Neutro ao risco (linear)';
+  }],{fontSize:14,color:'#1565c0'});
+
+  window.updA11Risk = function(){
+    curv = parseFloat(document.getElementById('sl-a11-curv').value)/100;
+    document.getElementById('val-a11-curv').textContent = curv.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+<div class="fragment">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Atitude</th>
+<th style="text-align: center;"><span class="math inline">\(U''(x)\)</span></th>
+<th style="text-align: center;">Formato</th>
+<th style="text-align: left;">Comportamento</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Avesso</td>
+<td style="text-align: center;"><span class="math inline">\(&lt; 0\)</span></td>
+<td style="text-align: center;">Concava</td>
+<td style="text-align: left;">Recusa apostas justas</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Neutro</td>
+<td style="text-align: center;"><span class="math inline">\(= 0\)</span></td>
+<td style="text-align: center;">Linear</td>
+<td style="text-align: left;">Indiferente a apostas justas</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Amante</td>
+<td style="text-align: center;"><span class="math inline">\(&gt; 0\)</span></td>
+<td style="text-align: center;">Convexa</td>
+<td style="text-align: left;">Aceita apostas injustas</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="desigualdade-de-jensen" class="slide level2">
+<h2>Desigualdade de Jensen</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Teorema (Jensen):</strong> Se <span class="math inline">\(U\)</span> e concava:</p>
+<p><span class="math display">\[E[U(X)] \leq U(E[X])\]</span></p>
+<p>. . .</p>
+<p><strong>Interpretacao:</strong> o agente avesso ao risco prefere receber o valor esperado com certeza a enfrentar a loteria.</p>
+<p>. . .</p>
+<p><strong>Consequencia:</strong> para aposta justa (<span class="math inline">\(E[\tilde{\varepsilon}] = 0\)</span>):</p>
+<p><span class="math display">\[E[U(W + \tilde{\varepsilon})] &lt; U(W)\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Esboço da prova (caso discreto):</strong></p>
+<p>Pela concavidade, para todo <span class="math inline">\(\lambda \in [0,1]\)</span>:</p>
+<p><span class="math display">\[U(\lambda x_1 + (1-\lambda)x_2) \geq \lambda U(x_1) + (1-\lambda)U(x_2)\]</span></p>
+<p>Tomando <span class="math inline">\(\lambda = \pi_1\)</span>:</p>
+<p><span class="math display">\[U(\pi_1 x_1 + \pi_2 x_2) \geq \pi_1 U(x_1) + \pi_2 U(x_2)\]</span></p>
+<p><span class="math display">\[\Rightarrow U(E[X]) \geq E[U(X)] \quad \blacksquare\]</span></p>
+</div></div>
+</section>
+<section id="equivalente-certo-e-premio-de-risco" class="slide level2">
+<h2>Equivalente Certo e Premio de Risco</h2>
+<div id="graph-a11-premium" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Tamanho da aposta <span class="math inline">\(h\)</span>: <input type="range" id="sl-a11-h" min="5" max="40" value="20" step="1" oninput="updA11Premium()"> <span id="val-a11-h">20</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-premium',{
+    boundingbox:[-5,11,155,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W = 100, h = 20;
+
+  function uf(x){ return Math.sqrt(x)/1.2; }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,150],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[function(){return W-h;}, function(){return uf(W-h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+  var pHigh = brd.create('point',[function(){return W+h;}, function(){return uf(W+h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[function(){return W-h-2;}, function(){return uf(W-h)+0.4;},
+    function(){return 'W−h='+(W-h);}],{fontSize:11,color:'#C8102E'});
+  brd.create('text',[function(){return W+h+1;}, function(){return uf(W+h)+0.4;},
+    function(){return 'W+h='+(W+h);}],{fontSize:11,color:'#C8102E'});
+
+  var chord = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var EX = function(){return W;};
+  var EU = function(){return 0.5*uf(W-h)+0.5*uf(W+h);};
+  var CE = function(){return (EU()*1.2)*(EU()*1.2);};
+
+  var pEU = brd.create('point',[EX, EU],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-35,-15],fontSize:12}});
+
+  var pUEX = brd.create('point',[EX, function(){return uf(W);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  var pCE = brd.create('point',[CE, EU],
+    {name:'CE', size:3, color:'#6a1b9a', label:{offset:[-5,-18],fontSize:12}});
+
+  brd.create('segment',[[EX,0],[EX,function(){return uf(W);}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+  brd.create('segment',[[CE,0],[CE,EU]],
+    {strokeColor:'#6a1b9a',strokeWidth:1,dash:3,highlight:false});
+
+  // Risk premium arrow
+  brd.create('segment',[[CE,function(){return -0.4;}],[EX,function(){return -0.4;}]],
+    {strokeColor:'#d32f2f',strokeWidth:2,lastArrow:true,firstArrow:true,highlight:false});
+  brd.create('text',[function(){return (CE()+W)/2-5;}, -0.8,
+    function(){return 'RP='+(W-CE()).toFixed(1);}],
+    {fontSize:12,color:'#d32f2f'});
+
+  window.updA11Premium = function(){
+    h = parseFloat(document.getElementById('sl-a11-h').value);
+    document.getElementById('val-a11-h').textContent = h;
+    brd.update();
+  };
+})();
+</script>
+<div class="fragment">
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Equivalente certo (CE):</strong></p>
+<p><span class="math display">\[U(CE) = E[U(\mathcal{L})]\]</span></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Premio de risco (RP):</strong></p>
+<p><span class="math display">\[RP = E[X] - CE &gt; 0\]</span></p>
+<p>(para avesso ao risco)</p>
+</div></div>
+</div>
+</section>
+<section id="medidas-de-arrow-pratt" class="slide level2">
+<h2>Medidas de Arrow-Pratt</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Aversao absoluta ao risco (ARA):</strong></p>
+<p><span class="math display">\[A(x) = -\frac{U''(x)}{U'(x)}\]</span></p>
+<p>. . .</p>
+<p><strong>Aversao relativa ao risco (RRA):</strong></p>
+<p><span class="math display">\[R(x) = -\frac{x \, U''(x)}{U'(x)} = x \cdot A(x)\]</span></p>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Interpretacao local:</strong></p>
+<p>Para uma aposta pequena <span class="math inline">\(\tilde{\varepsilon}\)</span> com <span class="math inline">\(E[\tilde{\varepsilon}]=0\)</span> e <span class="math inline">\(\text{Var}(\tilde{\varepsilon})=\sigma^2\)</span>:</p>
+<p><span class="math display">\[RP \approx \frac{1}{2} A(W) \sigma^2\]</span></p>
+<p>. . .</p>
+<blockquote>
+<p><span class="math inline">\(A(W)\)</span> mede a <strong>taxa de conversao</strong> de variancia em premio de risco.</p>
+</blockquote>
+</div></div>
+</section>
+<section id="cara-vs-crra" class="slide level2">
+<h2>CARA vs CRRA</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>CARA</strong> (Constant Absolute Risk Aversion):</p>
+<p><span class="math display">\[U(x) = -e^{-ax}, \quad a &gt; 0\]</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Medida</th>
+<th style="text-align: center;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(a\)</span> (constante)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(R(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(ax\)</span> (crescente)</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p>Mesma aversao em <strong>reais</strong> independentemente da riqueza.</p>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>CRRA</strong> (Constant Relative Risk Aversion):</p>
+<p><span class="math display">\[U(x) = \frac{x^{1-\gamma}}{1-\gamma}, \quad \gamma &gt; 0, \; \gamma \neq 1\]</span></p>
+<p>Para <span class="math inline">\(\gamma = 1\)</span>: <span class="math inline">\(U(x) = \ln(x)\)</span></p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Medida</th>
+<th style="text-align: center;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(A(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma / x\)</span> (decrescente)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(R(x)\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma\)</span> (constante)</td>
+</tr>
+</tbody>
+</table>
+<p>. . .</p>
+<p>Mesma aversao <strong>proporcional</strong> independentemente da riqueza.</p>
+</div></div>
+</section>
+<section id="seguro-aplicacao-fundamental" class="slide level2 smaller">
+<h2>Seguro — Aplicacao Fundamental</h2>
+<div id="graph-a11-insurance" style="width:720px;height:360px;margin:0 auto;">
+
+</div>
+<div class="graph-slider-row">
+<p><label>Cobertura <span class="math inline">\(q\)</span>: <input type="range" id="sl-a11-q" min="0" max="100" value="50" step="1" oninput="updA11Ins()"> <span id="val-a11-q">0.50</span></label></p>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-insurance',{
+    boundingbox:[-50,1150,1150,-50], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W=1000, L=600, pi=0.25, gamma=0.3, q=0.5;
+
+  // 45-degree line
+  brd.create('line',[[0,0],[1,1]],
+    {strokeColor:'#bbb',strokeWidth:1,dash:3,highlight:false,
+     straightFirst:true,straightLast:true,point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[950,980,'45°'],{fontSize:11,color:'#999'});
+
+  // Endowment point (no insurance)
+  var cN0 = W;       // no accident consumption without insurance
+  var cA0 = W - L;   // accident consumption without insurance
+  var pEndow = brd.create('point',[cN0, cA0],
+    {name:'Dotação', size:4, color:'#C8102E', fixed:true,
+     label:{offset:[5,10],fontSize:12}});
+
+  // Budget line: cA = cA0 + q*L - gamma*q*L ... parametric in q
+  // cN = W - gamma*q*L, cA = W - L + q*L - gamma*q*L = W - L + q*L*(1-gamma)
+  // Eliminating q: q = (W - cN)/(gamma*L)
+  // cA = W - L + (W - cN)*(1-gamma)/gamma
+  // slope dcA/dcN = -(1-gamma)/gamma
+  var slope = -(1-gamma)/gamma;
+  brd.create('line',[[cN0, cA0], [cN0+1, cA0+slope]],
+    {strokeColor:'#1565c0',strokeWidth:2,highlight:false,
+     straightFirst:true,straightLast:true,
+     point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[200,900,
+    function(){return 'Inclinação = −(1−γ)/γ = '+slope.toFixed(2);}],
+    {fontSize:12,color:'#1565c0'});
+
+  // Current choice point
+  var pChoice = brd.create('point',[
+    function(){return W - gamma*q*L;},
+    function(){return W - L + q*L*(1-gamma);}],
+    {name:'', size:4, color:'#2e7d32',
+     label:{offset:[5,10],fontSize:12}});
+  brd.create('text',[function(){return W-gamma*q*L+15;},
+    function(){return W-L+q*L*(1-gamma)+15;},
+    function(){return 'q='+q.toFixed(2)+' | cN='+(W-gamma*q*L).toFixed(0)+', cA='+(W-L+q*L*(1-gamma)).toFixed(0);}],
+    {fontSize:11,color:'#2e7d32'});
+
+  // Full insurance point on 45-degree line
+  var qFull = 1;
+  var cFull = W - gamma*L;
+  var pFull = brd.create('point',[cFull, cFull],
+    {name:'Seguro total', size:3, color:'#6a1b9a', fixed:true,
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[50,1100,'c_A (acidente)'],{fontSize:13,color:'#333'});
+  brd.create('text',[950,-30,'c_N (sem acidente)'],{fontSize:13,color:'#333'});
+
+  window.updA11Ins = function(){
+    q = parseFloat(document.getElementById('sl-a11-q').value)/100;
+    document.getElementById('val-a11-q').textContent = q.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+<div class="fragment">
+<p><strong>Setup:</strong> riqueza <span class="math inline">\(W\)</span>, perda <span class="math inline">\(L\)</span> com prob. <span class="math inline">\(\pi\)</span>, premio <span class="math inline">\(\gamma\)</span> por unidade de cobertura <span class="math inline">\(q\)</span>.</p>
+<p><span class="math display">\[EU = (1-\pi)\,U(W - \gamma q L) + \pi\,U(W - L + qL - \gamma q L)\]</span></p>
+</div>
+</section>
+<section id="exemplo-numerico-decisao-de-seguro" class="slide level2">
+<h2>Exemplo Numerico — Decisao de Seguro</h2>
+<p><span class="math inline">\(U(c) = \ln(c)\)</span>, <span class="math inline">\(W = 1000\)</span>, <span class="math inline">\(L = 600\)</span>, <span class="math inline">\(\pi = 0{,}25\)</span>, <span class="math inline">\(\gamma = 0{,}3\)</span>/unidade.</p>
+<div class="fragment">
+<p><strong>Sem seguro</strong> (<span class="math inline">\(q = 0\)</span>):</p>
+<p><span class="math display">\[EU = 0{,}75 \ln(1000) + 0{,}25 \ln(400) = 0{,}75 \times 6{,}908 + 0{,}25 \times 5{,}991 = 6{,}679\]</span></p>
+<p><span class="math display">\[CE = e^{6{,}679} = 795{,}3\]</span></p>
+</div>
+<div class="fragment">
+<p><strong>Com seguro total</strong> (<span class="math inline">\(q = 1\)</span>, <span class="math inline">\(\gamma = 0{,}3\)</span>):</p>
+<p><span class="math display">\[U = \ln(1000 - 0{,}3 \times 600) = \ln(820) = 6{,}709\]</span></p>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>O agente prefere pagar R$ 180 de premio e ter R$ 820 certos (<span class="math inline">\(CE = 820\)</span>) do que enfrentar a loteria sem seguro (<span class="math inline">\(CE = 795{,}3\)</span>). A diferenca de R$ 24{,}7 e o ganho de bem-estar do seguro.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="seguro-atuarialmente-justo-vs-carregamento" class="slide level2">
+<h2>Seguro Atuarialmente Justo vs Carregamento</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Seguro atuarialmente justo:</strong> <span class="math inline">\(\gamma = \pi\)</span></p>
+<ul>
+<li>Lucro esperado da seguradora: <span class="math inline">\(\gamma q L - \pi q L = 0\)</span></li>
+<li>O agente avesso ao risco <strong>compra cobertura total</strong> (<span class="math inline">\(q^* = 1\)</span>)</li>
+<li>Consumo igual nos dois estados: <span class="math inline">\(c_A = c_N\)</span></li>
+</ul>
+<p>. . .</p>
+<blockquote>
+<p>O seguro justo elimina todo o risco.</p>
+</blockquote>
+</div><div class="column" style="width:50%;">
+<p>. . .</p>
+<p><strong>Seguro com carregamento:</strong> <span class="math inline">\(\gamma &gt; \pi\)</span></p>
+<ul>
+<li>Seguradora tem lucro esperado positivo</li>
+<li>O agente compra <strong>cobertura parcial</strong> (<span class="math inline">\(q^* &lt; 1\)</span>)</li>
+<li>Trade-off: reducao de risco vs custo do premio</li>
+</ul>
+<p>. . .</p>
+<p><strong>Exemplo:</strong> se <span class="math inline">\(\pi = 0{,}25\)</span> e <span class="math inline">\(\gamma = 0{,}3\)</span>:</p>
+<p><span class="math display">\[\text{Carregamento} = \frac{\gamma - \pi}{\pi} = \frac{0{,}05}{0{,}25} = 20\%\]</span></p>
+</div></div>
+</section>
+<section id="cobertura-otima" class="slide level2">
+<h2>Cobertura Otima</h2>
+<p>A <strong>condicao de primeira ordem</strong> para <span class="math inline">\(q^*\)</span> e:</p>
+<p><span class="math display">\[\frac{\pi \, U'(c_A)}{(1-\pi) \, U'(c_N)} = \frac{\gamma}{1-\gamma}\]</span></p>
+<div class="fragment">
+<p>onde <span class="math inline">\(c_N = W - \gamma q L\)</span> e <span class="math inline">\(c_A = W - L + qL(1-\gamma)\)</span>.</p>
+</div>
+<div class="fragment">
+<p><strong>Tres casos:</strong></p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Condicao</th>
+<th style="text-align: left;">Resultado</th>
+<th style="text-align: center;">Cobertura</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma = \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) = U'(c_N) \Rightarrow c_A = c_N\)</span></td>
+<td style="text-align: center;">Total (<span class="math inline">\(q^*=1\)</span>)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\(\gamma &gt; \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) &gt; U'(c_N) \Rightarrow c_A &lt; c_N\)</span></td>
+<td style="text-align: center;">Parcial (<span class="math inline">\(q^*&lt;1\)</span>)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\(\gamma &lt; \pi\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(U'(c_A) &lt; U'(c_N) \Rightarrow c_A &gt; c_N\)</span></td>
+<td style="text-align: center;">Sobre-seguro (<span class="math inline">\(q^*&gt;1\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="fragment">
+<div title="Intuição Econômica">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Intuição Econômica</strong></p>
+</div>
+<div class="callout-content">
+<p>Com seguro justo, a unica motivacao e eliminar risco — e o agente avesso faz exatamente isso. Com carregamento, ele aceita algum risco residual para economizar no premio.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="proxima-aula" class="slide level2">
+<h2>Proxima Aula</h2>
+<p><strong>Aula 12 — Loterias + Seguro (Pratica)</strong></p>
+<div class="fragment">
+<ul>
+<li>Diversificacao e abordagem estado-preferencia</li>
+<li>Paradoxo de Allais e teoria da perspectiva</li>
+<li>Exercicios de seguro e design de contrato</li>
+</ul>
+</div>
+<div class="fragment">
+<div title="Preparação">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Preparação</strong></p>
+</div>
+<div class="callout-content">
+<p>Pesquise o <strong>Paradoxo de Allais</strong>: dois pares de escolhas que parecem razoaveis individualmente mas violam o axioma de independencia. Traga sua opiniao: somos <em>realmente</em> racionais sob incerteza?</p>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Microeconomia II | Aula 11</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="aula-11-slides_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="aula-11-slides_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="aula-11-slides_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="aula-11-slides_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+
+        height: 720,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copiada");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copiada");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

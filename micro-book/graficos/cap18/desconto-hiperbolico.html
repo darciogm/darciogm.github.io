@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+  Desconto Quasi-Hiperbólico: Viés do Presente e Reversão de Preferências
+  Library: Plotly.js
+  Chapter 18 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desconto Quasi-Hiperbólico</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Desconto \(\beta\delta\)</h3>
+    <div class="slider-group">
+      <label>Vies do presente \(\beta\): <span class="val" id="val-beta">0.70</span></label>
+      <input type="range" id="slider-beta" min="0.1" max="1" step="0.05" value="0.70">
+    </div>
+    <div class="slider-group">
+      <label>Desconto \(\delta\): <span class="val" id="val-delta">0.95</span></label>
+      <input type="range" id="slider-delta" min="0.7" max="0.99" step="0.01" value="0.95">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function update(){
+    var beta=parseFloat(document.getElementById('slider-beta').value);
+    var delta=parseFloat(document.getElementById('slider-delta').value);
+    document.getElementById('val-beta').textContent=beta.toFixed(2);
+    document.getElementById('val-delta').textContent=delta.toFixed(2);
+    var ts=[],expDisc=[],hyperDisc=[];
+    for(var t=0;t<=20;t++){
+      ts.push(t);
+      expDisc.push(Math.pow(delta,t));
+      hyperDisc.push(t===0?1:beta*Math.pow(delta,t));
+    }
+    var traces=[
+      {x:ts,y:expDisc,mode:'lines+markers',line:{color:'#1565c0',width:2.5},marker:{size:5},name:'Exponencial: delta^t'},
+      {x:ts,y:hyperDisc,mode:'lines+markers',line:{color:'#C8102E',width:2.5},marker:{size:5},name:'Quasi-hiperbolico: beta*delta^t'}
+    ];
+    // Highlight the drop from t=0 to t=1
+    traces.push({
+      x:[0,1],y:[1,beta*delta],mode:'lines',line:{color:'#C8102E',width:3},showlegend:false
+    });
+    // Annotation arrow for the drop
+    var shapes=[{
+      type:'line',x0:0.5,x1:0.5,y0:Math.pow(delta,0.5),y1:beta*Math.pow(delta,0.5),
+      line:{color:'#e65100',width:2}
+    }];
+    Plotly.react('plotDiv',traces,{
+      margin:{l:55,r:20,t:25,b:50},
+      xaxis:{title:'Periodo (t)',dtick:2,range:[0,20]},
+      yaxis:{title:'Fator de desconto',range:[0,1.05]},
+      showlegend:true,legend:{x:0.4,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      shapes:shapes,
+      annotations:[{x:1,y:(1+beta*delta)/2,text:'Vies beta',showarrow:true,arrowhead:2,ax:30,ay:0,font:{size:10,color:'#e65100'}}],
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    // Preference reversal example
+    var small=100,big=110,delay=1;
+    // From t=0: PV(small now) = 100, PV(big in 1) = beta*delta*110
+    var pvBigNow=beta*delta*big;
+    var choosesSmallNow=(small>pvBigNow);
+    // From t=-5 perspective: PV(small at t=5) = beta*delta^5*100, PV(big at t=6) = beta*delta^6*110
+    var pvSmallFar=beta*Math.pow(delta,5)*small;
+    var pvBigFar=beta*Math.pow(delta,6)*big;
+    var choosesSmallFar=(pvSmallFar>pvBigFar);
+    var reversal=choosesSmallNow && !choosesSmallFar;
+    var html='<div style="text-align:center;margin-bottom:0.3rem;">\\(D(t)=\\begin{cases}1&t=0\\\\\\beta\\delta^t&t\\geq1\\end{cases}\\)</div>';
+    html+='<strong>Exemplo:</strong> R$100 hoje vs R$110 amanha<br>';
+    html+='Hoje: prefere <strong>'+(choosesSmallNow?'R$100 agora':'R$110 amanha')+'</strong><br>';
+    html+='Visto de longe: prefere <strong>'+(choosesSmallFar?'R$100':'R$110')+'</strong><br>';
+    if(reversal){html+='<span style="color:#C8102E;"><strong>Reversao de preferencias!</strong> Inconsistencia temporal.</span>';}
+    else{html+='<span style="color:#00897b;">Sem reversao com estes parametros.</span>';}
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">Com \\(\\beta=1\\), as curvas coincidem (exponencial puro, consistente). Com \\(\\beta<1\\), o agente e impaciente no curto prazo mas paciente no longo.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-beta').value=0.70;document.getElementById('slider-delta').value=0.95;update();}
+  ['slider-beta','slider-delta'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

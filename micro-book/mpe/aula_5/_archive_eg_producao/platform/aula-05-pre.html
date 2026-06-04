@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Pré-Aula 05 — Equilíbrio Geral em Produção — Microeconomia I MPE 2026/32</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1 style="font-size:1rem"><a href="portal.html" class="insper-topbar" style="text-decoration:none"><img class="logo-img" src="assets/logo-insper.png" alt="Insper"><span class="sep">|</span><span class="course">Microeconomia I — MPE 2026/32</span></a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="content-wrapper">
+
+<h1>Quiz de Revisão Pré-Aula 05 — Equilíbrio Geral em Produção</h1>
+
+<div class="admonition info">
+<div class="admonition-title">Como este quiz funciona</div>
+<p><strong>10 questões, todas em calibre intermediário 🟡 (Nicholson &amp; Snyder 12e Cap. 9 + Cap. 13.3–13.5).</strong> Objetivo: consolidar o que você leu na pré-aula (ZaE Caps. 10/12 + N&amp;S 12e §9, §13.3–13.5) antes de entrar em sala no dia 20/05. <strong>Uma única submissão</strong>. Após submeter, o gabarito 5-passos fica visível para estudo. Tempo estimado: <strong>30–45 min</strong>.</p>
+<p style="font-size:0.85rem;color:#64748b;margin-top:0.5em"><strong>Prazo canônico:</strong> fecha em <strong>quarta 27/05 às 18:00 BRT</strong>, 1h30 antes da Aula 6.</p>
+</div>
+
+<!-- ================= QUIZ GRADED BLOCK ================= -->
+<div class="quizg-block" data-page="aula-05-pre" data-phase="pre_review" data-title="Revisão Pré-Aula 05">
+
+  <h3>Revisão — Equilíbrio Geral em Produção (10 questões 🟡)</h3>
+  <div class="quizg-intro">Cada questão tem uma única alternativa correta. Responda todas antes de submeter.</div>
+
+  <!-- Q1 🟡 — Conjunto de produção -->
+  <div class="quizg-q" data-qid="q1" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q1. 🟡</strong> Sobre o <strong>conjunto de produção</strong> \(Y \subseteq \mathbb{R}^L\) (com convenção: \(y_\ell &gt; 0\) produto, \(y_\ell &lt; 0\) insumo), qual hipótese expressa a ideia "firma pode optar por não produzir"?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q1" value="a"> (a) Livre descarte: \(y \in Y, y' \le y \Rightarrow y' \in Y\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="b"> (b) Não-livre-almoço: \(Y \cap \mathbb{R}^L_+ = \{0\}\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="c"> (c) Possibilidade de inação: \(0 \in Y\).</label>
+    <label class="quizg-opt"><input type="radio" name="q1" value="d"> (d) Convexidade.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> "Possibilidade de inação" (\(0 \in Y\)) é a hipótese formal de que a firma pode escolher não operar. As outras hipóteses canônicas servem propósitos diferentes.</p>
+      <p><strong>2. Derivação.</strong> O vetor \(0 \in \mathbb{R}^L\) representa "zero insumos, zero produtos". Se \(0 \in Y\), a firma pode literalmente fechar as portas. Hipótese garantida em todos os modelos competitivos canônicos.</p>
+      <p><strong>3. Armadilha.</strong> (a) Livre descarte é "pode-se desperdiçar". (b) Não-livre-almoço é "não há produto sem insumo". (d) Convexidade entra em 2º TBE. Quem confunde "0 \in Y" com "0 \le y \Rightarrow 0 \in Y" precisa revisar.</p>
+      <p><strong>4. Extensão.</strong> Em modelos com custo fixo de operação, "inação" garante que a firma não opera quando lucro for negativo. Conexão com shutdown condition (Aula 12 do ZaE).</p>
+      <p><strong>5. Peer-review.</strong> Calibração definicional. Quem erra ainda não internalizou nomenclatura padrão.</p>
+    </div>
+  </div>
+
+  <!-- Q2 🟡 — Função de produção CD: TMST -->
+  <div class="quizg-q" data-qid="q2" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q2. 🟡</strong> Em \(f(L, K) = L^{1/3} K^{2/3}\), no ponto \((L, K) = (8, 8)\), a TMST entre \(L\) e \(K\) (definida como \(\text{PMa}_L/\text{PMa}_K\)) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q2" value="a"> (a) \(\text{TMST}_{LK} = 2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="b"> (b) \(\text{TMST}_{LK} = 1/2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="c"> (c) \(\text{TMST}_{LK} = 1\).</label>
+    <label class="quizg-opt"><input type="radio" name="q2" value="d"> (d) \(\text{TMST}_{LK} = 1/3\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CD com expoentes \(\alpha\) e \(1-\alpha\): \(\text{PMa}_L = \alpha (K/L)^{1-\alpha}\), \(\text{PMa}_K = (1-\alpha)(L/K)^\alpha\). Razão entrega TMST \(= [\alpha/(1-\alpha)] \cdot K/L\).</p>
+      <p><strong>2. Derivação.</strong> \(\partial f/\partial L = (1/3) L^{-2/3} K^{2/3}\). Em \((8, 8)\): \((1/3)(1/4)(4) = 1/3\). \(\partial f/\partial K = (2/3) L^{1/3} K^{-1/3}\). Em \((8, 8)\): \((2/3)(2)(1/2) = 2/3\). \(\text{TMST}_{LK} = (1/3)/(2/3) = 1/2\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) inverte numerador e denominador. (c) "iguais" porque \(L = K\) — falso, porque os expoentes são assimétricos. (d) usa só \(\alpha = 1/3\), esquecendo o ratio.</p>
+      <p><strong>4. Extensão.</strong> Em economia com EC e mobilidade dos fatores: \(\text{TMST} = w/r\). Aqui, se \(w/r = 1/2\), produção em \((8, 8)\) é eficiente. Conexão com problema dual de minimização de custo.</p>
+      <p><strong>5. Peer-review.</strong> Mecânica de cálculo. Quem erra (a)/(c)/(d) tem deslize aritmético ou conceitual em CD.</p>
+    </div>
+  </div>
+
+  <!-- Q3 🟡 — Retornos de escala -->
+  <div class="quizg-q" data-qid="q3" data-correct="c" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q3. 🟡</strong> A função de produção \(f(L, K) = L^{1/3} K^{2/3}\) apresenta:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q3" value="a"> (a) Retornos crescentes de escala.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="b"> (b) Retornos decrescentes de escala.</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="c"> (c) Retornos constantes de escala (homogeneidade grau 1: \(f(\lambda L, \lambda K) = \lambda f(L, K)\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q3" value="d"> (d) Não-homogênea.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (c).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> CD com soma dos expoentes igual a 1 ⇒ retornos constantes (homogeneidade grau 1).</p>
+      <p><strong>2. Derivação.</strong> \(f(\lambda L, \lambda K) = (\lambda L)^{1/3} (\lambda K)^{2/3} = \lambda^{1/3 + 2/3} L^{1/3} K^{2/3} = \lambda \cdot f(L, K)\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) Retornos crescentes ⇒ \(\sum \alpha_\ell &gt; 1\). (b) ⇒ \(\sum \alpha_\ell &lt; 1\). (d) é absurdo aqui. Confundir "expoentes diferentes" com "não-homogênea" é erro comum.</p>
+      <p><strong>4. Extensão.</strong> Retornos constantes em CD têm consequência forte: <em>função de custo é linear em q</em>, e em EC com competição perfeita, lucro = 0. Combina com Aula 13 do ZaE.</p>
+      <p><strong>5. Peer-review.</strong> Definição operacional. Quem erra (a)/(b) confunde com expoentes individuais.</p>
+    </div>
+  </div>
+
+  <!-- Q4 🟡 — PPF côncava em CES -->
+  <div class="quizg-q" data-qid="q4" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q4. 🟡</strong> Em economia \(2 \times 2\) com fator único \(L\), \(\bar L = 16\), funções de produção \(f_1(L_1) = \sqrt{L_1}\) e \(f_2(L_2) = \sqrt{L_2}\), restrição \(L_1 + L_2 = \bar L\). A equação da PPF \((q_1, q_2)\) é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q4" value="a"> (a) \(q_1 + q_2 = 16\) (linear).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="b"> (b) \(q_1^2 + q_2^2 = 16\) (arco de círculo).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="c"> (c) \(q_1\, q_2 = 16\) (hiperbólica).</label>
+    <label class="quizg-opt"><input type="radio" name="q4" value="d"> (d) \(q_1 = q_2 = 8\) (ponto único).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> PPF é construída substituindo \(L_\ell = f_\ell^{-1}(q_\ell)\) na restrição agregada de fator. Com \(f_\ell(L_\ell) = \sqrt{L_\ell}\), \(L_\ell = q_\ell^2\). Substituindo na restrição: \(q_1^2 + q_2^2 = 16\).</p>
+      <p><strong>2. Derivação.</strong> \(q_\ell = \sqrt{L_\ell} \iff L_\ell = q_\ell^2\). \(L_1 + L_2 = 16 \implies q_1^2 + q_2^2 = 16\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (a) corresponde a \(f_\ell(L_\ell) = L_\ell\) (linear). (c) é tipo de "indiferença CD" — não tem nada a ver com PPF aqui. (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> A PPF é arco de círculo ⇒ côncava (do lado de fora). Em equilíbrio com preços relativos \(p_1/p_2\), produção ótima é \((q_1, q_2)\) tal que \(\text{TMT}_{12} = q_2/q_1 = p_1/p_2\).</p>
+      <p><strong>5. Peer-review.</strong> Construção de PPF. Quem marca (a) confunde com setor linear; (c) com utilidade.</p>
+    </div>
+  </div>
+
+  <!-- Q5 🟡 — TMT e preço relativo -->
+  <div class="quizg-q" data-qid="q5" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q5. 🟡</strong> Em equilíbrio competitivo com mobilidade do fator \(L\) entre setores 1 e 2, a TMT entre os bens é igual a:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q5" value="a"> (a) Razão de quantidades \(q_1/q_2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="b"> (b) Razão de preços \(p_1/p_2\).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="c"> (c) Razão de salários (ambos pagam o mesmo \(w\), então \(1\)).</label>
+    <label class="quizg-opt"><input type="radio" name="q5" value="d"> (d) Razão dos retornos de escala.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Eficiência produtiva ⇔ TMT = razão de preços. Vem da CPO da firma sob mobilidade do fator: \(p_\ell\, \text{PMa}_L^\ell = w\) para cada setor \(\ell\), o que entrega \(\text{PMa}_L^\ell = w/p_\ell\), e portanto \(\text{TMT}_{12} = \text{PMa}_L^2/\text{PMa}_L^1 = (w/p_2)/(w/p_1) = p_1/p_2\).</p>
+      <p><strong>2. Derivação.</strong> Mostrada acima. CPO da firma + mobilidade ⇒ valor da PMa do fator iguala-se entre setores ⇒ TMT é razão dos preços (com sinais).</p>
+      <p><strong>3. Armadilha.</strong> (a) confunde TMT com razão de quantidades — só vale em PPFs muito particulares (círculo). (c) ignora que os bens têm preços diferentes. (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Em economia com distorção tributária no setor 1 (taxa \(\tau\)), preço efetivo recebido pela firma é \(p_1(1-\tau)\), e TMT = \(p_1(1-\tau)/p_2\) — aloca menos fator no setor 1. Ineficiência alocativa de Pareto.</p>
+      <p><strong>5. Peer-review.</strong> Conceito-âncora da Aula 5. Quem erra ainda não internalizou eficiência produtiva.</p>
+    </div>
+  </div>
+
+  <!-- Q6 🟡 — Robinson Crusoe canônico -->
+  <div class="quizg-q" data-qid="q6" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q6. 🟡</strong> Robinson Crusoe canônico: \(u(q, \ell) = q^{1/2}\ell^{1/2}\), \(f(L) = \sqrt{L}\), \(\bar L = 16\). O trabalho ofertado em equilíbrio é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q6" value="a"> (a) \(L^* = 16/3 \approx 5{,}33\).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="b"> (b) \(L^* = 8\) (metade).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="c"> (c) \(L^* = 16\) (todo o tempo).</label>
+    <label class="quizg-opt"><input type="radio" name="q6" value="d"> (d) \(L^* = 4\).</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Solução do planejador (que coincide com EC por 1º TBE) maximiza \(u(f(L), \bar L - L)\). Substituindo: \(\max_L L^{1/4}(16-L)^{1/2}\).</p>
+      <p><strong>2. Derivação.</strong> Derivar e igualar a zero: \(\frac{1}{4 L^{3/4}}(16-L)^{1/2} - \frac{L^{1/4}}{2(16-L)^{1/2}} = 0\). Multiplicar por \(4 L^{3/4}(16-L)^{1/2}\): \((16-L) - 2 L = 0 \implies L^* = 16/3\). ✓</p>
+      <p><strong>3. Armadilha.</strong> (b) "metade" é a intuição CD ingênua, mas a tecnologia \(\sqrt{L}\) muda os pesos via composição. (c) ignora utilidade do lazer. (d) é \(L^* = 4\), que vem de erro aritmético.</p>
+      <p><strong>4. Extensão.</strong> A fórmula geral com \(u = q^\alpha\ell^{1-\alpha}\), \(f(L) = L^\beta\) entrega \(L^* = \alpha\beta\bar L/(\alpha\beta + 1 - \alpha)\). Em \(\alpha = 1/2, \beta = 1/2\): \(L^* = (1/4)\cdot 16/(1/4 + 1/2) = 4/(3/4) = 16/3\). ✓</p>
+      <p><strong>5. Peer-review.</strong> Cálculo direto. Quem erra (b) usa intuição em vez de álgebra.</p>
+    </div>
+  </div>
+
+  <!-- Q7 🟡 — TMS = TMT em equilíbrio Robinson -->
+  <div class="quizg-q" data-qid="q7" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q7. 🟡</strong> Em equilíbrio competitivo de Robinson Crusoe, a igualdade canônica que caracteriza a alocação eficiente é:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q7" value="a"> (a) \(\text{TMS} = \text{PMa}_L\) apenas.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="b"> (b) \(\text{TMS}_{\ell, q} = \text{TMT}_{L, q} = w/p\) — eficiência alocativa e produtiva simultâneas.</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="c"> (c) \(\text{TMS} = 0\) (sem trabalho).</label>
+    <label class="quizg-opt"><input type="radio" name="q7" value="d"> (d) \(w = p\) sempre.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Em EC interior de Robinson Crusoe, três condições convergem: TMS do consumidor = w/p (UMP), TMT na produção = w/p (max-lucro firma), e portanto TMS = TMT = w/p.</p>
+      <p><strong>2. Derivação.</strong> Da firma: \(p\, f'(L^*) = w \implies f'(L^*) = w/p\). Mas \(\text{TMT}_{L, q} = f'(L)\) (PPF "trabalho-bem" tem inclinação \(f'\)). Logo \(\text{TMT} = w/p\). Do consumidor: \(\text{TMS}_{\ell, q} = w/p\) (CPO UMP em \((q, \ell)\)). Igualdade tripla.</p>
+      <p><strong>3. Armadilha.</strong> (a) faltam o consumidor e o preço relativo. (c) absurdo. (d) confunde "Robinson" com "Aula 4".</p>
+      <p><strong>4. Extensão.</strong> Esta igualdade é a versão Robinson do 1º TBE com produção. Mercado descentralizado replica solução do planejador. Mesma estrutura sobrevive em \(J\) firmas + \(I\) consumidores.</p>
+      <p><strong>5. Peer-review.</strong> Igualdade-âncora da Aula 5. Quem erra ainda não conectou os 3 elementos.</p>
+    </div>
+  </div>
+
+  <!-- Q8 🟡 — Lucro em retornos constantes -->
+  <div class="quizg-q" data-qid="q8" data-correct="a" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q8. 🟡</strong> Em equilíbrio competitivo com firma de tecnologia <strong>retornos constantes de escala</strong> (CD com \(\sum \alpha = 1\)), o lucro \(\pi^*\) da firma é tipicamente:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q8" value="a"> (a) \(\pi^* = 0\) (lucro zero por homogeneidade da função de lucro).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="b"> (b) \(\pi^* &gt; 0\) sempre.</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="c"> (c) \(\pi^* &lt; 0\) sempre (firma fecha).</label>
+    <label class="quizg-opt"><input type="radio" name="q8" value="d"> (d) \(\pi^*\) indeterminado em qualquer EC.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (a).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Função de lucro \(\pi(p, w) = \max_z p f(z) - w\cdot z\). Quando \(f\) é homogênea grau 1 (retornos constantes), \(\pi(p, w)\) é homogênea grau 1 e \(\pi^* = 0\) na escala que satisfaz CPO. Caso contrário, lucro seria infinito (escalando produção).</p>
+      <p><strong>2. Derivação.</strong> Em retornos constantes, \(p f(\lambda z) - w\cdot \lambda z = \lambda(p f(z) - w\cdot z)\). Se existe \(z\) com \(p f(z) - w\cdot z &gt; 0\), escalando \(\lambda \to \infty\) faz lucro \(\to \infty\) — não é máximo. Para haver máximo finito, \(p f(z) - w\cdot z = 0\) na CPO. Logo \(\pi^* = 0\).</p>
+      <p><strong>3. Armadilha.</strong> (b) confunde retornos constantes com decrescentes. (c) é shutdown — caso degenerado. (d) é falso — é determinado e zero.</p>
+      <p><strong>4. Extensão.</strong> Em retornos decrescentes (ex.: \(\sqrt{L}\)), \(\pi^* &gt; 0\) — Robinson Crusoe canônico tem \(\pi^* = 2\sqrt{3}/3\). Em retornos crescentes, \(\pi^* \to \infty\) — mercado quebra (Aula 7).</p>
+      <p><strong>5. Peer-review.</strong> Resultado canônico de CD com retornos constantes. Quem erra (b) confunde estrutura.</p>
+    </div>
+  </div>
+
+  <!-- Q9 🟡 — 1º TBE com produção -->
+  <div class="quizg-q" data-qid="q9" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q9. 🟡</strong> O <strong>1º Teorema do Bem-Estar com produção</strong> exige, como hipóteses-mínimas:
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q9" value="a"> (a) Apenas LNS dos consumidores (igual à Aula 4).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="b"> (b) LNS dos consumidores + maximização de lucro pelas firmas.</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="c"> (c) Convexidade dos conjuntos de produção \(Y^j\).</label>
+    <label class="quizg-opt"><input type="radio" name="q9" value="d"> (d) Existência de leiloeiro implícito.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> Estrutura da prova: passos 1–2 (LNS para consumidores) + passo 3 NOVO (max-lucro para firmas) + passo 4 (somar e contradizer viabilidade). LNS + max-lucro = combo mínimo. Convexidade entra no 2º TBE, não no 1º.</p>
+      <p><strong>2. Derivação.</strong> Passo 3 detalhado: dado \(\tilde y^k \in Y^k\) (firma \(k\) viável em alocação alternativa), por definição de \(y^{*k}\) como maximizador de lucro a \(p^*\), \(p^*\cdot \tilde y^k \le p^*\cdot y^{*k}\). Esta desigualdade equipara firmas no agregado.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora o passo 3 (max-lucro firmas). (c) é o erro clássico "convexidade ⇒ 1º TBE" — falso, é hipótese do 2º TBE. (d) é absurdo.</p>
+      <p><strong>4. Extensão.</strong> Comparação com Aula 4: lá troca pura, hipótese-mínima é só LNS. Aqui, com firmas, precisamos LNS + max-lucro. Aulas 7–9 retomam quando essas hipóteses falham (externalidades, info assimétrica).</p>
+      <p><strong>5. Peer-review.</strong> Estrutural. Quem marca (c) não separou 1º e 2º TBE.</p>
+    </div>
+  </div>
+
+  <!-- Q10 🟡 — 2º TBE com produção (preliminar) -->
+  <div class="quizg-q" data-qid="q10" data-correct="b" data-difficulty="yellow">
+    <div class="quizg-qtext">
+      <strong>Q10. 🟡</strong> Sobre o <strong>2º TBE com produção (preliminar)</strong>, qual afirmação é <em>correta</em>?
+    </div>
+    <label class="quizg-opt"><input type="radio" name="q10" value="a"> (a) Diz que toda alocação Pareto-eficiente já é EC sem necessidade de redistribuição.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="b"> (b) Sob convexidade dos \(Y^j\) (e das preferências), toda alocação Pareto-eficiente \((x^*, y^*)\) pode ser implementada como EC após redistribuição lump-sum das dotações.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="c"> (c) É consequência direta do 1º TBE com produção.</label>
+    <label class="quizg-opt"><input type="radio" name="q10" value="d"> (d) Vale apenas em retornos crescentes.</label>
+    <div class="quizg-feedback" hidden>
+      <p><strong>Gabarito: (b).</strong></p>
+      <p><strong>1. Ponto-chave.</strong> 2º TBE com produção separa eficiência (mercado) de equidade (redistribuição). Hipótese-chave: <strong>convexidade dos \(Y^j\)</strong> (e do agregado), além de convexidade das preferências. Sem convexidade, separação por hiperplano-preço (Hahn-Banach) falha.</p>
+      <p><strong>2. Derivação.</strong> Esquema da prova (Aula 6): conjunto preferido \(\sum_i V^i\) convexo + viabilidade \(\sum_i \omega^i + \sum_j Y^j\) convexa ⇒ separação por hiperplano = preço-suporte \(p^*\). \(p^*\) sustenta cada \(x^{*i}\) como UMP e cada \(y^{*j}\) como max-lucro. Redistribuição lump-sum ajusta as rendas individuais.</p>
+      <p><strong>3. Armadilha.</strong> (a) ignora redistribuição. (c) é falso — 2º TBE precisa hipóteses adicionais. (d) é o oposto — retornos crescentes <em>quebram</em> a hipótese de convexidade.</p>
+      <p><strong>4. Extensão.</strong> Onde quebra: retornos crescentes (Aula 7), externalidades (Aula 7), informação assimétrica (Aula 8). Brasil real: ZFM Manaus distorce alocação de fator entre regiões — argumento de "second-best" via externalidade positiva.</p>
+      <p><strong>5. Peer-review.</strong> Definicional. Quem marca (a) confunde "Pareto = EC" com "Pareto pode ser EC após redistribuição". Distinção fundamental do 2º TBE.</p>
+    </div>
+  </div>
+
+  <div class="quizg-submit-wrap">
+    <button class="btn btn-primary quizg-submit">Submeter bloco (10 questões)</button>
+    <div class="quizg-warn" hidden></div>
+    <div class="quizg-score" hidden></div>
+  </div>
+
+</div>
+<!-- ================= /QUIZ GRADED BLOCK ================= -->
+
+<div class="admonition note" style="margin-top:2rem">
+<div class="admonition-title">Depois do quiz</div>
+<p>Você está pronto para a <strong>Aula 5 presencial</strong> (quarta, 20/05, 19:30). Se alguma questão ficou imprecisa, volte ao <a href="aula-05.html">material da pré-aula</a> e relea a seção correspondente. O <strong>quiz pós-aula 5</strong> (5🟡 + 5🔴) e os <strong>exercícios avaliativos da Aula 5</strong> abrem na madrugada de quinta 21/05 — todos fecham em <strong>quarta 27/05 às 18h</strong>.</p>
+</div>
+
+</div>
+
+<script src="js/supabase-config.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/mpe-db.js"></script>
+<script src="js/calendario.js"></script>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-05-pre');
+MicroQuizGraded.init();
+</script>
+</body>
+</html>

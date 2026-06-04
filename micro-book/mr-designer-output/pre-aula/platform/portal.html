@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Pre-Aula — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+</head>
+<body>
+<div class="topbar">
+  <h1>&#128218; Microeconomia II — Pre-Aula</h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<div class="portal-header">
+  <h2>Material Pre-Aula</h2>
+  <p>Estude o material antes de cada aula. Complete o quiz para registrar sua preparacao.</p>
+  <div class="portal-stats">
+    <div class="stat-badge"><div class="val" id="stat-done">0</div><div class="lbl">Completas</div></div>
+    <div class="stat-badge"><div class="val" id="stat-total">25</div><div class="lbl">Total</div></div>
+    <div class="stat-badge"><div class="val" id="stat-time">0</div><div class="lbl">Min. estudados</div></div>
+    <div class="stat-badge"><div class="val" id="stat-avg">—</div><div class="lbl">Media Quizzes</div></div>
+  </div>
+  <div class="progress-bar" style="max-width:400px;margin:0 auto"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+</div>
+
+<div class="aulas-grid" id="aulas-grid"></div>
+
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome + ' (' + session.matricula + ')';
+
+var AULAS = [
+  {n:1, title:'Introducao a Microeconomia II', desc:'Modelos economicos, oferta e demanda, equilibrio, estatica comparativa', cap:'Cap. 1', time:45},
+  {n:2, title:'Restricao Orcamentaria', desc:'Conjunto orcamentario, precos relativos, variacoes de renda e precos', cap:'Cap. 4', time:45},
+  {n:3, title:'Preferencias e Axiomas', desc:'Completude, transitividade, continuidade, monotonicidade, convexidade', cap:'Cap. 3', time:45},
+  {n:4, title:'Utilidade e Curvas de Indiferenca', desc:'TMS, Cobb-Douglas, substitutos, complementos, CES, quase-linear', cap:'Cap. 3', time:45},
+  {n:5, title:'Maximizacao de Utilidade e Demanda Marshalliana', desc:'Lagrangiano, tangencia, demandas, utilidade indireta, Roy', cap:'Cap. 4', time:45},
+  {n:6, title:'Minimizacao do Dispendio e Demanda Hicksiana', desc:'Problema dual, funcao dispendio, Lema de Shephard', cap:'Cap. 4', time:45},
+  {n:7, title:'Dualidade na Teoria do Consumidor', desc:'Mapa primal-dual, identidades V-E, relacao entre demandas', cap:'Cap. 4', time:45},
+  {n:8, title:'Equacao de Slutsky: Teoria', desc:'Efeitos renda e substituicao, bens normais/inferiores/Giffen', cap:'Cap. 5', time:45},
+  {n:9, title:'Equacao de Slutsky: Exercicios', desc:'Decomposicao CD e quase-linear, Slutsky em elasticidades', cap:'Cap. 5', time:40},
+  {n:10, title:'Decomposicao de Hicks: Teoria', desc:'Excedente consumidor, VC, VE, principio lump sum', cap:'Cap. 5', time:45},
+  {n:11, title:'Decomposicao de Hicks: Exercicios', desc:'VC e VE para CD e quase-linear, ICMS eletricidade', cap:'Cap. 5', time:40},
+  {n:12, title:'Economia de Dotacoes: Trabalho e Intertemporal', desc:'Oferta trabalho, backward-bending, Fisher 2 periodos', cap:'Cap. 17-18', time:45},
+  {n:13, title:'Escolha sob Incerteza I: Loterias e Utilidade Esperada', desc:'Axiomas VNM, aversao ao risco, desigualdade de Jensen', cap:'Cap. 7', time:45},
+  {n:14, title:'Escolha sob Incerteza II: Seguros e Informacao', desc:'Arrow-Pratt, premio de risco, cobertura otima, diversificacao', cap:'Cap. 7', time:45},
+  {n:15, title:'Escolha sob Incerteza III: Paradoxos', desc:'Allais, Ellsberg, Teoria dos Prospectos, funcao valor', cap:'Cap. 8', time:45},
+  {n:16, title:'Escolha sob Incerteza IV: Mercados de Risco', desc:'Selecao adversa, risco moral, sinalizacao, screening', cap:'Cap. 7/19', time:45},
+  {n:17, title:'Funcao de Producao I', desc:'PMg, PMe, isoquantas, TMST, rendimentos de escala', cap:'Cap. 10', time:45},
+  {n:18, title:'Funcao de Producao II', desc:'Funcoes especificas, elasticidade substituicao, progresso tecnico', cap:'Cap. 10', time:45},
+  {n:19, title:'Custos de Producao e Minimizacao de Custos', desc:'Custo economico, Lagrangiano, Shephard, curvas custo, envoltoria', cap:'Cap. 11', time:50},
+  {n:20, title:'Maximizacao de Lucro I', desc:'P=CMg, funcao lucro, Hotelling, convexidade, lei da oferta', cap:'Cap. 12', time:45},
+  {n:21, title:'Maximizacao de Lucro II: Receita Marginal e Oferta', desc:'RMg e elasticidade, shutdown, oferta CP, excedente produtor', cap:'Cap. 12', time:45},
+  {n:22, title:'Concorrencia Perfeita e Bem-Estar', desc:'Equilibrio marshalliano, LP, excedentes, 1o Teorema Bem-Estar', cap:'Cap. 13', time:45},
+  {n:23, title:'Intervencao Estatal: Tributacao e Controles', desc:'Incidencia tributaria, peso morto, teto/piso precos, subsidios', cap:'Cap. 13', time:45},
+  {n:24, title:'Monopolio I: Maximizacao e Bem-Estar', desc:'Barreiras entrada, markup Lerner, custo social, estatica comparativa', cap:'Cap. 15', time:45},
+  {n:25, title:'Monopolio II: Discriminacao e Regulacao', desc:'3 graus Pigou, tarifa 2 partes, bundling, regulacao CMg/CMe', cap:'Cap. 15', time:45}
+];
+
+function renderPortal() {
+  var data = MicroTracker.getData();
+  var mat = session.matricula;
+  var studentData = data[mat] || { pages: {}, quizzes: {} };
+
+  var done = 0, totalTime = 0, quizScores = [];
+  var gridHtml = '';
+  AULAS.forEach(function(a) {
+    var pageId = 'aula-' + String(a.n).padStart(2,'0');
+    var pg = studentData.pages[pageId] || {};
+    var qz = studentData.quizzes[pageId] || {};
+    var visited = pg.visits > 0;
+    var quizDone = qz.attempts > 0;
+    var badge, badgeClass;
+    if (quizDone) { badge = 'Completa'; badgeClass = 'badge-done'; done++; }
+    else if (visited) { badge = 'Em andamento'; badgeClass = 'badge-progress'; }
+    else { badge = 'Nova'; badgeClass = 'badge-new'; }
+    if (pg.totalTime) totalTime += pg.totalTime;
+    if (qz.bestScore !== undefined && qz.attempts > 0) quizScores.push(qz.bestScore);
+
+    gridHtml += '<div class="aula-card"><a href="aula-' + String(a.n).padStart(2,'0') + '.html">'
+      + '<div class="aula-num">Aula ' + String(a.n).padStart(2,'0') + ' | ' + a.cap + '</div>'
+      + '<div class="aula-title">' + a.title + '</div>'
+      + '<div class="aula-desc">' + a.desc + '</div>'
+      + '<div class="aula-meta"><span class="time">&#9201; ' + a.time + ' min</span>'
+      + '<span class="badge ' + badgeClass + '">' + badge + '</span></div></a></div>';
+  });
+
+  document.getElementById('aulas-grid').innerHTML = gridHtml;
+  document.getElementById('stat-done').textContent = done;
+  document.getElementById('stat-time').textContent = Math.round(totalTime / 60000);
+  document.getElementById('stat-avg').textContent = quizScores.length > 0
+    ? Math.round(quizScores.reduce(function(a,b){return a+b},0) / quizScores.length) + '%' : '—';
+  document.getElementById('progress-fill').style.width = Math.round(done / 25 * 100) + '%';
+}
+
+renderPortal();
+</script>
+</body>
+</html>

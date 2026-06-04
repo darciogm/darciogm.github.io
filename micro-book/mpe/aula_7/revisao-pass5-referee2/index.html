@@ -1,0 +1,7553 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Academic website — Darcio Genicolo-Martins, Assistant Professor of Economics at Insper">
+      
+      
+        <meta name="author" content="Darcio Genicolo-Martins">
+      
+      
+        <link rel="canonical" href="https://darciogm.github.io/micro-book/mpe/aula_7/revisao-pass5-referee2/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.50">
+    
+    
+      
+        <title>Pass-5 Referee 2 — Aula 7 (Externalidades + Bens Públicos) - Darcio Genicolo-Martins</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.a40c8224.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--idea:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5"/></svg>');--md-admonition-icon--definition:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 21.5c-1.35-.85-3.8-1.5-5.5-1.5-1.65 0-3.35.3-4.75 1.05-.1.05-.15.05-.25.05-.25 0-.5-.25-.5-.5V6c.6-.45 1.25-.75 2-1 1.11-.35 2.33-.5 3.5-.5 1.95 0 4.05.4 5.5 1.5 1.45-1.1 3.55-1.5 5.5-1.5 1.17 0 2.39.15 3.5.5.75.25 1.4.55 2 1v14.6c0 .25-.25.5-.5.5-.1 0-.15 0-.25-.05-1.4-.75-3.1-1.05-4.75-1.05-1.7 0-4.15.65-5.5 1.5M12 8v11.5c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5V7c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5m1 3.5c1.11-.68 2.6-1 4.5-1 .91 0 1.76.09 2.5.28V9.23c-.87-.15-1.71-.23-2.5-.23q-2.655 0-4.5.84zm4.5.17c-1.71 0-3.21.26-4.5.79v1.69c1.11-.65 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24v-1.5c-.87-.16-1.71-.23-2.5-.23m2.5 2.9c-.87-.16-1.71-.24-2.5-.24-1.83 0-3.33.27-4.5.8v1.69c1.11-.66 2.6-.99 4.5-.99 1.04 0 1.88.08 2.5.24z"/></svg>');--md-admonition-icon--theorem:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13 21 2-1 2 1v-7h-4m4-5V7l-2 1-2-1v2l-2 1 2 1v2l2-1 2 1v-2l2-1m1-7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7v-2H4V5h16v10h-1v2h1a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2m-9 5H5V6h6m-2 5H5V9h4m2 5H5v-2h6Z"/></svg>');--md-admonition-icon--proof:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 19.88V22l-1.8-1.17-4.79-9c.66-.21 1.26-.55 1.78-1zM15 7a3 3 0 0 1-3 3h-.44L5.8 20.83 4 22v-2.12L9.79 9c-1.1-1.23-1-3.13.24-4.24C10.57 4.28 11.27 4 12 4V2a1 1 0 0 1 1 1v1.18c1.2.42 2 1.55 2 2.82m-2 0a1 1 0 0 0-1-1 1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.6.6 0 0 1-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2z"/></svg>');--md-admonition-icon--exercicio-resolvido:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-1.16-.21-2.31-.61-3.39l-1.6 1.6c.14.59.21 1.19.21 1.79a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.6 0 1.2.07 1.79.21L15.4 2.6C14.31 2.21 13.16 2 12 2m7 0-4 4v1.5l-2.55 2.55C12.3 10 12.15 10 12 10a2 2 0 0 0-2 2 2 2 0 0 0 2 2 2 2 0 0 0 2-2c0-.15 0-.3-.05-.45L16.5 9H18l4-4h-3zm-7 4a6 6 0 0 0-6 6 6 6 0 0 0 6 6 6 6 0 0 0 6-6h-2a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4z"/></svg>');--md-admonition-icon--exercicio-proposto:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.06 9 .94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.21-.07-.41-.18-.57L13 8.35V4h-2v4.35L5.18 18.43c-.11.16-.18.36-.18.57m1 3a3 3 0 0 1-3-3c0-.6.18-1.16.5-1.63L9 7.81V6a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1v1.81l5.5 9.56c.32.47.5 1.03.5 1.63a3 3 0 0 1-3 3zm7-6 1.34-1.34L16.27 18H7.73l2.66-4.61zm-.5-4a.5.5 0 0 1 .5.5.5.5 0 0 1-.5.5.5.5 0 0 1-.5-.5.5.5 0 0 1 .5-.5"/></svg>');--md-admonition-icon--box-brasil:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 3a1 1 0 0 1 1 1v.88C8.06 4.44 9.5 4 11 4c3 0 3 2 5 2 3 0 4-2 4-2v8s-1 2-4 2-3-2-5-2c-3 0-4 2-4 2v7H5V4a1 1 0 0 1 1-1"/></svg>');--md-admonition-icon--box-mundo:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.9 17.39c-.26-.8-1.01-1.39-1.9-1.39h-1v-3a1 1 0 0 0-1-1H8v-2h2a1 1 0 0 0 1-1V7h2a2 2 0 0 0 2-2v-.41a7.984 7.984 0 0 1 2.9 12.8M11 19.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.22.21-1.79L9 15v1a2 2 0 0 0 2 2m1-16A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 2c-.9 0-2 1-2 2H8c0-1-1.1-2-2-2H2v9c0 1 1 2 2 2h2.2c.4 2 1.7 3.7 4.8 4v2.08C8 19.54 8 22 8 22h8s0-2.46-3-2.92V17c3.1-.3 4.4-2 4.8-4H20c1 0 2-1 2-2V2zM6 11H4V4h2zm10 .5c0 1.93-.58 3.5-4 3.5-3.41 0-4-1.57-4-3.5V6h8zm4-.5h-2V4h2z"/></svg>');--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 9h2V7h-2m1 13c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m0-18A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2m-1 15h2v-6h-2z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>');--md-admonition-icon--code:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4.29c-5.5 0-10 3-10 6.71 0 3.28 3.56 6 8.24 6.58v2.13h3.41v-2.12c.85-.09 1.64-.25 2.39-.48l1.38 2.6h3.86l-2.32-3.91C20.83 14.58 22 12.87 22 11c0-3.71-4.5-6.71-10-6.71m1.53 2.62c4.2 0 7.3 1.4 7.3 4.59 0 1.71-.92 2.91-2.42 3.65-.09-.05-.17-.1-.22-.15-.36-.16-.96-.34-.96-.34s2.98-.22 2.98-3.19-3.12-3.02-3.12-3.02h-6.85v7.16c-2.55-.74-4.31-2.31-4.31-4.11 0-2.54 3.4-4.59 7.6-4.59m.15 3.98h2.07s.95-.05.95.94c0 .97-.95.97-.95.97h-2.07zm-.03 4.41h.92c.18 0 .27.05.43.2.13.1.27.29.39.46-.55.07-1.13.1-1.74.1z"/></svg>');--md-admonition-icon--pesquisa:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.46 6.28 11.05 9c-2.58.26-4.55 2.41-4.55 5a5 5 0 0 0 5 5c2.05 0 3.81-1.23 4.58-3H13.5v-2h8v2h-2.25a8.05 8.05 0 0 1-2.46 4h2.71v2h-16v-2h2.71a8 8 0 0 1-2.71-6c0-3.63 2.46-6.8 5.96-7.72m3.28-4.21.76 1.3.86-.5 3.5 6.06-3.47 2-3.5-6.06.87-.5-.76-1.3z"/></svg>');--md-admonition-icon--classroom:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 22a3 3 0 0 1-3-3c0-.6.18-1.16.5-1.63L9 7.81V6a1 1 0 0 1-1-1V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1v1.81l5.5 9.56c.32.47.5 1.03.5 1.63a3 3 0 0 1-3 3zm-1-3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1c0-.21-.07-.41-.18-.57l-2.29-3.96L14 17l-5.07-5.07-3.75 6.5c-.11.16-.18.36-.18.57m8-9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../../stylesheets/micro-book.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pass-5-referee-2-aula-7-externalidades-bens-publicos" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="Darcio Genicolo-Martins" class="md-header__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Darcio Genicolo-Martins
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pass-5 Referee 2 — Aula 7 (Externalidades + Bens Públicos)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="red" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../research/working-papers/" class="md-tabs__link">
+          
+  
+  Research
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../../teaching/intermediate-microeconomics/" class="md-tabs__link">
+          
+  
+  Teaching
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
+          
+  
+  Micro Book
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="Darcio Genicolo-Martins" class="md-nav__button md-logo" aria-label="Darcio Genicolo-Martins" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17z"></path></svg>
+
+    </a>
+    Darcio Genicolo-Martins
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/working-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/works-in-progress/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Works in Progress
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/policy-papers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policy Papers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../research/media/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Media
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Teaching
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Teaching
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Insper Institute of Education and Research
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Insper Institute of Education and Research
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teaching/intermediate-microeconomics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intermediate Microeconomics (Micro II)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teaching/microeconomics-101-lawyers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microeconomics 101 for Lawyers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../teaching/good-economics-hard-times/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Economics for Hard Times (DEDP - J-Pal / Insper)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Micro Book
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Micro Book
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Index
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../prefacio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefácio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ferramentas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ferramentas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_1" id="__nav_4_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 1 — Todos os Modelos Estão Errados
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 1 — Todos os Modelos Estão Errados
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/modelos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.1–1.2 Modelos e Verificação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/fundamentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.3–1.4 Regras do Jogo e Anatomia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/valor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.5–1.6 Teoria do Valor e Fronteiras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.7 Maximização de Lucro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap01/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_2" id="__nav_4_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 2 — O Manual de Sobrevivência Matemática
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 2 — O Manual de Sobrevivência Matemática
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/otimizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.1–2.3 Otimização e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/envelope/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.4 Teorema do Envelope
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/lagrange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.5–2.6 Lagrange e Preço-Sombra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/kuhn-tucker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.7 Kuhn-Tucker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/curvatura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.8–2.9 Concavidade, Homogeneidade e Euler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap02/complementos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.10–2.13 Complementos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    O Consumidor
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            O Consumidor
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_1" id="__nav_4_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 3 — Mais É Melhor — Será?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 3 — Mais É Melhor — Será?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/axiomas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.1–3.3 Axiomas, Utilidade e Curvas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/tms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.4–3.5 TMS e Utilidade Marginal
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/preferencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.6–3.7 Formas Funcionais e Transformações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap03/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_2" id="__nav_4_4_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 4 — Você Quer Tudo. Mas Não Pode.
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 4 — Você Quer Tudo. Mas Não Pode.
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/problema/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.1–4.3 Problema do Consumidor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/utilidade-indireta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.4–4.5 Utilidade Indireta e Lump Sum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/dualidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.6–4.9 Dualidade e Identidade de Roy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/catalogo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.10–4.11 Catálogo de Soluções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap04/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_3" id="__nav_4_4_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 5 — Slutsky no Supermercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 5 — Slutsky no Supermercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/propriedades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.1–5.2 Propriedades e Variações na Renda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/slutsky/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.3–5.6 Slutsky e Curvas de Demanda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/elasticidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.7 Elasticidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/excedente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.8–5.9 Excedente e Preferência Revelada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap05/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_4">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_4" id="__nav_4_4_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 6 — Substitutos, Complementos e Relações Complicadas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 6 — Substitutos, Complementos e Relações Complicadas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/relacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.1–6.4 Efeitos Cruzados e Matriz de Slutsky
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/composto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.5–6.6 Bem Composto, Lancaster e Becker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/agregacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6.7–6.8 Agregação e Classificação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap06/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_5" id="__nav_4_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 7 — O Preço do Talvez
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 7 — O Preço do Talvez
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/loterias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1–7.2 Loterias e Utilidade Esperada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/risco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3–7.5 Aversão ao Risco e Arrow-Pratt
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/ferramentas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6 Ferramentas Contra o Risco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/estado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7–7.8 Estado-Preferência e Informação Assimétrica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap07/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_6">
+        
+          
+          <label class="md-nav__link" for="__nav_4_4_6" id="__nav_4_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 8 — Nem Tão Racionais Assim
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 8 — Nem Tão Racionais Assim
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/heuristicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.1 Heurísticas e Vieses Cognitivos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/prospecto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.2 Teoria do Prospecto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/ambiguidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.3 Ambiguidade e Ellsberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/preferencias-sociais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.4 Preferências Sociais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/desconto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.5 Desconto Hiperbólico e Autocontrole
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/nudges/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.6 Nudges e Arquitetura de Escolhas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap08/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Interação Estratégica
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Interação Estratégica
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_5_1" id="__nav_4_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 9 — Quando Sua Escolha Não É Só Sua
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 9 — Quando Sua Escolha Não É Só Sua
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap09/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap09a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9a — Pedra, Papel, Nash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap09b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9b — Primeiro Você, Depois Eu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap09c/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9c — Jogando no Escuro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap09d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9d — O Diploma É Caro, Mas O Sinal É Grátis?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    A Firma e os Custos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            A Firma e os Custos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_1" id="__nav_4_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 10 — Mais Mãos, Mais Máquinas — Mais Produto?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/produtividade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.1 Produto Marginal e Médio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/isoquantas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.2–10.3 Isoquantas e Rendimentos de Escala
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/elasticidade/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.4 Elasticidade de Substituição
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/funcoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.5 Catálogo de Funções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/progresso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.6–10.7 Progresso Técnico e Homotéticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap10/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_2" id="__nav_4_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 11 — A Conta Sempre Chega
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 11 — A Conta Sempre Chega
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/definicoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.1 Definições de Custos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/minimizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.2–11.4 Minimização e Shephard
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/curvas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.5–11.6 Curvas de Custo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/envoltoria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.7 Envoltória
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/catalogo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    11.8 Catálogo de Custos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap11/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_6_3" id="__nav_4_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 12 — Lucro = Receita − Custo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 12 — Lucro = Receita − Custo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/natureza-firma/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.1 Natureza da Firma
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.2–12.3 Maximização e Receita
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/oferta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.4 Oferta de Curto Prazo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/funcao-lucro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    12.5–12.6 Função Lucro e Insumos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap12/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mercados Competitivos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Mercados Competitivos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_1" id="__nav_4_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 13 — O Leiloeiro que Ninguém Vê
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 13 — O Leiloeiro que Ninguém Vê
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/demanda-mercado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.1 Demanda de Mercado
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/equilibrio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.2–13.4 Equilíbrio e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/longo-prazo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.5–13.8 Longo Prazo e Renda Ricardiana
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.9 Eficiência e Bem-Estar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/politicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    13.10–13.12 Políticas Públicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap13/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_7_2" id="__nav_4_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 14 — Equilíbrio Geral
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 14 — Equilíbrio Geral
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/sistema-precos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.1–14.2 Sistema de Preços e Edgeworth
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/eficiencia-pareto/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.3–14.5 Eficiência de Pareto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/teoremas-bem-estar/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.6–14.7 Teoremas do Bem-Estar
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/modelo-matematico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.8–14.10 Modelo Matemático
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/cge/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.11 Modelos CGE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/escolha-social/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    14.12 Escolha Social e Arrow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap14/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8" id="__nav_4_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Poder de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            Poder de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_1" id="__nav_4_8_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 15 — Sozinho, Feliz e Cobrando Caro
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 15 — Sozinho, Feliz e Cobrando Caro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/barreiras-maximizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.1–15.2 Barreiras e Maximização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/lerner-ineficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.3–15.5 Lerner, Ineficiência e Estática Comparativa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/qualidade-discriminacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.6–15.8 Qualidade, Discriminação e Tarifas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/regulacao-dinamica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    15.9–15.10 Regulação e Visão Dinâmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap15/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_2" id="__nav_4_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 16a — Poucos — e Isso Muda Tudo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 16a — Poucos — e Isso Muda Tudo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16a/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16a/fundamentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16a.1–16a.4 Bertrand, Cournot e Stackelberg
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16a/capacidade-diferenciacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16a.5–16a.6 Capacidade e Diferenciação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16a/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16a/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8_3">
+        
+          
+          <label class="md-nav__link" for="__nav_4_8_3" id="__nav_4_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 16b — Colusão, Entrada e o Árbitro
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 16b — Colusão, Entrada e o Árbitro
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/colusao-entrada/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.1–16b.4 Colusão e Entrada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/entrada-inovacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.5–16b.7 Entrada Livre e Inovação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/monopolistica-fusoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    16b.8–16b.10 Competição Monopolística e Fusões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap16b/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9">
+        
+          
+          <label class="md-nav__link" for="__nav_4_9" id="__nav_4_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fatores e Tempo
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9">
+            <span class="md-nav__icon md-icon"></span>
+            Fatores e Tempo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_1" id="__nav_4_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 17 — O Salário Subiu e Você… Trabalhou Menos?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/oferta-trabalho/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.1–17.3 Oferta de Trabalho
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/equilibrio-diferenciais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.4–17.6 Equilíbrio e Diferenciais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/monopsonio-sindicatos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.7–17.10 Monopsônio, Sindicatos, Busca e Gig Economy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/fatores-terra/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    17.11–17.12 Fatores e Terra
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap17/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_9_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_9_2" id="__nav_4_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 18 — A Paciência Tem Preço
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 18 — A Paciência Tem Preço
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/capital-juros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.1–18.2 Capital e Juros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/fisher-inflacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.3–18.4 Fisher e Inflação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/ativos-investimento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.5–18.7 Ativos e Investimento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/demanda-capital/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.8–18.9 Demanda e Juros Compostos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/hotelling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    18.10–18.11 Hotelling e Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap18/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10" id="__nav_4_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Falhas de Mercado
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10">
+            <span class="md-nav__icon md-icon"></span>
+            Falhas de Mercado
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_1" id="__nav_4_10_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 19 — Quando Um Lado Sabe Mais
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 19 — Quando Um Lado Sabe Mais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/principal-agente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.1–19.2 Contratos e Principal-Agente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/risco-moral/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.3 Risco Moral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/selecao-adversa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.4 Seleção Adversa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/sinalizacao-screening/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.5–19.6 Sinalização e Screening
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/leiloes-taxonomia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.7–19.8 Leilões e Taxonomia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/matching-markets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    19.9 Matching Markets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap19/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_10_2">
+        
+          
+          <label class="md-nav__link" for="__nav_4_10_2" id="__nav_4_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 20 — Fumaça, Caronas e Tragédias
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 20 — Fumaça, Caronas e Tragédias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/externalidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.1–20.2 Externalidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/modelo-solucoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.3–20.4 Modelo e Soluções
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/bens-publicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.5–20.6 Bens Públicos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/lindahl-carona/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.7–20.8 Lindahl e Carona
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/votacao-mecanismos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    20.9–20.10 Votação e Mecanismos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap20/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11">
+        
+          
+          <label class="md-nav__link" for="__nav_4_11" id="__nav_4_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Digital
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Digital
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_11_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_11_1" id="__nav_4_11_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 21 — Se É De Graça, O Produto É Você
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_11_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_11_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 21 — Se É De Graça, O Produto É Você
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/bens-info-redes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.1–21.2 Bens de Informação e Redes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/mercados-bilaterais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.3 Mercados Bilaterais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/competicao-atencao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.4–21.5 Competição e Atenção
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/dados-leiloes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    21.6–21.7 Dados e Leilões
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap21/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12">
+        
+          
+          <label class="md-nav__link" for="__nav_4_12" id="__nav_4_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Métodos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12">
+            <span class="md-nav__icon md-icon"></span>
+            Métodos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_12_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_12_1" id="__nav_4_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 22 — RCTs, Diff-in-Diff e Outras Siglas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/experimentacao-lab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.1–22.2 Experimentação e Laboratório
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/campo-rcts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.3–22.4 Campo e RCTs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/naturais-mecanismos-limites/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22.5–22.7 Naturais, Mecanismos e Limites
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap22/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13">
+        
+          
+          <label class="md-nav__link" for="__nav_4_13" id="__nav_4_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia da Saúde
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13">
+            <span class="md-nav__icon md-icon"></span>
+            Economia da Saúde
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_13_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_13_1" id="__nav_4_13_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 23 — Doutor, Quanto Custa?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_13_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_13_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 23 — Doutor, Quanto Custa?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/arrow-grossman/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.1 Arrow e Grossman
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/demanda-oferta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.2–23.3 Demanda e Oferta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/seguros-sistemas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.4–23.5 Seguros e Sistemas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/avaliacao-externalidades/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.6 Avaliação e Externalidades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/regulacao-farmaceutica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    23.7 Regulação Farmacêutica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap23/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14">
+        
+          
+          <label class="md-nav__link" for="__nav_4_14" id="__nav_4_14_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Economia Ambiental
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14">
+            <span class="md-nav__icon md-icon"></span>
+            Economia Ambiental
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_14_1">
+        
+          
+          <label class="md-nav__link" for="__nav_4_14_1" id="__nav_4_14_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cap. 24 — Quanto Vale Um Pôr do Sol?
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_14_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_14_1">
+            <span class="md-nav__icon md-icon"></span>
+            Cap. 24 — Quanto Vale Um Pôr do Sol?
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Visão Geral
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/politica-instrumentos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.1–24.2 Política e Instrumentos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/clima-carbono/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.3–24.4 Clima e Carbono
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/valoracao-recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    24.5–24.6 Valoração e Recursos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/exercicios/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios e ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cap24/pesquisa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pesquisa em Ação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cadernos Computacionais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../exercicios-ia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercícios com IA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anpec-compilado/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compilado ANPEC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_18">
+        
+          
+          <label class="md-nav__link" for="__nav_4_18" id="__nav_4_18_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Recursos
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_18">
+            <span class="md-nav__icon md-icon"></span>
+            Recursos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recursos para Download
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/mapas-conceituais/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mapas Conceituais
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/guia-pythonesco/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia Pythonesco
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/newsletter-template/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Newsletter Template
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/atividades-sala/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Atividades de Sala
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/spin-offs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spin-offs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/dados-brasileiros/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dados Brasileiros
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/roteiros-video/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roteiros de Vídeo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../recursos/protocolo-atualizacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protocolo de Atualização
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_19">
+        
+          
+          <label class="md-nav__link" for="__nav_4_19" id="__nav_4_19_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Referência
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_19_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_19">
+            <span class="md-nav__icon md-icon"></span>
+            Referência
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../referencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    📚 Referência
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../notacao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notação
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../glossario/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossário
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../indice-remissivo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Índice Remissivo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../referencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referências
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+  
+    
+                  
+
+
+<h1 id="pass-5-referee-2-aula-7-externalidades-bens-publicos">Pass-5 Referee 2 — Aula 7 (Externalidades + Bens Públicos)<a class="headerlink" href="#pass-5-referee-2-aula-7-externalidades-bens-publicos" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Auditor:</strong> prof-mpe-micro em modo referee 2 implacável.
+<strong>Data:</strong> 2026-05-08.
+<strong>Inventário auditado:</strong> <code>aula_7/pre_aula.md</code> (495L), <code>aula_7/durante_aula.md</code> (596L), <code>aula_7/exercicios-avaliativos.md</code> (401L), <code>aula_7/slides/aula-07.qmd</code> (665L), <code>platform/aula-07.html</code>, <code>platform/aula-07-pre.html</code>, <code>platform/aula-07-pos.html</code>, <code>platform/aula-07-exerc.html</code>.
+<strong>Baseline de calibre:</strong> Aula 5 e Aula 6 em 10/10 pós-pass-5.</p>
+</blockquote>
+<hr>
+<h2 id="veredito-de-uma-linha">Veredito de uma linha<a class="headerlink" href="#veredito-de-uma-linha" title="Permanent link">¶</a></h2>
+<p>Bundle pedagogicamente sólido com cobertura matemática consistente, mas <strong>não passa em pass-5</strong> sem corrigir um bug avaliativo grave (Q4 pós com duas alternativas com mesmo número correto), uma quebra obrigatória de slide (slide 7 estourado em score 13.7), e a pendência operacional do PDF cap19 no bucket Supabase.</p>
+<h2 id="resumo-executivo">Resumo executivo<a class="headerlink" href="#resumo-executivo" title="Permanent link">¶</a></h2>
+<p>Calibre matemático e fact-checking <strong>muito bons</strong>: 8 DOIs canônicos batem com Crossref, fatos Brasil/Mundo (RenovaBio Lei 13.576/2017, PMCMV Lei 11.977/2009, EU ETS Phase 4, Acid Rain Program 1990, FCC spectrum) verificados; notação canônica respeitada (zero <code>\succsim</code>, zero <code>MRS</code>/<code>MRT</code>, vírgula decimal); delimitadores MathJax corretos por fonte (<code>$/$$</code> em <code>.qmd</code>, <code>\(\)/\[\]</code> em platform HTML); zero "todas acima"/"nenhuma das anteriores". Cobertura N&amp;S Cap. 19 sólida em §19.1, §19.2, §19.3, §19.4, §19.5, §19.6, §19.9 (VCG); §19.7–§19.8 (votação) ficam citados sem cobrança formal — <strong>OK</strong>, escopo declarado. Sincronia md ↔ html dos avaliativos é 1:1 nos parâmetros numéricos. Coerência cross-artefato (pré-aula → pré-quiz → aula → pós-quiz → exercícios) bem encadeada, com tripla cobertura calibrada de Pigou. <strong>Mas há 1 blocker pedagógico (Q4 pós com <code>G*=9</code> em duas alternativas), 7 majors (slide 7 estourado, slide 21 apertado, PDF bucket pendente, redação de alternativas longas vs curtas em Q10 pós, distrator-armadilha sem aviso explícito, Ex6(d) salta passo de simetria em derivação, Q8 pós com explicação parsável mas opaca) e 8 minors</strong>. <strong>Score: 8.0/10</strong> — abaixo do baseline 10/10 das Aulas 5/6 por causa do bug de gabarito em avaliativo (peso institucional alto: vai para nota).</p>
+<hr>
+<h2 id="blockers-1">🔴 Blockers (1)<a class="headerlink" href="#blockers-1" title="Permanent link">¶</a></h2>
+<h3 id="b1-q4-pos-aula-tem-duas-alternativas-numericamente-identicas-so-uma-considerada-correta-resolvido-em-2026-05-08-bb8f8fa">B1. Q4 pós-aula tem duas alternativas numericamente idênticas; só uma considerada correta — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#b1-q4-pos-aula-tem-duas-alternativas-numericamente-identicas-so-uma-considerada-correta-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> trocada a forma funcional de <span class="arithmatex">\(\sqrt{G}\)</span> para <span class="arithmatex">\(\ln G\)</span> — a coincidência "média = soma" para <span class="arithmatex">\(I=2\)</span> era estrutural na forma raiz (porque <span class="arithmatex">\(\partial_G(c\sqrt G) = c/(2\sqrt G)\)</span> e o fator <span class="arithmatex">\(1/2\)</span> converte <span class="arithmatex">\(\sum c\)</span> em <span class="arithmatex">\(\bar c \cdot I/2 = \bar c\)</span> quando <span class="arithmatex">\(I=2\)</span>). Sob <span class="arithmatex">\(\ln G\)</span>, <span class="arithmatex">\(\partial_G(c \ln G) = c/G\)</span> sem fator <span class="arithmatex">\(1/2\)</span>: Samuelson dá <span class="arithmatex">\(G^* = 6\)</span> (soma <span class="arithmatex">\(2+4=6\)</span>); "média errada" dá <span class="arithmatex">\(G = 3\)</span> (média <span class="arithmatex">\(\bar a = 3\)</span>). Números distintos. Q5 e Lindahl recalibrados com <span class="arithmatex">\(G^*=6\)</span>, <span class="arithmatex">\(\tau^A = 1/3\)</span>, <span class="arithmatex">\(\tau^B = 2/3\)</span> — preços iguais aos anteriores por coincidência de razão <span class="arithmatex">\(a^A/(a^A+a^B) = 1/3\)</span>.</p>
+<p><strong>Arquivo:</strong> <code>platform/aula-07-pos.html:96-103</code> (e gabarito em :104-109)</p>
+<p>Quiz pós-aula 7, Q4 sobre Samuelson com 2 agentes assimétricos. Texto:
+- <code>(a) G* = 9 (média das valorações).</code>
+- <code>(b) G* = 9: ...soma vertical (1/√G) + (2/√G) = 3/√G = 1 ⇒ G* = 9.</code> ← <code>data-correct="b"</code></p>
+<p><strong>Problema:</strong> o aluno que calcula <code>G*=9</code> corretamente e escolhe a primeira ocorrência do número (alternativa a) é punido. A justificativa "média das valorações" entre parênteses em (a) é falsa pedagogicamente (média de 2 e 4 = 3, não 9), mas o número-âncora "9" está lá e em quiz com 10 questões e timer real, vários alunos vão marcar (a) por leitura rápida de número.</p>
+<p>O <strong>gabarito reconhece o problema</strong>: "(a) é resposta correta com justificativa errada — não é 'média'." Isso é <strong>classificação como distrator-armadilha</strong>, mas um avaliativo de nota não pode ter armadilha desse tipo sem aviso explícito <strong>antes</strong> da escolha — o tradeoff é punir leitura veloz, não recompensar atenção. <strong>Pedagogicamente regressivo.</strong></p>
+<p><strong>Correção sugerida:</strong> alterar (a) para outro número errado (ex.: <code>G* = 3 (média de 2 e 4 erroneamente identificada)</code> ou <code>G* = 4 (regra de bem privado individual)</code>), preservando o caráter formativo do distrator sem o conflito numérico.</p>
+<p><strong>Severidade:</strong> <strong>blocker</strong> — questão de pós-aula compõe os 30% de engajamento; alunos prejudicados por bug de design em vez de falha de conhecimento.</p>
+<hr>
+<h2 id="majors-7">🟡 Majors (7)<a class="headerlink" href="#majors-7" title="Permanent link">¶</a></h2>
+<h3 id="m1-slide-7-pigou-modelo-parcial-22-estoura-score-de-densidade-resolvido-em-2026-05-08-bb8f8fa">M1. Slide 7 (Pigou modelo parcial 2/2) estoura score de densidade — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m1-slide-7-pigou-modelo-parcial-22-estoura-score-de-densidade-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> quebrado em (1/3) [setup do modelo, intacto] + (2/3) [regra Pigou + cuidado pedagógico + eq-key + bridge para próximo] + (3/3) [exemplo numérico com 3 bullets + eq-punch terminal isolada]. Score do (2/3) ≈ 7,5 (header + parágrafo + eq-key + parágrafo + bridge); score do (3/3) ≈ 7,7 (header + parágrafo + 3 bullets + eq-punch). Ambos folgam dentro do teto 10.</p>
+<p><strong>Arquivo:</strong> <code>aula_7/slides/aula-07.qmd:187-205</code> (slide "Pigou (1920) — modelo parcial (2/2)")</p>
+<p><strong>Score calculado pela métrica do CLAUDE.md:</strong>
+- Header <code>h2</code>: 1.8
+- Parágrafo "Imposto Pigou ótimo:": 1.5
+- <code>eq-key</code> com display equation embutido: 2.2
+- Parágrafo "Cuidado pedagógico…": 1.5
+- Parágrafo "Exemplo numérico…": 1.5
+- 3 bullets (Privado/Social/Imposto): 3 × 1.0 = 3.0
+- <code>eq-punch</code> terminal com inline math denso: 2.2</p>
+<p><strong>Total: 13.7</strong> → faixa "<strong>ESTOURA, quebrar obrigatoriamente</strong>" (&gt;12). Anti-hack <code>.smaller</code> ou <code>font-size</code> é proibido pelo CLAUDE.md (regra <code>feedback_slides_compactos.md</code>).</p>
+<p><strong>Correção sugerida:</strong> dividir em (2/3) "regra Pigou + cuidado pedagógico + eq-key" e (3/3) "exemplo numérico (3 bullets) + eq-punch terminal isolado". Padrão idêntico ao isolamento da punch do slide 35 Shephard descoberto na Aula 2.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — viola regra explícita do CLAUDE.md. Aula 2 e 5 cumprem score sem exceção; Aula 7 não pode ficar de fora.</p>
+<h3 id="m2-slide-21-samuelson-derivacao-final-no-limite-alto-da-faixa-apertada-resolvido-em-2026-05-08-bb8f8fa">M2. Slide 21 (Samuelson derivação final) no limite alto da faixa apertada — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m2-slide-21-samuelson-derivacao-final-no-limite-alto-da-faixa-apertada-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> isolada a <code>eq-punch</code> ("Bem privado: TMS=TMT… bem público: soma vertical") em slide próprio "Samuelson — leitura econômica (2/2)". Slide derivação (1/2) fica com header + parágrafo + display equation + parágrafo + eq-key boxed (score ≈ 9,2); slide (2/2) fica com header + eq-punch isolada (score ≈ 4,0). Padrão Shephard (Aula 2 slide 35).</p>
+<p><strong>Arquivo:</strong> <code>aula_7/slides/aula-07.qmd:374-389</code></p>
+<p><strong>Score: 11.7</strong> — faixa "<strong>APERTADO, candidato a quebrar</strong>". Tem <code>eq-key</code> boxed + <code>eq-punch</code> terminal + display equation + parágrafo + header. O buffer 2.6em em eq-punch terminal está aplicado em <code>theme.scss</code> (paridade Aula 1/2), mas o slide concentra duas equações destacadas seguidas — visualmente carregado.</p>
+<p><strong>Correção sugerida:</strong> isolar a <code>eq-punch</code> "Bem privado: TMS=TMT… bem público: soma vertical" num slide próprio (Samuelson — leitura econômica), apontando para a derivação no slide anterior. Padrão Shephard.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — score &gt;10 é candidato declarado a quebra; com o bundle todo no limite, dois slides apertados ao mesmo tempo (slide 21 + slide 29 Lindahl com score 10.0) geram pressão visual cumulativa no Bloco 3+4 da aula.</p>
+<h3 id="m3-pdf-nicholson-snyder-12e-cap19pdf-ausente-do-bucket-supabase">M3. PDF <code>nicholson-snyder-12e-cap19.pdf</code> ausente do bucket Supabase<a class="headerlink" href="#m3-pdf-nicholson-snyder-12e-cap19pdf-ausente-do-bucket-supabase" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>platform/aula-07.html:95</code> chama <code>MPE.openMaterial('nicholson-snyder-12e-cap19.pdf', this)</code>. Confirmado em <code>supabase/storage-checklist.md:54</code> — listado em "Capítulos que ainda virão (Aulas 6–9)" sob status pendente.</p>
+<p>A pré-aula tem <strong>fallback graceful textual</strong>: "Caso indisponível, use a versão impressa do Insper." (linha 96). Não é blocker absoluto, mas é <strong>major operacional</strong> que precisa ser resolvido <strong>antes da abertura da pré-aula</strong> (qui 28/05 madrugada). Aulas 5 e 6 já tiveram esse mesmo gargalo — padrão recorrente.</p>
+<p><strong>Correção sugerida:</strong> Darcio carrega <code>nicholson-snyder-12e-cap19.pdf</code> em <code>course-materials/</code> via Supabase Dashboard antes de 28/05; atualiza <code>storage-checklist.md</code> com checkmark; remove a nota "Caso indisponível…" (ou mantém como salvaguarda).</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — afeta operação real; não bloqueia release pedagógico mas bloqueia experiência do aluno.</p>
+<h3 id="m4-q10-pos-aula-com-alternativa-correta-deliberadamente-longa-sinaletica-resolvido-em-2026-05-08-bb8f8fa">M4. Q10 pós-aula com alternativa correta deliberadamente longa, sinalética — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m4-q10-pos-aula-com-alternativa-correta-deliberadamente-longa-sinaletica-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> estendidas as 3 alternativas erradas com prosa adicional plausível-mas-equivocada (não filler vazio): (a) com 664 chars argumenta que Coase "falha imediatamente" + invoca aparato teórico Aumann-Shapley/núcleo; (c) com 833 chars defende "coordenação descentralizada espontânea" + cita literatura experimental fictícia plausível; (d) com 648 chars defende equivalência formal Pigou-Coase via teorema do bem-estar. Correta (b) mantida em 962 chars — tradeoff de comprimento dentro de fator 1,5x; eliminado o sinal "marque a longa".</p>
+<p><strong>Arquivo:</strong> <code>platform/aula-07-pos.html:217-218</code></p>
+<p>A alternativa (b) tem ~870 caracteres; as outras (a, c, d) têm ~30, ~30, ~50 caracteres. Em quiz com 10 questões, é o <strong>caso clássico de distractor-sinalético</strong>: o aluno que não leu marca (b) por reconhecimento de comprimento.</p>
+<p>O peer-review da própria questão registra: "alternativa longa correta é o padrão para questões meta — preferi clareza a brevidade". <strong>Justificativa válida pedagogicamente, mas o tradeoff foi explícito.</strong> Aula 5 Q10 e Aula 6 Q10 trataram esse problema mantendo as outras alternativas <strong>igualmente verbosas e plausíveis</strong>, não tornando o comprimento sinalético.</p>
+<p><strong>Correção sugerida:</strong> estender as alternativas erradas com prosa adicional plausível-mas-equivocada (não filler vazio). Ex.: (a) podia ter 200 caracteres explicando "o teorema falha porque…" com argumentação coerente mas falsa.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — recorrente nas Aulas 7 (e em produção pode bias acerto 1ª da Q10 para cima sem refletir aprendizado real). A psicometria (<code>admin.html</code> tab) vai pegar alta discriminação inflada.</p>
+<h3 id="m5-ex6d-gabarito-salta-passo-de-equilibrio-simetrico-nash-com-taxa-resolvido-em-2026-05-08-bb8f8fa">M5. Ex6(d) gabarito salta passo de equilíbrio simétrico Nash com taxa — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m5-ex6d-gabarito-salta-passo-de-equilibrio-simetrico-nash-com-taxa-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> adicionado bloco "Imposto Pigou para induzir <span class="arithmatex">\(E^*\)</span> — passo de simetria explícito" no passo 2 (Derivação) do gabarito, em ambos os arquivos (MD ↔ HTML). Argumento de auto-consistência (<span class="arithmatex">\(e^i = e^*\)</span>, <span class="arithmatex">\(E = 4e^*\)</span>) explicitado, seguido por substituição <span class="arithmatex">\(e^i = E/4\)</span> na CPO modificada, simplificação <span class="arithmatex">\(90 - (5/4)E - t = 0\)</span>, avaliação em <span class="arithmatex">\(E^* = 45\)</span> entregando <span class="arithmatex">\(t = 33{,}75\)</span>. Verificação direta também incluída (sem usar a forma reduzida) para mostrar consistência. Espelhamento MD↔HTML 1:1.</p>
+<p><strong>Arquivo:</strong> <code>aula_7/exercicios-avaliativos.md:350-355</code> e <code>platform/aula-07-exerc.html:434-436</code> (Ex 6(d))</p>
+<p>A CPO Nash com taxa: <span class="arithmatex">\(100 - E - e^i - 10 - t = 0\)</span>. O gabarito <strong>substitui direto</strong> <span class="arithmatex">\(E=45, e^i=11{,}25\)</span> obtendo <span class="arithmatex">\(t = 33{,}75\)</span>, sem mostrar o passo de equilíbrio simétrico:</p>
+<div class="arithmatex">\[e^i = (90-t-E) \Rightarrow E^N(t) = (4/5)(90-t) \Rightarrow 45 = (4/5)(90-t) \Rightarrow t = 33{,}75.\]</div>
+<p>Aluno cuidadoso vai estranhar — a CPO <strong>só vale se cada agente, em sua maximização, tomou <span class="arithmatex">\(e_{-i}\)</span> como dado</strong>, e em equilíbrio simétrico <span class="arithmatex">\(e^i = E/4\)</span>. Substituir direto pula o argumento de auto-consistência.</p>
+<p><strong>Correção sugerida:</strong> explicitar 1 linha do passo de simetria no gabarito 5-passos, na "Derivação". Calibre 🔴 do exercício o exige.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — não é erro de cálculo, é ausência de rigor que aluno 🔴 vai detectar e questionar.</p>
+<h3 id="m6-q8-pos-aula-com-explicacao-dentro-da-alternativa-correta-confusa-de-parsear-resolvido-em-2026-05-08-bb8f8fa">M6. Q8 pós-aula com explicação dentro da alternativa correta confusa de parsear — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m6-q8-pos-aula-com-explicacao-dentro-da-alternativa-correta-confusa-de-parsear-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> reescrita a alternativa (c) explicitando <span class="arithmatex">\(h^A(\hat v_{-A}) = 0\)</span> antes da fórmula, escrevendo <span class="arithmatex">\(t^A = h^A - \sum_{j \neq A} v^j(d^*) = 0 - (5 + (-10)) = 0 - (-5) = 5\)</span>, e idem para B. Eliminado o "max(0, -10+5)" intermediário ambíguo; sinais explicitados pela soma <span class="arithmatex">\(5 + (-10)\)</span> em vez de <span class="arithmatex">\(5-10\)</span>. Conteúdo inalterado, redação direta. Distratores intactos.</p>
+<p><strong>Arquivo:</strong> <code>platform/aula-07-pos.html:180</code></p>
+<p>Alternativa (c) inclui: "paga <span class="arithmatex">\(\max(0, -10+5) - (5-10) = 0-(-5) = 5\)</span>". </p>
+<p>A leitura matematicamente correta: <span class="arithmatex">\(\max(0, -10+5) = \max(0,-5) = 0\)</span>; <span class="arithmatex">\(-(5-10) = -(-5) = +5\)</span>; logo <span class="arithmatex">\(0+5=5\)</span>. Mas a notação "= 0-(-5) = 5" salta o passo de simplificação intermediária e o sinal <code>-</code> entre os dois max-terms é ambíguo (poderia ser interpretado como subtração ou como sinal negativo do segundo termo).</p>
+<p>A álgebra está correta; a redação está confusa. Em quiz com timer, o aluno revisor pode ficar 1+ min decodificando.</p>
+<p><strong>Correção sugerida:</strong> reescrever como: "paga <span class="arithmatex">\(h^A - \sum_{j\neq A} v^j(d^*) = 0 - (5-10) = 0 - (-5) = 5\)</span>", explicitando <span class="arithmatex">\(h^A=0\)</span> antes.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — redação opaca em alternativa correta de questão 🔴 prejudica psicometria (rpb pode cair).</p>
+<h3 id="m7-mc4-do-material-gabarito-vago-em-gn-comparado-com-q8-do-pre-quiz-resolvido-em-2026-05-08-bb8f8fa">M7. MC4 do material gabarito vago em <span class="arithmatex">\(G^N\)</span> comparado com Q8 do pré-quiz — ✅ <strong>RESOLVIDO em 2026-05-08</strong> (<code>bb8f8fa</code>)<a class="headerlink" href="#m7-mc4-do-material-gabarito-vago-em-gn-comparado-com-q8-do-pre-quiz-resolvido-em-2026-05-08-bb8f8fa" title="Permanent link">¶</a></h3>
+<p><strong>Fix aplicado:</strong> adicionado cálculo explícito na alternativa (c) do MC4 (s4q2): "Cada agente Nash escolhe <span class="arithmatex">\(g^i\)</span> tal que <span class="arithmatex">\(\text{TMS}^i = 1\)</span> individualmente: <span class="arithmatex">\(1/\sqrt{G^N} = 1 \Rightarrow G^N = 1\)</span>. Razão <span class="arithmatex">\(G^N/G^* = 1/9 = 1/I^2\)</span>." Aluno fica com a regra geral antes do quiz pré (Q8) cobrar — preserva calibre do quiz e dá ferramenta. Recomendação preferida da revisão (vs. suavizar Q8) implementada.</p>
+<p><strong>Arquivo:</strong> <code>platform/aula-07.html:285-291</code> (s4q2/MC4)</p>
+<p>O material da pré-aula MC4 (s4q2) usa <span class="arithmatex">\(u^i = x^i + 2\sqrt{G}\)</span>, <span class="arithmatex">\(I=3\)</span>, TMT=1; a alternativa correta (c) diz: "Cada agente Nash escolhe <span class="arithmatex">\(g^i\)</span> tal que <span class="arithmatex">\(\text{TMS}^i = 1\)</span> individualmente; com agentes simétricos isso entrega <span class="arithmatex">\(G^N\)</span> estritamente menor que 9." Não dá o número.</p>
+<p>Em <strong>Q8 do pré-quiz</strong> (<code>aula-07-pre.html:174-176</code>), com <span class="arithmatex">\(u = x + 4\sqrt G\)</span>, <span class="arithmatex">\(I=5\)</span>, TMT=2, o gabarito explicita <span class="arithmatex">\(G^N = 1\)</span> e razão <span class="arithmatex">\(G^N/G^* = 1/25 = 1/I^2\)</span>. <strong>Nível de detalhe assimétrico.</strong></p>
+<p><strong>Correção sugerida:</strong> completar MC4 com "<span class="arithmatex">\(G^N = 1\)</span> (CPO Nash <span class="arithmatex">\(1/\sqrt{G} = 1\)</span>); razão <span class="arithmatex">\(G^N/G^* = 1/9\)</span>". Aluno fica com a regra geral "<span class="arithmatex">\(G^N = 1/I^2 \cdot G^*\)</span> em economia simétrica com Bernoulli quase-linear de raiz quadrada" — útil para o quiz pré.</p>
+<p><strong>Severidade:</strong> <strong>major</strong> — a pré-aula deveria ser mais explícita que o quiz para preparar adequadamente. <strong>Mas isso é leve</strong>: pode virar minor dependendo da preferência do Darcio.</p>
+<hr>
+<h2 id="minors-8">🟢 Minors (8)<a class="headerlink" href="#minors-8" title="Permanent link">¶</a></h2>
+<h3 id="m1-slide-29-lindahl-precos-personalizados-score-100-no-limite">m1. Slide 29 (Lindahl preços personalizados) score 10.0 no limite<a class="headerlink" href="#m1-slide-29-lindahl-precos-personalizados-score-100-no-limite" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>aula_7/slides/aula-07.qmd:496-509</code>. 4 parágrafos curtos + eq-key terminal + header. Aceitável com buffer eq-key 2.6em ativo no theme.scss, mas <strong>no fio da navalha</strong>. Considerar compactar dois parágrafos (CPO + mercado fecha) numa linha só.</p>
+<h3 id="m2-tripla-cobertura-mc1q2-preex1d-de-pigou-avaliado-em-q">m2. Tripla cobertura MC1/Q2-pré/Ex1d de "Pigou avaliado em <span class="arithmatex">\(q^*\)</span>"<a class="headerlink" href="#m2-tripla-cobertura-mc1q2-preex1d-de-pigou-avaliado-em-q" title="Permanent link">¶</a></h3>
+<p><strong>Arquivos:</strong> <code>aula-07.html:182-189</code> (MC1), <code>aula-07-pre.html:55-72</code> (Q2), <code>aula-07-exerc.html:92-99</code> (Ex1d). Auto-flag do agente está correto: 3 chances de pegar a mesma armadilha. Pedagogicamente OK como reforço; em produção pode aumentar correlação inter-questões e baixar discriminação CTT na psicometria. Manter, mas saber o tradeoff.</p>
+<h3 id="m3-q8-do-pre-quiz-generalizacao-gn-1i2-so-vale-para-a-forma-raiz-especifica">m3. Q8 do pré-quiz generalização "<span class="arithmatex">\(G^N = 1/I^2\)</span>" só vale para a forma raiz específica<a class="headerlink" href="#m3-q8-do-pre-quiz-generalizacao-gn-1i2-so-vale-para-a-forma-raiz-especifica" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>aula-07-pre.html:181-183</code>. Gabarito Q8 diz: "Nash entrega <span class="arithmatex">\(1/I^2 = 1/25\)</span> do ótimo, em economia simétrica com Bernoulli quase-linear de raiz quadrada." O cálculo bate (<span class="arithmatex">\(I=5\)</span>, <span class="arithmatex">\(G^N=1\)</span>, <span class="arithmatex">\(G^*=25\)</span>). <strong>Mas a "fórmula" <span class="arithmatex">\(1/I^2\)</span> é específica da forma <span class="arithmatex">\(a\sqrt{G}\)</span></strong>: se a utilidade for <span class="arithmatex">\(a \ln G\)</span> (Ex 3 dos avaliativos), a razão é <span class="arithmatex">\(1/I\)</span>, não <span class="arithmatex">\(1/I^2\)</span> (Ex3 mostra <span class="arithmatex">\(G^N/G^*=1/3\)</span> com <span class="arithmatex">\(I=3\)</span>). Aluno pode generalizar errado. Adicionar nota "(específico para Bernoulli com raiz quadrada; com log, a razão é <span class="arithmatex">\(1/I\)</span>)" resolveria.</p>
+<h3 id="m4-q4-pre-externalidade-pecuniaria-vs-tecnologica-tem-alternativa-d-ambigua">m4. Q4 pré (externalidade pecuniária vs. tecnológica) tem alternativa (d) ambígua<a class="headerlink" href="#m4-q4-pre-externalidade-pecuniaria-vs-tecnologica-tem-alternativa-d-ambigua" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>aula-07-pre.html:101</code>. Alternativa (d): "Pareto exige que ninguém perca; se algum agente perde, alocação é Pareto-inferior." Isso é <strong>falso</strong> sob 1º TBE (Pareto não exige unanimidade), mas a redação "Pareto exige que ninguém perca" pode confundir aluno que pensa em Pareto-melhoria (sim, exige) vs. Pareto-eficiência (não exige). Pequena ambiguidade.</p>
+<h3 id="m5-ex2a-alternativa-i-revela-o-erro-algebrico">m5. Ex2(a) alternativa (i) revela o erro algébrico<a class="headerlink" href="#m5-ex2a-alternativa-i-revela-o-erro-algebrico" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>aula-07-exerc.html:134</code>. <code>(i) q^p_A = 4: 16 = 2q_A ⇒ q^p_A = 8 — alternativa com cálculo errado.</code> A alternativa <strong>mostra explicitamente</strong> que está errada antes do aluno escolher. Distrator que se autodelata. Correção: remover o autotag "alternativa com cálculo errado" — deixar o aluno detectar.</p>
+<h3 id="m6-mc1-s3q1-e-mc2-s3q2-na-pre-aula-rotina-com-4-alternativas-mas-a-e-c-repetem-ideia">m6. MC1 (s3q1) e MC2 (s3q2) na pré-aula — rotina com 4 alternativas mas (a) e (c) repetem ideia<a class="headerlink" href="#m6-mc1-s3q1-e-mc2-s3q2-na-pre-aula-rotina-com-4-alternativas-mas-a-e-c-repetem-ideia" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>aula-07.html:184-187</code>. MC1 alternativas:
+- (a) <code>t* = MEC(q^p) = 2q^p</code>
+- (c) <code>t* = MEC(q^p) — mesma lógica do (a) com forma melhor</code></p>
+<p>Distratores (a) e (c) <strong>são a mesma coisa</strong>. Em prática um deles é redundante. Aluno que marca (a) acha que (c) é "ainda mais errado" e descarta. Se quisesse forçar 4 alternativas, melhor (c) variar realmente o erro (ex.: <span class="arithmatex">\(t^*=\text{MC}_p(q^*)\)</span>).</p>
+<h3 id="m7-box-brasil-ostrom-almeida-et-al-2009-sem-doicitacao-verificavel">m7. Box Brasil Ostrom (Almeida et al. 2009) sem DOI/citação verificável<a class="headerlink" href="#m7-box-brasil-ostrom-almeida-et-al-2009-sem-doicitacao-verificavel" title="Permanent link">¶</a></h3>
+<p><strong>Arquivo:</strong> <code>exercicios-avaliativos.md:372</code> e <code>aula-07-exerc.html:456</code>. Cita "Almeida et al. 2009 para o Médio Solimões" para acordos de pesca de pirarucu. Não fornece DOI nem veículo (livro? journal? working paper?). Aluno curioso não vai achar. Marcar como <code>&lt;!-- [VERIFICAR REF] --&gt;</code> ou trocar por referência canônica como <strong>Castello et al. (2009, Conservation Biology, 23(3), 624–632, DOI 10.1111/j.1523-1739.2008.01153.x)</strong> sobre manejo participativo de pirarucu na Amazônia, que é a referência mais comum.</p>
+<h3 id="m8-slides-com-fragments-dao-tempo-mas-dependem-de-comportamento-reveal">m8. Slides com fragments dão tempo mas dependem de comportamento Reveal<a class="headerlink" href="#m8-slides-com-fragments-dao-tempo-mas-dependem-de-comportamento-reveal" title="Permanent link">¶</a></h3>
+<p><strong>Arquivos:</strong> Slides 20 (Samuelson programa) e 38 (Síntese final). Os fragments aliviam pressão visual ao revelar conteúdo gradualmente. Mas o aluno <strong>revisitando</strong> (após aula, gravação, PDF estático) vê tudo de uma vez — score "real" no PDF é o sem-fragments. <strong>Não-blocker</strong> para apresentação; pequeno cuidado pra revisão.</p>
+<hr>
+<h2 id="verificacao-dos-5-riscos-auto-identificados-pelo-agente-de-producao">Verificação dos 5 riscos auto-identificados pelo agente de produção<a class="headerlink" href="#verificacao-dos-5-riscos-auto-identificados-pelo-agente-de-producao" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Risco</th>
+<th>Severidade real</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>R1.</strong> Q5 avaliativos (VCG 3 agentes), ~16 min</td>
+<td><strong>Confirmado</strong>, mas <strong>OK</strong></td>
+<td>Cálculo bem decomposto em sub-itens (a)-(e), distribuindo o esforço. Estimativa 16 min é honesta; quem faz Bloco 4 do durante chega em 12-14 min. <strong>Sem ação necessária.</strong></td>
+</tr>
+<tr>
+<td><strong>R2.</strong> Ex 6(b) distinguir CPO Nash de CPO ótimo</td>
+<td><strong>Real</strong>, <strong>OK pedagogicamente</strong></td>
+<td>Distratores (i)/(iii) testam exatamente essa confusão; gabarito 5-passos explica a diferença. Mas ver M5 sobre o salto de simetria em (d).</td>
+</tr>
+<tr>
+<td><strong>R3.</strong> MC1 + Q2-pré + Ex1d cobertura tripla</td>
+<td><strong>Real</strong>, <strong>OK como reforço</strong></td>
+<td>Ver m2. Pedagogicamente intencional; psicometricamente vai inflar correlação inter-itens. <strong>Sem ação necessária.</strong></td>
+</tr>
+<tr>
+<td><strong>R4.</strong> Q10 pós Coase 1000 agentes alternativa correta longa</td>
+<td><strong>Real</strong>, <strong>MAJOR</strong></td>
+<td>Ver M4. Auto-flag estava certo; precisa correção.</td>
+</tr>
+<tr>
+<td><strong>R5.</strong> Ostrom narrativa solta</td>
+<td><strong>Parcialmente real</strong></td>
+<td>Box e tratamento conceitual são honestos sobre escopo ("não modela formalmente"). Ex 6(e) dá rigor matemático adequado para 🔴. <strong>Sem ação necessária</strong>, exceto referência Almeida et al. (m7).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>4 dos 5 riscos auto-flagados pelo agente</strong> ou foram resolvidos no design ou estão calibrados ao escopo. 1 (R4) precisa atuação efetiva.</p>
+<hr>
+<h2 id="cobertura-ns-cap-19-piso-obrigatorio">Cobertura N&amp;S Cap. 19 (piso obrigatório)<a class="headerlink" href="#cobertura-ns-cap-19-piso-obrigatorio" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Seção N&amp;S 12e</th>
+<th>Cobertura no bundle</th>
+<th>Profundidade</th>
+<th>Avaliação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>§19.1 Defining Externalities</td>
+<td>Pré-aula §3 + Q1 pré + slide 5</td>
+<td>Definição formal AD + tipologia 3-eixos</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>§19.2 Externalities and Allocational Inefficiency</td>
+<td>Pré-aula §3 (modelo parcial) + Bloco 1.c durante + slides 6-7 + Ex 1 + Q1 pós</td>
+<td>Derivação completa Pigou + Harberger</td>
+<td>✅✅ (acima do piso)</td>
+</tr>
+<tr>
+<td>§19.3 Solutions: Pigou + Coase</td>
+<td>Pré-aula §3 + Bloco 1.c+1.d + Bloco 2 todo + slides 8, 13-17 + Ex 2, Ex 4 + Q3 pré + Q2 pós</td>
+<td>3 hipóteses Coase explícitas, cap-and-trade como Coase aplicado</td>
+<td>✅✅</td>
+</tr>
+<tr>
+<td>§19.4 Attributes of Public Goods</td>
+<td>Pré-aula §4 + slide 19 + Q6 pré + Q3 pós</td>
+<td>Matriz 2×2 + 4 quadrantes</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>§19.5 Public Goods and Resource Allocation</td>
+<td>Pré-aula §4 (Lagrangiano) + Bloco 3.b durante + slides 20-22 + Ex 3 + Q7-Q8 pré + Q4 pós</td>
+<td>Derivação Lagrangiano completa em sala</td>
+<td>✅✅</td>
+</tr>
+<tr>
+<td>§19.6 Lindahl Pricing</td>
+<td>Pré-aula §5 + Bloco 4.a + slides 29-30 + Ex 3(e) + Q9 pré + Q5 pós</td>
+<td>Lindahl como descentralização Samuelson</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>§19.7 Voting and Resource Allocation</td>
+<td>Citado pré-aula §2 ("ficam para Seção 5"), não cobrado</td>
+<td>Fora do escopo declarado</td>
+<td>⚠️ <strong>escopo declarado</strong></td>
+</tr>
+<tr>
+<td>§19.8 A Simple Political Model</td>
+<td>Idem, citado, não cobrado</td>
+<td>Fora do escopo declarado</td>
+<td>⚠️</td>
+</tr>
+<tr>
+<td>§19.9 Voting Mechanisms (VCG)</td>
+<td>Pré-aula §5 + Bloco 4.b + slides 31-33 + Ex 5 + Q10 pré + Q8 pós</td>
+<td>Mecanismo Clarke pivot completo + sketch dominância</td>
+<td>✅✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Veredito:</strong> 7 seções cobertas em profundidade; 2 (§19.7-§19.8) excluídas com escopo declarado <strong>explicitamente</strong> na pré-aula §2 ("ficam para Seção 5"). Coerente com calendário 30h e ementa MPE. <strong>Cobertura N&amp;S Cap. 19 está acima do piso.</strong></p>
+<p><strong>Adições além de N&amp;S:</strong>
+- <strong>Bergstrom-Blume-Varian 1986</strong> (J. Public Economics) — ✅ DOI verificado, citação canônica para free-rider em economia assimétrica.
+- <strong>Hardin 1968</strong> (Science) — ✅ DOI verificado, citação canônica para tragédia dos comuns.
+- <strong>Ostrom 1990</strong> (livro) — ✅ Nobel 2009, citação canônica para governance institucional.
+- <strong>Weitzman 1974</strong> (REStud) — ✅ DOI verificado, citação canônica para preço-vs-quantidade sob incerteza.</p>
+<p>Todas justificadas pelo escopo da aula (commons, mecanismos, instrumentos sob incerteza).</p>
+<hr>
+<h2 id="score-densidade-slides-10-todos-os-slides-com-score-10">Score densidade slides ≥ 10 (todos os slides com score ≥ 10)<a class="headerlink" href="#score-densidade-slides-10-todos-os-slides-com-score-10" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Slide (L no qmd)</th>
+<th>Score</th>
+<th>Faixa</th>
+<th>Ação</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>7</td>
+<td>Pigou (1920) modelo parcial (2/2), L187-205</td>
+<td><strong>13.7</strong></td>
+<td><strong>ESTOURA</strong></td>
+<td><strong>Quebrar obrigatório</strong> (M1)</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Samuelson — derivação final, L374-389</td>
+<td><strong>11.7</strong></td>
+<td><strong>APERTADO</strong></td>
+<td>Considerar isolar eq-punch (M2)</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Lindahl (1919) preços personalizados, L496-509</td>
+<td><strong>10.0</strong></td>
+<td>APERTADO/limite</td>
+<td>Compactar parágrafos (m1)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Demais 23 slides de conteúdo: score ≤ 9.0</strong> (Ostrom = 9.0 é o teto; demais ≤ 8.5).</p>
+<p><strong>Cálculo do slide 7 (detalhado):</strong>
+- Header <code>h2</code>: 1.8
+- Parágrafo "Imposto Pigou ótimo:": 1.5
+- <code>eq-key</code> boxed (com display $$ embutido): 2.2
+- Parágrafo "Cuidado pedagógico…": 1.5
+- Parágrafo "Exemplo numérico…": 1.5
+- 3 bullets: 3.0
+- <code>eq-punch</code> terminal: 2.2
+- <strong>Soma: 13.7</strong> → ESTOURA, <strong>viola regra do CLAUDE.md</strong>.</p>
+<p><strong>Anti-hack <code>.smaller</code> ou <code>font-size: 0.Xem</code> em conteúdo:</strong> zero ocorrências auditáveis (todas as <code>font-size</code> baixas estão em elementos decorativos: capa, dividers, pause, encerramento) — <strong>limpo</strong>.</p>
+<hr>
+<h2 id="coerencia-cross-artefato">Coerência cross-artefato<a class="headerlink" href="#coerencia-cross-artefato" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Conceito</th>
+<th>Pré-aula material</th>
+<th>Pré-quiz</th>
+<th>Aula (durante)</th>
+<th>Pós-quiz</th>
+<th>Avaliativos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pigou <span class="arithmatex">\(t^* = \text{MEC}(q^*)\)</span></td>
+<td>MC1 (MEC=2q, q*=4)</td>
+<td>Q2 (abstrato)</td>
+<td>Bloco 1.c numérico</td>
+<td>Q1 (q<em>=6, t</em>=12)</td>
+<td>Ex1 (q<em>=6, t</em>=6)</td>
+</tr>
+<tr>
+<td>Coase 3 hipóteses</td>
+<td>MC2</td>
+<td>Q3</td>
+<td>Bloco 2.a-b</td>
+<td>Q2</td>
+<td>Ex2</td>
+</tr>
+<tr>
+<td>Cap-and-trade</td>
+<td>Box Brasil §3 + §3 Box Mundo</td>
+<td>Q5 (conceito)</td>
+<td>Bloco 2.d derivação</td>
+<td>Q6 (cálculo MAC)</td>
+<td>Ex4 (cálculo numérico extenso)</td>
+</tr>
+<tr>
+<td>Bem público matriz</td>
+<td>§4</td>
+<td>Q6</td>
+<td>Bloco 3.a</td>
+<td>Q3 (aplicação a casos)</td>
+<td>(não diretamente)</td>
+</tr>
+<tr>
+<td>Samuelson via Lagrangiano</td>
+<td>§4 derivação</td>
+<td>Q7 (cálculo simétrico I=5)</td>
+<td>Bloco 3.b derivação completa</td>
+<td>Q4 (assimétrico I=2)</td>
+<td>Ex3 (simétrico I=3, log)</td>
+</tr>
+<tr>
+<td>Free-rider Nash</td>
+<td>MC4 (vago)</td>
+<td>Q8 (G^N=1, razão 1/I²)</td>
+<td>Bloco 3.c</td>
+<td>(não direto)</td>
+<td>Ex3(c)(d) (G^N=3)</td>
+</tr>
+<tr>
+<td>Lindahl</td>
+<td>§5</td>
+<td>Q9</td>
+<td>Bloco 4.a</td>
+<td>Q5 (assimétrico)</td>
+<td>Ex3(e) (simétrico)</td>
+</tr>
+<tr>
+<td>VCG Clarke pivot</td>
+<td>§5 derivação dominância</td>
+<td>Q10 (conceito)</td>
+<td>Bloco 4.b derivação completa</td>
+<td>Q8 (3 agentes, decisão sim)</td>
+<td>Ex5 (3 agentes, decisão não)</td>
+</tr>
+<tr>
+<td>Tragédia comuns + Ostrom</td>
+<td>§5 narrativa</td>
+<td>(não cobrado)</td>
+<td>Bloco 4.c citação</td>
+<td>Q9 BBV (relacionado)</td>
+<td>Ex6 (modelo 4 pescadores)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Progressão lógica funcional</strong>: cada conceito tem 3-5 toques, dosagem crescente em rigor. <strong>Cobertura sólida.</strong> O único ponto de descontinuidade é <strong>MC4 vago</strong> vs <strong>Q8 do pré explícito</strong> (m7/M7) e <strong>Q4 pós com bug numérico</strong> (B1).</p>
+<p><strong>Sem cobranças prematuras</strong> de Aulas 8-9: todas as menções a info assimétrica, sinalização, matching estão em "Extensão" (passo 4 do gabarito 5-passos), nunca como hipótese para resolução.</p>
+<hr>
+<h2 id="sincronia-md-html-avaliativos">Sincronia md ↔ html (avaliativos)<a class="headerlink" href="#sincronia-md-html-avaliativos" title="Permanent link">¶</a></h2>
+<p>Verificado item-a-item. Comparados:</p>
+<ul>
+<li><strong>Ex 1</strong>: parâmetros <span class="arithmatex">\(P=30-2q\)</span>, <span class="arithmatex">\(\text{MC}_p = 6+q\)</span>, <span class="arithmatex">\(\text{MEC} = q\)</span> (md L27 ↔ html L62). Sub-itens (a)-(e) e gabarito 5-passos batem 100%.</li>
+<li><strong>Ex 2</strong>: <span class="arithmatex">\(P^A=16\)</span>, <span class="arithmatex">\(\text{MC}^A = 2q_A\)</span>, MEC=4 (md L84 ↔ html L129). Sub-itens (a)-(e) batem; armadilha Caso 1 vs Caso 2 sintática consistente.</li>
+<li><strong>Ex 3</strong>: <span class="arithmatex">\(I=3\)</span>, <span class="arithmatex">\(u = x + 3\ln G\)</span>, TMT=1 (md L141 ↔ html L196). Cálculos batem.</li>
+<li><strong>Ex 4</strong>: <span class="arithmatex">\(\text{MAC}_A = 2r_A\)</span>, <span class="arithmatex">\(\text{MAC}_B = r_B\)</span>, <span class="arithmatex">\(R=15\)</span> (md L201 ↔ html L263). Cálculos <span class="arithmatex">\(r_A=5, r_B=10, p=t=10\)</span>, custo 75 vs 84,375 batem.</li>
+<li><strong>Ex 5</strong>: VCG 3 agentes, <span class="arithmatex">\(v^A=10, v^B=6, v^C=-20\)</span> (md L262 ↔ html L332). Decisão <span class="arithmatex">\(d^*=\)</span> não, <span class="arithmatex">\(t^C=16\)</span> batem.</li>
+<li><strong>Ex 6</strong>: <span class="arithmatex">\(I=4\)</span>, <span class="arithmatex">\(S(E)=100-E\)</span>, <span class="arithmatex">\(w=10\)</span> (md L325 ↔ html L403). Cálculos <span class="arithmatex">\(E^N=72, E^*=45, t=33{,}75\)</span> batem.</li>
+</ul>
+<p><strong>Sincronia 100% — limpo.</strong></p>
+<p>A única assimetria é estilística: o md usa <code>**[correta]**</code> no fim da alternativa correta (intern); o html não — substitui por <code>data-correct="X"</code> machine-readable. Padrão idêntico ao das Aulas 5 e 6.</p>
+<hr>
+<h2 id="dois-5-amostras-crossref-e-fact-checking">DOIs (5 amostras + Crossref) e fact-checking<a class="headerlink" href="#dois-5-amostras-crossref-e-fact-checking" title="Permanent link">¶</a></h2>
+<p>Verificações via Crossref API (api.crossref.org):</p>
+<table>
+<thead>
+<tr>
+<th>Citação</th>
+<th>DOI no bundle</th>
+<th>Crossref</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coase 1960</td>
+<td>10.1086/466560</td>
+<td>"The Problem of Social Cost", R. H. Coase, J. Law and Economics 3, 1-44 (1960)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Samuelson 1954</td>
+<td>10.2307/1925895</td>
+<td>"The Pure Theory of Public Expenditure", Paul A. Samuelson, REStat 36(4), 387 (1954)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Hardin 1968</td>
+<td>10.1126/science.162.3859.1243</td>
+<td>"The Tragedy of the Commons", Garrett Hardin, Science 162(3859), 1243-1248 (1968)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Clarke 1971</td>
+<td>10.1007/BF01726210</td>
+<td>"Multipart pricing of public goods", Edward H. Clarke, Public Choice 11, 17-33 (1971)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Weitzman 1974</td>
+<td>10.2307/2296698</td>
+<td>"Prices vs. Quantities", Martin L. Weitzman, REStud 41(4), 477 (1974)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Vickrey 1961</td>
+<td>10.1111/j.1540-6261.1961.tb02789.x</td>
+<td>"Counterspeculation, Auctions...", William Vickrey, J. Finance 16(1), 8-37 (1961)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Bergstrom-Blume-Varian 1986</td>
+<td>10.1016/0047-2727(86)90024-1</td>
+<td>"On the private provision of public goods", J. Public Economics 29(1), 25-49 (1986)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Groves 1973</td>
+<td>10.2307/1914085</td>
+<td>"Incentives in Teams", Theodore Groves, Econometrica 41(4), 617 (1973)</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>8/8 DOIs confirmados</strong> (acima das 3 amostras requisitadas, fiz 5+3 para cruzar todos os centrais). Pigou (1920) e Lindahl (1919) são livros/capítulo de livro, citados por veículo sem DOI — convenção do projeto. Ostrom (1990) é livro, idem.</p>
+<p><strong>Pendência minor</strong>: Almeida et al. 2009 sobre acordos de pesca no Médio Solimões (Ex 6 extensão) <strong>não tem DOI</strong> — sugestão em m7.</p>
+<hr>
+<h2 id="fact-checking-brasilmundo">Fact-checking Brasil/Mundo<a class="headerlink" href="#fact-checking-brasilmundo" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Fato</th>
+<th>Verificação</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>RenovaBio Lei 13.576/2017</strong></td>
+<td><a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13576.htm">planalto.gov.br L13576</a> confirma data 26/12/2017 e Política Nacional de Biocombustíveis com CBio</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>CBio (mecanismo de descarbonização)</strong></td>
+<td><a href="https://www.gov.br/mme/pt-br/assuntos/secretarias/petroleo-gas-natural-e-biocombustiveis/renovabio-1">MME RenovaBio</a> confirma sistemática: distribuidoras compram CBios de produtores certificados</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>PMCMV Lei 11.977/2009</strong></td>
+<td><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l11977.htm">planalto.gov.br L11977</a> confirma data 7/7/2009</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>PMCMV faixas 1/2/3 com subsídios distintos</strong></td>
+<td>Confirmado pela CAIXA e Min. Cidades; faixas ajustadas em revisões (atualmente Faixa 1/1.5/2/3)</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>EU ETS Phase 4 (2021-2030) cap declinante</strong></td>
+<td>EU Commission + ICAP confirmam cap declining factor de -2.2%/ano</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Preço €25-€100/tCO2 Phase 4</strong></td>
+<td>Statista mostra range histórico recente €50-€100 com pico ~€100 em 2023; "€25-€100" é range ampliado e legítimo para "últimos anos"</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>EU ETS Phase 4 lançado 2021</strong> (não ETS original lançado 2005)</td>
+<td>Confirmado</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Acid Rain Program 1990 SO2</strong></td>
+<td>Schmalensee-Stavins 2013 (J. Econ. Perspectives) é referência pedagógica padrão; redução 50% em SO2 confirmada</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>FCC Spectrum Auctions 1994+</strong></td>
+<td>Histórico canônico; receita acumulada &gt;US$ 100bi entre 1994-2020 é estimativa amplamente citada</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>SUS CF 1988</strong></td>
+<td>Constituição Federal art. 196-200 instituem o SUS como universal e gratuito</td>
+<td>✅</td>
+</tr>
+<tr>
+<td><strong>Suécia primeiro imposto carbono 1991</strong></td>
+<td>Confirmado (~$130/tCO2 hoje é estimativa pública correta)</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<p><strong>11/11 fatos institucionais verificados</strong> ✅. Todas as referências Brasil/Mundo são legítimas e datadas corretamente. <strong>Limpo.</strong></p>
+<hr>
+<h2 id="pdf-cap19pdf-no-bucket">PDF cap19.pdf no bucket<a class="headerlink" href="#pdf-cap19pdf-no-bucket" title="Permanent link">¶</a></h2>
+<p><strong>Status atual:</strong> ❌ <strong>NÃO confirmado</strong> no bucket Supabase (<code>supabase/storage-checklist.md:54</code>).</p>
+<p><strong>Impacto:</strong> <code>platform/aula-07.html:95</code> chama <code>MPE.openMaterial('nicholson-snyder-12e-cap19.pdf', this)</code>. Se aluno clica antes do upload, recebe erro 404 (silencioso ou via toast, dependendo de <code>mpe-db.js</code>). Há fallback textual graceful no html linha 96 ("Caso indisponível, use a versão impressa do Insper").</p>
+<p><strong>Ação requerida:</strong> Darcio carrega <code>nicholson-snyder-12e-cap19.pdf</code> em <code>course-materials/</code> no Supabase Storage <strong>antes de qui 28/05 madrugada</strong> (abertura da pré-aula 7). Atualizar <code>storage-checklist.md</code> linha 54 com <code>✅ confirmado YYYY-MM-DD</code> após confirmar via <code>supabase storage ls course-materials/</code>.</p>
+<p><strong>Severidade:</strong> <strong>major operacional (M3)</strong> — não é blocker pedagógico (fallback existe), mas é irritante para o aluno e padrão recorrente do projeto que precisa ser fechado.</p>
+<hr>
+<h2 id="gabarito-gate-avaliativos">Gabarito gate (avaliativos)<a class="headerlink" href="#gabarito-gate-avaliativos" title="Permanent link">¶</a></h2>
+<p><strong>Arquivo:</strong> <code>platform/aula-07-exerc.html:486-514</code></p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">MPE_CALENDARIO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">!</span><span class="nx">MPE_CALENDARIO</span><span class="p">.</span><span class="nx">canShowGabarito</span><span class="p">(</span><span class="mf">7</span><span class="p">,</span><span class="w"> </span><span class="s1">'exerc'</span><span class="p">);</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">GABARITO_RELEASE_FALLBACK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">(</span><span class="s1">'2026-06-11T00:00:00-03:00'</span><span class="p">).</span><span class="nx">getTime</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">locked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">GABARITO_RELEASE_FALLBACK</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">locked</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">classList</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'gabarito-locked'</span><span class="p">);</span>
+<span class="w">  </span><span class="c1">// banner ativado pós-submit</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>CSS <code>body.gabarito-locked .quizg-feedback { display: none !important; }</code> (linha 11). Banner pós-submit linha 471.</p>
+<p><strong>Lógica:</strong>
+1. SSOT é <code>MPE_CALENDARIO.canShowGabarito(7, 'exerc')</code> que retorna <code>Date.now() &gt;= p.gabarito</code> onde <code>p.gabarito</code> é calculado em <code>calendario.js:122-130</code> como dia seguinte ao fechamento, 00:00 BRT.
+2. Para Aula 7: fechamento qua 10/06 18:00 → gabarito qui 11/06 00:00 BRT. ✓
+3. Fallback usa 2026-06-11T00:00:00-03:00 (consistente com SSOT). ✓
+4. CSS <code>display:none !important</code> esconde <strong>TODOS</strong> os <code>.quizg-feedback</code> enquanto gate ativo — inclui tanto os feedbacks individuais por sub-item quanto os blocos <code>ex-gabarito-5passos</code> (eles têm <code>class="ex-gabarito-5passos quizg-feedback"</code>, herdam a regra). ✓ Limpo.
+5. Banner pós-submit é mostrado apenas se <code>locked === true</code>. ✓</p>
+<p><strong>Veredito:</strong> gate de gabarito <strong>funcionalmente correto</strong> e consistente com SSOT do calendário. Padrão idêntico ao adotado nas Aulas 5 e 6 pós-pass-5.</p>
+<p><strong>Edge case minor:</strong> se um aluno <strong>submete antes</strong> do fechamento e depois volta entre 10/06 18:00 e 11/06 00:00, a página ainda aplica <code>gabarito-locked</code>. ✓ correto. Após 11/06 00:00, basta recarregar e o gabarito aparece automaticamente. ✓</p>
+<hr>
+<h2 id="gabaritos-5-passos-amostra-de-5-questoes">Gabaritos 5-passos — amostra de 5 questões<a class="headerlink" href="#gabaritos-5-passos-amostra-de-5-questoes" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Questão</th>
+<th>Ponto-chave</th>
+<th>Derivação</th>
+<th>Armadilha</th>
+<th>Extensão</th>
+<th>Peer-review</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pré Q2 (Pigou avaliação)</td>
+<td>✅ "no ótimo, não no privado"</td>
+<td>✅ "produtor com <span class="arithmatex">\(t\)</span> escolhe <span class="arithmatex">\(P=\text{MC}_p+t\)</span>"</td>
+<td>✅ "(a) é o erro mais comum"</td>
+<td>✅ Lipsey-Lancaster + cap-and-trade</td>
+<td>✅ "questão central de Pigou"</td>
+<td>✅✅</td>
+</tr>
+<tr>
+<td>Pós Q4 (Samuelson assimétrico)</td>
+<td>✅ "regra geral <span class="arithmatex">\(\sum \text{TMS} = \text{TMT}\)</span>"</td>
+<td>✅ cálculo direto</td>
+<td>⚠️ "(a) é resposta correta com justificativa errada" — <strong>delata o bug B1</strong></td>
+<td>✅ Lindahl com agentes assimétricos</td>
+<td>⚠️ "Item (a) testa se aluno chegou ao certo via raciocínio errado — distrator engenhoso" — <strong>engenhoso? viola pedagogia avaliativa</strong></td>
+<td>❌ blocker B1</td>
+</tr>
+<tr>
+<td>Pós Q8 (VCG 3 agentes)</td>
+<td>✅ "pivot test para cada agente"</td>
+<td>✅ algebricamente correto</td>
+<td>✅ "(b) calcula <span class="arithmatex">\(t^C\)</span> como se C fosse pivot"</td>
+<td>✅ orçamento não-balanceado, GS+Roberts</td>
+<td>✅ "Distrator (b) é o mais armadilhoso"</td>
+<td>⚠️ ver M6 redação</td>
+</tr>
+<tr>
+<td>Ex 5 (VCG 3 agentes diferente)</td>
+<td>✅ "só pivots pagam"</td>
+<td>✅ pivot test completo A/B/C</td>
+<td>✅ erros de votação majoritária flagados</td>
+<td>✅ FCC, GS+Roberts, Aulas 8-9</td>
+<td>✅ "K=0 simplificação justificada"</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Ex 6 (Hardin + Ostrom)</td>
+<td>✅ "tragédia + 4 vias (Pigou/Coase/Estado/Ostrom)"</td>
+<td>⚠️ Ex6(d) salta passo de simetria com taxa</td>
+<td>✅ erros de unidade (Nash vs ótimo)</td>
+<td>✅ aplicações brasileiras + limites globais</td>
+<td>✅ "modelo simétrico é simplificação justificada"</td>
+<td>⚠️ ver M5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Veredito:</strong> 5/5 questões cumprem estrutura 5-passos. <strong>3/5 têm peer-review honesto e produtivo</strong>; <strong>2/5 têm peer-review que registra problema e segue assim mesmo (Q4 pós, Q10 pós alternativa longa)</strong> — viola o espírito do passo 5 ("rerrodar passos afetados se peer-review acha problema"). </p>
+<p><strong>Recomendação:</strong> quando peer-review encontra "distrator engenhoso" ou "alternativa longa por necessidade", a regra é <strong>corrigir, não documentar</strong>. Pass-5 deveria pegar isso.</p>
+<hr>
+<h2 id="recomendacao-final">Recomendação final<a class="headerlink" href="#recomendacao-final" title="Permanent link">¶</a></h2>
+<p><strong>Gate de release:</strong> ❌ <strong>não aprovar antes das correções dos blockers e majors mais críticos</strong>.</p>
+<p><strong>Sequência de correção sugerida (ordem de impacto):</strong></p>
+<ol>
+<li><strong>B1 (Q4 pós duplica G*=9):</strong> alterar alternativa (a) — mover armadilha "média" para outro número errado (ex.: <span class="arithmatex">\(G^* = 3\)</span> ou <span class="arithmatex">\(G^* = 6\)</span>). Editar <code>aula-07-pos.html:100</code>. <strong>Imediato</strong>, ~5 min.</li>
+<li><strong>M1 (slide 7 estoura):</strong> quebrar em (2/3) e (3/3). Editar <code>aula-07.qmd:187-205</code>. Re-render <code>quarto render</code>. ~10 min.</li>
+<li><strong>M3 (PDF bucket):</strong> Darcio faz upload via Supabase Dashboard. Atualiza <code>storage-checklist.md</code>. ~5 min de operação manual.</li>
+<li><strong>M2 (slide 21 apertado):</strong> isolar <code>eq-punch</code> em slide próprio. ~5 min.</li>
+<li><strong>M4 (Q10 pós alternativa longa):</strong> estender (a)/(c)/(d) com prosa adicional plausível. ~15 min.</li>
+<li><strong>M5 (Ex 6(d) salto de derivação):</strong> adicionar 1 linha do passo de simetria no gabarito. ~3 min.</li>
+<li><strong>M6 (Q8 pós redação):</strong> reescrever explicação da alternativa (c). ~3 min.</li>
+<li><strong>M7 (MC4 vago):</strong> adicionar número específico <span class="arithmatex">\(G^N=1\)</span> ao gabarito. ~2 min.</li>
+</ol>
+<p><strong>Minors (m1-m8):</strong> podem ir para Aula 8 ou pós-prova. Polimento contínuo.</p>
+<p><strong>Após correções:</strong> delegar nova passada de auditoria pass-5 referee 2 ao próprio prof-mpe-micro com prompt específico: "verificar se B1, M1-M7 foram fechados". Score estimado pós-correção: <strong>9.7/10</strong> (paridade com Aulas 5/6 baseline).</p>
+<hr>
+<h2 id="estimativa-de-tempo-ate-verde-de-verdade">Estimativa de tempo até "verde de verdade"<a class="headerlink" href="#estimativa-de-tempo-ate-verde-de-verdade" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Correção B1:</strong> 5 min.</li>
+<li><strong>Correção M1+M2:</strong> 15 min (qmd + render).</li>
+<li><strong>Operação M3 (Darcio):</strong> 5 min via Supabase Dashboard.</li>
+<li><strong>Correção M4:</strong> 15 min (escrita de prosa plausível para 3 distratores).</li>
+<li><strong>Correção M5+M6+M7:</strong> 8 min (texto curto).</li>
+</ul>
+<p><strong>Total:</strong> ~50 min de trabalho efetivo, dividido entre agente (M1, M2, M4, M5, M6, M7) e Darcio (M3, talvez B1).</p>
+<p><strong>Caminho crítico:</strong> B1 + M1 + M3 → bloqueiam release. M2, M4-M7 podem entrar em lote secundário antes da abertura efetiva da pré-aula (qui 28/05).</p>
+<p><strong>Janela:</strong> auditoria 2026-05-08 → abertura pré-aula 2026-05-28 (madrugada). 20 dias de folga, mais que suficiente.</p>
+<hr>
+<h2 id="anexo-anti-padroes-verificados">Anexo — anti-padrões verificados<a class="headerlink" href="#anexo-anti-padroes-verificados" title="Permanent link">¶</a></h2>
+<ul>
+<li>❌ <code>\succsim</code>/MRS/MRT/ponto decimal: <strong>0 ocorrências</strong> — limpo.</li>
+<li>❌ <code>.smaller</code>/font-size em conteúdo: <strong>0 ocorrências em conteúdo</strong> (todas em decorativos toleráveis) — limpo.</li>
+<li>❌ "todas acima"/"nenhuma das anteriores": <strong>0 ocorrências</strong> — limpo.</li>
+<li>❌ <code>[verificar DOI]</code>: <strong>0 ocorrências</strong> — limpo.</li>
+<li>❌ Conceitos de Aulas 8-9 cobrados em quiz/exerc: <strong>0 ocorrências em hipóteses de resolução</strong>; menções apenas em "Extensão" — limpo.</li>
+<li>❌ Duplicação EP-N ↔ Ex-N parâmetros não-distintos: pré-aula EP-1/EP-2 com nota explícita "parâmetros distintos do Ex 1/Ex 3 dos avaliativos" (linhas 390, 404 do <code>pre_aula.md</code>) — limpo.</li>
+</ul>
+<p><strong>Anti-padrões: 6/6 verificados, 6/6 sem violação.</strong></p>
+<hr>
+<h2 id="resumo-final-em-uma-tabela">Resumo final em uma tabela<a class="headerlink" href="#resumo-final-em-uma-tabela" title="Permanent link">¶</a></h2>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Achados</th>
+<th>Severidade máx.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blockers</td>
+<td>1 (B1: Q4 pós duplica <code>G*=9</code>)</td>
+<td>🔴</td>
+</tr>
+<tr>
+<td>Majors</td>
+<td>7 (slide 7 estoura, slide 21 apertado, PDF bucket, Q10 pós alt. longa, Ex6(d) salto, Q8 pós redação, MC4 vago)</td>
+<td>🟡</td>
+</tr>
+<tr>
+<td>Minors</td>
+<td>8 (slide 29 limite, tripla cobertura Pigou, Q8 generalização <span class="arithmatex">\(1/I^2\)</span>, Q4 pré ambiguidade, Ex2(a) auto-delata, MC1 (a)/(c) redundantes, Almeida et al. sem DOI, fragments em PDF)</td>
+<td>🟢</td>
+</tr>
+<tr>
+<td>DOIs verificados</td>
+<td>8/8 ✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Fatos Brasil/Mundo</td>
+<td>11/11 ✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Cobertura N&amp;S Cap. 19</td>
+<td>7/9 seções (§19.7-19.8 fora de escopo declarado) ✅✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Sincronia md ↔ html</td>
+<td>6/6 exercícios ✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Gate gabarito</td>
+<td>✅ funcional, idêntico Aulas 5/6</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Anti-padrões</td>
+<td>0/6 violações ✅</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Score global</strong></td>
+<td><strong>8.0/10</strong></td>
+<td>abaixo do baseline 10/10 das Aulas 5/6</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Bundle não passa em pass-5 sem fechar B1 + M1 + M3.</strong> Após correções: estimativa <strong>9.7/10</strong>, paridade com baseline.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+  
+
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="mailto:darciogm1@insper.edu.br" target="_blank" rel="noopener" title="Email" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l217.6 163.2c11.4 8.5 27 8.5 38.4 0l217.6-163.2c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 176v208c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V176L294.4 339.2a63.9 63.9 0 0 1-76.8 0z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://scholar.google.com/citations?user=ywp2nq0AAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener" title="Google Scholar" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M390.9 298.5s0 .1.1.1c9.2 19.4 14.4 41.1 14.4 64C405.3 445.1 338.5 512 256 512s-149.3-66.9-149.3-149.3c0-22.9 5.2-44.6 14.4-64 1.7-3.6 3.6-7.2 5.6-10.7q6.6-11.4 15-21.3c27.4-32.6 68.5-53.3 114.4-53.3 33.6 0 64.6 11.1 89.6 29.9 9.1 6.9 17.4 14.7 24.8 23.5 5.6 6.6 10.6 13.8 15 21.3 2 3.4 3.8 7 5.5 10.5zm26.4-18.8c-30.1-58.4-91-98.4-161.3-98.4s-131.2 40-161.3 98.4L0 202.7 256 0l256 202.7-94.7 77.1z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://orcid.org/0000-0003-2223-6930" target="_blank" rel="noopener" title="ORCID" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0M7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947m-.722 3.038h1.444v10.041H6.647zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://github.com/darciogm" target="_blank" rel="noopener" title="GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://twitter.com/darcio_martins" target="_blank" rel="noopener" title="Twitter" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/darcio-genicolo-martins-a7a3b7" target="_blank" rel="noopener" title="LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.instant", "navigation.instant.progress", "navigation.top", "navigation.footer", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.60a45f97.min.js"></script>
+      
+        <script src="../../../../javascripts/iframe-resize.js"></script>
+      
+        <script src="../../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

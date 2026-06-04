@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+  Paradoxo da Água e do Diamante — Utilidade Marginal
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Utilidade Marginal — Paradoxo Água × Diamante</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 480px;max-width:580px;height:440px;border:1px solid #ddd;border-radius:6px}
+    .controls{flex:0 1 300px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}
+    .controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}
+    .slider-group{margin-bottom:.8rem}
+    .slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.7}
+    .info-box .info-row{display:flex;justify-content:space-between;align-items:baseline}
+    .info-box .info-label{color:#666}
+    .info-box .info-val{font-weight:700}
+    .info-box .info-val.accent{color:#C8102E}
+    .info-box .info-val.blue{color:#1565c0}
+    .info-box .divider{border:none;border-top:1px solid #eee;margin:.4rem 0}
+    .legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem;font-size:.78rem;color:#666}
+    .legend-item{display:flex;align-items:center;gap:.3rem}
+    .legend-swatch{width:18px;height:3px;border-radius:2px}
+    .btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}
+    .btn-reset:hover{background:#9a0c23}
+    @media(max-width:860px){.graph-container{flex-direction:column;align-items:center}#jxgbox,.controls{flex-basis:100%;max-width:100%}}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Paradoxo Água × Diamante</h3>
+    <div class="slider-group">
+      <label>Quantidade de água \(x_A\): <span class="val" id="val-xA">80</span></label>
+      <input type="range" id="sl-xA" min="5" max="120" step="1" value="80">
+    </div>
+    <div class="slider-group">
+      <label>Quantidade de diamante \(x_D\): <span class="val" id="val-xD">3</span></label>
+      <input type="range" id="sl-xD" min="1" max="30" step="1" value="3">
+    </div>
+    <div class="info-box">
+      <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.8rem">
+        \(U(x) = 100\sqrt{x}\) &nbsp;→&nbsp; \(UMg(x) = \frac{50}{\sqrt{x}}\)
+      </div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">Utilidade total água</span><span class="info-val blue" id="info-UA">—</span></div>
+      <div class="info-row"><span class="info-label">Utilidade total diamante</span><span class="info-val accent" id="info-UD">—</span></div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">\(UMg\) água</span><span class="info-val blue" id="info-UMgA">—</span></div>
+      <div class="info-row"><span class="info-label">\(UMg\) diamante</span><span class="info-val accent" id="info-UMgD">—</span></div>
+      <hr class="divider">
+      <div style="font-size:.78rem;color:#666;margin-top:.3rem">
+        A água tem mais utilidade <b>total</b>, mas o diamante tem mais utilidade <b>marginal</b>. O preço reflete a marginal, não a total.
+      </div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> \(UMg(x)\)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#1565c0;opacity:.3;height:8px"></div> Área = \(U_{\text{total}}\)</div>
+    </div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+var xA=80,xD=3;
+function UMg(x){return 50/Math.sqrt(x);}
+function Utotal(x){return 100*Math.sqrt(x);}
+
+var board=JXG.JSXGraph.initBoard('jxgbox',{
+  boundingbox:[-8,62,130,-5],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:false
+});
+board.create('axis',[[0,0],[125,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:20}});
+board.create('axis',[[0,0],[0,58]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:10}});
+board.create('text',[65,-3,'<b><i>x</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
+board.create('text',[-6,30,'<b>UMg</b>'],{fontSize:13,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
+
+// UMg curve
+board.create('functiongraph',[UMg,1,125],{strokeColor:'#1565c0',strokeWidth:2.5});
+
+// Shaded area for water (total utility)
+var areaWater=board.create('curve',[[],[]],{strokeWidth:0,fillColor:'#1565c0',fillOpacity:0.15,vertices:[]});
+// Shaded area for diamond
+var areaDiam=board.create('curve',[[],[]],{strokeWidth:0,fillColor:'#C8102E',fillOpacity:0.2,vertices:[]});
+
+function updateAreas(){
+  // Water area
+  var xw=[],yw=[];
+  xw.push(0);yw.push(0);
+  for(var i=1;i<=xA;i++){xw.push(i);yw.push(UMg(i));}
+  xw.push(xA);yw.push(0);
+  areaWater.dataX=xw;areaWater.dataY=yw;
+
+  // Diamond area
+  var xd=[],yd=[];
+  xd.push(0);yd.push(0);
+  for(var i=1;i<=xD;i++){xd.push(i);yd.push(UMg(i));}
+  xd.push(xD);yd.push(0);
+  areaDiam.dataX=xd;areaDiam.dataY=yd;
+}
+
+// Vertical dashed lines and points at xA and xD
+var ptA=board.create('point',[function(){return xA;},function(){return UMg(xA);}],{size:5,fillColor:'#1565c0',strokeColor:'#1565c0',name:'Água',label:{fontSize:11,offset:[5,10]},fixed:true});
+var ptD=board.create('point',[function(){return xD;},function(){return UMg(xD);}],{size:5,fillColor:'#C8102E',strokeColor:'#C8102E',name:'Diamante',label:{fontSize:11,offset:[5,10]},fixed:true});
+board.create('segment',[[function(){return xA;},0],[function(){return xA;},function(){return UMg(xA);}]],{strokeColor:'#1565c0',dash:2,strokeWidth:1});
+board.create('segment',[[function(){return xD;},0],[function(){return xD;},function(){return UMg(xD);}]],{strokeColor:'#C8102E',dash:2,strokeWidth:1});
+
+// Horizontal dashed lines at UMg values
+board.create('segment',[[0,function(){return UMg(xA);}],[function(){return xA;},function(){return UMg(xA);}]],{strokeColor:'#1565c0',dash:3,strokeWidth:1});
+board.create('segment',[[0,function(){return UMg(xD);}],[function(){return xD;},function(){return UMg(xD);}]],{strokeColor:'#C8102E',dash:3,strokeWidth:1});
+
+function updateAll(){
+  xA=+document.getElementById('sl-xA').value;
+  xD=+document.getElementById('sl-xD').value;
+  document.getElementById('val-xA').textContent=xA;
+  document.getElementById('val-xD').textContent=xD;
+  document.getElementById('info-UA').textContent=Utotal(xA).toFixed(1);
+  document.getElementById('info-UD').textContent=Utotal(xD).toFixed(1);
+  document.getElementById('info-UMgA').textContent=UMg(xA).toFixed(2)+' (baixa)';
+  document.getElementById('info-UMgD').textContent=UMg(xD).toFixed(2)+' (alta)';
+  updateAreas();
+  board.update();
+}
+['sl-xA','sl-xD'].forEach(function(id){document.getElementById(id).addEventListener('input',updateAll);});
+function resetAll(){document.getElementById('sl-xA').value=80;document.getElementById('sl-xD').value=3;xA=80;xD=3;updateAll();}
+updateAll();
+</script>
+</body>
+</html>

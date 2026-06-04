@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>R Interativo — Rendimentos de Escala</title>
+  <style>*{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:300px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}</style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Rendimentos de Escala: CRS, IRS, DRS
+# Cap. 10 — O que acontece quando dobramos tudo?
+
+# Cobb-Douglas: f(K,L) = A * K^alpha * L^beta
+A     <- 1
+alpha <- 0.4   # altere!
+beta  <- 0.6   # altere!
+
+f <- function(K, L) A * K^alpha * L^beta
+
+# Grau de homogeneidade
+r <- alpha + beta
+
+cat("=== Rendimentos de Escala ===\n\n")
+cat(sprintf("f(K,L) = K^%.1f * L^%.1f\n", alpha, beta))
+cat(sprintf("alpha + beta = %.2f\n\n", r))
+
+if (abs(r - 1) < 0.01) {
+  cat("=> CRS (Retornos Constantes de Escala)\n")
+  cat("   Dobrar insumos dobra o produto.\n")
+} else if (r > 1) {
+  cat("=> IRS (Retornos Crescentes de Escala)\n")
+  cat("   Dobrar insumos mais que dobra o produto.\n")
+} else {
+  cat("=> DRS (Retornos Decrescentes de Escala)\n")
+  cat("   Dobrar insumos menos que dobra o produto.\n")
+}
+
+# Verificação numérica
+K0 <- 10; L0 <- 10
+cat(sprintf("\nVerificacao: f(%.0f, %.0f) = %.2f\n", K0, L0, f(K0, L0)))
+for (t in c(1.5, 2, 3)) {
+  cat(sprintf("  f(%.0f*%.0f, %.0f*%.0f) = %.2f = %.1f^%.2f * f = %.2f\n",
+      t, K0, t, L0, f(t*K0, t*L0), t, r, t^r * f(K0, L0)))
+}
+
+# Gráfico: isoquantas para 3 cenários
+par(mfrow = c(1, 3), mar = c(4, 4, 3, 1))
+K_grid <- seq(0.5, 25, length.out = 200)
+
+scenarios <- list(
+  list(a = 0.3, b = 0.3, title = "DRS (a+b=0.6)"),
+  list(a = 0.5, b = 0.5, title = "CRS (a+b=1.0)"),
+  list(a = 0.6, b = 0.6, title = "IRS (a+b=1.2)")
+)
+
+for (sc in scenarios) {
+  q_levels <- c(5, 10, 15)
+  plot(NA, xlim = c(0, 25), ylim = c(0, 25),
+       xlab = "K", ylab = "L", main = sc$title)
+
+  for (q in q_levels) {
+    L_iso <- (q / (A * K_grid^sc$a))^(1/sc$b)
+    keep <- L_iso <= 25 & L_iso > 0
+    lines(K_grid[keep], L_iso[keep], col = "steelblue", lwd = 1.5)
+  }
+
+  # Raio e distância entre isoquantas
+  # No raio K=L: f = K^(a+b) => K = q^(1/(a+b))
+  for (q in q_levels) {
+    K_ray <- q^(1/(sc$a + sc$b))
+    if (K_ray <= 25) {
+      points(K_ray, K_ray, pch = 19, col = "#C8102E", cex = 1)
+      text(K_ray + 1, K_ray + 1, sprintf("q=%.0f", q), cex = 0.7)
+    }
+  }
+  abline(0, 1, col = "gray", lty = 3)
+}
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Com CRS, as isoquantas se espaçam uniformemente ao longo de um raio. Com IRS, ficam mais próximas (escala ajuda); com DRS, mais distantes (escala atrapalha).
+  </div>
+</div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:280}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

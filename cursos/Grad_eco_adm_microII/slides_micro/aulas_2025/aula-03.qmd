@@ -1,0 +1,422 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 03 — Preferências e Axiomas"
+author: "Prof. Darcio Genicolo Martins"
+date: "Axiomas, Teorema de Debreu e Curvas de Indiferença"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roadmap da Aula {data-background-color="#E50505"}
+
+## Voltando às Fundações
+
+Depois de mercados competitivos e monopólio, retornamos à **base**:
+
+. . .
+
+- Como formalizamos as preferências do consumidor?
+- Que **regras mínimas** precisamos impor?
+- Como passamos de "prefiro A a B" para uma **função de utilidade**?
+
+. . .
+
+**Estrutura:**
+
+1. Relação de preferência $\succsim$
+2. Axiomas: completude, transitividade, continuidade, monotonicidade
+3. Convexidade
+4. Teorema de Debreu
+5. Curvas de indiferença
+
+:::{.callout-tip title="Intuição Econômica"}
+Os axiomas são apenas regras mínimas de coerência — exigem que o consumidor saiba comparar opções e não se contradiga.
+:::
+
+## O Ponto de Partida: $\succsim$ {data-background-color="#E50505"}
+
+Seja $X \subseteq \mathbb{R}^n_+$ o **conjunto de consumo**. Uma cesta $\mathbf{x} = (x_1, x_2)$.
+
+. . .
+
+A **relação de preferência** $\succsim$ é o primitivo da teoria:
+
+- $\mathbf{x} \succsim \mathbf{y}$: "$\mathbf{x}$ é pelo menos tão boa quanto $\mathbf{y}$"
+
+. . .
+
+**Relações derivadas:**
+
+| Notação | Significado | Definição |
+|:---|:---|:---|
+| $\mathbf{x} \succ \mathbf{y}$ | Preferência estrita | $\mathbf{x} \succsim \mathbf{y}$ e não $\mathbf{y} \succsim \mathbf{x}$ |
+| $\mathbf{x} \sim \mathbf{y}$ | Indiferença | $\mathbf{x} \succsim \mathbf{y}$ e $\mathbf{y} \succsim \mathbf{x}$ |
+
+:::{.callout-note title="Observação"}
+A relação $\succsim$ é **primitiva** — não é derivada de uma função de utilidade. A função de utilidade é uma *consequência* dos axiomas.
+:::
+
+## Axioma 1: Completude
+
+::: {.eq-highlight}
+$$\text{Para quaisquer } \mathbf{x}, \mathbf{y} \in X: \quad \mathbf{x} \succsim \mathbf{y} \quad \text{ou} \quad \mathbf{y} \succsim \mathbf{x} \quad \text{(ou ambos)}$$
+:::
+
+. . .
+
+O consumidor é **sempre capaz** de comparar duas cestas quaisquer.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**O que exige:**
+
+- Decidir entre banana e maçã
+- Decidir entre feijão e arroz
+- Decidir entre *qualquer* par
+:::
+::: {.column width="48%"}
+**O que NÃO exige:**
+
+- Que todos concordem
+- Que a escolha seja "racional"
+- Que tenha informação perfeita
+:::
+::::
+
+:::{.callout-tip title="Intuição Econômica"}
+Completude é simplesmente dizer: "sei comparar". Não precisa ser gênio — só não pode ficar paralisado diante de duas opções.
+:::
+
+## Axioma 2: Transitividade
+
+::: {.eq-highlight}
+$$\text{Se } \mathbf{x} \succsim \mathbf{y} \text{ e } \mathbf{y} \succsim \mathbf{z}, \text{ então } \mathbf{x} \succsim \mathbf{z}$$
+:::
+
+. . .
+
+Garante **consistência interna** nas escolhas.
+
+. . .
+
+:::{.callout-warning title="Violações empíricas (Tversky, 1969)"}
+Em laboratório, até 17% das tríades de escolha são intransitivas. Mais comum quando alternativas diferem em múltiplas dimensões e diferenças são "imperceptíveis". Modelos de utilidade aleatória (McFadden, Nobel 2000) acomodam isso como "erro de percepção".
+:::
+
+. . .
+
+**Consequência prática:** sem transitividade, o consumidor poderia ser "explorado" em trocas circulares — pagando para trocar A por B, B por C, e C de volta por A.
+
+## Axioma 3: Continuidade
+
+::: {.eq-highlight}
+$$\{\mathbf{x} \in X : \mathbf{x} \succsim \mathbf{y}\} \text{ e } \{\mathbf{x} \in X : \mathbf{y} \succsim \mathbf{x}\} \text{ são conjuntos fechados}$$
+:::
+
+. . .
+
+Pequenas mudanças na cesta **não causam inversões bruscas** no ordenamento.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Papel técnico:**
+
+- Garante que a função de utilidade é **contínua**
+- Permite uso do cálculo (derivadas, Lagrange)
+:::
+::: {.column width="48%"}
+**Contraexemplo: lexicográficas**
+
+- "Sempre prefiro mais de $x_1$, independente de $x_2$"
+- Satisfaz completude + transitividade
+- **Viola** continuidade
+- Não admite função de utilidade contínua!
+:::
+::::
+
+## "Mais e Melhor" (Monotonicidade) {data-background-color="#E50505"}
+
+::: {.eq-highlight}
+$$\text{Se } \mathbf{x} \geq \mathbf{y} \text{ (componente a componente) e } \mathbf{x} \neq \mathbf{y}, \text{ então } \mathbf{x} \succ \mathbf{y}$$
+:::
+
+. . .
+
+O consumidor sempre prefere ter **mais** de pelo menos um bem.
+
+. . .
+
+**Implicações geométricas para curvas de indiferença:**
+
+- Inclinação **negativa** (manter utilidade constante exige compensar mais de um bem com menos de outro)
+- Cestas a **nordeste** são preferidas
+- Curvas **não se cruzam** (por transitividade)
+
+:::{.callout-note title="Observação"}
+A monotonicidade é uma hipótese sobre **bens**, não sobre "males". Para poluição ou lixo, inverteríamos o sinal.
+:::
+
+## Convexidade Estrita
+
+::: {.eq-highlight}
+$$\text{Se } \mathbf{x} \sim \mathbf{y} \text{ e } \mathbf{x} \neq \mathbf{y}: \quad t\mathbf{x} + (1-t)\mathbf{y} \succ \mathbf{x}, \quad \forall \; t \in (0,1)$$
+:::
+
+. . .
+
+**Consumidores preferem variedade**: uma cesta "mista" é preferida a cestas extremas.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Geometricamente:**
+
+- Curvas de indiferença **convexas em relação à origem**
+- Conjuntos superiores são convexos
+:::
+::: {.column width="48%"}
+**Equivale a:**
+
+- TMS decrescente ao longo da curva
+- Quanto mais de $x_1$, menos $x_2$ se topa ceder por mais uma unidade
+:::
+::::
+
+:::{.callout-warning title="Erro Comum"}
+Preferências convexas $\neq$ função de utilidade côncava. Toda função côncava gera preferências convexas, mas a recíproca é falsa (utilidade é ordinal!).
+:::
+
+## Teorema de Debreu {data-background-color="#E50505"}
+
+## Do "Prefiro" ao Número
+
+Os quatro axiomas permitem a grande passagem:
+
+::: {.eq-highlight}
+$$\mathbf{x} \succsim \mathbf{y} \iff u(\mathbf{x}) \geq u(\mathbf{y})$$
+:::
+
+. . .
+
+:::{.callout-tip title="Teorema de Debreu (1954)"}
+Se $\succsim$ é **completa**, **transitiva**, **contínua** e **monótona**, existe uma função de utilidade **contínua** $u: X \to \mathbb{R}$ que representa $\succsim$.
+:::
+
+. . .
+
+**Ideia da prova:** Para cada cesta $\mathbf{x}$, encontrar $t$ tal que $\mathbf{x} \sim t \cdot \mathbf{1}$. Esse escalar $t$ é o "nível de utilidade". Monotonicidade garante unicidade; continuidade garante que $u$ é contínua.
+
+. . .
+
+**Gerard Debreu** (Nobel 1983) — axiomatizou a teoria do consumidor e demonstrou existência de equilíbrio geral competitivo.
+
+## Utilidade é Ordinal, Não Cardinal
+
+::: {.eq-highlight}
+$$u(\mathbf{x}) = 10, \; u(\mathbf{y}) = 5 \implies \mathbf{x} \succ \mathbf{y}$$
+:::
+
+Mas **NÃO** significa que $\mathbf{x}$ é "duas vezes melhor"!
+
+. . .
+
+| Propriedade | Ordinal | Cardinal |
+|:---|:---:|:---:|
+| Ordem preservada | Sim | Sim |
+| Razões têm significado | **Não** | Sim |
+| Invariante a transf. monotônicas | Sim | Não |
+| Contexto | Consumidor sob certeza | Utilidade esperada (Cap. 7) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Os números da utilidade funcionam como a ordem de chegada numa corrida — só importa quem chegou antes, não por quantos segundos.
+:::
+
+## Transformação Monotônica da Utilidade
+
+<iframe src="graficos/cap03/transformacao-monotonica.html" title="Transformação Monotônica da Utilidade" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Curvas de Indiferença {data-background-color="#E50505"}
+
+## O Mapa Topográfico das Preferências
+
+A **curva de indiferença** de nível $\bar{u}$: $\{\mathbf{x} \in X : u(\mathbf{x}) = \bar{u}\}$.
+
+. . .
+
+**Propriedades (sob os axiomas):**
+
+1. **Cobrem todo o espaço** — completude
+2. **Não se cruzam** — transitividade
+3. **Inclinação negativa** — monotonicidade
+4. **Nordeste = melhor** — monotonicidade
+5. **Convexas** — convexidade estrita
+
+. . .
+
+O **mapa de indiferença** é a família de todas as curvas — representação visual completa das preferências no espaço bidimensional.
+
+## Curvas de Indiferença — Interativo
+
+Explore diferentes tipos de preferências e arraste o ponto para ver a TMS:
+
+<iframe src="graficos/cap03/curvas-indiferenca.html" title="Mapa de curvas de indiferença" width="1100" height="520" style="border:none;margin:0 auto;display:block;" scrolling="no"></iframe>
+
+## Curvas de Indiferença Cobb-Douglas — Interativo
+
+Ajuste $\alpha$ e observe como as curvas de indiferença mudam de forma:
+
+<div id="graph-a14-ic" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\alpha$: <input type="range" id="sl-a14-alpha" min="0.1" max="0.9" value="0.5" step="0.05" oninput="updA14IC()"> <span id="val-a14-alpha">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd=JXG.JSXGraph.initBoard('graph-a14-ic',{
+    boundingbox:[-1,22,22,-1],axis:true,showCopyright:false,showNavigation:false,
+    defaultAxes:{x:{name:'x\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2082',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var alpha=0.5;
+  var curves=[];
+  var uLevels=[2,4,6,8,10,12];
+  var colors=['#E50505','#1565C0','#2E7D32','#F7C704','#730D9F','#3ACC9F'];
+  function draw(){
+    brd.suspendUpdate();
+    curves.forEach(function(c){brd.removeObject(c);});
+    curves=[];
+    for(var k=0;k<uLevels.length;k++){
+      var ubar=uLevels[k];
+      var al=alpha;
+      (function(ub,col){
+        var c=brd.create('curve',[
+          function(t){return t;},
+          function(t){var v=Math.pow(ub,1/(1-al))/Math.pow(t,al/(1-al)); return v>20?NaN:v;},
+          0.3,20
+        ],{strokeColor:col,strokeWidth:2});
+        curves.push(c);
+        var lbl=brd.create('text',[18,Math.pow(ub,1/(1-al))/Math.pow(18,al/(1-al))+0.5,'u='+ub],{fontSize:10,color:col});
+        curves.push(lbl);
+      })(ubar,colors[k]);
+    }
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA14IC=function(){
+    alpha=parseFloat(document.getElementById('sl-a14-alpha').value);
+    document.getElementById('val-a14-alpha').textContent=alpha.toFixed(2);
+    draw();
+  };
+})();
+</script>
+
+## Tipos de Preferências
+
+<iframe src="graficos/cap03/tipos-preferencias.html" title="Tipos de Preferências" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Do Axioma à Observação
+
+Os axiomas são sobre preferências **internas**. Existe contrapartida observacional?
+
+. . .
+
+**Axioma Generalizado da Preferência Revelada (GARP):**
+
+Se as compras observadas de um consumidor satisfazem o GARP, são consistentes com a maximização de alguma função de utilidade bem-comportada.
+
+. . .
+
+:::: {.columns}
+::: {.column width="48%"}
+**Preferência revelada direta:**
+
+Se o consumidor comprou $\mathbf{x}$ quando $\mathbf{y}$ era acessível, então $\mathbf{x} \succsim \mathbf{y}$.
+:::
+::: {.column width="48%"}
+**Teste empírico (Choi et al., 2014):**
+
+Consumidores que violam GARP tendem a acumular **menos riqueza** — consistência nas escolhas tem retorno financeiro.
+:::
+::::
+
+:::{.callout-note title="Observação"}
+Transitividade é uma excelente aproximação para decisões cotidianas, mas pode falhar em escolhas complexas e não habituais.
+:::
+
+## Brasil na Prática: POF e Racionalidade
+
+A Pesquisa de Orçamentos Familiares (POF 2017-2018, IBGE) mostra alocação **estável e consistente**:
+
+. . .
+
+| Faixa de renda | % Alimentação | % Habitação | % Transporte |
+|:---|:---:|:---:|:---:|
+| Até R\$ 1.908 | 22% | 37% | 12% |
+| R\$ 5.724 a R\$ 9.540 | 13% | 34% | 18% |
+| Acima de R\$ 23.850 | 7,6% | 30% | 20% |
+
+. . .
+
+A participação da alimentação **cai suavemente** com a renda — compatível com monotonicidade e transitividade.
+
+:::{.callout-tip title="Intuição Econômica"}
+A regularidade empírica nas alocações orçamentárias justifica o uso do arcabouço axiomático como ponto de partida.
+:::
+
+## Os Quatro Tijolos
+
+| Axioma | Significado | Papel |
+|:---|:---|:---|
+| Completude | Sabe comparar qualquer par | Garante ordenamento total |
+| Transitividade | Não se contradiz | Garante consistência |
+| Continuidade | Sem saltos | Garante $u$ contínua |
+| Monotonicidade | Mais é melhor | Garante $u$ crescente |
+
+. . .
+
+$\implies$ **Teorema de Debreu**: existe $u(\mathbf{x})$ continua que representa $\succsim$.
+
+. . .
+
+:::{.callout-tip title="Próxima Aula"}
+Aula 15: **Utilidade e Curvas de Indiferença** — funções utilidade específicas (Cobb-Douglas, CES, Leontief), TMS e classificação de preferências.
+:::
+
+## Funções Utilidade
+
+<iframe src="graficos/cap03/funcoes-utilidade.html" title="Funções Utilidade" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no portal da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

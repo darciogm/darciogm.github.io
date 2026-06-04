@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+  Custo Social do Carbono e Taxa de Desconto
+  Library: Plotly.js
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCC e Taxa de Desconto</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.plot-box{flex:1 1 420px;max-width:520px;height:380px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.plot-box,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotDiv" class="plot-box"></div>
+  <div class="controls">
+    <h3>Custo Social do Carbono</h3>
+    <div class="slider-group">
+      <label>Dano base (US$/tCO2): <span class="val" id="val-D">2.0</span></label>
+      <input type="range" id="slider-D" min="0.5" max="5" step="0.1" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Cresc. dano (%/ano): <span class="val" id="val-g">2.0</span></label>
+      <input type="range" id="slider-g" min="0.5" max="4" step="0.1" value="2">
+    </div>
+    <div class="slider-group">
+      <label>Horizonte (anos): <span class="val" id="val-T">200</span></label>
+      <input type="range" id="slider-T" min="50" max="300" step="10" value="200">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  function scc(D0,g,r,T){var s=0;for(var t=1;t<=T;t++)s+=D0*Math.pow(1+g,t)/Math.pow(1+r,t);return s;}
+  function update(){
+    var D0=parseFloat(document.getElementById('slider-D').value);
+    var g=parseFloat(document.getElementById('slider-g').value)/100;
+    var T=parseInt(document.getElementById('slider-T').value);
+    document.getElementById('val-D').textContent=D0.toFixed(1);
+    document.getElementById('val-g').textContent=(g*100).toFixed(1);
+    document.getElementById('val-T').textContent=T;
+    var rs=[],sccs=[];
+    for(var r=0.5;r<=7;r+=0.1){rs.push(r);sccs.push(scc(D0,g,r/100,T));}
+    // Key points
+    var sccStern=scc(D0,g,0.014,T);
+    var sccNordhaus=scc(D0,g,0.03,T);
+    var sccUS=scc(D0,g,0.03,T); // ~3% for US IWG
+    var traces=[
+      {x:rs,y:sccs,mode:'lines',line:{color:'#1565c0',width:2.5},name:'SCC(r)'},
+      {x:[1.4],y:[sccStern],mode:'markers',marker:{size:10,color:'#C8102E',symbol:'diamond'},name:'Stern (~1.4%)'},
+      {x:[3],y:[sccNordhaus],mode:'markers',marker:{size:10,color:'#e65100',symbol:'circle'},name:'Nordhaus (~3%)'}
+    ];
+    var shapes=[
+      {type:'line',x0:1.4,x1:1.4,y0:0,y1:sccStern,line:{color:'#C8102E',width:1,dash:'dot'}},
+      {type:'line',x0:3,x1:3,y0:0,y1:sccNordhaus,line:{color:'#e65100',width:1,dash:'dot'}}
+    ];
+    Plotly.react('plotDiv',traces,{
+      margin:{l:65,r:20,t:25,b:50},
+      xaxis:{title:'Taxa de desconto r (%)',range:[0.5,7]},
+      yaxis:{title:'SCC (US$/tCO2)'},
+      showlegend:true,legend:{x:0.5,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:9}},
+      shapes:shapes,font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+    var ratio=(sccStern/sccNordhaus);
+    var html='<div style="text-align:center;margin-bottom:0.3rem;">\\(SCC = \\sum_{t=1}^T \\frac{D_0(1+g)^t}{(1+r)^t}\\)</div>';
+    html+='<span style="color:#C8102E;"><b>Stern</b> (r=1.4%):</span> US$ '+sccStern.toFixed(0)+'/tCO₂<br>';
+    html+='<span style="color:#e65100;"><b>Nordhaus</b> (r=3%):</span> US$ '+sccNordhaus.toFixed(0)+'/tCO₂<br>';
+    html+='Razao: <strong>'+ratio.toFixed(1)+'x</strong><br>';
+    html+='<hr style="margin:0.3rem 0"><div style="font-size:0.78rem;color:#666;">A mesma ciencia climatica, taxas de desconto diferentes — prescricoes radicalmente diferentes. O debate e, na essencia, etico: quanto pesamos o bem-estar de geracoes futuras?</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+  function resetAll(){document.getElementById('slider-D').value=2;document.getElementById('slider-g').value=2;document.getElementById('slider-T').value=200;update();}
+  ['slider-D','slider-g','slider-T'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

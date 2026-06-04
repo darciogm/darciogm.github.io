@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--
+  Teorema do Envelope
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teorema do Envelope</title>
+
+  <!-- JSXGraph -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'CMU Serif', Georgia, serif;
+      background: #ffffff;
+      color: #333;
+      padding: 1rem;
+    }
+.graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    #jxgbox {
+      flex: 1 1 450px;
+      max-width: 560px;
+      height: 450px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+    }
+    .controls {
+      flex: 0 1 300px;
+      padding: 1rem;
+      background: #f8f8f8;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .controls h3 {
+      font-size: 0.95rem;
+      color: #C8102E;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 0.4rem;
+    }
+    .slider-group {
+      margin-bottom: 0.8rem;
+    }
+    .slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+    }
+    .slider-group label .val {
+      font-weight: 700;
+      color: #C8102E;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: #C8102E;
+    }
+    .info-box {
+      margin-top: 0.8rem;
+      padding: 0.8rem;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+    .info-box .info-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .info-box .info-label {
+      color: #666;
+    }
+    .info-box .info-val {
+      font-weight: 700;
+      color: #333;
+    }
+    .info-box .info-val.accent { color: #C8102E; }
+    .info-box .info-val.green { color: #00897b; }
+    .info-box .divider {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 0.4rem 0;
+    }
+    .btn-reset {
+      display: block;
+      width: 100%;
+      margin-top: 0.8rem;
+      padding: 0.5rem;
+      background: #C8102E;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+    .btn-reset:hover { background: #9a0c23; }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .legend-swatch {
+      width: 18px;
+      height: 3px;
+      border-radius: 2px;
+    }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; max-width: 100%; }
+      .controls { flex-basis: 100%; max-width: 100%; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+
+      <div class="slider-group">
+        <label>Parâmetro \(\alpha\): <span class="val" id="valAlpha">3.0</span></label>
+        <input type="range" id="sliderAlpha" min="0.5" max="6" value="3" step="0.1">
+      </div>
+
+      <div class="info-box">
+        <div class="info-row">
+          <span class="info-label">Parâmetro \(\alpha\)</span>
+          <span class="info-val" id="alphaVal">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Ótimo \(x^*(\alpha) = \alpha\)</span>
+          <span class="info-val" id="xStarVal">—</span>
+        </div>
+        <hr class="divider">
+        <div class="info-row">
+          <span class="info-label">Valor ótimo \(V(\alpha) = 2\alpha\)</span>
+          <span class="info-val accent" id="vAlpha">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(dV/d\alpha\) (via envelope)</span>
+          <span class="info-val green" id="dvda">—</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">\(\partial f/\partial \alpha\) em \(x^*\)</span>
+          <span class="info-val green" id="pf_pa">—</span>
+        </div>
+        <hr class="divider">
+        <div class="info-row">
+          <span class="info-label">Teorema do Envelope</span>
+          <span class="info-val green" id="envCheck">—</span>
+        </div>
+      </div>
+
+      <div class="legend">
+        <div class="legend-item"><div class="legend-swatch" style="background:#1565c0; opacity:0.35"></div> Família \(f(x, \alpha_i)\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Curva ativa</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#C8102E"></div> Envelope \(V(\alpha)\)</div>
+        <div class="legend-item"><div class="legend-swatch" style="background:#00897b; border-radius:50%; width:10px; height:10px;"></div> Máximo atual</div>
+      </div>
+
+      <button class="btn-reset" onclick="resetGraph()">Resetar</button>
+    </div>
+  </div>
+
+<script>
+// f(x, alpha) = -(x - alpha)^2 + 2*alpha
+// x*(alpha) = alpha (from FOC: -2(x-alpha) = 0)
+// V(alpha) = f(alpha, alpha) = 0 + 2*alpha = 2*alpha
+// dV/dalpha = 2
+// partial f / partial alpha = 2(x - alpha) + 2, evaluated at x* = alpha: = 0 + 2 = 2. Checks out!
+
+var board;
+var alpha = 3;
+var familyCurves = [];
+
+function f(x, a) { return -(x - a)*(x - a) + 2*a; }
+function xStar(a) { return a; }
+function V(a) { return 2*a; }
+// partial f / partial alpha at x*: d/dalpha [-(x-a)^2 + 2a] = 2(x-a) + 2, at x=a => 2
+function dV_da() { return 2; }
+function pf_pa_at_xstar() { return 2; }
+
+function initBoard() {
+  board = JXG.JSXGraph.initBoard('jxgbox', {
+    boundingbox: [-1.8, 19.5, 11.5, -2.4],
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    defaultAxes: {
+      x: { name: '', withLabel: false, label: { position: 'rt', offset: [5, 20], fontSize: 14 } },
+      y: { name: '', withLabel: false, label: { position: 'rt', offset: [-5, -20], fontSize: 14 }, ticks: { label: { anchorX: 'right', offset: [-8, 0] } } }
+    }
+  });
+
+  // Y-axis label: centered vertically, rotated 90°, bold italic
+  board.create('text', [
+    -1.8 * 0.55, 19.5 / 2,
+    '<b><i>f / V</i></b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false });
+
+  // X-axis label: centered horizontally, below ticks, bold italic
+  board.create('text', [
+    11.5 / 2, -2.4 * 0.65,
+    '<b><i>x</i></b>'
+  ], { fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false });
+
+  drawAll();
+}
+
+function drawAll() {
+  board.suspendUpdate();
+
+  // Remove old family curves
+  familyCurves.forEach(function(c) { board.removeObject(c); });
+  familyCurves = [];
+
+  // Draw family of curves for different alpha values
+  var alphas = [];
+  for (var a = 0.5; a <= 6.5; a += 0.5) { alphas.push(a); }
+
+  alphas.forEach(function(a) {
+    var isActive = Math.abs(a - alpha) < 0.05;
+    var c = board.create('functiongraph', [
+      function(x) { return f(x, a); },
+      -2, 10
+    ], {
+      strokeColor: '#1565c0',
+      strokeWidth: isActive ? 2.8 : 1,
+      strokeOpacity: isActive ? 1 : 0.2
+    });
+    familyCurves.push(c);
+  });
+
+  // Active curve (on top)
+  var activeCurve = board.create('functiongraph', [
+    function(x) { return f(x, alpha); },
+    -2, 10
+  ], {
+    strokeColor: '#1565c0', strokeWidth: 2.8
+  });
+  familyCurves.push(activeCurve);
+
+  // Envelope curve V(alpha) = 2*alpha, plotted as locus of maxima
+  // The locus is the set of points (x*(a), V(a)) = (a, 2a) for a in range
+  // This is a straight line y = 2x in (x, y) space
+  var envCurve = board.create('functiongraph', [
+    function(x) { return 2*x; },
+    0, 8
+  ], {
+    strokeColor: '#C8102E', strokeWidth: 3, dash: 0
+  });
+  familyCurves.push(envCurve);
+
+  // Plot dots at maxima for all alpha
+  alphas.forEach(function(a) {
+    var pt = board.create('point', [xStar(a), V(a)], {
+      size: 2, fillColor: '#C8102E', strokeColor: '#C8102E', name: '', fixed: true,
+      withLabel: false
+    });
+    familyCurves.push(pt);
+  });
+
+  // Current maximum point (larger)
+  var curMax = board.create('point', [xStar(alpha), V(alpha)], {
+    size: 6, fillColor: '#00897b', strokeColor: '#00897b', name: '', fixed: true
+  });
+  familyCurves.push(curMax);
+
+  // Vertical dashed line at x*
+  var vLine = board.create('segment', [
+    [xStar(alpha), 0], [xStar(alpha), V(alpha)]
+  ], { strokeColor: '#00897b', dash: 3, strokeWidth: 1.2 });
+  familyCurves.push(vLine);
+
+  // Horizontal dashed line at V(alpha)
+  var hLine = board.create('segment', [
+    [0, V(alpha)], [xStar(alpha), V(alpha)]
+  ], { strokeColor: '#00897b', dash: 3, strokeWidth: 1.2 });
+  familyCurves.push(hLine);
+
+  board.unsuspendUpdate();
+  updateInfo();
+}
+
+function updateInfo() {
+  document.getElementById('alphaVal').textContent = alpha.toFixed(2);
+  document.getElementById('xStarVal').textContent = xStar(alpha).toFixed(2);
+  document.getElementById('vAlpha').textContent = V(alpha).toFixed(2);
+  document.getElementById('dvda').textContent = dV_da().toFixed(2);
+  document.getElementById('pf_pa').textContent = pf_pa_at_xstar().toFixed(2);
+  document.getElementById('envCheck').textContent = 'dV/d\u03B1 = \u2202f/\u2202\u03B1 = ' + dV_da() + '  \u2713';
+  document.getElementById('envCheck').style.color = '#00897b';
+}
+
+function updateGraph() {
+  alpha = parseFloat(document.getElementById('sliderAlpha').value);
+  document.getElementById('valAlpha').textContent = alpha.toFixed(1);
+  drawAll();
+}
+
+function resetGraph() {
+  document.getElementById('sliderAlpha').value = 3;
+  alpha = 3;
+  updateGraph();
+}
+
+document.getElementById('sliderAlpha').addEventListener('input', updateGraph);
+
+initBoard();
+</script>
+</body>
+</html>

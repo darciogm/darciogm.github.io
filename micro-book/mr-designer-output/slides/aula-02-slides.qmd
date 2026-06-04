@@ -1,0 +1,538 @@
+---
+title: "Oficina Lagrangiano"
+subtitle: "Microeconomia II — Aula 02"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 02"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Revisão Relâmpago: O Lagrangeano
+
+Problema canônico de otimização com restrição de igualdade:
+
+$$\max_{x_1, x_2} f(x_1, x_2) \quad \text{s.a.} \quad g(x_1, x_2) = c$$
+
+. . .
+
+**Lagrangeano:**
+
+$$\mathcal{L} = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]$$
+
+. . .
+
+**Condições de Primeira Ordem (CPOs):**
+
+$$\frac{\partial \mathcal{L}}{\partial x_i} = \frac{\partial f}{\partial x_i} - \lambda \frac{\partial g}{\partial x_i} = 0, \quad i = 1, 2$$
+
+$$\frac{\partial \mathcal{L}}{\partial \lambda} = -(g(x_1, x_2) - c) = 0$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O multiplicador $\lambda$ mede o "preço sombra" da restrição — quanto o valor ótimo melhoraria se relaxássemos a restrição em uma unidade.
+:::
+
+## Teorema do Envelope
+
+Dado o **valor ótimo** como função do parâmetro $\alpha$:
+
+$$V(\alpha) = \max_{x} f(x, \alpha) \quad \text{s.a.} \quad g(x, \alpha) = 0$$
+
+. . .
+
+**Teorema do Envelope:**
+
+$$\frac{dV}{d\alpha} = \frac{\partial \mathcal{L}}{\partial \alpha}\bigg|_{x = x^*(\alpha)}$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Por que é poderoso?**
+
+Não precisamos resolver $x^*(\alpha)$ explicitamente para saber como $V$ muda com $\alpha$.
+:::
+::: {.column width="50%"}
+**Exemplo clássico:**
+
+Para $V(m) = \max U$ s.a. orçamento $= m$:
+
+$$\frac{dV}{dm} = \lambda^*$$
+
+O multiplicador **é** a utilidade marginal da renda.
+:::
+::::
+
+## Envelope em Ação
+
+Considere $U = xy$ sujeito a $x + y = c$. A solução é $x^* = y^* = c/2$, logo $V^*(c) = c^2/4$ e $\lambda^* = c/2$.
+
+<div id="graph-a02-envelope" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Restrição $c$: <input type="range" id="sl-a02-c" min="1" max="10" value="4" step="0.1" oninput="window.updateA02Envelope()"> <span id="val-a02-c">4.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-envelope',{
+    boundingbox:[-0.5,28,11,-2], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.3,26,'V*(c)'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[10.2,-1,'c'],{fontSize:14,anchorX:'left'});
+
+  var cVal = 4;
+  /* V*(c) = c^2/4 curve */
+  var vCurve = brd.create('functiongraph',[function(c){return c*c/4;},0,11],
+    {strokeColor:'#1565c0',strokeWidth:3,name:'V*(c)'});
+
+  /* Optimal point */
+  var optPt = brd.create('point',
+    [function(){return cVal;}, function(){return cVal*cVal/4;}],
+    {size:6,fillColor:'#C8102E',strokeColor:'#C8102E',name:'',
+     label:{fontSize:13,offset:[10,10]}});
+
+  /* Tangent line: slope = lambda* = c/2, passes through (cVal, cVal^2/4) */
+  var tangent = brd.create('functiongraph',[function(x){
+    var slope = cVal/2;
+    var y0 = cVal*cVal/4;
+    return y0 + slope*(x - cVal);
+  },0,11],{strokeColor:'#ff9800',strokeWidth:2,dash:2});
+
+  /* Lambda label */
+  var lamLabel = brd.create('text',
+    [function(){return cVal+0.5;}, function(){return cVal*cVal/4+1.5;},
+     function(){return '\\(\\lambda^*=\\)'+( cVal/2).toFixed(2);}],
+    {fontSize:13,color:'#ff9800',anchorX:'left'});
+
+  window.updateA02Envelope = function(){
+    cVal = parseFloat(document.getElementById('sl-a02-c').value);
+    document.getElementById('val-a02-c').textContent = cVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+:::{.callout-tip title="Intuição Econômica"}
+A reta tangente à curva $V^*(c)$ tem inclinação $\lambda^*$. O Teorema do Envelope diz que a derivada do valor ótimo em relação ao parâmetro é exatamente o multiplicador de Lagrange avaliado no ótimo.
+:::
+
+## Condições de Kuhn-Tucker (KKT)
+
+Quando a restrição é uma **desigualdade**: $g(x_1, x_2) \leq c$
+
+. . .
+
+$$\mathcal{L} = f(x_1, x_2) - \lambda\big[g(x_1, x_2) - c\big]$$
+
+. . .
+
+**Condições KKT:**
+
+1. $\dfrac{\partial \mathcal{L}}{\partial x_i} = 0$ para todo $i$
+2. $\lambda \geq 0$ (multiplicador não-negativo)
+3. $g(\mathbf{x}) \leq c$ (viabilidade primal)
+4. $\lambda\big[g(\mathbf{x}) - c\big] = 0$ (**folga complementar**)
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+As condições KKT generalizam o Lagrangeano clássico para restrições de desigualdade. A novidade central é a restrição de sinal sobre $\lambda$ e a condição de folga complementar.
+:::
+
+## KKT: Folga Complementar
+
+A condição $\lambda\big[g(\mathbf{x}) - c\big] = 0$ implica dois cenários mutuamente exclusivos:
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Caso 1: Restrição ativa** ($g = c$)
+
+- A restrição "morde"
+- $\lambda^* > 0$ (tem custo sombra)
+- Relaxar a restrição melhoraria o objetivo
+- Solução está **na fronteira**
+
+*Exemplo:* consumidor gasta toda a renda
+:::
+::: {.column width="50%"}
+**Caso 2: Restrição inativa** ($g < c$)
+
+- A restrição "sobra"
+- $\lambda^* = 0$ (sem custo sombra)
+- Relaxar a restrição não muda nada
+- Solução é o **ótimo irrestrito**
+
+*Exemplo:* restrição de capacidade com folga
+:::
+::::
+
+. . .
+
+**Regra prática:** Resolva assumindo $\lambda > 0$ (restrição ativa). Se obtiver $\lambda < 0$, descarte e resolva o caso irrestrito com $\lambda = 0$.
+
+## KKT Interativo
+
+Observe como a solução muda conforme a restrição se torna ativa ou inativa:
+
+<div id="graph-a02-kkt" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Restrição $c$: <input type="range" id="sl-a02-kkt" min="1" max="8" value="3" step="0.1" oninput="window.updateA02KKT()"> <span id="val-a02-kkt">3.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-kkt',{
+    boundingbox:[-0.5,8,8,-0.5], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.3,7.5,'y'],{fontSize:14,anchorX:'left'});
+  brd.create('text',[7.5,-0.3,'x'],{fontSize:14,anchorX:'left'});
+
+  var cVal = 3;
+  /* Unconstrained optimum of f = -(x-4)^2 -(y-4)^2 is at (4,4) */
+  var xOpt = 4, yOpt = 4;
+
+  /* Constraint: x + y <= c */
+  var conLine = brd.create('functiongraph',[function(x){return cVal - x;},0,10],
+    {strokeColor:'#C8102E',strokeWidth:2,name:''});
+  /* Shade feasible region */
+  var feasible = brd.create('inequality',[conLine],
+    {fillColor:'#C8102E',fillOpacity:0.06,strokeWidth:0});
+
+  /* Indifference curves (circles centered at (4,4)) */
+  var ic1 = brd.create('functiongraph',[function(x){
+    var r2 = (getSolX()-xOpt)*(getSolX()-xOpt)+(getSolY()-yOpt)*(getSolY()-yOpt);
+    var val = r2-(x-xOpt)*(x-xOpt);
+    return val>=0 ? yOpt+Math.sqrt(val) : NaN;
+  },0,8],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+  var ic2 = brd.create('functiongraph',[function(x){
+    var r2 = (getSolX()-xOpt)*(getSolX()-xOpt)+(getSolY()-yOpt)*(getSolY()-yOpt);
+    var val = r2-(x-xOpt)*(x-xOpt);
+    return val>=0 ? yOpt-Math.sqrt(val) : NaN;
+  },0,8],{strokeColor:'#1565c0',strokeWidth:1.5,dash:3});
+
+  function getSolX(){
+    if(cVal >= xOpt+yOpt) return xOpt;
+    return cVal/2;
+  }
+  function getSolY(){
+    if(cVal >= xOpt+yOpt) return yOpt;
+    return cVal/2;
+  }
+  function getLambda(){
+    if(cVal >= xOpt+yOpt) return 0;
+    return 2*(xOpt - cVal/2);
+  }
+
+  var solPt = brd.create('point',
+    [function(){return getSolX();},function(){return getSolY();}],
+    {size:6,fillColor:'#00897b',strokeColor:'#00897b',name:'ótimo',
+     label:{fontSize:13,offset:[10,10]}});
+
+  var uncon = brd.create('point',[xOpt,yOpt],
+    {size:5,fillColor:'#1565c0',strokeColor:'#1565c0',name:'irrestrito',
+     label:{fontSize:12,offset:[10,-15]}});
+
+  var lamText = brd.create('text',[0.3,7,
+    function(){
+      var lam = getLambda();
+      var status = cVal>=(xOpt+yOpt) ? 'inativa' : 'ativa';
+      return '\\(\\lambda^*=\\)'+lam.toFixed(2)+' (restrição '+status+')';
+    }],{fontSize:13,color:'#C8102E'});
+
+  window.updateA02KKT = function(){
+    cVal = parseFloat(document.getElementById('sl-a02-kkt').value);
+    document.getElementById('val-a02-kkt').textContent = cVal.toFixed(1);
+    brd.update();
+  };
+})();
+</script>
+
+:::{.callout-tip title="Intuição Econômica"}
+Quando $c$ é grande o suficiente, o ótimo irrestrito já satisfaz $g \leq c$ e o multiplicador $\lambda^*$ cai a zero. A restrição só tem "preço" quando efetivamente limita a escolha.
+:::
+
+## Exemplo Resolvido: Utilidade Cobb-Douglas
+
+$$\max_{x,y} \; U = x^{0{,}5}\, y^{0{,}5} \quad \text{s.a.} \quad 2x + 3y = 120$$
+
+. . .
+
+**Passo 1 — Lagrangeano:**
+
+$$\mathcal{L} = x^{0{,}5}\,y^{0{,}5} - \lambda(2x + 3y - 120)$$
+
+. . .
+
+**Passo 2 — CPOs:**
+
+$$\frac{0{,}5\, y^{0{,}5}}{x^{0{,}5}} = 2\lambda \qquad \frac{0{,}5\, x^{0{,}5}}{y^{0{,}5}} = 3\lambda$$
+
+. . .
+
+**Passo 3 — Dividindo CPO₁ por CPO₂:**
+
+$$\frac{y}{x} = \frac{2}{3} \implies y = \frac{2x}{3}$$
+
+. . .
+
+**Passo 4 — Substituindo na restrição:**
+
+$$2x + 3 \cdot \frac{2x}{3} = 120 \implies 4x = 120 \implies x^* = 30, \quad y^* = 20$$
+
+## Exemplo Resolvido: Solução de Canto
+
+$$\max_{x,y} \; U = x + 2y \quad \text{s.a.} \quad x^2 + y^2 \leq 25, \quad x \geq 0, \quad y \geq 0$$
+
+. . .
+
+**Lagrangeano com KKT:**
+
+$$\mathcal{L} = x + 2y - \lambda(x^2 + y^2 - 25)$$
+
+. . .
+
+**CPOs:** $1 = 2\lambda x$ e $2 = 2\lambda y$
+
+Da razão: $\dfrac{1}{2} = \dfrac{x}{y} \implies y = 2x$
+
+. . .
+
+Substituindo: $x^2 + 4x^2 = 25 \implies x^* = \sqrt{5}, \; y^* = 2\sqrt{5}$
+
+. . .
+
+**Verificação KKT:** $\lambda^* = \frac{1}{2\sqrt{5}} > 0$ — restrição ativa. O ótimo irrestrito ($U$ crescente) seria ilimitado, então a restrição de capacidade necessariamente "morde".
+
+## Gallery Walk — Instruções
+
+**Formato:** Gallery Walk (20 min)
+
+. . .
+
+**Instruções:**
+
+1. Formem grupos de 3–4 pessoas
+2. Cada estação tem um problema de otimização diferente
+3. Resolvam na folha da estação (8 min), depois rodem
+4. Ao final, cada grupo apresenta a solução da estação onde terminou
+
+. . .
+
+**Estações:**
+
+| Estação | Problema | Ferramenta |
+|:--|:--|:--|
+| A | Consumidor Cobb-Douglas com 3 bens | Lagrangeano |
+| B | Firma com restrição de capacidade | KKT |
+| C | Governo com orçamento limitado | KKT + Envelope |
+
+. . .
+
+**Dica:** Para cada problema, identifiquem primeiro se a restrição é de igualdade ou desigualdade!
+
+## Problema 1: Consumidor Cobb-Douglas
+
+**Estação A — Lagrangeano clássico**
+
+$$\max_{x,y,z} \; U = x^{1/3}\,y^{1/3}\,z^{1/3} \quad \text{s.a.} \quad 2x + 4y + 5z = 200$$
+
+. . .
+
+**Roteiro:**
+
+1. Escreva o Lagrangeano $\mathcal{L}$
+2. Obtenha as 4 CPOs (3 variáveis + restrição)
+3. Use a razão das CPOs para encontrar as relações entre $x$, $y$ e $z$
+4. Substitua na restrição e resolva
+5. Calcule $\lambda^*$ e interprete
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com Cobb-Douglas simétrica (expoentes iguais), o consumidor gasta **frações iguais** da renda em cada bem. Verifique: $p_x x^* = p_y y^* = p_z z^*$?
+:::
+
+## Problema 2: Firma com Restrição de Capacidade
+
+**Estação B — Kuhn-Tucker**
+
+$$\max_{L} \; \pi = 10\sqrt{L} - 2L \quad \text{s.a.} \quad L \leq 16$$
+
+. . .
+
+**Roteiro:**
+
+1. Resolva o problema irrestrito: $\pi'(L) = 0$
+2. Verifique se o ótimo irrestrito satisfaz $L \leq 16$
+3. Se sim, $\lambda^* = 0$ e acabou. Se não, resolva com restrição ativa ($L = 16$)
+4. Qual é o valor de $\lambda^*$? Interprete
+
+. . .
+
+**Bônus:** Use o Teorema do Envelope para determinar $\frac{d\pi^*}{dc}$ onde $c$ é o limite de capacidade.
+
+## Problema 3: Governo com Orçamento
+
+**Estação C — KKT + Envelope**
+
+$$\max_{x,y} \; W = \ln(x) + \ln(y) \quad \text{s.a.} \quad 3x + 5y \leq B, \quad B = 80$$
+
+. . .
+
+**Roteiro:**
+
+1. Monte o Lagrangeano e obtenha as CPOs
+2. Resolva para $x^*(B)$ e $y^*(B)$
+3. Calcule $\lambda^*$ e interprete: quanto vale um real a mais no orçamento?
+4. Use o Teorema do Envelope para verificar: $\frac{dW^*}{dB} = \lambda^*$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com utilidade logarítmica, o multiplicador $\lambda^*$ é decrescente em $B$ — o "valor" de uma unidade extra de orçamento é maior quando o orçamento é apertado.
+:::
+
+## Demandas CES via Lagrangeano
+
+A função de utilidade CES: $U = \big(x^{\rho} + y^{\rho}\big)^{1/\rho}$, com elasticidade de substituição $\sigma = \frac{1}{1-\rho}$.
+
+<div id="graph-a02-ces" style="width:700px;height:370px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$\rho$: <input type="range" id="sl-a02-rho" min="-4" max="0.9" value="0" step="0.1" oninput="window.updateA02CES()"> <span id="val-a02-rho">0.0</span> &nbsp; ($\sigma$ = <span id="val-a02-sigma">1.0</span>)</label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a02-ces',{
+    boundingbox:[-0.3,14,5.5,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  brd.create('text',[0.2,13,'Quantidade demandada'],{fontSize:13,anchorX:'left'});
+  brd.create('text',[5.2,-0.5,'p'],{fontSize:14,anchorX:'left'});
+
+  var rho = 0;
+  var m = 12; /* income */
+  var py = 2; /* price of y, fixed */
+
+  /* CES demands: x*(p) and y*(p) for given m, py, rho */
+  function xDem(p){
+    if(rho < -3.9){
+      /* Leontief limit: x = y = m/(p+py) */
+      return m/(p+py);
+    }
+    if(Math.abs(rho) < 0.05){
+      /* Cobb-Douglas limit: x = m/(2p) */
+      return m/(2*p);
+    }
+    var s = 1/(1-rho);
+    var pxs = Math.pow(p, 1-s);
+    var pys = Math.pow(py, 1-s);
+    return m * Math.pow(p, -s) / (pxs + pys);
+  }
+  function yDem(p){
+    if(rho < -3.9){
+      return m/(p+py);
+    }
+    if(Math.abs(rho) < 0.05){
+      return m/(2*py);
+    }
+    var s = 1/(1-rho);
+    var pxs = Math.pow(p, 1-s);
+    var pys = Math.pow(py, 1-s);
+    return m * Math.pow(py, -s) / (pxs + pys);
+  }
+
+  var curveX = brd.create('functiongraph',[function(p){return xDem(p);},0.2,5.5],
+    {strokeColor:'#1565c0',strokeWidth:3});
+  var curveY = brd.create('functiongraph',[function(p){return yDem(p);},0.2,5.5],
+    {strokeColor:'#00897b',strokeWidth:3,dash:0});
+
+  brd.create('text',[3.5,function(){return xDem(3.5)+0.6;},'x*(p)'],
+    {fontSize:13,color:'#1565c0',anchorX:'left'});
+  brd.create('text',[3.5,function(){return yDem(3.5)+0.6;},'y*(p)'],
+    {fontSize:13,color:'#00897b',anchorX:'left'});
+
+  var sigLabel = brd.create('text',[0.3,11.5,
+    function(){
+      if(rho < -3.9) return 'Leontief (\\(\\sigma \\to 0\\))';
+      if(Math.abs(rho) < 0.05) return 'Cobb-Douglas (\\(\\sigma = 1\\))';
+      if(rho > 0.85) return 'Substitutos perfeitos (\\(\\sigma \\to \\infty\\))';
+      var s = 1/(1-rho);
+      return '\\(\\sigma = '+s.toFixed(2)+'\\)';
+    }],{fontSize:13,color:'#C8102E'});
+
+  window.updateA02CES = function(){
+    rho = parseFloat(document.getElementById('sl-a02-rho').value);
+    document.getElementById('val-a02-rho').textContent = rho.toFixed(1);
+    var sig = (rho < -3.9) ? '0' : (rho > 0.85) ? '∞' : (1/(1-rho)).toFixed(2);
+    document.getElementById('val-a02-sigma').textContent = sig;
+    brd.update();
+  };
+})();
+</script>
+
+:::{.callout-tip title="Intuição Econômica"}
+A elasticidade de substituição $\sigma$ governa quão "curvadas" são as curvas de demanda. Quanto maior $\sigma$, mais o consumidor substitui entre bens quando o preço relativo muda.
+:::
+
+## Funções Homogêneas — Propriedades Úteis
+
+$f$ é **homogênea de grau $k$** se $f(t\mathbf{x}) = t^k f(\mathbf{x})$, $\forall t > 0$.
+
+. . .
+
+**Teorema de Euler:**
+
+$$\sum_{i=1}^n x_i \frac{\partial f}{\partial x_i} = k \cdot f(\mathbf{x})$$
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Aplicações em Microeconomia:**
+
+- Produção CRS ($k=1$): pagando cada fator pelo produto marginal, esgota-se a receita total
+- Demandas Marshallianas: homogêneas de grau 0 em $(p, m)$ — sem ilusão monetária
+- Funções custo: homogêneas de grau 1 em preços dos fatores
+:::
+::: {.column width="50%"}
+**Consequências úteis:**
+
+- Derivadas de $f$ hom. grau $k$ são hom. grau $k-1$
+- Se $k=1$: $\sum x_i f_i = f$ (Exaustão)
+- Se $k=0$: $\sum x_i f_i = 0$ (derivadas somam zero ponderadas)
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se a função de produção tem retornos constantes de escala ($k=1$), pagar cada fator pelo seu produto marginal esgota exatamente a receita total — é o **Teorema da Exaustão**.
+:::
+
+## Próxima Aula
+
+**Aula 03 — Preferências, Axiomas e Utilidade**
+
+. . .
+
+- Os 4 axiomas fundamentais das preferências
+- Teorema de Debreu: de preferências a funções de utilidade
+- Curvas de indiferença e Taxa Marginal de Substituição
+- Catálogo de funções de utilidade: Linear, Leontief, Cobb-Douglas, CES
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Leia o Capítulo 3 do livro, focando nos axiomas e na definição de TMS. Revise como as funções CES que exploramos hoje se conectam com diferentes formatos de curvas de indiferença.
+:::

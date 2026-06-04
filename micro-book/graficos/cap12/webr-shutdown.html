@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Decisão de Operar ou Fechar</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Decisao de Shutdown: tres regimes de preco
+# CT(q) = 72 + 10q + 0.5q^2 (Ex. Resolvido 12.2)
+# ============================================
+
+CF <- 72
+a <- 10; b <- 0.5
+
+CT   <- function(q) CF + a*q + b*q^2
+CV   <- function(q) a*q + b*q^2
+CMg  <- function(q) a + 2*b*q
+CMe  <- function(q) CF/q + a + b*q
+CVMe <- function(q) a + b*q
+
+# Pontos criticos
+cvme_min <- a   # CVMe min (q -> 0+ para funcao crescente)
+cme_min_q <- sqrt(CF / b)
+cme_min <- CMe(cme_min_q)
+
+# Tres cenarios de preco
+precos <- c(30, 16, 8)
+nomes <- c("Lucro positivo", "Prejuizo (opera)", "Fecha")
+cores <- c("#198754", "#fd7e14", "#dc3545")
+
+cat("====== TRES REGIMES DE PRECO ======\n")
+cat("CT(q) =", CF, "+", a, "q +", b, "q^2\n")
+cat("CVMe_min =", cvme_min, " | CMe_min =", round(cme_min, 2),
+    " (em q =", round(cme_min_q, 2), ")\n\n")
+
+for (i in 1:3) {
+  p <- precos[i]
+  cat("--- Preco p =", p, "---\n")
+
+  if (p < cvme_min) {
+    cat("  p < CVMe_min => FECHAR (q = 0)\n")
+    cat("  Lucro = -CF = -", CF, "\n\n")
+  } else {
+    q_s <- (p - a) / (2*b)
+    lucro_op <- p * q_s - CT(q_s)
+    lucro_fecha <- -CF
+    cat("  q* =", round(q_s, 2), "\n")
+    cat("  Lucro operando  =", round(lucro_op, 2), "\n")
+    cat("  Lucro fechando  = -CF = -", CF, "\n")
+    cat("  Decisao:", ifelse(lucro_op >= lucro_fecha, "OPERAR", "FECHAR"), "\n")
+    if (p >= cme_min) cat("  Regime: LUCRO POSITIVO\n\n")
+    else cat("  Regime: PREJUIZO (mas menor que CF)\n\n")
+  }
+}
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+q_seq <- seq(0.5, 30, length = 500)
+
+plot(q_seq, CMg(q_seq), type = "l", lwd = 3, col = "#dc3545",
+     xlab = "q", ylab = "$/unidade",
+     main = "Tres regimes de preco",
+     ylim = c(0, 35), xlim = c(0, 30), cex.lab = 1.1)
+lines(q_seq, CMe(q_seq), lwd = 2, col = "#0d6efd")
+lines(q_seq, CVMe(q_seq), lwd = 2, col = "#198754", lty = 2)
+
+# Linhas de preco e zonas
+for (i in 1:3) {
+  abline(h = precos[i], col = cores[i], lwd = 1.5, lty = 3)
+  text(28, precos[i] + 0.8, paste0("p=", precos[i], ": ", nomes[i]),
+       col = cores[i], cex = 0.7, font = 2, adj = 1)
+}
+
+# Zona verde (lucro)
+rect(0, cme_min, 30, 35, col = rgb(0.1, 0.53, 0.33, 0.05), border = NA)
+# Zona amarela (opera com prejuizo)
+rect(0, cvme_min, 30, cme_min, col = rgb(0.99, 0.49, 0.05, 0.08), border = NA)
+# Zona vermelha (fecha)
+rect(0, 0, 30, cvme_min, col = rgb(0.86, 0.21, 0.27, 0.08), border = NA)
+
+# Anotacoes das zonas
+text(1, (cme_min + 35)/2, "Lucro > 0", col = "#198754", cex = 0.7, font = 3, adj = 0)
+text(1, (cvme_min + cme_min)/2, "Prejuizo\n(opera)", col = "#fd7e14", cex = 0.65, font = 3, adj = 0)
+text(1, cvme_min/2, "Fecha", col = "#dc3545", cex = 0.7, font = 3, adj = 0)
+
+# Pontos criticos
+points(cme_min_q, cme_min, pch = 19, col = "#0d6efd", cex = 1.3)
+text(cme_min_q, cme_min, paste0("  Break-even\n  CMe_min=", round(cme_min, 1)),
+     pos = 4, cex = 0.7, col = "#0d6efd")
+
+legend("topright",
+       legend = c("CMg (= oferta acima CVMe)", "CMe", "CVMe"),
+       col = c("#dc3545", "#0d6efd", "#198754"),
+       lwd = c(3, 2, 2), lty = c(1, 1, 2), cex = 0.75, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--
+  Weitzman (1974): Preços vs Quantidades sob Incerteza
+  Library: Plotly.js
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incerteza: Preço vs Quantidade</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}.panels{flex:1 1 420px;max-width:520px;display:flex;flex-direction:column;gap:.5rem}.plot-box{width:100%;height:260px;border:1px solid #ddd;border-radius:6px}.controls{flex:0 1 280px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}.controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}.slider-group{margin-bottom:.8rem}.slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}.slider-group label .val{font-weight:700;color:#C8102E}input[type=range]{width:100%;accent-color:#C8102E}.info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.6}.btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#9a0c23}@media(max-width:860px){.graph-container{flex-direction:column;align-items:center}.panels,.controls{flex-basis:100%;width:100%;max-width:520px}}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div class="panels">
+    <div id="plotPrice" class="plot-box"></div>
+    <div id="plotQty" class="plot-box"></div>
+  </div>
+  <div class="controls">
+    <h3>Weitzman: Preço vs Quantidade</h3>
+    <div class="slider-group">
+      <label>Inclinação BMg \(|b|\): <span class="val" id="val-b">1.0</span></label>
+      <input type="range" id="slider-b" min="0.2" max="3" step="0.1" value="1">
+    </div>
+    <div class="slider-group">
+      <label>Inclinação CMgA \(|c|\): <span class="val" id="val-c">1.5</span></label>
+      <input type="range" id="slider-c" min="0.2" max="3" step="0.1" value="1.5">
+    </div>
+    <div class="slider-group">
+      <label>Choque custo \(\varepsilon\): <span class="val" id="val-e">15</span></label>
+      <input type="range" id="slider-e" min="0" max="40" step="1" value="15">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+  /*
+    BMg(q) = B0 - b*q  (declining marginal benefit of abatement)
+    CMgA(q) = c*q       (increasing marginal abatement cost)
+    Shock: CMgA shifts up by epsilon => CMgA_high = c*q + eps
+
+    Optimal q*: B0 - b*q = c*q => q* = B0/(b+c)
+    Price instrument: set tau = c*q* (expected MAC at optimum)
+      Under shock: tau = c*q_actual + eps => q_actual = (tau - eps)/c
+    Quantity instrument: set q_bar = q*
+      Under shock: actual MAC at q_bar = c*q_bar + eps
+
+    DWL_price = 0.5 * |b| * (q_actual - q**)^2  where q** is true optimum under shock
+    DWL_qty   = 0.5 * |c_eff| ... Weitzman result: price dominates iff c > b
+  */
+
+  function update(){
+    var b=parseFloat(document.getElementById('slider-b').value);
+    var c=parseFloat(document.getElementById('slider-c').value);
+    var eps=parseFloat(document.getElementById('slider-e').value);
+    document.getElementById('val-b').textContent=b.toFixed(1);
+    document.getElementById('val-c').textContent=c.toFixed(1);
+    document.getElementById('val-e').textContent=eps;
+
+    var B0=100; // intercept of BMg
+    var qStar=B0/(b+c); // expected optimum
+    var tauStar=c*qStar; // optimal tax (expected)
+
+    // True optimum under shock
+    // BMg = CMgA_shock => B0-b*q = c*q+eps => q**=(B0-eps)/(b+c)
+    var qTrue=Math.max(0,(B0-eps)/(b+c));
+
+    // --- Price instrument (tax = tauStar fixed) ---
+    // Firm abates until CMgA_shock = tau => c*q+eps = tauStar => q_tax = (tauStar-eps)/c
+    var qTax=Math.max(0,(tauStar-eps)/c);
+
+    // --- Quantity instrument (cap = qStar fixed) ---
+    var qCap=qStar; // quantity is fixed
+
+    // Generate curves
+    var qRange=[], bmg=[], cmgBase=[], cmgShock=[];
+    var maxQ=B0/b*1.1;
+    for(var q=0;q<=maxQ;q+=0.5){
+      qRange.push(q);
+      bmg.push(B0-b*q);
+      cmgBase.push(c*q);
+      cmgShock.push(c*q+eps);
+    }
+
+    // ---- PLOT 1: Price instrument ----
+    // DWL triangle between qTax and qTrue
+    var dwlPriceQ, dwlPriceY1, dwlPriceY2;
+    var qL=Math.min(qTax,qTrue), qR=Math.max(qTax,qTrue);
+    var fillPQ=[qL, qR, qR, qL];
+    var fillPY=[B0-b*qL, B0-b*qR, c*qR+eps, c*qL+eps];
+    // DWL = 0.5 * |qTax - qTrue| * |(BMg(qTax)-CMgShock(qTax))|
+    var dwlPrice=0.5*Math.abs(qTax-qTrue)*Math.abs((B0-b*qTax)-(c*qTax+eps));
+
+    var tracesP=[
+      {x:qRange,y:bmg,mode:'lines',line:{color:'#1565c0',width:2},name:'BMg'},
+      {x:qRange,y:cmgBase,mode:'lines',line:{color:'#00897b',width:1.5,dash:'dot'},name:'CMgA (esperado)'},
+      {x:qRange,y:cmgShock,mode:'lines',line:{color:'#e65100',width:2},name:'CMgA + ε'},
+      {x:[0,maxQ],y:[tauStar,tauStar],mode:'lines',line:{color:'#C8102E',width:2,dash:'dash'},name:'τ*='+tauStar.toFixed(0)},
+      {x:[qTrue],y:[B0-b*qTrue],mode:'markers',marker:{size:8,color:'#333',symbol:'star'},name:'q** ótimo real'},
+      {x:[qTax],y:[tauStar],mode:'markers',marker:{size:8,color:'#C8102E',symbol:'diamond'},name:'q(τ)='+qTax.toFixed(1)}
+    ];
+    // DWL fill
+    if(Math.abs(qTax-qTrue)>0.3){
+      tracesP.push({x:fillPQ,y:fillPY,fill:'toself',fillcolor:'rgba(200,16,46,0.15)',line:{width:0},showlegend:false,hoverinfo:'skip'});
+    }
+
+    Plotly.react('plotPrice',tracesP,{
+      margin:{l:55,r:15,t:25,b:25},
+      title:{text:'Instrumento de preço (imposto)',font:{size:12}},
+      xaxis:{title:'',range:[0,maxQ*0.8]},
+      yaxis:{title:'US$/tCO₂',range:[0,B0*1.05]},
+      showlegend:true,legend:{x:0.45,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:8}},
+      annotations:[{x:(qTax+qTrue)/2,y:(B0-b*(qTax+qTrue)/2)*0.5+(c*(qTax+qTrue)/2+eps)*0.5,text:'DWL='+dwlPrice.toFixed(0),showarrow:false,font:{size:9,color:'#C8102E'}}],
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+
+    // ---- PLOT 2: Quantity instrument ----
+    // Firm is forced to abate qCap. True optimum is qTrue.
+    // DWL triangle between qCap and qTrue
+    var qL2=Math.min(qCap,qTrue), qR2=Math.max(qCap,qTrue);
+    var fillQQ=[qL2, qR2, qR2, qL2];
+    var fillQY=[B0-b*qL2, B0-b*qR2, c*qR2+eps, c*qL2+eps];
+    var dwlQty=0.5*Math.abs(qCap-qTrue)*Math.abs((B0-b*qCap)-(c*qCap+eps));
+    var pShadow=c*qCap+eps; // shadow price under cap
+
+    var tracesQ=[
+      {x:qRange,y:bmg,mode:'lines',line:{color:'#1565c0',width:2},name:'BMg'},
+      {x:qRange,y:cmgBase,mode:'lines',line:{color:'#00897b',width:1.5,dash:'dot'},name:'CMgA (esperado)'},
+      {x:qRange,y:cmgShock,mode:'lines',line:{color:'#e65100',width:2},name:'CMgA + ε'},
+      {x:[qCap,qCap],y:[0,B0],mode:'lines',line:{color:'#9c27b0',width:2,dash:'dash'},name:'Cap='+qCap.toFixed(1)},
+      {x:[qTrue],y:[B0-b*qTrue],mode:'markers',marker:{size:8,color:'#333',symbol:'star'},name:'q** ótimo real'},
+      {x:[qCap],y:[pShadow],mode:'markers',marker:{size:8,color:'#9c27b0',symbol:'circle'},name:'p sombra='+pShadow.toFixed(0)}
+    ];
+    if(Math.abs(qCap-qTrue)>0.3){
+      tracesQ.push({x:fillQQ,y:fillQY,fill:'toself',fillcolor:'rgba(156,39,176,0.15)',line:{width:0},showlegend:false,hoverinfo:'skip'});
+    }
+
+    Plotly.react('plotQty',tracesQ,{
+      margin:{l:55,r:15,t:25,b:40},
+      title:{text:'Instrumento de quantidade (cap)',font:{size:12}},
+      xaxis:{title:'Abatimento (q)',range:[0,maxQ*0.8]},
+      yaxis:{title:'US$/tCO₂',range:[0,B0*1.05]},
+      showlegend:true,legend:{x:0.45,y:0.98,bgcolor:'rgba(255,255,255,0.85)',font:{size:8}},
+      annotations:[{x:(qCap+qTrue)/2,y:(B0-b*(qCap+qTrue)/2)*0.5+(c*(qCap+qTrue)/2+eps)*0.5,text:'DWL='+dwlQty.toFixed(0),showarrow:false,font:{size:9,color:'#9c27b0'}}],
+      font:{family:'CMU Serif, Georgia, serif'}
+    },{responsive:true,displayModeBar:false});
+
+    // Info box
+    var winner=(c>b)?'Imposto (preço)':'Cap (quantidade)';
+    var winColor=(c>b)?'#C8102E':'#9c27b0';
+    var html='<div style="text-align:center;margin-bottom:0.3rem;font-size:0.8rem;">Weitzman (1974)</div>';
+    html+='DWL imposto: <strong style="color:#C8102E;">'+dwlPrice.toFixed(0)+'</strong><br>';
+    html+='DWL cap: <strong style="color:#9c27b0;">'+dwlQty.toFixed(0)+'</strong><br>';
+    html+='<strong style="color:'+winColor+';">Domina: '+winner+'</strong><br>';
+    html+='<hr style="margin:0.3rem 0">';
+    html+='<div style="font-size:0.78rem;color:#666;">Regra de Weitzman: se CMgA é mais íngreme que BMg (\\(|c|>|b|\\)), o <strong>imposto domina</strong>. Se BMg é mais íngreme (limiares de dano), o <strong>cap domina</strong>.</div>';
+    document.getElementById('info').innerHTML=html;
+    if(window.MathJax&&MathJax.typeset)MathJax.typeset();
+  }
+
+  function resetAll(){
+    document.getElementById('slider-b').value=1;
+    document.getElementById('slider-c').value=1.5;
+    document.getElementById('slider-e').value=15;
+    update();
+  }
+  ['slider-b','slider-c','slider-e'].forEach(function(id){document.getElementById(id).addEventListener('input',update);});
+  update();
+</script>
+</body>
+</html>

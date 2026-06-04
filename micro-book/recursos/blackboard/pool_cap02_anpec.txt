@@ -1,0 +1,15 @@
+TF	A soma das derivadas parciais de f no ponto (2,2) é igual a 32.	false
+TF	Em um ponto crítico (x_0, y_0) de f temos que f(x_0, y_0) = 0.	true
+TF	As derivadas parciais de primeira ordem de f são também funções homogêneas de grau 4.	false
+TF	As identidades x f_{xx}(x,y) + y f_{yx}(x,y) = 3f_x(x,y) e x f_{xy}(x,y) + y f_{yy}(x,y) = 3f_y(x,y) são válidas para todo ponto (x,y) \in \mathbb{R}^2.	true
+TF	Se p = (x_0, y_0) e o gradiente de f em p são ortogonais, então f(p) = 0.	true
+TF	Podemos garantir que a restrição g(x,y) \leq a é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de a, \alpha e \beta.	false
+TF	Podemos garantir que a restrição x \geq 0 é inativa para a solução do problema acima, para quaisquer valores estritamente positivos de a, \alpha e \beta.	true
+TF	Se g(x,y) = 2x + y, então a solução é (x^, y^) = \left(\frac{a}{4}, \frac{a}{2}\right).	true
+TF	Se g(x,y) = 2x + y, então \frac{d}{da} f(x^(a), y^(a)) = \frac{a}{8}.	false
+TF	Se a solução do problema satisfizer g(x^, y^) - a = 0, então os gradientes de f e de g em (x^, y^) são perpendiculares.	false
+TF	A matriz Hessiana da função f em qualquer ponto \mathbf{x} \in \mathbb{R}^2 é negativa definida.	false
+TF	Quaisquer que sejam os valores de a e b, se o gradiente \nabla f(x_1^, x_2^) = (0,0), então (x_1^, x_2^) resolve o problema P.	false
+TF	Quando a = b = 0, o problema P não tem solução.	false
+TF	Quando a > 0 e b = 0, qualquer solução (x_1^, x_2^) do problema P satisfaz x_2^ = 2x_1^.	true
+TF	Quando a = b = 1, em qualquer solução (x_1^, x_2^) do problema P, o gradiente satisfaz \nabla f(x_1^, x_2^) \neq (0,0).	true

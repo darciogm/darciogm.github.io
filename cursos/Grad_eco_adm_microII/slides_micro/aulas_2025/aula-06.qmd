@@ -1,0 +1,317 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 06 — Minimização do Dispêndio e Demanda Hicksiana"
+author: "Prof. Darcio Genicolo Martins"
+date: "Problema Dual, Demanda Compensada e Função Dispêndio"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## O Problema Dual {data-background-color="#E50505"}
+
+## Duas Perguntas, Uma Resposta
+
+Até aqui, o consumidor perguntava:
+
+> "Tenho $I$ reais — como **maximizar** minha felicidade?"
+
+. . .
+
+Agora viramos a pergunta:
+
+> "Quero atingir utilidade $\bar{u}$ — qual o **gasto mínimo** necessário?"
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Pense em um gestor organizando um jantar: (a) "Tenho R\$ 500 — qual o melhor jantar?" (primal) vs. (b) "Quero qualidade 8/10 — qual o gasto mínimo?" (dual). A lista de pratos é a mesma.
+:::
+
+## Formulação do Problema Dual
+
+::: {.eq-highlight}
+$$\min_{x_1, x_2} \; p_1 x_1 + p_2 x_2 \quad \text{s.a.} \quad u(x_1, x_2) \geq \bar{u}$$
+:::
+
+. . .
+
+O Lagrangeano do dual:
+
+$$\mathcal{L} = p_1 x_1 + p_2 x_2 + \mu\left(\bar{u} - u(x_1, x_2)\right)$$
+
+. . .
+
+CPOs: $\quad p_i = \mu \dfrac{\partial u}{\partial x_i}, \quad i=1,2$
+
+. . .
+
+Dividindo as CPOs:
+
+$$\frac{p_1}{p_2} = \frac{\partial u/\partial x_1}{\partial u/\partial x_2} = TMS_{12}$$
+
+A condição de tangência é **idêntica** à do primal!
+
+## Primal vs. Dual: Comparação Visual
+
+:::: {.columns}
+::: {.column width="48%"}
+**Primal** (Max Utilidade)
+
+- Fixa: renda $I$
+- Busca: CI mais alta
+- Resultado: $\mathbf{x}^*$, $V(\mathbf{p},I)$
+- Gera: demanda **marshalliana**
+
+:::
+::: {.column width="48%"}
+**Dual** (Min Dispêndio)
+
+- Fixa: utilidade $\bar{u}$
+- Busca: reta orçamentária mais baixa
+- Resultado: $\mathbf{h}^*$, $E(\mathbf{p},\bar{u})$
+- Gera: demanda **hicksiana**
+
+:::
+::::
+
+. . .
+
+:::{.callout-note title="Resultado-chave"}
+No ótimo, o **mesmo ponto de tangência** resolve ambos os problemas. A cesta ótima é idêntica — só muda a pergunta.
+:::
+
+## Demanda Hicksiana {data-background-color="#E50505"}
+
+## Demanda Hicksiana (Compensada)
+
+A solução do dual define as funções de **demanda hicksiana**:
+
+::: {.eq-highlight}
+$$h_i = h_i(p_1, p_2, \bar{u}), \quad i = 1, 2$$
+:::
+
+. . .
+
+O nome "compensada" vem do fato de que o consumidor é **compensado** por variações de preço para manter a utilidade constante.
+
+. . .
+
+:::{.callout-tip title="Por que importa?"}
+A demanda hicksiana isola o **efeito substituição puro**: quando $p_1$ sobe e o consumidor é compensado, qualquer mudança em $x_1$ reflete apenas substituição entre bens — sem confundimento do efeito renda.
+:::
+
+## Propriedades da Demanda Hicksiana
+
+1. **HOD0 em $\mathbf{p}$**: multiplicar todos os preços por $t > 0$ não altera as quantidades
+
+. . .
+
+2. **Lei da demanda compensada**: $\dfrac{\partial h_i}{\partial p_i} \leq 0$
+   - Sempre não crescente no próprio preço — **sem exceções**
+   - (Ao contrário da marshalliana, que pode violar para bens Giffen)
+
+. . .
+
+3. **Simetria de Slutsky**: $\dfrac{\partial h_i}{\partial p_j} = \dfrac{\partial h_j}{\partial p_i}$
+
+. . .
+
+:::{.callout-warning title="Contraste com a marshalliana"}
+A marshalliana pode ter $\partial x_i/\partial p_i > 0$ (Giffen). A hicksiana **nunca** — ela satisfaz a lei da demanda incondicionalmente.
+:::
+
+## Exemplo: Hicksiana Cobb-Douglas {.smaller}
+
+Para $u = x_1^a x_2^{1-a}$:
+
+$$h_1 = \bar{u} \left(\frac{(1-a)\,p_1}{a\,p_2}\right)^{-(1-a)} = \bar{u}\left(\frac{a\,p_2}{(1-a)\,p_1}\right)^{1-a}$$
+
+$$h_2 = \bar{u} \left(\frac{(1-a)\,p_1}{a\,p_2}\right)^{a}$$
+
+. . .
+
+:::{.callout-note title="Diferença-chave"}
+A marshalliana depende de $(\mathbf{p}, I)$. A hicksiana depende de $(\mathbf{p}, \bar{u})$. Na aula 19, a Equação de Slutsky conectará as duas.
+:::
+
+## Dualidade — Interativo
+
+<iframe src="graficos/cap04/dualidade.html" title="Dualidade V ↔ E" width="1100" height="560" style="border:none;"></iframe>
+
+## A Função Dispêndio {data-background-color="#E50505"}
+
+## Função Dispêndio $E(\mathbf{p}, \bar{u})$
+
+O valor ótimo do dual é a **função dispêndio**:
+
+::: {.eq-highlight}
+$$E(p_1, p_2, \bar{u}) = p_1 h_1 + p_2 h_2 = \min_{\mathbf{x}: u(\mathbf{x})\geq\bar{u}} \mathbf{p} \cdot \mathbf{x}$$
+:::
+
+. . .
+
+$E$ responde: "quanto custa, no mínimo, ser feliz ao nível $\bar{u}$?"
+
+## Propriedades de $E(\mathbf{p}, \bar{u})$ {.smaller}
+
+| Propriedade | Significado |
+|:---|:---|
+| HOD1 em $\mathbf{p}$ | Preços dobram → gasto mínimo dobra |
+| Não decrescente em $p_i$ | Preço sobe → custa mais atingir $\bar{u}$ |
+| Estritamente crescente em $\bar{u}$ | Mais felicidade custa mais |
+| **Côncava** em $\mathbf{p}$ | Consumidor se protege substituindo bens |
+| Lema de Shephard | $\partial E/\partial p_i = h_i(\mathbf{p}, \bar{u})$ |
+
+. . .
+
+:::{.callout-tip title="Intuição da concavidade"}
+Quando $p_1$ sobe, o consumidor substitui em favor de $x_2$. O gasto cresce **menos** que proporcionalmente — daí a concavidade.
+:::
+
+## Lema de Shephard
+
+::: {.eq-highlight}
+$$h_i(\mathbf{p}, \bar{u}) = \frac{\partial E(\mathbf{p}, \bar{u})}{\partial p_i}$$
+:::
+
+. . .
+
+**Demonstração (Envelope)**: o efeito de $\Delta p_i$ sobre o gasto mínimo é, na margem, exatamente $h_i$ — a quantidade que o consumidor estava comprando.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Se $p_1$ sobe R\$ 1, o aumento no gasto mínimo é $\approx h_1$ unidades $\times$ R\$ 1. Efeitos de realocação são de segunda ordem (Envelope).
+:::
+
+## Exemplo: Dispêndio Cobb-Douglas
+
+Para $u = x_1^a x_2^{1-a}$:
+
+$$E(p_1, p_2, \bar{u}) = \left(\frac{p_1}{a}\right)^a \left(\frac{p_2}{1-a}\right)^{1-a} \cdot \bar{u}$$
+
+. . .
+
+**Verificação do Lema de Shephard**:
+
+$$\frac{\partial E}{\partial p_1} = a \cdot \frac{E}{p_1} \cdot \frac{1}{\bar{u}} \cdot \bar{u} \cdot \frac{1}{a} = h_1 \quad \checkmark$$
+
+## Dualidade $V \leftrightarrow E$: As Identidades Fundamentais
+
+$V$ e $E$ são **inversas** uma da outra (fixados os preços):
+
+::: {.eq-highlight}
+$$V(\mathbf{p}, E(\mathbf{p}, \bar{u})) = \bar{u}$$
+:::
+
+$$E(\mathbf{p}, V(\mathbf{p}, I)) = I$$
+
+. . .
+
+E as demandas se conectam:
+
+$$x_i(\mathbf{p}, I) = h_i(\mathbf{p}, V(\mathbf{p}, I))$$
+
+$$h_i(\mathbf{p}, \bar{u}) = x_i(\mathbf{p}, E(\mathbf{p}, \bar{u}))$$
+
+## Hicksiana vs. Marshalliana — Interativo
+
+<div id="graph-a18-hm" style="width:700px;height:340px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$I$: <input type="range" id="sl-a18-I" min="50" max="300" value="120" step="10" oninput="updA18()"> <span id="val-a18-I">120</span></label>
+  <label>$\alpha$: <input type="range" id="sl-a18-a" min="0.15" max="0.85" value="0.5" step="0.05" oninput="updA18()"> <span id="val-a18-a">0.50</span></label>
+  <label>$p_2$: <input type="range" id="sl-a18-p2" min="1" max="10" value="4" step="0.5" oninput="updA18()"> <span id="val-a18-p2">4.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a18-hm',{
+    boundingbox:[-0.5,50,15,-3], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'p\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:13}},
+                 y:{name:'x\u2081',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:13}}}
+  });
+  var crvM,crvH,legM,legH;
+  function draw(){
+    var I=parseFloat(document.getElementById('sl-a18-I').value),
+        a=parseFloat(document.getElementById('sl-a18-a').value),
+        p2=parseFloat(document.getElementById('sl-a18-p2').value);
+    document.getElementById('val-a18-I').textContent=I;
+    document.getElementById('val-a18-a').textContent=a.toFixed(2);
+    document.getElementById('val-a18-p2').textContent=p2.toFixed(1);
+    brd.suspendUpdate();
+    if(crvM) brd.removeObject(crvM);
+    if(crvH) brd.removeObject(crvH);
+    if(legM) brd.removeObject(legM);
+    if(legH) brd.removeObject(legH);
+    // Marshallian: x1 = a*I/p1
+    crvM = brd.create('functiongraph',[function(p1){return p1>0.3?a*I/p1:NaN},0.3,14],
+      {strokeColor:'#E50505',strokeWidth:3});
+    // Hicksian at reference p1=3: ubar = (a*I/3)^a * ((1-a)*I/p2)^(1-a)
+    var p1ref=3;
+    var x1ref=a*I/p1ref, x2ref=(1-a)*I/p2;
+    var ubar=Math.pow(x1ref,a)*Math.pow(x2ref,1-a);
+    crvH = brd.create('functiongraph',[function(p1){
+      if(p1<0.3) return NaN;
+      return ubar*Math.pow(a*p2/((1-a)*p1),1-a);
+    },0.3,14],{strokeColor:'#1a5276',strokeWidth:3,dash:2});
+    legM = brd.create('text',[10,a*I/10+3,'Marshalliana'],{fontSize:12,color:'#E50505'});
+    legH = brd.create('text',[10,ubar*Math.pow(a*p2/((1-a)*10),1-a)+3,'Hicksiana'],{fontSize:12,color:'#1a5276'});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA18=draw;
+})();
+</script>
+
+## Marshalliana vs. Hicksiana
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html" title="Marshalliana vs. Hicksiana" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Preview: Efeitos Renda e Substituição
+
+<iframe src="graficos/cap05/efeito-renda-substituicao.html" title="Preview: Efeitos Renda e Substituição" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo e Próximos Passos {data-background-color="#E50505"}
+
+## Resumo da Aula {.smaller}
+
+| Conceito | Fórmula / Resultado |
+|:---|:---|
+| Problema dual | $\min \mathbf{p}\cdot\mathbf{x}$ s.a. $u(\mathbf{x})\geq\bar{u}$ |
+| Demanda hicksiana | $h_i(\mathbf{p}, \bar{u})$; HOD0 em $\mathbf{p}$; $\partial h_i/\partial p_i \leq 0$ |
+| Função dispêndio | $E(\mathbf{p},\bar{u})$; HOD1, côncava em $\mathbf{p}$ |
+| Lema de Shephard | $\partial E/\partial p_i = h_i$ |
+| Dualidade | $V(\mathbf{p},E(\mathbf{p},\bar{u}))=\bar{u}$; $E(\mathbf{p},V(\mathbf{p},I))=I$ |
+| Conexão demandas | $x_i(\mathbf{p},I)=h_i(\mathbf{p},V(\mathbf{p},I))$ |
+
+. . .
+
+**Próxima aula**: Equação de Slutsky — decompondo o efeito de uma mudança de preço em substituição e renda.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material disponível no site da disciplina.
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

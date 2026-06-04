@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<!--
+  Interactive Price Controls — Chapter 12
+  Library: JSXGraph
+  Features: Toggle ceiling/floor, slider for controlled price, shortage/surplus, DWL, CS, PS
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controles de Preços</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+.graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #jxgbox { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 310px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: .95rem; color: #C8102E; margin-bottom: .8rem; border-bottom: 1px solid #ddd; padding-bottom: .4rem; }
+    .slider-group { margin-bottom: .7rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: .82rem; margin-bottom: .15rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: .8rem; padding: .8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: .82rem; line-height: 1.7; }
+    .btn-reset { display: block; width: 100%; margin-top: .8rem; padding: .5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: .85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    .toggle-group { margin-bottom: .7rem; display: flex; gap: .5rem; }
+    .toggle-btn { flex: 1; padding: .4rem; font-size: .8rem; border: 1px solid #C8102E; background: #fff; color: #C8102E; border-radius: 4px; cursor: pointer; font-family: inherit; text-align: center; }
+    .toggle-btn.active { background: #C8102E; color: #fff; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #jxgbox { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    /* anti-inflation-fix */
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+    <div id="jxgbox"></div>
+    <div class="controls">
+      <h3>Parâmetros</h3>
+      <div class="toggle-group">
+        <button class="toggle-btn active" id="btn-ceiling" onclick="setMode('ceiling')">Preço Máximo (Teto)</button>
+        <button class="toggle-btn" id="btn-floor" onclick="setMode('floor')">Preço Mínimo (Piso)</button>
+      </div>
+      <div class="slider-group">
+        <label>Preço controlado (\(\bar{p}\)): <span class="val" id="val-pc">4.0</span></label>
+        <input type="range" id="sl-pc" min="1" max="12" step="0.1" value="4">
+      </div>
+      <div class="info-box" id="info"></div>
+            <label style="font-size:0.82rem; cursor:pointer; display:block; margin-top:0.5rem;">
+        <input type="checkbox" id="chk-labels" checked onchange="toggleLabels()"> Mostrar labels
+      </label>
+      <button class="btn-reset" onclick="resetAll()">Resetar</button>
+    </div>
+  </div>
+
+  <script>
+    var board = JXG.JSXGraph.initBoard('jxgbox', {
+      boundingbox: [-2, 18, 18, -2],
+      axis: false, showCopyright: false, showNavigation: false
+    });
+    board.create('axis', [[0,0],[16,0]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0 }, name: '', withLabel: false });
+board.create('text', [9.0, -1.3, '<b><i>Q</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', highlight: false
+});
+    board.create('axis', [[0,0],[0,16]], { ticks: { drawLabels: true, ticksDistance: 2, minorTicks: 0  }, name: '', withLabel: false });
+board.create('text', [-1.1, 9.0, '<b><i>P</i></b>'], {
+    fontSize: 15, fixed: true, anchorX: 'middle', anchorY: 'middle', rotate: 90, highlight: false
+});
+
+    // D: p = (20-Q)/2 => Q = 20-2p;  S: p = (Q+2)/1.5 => Q = 1.5p-2
+    var aD = 20, bD = 2, aS = 2, bS = 1.5;
+    var mode = 'ceiling', pCtrl = 4;
+
+    function pEq() { return (aD + aS) / (bD + bS); }
+    function qEq() { return aD - bD * pEq(); }
+    function qD(p) { return Math.max(0, aD - bD * p); }
+    function qS(p) { return Math.max(0, -aS + bS * p); }
+    function pDmax() { return aD / bD; }
+    function pSmin() { return aS / bS; }
+    function pInvD(q) { return (aD - q) / bD; }
+    function pInvS(q) { return (q + aS) / bS; }
+
+    function isBinding() {
+      if (mode === 'ceiling') return pCtrl < pEq();
+      else return pCtrl > pEq();
+    }
+
+    // Demand & Supply curves
+    board.create('functiongraph', [function(q){ return pInvD(q); }],
+      { strokeColor: '#1565c0', strokeWidth: 2.5, name: 'D', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 13 } });
+    board.create('functiongraph', [function(q){ return pInvS(q); }],
+      { strokeColor: '#00897b', strokeWidth: 2.5, name: 'S', withLabel: true, label: { position: 'rt', offset: [5,0], fontSize: 13 } });
+
+    // Price control line
+    var priceLine = board.create('line', [
+      [0, function(){ return pCtrl; }],
+      [1, function(){ return pCtrl; }]
+    ], { strokeColor: '#C8102E', strokeWidth: 2, dash: 4, fixed: true, point1: { visible: false }, point2: { visible: false } });
+
+    board.create('text', [14, function(){ return pCtrl + 0.4; }, function(){
+      return mode === 'ceiling' ? 'Preço Máximo' : 'Preço Mínimo';
+    }], { fontSize: 11, cssStyle: 'color:#C8102E;font-weight:700;', anchorX: 'right' });
+
+    // Equilibrium point
+    board.create('point', [function(){ return qEq(); }, function(){ return pEq(); }],
+      { name: 'E', size: 3, fillColor: '#666', strokeColor: '#666', fixed: true, label: { offset: [8,5], fontSize: 11 } });
+
+    // CS polygon under control (trapezoid from pDmax to pCtrl, width = qTransacted)
+    // When ceiling binds: transacted = qS(pCtrl), CS = trap from pDmax to pCtrl over [0, qS]
+    // When floor binds: transacted = qD(pCtrl), CS = triangle from pDmax to pCtrl over [0, qD]
+    var csPoly = board.create('polygon', [
+      [function(){ return 0; }, function(){ return pDmax(); }],
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        if (!isBinding()) return pEq();
+        var qt = mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+        return pInvD(qt);
+      }],
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        return isBinding() ? pCtrl : pEq();
+      }],
+      [function(){ return 0; }, function(){ return isBinding() ? pCtrl : pEq(); }]
+    ], { fillColor: '#1565c0', fillOpacity: 0.2, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // PS polygon under control
+    var psPoly = board.create('polygon', [
+      [function(){ return 0; }, function(){ return isBinding() ? pCtrl : pEq(); }],
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        return isBinding() ? pCtrl : pEq();
+      }],
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        if (!isBinding()) return pEq();
+        var qt = mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+        return pInvS(qt);
+      }],
+      [function(){ return 0; }, function(){ return pSmin(); }]
+    ], { fillColor: '#00897b', fillOpacity: 0.2, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // DWL triangle
+    var dwlTri = board.create('polygon', [
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        if (!isBinding()) return pEq();
+        var qt = mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+        return pInvD(qt);
+      }],
+      [function(){ return qEq(); }, function(){ return pEq(); }],
+      [function(){
+        if (!isBinding()) return qEq();
+        return mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      }, function(){
+        if (!isBinding()) return pEq();
+        var qt = mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+        return pInvS(qt);
+      }]
+    ], { fillColor: '#C8102E', fillOpacity: 0.25, borders: { strokeWidth: 0 }, vertices: { visible: false }, hasInnerPoints: false, highlight: false });
+
+    // Shortage/surplus arrow
+    board.create('text', [
+      function(){
+        if (!isBinding()) return -10;
+        return (qD(pCtrl) + qS(pCtrl)) / 2;
+      },
+      function(){ return pCtrl - 0.6; },
+      function(){
+        if (!isBinding()) return '';
+        if (mode === 'ceiling') return 'Escassez = ' + (qD(pCtrl) - qS(pCtrl)).toFixed(1);
+        else return 'Excedente = ' + (qS(pCtrl) - qD(pCtrl)).toFixed(1);
+      }
+    ], { fontSize: 11, anchorX: 'middle', cssStyle: 'color:#C8102E;font-weight:700;' });
+
+    // Arrow showing gap
+    board.create('arrow', [
+      [function(){ return isBinding() ? qS(pCtrl) : -10; }, function(){ return pCtrl; }],
+      [function(){ return isBinding() ? qD(pCtrl) : -10; }, function(){ return pCtrl; }]
+    ], { strokeColor: '#C8102E', strokeWidth: 2, fixed: true,
+         visible: function(){ return isBinding() && mode === 'ceiling'; } });
+    board.create('arrow', [
+      [function(){ return isBinding() ? qD(pCtrl) : -10; }, function(){ return pCtrl; }],
+      [function(){ return isBinding() ? qS(pCtrl) : -10; }, function(){ return pCtrl; }]
+    ], { strokeColor: '#C8102E', strokeWidth: 2, fixed: true,
+         visible: function(){ return isBinding() && mode === 'floor'; } });
+
+    function computeWelfare() {
+      var p0 = pEq(), q0 = qEq();
+      var csEq = 0.5 * q0 * (pDmax() - p0);
+      var psEq = 0.5 * q0 * (p0 - pSmin());
+
+      if (!isBinding()) return { cs: csEq, ps: psEq, dwl: 0, csEq: csEq, psEq: psEq };
+
+      var qt = mode === 'ceiling' ? qS(pCtrl) : qD(pCtrl);
+      // CS under control: integral of (pD(q) - pCtrl) from 0 to qt
+      var csCtrl = 0.5 * qt * (pDmax() - pInvD(qt)) + qt * (pInvD(qt) - pCtrl);
+      // Actually: CS = area under demand from 0 to qt minus pCtrl*qt
+      csCtrl = 0.5 * (pDmax() + pInvD(qt)) * qt - pCtrl * qt;
+      // Simplify: CS = 0.5*(pDmax - pCtrl)*qt + 0.5*(pInvD(qt)-pCtrl)*qt ... let me just compute directly
+      // integral of pInvD from 0 to qt = integral of (aD-q)/bD = (aD*qt - qt^2/2)/bD
+      var areaDemand = (aD * qt - qt * qt / 2) / bD;
+      csCtrl = areaDemand - pCtrl * qt;
+
+      // PS under control: pCtrl*qt - integral of pInvS from 0 to qt
+      var areaSupply = (qt * qt / 2 + aS * qt) / bS;
+      var psCtrl = pCtrl * qt - areaSupply;
+
+      var dwl = (csEq + psEq) - (csCtrl + psCtrl);
+      return { cs: csCtrl, ps: psCtrl, dwl: dwl, csEq: csEq, psEq: psEq };
+    }
+
+    function updateInfo() {
+      var w = computeWelfare();
+      var p0 = pEq(), q0 = qEq();
+      var label = mode === 'ceiling' ? 'Preço Máximo' : 'Preço Mínimo';
+      var bind = isBinding();
+      var html = '<b>Equilíbrio livre:</b> \\(p^* = ' + p0.toFixed(2) + '\\), \\(Q^* = ' + q0.toFixed(2) + '\\)<br>';
+      html += '<b>' + label + ':</b> \\(\\bar{p} = ' + pCtrl.toFixed(2) + '\\)';
+      if (!bind) html += ' <i>(não vinculante)</i>';
+      html += '<br><hr style="margin:.3rem 0;border:none;border-top:1px solid #ddd;">';
+      html += '<b>Livre mercado:</b> EC=' + w.csEq.toFixed(2) + ', EP=' + w.psEq.toFixed(2) + '<br>';
+      html += '<span style="color:#1565c0;font-weight:700;">EC com controle: ' + w.cs.toFixed(2) + '</span><br>';
+      html += '<span style="color:#00897b;font-weight:700;">EP com controle: ' + w.ps.toFixed(2) + '</span><br>';
+      html += '<span style="color:#C8102E;font-weight:700;">Peso morto (DWL): ' + w.dwl.toFixed(2) + '</span>';
+      document.getElementById('info').innerHTML = html;
+      if (window.MathJax && MathJax.typeset) MathJax.typeset();
+    }
+
+    function setMode(m) {
+      mode = m;
+      document.getElementById('btn-ceiling').className = 'toggle-btn' + (m === 'ceiling' ? ' active' : '');
+      document.getElementById('btn-floor').className = 'toggle-btn' + (m === 'floor' ? ' active' : '');
+      if (m === 'ceiling') document.getElementById('sl-pc').value = 4;
+      else document.getElementById('sl-pc').value = 8;
+      update();
+    }
+
+    function update() {
+      pCtrl = parseFloat(document.getElementById('sl-pc').value);
+      document.getElementById('val-pc').textContent = pCtrl.toFixed(1);
+      board.update();
+      updateInfo();
+    }
+
+    function resetAll() { setMode('ceiling'); }
+
+    document.getElementById('sl-pc').addEventListener('input', update);
+    update();
+  
+    function toggleLabels() {
+      var show = document.getElementById('chk-labels').checked;
+      var boards = [board];
+      for (var bi = 0; bi < boards.length; bi++) {
+        var b = boards[bi];
+        var objs = b.objectsList;
+        for (var i = 0; i < objs.length; i++) {
+          if (objs[i].elType === 'text' && !objs[i].visProp.islabel) {
+            objs[i].setProperty({visible: show});
+          }
+        }
+        b.update();
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,1014 @@
+\documentclass[11pt,addpoints]{exam}
+\usepackage[portuguese]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,graphicx,multicol,multirow,array,setspace,comment,tikz,booktabs,enumitem}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usetikzlibrary{decorations.pathreplacing,arrows.meta,calc}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+% ------------------ cores ------------------
+\definecolor{solblue}{RGB}{0,0,139}
+\definecolor{rubred}{RGB}{139,0,0}
+\definecolor{boxgray}{RGB}{240,240,240}
+\definecolor{boxborder}{RGB}{100,100,100}
+
+\raggedbottom
+
+\printanswers
+
+\unframedsolutions
+\SolutionEmphasis{\color{solblue}}
+\renewcommand{\solutiontitle}{\noindent\textcolor{solblue}{\rule{\linewidth}{0.4pt}}\par\noindent\textbf{\textcolor{solblue}{Solução:}}\enspace}
+
+\pagestyle{headandfoot}
+\runningheader{Microeconomia II}{APS V2 -- Pedágio Urbano}{Página \thepage\ de \numpages}
+\runningheadrule
+\runningfooter{}{}{}
+
+\newcommand{\class}{Microeconomia II}
+\newcommand{\examname}{Atividade Prática Supervisionada -- APS (V2)}
+\newcommand{\examdate}{2026.1}
+
+\pointpoints{ponto}{pontos}
+\renewcommand{\partlabel}{\alph{partno})}
+\hqword{Questão}
+\hpword{Pontos}
+\hsword{Nota}
+
+\newtcolorbox{contextbox}[1][]{%
+  enhanced, breakable,
+  colback=boxgray, colframe=boxborder,
+  boxrule=0.4pt, arc=2pt,
+  left=8pt,right=8pt,top=6pt,bottom=6pt,
+  fonttitle=\bfseries, title=#1
+}
+
+\begin{document}
+
+\newgeometry{top=2cm,bottom=2cm,left=1.8cm,right=1.8cm}
+
+\ifprintanswers
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large APS -- Versão 2 -- Resolução Comentada \\[0.5em]
+        \normalsize \examdate
+    \end{center}
+    \vspace{0.5cm}
+\else
+    \noindent\hfill\includegraphics[width=2.5cm]{logo-insper.png}\\[1em]
+    \vspace*{-4.5em}
+    \noindent\textbf{Aluno(a):} \rule{12cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Curso:} \rule{6cm}{0.4pt}
+    \hspace{0.5cm}
+    \textbf{N\textsuperscript{o} de matrícula:} \rule{5cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Turma:} \rule{6cm}{0.4pt}
+    \hspace{0.3cm}
+    \textbf{Professor(a):} \rule{5.8cm}{0.4pt} \\[1.2em]
+    \noindent\textbf{Grupo (até 4 integrantes):} \rule{10cm}{0.4pt}
+
+    \vspace{1em}
+
+    \begin{center}
+        \Large \textbf{\class} \\[0.5em]
+        \large \examname \\[0.5em]
+        \large \textit{Pedágio Urbano e Mobilidade em São Paulo} \\[0.5em]
+        \large \examdate
+    \end{center}
+
+    \textbf{Prezado(a) Aluno(a),}
+    \vspace{0.8em}
+
+    Esta APS é composta de \textbf{4 questões} distribuídas em três partes temáticas e uma síntese, perfazendo um total de \textbf{100 pontos}. Tempo estimado: \textbf{180 minutos} (3 horas).
+
+    \begin{enumerate}[noitemsep]
+        \item Identifique-se com letra legível em todas as folhas.
+        \item Esta APS pode ser resolvida em grupos de até 4 integrantes. \textbf{Cada integrante deve dominar a totalidade da resolução.}
+        \item Apresentação clara, notação consistente e justificativa econômica das passagens são parte da nota.
+        \item \textbf{Gráficos exigem precisão:} interceptos numéricos, inclinações, pontos rotulados, tangência clara entre curva de indiferença e reta orçamentária.
+        \item Resoluções a lápis \textbf{não serão revisadas}.
+        \item Esta atividade trabalha apenas com \textbf{equilíbrio parcial} (o consumidor representativo enfrenta preços paramétricos) e usa \textbf{decomposição de Hicks} (compensação que mantém o consumidor na curva de indiferença original).
+    \end{enumerate}
+
+    \rightline{\textbf{Boa atividade!}}
+
+    \vspace{0.5em}
+    \noindent\hrulefill
+
+    \noindent\textbf{Formulário permitido}
+    \vspace{0.3em}
+
+    Função utilidade Cobb-Douglas (CD) genérica $u(x,y) = x^a y^b$, com $a,b > 0$ (não exige $a+b=1$):
+    \[
+      x^*(p_x,p_y,I) = \frac{a}{a+b}\cdot\frac{I}{p_x},
+      \quad
+      y^*(p_x,p_y,I) = \frac{b}{a+b}\cdot\frac{I}{p_y}
+    \]
+    \[
+      v(p_x,p_y,I) = \left(\frac{a}{a+b}\right)^{a}\!\left(\frac{b}{a+b}\right)^{b}\!\cdot \frac{I^{a+b}}{p_x^{a}\,p_y^{b}}
+    \]
+    \textit{Caso especial $a+b=1$ (Partes I e II):} as fórmulas reduzem-se a $x^* = a I/p_x$, $y^* = b I/p_y$, $v = a^a b^b\cdot I/(p_x^a p_y^b)$. \textit{Caso geral $a+b\neq 1$ (Parte III, com $b = n$):} usar a forma acima.
+
+    \textbf{Decomposição de Hicks} (mudanças finitas) para um aumento de preço $p_x \to p_x'$:
+    \begin{itemize}[noitemsep]
+    \item \textbf{Ponto compensado de Hicks $C$}: cesta ótima a preços novos $(p_x', p_y)$ com renda $I+b$ tal que o consumidor permanece na CI original, isto é, $u(x_C, y_C) = u(x_A, y_A)$.
+    \item \textbf{Efeito substituição (Hicks):} $A \to C$.
+    \item \textbf{Efeito renda:} $C \to B$, onde $B$ é o ótimo a $(p_x', p_y, I)$ sem compensação.
+    \item \textbf{Efeito-preço total:} $A \to B$ = sub. + renda.
+    \end{itemize}
+
+    \vspace{0.5em}
+    \hrule
+    \vspace{1em}
+    \noindent\textbf{\underline{Para uso exclusivo do Professor}} \\[0.2em]
+
+    Permitido rascunho? \hfill (X) SIM \quad (   ) NÃO\\[0.3em]
+    Consulta a material extra? \hfill (   ) SIM \quad (X) NÃO\\[0.3em]
+    Calculadora científica? \hfill (X) SIM \quad (   ) NÃO
+
+    \vspace{0.6em}
+    \noindent Avaliação passível de revisão? \hfill (X) SIM \quad (   ) NÃO
+
+    \newpage
+\fi
+
+\begin{contextbox}[Contexto: pedágios urbanos como instrumento de política]
+\small
+Pedágios urbanos (\textit{congestion charges}) são instrumentos de preço usados para internalizar a externalidade negativa de congestionamento. Implementações marcantes incluem Singapura (1975), Londres (2003), Estocolmo (2006, após referendo) e Milão (Area C, 2012). \textbf{Eliasson (2008)} documenta que o piloto de Estocolmo reduziu o tráfego no centro em $\sim$22\% e que a aprovação pública saltou de minoria para maioria após o trial. \textbf{Anderson (2014)} usa uma greve do metrô de Los Angeles em 2003 como experimento natural e estima que a interrupção do serviço de transporte público elevou os tempos de deslocamento rodoviário em 47\%. \textbf{Parry \& Small (2009)} formalizam, em modelo similar ao desta APS, condições sob as quais subsídios ao transporte público são justificáveis em termos de bem-estar.
+
+São Paulo discute pedágio urbano há décadas. Esta APS modela um cidadão paulistano representativo cuja escolha é entre $x =$ \textbf{viagens de carro} e $y =$ \textbf{viagens de transporte público}. A meta da Prefeitura, neste exercício, é uma \textbf{redução de 75\%} nas viagens de carro -- meta ambiciosa em linha com cenários de descarbonização de longo prazo (em comparação, Estocolmo atingiu $\sim$22\% no piloto, Milão $\sim$30\%). Você analisará três famílias de política e apresentará, ao final, uma recomendação fundamentada.
+
+\medskip
+\textit{Referências (verificadas):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Anderson, M. L. (2014). ``Subways, Strikes, and Slowdowns: The Impacts of Public Transit on Traffic Congestion.'' \textit{American Economic Review} 104(9): 2763--2796.
+\item Eliasson, J. (2008). ``Lessons from the Stockholm congestion charging trial.'' \textit{Transport Policy} 15(6): 395--404.
+\item Parry, I. W. H. \& Small, K. A. (2009). ``Should Urban Transit Subsidies Be Reduced?'' \textit{American Economic Review} 99(3): 700--724.
+\end{itemize}
+\end{contextbox}
+
+\vspace{0.5em}
+
+\noindent\textbf{Setup geral.} O consumidor representativo paulistano tem função utilidade Cobb-Douglas
+\[
+   u(x,y) = x^{1/3}\, y^{2/3},
+\]
+com pesos $1/3$ em viagens de carro e $2/3$ em transporte público (consumidor valoriza mais a alternativa pública, mas paga preços de mercado em ambas). Preços iniciais $p_x = 2$, $p_y = 4$ e renda $I = 72$. Esta especificação será usada nas Partes I e II. A Parte III generalizará o expoente $n$ sobre $y$ para incorporar a qualidade endógena do transporte público.
+
+\begin{spacing}{1.3}
+
+% ============================================================
+% PARTE I
+% ============================================================
+\begin{center}\large\textbf{Parte I --- Pedágio sem compensação} \quad (25 pontos)\end{center}
+
+\begin{questions}
+\question \textbf{Demandas, equilíbrio inicial e calibração do pedágio} (25 pontos).
+
+\begin{parts}
+\part[8] Encontre as demandas marshallianas $x^*(p_x,p_y,I)$ e $y^*(p_x,p_y,I)$ e a função utilidade indireta $v(p_x,p_y,I)$ para a Cobb-Douglas $u(x,y) = x^{1/3} y^{2/3}$. Calcule os valores numéricos no equilíbrio inicial.
+
+\begin{solution}
+\textbf{Lagrangiano:}
+\[
+  \mathcal{L} = x^{1/3} y^{2/3} - \lambda(p_x x + p_y y - I)
+\]
+\textbf{CPOs:}
+\[
+  \tfrac{1}{3} x^{-2/3} y^{2/3} = \lambda p_x \tag{1}
+\]
+\[
+  \tfrac{2}{3} x^{1/3} y^{-1/3} = \lambda p_y \tag{2}
+\]
+Razão (1)/(2):
+\[
+  \frac{p_x}{p_y} = \frac{1}{2}\cdot\frac{y}{x} \implies p_y\, y = 2\, p_x\, x
+\]
+
+Substituindo na restrição $p_x x + p_y y = I$: $p_x x + 2 p_x x = I \implies 3 p_x x = I$, logo
+\[
+  \boxed{x^* = \frac{I}{3 p_x}}, \quad \boxed{y^* = \frac{2 I}{3 p_y}}
+\]
+
+\textbf{Utilidade indireta.} Substituindo na utilidade:
+\[
+  v = (x^*)^{1/3} (y^*)^{2/3}
+    = \left(\frac{I}{3 p_x}\right)^{1/3}\!\left(\frac{2I}{3 p_y}\right)^{2/3}
+    = \boxed{\frac{2^{2/3}}{3}\cdot\frac{I}{p_x^{1/3}\, p_y^{2/3}}}
+\]
+
+\textbf{Valores numéricos} ($p_x=2$, $p_y=4$, $I=72$):
+\[
+  x_A^* = \frac{72}{6} = \boxed{12}, \quad y_A^* = \frac{144}{12} = \boxed{12}
+\]
+\[
+  v_A^* = \frac{2^{2/3}}{3}\cdot\frac{72}{2^{1/3}\cdot 4^{2/3}}
+        = \frac{2^{2/3}\cdot 72}{3\cdot 2^{1/3}\cdot 2^{4/3}}
+        = \frac{72}{3}\cdot 2^{2/3-5/3}
+        = 24\cdot 2^{-1}
+        = \boxed{12}
+\]
+
+\textit{Verificação direta:} $u_A = 12^{1/3}\cdot 12^{2/3} = 12^{1/3+2/3} = 12$ $\checkmark$
+
+\textit{Sanity checks:} $\partial x^*/\partial p_x < 0$, $\partial x^*/\partial I > 0$, $\partial x^*/\partial p_y = 0$ (CD não tem efeito-cruzado de $p_y$ sobre demanda marshalliana de $x$).
+\end{solution}
+
+\newpage
+\part[7] No plano $(x,y)$, com viagens de carro no eixo horizontal e viagens de transporte público no eixo vertical, represente \textbf{precisamente}: a reta orçamentária inicial (com interceptos numéricos), a curva de indiferença que passa pelo ótimo, e o ponto $A$ rotulado. Indique a inclinação da reta orçamentária.
+
+\begin{solution}
+\textbf{Reta orçamentária:} $2x + 4y = 72 \implies y = 18 - x/2$. Interceptos: $(36,0)$ e $(0,18)$. Inclinação $= -p_x/p_y = -1/2$.
+
+\textbf{Curva de indiferença} em $A=(12,12)$: $u_A = 12$ $\implies x^{1/3} y^{2/3} = 12 \implies x\, y^2 = 12^3 = 1728$, ou $y = \sqrt{1728/x}$.
+
+\textbf{Tangência em $A$:} a inclinação da CI em $A$ é $dy/dx = -y/(2x) = -12/24 = -1/2$, igual à inclinação da reta orçamentária $-p_x/p_y = -1/2$. Equivalentemente, a TMS (taxa marginal de substituição) é $\mathrm{TMS} = \mathrm{UMg}_x/\mathrm{UMg}_y = y/(2x) = 1/2 = p_x/p_y$ $\checkmark$
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=8cm,
+    xlabel={$x$ (viagens de carro)},
+    ylabel={$y$ (viagens de transporte público)},
+    xmin=0, xmax=40, ymin=0, ymax=22,
+    xtick={0,12,18,36},
+    ytick={0,12,18},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north east,
+    legend style={font=\small}
+]
+\addplot[thick,blue,domain=0:36] {18 - 0.5*x};
+\addlegendentry{$2x+4y=72$ (orç. inicial)}
+\addplot[thick,red,domain=4:38,samples=200] {sqrt(1728/x)};
+\addlegendentry{$u=12$ (IC em $A$)}
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(12,12)};
+\node[above right] at (axis cs:12,12) {\large$A$};
+\node[below right=2pt] at (axis cs:12,12) {\small$(12,\,12)$};
+\addplot[dashed,gray,thin] coordinates {(12,0) (12,12)};
+\addplot[dashed,gray,thin] coordinates {(0,12) (12,12)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{solution}
+
+\newpage
+\part[10] A Prefeitura deseja reduzir em \textbf{75\%} o número de viagens de carro do consumidor representativo (de $x_A^* = 12$ para $x = 3$). Considere apenas a política de pedágio: o motorista paga uma tarifa $t$ adicional por viagem, com $p_x' = p_x + t$. Determine, \textit{ceteris paribus}, o valor de $t$ que atinge essa meta. Calcule a utilidade após o pedágio e expresse a queda em fração da utilidade inicial.
+
+\begin{solution}
+\textbf{Plano.} A demanda CD é $x^* = I/(3 p_x)$. Sob o pedágio, $x^{**} = I/(3(p_x+t))$. Igualamos $x^{**} = x_A^*/4$ (75\% de redução):
+
+\[
+  \frac{I}{3(p_x + t)} = \frac{1}{4}\cdot\frac{I}{3 p_x}
+  \implies p_x + t = 4 p_x \implies \boxed{t^* = 3 p_x = 6}
+\]
+
+\textbf{Verificação} ($p_x'=8$, $p_y=4$, $I=72$):
+\[
+  x_B = \frac{72}{24} = 3 \;\checkmark, \quad y_B = \frac{144}{12} = 12
+\]
+A demanda CD por $y$ \textbf{não muda} sob o pedágio (CD: $\partial y^*/\partial p_x = 0$).
+
+\textbf{Utilidade após o pedágio.} Pela fórmula da indireta:
+\[
+  v_B = \frac{2^{2/3}}{3}\cdot\frac{72}{8^{1/3}\cdot 4^{2/3}}
+      = \frac{2^{2/3}\cdot 72}{3\cdot 2 \cdot 2^{4/3}}
+      = \frac{72}{3}\cdot 2^{2/3-1-4/3}
+      = 24\cdot 2^{-5/3}
+\]
+
+Simplificando: $v_B = 24/2^{5/3} = 12/2^{2/3} = 12\cdot 4^{-1/3}$. Em fração da utilidade inicial:
+\[
+  \frac{v_B}{v_A^*} = \frac{12\cdot 4^{-1/3}}{12} = 4^{-1/3} = \frac{1}{\sqrt[3]{4}} \approx 0{,}630
+\]
+
+A utilidade cai para $\sim$63\% do nível original (queda de $\sim$37\%). Isto é consequência direta do efeito-preço puro: o consumidor paga 4$\times$ mais caro pelo bem $x$ e não recebe compensação alguma.
+
+\textit{Verificação direta:} $u_B = 3^{1/3}\cdot 12^{2/3} = (3\cdot 144)^{1/3} = 432^{1/3} = 12\cdot 4^{-1/3}$ $\checkmark$
+\end{solution}
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 1 (25 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (a) -- 8 pontos}} \\
+\quad Lagrangiano e CPOs corretos & 2 \\
+\quad Derivação de $x^*$ e $y^*$ via razão das CPOs & 2 \\
+\quad Utilidade indireta correta & 2 \\
+\quad Valores numéricos $x_A^*=12$, $y_A^*=12$, $v_A^*=12$ & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (b) -- 7 pontos}} \\
+\quad Reta orçamentária com interceptos $(36,0)$ e $(0,18)$ & 2 \\
+\quad Inclinação $-1/2$ explícita & 1 \\
+\quad Curva de indiferença $xy^2=1728$ correta passando por $A$ & 2 \\
+\quad Tangência clara entre IC e reta orçamentária & 1 \\
+\quad Ponto $A=(12,\,12)$ rotulado com coordenadas & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (c) -- 10 pontos}} \\
+\quad Equação $I/(3(p_x+t)) = x^*/4$ correta & 3 \\
+\quad Resposta $t^* = 3 p_x = 6$ & 3 \\
+\quad Verificação numérica $x_B=3$, $y_B=12$ & 2 \\
+\quad Razão $v_B/v_A^* = 4^{-1/3}$ calculada e interpretada & 2 \\
+\midrule
+\textbf{Total Q1} & \textbf{25} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE II
+% ============================================================
+\begin{center}\large\textbf{Parte II --- Compensação ao consumidor: duas vias} \quad (35 pontos)\end{center}
+
+\begin{questions}
+\setcounter{question}{1}
+\question \textbf{Pedágio com compensação} (35 pontos).
+
+\textit{Contexto.} O pedágio puro do item 1(c) é politicamente custoso porque reduz a utilidade do consumidor representativo. A Prefeitura considera \textbf{compensar} o consumidor mantendo a meta de redução de 75\% em viagens de carro. Você analisará duas vias paralelas: subsídio ao transporte público e transferência \textit{lump-sum} de renda. Em ambas, \textbf{o pedágio será re-calibrado} para que a meta dupla -- redução de 75\% \textit{e} indiferença do consumidor -- seja simultaneamente atingida.
+
+\begin{parts}
+\part[8] \textbf{Via 1 -- Subsídio em $y$.} A Prefeitura calibra simultaneamente o pedágio $t$ (com $p_x' = p_x + t$) e um subsídio $s$ que reduz o preço pago pelo transporte público (com $p_y' = p_y - s$). Determine os valores $(t^*, s^*)$ que satisfazem \textit{conjuntamente}: (i) $x^{**} = x_A^*/4 = 3$ e (ii) $v^{**} = v_A^*$. Calcule a nova cesta $(x^{**}, y^{**})$.
+
+\begin{solution}
+\textbf{Plano.} Duas equações (75\% de redução; indiferença), duas incógnitas $(t,s)$.
+
+\textbf{Equação 1 (75\%):} a demanda marshalliana CD por $x$ é $x^* = aI/((a+b)p_x)$ -- depende apenas de $p_x$ e $I$, não de $p_y$ (propriedade geral da CD). Logo
+\[
+  x^{**} = \frac{I}{3(p_x+t)} = \frac{72}{3(2+t)} = 3 \implies 2+t = 8 \implies t^* = 6
+\]
+(Esta é a mesma equação do item 1(c) -- a inclusão do subsídio $s$ em $p_y$ não altera $x^{**}$ no caso CD.)
+
+\textbf{Equação 2 (indiferença):} Da fórmula da indireta com $a=1/3, b=2/3$:
+\[
+  \frac{v^{**}}{v_A^*} = \left(\frac{p_x+t}{p_x}\right)^{-1/3}\!\left(\frac{p_y-s}{p_y}\right)^{-2/3} = 1
+\]
+\[
+  \left(\frac{p_y-s}{p_y}\right)^{2/3} = \left(\frac{p_x}{p_x+t}\right)^{1/3} = \left(\frac{1}{4}\right)^{1/3} = 4^{-1/3} = 2^{-2/3}
+\]
+\[
+  \frac{p_y-s}{p_y} = \left(2^{-2/3}\right)^{3/2} = 2^{-1} = \frac{1}{2}
+\]
+\[
+  p_y - s = \frac{p_y}{2} = 2 \implies \boxed{s^* = 2}
+\]
+
+\textbf{Cesta resultante.} Em $(p_x'=8,\, p_y'=2,\, I=72)$:
+\[
+  x^{**} = \frac{72}{3\cdot 8} = 3 \;\checkmark, \quad y^{**} = \frac{2\cdot 72}{3\cdot 2} = 24
+\]
+
+\[
+  \boxed{(t^*, s^*) = (6,\, 2);\quad (x^{**}, y^{**}) = (3,\, 24);\quad v^{**} = 12 = v_A^*}
+\]
+
+\textit{Verificação independente:} $u^{**} = 3^{1/3}\cdot 24^{2/3} = (3\cdot 576)^{1/3} = 1728^{1/3} = 12 = v_A^*$ $\checkmark$
+\end{solution}
+
+\newpage
+\part[7] Represente em um único gráfico: (i) reta orçamentária inicial com ponto $A$; (ii) reta orçamentária após as duas políticas com ponto $B$; (iii) a curva de indiferença que passa por $A$ e $B$. Calcule o \textbf{custo líquido} dessas políticas para a Prefeitura.
+
+\begin{solution}
+\textbf{Reta orçamentária após $(t^*, s^*) = (6,\, 2)$:} $8x + 2y = 72 \implies y = 36 - 4x$. Interceptos: $(9,0)$ e $(0,36)$. Inclinação $= -p_x'/p_y' = -8/2 = -4$.
+
+\textbf{Custo líquido para a Prefeitura:}
+\[
+  \text{Custo do subsídio} = s^* \cdot y^{**} = 2 \cdot 24 = 48
+\]
+\[
+  \text{Receita do pedágio} = t^* \cdot x^{**} = 6 \cdot 3 = 18
+\]
+\[
+  \boxed{\text{Custo líquido} = 48 - 18 = 30 \text{ u.m.}}
+\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=11cm, height=8cm,
+    xlabel={$x$ (viagens de carro)},
+    ylabel={$y$ (viagens de transporte público)},
+    xmin=0, xmax=40, ymin=0, ymax=38,
+    xtick={0,3,9,12,36},
+    ytick={0,12,18,24,36},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north east,
+    legend style={font=\small}
+]
+\addplot[thick,blue,domain=0:36] {18 - 0.5*x};
+\addlegendentry{Orç. inicial: $2x+4y=72$}
+\addplot[thick,green!60!black,domain=0:9] {36 - 4*x};
+\addlegendentry{Orç. com $(t,s)$: $8x+2y=72$}
+\addplot[thick,red,domain=2:38,samples=200] {sqrt(1728/x)};
+\addlegendentry{IC original ($u=12$)}
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(12,12)};
+\node[above right] at (axis cs:12,12) {\large$A$};
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(3,24)};
+\node[above right] at (axis cs:3,24) {\large$B$};
+\addplot[dashed,gray,thin] coordinates {(3,0) (3,24)};
+\addplot[dashed,gray,thin] coordinates {(0,24) (3,24)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textit{Sanity check geométrico:} ambos $A=(12,12)$ e $B=(3,24)$ satisfazem $xy^2 = 1728$ (mesma CI original). $A$: $12\cdot 144 = 1728$ $\checkmark$. $B$: $3\cdot 576 = 1728$ $\checkmark$.
+\end{solution}
+
+\newpage
+\part[8] \textbf{Via 2 -- Transferência \textit{lump-sum}.} Em vez de subsidiar $y$, a Prefeitura considera dar uma transferência $b$ ao consumidor, em conjunto com um pedágio recalibrado $\tilde t$ (com $p_x' = p_x + \tilde t$ e $I' = I + b$, $p_y$ inalterado). Determine $(\tilde t^*, b^*)$ que atendem simultaneamente: (i) $x^{**} = 3$ e (ii) $v^{**} = v_A^*$. Calcule o custo líquido.
+
+\textit{Atenção à notação:} usamos $\tilde t$ para distingui-lo do $t$ do item (d). \textbf{O valor de $\tilde t^*$ \textit{não} é o mesmo do item (c) ou (d)} -- a meta dupla com instrumento \textit{lump-sum} força um pedágio \textbf{maior}.
+
+\begin{solution}
+\textbf{Plano.} Duas equações, duas incógnitas $(\tilde t, b)$.
+
+\textbf{Equação 1 (75\%):}
+\[
+  x^{**} = \frac{I+b}{3(p_x + \tilde t)} = \frac{72+b}{3(2+\tilde t)} = 3
+  \implies 72 + b = 9(2+\tilde t) \tag{(†)}
+\]
+
+\textbf{Equação 2 (indiferença):}
+\[
+  v^{**} = \frac{2^{2/3}}{3}\cdot\frac{I+b}{(p_x+\tilde t)^{1/3}\cdot p_y^{2/3}} = 12
+\]
+Substituindo $p_y=4$:
+\[
+  \frac{2^{2/3}(72+b)}{3\cdot (2+\tilde t)^{1/3}\cdot 4^{2/3}} = 12
+  \implies (72+b) = 36\cdot 2^{2/3}\cdot (2+\tilde t)^{1/3} \tag{(‡)}
+\]
+
+\textbf{Combinando} (†) e (‡):
+\[
+  9(2 + \tilde t) = 36\cdot 2^{2/3}\cdot (2+\tilde t)^{1/3}
+  \implies (2+\tilde t)^{2/3} = 4\cdot 2^{2/3} = 2^{8/3}
+\]
+\[
+  2 + \tilde t = (2^{8/3})^{3/2} = 2^{4} = 16 \implies \boxed{\tilde t^* = 14}
+\]
+Substituindo em (†): $72 + b = 9\cdot 16 = 144 \implies \boxed{b^* = 72}$.
+
+\textbf{Cesta resultante.} Em $(p_x'=16,\, p_y=4,\, I+b=144)$:
+\[
+  x^{**} = \frac{144}{3\cdot 16} = 3 \;\checkmark, \quad y^{**} = \frac{2\cdot 144}{3\cdot 4} = 24
+\]
+\[
+  \boxed{(\tilde t^*, b^*) = (14,\, 72);\quad (x^{**}, y^{**}) = (3,\, 24);\quad v^{**} = 12 = v_A^*}
+\]
+
+\textbf{Custo líquido:}
+\[
+  \text{Custo da transferência} = b^* = 72; \quad \text{Receita do pedágio} = \tilde t^* \cdot x^{**} = 14\cdot 3 = 42
+\]
+\[
+  \boxed{\text{Custo líquido} = 72 - 42 = 30 \text{ u.m.}}
+\]
+
+\textit{\textbf{Resultado central da Parte II:}} as duas vias produzem \emph{a mesma cesta final} $(3,\,24)$ e o \emph{mesmo custo líquido} 30 u.m. -- equivalência discutida no item (h).
+\end{solution}
+
+\newpage
+\part[8] \textbf{Decomposição de Hicks.} Considere a política da via 2 (item f). Defina (\textit{rotulação local}; o ponto $C$ deste item corresponde ao ponto $B$ do item (e) em coordenadas):
+\begin{itemize}[noitemsep]
+\item $A$ = ótimo sem políticas (item a);
+\item $B$ = ótimo com pedágio $\tilde t^* = 14$ \textbf{sem} a transferência;
+\item $C$ = ótimo com pedágio $\tilde t^* = 14$ \textbf{e} transferência $b^* = 72$ (item f).
+\end{itemize}
+Em um único gráfico, represente as três retas orçamentárias, as duas curvas de indiferença (uma passando por $A$ e $C$; outra passando por $B$), e os pontos $A$, $B$, $C$. Decomponha o efeito-preço total $A \to B$ em \textbf{efeito substituição de Hicks} ($A \to C$) e \textbf{efeito renda} ($C \to B$) e verifique numericamente que somam ao total.
+
+\begin{solution}
+\textbf{Cálculo dos pontos:}
+\begin{itemize}[noitemsep]
+\item $A = (12,\,12)$ a $(p_x=2, p_y=4, I=72)$. $u_A = 12$.
+\item $B$: pedágio $\tilde t = 14$ sem transferência, em $(p_x'=16, p_y=4, I=72)$:
+  \[
+    x_B = \frac{72}{3\cdot 16} = \tfrac{3}{2} = 1{,}5; \quad y_B = \frac{2\cdot 72}{3\cdot 4} = 12
+  \]
+  $u_B = (3/2)^{1/3}\cdot 12^{2/3} = ((3/2)\cdot 144)^{1/3} = 216^{1/3} = 6 = u_A/2$.
+\item $C = (3,\,24)$ a $(p_x'=16, p_y=4, I+b=144)$. $u_C = u_A = 12$ (mesma IC original).
+\end{itemize}
+
+\textbf{Decomposição de Hicks (mudanças finitas):}
+
+\smallskip
+$\Delta x$ total $= x_B - x_A = 1{,}5 - 12 = -10{,}5$.
+
+$\Delta x$ substituição $= x_C - x_A = 3 - 12 = -9$.
+
+$\Delta x$ renda $= x_B - x_C = 1{,}5 - 3 = -1{,}5$.
+
+\smallskip
+Soma $= -9 + (-1{,}5) = -10{,}5$ = total $\checkmark$.
+
+\smallskip
+$\Delta y$ total $= y_B - y_A = 12 - 12 = 0$.
+
+$\Delta y$ substituição $= y_C - y_A = 24 - 12 = +12$.
+
+$\Delta y$ renda $= y_B - y_C = 12 - 24 = -12$.
+
+\smallskip
+Soma $= +12 - 12 = 0$ = total $\checkmark$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=10cm, height=5.5cm,
+    xlabel={$x$ (viagens de carro)},
+    ylabel={$y$ (viagens de transporte público)},
+    xmin=0, xmax=40, ymin=0, ymax=40,
+    xtick={0,1.5,3,12,36},
+    xticklabels={$0$,$1{,}5$,$3$,$12$,$36$},
+    ytick={0,12,18,24,36},
+    grid=major, grid style={gray!20},
+    axis lines=left,
+    legend pos=north east,
+    legend style={font=\scriptsize, fill=white, fill opacity=0.85, draw=none}
+]
+\addplot[thick,blue,domain=0:36] {18 - 0.5*x};
+\addlegendentry{Orç. inicial}
+\addplot[thick,orange,domain=0:4.5] {18 - 4*x};
+\addlegendentry{Orç. pedágio só ($\tilde t=14$)}
+\addplot[thick,green!60!black,domain=0:9] {36 - 4*x};
+\addlegendentry{Orç. pedágio + transf.}
+\addplot[thick,red,domain=2:38,samples=200] {sqrt(1728/x)};
+\addlegendentry{IC original ($u=12$)}
+\addplot[thick,red!60,dashed,domain=0.6:36,samples=200] {sqrt(216/x)};
+\addlegendentry{IC inferior ($u=6$)}
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(12,12)};
+\node[above right] at (axis cs:12,12) {\large$A$};
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(1.5,12)};
+\node[above right] at (axis cs:1.5,12) {\large$B$};
+\addplot[mark=*,mark size=3pt,black,only marks] coordinates {(3,24)};
+\node[above right] at (axis cs:3,24) {\large$C$};
+\draw[->,thick,purple] (axis cs:12,12) -- (axis cs:3,24);
+\node[purple,font=\small] at (axis cs:8,20) {sub.};
+\draw[->,thick,brown] (axis cs:3,24) -- (axis cs:1.5,12);
+\node[brown,font=\small] at (axis cs:3,17) {renda};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\textbf{Interpretação econômica:}
+\begin{itemize}[noitemsep]
+\item \textbf{Efeito substituição de Hicks} ($A \to C$): mantida a utilidade constante na CI original, o consumidor reage ao pedágio substituindo carro por transporte público. Essa é a resposta ``pura'' à mudança de preço relativo, isolada do efeito-renda.
+\item \textbf{Efeito renda} ($C \to B$): retirada a transferência, o consumidor empobrece em termos reais e cai para uma CI inferior ($u=6$). Tanto $x$ quanto $y$ são bens normais sob CD, logo o efeito-renda \textit{negativo} reduz a demanda por ambos.
+\end{itemize}
+\end{solution}
+
+\part[4] Discuta brevemente, em \textbf{equilíbrio parcial} (sem invocar efeitos sobre outros mercados): no nosso modelo unipessoal, as duas vias do item (d-e) e (f) são equivalentes? Que hipótese garante essa equivalência, e que circunstância (não-modelada aqui) poderia quebrá-la?
+
+\begin{solution}
+\textbf{Equivalência no modelo unipessoal.} Sim. As duas vias produzem \textit{exatamente a mesma cesta final} $(x,y) = (3, 24)$, mantêm o consumidor na mesma curva de indiferença ($u=12$) e custam ao governo o mesmo valor (30 u.m.). Isso \textit{não} é coincidência: dado o orçamento do consumidor (incluindo eventual transferência) e o conjunto de preços efetivos enfrentados, a cesta ótima da Cobb-Douglas é única. Os dois pacotes de política -- $(t=6, s=2)$ e $(\tilde t=14, b=72)$ -- produzem exatamente os mesmos preços efetivos relativos $p_x'/p_y' = 4$ e a mesma renda real (em termos de unidades de utilidade alcançáveis), portanto a mesma escolha ótima.
+
+\textbf{Hipótese-chave: consumidor representativo (homogeneidade).} A equivalência depende crucialmente de que existe um único tipo de consumidor. Se houver heterogeneidade (consumidores com preferências diferentes -- $\alpha$ distintos, ou rendas distintas), as duas vias deixam de ser equivalentes:
+
+\begin{itemize}[noitemsep]
+\item O \textbf{subsídio em $y$} beneficia preferencialmente quem consome muito $y$ (proxy de baixa renda em transporte público).
+\item A \textbf{transferência \textit{lump-sum}} beneficia todos por igual, mas exige identificar e transferir individualmente -- custo administrativo alto e seletividade imperfeita.
+\item O \textbf{subsídio em $y$} também distorce o preço relativo $p_x/p_y$ enfrentado por todos, induzindo overconsumption de $y$ entre consumidores que não são alvo da política.
+\end{itemize}
+
+Em resumo: no nosso modelo unipessoal de equilíbrio parcial, as duas vias são economicamente equivalentes para o consumidor representativo. A escolha entre elas, no mundo real, depende de fatores fora do escopo deste exercício -- principalmente heterogeneidade de consumidores e custos administrativos -- e não de eficiência alocativa neste modelo.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 2 (35 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (d) -- 8 pontos}} \\
+\quad Sistema de duas equações montado corretamente & 2 \\
+\quad Identificação de que CD com $\alpha=1/3$ implica $t^*=3 p_x$ independente de $s$ & 1 \\
+\quad Resolução $(p_y-s)/p_y = 4^{-1/2} = 1/2$ via indiferença & 3 \\
+\quad Resposta $(t^*, s^*) = (6,\,2)$ e cesta $(3,\,24)$ & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (e) -- 7 pontos}} \\
+\quad Reta orçamentária nova com interceptos $(9,0)$ e $(0,36)$ & 2 \\
+\quad IC ($xy^2=1728$) com tangência em $A$ \textit{e} $B$ & 2 \\
+\quad Custo do subsídio (48) e receita (18) corretos & 2 \\
+\quad Custo líquido $= 30$ & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (f) -- 8 pontos}} \\
+\quad Sistema corretamente formulado com $\tilde t$ e $b$ & 2 \\
+\quad Combinação algébrica (†) e (‡) reduzindo a $(2+\tilde t)^{2/3} = 2^{8/3}$ & 3 \\
+\quad Resposta $(\tilde t^*, b^*) = (14,\,72)$ & 2 \\
+\quad Custo líquido $= 30$ e identificação da equivalência com (e) & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (g) -- 8 pontos}} \\
+\quad Cálculo dos três pontos $A=(12,12)$, $B=(1{,}5;\,12)$, $C=(3,24)$ & 3 \\
+\quad Decomposição $\Delta x = -9 + (-1{,}5) = -10{,}5$ & 2 \\
+\quad Decomposição $\Delta y = +12 + (-12) = 0$ & 1 \\
+\quad Gráfico com 3 retas orçamentárias e 2 ICs & 2 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (h) -- 4 pontos}} \\
+\quad Identificação da equivalência no modelo unipessoal & 2 \\
+\quad Discussão da heterogeneidade como hipótese que quebra a equivalência & 2 \\
+\midrule
+\textbf{Total Q2} & \textbf{35} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE III
+% ============================================================
+\begin{center}\large\textbf{Parte III --- Política integrada: investimento em qualidade do transporte público} \quad (30 pontos)\end{center}
+
+\begin{questions}
+\setcounter{question}{2}
+\question \textbf{Pedágio com reciclagem da receita} (30 pontos).
+
+\textit{Contexto.} Anderson (2014) estima que a interrupção do transporte público em Los Angeles aumentou o tempo de viagem rodoviário em 47\%. A causalidade vai nos dois sentidos: a qualidade do transporte público afeta a demanda por viagens de carro. Para incorporar isso, suponha que a função utilidade do consumidor é
+\[
+   u(x,y) = x^{1/3}\, y^{n}, \quad n > 0,
+\]
+em que $n$ representa o ``valor'' que o consumidor atribui ao transporte público. Assuma que $n$ \textbf{depende do investimento} $\gamma$ feito pela Prefeitura na qualidade:
+\[
+   n(\gamma) = \tfrac{2}{3} + \beta \gamma, \quad \beta > 0.
+\]
+Sem investimento ($\gamma = 0$), $n = 2/3$ e a função utilidade reduz-se à da Parte I, $u = x^{1/3} y^{2/3}$.
+
+\begin{parts}
+\part[5] Encontre as demandas marshallianas $x^*$ e $y^*$ para a Cobb-Douglas $u = x^{1/3} y^n$. Mostre como variam com $n$ e interprete economicamente.
+
+\begin{solution}
+Aplicando a fórmula de demanda CD com expoentes $(a,b) = (1/3, n)$ -- agora $a+b = 1/3+n$, possivelmente $\neq 1$:
+\[
+  x^* = \frac{a}{a+b}\cdot\frac{I}{p_x} = \frac{1/3}{1/3+n}\cdot\frac{I}{p_x} = \boxed{\frac{I}{(1+3n)\,p_x}}
+\]
+\[
+  y^* = \frac{b}{a+b}\cdot\frac{I}{p_y} = \frac{n}{1/3+n}\cdot\frac{I}{p_y} = \boxed{\frac{3n\,I}{(1+3n)\,p_y}}
+\]
+
+\textbf{Estática comparativa em $n$:}
+\[
+  \frac{\partial x^*}{\partial n} = -\frac{3I}{(1+3n)^2\, p_x} < 0, \quad
+  \frac{\partial y^*}{\partial n} = \frac{3I}{(1+3n)^2\, p_y} > 0
+\]
+
+\textbf{Interpretação:} quanto maior o ``valor'' atribuído ao transporte público ($n$), \textit{ceteris paribus}, menor a demanda por viagens de carro e maior a demanda por viagens de transporte público. Melhorar a qualidade do transporte público é \textit{em si} um instrumento de política para reduzir o tráfego, mesmo na ausência de pedágio.
+
+\textit{Verificação} (em $n_0=2/3$, $p_x=2$, $p_y=4$, $I=72$): $x^* = 72/(3\cdot 2) = 12$, $y^* = 2\cdot 72/(3\cdot 4) = 12$ -- recupera o equilíbrio do item 1(a) $\checkmark$.
+\end{solution}
+
+\newpage
+\part[5] Considere $n_0 = 2/3$ (cenário inicial sem investimento). Sem cobrar pedágio, qual valor $n_1$ de qualidade reduz $x^*$ em \textbf{75\%}? Calcule a nova cesta $(x_1, y_1)$ e a nova utilidade $u_1$. Comente sobre a comparação $u_1$ vs $u_0$.
+
+\begin{solution}
+\textbf{Cenário inicial} ($n_0 = 2/3$): $x_0 = 12$, $y_0 = 12$, $u_0 = 12$.
+
+\textbf{Meta:} $x_1 = x_0/4 = 3$.
+\[
+  \frac{72}{(1+3n_1)\cdot 2} = 3 \implies 1+3n_1 = 12 \implies \boxed{n_1 = \tfrac{11}{3}}
+\]
+
+\textbf{Nova cesta:}
+\[
+  x_1 = 3, \quad y_1 = \frac{3\cdot (11/3)\cdot 72}{12\cdot 4} = \frac{11\cdot 72}{48} = \frac{33}{2} = 16{,}5
+\]
+
+\textbf{Nova utilidade:} $u_1 = 3^{1/3}\cdot (16{,}5)^{11/3}$. Numericamente, decompondo $11/3 = 3 + 2/3$:
+$16{,}5^3 = 4492{,}125$ e $16{,}5^{2/3} = (272{,}25)^{1/3} \approx 6{,}483$, logo $16{,}5^{11/3} \approx 4492 \cdot 6{,}48 \approx 29\,109$.
+Multiplicando por $3^{1/3} \approx 1{,}4422$: $u_1 \approx 41\,970 \approx 4{,}2\times 10^4$.
+
+\textit{Cuidado interpretativo (importante).} Comparar $u_1$ e $u_0$ \textit{como números} é problemático porque a função utilidade \textbf{mudou}: o expoente $n$ saiu de $2/3$ para $11/3$. Sob interpretação ordinal estrita, comparar utilidades entre duas funções não é diretamente significativo. Sob interpretação \textbf{cardinal} de $n$ como ``parâmetro de qualidade tecnológica'' (Lancaster 1966), o aumento de utilidade reflete genuinamente que o consumidor está melhor com transporte público de melhor qualidade.
+
+Em termos econômicos relevantes, o que importa é: (i) o consumidor consome menos $x$ e mais $y$ (atinge a meta de 75\% de redução); (ii) sob interpretação cardinal, está estritamente melhor; (iii) o item (l) abaixo permitirá uma comparação mais precisa via custo orçamentário.
+\end{solution}
+
+\newpage
+\part[3] Dado que $n(\gamma) = 2/3 + \beta\gamma$, encontre o investimento $\gamma_1$ que atinge $n_1 = 11/3$. Sua resposta deve ser uma função de $\beta$.
+
+\begin{solution}
+\[
+  \tfrac{11}{3} = \tfrac{2}{3} + \beta \gamma_1 \implies \beta\gamma_1 = 3 \implies \boxed{\gamma_1 = \frac{3}{\beta}}
+\]
+
+\textit{Interpretação:} se $\beta$ é alto (a Prefeitura tem alta capacidade de converter investimento em qualidade percebida), pouco $\gamma$ basta. Se $\beta$ é baixo, é necessário muito investimento. A pergunta sobre quem paga esse $\gamma$ (item l) é o coração do exercício: se a Prefeitura pode financiar o investimento com a própria receita do pedágio, isso muda a equação custo-benefício.
+\end{solution}
+
+\newpage
+\part[12] \textbf{Política integrada com receita reciclada.} Suponha que o investimento em qualidade deva ser financiado pela própria receita do pedágio. A Prefeitura cobra $t > 0$ por viagem (com $p_x' = p_x + t$) e impõe a regra de \textit{budget balance}:
+\[
+   \gamma = t \cdot x^{**}
+\]
+isto é, \textit{toda} a receita do pedágio é convertida em investimento. Isso liga $t$, $\gamma$, $n$ e $x^{**}$ num sistema simultâneo.
+
+Suponha $\beta = 1$. \textbf{Encontre} $(t^*, \gamma^*, n^*, x^{**}, y^{**})$ \textbf{de modo que} (i) $x^{**} = 3$ (meta de 75\%) e (ii) $\gamma^* = t^* \cdot x^{**}$ (orçamento auto-financiado). Compare com a política do item 2(f).
+
+\begin{solution}
+\textbf{Plano de solução.} Três relações simultâneas:
+\begin{enumerate}[label=(\Alph*),noitemsep]
+\item Demanda: $x^{**} = \dfrac{72}{(1+3n)(2+t)} = 3 \implies (1+3n)(2+t) = 24$.
+\item \textit{Budget balance}: $\gamma = t \cdot 3 = 3t$.
+\item Qualidade: $n = 2/3 + \beta\gamma = 2/3 + 3\beta t$.
+\end{enumerate}
+
+\textbf{Substituindo (C) em (A)} com $\beta=1$:
+\[
+  (1 + 3(2/3 + 3 t))(2+t) = 24
+  \implies (1+2+9t)(2+t) = 24
+  \implies (3+9t)(2+t) = 24
+\]
+\[
+  6 + 3t + 18t + 9t^2 = 24
+  \implies 9t^2 + 21t - 18 = 0
+  \implies 3t^2 + 7t - 6 = 0
+\]
+
+Discriminante: $49 + 72 = 121 = 11^2$. Raiz positiva:
+\[
+  t = \frac{-7 + 11}{6} = \frac{4}{6} = \frac{2}{3}
+\]
+\[
+  \boxed{t^* = \tfrac{2}{3}}
+\]
+
+\textbf{Demais variáveis:}
+\[
+  \gamma^* = 3 t^* = 3\cdot \tfrac{2}{3} = 2; \quad n^* = \tfrac{2}{3} + 1\cdot 2 = \tfrac{8}{3}
+\]
+\[
+  y^{**} = \frac{3 n^*\, I}{(1+3n^*)\, p_y} = \frac{3\cdot (8/3)\cdot 72}{9\cdot 4} = \frac{8\cdot 72}{36} = 16
+\]
+
+Verificação (A): $(1+3\cdot 8/3)(2 + 2/3) = 9\cdot (8/3) = 24$ $\checkmark$.
+
+\[
+  \boxed{(t^*, \gamma^*, n^*, x^{**}, y^{**}) = \left(\tfrac{2}{3},\,2,\,\tfrac{8}{3},\,3,\,16\right)}
+\]
+
+\textbf{Custo líquido:} $\gamma^* - t^* x^{**} = 2 - (2/3)\cdot 3 = 0$. \textbf{A política é fiscalmente neutra} -- por construção da regra (B).
+
+\textbf{Comparação com 2(f).}
+\begin{itemize}[noitemsep]
+\item 2(f): pedágio $\tilde t = 14$, transferência $b=72$, custo líquido = 30.
+\item 3(l): pedágio $t = 2/3$, investimento $\gamma=2$, custo líquido = 0.
+\end{itemize}
+
+A política integrada (l) é \textit{fiscalmente gratuita} (custo zero) e usa pedágio dramaticamente menor ($2/3$ vs $14$). Sob $\beta=1$ e modelo cardinal, o consumidor também está \textit{estritamente melhor} em (l) que em (f) (porque sua função utilidade mudou para favor do transporte agora valorizado a $n=8/3$).
+
+\textbf{Importante (pedagogia).} A comparação direta de níveis de utilidade entre 2(f) e 3(l) é problemática porque a função utilidade muda em (l) (de $n=2/3$ para $n=8/3$) -- não há comparação ordinal estrita entre cestas geradas por funções utilidade distintas. A vantagem mais segura de (l) sobre (f) é \textbf{fiscal}: custo líquido 0 vs 30 u.m. Esta vantagem decorre diretamente da regra de \textit{budget balance} ($\gamma = t \cdot x^{**}$), que torna a política autofinanciada por construção. A vantagem em utilidade adicional (consumidor presumivelmente ``melhor'' sob (l) com $n$ maior) depende da hipótese cardinal sobre $n$ -- se aceitarmos essa hipótese, a dominância de (l) é completa; sem ela, restringimos a comparação ao plano fiscal e às quantidades observáveis.
+
+\textbf{Resultado central da Parte III.} \emph{Reciclar a receita do pedágio em qualidade do transporte público pode dominar o pedágio compensado, sob a hipótese de que $\beta$ é alto o suficiente.} O item (m) explora como essa dominância depende de $\beta$.
+\end{solution}
+
+\newpage
+\part[5] \textbf{Comparativa estática em $\beta$.} Mantendo a regra de \textit{budget balance} e a meta de 75\%, mostre que para $\beta>0$ genérico o pedágio ótimo $t^*(\beta)$ satisfaz a equação quadrática
+\[
+  3\beta\, t^2 + (1 + 6\beta)\, t - 6 = 0.
+\]
+Discuta os limites $\beta \to 0$ e $\beta \to \infty$ e interprete economicamente.
+
+\begin{solution}
+\textbf{Derivação geral.} Repetindo (A)-(B)-(C) com $\beta$ genérico:
+\[
+  (1+3n)(2+t) = 24; \quad \gamma = 3t; \quad n = 2/3 + 3\beta t
+\]
+Substituindo:
+\[
+  (1+3(2/3 + 3\beta t))(2+t) = 24 \implies (3 + 9\beta t)(2+t) = 24
+\]
+\[
+  6 + 3t + 18\beta t + 9\beta t^2 = 24 \implies 9\beta t^2 + (3 + 18\beta) t - 18 = 0
+\]
+Dividindo por $3$:
+\[
+  \boxed{3\beta\, t^2 + (1 + 6\beta)\, t - 6 = 0}
+\]
+
+\textbf{Verificação para $\beta = 1$:} $3 t^2 + 7 t - 6 = 0 \implies t = (-7 + 11)/6 = 2/3$ $\checkmark$.
+
+\textbf{Limite $\beta \to 0$.} A quadrática reduz-se a $t - 6 = 0 \implies t^*(0) = 6$. Recupera-se o pedágio puro do item 1(c): se o investimento não converte em qualidade ($\beta = 0$), a única forma de reduzir $x$ em 75\% é via aumento direto do preço.
+
+\textbf{Limite $\beta \to \infty$.} Suspeitamos $t^* \to 0$. Para encontrar a taxa de decaimento, faça o ansatz $t = c/\beta$ e substitua na equação:
+\[
+  3\beta\cdot(c/\beta)^2 + (1+6\beta)\cdot(c/\beta) - 6 = \tfrac{3c^2}{\beta} + \tfrac{c}{\beta} + 6c - 6 \approx 0
+\]
+Como $\beta \to \infty$, os primeiros dois termos vão a zero e sobra $6c - 6 = 0 \implies c = 1$. Portanto
+\[
+  \boxed{t^*(\beta) \;\sim\; \frac{1}{\beta} \quad (\beta \to \infty)}
+\]
+\textit{Verificação numérica:} para $\beta=1000$, a quadrática exata dá $t^* \approx 0{,}000999 \approx 1/1000$ $\checkmark$.
+
+No limite de eficácia infinita do investimento, o pedágio ótimo decai \textit{linearmente} em $1/\beta$ -- a Prefeitura praticamente não precisa cobrar pedágio porque o investimento sozinho desloca a demanda. (Observação: o termo quadrático $3\beta t^2$ \textit{não} domina no limite -- com $t \sim 1/\beta$, ele é $O(1/\beta) \to 0$, enquanto o linear $(1+6\beta)t$ é $O(1)$ e equilibra com a constante $-6$.)
+
+\textbf{Interpretação econômica.} O parâmetro $\beta$ é a \textbf{eficiência da reciclagem}: quanto valor por unidade investida o consumidor percebe como melhoria de qualidade. Para $\beta$ alto, a política (l) domina; para $\beta$ baixo, ela degenera em pedágio puro e perde a vantagem fiscal. Em São Paulo, $\beta$ deve ser estimado empiricamente -- via experimentos naturais (greves, expansões de linhas) ou pesquisas \textit{stated preferences}. Anderson (2014) fornece evidências de magnitudes substanciais via interrupções do metrô.
+
+\textbf{Comparativa estática:} $t^*(\beta)$ é decrescente em $\beta$ (pode-se mostrar via diferenciação implícita da quadrática). Intuição: maior $\beta$ \textit{substitui} pedágio por qualidade.
+\end{solution}
+
+\end{parts}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 3 (30 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (i) -- 5 pontos}} \\
+\quad Aplicar fórmula CD com expoentes $(1/3, n)$ e $a+b\neq 1$ & 2 \\
+\quad Demandas $x^* = I/((1+3n)p_x)$ e $y^* = 3nI/((1+3n)p_y)$ corretas & 2 \\
+\quad Estática comparativa $\partial x/\partial n < 0$, $\partial y/\partial n > 0$ & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (j) -- 5 pontos}} \\
+\quad $n_1 = 11/3$ correto & 2 \\
+\quad Cesta $(3,\,33/2)$ & 2 \\
+\quad Comentário cardinal/ordinal sobre comparação de utilidades & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (k) -- 3 pontos}} \\
+\quad Resposta $\gamma_1 = 3/\beta$ & 2 \\
+\quad Interpretação econômica de $\beta$ & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (l) -- 12 pontos}} \\
+\quad Sistema (A)-(B)-(C) bem formulado & 3 \\
+\quad Substituição reduz a quadrática $3 t^2 + 7t - 6 = 0$ & 3 \\
+\quad Resolução: $t^* = 2/3$ & 2 \\
+\quad Demais variáveis $\gamma^*=2$, $n^*=8/3$, $y^{**}=16$ & 2 \\
+\quad Custo líquido $= 0$ identificado e justificado & 1 \\
+\quad Comparação com 2(f) com ressalva cardinal/ordinal & 1 \\
+\midrule
+\multicolumn{2}{@{}l}{\textit{Item (m) -- 5 pontos}} \\
+\quad Derivação correta da quadrática geral $3\beta t^2 + (1+6\beta)t - 6 = 0$ & 2 \\
+\quad Limite $\beta \to 0$: $t^* \to 6$ (recuperação do item 1c) & 1 \\
+\quad Limite $\beta \to \infty$: $t^* \to 0$ & 1 \\
+\quad Interpretação econômica de $\beta$ como eficiência da reciclagem & 1 \\
+\midrule
+\textbf{Total Q3} & \textbf{30} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+
+\newpage
+
+% ============================================================
+% PARTE IV
+% ============================================================
+\begin{center}\large\textbf{Parte IV --- Síntese: recomendação à Prefeitura} \quad (10 pontos)\end{center}
+
+\begin{questions}
+\setcounter{question}{3}
+\question[10] \textbf{Recomendação fundamentada}.
+
+A Prefeitura recebeu sua análise e pede uma recomendação. Você analisou três políticas (todas compatíveis com a meta de 75\% de redução em viagens de carro \textit{e} mantendo a indiferença ou melhoria do consumidor representativo):
+
+\medskip
+\begin{center}
+\small
+\begin{tabular}{@{}lcccp{4cm}@{}}
+\toprule
+\textbf{Política} & $t$ & \textbf{Compensação} & \textbf{Custo líquido} & \textbf{Cesta final} \\
+\midrule
+2(d-e) Pedágio + subsídio em $y$ & 6 & $s = 2$ & 30 & $(3,\,24)$ \\
+2(f) Pedágio + transferência \textit{lump-sum} & 14 & $b = 72$ & 30 & $(3,\,24)$ \\
+3(l) Pedágio + reciclagem (com $\beta=1$) & 2/3 & $\gamma = 2$ & 0 & $(3,\,16)$ (com $n=8/3$) \\
+\bottomrule
+\end{tabular}
+\end{center}
+\medskip
+
+Apresente, em até uma página, a sua recomendação à Prefeitura. Sua análise deve abordar \textbf{todos} os seguintes pontos:
+
+\begin{enumerate}[noitemsep]
+\item Qual política recomendaria? Justifique com base em \textbf{custo fiscal}, \textbf{eficiência alocativa em equilíbrio parcial} (no nosso modelo unipessoal), \textbf{robustez às hipóteses do modelo} e \textbf{factibilidade administrativa}.
+\item Que pressupostos do modelo são mais frágeis na realidade de São Paulo? (\textit{Pelo menos três}: \textit{e.g.}, heterogeneidade de consumidores, externalidades de congestionamento e poluição não-modeladas, dinâmica intertemporal, validade do consumidor representativo.)
+\item Qual é o papel do parâmetro $\beta$ na sua recomendação, e como ele poderia ser estimado empiricamente? (\textit{Sugira pelo menos uma estratégia de identificação verificável.})
+\item Há alguma dimensão importante de bem-estar que o nosso modelo \textit{não} captura e que poderia inverter sua recomendação? (\textit{e.g.}, externalidades de poluição/saúde, equidade vertical, efeitos sobre uso da terra urbana.)
+\end{enumerate}
+
+\begin{solution}
+\textit{Resposta-modelo} (não há resposta única correta -- avaliação por rubrica).
+
+\textbf{Recomendação:} \textbf{Política 3(l) com qualificações}, condicionada à confirmação empírica de $\beta \geq \beta^* > 0$.
+
+\textbf{Argumento.} Sob a calibragem do modelo ($\beta = 1$), a política integrada (l) é fiscalmente neutra e estritamente Pareto-superior (sob hipótese cardinal de qualidade) às políticas (e) e (f). É a primeira-melhor no nosso modelo. Quanto maior $\beta$, mais decisiva a vantagem.
+
+\textbf{Pressupostos frágeis (com discussão):}
+\begin{enumerate}[noitemsep]
+\item \textit{Consumidor representativo.} Em São Paulo, há heterogeneidade massiva de renda e padrão de mobilidade. Pedágios penalizam usuários de carro de baixa renda; subsídios em $y$ beneficiam quem consome muito $y$. Em modelo heterogêneo, política (e) pode dominar (l) em equidade.
+\item \textit{Externalidades não-modeladas.} O modelo não inclui externalidades de congestionamento (ganho social das viagens evitadas) nem de poluição/saúde (Eliasson 2008). Isso reforça argumento por pedágio.
+\item \textit{Dinâmica.} O investimento leva tempo a se materializar; modelo é estático. Implementação real exigiria sequenciamento.
+\item \textit{Endogeneidade de $\beta$.} $\beta$ provavelmente não é constante: investimentos em redes saturadas têm retornos decrescentes.
+\item \textit{Hipótese cardinal sobre $n$.} Comparação de utilidades sob diferentes funções utilidades só faz sentido sob interpretação cardinal -- contestável.
+\end{enumerate}
+
+\textbf{Estimação de $\beta$.} Estratégias possíveis:
+\begin{itemize}[noitemsep]
+\item \textit{Diferenças-em-diferenças} explorando aberturas de novas linhas de metrô em São Paulo (Linha 4-Amarela 2010, Linha 15-Prata 2014).
+\item \textit{Regression discontinuity} sobre proximidade geográfica a estações.
+\item \textit{Stated preference} via discrete choice experiments.
+\item \textit{Spillover de Anderson (2014)}: greves de metrô (\textit{e.g.}, 2018) como experimento natural.
+\end{itemize}
+
+\textbf{Dimensões não-modeladas:}
+\begin{itemize}[noitemsep]
+\item \textit{Saúde pública.} Pedágios reduzem poluição -- ganho social potencialmente grande.
+\item \textit{Uso do solo.} Investimento em transit induz adensamento urbano de longo prazo.
+\item \textit{Equidade horizontal.} Pedágio sem alternativa de transporte é regressivo.
+\item \textit{Fragmentação institucional.} CPTM/Metrô são estaduais; Prefeitura tem controle limitado.
+\end{itemize}
+
+\textbf{Conclusão.} Recomendar (l) como direção de longo prazo, com piloto de 18 meses, monitoramento de $\beta$ via DiD, e \textit{ramp-up} gradual do pedágio acoplado a investimento concreto pré-anunciado. Se $\beta$ se confirmar baixo no piloto, pivotar para (e) -- subsídio em $y$ + pedágio -- por razões de equidade.
+\end{solution}
+
+\ifprintanswers
+\vspace{1em}
+{\color{rubred}
+\noindent\textbf{Rubrica de Correção --- Questão 4 (10 pontos)}
+\vspace{0.3em}
+
+\noindent\small
+\begin{tabular}{@{}p{0.80\linewidth} r@{}}
+\toprule
+\textbf{Critério} & \textbf{Pts} \\
+\midrule
+Recomendação clara e fundamentada nos resultados das partes I-III & 3 \\
+Pelo menos 3 pressupostos frágeis identificados e discutidos & 3 \\
+Estratégia empírica concreta para estimar $\beta$ & 2 \\
+Pelo menos uma dimensão de bem-estar não-modelada com argumento & 2 \\
+\midrule
+\textbf{Total Q4} & \textbf{10} \\
+\bottomrule
+\end{tabular}\normalsize
+}
+\fi
+
+\end{questions}
+\end{spacing}
+
+\newpage
+\begin{center}\large\textbf{Apêndice -- Auto-verificação antes da entrega}\end{center}
+\vspace{0.5em}
+
+\noindent Antes de entregar, percorra esta checklist. Se algum item falhar, há erro algébrico ou conceitual.
+
+\medskip
+\begin{enumerate}[label=$\square$,leftmargin=*]
+\item Todas as quantidades $x^*, y^*$ são estritamente positivas em todos os itens?
+\item As demandas marshallianas têm sinais corretos: $\partial x^*/\partial p_x < 0$, $\partial x^*/\partial I > 0$?
+\item No item 2(g), a soma do efeito substituição de Hicks com o efeito renda iguala o efeito-preço total para \textbf{ambos} $x$ e $y$?
+\item Nos itens 2(e) e 2(f), o custo líquido é igual (30 u.m.)?
+\item No item 3(l), $\gamma^* = t^* \cdot x^{**}$ \emph{exatamente}? (Custo zero confirma.)
+\item No item 3(m), o limite $\beta \to 0$ recupera $t^* = 6$ do item 1(c)?
+\item Todos os gráficos exibem interceptos numéricos, inclinações e pontos rotulados com coordenadas?
+\end{enumerate}
+
+\vspace{1em}
+\begin{contextbox}[Sobre comparação de utilidades em itens 3(j) e 3(l)]
+\small
+A função utilidade Cobb-Douglas é \textbf{ordinal}: comparações entre $u(x_1, y_1)$ e $u(x_2, y_2)$ são significativas \textit{somente} se a função utilidade é a mesma. Quando $n$ muda, comparar níveis de utilidade requer interpretação \textbf{cardinal} adicional. Trate isso explicitamente em sua resposta.
+\end{contextbox}
+
+\vspace{1em}
+\begin{contextbox}[Para estudo posterior]
+\small
+\textit{Leituras sugeridas (verificadas):}
+\begin{itemize}[noitemsep,topsep=0pt]
+\item Nicholson \& Snyder, \textit{Microeconomic Theory: Basic Principles and Extensions}, caps. 4-6 -- nível desta APS.
+\item Varian, \textit{Intermediate Microeconomics}, cap. 8 (Slutsky vs Hicks) e cap. 14 (excedente).
+\item Parry \& Small (2009), AER 99(3) -- aplicação a transporte urbano.
+\item Anderson (2014), AER 104(9) -- elasticidade empírica.
+\item Eliasson (2008), \textit{Transport Policy} 15(6) -- pedágios em Estocolmo.
+\end{itemize}
+\end{contextbox}
+
+\end{document}

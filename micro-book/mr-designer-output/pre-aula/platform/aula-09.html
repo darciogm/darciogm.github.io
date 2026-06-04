@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 09 — Equação de Slutsky: Exercícios — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-09-equação-de-slutsky-exercícios">Pré-Aula 09 — Equação de Slutsky: Exercícios</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 5, Seções 5.1–5.4</strong> do livro interativo | Tempo estimado: <strong>45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Aplicar a equação de Slutsky em forma de elasticidades</li>
+<li>Realizar a decomposição ES/ER completa para preferências Cobb-Douglas</li>
+<li>Realizar a decomposição ES/ER para preferências quase-lineares e interpretar a ausência de efeito renda</li>
+</ol>
+<hr />
+<h2 id="revisão-a-equação-de-slutsky">1. Revisão: a equação de Slutsky</h2>
+<p>Relembrando a equação fundamental:</p>
+<p><span class="math display">\[\frac{\partial x_i^M}{\partial p_i} = \frac{\partial h_i}{\partial p_i} - x_i^M \frac{\partial x_i^M}{\partial I}\]</span></p>
+<p><span class="math display">\[\underbrace{\text{ET}}_{\text{efeito total}} = \underbrace{\text{ES}}_{\text{substituição}} + \underbrace{\text{ER}}_{\text{renda}}\]</span></p>
+<p>O ES é o movimento ao longo da curva de indiferença (compensado). O ER é a mudança devida à alteração do poder de compra.</p>
+<hr />
+<h2 id="slutsky-em-elasticidades">2. Slutsky em elasticidades</h2>
+<p>Multiplicando ambos os lados da equação de Slutsky por <span class="math inline">\(p_i/x_i^M\)</span>:</p>
+<p><span class="math display">\[\varepsilon_{ii} = \varepsilon_{ii}^h - s_i \eta_i\]</span></p>
+<p>onde:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_{ii} = \frac{\partial x_i^M}{\partial p_i} \cdot \frac{p_i}{x_i^M}\)</span> — elasticidade-preço Marshalliana</li>
+<li><span class="math inline">\(\varepsilon_{ii}^h = \frac{\partial h_i}{\partial p_i} \cdot \frac{p_i}{h_i}\)</span> — elasticidade-preço Hicksiana (compensada)</li>
+<li><span class="math inline">\(s_i = \frac{p_i x_i^M}{I}\)</span> — parcela do orçamento gasta no bem <span class="math inline">\(i\)</span></li>
+<li><span class="math inline">\(\eta_i = \frac{\partial x_i^M}{\partial I} \cdot \frac{I}{x_i^M}\)</span> — elasticidade-renda</li>
+</ul>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>A versão em elasticidades mostra que a diferença entre as elasticidades Marshalliana e Hicksiana é <span class="math inline">\(s_i \eta_i\)</span>. Para bens com pequena parcela do orçamento (<span class="math inline">\(s_i\)</span> pequeno), a diferença é desprezível — ES e ET são quase iguais. Para bens com grande parcela (como moradia), o ER é significativo.</p>
+</div>
+<h3 id="formulário-útil-para-exercícios">Formulário útil para exercícios</h3>
+<table>
+<thead>
+<tr>
+<th>Fórmula</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="math inline">\(\varepsilon_{ii} = \varepsilon_{ii}^h - s_i \eta_i\)</span></td>
+<td>Slutsky em elasticidades (efeito próprio)</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\varepsilon_{ij} = \varepsilon_{ij}^h - s_j \eta_i\)</span></td>
+<td>Slutsky em elasticidades (efeito cruzado)</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\sum_j s_j \varepsilon_{ji} = -s_i\)</span></td>
+<td>Agregação de Cournot</td>
+</tr>
+<tr>
+<td><span class="math inline">\(\sum_i s_i \eta_i = 1\)</span></td>
+<td>Agregação de Engel</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="exercício-preparatório-cobb-douglas">3. Exercício preparatório: Cobb-Douglas</h2>
+<p>Seja <span class="math inline">\(u = x_1^{1/3} x_2^{2/3}\)</span>, com <span class="math inline">\(p_1 = 2\)</span>, <span class="math inline">\(p_2 = 1\)</span> e <span class="math inline">\(I = 60\)</span>.</p>
+<h3 id="passo-1-demandas-marshallianas">Passo 1: Demandas Marshallianas</h3>
+<p><span class="math display">\[x_1^M = \frac{(1/3)(60)}{2} = 10, \qquad x_2^M = \frac{(2/3)(60)}{1} = 40\]</span></p>
+<p>Utilidade: <span class="math inline">\(\bar{u} = 10^{1/3} \cdot 40^{2/3}\)</span></p>
+<h3 id="passo-2-suponha-que-p_1-sobe-para-p_1-3">Passo 2: Suponha que <span class="math inline">\(p_1\)</span> sobe para <span class="math inline">\(p_1&#39; = 3\)</span></h3>
+<p>Novo equilíbrio: <span class="math inline">\(x_1^{M&#39;} = (1/3)(60)/3 = 20/3 \approx 6{,}67\)</span></p>
+<p><strong>ET</strong> <span class="math inline">\(= 6{,}67 - 10 = -3{,}33\)</span></p>
+<h3 id="passo-3-demanda-hicksiana-no-novo-preço">Passo 3: Demanda Hicksiana no novo preço</h3>
+<p><span class="math display">\[h_1(3, 1, \bar{u}) = \bar{u} \left(\frac{1/3}{2/3} \cdot \frac{1}{3}\right)^{2/3} = \bar{u} \left(\frac{1}{6}\right)^{2/3}\]</span></p>
+<p>Com <span class="math inline">\(\bar{u} = 10^{1/3} \cdot 40^{2/3}\)</span>, calculamos numericamente:</p>
+<p><span class="math inline">\(\bar{u} = 2{,}154 \cdot 11{,}696 = 25{,}198\)</span></p>
+<p><span class="math inline">\(h_1 = 25{,}198 \cdot (1/6)^{2/3} = 25{,}198 \cdot 0{,}3015 = 7{,}60\)</span></p>
+<p><strong>ES</strong> <span class="math inline">\(= 7{,}60 - 10 = -2{,}40\)</span></p>
+<p><strong>ER</strong> <span class="math inline">\(= -3{,}33 - (-2{,}40) = -0{,}93\)</span></p>
+<p>Confirmação: bem normal, ambos os efeitos negativos, ER reforça ES.</p>
+<h2 id="gráfico-interativo-efeitos-renda-e-substituição">Gráfico interativo: Efeitos Renda e Substituição</h2>
+<iframe src="graficos/cap05/efeito-renda-substituicao.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Reproduza o exercício Cobb-Douglas acima no gráfico interativo. Ajuste <span class="math inline">\(a = 1/3\)</span>, os preços e a renda conforme especificado. Visualize os três pontos: original, compensado de Hicks e final.</p>
+</div>
+<hr />
+<h2 id="exercício-preparatório-quase-linear">4. Exercício preparatório: quase-linear</h2>
+<p>Seja <span class="math inline">\(u = \sqrt{x_1} + x_2\)</span>, com <span class="math inline">\(p_1 = 1\)</span>, <span class="math inline">\(p_2 = 1\)</span> e <span class="math inline">\(I = 10\)</span>.</p>
+<h3 id="passo-1-demandas-marshallianas-1">Passo 1: Demandas Marshallianas</h3>
+<p>Tangência: <span class="math inline">\(\frac{1}{2\sqrt{x_1}} = \frac{p_1}{p_2} = 1 \implies x_1^M = \frac{1}{4}\)</span></p>
+<p>Orçamento: <span class="math inline">\(x_2^M = I - p_1 x_1^M = 10 - 1/4 = 9{,}75\)</span></p>
+<p>Utilidade: <span class="math inline">\(\bar{u} = \sqrt{1/4} + 9{,}75 = 0{,}5 + 9{,}75 = 10{,}25\)</span></p>
+<h3 id="passo-2-p_1-sobe-para-p_1-4">Passo 2: <span class="math inline">\(p_1\)</span> sobe para <span class="math inline">\(p_1&#39; = 4\)</span></h3>
+<p>Tangência: <span class="math inline">\(\frac{1}{2\sqrt{x_1}} = 4 \implies x_1^{M&#39;} = \frac{1}{64}\)</span></p>
+<p><span class="math inline">\(x_2^{M&#39;} = 10 - 4(1/64) = 10 - 1/16 = 9{,}9375\)</span></p>
+<p><strong>ET para <span class="math inline">\(x_1\)</span></strong> <span class="math inline">\(= 1/64 - 1/4 = -0{,}234\)</span></p>
+<h3 id="passo-3-demanda-hicksiana">Passo 3: Demanda Hicksiana</h3>
+<p>A demanda Hicksiana de <span class="math inline">\(x_1\)</span> na quase-linear depende apenas dos preços (não de <span class="math inline">\(\bar{u}\)</span>!):</p>
+<p><span class="math display">\[h_1(p_1, p_2, \bar{u}) = \left(\frac{p_2}{2p_1}\right)^2 = \frac{1}{4p_1^2}\]</span></p>
+<p>Isso porque a TMS depende apenas de <span class="math inline">\(x_1\)</span>, e a tangência fixa <span class="math inline">\(x_1\)</span> independentemente de <span class="math inline">\(\bar{u}\)</span>.</p>
+<p><span class="math inline">\(h_1(4, 1, \bar{u}) = 1/64\)</span></p>
+<p><strong>ES</strong> <span class="math inline">\(= 1/64 - 1/4 = -0{,}234\)</span></p>
+<p><strong>ER</strong> <span class="math inline">\(= -0{,}234 - (-0{,}234) = 0\)</span></p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>Nas preferências quase-lineares, o <strong>efeito renda sobre <span class="math inline">\(x_1\)</span> é zero</strong>! Toda a variação no poder de compra é absorvida por <span class="math inline">\(x_2\)</span> (o bem “linear”). A demanda Marshalliana de <span class="math inline">\(x_1\)</span> coincide com a Hicksiana. Isso simplifica enormemente a análise empírica e é uma das razões pelas quais a utilidade quase-linear é tão popular em economia aplicada.</p>
+</div>
+<hr />
+<h2 id="slutsky-em-elasticidades-verificação-cobb-douglas">5. Slutsky em elasticidades: verificação Cobb-Douglas</h2>
+<p>Para <span class="math inline">\(u = x_1^a x_2^{1-a}\)</span>, sabemos:</p>
+<ul>
+<li><span class="math inline">\(\varepsilon_{11} = -1\)</span> (elasticidade-preço unitária)</li>
+<li><span class="math inline">\(\eta_1 = 1\)</span> (elasticidade-renda unitária)</li>
+<li><span class="math inline">\(s_1 = a\)</span> (parcela do orçamento)</li>
+</ul>
+<p>Slutsky: <span class="math inline">\(\varepsilon_{11} = \varepsilon_{11}^h - s_1 \eta_1 \implies -1 = \varepsilon_{11}^h - a \cdot 1 \implies \varepsilon_{11}^h = -(1-a)\)</span></p>
+<p>Verificação: a elasticidade Hicksiana é <span class="math inline">\(-(1-a)\)</span>, que é menor em valor absoluto que a Marshalliana (<span class="math inline">\(-1\)</span>). Faz sentido: a Hicksiana não inclui o ER (que reforça o ES para bens normais).</p>
+<h2 id="gráfico-interativo-elasticidade-e-receita">Gráfico interativo: Elasticidade e Receita</h2>
+<iframe src="graficos/cap06/elasticidade-receita.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe a relação entre elasticidade-preço e receita total. Para a Cobb-Douglas (<span class="math inline">\(\varepsilon = -1\)</span>), a receita é constante. Para demandas mais elásticas, um aumento de preço reduz a receita.</p>
+</div>
+<hr />
+<h2 id="exercícios-de-preparação">Exercícios de preparação</h2>
+<p><strong>Exercício 1.</strong> Um bem tem <span class="math inline">\(\varepsilon_{11} = -0{,}8\)</span>, <span class="math inline">\(\eta = 1{,}5\)</span> e <span class="math inline">\(s = 0{,}2\)</span>. (a) Calcule a elasticidade Hicksiana. (b) O bem é normal ou inferior? (c) O ES é maior ou menor que o ET em valor absoluto?</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li><span class="math inline">\(\varepsilon_{11}^h = \varepsilon_{11} + s \eta = -0{,}8 + 0{,}2 \times 1{,}5 = -0{,}8 + 0{,}3 = -0{,}5\)</span>. (b) <span class="math inline">\(\eta = 1{,}5 &gt; 0\)</span>, logo o bem é <strong>normal</strong> (e de luxo, pois <span class="math inline">\(\eta &gt; 1\)</span>). (c) <span class="math inline">\(|\varepsilon_{11}^h| = 0{,}5 &lt; |\varepsilon_{11}| = 0{,}8\)</span>: o ES é menor em valor absoluto — o ER reforça o ES para bens normais, tornando o ET maior.</li>
+</ol>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Para <span class="math inline">\(u = 2\ln(x_1) + x_2\)</span> (quase-linear) com <span class="math inline">\(p_1 = 2\)</span>, <span class="math inline">\(p_2 = 1\)</span>, <span class="math inline">\(I = 20\)</span>: (a) Encontre as demandas. (b) Se <span class="math inline">\(p_1\)</span> sobe para 4, decomponha o ET em ES e ER.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<ol type="a">
+<li>Tangência: <span class="math inline">\(2/x_1 = p_1/p_2 = 2 \implies x_1^M = 1\)</span>. Orçamento: <span class="math inline">\(x_2^M = 20 - 2(1) = 18\)</span>. (b) Novo preço: <span class="math inline">\(2/x_1 = 4 \implies x_1^{M&#39;} = 0{,}5\)</span>. ET <span class="math inline">\(= 0{,}5 - 1 = -0{,}5\)</span>. Como é quase-linear, <span class="math inline">\(h_1 = 2/p_1\)</span> depende só do preço: <span class="math inline">\(h_1(4) = 0{,}5\)</span>. ES <span class="math inline">\(= 0{,}5 - 1 = -0{,}5\)</span>. ER <span class="math inline">\(= 0\)</span>. Todo o efeito é substituição.</li>
+</ol>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Usando a agregação de Engel (<span class="math inline">\(\sum s_i \eta_i = 1\)</span>), mostre que é impossível que todos os bens sejam inferiores simultaneamente.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p>Se todos os bens fossem inferiores, teríamos <span class="math inline">\(\eta_i &lt; 0\)</span> para todo <span class="math inline">\(i\)</span>. Como <span class="math inline">\(s_i &gt; 0\)</span> (parcelas positivas), cada termo <span class="math inline">\(s_i \eta_i &lt; 0\)</span>. Logo <span class="math inline">\(\sum s_i \eta_i &lt; 0\)</span>. Mas a agregação de Engel exige <span class="math inline">\(\sum s_i \eta_i = 1 &gt; 0\)</span>. Contradição. Portanto, pelo menos um bem deve ser normal (<span class="math inline">\(\eta_i &gt; 0\)</span>). <span class="math inline">\(\blacksquare\)</span></p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. Na versão em elasticidades da equação de Slutsky, \(\varepsilon_{ii} = \varepsilon_{ii}^h - s_i \eta_i\), o termo \(s_i \eta_i\) representa:</div>
+<div class="quiz-option" data-value="a">(a) O efeito substituição</div>
+<div class="quiz-option" data-value="b">(b) O efeito renda em forma de elasticidade</div>
+<div class="quiz-option" data-value="c">(c) A parcela do orçamento</div>
+<div class="quiz-option" data-value="d">(d) A elasticidade cruzada</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="a">
+<div class="q-text">Q2. Para preferências quase-lineares \(u = v(x_1) + x_2\), o efeito renda sobre \(x_1\) é:</div>
+<div class="quiz-option" data-value="a">(a) Zero</div>
+<div class="quiz-option" data-value="b">(b) Positivo</div>
+<div class="quiz-option" data-value="c">(c) Negativo</div>
+<div class="quiz-option" data-value="d">(d) Depende de \(v\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="b">
+<div class="q-text">Q3. Na Cobb-Douglas \(u = x_1^a x_2^{1-a}\), a elasticidade-preço Hicksiana de \(x_1\) é:</div>
+<div class="quiz-option" data-value="a">(a) \(-1\)</div>
+<div class="quiz-option" data-value="b">(b) \(-(1-a)\)</div>
+<div class="quiz-option" data-value="c">(c) \(-a\)</div>
+<div class="quiz-option" data-value="d">(d) \(0\)</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">Q4. A agregação de Engel (\(\sum s_i \eta_i = 1\)) implica que:</div>
+<div class="quiz-option" data-value="a">(a) Todos os bens são normais</div>
+<div class="quiz-option" data-value="b">(b) Todos os bens são de luxo</div>
+<div class="quiz-option" data-value="c">(c) Pelo menos um bem deve ser normal</div>
+<div class="quiz-option" data-value="d">(d) A soma das elasticidades-preço é 1</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. Se um bem tem parcela orçamentária \(s = 0{,}01\) (muito pequena), a diferença entre as elasticidades Marshalliana e Hicksiana é:</div>
+<div class="quiz-option" data-value="a">(a) Desprezível</div>
+<div class="quiz-option" data-value="b">(b) Grande</div>
+<div class="quiz-option" data-value="c">(c) Exatamente 1</div>
+<div class="quiz-option" data-value="d">(d) Negativa</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-09')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p><strong>Aula 10</strong>: Aplicações da teoria do consumidor — dotações, oferta de trabalho e escolha intertemporal.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-09');
+MicroQuiz.init('aula-09');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+  WebR — Aversão ao risco, prêmio de risco e seguro
+  Cap. 7: Incerteza
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R Interativo — Risco e Seguros</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}.main-container{max-width:780px;margin:0 auto}.status-bar{padding:.5rem 1rem;border-radius:4px;font-size:.85rem;margin-bottom:1rem;text-align:center}.status-loading{background:#fff3e0;border:1px solid #ff9800;color:#e65100}.status-ready{background:#e8f5e9;border:1px solid #4caf50;color:#2e7d32}.status-error{background:#ffebee;border:1px solid #f44336;color:#c62828}.editor-container{border:1px solid #ddd;border-radius:6px;overflow:hidden;margin-bottom:1rem}.editor-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd;display:flex;justify-content:space-between;align-items:center}.editor-header .lang-tag{background:#C8102E;color:#fff;padding:.15rem .5rem;border-radius:3px;font-size:.75rem;font-weight:700}textarea#r-code{width:100%;min-height:320px;padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.85rem;border:none;outline:none;resize:vertical;background:#fafafa;color:#333;line-height:1.5;tab-size:2}.btn-row{display:flex;gap:.5rem;margin-bottom:1rem}.btn-run{padding:.5rem 1.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit;font-weight:700}.btn-run:hover{background:#9a0c23}.btn-run:disabled{background:#ccc;cursor:not-allowed}.btn-reset{padding:.5rem 1.5rem;background:#fff;color:#666;border:1px solid #ddd;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}.btn-reset:hover{background:#f5f5f5}.output-container{border:1px solid #ddd;border-radius:6px;overflow:hidden}.output-header{background:#f5f5f5;padding:.4rem 1rem;font-size:.8rem;color:#666;border-bottom:1px solid #ddd}#r-output{padding:.8rem 1rem;font-family:'Fira Code','Consolas',monospace;font-size:.82rem;background:#1e1e1e;color:#d4d4d4;min-height:120px;max-height:400px;overflow-y:auto;white-space:pre-wrap;word-break:break-word}#r-plot{text-align:center;padding:.5rem;background:#fff}#r-plot img,#r-plot canvas{max-width:100%;border-radius:4px}.info-box{margin-top:1rem;padding:.8rem;background:#f8f8f8;border:1px solid #eee;border-radius:4px;font-size:.8rem;color:#666;line-height:1.5}html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <div class="status-bar status-loading" id="status">Carregando WebR (~10s na primeira vez)...</div>
+  <div class="editor-container">
+    <div class="editor-header"><span>Edite o código e clique "Executar"</span><span class="lang-tag">R</span></div>
+    <textarea id="r-code">
+# Aversão ao Risco — Prêmio de Risco e Diversificação
+# Cap. 7: Incerteza
+
+# Parâmetros (altere!)
+W0      <- 100     # riqueza inicial
+perda   <- 40      # perda se sinistro
+prob    <- 0.3     # probabilidade do sinistro
+gamma   <- 0.5     # CRRA: u(W) = W^gamma / gamma (gamma < 1)
+
+# Função utilidade CRRA
+u <- function(W) W^gamma / gamma
+
+# Valor esperado e utilidade esperada
+EW  <- (1 - prob) * W0 + prob * (W0 - perda)
+EU  <- (1 - prob) * u(W0) + prob * u(W0 - perda)
+
+# Equivalente de certeza: u(EC) = EU => EC = (gamma * EU)^(1/gamma)
+EC  <- (gamma * EU)^(1 / gamma)
+PR  <- EW - EC  # prêmio de risco
+
+# Arrow-Pratt
+ARA <- (1 - gamma) / W0  # -u''/u' para CRRA
+RRA <- 1 - gamma          # constante!
+
+cat("=== Parâmetros ===\n")
+cat(sprintf("  W₀=%d, perda=%d, prob=%.1f, γ=%.2f\n\n", W0, perda, prob, gamma))
+cat("=== Resultados ===\n")
+cat(sprintf("  E[W]  = %.2f\n", EW))
+cat(sprintf("  E[U]  = %.4f\n", EU))
+cat(sprintf("  EC    = %.2f\n", EC))
+cat(sprintf("  Prêmio de risco = %.2f\n", PR))
+cat(sprintf("  ARA(W₀) = %.4f\n", ARA))
+cat(sprintf("  RRA = %.2f  (constante — por isso é CRRA)\n\n", RRA))
+
+# Preço justo do seguro
+premio_justo <- prob * perda
+cat(sprintf("  Prêmio atuarialmente justo = %.2f\n", premio_justo))
+cat(sprintf("  Disposto a pagar até: %.2f  (= E[W] - EC)\n", PR + premio_justo))
+
+# Gráfico
+W <- seq(10, 150, length.out = 300)
+plot(W, u(W), type = "l", col = "#C8102E", lwd = 2.5,
+     xlab = "Riqueza (W)", ylab = "u(W)",
+     main = sprintf("Aversão ao Risco — CRRA (γ = %.2f)", gamma))
+
+# Loteria
+segments(W0 - perda, u(W0 - perda), W0, u(W0),
+         col = "#aaa", lwd = 1.5, lty = 2)
+points(c(W0 - perda, W0), c(u(W0 - perda), u(W0)),
+       pch = 19, col = "#333", cex = 1.2)
+
+# E[W] e E[U]
+points(EW, EU, pch = 17, col = "#ff9800", cex = 1.5)
+text(EW + 3, EU, sprintf("E[W]=%.0f", EW), col = "#ff9800", cex = 0.8)
+
+# EC
+points(EC, EU, pch = 15, col = "#2a7f2a", cex = 1.5)
+text(EC - 5, EU + 0.3, sprintf("EC=%.1f", EC), col = "#2a7f2a", cex = 0.8)
+
+# Prêmio de risco
+arrows(EC, EU - 0.2, EW, EU - 0.2, code = 3, length = 0.08,
+       col = "#C8102E", lwd = 2)
+text((EC + EW)/2, EU - 0.8, sprintf("PR=%.1f", PR),
+     col = "#C8102E", font = 2, cex = 0.85)
+
+legend("bottomright",
+       legend = c("u(W) — CRRA", "Loteria", "E[W]", "EC"),
+       col = c("#C8102E", "#aaa", "#ff9800", "#2a7f2a"),
+       pch = c(NA, NA, 17, 15), lty = c(1, 2, NA, NA),
+       lwd = c(2.5, 1.5, NA, NA), cex = 0.8)
+</textarea>
+  </div>
+  <div class="btn-row">
+    <button class="btn-run" id="btn-run" onclick="runCode()" disabled>Executar (R)</button>
+    <button class="btn-reset" onclick="resetCode()">Restaurar código original</button>
+  </div>
+  <div class="output-container">
+    <div class="output-header">Saída do R</div>
+    <div id="r-output">Aguardando execução...</div>
+    <div id="r-plot"></div>
+  </div>
+  <div class="info-box">
+    <strong>WebR</strong> executa R no navegador. Altere <code>gamma</code>: valores próximos de 0 = muito avesso ao risco (curva muito côncava); próximo de 1 = quase neutro. Observe como o prêmio de risco muda.
+  </div>
+</div>
+<script type="module">
+  import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:520,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

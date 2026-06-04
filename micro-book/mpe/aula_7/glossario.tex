@@ -1,0 +1,244 @@
+\documentclass[11pt]{article}
+
+% ---------- Codificacao e idioma ----------
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+
+% ---------- Matematica ----------
+\usepackage{amsmath,amssymb}
+
+% ---------- Layout ----------
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage[most]{tcolorbox}
+\usepackage{array}
+
+% ---------- Cores Insper ----------
+\definecolor{insperred}{HTML}{C8102E}
+\definecolor{insperdark}{HTML}{9A0C23}
+\definecolor{azulbox}{HTML}{1B3A5C}
+\definecolor{papersoft}{HTML}{F7F7F5}
+
+% ---------- Hyperref ----------
+\usepackage[colorlinks=true,linkcolor=insperdark,urlcolor=insperdark]{hyperref}
+
+% ---------- Caixas ----------
+\newtcolorbox{intuibox}{
+  breakable, colback=insperred!6, colframe=insperred!55, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+\newtcolorbox{armadbox}{
+  breakable, colback=yellow!8, colframe=orange!70!black, boxrule=0.6pt,
+  arc=2pt, left=8pt, right=8pt, top=5pt, bottom=5pt}
+
+% ---------- Cabecalho de secao ----------
+\newcommand{\secao}[1]{%
+  \bigskip
+  {\color{insperred}\rule{\textwidth}{1.2pt}}\par
+  \nopagebreak
+  {\Large\bfseries\color{insperred} #1}\par
+  \nopagebreak
+  {\color{insperred}\rule{\textwidth}{0.4pt}}\par
+  \smallskip}
+
+% ---------- Entrada de glossario ----------
+\newcommand{\definicao}[1]{\par\medskip\noindent{\bfseries\color{insperdark}#1.}\ }
+
+\setlist[enumerate]{leftmargin=2.2em,itemsep=2pt,topsep=3pt}
+
+% ---------- Atalhos de notacao ----------
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\TMS}{\text{TMS}}
+\newcommand{\TMT}{\text{TMT}}
+\newcommand{\MEC}{\text{MEC}}
+\newcommand{\MCp}{\text{MC}_p}
+\newcommand{\MCs}{\text{MC}_s}
+
+\begin{document}
+
+% ===================== TITULO =====================
+\begin{center}
+  {\LARGE\bfseries\color{insperred} Aula 7 --- Glossário}\\[2pt]
+  {\large Externalidades e Bens Públicos: siglas e definições importantes}\\[4pt]
+  {\normalsize Microeconomia I \textbullet{} MPE 2026/32 \textbullet{} Insper \textbullet{} material do aluno}
+\end{center}
+\vspace{2pt}
+{\color{insperred!40}\hrule height 1pt}
+\vspace{4pt}
+
+\noindent\textit{Este glossário consolida toda a sigla e toda a definição formal que aparece no material da
+Aula~7 (pré-aula, aula presencial, exercícios resolvidos em sala e exercícios avaliativos). Use como
+referência rápida ao resolver os Avaliativos e ao revisar para a Avaliação Final.}
+
+% ===================== SIGLAS =====================
+\secao{Parte I --- Siglas}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{center}
+\begin{tabular}{>{\bfseries\color{insperdark}}p{2.2cm} p{4.8cm} p{8.0cm}}
+\multicolumn{1}{l}{\bfseries\color{insperred}Sigla} & \multicolumn{1}{l}{\bfseries\color{insperred}Por extenso} & \multicolumn{1}{l}{\bfseries\color{insperred}Em uma linha}\\
+\hline
+TBE & Teorema do Bem-Estar & 1\textordmasculine{}: equilíbrio competitivo $\Rightarrow$ Pareto-eficiente. 2\textordmasculine{}: todo ótimo de Pareto é descentralizável com transferências lump-sum. A Aula 7 estuda quando o 1\textordmasculine{} \emph{falha}.\\
+TMS & Taxa Marginal de Substituição & Quanto de um bem o agente troca por outro mantendo utilidade: $\TMS_{G,x}=u_G/u_x$.\\
+TMT & Taxa Marginal de Transformação & Quanto de um bem a economia sacrifica para produzir outro (inclinação da fronteira de produção).\\
+CPO & Condição de Primeira Ordem & Derivada igualada a zero (interior) ou com desigualdade (canto) no problema de otimização.\\
+$\MCp$ & Custo Marginal Privado & O custo marginal que o produtor \emph{enxerga} e usa na sua decisão.\\
+$\MCs$ & Custo Marginal Social & $\MCs=\MCp+\MEC$: o custo marginal que a \emph{sociedade} paga.\\
+MEC & Custo Externo Marginal & (\emph{Marginal External Cost}) Dano marginal imposto a terceiros, fora dos preços.\\
+MAC & Custo Marginal de Abatimento & (\emph{Marginal Abatement Cost}) Custo de reduzir 1 unidade de emissão; cap-and-trade eficiente iguala os MACs entre firmas.\\
+DWL & Perda de Peso Morto & (\emph{Deadweight Loss}) Excedente social destruído pela ineficiência; geometricamente, o triângulo de Harberger.\\
+VCG & Vickrey--Clarke--Groves & Família de mecanismos que torna a revelação verdadeira (fracamente) dominante sob quasi-linearidade.\\
+BBV & Bergstrom--Blume--Varian (1986) & Modelo canônico de provisão voluntária de bem público: em Nash, provisão concentrada nos maiores valoradores.\\
+AGV & d'Aspremont--Gérard-Varet (1979) & Mecanismo que balanceia orçamento relaxando dominância para Bayes-Nash. \emph{Citado, fora do escopo.}\\
+EU ETS & \emph{European Union Emissions Trading System} & Maior mercado de permissões de carbono do mundo; cap declinante, Fase 4 (2021--2030).\\
+CBio & Crédito de Descarbonização & Permissão negociável do RenovaBio (Lei 13.576/2017): $p_{\text{CBio}}$ faz o papel do $t^*$ de Pigou, descentralizado via mercado.\\
+N\&S & Nicholson \& Snyder (12\textordfeminine{} ed.) & Livro-texto de referência da disciplina (calibre-piso das questões).\\
+EG & Equilíbrio Geral & Todos os mercados simultaneamente (Aulas 4--6); a Aula 7 quebra suas hipóteses.\\
+\hline
+\end{tabular}
+\end{center}
+
+% ===================== DEFINICOES =====================
+\secao{Parte II --- Definições importantes}
+
+\definicao{Externalidade (tecnológica)}
+A ação de um agente afeta \emph{diretamente} a utilidade ou a tecnologia de outro, \textbf{fora do sistema
+de preços} --- a fumaça entra na função de utilidade do vizinho, não na sua restrição orçamentária. É a
+falha que quebra o 1\textordmasculine{} TBE. \emph{Negativa}: impõe custo (poluição). \emph{Positiva}:
+gera benefício não-pago (vacinação, P\&D).
+
+\begin{armadbox}
+\textbf{Não confundir com externalidade \emph{pecuniária}:} efeito transmitido \emph{via preços} (entro no
+mercado, o preço sobe, você paga mais). Pecuniária \textbf{não} gera ineficiência --- é o sistema de preços
+funcionando. Só a tecnológica justifica intervenção.
+\end{armadbox}
+
+\definicao{Custo marginal social}
+$\MCs(q)=\MCp(q)+\MEC(q)$. O mercado decide por $P=\MCp$; a eficiência exige $P=\MCs$. Com externalidade
+negativa, $\MCs>\MCp$ $\Rightarrow$ produção privada \textbf{excessiva} ($q^p>q^*$).
+
+\definicao{Imposto de Pigou}
+Taxa por unidade que internaliza a externalidade: $t^*=\MEC(q^*)$ --- a externalidade marginal
+\textbf{avaliada no ótimo social}, nunca no equilíbrio privado. Sob $t^*$, o produtor que maximiza lucro
+($P=\MCp+t^*$) escolhe exatamente $q^*$. O imposto não é punição: é \emph{o preço que faltava}.
+
+\definicao{Triângulo de Harberger (DWL)}
+A perda de bem-estar do equilíbrio ineficiente: área entre $\MCs$ e a demanda $P(q)$ no intervalo
+$[q^*,q^p]$. Com curvas lineares, $\text{DWL}=\tfrac12\,(q^p-q^*)\times(\text{hiato }\MCs-P\text{ em }q^p)$.
+
+\definicao{Teorema de Coase}
+Se (i) os direitos de propriedade são \textbf{bem-definidos}, (ii) os custos de transação são
+\textbf{nulos} e (iii) não há efeito-renda relevante, a barganha privada atinge a alocação eficiente
+$q^*$ \textbf{independentemente} de quem detém o direito inicial. A atribuição do direito muda apenas a
+\emph{distribuição} (quem paga quem), não a \emph{alocação}. Com custos de transação positivos, a
+atribuição inicial volta a importar --- e é aí que o desenho institucional decide.
+
+\definicao{Cap-and-trade}
+O regulador fixa um teto agregado de emissões (\emph{cap}), emite permissões negociáveis e deixa o mercado
+precificá-las. Em equilíbrio competitivo, cada firma abate até $\text{MAC}_j=\lambda$ (preço da permissão):
+o custo marginal de abatimento se \textbf{equaliza} entre firmas, minimizando o custo total de atingir o cap.
+Equivalente a Pigou em quantidade (fixa $Q$, o preço emerge) vs.\ Pigou em preço (fixa $t$, a quantidade
+emerge) --- sob certeza e informação completa, mesmos resultados.
+
+\definicao{Bem público puro}
+Bem \textbf{não-rival} (o consumo de um não reduz o do outro) e \textbf{não-excludente} (não dá para
+impedir o acesso de quem não paga). A taxonomia completa:
+
+\begin{center}
+\begin{tabular}{l|cc}
+ & \textbf{Excludente} & \textbf{Não-excludente}\\
+\hline
+\textbf{Rival} & bem privado (pão) & recurso comum (pesca, pasto)\\
+\textbf{Não-rival} & bem de clube (streaming) & bem público puro (defesa, farol)\\
+\end{tabular}
+\end{center}
+
+\definicao{Condição de Samuelson}
+Provisão eficiente de bem público exige
+\[
+  \sum_{i=1}^{I}\TMS^i_{G,x}=\TMT_{G,x}.
+\]
+É a \textbf{soma vertical} das valorações marginais: como $G$ é não-rival, a mesma unidade serve a todos,
+e o valor social marginal é a soma --- não cada $\TMS^i$ igual à $\TMT$ (essa é a regra de bem
+\emph{privado}, soma horizontal de demandas).
+
+\definicao{Free-rider (carona)}
+Como ninguém pode ser excluído de $G$, cada agente prefere que \emph{os outros} paguem. Na provisão
+voluntária (equilíbrio de Nash do modelo BBV), o resultado é \textbf{subprovisão}: $G^N<G^*$, com a
+contribuição concentrada nos maiores valoradores --- no caso extremo de canto, o maior valorador banca
+tudo e os demais contribuem zero.
+
+\definicao{Provisão voluntária (equilíbrio de Nash)}
+Cada $i$ escolhe $g^i\ge0$ dado o que os outros dão, com $G=\sum_i g^i$. A CPO privada usa só a
+\emph{própria} $\TMS$: $\TMS^i=\TMT$ para quem contribui (interior), $\TMS^i<\TMT$ com $g^i=0$ (canto).
+A valoração dos demais nunca entra na conta --- por isso falta bem público.
+
+\definicao{Equilíbrio de Lindahl}
+Preços \textbf{personalizados} $\tau^i$ por unidade do bem público, com cada agente \emph{tomando $\tau^i$
+como dado} (price-taking). Em equilíbrio, todos demandam o \emph{mesmo} $G^*$ e
+\[
+  \sum_i \tau^i=\TMT,
+\]
+de modo que a condição de Samuelson vale: quem valoriza mais, paga mais. Descentraliza o ótimo --- mas
+exige que cada um \emph{revele} sua valoração com verdade, o que é estrategicamente problemático
+(free-rider de revelação).
+
+\definicao{Quasi-linearidade}
+Preferências da forma $u^i=x^i+v^i(G)$ (numerário entra linearmente): a renda não afeta a demanda pelo
+bem não-numerário (\textbf{sem efeito-renda}). É a hipótese que faz transferências e valorações serem
+comparáveis em dinheiro --- e que sustenta o argumento de incentivo do VCG.
+
+\definicao{Mecanismo VCG (pivot de Clarke)}
+Cada agente reporta sua valoração líquida $\hat n^i$; o mecanismo escolhe
+$d^*=\arg\max_d\sum_i\hat n^i(d)$ e cobra
+\[
+  t^i=\underbrace{\max_d\sum_{j\ne i}\hat n^j(d)}_{h^i\ \text{(não depende do report de }i\text{)}}
+  -\sum_{j\ne i}\hat n^j(d^*).
+\]
+Só paga quem é \textbf{pivô} --- quem \emph{vira} a decisão --- e paga exatamente o dano externo que impõe
+aos demais.
+
+\definicao{Agente pivô}
+$i$ é pivô se a decisão eficiente \emph{sem} $i$ difere da decisão eficiente \emph{com} $i$. Não-pivôs
+pagam $t^i=0$.
+
+\definicao{Verdade (fracamente) dominante}
+No VCG, reportar $\hat n^i=n^i$ é \textbf{fracamente dominante}: nenhum desvio melhora a utilidade de $i$,
+qualquer que seja o report dos outros --- desvios que não mudam a decisão são inócuos; o desvio que vira
+a decisão estritamente piora. Razão: $h^i$ não depende do report de $i$, então maximizar a utilidade
+privada equivale a maximizar o critério social.
+
+\definicao{Orçamento (não-)balanceado e Green--Laffont}
+O VCG arrecada $\sum_i t^i\ge0$ em geral \emph{estritamente} positivo: o superávit não pode ser devolvido
+aos agentes sem destruir os incentivos. \textbf{Green--Laffont (1979)}: nenhum mecanismo combina, para
+preferências gerais, (i) decisão eficiente, (ii) verdade dominante e (iii) orçamento balanceado. Não há
+almoço grátis completo --- AGV recupera o balanço pagando com um conceito de equilíbrio mais fraco
+(Bayes-Nash).
+
+\definicao{Tragédia dos comuns}
+Recurso \textbf{rival e não-excludente} (quadrante restante da taxonomia): cada usuário ignora o custo
+que seu uso impõe aos demais $\Rightarrow$ \textbf{sobre-uso} em equilíbrio (espelho da subprovisão do
+bem público). Soluções: privatizar (Coase), taxar (Pigou), cotas negociáveis (cap-and-trade) --- ou
+\textbf{governança comunitária} (Ostrom, Nobel 2009): regras locais de monitoramento e sanção graduada,
+a ``quarta via'' documentada empiricamente.
+
+% ===================== MAPA =====================
+\secao{Parte III --- O mapa em 30 segundos}
+
+\begin{intuibox}
+\textbf{Um fio só.} O 1\textordmasculine{} TBE falha quando a interação foge dos preços
+(\textbf{externalidade}) ou quando o bem é não-rival e não-excludente (\textbf{bem público}).
+Para externalidades: \textbf{Pigou} recria o preço via taxa; \textbf{Coase} deixa os privados barganharem;
+\textbf{cap-and-trade} cria o mercado que faltava. Para bens públicos: \textbf{Samuelson} dá a regra de
+eficiência (soma vertical); o \textbf{free-rider} explica por que o mercado falha; \textbf{Lindahl}
+descentraliza com preços pessoais, mas esbarra na revelação; \textbf{VCG} extrai a verdade --- pagando o
+preço do desbalanço (\textbf{Green--Laffont}). Quando a informação é privada e o planejador não a tem,
+entramos no território da \textbf{Aula~8}: seleção adversa e desenho de mecanismos sob informação
+assimétrica.
+\end{intuibox}
+
+\end{document}

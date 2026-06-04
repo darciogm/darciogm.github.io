@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--
+  Mercado de Carbono — Equilibrio com N Firmas
+  Library: Plotly.js
+  Chapter 24 — Microeconomia
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercado de Carbono — Equilibrio</title>
+  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] },
+      options: { enableMenu: false }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'CMU Serif', Georgia, serif; background: #fff; color: #333; padding: 1rem; }
+    .graph-container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; justify-content: center; }
+    #plotly-chart { flex: 1 1 420px; max-width: 520px; height: 420px; border: 1px solid #ddd; border-radius: 6px; }
+    .controls { flex: 0 1 280px; padding: 1rem; background: #f8f8f8; border-radius: 6px; border: 1px solid #eee; }
+    .controls h3 { font-size: 0.95rem; color: #C8102E; margin-bottom: 0.8rem; border-bottom: 1px solid #ddd; padding-bottom: 0.4rem; }
+    .slider-group { margin-bottom: 0.6rem; }
+    .slider-group label { display: flex; justify-content: space-between; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .slider-group label .val { font-weight: 700; color: #C8102E; }
+    input[type="range"] { width: 100%; accent-color: #C8102E; }
+    .info-box { margin-top: 0.8rem; padding: 0.8rem; background: #fff; border: 1px solid #ddd; border-radius: 4px; font-size: 0.82rem; line-height: 1.6; }
+    .btn-reset { display: block; width: 100%; margin-top: 0.8rem; padding: 0.5rem; background: #C8102E; color: #fff; border: none; border-radius: 4px; cursor: pointer; font-size: 0.85rem; font-family: inherit; }
+    .btn-reset:hover { background: #9a0c23; }
+    @media (max-width: 860px) {
+      .graph-container { flex-direction: column; align-items: center; }
+      #plotly-chart { flex-basis: 100%; width: 100%; max-width: 520px; }
+      .controls { flex-basis: 100%; width: 100%; max-width: 520px; }
+    }
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="plotly-chart"></div>
+  <div class="controls">
+    <h3>Parametros</h3>
+    <div class="slider-group">
+      <label>Cap total (ton): <span class="val" id="val-cap">300</span></label>
+      <input type="range" id="slider-cap" min="50" max="500" step="10" value="300">
+    </div>
+    <div class="slider-group">
+      <label>Emissoes iniciais/firma: <span class="val" id="val-e0">100</span></label>
+      <input type="range" id="slider-e0" min="50" max="150" step="10" value="100">
+    </div>
+    <div class="slider-group">
+      <label>Numero de firmas \(N\): <span class="val" id="val-N">5</span></label>
+      <input type="range" id="slider-N" min="2" max="8" step="1" value="5">
+    </div>
+    <div class="info-box" id="info"></div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+
+<script>
+  // N firms with different marginal abatement costs
+  // Firm i: MAC_i(a_i) = c_i * a_i, where c_i varies
+  // c_i values: firm 1 is cheapest, firm N is most expensive
+  var firmColors = ['#1565c0', '#00897b', '#C8102E', '#f57c00', '#7b1fa2', '#d32f2f', '#0277bd', '#558b2f'];
+  var firmNames = ['Firma A', 'Firma B', 'Firma C', 'Firma D', 'Firma E', 'Firma F', 'Firma G', 'Firma H'];
+
+  // Cost coefficients: increasing from cheap to expensive
+  var baseCoeffs = [1.0, 1.5, 2.5, 3.5, 5.0, 6.5, 8.0, 10.0];
+
+  function getState() {
+    return {
+      capTotal: parseFloat(document.getElementById('slider-cap').value),
+      e0: parseFloat(document.getElementById('slider-e0').value),
+      N: parseInt(document.getElementById('slider-N').value)
+    };
+  }
+
+  function solve(s) {
+    var coeffs = baseCoeffs.slice(0, s.N);
+    var totalEmissions = s.e0 * s.N;
+    var totalAbatement = totalEmissions - s.capTotal;
+
+    if (totalAbatement <= 0) {
+      // No abatement needed
+      return {
+        permitPrice: 0,
+        abatements: new Array(s.N).fill(0),
+        emissions: new Array(s.N).fill(s.e0),
+        coeffs: coeffs,
+        totalAbatement: 0,
+        costOptimal: 0,
+        costUniform: 0,
+        savings: 0
+      };
+    }
+
+    // Optimal allocation: MAC_i = p_E for all i
+    // c_i * a_i = p_E => a_i = p_E / c_i
+    // Sum a_i = A => p_E * sum(1/c_i) = A => p_E = A / sum(1/c_i)
+    var sumInvC = coeffs.reduce(function(s, c) { return s + 1/c; }, 0);
+    var pE = totalAbatement / sumInvC;
+
+    var abatements = coeffs.map(function(c) { return pE / c; });
+    var emissions = abatements.map(function(a) { return s.e0 - a; });
+
+    // Cost of optimal allocation: sum of integral of c_i * a from 0 to a_i = sum of c_i * a_i^2 / 2
+    var costOptimal = 0;
+    for (var i = 0; i < s.N; i++) {
+      costOptimal += coeffs[i] * abatements[i] * abatements[i] / 2;
+    }
+
+    // Cost of uniform regulation: each firm abates A/N
+    var uniformA = totalAbatement / s.N;
+    var costUniform = 0;
+    for (var i = 0; i < s.N; i++) {
+      costUniform += coeffs[i] * uniformA * uniformA / 2;
+    }
+
+    return {
+      permitPrice: pE,
+      abatements: abatements,
+      emissions: emissions,
+      coeffs: coeffs,
+      totalAbatement: totalAbatement,
+      costOptimal: costOptimal,
+      costUniform: costUniform,
+      savings: costUniform - costOptimal
+    };
+  }
+
+  function update() {
+    var s = getState();
+    document.getElementById('val-cap').textContent = s.capTotal.toFixed(0);
+    document.getElementById('val-e0').textContent = s.e0.toFixed(0);
+    document.getElementById('val-N').textContent = s.N;
+
+    var sol = solve(s);
+    var traces = [];
+
+    // Aggregate MAC curve: sorted by cost, cumulative abatement
+    // Build step function: cheapest firm first
+    var sorted = [];
+    for (var i = 0; i < s.N; i++) {
+      sorted.push({ idx: i, coeff: sol.coeffs[i], abat: sol.abatements[i] });
+    }
+    sorted.sort(function(a, b) { return a.coeff - b.coeff; });
+
+    // Build aggregate MAC as continuous piecewise
+    var aggQ = [0], aggP = [0];
+    var cumA = 0;
+    for (var i = 0; i < sorted.length; i++) {
+      var maxA = s.e0; // max abatement per firm
+      var maxMAC = sorted[i].coeff * maxA;
+      // This firm contributes from cumA to cumA + maxA
+      aggQ.push(cumA); aggP.push(sorted[i].coeff * 0);
+      aggQ.push(cumA + maxA); aggP.push(maxMAC);
+      cumA += maxA;
+    }
+
+    // Actually, aggregate MAC: at price p, total abatement = sum of p/c_i (capped at e0)
+    // Build as function
+    var maxP = sol.coeffs[s.N - 1] * s.e0;
+    var nPts = 200;
+    var aggAbat = [], aggPrice = [];
+    for (var j = 0; j <= nPts; j++) {
+      var p = maxP * j / nPts;
+      var totalA = 0;
+      for (var i = 0; i < s.N; i++) {
+        totalA += Math.min(p / sol.coeffs[i], s.e0);
+      }
+      aggAbat.push(totalA);
+      aggPrice.push(p);
+    }
+
+    traces.push({
+      x: aggAbat, y: aggPrice,
+      mode: 'lines', name: 'CMgA agregado',
+      line: { color: '#333', width: 2.5 }
+    });
+
+    // Permit price line
+    if (sol.permitPrice > 0) {
+      traces.push({
+        x: [0, s.e0 * s.N], y: [sol.permitPrice, sol.permitPrice],
+        mode: 'lines', name: 'Preco permissao (p_E)',
+        line: { color: '#C8102E', width: 2, dash: 'dash' }
+      });
+
+      // Abatement point
+      traces.push({
+        x: [sol.totalAbatement], y: [sol.permitPrice],
+        mode: 'markers', name: 'Equilibrio',
+        marker: { size: 10, color: '#C8102E', symbol: 'diamond' },
+        showlegend: false
+      });
+    }
+
+    // Individual firm abatements as bar-like markers
+    var firmAbats = [], firmPrices = [], firmLabels = [], firmClrs = [];
+    for (var i = 0; i < s.N; i++) {
+      firmAbats.push(sol.abatements[i]);
+      firmPrices.push(sol.coeffs[i] * sol.abatements[i]); // MAC at their abatement level
+      firmLabels.push(firmNames[i] + ': ' + sol.abatements[i].toFixed(1) + ' ton');
+      firmClrs.push(firmColors[i]);
+    }
+
+    traces.push({
+      x: firmAbats, y: firmPrices,
+      mode: 'markers', name: 'Abatimento por firma',
+      marker: { size: 8, color: firmClrs, symbol: 'circle' },
+      text: firmLabels,
+      hoverinfo: 'text'
+    });
+
+    // Uniform regulation line
+    if (sol.totalAbatement > 0) {
+      var uniformA = sol.totalAbatement / s.N;
+      traces.push({
+        x: [uniformA * s.N, uniformA * s.N], y: [0, maxP * 0.8],
+        mode: 'lines', name: 'Reg. uniforme (total)',
+        line: { color: '#666', width: 1.5, dash: 'dot' }
+      });
+    }
+
+    var layout = {
+      margin: { t: 30, r: 20, b: 50, l: 55 },
+      xaxis: { title: 'Abatimento total (ton)', rangemode: 'tozero' },
+      yaxis: { title: 'Custo Mg Abatimento ($/ton)', rangemode: 'tozero' },
+      legend: { x: 0.02, y: 0.98, bgcolor: 'rgba(255,255,255,0.85)', font: { size: 10 } },
+      font: { family: 'CMU Serif, Georgia, serif', size: 12 },
+      plot_bgcolor: '#fff',
+      paper_bgcolor: '#fff'
+    };
+
+    Plotly.react('plotly-chart', traces, layout, { responsive: true, displayModeBar: false });
+
+    // Info box
+    var html = '<div style="text-align:center;font-weight:600;color:#C8102E;">Equilibrio do Mercado</div>';
+    html += '<div style="margin-top:0.4rem;">';
+    html += 'Emissoes iniciais: ' + (s.e0 * s.N) + ' ton<br>';
+    html += 'Cap: ' + s.capTotal + ' ton<br>';
+    html += 'Abatimento necessario: ' + sol.totalAbatement.toFixed(0) + ' ton<br>';
+    html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+
+    if (sol.permitPrice > 0) {
+      html += 'Preco permissao \\(p_E\\): <b style="color:#C8102E;">$' + sol.permitPrice.toFixed(1) + '</b>/ton<br>';
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      for (var i = 0; i < s.N; i++) {
+        var color = firmColors[i];
+        html += '<span style="color:' + color + ';">' + firmNames[i] + '</span>: abate ' + sol.abatements[i].toFixed(1) + ', emite ' + sol.emissions[i].toFixed(1) + '<br>';
+      }
+      html += '<hr style="margin:0.3rem 0;border-color:#eee;">';
+      html += 'Custo cap-and-trade: $' + sol.costOptimal.toFixed(0) + '<br>';
+      html += 'Custo reg. uniforme: $' + sol.costUniform.toFixed(0) + '<br>';
+      html += '<b style="color:#00897b;">Economia: $' + sol.savings.toFixed(0) + ' (' + (sol.savings / sol.costUniform * 100).toFixed(0) + '%)</b>';
+    } else {
+      html += '<b style="color:#00897b;">Cap nao vinculante — sem abatimento necessario.</b>';
+    }
+    html += '</div>';
+
+    document.getElementById('info').innerHTML = html;
+    if (window.MathJax && MathJax.typeset) MathJax.typeset();
+  }
+
+  function resetAll() {
+    document.getElementById('slider-cap').value = 300;
+    document.getElementById('slider-e0').value = 100;
+    document.getElementById('slider-N').value = 5;
+    update();
+  }
+
+  ['slider-cap','slider-e0','slider-N'].forEach(function(id) {
+    document.getElementById(id).addEventListener('input', update);
+  });
+  update();
+</script>
+</body>
+</html>

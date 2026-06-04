@@ -1,0 +1,325 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 10 — Decomposição de Hicks: Teoria"
+author: "Prof. Darcio Genicolo Martins"
+date: "Excedente, VC, VE e Princípio Lump Sum"
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    controls: true
+    controlsTutorial: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Roteiro da Aula {data-background-color="#E50505"}
+
+## Onde Estamos
+
+Na aula anterior, construímos o **arsenal dual**:
+
+| Ferramenta | Símbolo | Origem |
+|:-----------|:--------|:-------|
+| Utilidade indireta | $V(\mathbf{p}, m)$ | Primal |
+| Função dispêndio | $E(\mathbf{p}, \bar{u})$ | Dual |
+| Roy | $V \to x_i^*$ | Primal |
+| Shephard | $E \to h_i$ | Dual |
+
+. . .
+
+**Hoje:** usamos esse arsenal para medir **bem-estar em reais** --- e comparar políticas públicas.
+
+## Excedente do Consumidor {data-background-color="#E50505"}
+
+## O Lucro Invisível do Comprador
+
+O **excedente do consumidor** (EC) mede o ganho líquido de participar do mercado:
+
+::: {.eq-highlight}
+$$EC = \int_0^{x^*} p(x)\, dx \;-\; p^* \cdot x^*$$
+:::
+
+. . .
+
+**Interpretação:** diferença entre o que o consumidor estaria **disposto a pagar** e o que **efetivamente paga**.
+
+. . .
+
+:::{.callout-note title="Limitação"}
+O EC marshalliano usa a curva de demanda marshalliana, que mistura efeito substituição e efeito renda. Para medidas **exatas**, precisamos das hicksianas.
+:::
+
+## Variação Compensatória (VC)
+
+::: {.eq-highlight}
+$$VC = E(\mathbf{p}^1, U_0) - E(\mathbf{p}^0, U_0) = E(\mathbf{p}^1, U_0) - m$$
+:::
+
+. . .
+
+**Pergunta que a VC responde:**
+
+> "Quanto dinheiro preciso **dar** (ou **tirar**) do consumidor, **após** a mudança de preço, para que ele volte ao nível de utilidade **original** $U_0$?"
+
+. . .
+
+- Usa a hicksiana avaliada na utilidade **inicial**.
+- Geometricamente: área à esquerda da hicksiana de $U_0$ entre $p_0$ e $p_1$.
+
+## Variação Equivalente (VE)
+
+::: {.eq-highlight}
+$$VE = E(\mathbf{p}^1, U_1) - E(\mathbf{p}^0, U_1) = m - E(\mathbf{p}^0, U_1)$$
+:::
+
+. . .
+
+**Pergunta que a VE responde:**
+
+> "Quanto o consumidor estaria disposto a **pagar** (ou **receber**), **antes** da mudança, para ficar tão bem quanto ficaria **depois**?"
+
+. . .
+
+- Usa a hicksiana avaliada na utilidade **final**.
+- Geometricamente: área à esquerda da hicksiana de $U_1$ entre $p_0$ e $p_1$.
+
+## Relação VC, EC e VE {.smaller}
+
+Para uma **queda de preço** de um bem **normal**:
+
+::: {.eq-highlight}
+$$VC < EC < VE$$
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Por que a ordenação?**
+
+- VC usa hicksiana de $U_0$ (mais baixa $\Rightarrow$ mais inclinada)
+- VE usa hicksiana de $U_1$ (mais alta $\Rightarrow$ menos inclinada)
+- EC usa marshalliana (fica "entre" as duas)
+:::
+::: {.column width="50%"}
+**Quando as três coincidem?**
+
+- Utilidade **quase-linear**: $u = v(x_1) + x_2$
+- Efeito renda sobre $x_1$ = 0
+- Hicksiana = marshalliana
+- $VC = EC = VE$
+:::
+::::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A VC pergunta "quanto compensa a perda?"; a VE pergunta "quanto você pagaria para evitar a perda?" --- dois ângulos da mesma mudança.
+:::
+
+## Excedente do Consumidor --- Interativo
+
+<iframe src="graficos/cap05/excedente-consumidor.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="EC, VC e VE"></iframe>
+
+## Demandas Marshalliana e Hicksiana --- Interativo
+
+<iframe src="graficos/cap05/demanda-marshalliana-hicksiana.html" title="Comparando Demandas: Marshalliana e Hicksiana" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Exercício: Quase-Linear {.smaller}
+
+**Dados:** $U = 2\sqrt{x} + y$, $p_y = 1$, $m = 10$, $p_x$ sobe de 1 para 4.
+
+. . .
+
+**Demanda:** $x = 1/p_x^2$ $\Rightarrow$ $x_0 = 1$, $x_1 = 1/16$
+
+**Dispendio:** $E = \bar{U} - 1/p_x$
+
+. . .
+
+$$VC = E(4, U_0) - 10 = (11 - 0{,}25) - 10 = 0{,}75$$
+
+$$VE = 10 - E(1, U_1) = 10 - (10{,}25 - 1) = 0{,}75$$
+
+$$\Delta EC = \int_1^4 \frac{1}{p^2}\,dp = 1 - 0{,}25 = 0{,}75$$
+
+. . .
+
+:::{.callout-note title="Resultado"}
+$VC = VE = \Delta EC = 0{,}75$ --- as três medidas coincidem porque a utilidade é quase-linear (efeito renda zero).
+:::
+
+## Princípio Lump Sum {data-background-color="#E50505"}
+
+## Por Que Imposto Distorce
+
+:::{.callout-warning title="Proposição"}
+Um imposto sobre a renda (*lump sum*) que arrecada a **mesma receita** que um imposto específico deixa o consumidor em utilidade **pelo menos tão alta**.
+:::
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+**Imposto específico**
+
+- Altera razão de preços $p_1/p_2$
+- **Rotaciona** a reta orçamentária
+- Distorce a escolha
+:::
+::: {.column width="50%"}
+**Lump sum (mesma receita)**
+
+- Preserva preços relativos
+- **Desloca** a reta paralelamente
+- Permite realocação livre
+:::
+::::
+
+. . .
+
+A cesta escolhida sob o imposto específico é **acessível** sob o lump sum, mas não é ótima --- logo o lump sum gera utilidade $\geq$.
+
+## Princípio Lump Sum --- Interativo
+
+<iframe src="graficos/cap04/lump-sum-principle.html" width="1100" height="550" style="border:none;margin:0 auto;display:block;" title="Princípio Lump Sum"></iframe>
+
+## Exemplo Numérico {.smaller}
+
+**Dados:** $u = x_1^{0,5}x_2^{0,5}$, $p_1=10$, $p_2=5$, $m=200$, imposto $t=10$ sobre bem 1.
+
+. . .
+
+| Cenário | $x_1$ | $x_2$ | Utilidade |
+|:--------|:------:|:------:|:---------:|
+| Sem imposto | 10 | 20 | $\sqrt{200} \approx 14{,}14$ |
+| Imposto específico ($p_1'=20$) | 5 | 20 | $\sqrt{100} = 10{,}00$ |
+| Lump sum ($R = 50$, $m'=150$) | 7,5 | 15 | $\sqrt{112{,}5} \approx 10{,}61$ |
+
+. . .
+
+:::{.callout-tip title="Resultado"}
+$V_{lump} \approx 10{,}61 > V_{esp} = 10{,}00$. O lump sum gera utilidade **6,1% maior** com a mesma receita.
+:::
+
+## Aplicação: Subsídio ao Gás no Brasil
+
+:::: {.columns}
+::: {.column width="55%"}
+**Antes (subsídio ao preço):**
+
+- Governo subsidiava preço do GLP
+- Beneficiava **todos** (inclusive alta renda)
+- Distorcia preço relativo gás vs. outras energias
+
+**Depois (Auxílio Gás, 2021):**
+
+- Transferência monetária direta
+- Focalizada no Cadastro Único
+- 5,6 milhões de famílias (2023)
+:::
+::: {.column width="45%"}
+:::{.callout-note title="Conexão com a Teoria"}
+A mudança vai na direção do princípio lump sum: preserva preços relativos e permite alocação livre.
+:::
+:::
+::::
+
+## Quando Usar Qual Medida?
+
+| Medida | Pergunta | Base | Uso típico |
+|:-------|:---------|:-----|:-----------|
+| **VC** | Quanto compensar? | Hicksiana de $U_0$ | Aceitar mudança |
+| **VE** | Quanto pagaria? | Hicksiana de $U_1$ | Obter mudança |
+| **EC** | Aproximação prática | Marshalliana | Política pública |
+
+. . .
+
+:::{.callout-tip title="Regra Prática"}
+Se o bem representa parcela **pequena** do orçamento, o efeito renda é negligível e $EC \approx VC \approx VE$.
+:::
+
+## JSXGraph --- VC vs VE com Cobb-Douglas
+
+<div id="graph-a22-vcve" style="width:700px;height:340px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>$p_1^0$: <input type="range" id="sl-a22-p0" min="1" max="10" value="2" step="0.5" oninput="updA22()"> <span id="val-a22-p0">2.0</span></label>
+  <label>$p_1^1$: <input type="range" id="sl-a22-p1" min="1" max="10" value="6" step="0.5" oninput="updA22()"> <span id="val-a22-p1">6.0</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a22-vcve',{
+    boundingbox:[-0.5,110,11,-10], axis:true, showCopyright:false, showNavigation:false,
+    defaultAxes:{x:{name:'p\u2081',withLabel:true,label:{position:'rt',offset:[-10,15],fontSize:12}},
+                 y:{name:'R$',withLabel:true,label:{position:'rt',offset:[15,-5],fontSize:12}}}
+  });
+  var m=100, a=0.5, p2=1;
+  var cMarsh, cHick0, cHick1, areaVC, areaVE, areaEC;
+  function marsh(p){ return a*m/p; }
+  function V(p){ return Math.pow(a/p,a)*Math.pow((1-a)/p2,1-a)*m; }
+  function E(p,u){ return Math.pow(p/a,a)*Math.pow(p2/(1-a),1-a)*u; }
+  function hick(p,u){ return (1-a)*Math.pow(a/(1-a),1-a)*Math.pow(p2/p,1-a)*u/(p2); }
+  function draw(){
+    brd.suspendUpdate();
+    if(cMarsh) brd.removeObject(cMarsh);
+    if(cHick0) brd.removeObject(cHick0);
+    if(cHick1) brd.removeObject(cHick1);
+    var p0=parseFloat(document.getElementById('sl-a22-p0').value);
+    var p1=parseFloat(document.getElementById('sl-a22-p1').value);
+    var u0 = V(p0), u1 = V(p1);
+    cMarsh = brd.create('functiongraph',[function(p){return marsh(p);},0.5,10],
+      {strokeColor:'#333',strokeWidth:3,name:'Marsh.',withLabel:true,label:{fontSize:11,offset:[5,10]}});
+    cHick0 = brd.create('functiongraph',[function(p){return hick(p,u0);},0.5,10],
+      {strokeColor:'#E50505',strokeWidth:2,dash:2,name:'h(U\u2080)',withLabel:true,label:{fontSize:11,offset:[5,-15]}});
+    cHick1 = brd.create('functiongraph',[function(p){return hick(p,u1);},0.5,10],
+      {strokeColor:'#1A56DB',strokeWidth:2,dash:2,name:'h(U\u2081)',withLabel:true,label:{fontSize:11,offset:[5,10]}});
+    brd.unsuspendUpdate();
+  }
+  draw();
+  window.updA22 = function(){
+    document.getElementById('val-a22-p0').textContent = parseFloat(document.getElementById('sl-a22-p0').value).toFixed(1);
+    document.getElementById('val-a22-p1').textContent = parseFloat(document.getElementById('sl-a22-p1').value).toFixed(1);
+    draw();
+  };
+})();
+</script>
+
+## Síntese: Da Dualidade à Política Pública {data-background-color="#E50505"}
+
+## Takeaways
+
+1. **EC** é a régua prática; **VC** e **VE** são as medidas exatas de bem-estar.
+
+2. Para bem normal e queda de preço: $VC < EC < VE$. As três coincidem sob preferências quase-lineares.
+
+3. **Princípio lump sum:** transferências de renda dominam impostos específicos para mesma receita.
+
+4. **Aplicação:** Auxílio Gás no Brasil segue a lógica do lump sum.
+
+. . .
+
+**Próxima aula:** Equilíbrio parcial --- demanda de mercado, oferta, bem-estar e impostos.
+
+## {data-background-color="#E50505"}
+
+### Obrigado!
+
+Dúvidas? Material: insper.edu.br
+
+## {.disclaimer visibility="uncounted"}
+
+Qualquer gravação ou reprodução deste material não autorizada entra no Código de Ética do Insper e está sujeita às penalidades previstas por ele.

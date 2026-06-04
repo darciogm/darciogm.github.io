@@ -1,0 +1,336 @@
+% Miss Assistant — LaTeX Template for Print-Ready Textbook Sample
+% Based on LAYOUT.md specs: 17×24cm, Insper brand colors
+
+\documentclass[11pt,twoside,openright]{book}
+
+% === Page Geometry ===
+\usepackage[
+  paperwidth=17cm,
+  paperheight=24cm,
+  top=2.5cm,
+  bottom=2.5cm,
+  inner=3cm,
+  outer=2cm
+]{geometry}
+
+% === Language ===
+\usepackage[brazil]{babel}
+
+% === Fonts ===
+\usepackage{fontspec}
+\setmainfont{DejaVu Serif}
+\setsansfont{Inter}
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]
+
+% === Colors (from LAYOUT.md) ===
+\usepackage{xcolor}
+\definecolor{insper}{HTML}{C8102E}
+\definecolor{brasilgreen}{HTML}{2E7D32}
+\definecolor{brasilbg}{HTML}{E8F5E9}
+\definecolor{mundoblue}{HTML}{1B3A5C}
+\definecolor{mundobg}{HTML}{E3EBF2}
+\definecolor{exampurple}{HTML}{6A1B9A}
+\definecolor{exambg}{HTML}{F3E5F5}
+\definecolor{warnorange}{HTML}{E65100}
+\definecolor{warnbg}{HTML}{FFF3E0}
+\definecolor{defblue}{HTML}{1565C0}
+\definecolor{defbg}{HTML}{E3F2FD}
+\definecolor{tipgreen}{HTML}{43A047}
+\definecolor{tipbg}{HTML}{E8F5E9}
+\definecolor{gray}{HTML}{757575}
+\definecolor{graybg}{HTML}{F5F5F5}
+\definecolor{bodytext}{HTML}{333333}
+
+% === Math ===
+\usepackage{amsmath,amssymb,amsfonts,mathtools}
+\usepackage{unicode-math}
+
+% === Graphics ===
+\usepackage{graphicx}
+\usepackage{float}
+
+% === Tables ===
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+
+% === Boxes (tcolorbox) ===
+\usepackage[most]{tcolorbox}
+
+% Base box style
+\tcbset{
+  basebox/.style={
+    enhanced,
+    breakable,
+    left=8pt,
+    right=8pt,
+    top=6pt,
+    bottom=6pt,
+    boxrule=0pt,
+    frame hidden,
+    borderline west={3pt}{0pt}{#1},
+    fonttitle=\sffamily\bfseries\color{#1},
+    coltitle=#1,
+    colback=#1!5!white,
+    coltext=bodytext,
+    attach title to upper={\par\smallskip},
+    before upper={\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}},
+  }
+}
+
+% === Box environments ===
+
+% Definition
+\newtcolorbox{definitionbox}[1][]{
+  basebox=defblue,
+  title={#1},
+}
+
+% Theorem
+\newtcolorbox{theorembox}[1][]{
+  basebox=defblue,
+  title={#1},
+}
+
+% Proof
+\newtcolorbox{proofbox}[1][]{
+  basebox=gray,
+  title={#1},
+  colback=graybg,
+}
+
+% Intuição Econômica
+\newtcolorbox{intuitionbox}[1][]{
+  basebox=insper,
+  title={#1},
+  colback=insper!5!white,
+}
+
+% Tip
+\newtcolorbox{tipbox}[1][]{
+  basebox=tipgreen,
+  title={#1},
+  colback=tipbg,
+}
+
+% Note
+\newtcolorbox{notebox}[1][]{
+  basebox=defblue,
+  title={#1},
+  colback=defbg,
+}
+
+% Warning / Erro Comum
+\newtcolorbox{warningbox}[1][]{
+  basebox=warnorange,
+  title={#1},
+  colback=warnbg,
+}
+
+% Example
+\newtcolorbox{examplebox}[1][]{
+  basebox=exampurple,
+  title={#1},
+  colback=exambg,
+}
+
+% Success (answer)
+\newtcolorbox{successbox}[1][]{
+  basebox=tipgreen,
+  title={#1},
+  colback=tipbg,
+}
+
+% Info
+\newtcolorbox{infobox}[1][]{
+  basebox=defblue,
+  title={#1},
+  colback=defbg,
+}
+
+% Box Brasil
+\newtcolorbox{boxbrasilbox}[1][]{
+  basebox=brasilgreen,
+  title={#1},
+  colback=brasilbg,
+}
+
+% Box Mundo
+\newtcolorbox{boxmundobox}[1][]{
+  basebox=mundoblue,
+  title={#1},
+  colback=mundobg,
+}
+
+% Exercício Resolvido
+\newtcolorbox{exresolvidobox}[1][]{
+  basebox=exampurple,
+  title={#1},
+  colback=exambg,
+}
+
+% Classroom Activity
+\newtcolorbox{classroombox}[1][]{
+  basebox=insper,
+  title={#1},
+  colback=insper!5!white,
+}
+
+% Pesquisa em Ação
+\newtcolorbox{pesquisabox}[1][]{
+  basebox=mundoblue,
+  title={#1},
+  colback=mundobg,
+}
+
+% === Figure placeholder ===
+\newcommand{\figurePlaceholder}[1]{%
+  \begin{center}
+    \begin{tcolorbox}[
+      width=0.85\textwidth,
+      colback=graybg,
+      colframe=gray,
+      boxrule=0.5pt,
+      arc=2pt,
+      halign=center,
+      valign=center,
+      height=5cm
+    ]
+      \centering
+      \vfill
+      {\sffamily\color{gray}\large [Figura Interativa]}\\[6pt]
+      {\sffamily\small\color{gray} Versão interativa disponível online}\\[4pt]
+      {\ttfamily\tiny\color{gray} #1}
+      \vfill
+    \end{tcolorbox}
+  \end{center}
+}
+
+% === Headers and Footers ===
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\small\sffamily\textcolor{insper}{\leftmark}}
+\fancyhead[RO]{\small\sffamily\textcolor{insper}{\rightmark}}
+\fancyfoot[LE,RO]{\small\sffamily\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{insper}\leaders\hrule height \headrulewidth\hfill}}
+
+% Chapter pages: plain style
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\small\sffamily\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+% === Chapter Styling ===
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\sffamily\bfseries}
+  {\textcolor{insper}{\fontsize{48}{52}\selectfont\thechapter}}
+  {10pt}
+  {\fontsize{24}{28}\selectfont\textcolor{insper}}
+
+\titleformat{\section}
+  {\Large\sffamily\bfseries\color{insper!80!black}}
+  {\thesection}{0.8em}{}
+
+\titleformat{\subsection}
+  {\large\sffamily\bfseries\color{insper!60!black}}
+  {\thesubsection}{0.6em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\sffamily\bfseries\color{bodytext}}
+  {\thesubsubsection}{0.5em}{}
+
+% === Hyperlinks ===
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=insper,
+  urlcolor=mundoblue,
+  citecolor=brasilgreen,
+  pdfauthor={Darcio Genicolo Martins},
+  pdftitle={Microeconomia: Do Zero ao Equilíbrio (e Além) — Amostra},
+  pdflang={pt-BR},
+}
+
+% === Lists ===
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*}
+
+% === Body text color ===
+\color{bodytext}
+
+% === Line spacing ===
+\usepackage{setspace}
+\setstretch{1.2}
+
+% === Pandoc-specific ===
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% Fix for pandoc longtable counter 'none'
+\usepackage{caption}
+\DeclareCaptionType{none}[]{}
+
+% Allow pandoc code blocks
+$if(highlighting-macros)$
+$highlighting-macros$
+$endif$
+
+% === Document ===
+\begin{document}
+
+% ============ COVER PAGE ============
+\begin{titlepage}
+\begin{center}
+\vspace*{3cm}
+
+{\fontsize{32}{38}\selectfont\sffamily\bfseries\textcolor{insper}{Microeconomia}}
+
+\vspace{0.4cm}
+
+{\fontsize{16}{20}\selectfont\sffamily Do Zero ao Equilíbrio (e Além)}
+
+\vspace{2cm}
+
+{\Large\sffamily Capítulos Selecionados para Avaliação Editorial}
+
+\vspace{1.5cm}
+
+{\large\sffamily Prof. Darcio Genicolo Martins}
+
+{\normalsize\sffamily Insper — Instituto de Ensino e Pesquisa}
+
+\vspace{0.5cm}
+
+{\normalsize\sffamily São Paulo, Março de 2026}
+
+\vspace{3cm}
+
+\rule{0.4\textwidth}{0.5pt}
+
+\vspace{0.3cm}
+
+{\small\itshape Documento confidencial — para avaliação editorial}
+
+\vspace{1cm}
+
+{\small\sffamily Capítulos incluídos:}\\[6pt]
+{\small Cap.\ 3 — Mais É Melhor — Será?}\\
+{\small Cap.\ 15 — Sozinho, Feliz e Cobrando Caro}\\
+{\small Cap.\ 20 — Fumaça, Caronas e Tragédias}
+
+\end{center}
+\end{titlepage}
+
+% ============ TOC ============
+\tableofcontents
+\newpage
+
+% ============ CONTENT ============
+$body$
+
+\end{document}

@@ -1,0 +1,10 @@
+TF	Seleção adversa diz respeito a uma ação não observável.	false
+TF	Problemas morais dizem respeito a características não observáveis.	false
+TF	Quando empresas de seguros reúnem informações sobre demandantes de seguros, diz-se que elas estão fazendo screening.	true
+TF	Certificações de produtos são uma forma de reduzir o "problema dos limões" decorrente de seleção adversa.	true
+TF	Seguros com cobertura universal obrigatória podem ser uma forma de prevenir seleção adversa.	true
+TF	No modelo de Spence, se o custo de obter educação fosse idêntico para trabalhadores de alta e baixa produtividade, o equilíbrio separador ainda seria sustentável, pois bastaria que o tipo alto investisse mais.	false
+TF	O problema do moral hazard surge porque o agente toma ações não observáveis pelo principal após a celebração do contrato; se o esforço fosse observável e verificável, o primeiro melhor seria alcançável com salário fixo.	true
+TF	No modelo de Rothschild-Stiglitz, o equilíbrio de mercado competitivo com informação assimétrica é sempre do tipo pooling, em que ambos os tipos recebem o mesmo contrato.	false
+TF	O Princípio da Informatividade de Holmström (1979) implica que o contrato ótimo de incentivos deve incluir qualquer variável correlacionada com o esforço do agente, mesmo que essa variável seja um indicador imperfeito.	true
+TF	No equilíbrio separador do modelo de sinalização, o custo social da sinalização é zero, pois a informação é revelada e os salários correspondem às produtividades verdadeiras.	false

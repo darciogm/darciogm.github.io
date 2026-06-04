@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Maximização de Lucro: P = CMg</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}
+.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}
+.status-loading{background:#fff3cd;color:#856404}
+.status-ready{background:#d4edda;color:#155724}
+.status-error{background:#f8d7da;color:#721c24}
+textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}
+.btn-group{display:flex;gap:8px;margin:10px 0}
+button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}
+#btn-run{background:#0d6efd;color:#fff}
+#btn-run:hover{background:#0b5ed7}
+#btn-run:disabled{background:#6c757d;cursor:not-allowed}
+#btn-reset{background:#6c757d;color:#fff}
+#btn-reset:hover{background:#5a6268}
+#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}
+#r-plot{text-align:center;margin-top:8px}
+#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Maximizacao de Lucro: P = CMg
+# CT(q) = CF + a*q + b*q^2 + c*q^3
+# ============================================
+
+# --- Parametros (altere e re-execute!) ---
+CF <- 50       # custo fixo
+a  <- 2        # coef. linear
+b  <- 0.5      # coef. quadratico
+p  <- 12       # preco de mercado
+
+# --- Funcoes de custo ---
+CT   <- function(q) CF + a*q + b*q^2
+CV   <- function(q) a*q + b*q^2
+CMg  <- function(q) a + 2*b*q
+CMe  <- function(q) CF/q + a + b*q
+CVMe <- function(q) a + b*q
+
+# --- Quantidade otima: p = CMg ---
+q_star <- (p - a) / (2*b)
+
+# --- Verificacoes ---
+cso <- 2*b  # d(CMg)/dq = 2b > 0? (CSO)
+cvme_min <- a  # CVMe minimo (CVMe = a + bq, min em q -> 0+)
+cme_min_q <- sqrt(CF / b)
+cme_min <- CMe(cme_min_q)
+
+lucro <- p * q_star - CT(q_star)
+ep <- p * q_star - CV(q_star)  # excedente do produtor
+
+cat("====== MAXIMIZACAO DE LUCRO ======\n")
+cat("CT(q) =", CF, "+", a, "q +", b, "q^2\n")
+cat("Preco de mercado: p =", p, "\n\n")
+
+cat("--- CPO: p = CMg ---\n")
+cat("q* =", round(q_star, 2), "\n")
+cat("CMg(q*) =", round(CMg(q_star), 2), " = p =", p, " OK!\n\n")
+
+cat("--- CSO: CMg crescente? ---\n")
+cat("d(CMg)/dq =", cso)
+if (cso > 0) cat("  > 0 => MAXIMO confirmado\n\n") else cat("  <= 0 => CUIDADO!\n\n")
+
+cat("--- Decisao de operar ---\n")
+cat("CVMe_min =", round(cvme_min, 2), "\n")
+cat("p =", p, ifelse(p >= cvme_min, " >= CVMe_min => OPERAR", " < CVMe_min => FECHAR"), "\n\n")
+
+cat("--- Resultados ---\n")
+cat("RT = p*q* =", round(p * q_star, 2), "\n")
+cat("CT(q*) =", round(CT(q_star), 2), "\n")
+cat("Lucro =", round(lucro, 2), "\n")
+cat("Excedente do produtor = RT - CV =", round(ep, 2), "\n")
+
+if (lucro > 0) {
+  cat("\n=> LUCRO POSITIVO: p > CMe_min =", round(cme_min, 2), "\n")
+} else if (lucro == 0) {
+  cat("\n=> LUCRO ZERO (break-even)\n")
+} else {
+  cat("\n=> PREJUIZO, mas operar perde menos que fechar\n")
+  cat("   Se fechasse: lucro = -CF = -", CF, "\n")
+  cat("   Operando: lucro =", round(lucro, 2), " > -", CF, "\n")
+}
+
+# --- Grafico ---
+par(mar = c(4.5, 4.5, 3, 2), bg = "#f8f9fa")
+q_seq <- seq(0.1, q_star * 2.5, length = 500)
+
+plot(q_seq, CMg(q_seq), type = "l", lwd = 3, col = "#dc3545",
+     xlab = "q", ylab = "$/unidade",
+     main = paste0("Maximizacao de lucro: p = ", p),
+     ylim = c(0, max(CMe(q_seq[q_seq > 1])) * 1.2), cex.lab = 1.1)
+lines(q_seq, CMe(q_seq), lwd = 2, col = "#0d6efd")
+lines(q_seq, CVMe(q_seq), lwd = 2, col = "#198754", lty = 2)
+abline(h = p, col = "#fd7e14", lwd = 2, lty = 1)
+
+# Retangulo de lucro
+if (lucro > 0) {
+  rect(0, CMe(q_star), q_star, p, col = rgb(0.05, 0.43, 0.09, 0.15), border = NA)
+} else if (lucro < 0) {
+  rect(0, p, q_star, CMe(q_star), col = rgb(0.86, 0.21, 0.27, 0.15), border = NA)
+}
+
+# Ponto otimo
+points(q_star, p, pch = 19, col = "#dc3545", cex = 2)
+text(q_star, p, paste0("  q*=", round(q_star, 1), "\n  lucro=", round(lucro, 1)),
+     pos = 4, cex = 0.85, font = 2, col = "#dc3545")
+
+# Ponto de fechamento
+points(0.5, cvme_min, pch = 17, col = "#fd7e14", cex = 1.5)
+text(0.5, cvme_min, paste0("  Shutdown\n  p_min=", round(cvme_min, 1)),
+     pos = 4, cex = 0.75, col = "#fd7e14")
+
+legend("topright",
+       legend = c("CMg", "CMe", "CVMe", paste0("p = ", p)),
+       col = c("#dc3545", "#0d6efd", "#198754", "#fd7e14"),
+       lwd = c(3, 2, 2, 2), lty = c(1, 1, 2, 1),
+       cex = 0.8, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:620,height:420}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

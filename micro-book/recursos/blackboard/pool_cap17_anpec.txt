@@ -1,0 +1,15 @@
+TF	Se João está trabalhando um número de horas por dia tal que a utilidade marginal da renda é 4 e a utilidade marginal do lazer é 2, sendo que a taxa de salário é 2, então João está maximizando a sua utilidade.	false
+TF	A curva de oferta de trabalho de João é construída subtraindo de 24 (o número de horas de um dia) a demanda por lazer, para cada taxa de salário.	true
+TF	O efeito substituição tem de ser negativo: um aumento na taxa de salário leva João a escolher um número menor de horas de lazer e um número maior de horas de trabalho.	true
+TF	Se lazer é um bem normal para João, o efeito substituição e o efeito renda atuam em direções opostas. O efeito que vai predominar dependerá do tamanho relativo dos dois efeitos.	true
+TF	Se João considerar lazer como um bem inferior, o seu efeito substituição e o seu efeito renda atuam na mesma direção, de tal forma que uma elevação no salário reduzirá suas horas de lazer.	true
+TF	A demanda de um setor por determinado insumo é a soma horizontal das demandas desse insumo por todas as empresas do setor.	false
+TF	A curva de oferta de trabalho pode apresentar um trecho com inclinação negativa se o efeito-renda associado a uma remuneração mais elevada for maior que o efeito-substituição.	true
+TF	Quando o comprador de um insumo tem poder de monopsônio, a curva de despesa marginal se situa abaixo da curva de despesa média.	false
+TF	Para um monopolista o produto da receita marginal será sempre menor do que o valor do produto marginal.	true
+TF	Se um monopolista upstream vender um fator de produção para um monopolista downstream, o preço final do produto será afetado por um mark-up duplo.	true
+TF	Em equilíbrio, o lucro da firma será \$15.	false
+TF	Em equilíbrio, P = \$10.	false
+TF	O consumidor escolhe quatro unidades de comida.	true
+TF	A renda nominal do consumidor, composta do valor da dotação de tempo mais o lucro da firma, é igual a \$40.	true
+TF	Se P cair pela metade do valor de equilíbrio, haverá excesso de oferta de trabalho, mas a somatória dos valores dos excessos de demanda pelos dois bens será nula.	true

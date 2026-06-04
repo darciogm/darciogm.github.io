@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--
+  Funções Homogêneas e Teorema de Euler
+  Library: JSXGraph 1.8.0 + MathJax 3
+-->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções Homogêneas — Teorema de Euler</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraph.css">
+  <script src="https://cdn.jsdelivr.net/npm/jsxgraph@1.8.0/distrib/jsxgraphcore.js"></script>
+  <script>window.MathJax={tex:{inlineMath:[['\\(','\\)']]},options:{enableMenu:false}};</script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'CMU Serif',Georgia,serif;background:#fff;color:#333;padding:1rem}
+    .graph-container{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;justify-content:center}
+    #jxgbox{flex:1 1 480px;max-width:560px;height:460px;border:1px solid #ddd;border-radius:6px}
+    .controls{flex:0 1 310px;padding:1rem;background:#f8f8f8;border-radius:6px;border:1px solid #eee}
+    .controls h3{font-size:.95rem;color:#C8102E;margin-bottom:.8rem;border-bottom:1px solid #ddd;padding-bottom:.4rem}
+    .slider-group{margin-bottom:.8rem}
+    .slider-group label{display:flex;justify-content:space-between;font-size:.85rem;margin-bottom:.2rem}
+    .slider-group label .val{font-weight:700;color:#C8102E}
+    input[type="range"]{width:100%;accent-color:#C8102E}
+    .info-box{margin-top:.8rem;padding:.8rem;background:#fff;border:1px solid #ddd;border-radius:4px;font-size:.82rem;line-height:1.7}
+    .info-box .info-row{display:flex;justify-content:space-between;align-items:baseline}
+    .info-box .info-label{color:#666}
+    .info-box .info-val{font-weight:700;color:#333}
+    .info-box .info-val.accent{color:#C8102E}
+    .info-box .info-val.green{color:#00897b}
+    .info-box .divider{border:none;border-top:1px solid #eee;margin:.4rem 0}
+    .legend{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:.6rem;font-size:.78rem;color:#666}
+    .legend-item{display:flex;align-items:center;gap:.3rem}
+    .legend-swatch{width:18px;height:3px;border-radius:2px}
+    .btn-reset{display:block;width:100%;margin-top:.8rem;padding:.5rem;background:#C8102E;color:#fff;border:none;border-radius:4px;cursor:pointer;font-size:.85rem;font-family:inherit}
+    .btn-reset:hover{background:#9a0c23}
+    @media(max-width:860px){.graph-container{flex-direction:column;align-items:center}#jxgbox,.controls{flex-basis:100%;max-width:100%}}
+    html,body{margin:0!important;padding:0!important;overflow:visible!important}
+  </style>
+</head>
+<body>
+<div class="graph-container">
+  <div id="jxgbox"></div>
+  <div class="controls">
+    <h3>Funções Homogêneas</h3>
+    <div class="slider-group">
+      <label>\(\alpha\) (capital): <span class="val" id="val-a">0.40</span></label>
+      <input type="range" id="sl-a" min="0.1" max="0.9" step="0.05" value="0.40">
+    </div>
+    <div class="slider-group">
+      <label>\(\beta\) (trabalho): <span class="val" id="val-b">0.60</span></label>
+      <input type="range" id="sl-b" min="0.1" max="0.9" step="0.05" value="0.60">
+    </div>
+    <div class="slider-group">
+      <label>Fator de escala \(t\): <span class="val" id="val-t">1.0</span></label>
+      <input type="range" id="sl-t" min="0.5" max="2.5" step="0.1" value="1.0">
+    </div>
+    <div class="info-box">
+      <div style="text-align:center;margin-bottom:.4rem;color:#555;font-size:.8rem">
+        \(F(K,L) = K^{\alpha} L^{\beta}\) &nbsp;— grau \(k = \alpha + \beta\)
+      </div>
+      <hr class="divider">
+      <div class="info-row"><span class="info-label">Grau \(k = \alpha+\beta\)</span><span class="info-val accent" id="info-k">—</span></div>
+      <div class="info-row"><span class="info-label">Retornos de escala</span><span class="info-val" id="info-ret">—</span></div>
+      <hr class="divider">
+      <div style="font-size:.78rem;color:#555;margin-bottom:.3rem"><b>Euler no ponto (4, 4):</b></div>
+      <div class="info-row"><span class="info-label">\(K \cdot F_K + L \cdot F_L\)</span><span class="info-val green" id="info-euler-l">—</span></div>
+      <div class="info-row"><span class="info-label">\(k \cdot F(K,L)\)</span><span class="info-val green" id="info-euler-r">—</span></div>
+      <hr class="divider">
+      <div style="font-size:.78rem;color:#555;margin-bottom:.3rem"><b>Escala \(t\):</b></div>
+      <div class="info-row"><span class="info-label">\(F(tK, tL)\)</span><span class="info-val" id="info-ftKL">—</span></div>
+      <div class="info-row"><span class="info-label">\(t^k \cdot F(K,L)\)</span><span class="info-val" id="info-tkF">—</span></div>
+    </div>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#1565c0"></div> Isoquantas \(F = \bar{q}\)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#ff9800"></div> Raio \(K = L\)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#00897b"></div> Isoquanta escalada</div>
+    </div>
+    <button class="btn-reset" onclick="resetAll()">Resetar</button>
+  </div>
+</div>
+<script>
+var alpha=0.4,beta=0.6,tScale=1.0;
+function F(K,L){return Math.pow(K,alpha)*Math.pow(L,beta);}
+function FK(K,L){return alpha*Math.pow(K,alpha-1)*Math.pow(L,beta);}
+function FL(K,L){return beta*Math.pow(K,alpha)*Math.pow(L,beta-1);}
+
+var board=JXG.JSXGraph.initBoard('jxgbox',{
+  boundingbox:[-0.5,11,11,-0.5],axis:false,showCopyright:false,showNavigation:false,keepAspectRatio:true
+});
+board.create('axis',[[0,0],[10.5,0]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10},minorTicks:0,ticksDistance:2}});
+board.create('axis',[[0,0],[0,10.5]],{name:'',withLabel:false,ticks:{drawLabels:true,label:{fontSize:10,anchorX:'right',offset:[-8,0]},minorTicks:0,ticksDistance:2}});
+board.create('text',[5.5,-.4,'<b><i>K</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',highlight:false});
+board.create('text',[-.4,5.5,'<b><i>L</i></b>'],{fontSize:14,fixed:true,anchorX:'middle',anchorY:'middle',rotate:90,highlight:false});
+
+// 45-degree ray (K=L)
+board.create('line',[[0,0],[10,10]],{strokeColor:'#ff9800',strokeWidth:1.5,dash:3,straightFirst:false,straightLast:true,
+  point1:{visible:false},point2:{visible:false}});
+
+// Isoquants for base F(K,L) = q_bar
+// K^alpha * L^beta = q => L = (q/K^alpha)^(1/beta)
+var isoLevels=[1,2,3,4,5];
+var isoColors=['#bbdefb','#90caf9','#64b5f6','#42a5f5','#1565c0'];
+var isoCurves=[];
+for(var i=0;i<isoLevels.length;i++){
+  (function(q,col){
+    isoCurves.push(board.create('functiongraph',[function(K){
+      if(K<=0.05)return 100;
+      var val=Math.pow(q/Math.pow(K,alpha),1/beta);
+      return val>10.5?10.5:val;
+    },0.05,10.5],{strokeColor:col,strokeWidth:1.5,highlight:false}));
+  })(isoLevels[i],isoColors[i]);
+}
+
+// Scaled isoquant (green): F(K,L) = F(t*4, t*4) = t^k * F(4,4)
+var scaledIso=board.create('functiongraph',[function(K){
+  if(K<=0.05)return 100;
+  var q=F(tScale*4,tScale*4);
+  var val=Math.pow(q/Math.pow(K,alpha),1/beta);
+  return val>10.5?10.5:val;
+},0.05,10.5],{strokeColor:'#00897b',strokeWidth:2.5,highlight:false});
+
+// Base point (4,4)
+board.create('point',[4,4],{size:5,fillColor:'#1565c0',strokeColor:'#1565c0',name:'(4,4)',
+  label:{fontSize:10,offset:[5,5]},fixed:true});
+
+// Scaled point
+var scaledPt=board.create('point',[function(){return tScale*4;},function(){return tScale*4;}],{
+  size:5,fillColor:'#00897b',strokeColor:'#00897b',name:'',fixed:true
+});
+
+function updateAll(){
+  alpha=+document.getElementById('sl-a').value;
+  beta=+document.getElementById('sl-b').value;
+  tScale=+document.getElementById('sl-t').value;
+  document.getElementById('val-a').textContent=alpha.toFixed(2);
+  document.getElementById('val-b').textContent=beta.toFixed(2);
+  document.getElementById('val-t').textContent=tScale.toFixed(1);
+  var k=alpha+beta;
+  document.getElementById('info-k').textContent=k.toFixed(2);
+  if(Math.abs(k-1)<0.01) document.getElementById('info-ret').textContent='Constantes';
+  else if(k>1) document.getElementById('info-ret').textContent='Crescentes';
+  else document.getElementById('info-ret').textContent='Decrescentes';
+  // Euler at (4,4)
+  var fv=F(4,4),fk=FK(4,4),fl=FL(4,4);
+  var eulerL=4*fk+4*fl;
+  var eulerR=k*fv;
+  document.getElementById('info-euler-l').textContent=eulerL.toFixed(3);
+  document.getElementById('info-euler-r').textContent=eulerR.toFixed(3);
+  // Scale
+  var ftKL=F(tScale*4,tScale*4);
+  var tkF=Math.pow(tScale,k)*fv;
+  document.getElementById('info-ftKL').textContent=ftKL.toFixed(3);
+  document.getElementById('info-tkF').textContent=tkF.toFixed(3);
+  board.update();
+}
+['sl-a','sl-b','sl-t'].forEach(function(id){document.getElementById(id).addEventListener('input',updateAll);});
+function resetAll(){
+  document.getElementById('sl-a').value=0.4;document.getElementById('sl-b').value=0.6;document.getElementById('sl-t').value=1.0;
+  alpha=0.4;beta=0.6;tScale=1.0;updateAll();
+}
+updateAll();
+</script>
+</body>
+</html>

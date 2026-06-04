@@ -1,0 +1,554 @@
+---
+title: "Incerteza e Utilidade Esperada"
+subtitle: "Microeconomia II — Aula 11"
+author: "Insper"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    chalkboard: true
+    footer: "Microeconomia II | Aula 11"
+    transition: slide
+    width: 1280
+    height: 720
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## A Aposta
+
+> Você pagaria R\$ 5 por uma loteria que paga R\$ 12 com 50% de chance e R\$ 0 com 50%?
+
+. . .
+
+**Valor esperado:** $E[X] = 0{,}5 \times 12 + 0{,}5 \times 0 = 6 > 5$
+
+. . .
+
+Parece um bom negócio. Mas muitas pessoas **recusam**.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O valor esperado diz que vale a pena, mas a possibilidade de perder R\$ 5 com certeza gera desconforto. Precisamos de uma teoria que capture a **atitude em relação ao risco** --- a **utilidade esperada**.
+:::
+
+## Loterias e Valor Esperado
+
+Uma **loteria** $\mathcal{L}$ é uma distribuição de probabilidade sobre resultados:
+
+$$\mathcal{L} = (x_1, \pi_1; \; x_2, \pi_2), \quad \pi_1 + \pi_2 = 1$$
+
+. . .
+
+**Valor esperado:**
+
+$$E[X] = \pi_1 x_1 + \pi_2 x_2$$
+
+. . .
+
+**Generalização para $n$ resultados:**
+
+$$\mathcal{L} = (x_1, \pi_1; \; \ldots; \; x_n, \pi_n), \quad E[X] = \sum_{i=1}^n \pi_i x_i$$
+
+. . .
+
+> O valor esperado resume a loteria em um único número --- mas será que captura tudo?
+
+## O Paradoxo de São Petersburgo
+
+**Jogo:** lance uma moeda até sair cara. Se cara sai na jogada $n$, você recebe $2^n$ reais.
+
+. . .
+
+$$E[\text{ganho}] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty$$
+
+. . .
+
+**Problema:** o valor esperado é **infinito**, mas ninguém pagaria R\$ 1 milhão para jogar.
+
+. . .
+
+**Solução de Bernoulli (1738):** as pessoas maximizam a **utilidade esperada**, não o valor esperado. Com $U(x) = \ln(x)$:
+
+$$E[U] = \sum_{n=1}^{\infty} \frac{1}{2^n} \ln(2^n) = \ln 2 \sum_{n=1}^{\infty} \frac{n}{2^n} = 2\ln 2 \approx 1{,}39$$
+
+## Axiomas de Von Neumann-Morgenstern
+
+Para que exista uma função de utilidade esperada, precisamos de quatro axiomas sobre preferências $\succsim$ definidas em loterias:
+
+. . .
+
+1. **Completude:** para quaisquer $\mathcal{L}_1, \mathcal{L}_2$, ou $\mathcal{L}_1 \succsim \mathcal{L}_2$ ou $\mathcal{L}_2 \succsim \mathcal{L}_1$
+
+2. **Transitividade:** se $\mathcal{L}_1 \succsim \mathcal{L}_2$ e $\mathcal{L}_2 \succsim \mathcal{L}_3$, então $\mathcal{L}_1 \succsim \mathcal{L}_3$
+
+. . .
+
+3. **Continuidade:** se $\mathcal{L}_1 \succ \mathcal{L}_2 \succ \mathcal{L}_3$, existe $\alpha \in (0,1)$ tal que $\mathcal{L}_2 \sim \alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3$
+
+4. **Independência:** se $\mathcal{L}_1 \succsim \mathcal{L}_2$, então para todo $\alpha \in (0,1)$ e $\mathcal{L}_3$:
+
+$$\alpha \mathcal{L}_1 + (1-\alpha)\mathcal{L}_3 \succsim \alpha \mathcal{L}_2 + (1-\alpha)\mathcal{L}_3$$
+
+## Teorema da Utilidade Esperada
+
+**Teorema (VNM):** Se $\succsim$ satisfaz os quatro axiomas, existe $U: \mathbb{R} \to \mathbb{R}$ tal que:
+
+$$\mathcal{L}_1 \succsim \mathcal{L}_2 \iff EU(\mathcal{L}_1) \geq EU(\mathcal{L}_2)$$
+
+. . .
+
+onde:
+
+$$EU(\mathcal{L}) = \pi_1 U(x_1) + \pi_2 U(x_2)$$
+
+. . .
+
+**Unicidade:** $U$ é única a menos de transformação **afim positiva** --- se $U$ representa $\succsim$, então $V = a + bU$ (com $b > 0$) também representa.
+
+. . .
+
+> Diferente da utilidade ordinal, aqui as *diferenças* de utilidade importam.
+
+## Tres Atitudes em Relacao ao Risco {.smaller}
+
+<div id="graph-a11-risk" style="width:720px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Curvatura: <input type="range" id="sl-a11-curv" min="-200" max="200" value="-100" step="10" oninput="updA11Risk()"> <span id="val-a11-curv">-1.00</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-risk',{
+    boundingbox:[-5,12,110,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var curv = -1.0;
+  var x1 = 20, x2 = 80, pi1 = 0.5;
+  var EX = pi1*x1 + (1-pi1)*x2;
+
+  function uf(x){
+    if(Math.abs(curv)<0.05) return x/10;
+    if(curv<0) return 10*(1-Math.exp(curv*x/100));
+    return 10*(Math.exp(curv*x/100)-1);
+  }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,105],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[x1, function(){return uf(x1);}],
+    {name:'U(x₁)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+  var pHigh = brd.create('point',[x2, function(){return uf(x2);}],
+    {name:'U(x₂)', size:3, color:'#C8102E', label:{offset:[5,10],fontSize:12}});
+
+  var chordLine = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var pEU = brd.create('point',[EX, function(){return pi1*uf(x1)+(1-pi1)*uf(x2);}],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-30,-15],fontSize:12}});
+  var pUEX = brd.create('point',[EX, function(){return uf(EX);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  brd.create('segment',
+    [[EX,0], [EX, function(){return Math.max(uf(EX), pi1*uf(x1)+(1-pi1)*uf(x2));}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+
+  brd.create('text',[55,11, function(){
+    if(curv<-0.05) return 'Avesso ao risco (côncava)';
+    if(curv>0.05) return 'Amante do risco (convexa)';
+    return 'Neutro ao risco (linear)';
+  }],{fontSize:14,color:'#1565c0'});
+
+  window.updA11Risk = function(){
+    curv = parseFloat(document.getElementById('sl-a11-curv').value)/100;
+    document.getElementById('val-a11-curv').textContent = curv.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+| Atitude | $U''(x)$ | Formato | Comportamento |
+|:--|:--:|:--:|:--|
+| Avesso | $< 0$ | Concava | Recusa apostas justas |
+| Neutro | $= 0$ | Linear | Indiferente a apostas justas |
+| Amante | $> 0$ | Convexa | Aceita apostas injustas |
+
+## Desigualdade de Jensen
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Teorema (Jensen):** Se $U$ e concava:
+
+$$E[U(X)] \leq U(E[X])$$
+
+. . .
+
+**Interpretacao:** o agente avesso ao risco prefere receber o valor esperado com certeza a enfrentar a loteria.
+
+. . .
+
+**Consequencia:** para aposta justa ($E[\tilde{\varepsilon}] = 0$):
+
+$$E[U(W + \tilde{\varepsilon})] < U(W)$$
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Esboço da prova (caso discreto):**
+
+Pela concavidade, para todo $\lambda \in [0,1]$:
+
+$$U(\lambda x_1 + (1-\lambda)x_2) \geq \lambda U(x_1) + (1-\lambda)U(x_2)$$
+
+Tomando $\lambda = \pi_1$:
+
+$$U(\pi_1 x_1 + \pi_2 x_2) \geq \pi_1 U(x_1) + \pi_2 U(x_2)$$
+
+$$\Rightarrow U(E[X]) \geq E[U(X)] \quad \blacksquare$$
+
+:::
+::::
+
+## Equivalente Certo e Premio de Risco
+
+<div id="graph-a11-premium" style="width:720px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Tamanho da aposta $h$: <input type="range" id="sl-a11-h" min="5" max="40" value="20" step="1" oninput="updA11Premium()"> <span id="val-a11-h">20</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-premium',{
+    boundingbox:[-5,11,155,-1], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W = 100, h = 20;
+
+  function uf(x){ return Math.sqrt(x)/1.2; }
+
+  var utilCurve = brd.create('functiongraph',[function(x){return uf(x);},0,150],
+    {strokeColor:'#1565c0',strokeWidth:2.5,highlight:false});
+
+  var pLow = brd.create('point',[function(){return W-h;}, function(){return uf(W-h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+  var pHigh = brd.create('point',[function(){return W+h;}, function(){return uf(W+h);}],
+    {name:'', size:3, color:'#C8102E',
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[function(){return W-h-2;}, function(){return uf(W-h)+0.4;},
+    function(){return 'W−h='+(W-h);}],{fontSize:11,color:'#C8102E'});
+  brd.create('text',[function(){return W+h+1;}, function(){return uf(W+h)+0.4;},
+    function(){return 'W+h='+(W+h);}],{fontSize:11,color:'#C8102E'});
+
+  var chord = brd.create('segment',[pLow, pHigh],
+    {strokeColor:'#888',strokeWidth:1.5,dash:2,highlight:false});
+
+  var EX = function(){return W;};
+  var EU = function(){return 0.5*uf(W-h)+0.5*uf(W+h);};
+  var CE = function(){return (EU()*1.2)*(EU()*1.2);};
+
+  var pEU = brd.create('point',[EX, EU],
+    {name:'E[U]', size:3, color:'#e65100', label:{offset:[-35,-15],fontSize:12}});
+
+  var pUEX = brd.create('point',[EX, function(){return uf(W);}],
+    {name:'U(E[X])', size:3, color:'#2e7d32', label:{offset:[5,10],fontSize:12}});
+
+  var pCE = brd.create('point',[CE, EU],
+    {name:'CE', size:3, color:'#6a1b9a', label:{offset:[-5,-18],fontSize:12}});
+
+  brd.create('segment',[[EX,0],[EX,function(){return uf(W);}]],
+    {strokeColor:'#aaa',strokeWidth:1,dash:3,highlight:false});
+  brd.create('segment',[[CE,0],[CE,EU]],
+    {strokeColor:'#6a1b9a',strokeWidth:1,dash:3,highlight:false});
+
+  // Risk premium arrow
+  brd.create('segment',[[CE,function(){return -0.4;}],[EX,function(){return -0.4;}]],
+    {strokeColor:'#d32f2f',strokeWidth:2,lastArrow:true,firstArrow:true,highlight:false});
+  brd.create('text',[function(){return (CE()+W)/2-5;}, -0.8,
+    function(){return 'RP='+(W-CE()).toFixed(1);}],
+    {fontSize:12,color:'#d32f2f'});
+
+  window.updA11Premium = function(){
+    h = parseFloat(document.getElementById('sl-a11-h').value);
+    document.getElementById('val-a11-h').textContent = h;
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Equivalente certo (CE):**
+
+$$U(CE) = E[U(\mathcal{L})]$$
+
+:::
+::: {.column width="50%"}
+
+**Premio de risco (RP):**
+
+$$RP = E[X] - CE > 0$$
+
+(para avesso ao risco)
+
+:::
+::::
+
+## Medidas de Arrow-Pratt
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Aversao absoluta ao risco (ARA):**
+
+$$A(x) = -\frac{U''(x)}{U'(x)}$$
+
+. . .
+
+**Aversao relativa ao risco (RRA):**
+
+$$R(x) = -\frac{x \, U''(x)}{U'(x)} = x \cdot A(x)$$
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Interpretacao local:**
+
+Para uma aposta pequena $\tilde{\varepsilon}$ com $E[\tilde{\varepsilon}]=0$ e $\text{Var}(\tilde{\varepsilon})=\sigma^2$:
+
+$$RP \approx \frac{1}{2} A(W) \sigma^2$$
+
+. . .
+
+> $A(W)$ mede a **taxa de conversao** de variancia em premio de risco.
+
+:::
+::::
+
+## CARA vs CRRA
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**CARA** (Constant Absolute Risk Aversion):
+
+$$U(x) = -e^{-ax}, \quad a > 0$$
+
+| Medida | Valor |
+|:--|:--:|
+| $A(x)$ | $a$ (constante) |
+| $R(x)$ | $ax$ (crescente) |
+
+. . .
+
+Mesma aversao em **reais** independentemente da riqueza.
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**CRRA** (Constant Relative Risk Aversion):
+
+$$U(x) = \frac{x^{1-\gamma}}{1-\gamma}, \quad \gamma > 0, \; \gamma \neq 1$$
+
+Para $\gamma = 1$: $U(x) = \ln(x)$
+
+| Medida | Valor |
+|:--|:--:|
+| $A(x)$ | $\gamma / x$ (decrescente) |
+| $R(x)$ | $\gamma$ (constante) |
+
+. . .
+
+Mesma aversao **proporcional** independentemente da riqueza.
+
+:::
+::::
+
+## Seguro --- Aplicacao Fundamental {.smaller}
+
+<div id="graph-a11-insurance" style="width:720px;height:360px;margin:0 auto;"></div>
+<div class="graph-slider-row">
+  <label>Cobertura $q$: <input type="range" id="sl-a11-q" min="0" max="100" value="50" step="1" oninput="updA11Ins()"> <span id="val-a11-q">0.50</span></label>
+</div>
+<script>
+(function(){
+  var brd = JXG.JSXGraph.initBoard('graph-a11-insurance',{
+    boundingbox:[-50,1150,1150,-50], axis:true, showCopyright:false, showNavigation:false
+  });
+  var W=1000, L=600, pi=0.25, gamma=0.3, q=0.5;
+
+  // 45-degree line
+  brd.create('line',[[0,0],[1,1]],
+    {strokeColor:'#bbb',strokeWidth:1,dash:3,highlight:false,
+     straightFirst:true,straightLast:true,point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[950,980,'45°'],{fontSize:11,color:'#999'});
+
+  // Endowment point (no insurance)
+  var cN0 = W;       // no accident consumption without insurance
+  var cA0 = W - L;   // accident consumption without insurance
+  var pEndow = brd.create('point',[cN0, cA0],
+    {name:'Dotação', size:4, color:'#C8102E', fixed:true,
+     label:{offset:[5,10],fontSize:12}});
+
+  // Budget line: cA = cA0 + q*L - gamma*q*L ... parametric in q
+  // cN = W - gamma*q*L, cA = W - L + q*L - gamma*q*L = W - L + q*L*(1-gamma)
+  // Eliminating q: q = (W - cN)/(gamma*L)
+  // cA = W - L + (W - cN)*(1-gamma)/gamma
+  // slope dcA/dcN = -(1-gamma)/gamma
+  var slope = -(1-gamma)/gamma;
+  brd.create('line',[[cN0, cA0], [cN0+1, cA0+slope]],
+    {strokeColor:'#1565c0',strokeWidth:2,highlight:false,
+     straightFirst:true,straightLast:true,
+     point1:{visible:false},point2:{visible:false}});
+  brd.create('text',[200,900,
+    function(){return 'Inclinação = −(1−γ)/γ = '+slope.toFixed(2);}],
+    {fontSize:12,color:'#1565c0'});
+
+  // Current choice point
+  var pChoice = brd.create('point',[
+    function(){return W - gamma*q*L;},
+    function(){return W - L + q*L*(1-gamma);}],
+    {name:'', size:4, color:'#2e7d32',
+     label:{offset:[5,10],fontSize:12}});
+  brd.create('text',[function(){return W-gamma*q*L+15;},
+    function(){return W-L+q*L*(1-gamma)+15;},
+    function(){return 'q='+q.toFixed(2)+' | cN='+(W-gamma*q*L).toFixed(0)+', cA='+(W-L+q*L*(1-gamma)).toFixed(0);}],
+    {fontSize:11,color:'#2e7d32'});
+
+  // Full insurance point on 45-degree line
+  var qFull = 1;
+  var cFull = W - gamma*L;
+  var pFull = brd.create('point',[cFull, cFull],
+    {name:'Seguro total', size:3, color:'#6a1b9a', fixed:true,
+     label:{offset:[5,10],fontSize:11}});
+
+  brd.create('text',[50,1100,'c_A (acidente)'],{fontSize:13,color:'#333'});
+  brd.create('text',[950,-30,'c_N (sem acidente)'],{fontSize:13,color:'#333'});
+
+  window.updA11Ins = function(){
+    q = parseFloat(document.getElementById('sl-a11-q').value)/100;
+    document.getElementById('val-a11-q').textContent = q.toFixed(2);
+    brd.update();
+  };
+})();
+</script>
+
+. . .
+
+**Setup:** riqueza $W$, perda $L$ com prob. $\pi$, premio $\gamma$ por unidade de cobertura $q$.
+
+$$EU = (1-\pi)\,U(W - \gamma q L) + \pi\,U(W - L + qL - \gamma q L)$$
+
+## Exemplo Numerico --- Decisao de Seguro
+
+$U(c) = \ln(c)$, $W = 1000$, $L = 600$, $\pi = 0{,}25$, $\gamma = 0{,}3$/unidade.
+
+. . .
+
+**Sem seguro** ($q = 0$):
+
+$$EU = 0{,}75 \ln(1000) + 0{,}25 \ln(400) = 0{,}75 \times 6{,}908 + 0{,}25 \times 5{,}991 = 6{,}679$$
+
+$$CE = e^{6{,}679} = 795{,}3$$
+
+. . .
+
+**Com seguro total** ($q = 1$, $\gamma = 0{,}3$):
+
+$$U = \ln(1000 - 0{,}3 \times 600) = \ln(820) = 6{,}709$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+O agente prefere pagar R\$ 180 de premio e ter R\$ 820 certos ($CE = 820$) do que enfrentar a loteria sem seguro ($CE = 795{,}3$). A diferenca de R\$ 24{,}7 e o ganho de bem-estar do seguro.
+:::
+
+## Seguro Atuarialmente Justo vs Carregamento
+
+:::: {.columns}
+::: {.column width="50%"}
+
+**Seguro atuarialmente justo:** $\gamma = \pi$
+
+- Lucro esperado da seguradora: $\gamma q L - \pi q L = 0$
+- O agente avesso ao risco **compra cobertura total** ($q^* = 1$)
+- Consumo igual nos dois estados: $c_A = c_N$
+
+. . .
+
+> O seguro justo elimina todo o risco.
+
+:::
+::: {.column width="50%"}
+
+. . .
+
+**Seguro com carregamento:** $\gamma > \pi$
+
+- Seguradora tem lucro esperado positivo
+- O agente compra **cobertura parcial** ($q^* < 1$)
+- Trade-off: reducao de risco vs custo do premio
+
+. . .
+
+**Exemplo:** se $\pi = 0{,}25$ e $\gamma = 0{,}3$:
+
+$$\text{Carregamento} = \frac{\gamma - \pi}{\pi} = \frac{0{,}05}{0{,}25} = 20\%$$
+
+:::
+::::
+
+## Cobertura Otima
+
+A **condicao de primeira ordem** para $q^*$ e:
+
+$$\frac{\pi \, U'(c_A)}{(1-\pi) \, U'(c_N)} = \frac{\gamma}{1-\gamma}$$
+
+. . .
+
+onde $c_N = W - \gamma q L$ e $c_A = W - L + qL(1-\gamma)$.
+
+. . .
+
+**Tres casos:**
+
+| Condicao | Resultado | Cobertura |
+|:--|:--|:--:|
+| $\gamma = \pi$ | $U'(c_A) = U'(c_N) \Rightarrow c_A = c_N$ | Total ($q^*=1$) |
+| $\gamma > \pi$ | $U'(c_A) > U'(c_N) \Rightarrow c_A < c_N$ | Parcial ($q^*<1$) |
+| $\gamma < \pi$ | $U'(c_A) < U'(c_N) \Rightarrow c_A > c_N$ | Sobre-seguro ($q^*>1$) |
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Com seguro justo, a unica motivacao e eliminar risco --- e o agente avesso faz exatamente isso. Com carregamento, ele aceita algum risco residual para economizar no premio.
+:::
+
+## Proxima Aula
+
+**Aula 12 --- Loterias + Seguro (Pratica)**
+
+. . .
+
+- Diversificacao e abordagem estado-preferencia
+- Paradoxo de Allais e teoria da perspectiva
+- Exercicios de seguro e design de contrato
+
+. . .
+
+:::{.callout-tip title="Preparação"}
+Pesquise o **Paradoxo de Allais**: dois pares de escolhas que parecem razoaveis individualmente mas violam o axioma de independencia. Traga sua opiniao: somos *realmente* racionais sob incerteza?
+:::

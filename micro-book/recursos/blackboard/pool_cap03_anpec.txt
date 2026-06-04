@@ -1,0 +1,20 @@
+TF	Sendo U(x, y) a função de utilidade em dois bens x e y, U(x, y) = \ln x \cdot \ln y representa uma função de utilidade quase-linear.	false
+TF	Podemos sempre extrair a transformação monotônica da função de utilidade do tipo Cobb-Douglas.	true
+TF	Uma função de utilidade do tipo U(x, y) = (x + y)^{0,5} implica que x e y são bens substitutos perfeitos.	true
+TF	Uma função de utilidade do tipo U(x, y) = x + y implica que x e y são bens complementares perfeitos.	false
+TF	f(U) = U^2 é uma transformação monotônica apenas para U positivo.	true
+TF	A taxa marginal de substituição deste consumidor é X/Y.	true
+TF	A cesta (X = 2, Y = 1) e a cesta (X = 1, Y = 2) se encontram sobre a mesma curva de indiferença.	true
+TF	As curvas de indiferença do consumidor são estritamente convexas entre as cestas (X = 2, Y = 1) e (X = 1, Y = 2).	false
+TF	X e Y são substitutos perfeitos.	false
+TF	O bem Y é um mal.	false
+TF	Todos os tipos de preferências podem ser representados pela função de utilidade.	false
+TF	Sejam dois bens, X e Y. A uma função de utilidade dada por U(X, Y) = XY corresponde uma curva de indiferença típica dada por Y = cX, em que c é uma constante.	false
+TF	Se dois bens (A e B) forem substitutos perfeitos, pode-se, em geral, representar sua função de utilidade na forma U(A, B) = c_1 A + c_2 B, em que c_1 e c_2 são constantes positivas.	true
+TF	A inclinação de uma curva de indiferença típica da função de utilidade U(A, B) = c_1 A + c_2 B, em que c_1 e c_2 são constantes positivas, é -c_1/c_2.	true
+TF	A transformação monotônica de uma função de utilidade não altera a taxa marginal de substituição (TMS), porque a TMS é medida ao longo de uma curva de indiferença, e a utilidade permanece constante ao longo da curva de indiferença.	true
+TF	Se U(X, Y) = \sqrt{X} + \sqrt{Y}, então a elasticidade de substituição é igual a 2.	true
+TF	Se U(X, Y) é uma função de utilidade diferenciável homogênea de grau k, com U(X, Y) \neq 0, e se \eta_X(X, Y) e \eta_Y(X, Y) denotam a elasticidade de U relativamente a X e Y, respectivamente, então \eta_X(X, Y) + \eta_Y(X, Y) = k.	true
+TF	Considere o conjunto X = \bigcup_{n=1}^{\infty}\{1 - 1/n\} e defina \succsim sobre X por: x \succsim y se, e somente se, \lvert x - 1/2 \rvert \geq \lvert y - 1/2 \rvert. Então \succsim é contínua.	false
+TF	Considere o conjunto X = [0,2] \times [0,2] e defina \succsim sobre X por: (x,y) \succsim (z,w) se, e somente se, \lVert (x,y) - (1,1) \rVert \geq \lVert (z,w) - (1,1) \rVert. Então (0,0) é um elemento maximal.	true
+TF	A ordem lexicográfica é contínua.	false

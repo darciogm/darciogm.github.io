@@ -1,0 +1,890 @@
+---
+title: "Equilíbrio Geral em Produção"
+subtitle: "Aula 5 — Microeconomia I · MPE 2026/32"
+author: "Darcio Genicolo-Martins"
+date: "2026-05-20"
+date-format: "DD [de] MMMM [de] YYYY"
+lang: pt-BR
+format:
+  revealjs:
+    theme: [default, theme.scss]
+    slide-number: c/t
+    preview-links: auto
+    chalkboard: true
+    incremental: false
+    fig-width: 9
+    fig-height: 5
+    fig-align: center
+    html-math-method: mathjax
+    mathjax-url: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    footer: "Microeconomia I · MPE 2026/32 · 20/05/2026"
+    logo: logo-insper.png
+    transition: none
+    background-transition: none
+    hash-type: number
+    width: 1280
+    height: 800
+    margin: 0
+    min-scale: 0.3
+    max-scale: 1.8
+    center: true
+    menu:
+      side: left
+      numbers: true
+    include-in-header:
+      text: |
+        <style>
+          .reveal .slide-background.present::before {
+            content: "";
+          }
+        </style>
+        <script>
+          // Remove o slide-titulo auto-gerado pelo Quarto ANTES do reveal indexar
+          (function() {
+            function killTitleBlock() {
+              var t = document.querySelector('.reveal section.quarto-title-block');
+              if (t && t.parentNode) {
+                t.parentNode.removeChild(t);
+                return true;
+              }
+              return false;
+            }
+            if (!killTitleBlock()) {
+              var obs = new MutationObserver(function() {
+                if (killTitleBlock()) obs.disconnect();
+              });
+              obs.observe(document.documentElement, { childList: true, subtree: true });
+              document.addEventListener('DOMContentLoaded', function() {
+                killTitleBlock();
+                obs.disconnect();
+              }, { capture: true });
+            }
+          })();
+        </script>
+---
+
+## Equilíbrio Geral em Produção {.title-slide}
+
+::: {style="margin-top: 1.2em;"}
+
+**Aula 5 — Equilíbrio Geral II**
+
+<br/>
+
+Darcio Genicolo-Martins  \
+Microeconomia I · MPE 2026/32 · Insper  \
+20 de maio de 2026 · 19:30–22:30
+
+:::
+
+::: {.callout style="margin-top: 1.5em; font-size: 0.8em;"}
+Aula 4 fechou troca pura. Hoje adicionamos **firmas** — quem produz é novo. O ferramental Walras + 1º TBE sobrevive estendido.
+:::
+
+---
+
+## Contrato da aula
+
+### Objetivo único
+
+> Construir PPF a partir de tecnologias, calcular Robinson Crusoe, demonstrar **1º TBE com produção**, anunciar 2º TBE.
+
+::: {.fragment}
+### Pré-aula assumida
+
+- ZaE Caps. 10 (Produção) e 12 (Firma) com lápis e papel.
+- N&S 12e Cap. 9 + §13.3–13.5 visitados.
+- 9 seções da plataforma + quiz pré-aula 10🟡.
+:::
+
+::: {.fragment}
+[Sair sem entender por que o **passo 3 (max-lucro)** entra no 1º TBE = perdemos a chave de Aulas 6–9.]{.bridge}
+:::
+
+---
+
+## Roteiro da noite
+
+| Bloco | Conteúdo | Tempo |
+|:---|:---|---:|
+| 0 | Abertura + recall | 19:30–19:35 |
+| 1 | Tecnologia da firma + PPF | 19:35–20:20 |
+| — | *Pausa* | 20:20–20:30 |
+| 2 | Robinson Crusoe — EC | 20:30–21:20 |
+| 3 | EG com $J$ firmas + 1º/2º TBE | 21:20–21:50 |
+| — | *Pausa* | 21:50–22:00 |
+| 4 | 3 Boxes Brasil/Mundo | 22:00–22:20 |
+| 5 | Síntese + ponte Aula 6 | 22:20–22:30 |
+
+::: {.bridge}
+3h cheias, duas pausas. Bloco 1 é onde a turma trava se não desenharmos a PPF ao vivo a partir das funções de produção.
+:::
+
+---
+
+## Recall da Aula 4 (1/2)
+
+::: {.eq-key}
+$$
+(p^*, x^*) \text{ é EC em troca pura} \iff z(p^*) = 0 \;\;\text{e}\;\; \text{cada } x^{*i} \text{ resolve UMP em } p^*.
+$$
+:::
+
+**Lei de Walras** $p\cdot z(p) = 0$ é identidade contábil. **1º TBE em troca pura:** EC + LNS $\Rightarrow$ Pareto.
+
+::: {.bridge}
+Hoje: adicionamos firmas com tecnologia $Y^j$, cotas $\theta^{ij}$, e maximização de lucro.
+:::
+
+---
+
+## Recall da Aula 4 (2/2)
+
+**O que **fica** da Aula 4:**
+
+- Walras estende: $p\cdot z(p) = 0$ com $z(p) = \sum_i x^i - \sum_i \omega^i - \sum_j y^j$.
+- 1º TBE estende: LNS dos consumidores + maximização de lucro das firmas $\Rightarrow$ Pareto.
+- 2º TBE estende: convexidade dos $Y^j$ + preferências convexas $\Rightarrow$ Pareto pode ser implementado como EC após redistribuição lump-sum.
+
+::: {.eq-punch}
+Estrutura do 1º TBE sobrevive desde que firmas maximizem lucro. Esse é o passo 3 — único novo.
+:::
+
+---
+
+## Bloco 1 — Tecnologia da firma + PPF {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+45 min · 19:35–20:20
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Conjunto de produção · função de produção · PPF · TMT · max-lucro.
+:::
+
+---
+
+## Conjunto de produção $Y$
+
+**Convenção de sinais:** $y \in \mathbb{R}^L$ com $y_\ell > 0$ produto, $y_\ell < 0$ insumo.
+
+**Hipóteses canônicas:**
+
+- **Inação:** $0 \in Y$.
+- **Livre descarte:** $y \in Y, y' \le y \Rightarrow y' \in Y$.
+- **Não-livre-almoço:** $Y \cap \mathbb{R}^L_+ = \{0\}$.
+- **Fechamento.**
+- **Convexidade** *(hipótese-chave do 2º TBE).*
+
+::: {.bridge}
+Próximo: caso particular — função de produção.
+:::
+
+---
+
+## Função de produção $f$
+
+**Caso particular:** um produto $q$, $k$ insumos $z$:
+
+::: {.eq-key}
+$$
+Y = \{(-z, q) \in \mathbb{R}^{k+1} : z \ge 0,\; 0 \le q \le f(z)\}.
+$$
+:::
+
+**Hipóteses sobre $f$:** $f(0) = 0$; contínua, monotônica, geralmente côncava (rendimentos não-crescentes).
+
+::: {.bridge}
+Próximo: maximização de lucro como ângulo da firma.
+:::
+
+---
+
+## Maximização de lucro
+
+**Dados preços** $(w, p)$:
+
+::: {.eq-key}
+$$
+\pi(p, w) = \max_{z \ge 0} p\, f(z) - w\cdot z.
+$$
+:::
+
+**CPO interior:**
+
+$$
+p\cdot \frac{\partial f}{\partial z_\ell} = w_\ell.
+$$
+
+**Em palavras:** valor da produtividade marginal = preço do insumo.
+
+::: {.eq-punch}
+Mercado descentralizado iguala valor marginal e custo marginal — base de toda a teoria.
+:::
+
+---
+
+## PPF (1/3) — construção em $2 \times 2$
+
+**Setup:** fator único $\bar L$, dois setores produtivos com $f_1, f_2$.
+
+**Restrição:** $L_1 + L_2 = \bar L$.
+
+**Caso canônico:** $f_1(L_1) = \sqrt{L_1}$, $f_2(L_2) = \sqrt{L_2}$, $\bar L = 16$.
+
+::: {.eq-key}
+$$
+L_\ell = q_\ell^2 \implies q_1^2 + q_2^2 = 16.
+$$
+:::
+
+**PPF é arco de círculo de raio 4** no quadrante positivo.
+
+::: {.bridge}
+Próximo: leitura visual e concavidade.
+:::
+
+---
+
+## PPF (2/3) — concavidade
+
+**A PPF é côncava** (do "lado de fora") — refletindo rendimentos decrescentes em cada setor.
+
+**Geometricamente:** a fronteira encurva-se *para fora*, indicando que cada unidade extra de bem 1 desistida custa cada vez menos lazer/bem-2.
+
+::: {.callout .callout-note}
+**Cuidado.** "PPF côncava" $\neq$ "tecnologia côncava". PPF pode ser côncava com retornos constantes em cada setor, se houver heterogeneidade ou fator fixo. Aqui ela é côncava porque cada $f_\ell$ é côncava.
+:::
+
+::: {.bridge}
+Próximo: TMT como inclinação da PPF.
+:::
+
+---
+
+## PPF (3/3) — TMT
+
+**Taxa marginal de transformação:**
+
+$$
+\text{TMT}_{12} = -\frac{dq_2}{dq_1}\bigg|_{\text{PPF}}.
+$$
+
+**Caracterização (regra da cadeia + CPO firma):**
+
+$$
+\text{TMT}_{12} = \frac{\text{PMa}_L^2}{\text{PMa}_L^1} = \frac{p_1}{p_2}.
+$$
+
+::: {.eq-punch}
+Eficiência produtiva ⇔ TMT igual à razão de preços.
+:::
+
+---
+
+## TMT — exemplo numérico
+
+**No caso $\bar L = 16$, $f_\ell = \sqrt{L_\ell}$**, em $q_1 = 2$:
+
+- $L_1 = 4$, $L_2 = 12$, $q_2 = 2\sqrt{3} \approx 3{,}46$.
+- $\text{PMa}_L^1 = 1/(2\sqrt{4}) = 1/4$.
+- $\text{PMa}_L^2 = 1/(2\sqrt{12}) = 1/(4\sqrt{3})$.
+- $\text{TMT}_{12} = q_2/q_1 = \sqrt{3}$.
+
+**Eficiência:** preços relativos $p_1/p_2 = \sqrt{3}$ levam a esse ponto.
+
+::: {.bridge}
+Próximo: max-lucro descentraliza essa eficiência.
+:::
+
+---
+
+## Bloco 1 — síntese
+
+::: {.compact-table}
+| Conceito | Forma | Geometria |
+|:---|:---|:---|
+| Conjunto de produção | $Y \subseteq \mathbb{R}^L$ | Sub-gráfica de $f$ |
+| Função de produção | $q \le f(z)$ | Côncava em $z$ |
+| PPF | $q_1^2 + q_2^2 = \bar L$ (exemplo) | Arco côncavo |
+| TMT | $\text{PMa}^2/\text{PMa}^1$ | Inclinação PPF |
+| Eficiência produtiva | $\text{TMT} = p_1/p_2$ | Tangência |
+:::
+
+::: {.bridge}
+Próximo: introduzir consumidor — Robinson Crusoe é o mínimo.
+:::
+
+---
+
+## Pausa 1 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 20:30.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Estique. Água. Releia o desenho da PPF se precisar.
+:::
+
+---
+
+## Bloco 2 — Robinson Crusoe {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+50 min · 20:30–21:20
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+1 consumidor + 1 firma + 2 bens · planejador · EC descentralizado · TMS = TMT = w/p.
+:::
+
+---
+
+## Robinson Crusoe — setup
+
+**Mesmo agente, dois chapéus separados.** Dono da firma + consumidor.
+
+**Variáveis:** trabalho $L$, bem de consumo $q$, lazer $\ell = \bar L - L$.
+
+**Tecnologia:** $q = f(L)$, $f$ côncava, $f(0) = 0$, $f' > 0$.
+
+**Preferências:** $u(q, \ell)$ monotônica e quase-côncava.
+
+::: {.bridge}
+Mesmo agente, mas mercado finge que é entre dois agentes. A separação é o que permite estender para $J$ firmas.
+:::
+
+---
+
+## Solução do planejador
+
+::: {.eq-key}
+$$
+\max_{L \in [0, \bar L]} u(f(L), \bar L - L).
+$$
+:::
+
+**CPO interior:**
+
+$$
+\frac{\partial u/\partial \ell}{\partial u/\partial q} = f'(L) \implies \text{TMS}_{\ell, q} = \text{TMT}_{L, q}.
+$$
+
+::: {.eq-punch}
+Eficiência ⇔ TMS = TMT. Mercado precisa replicar.
+:::
+
+---
+
+## Cálculo do planejador (1/2) — setup canônico
+
+**Setup:** $u(q, \ell) = q^{1/2}\ell^{1/2}$, $f(L) = \sqrt{L}$, $\bar L = 16$.
+
+**Substituir:** $q = L^{1/2}$, $\ell = 16 - L$, então $u(L) = L^{1/4}(16 - L)^{1/2}$.
+
+::: {.bridge}
+Próximo: derivar e resolver.
+:::
+
+---
+
+## Cálculo do planejador (2/2) — CPO
+
+**Derivada:**
+
+$$
+\frac{1}{4 L^{3/4}}(16-L)^{1/2} - \frac{L^{1/4}}{2(16-L)^{1/2}} = 0.
+$$
+
+**Multiplicar** por $4 L^{3/4}(16-L)^{1/2}$:
+
+$$
+(16 - L) - 2 L = 0 \implies L^* = \frac{16}{3} \approx 5{,}33.
+$$
+
+**Logo** $\ell^* = 32/3 \approx 10{,}67$, $q^* = \sqrt{16/3} = 4/\sqrt{3} \approx 2{,}31$.
+
+::: {.eq-punch}
+Solução do planejador: $L^* = 16/3$. Mercado vai precisar replicar via preços.
+:::
+
+---
+
+## Equilíbrio competitivo (1/3) — chapéu da firma
+
+**Introduzir** $(p, w)$. Firma resolve:
+
+::: {.eq-key}
+$$
+\pi(p, w) = \max_{L \ge 0} p\, f(L) - w\, L.
+$$
+:::
+
+**CPO:** $f'(L^*) = w/p$.
+
+**Em $f(L) = \sqrt{L}$:** $1/(2\sqrt{L^*}) = w/p \implies L^* = (p/(2w))^2$. Oferta: $q^s = p/(2w)$.
+
+::: {.bridge}
+Próximo: chapéu do consumidor.
+:::
+
+---
+
+## EC (2/3) — chapéu do consumidor
+
+**Renda total** $m = w\, \bar L + \pi^*$ (salário pelas $\bar L$ horas + lucro como dividendo).
+
+::: {.eq-key}
+$$
+\max_{q, \ell} u(q, \ell) \;\;\text{s.a.}\;\; p\, q + w\, \ell \le w\, \bar L + \pi^*.
+$$
+:::
+
+**CPO interior:** $\text{TMS}_{\ell, q} = w/p$.
+
+::: {.bridge}
+Próximo: combinar e fechar.
+:::
+
+---
+
+## EC (3/3) — igualdade canônica
+
+**Combinando:**
+
+::: {.eq-key}
+$$
+\boxed{\;\text{TMS}_{\ell, q} \;=\; w/p \;=\; \text{TMT}_{L, q}\;}
+$$
+:::
+
+**Verificação numérica em $\bar L = 16$:** $L^* = 16/3$, $w^* = \sqrt{3}/8$, $p = 1$. Lucro $\pi^* = 2\sqrt{3}/3$. TMS = TMT = $w/p = \sqrt{3}/8$.
+
+::: {.eq-punch}
+Mercado descentralizado replica solução do planejador. 1º TBE com produção no caso mais simples.
+:::
+
+---
+
+## Cuidado pedagógico — composição muda intuição
+
+**Considere** $u = q^{2/3}\ell^{1/3}$ ($A$ "viciado em consumo"), $f(L) = L^{1/2}$, $\bar L = 9$.
+
+**Intuição ingênua:** "peso 2/3 no consumo $\Rightarrow L^* = (2/3)\bar L = 6$".
+
+**Realidade algébrica:** substituindo, $u(L) = L^{1/3}(9-L)^{1/3}$ — **simétrica**! Ótimo: $L^* = 9/2 = 4{,}5$.
+
+::: {.eq-punch}
+Composição $q = f(L)$ pode mascarar peso de utilidade. Faça a álgebra antes de intuir.
+:::
+
+::: {.notes}
+Esse é o caso do Exercício 3 dos avaliativos. Distrator (a)(iii) $L^* = 6$ é deliberado — quem usa intuição em vez de álgebra cai. Calibração honesta: peso 2/3 no consumo só funciona como "trabalha 2/3 do tempo" se a tecnologia for linear ($\beta = 1$); em $\beta = 1/2$ a composição mata.
+:::
+
+---
+
+## Caso degenerado — retornos constantes
+
+**Se $f$ tiver retornos constantes**, $\pi^*(p, w) = 0$ no EC.
+
+**Razão:** $f(\lambda L) = \lambda f(L) \Rightarrow \pi(p, w; \lambda L) = \lambda \pi(p, w; L)$, máximo finito só se $\pi^* = 0$.
+
+**Implicação:** com retornos constantes, lucros zerados, renda do consumidor é só $w\, \bar L$. Modelo "sem firma".
+
+::: {.eq-punch}
+Retornos decrescentes ⇒ lucro positivo. Constantes ⇒ lucro zero. Crescentes ⇒ lucro infinito (mercado quebra) — Aula 7.
+:::
+
+---
+
+## Bloco 2 — síntese
+
+**Robinson Crusoe = caso mínimo** com produção. Eficiência via TMS = TMT = w/p.
+
+**Mercado descentralizado** $\equiv$ planejador, sob LNS + max-lucro + concavidade de $f$.
+
+::: {.bridge}
+Próximo: generalizar para $I$ consumidores + $J$ firmas com cotas.
+:::
+
+---
+
+## Bloco 3 — EG geral + 1º/2º TBE {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+30 min · 21:20–21:50
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+Cotas $\theta^{ij}$ · Walras estendido · 1º TBE com 4 passos · 2º TBE com convexidade.
+:::
+
+---
+
+## EG com $I$ consumidores e $J$ firmas
+
+**Consumidores** $i$: preferências $\succeq^i$, dotação $\omega^i$, **cotas** $\theta^{ij} \ge 0$ com $\sum_i \theta^{ij} = 1$.
+
+**Firmas** $j$: conjunto de produção $Y^j$ com hipóteses canônicas.
+
+**Renda do consumidor:**
+
+::: {.eq-key}
+$$
+m^i(p) = p\cdot \omega^i + \sum_j \theta^{ij}\, \pi^j(p).
+$$
+:::
+
+::: {.bridge}
+Salário/dotação + dividendos das firmas. Robinson era $\theta = 1$.
+:::
+
+---
+
+## EC com produção — definição
+
+::: {.eq-key}
+$$
+(p^*, x^*, y^*) \text{ é EC} \iff \begin{cases} y^{*j} \in \arg\max\{p^*\cdot y : y \in Y^j\} \\ x^{*i} \in \arg\max u^i(x) \;\;\text{s.a.}\;\; p^*\cdot x \le m^{*i} \\ \sum_i x^{*i} = \sum_i \omega^i + \sum_j y^{*j} \end{cases}
+$$
+:::
+
+**Walras estendido:** $p\cdot z(p) = 0$ identicamente, com $z(p) = \sum_i x^i - \sum_i \omega^i - \sum_j y^j$.
+
+::: {.bridge}
+Próximo: 1º TBE com produção — prova em 4 passos.
+:::
+
+---
+
+## 1º TBE com produção — enunciado
+
+::: {.eq-punch}
+Em economia com produção, sob LNS para todos os consumidores, todo EC $(p^*, x^*, y^*)$ é Pareto-eficiente.
+:::
+
+::: {.bridge}
+Próximo: prova em 4 passos. Atenção ao **passo 3** — único novo em relação à Aula 4.
+:::
+
+---
+
+## 1º TBE (1/4) — contradição
+
+**Suponha** que $(x^*, y^*)$ NÃO é Pareto. Então $\exists (\tilde x, \tilde y)$ viável com:
+
+- $u^i(\tilde x^i) \ge u^i(x^{*i}) \;\forall i$;
+- $u^j(\tilde x^j) > u^j(x^{*j})$ para algum consumidor $j$.
+
+**Estratégia:** mostrar que $\sum_i p^*\cdot \tilde x^i > \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot \tilde y^j$ — contradiz viabilidade.
+
+::: {.bridge}
+Próximo: passo 1 — UMP do consumidor estritamente melhor.
+:::
+
+---
+
+## 1º TBE (2/4) — passo 1
+
+**Para o consumidor $j$ estritamente melhor:**
+
+$$
+p^*\cdot \tilde x^j > m^{*j} = p^*\cdot \omega^j + \sum_k \theta^{jk}\, \pi^{*k}.
+$$
+
+**Razão:** se $p^*\cdot \tilde x^j \le m^{*j}$, $\tilde x^j$ era viável e $u^j(\tilde x^j) > u^j(x^{*j})$ — contradiz UMP.
+
+::: {.bridge}
+Próximo: passo 2 — LNS para os demais consumidores.
+:::
+
+---
+
+## 1º TBE (3/4) — passos 2 e 3
+
+**Passo 2 (LNS):** Para $i \neq j$ fracamente melhor: $p^*\cdot \tilde x^i \ge m^{*i}$ (mesmo argumento da Aula 4).
+
+**Passo 3 (NOVO — max-lucro):** Para cada firma $k$:
+
+$$
+\tilde y^k \in Y^k \implies p^*\cdot \tilde y^k \le p^*\cdot y^{*k}
+$$
+
+por definição de $y^{*k}$ como maximizador de lucro.
+
+::: {.eq-punch}
+Passo 3 é o único novo. LNS dos consumidores + max-lucro das firmas = combo mínimo.
+:::
+
+---
+
+## 1º TBE (4/4) — somar e contradizer
+
+**Somando passos 1 + 2 + 3:**
+
+$$
+\sum_i p^*\cdot \tilde x^i > \sum_i m^{*i} = \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot y^{*j} \ge \sum_i p^*\cdot \omega^i + \sum_j p^*\cdot \tilde y^j.
+$$
+
+**Mas** $\sum_i \tilde x^i = \sum_i \omega^i + \sum_j \tilde y^j$ (viabilidade) ⇒ os dois lados são iguais.
+
+::: {.eq-punch}
+Contradição. EC é Pareto-eficiente. $\blacksquare$
+:::
+
+---
+
+## 2º TBE com produção — anúncio
+
+::: {.eq-key}
+$$
+\text{Pareto + LNS + convex. } Y^j + \text{convex. preferências} \;\Rightarrow\; \exists\, p^* \text{ e redistribuição lump-sum tal que EC.}
+$$
+:::
+
+**Hipótese-chave:** convexidade do $Y$ agregado $Y = \sum_j Y^j$. Hahn-Banach exige.
+
+::: {.bridge}
+Onde quebra: retornos crescentes (Aula 7), externalidades (Aula 7), info assimétrica (Aula 8).
+:::
+
+---
+
+## Síntese Bloco 3
+
+::: {.compact-table}
+| Aula | 1º TBE | Hipóteses |
+|:---|:---|:---|
+| 4 (troca) | EC ⇒ Pareto | LNS dos consumidores |
+| **5 (produção)** | **EC ⇒ Pareto** | **LNS + max-lucro firmas** |
+| 7 (externalidades) | pode falhar | + sem efeitos cruzados |
+| 8 (info assim.) | pode falhar | + sem info privada |
+:::
+
+::: {.eq-punch}
+A camada da Aula 5 é max-lucro. Convexidade fica para o 2º TBE.
+:::
+
+---
+
+## Pausa 2 — 10 minutos {.pause-slide background-color="#F7F7F5"}
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 1.3em; color: #2A2F36;"}
+*Voltamos às 22:00.*
+:::
+
+::: {style="text-align: center; margin-top: 1.5em; font-size: 0.85em; color: #2A2F36;"}
+Última pausa. Confira se 1º TBE com produção está na cabeça.
+:::
+
+---
+
+## Bloco 4 — Boxes Brasil/Mundo {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.3em; font-weight: 500; margin-top: 0.8em;"}
+20 min · 22:00–22:20
+:::
+
+::: {style="color: white; font-size: 0.95em; opacity: 0.9; margin-top: 0.5em;"}
+PPF intertemporal · vantagem comparativa · ZFM e eficiência produtiva.
+:::
+
+---
+
+## Box Brasil — PPF intertemporal: pré-sal vs renováveis (1/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**Setup.** Brasil tem dotação de **capital extrativo** (pré-sal: Lula, Marlim, Búzios, descobertas 2007) e **capital sustentável** (eólica nordeste, solar, etanol).
+
+**Estrutura PPF.** Eixo $q_1$ = produção fóssil; eixo $q_2$ = produção renovável. PPF côncava no momento. **Mas se desloca no tempo:** Wright's law em renováveis (custo cai 20-30% a cada dobra de capacidade).
+
+:::
+
+---
+
+## Box Brasil — pré-sal vs renováveis (2/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.6em;"}
+
+**Conexão Aula 4:** RenovaBio + CBIOs incentivam deslocamento da PPF na direção de etanol/biodiesel sustentáveis.
+
+**Pergunta-âncora:** O Brasil deve explorar todo o pré-sal antes da descarbonização global (risco de stranded assets), ou priorizar transição? **Como TMT = preço relativo informa a escolha?**
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.6em;"}
+EPE — Plano Nacional de Energia 2050. Goldemberg & Lucon (2007), *Energy Policy* 35(6): 3105-3114. doi:10.1016/j.enpol.2006.11.005
+:::
+
+---
+
+## Box Mundo — Soja vs indústria (1/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**Setup.** Brasil: 26% da soja mundial (USDA 2024). Indústria: 27% (1985) → 11% (2023) do PIB.
+
+**PPF brasileira.** $q_1$ = soja (alta vantagem comparativa: terra abundante, clima, Embrapa); $q_2$ = manufaturas (média). PPF inclinada para soja.
+
+:::
+
+---
+
+## Box Mundo — Soja vs indústria (2/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.6em;"}
+
+**Vantagem comparativa via Ricardo lite + Heckscher-Ohlin.** Comércio internacional move o ponto **fora** da PPF doméstica.
+
+**2º TBE em ação política:** Política industrial (BR Mais Produtivo, Lei 14.789/2023) tenta redistribuir lump-sum os fatores entre setores. Mas distorcionário, não estritamente lump-sum.
+
+**Pergunta-âncora:** Vantagem comparativa estática (Brasil-soja) vs. desenvolvimento estrutural dinâmico (Coreia-eletrônicos): **mercado é cego à dinâmica?**
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.6em;"}
+IBGE Contas Nacionais. Hidalgo & Hausmann (2009), *PNAS* 106(26): 10570-10575. doi:10.1073/pnas.0900943106
+:::
+
+---
+
+## Box Brasil — ZFM e eficiência produtiva (1/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.4em;"}
+
+**Setup.** Zona Franca de Manaus (1967, prorrogada 2073 pela EC 109/2021): subsídios fiscais (IPI zerado, ICMS reduzido). Volume 2024: ~R\$ 200 bilhões em faturamento.
+
+**Distorção de TMT.** Sem subsídio, TMT = preço relativo de mercado. Com subsídio, $\text{TMT-distorcida} = (p_1\cdot \tau_1)/(p_2\cdot \tau_2)$.
+
+:::
+
+---
+
+## Box Brasil — ZFM e eficiência produtiva (2/2) {background-color="#1B3A5C" .section-divider}
+
+::: {style="color: white; margin-top: 0.6em;"}
+
+**Resultado.** Locação ineficiente — eletrônicos sendo fabricados a 4.000 km dos centros consumidores SP/RJ. **1º TBE quebra parcialmente** — Pareto-eficiência agregada é violada.
+
+**Justificativa "second-best":** preservação Amazônia, ocupação populacional do norte, externalidades positivas. **Mas isso é Aula 7**, não Aula 5.
+
+**Pergunta-âncora:** Subsídio fiscal regional é sempre ineficiente? **Como o 2º TBE preliminar enquadra essa discussão?**
+
+:::
+
+::: {style="color: white; font-size: 0.78em; opacity: 0.85; margin-top: 0.6em;"}
+Suframa — Boletim Indicadores 2024. Garcia & Castelar (2020), *Revista Brasileira de Economia* 74(2): 207-238.
+:::
+
+---
+
+## Bloco 5 — Síntese + ponte Aula 6 {background-color="#C8102E" .section-divider}
+
+::: {style="color: white; font-size: 1.15em; font-weight: 500; margin-top: 0.8em;"}
+10 min · 22:20–22:30
+:::
+
+---
+
+## Síntese — quatro frases
+
+::: {.fragment}
+1. **Tecnologia** = $Y \subseteq \mathbb{R}^L$. PPF = fronteira agregada em $2 \times 2$.
+:::
+
+::: {.fragment}
+2. **Robinson Crusoe** = caso mínimo. $\text{TMS} = \text{TMT} = w/p$ no EC.
+:::
+
+::: {.fragment}
+3. **EG com $J$ firmas + cotas $\theta^{ij}$.** 1º TBE: LNS + max-lucro ⇒ Pareto.
+:::
+
+::: {.fragment}
+4. **2º TBE com produção** = convexidade dos $Y^j$ + preferências convexas + redistribuição lump-sum.
+:::
+
+---
+
+## Ponte para Aula 6 (1/2) — Arrow-Debreu
+
+**Pergunta da próxima aula:** adicionamos **incerteza**. Estados da natureza $s = 1, \ldots, S$. Bens viram **bens contingentes** $(x_\ell, s)$.
+
+::: {.eq-key}
+$$
+\text{Equilíbrio em } \mathbb{R}^{L\times S} \;\;\text{com mercados completos.}
+$$
+:::
+
+::: {.bridge}
+1º TBE com produção sobrevive em Arrow-Debreu sob mercados completos. 2º TBE também (com tecnologias contingentes convexas).
+:::
+
+---
+
+## Ponte para Aula 6 (2/2) — o que vai junto
+
+**Da Aula 5 para Aula 6:**
+
+- Walras estendido (com bens contingentes).
+- 1º TBE com produção (com tecnologias contingentes).
+- 2º TBE estendido (convexidade em todas as dimensões).
+- Existência via **Brouwer/Kakutani** rigoroso.
+
+::: {.eq-punch}
+Aula 4: troca. Aula 5: produção. Aula 6: incerteza + tempo + risco. Cada aula é uma camada extra.
+:::
+
+---
+
+## Pré-monitoria 3 — quando e o quê
+
+**Sábado 30/05 · 10:00 · Insper** — cobre Aula 5 (EG produção).
+
+**Pré-monitoria abre sáb 23/05 12h** (formativa, não conta nota).
+
+**Foco do Alberto:**
+
+- EC com $J = 2$ firmas heterogêneas + cotas $\theta$ não-uniformes.
+- Robinson com tecnologia CES paramétrica.
+- Contraexemplo numérico de retornos crescentes (2º TBE quebra).
+- Dualidade UMP-EMP via lema de Hotelling/Shephard.
+
+::: {.bridge}
+Próximo: por que ir.
+:::
+
+---
+
+## Pré-monitoria 3 — por que ir
+
+A álgebra de EG com produção fica intuitiva só com prática. Antes de Arrow-Debreu, monitoria 3 vale ouro.
+
+::: {.eq-punch}
+Quem domina Robinson Crusoe + 1º TBE com produção sobrevive a Aula 6 (incerteza).
+:::
+
+---
+
+## Obrigado. {.title-slide}
+
+::: {style="margin-top: 3em; text-align: center;"}
+
+::: {style="color: #C8102E; font-size: 1.8em; font-weight: 700;"}
+Perguntas?
+:::
+
+<br/>
+
+<br/>
+
+::: {style="font-size: 0.85em; color: #2A2F36;"}
+Quiz pós-aula 5 e exercícios avaliativos: abertos desde 21/05.  \
+Prazo: **quarta 27/05 · 18:00 BRT**.  \
+Gabarito: quinta 28/05 · 00:00.
+:::
+
+:::

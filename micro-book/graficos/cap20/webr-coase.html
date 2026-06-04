@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebR — Teorema de Coase: Fabrica e Pesqueiro</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:system-ui,-apple-system,sans-serif;background:#f8f9fa;padding:12px;overflow-x:hidden}.status-bar{padding:6px 12px;border-radius:6px;font-size:.85rem;margin-bottom:10px;text-align:center}.status-loading{background:#fff3cd;color:#856404}.status-ready{background:#d4edda;color:#155724}.status-error{background:#f8d7da;color:#721c24}textarea{width:100%;min-height:280px;font-family:'Fira Code',monospace;font-size:.85rem;padding:10px;border:2px solid #dee2e6;border-radius:8px;background:#1e1e1e;color:#d4d4d4;resize:vertical;tab-size:2;line-height:1.5}.btn-group{display:flex;gap:8px;margin:10px 0}button{padding:8px 20px;border:none;border-radius:6px;font-weight:600;cursor:pointer;font-size:.9rem;transition:background .2s}#btn-run{background:#0d6efd;color:#fff}#btn-run:hover{background:#0b5ed7}#btn-run:disabled{background:#6c757d;cursor:not-allowed}#btn-reset{background:#6c757d;color:#fff}#btn-reset:hover{background:#5a6268}#r-output{background:#1e1e1e;color:#d4d4d4;padding:12px;border-radius:8px;font-family:'Fira Code',monospace;font-size:.82rem;white-space:pre-wrap;max-height:400px;overflow-y:auto;margin-top:8px;min-height:60px}#r-plot{text-align:center;margin-top:8px}#r-plot canvas{max-width:100%;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+</style>
+</head>
+<body>
+<div id="status" class="status-bar status-loading">Carregando WebR...</div>
+<textarea id="r-code">
+# ============================================
+# Teorema de Coase: Fabrica e Pesqueiro
+# Exercicio Resolvido 20.2
+# ============================================
+
+cat("====== TEOREMA DE COASE (ER 20.2) ======\n\n")
+
+# Lucro da fabrica: pi_F(q) = 60q - q^2
+# Dano ao pesqueiro: D(q) = 2q^2
+
+# --- (a) Producao privada ---
+# pi_F'(q) = 60 - 2q = 0  =>  q_priv = 30
+q_priv <- 30
+pi_priv <- 60 * q_priv - q_priv^2
+D_priv <- 2 * q_priv^2
+
+cat("--- (a) Producao privada ---\n")
+cat(sprintf("q_priv = 30   pi_F = %s   D = %s\n",
+    format(pi_priv, big.mark="."), format(D_priv, big.mark=".")))
+cat(sprintf("Bem-estar = pi_F - D = %s - %s = %s\n\n",
+    format(pi_priv, big.mark="."), format(D_priv, big.mark="."),
+    format(pi_priv - D_priv, big.mark=".")))
+
+# --- (b) Otimo social ---
+# W(q) = 60q - q^2 - 2q^2 = 60q - 3q^2
+# W'(q) = 60 - 6q = 0  =>  q_soc = 10
+q_soc <- 10
+pi_soc <- 60 * q_soc - q_soc^2
+D_soc <- 2 * q_soc^2
+W_soc <- pi_soc - D_soc
+
+cat("--- (b) Otimo social ---\n")
+cat(sprintf("q_soc = 10   pi_F = %d   D = %d   W = %d\n\n", pi_soc, D_soc, W_soc))
+
+# --- (c) Direito do pesqueiro ---
+cat("--- (c) Direito do pesqueiro (rio limpo) ---\n")
+cat("Ponto de partida: q = 0 (pesqueiro exige rio limpo)\n")
+ganho_fab <- pi_soc - 0  # fabrica ganha pi_F(10) ao produzir
+dano_pesq <- D_soc - 0   # pesqueiro sofre D(10)
+cat(sprintf("Ganho da fabrica produzindo 10: %d\n", ganho_fab))
+cat(sprintf("Dano ao pesqueiro: %d\n", dano_pesq))
+cat(sprintf("Faixa de transferencia: %d <= T <= %d\n\n", dano_pesq, ganho_fab))
+
+# --- (d) Direito da fabrica ---
+cat("--- (d) Direito da fabrica (poluir livremente) ---\n")
+cat("Ponto de partida: q = 30\n")
+perda_fab <- pi_priv - pi_soc
+reducao_dano <- D_priv - D_soc
+cat(sprintf("Perda de lucro da fabrica (30->10): %d\n", perda_fab))
+cat(sprintf("Reducao no dano (30->10): %s\n", format(reducao_dano, big.mark=".")))
+cat(sprintf("Faixa de transferencia: %d <= T' <= %s\n\n",
+    perda_fab, format(reducao_dano, big.mark=".")))
+
+cat("=> Em AMBOS os casos: q = 10 = q_soc!\n")
+cat("=> Atribuicao dos direitos afeta DISTRIBUICAO, nao EFICIENCIA.\n\n")
+
+# --- Tabela: lucros e transferencias ---
+cat("--- Payoffs finais ---\n")
+cat(sprintf("%-25s %-15s %-15s\n",
+    "Cenario", "Fab. (liq)", "Pesq. (liq)"))
+cat(strrep("-", 58), "\n")
+
+# Direito pesqueiro, T = media
+T_pesq <- (dano_pesq + ganho_fab) / 2
+cat(sprintf("%-25s %-15.0f %-15.0f\n",
+    "Dir. pesqueiro (T=med)",
+    pi_soc - T_pesq, T_pesq - D_soc))
+
+# Direito fabrica, T' = media
+T_fab <- (perda_fab + reducao_dano) / 2
+cat(sprintf("%-25s %-15.0f %-15.0f\n",
+    "Dir. fabrica (T'=med)",
+    pi_soc + T_fab - pi_priv + pi_priv, -D_soc - T_fab + D_priv))
+
+cat(sprintf("%-25s %-15.0f %-15.0f\n",
+    "Sem negociacao (q=30)",
+    pi_priv, -D_priv))
+
+# --- Grafico ---
+par(mfrow = c(1, 2), mar = c(4.5, 4.5, 3, 1), bg = "#f8f9fa")
+
+# Painel 1: BMg fabrica vs DMg pesqueiro
+q_seq <- seq(0, 35, length = 300)
+BMg <- 60 - 2 * q_seq   # pi_F'(q) = 60 - 2q
+DMg <- 4 * q_seq         # D'(q) = 4q
+
+plot(q_seq, BMg, type = "l", lwd = 3, col = "#0d6efd",
+     xlab = "Quantidade (q)", ylab = "R$ por unidade",
+     main = "Negociacao Coaseana",
+     ylim = c(0, max(DMg[q_seq <= 35])))
+lines(q_seq, DMg, lwd = 3, col = "#dc3545")
+
+# Ponto otimo
+points(q_soc, 60 - 2*q_soc, pch = 19, col = "#198754", cex = 2)
+abline(v = q_soc, col = "#198754", lty = 3, lwd = 1.5)
+abline(v = q_priv, col = "#fd7e14", lty = 3, lwd = 1.5)
+
+text(q_soc - 1.5, 60 - 2*q_soc + 8,
+     expression(q^{soc} == 10), col = "#198754", cex = 0.65, font = 2)
+text(q_priv + 1, 15,
+     expression(q^{priv} == 30), col = "#fd7e14", cex = 0.65, font = 2)
+
+# Zona de ganho da negociacao
+q_gain <- seq(q_soc, q_priv, length = 100)
+polygon(c(q_gain, rev(q_gain)),
+        c(4*q_gain, 60 - 2*q_gain),
+        col = rgb(0.1, 0.5, 0.2, 0.12), border = NA)
+text(20, 50, "Ganho da\nnegociacao", col = "#198754", cex = 0.7, font = 2)
+
+legend("topright",
+       legend = c(expression("BMg fabrica: " * pi*"'(q)"),
+                  "DMg pesqueiro: D'(q)"),
+       col = c("#0d6efd", "#dc3545"),
+       lwd = 3, cex = 0.55, bg = "white")
+
+# Painel 2: Bem-estar vs q
+W_seq <- 60 * q_seq - q_seq^2 - 2 * q_seq^2
+pi_seq <- 60 * q_seq - q_seq^2
+
+plot(q_seq, pi_seq, type = "l", lwd = 2, col = "#0d6efd", lty = 2,
+     xlab = "Quantidade (q)", ylab = "R$",
+     main = "Bem-estar social vs. producao",
+     ylim = c(min(W_seq[q_seq <= 35]), max(pi_seq) * 1.05))
+lines(q_seq, W_seq, lwd = 3, col = "#198754")
+abline(h = 0, col = "#adb5bd", lty = 3)
+
+points(q_soc, W_soc, pch = 19, col = "#198754", cex = 2)
+points(q_priv, pi_priv - D_priv, pch = 17, col = "#dc3545", cex = 1.5)
+
+text(q_soc + 2, W_soc + 20,
+     paste0("W(", q_soc, ") = ", W_soc),
+     col = "#198754", cex = 0.6, font = 2)
+text(q_priv - 2, pi_priv - D_priv - 30,
+     paste0("W(", q_priv, ") = ", pi_priv - D_priv),
+     col = "#dc3545", cex = 0.6, font = 2)
+
+legend("topright",
+       legend = c(expression("W(q) = " * pi[F] - D),
+                  expression(pi[F](q) ~ "(lucro privado)")),
+       col = c("#198754", "#0d6efd"),
+       lwd = c(3, 2), lty = c(1, 2),
+       cex = 0.55, bg = "white")
+</textarea>
+<div class="btn-group">
+<button id="btn-run" disabled onclick="runCode()">&#9654; Executar</button>
+<button id="btn-reset" onclick="resetCode()">&#8635; Resetar</button>
+</div>
+<div id="r-output">(Aguardando WebR...)</div>
+<div id="r-plot"></div>
+<script type="module">
+import{WebR}from'https://webr.r-wasm.org/latest/webr.mjs';const webR=new WebR(),s=document.getElementById('status'),b=document.getElementById('btn-run'),o=document.getElementById('r-output'),p=document.getElementById('r-plot');window._originalCode=document.getElementById('r-code').value;async function init(){try{await webR.init();s.textContent='WebR pronto!';s.className='status-bar status-ready';b.disabled=false}catch(e){s.textContent='Erro: '+e.message;s.className='status-bar status-error'}}window.runCode=async function(){const code=document.getElementById('r-code').value;b.disabled=true;o.textContent='Executando...';p.innerHTML='';try{const sh=await new webR.Shelter(),r=await sh.captureR(code,{withAutoprint:true,captureStreams:true,captureConditions:true,captureGraphics:{width:700,height:380}});let t='';for(const x of r.output){if(x.type==='stdout'||x.type==='stderr')t+=x.data+'\n'}o.textContent=t||'(sem saída)';if(r.images&&r.images.length>0){for(const img of r.images){const c=document.createElement('canvas');c.width=img.width;c.height=img.height;c.getContext('2d').drawImage(img,0,0);p.appendChild(c)}}await sh.purge()}catch(e){o.textContent='Erro: '+e.message}b.disabled=false};window.resetCode=function(){document.getElementById('r-code').value=window._originalCode};init();(function(){function h(){window.parent.postMessage({iframeHeight:document.documentElement.scrollHeight,src:location.href},'*')}new ResizeObserver(h).observe(document.body);h()})();
+</script>
+</body>
+</html>

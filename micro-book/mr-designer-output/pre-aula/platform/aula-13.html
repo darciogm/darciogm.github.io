@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pré-Aula 13 — Escolha sob Incerteza I: Loterias e Utilidade Esperada — Microeconomia II</title>
+<link rel="stylesheet" href="css/platform.css">
+<script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},options:{enableMenu:false}};</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+</head>
+<body>
+<div class="topbar">
+  <h1><a href="portal.html" style="color:#fff;text-decoration:none">&#128218; Microeconomia II</a></h1>
+  <div class="user-info">
+    <span class="name" id="user-name"></span>
+    <button class="btn-logout" onclick="MicroAuth.logout();location.href='index.html'">Sair</button>
+  </div>
+</div>
+<div class="content-wrapper">
+<h1 id="pré-aula-13-escolha-sob-incerteza-i-loterias-e-utilidade-esperada">Pré-Aula 13 — Escolha sob Incerteza I: Loterias e Utilidade Esperada</h1>
+<div class="admonition info">
+<div class="admonition-title">
+Leitura obrigatória
+</div>
+<p><strong>Cap. 7, Seções 7.1–7.3</strong> do livro-texto | Tempo estimado: <strong>~45 min</strong></p>
+</div>
+<h2 id="objetivos-de-aprendizagem">Objetivos de aprendizagem</h2>
+<p>Após estudar este material e antes de vir à aula, você deve ser capaz de:</p>
+<ol type="1">
+<li>Definir loterias simples e compostas e operar com reduções de loterias compostas.</li>
+<li>Enunciar os axiomas de Von Neumann-Morgenstern e o teorema da utilidade esperada.</li>
+<li>Classificar as três atitudes perante o risco e aplicar a desigualdade de Jensen.</li>
+</ol>
+<hr />
+<h2 id="loterias-e-o-paradoxo-de-são-petersburgo">1. Loterias e o Paradoxo de São Petersburgo</h2>
+<p>Uma <strong>loteria simples</strong> é definida por:</p>
+<p><span class="math display">\[L = (p, W_1;\; 1-p, W_2)\]</span></p>
+<p>onde <span class="math inline">\(W_1\)</span> e <span class="math inline">\(W_2\)</span> são os resultados monetários e <span class="math inline">\(p\)</span> a probabilidade de <span class="math inline">\(W_1\)</span>. O <strong>valor esperado</strong> é:</p>
+<p><span class="math display">\[E[L] = pW_1 + (1-p)W_2\]</span></p>
+<p><strong>Loterias compostas</strong> são loterias cujos prêmios são outras loterias. O <strong>axioma da redução</strong> garante que toda loteria composta pode ser simplificada pela lei das probabilidades totais.</p>
+<p>O <strong>paradoxo de São Petersburgo</strong> mostra que o valor esperado não basta para decisões: uma moeda é lançada repetidamente e o prêmio é <span class="math inline">\(2^n\)</span> se a primeira cara aparece no lançamento <span class="math inline">\(n\)</span>:</p>
+<p><span class="math display">\[E[\text{prêmio}] = \sum_{n=1}^{\infty} \frac{1}{2^n} \cdot 2^n = \sum_{n=1}^{\infty} 1 = \infty\]</span></p>
+<p>Apesar do valor esperado infinito, ninguém pagaria uma quantia arbitrariamente grande para jogar.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>O paradoxo de São Petersburgo motivou Daniel Bernoulli (1738) a propor que as pessoas avaliam <strong>utilidade da riqueza</strong>, não a riqueza em si. A utilidade marginal decrescente da riqueza explica por que prêmios cada vez maiores contribuem cada vez menos para o bem-estar.</p>
+</div>
+<hr />
+<h2 id="axiomas-vnm-e-o-teorema-da-utilidade-esperada">2. Axiomas VNM e o Teorema da Utilidade Esperada</h2>
+<p>Os axiomas de <strong>Von Neumann-Morgenstern</strong> são:</p>
+<ol type="1">
+<li><strong>Completude</strong>: para quaisquer loterias <span class="math inline">\(L_1, L_2\)</span>, o agente pode compará-las (<span class="math inline">\(L_1 \succeq L_2\)</span>, <span class="math inline">\(L_2 \succeq L_1\)</span> ou ambos).</li>
+<li><strong>Transitividade</strong>: se <span class="math inline">\(L_1 \succeq L_2\)</span> e <span class="math inline">\(L_2 \succeq L_3\)</span>, então <span class="math inline">\(L_1 \succeq L_3\)</span>.</li>
+<li><strong>Continuidade</strong>: se <span class="math inline">\(L_1 \succeq L_2 \succeq L_3\)</span>, existe <span class="math inline">\(\alpha \in [0,1]\)</span> tal que <span class="math inline">\(L_2 \sim \alpha L_1 + (1-\alpha) L_3\)</span>.</li>
+<li><strong>Independência</strong>: se <span class="math inline">\(L_1 \succeq L_2\)</span>, então para qualquer <span class="math inline">\(L_3\)</span> e <span class="math inline">\(\alpha \in (0,1]\)</span>: <span class="math inline">\(\alpha L_1 + (1-\alpha)L_3 \succeq \alpha L_2 + (1-\alpha)L_3\)</span>.</li>
+</ol>
+<p><strong>Teorema</strong>: Se as preferências satisfazem esses axiomas, existe uma função <span class="math inline">\(u(\cdot)\)</span> tal que:</p>
+<p><span class="math display">\[L_1 \succeq L_2 \iff E[u(L_1)] \geq E[u(L_2)]\]</span></p>
+<p>onde <span class="math inline">\(E[u(L)] = \sum_i p_i \, u(W_i)\)</span> é a <strong>utilidade esperada</strong>.</p>
+<div class="admonition note">
+<div class="admonition-title">
+Intuição Econômica
+</div>
+<p>O axioma da independência é o mais forte e controverso: ele diz que misturar a mesma loteria <span class="math inline">\(L_3\)</span> com duas alternativas não deve alterar a preferência entre elas. O paradoxo de Allais (que veremos na Aula 15) viola justamente este axioma.</p>
+</div>
+<hr />
+<h2 id="atitudes-perante-o-risco">3. Atitudes Perante o Risco</h2>
+<p>Considere a loteria <span class="math inline">\(L = (p, W_1;\; 1-p, W_2)\)</span> com valor esperado <span class="math inline">\(E[W]\)</span>. Comparamos <span class="math inline">\(u(E[W])\)</span> com <span class="math inline">\(E[u(W)]\)</span>:</p>
+<ul>
+<li><strong>Aversão ao risco</strong>: <span class="math inline">\(u(E[W]) &gt; E[u(W)]\)</span> → <span class="math inline">\(u\)</span> é <strong>côncava</strong>.</li>
+<li><strong>Neutralidade ao risco</strong>: <span class="math inline">\(u(E[W]) = E[u(W)]\)</span> → <span class="math inline">\(u\)</span> é <strong>linear</strong>.</li>
+<li><strong>Propensão ao risco</strong>: <span class="math inline">\(u(E[W]) &lt; E[u(W)]\)</span> → <span class="math inline">\(u\)</span> é <strong>convexa</strong>.</li>
+</ul>
+<p>Exemplos clássicos de funções côncavas (averso): <span class="math inline">\(u(W) = \ln W\)</span>, <span class="math inline">\(u(W) = \sqrt{W}\)</span>, <span class="math inline">\(u(W) = W^\alpha\)</span> com <span class="math inline">\(0 &lt; \alpha &lt; 1\)</span>.</p>
+<iframe src="graficos/cap07/aversao-risco.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Observe a concavidade da função utilidade. A diferença vertical entre a corda (utilidade esperada) e a curva (utilidade do valor esperado) representa a “perda” que o averso ao risco percebe ao enfrentar incerteza.</p>
+</div>
+<hr />
+<h2 id="desigualdade-de-jensen-e-prêmio-de-risco">4. Desigualdade de Jensen e Prêmio de Risco</h2>
+<p>A <strong>desigualdade de Jensen</strong> formaliza a aversão ao risco: se <span class="math inline">\(u\)</span> é côncava e <span class="math inline">\(W\)</span> é uma variável aleatória não degenerada:</p>
+<p><span class="math display">\[u(E[W]) &gt; E[u(W)]\]</span></p>
+<p>O <strong>prêmio de risco</strong> <span class="math inline">\(\pi\)</span> é o valor máximo que o agente pagaria para eliminar a incerteza:</p>
+<p><span class="math display">\[u(E[W] - \pi) = E[u(W)]\]</span></p>
+<p>O <strong>equivalente certo</strong> é <span class="math inline">\(CE = E[W] - \pi\)</span>: a quantia certa que dá a mesma utilidade que a loteria.</p>
+<iframe src="graficos/cap07/premio-risco.html">
+</iframe>
+<div class="admonition tip">
+<div class="admonition-title">
+Explore o gráfico
+</div>
+<p>Mova as probabilidades e os resultados da loteria. Observe como o prêmio de risco (distância horizontal entre <span class="math inline">\(E[W]\)</span> e <span class="math inline">\(CE\)</span>) aumenta com a variância da loteria e com a concavidade de <span class="math inline">\(u\)</span>.</p>
+</div>
+<hr />
+<h2 id="exercícios-preparatórios">Exercícios Preparatórios</h2>
+<p><strong>Exercício 1.</strong> Um agente com <span class="math inline">\(u(W) = \sqrt{W}\)</span> enfrenta a loteria <span class="math inline">\(L = (0{,}5,\; 100;\; 0{,}5,\; 400)\)</span>. Calcule <span class="math inline">\(E[W]\)</span>, <span class="math inline">\(E[u(W)]\)</span>, o equivalente certo e o prêmio de risco.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(E[W] = 0{,}5(100) + 0{,}5(400) = 250\)</span>.<br />
+<span class="math inline">\(E[u(W)] = 0{,}5\sqrt{100} + 0{,}5\sqrt{400} = 0{,}5(10) + 0{,}5(20) = 15\)</span>.<br />
+<span class="math inline">\(CE\)</span>: <span class="math inline">\(\sqrt{CE} = 15 \Rightarrow CE = 225\)</span>.<br />
+<span class="math inline">\(\pi = E[W] - CE = 250 - 225 = 25\)</span>.</p>
+</div>
+</details>
+<p><strong>Exercício 2.</strong> Mostre que um agente com <span class="math inline">\(u(W) = aW + b\)</span> (com <span class="math inline">\(a &gt; 0\)</span>) é neutro ao risco.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(E[u(W)] = E[aW + b] = aE[W] + b = u(E[W])\)</span>.<br />
+Como <span class="math inline">\(u(E[W]) = E[u(W)]\)</span> para qualquer loteria, o agente é neutro ao risco. Além disso, <span class="math inline">\(u&#39;&#39;(W) = 0\)</span>, confirmando linearidade.</p>
+</div>
+</details>
+<p><strong>Exercício 3.</strong> Reduza a loteria composta: <span class="math inline">\(L_c = (0{,}6, L_1;\; 0{,}4, L_2)\)</span> onde <span class="math inline">\(L_1 = (0{,}5,\; 100;\; 0{,}5,\; 200)\)</span> e <span class="math inline">\(L_2 = (0{,}25,\; 100;\; 0{,}75,\; 300)\)</span>.</p>
+<details>
+<summary>
+Solução
+</summary>
+<div class="solution-body">
+<p><span class="math inline">\(P(100) = 0{,}6 \times 0{,}5 + 0{,}4 \times 0{,}25 = 0{,}30 + 0{,}10 = 0{,}40\)</span>.<br />
+<span class="math inline">\(P(200) = 0{,}6 \times 0{,}5 + 0{,}4 \times 0 = 0{,}30\)</span>.<br />
+<span class="math inline">\(P(300) = 0{,}6 \times 0 + 0{,}4 \times 0{,}75 = 0{,}30\)</span>.<br />
+Loteria reduzida: <span class="math inline">\(L = (0{,}40,\; 100;\; 0{,}30,\; 200;\; 0{,}30,\; 300)\)</span>.</p>
+</div>
+</details>
+<hr />
+<h2 id="quiz-pré-aula">Quiz Pré-Aula</h2>
+<div class="admonition warning">
+<div class="admonition-title">
+Complete antes da aula
+</div>
+<p>Responda no LMS até <strong>2 horas antes</strong> do início da aula.</p>
+</div>
+<div class="quiz-container">
+<div class="quiz-header"><h3>Quiz Pré-Aula</h3>
+<div class="quiz-score">Pontuação: <span id="quiz-score">0/0</span></div></div>
+<div class="quiz-question" data-question="q1" data-correct="b">
+<div class="q-text">Q1. O paradoxo de São Petersburgo demonstra que:</div>
+<div class="quiz-option" data-value="a">(a) O valor esperado é sempre finito</div>
+<div class="quiz-option" data-value="b">(b) O valor esperado não é suficiente para explicar decisões sob risco</div>
+<div class="quiz-option" data-value="c">(c) Todos os agentes são propensos ao risco</div>
+<div class="quiz-option" data-value="d">(d) Loterias compostas não podem ser reduzidas</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q2" data-correct="c">
+<div class="q-text">Q2. O axioma da independência de VNM afirma que:</div>
+<div class="quiz-option" data-value="a">(a) As preferências são transitivas</div>
+<div class="quiz-option" data-value="b">(b) Existe sempre uma probabilidade de indiferença</div>
+<div class="quiz-option" data-value="c">(c) Misturar a mesma terceira loteria não altera a ordenação entre duas loterias</div>
+<div class="quiz-option" data-value="d">(d) Todas as loterias podem ser comparadas</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q3" data-correct="a">
+<div class="q-text">Q3. Se \(u''(W) < 0\) para todo \(W\), o agente é:</div>
+<div class="quiz-option" data-value="a">(a) Averso ao risco</div>
+<div class="quiz-option" data-value="b">(b) Neutro ao risco</div>
+<div class="quiz-option" data-value="c">(c) Propenso ao risco</div>
+<div class="quiz-option" data-value="d">(d) Impossível determinar</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q4" data-correct="c">
+<div class="q-text">Q4. O equivalente certo de uma loteria para um averso ao risco é:</div>
+<div class="quiz-option" data-value="a">(a) Maior que o valor esperado</div>
+<div class="quiz-option" data-value="b">(b) Igual ao valor esperado</div>
+<div class="quiz-option" data-value="c">(c) Menor que o valor esperado</div>
+<div class="quiz-option" data-value="d">(d) Igual ao prêmio de risco</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-question" data-question="q5" data-correct="a">
+<div class="q-text">Q5. A desigualdade de Jensen para \(u\) côncava implica:</div>
+<div class="quiz-option" data-value="a">(a) \(u(E[W]) > E[u(W)]\)</div>
+<div class="quiz-option" data-value="b">(b) \(u(E[W]) < E[u(W)]\)</div>
+<div class="quiz-option" data-value="c">(c) \(u(E[W]) = E[u(W)]\)</div>
+<div class="quiz-option" data-value="d">(d) Depende da loteria específica</div>
+<div class="quiz-feedback"></div>
+</div>
+<div class="quiz-submit"><button class="btn btn-primary" id="quiz-submit" onclick="MicroQuiz.submit('aula-13')">Enviar Quiz</button></div>
+</div>
+<hr />
+<div class="admonition abstract">
+<div class="admonition-title">
+Próxima aula
+</div>
+<p>Na <strong>Aula 14</strong>, aprofundaremos as medidas de aversão ao risco de Arrow-Pratt, estudaremos o mercado de seguros e a cobertura ótima.</p>
+</div>
+
+</div>
+<script src="js/tracker.js"></script>
+<script>
+if (!MicroAuth.requireAuth()) throw 'redirect';
+var session = MicroAuth.getSession();
+document.getElementById('user-name').textContent = session.nome;
+MicroTracker.startPage('aula-13');
+MicroQuiz.init('aula-13');
+
+/* Auto-resize iframes — delayed to let JSXGraph/MathJax render first */
+function resizeIframe(iframe) {
+  try {
+    var doc = iframe.contentDocument || iframe.contentWindow.document;
+    var gc = doc.querySelector('.graph-container');
+    var h = gc ? gc.scrollHeight : Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight);
+    if (h > 200) iframe.style.height = Math.max(h + 40, 520) + 'px';
+  } catch(e) { /* cross-origin: keep CSS default */ }
+}
+document.querySelectorAll('.content-wrapper iframe').forEach(function(f) {
+  f.addEventListener('load', function() {
+    setTimeout(function(){ resizeIframe(f); }, 1000);
+    setTimeout(function(){ resizeIframe(f); }, 3000);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,393 @@
+---
+title: "Microeconomia II"
+subtitle: "Aula 17 — Função de Produção I"
+author: "Prof. Darcio Genicolo Martins"
+date: ""
+format:
+  revealjs:
+    theme: [default, insper-premium.scss]
+    slide-number: c/t
+    logo: assets/logo-insper-small.png
+    footer: ""
+    transition: fade
+    transition-speed: fast
+    width: 1280
+    height: 720
+    progress: true
+    center: false
+    title-slide-attributes:
+      data-background-color: "#FFFFFF"
+    include-in-header:
+      text: |
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraph.css">
+        <script src="https://cdn.jsdelivr.net/npm/jsxgraph/distrib/jsxgraphcore.js"></script>
+lang: pt-BR
+---
+
+## Recapitulando
+
+Na aula anterior, vimos que:
+
+- Microeconomia é a ciência das decisões sob **escassez**
+- O instrumento principal é o **modelo** — simplificação deliberada
+- Três pilares: *ceteris paribus*, otimização, positivo vs. normativo
+
+. . .
+
+**Hoje:** A firma entra em cena. O que determina **quanto** ela consegue produzir?
+
+> A função de produção é para a firma o que a função de utilidade é para o consumidor.
+
+## Função de Produção {data-background-color="#E50505"}
+
+## O Que É uma Função de Produção?
+
+Duas fábricas de cerveja, mesma cevada, mesmos funcionários — uma produz o **dobro**. Mágica? Não: **tecnologia**.
+
+. . .
+
+::: {.eq-highlight}
+$$q = f(K, L)$$
+:::
+
+A função de produção descreve a quantidade **máxima** de produto $q$ que pode ser obtida a partir de capital $K$ e trabalho $L$, dada a tecnologia.
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Pense na função de produção como uma **receita de cozinha**. Para cada combinação de ingredientes (insumos), há um resultado máximo (produto). O *máximo* é a chave — a função descreve a fronteira tecnológica, não qualquer combinação ineficiente abaixo dela.
+:::
+
+## Curto Prazo vs. Longo Prazo
+
+:::: {.columns}
+
+::: {.column width="50%"}
+**Curto prazo:**
+
+Pelo menos um fator é **fixo**
+
+$$q = f(\bar{K}, L) \equiv \mathrm{TP}(L)$$
+
+Exemplos: tamanho da fábrica, número de máquinas
+:::
+
+::: {.column width="50%"}
+**Longo prazo:**
+
+Todos os fatores são **variáveis**
+
+$$q = f(K, L)$$
+
+A firma pode ajustar tudo: máquinas, pessoal, espaço
+:::
+
+::::
+
+. . .
+
+> No curto prazo, a firma otimiza *dentro* das restrições. No longo prazo, ela escolhe *quais* restrições ter.
+
+## Produto Marginal e Produto Médio
+
+**Produto marginal do trabalho** — quanto produto a mais com um trabalhador a mais:
+
+$$\mathrm{PMg}_L = \frac{\partial f(K, L)}{\partial L}$$
+
+. . .
+
+**Produto médio do trabalho** — produção por trabalhador:
+
+$$\mathrm{PMe}_L = \frac{f(K, L)}{L}$$
+
+. . .
+
+**Relação fundamental:**
+
+| Condição | Implicação |
+|---|---|
+| $\mathrm{PMg}_L > \mathrm{PMe}_L$ | PMe crescente |
+| $\mathrm{PMg}_L < \mathrm{PMe}_L$ | PMe decrescente |
+| $\mathrm{PMg}_L = \mathrm{PMe}_L$ | PMe no **máximo** |
+
+## A Intuição da Relação PMg–PMe
+
+:::{.callout-tip title="Intuição Econômica"}
+Numa partida de futebol, se o jogador que entra no segundo tempo faz mais gols que a média do time, a média sobe. Se ele erra tudo, a média cai. O produto marginal é o "gol do substituto" — ele determina a direção do produto médio.
+:::
+
+. . .
+
+**Analogia com notas:**
+
+- Sua média é 7,0 (PMe)
+- Tira 9,0 na próxima prova (PMg > PMe) → média **sobe**
+- Tira 5,0 na próxima prova (PMg < PMe) → média **cai**
+- PMg = PMe → média no seu **ponto máximo**
+
+## PMg e PMe — Gráfico Interativo (JSXGraph)
+
+<div id="jxgbox-aula02" style="width:750px; height:420px; margin: 0 auto;"></div>
+
+<script>
+(function() {
+  var brd = JXG.JSXGraph.initBoard('jxgbox-aula02', {
+    boundingbox: [-0.5, 55, 12, -8], axis: true,
+    defaultAxes: {x: {name: 'L', withLabel: true, label: {position: 'rt', offset: [-10, 15]}},
+                  y: {name: 'q, PMg, PMe', withLabel: true, label: {position: 'rt', offset: [15, -5]}}}
+  });
+  var sA = brd.create('slider', [[0.5,52],[4,52],[5,10,30]], {name: 'A', snapWidth: 1});
+  var sAlpha = brd.create('slider', [[0.5,48],[4,48],[0.2,0.6,0.9]], {name: '\u03b1', snapWidth: 0.05});
+  // q = A * L^alpha (short-run, K=1)
+  brd.create('functiongraph', [function(L) {
+    if (L <= 0) return 0;
+    return sA.Value() * Math.pow(L, sAlpha.Value());
+  }, 0.01, 11], {strokeColor: '#333', strokeWidth: 2, name: 'TP(L)',
+    label: {position: 'rt', offset: [5, 10]}});
+  // PMg = A * alpha * L^(alpha-1)
+  brd.create('functiongraph', [function(L) {
+    if (L <= 0.05) return 0;
+    return sA.Value() * sAlpha.Value() * Math.pow(L, sAlpha.Value() - 1);
+  }, 0.05, 11], {strokeColor: '#E50505', strokeWidth: 2.5, dash: 0, name: 'PMg',
+    label: {position: 'rt', offset: [5, 10]}});
+  // PMe = A * L^(alpha-1)
+  brd.create('functiongraph', [function(L) {
+    if (L <= 0.05) return 0;
+    return sA.Value() * Math.pow(L, sAlpha.Value() - 1);
+  }, 0.05, 11], {strokeColor: '#2196F3', strokeWidth: 2.5, dash: 2, name: 'PMe',
+    label: {position: 'rt', offset: [5, 10]}});
+  brd.create('text', [7, 50, function() {
+    return 'q = ' + sA.Value().toFixed(0) + '\u00B7L^{' + sAlpha.Value().toFixed(2) + '}';
+  }], {fontSize: 14});
+})();
+</script>
+
+Ajuste $A$ e $\alpha$ para visualizar como PMg e PMe mudam com a tecnologia.
+
+## Lei dos Rendimentos Marginais Decrescentes
+
+> O 10.o trabalhador produz menos que o 1.o — não porque é menos capaz, mas porque tem menos capital com que trabalhar.
+
+. . .
+
+::: {.eq-highlight}
+$$\frac{\partial^2 f(\bar{K}, L)}{\partial L^2} < 0 \quad \text{para } L > L^*$$
+:::
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+Em uma cozinha com 4 bocas de fogão: o 1.o cozinheiro é muito produtivo; o 2.o ajuda bastante; o 3.o já esbarra nos outros; o 4.o fica esperando boca liberar. O fogão não mudou — é o trabalhador extra que rende menos.
+:::
+
+. . .
+
+**Atenção:** Esta "lei" é de *curto prazo* (fator fixo). Não confundir com rendimentos de escala!
+
+## Exemplo Numérico {.smaller}
+
+**Função:** $q = 20K^{0,5}L^{0,5}$ com $K = 25$, $L = 16$
+
+. . .
+
+| Medida | Cálculo | Resultado |
+|---|---|---|
+| Produto Total | $20 \times 25^{0,5} \times 16^{0,5}$ | $q = 400$ |
+| $\mathrm{PMg}_L$ | $0,5 \times 20 \times 5 \times 0,25$ | $12,5$ |
+| $\mathrm{PMg}_K$ | $0,5 \times 20 \times 0,2 \times 4$ | $8$ |
+| $\mathrm{PMe}_L$ | $400 / 16$ | $25$ |
+
+. . .
+
+Como $\mathrm{PMg}_L = 12{,}5 < 25 = \mathrm{PMe}_L$, o produto médio é **decrescente** — cada trabalhador adicional puxa a média para baixo.
+
+## Produtividade no Brasil
+
+:::: {.columns}
+
+::: {.column width="55%"}
+**Dados (FGV/IBRE):**
+
+- 2000–2010: produtividade por hora cresceu **+1,6% a.a.**
+- 2010–2023: desacelerou para **+0,3% a.a.**
+- Média 1981–2023: modestos **+0,5% a.a.**
+
+Com investimento em $K$ crescendo lentamente, $\mathrm{PMe}_L$ avança de forma modesta.
+:::
+
+::: {.column width="45%"}
+**Implicação teórica:**
+
+A intensidade de capital $K/L$ varia enormemente entre setores:
+
+- Refino de petróleo: alto $K/L$
+- Confecções: baixo $K/L$
+
+Para dado nível tecnológico, mais $K/L$ implica maior $\mathrm{PMe}_L$.
+:::
+
+::::
+
+## Isoquantas e TMST {data-background-color="#730D9F"}
+
+## Isoquantas
+
+Uma **isoquanta** é o conjunto de combinações $(K, L)$ que geram o **mesmo** nível de produto:
+
+$$\{(K, L) \mid f(K, L) = q_0\}$$
+
+. . .
+
+**Propriedades:**
+
+1. Para cada nível de produto existe uma isoquanta
+2. Isoquantas **não se cruzam**
+3. Inclinação **negativa** (PMg positivos)
+4. **Convexas** em relação à origem (TMST decrescente)
+
+. . .
+
+> Isoquantas são o análogo produtivo das **curvas de indiferença** do consumidor.
+
+## Mapa de Isoquantas — Gráfico Interativo
+
+<iframe src="graficos/cap10/isoquantas.html" width="100%" height="450" frameborder="0" class="graph-embed"></iframe>
+
+Alterne entre Cobb-Douglas, Leontief, Linear e CES. Arraste o ponto para visualizar a TMST.
+
+## Taxa Marginal de Substituição Técnica
+
+A **TMST** mede a taxa de troca entre insumos ao longo da isoquanta:
+
+::: {.eq-highlight}
+$$\mathrm{TMST}_{L,K} = -\frac{dK}{dL}\bigg|_{q = q_0} = \frac{\mathrm{PMg}_L}{\mathrm{PMg}_K} = \frac{f_L}{f_K}$$
+:::
+
+. . .
+
+**Derivação** (diferenciação total de $f(K,L) = q_0$):
+
+$$f_K \, dK + f_L \, dL = 0 \implies -\frac{dK}{dL} = \frac{f_L}{f_K}$$
+
+. . .
+
+:::{.callout-tip title="Intuição Econômica"}
+A TMST mede quantas unidades de capital a firma pode trocar por uma unidade de trabalho sem perder produção. Numa fazenda mecanizada, dispensar uma colheitadeira exige *muitos* trabalhadores extras.
+:::
+
+## TMST Decrescente
+
+**Por que a TMST diminui ao longo da isoquanta?**
+
+. . .
+
+À medida que a firma usa mais $L$ e menos $K$:
+
+- $\mathrm{PMg}_L$ cai (rendimentos marginais decrescentes)
+- $\mathrm{PMg}_K$ sobe (menos capital → cada unidade mais valiosa)
+- $\mathrm{TMST} = \mathrm{PMg}_L / \mathrm{PMg}_K$ diminui
+
+. . .
+
+**Consequência geométrica:** as isoquantas são **convexas** — quanto mais "desequilibrada" a combinação, mais difícil a troca.
+
+## Rendimentos de Escala
+
+Se a firma **dobra todos** os insumos, o produto:
+
+::: {.eq-highlight}
+$$f(tK, tL) \quad \text{vs.} \quad t \cdot f(K,L), \quad t > 1$$
+:::
+
+| Tipo | Condição | Exemplo |
+|---|---|---|
+| **Constantes** (CRS) | $f(tK,tL) = t \cdot f$ | Padaria de bairro |
+| **Crescentes** (IRS) | $f(tK,tL) > t \cdot f$ | Siderúrgica |
+| **Decrescentes** (DRS) | $f(tK,tL) < t \cdot f$ | Burocracia governamental |
+
+. . .
+
+**Cuidado:** Rendimentos de escala são de **longo prazo** (todos os fatores variam). Não confundir com rendimentos marginais decrescentes (curto prazo, um fator fixo)!
+
+## Elasticidade de Escala
+
+A medida **local** dos rendimentos de escala:
+
+$$e = \varepsilon_K + \varepsilon_L = \frac{f_K \cdot K + f_L \cdot L}{f(K, L)}$$
+
+. . .
+
+| $e$ | Rendimentos |
+|---|---|
+| $e = 1$ | Constantes |
+| $e > 1$ | Crescentes |
+| $e < 1$ | Decrescentes |
+
+. . .
+
+**Para Cobb-Douglas** $q = AK^{\alpha}L^{\beta}$:
+
+$$e = \alpha + \beta \quad \text{(constante ao longo de toda a função)}$$
+
+## Exemplo: Indústria Automobilística
+
+:::: {.columns}
+
+::: {.column width="55%"}
+**Escala Mínima Eficiente (EME):**
+
+- Planta de montagem: 150–250 mil veículos/ano
+- Abaixo disso: CMe significativamente maior
+- Elasticidade de escala estimada: $e \approx 1{,}10$ a $1{,}25$
+:::
+
+::: {.column width="45%"}
+**Implicações para o Brasil:**
+
+- Concentração no ABC paulista, Betim (MG), Camaçari (BA)
+- Fusões avaliadas pelo CADE
+- Economias de escala justificam firmas grandes
+:::
+
+::::
+
+. . .
+
+> Rendimentos crescentes explicam por que **usinas são enormes** e **padarias são pequenas**.
+
+## Cuidado: Duas Confusões Clássicas
+
+**Erro 1:** Confundir rendimentos marginais decrescentes com rendimentos de escala decrescentes.
+
+| | Rend. marginais decresc. | Rend. de escala decresc. |
+|---|---|---|
+| **Prazo** | Curto prazo | Longo prazo |
+| **Fatores** | Um varia, outro fixo | Todos variam juntos |
+| **Formal** | $\partial^2 f/\partial L^2 < 0$ | $f(tK,tL) < t \cdot f$ |
+
+. . .
+
+**Erro 2:** Achar que PMg decrescente implica rendimentos de escala decrescentes.
+
+**Contraexemplo:** $f(K,L) = K^{0,6}L^{0,8}$ tem PMg decrescente em cada fator **e** rendimentos *crescentes* de escala ($\alpha + \beta = 1{,}4$).
+
+## Rendimentos de Escala --- Interativo
+
+<iframe src="graficos/cap10/rendimentos-escala.html" title="Rendimentos de Escala" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Progresso Técnico e Deslocamento de Isoquantas --- Interativo
+
+<iframe src="graficos/cap10/progresso-tecnico.html" title="Progresso Técnico e Deslocamento de Isoquantas" class="graph-iframe" style="height:520px;overflow:hidden" scrolling="no"></iframe>
+
+## Resumo da Aula
+
+1. **Função de produção** $q = f(K,L)$: máximo de produto por combinação de insumos
+2. **PMg** e **PMe**: PMg "puxa" PMe; PMg = PMe no máximo do PMe
+3. **Rendimentos marginais decrescentes**: curto prazo, fator fixo
+4. **Isoquantas**: curvas de nível da função de produção
+5. **TMST** $= f_L/f_K$: taxa de troca entre insumos, decrescente
+6. **Rendimentos de escala**: CRS, IRS, DRS — longo prazo, todos os fatores
+
+. . .
+
+**Próxima aula:** Famílias de funções de produção (Cobb-Douglas, CES, Leontief, Linear) e progresso técnico.

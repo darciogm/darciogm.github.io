@@ -1,0 +1,20 @@
+TF	A análise do valor presente líquido incorpora o valor presente com taxa de desconto tanto dos custos quanto dos benefícios de um investimento.	true
+TF	O prazo de retorno também proporciona um modo de determinar os benefícios líquidos de um investimento.	true
+TF	O prazo de retorno desconta fluxos futuros de dinheiro, assim como a análise do valor presente líquido.	false
+TF	O valor da opção de espera de um investimento é o incentivo que o risco cria para adiar a decisão de investir e coletar informação.	true
+TF	Um indivíduo avesso ao risco ganha mais utilidade a partir de uma determinada quantidade de renda, do que a partir de uma quantidade equivalente em valor esperado decorrente de uma renda incerta.	true
+TF	Seja u(W) = -e^{-\beta W} uma utilidade von Neumann-Morgenstern, em que \beta > 0 é uma constante e W é a riqueza. Então \beta denota a medida de aversão relativa ao risco.	false
+TF	Suponha que uma carteira de ativos arriscados possui retorno esperado r_e = 21\% e variância \sigma^2 = 0{,}09. O ativo sem risco oferece um retorno r_f = 3\%. Então, de acordo com o modelo média-variância, o preço do risco da carteira é p = 2.	false
+TF	Suponha que o retorno de mercado é r_m = 12\% e a taxa de retorno do ativo sem risco é r_f = 8\%. A variância da carteira eficiente é \sigma_e^2 = 0{,}01 e a covariância entre o retorno de um ativo A e a carteira eficiente é \sigma_{A,e} = 0{,}5. De acordo com o modelo CAPM, se o valor esperado do ativo A é \64, então o preço do ativo A é \50.	false
+TF	De acordo com o modelo média-variância, se a taxa marginal de substituição (TMS) entre retorno esperado da carteira e seu desvio-padrão é TMS = 0{,}3, se a variância do retorno da carteira é \sigma_m^2 = 0{,}04 e a taxa de retorno do ativo sem risco é r_f = 12\%, então o retorno esperado da carteira é r_m = 18\%.	true
+TF	Um indivíduo possui utilidade von Neumann-Morgenstern u(x) = \sqrt{x} e possui riqueza W = \100. Ele está sujeito a uma perda monetária aleatória X, com distribuição uniforme contínua no intervalo [0, 100]. Se ao indivíduo for oferecido, ao preço de G = \55, um seguro total contra essa perda aleatória, então ele comprará o seguro.	true
+TF	No modelo de Fisher com dois períodos, se a taxa de juros real aumenta e o consumidor é poupador líquido, o efeito sobre o consumo no período 1 é inequivocamente negativo (o consumidor sempre consome menos no período 1).	false
+TF	A equação de Euler do consumo u'(C_1) = \beta(1+r)u'(C_2) implica que, quando a taxa de juros excede a taxa de desconto subjetiva (r > \rho), o consumo ótimo é crescente ao longo do tempo.	true
+TF	O custo de uso do capital de Jorgenson, c_K = p_K(r + \delta), é crescente na taxa de depreciação e crescente na taxa de juros real.	true
+TF	Segundo a regra de Hotelling, se a taxa de juros real de uma economia aumenta, a velocidade de extração de recursos exauríveis diminui, pois o futuro se torna mais valioso.	false
+TF	O Valor Presente Líquido (VPL) e a Taxa Interna de Retorno (TIR) sempre concordam na ordenação de projetos de investimento mutuamente exclusivos.	false
+TF	Pela equação de Fisher, se a taxa de juros nominal é 15% e a inflação é 10%, a taxa de juros real é exatamente 5%.	false
+TF	Se o VPL de um projeto é zero, isso significa que o projeto não gera nenhum lucro contábil.	false
+TF	A TIR de um projeto com fluxos de caixa convencionais (investimento inicial negativo seguido de fluxos positivos) é única.	true
+TF	No modelo CAPM, o risco idiossincrático (específico da firma) é remunerado pelo mercado, pois afeta o retorno do investidor.	false
+TF	A fórmula da perpetuidade VP = F/r implica que uma redução da taxa de juros de 10% para 5% duplica o valor presente de um fluxo perpétuo constante.	true
