@@ -18,6 +18,13 @@ design:
   notes: "Diagnostic D4 from the 2026-04-30 gate battery. The result mechanistically confirms the AUC null against direct defendants (AN-007)."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-018: Gate D4 — CADE winner-heavy diagnostic
 
 !!! abstract "Intuition (plain-language)"

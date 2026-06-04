@@ -4,6 +4,8 @@ paper: frequent-losers
 
 # Paper DAG
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 The directed acyclic graph of the paper's argument: how the institutional
 premise flows through the award-layer construct, the **decomposition** that
 disciplines it, and the **reach-and-limits** map that is the contribution.
@@ -27,7 +29,7 @@ flowchart TD
     P1 --> C1
 
     %% ---------- Validation target ----------
-    V1["Validation target: 193 <b>cobidders</b><br/>(adjudication-anchored exposure,<br/><i>not</i> cartel members)"]:::target
+    V1["Validation target: 651 <b>cobidders</b><br/>(adjudication-anchored exposure,<br/>non-circular label, <i>not</i> cartel members)"]:::target
     V2["Direct CADE defendants =<br/>legal anchors (win-heavy)"]:::target
     C2 --> V1
     V2 -. anchors .-> V1
@@ -35,10 +37,10 @@ flowchart TD
     %% ---------- Decomposition: the method ----------
     subgraph DEC["Decomposition — the contribution"]
       direction TB
-      D1["Hold procurement <b>opportunity</b> fixed<br/>exposure-only AUC 0.946 &rarr; within-stratum 0.7715<br/><b>genuine increment +0.042</b> (DeLong p&approx;2e-6)"]:::method
-      D2["<b>Timing</b>: orders firms retrospectively<br/>among incumbents; full-universe ROC &approx; 0.55;<br/>sequential strict-timing infeasible"]:::limit
-      D3["<b>Single-case</b>: leave-largest-case-out<br/>PR-AUC 0.126 &rarr; 0.036 (&minus;71%);<br/>one case &approx; 55% of positives"]:::limit
-      D4["<b>Scope</b>: AUC &approx; 0.49 vs direct defendants<br/>&mdash; by design (loser-side screen)"]:::limit
+      D1["Hold procurement <b>opportunity</b> fixed<br/>raw ROC 0.761 (exposure-only 0.905) &rarr; within-stratum 0.471 (&approx;chance)<br/><b>fragile increment +0.010</b> (p=0.013, not robust)"]:::method
+      D2["<b>Timing</b>: orders firms retrospectively<br/>among incumbents; full-universe ROC &approx; 0.474 (below chance);<br/>sequential strict-timing infeasible"]:::limit
+      D3["<b>Single-case</b>: leave-largest-case-out<br/>PR-AUC 0.143 &rarr; 0.090 (&minus;37%);<br/>one case &approx; 32% of positives"]:::limit
+      D4["<b>Scope</b>: binary AUC &approx; 0.49 vs direct defendants<br/>&mdash; by design (continuous score 0.66&ndash;0.70)"]:::limit
     end
     V1 --> D1
     D1 --> D2
@@ -50,8 +52,8 @@ flowchart TD
     subgraph ARC["Division of labor between layers"]
       direction TB
       A1["Award ranks <b>where to look</b>;<br/>bid evaluates <b>what is found</b>"]:::arch
-      A2["Bid benchmark: Imhof 0.888 / FL 0.921 /<br/>combined 0.962 (full-observability upper bound)<br/>&mdash; complementarity, not dominance"]:::arch
-      A3["Cost-recall frontier: at K1=2000,<br/>firm pool &minus;88% but bid-row footprint &minus;33%;<br/><i>one operating point, not an optimum</i>"]:::arch
+      A2["Bid benchmark: bid RF 0.717 / award 0.760 /<br/>combined PR 0.188 random-CV but 0.103 case-grouped<br/>&mdash; conditional complementarity, case-fragile"]:::arch
+      A3["Cost-recall frontier: at K1=2000,<br/>firm pool &minus;88% but bid-row footprint &minus;33%;<br/>K1=1000 beats K1=2000 &mdash; no optimal cutoff"]:::arch
       A1 --> A2 --> A3
     end
     D1 --> A1
@@ -83,10 +85,12 @@ flowchart TD
 
 !!! note "How to read it"
     The green node is the paper's methodological core — the **opportunity
-    decomposition** that separates a genuine ranking signal (+0.042) from the
-    mechanical exposure arithmetic (0.946) that inflates the raw pooled AUC. The
-    brown nodes are the **limits** that the same decomposition exposes
-    (retrospective ordering, single-case dependence, the direct-defendant scope
-    boundary). The contribution is not a deployable cartel detector — it is the
-    method that draws this boundary, and the map of where cheap administrative
-    records can, and cannot, order forensic priority.
+    decomposition** that strips mechanical exposure arithmetic (unconditional
+    0.905) from the raw award-layer score (0.761) and finds that almost nothing
+    survives: the within-stratum AUC is ≈ chance (0.471) and the only positive is
+    a fragile +0.010 increment that is not robust across designs. The brown nodes
+    are the **limits** the same decomposition exposes (below-chance out-of-time
+    ordering, single-case dependence, the direct-defendant scope boundary). The
+    contribution is not a deployable cartel detector — it is the **framework**
+    that draws this boundary and shows where cheap administrative records can, and
+    cannot, order forensic priority.

@@ -4,6 +4,8 @@ paper: frequent-losers
 
 # Replication
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 This page describes how to reproduce every table and figure in the paper,
 and the data-access and confidentiality position that governs what can be
 shared.
@@ -144,13 +146,20 @@ key**, never by raw CNPJ:
 |------|------|-------------|
 | CADE cartel rulings (public) | 12 cases | Adjudicated procurement-cartel cases used as legal anchors |
 | Direct CADE defendants | — | Direct defendants named in the rulings (legal anchors) |
-| Adjudication-anchored cobidders | 193 | Always-loser firms with documented exposure to adjudicated environments (anonymized keys; **not** cartel members) |
+| Adjudication-anchored cobidders | 651 | Always-loser firms that share ≥1 BEC tender-item with a BEC-active direct defendant (anonymized keys; **not** cartel members) |
 
-!!! note "Cobidders are exposure, not membership"
-    The 193 cobidders are firms with **adjudication-anchored exposure** —
-    they co-appeared with direct defendants in adjudicated environments.
-    They are **not** identified as cartel members. The label inherits
-    CADE's selection of which cartels to adjudicate.
+!!! note "The label rule (canonical, non-circular)"
+    The main validation label is the **broad adjudication-anchored
+    cobidder target**: a unique **always-loser** firm that shares at least
+    one BEC tender-item with a **BEC-active direct CADE defendant**. Direct
+    defendants are excluded, and the **frequent-loser flag is never used to
+    construct the label**. There are **651 positives** (341 frequent-loser,
+    310 non-frequent-loser — the composition shows the label is not
+    flag-conditioned). A contact-intensity sensitivity (≥ 2 shared
+    tender-items) gives 368 positives. The cobidders are firms with
+    **adjudication-anchored exposure** — they co-appeared with direct
+    defendants in adjudicated environments — **not** cartel members, and the
+    label inherits CADE's selection of which cartels to adjudicate.
 
 ### Frequent-loser construct
 
@@ -193,6 +202,7 @@ The master script runs the core pipeline sequentially as subprocesses:
 
 | Script | Purpose | Key output |
 |--------|---------|------------|
+| `00_build_canonical_validation_targets.R` | Build the canonical non-circular validation label (651 always-loser cobidders sharing ≥1 BEC tender-item with a BEC-active direct CADE defendant; FL flag never used) | `outputs/targets/canonical_target_counts.csv` |
 | `01_clean.R` | Load Parquets, extract BEC keys, merge LOSERS, filter | `/tmp/p3_prepared.rds` |
 | `02_analysis.R` | Main regressions (4 DVs × 4 specs) | `/tmp/p3_models.rds` |
 | `03_tables.R` | LaTeX tables | `output/tables/tab_*.tex` |
@@ -204,9 +214,14 @@ The master script runs the core pipeline sequentially as subprocesses:
 | `09_matching.R` | CEM + IPW matching, balance table | `tab_matching.tex` |
 | `10_fl_characteristics.R` | FL firm characterization (size, age, CNAE) | `tab_fl_characteristics.tex` |
 
-!!! note "Decomposition, audit, and frontier scripts"
-    The opportunity decomposition (exposure-only vs within-stratum AUC and
-    the genuine-increment DeLong test), the leakage and timing audits, the
+!!! note "Canonical-label, decomposition, audit, and frontier scripts"
+    The canonical validation label is built by
+    `00_build_canonical_validation_targets.R` (651 positives; FL flag never
+    used), and the contact-intensity sensitivity (≥ 2 shared tender-items,
+    368 positives) by `02b_opportunity_sensitivity_contact2.R`. The
+    opportunity decomposition (raw vs exposure-only vs within-stratum AUC
+    and the nested-increment DeLong test), the permutation and negative-
+    control audits, the leakage / contamination and timing audits, the
     leave-largest-case-out single-case-concentration audit, the
     bid-distribution benchmark, and the cost–recall frontier (K1 grid,
     firm-vs-bid-row denominators) are produced by additional numbered

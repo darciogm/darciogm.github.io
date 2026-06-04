@@ -18,6 +18,13 @@ design:
   notes: "Verdict: in-sample is INFLATED. ~47% of top-500 ranking comes from 2017–2019 participation, after CADE investigation was already underway for some cartels. Reported per JLEO discipline."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-013: Precision@k audit — temporal holdout vs in-sample
 
 !!! abstract "Intuition (plain-language)"

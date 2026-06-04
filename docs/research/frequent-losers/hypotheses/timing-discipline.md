@@ -5,9 +5,11 @@ slug: timing-discipline
 title: "Under strict timing the signal is retrospective among incumbents, not prospective"
 cluster: B
 paper_section: "§4.2"
-status: "partial (strongly supported)"
-last_updated: 2026-06-02
+status: "not confirmed at the universe (incumbent residue only)"
+last_updated: 2026-06-04
 ---
+
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
 
 # H:timing-discipline — Under strict timing the signal is retrospective among incumbents, not prospective at the universe
 
@@ -21,30 +23,34 @@ is infeasible on this panel, and the result leans heavily on a single CADE
 case.
 
 !!! abstract "Intuition (plain-language)"
-    Could the screen work only because we built it with hindsight? Under strict timing the answer is split, and the paper discloses both halves. *Inside the always-loser pool* — i.e., conditioning on incumbents the screen already flags — the score still discriminates at firm AUC ≈ 0.77. But *at the full universe*, where a regulator would actually deploy it cold, ROC collapses to ≈ 0.55 and precision@500 falls to roughly zero: the screen is retrospective among incumbents, not prospective. A fully sequential strict-timing pipeline is infeasible on this panel. And the signal leans on one case: leaving the largest cartel out drops PR-AUC from 0.126 to 0.036 (−71%), because that one case is about 55% of the positives. All disclosed, not buried.
+    Could the ranking work only because we built it with hindsight? Under strict timing the answer is: at the universe, no. *At the full universe*, where a regulator would actually deploy it cold, ROC is 0.474 — below chance — and precision@500 = recall@500 = 0 in every year. A residue survives only *inside the training always-loser pool* (continuous ROC 0.684; FL14 0.646) — i.e., conditioning on incumbents the labels retrospectively anchor. A fully sequential strict-timing pipeline is infeasible on this panel. And the signal still leans on one case, though less than before: leaving the largest cartel out drops PR-AUC from 0.143 to 0.090 (−37%), because that one case is about 32% of the positives. All disclosed, not buried.
 
 
-> **Evidence strength: Partial (strongly supported).**
-> The honest timing disclosure on the BEC × CADE data:
-> (i) **Survives only inside the always-loser pool** ([AN-006](../analyses/an-006-strict-prospective-holdout.md)):
-> strict ex ante firm AUC ≈ 0.77 [0.734, 0.800] *conditional on incumbents
-> the screen flags* — not at the full universe.
-> (ii) **Retrospective, not prospective at the universe** ([AN-013](../analyses/an-013-precision-at-k-audit.md)):
-> at the full universe under strict timing, ROC ≈ 0.55 and precision@500 ≈ 0.
-> The signal is retrospective among incumbents, not a cold prospective
-> screen.
+> **Evidence strength: Not confirmed at the universe (incumbent residue only).**
+> The honest timing disclosure on the BEC × CADE data under the non-circular
+> 651-cobidder label:
+> (i) **Fails at the full universe** ([AN-013](../analyses/an-013-precision-at-k-audit.md),
+> [AN-006](../analyses/an-006-strict-prospective-holdout.md)):
+> strict prospective ranking gives ROC 0.474 (below chance) with
+> precision@500 = recall@500 = 0 — and zero TP@500 in every rolling-origin
+> year. Not a cold prospective screen.
+> (ii) **Incumbent-pool residue only** ([AN-006](../analyses/an-006-strict-prospective-holdout.md)):
+> inside the training always-loser pool the continuous score reaches ROC
+> 0.684 (FL14 0.646), retrospective among incumbents the labels anchor.
 > (iii) **Sequential strict-timing infeasible** ([AN-029](../analyses/an-029-three-classifier-timing-battery.md)):
 > a fully sequential strict-timing deployment cannot be constructed on this
 > panel — disclosed as a limit, not papered over.
-> (iv) **Single-case dependence** ([AN-013](../analyses/an-013-precision-at-k-audit.md),
+> (iv) **Single-case dependence (attenuated)** ([AN-013](../analyses/an-013-precision-at-k-audit.md),
 > [AN-030](../analyses/an-030-market-persistence.md)): leave-largest-out drops
-> PR-AUC from 0.126 to 0.036 (**−71%**); one case is ≈ 55% of the positives.
+> PR-AUC from 0.143 to 0.090 (**−37%**); one case is ≈ 32% of the positives
+> (45.4% of TP@500). Attenuated under the broad label but still material.
 > (v) **Leakage audit** ([AN-014](../analyses/an-014-leakage-audit-d3.md)):
 > in-sample item-level numbers attenuate under temporal holdout; the
 > direct-defendant null is regime-invariant.
-> Promotion to 🟢 (**Confirmed**) requires independent replication on a
-> non-BEC procurement panel; see the H4 page section on why even the
-> strictest within-data timing audits cannot satisfy that bar.
+> The hypothesis is **not confirmed at the universe**: the labels are
+> retrospective adjudication anchors, and only an incumbent-firm residue
+> survives strict timing. Non-BEC replication remains the path to any
+> generalizable claim.
 
 ## Theory
 
@@ -58,19 +64,20 @@ allocated.
 
 Under strict timing, the disclosure should show:
 
-- the signal **survives inside the always-loser pool** (firm AUC ≈ 0.77,
-  conditional on incumbents the screen flags);
-- but **collapses at the full universe** (ROC ≈ 0.55, precision@500 ≈ 0) —
-  it is retrospective among incumbents, not prospective; and
-- it is **single-case-dependent** (leave-largest-out PR-AUC 0.126 → 0.036).
+- a residue **survives only inside the always-loser pool** (continuous ROC
+  0.684, FL14 0.646, conditional on incumbents the labels anchor);
+- it **fails at the full universe** (ROC 0.474, precision@500 = recall@500 = 0)
+  — the labels are retrospective adjudication anchors, not prospective; and
+- it is **single-case-dependent, attenuated** (leave-largest-out PR-AUC
+  0.143 → 0.090, −37%; one case ≈ 32% of positives).
 
 ## Competing prediction
 
-**Fully prospective screen.** A naive reading would claim the screen is a cold
-prospective detector that ranks new entrants. The disclosed result rejects
-that reading: at the universe under strict timing the screen is at chance, and
-a fully sequential strict-timing deployment is infeasible. The honest claim is
-the retrospective-among-incumbents one.
+**Fully prospective screen.** A naive reading would claim the ranking is a cold
+prospective detector that orders new entrants. The disclosed result rejects
+that reading: at the universe under strict timing the ranking is below chance
+with zero TP@500, and a fully sequential strict-timing deployment is
+infeasible. The honest claim is the retrospective, incumbent-residue one.
 
 ## Case evidence
 
@@ -81,10 +88,10 @@ constructs the strict ex ante variant.
 ## Empirical test
 
 - *Within-pool strict timing*: score uses pre-target participation; evaluated
-  inside the always-loser pool (firm AUC ≈ 0.77).
+  inside the training always-loser pool (continuous ROC 0.684).
 - *Universe strict timing*: same score deployed cold at the full universe
-  (ROC ≈ 0.55, precision@500 ≈ 0).
-- *Single-case stress*: leave-largest-out PR-AUC (0.126 → 0.036).
+  (ROC 0.474, precision@500 = recall@500 = 0).
+- *Single-case stress*: leave-largest-out PR-AUC (0.143 → 0.090, −37%).
 - *Outcome*: the disclosed map of where strict timing leaves the signal
   standing and where it collapses.
 
@@ -99,8 +106,8 @@ deployment scenario.
 
 | Analysis | Bearing | Status | Key takeaway |
 |---|---|---|---|
-| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (strict ex ante firm) | Direct | done | Survives only inside the always-loser pool: firm AUC ≈ 0.77 (FL14) / 0.750 (continuous) — conditional on incumbents |
-| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k + universe + leave-largest-out) | Direct | done | At full universe ROC ≈ 0.55, precision@500 ≈ 0 (retrospective, not prospective); leave-largest-out PR-AUC 0.126 → 0.036 (−71%), one case ≈ 55% of positives |
+| [AN-006](../analyses/an-006-strict-prospective-holdout.md) (strict ex ante firm) | Direct | done | Residue only inside the training always-loser pool: continuous ROC 0.684 / FL14 0.646 — conditional on incumbents |
+| [AN-013](../analyses/an-013-precision-at-k-audit.md) (precision@k + universe + leave-largest-out) | Direct | done | At full universe ROC 0.474 (below chance), precision@500 = recall@500 = 0 (retrospective, not prospective); leave-largest-out PR-AUC 0.143 → 0.090 (−37%), one case ≈ 32% of positives |
 | [AN-014](../analyses/an-014-leakage-audit-d3.md) (leakage audit) | Supports | done | In-sample item-level numbers attenuate under temporal holdout; direct-defendant null regime-invariant |
 | [AN-029](../analyses/an-029-three-classifier-timing-battery.md) (timing battery) | Direct | done | A fully sequential strict-timing deployment is infeasible on this panel — disclosed as a limit |
 | [AN-030](../analyses/an-030-market-persistence.md) (firm/market persistence) | Supports | done | 8.7% firm persistence between windows; the pool the screen survives in is incumbents, not fresh entrants |
@@ -110,20 +117,21 @@ deployment scenario.
 - Window-length sensitivity (clf_2013, clf_2010 extensions to the
   three-classifier battery).
 - Decomposition of attenuation into sample-size vs information channels.
-- Cobidder-specific persistence rate (of 193 cobidders, how many in
+- Cobidder-specific persistence rate (of the 651 cobidders, how many in
   both windows?) — would refine [AN-030](../analyses/an-030-market-persistence.md).
 
-## Why not 🟢 Confirmed?
+## Why not confirmed?
 
-The within-data timing evidence is honestly split, and the paper
-discloses both halves. Inside the always-loser pool the screen survives
-strict timing (firm AUC ≈ 0.77, conditional on incumbents); at the full
-universe it does not (ROC ≈ 0.55, precision@500 ≈ 0), so the operational
-content is retrospective among incumbents, not a cold prospective screen.
-A fully sequential strict-timing pipeline is infeasible on this panel, and
-the signal leans on a single CADE case (leave-largest-out drops PR-AUC
-0.126 → 0.036, ≈ 55% of positives in one case). These are disclosed limits,
-not hidden weaknesses — the honest map is the contribution.
+Under the non-circular label the timing evidence does not confirm a
+prospective screen. At the full universe the strict ranking is below chance
+(ROC 0.474, precision@500 = recall@500 = 0, zero TP@500 every rolling-origin
+year), so the operational content is retrospective among incumbents — the
+labels are adjudication anchors, not forecasts. A residue survives only inside
+the training always-loser pool (continuous ROC 0.684, FL14 0.646). A fully
+sequential strict-timing pipeline is infeasible on this panel, and the signal
+still leans on a single CADE case (leave-largest-out drops PR-AUC 0.143 → 0.090,
+−37%; ≈ 32% of positives in one case). These are disclosed limits, not hidden
+weaknesses — the honest map is the contribution.
 
 Two artifact families further remain untested by any within-data
 timing audit, and bound the within-pool survival itself:
@@ -149,6 +157,6 @@ Both can only be ruled out by replication on a non-BEC panel with an
 independent cartel anchor (ComprasNet federal + a federal-level
 anti-cartel authority; another state's e-procurement with its own
 cartel adjudications; or cross-country with comparable forensic
-benchmarks). Until that exists, H4 stays at **Partial (strongly
-supported)**, consistent with H1 and H3 and the project-wide rule
-documented in [findings/index.md](../findings/index.md).
+benchmarks). Under the current evidence H4 is **not confirmed at the
+universe (incumbent residue only)**, consistent with H1 and H3 and the
+project-wide rule documented in [findings/index.md](../findings/index.md).

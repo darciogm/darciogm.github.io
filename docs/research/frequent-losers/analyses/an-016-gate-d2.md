@@ -18,6 +18,13 @@ design:
   notes: "Diagnostic D2 from the 2026-04-30 gate battery. Direction opposite to the institutional theory that would justify γ++ winner/loser reframing — that reframing was formally disqualified by D2."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-016: Gate D2 — modal-by-modal AUC
 
 !!! abstract "Intuition (plain-language)"

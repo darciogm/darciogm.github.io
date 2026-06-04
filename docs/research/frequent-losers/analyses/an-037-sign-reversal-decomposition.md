@@ -18,6 +18,13 @@ design:
   notes: "The headline AUC narrative of the paper is loser-side concentration; the price decomposition is sourced from the same data but operates on the price equation. Sign-reversal is the load-bearing piece for the scope-vs-damages reading."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-037: Sign-reversal decomposition — headline specs + within-overlap subgroups
 
 !!! abstract "Intuition (plain-language)"

@@ -18,6 +18,13 @@ design:
   notes: "Complements AN-037 (headline spec progression + subgroup) by showing the cell-level dispersion of the sign reversal. The scope reading predicts negative coefficients in most cells but allows positive coefficients in narrow subsets (e.g., specific item groups or high-value tail)."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-038: Negative cell + item-group segment audit
 
 !!! abstract "Intuition (plain-language)"

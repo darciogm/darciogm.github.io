@@ -4,8 +4,10 @@ paper: frequent-losers
 
 # Extensions
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 !!! abstract "Intuition (plain-language)"
-    The current paper maps the *reach and limits* of award-layer screening: cheap records can order forensic priority, but they do not prove conduct, and the screen as built is retrospective rather than prospective. These extensions are the open problems that follow from that map. Does the decomposition method — splitting an apparent signal into opportunity arithmetic, single-case concentration, and a genuine increment — replicate in another jurisdiction? Can a screen be made to work *prospectively*, before an investigation is already underway? And what would a richer integration of the bid layer add? None of these is solved here; they are the research agenda the reach-and-limits framing opens up.
+    The current paper maps the *reach and limits* of award-layer screening: cheap records do not prove conduct, and under a reproducible non-circular label they carry no robust cartel-ordering signal net of opportunity. These extensions are the open problems that follow from that deflationary map. Does the decomposition framework — splitting an apparent signal into opportunity arithmetic, single-case concentration, and any genuine increment — replicate in another jurisdiction (where a residual might actually survive)? Can a screen be made to work *prospectively*, before an investigation is already underway? And what would a richer integration of the bid layer add? None of these is solved here; they are the research agenda the reach-and-limits framing opens up.
 
 This page collects future-work directions that follow from the paper's
 central result — that award-layer records **order forensic priority**
@@ -32,18 +34,20 @@ a single AUC. An apparent loser-side signal is separated into three
 parts: an *opportunity-arithmetic* component (firms that bid more have
 more chances to co-appear with anyone, including defendants), a
 *single-case-concentration* component (one adjudicated case can dominate
-the positive labels), and a *genuine increment* that survives both
+the positive labels), and any *genuine increment* that survives both
 adjustments.
 
-On BEC-SP the decomposition gives: exposure-only AUC **0.946**,
-within-stratum AUC **0.7715**, and a genuine increment of **+0.042**
-(DeLong *p* ≈ 2 × 10⁻⁶). The open question is whether this split
-**replicates** on a different procurement system with a different
-adjudication history. If the opportunity-only term again carries most of
-the raw discrimination while a small, significant within-stratum
-increment survives, the method generalizes; if the genuine increment
-vanishes elsewhere, the BEC result is jurisdiction-specific. The
-ComprasNet federal panel is the natural first replication target (see
+On BEC-SP the decomposition is deflationary: exposure-only AUC **0.905**
+(unconditional), raw award score ROC **0.761**, within-stratum AUC
+**0.471 (≈ chance)**, and only a fragile nested increment of **+0.010**
+(DeLong *p* = 0.013) that is **not robust across designs**. The open
+question is whether on a different procurement system, with a different
+adjudication history, a within-stratum increment **does** survive. If the
+opportunity-only term again carries essentially all the raw discrimination
+and nothing robust survives stratification, the deflationary result
+generalizes; if a genuine within-stratum signal appears elsewhere, the
+BEC null is jurisdiction-specific. The ComprasNet federal panel is the
+natural first replication target (see
 [`COMPRASNET_PATH_TO_CONFIRMED.md`](https://github.com/darciogm/bitter-pills/blob/main/paper3-frequent-losers/COMPRASNET_PATH_TO_CONFIRMED.md)).
 
 ---
@@ -51,13 +55,15 @@ ComprasNet federal panel is the natural first replication target (see
 ## Prospective Deployment — A Genuine Open Problem
 
 The screen as built is **retrospective among incumbents**. The strict
-timing tests make this explicit and do not resolve it: among firms with
-sufficient prior participation the ordering is informative, but on the
-full firm universe a strictly out-of-time ROC is near chance
-(≈ **0.55**), and a fully sequential strict-timing evaluation is
-**infeasible** with the available adjudication dates. The screen
-therefore orders *who has already accumulated a loser-side footprint*,
-not *who will become a cover bidder next*.
+timing tests make this explicit and do not resolve it: inside the
+training always-loser pool the out-of-time ordering is only weakly
+informative (ROC ≈ **0.68**), but on the full firm universe a strictly
+out-of-time ROC is **below chance** (≈ **0.474**, precision@500 = 0 in
+every rolling-origin year), and a fully sequential strict-timing
+evaluation is **infeasible** with the available adjudication dates
+(23.5% of positives are unrankable entrants). The screen therefore orders
+*who has already accumulated a loser-side footprint*, not *who will become
+a cover bidder next*.
 
 Making award-layer screening **prospective** is an open research
 problem, not something the current paper delivers. It would require
@@ -96,13 +102,16 @@ institutional-identification claim the BEC data cannot support.
 
 ## Richer Bid-Layer Integration
 
-The benchmark against bid-distribution screens shows **complementarity,
-not dominance**: on the matched evaluation pool the Imhof bid-distribution
-pipeline reaches AUC **0.888**, the frequent-loser flag **0.921**, and a
-combined model **0.962**. The combined number is leakage-sensitive and is
-read as a *division of labor* — cheap award-layer records and costly
-bid-layer features carry different information — not as a claim that one
-screen beats the other.
+The benchmark against bid-distribution screens shows **conditional
+complementarity, not dominance**: on the single evaluation pool a
+transparent bid-moment random forest inspired by Imhof–Wallimann-style
+screens reaches ROC **0.717** / PR 0.116, the award continuous score
+**0.760** / PR 0.143, and a combined model PR **0.188** under random CV.
+But under case-grouped folds the combined model falls **below** award-only
+on PR (0.103 vs 0.143). The complementarity is conditional on this
+implemented benchmark and case-fragile, and is read as a *division of
+labor* — cheap award-layer records and costly bid-layer features carry
+different information — not as a claim that one screen beats the other.
 
 The open direction is a deeper integration of the bid layer: which
 bid-distribution moments add genuine increment *after* the award-layer

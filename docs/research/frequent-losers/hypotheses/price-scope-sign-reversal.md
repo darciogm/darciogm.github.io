@@ -6,8 +6,10 @@ title: "Price evidence carries scope information, not damages"
 cluster: E
 paper_section: "§7.1 + §7.2"
 status: "partial (strongly supported)"
-last_updated: 2026-06-02
+last_updated: 2026-06-04
 ---
+
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
 
 # H:price-scope-sign-reversal — Price evidence carries scope information, not damages
 

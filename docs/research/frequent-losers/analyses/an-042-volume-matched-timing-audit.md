@@ -18,6 +18,13 @@ design:
   notes: "Designed as the candidate SECOND bid-conduct channel for H5. It does not materialize. Reported as an honest null that bounds the bid-conduct distinctness claim to one channel."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-042: Volume-matched timing audit — is there a second bid-conduct channel?
 
 !!! abstract "Intuition (plain-language)"

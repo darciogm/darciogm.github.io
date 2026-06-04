@@ -18,6 +18,13 @@ design:
   notes: "Answers the Open-test flagged in H:cobidder-profile-distinct and H:exposure-discipline as 'the strongest remaining within-data audit for the causal distinctness claim'. share_facing_direct_cade is tautological (cobidder definition) and is reported but excluded from the verdict. This isolates the participation-volume confound only; it is descriptive, not a causal identification of cobidder status."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-041: Volume-matched cobidder audit — does within-FL distinctness survive holding tenders_count fixed?
 
 !!! abstract "Intuition (plain-language)"

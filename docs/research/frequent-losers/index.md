@@ -17,65 +17,65 @@ hide:
 [Online appendix](online_appendix.pdf){ .md-button }
 </p>
 
-<p class="version-tag"><em>JLEO submission version &mdash; June 2026.</em></p>
+<p class="version-tag"><em>JLEO submission version &mdash; June 2026 (canonical-target re-estimation, 2026-06-04).</em></p>
 
 </div>
 
 <div class="key-result" markdown>
-<span class="number">+0.042</span>
-<span class="label">Genuine ranking signal that survives once procurement opportunity is held fixed (within-stratum AUC 0.7715; DeLong p &approx; 2e-6) — most raw concentration is opportunity, not signal</span>
+<span class="number">&approx; 0.50</span>
+<span class="label">Within-opportunity AUC of the award-layer score against a reproducible, non-circular validation target — once procurement opportunity is held fixed, the cheap signal's apparent reach is opportunity arithmetic, not screening signal</span>
 </div>
 
 ## Abstract
 
 Cartel enforcement must allocate costly proof-producing effort
-before legal proof exists, drawing first on administrative
-records that are cheap but legally thin. How far can such records
-screen? Using São Paulo's BEC procurement platform (2009–2019)
-and CADE adjudications, we build a minimal award-layer
-construct—persistent zero-win participation among always-loser
-firms, the *frequent losers*—and subject it to a decomposition
-that most screening studies omit. The construct concentrates
-adjudication-anchored exposure to adjudicated cartel
-environments; the decomposition then draws a sharp boundary. Much
-of its apparent power reflects procurement opportunity and a
-single adjudicated case, and it orders firms retrospectively among
-incumbents rather than prospectively across the platform. Our
-contribution is a transferable method for separating genuine
-screening signal from exposure arithmetic and case concentration,
-and a map of where cheap administrative records can, and cannot,
-order forensic priority. Liability remains in the richer bid-level
-record.
+before legal proof exists. Using São Paulo's BEC procurement
+platform and CADE adjudications, we ask how far routine award
+records can rank where bid-level forensics should begin. We study
+a minimal award-layer construct—persistent zero-win
+participation—and validate it against a reproducibly constructed,
+adjudication-anchored cobidder label that never uses the screen
+itself. The decomposition is deliberately deflationary: the cheap
+signal's apparent reach mostly reflects procurement opportunity
+and case concentration; within comparable opportunity sets the
+residual ordering is marginal at best, strict prospective ranking
+fails outside incumbent pools, and exposure concentrates in a few
+adjudicated cases. The transferable contribution is the audit
+framework—label construction, opportunity adjustment, timing
+discipline, case-composition and cost-recall accounting—that
+shows where cheap screens stop and what bid-layer follow-up
+costs. Liability remains in the richer evidentiary record.
 
 **JEL Classification:**
 <span class="badge">D44</span>
 <span class="badge">D73</span>
 <span class="badge">H57</span>
 <span class="badge">K21</span>
+<span class="badge">K42</span>
 <span class="badge">L41</span>
 
 **Keywords:**
-<span class="badge badge-kw">screening under incomplete observability</span>
-<span class="badge badge-kw">evidence allocation</span>
+<span class="badge badge-kw">cartel screening</span>
+<span class="badge badge-kw">award-layer data</span>
+<span class="badge badge-kw">enforcement triage</span>
+<span class="badge badge-kw">incomplete observability</span>
 <span class="badge badge-kw">opportunity decomposition</span>
-<span class="badge badge-kw">award-layer enforcement</span>
-<span class="badge badge-kw">forensic priority</span>
 
 ---
 
 ## Key Findings
 
-!!! success "A limited but genuine ranking signal survives the decomposition"
-    Raw concentration against adjudication-anchored cobidders looks high (pooled/exposure-only AUC **0.946**), but most of it is procurement opportunity. Holding opportunity fixed, the within-stratum AUC is **0.7715**, a genuine increment of **+0.042** over mechanical exposure (DeLong $p \approx 2\times10^{-6}$). The honest discrimination headline is the **+0.04 increment**, not the pooled figure.
+!!! success "A reproducible, non-circular validation target"
+    The validation label is built from current scripts: **651 unique always-loser cobidders** — zero-win firms sharing at least one tender-item with a BEC-active adjudicated CADE defendant (defendants excluded). The frequent-loser flag is never used to construct the label: 341 positives are frequent losers, **310 are not**. Every downstream table is estimated against this label.
 
-!!! warning "Scope boundary, by design"
-    Against direct CADE defendants the score is at chance (AUC $\approx$ **0.49**). A loser-side screen is built to miss win-heavy defendants — this is a scope signature, not a failure. The validation target is adjudication-anchored cobidders, always-loser firms that bid alongside direct CADE defendants. The score orders forensic priority; it does not prove conduct, liability, or damages.
+!!! warning "The deflationary core result"
+    Raw discrimination looks respectable (ROC-AUC **0.761**, lift 5.6&times; at the top 500) — but an opportunity-only model with no score reaches **0.905**, and within comparable opportunity sets the score ranks at **&approx; chance (0.47–0.51)**. Permutation tests do not reject the opportunity-only null (p = 0.13–0.39), and the result is robust to intensity-restricted labels (contact &geq; 2 strengthens it). The cheap signal's apparent reach is opportunity arithmetic.
 
-!!! info "Evidence allocation under costly observability"
-    Award records (who participates, wins, keeps losing) are cheap and routinely observed; bid-level records are richer but costly to recover. The paper reframes procurement-cartel screening as an evidence-allocation problem: cheap administrative records can order *where* to look, not *what* coordination occurred.
+!!! note "Reach and limits — timing and case concentration"
+    Strict prospective ranking fails outside incumbent pools (full-universe ROC 0.47; zero true positives in the top 500 in every rolling-origin year; 23.5% of positives are unrankable entrants). One adjudicated case (rail/metro) supplies **32% of positives** and 45% of top-500 true positives — dropping it cuts PR-AUC by 37%. The estimated ranking is not a portable cartel score.
 
-!!! note "Reach and limits — what the decomposition exposes"
-    The score orders firms **retrospectively** among incumbents (strict 2009–16 → 2017–19 timing survives only in the always-loser pool, $\approx 0.77$; across the full platform ROC $\approx 0.55$). One adjudicated case (rail/metro) supplies $\approx 55\%$ of positives: leave-largest-case-out collapses PR-AUC from 0.126 to 0.036. The transferable contribution is the method that separates signal from exposure arithmetic and case concentration.
+!!! info "What transfers: the audit framework"
+    The contribution is the decomposition an enforcement agency can run **before** opening costly bid records: label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting (firm-count savings of 88% shrink to 33% in bid rows — denominators matter). It shows where cheap screens stop. Liability remains in the richer evidentiary record.
 
 ---
 

@@ -6,7 +6,46 @@ paper: frequent-losers
 
 ---
 
-## v22 — June 3, 2026 (Current — JLEO submission)
+## v22.1 — June 4, 2026 (Current — canonical-target re-estimation)
+
+**Credibility repair: reproducible, non-circular validation target.** The
+previous main target (193 cobidders, a static file whose builder was archived
+and whose membership was conditioned on the frequent-loser flag) is retired.
+The new main label is built from current scripts: **651 unique always-loser
+cobidders** — zero-win firms sharing ≥ 1 BEC tender-item with a BEC-active
+adjudicated CADE defendant; defendants excluded; **the frequent-loser flag is
+never used to construct the label** (341 of 651 positives are frequent losers,
+310 are not). All downstream tables, figures, and macros re-estimated.
+
+**Headline numbers under the honest label (supersede every earlier figure):**
+
+- Raw award-layer score: ROC **0.761** (PR 0.143; lift 5.6× at top 500). The
+  earlier 0.946/0.924 figures were inflated by the label's circularity.
+- Opportunity-only model: **0.905** unconditional — outperforms the score.
+- **Within-opportunity AUC ≈ 0.47–0.51 (chance).** Nested increment +0.010
+  (p = 0.013); matched-stratum permutation p = 0.127 (ns); FL-enrichment
+  p = 0.067 (ns). **No robust residual signal net of opportunity.**
+- Intensity-restricted sensitivity (contact ≥ 2, 368 positives): deflationary
+  result strengthens — exposure-only 0.956; within-stratum 0.506; increment
+  +0.003 (p = 0.47).
+- Case concentration: largest case 32% of positives (drop-largest PR −37%).
+  Strict prospective ranking: zero true positives in the top 500, every year.
+- Bid benchmark (16,731 firms / 651 positives): award 0.760 ≈ bid RF 0.717;
+  combined falls below award-only under case-grouped folds.
+- Cost-recall at K1 = 2000/k = 500: TP 116; firm reduction 88% vs bid-row
+  reduction 33%.
+
+**Note on analysis-note (AN) pages:** AN pages dated before June 4, 2026
+document historical runs under the superseded label; where they conflict with
+the paper, **the paper wins**. Main pages (results, robustness, findings,
+hypotheses) are reconciled to the canonical numbers.
+
+Main 39 pp + online appendix 33 pp; builds 0 errors / 0 undefined references;
+claims scan critical = 0.
+
+---
+
+## v22 — June 3, 2026 (superseded by v22.1 — JLEO submission)
 
 **Title:** *Cheap Signals, Costly Proof: The Reach and Limits of Award-Layer
 Screening in Cartel Enforcement.* Canonical source:

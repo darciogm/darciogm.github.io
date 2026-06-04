@@ -18,6 +18,13 @@ design:
   notes: "Complements participation-level evidence (AN-008, AN-028) by demonstrating that distinctness is behavioral at the bid level, not solely a volume artifact"
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-031: Bid-level behavioral profile — gap-to-winner across classes
 
 !!! abstract "Intuition (plain-language)"

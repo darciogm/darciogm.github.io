@@ -18,6 +18,13 @@ design:
   notes: "Identical to D1 gate diagnostic (AN-015). The horse race establishes the continuous dominance that motivates demoting FL14 to 'operational implementation' status."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-011: Horse race — continuous vs binary FL
 
 !!! abstract "Intuition (plain-language)"

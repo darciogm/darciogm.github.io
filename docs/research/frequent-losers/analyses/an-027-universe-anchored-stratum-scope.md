@@ -18,6 +18,13 @@ design:
   notes: "This is the systematic 'scope matrix' that documents what the score targets and what it does NOT. The crucial row is the participation count on full BEC vs direct defendants: AUC 0.383 — below 0.5, i.e., the score actively REPELS winner-heavy firms."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-027: Universe-anchored stratum scope matrix
 
 !!! abstract "Intuition (plain-language)"

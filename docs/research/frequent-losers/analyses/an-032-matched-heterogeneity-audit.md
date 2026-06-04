@@ -18,6 +18,13 @@ design:
   notes: "Honest audit of the H5 'profile distinct' claim. Most quadrants lose statistical significance under matching — consistent with the within-FL distinctness being largely a volume effect. The mr-frequent disciplined reading: H5 is descriptive, not causal."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-032: Matched-heterogeneity audit — does the quadrant profile survive PS matching?
 
 !!! abstract "Intuition (plain-language)"

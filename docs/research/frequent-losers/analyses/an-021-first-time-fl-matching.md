@@ -18,6 +18,13 @@ design:
   notes: "Result demoted to appendix per the locked rule of engagement: first-time-FL +0.06 (p=0.31) under PS matching is not a load-bearing finding"
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-021: First-time FL effect under PS matching
 
 !!! abstract "Intuition (plain-language)"

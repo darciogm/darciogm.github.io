@@ -4,6 +4,8 @@ paper: frequent-losers
 
 # Papers from this Research Program
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 This page lists the paper currently in submission preparation and a
 ranked set of follow-up paper ideas that can be built using the same
 underlying data (BEC-SP procurement panel 2009–2019, CADE adjudication
@@ -43,37 +45,45 @@ manuscript at submission.
    Enforcement must spend costly proof-producing effort *before* legal
    proof exists; cheap award-layer records (who participates, wins,
    keeps losing) can order forensic priority, not prove conduct.
-2. *A transferable decomposition method* — separates a screen's
+2. *A transferable decomposition framework* — separates a screen's
    genuine ranking signal from three confounds most screening studies
    leave bundled: mechanical opportunity exposure, retrospective
    information, and single-case concentration. Applied to the
-   frequent-loser construct: raw concentration against
-   adjudication-anchored cobidders looks high (pooled/exposure-only
-   AUC 0.946), but holding procurement opportunity fixed the
-   within-stratum AUC is 0.7715, a genuine increment of +0.042
-   (DeLong $p \approx 2\times10^{-6}$). Most apparent power is
-   opportunity arithmetic; a limited but significant signal survives.
+   frequent-loser construct against the broad adjudication-anchored
+   cobidder target (651 positives; the frequent-loser flag is not used to
+   build the label), raw concentration is modest (continuous-score
+   ROC 0.761, PR-AUC 0.143) and mostly exposure (unconditional
+   exposure-only ROC 0.905); holding procurement opportunity fixed, the
+   within-stratum AUC is 0.471 — essentially chance — and the only
+   positive is a fragile nested increment of +0.010 (DeLong $p = 0.013$)
+   that is not robust across designs. The deflationary decomposition
+   itself is the contribution.
 3. *A map of reach and limits* — where cheap administrative records
-   can and cannot order forensic priority. The score is at chance
-   (AUC $\approx$ 0.49) against win-heavy direct CADE defendants *by
-   design* (loser-side scope signature); it orders firms
-   retrospectively among incumbents, not prospectively across the
-   platform (strict timing survives only in the always-loser pool,
-   $\approx 0.77$; platform-wide ROC $\approx 0.55$); and one
-   adjudicated case (rail/metro) supplies $\approx 55\%$ of positives
-   (leave-largest-case-out collapses PR-AUC 0.126 → 0.036).
+   can and cannot order forensic priority. The FL-binary flag is at
+   chance (AUC $\approx$ 0.49) against win-heavy direct CADE defendants
+   *by design* (loser-side scope signature; the continuous score ranks
+   them at 0.66–0.70); it orders firms retrospectively among incumbents,
+   not prospectively across the platform (strict timing reaches
+   $\approx 0.68$ inside the training always-loser pool; platform-wide
+   ROC $\approx 0.474$, below chance); and one adjudicated case
+   (rail/metro) supplies $\approx 32\%$ of positives (leave-largest-case-out
+   drops PR-AUC 0.143 → 0.090, $-37\%$); the estimated ranking is
+   case-sensitive, not portable.
 
-**Division of labor with bid-layer forensics.** Against the
-seven-feature Imhof–Wallimann bid-distribution benchmark (AUC 0.888),
-the FL-binary award score (AUC 0.921) and the combined model (AUC
-0.962) show the award layer adds information *beyond* the bid
-benchmark — complementarity, not dominance, and leakage-sensitive. The
-award layer ranks *where* to look; the bid layer evaluates *what* is
-found. Sequencing the two traces a cost–recall frontier: at one
-operating point (top-2,000 firms) recall is $\approx 0.67$ with an
-$\approx 88\%$ reduction in firms but only $\approx 33\%$ in bid rows,
-because survivors are high-participation firms. The frontier, not any
-single cutoff, is the design object.
+**Division of labor with bid-layer forensics.** Against a transparent
+bid-moment random-forest benchmark inspired by Imhof–Wallimann-style
+screens (ROC 0.717, PR 0.116), the award continuous score (ROC 0.760,
+PR 0.143) is comparable, and the combined model is only conditionally
+better — PR 0.188 under random CV but 0.103 (below award-only) under
+case-grouped folds. Complementarity is conditional and case-fragile, not
+dominance. The award layer ranks *where* to look; the bid layer evaluates
+*what* is found. Sequencing the two traces a cost–recall frontier: at one
+operating point (top-2,000 firms) the firm-count footprint falls
+$\approx 88\%$ but the bid-row footprint only $\approx 33\%$, because
+survivors are high-participation firms; and $K_1 = 1000$ beats
+$K_1 = 2000$, so no single cutoff is optimal. The frontier — a
+recovery-footprint design, not measured agency savings — is the design
+object.
 
 **Price as scope, not damages.** The conditional FL-price association
 is descriptive scope evidence: broad +0.064 reflects selection into
@@ -96,9 +106,11 @@ identified; no overcharge is claimed.
   Cross-jurisdiction replication (ComprasNet federal) would push R&R
   to 75–80% at JLEO. See
   [`COMPRASNET_PATH_TO_CONFIRMED.md`](https://github.com/darciogm/bitter-pills/blob/main/paper3-frequent-losers/COMPRASNET_PATH_TO_CONFIRMED.md).
-- *Single-case concentration* — one adjudicated cartel supplies the
-  majority of positive labels; the decomposition discloses this rather
-  than absorbing it. Cross-jurisdiction labels are the natural fix.
+- *Single-case concentration* — one adjudicated cartel supplies
+  $\approx 32\%$ of positive labels and 45.4% of true positives at the
+  top-500 operating point; the estimated ranking is case-sensitive, and
+  the decomposition discloses this rather than absorbing it.
+  Cross-jurisdiction labels are the natural fix.
 - *CADE selection bias* — cobidder labels reflect CADE's adjudication
   choices; not within-data testable. Same fix path.
 

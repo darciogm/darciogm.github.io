@@ -6,8 +6,10 @@ title: "FL cobidders are economically distinct from other frequent losers"
 cluster: C
 paper_section: "§5"
 status: partial (strongly supported)
-last_updated: 2026-06-02
+last_updated: 2026-06-04
 ---
+
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
 
 # H:cobidder-profile-distinct — FL cobidders are economically distinct from other frequent losers
 
@@ -20,7 +22,7 @@ of — credible losing roles. This is **descriptive economic content** about a
 firm type the ranking surfaces; it is not proof of a cover-bidding role.
 
 !!! abstract "Intuition (plain-language)"
-    Within the frequent-loser group, are cobidders qualitatively different from other firms in the same group, or are they just the highest-volume members? The robust answer is **structural**: cobidders specialize in narrower product portfolios, spread across more distinct winners, sit closer to legal cartel anchors, and bid closer to the winning price. Cobidders bid in ~1.8× more tenders, so the obvious worry is volume — but the volume-matched audit (AN-041) strongly supports the distinction: matching on participation count (SMD 0.49 → 0.00), the structural distinctness *holds or strengthens*. That is the strongly-supported core. The bid-conduct side is narrower and honestly bounded: one channel survives (bidding closer to the winner), while the bid-dispersion sub-signal (AN-041) and the bid-timing channel (AN-042) are documented nulls. The remaining negatives — the across-cell price/mechanism heterogeneity (AN-032) and the first-time-FL channel (AN-021) — are about a *causal-mechanism* reading the hypothesis does not assert, not about the structural distinctness. Promotion beyond strongly-supported needs non-BEC replication.
+    Among always-loser firms, are cobidders qualitatively different from other always-losers, or just the highest-volume members? The robust answer is **structural**: cobidders specialize in narrower product portfolios, spread across more distinct winners, sit closer to legal cartel anchors, and bid closer to the winning price. Cobidders bid in ~1.8× more tenders, so the obvious worry is volume — but the volume-matched audit (AN-041) supports the distinction: matching on participation count (SMD 0.49 → 0.00), the structural distinctness *holds or strengthens*. Note the canonical label is **not** built from the FL flag (341 FL14 / 310 non-FL among the 651 positives), so FL "enrichment" is a separate descriptive fact (≈5.7× unconditional) that is **not significant within matched opportunity strata** (p = 0.067). That is the strongly-supported core: a descriptive participation profile, not proof of a cover-bidding role. The bid-conduct side is narrower — one channel survives, while the bid-dispersion sub-signal (AN-041) and the bid-timing channel (AN-042) are documented nulls. Promotion beyond strongly-supported needs non-BEC replication.
 
 
 > **Evidence strength: Partial (strongly supported).**
@@ -38,7 +40,8 @@ firm type the ranking surfaces; it is not proof of a cover-bidding role.
 > markets have lower winner-side HHI (0.178 vs 0.303) — cobidders sit
 > in contestable winner environments.
 > (iii) **Standardized-diff battery** ([AN-028](../analyses/an-028-exposure-stratum-balance.md)):
-> 7 dimensions, d 0.19–1.00, all Wilcoxon p < 10⁻⁵ given N = 191.
+> 7 dimensions, d 0.19–1.00, all Wilcoxon p < 10⁻⁵ (canonical label = 651
+> cobidders, not FL-conditioned).
 > (iv) **Bid-level behavior** ([AN-031](../analyses/an-031-bid-level-behavioral-profile.md)):
 > cobidder median gap-to-winner 0.582 vs 0.809 for non-cobidder FLs
 > (d = −0.28, p < 10⁻⁶); SD of gap +0.15. Distinctness at the bid

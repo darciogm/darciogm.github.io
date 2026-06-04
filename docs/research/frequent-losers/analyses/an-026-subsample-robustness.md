@@ -18,6 +18,13 @@ design:
   notes: "Important cross-cut because the Imhof full-pipeline scoring (AN-010) requires bid microdata; if FL signal were correlated with bid-data availability, AUC would shift across subsamples. It does not."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-026: Subsample robustness (data-rich vs low/high bid counts)
 
 !!! abstract "Intuition (plain-language)"

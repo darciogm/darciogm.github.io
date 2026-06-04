@@ -18,6 +18,13 @@ design:
   notes: "Two complementary placebos: (a) THIS — sham FL permutation that preserves marginal participation; (b) CADE-label permutation (separate file, AUC pre/post band 0.713–0.783) — different randomization, both decisive."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-005: Sham FL permutation — formal test against the volume-only null
 
 !!! abstract "Intuition (plain-language)"

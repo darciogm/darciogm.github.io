@@ -18,6 +18,13 @@ design:
   notes: "cobid_post2019 is the truly out-of-time target — these cobidders are defined by adjudications that happened AFTER the training window even for clf_2017. Direct-defendant rows have very small N (5-7) and are reported as scope notes rather than load-bearing."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-029: Three-classifier timing battery — strict prospective evaluation
 
 !!! abstract "Intuition (plain-language)"

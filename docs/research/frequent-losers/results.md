@@ -4,10 +4,14 @@ paper: frequent-losers
 
 # Main Results
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 !!! abstract "Intuition (plain-language)"
-    Read these results as answers to one practical question: can a signal a regulator *already has for free* — which firms keep losing — order where expensive cartel forensics should look first? Partly. Most of the raw concentration of cobidders among persistent losers is **opportunity arithmetic**: firms that participate more have more chances to appear adjacent to anything, including a cartel. Once procurement opportunity is held fixed, a *limited but real* signal survives — roughly four points of AUC over what mechanical exposure already buys. That residual is the honest object. The award layer **ranks where to look**; it does not prove conduct, and it cannot reach the win-heavy defendants who sit at the center of the cases. The price results come last and on purpose: they describe *where* the signal is active (scope), not *how much* any cartel overcharged.
+    Read these results as answers to one practical question: can a signal a regulator *already has for free* — which firms keep losing — order where expensive cartel forensics should look first? Mostly not, once you are honest about why. The raw concentration of adjudication-anchored cobidders among persistent losers is **opportunity arithmetic**: firms that participate more have more chances to appear adjacent to anything, including a cartel. Once procurement opportunity is held fixed, **almost nothing survives** — the within-stratum ordering is at chance, the one positive increment is marginal and not robust across designs, and matched permutations are not significant. That deflationary decomposition is the honest object and the contribution. The award layer cannot prove conduct, and it cannot reach the win-heavy defendants at the center of the cases. The price results come last and on purpose: they describe *where* the signal is active (scope), not *how much* any cartel overcharged.
 
 This page presents the empirical findings in the order the paper now privileges: the opportunity decomposition first (the honest discrimination object), then the scope boundary, the timing and single-case limits, the division of labor with the bid layer, the cost-recall frontier, and finally the pricing imprint (scope only).
+
+The validation label is the **broad adjudication-anchored cobidder target**: a unique always-loser firm that shares at least one BEC tender-item with a BEC-active direct CADE defendant. Direct defendants are excluded; the frequent-loser flag is **not** used to construct the label. There are **651 positives** (341 frequent-loser, 310 non-frequent-loser — the composition shows the label is not flag-conditioned).
 
 ---
 
@@ -19,33 +23,39 @@ The central methodological move is to separate **genuine signal** from **opportu
 
 | Metric | Value |
 |---|---|
-| **Pooled / exposure-only AUC** | **0.946** |
-| **Within-stratum AUC (procurement opportunity held fixed)** | **0.7715** |
-| **Genuine increment over mechanical exposure** | **+0.042** (DeLong $p \approx 2 \times 10^{-6}$) |
+| **Raw award-layer score (continuous)** ROC / PR-AUC | **0.761** / **0.143** |
+| Raw FL14 binary ROC / PR-AUC | 0.688 / 0.097 |
+| Exposure-only (unconditional, all always-losers) ROC | **0.905** |
+| Exposure-only logit (exposed firms only) ROC / PR-AUC | 0.713 / 0.300 |
+| Nested exposure + score ROC | 0.723 |
+| **Nested increment over exposure** | **+0.010** (DeLong $p = 0.013$) |
+| **Within-opportunity-stratum AUC** | **0.471** (≈ chance) |
+| Within-stratum FL14 AUC | 0.507 |
 
-!!! success "The +0.042 increment is the honest headline"
-    Most of the raw concentration is **opportunity**, not signal. When firms are compared *within* strata of equal procurement exposure, the within-AUC falls to **0.7715** — still well above chance, but far below the pooled 0.946. The portion attributable to mechanical exposure alone reaches **0.946** by itself; the portion that survives stratification is the genuine award-layer signal of **+0.042** over that exposure baseline. This is the number the paper leads with.
+!!! warning "There is no robust residual signal net of opportunity"
+    Most of the raw concentration is **opportunity**, not signal. When firms are compared *within* strata of equal procurement exposure, the within-AUC falls to **0.471 — essentially chance**. The only positive that survives is a nested increment of **+0.010** (DeLong $p = 0.013$), and that increment is **not robust across designs**: the matched-stratum label permutation is not significant ($p = 0.127$), the within-matched-strata FL-enrichment is not significant ($p = 0.067$), and the matched change in cobidder probability for FL14 vs non-FL is **negative** ($-0.017$). A CEM-matched comparison gives AUC 0.626. The honest statement is that the residual ordering is **marginal at best and not robust across designs** — there is no reliable residual signal once opportunity is held fixed.
 
-!!! warning "The old 'firm-level AUC 0.86 / 0.92' is the exposure-inflated number"
-    Earlier framings reported a firm-level discrimination headline of 0.864 (temporal holdout) or 0.924 (in-sample FL14 flag). Those figures are now understood as **exposure-inflated pooled** numbers: they bundle the genuine signal together with the opportunity arithmetic. They are demoted. The disciplined claim is the within-stratum 0.7715 and the +0.042 increment over exposure-only.
+!!! info "The old exposure-inflated headline is retired"
+    Earlier framings reported a firm-level discrimination headline near 0.92–0.95. Those figures are now understood as **exposure-inflated pooled** numbers: they bundled any genuine ordering together with the opportunity arithmetic. Under the reproducible, non-circular label the raw score reaches only ROC 0.761 / PR-AUC 0.143, and almost all of that is exposure (unconditional exposure-only ROC already 0.905). The disciplined object is the within-stratum AUC ($\approx$ chance) and the fragile +0.010 nested increment.
 
-The decomposition is the contribution: a method that **separates genuine signal from opportunity arithmetic**, applied to award-layer records that any procurement authority already holds.
+The decomposition is the contribution: a transferable **framework** that separates genuine signal from opportunity arithmetic, case concentration, and retrospective information — and shows that, under a non-circular label, cheap award-layer records mostly do **not** carry a residual cartel-ordering signal.
 
 ---
 
 ## 2. The Scope Boundary: Direct-CADE AUC ≈ 0.49 (By Design)
 
-The screen recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the **winner side** of the same arrangements — they are who *takes* the contract under a rotation scheme. A loser-side score is built to miss them.
+The binary loser-side flag recovers loser-side participation, not winner-side identity. Direct CADE defendants are by construction the **winner side** of the same arrangements — they are who *takes* the contract under a rotation scheme. A loser-side binary flag is built to miss them.
 
 | Target | AUC | Reading |
 |---|---|---|
-| Adjudication-anchored exposure (cobidders, within always-loser pool) | within-stratum 0.7715 | limited but real signal |
-| **Direct CADE defendants (full BEC firm universe)** | **≈ 0.49 (chance)** | **scope signature, by design** |
+| Adjudication-anchored cobidders (within always-loser pool, opportunity held fixed) | within-stratum $\approx$ **0.47** | no robust residual ordering |
+| **Direct CADE defendants — FL14 binary (full BEC universe)** | **0.49 (chance)** | **scope signature, by design** |
+| Direct CADE defendants — continuous participation score | **0.66–0.70** | participation volume ranks them moderately above chance |
 
-!!! info "A scope signature, not a failure — front-page it"
-    The ≈ 0.49 AUC against direct defendants is not a validation failure. It is the empirical fingerprint of what an award-layer, loser-side screen can and cannot do: it orders forensic priority among **cover-side** participants and is structurally blind to the **win-heavy** defendants at the legal center of the cases. The paper front-pages this boundary rather than burying it.
+!!! info "The binary flag is silent on defendants; participation volume is not"
+    The FL14 **binary** flag is uninformative about direct defendants (AUC 0.49) — the empirical fingerprint of a loser-side flag that is structurally blind to the win-heavy defendants at the legal center of the cases. But the **continuous participation score** ranks those same defendants moderately above chance (0.66 full / 0.70 strict). The earlier "participation below random against defendants" claim is retired. The asymmetry is therefore about the *binary flag*, not about participation per se.
 
-The 193 cobidders are **adjudication-anchored exposure** — firms whose participation places them adjacent to adjudicated arrangements — **not** cartel members. The direct CADE defendants are the legal anchors. The screen ranks the former and cannot reach the latter.
+The 651 cobidders are **adjudication-anchored exposure** — always-loser firms whose participation places them adjacent to adjudicated arrangements — **not** cartel members. The direct CADE defendants are the legal anchors.
 
 ---
 
@@ -53,63 +63,73 @@ The 193 cobidders are **adjudication-anchored exposure** — firms whose partici
 
 ### Timing: retrospective among incumbents, not prospective
 
-A strict 2009–2016 → 2017–2019 split is the honest test of whether the screen orders firms *before* the fact.
+A strict 2009–2016 → 2017–2019 split is the honest test of whether the score orders firms *before* the fact.
 
 | Test | Result |
 |---|---|
-| Strict split **within the always-loser pool** | survives, ROC ≈ **0.77** |
-| Strict split across the **full platform universe** | ROC ≈ **0.55**; precision@500 ≈ **0** |
+| Strict split, **training always-loser pool** (21,819; 651 pos) | continuous ROC ≈ **0.684**; FL14 binary ROC ≈ 0.646 |
+| Strict split, **full platform universe** (41,444; 651 pos) | ROC ≈ **0.474** (below chance); precision@500 = recall@500 = **0** |
+| Strict rankable incumbent pool (32,682; 498 pos) | ROC ≈ 0.471; precision@500 = 0 |
+| Rolling-origin, full universe (2014–2019) | ROC ≈ 0.45–0.50 all years (worst 2015 ≈ 0.446); precision@500 = recall@500 = 0 every year |
 | Sequential strict-timing on the open platform | **infeasible** |
 
-!!! warning "The screen orders retrospectively, not prospectively"
-    On the full platform universe the strict-timing ROC collapses to ≈ 0.55 and precision@500 is ≈ 0. The screen orders firms **retrospectively among incumbents** — it tells you who, *among firms already present*, looks like cover-side participation — not who *will* enter a cartel prospectively. Sequential strict-timing detection is infeasible here. This is disclosed, not hidden.
+!!! warning "The score orders retrospectively, not prospectively"
+    On the full platform universe the strict-timing ROC is **below chance** (≈ 0.474) and precision@500 is **0** in every year. Even inside the training always-loser pool the out-of-time continuous ROC is only ≈ 0.68. The score orders firms **retrospectively among incumbents** — it tells you who, *among firms already present*, accumulated a loser-side footprint — not who *will* enter a cartel prospectively. Entrants (firms unrankable from prior participation) are **153 of 651 positives (23.5%)**. Sequential strict-timing detection is infeasible here. This is **incumbent-firm triage with retrospective validation, not platform-wide prospective deployment**.
 
-### Single-case dominance: one case carries the headline
+### Single-case dependence: one case carries the headline
 
 | Check | PR-AUC | Change |
 |---|---|---|
-| All cases | **0.126** | — |
-| Leave-largest-case-out (rail/metro) | **0.036** | **−71%** |
+| Full pooled | **0.143** | — |
+| Leave-largest-case-out (rail/metro, *trens/metrôs*) | **0.090** | **−37%** |
+| Leave top two cases out | 0.058 | further drop |
+| Case-balanced precision@500 | 0.043 (vs pooled 0.216) | — |
 
-!!! warning "One case ≈ 55% of the positives"
-    A single case (rail/metro) accounts for roughly **55%** of the positives. Leaving it out drops PR-AUC by **71%** (0.126 → 0.036). The aggregate operational metrics are not a property of many independent cartels; they lean heavily on one large, well-documented case. The paper reports this concentration as a first-order limit on generalization.
+!!! warning "One case ≈ 32% of the positives"
+    A single case (rail/metro) accounts for **32.0%** of the positives (208/651) and **45.4%** of true positives at $k=500$. Leaving it out drops PR-AUC by **37%** (0.143 → 0.090); ROC is stable (≈ 0.76). Case-balanced precision@500 falls to 0.043 versus pooled 0.216. The aggregate operational metrics are not a property of many independent cartels; they lean on one large, well-documented case. The **estimated BEC ranking is case-sensitive** — it is not a portable cartel score. The transferable object is the decomposition framework, not the ranking. (Item-group HHI 0.100, buyer HHI 0.009; clustered randomization inference at item-group × year is significant for ROC/PR/precision but not for coverage, $p = 0.103$.)
 
 ---
 
 ## 4. Division of Labor with the Bid Layer
 
-Against the seven-feature Imhof–Wallimann bid-distribution pipeline, the award layer adds information **beyond** the bid benchmark — but as a complement, not a replacement.
+Against a transparent bid-moment random-forest benchmark inspired by Imhof–Wallimann-style screens, the award layer is **comparable** to the bid layer on the pooled diagnostic — and the combined model's apparent edge is conditional and case-fragile.
 
-| Model (same five-fold CV sample) | AUC |
-|---|---|
-| Imhof–Wallimann bid-distribution pipeline (alone) | **0.888** |
-| Frequent-loser flag (alone) | **0.921** |
-| **Award layer + bid layer (combined)** | **0.962** |
+| Model (pool A: 16,731 firms, 651 positives, random CV) | ROC | PR-AUC | prec@500 |
+|---|---|---|---|
+| Award continuous (fixed score) | **0.760** | **0.143** | 0.216 |
+| Award FL14 binary | 0.688 | 0.098 | 0.130 |
+| Bid RF (Imhof moments) | 0.717 | 0.116 | 0.180 |
+| **Combined RF** | **0.756** | **0.188** | 0.274 |
 
-!!! note "Complementarity, not dominance"
-    The combined specification (0.962) exceeds the bid benchmark alone (0.888): the award layer carries **non-redundant** information about the same target. This is **complementarity**, not an outperformance claim, and the increment is **leakage-sensitive** (see the leakage audits on the Robustness page). The two layers do different jobs.
+| Same model, **case-grouped folds** | ROC | PR-AUC |
+|---|---|---|
+| Bid RF (Imhof moments) | 0.626 | 0.062 |
+| Combined RF | 0.689 | **0.103** |
+
+!!! note "Comparable, conditional complementarity — not dominance"
+    Award ≈ bid on the pooled diagnostic (0.760/0.143 vs 0.717/0.116). The combined model beats award-only on PR-AUC under **random** CV (0.188 vs 0.143), but **falls below award-only** under **case-grouped** folds (0.103 vs 0.143). The complementarity is therefore **conditional on this implemented benchmark and case-fragile**, not a general outperformance. (Award–bid Spearman correlation 0.544.) A same-sample gatekeeping pool gives imhof_full 0.665, fl_only 0.665, combined 0.727 — again comparable, not a horse race won by either layer.
 
 !!! abstract "Award ranks where to look; bid evaluates what is found"
-    The award layer **ranks where to look** — it orders forensic priority cheaply, from records every authority already holds. The bid layer **evaluates what is found** — it interrogates conduct once microdata are pulled. Reforms that mandate operational bid-microdata archival expand the *evaluation* stage; they do not substitute for the cheap award-layer ranking.
+    The award layer **ranks where to look** — it orders forensic priority cheaply, from records every authority already holds. The bid layer **evaluates what is found** — it interrogates conduct once microdata are pulled. The two layers do different jobs; on this benchmark their information is comparable and only conditionally complementary.
 
 ---
 
 ## 5. The Cost-Recall Frontier
 
-The operational question is not "what is the optimal cutoff" but "what does each operating point on the cost-recall frontier buy." We report one representative point.
+The operational question is not "what is the optimal cutoff" but "what does each operating point on the cost-recall frontier buy." There is **no optimal $K$**; the frontier is the object.
 
-| Operating point ($K_1 = 2000$) | Value |
-|---|---|
-| Cobidder recall | ~**0.67** |
-| **Firm-count reduction** | ~**88%** |
-| **Bid-row reduction** | ~**33%** |
-| Beats random by | **3–12×** |
-| Award-survivor recall | ~**0.78** |
+| Rule ($k = 500$) | Firms opened | TP | Precision | Recall | Firm cost-red. | Bid-row cost-red. |
+|---|---|---|---|---|---|---|
+| Award-only ($K = 500$) | 500 | 108 | 0.216 | 0.166 | 97.0% | 60.0% |
+| Joint upper bound | 16,772 | 133 | 0.266 | 0.204 | 0 | 0 |
+| Sequential $K_1 = 1000$ | 1,000 | **124** | 0.248 | 0.190 | 94.0% | 47.4% |
+| Sequential $K_1 = 2000$ | 2,000 | 116 | 0.232 | 0.178 | 88.1% | **32.7%** |
+| Sequential $K_1 = 5000$ | 5,000 | 102 | 0.204 | 0.157 | 70.2% | 13.9% |
 
-!!! warning "Retire the '83% universal reduction' — it was one operating point read as a cutoff"
-    The earlier "83% reduction" headline conflated a single operating point with a universal saving. At $K_1 = 2000$ the **firm-count** reduction is ~88%, but the **bid-row** reduction is only ~**33%**: the firms that survive triage are exactly the **high-participation** ones, so they carry a disproportionate share of bid rows. The object of interest is the **frontier**, not a cutoff. At this point recall is ~0.67 (award-survivor recall ~0.78), beating random by 3–12×.
+!!! warning "No single operating point is optimal — and firm savings overstate bid-row savings"
+    There is no "universal reduction" headline. At $K_1 = 2000$ the **firm-count** reduction is 88.1%, but the **bid-row** reduction is only **32.7%**: the firms that survive triage are exactly the **high-participation** ones, so they carry a disproportionate share of bid rows. And $K_1 = 1000$ *beats* $K_1 = 2000$ at $k = 500$ in this sample (124 TP vs 116, recovering 124/133 = 93% of the joint upper bound) — one more reason no $K$ is optimal. These are **recovery-footprint** measures over firms and bid rows, **not** measured agency budget savings.
 
-The award layer cheapens the *firm* pool the forensic stage must consider, but because survivors are high-participation, the *bid-row* interrogation cost falls far less. That asymmetry is the honest operating economics of award-layer triage.
+Because strict timing for the bid rerank is not available with the current LANCES features, the sequential frontier is a **retrospective cost-footprint design conditional on the validated incumbent ranking**, not a fully prospective deployment test.
 
 ---
 
@@ -156,11 +176,11 @@ Against direct CADE defendants the price association is null — there is no dam
 
 The paper maps both the reach and the limits of award-layer screening, in declining order of confidence:
 
-1. **The decomposition works (method contribution).** Within-stratum AUC **0.7715**; genuine increment **+0.042** over exposure-only 0.946 (DeLong $p \approx 2\times10^{-6}$). Most raw concentration is opportunity; a limited but real signal survives.
-2. **The scope boundary is real and by design.** Direct-CADE AUC ≈ **0.49** — the screen reaches cover-side participants, not win-heavy defendants.
-3. **Timing and single-case limits bind.** Retrospective among incumbents (full-universe ROC ≈ 0.55); one case ≈ 55% of positives (leave-largest-out PR-AUC −71%).
-4. **The award and bid layers divide labor.** Imhof 0.888 / FL 0.921 / combined 0.962 — complementarity, leakage-sensitive. Award ranks where to look; bid evaluates what is found.
-5. **The cost-recall frontier is the object, not a cutoff.** At $K_1=2000$: firm reduction ~88% but bid-row reduction only ~33%; recall ~0.67.
+1. **The decomposition is the contribution (method).** Raw award-layer ROC **0.761** / PR-AUC **0.143**; within-stratum AUC **0.471** (≈ chance); the only positive is a fragile nested increment **+0.010** (DeLong $p = 0.013$) that is **not robust across designs** (matched permutation $p = 0.127$, FL-enrichment $p = 0.067$, matched $dP$ negative). Most raw concentration is opportunity; **no robust residual signal survives**.
+2. **The scope boundary is real and by design.** Direct-CADE **binary** AUC **0.49** — the binary flag is blind to win-heavy defendants; the **continuous** score ranks them at 0.66–0.70.
+3. **Timing and single-case limits bind.** Below-chance out-of-time on the full universe (ROC ≈ 0.474, precision@500 = 0); one case ≈ 32% of positives (leave-largest-out PR-AUC −37%); the estimated ranking is case-sensitive, not portable.
+4. **The award and bid layers are comparable.** Award 0.760/0.143 vs bid RF 0.717/0.116; combined beats award on PR under random CV (0.188) but falls below it under case-grouped folds (0.103). Conditional, case-fragile complementarity.
+5. **The cost-recall frontier is the object, not a cutoff.** At $K_1 = 2000$: firm reduction 88.1% but bid-row reduction only 32.7%; $K_1 = 1000$ beats $K_1 = 2000$; no optimal $K$.
 6. **The price imprint is scope, not damages.** +0.064 broad → −0.097 overlap-cell ATT; only Q4 positive; mechanism not identified.
 
-The contribution is a **decomposition method**, a **single-case concentration finding**, and a **reach-and-limits map** — cheap award-layer records **order forensic priority**; they do not prove conduct.
+The contribution is a **transferable decomposition framework** — label construction, opportunity adjustment, timing discipline, case-composition audit, bid-layer comparison, and cost-recall accounting — and a **reach-and-limits map** showing that cheap award-layer records, under a non-circular label, do **not** carry a robust cartel-ordering signal net of opportunity. They support **incumbent-firm triage with retrospective validation**, not platform-wide prospective deployment, and they do not prove conduct.

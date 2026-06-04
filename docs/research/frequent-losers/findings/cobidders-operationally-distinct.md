@@ -2,16 +2,27 @@
 paper: frequent-losers
 ---
 
-# FL cobidders are operationally distinct from other frequent losers
+# FL cobidders are descriptively distinct from other frequent losers
+
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
 
 !!! abstract "Intuition (plain-language)"
-    Not every firm that loses a lot is a cover bidder — most are just uncompetitive. So the screen would be useless if cartel-linked losers looked exactly like ordinary losers. They don't: the cartel-linked ones range across more buyers, concentrate on narrower product lines, and keep showing up beside the same winners. Those are footprints of a *role played inside a scheme*, not of generic weakness — which is what makes the loser-side signal informative rather than just a ranking of weak firms.
+    Not every firm that loses a lot bids near a cartel. The cobidders differ descriptively from ordinary always-losers: they range across more buyers, concentrate on narrower product lines, and keep showing up beside the same winners. These are footprints of where these firms participate — descriptive economic content, not proof of a role played inside a scheme. Note too that the canonical label is *not* built from the frequent-loser flag (341 FL14 / 310 non-FL among the 651 positives), so any FL "enrichment" is a separate descriptive fact, not how the positives were chosen — and that enrichment does not survive matching on opportunity.
 
-🟡 Inside the FL14 stratum, **adjudication-anchored cobidders look
-different from other always-losers** along four economically meaningful
-dimensions, with effect sizes (Cohen's d) in the 0.3–1.0 band — large in
-social-science terms. This is **descriptive economic content** about how
-these firms deploy, not proof that any of them played a cartel role.
+🟡 Among always-loser cobidders, **adjudication-anchored cobidders look
+different from other always-losers** along economically meaningful
+dimensions, with effect sizes (Cohen's d) in the 0.3–1.0 band. This is
+**descriptive economic content** about where these firms participate, not
+proof that any of them played a cartel role.
+
+The canonical validation label is the **651 always-loser cobidders** and
+is **not FL-conditioned** (composition 341 FL14 / 310 non-FL): the
+frequent-loser flag is never used to build the positive class. FL
+*enrichment* is therefore a separate descriptive fact — P(cobidder | FL14)
+= 12.5% vs 2.2% for non-FL always-losers (≈5.7×) — and it is **not
+significant within matched opportunity strata** (FL-enrichment permutation
+p = 0.067, ns). What survives is the structural participation profile
+below, restated as description.
 
 1. **Buyer breadth** ([AN-008](../analyses/an-008-pbu-characterization.md)).
    Cobidders bid in 136.5 tenders on average vs 76.7 for non-cobidder

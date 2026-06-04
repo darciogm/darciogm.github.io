@@ -18,6 +18,13 @@ design:
   notes: "Audit aligned with the locked rule of engagement: 'frequent losers' is the operational implementation of 'loser-side concentration'. The audit forecloses the defense of FL14 as ontologically special."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-023: Theory operationalization audit
 
 !!! abstract "Intuition (plain-language)"

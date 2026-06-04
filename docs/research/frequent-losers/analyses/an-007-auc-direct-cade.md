@@ -18,6 +18,13 @@ design:
   notes: "The null is the predicted finding under loser-side scope. A non-null result would undermine the scope reading and convert the screen into an overclaim."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-007: AUC against direct CADE defendants
 
 !!! abstract "Intuition (plain-language)"

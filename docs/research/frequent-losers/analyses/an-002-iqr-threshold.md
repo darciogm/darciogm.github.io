@@ -18,6 +18,13 @@ design:
   notes: "Documents the trade-off between the auditable binary rule and tighter cutoffs that lose discriminating power"
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-002: IQR threshold and FL14 cutoff stability
 
 !!! abstract "Intuition (plain-language)"

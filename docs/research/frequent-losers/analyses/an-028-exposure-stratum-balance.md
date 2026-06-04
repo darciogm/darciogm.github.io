@@ -18,6 +18,13 @@ design:
   notes: "Crucial cross-cut for H3: within the FL stratum, cobidders are still distinct from non-cobidder FLs (d 0.19–0.66) — so the FL14 cutoff alone is not what concentrates the signal. The within-FL discrimination has economic content."
 ---
 
+!!! warning "Superseded numbers — canonical-target re-estimation (June 4, 2026)"
+    This analysis note documents a historical run under the earlier validation label.
+    On June 4, 2026 the paper adopted a reproducible, non-circular target (651
+    always-loser cobidders; frequent-loser flag never used in the label) and
+    re-estimated every result. Where this page conflicts with the
+    [paper](../paper.pdf) or the [changelog](../changelog.md), **the paper wins**.
+
 # AN-028: Exposure-stratum balance — cobidders vs reference classes
 
 !!! abstract "Intuition (plain-language)"

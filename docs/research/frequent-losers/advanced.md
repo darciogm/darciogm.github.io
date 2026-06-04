@@ -4,8 +4,10 @@ paper: frequent-losers
 
 # Advanced Methods
 
+<!-- REVISED: canonical-target reframe 2026-06-04 -->
+
 !!! abstract "Intuition (plain-language)"
-    The conceptual move on this page is to be precise about *what is being identified*. The screen does not estimate guilt or damages; it produces a defensible *ordering of forensic priority* — an answer to "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into opportunity arithmetic (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and a genuine increment that survives both. The two things the data cannot settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-jurisdiction replication is meant to test.
+    The conceptual move on this page is to be precise about *what is being identified*. The screen does not estimate guilt or damages; it is meant to produce a defensible *ordering of forensic priority* — "investigate whom first," not "who is liable." The methodological core is a decomposition: an apparent loser-side signal is split into opportunity arithmetic (firms that bid more co-appear with everyone), single-case concentration (one adjudicated case can dominate the labels), and any genuine increment that survives both. Under the reproducible non-circular label the finding is **deflationary**: almost all raw concentration is opportunity, and the residual ordering is marginal at best and not robust across designs. The two things the data cannot settle — quirks of the source and which cartels prosecutors pursued — are exactly what cross-jurisdiction replication is meant to test.
 
 This page collects the methodological machinery that supports the
 empirical claims in the manuscript but is too heavy for the
@@ -31,19 +33,19 @@ the continuous ordering, never an ontologically special threshold.
 
 Two scope conditions discipline the interpretation:
 
-1. **The rank does not detect winner-heavy defendants.** AUC against
-   direct CADE defendants is ≈ **0.49** in the full panel
-   ([AN-007](analyses/an-007-auc-direct-cade.md)) — chance-level, and
-   regime-invariant across the raw item-level and temporal-holdout
-   evaluations. This is a **scope boundary by design**, not a failure:
-   the loser-side ordering is built to speak to cobidders, and it
-   actively repels winner-heavy anchors.
-2. **A scope-discipline matrix** confirms the rank targets exactly what
-   the loser-side framing predicts
-   ([AN-027](analyses/an-027-universe-anchored-stratum-scope.md)). Raw
-   participation count against direct CADE in the full BEC universe
-   returns AUC 0.383 — below random — confirming the construct does not
-   masquerade as a general defendant detector.
+1. **The binary flag does not detect winner-heavy defendants.** The
+   FL14-binary AUC against direct CADE defendants is ≈ **0.49** in the full
+   panel ([AN-007](analyses/an-007-auc-direct-cade.md)) — chance-level. The
+   *continuous* participation score, by contrast, ranks those same
+   defendants moderately above chance (≈ 0.66–0.70). The binary flag is a
+   **scope boundary by design**: it is built to speak to cobidders and is
+   blind to winner-heavy anchors; participation volume is not.
+2. **A scope-discipline matrix** confirms the binary flag targets exactly
+   what the loser-side framing predicts
+   ([AN-027](analyses/an-027-universe-anchored-stratum-scope.md)): it does
+   not masquerade as a general defendant detector. The earlier "below
+   random" reading of participation against defendants is retired — the
+   asymmetry is a property of the binary flag, not of participation volume.
 
 ## The opportunity decomposition
 
@@ -56,45 +58,54 @@ To isolate this, each firm's **expected-contact** quantity *E*ᵢ is
 constructed from participation volume and the defendants' exposure
 footprint, and firms are grouped into opportunity strata. The
 opportunity-only model — discrimination available from exposure alone —
-reaches AUC **0.946**. This is the arithmetic baseline that any honest
-signal must beat.
+reaches AUC **0.905** unconditionally (0.713 within the exposed pool).
+This is the arithmetic baseline that any honest signal must beat, and the
+raw award-layer score (ROC **0.761**, PR **0.143**) barely exceeds it.
 
 **Step 2 — within-stratum discrimination.** Evaluating the ordering
 *within* opportunity strata removes the mechanical advantage of high
-participation. The within-stratum AUC is **0.7715**, and the **genuine
-increment** of the loser-side ordering over the opportunity baseline is
-**+0.042** (DeLong *p* ≈ 2 × 10⁻⁶
-[AN-033](analyses/an-033-imhof-incremental-delong.md)). The increment is
-small but statistically robust: most raw discrimination is opportunity
-arithmetic, and a real, smaller signal survives.
+participation. The within-stratum AUC collapses to **0.471 — essentially
+chance**. The only positive is a nested increment of **+0.010** over the
+exposure baseline (DeLong *p* = 0.013
+[AN-033](analyses/an-033-imhof-incremental-delong.md)), and it is **not
+robust across designs**: the matched-stratum label permutation is not
+significant (*p* = 0.127), the within-matched-strata FL-enrichment is not
+significant (*p* = 0.067), and the matched change in cobidder probability
+for FL14 is **negative** (−0.017). Most raw discrimination is opportunity
+arithmetic, and **no robust residual ordering survives**.
 
 **Step 3 — single-case concentration.** The positive labels are not
 evenly spread across CADE cases. A **leave-largest-case-out** audit
 removes the single most influential adjudicated case and re-evaluates:
-precision–recall AUC falls from **0.126 to 0.036 (−71%)**, because one
-case accounts for ≈ **55%** of the positive labels. The headline
-discrimination is therefore **concentrated**, not broad-based — a
-first-order limit that must be front-paged, not buried.
+precision–recall AUC falls from **0.143 to 0.090 (−37%)**, because one
+case accounts for ≈ **32%** of the positive labels and 45.4% of true
+positives at *k* = 500. The estimated ranking is therefore
+**case-sensitive** — not a portable cartel score; the transferable object
+is the decomposition framework, not the ranking.
 
 | Decomposition step | Quantity | Value |
 |---|---|---|
-| Opportunity-only (exposure arithmetic) | AUC | 0.946 |
-| Within-stratum (opportunity removed) | AUC | 0.7715 |
-| Genuine increment over baseline | ΔAUC (DeLong *p*) | +0.042 (≈ 2 × 10⁻⁶) |
-| Leave-largest-case-out | PR-AUC | 0.126 → 0.036 (−71%) |
-| Largest single case share of positives | — | ≈ 55% |
+| Raw award-layer score | ROC / PR-AUC | 0.761 / 0.143 |
+| Opportunity-only (exposure arithmetic) | AUC (unconditional) | 0.905 |
+| Within-stratum (opportunity removed) | AUC | 0.471 (≈ chance) |
+| Nested increment over baseline | ΔAUC (DeLong *p*) | +0.010 (*p* = 0.013); not robust |
+| Matched permutation / FL-enrichment | *p* | 0.127 / 0.067 (both ns) |
+| Leave-largest-case-out | PR-AUC | 0.143 → 0.090 (−37%) |
+| Largest single case share of positives | — | ≈ 32% |
 
 ## Cobidder labels and adjudication anchors
 
 The validation target is **adjudication-anchored exposure**: always-
-loser firms that bid alongside direct CADE defendants in adjudicated
-cartel environments. Direct defendants are the **legal anchors**;
-cobidders are **193 firms** ([AN-003](analyses/an-003-cade-bec-linkage.md)).
-Cobidders are *not* cartel members — they are firms with documented
-exposure to adjudicated environments. The cobidder set excludes direct
-defendants by construction; the 193 figure corrects an earlier
-98-cobidder count from a CNPJ zero-pad bug (v12 audit; locked from v13
-onward).
+loser firms that share at least one BEC tender-item with a BEC-active
+direct CADE defendant. Direct defendants are the **legal anchors**;
+cobidders are **651 firms** ([AN-003](analyses/an-003-cade-bec-linkage.md)),
+of which 341 are frequent-loser and 310 are not — so the label is **not**
+constructed from the frequent-loser flag. Cobidders are *not* cartel
+members — they are firms with documented exposure to adjudicated
+environments. The cobidder set excludes direct defendants by construction.
+This reproducible, non-circular 651-firm label replaces an earlier
+circular target; a contact-intensity sensitivity (≥ 2 shared tender-items)
+gives 368 positives.
 
 The adjudication-anchored label inherits CADE's selection of which
 procurement cartels to adjudicate. Cross-jurisdiction replication on a
@@ -109,22 +120,25 @@ The audit chain disciplines the ordering against four artifact families:
 
 | Audit | Source AN | Outcome |
 |---|---|---|
-| Volume sham permutation (B = 2,000) | [AN-005](analyses/an-005-sham-fl-permutation.md) | Sham AUC mean 0.500, SD 0.013; observed FL14 AUC 0.924 far above null; *p* < 1/2,000 |
-| Leakage decomposition (raw → OOF → temporal) | [AN-014](analyses/an-014-leakage-audit-d3.md) | 0.995 → 0.891 → 0.864; attenuation 0.10–0.13 |
-| Timing discipline (strict ex ante) | [AN-006](analyses/an-006-strict-prospective-holdout.md), [AN-029](analyses/an-029-three-classifier-timing-battery.md) | Retrospective among incumbents; full-universe out-of-time ROC ≈ 0.55; sequential strict-timing **infeasible** |
-| Exposure-stratum balance | [AN-028](analyses/an-028-exposure-stratum-balance.md) | Within-FL14 cobidder distinctness across multiple dimensions |
-| Cutoff sweep robustness | [AN-025](analyses/an-025-cutoff-sweep-robustness.md) | FL10–FL15 plateau ≥ 0.90; the cutoff is administrative, not a knife-edge |
-| Subsample robustness | [AN-026](analyses/an-026-subsample-robustness.md) | AUC 0.89–0.96 across full/data-rich/low-bid/high-bid |
-| CV precision stability | [AN-036](analyses/an-036-cv-precision-stability.md) | K-fold SD ≤ 0.011 |
-| Market persistence (structural OOS) | [AN-030](analyses/an-030-market-persistence.md) | Firm persistence 8.7% between train/test — fresh population |
+| Matched-exposure permutation | [AN-005](analyses/an-005-sham-fl-permutation.md) | Matched-stratum label permutation *p* = 0.127 (ns); pure-exposure null PR 0.264 > observed 0.143 — **no residual** net of exposure |
+| Leakage / contamination decomposition | [AN-014](analyses/an-014-leakage-audit-d3.md) | Excluding label-defining tenders, award ROC 0.829 / PR 0.156 on 569 retained positives — not pure tautology, but still exposure-inflated |
+| Timing discipline (strict ex ante) | [AN-006](analyses/an-006-strict-prospective-holdout.md), [AN-029](analyses/an-029-three-classifier-timing-battery.md) | Retrospective among incumbents; training-pool ROC ≈ 0.68; full-universe out-of-time ROC ≈ **0.474 (below chance)**, precision@500 = 0; sequential strict-timing **infeasible** |
+| Negative controls | [AN-005](analyses/an-005-sham-fl-permutation.md) | Real ROC 0.761 ≈ placebo 0.755 (*p* = 0.46); high-volume-winner null 0.78 (*p* = 0.91) — **no separation**; controls corroborate the opportunity account |
+| Exposure-stratum balance | [AN-028](analyses/an-028-exposure-stratum-balance.md) | Within matched strata the FL14 flag's change in cobidder probability is **negative** (−0.017) |
+| Cutoff sweep robustness | [AN-025](analyses/an-025-cutoff-sweep-robustness.md) | Broad plateau across multipliers; the cutoff is administrative, not a knife-edge |
+| Dilution sensitivity (contact ≥ 2) | [AN-026](analyses/an-026-subsample-robustness.md) | Raw ROC 0.854 but within-stratum 0.506 (≈ chance), increment +0.003 (*p* = 0.47) — dilution objection dead |
+| CV precision stability | [AN-036](analyses/an-036-cv-precision-stability.md) | K-fold metrics stable across folds |
+| Market persistence (structural OOS) | [AN-030](analyses/an-030-market-persistence.md) | Low firm persistence between train/test — fresh population |
 
 !!! warning "Timing is a limit, not a pass"
     The timing audit is reported as a **boundary**, not a clean
-    prospective result. Among incumbents the ordering is informative, but
-    on the full firm universe a strictly out-of-time ROC is near chance
-    (≈ 0.55), and a fully sequential strict-timing evaluation is
-    infeasible with the available adjudication dates. The screen is
-    retrospective; prospective deployment is an open problem (see
+    prospective result. Among incumbents the training-pool ordering is
+    weakly informative (≈ 0.68), but on the full firm universe a strictly
+    out-of-time ROC is **below chance** (≈ 0.474, precision@500 = 0 in every
+    rolling-origin year), and a fully sequential strict-timing evaluation
+    is infeasible with the available adjudication dates. The screen
+    supports **incumbent-firm triage with retrospective validation, not
+    platform-wide prospective deployment** (see
     [Extensions](extensions.md)).
 
 The chain enumerates the within-data artifact families systematically.
@@ -138,34 +152,38 @@ The operational architecture sequences a cheap award-layer triage before
 a costly bid-layer forensic stage and is evaluated as a **frontier**, not
 a single optimal cutoff.
 
-- **[AN-010](analyses/an-010-imhof-full-pipeline.md)**: bid-distribution
-  benchmark on the matched CV pool (manuscript Table *Discrimination at
-  Different Information Costs*). Imhof full **0.888**; FL flag **0.921**;
-  combined **0.962**. The combined number is leakage-sensitive; the read
-  is **complementarity and a division of labor**, not dominance. Imhof
-  CV-only is chance-level, so the bid-distribution pipeline needs
-  participation features to reach its headline.
+- **[AN-010](analyses/an-010-imhof-full-pipeline.md)**: a transparent
+  bid-moment random-forest benchmark inspired by Imhof–Wallimann-style
+  screens, on a single pool (16,731 firms, all 651 positives). Bid RF
+  ROC **0.717** / PR 0.116; award continuous ROC **0.760** / PR 0.143;
+  combined PR **0.188** under random CV. The read is **conditional
+  complementarity and a division of labor**, not dominance: under
+  case-grouped folds the combined model falls **below** award-only on PR
+  (0.103 vs 0.143). Award ≈ bid on the pooled diagnostic.
 - **[AN-033](analyses/an-033-imhof-incremental-delong.md)**: formal
   DeLong incremental tests and the opportunity decomposition. The
-  loser-side genuine increment over the opportunity baseline is **+0.042**
-  (*p* ≈ 2 × 10⁻⁶). The FL14 binary marginal beyond continuous tenders is
-  small — continuous participation is the load-bearing complement; FL14
-  is the auditable simplification.
+  loser-side nested increment over the opportunity baseline is **+0.010**
+  (*p* = 0.013) and is **not robust across designs** (matched permutation
+  *p* = 0.127). The within-stratum AUC is ≈ chance; continuous
+  participation, not the FL14 flag, carries what little ordering there is.
 - **[AN-034](analyses/an-034-sequential-gatekeeping-envelope.md)** and
   **[AN-035](analyses/an-035-architecture-cost-of-evidence-matrix.md)**:
   the **K1 grid** that traces the frontier. The Stage-1 size K1 = 2,000
   is one point on the curve. Its reduction depends entirely on the cost
   **denominator**: counted in *firms*, the bid-layer footprint shrinks by
-  ~88%; counted in *bid-rows* — the denominator that actually drives
-  forensic cost — the reduction is ~33%. No single operating point is
-  optimal across enforcers, because the relative cost of the two layers
-  and the recall target are policy parameters.
+  ~88% (88.1%); counted in *bid-rows* — the denominator that actually
+  drives forensic cost — the reduction is only ~33% (32.7%). And
+  K1 = 1,000 recovers *more* true positives than K1 = 2,000 (124 vs 116 at
+  *k* = 500), so no single operating point is optimal: the relative cost
+  of the two layers and the recall target are policy parameters. These are
+  **recovery-footprint** measures, not measured agency budget savings.
 
 !!! warning "Frontier, not a 'universal' cutoff"
     There is no single headline reduction. The result is a cost–recall
-    *frontier*; the reduction is ~88% on a firm denominator but ~33% on a
-    bid-row denominator; the optimal operating point is agency-specific.
-    The earlier single-number summary is retired.
+    *frontier*; the firm-count footprint shrinks ~88% but the bid-row
+    footprint only ~33%; K1 = 1,000 beats K1 = 2,000; no operating point is
+    optimal across enforcers. The earlier single-number "reduction"
+    summary is retired.
 
 ## Exit-margin / survival model
 
